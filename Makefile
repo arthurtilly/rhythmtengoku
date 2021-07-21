@@ -19,6 +19,11 @@ AS := $(CROSS)as
 CC1 := tools/agbcc/bin/agbcc
 CFLAGS := -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm
 
+# Verbose toggle
+V := @
+ifeq (VERBOSE, 1)
+	V=
+endif
 
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output
@@ -71,7 +76,7 @@ LD_SCRIPT   := rt.ld
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-#LIBDIRS	:=	$(LIBGBA)
+# LIBDIRS	:=	$(LIBGBA)
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
@@ -117,12 +122,12 @@ endif
 
 #---------------------------------------------------------------------------------
 default: $(OUTPUT).gba
-	@diff baserom.gba $(OUTPUT).gba && (echo "$(TARGET).gba: OK") || (echo "The build succeeded, but did not match the official ROM.")
+	$(V)diff baserom.gba $(OUTPUT).gba && (echo "$(TARGET).gba: OK") || (echo "The build succeeded, but did not match the official ROM.")
 
 #---------------------------------------------------------------------------------
 clean:
-	@echo clean ...
-	@rm -fr $(BUILD)
+	$(V)echo clean ...
+	$(V)rm -fr $(BUILD)
 
 
 #---------------------------------------------------------------------------------
@@ -133,47 +138,47 @@ clean:
 #---------------------------------------------------------------------------------
 
 $(BUILD_DIRS):
-	@echo "Creating /$@"
-	@mkdir -p $@
+	$(V)echo "Creating /$@"
+	$(V)mkdir -p $@
 
 $(OUTPUT).gba	:	$(OUTPUT).elf
-	@$(OBJCOPY) --pad-to=0x1000000 --gap-fill=0x00 -O binary $< $@
-	@echo "ROM Assembled!"
+	$(V)$(OBJCOPY) --pad-to=0x1000000 --gap-fill=0x00 -O binary $< $@
+	$(V)echo "ROM Assembled!"
 
 $(OUTPUT).elf	:	$(OFILES)
-	@echo "Building ROM..."
-	@$(LD) $(OFILES) tools/agbcc/lib/libgcc.a -T $(LD_SCRIPT) -Map $(@:.elf=.map) -o $@
+	$(V)echo "Building ROM..."
+	$(V)$(LD) $(OFILES) tools/agbcc/lib/libgcc.a -T $(LD_SCRIPT) -Map $(@:.elf=.map) -o $@
 
 
 # Binary data
 $(BUILD)/%.bin.o	$(BUILD)/%.bin.h :	%.bin | $(BUILD_DIRS)
-	@echo "Copying $< to $<.o"
-	@bin2s -a 4 -H $(BUILD)/$<.h $< | $(AS) -o $(BUILD)/$<.o
-    
+	$(V)echo "Copying $< to $<.o"
+	$(V)bin2s -a 4 -H $(BUILD)/$<.h $< | $(AS) -o $(BUILD)/$<.o
+
 # MIDI files
 $(BUILD)/%.mid.o	$(BUILD)/%.mid.h :	%.mid | $(BUILD_DIRS)
-	@echo "Copying $<"
-	@bin2s -a 4 -H $(BUILD)/$<.h $< | $(AS) -o $(BUILD)/$<.o
+	$(V)echo "Copying $<"
+	$(V)bin2s -a 4 -H $(BUILD)/$<.h $< | $(AS) -o $(BUILD)/$<.o
 
 # WAV files
 $(BUILD)/%.pcm.o	$(BUILD)/%.pcm.h :	$(BUILD)/%.pcm | $(BUILD_DIRS)
-	@bin2s -a 4 -H $<.h $< | $(AS) -o $<.o
+	$(V)bin2s -a 4 -H $<.h $< | $(AS) -o $<.o
 
 $(BUILD)/%.pcm : %.wav | $(BUILD_DIRS)
-	@echo "Converting $< to raw PCM audio"
-	@ffmpeg -y -loglevel quiet -i $< -f s8 $@
+	$(V)echo "Converting $< to raw PCM audio"
+	$(V)ffmpeg -y -loglevel quiet -i $< -f s8 $@
 
 # C files
 $(BUILD)/%.c.o : %.c | $(BUILD_DIRS)
-	@echo "Compiling $< to $@"
-	@$(CPP) $(CPPFLAGS) $< -o $(BUILD)/$*.i
-	@$(CC1) $(CFLAGS) $(BUILD)/$*.i -o $(BUILD)/$*.s
-	@$(AS) -MD  $(BUILD)/$*.d -march=armv4t -o $@ $(BUILD)/$*.s
+	$(V)echo "Compiling $< to $@"
+	$(V)$(CPP) $(CPPFLAGS) $< -o $(BUILD)/$*.i
+	$(V)$(CC1) $(CFLAGS) $(BUILD)/$*.i -o $(BUILD)/$*.s
+	$(V)$(AS) -MD  $(BUILD)/$*.d -march=armv4t -o $@ $(BUILD)/$*.s
 
 # ASM files
 $(BUILD)/%.s.o : %.s | $(BUILD_DIRS)
-	@echo "Assembling $< to $(basename $<).o"
-	@$(AS) -MD $(BUILD)/$*.d -march=armv4t -o $@ $<
+	$(V)echo "Assembling $< to $(basename $<).o"
+	$(V)$(AS) -MD $(BUILD)/$*.d -march=armv4t -o $@ $<
 
 -include $(DEPSDIR)/*.d
 #---------------------------------------------------------------------------------------
