@@ -122,7 +122,7 @@ branch_08015468: \n\
 /* 08015484 */ BCS branch_080154b8 \n\
 /* 08015486 */ LSLS R0, R3, 0x8 \n\
 /* 08015488 */ LDR R1, [SP] \n\
-/* 0801548a */ BL func_0804f0d8 \n\
+/* 0801548a */ BL __udivsi3 \n\
 /* 0801548e */ LDR R1, [SP, 0x4] \n\
 /* 08015490 */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
 /* 08015492 */ ADDS R7, R0, 0x1 @ Set R7 to R0 + 0x1 \n\
@@ -155,7 +155,7 @@ branch_080154b8: \n\
  \n\
 branch_080154c0: \n\
 /* 080154c0 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 080154c2 */ BL func_0804f0d8 \n\
+/* 080154c2 */ BL __udivsi3 \n\
 /* 080154c6 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080154c8 */ CMP R2, 0x8 @ Compare R2 and 0x8 \n\
 /* 080154ca */ BHI branch_080154ce \n\

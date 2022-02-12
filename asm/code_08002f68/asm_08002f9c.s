@@ -48,7 +48,7 @@ branch_08002fe0: \n\
 /* 08002fe4 */ ASRS R0, R0, 0xA \n\
 /* 08002fe6 */ LSLS R1, R3, 0x10 \n\
 /* 08002fe8 */ ASRS R1, R1, 0x10 \n\
-/* 08002fea */ BL func_0804eb28 \n\
+/* 08002fea */ BL __divsi3 \n\
 /* 08002fee */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 08002ff0 */ LDRB R0, [R0] \n\
 /* 08002ff2 */ MULS R0, R5 @ Multiply R0 by R5 \n\

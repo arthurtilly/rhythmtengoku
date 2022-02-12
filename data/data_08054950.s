@@ -1970,6 +1970,7 @@ AÅDÇ‡Ç§ÅAéûä‘Ç≈Ç∑ÇÃÇ≈é∏óÁÇµÇ‹Ç∑ÅB
 .balign 4, 0
 
 @ lmao random table entry over here? wtf?
+@ Reading Material background 2
 /* 08058f00 */ .word D_08cd29ac
 /* 08058f04 */ .word D_06000000
 /* 08058f08 */ .word 0xffffffff

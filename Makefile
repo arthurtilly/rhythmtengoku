@@ -89,13 +89,13 @@ LD_SCRIPT   := rt.ld
 
 export OUTPUT	:=	$(BUILD)/$(TARGET)
 
-export DEPSDIR	:=	$(CURDIR)/$(BUILD)
-
 CFILES		:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.c))  $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.c))
 CPPFILES	:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.cpp))
 SFILES		:=	$(foreach dir,$(ASM),$(wildcard $(dir)/*.s)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.s))
 BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) $(foreach dir,$(MUSIC),$(wildcard $(dir)/*.mid))
 WAVFILES    :=  $(foreach dir,$(SFX),$(wildcard $(dir)/*.wav))
+
+CFILES := $(filter-out %.inc.c, $(CFILES))
 
 export OFILES_BIN := $(addprefix $(BUILD)/,$(addsuffix .o,$(BINFILES))) $(addprefix $(BUILD)/,$(WAVFILES:.wav=.pcm.o))
 
@@ -170,17 +170,17 @@ $(BUILD)/%.pcm : %.wav | $(BUILD_DIRS)
 
 # C files
 $(BUILD)/%.c.o : %.c | $(BUILD_DIRS)
-	$(V)echo "Compiling $< to $@"
-	$(V)$(CPP) $(CPPFLAGS) $< -o $(BUILD)/$*.i
-	$(V)$(CC1) $(CFLAGS) $(BUILD)/$*.i -o $(BUILD)/$*.s
-	$(V)$(AS) -MD  $(BUILD)/$*.d -march=armv4t -o $@ $(BUILD)/$*.s
+	@(V)echo "Compiling $< to $@"
+	@(V)$(CPP) -MMD -MF $(BUILD)/$*.d -MT $@ $(CPPFLAGS) $< -o $(BUILD)/$*.i
+	@(V)$(CC1) $(CFLAGS) $(BUILD)/$*.i -o $(BUILD)/$*.s
+	@(V)$(AS) -march=armv4t -o $@ $(BUILD)/$*.s
 
 # ASM files
 $(BUILD)/%.s.o : %.s | $(BUILD_DIRS)
 	$(V)echo "Assembling $< to $(basename $<).o"
 	$(V)$(AS) -MD $(BUILD)/$*.d -march=armv4t -o $@ $<
 
--include $(DEPSDIR)/*.d
+-include $(addprefix $(BUILD)/,$(CFILES:.c=.d))
 #---------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------

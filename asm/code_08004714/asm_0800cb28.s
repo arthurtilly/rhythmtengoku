@@ -1118,7 +1118,7 @@ jump_0800d406: \n\
 /* 0800d414 */ BL func_0800c1a8 \n\
 /* 0800d418 */ LSLS R0, R0, 0x8 \n\
 /* 0800d41a */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
-/* 0800d41c */ BL func_0804f0d8 \n\
+/* 0800d41c */ BL __udivsi3 \n\
 /* 0800d420 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800d422 */ LSLS R1, R1, 0x10 \n\
 /* 0800d424 */ LSRS R1, R1, 0x10 \n\

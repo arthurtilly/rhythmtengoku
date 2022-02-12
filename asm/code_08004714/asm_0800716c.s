@@ -15,7 +15,7 @@ glabel func_0800716c \n\
 /* 0800717e */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 08007180 */ LDR R7, =D_030046c0 \n\
 /* 08007182 */ LSLS R0, R0, 0x8 \n\
-/* 08007184 */ BL func_0804f0d8 \n\
+/* 08007184 */ BL __udivsi3 \n\
 /* 08007188 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0800718a */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 0800718c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

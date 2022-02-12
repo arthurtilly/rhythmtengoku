@@ -27,17 +27,17 @@ branch_0800be14: \n\
 /* 0800be1e */ LSLS R5, R5, 0x8 \n\
 /* 0800be20 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0800be22 */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
-/* 0800be24 */ BL func_0804eb28 \n\
+/* 0800be24 */ BL __divsi3 \n\
 /* 0800be28 */ STRH R0, [R6, 0x10] \n\
 /* 0800be2a */ LDRH R4, [R6, 0x8] \n\
 /* 0800be2c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0800be2e */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800be30 */ BL func_0804eb28 \n\
+/* 0800be30 */ BL __divsi3 \n\
 /* 0800be34 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0800be36 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0800be38 */ MULS R0, R5 @ Multiply R0 by R5 \n\
 /* 0800be3a */ MOVS R1, 0x96 @ Set R1 to 0x96 \n\
-/* 0800be3c */ BL func_0804f0d8 \n\
+/* 0800be3c */ BL __udivsi3 \n\
 /* 0800be40 */ STR R0, [R6, 0x14] \n\
 /* 0800be42 */ LDR R0, [R6, 0x4] \n\
 /* 0800be44 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

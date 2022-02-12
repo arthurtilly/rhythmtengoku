@@ -26,7 +26,7 @@ glabel func_0800703c \n\
 /* 08007064 */ LDR R4, =D_03000ea4 \n\
 /* 08007066 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08007068 */ LDRSH R1, [R4, R2] \n\
-/* 0800706a */ BL func_0804eb28 \n\
+/* 0800706a */ BL __divsi3 \n\
 /* 0800706e */ STRH R0, [R5] \n\
 /* 08007070 */ B branch_0800708a \n\
 \n\

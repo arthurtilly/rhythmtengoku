@@ -35,15 +35,15 @@ branch_08015352: \n\
 /* 0801536c */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
 /* 0801536e */ LSLS R0, R0, 0x8 \n\
 /* 08015370 */ MOVS R1, 0xFA @ Set R1 to 0xFA \n\
-/* 08015372 */ BL func_0804eb28 \n\
+/* 08015372 */ BL __divsi3 \n\
 /* 08015376 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08015378 */ ADDS R4, 0xB3 @ Add 0xB3 to R4 \n\
 /* 0801537a */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0801537c */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 0801537e */ BL func_0804f0d8 \n\
+/* 0801537e */ BL __udivsi3 \n\
 /* 08015382 */ ADDS R0, 0x5 @ Add 0x5 to R0 \n\
 /* 08015384 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08015386 */ BL func_0804f0d8 \n\
+/* 08015386 */ BL __udivsi3 \n\
 /* 0801538a */ MOVS R1, 0x1E @ Set R1 to 0x1E \n\
 /* 0801538c */ MOVS R2, 0x64 @ Set R2 to 0x64 \n\
 /* 0801538e */ BL func_080087d4 \n\

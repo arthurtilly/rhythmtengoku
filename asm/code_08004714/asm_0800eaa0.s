@@ -27,7 +27,7 @@ branch_0800eab8: \n\
 /* 0800eaca */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800eacc */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 0800eace */ LSLS R0, R0, 0x9 \n\
-/* 0800ead0 */ BL func_0804eb28 \n\
+/* 0800ead0 */ BL __divsi3 \n\
 /* 0800ead4 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800ead6 */ LDRB R0, [R5, 0x1] \n\
 /* 0800ead8 */ LSLS R0, R0, 0x19 \n\

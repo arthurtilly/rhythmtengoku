@@ -9,7 +9,7 @@ glabel func_08009090 \n\
 /* 08009096 */ LDR R1, =0x20f \n\
 /* 08009098 */ ADDS R0, R2, R1 @ Set R0 to R2 + R1 \n\
 /* 0800909a */ ADDS R1, 0x1 @ Add 0x1 to R1 \n\
-/* 0800909c */ BL func_0804f0d8 \n\
+/* 0800909c */ BL __udivsi3 \n\
 /* 080090a0 */ ADDS R0, R4, R0 @ Set R0 to R4 + R0 \n\
 /* 080090a2 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 080090a4 */ BCS branch_080090c2 \n\

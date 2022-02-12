@@ -44,13 +44,13 @@ branch_080152ec: \n\
 /* 080152f4 */ LSLS R0, R0, 0x8 \n\
 /* 080152f6 */ MOVS R1, 0xF0 @ Set R1 to 0xF0 \n\
 /* 080152f8 */ LSLS R1, R1, 0x1 \n\
-/* 080152fa */ BL func_0804f0d8 \n\
+/* 080152fa */ BL __udivsi3 \n\
 /* 080152fe */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08015300 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08015302 */ MULS R0, R6 @ Multiply R0 by R6 \n\
 /* 08015304 */ LSRS R0, R0, 0x8 \n\
 /* 08015306 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08015308 */ BL func_0804f0d8 \n\
+/* 08015308 */ BL __udivsi3 \n\
 /* 0801530c */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 0801530e */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 08015310 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
@@ -63,7 +63,7 @@ branch_08015316: \n\
 /* 0801531a */ BEQ branch_08015328 \n\
 /* 0801531c */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0801531e */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08015320 */ BL func_0804f0d8 \n\
+/* 08015320 */ BL __udivsi3 \n\
 /* 08015324 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08015326 */ STR R0, [R1] \n\
  \n\

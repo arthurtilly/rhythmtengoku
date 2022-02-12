@@ -49,7 +49,7 @@ glabel func_0800a4a8 \n\
 /* 0800a502 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0800a504 */ LDR R0, [SP, 0x1C] \n\
 /* 0800a506 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800a508 */ BL func_0804f0d8 \n\
+/* 0800a508 */ BL __udivsi3 \n\
 /* 0800a50c */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 0800a50e */ MULS R2, R6 @ Multiply R2 by R6 \n\
 /* 0800a510 */ MOV R10, R2 @ Set R10 to R2 \n\

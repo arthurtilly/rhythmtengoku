@@ -15,7 +15,7 @@ branch_0800c6b2: \n\
 /* 0800c6b4 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0800c6b6 */ LSLS R0, R0, 0x1 \n\
 /* 0800c6b8 */ MOVS R1, 0xC8 @ Set R1 to 0xC8 \n\
-/* 0800c6ba */ BL func_0804eb28 \n\
+/* 0800c6ba */ BL __divsi3 \n\
 /* 0800c6be */ ADDS R0, 0x6 @ Add 0x6 to R0 \n\
 /* 0800c6c0 */ BL func_0800c694 \n\
 /* 0800c6c4 */ POP {R0} \n\

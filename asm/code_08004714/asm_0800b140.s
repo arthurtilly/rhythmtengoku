@@ -33,7 +33,7 @@ glabel func_0800b140 \n\
 /* 0800b178 */ LDRSH R0, [R6, R1] \n\
 /* 0800b17a */ LDRB R5, [R6, 0x8] \n\
 /* 0800b17c */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 0800b17e */ BL func_0804ebc0 \n\
+/* 0800b17e */ BL __modsi3 \n\
 /* 0800b182 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0800b184 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0800b186 */ BGE branch_0800b18a \n\

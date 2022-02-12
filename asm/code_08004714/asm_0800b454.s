@@ -35,7 +35,7 @@ glabel func_0800b454 \n\
 /* 0800b48e */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 0800b490 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0800b492 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0800b494 */ BL func_0804ebc0 \n\
+/* 0800b494 */ BL __modsi3 \n\
 /* 0800b498 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0800b49a */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0800b49c */ BGE branch_0800b4a0 \n\

@@ -67,7 +67,7 @@ glabel func_08018f10 \n\
 /* 08018f9c */ BL func_0804d160 \n\
 /* 08018fa0 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08018fa2 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08018fa4 */ BL func_0804f0d8 \n\
+/* 08018fa4 */ BL __udivsi3 \n\
 /* 08018fa8 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08018faa */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08018fac */ LDR R4, [R1] \n\
@@ -91,7 +91,7 @@ glabel func_08018f10 \n\
 /* 08018fd2 */ BL func_0804d160 \n\
 /* 08018fd6 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08018fd8 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08018fda */ BL func_0804f0d8 \n\
+/* 08018fda */ BL __udivsi3 \n\
 /* 08018fde */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08018fe0 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 08018fe2 */ BEQ branch_0801900a \n\
@@ -116,7 +116,7 @@ glabel func_08018f10 \n\
 branch_0801900a: \n\
 /* 0801900a */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0801900c */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 0801900e */ BL func_0804f0d8 \n\
+/* 0801900e */ BL __udivsi3 \n\
 /* 08019012 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08019014 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 08019016 */ BEQ branch_0801903e \n\

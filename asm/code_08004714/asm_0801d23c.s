@@ -64,7 +64,7 @@ glabel func_0801d23c \n\
 /* 0801d2ba */ BLS branch_0801d2e0 \n\
 /* 0801d2bc */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0801d2be */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 0801d2c0 */ BL func_0804f0d8 \n\
+/* 0801d2c0 */ BL __udivsi3 \n\
 /* 0801d2c4 */ LSLS R0, R0, 0x18 \n\
 /* 0801d2c6 */ ASRS R2, R0, 0x18 \n\
 /* 0801d2c8 */ B branch_0801d2e2 \n\

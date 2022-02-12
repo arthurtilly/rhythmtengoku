@@ -14,7 +14,7 @@ glabel func_0800a1d4 \n\
 /* 0800a1e4 */ BNE branch_0800a1f0 \n\
 /* 0800a1e6 */ LSLS R0, R2, 0x1 \n\
 /* 0800a1e8 */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
-/* 0800a1ea */ BL func_0804f0d8 \n\
+/* 0800a1ea */ BL __udivsi3 \n\
 /* 0800a1ee */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
  \n\
 branch_0800a1f0: \n\

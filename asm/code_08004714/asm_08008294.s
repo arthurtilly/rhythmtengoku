@@ -23,7 +23,7 @@ branch_080082a8: \n\
 /* 080082b4 */ STRB R0, [R4] \n\
 /* 080082b6 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 080082b8 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 080082ba */ BL func_0804f0d8 \n\
+/* 080082ba */ BL __udivsi3 \n\
 /* 080082be */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 080082c0 */ ADDS R6, 0x1 @ Add 0x1 to R6 \n\
 /* 080082c2 */ CMP R6, R7 @ Check R6 - R7 \n\

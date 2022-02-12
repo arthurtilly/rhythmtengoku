@@ -14,7 +14,7 @@ glabel func_080082cc \n\
 branch_080082da: \n\
 /* 080082da */ ADDS R7, 0x1 @ Add 0x1 to R7 \n\
 /* 080082dc */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 080082de */ BL func_0804f0d8 \n\
+/* 080082de */ BL __udivsi3 \n\
 /* 080082e2 */ CMP R0, 0x9 @ Compare R0 and 0x9 \n\
 /* 080082e4 */ BHI branch_080082da \n\
  \n\
@@ -41,7 +41,7 @@ branch_080082f4: \n\
 /* 0800830a */ STRB R0, [R4, 0x1] \n\
 /* 0800830c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0800830e */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08008310 */ BL func_0804f0d8 \n\
+/* 08008310 */ BL __udivsi3 \n\
 /* 08008314 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08008316 */ ADDS R6, 0x1 @ Add 0x1 to R6 \n\
 /* 08008318 */ CMP R6, R7 @ Check R6 - R7 \n\

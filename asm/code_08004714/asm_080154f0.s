@@ -134,7 +134,7 @@ branch_08015606: \n\
 /* 0801560a */ BL func_0804cebc \n\
 /* 0801560e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08015610 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08015612 */ BL func_0804f0d8 \n\
+/* 08015612 */ BL __udivsi3 \n\
 /* 08015616 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08015618 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 0801561a */ ADD R8, R3 @ Add R3 to R8 \n\

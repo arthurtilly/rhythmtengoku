@@ -339,7 +339,7 @@ branch_08009d4e: \n\
 /* 08009d5a */ MULS R3, R0 @ Multiply R3 by R0 \n\
 /* 08009d5c */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 08009d5e */ MOV R1, R10 @ Set R1 to R10 \n\
-/* 08009d60 */ BL func_0804eb28 \n\
+/* 08009d60 */ BL __divsi3 \n\
 /* 08009d64 */ ADDS R0, R5, R0 @ Set R0 to R5 + R0 \n\
 /* 08009d66 */ STRH R0, [R4, 0xA] \n\
 /* 08009d68 */ ADDS R7, 0x14 @ Add 0x14 to R7 \n\

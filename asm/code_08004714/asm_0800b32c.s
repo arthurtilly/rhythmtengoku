@@ -19,7 +19,7 @@ glabel func_0800b32c \n\
 /* 0800b346 */ LDRB R4, [R2, 0x8] \n\
 /* 0800b348 */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 0800b34a */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800b34c */ BL func_0804ebc0 \n\
+/* 0800b34c */ BL __modsi3 \n\
 /* 0800b350 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800b352 */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 0800b354 */ BGE branch_0800b358 \n\

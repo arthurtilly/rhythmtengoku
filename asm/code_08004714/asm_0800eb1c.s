@@ -57,7 +57,7 @@ branch_0800eb58: \n\
 /* 0800eb84 */ LDRSH R2, [R5, R6] \n\
 /* 0800eb86 */ SUBS R0, R0, R2 @ Set R0 to R0 - R2 \n\
 /* 0800eb88 */ MULS R0, R3 @ Multiply R0 by R3 \n\
-/* 0800eb8a */ BL func_0804eb28 \n\
+/* 0800eb8a */ BL __divsi3 \n\
 /* 0800eb8e */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800eb90 */ LDRH R0, [R5] \n\
 /* 0800eb92 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

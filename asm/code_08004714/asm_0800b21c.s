@@ -59,7 +59,7 @@ branch_0800b274: \n\
 /* 0800b288 */ LDRSH R0, [R6, R1] \n\
 /* 0800b28a */ SUBS R0, 0x1 @ Subtract 0x1 from R0 \n\
 /* 0800b28c */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800b28e */ BL func_0804ebc0 \n\
+/* 0800b28e */ BL __modsi3 \n\
 /* 0800b292 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0800b294 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 0800b296 */ BGE branch_0800b29a \n\

@@ -17,7 +17,7 @@ glabel func_0800abb0 \n\
 /* 0800abc6 */ LDRSH R6, [R4, R0] \n\
 /* 0800abc8 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0800abca */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0800abcc */ BL func_0804ebc0 \n\
+/* 0800abcc */ BL __modsi3 \n\
 /* 0800abd0 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0800abd2 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 0800abd4 */ BGE branch_0800abd8 \n\

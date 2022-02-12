@@ -18,7 +18,7 @@ branch_0800b624: \n\
  \n\
 branch_0800b626: \n\
 /* 0800b626 */ LDR R0, [R0] \n\
-/* 0800b628 */ BL func_0804f0d8 \n\
+/* 0800b628 */ BL __udivsi3 \n\
 /* 0800b62c */ POP {R1} \n\
 /* 0800b62e */ BX R1 \n\
 \n\

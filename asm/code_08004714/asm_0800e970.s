@@ -20,7 +20,7 @@ glabel func_0800e970 \n\
 /* 0800e98e */ ADDS R4, R5, R2 @ Set R4 to R5 + R2 \n\
 /* 0800e990 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 0800e992 */ LSLS R0, R0, 0x9 \n\
-/* 0800e994 */ BL func_0804f0d8 \n\
+/* 0800e994 */ BL __udivsi3 \n\
 /* 0800e998 */ LDRH R1, [R4] \n\
 /* 0800e99a */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 0800e99c */ STRH R1, [R4] \n\

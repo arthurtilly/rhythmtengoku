@@ -49,7 +49,7 @@ branch_0800304a: \n\
 /* 0800304e */ ASRS R0, R0, 0x8 \n\
 /* 08003050 */ LSLS R1, R3, 0x10 \n\
 /* 08003052 */ ASRS R1, R1, 0x10 \n\
-/* 08003054 */ BL func_0804eb28 \n\
+/* 08003054 */ BL __divsi3 \n\
 /* 08003058 */ LSLS R0, R0, 0x1 \n\
 /* 0800305a */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0800305c */ LDRH R0, [R0] \n\

@@ -1,151 +1,120 @@
 .ifndef UNDEFINED_SYMS_HEADER
 .set func_UNDEFINED_SYMS_HEADER, 0
 
-.set D_03000098, 0x03000098 // 1360 to 13a8
-.set D_0300009c, 0x0300009c // 1360 to 13e8
-.set D_030000a0, 0x030000a0 // 13f4 to 149c
-.set D_030000a2, 0x030000a2 // 13f4 to 149c
-.set D_030000a4, 0x030000a4 // 142c to 152c
-.set D_030000a6, 0x030000a6 // 142c to 152c
-.set D_030000a8, 0x030000a8 // 1464 to 1724
-.set D_030000a9, 0x030000a9 // 15bc to 181c
-.set D_030000aa, 0x030000aa // 15bc to 1724
-.set D_030000ac, 0x030000ac // 1464 to 1724
-.set D_030000b0, 0x030000b0 // 15bc to 1724
-.set D_030000b4, 0x030000b4 // 1958 to 1980
-.set D_030000b8, 0x030000b8 // 1a28 to 1a64
-
-.set D_03000138, 0x03000138 // 20ec to 25bc
-.set D_03000238, 0x03000238 // 20ec to 2520
-.set D_03000338, 0x03000338 // 20ec to 2584
-.set D_03000340, 0x03000340 // 20ec to 25fc
-.set D_03000360, 0x03000360 // 20ec to 2584
-.set D_03000368, 0x03000368 // 2150 to 25fc
-
-.set D_030003e8, 0x030003e8 // 2f68
-
-.set D_030005c8, 0x030005c8 // 3e64
-.set D_03000748, 0x03000748 // 3f28 to 4270
-.set D_03000760, 0x03000760 // 4070 to 41d0
-.set D_030008a0, 0x030008a0 // 4070 to 41d0
-.set D_030008a2, 0x030008a2 // 4070 to 41d0
-.set D_030008a4, 0x030008a4 // 3f28 to 42a4
-.set D_030008a6, 0x030008a6 // 4070 to 41d0
-.set D_030008a8, 0x030008a8 // 4070 to 41d0
-.set D_030008aa, 0x030008aa // 41d0 to 4270
-.set D_030008ac, 0x030008ac // 4070 to 425c
-.set D_030008ad, 0x030008ad // 4070 to 425c
-
-.set D_030008b0, 0x030008b0 // 477c to 49f0
-.set D_030008b8, 0x030008b8 // 49f0 to 5014
-.set D_030008f8, 0x030008f8 // 5208 to 54f0
-// SPLIT HERE
-.set D_03000900, 0x03000900 // 5a0c to 5ce0
-.set D_03000908, 0x03000908 // 5b20 to 5e18
-// SPLIT HERE
-.set D_03000e48, 0x03000e48 // 650c
-.set D_03000e98, 0x03000e98 // 650c to 6590
-.set D_03000e9c, 0x03000e9c // 650c to 6750
-.set D_03000ea0, 0x03000ea0 // 650c to 6750
-// SPLIT HERE
-.set D_03000ea4, 0x03000ea4 // 703c to 724c
-.set D_03000ea6, 0x03000ea6 // 703c to 724c
-.set D_03000ea8, 0x03000ea8 // 703c to 724c
-
-.set D_03000eb0, 0x03000eb0 // 7b4c
-// SPLIT HERE
-.set D_030010d0, 0x030010d0 // 8594 to 85e4
-// SPLIT HERE
-.set D_030010f4, 0x030010f4 // 8f1c to 8f68
-
-.set D_030010f8, 0x030010f8 // 8f74 to 8fe0
-.set D_030010f9, 0x030010f9 // 8f74 to 8fe0
-
-.set D_030010fc, 0x030010fc // 9150 to 91c4
-.set D_03001100, 0x03001100 // 91a4 to 91c4
-
-.set D_03001104, 0x03001104 // 91d8 to 928c
-.set D_03001108, 0x03001108 // 91d8 to 928c
-.set D_0300110c, 0x0300110c // 9240 to 928c
-
-.set D_03001110, 0x03001110 // 92cc
-.set D_03001190, 0x03001190 // 931c to 93a8
-.set D_0300119c, 0x0300119c // 92cc to 931c
-.set D_0300119d, 0x0300119d // 92cc to 93b4
-
-.set D_030011a0, 0x030011a0 // 93c0 to 9508
-.set D_030011a4, 0x030011a4 // 9458 to 95c0
-.set D_030011a8, 0x030011a8 // 9458 to 9564
-.set D_030011ac, 0x030011ac // 9458 to 9564
-.set D_030011b0, 0x030011b0 // 93c0 to 9458
-// SPLIT HERE
-.set D_03001200, 0x03001200 // 96a4 to 982c
-.set D_03001201, 0x03001201 // 96e0 to 9814
-.set D_03001204, 0x03001204 // 96e0 to 97d0
-.set D_03001208, 0x03001208 // 96e0 to 97d0
-.set D_0300120c, 0x0300120c // 9674 to 96a4
-.set D_0300120e, 0x0300120e // 9674
-.set D_03001210, 0x03001210 // 96e0 to 97b4
-
-.set D_03001218, 0x03001218 // 9844 to 9af4
-.set D_0300121c, 0x0300121c // 9844 to a084
-.set D_03001220, 0x03001220 // 9844 to 9948
-.set D_030012f8, 0x030012f8 // 9de4 to a05c
-// SPLIT HERE
-.set D_030012fc, 0x030012fc // a2f8 to a4a8
-.set D_030012fd, 0x030012fd // a2f8 to a4a8
-.set D_030012fe, 0x030012fe // a2f8 to a4a8
-.set D_030012ff, 0x030012ff // a2f8 to a4a8
-.set D_03001300, 0x03001300 // a2f8 to a4a8
-// SPLIT HERE
-.set D_03001304, 0x03001304 // b564 to b60c
-.set D_03001308, 0x03001308 // b564 to b60c
-.set D_0300130c, 0x0300130c // b564 to b590
-.set D_0300130e, 0x0300130e // b564 to b590
-// SPLIT HERE
-.set D_03001310, 0x03001310 // c3b8 to c3c4
-// SPLIT HERE
-.set D_03001318, 0x03001318 // 120e4 to 12200
-.set D_03001319, 0x03001319 // 120e4 to 12200
-
-.set D_0300131c, 0x0300131c // 127fc to 12814
-
-.set D_03001320, 0x03001320 // 12850 to 1286c
-
-.set D_03001324, 0x03001324 // 13994 to 13d20
-// SPLIT HERE
-.set D_03001328, 0x03001328 // 182ac to 183c8
-
-.set D_03001330, 0x03001330 // 18e60 to 1911c
-.set D_03001334, 0x03001334 // 18e60 to 19128
-
-.set D_03001540, 0x03001540 // 191ac to 191bc
-// SPLIT HERE
-.set D_03001544, 0x03001544 // 1c1b8 to 1c510
-.set D_03001545, 0x03001545 // 1c1b8 to 1c51c
-.set D_03001546, 0x03001546 // 1c1b8 to 1c51c
-.set D_03001547, 0x03001547 // 1c1b8 to 1c530
-.set D_03001548, 0x03001548 // 1c1b8 to 1c530
-.set D_03001549, 0x03001549 // 1c1b8 to 1c530
-
-.set D_0300154c, 0x0300154c // 1c960 to 1c9b8
-// SPLIT HERE
-.set D_03001550, 0x03001550 // 1d410 to 1d4c8
-.set D_03001554, 0x03001554 // 1d410 to 1d4c8
-
-.set D_03001558, 0x03001558 // 1d6c4 to 1d6d0
-
-.set D_0300155c, 0x0300155c // 1d860 to 1d86c
-// SPLIT HERE
-.set D_03001560, 0x03001560 // 1e100 to 1e1f0
-.set D_03001561, 0x03001561 // 1e100 to 1e1f0
-
+.set D_03000098, 0x03000098
+.set D_0300009c, 0x0300009c
+.set D_030000a0, 0x030000a0
+.set D_030000a2, 0x030000a2
+.set D_030000a4, 0x030000a4
+.set D_030000a6, 0x030000a6
+.set D_030000a8, 0x030000a8
+.set D_030000a9, 0x030000a9
+.set D_030000aa, 0x030000aa
+.set D_030000ac, 0x030000ac
+.set D_030000b0, 0x030000b0
+.set D_030000b4, 0x030000b4
+.set D_030000b8, 0x030000b8
+.set D_03000138, 0x03000138
+.set D_03000238, 0x03000238
+.set D_03000338, 0x03000338
+.set D_03000340, 0x03000340
+.set D_03000360, 0x03000360
+.set D_03000368, 0x03000368
+.set D_030003e8, 0x030003e8
+.set D_030005c8, 0x030005c8
+.set D_03000748, 0x03000748
+.set D_03000760, 0x03000760
+.set D_030008a0, 0x030008a0
+.set D_030008a2, 0x030008a2
+.set D_030008a4, 0x030008a4
+.set D_030008a6, 0x030008a6
+.set D_030008a8, 0x030008a8
+.set D_030008aa, 0x030008aa
+.set D_030008ac, 0x030008ac
+.set D_030008ad, 0x030008ad
+.set D_030008b0, 0x030008b0
+.set D_030008b8, 0x030008b8
+.set D_030008f8, 0x030008f8
+.set D_03000900, 0x03000900
+.set D_03000908, 0x03000908
+.set D_03000e48, 0x03000e48
+.set D_03000e98, 0x03000e98
+.set D_03000e9c, 0x03000e9c
+.set D_03000ea0, 0x03000ea0
+.set D_03000ea4, 0x03000ea4
+.set D_03000ea6, 0x03000ea6
+.set D_03000ea8, 0x03000ea8
+.set D_03000eb0, 0x03000eb0
+.set D_030010d0, 0x030010d0
+.set D_030010f4, 0x030010f4
+.set D_030010f8, 0x030010f8
+.set D_030010f9, 0x030010f9
+.set D_030010fc, 0x030010fc
+.set D_03001100, 0x03001100
+.set D_03001104, 0x03001104
+.set D_03001108, 0x03001108
+.set D_0300110c, 0x0300110c
+.set D_03001110, 0x03001110
+.set D_03001190, 0x03001190
+.set D_0300119c, 0x0300119c
+.set D_0300119d, 0x0300119d
+.set D_030011a0, 0x030011a0
+.set D_030011a4, 0x030011a4
+.set D_030011a8, 0x030011a8
+.set D_030011ac, 0x030011ac
+.set D_030011b0, 0x030011b0
+.set D_03001200, 0x03001200
+.set D_03001201, 0x03001201
+.set D_03001204, 0x03001204
+.set D_03001208, 0x03001208
+.set D_0300120c, 0x0300120c
+.set D_0300120e, 0x0300120e
+.set D_03001210, 0x03001210
+.set D_03001218, 0x03001218
+.set D_0300121c, 0x0300121c
+.set D_03001220, 0x03001220
+.set D_030012f8, 0x030012f8
+.set D_030012fc, 0x030012fc
+.set D_030012fd, 0x030012fd
+.set D_030012fe, 0x030012fe
+.set D_030012ff, 0x030012ff
+.set D_03001300, 0x03001300
+.set D_03001304, 0x03001304
+.set D_03001308, 0x03001308
+.set D_0300130c, 0x0300130c
+.set D_0300130e, 0x0300130e
+.set D_03001310, 0x03001310
+.set D_03001318, 0x03001318
+.set D_03001319, 0x03001319
+.set D_0300131c, 0x0300131c
+.set D_03001320, 0x03001320
+.set D_03001324, 0x03001324
+.set D_03001328, 0x03001328
+.set D_03001330, 0x03001330
+.set D_03001334, 0x03001334
+.set D_03001540, 0x03001540
+.set D_03001544, 0x03001544
+.set D_03001545, 0x03001545
+.set D_03001546, 0x03001546
+.set D_03001547, 0x03001547
+.set D_03001548, 0x03001548
+.set D_03001549, 0x03001549
+.set D_0300154c, 0x0300154c
+.set D_03001550, 0x03001550
+.set D_03001554, 0x03001554
+.set D_03001558, 0x03001558
+.set D_0300155c, 0x0300155c
+.set D_03001560, 0x03001560
+.set D_03001561, 0x03001561
+.set D_03001564, 0x03001564
+.set D_03001568, 0x03001568
 .set D_03004460, 0x03004460
 .set D_03004498, 0x03004498
 .set interrupt_handler_intern, 0x030044a0
 .set D_030046a0, 0x030046a0
 .set D_030046a4, 0x030046a4
 .set D_030046a8, 0x030046a8
+.set Save, 0x030046a8
 .set D_030046b0, 0x030046b0
 .set D_030046b4, 0x030046b4
 .set D_030046b8, 0x030046b8
@@ -164,12 +133,14 @@
 .set D_03004b14, 0x03004b14
 .set D_03004b1c, 0x03004b1c
 .set D_03004b20, 0x03004b20
+.set D_03004b22, 0x03004b22
 .set D_03004b28, 0x03004b28
 .set D_03004b2c, 0x03004b2c
 .set D_03004b4c, 0x03004b4c
 .set D_03004b50, 0x03004b50
 .set D_03004b64, 0x03004b64
 .set D_03004b74, 0x03004b74
+.set D_03004be4, 0x03004be4
 .set D_03004ce4, 0x03004ce4
 .set D_03004d64, 0x03004d64
 .set D_03004d66, 0x03004d66
@@ -207,11 +178,13 @@
 
 .set D_06000000, 0x06000000
 .set D_06000400, 0x06000400
+.set D_06008000, 0x06008000
 .set D_0600a000, 0x0600a000
 .set D_0600c000, 0x0600c000
 .set D_0600e000, 0x0600e000
 .set D_0600e800, 0x0600e800
 .set D_0600f000, 0x0600f000
+.set D_0600f800, 0x0600f800
 
 .set D_06010000, 0x06010000
 .set D_06010400, 0x06010400
@@ -229,11 +202,10 @@
 .set D_08001240, 0x08001240
 .set D_080012bc, 0x080012bc
 
-.set func_08026b18, 0x08026b18
-.set func_080281c4, 0x080281c4
-.set func_08029cac, 0x08029cac
-.set func_0802a9b4, 0x0802a9b4
-.set func_0802ab34, 0x0802ab34
+.set func_0802327c, 0x0802327c
+.set func_0802ce28, 0x0802ce28
+.set func_0802ce70, 0x0802ce70
+.set func_0802dc54, 0x0802dc54
 
 .set func_08049144, 0x08049144
 .set func_08049b70, 0x08049b70
@@ -286,11 +258,13 @@
 .set func_0804d890, 0x0804d890
 .set func_0804d8c4, 0x0804d8c4
 .set func_0804d8f8, 0x0804d8f8
+.set func_0804d9b0, 0x0804d9b0
 .set func_0804da20, 0x0804da20
 .set func_0804da68, 0x0804da68
 .set func_0804daa8, 0x0804daa8
 .set func_0804dae0, 0x0804dae0
 .set func_0804db44, 0x0804db44
+.set func_0804db90, 0x0804db90
 .set func_0804dc10, 0x0804dc10
 .set func_0804dc8c, 0x0804dc8c
 .set func_0804dcb8, 0x0804dcb8
@@ -303,6 +277,7 @@
 .set func_0804e0f0, 0x0804e0f0
 .set func_0804e158, 0x0804e158
 .set func_0804e170, 0x0804e170
+.set func_0804e188, 0x0804e188
 .set func_0804e1bc, 0x0804e1bc
 .set func_0804e1c8, 0x0804e1c8
 .set func_0804e598, 0x0804e598
@@ -312,14 +287,20 @@
 .set func_0804e870, 0x0804e870
 .set func_0804e8f8, 0x0804e8f8
 .set func_0804e914, 0x0804e914
-.set func_0804eb28, 0x0804eb28
-.set func_0804ebc0, 0x0804ebc0
-.set func_0804f0d8, 0x0804f0d8
+.set func_0804eaec, 0x0804eaec
+.set func_0804eaf0, 0x0804eaf0
+.set func_0804eaf4, 0x0804eaf4
+.set func_0804eaf8, 0x0804eaf8
+.set __divsi3, 0x0804eb28
+.set __div0, 0x0804ebbc
+.set __modsi3, 0x0804ebc0
+.set __udivsi3, 0x0804f0d8
 .set func_0804f150, 0x0804f150
 .set func_0804f210, 0x0804f210
 .set func_0804f270, 0x0804f270
 .set func_0804f2bc, 0x0804f2bc
 
+// Todo: set labels in the data_XXXXXXXX stuff for this
 .set D_08058f58, 0x08058f58
 .set D_08059330, 0x08059330
 .set D_08059334, 0x08059334
@@ -333,6 +314,227 @@
 .set D_08059680, 0x08059680
 .set D_08059684, 0x08059684
 .set D_08059f8c, 0x08059f8c
+.set D_08059f90, 0x08059f90
+.set D_08059f94, 0x08059f94
+.set D_08059f98, 0x08059f98
+.set D_08059f9c, 0x08059f9c
+.set D_08059fb4, 0x08059fb4
+.set D_08059fd0, 0x08059fd0
+.set D_08059fe8, 0x08059fe8
+.set D_0805a004, 0x0805a004
+.set D_0805a020, 0x0805a020
+.set D_0805a038, 0x0805a038
+.set D_0805a048, 0x0805a048
+.set D_0805a058, 0x0805a058
+.set D_0805a06c, 0x0805a06c
+.set D_0805a0c0, 0x0805a0c0
+.set D_0805a0c8, 0x0805a0c8
+.set D_0805a0cc, 0x0805a0cc
+.set D_0805a3a0, 0x0805a3a0
+.set D_0805a3cc, 0x0805a3cc
+
+.set D_088a0ca0, 0x088a0ca0
+.set D_088a0cd0, 0x088a0cd0
+.set D_088a0cf8, 0x088a0cf8
+.set D_088a0d80, 0x088a0d80
+.set D_088a0df0, 0x088a0df0
+.set D_088a0e80, 0x088a0e80
+.set D_088a0f28, 0x088a0f28
+.set D_088a0f58, 0x088a0f58
+.set D_088a0fb8, 0x088a0fb8
+.set D_088a0fd8, 0x088a0fd8
+.set D_088a1000, 0x088a1000
+.set D_088a1010, 0x088a1010
+.set D_088a11a8, 0x088a11a8
+.set D_088a1280, 0x088a1280
+.set D_088a1158, 0x088a1158
+.set D_088a11b8, 0x088a11b8
+.set D_088a1258, 0x088a1258
+.set D_088a1a70, 0x088a1a70
+.set D_088a1ad0, 0x088a1ad0
+.set D_088a1b70, 0x088a1b70
+.set D_088a1b90, 0x088a1b90
+.set D_088a1ba0, 0x088a1ba0
+.set D_088a1bd0, 0x088a1bd0
+.set D_088acc2c, 0x088acc2c
+.set D_088acc3c, 0x088acc3c
+.set D_088acc6c, 0x088acc6c
+.set D_088acc94, 0x088acc94
+.set D_088accdc, 0x088accdc
+.set D_088accfc, 0x088accfc
+.set D_088acd1c, 0x088acd1c
+.set D_088acd54, 0x088acd54
+.set D_088acd94, 0x088acd94
+.set D_088acdb4, 0x088acdb4
+.set D_088acdd4, 0x088acdd4
+.set D_088acdf4, 0x088acdf4
+.set D_088ace14, 0x088ace14
+.set D_088acf04, 0x088acf04
+.set D_088acf2c, 0x088acf2c
+.set D_088acf44, 0x088acf44
+.set D_088acf54, 0x088acf54
+.set D_088acf7c, 0x088acf7c
+.set D_088acfc4, 0x088acfc4
+.set D_088ad0c4, 0x088ad0c4
+
+.set D_088ba10c, 0x088ba10c
+.set D_088ba134, 0x088ba134
+.set D_088ba15c, 0x088ba15c
+.set D_088ba184, 0x088ba184
+.set D_088ba1b4, 0x088ba1b4
+.set D_088ba1e4, 0x088ba1e4
+.set D_088ba244, 0x088ba244
+.set D_088ba2b4, 0x088ba2b4
+.set D_088ba2d4, 0x088ba2d4
+.set D_088ba2f4, 0x088ba2f4
+.set D_088ba30c, 0x088ba30c
+.set D_088ba364, 0x088ba364
+.set D_088ba3e4, 0x088ba3e4
+.set D_088ba4e4, 0x088ba4e4
+
+.set D_088ba5a4, 0x088ba5a4
+.set D_088ba5b4, 0x088ba5b4
+.set D_088ba5c4, 0x088ba5c4 
+
+.set D_088c29f0, 0x088c29f0
+.set D_088c2a48, 0x088c2a48
+.set D_088c2aa0, 0x088c2aa0
+.set D_088c2b60, 0x088c2b60
+.set D_088c2bc0, 0x088c2bc0
+.set D_088c2d30, 0x088c2d30
+.set D_088c2da0, 0x088c2da0
+.set D_088c2dc0, 0x088c2dc0
+.set D_088c2de0, 0x088c2de0
+.set D_088c2c20, 0x088c2c20
+.set D_088c2c40, 0x088c2c40
+.set D_088c2c60, 0x088c2c60
+.set D_088c2c80, 0x088c2c80
+.set D_088c2ca0, 0x088c2ca0
+.set D_088c2cc0, 0x088c2cc0
+.set D_088c2e00, 0x088c2e00
+.set D_088c2e20, 0x088c2e20
+.set D_088c2e40, 0x088c2e40
+.set D_088c2e50, 0x088c2e50
+.set D_088c2f40, 0x088c2f40
+.set D_088c2f58, 0x088c2f58
+.set D_088c3d2c, 0x088c3d2c
+.set D_088c3d84, 0x088c3d84
+.set D_088c3ddc, 0x088c3ddc
+.set D_088c3e3c, 0x088c3e3c
+.set D_088c3e9c, 0x088c3e9c
+.set D_088c3efc, 0x088c3efc
+.set D_088c3f5c, 0x088c3f5c
+.set D_088c3f7c, 0x088c3f7c
+.set D_088c3f9c, 0x088c3f9c
+.set D_088c3fbc, 0x088c3fbc
+.set D_088c3fdc, 0x088c3fdc
+.set D_088c3ffc, 0x088c3ffc
+.set D_088c406c, 0x088c406c
+.set D_088c40dc, 0x088c40dc
+.set D_088c40fc, 0x088c40fc
+.set D_088c411c, 0x088c411c
+.set D_088c413c, 0x088c413c
+.set D_088c415c, 0x088c415c
+.set D_088c417c, 0x088c417c
+.set D_088c418c, 0x088c418c
+.set D_088c5da0, 0x088c5da0
+.set D_088c5dc0, 0x088c5dc0
+.set D_088c5de0, 0x088c5de0
+.set D_088c5e08, 0x088c5e08
+.set D_088c5e78, 0x088c5e78
+.set D_088c5e98, 0x088c5e98
+.set D_088c5f08, 0x088c5f08
+.set D_088c5f40, 0x088c5f40
+.set D_088c5f60, 0x088c5f60
+.set D_088c5fb0, 0x088c5fb0
+.set D_088c6000, 0x088c6000
+.set D_088c6058, 0x088c6058
+.set D_088c60a8, 0x088c60a8
+.set D_088c6100, 0x088c6100
+.set D_088c6150, 0x088c6150
+.set D_088c6170, 0x088c6170
+.set D_088c6190, 0x088c6190
+.set D_088c61d8, 0x088c61d8
+.set D_088c61c0, 0x088c61c0
+.set D_088c61f0, 0x088c61f0
+.set D_088c6210, 0x088c6210
+.set D_088c62d0, 0x088c62d0
+.set D_088c62f0, 0x088c62f0
+.set D_088c6328, 0x088c6328
+.set D_088c6378, 0x088c6378
+.set D_088c63f0, 0x088c63f0
+.set D_088c64f8, 0x088c64f8
+.set D_088c6520, 0x088c6520
+.set D_088c6548, 0x088c6548
+.set D_088c7f88, 0x088c7f88
+.set D_088c7fa8, 0x088c7fa8
+.set D_088c7fd8, 0x088c7fd8
+.set D_088c8008, 0x088c8008
+.set D_088c8028, 0x088c8028
+.set D_088c8048, 0x088c8048
+.set D_088c8070, 0x088c8070
+.set D_088c80b0, 0x088c80b0
+.set D_088c80f0, 0x088c80f0
+.set D_088c8148, 0x088c8148
+.set D_088c81b0, 0x088c81b0
+.set D_088c81f8, 0x088c81f8
+.set D_088c8250, 0x088c8250
+.set D_088c8298, 0x088c8298
+.set D_088c82f8, 0x088c82f8
+.set D_088c8318, 0x088c8318
+.set D_088c8338, 0x088c8338
+.set D_088c8358, 0x088c8358
+.set D_088c8378, 0x088c8378
+.set D_088c8388, 0x088c8388
+.set D_088c8490, 0x088c8490
+.set D_088c84b0, 0x088c84b0
+.set D_088c87a0, 0x088c87a0
+.set D_088c88e0, 0x088c88e0
+.set D_088c9a98, 0x088c9a98
+.set D_088c9ab8, 0x088c9ab8
+.set D_088c9b08, 0x088c9b08
+.set D_088c9b98, 0x088c9b98
+.set D_088c9d10, 0x088c9d10
+.set D_088c9d58, 0x088c9d58
+.set D_088c9d88, 0x088c9d88
+.set D_088c9dc0, 0x088c9dc0
+.set D_088c9dd0, 0x088c9dd0
+.set D_088c9de0, 0x088c9de0
+.set D_088c9ec8, 0x088c9ec8
+.set D_088c9f58, 0x088c9f58
+.set D_088c9f90, 0x088c9f90
+.set D_088ca0d8, 0x088ca0d8
+.set D_088ca120, 0x088ca120
+.set D_088ca140, 0x088ca140
+.set D_088ca158, 0x088ca158
+.set D_088cb47c, 0x088cb47c
+.set D_088cb4a4, 0x088cb4a4
+.set D_088cb4f4, 0x088cb4f4
+.set D_088cb55c, 0x088cb55c
+.set D_088cb5b4, 0x088cb5b4
+.set D_088cb704, 0x088cb704
+.set D_088cb774, 0x088cb774
+.set D_088cb87c, 0x088cb87c
+.set D_088cb89c, 0x088cb89c
+.set D_088cb8bc, 0x088cb8bc
+.set D_088cb8e4, 0x088cb8e4
+.set D_088cb904, 0x088cb904
+.set D_088cb994, 0x088cb994
+.set D_088cb9fc, 0x088cb9fc
+.set D_088cbe00, 0x088cbe00
+
+.set D_088eba24, 0x088eba24
+.set D_088eba34, 0x088eba34
+.set D_088eba7c, 0x088eba7c
+.set D_088eba8c, 0x088eba8c
+.set D_088ebacc, 0x088ebacc
+.set D_088ebadc, 0x088ebadc
+.set D_088ebb3c, 0x088ebb3c
+.set D_088ebb4c, 0x088ebb4c
+.set D_088ebb84, 0x088ebb84
+.set D_088ebb94, 0x088ebb94
+.set D_088ebba4, 0x088ebba4
+.set D_088ebbb4, 0x088ebbb4
 
 .set D_088f5aec, 0x088f5aec
 .set D_088f5afc, 0x088f5afc
@@ -458,6 +660,15 @@
 .set D_0890dad8, 0x0890dad8
 .set D_0890db38, 0x0890db38
 .set D_0890db98, 0x0890db98
+
+.set D_08914818, 0x08914818
+.set D_08914870, 0x08914870
+.set D_089148c8, 0x089148c8
+.set D_08914920, 0x08914920
+.set D_08914978, 0x08914978
+.set D_08914998, 0x08914998
+.set D_089149f8, 0x089149f8
+.set D_08914a58, 0x08914a58
 
 .set D_08932444, 0x08932444
 .set D_0893253c, 0x0893253c
@@ -644,9 +855,144 @@
 .set D_089ddbcc, 0x089ddbcc
 .set D_089ddbe8, 0x089ddbe8
 .set D_089ddf60, 0x089ddf60
+.set D_089ddfac, 0x089ddfac
+.set D_089ddfb0, 0x089ddfb0
+.set D_089ddfbc, 0x089ddfbc
+.set D_089de078, 0x089de078
+.set D_089de07c, 0x089de07c
+.set D_089de088, 0x089de088
+.set D_089de0e4, 0x089de0e4
+.set D_089de0e8, 0x089de0e8
+.set D_089de130, 0x089de130
+.set D_089de240, 0x089de240
+.set D_089de244, 0x089de244
+.set D_089de250, 0x089de250
 .set D_089de5c8, 0x089de5c8
 .set D_089de670, 0x089de670
+.set D_089de6e0, 0x089de6e0
+.set D_089de7a4, 0x089de7a4
+.set D_089de940, 0x089de940
+.set D_089de988, 0x089de988
+.set D_089de994, 0x089de994
+.set D_089de9a0, 0x089de9a0
+.set D_089dec38, 0x089dec38
+.set D_089dece0, 0x089dece0
+.set D_089ded00, 0x089ded00
+.set D_089ded10, 0x089ded10
+.set D_089deec4, 0x089deec4
+.set D_089deecc, 0x089deecc
+.set D_089deed4, 0x089deed4
+.set D_089deedc, 0x089deedc
 
+.set D_089df064, 0x089df064
+.set D_089df1ac, 0x089df1ac
+.set D_089df1bc, 0x089df1bc
+.set D_089df37c, 0x089df37c
+.set D_089df37e, 0x089df37e
+.set D_089df384, 0x089df384
+.set D_089df3b0, 0x089df3b0
+.set D_089df3a4, 0x089df3a4
+.set D_089df3ac, 0x089df3ac
+.set D_089df404, 0x089df404
+.set D_089df618, 0x089df618
+.set D_089df61c, 0x089df61c
+.set D_089df628, 0x089df628
+.set D_089dfe54, 0x089dfe54
+.set D_089dfe94, 0x089dfe94
+
+.set D_089e0014, 0x089e0014
+.set D_089e0024, 0x089e0024
+.set D_089e0154, 0x089e0154
+.set D_089e0164, 0x089e0164
+.set D_089e0170, 0x089e0170
+.set D_089e01c4, 0x089e01c4
+.set D_089e01b0, 0x089e01b0
+.set D_089e01b8, 0x089e01b8
+.set D_089e0398, 0x089e0398
+.set D_089e05f0, 0x089e05f0
+.set D_089e0698, 0x089e0698
+.set D_089e06a4, 0x089e06a4
+.set D_089e06c0, 0x089e06c0
+.set D_089e06b0, 0x089e06b0
+.set D_089e0758, 0x089e0758
+.set D_089e0978, 0x089e0978
+.set D_089e0980, 0x089e0980
+.set D_089e0aa4, 0x089e0aa4
+.set D_089e0ab0, 0x089e0ab0
+.set D_089e0ad4, 0x089e0ad4
+.set D_089e0ad6, 0x089e0ad6
+.set D_089e0ad8, 0x089e0ad8
+.set D_089e0ada, 0x089e0ada
+.set D_089e0adc, 0x089e0adc
+.set D_089e0ade, 0x089e0ade
+.set D_089e0ae0, 0x089e0ae0
+.set D_089e0ae2, 0x089e0ae2
+.set D_089e0ae4, 0x089e0ae4
+.set D_089e0ce0, 0x089e0ce0
+.set D_089e16b0, 0x089e16b0
+.set D_089e16f0, 0x089e16f0 
+.set D_089e172c, 0x089e172c
+.set D_089e1748, 0x089e1748
+.set D_089e1764, 0x089e1764
+.set D_089e1778, 0x089e1778
+.set D_089e17a0, 0x089e17a0
+.set D_089e178c, 0x089e178c
+.set D_089e2988, 0x089e2988
+.set D_089e29c8, 0x089e29c8
+.set D_089e2a04, 0x089e2a04
+.set D_089e2a08, 0x089e2a08
+.set D_089e2a50, 0x089e2a50
+.set D_089e2ad4, 0x089e2ad4
+.set D_089e2b04, 0x089e2b04
+.set D_089e2b58, 0x089e2b58
+.set D_089e2b78, 0x089e2b78
+.set D_089e2b98, 0x089e2b98
+.set D_089e2ba8, 0x089e2ba8
+.set D_089e2ed4, 0x089e2ed4
+.set D_089e2ee8, 0x089e2ee8
+.set D_089e2ef8, 0x089e2ef8
+.set D_089e2f00, 0x089e2f00
+.set D_089e3380, 0x089e3380
+.set D_089e3384, 0x089e3384
+.set D_089e33dc, 0x089e33dc
+.set D_089e33ec, 0x089e33ec
+.set D_089e3410, 0x089e3410
+.set D_089e342c, 0x089e342c
+.set D_089e3444, 0x089e3444
+.set D_089e3478, 0x089e3478
+.set D_089e349c, 0x089e349c
+.set D_089e3528, 0x089e3528
+.set D_089e3538, 0x089e3538
+.set D_089e35a8, 0x089e35a8
+.set D_089e3610, 0x089e3610
+.set D_089e3620, 0x089e3620
+.set D_089e3634, 0x089e3634
+.set D_089e3648, 0x089e3648
+.set D_089e37e4, 0x089e37e4
+.set D_089e384c, 0x089e384c
+.set D_089e3910, 0x089e3910
+.set D_089e3ac4, 0x089e3ac4
+.set D_089e3ad8, 0x089e3ad8
+.set D_089e3aec, 0x089e3aec
+.set D_089e3b00, 0x089e3b00
+.set D_089e3b14, 0x089e3b14
+.set D_089e5ec0, 0x089e5ec0
+
+.set D_08a59c58, 0x08a59c58
+.set D_08a59c64, 0x08a59c64
+.set D_08a59c70, 0x08a59c70
+.set D_08a59c7c, 0x08a59c7c
+.set D_08a59c88, 0x08a59c88
+.set D_08a59c94, 0x08a59c94
+.set D_08a59ca0, 0x08a59ca0
+.set D_08a59cac, 0x08a59cac
+.set D_08a59cc4, 0x08a59cc4
+.set D_08a59cd0, 0x08a59cd0
+.set D_08a59cdc, 0x08a59cdc
+.set D_08a59ce8, 0x08a59ce8
+.set D_08a59cf4, 0x08a59cf4
+
+// Todo: That is MidiData stuff. Use labels from midi_data.c and not the D_XXXXXXXX
 .set D_08a9b078, 0x08a9b078
 .set D_08a9b1f4, 0x08a9b1f4
 .set D_08a9b44c, 0x08a9b44c
@@ -658,7 +1004,31 @@
 .set D_08a9b884, 0x08a9b884
 .set D_08a9b898, 0x08a9b898
 .set D_08a9b8ac, 0x08a9b8ac
+.set D_08a9b8c0, 0x08a9b8c0
+.set D_08a9b8d4, 0x08a9b8d4
+.set D_08a9b8fc, 0x08a9b8fc
+.set D_08a9b924, 0x08a9b924
+.set D_08a9ba28, 0x08a9ba28
+.set D_08a9ba3c, 0x08a9ba3c
+.set D_08a9bb68, 0x08a9bb68
+.set D_08a9c1e4, 0x08a9c1e4
 .set D_08a9c374, 0x08a9c374
+.set D_08a9c450, 0x08a9c450
+.set D_08a9c464, 0x08a9c464
+.set D_08a9c478, 0x08a9c478
+.set D_08a9c48c, 0x08a9c48c
+.set D_08a9c4a0, 0x08a9c4a0
+.set D_08a9c4b4, 0x08a9c4b4
+.set D_08a9c4c8, 0x08a9c4c8
+.set D_08a9d170, 0x08a9d170
+.set D_08a9d1ac, 0x08a9d1ac
+.set D_08a9d1e8, 0x08a9d1e8
+.set D_08a9d24c, 0x08a9d24c
+.set D_08a9d490, 0x08a9d490
+.set D_08a9d580, 0x08a9d580
+.set D_08a9d9a4, 0x08a9d9a4
+.set D_08a9d9b8, 0x08a9d9b8
+.set D_08a9d9cc, 0x08a9d9cc
 .set D_08a9d378, 0x08a9d378
 .set D_08a9d38c, 0x08a9d38c
 .set D_08a9d774, 0x08a9d774
@@ -680,11 +1050,73 @@
 .set D_08a9dc4c, 0x08a9dc4c
 .set D_08a9dc60, 0x08a9dc60
 .set D_08a9dc74, 0x08a9dc74
+.set D_08a9e084, 0x08a9e084
+.set D_08a9e14c, 0x08a9e14c
+.set D_08a9e160, 0x08a9e160
+.set D_08a9e188, 0x08a9e188
+.set D_08a9e19c, 0x08a9e19c
+.set D_08a9e1b0, 0x08a9e1b0
+.set D_08a9e1c4, 0x08a9e1c4
+.set D_08a9e1d8, 0x08a9e1d8
+.set D_08a9e1ec, 0x08a9e1ec
+.set D_08a9e4d0, 0x08a9e4d0
+.set D_08a9e534, 0x08a9e534
+.set D_08a9e548, 0x08a9e548
+.set D_08a9e64c, 0x08a9e64c
+.set D_08a9e778, 0x08a9e778
+.set D_08a9e78c, 0x08a9e78c
+.set D_08a9e7a0, 0x08a9e7a0
 
 .set D_08aa06f8, 0x08aa06f8
 .set D_08aa4324, 0x08aa4324
 .set D_08aa445c, 0x08aa445c
 .set D_08aa4460, 0x08aa4460
+
+.set D_08c703a8, 0x08c703a8
+.set D_08c70490, 0x08c70490
+.set D_08c704e8, 0x08c704e8
+.set D_08c70580, 0x08c70580
+.set D_08c7069c, 0x08c7069c
+.set D_08c709a8, 0x08c709a8
+.set D_08c70b4c, 0x08c70b4c
+.set D_08c710e8, 0x08c710e8
+.set D_08c71340, 0x08c71340
+.set D_08c71658, 0x08c71658
+.set D_08c71908, 0x08c71908
+.set D_08c71b6c, 0x08c71b6c
+.set D_08c71c8c, 0x08c71c8c
+.set D_08c71e64, 0x08c71e64
+.set D_08c71ed4, 0x08c71ed4
+.set D_08c720a0, 0x08c720a0
+.set D_08c72400, 0x08c72400
+.set D_08c72518, 0x08c72518
+.set D_08c72634, 0x08c72634
+.set D_08c72e4c, 0x08c72e4c
+.set D_08c7346c, 0x08c7346c
+.set D_08c73544, 0x08c73544
+.set D_08c73618, 0x08c73618
+.set D_08c737a4, 0x08c737a4
+.set D_08c73978, 0x08c73978
+.set D_08c73b6c, 0x08c73b6c
+.set D_08c73cf8, 0x08c73cf8
+.set D_08c73ea4, 0x08c73ea4
+.set D_08c7408c, 0x08c7408c
+.set D_08c74210, 0x08c74210
+.set D_08c74404, 0x08c74404
+.set D_08c745e0, 0x08c745e0
+.set D_08c74754, 0x08c74754
+.set D_08c749d4, 0x08c749d4
+.set D_08c74bb0, 0x08c74bb0
+.set D_08c74ef8, 0x08c74ef8
+.set D_08c75100, 0x08c75100
+.set D_08c7534c, 0x08c7534c
+.set D_08c75478, 0x08c75478
+.set D_08c756bc, 0x08c756bc
+.set D_08c758bc, 0x08c758bc
+.set D_08c759cc, 0x08c759cc
+.set D_08c75ad0, 0x08c75ad0
+.set D_08c762e8, 0x08c762e8
+.set D_08c76300, 0x08c76300
 
 .set D_08c89a70, 0x08c89a70
 .set D_08c89ba4, 0x08c89ba4
@@ -866,6 +1298,20 @@
 
 .set D_08cd29ac, 0x08cd29ac
 .set D_08cd2cec, 0x08cd2cec
+
+.set D_08d0af74, 0x08d0af74
+.set D_08d0bfc8, 0x08d0bfc8
+.set D_08d0c580, 0x08d0c580
+.set D_08d0ef74, 0x08d0ef74
+
+.set D_08d10b60, 0x08d10b60
+.set D_08d11ef4, 0x08d11ef4
+.set D_08d16648, 0x08d16648
+.set D_08d16998, 0x08d16998
+.set D_08d16c34, 0x08d16c34
+.set D_08d17048, 0x08d17048
+.set D_08d1737c, 0x08d1737c
+.set D_08d17708, 0x08d17708
 
 .set D_0e000001, 0x0e000001
 .set D_0e000002, 0x0e000002

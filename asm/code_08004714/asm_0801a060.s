@@ -23,7 +23,7 @@ glabel func_0801a060 \n\
 /* 0801a084 */ SUBS R0, R4, R0 @ Set R0 to R4 - R0 \n\
 /* 0801a086 */ LSLS R0, R0, 0x1 \n\
 /* 0801a088 */ MOVS R1, 0x64 @ Set R1 to 0x64 \n\
-/* 0801a08a */ BL func_0804eb28 \n\
+/* 0801a08a */ BL __divsi3 \n\
 /* 0801a08e */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801a090 */ LDR R0, [R6] \n\
 /* 0801a092 */ ADDS R0, 0x74 @ Add 0x74 to R0 \n\
@@ -71,7 +71,7 @@ branch_0801a0d8: \n\
 /* 0801a0dc */ LSLS R0, R0, 0x2 \n\
 /* 0801a0de */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0801a0e0 */ LSLS R0, R0, 0x3 \n\
-/* 0801a0e2 */ BL func_0804f0d8 \n\
+/* 0801a0e2 */ BL __udivsi3 \n\
  \n\
 branch_0801a0e6: \n\
 /* 0801a0e6 */ POP {R4-R6} \n\

@@ -10,7 +10,7 @@ glabel func_0800936c \n\
 /* 08009374 */ LDRSH R0, [R0, R1] \n\
 /* 08009376 */ LSLS R0, R0, 0x8 \n\
 /* 08009378 */ MOVS R1, 0x31 @ Set R1 to 0x31 \n\
-/* 0800937a */ BL func_0804eb28 \n\
+/* 0800937a */ BL __divsi3 \n\
 /* 0800937e */ LDR R1, [R4] \n\
 /* 08009380 */ MULS R0, R1 @ Multiply R0 by R1 \n\
 /* 08009382 */ ASRS R0, R0, 0xC \n\

@@ -15,7 +15,7 @@ glabel func_08001a64 \n\
 /* 08001a76 */ LSLS R1, R1, 0x17 \n\
 /* 08001a78 */ LSRS R1, R1, 0x18 \n\
 /* 08001a7a */ LSLS R0, R0, 0x8 \n\
-/* 08001a7c */ BL func_0804eb28 \n\
+/* 08001a7c */ BL __divsi3 \n\
 /* 08001a80 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08001a82 */ LDRH R0, [R4, 0x2] \n\
 /* 08001a84 */ LSLS R0, R0, 0x17 \n\

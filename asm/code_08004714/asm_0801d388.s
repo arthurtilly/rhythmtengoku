@@ -31,7 +31,7 @@ glabel func_0801d388 \n\
 /* 0801d3be */ BLS branch_0801d3d8 \n\
 /* 0801d3c0 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0801d3c2 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 0801d3c4 */ BL func_0804f0d8 \n\
+/* 0801d3c4 */ BL __udivsi3 \n\
 /* 0801d3c8 */ LSLS R0, R0, 0x18 \n\
 /* 0801d3ca */ ASRS R2, R0, 0x18 \n\
 /* 0801d3cc */ B branch_0801d3da \n\

@@ -36,7 +36,7 @@ branch_0800826e: \n\
 /* 0800827a */ STRB R0, [R5] \n\
 /* 0800827c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0800827e */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08008280 */ BL func_0804f0d8 \n\
+/* 08008280 */ BL __udivsi3 \n\
 /* 08008284 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08008286 */ ADDS R6, 0x1 @ Add 0x1 to R6 \n\
 /* 08008288 */ CMP R6, R7 @ Check R6 - R7 \n\

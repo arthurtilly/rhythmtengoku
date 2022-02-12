@@ -38,14 +38,14 @@ glabel func_080033a0 \n\
 /* 080033e0 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 080033e2 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 080033e4 */ MOV R1, R9 @ Set R1 to R9 \n\
-/* 080033e6 */ BL func_0804ebc0 \n\
+/* 080033e6 */ BL __modsi3 \n\
 /* 080033ea */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 080033ec */ STR R4, [SP, 0x28] \n\
 /* 080033ee */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 080033f0 */ LDRB R5, [R1, 0x15] \n\
 /* 080033f2 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 080033f4 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 080033f6 */ BL func_0804ebc0 \n\
+/* 080033f6 */ BL __modsi3 \n\
 /* 080033fa */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080033fc */ ADDS R3, R1, 0x0 @ Set R3 to R1 + 0x0 \n\
 /* 080033fe */ MOV R2, R8 @ Set R2 to R8 \n\

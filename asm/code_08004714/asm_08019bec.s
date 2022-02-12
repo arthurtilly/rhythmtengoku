@@ -208,7 +208,7 @@ branch_08019d72: \n\
 /* 08019d72 */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 08019d74 */ LSLS R0, R1, 0x8 \n\
 /* 08019d76 */ LDR R1, [SP, 0x14] \n\
-/* 08019d78 */ BL func_0804f0d8 \n\
+/* 08019d78 */ BL __udivsi3 \n\
 /* 08019d7c */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08019d7e */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08019d80 */ LSLS R0, R0, 0x1 \n\

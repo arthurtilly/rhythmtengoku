@@ -17,7 +17,7 @@ glabel func_0800ae3c \n\
 /* 0800ae52 */ LDRB R5, [R4, 0x8] \n\
 /* 0800ae54 */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 0800ae56 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 0800ae58 */ BL func_0804ebc0 \n\
+/* 0800ae58 */ BL __modsi3 \n\
 /* 0800ae5c */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800ae5e */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 0800ae60 */ BGE branch_0800ae64 \n\
