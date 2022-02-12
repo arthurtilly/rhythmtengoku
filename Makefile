@@ -170,10 +170,10 @@ $(BUILD)/%.pcm : %.wav | $(BUILD_DIRS)
 
 # C files
 $(BUILD)/%.c.o : %.c | $(BUILD_DIRS)
-	@(V)echo "Compiling $< to $@"
-	@(V)$(CPP) -MMD -MF $(BUILD)/$*.d -MT $@ $(CPPFLAGS) $< -o $(BUILD)/$*.i
-	@(V)$(CC1) $(CFLAGS) $(BUILD)/$*.i -o $(BUILD)/$*.s
-	@(V)$(AS) -march=armv4t -o $@ $(BUILD)/$*.s
+	$(V)echo "Compiling $< to $@"
+	$(V)$(CPP) -MMD -MF $(BUILD)/$*.d -MT $@ $(CPPFLAGS) $< -o $(BUILD)/$*.i
+	$(V)$(CC1) $(CFLAGS) $(BUILD)/$*.i -o $(BUILD)/$*.s
+	$(V)$(AS) -march=armv4t -o $@ $(BUILD)/$*.s
 
 # ASM files
 $(BUILD)/%.s.o : %.s | $(BUILD_DIRS)
