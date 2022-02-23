@@ -22,6 +22,7 @@
 #define D_03007F00 		(InternWorkRAMBase + 0x7F00)
 #define D_03007FA0 		(InternWorkRAMBase + 0x7FA0)
 #define REG_INTERRUPT   *(volatile void **)(InternWorkRAMBase + 0x7FFC)
+#define D_06008000      (VRAMBase + 0x8000)
 
 #include "include/gba/gba_graphics_regs.h"
 #include "include/gba/gba_dma_regs.h"

@@ -129,7 +129,7 @@ extern u8 func_08001fc4(u8 *);
 // extern ? func_08002e78(?);
 // extern ? func_08002eb0(?);
 // extern ? func_08002ecc(?);
-// extern ? func_08002ee0(?);
+extern u32 func_08002ee0(u16, u32, u32);
 // extern ? func_08002f04(?);
 // extern ? func_08002f40(?);
 // extern ? func_08002f48(?);

@@ -20,6 +20,26 @@ struct struct_030046a4_sub3 {
     void *unkC; // ???
 };
 
+struct struct_080179f4_sub {
+    u8 pad00[4];
+    s16 unk4;
+    s16 unk6;
+    s8 unk8;
+    s8 unk9;
+    u8 pad0A[2];
+    s32 unkC;
+    u32 unk10;
+    u32 unk14;
+    u32 unk18;
+    u32 unk1C;
+    u32 unk20;
+    u32 unk24;
+    u16 unk28;
+    u16 unk2A;
+    u8 unk2C;
+    u8 unk2D;
+};
+
 struct struct_080179f4 {
 	struct struct_080179f4 *unk0;
 	struct struct_080179f4 *unk4;
@@ -31,7 +51,7 @@ struct struct_080179f4 {
 	u16 unk4E;
 	u8 pad50[4];
 	struct struct_030046a4_sub3 unk54;
-	s32 *unk64;
+	struct struct_080179f4_sub *unk64;
 	u8 unk68;
 };
 
@@ -70,7 +90,52 @@ struct struct_030046a4 {
     u16 unk86;
 };
 
+struct struct_030055d0_sub {
+    u8 unk0:4;
+    u8 pad01[3];
+    s16 unk4;
+    u16 unk6;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u8 pad0E[8];
+    u32 unk18;
+    u32 unk1C;
+    u8 pad20[4];
+    u32 unk24;
+    u8 pad28[5];
+    u8 unk2D;
+};
+
+struct struct_030055d0 {
+    u8 unk0;
+    u8 pad01[3];
+    struct struct_030055d0_sub *unk4;
+    s16 unk8;
+    u16 unkA;
+    u8 pad0C[8];
+    s16 unk14;
+    u8 unk16;
+    u8 unk17;
+    u8 unk18;
+    u8 pad19[3];
+    u32 *unk1C;
+    s16 unk20;
+    u32 unk24;
+    s16 unk28;
+    u8 unk2A;
+    u8 pad2B[3];
+    s16 unk2E;
+    u16 unk30;
+    u16 unk32;
+    u8 unk34;
+    u8 unk35;
+    u8 unk36;
+    
+};
+
 extern struct struct_030046a4 *D_030046a4;
 extern s32 D_03005380;
+extern struct struct_030055d0 *D_030055d0;
 
 #endif

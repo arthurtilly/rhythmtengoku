@@ -75,7 +75,7 @@
 // extern ? func_0800c394(?);
 // extern ? func_0800c398(?);
 // extern ? func_0800c3a4(?);
-// extern ? func_0800c3b8(?);
+extern u32 func_0800c3b8();
 // extern ? func_0800c3c4(?);
 // extern ? func_0800c3e4(?);
 // extern ? func_0800c3e8(?);
