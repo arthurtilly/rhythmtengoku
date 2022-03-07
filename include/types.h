@@ -107,18 +107,21 @@ struct struct_030055d0_sub {
     u8 unk2D;
 };
 
-struct struct_030055d0 {
-    u8 unk0;
-    u8 pad01[3];
-    struct struct_030055d0_sub *unk4;
+
+
+struct KarateManInfo {
+    u8 unk4:4;
+    u8 pad05[3];
     s16 unk8;
     u16 unkA;
-    u8 pad0C[8];
+    u16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
     s16 unk14;
     u8 unk16;
     u8 unk17;
     u8 unk18;
-    u8 pad19[3];
     u32 *unk1C;
     s16 unk20;
     u32 unk24;
@@ -131,7 +134,22 @@ struct struct_030055d0 {
     u8 unk34;
     u8 unk35;
     u8 unk36;
-    
+};
+
+struct RapMenInfo {
+    u8 pad04[0x10];
+    u8 unk14;
+};
+
+
+
+struct struct_030055d0 {
+    u8 unk0;
+    u8 pad01[3];
+    union {
+        struct KarateManInfo karateMan;
+        struct RapMenInfo rapMen;
+    } gameInfo;
 };
 
 extern struct struct_030046a4 *D_030046a4;
