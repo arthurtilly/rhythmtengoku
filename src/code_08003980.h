@@ -75,7 +75,7 @@ extern struct struct_03004ad0 D_03004ad0;
 // extern ? func_08004b88(?);
 // extern ? func_08004b98(?);
 // extern ? func_08004bfc(?);
-// extern ? func_08004c0c(?);
+extern u32 *func_08004c0c(u32 *, char **, u32, u32);
 // extern ? func_08004c40(?);
 // extern ? func_08004c50(?);
 // extern ? func_08004cac(?);

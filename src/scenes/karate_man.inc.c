@@ -4,6 +4,7 @@
 
 extern s16 D_03004afc;
 
+// !TODO
 extern void func_0804d770(u32, u32, u16);
 extern void func_0804cebc(u32, s16, s8);
 extern u32 func_0804d160(u32, u32 *, s8, u32, u32, u32, u32, u32, u32);
@@ -19,11 +20,12 @@ extern u32 D_089df1bc[];
 extern u32 D_089df37c[];
 extern u32 D_089df37e[];
 
-// todo: seperate file for seqData entries 
+// !TODO seperate file for seqData entries 
 extern const struct SequenceData s_f_boxing_score_reset_seqData;
 extern const struct SequenceData s_f_boxing_score_up_seqData;
 extern const struct SequenceData s_f_boxing_score_down_seqData;
 extern const struct SequenceData s_f_boxing_punch_seqData;
+
 
 void func_08021190(void) {
 	func_0800c604(0);
@@ -263,7 +265,6 @@ void func_08021dd8(struct KarateManInfo *arg0) {
 void func_08021e40(struct KarateManInfo *arg0) {
 	func_0804d504(D_03005380, arg0->unk8);
 }
-
 
 void func_08021e58(struct KarateManInfo *arg0) {
     if (arg0->unkA) arg0->unkA--;

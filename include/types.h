@@ -21,21 +21,20 @@ struct struct_030046a4_sub3 {
 };
 
 struct struct_080179f4_sub {
-    u8 pad00[4];
+    u32 unk0;
     s16 unk4;
     s16 unk6;
     s8 unk8;
     s8 unk9;
     u8 pad0A[2];
-    s32 unkC;
+    u32 unkC;
     u32 unk10;
     u32 unk14;
     u32 unk18;
     u32 unk1C;
     u32 unk20;
     u32 unk24;
-    u16 unk28;
-    u16 unk2A;
+    u8 pad28[4];
     u8 unk2C;
     u8 unk2D;
 };
@@ -137,7 +136,13 @@ struct KarateManInfo {
 };
 
 struct RapMenInfo {
-    u8 pad04[0x10];
+    u32 *unk4;
+    s16 unk8;
+    s16 unkA;
+    s16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
     u8 unk14;
 };
 
