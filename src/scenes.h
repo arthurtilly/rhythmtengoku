@@ -1147,25 +1147,26 @@ extern void func_0802221c(u32);
 
 // Rap Men
 
-// extern ? func_080398b4(?);
-// extern ? func_080398d4(?);
-// extern ? func_080398e4(?);
-// extern ? func_08039924(?);
-// extern ? func_08039950(?);
+extern u32 *func_080398b4(u32);
+extern void func_080398d4(void);
+extern void func_080398e4(void);
+extern void func_08039924(void);
+extern void func_08039950(u32);
 extern void func_08039a40(void);
-// extern ? func_08039a44(?);
+extern void func_08039a40(void);
 extern void func_08039a98(u32);
-// extern ? func_08039aa4(?);
+extern void func_08039a98(u32 arg0);
 extern void func_08039ad4(void);
-// extern ? func_08039ad8(?);
-// extern ? func_08039b2c(?);
+extern void func_08039aa4(void);
+extern void func_08039ad8(u32, struct struct_080179f4_sub *, u32);
+extern u32 func_08039b2c(u32, u32, u32);
 extern void func_08039b48(void);
-// extern ? func_08039b4c(?);
-// extern ? func_08039c00(?);
-// extern ? func_08039c60(?);
-// extern ? func_08039cb8(?);
-// extern ? func_08039d10(?);
-// extern ? func_08039d7c(?);
+extern void func_08039b4c(u32, struct struct_080179f4_sub *);
+extern void func_08039c00(void);
+extern void func_08039c60(void);
+extern void func_08039cb8(void);
+extern void func_08039d10(void);
+extern void func_08039d7c(u32);
 extern void func_08039df8(void);
 
 // Rat Race
