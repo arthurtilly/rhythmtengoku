@@ -78,7 +78,7 @@ extern void func_0801fc40(void);    // [func_0801fc40] GRAPHICAL Func_01 - Unkno
 // extern ? func_08020778(?);
 // extern ? func_080207d0(?);
 // extern ? func_080207ec(?);
-// extern ? func_080207f8(?);
+extern void func_080207f8(u32 arg0);
 // extern ? func_0802080c(?);
 // extern ? func_08020834(?);
 // extern ? func_0802085c(?);
@@ -87,8 +87,8 @@ extern void func_0801fc40(void);    // [func_0801fc40] GRAPHICAL Func_01 - Unkno
 // extern ? func_080208ec(?);
 extern void func_08020a48();
 // extern ? func_08020a4c(?);
-// extern ? func_08020be4(?);
-// extern ? func_08020bf4(?);
+extern void func_08020be4(u8 arg0);
+extern void func_08020bf4(s32 arg0);
 // extern ? func_08020c0c(?);
 // extern ? func_08020c24(?);
 // extern ? func_08020c3c(?);

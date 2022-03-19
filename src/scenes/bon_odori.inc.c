@@ -10,7 +10,10 @@
 
 #include "asm/scenes/bon_odori/asm_080207ec.s"
 
-#include "asm/scenes/bon_odori/asm_080207f8.s"
+void func_080207f8(u32 arg0) {
+    func_080207d0();
+    func_080207ec(arg0);
+}
 
 #include "asm/scenes/bon_odori/asm_0802080c.s"
 
@@ -30,9 +33,13 @@ void func_08020a48() {
 
 #include "asm/scenes/bon_odori/asm_08020a4c.s"
 
-#include "asm/scenes/bon_odori/asm_08020be4.s"
+void func_08020be4(u8 arg0) {
+    D_030055d0->gameInfo.bonOdori.unk38 = arg0;
+}
 
-#include "asm/scenes/bon_odori/asm_08020bf4.s"
+void func_08020bf4(s32 arg0) { //type of arg0 inferred from func_08020a4c
+    func_08020a4c(arg0, D_030055d0->gameInfo.bonOdori.unk38, 0);
+}
 
 #include "asm/scenes/bon_odori/asm_08020c0c.s"
 
@@ -81,7 +88,7 @@ void func_08020fcc() {
 #include "asm/scenes/bon_odori/asm_08021084.s"
 
 void func_08021188() {
-    
+
 }
 
 void func_0802118c() {

@@ -382,6 +382,12 @@ struct PrologueInfo {
     s16 entity4;    // Entity: Object 1
     s16 entity6;    // Entity: Object 2
 };
+struct BonOdoriInfo {
+    u8 unk00;
+    u8 pad01[0x37];
+    u8 unk38;
+};
+
 
 
 struct struct_030055d0 {
@@ -392,6 +398,7 @@ struct struct_030055d0 {
         struct RhythmTweezersInfo rhythmTweezers;
         struct SneakySpiritsInfo sneakySpirits;
         struct PrologueInfo prologues;
+        struct BonOdoriInfo bonOdori;
     } gameInfo;
 };
 
