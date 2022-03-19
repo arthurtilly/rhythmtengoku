@@ -5,6 +5,40 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
+static s32 D_030010f4; // unknown type
+static s8 D_030010f8; // unknown type
+static s8 D_030010f9; // unknown type
+static s32 D_030010fc; // unknown type
+static s32 D_03001100; // unknown type
+static s32 D_03001104; // unknown type
+static s32 D_03001108; // unknown type
+static s32 D_0300110c; // unknown type
+static s32 D_03001110[32]; // unknown type
+static s32 D_03001190[3]; // unknown type
+static s8 D_0300119c; // unknown type
+static s8 D_0300119d; // unknown type
+static s32 D_030011a0; // unknown type
+static s32 D_030011a4; // unknown type
+static s32 D_030011a8; // unknown type
+static s32 D_030011ac; // unknown type
+static s32 D_030011b0[20]; // unknown type
+static s8 D_03001200; // unknown type
+static s8 D_03001201; // unknown type
+static s32 D_03001204; // unknown type
+static s32 D_03001208; // unknown type
+static s16 D_0300120c; // unknown type
+static s16 D_0300120e; // unknown type
+static s32 D_03001210[2]; // unknown type
+static s32 D_03001218; // unknown type
+static s32 D_0300121c; // unknown type
+static s32 D_03001220[54]; // unknown type
+static s32 D_030012f8; // unknown type
+static s8 D_030012fc; // unknown type
+static s8 D_030012fd; // unknown type
+static s8 D_030012fe; // unknown type
+static s8 D_030012ff; // unknown type
+static s32 D_03001300; // unknown type
+
 // Random utility functions
 
 #include "asm/code_08008b00/asm_08008b00.s"

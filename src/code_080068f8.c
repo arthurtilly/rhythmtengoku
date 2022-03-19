@@ -5,6 +5,14 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
+static s16 D_03000ea4; // unknown type
+static s16 D_03000ea6; // unknown type
+static s16 D_03000ea8; // unknown type
+static s32 D_03000eaa; // unknown type
+static s32 D_03000eb0; // unknown type
+static s32 D_03000eb4[135]; // unknown type
+static s32 D_030010d0[9]; // unknown type
+
 // Graphic Control functions
 
 #include "asm/code_080068f8/asm_080068f8.s"
