@@ -24,7 +24,9 @@
 
 #include "asm/scenes/bon_odori/asm_080208ec.s"
 
-#include "asm/scenes/bon_odori/asm_08020a48.s"
+void func_08020a48() {
+    
+}
 
 #include "asm/scenes/bon_odori/asm_08020a4c.s"
 
@@ -64,7 +66,9 @@
 
 #include "asm/scenes/bon_odori/asm_08020fb0.s"
 
-#include "asm/scenes/bon_odori/asm_08020fcc.s"
+void func_08020fcc() {
+
+}
 
 #include "asm/scenes/bon_odori/asm_08020fd0.s"
 
@@ -76,6 +80,10 @@
 
 #include "asm/scenes/bon_odori/asm_08021084.s"
 
-#include "asm/scenes/bon_odori/asm_08021188.s"
+void func_08021188() {
+    
+}
 
-#include "asm/scenes/bon_odori/asm_0802118c.s"
+void func_0802118c() {
+
+}

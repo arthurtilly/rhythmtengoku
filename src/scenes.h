@@ -85,7 +85,7 @@ extern void func_0801fc40(void);    // [func_0801fc40] GRAPHICAL Func_01 - Unkno
 // extern ? func_08020880(?);
 // extern ? func_080208c0(?);
 // extern ? func_080208ec(?);
-// extern ? func_08020a48(?);
+extern void func_08020a48();
 // extern ? func_08020a4c(?);
 // extern ? func_08020be4(?);
 // extern ? func_08020bf4(?);
@@ -105,14 +105,14 @@ extern void func_0801fc40(void);    // [func_0801fc40] GRAPHICAL Func_01 - Unkno
 // extern ? func_08020f8c(?);
 // extern ? func_08020f98(?);
 // extern ? func_08020fb0(?);
-// extern ? func_08020fcc(?);
+extern void func_08020fcc();
 // extern ? func_08020fd0(?);
 // extern ? func_08020fe8(?);
 // extern ? func_0802100c(?);
 // extern ? func_08021034(?);
 // extern ? func_08021084(?);
-// extern ? func_08021188(?);
-// extern ? func_0802118c(?);
+extern void func_08021188();
+extern void func_0802118c();
 
 // Karate Man
 
