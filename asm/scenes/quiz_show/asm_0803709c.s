@@ -35,7 +35,7 @@ glabel func_0803709c \n\
 /* 080370da */ LDRSH R4, [R0, R2] \n\
 /* 080370dc */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 080370de */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 080370e0 */ BL func_0804f150 \n\
+/* 080370e0 */ BL __umodsi3 \n\
 /* 080370e4 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080370e6 */ LSLS R2, R2, 0x18 \n\
 /* 080370e8 */ ASRS R2, R2, 0x18 \n\
@@ -72,7 +72,7 @@ branch_08037118: \n\
 /* 08037128 */ LDRSH R4, [R0, R1] \n\
 /* 0803712a */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0803712c */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 0803712e */ BL func_0804f150 \n\
+/* 0803712e */ BL __umodsi3 \n\
 /* 08037132 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08037134 */ LSLS R2, R2, 0x18 \n\
 /* 08037136 */ ASRS R2, R2, 0x18 \n\

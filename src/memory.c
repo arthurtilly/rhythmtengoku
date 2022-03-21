@@ -88,7 +88,7 @@ void func_08000804(void) {
 void func_0800081c(void) {
     s32 *temp = D_030046a8;
     func_080018e0(0,temp,SAVE_BUFFER_SIZE,0x20,0x100);
-    func_0804f270(temp, &D_08935fbc);
+    strcpy(temp, &D_08935fbc);
     temp[1] = SAVE_BUFFER_SIZE;
     temp[2] = 0;
     temp[3] = 0x26040000;

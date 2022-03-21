@@ -81,7 +81,7 @@ branch_0802a3b6: \n\
 /* 0802a424 */ ASRS R4, R4, 0x10 \n\
 /* 0802a426 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0802a428 */ MOVS R1, 0x5 @ Set R1 to 0x5 \n\
-/* 0802a42a */ BL func_0804f150 \n\
+/* 0802a42a */ BL __umodsi3 \n\
 /* 0802a42e */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0802a430 */ LSLS R2, R2, 0x18 \n\
 /* 0802a432 */ ASRS R2, R2, 0x18 \n\

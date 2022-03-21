@@ -71,7 +71,7 @@ branch_08034c56: \n\
 /* 08034c68 */ LDRSH R4, [R0, R2] \n\
 /* 08034c6a */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 08034c6c */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08034c6e */ BL func_0804f150 \n\
+/* 08034c6e */ BL __umodsi3 \n\
 /* 08034c72 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08034c74 */ LSLS R2, R2, 0x18 \n\
 /* 08034c76 */ ASRS R2, R2, 0x18 \n\
@@ -160,7 +160,7 @@ branch_08034cfe: \n\
 /* 08034d10 */ LDRSH R4, [R0, R2] \n\
 /* 08034d12 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 08034d14 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08034d16 */ BL func_0804f150 \n\
+/* 08034d16 */ BL __umodsi3 \n\
 /* 08034d1a */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08034d1c */ LSLS R2, R2, 0x18 \n\
 /* 08034d1e */ ASRS R2, R2, 0x18 \n\

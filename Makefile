@@ -150,7 +150,7 @@ $(OUTPUT).gba	:	$(OUTPUT).elf
 
 $(OUTPUT).elf	:	$(OFILES)
 	$(V)echo "Building ROM..."
-	$(V)$(LD) $(OFILES) tools/agbcc/lib/libgcc.a -T $(LD_SCRIPT) -Map $(@:.elf=.map) -o $@
+	$(V)$(LD) $(OFILES) tools/agbcc/lib/libgcc.a tools/agbcc/lib/libc.a -T $(LD_SCRIPT) -Map $(@:.elf=.map) -o $@
 
 
 # Binary data

@@ -30,7 +30,7 @@ branch_080082e6: \n\
 branch_080082f4: \n\
 /* 080082f4 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 080082f6 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 080082f8 */ BL func_0804f150 \n\
+/* 080082f8 */ BL __umodsi3 \n\
 /* 080082fc */ LSLS R0, R0, 0x1 \n\
 /* 080082fe */ LDR R1, =D_08936c64 \n\
 /* 08008300 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

@@ -56,7 +56,7 @@ branch_08012cf2: \n\
 /* 08012d16 */ LDR R1, =D_08050bdc \n\
 /* 08012d18 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08012d1a */ MOVS R2, 0xB @ Set R2 to 0xB \n\
-/* 08012d1c */ BL func_0804f210 \n\
+/* 08012d1c */ BL memcpy \n\
 /* 08012d20 */ LDR R1, [R4, 0x4] \n\
 /* 08012d22 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08012d24 */ BL func_080081a8 \n\

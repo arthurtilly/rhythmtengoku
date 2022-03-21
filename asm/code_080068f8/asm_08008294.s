@@ -18,7 +18,7 @@ branch_080082a8: \n\
 /* 080082a8 */ SUBS R4, 0x1 @ Subtract 0x1 from R4 \n\
 /* 080082aa */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 080082ac */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 080082ae */ BL func_0804f150 \n\
+/* 080082ae */ BL __umodsi3 \n\
 /* 080082b2 */ ADDS R0, 0x30 @ Add 0x30 to R0 \n\
 /* 080082b4 */ STRB R0, [R4] \n\
 /* 080082b6 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\

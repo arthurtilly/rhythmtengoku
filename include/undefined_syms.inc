@@ -258,14 +258,6 @@
 .set func_0804eaf0, 0x0804eaf0
 .set func_0804eaf4, 0x0804eaf4
 .set func_0804eaf8, 0x0804eaf8
-.set __divsi3, 0x0804eb28
-.set __div0, 0x0804ebbc
-.set __modsi3, 0x0804ebc0
-.set __udivsi3, 0x0804f0d8
-.set func_0804f150, 0x0804f150
-.set func_0804f210, 0x0804f210
-.set func_0804f270, 0x0804f270
-.set func_0804f2bc, 0x0804f2bc
 
 .set D_08058f58, 0x08058f58
 .set D_08059330, 0x08059330
@@ -919,6 +911,7 @@
 .set D_08932ea4, 0x08932ea4
 .set D_08932edc, 0x08932edc
 .set D_08932f94, 0x08932f94
+.set __clz_tab, 0x08935dac
 .set D_08935fac, 0x08935fac
 .set D_08935fb0, 0x08935fb0
 .set D_08935fb4, 0x08935fb4

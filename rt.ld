@@ -35,7 +35,17 @@ SECTIONS {
 		build/src/code_08047e50.c.o(.text*);
         build/bin/bindata_080482e0.bin.o(.rodata*);
         *libgcc.a:_call_via_rX.o(.text*);
-        build/bin/bindata_0804eb28.bin.o(.rodata*);
+        *libgcc.a:_divsi3.o(.text*);
+        *libgcc.a:_dvmd_tls.o(.text*);
+        *libgcc.a:_modsi3.o(.text*);
+        build/bin/bindata_0804ec90.bin.o(.rodata*); /* _muldi3 */
+        *libgcc.a:_muldi3.o(.text*);
+        build/asm/udivmoddi4.s.o(.text*);
+        *libgcc.a:_udivsi3.o(.text*);
+        *libgcc.a:_umodsi3.o(.text*);
+        *libc.a:memcpy.o(.text*);
+        *libc.a:strcpy.o(.text*);
+        *libc.a:strlen.o(.text*);
         build/data/data_0804f300.s.o(.text*);
         build/data/data_08054950.s.o(.text*);
         build/data/data_08058f58.s.o(.text*);

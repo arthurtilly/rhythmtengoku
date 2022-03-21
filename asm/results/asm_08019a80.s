@@ -139,7 +139,7 @@ branch_08019b60: \n\
 /* 08019b6e */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 08019b70 */ LDR R1, [R0] \n\
 /* 08019b72 */ MOV R0, R9 @ Set R0 to R9 \n\
-/* 08019b74 */ BL func_0804f270 \n\
+/* 08019b74 */ BL strcpy \n\
 /* 08019b78 */ LDR R0, [SP, 0x20] \n\
 /* 08019b7a */ LDMIA R0!, {R1} \n\
 /* 08019b7c */ STR R0, [SP, 0x20] \n\

@@ -49,7 +49,7 @@ glabel func_0801d23c \n\
 /* 0801d298 */ LDRSH R6, [R0, R1] \n\
 /* 0801d29a */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0801d29c */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 0801d29e */ BL func_0804f150 \n\
+/* 0801d29e */ BL __umodsi3 \n\
 /* 0801d2a2 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0801d2a4 */ LSLS R2, R2, 0x18 \n\
 /* 0801d2a6 */ ASRS R2, R2, 0x18 \n\

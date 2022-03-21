@@ -32,7 +32,7 @@ branch_0801af84: \n\
 /* 0801af94 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801af96 */ LDR R1, =D_08058f58 \n\
 /* 0801af98 */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\
-/* 0801af9a */ BL func_0804f210 \n\
+/* 0801af9a */ BL memcpy \n\
 /* 0801af9e */ LSLS R1, R4, 0x2 \n\
 /* 0801afa0 */ ADDS R1, 0xC4 @ Add 0xC4 to R1 \n\
 /* 0801afa2 */ LDR R0, [R6] \n\

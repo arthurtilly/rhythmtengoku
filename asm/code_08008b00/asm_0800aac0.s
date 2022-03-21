@@ -91,7 +91,7 @@ branch_0800ab66: \n\
 /* 0800ab6a */ BEQ branch_0800ab90 \n\
 /* 0800ab6c */ LDRH R4, [R6] \n\
 /* 0800ab6e */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800ab70 */ BL func_0804f2bc \n\
+/* 0800ab70 */ BL strlen \n\
 /* 0800ab74 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800ab76 */ ADDS R1, 0x1 @ Add 0x1 to R1 \n\
 /* 0800ab78 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
@@ -100,7 +100,7 @@ branch_0800ab66: \n\
 /* 0800ab80 */ ADDS R1, R5, R1 @ Set R1 to R5 + R1 \n\
 /* 0800ab82 */ STR R0, [R1] \n\
 /* 0800ab84 */ MOV R1, R8 @ Set R1 to R8 \n\
-/* 0800ab86 */ BL func_0804f270 \n\
+/* 0800ab86 */ BL strcpy \n\
 /* 0800ab8a */ B branch_0800ab98 \n\
 \n\
 .ltorg \n\

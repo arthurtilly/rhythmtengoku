@@ -20,7 +20,7 @@ glabel func_0803c08c \n\
 /* 0803c0a8 */ LDRH R0, [R0] \n\
 /* 0803c0aa */ LDRH R4, [R1] \n\
 /* 0803c0ac */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0803c0ae */ BL func_0804f150 \n\
+/* 0803c0ae */ BL __umodsi3 \n\
 /* 0803c0b2 */ LSLS R0, R0, 0x10 \n\
 /* 0803c0b4 */ LSRS R5, R0, 0x10 \n\
 /* 0803c0b6 */ CMP R5, R4 @ Check R5 - R4 \n\
@@ -87,7 +87,7 @@ glabel func_0803c08c \n\
 /* 0803c13a */ BNE branch_0803c170 \n\
 /* 0803c13c */ LDRH R0, [R2] \n\
 /* 0803c13e */ LDRH R1, [R1] \n\
-/* 0803c140 */ BL func_0804f150 \n\
+/* 0803c140 */ BL __umodsi3 \n\
 /* 0803c144 */ LSLS R0, R0, 0x10 \n\
 /* 0803c146 */ LSRS R5, R0, 0x10 \n\
 /* 0803c148 */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
