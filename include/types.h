@@ -386,6 +386,8 @@ struct BonOdoriInfo {
     u8 unk00;
     u8 pad01[0x37];
     u8 unk38;
+    u8 pad39[0x13];
+    u16 unk4C[3];
 };
 
 

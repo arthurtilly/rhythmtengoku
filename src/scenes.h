@@ -80,7 +80,7 @@ extern void func_0801fc40(void);    // [func_0801fc40] GRAPHICAL Func_01 - Unkno
 // extern ? func_080207ec(?);
 extern void func_080207f8(u32 arg0);
 // extern ? func_0802080c(?);
-// extern ? func_08020834(?);
+extern void func_08020834();
 // extern ? func_0802085c(?);
 // extern ? func_08020880(?);
 // extern ? func_080208c0(?);

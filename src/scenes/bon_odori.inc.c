@@ -17,7 +17,15 @@ void func_080207f8(u32 arg0) {
 
 #include "asm/scenes/bon_odori/asm_0802080c.s"
 
-#include "asm/scenes/bon_odori/asm_08020834.s"
+void func_08020834() {
+    u32 i;
+    for (i = 0; i < 4; i++) {
+        if (D_030055d0->gameInfo.bonOdori.unk4C[i]) {
+            D_030055d0->gameInfo.bonOdori.unk4C[i] -= 1;
+        }
+
+    }
+}
 
 #include "asm/scenes/bon_odori/asm_0802085c.s"
 
