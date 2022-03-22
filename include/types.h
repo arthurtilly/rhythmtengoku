@@ -421,6 +421,7 @@ struct struct_030055e0 {
     struct struct_030055e0_sub *unk4;
 };
 
+
 extern struct struct_030046a4 *D_030046a4;
 extern struct struct_03004b10 D_03004b10;
 extern s32 D_03005380;
@@ -430,3 +431,5 @@ extern struct struct_030055e0 D_030055e0;
 extern s16 gSineTable[];
 extern s16 D_08935fcc[];
 extern s16 D_089361cc[];
+extern u32 D_089deec4[];
+extern s16 D_03004b10[];

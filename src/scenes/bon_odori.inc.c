@@ -27,9 +27,22 @@ void func_08020834() {
     }
 }
 
-#include "asm/scenes/bon_odori/asm_0802085c.s"
+void func_0802085c() {
+    func_0800c604(0);
+    func_08017578();
+    D_03004b10.unk1D8 = 0x7C00;
+}
 
-#include "asm/scenes/bon_odori/asm_08020880.s"
+void func_08020880() {
+    u16 temp0;
+    u32 temp1;
+
+    func_0800c604(0);
+    temp0 = func_0800c3b8();
+    temp1 = func_08002ee0(temp0, D_089deec4[D_030055d0->unk0], 0x2000);
+    func_08005d38(temp1, func_0802085c + 1, 0);
+}
+
 
 #include "asm/scenes/bon_odori/asm_080208c0.s"
 
