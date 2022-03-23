@@ -1589,13 +1589,13 @@ extern void func_08044e74(void);
 // extern ? func_08044e78(?);
 extern u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2);
 extern void func_08044fc0(u32 arg0, u32 *arg1);
-// extern ? func_08044fcc(?);
-// extern ? func_0804503c(?);
-// extern ? func_080450d0(?);
+extern void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1);
+extern void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1);
+extern void func_080450d0(u32 arg0, struct struct_080179f4_sub *arg1);
 extern void func_080450dc(void);
 extern void func_080450e0(void);
 extern void func_080450e4(void);
-// extern ? func_080450e8(?);
+extern void func_080450e8(u32 arg0);
 
 // Sneaky Spirits prologue
 
