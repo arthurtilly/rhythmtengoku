@@ -1585,16 +1585,16 @@ extern void func_08044b80(u32 arg0);
 // extern ? func_08044ba8(?);
 extern void func_08044c04(void);
 extern void func_08044e60(u32 arg0);
-// extern ? func_08044e74(?);
+extern void func_08044e74(void);
 // extern ? func_08044e78(?);
 // extern ? func_08044f94(?);
 // extern ? func_08044fc0(?);
 // extern ? func_08044fcc(?);
 // extern ? func_0804503c(?);
 // extern ? func_080450d0(?);
-// extern ? func_080450dc(?);
-// extern ? func_080450e0(?);
-// extern ? func_080450e4(?);
+extern void func_080450dc(void);
+extern void func_080450e0(void);
+extern void func_080450e4(void);
 // extern ? func_080450e8(?);
 
 // Sneaky Spirits prologue

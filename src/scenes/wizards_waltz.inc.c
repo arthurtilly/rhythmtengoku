@@ -173,14 +173,27 @@ void func_08044e60(u32 arg0) {
     D_030055d0->gameInfo.wizardsWaltz.unk1B2 = arg0;
 }
 
-#include "asm/scenes/wizards_waltz/asm_08044e74.s"
+// #include "asm/scenes/wizards_waltz/asm_08044e74.s"
+// Game Unload Function
+void func_08044e74(void) { /* Stub Function */ }
+
 #include "asm/scenes/wizards_waltz/asm_08044e78.s"
 #include "asm/scenes/wizards_waltz/asm_08044f94.s"
 #include "asm/scenes/wizards_waltz/asm_08044fc0.s"
 #include "asm/scenes/wizards_waltz/asm_08044fcc.s"
 #include "asm/scenes/wizards_waltz/asm_0804503c.s"
 #include "asm/scenes/wizards_waltz/asm_080450d0.s"
-#include "asm/scenes/wizards_waltz/asm_080450dc.s"
-#include "asm/scenes/wizards_waltz/asm_080450e0.s"
-#include "asm/scenes/wizards_waltz/asm_080450e4.s"
+
+// #include "asm/scenes/wizards_waltz/asm_080450dc.s"
+// Game Unknown Function
+void func_080450dc(void) { /* Stub Function */ }
+
+// #include "asm/scenes/wizards_waltz/asm_080450e0.s"
+// Other Unknown Function 00
+void func_080450e0(void) { /* Stub Function */ }
+
+// #include "asm/scenes/wizards_waltz/asm_080450e4.s"
+// Other Unknown Function 01
+void func_080450e4(void) { /* Stub Function */ }
+
 #include "asm/scenes/wizards_waltz/asm_080450e8.s"
