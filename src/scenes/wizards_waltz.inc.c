@@ -79,9 +79,19 @@ void func_08044b80(u32 arg0) {
     D_030055d0->gameInfo.wizardsWaltz.unk1A8 = func_0800c3a4(arg0);
 }
 
-// !TODO
-#include "asm/scenes/wizards_waltz/asm_08044ba8.s"
-// [func_08044ba8] SUB - Unknown
+// [func_08044ba8] SUB Func_00 - Unknown (called by "MAIN - Loop" and "CUE Behaviour - Spawn")
+void func_08044ba8(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
+    s32 temp;
+    u32 temp1 = arg3 - D_030055d0->gameInfo.wizardsWaltz.unk1AC;
+
+    temp = func_08007b80(0xA000, temp1);
+
+    arg1 = (arg1 * temp) >> 8;
+    arg2 = (arg2 * temp) >> 8;
+
+    func_0800fddc(arg0, (s16) (arg1 + 0x78), (s16) (arg2 + 0x50));
+    func_0800fe60(arg0, (s16) temp);
+}
 
 // [func_08044c04] MAIN - Loop
 void func_08044c04(void) {
@@ -176,9 +186,9 @@ void func_08044e60(u32 arg0) {
 // [func_08044e74] MAIN - Unload(?)
 void func_08044e74(void) { /* Stub Function */ }
 
-// !TODO
-#include "asm/scenes/wizards_waltz/asm_08044e78.s"
+// !TODO - Currently impossible without an ASM hack. See: https://decomp.me/scratch/Kk2Ec
 // [func_08044e78] CUE Behaviour - Spawn
+#include "asm/scenes/wizards_waltz/asm_08044e78.s"
 
 // [func_08044f94] CUE Behaviour - Unknown
 u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2) {
