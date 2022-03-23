@@ -157,7 +157,6 @@ void func_08044c04(void) {
                 if (D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk18 > 0xf) {
                     D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk4 = 0;
                     func_08010040(D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk0, 0);
-
                 }
             }
             func_08044ba8(D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk0,
@@ -168,8 +167,12 @@ void func_08044c04(void) {
     D_030055d0->gameInfo.wizardsWaltz.unk1A4 += 1;
 }
 
+// #include "asm/scenes/wizards_waltz/asm_08044e60.s"
+// Engine Function 01 - Set Tutorial Flag
+void func_08044e60(u32 arg0) {
+    D_030055d0->gameInfo.wizardsWaltz.unk1B2 = arg0;
+}
 
-#include "asm/scenes/wizards_waltz/asm_08044e60.s"
 #include "asm/scenes/wizards_waltz/asm_08044e74.s"
 #include "asm/scenes/wizards_waltz/asm_08044e78.s"
 #include "asm/scenes/wizards_waltz/asm_08044f94.s"
