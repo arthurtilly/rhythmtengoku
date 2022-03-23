@@ -1582,7 +1582,7 @@ extern void func_080449b4(void);
 extern void func_080449e4(void);
 extern void func_08044a10(u32 arg0);
 extern void func_08044b80(u32 arg0);
-// extern ? func_08044ba8(?);
+extern void func_08044c04(void);
 // extern ? func_08044c04(?);
 // extern ? func_08044e60(?);
 // extern ? func_08044e74(?);

@@ -2,8 +2,16 @@ extern u32 D_08932bec[];
 extern u32 D_08932edc[];
 extern u32 D_08932e3c[];
 extern u32 D_08932c8c[];
-extern u32 D_089e9f14[];
-extern u32 D_089e9f10;
+extern u32 D_08932c14[]; // Animation: "wizard_magic"
+extern u32 D_08932bec[]; // Animation: "wizard_fly"
+
+extern const struct SequenceData s_witch_furu_seqData; // Inputting without a cue.
+
+extern u32 D_089e9f10; // GFX-Related Null
+extern u32 D_089e9f14[]; // GFX
+
+extern s16 D_08936cac[]; // Sine Table
+extern s16 D_03004afc; // Input Queue(?)
 
 // #include "asm/scenes/wizards_waltz/asm_080449a4.s"
 // GFX Load Function 02
@@ -72,7 +80,95 @@ void func_08044b80(u32 arg0) {
 }
 
 #include "asm/scenes/wizards_waltz/asm_08044ba8.s"
-#include "asm/scenes/wizards_waltz/asm_08044c04.s"
+
+// #include "asm/scenes/wizards_waltz/asm_08044c04.s"
+// Game Loop Function
+void func_08044c04(void) {
+    u32 temp0;
+    u32 temp2;
+    u8 i;
+
+    // INPUT EVENT (A BUTTON)
+    if (D_03004afc & 1) {
+        // Set input_pressed flag.
+        D_030055d0->gameInfo.wizardsWaltz.unk8 = 1;
+        // Play animation: "wizard_magic"
+        func_08010064(D_030055d0->gameInfo.wizardsWaltz.unk4, D_08932c14, 0, 1, 0x7f, 0);
+        // Play sound.
+        func_08002634(&s_witch_furu_seqData);
+    }
+
+    // If (input_pressed flag is set) AND (..unk4 > 6).
+    if (D_030055d0->gameInfo.wizardsWaltz.unk8 == 1) {
+        if ((s8) func_08010198(D_030055d0->gameInfo.wizardsWaltz.unk4) > 6) {
+            // Clear input_pressed flag.
+            D_030055d0->gameInfo.wizardsWaltz.unk8 = 0;
+            // Resume default animation: "wizard_fly"
+            func_08010064(D_030055d0->gameInfo.wizardsWaltz.unk4, D_08932bec, 0, 1, 0, 0);
+        }
+    }
+
+    temp0 = (D_030055d0->gameInfo.wizardsWaltz.unk1A4 << 11) / D_030055d0->gameInfo.wizardsWaltz.unk1A8;
+    D_030055d0->gameInfo.wizardsWaltz.unkC = temp0;
+    D_030055d0->gameInfo.wizardsWaltz.unk10 = (D_08936cac[temp0 & 0x7ff] * 7) / 16;
+    D_030055d0->gameInfo.wizardsWaltz.unk18 = (D_08936cac[(temp0 + 0x200) & 0x7ff] / 2) + 0x40;
+
+    if (((temp0 & 0x7ff) - 0x200) > 0x380) {
+        func_0800ff44(D_030055d0->gameInfo.wizardsWaltz.unk4, 1);
+    } else {
+        func_0800ff44(D_030055d0->gameInfo.wizardsWaltz.unk4, 0);
+    }
+
+    func_08044ba8(D_030055d0->gameInfo.wizardsWaltz.unk4,
+                    D_030055d0->gameInfo.wizardsWaltz.unk10,
+                    D_030055d0->gameInfo.wizardsWaltz.unk14,
+                    D_030055d0->gameInfo.wizardsWaltz.unk18);
+
+    func_08044ba8(D_030055d0->gameInfo.wizardsWaltz.unk24,
+                    D_030055d0->gameInfo.wizardsWaltz.unk10,
+                    0x20,
+                    D_030055d0->gameInfo.wizardsWaltz.unk18);
+
+    func_08044ba8(D_030055d0->gameInfo.wizardsWaltz.unk184, 0, 0x20, 0);
+
+    temp2 = D_030055d0->gameInfo.wizardsWaltz.unk1A4 & 7;
+    if (!temp2) {
+        D_030055d0->gameInfo.wizardsWaltz.unk44[D_030055d0->gameInfo.wizardsWaltz.unk1B0].unk4 = 1;
+        D_030055d0->gameInfo.wizardsWaltz.unk1B0 += 1;
+
+        if (D_030055d0->gameInfo.wizardsWaltz.unk1B0 > 9) {
+            D_030055d0->gameInfo.wizardsWaltz.unk1B0 = temp2;
+        }
+    }
+
+    for (i = 0; i < 10; i++) {
+        if (D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk4 != 0) {
+            if (D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk4 == 1) {
+                D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk8 = D_030055d0->gameInfo.wizardsWaltz.unkC - 0x200;
+                D_030055d0->gameInfo.wizardsWaltz.unk44[i].unkC = D_030055d0->gameInfo.wizardsWaltz.unk10;
+                D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk10 = D_030055d0->gameInfo.wizardsWaltz.unk14 + 4;
+                D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk14 = D_030055d0->gameInfo.wizardsWaltz.unk18;
+                D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk4 = 2;
+                D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk18 = 0;
+                func_08010040(D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk0, 1);
+            } else {
+                D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk10 = (s32) ((D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk10 << 8) + 0x100) >> 8;
+                D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk18 += 1;
+                if (D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk18 > 0xf) {
+                    D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk4 = 0;
+                    func_08010040(D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk0, 0);
+
+                }
+            }
+            func_08044ba8(D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk0,
+                    D_030055d0->gameInfo.wizardsWaltz.unk44[i].unkC,
+                    D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk10, D_030055d0->gameInfo.wizardsWaltz.unk44[i].unk14);
+        }
+    }
+    D_030055d0->gameInfo.wizardsWaltz.unk1A4 += 1;
+}
+
+
 #include "asm/scenes/wizards_waltz/asm_08044e60.s"
 #include "asm/scenes/wizards_waltz/asm_08044e74.s"
 #include "asm/scenes/wizards_waltz/asm_08044e78.s"

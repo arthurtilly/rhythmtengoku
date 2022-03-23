@@ -190,7 +190,7 @@ struct WizardsWaltzInfo {
     s32 unk1AC;
     u8 unk1B0;
     u8 unk1B1;
-    u8 unk1B2;
+    u8 unk1B2; // tutorial_flag
 };
 
 
