@@ -30,6 +30,7 @@ void func_080449e4(void) {
 }
 
 // #include "asm/scenes/wizards_waltz/asm_08044a10.s"
+// Game Load Function
 void func_08044a10(u32 arg0) {
     u8 i;
 
@@ -63,7 +64,13 @@ void func_08044a10(u32 arg0) {
     D_030055d0->gameInfo.wizardsWaltz.unk1A8 = func_0800c3a4(0x90);
 }
 
-#include "asm/scenes/wizards_waltz/asm_08044b80.s"
+// #include "asm/scenes/wizards_waltz/asm_08044b80.s"
+// Engine Command 00 - Set Rotation Interval
+void func_08044b80(u32 arg0) {
+    D_030055d0->gameInfo.wizardsWaltz.unk1A4 = 0;
+    D_030055d0->gameInfo.wizardsWaltz.unk1A8 = func_0800c3a4(arg0);
+}
+
 #include "asm/scenes/wizards_waltz/asm_08044ba8.s"
 #include "asm/scenes/wizards_waltz/asm_08044c04.s"
 #include "asm/scenes/wizards_waltz/asm_08044e60.s"
