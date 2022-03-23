@@ -146,6 +146,53 @@ struct RapMenInfo {
     u8 unk14;
 };
 
+struct WizardsWaltzInfo_unk44 {
+    u32 unk0;
+    u8 unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 unk10;
+    u32 unk14;
+    u32 unk18;
+    u32 null1C;
+};
+
+struct WizardsWaltzInfo {
+    u32 unk4;
+    u8 unk8;
+    u32 unkC;
+    u32 unk10;
+    s32 unk14;
+    u32 unk18;
+    u32 null1C;
+    u32 null20;
+    u32 unk24;
+    u32 null28;
+    u32 null2C;
+    u32 null30;
+    u32 null34;
+    u32 null38;
+    u32 null3C;
+    u32 null40;
+
+    struct WizardsWaltzInfo_unk44 unk44[10];
+
+    u32 unk184;
+    u8 unk188;
+    u32 null18C;
+    u32 null190;
+    u32 null194;
+    u32 null198;
+    u32 null19C;
+    u32 null1A0;
+    s32 unk1A4;
+    s32 unk1A8;
+    s32 unk1AC;
+    u8 unk1B0;
+    u8 unk1B1;
+    u8 unk1B2;
+};
+
 
 
 struct struct_030055d0 {
@@ -154,6 +201,7 @@ struct struct_030055d0 {
     union {
         struct KarateManInfo karateMan;
         struct RapMenInfo rapMen;
+        struct WizardsWaltzInfo wizardsWaltz;
     } gameInfo;
 };
 
