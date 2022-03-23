@@ -1577,7 +1577,7 @@ extern void func_08039df8(void);
 
 // Wizard's Waltz
 
-// extern ? func_080449a4(?);
+extern void func_080449a4(void);
 // extern ? func_080449b4(?);
 // extern ? func_080449e4(?);
 // extern ? func_08044a10(?);
