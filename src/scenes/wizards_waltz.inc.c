@@ -1,11 +1,20 @@
-// #include "asm/scenes/wizards_waltz/asm_080449a4.s"
+extern u32 D_089e9f14[];
+extern void func_080449a4();
 
+// #include "asm/scenes/wizards_waltz/asm_080449a4.s"
+// GFX Load Function 02
 void func_080449a4(void) {
     func_0800c604(0);
     func_08017578();
 }
 
-#include "asm/scenes/wizards_waltz/asm_080449b4.s"
+// #include "asm/scenes/wizards_waltz/asm_080449b4.s"
+// GFX Load Function 01
+void func_080449b4(void) {
+    func_0800c604(0);
+    func_08005d38(func_08002ee0((u16) func_0800c3b8(), &D_089e9f14, 0x2000), &func_080449a4, 0);
+}
+
 #include "asm/scenes/wizards_waltz/asm_080449e4.s"
 #include "asm/scenes/wizards_waltz/asm_08044a10.s"
 #include "asm/scenes/wizards_waltz/asm_08044b80.s"
