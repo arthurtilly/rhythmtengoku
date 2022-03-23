@@ -14,14 +14,14 @@ extern s16 D_08936cac[]; // Sine Table
 extern s16 D_03004afc; // Input Queue(?)
 
 // #include "asm/scenes/wizards_waltz/asm_080449a4.s"
-// GFX Load Function 02
+// GFX LOAD Function 02
 void func_080449a4(void) {
     func_0800c604(0);
     func_08017578();
 }
 
 // #include "asm/scenes/wizards_waltz/asm_080449b4.s"
-// GFX Load Function 01
+// GFX LOAD Function 01
 void func_080449b4(void) {
     u32 temp;
 
@@ -31,14 +31,14 @@ void func_080449b4(void) {
 }
 
 // #include "asm/scenes/wizards_waltz/asm_080449e4.s"
-// GFX Load Function 00
+// GFX LOAD Function 00
 void func_080449e4(void) {
     func_0800c604(0);
     func_08005d38(func_080087b4((u16) func_0800c3b8(), &D_089e9f10), &func_080449b4, 0);
 }
 
 // #include "asm/scenes/wizards_waltz/asm_08044a10.s"
-// Game Load Function
+// GAME LOAD Function
 void func_08044a10(u32 arg0) {
     u8 i;
 
@@ -73,7 +73,7 @@ void func_08044a10(u32 arg0) {
 }
 
 // #include "asm/scenes/wizards_waltz/asm_08044b80.s"
-// Engine Command 00 - Set Rotation Interval
+// ENGINE Function 00 - Set Rotation Interval
 void func_08044b80(u32 arg0) {
     D_030055d0->gameInfo.wizardsWaltz.unk1A4 = 0;
     D_030055d0->gameInfo.wizardsWaltz.unk1A8 = func_0800c3a4(arg0);
@@ -82,7 +82,7 @@ void func_08044b80(u32 arg0) {
 #include "asm/scenes/wizards_waltz/asm_08044ba8.s"
 
 // #include "asm/scenes/wizards_waltz/asm_08044c04.s"
-// Game Loop Function
+// GAME LOOP Function
 void func_08044c04(void) {
     u32 temp0;
     u32 temp2;
@@ -168,18 +168,33 @@ void func_08044c04(void) {
 }
 
 // #include "asm/scenes/wizards_waltz/asm_08044e60.s"
-// Engine Function 01 - Set Tutorial Flag
+// ENGINE Function 01 - Set Tutorial Flag
 void func_08044e60(u32 arg0) {
     D_030055d0->gameInfo.wizardsWaltz.unk1B2 = arg0;
 }
 
 // #include "asm/scenes/wizards_waltz/asm_08044e74.s"
-// Game Unload Function
+// GAME UNLOAD(?) Function
 void func_08044e74(void) { /* Stub Function */ }
 
 #include "asm/scenes/wizards_waltz/asm_08044e78.s"
-#include "asm/scenes/wizards_waltz/asm_08044f94.s"
-#include "asm/scenes/wizards_waltz/asm_08044fc0.s"
+// CUE - Spawn
+
+// #include "asm/scenes/wizards_waltz/asm_08044f94.s"
+// CUE - Unknown
+u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2) {
+    if (arg2 > (D_030055d0->gameInfo.wizardsWaltz.unk1A8 + func_0800c3a4(0x30))) {
+        return 1; }
+    else {
+        return 0; }
+}
+
+// #include "asm/scenes/wizards_waltz/asm_08044fc0.s"
+// CUE - Despawn
+void func_08044fc0(u32 arg0, u32 *arg1) {
+    func_0800fc70(arg1[0]);
+}
+
 #include "asm/scenes/wizards_waltz/asm_08044fcc.s"
 #include "asm/scenes/wizards_waltz/asm_0804503c.s"
 #include "asm/scenes/wizards_waltz/asm_080450d0.s"
