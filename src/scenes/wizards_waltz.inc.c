@@ -1,14 +1,14 @@
 extern u32 D_08932bec[]; // Animation: "wizard_fly"
 extern u32 D_08932c14[]; // Animation: "wizard_magic"
-extern u32 D_08932c8c[];
+extern u32 D_08932c8c[]; // Animation: "sparkle"
 extern u32 D_08932cbc[]; // Animation: "sprout_eaten"
 extern u32 D_08932d2c[]; // Animation: "sprout_grow"
-extern u32 D_08932e3c[];
+extern u32 D_08932e3c[]; // Animation: "girl"
 extern u32 D_08932e64[]; // Animation: "girl_happy"
 extern u32 D_08932ea4[]; // Animation: "girl_sad"
-extern u32 D_08932edc[];
+extern u32 D_08932edc[]; // Animation: "shadow"
 
-extern const struct SequenceData s_witch_furu_seqData; // Inputting without a cue.
+extern const struct SequenceData s_witch_furu_seqData; // Sound for inputting without a cue.
 
 extern u32 D_089e9f10; // GFX-related Null
 extern u32 D_089e9f14[]; // GFX Array
@@ -16,15 +16,15 @@ extern u32 D_089e9f14[]; // GFX Array
 extern s16 D_08936cac[]; // Sine Table
 extern s16 D_03004afc; // Input Queue(?)
 
-// #include "asm/scenes/wizards_waltz/asm_080449a4.s"
-// GFX_LOAD Func_02
+/* WIZARD'S WALTZ */
+
+// [func_080449a4] GFX_LOAD Func_02
 void func_080449a4(void) {
     func_0800c604(0);
     func_08017578();
 }
 
-// #include "asm/scenes/wizards_waltz/asm_080449b4.s"
-// GFX_LOAD Func_01
+// [func_080449b4] GFX_LOAD Func_01
 void func_080449b4(void) {
     u32 temp;
 
@@ -33,15 +33,13 @@ void func_080449b4(void) {
     func_08005d38(temp, &func_080449a4, 0);
 }
 
-// #include "asm/scenes/wizards_waltz/asm_080449e4.s"
-// GFX_LOAD Func_00
+// [func_080449e4] GFX_LOAD Func_00
 void func_080449e4(void) {
     func_0800c604(0);
     func_08005d38(func_080087b4((u16) func_0800c3b8(), &D_089e9f10), &func_080449b4, 0);
 }
 
-// #include "asm/scenes/wizards_waltz/asm_08044a10.s"
-// MAIN - Load
+// [func_08044a10] MAIN - Load
 void func_08044a10(u32 arg0) {
     u8 i;
 
@@ -50,7 +48,7 @@ void func_08044a10(u32 arg0) {
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    D_030055d0->gameInfo.wizardsWaltz.unk1AC = -0xA0;
+    D_030055d0->gameInfo.wizardsWaltz.unk1AC = -0xa0;
     D_030055d0->gameInfo.wizardsWaltz.unk1A4 = 0;
     D_030055d0->gameInfo.wizardsWaltz.unk1B0 = 0;
     D_030055d0->gameInfo.wizardsWaltz.unk1B1 = 0;
@@ -75,18 +73,17 @@ void func_08044a10(u32 arg0) {
     D_030055d0->gameInfo.wizardsWaltz.unk1A8 = func_0800c3a4(0x90);
 }
 
-// #include "asm/scenes/wizards_waltz/asm_08044b80.s"
-// ENGINE Func_00 - Set Rotation Interval
+// [func_08044b80] ENGINE Func_00 - Set Rotation Interval
 void func_08044b80(u32 arg0) {
     D_030055d0->gameInfo.wizardsWaltz.unk1A4 = 0;
     D_030055d0->gameInfo.wizardsWaltz.unk1A8 = func_0800c3a4(arg0);
 }
 
+// !TODO
 #include "asm/scenes/wizards_waltz/asm_08044ba8.s"
-// SUB - Unknown
+// [func_08044ba8] SUB - Unknown
 
-// #include "asm/scenes/wizards_waltz/asm_08044c04.s"
-// MAIN - Loop
+// [func_08044c04] MAIN - Loop
 void func_08044c04(void) {
     u32 temp0;
     u32 temp2;
@@ -94,7 +91,7 @@ void func_08044c04(void) {
 
     // INPUT EVENT (A BUTTON)
     if (D_03004afc & 1) {
-        // Set input_pressed flag.
+        // Set wizard_state flag.
         D_030055d0->gameInfo.wizardsWaltz.unk8 = 1;
         // Play animation: "wizard_magic"
         func_08010064(D_030055d0->gameInfo.wizardsWaltz.unk4, D_08932c14, 0, 1, 0x7f, 0);
@@ -105,7 +102,7 @@ void func_08044c04(void) {
     // If (input_pressed flag is set) AND (..unk4 > 6).
     if (D_030055d0->gameInfo.wizardsWaltz.unk8 == 1) {
         if ((s8) func_08010198(D_030055d0->gameInfo.wizardsWaltz.unk4) > 6) {
-            // Clear input_pressed flag.
+            // Clear wizard_state flag.
             D_030055d0->gameInfo.wizardsWaltz.unk8 = 0;
             // Resume default animation: "wizard_fly"
             func_08010064(D_030055d0->gameInfo.wizardsWaltz.unk4, D_08932bec, 0, 1, 0, 0);
@@ -171,21 +168,19 @@ void func_08044c04(void) {
     D_030055d0->gameInfo.wizardsWaltz.unk1A4 += 1;
 }
 
-// #include "asm/scenes/wizards_waltz/asm_08044e60.s"
-// ENGINE Func_01 - Set Tutorial Flag
+// [func_08044e60] ENGINE Func_01 - Set Tutorial Flag
 void func_08044e60(u32 arg0) {
     D_030055d0->gameInfo.wizardsWaltz.unk1B2 = arg0;
 }
 
-// #include "asm/scenes/wizards_waltz/asm_08044e74.s"
-// MAIN - Unload(?)
+// [func_08044e74] MAIN - Unload(?)
 void func_08044e74(void) { /* Stub Function */ }
 
+// !TODO
 #include "asm/scenes/wizards_waltz/asm_08044e78.s"
-// CUE Behaviour - Spawn
+// [func_08044e78] CUE Behaviour - Spawn
 
-// #include "asm/scenes/wizards_waltz/asm_08044f94.s"
-// CUE Behaviour - Unknown
+// [func_08044f94] CUE Behaviour - Unknown
 u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2) {
     if (arg2 > (D_030055d0->gameInfo.wizardsWaltz.unk1A8 + func_0800c3a4(0x30))) {
         return 1; }
@@ -193,14 +188,12 @@ u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2) {
         return 0; }
 }
 
-// #include "asm/scenes/wizards_waltz/asm_08044fc0.s"
-// CUE Behaviour - Despawn
+// [func_08044fc0] CUE Behaviour - Despawn
 void func_08044fc0(u32 arg0, u32 *arg1) {
     func_0800fc70(arg1[0]);
 }
 
-// #include "asm/scenes/wizards_waltz/asm_08044fcc.s"
-// CUE Event - Hit
+// [func_08044fcc] CUE Event - Hit
 void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
     u32 flag1B2; // tutorial_flag
 
@@ -222,8 +215,7 @@ void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
     }
 }
 
-// #include "asm/scenes/wizards_waltz/asm_0804503c.s"
-// CUE Event - Barely
+// [func_0804503c] CUE Event - Barely
 void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1) {
     u32 temp; // Unknown parameter.
     u32 flag1B2; // tutorial_flag.
@@ -257,27 +249,22 @@ void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1) {
     func_0800bc40();
 }
 
-// #include "asm/scenes/wizards_waltz/asm_080450d0.s"
-// CUE Event - Miss
+// [func_080450d0] CUE Event - Miss
 void func_080450d0(u32 arg0, struct struct_080179f4_sub *arg1) {
     // Unknown function - likely related to score.
     func_0800bc40();
 }
 
-// #include "asm/scenes/wizards_waltz/asm_080450dc.s"
-// MAIN - Unknown
+// [func_080450dc] MAIN - Unknown
 void func_080450dc(void) { /* Stub Function */ }
 
-// #include "asm/scenes/wizards_waltz/asm_080450e0.s"
-// OTHER - Unknown Func_00
+// [func_080450e0] OTHER - Unknown Func_00
 void func_080450e0(void) { /* Stub Function */ }
 
-// #include "asm/scenes/wizards_waltz/asm_080450e4.s"
-// OTHER - Unknown Func_01
+// [func_080450e4] OTHER - Unknown Func_01
 void func_080450e4(void) { /* Stub Function */ }
 
-// #include "asm/scenes/wizards_waltz/asm_080450e8.s"
-// OTHER - Unknown Func_02
+// [func_080450e8] OTHER - Unknown Func_02
 void func_080450e8(u32 arg0) {
     if (arg0) {
         func_08017448(1);

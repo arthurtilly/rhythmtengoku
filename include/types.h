@@ -147,7 +147,7 @@ struct RapMenInfo {
 };
 
 struct WizardsWaltzInfo_unk44 {
-    u32 unk0;
+    u32 unk0; // Entity: sparkleEntity
     u8 unk4;
     u32 unk8;
     u32 unkC;
@@ -158,15 +158,15 @@ struct WizardsWaltzInfo_unk44 {
 };
 
 struct WizardsWaltzInfo {
-    u32 unk4;
-    u8 unk8;
-    u32 unkC;
-    u32 unk10;
-    s32 unk14;
-    u32 unk18;
+    u32 unk4;   // Entity: wizardEntity
+    u8 unk8;    // Value: wizardState {0,1}
+    u32 unkC;   // Value: posUnk0C
+    u32 unk10;  // Value: posUnk10
+    s32 unk14;  // Value: posUnk14
+    u32 unk18;  // Value: posUnk18
     u32 null1C;
     u32 null20;
-    u32 unk24;
+    u32 unk24;  // Entity: shadowEntity
     u32 null28;
     u32 null2C;
     u32 null30;
@@ -177,20 +177,20 @@ struct WizardsWaltzInfo {
 
     struct WizardsWaltzInfo_unk44 unk44[10];
 
-    u32 unk184;
-    u8 unk188;
+    u32 unk184; // Entity: girlEntity
+    u8 unk188;  // Value: girlState {0,1,2}
     u32 null18C;
     u32 null190;
     u32 null194;
     u32 null198;
     u32 null19C;
     u32 null1A0;
-    s32 unk1A4;
-    s32 unk1A8;
-    s32 unk1AC;
+    s32 unk1A4; // Counter: rotationPosition
+    s32 unk1A8; // Value: rotationInterval
+    s32 unk1AC; // Value: globalScaling
     u8 unk1B0;
-    u8 unk1B1;
-    u8 unk1B2; // tutorial_flag
+    u8 unk1B1;  // Counter: flowerCount
+    u8 unk1B2;  // Flag: isTutorial
 };
 
 
