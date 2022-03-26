@@ -116,7 +116,7 @@ branch_08044f2a: \n\
 /* 08044f50 */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 08044f52 */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 08044f54 */ ADDS R3, R6, 0x0 @ Set R3 to R6 + 0x0 \n\
-/* 08044f56 */ BL func_08044ba8 \n\
+/* 08044f56 */ BL wizard_update_position \n\
 /* 08044f5a */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08044f5c */ LDR R0, [R1] \n\
 /* 08044f5e */ MOVS R2, 0xD4 @ Set R2 to 0xD4 \n\

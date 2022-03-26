@@ -52,7 +52,7 @@ void func_080449e4(void) {
 
 
 // [func_08044a10] MAIN - Load
-void func_08044a10(u32 arg0) {
+void wizard_main_load(u32 arg0) {
     u8 i;
 
     // Load graphical assets and other basic functionality.
@@ -99,7 +99,7 @@ void func_08044b80(u32 arg0) {
 
 
 // [func_08044ba8] SUB Func_00 - Update Entity Position
-void func_08044ba8(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
+void wizard_update_position(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
     s32 temp;
     u32 temp1 = arg3 - GameInfo.globalScale;
 
@@ -114,7 +114,7 @@ void func_08044ba8(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
 
 
 // [func_08044c04] MAIN - Loop
-void func_08044c04(void) {
+void wizard_main_loop(void) {
     u32 temp0;
     u32 temp2;
     u8 i;
@@ -153,9 +153,9 @@ void func_08044c04(void) {
     }
 
     // Update entity positions.
-    func_08044ba8(GameInfo.wizardEntity, GameInfo.unk10, GameInfo.unk14, GameInfo.unk18);
-    func_08044ba8(GameInfo.shadowEntity, GameInfo.unk10, 0x20, GameInfo.unk18);
-    func_08044ba8(GameInfo.girlEntity, 0, 0x20, 0);
+    wizard_update_position(GameInfo.wizardEntity, GameInfo.unk10, GameInfo.unk14, GameInfo.unk18);
+    wizard_update_position(GameInfo.shadowEntity, GameInfo.unk10, 0x20, GameInfo.unk18);
+    wizard_update_position(GameInfo.girlEntity, 0, 0x20, 0);
 
     // Update sparkles.
     temp2 = GameInfo.cyclePosition & 7;
@@ -187,7 +187,7 @@ void func_08044c04(void) {
                     func_08010040(GameInfo.sparkle[i].entity, 0);
                 }
             }
-            func_08044ba8(GameInfo.sparkle[i].entity,
+            wizard_update_position(GameInfo.sparkle[i].entity,
                     GameInfo.sparkle[i].unkC,
                     GameInfo.sparkle[i].unk10, GameInfo.sparkle[i].unk14);
         }
@@ -205,7 +205,7 @@ void func_08044e60(u32 arg0) {
 
 
 // [func_08044e74] MAIN - Unload(?)
-void func_08044e74(void) { /* Stub Function */ }
+void wizard_main_unload(void) { /* Stub Function */ }
 
 
 // !TODO - Currently impossible without an ASM hack. See: https://decomp.me/scratch/Kk2Ec
@@ -294,7 +294,7 @@ void func_080450d0(u32 arg0, struct struct_080179f4_sub *arg1) {
 
 
 // [func_080450dc] MAIN - Unknown
-void func_080450dc(void) { /* Stub Function */ }
+void wizard_main_unknown(void) { /* Stub Function */ }
 
 
 // [func_080450e0] OTHER - Unknown Func_00

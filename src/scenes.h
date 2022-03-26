@@ -1580,19 +1580,19 @@ extern void func_08039df8(void);
 extern void func_080449a4(void);
 extern void func_080449b4(void);
 extern void func_080449e4(void);
-extern void func_08044a10(u32 arg0);
+extern void wizard_main_load(u32 arg0); // [func_08044a10]
 extern void func_08044b80(u32 arg0);
-extern void func_08044ba8(u32 arg0, s32 arg1, s32 arg2, u32 arg3);
-extern void func_08044c04(void);
+extern void wizard_update_position(u32 arg0, s32 arg1, s32 arg2, u32 arg3); // [func_08044ba8]
+extern void wizard_main_loop(void); // [func_08044c04]
 extern void func_08044e60(u32 arg0);
-extern void func_08044e74(void);
+extern void wizard_main_unload(void); // [func_08044e74] (STUB)
 // extern ? func_08044e78(?);
 extern u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2);
 extern void func_08044fc0(u32 arg0, u32 *arg1);
 extern void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1);
 extern void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1);
 extern void func_080450d0(u32 arg0, struct struct_080179f4_sub *arg1);
-extern void func_080450dc(void);
+extern void wizard_main_unknown(void); // [func_080450dc]
 extern void func_080450e0(void);
 extern void func_080450e4(void);
 extern void func_080450e8(u32 arg0);
