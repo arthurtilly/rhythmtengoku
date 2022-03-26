@@ -1577,25 +1577,25 @@ extern void func_08039df8(void);
 
 // Wizard's Waltz
 
-extern void func_080449a4(void);
-extern void func_080449b4(void);
-extern void func_080449e4(void);
-extern void wizard_main_load(u32 arg0); // [func_08044a10]
-extern void func_08044b80(u32 arg0);
-extern void wizard_update_position(u32 arg0, s32 arg1, s32 arg2, u32 arg3); // [func_08044ba8]
-extern void wizard_main_loop(void); // [func_08044c04]
-extern void func_08044e60(u32 arg0);
-extern void wizard_main_unload(void); // [func_08044e74] (STUB)
-// extern ? func_08044e78(?);
-extern u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2);
-extern void func_08044fc0(u32 arg0, u32 *arg1);
-extern void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1);
-extern void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1);
-extern void func_080450d0(u32 arg0, struct struct_080179f4_sub *arg1);
-extern void wizard_main_unknown(void); // [func_080450dc]
-extern void func_080450e0(void);
-extern void func_080450e4(void);
-extern void func_080450e8(u32 arg0);
+extern void func_080449a4(void);                                            // [func_080449a4]
+extern void func_080449b4(void);                                            // [func_080449b4]
+extern void func_080449e4(void);                                            // [func_080449e4]
+extern void waltz_main_load(u32 arg0);                                      // [func_08044a10]
+extern void waltz_beatscript_set_rotation(u32 arg0);                        // [func_08044b80]
+extern void waltz_update_position(u32 arg0, s32 arg1, s32 arg2, u32 arg3);  // [func_08044ba8]
+extern void waltz_main_loop(void);                                          // [func_08044c04]
+extern void waltz_beatscript_set_tutorial(u32 arg0);                        // [func_08044e60]
+extern void waltz_main_unload(void);                                        // [func_08044e74] (STUB)
+// extern ? func_08044e78(?);                                               // [func_08044e78]
+extern u32  waltz_cue_unknown(u32 arg0, u32 arg1, u32 arg2);                // [func_08044f94]
+extern void waltz_cue_despawn(u32 arg0, u32 *arg1);                         // [func_08044fc0]
+extern void waltz_cue_hit(u32 arg0, struct struct_080179f4_sub *arg1);      // [func_08044fcc]
+extern void waltz_cue_barely(u32 arg0, struct struct_080179f4_sub *arg1);   // [func_0804503c]
+extern void waltz_cue_miss(u32 arg0, struct struct_080179f4_sub *arg1);     // [func_080450d0]
+extern void waltz_main_unknown(void);                                       // [func_080450dc] (STUB)
+extern void func_080450e0(void);                                            // [func_080450e0] (STUB)
+extern void func_080450e4(void);                                            // [func_080450e4] (STUB)
+extern void func_080450e8(u32 arg0);                                        // [func_080450e8]
 
 // Sneaky Spirits prologue
 

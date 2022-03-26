@@ -52,7 +52,7 @@ void func_080449e4(void) {
 
 
 // [func_08044a10] MAIN - Load
-void wizard_main_load(u32 arg0) {
+void waltz_main_load(u32 arg0) {
     u8 i;
 
     // Load graphical assets and other basic functionality.
@@ -92,14 +92,14 @@ void wizard_main_load(u32 arg0) {
 
 
 // [func_08044b80] ENGINE Func_00 - Set Rotation Interval
-void func_08044b80(u32 arg0) {
+void waltz_beatscript_set_rotation(u32 arg0) {
     GameInfo.cyclePosition = 0;
     GameInfo.cycleInterval = func_0800c3a4(arg0);
 }
 
 
 // [func_08044ba8] SUB Func_00 - Update Entity Position
-void wizard_update_position(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
+void waltz_update_position(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
     s32 temp;
     u32 temp1 = arg3 - GameInfo.globalScale;
 
@@ -114,8 +114,8 @@ void wizard_update_position(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
 
 
 // [func_08044c04] MAIN - Loop
-void wizard_main_loop(void) {
-    u32 temp0;
+void waltz_main_loop(void) {
+    u32 temp1;
     u32 temp2;
     u8 i;
 
@@ -140,22 +140,22 @@ void wizard_main_loop(void) {
     }
 
     // Update position elements.
-    temp0 = (GameInfo.cyclePosition << 11) / GameInfo.cycleInterval;
-    GameInfo.unkC = temp0;
-    GameInfo.unk10 = (D_08936cac[temp0 & 0x7ff] * 7) / 16;
-    GameInfo.unk18 = (D_08936cac[(temp0 + 0x200) & 0x7ff] / 2) + 0x40;
+    temp1 = (GameInfo.cyclePosition << 11) / GameInfo.cycleInterval;
+    GameInfo.unkC = temp1;
+    GameInfo.unk10 = (D_08936cac[temp1 & 0x7ff] * 7) / 16;
+    GameInfo.unk18 = (D_08936cac[(temp1 + 0x200) & 0x7ff] / 2) + 0x40;
 
     // Determine direction which the wizard should be facing.
-    if (((temp0 & 0x7ff) - 0x200) > 0x380) {
+    if (((temp1 & 0x7ff) - 0x200) > 0x380) {
         func_0800ff44(GameInfo.wizardEntity, 1); // Flip Horizontal (facing right)
     } else {
         func_0800ff44(GameInfo.wizardEntity, 0); // Normal (facing left)
     }
 
     // Update entity positions.
-    wizard_update_position(GameInfo.wizardEntity, GameInfo.unk10, GameInfo.unk14, GameInfo.unk18);
-    wizard_update_position(GameInfo.shadowEntity, GameInfo.unk10, 0x20, GameInfo.unk18);
-    wizard_update_position(GameInfo.girlEntity, 0, 0x20, 0);
+    waltz_update_position(GameInfo.wizardEntity, GameInfo.unk10, GameInfo.unk14, GameInfo.unk18);
+    waltz_update_position(GameInfo.shadowEntity, GameInfo.unk10, 0x20, GameInfo.unk18);
+    waltz_update_position(GameInfo.girlEntity, 0, 0x20, 0);
 
     // Update sparkles.
     temp2 = GameInfo.cyclePosition & 7;
@@ -187,7 +187,7 @@ void wizard_main_loop(void) {
                     func_08010040(GameInfo.sparkle[i].entity, 0);
                 }
             }
-            wizard_update_position(GameInfo.sparkle[i].entity,
+            waltz_update_position(GameInfo.sparkle[i].entity,
                     GameInfo.sparkle[i].unkC,
                     GameInfo.sparkle[i].unk10, GameInfo.sparkle[i].unk14);
         }
@@ -199,13 +199,13 @@ void wizard_main_loop(void) {
 
 
 // [func_08044e60] ENGINE Func_01 - Set Tutorial Flag
-void func_08044e60(u32 arg0) {
+void waltz_beatscript_set_tutorial(u32 arg0) {
     GameInfo.isTutorial = arg0;
 }
 
 
 // [func_08044e74] MAIN - Unload(?)
-void wizard_main_unload(void) { /* Stub Function */ }
+void waltz_main_unload(void) { /* Stub Function */ }
 
 
 // !TODO - Currently impossible without an ASM hack. See: https://decomp.me/scratch/Kk2Ec
@@ -214,7 +214,7 @@ void wizard_main_unload(void) { /* Stub Function */ }
 
 
 // [func_08044f94] CUE Behaviour - Unknown
-u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2) {
+u32 waltz_cue_unknown(u32 arg0, u32 arg1, u32 arg2) {
     if (arg2 > (GameInfo.cycleInterval + func_0800c3a4(0x30))) {
         return 1; }
     else {
@@ -223,13 +223,13 @@ u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2) {
 
 
 // [func_08044fc0] CUE Behaviour - Despawn
-void func_08044fc0(u32 arg0, u32 *arg1) {
+void waltz_cue_despawn(u32 arg0, u32 *arg1) {
     func_0800fc70(arg1[0]);
 }
 
 
 // [func_08044fcc] CUE Event - Hit
-void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
+void waltz_cue_hit(u32 arg0, struct struct_080179f4_sub *arg1) {
     u32 isTutorial;
 
     // Play animation: "sprout_grow"
@@ -252,7 +252,7 @@ void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
 
 
 // [func_0804503c] CUE Event - Barely
-void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1) {
+void waltz_cue_barely(u32 arg0, struct struct_080179f4_sub *arg1) {
     u32 temp;
     u32 isTutorial;
 
@@ -287,7 +287,7 @@ void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1) {
 
 
 // [func_080450d0] CUE Event - Miss
-void func_080450d0(u32 arg0, struct struct_080179f4_sub *arg1) {
+void waltz_cue_miss(u32 arg0, struct struct_080179f4_sub *arg1) {
     // Unknown function - likely related to score.
     func_0800bc40();
 }

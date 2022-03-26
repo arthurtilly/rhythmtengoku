@@ -158,15 +158,15 @@ struct WizardsWaltzSparkle {
 };
 
 struct WizardsWaltzInfo {
-    u32 wizardEntity;   // Entity: unk4
-    u8  wizardState;    // Value: unk8 {0,1}
-    u32 unkC;           // Value: posUnk0C
-    u32 unk10;          // Value: posUnk10
-    s32 unk14;          // Value: posUnk14
-    u32 unk18;          // Value: posUnk18
+    u32 wizardEntity;   // Entity:  unk4
+    u8  wizardState;    // Value:   unk8 {0,1}
+    u32 unkC;           // Value:   posUnk0C
+    u32 unk10;          // Value:   posUnk10
+    s32 unk14;          // Value:   posUnk14
+    u32 unk18;          // Value:   posUnk18
     u32 null1C;
     u32 null20;
-    u32 shadowEntity;   // Entity: unk24
+    u32 shadowEntity;   // Entity:  unk24
     u32 null28;
     u32 null2C;
     u32 null30;
@@ -175,8 +175,8 @@ struct WizardsWaltzInfo {
     u32 null3C;
     u32 null40;
     struct WizardsWaltzSparkle sparkle[10]; // Struct: unk44
-    u32 girlEntity;     // Entity: unk184
-    u8  girlState;      // Value: unk188 {0,1,2}
+    u32 girlEntity;     // Entity:  unk184
+    u8  girlState;      // Value:   unk188 {0,1,2}
     u32 null18C;
     u32 null190;
     u32 null194;
@@ -184,11 +184,11 @@ struct WizardsWaltzInfo {
     u32 null19C;
     u32 null1A0;
     s32 cyclePosition;  // Counter: unk1A4
-    s32 cycleInterval;  // Value: unk1A8
-    s32 globalScale;    // Value: unk1AC
+    s32 cycleInterval;  // Value:   unk1A8
+    s32 globalScale;    // Value:   unk1AC
     u8  unk1B0;         // Counter: cycleUnk1B0
     u8  flowerCount;    // Counter: unk1B1
-    u8  isTutorial;     // Flag: unk1B2
+    u8  isTutorial;     // Flag:    unk1B2
 };
 
 
