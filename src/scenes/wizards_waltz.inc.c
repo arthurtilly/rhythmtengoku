@@ -55,23 +55,27 @@ void func_080449e4(void) {
 void func_08044a10(u32 arg0) {
     u8 i;
 
+    // Load graphical assets and other basic functionality.
     D_030055d0->unk0 = arg0;
     func_080449e4();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
+    // Initialise variables.
     GameInfo.globalScale = -0xa0;
     GameInfo.cyclePosition = 0;
     GameInfo.unk1B0 = 0;
     GameInfo.flowerCount = 0;
     GameInfo.unk14 = -0x28;
-    GameInfo.wizardState = 0;
 
+    // Create character entities.
+    GameInfo.wizardState = 0;
     GameInfo.wizardEntity = func_0800fa6c(D_08932bec, 0, 0x78, (s16)GameInfo.unk14, 0x4001, 0x80, 0, 1, 0, 0, 1);
     GameInfo.shadowEntity = func_0800fa6c(D_08932edc, 0, 0x78, 0x50, 0x4082, 0x80, 0, 0, 0, 0, 1);
     GameInfo.girlState = 0;
     GameInfo.girlEntity = func_0800fa6c(D_08932e3c, 0, 0x78, 0x50, 0x4040, 0x80, 0, 1, 0, 0, 1);
 
+    // Create sparkle entities.
     for (i = 0; i < 10; i++) {
         u32 entity;
         GameInfo.sparkle[i].unk4 = 0;
@@ -80,6 +84,7 @@ void func_08044a10(u32 arg0) {
         func_08010040(entity, 0);
     }
 
+    // Set default state.
     func_08017338(1, 0);
     GameInfo.isTutorial = 0;
     GameInfo.cycleInterval = func_0800c3a4(0x90);
@@ -93,7 +98,7 @@ void func_08044b80(u32 arg0) {
 }
 
 
-// [func_08044ba8] SUB Func_00 - Unknown (called by "MAIN - Loop" and "CUE Behaviour - Spawn")
+// [func_08044ba8] SUB Func_00 - Update Entity Position
 void func_08044ba8(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
     s32 temp;
     u32 temp1 = arg3 - GameInfo.globalScale;
@@ -134,29 +139,25 @@ void func_08044c04(void) {
         }
     }
 
+    // Update position elements.
     temp0 = (GameInfo.cyclePosition << 11) / GameInfo.cycleInterval;
     GameInfo.unkC = temp0;
     GameInfo.unk10 = (D_08936cac[temp0 & 0x7ff] * 7) / 16;
     GameInfo.unk18 = (D_08936cac[(temp0 + 0x200) & 0x7ff] / 2) + 0x40;
 
+    // Determine direction which the wizard should be facing.
     if (((temp0 & 0x7ff) - 0x200) > 0x380) {
-        func_0800ff44(GameInfo.wizardEntity, 1);
+        func_0800ff44(GameInfo.wizardEntity, 1); // Flip Horizontal (facing right)
     } else {
-        func_0800ff44(GameInfo.wizardEntity, 0);
+        func_0800ff44(GameInfo.wizardEntity, 0); // Normal (facing left)
     }
 
-    func_08044ba8(GameInfo.wizardEntity,
-                    GameInfo.unk10,
-                    GameInfo.unk14,
-                    GameInfo.unk18);
-
-    func_08044ba8(GameInfo.shadowEntity,
-                    GameInfo.unk10,
-                    0x20,
-                    GameInfo.unk18);
-
+    // Update entity positions.
+    func_08044ba8(GameInfo.wizardEntity, GameInfo.unk10, GameInfo.unk14, GameInfo.unk18);
+    func_08044ba8(GameInfo.shadowEntity, GameInfo.unk10, 0x20, GameInfo.unk18);
     func_08044ba8(GameInfo.girlEntity, 0, 0x20, 0);
 
+    // Update sparkles.
     temp2 = GameInfo.cyclePosition & 7;
     if (!temp2) {
         GameInfo.sparkle[GameInfo.unk1B0].unk4 = 1;
@@ -167,6 +168,7 @@ void func_08044c04(void) {
         }
     }
 
+    // Update sparkles.
     for (i = 0; i < 10; i++) {
         if (GameInfo.sparkle[i].unk4 != 0) {
             if (GameInfo.sparkle[i].unk4 == 1) {
@@ -190,6 +192,8 @@ void func_08044c04(void) {
                     GameInfo.sparkle[i].unk10, GameInfo.sparkle[i].unk14);
         }
     }
+
+    // Increment rotation cycle.
     GameInfo.cyclePosition += 1;
 }
 
@@ -226,7 +230,7 @@ void func_08044fc0(u32 arg0, u32 *arg1) {
 
 // [func_08044fcc] CUE Event - Hit
 void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
-    u32 isTutorial; // GameInfo.isTutorial
+    u32 isTutorial;
 
     // Play animation: "sprout_grow"
     func_08010064(arg1->unk0, D_08932d2c, 0, 1, 0x7f, 0);
@@ -249,8 +253,8 @@ void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
 
 // [func_0804503c] CUE Event - Barely
 void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1) {
-    u32 temp; // Unknown Parameter
-    u32 isTutorial; // GameInfo.isTutorial
+    u32 temp;
+    u32 isTutorial;
 
     // Set unknown parameter.
     temp = ((u32) ~func_08018054()) >> 0x1f;
