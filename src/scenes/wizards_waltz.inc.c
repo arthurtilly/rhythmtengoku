@@ -1,5 +1,5 @@
 // For readability. !TODO - CHANGE/REMOVE
-#define WizardsWaltz D_030055d0->gameInfo.wizardsWaltz
+#define GameInfo D_030055d0->gameInfo.wizardsWaltz
 
 // OAM Animations:
 extern u32 D_08932bec[]; // Animation: "wizard_fly"
@@ -60,43 +60,43 @@ void func_08044a10(u32 arg0) {
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    WizardsWaltz.globalScale = -0xa0;
-    WizardsWaltz.cyclePosition = 0;
-    WizardsWaltz.unk1B0 = 0;
-    WizardsWaltz.flowerCount = 0;
-    WizardsWaltz.unk14 = -0x28;
-    WizardsWaltz.wizardState = 0;
+    GameInfo.globalScale = -0xa0;
+    GameInfo.cyclePosition = 0;
+    GameInfo.unk1B0 = 0;
+    GameInfo.flowerCount = 0;
+    GameInfo.unk14 = -0x28;
+    GameInfo.wizardState = 0;
 
-    WizardsWaltz.wizardEntity = func_0800fa6c(D_08932bec, 0, 0x78, (s16)WizardsWaltz.unk14, 0x4001, 0x80, 0, 1, 0, 0, 1);
-    WizardsWaltz.shadowEntity = func_0800fa6c(D_08932edc, 0, 0x78, 0x50, 0x4082, 0x80, 0, 0, 0, 0, 1);
-    WizardsWaltz.girlState = 0;
-    WizardsWaltz.girlEntity = func_0800fa6c(D_08932e3c, 0, 0x78, 0x50, 0x4040, 0x80, 0, 1, 0, 0, 1);
+    GameInfo.wizardEntity = func_0800fa6c(D_08932bec, 0, 0x78, (s16)GameInfo.unk14, 0x4001, 0x80, 0, 1, 0, 0, 1);
+    GameInfo.shadowEntity = func_0800fa6c(D_08932edc, 0, 0x78, 0x50, 0x4082, 0x80, 0, 0, 0, 0, 1);
+    GameInfo.girlState = 0;
+    GameInfo.girlEntity = func_0800fa6c(D_08932e3c, 0, 0x78, 0x50, 0x4040, 0x80, 0, 1, 0, 0, 1);
 
     for (i = 0; i < 10; i++) {
-        u32 temp2;
-        WizardsWaltz.unk44[i].unk4 = 0;
-        temp2 = func_0800fa6c(D_08932c8c, 0, 0, 0, 0, 0x80, 0, 1, 0, 0, 0);
-        WizardsWaltz.unk44[i].unk0 = temp2;
-        func_08010040(temp2, 0);
+        u32 entity;
+        GameInfo.sparkle[i].unk4 = 0;
+        entity = func_0800fa6c(D_08932c8c, 0, 0, 0, 0, 0x80, 0, 1, 0, 0, 0);
+        GameInfo.sparkle[i].entity = entity;
+        func_08010040(entity, 0);
     }
 
     func_08017338(1, 0);
-    WizardsWaltz.isTutorial = 0;
-    WizardsWaltz.cycleInterval = func_0800c3a4(0x90);
+    GameInfo.isTutorial = 0;
+    GameInfo.cycleInterval = func_0800c3a4(0x90);
 }
 
 
 // [func_08044b80] ENGINE Func_00 - Set Rotation Interval
 void func_08044b80(u32 arg0) {
-    WizardsWaltz.cyclePosition = 0;
-    WizardsWaltz.cycleInterval = func_0800c3a4(arg0);
+    GameInfo.cyclePosition = 0;
+    GameInfo.cycleInterval = func_0800c3a4(arg0);
 }
 
 
 // [func_08044ba8] SUB Func_00 - Unknown (called by "MAIN - Loop" and "CUE Behaviour - Spawn")
 void func_08044ba8(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
     s32 temp;
-    u32 temp1 = arg3 - WizardsWaltz.globalScale;
+    u32 temp1 = arg3 - GameInfo.globalScale;
 
     temp = func_08007b80(0xA000, temp1);
 
@@ -117,86 +117,86 @@ void func_08044c04(void) {
     // INPUT EVENT (A BUTTON)
     if (D_03004afc & 1) {
         // Set wizardState flag.
-        WizardsWaltz.wizardState = 1;
+        GameInfo.wizardState = 1;
         // Play animation: "wizard_magic"
-        func_08010064(WizardsWaltz.wizardEntity, D_08932c14, 0, 1, 0x7f, 0);
+        func_08010064(GameInfo.wizardEntity, D_08932c14, 0, 1, 0x7f, 0);
         // Play sound.
         func_08002634(&s_witch_furu_seqData);
     }
 
     // If (wizardState flag is set) and (..wizardEntity > 6):
-    if (WizardsWaltz.wizardState == 1) {
-        if ((s8) func_08010198(WizardsWaltz.wizardEntity) > 6) {
+    if (GameInfo.wizardState == 1) {
+        if ((s8) func_08010198(GameInfo.wizardEntity) > 6) {
             // Clear wizardState flag.
-            WizardsWaltz.wizardState = 0;
+            GameInfo.wizardState = 0;
             // Resume default animation: "wizard_fly"
-            func_08010064(WizardsWaltz.wizardEntity, D_08932bec, 0, 1, 0, 0);
+            func_08010064(GameInfo.wizardEntity, D_08932bec, 0, 1, 0, 0);
         }
     }
 
-    temp0 = (WizardsWaltz.cyclePosition << 11) / WizardsWaltz.cycleInterval;
-    WizardsWaltz.unkC = temp0;
-    WizardsWaltz.unk10 = (D_08936cac[temp0 & 0x7ff] * 7) / 16;
-    WizardsWaltz.unk18 = (D_08936cac[(temp0 + 0x200) & 0x7ff] / 2) + 0x40;
+    temp0 = (GameInfo.cyclePosition << 11) / GameInfo.cycleInterval;
+    GameInfo.unkC = temp0;
+    GameInfo.unk10 = (D_08936cac[temp0 & 0x7ff] * 7) / 16;
+    GameInfo.unk18 = (D_08936cac[(temp0 + 0x200) & 0x7ff] / 2) + 0x40;
 
     if (((temp0 & 0x7ff) - 0x200) > 0x380) {
-        func_0800ff44(WizardsWaltz.wizardEntity, 1);
+        func_0800ff44(GameInfo.wizardEntity, 1);
     } else {
-        func_0800ff44(WizardsWaltz.wizardEntity, 0);
+        func_0800ff44(GameInfo.wizardEntity, 0);
     }
 
-    func_08044ba8(WizardsWaltz.wizardEntity,
-                    WizardsWaltz.unk10,
-                    WizardsWaltz.unk14,
-                    WizardsWaltz.unk18);
+    func_08044ba8(GameInfo.wizardEntity,
+                    GameInfo.unk10,
+                    GameInfo.unk14,
+                    GameInfo.unk18);
 
-    func_08044ba8(WizardsWaltz.shadowEntity,
-                    WizardsWaltz.unk10,
+    func_08044ba8(GameInfo.shadowEntity,
+                    GameInfo.unk10,
                     0x20,
-                    WizardsWaltz.unk18);
+                    GameInfo.unk18);
 
-    func_08044ba8(WizardsWaltz.girlEntity, 0, 0x20, 0);
+    func_08044ba8(GameInfo.girlEntity, 0, 0x20, 0);
 
-    temp2 = WizardsWaltz.cyclePosition & 7;
+    temp2 = GameInfo.cyclePosition & 7;
     if (!temp2) {
-        WizardsWaltz.unk44[WizardsWaltz.unk1B0].unk4 = 1;
-        WizardsWaltz.unk1B0 += 1;
+        GameInfo.sparkle[GameInfo.unk1B0].unk4 = 1;
+        GameInfo.unk1B0 += 1;
 
-        if (WizardsWaltz.unk1B0 > 9) {
-            WizardsWaltz.unk1B0 = temp2;
+        if (GameInfo.unk1B0 > 9) {
+            GameInfo.unk1B0 = temp2;
         }
     }
 
     for (i = 0; i < 10; i++) {
-        if (WizardsWaltz.unk44[i].unk4 != 0) {
-            if (WizardsWaltz.unk44[i].unk4 == 1) {
-                WizardsWaltz.unk44[i].unk8 = WizardsWaltz.unkC - 0x200;
-                WizardsWaltz.unk44[i].unkC = WizardsWaltz.unk10;
-                WizardsWaltz.unk44[i].unk10 = WizardsWaltz.unk14 + 4;
-                WizardsWaltz.unk44[i].unk14 = WizardsWaltz.unk18;
-                WizardsWaltz.unk44[i].unk4 = 2;
-                WizardsWaltz.unk44[i].unk18 = 0;
-                func_08010040(WizardsWaltz.unk44[i].unk0, 1);
+        if (GameInfo.sparkle[i].unk4 != 0) {
+            if (GameInfo.sparkle[i].unk4 == 1) {
+                GameInfo.sparkle[i].unk8 = GameInfo.unkC - 0x200;
+                GameInfo.sparkle[i].unkC = GameInfo.unk10;
+                GameInfo.sparkle[i].unk10 = GameInfo.unk14 + 4;
+                GameInfo.sparkle[i].unk14 = GameInfo.unk18;
+                GameInfo.sparkle[i].unk4 = 2;
+                GameInfo.sparkle[i].unk18 = 0;
+                func_08010040(GameInfo.sparkle[i].entity, 1);
             } else {
-                WizardsWaltz.unk44[i].unk10 = (s32) ((WizardsWaltz.unk44[i].unk10 << 8) + 0x100) >> 8;
-                WizardsWaltz.unk44[i].unk18 += 1;
-                if (WizardsWaltz.unk44[i].unk18 > 0xf) {
-                    WizardsWaltz.unk44[i].unk4 = 0;
-                    func_08010040(WizardsWaltz.unk44[i].unk0, 0);
+                GameInfo.sparkle[i].unk10 = (s32) ((GameInfo.sparkle[i].unk10 << 8) + 0x100) >> 8;
+                GameInfo.sparkle[i].unk18 += 1;
+                if (GameInfo.sparkle[i].unk18 > 0xf) {
+                    GameInfo.sparkle[i].unk4 = 0;
+                    func_08010040(GameInfo.sparkle[i].entity, 0);
                 }
             }
-            func_08044ba8(WizardsWaltz.unk44[i].unk0,
-                    WizardsWaltz.unk44[i].unkC,
-                    WizardsWaltz.unk44[i].unk10, WizardsWaltz.unk44[i].unk14);
+            func_08044ba8(GameInfo.sparkle[i].entity,
+                    GameInfo.sparkle[i].unkC,
+                    GameInfo.sparkle[i].unk10, GameInfo.sparkle[i].unk14);
         }
     }
-    WizardsWaltz.cyclePosition += 1;
+    GameInfo.cyclePosition += 1;
 }
 
 
 // [func_08044e60] ENGINE Func_01 - Set Tutorial Flag
 void func_08044e60(u32 arg0) {
-    WizardsWaltz.isTutorial = arg0;
+    GameInfo.isTutorial = arg0;
 }
 
 
@@ -211,7 +211,7 @@ void func_08044e74(void) { /* Stub Function */ }
 
 // [func_08044f94] CUE Behaviour - Unknown
 u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2) {
-    if (arg2 > (WizardsWaltz.cycleInterval + func_0800c3a4(0x30))) {
+    if (arg2 > (GameInfo.cycleInterval + func_0800c3a4(0x30))) {
         return 1; }
     else {
         return 0; }
@@ -226,23 +226,23 @@ void func_08044fc0(u32 arg0, u32 *arg1) {
 
 // [func_08044fcc] CUE Event - Hit
 void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
-    u32 isTutorial; // WizardsWaltz.isTutorial
+    u32 isTutorial; // GameInfo.isTutorial
 
     // Play animation: "sprout_grow"
     func_08010064(arg1->unk0, D_08932d2c, 0, 1, 0x7f, 0);
 
     // Cycle through frames of "girl_happy" if isTutorial flag is not set.
-    isTutorial = WizardsWaltz.isTutorial;
+    isTutorial = GameInfo.isTutorial;
     if (!isTutorial) {
-        WizardsWaltz.girlState = 1;
+        GameInfo.girlState = 1;
 
         // Increment frame for "girl_happy" if not at the maximum of 5.
-        if (WizardsWaltz.flowerCount <= 5) {
-            WizardsWaltz.flowerCount += 1;
+        if (GameInfo.flowerCount <= 5) {
+            GameInfo.flowerCount += 1;
         }
 
         // Play animation: "girl_happy"
-        func_08010064(WizardsWaltz.girlEntity, D_08932e64, WizardsWaltz.flowerCount, 0, isTutorial, isTutorial);
+        func_08010064(GameInfo.girlEntity, D_08932e64, GameInfo.flowerCount, 0, isTutorial, isTutorial);
     }
 }
 
@@ -250,7 +250,7 @@ void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
 // [func_0804503c] CUE Event - Barely
 void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1) {
     u32 temp; // Unknown Parameter
-    u32 isTutorial; // WizardsWaltz.isTutorial
+    u32 isTutorial; // GameInfo.isTutorial
 
     // Set unknown parameter.
     temp = ((u32) ~func_08018054()) >> 0x1f;
@@ -264,17 +264,17 @@ void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1) {
     func_0800ff44(arg1->unk0, temp);
 
     // Cycle through frames of "girl_sad" if isTutorial flag is not set.
-    isTutorial = WizardsWaltz.isTutorial;
+    isTutorial = GameInfo.isTutorial;
     if (!isTutorial) {
-        WizardsWaltz.girlState = 2;
+        GameInfo.girlState = 2;
 
         // Decrement frame for "girl_sad" if not at the minimum of 0.
-        if (WizardsWaltz.flowerCount) {
-            WizardsWaltz.flowerCount -= 1;
+        if (GameInfo.flowerCount) {
+            GameInfo.flowerCount -= 1;
         }
 
         // Play animation: "girl_sad"
-        func_08010064(WizardsWaltz.girlEntity, D_08932ea4, WizardsWaltz.flowerCount, 0, isTutorial, isTutorial);
+        func_08010064(GameInfo.girlEntity, D_08932ea4, GameInfo.flowerCount, 0, isTutorial, isTutorial);
     }
 
     // Unknown function - likely related to score.
