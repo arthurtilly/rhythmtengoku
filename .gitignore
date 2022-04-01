@@ -1,9 +1,0 @@
-# Object files
-*.o
-*.elf
-
-# General project-specific ignores
-build/*
-tools/agbcc/*
-*.gba
-*.dump
