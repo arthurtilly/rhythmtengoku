@@ -383,11 +383,15 @@ struct PrologueInfo {
     s16 entity6;    // Entity: Object 2
 };
 struct BonOdoriInfo {
-    u8 unk00;
-    u8 pad01[0x37];
+    u8 unk0;
+    u8 pad1[0x37];
     u8 unk38;
-    u8 pad39[0x13];
+    u32 pad3C;
+    u16 unk40;
+    u32 pad44[2];
     u16 unk4C[3];
+    u32 pad54[0x204];
+    u16 unk864;
 };
 
 
