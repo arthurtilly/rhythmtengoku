@@ -100,7 +100,7 @@ extern void func_08020bf4(s32 arg0);
 // extern ? func_08020e50(?);
 // extern ? func_08020e90(?);
 // extern ? func_08020ed4(?);
-// extern ? func_08020ee8(?);
+extern void func_08020ee8();
 extern void func_08020f48();
 extern void func_08020f8c();
 // extern ? func_08020f98(?);

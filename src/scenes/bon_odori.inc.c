@@ -84,7 +84,29 @@ void func_08020bf4(s32 arg0) { //type of arg0 inferred from func_08020a4c
 
 #include "asm/scenes/bon_odori/asm_08020ed4.s"
 
-#include "asm/scenes/bon_odori/asm_08020ee8.s"
+void func_08020ee8(void) {
+    u8 temp0;
+    u32 temp1 = D_030055d0->gameInfo.bonOdori.unk860;
+    struct struct_030055d0 *temp2;
+    
+    if (D_030055d0->gameInfo.bonOdori.unk860 != 0) {
+        D_030055d0->gameInfo.bonOdori.unk54 = 3;
+        D_030055d0->gameInfo.bonOdori.unk55 = 4;
+        func_0800bc40();
+    } else {
+        D_030055d0->gameInfo.bonOdori.unk54 = 3;
+        
+        temp2 = D_030055d0;
+        if ((u16)func_08001980(2) != 0)
+            temp0 = 5;
+        else
+            temp0 = 6;
+        temp2->gameInfo.bonOdori.unk55 = temp0;
+        
+        D_030055d0->gameInfo.bonOdori.unk40 = temp1;
+        D_030055d0->gameInfo.bonOdori.unk42 = 0;
+    }
+}
 
 void func_08020f48() {
     if (D_030055d0->gameInfo.bonOdori.unk864 != 0) {
