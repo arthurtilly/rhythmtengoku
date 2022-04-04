@@ -46,8 +46,11 @@ void func_080449b4(void) {
 
 // [func_080449e4] GFX_LOAD Func_00
 void func_080449e4(void) {
+    u32 temp;
+
     func_0800c604(0);
-    func_08005d38(func_080087b4((u16) func_0800c3b8(), &D_089e9f10), &func_080449b4, 0);
+    temp = func_080087b4((u16) func_0800c3b8(), &D_089e9f10);
+    func_08005d38(temp, &func_080449b4, 0);
 }
 
 
@@ -78,7 +81,7 @@ void waltz_main_load(u32 arg0) {
     // Create sparkle entities.
     for (i = 0; i < 10; i++) {
         u32 entity;
-        GameInfo.sparkle[i].unk4 = 0;
+        GameInfo.sparkle[i].state = 0;
         entity = func_0800fa6c(D_08932c8c, 0, 0, 0, 0, 0x80, 0, 1, 0, 0, 0);
         GameInfo.sparkle[i].entity = entity;
         func_08010040(entity, 0);
@@ -103,7 +106,7 @@ void waltz_update_position(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
     s32 temp;
     u32 temp1 = arg3 - GameInfo.globalScale;
 
-    temp = func_08007b80(0xA000, temp1);
+    temp = func_08007b80(0xa000, temp1);
 
     arg1 = (arg1 * temp) >> 8;
     arg2 = (arg2 * temp) >> 8;
@@ -121,7 +124,6 @@ void waltz_main_loop(void) {
 
     // INPUT EVENT (A BUTTON)
     if (D_03004afc & 1) {
-        // Set wizardState flag.
         GameInfo.wizardState = 1;
         // Play animation: "wizard_magic"
         func_08010064(GameInfo.wizardEntity, D_08932c14, 0, 1, 0x7f, 0);
@@ -129,10 +131,9 @@ void waltz_main_loop(void) {
         func_08002634(&s_witch_furu_seqData);
     }
 
-    // If (wizardState flag is set) and (..wizardEntity > 6):
+    // If (wizardState flag is set) and animation frame data is exhausted (>6):
     if (GameInfo.wizardState == 1) {
         if ((s8) func_08010198(GameInfo.wizardEntity) > 6) {
-            // Clear wizardState flag.
             GameInfo.wizardState = 0;
             // Resume default animation: "wizard_fly"
             func_08010064(GameInfo.wizardEntity, D_08932bec, 0, 1, 0, 0);
@@ -145,7 +146,7 @@ void waltz_main_loop(void) {
     GameInfo.unk10 = (D_08936cac[temp1 & 0x7ff] * 7) / 16;
     GameInfo.unk18 = (D_08936cac[(temp1 + 0x200) & 0x7ff] / 2) + 0x40;
 
-    // Determine direction which the wizard should be facing.
+    // Determine which direction the wizard should be facing.
     if (((temp1 & 0x7ff) - 0x200) > 0x380) {
         func_0800ff44(GameInfo.wizardEntity, 1); // Flip Horizontal (facing right)
     } else {
@@ -160,7 +161,7 @@ void waltz_main_loop(void) {
     // Update sparkles.
     temp2 = GameInfo.cyclePosition & 7;
     if (!temp2) {
-        GameInfo.sparkle[GameInfo.unk1B0].unk4 = 1;
+        GameInfo.sparkle[GameInfo.unk1B0].state = 1;
         GameInfo.unk1B0 += 1;
 
         if (GameInfo.unk1B0 > 9) {
@@ -168,28 +169,27 @@ void waltz_main_loop(void) {
         }
     }
 
-    // Update sparkles.
+    // Update sparkles (continued).
     for (i = 0; i < 10; i++) {
-        if (GameInfo.sparkle[i].unk4 != 0) {
-            if (GameInfo.sparkle[i].unk4 == 1) {
+        if (GameInfo.sparkle[i].state != 0) {
+            if (GameInfo.sparkle[i].state == 1) {
                 GameInfo.sparkle[i].unk8 = GameInfo.unkC - 0x200;
                 GameInfo.sparkle[i].unkC = GameInfo.unk10;
                 GameInfo.sparkle[i].unk10 = GameInfo.unk14 + 4;
                 GameInfo.sparkle[i].unk14 = GameInfo.unk18;
-                GameInfo.sparkle[i].unk4 = 2;
+                GameInfo.sparkle[i].state = 2;
                 GameInfo.sparkle[i].unk18 = 0;
                 func_08010040(GameInfo.sparkle[i].entity, 1);
             } else {
                 GameInfo.sparkle[i].unk10 = (s32) ((GameInfo.sparkle[i].unk10 << 8) + 0x100) >> 8;
                 GameInfo.sparkle[i].unk18 += 1;
                 if (GameInfo.sparkle[i].unk18 > 0xf) {
-                    GameInfo.sparkle[i].unk4 = 0;
+                    GameInfo.sparkle[i].state = 0;
                     func_08010040(GameInfo.sparkle[i].entity, 0);
                 }
             }
-            waltz_update_position(GameInfo.sparkle[i].entity,
-                    GameInfo.sparkle[i].unkC,
-                    GameInfo.sparkle[i].unk10, GameInfo.sparkle[i].unk14);
+            waltz_update_position(GameInfo.sparkle[i].entity, GameInfo.sparkle[i].unkC,
+                                    GameInfo.sparkle[i].unk10, GameInfo.sparkle[i].unk14);
         }
     }
 
@@ -293,7 +293,7 @@ void waltz_cue_miss(u32 arg0, struct struct_080179f4_sub *arg1) {
 }
 
 
-// [func_080450dc] MAIN - Unknown
+// [func_080450dc] MAIN - Input Event
 void wizard_main_unknown(void) { /* Stub Function */ }
 
 
