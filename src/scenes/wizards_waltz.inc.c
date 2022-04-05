@@ -1,5 +1,5 @@
 // For readability. !TODO - CHANGE/REMOVE
-#define GameInfo D_030055d0->gameInfo.wizardsWaltz
+#define gWizardsWaltzInfo D_030055d0->gameInfo.wizardsWaltz
 
 // OAM Animations:
 extern u32 D_08932bec[]; // Animation: "wizard_fly"
@@ -55,7 +55,7 @@ void func_080449e4(void) {
 
 
 // [func_08044a10] MAIN - Load
-void waltz_main_load(u32 arg0) {
+void func_08044a10(u32 arg0) {
     u8 i;
 
     // Load graphical assets and other basic functionality.
@@ -65,46 +65,46 @@ void waltz_main_load(u32 arg0) {
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
     // Initialise variables.
-    GameInfo.globalScale = -0xa0;
-    GameInfo.cyclePosition = 0;
-    GameInfo.unk1B0 = 0;
-    GameInfo.flowerCount = 0;
-    GameInfo.unk14 = -0x28;
+    gWizardsWaltzInfo.globalScale = -0xa0;
+    gWizardsWaltzInfo.cyclePosition = 0;
+    gWizardsWaltzInfo.unk1B0 = 0;
+    gWizardsWaltzInfo.flowerCount = 0;
+    gWizardsWaltzInfo.unk14 = -0x28;
 
     // Create character entities.
-    GameInfo.wizardState = 0;
-    GameInfo.wizardEntity = func_0800fa6c(D_08932bec, 0, 0x78, (s16)GameInfo.unk14, 0x4001, 0x80, 0, 1, 0, 0, 1);
-    GameInfo.shadowEntity = func_0800fa6c(D_08932edc, 0, 0x78, 0x50, 0x4082, 0x80, 0, 0, 0, 0, 1);
-    GameInfo.girlState = 0;
-    GameInfo.girlEntity = func_0800fa6c(D_08932e3c, 0, 0x78, 0x50, 0x4040, 0x80, 0, 1, 0, 0, 1);
+    gWizardsWaltzInfo.wizardState = 0;
+    gWizardsWaltzInfo.wizardEntity = func_0800fa6c(D_08932bec, 0, 0x78, (s16)gWizardsWaltzInfo.unk14, 0x4001, 0x80, 0, 1, 0, 0, 1);
+    gWizardsWaltzInfo.shadowEntity = func_0800fa6c(D_08932edc, 0, 0x78, 0x50, 0x4082, 0x80, 0, 0, 0, 0, 1);
+    gWizardsWaltzInfo.girlState = 0;
+    gWizardsWaltzInfo.girlEntity = func_0800fa6c(D_08932e3c, 0, 0x78, 0x50, 0x4040, 0x80, 0, 1, 0, 0, 1);
 
     // Create sparkle entities.
     for (i = 0; i < 10; i++) {
         u32 entity;
-        GameInfo.sparkle[i].state = 0;
+        gWizardsWaltzInfo.sparkle[i].state = 0;
         entity = func_0800fa6c(D_08932c8c, 0, 0, 0, 0, 0x80, 0, 1, 0, 0, 0);
-        GameInfo.sparkle[i].entity = entity;
+        gWizardsWaltzInfo.sparkle[i].entity = entity;
         func_08010040(entity, 0);
     }
 
     // Set default state.
     func_08017338(1, 0);
-    GameInfo.isTutorial = 0;
-    GameInfo.cycleInterval = func_0800c3a4(0x90);
+    gWizardsWaltzInfo.isTutorial = 0;
+    gWizardsWaltzInfo.cycleInterval = func_0800c3a4(0x90);
 }
 
 
 // [func_08044b80] ENGINE Func_00 - Set Rotation Interval
-void waltz_beatscript_set_rotation(u32 arg0) {
-    GameInfo.cyclePosition = 0;
-    GameInfo.cycleInterval = func_0800c3a4(arg0);
+void func_08044b80(u32 arg0) {
+    gWizardsWaltzInfo.cyclePosition = 0;
+    gWizardsWaltzInfo.cycleInterval = func_0800c3a4(arg0);
 }
 
 
 // [func_08044ba8] SUB Func_00 - Update Entity Position
-void waltz_update_position(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
+void func_08044ba8(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
     s32 temp;
-    u32 temp1 = arg3 - GameInfo.globalScale;
+    u32 temp1 = arg3 - gWizardsWaltzInfo.globalScale;
 
     temp = func_08007b80(0xa000, temp1);
 
@@ -117,142 +117,142 @@ void waltz_update_position(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
 
 
 // [func_08044c04] MAIN - Loop
-void waltz_main_loop(void) {
+void func_08044c04(void) {
     u32 temp1;
     u32 temp2;
     u8 i;
 
     // INPUT EVENT (A BUTTON)
     if (D_03004afc & 1) {
-        GameInfo.wizardState = 1;
+        gWizardsWaltzInfo.wizardState = 1;
         // Play animation: "wizard_magic"
-        func_08010064(GameInfo.wizardEntity, D_08932c14, 0, 1, 0x7f, 0);
+        func_08010064(gWizardsWaltzInfo.wizardEntity, D_08932c14, 0, 1, 0x7f, 0);
         // Play sound.
         func_08002634(&s_witch_furu_seqData);
     }
 
     // If (wizardState flag is set) and animation frame data is exhausted (>6):
-    if (GameInfo.wizardState == 1) {
-        if ((s8) func_08010198(GameInfo.wizardEntity) > 6) {
-            GameInfo.wizardState = 0;
+    if (gWizardsWaltzInfo.wizardState == 1) {
+        if ((s8) func_08010198(gWizardsWaltzInfo.wizardEntity) > 6) {
+            gWizardsWaltzInfo.wizardState = 0;
             // Resume default animation: "wizard_fly"
-            func_08010064(GameInfo.wizardEntity, D_08932bec, 0, 1, 0, 0);
+            func_08010064(gWizardsWaltzInfo.wizardEntity, D_08932bec, 0, 1, 0, 0);
         }
     }
 
     // Update position elements.
-    temp1 = (GameInfo.cyclePosition << 11) / GameInfo.cycleInterval;
-    GameInfo.unkC = temp1;
-    GameInfo.unk10 = (D_08936cac[temp1 & 0x7ff] * 7) / 16;
-    GameInfo.unk18 = (D_08936cac[(temp1 + 0x200) & 0x7ff] / 2) + 0x40;
+    temp1 = (gWizardsWaltzInfo.cyclePosition << 11) / gWizardsWaltzInfo.cycleInterval;
+    gWizardsWaltzInfo.unkC = temp1;
+    gWizardsWaltzInfo.unk10 = (D_08936cac[temp1 & 0x7ff] * 7) / 16;
+    gWizardsWaltzInfo.unk18 = (D_08936cac[(temp1 + 0x200) & 0x7ff] / 2) + 0x40;
 
     // Determine which direction the wizard should be facing.
     if (((temp1 & 0x7ff) - 0x200) > 0x380) {
-        func_0800ff44(GameInfo.wizardEntity, 1); // Flip Horizontal (facing right)
+        func_0800ff44(gWizardsWaltzInfo.wizardEntity, 1); // Flip Horizontal (facing right)
     } else {
-        func_0800ff44(GameInfo.wizardEntity, 0); // Normal (facing left)
+        func_0800ff44(gWizardsWaltzInfo.wizardEntity, 0); // Normal (facing left)
     }
 
     // Update entity positions.
-    waltz_update_position(GameInfo.wizardEntity, GameInfo.unk10, GameInfo.unk14, GameInfo.unk18);
-    waltz_update_position(GameInfo.shadowEntity, GameInfo.unk10, 0x20, GameInfo.unk18);
-    waltz_update_position(GameInfo.girlEntity, 0, 0x20, 0);
+    func_08044ba8(gWizardsWaltzInfo.wizardEntity, gWizardsWaltzInfo.unk10, gWizardsWaltzInfo.unk14, gWizardsWaltzInfo.unk18);
+    func_08044ba8(gWizardsWaltzInfo.shadowEntity, gWizardsWaltzInfo.unk10, 0x20, gWizardsWaltzInfo.unk18);
+    func_08044ba8(gWizardsWaltzInfo.girlEntity, 0, 0x20, 0);
 
     // Update sparkles.
-    temp2 = GameInfo.cyclePosition & 7;
+    temp2 = gWizardsWaltzInfo.cyclePosition & 7;
     if (!temp2) {
-        GameInfo.sparkle[GameInfo.unk1B0].state = 1;
-        GameInfo.unk1B0 += 1;
+        gWizardsWaltzInfo.sparkle[gWizardsWaltzInfo.unk1B0].state = 1;
+        gWizardsWaltzInfo.unk1B0 += 1;
 
-        if (GameInfo.unk1B0 > 9) {
-            GameInfo.unk1B0 = temp2;
+        if (gWizardsWaltzInfo.unk1B0 > 9) {
+            gWizardsWaltzInfo.unk1B0 = temp2;
         }
     }
 
     // Update sparkles (continued).
     for (i = 0; i < 10; i++) {
-        if (GameInfo.sparkle[i].state != 0) {
-            if (GameInfo.sparkle[i].state == 1) {
-                GameInfo.sparkle[i].unk8 = GameInfo.unkC - 0x200;
-                GameInfo.sparkle[i].unkC = GameInfo.unk10;
-                GameInfo.sparkle[i].unk10 = GameInfo.unk14 + 4;
-                GameInfo.sparkle[i].unk14 = GameInfo.unk18;
-                GameInfo.sparkle[i].state = 2;
-                GameInfo.sparkle[i].unk18 = 0;
-                func_08010040(GameInfo.sparkle[i].entity, 1);
+        if (gWizardsWaltzInfo.sparkle[i].state != 0) {
+            if (gWizardsWaltzInfo.sparkle[i].state == 1) {
+                gWizardsWaltzInfo.sparkle[i].unk8 = gWizardsWaltzInfo.unkC - 0x200;
+                gWizardsWaltzInfo.sparkle[i].unkC = gWizardsWaltzInfo.unk10;
+                gWizardsWaltzInfo.sparkle[i].unk10 = gWizardsWaltzInfo.unk14 + 4;
+                gWizardsWaltzInfo.sparkle[i].unk14 = gWizardsWaltzInfo.unk18;
+                gWizardsWaltzInfo.sparkle[i].state = 2;
+                gWizardsWaltzInfo.sparkle[i].unk18 = 0;
+                func_08010040(gWizardsWaltzInfo.sparkle[i].entity, 1);
             } else {
-                GameInfo.sparkle[i].unk10 = (s32) ((GameInfo.sparkle[i].unk10 << 8) + 0x100) >> 8;
-                GameInfo.sparkle[i].unk18 += 1;
-                if (GameInfo.sparkle[i].unk18 > 0xf) {
-                    GameInfo.sparkle[i].state = 0;
-                    func_08010040(GameInfo.sparkle[i].entity, 0);
+                gWizardsWaltzInfo.sparkle[i].unk10 = (s32) ((gWizardsWaltzInfo.sparkle[i].unk10 << 8) + 0x100) >> 8;
+                gWizardsWaltzInfo.sparkle[i].unk18 += 1;
+                if (gWizardsWaltzInfo.sparkle[i].unk18 > 0xf) {
+                    gWizardsWaltzInfo.sparkle[i].state = 0;
+                    func_08010040(gWizardsWaltzInfo.sparkle[i].entity, 0);
                 }
             }
-            waltz_update_position(GameInfo.sparkle[i].entity, GameInfo.sparkle[i].unkC,
-                                    GameInfo.sparkle[i].unk10, GameInfo.sparkle[i].unk14);
+            func_08044ba8(gWizardsWaltzInfo.sparkle[i].entity, gWizardsWaltzInfo.sparkle[i].unkC,
+                                    gWizardsWaltzInfo.sparkle[i].unk10, gWizardsWaltzInfo.sparkle[i].unk14);
         }
     }
 
     // Increment rotation cycle.
-    GameInfo.cyclePosition += 1;
+    gWizardsWaltzInfo.cyclePosition += 1;
 }
 
 
 // [func_08044e60] ENGINE Func_01 - Set Tutorial Flag
-void waltz_beatscript_set_tutorial(u32 arg0) {
-    GameInfo.isTutorial = arg0;
+void func_08044e60(u32 arg0) {
+    gWizardsWaltzInfo.isTutorial = arg0;
 }
 
 
-// [func_08044e74] MAIN - Unload(?)
-void waltz_main_unload(void) { /* Stub Function */ }
+// [func_08044e74] MAIN - Unload
+void func_08044e74(void) { /* Stub Function */ }
 
 
 // !TODO - Currently impossible without an ASM hack. See: https://decomp.me/scratch/Kk2Ec
-// [func_08044e78] CUE Behaviour - Spawn
+// [func_08044e78] CUE Spawn
 #include "asm/scenes/wizards_waltz/asm_08044e78.s"
 
 
-// [func_08044f94] CUE Behaviour - Unknown
-u32 waltz_cue_unknown(u32 arg0, u32 arg1, u32 arg2) {
-    if (arg2 > (GameInfo.cycleInterval + func_0800c3a4(0x30))) {
+// [func_08044f94] CUE Behaviour
+u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2) {
+    if (arg2 > (gWizardsWaltzInfo.cycleInterval + func_0800c3a4(0x30))) {
         return 1; }
     else {
         return 0; }
 }
 
 
-// [func_08044fc0] CUE Behaviour - Despawn
-void waltz_cue_despawn(u32 arg0, u32 *arg1) {
+// [func_08044fc0] CUE Despawn
+void func_08044fc0(u32 arg0, u32 *arg1) {
     func_0800fc70(arg1[0]);
 }
 
 
-// [func_08044fcc] CUE Event - Hit
-void waltz_cue_hit(u32 arg0, struct struct_080179f4_sub *arg1) {
+// [func_08044fcc] CUE Hit
+void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
     u32 isTutorial;
 
     // Play animation: "sprout_grow"
     func_08010064(arg1->unk0, D_08932d2c, 0, 1, 0x7f, 0);
 
     // Cycle through frames of "girl_happy" if isTutorial flag is not set.
-    isTutorial = GameInfo.isTutorial;
+    isTutorial = gWizardsWaltzInfo.isTutorial;
     if (!isTutorial) {
-        GameInfo.girlState = 1;
+        gWizardsWaltzInfo.girlState = 1;
 
         // Increment frame for "girl_happy" if not at the maximum of 5.
-        if (GameInfo.flowerCount <= 5) {
-            GameInfo.flowerCount += 1;
+        if (gWizardsWaltzInfo.flowerCount <= 5) {
+            gWizardsWaltzInfo.flowerCount += 1;
         }
 
         // Play animation: "girl_happy"
-        func_08010064(GameInfo.girlEntity, D_08932e64, GameInfo.flowerCount, 0, isTutorial, isTutorial);
+        func_08010064(gWizardsWaltzInfo.girlEntity, D_08932e64, gWizardsWaltzInfo.flowerCount, 0, isTutorial, isTutorial);
     }
 }
 
 
-// [func_0804503c] CUE Event - Barely
-void waltz_cue_barely(u32 arg0, struct struct_080179f4_sub *arg1) {
+// [func_0804503c] CUE Barely
+void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1) {
     u32 temp;
     u32 isTutorial;
 
@@ -268,17 +268,17 @@ void waltz_cue_barely(u32 arg0, struct struct_080179f4_sub *arg1) {
     func_0800ff44(arg1->unk0, temp);
 
     // Cycle through frames of "girl_sad" if isTutorial flag is not set.
-    isTutorial = GameInfo.isTutorial;
+    isTutorial = gWizardsWaltzInfo.isTutorial;
     if (!isTutorial) {
-        GameInfo.girlState = 2;
+        gWizardsWaltzInfo.girlState = 2;
 
         // Decrement frame for "girl_sad" if not at the minimum of 0.
-        if (GameInfo.flowerCount) {
-            GameInfo.flowerCount -= 1;
+        if (gWizardsWaltzInfo.flowerCount) {
+            gWizardsWaltzInfo.flowerCount -= 1;
         }
 
         // Play animation: "girl_sad"
-        func_08010064(GameInfo.girlEntity, D_08932ea4, GameInfo.flowerCount, 0, isTutorial, isTutorial);
+        func_08010064(gWizardsWaltzInfo.girlEntity, D_08932ea4, gWizardsWaltzInfo.flowerCount, 0, isTutorial, isTutorial);
     }
 
     // Unknown function - likely related to score.
@@ -286,26 +286,26 @@ void waltz_cue_barely(u32 arg0, struct struct_080179f4_sub *arg1) {
 }
 
 
-// [func_080450d0] CUE Event - Miss
-void waltz_cue_miss(u32 arg0, struct struct_080179f4_sub *arg1) {
+// [func_080450d0] CUE Miss
+void func_080450d0(u32 arg0, struct struct_080179f4_sub *arg1) {
     // Unknown function - likely related to score.
     func_0800bc40();
 }
 
 
 // [func_080450dc] MAIN - Input Event
-void wizard_main_unknown(void) { /* Stub Function */ }
+void func_080450dc(void) { /* Stub Function */ }
 
 
-// [func_080450e0] OTHER - Unknown Func_00
+// [func_080450e0] GRAPHICAL Func_00 - Unknown
 void func_080450e0(void) { /* Stub Function */ }
 
 
-// [func_080450e4] OTHER - Unknown Func_01
+// [func_080450e4] GRAPHICAL Func_01 - Unknown
 void func_080450e4(void) { /* Stub Function */ }
 
 
-// [func_080450e8] OTHER - Unknown Func_02
+// [func_080450e8] GRAPHICAL Func_02 - Unknown
 void func_080450e8(u32 arg0) {
     if (arg0) {
         func_08017448(1);
