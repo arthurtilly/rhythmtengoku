@@ -1,5 +1,4 @@
-#ifndef GUARD_MEMORY_H
-#define GUARD_MEMORY_H
+#pragma once
 
 #define SAVE_BUFFER_SIZE 0x3B04 // might need renaming
 
@@ -34,5 +33,3 @@ extern void func_080009c8_stub(void);
 extern void func_080009cc_stub(void);
 extern s32 func_080009d0(s16 *);
 extern s32 func_080009fc(void);
-
-#endif

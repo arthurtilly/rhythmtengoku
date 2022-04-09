@@ -1,5 +1,4 @@
-#ifndef GUARD_TYPES_H
-#define GUARD_TYPES_H
+#pragma once
 
 typedef s32 (*struct_030046a4_func)(s32);
 
@@ -204,5 +203,3 @@ struct struct_030055d0 {
 extern struct struct_030046a4 *D_030046a4;
 extern s32 D_03005380;
 extern struct struct_030055d0 *D_030055d0;
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef GUARD_CODE_08010490_H
-#define GUARD_CODE_08010490_H
+#pragma once
 
 // extern ? func_08010490(?);
 // extern ? func_08010494(?);
@@ -65,5 +64,3 @@
 // extern ? func_08011c1c(?);
 // extern ? func_08011d8c(?);
 // extern ? func_08011e74(?);
-
-#endif

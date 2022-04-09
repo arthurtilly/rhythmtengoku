@@ -1,5 +1,4 @@
-#ifndef GUARD_CODE_08003980_H
-#define GUARD_CODE_08003980_H
+#pragma once
 
 struct struct_03004ad0 {
     u32 unk0;
@@ -149,5 +148,3 @@ extern void mem_heap_dealloc_with_id(u16);
 extern void mem_heap_get_allocated_space(void);
 // extern ? func_0800679c(?);
 // extern ? func_080067a4(?);
-
-#endif

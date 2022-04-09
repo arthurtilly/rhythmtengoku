@@ -1,5 +1,4 @@
-#ifndef GUARD_RESULTS_H
-#define GUARD_RESULTS_H
+#pragma once
 
 // extern ? func_0801875c(?);
 // extern ? func_08018828(?);
@@ -78,5 +77,3 @@
 // extern ? func_0801a314(?);
 // extern ? func_0801a354(?);
 // extern ? func_0801a370(?);
-
-#endif

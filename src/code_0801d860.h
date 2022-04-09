@@ -1,5 +1,4 @@
-#ifndef GUARD_CODE_0801D860_H
-#define GUARD_CODE_0801D860_H
+#pragma once
 
 // extern ? func_0801d860(?);
 // extern ? func_0801d86c(?);
@@ -84,5 +83,3 @@
 // extern ? func_0801ee3c(?);
 // extern ? func_0801ee6c(?);
 // extern ? func_0801ee88(?);
-
-#endif

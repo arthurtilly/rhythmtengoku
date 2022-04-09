@@ -1,5 +1,4 @@
-#ifndef GUARD_SOUND_H
-#define GUARD_SOUND_H
+#pragma once
 
 #define INSTRUMENT_PCM_PITCHED 0x41
 #define INSTRUMENT_PCM_UNPITCHED 0x46
@@ -76,5 +75,3 @@ struct SequenceData {
     const char *seqName;
     u32 iramChnlIndex;
 };
-
-#endif

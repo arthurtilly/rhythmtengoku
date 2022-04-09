@@ -1,5 +1,4 @@
-#ifndef GUARD_CODE_08016E18_H
-#define GUARD_CODE_08016E18_H
+#pragma once
 
 // extern ? func_08016e18(?);
 // extern ? func_08016e54(?);
@@ -103,5 +102,3 @@ extern void func_080179f4(s32);
 // extern ? func_08018660(?);
 // extern ? func_08018698(?);
 // extern ? func_080186d4(?);
-
-#endif

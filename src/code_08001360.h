@@ -1,5 +1,4 @@
-#ifndef GUARD_CODE_08001360_H
-#define GUARD_CODE_08001360_H
+#pragma once
 
 typedef u32 (*D_0300009c_func)(void);
 
@@ -152,5 +151,3 @@ extern u32 func_08002ee0(u16, u32, u32);
 // extern ? func_0800387c(?);
 // extern ? func_080038b0(?);
 // extern ? func_08003974(?);
-
-#endif

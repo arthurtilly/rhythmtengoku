@@ -1,5 +1,4 @@
-#ifndef GUARD_MAIN_H
-#define GUARD_MAIN_H
+#pragma once
 
 typedef s32 (*struct_03000000_func)(void *);
 
@@ -45,5 +44,3 @@ extern void func_080006b0(struct struct_03000000 *, struct struct_03000000 *);
 extern void func_080006d0(struct struct_03000000 *, struct struct_03000000 *);
 extern void func_080006f0(struct struct_03000000 *, struct struct_03000000 *);
 extern struct struct_03000000 *func_0800070c(void);
-
-#endif

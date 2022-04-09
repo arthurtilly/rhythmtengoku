@@ -1,5 +1,4 @@
-#ifndef GUARD_SCENES_H
-#define GUARD_SCENES_H
+#pragma once
 
 // Sneaky Spirits
 
@@ -2053,5 +2052,3 @@ extern void func_080450e8(u32 arg0);                                        // [
 // extern ? func_08047e1c(?);
 // extern ? func_08047e20(?);
 // extern ? func_08047e24(?);
-
-#endif

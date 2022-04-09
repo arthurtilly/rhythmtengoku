@@ -1,5 +1,4 @@
-#ifndef GUARD_CODE_080092CC_H
-#define GUARD_CODE_080092CC_H
+#pragma once
 
 // extern ? func_080092cc(?);
 // extern ? func_0800931c(?);
@@ -103,5 +102,3 @@
 // extern ? func_0800b32c(?);
 // extern ? func_0800b368(?);
 // extern ? func_0800b384(?);
-
-#endif

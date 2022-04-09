@@ -1,5 +1,4 @@
-#ifndef GUARD_CODE_0800B778_H
-#define GUARD_CODE_0800B778_H
+#pragma once
 
 // extern ? func_0800b778(?);
 // extern ? func_0800b834(?);
@@ -264,5 +263,3 @@ extern u32 *func_0800c660(u32, u32);
 // extern ? func_080102d0(?);
 // extern ? func_080102f4(?);
 // extern ? func_08010478(?);
-
-#endif

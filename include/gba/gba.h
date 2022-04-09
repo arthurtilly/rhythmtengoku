@@ -1,5 +1,4 @@
-#ifndef GUARD_GBA_H
-#define GUARD_GBA_H 0
+#pragma once
 
 #define BIOSROMBase		0x00000000 // To 0x00004000 (16kb)
 #define ExternWorkRAMBase	0x02000000 // To 0x02040000 (256kb)
@@ -29,5 +28,3 @@
 #include "include/gba/gba_input_regs.h"
 #include "include/gba/gba_interrupt_regs.h"
 #include "include/gba/macros.h"
-
-#endif
