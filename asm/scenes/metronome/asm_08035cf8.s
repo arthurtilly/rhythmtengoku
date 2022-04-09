@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-glabel func_08035cf8 \n\
+thumb_func_start func_08035cf8 \n\
 /* 08035cf8 */ PUSH {R4, LR} \n\
 /* 08035cfa */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08035cfc */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\

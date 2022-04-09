@@ -38,7 +38,7 @@ void func_080211a4(void) {
 
     func_0800c604(0);
     temp = func_08002ee0(func_0800c3b8(), D_089df1ac[D_030055d0->unk0], 0x2000);
-    func_08005d38(temp, &func_08021190 + 1, 0);
+    func_08005d38(temp, func_08021190, 0);
 }
 
 void func_080211e4(void) {
@@ -46,7 +46,7 @@ void func_080211e4(void) {
     
     func_0800c604(0);
     temp = func_080087b4(func_0800c3b8(), &D_089df064);
-    func_08005d38(temp, &func_080211a4 + 1, 0);
+    func_08005d38(temp, func_080211a4, 0);
 }
 
 #include "asm/scenes/karate_man/asm_08021210.s"

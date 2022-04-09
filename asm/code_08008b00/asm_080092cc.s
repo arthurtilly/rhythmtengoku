@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-glabel func_080092cc \n\
+thumb_func_start func_080092cc \n\
 /* 080092cc */ PUSH {LR} \n\
 /* 080092ce */ LDR R0, =D_03001110 \n\
 /* 080092d0 */ BL func_0804e640 \n\
@@ -26,7 +26,7 @@ branch_080092f0: \n\
 /* 080092f6 */ LDR R0, =D_0300119d \n\
 /* 080092f8 */ STRB R1, [R0] \n\
 /* 080092fa */ LDR R1, =D_030064d4 \n\
-/* 080092fc */ LDR R0, =(func_080093c0 + 1) \n\
+/* 080092fc */ LDR R0, =func_080093c0 \n\
 /* 080092fe */ STR R0, [R1] \n\
 /* 08009300 */ POP {R0} \n\
 /* 08009302 */ BX R0 \n\

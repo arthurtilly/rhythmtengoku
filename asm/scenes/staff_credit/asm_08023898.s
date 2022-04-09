@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-glabel func_08023898 \n\
+thumb_func_start func_08023898 \n\
 /* 08023898 */ LDR R1, =D_030055d0 \n\
 /* 0802389a */ LDR R3, [R1] \n\
 /* 0802389c */ ADDS R2, R3, 0x0 @ Set R2 to R3 + 0x0 \n\

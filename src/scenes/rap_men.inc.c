@@ -37,7 +37,7 @@ void func_080398e4(void) {
 
 	func_0800c604(0);
 	temp = func_08002ee0(func_0800c3b8(), D_089e6518[D_030055d0->unk0], 0x2000);
-	func_08005d38(temp, &func_080398d4 + 1, 0);
+	func_08005d38(temp, func_080398d4, 0);
 }
 
 void func_08039924(void) {
@@ -45,7 +45,7 @@ void func_08039924(void) {
 
 	func_0800c604(0);
 	temp = func_080087b4(func_0800c3b8(), &D_089e6424);
-	func_08005d38(temp, &func_080398e4 + 1, 0);
+	func_08005d38(temp, func_080398e4, 0);
 }
 
 void func_08039950(u32 arg0) {

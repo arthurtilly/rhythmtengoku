@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-glabel func_0803e54c \n\
+thumb_func_start func_0803e54c \n\
 /* 0803e54c */ PUSH {LR} \n\
 /* 0803e54e */ BL func_0803e644 \n\
 /* 0803e552 */ LDR R0, =s_f_tap_tap_seqData \n\

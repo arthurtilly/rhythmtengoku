@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-glabel func_080049dc \n\
+thumb_func_start func_080049dc \n\
 /* 080049dc */ LDR R2, =D_08936b50 \n\
 /* 080049de */ LDRB R1, [R0] \n\
 /* 080049e0 */ SUBS R1, 0x61 @ Subtract 0x61 from R1 \n\

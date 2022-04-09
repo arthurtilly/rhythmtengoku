@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-glabel func_0801d4c8 \n\
+thumb_func_start func_0801d4c8 \n\
 /* 0801d4c8 */ PUSH {R4-R6, LR} \n\
 /* 0801d4ca */ MOV R6, R8 @ Set R6 to R8 \n\
 /* 0801d4cc */ PUSH {R6} \n\
@@ -48,7 +48,7 @@ glabel func_0801d4c8 \n\
 /* 0801d51e */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0801d520 */ LDRB R1, [R1] \n\
 /* 0801d522 */ STR R1, [SP, 0x30] \n\
-/* 0801d524 */ LDR R1, =(func_0801d474 + 1) \n\
+/* 0801d524 */ LDR R1, =func_0801d474 \n\
 /* 0801d526 */ STR R1, [SP, 0x34] \n\
 /* 0801d528 */ STR R5, [SP, 0x38] \n\
 /* 0801d52a */ MOVS R1, 0x8 @ Set R1 to 0x8 \n\
@@ -63,7 +63,7 @@ glabel func_0801d4c8 \n\
 /* 0801d540 */ BL func_0801d6e4 \n\
 /* 0801d544 */ LDR R0, [R4] \n\
 /* 0801d546 */ LDR R0, [R0, 0x4] \n\
-/* 0801d548 */ LDR R1, =(func_0801d4b0 + 1) \n\
+/* 0801d548 */ LDR R1, =func_0801d4b0 \n\
 /* 0801d54a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801d54c */ BL func_0800b30c \n\
 /* 0801d550 */ LDR R0, [R4] \n\

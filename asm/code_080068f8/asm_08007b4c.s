@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-glabel func_08007b4c \n\
+thumb_func_start func_08007b4c \n\
 /* 08007b4c */ LDR R2, =0x040000d4 @ !Hardware REG_DMA3SAD \n\
 /* 08007b4e */ LDR R1, =D_08000cfc \n\
 /* 08007b50 */ STR R1, [R2] \n\

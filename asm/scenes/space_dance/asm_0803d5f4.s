@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-glabel func_0803d5f4 \n\
+thumb_func_start func_0803d5f4 \n\
 /* 0803d5f4 */ PUSH {R4, R5, LR} \n\
 /* 0803d5f6 */ SUB SP, 0xC \n\
 /* 0803d5f8 */ LDR R5, =D_030055d0 \n\
@@ -38,7 +38,7 @@ glabel func_0803d5f4 \n\
 /* 0803d63e */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803d640 */ LSLS R4, R4, 0x10 \n\
 /* 0803d642 */ LSRS R4, R4, 0x10 \n\
-/* 0803d644 */ LDR R5, =(func_0803d5e4 + 1) \n\
+/* 0803d644 */ LDR R5, =func_0803d5e4 \n\
 /* 0803d646 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
 /* 0803d648 */ BL func_0800c3a4 \n\
 /* 0803d64c */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\

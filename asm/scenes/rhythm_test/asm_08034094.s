@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-glabel func_08034094 \n\
+thumb_func_start func_08034094 \n\
 /* 08034094 */ PUSH {LR} \n\
 /* 08034096 */ BL func_0800bc40 \n\
 /* 0803409a */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\

@@ -5,20 +5,20 @@
 
 glabel D_0804f300
 @ Used in boot.s for interrupt jumptable
-/* 0804f300 */ .word (func_08049144 + 1) @ INTERRUPT_DMA2
-/* 0804f304 */ .word (func_08001380 + 1) @ INTERRUPT_VBLANK
-/* 0804f308 */ .word (func_080091a4 + 1) @ INTERRUPT_HBLANK
-/* 0804f30c */ .word (func_08009268 + 1) @ INTERRUPT_VCOUNT
-/* 0804f310 */ .word (func_080001f4_stub + 1) @ INTERRUPT_TIMER0
-/* 0804f314 */ .word (func_080001f4_stub + 1) @ INTERRUPT_TIMER1
-/* 0804f318 */ .word (func_080001f4_stub + 1) @ INTERRUPT_TIMER2
-/* 0804f31c */ .word (func_080001f4_stub + 1) @ INTERRUPT_TIMER3
-/* 0804f320 */ .word (func_080001f4_stub + 1) @ INTERRUPT_COMM
-/* 0804f324 */ .word (func_080001f4_stub + 1) @ INTERRUPT_DMA0
-/* 0804f328 */ .word (func_080001f4_stub + 1) @ INTERRUPT_DMA1
-/* 0804f32c */ .word (func_080001f4_stub + 1) @ INTERRUPT_DMA3
-/* 0804f330 */ .word (func_080001f4_stub + 1) @ INTERRUPT_BUTTON
-/* 0804f334 */ .word (func_080001f4_stub + 1)
+/* 0804f300 */ .word func_08049144 @ INTERRUPT_DMA2
+/* 0804f304 */ .word func_08001380 @ INTERRUPT_VBLANK
+/* 0804f308 */ .word func_080091a4 @ INTERRUPT_HBLANK
+/* 0804f30c */ .word func_08009268 @ INTERRUPT_VCOUNT
+/* 0804f310 */ .word func_080001f4_stub @ INTERRUPT_TIMER0
+/* 0804f314 */ .word func_080001f4_stub @ INTERRUPT_TIMER1
+/* 0804f318 */ .word func_080001f4_stub @ INTERRUPT_TIMER2
+/* 0804f31c */ .word func_080001f4_stub @ INTERRUPT_TIMER3
+/* 0804f320 */ .word func_080001f4_stub @ INTERRUPT_COMM
+/* 0804f324 */ .word func_080001f4_stub @ INTERRUPT_DMA0
+/* 0804f328 */ .word func_080001f4_stub @ INTERRUPT_DMA1
+/* 0804f32c */ .word func_080001f4_stub @ INTERRUPT_DMA3
+/* 0804f330 */ .word func_080001f4_stub @ INTERRUPT_BUTTON
+/* 0804f334 */ .word func_080001f4_stub
 @ above is dma'd to D_03004460
 
 /* 0804f338 */

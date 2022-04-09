@@ -2,13 +2,13 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-glabel func_0801eae4 \n\
+thumb_func_start func_0801eae4 \n\
 /* 0801eae4 */ PUSH {LR} \n\
 /* 0801eae6 */ SUB SP, 0xC \n\
 /* 0801eae8 */ BL func_0800c3b8 \n\
 /* 0801eaec */ LSLS R0, R0, 0x10 \n\
 /* 0801eaee */ LSRS R0, R0, 0x10 \n\
-/* 0801eaf0 */ LDR R1, =(func_0801eab4 + 1) \n\
+/* 0801eaf0 */ LDR R1, =func_0801eab4 \n\
 /* 0801eaf2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801eaf4 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 0801eaf6 */ BL func_0800856c \n\

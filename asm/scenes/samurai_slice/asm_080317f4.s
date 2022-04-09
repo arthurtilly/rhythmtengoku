@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-glabel func_080317f4 \n\
+thumb_func_start func_080317f4 \n\
 /* 080317f4 */ PUSH {R4-R7, LR} \n\
 /* 080317f6 */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 080317f8 */ PUSH {R7} \n\
@@ -47,7 +47,7 @@ branch_0803182a: \n\
 /* 0803184a */ LDR R1, [R7] \n\
 /* 0803184c */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 0803184e */ LDRSH R1, [R1, R2] \n\
-/* 08031850 */ LDR R2, =(func_080316ec + 1) \n\
+/* 08031850 */ LDR R2, =func_080316ec \n\
 /* 08031852 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08031854 */ BL func_0804daa8 \n\
 /* 08031858 */ MOV R3, R8 @ Set R3 to R8 \n\

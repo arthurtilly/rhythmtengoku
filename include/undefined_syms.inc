@@ -107,7 +107,7 @@
 .set func_08048b40, 0x08048b40
 .set func_08048d44, 0x08048d44
 .set func_08048fac, 0x08048fac
-.set func_08049144, 0x08049144
+.set func_08049144, 0x08049145
 .set func_08049b70, 0x08049b70
 .set func_08049be4, 0x08049be4
 .set func_08049bfc, 0x08049bfc

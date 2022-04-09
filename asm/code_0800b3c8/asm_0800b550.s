@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-glabel func_0800b550 \n\
+thumb_func_start func_0800b550 \n\
 /* 0800b550 */ PUSH {LR} \n\
 /* 0800b552 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0800b554 */ BEQ branch_0800b55c \n\

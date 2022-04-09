@@ -8,6 +8,13 @@
 	\value:
 .endm
 
+.macro thumb_func_start value
+	.thumb
+	.thumb_func
+	.global \value
+	\value:
+.endm
+
 .macro text_size_large
     .byte 0x03, 0x32
 .endm
