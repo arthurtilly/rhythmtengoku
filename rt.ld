@@ -63,9 +63,11 @@ SECTIONS {
         *libc.a:memcpy.o(.text*);
         *libc.a:strcpy.o(.text*);
         *libc.a:strlen.o(.text*);
-        build/data/data_0804f300.s.o(.text*);
-        build/data/data_08054950.s.o(.text*);
-        build/data/data_08058f58.s.o(.text*);
+		
+		build/asm/boot.s.o(.rodata*);
+        build/data/data_0804f338.s.o(.rodata*);
+        build/data/data_08054950.s.o(.rodata*);
+        build/data/data_08058f58.s.o(.rodata*);
         
         build/audio/samples/sfx_001.pcm.o(.rodata*);
         build/audio/samples/sfx_002.pcm.o(.rodata*);

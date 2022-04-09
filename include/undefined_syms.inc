@@ -1,9 +1,9 @@
 .ifndef UNDEFINED_SYMS_HEADER
 .set UNDEFINED_SYMS_HEADER, 0
 
-.set D_03004460, 0x03004460
+.set interrupt_handler_jtbl, 0x03004460
 .set D_03004498, 0x03004498
-.set interrupt_handler_intern, 0x030044a0
+.set interrupt_handler, 0x030044a0
 .set D_030046a0, 0x030046a0
 .set D_030046a4, 0x030046a4
 .set D_030046a8, 0x030046a8

@@ -72,9 +72,9 @@ void func_080002c4(void) {
 	DmaFill32(3, 0, ExternWorkRAMBase, 0x40000);
 	DmaFill32(3, 0, InternWorkRAMBase, 0x7E00);
 	
-	DmaCopy32(3, &interrupt_handler, &interrupt_handler_intern, 0x200);
-	DmaCopy32(3, &D_0804f300, &D_03004460, 0x38);
-	REG_INTERRUPT = &interrupt_handler_intern;
+	DmaCopy32(3, &interrupt_handler_rom, &interrupt_handler, 0x200);
+	DmaCopy32(3, &interrupt_handler_jtbl_rom, &interrupt_handler_jtbl, 0x38);
+	REG_INTERRUPT = &interrupt_handler;
 	
 	DmaFill32(3, 0, VRAMBase, 0x18000);
 	

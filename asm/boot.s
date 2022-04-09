@@ -13,7 +13,7 @@ glabel entry_point
 
 @ Set interrupt handler
 /* 080000e8 */ LDR R1, =REG_INTERRUPT
-/* 080000ec */ ADR R0, interrupt_handler
+/* 080000ec */ ADR R0, interrupt_handler_rom
 /* 080000f0 */ STR R0, [R1] @ Save the address of the interrupt handler to REG_INTERUPT
 
 @ Jump into main code
@@ -29,7 +29,7 @@ val_000108:
 
 
 
-glabel interrupt_handler
+glabel interrupt_handler_rom
 /* 0800010c */ MOV32 R3, REG_IE
 /* 08000114 */ LDR R2, [R3] @ Load both REG_IE and REG_IF as one word
 /* 08000118 */ AND R1, R2, R2, LSR 0x10 @ Set R1 to all interrupts that have been both registered and acknowledged
@@ -81,7 +81,7 @@ glabel interrupt_handler
 
 interrupt_handler_registered:
 /* 080001c0 */ STRH R0, [R3,0x2]
-/* 080001c4 */ LDR R1, =D_03004460
+/* 080001c4 */ LDR R1, =interrupt_handler_jtbl
 /* 080001c8 */ ADD R1, R1, R2 @ Set R1 to R1 + R2
 /* 080001cc */ LDR R0, [R1] @ Jumptable based on interrupt type
 /* 080001d0 */ BX R0
@@ -99,5 +99,24 @@ interrupt_handler_infinite_loop:
 /* 080001e4 */ B interrupt_handler_infinite_loop
 
 .ltorg
+
+.section .rodata
+
+glabel interrupt_handler_jtbl_rom
+/* 0804f300 */ .word func_08049144 @ INTERRUPT_DMA2
+/* 0804f304 */ .word func_08001380 @ INTERRUPT_VBLANK
+/* 0804f308 */ .word func_080091a4 @ INTERRUPT_HBLANK
+/* 0804f30c */ .word func_08009268 @ INTERRUPT_VCOUNT
+/* 0804f310 */ .word func_080001f4_stub @ INTERRUPT_TIMER0
+/* 0804f314 */ .word func_080001f4_stub @ INTERRUPT_TIMER1
+/* 0804f318 */ .word func_080001f4_stub @ INTERRUPT_TIMER2
+/* 0804f31c */ .word func_080001f4_stub @ INTERRUPT_TIMER3
+/* 0804f320 */ .word func_080001f4_stub @ INTERRUPT_COMM
+/* 0804f324 */ .word func_080001f4_stub @ INTERRUPT_DMA0
+/* 0804f328 */ .word func_080001f4_stub @ INTERRUPT_DMA1
+/* 0804f32c */ .word func_080001f4_stub @ INTERRUPT_DMA3
+/* 0804f330 */ .word func_080001f4_stub @ INTERRUPT_BUTTON
+/* 0804f334 */ .word func_080001f4_stub
+@ above is dma'd
 
 .end

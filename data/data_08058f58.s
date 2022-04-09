@@ -1,4 +1,4 @@
-.section .text
+.section .rodata
 .syntax unified
 
 .include "include/gba.inc"
