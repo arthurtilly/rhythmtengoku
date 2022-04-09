@@ -6,6 +6,8 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
+static s32 D_03001328; // unknown type, could be 2 words
+
 #include "asm/code_08016e18/asm_08016e18.s"
 
 #include "asm/code_08016e18/asm_08016e54.s"

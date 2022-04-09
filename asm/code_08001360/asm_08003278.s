@@ -55,11 +55,11 @@ branch_080032b4: \n\
 /* 080032d6 */ ADDS R5, R5, R0 @ Set R5 to R5 + R0 \n\
 /* 080032d8 */ LDRB R1, [R7, 0x14] \n\
 /* 080032da */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 080032dc */ BL func_0804f150 \n\
+/* 080032dc */ BL __umodsi3 \n\
 /* 080032e0 */ STR R0, [SP, 0x10] \n\
 /* 080032e2 */ LDRB R1, [R7, 0x15] \n\
 /* 080032e4 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 080032e6 */ BL func_0804f150 \n\
+/* 080032e6 */ BL __umodsi3 \n\
 /* 080032ea */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080032ec */ ADDS R6, R7, 0x0 @ Set R6 to R7 + 0x0 \n\
 /* 080032ee */ ADDS R6, 0x32 @ Add 0x32 to R6 \n\

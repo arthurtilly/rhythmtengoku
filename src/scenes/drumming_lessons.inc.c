@@ -1,5 +1,7 @@
 // Might need some more splitting
 
+static s32 D_03001564; // unknown type
+
 #include "asm/scenes/drumming_lessons/asm_080239a0.s"
 
 #include "asm/scenes/drumming_lessons/asm_080239bc.s"

@@ -95,7 +95,7 @@ branch_08010564: \n\
 /* 08010602 */ LDR R1, =D_0804f3dc \n\
 /* 08010604 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08010606 */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\
-/* 08010608 */ BL func_0804f210 \n\
+/* 08010608 */ BL memcpy \n\
 /* 0801060c */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0801060e */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08010610 */ BL func_080081a8 \n\

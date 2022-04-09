@@ -15,7 +15,7 @@ glabel func_0802e750 \n\
 /* 0802e762 */ ADDS R5, 0x74 @ Add 0x74 to R5 \n\
 /* 0802e764 */ LDRB R0, [R0] \n\
 /* 0802e766 */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
-/* 0802e768 */ BL func_0804f150 \n\
+/* 0802e768 */ BL __umodsi3 \n\
 /* 0802e76c */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0802e76e */ LSLS R4, R4, 0x18 \n\
 /* 0802e770 */ LDR R2, =D_03005380 \n\

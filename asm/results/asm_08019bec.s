@@ -75,7 +75,7 @@ branch_08019c64: \n\
 /* 08019c72 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08019c74 */ LDR R1, =D_08054f18 \n\
 /* 08019c76 */ MOVS R2, 0x9 @ Set R2 to 0x9 \n\
-/* 08019c78 */ BL func_0804f210 \n\
+/* 08019c78 */ BL memcpy \n\
 /* 08019c7c */ LDR R1, [R4] \n\
 /* 08019c7e */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08019c80 */ BL func_080081a8 \n\
@@ -115,7 +115,7 @@ branch_08019cbc: \n\
  \n\
 branch_08019cc0: \n\
 /* 08019cc0 */ MOVS R2, 0x9 @ Set R2 to 0x9 \n\
-/* 08019cc2 */ BL func_0804f210 \n\
+/* 08019cc2 */ BL memcpy \n\
  \n\
 branch_08019cc6: \n\
 /* 08019cc6 */ LDR R1, [R4] \n\

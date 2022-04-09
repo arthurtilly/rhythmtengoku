@@ -18,7 +18,7 @@ glabel func_08008328 \n\
 branch_0800833e: \n\
 /* 0800833e */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08008340 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08008342 */ BL func_0804f150 \n\
+/* 08008342 */ BL __umodsi3 \n\
 /* 08008346 */ LSLS R0, R0, 0x1 \n\
 /* 08008348 */ LDR R1, =D_08936c64 \n\
 /* 0800834a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

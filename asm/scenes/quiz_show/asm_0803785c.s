@@ -22,7 +22,7 @@ glabel func_0803785c \n\
 /* 0803787e */ LDRSH R5, [R0, R1] \n\
 /* 08037880 */ MOV R0, R9 @ Set R0 to R9 \n\
 /* 08037882 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08037884 */ BL func_0804f150 \n\
+/* 08037884 */ BL __umodsi3 \n\
 /* 08037888 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803788a */ LSLS R2, R2, 0x18 \n\
 /* 0803788c */ ASRS R2, R2, 0x18 \n\

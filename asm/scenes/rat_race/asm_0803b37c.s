@@ -332,7 +332,7 @@ branch_0803b644: \n\
 /* 0803b646 */ ADDS R0, 0xD0 @ Add 0xD0 to R0 \n\
 /* 0803b648 */ LDRH R0, [R0] \n\
 /* 0803b64a */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
-/* 0803b64c */ BL func_0804f150 \n\
+/* 0803b64c */ BL __umodsi3 \n\
 /* 0803b650 */ LSLS R0, R0, 0x10 \n\
 /* 0803b652 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803b654 */ BNE branch_0803b738 \n\

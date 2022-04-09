@@ -23,32 +23,32 @@ glabel func_08028004 \n\
 /* 0802802a */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 0802802c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802802e */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08028030 */ BL func_0804f150 \n\
+/* 08028030 */ BL __umodsi3 \n\
 /* 08028034 */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 08028036 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08028038 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 0802803a */ BL __udivsi3 \n\
 /* 0802803e */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08028040 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08028042 */ BL func_0804f150 \n\
+/* 08028042 */ BL __umodsi3 \n\
 /* 08028046 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08028048 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802804a */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 0802804c */ BL __udivsi3 \n\
 /* 08028050 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08028052 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08028054 */ BL func_0804f150 \n\
+/* 08028054 */ BL __umodsi3 \n\
 /* 08028058 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 0802805a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802805c */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 0802805e */ BL __udivsi3 \n\
 /* 08028062 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08028064 */ BL func_0804f150 \n\
+/* 08028064 */ BL __umodsi3 \n\
 /* 08028068 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0802806a */ LDR R1, =D_0805a0c0 \n\
 /* 0802806c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0802806e */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 08028070 */ BL func_0804f210 \n\
+/* 08028070 */ BL memcpy \n\
 /* 08028074 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 08028076 */ BEQ branch_08028090 \n\
 /* 08028078 */ ADD R1, SP, 0xC \n\

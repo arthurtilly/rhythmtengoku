@@ -176,7 +176,7 @@ branch_08016bfe: \n\
 /* 08016c6c */ LDR R1, =D_08054acc \n\
 /* 08016c6e */ ADDS R0, 0xC @ Add 0xC to R0 \n\
 /* 08016c70 */ MOVS R2, 0x11 @ Set R2 to 0x11 \n\
-/* 08016c72 */ BL func_0804f210 \n\
+/* 08016c72 */ BL memcpy \n\
 /* 08016c76 */ LDR R0, [R5] \n\
 /* 08016c78 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08016c7a */ ADDS R4, 0xC @ Add 0xC to R4 \n\

@@ -50,7 +50,7 @@ glabel func_08018f10 \n\
 /* 08018f78 */ LDR R5, =D_0890bc00 \n\
 /* 08018f7a */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08018f7c */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08018f7e */ BL func_0804f150 \n\
+/* 08018f7e */ BL __umodsi3 \n\
 /* 08018f82 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08018f84 */ LSLS R2, R2, 0x18 \n\
 /* 08018f86 */ ASRS R2, R2, 0x18 \n\
@@ -74,7 +74,7 @@ glabel func_08018f10 \n\
 /* 08018fae */ LDR R2, =D_0890bb68 \n\
 /* 08018fb0 */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 08018fb2 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08018fb4 */ BL func_0804f150 \n\
+/* 08018fb4 */ BL __umodsi3 \n\
 /* 08018fb8 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08018fba */ LSLS R2, R2, 0x18 \n\
 /* 08018fbc */ ASRS R2, R2, 0x18 \n\
@@ -98,7 +98,7 @@ glabel func_08018f10 \n\
 /* 08018fe4 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08018fe6 */ LDR R4, [R1] \n\
 /* 08018fe8 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08018fea */ BL func_0804f150 \n\
+/* 08018fea */ BL __umodsi3 \n\
 /* 08018fee */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08018ff0 */ LSLS R2, R2, 0x18 \n\
 /* 08018ff2 */ ASRS R2, R2, 0x18 \n\
@@ -123,7 +123,7 @@ branch_0801900a: \n\
 /* 08019018 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 0801901a */ LDR R4, [R1] \n\
 /* 0801901c */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 0801901e */ BL func_0804f150 \n\
+/* 0801901e */ BL __umodsi3 \n\
 /* 08019022 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08019024 */ LSLS R2, R2, 0x18 \n\
 /* 08019026 */ ASRS R2, R2, 0x18 \n\

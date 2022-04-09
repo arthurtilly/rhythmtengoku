@@ -68,7 +68,7 @@ branch_08035a44: \n\
 /* 08035a56 */ LDRSH R4, [R0, R2] \n\
 /* 08035a58 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 08035a5a */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08035a5c */ BL func_0804f150 \n\
+/* 08035a5c */ BL __umodsi3 \n\
 /* 08035a60 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08035a62 */ LSLS R2, R2, 0x18 \n\
 /* 08035a64 */ ASRS R2, R2, 0x18 \n\

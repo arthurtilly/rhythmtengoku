@@ -5,6 +5,17 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
+static s8 D_03001544; // unknown type
+static s8 D_03001545; // unknown type
+static s8 D_03001546; // unknown type
+static s8 D_03001547; // unknown type
+static s8 D_03001548; // unknown type
+static s8 D_03001549; // unknown type
+static s32 D_0300154c; // unknown type
+static s32 D_03001550; // unknown type
+static s32 D_03001554; // unknown type
+static s32 D_03001558; // unknown type
+
 // Reading Material
 
 #include "asm/code_0801a384/asm_0801a384.s"

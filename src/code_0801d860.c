@@ -5,6 +5,10 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
+static s32 D_0300155c; // unknown type
+static s8 D_03001560; // unknown type
+static s8 D_03001561; // unknown type
+
 // Beatscript related stuff
 
 #include "asm/code_0801d860/asm_0801d860.s"

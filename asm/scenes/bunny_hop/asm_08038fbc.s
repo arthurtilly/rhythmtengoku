@@ -21,7 +21,7 @@ glabel func_08038fbc \n\
 /* 08038fda */ LDR R6, [R0] \n\
 /* 08038fdc */ LSRS R0, R6, 0x8 \n\
 /* 08038fde */ MOVS R1, 0x18 @ Set R1 to 0x18 \n\
-/* 08038fe0 */ BL func_0804f150 \n\
+/* 08038fe0 */ BL __umodsi3 \n\
 /* 08038fe4 */ LSLS R0, R0, 0x10 \n\
 /* 08038fe6 */ LSRS R0, R0, 0x10 \n\
 /* 08038fe8 */ CMP R0, 0xB @ Compare R0 and 0xB \n\
@@ -29,7 +29,7 @@ glabel func_08038fbc \n\
 /* 08038fec */ MOVS R1, 0xC0 @ Set R1 to 0xC0 \n\
 /* 08038fee */ LSLS R1, R1, 0x5 \n\
 /* 08038ff0 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 08038ff2 */ BL func_0804f150 \n\
+/* 08038ff2 */ BL __umodsi3 \n\
 /* 08038ff6 */ B branch_0803900a \n\
 \n\
 .ltorg \n\
@@ -38,7 +38,7 @@ branch_08038ffc: \n\
 /* 08038ffc */ MOVS R1, 0xC0 @ Set R1 to 0xC0 \n\
 /* 08038ffe */ LSLS R1, R1, 0x5 \n\
 /* 08039000 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 08039002 */ BL func_0804f150 \n\
+/* 08039002 */ BL __umodsi3 \n\
 /* 08039006 */ LDR R1, =0xffffe800 \n\
 /* 08039008 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
  \n\

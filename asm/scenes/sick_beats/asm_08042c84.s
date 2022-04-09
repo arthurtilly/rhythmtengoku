@@ -30,7 +30,7 @@ branch_08042ca2: \n\
 /* 08042cb0 */ LDRSH R4, [R0, R1] \n\
 /* 08042cb2 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 08042cb4 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08042cb6 */ BL func_0804f150 \n\
+/* 08042cb6 */ BL __umodsi3 \n\
 /* 08042cba */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08042cbc */ LSLS R2, R2, 0x18 \n\
 /* 08042cbe */ ASRS R2, R2, 0x18 \n\

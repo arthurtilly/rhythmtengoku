@@ -63,7 +63,7 @@ jump_0803a954: \n\
 branch_0803a970: \n\
 /* 0803a970 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0803a972 */ MOVS R1, 0x30 @ Set R1 to 0x30 \n\
-/* 0803a974 */ BL func_0804f150 \n\
+/* 0803a974 */ BL __umodsi3 \n\
 /* 0803a978 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803a97a */ LDR R0, =D_089e684c \n\
  \n\

@@ -15,7 +15,7 @@ glabel func_08038598 \n\
 /* 080385ac */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 080385ae */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 080385b0 */ MOVS R1, 0x18 @ Set R1 to 0x18 \n\
-/* 080385b2 */ BL func_0804f150 \n\
+/* 080385b2 */ BL __umodsi3 \n\
 /* 080385b6 */ CMP R0, 0xC @ Compare R0 and 0xC \n\
 /* 080385b8 */ BLS branch_080385bc \n\
 /* 080385ba */ ADDS R5, 0x1 @ Add 0x1 to R5 \n\

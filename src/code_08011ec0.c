@@ -5,6 +5,12 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
+static s8 D_03001318; // unknown type
+static s8 D_03001319; // unknown type
+static s32 D_0300131c; // unknown type
+static s32 D_03001320; // unknown type
+static s32 D_03001324; // unknown type
+
 // Rhythm Data Room
 
 #include "asm/code_08011ec0/asm_08011ec0.s"

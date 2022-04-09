@@ -1,3 +1,5 @@
+static s32 D_03001568; // unknown type and length
+
 #include "asm/scenes/night_walk/asm_08029f0c.s"
 
 #include "asm/scenes/night_walk/asm_08029f68.s"

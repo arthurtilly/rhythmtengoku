@@ -45,7 +45,7 @@ glabel func_0800a4a8 \n\
 /* 0800a4f8 */ LDRB R4, [R1] \n\
 /* 0800a4fa */ LDR R0, [SP, 0x1C] \n\
 /* 0800a4fc */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800a4fe */ BL func_0804f150 \n\
+/* 0800a4fe */ BL __umodsi3 \n\
 /* 0800a502 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0800a504 */ LDR R0, [SP, 0x1C] \n\
 /* 0800a506 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\

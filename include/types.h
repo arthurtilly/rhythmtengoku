@@ -146,7 +146,50 @@ struct RapMenInfo {
     u8 unk14;
 };
 
+struct WizardsWaltzSparkle {
+    u32 entity;     // Entity:  unk0
+    u8  state;      // Value:   unk4 {0,1,2}
+    u32 unk8;       // Counter: unk8
+    u32 unkC;       // Value:   posUnk0C
+    u32 unk10;      // Value:   posUnk10
+    u32 unk14;      // Value:   posUnk14
+    u32 unk18;      // Counter: unk18 {0..15}
+    u32 null1C;
+};
 
+struct WizardsWaltzInfo {
+    u32 wizardEntity;   // Entity:  unk4
+    u8  wizardState;    // Value:   unk8 {0,1}
+    u32 unkC;           // Value:   posUnk0C
+    u32 unk10;          // Value:   posUnk10
+    s32 unk14;          // Value:   posUnk14
+    u32 unk18;          // Value:   posUnk18
+    u32 null1C;
+    u32 null20;
+    u32 shadowEntity;   // Entity:  unk24
+    u32 null28;
+    u32 null2C;
+    u32 null30;
+    u32 null34;
+    u32 null38;
+    u32 null3C;
+    u32 null40;
+    struct WizardsWaltzSparkle sparkle[10]; // Struct: unk44[10]
+    u32 girlEntity;     // Entity:  unk184
+    u8  girlState;      // Value:   unk188 {0,1,2}
+    u32 null18C;
+    u32 null190;
+    u32 null194;
+    u32 null198;
+    u32 null19C;
+    u32 null1A0;
+    s32 cyclePosition;  // Counter: unk1A4
+    s32 cycleInterval;  // Value:   unk1A8
+    s32 globalScale;    // Value:   unk1AC
+    u8  unk1B0;         // Counter: cycleUnk1B0 {0..9}
+    u8  flowerCount;    // Counter: unk1B1
+    u8  isTutorial;     // Flag:    unk1B2
+};
 
 struct struct_030055d0 {
     u8 unk0;
@@ -154,6 +197,7 @@ struct struct_030055d0 {
     union {
         struct KarateManInfo karateMan;
         struct RapMenInfo rapMen;
+        struct WizardsWaltzInfo wizardsWaltz;
     } gameInfo;
 };
 

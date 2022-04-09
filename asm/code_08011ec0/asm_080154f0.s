@@ -118,7 +118,7 @@ branch_080155ca: \n\
 /* 080155d6 */ BEQ branch_08015604 \n\
 /* 080155d8 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 080155da */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 080155dc */ BL func_0804f150 \n\
+/* 080155dc */ BL __umodsi3 \n\
 /* 080155e0 */ LSLS R0, R0, 0x18 \n\
 /* 080155e2 */ ASRS R2, R0, 0x18 \n\
 /* 080155e4 */ B branch_08015606 \n\

@@ -12,7 +12,19 @@ SECTIONS {
 		build/src/code_08001360.c.o(.bss*);
 		build/src/code_08003980.c.o(.bss*);
 		build/src/code_080068f8.c.o(.bss*);
-		
+		build/src/code_08007468.c.o(.bss*);
+		build/src/code_08008b00.c.o(.bss*);
+		build/src/code_080092cc.c.o(.bss*);
+		build/src/code_0800b3c8.c.o(.bss*);
+		build/src/code_0800b778.c.o(.bss*);
+		build/src/code_08010490.c.o(.bss*);
+		build/src/code_08011ec0.c.o(.bss*);
+		build/src/code_08016e18.c.o(.bss*);
+		build/src/results.c.o(.bss*);
+		build/src/code_0801a384.c.o(.bss*);
+		build/src/code_0801d860.c.o(.bss*);
+		build/src/scenes.c.o(.bss*);
+		build/src/code_08047e50.c.o(.bss*);
 	}
 	
 	. = 0x08000000;
@@ -25,8 +37,11 @@ SECTIONS {
         build/src/code_08001360.c.o(.text*);
         build/src/code_08003980.c.o(.text*);
 		build/src/code_080068f8.c.o(.text*);
+		build/src/code_08007468.c.o(.text*);
 		build/src/code_08008b00.c.o(.text*);
+		build/src/code_080092cc.c.o(.text*);
 		build/src/code_0800b3c8.c.o(.text*);
+		build/src/code_0800b778.c.o(.text*);
 		build/src/code_08010490.c.o(.text*);
 		build/src/code_08011ec0.c.o(.text*);
 		build/src/code_08016e18.c.o(.text*);
@@ -37,7 +52,17 @@ SECTIONS {
 		build/src/code_08047e50.c.o(.text*);
         build/bin/bindata_080482e0.bin.o(.rodata*);
         *libgcc.a:_call_via_rX.o(.text*);
-        build/bin/bindata_0804eb28.bin.o(.rodata*);
+        *libgcc.a:_divsi3.o(.text*);
+        *libgcc.a:_dvmd_tls.o(.text*);
+        *libgcc.a:_modsi3.o(.text*);
+        build/bin/bindata_0804ec90.bin.o(.rodata*); /* _muldi3 */
+        *libgcc.a:_muldi3.o(.text*);
+        build/asm/udivmoddi4.s.o(.text*);
+        *libgcc.a:_udivsi3.o(.text*);
+        *libgcc.a:_umodsi3.o(.text*);
+        *libc.a:memcpy.o(.text*);
+        *libc.a:strcpy.o(.text*);
+        *libc.a:strlen.o(.text*);
         build/data/data_0804f300.s.o(.text*);
         build/data/data_08054950.s.o(.text*);
         build/data/data_08058f58.s.o(.text*);

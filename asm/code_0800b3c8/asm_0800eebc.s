@@ -171,7 +171,7 @@ branch_0800efb8: \n\
  \n\
 branch_0800efbe: \n\
 /* 0800efbe */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0800efc0 */ BL func_0804f2bc \n\
+/* 0800efc0 */ BL strlen \n\
 /* 0800efc4 */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
  \n\
 branch_0800efc6: \n\
