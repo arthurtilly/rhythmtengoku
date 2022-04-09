@@ -8,7 +8,7 @@ thumb_func_start func_08035ab0 \n\
 /* 08035ab4 */ LDR R2, [R6] \n\
 /* 08035ab6 */ MOVS R0, 0x8 @ Set R0 to 0x8 \n\
 /* 08035ab8 */ LDRSH R5, [R2, R0] \n\
-/* 08035aba */ LDR R3, =D_08936cac \n\
+/* 08035aba */ LDR R3, =gSineTable \n\
 /* 08035abc */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 08035abe */ LDRSH R0, [R2, R1] \n\
 /* 08035ac0 */ MOVS R4, 0x80 @ Set R4 to 0x80 \n\

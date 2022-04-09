@@ -90,7 +90,7 @@ branch_080023b8: \n\
 /* 080023ba */ ANDS R0, R7 @ Set R0 to R0 & R7 \n\
 /* 080023bc */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080023be */ BEQ branch_080023f0 \n\
-/* 080023c0 */ LDR R2, =D_08936cac \n\
+/* 080023c0 */ LDR R2, =gSineTable \n\
 /* 080023c2 */ LDR R1, =0x7ff \n\
 /* 080023c4 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 080023c6 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
@@ -156,7 +156,7 @@ branch_08002406: \n\
 /* 08002442 */ ANDS R7, R0 @ Set R7 to R7 & R0 \n\
 /* 08002444 */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 08002446 */ BEQ branch_08002480 \n\
-/* 08002448 */ LDR R2, =D_08936cac \n\
+/* 08002448 */ LDR R2, =gSineTable \n\
 /* 0800244a */ LDR R1, =0x7ff \n\
 /* 0800244c */ MOV R0, R10 @ Set R0 to R10 \n\
 /* 0800244e */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\

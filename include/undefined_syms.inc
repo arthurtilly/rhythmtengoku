@@ -878,7 +878,7 @@
 .set D_08936c64, 0x08936c64
 .set D_08936c8c, 0x08936c8c
 .set D_08936c9c, 0x08936c9c
-.set D_08936cac, 0x08936cac
+.set gSineTable, 0x08936cac
 .set D_089380ac, 0x089380ac
 .set D_089380d0, 0x089380d0
 .set D_089380d4, 0x089380d4

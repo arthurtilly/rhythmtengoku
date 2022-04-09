@@ -42,7 +42,7 @@ thumb_func_start func_080087e8 \n\
 .ltorg \n\
  \n\
 branch_08008838: \n\
-/* 08008838 */ LDR R2, =D_08936cac \n\
+/* 08008838 */ LDR R2, =gSineTable \n\
 /* 0800883a */ LDR R1, =0x7ff \n\
 /* 0800883c */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 0800883e */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\

@@ -31,7 +31,7 @@ thumb_func_start func_08007e7c \n\
 /* 08007eb0 */ STR R2, [R3, 0x8] \n\
 /* 08007eb2 */ LDR R4, [R4, 0xC] \n\
 /* 08007eb4 */ STR R4, [R3, 0xC] \n\
-/* 08007eb6 */ LDR R1, =D_08936cac \n\
+/* 08007eb6 */ LDR R1, =gSineTable \n\
 /* 08007eb8 */ LSLS R0, R0, 0xB \n\
 /* 08007eba */ LSRS R0, R0, 0x15 \n\
 /* 08007ebc */ LSLS R0, R0, 0x1 \n\

@@ -36,7 +36,7 @@ branch_0800f91a: \n\
 /* 0800f93c */ BEQ branch_0800f988 \n\
 /* 0800f93e */ MOVS R4, 0xE @ Set R4 to 0xE \n\
 /* 0800f940 */ LDRSH R5, [R6, R4] \n\
-/* 0800f942 */ LDR R4, =D_08936cac \n\
+/* 0800f942 */ LDR R4, =gSineTable \n\
 /* 0800f944 */ LSLS R1, R2, 0x10 \n\
 /* 0800f946 */ ASRS R1, R1, 0x10 \n\
 /* 0800f948 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\

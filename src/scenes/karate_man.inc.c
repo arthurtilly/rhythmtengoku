@@ -139,7 +139,7 @@ void func_08021554(void) {
             D_030055d0->gameInfo.karateMan.unk2A = 0;
         }
     }
-    func_08021e58(&D_030055d0->gameInfo.karateMan);
+    func_08021e58(&D_030055d0->gameInfo.karateMan.unk_substruct);
     if (D_030055d0->unk0) {
         if (D_030055d0->unk0 == 1) {
             func_080213e4();
@@ -149,7 +149,7 @@ void func_08021554(void) {
 }
 
 void func_080215cc(void) {
-    func_08021e40(&D_030055d0->gameInfo.karateMan);
+    func_08021e40(&D_030055d0->gameInfo.karateMan.unk_substruct);
     func_0804d504(D_03005380, D_030055d0->gameInfo.karateMan.unk20);
     func_0804d504(D_03005380, D_030055d0->gameInfo.karateMan.unk14);
     func_0800e044(0);
@@ -199,7 +199,7 @@ void func_080219a8(void) {
     u32 temp;
 
     D_030055d0->gameInfo.karateMan.unk34 = 0;
-    func_0804d8c4(D_03005380, D_030055d0->gameInfo.karateMan.unk8, 1);
+    func_0804d8c4(D_03005380, D_030055d0->gameInfo.karateMan.unk_substruct.unk8, 1);
     func_0800e030(0);
     func_0800e044(1);
     func_0804d770(D_03005380, D_030055d0->gameInfo.karateMan.unk14, 0);
@@ -211,7 +211,7 @@ void func_080219a8(void) {
 
 void func_08021a0c(void) {
     D_030055d0->gameInfo.karateMan.unk35 = 0;
-    func_0804d8c4(D_03005380, D_030055d0->gameInfo.karateMan.unk8, 0);
+    func_0804d8c4(D_03005380, D_030055d0->gameInfo.karateMan.unk_substruct.unk8, 0);
     func_0800e044(0);
     func_0800e030(1);
     func_0804d770(D_03005380, D_030055d0->gameInfo.karateMan.unk14, 1);
@@ -224,9 +224,9 @@ void func_08021a0c(void) {
 
 void func_08021d38(u32 arg0, struct struct_030055d0_sub *arg1) {
     u32 temp;
-    struct KarateManInfo *temp1;
+    struct KarateManInfoSubstruct *temp1;
 
-    temp1 = &D_030055d0->gameInfo.karateMan;
+    temp1 = &D_030055d0->gameInfo.karateMan.unk_substruct;
     temp = 0;
     if (D_030055d0->unk0 == 1) {
         temp = 1;
@@ -250,7 +250,7 @@ void func_08021dcc(void) {
 	func_0800bc40();
 }
 
-void func_08021dd8(struct KarateManInfo *arg0) {
+void func_08021dd8(struct KarateManInfoSubstruct *arg0) {
     arg0->unk4 = 0;
     arg0->unk8 = func_0804d160(D_03005380, D_088acc2c, 0, 0x50, 0x58, 0x4800, 1, 0, 0);
     if (D_030055d0->unk0 == 2) {
@@ -262,11 +262,11 @@ void func_08021dd8(struct KarateManInfo *arg0) {
     arg0->unk10 = 0;
 }
 
-void func_08021e40(struct KarateManInfo *arg0) {
+void func_08021e40(struct KarateManInfoSubstruct *arg0) {
 	func_0804d504(D_03005380, arg0->unk8);
 }
 
-void func_08021e58(struct KarateManInfo *arg0) {
+void func_08021e58(struct KarateManInfoSubstruct *arg0) {
     if (arg0->unkA) arg0->unkA--;
     if (arg0->unkC) arg0->unkC--;
     if (arg0->unkE) arg0->unkE--;
@@ -274,8 +274,7 @@ void func_08021e58(struct KarateManInfo *arg0) {
 }
 
 void func_08021e88(void) {
-    struct KarateManInfo *temp;
-    temp = &D_030055d0->gameInfo.karateMan;
+    struct KarateManInfoSubstruct *temp = &D_030055d0->gameInfo.karateMan.unk_substruct;
 
     temp->unk4 = 0 | 1;
     if (D_030055d0->gameInfo.karateMan.unk16 < 3) {

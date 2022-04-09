@@ -36,7 +36,7 @@ branch_08024ce0: \n\
 /* 08024cec */ LDRH R0, [R1] \n\
 /* 08024cee */ ADDS R0, 0x10 @ Add 0x10 to R0 \n\
 /* 08024cf0 */ STRH R0, [R1] \n\
-/* 08024cf2 */ LDR R2, =D_08936cac \n\
+/* 08024cf2 */ LDR R2, =gSineTable \n\
 /* 08024cf4 */ LDR R1, =0x000007ff \n\
 /* 08024cf6 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 08024cf8 */ LSLS R0, R0, 0x1 \n\

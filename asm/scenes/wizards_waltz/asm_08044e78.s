@@ -28,7 +28,7 @@ thumb_func_start func_08044e78 \n\
 /* 08044ea6 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08044ea8 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08044eaa */ ADDS R4, 0x18 @ Add 0x18 to R4 \n\
-/* 08044eac */ LDR R6, =D_08936cac \n\
+/* 08044eac */ LDR R6, =gSineTable \n\
 /* 08044eae */ LDR R3, =0x7ff \n\
 /* 08044eb0 */ ANDS R4, R3 @ Set R4 to R4 & R3 \n\
 /* 08044eb2 */ LSLS R0, R4, 0x1 \n\

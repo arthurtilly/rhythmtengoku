@@ -26,7 +26,7 @@ branch_08034ed6: \n\
 /* 08034eda */ LDR R2, [R4, 0x14] \n\
 /* 08034edc */ LDR R3, [R4, 0x18] \n\
 /* 08034ede */ BL func_08008f04 \n\
-/* 08034ee2 */ LDR R2, =D_08936cac \n\
+/* 08034ee2 */ LDR R2, =gSineTable \n\
 /* 08034ee4 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 08034ee6 */ LSLS R1, R1, 0x2 \n\
 /* 08034ee8 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

@@ -14,5 +14,8 @@ typedef int32_t  s32;
 #define TRUE 1
 #define FALSE 0
 
+#define sins(x) gSineTable[(x)%0x800]
+#define coss(x) gSineTable[((x)+0x200)%0x800]
+
 #include "gba/gba.h"
 #include "types.h"

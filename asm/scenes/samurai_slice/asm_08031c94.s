@@ -254,7 +254,7 @@ branch_08031ea2: \n\
 /* 08031eaa */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
 /* 08031eac */ BL func_0800c3a4 \n\
 /* 08031eb0 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
-/* 08031eb2 */ LDR R2, =D_08936cac \n\
+/* 08031eb2 */ LDR R2, =gSineTable \n\
 /* 08031eb4 */ MOV R8, R2 @ Set R8 to R2 \n\
 /* 08031eb6 */ LDR R5, [R7, 0x24] \n\
 /* 08031eb8 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\

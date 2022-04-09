@@ -20,7 +20,6 @@ extern u32 D_089e9f10; // GFX-related Null
 extern u32 D_089e9f14[]; // GFX Array
 
 // Additional Data - Global:
-extern s16 D_08936cac[]; // Sine Table
 extern s16 D_03004afc; // Input Queue(?)
 
 
@@ -143,8 +142,8 @@ void func_08044c04(void) {
     // Update position elements.
     temp1 = (gWizardsWaltzInfo.cyclePosition << 11) / gWizardsWaltzInfo.cycleInterval;
     gWizardsWaltzInfo.unkC = temp1;
-    gWizardsWaltzInfo.unk10 = (D_08936cac[temp1 & 0x7ff] * 7) / 16;
-    gWizardsWaltzInfo.unk18 = (D_08936cac[(temp1 + 0x200) & 0x7ff] / 2) + 0x40;
+    gWizardsWaltzInfo.unk10 = (sins(temp1) * 7) / 16;
+    gWizardsWaltzInfo.unk18 = (coss(temp1) / 2) + 0x40;
 
     // Determine which direction the wizard should be facing.
     if (((temp1 & 0x7ff) - 0x200) > 0x380) {
@@ -205,7 +204,8 @@ void func_08044e60(u32 arg0) {
 
 
 // [func_08044e74] MAIN - Unload
-void func_08044e74(void) { /* Stub Function */ }
+void func_08044e74_stub(void) {
+}
 
 
 // !TODO - Currently impossible without an ASM hack. See: https://decomp.me/scratch/Kk2Ec
@@ -216,9 +216,10 @@ void func_08044e74(void) { /* Stub Function */ }
 // [func_08044f94] CUE Behaviour
 u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2) {
     if (arg2 > (gWizardsWaltzInfo.cycleInterval + func_0800c3a4(0x30))) {
-        return 1; }
-    else {
-        return 0; }
+        return 1;
+	} else {
+        return 0;
+	}
 }
 
 
@@ -294,15 +295,18 @@ void func_080450d0(u32 arg0, struct struct_080179f4_sub *arg1) {
 
 
 // [func_080450dc] MAIN - Input Event
-void func_080450dc(void) { /* Stub Function */ }
+void func_080450dc_stub(void) {
+}
 
 
 // [func_080450e0] GRAPHICAL Func_00 - Unknown
-void func_080450e0(void) { /* Stub Function */ }
+void func_080450e0_stub(void) {
+}
 
 
 // [func_080450e4] GRAPHICAL Func_01 - Unknown
-void func_080450e4(void) { /* Stub Function */ }
+void func_080450e4_stub(void) {
+}
 
 
 // [func_080450e8] GRAPHICAL Func_02 - Unknown

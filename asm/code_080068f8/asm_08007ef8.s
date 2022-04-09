@@ -14,7 +14,7 @@ thumb_func_start func_08007ef8 \n\
 /* 08007f08 */ ANDS R0, R2 @ Set R0 to R0 & R2 \n\
 /* 08007f0a */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 08007f0c */ STR R0, [R3] \n\
-/* 08007f0e */ LDR R1, =D_08936cac \n\
+/* 08007f0e */ LDR R1, =gSineTable \n\
 /* 08007f10 */ LSLS R0, R0, 0xB \n\
 /* 08007f12 */ LSRS R0, R0, 0x15 \n\
 /* 08007f14 */ LSLS R0, R0, 0x1 \n\

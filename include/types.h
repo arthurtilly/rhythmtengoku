@@ -105,17 +105,18 @@ struct struct_030055d0_sub {
     u8 unk2D;
 };
 
-
-
-struct KarateManInfo {
-    u8 unk4:4;
+struct KarateManInfoSubstruct {
+	u8 unk4:4;
     u8 pad05[3];
     s16 unk8;
     u16 unkA;
     u16 unkC;
     u16 unkE;
     u16 unk10;
-    u16 unk12;
+};
+
+struct KarateManInfo {
+	struct KarateManInfoSubstruct unk_substruct;
     s16 unk14;
     u8 unk16;
     u8 unk17;
@@ -203,3 +204,4 @@ struct struct_030055d0 {
 extern struct struct_030046a4 *D_030046a4;
 extern s32 D_03005380;
 extern struct struct_030055d0 *D_030055d0;
+extern s16 gSineTable[];

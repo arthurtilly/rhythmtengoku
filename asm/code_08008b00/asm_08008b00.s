@@ -22,7 +22,7 @@ thumb_func_start func_08008b00 \n\
 /* 08008b20 */ LSRS R7, R1, 0x10 \n\
 /* 08008b22 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 08008b24 */ BEQ branch_08008b34 \n\
-/* 08008b26 */ LDR R2, =D_08936cac \n\
+/* 08008b26 */ LDR R2, =gSineTable \n\
 /* 08008b28 */ LSLS R1, R0, 0x10 \n\
 /* 08008b2a */ LSLS R0, R1, 0x5 \n\
 /* 08008b2c */ LSRS R0, R0, 0x14 \n\
@@ -46,7 +46,7 @@ branch_08008b40: \n\
 /* 08008b48 */ ADDS R2, R1, 0x0 @ Set R2 to R1 + 0x0 \n\
 /* 08008b4a */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 08008b4c */ BEQ branch_08008b74 \n\
-/* 08008b4e */ LDR R0, =D_08936cac \n\
+/* 08008b4e */ LDR R0, =gSineTable \n\
 /* 08008b50 */ ASRS R1, R2, 0x10 \n\
 /* 08008b52 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08008b54 */ LSLS R2, R2, 0x2 \n\
@@ -76,7 +76,7 @@ branch_08008b74: \n\
 branch_08008b86: \n\
 /* 08008b86 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 08008b88 */ BEQ branch_08008ba4 \n\
-/* 08008b8a */ LDR R3, =D_08936cac \n\
+/* 08008b8a */ LDR R3, =gSineTable \n\
 /* 08008b8c */ LSLS R2, R5, 0x10 \n\
 /* 08008b8e */ ASRS R0, R2, 0x10 \n\
 /* 08008b90 */ NEGS R0, R0 @ Set R0 to -R0 \n\
@@ -101,7 +101,7 @@ branch_08008bae: \n\
 /* 08008bb8 */ MOV R9, R3 @ Set R9 to R3 \n\
 /* 08008bba */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 08008bbc */ BEQ branch_08008be8 \n\
-/* 08008bbe */ LDR R0, =D_08936cac \n\
+/* 08008bbe */ LDR R0, =gSineTable \n\
 /* 08008bc0 */ ASRS R1, R2, 0x10 \n\
 /* 08008bc2 */ NEGS R1, R1 @ Set R1 to -R1 \n\
 /* 08008bc4 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
