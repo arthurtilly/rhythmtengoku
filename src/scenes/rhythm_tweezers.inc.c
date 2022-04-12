@@ -25,7 +25,7 @@ extern u32 *D_089e3ff4[]; // GFX Struct Index
 extern u32 D_0600f000;    // VRAM BG Map for vegetable textures (left).
 extern u32 D_0600f800;    // VRAM BG Map for vegetable textures (right).
 extern u32 D_03004b22;    // Unknown Value
-extern s16 D_03004b10[];  // Screen Position Struct(?) (array definition works here since only two values are used)
+extern s16 D_03004b10[];  // Screen Position Struct/Array (?)
 
 
 /* RHYTHM TWEEZERS */
