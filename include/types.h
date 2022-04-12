@@ -265,12 +265,20 @@ struct RhythmTweezersInfo {
     s16 unk92;      // Value: Mask Vertical Motion
 };
 
+struct PrologueInfo {
+    u8  ver;        // Value: Version
+    s16 entity2;    // Entity: Object 0
+    s16 entity4;    // Entity: Object 1
+    s16 entity6;    // Entity: Object 2
+};
+
 struct struct_030055d0 {
     union {
         struct KarateManInfo karateMan;
         struct RapMenInfo rapMen;
         struct WizardsWaltzInfo wizardsWaltz;
         struct RhythmTweezersInfo rhythmTweezers;
+        struct PrologueInfo prologues;
     } gameInfo;
 };
 
