@@ -24,7 +24,7 @@ extern u32 func_0804d160(u32, u32 *, s8, u32, u32, u32, u32, u32, u32);
 
 
 u32 *func_080398b4(u32 arg0) {
-    return D_089e63f8[arg0][D_030055d0->unk0];
+    return D_089e63f8[arg0][D_030055d0->gameInfo.rapMen.unk0];
 }
 
 void func_080398d4(void) {
@@ -36,7 +36,7 @@ void func_080398e4(void) {
 	u32 temp;
 
 	func_0800c604(0);
-	temp = func_08002ee0(func_0800c3b8(), D_089e6518[D_030055d0->unk0], 0x2000);
+	temp = func_08002ee0(func_0800c3b8(), D_089e6518[D_030055d0->gameInfo.rapMen.unk0], 0x2000);
 	func_08005d38(temp, func_080398d4, 0);
 }
 
@@ -51,7 +51,7 @@ void func_08039924(void) {
 void func_08039950(u32 arg0) {
     u32 *temp;
 
-    D_030055d0->unk0 = arg0;
+    D_030055d0->gameInfo.rapMen.unk0 = arg0;
     func_08039924();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
@@ -120,7 +120,7 @@ void func_08039b4c(u32 arg0, struct struct_080179f4_sub *arg1) {
     D_030055d0->gameInfo.rapMen.unk10 = func_0800c3a4(0x24);
     func_0804d160(D_03005380, func_080398b4(7), 0, 0xa0, 0x82, 0x47f6, 1, 0, 3);
     func_08039a44(3);
-    func_08002634(D_089e652c[D_030055d0->unk0][arg1->unk0]);
+    func_08002634(D_089e652c[D_030055d0->gameInfo.rapMen.unk0][arg1->unk0]);
     func_08002634(&s_SD1_seqData);
     func_08002634(&s_CC4_seqData);
 }
@@ -128,7 +128,7 @@ void func_08039b4c(u32 arg0, struct struct_080179f4_sub *arg1) {
 void func_08039c00(void) {
     func_0804d8f8(D_03005380, D_030055d0->gameInfo.rapMen.unkA, func_080398b4(1), 0, 1, 0x7f, 0);
     D_030055d0->gameInfo.rapMen.unk10 = func_0800c3a4(0x24);
-    func_08002634(D_089e652c[D_030055d0->unk0][0]);
+    func_08002634(D_089e652c[D_030055d0->gameInfo.rapMen.unk0][0]);
     func_08002634(&s_tom_M_seqData);
 }
 
@@ -144,7 +144,7 @@ void func_08039c60(void) {
 void func_08039cb8(void) {
     func_0804d8f8(D_03005380, D_030055d0->gameInfo.rapMen.unkA, func_080398b4(9), 0, 1, 0x7f, 0);
     D_030055d0->gameInfo.rapMen.unk10 = func_0800c3a4(0x24);
-    func_08002634(D_089e65f0[D_030055d0->unk0]);
+    func_08002634(D_089e65f0[D_030055d0->gameInfo.rapMen.unk0]);
     func_0800bc40();
 }
 

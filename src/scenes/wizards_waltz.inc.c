@@ -1,4 +1,3 @@
-// For readability. !TODO - CHANGE/REMOVE
 #define gWizardsWaltzInfo D_030055d0->gameInfo.wizardsWaltz
 
 // OAM Animations:
@@ -58,7 +57,7 @@ void func_08044a10(u32 arg0) {
     u8 i;
 
     // Load graphical assets and other basic functionality.
-    D_030055d0->unk0 = arg0;
+    gWizardsWaltzInfo.version = arg0;
     func_080449e4();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
