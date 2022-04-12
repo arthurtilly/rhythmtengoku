@@ -666,45 +666,45 @@ extern void func_0802221c(u32);
 
 // Rhythm Tweezers
 
-// extern ? func_0802e750(?);
-// extern ? func_0802e828(?);
-// extern ? func_0802e89c(?);
-// extern ? func_0802e8ac(?);
-// extern ? func_0802e96c(?);
-// extern ? func_0802e97c(?);
-// extern ? func_0802e980(?);
-// extern ? func_0802e99c(?);
-// extern ? func_0802ea20(?);
-// extern ? func_0802ea74(?);
-// extern ? func_0802eaf8(?);
-// extern ? func_0802eb7c(?);
-// extern ? func_0802eba0(?);
-// extern ? func_0802ebdc(?);
-// extern ? func_0802ebf8(?);
-// extern ? func_0802ec50(?);
-// extern ? func_0802ec60(?);
-// extern ? func_0802eca0(?);
-// extern ? func_0802eccc(?);
-// extern ? func_0802edc4(?);
-// extern ? func_0802edc8(?);
-// extern ? func_0802ee00(?);
-// extern ? func_0802ee10(?);
-// extern ? func_0802ee24(?);
-// extern ? func_0802ee40(?);
-// extern ? func_0802ee44(?);
-// extern ? func_0802ee6c(?);
-// extern ? func_0802ee7c(?);
-// extern ? func_0802ef54(?);
-// extern ? func_0802ef68(?);
-// extern ? func_0802f164(?);
-// extern ? func_0802f170(?);
-// extern ? func_0802f21c(?);
-// extern ? func_0802f2a0(?);
-// extern ? func_0802f330(?);
-// extern ? func_0802f33c(?);
-// extern ? func_0802f378(?);
-// extern ? func_0802f37c(?);
-// extern ? func_0802f380(?);
+extern void func_0802e750(void);        // [func_0802e750] SUB - Initialise Vegetable Face
+extern void func_0802e828(u32);         // [func_0802e828] ENGINE Func_02 - Scroll to New Vegetable
+extern void func_0802e89c(void);        // [func_0802e89c] ENGINE Func_04 - Play Cash Register SFX
+extern void func_0802e8ac(void);        // [func_0802e8ac] SUB - Update Vegetable Face - Scrolling To New Vegetable
+extern void func_0802e96c(u32);         // [func_0802e96c] ENGINE Func_03 - Define New Vegetable Type
+extern void func_0802e97c_stub(void);   // [func_0802e97c] ENGINE Func_06 - Unknown (STUB)
+extern void func_0802e980(void);        // [func_0802e980] SUB - Update Vegetable Face
+extern void func_0802e99c(void);        // [func_0802e99c] SUB - Initialise Falling Hairs
+extern void func_0802ea20(void);        // [func_0802ea20] SUB - Update Falling Hairs
+extern void func_0802ea74(u32);         // [func_0802ea74] SUB - Create Falling Hair
+extern void func_0802eaf8(void);        // [func_0802eaf8] SUB - Initialise Tweezers
+extern void func_0802eb7c(void);        // [func_0802eb7c] ENGINE Func_00 - Spawn Tweezers
+extern void func_0802eba0(void);        // [func_0802eba0] SUB - Update Tweezers - Position
+extern void func_0802ebdc(void);        // [func_0802ebdc] SUB - Update Tweezers - Vertical Scroll
+extern void func_0802ebf8(void);        // [func_0802ebf8] SUB - Update Tweezers
+extern void func_0802ec50(void);        // [func_0802ec50] GFX_LOAD Func_02
+extern void func_0802ec60(void);        // [func_0802ec60] GFX_LOAD Func_01
+extern void func_0802eca0(void);        // [func_0802eca0] GFX_LOAD Func_00
+extern void func_0802eccc(u8);          // [func_0802eccc] MAIN - Load
+extern void func_0802edc4_stub(void);   // [func_0802edc4] ENGINE Func_09 - Unknown (STUB, Unused)
+extern void func_0802edc8(void);        // [func_0802edc8] SUB - Update Mask
+extern void func_0802ee00(void);        // [func_0802ee00] ENGINE Func_07 - Show Mask
+extern void func_0802ee10(void);        // [func_0802ee10] ENGINE Func_08 - Hide Mask
+extern void func_0802ee24(void);        // [func_0802ee24] MAIN - Loop
+extern void func_0802ee40_stub(void);   // [func_0802ee40] MAIN - Unload (STUB)
+extern void func_0802ee44(void);        // [func_0802ee44] ENGINE Func_01 - Reset Hair Position Cycle
+extern void func_0802ee6c(void);        // [func_0802ee6c] SUB - Update Hair Position Cycle
+// extern void func_0802ee7c(u32, struct struct_080179f4_sub1 *, u32, u32); // [func_0802ee7c] CUE Spawn - Short Hair, Long Hair
+extern u32  func_0802ef54(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802ef54] CUE Behaviour - Short Hair
+// extern u32  func_0802ef68(u32, struct struct_080179f4_sub1 *, u32, u32); // [func_0802ef68] CUE Behaviour - Long Hair
+extern void func_0802f164(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f164] CUE Despawn - Short Hair, Long Hair
+extern void func_0802f170(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f170] CUE Hit - Short Hair
+extern void func_0802f21c(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f21c] CUE Hit, CUE Barely - Long Hair
+extern void func_0802f2a0(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f2a0] CUE Barely - Short Hair
+extern void func_0802f330(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f330] CUE Miss - Short Hair, Long Hair
+extern void func_0802f33c(void);        // [func_0802f33c] MAIN - Input Event
+extern void func_0802f378_stub(void);   // [func_0802f378] GRAPHICAL Func_00 - Unknown (STUB, Unused)
+extern void func_0802f37c_stub(void);   // [func_0802f37c] GRAPHICAL Func_01 - Unknown (STUB, Unused)
+extern void func_0802f380(void);        // [func_0802f380] ENGINE Func_05 - Unknown (Unused)
 
 // Fireworks
 
@@ -1579,18 +1579,18 @@ extern void func_08039df8(void);
 extern void func_080449a4(void);                                            // [func_080449a4]
 extern void func_080449b4(void);                                            // [func_080449b4]
 extern void func_080449e4(void);                                            // [func_080449e4]
-extern void waltz_main_load(u32 arg0);                                      // [func_08044a10]
-extern void waltz_beatscript_set_rotation(u32 arg0);                        // [func_08044b80]
-extern void waltz_update_position(u32 arg0, s32 arg1, s32 arg2, u32 arg3);  // [func_08044ba8]
+extern void waltz_main_load(u32);                                           // [func_08044a10]
+extern void waltz_beatscript_set_rotation(u32);                             // [func_08044b80]
+extern void waltz_update_position(u32, s32, s32, u32);                      // [func_08044ba8]
 extern void waltz_main_loop(void);                                          // [func_08044c04]
-extern void waltz_beatscript_set_tutorial(u32 arg0);                        // [func_08044e60]
+extern void waltz_beatscript_set_tutorial(u32);                             // [func_08044e60]
 extern void waltz_main_unload(void);                                        // [func_08044e74] (STUB)
 // extern ? func_08044e78(?);                                               // [func_08044e78]
-extern u32  waltz_cue_unknown(u32 arg0, u32 arg1, u32 arg2);                // [func_08044f94]
-extern void waltz_cue_despawn(u32 arg0, u32 *arg1);                         // [func_08044fc0]
-extern void waltz_cue_hit(u32 arg0, struct struct_080179f4_sub *arg1);      // [func_08044fcc]
-extern void waltz_cue_barely(u32 arg0, struct struct_080179f4_sub *arg1);   // [func_0804503c]
-extern void waltz_cue_miss(u32 arg0, struct struct_080179f4_sub *arg1);     // [func_080450d0]
+extern u32  waltz_cue_unknown(u32, u32, u32);                               // [func_08044f94]
+extern void waltz_cue_despawn(u32, u32 *);                                  // [func_08044fc0]
+extern void waltz_cue_hit(u32, struct struct_080179f4_sub *);               // [func_08044fcc]
+extern void waltz_cue_barely(u32, struct struct_080179f4_sub *);            // [func_0804503c]
+extern void waltz_cue_miss(u32, struct struct_080179f4_sub *);              // [func_080450d0]
 extern void waltz_main_unknown(void);                                       // [func_080450dc] (STUB)
 extern void func_080450e0(void);                                            // [func_080450e0] (STUB)
 extern void func_080450e4(void);                                            // [func_080450e4] (STUB)
