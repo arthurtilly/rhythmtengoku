@@ -139,6 +139,7 @@ struct KarateManInfoSubstruct {
 };
 
 struct KarateManInfo {
+    u8 unk0;
 	struct KarateManInfoSubstruct unk_substruct;
     s16 unk14;
     u8 unk16;
@@ -159,6 +160,7 @@ struct KarateManInfo {
 };
 
 struct RapMenInfo {
+    u8 unk0;
     u32 *unk4;
     s16 unk8;
     s16 unkA;
@@ -170,7 +172,7 @@ struct RapMenInfo {
 };
 
 struct WizardsWaltzSparkle {
-    struct ScaledEntity *entity;     // Entity:  unk0
+    struct ScaledEntity *entity; // Entity:  unk0
     u8  state;      // Value:   unk4 {0,1,2}
     u32 unk8;       // Counter: unk8
     u32 unkC;       // Value:   posUnk0C
@@ -181,7 +183,9 @@ struct WizardsWaltzSparkle {
 };
 
 struct WizardsWaltzInfo {
-    struct ScaledEntity *wizardEntity;   // Entity:  unk4
+    u8 version;         // Value:   unk0
+    struct ScaledEntity *wizardEntity; // Entity:  unk4
+    u32 wizardEntity;   // Entity:  unk4
     u8  wizardState;    // Value:   unk8 {0,1}
     u32 unkC;           // Value:   posUnk0C
     u32 unk10;          // Value:   posUnk10
@@ -189,7 +193,7 @@ struct WizardsWaltzInfo {
     u32 unk18;          // Value:   posUnk18
     u32 null1C;
     u32 null20;
-    struct ScaledEntity *shadowEntity;   // Entity:  unk24
+    struct ScaledEntity *shadowEntity; // Entity:  unk24
     u32 null28;
     u32 null2C;
     u32 null30;
@@ -198,7 +202,7 @@ struct WizardsWaltzInfo {
     u32 null3C;
     u32 null40;
     struct WizardsWaltzSparkle sparkle[10]; // Struct: unk44[10]
-    struct ScaledEntity *girlEntity;     // Entity:  unk184
+    struct ScaledEntity *girlEntity; // Entity:  unk184
     u8  girlState;      // Value:   unk188 {0,1,2}
     u32 null18C;
     u32 null190;
@@ -244,6 +248,7 @@ struct RhythmTweezersVegetable {
 };
 
 struct RhythmTweezersInfo {
+    u8 unk0;        // Value: Version { 0..2 = Rhythm Tweezers; 3..5 = Rhythm Tweezers 2 }
     struct RhythmTweezersTweezers tweezers;
     u32 unk18;      // Counter: Hair Placement Cycle Position
     u32 unk1C;      // Value: Hair Placement Cycle Spacing
@@ -261,8 +266,6 @@ struct RhythmTweezersInfo {
 };
 
 struct struct_030055d0 {
-    u8 unk0;
-    u8 pad01[3];
     union {
         struct KarateManInfo karateMan;
         struct RapMenInfo rapMen;
