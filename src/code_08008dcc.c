@@ -1,11 +1,7 @@
 #include "global.h"
-#include "code_08008b00.h"
+#include "code_08008dcc.h"
 
 #include "code_08001360.h"
-
-// Could use better split
-
-asm(".include \"include/gba.inc\"");//Temporary
 
 static u32 D_030010f4;
 static u8 D_030010f8;
@@ -16,17 +12,6 @@ static s32 D_03001104;
 static void (*D_03001108)(s32);
 static s32 D_0300110c;
 
-
-// https://decomp.me/scratch/g0MzU - super annoying -0x8000 problem, 94.41% matched most recently
-#include "asm/code_08008b00/asm_08008b00.s"
-
-void func_08008d44(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10) {
-    func_08008b00(arg0, arg1, arg2, arg3, arg4, arg5 + 0xFE00, arg6, arg7, arg8, arg9, arg10, 0);
-}
-
-void func_08008d88(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10) {
-    func_08008b00(arg0, arg1, arg2, arg3, arg4, arg5 + 0xFE00, arg6, arg7, arg8, arg9, arg10, 1);
-}
 
 void func_08008dcc(s8 arg0[], u32 length) {
     u32 i;
@@ -178,8 +163,6 @@ u32 func_08009024(void) {
     }
     return 0;
 }
-
-#define UNK_SIZE_210 0x210
 
 s32 func_08009048(u32 arg0, u8 arg1[]) {
     u32 i;

@@ -1,17 +1,7 @@
 #pragma once
 
-struct unk_struct_08008b00 {
-    u16 unk0;
-    u16 unk2;
-    u16 unk4;
-    u16 unk6;
-    s32 unk8;
-    s32 unkC;
-};
+#define UNK_SIZE_210 0x210
 
-extern void func_08008b00(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10, u32 arg11);
-extern void func_08008d44(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10);
-extern void func_08008d88(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10);
 extern void func_08008dcc(s8 arg0[], u32 length);
 extern void func_08008de4(s16 arg0[], u32 length);
 extern void func_08008dfc(s32 arg0[], u32 length);

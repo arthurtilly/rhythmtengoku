@@ -180,6 +180,7 @@ $(OFILES_JSON): $(BUILD)/%.c.o : $(BUILD)/%.c | $(BUILD_DIRS)
 	$(V)echo "Compiling $< to $@"
 	$(V)$(CPP) -MMD -MF $(BUILD)/$*.d -MT $@ $(CPPFLAGS) $< -o $(BUILD)/$*.i
 	$(V)$(CC1) $(CFLAGS) $(BUILD)/$*.i -o $(BUILD)/$*.s
+	$(V)printf ".text\n\t.align\t2, 0\n" >> $(BUILD)/$*.s
 	$(V)$(AS) -march=armv4t -o $@ $(BUILD)/$*.s
 	
 # C files
@@ -187,6 +188,7 @@ $(BUILD)/%.c.o : %.c | $(BUILD_DIRS)
 	$(V)echo "Compiling $< to $@"
 	$(V)$(CPP) -MMD -MF $(BUILD)/$*.d -MT $@ $(CPPFLAGS) $< -o $(BUILD)/$*.i
 	$(V)$(CC1) $(CFLAGS) $(BUILD)/$*.i -o $(BUILD)/$*.s
+	$(V)printf ".text\n\t.align\t2, 0\n" >> $(BUILD)/$*.s
 	$(V)$(AS) -march=armv4t -o $@ $(BUILD)/$*.s
 
 # ASM files
