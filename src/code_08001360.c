@@ -123,9 +123,10 @@ u32 func_08001964(void) {
     return D_030000b4;
 }
 
-u32 func_08001980(u16 arg1) {   // Random
+u32 func_08001980(u32 arg1) {   // Random
+	u16 temp = arg1;
     D_030000b4 = D_030000b4 * 0x6d + 0x3fd;
-    return (D_030000b4 * arg1 >> 0x10) & 0xffff;
+    return (u16)((D_030000b4 * temp) >> 0x10);
 }
 
 #include "asm/code_08001360/asm_080019a4.s"

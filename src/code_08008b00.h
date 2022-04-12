@@ -1,21 +1,30 @@
 #pragma once
 
-// extern ? func_08008b00(?);
-// extern ? func_08008d44(?);
-// extern ? func_08008d88(?);
-// extern ? func_08008dcc(?);
-// extern ? func_08008de4(?);
-// extern ? func_08008dfc(?);
-// extern ? func_08008e10(?);
-// extern ? func_08008e40(?);
-// extern ? func_08008e74(?);
-// extern ? func_08008ea4(?);
-// extern ? func_08008ed0(?);
-// extern ? func_08008eec(?);
-// extern ? func_08008f04(?);
-// extern ? func_08008f1c(?);
-// extern ? func_08008f68(?);
-// extern ? func_08008f74(?);
+struct unk_struct_08008b00 {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u16 unk6;
+    s32 unk8;
+    s32 unkC;
+};
+
+extern void func_08008b00(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10, u32 arg11);
+extern void func_08008d44(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10);
+extern void func_08008d88(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10);
+extern void func_08008dcc(s8 arg0[], u32 length);
+extern void func_08008de4(s16 arg0[], u32 length);
+extern void func_08008dfc(s32 arg0[], u32 length);
+extern void func_08008e10(s8 arg0[], u32 length);
+extern void func_08008e40(s16 arg0[], u32 length);
+extern void func_08008e74(s32 arg0[], u32 length);
+extern void func_08008ea4(s16 arg0[], s16 arg1[], u32 arg2);
+extern s32 func_08008ed0(s32 arg0[]);
+extern s32 func_08008eec(s32 arg0[], u32 arg1);
+extern s32 func_08008f04(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
+extern s32 func_08008f1c(void);
+extern u32 func_08008f68(void);
+extern s32 func_08008f74(void);
 // extern ? func_08008fe0(?);
 // extern ? func_08008ff8(?);
 // extern ? func_08009024(?);
