@@ -7,6 +7,27 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 static s32 D_03001310[2]; // unknown type
 
+struct ScaledEntity {
+    s16 unk0;        // Standard Entity
+    u8  unk2;        // func_0800c42c()
+    u8  unk3;        // Double-Size Flag (arg10)
+    s16 unk4;        // Scaling (arg5)
+    s16 unk6;        // Scaling (arg5)
+    s16 unk8;        // Rotation (arg6)
+    u16 unkA;        // ? (arg2)
+    u16 unkC;        // ? (arg3)
+    u16 unkE;        // ? (0)
+    u16 unk10;       // ? (0)
+    u8  unk12_0:1;   // ?
+    u8  unk12_1:1;   // ?
+    u8  unk12_2:1;   // ?
+    u8  unk12_3:1;   // ?
+    u8  unk12_4:1;   // ?
+};
+
+extern u32 func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
+extern u32 *mem_heap_alloc_id(u16 arg0, u32 arg1);
+
 #include "asm/code_0800b778/asm_0800b778.s"
 
 #include "asm/code_0800b778/asm_0800b834.s"
@@ -155,7 +176,12 @@ static s32 D_03001310[2]; // unknown type
 
 #include "asm/code_0800b778/asm_0800c42c.s"
 
-#include "asm/code_0800b778/asm_0800c43c.s"
+// #include "asm/code_0800b778/asm_0800c43c.s"
+
+// Allocate memory for a struct of size [arg0] (bytes). (?)
+u32 *func_0800c43c(u32 arg0) {
+    return mem_heap_alloc_id(func_0800c3b8(), arg0);
+}
 
 #include "asm/code_0800b778/asm_0800c454.s"
 
@@ -437,7 +463,62 @@ static s32 D_03001310[2]; // unknown type
 
 #include "asm/code_0800b778/asm_0800f904.s"
 
-#include "asm/code_0800b778/asm_0800fa6c.s"
+// Create Entity (w/ Rotation/Scaling Parameters)
+    // arg0 = ... [Animation Pointer]
+    // arg1 = ... []
+    // arg2 = ... []
+    // arg3 = ... []
+    // arg4 = ... []
+    // arg5 = R/S [Scaling]
+    // arg6 = R/S [Rotation]
+    // arg7 = ... [Animation {0 = Still; 1 = Play Once; -1 = Loop; Other = Play First Frame Only?}]
+    // arg8 = ... []
+    // arg9 = ... []
+    // arg10 = R/S [Double-Size Flag]
+
+struct ScaledEntity *func_0800fa6c(u32 *arg0, s8 arg1, s16 arg2, s16 arg3, u16 arg4,
+                                    s16 arg5, s16 arg6, s8 arg7, s8 arg8, u16 arg9, u32 arg10) {
+    s16 object;
+    s8 offset;
+    struct ScaledEntity *entity;
+
+    // Create standard entity.
+    object = func_0804d160(D_03005380, arg0, arg1, arg2, arg3, arg4, arg7, arg8, arg9);
+    if (object < 0) return 0;
+
+    // Generate offset from D_03000368 in words. (?)
+    offset = func_0800c42c();
+    if (offset < 0) return 0;
+
+    // Allocate memory for the scalable entity.
+    entity = (struct ScaledEntity *) func_0800c43c(0x14);
+    if (entity == 0) return 0;
+
+    // Initialise scalable entity.
+    entity->unk0 = object;
+    entity->unk2 = offset;
+    entity->unk3 = arg10;
+    entity->unk4 = arg5;
+    entity->unk6 = arg5;
+    entity->unk8 = arg6;
+    entity->unkA = arg2;
+    entity->unkC = arg3;
+    entity->unkE = 0;
+    entity->unk10 = 0;
+
+    entity->unk12_0 = 0;
+    entity->unk12_1 = 1;
+    entity->unk12_2 = 0;
+    entity->unk12_3 = 0;
+    entity->unk12_4 = 0;
+
+    func_08007468(object, offset);
+    func_080022d8(offset);
+    func_080074c4(offset, entity->unk4, entity->unk6, entity->unk8);
+    func_0804dc8c(D_03005380, object, (arg10 != 0 ? 3 : 1));
+
+    return entity;
+}
 
 #include "asm/code_0800b778/asm_0800fba0.s"
 
