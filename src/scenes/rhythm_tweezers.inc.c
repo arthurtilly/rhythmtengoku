@@ -34,7 +34,7 @@ extern s16 D_03004b10[];  // Screen Position Struct/Array (?)
 // [func_0802e750] SUB - Initialise Vegetable Face
 void func_0802e750(void) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
-    u8 ver = (gRhythmTweezersInfo.unk0 % 3);
+    u8 ver = (D_030055d0->unk0 % 3);
 
     vegetable->entity0 = func_0804d160(D_03005380, D_089e3d98[ver], 0, 0x78, 0x10, 0x4800, -1, 0, 0);
     func_0804db44(D_03005380, vegetable->entity0, &gRhythmTweezersInfo.unk8E, &D_03004b22);
@@ -279,7 +279,7 @@ void func_0802ec60(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_08002ee0((u16) func_0800c3b8(), (u32) D_089e3ff4[gRhythmTweezersInfo.unk0], 0x2000);
+    temp = func_08002ee0((u16) func_0800c3b8(), (u32) D_089e3ff4[D_030055d0->unk0], 0x2000);
     func_08005d38(temp, &func_0802ec50, 0);
 }
 
@@ -299,7 +299,7 @@ void func_0802eccc(u8 arg0) {
     u32 temp;
 
     // Standard game setup.
-    gRhythmTweezersInfo.unk0 = arg0;
+    D_030055d0->unk0 = arg0;
     func_0802eca0(); // Load graphics.
     func_0800e0ec();
     func_0800e0a0(0, 1, 0, -0xa0, 2, 0x1c, 0x8000);
