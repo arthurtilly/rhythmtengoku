@@ -38,7 +38,7 @@ void func_080449b4(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_08002ee0((u16) func_0800c3b8(), &D_089e9f14, 0x2000);
+    temp = func_08002ee0((u16) func_0800c3b8(), (u32) &D_089e9f14, 0x2000);
     func_08005d38(temp, func_080449a4, 0);
 }
 
