@@ -157,3 +157,14 @@ u8 *func_080081a8(u8 *arg1, u8 *arg2) {
 #include "asm/code_08007468/asm_08008a70.s"
 
 #include "asm/code_08007468/asm_08008ab8.s"
+
+// https://decomp.me/scratch/g0MzU - super annoying -0x8000 problem, 94.41% matched most recently
+#include "asm/code_08007468/asm_08008b00.s"
+
+void func_08008d44(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10) {
+    func_08008b00(arg0, arg1, arg2, arg3, arg4, arg5 + 0xFE00, arg6, arg7, arg8, arg9, arg10, 0);
+}
+
+void func_08008d88(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10) {
+    func_08008b00(arg0, arg1, arg2, arg3, arg4, arg5 + 0xFE00, arg6, arg7, arg8, arg9, arg10, 1);
+}

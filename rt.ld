@@ -13,7 +13,7 @@ SECTIONS {
 		build/src/code_08003980.c.o(.bss*);
 		build/src/code_080068f8.c.o(.bss*);
 		build/src/code_08007468.c.o(.bss*);
-		build/src/code_08008b00.c.o(.bss*);
+		build/src/code_08008dcc.c.o(.bss*);
 		build/src/code_080092cc.c.o(.bss*);
 		build/src/code_0800b3c8.c.o(.bss*);
 		build/src/code_0800b778.c.o(.bss*);
@@ -38,7 +38,7 @@ SECTIONS {
         build/src/code_08003980.c.o(.text*);
 		build/src/code_080068f8.c.o(.text*);
 		build/src/code_08007468.c.o(.text*);
-		build/src/code_08008b00.c.o(.text*);
+		build/src/code_08008dcc.c.o(.text*);
 		build/src/code_080092cc.c.o(.text*);
 		build/src/code_0800b3c8.c.o(.text*);
 		build/src/code_0800b778.c.o(.text*);

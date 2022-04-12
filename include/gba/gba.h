@@ -23,6 +23,11 @@
 #define REG_INTERRUPT   *(volatile void **)(InternWorkRAMBase + 0x7FFC)
 #define D_06008000      (VRAMBase + 0x8000)
 
+#define D_0E000000		*(volatile u8*)(CartRAMBase)
+#define D_0E000001		*(volatile u8*)(CartRAMBase + 1)
+#define D_0E000002		*(volatile u8*)(CartRAMBase + 2)
+#define D_0E000003		*(volatile u8*)(CartRAMBase + 3)
+
 #include "include/gba/gba_graphics_regs.h"
 #include "include/gba/gba_dma_regs.h"
 #include "include/gba/gba_input_regs.h"

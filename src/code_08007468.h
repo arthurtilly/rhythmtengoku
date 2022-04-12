@@ -1,5 +1,14 @@
 #pragma once
 
+struct unk_struct_08008b00 {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u16 unk6;
+    s32 unk8;
+    s32 unkC;
+};
+
 // extern ? func_08007468(?);
 // extern ? func_08007498(?);
 // extern ? func_080074c4(?);
@@ -68,3 +77,6 @@ extern u32 func_080087b4(u16, u32*);
 // extern ? func_080089c0(?);
 // extern ? func_08008a70(?);
 // extern ? func_08008ab8(?);
+extern void func_08008b00(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10, u32 arg11);
+extern void func_08008d44(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10);
+extern void func_08008d88(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10);
