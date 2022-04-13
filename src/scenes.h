@@ -1624,21 +1624,21 @@ extern void func_08045304(void);    // [func_08045304] GFX_LOAD Func_02
 extern void func_08045314(void);    // [func_08045314] GFX_LOAD Func_01
 extern void func_08045344(void);    // [func_08045344] GFX_LOAD Func_00
 extern void func_08045374(u32);     // [func_08045374] MAIN - Load
-extern void func_080453d0(void);    // [func_080452d4] ENGINE Func_00
-extern void func_080453d4(void);    // [func_080452d8] MAIN - Loop
-extern void func_080453d8(void);    // [func_080452dc] MAIN - Unload
+extern void func_080453d0(void);    // [func_080452d4] ENGINE Func_00   (STUB)
+extern void func_080453d4(void);    // [func_080452d8] MAIN - Loop      (STUB)
+extern void func_080453d8(void);    // [func_080452dc] MAIN - Unload    (STUB)
 extern void func_080453dc(void);    // [func_080453dc] Event 0 - Show Text
 
-// Bon Dance prologue
+// Prologue: Bon Dance
 
-// extern ? func_08045408(?);
-// extern ? func_08045418(?);
-// extern ? func_08045448(?);
-// extern ? func_08045478(?);
-// extern ? func_080454d4(?);
-// extern ? func_080454d8(?);
-// extern ? func_080454dc(?);
-// extern ? func_080454e0(?);
+extern void func_08045408(void);    // [func_08045408] GFX_LOAD Func_02
+extern void func_08045418(void);    // [func_08045418] GFX_LOAD Func_01
+extern void func_08045448(void);    // [func_08045448] GFX_LOAD Func_00
+extern void func_08045478(u32);     // [func_08045478] MAIN - Load
+extern void func_080454d4(void);    // [func_080454d4] ENGINE Func_00   (STUB)
+extern void func_080454d8(void);    // [func_080454d8] MAIN - Loop      (STUB)
+extern void func_080454dc(void);    // [func_080454dc] MAIN - Unload    (STUB)
+extern void func_080454e0(void);    // [func_080454e0] Event 0 - Show Text
 
 // Prologue: Karate Man
 

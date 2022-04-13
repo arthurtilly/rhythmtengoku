@@ -18,7 +18,9 @@ extern u32 D_089ea3e4;   // GFX Null   -  Prologue: The Bon Odori
 extern u32 D_089ea3e8[]; // GFX Array  -  Prologue: The Bon Odori
 extern u32 D_088ad530[]; // Animation  -  Text (The Bon Odori)
 
-
+extern u32 D_089ea514;   // GFX Null   -  Prologue: Bon Dance
+extern u32 D_089ea518[]; // GFX Array  -  Prologue: Bon Dance
+extern u32 D_088ad898[]; // Animation  -  Text (Bon Dance)
 
 extern u32 D_089ea650;   // GFX Null   -  Prologue: Karate Man
 extern u32 D_089ea654[]; // GFX Array  -  Prologue: Karate Man
@@ -207,23 +209,61 @@ void func_080453dc(void) {
 }
 
 
-// Bon Dance prologue
+  // // //  PROLOGUE: BON DANCE  // // //
 
-#include "asm/scenes/prologues/asm_08045408.s"
 
-#include "asm/scenes/prologues/asm_08045418.s"
+// [func_08045408] GFX_LOAD Func_02
+void func_08045408(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08045448.s"
+// [func_08045418] GFX_LOAD Func_01
+void func_08045418(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08045478.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ea518, 0x2000);
+    func_08005d38(data, func_08045408, 0);
+}
 
-#include "asm/scenes/prologues/asm_080454d4.s"
+// [func_08045448] GFX_LOAD Func_00
+void func_08045448(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080454d8.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ea514);
+    func_08005d38(data, func_08045418, 0);
+}
 
-#include "asm/scenes/prologues/asm_080454dc.s"
+// [func_08045478] MAIN - Load
+void func_08045478(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_080454e0.s"
+    func_08045448();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088ad898, 0, 0x78, 0x8c, 0, 0, 0x7f, 0);
+}
+
+// [func_080454d4] ENGINE Func_00
+void func_080454d4(void) {
+}
+
+// [func_080454d8] MAIN - Loop
+void func_080454d8(void) {
+}
+
+// [func_080454dc] MAIN - Unload
+void func_080454dc(void) {
+}
+
+// [func_080454e0] Event 0 - Show Text
+void func_080454e0(void) {
+    func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
+}
 
 
   // // //  PROLOGUE: KARATE MAN  // // //
