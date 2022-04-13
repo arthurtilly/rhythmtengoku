@@ -5,7 +5,7 @@ extern char *D_0805a8b0;
 
 extern u32 *D_089e63f8[];
 extern u32 D_089e6424;
-extern u32 D_089e6518[];
+extern u32 *D_089e6518[];
 extern u8 D_089e6520;
 extern u8 D_089e6525;
 

@@ -1,12 +1,23 @@
+#include "src/code_08007468.h"
+#include "src/code_0800b3c8.h"
+#include "src/code_08001360.h"
+
+// For readability. !TODO - CHANGE/REMOVE
 #define gPrologueInfo D_030055d0->gameInfo.prologues
 
-extern u32 D_089ea088[]; // GFX Null   -  Prologue: Sneaky Spirits
+extern u32 D_089ea088; // GFX Null   -  Prologue: Sneaky Spirits
 extern u32 D_089ea08c[]; // GFX Array  -  Prologue: Sneaky Spirits
 extern u32 D_088ad2bc[]; // Animation: Sneaky Spirits - Text
 
+extern u32 D_089ead54; // GFX Null   -  Prologue: Rhythm Tweezers
+extern u32 D_089ead58[]; // GFX Array  -  Prologue: Rhythm Tweezers
+extern u32 D_088af6b4[]; // Animation: Rhythm Tweezers - Text
+
+extern u32  func_080087b4(u16, u32 *);
 extern void func_0804cebc(u32, s16, s8);
 
-// // PROLOGUE: SNEAKY SPIRITS // //
+
+  // // // PROLOGUE: SNEAKY SPIRITS // // //
 
 
 // [func_0804510c] GFX_LOAD Func_02
@@ -21,7 +32,7 @@ void func_0804511c(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_08002ee0((u16) func_0800c3b8(), (u32) &D_089ea08c, 0x2000);
+    data = func_08002ee0(func_0800c3b8(), D_089ea08c, 0x2000);
     func_08005d38(data, func_0804510c, 0);
 }
 
@@ -32,7 +43,7 @@ void func_0804514c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4((u16) func_0800c3b8(), (u32) &D_089ea088);
+    data = func_080087b4(func_0800c3b8(), &D_089ea088);
     func_08005d38(data, func_0804511c, 0);
 }
 
@@ -215,23 +226,68 @@ void func_080451e4(u32 frame) {
 
 #include "asm/scenes/prologues/asm_08045b94.s"
 
-// Rhythm Tweezers prologue
 
-#include "asm/scenes/prologues/asm_08045bec.s"
+  // // // PROLOGUE: RHYTHM TWEEZERS // // //
 
-#include "asm/scenes/prologues/asm_08045bfc.s"
 
-#include "asm/scenes/prologues/asm_08045c2c.s"
+// [func_08045bec] GFX_LOAD Func_02
+void func_08045bec(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08045c5c.s"
 
-#include "asm/scenes/prologues/asm_08045cb8.s"
+// [func_08045bfc] GFX_LOAD Func_01
+void func_08045bfc(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08045cbc.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ead58, 0x2000);
+    func_08005d38(data, &func_08045bec, 0);
+}
 
-#include "asm/scenes/prologues/asm_08045cc0.s"
 
-#include "asm/scenes/prologues/asm_08045cc4.s"
+// [func_08045c2c] GFX_LOAD Func_00
+void func_08045c2c(void) {
+    u32 data;
+
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ead54);
+    func_08005d38(data, &func_08045bfc, 0);
+}
+
+
+// [func_08045c5c] MAIN - Load
+void func_08045c5c(u32 ver) {
+    gPrologueInfo.ver = ver;
+    func_08045c2c();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 0x1d, 1);
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088af6b4, 0, 0x3c, 0x40, 0, 0, 0x7f, 0);
+}
+
+
+// [func_08045cb8] ENGINE Func_00 - Unknown
+void func_08045cb8(void) {
+}
+
+
+// [func_08045cbc] MAIN - Loop
+void func_08045cbc(void) {
+}
+
+
+// [func_08045cc0] MAIN - Unload
+void func_08045cc0(void) {
+}
+
+
+// [func_08045cc4] Event 0 - Show Text
+void func_08045cc4(void) {
+    func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
+}
+
 
 // Fireworks prologue
 

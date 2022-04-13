@@ -1598,14 +1598,14 @@ extern void func_080450e8(u32 arg0);                                        // [
 
 // Sneaky Spirits prologue
 
-extern void func_0804510c(void);
-extern void func_0804511c(void);
-extern void func_0804514c(void);
-extern void func_0804517c(u32);
-extern void func_080451d8(void);
-extern void func_080451dc(void);
-extern void func_080451e0(void);
-extern void func_080451e4(u32);
+extern void func_0804510c(void);    // [func_0804510c] GFX_LOAD Func_02
+extern void func_0804511c(void);    // [func_0804511c] GFX_LOAD Func_01
+extern void func_0804514c(void);    // [func_0804514c] GFX_LOAD Func_00
+extern void func_0804517c(u32);     // [func_0804517c] MAIN - Load
+extern void func_080451d8(void);    // [func_080451d8] ENGINE Func_00 - Unknown
+extern void func_080451dc(void);    // [func_080451dc] MAIN - Loop
+extern void func_080451e0(void);    // [func_080451e0] MAIN - Unload
+extern void func_080451e4(u32);     // [func_080451e4] Event 0 - Set Text
 
 // Spaceball prologue
 
@@ -1698,14 +1698,14 @@ extern void func_080451e4(u32);
 
 // Rhythm Tweezers prologue
 
-// extern ? func_08045bec(?);
-// extern ? func_08045bfc(?);
-// extern ? func_08045c2c(?);
-// extern ? func_08045c5c(?);
-// extern ? func_08045cb8(?);
-// extern ? func_08045cbc(?);
-// extern ? func_08045cc0(?);
-// extern ? func_08045cc4(?);
+extern void func_08045bec(void);    // [func_08045bec] GFX_LOAD Func_02
+extern void func_08045bfc(void);    // [func_08045bfc] GFX_LOAD Func_01
+extern void func_08045c2c(void);    // [func_08045c2c] GFX_LOAD Func_00
+extern void func_08045c5c(u32);     // [func_08045c5c] MAIN - Load
+extern void func_08045cb8(void);
+extern void func_08045cbc(void);
+extern void func_08045cc0(void);
+extern void func_08045cc4(void);
 
 // Fireworks prologue
 
