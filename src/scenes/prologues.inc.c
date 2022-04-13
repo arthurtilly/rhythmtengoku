@@ -27,6 +27,11 @@ extern u32 D_089ea654[]; // GFX Array  -  Prologue: Karate Man
 extern u32 D_088ada78[]; // Animation  -  Text (Karate Man)
 extern u32 D_088adaa8[]; // Animation  -  Kick (Karate Man)
 
+extern u32 D_089ea864;   // GFX Null   -  Prologue: Cosmic Dance
+extern u32 D_089ea868[]; // GFX Array  -  Prologue: Cosmic Dance
+extern u32 D_088adb94[]; // Animation  -  Text (Cosmic Dance)
+extern u32 D_088adba4[]; // Animation  -  Dancers (Cosmic Dance)
+
 
 
 extern u32 D_089ead54;   // GFX Null   -  Prologue: Rhythm Tweezers
@@ -36,6 +41,8 @@ extern u32 D_088af6b4[]; // Animation  -  Text (Rhythm Tweezers)
 
 extern u32  func_080087b4(u16, u32 *);
 extern void func_0804cebc(u32, s16, s8);
+extern void func_0800e62c(s16, u32, s16, u32, u16);
+extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
 
 
   // // //  PROLOGUE: SNEAKY SPIRITS  // // //
@@ -277,21 +284,21 @@ void func_0804550c(void) {
 
 // [func_0804551c] GFX_LOAD Func_01
 void func_0804551c(void) {
-    u32 temp;
+    u32 data;
 
     func_0800c604(0);
-    temp = func_08002ee0(func_0800c3b8(), D_089ea654, 0x2000);
-    func_08005d38(temp, &func_0804550c, 0);
+    data = func_08002ee0(func_0800c3b8(), D_089ea654, 0x2000);
+    func_08005d38(data, func_0804550c, 0);
 }
 
 // [func_0804554c] GFX_LOAD Func_00
 void func_0804554c(void) {
-    u32 temp;
+    u32 data;
 
     func_0800c604(0);
     func_08006d80();
-    temp = func_080087b4(func_0800c3b8(), &D_089ea650);
-    func_08005d38(temp, &func_0804551c, 0);
+    data = func_080087b4(func_0800c3b8(), &D_089ea650);
+    func_08005d38(data, func_0804551c, 0);
 }
 
 // [func_0804557c] MAIN - LOAD
@@ -330,25 +337,75 @@ void func_08045628(void) {
 }
 
 
-// Cosmic Dance prologue
+  // // //  PROLOGUE: COSMIC DANCE  // // //
 
-#include "asm/scenes/prologues/asm_08045664.s"
 
-#include "asm/scenes/prologues/asm_08045674.s"
+// [func_08045664] GFX_LOAD Func_02
+void func_08045664(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_080456a4.s"
+// [func_08045674] GFX_LOAD Func_01
+void func_08045674(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080456d4.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ea868, 0x2000);
+    func_08005d38(data, func_08045664, 0);
+}
 
-#include "asm/scenes/prologues/asm_08045730.s"
+// [func_080456a4] GFX_LOAD Func_00
+void func_080456a4(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08045734.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ea864);
+    func_08005d38(data, func_08045674, 0);
+}
 
-#include "asm/scenes/prologues/asm_08045738.s"
+// [func_080456d4] MAIN - Load
+void func_080456d4(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_0804573c.s"
+    func_080456a4();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088adb94, 0, 0x78, 0x50, 0, 0, 0x7f, 0);
+}
+
+// [func_08045730] ENGINE Func_00
+void func_08045730(void) {
+}
+
+// [func_08045734] MAIN - Loop
+void func_08045734(void) {
+}
+
+// [func_08045738] MAIN - Unload
+void func_08045738(void) {
+}
+
+// [func_0804573c] Event 0 - Show Dancers
+void func_0804573c(void) {
+    u32 i = 0;
+    u32 floatX = 0x480000;
+    u32 intX;
+    u16 dancer;
+
+    for (i; i < 4; i++) {
+        dancer = func_0804d160(D_03005380, D_088adba4, 0, 0x12c, 0x78, 0x4800 - i, 0, 0, 0);
+        intX = floatX >> 0x10;
+        func_0800e62c(dancer, 0, intX, 0x78, func_0800c3a4(0x12));
+        floatX += 0x200000;
+    }
+}
+
 
 // Night Walk prologue
+
 
 #include "asm/scenes/prologues/asm_080457b4.s"
 
@@ -418,7 +475,7 @@ void func_08045bfc(void) {
 
     func_0800c604(0);
     data = func_08002ee0(func_0800c3b8(), D_089ead58, 0x2000);
-    func_08005d38(data, &func_08045bec, 0);
+    func_08005d38(data, func_08045bec, 0);
 }
 
 // [func_08045c2c] GFX_LOAD Func_00
@@ -428,7 +485,7 @@ void func_08045c2c(void) {
     func_0800c604(0);
     func_08006d80();
     data = func_080087b4(func_0800c3b8(), &D_089ead54);
-    func_08005d38(data, &func_08045bfc, 0);
+    func_08005d38(data, func_08045bfc, 0);
 }
 
 // [func_08045c5c] MAIN - Load

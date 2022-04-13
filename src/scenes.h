@@ -1652,16 +1652,16 @@ extern void func_08045600(void);    // [func_08045600] MAIN - Unload    (STUB)
 extern void func_08045604(u8);      // [func_08045604] Event 0 - Set Text
 extern void func_08045628(void);    // [func_08045628] Event 1 - Kick
 
-// Cosmic Dance prologue
+// Prologue: Cosmic Dance
 
-// extern ? func_08045664(?);
-// extern ? func_08045674(?);
-// extern ? func_080456a4(?);
-// extern ? func_080456d4(?);
-// extern ? func_08045730(?);
-// extern ? func_08045734(?);
-// extern ? func_08045738(?);
-// extern ? func_0804573c(?);
+extern void func_08045664(void);    // [func_08045664] GFX_LOAD Func_02
+extern void func_08045674(void);    // [func_08045674] GFX_LOAD Func_01
+extern void func_080456a4(void);    // [func_080456a4] GFX_LOAD Func_00
+extern void func_080456d4(u32);     // [func_080456d4] MAIN - Load
+extern void func_08045730(void);    // [func_08045730] ENGINE Func_00
+extern void func_08045734(void);    // [func_08045734] MAIN - Loop
+extern void func_08045738(void);    // [func_08045738] MAIN - Unload
+extern void func_0804573c(void);    // [func_0804573c] Event 0 - Show Dancers
 
 // Night Walk prologue
 
