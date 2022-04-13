@@ -1663,16 +1663,16 @@ extern void func_08045734(void);    // [func_08045734] MAIN - Loop
 extern void func_08045738(void);    // [func_08045738] MAIN - Unload
 extern void func_0804573c(void);    // [func_0804573c] Event 0 - Show Dancers
 
-// Night Walk prologue
+// Prologue: Night Walk
 
-// extern ? func_080457b4(?);
-// extern ? func_080457c4(?);
-// extern ? func_080457f4(?);
-// extern ? func_08045824(?);
-// extern ? func_080458e0(?);
-// extern ? func_080458e4(?);
-// extern ? func_080458e8(?);
-// extern ? func_080458ec(?);
+extern void func_080457b4(void);    // [func_080457b4] GFX_LOAD Func_02
+extern void func_080457c4(void);    // [func_080457c4] GFX_LOAD Func_01
+extern void func_080457f4(void);    // [func_080457f4] GFX_LOAD Func_00
+extern void func_08045824(u32);     // [func_08045824] MAIN - Load
+extern void func_080458e0(void);    // [func_080458e0] ENGINE Func_00
+extern void func_080458e4(void);    // [func_080458e4] MAIN - Loop
+extern void func_080458e8(void);    // [func_080458e8] MAIN - Unload
+extern void func_080458ec(u32);     // [func_080458ec] Event 0 - Animate Play-yan; Event 1 - Show Text
 
 // Showtime prologue
 

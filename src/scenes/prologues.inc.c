@@ -32,6 +32,12 @@ extern u32 D_089ea868[]; // GFX Array  -  Prologue: Cosmic Dance
 extern u32 D_088adb94[]; // Animation  -  Text (Cosmic Dance)
 extern u32 D_088adba4[]; // Animation  -  Dancers (Cosmic Dance)
 
+extern u32 D_089ea988;   // GFX Null   -  Prologue: Night Walk
+extern u32 D_089ea98c[]; // GFX Array  -  Prologue: Night Walk
+extern u32 D_088ae2a8[]; // Animation  -  Text (Night Walk)
+extern u32 D_088ae048[]; // Animation  -  Play-yan (Night Walk)
+extern u32 D_088ae160[]; // Animation  -  Balloons (Night Walk)
+
 
 
 extern u32 D_089ead54;   // GFX Null   -  Prologue: Rhythm Tweezers
@@ -404,26 +410,74 @@ void func_0804573c(void) {
 }
 
 
-// Night Walk prologue
+  // // //  PROLOGUE: NIGHT WALK  // // //
 
 
-#include "asm/scenes/prologues/asm_080457b4.s"
+// [func_080457b4] GFX_LOAD Func_02
+void func_080457b4(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_080457c4.s"
+// [func_080457c4] GFX_LOAD Func_01
+void func_080457c4(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080457f4.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ea98c, 0x2000);
+    func_08005d38(data, func_080457b4, 0);
+}
 
-#include "asm/scenes/prologues/asm_08045824.s"
+// [func_080457f4] GFX_LOAD Func_00
+void func_080457f4(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080458e0.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ea988);
+    func_08005d38(data, func_080457c4, 0);
+}
 
-#include "asm/scenes/prologues/asm_080458e4.s"
+// [func_08045824] MAIN - Load
+void func_08045824(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_080458e8.s"
+    func_080457f4();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-#include "asm/scenes/prologues/asm_080458ec.s"
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088ae2a8, 0, 0x6e, 0x78, 0, 0, 0x7f, 0);
+    gPrologueInfo.entity4 = func_0804d160(D_03005380, D_088ae048, 0, 0x3c, 0x78, 0, 0, 0x7f, 0);
+    gPrologueInfo.entity6 = func_0804d160(D_03005380, D_088ae160, 0, 0x3c, 0x78, 0, 1, 0, 0);
+}
+
+// [func_080458e0] ENGINE Func_00
+void func_080458e0(void) {
+}
+
+// [func_080458e4] MAIN - Loop
+void func_080458e4(void) {
+}
+
+// [func_080458e8] MAIN - Unload
+void func_080458e8(void) {
+}
+
+// [func_080458ec] Event 0 - Animate Play-yan; Event 1 - Show Text
+void func_080458ec(u32 event) {
+    switch (event) {
+        case 0: // Event 0 - Animate Play-yan
+            func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
+            break;
+        case 1: // Event 1 - Show Text
+            func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
+            break;
+    }
+}
+
 
 // Showtime prologue
+
 
 #include "asm/scenes/prologues/asm_08045944.s"
 
