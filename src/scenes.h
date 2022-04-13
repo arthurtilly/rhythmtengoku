@@ -1598,14 +1598,14 @@ extern void func_080450e8(u32 arg0);                                        // [
 
 // Sneaky Spirits prologue
 
-// extern ? func_0804510c(?);
-// extern ? func_0804511c(?);
-// extern ? func_0804514c(?);
-// extern ? func_0804517c(?);
-// extern ? func_080451d8(?);
-// extern ? func_080451dc(?);
-// extern ? func_080451e0(?);
-// extern ? func_080451e4(?);
+extern void func_0804510c(void);
+extern void func_0804511c(void);
+extern void func_0804514c(void);
+extern void func_0804517c(u32);
+extern void func_080451d8(void);
+extern void func_080451dc(void);
+extern void func_080451e0(void);
+extern void func_080451e4(u32);
 
 // Spaceball prologue
 

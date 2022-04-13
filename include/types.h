@@ -185,7 +185,6 @@ struct WizardsWaltzSparkle {
 struct WizardsWaltzInfo {
     u8 version;         // Value:   unk0
     struct ScaledEntity *wizardEntity; // Entity:  unk4
-    u32 wizardEntity;   // Entity:  unk4
     u8  wizardState;    // Value:   unk8 {0,1}
     u32 unkC;           // Value:   posUnk0C
     u32 unk10;          // Value:   posUnk10
@@ -265,12 +264,14 @@ struct RhythmTweezersInfo {
     s16 unk92;      // Value: Mask Vertical Motion
 };
 
+
 struct PrologueInfo {
     u8  ver;        // Value: Version
     s16 entity2;    // Entity: Object 0
     s16 entity4;    // Entity: Object 1
     s16 entity6;    // Entity: Object 2
 };
+
 
 struct struct_030055d0 {
     union {

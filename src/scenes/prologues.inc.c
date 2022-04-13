@@ -1,20 +1,73 @@
-// Sneaky Spirits prologue
+#define gPrologueInfo D_030055d0->gameInfo.prologues
 
-#include "asm/scenes/prologues/asm_0804510c.s"
+extern u32 D_089ea088[]; // GFX Null   -  Prologue: Sneaky Spirits
+extern u32 D_089ea08c[]; // GFX Array  -  Prologue: Sneaky Spirits
+extern u32 D_088ad2bc[]; // Animation: Sneaky Spirits - Text
 
-#include "asm/scenes/prologues/asm_0804511c.s"
+extern void func_0804cebc(u32, s16, s8);
 
-#include "asm/scenes/prologues/asm_0804514c.s"
+// // PROLOGUE: SNEAKY SPIRITS // //
 
-#include "asm/scenes/prologues/asm_0804517c.s"
 
-#include "asm/scenes/prologues/asm_080451d8.s"
+// [func_0804510c] GFX_LOAD Func_02
+void func_0804510c(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_080451dc.s"
 
-#include "asm/scenes/prologues/asm_080451e0.s"
+// [func_0804511c] GFX_LOAD Func_01
+void func_0804511c(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080451e4.s"
+    func_0800c604(0);
+    data = func_08002ee0((u16) func_0800c3b8(), (u32) &D_089ea08c, 0x2000);
+    func_08005d38(data, func_0804510c, 0);
+}
+
+
+// [func_0804514c] GFX_LOAD Func_00
+void func_0804514c(void) {
+    u32 data;
+
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4((u16) func_0800c3b8(), (u32) &D_089ea088);
+    func_08005d38(data, func_0804511c, 0);
+}
+
+
+// [func_0804517c] MAIN - Load
+void func_0804517c(u32 ver) {
+    gPrologueInfo.ver = ver;
+    func_0804514c();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088ad2bc, 0, 0xa5, 0x5a, 0, 0, 0x7f, 0);
+}
+
+
+// [func_080451d8] ENGINE Func_00 - Unknown
+void func_080451d8(void) {
+}
+
+
+// [func_080451dc] MAIN - Loop
+void func_080451dc(void) {
+}
+
+
+// [func_080451e0] MAIN - Unload
+void func_080451e0(void) {
+}
+
+
+// [func_080451e4] Event 0 - Set Text
+void func_080451e4(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
 
 // Spaceball prologue
 

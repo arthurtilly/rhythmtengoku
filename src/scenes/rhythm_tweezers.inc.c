@@ -282,7 +282,7 @@ void func_0802ec60(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_08002ee0(func_0800c3b8(), D_089e3ff4[D_030055d0->unk0], 0x2000);
+    temp = func_08002ee0(func_0800c3b8(), D_089e3ff4[gRhythmTweezersInfo.unk0], 0x2000);
     func_08005d38(temp, &func_0802ec50, 0);
 }
 
