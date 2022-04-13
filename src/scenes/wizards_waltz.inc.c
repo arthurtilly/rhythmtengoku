@@ -1,3 +1,7 @@
+#include "src/code_08001360.h"
+#include "src/code_08007468.h"
+#include "src/code_0800b778.h"
+
 // For readability. !TODO - CHANGE/REMOVE
 #define gWizardsWaltzInfo D_030055d0->gameInfo.wizardsWaltz
 
@@ -38,7 +42,7 @@ void func_080449b4(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_08002ee0((u16) func_0800c3b8(), (u32) &D_089e9f14, 0x2000);
+    temp = func_08002ee0(func_0800c3b8(), &D_089e9f14, 0x2000);
     func_08005d38(temp, func_080449a4, 0);
 }
 
@@ -48,7 +52,7 @@ void func_080449e4(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_080087b4((u16) func_0800c3b8(), &D_089e9f10);
+    temp = func_080087b4(func_0800c3b8(), &D_089e9f10);
     func_08005d38(temp, func_080449b4, 0);
 }
 
@@ -72,7 +76,7 @@ void func_08044a10(u32 arg0) {
 
     // Create character entities.
     gWizardsWaltzInfo.wizardState = 0;
-    gWizardsWaltzInfo.wizardEntity = func_0800fa6c(D_08932bec, 0, 0x78, (s16)gWizardsWaltzInfo.unk14, 0x4001, 0x80, 0, 1, 0, 0, 1);
+    gWizardsWaltzInfo.wizardEntity = func_0800fa6c(D_08932bec, 0, 0x78, gWizardsWaltzInfo.unk14, 0x4001, 0x80, 0, 1, 0, 0, 1);
     gWizardsWaltzInfo.shadowEntity = func_0800fa6c(D_08932edc, 0, 0x78, 0x50, 0x4082, 0x80, 0, 0, 0, 0, 1);
     gWizardsWaltzInfo.girlState = 0;
     gWizardsWaltzInfo.girlEntity = func_0800fa6c(D_08932e3c, 0, 0x78, 0x50, 0x4040, 0x80, 0, 1, 0, 0, 1);

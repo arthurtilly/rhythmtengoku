@@ -260,8 +260,8 @@ void func_080091c4(void arg0(s32), s32 arg1) {
 
 void func_080091d8(void) {
     D_03001104 = 0;
-	D_03001108 = NULL;
-	REG_DISPSTAT &= ~DISPSTAT_VCOUNT_LINE_TRIG_MASK;
+    D_03001108 = NULL;
+    REG_DISPSTAT &= ~DISPSTAT_VCOUNT_LINE_TRIG_MASK;
 }
 
 void func_080091fc(void) {
@@ -282,9 +282,9 @@ void func_08009240(s32 arg0) {
 
 void func_08009268(void) {
     if (D_03001108 != NULL) {
-		func_080091c4(func_08009240, 0);
-		func_0800915c();
-	}
+        func_080091c4(func_08009240, 0);
+        func_0800915c();
+    }
 }
 
 void func_0800928c(s32 arg0, void arg1(s32), s32 arg2) {

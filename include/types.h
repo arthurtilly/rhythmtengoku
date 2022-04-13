@@ -170,7 +170,7 @@ struct RapMenInfo {
 };
 
 struct WizardsWaltzSparkle {
-    u32 entity;     // Entity:  unk0
+    struct ScaledEntity *entity;     // Entity:  unk0
     u8  state;      // Value:   unk4 {0,1,2}
     u32 unk8;       // Counter: unk8
     u32 unkC;       // Value:   posUnk0C
@@ -181,7 +181,7 @@ struct WizardsWaltzSparkle {
 };
 
 struct WizardsWaltzInfo {
-    u32 wizardEntity;   // Entity:  unk4
+    struct ScaledEntity *wizardEntity;   // Entity:  unk4
     u8  wizardState;    // Value:   unk8 {0,1}
     u32 unkC;           // Value:   posUnk0C
     u32 unk10;          // Value:   posUnk10
@@ -189,7 +189,7 @@ struct WizardsWaltzInfo {
     u32 unk18;          // Value:   posUnk18
     u32 null1C;
     u32 null20;
-    u32 shadowEntity;   // Entity:  unk24
+    struct ScaledEntity *shadowEntity;   // Entity:  unk24
     u32 null28;
     u32 null2C;
     u32 null30;
@@ -198,7 +198,7 @@ struct WizardsWaltzInfo {
     u32 null3C;
     u32 null40;
     struct WizardsWaltzSparkle sparkle[10]; // Struct: unk44[10]
-    u32 girlEntity;     // Entity:  unk184
+    struct ScaledEntity *girlEntity;     // Entity:  unk184
     u8  girlState;      // Value:   unk188 {0,1,2}
     u32 null18C;
     u32 null190;

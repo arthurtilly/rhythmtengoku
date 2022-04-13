@@ -1,3 +1,6 @@
+#include "src/code_08001360.h"
+#include "src/code_08007468.h"
+
 // For readability. !TODO - CHANGE/REMOVE
 #define gRhythmTweezersInfo D_030055d0->gameInfo.rhythmTweezers
 
@@ -279,7 +282,7 @@ void func_0802ec60(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_08002ee0((u16) func_0800c3b8(), (u32) D_089e3ff4[D_030055d0->unk0], 0x2000);
+    temp = func_08002ee0(func_0800c3b8(), D_089e3ff4[D_030055d0->unk0], 0x2000);
     func_08005d38(temp, &func_0802ec50, 0);
 }
 
@@ -289,7 +292,7 @@ void func_0802eca0(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_080087b4((u16) func_0800c3b8(), &D_089e3db0);
+    temp = func_080087b4(func_0800c3b8(), &D_089e3db0);
     func_08005d38(temp, &func_0802ec60, 0);
 }
 

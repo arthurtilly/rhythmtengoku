@@ -1,5 +1,23 @@
 #pragma once
 
+struct ScaledEntity {
+    s16 unk0;        // Standard Entity
+    u8  unk2;        // func_0800c42c()
+    u8  unk3;        // Double-Size Flag (arg10)
+    s16 unk4;        // Scaling (arg5)
+    s16 unk6;        // Scaling (arg5)
+    s16 unk8;        // Rotation (arg6)
+    u16 unkA;        // ? (arg2)
+    u16 unkC;        // ? (arg3)
+    u16 unkE;        // ? (0)
+    u16 unk10;       // ? (0)
+    u8  unk12_0:1;   // ?
+    u8  unk12_1:1;   // ?
+    u8  unk12_2:1;   // ?
+    u8  unk12_3:1;   // ?
+    u8  unk12_4:1;   // ?
+};
+
 // extern ? func_0800b778(?);
 // extern ? func_0800b834(?);
 // extern ? func_0800b974(?);
