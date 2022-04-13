@@ -38,7 +38,15 @@ extern u32 D_088ae2a8[]; // Animation  -  Text (Night Walk)
 extern u32 D_088ae048[]; // Animation  -  Play-yan (Night Walk)
 extern u32 D_088ae160[]; // Animation  -  Balloons (Night Walk)
 
+extern u32 D_089eaadc;   // GFX Null   -  Prologue: Showtime
+extern u32 D_089eaae0[]; // GFX Array  -  Prologue: Showtime
+extern u32 D_088ae3e4[]; // Animation  -  Text (Showtime)
+extern u32 D_088ae3f4[]; // Animation  -  Penguin (Showtime)
 
+extern u32 D_089eac18;   // GFX Null   -  Prologue: Bouncy Road
+extern u32 D_089eac1c[]; // GFX Array  -  Prologue: Bouncy Road
+extern u32 D_088af5a0[]; // Animation  -  Text (Bouncy Road)
+extern u32 D_088af510[]; // Animation  -  Bouncers (Bouncy Road)
 
 extern u32 D_089ead54;   // GFX Null   -  Prologue: Rhythm Tweezers
 extern u32 D_089ead58[]; // GFX Array  -  Prologue: Rhythm Tweezers
@@ -476,42 +484,128 @@ void func_080458ec(u32 event) {
 }
 
 
-// Showtime prologue
+  // // //  PROLOGUE: SHOWTIME  // // //
 
 
-#include "asm/scenes/prologues/asm_08045944.s"
+// [func_08045944] GFX_LOAD Func_02
+void func_08045944(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08045954.s"
+// [func_08045954] GFX_LOAD Func_01
+void func_08045954(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08045984.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089eaae0, 0x2000);
+    func_08005d38(data, func_08045944, 0);
+}
 
-#include "asm/scenes/prologues/asm_080459b4.s"
+// [func_08045984] GFX_LOAD Func_00
+void func_08045984(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08045a44.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089eaadc);
+    func_08005d38(data, func_08045954, 0);
+}
 
-#include "asm/scenes/prologues/asm_08045a48.s"
+// [func_080459b4] MAIN - Load
+void func_080459b4(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08045a4c.s"
+    func_08045984();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-#include "asm/scenes/prologues/asm_08045a50.s"
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088ae3e4, 0, 0x40, 0x40, 0, 0, 0x7f, 0);
+    gPrologueInfo.entity4 = func_0804d160(D_03005380, D_088ae3f4, 0, 0x88, 0x40, 0, 0, 0x7f, 0);
+}
 
-// Bouncy Road
+// [func_08045a44] ENGINE Func_00
+void func_08045a44(void) {
+}
 
-#include "asm/scenes/prologues/asm_08045a90.s"
+// [func_08045a48] MAIN - Loop
+void func_08045a48(void) {
+}
 
-#include "asm/scenes/prologues/asm_08045aa0.s"
+// [func_08045a4c] MAIN - Unload
+void func_08045a4c(void) {
+}
 
-#include "asm/scenes/prologues/asm_08045ad0.s"
+// [func_08045a50] Event 0 - Show Text, Animate Penguin
+void func_08045a50(void) {
+    func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
+}
 
-#include "asm/scenes/prologues/asm_08045b00.s"
 
-#include "asm/scenes/prologues/asm_08045b88.s"
+  // // //  PROLOGUE: BOUNCY ROAD  // // //
 
-#include "asm/scenes/prologues/asm_08045b8c.s"
 
-#include "asm/scenes/prologues/asm_08045b90.s"
+// [func_08045a90] GFX_LOAD Func_02
+void func_08045a90(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08045b94.s"
+// [func_08045aa0] GFX_LOAD Func_01
+void func_08045aa0(void) {
+    u32 data;
+
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089eac1c, 0x2000);
+    func_08005d38(data, func_08045a90, 0);
+}
+
+// [func_08045ad0] GFX_LOAD Func_00
+void func_08045ad0(void) {
+    u32 data;
+
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089eac18);
+    func_08005d38(data, func_08045aa0, 0);
+}
+
+// [func_08045b00] MAIN - Load
+void func_08045b00(u32 ver) {
+    gPrologueInfo.ver = ver;
+
+    func_08045ad0();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088af5a0, 0, 0x78, 0x78, 0, 0, 0x7f, 0);
+    gPrologueInfo.entity4 = func_0804d160(D_03005380, D_088af510, 0, 0x77, 0x65, 0, 0, 0x7f, 0);
+}
+
+// [func_08045b88] ENGINE Func_00
+void func_08045b88(void) {
+}
+
+// [func_08045b8c] MAIN - Loop
+void func_08045b8c(void) {
+}
+
+// [func_08045b90] MAIN - Unload
+void func_08045b90(void) {
+}
+
+// [func_08045b94] Event 0 - Animate Bouncers; Event 1 - Show Text
+void func_08045b94(u32 event) {
+    switch (event) {
+        case 0: // Event 0 - Animate Bouncers
+            func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
+            break;
+        case 1: // Event 1 - Show Text
+            func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
+            break;
+    }
+}
 
 
   // // //  PROLOGUE: RHYTHM TWEEZERS  // // //

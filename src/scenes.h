@@ -1658,9 +1658,9 @@ extern void func_08045664(void);    // [func_08045664] GFX_LOAD Func_02
 extern void func_08045674(void);    // [func_08045674] GFX_LOAD Func_01
 extern void func_080456a4(void);    // [func_080456a4] GFX_LOAD Func_00
 extern void func_080456d4(u32);     // [func_080456d4] MAIN - Load
-extern void func_08045730(void);    // [func_08045730] ENGINE Func_00
-extern void func_08045734(void);    // [func_08045734] MAIN - Loop
-extern void func_08045738(void);    // [func_08045738] MAIN - Unload
+extern void func_08045730(void);    // [func_08045730] ENGINE Func_00   (STUB)
+extern void func_08045734(void);    // [func_08045734] MAIN - Loop      (STUB)
+extern void func_08045738(void);    // [func_08045738] MAIN - Unload    (STUB)
 extern void func_0804573c(void);    // [func_0804573c] Event 0 - Show Dancers
 
 // Prologue: Night Walk
@@ -1669,32 +1669,32 @@ extern void func_080457b4(void);    // [func_080457b4] GFX_LOAD Func_02
 extern void func_080457c4(void);    // [func_080457c4] GFX_LOAD Func_01
 extern void func_080457f4(void);    // [func_080457f4] GFX_LOAD Func_00
 extern void func_08045824(u32);     // [func_08045824] MAIN - Load
-extern void func_080458e0(void);    // [func_080458e0] ENGINE Func_00
-extern void func_080458e4(void);    // [func_080458e4] MAIN - Loop
-extern void func_080458e8(void);    // [func_080458e8] MAIN - Unload
+extern void func_080458e0(void);    // [func_080458e0] ENGINE Func_00   (STUB)
+extern void func_080458e4(void);    // [func_080458e4] MAIN - Loop      (STUB)
+extern void func_080458e8(void);    // [func_080458e8] MAIN - Unload    (STUB)
 extern void func_080458ec(u32);     // [func_080458ec] Event 0 - Animate Play-yan; Event 1 - Show Text
 
-// Showtime prologue
+// Prologue: Showtime
 
-// extern ? func_08045944(?);
-// extern ? func_08045954(?);
-// extern ? func_08045984(?);
-// extern ? func_080459b4(?);
-// extern ? func_08045a44(?);
-// extern ? func_08045a48(?);
-// extern ? func_08045a4c(?);
-// extern ? func_08045a50(?);
+extern void func_08045944(void);    // [func_08045944] GFX_LOAD Func_02
+extern void func_08045954(void);    // [func_08045954] GFX_LOAD Func_01
+extern void func_08045984(void);    // [func_08045984] GFX_LOAD Func_00
+extern void func_080459b4(u32);     // [func_080459b4] MAIN - Load
+extern void func_08045a44(void);    // [func_08045a44] ENGINE Func_00   (STUB)
+extern void func_08045a48(void);    // [func_08045a48] MAIN - Loop      (STUB)
+extern void func_08045a4c(void);    // [func_08045a4c] MAIN - Unload    (STUB)
+extern void func_08045a50(void);    // [func_08045a50] Event 0 - Show Text, Animate Penguin
 
-// Bouncy Road
+// Prologue: Bouncy Road
 
-// extern ? func_08045a90(?);
-// extern ? func_08045aa0(?);
-// extern ? func_08045ad0(?);
-// extern ? func_08045b00(?);
-// extern ? func_08045b88(?);
-// extern ? func_08045b8c(?);
-// extern ? func_08045b90(?);
-// extern ? func_08045b94(?);
+extern void func_08045a90(void);    // [func_08045a90] GFX_LOAD Func_02
+extern void func_08045aa0(void);    // [func_08045aa0] GFX_LOAD Func_01
+extern void func_08045ad0(void);    // [func_08045ad0] GFX_LOAD Func_00
+extern void func_08045b00(u32);     // [func_08045b00] MAIN - Load
+extern void func_08045b88(void);    // [func_08045b88] ENGINE Func_00   (STUB)
+extern void func_08045b8c(void);    // [func_08045b8c] MAIN - Loop      (STUB)
+extern void func_08045b90(void);    // [func_08045b90] MAIN - Unload    (STUB)
+extern void func_08045b94(u32);     // [func_08045b94] Event 0 - Animate Bouncers; Event 1 - Show Text
 
 // Prologue: Rhythm Tweezers
 
