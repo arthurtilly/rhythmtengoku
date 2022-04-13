@@ -1649,7 +1649,7 @@ extern void func_0804557c(u32);     // [func_0804557c] MAIN - LOAD
 extern void func_080455f8(void);    // [func_080455f8] ENGINE Func_00   (STUB)
 extern void func_080455fc(void);    // [func_080455fc] MAIN - Loop      (STUB)
 extern void func_08045600(void);    // [func_08045600] MAIN - Unload    (STUB)
-extern void func_08045604(u8);      // [func_08045604] Event 0 - Set Text
+extern void func_08045604(u32);      // [func_08045604] Event 0 - Set Text
 extern void func_08045628(void);    // [func_08045628] Event 1 - Kick
 
 // Prologue: Cosmic Dance
@@ -1707,16 +1707,16 @@ extern void func_08045cbc(void);    // [func_08045cbc] MAIN - Loop      (STUB)
 extern void func_08045cc0(void);    // [func_08045cc0] MAIN - Unload    (STUB)
 extern void func_08045cc4(void);    // [func_08045cc4] Event 0 - Show Text
 
-// Fireworks prologue
+// Prologue: Fireworks
 
-// extern ? func_08045cf0(?);
-// extern ? func_08045d00(?);
-// extern ? func_08045d30(?);
-// extern ? func_08045d60(?);
-// extern ? func_08045dbc(?);
-// extern ? func_08045dc0(?);
-// extern ? func_08045dc4(?);
-// extern ? func_08045dc8(?);
+extern void func_08045cf0(void);    // [func_08045cf0] GFX_LOAD Func_02
+extern void func_08045d00(void);    // [func_08045d00] GFX_LOAD Func_01
+extern void func_08045d30(void);    // [func_08045d30] GFX_LOAD Func_00
+extern void func_08045d60(u32);     // [func_08045d60] MAIN - Load
+extern void func_08045dbc(void);    // [func_08045dbc] ENGINE Func_00   (STUB)
+extern void func_08045dc0(void);    // [func_08045dc0] MAIN - Loop      (STUB)
+extern void func_08045dc4(void);    // [func_08045dc4] MAIN - Unload    (STUB)
+extern void func_08045dc8(u32);     // [func_08045dc8] Event 0 - Set Text
 
 // The Clappy Trio prologue
 

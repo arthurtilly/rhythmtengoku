@@ -52,6 +52,11 @@ extern u32 D_089ead54;   // GFX Null   -  Prologue: Rhythm Tweezers
 extern u32 D_089ead58[]; // GFX Array  -  Prologue: Rhythm Tweezers
 extern u32 D_088af6b4[]; // Animation  -  Text (Rhythm Tweezers)
 
+extern u32 D_089eae84;   // GFX Null   -  Prologue: Fireworks
+extern u32 D_089eae88[]; // GFX Array  -  Prologue: Fireworks
+extern u32 D_088af7d4[]; // Animation  -  Text (Fireworks)
+
+
 
 extern u32  func_080087b4(u16, u32 *);
 extern void func_0804cebc(u32, s16, s8);
@@ -340,7 +345,7 @@ void func_08045600(void) {
 }
 
 // [func_08045604] Event 0 - Set Text
-void func_08045604(u8 frame) {
+void func_08045604(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
 
@@ -665,23 +670,62 @@ void func_08045cc4(void) {
 }
 
 
-// Fireworks prologue
+  // // //  PROLOGUE: FIREWORKS  // // //
 
-#include "asm/scenes/prologues/asm_08045cf0.s"
 
-#include "asm/scenes/prologues/asm_08045d00.s"
+// [func_08045cf0] GFX_LOAD Func_02
+void func_08045cf0(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08045d30.s"
+// [func_08045d00] GFX_LOAD Func_01
+void func_08045d00(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08045d60.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089eae88, 0x2000);
+    func_08005d38(data, func_08045cf0, 0);
+}
 
-#include "asm/scenes/prologues/asm_08045dbc.s"
+// [func_08045d30] GFX_LOAD Func_00
+void func_08045d30(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08045dc0.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089eae84);
+    func_08005d38(data, func_08045d00, 0);
+}
 
-#include "asm/scenes/prologues/asm_08045dc4.s"
+// [func_08045d60] MAIN - Load
+void func_08045d60(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08045dc8.s"
+    func_08045d30();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088af7d4, 0, 0x78, 8, 0, 0, 0x7f, 0);
+}
+
+// [func_08045dbc] ENGINE Func_00
+void func_08045dbc(void) {
+}
+
+// [func_08045dc0] MAIN - Loop
+void func_08045dc0(void) {
+}
+
+// [func_08045dc4] MAIN - Unload
+void func_08045dc4(void) {
+}
+
+// [func_08045dc8] Event 0 - Set Text
+void func_08045dc8(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
 
 // The Clappy Trio prologue
 
