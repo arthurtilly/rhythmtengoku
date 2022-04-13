@@ -14,10 +14,18 @@ extern u32 D_089ea26c;   // GFX Null   -  Prologue: Spaceball
 extern u32 D_089ea270[]; // GFX Array  -  Prologue: Spaceball
 extern u32 D_088ad3f4[]; // Animation  -  Text (Spaceball)
 
+extern u32 D_089ea3e4;   // GFX Null   -  Prologue: The Bon Odori
+extern u32 D_089ea3e8[]; // GFX Array  -  Prologue: The Bon Odori
+extern u32 D_088ad530[]; // Animation  -  Text (The Bon Odori)
+
+
+
 extern u32 D_089ea650;   // GFX Null   -  Prologue: Karate Man
 extern u32 D_089ea654[]; // GFX Array  -  Prologue: Karate Man
 extern u32 D_088ada78[]; // Animation  -  Text (Karate Man)
 extern u32 D_088adaa8[]; // Animation  -  Kick (Karate Man)
+
+
 
 extern u32 D_089ead54;   // GFX Null   -  Prologue: Rhythm Tweezers
 extern u32 D_089ead58[]; // GFX Array  -  Prologue: Rhythm Tweezers
@@ -142,23 +150,62 @@ void func_080452e0(u32 frame) {
 }
 
 
-// Bon Odori prologue
+  // // //  PROLOGUE: THE BON ODORI  // // //
 
-#include "asm/scenes/prologues/asm_08045304.s"
 
-#include "asm/scenes/prologues/asm_08045314.s"
+// [func_08045304] GFX_LOAD Func_02
+void func_08045304(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08045344.s"
+// [func_08045314] GFX_LOAD Func_01
+void func_08045314(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08045374.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ea3e8, 0x2000);
+    func_08005d38(data, func_08045304, 0);
+}
 
-#include "asm/scenes/prologues/asm_080453d0.s"
+// [func_08045344] GFX_LOAD Func_00
+void func_08045344(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080453d4.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ea3e4);
+    func_08005d38(data, func_08045314, 0);
+}
 
-#include "asm/scenes/prologues/asm_080453d8.s"
+// [func_08045374] MAIN - Load
+void func_08045374(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_080453dc.s"
+    func_08045344();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088ad530, 0, 0x50, 0x40, 0, 0, 0x7f, 0);
+}
+
+// [func_080452d4] ENGINE Func_00
+void func_080453d0(void) {
+}
+
+// [func_080452d8] MAIN - Loop
+void func_080453d4(void) {
+}
+
+// [func_080452dc] MAIN - Unload
+void func_080453d8(void) {
+}
+
+// [func_080453dc] Event 0 - Show Text
+void func_080453dc(void) {
+    func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
+}
+
 
 // Bon Dance prologue
 

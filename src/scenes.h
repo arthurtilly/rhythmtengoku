@@ -1618,16 +1618,16 @@ extern void func_080452d8(void);    // [func_080452d8] MAIN - Loop      (STUB)
 extern void func_080452dc(void);    // [func_080452dc] MAIN - Unload    (STUB)
 extern void func_080452e0(u32);     // [func_080452e0] Event 0 - Set Text
 
-// Bon Odori prologue
+// Prologue: The Bon Odori
 
-// extern ? func_08045304(?);
-// extern ? func_08045314(?);
-// extern ? func_08045344(?);
-// extern ? func_08045374(?);
-// extern ? func_080453d0(?);
-// extern ? func_080453d4(?);
-// extern ? func_080453d8(?);
-// extern ? func_080453dc(?);
+extern void func_08045304(void);    // [func_08045304] GFX_LOAD Func_02
+extern void func_08045314(void);    // [func_08045314] GFX_LOAD Func_01
+extern void func_08045344(void);    // [func_08045344] GFX_LOAD Func_00
+extern void func_08045374(u32);     // [func_08045374] MAIN - Load
+extern void func_080453d0(void);    // [func_080452d4] ENGINE Func_00
+extern void func_080453d4(void);    // [func_080452d8] MAIN - Loop
+extern void func_080453d8(void);    // [func_080452dc] MAIN - Unload
+extern void func_080453dc(void);    // [func_080453dc] Event 0 - Show Text
 
 // Bon Dance prologue
 
