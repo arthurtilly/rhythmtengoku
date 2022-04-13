@@ -1642,15 +1642,15 @@ extern void func_080451e4(u32);     // [func_080451e4] Event 0 - Set Text
 
 // Karate Man prologue
 
-// extern ? func_0804550c(?);
-// extern ? func_0804551c(?);
-// extern ? func_0804554c(?);
-// extern ? func_0804557c(?);
-// extern ? func_080455f8(?);
-// extern ? func_080455fc(?);
-// extern ? func_08045600(?);
-// extern ? func_08045604(?);
-// extern ? func_08045628(?);
+extern void func_0804550c(void);    // [func_0804550c] GFX_LOAD Func_02
+extern void func_0804551c(void);    // [func_0804551c] GFX_LOAD Func_01
+extern void func_0804554c(void);    // [func_0804554c] GFX_LOAD Func_00
+extern void func_0804557c(u32);     // [func_0804557c] MAIN - LOAD
+extern void func_080455f8(void);    // [func_080455f8] ENGINE Func_00 - Unknown
+extern void func_080455fc(void);    // [func_080455fc] MAIN - Loop
+extern void func_08045600(void);    // [func_08045600] MAIN - Unload
+extern void func_08045604(u8);      // [func_08045604] Event 0 - Set Text
+extern void func_08045628(void);    // [func_08045628] Event 1 - Kick
 
 // Cosmic Dance prologue
 
@@ -1702,10 +1702,10 @@ extern void func_08045bec(void);    // [func_08045bec] GFX_LOAD Func_02
 extern void func_08045bfc(void);    // [func_08045bfc] GFX_LOAD Func_01
 extern void func_08045c2c(void);    // [func_08045c2c] GFX_LOAD Func_00
 extern void func_08045c5c(u32);     // [func_08045c5c] MAIN - Load
-extern void func_08045cb8(void);
-extern void func_08045cbc(void);
-extern void func_08045cc0(void);
-extern void func_08045cc4(void);
+extern void func_08045cb8(void);    // [func_08045cb8] ENGINE Func_00 - Unknown
+extern void func_08045cbc(void);    // [func_08045cbc] MAIN - Loop
+extern void func_08045cc0(void);    // [func_08045cc0] MAIN - Unload
+extern void func_08045cc4(void);    // [func_08045cc4] Event 0 - Show Text
 
 // Fireworks prologue
 

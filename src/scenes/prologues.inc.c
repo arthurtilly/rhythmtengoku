@@ -5,19 +5,24 @@
 // For readability. !TODO - CHANGE/REMOVE
 #define gPrologueInfo D_030055d0->gameInfo.prologues
 
-extern u32 D_089ea088; // GFX Null   -  Prologue: Sneaky Spirits
+extern u32 D_089ea088;   // GFX Null   -  Prologue: Sneaky Spirits
 extern u32 D_089ea08c[]; // GFX Array  -  Prologue: Sneaky Spirits
-extern u32 D_088ad2bc[]; // Animation: Sneaky Spirits - Text
+extern u32 D_088ad2bc[]; // Animation  -  Text (Sneaky Spirits)
 
-extern u32 D_089ead54; // GFX Null   -  Prologue: Rhythm Tweezers
+extern u32 D_089ea650;   // GFX Null   -  Prologue: Karate Man
+extern u32 D_089ea654[]; // GFX Array  -  Prologue: Karate Man
+extern u32 D_088ada78[]; // Animation  -  Text (Karate Man)
+extern u32 D_088adaa8[]; // Animation  -  Kick (Karate Man)
+
+extern u32 D_089ead54;   // GFX Null   -  Prologue: Rhythm Tweezers
 extern u32 D_089ead58[]; // GFX Array  -  Prologue: Rhythm Tweezers
-extern u32 D_088af6b4[]; // Animation: Rhythm Tweezers - Text
+extern u32 D_088af6b4[]; // Animation  -  Text (Rhythm Tweezers)
 
 extern u32  func_080087b4(u16, u32 *);
 extern void func_0804cebc(u32, s16, s8);
 
 
-  // // // PROLOGUE: SNEAKY SPIRITS // // //
+  // // //  PROLOGUE: SNEAKY SPIRITS  // // //
 
 
 // [func_0804510c] GFX_LOAD Func_02
@@ -134,25 +139,75 @@ void func_080451e4(u32 frame) {
 
 #include "asm/scenes/prologues/asm_080454e0.s"
 
-// Karate Man prologue
 
-#include "asm/scenes/prologues/asm_0804550c.s"
+  // // //  PROLOGUE: KARATE MAN  // // //
 
-#include "asm/scenes/prologues/asm_0804551c.s"
 
-#include "asm/scenes/prologues/asm_0804554c.s"
+// [func_0804550c] GFX_LOAD Func_02
+void func_0804550c(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_0804557c.s"
 
-#include "asm/scenes/prologues/asm_080455f8.s"
+// [func_0804551c] GFX_LOAD Func_01
+void func_0804551c(void) {
+    u32 temp;
 
-#include "asm/scenes/prologues/asm_080455fc.s"
+    func_0800c604(0);
+    temp = func_08002ee0(func_0800c3b8(), D_089ea654, 0x2000);
+    func_08005d38(temp, &func_0804550c, 0);
+}
 
-#include "asm/scenes/prologues/asm_08045600.s"
 
-#include "asm/scenes/prologues/asm_08045604.s"
+// [func_0804554c] GFX_LOAD Func_00
+void func_0804554c(void) {
+    u32 temp;
 
-#include "asm/scenes/prologues/asm_08045628.s"
+    func_0800c604(0);
+    func_08006d80();
+    temp = func_080087b4(func_0800c3b8(), &D_089ea650);
+    func_08005d38(temp, &func_0804551c, 0);
+}
+
+
+// [func_0804557c] MAIN - LOAD
+void func_0804557c(u32 ver) {
+    gPrologueInfo.ver = ver;
+    func_0804554c();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088ada78, 0, 0x6e, 0x50, 0, 0, 0, 0);
+    gPrologueInfo.entity4 = func_0804d160(D_03005380, D_088adaa8, 0, 0x60, 0x6e, 0, 0, 0, 0);
+}
+
+
+// [func_080455f8] ENGINE Func_00 - Unknown
+void func_080455f8(void) {
+}
+
+
+// [func_080455fc] MAIN - Loop
+void func_080455fc(void) {
+}
+
+
+// [func_08045600] MAIN - Unload
+void func_08045600(void) {
+}
+
+
+// [func_08045604] Event 0 - Set Text
+void func_08045604(u8 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
+// [func_08045628] Event 1 - Kick
+void func_08045628(void) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity4, 1);
+    func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
+}
 
 // Cosmic Dance prologue
 
@@ -227,7 +282,7 @@ void func_080451e4(u32 frame) {
 #include "asm/scenes/prologues/asm_08045b94.s"
 
 
-  // // // PROLOGUE: RHYTHM TWEEZERS // // //
+  // // //  PROLOGUE: RHYTHM TWEEZERS  // // //
 
 
 // [func_08045bec] GFX_LOAD Func_02
