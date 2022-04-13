@@ -1596,27 +1596,27 @@ extern void func_080450e0(void);                                            // [
 extern void func_080450e4(void);                                            // [func_080450e4] (STUB)
 extern void func_080450e8(u32 arg0);                                        // [func_080450e8]
 
-// Sneaky Spirits prologue
+// Prologue: Sneaky Spirits
 
 extern void func_0804510c(void);    // [func_0804510c] GFX_LOAD Func_02
 extern void func_0804511c(void);    // [func_0804511c] GFX_LOAD Func_01
 extern void func_0804514c(void);    // [func_0804514c] GFX_LOAD Func_00
 extern void func_0804517c(u32);     // [func_0804517c] MAIN - Load
-extern void func_080451d8(void);    // [func_080451d8] ENGINE Func_00 - Unknown
-extern void func_080451dc(void);    // [func_080451dc] MAIN - Loop
-extern void func_080451e0(void);    // [func_080451e0] MAIN - Unload
+extern void func_080451d8(void);    // [func_080451d8] ENGINE Func_00   (STUB)
+extern void func_080451dc(void);    // [func_080451dc] MAIN - Loop      (STUB)
+extern void func_080451e0(void);    // [func_080451e0] MAIN - Unload    (STUB)
 extern void func_080451e4(u32);     // [func_080451e4] Event 0 - Set Text
 
-// Spaceball prologue
+// Prologue: Spaceball
 
-// extern ? func_08045208(?);
-// extern ? func_08045218(?);
-// extern ? func_08045248(?);
-// extern ? func_08045278(?);
-// extern ? func_080452d4(?);
-// extern ? func_080452d8(?);
-// extern ? func_080452dc(?);
-// extern ? func_080452e0(?);
+extern void func_08045208(void);    // [func_08045208] GFX_LOAD Func_02
+extern void func_08045218(void);    // [func_08045218] GFX_LOAD Func_01
+extern void func_08045248(void);    // [func_08045248] GFX_LOAD Func_00
+extern void func_08045278(u32);     // [func_08045278] MAIN - Load
+extern void func_080452d4(void);    // [func_080452d4] ENGINE Func_00   (STUB)
+extern void func_080452d8(void);    // [func_080452d8] MAIN - Loop      (STUB)
+extern void func_080452dc(void);    // [func_080452dc] MAIN - Unload    (STUB)
+extern void func_080452e0(u32);     // [func_080452e0] Event 0 - Set Text
 
 // Bon Odori prologue
 
@@ -1640,15 +1640,15 @@ extern void func_080451e4(u32);     // [func_080451e4] Event 0 - Set Text
 // extern ? func_080454dc(?);
 // extern ? func_080454e0(?);
 
-// Karate Man prologue
+// Prologue: Karate Man
 
 extern void func_0804550c(void);    // [func_0804550c] GFX_LOAD Func_02
 extern void func_0804551c(void);    // [func_0804551c] GFX_LOAD Func_01
 extern void func_0804554c(void);    // [func_0804554c] GFX_LOAD Func_00
 extern void func_0804557c(u32);     // [func_0804557c] MAIN - LOAD
-extern void func_080455f8(void);    // [func_080455f8] ENGINE Func_00 - Unknown
-extern void func_080455fc(void);    // [func_080455fc] MAIN - Loop
-extern void func_08045600(void);    // [func_08045600] MAIN - Unload
+extern void func_080455f8(void);    // [func_080455f8] ENGINE Func_00   (STUB)
+extern void func_080455fc(void);    // [func_080455fc] MAIN - Loop      (STUB)
+extern void func_08045600(void);    // [func_08045600] MAIN - Unload    (STUB)
 extern void func_08045604(u8);      // [func_08045604] Event 0 - Set Text
 extern void func_08045628(void);    // [func_08045628] Event 1 - Kick
 
@@ -1696,15 +1696,15 @@ extern void func_08045628(void);    // [func_08045628] Event 1 - Kick
 // extern ? func_08045b90(?);
 // extern ? func_08045b94(?);
 
-// Rhythm Tweezers prologue
+// Prologue: Rhythm Tweezers
 
 extern void func_08045bec(void);    // [func_08045bec] GFX_LOAD Func_02
 extern void func_08045bfc(void);    // [func_08045bfc] GFX_LOAD Func_01
 extern void func_08045c2c(void);    // [func_08045c2c] GFX_LOAD Func_00
 extern void func_08045c5c(u32);     // [func_08045c5c] MAIN - Load
-extern void func_08045cb8(void);    // [func_08045cb8] ENGINE Func_00 - Unknown
-extern void func_08045cbc(void);    // [func_08045cbc] MAIN - Loop
-extern void func_08045cc0(void);    // [func_08045cc0] MAIN - Unload
+extern void func_08045cb8(void);    // [func_08045cb8] ENGINE Func_00   (STUB)
+extern void func_08045cbc(void);    // [func_08045cbc] MAIN - Loop      (STUB)
+extern void func_08045cc0(void);    // [func_08045cc0] MAIN - Unload    (STUB)
 extern void func_08045cc4(void);    // [func_08045cc4] Event 0 - Show Text
 
 // Fireworks prologue
