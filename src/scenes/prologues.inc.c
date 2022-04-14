@@ -110,6 +110,10 @@ extern u32 D_089ec3e8;   // GFX Null   -  Prologue: Remix 5
 extern u32 D_089ec3ec[]; // GFX Array  -  Prologue: Remix 5
 extern u32 D_088b27f4[]; // Animation  -  Text (Remix 5)
 
+extern u32 D_089ec5c0;   // GFX Null   -  Prologue: Remix 6
+extern u32 D_089ec5c4[]; // GFX Array  -  Prologue: Remix 6
+extern u32 D_088b2b9c[]; // Animation  -  Text (Remix 6)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -1529,23 +1533,62 @@ void func_08046af0(u32 frame) {
 }
 
 
-// Remix 6 prologue
+  // // //  PROLOGUE: REMIX 6  // // //
 
-#include "asm/scenes/prologues/asm_08046b14.s"
 
-#include "asm/scenes/prologues/asm_08046b24.s"
+// [func_08046b14] GFX_LOAD Func_02
+void func_08046b14(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08046b54.s"
+// [func_08046b24] GFX_LOAD Func_01
+void func_08046b24(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08046b84.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ec5c4, 0x2000);
+    func_08005d38(data, func_08046b14, 0);
+}
 
-#include "asm/scenes/prologues/asm_08046be0.s"
+// [func_08046b54] GFX_LOAD Func_00
+void func_08046b54(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08046be4.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ec5c0);
+    func_08005d38(data, func_08046b24, 0);
+}
 
-#include "asm/scenes/prologues/asm_08046be8.s"
+// [func_08046b84] MAIN - Load
+void func_08046b84(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08046bec.s"
+    func_08046b54();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b2b9c, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
+}
+
+// [func_08046be0] ENGINE Func_00
+void func_08046be0(void) {
+}
+
+// [func_08046be4] MAIN - Loop
+void func_08046be4(void) {
+}
+
+// [func_08046be8] MAIN - Unload
+void func_08046be8(void) {
+}
+
+// [func_08046bec] Event 0 - Set Text
+void func_08046bec(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
 
 // Remix 7 prologue
 
