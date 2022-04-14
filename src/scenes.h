@@ -1843,24 +1843,24 @@ extern void func_080468f8(u32);     // [func_080468f8] Event 0 - Set Text
 // Prologue: Remix 4
 
 extern void func_0804691c(void);    // [func_0804691c] GFX_LOAD Func_02
-extern void func_0804692c(void);    // [func_0804692c] GFX_LOAD Func_02
-extern void func_0804695c(void);    // [func_0804695c] GFX_LOAD Func_02
+extern void func_0804692c(void);    // [func_0804692c] GFX_LOAD Func_01
+extern void func_0804695c(void);    // [func_0804695c] GFX_LOAD Func_00
 extern void func_0804698c(u32);     // [func_0804698c] MAIN - Load
 extern void func_080469e8(void);    // [func_080469e8] ENGINE Func_00   (STUB)
 extern void func_080469ec(void);    // [func_080469ec] MAIN - Loop      (STUB)
 extern void func_080469f0(void);    // [func_080469f0] MAIN - Unload    (STUB)
 extern void func_080469f4(u32);     // [func_080469f4] Event 0 - Set Text
 
-// Remix 5 prologue
+// Prologue: Remix 5
 
-// extern ? func_08046a18(?);
-// extern ? func_08046a28(?);
-// extern ? func_08046a58(?);
-// extern ? func_08046a88(?);
-// extern ? func_08046ae4(?);
-// extern ? func_08046ae8(?);
-// extern ? func_08046aec(?);
-// extern ? func_08046af0(?);
+extern void func_08046a18(void);    // [func_08046a18] GFX_LOAD Func_02
+extern void func_08046a28(void);    // [func_08046a28] GFX_LOAD Func_01
+extern void func_08046a58(void);    // [func_08046a58] GFX_LOAD Func_00
+extern void func_08046a88(u32);     // [func_08046a88] MAIN - Load
+extern void func_08046ae4(void);    // [func_08046ae4] ENGINE Func_00   (STUB)
+extern void func_08046ae8(void);    // [func_08046ae8] MAIN - Loop      (STUB)
+extern void func_08046aec(void);    // [func_08046aec] MAIN - Unload    (STUB)
+extern void func_08046af0(u32);     // [func_08046af0] Event 0 - Set Text
 
 // Remix 6 prologue
 
