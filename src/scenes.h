@@ -1763,16 +1763,16 @@ extern void func_080461cc(void);    // [func_080461cc] MAIN - Unload    (STUB)
 extern void func_080461d0(u32);     // [func_080461d0] Event 0 - Set Text
 extern void func_080461f4(void);    // [func_080461f4] Event 1 - HAI
 
-// Marching Orders prologue
+// Prologue: Marching Orders
 
-// extern ? func_08046234(?);
-// extern ? func_08046244(?);
-// extern ? func_08046274(?);
-// extern ? func_080462a4(?);
-// extern ? func_08046300(?);
-// extern ? func_08046304(?);
-// extern ? func_08046308(?);
-// extern ? func_0804630c(?);
+extern void func_08046234(void);    // [func_08046234] GFX_LOAD Func_02
+extern void func_08046244(void);    // [func_08046244] GFX_LOAD Func_01
+extern void func_08046274(void);    // [func_08046274] GFX_LOAD Func_00
+extern void func_080462a4(u32);     // [func_080462a4] MAIN - Load
+extern void func_08046300(void);    // [func_08046300] ENGINE Func_00   (STUB)
+extern void func_08046304(void);    // [func_08046304] MAIN - Loop      (STUB)
+extern void func_08046308(void);    // [func_08046308] MAIN - Unload    (STUB)
+extern void func_0804630c(u32);     // [func_0804630c] Event 0 - Set Text
 
 // Marching Orders 2 prologue
 

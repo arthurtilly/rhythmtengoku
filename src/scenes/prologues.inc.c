@@ -74,6 +74,10 @@ extern u32 D_088b0690[]; // Animation  -  Text (Power Calligraphy)
 extern u32 D_088b06b0[]; // Animation  -  HAI (Power Calligraphy)
 extern const struct SequenceData s_sword_hi_seqData; // Sound Effect - HAI
 
+extern u32 D_089eb66c;   // GFX Null   -  Prologue: Marching Orders
+extern u32 D_089eb670[]; // GFX Array  -  Prologue: Marching Orders
+extern u32 D_088b09b4[]; // Animation  -  Text (Marching Orders)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -980,23 +984,62 @@ void func_080461f4(void) {
 }
 
 
-// Marching Orders prologue
+  // // //  PROLOGUE: MARCHING ORDERS  // // //
 
-#include "asm/scenes/prologues/asm_08046234.s"
 
-#include "asm/scenes/prologues/asm_08046244.s"
+// [func_08046234] GFX_LOAD Func_02
+void func_08046234(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08046274.s"
+// [func_08046244] GFX_LOAD Func_01
+void func_08046244(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080462a4.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089eb670, 0x2000);
+    func_08005d38(data, func_08046234, 0);
+}
 
-#include "asm/scenes/prologues/asm_08046300.s"
+// [func_08046274] GFX_LOAD Func_00
+void func_08046274(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08046304.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089eb66c);
+    func_08005d38(data, func_08046244, 0);
+}
 
-#include "asm/scenes/prologues/asm_08046308.s"
+// [func_080462a4] MAIN - Load
+void func_080462a4(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_0804630c.s"
+    func_08046274();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b09b4, 0, 0x70, 0x8c, 0, 0, 0, 0);
+}
+
+// [func_08046300] ENGINE Func_00
+void func_08046300(void) {
+}
+
+// [func_08046304] MAIN - Loop
+void func_08046304(void) {
+}
+
+// [func_08046308] MAIN - Unload
+void func_08046308(void) {
+}
+
+// [func_0804630c] Event 0 - Set Text
+void func_0804630c(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
 
 // Marching Orders 2 prologue
 
