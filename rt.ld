@@ -29,43 +29,44 @@ SECTIONS {
 	
 	. = 0x08000000;
     .cartrom . : AT(__romPos) SUBALIGN(4) {
-        build/asm/rom_header.s.o(.text*);
-        build/asm/boot.s.o(.text*);
-        build/src/main.c.o(.text*);
-        build/src/memory.c.o(.text*);
+        build/asm/rom_header.s.o(.text);
+        build/asm/boot.s.o(.text);
+        build/src/main.c.o(.text);
+        build/src/memory.c.o(.text);
         build/bin/bindata_08000a00.bin.o(.rodata*); /* Seems to be ARM assembly */
-        build/src/code_08001360.c.o(.text*);
-        build/src/code_08003980.c.o(.text*);
-		build/src/code_080068f8.c.o(.text*);
-		build/src/code_08007468.c.o(.text*);
-		build/src/code_08008dcc.c.o(.text*);
-		build/src/code_080092cc.c.o(.text*);
-		build/src/code_0800b3c8.c.o(.text*);
-		build/src/code_0800b778.c.o(.text*);
-		build/src/code_08010490.c.o(.text*);
-		build/src/code_08011ec0.c.o(.text*);
-		build/src/code_08016e18.c.o(.text*);
-		build/src/results.c.o(.text*);
-		build/src/code_0801a384.c.o(.text*);
-        build/src/code_0801d860.c.o(.text*);
-        build/src/scenes.c.o(.text*);
-		build/src/code_08047e50.c.o(.text*);
+        build/src/code_08001360.c.o(.text);
+        build/src/code_08003980.c.o(.text);
+		build/src/code_080068f8.c.o(.text);
+		build/src/code_08007468.c.o(.text);
+		build/src/code_08008dcc.c.o(.text);
+		build/src/code_080092cc.c.o(.text);
+		build/src/code_0800b3c8.c.o(.text);
+		build/src/code_0800b778.c.o(.text);
+		build/src/code_08010490.c.o(.text);
+		build/src/code_08011ec0.c.o(.text);
+		build/src/code_08016e18.c.o(.text);
+		build/src/results.c.o(.text);
+		build/src/code_0801a384.c.o(.text);
+        build/src/code_0801d860.c.o(.text);
+        build/src/scenes.c.o(.text);
+		build/src/code_08047e50.c.o(.text);
         build/bin/bindata_080482e0.bin.o(.rodata*);
-        *libgcc.a:_call_via_rX.o(.text*);
-        *libgcc.a:_divsi3.o(.text*);
-        *libgcc.a:_dvmd_tls.o(.text*);
-        *libgcc.a:_modsi3.o(.text*);
+        *libgcc.a:_call_via_rX.o(.text);
+        *libgcc.a:_divsi3.o(.text);
+        *libgcc.a:_dvmd_tls.o(.text);
+        *libgcc.a:_modsi3.o(.text);
         build/bin/bindata_0804ec90.bin.o(.rodata*); /* _muldi3 */
-        *libgcc.a:_muldi3.o(.text*);
-        build/asm/udivmoddi4.s.o(.text*);
-        *libgcc.a:_udivsi3.o(.text*);
-        *libgcc.a:_umodsi3.o(.text*);
-        *libc.a:memcpy.o(.text*);
-        *libc.a:strcpy.o(.text*);
-        *libc.a:strlen.o(.text*);
+        *libgcc.a:_muldi3.o(.text);
+        build/asm/udivmoddi4.s.o(.text);
+        *libgcc.a:_udivsi3.o(.text);
+        *libgcc.a:_umodsi3.o(.text);
+        *libc.a:memcpy.o(.text);
+        *libc.a:strcpy.o(.text);
+        *libc.a:strlen.o(.text);
 		
 		build/asm/boot.s.o(.rodata*);
         build/data/data_0804f338.s.o(.rodata*);
+        build/data/data_08052464.c.o(.rodata*);
         build/data/data_08054950.s.o(.rodata*);
         build/data/data_08058f58.s.o(.rodata*);
         
@@ -1039,6 +1040,8 @@ SECTIONS {
         build/bin/bindata_08932444.bin.o(.rodata*);
 		build/bin/bindata_08935fac.bin.o(.rodata*);
         build/bin/bindata_089ccbc0.bin.o(.rodata*);
+        build/data/beatscript_data_089ce344.c.o(.rodata*);
+        build/bin/bindata_089cea24.bin.o(.rodata*);
         build/bin/bindata_089d3984.bin.o(.rodata*);
         build/audio/audio_data.c.o(.rodata*);
         build/bin/bindata_08a9e8e0.bin.o(.rodata*);

@@ -1019,7 +1019,7 @@ extern void func_0802f380(void);        // [func_0802f380] ENGINE Func_05 - Unkn
 // extern ? func_08036b94(?);
 // extern ? func_08036be0(?);
 
-// LIVE
+// Concert Hall
 
 // extern ? func_08036bec(?);
 // extern ? func_08036bfc(?);

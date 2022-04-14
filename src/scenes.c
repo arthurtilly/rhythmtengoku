@@ -44,7 +44,7 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 #include "src/scenes/polyrhythm.inc.c"
 
-#include "src/scenes/live.inc.c"
+#include "src/scenes/concert_hall.inc.c"
 
 #include "src/scenes/quiz_show.inc.c"
 

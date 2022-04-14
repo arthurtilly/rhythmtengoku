@@ -14,7 +14,7 @@ include $(DEVKITARM)/base_rules
 #include $(DEVKITARM)/gba_rules
 CROSS := arm-none-eabi-
 OBJCOPY := $(CROSS)objcopy
-LD := $(CROSS)ld
+LD := $(CROSS)gcc
 AS := $(CROSS)as
 CC1 := tools/agbcc/bin/agbcc
 CFLAGS := -mthumb-interwork -Wparentheses -O2 -fhex-asm
@@ -37,18 +37,19 @@ endif
 # the makefile is found
 #
 #---------------------------------------------------------------------------------
-TARGET		:= rhythmtengoku
-BUILD		:= build
-SOURCES		:= src
-ASM         := asm
-INCLUDES	:= include
-DATA		:= data
-BIN		    := bin
-AUDIO		:= audio
-MUSIC		:= $(AUDIO)/sequences
-SFX         := $(AUDIO)/samples
-BUILD_DIRS  := $(BUILD) $(BUILD)/$(DATA) $(BUILD)/$(ASM) $(BUILD)/$(SOURCES) $(BUILD)/$(BIN) $(BUILD)/$(MUSIC) $(BUILD)/$(SFX)
-LD_SCRIPT   := rt.ld
+TARGET		   := rhythmtengoku
+BUILD		   := build
+SOURCES		   := src
+ASM            := asm
+INCLUDES	   := include
+DATA		   := data
+BIN		       := bin
+AUDIO		   := audio
+MUSIC		   := $(AUDIO)/sequences
+SFX            := $(AUDIO)/samples
+BUILD_DIRS     := $(BUILD) $(BUILD)/$(DATA) $(BUILD)/$(ASM) $(BUILD)/$(SOURCES) $(BUILD)/$(BIN) $(BUILD)/$(MUSIC) $(BUILD)/$(SFX)
+LD_SCRIPT      := rt.ld
+UNDEFINED_SYMS := undefined_syms.ld
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -89,7 +90,7 @@ LD_SCRIPT   := rt.ld
 
 export OUTPUT	:=	$(BUILD)/$(TARGET)
 
-CFILES		:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.c))  $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.c))
+CFILES		:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.c))  $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.c))  $(foreach dir,$(DATA),$(wildcard $(dir)/*.c))
 CPPFILES	:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.cpp))
 SFILES		:=	$(foreach dir,$(ASM),$(wildcard $(dir)/*.s)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.s))
 BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) $(foreach dir,$(MUSIC),$(wildcard $(dir)/*.mid))
@@ -150,7 +151,7 @@ $(OUTPUT).gba	:	$(OUTPUT).elf
 
 $(OUTPUT).elf	:	$(OFILES)
 	$(V)echo "Building ROM..."
-	$(V)$(LD) $(OFILES) tools/agbcc/lib/libgcc.a tools/agbcc/lib/libc.a -T $(LD_SCRIPT) -Map $(@:.elf=.map) -o $@
+	$(V)$(LD) $(OFILES) tools/agbcc/lib/libgcc.a tools/agbcc/lib/libc.a -T $(LD_SCRIPT) -T $(UNDEFINED_SYMS) -Wl,-Map $(@:.elf=.map) -nostartfiles -o $@
 
 
 # Binary data

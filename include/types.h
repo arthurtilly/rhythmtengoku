@@ -1,5 +1,17 @@
 #pragma once
 
+typedef s32 (*struct_03000000_func)(void *);
+
+struct struct_03000000 {
+	struct_03000000_func unk0;
+	void *unk4;
+	struct_03000000_func unk8;
+	void *unkC;
+	struct_03000000_func unk10;
+	void *unk14;
+	u16 unk18;
+};
+
 typedef s32 (*struct_030046a4_func)(s32);
 
 struct struct_030046a4_sub { // might be a list
