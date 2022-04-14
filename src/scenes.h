@@ -1974,17 +1974,17 @@ extern void func_08047628(void);    // [func_08047628] MAIN - Loop      (STUB)
 extern void func_0804762c(void);    // [func_0804762c] MAIN - Unload    (STUB)
 extern void func_08047630(u32);     // [func_08047630] Event 0 - Animate Entity { 0 = Text; 1 = Faces; 2 = Star }
 
-// Tap Trial prologue
+// Prologue: Tap Trial
 
-// extern ? func_08047678(?);
-// extern ? func_08047688(?);
-// extern ? func_080476b8(?);
-// extern ? func_080476e8(?);
-// extern ? func_08047764(?);
-// extern ? func_08047768(?);
-// extern ? func_0804776c(?);
-// extern ? func_08047770(?);
-// extern ? func_08047794(?);
+extern void func_08047678(void);    // [func_08047678] GFX_LOAD Func_02
+extern void func_08047688(void);    // [func_08047688] GFX_LOAD Func_01
+extern void func_080476b8(void);    // [func_080476b8] GFX_LOAD Func_00
+extern void func_080476e8(u32);     // [func_080476e8] MAIN - Load
+extern void func_08047764(void);    // [func_08047764] ENGINE Func_00   (STUB)
+extern void func_08047768(void);    // [func_08047768] MAIN - Loop      (STUB)
+extern void func_0804776c(void);    // [func_0804776c] MAIN - Unload    (STUB)
+extern void func_08047770(u32);     // [func_08047770] Event 0 - Set Text
+extern void func_08047794(void);    // [func_08047794] Event 1 - Animate Text
 
 // Tap Trial 2 prologue
 

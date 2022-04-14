@@ -154,6 +154,10 @@ extern u32 D_088b7338[]; // Animation  -  Text (Space Dance)
 extern u32 D_088b7690[]; // Animation  -  Faces (Space Dance)
 extern u32 D_088b7660[]; // Animation  -  Star (Space Dance)
 
+extern u32 D_089ed548;   // GFX Null   -  Prologue: Tap Trial
+extern u32 D_089ed54c[]; // GFX Array  -  Prologue: Tap Trial
+extern u32 D_088b794c[]; // Animation  -  Text (Tap Trial)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -2174,25 +2178,68 @@ void func_08047630(u32 event) {
 }
 
 
-// Tap Trial prologue
+  // // //  PROLOGUE: TAP TRIAL  // // //
 
-#include "asm/scenes/prologues/asm_08047678.s"
 
-#include "asm/scenes/prologues/asm_08047688.s"
+// [func_08047678] GFX_LOAD Func_02
+void func_08047678(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_080476b8.s"
+// [func_08047688] GFX_LOAD Func_01
+void func_08047688(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080476e8.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ed54c, 0x2000);
+    func_08005d38(data, func_08047678, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047764.s"
+// [func_080476b8] GFX_LOAD Func_00
+void func_080476b8(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08047768.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ed548);
+    func_08005d38(data, func_08047688, 0);
+}
 
-#include "asm/scenes/prologues/asm_0804776c.s"
+// [func_080476e8] MAIN - Load
+void func_080476e8(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08047770.s"
+    func_080476b8();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-#include "asm/scenes/prologues/asm_08047794.s"
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b794c, 0, 0x78, 0x50, 0, 1, 0x7f, 0x8000);
+    func_0804dcb8(D_03005380, gPrologueInfo.entity2, 0x180);
+}
+
+// [func_08047764] ENGINE Func_00
+void func_08047764(void) {
+}
+
+// [func_08047768] MAIN - Loop
+void func_08047768(void) {
+}
+
+// [func_0804776c] MAIN - Unload
+void func_0804776c(void) {
+}
+
+// [func_08047770] Event 0 - Set Text
+void func_08047770(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
+// [func_08047794] Event 1 - Animate Text
+void func_08047794(void) {
+    func_0804d770(D_03005380, gPrologueInfo.entity2, 1);
+}
+
 
 // Tap Trial 2 prologue
 
