@@ -1829,16 +1829,16 @@ extern void func_080467f4(void);    // [func_080467f4] MAIN - Loop      (STUB)
 extern void func_080467f8(void);    // [func_080467f8] MAIN - Unload    (STUB)
 extern void func_080467fc(u32);     // [func_080467fc] Event 0 - Set Text
 
-// Remix 3 prologue
+// Prologue: Remix 3
 
-// extern ? func_08046820(?);
-// extern ? func_08046830(?);
-// extern ? func_08046860(?);
-// extern ? func_08046890(?);
-// extern ? func_080468ec(?);
-// extern ? func_080468f0(?);
-// extern ? func_080468f4(?);
-// extern ? func_080468f8(?);
+extern void func_08046820(void);    // [func_08046820] GFX_LOAD Func_02
+extern void func_08046830(void);    // [func_08046830] GFX_LOAD Func_01
+extern void func_08046860(void);    // [func_08046860] GFX_LOAD Func_00
+extern void func_08046890(u32);     // [func_08046890] MAIN - Load
+extern void func_080468ec(void);    // [func_080468ec] ENGINE Func_00   (STUB)
+extern void func_080468f0(void);    // [func_080468f0] MAIN - Loop      (STUB)
+extern void func_080468f4(void);    // [func_080468f4] MAIN - Unload    (STUB)
+extern void func_080468f8(u32);     // [func_080468f8] Event 0 - Set Text
 
 // Remix 4 prologue
 
