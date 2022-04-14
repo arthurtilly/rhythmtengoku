@@ -1774,7 +1774,7 @@ extern void func_08046304(void);    // [func_08046304] MAIN - Loop      (STUB)
 extern void func_08046308(void);    // [func_08046308] MAIN - Unload    (STUB)
 extern void func_0804630c(u32);     // [func_0804630c] Event 0 - Set Text
 
-// Marching Orders 2 prologue
+// Prologue: Marching Orders 2
 
 extern void func_08046330(void);    // [func_08046330] GFX_LOAD Func_02
 extern void func_08046340(void);    // [func_08046340] GFX_LOAD Func_01
@@ -1796,16 +1796,16 @@ extern void func_080464fc(void);    // [func_080464fc] MAIN - Loop      (STUB)
 extern void func_08046500(void);    // [func_08046500] MAIN - Unload    (STUB)
 extern void func_08046504(u32);     // [func_08046504] Event 0 - Set Text
 
-// Quiz Show prologue
+// Prologue: Quiz Show
 
-// extern ? func_08046528(?);
-// extern ? func_08046538(?);
-// extern ? func_08046568(?);
-// extern ? func_08046598(?);
-// extern ? func_080465f8(?);
-// extern ? func_080465fc(?);
-// extern ? func_08046600(?);
-// extern ? func_08046604(?);
+extern void func_08046528(void);    // [func_08046528] GFX_LOAD Func_02
+extern void func_08046538(void);    // [func_08046538] GFX_LOAD Func_01
+extern void func_08046568(void);    // [func_08046568] GFX_LOAD Func_00
+extern void func_08046598(u32);     // [func_08046598] MAIN - Load
+extern void func_080465f8(void);    // [func_080465f8] ENGINE Func_00   (STUB)
+extern void func_080465fc(void);    // [func_080465fc] MAIN - Loop      (STUB)
+extern void func_08046600(void);    // [func_08046600] MAIN - Unload    (STUB)
+extern void func_08046604(u32);     // [func_08046604] Event 0 - Set Text
 
 // Remix 1 prologue
 
