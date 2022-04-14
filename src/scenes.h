@@ -2009,16 +2009,16 @@ extern void func_080479a8(void);    // [func_080479a8] MAIN - Loop      (STUB)
 extern void func_080479ac(void);    // [func_080479ac] MAIN - Unload    (STUB)
 extern void func_080479b0(u32);     // [func_080479b0] Event 0 - Set Text
 
-// Toss Boys 2 prologue
+// Prologue: Toss Boys 2
 
-// extern ? func_080479d4(?);
-// extern ? func_080479e4(?);
-// extern ? func_08047a14(?);
-// extern ? func_08047a44(?);
-// extern ? func_08047aa0(?);
-// extern ? func_08047aa4(?);
-// extern ? func_08047aa8(?);
-// extern ? func_08047aac(?);
+extern void func_080479d4(void);    // [func_080479d4] GFX_LOAD Func_02
+extern void func_080479e4(void);    // [func_080479e4] GFX_LOAD Func_01
+extern void func_08047a14(void);    // [func_08047a14] GFX_LOAD Func_00
+extern void func_08047a44(u32);     // [func_08047a44] MAIN - Load
+extern void func_08047aa0(void);    // [func_08047aa0] ENGINE Func_00   (STUB)
+extern void func_08047aa4(void);    // [func_08047aa4] MAIN - Loop      (STUB)
+extern void func_08047aa8(void);    // [func_08047aa8] MAIN - Unload    (STUB)
+extern void func_08047aac(u32);     // [func_08047aac] Event 0 - Set Text
 
 // Tram & Pauline prologue
 

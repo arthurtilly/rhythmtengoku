@@ -166,6 +166,10 @@ extern u32 D_089ed820;   // GFX Null   -  Prologue: Toss Boys
 extern u32 D_089ed824[]; // GFX Array  -  Prologue: Toss Boys
 extern u32 D_088b8098[]; // Animation  -  Text (Toss Boys)
 
+extern u32 D_089ed9ec;   // GFX Null   -  Prologue: Toss Boys 2
+extern u32 D_089ed9f0[]; // GFX Array  -  Prologue: Toss Boys 2
+extern u32 D_088b8388[]; // Animation  -  Text (Toss Boys 2)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -2368,23 +2372,62 @@ void func_080479b0(u32 frame) {
 }
 
 
-// Toss Boys 2 prologue
+  // // //  PROLOGUE: TOSS BOYS 2  // // //
 
-#include "asm/scenes/prologues/asm_080479d4.s"
 
-#include "asm/scenes/prologues/asm_080479e4.s"
+// [func_080479d4] GFX_LOAD Func_02
+void func_080479d4(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08047a14.s"
+// [func_080479e4] GFX_LOAD Func_01
+void func_080479e4(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08047a44.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ed9f0, 0x2000);
+    func_08005d38(data, func_080479d4, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047aa0.s"
+// [func_08047a14] GFX_LOAD Func_00
+void func_08047a14(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08047aa4.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ed9ec);
+    func_08005d38(data, func_080479e4, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047aa8.s"
+// [func_08047a44] MAIN - Load
+void func_08047a44(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08047aac.s"
+    func_08047a14();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b8388, 0, 0x78, 0x78, 0, 0, 0x7f, 0);
+}
+
+// [func_08047aa0] ENGINE Func_00
+void func_08047aa0(void) {
+}
+
+// [func_08047aa4] MAIN - Loop
+void func_08047aa4(void) {
+}
+
+// [func_08047aa8] MAIN - Unload
+void func_08047aa8(void) {
+}
+
+// [func_08047aac] Event 0 - Set Text
+void func_08047aac(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
 
 // Tram & Pauline prologue
 
