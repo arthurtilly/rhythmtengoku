@@ -122,6 +122,11 @@ extern u32 D_089ec988;   // GFX Null   -  Prologue: Remix 8
 extern u32 D_089ec98c[]; // GFX Array  -  Prologue: Remix 8
 extern u32 D_088b332c[]; // Animation  -  Text (Remix 8)
 
+extern u32 D_089ecb60;   // GFX Null   -  Prologue: Bunny Hop
+extern u32 D_089ecb64[]; // GFX Array  -  Prologue: Bunny Hop
+extern u32 D_088b35dc[]; // Animation  -  Text (Bunny Hop)
+extern u32 D_088b35a4[]; // Animation  -  Rabbits (Bunny Hop)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -1712,25 +1717,68 @@ void func_08046de4(u32 frame) {
 }
 
 
-// Bunny Hop prologue
+  // // //  PROLOGUE: BUNNY HOP  // // //
 
-#include "asm/scenes/prologues/asm_08046e08.s"
 
-#include "asm/scenes/prologues/asm_08046e18.s"
+// [func_08046e08] GFX_LOAD Func_02
+void func_08046e08(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08046e48.s"
+// [func_08046e18] GFX_LOAD Func_01
+void func_08046e18(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08046e78.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ecb64, 0x2000);
+    func_08005d38(data, func_08046e08, 0);
+}
 
-#include "asm/scenes/prologues/asm_08046f00.s"
+// [func_08046e48] GFX_LOAD Func_00
+void func_08046e48(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08046f04.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ecb60);
+    func_08005d38(data, func_08046e18, 0);
+}
 
-#include "asm/scenes/prologues/asm_08046f08.s"
+// [func_08046e78] MAIN - Load
+void func_08046e78(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08046f0c.s"
+    func_08046e48();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-#include "asm/scenes/prologues/asm_08046f30.s"
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b35dc, 0, 0x16, 0xa2, 0, 0, 0x7f, 0);
+    gPrologueInfo.entity4 = func_0804d160(D_03005380, D_088b35a4, 0, 0x72, 0x78, 0, 0, 0x7f, 0);
+}
+
+// [func_08046f00] ENGINE Func_00
+void func_08046f00(void) {
+}
+
+// [func_08046f04] MAIN - Loop
+void func_08046f04(void) {
+}
+
+// [func_08046f08] MAIN - Unload
+void func_08046f08(void) {
+}
+
+// [func_08046f0c] Event 0 - Set Text
+void func_08046f0c(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
+// [func_08046f30] Event 1 - Animate Rabbits
+void func_08046f30(void) {
+    func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
+}
+
 
 // Rap Men prologue
 

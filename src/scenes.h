@@ -1649,7 +1649,7 @@ extern void func_0804557c(u32);     // [func_0804557c] MAIN - LOAD
 extern void func_080455f8(void);    // [func_080455f8] ENGINE Func_00   (STUB)
 extern void func_080455fc(void);    // [func_080455fc] MAIN - Loop      (STUB)
 extern void func_08045600(void);    // [func_08045600] MAIN - Unload    (STUB)
-extern void func_08045604(u32);      // [func_08045604] Event 0 - Set Text
+extern void func_08045604(u32);     // [func_08045604] Event 0 - Set Text
 extern void func_08045628(void);    // [func_08045628] Event 1 - Kick
 
 // Prologue: Cosmic Dance
@@ -1895,17 +1895,17 @@ extern void func_08046ddc(void);    // [func_08046ddc] MAIN - Loop      (STUB)
 extern void func_08046de0(void);    // [func_08046de0] MAIN - Unload    (STUB)
 extern void func_08046de4(u32);     // [func_08046de4] Event 0 - Set Text
 
-// Bunny Hop prologue
+// Prologue: Bunny Hop
 
-// extern ? func_08046e08(?);
-// extern ? func_08046e18(?);
-// extern ? func_08046e48(?);
-// extern ? func_08046e78(?);
-// extern ? func_08046f00(?);
-// extern ? func_08046f04(?);
-// extern ? func_08046f08(?);
-// extern ? func_08046f0c(?);
-// extern ? func_08046f30(?);
+extern void func_08046e08(void);    // [func_08046e08] GFX_LOAD Func_02
+extern void func_08046e18(void);    // [func_08046e18] GFX_LOAD Func_01
+extern void func_08046e48(void);    // [func_08046e48] GFX_LOAD Func_00
+extern void func_08046e78(u32);     // [func_08046e78] MAIN - Load
+extern void func_08046f00(void);    // [func_08046f00] ENGINE Func_00   (STUB)
+extern void func_08046f04(void);    // [func_08046f04] MAIN - Loop      (STUB)
+extern void func_08046f08(void);    // [func_08046f08] MAIN - Unload    (STUB)
+extern void func_08046f0c(u32);     // [func_08046f0c] Event 0 - Set Text
+extern void func_08046f30(void);    // [func_08046f30] Event 1 - Animate Rabbits
 
 // Rap Men prologue
 
