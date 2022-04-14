@@ -1751,17 +1751,17 @@ extern void func_080460cc(void);    // [func_080460cc] MAIN - Loop      (STUB)
 extern void func_080460d0(void);    // [func_080460d0] MAIN - Unload    (STUB)
 extern void func_080460d4(u32);     // [func_080460d4] Event 0 - Set Text
 
-// Power Calligraphy prologue
+// Prologue: Power Calligraphy
 
-// extern ? func_080460f8(?);
-// extern ? func_08046108(?);
-// extern ? func_08046138(?);
-// extern ? func_08046168(?);
-// extern ? func_080461c4(?);
-// extern ? func_080461c8(?);
-// extern ? func_080461cc(?);
-// extern ? func_080461d0(?);
-// extern ? func_080461f4(?);
+extern void func_080460f8(void);    // [func_080460f8] GFX_LOAD Func_02
+extern void func_08046108(void);    // [func_08046108] GFX_LOAD Func_01
+extern void func_08046138(void);    // [func_08046138] GFX_LOAD Func_00
+extern void func_08046168(u32);     // [func_08046168] MAIN - Load
+extern void func_080461c4(void);    // [func_080461c4] ENGINE Func_00   (STUB)
+extern void func_080461c8(void);    // [func_080461c8] MAIN - Loop      (STUB)
+extern void func_080461cc(void);    // [func_080461cc] MAIN - Unload    (STUB)
+extern void func_080461d0(u32);     // [func_080461d0] Event 0 - Set Text
+extern void func_080461f4(void);    // [func_080461f4] Event 1 - HAI
 
 // Marching Orders prologue
 

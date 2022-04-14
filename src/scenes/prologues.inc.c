@@ -68,6 +68,13 @@ extern u32 D_089eb37c;   // GFX Null   -  Prologue: Samurai Slice
 extern u32 D_089eb380[]; // GFX Array  -  Prologue: Samurai Slice
 extern u32 D_088affe0[]; // Animation  -  Text (Samurai Slice)
 
+extern u32 D_089eb530;   // GFX Null   -  Prologue: Power Calligraphy
+extern u32 D_089eb534[]; // GFX Array  -  Prologue: Power Calligraphy
+extern u32 D_088b0690[]; // Animation  -  Text (Power Calligraphy)
+extern u32 D_088b06b0[]; // Animation  -  HAI (Power Calligraphy)
+extern const struct SequenceData s_sword_hi_seqData; // Sound Effect - HAI
+
+
 
 extern u32  func_080087b4(u16, u32 *);
 extern void func_0804cebc(u32, s16, s8);
@@ -910,25 +917,68 @@ void func_080460d4(u32 frame) {
 }
 
 
-// Power Calligraphy prologue
+  // // //  PROLOGUE: POWER CALLIGRAPHY  // // //
 
-#include "asm/scenes/prologues/asm_080460f8.s"
 
-#include "asm/scenes/prologues/asm_08046108.s"
+// [func_080460f8] GFX_LOAD Func_02
+void func_080460f8(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08046138.s"
+// [func_08046108] GFX_LOAD Func_01
+void func_08046108(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08046168.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089eb534, 0x2000);
+    func_08005d38(data, func_080460f8, 0);
+}
 
-#include "asm/scenes/prologues/asm_080461c4.s"
+// [func_08046138] GFX_LOAD Func_00
+void func_08046138(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080461c8.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089eb530);
+    func_08005d38(data, func_08046108, 0);
+}
 
-#include "asm/scenes/prologues/asm_080461cc.s"
+// [func_08046168] MAIN - Load
+void func_08046168(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_080461d0.s"
+    func_08046138();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-#include "asm/scenes/prologues/asm_080461f4.s"
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b0690, 0, 0xa0, 0x96, 0, 0, 0x7f, 0);
+}
+
+// [func_080461c4] ENGINE Func_00
+void func_080461c4(void) {
+}
+
+// [func_080461c8] MAIN - Loop
+void func_080461c8(void) {
+}
+
+// [func_080461cc] MAIN - Unload
+void func_080461cc(void) {
+}
+
+// [func_080461d0] Event 0 - Set Text
+void func_080461d0(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
+// [func_080461f4] Event 1 - HAI
+void func_080461f4(void) {
+    func_0804d160(D_03005380, D_088b06b0, 0, 0x78, 0x58, 0x800, 1, 0x7f, 0);
+    func_08002634(&s_sword_hi_seqData);
+}
+
 
 // Marching Orders prologue
 
