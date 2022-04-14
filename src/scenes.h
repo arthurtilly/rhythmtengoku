@@ -2020,16 +2020,16 @@ extern void func_08047aa4(void);    // [func_08047aa4] MAIN - Loop      (STUB)
 extern void func_08047aa8(void);    // [func_08047aa8] MAIN - Unload    (STUB)
 extern void func_08047aac(u32);     // [func_08047aac] Event 0 - Set Text
 
-// Tram & Pauline prologue
+// Prologue: Tram & Pauline
 
-// extern ? func_08047ad0(?);
-// extern ? func_08047ae0(?);
-// extern ? func_08047b10(?);
-// extern ? func_08047b40(?);
-// extern ? func_08047bd0(?);
-// extern ? func_08047bd4(?);
-// extern ? func_08047bd8(?);
-// extern ? func_08047bdc(?);
+extern void func_08047ad0(void);    // [func_08047ad0] GFX_LOAD Func_02
+extern void func_08047ae0(void);    // [func_08047ae0] GFX_LOAD Func_01
+extern void func_08047b10(void);    // [func_08047b10] GFX_LOAD Func_00
+extern void func_08047b40(u32);     // [func_08047b40] MAIN - Load
+extern void func_08047bd0(void);    // [func_08047bd0] ENGINE Func_00   (STUB)
+extern void func_08047bd4(void);    // [func_08047bd4] MAIN - Loop      (STUB)
+extern void func_08047bd8(void);    // [func_08047bd8] MAIN - Unload    (STUB)
+extern void func_08047bdc(void);    // [func_08047bdc] Event 0 - Show Text
 
 // Sick Beats prologue
 
