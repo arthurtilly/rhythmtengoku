@@ -78,6 +78,10 @@ extern u32 D_089eb66c;   // GFX Null   -  Prologue: Marching Orders
 extern u32 D_089eb670[]; // GFX Array  -  Prologue: Marching Orders
 extern u32 D_088b09b4[]; // Animation  -  Text (Marching Orders)
 
+extern u32 D_089eb814;   // GFX Null   -  Prologue: Marching Orders 2
+extern u32 D_089eb818[]; // GFX Array  -  Prologue: Marching Orders 2
+extern u32 D_088b0bf0[]; // Animation  -  Text (Marching Orders 2)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -1041,23 +1045,62 @@ void func_0804630c(u32 frame) {
 }
 
 
-// Marching Orders 2 prologue
+  // // //  PROLOGUE: MARCHING ORDERS 2  // // //
 
-#include "asm/scenes/prologues/asm_08046330.s"
 
-#include "asm/scenes/prologues/asm_08046340.s"
+// [func_08046330] GFX_LOAD Func_02
+void func_08046330(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08046370.s"
+// [func_08046340] GFX_LOAD Func_01
+void func_08046340(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080463a0.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089eb818, 0x2000);
+    func_08005d38(data, func_08046330, 0);
+}
 
-#include "asm/scenes/prologues/asm_080463fc.s"
+// [func_08046370] GFX_LOAD Func_00
+void func_08046370(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08046400.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089eb814);
+    func_08005d38(data, func_08046340, 0);
+}
 
-#include "asm/scenes/prologues/asm_08046404.s"
+// [func_080463a0] MAIN - Load
+void func_080463a0(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08046408.s"
+    func_08046370();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b0bf0, 0, 0x70, 0x8c, 0, 0, 0x7f, 0);
+}
+
+// [func_080463fc] ENGINE Func_00
+void func_080463fc(void) {
+}
+
+// [func_08046400] MAIN - Loop
+void func_08046400(void) {
+}
+
+// [func_08046404] MAIN - Unload
+void func_08046404(void) {
+}
+
+// [func_08046408] Event 0 - Set Text
+void func_08046408(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
 
 // Polyrhythm prologue
 

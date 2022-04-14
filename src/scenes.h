@@ -1776,14 +1776,14 @@ extern void func_0804630c(u32);     // [func_0804630c] Event 0 - Set Text
 
 // Marching Orders 2 prologue
 
-// extern ? func_08046330(?);
-// extern ? func_08046340(?);
-// extern ? func_08046370(?);
-// extern ? func_080463a0(?);
-// extern ? func_080463fc(?);
-// extern ? func_08046400(?);
-// extern ? func_08046404(?);
-// extern ? func_08046408(?);
+extern void func_08046330(void);    // [func_08046330] GFX_LOAD Func_02
+extern void func_08046340(void);    // [func_08046340] GFX_LOAD Func_01
+extern void func_08046370(void);    // [func_08046370] GFX_LOAD Func_00
+extern void func_080463a0(u32);     // [func_080463a0] MAIN - Load
+extern void func_080463fc(void);    // [func_080463fc] ENGINE Func_00   (STUB)
+extern void func_08046400(void);    // [func_08046400] MAIN - Loop      (STUB)
+extern void func_08046404(void);    // [func_08046404] MAIN - Unload    (STUB)
+extern void func_08046408(u32);     // [func_08046408] Event 0 - Set Text
 
 // Polyrhythm prologue
 
