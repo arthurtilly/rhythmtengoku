@@ -1952,16 +1952,16 @@ extern void func_0804739c(void);    // [func_0804739c] MAIN - Loop      (STUB)
 extern void func_080473a0(void);    // [func_080473a0] MAIN - Unload    (STUB)
 extern void func_080473a4(u32);     // [func_080473a4] Event 0 - Show Text
 
-// Ninja Reincarnate prologue
+// Prologue: Ninja Bodyguard 2
 
-// extern ? func_080473d4(?);
-// extern ? func_080473e4(?);
-// extern ? func_08047414(?);
-// extern ? func_08047444(?);
-// extern ? func_080474a0(?);
-// extern ? func_080474a4(?);
-// extern ? func_080474a8(?);
-// extern ? func_080474ac(?);
+extern void func_080473d4(void);    // [func_080473d4] GFX_LOAD Func_02
+extern void func_080473e4(void);    // [func_080473e4] GFX_LOAD Func_01
+extern void func_08047414(void);    // [func_08047414] GFX_LOAD Func_00
+extern void func_08047444(u32);     // [func_08047444] MAIN - Load
+extern void func_080474a0(void);    // [func_080474a0] ENGINE Func_00   (STUB)
+extern void func_080474a4(void);    // [func_080474a4] MAIN - Loop      (STUB)
+extern void func_080474a8(void);    // [func_080474a8] MAIN - Unload    (STUB)
+extern void func_080474ac(u32);     // [func_080474ac] Event 0 - Show Text
 
 // Space Dance prologue
 

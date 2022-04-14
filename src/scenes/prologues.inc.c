@@ -144,6 +144,10 @@ extern u32 D_089ed188;   // GFX Null   -  Prologue: Ninja Bodyguard
 extern u32 D_089ed18c[]; // GFX Array  -  Prologue: Ninja Bodyguard
 extern u32 D_088b4054[]; // Animation  -  Text (Ninja Bodyguard)
 
+extern u32 D_089ed2c4;   // GFX Null   -  Prologue: Ninja Bodyguard 2
+extern u32 D_089ed2c8[]; // GFX Array  -  Prologue: Ninja Bodyguard 2
+extern u32 D_088b432c[]; // Animation  -  Text (Ninja Bodyguard 2)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -2034,23 +2038,62 @@ void func_080473a4(u32 speed) {
 }
 
 
-// Ninja Reincarnate prologue
+  // // //  PROLOGUE: NINJA BODYGUARD 2  // // //
 
-#include "asm/scenes/prologues/asm_080473d4.s"
 
-#include "asm/scenes/prologues/asm_080473e4.s"
+// [func_080473d4] GFX_LOAD Func_02
+void func_080473d4(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08047414.s"
+// [func_080473e4] GFX_LOAD Func_01
+void func_080473e4(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08047444.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ed2c8, 0x2000);
+    func_08005d38(data, func_080473d4, 0);
+}
 
-#include "asm/scenes/prologues/asm_080474a0.s"
+// [func_08047414] GFX_LOAD Func_00
+void func_08047414(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080474a4.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ed2c4);
+    func_08005d38(data, func_080473e4, 0);
+}
 
-#include "asm/scenes/prologues/asm_080474a8.s"
+// [func_08047444] MAIN - Load
+void func_08047444(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_080474ac.s"
+    func_08047414();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b432c, 0, 0x78, 0x82, 0, 0, 0x7f, 0);
+}
+
+// [func_080474a0] ENGINE Func_00
+void func_080474a0(void) {
+}
+
+// [func_080474a4] MAIN - Loop
+void func_080474a4(void) {
+}
+
+// [func_080474a8] MAIN - Unload
+void func_080474a8(void) {
+}
+
+// [func_080474ac] Event 0 - Show Text
+void func_080474ac(u32 speed) {
+    func_0804dae0(D_03005380, gPrologueInfo.entity2, speed, 0x7f, 0);
+}
+
 
 // Space Dance prologue
 
