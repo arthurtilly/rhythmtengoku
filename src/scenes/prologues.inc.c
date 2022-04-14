@@ -135,6 +135,11 @@ extern u32 D_089ece80;   // GFX Null   -  Prologue: Rap Women
 extern u32 D_089ece84[]; // GFX Array  -  Prologue: Rap Women
 extern u32 D_088b3ac4[]; // Animation  -  Text (Rap Women)
 
+extern u32 D_089ecfbc;   // GFX Null   -  Prologue: Rat Race
+extern u32 D_089ecfc0[]; // GFX Array  -  Prologue: Rat Race
+extern u32 D_088b3d54[]; // Animation  -  Text (Rat Race)
+extern u32 D_088b3d1c[]; // Animation  -  Rat (Rat Race)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -1902,25 +1907,69 @@ void func_08047138(void) {
 }
 
 
-// Rat Race prologue
+  // // //  PROLOGUE: RAT RACE  // // //
 
-#include "asm/scenes/prologues/asm_08047164.s"
 
-#include "asm/scenes/prologues/asm_08047174.s"
+// [func_08047164] GFX_LOAD Func_02
+void func_08047164(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_080471a4.s"
+// [func_08047174] GFX_LOAD Func_01
+void func_08047174(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080471d4.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ecfc0, 0x2000);
+    func_08005d38(data, func_08047164, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047250.s"
+// [func_080471a4] GFX_LOAD Func_00
+void func_080471a4(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08047254.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ecfbc);
+    func_08005d38(data, func_08047174, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047258.s"
+// [func_080471d4] MAIN - Load
+void func_080471d4(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_0804725c.s"
+    func_080471a4();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-#include "asm/scenes/prologues/asm_08047280.s"
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b3d54, 0, 8, 8, 0, 0, 0x7f, 0);
+    gPrologueInfo.entity4 = func_0804d160(D_03005380, D_088b3d1c, 0, 0xbe, 0xa0, 0, 0, 0, 0);
+}
+
+// [func_08047250] ENGINE Func_00
+void func_08047250(void) {
+}
+
+// [func_08047254] MAIN - Loop
+void func_08047254(void) {
+}
+
+// [func_08047258] MAIN - Unload
+void func_08047258(void) {
+}
+
+// [func_0804725c] Event 0 - Set Text
+void func_0804725c(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
+// [func_08047280] Event 1 - Animate Rat
+void func_08047280(void) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity4, 1);
+    func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
+}
+
 
 // Ninja Bodyguard prologue
 

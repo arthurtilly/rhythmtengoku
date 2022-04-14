@@ -1929,17 +1929,17 @@ extern void func_08047130(void);    // [func_08047130] MAIN - Loop      (STUB)
 extern void func_08047134(void);    // [func_08047134] MAIN - Unload    (STUB)
 extern void func_08047138(void);    // [func_08047138] Event 0 - Show Text
 
-// Rat Race prologue
+// Prologue: Rat Race
 
-// extern ? func_08047164(?);
-// extern ? func_08047174(?);
-// extern ? func_080471a4(?);
-// extern ? func_080471d4(?);
-// extern ? func_08047250(?);
-// extern ? func_08047254(?);
-// extern ? func_08047258(?);
-// extern ? func_0804725c(?);
-// extern ? func_08047280(?);
+extern void func_08047164(void);    // [func_08047164] GFX_LOAD Func_02
+extern void func_08047174(void);    // [func_08047174] GFX_LOAD Func_01
+extern void func_080471a4(void);    // [func_080471a4] GFX_LOAD Func_00
+extern void func_080471d4(u32);     // [func_080471d4] MAIN - Load
+extern void func_08047250(void);    // [func_08047250] ENGINE Func_00   (STUB)
+extern void func_08047254(void);    // [func_08047254] MAIN - Loop      (STUB)
+extern void func_08047258(void);    // [func_08047258] MAIN - Unload    (STUB)
+extern void func_0804725c(u32);     // [func_0804725c] Event 0 - Set Text
+extern void func_08047280(void);    // [func_08047280] Event 1 - Animate Rat
 
 // Ninja Bodyguard prologue
 
