@@ -64,7 +64,9 @@ extern u32 D_089eb1c8;   // GFX Null   -  Prologue: The Snappy Trio
 extern u32 D_089eb1cc[]; // GFX Array  -  Prologue: The Snappy Trio
 extern u32 D_088afdc4[]; // Animation  -  Text (The Snappy Trio)
 
-
+extern u32 D_089eb37c;   // GFX Null   -  Prologue: Samurai Slice
+extern u32 D_089eb380[]; // GFX Array  -  Prologue: Samurai Slice
+extern u32 D_088affe0[]; // Animation  -  Text (Samurai Slice)
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -850,23 +852,63 @@ void func_08045fc0(u32 frame) {
 }
 
 
-// Samurai Slice prologue
+  // // //  PROLOGUE: SAMURAI SLICE  // // //
 
-#include "asm/scenes/prologues/asm_08045fe4.s"
 
-#include "asm/scenes/prologues/asm_08045ff4.s"
+// [func_08045fe4] GFX_LOAD Func_02
+void func_08045fe4(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08046024.s"
+// [func_08045ff4] GFX_LOAD Func_01
+void func_08045ff4(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08046054.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089eb380, 0x2000);
+    func_08005d38(data, func_08045fe4, 0);
+}
 
-#include "asm/scenes/prologues/asm_080460c8.s"
+// [func_08046024] GFX_LOAD Func_00
+void func_08046024(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080460cc.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089eb37c);
+    func_08005d38(data, func_08045ff4, 0);
+}
 
-#include "asm/scenes/prologues/asm_080460d0.s"
+// [func_08046054] MAIN - Load
+void func_08046054(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_080460d4.s"
+    func_08046024();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+    func_0800e0a0(2, 0, 0, 0, 0, 30, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088affe0, 0, 0x87, 0x14, 0, 0, 0x7f, 0);
+}
+
+// [func_080460c8] ENGINE Func_00
+void func_080460c8(void) {
+}
+
+// [func_080460cc] MAIN - Loop
+void func_080460cc(void) {
+}
+
+// [func_080460d0] MAIN - Unload
+void func_080460d0(void) {
+}
+
+// [func_080460d4] Event 0 - Set Text
+void func_080460d4(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
 
 // Power Calligraphy prologue
 

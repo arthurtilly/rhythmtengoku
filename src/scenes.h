@@ -1740,16 +1740,16 @@ extern void func_08045fb8(void);    // [func_08045fb8] MAIN - Loop      (STUB)
 extern void func_08045fbc(void);    // [func_08045fbc] MAIN - Unload    (STUB)
 extern void func_08045fc0(u32);     // [func_08045fc0] Event 0 - Set Text
 
-// Samurai Slice prologue
+// Prologue: Samurai Slice
 
-// extern ? func_08045fe4(?);
-// extern ? func_08045ff4(?);
-// extern ? func_08046024(?);
-// extern ? func_08046054(?);
-// extern ? func_080460c8(?);
-// extern ? func_080460cc(?);
-// extern ? func_080460d0(?);
-// extern ? func_080460d4(?);
+extern void func_08045fe4(void);    // [func_08045fe4] GFX_LOAD Func_02
+extern void func_08045ff4(void);    // [func_08045ff4] GFX_LOAD Func_01
+extern void func_08046024(void);    // [func_08046024] GFX_LOAD Func_00
+extern void func_08046054(u32);     // [func_08046054] MAIN - Load
+extern void func_080460c8(void);    // [func_080460c8] ENGINE Func_00   (STUB)
+extern void func_080460cc(void);    // [func_080460cc] MAIN - Loop      (STUB)
+extern void func_080460d0(void);    // [func_080460d0] MAIN - Unload    (STUB)
+extern void func_080460d4(u32);     // [func_080460d4] Event 0 - Set Text
 
 // Power Calligraphy prologue
 
