@@ -1,4 +1,5 @@
 #include "global.h"
+#include "code_08003980.h"
 #include "code_0800b778.h"
 
 // Could use better split
@@ -7,26 +8,8 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 static s32 D_03001310[2]; // unknown type
 
-struct ScaledEntity {
-    s16 unk0;        // Standard Entity
-    u8  unk2;        // func_0800c42c()
-    u8  unk3;        // Double-Size Flag (arg10)
-    s16 unk4;        // Scaling (arg5)
-    s16 unk6;        // Scaling (arg5)
-    s16 unk8;        // Rotation (arg6)
-    u16 unkA;        // ? (arg2)
-    u16 unkC;        // ? (arg3)
-    u16 unkE;        // ? (0)
-    u16 unk10;       // ? (0)
-    u8  unk12_0:1;   // ?
-    u8  unk12_1:1;   // ?
-    u8  unk12_2:1;   // ?
-    u8  unk12_3:1;   // ?
-    u8  unk12_4:1;   // ?
-};
 
 extern u32 func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
-extern u32 *mem_heap_alloc_id(u16 arg0, u32 arg1);
 
 #include "asm/code_0800b778/asm_0800b778.s"
 
