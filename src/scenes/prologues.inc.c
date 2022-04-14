@@ -148,6 +148,12 @@ extern u32 D_089ed2c4;   // GFX Null   -  Prologue: Ninja Bodyguard 2
 extern u32 D_089ed2c8[]; // GFX Array  -  Prologue: Ninja Bodyguard 2
 extern u32 D_088b432c[]; // Animation  -  Text (Ninja Bodyguard 2)
 
+extern u32 D_089ed400;   // GFX Null   -  Prologue: Space Dance
+extern u32 D_089ed404[]; // GFX Array  -  Prologue: Space Dance
+extern u32 D_088b7338[]; // Animation  -  Text (Space Dance)
+extern u32 D_088b7690[]; // Animation  -  Faces (Space Dance)
+extern u32 D_088b7660[]; // Animation  -  Star (Space Dance)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -155,6 +161,7 @@ extern void func_0804cebc(s32, s16, s8);
 extern void func_0804dae0(s32, s16, s8, u32, u32);
 extern void func_0800e62c(s16, u32, s16, u32, u16);
 extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
+extern void func_0804d770(s32, s16, u16);
 
 
   // // //  PROLOGUE: SNEAKY SPIRITS  // // //
@@ -2095,23 +2102,77 @@ void func_080474ac(u32 speed) {
 }
 
 
-// Space Dance prologue
+  // // //  PROLOGUE: SPACE DANCE  // // //
 
-#include "asm/scenes/prologues/asm_080474dc.s"
 
-#include "asm/scenes/prologues/asm_080474ec.s"
+// [func_080474dc] GFX_LOAD Func_02
+void func_080474dc(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_0804751c.s"
+// [func_080474ec] GFX_LOAD Func_01
+void func_080474ec(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_0804754c.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ed404, 0x2000);
+    func_08005d38(data, func_080474dc, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047624.s"
+// [func_0804751c] GFX_LOAD Func_00
+void func_0804751c(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08047628.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ed400);
+    func_08005d38(data, func_080474ec, 0);
+}
 
-#include "asm/scenes/prologues/asm_0804762c.s"
+// [func_0804754c] MAIN - Load
+void func_0804754c(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08047630.s"
+    func_0804751c();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b7338, 0, 0x50, 0x20, 0, 1, 0x7f, 0x8000);
+    func_0804dcb8(D_03005380, gPrologueInfo.entity2, 0x280);
+    gPrologueInfo.entity4 = func_0804d160(D_03005380, D_088b7690, 1, 0x78, 0x78, 0, 0, 0x7f, 0x8000);
+    gPrologueInfo.entity6 = func_0804d160(D_03005380, D_088b7660, 0, 0x40, 0x40, 0, 1, 0x7f, 0x8002);
+}
+
+// [func_08047624] ENGINE Func_00
+void func_08047624(void) {
+}
+
+// [func_08047628] MAIN - Loop
+void func_08047628(void) {
+}
+
+// [func_0804762c] MAIN - Unload
+void func_0804762c(void) {
+}
+
+// [func_08047630] Event 0 - Animate Entity { 0 = Text; 1 = Faces; 2 = Star }
+void func_08047630(u32 event) {
+    u16 entity;
+    switch (event) {
+        case 0: // Object 0 - Text
+            entity = gPrologueInfo.entity2;
+            break;
+        case 1: // Object 1 - Faces
+            entity = gPrologueInfo.entity4;
+            break;
+        case 2: // Object 2 - Star
+            entity = gPrologueInfo.entity6;
+            break;
+    }
+    func_0804d770(D_03005380, entity, 1);
+}
+
 
 // Tap Trial prologue
 
