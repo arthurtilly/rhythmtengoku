@@ -158,6 +158,10 @@ extern u32 D_089ed548;   // GFX Null   -  Prologue: Tap Trial
 extern u32 D_089ed54c[]; // GFX Array  -  Prologue: Tap Trial
 extern u32 D_088b794c[]; // Animation  -  Text (Tap Trial)
 
+extern u32 D_089ed6b4;   // GFX Null   -  Prologue: Tap Trial 2
+extern u32 D_089ed6b8[]; // GFX Array  -  Prologue: Tap Trial 2
+extern u32 D_088b7c88[]; // Animation  -  Text (Tap Trial 2)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -2241,25 +2245,67 @@ void func_08047794(void) {
 }
 
 
-// Tap Trial 2 prologue
+  // // //  PROLOGUE: TAP TRIAL 2  // // //
 
-#include "asm/scenes/prologues/asm_080477b4.s"
 
-#include "asm/scenes/prologues/asm_080477c4.s"
+// [func_080477b4] GFX_LOAD Func_02
+void func_080477b4(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_080477f4.s"
+// [func_080477c4] GFX_LOAD Func_01
+void func_080477c4(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08047824.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ed6b8, 0x2000);
+    func_08005d38(data, func_080477b4, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047888.s"
+// [func_080477f4] GFX_LOAD Func_00
+void func_080477f4(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_0804788c.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ed6b4);
+    func_08005d38(data, func_080477c4, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047890.s"
+// [func_08047824] MAIN - Load
+void func_08047824(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08047894.s"
+    func_080477f4();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-#include "asm/scenes/prologues/asm_080478b8.s"
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b7c88, 0, 0x69, 0x64, 0, 1, 0x7f, 0x8000);
+}
+
+// [func_08047888] ENGINE Func_00
+void func_08047888(void) {
+}
+
+// [func_0804788c] MAIN - Loop
+void func_0804788c(void) {
+}
+
+// [func_08047890] MAIN - Unload
+void func_08047890(void) {
+}
+
+// [func_08047894] Event 0 - Set Text
+void func_08047894(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
+// [func_080478b8] Event 1 - Animate Text
+void func_080478b8(void) {
+    func_0804d770(D_03005380, gPrologueInfo.entity2, 1);
+}
+
 
 // Toss Boys prologue
 

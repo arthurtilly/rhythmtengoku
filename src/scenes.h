@@ -1986,17 +1986,17 @@ extern void func_0804776c(void);    // [func_0804776c] MAIN - Unload    (STUB)
 extern void func_08047770(u32);     // [func_08047770] Event 0 - Set Text
 extern void func_08047794(void);    // [func_08047794] Event 1 - Animate Text
 
-// Tap Trial 2 prologue
+// Prologue: Tap Trial 2
 
-// extern ? func_080477b4(?);
-// extern ? func_080477c4(?);
-// extern ? func_080477f4(?);
-// extern ? func_08047824(?);
-// extern ? func_08047888(?);
-// extern ? func_0804788c(?);
-// extern ? func_08047890(?);
-// extern ? func_08047894(?);
-// extern ? func_080478b8(?);
+extern void func_080477b4(void);    // [func_080477b4] GFX_LOAD Func_02
+extern void func_080477c4(void);    // [func_080477c4] GFX_LOAD Func_01
+extern void func_080477f4(void);    // [func_080477f4] GFX_LOAD Func_00
+extern void func_08047824(u32);     // [func_08047824] MAIN - Load
+extern void func_08047888(void);    // [func_08047888] ENGINE Func_00   (STUB)
+extern void func_0804788c(void);    // [func_0804788c] MAIN - Loop      (STUB)
+extern void func_08047890(void);    // [func_08047890] MAIN - Unload    (STUB)
+extern void func_08047894(u32);     // [func_08047894] Event 0 - Set Text
+extern void func_080478b8(void);    // [func_080478b8] Event 1 - Animate Text
 
 // Toss Boys prologue
 
