@@ -127,6 +127,10 @@ extern u32 D_089ecb64[]; // GFX Array  -  Prologue: Bunny Hop
 extern u32 D_088b35dc[]; // Animation  -  Text (Bunny Hop)
 extern u32 D_088b35a4[]; // Animation  -  Rabbits (Bunny Hop)
 
+extern u32 D_089ecd44;   // GFX Null   -  Prologue: Rap Men
+extern u32 D_089ecd48[]; // GFX Array  -  Prologue: Rap Men
+extern u32 D_088b37d8[]; // Animation  -  Text (Rap Men)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -1780,23 +1784,62 @@ void func_08046f30(void) {
 }
 
 
-// Rap Men prologue
+  // // //  PROLOGUE: RAP MEN  // // //
 
-#include "asm/scenes/prologues/asm_08046f5c.s"
 
-#include "asm/scenes/prologues/asm_08046f6c.s"
+// [func_08046f5c] GFX_LOAD Func_02
+void func_08046f5c(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08046f9c.s"
+// [func_08046f6c] GFX_LOAD Func_01
+void func_08046f6c(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08046fcc.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ecd48, 0x2000);
+    func_08005d38(data, func_08046f5c, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047028.s"
+// [func_08046f9c] GFX_LOAD Func_00
+void func_08046f9c(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_0804702c.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ecd44);
+    func_08005d38(data, func_08046f6c, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047030.s"
+// [func_08046fcc] MAIN - Load
+void func_08046fcc(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08047034.s"
+    func_08046f9c();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b37d8, 0, 0xbe, 0x28, 0, 0, 0x7f, 0);
+}
+
+// [func_08047028] ENGINE Func_00
+void func_08047028(void) {
+}
+
+// [func_0804702c] MAIN - Loop
+void func_0804702c(void) {
+}
+
+// [func_08047030] MAIN - Unload
+void func_08047030(void) {
+}
+
+// [func_08047034] Event 0 - Show Text
+void func_08047034(void) {
+    func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
+}
+
 
 // Rap Women prologue
 

@@ -1907,16 +1907,16 @@ extern void func_08046f08(void);    // [func_08046f08] MAIN - Unload    (STUB)
 extern void func_08046f0c(u32);     // [func_08046f0c] Event 0 - Set Text
 extern void func_08046f30(void);    // [func_08046f30] Event 1 - Animate Rabbits
 
-// Rap Men prologue
+// Prologue: Rap Men
 
-// extern ? func_08046f5c(?);
-// extern ? func_08046f6c(?);
-// extern ? func_08046f9c(?);
-// extern ? func_08046fcc(?);
-// extern ? func_08047028(?);
-// extern ? func_0804702c(?);
-// extern ? func_08047030(?);
-// extern ? func_08047034(?);
+extern void func_08046f5c(void);    // [func_08046e08] GFX_LOAD Func_02
+extern void func_08046f6c(void);    // [func_08046e08] GFX_LOAD Func_01
+extern void func_08046f9c(void);    // [func_08046e08] GFX_LOAD Func_00
+extern void func_08046fcc(u32);     // [func_08046e78] MAIN - Load
+extern void func_08047028(void);    // [func_08046f00] ENGINE Func_00   (STUB)
+extern void func_0804702c(void);    // [func_08046f04] MAIN - Loop      (STUB)
+extern void func_08047030(void);    // [func_08046f08] MAIN - Unload    (STUB)
+extern void func_08047034(void);    // [func_08046f30] Event 0 - Show Text
 
 // Rap Women prologue
 
