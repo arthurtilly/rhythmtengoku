@@ -162,6 +162,10 @@ extern u32 D_089ed6b4;   // GFX Null   -  Prologue: Tap Trial 2
 extern u32 D_089ed6b8[]; // GFX Array  -  Prologue: Tap Trial 2
 extern u32 D_088b7c88[]; // Animation  -  Text (Tap Trial 2)
 
+extern u32 D_089ed820;   // GFX Null   -  Prologue: Toss Boys
+extern u32 D_089ed824[]; // GFX Array  -  Prologue: Toss Boys
+extern u32 D_088b8098[]; // Animation  -  Text (Toss Boys)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -2307,23 +2311,62 @@ void func_080478b8(void) {
 }
 
 
-// Toss Boys prologue
+  // // //  PROLOGUE: TOSS BOYS  // // //
 
-#include "asm/scenes/prologues/asm_080478d8.s"
 
-#include "asm/scenes/prologues/asm_080478e8.s"
+// [func_080478d8] GFX_LOAD Func_02
+void func_080478d8(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08047918.s"
+// [func_080478e8] GFX_LOAD Func_01
+void func_080478e8(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08047948.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ed824, 0x2000);
+    func_08005d38(data, func_080478d8, 0);
+}
 
-#include "asm/scenes/prologues/asm_080479a4.s"
+// [func_08047918] GFX_LOAD Func_00
+void func_08047918(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080479a8.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ed820);
+    func_08005d38(data, func_080478e8, 0);
+}
 
-#include "asm/scenes/prologues/asm_080479ac.s"
+// [func_08047948] MAIN - Load
+void func_08047948(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_080479b0.s"
+    func_08047918();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b8098, 0, 0x78, 0x78, 0, 0, 0, 0);
+}
+
+// [func_080479a4] ENGINE Func_00
+void func_080479a4(void) {
+}
+
+// [func_080479a8] MAIN - Loop
+void func_080479a8(void) {
+}
+
+// [func_080479ac] MAIN - Unload
+void func_080479ac(void) {
+}
+
+// [func_080479b0] Event 0 - Set Text
+void func_080479b0(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
 
 // Toss Boys 2 prologue
 

@@ -1998,16 +1998,16 @@ extern void func_08047890(void);    // [func_08047890] MAIN - Unload    (STUB)
 extern void func_08047894(u32);     // [func_08047894] Event 0 - Set Text
 extern void func_080478b8(void);    // [func_080478b8] Event 1 - Animate Text
 
-// Toss Boys prologue
+// Prologue: Toss Boys
 
-// extern ? func_080478d8(?);
-// extern ? func_080478e8(?);
-// extern ? func_08047918(?);
-// extern ? func_08047948(?);
-// extern ? func_080479a4(?);
-// extern ? func_080479a8(?);
-// extern ? func_080479ac(?);
-// extern ? func_080479b0(?);
+extern void func_080478d8(void);    // [func_080478d8] GFX_LOAD Func_02
+extern void func_080478e8(void);    // [func_080478e8] GFX_LOAD Func_01
+extern void func_08047918(void);    // [func_08047918] GFX_LOAD Func_00
+extern void func_08047948(u32);     // [func_08047948] MAIN - Load
+extern void func_080479a4(void);    // [func_080479a4] ENGINE Func_00   (STUB)
+extern void func_080479a8(void);    // [func_080479a8] MAIN - Loop      (STUB)
+extern void func_080479ac(void);    // [func_080479ac] MAIN - Unload    (STUB)
+extern void func_080479b0(u32);     // [func_080479b0] Event 0 - Set Text
 
 // Toss Boys 2 prologue
 
