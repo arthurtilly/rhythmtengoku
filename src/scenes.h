@@ -1729,16 +1729,16 @@ extern void func_08045ebc(void);    // [func_08045ebc] MAIN - Loop      (STUB)
 extern void func_08045ec0(void);    // [func_08045ec0] MAIN - Unload    (STUB)
 extern void func_08045ec4(u32);     // [func_08045ec4] Event 0 - Set Text
 
-// The Snappy Trio prologue
+// Prologue: The Snappy Trio
 
-// extern ? func_08045ee8(?);
-// extern ? func_08045ef8(?);
-// extern ? func_08045f28(?);
-// extern ? func_08045f58(?);
-// extern ? func_08045fb4(?);
-// extern ? func_08045fb8(?);
-// extern ? func_08045fbc(?);
-// extern ? func_08045fc0(?);
+extern void func_08045ee8(void);    // [func_08045ee8] GFX_LOAD Func_02
+extern void func_08045ef8(void);    // [func_08045ef8] GFX_LOAD Func_01
+extern void func_08045f28(void);    // [func_08045f28] GFX_LOAD Func_00
+extern void func_08045f58(u32);     // [func_08045f58] MAIN - Load
+extern void func_08045fb4(void);    // [func_08045fb4] ENGINE Func_00   (STUB)
+extern void func_08045fb8(void);    // [func_08045fb8] MAIN - Loop      (STUB)
+extern void func_08045fbc(void);    // [func_08045fbc] MAIN - Unload    (STUB)
+extern void func_08045fc0(u32);     // [func_08045fc0] Event 0 - Set Text
 
 // Samurai Slice prologue
 
