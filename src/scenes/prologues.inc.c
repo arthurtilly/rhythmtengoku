@@ -118,6 +118,10 @@ extern u32 D_089ec7b0;   // GFX Null   -  Prologue: Remix 7
 extern u32 D_089ec7b4[]; // GFX Array  -  Prologue: Remix 7
 extern u32 D_088b2f44[]; // Animation  -  Text (Remix 7)
 
+extern u32 D_089ec988;   // GFX Null   -  Prologue: Remix 8
+extern u32 D_089ec98c[]; // GFX Array  -  Prologue: Remix 8
+extern u32 D_088b332c[]; // Animation  -  Text (Remix 8)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -1651,23 +1655,62 @@ void func_08046ce8(u32 frame) {
 }
 
 
-// Remix 8 prologue
+  // // //  PROLOGUE: REMIX 8  // // //
 
-#include "asm/scenes/prologues/asm_08046d0c.s"
 
-#include "asm/scenes/prologues/asm_08046d1c.s"
+// [func_08046d0c] GFX_LOAD Func_02
+void func_08046d0c(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08046d4c.s"
+// [func_08046d1c] GFX_LOAD Func_01
+void func_08046d1c(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08046d7c.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ec98c, 0x2000);
+    func_08005d38(data, func_08046d0c, 0);
+}
 
-#include "asm/scenes/prologues/asm_08046dd8.s"
+// [func_08046d4c] GFX_LOAD Func_00
+void func_08046d4c(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08046ddc.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ec988);
+    func_08005d38(data, func_08046d1c, 0);
+}
 
-#include "asm/scenes/prologues/asm_08046de0.s"
+// [func_08046d7c] MAIN - Load
+void func_08046d7c(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08046de4.s"
+    func_08046d4c();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b332c, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
+}
+
+// [func_08046dd8] ENGINE Func_00
+void func_08046dd8(void) {
+}
+
+// [func_08046ddc] MAIN - Loop
+void func_08046ddc(void) {
+}
+
+// [func_08046de0] MAIN - Unload
+void func_08046de0(void) {
+}
+
+// [func_08046de4] Event 0 - Set Text
+void func_08046de4(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
 
 // Bunny Hop prologue
 

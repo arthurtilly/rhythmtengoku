@@ -1884,16 +1884,16 @@ extern void func_08046ce0(void);    // [func_08046ce0] MAIN - Loop      (STUB)
 extern void func_08046ce4(void);    // [func_08046ce4] MAIN - Unload    (STUB)
 extern void func_08046ce8(u32);     // [func_08046ce8] Event 0 - Set Text
 
-// Remix 8 prologue
+// Prologue: Remix 8
 
-// extern ? func_08046d0c(?);
-// extern ? func_08046d1c(?);
-// extern ? func_08046d4c(?);
-// extern ? func_08046d7c(?);
-// extern ? func_08046dd8(?);
-// extern ? func_08046ddc(?);
-// extern ? func_08046de0(?);
-// extern ? func_08046de4(?);
+extern void func_08046d0c(void);    // [func_08046d0c] GFX_LOAD Func_02
+extern void func_08046d1c(void);    // [func_08046d1c] GFX_LOAD Func_01
+extern void func_08046d4c(void);    // [func_08046d4c] GFX_LOAD Func_00
+extern void func_08046d7c(u32);     // [func_08046d7c] MAIN - Load
+extern void func_08046dd8(void);    // [func_08046dd8] ENGINE Func_00   (STUB)
+extern void func_08046ddc(void);    // [func_08046ddc] MAIN - Loop      (STUB)
+extern void func_08046de0(void);    // [func_08046de0] MAIN - Unload    (STUB)
+extern void func_08046de4(u32);     // [func_08046de4] Event 0 - Set Text
 
 // Bunny Hop prologue
 
