@@ -131,6 +131,10 @@ extern u32 D_089ecd44;   // GFX Null   -  Prologue: Rap Men
 extern u32 D_089ecd48[]; // GFX Array  -  Prologue: Rap Men
 extern u32 D_088b37d8[]; // Animation  -  Text (Rap Men)
 
+extern u32 D_089ece80;   // GFX Null   -  Prologue: Rap Women
+extern u32 D_089ece84[]; // GFX Array  -  Prologue: Rap Women
+extern u32 D_088b3ac4[]; // Animation  -  Text (Rap Women)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -1841,23 +1845,62 @@ void func_08047034(void) {
 }
 
 
-// Rap Women prologue
+  // // //  PROLOGUE: RAP WOMEN  // // //
 
-#include "asm/scenes/prologues/asm_08047060.s"
 
-#include "asm/scenes/prologues/asm_08047070.s"
+// [func_08047060] GFX_LOAD Func_02
+void func_08047060(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_080470a0.s"
+// [func_08047070] GFX_LOAD Func_01
+void func_08047070(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080470d0.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ece84, 0x2000);
+    func_08005d38(data, func_08047060, 0);
+}
 
-#include "asm/scenes/prologues/asm_0804712c.s"
+// [func_080470a0] GFX_LOAD Func_00
+void func_080470a0(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08047130.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ece80);
+    func_08005d38(data, func_08047070, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047134.s"
+// [func_080470d0] MAIN - Load
+void func_080470d0(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08047138.s"
+    func_080470a0();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b3ac4, 0, 0x78, 0x78, 0, 0, 0x7f, 0);
+}
+
+// [func_0804712c] ENGINE Func_00
+void func_0804712c(void) {
+}
+
+// [func_08047130] MAIN - Loop
+void func_08047130(void) {
+}
+
+// [func_08047134] MAIN - Unload
+void func_08047134(void) {
+}
+
+// [func_08047138] Event 0 - Show Text
+void func_08047138(void) {
+    func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
+}
+
 
 // Rat Race prologue
 

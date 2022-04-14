@@ -1909,25 +1909,25 @@ extern void func_08046f30(void);    // [func_08046f30] Event 1 - Animate Rabbits
 
 // Prologue: Rap Men
 
-extern void func_08046f5c(void);    // [func_08046e08] GFX_LOAD Func_02
-extern void func_08046f6c(void);    // [func_08046e08] GFX_LOAD Func_01
-extern void func_08046f9c(void);    // [func_08046e08] GFX_LOAD Func_00
-extern void func_08046fcc(u32);     // [func_08046e78] MAIN - Load
-extern void func_08047028(void);    // [func_08046f00] ENGINE Func_00   (STUB)
-extern void func_0804702c(void);    // [func_08046f04] MAIN - Loop      (STUB)
-extern void func_08047030(void);    // [func_08046f08] MAIN - Unload    (STUB)
-extern void func_08047034(void);    // [func_08046f30] Event 0 - Show Text
+extern void func_08046f5c(void);    // [func_08046f5c] GFX_LOAD Func_02
+extern void func_08046f6c(void);    // [func_08046f6c] GFX_LOAD Func_01
+extern void func_08046f9c(void);    // [func_08046f9c] GFX_LOAD Func_00
+extern void func_08046fcc(u32);     // [func_08046fcc] MAIN - Load
+extern void func_08047028(void);    // [func_08047028] ENGINE Func_00   (STUB)
+extern void func_0804702c(void);    // [func_0804702c] MAIN - Loop      (STUB)
+extern void func_08047030(void);    // [func_08047030] MAIN - Unload    (STUB)
+extern void func_08047034(void);    // [func_08047034] Event 0 - Show Text
 
-// Rap Women prologue
+// Prologue: Rap Women
 
-// extern ? func_08047060(?);
-// extern ? func_08047070(?);
-// extern ? func_080470a0(?);
-// extern ? func_080470d0(?);
-// extern ? func_0804712c(?);
-// extern ? func_08047130(?);
-// extern ? func_08047134(?);
-// extern ? func_08047138(?);
+extern void func_08047060(void);    // [func_08047060] GFX_LOAD Func_02
+extern void func_08047070(void);    // [func_08047070] GFX_LOAD Func_01
+extern void func_080470a0(void);    // [func_080470a0] GFX_LOAD Func_00
+extern void func_080470d0(u32);     // [func_080470d0] MAIN - Load
+extern void func_0804712c(void);    // [func_0804712c] ENGINE Func_00   (STUB)
+extern void func_08047130(void);    // [func_08047130] MAIN - Loop      (STUB)
+extern void func_08047134(void);    // [func_08047134] MAIN - Unload    (STUB)
+extern void func_08047138(void);    // [func_08047138] Event 0 - Show Text
 
 // Rat Race prologue
 
