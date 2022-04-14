@@ -1785,16 +1785,16 @@ extern void func_08046400(void);    // [func_08046400] MAIN - Loop      (STUB)
 extern void func_08046404(void);    // [func_08046404] MAIN - Unload    (STUB)
 extern void func_08046408(u32);     // [func_08046408] Event 0 - Set Text
 
-// Polyrhythm prologue
+// Prologue: Polyrhythm
 
-// extern ? func_0804642c(?);
-// extern ? func_0804643c(?);
-// extern ? func_0804646c(?);
-// extern ? func_0804649c(?);
-// extern ? func_080464f8(?);
-// extern ? func_080464fc(?);
-// extern ? func_08046500(?);
-// extern ? func_08046504(?);
+extern void func_0804642c(void);    // [func_0804642c] GFX_LOAD Func_02
+extern void func_0804643c(void);    // [func_0804643c] GFX_LOAD Func_01
+extern void func_0804646c(void);    // [func_0804646c] GFX_LOAD Func_00
+extern void func_0804649c(u32);     // [func_0804649c] MAIN - Load
+extern void func_080464f8(void);    // [func_080464f8] ENGINE Func_00   (STUB)
+extern void func_080464fc(void);    // [func_080464fc] MAIN - Loop      (STUB)
+extern void func_08046500(void);    // [func_08046500] MAIN - Unload    (STUB)
+extern void func_08046504(u32);     // [func_08046504] Event 0 - Set Text
 
 // Quiz Show prologue
 

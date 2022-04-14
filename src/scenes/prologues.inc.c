@@ -82,6 +82,10 @@ extern u32 D_089eb814;   // GFX Null   -  Prologue: Marching Orders 2
 extern u32 D_089eb818[]; // GFX Array  -  Prologue: Marching Orders 2
 extern u32 D_088b0bf0[]; // Animation  -  Text (Marching Orders 2)
 
+extern u32 D_089eb9bc;   // GFX Null   -  Prologue: Polyrhythm
+extern u32 D_089eb9c0[]; // GFX Array  -  Prologue: Polyrhythm
+extern u32 D_088b0cb4[]; // Animation  -  Text (Polyrhythm)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -1102,23 +1106,62 @@ void func_08046408(u32 frame) {
 }
 
 
-// Polyrhythm prologue
+  // // //  PROLOGUE: POLYRHYTHM  // // //
 
-#include "asm/scenes/prologues/asm_0804642c.s"
 
-#include "asm/scenes/prologues/asm_0804643c.s"
+// [func_0804642c] GFX_LOAD Func_02
+void func_0804642c(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_0804646c.s"
+// [func_0804643c] GFX_LOAD Func_01
+void func_0804643c(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_0804649c.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089eb9c0, 0x2000);
+    func_08005d38(data, func_0804642c, 0);
+}
 
-#include "asm/scenes/prologues/asm_080464f8.s"
+// [func_0804646c] GFX_LOAD Func_00
+void func_0804646c(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_080464fc.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089eb9bc);
+    func_08005d38(data, func_0804643c, 0);
+}
 
-#include "asm/scenes/prologues/asm_08046500.s"
+// [func_0804649c] MAIN - Load
+void func_0804649c(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08046504.s"
+    func_0804646c();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b0cb4, 0, 0x70, 0x90, 0, 0, 0x7f, 0);
+}
+
+// [func_080464f8] ENGINE Func_00
+void func_080464f8(void) {
+}
+
+// [func_080464fc] MAIN - Loop
+void func_080464fc(void) {
+}
+
+// [func_08046500] MAIN - Unload
+void func_08046500(void) {
+}
+
+// [func_08046504] Event 0 - Set Text
+void func_08046504(u32 frame) {
+    func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
+}
+
 
 // Quiz Show prologue
 
