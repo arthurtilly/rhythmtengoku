@@ -1941,16 +1941,16 @@ extern void func_08047258(void);    // [func_08047258] MAIN - Unload    (STUB)
 extern void func_0804725c(u32);     // [func_0804725c] Event 0 - Set Text
 extern void func_08047280(void);    // [func_08047280] Event 1 - Animate Rat
 
-// Ninja Bodyguard prologue
+// Prologue: Ninja Bodyguard
 
-// extern ? func_080472bc(?);
-// extern ? func_080472cc(?);
-// extern ? func_080472fc(?);
-// extern ? func_0804732c(?);
-// extern ? func_08047398(?);
-// extern ? func_0804739c(?);
-// extern ? func_080473a0(?);
-// extern ? func_080473a4(?);
+extern void func_080472bc(void);    // [func_080472bc] GFX_LOAD Func_02
+extern void func_080472cc(void);    // [func_080472cc] GFX_LOAD Func_01
+extern void func_080472fc(void);    // [func_080472fc] GFX_LOAD Func_00
+extern void func_0804732c(u32);     // [func_0804732c] MAIN - Load
+extern void func_08047398(void);    // [func_08047398] ENGINE Func_00   (STUB)
+extern void func_0804739c(void);    // [func_0804739c] MAIN - Loop      (STUB)
+extern void func_080473a0(void);    // [func_080473a0] MAIN - Unload    (STUB)
+extern void func_080473a4(u32);     // [func_080473a4] Event 0 - Show Text
 
 // Ninja Reincarnate prologue
 

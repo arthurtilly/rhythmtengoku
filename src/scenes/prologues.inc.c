@@ -140,10 +140,15 @@ extern u32 D_089ecfc0[]; // GFX Array  -  Prologue: Rat Race
 extern u32 D_088b3d54[]; // Animation  -  Text (Rat Race)
 extern u32 D_088b3d1c[]; // Animation  -  Rat (Rat Race)
 
+extern u32 D_089ed188;   // GFX Null   -  Prologue: Ninja Bodyguard
+extern u32 D_089ed18c[]; // GFX Array  -  Prologue: Ninja Bodyguard
+extern u32 D_088b4054[]; // Animation  -  Text (Ninja Bodyguard)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
-extern void func_0804cebc(u32, s16, s8);
+extern void func_0804cebc(s32, s16, s8);
+extern void func_0804dae0(s32, s16, s8, u32, u32);
 extern void func_0800e62c(s16, u32, s16, u32, u16);
 extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
 
@@ -1971,23 +1976,63 @@ void func_08047280(void) {
 }
 
 
-// Ninja Bodyguard prologue
+  // // //  PROLOGUE: NINJA BODYGUARD  // // //
 
-#include "asm/scenes/prologues/asm_080472bc.s"
 
-#include "asm/scenes/prologues/asm_080472cc.s"
+// [func_080472bc] GFX_LOAD Func_02
+void func_080472bc(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_080472fc.s"
+// [func_080472cc] GFX_LOAD Func_01
+void func_080472cc(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_0804732c.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ed18c, 0x2000);
+    func_08005d38(data, func_080472bc, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047398.s"
+// [func_080472fc] GFX_LOAD Func_00
+void func_080472fc(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_0804739c.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ed188);
+    func_08005d38(data, func_080472cc, 0);
+}
 
-#include "asm/scenes/prologues/asm_080473a0.s"
+// [func_0804732c] MAIN - Load
+void func_0804732c(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_080473a4.s"
+    func_080472fc();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b4054, 0, 0x78, 0x82, 0, 0, 0x7f, 0);
+    func_0804dcb8(D_03005380, gPrologueInfo.entity2, 0x180);
+}
+
+// [func_08047398] ENGINE Func_00
+void func_08047398(void) {
+}
+
+// [func_0804739c] MAIN - Loop
+void func_0804739c(void) {
+}
+
+// [func_080473a0] MAIN - Unload
+void func_080473a0(void) {
+}
+
+// [func_080473a4] Event 0 - Show Text
+void func_080473a4(u32 speed) {
+    func_0804dae0(D_03005380, gPrologueInfo.entity2, speed, 0x7f, 0);
+}
+
 
 // Ninja Reincarnate prologue
 
