@@ -5,7 +5,7 @@
 // For readability. !TODO - CHANGE/REMOVE
 #define gPrologueInfo D_030055d0->gameInfo.prologues
 
-
+// External Assets:
 extern u32 D_089ea088;   // GFX Null   -  Prologue: Sneaky Spirits
 extern u32 D_089ea08c[]; // GFX Array  -  Prologue: Sneaky Spirits
 extern u32 D_088ad2bc[]; // Animation  -  Text (Sneaky Spirits)
@@ -180,8 +180,11 @@ extern u32 D_089edcf8[]; // GFX Array  -  Prologue: Sick Beats
 extern u32 D_088b8cfc[]; // Animation  -  Text (Sick Beats)
 extern u32 D_088b8cbc[]; // Animation  -  Virus (Sick Beats)
 
+extern u32 D_089ede24;   // GFX Null   -  Prologue: Wizard's Waltz
+extern u32 D_089ede28[]; // GFX Array  -  Prologue: Wizard's Waltz
+extern u32 D_088b8e50[]; // Animation  -  Text (Wizard's Waltz)
 
-
+// External Functions:
 extern u32  func_080087b4(u16, u32 *);
 extern void func_0804cebc(s32, s16, s8);
 extern void func_0804dae0(s32, s16, s8, u32, u32);
@@ -343,15 +346,15 @@ void func_08045374(u32 ver) {
     gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088ad530, 0, 0x50, 0x40, 0, 0, 0x7f, 0);
 }
 
-// [func_080452d4] ENGINE Func_00
+// [func_080453d0] ENGINE Func_00
 void func_080453d0(void) {
 }
 
-// [func_080452d8] MAIN - Loop
+// [func_080453d4] MAIN - Loop
 void func_080453d4(void) {
 }
 
-// [func_080452dc] MAIN - Unload
+// [func_080453d8] MAIN - Unload
 void func_080453d8(void) {
 }
 
@@ -2556,20 +2559,58 @@ void func_08047d0c(void) {
 }
 
 
-// Wizard's Waltz prologue
+  // // //  PROLOGUE: WIZARD'S WALTZ  // // //
 
-#include "asm/scenes/prologues/asm_08047d4c.s"
 
-#include "asm/scenes/prologues/asm_08047d5c.s"
+// [func_08047d4c] GFX_LOAD Func_02
+void func_08047d4c(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08047d8c.s"
+// [func_08047d5c] GFX_LOAD Func_01
+void func_08047d5c(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08047dbc.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089ede28, 0x2000);
+    func_08005d38(data, func_08047d4c, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047e18.s"
+// [func_08047d8c] GFX_LOAD Func_00
+void func_08047d8c(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08047e1c.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089ede24);
+    func_08005d38(data, func_08047d5c, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047e20.s"
+// [func_08047dbc] MAIN - Load
+void func_08047dbc(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08047e24.s"
+    func_08047d8c();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b8e50, 0, 0x40, 0x1e, 0, 1, 0, 0);
+}
+
+// [func_08047e18] ENGINE Func_00
+void func_08047e18(void) {
+}
+
+// [func_08047e1c] MAIN - Loop
+void func_08047e1c(void) {
+}
+
+// [func_08047e20] MAIN - Unload
+void func_08047e20(void) {
+}
+
+// [func_08047e24] Event 0 - Show Text
+void func_08047e24(void) {
+    func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
+}

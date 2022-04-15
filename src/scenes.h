@@ -1624,9 +1624,9 @@ extern void func_08045304(void);    // [func_08045304] GFX_LOAD Func_02
 extern void func_08045314(void);    // [func_08045314] GFX_LOAD Func_01
 extern void func_08045344(void);    // [func_08045344] GFX_LOAD Func_00
 extern void func_08045374(u32);     // [func_08045374] MAIN - Load
-extern void func_080453d0(void);    // [func_080452d4] ENGINE Func_00   (STUB)
-extern void func_080453d4(void);    // [func_080452d8] MAIN - Loop      (STUB)
-extern void func_080453d8(void);    // [func_080452dc] MAIN - Unload    (STUB)
+extern void func_080453d0(void);    // [func_080453d0] ENGINE Func_00   (STUB)
+extern void func_080453d4(void);    // [func_080453d4] MAIN - Loop      (STUB)
+extern void func_080453d8(void);    // [func_080453d8] MAIN - Unload    (STUB)
 extern void func_080453dc(void);    // [func_080453dc] Event 0 - Show Text
 
 // Prologue: Bon Dance
@@ -2033,22 +2033,22 @@ extern void func_08047bdc(void);    // [func_08047bdc] Event 0 - Show Text
 
 // Prologue: Sick Beats
 
-extern void func_08047c08(void);    // [func_08047ad0] GFX_LOAD Func_02
-extern void func_08047c18(void);    // [func_08047ad0] GFX_LOAD Func_01
-extern void func_08047c48(void);    // [func_08047ad0] GFX_LOAD Func_00
-extern void func_08047c78(u32);     // [func_08047b40] MAIN - Load
-extern void func_08047d00(void);    // [func_08047bd0] ENGINE Func_00   (STUB)
-extern void func_08047d04(void);    // [func_08047bd4] MAIN - Loop      (STUB)
-extern void func_08047d08(void);    // [func_08047bd8] MAIN - Unload    (STUB)
-extern void func_08047d0c(void);    // [func_08047bdc] Event 0 - Show Text, Animate Virus
+extern void func_08047c08(void);    // [func_08047c08] GFX_LOAD Func_02
+extern void func_08047c18(void);    // [func_08047c18] GFX_LOAD Func_01
+extern void func_08047c48(void);    // [func_08047c48] GFX_LOAD Func_00
+extern void func_08047c78(u32);     // [func_08047c78] MAIN - Load
+extern void func_08047d00(void);    // [func_08047d00] ENGINE Func_00   (STUB)
+extern void func_08047d04(void);    // [func_08047d04] MAIN - Loop      (STUB)
+extern void func_08047d08(void);    // [func_08047d08] MAIN - Unload    (STUB)
+extern void func_08047d0c(void);    // [func_08047d0c] Event 0 - Show Text, Animate Virus
 
-// Wizard's Waltz prologue
+// Prologue: Wizard's Waltz
 
-// extern ? func_08047d4c(?);
-// extern ? func_08047d5c(?);
-// extern ? func_08047d8c(?);
-// extern ? func_08047dbc(?);
-// extern ? func_08047e18(?);
-// extern ? func_08047e1c(?);
-// extern ? func_08047e20(?);
-// extern ? func_08047e24(?);
+extern void func_08047d4c(void);    // [func_08047d4c] GFX_LOAD Func_02
+extern void func_08047d5c(void);    // [func_08047d5c] GFX_LOAD Func_01
+extern void func_08047d8c(void);    // [func_08047d8c] GFX_LOAD Func_00
+extern void func_08047dbc(u32);     // [func_08047dbc] MAIN - Load
+extern void func_08047e18(void);    // [func_08047e18] ENGINE Func_00   (STUB)
+extern void func_08047e1c(void);    // [func_08047e1c] MAIN - Loop      (STUB)
+extern void func_08047e20(void);    // [func_08047e20] MAIN - Unload    (STUB)
+extern void func_08047e24(void);    // [func_08047e24] Event 0 - Show Text
