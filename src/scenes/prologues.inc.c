@@ -175,6 +175,11 @@ extern u32 D_089edbbc[]; // GFX Array  -  Prologue: Tram & Pauline
 extern u32 D_088b8844[]; // Animation  -  Text (Tram & Pauline)
 extern u32 D_088b8834[]; // Animation  -  Tram & Pauline (Tram & Pauline)
 
+extern u32 D_089edcf4;   // GFX Null   -  Prologue: Sick Beats
+extern u32 D_089edcf8[]; // GFX Array  -  Prologue: Sick Beats
+extern u32 D_088b8cfc[]; // Animation  -  Text (Sick Beats)
+extern u32 D_088b8cbc[]; // Animation  -  Virus (Sick Beats)
+
 
 
 extern u32  func_080087b4(u16, u32 *);
@@ -2492,23 +2497,64 @@ void func_08047bdc(void) {
 }
 
 
-// Sick Beats prologue
+  // // //  PROLOGUE: SICK BEATS  // // //
 
-#include "asm/scenes/prologues/asm_08047c08.s"
 
-#include "asm/scenes/prologues/asm_08047c18.s"
+// [func_08047c08] GFX_LOAD Func_02
+void func_08047c08(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/scenes/prologues/asm_08047c48.s"
+// [func_08047c18] GFX_LOAD Func_01
+void func_08047c18(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08047c78.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089edcf8, 0x2000);
+    func_08005d38(data, func_08047c08, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047d00.s"
+// [func_08047c48] GFX_LOAD Func_00
+void func_08047c48(void) {
+    u32 data;
 
-#include "asm/scenes/prologues/asm_08047d04.s"
+    func_0800c604(0);
+    func_08006d80();
+    data = func_080087b4(func_0800c3b8(), &D_089edcf4);
+    func_08005d38(data, func_08047c18, 0);
+}
 
-#include "asm/scenes/prologues/asm_08047d08.s"
+// [func_08047c78] MAIN - Load
+void func_08047c78(u32 ver) {
+    gPrologueInfo.ver = ver;
 
-#include "asm/scenes/prologues/asm_08047d0c.s"
+    func_08047c48();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+
+    gPrologueInfo.entity2 = func_0804d160(D_03005380, D_088b8cfc, 0, 0x60, 0x11, 0, 0, 0x7f, 0);
+    gPrologueInfo.entity4 = func_0804d160(D_03005380, D_088b8cbc, 0, 0xa0, 0x30, 0, 0, 0x7f, 0);
+}
+
+// [func_08047d00] ENGINE Func_00
+void func_08047d00(void) {
+}
+
+// [func_08047d04] MAIN - Loop
+void func_08047d04(void) {
+}
+
+// [func_08047d08] MAIN - Unload
+void func_08047d08(void) {
+}
+
+// [func_08047d0c] Event 0 - Show Text, Animate Virus
+void func_08047d0c(void) {
+    func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
+}
+
 
 // Wizard's Waltz prologue
 
