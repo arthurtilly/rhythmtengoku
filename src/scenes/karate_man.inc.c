@@ -160,7 +160,7 @@ void func_080215cc(void) {
 }
 
 void func_0802160c(struct struct_080179f4_sub *arg0) {
-    u32 *temp1;
+    struct struct_080179f4_sub *temp1;
     struct struct_030055d0 *temp2;
 
     func_08018124(&temp1, &temp2);
