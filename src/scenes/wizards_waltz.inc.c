@@ -20,8 +20,8 @@ extern u32 D_08932edc[]; // Animation: "shadow"
 extern const struct SequenceData s_witch_furu_seqData; // Sound for inputting without a cue.
 
 // Additional Data - Wizard's Waltz:
-extern u32 D_089e9f10; // GFX-related Null
-extern u32 D_089e9f14[]; // GFX Array
+extern u32 D_089e9f10;   // GFX-related Null
+extern u32 D_089e9f14[]; // GFX Struct
 
 // Additional Data - Global:
 extern s16 D_03004afc; // Input Queue(?)
@@ -42,7 +42,7 @@ void func_080449b4(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_08002ee0(func_0800c3b8(), &D_089e9f14, 0x2000);
+    temp = func_08002ee0(func_0800c3b8(), D_089e9f14, 0x2000);
     func_08005d38(temp, func_080449a4, 0);
 }
 

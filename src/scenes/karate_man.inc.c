@@ -17,8 +17,8 @@ extern u32 D_088acc94[];
 extern u32 D_088acd1c[]; 
 extern u32 D_088acd54[]; 
 extern u32 D_088acc94[];
-extern u32 D_089df064;
-extern u32 D_089df1ac[];
+extern u32 D_089df064;      // GFX-related Null
+extern u32 *D_089df1ac[];   // GFX Struct Index
 extern u32 D_089df1bc[];
 extern u32 D_089df37c[];
 extern u32 D_089df37e[];
