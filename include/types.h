@@ -151,6 +151,7 @@ struct KarateManInfoSubstruct {
 };
 
 struct KarateManInfo {
+    u8 unk0;
 	struct KarateManInfoSubstruct unk_substruct;
     s16 unk14;
     u8 unk16;
@@ -171,6 +172,7 @@ struct KarateManInfo {
 };
 
 struct RapMenInfo {
+    u8 unk0;
     u32 *unk4;
     s16 unk8;
     s16 unkA;
@@ -193,6 +195,7 @@ struct WizardsWaltzSparkle {
 };
 
 struct WizardsWaltzInfo {
+    u8 version;         // Value:   unk0
     struct ScaledEntity *wizardEntity;   // Entity:  unk4
     u8  wizardState;    // Value:   unk8 {0,1}
     u32 unkC;           // Value:   posUnk0C
@@ -201,7 +204,7 @@ struct WizardsWaltzInfo {
     u32 unk18;          // Value:   posUnk18
     u32 null1C;
     u32 null20;
-    struct ScaledEntity *shadowEntity;   // Entity:  unk24
+    struct ScaledEntity *shadowEntity; // Entity:  unk24
     u32 null28;
     u32 null2C;
     u32 null30;
@@ -210,7 +213,7 @@ struct WizardsWaltzInfo {
     u32 null3C;
     u32 null40;
     struct WizardsWaltzSparkle sparkle[10]; // Struct: unk44[10]
-    struct ScaledEntity *girlEntity;     // Entity:  unk184
+    struct ScaledEntity *girlEntity; // Entity:  unk184
     u8  girlState;      // Value:   unk188 {0,1,2}
     u32 null18C;
     u32 null190;
@@ -227,38 +230,39 @@ struct WizardsWaltzInfo {
 };
 
 struct RhythmTweezersTweezers {
-    u32 entity; // Entity: Tweezers
-    u8  unk4;   // Flag: Active
-    u8  unk5;   // State: Holding { 0 = False (Open); 1 = True (Full Hair); 2 = (Half Hair) }
-    s16 unk6;   // Value: 0x4ea - ((cyclePosition * 0x5d5) / cycleTarget)
+    u32 entity; // Entity:  Tweezers
+    u8  unk4;   // Flag:    Active
+    u8  unk5;   // State:   Holding { 0 = False (Open); 1 = True (Full Hair); 2 = (Half Hair) }
+    s16 unk6;   // Value:   0x4ea - ((cyclePosition * 0x5d5) / cycleTarget)
     u32 unk8;   // Counter: Cycle Position
-    u32 unkC;   // Value: Cycle Target
-    u8  unk10;  // Flag: Pulling (assigned but never used)
+    u32 unkC;   // Value:   Cycle Target
+    u8  unk10;  // Flag:    Pulling (assigned but never used)
 };
 
 struct RhythmTweezersFallingHair {
-    u32 entity; // Entity: Falling Hair
-    s32 unk4;   // Value: Vertical Velocity
+    u32 entity; // Entity:  Falling Hair
+    s32 unk4;   // Value:   Vertical Velocity
     u32 unk8;   // Counter: Vertical Position
-    s16 unkC;   // Value: Distance From Tweezers
-    u16 unkE;   // Value: Randomised Rotation Speed ( func_08001980(0x1f) - 0xf )
+    s16 unkC;   // Value:   Distance From Tweezers
+    u16 unkE;   // Value:   Randomised Rotation Speed ( func_08001980(0x1f) - 0xf )
 };
 
 struct RhythmTweezersVegetable {
-    s16 entity0; // Entity: Current Vegetable Face
-    s16 entity2; // Entity: Upcoming Vegetable Face
-    u8  unk4;    // State: Current Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
-    u8  unk5;    // State: Upcoming Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
-    u8  unk6;    // Flag: Screen Scrolling
-    u32 unk8;    // Counter: Screen Scroll Position
-    u32 unkC;    // Value: Screen Scroll Target
-    u8  unk10;   // Flag: Destination Vegetable BG Map { 0 = D_0600f800 (Right); -1 = D_0600f000 (Left) }
+    s16 entity0;    // Entity:  Current Vegetable Face
+    s16 entity2;    // Entity:  Upcoming Vegetable Face
+    u8  unk4;       // State:   Current Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
+    u8  unk5;       // State:   Upcoming Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
+    u8  unk6;       // Flag:    Screen Scrolling
+    u32 unk8;       // Counter: Screen Scroll Position
+    u32 unkC;       // Value:   Screen Scroll Target
+    u8  unk10;      // Flag:    Destination Vegetable BG Map { 0 = D_0600f800 (Right); -1 = D_0600f000 (Left) }
 };
 
 struct RhythmTweezersInfo {
+    u8 unk0;        // Value:   Version
     struct RhythmTweezersTweezers tweezers;
     u32 unk18;      // Counter: Hair Placement Cycle Position
-    u32 unk1C;      // Value: Hair Placement Cycle Spacing
+    u32 unk1C;      // Value:   Hair Placement Cycle Spacing
     u8  unk20;      // Counter: Next Available Falling Hair {0..4}
     struct RhythmTweezersFallingHair fallingHairs[5];
     struct RhythmTweezersVegetable vegetable;
@@ -266,15 +270,13 @@ struct RhythmTweezersInfo {
         u16 u16[2];     // Missed/Queued; Barely'd
         u32 u32;        // Combined (NOT Total)
     } unk88;
-    s16 unk8C;      // Entity: Tutorial Text (Unused)
-    u16 unk8E;      // Value: Global Horizontal Position (for vegetable faces and hair)
-    s16 unk90;      // Value: Mask Current Position
-    s16 unk92;      // Value: Mask Vertical Motion
+    s16 unk8C;      // Entity:  Tutorial Text (Unused)
+    u16 unk8E;      // Value:   Global Horizontal Position (for vegetable faces and hair)
+    s16 unk90;      // Value:   Mask Current Position
+    s16 unk92;      // Value:   Mask Vertical Motion
 };
 
 struct struct_030055d0 {
-    u8 unk0;
-    u8 pad01[3];
     union {
         struct KarateManInfo karateMan;
         struct RapMenInfo rapMen;
