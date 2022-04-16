@@ -218,7 +218,7 @@ void func_08044e74_stub(void) {
 
 
 // [func_08044f94] CUE Behaviour
-u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2) {
+u32 func_08044f94(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     if (arg2 > (gWizardsWaltzInfo.cycleInterval + func_0800c3a4(0x30))) {
         return 1;
 	} else {
@@ -228,13 +228,13 @@ u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2) {
 
 
 // [func_08044fc0] CUE Despawn
-void func_08044fc0(u32 arg0, u32 *arg1) {
-    func_0800fc70(arg1[0]);
+void func_08044fc0(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
+    func_0800fc70(arg1->unk0);
 }
 
 
 // [func_08044fcc] CUE Hit
-void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
+void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     u32 isTutorial;
 
     // Play animation: "sprout_grow"
@@ -257,7 +257,7 @@ void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
 
 
 // [func_0804503c] CUE Barely
-void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1) {
+void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     u32 temp;
     u32 isTutorial;
 
@@ -292,7 +292,7 @@ void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1) {
 
 
 // [func_080450d0] CUE Miss
-void func_080450d0(u32 arg0, struct struct_080179f4_sub *arg1) {
+void func_080450d0(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     // Unknown function - likely related to score.
     func_0800bc40();
 }

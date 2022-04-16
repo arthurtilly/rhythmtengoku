@@ -693,9 +693,9 @@ extern void func_0802ee24(void);        // [func_0802ee24] MAIN - Loop
 extern void func_0802ee40_stub(void);   // [func_0802ee40] MAIN - Unload (STUB)
 extern void func_0802ee44(void);        // [func_0802ee44] ENGINE Func_01 - Reset Hair Position Cycle
 extern void func_0802ee6c(void);        // [func_0802ee6c] SUB - Update Hair Position Cycle
-// extern void func_0802ee7c(u32, struct struct_080179f4_sub1 *, u32, u32); // [func_0802ee7c] CUE Spawn - Short Hair, Long Hair
+extern void func_0802ee7c(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802ee7c] CUE Spawn - Short Hair, Long Hair
 extern u32  func_0802ef54(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802ef54] CUE Behaviour - Short Hair
-// extern u32  func_0802ef68(u32, struct struct_080179f4_sub1 *, u32, u32); // [func_0802ef68] CUE Behaviour - Long Hair
+extern u32  func_0802ef68(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802ef68] CUE Behaviour - Long Hair
 extern void func_0802f164(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f164] CUE Despawn - Short Hair, Long Hair
 extern void func_0802f170(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f170] CUE Hit - Short Hair
 extern void func_0802f21c(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f21c] CUE Hit, CUE Barely - Long Hair
@@ -1576,25 +1576,25 @@ extern void func_08039df8(void);
 
 // Wizard's Waltz
 
-extern void func_080449a4(void);                                            // [func_080449a4]
-extern void func_080449b4(void);                                            // [func_080449b4]
-extern void func_080449e4(void);                                            // [func_080449e4]
-extern void waltz_main_load(u32);                                           // [func_08044a10]
-extern void waltz_beatscript_set_rotation(u32);                             // [func_08044b80]
-extern void waltz_update_position(u32, s32, s32, u32);                      // [func_08044ba8]
-extern void waltz_main_loop(void);                                          // [func_08044c04]
-extern void waltz_beatscript_set_tutorial(u32);                             // [func_08044e60]
-extern void waltz_main_unload(void);                                        // [func_08044e74] (STUB)
-// extern ? func_08044e78(?);                                               // [func_08044e78]
-extern u32  waltz_cue_unknown(u32, u32, u32);                               // [func_08044f94]
-extern void waltz_cue_despawn(u32, u32 *);                                  // [func_08044fc0]
-extern void waltz_cue_hit(u32, struct struct_080179f4_sub *);               // [func_08044fcc]
-extern void waltz_cue_barely(u32, struct struct_080179f4_sub *);            // [func_0804503c]
-extern void waltz_cue_miss(u32, struct struct_080179f4_sub *);              // [func_080450d0]
-extern void waltz_main_unknown(void);                                       // [func_080450dc] (STUB)
-extern void func_080450e0(void);                                            // [func_080450e0] (STUB)
-extern void func_080450e4(void);                                            // [func_080450e4] (STUB)
-extern void func_080450e8(u32 arg0);                                        // [func_080450e8]
+extern void func_080449a4(void);                // [func_080449a4] GFX_LOAD Func_02
+extern void func_080449b4(void);                // [func_080449b4] GFX_LOAD Func_01
+extern void func_080449e4(void);                // [func_080449e4] GFX_LOAD Func_00
+extern void func_08044a10(u32);                 // [func_08044a10] MAIN - Load
+extern void func_08044b80(u32);                 // [func_08044b80] ENGINE Func_00 - Set Rotation Interval
+extern void func_08044ba8(struct ScaledEntity *, s32, s32, u32);    // [func_08044ba8] SUB - Update Entity Position
+extern void func_08044c04(void);                // [func_08044c04] MAIN - Loop
+extern void func_08044e60(u32);                 // [func_08044e60] ENGINE Func_01 - Set Tutorial Flag
+extern void func_08044e74_stub(void);           // [func_08044e74] MAIN - Unload (STUB)
+extern void func_08044e78(u32, struct struct_080179f4_sub *, u32);  // [func_08044e78] CUE Spawn
+extern u32  func_08044f94(u32, struct struct_080179f4_sub *, u32);  // [func_08044f94] CUE Behaviour
+extern void func_08044fc0(u32, struct struct_080179f4_sub *, u32);  // [func_08044fc0] CUE Despawn
+extern void func_08044fcc(u32, struct struct_080179f4_sub *, u32);  // [func_08044fcc] CUE Hit
+extern void func_0804503c(u32, struct struct_080179f4_sub *, u32);  // [func_0804503c] CUE Barely
+extern void func_080450d0(u32, struct struct_080179f4_sub *, u32);  // [func_080450d0] CUE Miss
+extern void func_080450dc_stub(void);           // [func_080450dc] MAIN - Input Event (STUB)
+extern void func_080450e0_stub(void);           // [func_080450e0] GRAPHICAL Func_00 - Unknown (STUB, Unused)
+extern void func_080450e4_stub(void);           // [func_080450e4] GRAPHICAL Func_01 - Unknown (STUB, Unused)
+extern void func_080450e8(u32);                 // [func_080450e8] GRAPHICAL Func_02 - Unknown (Unused?)
 
 // Sneaky Spirits prologue
 
