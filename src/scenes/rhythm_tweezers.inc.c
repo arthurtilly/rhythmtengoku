@@ -1,5 +1,6 @@
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
+#include "src/code_0800b778.h"
 
 // For readability. !TODO - CHANGE/REMOVE
 #define gRhythmTweezersInfo D_030055d0->gameInfo.rhythmTweezers
