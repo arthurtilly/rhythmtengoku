@@ -9,9 +9,9 @@
 extern s16 D_03004afc;
 
 // !TODO
-extern void func_0804d770(u32, u32, u16);
-extern void func_0804cebc(u32, s16, s8);
-extern u32 func_0804d160(u32, u32 *, s8, u32, u32, u32, u32, u32, u32);
+extern void func_0804cebc(s32, s16, s8);
+extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
+extern void func_0804d770(s32, s16, u16);
 
 extern u32 D_088acc2c[];
 extern u32 D_088acc94[];

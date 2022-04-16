@@ -31,6 +31,11 @@ extern u32 D_0600f800;    // VRAM BG Map for vegetable textures (right).
 extern u32 D_03004b22;    // Unknown Value
 extern s16 D_03004b10[];  // Screen Position Struct/Array (?)
 
+// External Functions:
+extern void func_0804cebc(s32, s16, s8);
+extern void func_0804d770(s32, s16, u16);
+extern void func_0804dae0(s32, s16, s8, u32, u32);
+
 
 /* RHYTHM TWEEZERS */
 

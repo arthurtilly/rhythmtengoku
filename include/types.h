@@ -230,7 +230,7 @@ struct WizardsWaltzInfo {
 };
 
 struct RhythmTweezersTweezers {
-    u32 entity; // Entity:  Tweezers
+    struct ScaledEntity *entity; // Entity:  Tweezers
     u8  unk4;   // Flag:    Active
     u8  unk5;   // State:   Holding { 0 = False (Open); 1 = True (Full Hair); 2 = (Half Hair) }
     s16 unk6;   // Value:   0x4ea - ((cyclePosition * 0x5d5) / cycleTarget)
@@ -240,7 +240,7 @@ struct RhythmTweezersTweezers {
 };
 
 struct RhythmTweezersFallingHair {
-    u32 entity; // Entity:  Falling Hair
+    struct ScaledEntity *entity; // Entity:  Falling Hair
     s32 unk4;   // Value:   Vertical Velocity
     u32 unk8;   // Counter: Vertical Position
     s16 unkC;   // Value:   Distance From Tweezers
