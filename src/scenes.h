@@ -1605,7 +1605,7 @@ extern void func_0804517c(u32);     // [func_0804517c] MAIN - Load
 extern void func_080451d8(void);    // [func_080451d8] ENGINE Func_00   (STUB)
 extern void func_080451dc(void);    // [func_080451dc] MAIN - Loop      (STUB)
 extern void func_080451e0(void);    // [func_080451e0] MAIN - Unload    (STUB)
-extern void func_080451e4(u32);     // [func_080451e4] Event 0 - Set Text
+extern void func_080451e4(u32);     // [func_080451e4] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Spaceball
 
@@ -1616,7 +1616,7 @@ extern void func_08045278(u32);     // [func_08045278] MAIN - Load
 extern void func_080452d4(void);    // [func_080452d4] ENGINE Func_00   (STUB)
 extern void func_080452d8(void);    // [func_080452d8] MAIN - Loop      (STUB)
 extern void func_080452dc(void);    // [func_080452dc] MAIN - Unload    (STUB)
-extern void func_080452e0(u32);     // [func_080452e0] Event 0 - Set Text
+extern void func_080452e0(u32);     // [func_080452e0] Event 0 - Set Animation Frame (Text)
 
 // Prologue: The Bon Odori
 
@@ -1627,7 +1627,7 @@ extern void func_08045374(u32);     // [func_08045374] MAIN - Load
 extern void func_080453d0(void);    // [func_080453d0] ENGINE Func_00   (STUB)
 extern void func_080453d4(void);    // [func_080453d4] MAIN - Loop      (STUB)
 extern void func_080453d8(void);    // [func_080453d8] MAIN - Unload    (STUB)
-extern void func_080453dc(void);    // [func_080453dc] Event 0 - Show Text
+extern void func_080453dc(void);    // [func_080453dc] Event 0 - Play Animation (Text)
 
 // Prologue: Bon Dance
 
@@ -1638,7 +1638,7 @@ extern void func_08045478(u32);     // [func_08045478] MAIN - Load
 extern void func_080454d4(void);    // [func_080454d4] ENGINE Func_00   (STUB)
 extern void func_080454d8(void);    // [func_080454d8] MAIN - Loop      (STUB)
 extern void func_080454dc(void);    // [func_080454dc] MAIN - Unload    (STUB)
-extern void func_080454e0(void);    // [func_080454e0] Event 0 - Show Text
+extern void func_080454e0(void);    // [func_080454e0] Event 0 - Play Animation (Text)
 
 // Prologue: Karate Man
 
@@ -1649,8 +1649,8 @@ extern void func_0804557c(u32);     // [func_0804557c] MAIN - LOAD
 extern void func_080455f8(void);    // [func_080455f8] ENGINE Func_00   (STUB)
 extern void func_080455fc(void);    // [func_080455fc] MAIN - Loop      (STUB)
 extern void func_08045600(void);    // [func_08045600] MAIN - Unload    (STUB)
-extern void func_08045604(u32);     // [func_08045604] Event 0 - Set Text
-extern void func_08045628(void);    // [func_08045628] Event 1 - Kick
+extern void func_08045604(u32);     // [func_08045604] Event 0 - Set Animation Frame (Text)
+extern void func_08045628(void);    // [func_08045628] Event 1 - Play Animation (Kick)
 
 // Prologue: Cosmic Dance
 
@@ -1672,7 +1672,7 @@ extern void func_08045824(u32);     // [func_08045824] MAIN - Load
 extern void func_080458e0(void);    // [func_080458e0] ENGINE Func_00   (STUB)
 extern void func_080458e4(void);    // [func_080458e4] MAIN - Loop      (STUB)
 extern void func_080458e8(void);    // [func_080458e8] MAIN - Unload    (STUB)
-extern void func_080458ec(u32);     // [func_080458ec] Event 0 - Animate Play-yan; Event 1 - Show Text
+extern void func_080458ec(u32);     // [func_080458ec] Event 0 - Play Animation (Play-yan); Event 1 - Play Animation (Text)
 
 // Prologue: Showtime
 
@@ -1683,7 +1683,7 @@ extern void func_080459b4(u32);     // [func_080459b4] MAIN - Load
 extern void func_08045a44(void);    // [func_08045a44] ENGINE Func_00   (STUB)
 extern void func_08045a48(void);    // [func_08045a48] MAIN - Loop      (STUB)
 extern void func_08045a4c(void);    // [func_08045a4c] MAIN - Unload    (STUB)
-extern void func_08045a50(void);    // [func_08045a50] Event 0 - Show Text, Animate Penguin
+extern void func_08045a50(void);    // [func_08045a50] Event 0 - Play Animation (Text), Play Animation (Penguin)
 
 // Prologue: Bouncy Road
 
@@ -1694,7 +1694,7 @@ extern void func_08045b00(u32);     // [func_08045b00] MAIN - Load
 extern void func_08045b88(void);    // [func_08045b88] ENGINE Func_00   (STUB)
 extern void func_08045b8c(void);    // [func_08045b8c] MAIN - Loop      (STUB)
 extern void func_08045b90(void);    // [func_08045b90] MAIN - Unload    (STUB)
-extern void func_08045b94(u32);     // [func_08045b94] Event 0 - Animate Bouncers; Event 1 - Show Text
+extern void func_08045b94(u32);     // [func_08045b94] Event 0 - Play Animation (Bouncers); Event 1 - Play Animation (Text)
 
 // Prologue: Rhythm Tweezers
 
@@ -1705,7 +1705,7 @@ extern void func_08045c5c(u32);     // [func_08045c5c] MAIN - Load
 extern void func_08045cb8(void);    // [func_08045cb8] ENGINE Func_00   (STUB)
 extern void func_08045cbc(void);    // [func_08045cbc] MAIN - Loop      (STUB)
 extern void func_08045cc0(void);    // [func_08045cc0] MAIN - Unload    (STUB)
-extern void func_08045cc4(void);    // [func_08045cc4] Event 0 - Show Text
+extern void func_08045cc4(void);    // [func_08045cc4] Event 0 - Play Animation (Text)
 
 // Prologue: Fireworks
 
@@ -1716,7 +1716,7 @@ extern void func_08045d60(u32);     // [func_08045d60] MAIN - Load
 extern void func_08045dbc(void);    // [func_08045dbc] ENGINE Func_00   (STUB)
 extern void func_08045dc0(void);    // [func_08045dc0] MAIN - Loop      (STUB)
 extern void func_08045dc4(void);    // [func_08045dc4] MAIN - Unload    (STUB)
-extern void func_08045dc8(u32);     // [func_08045dc8] Event 0 - Set Text
+extern void func_08045dc8(u32);     // [func_08045dc8] Event 0 - Set Animation Frame (Text)
 
 // Prologue: The Clappy Trio
 
@@ -1727,7 +1727,7 @@ extern void func_08045e5c(u32);     // [func_08045e5c] MAIN - Load
 extern void func_08045eb8(void);    // [func_08045eb8] ENGINE Func_00   (STUB)
 extern void func_08045ebc(void);    // [func_08045ebc] MAIN - Loop      (STUB)
 extern void func_08045ec0(void);    // [func_08045ec0] MAIN - Unload    (STUB)
-extern void func_08045ec4(u32);     // [func_08045ec4] Event 0 - Set Text
+extern void func_08045ec4(u32);     // [func_08045ec4] Event 0 - Set Animation Frame (Text)
 
 // Prologue: The Snappy Trio
 
@@ -1738,7 +1738,7 @@ extern void func_08045f58(u32);     // [func_08045f58] MAIN - Load
 extern void func_08045fb4(void);    // [func_08045fb4] ENGINE Func_00   (STUB)
 extern void func_08045fb8(void);    // [func_08045fb8] MAIN - Loop      (STUB)
 extern void func_08045fbc(void);    // [func_08045fbc] MAIN - Unload    (STUB)
-extern void func_08045fc0(u32);     // [func_08045fc0] Event 0 - Set Text
+extern void func_08045fc0(u32);     // [func_08045fc0] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Samurai Slice
 
@@ -1749,7 +1749,7 @@ extern void func_08046054(u32);     // [func_08046054] MAIN - Load
 extern void func_080460c8(void);    // [func_080460c8] ENGINE Func_00   (STUB)
 extern void func_080460cc(void);    // [func_080460cc] MAIN - Loop      (STUB)
 extern void func_080460d0(void);    // [func_080460d0] MAIN - Unload    (STUB)
-extern void func_080460d4(u32);     // [func_080460d4] Event 0 - Set Text
+extern void func_080460d4(u32);     // [func_080460d4] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Power Calligraphy
 
@@ -1760,7 +1760,7 @@ extern void func_08046168(u32);     // [func_08046168] MAIN - Load
 extern void func_080461c4(void);    // [func_080461c4] ENGINE Func_00   (STUB)
 extern void func_080461c8(void);    // [func_080461c8] MAIN - Loop      (STUB)
 extern void func_080461cc(void);    // [func_080461cc] MAIN - Unload    (STUB)
-extern void func_080461d0(u32);     // [func_080461d0] Event 0 - Set Text
+extern void func_080461d0(u32);     // [func_080461d0] Event 0 - Set Animation Frame (Text)
 extern void func_080461f4(void);    // [func_080461f4] Event 1 - HAI
 
 // Prologue: Marching Orders
@@ -1772,7 +1772,7 @@ extern void func_080462a4(u32);     // [func_080462a4] MAIN - Load
 extern void func_08046300(void);    // [func_08046300] ENGINE Func_00   (STUB)
 extern void func_08046304(void);    // [func_08046304] MAIN - Loop      (STUB)
 extern void func_08046308(void);    // [func_08046308] MAIN - Unload    (STUB)
-extern void func_0804630c(u32);     // [func_0804630c] Event 0 - Set Text
+extern void func_0804630c(u32);     // [func_0804630c] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Marching Orders 2
 
@@ -1783,7 +1783,7 @@ extern void func_080463a0(u32);     // [func_080463a0] MAIN - Load
 extern void func_080463fc(void);    // [func_080463fc] ENGINE Func_00   (STUB)
 extern void func_08046400(void);    // [func_08046400] MAIN - Loop      (STUB)
 extern void func_08046404(void);    // [func_08046404] MAIN - Unload    (STUB)
-extern void func_08046408(u32);     // [func_08046408] Event 0 - Set Text
+extern void func_08046408(u32);     // [func_08046408] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Polyrhythm
 
@@ -1794,7 +1794,7 @@ extern void func_0804649c(u32);     // [func_0804649c] MAIN - Load
 extern void func_080464f8(void);    // [func_080464f8] ENGINE Func_00   (STUB)
 extern void func_080464fc(void);    // [func_080464fc] MAIN - Loop      (STUB)
 extern void func_08046500(void);    // [func_08046500] MAIN - Unload    (STUB)
-extern void func_08046504(u32);     // [func_08046504] Event 0 - Set Text
+extern void func_08046504(u32);     // [func_08046504] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Quiz Show
 
@@ -1805,7 +1805,7 @@ extern void func_08046598(u32);     // [func_08046598] MAIN - Load
 extern void func_080465f8(void);    // [func_080465f8] ENGINE Func_00   (STUB)
 extern void func_080465fc(void);    // [func_080465fc] MAIN - Loop      (STUB)
 extern void func_08046600(void);    // [func_08046600] MAIN - Unload    (STUB)
-extern void func_08046604(u32);     // [func_08046604] Event 0 - Set Text
+extern void func_08046604(u32);     // [func_08046604] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Remix 1
 
@@ -1816,7 +1816,7 @@ extern void func_08046698(u32);     // [func_08046698] MAIN - Load
 extern void func_080466f4(void);    // [func_080466f4] ENGINE Func_00   (STUB)
 extern void func_080466f8(void);    // [func_080466f8] MAIN - Loop      (STUB)
 extern void func_080466fc(void);    // [func_080466fc] MAIN - Unload    (STUB)
-extern void func_08046700(u32);     // [func_08046700] Event 0 - Set Text
+extern void func_08046700(u32);     // [func_08046700] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Remix 2
 
@@ -1827,7 +1827,7 @@ extern void func_08046794(u32);     // [func_08046794] MAIN - Load
 extern void func_080467f0(void);    // [func_080467f0] ENGINE Func_00   (STUB)
 extern void func_080467f4(void);    // [func_080467f4] MAIN - Loop      (STUB)
 extern void func_080467f8(void);    // [func_080467f8] MAIN - Unload    (STUB)
-extern void func_080467fc(u32);     // [func_080467fc] Event 0 - Set Text
+extern void func_080467fc(u32);     // [func_080467fc] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Remix 3
 
@@ -1838,7 +1838,7 @@ extern void func_08046890(u32);     // [func_08046890] MAIN - Load
 extern void func_080468ec(void);    // [func_080468ec] ENGINE Func_00   (STUB)
 extern void func_080468f0(void);    // [func_080468f0] MAIN - Loop      (STUB)
 extern void func_080468f4(void);    // [func_080468f4] MAIN - Unload    (STUB)
-extern void func_080468f8(u32);     // [func_080468f8] Event 0 - Set Text
+extern void func_080468f8(u32);     // [func_080468f8] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Remix 4
 
@@ -1849,7 +1849,7 @@ extern void func_0804698c(u32);     // [func_0804698c] MAIN - Load
 extern void func_080469e8(void);    // [func_080469e8] ENGINE Func_00   (STUB)
 extern void func_080469ec(void);    // [func_080469ec] MAIN - Loop      (STUB)
 extern void func_080469f0(void);    // [func_080469f0] MAIN - Unload    (STUB)
-extern void func_080469f4(u32);     // [func_080469f4] Event 0 - Set Text
+extern void func_080469f4(u32);     // [func_080469f4] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Remix 5
 
@@ -1860,7 +1860,7 @@ extern void func_08046a88(u32);     // [func_08046a88] MAIN - Load
 extern void func_08046ae4(void);    // [func_08046ae4] ENGINE Func_00   (STUB)
 extern void func_08046ae8(void);    // [func_08046ae8] MAIN - Loop      (STUB)
 extern void func_08046aec(void);    // [func_08046aec] MAIN - Unload    (STUB)
-extern void func_08046af0(u32);     // [func_08046af0] Event 0 - Set Text
+extern void func_08046af0(u32);     // [func_08046af0] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Remix 6
 
@@ -1871,7 +1871,7 @@ extern void func_08046b84(u32);     // [func_08046b84] MAIN - Load
 extern void func_08046be0(void);    // [func_08046be0] ENGINE Func_00   (STUB)
 extern void func_08046be4(void);    // [func_08046be4] MAIN - Loop      (STUB)
 extern void func_08046be8(void);    // [func_08046be8] MAIN - Unload    (STUB)
-extern void func_08046bec(u32);     // [func_08046af0] Event 0 - Set Text
+extern void func_08046bec(u32);     // [func_08046af0] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Remix 7
 
@@ -1882,7 +1882,7 @@ extern void func_08046c80(u32);     // [func_08046c80] MAIN - Load
 extern void func_08046cdc(void);    // [func_08046cdc] ENGINE Func_00   (STUB)
 extern void func_08046ce0(void);    // [func_08046ce0] MAIN - Loop      (STUB)
 extern void func_08046ce4(void);    // [func_08046ce4] MAIN - Unload    (STUB)
-extern void func_08046ce8(u32);     // [func_08046ce8] Event 0 - Set Text
+extern void func_08046ce8(u32);     // [func_08046ce8] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Remix 8
 
@@ -1893,7 +1893,7 @@ extern void func_08046d7c(u32);     // [func_08046d7c] MAIN - Load
 extern void func_08046dd8(void);    // [func_08046dd8] ENGINE Func_00   (STUB)
 extern void func_08046ddc(void);    // [func_08046ddc] MAIN - Loop      (STUB)
 extern void func_08046de0(void);    // [func_08046de0] MAIN - Unload    (STUB)
-extern void func_08046de4(u32);     // [func_08046de4] Event 0 - Set Text
+extern void func_08046de4(u32);     // [func_08046de4] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Bunny Hop
 
@@ -1904,8 +1904,8 @@ extern void func_08046e78(u32);     // [func_08046e78] MAIN - Load
 extern void func_08046f00(void);    // [func_08046f00] ENGINE Func_00   (STUB)
 extern void func_08046f04(void);    // [func_08046f04] MAIN - Loop      (STUB)
 extern void func_08046f08(void);    // [func_08046f08] MAIN - Unload    (STUB)
-extern void func_08046f0c(u32);     // [func_08046f0c] Event 0 - Set Text
-extern void func_08046f30(void);    // [func_08046f30] Event 1 - Animate Rabbits
+extern void func_08046f0c(u32);     // [func_08046f0c] Event 0 - Set Animation Frame (Text)
+extern void func_08046f30(void);    // [func_08046f30] Event 1 - Play Animation (Rabbits)
 
 // Prologue: Rap Men
 
@@ -1916,7 +1916,7 @@ extern void func_08046fcc(u32);     // [func_08046fcc] MAIN - Load
 extern void func_08047028(void);    // [func_08047028] ENGINE Func_00   (STUB)
 extern void func_0804702c(void);    // [func_0804702c] MAIN - Loop      (STUB)
 extern void func_08047030(void);    // [func_08047030] MAIN - Unload    (STUB)
-extern void func_08047034(void);    // [func_08047034] Event 0 - Show Text
+extern void func_08047034(void);    // [func_08047034] Event 0 - Play Animation (Text)
 
 // Prologue: Rap Women
 
@@ -1927,7 +1927,7 @@ extern void func_080470d0(u32);     // [func_080470d0] MAIN - Load
 extern void func_0804712c(void);    // [func_0804712c] ENGINE Func_00   (STUB)
 extern void func_08047130(void);    // [func_08047130] MAIN - Loop      (STUB)
 extern void func_08047134(void);    // [func_08047134] MAIN - Unload    (STUB)
-extern void func_08047138(void);    // [func_08047138] Event 0 - Show Text
+extern void func_08047138(void);    // [func_08047138] Event 0 - Play Animation (Text)
 
 // Prologue: Rat Race
 
@@ -1938,8 +1938,8 @@ extern void func_080471d4(u32);     // [func_080471d4] MAIN - Load
 extern void func_08047250(void);    // [func_08047250] ENGINE Func_00   (STUB)
 extern void func_08047254(void);    // [func_08047254] MAIN - Loop      (STUB)
 extern void func_08047258(void);    // [func_08047258] MAIN - Unload    (STUB)
-extern void func_0804725c(u32);     // [func_0804725c] Event 0 - Set Text
-extern void func_08047280(void);    // [func_08047280] Event 1 - Animate Rat
+extern void func_0804725c(u32);     // [func_0804725c] Event 0 - Set Animation Frame (Text)
+extern void func_08047280(void);    // [func_08047280] Event 1 - Play Animation (Rat)
 
 // Prologue: Ninja Bodyguard
 
@@ -1950,7 +1950,7 @@ extern void func_0804732c(u32);     // [func_0804732c] MAIN - Load
 extern void func_08047398(void);    // [func_08047398] ENGINE Func_00   (STUB)
 extern void func_0804739c(void);    // [func_0804739c] MAIN - Loop      (STUB)
 extern void func_080473a0(void);    // [func_080473a0] MAIN - Unload    (STUB)
-extern void func_080473a4(u32);     // [func_080473a4] Event 0 - Show Text
+extern void func_080473a4(u32);     // [func_080473a4] Event 0 - Play Animation (Text)
 
 // Prologue: Ninja Bodyguard 2
 
@@ -1961,7 +1961,7 @@ extern void func_08047444(u32);     // [func_08047444] MAIN - Load
 extern void func_080474a0(void);    // [func_080474a0] ENGINE Func_00   (STUB)
 extern void func_080474a4(void);    // [func_080474a4] MAIN - Loop      (STUB)
 extern void func_080474a8(void);    // [func_080474a8] MAIN - Unload    (STUB)
-extern void func_080474ac(u32);     // [func_080474ac] Event 0 - Show Text
+extern void func_080474ac(u32);     // [func_080474ac] Event 0 - Play Animation (Text)
 
 // Prologue: Space Dance
 
@@ -1983,7 +1983,7 @@ extern void func_080476e8(u32);     // [func_080476e8] MAIN - Load
 extern void func_08047764(void);    // [func_08047764] ENGINE Func_00   (STUB)
 extern void func_08047768(void);    // [func_08047768] MAIN - Loop      (STUB)
 extern void func_0804776c(void);    // [func_0804776c] MAIN - Unload    (STUB)
-extern void func_08047770(u32);     // [func_08047770] Event 0 - Set Text
+extern void func_08047770(u32);     // [func_08047770] Event 0 - Set Animation Frame (Text)
 extern void func_08047794(void);    // [func_08047794] Event 1 - Animate Text
 
 // Prologue: Tap Trial 2
@@ -1995,7 +1995,7 @@ extern void func_08047824(u32);     // [func_08047824] MAIN - Load
 extern void func_08047888(void);    // [func_08047888] ENGINE Func_00   (STUB)
 extern void func_0804788c(void);    // [func_0804788c] MAIN - Loop      (STUB)
 extern void func_08047890(void);    // [func_08047890] MAIN - Unload    (STUB)
-extern void func_08047894(u32);     // [func_08047894] Event 0 - Set Text
+extern void func_08047894(u32);     // [func_08047894] Event 0 - Set Animation Frame (Text)
 extern void func_080478b8(void);    // [func_080478b8] Event 1 - Animate Text
 
 // Prologue: Toss Boys
@@ -2007,7 +2007,7 @@ extern void func_08047948(u32);     // [func_08047948] MAIN - Load
 extern void func_080479a4(void);    // [func_080479a4] ENGINE Func_00   (STUB)
 extern void func_080479a8(void);    // [func_080479a8] MAIN - Loop      (STUB)
 extern void func_080479ac(void);    // [func_080479ac] MAIN - Unload    (STUB)
-extern void func_080479b0(u32);     // [func_080479b0] Event 0 - Set Text
+extern void func_080479b0(u32);     // [func_080479b0] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Toss Boys 2
 
@@ -2018,7 +2018,7 @@ extern void func_08047a44(u32);     // [func_08047a44] MAIN - Load
 extern void func_08047aa0(void);    // [func_08047aa0] ENGINE Func_00   (STUB)
 extern void func_08047aa4(void);    // [func_08047aa4] MAIN - Loop      (STUB)
 extern void func_08047aa8(void);    // [func_08047aa8] MAIN - Unload    (STUB)
-extern void func_08047aac(u32);     // [func_08047aac] Event 0 - Set Text
+extern void func_08047aac(u32);     // [func_08047aac] Event 0 - Set Animation Frame (Text)
 
 // Prologue: Tram & Pauline
 
@@ -2029,7 +2029,7 @@ extern void func_08047b40(u32);     // [func_08047b40] MAIN - Load
 extern void func_08047bd0(void);    // [func_08047bd0] ENGINE Func_00   (STUB)
 extern void func_08047bd4(void);    // [func_08047bd4] MAIN - Loop      (STUB)
 extern void func_08047bd8(void);    // [func_08047bd8] MAIN - Unload    (STUB)
-extern void func_08047bdc(void);    // [func_08047bdc] Event 0 - Show Text
+extern void func_08047bdc(void);    // [func_08047bdc] Event 0 - Play Animation (Text)
 
 // Prologue: Sick Beats
 
@@ -2040,7 +2040,7 @@ extern void func_08047c78(u32);     // [func_08047c78] MAIN - Load
 extern void func_08047d00(void);    // [func_08047d00] ENGINE Func_00   (STUB)
 extern void func_08047d04(void);    // [func_08047d04] MAIN - Loop      (STUB)
 extern void func_08047d08(void);    // [func_08047d08] MAIN - Unload    (STUB)
-extern void func_08047d0c(void);    // [func_08047d0c] Event 0 - Show Text, Animate Virus
+extern void func_08047d0c(void);    // [func_08047d0c] Event 0 - Play Animation (Text), Play Animation (Virus)
 
 // Prologue: Wizard's Waltz
 
@@ -2051,4 +2051,4 @@ extern void func_08047dbc(u32);     // [func_08047dbc] MAIN - Load
 extern void func_08047e18(void);    // [func_08047e18] ENGINE Func_00   (STUB)
 extern void func_08047e1c(void);    // [func_08047e1c] MAIN - Loop      (STUB)
 extern void func_08047e20(void);    // [func_08047e20] MAIN - Unload    (STUB)
-extern void func_08047e24(void);    // [func_08047e24] Event 0 - Show Text
+extern void func_08047e24(void);    // [func_08047e24] Event 0 - Play Animation (Text)

@@ -244,7 +244,7 @@ void func_080451dc(void) {
 void func_080451e0(void) {
 }
 
-// [func_080451e4] Event 0 - Set Text
+// [func_080451e4] Event 0 - Set Animation Frame (Text)
 void func_080451e4(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -301,7 +301,7 @@ void func_080452d8(void) {
 void func_080452dc(void) {
 }
 
-// [func_080452e0] Event 0 - Set Text
+// [func_080452e0] Event 0 - Set Animation Frame (Text)
 void func_080452e0(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -358,7 +358,7 @@ void func_080453d4(void) {
 void func_080453d8(void) {
 }
 
-// [func_080453dc] Event 0 - Show Text
+// [func_080453dc] Event 0 - Play Animation (Text)
 void func_080453dc(void) {
     func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
 }
@@ -415,7 +415,7 @@ void func_080454d8(void) {
 void func_080454dc(void) {
 }
 
-// [func_080454e0] Event 0 - Show Text
+// [func_080454e0] Event 0 - Play Animation (Text)
 void func_080454e0(void) {
     func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
 }
@@ -473,12 +473,12 @@ void func_080455fc(void) {
 void func_08045600(void) {
 }
 
-// [func_08045604] Event 0 - Set Text
+// [func_08045604] Event 0 - Set Animation Frame (Text)
 void func_08045604(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
 
-// [func_08045628] Event 1 - Kick
+// [func_08045628] Event 1 - Play Animation (Kick)
 void func_08045628(void) {
     func_0804cebc(D_03005380, gPrologueInfo.entity4, 1);
     func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
@@ -605,13 +605,13 @@ void func_080458e4(void) {
 void func_080458e8(void) {
 }
 
-// [func_080458ec] Event 0 - Animate Play-yan; Event 1 - Show Text
+// [func_080458ec] Event 0 - Play Animation (Play-yan); Event 1 - Play Animation (Text)
 void func_080458ec(u32 event) {
     switch (event) {
-        case 0: // Event 0 - Animate Play-yan
+        case 0: // Event 0 - Play Animation (Play-yan)
             func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
             break;
-        case 1: // Event 1 - Show Text
+        case 1: // Event 1 - Play Animation (Text)
             func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
             break;
     }
@@ -670,7 +670,7 @@ void func_08045a48(void) {
 void func_08045a4c(void) {
 }
 
-// [func_08045a50] Event 0 - Show Text, Animate Penguin
+// [func_08045a50] Event 0 - Play Animation (Text), Play Animation (Penguin)
 void func_08045a50(void) {
     func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
     func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
@@ -729,13 +729,13 @@ void func_08045b8c(void) {
 void func_08045b90(void) {
 }
 
-// [func_08045b94] Event 0 - Animate Bouncers; Event 1 - Show Text
+// [func_08045b94] Event 0 - Play Animation (Bouncers); Event 1 - Play Animation (Text)
 void func_08045b94(u32 event) {
     switch (event) {
-        case 0: // Event 0 - Animate Bouncers
+        case 0: // Event 0 - Play Animation (Bouncers)
             func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
             break;
-        case 1: // Event 1 - Show Text
+        case 1: // Event 1 - Play Animation (Text)
             func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
             break;
     }
@@ -793,7 +793,7 @@ void func_08045cbc(void) {
 void func_08045cc0(void) {
 }
 
-// [func_08045cc4] Event 0 - Show Text
+// [func_08045cc4] Event 0 - Play Animation (Text)
 void func_08045cc4(void) {
     func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
 }
@@ -850,7 +850,7 @@ void func_08045dc0(void) {
 void func_08045dc4(void) {
 }
 
-// [func_08045dc8] Event 0 - Set Text
+// [func_08045dc8] Event 0 - Set Animation Frame (Text)
 void func_08045dc8(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -907,7 +907,7 @@ void func_08045ebc(void) {
 void func_08045ec0(void) {
 }
 
-// [func_08045ec4] Event 0 - Set Text
+// [func_08045ec4] Event 0 - Set Animation Frame (Text)
 void func_08045ec4(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -964,7 +964,7 @@ void func_08045fb8(void) {
 void func_08045fbc(void) {
 }
 
-// [func_08045fc0] Event 0 - Set Text
+// [func_08045fc0] Event 0 - Set Animation Frame (Text)
 void func_08045fc0(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1022,7 +1022,7 @@ void func_080460cc(void) {
 void func_080460d0(void) {
 }
 
-// [func_080460d4] Event 0 - Set Text
+// [func_080460d4] Event 0 - Set Animation Frame (Text)
 void func_080460d4(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1079,7 +1079,7 @@ void func_080461c8(void) {
 void func_080461cc(void) {
 }
 
-// [func_080461d0] Event 0 - Set Text
+// [func_080461d0] Event 0 - Set Animation Frame (Text)
 void func_080461d0(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1142,7 +1142,7 @@ void func_08046304(void) {
 void func_08046308(void) {
 }
 
-// [func_0804630c] Event 0 - Set Text
+// [func_0804630c] Event 0 - Set Animation Frame (Text)
 void func_0804630c(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1199,7 +1199,7 @@ void func_08046400(void) {
 void func_08046404(void) {
 }
 
-// [func_08046408] Event 0 - Set Text
+// [func_08046408] Event 0 - Set Animation Frame (Text)
 void func_08046408(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1256,7 +1256,7 @@ void func_080464fc(void) {
 void func_08046500(void) {
 }
 
-// [func_08046504] Event 0 - Set Text
+// [func_08046504] Event 0 - Set Animation Frame (Text)
 void func_08046504(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1313,7 +1313,7 @@ void func_080465fc(void) {
 void func_08046600(void) {
 }
 
-// [func_08046604] Event 0 - Set Text
+// [func_08046604] Event 0 - Set Animation Frame (Text)
 void func_08046604(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1370,7 +1370,7 @@ void func_080466f8(void) {
 void func_080466fc(void) {
 }
 
-// [func_08046700] Event 0 - Set Text
+// [func_08046700] Event 0 - Set Animation Frame (Text)
 void func_08046700(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1427,7 +1427,7 @@ void func_080467f4(void) {
 void func_080467f8(void) {
 }
 
-// [func_080467fc] Event 0 - Set Text
+// [func_080467fc] Event 0 - Set Animation Frame (Text)
 void func_080467fc(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1484,7 +1484,7 @@ void func_080468f0(void) {
 void func_080468f4(void) {
 }
 
-// [func_080468f8] Event 0 - Set Text
+// [func_080468f8] Event 0 - Set Animation Frame (Text)
 void func_080468f8(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1541,7 +1541,7 @@ void func_080469ec(void) {
 void func_080469f0(void) {
 }
 
-// [func_080469f4] Event 0 - Set Text
+// [func_080469f4] Event 0 - Set Animation Frame (Text)
 void func_080469f4(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1598,7 +1598,7 @@ void func_08046ae8(void) {
 void func_08046aec(void) {
 }
 
-// [func_08046af0] Event 0 - Set Text
+// [func_08046af0] Event 0 - Set Animation Frame (Text)
 void func_08046af0(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1655,7 +1655,7 @@ void func_08046be4(void) {
 void func_08046be8(void) {
 }
 
-// [func_08046bec] Event 0 - Set Text
+// [func_08046bec] Event 0 - Set Animation Frame (Text)
 void func_08046bec(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1712,7 +1712,7 @@ void func_08046ce0(void) {
 void func_08046ce4(void) {
 }
 
-// [func_08046ce8] Event 0 - Set Text
+// [func_08046ce8] Event 0 - Set Animation Frame (Text)
 void func_08046ce8(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1769,7 +1769,7 @@ void func_08046ddc(void) {
 void func_08046de0(void) {
 }
 
-// [func_08046de4] Event 0 - Set Text
+// [func_08046de4] Event 0 - Set Animation Frame (Text)
 void func_08046de4(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -1827,12 +1827,12 @@ void func_08046f04(void) {
 void func_08046f08(void) {
 }
 
-// [func_08046f0c] Event 0 - Set Text
+// [func_08046f0c] Event 0 - Set Animation Frame (Text)
 void func_08046f0c(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
 
-// [func_08046f30] Event 1 - Animate Rabbits
+// [func_08046f30] Event 1 - Play Animation (Rabbits)
 void func_08046f30(void) {
     func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
 }
@@ -1889,7 +1889,7 @@ void func_0804702c(void) {
 void func_08047030(void) {
 }
 
-// [func_08047034] Event 0 - Show Text
+// [func_08047034] Event 0 - Play Animation (Text)
 void func_08047034(void) {
     func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
 }
@@ -1946,7 +1946,7 @@ void func_08047130(void) {
 void func_08047134(void) {
 }
 
-// [func_08047138] Event 0 - Show Text
+// [func_08047138] Event 0 - Play Animation (Text)
 void func_08047138(void) {
     func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
 }
@@ -2004,12 +2004,12 @@ void func_08047254(void) {
 void func_08047258(void) {
 }
 
-// [func_0804725c] Event 0 - Set Text
+// [func_0804725c] Event 0 - Set Animation Frame (Text)
 void func_0804725c(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
 
-// [func_08047280] Event 1 - Animate Rat
+// [func_08047280] Event 1 - Play Animation (Rat)
 void func_08047280(void) {
     func_0804cebc(D_03005380, gPrologueInfo.entity4, 1);
     func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
@@ -2068,7 +2068,7 @@ void func_0804739c(void) {
 void func_080473a0(void) {
 }
 
-// [func_080473a4] Event 0 - Show Text
+// [func_080473a4] Event 0 - Play Animation (Text)
 void func_080473a4(u32 speed) {
     func_0804dae0(D_03005380, gPrologueInfo.entity2, speed, 0x7f, 0);
 }
@@ -2125,7 +2125,7 @@ void func_080474a4(void) {
 void func_080474a8(void) {
 }
 
-// [func_080474ac] Event 0 - Show Text
+// [func_080474ac] Event 0 - Play Animation (Text)
 void func_080474ac(u32 speed) {
     func_0804dae0(D_03005380, gPrologueInfo.entity2, speed, 0x7f, 0);
 }
@@ -2189,13 +2189,13 @@ void func_0804762c(void) {
 void func_08047630(u32 event) {
     u16 entity;
     switch (event) {
-        case 0: // Object 0 - Text
+        case 0: // Entity 0 - Text
             entity = gPrologueInfo.entity2;
             break;
-        case 1: // Object 1 - Faces
+        case 1: // Entity 1 - Faces
             entity = gPrologueInfo.entity4;
             break;
-        case 2: // Object 2 - Star
+        case 2: // Entity 2 - Star
             entity = gPrologueInfo.entity6;
             break;
     }
@@ -2255,7 +2255,7 @@ void func_08047768(void) {
 void func_0804776c(void) {
 }
 
-// [func_08047770] Event 0 - Set Text
+// [func_08047770] Event 0 - Set Animation Frame (Text)
 void func_08047770(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -2317,7 +2317,7 @@ void func_0804788c(void) {
 void func_08047890(void) {
 }
 
-// [func_08047894] Event 0 - Set Text
+// [func_08047894] Event 0 - Set Animation Frame (Text)
 void func_08047894(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -2379,7 +2379,7 @@ void func_080479a8(void) {
 void func_080479ac(void) {
 }
 
-// [func_080479b0] Event 0 - Set Text
+// [func_080479b0] Event 0 - Set Animation Frame (Text)
 void func_080479b0(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -2436,7 +2436,7 @@ void func_08047aa4(void) {
 void func_08047aa8(void) {
 }
 
-// [func_08047aac] Event 0 - Set Text
+// [func_08047aac] Event 0 - Set Animation Frame (Text)
 void func_08047aac(u32 frame) {
     func_0804cebc(D_03005380, gPrologueInfo.entity2, frame);
 }
@@ -2552,7 +2552,7 @@ void func_08047d04(void) {
 void func_08047d08(void) {
 }
 
-// [func_08047d0c] Event 0 - Show Text, Animate Virus
+// [func_08047d0c] Event 0 - Play Animation (Text), Play Animation (Virus)
 void func_08047d0c(void) {
     func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
     func_0804dae0(D_03005380, gPrologueInfo.entity4, 1, 0x7f, 0);
@@ -2610,7 +2610,7 @@ void func_08047e1c(void) {
 void func_08047e20(void) {
 }
 
-// [func_08047e24] Event 0 - Show Text
+// [func_08047e24] Event 0 - Play Animation (Text)
 void func_08047e24(void) {
     func_0804dae0(D_03005380, gPrologueInfo.entity2, 1, 0x7f, 0);
 }
