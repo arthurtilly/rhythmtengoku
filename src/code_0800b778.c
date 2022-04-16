@@ -122,7 +122,9 @@ extern u32 func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16); // Non-Sca
 
 #include "asm/code_0800b778/asm_0800c3a4.s"
 
-#include "asm/code_0800b778/asm_0800c3b8.s"
+u32 func_0800c3b8() {
+    return D_03001310[0];
+}
 
 #include "asm/code_0800b778/asm_0800c3c4.s"
 

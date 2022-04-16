@@ -184,7 +184,7 @@ struct RapMenInfo {
 };
 
 struct WizardsWaltzSparkle {
-    struct ScaledEntity *entity;     // Entity:  unk0
+    struct ScaledEntity *entity; // Entity:  unk0
     u8  state;      // Value:   unk4 {0,1,2}
     u32 unk8;       // Counter: unk8
     u32 unkC;       // Value:   posUnk0C
@@ -196,7 +196,7 @@ struct WizardsWaltzSparkle {
 
 struct WizardsWaltzInfo {
     u8 version;         // Value:   unk0
-    struct ScaledEntity *wizardEntity;   // Entity:  unk4
+    struct ScaledEntity *wizardEntity; // Entity:  unk4
     u8  wizardState;    // Value:   unk8 {0,1}
     u32 unkC;           // Value:   posUnk0C
     u32 unk10;          // Value:   posUnk10
@@ -259,7 +259,7 @@ struct RhythmTweezersVegetable {
 };
 
 struct RhythmTweezersInfo {
-    u8 unk0;        // Value:   Version
+    u8 unk0;        // Value: Version { 0..2 = Rhythm Tweezers; 3..5 = Rhythm Tweezers 2 }
     struct RhythmTweezersTweezers tweezers;
     u32 unk18;      // Counter: Hair Placement Cycle Position
     u32 unk1C;      // Value:   Hair Placement Cycle Spacing
@@ -276,12 +276,22 @@ struct RhythmTweezersInfo {
     s16 unk92;      // Value:   Mask Vertical Motion
 };
 
+
+struct PrologueInfo {
+    u8  ver;        // Value: Version
+    s16 entity2;    // Entity: Object 0
+    s16 entity4;    // Entity: Object 1
+    s16 entity6;    // Entity: Object 2
+};
+
+
 struct struct_030055d0 {
     union {
         struct KarateManInfo karateMan;
         struct RapMenInfo rapMen;
         struct WizardsWaltzInfo wizardsWaltz;
         struct RhythmTweezersInfo rhythmTweezers;
+        struct PrologueInfo prologues;
     } gameInfo;
 };
 
