@@ -24,7 +24,7 @@ extern u32 D_089e9f10; // GFX-related Null
 extern u32 D_089e9f14[]; // GFX Array
 
 // Additional Data - Global:
-extern s16 D_03004afc; // Input Queue(?)
+extern u16 D_03004afc; // Input Queue(?)
 
 
 /* WIZARD'S WALTZ */

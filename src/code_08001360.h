@@ -3,7 +3,7 @@
 typedef u32 (*D_0300009c_func)(void);
 
 extern u16 D_03004ac0;
-extern s16 D_03004afc;
+extern u16 D_03004afc;
 extern s16 D_030053b8;
 extern s16 D_03004b00;
 
@@ -31,8 +31,8 @@ extern void func_080013e8(D_0300009c_func);
 extern void func_080013f4(u16);
 extern void func_0800142c(u16);
 extern void func_08001464(u16);
-// extern ? func_0800149c(?);
-// extern ? func_0800152c(?);
+extern void func_0800149c(u16 arg0);
+extern void func_0800152c(u16 arg0);
 // extern ? func_080015bc(?);
 // extern ? func_08001724(?);
 extern void func_0800181c(u8);

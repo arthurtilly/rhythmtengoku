@@ -2,7 +2,7 @@
 #include "src/code_0800b3c8.h"
 #include "src/code_08001360.h"
 
-extern s16 D_03004afc;
+extern u16 D_03004afc;
 
 // !TODO
 extern void func_0804d770(u32, u32, u16);

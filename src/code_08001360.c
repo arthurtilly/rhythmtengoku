@@ -47,7 +47,7 @@ void func_080013a8(void) {
     volatile u32 temp;
     if (!(REG_DISPCNT & 0x80)) {
         while (!D_03000098) {
-			temp = *((u32*)GameROMBase + (u16)func_08001964());
+			temp = *((u32*)GameROMBase + func_08001964());
 		}
     }
     D_03000098 = 0;
@@ -85,9 +85,53 @@ void func_08001464(u16 arg1) {
     D_030000ac = 0x3ff;
 }
 
-#include "asm/code_08001360/asm_0800149c.s"
+void func_0800149c(u16 arg0) {
+    D_03004afc = arg0 & (arg0 ^ D_03004ac0);
+    D_03004b00 = D_03004ac0 & (arg0 ^ D_03004ac0);
+    D_03004ac0 = arg0;
 
-#include "asm/code_08001360/asm_0800152c.s"
+    if (D_03004afc != 0) {
+        D_030053b8 = D_03004afc;
+        D_030000a2 = 0;
+    }
+    if (D_03004afc == 0) {
+        D_030053b8 = 0;
+        if (D_030000a0 == arg0) {
+            D_030000a2++;
+            if (D_030000a2 > 14) {
+                D_030000a2 = 12;
+                D_030053b8 = arg0;
+            }
+        } else {
+            D_030000a2 = 0;
+        }
+        D_030000a0 = D_03004ac0;
+    }
+}
+
+void func_0800152c(u16 arg0) {
+    D_03005378 = arg0 & (arg0 ^ D_030046b8);
+    D_030046b4 = D_030046b8 & (arg0 ^ D_030046b8);
+    D_030046b8 = arg0;
+
+    if (D_03005378 != 0) {
+        D_0300537c = D_03005378;
+        D_030000a6 = 0;
+    }
+    if (D_03005378 == 0) {
+        D_0300537c = 0;
+        if (D_030000a4 == arg0) {
+            D_030000a6++;
+            if (D_030000a6 > 14) {
+                D_030000a6 = 12;
+                D_0300537c = arg0;
+            }
+        } else {
+            D_030000a6 = 0;
+        }
+        D_030000a4 = D_030046b8;
+    }
+}
 
 #include "asm/code_08001360/asm_080015bc.s"
 
