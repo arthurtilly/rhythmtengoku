@@ -5,7 +5,7 @@
 // For readability. !TODO - CHANGE/REMOVE
 #define gRapMenInfo D_030055d0->gameInfo.rapMen
 
-extern char *D_0805a8b0;    // ??? !TODO - Verify
+extern char D_0805a8b0[];   // ??? !TODO - Verify
 
 extern u32 **D_089e63f8[];  // Animation Index (index of pairs of animation pointers; 0 = Rap Men; 1 = Rap Women)
 extern u32 D_089e6424;      // GFX-related Null
@@ -22,10 +22,12 @@ extern const struct SequenceData s_SD1_seqData;
 extern const struct SequenceData s_CC4_seqData;
 
 // !TODO
-extern u32 *func_08004c0c(u32 *, char **, u32, u32);
+extern u32 *func_08004b98(u32 *, char *, u32, u32);
+extern u32 *func_08004c0c(u32 *, char *, u32, u32);
 extern void func_0804cebc(s32, s16, s8);
 extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
 extern void func_0804d770(s32, s16, u16);
+extern void func_0804d8f8(s32, s16, u32 *, u32, u32, u32, u32);
 
 
 u32 *func_080398b4(u32 arg0) {
@@ -62,7 +64,7 @@ void func_08039950(u32 arg0) {
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
     temp = func_0800c660(0x340, 2);
     gRapMenInfo.unk4 = temp;
-    gRapMenInfo.unkC = func_0804d160(D_03005380, func_08004c0c(temp, &D_0805a8b0, 1, 14), 0, 0x78, 0x94, 0, 0, 0, 0);
+    gRapMenInfo.unkC = func_0804d160(D_03005380, func_08004c0c(temp, D_0805a8b0, 1, 14), 0, 0x78, 0x94, 0, 0, 0, 0);
     gRapMenInfo.unk8 = func_0804d160(D_03005380, func_080398b4(10), 0, 0x46, 0x82, 0x4800, 1, 0x7f, 0);
     gRapMenInfo.unkA = func_0804d160(D_03005380, func_080398b4(9), 0, 0xa0, 0x82, 0x4800, 1, 0x7f, 0);
     gRapMenInfo.unkE = 0;
@@ -162,8 +164,8 @@ void func_08039d10(void) {
     }
 }
 
-void func_08039d7c(u32 arg0) {
-    u32 temp;
+void func_08039d7c(char *arg0) {
+    u32 *temp;
 
     if (!arg0) {
         func_0804d770(D_03005380, gRapMenInfo.unkC, 0);

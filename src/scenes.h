@@ -5,35 +5,35 @@
 // extern ? func_0801ee98(?);
 // extern ? func_0801ef70(?);
 // extern ? func_0801f040(?);
-// extern ? func_0801f17c(?);
-// extern ? func_0801f194(?);
-// extern ? func_0801f30c(?);
-// extern ? func_0801f318(?);
-// extern ? func_0801f328(?);
-// extern ? func_0801f338(?);
-// extern ? func_0801f378(?);
-// extern ? func_0801f3a4(?);
-// extern ? func_0801f5bc(?);
-// extern ? func_0801f5c0(?);
-// extern ? func_0801f5f4(?);
-// extern ? func_0801f638(?);
-// extern ? func_0801f684(?);
-// extern ? func_0801f6d0(?);
-// extern ? func_0801f71c(?);
-// extern ? func_0801f76c(?);
-// extern ? func_0801f794(?);
-// extern ? func_0801f7bc(?);
-// extern ? func_0801f7cc(?);
+extern void func_0801f17c(void);    // [func_0801f17c] SUB (Loop) Func_00 - ?
+extern void func_0801f194(u32);     // [func_0801f194] SUB (ENGINE Func_06) - Slow Rain (Tutorial)
+extern void func_0801f30c(u32);     // [func_0801f30c] ENGINE Func_06 - Slow Rain (Tutorial)
+extern void func_0801f318(u32);     // [func_0801f318] ENGINE Func_07 - Freeze Slow Rain (Tutorial)
+extern void func_0801f328(void);    // [func_0801f328] GFX_LOAD Func_02
+extern void func_0801f338(void);    // [func_0801f338] GFX_LOAD Func_01
+extern void func_0801f378(void);    // [func_0801f378] GFX_LOAD Func_00
+extern void func_0801f3a4(u32);     // [func_0801f3a4] MAIN - Load
+extern void func_0801f5bc(void);    // [func_0801f5bc] ENGINE Func_10 - Unknown (STUB, Unused)
+extern void func_0801f5c0(u32);     // [func_0801f5c0] ENGINE Func_01 - Next Vertical Position
+extern void func_0801f5f4(void);    // [func_0801f5f4] ENGINE Func_02 - Bow Appear
+extern void func_0801f638(void);    // [func_0801f638] ENGINE Func_03 - Draw Bow
+extern void func_0801f684(u32);     // [func_0801f684] ENGINE Func_04 - Play Wind/Rain SFX
+extern void func_0801f6d0(void);    // [func_0801f6d0] SUB (Loop) Func_01 - ?
+extern void func_0801f71c(char *);  // [func_0801f71c] ENGINE Func_05 - Display Text (Tutorial)
+extern void func_0801f76c(u32);     // [func_0801f76c] ENGINE Func_08 - Display Dashing Sneaky Spirit (Tutorial)
+extern void func_0801f794(u32);     // [func_0801f794] ENGINE Func_09 - Animate Dashing Sneaky Spirit (Tutorial)
+extern void func_0801f7bc(void);    // [func_0801f7bc] MAIN - Loop
+extern void func_0801f7cc(void);    // [func_0801f7cc] MAIN - Unload
 // extern ? func_0801f7e8(?);
 // extern ? func_0801f7f0(?);
-// extern ? func_0801f80c(?);
+extern void func_0801f80c(void);    // [func_0801f80c] CUE - Despawn (STUB)
 // extern ? func_0801f810(?);
 // extern ? func_0801f8d0(?);
 // extern ? func_0801fa4c(?);
 // extern ? func_0801fb14(?);
-// extern ? func_0801fbb0(?);
-// extern ? func_0801fc3c(?);
-// extern ? func_0801fc40(?);
+extern void func_0801fbb0(void);    // [func_0801fbb0] MAIN - Input Event
+extern void func_0801fc3c(void);    // [func_0801fc3c] GRAPHICAL Func_00 - Unknown (STUB)
+extern void func_0801fc40(void);    // [func_0801fc40] GRAPHICAL Func_01 - Unknown (STUB)
 
 // Spaceball
 
@@ -1165,7 +1165,7 @@ extern void func_08039c00(void);
 extern void func_08039c60(void);
 extern void func_08039cb8(void);
 extern void func_08039d10(void);
-extern void func_08039d7c(u32);
+extern void func_08039d7c(char *);
 extern void func_08039df8(void);
 
 // Rat Race

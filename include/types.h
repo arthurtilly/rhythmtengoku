@@ -140,6 +140,7 @@ struct struct_030055d0_sub {
     u8 unk2D;
 };
 
+
 struct KarateManInfoSubstruct {
 	u8 unk4:4;
     u8 pad05[3];
@@ -171,6 +172,7 @@ struct KarateManInfo {
     u8 unk36;
 };
 
+
 struct RapMenInfo {
     u8 unk0;
     u32 *unk4;
@@ -182,6 +184,7 @@ struct RapMenInfo {
     u16 unk12;
     u8 unk14;
 };
+
 
 struct WizardsWaltzSparkle {
     struct ScaledEntity *entity; // Entity:  unk0
@@ -228,6 +231,7 @@ struct WizardsWaltzInfo {
     u8  flowerCount;    // Counter: unk1B1
     u8  isTutorial;     // Flag:    unk1B2
 };
+
 
 struct RhythmTweezersTweezers {
     struct ScaledEntity *entity; // Entity:  Tweezers
@@ -277,6 +281,32 @@ struct RhythmTweezersInfo {
 };
 
 
+struct SneakySpiritsInfo {
+    u32 *unk0;      // Pointer: ? (Related to Tutorial Text)
+    u8  unk4;       // Value:   Version
+    u8  unk5;       // Flag:    ?
+    u16 unk6[30];   // Value:   ? (Rain)
+    u16 null42;
+    s16 unk44[20];  // Entity:  Rain
+    u16 null6C;
+    s16 unk6E;
+    s16 unk70;      // Entity:  Bow
+    u8  unk72;      // Flag:    Bow Loaded
+    s16 unk74;      // Entity:  Door
+    s16 unk76;      // Entity:  Back Wall
+    s16 unk78;      // Entity:  Sneaky Spirit
+    u16 unk7A;
+    s16 unk7C;      // Entity:  ? (another back wall?)
+    s16 unk7E;      // Entity:  Sneaky Spirit (Hit)
+    u16 unk80;
+    u32 unk84;      // Value:   Rain SFX-related (might be a pointer)
+    s16 unk88;      // Entity:  Tutorial Text
+    u8  unk8A;      // Flag:    Slow Motion On Hit
+    u8  unk8B;      // Flag:    Freeze Slow Rain
+    s16 unk8C;      // Entity:  Sneaky Spirit (Tutorial Example)
+};
+
+
 struct PrologueInfo {
     u8  ver;        // Value: Version
     s16 entity2;    // Entity: Object 0
@@ -291,6 +321,7 @@ struct struct_030055d0 {
         struct RapMenInfo rapMen;
         struct WizardsWaltzInfo wizardsWaltz;
         struct RhythmTweezersInfo rhythmTweezers;
+        struct SneakySpiritsInfo sneakySpirits;
         struct PrologueInfo prologues;
     } gameInfo;
 };
