@@ -5,7 +5,7 @@
 // For readability. !TODO - CHANGE/REMOVE
 #define gSneakySpiritsInfo D_030055d0->gameInfo.sneakySpirits
 
-extern char D_08059f90[]; // ??? (!TODO - Verify)
+extern char D_08059f90[]; // Empty Default Text
 
 extern u32 D_088a1010[]; // Animation: Rain?
 extern u32 D_088a0ca0[]; // Animation: Bow?
@@ -53,7 +53,7 @@ extern void func_0804dcb8(s32, s16, u16);
 #include "asm/scenes/sneaky_spirits/asm_0801f040.s"
 
 
-// [func_0801f17c] SUB Loop Func_00 - ?
+// [func_0801f17c] SUB (Loop) Func_00 - ?
 void func_0801f17c(void) {
     if (!gSneakySpiritsInfo.unk5) func_0801f040();
 }
@@ -280,13 +280,23 @@ void func_0801f7cc(void) {
 }
 
 
-#include "asm/scenes/sneaky_spirits/asm_0801f7e8.s"
+// [func_0801f7e8] CUE - Spawn
+void func_0801f7e8(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
+    arg1->unk26 = arg2;
+}
 
-#include "asm/scenes/sneaky_spirits/asm_0801f7f0.s"
+
+// [func_0801f7f0] CUE - Behaviour
+u32 func_0801f7f0(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
+    if (arg2 > func_0800c3a4(0x30)) {
+        return 1; }
+    else {
+        return 0; }
+}
 
 
 // [func_0801f80c] CUE - Despawn (STUB)
-void func_0801f80c(void) {
+void func_0801f80c(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
 }
 
 

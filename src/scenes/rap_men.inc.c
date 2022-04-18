@@ -5,7 +5,7 @@
 // For readability. !TODO - CHANGE/REMOVE
 #define gRapMenInfo D_030055d0->gameInfo.rapMen
 
-extern char D_0805a8b0[];   // ??? !TODO - Verify
+extern char D_0805a8b0[];   // Empty Default Text
 
 extern u32 **D_089e63f8[];  // Animation Index (index of pairs of animation pointers; 0 = Rap Men; 1 = Rap Women)
 extern u32 D_089e6424;      // GFX-related Null

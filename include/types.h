@@ -63,7 +63,8 @@ struct struct_080179f4_sub1 {
     u32 null18;
     u32 null1C;
     u32 null20;
-    u32 null24;
+    u16 null24;
+    u8  unk26;
     s16 unk28;
     u16 null2A;
     u16 unk2C;
