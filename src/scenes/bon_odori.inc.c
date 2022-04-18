@@ -30,7 +30,7 @@ void func_08020834() {
 void func_0802085c() {
     func_0800c604(0);
     func_08017578();
-    D_03004b10.unk1D8 = 0x7C00;
+    D_03004b10[0xec] = 0x7C00;
 }
 
 void func_08020880() {
@@ -38,8 +38,8 @@ void func_08020880() {
     u32 temp1;
 
     func_0800c604(0);
-    temp0 = func_0800c3b8();
-    temp1 = func_08002ee0(temp0, D_089deec4[D_030055d0->unk0], 0x2000);
+    temp0 = (u16) func_0800c3b8();
+    temp1 = func_08002ee0(temp0, D_089deec4[D_030055d0->gameInfo.bonOdori.unk0], 0x2000);
     func_08005d38(temp1, func_0802085c + 1, 0);
 }
 
