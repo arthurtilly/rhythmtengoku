@@ -20,6 +20,10 @@ extern u32 D_088a11a8[]; // Animation: "door_back_wall_2"
 extern u32 D_088a0cd0[]; // Animation: "ghost_hit"
 extern u32 D_088a1280[]; // Animation: "ghost_dash_tutorial"
 
+extern u32 D_088a0fd8[]; // Animation: ? (rain?)
+extern u32 D_088a1000[]; // Animation: ? (also rain?)
+extern u32 D_088a0f28[]; // Animation: ?
+
 extern const struct SequenceData s_ghost_rain_seqData; // Wind/Rain SFX
 extern const struct SequenceData s_ghost_gosha_seqData; // Arrow Missed SFX
 
@@ -30,10 +34,7 @@ extern u16 D_030053c0[];
 extern u16 D_03005550;
 
 extern u16  func_08001980(u32);
-// extern void func_08002920(u32, u16);
 extern u32 *func_08004b98(u32 *, char *, u32, u32);
-// extern u32  func_080087d4(s32, s32, s32);
-// extern u32 *func_0800c660(u32, u32);
 
 extern void func_0804cebc(s32, s16, s8);
 extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
@@ -48,9 +49,52 @@ extern void func_0804dcb8(s32, s16, u16);
 
 #include "asm/scenes/sneaky_spirits/asm_0801ee98.s"
 
-#include "asm/scenes/sneaky_spirits/asm_0801ef70.s"
 
-#include "asm/scenes/sneaky_spirits/asm_0801f040.s"
+// [func_0801ef70] SUB (Load) Func_00 - Initialise Rain
+void func_0801ef70(void) {
+    u32 i;
+
+    for (i = 0; i < 30; i++) {
+        gSneakySpiritsInfo.unk6[i] = func_0804d160(D_03005380, D_088a0fd8, 0, 0x78, 0x50, 0x800, 0, 0, 0x8000);
+    }
+    for (i = 0; i < 20; i++) {
+        gSneakySpiritsInfo.unk44[i] = func_0804d160(D_03005380, D_088a1000, 0, 0x40, 0x40, 0x8400, 0, 0, 0x8002);
+    }
+    gSneakySpiritsInfo.unk42 = 0;
+    gSneakySpiritsInfo.unk6C = 0;
+    gSneakySpiritsInfo.unk5 = 0;
+    gSneakySpiritsInfo.unk8B = 0;
+    gSneakySpiritsInfo.unk6E = func_0804d160(D_03005380, D_088a0f28, 0, 0xdf, 0x4c, 0x4f00, 1, 0, 0);
+}
+
+
+// [func_0801f040] SUB (SUB (Loop) Func_00) - Update Rain
+void func_0801f040(void) {
+    u32 i;
+    s16 element;
+
+    for (i = 0; i < 4; i++) {
+        element = gSneakySpiritsInfo.unk6[gSneakySpiritsInfo.unk42];
+        func_0804d8f8(D_03005380, element, D_088a0fd8, 0, 1, 0, 2);
+        func_0804d5d4(D_03005380, element, func_08001980(0xf0), func_08001980(0x40) + 0x30);
+        func_0804d770(D_03005380, element, 1);
+        gSneakySpiritsInfo.unk42 += 1;
+        if (gSneakySpiritsInfo.unk42 >= 30) {
+            gSneakySpiritsInfo.unk42 = 0;
+        }
+    }
+
+    for (i = 0; i < 4; i++) {
+        element = gSneakySpiritsInfo.unk44[gSneakySpiritsInfo.unk6C];
+        func_0804cebc(D_03005380, element, 0);
+        func_0804d5d4(D_03005380, element, func_08001980(0xf0), func_08001980(0x32) + 0x6e);
+        func_0804d770(D_03005380, element, 1);
+        gSneakySpiritsInfo.unk6C += 1;
+        if (gSneakySpiritsInfo.unk6C >= 20) {
+            gSneakySpiritsInfo.unk6C = 0;
+        }
+    }
+}
 
 
 // [func_0801f17c] SUB (Loop) Func_00 - ?

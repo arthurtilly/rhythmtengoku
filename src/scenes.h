@@ -2,10 +2,10 @@
 
 // Sneaky Spirits
 
-// extern ? func_0801ee98(?);       // [func_0801ee98] ENGINE Func_00 - Appear At Position
-// extern ? func_0801ef70(?);       // [func_0801ef70] SUB (Load) Func_00 - ?
-// extern ? func_0801f040(?);       // [func_0801f040] SUB (SUB (Loop) Func_00) - ?
-extern void func_0801f17c(void);    // [func_0801f17c] SUB (Loop) Func_00 - ?
+extern void func_0801ee98(u32);     // [func_0801ee98] ENGINE Func_00 - Appear At Position
+extern void func_0801ef70(void);    // [func_0801ef70] SUB (Load) Func_00 - Initialise Rain
+extern void func_0801f040(void);    // [func_0801f040] SUB (SUB (Loop) Func_00) - Update Rain
+extern void func_0801f17c(void);    // [func_0801f17c] SUB (Loop) Func_00 - Update Rain
 extern void func_0801f194(u32);     // [func_0801f194] SUB (ENGINE Func_06) - Slow Rain (Tutorial)
 extern void func_0801f30c(u32);     // [func_0801f30c] ENGINE Func_06 - Slow Rain (Tutorial)
 extern void func_0801f318(u32);     // [func_0801f318] ENGINE Func_07 - Freeze Slow Rain (Tutorial)

@@ -286,11 +286,11 @@ struct SneakySpiritsInfo {
     u32 *unk0;      // Pointer: ? (Related to Tutorial Text)
     u8  unk4;       // Value:   Version
     u8  unk5;       // Flag:    ?
-    u16 unk6[30];   // Value:   ? (Rain)
-    u16 null42;
-    s16 unk44[20];  // Entity:  Rain
-    u16 null6C;
-    s16 unk6E;
+    s16 unk6[30];   // Entity:  Rain_0
+    u16 unk42;      // Counter: Next Rain_0 to Update
+    s16 unk44[20];  // Entity:  Rain_1
+    u16 unk6C;      // Counter: Next Rain_1 to Update
+    s16 unk6E;      // Entity:  ?
     s16 unk70;      // Entity:  Bow
     u8  unk72;      // Flag:    Bow Loaded
     s16 unk74;      // Entity:  Door
