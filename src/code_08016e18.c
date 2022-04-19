@@ -36,7 +36,11 @@ static s32 D_03001328; // unknown type, could be 2 words
 
 #include "asm/code_08016e18/asm_0801732c.s"
 
-#include "asm/code_08016e18/asm_08017338.s"
+// D_030046a4->unkA = arg0; D_030046a4->unkC = arg1
+void func_08017338(s16 arg0, s16 arg1) {
+    D_030046a4->unkA = arg0;
+    D_030046a4->unkC = arg1;
+}
 
 s32 func_08017348(s32 arg1, s32 arg2) { // bobbing?
     s32 returnVal = 0;
@@ -236,7 +240,10 @@ void func_080179f4(s32 arg1) { // universal cue?
 
 #include "asm/code_08016e18/asm_08017ec8.s"
 
-#include "asm/code_08016e18/asm_08018054.s"
+// Return D_030046a4->unk79 (s8)
+s32 func_08018054(void) {
+    return D_030046a4->unk79;
+}
 
 #include "asm/code_08016e18/asm_08018068.s"
 

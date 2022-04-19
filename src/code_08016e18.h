@@ -14,7 +14,7 @@
 // extern ? func_08017168(?);
 // extern ? func_08017188(?);
 // extern ? func_0801732c(?);
-// extern ? func_08017338(?);
+extern void func_08017338(s16, s16);
 extern s32 func_08017348(s32, s32);
 extern void func_08017380(s32);
 extern s32 func_0801738c(struct struct_030046a4_sub *, s32);
@@ -67,7 +67,7 @@ extern void func_080179f4(s32);
 // extern ? func_08017c8c(?);
 // extern ? func_08017e2c(?);
 // extern ? func_08017ec8(?);
-// extern ? func_08018054(?);
+extern s32 func_08018054(void);
 // extern ? func_08018068(?);
 // extern ? func_08018078(?);
 // extern ? func_08018088(?);

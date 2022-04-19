@@ -140,7 +140,15 @@ u8 *func_080081a8(u8 *arg1, u8 *arg2) {
 
 #include "asm/code_08007468/asm_080087b4.s"
 
-#include "asm/code_08007468/asm_080087d4.s"
+s32 func_080087d4(s32 arg0, s32 arg1, s32 arg2) {
+    if (arg0 < arg1) {
+        return arg1;
+    }
+    if (arg0 > arg2) {
+        return arg2;
+    }
+    return arg0;
+}
 
 #include "asm/code_08007468/asm_080087e8.s"
 

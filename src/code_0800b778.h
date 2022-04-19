@@ -52,14 +52,14 @@ struct ScaledEntity {
 // extern ? func_0800c088(?);
 // extern ? func_0800c0c4(?);
 // extern ? func_0800c0d8(?);
-// extern ? func_0800c0f8(?);
+extern void func_0800c0f8(u16, u16);
 // extern ? func_0800c128(?);
 // extern ? func_0800c138(?);
 // extern ? func_0800c154(?);
 // extern ? func_0800c168(?);
 // extern ? func_0800c184(?);
-// extern ? func_0800c1a4(?);
-// extern ? func_0800c1a8(?);
+extern void func_0800c1a4_stub(void);
+extern u32 func_0800c1a8(void);
 // extern ? func_0800c1b4(?);
 // extern ? func_0800c1c0(?);
 // extern ? func_0800c1d0(?);
@@ -73,7 +73,7 @@ struct ScaledEntity {
 // extern ? func_0800c390(?);
 // extern ? func_0800c394(?);
 // extern ? func_0800c398(?);
-// extern ? func_0800c3a4(?);
+extern u32 func_0800c3a4(u32);
 extern u32 func_0800c3b8();
 // extern ? func_0800c3c4(?);
 // extern ? func_0800c3e4(?);

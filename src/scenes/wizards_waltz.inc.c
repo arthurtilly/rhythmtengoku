@@ -20,8 +20,8 @@ extern u32 D_08932edc[]; // Animation: "shadow"
 extern const struct SequenceData s_witch_furu_seqData; // Sound for inputting without a cue.
 
 // Additional Data - Wizard's Waltz:
-extern u32 D_089e9f10; // GFX-related Null
-extern u32 D_089e9f14[]; // GFX Array
+extern u32 D_089e9f10;   // GFX-related Null
+extern u32 D_089e9f14[]; // GFX Struct
 
 // Additional Data - Global:
 extern u16 D_03004afc; // Input Queue(?)
@@ -42,7 +42,7 @@ void func_080449b4(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_08002ee0(func_0800c3b8(), &D_089e9f14, 0x2000);
+    temp = func_08002ee0(func_0800c3b8(), D_089e9f14, 0x2000);
     func_08005d38(temp, func_080449a4, 0);
 }
 
@@ -62,7 +62,7 @@ void func_08044a10(u32 arg0) {
     u8 i;
 
     // Load graphical assets and other basic functionality.
-    D_030055d0->unk0 = arg0;
+    gWizardsWaltzInfo.version = arg0;
     func_080449e4();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
@@ -83,7 +83,7 @@ void func_08044a10(u32 arg0) {
 
     // Create sparkle entities.
     for (i = 0; i < 10; i++) {
-        u32 entity;
+        struct ScaledEntity *entity;
         gWizardsWaltzInfo.sparkle[i].state = 0;
         entity = func_0800fa6c(D_08932c8c, 0, 0, 0, 0, 0x80, 0, 1, 0, 0, 0);
         gWizardsWaltzInfo.sparkle[i].entity = entity;
@@ -105,7 +105,7 @@ void func_08044b80(u32 arg0) {
 
 
 // [func_08044ba8] SUB Func_00 - Update Entity Position
-void func_08044ba8(u32 arg0, s32 arg1, s32 arg2, u32 arg3) {
+void func_08044ba8(struct ScaledEntity *arg0, s32 arg1, s32 arg2, u32 arg3) {
     s32 temp;
     u32 temp1 = arg3 - gWizardsWaltzInfo.globalScale;
 
@@ -218,7 +218,7 @@ void func_08044e74_stub(void) {
 
 
 // [func_08044f94] CUE Behaviour
-u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2) {
+u32 func_08044f94(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     if (arg2 > (gWizardsWaltzInfo.cycleInterval + func_0800c3a4(0x30))) {
         return 1;
 	} else {
@@ -228,13 +228,13 @@ u32 func_08044f94(u32 arg0, u32 arg1, u32 arg2) {
 
 
 // [func_08044fc0] CUE Despawn
-void func_08044fc0(u32 arg0, u32 *arg1) {
-    func_0800fc70(arg1[0]);
+void func_08044fc0(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
+    func_0800fc70(arg1->unk0);
 }
 
 
 // [func_08044fcc] CUE Hit
-void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
+void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     u32 isTutorial;
 
     // Play animation: "sprout_grow"
@@ -257,7 +257,7 @@ void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
 
 
 // [func_0804503c] CUE Barely
-void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1) {
+void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     u32 temp;
     u32 isTutorial;
 
@@ -292,7 +292,7 @@ void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1) {
 
 
 // [func_080450d0] CUE Miss
-void func_080450d0(u32 arg0, struct struct_080179f4_sub *arg1) {
+void func_080450d0(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     // Unknown function - likely related to score.
     func_0800bc40();
 }

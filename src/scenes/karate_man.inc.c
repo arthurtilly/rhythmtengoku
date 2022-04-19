@@ -1,21 +1,25 @@
+#include "src/code_08001360.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b3c8.h"
-#include "src/code_08001360.h"
+#include "src/code_0800b778.h"
+
+// For readability. !TODO - CHANGE/REMOVE
+#define gKarateManInfo D_030055d0->gameInfo.karateMan
 
 extern u16 D_03004afc;
 
 // !TODO
-extern void func_0804d770(u32, u32, u16);
-extern void func_0804cebc(u32, s16, s8);
-extern u32 func_0804d160(u32, u32 *, s8, u32, u32, u32, u32, u32, u32);
+extern void func_0804cebc(s32, s16, s8);
+extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
+extern void func_0804d770(s32, s16, u16);
 
 extern u32 D_088acc2c[];
 extern u32 D_088acc94[];
 extern u32 D_088acd1c[]; 
 extern u32 D_088acd54[]; 
 extern u32 D_088acc94[];
-extern u32 D_089df064;
-extern u32 D_089df1ac[];
+extern u32 D_089df064;      // GFX-related Null
+extern u32 *D_089df1ac[];   // GFX Struct Index
 extern u32 D_089df1bc[];
 extern u32 D_089df37c[];
 extern u32 D_089df37e[];
@@ -37,7 +41,7 @@ void func_080211a4(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_08002ee0(func_0800c3b8(), D_089df1ac[D_030055d0->unk0], 0x2000);
+    temp = func_08002ee0(func_0800c3b8(), D_089df1ac[gKarateManInfo.unk0], 0x2000);
     func_08005d38(temp, func_08021190, 0);
 }
 
@@ -54,7 +58,7 @@ void func_080211e4(void) {
 void func_0802139c(u32 arg0, u32 arg1) {
     func_08003eb8(D_089df1bc[arg0], D_06008000);
     func_0800e030(0);
-    D_030055d0->gameInfo.karateMan.unk32 = func_0800c3a4(arg1 + 1);
+    gKarateManInfo.unk32 = func_0800c3a4(arg1 + 1);
 }
 
 void func_080213d4(u32 arg0) {
@@ -63,37 +67,37 @@ void func_080213d4(u32 arg0) {
 
 
 void func_080213e4(void) {
-   if (D_030055d0->gameInfo.karateMan.unk32) {
-       D_030055d0->gameInfo.karateMan.unk32--;
-       if (!D_030055d0->gameInfo.karateMan.unk32) {
+   if (gKarateManInfo.unk32) {
+       gKarateManInfo.unk32--;
+       if (!gKarateManInfo.unk32) {
            func_0800e044(0);
        }
    }
 }
 
 void func_08021408(void) {
-    if (D_030055d0->unk0 == 0) {
-        D_030055d0->gameInfo.karateMan.unk34 = 1;
+    if (gKarateManInfo.unk0 == 0) {
+        gKarateManInfo.unk34 = 1;
     }
 }
 
 void func_08021424(void) {
-    if (D_030055d0->unk0 == 2) {
-        D_030055d0->gameInfo.karateMan.unk35 = 1;
+    if (gKarateManInfo.unk0 == 2) {
+        gKarateManInfo.unk35 = 1;
     }
 }
 
 void func_08021440(u32 arg0) {
-	func_0800aa4c(D_030055d0->gameInfo.karateMan.unk24, arg0);
+	func_0800aa4c(gKarateManInfo.unk24, arg0);
 
 }
 
 void func_08021458(void) {
-    func_0804cebc(D_03005380, D_030055d0->gameInfo.karateMan.unk28, 0);
-    func_0804d770(D_03005380, D_030055d0->gameInfo.karateMan.unk28, 1);
+    func_0804cebc(D_03005380, gKarateManInfo.unk28, 0);
+    func_0804d770(D_03005380, gKarateManInfo.unk28, 1);
     func_08017338(0, 0);
     func_0800bd04(1);
-    D_030055d0->gameInfo.karateMan.unk2A = 1;
+    gKarateManInfo.unk2A = 1;
 }
 
 void func_080214a0(u32 arg0) {
@@ -108,17 +112,17 @@ void func_080214a0(u32 arg0) {
 }
 
 void func_080214d4(u32 arg0) {
-    D_030055d0->gameInfo.karateMan.unk30 = arg0;
+    gKarateManInfo.unk30 = arg0;
     if (arg0) {
-        func_0804d770(D_03005380, D_030055d0->gameInfo.karateMan.unk2E, 1);
-        func_0804cebc(D_03005380, D_030055d0->gameInfo.karateMan.unk2E, arg0);
+        func_0804d770(D_03005380, gKarateManInfo.unk2E, 1);
+        func_0804cebc(D_03005380, gKarateManInfo.unk2E, arg0);
     } else {
-        func_0804d770(D_03005380, D_030055d0->gameInfo.karateMan.unk2E, 0);
+        func_0804d770(D_03005380, gKarateManInfo.unk2E, 0);
     }
 }
 
 void func_08021524(void) {
-    if (D_030055d0->gameInfo.karateMan.unk30) {
+    if (gKarateManInfo.unk30) {
         func_0800bc40();
         return;
     }
@@ -127,37 +131,37 @@ void func_08021524(void) {
 
 
 void func_08021544(u8 arg0) {
-	D_030055d0->gameInfo.karateMan.unk36 = arg0;
+	gKarateManInfo.unk36 = arg0;
 }
 
 void func_08021554(void) {
-    if (D_030055d0->gameInfo.karateMan.unk2A) {
+    if (gKarateManInfo.unk2A) {
         if (D_03004afc & 1) {
-            func_0804d770(D_03005380, D_030055d0->gameInfo.karateMan.unk28, 0);
+            func_0804d770(D_03005380, gKarateManInfo.unk28, 0);
             func_08017338(1, 0);
             func_0800bd04(0);
-            D_030055d0->gameInfo.karateMan.unk2A = 0;
+            gKarateManInfo.unk2A = 0;
         }
     }
-    func_08021e58(&D_030055d0->gameInfo.karateMan.unk_substruct);
-    if (D_030055d0->unk0) {
-        if (D_030055d0->unk0 == 1) {
+    func_08021e58(&gKarateManInfo.unk_substruct);
+    if (gKarateManInfo.unk0) {
+        if (gKarateManInfo.unk0 == 1) {
             func_080213e4();
         }
     }
-    func_0800a914(D_030055d0->gameInfo.karateMan.unk24);
+    func_0800a914(gKarateManInfo.unk24);
 }
 
 void func_080215cc(void) {
-    func_08021e40(&D_030055d0->gameInfo.karateMan.unk_substruct);
-    func_0804d504(D_03005380, D_030055d0->gameInfo.karateMan.unk20);
-    func_0804d504(D_03005380, D_030055d0->gameInfo.karateMan.unk14);
+    func_08021e40(&gKarateManInfo.unk_substruct);
+    func_0804d504(D_03005380, gKarateManInfo.unk20);
+    func_0804d504(D_03005380, gKarateManInfo.unk14);
     func_0800e044(0);
     func_0800e044(1);
 }
 
 void func_0802160c(struct struct_080179f4_sub *arg0) {
-    u32 *temp1;
+    struct struct_080179f4_sub *temp1;
     struct struct_030055d0 *temp2;
 
     func_08018124(&temp1, &temp2);
@@ -198,24 +202,24 @@ void func_08021974(u32 arg0, struct struct_080179f4_sub *arg1) {
 void func_080219a8(void) {
     u32 temp;
 
-    D_030055d0->gameInfo.karateMan.unk34 = 0;
-    func_0804d8c4(D_03005380, D_030055d0->gameInfo.karateMan.unk_substruct.unk8, 1);
+    gKarateManInfo.unk34 = 0;
+    func_0804d8c4(D_03005380, gKarateManInfo.unk_substruct.unk8, 1);
     func_0800e030(0);
     func_0800e044(1);
-    func_0804d770(D_03005380, D_030055d0->gameInfo.karateMan.unk14, 0);
-    D_030055d0->unk0 = 2;
+    func_0804d770(D_03005380, gKarateManInfo.unk14, 0);
+    gKarateManInfo.unk0 = 2;
     func_0800c128(0);
     temp = 0x100;
     func_0800c138(temp, func_0800c3a4(0x60));
 }
 
 void func_08021a0c(void) {
-    D_030055d0->gameInfo.karateMan.unk35 = 0;
-    func_0804d8c4(D_03005380, D_030055d0->gameInfo.karateMan.unk_substruct.unk8, 0);
+    gKarateManInfo.unk35 = 0;
+    func_0804d8c4(D_03005380, gKarateManInfo.unk_substruct.unk8, 0);
     func_0800e044(0);
     func_0800e030(1);
-    func_0804d770(D_03005380, D_030055d0->gameInfo.karateMan.unk14, 1);
-    D_030055d0->unk0 = 0;
+    func_0804d770(D_03005380, gKarateManInfo.unk14, 1);
+    gKarateManInfo.unk0 = 0;
     func_080221cc();
     func_080173c4(0);
 }
@@ -226,9 +230,9 @@ void func_08021d38(u32 arg0, struct struct_030055d0_sub *arg1) {
     u32 temp;
     struct KarateManInfoSubstruct *temp1;
 
-    temp1 = &D_030055d0->gameInfo.karateMan.unk_substruct;
+    temp1 = &gKarateManInfo.unk_substruct;
     temp = 0;
-    if (D_030055d0->unk0 == 1) {
+    if (gKarateManInfo.unk0 == 1) {
         temp = 1;
     }
     arg1->unk0 = 0 | 1;
@@ -253,7 +257,7 @@ void func_08021dcc(void) {
 void func_08021dd8(struct KarateManInfoSubstruct *arg0) {
     arg0->unk4 = 0;
     arg0->unk8 = func_0804d160(D_03005380, D_088acc2c, 0, 0x50, 0x58, 0x4800, 1, 0, 0);
-    if (D_030055d0->unk0 == 2) {
+    if (gKarateManInfo.unk0 == 2) {
         func_0804d8c4(D_03005380, arg0->unk8, 1);
     }
     arg0->unkA = 0;
@@ -274,10 +278,10 @@ void func_08021e58(struct KarateManInfoSubstruct *arg0) {
 }
 
 void func_08021e88(void) {
-    struct KarateManInfoSubstruct *temp = &D_030055d0->gameInfo.karateMan.unk_substruct;
+    struct KarateManInfoSubstruct *temp = &gKarateManInfo.unk_substruct;
 
     temp->unk4 = 0 | 1;
-    if (D_030055d0->gameInfo.karateMan.unk16 < 3) {
+    if (gKarateManInfo.unk16 < 3) {
         func_0804d8f8(D_03005380, temp->unk8, D_088acd54, 0, 1, 0x7f, 0);
     } else {
         func_0804d8f8(D_03005380, temp->unk8, D_088acc94, 0, 1, 0x7f, 0);
@@ -288,46 +292,46 @@ void func_08021e88(void) {
 #include "asm/scenes/karate_man/asm_08021f04.s"
 
 void func_08022010(u32 arg0) {
-    func_0804d770(D_03005380, D_030055d0->gameInfo.karateMan.unk20, arg0 != 0);
+    func_0804d770(D_03005380, gKarateManInfo.unk20, arg0 != 0);
     if (arg0) {
-        func_0804cebc(D_03005380, D_030055d0->gameInfo.karateMan.unk20, arg0 - 1);
+        func_0804cebc(D_03005380, gKarateManInfo.unk20, arg0 - 1);
     }
 }
 
 void func_08022050(void) {
     u32 temp;
 
-    D_030055d0->gameInfo.karateMan.unk16 = 0;
-    temp = func_0804d160(D_03005380, D_088acd1c, D_030055d0->gameInfo.karateMan.unk16, 0x24, 0x10, 0x47f6, 0, 0, 0);
-    D_030055d0->gameInfo.karateMan.unk14 = temp;
-    D_030055d0->gameInfo.karateMan.unk17 = 1;
-    if (D_030055d0->unk0 == 2) {
-        func_0804d770(D_03005380, D_030055d0->gameInfo.karateMan.unk14, 0);
-        D_030055d0->gameInfo.karateMan.unk17 = 0;
+    gKarateManInfo.unk16 = 0;
+    temp = func_0804d160(D_03005380, D_088acd1c, gKarateManInfo.unk16, 0x24, 0x10, 0x47f6, 0, 0, 0);
+    gKarateManInfo.unk14 = temp;
+    gKarateManInfo.unk17 = 1;
+    if (gKarateManInfo.unk0 == 2) {
+        func_0804d770(D_03005380, gKarateManInfo.unk14, 0);
+        gKarateManInfo.unk17 = 0;
     }
-    D_030055d0->gameInfo.karateMan.unk18 = 0;
-    D_030055d0->gameInfo.karateMan.unk1C = D_089df37c;
+    gKarateManInfo.unk18 = 0;
+    gKarateManInfo.unk1C = D_089df37c;
 }
 
 void func_080220c4(void) {
-    if (D_030055d0->gameInfo.karateMan.unk16 > 2) {
+    if (gKarateManInfo.unk16 > 2) {
         func_08002634(&s_f_boxing_score_reset_seqData);
     }
-    D_030055d0->gameInfo.karateMan.unk16 = 0;
-    func_0804cebc(D_03005380, D_030055d0->gameInfo.karateMan.unk14, D_030055d0->gameInfo.karateMan.unk16);
-    D_030055d0->gameInfo.karateMan.unk18 = 0;
-    D_030055d0->gameInfo.karateMan.unk1C = D_089df37c;
+    gKarateManInfo.unk16 = 0;
+    func_0804cebc(D_03005380, gKarateManInfo.unk14, gKarateManInfo.unk16);
+    gKarateManInfo.unk18 = 0;
+    gKarateManInfo.unk1C = D_089df37c;
     func_080221cc();
 }
 
 void func_08022114(void) {
-    if (D_030055d0->gameInfo.karateMan.unk17) {
-        if (D_030055d0->gameInfo.karateMan.unk16 <= 4) {
-            D_030055d0->gameInfo.karateMan.unk16++;
-            func_0804cebc(D_03005380, D_030055d0->gameInfo.karateMan.unk14, D_030055d0->gameInfo.karateMan.unk16);
-            if (D_030055d0->gameInfo.karateMan.unk16 == 3) {
-                D_030055d0->gameInfo.karateMan.unk18 = 0;
-                D_030055d0->gameInfo.karateMan.unk1C = D_089df37e;
+    if (gKarateManInfo.unk17) {
+        if (gKarateManInfo.unk16 <= 4) {
+            gKarateManInfo.unk16++;
+            func_0804cebc(D_03005380, gKarateManInfo.unk14, gKarateManInfo.unk16);
+            if (gKarateManInfo.unk16 == 3) {
+                gKarateManInfo.unk18 = 0;
+                gKarateManInfo.unk1C = D_089df37e;
                 func_080221cc();
                 func_08002634(&s_f_boxing_score_up_seqData);
             }
@@ -336,13 +340,13 @@ void func_08022114(void) {
 }
 
 void func_08022170(void) {
-    if (D_030055d0->gameInfo.karateMan.unk17) {
-        if (D_030055d0->gameInfo.karateMan.unk16) {
-            D_030055d0->gameInfo.karateMan.unk16--;
-            func_0804cebc(D_03005380, D_030055d0->gameInfo.karateMan.unk14, D_030055d0->gameInfo.karateMan.unk16);
-            if (D_030055d0->gameInfo.karateMan.unk16 == 2) {
-                D_030055d0->gameInfo.karateMan.unk18 = 0;
-                D_030055d0->gameInfo.karateMan.unk1C = D_089df37c;
+    if (gKarateManInfo.unk17) {
+        if (gKarateManInfo.unk16) {
+            gKarateManInfo.unk16--;
+            func_0804cebc(D_03005380, gKarateManInfo.unk14, gKarateManInfo.unk16);
+            if (gKarateManInfo.unk16 == 2) {
+                gKarateManInfo.unk18 = 0;
+                gKarateManInfo.unk1C = D_089df37c;
                 func_080221cc();
                 func_08002634(&s_f_boxing_score_down_seqData);
             }
@@ -353,6 +357,6 @@ void func_08022170(void) {
 #include "asm/scenes/karate_man/asm_080221cc.s"
 
 void func_0802221c(u32 arg0) {
-    D_030055d0->gameInfo.karateMan.unk17 = arg0;
-    func_0804d770(D_03005380, D_030055d0->gameInfo.karateMan.unk14, arg0);
+    gKarateManInfo.unk17 = arg0;
+    func_0804d770(D_03005380, gKarateManInfo.unk14, arg0);
 }

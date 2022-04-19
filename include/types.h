@@ -63,7 +63,8 @@ struct struct_080179f4_sub1 {
     u32 null18;
     u32 null1C;
     u32 null20;
-    u32 null24;
+    u16 null24;
+    u8  unk26;
     s16 unk28;
     u16 null2A;
     u16 unk2C;
@@ -102,7 +103,8 @@ struct struct_030046a4_sub2 {
 };
 
 struct struct_030046a4 {
-	u8 pad00[0xC];
+	u8 pad00[0xA];
+    s16 unkA;
 	s16 unkC;
 	s16 unkE;
 	struct_030046a4_union unk10;
@@ -117,11 +119,54 @@ struct struct_030046a4 {
 	s32 unk60;
     u8 pad64[4];
     struct struct_030046a4_sub3 unk68;
-	u8 pad78[2];
+	u8 pad78;
+    s8 unk79;
 	u8 unk7A;
 	u8 pad7B[0xB];
     u16 unk86;
 };
+
+
+// Null = "Data Not Used YET"
+struct struct_030053c0 {
+    u32 null0;
+    u32 unk4;      // [D_030053c4] ??
+    u32 null8;
+    u16 unkC;      // [D_030053cc] ??
+    u16 nullE;
+    u32 null10;
+    u32 unk14;     // [D_030053d4] ??
+    u32 null18;
+    u32 null1C;
+    u32 null20[4];
+    u32 null30[4];
+    u32 null40[4];
+    u32 null50[4];
+    u32 null60[4];
+    u32 null70[4];
+    u32 null80[4];
+    u32 null90[4];
+    u32 nullA0[4];
+    u32 nullB0[4];
+    u32 nullC0[4];
+    u32 nullD0[4];
+    u32 nullE0[4];
+    u32 nullF0[4];
+    u32 null100[4];
+    u32 null110[4];
+    u32 null120[4];
+    u32 null130[4];
+    u32 null140[4];
+    u32 null150[4];
+    u32 null160[4];
+    u32 null170[4];
+    u32 null180[4];
+    u16 unk190;    // [D_03005550] BeatScript: Music Volume
+    u16 unk192;    // [D_03005552] BeatScript: Music Channel Selection Volume
+    u16 unk194;    // [D_03005554] BeatScript: Music Channel Selection
+    u16 unk196;    // [D_03005556] BeatScript: Music Pitch
+};
+
 
 struct struct_030055d0_sub {
     u8 unk0:4;
@@ -140,6 +185,7 @@ struct struct_030055d0_sub {
     u8 unk2D;
 };
 
+
 struct KarateManInfoSubstruct {
 	u8 unk4:4;
     u8 pad05[3];
@@ -151,6 +197,7 @@ struct KarateManInfoSubstruct {
 };
 
 struct KarateManInfo {
+    u8 unk0;
 	struct KarateManInfoSubstruct unk_substruct;
     s16 unk14;
     u8 unk16;
@@ -170,7 +217,9 @@ struct KarateManInfo {
     u8 unk36;
 };
 
+
 struct RapMenInfo {
+    u8 unk0;
     u32 *unk4;
     s16 unk8;
     s16 unkA;
@@ -181,8 +230,9 @@ struct RapMenInfo {
     u8 unk14;
 };
 
+
 struct WizardsWaltzSparkle {
-    struct ScaledEntity *entity;     // Entity:  unk0
+    struct ScaledEntity *entity; // Entity:  unk0
     u8  state;      // Value:   unk4 {0,1,2}
     u32 unk8;       // Counter: unk8
     u32 unkC;       // Value:   posUnk0C
@@ -193,7 +243,8 @@ struct WizardsWaltzSparkle {
 };
 
 struct WizardsWaltzInfo {
-    struct ScaledEntity *wizardEntity;   // Entity:  unk4
+    u8 version;         // Value:   unk0
+    struct ScaledEntity *wizardEntity; // Entity:  unk4
     u8  wizardState;    // Value:   unk8 {0,1}
     u32 unkC;           // Value:   posUnk0C
     u32 unk10;          // Value:   posUnk10
@@ -201,7 +252,7 @@ struct WizardsWaltzInfo {
     u32 unk18;          // Value:   posUnk18
     u32 null1C;
     u32 null20;
-    struct ScaledEntity *shadowEntity;   // Entity:  unk24
+    struct ScaledEntity *shadowEntity; // Entity:  unk24
     u32 null28;
     u32 null2C;
     u32 null30;
@@ -210,7 +261,7 @@ struct WizardsWaltzInfo {
     u32 null3C;
     u32 null40;
     struct WizardsWaltzSparkle sparkle[10]; // Struct: unk44[10]
-    struct ScaledEntity *girlEntity;     // Entity:  unk184
+    struct ScaledEntity *girlEntity; // Entity:  unk184
     u8  girlState;      // Value:   unk188 {0,1,2}
     u32 null18C;
     u32 null190;
@@ -226,39 +277,41 @@ struct WizardsWaltzInfo {
     u8  isTutorial;     // Flag:    unk1B2
 };
 
+
 struct RhythmTweezersTweezers {
-    u32 entity; // Entity: Tweezers
-    u8  unk4;   // Flag: Active
-    u8  unk5;   // State: Holding { 0 = False (Open); 1 = True (Full Hair); 2 = (Half Hair) }
-    s16 unk6;   // Value: 0x4ea - ((cyclePosition * 0x5d5) / cycleTarget)
+    struct ScaledEntity *entity; // Entity:  Tweezers
+    u8  unk4;   // Flag:    Active
+    u8  unk5;   // State:   Holding { 0 = False (Open); 1 = True (Full Hair); 2 = (Half Hair) }
+    s16 unk6;   // Value:   0x4ea - ((cyclePosition * 0x5d5) / cycleTarget)
     u32 unk8;   // Counter: Cycle Position
-    u32 unkC;   // Value: Cycle Target
-    u8  unk10;  // Flag: Pulling (assigned but never used)
+    u32 unkC;   // Value:   Cycle Target
+    u8  unk10;  // Flag:    Pulling (assigned but never used)
 };
 
 struct RhythmTweezersFallingHair {
-    u32 entity; // Entity: Falling Hair
-    s32 unk4;   // Value: Vertical Velocity
+    struct ScaledEntity *entity; // Entity:  Falling Hair
+    s32 unk4;   // Value:   Vertical Velocity
     u32 unk8;   // Counter: Vertical Position
-    s16 unkC;   // Value: Distance From Tweezers
-    u16 unkE;   // Value: Randomised Rotation Speed ( func_08001980(0x1f) - 0xf )
+    s16 unkC;   // Value:   Distance From Tweezers
+    u16 unkE;   // Value:   Randomised Rotation Speed ( func_08001980(0x1f) - 0xf )
 };
 
 struct RhythmTweezersVegetable {
-    s16 entity0; // Entity: Current Vegetable Face
-    s16 entity2; // Entity: Upcoming Vegetable Face
-    u8  unk4;    // State: Current Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
-    u8  unk5;    // State: Upcoming Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
-    u8  unk6;    // Flag: Screen Scrolling
-    u32 unk8;    // Counter: Screen Scroll Position
-    u32 unkC;    // Value: Screen Scroll Target
-    u8  unk10;   // Flag: Destination Vegetable BG Map { 0 = D_0600f800 (Right); -1 = D_0600f000 (Left) }
+    s16 entity0;    // Entity:  Current Vegetable Face
+    s16 entity2;    // Entity:  Upcoming Vegetable Face
+    u8  unk4;       // State:   Current Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
+    u8  unk5;       // State:   Upcoming Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
+    u8  unk6;       // Flag:    Screen Scrolling
+    u32 unk8;       // Counter: Screen Scroll Position
+    u32 unkC;       // Value:   Screen Scroll Target
+    u8  unk10;      // Flag:    Destination Vegetable BG Map { 0 = D_0600f800 (Right); -1 = D_0600f000 (Left) }
 };
 
 struct RhythmTweezersInfo {
+    u8 unk0;        // Value: Version { 0..2 = Rhythm Tweezers; 3..5 = Rhythm Tweezers 2 }
     struct RhythmTweezersTweezers tweezers;
     u32 unk18;      // Counter: Hair Placement Cycle Position
-    u32 unk1C;      // Value: Hair Placement Cycle Spacing
+    u32 unk1C;      // Value:   Hair Placement Cycle Spacing
     u8  unk20;      // Counter: Next Available Falling Hair {0..4}
     struct RhythmTweezersFallingHair fallingHairs[5];
     struct RhythmTweezersVegetable vegetable;
@@ -266,24 +319,60 @@ struct RhythmTweezersInfo {
         u16 u16[2];     // Missed/Queued; Barely'd
         u32 u32;        // Combined (NOT Total)
     } unk88;
-    s16 unk8C;      // Entity: Tutorial Text (Unused)
-    u16 unk8E;      // Value: Global Horizontal Position (for vegetable faces and hair)
-    s16 unk90;      // Value: Mask Current Position
-    s16 unk92;      // Value: Mask Vertical Motion
+    s16 unk8C;      // Entity:  Tutorial Text (Unused)
+    u16 unk8E;      // Value:   Global Horizontal Position (for vegetable faces and hair)
+    s16 unk90;      // Value:   Mask Current Position
+    s16 unk92;      // Value:   Mask Vertical Motion
 };
 
+
+struct SneakySpiritsInfo {
+    u32 *unk0;          // Pointer: ??? (Related to Tutorial Text)
+    u8  version;        // Value:   Version
+    u8  rainSlow;       // Flag:    Slow-Motion Rain
+    s16 rainDrops[30];      // Entity:  Raindrops
+    u16 rainDropNext;       // Counter: Next Raindrop to Update
+    s16 rainSplashes[20];   // Entity:  Rain Splashes
+    u16 rainSplashNext;     // Counter: Next Rain Splash to Update
+    s16 tree;           // Entity:  Tree
+    s16 bow;            // Entity:  Bow
+    u8  arrowReady;     // Flag:    Bow Has Arrow
+    s16 door;           // Entity:  Door
+    s16 backWall;       // Entity:  Back Wall
+    s16 ghostWalk;      // Entity:  Sneaky Spirit (Moving)
+    u16 unk7A;          // Value:   7 (used for determining horizontal position; only assigned in startup)
+    s16 ghostMask;      // Entity:  Wall Mask (used to hide the Sneaky Spirit when moving low)
+    s16 ghostHit;       // Entity:  Sneaky Spirit (Hit)
+    u16 ghostHeight;    // Value:   Sneaky Spirit Height of Next Motion { Default = 0x100 }
+    u32 *rainChannel;   // Pointer: IRAM Sound Channel Playing Rain/Wind SFX
+    s16 text;           // Entity:  Tutorial Text
+    u8  slowMotionHit;  // Flag:    Slow-Motion Effect On Hit
+    u8  freezeRain;     // Flag:    Freeze Slow-Motion Rain
+    s16 tutorialGhost;  // Entity:  Sneaky Spirit (Tutorial Example)
+};
+
+
+struct PrologueInfo {
+    u8  ver;        // Value:  Version
+    s16 entity2;    // Entity: Object 0
+    s16 entity4;    // Entity: Object 1
+    s16 entity6;    // Entity: Object 2
+};
+
+
 struct struct_030055d0 {
-    u8 unk0;
-    u8 pad01[3];
     union {
         struct KarateManInfo karateMan;
         struct RapMenInfo rapMen;
         struct WizardsWaltzInfo wizardsWaltz;
         struct RhythmTweezersInfo rhythmTweezers;
+        struct SneakySpiritsInfo sneakySpirits;
+        struct PrologueInfo prologues;
     } gameInfo;
 };
 
 extern struct struct_030046a4 *D_030046a4;
 extern s32 D_03005380;
+extern struct struct_030053c0 D_030053c0;
 extern struct struct_030055d0 *D_030055d0;
 extern s16 gSineTable[];

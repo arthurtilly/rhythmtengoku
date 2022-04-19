@@ -68,7 +68,7 @@ struct unk_struct_08008b00 {
 // extern ? func_0800873c(?);
 // extern ? func_08008758(?);
 extern u32 func_080087b4(u16, u32*);
-// extern ? func_080087d4(?);
+extern s32 func_080087d4(s32, s32, s32);
 // extern ? func_080087e8(?);
 // extern ? func_08008910(?);
 // extern ? func_08008938(?);
