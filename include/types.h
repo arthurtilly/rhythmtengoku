@@ -327,28 +327,28 @@ struct RhythmTweezersInfo {
 
 
 struct SneakySpiritsInfo {
-    u32 *unk0;      // Pointer: ??? (Related to Tutorial Text)
-    u8  unk4;       // Value:   Version
-    u8  unk5;       // Flag:    Slow-Motion Rain
-    s16 unk6[30];   // Entity:  Raindrops
-    u16 unk42;      // Counter: Next Raindrop to Update
-    s16 unk44[20];  // Entity:  Rain Splashes
-    u16 unk6C;      // Counter: Next Rain Splash to Update
-    s16 unk6E;      // Entity:  Tree
-    s16 unk70;      // Entity:  Bow
-    u8  unk72;      // Flag:    Bow Loaded
-    s16 unk74;      // Entity:  Door
-    s16 unk76;      // Entity:  Back Wall
-    s16 unk78;      // Entity:  Sneaky Spirit
-    u16 unk7A;      // Value:   7 (used for determining horizontal position, but only assigned in startup)
-    s16 unk7C;      // Entity:  ??? (another wall? perhaps masking)
-    s16 unk7E;      // Entity:  Sneaky Spirit (Hit)
-    u16 unk80;      // Value:   Sneaky Spirit Height of Next Motion { Default = 0x100 }
-    u32 unk84;      // Value:   Rain SFX-related (might be a pointer)
-    s16 unk88;      // Entity:  Tutorial Text
-    u8  unk8A;      // Flag:    Slow-Motion Effect On Hit
-    u8  unk8B;      // Flag:    Freeze Slow-Motion Rain
-    s16 unk8C;      // Entity:  Sneaky Spirit (Tutorial Example)
+    u32 *unk0;          // Pointer: ??? (Related to Tutorial Text)
+    u8  version;        // Value:   Version
+    u8  rainSlow;       // Flag:    Slow-Motion Rain
+    s16 rainDrops[30];      // Entity:  Raindrops
+    u16 rainDropNext;       // Counter: Next Raindrop to Update
+    s16 rainSplashes[20];   // Entity:  Rain Splashes
+    u16 rainSplashNext;     // Counter: Next Rain Splash to Update
+    s16 tree;           // Entity:  Tree
+    s16 bow;            // Entity:  Bow
+    u8  arrowReady;     // Flag:    Bow Loaded
+    s16 door;           // Entity:  Door
+    s16 backWall;       // Entity:  Back Wall (behind the door)
+    s16 ghostWalk;      // Entity:  Sneaky Spirit (Moving)
+    u16 unk7A;          // Value:   7 (used for determining horizontal position, but only assigned in startup)
+    s16 ghostMask;      // Entity:  Wall Mask (used to hide the Sneaky Spirit when moving low)
+    s16 ghostHit;       // Entity:  Sneaky Spirit (Hit)
+    u16 ghostHeight;    // Value:   Sneaky Spirit Height of Next Motion { Default = 0x100 }
+    u32 unk84;          // Value:   Rain SFX-related (might be a pointer)
+    s16 text;           // Entity:  Tutorial Text
+    u8  slowMotionHit;  // Flag:    Slow-Motion Effect On Hit
+    u8  freezeRain;     // Flag:    Freeze Slow-Motion Rain
+    s16 tutorialGhost;  // Entity:  Sneaky Spirit (Tutorial Example)
 };
 
 
