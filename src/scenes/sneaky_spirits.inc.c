@@ -33,7 +33,7 @@ extern u32 *D_089de7a4[]; // GFX Struct Index
 extern u16 D_030053c0[];
 extern u16 D_03005550;
 
-extern u16  func_08001980(u32);
+extern u16  func_08001980(u16);
 extern u32 *func_08004b98(u32 *, char *, u32, u32);
 
 extern void func_0804cebc(s32, s16, s8);
@@ -50,7 +50,7 @@ extern void func_0804dcb8(s32, s16, u16);
 #include "asm/scenes/sneaky_spirits/asm_0801ee98.s"
 
 
-// [func_0801ef70] SUB (Load) Func_00 - Initialise Rain
+// [func_0801ef70] SUB - Initialise Rain
 void func_0801ef70(void) {
     u32 i;
 
@@ -60,6 +60,7 @@ void func_0801ef70(void) {
     for (i = 0; i < 20; i++) {
         gSneakySpiritsInfo.unk44[i] = func_0804d160(D_03005380, D_088a1000, 0, 0x40, 0x40, 0x8400, 0, 0, 0x8002);
     }
+
     gSneakySpiritsInfo.unk42 = 0;
     gSneakySpiritsInfo.unk6C = 0;
     gSneakySpiritsInfo.unk5 = 0;
@@ -68,7 +69,7 @@ void func_0801ef70(void) {
 }
 
 
-// [func_0801f040] SUB (SUB (Loop) Func_00) - Update Rain
+// [func_0801f040] SUB - Update Rain
 void func_0801f040(void) {
     u32 i;
     s16 element;
@@ -97,13 +98,13 @@ void func_0801f040(void) {
 }
 
 
-// [func_0801f17c] SUB (Loop) Func_00 - ?
+// [func_0801f17c] SUB - Update Rain If Not In Slow-Motion
 void func_0801f17c(void) {
     if (!gSneakySpiritsInfo.unk5) func_0801f040();
 }
 
 
-// [func_0801f194] SUB (ENGINE Func_06) - Slow Rain (Tutorial)
+// [func_0801f194] SUB - Set Rain { 0 = Normal; 1 = Slow-Motion }
 void func_0801f194(u32 arg0) {
     u32 i;
     s16 element;
@@ -112,7 +113,7 @@ void func_0801f194(u32 arg0) {
     if (gSneakySpiritsInfo.unk5 == arg0) return;
     gSneakySpiritsInfo.unk5 = arg0;
 
-    if (arg0 != 0) {
+    if (arg0) {
         for (i = 0; i < 30; i++) {
             element = gSneakySpiritsInfo.unk6[i];
             if (!gSneakySpiritsInfo.unk8B) {
@@ -151,13 +152,13 @@ void func_0801f194(u32 arg0) {
 }
 
 
-// [func_0801f30c] ENGINE Func_06 - Slow Rain (Tutorial)
+// [func_0801f30c] ENGINE Func_06 - Set Rain (Tutorial) { 0 = Normal; 1 = Slow-Motion }
 void func_0801f30c(u32 arg0) {
     func_0801f194(arg0);
 }
 
 
-// [func_0801f318] SUB (ENGINE Func_07) - Freeze Slow Rain (Tutorial)
+// [func_0801f318] ENGINE Func_07 - Freeze Slow-Motion Rain (Tutorial)
 void func_0801f318(u32 arg0) {
     gSneakySpiritsInfo.unk8B = arg0;
 }
@@ -275,7 +276,7 @@ void func_0801f684(u32 arg0) {
 }
 
 
-// [func_0801f6d0] SUB Loop Func_01 - ?
+// [func_0801f6d0] SUB - Cross-Fade Music and Wind/Rain SFX
 void func_0801f6d0(void) {
     s32 temp1;
     u32 temp;

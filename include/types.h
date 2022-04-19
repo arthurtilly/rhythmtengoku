@@ -283,27 +283,27 @@ struct RhythmTweezersInfo {
 
 
 struct SneakySpiritsInfo {
-    u32 *unk0;      // Pointer: ? (Related to Tutorial Text)
+    u32 *unk0;      // Pointer: ??? (Related to Tutorial Text)
     u8  unk4;       // Value:   Version
-    u8  unk5;       // Flag:    ?
+    u8  unk5;       // Flag:    Slow-Motion Rain
     s16 unk6[30];   // Entity:  Rain_0
     u16 unk42;      // Counter: Next Rain_0 to Update
     s16 unk44[20];  // Entity:  Rain_1
     u16 unk6C;      // Counter: Next Rain_1 to Update
-    s16 unk6E;      // Entity:  ?
+    s16 unk6E;      // Entity:  ??? (Rain-related)
     s16 unk70;      // Entity:  Bow
     u8  unk72;      // Flag:    Bow Loaded
     s16 unk74;      // Entity:  Door
     s16 unk76;      // Entity:  Back Wall
     s16 unk78;      // Entity:  Sneaky Spirit
-    u16 unk7A;
-    s16 unk7C;      // Entity:  ? (another back wall?)
+    u16 unk7A;      // Value:   7 (used for determining horizontal position, but only assigned in startup)
+    s16 unk7C;      // Entity:  ??? (another wall? perhaps masking)
     s16 unk7E;      // Entity:  Sneaky Spirit (Hit)
-    u16 unk80;
+    u16 unk80;      // Value:   Sneaky Spirit Height of Next Motion { Default = 0x100 }
     u32 unk84;      // Value:   Rain SFX-related (might be a pointer)
     s16 unk88;      // Entity:  Tutorial Text
-    u8  unk8A;      // Flag:    Slow Motion On Hit
-    u8  unk8B;      // Flag:    Freeze Slow Rain
+    u8  unk8A;      // Flag:    Slow-Motion Effect On Hit
+    u8  unk8B;      // Flag:    Freeze Slow-Motion Rain
     s16 unk8C;      // Entity:  Sneaky Spirit (Tutorial Example)
 };
 
