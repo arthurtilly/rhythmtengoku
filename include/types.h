@@ -127,6 +127,7 @@ struct struct_030046a4 {
 };
 
 
+// Null = "Data Not Used YET"
 struct struct_030053c0 {
     u32 null0;
     u32 unk4;      // [D_030053c4] ??
@@ -329,11 +330,11 @@ struct SneakySpiritsInfo {
     u32 *unk0;      // Pointer: ??? (Related to Tutorial Text)
     u8  unk4;       // Value:   Version
     u8  unk5;       // Flag:    Slow-Motion Rain
-    s16 unk6[30];   // Entity:  Rain_0
-    u16 unk42;      // Counter: Next Rain_0 to Update
-    s16 unk44[20];  // Entity:  Rain_1
-    u16 unk6C;      // Counter: Next Rain_1 to Update
-    s16 unk6E;      // Entity:  ??? (Rain-related)
+    s16 unk6[30];   // Entity:  Raindrops
+    u16 unk42;      // Counter: Next Raindrop to Update
+    s16 unk44[20];  // Entity:  Rain Splashes
+    u16 unk6C;      // Counter: Next Rain Splash to Update
+    s16 unk6E;      // Entity:  Tree
     s16 unk70;      // Entity:  Bow
     u8  unk72;      // Flag:    Bow Loaded
     s16 unk74;      // Entity:  Door
@@ -352,7 +353,7 @@ struct SneakySpiritsInfo {
 
 
 struct PrologueInfo {
-    u8  ver;        // Value: Version
+    u8  ver;        // Value:  Version
     s16 entity2;    // Entity: Object 0
     s16 entity4;    // Entity: Object 1
     s16 entity6;    // Entity: Object 2

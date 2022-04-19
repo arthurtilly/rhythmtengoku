@@ -8,8 +8,7 @@
 
 extern char D_08059f90[]; // Empty Default Text
 
-extern u32 D_088a1010[]; // Animation: Rain?
-extern u32 D_088a0ca0[]; // Animation: Bow?
+extern u32 D_088a1010[]; // Animation: "rain_fall_slow"
 extern u32 D_088a1158[]; // Animation: "bow_shoot"
 extern u32 D_088a0df0[]; // Animation: "arrow_miss"
 
@@ -21,12 +20,13 @@ extern u32 D_088a11a8[]; // Animation: "door_back_wall_2" (might be masking)
 extern u32 D_088a0cd0[]; // Animation: "ghost_hit"
 extern u32 D_088a1280[]; // Animation: "ghost_dash_tutorial"
 
-extern u32 D_088a0fd8[]; // Animation: ? (rain?)
-extern u32 D_088a1000[]; // Animation: ? (also rain?)
-extern u32 D_088a0f28[]; // Animation: ?
+extern u32 D_088a0fd8[]; // Animation: "rain_fall"
+extern u32 D_088a1000[]; // Animation: "rain_splash"
+extern u32 D_088a0f28[]; // Animation: "tree"
 
 extern const struct SequenceData s_ghost_rain_seqData; // Wind/Rain SFX
 extern const struct SequenceData s_ghost_gosha_seqData; // Arrow Missed SFX
+extern const struct SequenceData s_ghost_walk_seqData; // Sneaky Spirit Moving SFX
 
 extern u32 D_089de6e0;    // GFX Null
 extern u32 *D_089de7a4[]; // GFX Struct Index
@@ -38,6 +38,7 @@ extern u32 *func_08004b98(u32 *, char *, u32, u32);
 
 extern void func_0804cebc(s32, s16, s8);
 extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
+extern void func_0804d614(s32, s16, s16);
 extern void func_0804d770(s32, s16, u16);
 extern void func_0804d5d4(s32, s16, s16, s16);
 extern void func_0804d8f8(s32, s16, u32 *, u32, u32, u32, u32);
@@ -47,7 +48,21 @@ extern void func_0804dcb8(s32, s16, u16);
 /* SNEAKY SPIRITS */
 
 
-#include "asm/scenes/sneaky_spirits/asm_0801ee98.s"
+// [func_0801ee98] ENGINE Func_00 - Appear At Position
+void func_0801ee98(u32 position) {
+    s16 ghost;
+    s32 posA = func_08008f04(8, 0x58, position, gSneakySpiritsInfo.unk7A - 1);
+    s32 posB = func_08008f04(0x50, 0x4c, position, gSneakySpiritsInfo.unk7A - 1);
+    posB += (0x100 - gSneakySpiritsInfo.unk80) >> 3;
+
+    ghost = gSneakySpiritsInfo.unk78;
+    func_0804d5d4(D_03005380, ghost, posA, posB);
+    func_0804d770(D_03005380, ghost, 1);
+    func_0804cebc(D_03005380, ghost, 0);
+    func_0804dcb8(D_03005380, ghost, (func_0800c1a8() << 8) / 0x64);
+    func_0804d614(D_03005380, gSneakySpiritsInfo.unk7C, posA);
+    func_08002698(&s_ghost_walk_seqData, (gSneakySpiritsInfo.unk80 * 15) >> 5, 0);
+}
 
 
 // [func_0801ef70] SUB - Initialise Rain
