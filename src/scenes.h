@@ -72,23 +72,23 @@ extern void func_0801fc40(void);    // [func_0801fc40] GRAPHICAL Func_01 - Unkno
 
 // Bon Odori
 
-// extern ? func_080206a0(?);
+extern u32* func_080206a0(u32);
 // extern ? func_080206c0(?);
 // extern ? func_0802075c(?);
 // extern ? func_08020778(?);
 // extern ? func_080207d0(?);
 // extern ? func_080207ec(?);
-extern void func_080207f8(u32 arg0);
+extern void func_080207f8(u32);
 // extern ? func_0802080c(?);
 extern void func_08020834();
 extern void func_0802085c();
 extern void func_08020880();
 // extern ? func_080208c0(?);
-// extern ? func_080208ec(?);
+extern void func_080208ec(u32);
 extern void func_08020a48();
 // extern ? func_08020a4c(?);
-extern void func_08020be4(u8 arg0);
-extern void func_08020bf4(s32 arg0);
+extern void func_08020be4(u8);
+extern void func_08020bf4(s32);
 // extern ? func_08020c0c(?);
 // extern ? func_08020c24(?);
 // extern ? func_08020c3c(?);

@@ -3,10 +3,17 @@
 extern u32 *D_089deed4[]; // This is an index of pointers to palettes.
 extern u32 *D_089deecc[]; // This is also an index of pointers to palettes (more like sub-palettes).
 
-extern s16 func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
-extern u32 *func_080206a0();
+extern u32** D_089dec38[];
+extern void D_089ded10;
 
-#include "asm/scenes/bon_odori/asm_080206a0.s"
+extern u32 func_0800c3b8();
+extern u32 func_080087b4(u16, u32 *);
+
+extern u32 func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
+
+u32* func_080206a0(u32 arg0) {
+    return *(D_089dec38[arg0] + gBonOdoriInfo.unk0);
+}
 
 #include "asm/scenes/bon_odori/asm_080206c0.s"
 
@@ -51,8 +58,12 @@ void func_08020880() {
     func_08005d38(temp1, func_0802085c + 1, 0);
 }
 
-
-#include "asm/scenes/bon_odori/asm_080208c0.s"
+void func_080208c0(void) {
+    u32 data;
+    func_0800c604(0);
+    data = func_080087b4(func_0800c3b8(), &D_089ded10);
+    func_08005d38(data, func_08020880, 0);
+}
 
 void func_080208ec(u32 arg0) {
     u32 i;

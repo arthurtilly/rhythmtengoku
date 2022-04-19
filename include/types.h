@@ -383,23 +383,29 @@ struct PrologueInfo {
     s16 entity6;    // Entity: Object 2
 };
 
+struct BonOdoriInfo_sub {
+    u16 unk0;
+    u32 pad4;
+    u32 pad8;
+};
+
 struct BonOdoriInfo {
     u8 unk0;
     u32 unk4;
-    s16 unk8[9];
-    u32 padC[7];
+    struct BonOdoriInfo_sub unk8[4]; // Probably the Donpans?
     u8 unk38;
     u16 unk3A;
     u16 unk3C;
-    u16 unk3E;
+    s16 unk3E;
     u16 unk40;
     u8 unk42;
-    u32 pad44[2];
+    u32 pad44;
+    u32 pad48;
     u16 unk4C[4];
     u8 unk54;
     u8 unk55;
-    u32 unk58;
-    u32 unk5C;
+    u32 *unk58;
+    u32 *unk5C;
     u32 unk60;
     u32 pad64[0xFF];
     u32 unk460;
