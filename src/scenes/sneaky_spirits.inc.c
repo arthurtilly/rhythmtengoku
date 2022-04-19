@@ -1,6 +1,7 @@
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
+#include "src/code_08016e18.h"
 
 // For readability. !TODO - CHANGE/REMOVE
 #define gSneakySpiritsInfo D_030055d0->gameInfo.sneakySpirits
@@ -16,7 +17,7 @@ extern u32 D_088a0ca0[]; // Animation: "bow_draw"
 extern u32 D_088a0d08[]; // Animation: "door_open"
 extern u32 D_088a0cf8[]; // Animation: "door_back_wall"
 extern u32 D_088a0f58[]; // Animation: "ghost"
-extern u32 D_088a11a8[]; // Animation: "door_back_wall_2"
+extern u32 D_088a11a8[]; // Animation: "door_back_wall_2" (might be masking)
 extern u32 D_088a0cd0[]; // Animation: "ghost_hit"
 extern u32 D_088a1280[]; // Animation: "ghost_dash_tutorial"
 
@@ -30,7 +31,6 @@ extern const struct SequenceData s_ghost_gosha_seqData; // Arrow Missed SFX
 extern u32 D_089de6e0;    // GFX Null
 extern u32 *D_089de7a4[]; // GFX Struct Index
 
-extern u16 D_030053c0[];
 extern u16 D_03005550;
 
 extern u16  func_08001980(u16);
@@ -281,7 +281,7 @@ void func_0801f6d0(void) {
     s32 temp1;
     u32 temp;
     if (gSneakySpiritsInfo.unk84) {
-        temp1 = (0x100 - D_030053c0[0xc8]);
+        temp1 = (0x100 - D_030053c0.unk190);
         temp = func_080087d4(temp1 / 2, 0, 0x80) + 0x40;
         func_08002920(gSneakySpiritsInfo.unk84, temp);
     }

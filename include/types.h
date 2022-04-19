@@ -126,6 +126,47 @@ struct struct_030046a4 {
     u16 unk86;
 };
 
+
+struct struct_030053c0 {
+    u32 null0;
+    u32 unk4;      // [D_030053c4] ??
+    u32 null8;
+    u16 unkC;      // [D_030053cc] ??
+    u16 nullE;
+    u32 null10;
+    u32 unk14;     // [D_030053d4] ??
+    u32 null18;
+    u32 null1C;
+    u32 null20[4];
+    u32 null30[4];
+    u32 null40[4];
+    u32 null50[4];
+    u32 null60[4];
+    u32 null70[4];
+    u32 null80[4];
+    u32 null90[4];
+    u32 nullA0[4];
+    u32 nullB0[4];
+    u32 nullC0[4];
+    u32 nullD0[4];
+    u32 nullE0[4];
+    u32 nullF0[4];
+    u32 null100[4];
+    u32 null110[4];
+    u32 null120[4];
+    u32 null130[4];
+    u32 null140[4];
+    u32 null150[4];
+    u32 null160[4];
+    u32 null170[4];
+    u32 null180[4];
+    u16 unk190;    // [D_03005550] BeatScript: Music Volume
+    u16 unk192;    // [D_03005552] BeatScript: Music Channel Selection Volume
+    u16 unk194;    // [D_03005554] BeatScript: Music Channel Selection
+    u16 unk196;    // [D_03005556] BeatScript: Music Pitch
+};
+
+
 struct struct_030055d0_sub {
     u8 unk0:4;
     u8 pad01[3];
@@ -331,5 +372,6 @@ struct struct_030055d0 {
 
 extern struct struct_030046a4 *D_030046a4;
 extern s32 D_03005380;
+extern struct struct_030053c0 D_030053c0;
 extern struct struct_030055d0 *D_030055d0;
 extern s16 gSineTable[];
