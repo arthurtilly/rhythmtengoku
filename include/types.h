@@ -103,7 +103,8 @@ struct struct_030046a4_sub2 {
 };
 
 struct struct_030046a4 {
-	u8 pad00[0xC];
+	u8 pad00[0xA];
+    s16 unkA;
 	s16 unkC;
 	s16 unkE;
 	struct_030046a4_union unk10;
@@ -118,7 +119,8 @@ struct struct_030046a4 {
 	s32 unk60;
     u8 pad64[4];
     struct struct_030046a4_sub3 unk68;
-	u8 pad78[2];
+	u8 pad78;
+    s8 unk79;
 	u8 unk7A;
 	u8 pad7B[0xB];
     u16 unk86;
