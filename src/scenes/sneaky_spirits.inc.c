@@ -44,7 +44,7 @@ extern u32 *D_089de7a4[]; // GFX Struct Index
 
 // External Functions: !TODO
 extern u16  func_08001980(u16);
-extern u32  func_08002634();
+extern u32 *func_08002634();
 extern u32 *func_08004b98(u32 *, char *, u32, u32);
 extern u32  func_0800e3e4(s16, u32, u32, s8, s8, u16);
 
@@ -102,13 +102,13 @@ void func_0801ef70(void) {
 // [func_0801f040] SUB - Update Rain
 void func_0801f040(void) {
     u32 i;
-    s16 element;
+    s16 entity;
 
     for (i = 0; i < 4; i++) {
-        element = gSneakySpiritsInfo.rainDrops[gSneakySpiritsInfo.rainDropNext];
-        func_0804d8f8(D_03005380, element, D_088a0fd8, 0, 1, 0, 2);
-        func_0804d5d4(D_03005380, element, func_08001980(0xf0), func_08001980(0x40) + 0x30);
-        func_0804d770(D_03005380, element, 1);
+        entity = gSneakySpiritsInfo.rainDrops[gSneakySpiritsInfo.rainDropNext];
+        func_0804d8f8(D_03005380, entity, D_088a0fd8, 0, 1, 0, 2);
+        func_0804d5d4(D_03005380, entity, func_08001980(0xf0), func_08001980(0x40) + 0x30);
+        func_0804d770(D_03005380, entity, 1);
 
         gSneakySpiritsInfo.rainDropNext += 1;
         if (gSneakySpiritsInfo.rainDropNext >= 30) {
@@ -117,10 +117,10 @@ void func_0801f040(void) {
     }
 
     for (i = 0; i < 4; i++) {
-        element = gSneakySpiritsInfo.rainSplashes[gSneakySpiritsInfo.rainSplashNext];
-        func_0804cebc(D_03005380, element, 0);
-        func_0804d5d4(D_03005380, element, func_08001980(0xf0), func_08001980(0x32) + 0x6e);
-        func_0804d770(D_03005380, element, 1);
+        entity = gSneakySpiritsInfo.rainSplashes[gSneakySpiritsInfo.rainSplashNext];
+        func_0804cebc(D_03005380, entity, 0);
+        func_0804d5d4(D_03005380, entity, func_08001980(0xf0), func_08001980(0x32) + 0x6e);
+        func_0804d770(D_03005380, entity, 1);
 
         gSneakySpiritsInfo.rainSplashNext += 1;
         if (gSneakySpiritsInfo.rainSplashNext >= 20) {
@@ -227,35 +227,32 @@ void func_0801f378(void) {
 void func_0801f3a4(u32 ver) {
     u32 *temp;
 
-    // Standard game/graphic init operations.
     gSneakySpiritsInfo.version = ver;
     func_0801f378();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
     func_0800e0a0(2, 1, 0, 0, 0, 30, 2);
 
-    // Initialise Tutorial Text variables(?)
     gSneakySpiritsInfo.unk0 = func_0800c660(0x380, 1);
     temp = func_08004b98(gSneakySpiritsInfo.unk0, D_08059f90, 0, 0);
     gSneakySpiritsInfo.text = func_0804d160(D_03005380, temp, 0, 0x78, 0x20, 0, 0, 0, 0);
     func_0801ef70();
 
-    // Initialise other entities.
     gSneakySpiritsInfo.bow = func_0804d160(D_03005380, D_088a0ca0, 0, 0xd2, 0x80, 0x4800, 0, 0, 0x8000);
     gSneakySpiritsInfo.arrowReady = 0;
 
     gSneakySpiritsInfo.door = func_0804d160(D_03005380, D_088a0d08, 0, 0x48, 0x30, 0x8800, 0, 0, 0);
     gSneakySpiritsInfo.backWall = func_0804d160(D_03005380, D_088a0cf8, 0, 0x18, 0x2d, 0x879c, 0, 0, 0);
+
     gSneakySpiritsInfo.ghostWalk = func_0804d160(D_03005380, D_088a0f58, 0, 0x10, 0x50, 0x8792, 1, 0, 2);
     func_0804d5d4(D_03005380, gSneakySpiritsInfo.ghostWalk, -0x64, -0x64);
-
     gSneakySpiritsInfo.ghostMask = func_0804d160(D_03005380, D_088a11a8, 0, 0x58, 0x8c, 0x8791, 1, 0, 0);
     gSneakySpiritsInfo.ghostHit = func_0804d160(D_03005380, D_088a0cd0, 0, 0x64, 0x4c, 0x87a6, 0, 0, 0x8000);
     gSneakySpiritsInfo.unk7A = 7;
-
     gSneakySpiritsInfo.tutorialGhost = func_0804d160(D_03005380, D_088a1280, 0, 0x78, 0x5c, 0x8792, 1, 0x7f, 0x8000);
     gSneakySpiritsInfo.ghostHeight = 0x100;
-    gSneakySpiritsInfo.unk84 = 0;
+
+    gSneakySpiritsInfo.rainChannel = 0;
 
     func_08017338(0, 0);
     gSneakySpiritsInfo.slowMotionHit = 1;
@@ -296,14 +293,14 @@ void func_0801f638(void) {
 
 // [func_0801f684] ENGINE Func_04 - Play Wind/Rain SFX
 void func_0801f684(u32 arg0) {
-    if (arg0 == 0) {
-        if (gSneakySpiritsInfo.unk84) {
-            func_08002920(gSneakySpiritsInfo.unk84, 0);
-            func_08002828(gSneakySpiritsInfo.unk84);
-            gSneakySpiritsInfo.unk84 = 0;
+    if (!arg0) {
+        if (gSneakySpiritsInfo.rainChannel) {
+            func_08002920(gSneakySpiritsInfo.rainChannel, 0);
+            func_08002828(gSneakySpiritsInfo.rainChannel);
+            gSneakySpiritsInfo.rainChannel = 0;
         }
     } else {
-        gSneakySpiritsInfo.unk84 = func_08002634(&s_ghost_rain_seqData);
+        gSneakySpiritsInfo.rainChannel = func_08002634(&s_ghost_rain_seqData);
     }
 }
 
@@ -312,10 +309,11 @@ void func_0801f684(u32 arg0) {
 void func_0801f6d0(void) {
     s32 temp1;
     u32 temp;
-    if (gSneakySpiritsInfo.unk84) {
+
+    if (gSneakySpiritsInfo.rainChannel) {
         temp1 = (0x100 - D_030053c0.unk190);
         temp = func_080087d4(temp1 / 2, 0, 0x80) + 0x40;
-        func_08002920(gSneakySpiritsInfo.unk84, temp);
+        func_08002920(gSneakySpiritsInfo.rainChannel, temp);
     }
 }
 
@@ -379,43 +377,35 @@ void func_0801f80c(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
 
 // [func_0801f810] SUB - Revert Slow-Motion Effects
 void func_0801f810(void) {
-    // ???
     func_0800c604(0);
 
-    // Reset slow-motion effects if "remix" variant is not used.
     if (gSneakySpiritsInfo.slowMotionHit) {
-        func_0800be88(0x100);
-        func_0800c0c4(0);
-        func_0800c0f8(0, 0);
+        func_0800be88(0x100);   // Reset Game Speed
+        func_0800c0c4(0);       // Reset Music Pitch
+        func_0800c0f8(0, 0);    // Reset Music Channel Volume
     }
 
-    // Hide Sneaky Spirit (Hit) entity.
     func_0804d770(D_03005380, gSneakySpiritsInfo.ghostHit, 0);
-    // Animate Door.
     func_0804dae0(D_03005380, gSneakySpiritsInfo.door, -1, 0, 0);
     func_0804cebc(D_03005380, gSneakySpiritsInfo.door, 3);
-    // Reset Rain.
     func_0801f194(0);
-    // Reset Bow.
     func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, D_088a1158, 0, 1, 0x7f, 0);
-    // Reset Sneaky Spirit.
     func_0804dcb8(D_03005380, gSneakySpiritsInfo.ghostWalk, (func_0800c1a8() << 8) / 0x64);
 }
 
 
- // [func_0801f8d0] CUE - Hit
+// [func_0801f8d0] CUE - Hit
 void func_0801f8d0(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
     u32 duration;
     s8  xVel;
     s8  yVel;
     u32 temp;
-    s16 ghost;
 
-    // Effects to use if "remix" variant is or isn't used.
     if (gSneakySpiritsInfo.slowMotionHit) {
         func_0800be88(0x40);        // Set Game Speed (0x40 = 0.25; Default = 0x100)
         func_0800c0c4(-0xc00);      // Set Music Pitch (-0xc00 = -12 semitones; Default = 0)
         func_0800c0f8(0x200, 0);    // Set Music Channel 9 Volume to 0
+
         duration = func_0800c3a4(0x16) - func_08018054();
         xVel = 0x44;
         yVel = 0x3c;
@@ -425,37 +415,34 @@ void func_0801f8d0(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
         yVel = 0x44;
     }
 
-    // Manage Sneaky Spirit.
     temp = func_0804ddb0(D_03005380, gSneakySpiritsInfo.ghostHit, 2);
     func_0804cebc(D_03005380, gSneakySpiritsInfo.ghostHit, func_08001980(temp));
     func_0804d770(D_03005380, gSneakySpiritsInfo.ghostHit, 1);
     temp = func_0800e3e4(gSneakySpiritsInfo.ghostHit, 0x64, 0x4c, xVel, yVel, (u16) duration);
     func_08005d38(temp, func_0801f810, 0);
-    // Manage Door.
+
     func_0804dae0(D_03005380, gSneakySpiritsInfo.door, 1, 0x7f, 0);
     func_0804cebc(D_03005380, gSneakySpiritsInfo.door, 1);
-    // Slow-down Rain.
+
     func_0801f194(1);
-    // Manage Bow.
+
     gSneakySpiritsInfo.arrowReady = 0;
     func_08017338(0, 0);
     func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, D_088a1158, 3, 0, 0, 0);
-    // Play SFX.
+
     func_08002634(&s_f_aim_just_hit_seqData);
     func_08002634(&s_f_aim_just_hit_voice_seqData);
-    // Create entity (single animation only).
+
     func_0804d160(D_03005380, D_088a1258, 0, 0x80, 0x5a, 0x8792, 1, 0, 3);
 }
 
 
 // [func_0801fa4c] CUE - Barely
 void func_0801fa4c(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
-    // Manage Bow.
     gSneakySpiritsInfo.arrowReady = 0;
     func_08017338(0, 0);
     func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, D_088a1158, 0, 1, 0x7f, 0);
 
-    // Manage Sneaky Spirit, Arrow.
     func_0804d160(D_03005380, D_088a0df0, 0, 0x46, 0x3a, 0x8792, 1, 0x7f, 3);
     if (func_08018054() < 0) {
         func_0804d160(D_03005380, D_088a0e80, 0, 0x7a, 0x5e, 0x8792, 1, 0, 3);

@@ -336,15 +336,15 @@ struct SneakySpiritsInfo {
     u16 rainSplashNext;     // Counter: Next Rain Splash to Update
     s16 tree;           // Entity:  Tree
     s16 bow;            // Entity:  Bow
-    u8  arrowReady;     // Flag:    Bow Loaded
+    u8  arrowReady;     // Flag:    Bow Has Arrow
     s16 door;           // Entity:  Door
-    s16 backWall;       // Entity:  Back Wall (behind the door)
+    s16 backWall;       // Entity:  Back Wall
     s16 ghostWalk;      // Entity:  Sneaky Spirit (Moving)
-    u16 unk7A;          // Value:   7 (used for determining horizontal position, but only assigned in startup)
+    u16 unk7A;          // Value:   7 (used for determining horizontal position; only assigned in startup)
     s16 ghostMask;      // Entity:  Wall Mask (used to hide the Sneaky Spirit when moving low)
     s16 ghostHit;       // Entity:  Sneaky Spirit (Hit)
     u16 ghostHeight;    // Value:   Sneaky Spirit Height of Next Motion { Default = 0x100 }
-    u32 unk84;          // Value:   Rain SFX-related (might be a pointer)
+    u32 *rainChannel;   // Pointer: IRAM Sound Channel Playing Rain/Wind SFX
     s16 text;           // Entity:  Tutorial Text
     u8  slowMotionHit;  // Flag:    Slow-Motion Effect On Hit
     u8  freezeRain;     // Flag:    Freeze Slow-Motion Rain

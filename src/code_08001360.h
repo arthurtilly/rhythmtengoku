@@ -104,7 +104,7 @@ extern u8 func_08001fc4(u8 *);
 // extern ? func_080028c4(?);
 // extern ? func_080028d8(?);
 // extern ? func_080028ec(?);
-extern void func_08002920(u32, u16);
+extern void func_08002920(u32*, u16);
 // extern ? func_08002934(?);
 // extern ? func_0800294c(?);
 // extern ? func_08002968(?);
