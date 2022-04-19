@@ -78,7 +78,12 @@ extern u32 func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16); // Non-Sca
 
 #include "asm/code_0800b778/asm_0800c0d8.s"
 
-#include "asm/code_0800b778/asm_0800c0f8.s"
+// Set Volume for Selected Music Channels
+void func_0800c0f8(u16 selection, u16 volume) {
+    D_030053c0.unk192 = volume;
+    D_030053c0.unk194 = selection;
+    func_08002934(D_030053c0.unk4, selection, volume);
+}
 
 #include "asm/code_0800b778/asm_0800c128.s"
 
@@ -90,9 +95,13 @@ extern u32 func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16); // Non-Sca
 
 #include "asm/code_0800b778/asm_0800c184.s"
 
-#include "asm/code_0800b778/asm_0800c1a4.s"
+void func_0800c1a4_stub(void) {
+}
 
-#include "asm/code_0800b778/asm_0800c1a8.s"
+// Return D_030053c0.unkC.
+u32 func_0800c1a8(void) {
+    return D_030053c0.unkC;
+}
 
 #include "asm/code_0800b778/asm_0800c1b4.s"
 
@@ -120,7 +129,10 @@ extern u32 func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16); // Non-Sca
 
 #include "asm/code_0800b778/asm_0800c398.s"
 
-#include "asm/code_0800b778/asm_0800c3a4.s"
+// Parse beat values.
+u32 func_0800c3a4(u32 arg0) {
+    func_08007b80(arg0 << 8, D_030053c0.unk14);
+}
 
 u32 func_0800c3b8() {
     return D_03001310[0];
