@@ -24,9 +24,13 @@ extern u32 D_088a0fd8[]; // Animation: "rain_fall"
 extern u32 D_088a1000[]; // Animation: "rain_splash"
 extern u32 D_088a0f28[]; // Animation: "tree"
 
+extern u32 D_088a1258[]; // Animation: "arrow_impact"
+
 extern const struct SequenceData s_ghost_rain_seqData; // Wind/Rain SFX
 extern const struct SequenceData s_ghost_gosha_seqData; // Arrow Missed SFX
 extern const struct SequenceData s_ghost_walk_seqData; // Sneaky Spirit Moving SFX
+extern const struct SequenceData s_f_aim_just_hit_seqData; // Sneaky Spirit Hit SFX
+extern const struct SequenceData s_f_aim_just_hit_voice_seqData; // Sneaky Spirit Hit Voice SFX
 
 extern u32 D_089de6e0;    // GFX Null
 extern u32 *D_089de7a4[]; // GFX Struct Index
@@ -35,6 +39,7 @@ extern u16 D_03005550;
 
 extern u16  func_08001980(u16);
 extern u32 *func_08004b98(u32 *, char *, u32, u32);
+extern u32  func_0800e3e4(s16, u32, u32, s8, s8, u16);
 
 extern void func_0804cebc(s32, s16, s8);
 extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
@@ -44,6 +49,7 @@ extern void func_0804d770(s32, s16, u16);
 extern void func_0804d8f8(s32, s16, u32 *, u32, u32, u32, u32);
 extern void func_0804dae0(s32, s16, s8, u32, u32);
 extern void func_0804dcb8(s32, s16, u16);
+extern u16  func_0804ddb0(s32, s16, s8);
 
 
 /* SNEAKY SPIRITS */
@@ -387,7 +393,55 @@ void func_0801f810(void) {
 }
 
 
-#include "asm/scenes/sneaky_spirits/asm_0801f8d0.s"
+ // [func_0801f8d0] CUE - Hit
+void func_0801f8d0(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
+    u32 duration;
+    s8  xVel;
+    s8  yVel;
+    u32 temp;
+    s16 ghost;
+
+    // Effects to use if "remix" variant is or isn't used.
+    if (gSneakySpiritsInfo.unk8A) {
+        func_0800be88(0x40);        // Set Game Speed (0x40 = 0.25; Default = 0x100)
+        func_0800c0c4(-0xc00);      // Set Music Pitch (-0xc00 = -12 semitones; Default = 0)
+        func_0800c0f8(0x200, 0);    // Set Music Channel 9 Volume to 0
+        duration = func_0800c3a4(0x16) - func_08018054();
+        xVel = 0x44;
+        yVel = 0x3c;
+    } else {
+        duration = func_0800c3a4(0x30) - func_08018054();
+        xVel = 0x54;
+        yVel = 0x44;
+    }
+
+    // Manage Sneaky Spirit.
+    temp = func_0804ddb0(D_03005380, gSneakySpiritsInfo.unk7E, 2);
+    func_0804cebc(D_03005380, gSneakySpiritsInfo.unk7E, func_08001980(temp));
+    func_0804d770(D_03005380, gSneakySpiritsInfo.unk7E, 1);
+    // !TODO - Decompile func_0801f810
+    temp = func_0800e3e4(gSneakySpiritsInfo.unk7E, 0x64, 0x4c, xVel, yVel, (u16) duration);
+    func_08005d38(temp, func_0801f810, 0);
+
+    // Manage Door.
+    func_0804dae0(D_03005380, gSneakySpiritsInfo.unk74, 1, 0x7f, 0);
+    func_0804cebc(D_03005380, gSneakySpiritsInfo.unk74, 1);
+
+    // Slow-down Rain.
+    func_0801f194(1);
+
+    // Manage Bow.
+    gSneakySpiritsInfo.unk72 = 0;
+    func_08017338(0, 0);
+    func_0804d8f8(D_03005380, gSneakySpiritsInfo.unk70, D_088a1158, 3, 0, 0, 0);
+
+    // Play SFX.
+    func_08002634(&s_f_aim_just_hit_seqData);
+    func_08002634(&s_f_aim_just_hit_voice_seqData);
+
+    // Create entity (single animation only).
+    func_0804d160(D_03005380, D_088a1258, 0, 0x80, 0x5a, 0x8792, 1, 0, 3);
+}
 
 #include "asm/scenes/sneaky_spirits/asm_0801fa4c.s"
 
