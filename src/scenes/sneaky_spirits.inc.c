@@ -28,6 +28,8 @@ extern u32 D_088a1258[]; // Animation: "arrow_impact"
 
 extern u32 D_088a0e80[]; // Animation: "ghost_barely_scared"
 extern u32 D_088a11b8[]; // Animation: "ghost_barely_run"
+extern u32 D_088a0fb8[]; // Animation: "ghost_miss_dash"
+extern u32 D_088a0d80[]; // Animation: "ghost_miss_taunt"
 
 extern const struct SequenceData s_ghost_rain_seqData; // Wind/Rain SFX
 extern const struct SequenceData s_ghost_gosha_seqData; // Arrow Missed SFX
@@ -35,16 +37,21 @@ extern const struct SequenceData s_ghost_walk_seqData; // Sneaky Spirit Moving S
 extern const struct SequenceData s_f_aim_just_hit_seqData; // Sneaky Spirit Hit SFX
 extern const struct SequenceData s_f_aim_just_hit_voice_seqData; // Sneaky Spirit Hit Voice SFX
 extern const struct SequenceData s_ghost_miss_hit_seqData; // Sneaky Spirit Barely SFX
+extern const struct SequenceData s_ghost_warai_seqData; // Sneaky Spirit Miss Voice SFX
+extern const struct SequenceData s_ghost_dash_seqData; // Sneaky Spirit Miss SFX
 
 extern u32 D_089de6e0;    // GFX Null
 extern u32 *D_089de7a4[]; // GFX Struct Index
 
-extern u16 D_03005550;
+extern u16 D_03005550; // BeatScript: Music Volume
 
+// External Functions !TODO
 extern u16  func_08001980(u16);
+extern u32  func_08002634();
 extern u32 *func_08004b98(u32 *, char *, u32, u32);
 extern u32  func_0800e3e4(s16, u32, u32, s8, s8, u16);
 
+// External Library Functions
 extern void func_0804cebc(s32, s16, s8);
 extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
 extern void func_0804d5d4(s32, s16, s16, s16);
@@ -54,7 +61,6 @@ extern void func_0804d8f8(s32, s16, u32 *, u32, u32, u32, u32);
 extern void func_0804dae0(s32, s16, s8, u32, u32);
 extern void func_0804dcb8(s32, s16, u16);
 extern u16  func_0804ddb0(s32, s16, s8);
-
 
 
 /* SNEAKY SPIRITS */
@@ -461,7 +467,20 @@ void func_0801fa4c(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
 }
 
 
-#include "asm/scenes/sneaky_spirits/asm_0801fb14.s"
+// [func_0801fb14] CUE - Miss
+void func_0801fb14(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
+    u8 unk26;
+    u16 temp;
+
+    func_0804d160(D_03005380, D_088a0fb8, 0, 0x78, 0x5c, 0x8792, 1, 0, 3);
+    unk26 = arg1->unk26;
+    if (unk26 == 0) {
+        func_0804d160(D_03005380, D_088a0d80, 0, 0xa0, 0x69, 0x8792, 1, unk26, 3);
+        temp = func_0800c3b8();
+        func_0800856c(temp, func_08002634, &s_ghost_warai_seqData, func_0800c3a4(0xc));
+    }
+    func_08002634(&s_ghost_dash_seqData);
+}
 
 
 // [func_0801fbb0] MAIN - Input Event
