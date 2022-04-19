@@ -27,7 +27,7 @@ extern void func_0801f7cc(void);    // [func_0801f7cc] MAIN - Unload
 extern void func_0801f7e8(u32, struct struct_080179f4_sub1 *, u32); // [func_0801f7e8] CUE - Spawn
 extern u32  func_0801f7f0(u32, struct struct_080179f4_sub1 *, u32); // [func_0801f7f0] CUE - Behaviour
 extern void func_0801f80c(u32, struct struct_080179f4_sub1 *, u32); // [func_0801f80c] CUE - Despawn (STUB)
-extern void func_0801f810(void);    // [func_0801f810] Revert Slow-Motion Effects
+extern void func_0801f810(void);    // [func_0801f810] SUB - Revert Slow-Motion Effects
 extern void func_0801f8d0(u32, struct struct_080179f4_sub1 *, u32); // [func_0801f8d0] CUE - Hit
 extern void func_0801fa4c(u32, struct struct_080179f4_sub1 *, u32); // [func_0801fa4c] CUE - Barely
 extern void func_0801fb14(u32, struct struct_080179f4_sub1 *, u32); // [func_0801fb14] CUE - Miss

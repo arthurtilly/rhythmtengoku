@@ -38,10 +38,11 @@ extern u32 *func_08004b98(u32 *, char *, u32, u32);
 
 extern void func_0804cebc(s32, s16, s8);
 extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
+extern void func_0804d5d4(s32, s16, s16, s16);
 extern void func_0804d614(s32, s16, s16);
 extern void func_0804d770(s32, s16, u16);
-extern void func_0804d5d4(s32, s16, s16, s16);
 extern void func_0804d8f8(s32, s16, u32 *, u32, u32, u32, u32);
+extern void func_0804dae0(s32, s16, s8, u32, u32);
 extern void func_0804dcb8(s32, s16, u16);
 
 
@@ -360,7 +361,31 @@ void func_0801f80c(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
 }
 
 
-#include "asm/scenes/sneaky_spirits/asm_0801f810.s"
+// [func_0801f810] SUB - Revert Slow-Motion Effects
+void func_0801f810(void) {
+    // ???
+    func_0800c604(0);
+
+    // Reset slow-motion effects if "remix" variant is not used.
+    if (gSneakySpiritsInfo.unk8A) {
+        func_0800be88(0x100);
+        func_0800c0c4(0);
+        func_0800c0f8(0, 0);
+    }
+
+    // Hide Sneaky Spirit (Hit) entity.
+    func_0804d770(D_03005380, gSneakySpiritsInfo.unk7E, 0);
+    // Animate Door.
+    func_0804dae0(D_03005380, gSneakySpiritsInfo.unk74, -1, 0, 0);
+    func_0804cebc(D_03005380, gSneakySpiritsInfo.unk74, 3);
+    // Reset Rain.
+    func_0801f194(0);
+    // Reset Bow.
+    func_0804d8f8(D_03005380, gSneakySpiritsInfo.unk70, D_088a1158, 0, 1, 0x7f, 0);
+    // Reset Sneaky Spirit.
+    func_0804dcb8(D_03005380, gSneakySpiritsInfo.unk78, (func_0800c1a8() << 8) / 0x64);
+}
+
 
 #include "asm/scenes/sneaky_spirits/asm_0801f8d0.s"
 
