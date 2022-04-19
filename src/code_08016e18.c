@@ -241,7 +241,7 @@ void func_080179f4(s32 arg1) { // universal cue?
 #include "asm/code_08016e18/asm_08017ec8.s"
 
 // Return D_030046a4->unk79 (s8)
-u32 func_08018054(void) {
+s32 func_08018054(void) {
     return D_030046a4->unk79;
 }
 

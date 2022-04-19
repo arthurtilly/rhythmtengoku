@@ -67,7 +67,7 @@ extern void func_080179f4(s32);
 // extern ? func_08017c8c(?);
 // extern ? func_08017e2c(?);
 // extern ? func_08017ec8(?);
-extern u32 func_08018054(void);
+extern s32 func_08018054(void);
 // extern ? func_08018068(?);
 // extern ? func_08018078(?);
 // extern ? func_08018088(?);
