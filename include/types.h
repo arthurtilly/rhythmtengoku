@@ -382,18 +382,28 @@ struct PrologueInfo {
     s16 entity4;    // Entity: Object 1
     s16 entity6;    // Entity: Object 2
 };
+
 struct BonOdoriInfo {
     u8 unk0;
-    u8 pad1[0x37];
+    u32 unk4;
+    s16 unk8[9];
+    u32 padC[7];
     u8 unk38;
-    u32 pad3C;
+    u16 unk3A;
+    u16 unk3C;
+    u16 unk3E;
     u16 unk40;
     u8 unk42;
     u32 pad44[2];
     u16 unk4C[4];
     u8 unk54;
     u8 unk55;
-    u32 pad58[0x202];
+    u32 unk58;
+    u32 unk5C;
+    u32 unk60;
+    u32 pad64[0xFF];
+    u32 unk460;
+    u32 unk464[0xFF];
     u16 unk860;
     u16 pad862;
     u16 unk864;

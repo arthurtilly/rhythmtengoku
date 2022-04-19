@@ -1,3 +1,11 @@
+#define gBonOdoriInfo D_030055d0->gameInfo.bonOdori
+
+extern u32 *D_089deed4[]; // This is an index of pointers to palettes.
+extern u32 *D_089deecc[]; // This is also an index of pointers to palettes (more like sub-palettes).
+
+extern s16 func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
+extern u32 *func_080206a0();
+
 #include "asm/scenes/bon_odori/asm_080206a0.s"
 
 #include "asm/scenes/bon_odori/asm_080206c0.s"
@@ -20,8 +28,8 @@ void func_080207f8(u32 arg0) {
 void func_08020834() {
     u32 i;
     for (i = 0; i < 4; i++) {
-        if (D_030055d0->gameInfo.bonOdori.unk4C[i]) {
-            D_030055d0->gameInfo.bonOdori.unk4C[i] -= 1;
+        if (gBonOdoriInfo.unk4C[i]) {
+            gBonOdoriInfo.unk4C[i] -= 1;
         }
 
     }
@@ -39,14 +47,45 @@ void func_08020880() {
 
     func_0800c604(0);
     temp0 = (u16) func_0800c3b8();
-    temp1 = func_08002ee0(temp0, D_089deec4[D_030055d0->gameInfo.bonOdori.unk0], 0x2000);
+    temp1 = func_08002ee0(temp0, D_089deec4[gBonOdoriInfo.unk0], 0x2000);
     func_08005d38(temp1, func_0802085c + 1, 0);
 }
 
 
 #include "asm/scenes/bon_odori/asm_080208c0.s"
 
-#include "asm/scenes/bon_odori/asm_080208ec.s"
+void func_080208ec(u32 arg0) {
+    u32 i;
+
+    gBonOdoriInfo.unk0 = arg0;
+    func_080208c0();
+    func_0800e0ec();
+    func_0800e114();
+    func_0800e0a0(0, 1, 0, -0x40, 2, 0x18, 0xC000);
+    func_0800e0a0(1, 1, 0, 0, 0, 0x1d, 1);
+    func_0800e0a0(2, 1, 0, 0, 0, 0x1e, 1);
+    gBonOdoriInfo.unk4 = func_0800c660(0x340, 2);
+    D_03004b10[0x23] = 0x311e;
+    D_03004b10[0x26] = 0x1041;
+    D_03004b10[0x27] = 0x1010;
+    
+    for (i = 0; i < 4; i++) {
+        gBonOdoriInfo.unk8[i].unk0 |= -1;
+    }
+    
+    gBonOdoriInfo.unk3C = 0;
+    gBonOdoriInfo.unk3A = 0;
+    gBonOdoriInfo.unk3E = func_0804d160(D_03005380, func_080206a0(0x1f), 0x7f, 0x78, 0x48, 0x8800, 1, 0x7f, 0);
+    gBonOdoriInfo.unk40 = 0;
+    gBonOdoriInfo.unk42 = 0;
+    func_080206c0();
+    gBonOdoriInfo.unk5C = D_089deed4[gBonOdoriInfo.unk0];
+    gBonOdoriInfo.unk58 = D_089deecc[gBonOdoriInfo.unk0];
+    func_08001ec4(0xc, 7, gBonOdoriInfo.unk5C, 0, &gBonOdoriInfo.unk460);
+    func_08001ec4(0x14, 7, gBonOdoriInfo.unk58, 0, &gBonOdoriInfo.unk60);
+    func_08017338(1, 0);
+    gBonOdoriInfo.unk864 = 0;
+}
 
 void func_08020a48() {
     
@@ -55,11 +94,11 @@ void func_08020a48() {
 #include "asm/scenes/bon_odori/asm_08020a4c.s"
 
 void func_08020be4(u8 arg0) {
-    D_030055d0->gameInfo.bonOdori.unk38 = arg0;
+    gBonOdoriInfo.unk38 = arg0;
 }
 
 void func_08020bf4(s32 arg0) { //type of arg0 inferred from func_08020a4c
-    func_08020a4c(arg0, D_030055d0->gameInfo.bonOdori.unk38, 0);
+    func_08020a4c(arg0, gBonOdoriInfo.unk38, 0);
 }
 
 #include "asm/scenes/bon_odori/asm_08020c0c.s"
@@ -86,15 +125,15 @@ void func_08020bf4(s32 arg0) { //type of arg0 inferred from func_08020a4c
 
 void func_08020ee8(void) {
     u8 temp0;
-    u32 temp1 = D_030055d0->gameInfo.bonOdori.unk860;
+    u32 temp1 = gBonOdoriInfo.unk860;
     struct struct_030055d0 *temp2;
     
-    if (D_030055d0->gameInfo.bonOdori.unk860 != 0) {
-        D_030055d0->gameInfo.bonOdori.unk54 = 3;
-        D_030055d0->gameInfo.bonOdori.unk55 = 4;
+    if (gBonOdoriInfo.unk860 != 0) {
+        gBonOdoriInfo.unk54 = 3;
+        gBonOdoriInfo.unk55 = 4;
         func_0800bc40();
     } else {
-        D_030055d0->gameInfo.bonOdori.unk54 = 3;
+        gBonOdoriInfo.unk54 = 3;
         
         temp2 = D_030055d0;
         if ((u16)func_08001980(2) != 0)
@@ -103,21 +142,21 @@ void func_08020ee8(void) {
             temp0 = 6;
         temp2->gameInfo.bonOdori.unk55 = temp0;
         
-        D_030055d0->gameInfo.bonOdori.unk40 = temp1;
-        D_030055d0->gameInfo.bonOdori.unk42 = 0;
+        gBonOdoriInfo.unk40 = temp1;
+        gBonOdoriInfo.unk42 = 0;
     }
 }
 
 void func_08020f48() {
-    if (D_030055d0->gameInfo.bonOdori.unk864 != 0) {
-        D_030055d0->gameInfo.bonOdori.unk864 -= 1;
-        if (D_030055d0->gameInfo.bonOdori.unk864 == 0) {
+    if (gBonOdoriInfo.unk864 != 0) {
+        gBonOdoriInfo.unk864 -= 1;
+        if (gBonOdoriInfo.unk864 == 0) {
             func_08017338(1, 0);
         }
     }
     func_08020834();
-    if (D_030055d0->gameInfo.bonOdori.unk40 != 0)
-        D_030055d0->gameInfo.bonOdori.unk40 -= 1;
+    if (gBonOdoriInfo.unk40 != 0)
+        gBonOdoriInfo.unk40 -= 1;
 }
 
 void func_08020f8c() {
