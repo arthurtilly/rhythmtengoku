@@ -111,9 +111,6 @@ export INCLUDE	:=	-I $(foreach dir,$(INCLUDES),$(wildcard $(dir)/*.h)) \
 					-I $(foreach dir,$(LIBDIRS),-I $(dir)/include) \
 					-I $(CURDIR)/$(BUILD)
 
-ALL_BUILDFILES := $(wildcard $(BUILD)/*) $(wildcard $(BUILD)/audio/*)
-BUILDFILES := $(filter-out $(BUILD)/audio $(BUILD)/audio/samples $(BUILD)/audio/sequences, $(ALL_BUILDFILES))
-
 #export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib)
 
 ifeq (,$(wildcard baserom.gba))
@@ -134,7 +131,7 @@ default: $(OUTPUT).gba
 #---------------------------------------------------------------------------------
 clean:
 	$(V)echo clean ...
-	$(V)rm -f -r $(BUILDFILES)
+	$(V)rm -fr $(BUILD)
 
 
 #---------------------------------------------------------------------------------
