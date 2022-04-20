@@ -138,8 +138,13 @@ struct struct_030053c0 {
     u32 unk14;     // [D_030053d4] ??
     u32 null18;
     u32 null1C;
-    u32 null20[4];
-    u32 null30[4];
+    u32 null20[2];
+    u32 unk28_1:1;
+    u32 unk28_2:4;
+    u32 unk2C;
+    u32 unk30;
+    u32 unk34;
+    u32 null38[2];
     u32 null40[4];
     u32 null50[4];
     u32 null60[4];
@@ -371,8 +376,26 @@ struct struct_030055d0 {
     } gameInfo;
 };
 
+typedef void (*struct_030055e0_func)(void);
+typedef u32 (*struct_030055e0_func_1)(void);
+
+struct struct_030055e0_sub {
+    u16 unk0;
+    struct_030055e0_func unk4;
+    struct_030055e0_func_1 unk8;
+    u32 unkC;
+};
+
+struct struct_030055e0 {
+    u8 unk0;
+    u8 unk1_1:1;
+    u8 unk1_2:1;
+    struct struct_030055e0_sub *unk4;
+};
+
 extern struct struct_030046a4 *D_030046a4;
 extern s32 D_03005380;
 extern struct struct_030053c0 D_030053c0;
 extern struct struct_030055d0 *D_030055d0;
+extern struct struct_030055e0 D_030055e0;
 extern s16 gSineTable[];
