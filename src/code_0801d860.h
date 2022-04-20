@@ -1,13 +1,13 @@
 #pragma once
 
-// extern ? func_0801d860(?);
-// extern ? func_0801d86c(?);
-// extern ? func_0801d8d8(?);
-// extern ? func_0801d95c(?);
-// extern ? func_0801d968(?);
-// extern ? func_0801d978(?);
-// extern ? func_0801d98c(?);
-// extern ? func_0801d9cc(?);
+extern void func_0801d860(u32);
+extern void func_0801d86c(u32);
+extern u32 func_0801d8d8(void);
+extern void func_0801d95c(u32);
+extern void func_0801d968(u32);
+extern void func_0801d978(void);
+extern void func_0801d98c(void);
+extern void func_0801d9cc(void);
 // extern ? func_0801d9d0(?);
 // extern ? func_0801da48(?);
 // extern ? func_0801dabc(?);

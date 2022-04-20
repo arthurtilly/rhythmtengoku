@@ -124,7 +124,7 @@ extern u32 *func_08004c0c(u32 *, char **, u32, u32);
 // extern ? func_08005d38(?);
 // extern ? func_08005d74(?);
 // extern ? func_08005db0(?);
-// extern ? func_08005de4(?);
+extern void func_08005de4(u16);
 // extern ? func_08005e18(?);
 // extern ? func_08005e54(?);
 // extern ? func_08005ee4(?);

@@ -1,31 +1,127 @@
 #include "global.h"
+#include "code_08003980.h"
 #include "code_0801d860.h"
 
 // Might need more splitting
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-static s32 D_0300155c; // unknown type
+static u8 D_0300155c; 
+static u8 D_0300155d; // unused
+static u8 D_0300155e; // unused
+static u8 D_0300155f; // unused
 static s8 D_03001560; // unknown type
 static s8 D_03001561; // unknown type
 
+extern void func_0804e0c4(s32, u16);
+
+void func_0801d9cc(void);
+
+
 // Beatscript related stuff
 
-#include "asm/code_0801d860/asm_0801d860.s"
+void func_0801d860(u32 arg0) {
+	D_0300155c = arg0;
+}
 
-#include "asm/code_0801d860/asm_0801d86c.s"
+// Global BeatScript initialization
+void func_0801d86c(u32 arg0) {
+    u32 temp[4];
 
-#include "asm/code_0801d860/asm_0801d8d8.s"
+    D_030055e0.unk0 = 0;
+    D_030055e0.unk1_1 = 0;
+    D_030055e0.unk1_2 = 0;
+    D_030055e0.unk4 = 0;
+    if (D_0300155c) {
+        func_08006d80();
+    }
+    func_08006da8();
+    func_08007014(0);
+    func_08006fec();
+    func_080073f0();
+    func_08003f28();
+    func_080013e8(func_0801d9cc);
+    temp[0] = arg0;
+    temp[1] = 0;
+    func_0800b778(0);
+    func_0800b834(&temp);
+}
 
-#include "asm/code_0801d860/asm_0801d95c.s"
+// Global BeatScript loop
+u32 func_0801d8d8(void) {
+    func_08006e88();
+    func_08003fb4();
+    if (D_030055e0.unk1_2) {
+        func_0800b974();
+    }
+    func_08005ad4();
+    func_08005a84();
+    switch(D_030055e0.unk0) {
+        case 0:
+            if (func_0801d9d0()) {
+                break;
+            }
+            func_0800b9fc();
+            if (!func_0800bc14()) {
+                break;
+            }
+            func_0801d98c();
+            return 1;
+        case 1:
+            func_0801da48();
+            if (D_030055e0.unk0) {
+                break;
+            }
+            func_0800b9fc();
+            if (!func_0800bc14()) {
+                break;
+            }
+            func_0801d98c();
+            return 1;
+        case 2:
+            if (!func_0801dabc()) {
+                break;
+            }
+            return 1;
+    }
+    func_08007410();
+    func_08006f84();
+    func_080042a4();
+    return 0;
+}
 
-#include "asm/code_0801d860/asm_0801d968.s"
+void func_0801d95c(u32 arg0) {
+	D_030053c0.unk30 = arg0;
+}
 
-#include "asm/code_0801d860/asm_0801d978.s"
+void func_0801d968(u32 arg0) {
+	D_030053c0.unk30 = arg0;
+	D_030053c0.unk34 = 0;
+}
 
-#include "asm/code_0801d860/asm_0801d98c.s"
+void func_0801d978(void) {
+	D_030053c0.unk28_2 = 0;
+}
 
-#include "asm/code_0801d860/asm_0801d9cc.s"
+void func_0801d98c(void) {
+    u32 i;
+
+    func_080013e8(0);
+    func_08003f28();
+
+    for (i = 0; i < 2;) {
+        i++;
+        func_0804e0c4(D_03005380, i);
+        func_0800222c(i);
+        func_08005de4(i);
+        mem_heap_dealloc_with_id(i);
+    }
+}
+
+void func_0801d9cc(void) {
+
+}
+
 
 // Pausing stuff
 
@@ -38,6 +134,7 @@ static s8 D_03001561; // unknown type
 #include "asm/code_0801d860/asm_0801daf8.s"
 
 #include "asm/code_0801d860/asm_0801db04.s"
+
 
 // ??? (debug related?)
 
@@ -65,6 +162,7 @@ static s8 D_03001561; // unknown type
 
 #include "asm/code_0801d860/asm_0801ded4.s"
 
+
 // Soft reset
 
 #include "asm/code_0801d860/asm_0801dedc.s"
@@ -72,6 +170,7 @@ static s8 D_03001561; // unknown type
 #include "asm/code_0801d860/asm_0801def4.s"
 
 #include "asm/code_0801d860/asm_0801df1c.s"
+
 
 // Safety screen
 
@@ -88,6 +187,7 @@ static s8 D_03001561; // unknown type
 #include "asm/code_0801d860/asm_0801e09c.s"
 
 #include "asm/code_0801d860/asm_0801e0c8.s"
+
 
 // Debug Menu
 
@@ -115,6 +215,7 @@ static s8 D_03001561; // unknown type
 
 #include "asm/code_0801d860/asm_0801e704.s"
 
+
 // Flash Memory Check
 
 #include "asm/code_0801d860/asm_0801e708.s"
@@ -137,6 +238,7 @@ static s8 D_03001561; // unknown type
 
 #include "asm/code_0801d860/asm_0801e950.s"
 
+
 // Data Clear
 
 #include "asm/code_0801d860/asm_0801e954.s"
@@ -157,6 +259,7 @@ static s8 D_03001561; // unknown type
 
 #include "asm/code_0801d860/asm_0801ea84.s"
 
+
 // Ending???
 
 #include "asm/code_0801d860/asm_0801ea88.s"
@@ -176,6 +279,7 @@ static s8 D_03001561; // unknown type
 #include "asm/code_0801d860/asm_0801ed3c.s"
 
 #include "asm/code_0801d860/asm_0801ed4c.s"
+
 
 // ???
 
