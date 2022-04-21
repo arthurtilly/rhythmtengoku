@@ -62,7 +62,7 @@ branch_08044784: \n\
 /* 080447cc */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 080447ce */ LDR R1, [R0] \n\
 /* 080447d0 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 080447d2 */ BL func_0804eaf0 \n\
+/* 080447d2 */ BL _call_via_r1 \n\
  \n\
 branch_080447d6: \n\
 /* 080447d6 */ ADD SP, 0xC \n\

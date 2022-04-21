@@ -17,17 +17,17 @@ thumb_func_start func_08019480 \n\
 /* 08019496 */ LDRH R0, [R4, 0x2] \n\
 /* 08019498 */ LSLS R0, R0, 0x8 \n\
 /* 0801949a */ LDRH R1, [R4] \n\
-/* 0801949c */ BL func_0804c86c \n\
+/* 0801949c */ BL Div \n\
 /* 080194a0 */ STRH R0, [R4, 0xC] \n\
 /* 080194a2 */ LDRH R0, [R4, 0x4] \n\
 /* 080194a4 */ LSLS R0, R0, 0x8 \n\
 /* 080194a6 */ LDRH R1, [R4] \n\
-/* 080194a8 */ BL func_0804c86c \n\
+/* 080194a8 */ BL Div \n\
 /* 080194ac */ STRH R0, [R4, 0xE] \n\
 /* 080194ae */ LDRH R0, [R4, 0xA] \n\
 /* 080194b0 */ LSLS R0, R0, 0x8 \n\
 /* 080194b2 */ LDRH R1, [R4] \n\
-/* 080194b4 */ BL func_0804c86c \n\
+/* 080194b4 */ BL Div \n\
 /* 080194b8 */ STRH R0, [R4, 0x10] \n\
 /* 080194ba */ LDRH R0, [R4] \n\
 /* 080194bc */ LDRH R1, [R4, 0xA] \n\
@@ -38,14 +38,14 @@ thumb_func_start func_08019480 \n\
 /* 080194c6 */ LDRH R1, [R4] \n\
 /* 080194c8 */ LDRH R2, [R4, 0xA] \n\
 /* 080194ca */ SUBS R1, R1, R2 @ Set R1 to R1 - R2 \n\
-/* 080194cc */ BL func_0804c86c \n\
+/* 080194cc */ BL Div \n\
 /* 080194d0 */ STRH R0, [R4, 0x12] \n\
 /* 080194d2 */ LDRH R0, [R4, 0x8] \n\
 /* 080194d4 */ LSLS R0, R0, 0x8 \n\
 /* 080194d6 */ LDRH R1, [R4] \n\
 /* 080194d8 */ LDRH R2, [R4, 0xA] \n\
 /* 080194da */ SUBS R1, R1, R2 @ Set R1 to R1 - R2 \n\
-/* 080194dc */ BL func_0804c86c \n\
+/* 080194dc */ BL Div \n\
 /* 080194e0 */ STRH R0, [R4, 0x14] \n\
  \n\
 branch_080194e2: \n\

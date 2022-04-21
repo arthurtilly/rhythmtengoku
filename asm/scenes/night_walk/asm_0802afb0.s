@@ -62,7 +62,7 @@ branch_0802b01a: \n\
 /* 0802b01a */ LDR R0, [R5, 0x24] \n\
 /* 0802b01c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0802b01e */ BEQ branch_0802b024 \n\
-/* 0802b020 */ BL func_0804eaec \n\
+/* 0802b020 */ BL _call_via_r0 \n\
  \n\
 branch_0802b024: \n\
 /* 0802b024 */ ADD SP, 0x4 \n\

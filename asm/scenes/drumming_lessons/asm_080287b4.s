@@ -114,7 +114,7 @@ thumb_func_start func_080287b4 \n\
 /* 080288aa */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080288ac */ BEQ branch_080288b4 \n\
 /* 080288ae */ ORRS R0, R7 @ Set R0 to R0 | R7 \n\
-/* 080288b0 */ BL func_0804eaec \n\
+/* 080288b0 */ BL _call_via_r0 \n\
  \n\
 branch_080288b4: \n\
 /* 080288b4 */ LDR R1, =D_089e29c8 \n\

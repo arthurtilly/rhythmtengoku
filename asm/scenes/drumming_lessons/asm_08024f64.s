@@ -25,7 +25,7 @@ thumb_func_start func_08024f64 \n\
 /* 08024f8a */ LSLS R3, R3, 0x2 \n\
 /* 08024f8c */ ADDS R0, R2, R3 @ Set R0 to R2 + R3 \n\
 /* 08024f8e */ LDR R0, [R0] \n\
-/* 08024f90 */ BL func_0804eaf0 \n\
+/* 08024f90 */ BL _call_via_r1 \n\
 /* 08024f94 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
  \n\
 branch_08024f96: \n\

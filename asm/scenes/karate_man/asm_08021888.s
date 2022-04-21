@@ -32,7 +32,7 @@ thumb_func_start func_08021888 \n\
 branch_080218bc: \n\
 /* 080218bc */ LSLS R0, R5, 0x8 \n\
 /* 080218be */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 080218c0 */ BL func_0804c86c \n\
+/* 080218c0 */ BL Div \n\
 /* 080218c4 */ STRH R0, [R4, 0x28] \n\
 /* 080218c6 */ LSLS R0, R0, 0x10 \n\
 /* 080218c8 */ LSRS R1, R0, 0x10 \n\

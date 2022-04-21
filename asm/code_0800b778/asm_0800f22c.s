@@ -71,7 +71,7 @@ thumb_func_start func_0800f22c \n\
 /* 0800f2b0 */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
 /* 0800f2b2 */ LSLS R0, R0, 0xB \n\
 /* 0800f2b4 */ LDR R1, [SP, 0x14] \n\
-/* 0800f2b6 */ BL func_0804c86c \n\
+/* 0800f2b6 */ BL Div \n\
 /* 0800f2ba */ STR R0, [SP, 0x28] \n\
 /* 0800f2bc */ LDR R2, [SP] \n\
 /* 0800f2be */ LDR R0, [R2, 0x4] \n\
