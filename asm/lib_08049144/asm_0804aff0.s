@@ -42,7 +42,7 @@ branch_0804b010: \n\
 /* 0804b034 */ LDRB R0, [R0] \n\
 /* 0804b036 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0804b038 */ BNE branch_0804b090 \n\
-/* 0804b03a */ LDR R0, =0x04000084 @ !Hardware \n\
+/* 0804b03a */ LDR R0, =0x04000084 @ !Hardware REG_SOUNDCNT_X \n\
 /* 0804b03c */ LDRH R0, [R0] \n\
 /* 0804b03e */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0804b040 */ LSRS R2, R7 @ Set R2 to R2 >> R7 (logical) \n\
@@ -175,7 +175,7 @@ branch_0804b128: \n\
 /* 0804b13e */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
  \n\
 branch_0804b140: \n\
-/* 0804b140 */ LDR R0, =0x04000060 @ !Hardware \n\
+/* 0804b140 */ LDR R0, =0x04000060 @ !Hardware REG_SOUND1CNT \n\
 /* 0804b142 */ STRH R1, [R0] \n\
 /* 0804b144 */ MOV R2, R12 @ Set R2 to R12 \n\
 /* 0804b146 */ LSLS R1, R2, 0xC \n\
@@ -248,7 +248,7 @@ branch_0804b1c2: \n\
 /* 0804b1c4 */ LDRB R1, [R0, 0x2] \n\
 /* 0804b1c6 */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 0804b1c8 */ BEQ branch_0804b206 \n\
-/* 0804b1ca */ LDR R1, =0x04000080 @ !Hardware \n\
+/* 0804b1ca */ LDR R1, =0x04000080 @ !Hardware REG_SOUNDCNT \n\
 /* 0804b1cc */ LDR R2, =0x0000ff77 \n\
 /* 0804b1ce */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0804b1d0 */ STRH R0, [R1] \n\
@@ -260,7 +260,7 @@ branch_0804b1c2: \n\
 /* 0804b1dc */ LDR R3, [R6, 0x4] \n\
 /* 0804b1de */ CMP R0, R3 @ Check R0 - R3 \n\
 /* 0804b1e0 */ BEQ branch_0804b206 \n\
-/* 0804b1e2 */ LDR R2, =0x04000090 @ !Hardware \n\
+/* 0804b1e2 */ LDR R2, =0x04000090 @ !Hardware REG_SGWR0 \n\
 /* 0804b1e4 */ ADDS R1, R3, 0x0 @ Set R1 to R3 + 0x0 \n\
 /* 0804b1e6 */ LDMIA R1!, {R0} \n\
 /* 0804b1e8 */ STMIA R2!, {R0} \n\
@@ -271,7 +271,7 @@ branch_0804b1c2: \n\
 /* 0804b1f2 */ STMIA R2!, {R0} \n\
 /* 0804b1f4 */ LDR R0, [R1] \n\
 /* 0804b1f6 */ STR R0, [R2] \n\
-/* 0804b1f8 */ LDR R2, =0x04000070 @ !Hardware \n\
+/* 0804b1f8 */ LDR R2, =0x04000070 @ !Hardware REG_SOUND3CNT \n\
 /* 0804b1fa */ LDRH R1, [R2] \n\
 /* 0804b1fc */ MOVS R0, 0x40 @ Set R0 to 0x40 \n\
 /* 0804b1fe */ BICS R0, R1 @ Clear bits in R1 from R0 \n\

@@ -336,7 +336,7 @@ branch_08049aa0: \n\
 /* 08049aa8 */ STR R1, [R0] \n\
 /* 08049aaa */ LDR R4, [SP, 0x1C] \n\
 /* 08049aac */ LDR R1, =D_03005b84 \n\
-/* 08049aae */ LDR R0, =0x04000006 @ !Hardware \n\
+/* 08049aae */ LDR R0, =0x04000006 @ !Hardware REG_VCOUNT \n\
 /* 08049ab0 */ LDRH R0, [R0] \n\
 /* 08049ab2 */ STRH R0, [R1] \n\
 /* 08049ab4 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\

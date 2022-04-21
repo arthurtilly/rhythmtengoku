@@ -12,7 +12,7 @@ thumb_func_start func_08049ad8 \n\
 /* 08049ae4 */ LDR R0, [R0] \n\
 /* 08049ae6 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
 /* 08049ae8 */ BEQ branch_08049b02 \n\
-/* 08049aea */ LDR R1, =0x040000c4 @ !Hardware \n\
+/* 08049aea */ LDR R1, =0x040000c4 @ !Hardware REG_DMA1CNT_L \n\
 /* 08049aec */ LDR R0, =0x84400004 \n\
 /* 08049aee */ STR R0, [R1] \n\
 /* 08049af0 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
@@ -26,7 +26,7 @@ thumb_func_start func_08049ad8 \n\
 /* 08049b00 */ STRH R0, [R1] \n\
  \n\
 branch_08049b02: \n\
-/* 08049b02 */ LDR R1, =0x040000d0 @ !Hardware \n\
+/* 08049b02 */ LDR R1, =0x040000d0 @ !Hardware REG_DMA2CNT_L\n\
 /* 08049b04 */ LDR R0, =0x84400004 \n\
 /* 08049b06 */ STR R0, [R1] \n\
 /* 08049b08 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

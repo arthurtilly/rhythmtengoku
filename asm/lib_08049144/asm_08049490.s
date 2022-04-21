@@ -95,7 +95,7 @@ branch_0804952e: \n\
 /* 0804953e */ STRB R0, [R2] \n\
 /* 08049540 */ MOV R3, R12 @ Set R3 to R12 \n\
 /* 08049542 */ STRB R1, [R3] \n\
-/* 08049544 */ LDR R0, =0x040000c6 @ !Hardware \n\
+/* 08049544 */ LDR R0, =0x040000c6 @ !Hardware REG_DMA1CNT_H\n\
 /* 08049546 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08049548 */ STRH R1, [R0] \n\
 /* 0804954a */ ADDS R0, 0xC @ Add 0xC to R0 \n\
@@ -217,7 +217,7 @@ branch_08049672: \n\
 /* 08049674 */ MOV R3, R10 @ Set R3 to R10 \n\
 /* 08049676 */ STRH R0, [R3] \n\
 /* 08049678 */ BL func_080497f8 \n\
-/* 0804967c */ LDR R1, =0x04000084 @ !Hardware \n\
+/* 0804967c */ LDR R1, =0x04000084 @ !Hardware REG_SOUNDCNT_X \n\
 /* 0804967e */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08049680 */ STRB R0, [R1] \n\
 /* 08049682 */ MOV R0, R9 @ Set R0 to R9 \n\
@@ -232,14 +232,14 @@ branch_08049672: \n\
 .ltorg \n\
  \n\
 branch_080496b4: \n\
-/* 080496b4 */ LDR R1, =0x04000082 @ !Hardware \n\
+/* 080496b4 */ LDR R1, =0x04000082 @ !Hardware REG_SOUNDCNT_H \n\
 /* 080496b6 */ LDR R2, =0x0000a90e \n\
 /* 080496b8 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 080496ba */ STRH R0, [R1] \n\
-/* 080496bc */ LDR R4, =0x040000a0 @ !Hardware \n\
+/* 080496bc */ LDR R4, =0x040000a0 @ !Hardware REG_SGFIFOA \n\
 /* 080496be */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080496c0 */ STR R2, [R4] \n\
-/* 080496c2 */ LDR R3, =0x040000a4 @ !Hardware \n\
+/* 080496c2 */ LDR R3, =0x040000a4 @ !Hardware REG_SGFIFOB \n\
 /* 080496c4 */ STR R2, [R3] \n\
 /* 080496c6 */ ADDS R1, 0x3A @ Add 0x3A to R1 \n\
 /* 080496c8 */ LDR R0, =D_0300563c \n\
@@ -249,7 +249,7 @@ branch_080496b4: \n\
 /* 080496d0 */ LDR R0, =D_030064b8 \n\
 /* 080496d2 */ LDR R0, [R0] \n\
 /* 080496d4 */ STR R0, [R1] \n\
-/* 080496d6 */ LDR R0, =0x040000c0 @ !Hardware \n\
+/* 080496d6 */ LDR R0, =0x040000c0 @ !Hardware REG_DMA1DAD \n\
 /* 080496d8 */ STR R4, [R0] \n\
 /* 080496da */ ADDS R0, 0xC @ Add 0xC to R0 \n\
 /* 080496dc */ STR R3, [R0] \n\
@@ -265,24 +265,24 @@ branch_080496b4: \n\
 .ltorg \n\
  \n\
 branch_0804970c: \n\
-/* 0804970c */ LDR R1, =0x04000082 @ !Hardware \n\
+/* 0804970c */ LDR R1, =0x04000082 @ !Hardware REG_SOUNDCNT_H \n\
 /* 0804970e */ LDR R2, =0x0000b80e \n\
 /* 08049710 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 08049712 */ STRH R0, [R1] \n\
-/* 08049714 */ LDR R0, =0x040000a0 @ !Hardware \n\
+/* 08049714 */ LDR R0, =0x040000a0 @ !Hardware REG_SGFIFOA \n\
 /* 08049716 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08049718 */ STR R2, [R0] \n\
-/* 0804971a */ LDR R3, =0x040000a4 @ !Hardware \n\
+/* 0804971a */ LDR R3, =0x040000a4 @ !Hardware REG_SGFIFOB \n\
 /* 0804971c */ STR R2, [R3] \n\
 /* 0804971e */ ADDS R1, 0x46 @ Add 0x46 to R1 \n\
 /* 08049720 */ LDR R0, =D_0300563c \n\
 /* 08049722 */ LDR R0, [R0] \n\
 /* 08049724 */ STR R0, [R1] \n\
-/* 08049726 */ LDR R0, =0x040000cc @ !Hardware \n\
+/* 08049726 */ LDR R0, =0x040000cc @ !Hardware REG_DMA2DAD \n\
 /* 08049728 */ STR R3, [R0] \n\
  \n\
 branch_0804972a: \n\
-/* 0804972a */ LDR R1, =0x040000d2 @ !Hardware \n\
+/* 0804972a */ LDR R1, =0x040000d2 @ !Hardware REG_DMA2CNT_H\n\
 /* 0804972c */ MOVS R3, 0xF6 @ Set R3 to 0xF6 \n\
 /* 0804972e */ LSLS R3, R3, 0x8 \n\
 /* 08049730 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
@@ -294,26 +294,26 @@ branch_0804972a: \n\
 .ltorg \n\
  \n\
 branch_08049758: \n\
-/* 08049758 */ LDR R1, =0x04000082 @ !Hardware \n\
+/* 08049758 */ LDR R1, =0x04000082 @ !Hardware REG_SOUNDCNT_H \n\
 /* 0804975a */ LDR R2, =0x0000bb0e \n\
 /* 0804975c */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0804975e */ STRH R0, [R1] \n\
-/* 08049760 */ LDR R5, =0x040000a0 @ !Hardware \n\
+/* 08049760 */ LDR R5, =0x040000a0 @ !Hardware REG_SGFIFOA \n\
 /* 08049762 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08049764 */ STR R3, [R5] \n\
-/* 08049766 */ LDR R4, =0x040000a4 @ !Hardware \n\
+/* 08049766 */ LDR R4, =0x040000a4 @ !Hardware REG_SGFIFOB \n\
 /* 08049768 */ STR R3, [R4] \n\
-/* 0804976a */ LDR R2, =0x040000bc @ !Hardware \n\
+/* 0804976a */ LDR R2, =0x040000bc @ !Hardware REG_DMA1SAD\n\
 /* 0804976c */ LDR R0, =D_0300563c \n\
 /* 0804976e */ LDR R1, [R0] \n\
 /* 08049770 */ STR R1, [R2] \n\
-/* 08049772 */ LDR R0, =0x040000c8 @ !Hardware \n\
+/* 08049772 */ LDR R0, =0x040000c8 @ !Hardware REG_DMA2SAD\n\
 /* 08049774 */ STR R1, [R0] \n\
 /* 08049776 */ SUBS R0, 0x8 @ Subtract 0x8 from R0 \n\
 /* 08049778 */ STR R5, [R0] \n\
 /* 0804977a */ ADDS R0, 0xC @ Add 0xC to R0 \n\
 /* 0804977c */ STR R4, [R0] \n\
-/* 0804977e */ LDR R1, =0x040000c6 @ !Hardware \n\
+/* 0804977e */ LDR R1, =0x040000c6 @ !Hardware REG_DMA1CNT_H\n\
 /* 08049780 */ MOVS R2, 0xB6 @ Set R2 to 0xB6 \n\
 /* 08049782 */ LSLS R2, R2, 0x8 \n\
 /* 08049784 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
@@ -329,11 +329,11 @@ branch_08049758: \n\
 /* 08049798 */ STR R3, [SP] \n\
  \n\
 branch_0804979a: \n\
-/* 0804979a */ LDR R1, =0x04000080 @ !Hardware \n\
+/* 0804979a */ LDR R1, =0x04000080 @ !Hardware REG_SOUNDCNT \n\
 /* 0804979c */ LDR R3, =0x0000bb77 \n\
 /* 0804979e */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 080497a0 */ STRH R0, [R1] \n\
-/* 080497a2 */ LDR R2, =0x04000102 @ !Hardware \n\
+/* 080497a2 */ LDR R2, =0x04000102 @ !Hardware REG_TM0CNT \n\
 /* 080497a4 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080497a6 */ STRH R0, [R2] \n\
 /* 080497a8 */ ADDS R1, 0x80 @ Add 0x80 to R1 \n\

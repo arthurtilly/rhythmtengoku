@@ -20,7 +20,7 @@ thumb_func_start func_0804c170 \n\
 /* 0804c18c */ ASRS R0, R0, 0x18 \n\
 /* 0804c18e */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 0804c190 */ LDR R1, =D_030055f0 \n\
-/* 0804c192 */ LDR R0, =0x04000006 @ !Hardware \n\
+/* 0804c192 */ LDR R0, =0x04000006 @ !Hardware REG_VCOUNT \n\
 /* 0804c194 */ LDRH R0, [R0] \n\
 /* 0804c196 */ STRH R0, [R1] \n\
 /* 0804c198 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
@@ -163,7 +163,7 @@ branch_0804c276: \n\
 branch_0804c2ae: \n\
 /* 0804c2ae */ BL func_0804a334 \n\
 /* 0804c2b2 */ LDR R0, =D_03005b80 \n\
-/* 0804c2b4 */ LDR R1, =0x04000006 @ !Hardware \n\
+/* 0804c2b4 */ LDR R1, =0x04000006 @ !Hardware REG_VCOUNT \n\
 /* 0804c2b6 */ LDRH R1, [R1] \n\
 /* 0804c2b8 */ STRH R1, [R0] \n\
 /* 0804c2ba */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\

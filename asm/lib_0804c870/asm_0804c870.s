@@ -7,7 +7,7 @@ thumb_func_start func_0804c870 \n\
 /* 0804c872 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0804c874 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
 /* 0804c876 */ ADDS R3, R2, 0x0 @ Set R3 to R2 + 0x0 \n\
-/* 0804c878 */ LDR R2, =0x04000204 @ !Hardware \n\
+/* 0804c878 */ LDR R2, =0x04000204 @ !Hardware REG_WAITCNT \n\
 /* 0804c87a */ LDRH R0, [R2] \n\
 /* 0804c87c */ LDR R1, =0x0000fffc \n\
 /* 0804c87e */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\

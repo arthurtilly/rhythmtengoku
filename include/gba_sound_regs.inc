@@ -169,7 +169,7 @@
 
 @ Locations of Direct Sound 8-bit FIFO samples, usually automatically refilled using DMA or timer interrupts. Write only
 
-.set REG_SGFIF0A,    	IORAMBase + 0xA0
+.set REG_SGFIFOA,    	IORAMBase + 0xA0
 .set REG_SGFIFOA_L,  	IORAMBase + 0xA0 @ Direct Sound A samples 0-1
 .set REG_SGFIFOA_H,  	IORAMBase + 0xA2 @ Direct Sound A samples 2-3
 .set REG_SGFIFOB,    	IORAMBase + 0xA4

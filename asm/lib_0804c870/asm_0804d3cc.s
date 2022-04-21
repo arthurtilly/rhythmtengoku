@@ -43,7 +43,7 @@ branch_0804d408: \n\
 /* 0804d414 */ SUBS R0, R0, R4 @ Set R0 to R0 - R4 \n\
 /* 0804d416 */ LSLS R0, R0, 0x2 \n\
 /* 0804d418 */ ADDS R2, R2, R0 @ Set R2 to R2 + R0 \n\
-/* 0804d41a */ LDR R0, =0x040000d4 @ !Hardware \n\
+/* 0804d41a */ LDR R0, =0x040000d4 @ !Hardware REG_DMA3SAD \n\
 /* 0804d41c */ STR R2, [R0] \n\
 /* 0804d41e */ STR R3, [R0, 0x4] \n\
 /* 0804d420 */ LDR R1, =0x8400000f \n\

@@ -46,7 +46,7 @@ branch_0804b304: \n\
 /* 0804b30a */ BLS branch_0804b2cc \n\
 /* 0804b30c */ MOVS R0, 0x77 @ Set R0 to 0x77 \n\
 /* 0804b30e */ ORRS R4, R0 @ Set R4 to R4 | R0 \n\
-/* 0804b310 */ LDR R0, =0x04000080 @ !Hardware \n\
+/* 0804b310 */ LDR R0, =0x04000080 @ !Hardware REG_SOUNDCNT \n\
 /* 0804b312 */ STRH R4, [R0] \n\
 /* 0804b314 */ POP {R4-R6} \n\
 /* 0804b316 */ POP {R0} \n\

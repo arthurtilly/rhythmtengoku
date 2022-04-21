@@ -82,7 +82,7 @@ branch_0804ca10: \n\
 /* 0804ca16 */ LDR R1, =D_030064cc \n\
 /* 0804ca18 */ LDR R0, =D_030043f8 \n\
 /* 0804ca1a */ STR R0, [R1] \n\
-/* 0804ca1c */ LDR R2, =0x04000204 @ !Hardware \n\
+/* 0804ca1c */ LDR R2, =0x04000204 @ !Hardware REG_WAITCNT \n\
 /* 0804ca1e */ LDRH R0, [R2] \n\
 /* 0804ca20 */ LDR R1, =0x0000fffc \n\
 /* 0804ca22 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
