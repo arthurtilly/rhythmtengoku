@@ -8,8 +8,6 @@ struct struct_03004ad0 {
     u32 unk10;
 };
 
-extern void *mem_heap_alloc_block_rom;
-extern void *D_0800116c;
 extern struct struct_03004ad0 D_03004ad0;
 
 // extern ? func_08003980(?);

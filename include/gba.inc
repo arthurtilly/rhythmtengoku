@@ -3,6 +3,25 @@
 
 .include "include/asm_macros.inc"
 
+.set func_08000a00, 0x08000a00
+.set func_08000a00_end, 0x08000b2c
+.set func_08000b2c, 0x08000b2c
+.set func_08000b2c_end, 0x08000cfc
+.set func_08000cfc, 0x08000cfc
+.set func_08000cfc_end, 0x08000f08
+.set func_08000f08, 0x08000f08
+.set func_08000f08_end, 0x0800112c
+.set mem_heap_alloc_block_rom, 0x0800112c
+.set mem_heap_alloc_block_rom_end, 0x0800116c
+.set func_0800116c, 0x0800116c
+.set func_0800116c_end, 0x08001240
+.set func_08001240, 0x08001240
+.set func_08001240_end, 0x080012bc
+.set func_080012bc, 0x080012bc
+.set func_080012bc_end, 0x08001334
+.set func_08001334, 0x08001334
+.set func_08001334_end, 0x08001360
+
 .set func_08048350, 0x08048350
 .set func_0804833e, 0x0804833e
 .set func_08048384, 0x08048384

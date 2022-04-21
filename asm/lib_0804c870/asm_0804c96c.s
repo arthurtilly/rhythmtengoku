@@ -60,7 +60,7 @@ branch_0804c9d8: \n\
 /* 0804c9e2 */ STR R0, [R1] \n\
 /* 0804c9e4 */ LDR R2, =func_08001334 \n\
 /* 0804c9e6 */ LDR R3, =D_030043f8 \n\
-/* 0804c9e8 */ LDR R0, =bindata_08000a00_bin_end \n\
+/* 0804c9e8 */ LDR R0, =func_08001334_end \n\
 /* 0804c9ea */ SUBS R0, R0, R2 @ Set R0 to R0 - R2 \n\
 /* 0804c9ec */ LSLS R0, R0, 0xF \n\
 /* 0804c9ee */ B branch_0804ca10 \n\

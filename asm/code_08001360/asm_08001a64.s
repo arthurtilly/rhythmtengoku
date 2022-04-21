@@ -42,7 +42,7 @@ thumb_func_start func_08001a64 \n\
 /* 08001aae */ LSLS R0, R0, 0x4 \n\
 /* 08001ab0 */ STR R0, [SP, 0x10] \n\
 /* 08001ab2 */ STR R2, [SP, 0x14] \n\
-/* 08001ab4 */ LDR R0, =D_08001240 \n\
+/* 08001ab4 */ LDR R0, =func_08001240 \n\
 /* 08001ab6 */ B branch_08001ae6 \n\
 \n\
 .ltorg \n\
@@ -68,7 +68,7 @@ branch_08001ac6: \n\
 /* 08001ade */ LSLS R0, R0, 0x4 \n\
 /* 08001ae0 */ STR R0, [SP, 0x10] \n\
 /* 08001ae2 */ STR R2, [SP, 0x14] \n\
-/* 08001ae4 */ LDR R0, =D_080012bc \n\
+/* 08001ae4 */ LDR R0, =func_080012bc \n\
  \n\
 branch_08001ae6: \n\
 /* 08001ae6 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
@@ -103,7 +103,7 @@ branch_08001b04: \n\
 /* 08001b22 */ LSLS R1, R1, 0x1 \n\
 /* 08001b24 */ SUBS R0, R1, R2 @ Set R0 to R1 - R2 \n\
 /* 08001b26 */ STR R0, [SP, 0x14] \n\
-/* 08001b28 */ LDR R0, =D_080012bc \n\
+/* 08001b28 */ LDR R0, =func_080012bc \n\
 /* 08001b2a */ STR R1, [SP] \n\
 /* 08001b2c */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 08001b2e */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
