@@ -1,6 +1,7 @@
 #define gBonOdoriInfo D_030055d0->gameInfo.bonOdori
 
 extern const struct SequenceData s_tebyoushi_pati_seqData;
+extern const struct SequenceData s_HC_seqData;
 
 extern u32 *D_089deed4[]; // This is an index of pointers to palettes.
 extern u32 *D_089deecc[]; // This is also an index of pointers to palettes (more like sub-palettes).
@@ -183,22 +184,25 @@ void func_08020f8c() {
 #include "asm/scenes/bon_odori/asm_08020fb0.s"
 
 // Cue end
-void func_08020fcc(u32, struct struct_080179f4_sub*) {
+void func_08020fcc(u32 unused_arg0, struct struct_080179f4_sub* unused_arg1) {
 
 }
 
 // Successful cue hit
-#include "asm/scenes/bon_odori/asm_08020fd0.s"
+void func_08020fd0((u32 unused_arg0, struct struct_080179f4_sub* arg1) {
+    func_080207ec((u8)arg1->unk0);
+    func_08002634(&s_HC_seqData);
+}
 
 // "Barely/near" hit
-void func_08020fe8(u32 unused_arg0, struct_080179f4_sub* arg1) {
-    func_080207ec(arg1->unk0);
+void func_08020fe8(u32 unused_arg0, struct struct_080179f4_sub* arg1) {
+    func_080207ec((u8)arg1->unk0);
     func_08002634(&s_tebyoushi_pati_seqData);
     gBonOdoriInfo.unk42 = 1;
 }
 
 // Cue miss
-void func_0802100c(u32 unused_arg0, struct_080179f4_sub* unused_arg1) {
+void func_0802100c(u32 unused_arg0, struct struct_080179f4_sub* unused_arg1) {
     gBonOdoriInfo.unk860 += 1;
     func_0800bc40();
     gBonOdoriInfo.unk42 = 1;

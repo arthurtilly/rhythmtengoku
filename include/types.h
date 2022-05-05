@@ -384,9 +384,11 @@ struct PrologueInfo {
 };
 
 struct BonOdoriInfo_sub {
-    u16 unk0;
-    u32 pad4;
-    u32 pad8;
+    s16 unk0;
+    s16 unk2;
+    u32 unk4;
+    u16 unk8;
+    u16 unkA;
 };
 
 struct BonOdoriInfo {

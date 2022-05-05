@@ -106,7 +106,7 @@ extern void func_08020f8c();
 // extern ? func_08020f98(?);
 // extern ? func_08020fb0(?);
 extern void func_08020fcc(u32, struct struct_080179f4_sub*);
-// extern ? func_08020fd0(?);
+extern void func_08020fd0(u32, struct struct_080179f4_sub*);
 extern void func_08020fe8(u32, struct struct_080179f4_sub*);
 extern void func_0802100c();
 // extern ? func_08021034(?);
