@@ -17,7 +17,7 @@ glabel entry_point
 /* 080000f0 */ STR R0, [R1] @ Save the address of the interrupt handler to REG_INTERUPT
 
 @ Jump into main code
-/* 080000f4 */ LDR R1, =func_080002c4 @ Begin processing THUMB code
+/* 080000f4 */ LDR R1, =agb_main @ Begin processing THUMB code
 /* 080000f8 */ MOV LR, PC @ Set LR to PC
 /* 080000fc */ BX R1
 /* 08000100 */ B entry_point

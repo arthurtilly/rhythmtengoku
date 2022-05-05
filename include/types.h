@@ -1,17 +1,5 @@
 #pragma once
 
-typedef s32 (*struct_03000000_func)(void *);
-
-struct struct_03000000 {
-	struct_03000000_func unk0;
-	void *unk4;
-	struct_03000000_func unk8;
-	void *unkC;
-	struct_03000000_func unk10;
-	void *unk14;
-	u16 unk18;
-};
-
 typedef s32 (*struct_030046a4_func)(s32);
 
 struct struct_030046a4_sub { // might be a list
@@ -399,3 +387,5 @@ extern struct struct_030053c0 D_030053c0;
 extern struct struct_030055d0 *D_030055d0;
 extern struct struct_030055e0 D_030055e0;
 extern s16 gSineTable[];
+extern s16 D_08935fcc[];
+extern s16 D_089361cc[];
