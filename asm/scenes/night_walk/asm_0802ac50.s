@@ -30,7 +30,7 @@ branch_0802ac76: \n\
 /* 0802ac7c */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 0802ac7e */ BEQ branch_0802ac86 \n\
 /* 0802ac80 */ LDR R0, [R4, 0x10] \n\
-/* 0802ac82 */ BL func_0804eaf0 \n\
+/* 0802ac82 */ BL _call_via_r1 \n\
  \n\
 branch_0802ac86: \n\
 /* 0802ac86 */ POP {R4, R5} \n\

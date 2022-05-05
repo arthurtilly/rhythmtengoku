@@ -91,7 +91,7 @@ branch_080040c0: \n\
 /* 08004112 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08004114 */ LSLS R0, R0, 0x11 \n\
 /* 08004116 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 08004118 */ BL func_0804c86c \n\
+/* 08004118 */ BL Div \n\
 /* 0800411c */ STR R0, [SP, 0xC] \n\
 /* 0800411e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08004120 */ MOV R12, R2 @ Set R12 to R2 \n\

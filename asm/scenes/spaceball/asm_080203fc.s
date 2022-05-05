@@ -62,7 +62,7 @@ branch_0802045c: \n\
 /* 08020478 */ MULS R3, R1 @ Multiply R3 by R1 \n\
 /* 0802047a */ ADDS R1, R3, 0x0 @ Set R1 to R3 + 0x0 \n\
 /* 0802047c */ LDR R2, [R2] \n\
-/* 0802047e */ BL func_0804eaf4 \n\
+/* 0802047e */ BL _call_via_r2 \n\
 /* 08020482 */ LDR R1, [R5, 0x1C] \n\
 /* 08020484 */ SUBS R1, R1, R0 @ Set R1 to R1 - R0 \n\
 /* 08020486 */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\

@@ -201,7 +201,7 @@ void func_080090d0(void) {
     for (temp = 0; temp < 200; temp++) {}
 }
 
-void func_080090ec(u32 arg0, u8 *arg1, u32 arg2) {
+void func_080090ec(u32 arg0, u8 arg1[], u32 arg2) {
     u32 i;
     
     if (arg2 == 0) {
@@ -223,8 +223,7 @@ void func_080090ec(u32 arg0, u8 *arg1, u32 arg2) {
         arg2 -= temp;
         func_080090d0();
         for (i = 0; i < temp; i++) {
-            *arg1 = D_0E000002;
-            arg1++;
+            *arg1++ = D_0E000002;
         }
     }
     

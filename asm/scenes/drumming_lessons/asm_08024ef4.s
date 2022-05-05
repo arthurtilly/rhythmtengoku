@@ -49,7 +49,7 @@ branch_08024f1e: \n\
 /* 08024f4c */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 08024f4e */ BEQ branch_08024f56 \n\
 /* 08024f50 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
-/* 08024f52 */ BL func_0804eaf0 \n\
+/* 08024f52 */ BL _call_via_r1 \n\
  \n\
 branch_08024f56: \n\
 /* 08024f56 */ POP {R4-R7} \n\

@@ -15,7 +15,7 @@ thumb_func_start func_08001a28 \n\
 /* 08001a3a */ LSLS R1, R1, 0x1 \n\
 /* 08001a3c */ SUBS R4, R1, R4 @ Set R4 to R1 - R4 \n\
 /* 08001a3e */ STR R4, [SP, 0x14] \n\
-/* 08001a40 */ LDR R0, =D_080012bc \n\
+/* 08001a40 */ LDR R0, =func_080012bc \n\
 /* 08001a42 */ STR R1, [SP] \n\
 /* 08001a44 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 08001a46 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\

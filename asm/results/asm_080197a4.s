@@ -14,7 +14,7 @@ thumb_func_start func_080197a4 \n\
 /* 080197b4 */ LDRH R0, [R1, 0x2] \n\
 /* 080197b6 */ LSLS R0, R0, 0x8 \n\
 /* 080197b8 */ LDRH R1, [R1] \n\
-/* 080197ba */ BL func_0804c86c \n\
+/* 080197ba */ BL Div \n\
 /* 080197be */ CMP R0, 0xFF @ Compare R0 and 0xFF \n\
 /* 080197c0 */ BLS branch_080197cc \n\
 /* 080197c2 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\

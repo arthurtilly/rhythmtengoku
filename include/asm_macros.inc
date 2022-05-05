@@ -9,6 +9,7 @@
 .endm
 
 .macro thumb_func_start value
+	.balign 4, 0
 	.thumb
 	.thumb_func
 	.global \value
