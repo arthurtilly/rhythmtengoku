@@ -176,23 +176,29 @@ void func_08020f8c() {
     func_0800e128();
 }
 
+// Cue call handler
 #include "asm/scenes/bon_odori/asm_08020f98.s"
 
+// Cue update
 #include "asm/scenes/bon_odori/asm_08020fb0.s"
 
-void func_08020fcc() {
+// Cue end
+void func_08020fcc(u32, struct struct_080179f4_sub*) {
 
 }
 
+// Successful cue hit
 #include "asm/scenes/bon_odori/asm_08020fd0.s"
 
-void func_08020fe8(u32 unused_arg0, u8* arg1) {
-    func_080207ec(*arg1);
+// "Barely/near" hit
+void func_08020fe8(u32 unused_arg0, struct_080179f4_sub* arg1) {
+    func_080207ec(arg1->unk0);
     func_08002634(&s_tebyoushi_pati_seqData);
     gBonOdoriInfo.unk42 = 1;
 }
 
-void func_0802100c(void) {
+// Cue miss
+void func_0802100c(u32 unused_arg0, struct_080179f4_sub* unused_arg1) {
     gBonOdoriInfo.unk860 += 1;
     func_0800bc40();
     gBonOdoriInfo.unk42 = 1;
