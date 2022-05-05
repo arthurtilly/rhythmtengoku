@@ -21,7 +21,7 @@ branch_080096b2: \n\
 /* 080096be */ LDRH R1, [R2] \n\
 /* 080096c0 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 080096c2 */ STRH R0, [R2] \n\
-/* 080096c4 */ LDR R1, =D_080000c4 \n\
+/* 080096c4 */ LDR R1, =0x080000c4 @ writing to rom address? \n\
 /* 080096c6 */ LDRH R0, [R2] \n\
 /* 080096c8 */ STRH R0, [R1] \n\
 /* 080096ca */ POP {R0} \n\

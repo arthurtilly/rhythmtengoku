@@ -289,10 +289,11 @@ static s32 D_03000908[336]; // unknown type
 // When a block is deallocated, the handle is simply marked as unallocated but the data is not cleared.
 // Additionally, a deallocated block will be combined with the adjacent blocks if they are unallocated, to create one larger block.
 
-typedef s32 (*MemHeapAllocBlockFunc)(u32 *memHeap, s32 memHeapSize, s32 length);
+extern void *mem_heap_alloc_block_rom;
+extern void *mem_heap_alloc_block_rom_end;
 
 static u32 mem_heap_alloc_block_code[20];
-static MemHeapAllocBlockFunc mem_heap_alloc_block;
+static s32 (*mem_heap_alloc_block)(u32 *memHeap, s32 memHeapSize, s32 length);
 
 static u32 *sMemoryHeap;
 static u32 sMemoryHeapLength;
@@ -319,14 +320,16 @@ void mem_heap_init(u32 *heapStart, u32 heapSize) {
 
 	// The allocation function is handwritten assembly DMAd into IWRAM for performance.
 	
-	DmaCopy32(3, &mem_heap_alloc_block_rom, &mem_heap_alloc_block_code, ((u32)&D_0800116c - (u32)&mem_heap_alloc_block_rom));
-    mem_heap_alloc_block = (MemHeapAllocBlockFunc)&mem_heap_alloc_block_code;
+	DmaCopy32(3, &mem_heap_alloc_block_rom, &mem_heap_alloc_block_code, ((uintptr_t)&mem_heap_alloc_block_rom_end - (uintptr_t)&mem_heap_alloc_block_rom));
+    mem_heap_alloc_block = (void *)&mem_heap_alloc_block_code;
 }
+
 
 // Allocate a new block of memory from the memory heap with the default ID.
 void *mem_heap_alloc(u32 size) {
 	return mem_heap_alloc_id(0, size);
 }
+
 
 // Allocate from the memory heap with an ID.
 void *mem_heap_alloc_id(u16 id, u32 size) {
@@ -363,6 +366,7 @@ void *mem_heap_alloc_id(u16 id, u32 size) {
     return &(sMemoryHeap[newBlock]) + 1;
 }
 
+
 // Mark a block as deallocated and try to combine it with adjacent deallocated blocks, if possible.
 void mem_heap_dealloc_block(u32 block, s32 prevBlock) {
     u32 nextBlock;
@@ -386,6 +390,7 @@ void mem_heap_dealloc_block(u32 block, s32 prevBlock) {
         }
     }
 }
+
 
 // Deallocate the block belonging to a previously allocated section of data.
 void mem_heap_dealloc(void *data) {
@@ -429,6 +434,7 @@ void mem_heap_dealloc(void *data) {
     }
 }
 
+
 // Deallocate all blocks in the heap that have a specified ID.
 void mem_heap_dealloc_with_id(u16 id) {
     s32 curBlock, prevBlock;
@@ -454,6 +460,7 @@ void mem_heap_dealloc_with_id(u16 id) {
         curBlock += sMemoryHeap[curBlock] >> 16;
     }
 }
+
 
 // Calculates the total amount of allocated data in the heap.
 void mem_heap_get_allocated_space(void) {

@@ -69,7 +69,7 @@ branch_08020340: \n\
 /* 08020388 */ LSLS R0, R0, 0x10 \n\
 /* 0802038a */ BL __udivsi3 \n\
 /* 0802038e */ LDR R1, [R4] \n\
-/* 08020390 */ BL func_0804eaf0 \n\
+/* 08020390 */ BL _call_via_r1 \n\
 /* 08020394 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08020396 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 08020398 */ BL func_0800c3a4 \n\

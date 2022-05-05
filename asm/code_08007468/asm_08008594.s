@@ -31,7 +31,7 @@ branch_0800859e: \n\
 /* 080085c2 */ STR R0, [R3, 0x18] \n\
 /* 080085c4 */ STR R2, [R3, 0x1C] \n\
 /* 080085c6 */ STR R2, [R3, 0x20] \n\
-/* 080085c8 */ LDR R1, =D_08000f08 \n\
+/* 080085c8 */ LDR R1, =func_08000f08 \n\
 /* 080085ca */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 080085cc */ BL _call_via_r1 \n\
 /* 080085d0 */ POP {R4} \n\

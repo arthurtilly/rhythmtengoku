@@ -15,7 +15,7 @@ thumb_func_start func_08016e18 \n\
 /* 08016e2a */ BL func_0800c1a8 \n\
 /* 08016e2e */ LSLS R0, R0, 0x8 \n\
 /* 08016e30 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08016e32 */ BL func_0804c86c \n\
+/* 08016e32 */ BL Div \n\
 /* 08016e36 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08016e38 */ LSLS R1, R1, 0x10 \n\
 /* 08016e3a */ LSRS R1, R1, 0x10 \n\

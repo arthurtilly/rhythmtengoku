@@ -75,7 +75,7 @@ thumb_func_start func_08027668 \n\
 /* 08027704 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08027706 */ BEQ branch_0802770e \n\
 /* 08027708 */ ORRS R0, R4 @ Set R0 to R0 | R4 \n\
-/* 0802770a */ BL func_0804eaec \n\
+/* 0802770a */ BL _call_via_r0 \n\
  \n\
 branch_0802770e: \n\
 /* 0802770e */ ADD SP, 0xC \n\

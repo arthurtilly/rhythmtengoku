@@ -23,7 +23,7 @@ thumb_func_start func_08024d6c \n\
 /* 08024d90 */ ADDS R0, R1, R5 @ Set R0 to R1 + R5 \n\
 /* 08024d92 */ LDR R0, [R0] \n\
 /* 08024d94 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08024d96 */ BL func_0804eaf8 \n\
+/* 08024d96 */ BL _call_via_r3 \n\
  \n\
 branch_08024d9a: \n\
 /* 08024d9a */ POP {R4, R5} \n\

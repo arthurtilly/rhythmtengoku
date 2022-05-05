@@ -72,4 +72,3 @@ extern s32 func_08011bf8(struct struct_08011a18 *arg0);
 // extern ? func_08011c1c(?);
 // extern ? func_08011d8c(?);
 // extern ? func_08011e74(?);
-

@@ -4,11 +4,11 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start func_08007b4c \n\
 /* 08007b4c */ LDR R2, =0x040000d4 @ !Hardware REG_DMA3SAD \n\
-/* 08007b4e */ LDR R1, =D_08000cfc \n\
+/* 08007b4e */ LDR R1, =func_08000cfc \n\
 /* 08007b50 */ STR R1, [R2] \n\
 /* 08007b52 */ LDR R3, =D_03000eb0 \n\
 /* 08007b54 */ STR R3, [R2, 0x4] \n\
-/* 08007b56 */ LDR R0, =D_08000f08 \n\
+/* 08007b56 */ LDR R0, =func_08000cfc_end \n\
 /* 08007b58 */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
 /* 08007b5a */ LSRS R0, R0, 0x2 \n\
 /* 08007b5c */ MOVS R1, 0x84 @ Set R1 to 0x84 \n\

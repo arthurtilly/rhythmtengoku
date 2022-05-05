@@ -13,7 +13,7 @@ thumb_func_start func_08047e78 \n\
 /* 08047e88 */ MOVS R0, 0x85 @ Set R0 to 0x85 \n\
 /* 08047e8a */ LSLS R0, R0, 0x8 \n\
 /* 08047e8c */ MOVS R1, 0x79 @ Set R1 to 0x79 \n\
-/* 08047e8e */ BL func_0804c86c \n\
+/* 08047e8e */ BL Div \n\
 /* 08047e92 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08047e94 */ LSLS R1, R1, 0x10 \n\
 /* 08047e96 */ LSRS R1, R1, 0x10 \n\

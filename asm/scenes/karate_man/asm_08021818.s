@@ -44,7 +44,7 @@ thumb_func_start func_08021818 \n\
 /* 0802186a */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 0802186c */ LSLS R0, R0, 0x9 \n\
 /* 0802186e */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 08021870 */ BL func_0804c86c \n\
+/* 08021870 */ BL Div \n\
 /* 08021874 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08021876 */ STRH R0, [R1, 0x2A] \n\
 /* 08021878 */ POP {R3} \n\

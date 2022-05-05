@@ -23,7 +23,7 @@ thumb_func_start func_0802ab7c \n\
 /* 0802ab9e */ BEQ branch_0802aba8 \n\
 /* 0802aba0 */ LSLS R0, R7, 0x10 \n\
 /* 0802aba2 */ ORRS R0, R4 @ Set R0 to R0 | R4 \n\
-/* 0802aba4 */ BL func_0804eaf0 \n\
+/* 0802aba4 */ BL _call_via_r1 \n\
  \n\
 branch_0802aba8: \n\
 /* 0802aba8 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

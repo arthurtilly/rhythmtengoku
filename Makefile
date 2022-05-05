@@ -131,6 +131,11 @@ default: $(OUTPUT).gba
 #---------------------------------------------------------------------------------
 clean:
 	$(V)echo clean ...
+	$(V)rm -fr $(filter-out build/audio, $(wildcard build/*))
+	$(V)rm -fr $(filter-out build/audio/samples build/audio/sequences, $(wildcard build/audio/*))
+    
+fullclean:
+	$(V)echo full clean ...
 	$(V)rm -fr $(BUILD)
 
 

@@ -11,7 +11,7 @@ thumb_func_start func_08007fdc \n\
 /* 08007fe6 */ LDRH R0, [R4, 0x4] \n\
 /* 08007fe8 */ LSLS R0, R0, 0x4 \n\
 /* 08007fea */ LDRH R1, [R4, 0x2] \n\
-/* 08007fec */ BL func_0804c86c \n\
+/* 08007fec */ BL Div \n\
 /* 08007ff0 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08007ff2 */ LDRH R0, [R4, 0x6] \n\
 /* 08007ff4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
