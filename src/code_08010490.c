@@ -123,7 +123,7 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 // Util functions
 
-void func_08011a18(UnkStruct08011A18 *arg0) {
+void func_08011a18(struct_08011a18 *arg0) {
     u32 i;
 
     arg0->_000 = 0;
@@ -148,7 +148,7 @@ int func_08011bec(u8 *param_1) {
     return (56 - *param_1) * 256;
 }
 
-int func_08011bf8(UnkStruct08011A18 *arg0) {
+int func_08011bf8(struct_08011a18 *arg0) {
     u32 i;
 
     for (i = 0; i < 10; i++) {
