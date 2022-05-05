@@ -14,6 +14,8 @@ typedef int32_t  s32;
 #define TRUE 1
 #define FALSE 0
 
+#define ABS(x)  ((x) < 0 ? -(x) : (x))
+
 #define sins(x) gSineTable[((u32)(x))&0x7FF]
 #define coss(x) gSineTable[(((u32)(x))+0x200)&0x7FF]
 

@@ -32,12 +32,16 @@ static s32 D_03000eac; // unknown type, unknown if exists
 
 #include "asm/code_080068f8/asm_08006b30.s"
 
+// D_08936b84 function 1
 #include "asm/code_080068f8/asm_08006bb4.s"
 
+// D_08936b84 function 2
 #include "asm/code_080068f8/asm_08006c08.s"
 
+// D_08936b94 function 1
 #include "asm/code_080068f8/asm_08006ca4.s"
 
+// D_08936b94 function 2
 #include "asm/code_080068f8/asm_08006ce8.s"
 
 #include "asm/code_080068f8/asm_08006d80.s"

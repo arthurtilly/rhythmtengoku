@@ -1,24 +1,104 @@
 #pragma once
 
+// Indefinite linear movement
+struct unk_struct_080074ec_init {
+    s16 id;
+    s16 startX;
+    s16 startY;
+    s16 xVel;
+    s16 yVel;
+};
+struct unk_struct_080074ec {
+    s16 id;
+    s16 xVel;
+    s16 yVel;
+    s32 xPos;
+    s32 yPos;
+};
+
+// Approach a point asymptotically
+struct unk_struct_0800757c_init {
+    s16 id;
+    s16 startX;
+    s16 startY;
+    s16 destX;
+    s16 destY;
+    s16 multiplier;
+};
+struct unk_struct_0800757c {
+    s16 id;
+    s16 destXPos;
+    s16 destYPos;
+    s16 multiplier;
+    s32 xOffset;
+    s32 yOffset;
+};
+
+// Accelerate towards a point
+struct unk_struct_0800765c_init {
+    s16 id;
+    s16 startX;
+    s16 startY;
+    s16 destX;
+    s16 destY;
+    s16 vel;
+    s16 accel;
+};
+struct unk_struct_0800765c {
+    s16 id;
+    s16 startXPos;
+    s16 startYPos;
+    s16 dx;
+    s16 dy;
+    s32 distanceTravelled;
+    s32 totalDistance;
+    s32 vel;
+    s32 accel;
+};
+
+// Unknown
+struct unk_struct_08007788_init {
+    s16 id;
+    s16 startX;
+    s16 startY;
+    s16 destX;
+    s16 destY;
+    s16 unkA;
+};
+struct unk_struct_08007788 {
+    s16 id;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+    s16 unk8;
+    s16 unkA;
+    s16 unkC;
+};
+
+
+
+
 struct unk_struct_08008b00 {
-    u16 unk0;
-    u16 unk2;
-    u16 unk4;
-    u16 unk6;
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
     s32 unk8;
     s32 unkC;
 };
 
-// extern ? func_08007468(?);
-// extern ? func_08007498(?);
-// extern ? func_080074c4(?);
-// extern ? func_080074ec(?);
-// extern ? func_08007544(?);
-// extern ? func_0800757c(?);
-// extern ? func_080075e4(?);
-// extern ? func_0800765c(?);
-// extern ? func_080076ec(?);
-// extern ? func_08007788(?);
+extern s32 (*D_03004ae4)(s32);
+
+extern void func_08007468(s16 arg0, s8 arg1);
+extern void func_08007498(s8 arg0, s16 arg1, s16 arg2);
+extern void func_080074c4(s8 arg0, s16 arg1, s16 arg2, s16 arg3);
+extern struct unk_struct_080074ec *func_080074ec(struct unk_struct_080074ec_init *arg0);
+extern u32 func_08007544(struct unk_struct_080074ec *arg0);
+extern struct unk_struct_0800757c *func_0800757c(struct unk_struct_0800757c_init *arg0);
+extern u32 func_080075e4(struct unk_struct_0800757c *arg0);
+extern struct unk_struct_0800765c *func_0800765c(struct unk_struct_0800765c_init *arg0);
+extern u32 func_080076ec(struct unk_struct_0800765c *arg0);
+extern struct unk_struct_08007788 *func_08007788(struct unk_struct_08007788_init *arg0);
 // extern ? func_080077e8(?);
 // extern ? func_08007854(?);
 // extern ? func_080078ec(?);
