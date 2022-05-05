@@ -71,4 +71,4 @@ typedef struct {
 	u8 _00B;
 	u16 _00C[10];
 	u32 _020;
-} UnkStruct08011A18;
+} struct_08011a18;
