@@ -1,5 +1,7 @@
 #define gBonOdoriInfo D_030055d0->gameInfo.bonOdori
 
+extern const struct SequenceData s_tebyoushi_pati_seqData;
+
 extern u32 *D_089deed4[]; // This is an index of pointers to palettes.
 extern u32 *D_089deecc[]; // This is also an index of pointers to palettes (more like sub-palettes).
 
@@ -184,9 +186,18 @@ void func_08020fcc() {
 
 #include "asm/scenes/bon_odori/asm_08020fd0.s"
 
-#include "asm/scenes/bon_odori/asm_08020fe8.s"
+void func_08020fe8(u32 unused_arg0, u8* arg1) {
+    func_080207ec(*arg1);
+    func_08002634(&s_tebyoushi_pati_seqData);
+    gBonOdoriInfo.unk42 = 1;
+}
 
-#include "asm/scenes/bon_odori/asm_0802100c.s"
+void func_0802100c(void) {
+    gBonOdoriInfo.unk860 += 1;
+    func_0800bc40();
+    gBonOdoriInfo.unk42 = 1;
+}
+
 
 #include "asm/scenes/bon_odori/asm_08021034.s"
 

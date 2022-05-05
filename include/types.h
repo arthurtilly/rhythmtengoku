@@ -394,8 +394,7 @@ struct BonOdoriInfo {
     u8 pad1;
     u8 unk2;
     u32 unk4;
-    s16 unk8[9];
-    u32 padC[7];
+    struct BonOdoriInfo_sub unk8[4];
     u8 unk38;
     u16 unk3A;
     u16 unk3C;
@@ -416,7 +415,6 @@ struct BonOdoriInfo {
     u16 pad862;
     u16 unk864;
 };
-
 
 
 struct struct_030055d0 {
