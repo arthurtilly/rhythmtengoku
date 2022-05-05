@@ -1,5 +1,13 @@
 #pragma once
 
+typedef struct {
+	u8 unk0;
+	u8 unk1[10];
+	u8 unkB;
+	u16 unkC[10];
+	u32 unk20;
+} struct_08011a18;
+
 // extern ? func_08010490(?);
 // extern ? func_08010494(?);
 // extern ? func_080104c0(?);
@@ -54,21 +62,14 @@
 // extern ? func_08011744(?);
 // extern ? func_08011820(?);
 // extern ? func_08011a08(?);
-// extern ? func_08011a18(?);
+extern void func_08011a18(struct_08011a18 *arg0);
 // extern ? func_08011a58(?);
 // extern ? func_08011a90(?);
 // extern ? func_08011ad4(?);
 // extern ? func_08011b50(?);
-// extern ? func_08011bec(?);
-// extern ? func_08011bf8(?);
+extern int func_08011bec(u8 *param_1);
+extern int func_08011bf8(struct_08011a18 *arg0);
 // extern ? func_08011c1c(?);
 // extern ? func_08011d8c(?);
 // extern ? func_08011e74(?);
 
-typedef struct {
-	u8 unk0;
-	u8 unk1[10];
-	u8 unkB;
-	u16 unkC[10];
-	u32 unk20;
-} struct_08011a18;
