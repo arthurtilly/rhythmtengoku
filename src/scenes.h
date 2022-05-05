@@ -110,7 +110,7 @@ extern void func_08020fcc();
 // extern ? func_08020fe8(?);
 // extern ? func_0802100c(?);
 // extern ? func_08021034(?);
-// extern ? func_08021084(?);
+extern void func_08021084();
 extern void func_08021188();
 extern void func_0802118c();
 

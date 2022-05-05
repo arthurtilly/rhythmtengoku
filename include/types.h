@@ -391,21 +391,23 @@ struct BonOdoriInfo_sub {
 
 struct BonOdoriInfo {
     u8 unk0;
+    u8 pad1;
+    u8 unk2;
     u32 unk4;
-    struct BonOdoriInfo_sub unk8[4]; // Probably the Donpans?
+    s16 unk8[9];
+    u32 padC[7];
     u8 unk38;
     u16 unk3A;
     u16 unk3C;
     s16 unk3E;
     u16 unk40;
     u8 unk42;
-    u32 pad44;
-    u32 pad48;
+    s16 unk44[4];
     u16 unk4C[4];
     u8 unk54;
     u8 unk55;
-    u32 *unk58;
-    u32 *unk5C;
+    u32 unk58;
+    u32 unk5C;
     u32 unk60;
     u32 pad64[0xFF];
     u32 unk460;

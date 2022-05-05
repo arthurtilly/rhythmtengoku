@@ -190,7 +190,33 @@ void func_08020fcc() {
 
 #include "asm/scenes/bon_odori/asm_08021034.s"
 
-#include "asm/scenes/bon_odori/asm_08021084.s"
+void func_08021084() {
+    u32 i;
+    u32 temp;
+    for (i = 0; i < 4; i++) {
+        if (gBonOdoriInfo.unk4C[i] != 0) {
+            continue;
+        }
+        temp = func_0802075c(0, i);
+        if (i <= 2 &&gBonOdoriInfo.unk54 != 0)  {
+            temp = func_0802075c(gBonOdoriInfo.unk55, i);
+        }
+        func_0804d8f8(D_03005380, gBonOdoriInfo.unk44[i], temp, 0, 1, 0x7f, 0);
+    }
+    if (gBonOdoriInfo.unk40 == 0) {
+        if (gBonOdoriInfo.unk42 != 0) {
+            func_0804d8f8(D_03005380, gBonOdoriInfo.unk3E, func_080206a0(0x21), 0, 1, 0x7f, 0);
+            gBonOdoriInfo.unk40 = func_0800c3a4(0x24);
+            gBonOdoriInfo.unk42 = 0;
+        } else {
+            func_0804d8f8(D_03005380, gBonOdoriInfo.unk3E, func_080206a0(0x1f), 0, 1, 0x7f, 0);
+        }
+    }
+    if (gBonOdoriInfo.unk54 != 0) {
+        gBonOdoriInfo.unk54 -= 1;
+    }
+}
+
 
 void func_08021188() {
 
