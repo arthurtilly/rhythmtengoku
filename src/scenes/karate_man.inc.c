@@ -56,7 +56,7 @@ void func_080211e4(void) {
 #include "asm/scenes/karate_man/asm_08021210.s"
 
 void func_0802139c(u32 arg0, u32 arg1) {
-    func_08003eb8(D_089df1bc[arg0], D_06008000);
+    func_08003eb8(D_089df1bc[arg0], VRAMBase + 0x8000);
     func_0800e030(0);
     gKarateManInfo.unk32 = func_0800c3a4(arg1 + 1);
 }

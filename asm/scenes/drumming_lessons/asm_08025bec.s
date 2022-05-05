@@ -17,7 +17,7 @@ thumb_func_start func_08025bec \n\
 /* 08025c04 */ LSLS R1, R4, 0x2 \n\
 /* 08025c06 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08025c08 */ LDR R1, [R1] \n\
-/* 08025c0a */ LDR R3, =D_0600e000 \n\
+/* 08025c0a */ LDR R3, =(VRAMBase + 0xe000) \n\
 /* 08025c0c */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08025c0e */ LSLS R2, R2, 0x4 \n\
 /* 08025c10 */ STR R2, [SP] \n\

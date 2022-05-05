@@ -32,7 +32,7 @@ thumb_func_start func_080336a0 \n\
 /* 080336d6 */ LDR R0, [R4] \n\
 /* 080336d8 */ LSRS R4, R1, 0x10 \n\
 /* 080336da */ ASRS R1, R1, 0x10 \n\
-/* 080336dc */ LDR R2, =D_03004b24 \n\
+/* 080336dc */ LDR R2, =(D_03004b10 + 0x14) \n\
 /* 080336de */ ADDS R3, R2, 0x2 @ Set R3 to R2 + 0x2 \n\
 /* 080336e0 */ BL func_0804db44 \n\
 /* 080336e4 */ LDR R0, =D_030055d0 \n\

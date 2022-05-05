@@ -134,7 +134,7 @@ branch_0800b930: \n\
 /* 0800b932 */ LDR R2, [R1] \n\
 /* 0800b934 */ CMP R2, 0x0 @ Compare R2 and 0x0 \n\
 /* 0800b936 */ BEQ branch_0800b942 \n\
-/* 0800b938 */ LDR R0, =D_03005520 \n\
+/* 0800b938 */ LDR R0, =(D_030053c0 + 0x160) \n\
 /* 0800b93a */ ADDS R0, R7, R0 @ Set R0 to R7 + R0 \n\
 /* 0800b93c */ LDR R1, [R1, 0x4] \n\
 /* 0800b93e */ BL _call_via_r2 \n\

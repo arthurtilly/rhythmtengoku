@@ -1972,13 +1972,13 @@ AÅDÇ‡Ç§ÅAéûä‘Ç≈Ç∑ÇÃÇ≈é∏óÁÇµÇ‹Ç∑ÅB
 @ lmao random table entry over here? wtf?
 @ Reading Material background 2
 /* 08058f00 */ .word D_08cd29ac
-/* 08058f04 */ .word D_06000000
+/* 08058f04 */ .word VRAMBase
 /* 08058f08 */ .word 0xffffffff
 /* 08058f0c */ .word D_08cd2cec
-/* 08058f10 */ .word D_0600e800
+/* 08058f10 */ .word (VRAMBase + 0xe800)
 /* 08058f14 */ .word 0xffffffff
 /* 08058f18 */ .word D_0890b330
-/* 08058f1c */ .word D_03004b64
+/* 08058f1c */ .word (D_03004b10 + 0x54)
 /* 08058f20 */ .word 0x00000200
 /* 08058f24 */ .word 0x00000000
 /* 08058f28 */ .word 0x00000000

@@ -1092,195 +1092,195 @@
 .balign 4, 0
 
 /* 0805a0d0 */ .word D_08c71ed4
-/* 0805a0d4 */ .word D_06008000
+/* 0805a0d4 */ .word (VRAMBase + 0x8000)
 /* 0805a0d8 */ .word 0xffffffff
 /* 0805a0dc */ .word D_08c762e8
-/* 0805a0e0 */ .word D_0600f000
+/* 0805a0e0 */ .word (VRAMBase + 0xf000)
 /* 0805a0e4 */ .word 0xffffffff
 /* 0805a0e8 */ .word D_08c76300
-/* 0805a0ec */ .word D_0600f800
+/* 0805a0ec */ .word (VRAMBase + 0xf800)
 /* 0805a0f0 */ .word 0xffffffff
 /* 0805a0f4 */ .word 0x00000000
 /* 0805a0f8 */ .word 0x00000000
 /* 0805a0fc */ .word 0x00000000
 
 /* 0805a100 */ .word D_08c71340
-/* 0805a104 */ .word D_06008000
+/* 0805a104 */ .word (VRAMBase + 0x8000)
 /* 0805a108 */ .word 0xffffffff
 /* 0805a10c */ .word D_08c745e0
-/* 0805a110 */ .word D_0600f000
+/* 0805a110 */ .word (VRAMBase + 0xf000)
 /* 0805a114 */ .word 0xffffffff
 /* 0805a118 */ .word D_08c74754
-/* 0805a11c */ .word D_0600f800
+/* 0805a11c */ .word (VRAMBase + 0xf800)
 /* 0805a120 */ .word 0xffffffff
 /* 0805a124 */ .word 0x00000000
 /* 0805a128 */ .word 0x00000000
 /* 0805a12c */ .word 0x00000000
 
 /* 0805a130 */ .word D_08c7069c
-/* 0805a134 */ .word D_06008000
+/* 0805a134 */ .word (VRAMBase + 0x8000)
 /* 0805a138 */ .word 0xffffffff
 /* 0805a13c */ .word D_08c737a4
-/* 0805a140 */ .word D_0600f000
+/* 0805a140 */ .word (VRAMBase + 0xf000)
 /* 0805a144 */ .word 0xffffffff
 /* 0805a148 */ .word D_08c73978
-/* 0805a14c */ .word D_0600f800
+/* 0805a14c */ .word (VRAMBase + 0xf800)
 /* 0805a150 */ .word 0xffffffff
 /* 0805a154 */ .word 0x00000000
 /* 0805a158 */ .word 0x00000000
 /* 0805a15c */ .word 0x00000000
 
 /* 0805a160 */ .word D_08c71908
-/* 0805a164 */ .word D_06008000
+/* 0805a164 */ .word (VRAMBase + 0x8000)
 /* 0805a168 */ .word 0xffffffff
 /* 0805a16c */ .word D_08c74ef8
-/* 0805a170 */ .word D_0600f000
+/* 0805a170 */ .word (VRAMBase + 0xf000)
 /* 0805a174 */ .word 0xffffffff
 /* 0805a178 */ .word D_08c75100
-/* 0805a17c */ .word D_0600f800
+/* 0805a17c */ .word (VRAMBase + 0xf800)
 /* 0805a180 */ .word 0xffffffff
 /* 0805a184 */ .word 0x00000000
 /* 0805a188 */ .word 0x00000000
 /* 0805a18c */ .word 0x00000000
 
 /* 0805a190 */ .word D_08c71c8c
-/* 0805a194 */ .word D_06008000
+/* 0805a194 */ .word (VRAMBase + 0x8000)
 /* 0805a198 */ .word 0xffffffff
 /* 0805a19c */ .word D_08c756bc
-/* 0805a1a0 */ .word D_0600f000
+/* 0805a1a0 */ .word (VRAMBase + 0xf000)
 /* 0805a1a4 */ .word 0xffffffff
 /* 0805a1a8 */ .word D_08c758bc
-/* 0805a1ac */ .word D_0600f800
+/* 0805a1ac */ .word (VRAMBase + 0xf800)
 /* 0805a1b0 */ .word 0xffffffff
 /* 0805a1b4 */ .word 0x00000000
 /* 0805a1b8 */ .word 0x00000000
 /* 0805a1bc */ .word 0x00000000
 
 /* 0805a1c0 */ .word D_08c70b4c
-/* 0805a1c4 */ .word D_06008000
+/* 0805a1c4 */ .word (VRAMBase + 0x8000)
 /* 0805a1c8 */ .word 0xffffffff
 /* 0805a1cc */ .word D_08c73ea4
-/* 0805a1d0 */ .word D_0600f000
+/* 0805a1d0 */ .word (VRAMBase + 0xf000)
 /* 0805a1d4 */ .word 0xffffffff
 /* 0805a1d8 */ .word D_08c7408c
-/* 0805a1dc */ .word D_0600f800
+/* 0805a1dc */ .word (VRAMBase + 0xf800)
 /* 0805a1e0 */ .word 0xffffffff
 /* 0805a1e4 */ .word 0x00000000
 /* 0805a1e8 */ .word 0x00000000
 /* 0805a1ec */ .word 0x00000000
 
 /* 0805a1f0 */ .word D_08c71b6c
-/* 0805a1f4 */ .word D_06008000
+/* 0805a1f4 */ .word (VRAMBase + 0x8000)
 /* 0805a1f8 */ .word 0xffffffff
 /* 0805a1fc */ .word D_08c7534c
-/* 0805a200 */ .word D_0600f000
+/* 0805a200 */ .word (VRAMBase + 0xf000)
 /* 0805a204 */ .word 0xffffffff
 /* 0805a208 */ .word D_08c75478
-/* 0805a20c */ .word D_0600f800
+/* 0805a20c */ .word (VRAMBase + 0xf800)
 /* 0805a210 */ .word 0xffffffff
 /* 0805a214 */ .word 0x00000000
 /* 0805a218 */ .word 0x00000000
 /* 0805a21c */ .word 0x00000000
 
 /* 0805a220 */ .word D_08c71658
-/* 0805a224 */ .word D_06008000
+/* 0805a224 */ .word (VRAMBase + 0x8000)
 /* 0805a228 */ .word 0xffffffff
 /* 0805a22c */ .word D_08c749d4
-/* 0805a230 */ .word D_0600f000
+/* 0805a230 */ .word (VRAMBase + 0xf000)
 /* 0805a234 */ .word 0xffffffff
 /* 0805a238 */ .word D_08c74bb0
-/* 0805a23c */ .word D_0600f800
+/* 0805a23c */ .word (VRAMBase + 0xf800)
 /* 0805a240 */ .word 0xffffffff
 /* 0805a244 */ .word 0x00000000
 /* 0805a248 */ .word 0x00000000
 /* 0805a24c */ .word 0x00000000
 
 /* 0805a250 */ .word D_08c710e8
-/* 0805a254 */ .word D_06008000
+/* 0805a254 */ .word (VRAMBase + 0x8000)
 /* 0805a258 */ .word 0xffffffff
 /* 0805a25c */ .word D_08c74210
-/* 0805a260 */ .word D_0600f000
+/* 0805a260 */ .word (VRAMBase + 0xf000)
 /* 0805a264 */ .word 0xffffffff
 /* 0805a268 */ .word D_08c74404
-/* 0805a26c */ .word D_0600f800
+/* 0805a26c */ .word (VRAMBase + 0xf800)
 /* 0805a270 */ .word 0xffffffff
 /* 0805a274 */ .word 0x00000000
 /* 0805a278 */ .word 0x00000000
 /* 0805a27c */ .word 0x00000000
 
 /* 0805a280 */ .word D_08c71e64
-/* 0805a284 */ .word D_06008000
+/* 0805a284 */ .word (VRAMBase + 0x8000)
 /* 0805a288 */ .word 0xffffffff
 /* 0805a28c */ .word D_08c759cc
-/* 0805a290 */ .word D_0600f000
+/* 0805a290 */ .word (VRAMBase + 0xf000)
 /* 0805a294 */ .word 0xffffffff
 /* 0805a298 */ .word D_08c75ad0
-/* 0805a29c */ .word D_0600f800
+/* 0805a29c */ .word (VRAMBase + 0xf800)
 /* 0805a2a0 */ .word 0xffffffff
 /* 0805a2a4 */ .word 0x00000000
 /* 0805a2a8 */ .word 0x00000000
 /* 0805a2ac */ .word 0x00000000
 
 /* 0805a2b0 */ .word D_08c709a8
-/* 0805a2b4 */ .word D_06008000
+/* 0805a2b4 */ .word (VRAMBase + 0x8000)
 /* 0805a2b8 */ .word 0xffffffff
 /* 0805a2bc */ .word D_08c73b6c
-/* 0805a2c0 */ .word D_0600f000
+/* 0805a2c0 */ .word (VRAMBase + 0xf000)
 /* 0805a2c4 */ .word 0xffffffff
 /* 0805a2c8 */ .word D_08c73cf8
-/* 0805a2cc */ .word D_0600f800
+/* 0805a2cc */ .word (VRAMBase + 0xf800)
 /* 0805a2d0 */ .word 0xffffffff
 /* 0805a2d4 */ .word 0x00000000
 /* 0805a2d8 */ .word 0x00000000
 /* 0805a2dc */ .word 0x00000000
 
 /* 0805a2e0 */ .word D_08c70580
-/* 0805a2e4 */ .word D_06008000
+/* 0805a2e4 */ .word (VRAMBase + 0x8000)
 /* 0805a2e8 */ .word 0xffffffff
 /* 0805a2ec */ .word D_08c73544
-/* 0805a2f0 */ .word D_0600f000
+/* 0805a2f0 */ .word (VRAMBase + 0xf000)
 /* 0805a2f4 */ .word 0xffffffff
 /* 0805a2f8 */ .word D_08c73618
-/* 0805a2fc */ .word D_0600f800
+/* 0805a2fc */ .word (VRAMBase + 0xf800)
 /* 0805a300 */ .word 0xffffffff
 /* 0805a304 */ .word 0x00000000
 /* 0805a308 */ .word 0x00000000
 /* 0805a30c */ .word 0x00000000
 
 /* 0805a310 */ .word D_08c70490
-/* 0805a314 */ .word D_06008000
+/* 0805a314 */ .word (VRAMBase + 0x8000)
 /* 0805a318 */ .word 0xffffffff
 /* 0805a31c */ .word D_08c72518
-/* 0805a320 */ .word D_0600f000
+/* 0805a320 */ .word (VRAMBase + 0xf000)
 /* 0805a324 */ .word 0xffffffff
 /* 0805a328 */ .word D_08c72634
-/* 0805a32c */ .word D_0600f800
+/* 0805a32c */ .word (VRAMBase + 0xf800)
 /* 0805a330 */ .word 0xffffffff
 /* 0805a334 */ .word 0x00000000
 /* 0805a338 */ .word 0x00000000
 /* 0805a33c */ .word 0x00000000
 
 /* 0805a340 */ .word D_08c704e8
-/* 0805a344 */ .word D_06008000
+/* 0805a344 */ .word (VRAMBase + 0x8000)
 /* 0805a348 */ .word 0xffffffff
 /* 0805a34c */ .word D_08c72e4c
-/* 0805a350 */ .word D_0600f000
+/* 0805a350 */ .word (VRAMBase + 0xf000)
 /* 0805a354 */ .word 0xffffffff
 /* 0805a358 */ .word D_08c7346c
-/* 0805a35c */ .word D_0600f800
+/* 0805a35c */ .word (VRAMBase + 0xf800)
 /* 0805a360 */ .word 0xffffffff
 /* 0805a364 */ .word 0x00000000
 /* 0805a368 */ .word 0x00000000
 /* 0805a36c */ .word 0x00000000
 
 /* 0805a370 */ .word D_08c703a8
-/* 0805a374 */ .word D_06008000
+/* 0805a374 */ .word (VRAMBase + 0x8000)
 /* 0805a378 */ .word 0xffffffff
 /* 0805a37c */ .word D_08c720a0
-/* 0805a380 */ .word D_0600f000
+/* 0805a380 */ .word (VRAMBase + 0xf000)
 /* 0805a384 */ .word 0xffffffff
 /* 0805a388 */ .word D_08c72400
-/* 0805a38c */ .word D_0600f800
+/* 0805a38c */ .word (VRAMBase + 0xf800)
 /* 0805a390 */ .word 0xffffffff
 /* 0805a394 */ .word 0x00000000
 /* 0805a398 */ .word 0x00000000
@@ -1556,55 +1556,55 @@
 /* 0805a91c */ .word 0x00000048
 /* 0805a920 */ .word 0x00000048
 /* 0805a924 */ .word D_08d11ef4
-/* 0805a928 */ .word D_06008000
+/* 0805a928 */ .word (VRAMBase + 0x8000)
 /* 0805a92c */ .word 0xffffffff
 /* 0805a930 */ .word D_08d17708
-/* 0805a934 */ .word D_0600e000
+/* 0805a934 */ .word (VRAMBase + 0xe000)
 /* 0805a938 */ .word 0xffffffff
 /* 0805a93c */ .word 0x00000000
 /* 0805a940 */ .word 0x00000000
 /* 0805a944 */ .word 0x00000000
 /* 0805a948 */ .word D_08d10b60
-/* 0805a94c */ .word D_06008000
+/* 0805a94c */ .word (VRAMBase + 0x8000)
 /* 0805a950 */ .word 0xffffffff
 /* 0805a954 */ .word D_08d1737c
-/* 0805a958 */ .word D_0600e000
+/* 0805a958 */ .word (VRAMBase + 0xe000)
 /* 0805a95c */ .word 0xffffffff
 /* 0805a960 */ .word 0x00000000
 /* 0805a964 */ .word 0x00000000
 /* 0805a968 */ .word 0x00000000
 /* 0805a96c */ .word D_08d0ef74
-/* 0805a970 */ .word D_06008000
+/* 0805a970 */ .word (VRAMBase + 0x8000)
 /* 0805a974 */ .word 0xffffffff
 /* 0805a978 */ .word D_08d17048
-/* 0805a97c */ .word D_0600e000
+/* 0805a97c */ .word (VRAMBase + 0xe000)
 /* 0805a980 */ .word 0xffffffff
 /* 0805a984 */ .word 0x00000000
 /* 0805a988 */ .word 0x00000000
 /* 0805a98c */ .word 0x00000000
 /* 0805a990 */ .word D_08d0c580
-/* 0805a994 */ .word D_06008000
+/* 0805a994 */ .word (VRAMBase + 0x8000)
 /* 0805a998 */ .word 0xffffffff
 /* 0805a99c */ .word D_08d16c34
-/* 0805a9a0 */ .word D_0600e000
+/* 0805a9a0 */ .word (VRAMBase + 0xe000)
 /* 0805a9a4 */ .word 0xffffffff
 /* 0805a9a8 */ .word 0x00000000
 /* 0805a9ac */ .word 0x00000000
 /* 0805a9b0 */ .word 0x00000000
 /* 0805a9b4 */ .word D_08d0bfc8
-/* 0805a9b8 */ .word D_06008000
+/* 0805a9b8 */ .word (VRAMBase + 0x8000)
 /* 0805a9bc */ .word 0xffffffff
 /* 0805a9c0 */ .word D_08d16998
-/* 0805a9c4 */ .word D_0600e000
+/* 0805a9c4 */ .word (VRAMBase + 0xe000)
 /* 0805a9c8 */ .word 0xffffffff
 /* 0805a9cc */ .word 0x00000000
 /* 0805a9d0 */ .word 0x00000000
 /* 0805a9d4 */ .word 0x00000000
 /* 0805a9d8 */ .word D_08d0af74
-/* 0805a9dc */ .word D_06008000
+/* 0805a9dc */ .word (VRAMBase + 0x8000)
 /* 0805a9e0 */ .word 0xffffffff
 /* 0805a9e4 */ .word D_08d16648
-/* 0805a9e8 */ .word D_0600e000
+/* 0805a9e8 */ .word (VRAMBase + 0xe000)
 /* 0805a9ec */ .word 0xffffffff
 /* 0805a9f0 */ .word 0x00000000
 /* 0805a9f4 */ .word 0x00000000
@@ -12242,7 +12242,7 @@ glabel D_0805e818
 /* 08068438 */ .word 0x00000003
 /* 0806843c */ .word 0x0000001a
 /* 08068440 */ .word 0x00000000
-/* 08068444 */ .word D_030053e4
+/* 08068444 */ .word (D_030053c0 + 0x24)
 /* 08068448 */ .word 0x0000001c
 /* 0806844c */ .word 0x00000000
 /* 08068450 */ .word 0x00000000
@@ -12350,7 +12350,7 @@ glabel D_0805e818
 /* 080685e8 */ .word 0x00000003
 /* 080685ec */ .word 0x0000001a
 /* 080685f0 */ .word 0x00000000
-/* 080685f4 */ .word D_030053e4
+/* 080685f4 */ .word (D_030053c0 + 0x24)
 /* 080685f8 */ .word 0x0000001c
 /* 080685fc */ .word 0x00000000
 /* 08068600 */ .word 0x00000000
@@ -13011,7 +13011,7 @@ glabel D_0805e818
 /* 0806903c */ .word 0x00000002
 /* 08069040 */ .word 0x0000001a
 /* 08069044 */ .word 0x00000000
-/* 08069048 */ .word D_030053e4
+/* 08069048 */ .word (D_030053c0 + 0x24)
 /* 0806904c */ .word 0x0000001c
 /* 08069050 */ .word 0x00000000
 /* 08069054 */ .word 0x00000000
@@ -13059,7 +13059,7 @@ glabel D_0805e818
 /* 080690fc */ .word 0x00000003
 /* 08069100 */ .word 0x0000001a
 /* 08069104 */ .word 0x00000000
-/* 08069108 */ .word D_030053e4
+/* 08069108 */ .word (D_030053c0 + 0x24)
 /* 0806910c */ .word 0x0000001c
 /* 08069110 */ .word 0x00000000
 /* 08069114 */ .word 0x00000000
@@ -13176,7 +13176,7 @@ glabel D_0805e818
 /* 080692d0 */ .word 0x00000003
 /* 080692d4 */ .word 0x0000001a
 /* 080692d8 */ .word 0x00000000
-/* 080692dc */ .word D_030053e4
+/* 080692dc */ .word (D_030053c0 + 0x24)
 /* 080692e0 */ .word 0x0000001c
 /* 080692e4 */ .word 0x00000000
 /* 080692e8 */ .word 0x00000000

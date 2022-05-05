@@ -169,7 +169,7 @@ branch_0801c3da: \n\
 /* 0801c466 */ LDR R0, [R6] \n\
 /* 0801c468 */ LSLS R1, R1, 0x10 \n\
 /* 0801c46a */ ASRS R1, R1, 0x10 \n\
-/* 0801c46c */ LDR R5, =D_03004b20 \n\
+/* 0801c46c */ LDR R5, =(D_03004b10 + 0x10) \n\
 /* 0801c46e */ ADDS R7, R5, 0x2 @ Set R7 to R5 + 0x2 \n\
 /* 0801c470 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 0801c472 */ ADDS R3, R7, 0x0 @ Set R3 to R7 + 0x0 \n\

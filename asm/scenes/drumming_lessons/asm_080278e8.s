@@ -31,7 +31,7 @@ branch_0802790a: \n\
 /* 08027916 */ ADDS R2, R2, R0 @ Set R2 to R2 + R0 \n\
  \n\
 branch_08027918: \n\
-/* 08027918 */ LDR R1, =D_03004b64 \n\
+/* 08027918 */ LDR R1, =(D_03004b10 + 0x54) \n\
 /* 0802791a */ ADDS R0, R2, 0x4 @ Set R0 to R2 + 0x4 \n\
 /* 0802791c */ LSLS R0, R0, 0x5 \n\
 /* 0802791e */ LDR R2, =D_088c87a0 \n\

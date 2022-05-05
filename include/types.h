@@ -19,6 +19,37 @@ struct struct_030046a4_sub3 {
     void *unkC; // ???
 };
 
+struct struct_03004b10 {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4[4];
+    u16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+    u16 unk1A;
+    u32 unk1C[4];
+    u32 unk2C[4];
+    u16 unk3C;
+    u16 unk3E;
+    u16 unk40;
+    u16 unk42;
+    u16 unk44;
+    u16 unk46;
+    u16 unk48;
+    u16 unk4A;
+    u16 unk4C;
+    u16 unk4E;
+    u16 unk50;
+    u16 unk52;
+    u16 unk54[0x100];   // bg palette buffer, 03004b64
+    u16 unk254[0x100];  // obj palette buffer, 03004d64
+    u32 unk454[0x100];  // oam obj buffer, 03004f64
+};
+
 struct struct_080179f4_sub {
     u32 unk0;
     s16 unk4;
@@ -382,6 +413,7 @@ struct struct_030055e0 {
 };
 
 extern struct struct_030046a4 *D_030046a4;
+extern struct struct_03004b10 D_03004b10;
 extern s32 D_03005380;
 extern struct struct_030053c0 D_030053c0;
 extern struct struct_030055d0 *D_030055d0;

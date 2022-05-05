@@ -25,12 +25,6 @@ extern u32 *D_089e3da4[]; // Array of BG Map pointers for vegetable textures
 extern u32 D_089e3db0;    // GFX-related Null
 extern u32 *D_089e3ff4[]; // GFX Struct Index
 
-// Additional Data - Global:
-extern u32 D_0600f000;    // VRAM BG Map for vegetable textures (left).
-extern u32 D_0600f800;    // VRAM BG Map for vegetable textures (right).
-extern u32 D_03004b22;    // Unknown Value
-extern s16 D_03004b10[];  // Screen Position Struct/Array (?)
-
 // External Functions:
 extern void func_0804cebc(s32, s16, s8);
 extern void func_0804d770(s32, s16, u16);
@@ -46,11 +40,11 @@ void func_0802e750(void) {
     u8 ver = (gRhythmTweezersInfo.unk0 % 3);
 
     vegetable->entity0 = func_0804d160(D_03005380, D_089e3d98[ver], 0, 0x78, 0x10, 0x4800, -1, 0, 0);
-    func_0804db44(D_03005380, vegetable->entity0, &gRhythmTweezersInfo.unk8E, &D_03004b22);
+    func_0804db44(D_03005380, vegetable->entity0, &gRhythmTweezersInfo.unk8E, &D_03004b10.unk12);
 
     vegetable->entity2 = func_0804d160(D_03005380, D_089e3d98[ver], 0, 0x78, 0x10, 0x4800, 0, 0, 0);
     func_0804d614(D_03005380, vegetable->entity2, 0x178);
-    func_0804db44(D_03005380, vegetable->entity2, &gRhythmTweezersInfo.unk8E, &D_03004b22);
+    func_0804db44(D_03005380, vegetable->entity2, &gRhythmTweezersInfo.unk8E, &D_03004b10.unk12);
 
     vegetable->unk10 = 0;
     gRhythmTweezersInfo.unk8E = 0;
@@ -70,8 +64,8 @@ void func_0802e828(u32 time) {
     func_0804d8f8(D_03005380, vegetable->entity2, D_089e3d98[vegetable->unk5], 0, 0, 0, 0);
 
     temp = vegetable->unk10;
-    vegetableBG = &D_0600f800;
-    if (temp) vegetableBG = &D_0600f000;
+    vegetableBG = &RT_VEGETABLE_BG_MAP_R;
+    if (temp) vegetableBG = &RT_VEGETABLE_BG_MAP_L;
     func_08003eb8(D_089e3da4[vegetable->unk5], vegetableBG);
 }
 
@@ -93,7 +87,7 @@ void func_0802e8ac(void) {
     if (vegetable->unk8 >= vegetable->unkC) {
         gRhythmTweezersInfo.unk8E = 0;
         vegetable->unk10 ^= 1;
-        D_03004b10[8] = vegetable->unk10 << 8;
+        D_03004b10.unk10 = vegetable->unk10 << 8;
         vegetable->unk6 = 0;
         func_080178ac();
 
@@ -107,9 +101,9 @@ void func_0802e8ac(void) {
         temp = (-coss(temp) + 0x100) >> 1;
 
         gRhythmTweezersInfo.unk8E = temp;
-        D_03004b10[8] = temp;
+        D_03004b10.unk10 = temp;
         if (vegetable->unk10) {
-            D_03004b10[8] = temp + 0x100;
+            D_03004b10.unk10 = temp + 0x100;
         }
     }
 }
@@ -243,12 +237,12 @@ void func_0802eba0(void) {
 
 // [func_0802ebdc] SUB - Update Tweezers - Vertical Scroll
 void func_0802ebdc(void) {
-    u16 temp_unsigned = D_03004b10[9];
-    s16 temp_signed = D_03004b10[9];
+    u16 temp_unsigned = D_03004b10.unk12;
+    s16 temp_signed = D_03004b10.unk12;
 
     // If the screen is not in the normal vertical position, scroll down.
     if (temp_signed != 0) {
-        D_03004b10[9] = temp_unsigned - 1;
+        D_03004b10.unk12 = temp_unsigned - 1;
     }
 }
 
@@ -345,7 +339,7 @@ void func_0802edc8(void) {
 
     temp = func_080087d4(gRhythmTweezersInfo.unk90 + gRhythmTweezersInfo.unk92, -0xa0, 0);
     gRhythmTweezersInfo.unk90 = temp;
-    D_03004b10[7] = temp;
+    D_03004b10.unkE = temp;
 }
 
 
@@ -425,7 +419,7 @@ void func_0802f170(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2, u32 ar
 
     func_08010064(arg1->unk4, D_088e88f8, 0, 0, 0, 0);
     func_08010064(tweezers->entity, D_088e87a8, 0, 1, 0x7f, 0);
-    D_03004b10[9] = 2; // Scroll screen upwards.
+    D_03004b10.unk12 = 2; // Scroll screen upwards.
 
     if (tweezers->unk5) func_0802ea74(tweezers->unk5 - 1);
     tweezers->unk5 = 1;

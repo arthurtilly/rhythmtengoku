@@ -49,7 +49,7 @@ branch_0803093e: \n\
 /* 0803094e */ LDR R5, =0x7fff \n\
 /* 08030950 */ LDR R1, =D_088e9ff8 \n\
 /* 08030952 */ STR R1, [SP] \n\
-/* 08030954 */ LDR R4, =D_03004b64 \n\
+/* 08030954 */ LDR R4, =(D_03004b10 + 0x54) \n\
 /* 08030956 */ STR R4, [SP, 0x4] \n\
 /* 08030958 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 0803095a */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\

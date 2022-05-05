@@ -9,7 +9,7 @@ thumb_func_start func_08014df0 \n\
 /* 08014df6 */ MOV R4, R8 @ Set R4 to R8 \n\
 /* 08014df8 */ PUSH {R4-R6} \n\
 /* 08014dfa */ SUB SP, 0x14 \n\
-/* 08014dfc */ LDR R0, =D_03004b20 \n\
+/* 08014dfc */ LDR R0, =(D_03004b10 + 0x10) \n\
 /* 08014dfe */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08014e00 */ LDR R4, =D_030046a4 \n\
 /* 08014e02 */ LDR R1, [R4] \n\

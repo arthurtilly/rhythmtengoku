@@ -304,7 +304,7 @@ branch_08021cba: \n\
 /* 08021cce */ ADDS R1, R3, 0x0 @ Set R1 to R3 + 0x0 \n\
 /* 08021cd0 */ SUBS R1, 0x20 @ Subtract 0x20 from R1 \n\
 /* 08021cd2 */ STR R1, [SP] \n\
-/* 08021cd4 */ LDR R1, =D_03004be4 \n\
+/* 08021cd4 */ LDR R1, =(D_03004b10 + 0xd4) \n\
 /* 08021cd6 */ STR R1, [SP, 0x4] \n\
 /* 08021cd8 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 08021cda */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\

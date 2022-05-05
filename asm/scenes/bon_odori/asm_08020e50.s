@@ -8,7 +8,7 @@ thumb_func_start func_08020e50 \n\
 /* 08020e54 */ LDR R6, =D_030055d0 \n\
 /* 08020e56 */ LDR R0, [R6] \n\
 /* 08020e58 */ LDR R0, [R0, 0x58] \n\
-/* 08020e5a */ LDR R4, =D_03004b64 \n\
+/* 08020e5a */ LDR R4, =(D_03004b10 + 0x54) \n\
 /* 08020e5c */ MOVS R5, 0x80 @ Set R5 to 0x80 \n\
 /* 08020e5e */ LSLS R5, R5, 0x2 \n\
 /* 08020e60 */ STR R5, [SP] \n\

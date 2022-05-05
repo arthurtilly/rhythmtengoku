@@ -23,7 +23,7 @@ thumb_func_start func_08020d20 \n\
 /* 08020d46 */ ADDS R3, 0x60 @ Add 0x60 to R3 \n\
 /* 08020d48 */ LDR R0, [R0, 0x58] \n\
 /* 08020d4a */ STR R0, [SP] \n\
-/* 08020d4c */ LDR R5, =D_03004b64 \n\
+/* 08020d4c */ LDR R5, =(D_03004b10 + 0x54) \n\
 /* 08020d4e */ STR R5, [SP, 0x4] \n\
 /* 08020d50 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08020d52 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\

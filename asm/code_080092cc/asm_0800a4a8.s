@@ -60,7 +60,7 @@ thumb_func_start func_0800a4a8 \n\
 /* 0800a51a */ LSLS R4, R1, 0x5 \n\
 /* 0800a51c */ ADD R4, R10 @ Add R10 to R4 \n\
 /* 0800a51e */ LSLS R4, R4, 0x5 \n\
-/* 0800a520 */ LDR R2, =D_06010000 \n\
+/* 0800a520 */ LDR R2, =(VRAMBase + 0x10000) \n\
 /* 0800a522 */ ADDS R1, R4, R2 @ Set R1 to R4 + R2 \n\
 /* 0800a524 */ LSLS R6, R6, 0x5 \n\
 /* 0800a526 */ MOVS R5, 0x80 @ Set R5 to 0x80 \n\
@@ -70,7 +70,7 @@ thumb_func_start func_0800a4a8 \n\
 /* 0800a52e */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
 /* 0800a530 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 0800a532 */ BL func_080018e0 \n\
-/* 0800a536 */ LDR R0, =D_06010400 \n\
+/* 0800a536 */ LDR R0, =(VRAMBase + 0x10400) \n\
 /* 0800a538 */ ADDS R1, R4, R0 @ Set R1 to R4 + R0 \n\
 /* 0800a53a */ STR R5, [SP] \n\
 /* 0800a53c */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

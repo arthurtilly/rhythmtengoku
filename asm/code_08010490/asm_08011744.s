@@ -38,7 +38,7 @@ branch_08011786: \n\
 /* 08011786 */ ADDS R5, R7, 0x0 @ Set R5 to R7 + 0x0 \n\
 /* 08011788 */ ADDS R5, 0xC @ Add 0xC to R5 \n\
 /* 0801178a */ LSLS R1, R5, 0xA \n\
-/* 0801178c */ LDR R2, =D_06010000 \n\
+/* 0801178c */ LDR R2, =(VRAMBase + 0x10000) \n\
 /* 0801178e */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08011790 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08011792 */ LSLS R2, R2, 0x4 \n\

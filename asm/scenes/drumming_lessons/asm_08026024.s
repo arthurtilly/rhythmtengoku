@@ -569,7 +569,7 @@ branch_08026454: \n\
 /* 08026554 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08026556 */ LSLS R1, R1, 0x10 \n\
 /* 08026558 */ LSRS R1, R1, 0x10 \n\
-/* 0802655a */ LDR R3, =D_03004b22 \n\
+/* 0802655a */ LDR R3, =(D_03004b10 + 0x12) \n\
 /* 0802655c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802655e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08026560 */ BL func_0804e188 \n\

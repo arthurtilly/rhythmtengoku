@@ -3,7 +3,7 @@ asm(".syntax unified \n\
 .balign 4, 0 \n\
 \n\
 thumb_func_start func_0800e084 \n\
-/* 0800e084 */ LDR R2, =D_03004b14 \n\
+/* 0800e084 */ LDR R2, =(D_03004b10 + 4) \n\
 /* 0800e086 */ LSLS R0, R0, 0x1 \n\
 /* 0800e088 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0800e08a */ LDRH R3, [R0] \n\

@@ -37,7 +37,6 @@ extern const struct SequenceData s_ghost_dash_seqData;           // Sound: Ghost
 extern const struct SequenceData s_ghost_warai_seqData;          // Sound: Ghost Miss Voice
 
 // Additional Data:
-extern u16  D_03005550;   // BeatScript: Music Volume
 extern char D_08059f90[]; // Empty Default Text
 extern u32  D_089de6e0;   // GFX Null
 extern u32 *D_089de7a4[]; // GFX Struct Index
@@ -270,7 +269,7 @@ void func_0801f5bc(void) {
 // [func_0801f5c0] ENGINE Func_01 - Next Vertical Position
 void func_0801f5c0(u32 arg0) {
     gSneakySpiritsInfo.ghostHeight = arg0;
-    func_0800c4b0(1, func_0800c3a4(0xc), &D_03005550, D_03005550, arg0);
+    func_0800c4b0(1, func_0800c3a4(0xc), &D_030053c0.unk190, D_030053c0.unk190, arg0);
 }
 
 

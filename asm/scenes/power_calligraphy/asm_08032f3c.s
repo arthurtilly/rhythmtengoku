@@ -71,7 +71,7 @@ thumb_func_start func_08032f3c \n\
 /* 08032fcc */ LDR R1, [R2] \n\
 /* 08032fce */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 08032fd0 */ LDRSH R1, [R1, R2] \n\
-/* 08032fd2 */ LDR R4, =D_03004b24 \n\
+/* 08032fd2 */ LDR R4, =(D_03004b10 + 0x14) \n\
 /* 08032fd4 */ ADDS R2, R4, 0x2 @ Set R2 to R4 + 0x2 \n\
 /* 08032fd6 */ MOV R9, R2 @ Set R9 to R2 \n\
 /* 08032fd8 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\

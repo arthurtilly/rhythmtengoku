@@ -142,7 +142,7 @@ branch_080332ea: \n\
 /* 080332fc */ BCS branch_0803333e \n\
 /* 080332fe */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 08033300 */ LDR R7, =D_03005380 \n\
-/* 08033302 */ LDR R6, =D_03004b20 \n\
+/* 08033302 */ LDR R6, =(D_03004b10 + 0x10) \n\
  \n\
 branch_08033304: \n\
 /* 08033304 */ MOV R0, R8 @ Set R0 to R8 \n\

@@ -177,7 +177,7 @@ branch_080355e2: \n\
 /* 080355ea */ ADDS R4, 0x1 @ Add 0x1 to R4 \n\
 /* 080355ec */ CMP R4, 0x1 @ Compare R4 and 0x1 \n\
 /* 080355ee */ BLS branch_080355e2 \n\
-/* 080355f0 */ LDR R1, =D_06016000 \n\
+/* 080355f0 */ LDR R1, =(VRAMBase + 0x16000) \n\
 /* 080355f2 */ MOVS R2, 0xC0 @ Set R2 to 0xC0 \n\
 /* 080355f4 */ LSLS R2, R2, 0x5 \n\
 /* 080355f6 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\

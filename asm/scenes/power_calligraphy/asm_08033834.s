@@ -39,7 +39,7 @@ thumb_func_start func_08033834 \n\
 branch_0803387a: \n\
 /* 0803387a */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 0803387c */ BEQ branch_080338de \n\
-/* 0803387e */ LDR R1, =D_06017000 \n\
+/* 0803387e */ LDR R1, =(VRAMBase + 0x17000) \n\
 /* 08033880 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08033882 */ LSLS R2, R2, 0x4 \n\
 /* 08033884 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\

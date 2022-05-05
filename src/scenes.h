@@ -666,6 +666,9 @@ extern void func_0802221c(u32);
 
 // Rhythm Tweezers
 
+#define RT_VEGETABLE_BG_MAP_L *(u32 *)(VRAMBase + 0xF000) // VRAM BG Map for vegetable textures (left).
+#define RT_VEGETABLE_BG_MAP_R *(u32 *)(VRAMBase + 0xF800) // VRAM BG Map for vegetable textures (right).
+
 extern void func_0802e750(void);        // [func_0802e750] SUB - Initialise Vegetable Face
 extern void func_0802e828(u32);         // [func_0802e828] ENGINE Func_02 - Scroll to New Vegetable
 extern void func_0802e89c(void);        // [func_0802e89c] ENGINE Func_04 - Play Cash Register SFX

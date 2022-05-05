@@ -22,7 +22,7 @@ thumb_func_start func_080131e8 \n\
 /* 08013208 */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 0801320a */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 0801320c */ BL func_080018e0 \n\
-/* 08013210 */ LDR R1, =D_0600e000 \n\
+/* 08013210 */ LDR R1, =(VRAMBase + 0xe000) \n\
 /* 08013212 */ MOVS R5, 0x80 @ Set R5 to 0x80 \n\
 /* 08013214 */ LSLS R5, R5, 0x6 \n\
 /* 08013216 */ STR R4, [SP] \n\
@@ -30,7 +30,7 @@ thumb_func_start func_080131e8 \n\
 /* 0801321a */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 0801321c */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 0801321e */ BL func_080018e0 \n\
-/* 08013222 */ LDR R1, =D_0600c000 \n\
+/* 08013222 */ LDR R1, =(VRAMBase + 0xc000) \n\
 /* 08013224 */ LDR R0, =0x01000100 \n\
 /* 08013226 */ STR R4, [SP] \n\
 /* 08013228 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\

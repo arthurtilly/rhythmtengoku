@@ -8,7 +8,7 @@ thumb_func_start func_08018318 \n\
 /* 0801831c */ LDR R0, =D_030046a4 \n\
 /* 0801831e */ LDR R0, [R0] \n\
 /* 08018320 */ ADDS R0, 0x94 @ Add 0x94 to R0 \n\
-/* 08018322 */ LDR R1, =D_03004b64 \n\
+/* 08018322 */ LDR R1, =(D_03004b10 + 0x54) \n\
 /* 08018324 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08018326 */ LSLS R2, R2, 0x3 \n\
 /* 08018328 */ MOVS R3, 0x80 @ Set R3 to 0x80 \n\

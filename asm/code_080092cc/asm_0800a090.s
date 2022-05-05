@@ -33,7 +33,7 @@ thumb_func_start func_0800a090 \n\
 /* 0800a0c6 */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
 /* 0800a0c8 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 0800a0ca */ BL func_080018e0 \n\
-/* 0800a0ce */ LDR R0, =D_06000400 \n\
+/* 0800a0ce */ LDR R0, =(VRAMBase + 0x400) \n\
 /* 0800a0d0 */ ADDS R1, R5, R0 @ Set R1 to R5 + R0 \n\
 /* 0800a0d2 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 0800a0d4 */ STR R0, [SP] \n\

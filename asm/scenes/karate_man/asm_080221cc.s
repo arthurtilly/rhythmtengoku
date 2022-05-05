@@ -26,7 +26,7 @@ branch_080221ee: \n\
 /* 080221f0 */ STRB R0, [R2, 0x18] \n\
 /* 080221f2 */ LSLS R0, R3, 0x18 \n\
 /* 080221f4 */ ASRS R0, R0, 0x13 \n\
-/* 080221f6 */ LDR R1, =D_03004b64 \n\
+/* 080221f6 */ LDR R1, =(D_03004b10 + 0x54) \n\
 /* 080221f8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080221fa */ ADDS R2, R0, R1 @ Set R2 to R0 + R1 \n\
 /* 080221fc */ ADDS R1, 0x80 @ Add 0x80 to R1 \n\
