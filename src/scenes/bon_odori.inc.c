@@ -122,7 +122,13 @@ void func_08020bf4(s32 arg0) { //type of arg0 inferred from func_08020a4c
 
 #include "asm/scenes/bon_odori/asm_08020c3c.s"
 
-#include "asm/scenes/bon_odori/asm_08020c4c.s"
+void func_08020c4c(u32 arg0) {
+    struct BonOdoriInfo_sub* temp;
+    func_0800c604(0);
+    temp = &gBonOdoriInfo.unk8[arg0];
+    func_0804d770(D_03005380, temp->unk2, 0);
+    func_0804d8c4(D_03005380, temp->unk0, 0xa);
+}
 
 #include "asm/scenes/bon_odori/asm_08020c8c.s"
 
@@ -186,7 +192,14 @@ void func_08020f8c() {
 #include "asm/scenes/bon_odori/asm_08020f98.s"
 
 // Cue update
-#include "asm/scenes/bon_odori/asm_08020fb0.s"
+u8 func_08020fb0(u32 unused_arg0, struct struct_080179f4_sub* unused_arg1, u32 arg2) {
+    u32 temp = func_0800c3a4(0x30);
+    if (arg2 > temp) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
 
 // Cue end
 void func_08020fcc(u32 unused_arg0, struct struct_080179f4_sub* unused_arg1) {
