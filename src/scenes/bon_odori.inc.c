@@ -231,7 +231,7 @@ void func_0802100c(u32 unused_arg0, struct struct_080179f4_sub* unused_arg1) {
 
 void func_08021084() {
     u32 i;
-    u32 temp;
+    u32* temp;
     for (i = 0; i < 4; i++) {
         if (gBonOdoriInfo.unk4C[i] != 0) {
             continue;
