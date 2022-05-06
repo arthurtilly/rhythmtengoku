@@ -96,7 +96,7 @@ extern void func_08020bf4(s32);
 // extern ? func_08020c8c(?);
 // extern ? func_08020d20(?);
 // extern ? func_08020da0(?);
-// extern ? func_08020e1c(?);
+extern void func_08020e1c();
 // extern ? func_08020e50(?);
 // extern ? func_08020e90(?);
 // extern ? func_08020ed4(?);

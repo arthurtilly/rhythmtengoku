@@ -8,6 +8,7 @@ extern u32 *D_089deecc[]; // This is also an index of pointers to palettes (more
 
 extern u32** D_089dec38[];
 extern void D_089ded10;
+extern u32 D_03004b64[];
 
 extern u32 func_0800c3b8();
 extern u32 func_080087b4(u16, u32 *);
@@ -129,7 +130,11 @@ void func_08020bf4(s32 arg0) { //type of arg0 inferred from func_08020a4c
 
 #include "asm/scenes/bon_odori/asm_08020da0.s"
 
-#include "asm/scenes/bon_odori/asm_08020e1c.s"
+void func_08020e1c() {
+    u32 temp;
+    func_080018e0(0, &D_03004b64, 0xe0, 0x10, 0x200);
+    func_080018e0(0, &D_03004b64[0x80], 0xe0, 0x10, 0x200);
+}
 
 #include "asm/scenes/bon_odori/asm_08020e50.s"
 
@@ -189,7 +194,7 @@ void func_08020fcc(u32 unused_arg0, struct struct_080179f4_sub* unused_arg1) {
 }
 
 // Successful cue hit
-void func_08020fd0((u32 unused_arg0, struct struct_080179f4_sub* arg1) {
+void func_08020fd0(u32 unused_arg0, struct struct_080179f4_sub* arg1) {
     func_080207ec((u8)arg1->unk0);
     func_08002634(&s_HC_seqData);
 }
