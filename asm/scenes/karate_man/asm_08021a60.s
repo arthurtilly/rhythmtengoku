@@ -300,7 +300,7 @@ branch_08021cba: \n\
 /* 08021cc4 */ BL func_0800c3b8 \n\
 /* 08021cc8 */ LSLS R0, R0, 0x10 \n\
 /* 08021cca */ LSRS R0, R0, 0x10 \n\
-/* 08021ccc */ LDR R3, =D_088ad0c4 \n\
+/* 08021ccc */ LDR R3, =(D_088ad004 + 0xc0) \n\
 /* 08021cce */ ADDS R1, R3, 0x0 @ Set R1 to R3 + 0x0 \n\
 /* 08021cd0 */ SUBS R1, 0x20 @ Subtract 0x20 from R1 \n\
 /* 08021cd2 */ STR R1, [SP] \n\
