@@ -6,8 +6,13 @@ extern const struct SequenceData s_HC_seqData;
 extern u32 *D_089deed4[]; // This is an index of pointers to palettes.
 extern u32 *D_089deecc[]; // This is also an index of pointers to palettes (more like sub-palettes).
 
+// Unknown ROM stuff
+extern u8* D_089dece0[];
 extern u32** D_089dec38[];
 extern void D_089ded10;
+extern u16 D_089ded00[];
+
+// Unknown WRAM stuff
 extern u32 D_03004b64[];
 
 extern u32 func_0800c3b8();
@@ -21,9 +26,15 @@ u32* func_080206a0(u32 arg0) {
 
 #include "asm/scenes/bon_odori/asm_080206c0.s"
 
-#include "asm/scenes/bon_odori/asm_0802075c.s"
+u8* func_0802075c(u32 arg0, u32 arg1) {
+    return func_080206a0(D_089dece0[arg0][arg1]);
+}
 
-#include "asm/scenes/bon_odori/asm_08020778.s"
+void func_08020778(u32 arg0, u32 arg1) {
+    u8* temp = func_0802075c(arg0, arg1);
+    func_0804d8f8(D_03005380, gBonOdoriInfo.unk44[arg1], temp, 0, 1, 0x7f, 0);
+    gBonOdoriInfo.unk4C[arg1] = func_0800c3a4(D_089ded00[arg0]);
+}
 
 #include "asm/scenes/bon_odori/asm_080207d0.s"
 
@@ -231,7 +242,7 @@ void func_0802100c(u32 unused_arg0, struct struct_080179f4_sub* unused_arg1) {
 
 void func_08021084() {
     u32 i;
-    u32* temp;
+    u8* temp;
     for (i = 0; i < 4; i++) {
         if (gBonOdoriInfo.unk4C[i] != 0) {
             continue;
