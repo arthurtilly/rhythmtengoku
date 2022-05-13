@@ -121,7 +121,7 @@ ifneq ($(shell sha1sum -t baserom.gba), 67f8adacff79c15d028fffd90de3a77d9ad0602d
     $(error Provided ROM is not correct)
 endif
 
-.PHONY: default clean re
+.PHONY: default clean rebuild
 .SECONDARY:
 
 #---------------------------------------------------------------------------------
@@ -139,7 +139,7 @@ fullclean:
 	$(V)rm -fr $(BUILD)
 
 #---------------------------------------------------------------------------------
-re: clean default
+rebuild: clean default
 
 #---------------------------------------------------------------------------------
 
