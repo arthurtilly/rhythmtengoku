@@ -149,7 +149,11 @@ void func_08020c4c(u32 arg0) {
 
 #include "asm/scenes/bon_odori/asm_08020d20.s"
 
-#include "asm/scenes/bon_odori/asm_08020da0.s"
+void func_08020da0(u32 arg0) {
+    //TODO: replace with D_03004b10.unk54 and D_03004b10.unk254
+    func_08001fe0((u16)func_0800c3b8(), (u8)func_0800c3a4(arg0), 7, gBonOdoriInfo.unk58, &gBonOdoriInfo.unk60, &D_03004b10[0x2a]);
+    func_08001fe0((u16)func_0800c3b8(), (u8)func_0800c3a4(arg0), 7, gBonOdoriInfo.unk5C, &gBonOdoriInfo.unk460, &D_03004b10[0x12a]);
+}
 
 void func_08020e1c() {
     u32 temp;
