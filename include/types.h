@@ -399,7 +399,7 @@ struct BonOdoriInfo {
     struct BonOdoriInfo_sub unk8[4];
     u8 unk38;
     u16 unk3A;
-    u16 unk3C;
+    s16 unk3C;
     s16 unk3E;
     u16 unk40;
     u8 unk42;
@@ -414,7 +414,7 @@ struct BonOdoriInfo {
     u32 unk460;
     u32 unk464[0xFF];
     u16 unk860;
-    u16 pad862;
+    u8 unk862;
     u16 unk864;
 };
 

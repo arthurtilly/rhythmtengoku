@@ -24,7 +24,26 @@ u32* func_080206a0(u32 arg0) {
     return *(D_089dec38[arg0] + gBonOdoriInfo.unk0);
 }
 
-#include "asm/scenes/bon_odori/asm_080206c0.s"
+void func_080206c0() {
+    u8* anim;
+    u32 temp4;
+    u32 i;
+    
+    u32 xpos = 0x28;
+    u32 temp2 = 0x4800;
+    
+    for (i = 0; i < 4; i++) {
+        u32 temp3 = 0x78;
+        anim = func_0802075c(0, i);
+        gBonOdoriInfo.unk44[i] = func_0804d160(D_03005380, anim, 0x7f, (s16)xpos, temp3, temp2, 1, 0x7f, 0);;
+        gBonOdoriInfo.unk4C[i] = 0;
+        xpos += 0x35;
+    }
+
+    gBonOdoriInfo.unk54 = 0;
+    gBonOdoriInfo.unk55 = 0;
+    gBonOdoriInfo.unk862 = 1;
+}
 
 u8* func_0802075c(u32 animation, u32 donpan) {
     return func_080206a0(D_089dece0[animation][donpan]);
@@ -132,7 +151,9 @@ void func_08020bf4(s32 arg0) { //type of arg0 inferred from func_08020a4c
 
 #include "asm/scenes/bon_odori/asm_08020c24.s"
 
-#include "asm/scenes/bon_odori/asm_08020c3c.s"
+void func_08020c3c(s32 arg0) {
+    gBonOdoriInfo.unk3C = -arg0;
+}
 
 void func_08020c4c(u32 arg0) {
     struct BonOdoriInfo_sub* temp;
