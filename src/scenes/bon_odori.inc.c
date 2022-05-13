@@ -24,8 +24,7 @@ u32* func_080206a0(u32 arg0) {
     return *(D_089dec38[arg0] + gBonOdoriInfo.unk0);
 }
 
-// File splits
-
+// File splits suck ass
 void func_080206c0() {
     u8* anim;
     u32 temp4;
