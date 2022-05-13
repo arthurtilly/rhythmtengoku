@@ -117,7 +117,8 @@ void func_08020a48() {
     
 }
 
-#include "asm/scenes/bon_odori/asm_08020a4c.s"
+
+#include "asm/scenes/bon_odori/asm_08020a4c.s" // Decomp attempt at https://decomp.me/scratch/lhu93
 
 void func_08020be4(u8 arg0) {
     gBonOdoriInfo.unk38 = arg0;
