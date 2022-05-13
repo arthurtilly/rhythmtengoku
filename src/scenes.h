@@ -74,8 +74,8 @@ extern void func_0801fc40(void);    // [func_0801fc40] GRAPHICAL Func_01 - Unkno
 
 extern u32* func_080206a0(u32);
 // extern ? func_080206c0(?);
-extern u8* func_0802075c(u32, u32);
-extern void func_08020778(u32, u32);
+extern u8* func_0802075c(u32 animation, u32 donpan);  // Returns donpan animation
+extern void func_08020778(u32 animation, u32 donpan); // Potentially sets donpan animation?
 // extern ? func_080207d0(?);
 // extern ? func_080207ec(?);
 extern void func_080207f8(u32);
