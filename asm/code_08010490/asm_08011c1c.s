@@ -18,7 +18,7 @@ thumb_func_start func_08011c1c \n\
 /* 08011c34 */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 08011c36 */ LDR R0, =D_08cc4bcc \n\
 /* 08011c38 */ BL func_08003eb8 \n\
-/* 08011c3c */ LDR R2, =D_08900dae \n\
+/* 08011c3c */ LDR R2, =(D_08900dac + 2) \n\
 /* 08011c3e */ LDR R3, [SP, 0x18] \n\
 /* 08011c40 */ LSLS R1, R3, 0x5 \n\
 /* 08011c42 */ LDR R0, =(D_03004b10 + 0x256) \n\
