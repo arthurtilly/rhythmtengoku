@@ -12,11 +12,6 @@ extern u32** D_089dec38[]; // Pointers to animation arrays, with each one consis
 
 extern u32 D_089ded10;     // GFX related
 
-extern u32 func_0800c3b8();
-extern u32 func_080087b4(u16, u32 *);
-
-extern u32 func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
-
 u32* func_080206a0(u32 arg0) {
     return *(D_089dec38[arg0] + gBonOdoriInfo.unk0);
 }
@@ -147,8 +142,8 @@ void func_08020c4c(u32 arg0) {
 #include "asm/scenes/bon_odori/asm_08020d20.s"
 
 void func_08020da0(u32 arg0) {
-    func_08001fe0((u16)func_0800c3b8(), (u8)func_0800c3a4(arg0), 7, gBonOdoriInfo.unk58, &gBonOdoriInfo.unk60, &D_03004b10.unk54);
-    func_08001fe0((u16)func_0800c3b8(), (u8)func_0800c3a4(arg0), 7, gBonOdoriInfo.unk5C, &gBonOdoriInfo.unk460, &D_03004b10.unk254);
+    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.unk58, &gBonOdoriInfo.unk60, &D_03004b10.unk54);
+    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.unk5C, &gBonOdoriInfo.unk460, &D_03004b10.unk254);
 }
 
 void func_08020e1c() {

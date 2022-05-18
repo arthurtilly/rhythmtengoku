@@ -62,7 +62,7 @@ extern u32 func_08001f34(struct struct_08001f94 *);
 extern u32 func_08001f64(struct struct_08001f94 *);
 extern u32 func_08001f94(struct struct_08001f94 *);
 extern u8 func_08001fc4(u8 *);
-// extern ? func_08001fe0(?);
+extern void func_08001fe0(u16, u8, u32, u32*, u32*, u16*);
 // extern ? func_08002018(?);
 // extern ? func_08002050(?);
 // extern ? func_08002088(?);
