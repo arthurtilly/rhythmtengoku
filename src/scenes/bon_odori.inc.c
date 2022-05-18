@@ -36,15 +36,22 @@ void func_080207d0(u32 arg0) {
     }
 }
 
-
-#include "asm/scenes/bon_odori/asm_080207ec.s"
+void func_080207ec(u32 arg0) {
+    func_08020778(arg0, 3);
+}
 
 void func_080207f8(u32 arg0) {
     func_080207d0(arg0);
     func_080207ec(arg0);
 }
 
-#include "asm/scenes/bon_odori/asm_0802080c.s"
+void func_0802080c(u32 arg0) {
+    u32 i;
+    for (i=0; i<3; i++) {
+        gBonOdoriInfo.unk4C[i] = func_0800c3a4(arg0);
+    }
+    
+}
 
 void func_08020834() {
     u32 i;
