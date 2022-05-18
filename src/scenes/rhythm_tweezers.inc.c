@@ -1,6 +1,7 @@
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
+#include "src/lib_0804c870.h"
 
 // For readability. !TODO - CHANGE/REMOVE
 #define gRhythmTweezersInfo D_030055d0->gameInfo.rhythmTweezers
@@ -24,12 +25,6 @@ extern u32 *D_089e3d98[]; // Array of animation pointers for vegetable faces
 extern u32 *D_089e3da4[]; // Array of BG Map pointers for vegetable textures
 extern u32 D_089e3db0;    // GFX-related Null
 extern u32 *D_089e3ff4[]; // GFX Struct Index
-
-// External Functions:
-extern void func_0804cebc(s32, s16, s8);
-extern void func_0804d770(s32, s16, u16);
-extern void func_0804dae0(s32, s16, s8, u32, u32);
-
 
 /* RHYTHM TWEEZERS */
 

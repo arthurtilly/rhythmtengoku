@@ -1,6 +1,7 @@
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b3c8.h"
+#include "src/lib_0804c870.h"
 
 // For readability. !TODO - CHANGE/REMOVE
 #define gPrologueInfo D_030055d0->gameInfo.prologues
@@ -183,15 +184,6 @@ extern u32 D_088b8cbc[]; // Animation  -  Virus (Sick Beats)
 extern u32 D_089ede24;   // GFX Null   -  Prologue: Wizard's Waltz
 extern u32 D_089ede28[]; // GFX Array  -  Prologue: Wizard's Waltz
 extern u32 D_088b8e50[]; // Animation  -  Text (Wizard's Waltz)
-
-// External Functions:
-extern u32  func_080087b4(u16, u32 *);
-extern void func_0804cebc(s32, s16, s8);
-extern void func_0804dae0(s32, s16, s8, u32, u32);
-extern void func_0800e62c(s16, u32, s16, u32, u16);
-extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
-extern void func_0804d770(s32, s16, u16);
-
 
   // // //  PROLOGUE: SNEAKY SPIRITS  // // //
 

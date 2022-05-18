@@ -2,6 +2,7 @@
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
 #include "src/code_08016e18.h"
+#include "src/lib_0804c870.h"
 
 // For readability. !TODO - CHANGE/REMOVE
 #define gSneakySpiritsInfo D_030055d0->gameInfo.sneakySpirits
@@ -41,23 +42,7 @@ extern char D_08059f90[]; // Empty Default Text
 extern u32  D_089de6e0;   // GFX Null
 extern u32 *D_089de7a4[]; // GFX Struct Index
 
-// External Functions: !TODO
-extern u16  func_08001980(u16);
-extern u32 *func_08002634();
-extern u32 *func_08004b98(u32 *, char *, u32, u32);
-extern u32  func_0800e3e4(s16, u32, u32, s8, s8, u16);
-
-// External Library Functions:
-extern void func_0804cebc(s32, s16, s8);
-extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
-extern void func_0804d5d4(s32, s16, s16, s16);
-extern void func_0804d614(s32, s16, s16);
-extern void func_0804d770(s32, s16, u16);
-extern void func_0804d8f8(s32, s16, u32 *, u32, u32, u32, u32);
-extern void func_0804dae0(s32, s16, s8, u32, u32);
-extern void func_0804dcb8(s32, s16, u16);
-extern u16  func_0804ddb0(s32, s16, s8);
-
+extern u16  func_08001980(u16); // defined here because it causes matching issues on func_08008e10
 
 /* SNEAKY SPIRITS */
 

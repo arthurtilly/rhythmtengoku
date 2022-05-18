@@ -1,6 +1,7 @@
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
+#include "src/lib_0804c870.h"
 
 // For readability. !TODO - CHANGE/REMOVE
 #define gRapMenInfo D_030055d0->gameInfo.rapMen
@@ -20,15 +21,6 @@ extern const struct SequenceData s_RC_seqData;
 extern const struct SequenceData s_tom_M_seqData;
 extern const struct SequenceData s_SD1_seqData;
 extern const struct SequenceData s_CC4_seqData;
-
-// !TODO
-extern u32 *func_08004b98(u32 *, char *, u32, u32);
-extern u32 *func_08004c0c(u32 *, char *, u32, u32);
-extern void func_0804cebc(s32, s16, s8);
-extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
-extern void func_0804d770(s32, s16, u16);
-extern void func_0804d8f8(s32, s16, u32 *, u32, u32, u32, u32);
-
 
 u32 *func_080398b4(u32 arg0) {
     return D_089e63f8[arg0][gRapMenInfo.unk0];

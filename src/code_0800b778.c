@@ -1,14 +1,13 @@
 #include "global.h"
 #include "code_08003980.h"
 #include "code_0800b778.h"
+#include "src/lib_0804c870.h"
 
 // Could use better split
 
 asm(".include \"include/gba.inc\"");//Temporary
 
 static s32 D_03001310[2]; // unknown type
-
-extern u32 func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16); // Non-Scalable/Non-Rotatable Entity
 
 #include "asm/code_0800b778/asm_0800b778.s"
 
