@@ -42,8 +42,6 @@ extern char D_08059f90[]; // Empty Default Text
 extern u32  D_089de6e0;   // GFX Null
 extern u32 *D_089de7a4[]; // GFX Struct Index
 
-extern u16  func_08001980(u16); // defined here because it causes matching issues on func_08008e10
-
 /* SNEAKY SPIRITS */
 
 
@@ -400,7 +398,7 @@ void func_0801f8d0(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
     }
 
     temp = func_0804ddb0(D_03005380, gSneakySpiritsInfo.ghostHit, 2);
-    func_0804cebc(D_03005380, gSneakySpiritsInfo.ghostHit, func_08001980(temp));
+    func_0804cebc(D_03005380, gSneakySpiritsInfo.ghostHit, func_08001980((u16)temp));
     func_0804d770(D_03005380, gSneakySpiritsInfo.ghostHit, 1);
     temp = func_0800e3e4(gSneakySpiritsInfo.ghostHit, 0x64, 0x4c, xVel, yVel, (u16) duration);
     func_08005d38(temp, func_0801f810, 0);
