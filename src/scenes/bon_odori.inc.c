@@ -161,9 +161,15 @@ void func_08020e1c() {
     func_080018e0(0, &D_03004b64[0x80], 0xe0, 0x10, 0x200);
 }
 
-#include "asm/scenes/bon_odori/asm_08020e50.s"
+void func_08020e50() {
+    func_0800186c(gBonOdoriInfo.unk58, &D_03004b64[0], 0xe0, 0x10, 0x200);
+    func_0800186c(gBonOdoriInfo.unk5C, &D_03004b64[0x80], 0xe0, 0x10, 0x200);
+}
 
-#include "asm/scenes/bon_odori/asm_08020e90.s"
+void func_08020e90() {
+    func_0800186c(&gBonOdoriInfo.unk60, &D_03004b64[0], 0xe0, 0x10, 0x200);
+    func_0800186c(&gBonOdoriInfo.unk460, &D_03004b64[0x80], 0xe0, 0x10, 0x200);
+}
 
 #include "asm/scenes/bon_odori/asm_08020ed4.s"
 
