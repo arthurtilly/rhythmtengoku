@@ -390,7 +390,7 @@ struct BonOdoriInfo_sub {
     s16 unk0;
     s16 unk2;
     u32 unk4;
-    u16 unk8;
+    s16 unk8;
     u16 unkA;
 };
 

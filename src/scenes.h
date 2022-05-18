@@ -93,7 +93,7 @@ extern void func_08020bf4(s32);
 // extern ? func_08020c24(?);
 extern void func_08020c3c(s32);
 extern void func_08020c4c(u32);
-extern coid func_08020c8c(u32);
+extern void func_08020c8c(u32);
 extern void func_08020d20(u32);
 extern void func_08020da0(u32);
 extern void func_08020e1c();

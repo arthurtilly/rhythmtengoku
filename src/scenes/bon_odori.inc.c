@@ -16,7 +16,6 @@ u32* func_080206a0(u32 arg0) {
     return *(D_089dec38[arg0] + gBonOdoriInfo.unk0);
 }
 
-
 #include "asm/scenes/bon_odori/asm_080206c0.s" // https://decomp.me/scratch/BO5Iv
 
 u8* func_0802075c(u32 animation, u32 donpan) {
@@ -165,11 +164,11 @@ void func_08020c8c(u32 arg0) {
         
         temp2 = gBonOdoriInfo.unk3C - 0x18;
         temp2 -= gBonOdoriInfo.unk38 * 0x18;
-        D_03004b10[7] = temp2;
+        D_03004b10.unkE = temp2;
     
         
         func_08005d38(
-            func_0800c4b0(1, func_0800c3a4(arg0), &D_03004b10[6], temp0, temp1),
+            func_0800c4b0(1, func_0800c3a4(arg0), &D_03004b10.unkC, temp0, temp1),
             func_08020c4c,
             gBonOdoriInfo.unk38
         );
