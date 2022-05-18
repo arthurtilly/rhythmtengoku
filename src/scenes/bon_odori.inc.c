@@ -74,7 +74,7 @@ void func_08020880() {
     func_08005d38(temp1, func_0802085c + 1, 0);
 }
 
-void func_080208c0(void) {
+void func_080208c0() {
     u32 data;
     func_0800c604(0);
     data = func_080087b4(func_0800c3b8(), &D_089ded10);
