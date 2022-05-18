@@ -12,12 +12,14 @@ extern u32** D_089dec38[]; // Pointers to animation arrays, with each one consis
 
 extern u32 D_089ded10;     // GFX related
 
+extern u32* D_089deec4[];
+
 u32* func_080206a0(u32 arg0) {
     return *(D_089dec38[arg0] + gBonOdoriInfo.unk0);
 }
 
 void func_080206c0() {
-    u8* anim;
+    u32* anim;
     u32 temp4;
     u32 i;
     s32 xpos = 0x28;
@@ -37,12 +39,12 @@ void func_080206c0() {
     gBonOdoriInfo.unk862 = 1;
 }
 
-u8* func_0802075c(u32 animation, u32 donpan) {
+u32* func_0802075c(u32 animation, u32 donpan) {
     return func_080206a0(D_089dece0[animation][donpan]);
 }
 
 void func_08020778(u32 animation, u32 donpan) {
-    u8* temp = func_0802075c(animation, donpan);
+    u32* temp = func_0802075c(animation, donpan);
     func_0804d8f8(D_03005380, gBonOdoriInfo.unk44[donpan], temp, 0, 1, 0x7f, 0);
     gBonOdoriInfo.unk4C[donpan] = func_0800c3a4(D_089ded00[animation]);
 }
@@ -199,13 +201,13 @@ void func_08020c8c(u32 arg0) {
 }
 
 void func_08020d20(u32 arg0) {
-    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, &gBonOdoriInfo.unk60, gBonOdoriInfo.unk58, &D_03004b10.unk54);
-    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, &gBonOdoriInfo.unk460, gBonOdoriInfo.unk5C, &D_03004b10.unk254);
+    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, &gBonOdoriInfo.unk60, gBonOdoriInfo.unk58, D_03004b10.unk54);
+    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, &gBonOdoriInfo.unk460, gBonOdoriInfo.unk5C, D_03004b10.unk254);
 }
 
 void func_08020da0(u32 arg0) {
-    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.unk58, &gBonOdoriInfo.unk60, &D_03004b10.unk54);
-    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.unk5C, &gBonOdoriInfo.unk460, &D_03004b10.unk254);
+    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.unk58, &gBonOdoriInfo.unk60, D_03004b10.unk54);
+    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.unk5C, &gBonOdoriInfo.unk460, D_03004b10.unk254);
 }
 
 void func_08020e1c() {
@@ -319,7 +321,7 @@ void func_08021034() {
 
 void func_08021084() {
     u32 i;
-    u8* temp;
+    u32* temp;
     for (i = 0; i < 4; i++) {
         if (gBonOdoriInfo.unk4C[i] != 0) {
             continue;
