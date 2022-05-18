@@ -221,7 +221,11 @@ void func_08020f8c() {
 }
 
 // Cue call handler
-#include "asm/scenes/bon_odori/asm_08020f98.s"
+void func_08020f98(u32 unused_arg0, struct struct_080179f4_sub* arg1, u32 arg2) {
+    arg1->unk0 = arg2;
+    gBonOdoriInfo.unk862 = arg2;
+}
+
 
 // Cue update
 u8 func_08020fb0(u32 unused_arg0, struct struct_080179f4_sub* unused_arg1, u32 arg2) {
@@ -258,8 +262,13 @@ void func_0802100c(u32 unused_arg0, struct struct_080179f4_sub* unused_arg1) {
     gBonOdoriInfo.unk42 = 1;
 }
 
-
-#include "asm/scenes/bon_odori/asm_08021034.s"
+void func_08021034() {
+    gBonOdoriInfo.unk864 = func_0800c3a4(6);
+    func_08017338(0, 0);
+    func_080207ec(gBonOdoriInfo.unk862);
+    gBonOdoriInfo.unk860 += 1;
+    func_08002634(&s_HC_seqData);
+}
 
 void func_08021084() {
     u32 i;
