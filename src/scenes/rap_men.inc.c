@@ -107,7 +107,7 @@ void func_08039ad8(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     func_0804d8f8(D_03005380, gRapMenInfo.unkA, func_080398b4(3), 0, 1, 0x7f, 0);
     gRapMenInfo.unk10 = func_0800c3a4(0x24);
     gRapMenInfo.unk12 = func_0800c3a4(0x24);
-    arg1->unk0 = arg2;
+    arg1->unk0.u32 = arg2;
 }
 
 u32 func_08039b2c(u32 arg0, u32 arg1, u32 arg2) {
@@ -127,7 +127,7 @@ void func_08039b4c(u32 arg0, struct struct_080179f4_sub *arg1) {
     gRapMenInfo.unk10 = func_0800c3a4(0x24);
     func_0804d160(D_03005380, func_080398b4(7), 0, 0xa0, 0x82, 0x47f6, 1, 0, 3);
     func_08039a44(3);
-    func_08002634(D_089e652c[gRapMenInfo.unk0][arg1->unk0]);
+    func_08002634(D_089e652c[gRapMenInfo.unk0][arg1->unk0.u32]);
     func_08002634(&s_SD1_seqData);
     func_08002634(&s_CC4_seqData);
 }

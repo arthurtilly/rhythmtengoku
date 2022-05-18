@@ -222,10 +222,9 @@ void func_08020f8c() {
 
 // Cue call handler
 void func_08020f98(u32 unused_arg0, struct struct_080179f4_sub* arg1, u32 arg2) {
-    arg1->unk0 = arg2;
+    arg1->unk0.u8[0] = arg2;
     gBonOdoriInfo.unk862 = arg2;
 }
-
 
 // Cue update
 u8 func_08020fb0(u32 unused_arg0, struct struct_080179f4_sub* unused_arg1, u32 arg2) {
@@ -244,13 +243,13 @@ void func_08020fcc(u32 unused_arg0, struct struct_080179f4_sub* unused_arg1) {
 
 // Successful cue hit
 void func_08020fd0(u32 unused_arg0, struct struct_080179f4_sub* arg1) {
-    func_080207ec((u8)arg1->unk0);
+    func_080207ec(arg1->unk0.u8[0]);
     func_08002634(&s_HC_seqData);
 }
 
 // "Barely/near" hit
 void func_08020fe8(u32 unused_arg0, struct struct_080179f4_sub* arg1) {
-    func_080207ec((u8)arg1->unk0);
+    func_080207ec(arg1->unk0.u8[0]);
     func_08002634(&s_tebyoushi_pati_seqData);
     gBonOdoriInfo.unk42 = 1;
 }

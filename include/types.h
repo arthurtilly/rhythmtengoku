@@ -51,7 +51,10 @@ struct struct_03004b10 {
 };
 
 struct struct_080179f4_sub {
-    u32 unk0;
+    union {
+        u32 u32;
+        u8 u8[4];
+    } unk0;
     s16 unk4;
     s16 unk6;
     s8 unk8;
