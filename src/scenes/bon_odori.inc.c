@@ -150,7 +150,31 @@ void func_08020c4c(u32 arg0) {
     func_0804d8c4(D_03005380, temp->unk0, 0xa);
 }
 
-#include "asm/scenes/bon_odori/asm_08020c8c.s"
+void func_08020c8c(u32 arg0) {
+    s32 temp0;
+    s32 temp1;
+    s32 temp2;
+    s16 temp3;
+    u32 temp4;
+    struct BonOdoriInfo_sub* substruct = &gBonOdoriInfo.unk8[gBonOdoriInfo.unk38];
+    if ((s16)substruct->unk0 >= 0) {
+        func_0804d770(D_03005380, substruct->unk2, 1);
+
+        temp0 = -substruct->unk8;
+        temp1 = temp0 - substruct->unkA;
+        
+        temp2 = gBonOdoriInfo.unk3C - 0x18;
+        temp2 -= gBonOdoriInfo.unk38 * 0x18;
+        D_03004b10[7] = temp2;
+    
+        
+        func_08005d38(
+            func_0800c4b0(1, func_0800c3a4(arg0), &D_03004b10[6], temp0, temp1),
+            func_08020c4c,
+            gBonOdoriInfo.unk38
+        );
+    }
+}
 
 void func_08020d20(u32 arg0) {
     func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, &gBonOdoriInfo.unk60, gBonOdoriInfo.unk58, &D_03004b10.unk54);
@@ -178,7 +202,9 @@ void func_08020e90() {
     func_0800186c(&gBonOdoriInfo.unk460, &D_03004b10.unk254, 0xe0, 0x10, 0x200);
 }
 
-#include "asm/scenes/bon_odori/asm_08020ed4.s"
+void func_08020ed4() {
+    gBonOdoriInfo.unk860 = 0;
+}
 
 void func_08020ee8(void) {
     u8 temp0;
