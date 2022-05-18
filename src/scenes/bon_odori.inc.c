@@ -129,13 +129,17 @@ void func_08020be4(u8 arg0) {
     gBonOdoriInfo.unk38 = arg0;
 }
 
-void func_08020bf4(s32 arg0) { //type of arg0 inferred from func_08020a4c
+void func_08020bf4(s32 arg0) {
     func_08020a4c(arg0, gBonOdoriInfo.unk38, 0);
 }
 
-#include "asm/scenes/bon_odori/asm_08020c0c.s"
+void func_08020c0c(s32 arg0) {
+    func_08020a4c(arg0, gBonOdoriInfo.unk38, 1);
+}
 
-#include "asm/scenes/bon_odori/asm_08020c24.s"
+void func_08020c24(s32 arg0) {
+    func_08020a4c(arg0, gBonOdoriInfo.unk38, 2);
+}
 
 void func_08020c3c(s32 arg0) {
     gBonOdoriInfo.unk3C = -arg0;
