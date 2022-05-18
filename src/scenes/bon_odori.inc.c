@@ -29,12 +29,18 @@ void func_08020778(u32 animation, u32 donpan) {
     gBonOdoriInfo.unk4C[donpan] = func_0800c3a4(D_089ded00[animation]);
 }
 
-#include "asm/scenes/bon_odori/asm_080207d0.s"
+void func_080207d0(u32 arg0) {
+    u32 i;
+    for (i = 0; i < 3; i++) {
+        func_08020778(arg0, i);
+    }
+}
+
 
 #include "asm/scenes/bon_odori/asm_080207ec.s"
 
 void func_080207f8(u32 arg0) {
-    func_080207d0();
+    func_080207d0(arg0);
     func_080207ec(arg0);
 }
 
@@ -139,7 +145,10 @@ void func_08020c4c(u32 arg0) {
 
 #include "asm/scenes/bon_odori/asm_08020c8c.s"
 
-#include "asm/scenes/bon_odori/asm_08020d20.s"
+void func_08020d20(u32 arg0) {
+    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, &gBonOdoriInfo.unk60, gBonOdoriInfo.unk58, &D_03004b10.unk54);
+    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, &gBonOdoriInfo.unk460, gBonOdoriInfo.unk5C, &D_03004b10.unk254);
+}
 
 void func_08020da0(u32 arg0) {
     func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.unk58, &gBonOdoriInfo.unk60, &D_03004b10.unk54);
