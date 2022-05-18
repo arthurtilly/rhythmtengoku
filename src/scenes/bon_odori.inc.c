@@ -12,9 +12,6 @@ extern u32** D_089dec38[]; // Pointers to animation arrays, with each one consis
 
 extern u32 D_089ded10;     // GFX related
 
-// Unknown WRAM stuff
-extern u32 D_03004b64[];
-
 extern u32 func_0800c3b8();
 extern u32 func_080087b4(u16, u32 *);
 
@@ -61,7 +58,7 @@ void func_08020834() {
 void func_0802085c() {
     func_0800c604(0);
     func_08017578();
-    D_03004b10[0xec] = 0x7C00;
+    D_03004b10.unk54[0xc2] = 0x7C00;
 }
 
 void func_08020880() {
@@ -92,9 +89,9 @@ void func_080208ec(u32 arg0) {
     func_0800e0a0(1, 1, 0, 0, 0, 0x1d, 1);
     func_0800e0a0(2, 1, 0, 0, 0, 0x1e, 1);
     gBonOdoriInfo.unk4 = func_0800c660(0x340, 2);
-    D_03004b10[0x23] = 0x311e;
-    D_03004b10[0x26] = 0x1041;
-    D_03004b10[0x27] = 0x1010;
+    D_03004b10.unk46 = 0x311e;
+    D_03004b10.unk4C = 0x1041;
+    D_03004b10.unk4E = 0x1010;
     
     for (i = 0; i < 4; i++) {
         gBonOdoriInfo.unk8[i].unk0 |= -1;
@@ -150,25 +147,24 @@ void func_08020c4c(u32 arg0) {
 #include "asm/scenes/bon_odori/asm_08020d20.s"
 
 void func_08020da0(u32 arg0) {
-    //TODO: replace with D_03004b10.unk54 and D_03004b10.unk254
-    func_08001fe0((u16)func_0800c3b8(), (u8)func_0800c3a4(arg0), 7, gBonOdoriInfo.unk58, &gBonOdoriInfo.unk60, &D_03004b10[0x2a]);
-    func_08001fe0((u16)func_0800c3b8(), (u8)func_0800c3a4(arg0), 7, gBonOdoriInfo.unk5C, &gBonOdoriInfo.unk460, &D_03004b10[0x12a]);
+    func_08001fe0((u16)func_0800c3b8(), (u8)func_0800c3a4(arg0), 7, gBonOdoriInfo.unk58, &gBonOdoriInfo.unk60, &D_03004b10.unk54);
+    func_08001fe0((u16)func_0800c3b8(), (u8)func_0800c3a4(arg0), 7, gBonOdoriInfo.unk5C, &gBonOdoriInfo.unk460, &D_03004b10.unk254);
 }
 
 void func_08020e1c() {
     u32 temp;
-    func_080018e0(0, &D_03004b64, 0xe0, 0x10, 0x200);
-    func_080018e0(0, &D_03004b64[0x80], 0xe0, 0x10, 0x200);
+    func_080018e0(0, &D_03004b10.unk54, 0xe0, 0x10, 0x200);
+    func_080018e0(0, &D_03004b10.unk254, 0xe0, 0x10, 0x200);
 }
 
 void func_08020e50() {
-    func_0800186c(gBonOdoriInfo.unk58, &D_03004b64[0], 0xe0, 0x10, 0x200);
-    func_0800186c(gBonOdoriInfo.unk5C, &D_03004b64[0x80], 0xe0, 0x10, 0x200);
+    func_0800186c(gBonOdoriInfo.unk58, &D_03004b10.unk54, 0xe0, 0x10, 0x200);
+    func_0800186c(gBonOdoriInfo.unk5C, &D_03004b10.unk254, 0xe0, 0x10, 0x200);
 }
 
 void func_08020e90() {
-    func_0800186c(&gBonOdoriInfo.unk60, &D_03004b64[0], 0xe0, 0x10, 0x200);
-    func_0800186c(&gBonOdoriInfo.unk460, &D_03004b64[0x80], 0xe0, 0x10, 0x200);
+    func_0800186c(&gBonOdoriInfo.unk60, &D_03004b10.unk54, 0xe0, 0x10, 0x200);
+    func_0800186c(&gBonOdoriInfo.unk460, &D_03004b10.unk254, 0xe0, 0x10, 0x200);
 }
 
 #include "asm/scenes/bon_odori/asm_08020ed4.s"

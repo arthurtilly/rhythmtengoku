@@ -459,4 +459,3 @@ extern s16 gSineTable[];
 extern s16 D_08935fcc[];
 extern s16 D_089361cc[];
 extern u32 D_089deec4[];
-extern s16 D_03004b10[];
