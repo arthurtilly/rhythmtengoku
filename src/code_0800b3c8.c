@@ -11,7 +11,10 @@ static s16 D_0300130e; // unknown type
 
 // Game Controlling Stuff
 
-#include "asm/code_0800b3c8/asm_0800b3c8.s"
+void func_0800b3c8(s16* arg0) {
+    if (arg0 != NULL)
+        func_0804d770(D_03005380, arg0[0x15], 1);
+}
 
 #include "asm/code_0800b3c8/asm_0800b3e8.s"
 
