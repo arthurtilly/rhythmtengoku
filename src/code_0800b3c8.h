@@ -2,8 +2,8 @@
 
 #include "global.h"
 
-extern void func_0800b3c8(u16*);
-// extern ? func_0800b3e8(?);
+extern void func_0800b3c8(s16*);
+extern void func_0800b3e8(s16*);
 // extern ? func_0800b408(?);
 // extern ? func_0800b454(?);
 // extern ? func_0800b4d8(?);
