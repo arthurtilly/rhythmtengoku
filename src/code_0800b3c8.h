@@ -2,10 +2,35 @@
 
 #include "global.h"
 
-extern void func_0800b3c8(s16*);
-extern void func_0800b3e8(s16*);
-// extern ? func_0800b408(?);
-// extern ? func_0800b454(?);
+//TODO: try to find any existing struct that is close enough, or rename properly
+struct arg {
+    u32 pad0;
+    u32 unk4;
+    u8 unk8;
+    s16 unkA;
+    u16 unkC;
+    s16 padE;
+    s16 unk10;
+    u16 pad12[2];
+    s16 unk16;
+    u32 pad18[2];
+    s16 pad20;
+    s16 unk22;
+    s16 unk24;
+    s16 unk26;
+    s16 unk28;
+    s16 unk2A;
+    s16 unk2C;
+    u16 pad2E;
+    s16 unk30;
+    u32 (*unk34)(s32);
+    s16 (*unk38)(s32);
+};
+
+extern void func_0800b3c8(struct arg*);
+extern void func_0800b3e8(struct arg*);
+extern void func_0800b408(struct arg* arg0, s16 arg1, u32 arg2);
+extern void func_0800b454(struct arg* arg0, s32 arg1);
 // extern ? func_0800b4d8(?);
 // extern ? func_0800b550(?);
 // extern ? func_0800b564(?);
