@@ -77,10 +77,20 @@ void func_0800b454(struct arg* arg0, s32 arg1) {
 
 #include "asm/code_0800b3c8/asm_0800b71c.s"
 
-#include "asm/code_0800b3c8/asm_0800b768.s"
+void func_0800b768() {
+    
+}
 
-#include "asm/code_0800b3c8/asm_0800b76c.s"
+void func_0800b76c() {
+    
+}
 
-#include "asm/code_0800b3c8/asm_0800b770.s"
 
-#include "asm/code_0800b3c8/asm_0800b774.s"
+void func_0800b770() {
+    
+}
+
+
+void func_0800b774() {
+
+}
