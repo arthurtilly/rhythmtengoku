@@ -109,7 +109,7 @@ void func_08044ba8(struct ScaledEntity *arg0, s32 arg1, s32 arg2, u32 arg3) {
     s32 temp;
     u32 temp1 = arg3 - gWizardsWaltzInfo.globalScale;
 
-    temp = func_08007b80(0xa000, temp1);
+    temp = fast_div_s32(0xa000, temp1);
 
     arg1 = (arg1 * temp) >> 8;
     arg2 = (arg2 * temp) >> 8;

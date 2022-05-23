@@ -14,7 +14,7 @@ thumb_func_start func_0801fd70 \n\
 /* 0801fd80 */ SUBS R1, R1, R0 @ Set R1 to R1 - R0 \n\
 /* 0801fd82 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 0801fd84 */ LSLS R0, R0, 0x9 \n\
-/* 0801fd86 */ BL func_08007b80 \n\
+/* 0801fd86 */ BL fast_div_s32 \n\
 /* 0801fd8a */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0801fd8c */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0801fd8e */ MULS R0, R4 @ Multiply R0 by R4 \n\

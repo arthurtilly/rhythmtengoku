@@ -35,10 +35,11 @@ struct unk_struct_080074ec *func_080074ec(struct unk_struct_080074ec_init *arg0)
 
     temp = mem_heap_alloc(sizeof(struct unk_struct_080074ec));
     temp->id = arg0->id;
-    temp->xPos = arg0->startX << 8;
-    temp->yPos = arg0->startY << 8;
+    temp->xPos = INT_TO_FIXED(arg0->startX);
+    temp->yPos = INT_TO_FIXED(arg0->startY);
     temp->xVel = arg0->xVel;
     temp->yVel = arg0->yVel;
+
     func_0804d5d4(D_03005380, arg0->id, arg0->startX, arg0->startY);
     return temp;
 }
@@ -47,7 +48,8 @@ struct unk_struct_080074ec *func_080074ec(struct unk_struct_080074ec_init *arg0)
 u32 func_08007544(struct unk_struct_080074ec *arg0) {
     arg0->xPos += arg0->xVel;
     arg0->yPos += arg0->yVel;
-    func_0804d5d4(D_03005380, arg0->id, arg0->xPos >> 8, arg0->yPos >> 8);
+
+    func_0804d5d4(D_03005380, arg0->id, FIXED_TO_INT(arg0->xPos), FIXED_TO_INT(arg0->yPos));
     return FALSE;
 }
 
@@ -64,9 +66,10 @@ struct unk_struct_0800757c *func_0800757c(struct unk_struct_0800757c_init *arg0)
     temp->id = arg0->id;
     temp->destXPos = arg0->destX;
     temp->destYPos = arg0->destY;
-    temp->xOffset = (arg0->startX - arg0->destX) << 8;
-    temp->yOffset = (arg0->startY - arg0->destY) << 8;
+    temp->xOffset = INT_TO_FIXED(arg0->startX - arg0->destX);
+    temp->yOffset = INT_TO_FIXED(arg0->startY - arg0->destY);
     temp->multiplier = arg0->multiplier;
+
     func_0804d5d4(D_03005380, arg0->id, arg0->startX, arg0->startY);
     return temp;
 }
@@ -79,11 +82,11 @@ u32 func_080075e4(struct unk_struct_0800757c *arg0) {
     newXOffset = ABS(newXOffset);
     newYOffset = ABS(newYOffset);
     
-    newXOffset = (newXOffset * arg0->multiplier) >> 8;
-    newYOffset = (newYOffset * arg0->multiplier) >> 8;
+    newXOffset = FIXED_POINT_MUL(newXOffset, arg0->multiplier);
+    newYOffset = FIXED_POINT_MUL(newYOffset, arg0->multiplier);
 
-    if (newXOffset < 0x100) newXOffset = 0;
-    if (newYOffset < 0x100) newYOffset = 0;
+    if (newXOffset < INT_TO_FIXED(1)) newXOffset = 0;
+    if (newYOffset < INT_TO_FIXED(1)) newYOffset = 0;
 
     if (arg0->xOffset < 0) newXOffset = -newXOffset;
     if (arg0->yOffset < 0) newYOffset = -newYOffset;
@@ -91,7 +94,7 @@ u32 func_080075e4(struct unk_struct_0800757c *arg0) {
     arg0->xOffset = newXOffset;
     arg0->yOffset = newYOffset;
 
-    func_0804d5d4(D_03005380, arg0->id, (newXOffset >> 8) + arg0->destXPos, (newYOffset >> 8) + arg0->destYPos);
+    func_0804d5d4(D_03005380, arg0->id, FIXED_TO_INT(newXOffset) + arg0->destXPos, FIXED_TO_INT(newYOffset) + arg0->destYPos);
 
     if ((newXOffset | newYOffset) == 0) {
        return TRUE;
@@ -118,6 +121,7 @@ struct unk_struct_0800765c *func_0800765c(struct unk_struct_0800765c_init *arg0)
     temp->totalDistance = D_03004ae4(temp->dx * temp->dx + temp->dy * temp->dy) << 8;
     temp->vel = arg0->vel;
     temp->accel = arg0->accel;
+
     func_0804d5d4(D_03005380, arg0->id, arg0->startX, arg0->startY);
     return temp;
 }
@@ -148,14 +152,15 @@ u32 func_080076ec(struct unk_struct_0800765c *arg0) {
         xPos = arg0->startXPos + arg0->dx;
         yPos = arg0->startYPos + arg0->dy;
     } else {
-        xPos = arg0->startXPos + func_08007b80(arg0->dx * distTravelled, totalDist);
-        yPos = arg0->startYPos + func_08007b80(arg0->dy * distTravelled, totalDist);
+        xPos = arg0->startXPos + lerp(0, arg0->dx, distTravelled, totalDist);
+        yPos = arg0->startYPos + lerp(0, arg0->dy, distTravelled, totalDist);
     }
 
     func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
     return reachedEnd;
 }
 
+// Travel linearly to a point over a specified number of frames
 // D_08936bd4 function 1
 struct unk_struct_08007788 *func_08007788(struct unk_struct_08007788_init *arg0) {
     struct unk_struct_08007788 *temp;
@@ -166,30 +171,110 @@ struct unk_struct_08007788 *func_08007788(struct unk_struct_08007788_init *arg0)
 
     temp = mem_heap_alloc(sizeof(struct unk_struct_08007788));
     temp->id = arg0->id;
-    temp->unk2 = arg0->startX;
-    temp->unk4 = arg0->startY;
-    temp->unk6 = arg0->destX - arg0->startX;
-    temp->unk8 = arg0->destY - arg0->startY;
-    temp->unkA = arg0->unkA;
-    temp->unkC = 0;
+    temp->startXPos = arg0->startX;
+    temp->startYPos = arg0->startY;
+    temp->dx = arg0->destX - arg0->startX;
+    temp->dy = arg0->destY - arg0->startY;
+    temp->totalFrames = arg0->totalFrames;
+    temp->framesPassed = 0;
+
     func_0804d5d4(D_03005380, arg0->id, arg0->startX, arg0->startY);
     return temp;
 }
 
 // D_08936bd4 function 2
-#include "asm/code_08007468/asm_080077e8.s"
+u32 func_080077e8(struct unk_struct_08007788 *arg0) {
+    s16 xPos, yPos;
+    s32 totalFrames = arg0->totalFrames;
+    s32 framesPassed;
+    
+    u32 reachedEnd = (++arg0->framesPassed >= totalFrames);
+    
+    framesPassed = arg0->framesPassed;
+    xPos = arg0->startXPos + lerp(0, arg0->dx, framesPassed, totalFrames);
+    yPos = arg0->startYPos + lerp(0, arg0->dy, framesPassed, totalFrames);
 
+    func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
+    return reachedEnd;
+}
+
+// Sinusoidal movement
 // D_08936be4 function 2
-#include "asm/code_08007468/asm_08007854.s"
+u32 func_08007854(struct unk_struct_080078ec *arg0) {
+    s32 offset;
+    s32 xPos, yPos;
+
+    u8 wavePos = lerp(arg0->waveStart, arg0->waveEnd, arg0->framesPassed, arg0->totalFrames);
+
+    offset = arg0->baseOffset + FIXED_TO_INT(arg0->amplitude * sins2(wavePos));
+    
+    xPos = FIXED_TO_INT(offset * coss2(arg0->angle)) + arg0->baseXPos;
+    yPos = FIXED_TO_INT(offset * sins2(arg0->angle)) + arg0->baseYPos;
+
+    func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
+
+    return (++arg0->framesPassed > arg0->totalFrames);
+}
 
 // D_08936be4 function 1
-#include "asm/code_08007468/asm_080078ec.s"
+struct unk_struct_080078ec *func_080078ec(struct unk_struct_080078ec_init *arg0) {
+    struct unk_struct_080078ec *temp;
+
+    if (arg0->id < 0) {
+        return (void *)-1;
+    }
+
+    temp = mem_heap_alloc(sizeof(struct unk_struct_080078ec));
+    temp->id = arg0->id;
+    temp->baseXPos = arg0->baseX;
+    temp->baseYPos = arg0->baseY;
+    temp->baseOffset = arg0->baseOffset;
+    temp->amplitude = arg0->amplitude;
+    temp->waveStart = arg0->waveStart;
+    temp->waveEnd = arg0->waveEnd;
+    temp->framesPassed = 0;
+    temp->totalFrames = arg0->totalFrames;
+    temp->angle = arg0->angle;
+
+    func_08007854(temp);
+    return temp;
+}
 
 // D_08936bf4 function 2
-#include "asm/code_08007468/asm_0800793c.s"
+u32 func_0800793c(struct unk_struct_080079bc *arg0) {
+    s16 xPos, yPos;
+    s32 temp_r5 = lerp(arg0->unkA, arg0->unkC, arg0->framesPassed, arg0->totalFrames);
+
+    xPos = arg0->startXPos + FIXED_TO_INT(arg0->dx * func_080019a4(temp_r5));
+    yPos = arg0->startYPos + FIXED_TO_INT(arg0->dy * func_080019a4(temp_r5));
+
+    func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
+
+    return (++arg0->framesPassed > arg0->totalFrames);
+}
 
 // D_08936bf4 function 1
-#include "asm/code_08007468/asm_080079bc.s"
+struct unk_struct_080079bc *func_080079bc(struct unk_struct_080079bc_init *arg0) {
+    struct unk_struct_080079bc *temp;
+
+    if (arg0->id < 0) {
+        return (void *)-1;
+    }
+
+    temp = mem_heap_alloc(sizeof(struct unk_struct_080079bc));
+    temp->id = arg0->id;
+    temp->startXPos = arg0->startX;
+    temp->startYPos = arg0->startY;
+    temp->dx = arg0->destX - arg0->startX;
+    temp->dy = arg0->destY - arg0->startY;
+    temp->unkA = arg0->unkA * 16;
+    temp->unkC = arg0->unkC * 16;
+    temp->framesPassed = 0;
+    temp->totalFrames = arg0->totalFrames;
+
+    func_0800793c(temp);
+    return temp;
+}
 
 // D_08936c04 function 2
 #include "asm/code_08007468/asm_08007a14.s"
@@ -203,7 +288,27 @@ struct unk_struct_08007788 *func_08007788(struct unk_struct_08007788_init *arg0)
 
 #include "asm/code_08007468/asm_08007b4c.s"
 
-#include "asm/code_08007468/asm_08007b80.s"
+extern u32 (*fast_div_u32)(u32 dividend, u32 divisor);
+
+// Divides two signed integers using a fast algorithm contained in IWRAM.
+// Much quicker than the versions contained in libc and libagbsyscall.
+s32 fast_div_s32(s32 dividend, s32 divisor) {
+    u32 quotient;
+    u32 isNegative = 0;
+
+    if (dividend & 0x80000000) {
+        dividend = -dividend;
+        isNegative = 1;
+    }
+
+    if (divisor & 0x80000000) {
+        divisor = -divisor;
+        isNegative ^= 1;
+    }
+
+    quotient = fast_div_u32(dividend, divisor);
+    return isNegative ? -quotient : quotient;
+}
 
 // D_08936c14 function 1
 #include "asm/code_08007468/asm_08007bb8.s"
@@ -331,80 +436,82 @@ s32 func_080087d4(s32 arg0, s32 arg1, s32 arg2) {
 
 #include "asm/code_08007468/asm_08008ab8.s"
 
-void func_08008b00(u32 unused_arg0, u32 unused_arg1, s16 arg2, s32 arg3, s32 sp48,
-    s16 sp4c, u32 sp50, u32 sp54, u16 sp58,
-    struct unk_struct_08008b00 *sp5c, u32 sp60, u32 sp64) {
+void func_08008b00(u32 unused_arg0, u32 unused_arg1, s16 arg2, s24_8 arg3, s24_8 arg4,
+    s16 arg5, s24_8 arg6, s24_8 arg7, u16 arg8,
+    struct unk_struct_08008b00 *arg9, u32 arg10, u32 arg11) {
 
-    s32 temp_sp0, temp_sp4, temp_r9, temp_r8;
-    s32 ret_r5, ret_sp8, temp_r7;
-    s32 ret_spc, ret_sp10, ret_sp14;
-    s32 temp_sp18, temp_sp1c, temp_sp20;
+    s24_8 temp_sp0, temp_sp4, temp_r9, temp_r8;
+    s32 ret_r5, ret_sp8;
+    s24_8 temp_r7, ret_spc, ret_sp10;
+    s32 ret_sp14;
+    s24_8 temp_sp18, temp_sp1c, temp_sp20;
     s32 i;
-    u16 temp_8000 = 0x8000;
+    s24_8 temp_8000 = INT_TO_FIXED(128);
 
-    temp_sp0 = sp64 ? sins(sp4c) : sins2(sp4c);
-    temp_sp4 = sp64 ? coss(sp4c) : coss2(sp4c);
+    temp_sp0 = arg11 ? sins(arg5) : sins2(arg5);
+    temp_sp4 = arg11 ? coss(arg5) : coss2(arg5);
 
-    temp_r9 = sp64 ? sins(-arg2) : sins2(-arg2);
-    temp_r8 = sp64 ? coss(-arg2) : coss2(-arg2);
+    temp_r9 = arg11 ? sins(-arg2) : sins2(-arg2);
+    temp_r8 = arg11 ? coss(-arg2) : coss2(-arg2);
 
-    ret_r5 = func_08007b80(0xa000, sp58);
-    ret_sp14 = func_08007b80(0xa000, sp58);
-    ret_sp8 = func_08007b80(ret_r5 * 240, 0xa0);
+    ret_r5 = fast_div_s32(160 * 256, arg8);
+    ret_sp14 = fast_div_s32(160 * 256, arg8);
+    ret_sp8 = fast_div_s32(ret_r5 * 240, 160);
 
-    temp_r7 = (-ret_r5 << 8) / 2;
+    temp_r7 = INT_TO_FIXED(-ret_r5) / 2;
 
-    ret_spc = func_08007b80(ret_r5 << 8, 0xa0);
-    temp_r7 += func_08007b80(ret_r5 * sp54, 0xa0);
-    arg3 += func_08007b80(ret_r5 * sp50, 0xa0);
-    ret_sp10 = func_08007b80(ret_r5 << 8, 0xa0);  
+    ret_spc = fast_div_s32(INT_TO_FIXED(ret_r5), 160);
+    temp_r7 += fast_div_s32(ret_r5 * arg7, 160);
+    arg3 += fast_div_s32(ret_r5 * arg6, 160);
+    ret_sp10 = fast_div_s32(INT_TO_FIXED(ret_r5), 160);  
 
     temp_sp18 = ret_sp14 * temp_sp0;
 
     temp_sp1c = arg3 - temp_8000;
-    temp_sp20 = sp48 - temp_8000;
+    temp_sp20 = arg4 - temp_8000;
 
-    for (i = 0; i < 0xA0; i++) {
-        s32 temp_r1;
+    for (i = 0; i < 160; i++) {
+        s24_8 temp_r1;
         s32 temp_r5_2 = FALSE;
         if (temp_sp0 != 0) {
-            temp_r1 = ((temp_r7 * temp_sp4) >> 8) - temp_sp18;
+            temp_r1 = FIXED_POINT_MUL(temp_r7, temp_sp4) - temp_sp18;
             if (temp_r1 == 0) {
                 temp_r5_2 = TRUE;
             }
         }
         if ((temp_sp0 == 0) || temp_r5_2) {
-            sp5c->unk8 = -1;
-            sp5c->unkC = -1;
-            sp5c->unk6 = 0;
-            sp5c->unk4 = 0;
-            sp5c->unk2 = 0;
-            sp5c->unk0 = 0;
+            arg9->unk8 = -1;
+            arg9->unkC = -1;
+            arg9->unk6 = 0;
+            arg9->unk4 = 0;
+            arg9->unk2 = 0;
+            arg9->unk0 = 0;
         } else {
-            s32 m_r4, m_r3, m_r2;
-            temp_r1 = func_08007b80(ret_sp14 << 0x10, temp_r1);
-            m_r4 = (-temp_r1 * temp_sp0) >> 8;
+            s24_8 m_r4, m_r3, m_r2;
+            temp_r1 = fast_div_s32(INT_TO_FIXED(ret_sp14) << 8, temp_r1); // fixed point division
+            m_r4 = FIXED_POINT_MUL(-temp_r1, temp_sp0);
 
             m_r3 = temp_sp1c - (ret_sp8 >> 1) * m_r4;
-            m_r2 = temp_sp20 + ((temp_r1 * temp_r7) >> 8);
+            m_r2 = temp_sp20 + FIXED_POINT_MUL(temp_r1, temp_r7);
 
-            sp5c->unk8 = ((temp_r8 * m_r3 - temp_r9 * m_r2) >> 8) + temp_8000;
-            sp5c->unkC = ((temp_r9 * m_r3 + temp_r8 * m_r2) >> 8) + temp_8000;
+            arg9->unk8 = ((temp_r8 * m_r3 - temp_r9 * m_r2) >> 8) + temp_8000; // doesn't work with the macros
+            arg9->unkC = ((temp_r9 * m_r3 + temp_r8 * m_r2) >> 8) + temp_8000;
+            
             m_r4 *= ret_sp10;
-            sp5c->unk0 = (temp_r8 * m_r4) >> 0x10;
-            sp5c->unk2 = 0;
-            sp5c->unk4 = (temp_r9 * m_r4) >> 0x10;
-            sp5c->unk6 = 0;
+            arg9->unk0 = FIXED_POINT_MUL(temp_r8, m_r4) >> 0x8;
+            arg9->unk2 = 0;
+            arg9->unk4 = FIXED_POINT_MUL(temp_r9, m_r4) >> 0x8;
+            arg9->unk6 = 0;
         }
         temp_r7 += ret_spc;
-        sp5c += sp60;
+        arg9 += arg10;
     }
 }
 
-void func_08008d44(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10) {
-    func_08008b00(arg0, arg1, arg2, arg3, arg4, arg5 + 0xFE00, arg6, arg7, arg8, arg9, arg10, 0);
+void func_08008d44(u32 unused_arg0, u32 unused_arg1, s16 arg2, s24_8 arg3, s24_8 arg4, s16 arg5, s24_8 arg6, s24_8 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10) {
+    func_08008b00(unused_arg0, unused_arg1, arg2, arg3, arg4, arg5 - 0x200, arg6, arg7, arg8, arg9, arg10, 0);
 }
 
-void func_08008d88(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10) {
-    func_08008b00(arg0, arg1, arg2, arg3, arg4, arg5 + 0xFE00, arg6, arg7, arg8, arg9, arg10, 1);
+void func_08008d88(u32 unused_arg0, u32 unused_arg1, s16 arg2, s24_8 arg3, s24_8 arg4, s16 arg5, s24_8 arg6, s24_8 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10) {
+    func_08008b00(unused_arg0, unused_arg1, arg2, arg3, arg4, arg5 - 0x200, arg6, arg7, arg8, arg9, arg10, 1);
 }

@@ -16,7 +16,7 @@ thumb_func_start func_08007b4c \n\
 /* 08007b60 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 08007b62 */ STR R0, [R2, 0x8] \n\
 /* 08007b64 */ LDR R0, [R2, 0x8] \n\
-/* 08007b66 */ LDR R0, =D_03004af8 \n\
+/* 08007b66 */ LDR R0, =fast_div_u32 \n\
 /* 08007b68 */ STR R3, [R0] \n\
 /* 08007b6a */ BX LR \n\
 \n\

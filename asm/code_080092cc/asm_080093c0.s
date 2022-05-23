@@ -17,7 +17,7 @@ thumb_func_start func_080093c0 \n\
 /* 080093d6 */ LDR R4, [R0] \n\
 /* 080093d8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080093da */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
-/* 080093dc */ LDR R7, =D_03004af8 \n\
+/* 080093dc */ LDR R7, =fast_div_u32 \n\
 /* 080093de */ CMP R3, R4 @ Check R3 - R4 \n\
 /* 080093e0 */ BCS branch_080093f0 \n\
 /* 080093e2 */ LDR R5, =D_030011b0 \n\

@@ -64,7 +64,7 @@ branch_08008854: \n\
 /* 0800885a */ ASRS R0, R0, 0x10 \n\
 /* 0800885c */ MULS R0, R7 @ Multiply R0 by R7 \n\
 /* 0800885e */ MOVS R1, 0xF0 @ Set R1 to 0xF0 \n\
-/* 08008860 */ BL func_08007b80 \n\
+/* 08008860 */ BL fast_div_s32 \n\
 /* 08008864 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08008866 */ NEGS R4, R4 @ Set R4 to -R4 \n\
 /* 08008868 */ MOV R2, R8 @ Set R2 to R8 \n\
@@ -73,7 +73,7 @@ branch_08008854: \n\
 /* 0800886e */ LDR R1, [SP, 0x40] \n\
 /* 08008870 */ MULS R0, R1 @ Multiply R0 by R1 \n\
 /* 08008872 */ MOVS R1, 0xA0 @ Set R1 to 0xA0 \n\
-/* 08008874 */ BL func_08007b80 \n\
+/* 08008874 */ BL fast_div_s32 \n\
 /* 08008878 */ NEGS R0, R0 @ Set R0 to -R0 \n\
 /* 0800887a */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0800887c */ MULS R1, R5 @ Multiply R1 by R5 \n\
@@ -94,14 +94,14 @@ branch_08008854: \n\
 /* 0800889a */ MULS R0, R5 @ Multiply R0 by R5 \n\
 /* 0800889c */ ASRS R0, R0, 0x8 \n\
 /* 0800889e */ MOVS R1, 0xF0 @ Set R1 to 0xF0 \n\
-/* 080088a0 */ BL func_08007b80 \n\
+/* 080088a0 */ BL fast_div_s32 \n\
 /* 080088a4 */ ADD R1, SP, 0xC \n\
 /* 080088a6 */ STRH R0, [R1] \n\
 /* 080088a8 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 080088aa */ MULS R0, R6 @ Multiply R0 by R6 \n\
 /* 080088ac */ ASRS R0, R0, 0x8 \n\
 /* 080088ae */ MOVS R1, 0xF0 @ Set R1 to 0xF0 \n\
-/* 080088b0 */ BL func_08007b80 \n\
+/* 080088b0 */ BL fast_div_s32 \n\
 /* 080088b4 */ ADD R1, SP, 0xC \n\
 /* 080088b6 */ STRH R0, [R1, 0x4] \n\
 /* 080088b8 */ LDR R2, [SP, 0x40] \n\
@@ -109,7 +109,7 @@ branch_08008854: \n\
 /* 080088bc */ MULS R0, R6 @ Multiply R0 by R6 \n\
 /* 080088be */ ASRS R0, R0, 0x8 \n\
 /* 080088c0 */ MOVS R1, 0xA0 @ Set R1 to 0xA0 \n\
-/* 080088c2 */ BL func_08007b80 \n\
+/* 080088c2 */ BL fast_div_s32 \n\
 /* 080088c6 */ ADD R1, SP, 0xC \n\
 /* 080088c8 */ NEGS R0, R0 @ Set R0 to -R0 \n\
 /* 080088ca */ STRH R0, [R1, 0x2] \n\
@@ -118,7 +118,7 @@ branch_08008854: \n\
 /* 080088d0 */ MULS R0, R5 @ Multiply R0 by R5 \n\
 /* 080088d2 */ ASRS R0, R0, 0x8 \n\
 /* 080088d4 */ MOVS R1, 0xA0 @ Set R1 to 0xA0 \n\
-/* 080088d6 */ BL func_08007b80 \n\
+/* 080088d6 */ BL fast_div_s32 \n\
 /* 080088da */ ADD R1, SP, 0xC \n\
 /* 080088dc */ STRH R0, [R1, 0x6] \n\
 /* 080088de */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\

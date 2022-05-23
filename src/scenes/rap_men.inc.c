@@ -25,7 +25,7 @@ extern const struct SequenceData s_CC4_seqData;
 extern u32 *func_08004b98(u32 *, char *, u32, u32);
 extern u32 *func_08004c0c(u32 *, char *, u32, u32);
 extern void func_0804cebc(s32, s16, s8);
-extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
+//extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
 extern void func_0804d770(s32, s16, u16);
 extern void func_0804d8f8(s32, s16, u32 *, u32, u32, u32, u32);
 

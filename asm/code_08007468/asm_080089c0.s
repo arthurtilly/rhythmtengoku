@@ -32,19 +32,19 @@ thumb_func_start func_080089c0 \n\
 /* 080089f4 */ SUBS R0, R0, R3 @ Set R0 to R0 - R3 \n\
 /* 080089f6 */ LSLS R0, R0, 0x4 \n\
 /* 080089f8 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 080089fa */ BL func_08007b80 \n\
+/* 080089fa */ BL fast_div_s32 \n\
 /* 080089fe */ STR R0, [SP, 0x1C] \n\
 /* 08008a00 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08008a02 */ LSLS R0, R1, 0x2 \n\
 /* 08008a04 */ ADD R0, R9 @ Add R9 to R0 \n\
 /* 08008a06 */ LSLS R0, R0, 0x5 \n\
 /* 08008a08 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 08008a0a */ BL func_08007b80 \n\
+/* 08008a0a */ BL fast_div_s32 \n\
 /* 08008a0e */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 08008a10 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08008a12 */ MULS R0, R6 @ Multiply R0 by R6 \n\
 /* 08008a14 */ MOV R1, R9 @ Set R1 to R9 \n\
-/* 08008a16 */ BL func_08007b80 \n\
+/* 08008a16 */ BL fast_div_s32 \n\
 /* 08008a1a */ LSLS R4, R4, 0x10 \n\
 /* 08008a1c */ ASRS R4, R4, 0x10 \n\
 /* 08008a1e */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
@@ -54,7 +54,7 @@ thumb_func_start func_080089c0 \n\
 /* 08008a26 */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 08008a28 */ MULS R0, R6 @ Multiply R0 by R6 \n\
 /* 08008a2a */ MOV R1, R9 @ Set R1 to R9 \n\
-/* 08008a2c */ BL func_08007b80 \n\
+/* 08008a2c */ BL fast_div_s32 \n\
 /* 08008a30 */ LSLS R5, R5, 0x10 \n\
 /* 08008a32 */ ASRS R5, R5, 0x10 \n\
 /* 08008a34 */ ADDS R5, R5, R0 @ Set R5 to R5 + R0 \n\

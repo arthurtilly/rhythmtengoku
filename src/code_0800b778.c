@@ -8,7 +8,7 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 static s32 D_03001310[2]; // unknown type
 
-extern u32 func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16); // Non-Scalable/Non-Rotatable Entity
+//extern u32 func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16); // Non-Scalable/Non-Rotatable Entity
 
 #include "asm/code_0800b778/asm_0800b778.s"
 
@@ -131,7 +131,7 @@ u32 func_0800c1a8(void) {
 
 // Parse beat values.
 u32 func_0800c3a4(u32 arg0) {
-    func_08007b80(arg0 << 8, D_030053c0.unk14);
+    fast_div_s32(arg0 << 8, D_030053c0.unk14);
 }
 
 u32 func_0800c3b8() {

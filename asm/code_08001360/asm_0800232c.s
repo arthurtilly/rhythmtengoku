@@ -35,13 +35,13 @@ branch_0800235c: \n\
 /* 0800235e */ LSLS R4, R4, 0x9 \n\
 /* 08002360 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08002362 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 08002364 */ BL func_08007b80 \n\
+/* 08002364 */ BL fast_div_s32 \n\
 /* 08002368 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0800236a */ CMP R5, R6 @ Check R5 - R6 \n\
 /* 0800236c */ BEQ branch_08002380 \n\
 /* 0800236e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08002370 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 08002372 */ BL func_08007b80 \n\
+/* 08002372 */ BL fast_div_s32 \n\
 /* 08002376 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08002378 */ B branch_08002382 \n\
 \n\

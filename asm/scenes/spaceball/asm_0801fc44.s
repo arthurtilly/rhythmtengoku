@@ -23,7 +23,7 @@ thumb_func_start func_0801fc44 \n\
 /* 0801fc6a */ SUBS R0, 0x78 @ Subtract 0x78 from R0 \n\
 /* 0801fc6c */ MULS R0, R4 @ Multiply R0 by R4 \n\
 /* 0801fc6e */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0801fc70 */ BL func_08007b80 \n\
+/* 0801fc70 */ BL fast_div_s32 \n\
 /* 0801fc74 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0801fc76 */ MOVS R0, 0xA0 @ Set R0 to 0xA0 \n\
 /* 0801fc78 */ BL func_08001980 \n\
@@ -32,7 +32,7 @@ thumb_func_start func_0801fc44 \n\
 /* 0801fc80 */ SUBS R0, 0x50 @ Subtract 0x50 from R0 \n\
 /* 0801fc82 */ MULS R0, R4 @ Multiply R0 by R4 \n\
 /* 0801fc84 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0801fc86 */ BL func_08007b80 \n\
+/* 0801fc86 */ BL fast_div_s32 \n\
 /* 0801fc8a */ LDR R1, =D_030055d0 \n\
 /* 0801fc8c */ LSLS R5, R5, 0x3 \n\
 /* 0801fc8e */ ADDS R5, 0x98 @ Add 0x98 to R5 \n\

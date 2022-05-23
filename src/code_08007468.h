@@ -5,15 +5,15 @@ struct unk_struct_080074ec_init {
     s16 id;
     s16 startX;
     s16 startY;
-    s16 xVel;
-    s16 yVel;
+    s8_8 xVel;
+    s8_8 yVel;
 };
 struct unk_struct_080074ec {
     s16 id;
-    s16 xVel;
-    s16 yVel;
-    s32 xPos;
-    s32 yPos;
+    s8_8 xVel;
+    s8_8 yVel;
+    s24_8 xPos;
+    s24_8 yPos;
 };
 
 // Approach a point asymptotically
@@ -23,15 +23,15 @@ struct unk_struct_0800757c_init {
     s16 startY;
     s16 destX;
     s16 destY;
-    s16 multiplier;
+    s8_8 multiplier;
 };
 struct unk_struct_0800757c {
     s16 id;
-    s16 destXPos;
-    s16 destYPos;
-    s16 multiplier;
-    s32 xOffset;
-    s32 yOffset;
+    u16 destXPos;
+    u16 destYPos;
+    s8_8 multiplier;
+    s24_8 xOffset;
+    s24_8 yOffset;
 };
 
 // Accelerate towards a point
@@ -46,33 +46,81 @@ struct unk_struct_0800765c_init {
 };
 struct unk_struct_0800765c {
     s16 id;
-    s16 startXPos;
-    s16 startYPos;
+    u16 startXPos;
+    u16 startYPos;
     s16 dx;
     s16 dy;
-    s32 distanceTravelled;
-    s32 totalDistance;
+    u32 distanceTravelled;
+    u32 totalDistance;
     s32 vel;
     s32 accel;
 };
 
-// Unknown
+// Travel linearly to a point over a specified number of frames
 struct unk_struct_08007788_init {
     s16 id;
     s16 startX;
     s16 startY;
     s16 destX;
     s16 destY;
-    s16 unkA;
+    u16 totalFrames;
 };
 struct unk_struct_08007788 {
     s16 id;
-    s16 unk2;
-    s16 unk4;
-    s16 unk6;
-    s16 unk8;
+    u16 startXPos;
+    u16 startYPos;
+    s16 dx;
+    s16 dy;
+    u16 totalFrames;
+    u16 framesPassed;
+};
+
+// Sinusoidal
+struct unk_struct_080078ec_init {
+    s16 id;
+    u8 angle;
+    s16 baseX;
+    s16 baseY;
+    s16 baseOffset;
+    s16 amplitude;
+    s16 waveStart;
+    s16 waveEnd;
+    u16 totalFrames;
+};
+struct unk_struct_080078ec {
+    s16 id;
+    u16 baseXPos;
+    u16 baseYPos;
+    s16 baseOffset;
+    s16 amplitude;
+    s16 waveStart;
+    s16 waveEnd;
+    u16 framesPassed;
+    u16 totalFrames;
+    u8 angle;
+};
+
+// Unknown
+struct unk_struct_080079bc_init {
+    s16 id;
+    s16 startX;
+    s16 startY;
+    s16 destX;
+    s16 destY;
+    u16 unkA;
+    u16 unkC;
+    u16 totalFrames;
+};
+struct unk_struct_080079bc {
+    s16 id;
+    u16 startXPos;
+    u16 startYPos;
+    s16 dx;
+    s16 dy;
     s16 unkA;
     s16 unkC;
+    u16 framesPassed;
+    u16 totalFrames;
 };
 
 
@@ -99,7 +147,7 @@ extern u32 func_080075e4(struct unk_struct_0800757c *arg0);
 extern struct unk_struct_0800765c *func_0800765c(struct unk_struct_0800765c_init *arg0);
 extern u32 func_080076ec(struct unk_struct_0800765c *arg0);
 extern struct unk_struct_08007788 *func_08007788(struct unk_struct_08007788_init *arg0);
-// extern ? func_080077e8(?);
+extern u32 func_080077e8(struct unk_struct_08007788 *arg0);
 // extern ? func_08007854(?);
 // extern ? func_080078ec(?);
 // extern ? func_0800793c(?);
@@ -109,7 +157,7 @@ extern struct unk_struct_08007788 *func_08007788(struct unk_struct_08007788_init
 // extern ? func_08007b04(?);
 // extern ? func_08007b2c(?);
 // extern ? func_08007b4c(?);
-// extern ? func_08007b80(?);
+extern s32 fast_div_s32(s32 dividend, s32 divisor);
 // extern ? func_08007bb8(?);
 // extern ? func_08007c30(?);
 // extern ? func_08007ca8(?);
@@ -157,6 +205,6 @@ extern s32 func_080087d4(s32, s32, s32);
 // extern ? func_080089c0(?);
 // extern ? func_08008a70(?);
 // extern ? func_08008ab8(?);
-extern void func_08008b00(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10, u32 arg11);
-extern void func_08008d44(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10);
-extern void func_08008d88(u32 arg0, u32 arg1, s16 arg2, s32 arg3, s32 arg4, s16 arg5, u32 arg6, u32 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10);
+extern void func_08008b00(u32 unused_arg0, u32 unused_arg1, s16 arg2, s24_8 arg3, s24_8 arg4, s16 arg5, s24_8 arg6, s24_8 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10, u32 arg11);
+extern void func_08008d44(u32 unused_arg0, u32 unused_arg1, s16 arg2, s24_8 arg3, s24_8 arg4, s16 arg5, s24_8 arg6, s24_8 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10);
+extern void func_08008d88(u32 unused_arg0, u32 unused_arg1, s16 arg2, s24_8 arg3, s24_8 arg4, s16 arg5, s24_8 arg6, s24_8 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10);

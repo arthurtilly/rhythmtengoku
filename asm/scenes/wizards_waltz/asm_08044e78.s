@@ -64,7 +64,7 @@ branch_08044ec4: \n\
 /* 08044eea */ ADDS R1, R5, R7 @ Set R1 to R5 + R7 \n\
 /* 08044eec */ LDR R1, [R1] \n\
 /* 08044eee */ SUBS R1, R6, R1 @ Set R1 to R6 - R1 \n\
-/* 08044ef0 */ BL func_08007b80 \n\
+/* 08044ef0 */ BL fast_div_s32 \n\
 /* 08044ef4 */ MOVS R5, 0x80 @ Set R5 to 0x80 \n\
 /* 08044ef6 */ LSLS R5, R5, 0x1 \n\
 /* 08044ef8 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\

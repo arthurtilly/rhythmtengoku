@@ -21,13 +21,13 @@ thumb_func_start func_08021818 \n\
 /* 08021836 */ MOVS R0, 0x90 @ Set R0 to 0x90 \n\
 /* 08021838 */ LSLS R0, R0, 0x6 \n\
 /* 0802183a */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0802183c */ BL func_08007b80 \n\
+/* 0802183c */ BL fast_div_s32 \n\
 /* 08021840 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08021842 */ ADDS R5, 0x78 @ Add 0x78 to R5 \n\
 /* 08021844 */ LSLS R4, R4, 0x8 \n\
 /* 08021846 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08021848 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0802184a */ BL func_08007b80 \n\
+/* 0802184a */ BL fast_div_s32 \n\
 /* 0802184e */ ADDS R0, 0x50 @ Add 0x50 to R0 \n\
 /* 08021850 */ LSLS R5, R5, 0x8 \n\
 /* 08021852 */ MOV R1, R8 @ Set R1 to R8 \n\
@@ -37,7 +37,7 @@ thumb_func_start func_08021818 \n\
 /* 0802185a */ MOVS R0, 0xD4 @ Set R0 to 0xD4 \n\
 /* 0802185c */ LSLS R0, R0, 0x6 \n\
 /* 0802185e */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 08021860 */ BL func_08007b80 \n\
+/* 08021860 */ BL fast_div_s32 \n\
 /* 08021864 */ ADDS R0, 0x50 @ Add 0x50 to R0 \n\
 /* 08021866 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08021868 */ STR R0, [R1, 0x14] \n\
