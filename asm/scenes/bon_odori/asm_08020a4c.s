@@ -1,5 +1,3 @@
-// Decomp attempt at https://decomp.me/scratch/lhu93
-
 asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\

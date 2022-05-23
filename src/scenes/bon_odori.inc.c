@@ -15,7 +15,7 @@ extern u32 D_089ded10;     // GFX related
 extern u32* D_089deec4[];
 
 u32* func_080206a0(u32 arg0) {
-    return *(D_089dec38[arg0] + gBonOdoriInfo.unk0);
+    return D_089dec38[arg0][gBonOdoriInfo.unk0];
 }
 
 void func_080206c0() {
@@ -90,13 +90,11 @@ void func_0802085c() {
 }
 
 void func_08020880() {
-    u16 temp0;
-    u32 temp1;
+    u32 data;
 
     func_0800c604(0);
-    temp0 = (u16) func_0800c3b8();
-    temp1 = func_08002ee0(temp0, D_089deec4[gBonOdoriInfo.unk0], 0x2000);
-    func_08005d38(temp1, func_0802085c + 1, 0);
+    data = func_08002ee0(func_0800c3b8(), D_089deec4[gBonOdoriInfo.unk0], 0x2000);
+    func_08005d38(data, func_0802085c, 0);
 }
 
 void func_080208c0() {
@@ -129,7 +127,7 @@ void func_080208ec(u32 arg0) {
     gBonOdoriInfo.unk3A = 0;
     gBonOdoriInfo.unk3E = func_0804d160(D_03005380, func_080206a0(0x1f), 0x7f, 0x78, 0x48, 0x8800, 1, 0x7f, 0);
     gBonOdoriInfo.unk40 = 0;
-    gBonOdoriInfo.unk42 = 0;
+    gBonOdoriInfo.unk42 = FALSE;
     func_080206c0();
     gBonOdoriInfo.unk5C = D_089deed4[gBonOdoriInfo.unk0];
     gBonOdoriInfo.unk58 = D_089deecc[gBonOdoriInfo.unk0];
@@ -142,7 +140,6 @@ void func_080208ec(u32 arg0) {
 void func_08020a48() {
     
 }
-
 
 #include "asm/scenes/bon_odori/asm_08020a4c.s" // Decomp attempt at https://decomp.me/scratch/lhu93
 
@@ -178,10 +175,9 @@ void func_08020c8c(u32 arg0) {
     s32 temp0;
     s32 temp1;
     s32 temp2;
-    s16 temp3;
-    u32 temp4;
+    s32 temp3;
     struct BonOdoriInfo_sub* substruct = &gBonOdoriInfo.unk8[gBonOdoriInfo.unk38];
-    if ((s16)substruct->unk0 >= 0) {
+    if (substruct->unk0 >= 0) {
         func_0804d770(D_03005380, substruct->unk2, 1);
 
         temp0 = -substruct->unk8;
@@ -191,12 +187,8 @@ void func_08020c8c(u32 arg0) {
         temp2 -= gBonOdoriInfo.unk38 * 0x18;
         D_03004b10.unkE = temp2;
     
-        
-        func_08005d38(
-            func_0800c4b0(1, func_0800c3a4(arg0), &D_03004b10.unkC, temp0, temp1),
-            func_08020c4c,
-            gBonOdoriInfo.unk38
-        );
+        temp3 = func_0800c4b0(1, func_0800c3a4(arg0), &D_03004b10.unkC, temp0, temp1);    
+        func_08005d38(temp3, func_08020c4c, gBonOdoriInfo.unk38);
     }
 }
 
@@ -211,7 +203,6 @@ void func_08020da0(u32 arg0) {
 }
 
 void func_08020e1c() {
-    u32 temp;
     func_080018e0(0, &D_03004b10.unk54, 0xe0, 0x10, 0x200);
     func_080018e0(0, &D_03004b10.unk254, 0xe0, 0x10, 0x200);
 }
@@ -243,14 +234,15 @@ void func_08020ee8(void) {
         gBonOdoriInfo.unk54 = 3;
         
         temp2 = D_030055d0;
-        if ((u16)func_08001980(2) != 0)
+        if ((u16)func_08001980(2) != 0) {
             temp0 = 5;
-        else
+        } else {
             temp0 = 6;
+        }
         temp2->gameInfo.bonOdori.unk55 = temp0;
         
         gBonOdoriInfo.unk40 = temp1;
-        gBonOdoriInfo.unk42 = 0;
+        gBonOdoriInfo.unk42 = FALSE;
     }
 }
 
@@ -262,8 +254,9 @@ void func_08020f48() {
         }
     }
     func_08020834();
-    if (gBonOdoriInfo.unk40 != 0)
+    if (gBonOdoriInfo.unk40 != 0) {
         gBonOdoriInfo.unk40 -= 1;
+    }
 }
 
 void func_08020f8c() {
@@ -301,14 +294,14 @@ void func_08020fd0(u32 unused_arg0, struct struct_080179f4_sub* arg1) {
 void func_08020fe8(u32 unused_arg0, struct struct_080179f4_sub* arg1) {
     func_080207ec(arg1->unk0.u8[0]);
     func_08002634(&s_tebyoushi_pati_seqData);
-    gBonOdoriInfo.unk42 = 1;
+    gBonOdoriInfo.unk42 = TRUE;
 }
 
 // Cue miss
 void func_0802100c(u32 unused_arg0, struct struct_080179f4_sub* unused_arg1) {
     gBonOdoriInfo.unk860 += 1;
     func_0800bc40();
-    gBonOdoriInfo.unk42 = 1;
+    gBonOdoriInfo.unk42 = TRUE;
 }
 
 void func_08021034() {
@@ -327,16 +320,16 @@ void func_08021084() {
             continue;
         }
         temp = func_0802075c(0, i);
-        if (i <= 2 &&gBonOdoriInfo.unk54 != 0)  {
+        if (i < 3 && gBonOdoriInfo.unk54 != 0)  {
             temp = func_0802075c(gBonOdoriInfo.unk55, i);
         }
         func_0804d8f8(D_03005380, gBonOdoriInfo.unk44[i], temp, 0, 1, 0x7f, 0);
     }
     if (gBonOdoriInfo.unk40 == 0) {
-        if (gBonOdoriInfo.unk42 != 0) {
+        if (gBonOdoriInfo.unk42) {
             func_0804d8f8(D_03005380, gBonOdoriInfo.unk3E, func_080206a0(0x21), 0, 1, 0x7f, 0);
             gBonOdoriInfo.unk40 = func_0800c3a4(0x24);
-            gBonOdoriInfo.unk42 = 0;
+            gBonOdoriInfo.unk42 = FALSE;
         } else {
             func_0804d8f8(D_03005380, gBonOdoriInfo.unk3E, func_080206a0(0x1f), 0, 1, 0x7f, 0);
         }
