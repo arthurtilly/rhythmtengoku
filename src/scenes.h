@@ -43,19 +43,19 @@ extern void func_0801fc40(void);    // [func_0801fc40] GRAPHICAL Func_01 - Unkno
 // extern ? func_0801fd70(?);
 // extern ? func_0801fdc4(?);
 // extern ? func_0801fe6c(?);
-// extern ? func_0801ff60(?);
-// extern ? func_0801ff70(?);
-// extern ? func_0801ffa0(?);
-// extern ? func_0801ffcc(?);
-// extern ? func_080201a0(?);
-// extern ? func_080201a4(?);
-// extern ? func_080201cc(?);
-// extern ? func_08020200(?);
-// extern ? func_08020238(?);
-// extern ? func_0802026c(?);
-// extern ? func_08020290(?);
-// extern ? func_080202a4(?);
-// extern ? func_080202f0(?);
+extern void func_0801ff60(void); // [func_0801ff60] GFX Init Func_00
+extern void func_0801ff70(void); // [func_0801ff70] GFX Init Func_01
+extern void func_0801ffa0(void); // [func_0801ffa0] GFX Init Func_02
+extern void func_0801ffcc(u32); // [func_0801ffcc] MAIN - Init
+extern void func_080201a0(void); // [func_080201a0] SCENE Func_06 - STUB
+extern void func_080201a4(void); // [func_080201a4] SCENE Func_00 - ?? (Pitcher Animation)
+extern void func_080201cc(struct SpaceballBatter *); // [func_080201cc] Update Batter Swing
+extern void func_08020200(void); // [func_08020200] SCENE Func_01 - Loop Exit Condition (Practice)
+extern void func_08020238(u32); // [func_08020238] SCENE Func_02 - Set Camera Zoom
+extern void func_0802026c(u32); // [func_0802026c] SCENE Func_03 - Set Batter Variant
+extern void func_08020290(u32); // [func_08020290] SCENE Func_05 - Set Next Spaceball Sprite
+extern void func_080202a4(u32); // [func_080202a4] SCENE Func_04 - Set Umpire Animation
+extern void func_080202f0(void); // [func_080202f0] MAIN - Update
 // extern ? func_08020308(?);
 // extern ? func_0802030c(?);
 // extern ? func_080203fc(?);
@@ -66,9 +66,9 @@ extern void func_0801fc40(void);    // [func_0801fc40] GRAPHICAL Func_01 - Unkno
 // extern ? func_080205ac(?);
 // extern ? func_080205e8(?);
 // extern ? func_08020644(?);
-// extern ? func_08020660(?);
-// extern ? func_08020698(?);
-// extern ? func_0802069c(?);
+extern void func_08020660(void); // [func_08020660] MAIN - Input Event
+extern void func_08020698(void); // [func_08020698] COMMON Func_00 - STUB
+extern void func_0802069c(void); // [func_0802069c] COMMON Func_00 - STUB
 
 // Bon Odori
 

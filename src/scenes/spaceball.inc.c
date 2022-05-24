@@ -7,12 +7,15 @@
 // OAM Animations:
 extern u32 D_088a1a70; // Animation: "batter_green"
 extern u32 D_088a1ad0; // Animation: "pitcher_shoot
-extern u32 D_088a1bd0; // Animation: "umpire_sway"
 extern u32 D_088a1b70; // Animation: "miss_poof"
+extern u32 D_088a1ba0; // Animation: "umpire_show"
+extern u32 D_088a1bd0; // Animation: "umpire_sway"
 
 // Additional Data:
-
-
+extern u32 *D_089de988[3]; // Batter Animations (Close)
+extern u32 *D_089de994[3]; // Batter Animations (Far)
+extern u32 D_089de93c; // GFX-related Null
+extern u32 D_089de940[]; // GFX Init Struct
 
 /* SPACEBALL */
 
@@ -35,14 +38,29 @@ extern u32 D_088a1b70; // Animation: "miss_poof"
 // [func_0801fe6c] Update Various (https://decomp.me/scratch/MxokI)
 #include "asm/scenes/spaceball/asm_0801fe6c.s"
 
-// [func_0801ff60] GFX Init Func_00 (https://decomp.me/scratch/zDRwb)
-#include "asm/scenes/spaceball/asm_0801ff60.s"
+// [func_0801ff60] GFX Init Func_00
+void func_0801ff60(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-// [func_0801ff70] GFX Init Func_01 (https://decomp.me/scratch/mW2EL)
-#include "asm/scenes/spaceball/asm_0801ff70.s"
+// [func_0801ff70] GFX Init Func_01
+void func_0801ff70(void) {
+    u32 data;
 
-// [func_0801ffa0] GFX Init Func_00 (https://decomp.me/scratch/fCFe6)
-#include "asm/scenes/spaceball/asm_0801ffa0.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089de940, 0x2000);
+    func_08005d38(data, func_0801ff60, 0);
+}
+
+// [func_0801ffa0] GFX Init Func_00
+void func_0801ffa0(void) {
+    u32 data;
+
+    func_0800c604(0);
+    data = func_080087b4(func_0800c3b8(), &D_089de93c);
+    func_08005d38(data, func_0801ff70, 0);
+}
 
 // [func_0801ffcc] MAIN - Init
 void func_0801ffcc(u32 ver) {
@@ -93,31 +111,68 @@ void func_0801ffcc(u32 ver) {
 }
 
 // [func_080201a0] SCENE Func_06 - STUB
-#include "asm/scenes/spaceball/asm_080201a0.s"
+void func_080201a0(void) {
+}
 
-// [func_080201a4] SCENE Func_00 - ?? (Pitcher Animation) (https://decomp.me/scratch/4IhaO)
-#include "asm/scenes/spaceball/asm_080201a4.s"
+// [func_080201a4] SCENE Func_00 - ?? (Pitcher Animation)
+void func_080201a4(void) {
+    func_08010008(gSpaceballInfo.pitcher.sprite, 0, 0, 0);
+    func_0800ffc0(gSpaceballInfo.pitcher.sprite, 0);
+}
 
-// [func_080201cc] Update Batter (https://decomp.me/scratch/erUhA)
-#include "asm/scenes/spaceball/asm_080201cc.s"
+// [func_080201cc] Update Batter Swing
+void func_080201cc(struct SpaceballBatter *batter) {
+    if (batter->swingTimer == 0) return;
+    batter->swingTimer--;
+    if (batter->swingTimer != 0) return;
+    func_08010008(batter->sprite, 0, 0, 0);
+    func_0800ffc0(batter->sprite, 0);
+    func_08017338(1,0);
+}
 
-// [func_08020200] SCENE Func_01 - Loop Exit Condition (Practice) (https://decomp.me/scratch/sYz0I)
-#include "asm/scenes/spaceball/asm_08020200.s"
+// [func_08020200] SCENE Func_01 - Loop Exit Condition (Practice)
+void func_08020200(void) {
+    if (gSpaceballInfo.loopExit == 0) {
+        func_0800bce4();
+    } else {
+        func_0800bc40();
+    }
+    gSpaceballInfo.loopExit = 0;
+}
 
-// [func_08020238] SCENE Func_02 - Set Camera Zoom (https://decomp.me/scratch/k0PS5)
-#include "asm/scenes/spaceball/asm_08020238.s"
+// [func_08020238] SCENE Func_02 - Set Camera Zoom
+void func_08020238(u32 controls) {
+    s32 target = (s32) controls >> 0x10;
+    u32 time = controls & 0xffff;
+    func_0800c4b0(2, func_0800c3a4(time), &gSpaceballInfo.zoom, gSpaceballInfo.zoom, target);
+}
 
-// [func_0802026c] SCENE Func_03 - Set Batter Variant (https://decomp.me/scratch/Lg362)
-#include "asm/scenes/spaceball/asm_0802026c.s"
+// [func_0802026c] SCENE Func_03 - Set Batter Variant
+void func_0802026c(u32 index) {
+    gSpaceballInfo.batter.animClose = D_089de988[index];
+    gSpaceballInfo.batter.animFar = D_089de994[index];
+}
 
-// [func_08020290] SCENE Func_05 - Set Next Spaceball Sprite (https://decomp.me/scratch/qNuLu)
-#include "asm/scenes/spaceball/asm_08020290.s"
+// [func_08020290] SCENE Func_05 - Set Next Spaceball Sprite
+void func_08020290(u32 index) {
+    gSpaceballInfo.spaceballType = index;
+}
 
-// [func_080202a4] SCENE Func_04 - Set Umpire Animation (https://decomp.me/scratch/y7Y2K)
-#include "asm/scenes/spaceball/asm_080202a4.s"
+// [func_080202a4] SCENE Func_04 - Set Umpire Animation
+void func_080202a4(u32 show) {
+    struct ScaledEntity *sprite = gSpaceballInfo.umpire.sprite;
+    if (show != 0) {
+        func_08010064(sprite, &D_088a1ba0, 0, 1, 1, 0);
+    } else {
+        func_08010064(sprite, &D_088a1bd0, 0, 1, 2, 0);
+    }
+}
 
-// [func_080202f0] MAIN - Update (https://decomp.me/scratch/zgr0F)
-#include "asm/scenes/spaceball/asm_080202f0.s"
+// [func_080202f0] MAIN - Update
+void func_080202f0(void) {
+    func_080201cc(&gSpaceballInfo.batter);
+    func_0801fe6c();
+}
 
 // [func_08020308] STUB
 #include "asm/scenes/spaceball/asm_08020308.s"
@@ -146,11 +201,20 @@ void func_0801ffcc(u32 ver) {
 // [func_08020644] CUE - Miss
 #include "asm/scenes/spaceball/asm_08020644.s"
 
-// [func_08020660] MAIN - Input Event (https://decomp.me/scratch/AS7oh)
-#include "asm/scenes/spaceball/asm_08020660.s"
+// [func_08020660] MAIN - Input Event
+void func_08020660(void) {
+    struct SpaceballBatter *batter = &gSpaceballInfo.batter;
+
+    func_08010008(batter->sprite, 1, 0x7f, 0);
+    func_0800ffc0(batter->sprite, 1);
+    batter->swingTimer = func_0800c3a4(0xa);
+    func_08017338(0,0);
+}
 
 // [func_08020698] COMMON Func_00 - STUB
-#include "asm/scenes/spaceball/asm_08020698.s"
+void func_08020698(void) {
+}
 
 // [func_0802069c] COMMON Func_00 - STUB
-#include "asm/scenes/spaceball/asm_0802069c.s"
+void func_0802069c(void) {
+}
