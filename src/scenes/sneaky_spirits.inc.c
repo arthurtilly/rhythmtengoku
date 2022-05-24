@@ -42,6 +42,7 @@ extern char D_08059f90[]; // Empty Default Text
 extern u32  D_089de6e0;   // GFX Null
 extern u32 *D_089de7a4[]; // GFX Struct Index
 
+
 /* SNEAKY SPIRITS */
 
 
@@ -216,7 +217,7 @@ void func_0801f3a4(u32 ver) {
     func_0800e0a0(2, 1, 0, 0, 0, 30, 2);
 
     gSneakySpiritsInfo.unk0 = func_0800c660(0x380, 1);
-    temp = func_08004b98(gSneakySpiritsInfo.unk0, D_08059f90, 0, 0);
+    temp = (u32 *) func_08004b98(gSneakySpiritsInfo.unk0, D_08059f90, 0, 0);
     gSneakySpiritsInfo.text = func_0804d160(D_03005380, temp, 0, 0x78, 0x20, 0, 0, 0, 0);
     func_0801ef70();
 
@@ -305,7 +306,7 @@ void func_0801f71c(char *string) {
     u32 *temp;
 
     func_08007b04(gSneakySpiritsInfo.unk0, gSneakySpiritsInfo.text);
-    temp = func_08004b98(gSneakySpiritsInfo.unk0, string, 1, 0xc);
+    temp = (u32 *) func_08004b98(gSneakySpiritsInfo.unk0, string, 1, 0xc);
     func_0804d8f8(D_03005380, gSneakySpiritsInfo.text, temp, 0, 1, 0, 0);
 }
 

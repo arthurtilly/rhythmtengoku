@@ -2,6 +2,20 @@
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
 
+#define gSpaceballInfo D_030055d0->gameInfo.spaceball
+
+// OAM Animations:
+extern u32 D_088a1a70; // Animation: "batter_green"
+extern u32 D_088a1ad0; // Animation: "pitcher_shoot
+extern u32 D_088a1bd0; // Animation: "umpire_sway"
+extern u32 D_088a1b70; // Animation: "miss_poof"
+
+// Additional Data:
+
+
+
+/* SPACEBALL */
+
 
 // [func_0801fc44] Update Star? (https://decomp.me/scratch/c2Q18)
 #include "asm/scenes/spaceball/asm_0801fc44.s"
@@ -30,8 +44,53 @@
 // [func_0801ffa0] GFX Init Func_00 (https://decomp.me/scratch/fCFe6)
 #include "asm/scenes/spaceball/asm_0801ffa0.s"
 
-// [func_0801ffcc] MAIN - Init (https://decomp.me/scratch/nK94B)
-#include "asm/scenes/spaceball/asm_0801ffcc.s"
+// [func_0801ffcc] MAIN - Init
+void func_0801ffcc(u32 ver) {
+    gSpaceballInfo.ver = ver;
+    func_0801ffa0();
+    func_0800e018(1);
+    func_0800e0ec();
+    func_0800e0a0(2, 1, 0, 0, 0, 30, 0x4082);
+    func_08008910(2, 0x7800, 0x5000, 0xf000, 0xa000, 0);
+    func_0800e044(0);
+    func_0800e044(1);
+    func_0800e044(3);
+
+    gSpaceballInfo.batter.sprite = func_0800fa6c(&D_088a1a70, 0, 0xaa, 0x50, 0x4800, 0x80, 0, 0, 0, 0, 1);
+    gSpaceballInfo.batter.x = 0x32;
+    gSpaceballInfo.batter.y = 0;
+    gSpaceballInfo.batter.z = 0;
+    gSpaceballInfo.batter.swingTimer = 0;
+    func_0802026c(0); // Set animClose and animFar
+
+    gSpaceballInfo.pitcher.sprite = func_0800fa6c(&D_088a1ad0, 2, 0x46, 0x80, 0x4800, 0x80, 0, 0, 0, 0, 1);
+    gSpaceballInfo.pitcher.x = -0x32;
+    gSpaceballInfo.pitcher.y = 0x30;
+    gSpaceballInfo.pitcher.z = 0;
+
+    gSpaceballInfo.umpire.sprite = func_0800fa6c(&D_088a1bd0, 2, 0x78, 0x59, 0x4864, 0x80, 0, 1, 2, 0x8000, 1);
+    gSpaceballInfo.umpire.x = 0;
+    gSpaceballInfo.umpire.y = 9;
+    gSpaceballInfo.umpire.z = 0;
+    func_08010040(gSpaceballInfo.umpire.sprite, 1);
+
+    gSpaceballInfo.poofR.sprite = func_0800fa6c(&D_088a1b70, 2, 0x9a, 0x84, 0x4864, 0x100, 0, 1, 0, 0x8002, 1);
+    gSpaceballInfo.poofR.x = 0x22;
+    gSpaceballInfo.poofR.y = 0x34;
+    gSpaceballInfo.poofR.z = 0;
+
+    gSpaceballInfo.poofL.sprite = func_0800fa6c(&D_088a1b70, 2, 0x7a, 0x84, 0x4864, 0x100, 0, 1, 0, 0x8002, 1);
+    gSpaceballInfo.poofL.x = 2;
+    gSpaceballInfo.poofL.y = 0x34;
+    gSpaceballInfo.poofL.z = 0;
+    func_0800ff44(gSpaceballInfo.poofL.sprite, 1); // Flip Horizontal?
+
+    gSpaceballInfo.currentStar = 0;
+    gSpaceballInfo.zoom = -0x80;
+    gSpaceballInfo.loopExit = 0;
+    gSpaceballInfo.spaceballType = 0;
+    func_08017338(1,0);
+}
 
 // [func_080201a0] SCENE Func_06 - STUB
 #include "asm/scenes/spaceball/asm_080201a0.s"
