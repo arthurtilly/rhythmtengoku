@@ -386,6 +386,7 @@ struct PrologueInfo {
     s16 entity6;    // Entity: Object 2
 };
 
+
 struct BonOdoriInfo_sub {
     s16 unk0;
     s16 unk2;
@@ -422,6 +423,41 @@ struct BonOdoriInfo {
 };
 
 
+struct SpaceballEntity {
+    struct ScaledEntity *sprite;
+    s32 x;
+    s32 y;
+    s32 z;
+};
+
+struct SpaceballInfo {
+    u8 ver;     // Value: Version
+    s32 zoom;   // Value: Camera Position
+    struct SpaceballBatter {
+        struct ScaledEntity *sprite;
+        s32 x;
+        s32 y;
+        s32 z;
+        u32 swingTimer;
+        u32 *animClose;
+        u32 *animFar;
+    } batter;
+    struct SpaceballEntity pitcher;
+    struct SpaceballEntity umpire;
+    struct SpaceballEntity poofR;
+    struct SpaceballEntity poofL;
+    u16 currentStar;    // Counter: Current star to operate on
+    s16 starSprite[24];
+    struct SpaceballStar {
+        s16 x;
+        s16 y;
+        s16 z;
+    } stars[24];
+    u8 loopExit;
+    u8 spaceballType;
+};
+
+
 struct struct_030055d0 {
     union {
         struct KarateManInfo karateMan;
@@ -431,6 +467,7 @@ struct struct_030055d0 {
         struct SneakySpiritsInfo sneakySpirits;
         struct PrologueInfo prologues;
         struct BonOdoriInfo bonOdori;
+        struct SpaceballInfo spaceball;
     } gameInfo;
 };
 
