@@ -3,11 +3,13 @@
 #include "src/code_0800b778.h"
 
 
-
+// [func_0801fc44] Update Star? (https://decomp.me/scratch/c2Q18)
 #include "asm/scenes/spaceball/asm_0801fc44.s"
 
+// [func_0801fcb0] ?? (stars) (https://decomp.me/scratch/XGZdJ)
 #include "asm/scenes/spaceball/asm_0801fcb0.s"
 
+// [func_0801fd1c] ?? (stars) (https://decomp.me/scratch/o7xqp)
 #include "asm/scenes/spaceball/asm_0801fd1c.s"
 
 // [func_0801fd70] Update Entity Position/Scaling (https://decomp.me/scratch/wjRxD)
@@ -85,7 +87,7 @@
 // [func_08020644] CUE - Miss
 #include "asm/scenes/spaceball/asm_08020644.s"
 
-// [func_08020660] MAIN - Input Event
+// [func_08020660] MAIN - Input Event (https://decomp.me/scratch/AS7oh)
 #include "asm/scenes/spaceball/asm_08020660.s"
 
 // [func_08020698] COMMON Func_00 - STUB
