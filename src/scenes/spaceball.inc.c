@@ -400,7 +400,17 @@ void func_080205ac(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
 }
 
 // [func_080205e8] CUE - Barely
-#include "asm/scenes/spaceball/asm_080205e8.s"
+void func_080205e8(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
+    struct SpaceballBatter *batter = &gSpaceballInfo.batter;
+    func_08010008(batter->sprite, 1, 0x7f, 0);
+    func_0800ffc0(batter->sprite, 1);
+    batter->swingTimer = func_0800c3a4(0xa);
+    cue->xSpeed = (func_08018054() < 0) ? -3 : 3;
+    cue->rotationSpeed = -8;
+    cue->y <<= 8;
+    cue->ySpeed = -0x400;
+    cue->state = 2;
+}
 
 // [func_08020644] CUE - Miss
 #include "asm/scenes/spaceball/asm_08020644.s"
