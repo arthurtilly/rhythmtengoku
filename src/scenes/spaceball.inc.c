@@ -356,7 +356,20 @@ u32 func_080204b8(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
     return FALSE;
 }
 
-#include "asm/scenes/spaceball/asm_08020500.s"
+// [func_08020500] Update Spaceball (Barely)
+u32 func_08020500(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
+    if (cue->z < gSpaceballInfo.zoom + 0x40) return TRUE;
+    if ((cue->y >> 8) > 1000) return TRUE;
+
+    cue->x += cue->xSpeed;
+    cue->y += cue->ySpeed;
+    cue->ySpeed += 0x40;
+    cue->z -= 4;
+    func_0801fd70(cue->sprite, cue->x - 0x78, (cue->y >> 8) - 0x50, cue->z);
+    func_0800fe94(cue->sprite, cue->rotation);
+    cue->rotation += cue->rotationSpeed;
+    return FALSE;
+}
 
 // [func_08020564] CUE - Update
 u32 func_08020564(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
