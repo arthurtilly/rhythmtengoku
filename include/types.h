@@ -446,7 +446,7 @@ struct SpaceballInfo {
     struct SpaceballEntity umpire;
     struct SpaceballEntity poofR;
     struct SpaceballEntity poofL;
-    u16 currentStar;    // Counter: Current star to operate on
+    u16 currentStar;    // Counter: Number of Existing BG Stars
     s16 starSprite[24];
     struct SpaceballStar {
         s16 x;

@@ -8,6 +8,7 @@
 extern u32 D_088a1a70; // Animation: "batter_green"
 extern u32 D_088a1ad0; // Animation: "pitcher_shoot
 extern u32 D_088a1b70; // Animation: "miss_poof"
+extern u32 D_088a1b90; // Animation: "bg_star"
 extern u32 D_088a1ba0; // Animation: "umpire_show"
 extern u32 D_088a1bd0; // Animation: "umpire_sway"
 
@@ -17,26 +18,137 @@ extern u32 *D_089de994[3]; // Batter Animations (Far)
 extern u32 D_089de93c; // GFX-related Null
 extern u32 D_089de940[]; // GFX Init Struct
 
+// Temporary External Functions:
+extern void func_0800fddc(struct ScaledEntity *, s16, s16); // SCALABLE SPRITE - Update X & Y
+extern void func_0800fe60(struct ScaledEntity *, s16); // SCALABLE SPRITE - Update Z (Scaling)
+extern void func_0804d5d4(s32, s16, s16, s16); // ??
+
+
 /* SPACEBALL */
 
 
-// [func_0801fc44] Update Star? (https://decomp.me/scratch/c2Q18)
-#include "asm/scenes/spaceball/asm_0801fc44.s"
+// [func_0801fc44] Initialise BG Star Position
+void func_0801fc44(u32 current) {
+    struct SpaceballStar *star;
+    s32 scale = func_08001980(0x300) + 0x100;
+    s32 pos2 = func_08001980(0xf0) - 0x78;
+    s32 x = func_08007b80(pos2 * scale, 0x100);
+    s32 pos4 = func_08001980(0xa0) - 0x50;
+    s32 y = func_08007b80(pos4 * scale, 0x100);
 
-// [func_0801fcb0] ?? (stars) (https://decomp.me/scratch/XGZdJ)
-#include "asm/scenes/spaceball/asm_0801fcb0.s"
+    star = &gSpaceballInfo.stars[current];
+    star->x = x;
+    star->y = y;
+    star->z = gSpaceballInfo.zoom + scale;
+}
 
-// [func_0801fd1c] ?? (stars) (https://decomp.me/scratch/o7xqp)
-#include "asm/scenes/spaceball/asm_0801fd1c.s"
+// [func_0801fcb0] Update BG Star Position
+void func_0801fcb0(void) {
+    struct SpaceballStar *star;
+    s16 sprite;
+    s32 scale;
+    s32 x;
+    s32 y;
+    u32 i;
 
-// [func_0801fd70] Update Entity Position/Scaling (https://decomp.me/scratch/wjRxD)
-#include "asm/scenes/spaceball/asm_0801fd70.s"
+    for (i = 0; i < 24; i++) {
+        sprite = gSpaceballInfo.starSprite[i];
+        star = &gSpaceballInfo.stars[i];
+        scale = func_08007b80(0x10000, star->z - gSpaceballInfo.zoom);
+        x = (star->x * scale) >> 8;
+        y = (star->y * scale) >> 8;
+        func_0804d5d4(D_03005380, sprite, x + 0x78, y + 0x50);
+    }
+}
 
-// [func_0801fdc4] Update Batter Position/Scaling (https://decomp.me/scratch/mXBsv)
-#include "asm/scenes/spaceball/asm_0801fdc4.s"
+// [func_0801fd1c] Update BG Star Scaling
+void func_0801fd1c(void) {
+    struct SpaceballStar *star;
+    s32 scale100 = gSpaceballInfo.zoom + 0x100;
+    s32 scale400 = gSpaceballInfo.zoom + 0x400;
+    u32 i;
 
-// [func_0801fe6c] Update Various (https://decomp.me/scratch/MxokI)
-#include "asm/scenes/spaceball/asm_0801fe6c.s"
+    for (i = 0; i < 24; i++) {
+        star = &gSpaceballInfo.stars[i];
+        star->z -= 8;
+        if ((star->z < scale100) || (star->z > scale400)) {
+            func_0801fc44(i);
+        }
+    }
+}
+
+// [func_0801fd70] Update Entity (Graphical)
+void func_0801fd70(struct ScaledEntity *sprite, s32 x, s32 y, s32 z) {
+    s32 scale;
+
+    z -= gSpaceballInfo.zoom;
+    scale = func_08007b80(0x10000, z);
+
+    x = (x * scale) >> 8;
+    y = (y * scale) >> 8;
+    func_0800fddc(sprite, x + 0x78, y + 0x50);
+    func_0800fe60(sprite, scale);
+}
+
+// [func_0801fdc4] Update Batter (Graphical)
+void func_0801fdc4(struct ScaledEntity *sprite, s32 x, s32 y, s32 z, u32 *animClose, u32 *animFar) {
+    s32 scale;
+
+    z -= gSpaceballInfo.zoom;
+    scale = func_08007b80(0x10000, z);
+
+    x = (x * scale) >> 8;
+    y = (y * scale) >> 8;
+    func_0800fddc(sprite, x + 0x78, y + 0x50);
+
+    if (scale > 0x80) {
+        func_0800fe60(sprite, scale);
+        func_08010064(sprite, animClose, -1, 1, 0x7f, 0);
+    } else {
+        scale = func_08007b80(0x20000, z);
+        func_0800fe60(sprite, scale);
+        func_08010064(sprite, animFar, -1, 1, 0x7f, 0);
+    }
+}
+
+// [func_0801fe6c] Update Sprites, Stars & Camera
+void func_0801fe6c(void) {
+    s32 temp;
+    s32 z1;
+    s32 z2;
+
+    func_0801fdc4(gSpaceballInfo.batter.sprite, gSpaceballInfo.batter.x, gSpaceballInfo.batter.y,
+            gSpaceballInfo.batter.z, gSpaceballInfo.batter.animClose, gSpaceballInfo.batter.animFar);
+
+    func_0801fd70(gSpaceballInfo.pitcher.sprite, gSpaceballInfo.pitcher.x, gSpaceballInfo.pitcher.y,
+            gSpaceballInfo.pitcher.z);
+
+    func_0801fd70(gSpaceballInfo.umpire.sprite, gSpaceballInfo.umpire.x, gSpaceballInfo.umpire.y,
+            gSpaceballInfo.umpire.z);
+
+    func_0801fd70(gSpaceballInfo.poofR.sprite, gSpaceballInfo.poofR.x, gSpaceballInfo.poofR.y,
+            gSpaceballInfo.poofR.z);
+
+    func_0801fd70(gSpaceballInfo.poofL.sprite, gSpaceballInfo.poofL.x, gSpaceballInfo.poofL.y,
+            gSpaceballInfo.poofL.z);
+
+    temp = -((gSpaceballInfo.zoom * 60) << 10);
+    if (temp < 0) temp += 0xff;
+    z1 = temp >> 8;
+    temp = -((gSpaceballInfo.zoom * 40) << 10);
+    if (temp < 0) temp += 0xff;
+    z2 = temp >> 8;
+    func_08008910(2, 0x8000, 0xb000, z1, z2, 0);
+
+    if (gSpaceballInfo.currentStar < 24) {
+        gSpaceballInfo.starSprite[gSpaceballInfo.currentStar] = func_0804d160(D_03005380, &D_088a1b90, 0, 0, 0, 0xc800, 1, 0, 0);
+        func_0801fc44(gSpaceballInfo.currentStar);
+        gSpaceballInfo.currentStar++;
+    } else {
+        func_0801fd1c();
+        func_0801fcb0();
+    }
+}
 
 // [func_0801ff60] GFX Init Func_00
 void func_0801ff60(void) {
@@ -215,6 +327,6 @@ void func_08020660(void) {
 void func_08020698(void) {
 }
 
-// [func_0802069c] COMMON Func_00 - STUB
+// [func_0802069c] COMMON Func_01 - STUB
 void func_0802069c(void) {
 }
