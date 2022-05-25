@@ -58,8 +58,8 @@ extern void func_080202a4(u32);     // [func_080202a4] SCENE Func_04 - Set Umpir
 extern void func_080202f0(void);    // [func_080202f0] MAIN - Update
 // extern ? func_08020308(?);
 extern void func_0802030c(u32, struct SpaceballCue *, u32, u32); // [func_0802030c] CUE - Spawn
-extern u32  func_080203fc(u32, struct SpaceballCue *, u32, u32); // [func_080203fc] Update Cue (Awaiting Input)
-// extern ? func_080204b8(?);
+extern u32  func_080203fc(u32, struct SpaceballCue *, u32, u32); // [func_080203fc] Update Spaceball (Launch)
+extern u32  func_080204b8(u32, struct SpaceballCue *, u32, u32); // [func_080204b8] Update Spaceball (Hit)
 // extern ? func_08020500(?);
 extern u32  func_08020564(u32, struct SpaceballCue *, u32, u32); // [func_08020564] CUE - Update
 // extern ? func_080205a0(?);

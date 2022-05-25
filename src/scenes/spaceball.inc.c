@@ -319,7 +319,7 @@ void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
     func_0800ffc0(gSpaceballInfo.pitcher.sprite, 1);
 }
 
-// [func_080203fc] CUE - Update (Awaiting Input)
+// [func_080203fc] Update Spaceball (Launch)
 u32 func_080203fc(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
     u32 temp;
 
@@ -345,7 +345,16 @@ u32 func_080203fc(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
     }
 }
 
-#include "asm/scenes/spaceball/asm_080204b8.s"
+// [func_080204b8] Update Spaceball (Hit)
+u32 func_080204b8(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
+    if (cue->z < gSpaceballInfo.zoom + 0x40) return TRUE;
+
+    func_0801fd70(cue->sprite, cue->x - 0x78, cue->y - 0x50, cue->z);
+    func_0800fe94(cue->sprite, cue->rotation);
+    cue->rotation += cue->rotationSpeed;
+    cue->z -= 0x40;
+    return FALSE;
+}
 
 #include "asm/scenes/spaceball/asm_08020500.s"
 
