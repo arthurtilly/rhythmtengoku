@@ -61,7 +61,7 @@ extern void func_0802030c(u32, struct SpaceballCue *, u32, u32); // [func_080203
 // extern ? func_080203fc(?);
 // extern ? func_080204b8(?);
 // extern ? func_08020500(?);
-// extern ? func_08020564(?);
+extern u32  func_08020564(u32, struct SpaceballCue *, u32, u32); // [func_08020564] CUE - Update
 // extern ? func_080205a0(?);
 // extern ? func_080205ac(?);
 // extern ? func_080205e8(?);

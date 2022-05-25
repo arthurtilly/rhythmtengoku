@@ -321,8 +321,17 @@ void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
 
 #include "asm/scenes/spaceball/asm_08020500.s"
 
-// [func_08020564] CUE - Behaviour
-#include "asm/scenes/spaceball/asm_08020564.s"
+// [func_08020564] CUE - Update
+u32 func_08020564(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
+    u32 result;
+
+    switch (cue->state) {
+        case 0: result = func_080203fc(arg0, cue, arc, arg3); break;
+        case 1: result = func_080204b8(arg0, cue, arc, arg3); break;
+        case 2: result = func_08020500(arg0, cue, arc, arg3); break;
+    }
+    return result;
+}
 
 // [func_080205a0] CUE - Despawn
 #include "asm/scenes/spaceball/asm_080205a0.s"
