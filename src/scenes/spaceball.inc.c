@@ -384,7 +384,9 @@ u32 func_08020564(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
 }
 
 // [func_080205a0] CUE - Despawn
-#include "asm/scenes/spaceball/asm_080205a0.s"
+void func_080205a0(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
+    func_0800fc70(cue->sprite);
+}
 
 // [func_080205ac] CUE - Hit
 #include "asm/scenes/spaceball/asm_080205ac.s"
