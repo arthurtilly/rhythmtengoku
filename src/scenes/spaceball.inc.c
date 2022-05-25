@@ -12,6 +12,9 @@ extern u32 D_088a1b90; // Animation: "bg_star"
 extern u32 D_088a1ba0; // Animation: "umpire_show"
 extern u32 D_088a1bd0; // Animation: "umpire_sway"
 
+// Sound Effects:
+extern const struct SequenceData s_f_batter_ball_land_seqData;
+
 // Additional Data:
 extern u32  D_089de93c; // GFX-related Null
 extern u32  D_089de940[]; // GFX Init Struct
@@ -20,6 +23,7 @@ extern u32 *D_089de994[3]; // Batter Animations (Far)
 extern u32 *D_089de9a0[3]; // Spaceball Animations
 
 extern u32 (*D_03004ae4)(u32);
+extern s32 (*D_03004af8)(s32, s32);
 
 // Temporary External Functions:
 extern void func_0800fddc(struct ScaledEntity *, s16, s16); // SCALABLE SPRITE - Update X & Y
@@ -310,12 +314,36 @@ void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
     time = func_0800c3a4(arc);
     cue->unk8 = (time << 9) / (div + 0x100);
     func_0801fd70(cue->sprite, -0x32, 0x28, cue->z);
-    cue->unk28 = 0;
+    cue->missed = FALSE;
     func_08010008(gSpaceballInfo.pitcher.sprite, 1, 0x7f, 0);
     func_0800ffc0(gSpaceballInfo.pitcher.sprite, 1);
 }
 
-#include "asm/scenes/spaceball/asm_080203fc.s"
+// [func_080203fc] CUE - Update (Awaiting Input)
+u32 func_080203fc(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
+    u32 temp;
+
+    if (arc > cue->unk8) {
+        func_08002634(&s_f_batter_ball_land_seqData);
+        func_0800ffc0(gSpaceballInfo.poofR.sprite, 0);
+        func_08010040(gSpaceballInfo.poofR.sprite, 1);
+        func_0800ffc0(gSpaceballInfo.poofL.sprite, 0);
+        func_08010040(gSpaceballInfo.poofL.sprite, 1);
+        if (!cue->missed) {
+            func_08017928(func_080180bc(arg0), 2, 0);
+        }
+        return TRUE;
+    }
+    else {
+        temp = arc - (cue->unk8 / 2);
+        cue->x = func_08008f04(70, 138, arc, cue->unk8);
+        cue->y = 0x78 - (cue->unk1C - D_03004af8(cue->unk1C * (temp << 2) * temp, cue->unk8 * cue->unk8));
+        func_0801fd70(cue->sprite, cue->x - 0x78, cue->y - 0x50, cue->z);
+        func_0800fe94(cue->sprite, cue->rotation);
+        cue->rotation += cue->rotationSpeed;
+        return FALSE;
+    }
+}
 
 #include "asm/scenes/spaceball/asm_080204b8.s"
 
@@ -323,14 +351,14 @@ void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
 
 // [func_08020564] CUE - Update
 u32 func_08020564(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
-    u32 result;
+    u32 finished;
 
     switch (cue->state) {
-        case 0: result = func_080203fc(arg0, cue, arc, arg3); break;
-        case 1: result = func_080204b8(arg0, cue, arc, arg3); break;
-        case 2: result = func_08020500(arg0, cue, arc, arg3); break;
+        case 0: finished = func_080203fc(arg0, cue, arc, arg3); break;
+        case 1: finished = func_080204b8(arg0, cue, arc, arg3); break;
+        case 2: finished = func_08020500(arg0, cue, arc, arg3); break;
     }
-    return result;
+    return finished;
 }
 
 // [func_080205a0] CUE - Despawn

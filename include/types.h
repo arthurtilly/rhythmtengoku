@@ -435,7 +435,7 @@ struct SpaceballCue {
     u32 unk1C; // (90 * number of beats)
     u32 xSpeed; // Used for 'Barely' arc only
     u32 ySpeed; // Used for 'Barely' arc only
-    u8 unk28;
+    u8 missed;
 };
 
 struct SpaceballEntity {
