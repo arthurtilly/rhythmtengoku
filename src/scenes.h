@@ -57,7 +57,7 @@ extern void func_08020290(u32);     // [func_08020290] SCENE Func_05 - Set Next 
 extern void func_080202a4(u32);     // [func_080202a4] SCENE Func_04 - Set Umpire Animation
 extern void func_080202f0(void);    // [func_080202f0] MAIN - Update
 // extern ? func_08020308(?);
-// extern ? func_0802030c(?);
+extern void func_0802030c(u32, struct SpaceballCue *, u32, u32); // [func_0802030c] CUE - Spawn
 // extern ? func_080203fc(?);
 // extern ? func_080204b8(?);
 // extern ? func_08020500(?);

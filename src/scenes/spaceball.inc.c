@@ -13,10 +13,13 @@ extern u32 D_088a1ba0; // Animation: "umpire_show"
 extern u32 D_088a1bd0; // Animation: "umpire_sway"
 
 // Additional Data:
+extern u32  D_089de93c; // GFX-related Null
+extern u32  D_089de940[]; // GFX Init Struct
 extern u32 *D_089de988[3]; // Batter Animations (Close)
 extern u32 *D_089de994[3]; // Batter Animations (Far)
-extern u32 D_089de93c; // GFX-related Null
-extern u32 D_089de940[]; // GFX Init Struct
+extern u32 *D_089de9a0[3]; // Spaceball Animations
+
+extern u32 (*D_03004ae4)(u32);
 
 // Temporary External Functions:
 extern void func_0800fddc(struct ScaledEntity *, s16, s16); // SCALABLE SPRITE - Update X & Y
@@ -290,7 +293,27 @@ void func_080202f0(void) {
 #include "asm/scenes/spaceball/asm_08020308.s"
 
 // [func_0802030c] CUE - Spawn
-#include "asm/scenes/spaceball/asm_0802030c.s"
+void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
+    u32 temp;
+    u32 div;
+    u32 time;
+
+    cue->state = 0;
+    cue->rotation = func_08001980(0x800);
+    cue->rotationSpeed = 0x40;
+    cue->z = 0;
+    cue->unk1C = (arc >= 0x18) ? 90 * arc / 0x18 : 90;
+    cue->sprite = func_0800fa6c(D_089de9a0[gSpaceballInfo.spaceballType], 0, 0x46, 0x78, 0x479c, 0x100, cue->rotation, 1, 0, 0, 1);
+
+    temp = cue->unk1C - 48;
+    div = D_03004ae4((temp << 0x10) / cue->unk1C);
+    time = func_0800c3a4(arc);
+    cue->unk8 = (time << 9) / (div + 0x100);
+    func_0801fd70(cue->sprite, -0x32, 0x28, cue->z);
+    cue->unk28 = 0;
+    func_08010008(gSpaceballInfo.pitcher.sprite, 1, 0x7f, 0);
+    func_0800ffc0(gSpaceballInfo.pitcher.sprite, 1);
+}
 
 #include "asm/scenes/spaceball/asm_080203fc.s"
 

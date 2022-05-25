@@ -423,6 +423,21 @@ struct BonOdoriInfo {
 };
 
 
+struct SpaceballCue {
+    u8 state;
+    struct ScaledEntity *sprite;
+    u32 unk8;
+    s16 rotation;
+    u16 rotationSpeed;
+    s32 x;
+    s32 y;
+    s32 z;
+    u32 unk1C; // (90 * number of beats)
+    u32 xSpeed; // Used for 'Barely' arc only
+    u32 ySpeed; // Used for 'Barely' arc only
+    u8 unk28;
+};
+
 struct SpaceballEntity {
     struct ScaledEntity *sprite;
     s32 x;

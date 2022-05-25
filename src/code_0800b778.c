@@ -461,8 +461,8 @@ u32 *func_0800c43c(u32 arg0) {
 // Create Entity (w/ Rotation/Scaling Parameters)
     // arg0 = ... [Animation Pointer]
     // arg1 = ... []
-    // arg2 = ... []
-    // arg3 = ... []
+    // arg2 = ... [x]
+    // arg3 = ... [y]
     // arg4 = ... []
     // arg5 = R/S [Scaling]
     // arg6 = R/S [Rotation]
@@ -471,14 +471,14 @@ u32 *func_0800c43c(u32 arg0) {
     // arg9 = ... []
     // arg10 = R/S [Double-Size Flag]
 
-struct ScaledEntity *func_0800fa6c(u32 *arg0, s8 arg1, s16 arg2, s16 arg3, u16 arg4,
+struct ScaledEntity *func_0800fa6c(u32 *arg0, s8 arg1, s16 x, s16 y, u16 arg4,
                                     s16 arg5, s16 arg6, s8 arg7, s8 arg8, u16 arg9, u32 arg10) {
     s16 object;
     s8 offset;
     struct ScaledEntity *entity;
 
     // Create standard entity.
-    object = func_0804d160(D_03005380, arg0, arg1, arg2, arg3, arg4, arg7, arg8, arg9);
+    object = func_0804d160(D_03005380, arg0, arg1, x, y, arg4, arg7, arg8, arg9);
     if (object < 0) return 0;
 
     // Generate offset from D_03000368 in words. (?)
@@ -496,8 +496,8 @@ struct ScaledEntity *func_0800fa6c(u32 *arg0, s8 arg1, s16 arg2, s16 arg3, u16 a
     entity->unk4 = arg5;
     entity->unk6 = arg5;
     entity->unk8 = arg6;
-    entity->unkA = arg2;
-    entity->unkC = arg3;
+    entity->unkA = x;
+    entity->unkC = y;
     entity->unkE = 0;
     entity->unk10 = 0;
 
