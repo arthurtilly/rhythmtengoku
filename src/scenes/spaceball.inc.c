@@ -413,7 +413,10 @@ void func_080205e8(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
 }
 
 // [func_08020644] CUE - Miss
-#include "asm/scenes/spaceball/asm_08020644.s"
+void func_08020644(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 arg3) {
+    gSpaceballInfo.loopExit += 1;
+    cue->missed = TRUE;
+}
 
 // [func_08020660] MAIN - Input Event
 void func_08020660(void) {
