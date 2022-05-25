@@ -63,9 +63,9 @@ extern u32  func_080204b8(u32, struct SpaceballCue *, u32, u32); // [func_080204
 extern u32  func_08020500(u32, struct SpaceballCue *, u32, u32); // [func_08020500] Update Spaceball (Barely)
 extern u32  func_08020564(u32, struct SpaceballCue *, u32, u32); // [func_08020564] CUE - Update
 extern void func_080205a0(u32, struct SpaceballCue *, u32, u32); // [func_080205a0] CUE - Despawn
-// extern ? func_080205ac(?);
-// extern ? func_080205e8(?);
-// extern ? func_08020644(?);
+extern void func_080205ac(u32, struct SpaceballCue *, u32, u32); // [func_080205ac] CUE - Hit
+extern void func_080205e8(u32, struct SpaceballCue *, u32, u32);
+extern void func_08020644(u32, struct SpaceballCue *, u32, u32);
 extern void func_08020660(void); // [func_08020660] MAIN - Input Event
 extern void func_08020698(void); // [func_08020698] COMMON Func_00 - STUB
 extern void func_0802069c(void); // [func_0802069c] COMMON Func_01 - STUB
