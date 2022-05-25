@@ -56,7 +56,7 @@ extern void func_0802026c(u32);     // [func_0802026c] SCENE Func_03 - Set Batte
 extern void func_08020290(u32);     // [func_08020290] SCENE Func_05 - Set Next Spaceball Sprite
 extern void func_080202a4(u32);     // [func_080202a4] SCENE Func_04 - Set Umpire Animation
 extern void func_080202f0(void);    // [func_080202f0] MAIN - Update
-// extern ? func_08020308(?);
+extern void func_08020308(void);    // [func_08020308] STUB
 extern void func_0802030c(u32, struct SpaceballCue *, u32, u32); // [func_0802030c] CUE - Spawn
 extern u32  func_080203fc(u32, struct SpaceballCue *, u32, u32); // [func_080203fc] Update Spaceball (Launch)
 extern u32  func_080204b8(u32, struct SpaceballCue *, u32, u32); // [func_080204b8] Update Spaceball (Hit)
@@ -66,9 +66,9 @@ extern void func_080205a0(u32, struct SpaceballCue *, u32, u32); // [func_080205
 extern void func_080205ac(u32, struct SpaceballCue *, u32, u32); // [func_080205ac] CUE - Hit
 extern void func_080205e8(u32, struct SpaceballCue *, u32, u32); // [func_080205e8] CUE - Barely
 extern void func_08020644(u32, struct SpaceballCue *, u32, u32); // [func_08020644] CUE - Miss
-extern void func_08020660(void); // [func_08020660] MAIN - Input Event
-extern void func_08020698(void); // [func_08020698] COMMON Func_00 - STUB
-extern void func_0802069c(void); // [func_0802069c] COMMON Func_01 - STUB
+extern void func_08020660(void);    // [func_08020660] MAIN - Input Event
+extern void func_08020698(void);    // [func_08020698] COMMON Func_00 - STUB
+extern void func_0802069c(void);    // [func_0802069c] COMMON Func_01 - STUB
 
 // Bon Odori
 

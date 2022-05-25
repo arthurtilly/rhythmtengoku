@@ -428,7 +428,7 @@ struct SpaceballCue {
     struct ScaledEntity *sprite;
     u32 unk8;
     s16 rotation;
-    u16 rotationSpeed;
+    s16 rotationSpeed;
     s32 x;
     s32 y;
     s32 z;
@@ -468,7 +468,7 @@ struct SpaceballInfo {
         s16 y;
         s16 z;
     } stars[24];
-    u8 loopExit;
+    u8 totalMissed;
     u8 spaceballType;
 };
 
