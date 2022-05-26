@@ -473,9 +473,9 @@ u32 *func_0800c43c(u32 arg0) {
 
 struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
                                     s16 scaling, s16 rotation, s8 arg7, s8 arg8, u16 arg9, u32 doubleSize) {
+    struct ScalableSprite *scalable;
     s16 sprite;
     s8 offset;
-    struct ScalableSprite *scalable;
 
     // Create standard entity.
     sprite = func_0804d160(D_03005380, anim, arg1, x, y, arg4, arg7, arg8, arg9);

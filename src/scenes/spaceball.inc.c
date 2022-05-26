@@ -65,7 +65,7 @@ void func_0801fcb0(void) {
         scale = func_08007b80(0x10000, star->z - gSpaceballInfo.zoom);
         x = (star->x * scale) >> 8;
         y = (star->y * scale) >> 8;
-        func_0804d5d4(D_03005380, sprite, x + 0x78, y + 0x50);
+        func_0804d5d4(D_03005380, sprite, x + 120, y + 80);
     }
 }
 
@@ -96,7 +96,7 @@ void func_0801fd70(struct ScalableSprite *sprite, s32 x, s32 y, s32 z) {
 
     x = (x * scale) >> 8;
     y = (y * scale) >> 8;
-    func_0800fddc(sprite, x + 0x78, y + 0x50);
+    func_0800fddc(sprite, x + 120, y + 80);
     func_0800fe60(sprite, scale);
 }
 
@@ -110,7 +110,7 @@ void func_0801fdc4(struct ScalableSprite *sprite, s32 x, s32 y, s32 z, u32 *anim
 
     x = (x * scale) >> 8;
     y = (y * scale) >> 8;
-    func_0800fddc(sprite, x + 0x78, y + 0x50);
+    func_0800fddc(sprite, x + 120, y + 80);
 
     if (scale > 0x80) {
         func_0800fe60(sprite, scale);
@@ -197,37 +197,37 @@ void func_0801ffcc(u32 ver) {
     func_0800e018(1);
     func_0800e0ec();
     func_0800e0a0(2, 1, 0, 0, 0, 30, 0x4082);
-    func_08008910(2, 0x7800, 0x5000, 0xf000, 0xa000, 0);
+    func_08008910(2, (120 << 8), (80 << 8), (240 << 8), (160 << 8), 0);
     func_0800e044(0);
     func_0800e044(1);
     func_0800e044(3);
 
-    gSpaceballInfo.batter.sprite = func_0800fa6c(&D_088a1a70, 0, 0xaa, 0x50, 0x4800, 0x80, 0, 0, 0, 0, 1);
-    gSpaceballInfo.batter.x = 0x32;
+    gSpaceballInfo.batter.sprite = func_0800fa6c(&D_088a1a70, 0, 170, 80, 0x4800, 0x80, 0, 0, 0, 0, 1);
+    gSpaceballInfo.batter.x = 50;
     gSpaceballInfo.batter.y = 0;
     gSpaceballInfo.batter.z = 0;
     gSpaceballInfo.batter.swingTimer = 0;
     func_0802026c(0);
 
-    gSpaceballInfo.pitcher.sprite = func_0800fa6c(&D_088a1ad0, 2, 0x46, 0x80, 0x4800, 0x80, 0, 0, 0, 0, 1);
-    gSpaceballInfo.pitcher.x = -0x32;
-    gSpaceballInfo.pitcher.y = 0x30;
+    gSpaceballInfo.pitcher.sprite = func_0800fa6c(&D_088a1ad0, 2, 70, 128, 0x4800, 0x80, 0, 0, 0, 0, 1);
+    gSpaceballInfo.pitcher.x = -50;
+    gSpaceballInfo.pitcher.y = 48;
     gSpaceballInfo.pitcher.z = 0;
 
-    gSpaceballInfo.umpire.sprite = func_0800fa6c(&D_088a1bd0, 2, 0x78, 0x59, 0x4864, 0x80, 0, 1, 2, 0x8000, 1);
+    gSpaceballInfo.umpire.sprite = func_0800fa6c(&D_088a1bd0, 2, 120, 89, 0x4864, 0x80, 0, 1, 2, 0x8000, 1);
     gSpaceballInfo.umpire.x = 0;
     gSpaceballInfo.umpire.y = 9;
     gSpaceballInfo.umpire.z = 0;
     func_08010040(gSpaceballInfo.umpire.sprite, 1);
 
-    gSpaceballInfo.poofR.sprite = func_0800fa6c(&D_088a1b70, 2, 0x9a, 0x84, 0x4864, 0x100, 0, 1, 0, 0x8002, 1);
-    gSpaceballInfo.poofR.x = 0x22;
-    gSpaceballInfo.poofR.y = 0x34;
+    gSpaceballInfo.poofR.sprite = func_0800fa6c(&D_088a1b70, 2, 154, 132, 0x4864, 0x100, 0, 1, 0, 0x8002, 1);
+    gSpaceballInfo.poofR.x = 34;
+    gSpaceballInfo.poofR.y = 52;
     gSpaceballInfo.poofR.z = 0;
 
-    gSpaceballInfo.poofL.sprite = func_0800fa6c(&D_088a1b70, 2, 0x7a, 0x84, 0x4864, 0x100, 0, 1, 0, 0x8002, 1);
+    gSpaceballInfo.poofL.sprite = func_0800fa6c(&D_088a1b70, 2, 122, 132, 0x4864, 0x100, 0, 1, 0, 0x8002, 1);
     gSpaceballInfo.poofL.x = 2;
-    gSpaceballInfo.poofL.y = 0x34;
+    gSpaceballInfo.poofL.y = 52;
     gSpaceballInfo.poofL.z = 0;
     func_0800ff44(gSpaceballInfo.poofL.sprite, 1); // Flip Horizontal?
 
@@ -318,7 +318,7 @@ void func_08020308(void) {
 
 
 // [func_0802030c] CUE - Spawn
-void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
+void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     u32 temp;
     u32 div;
     u32 time;
@@ -327,12 +327,12 @@ void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
     cue->rotation = func_08001980(0x800);
     cue->rotationSpeed = 0x40;
     cue->z = 0;
-    cue->unk1C = (arc >= 0x18) ? 90 * arc / 0x18 : 90;
+    cue->unk1C = (arg2 >= 0x18) ? 90 * arg2 / 0x18 : 90;
     cue->sprite = func_0800fa6c(D_089de9a0[gSpaceballInfo.spaceballType], 0, 0x46, 0x78, 0x479c, 0x100, cue->rotation, 1, 0, 0, 1);
 
     temp = cue->unk1C - 48;
     div = D_03004ae4((temp << 0x10) / cue->unk1C);
-    time = func_0800c3a4(arc);
+    time = func_0800c3a4(arg2);
     cue->unk8 = (time << 9) / (div + 0x100);
     func_0801fd70(cue->sprite, -0x32, 0x28, cue->z);
     cue->missed = FALSE;
@@ -342,10 +342,10 @@ void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
 
 
 // [func_080203fc] Update Spaceball (Launch)
-u32 func_080203fc(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
+u32 func_080203fc(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     u32 temp;
 
-    if (arc > cue->unk8) {
+    if (arg2 > cue->unk8) {
         func_08002634(&s_f_batter_ball_land_seqData);
         func_0800ffc0(gSpaceballInfo.poofR.sprite, 0);
         func_08010040(gSpaceballInfo.poofR.sprite, 1);
@@ -357,8 +357,8 @@ u32 func_080203fc(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
         return TRUE;
     }
     else {
-        temp = arc - (cue->unk8 / 2);
-        cue->x = func_08008f04(70, 138, arc, cue->unk8);
+        temp = arg2 - (cue->unk8 / 2);
+        cue->x = func_08008f04(70, 138, arg2, cue->unk8);
         cue->y = 0x78 - (cue->unk1C - D_03004af8(cue->unk1C * (temp << 2) * temp, cue->unk8 * cue->unk8));
         func_0801fd70(cue->sprite, cue->x - 0x78, cue->y - 0x50, cue->z);
         func_0800fe94(cue->sprite, cue->rotation);
@@ -369,7 +369,7 @@ u32 func_080203fc(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
 
 
 // [func_080204b8] Update Spaceball (Hit)
-u32 func_080204b8(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
+u32 func_080204b8(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     if (cue->z < gSpaceballInfo.zoom + 0x40) return TRUE;
 
     func_0801fd70(cue->sprite, cue->x - 0x78, cue->y - 0x50, cue->z);
@@ -381,7 +381,7 @@ u32 func_080204b8(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
 
 
 // [func_08020500] Update Spaceball (Barely)
-u32 func_08020500(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
+u32 func_08020500(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     if (cue->z < gSpaceballInfo.zoom + 0x40) return TRUE;
     if ((cue->y >> 8) > 1000) return TRUE;
 
@@ -397,26 +397,26 @@ u32 func_08020500(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
 
 
 // [func_08020564] CUE - Update
-u32 func_08020564(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
+u32 func_08020564(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     u32 finished;
 
     switch (cue->state) {
-        case 0: finished = func_080203fc(arg0, cue, arc, unused3); break;
-        case 1: finished = func_080204b8(arg0, cue, arc, unused3); break;
-        case 2: finished = func_08020500(arg0, cue, arc, unused3); break;
+        case 0: finished = func_080203fc(arg0, cue, arg2, unused3); break;
+        case 1: finished = func_080204b8(arg0, cue, arg2, unused3); break;
+        case 2: finished = func_08020500(arg0, cue, arg2, unused3); break;
     }
     return finished;
 }
 
 
 // [func_080205a0] CUE - Despawn
-void func_080205a0(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
+void func_080205a0(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     func_0800fc70(cue->sprite);
 }
 
 
 // [func_080205ac] CUE - Hit
-void func_080205ac(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
+void func_080205ac(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     struct SpaceballBatter *batter = &gSpaceballInfo.batter;
 
     func_08010008(batter->sprite, 1, 0x7f, 0);
@@ -428,7 +428,7 @@ void func_080205ac(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
 
 
 // [func_080205e8] CUE - Barely
-void func_080205e8(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
+void func_080205e8(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     struct SpaceballBatter *batter = &gSpaceballInfo.batter;
     func_08010008(batter->sprite, 1, 0x7f, 0);
     func_0800ffc0(batter->sprite, 1);
@@ -442,7 +442,7 @@ void func_080205e8(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
 
 
 // [func_08020644] CUE - Miss
-void func_08020644(u32 arg0, struct SpaceballCue *cue, u32 arc, u32 unused3) {
+void func_08020644(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     gSpaceballInfo.totalMissed += 1;
     cue->missed = TRUE;
 }
