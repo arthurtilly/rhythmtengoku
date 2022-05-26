@@ -1,14 +1,14 @@
 #pragma once
 
-struct ScaledEntity {
-    s16 unk0;        // Standard Entity
+struct ScalableSprite {
+    s16 sprite;      // Sprite ID
     u8  unk2;        // func_0800c42c()
-    u8  unk3;        // Double-Size Flag (arg10)
+    u8  doubleSize;  // Double-Size Flag
     s16 unk4;        // Scaling (arg5)
     s16 unk6;        // Scaling (arg5)
-    s16 unk8;        // Rotation (arg6)
-    u16 unkA;        // ? (arg2)
-    u16 unkC;        // ? (arg3)
+    s16 rotation;    // Rotation
+    u16 x;           // X Coordinate
+    u16 y;           // Y Coordinate
     u16 unkE;        // ? (0)
     u16 unk10;       // ? (0)
     u8  unk12_0:1;   // ?
@@ -233,7 +233,7 @@ extern void func_0800e62c(s16, u32, s16, u32, u16);
 // extern ? func_0800f8ec(?);
 // extern ? func_0800f8f8(?);
 // extern ? func_0800f904(?);
-extern struct ScaledEntity *func_0800fa6c(u32 *, s8, s16, s16, u16, s16, s16, s8, s8, u16, u32);
+extern struct ScalableSprite *func_0800fa6c(u32 *, s8, s16, s16, u16, s16, s16, s8, s8, u16, u32);
 // extern ? func_0800fba0(?);
 // extern ? func_0800fc70(?);
 // extern ? func_0800fca0(?);

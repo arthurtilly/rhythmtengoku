@@ -83,7 +83,7 @@ void func_08044a10(u32 arg0) {
 
     // Create sparkle entities.
     for (i = 0; i < 10; i++) {
-        struct ScaledEntity *entity;
+        struct ScalableSprite *entity;
         gWizardsWaltzInfo.sparkle[i].state = 0;
         entity = func_0800fa6c(D_08932c8c, 0, 0, 0, 0, 0x80, 0, 1, 0, 0, 0);
         gWizardsWaltzInfo.sparkle[i].entity = entity;
@@ -105,7 +105,7 @@ void func_08044b80(u32 arg0) {
 
 
 // [func_08044ba8] SUB Func_00 - Update Entity Position
-void func_08044ba8(struct ScaledEntity *arg0, s32 arg1, s32 arg2, u32 arg3) {
+void func_08044ba8(struct ScalableSprite *arg0, s32 arg1, s32 arg2, u32 arg3) {
     s32 temp;
     u32 temp1 = arg3 - gWizardsWaltzInfo.globalScale;
 

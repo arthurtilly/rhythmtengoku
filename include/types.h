@@ -259,7 +259,7 @@ struct RapMenInfo {
 
 
 struct WizardsWaltzSparkle {
-    struct ScaledEntity *entity; // Entity:  unk0
+    struct ScalableSprite *entity; // Entity:  unk0
     u8  state;      // Value:   unk4 {0,1,2}
     u32 unk8;       // Counter: unk8
     u32 unkC;       // Value:   posUnk0C
@@ -271,7 +271,7 @@ struct WizardsWaltzSparkle {
 
 struct WizardsWaltzInfo {
     u8 version;         // Value:   unk0
-    struct ScaledEntity *wizardEntity; // Entity:  unk4
+    struct ScalableSprite *wizardEntity; // Entity:  unk4
     u8  wizardState;    // Value:   unk8 {0,1}
     u32 unkC;           // Value:   posUnk0C
     u32 unk10;          // Value:   posUnk10
@@ -279,7 +279,7 @@ struct WizardsWaltzInfo {
     u32 unk18;          // Value:   posUnk18
     u32 null1C;
     u32 null20;
-    struct ScaledEntity *shadowEntity; // Entity:  unk24
+    struct ScalableSprite *shadowEntity; // Entity:  unk24
     u32 null28;
     u32 null2C;
     u32 null30;
@@ -288,7 +288,7 @@ struct WizardsWaltzInfo {
     u32 null3C;
     u32 null40;
     struct WizardsWaltzSparkle sparkle[10]; // Struct: unk44[10]
-    struct ScaledEntity *girlEntity; // Entity:  unk184
+    struct ScalableSprite *girlEntity; // Entity:  unk184
     u8  girlState;      // Value:   unk188 {0,1,2}
     u32 null18C;
     u32 null190;
@@ -306,7 +306,7 @@ struct WizardsWaltzInfo {
 
 
 struct RhythmTweezersTweezers {
-    struct ScaledEntity *entity; // Entity:  Tweezers
+    struct ScalableSprite *entity; // Entity:  Tweezers
     u8  unk4;   // Flag:    Active
     u8  unk5;   // State:   Holding { 0 = False (Open); 1 = True (Full Hair); 2 = (Half Hair) }
     s16 unk6;   // Value:   0x4ea - ((cyclePosition * 0x5d5) / cycleTarget)
@@ -316,7 +316,7 @@ struct RhythmTweezersTweezers {
 };
 
 struct RhythmTweezersFallingHair {
-    struct ScaledEntity *entity; // Entity:  Falling Hair
+    struct ScalableSprite *entity; // Entity:  Falling Hair
     s32 unk4;   // Value:   Vertical Velocity
     u32 unk8;   // Counter: Vertical Position
     s16 unkC;   // Value:   Distance From Tweezers
@@ -425,7 +425,7 @@ struct BonOdoriInfo {
 
 struct SpaceballCue {
     u8 state;
-    struct ScaledEntity *sprite;
+    struct ScalableSprite *sprite;
     u32 unk8;
     s16 rotation;
     s16 rotationSpeed;
@@ -439,7 +439,7 @@ struct SpaceballCue {
 };
 
 struct SpaceballEntity {
-    struct ScaledEntity *sprite;
+    struct ScalableSprite *sprite;
     s32 x;
     s32 y;
     s32 z;
@@ -449,7 +449,7 @@ struct SpaceballInfo {
     u8 ver;     // Value: Version
     s32 zoom;   // Value: Camera Position
     struct SpaceballBatter {
-        struct ScaledEntity *sprite;
+        struct ScalableSprite *sprite;
         s32 x;
         s32 y;
         s32 z;

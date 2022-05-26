@@ -466,53 +466,53 @@ u32 *func_0800c43c(u32 arg0) {
     // arg4 = ... []
     // arg5 = R/S [Scaling]
     // arg6 = R/S [Rotation]
-    // arg7 = ... [Animation {0 = Still; 1 = Play Once; -1 = Loop; Other = Play First Frame Only?}]
+    // arg7 = ... [Animation Run Type {0 = Still; 1 = Play Once; -1 = Loop; Other = Play First Frame Only?}]
     // arg8 = ... []
     // arg9 = ... []
     // arg10 = R/S [Double-Size Flag]
 
-struct ScaledEntity *func_0800fa6c(u32 *arg0, s8 arg1, s16 x, s16 y, u16 arg4,
-                                    s16 arg5, s16 arg6, s8 arg7, s8 arg8, u16 arg9, u32 arg10) {
-    s16 object;
+struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
+                                    s16 scaling, s16 rotation, s8 arg7, s8 arg8, u16 arg9, u32 doubleSize) {
+    s16 sprite;
     s8 offset;
-    struct ScaledEntity *entity;
+    struct ScalableSprite *scalable;
 
     // Create standard entity.
-    object = func_0804d160(D_03005380, arg0, arg1, x, y, arg4, arg7, arg8, arg9);
-    if (object < 0) return 0;
+    sprite = func_0804d160(D_03005380, anim, arg1, x, y, arg4, arg7, arg8, arg9);
+    if (sprite < 0) return NULL;
 
     // Generate offset from D_03000368 in words. (?)
     offset = func_0800c42c();
-    if (offset < 0) return 0;
+    if (offset < 0) return NULL;
 
     // Allocate memory for the scalable entity.
-    entity = (struct ScaledEntity *) func_0800c43c(0x14);
-    if (entity == 0) return 0;
+    scalable = (struct ScalableSprite *) func_0800c43c(0x14);
+    if (scalable == NULL) return NULL;
 
     // Initialise scalable entity.
-    entity->unk0 = object;
-    entity->unk2 = offset;
-    entity->unk3 = arg10;
-    entity->unk4 = arg5;
-    entity->unk6 = arg5;
-    entity->unk8 = arg6;
-    entity->unkA = x;
-    entity->unkC = y;
-    entity->unkE = 0;
-    entity->unk10 = 0;
+    scalable->sprite = sprite;
+    scalable->unk2 = offset;
+    scalable->doubleSize = doubleSize;
+    scalable->unk4 = scaling;
+    scalable->unk6 = scaling;
+    scalable->rotation = rotation;
+    scalable->x = x;
+    scalable->y = y;
+    scalable->unkE = 0;
+    scalable->unk10 = 0;
 
-    entity->unk12_0 = 0;
-    entity->unk12_1 = 1;
-    entity->unk12_2 = 0;
-    entity->unk12_3 = 0;
-    entity->unk12_4 = 0;
+    scalable->unk12_0 = 0;
+    scalable->unk12_1 = 1;
+    scalable->unk12_2 = 0;
+    scalable->unk12_3 = 0;
+    scalable->unk12_4 = 0;
 
-    func_08007468(object, offset);
+    func_08007468(sprite, offset);
     func_080022d8(offset);
-    func_080074c4(offset, entity->unk4, entity->unk6, entity->unk8);
-    func_0804dc8c(D_03005380, object, (arg10 != 0 ? 3 : 1));
+    func_080074c4(offset, scalable->unk4, scalable->unk6, scalable->rotation);
+    func_0804dc8c(D_03005380, sprite, (doubleSize != 0 ? 3 : 1));
 
-    return entity;
+    return scalable;
 }
 
 #include "asm/code_0800b778/asm_0800fba0.s"

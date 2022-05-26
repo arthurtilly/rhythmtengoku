@@ -26,8 +26,8 @@ extern u32 (*D_03004ae4)(u32);
 extern s32 (*D_03004af8)(s32, s32);
 
 // Temporary External Functions:
-extern void func_0800fddc(struct ScaledEntity *, s16, s16); // SCALABLE SPRITE - Update X & Y
-extern void func_0800fe60(struct ScaledEntity *, s16); // SCALABLE SPRITE - Update Z (Scaling)
+extern void func_0800fddc(struct ScalableSprite *, s16, s16); // SCALABLE SPRITE - Update X & Y
+extern void func_0800fe60(struct ScalableSprite *, s16); // SCALABLE SPRITE - Update Z (Scaling)
 extern void func_0804d5d4(s32, s16, s16, s16); // ??
 
 
@@ -88,7 +88,7 @@ void func_0801fd1c(void) {
 
 
 // [func_0801fd70] Update Entity (Graphical)
-void func_0801fd70(struct ScaledEntity *sprite, s32 x, s32 y, s32 z) {
+void func_0801fd70(struct ScalableSprite *sprite, s32 x, s32 y, s32 z) {
     s32 scale;
 
     z -= gSpaceballInfo.zoom;
@@ -102,7 +102,7 @@ void func_0801fd70(struct ScaledEntity *sprite, s32 x, s32 y, s32 z) {
 
 
 // [func_0801fdc4] Update Batter (Graphical)
-void func_0801fdc4(struct ScaledEntity *sprite, s32 x, s32 y, s32 z, u32 *animClose, u32 *animFar) {
+void func_0801fdc4(struct ScalableSprite *sprite, s32 x, s32 y, s32 z, u32 *animClose, u32 *animFar) {
     s32 scale;
 
     z -= gSpaceballInfo.zoom;
@@ -244,7 +244,7 @@ void func_080201a0(void) {
 }
 
 
-// [func_080201a4] SCENE Func_00 - ?? (Pitcher Animation)
+// [func_080201a4] SCENE Func_00 - Pitcher Prepare
 void func_080201a4(void) {
     func_08010008(gSpaceballInfo.pitcher.sprite, 0, 0, 0);
     func_0800ffc0(gSpaceballInfo.pitcher.sprite, 0);
@@ -296,7 +296,7 @@ void func_08020290(u32 index) {
 
 // [func_080202a4] SCENE Func_04 - Set Umpire Animation
 void func_080202a4(u32 show) {
-    struct ScaledEntity *sprite = gSpaceballInfo.umpire.sprite;
+    struct ScalableSprite *sprite = gSpaceballInfo.umpire.sprite;
     if (show) {
         func_08010064(sprite, &D_088a1ba0, 0, 1, 1, 0);
     } else {
