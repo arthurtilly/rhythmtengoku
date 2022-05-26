@@ -29,13 +29,13 @@ struct arg {
 
 extern void func_0800b3c8(struct arg*);
 extern void func_0800b3e8(struct arg*);
-extern void func_0800b408(struct arg* arg0, s16 arg1, u32 arg2);
-extern void func_0800b454(struct arg* arg0, s32 arg1);
+extern void func_0800b408(struct arg*, s16, u32);
+extern void func_0800b454(struct arg*, s32);
 // extern ? func_0800b4d8(?);
 // extern ? func_0800b550(?);
 // extern ? func_0800b564(?);
-// extern ? func_0800b590(?);
-// extern ? func_0800b60c(?);
+extern void func_0800b590();
+extern u32 func_0800b60c(s32);
 // extern ? func_0800b634(?);
 // extern ? func_0800b698(?);
 // extern ? func_0800b6bc(?);

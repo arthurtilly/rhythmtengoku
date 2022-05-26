@@ -6,10 +6,10 @@ extern void func_0804d5d4(s32, s16, s16, s16);
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-static s32 D_03001304; // unknown type
-static s32 D_03001308; // unknown type
-static s16 D_0300130c; // unknown type
-static s16 D_0300130e; // unknown type
+static u32 D_03001304;
+static u32 D_03001308;
+static u16 D_0300130c;
+static u16 D_0300130e;
 
 // Game Controlling Stuff
 
@@ -63,9 +63,37 @@ void func_0800b454(struct arg* arg0, s32 arg1) {
 
 #include "asm/code_0800b3c8/asm_0800b564.s"
 
-#include "asm/code_0800b3c8/asm_0800b590.s"
+void func_0800b590() {
+    u16 temp;
+    
+    if (D_03001304 <= -2) {
+        D_03001304++;
+    }
+    temp = REG_KEY;
+    if (temp == D_0300130e) {
+        if (D_0300130c < 0xffff) {
+            D_0300130c += 1;
+        }
+    } else {
+        D_0300130c = 0;
+    }
+    D_0300130e = temp;
 
-#include "asm/code_0800b3c8/asm_0800b60c.s"
+    if (D_0300130c < 0x258 && D_03001308 <= -2) {
+        D_03001308 += 1;
+    }
+}
+
+u32 func_0800b60c(s32 arg0) {
+    u32 temp = 0x7fffffff & arg0;
+    u32 temp1;
+    if (arg0 < 0) {
+        temp1 = D_03001308;
+    } else {
+        temp1 = D_03001304;
+    }
+    return temp1 / temp;
+}
 
 #include "asm/code_0800b3c8/asm_0800b634.s"
 
