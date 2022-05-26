@@ -123,6 +123,26 @@ struct unk_struct_080079bc {
     u16 totalFrames;
 };
 
+struct unk_struct_08007aa0_init {
+    s16 id;
+    s16 startX;
+    s16 startY;
+    s16 destX;
+    s16 destY;
+    s16 unkA;
+    s16 totalFrames;
+};
+struct unk_struct_08007aa0 {
+    s16 id;
+    u16 startXPos;
+    u16 startYPos;
+    s16 dx;
+    s16 dy;
+    s16 unkA;
+    u16 framesPassed;
+    u16 totalFrames;
+};
+
 
 
 
@@ -157,7 +177,7 @@ extern u32 func_080077e8(struct unk_struct_08007788 *arg0);
 // extern ? func_08007b04(?);
 // extern ? func_08007b2c(?);
 // extern ? func_08007b4c(?);
-extern s32 fast_div_s32(s32 dividend, s32 divisor);
+extern s32 fast_divsi3(s32 dividend, s32 divisor);
 // extern ? func_08007bb8(?);
 // extern ? func_08007c30(?);
 // extern ? func_08007ca8(?);

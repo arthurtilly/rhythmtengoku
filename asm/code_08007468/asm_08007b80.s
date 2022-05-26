@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start fast_div_s32 \n\
+thumb_func_start fast_divsi3 \n\
 /* 08007b80 */ PUSH {R4, LR} \n\
 /* 08007b82 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 08007b84 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
@@ -22,7 +22,7 @@ branch_08007b92: \n\
 /* 08007b9c */ EORS R4, R0 @ Set R4 to R4 ^ R0 \n\
  \n\
 branch_08007b9e: \n\
-/* 08007b9e */ LDR R0, =fast_div_u32 \n\
+/* 08007b9e */ LDR R0, =fast_udivsi3 \n\
 /* 08007ba0 */ LDR R2, [R0] \n\
 /* 08007ba2 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 08007ba4 */ BL _call_via_r2 \n\

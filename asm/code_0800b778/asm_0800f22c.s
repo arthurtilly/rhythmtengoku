@@ -64,7 +64,7 @@ thumb_func_start func_0800f22c \n\
 /* 0800f2a0 */ LDR R5, [SP, 0xC] \n\
 /* 0800f2a2 */ NEGS R4, R5 @ Set R4 to -R5 \n\
 /* 0800f2a4 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800f2a6 */ BL fast_div_s32 \n\
+/* 0800f2a6 */ BL fast_divsi3 \n\
 /* 0800f2aa */ STR R0, [SP, 0x24] \n\
 /* 0800f2ac */ LDR R1, [SP, 0x18] \n\
 /* 0800f2ae */ LSLS R0, R1, 0x4 \n\
@@ -78,19 +78,19 @@ thumb_func_start func_0800f22c \n\
 /* 0800f2c0 */ LDR R3, [SP, 0x10] \n\
 /* 0800f2c2 */ MULS R0, R3 @ Multiply R0 by R3 \n\
 /* 0800f2c4 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800f2c6 */ BL fast_div_s32 \n\
+/* 0800f2c6 */ BL fast_divsi3 \n\
 /* 0800f2ca */ STR R0, [SP, 0x2C] \n\
 /* 0800f2cc */ LDR R4, [SP, 0x28] \n\
 /* 0800f2ce */ LDR R5, [SP, 0x1C] \n\
 /* 0800f2d0 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0800f2d2 */ MULS R0, R5 @ Multiply R0 by R5 \n\
 /* 0800f2d4 */ LDR R1, [SP, 0x20] \n\
-/* 0800f2d6 */ BL fast_div_s32 \n\
+/* 0800f2d6 */ BL fast_divsi3 \n\
 /* 0800f2da */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0800f2dc */ NEGS R0, R4 @ Set R0 to -R4 \n\
 /* 0800f2de */ SUBS R0, R0, R4 @ Set R0 to R0 - R4 \n\
 /* 0800f2e0 */ MOVS R1, 0xA0 @ Set R1 to 0xA0 \n\
-/* 0800f2e2 */ BL fast_div_s32 \n\
+/* 0800f2e2 */ BL fast_divsi3 \n\
 /* 0800f2e6 */ STR R0, [SP, 0x30] \n\
 /* 0800f2e8 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0800f2ea */ ADDS R0, 0x48 @ Add 0x48 to R0 \n\
@@ -104,7 +104,7 @@ thumb_func_start func_0800f22c \n\
 /* 0800f2fa */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0800f2fc */ MULS R0, R3 @ Multiply R0 by R3 \n\
 /* 0800f2fe */ LDR R1, [SP, 0x18] \n\
-/* 0800f300 */ BL fast_div_s32 \n\
+/* 0800f300 */ BL fast_divsi3 \n\
 /* 0800f304 */ NEGS R0, R0 @ Set R0 to -R0 \n\
 /* 0800f306 */ STR R0, [SP, 0x34] \n\
 /* 0800f308 */ MOVS R4, 0x1A @ Set R4 to 0x1A \n\
@@ -118,7 +118,7 @@ thumb_func_start func_0800f22c \n\
 /* 0800f318 */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 0800f31a */ MULS R0, R2 @ Multiply R0 by R2 \n\
 /* 0800f31c */ LDR R1, [SP, 0x10] \n\
-/* 0800f31e */ BL fast_div_s32 \n\
+/* 0800f31e */ BL fast_divsi3 \n\
 /* 0800f322 */ ASRS R0, R0, 0x8 \n\
 /* 0800f324 */ ADDS R0, 0x50 @ Add 0x50 to R0 \n\
 /* 0800f326 */ STR R0, [SP, 0x38] \n\
@@ -190,7 +190,7 @@ branch_0800f390: \n\
 /* 0800f3a0 */ ASRS R1, R1, 0x8 \n\
 /* 0800f3a2 */ LDR R3, [SP, 0x24] \n\
 /* 0800f3a4 */ LSLS R0, R3, 0x8 \n\
-/* 0800f3a6 */ BL fast_div_s32 \n\
+/* 0800f3a6 */ BL fast_divsi3 \n\
 /* 0800f3aa */ LDR R1, [SP, 0xC] \n\
 /* 0800f3ac */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0800f3ae */ MULS R4, R1 @ Multiply R4 by R1 \n\
@@ -292,7 +292,7 @@ branch_0800f41c: \n\
 /* 0800f466 */ SUBS R0, R1, R2 @ Set R0 to R1 - R2 \n\
 /* 0800f468 */ LSLS R0, R0, 0x3 \n\
 /* 0800f46a */ LDR R1, [SP, 0x14] \n\
-/* 0800f46c */ BL fast_div_s32 \n\
+/* 0800f46c */ BL fast_divsi3 \n\
 /* 0800f470 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0800f472 */ BGE branch_0800f476 \n\
 /* 0800f474 */ NEGS R0, R0 @ Set R0 to -R0 \n\
@@ -304,7 +304,7 @@ branch_0800f476: \n\
 /* 0800f47c */ ADDS R0, R3, R4 @ Set R0 to R3 + R4 \n\
 /* 0800f47e */ LSLS R0, R0, 0x8 \n\
 /* 0800f480 */ LDR R1, [SP, 0x1C] \n\
-/* 0800f482 */ BL fast_div_s32 \n\
+/* 0800f482 */ BL fast_divsi3 \n\
 /* 0800f486 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0800f488 */ BGE branch_0800f48c \n\
 /* 0800f48a */ NEGS R0, R0 @ Set R0 to -R0 \n\

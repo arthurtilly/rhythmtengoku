@@ -14,7 +14,7 @@ thumb_func_start func_0800edc8 \n\
 branch_0800edd6: \n\
 /* 0800edd6 */ LSLS R0, R5, 0x8 \n\
 /* 0800edd8 */ MOVS R1, 0xA0 @ Set R1 to 0xA0 \n\
-/* 0800edda */ BL fast_div_s32 \n\
+/* 0800edda */ BL fast_divsi3 \n\
 /* 0800edde */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0800ede0 */ LSLS R2, R2, 0x10 \n\
 /* 0800ede2 */ LSRS R2, R2, 0x10 \n\

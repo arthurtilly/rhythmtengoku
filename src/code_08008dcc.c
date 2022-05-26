@@ -96,7 +96,7 @@ s32 func_08008eec(s32 arg0[], u32 arg1) {
 }
 
 s32 func_08008f04(u32 arg0, u32 arg1, u32 arg2, u32 arg3) {
-    return fast_div_s32((arg1 - arg0) * arg2, arg3) + arg0;
+    return fast_divsi3((arg1 - arg0) * arg2, arg3) + arg0;
 }
 
 s32 func_08008f1c(void) {

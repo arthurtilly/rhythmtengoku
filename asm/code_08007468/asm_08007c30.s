@@ -14,7 +14,7 @@ thumb_func_start func_08007c30 \n\
 /* 08007c40 */ LDR R1, [R4] \n\
 /* 08007c42 */ LSLS R1, R1, 0xF \n\
 /* 08007c44 */ LSRS R1, R1, 0x11 \n\
-/* 08007c46 */ BL fast_div_s32 \n\
+/* 08007c46 */ BL fast_divsi3 \n\
 /* 08007c4a */ LDR R1, [R4, 0x8] \n\
 /* 08007c4c */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 08007c4e */ LDRB R0, [R4] \n\

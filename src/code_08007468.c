@@ -184,15 +184,14 @@ struct unk_struct_08007788 *func_08007788(struct unk_struct_08007788_init *arg0)
 
 // D_08936bd4 function 2
 u32 func_080077e8(struct unk_struct_08007788 *arg0) {
-    s16 xPos, yPos;
     s32 totalFrames = arg0->totalFrames;
-    s32 framesPassed;
     
     u32 reachedEnd = (++arg0->framesPassed >= totalFrames);
     
-    framesPassed = arg0->framesPassed;
-    xPos = arg0->startXPos + lerp(0, arg0->dx, framesPassed, totalFrames);
-    yPos = arg0->startYPos + lerp(0, arg0->dy, framesPassed, totalFrames);
+    s32 framesPassed = arg0->framesPassed;
+    
+    u16 xPos = arg0->startXPos + lerp(0, arg0->dx, framesPassed, totalFrames);
+    u16 yPos = arg0->startYPos + lerp(0, arg0->dy, framesPassed, totalFrames);
 
     func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
     return reachedEnd;
@@ -201,15 +200,12 @@ u32 func_080077e8(struct unk_struct_08007788 *arg0) {
 // Sinusoidal movement
 // D_08936be4 function 2
 u32 func_08007854(struct unk_struct_080078ec *arg0) {
-    s32 offset;
-    s32 xPos, yPos;
-
     u8 wavePos = lerp(arg0->waveStart, arg0->waveEnd, arg0->framesPassed, arg0->totalFrames);
 
-    offset = arg0->baseOffset + FIXED_TO_INT(arg0->amplitude * sins2(wavePos));
+    s32 offset = arg0->baseOffset + FIXED_TO_INT(arg0->amplitude * sins2(wavePos));
     
-    xPos = FIXED_TO_INT(offset * coss2(arg0->angle)) + arg0->baseXPos;
-    yPos = FIXED_TO_INT(offset * sins2(arg0->angle)) + arg0->baseYPos;
+    u16 xPos = FIXED_TO_INT(offset * coss2(arg0->angle)) + arg0->baseXPos;
+    u16 yPos = FIXED_TO_INT(offset * sins2(arg0->angle)) + arg0->baseYPos;
 
     func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
 
@@ -242,11 +238,10 @@ struct unk_struct_080078ec *func_080078ec(struct unk_struct_080078ec_init *arg0)
 
 // D_08936bf4 function 2
 u32 func_0800793c(struct unk_struct_080079bc *arg0) {
-    s16 xPos, yPos;
     s32 temp_r5 = lerp(arg0->unkA, arg0->unkC, arg0->framesPassed, arg0->totalFrames);
 
-    xPos = arg0->startXPos + FIXED_TO_INT(arg0->dx * func_080019a4(temp_r5));
-    yPos = arg0->startYPos + FIXED_TO_INT(arg0->dy * func_080019a4(temp_r5));
+    u16 xPos = arg0->startXPos + FIXED_TO_INT(arg0->dx * func_080019a4(temp_r5));
+    u16 yPos = arg0->startYPos + FIXED_TO_INT(arg0->dy * func_080019a4(temp_r5));
 
     func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
 
@@ -277,10 +272,42 @@ struct unk_struct_080079bc *func_080079bc(struct unk_struct_080079bc_init *arg0)
 }
 
 // D_08936c04 function 2
-#include "asm/code_08007468/asm_08007a14.s"
+u32 func_08007a14(struct unk_struct_08007aa0 *arg0) {
+    s32 totalFrames = arg0->totalFrames;
+    
+    u32 reachedEnd = (++arg0->framesPassed >= totalFrames);
+    
+    s32 framesPassed = arg0->framesPassed;
+    s24_8 temp_r8 = lerp(0, INT_TO_FIXED(8), framesPassed, totalFrames);
+    
+    u16 xPos = arg0->startXPos + lerp(0, arg0->dx, framesPassed, totalFrames);
+    u16 yPos = arg0->startYPos + lerp(0, arg0->dy, framesPassed, totalFrames) - FIXED_TO_INT(func_080019a4(temp_r8) * arg0->unkA);
+
+    func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
+    return reachedEnd;
+}
 
 // D_08936c04 function 1
-#include "asm/code_08007468/asm_08007aa0.s"
+struct unk_struct_08007aa0 *func_08007aa0(struct unk_struct_08007aa0_init *arg0) {
+    struct unk_struct_08007aa0 *temp;
+
+    if (arg0->id < 0) {
+        return (void *)-1;
+    }
+
+    temp = mem_heap_alloc(sizeof(struct unk_struct_08007aa0));
+    temp->id = arg0->id;
+    temp->startXPos = arg0->startX;
+    temp->startYPos = arg0->startY;
+    temp->dx = arg0->destX - arg0->startX;
+    temp->dy = arg0->destY - arg0->startY;
+    temp->unkA = arg0->unkA;
+    temp->framesPassed = 0;
+    temp->totalFrames = arg0->totalFrames;
+
+    func_0804d5d4(D_03005380, temp->id, temp->startXPos, temp->startYPos);
+    return temp;
+}
 
 #include "asm/code_08007468/asm_08007b04.s"
 
@@ -288,11 +315,11 @@ struct unk_struct_080079bc *func_080079bc(struct unk_struct_080079bc_init *arg0)
 
 #include "asm/code_08007468/asm_08007b4c.s"
 
-extern u32 (*fast_div_u32)(u32 dividend, u32 divisor);
+extern u32 (*fast_udivsi3)(u32 dividend, u32 divisor);
 
 // Divides two signed integers using a fast algorithm contained in IWRAM.
 // Much quicker than the versions contained in libc and libagbsyscall.
-s32 fast_div_s32(s32 dividend, s32 divisor) {
+s32 fast_divsi3(s32 dividend, s32 divisor) {
     u32 quotient;
     u32 isNegative = 0;
 
@@ -306,7 +333,7 @@ s32 fast_div_s32(s32 dividend, s32 divisor) {
         isNegative ^= 1;
     }
 
-    quotient = fast_div_u32(dividend, divisor);
+    quotient = fast_udivsi3(dividend, divisor);
     return isNegative ? -quotient : quotient;
 }
 
@@ -454,16 +481,16 @@ void func_08008b00(u32 unused_arg0, u32 unused_arg1, s16 arg2, s24_8 arg3, s24_8
     temp_r9 = arg11 ? sins(-arg2) : sins2(-arg2);
     temp_r8 = arg11 ? coss(-arg2) : coss2(-arg2);
 
-    ret_r5 = fast_div_s32(160 * 256, arg8);
-    ret_sp14 = fast_div_s32(160 * 256, arg8);
-    ret_sp8 = fast_div_s32(ret_r5 * 240, 160);
+    ret_r5 = fast_divsi3(160 * 256, arg8);
+    ret_sp14 = fast_divsi3(160 * 256, arg8);
+    ret_sp8 = fast_divsi3(ret_r5 * 240, 160);
 
     temp_r7 = INT_TO_FIXED(-ret_r5) / 2;
 
-    ret_spc = fast_div_s32(INT_TO_FIXED(ret_r5), 160);
-    temp_r7 += fast_div_s32(ret_r5 * arg7, 160);
-    arg3 += fast_div_s32(ret_r5 * arg6, 160);
-    ret_sp10 = fast_div_s32(INT_TO_FIXED(ret_r5), 160);  
+    ret_spc = fast_divsi3(INT_TO_FIXED(ret_r5), 160);
+    temp_r7 += fast_divsi3(ret_r5 * arg7, 160);
+    arg3 += fast_divsi3(ret_r5 * arg6, 160);
+    ret_sp10 = fast_divsi3(INT_TO_FIXED(ret_r5), 160);  
 
     temp_sp18 = ret_sp14 * temp_sp0;
 
@@ -488,7 +515,7 @@ void func_08008b00(u32 unused_arg0, u32 unused_arg1, s16 arg2, s24_8 arg3, s24_8
             arg9->unk0 = 0;
         } else {
             s24_8 m_r4, m_r3, m_r2;
-            temp_r1 = fast_div_s32(INT_TO_FIXED(ret_sp14) << 8, temp_r1); // fixed point division
+            temp_r1 = fast_divsi3(INT_TO_FIXED(ret_sp14) << 8, temp_r1); // fixed point division
             m_r4 = FIXED_POINT_MUL(-temp_r1, temp_sp0);
 
             m_r3 = temp_sp1c - (ret_sp8 >> 1) * m_r4;

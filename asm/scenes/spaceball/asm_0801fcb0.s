@@ -23,7 +23,7 @@ branch_0801fcb4: \n\
 /* 0801fcce */ SUBS R1, R1, R0 @ Set R1 to R1 - R0 \n\
 /* 0801fcd0 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 0801fcd2 */ LSLS R0, R0, 0x9 \n\
-/* 0801fcd4 */ BL fast_div_s32 \n\
+/* 0801fcd4 */ BL fast_divsi3 \n\
 /* 0801fcd8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801fcda */ LDRSH R1, [R4, R2] \n\
 /* 0801fcdc */ ADDS R2, R1, 0x0 @ Set R2 to R1 + 0x0 \n\

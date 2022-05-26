@@ -18,7 +18,7 @@ thumb_func_start func_0801fdc4 \n\
 /* 0801fddc */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 0801fdde */ LSLS R0, R0, 0x9 \n\
 /* 0801fde0 */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
-/* 0801fde2 */ BL fast_div_s32 \n\
+/* 0801fde2 */ BL fast_divsi3 \n\
 /* 0801fde6 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0801fde8 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0801fdea */ MULS R0, R4 @ Multiply R0 by R4 \n\
@@ -60,7 +60,7 @@ branch_0801fe34: \n\
 /* 0801fe34 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 0801fe36 */ LSLS R0, R0, 0xA \n\
 /* 0801fe38 */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
-/* 0801fe3a */ BL fast_div_s32 \n\
+/* 0801fe3a */ BL fast_divsi3 \n\
 /* 0801fe3e */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0801fe40 */ LSLS R1, R4, 0x10 \n\
 /* 0801fe42 */ ASRS R1, R1, 0x10 \n\

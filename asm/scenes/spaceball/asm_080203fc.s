@@ -52,7 +52,7 @@ branch_0802045c: \n\
 /* 08020462 */ MOVS R1, 0x8A @ Set R1 to 0x8A \n\
 /* 08020464 */ BL func_08008f04 \n\
 /* 08020468 */ STR R0, [R5, 0x10] \n\
-/* 0802046a */ LDR R2, =fast_div_u32 \n\
+/* 0802046a */ LDR R2, =fast_udivsi3 \n\
 /* 0802046c */ LSLS R1, R4, 0x2 \n\
 /* 0802046e */ LDR R0, [R5, 0x1C] \n\
 /* 08020470 */ MULS R0, R1 @ Multiply R0 by R1 \n\
