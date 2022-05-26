@@ -45,9 +45,9 @@ struct struct_03004b10 {
     u16 unk4E;
     u16 unk50;
     u16 unk52;
-    u16 unk54[0x100];   // bg palette buffer, 03004b64
-    u16 unk254[0x100];  // obj palette buffer, 03004d64
-    u32 unk454[0x100];  // oam obj buffer, 03004f64
+    u16 unk54[16][16];   // bg palette buffer, 03004b64
+    u16 unk254[0x100];   // obj palette buffer, 03004d64
+    u32 unk454[0x100];   // oam obj buffer, 03004f64
 };
 
 struct struct_080179f4_sub {
@@ -195,32 +195,43 @@ struct struct_030053c0 {
 };
 
 
+// KarateManCue
 struct struct_030055d0_sub {
-    u8 unk0:4;
+    u16 unk0_b0:4;
+    u16 unk0_b4:1;
+    u16 unk0_b5:4;
+    //u16 unk0_b9:7;
+    u16 unk2;
+    s16 unk4;
+    s16 unk6;
+    s8 unk8;
+    s8 unk9;
+    u16 unkA;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    u32 unk18;
+    u32 unk1C;
+    u32 unk20;
+    u32 unk24;
+    u16 unk28;
+    s16 unk2A;
+    u8 unk2C;
+    u8 unk2D;
+    u16 unk2E;
+};
+
+
+// Game engine structs
+
+struct KarateManInfoSubstruct {
+	u16 unk0:4;
     u8 pad01[3];
     s16 unk4;
     u16 unk6;
     u16 unk8;
     u16 unkA;
     u16 unkC;
-    u8 pad0E[8];
-    u32 unk18;
-    u32 unk1C;
-    u8 pad20[4];
-    u32 unk24;
-    u8 pad28[5];
-    u8 unk2D;
-};
-
-
-struct KarateManInfoSubstruct {
-	u8 unk4:4;
-    u8 pad05[3];
-    s16 unk8;
-    u16 unkA;
-    u16 unkC;
-    u16 unkE;
-    u16 unk10;
 };
 
 struct KarateManInfo {
@@ -230,12 +241,12 @@ struct KarateManInfo {
     u8 unk16;
     u8 unk17;
     u8 unk18;
-    u32 *unk1C;
+    u8 *unk1C;
     s16 unk20;
     u32 unk24;
     s16 unk28;
     u8 unk2A;
-    u8 pad2B[3];
+    s16 unk2C;
     s16 unk2E;
     u16 unk30;
     u16 unk32;
