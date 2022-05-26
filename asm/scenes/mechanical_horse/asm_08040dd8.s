@@ -54,7 +54,7 @@ thumb_func_start func_08040dd8 \n\
 /* 08040e3a */ ADDS R4, R4, R6 @ Set R4 to R4 + R6 \n\
 /* 08040e3c */ LDRH R2, [R4] \n\
 /* 08040e3e */ STR R2, [SP] \n\
-/* 08040e40 */ LDR R2, =D_03004b64 \n\
+/* 08040e40 */ LDR R2, =(D_03004b10 + 0x54) \n\
 /* 08040e42 */ STR R2, [SP, 0x4] \n\
 /* 08040e44 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08040e46 */ BL func_08002050 \n\

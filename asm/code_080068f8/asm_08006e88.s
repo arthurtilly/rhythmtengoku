@@ -88,7 +88,7 @@ branch_08006f40: \n\
 /* 08006f4a */ ADDS R0, R5, R0 @ Set R0 to R5 + R0 \n\
 /* 08006f4c */ ADDS R0, 0x2 @ Add 0x2 to R0 \n\
 /* 08006f4e */ LSLS R1, R4, 0x1 \n\
-/* 08006f50 */ LDR R2, =D_05000002 \n\
+/* 08006f50 */ LDR R2, =(PaletteRAMBase + 2) \n\
 /* 08006f52 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08006f54 */ LDR R2, =0x1ff \n\
 /* 08006f56 */ SUBS R2, R2, R4 @ Set R2 to R2 - R4 \n\

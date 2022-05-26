@@ -25,7 +25,7 @@ thumb_func_start func_08018f10 \n\
 /* 08018f3e */ LDR R2, =D_030046a4 \n\
 /* 08018f40 */ LDR R1, [R2] \n\
 /* 08018f42 */ STR R0, [R1] \n\
-/* 08018f44 */ LDR R1, =D_06014000 \n\
+/* 08018f44 */ LDR R1, =(VRAMBase + 0x14000) \n\
 /* 08018f46 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08018f48 */ LSLS R2, R2, 0x7 \n\
 /* 08018f4a */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\

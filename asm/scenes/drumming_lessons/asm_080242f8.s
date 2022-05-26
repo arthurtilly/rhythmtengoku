@@ -443,7 +443,7 @@ branch_0802463a: \n\
 	RSBS R0, R0, 0x0 \n\
 	MOV R1, R8 \n\
 	STRB R0, [R1] \n\
-	LDR R6, =D_03004b20 \n\
+	LDR R6, =(D_03004b10 + 0x10) \n\
 	ADDS R4, R6, 0x2 \n\
 	LDR R2, =D_03005380 \n\
 	LDR R0, [R2] \n\

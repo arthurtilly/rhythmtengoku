@@ -12,7 +12,7 @@ thumb_func_start func_08030f04 \n\
 /* 08030f10 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
 /* 08030f12 */ BL func_0800c3a4 \n\
 /* 08030f16 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 08030f18 */ LDR R2, =D_03005550 \n\
+/* 08030f18 */ LDR R2, =(D_030053c0 + 0x190) \n\
 /* 08030f1a */ LDRH R3, [R2] \n\
 /* 08030f1c */ STR R4, [SP] \n\
 /* 08030f1e */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\

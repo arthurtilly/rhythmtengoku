@@ -783,7 +783,7 @@ branch_0800d1a6: \n\
 jump_0800d1ae: \n\
 /* 0800d1ae */ MOV R3, R10 @ Set R3 to R10 \n\
 /* 0800d1b0 */ LSLS R0, R3, 0x2 \n\
-/* 0800d1b2 */ LDR R4, =D_03005520 \n\
+/* 0800d1b2 */ LDR R4, =(D_030053c0 + 0x160) \n\
 /* 0800d1b4 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0800d1b6 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0800d1b8 */ BL _call_via_r6 \n\
@@ -1170,7 +1170,7 @@ jump_0800d460: \n\
 \n\
 jump_0800d47a: \n\
 /* 0800d47a */ ADDS R3, R6, 0x0 @ Set R3 to R6 + 0x0 \n\
-/* 0800d47c */ LDR R7, =D_030053e4 \n\
+/* 0800d47c */ LDR R7, =(D_030053c0 + 0x24) \n\
 /* 0800d47e */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0800d480 */ LSRS R6, R2, 0x1B \n\
 /* 0800d482 */ LDR R2, =0x07ffffff \n\
@@ -1297,7 +1297,7 @@ branch_0800d572: \n\
 /* 0800d57a */ MOVS R1, 0x1F @ Set R1 to 0x1F \n\
 /* 0800d57c */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 0800d57e */ LSLS R0, R0, 0x5 \n\
-/* 0800d580 */ LDR R1, =D_03004b64 \n\
+/* 0800d580 */ LDR R1, =(D_03004b10 + 0x54) \n\
 /* 0800d582 */ ADDS R7, R0, R1 @ Set R7 to R0 + R1 \n\
 /* 0800d584 */ LDR R0, =0xffff \n\
 /* 0800d586 */ CMP R6, R0 @ Check R6 - R0 \n\
@@ -2589,7 +2589,7 @@ jump_0800df7e: \n\
 /* 0800df8c */ LDRSH R1, [R1, R6] \n\
 /* 0800df8e */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0800df90 */ LSLS R3, R2, 0x2 \n\
-/* 0800df92 */ LDR R4, =D_03004b1c \n\
+/* 0800df92 */ LDR R4, =(D_03004b10 + 0xc) \n\
 /* 0800df94 */ ADDS R2, R3, R4 @ Set R2 to R3 + R4 \n\
 /* 0800df96 */ ADDS R4, 0x2 @ Add 0x2 to R4 \n\
 /* 0800df98 */ ADDS R3, R3, R4 @ Set R3 to R3 + R4 \n\

@@ -15,7 +15,7 @@ thumb_func_start func_0801dfe8 \n\
 /* 0801dffe */ LDR R3, =0x7fff \n\
 /* 0801e000 */ LDR R0, =D_0893253c \n\
 /* 0801e002 */ STR R0, [SP] \n\
-/* 0801e004 */ LDR R0, =D_03004b64 \n\
+/* 0801e004 */ LDR R0, =(D_03004b10 + 0x54) \n\
 /* 0801e006 */ STR R0, [SP, 0x4] \n\
 /* 0801e008 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801e00a */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\

@@ -55,7 +55,7 @@ branch_0802eea4: \n\
 /* 0802eee2 */ LDR R0, [R4, 0x4] \n\
 /* 0802eee4 */ LDR R1, [R7] \n\
 /* 0802eee6 */ ADDS R1, 0x8E @ Add 0x8E to R1 \n\
-/* 0802eee8 */ LDR R2, =D_03004b22 \n\
+/* 0802eee8 */ LDR R2, =(D_03004b10 + 0x12) \n\
 /* 0802eeea */ BL func_080102a8 \n\
 /* 0802eeee */ MOVS R0, 0xF @ Set R0 to 0xF \n\
 /* 0802eef0 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\

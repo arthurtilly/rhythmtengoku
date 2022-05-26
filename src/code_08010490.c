@@ -123,7 +123,18 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 // Util functions
 
-#include "asm/code_08010490/asm_08011a18.s"
+void func_08011a18(struct struct_08011a18 *arg0) {
+    u32 i;
+
+    arg0->unk0 = 0;
+    
+    for (i = 0; i < 10; i++) {
+        arg0->unk1[i] = 0;
+        arg0->unkC[i] = 0;
+    }
+
+    func_080018e0(0, &arg0->unk20, 0x3800, 0x20, 0x200);
+}
 
 #include "asm/code_08010490/asm_08011a58.s"
 
@@ -133,9 +144,21 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 #include "asm/code_08010490/asm_08011b50.s"
 
-#include "asm/code_08010490/asm_08011bec.s"
+s32 func_08011bec(u8 *param_1) {
+    return (56 - *param_1) * 256;
+}
 
-#include "asm/code_08010490/asm_08011bf8.s"
+s32 func_08011bf8(struct struct_08011a18 *arg0) {
+    u32 i;
+
+    for (i = 0; i < 10; i++) {
+        if (arg0->unkC[i] == 0) {
+            return i;
+        }
+    }
+
+    return -1;
+}
 
 #include "asm/code_08010490/asm_08011c1c.s"
 

@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_0800ee7c \n\
 /* 0800ee7c */ PUSH {LR} \n\
 /* 0800ee7e */ SUB SP, 0x4 \n\
-/* 0800ee80 */ LDR R1, =D_03004ce4 \n\
+/* 0800ee80 */ LDR R1, =(D_03004b10 + 0x1d4) \n\
 /* 0800ee82 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 0800ee84 */ LSLS R2, R2, 0x1 \n\
 /* 0800ee86 */ STR R2, [SP] \n\

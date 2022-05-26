@@ -13,7 +13,7 @@ thumb_func_start func_08032bf8 \n\
 /* 08032c06 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08032c08 */ LDR R5, =D_03005380 \n\
 /* 08032c0a */ MOVS R6, 0x3C @ Set R6 to 0x3C \n\
-/* 08032c0c */ LDR R2, =D_03004b24 \n\
+/* 08032c0c */ LDR R2, =(D_03004b10 + 0x14) \n\
 /* 08032c0e */ MOV R8, R2 @ Set R8 to R2 \n\
  \n\
 branch_08032c10: \n\

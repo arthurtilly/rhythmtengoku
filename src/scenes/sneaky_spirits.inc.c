@@ -2,6 +2,7 @@
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
 #include "src/code_08016e18.h"
+#include "src/lib_0804c870.h"
 
 // For readability. !TODO - CHANGE/REMOVE
 #define gSneakySpiritsInfo D_030055d0->gameInfo.sneakySpirits
@@ -37,28 +38,9 @@ extern const struct SequenceData s_ghost_dash_seqData;           // Sound: Ghost
 extern const struct SequenceData s_ghost_warai_seqData;          // Sound: Ghost Miss Voice
 
 // Additional Data:
-extern u16  D_03005550;   // BeatScript: Music Volume
 extern char D_08059f90[]; // Empty Default Text
 extern u32  D_089de6e0;   // GFX Null
 extern u32 *D_089de7a4[]; // GFX Struct Index
-
-// External Functions: !TODO
-extern u16  func_08001980(u16);
-extern u32 *func_08002634();
-extern u32 *func_08004b98(u32 *, char *, u32, u32);
-extern u32  func_0800e3e4(s16, u32, u32, s8, s8, u16);
-
-// External Library Functions:
-extern void func_0804cebc(s32, s16, s8);
-extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
-extern void func_0804d5d4(s32, s16, s16, s16);
-extern void func_0804d614(s32, s16, s16);
-extern void func_0804d770(s32, s16, u16);
-extern void func_0804d8f8(s32, s16, u32 *, u32, u32, u32, u32);
-extern void func_0804dae0(s32, s16, s8, u32, u32);
-extern void func_0804dcb8(s32, s16, u16);
-extern u16  func_0804ddb0(s32, s16, s8);
-
 
 /* SNEAKY SPIRITS */
 
@@ -270,7 +252,7 @@ void func_0801f5bc(void) {
 // [func_0801f5c0] ENGINE Func_01 - Next Vertical Position
 void func_0801f5c0(u32 arg0) {
     gSneakySpiritsInfo.ghostHeight = arg0;
-    func_0800c4b0(1, func_0800c3a4(0xc), &D_03005550, D_03005550, arg0);
+    func_0800c4b0(1, func_0800c3a4(0xc), &D_030053c0.unk190, D_030053c0.unk190, arg0);
 }
 
 

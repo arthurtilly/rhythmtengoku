@@ -29,7 +29,7 @@ branch_0804c998: \n\
 /* 0804c99a */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 0804c99c */ BNE branch_0804c98c \n\
 /* 0804c99e */ LDR R1, =D_030064c8 \n\
-/* 0804c9a0 */ LDR R0, =D_03004379 \n\
+/* 0804c9a0 */ LDR R0, =(D_03004378 + 1) \n\
 /* 0804c9a2 */ STR R0, [R1] \n\
 /* 0804c9a4 */ LDR R2, =func_0804c920 \n\
 /* 0804c9a6 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
@@ -56,7 +56,7 @@ branch_0804c9d8: \n\
 /* 0804c9da */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 0804c9dc */ BNE branch_0804c9cc \n\
 /* 0804c9de */ LDR R1, =D_030064d0 \n\
-/* 0804c9e0 */ LDR R0, =D_030042d9 \n\
+/* 0804c9e0 */ LDR R0, =(D_030042d8 + 1) \n\
 /* 0804c9e2 */ STR R0, [R1] \n\
 /* 0804c9e4 */ LDR R2, =func_08001334 \n\
 /* 0804c9e6 */ LDR R3, =D_030043f8 \n\

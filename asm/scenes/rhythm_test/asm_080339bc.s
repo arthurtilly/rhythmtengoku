@@ -61,9 +61,9 @@ branch_080339e4: \n\
 /* 08033a26 */ LDR R0, [R7] \n\
 /* 08033a28 */ LSRS R6, R1, 0x10 \n\
 /* 08033a2a */ ASRS R1, R1, 0x10 \n\
-/* 08033a2c */ LDR R2, =D_03004b24 \n\
+/* 08033a2c */ LDR R2, =(D_03004b10 + 0x14) \n\
 /* 08033a2e */ MOV R9, R2 @ Set R9 to R2 \n\
-/* 08033a30 */ LDR R3, =D_03004b26 \n\
+/* 08033a30 */ LDR R3, =(D_03004b10 + 0x16) \n\
 /* 08033a32 */ BL func_0804db44 \n\
 /* 08033a36 */ MOV R3, R10 @ Set R3 to R10 \n\
 /* 08033a38 */ LDR R2, [R3] \n\
@@ -99,7 +99,7 @@ branch_080339e4: \n\
 /* 08033a76 */ ASRS R5, R1, 0x10 \n\
 /* 08033a78 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 08033a7a */ MOV R2, R9 @ Set R2 to R9 \n\
-/* 08033a7c */ LDR R3, =D_03004b26 \n\
+/* 08033a7c */ LDR R3, =(D_03004b10 + 0x16) \n\
 /* 08033a7e */ BL func_0804db44 \n\
 /* 08033a82 */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 08033a84 */ LDR R0, [R1] \n\

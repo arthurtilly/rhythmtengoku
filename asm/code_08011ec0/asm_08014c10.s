@@ -84,9 +84,9 @@ thumb_func_start func_08014c10 \n\
 /* 08014cb4 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08014cb6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08014cb8 */ LDRSH R1, [R1, R2] \n\
-/* 08014cba */ LDR R4, =D_03004b20 \n\
+/* 08014cba */ LDR R4, =(D_03004b10 + 0x10) \n\
 /* 08014cbc */ ADDS R4, 0x2 @ Add 0x2 to R4 \n\
-/* 08014cbe */ LDR R2, =D_03004b20 \n\
+/* 08014cbe */ LDR R2, =(D_03004b10 + 0x10) \n\
 /* 08014cc0 */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
 /* 08014cc2 */ BL func_0804db44 \n\
 /* 08014cc6 */ MOV R1, R8 @ Set R1 to R8 \n\
@@ -96,7 +96,7 @@ thumb_func_start func_08014c10 \n\
 /* 08014cce */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08014cd0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08014cd2 */ LDRSH R1, [R1, R2] \n\
-/* 08014cd4 */ LDR R2, =D_03004b20 \n\
+/* 08014cd4 */ LDR R2, =(D_03004b10 + 0x10) \n\
 /* 08014cd6 */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
 /* 08014cd8 */ BL func_0804db44 \n\
 /* 08014cdc */ MOV R1, R8 @ Set R1 to R8 \n\
@@ -105,7 +105,7 @@ thumb_func_start func_08014c10 \n\
 /* 08014ce2 */ ADD R1, R9 @ Add R9 to R1 \n\
 /* 08014ce4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08014ce6 */ LDRSH R1, [R1, R2] \n\
-/* 08014ce8 */ LDR R2, =D_03004b20 \n\
+/* 08014ce8 */ LDR R2, =(D_03004b10 + 0x10) \n\
 /* 08014cea */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
 /* 08014cec */ BL func_0804db44 \n\
 /* 08014cf0 */ LDR R0, =D_030046a8 \n\

@@ -87,7 +87,7 @@ branch_08036cf2: \n\
 /* 08036d14 */ LSLS R1, R1, 0x10 \n\
 /* 08036d16 */ ASRS R1, R1, 0x10 \n\
 /* 08036d18 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08036d1a */ LDR R3, =D_03004b22 \n\
+/* 08036d1a */ LDR R3, =(D_03004b10 + 0x12) \n\
 /* 08036d1c */ BL func_0804db44 \n\
 /* 08036d20 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08036d22 */ LSLS R0, R0, 0x11 \n\

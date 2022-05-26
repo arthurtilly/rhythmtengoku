@@ -12,7 +12,7 @@ thumb_func_start func_0801db74 \n\
 /* 0801db80 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801db82 */ BLT branch_0801dbe0 \n\
 /* 0801db84 */ LSLS R0, R0, 0x5 \n\
-/* 0801db86 */ LDR R1, =D_03004b74 \n\
+/* 0801db86 */ LDR R1, =(D_03004b10 + 0x64) \n\
 /* 0801db88 */ ADDS R4, R0, R1 @ Set R4 to R0 + R1 \n\
 /* 0801db8a */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0801db8c */ ADDS R0, 0x26 @ Add 0x26 to R0 \n\

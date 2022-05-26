@@ -29,7 +29,7 @@ thumb_func_start func_08040d10 \n\
 /* 08040d40 */ ADDS R2, R2, R6 @ Set R2 to R2 + R6 \n\
 /* 08040d42 */ LDR R2, [R2] \n\
 /* 08040d44 */ STR R2, [SP] \n\
-/* 08040d46 */ LDR R2, =D_03004b64 \n\
+/* 08040d46 */ LDR R2, =(D_03004b10 + 0x54) \n\
 /* 08040d48 */ STR R2, [SP, 0x4] \n\
 /* 08040d4a */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08040d4c */ BL func_08002018 \n\

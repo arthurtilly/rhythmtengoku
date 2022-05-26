@@ -120,7 +120,7 @@ branch_0800483c: \n\
 /* 08004848 */ LSLS R1, R2, 0x6 \n\
 /* 0800484a */ ADDS R4, R0, R1 @ Set R4 to R0 + R1 \n\
 /* 0800484c */ LSLS R0, R4, 0x5 \n\
-/* 0800484e */ LDR R3, =D_06010000 \n\
+/* 0800484e */ LDR R3, =(VRAMBase + 0x10000) \n\
 /* 08004850 */ ADDS R5, R0, R3 @ Set R5 to R0 + R3 \n\
 /* 08004852 */ MOV R0, R12 @ Set R0 to R12 \n\
 /* 08004854 */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\

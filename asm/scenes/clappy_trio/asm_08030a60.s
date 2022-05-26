@@ -144,10 +144,10 @@ branch_08030b66: \n\
 /* 08030b70 */ BL func_0800c3b8 \n\
 /* 08030b74 */ LSLS R0, R0, 0x10 \n\
 /* 08030b76 */ LSRS R0, R0, 0x10 \n\
-/* 08030b78 */ LDR R3, =D_088e9ff8 \n\
+/* 08030b78 */ LDR R3, =(D_088e9f78 + 0x80) \n\
 /* 08030b7a */ LDR R1, =D_088e9f78 \n\
 /* 08030b7c */ STR R1, [SP] \n\
-/* 08030b7e */ LDR R4, =D_03004b64 \n\
+/* 08030b7e */ LDR R4, =(D_03004b10 + 0x54) \n\
 /* 08030b80 */ STR R4, [SP, 0x4] \n\
 /* 08030b82 */ MOVS R1, 0x10 @ Set R1 to 0x10 \n\
 /* 08030b84 */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
@@ -155,7 +155,7 @@ branch_08030b66: \n\
 /* 08030b8a */ BL func_0800c3b8 \n\
 /* 08030b8e */ LSLS R0, R0, 0x10 \n\
 /* 08030b90 */ LSRS R0, R0, 0x10 \n\
-/* 08030b92 */ LDR R3, =D_088e9f98 \n\
+/* 08030b92 */ LDR R3, =(D_088e9f78 + 0x20) \n\
 /* 08030b94 */ LDR R1, =D_088e9f18 \n\
 /* 08030b96 */ STR R1, [SP] \n\
 /* 08030b98 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\

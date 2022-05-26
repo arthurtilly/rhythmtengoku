@@ -97,7 +97,7 @@ branch_0801a248: \n\
 /* 0801a266 */ BL func_08005124 \n\
 /* 0801a26a */ LDR R1, [R6] \n\
 /* 0801a26c */ STR R0, [R1] \n\
-/* 0801a26e */ LDR R1, =D_06017800 \n\
+/* 0801a26e */ LDR R1, =(VRAMBase + 0x17800) \n\
 /* 0801a270 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 0801a272 */ LSLS R2, R2, 0x4 \n\
 /* 0801a274 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\

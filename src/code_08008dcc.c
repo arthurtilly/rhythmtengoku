@@ -1,7 +1,7 @@
 #include "global.h"
 #include "code_08008dcc.h"
 
-#include "code_08001360.h"
+//#include "code_08001360.h" // Header was probably not included: u16 func_08001980(u16) read as s32(s32)
 
 static u32 D_030010f4;
 static u8 D_030010f8;

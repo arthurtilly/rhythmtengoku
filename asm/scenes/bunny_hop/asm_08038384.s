@@ -25,7 +25,7 @@ thumb_func_start func_08038384 \n\
 /* 080383ac */ ADDS R6, R6, R1 @ Set R6 to R6 + R1 \n\
 /* 080383ae */ LDR R1, [R6] \n\
 /* 080383b0 */ STR R1, [SP] \n\
-/* 080383b2 */ LDR R4, =D_03004b64 \n\
+/* 080383b2 */ LDR R4, =(D_03004b10 + 0x54) \n\
 /* 080383b4 */ STR R4, [SP, 0x4] \n\
 /* 080383b6 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080383b8 */ MOVS R2, 0x9 @ Set R2 to 0x9 \n\

@@ -2,16 +2,12 @@
 #include "src/code_08007468.h"
 #include "src/code_0800b3c8.h"
 #include "src/code_0800b778.h"
+#include "src/lib_0804c870.h"
 
 // For readability. !TODO - CHANGE/REMOVE
 #define gKarateManInfo D_030055d0->gameInfo.karateMan
 
 extern u16 D_03004afc;
-
-// !TODO
-extern void func_0804cebc(s32, s16, s8);
-extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
-extern void func_0804d770(s32, s16, u16);
 
 extern u32 D_088acc2c[];
 extern u32 D_088acc94[];
@@ -56,7 +52,7 @@ void func_080211e4(void) {
 #include "asm/scenes/karate_man/asm_08021210.s"
 
 void func_0802139c(u32 arg0, u32 arg1) {
-    func_08003eb8(D_089df1bc[arg0], D_06008000);
+    func_08003eb8(D_089df1bc[arg0], VRAMBase + 0x8000);
     func_0800e030(0);
     gKarateManInfo.unk32 = func_0800c3a4(arg1 + 1);
 }

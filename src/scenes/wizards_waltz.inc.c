@@ -229,7 +229,7 @@ u32 func_08044f94(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
 
 // [func_08044fc0] CUE Despawn
 void func_08044fc0(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
-    func_0800fc70(arg1->unk0);
+    func_0800fc70(arg1->unk0.u32);
 }
 
 
@@ -238,7 +238,7 @@ void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     u32 isTutorial;
 
     // Play animation: "sprout_grow"
-    func_08010064(arg1->unk0, D_08932d2c, 0, 1, 0x7f, 0);
+    func_08010064(arg1->unk0.u32, D_08932d2c, 0, 1, 0x7f, 0);
 
     // Cycle through frames of "girl_happy" if isTutorial flag is not set.
     isTutorial = gWizardsWaltzInfo.isTutorial;
@@ -268,9 +268,9 @@ void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     }
 
     // Play animation: "sprout_eaten"
-    func_08010064(arg1->unk0, D_08932cbc, 0, 1, 0x7f, 0);
+    func_08010064(arg1->unk0.u32, D_08932cbc, 0, 1, 0x7f, 0);
     // Unknown function.
-    func_0800ff44(arg1->unk0, temp);
+    func_0800ff44(arg1->unk0.u32, temp);
 
     // Cycle through frames of "girl_sad" if isTutorial flag is not set.
     isTutorial = gWizardsWaltzInfo.isTutorial;

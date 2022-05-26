@@ -16,10 +16,10 @@ branch_08034e52: \n\
 /* 08034e52 */ BL func_0800c3b8 \n\
 /* 08034e56 */ LSLS R0, R0, 0x10 \n\
 /* 08034e58 */ LSRS R0, R0, 0x10 \n\
-/* 08034e5a */ LDR R3, =D_088f40e0 \n\
+/* 08034e5a */ LDR R3, =(D_088f40a0 + 0x40) \n\
 /* 08034e5c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08034e5e */ STR R1, [SP] \n\
-/* 08034e60 */ LDR R1, =D_03004da4 \n\
+/* 08034e60 */ LDR R1, =(D_03004b10 + 0x254 + 0x40) \n\
 /* 08034e62 */ STR R1, [SP, 0x4] \n\
 /* 08034e64 */ MOVS R1, 0x14 @ Set R1 to 0x14 \n\
 /* 08034e66 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\

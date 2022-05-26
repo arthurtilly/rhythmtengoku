@@ -9,7 +9,7 @@ thumb_func_start func_080073b8 \n\
 /* 080073be */ BL func_0804ca80 \n\
 /* 080073c2 */ LDR R0, =mem_heap_alloc_id \n\
 /* 080073c4 */ BL func_0804ca94 \n\
-/* 080073c8 */ LDR R1, =D_03004f64 \n\
+/* 080073c8 */ LDR R1, =(D_03004b10 + 0x454) \n\
 /* 080073ca */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 080073cc */ MOVS R2, 0x64 @ Set R2 to 0x64 \n\
 /* 080073ce */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\

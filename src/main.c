@@ -79,7 +79,7 @@ void agb_main(void) {
 	
     // Clear VRAM
 	DmaFill32(3, 0, VRAMBase, 0x18000);
-	*(volatile u16*)PaletteRAMBase = 0x7FFF;
+	*(u16 *)PaletteRAMBase = 0x7FFF;
     
 	REG_DISPCNT = 0;
 	REG_IME = 0;

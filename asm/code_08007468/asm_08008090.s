@@ -27,7 +27,7 @@ thumb_func_start func_08008090 \n\
 /* 080080ba */ ANDS R0, R2 @ Set R0 to R0 & R2 \n\
 /* 080080bc */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 080080be */ STR R0, [SP, 0x4] \n\
-/* 080080c0 */ LDR R0, =D_03004b4c \n\
+/* 080080c0 */ LDR R0, =(D_03004b10 + 0x3c) \n\
 /* 080080c2 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 080080c4 */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 080080c6 */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
@@ -36,7 +36,7 @@ thumb_func_start func_08008090 \n\
 /* 080080cc */ ADD R8, R0 @ Add R0 to R8 \n\
  \n\
 branch_080080ce: \n\
-/* 080080ce */ LDR R1, =D_03004b50 \n\
+/* 080080ce */ LDR R1, =(D_03004b10 + 0x40) \n\
 /* 080080d0 */ MOV R9, R1 @ Set R9 to R1 \n\
 /* 080080d2 */ MOV R0, R10 @ Set R0 to R10 \n\
 /* 080080d4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

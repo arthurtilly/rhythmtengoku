@@ -6,7 +6,7 @@ thumb_func_start func_08007394 \n\
 /* 08007394 */ PUSH {LR} \n\
 /* 08007396 */ SUB SP, 0x4 \n\
 /* 08007398 */ LSLS R1, R1, 0x5 \n\
-/* 0800739a */ LDR R3, =D_03004b64 \n\
+/* 0800739a */ LDR R3, =(D_03004b10 + 0x54) \n\
 /* 0800739c */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 0800739e */ LSLS R2, R2, 0x5 \n\
 /* 080073a0 */ MOVS R3, 0x80 @ Set R3 to 0x80 \n\

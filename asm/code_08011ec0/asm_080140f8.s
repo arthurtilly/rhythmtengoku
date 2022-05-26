@@ -9,7 +9,7 @@ thumb_func_start func_080140f8 \n\
 /* 080140fe */ LDR R0, [R0] \n\
 /* 08014100 */ LSLS R1, R1, 0x10 \n\
 /* 08014102 */ ASRS R1, R1, 0x10 \n\
-/* 08014104 */ LDR R2, =D_03004b28 \n\
+/* 08014104 */ LDR R2, =(D_03004b10 + 0x18) \n\
 /* 08014106 */ ADDS R3, R2, 0x2 @ Set R3 to R2 + 0x2 \n\
 /* 08014108 */ BL func_0804db44 \n\
 /* 0801410c */ POP {R0} \n\

@@ -8,7 +8,7 @@ thumb_func_start func_08007014 \n\
 /* 08007018 */ LSLS R0, R0, 0x10 \n\
 /* 0800701a */ LSRS R3, R0, 0x10 \n\
 /* 0800701c */ ORRS R3, R0 @ Set R3 to R3 | R0 \n\
-/* 0800701e */ LDR R1, =D_03004b64 \n\
+/* 0800701e */ LDR R1, =(D_03004b10 + 0x54) \n\
 /* 08007020 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08007022 */ LSLS R2, R2, 0x3 \n\
 /* 08007024 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
