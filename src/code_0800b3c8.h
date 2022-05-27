@@ -2,8 +2,9 @@
 
 #include "global.h"
 
-//TODO: try to find any existing struct that is close enough, or rename properly
-struct arg {
+//TODO: move to types.h
+
+struct struct_0800b3c8 {
     u32 pad0;
     u32 unk4;
     u8 unk8;
@@ -27,10 +28,22 @@ struct arg {
     s16 (*unk38)(s32);
 };
 
-extern void func_0800b3c8(struct arg*);
-extern void func_0800b3e8(struct arg*);
-extern void func_0800b408(struct arg*, s16, u32);
-extern void func_0800b454(struct arg*, s32);
+
+struct struct_0800b71c_sub {
+    u8 unk0;
+    u32 unk1:10;
+    u32 unk4;
+};
+
+struct struct_0800b71c {
+    u8 unk0;
+    struct struct_0800b71c_sub *unk4;
+};
+
+extern void func_0800b3c8(struct struct_0800b3c8*);
+extern void func_0800b3e8(struct struct_0800b3c8*);
+extern void func_0800b408(struct struct_0800b3c8*, s16, u32);
+extern void func_0800b454(struct struct_0800b3c8*, s32);
 // extern ? func_0800b4d8(?);
 // extern ? func_0800b550(?);
 // extern ? func_0800b564(?);
@@ -40,7 +53,7 @@ extern u32 func_0800b60c(s32);
 // extern ? func_0800b698(?);
 // extern ? func_0800b6bc(?);
 // extern ? func_0800b6dc(?);
-// extern ? func_0800b71c(?);
+extern void func_0800b71c(struct struct_0800b71c*, u32, u32, u32);
 extern void func_0800b768();
 extern void func_0800b76c();
 extern void func_0800b770();

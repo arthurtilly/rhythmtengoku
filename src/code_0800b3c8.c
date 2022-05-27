@@ -13,24 +13,24 @@ static u16 D_0300130e;
 
 // Game Controlling Stuff
 
-void func_0800b3c8(struct arg* arg0) {
+void func_0800b3c8(struct struct_0800b3c8* arg0) {
     if (arg0 != NULL)
         func_0804d770(D_03005380, arg0->unk2A, 1);
 }
 
-void func_0800b3e8(struct arg* arg0) {
+void func_0800b3e8(struct struct_0800b3c8* arg0) {
     if (arg0 != NULL)
         func_0804d770(D_03005380, arg0->unk2A, 0);
 }
 
-void func_0800b408(struct arg* arg0, s16 arg1, u32 arg2) {
+void func_0800b408(struct struct_0800b3c8* arg0, s16 arg1, u32 arg2) {
     if (arg0 == NULL) return;
     func_0804db44(D_03005380, arg1, &arg0->unk22, &arg0->unk24);
     func_0804d5d4(D_03005380, arg1, arg0->unkA, arg2 * arg0->unk10 + arg0->unkC);
 }
 
 
-void func_0800b454(struct arg* arg0, s32 arg1) {
+void func_0800b454(struct struct_0800b3c8* arg0, s32 arg1) {
     s32 temp;
     u32 temp1;
     u32 temp2;
@@ -103,7 +103,23 @@ u32 func_0800b60c(s32 arg0) {
 
 #include "asm/code_0800b3c8/asm_0800b6dc.s"
 
-#include "asm/code_0800b3c8/asm_0800b71c.s"
+
+void func_0800b71c(struct struct_0800b71c *arg0, u32 arg1, u32 arg2, u32 arg3) {
+    struct struct_0800b71c_sub *sub = arg0->unk4;
+    
+    while(sub->unk0 != 0xff) { 
+        sub++;
+    }
+    sub->unk0 = arg1;
+    sub->unk1 = arg2;
+    sub->unk4 = arg3;
+    sub++;
+    sub->unk0 = 0xff;
+    sub->unk1 = 0;
+    sub->unk4 = 0;
+    arg0->unk0++;
+}
+
 
 void func_0800b768() {
     
