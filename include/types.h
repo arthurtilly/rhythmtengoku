@@ -45,9 +45,9 @@ struct struct_03004b10 {
     u16 unk4E;
     u16 unk50;
     u16 unk52;
-    u16 unk54[16][16];   // bg palette buffer, 03004b64
-    u16 unk254[0x100];   // obj palette buffer, 03004d64
-    u32 unk454[0x100];   // oam obj buffer, 03004f64
+    u16 unk54[16][16];   // BG Palette Buffer, 03004b64
+    u16 unk254[0x100];   // OBJ Palette Buffer, 03004d64
+    u32 unk454[0x100];   // OAM Buffer, 03004f64
 };
 
 struct struct_080179f4_sub {
@@ -100,7 +100,7 @@ struct struct_080179f4 {
 	u8 pad0C[0x3C];
 	s8 unk48;
 	u8 pad49[3];
-	u16 unk4C;
+	u16 unk4C; // Cue ticks 
 	u16 unk4E;
 	u8 pad50[4];
 	struct struct_030046a4_sub3 unk54;
@@ -111,7 +111,7 @@ struct struct_080179f4 {
 	u8 unk68;
 };
 
-typedef void (*struct_030046a4_sub_func)(struct struct_080179f4 *,s32 *,s32);
+typedef void (*struct_030046a4_sub_func)(struct struct_080179f4 *, struct struct_080179f4_sub *, s32);
 
 struct struct_030046a4_sub2 {
     u8 pad00[0x4];
@@ -195,12 +195,10 @@ struct struct_030053c0 {
 };
 
 
-// KarateManCue
-struct struct_030055d0_sub {
-    u16 unk0_b0:4;
-    u16 unk0_b4:1;
-    u16 unk0_b5:4;
-    //u16 unk0_b9:7;
+struct KarateManCue {
+    u16 unk0_b0:4; // 1 if object was hit in any way
+    u16 unk0_b4:1; // 1 if missed?
+    u16 unk0_b5:4; // Object Type
     u16 unk2;
     s16 unk4;
     s16 unk6;
@@ -218,7 +216,7 @@ struct struct_030055d0_sub {
     s16 unk2A;
     u8 unk2C;
     u8 unk2D;
-    u16 unk2E;
+    s16 unk2E;
 };
 
 
@@ -245,9 +243,9 @@ struct KarateManInfo {
     s16 unk20;
     u32 unk24;
     s16 unk28;
-    u8 unk2A;
+    u8 unk2A; // Tutorial Button Flag 
     s16 unk2C;
-    s16 unk2E;
+    s16 unk2E; // Tutorial Text Entity
     u16 unk30;
     u16 unk32;
     u8 unk34;
