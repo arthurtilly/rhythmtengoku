@@ -196,27 +196,26 @@ struct struct_030053c0 {
 
 
 struct KarateManCue {
-    u16 unk0_b0:4; // 1 if object was hit in any way
-    u16 unk0_b4:1; // 1 if missed?
-    u16 unk0_b5:4; // Object Type
-    u16 unk2;
-    s16 unk4;
-    s16 unk6;
-    s8 unk8;
-    s8 unk9;
-    u16 unkA;
-    s32 unkC;
-    s32 unk10;
-    s32 unk14;
-    u32 unk18;
-    u32 unk1C;
-    u32 unk20;
-    u32 unk24;
-    u16 unk28;
-    s16 unk2A;
-    u8 unk2C;
-    u8 unk2D;
-    s16 unk2E;
+    u16 isHit:4;   // Flag:   Object Hit
+    u16 miss:1;    // Flag:   Missed
+    u16 object:4;  // Value:  Object 
+    u16 unk2;      // Unused
+    s16 objects;   // Entity: Objects
+    s16 shadow;    // Entity: Object Shadow
+    s8 unk8;       // Value:  unk8 (Object Scale over time?)
+    s8 unk9;       // Value:  unk9 (Shadow Scale over time?)
+    s32 unkC;      // Value:  Object X Position 
+    s32 unk10;     // Value:  Object Y Position
+    s32 unk14;     // Value:  Object Y Land Position
+    u32 unk18;     // Value:  Hit Object X Movement
+    u32 unk1C;     // Value:  Hit Object Y Movement
+    u32 unk20;     // Value:  unk20
+    u32 unk24;     // Value:  Object Gravity
+    u16 unk28;     // Value:  Object Distance?
+    s16 unk2A;     // Value:  Object Scale
+    u8 unk2C;      // Value:  Object Angle 
+    u8 unk2D;      // Value:  Object Rotation
+    s16 unk2E;     // Value:  unk2E
 };
 
 
@@ -247,7 +246,7 @@ struct KarateManInfo {
     s16 tutorialSkip;      // Entity:  Tutorial Skip 
     s16 tutorialText;      // Entity:  Tutorial Text
     u16 tutorialObjects;   // Value:   Tutorial Objects Counter
-    u16 bgFace;     // Counter: BG Face 
+    u16 bgFace;     // Counter: BG Face Time on BG
     u8 serious;     // Value:   "Serious Mode" Flag
     u8 seriousStop; // Value:   "Serious Mode" End Flag
     u8 expression;  // Value:   Expression

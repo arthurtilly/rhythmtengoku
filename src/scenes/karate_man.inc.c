@@ -26,8 +26,8 @@ extern u32 D_088acf04[]; // Animation: "cue_text"
 extern u32 D_088acf2c[]; // Animation: "tutorial_button"
 extern u32 D_088acf44[]; // Animation: "tutorial_skip"
 extern u32 D_088acf54[]; // Animation: "tutorial_text"
-extern u32 D_088acf7c[]; // Animation: "joe_punch_high_face"
-extern u32 D_088acfc4[]; // Animation: "joe_punch_low_face"
+extern u32 D_088acf7c[]; // Animation: "joe_punch_high_face" (Remix 8 face)
+extern u32 D_088acfc4[]; // Animation: "joe_punch_low_face" (Remix 8 face)
 
 // Sound Effects:
 extern const struct SequenceData s_f_boxing_score_reset_seqData;
@@ -122,7 +122,7 @@ void func_08021210(u32 ver) {
     gKarateManInfo.tutorialObjects = 0;
     func_08017338(1, 0);
 
-    // Initialise BG Face ticks.
+    // Initialise BG Face.
     if (gKarateManInfo.version != 0) {
         if (gKarateManInfo.version == 1) {
             gKarateManInfo.bgFace = 0;
@@ -231,6 +231,8 @@ void func_08021544(u8 expression) {
 
 // MAIN - Update
 void func_08021554(void) {
+
+    // Update Tutorial.
     if (gKarateManInfo.tutorialButtonFlag) {
         if (D_03004afc & 1) {
             func_0804d770(D_03005380, gKarateManInfo.tutorialButton, 0);
@@ -239,12 +241,16 @@ void func_08021554(void) {
             gKarateManInfo.tutorialButtonFlag = 0;
         }
     }
+
+    // Update variables.
     func_08021e58(&gKarateManInfo.joe);
     if (gKarateManInfo.version) {
-        if (gKarateManInfo.version == 1) { // Decrement BG Face ticks if version is BG Faces
+        if (gKarateManInfo.version == 1) { // Decrement BG Face if version is BG Face
             func_080213e4();
         }
     }
+
+    // Update text.
     func_0800a914(gKarateManInfo.unk24);
 }
 
@@ -264,25 +270,25 @@ void func_0802160c(struct struct_080179f4 *arg0) {
     struct struct_080179f4 *temp;
     struct KarateManCue *temp1;
 
-    func_08018124(&temp, &temp1);
+    func_08018124(&temp, &temp1); // Initialise temps
     while (temp) {
         if (temp != arg0) {
             temp1->unk2E++;
         }
-        func_08018138(temp, &temp, &temp1);
+        func_08018138(temp, &temp, &temp1); // Update temps
     }
 }
 
 
 // CUE - Spawn
 void func_08021644(struct struct_080179f4 *arg0, struct KarateManCue *cue, u32 object) {
-    cue->unk0_b0 = 0;
+    cue->isHit = 0;
     cue->unk8 = func_0800c42c();
-    cue->unk4 = func_0804d160(D_03005380, D_088acc3c, 0, 0x9c, 0x34, 0x4800, 0, 0, 0);
-    func_08007468(cue->unk4, cue->unk8);
+    cue->objects = func_0804d160(D_03005380, D_088acc3c, 0, 0x9c, 0x34, 0x4800, 0, 0, 0);
+    func_08007468(cue->objects, cue->unk8);
     cue->unk9 = func_0800c42c();
-    cue->unk6 = func_0804d160(D_03005380, D_088acc6c, 0, 0x9c, 0x85, 0x4a00, 0, 0, 0);
-    func_08007468(cue->unk6, cue->unk9);
+    cue->shadow = func_0804d160(D_03005380, D_088acc6c, 0, 0x9c, 0x85, 0x4a00, 0, 0, 0);
+    func_08007468(cue->shadow, cue->unk9);
     cue->unk1C = 0;
     cue->unk18 = 0;
     cue->unk24 = 0;
@@ -291,9 +297,9 @@ void func_08021644(struct struct_080179f4 *arg0, struct KarateManCue *cue, u32 o
     cue->unk2E = 0;
     cue->unk2D = 0;
     cue->unk2C = 0;
-    cue->unk0_b4 = 0;
-    cue->unk0_b5 = object;
-    func_0804d8f8(D_03005380, cue->unk4, D_088acc3c, object, 0, 0, 0);
+    cue->miss = 0;
+    cue->object = object;
+    func_0804d8f8(D_03005380, cue->objects, D_088acc3c, object, 0, 0, 0);
     func_0802160c(arg0);
 }
 
@@ -303,22 +309,22 @@ void func_08021740(struct KarateManCue *cue) {
     s32 temp;
     s32 temp1;
     
-    if (cue->unk28 < 0x80) {
-        func_0804d770(D_03005380, cue->unk4, 0);
-        func_0804d770(D_03005380, cue->unk6, 0);
+    if (cue->unk28 < 0x80) { // Some distance check
+        func_0804d770(D_03005380, cue->objects, 0);
+        func_0804d770(D_03005380, cue->shadow, 0);
     }
     temp = cue->unkC;
     temp1 = cue->unk10;
-    func_0804d55c(D_03005380, cue->unk4, (temp << 8) >> 0x10, (temp1 << 8) >> 0x10, (u16)(0x4700 + cue->unk28 + cue->unk2E));
-    func_0804d5d4(D_03005380, cue->unk6, (temp << 8) >> 0x10, (s16)cue->unk14);
+    func_0804d55c(D_03005380, cue->objects, (temp << 8) >> 0x10, (temp1 << 8) >> 0x10, (u16)(0x4700 + cue->unk28 + cue->unk2E));
+    func_0804d5d4(D_03005380, cue->shadow, (temp << 8) >> 0x10, (s16)cue->unk14);
     func_08007498(cue->unk8, cue->unk2A, (s8)cue->unk2C);
     func_08007498(cue->unk9, cue->unk2A, 0);
-    func_0804d770(D_03005380, cue->unk4, 1);
-    func_0804d770(D_03005380, cue->unk6, 1);
+    func_0804d770(D_03005380, cue->objects, 1);
+    func_0804d770(D_03005380, cue->shadow, 1);
 }
 
 
-// SUB - Update Cue Values
+// SUB - Update Hit Object
 void func_080217ec(struct KarateManCue *cue) {
     u32 temp;
     u32 temp1;
@@ -331,26 +337,29 @@ void func_080217ec(struct KarateManCue *cue) {
 }
 
 
-// SUB - Update Object Distance
+// SUB - Update Not Hit Object
 void func_08021818(struct KarateManCue *cue) {
-    s32 temparg = cue->unk28;
+    s32 temparg = cue->unk28; // Distance?
     s32 temp;
     s32 temp1;
     s32 temp2;
-    s32 temp3;
-    s32 temp4;
+    s32 temp3; // s24_8
+    s32 temp4; // s24_8
 
+    // Calculate the Y position
     temp = temparg - 0x100;
     temp1 = 0x51;
     temp1 -= (temp * temp1 * temp) >> 0x10;
     temp2 = 0x35 - temp1;
-    temp3 = func_08007b80(0x2400, temparg) + 120;
-    temp4 = func_08007b80(temp2 << 8, temparg) + 80;
+
+    temp3 = func_08007b80(0x2400, temparg) + 120;    // Object's X Position
+    temp4 = func_08007b80(temp2 << 8, temparg) + 80; // Object's Y Position
     cue->unkC = temp3 << 8;
     cue->unk10 = temp4 << 8;
     cue->unk14 = func_08007b80(0x3500, temparg) + 80;
-    cue->unk2A = Div(0x10000, temparg);
+    cue->unk2A = Div(0x10000, temparg);  // Calculate Scale
 }
+
 
 // CUE - Behaviour
 u32 func_08021888(u32 arg0, struct KarateManCue *cue, u32 arg2, u32 arg3) {
@@ -359,23 +368,23 @@ u32 func_08021888(u32 arg0, struct KarateManCue *cue, u32 arg2, u32 arg3) {
     u32 zero;
 
     if (arg2 > func_0800c3a4(0x78)) {
-        return 1;
+        return 1; // Cue is over
     }
     
     zero = 0;
-    switch (cue->unk0_b0) {
+    switch (cue->isHit) {
         case 0: // Object wasn't hit
             temp = cue->unk28 = Div(arg2 << 8, arg3);
             if (temp > 0x200) { // Object is on the floor
-                cue->unk0_b0 = 1;
+                cue->isHit = 1;
                 cue->unk2C += func_08001980(0x10);
-                func_080220c4(); // Reset Flow Meter
+                func_080220c4(); // Reset Flow
                 func_08002634(&s_f_boxing_land_seqData);
                 return 0;
             }
             if (temp > 0x180) { // Object is out of player's range
-                if ((s16)cue->unk0_b4 <= 0) {
-                    cue->unk0_b4 = 1;
+                if ((s16)cue->miss <= 0) {
+                    cue->miss = 1;
                     joe->miss = func_0800c3a4(0x24);
                 }
             }
@@ -402,8 +411,8 @@ u32 func_08021888(u32 arg0, struct KarateManCue *cue, u32 arg2, u32 arg3) {
 
 // CUE - Despawn 
 void func_08021974(u32 arg0, struct KarateManCue *cue) {
-    func_0804d504(D_03005380, cue->unk4);
-    func_0804d504(D_03005380, cue->unk6);
+    func_0804d504(D_03005380, cue->objects);
+    func_0804d504(D_03005380, cue->shadow);
     func_080021b8(cue->unk8);
     func_080021b8(cue->unk9);
 }
@@ -448,7 +457,7 @@ void func_08021a60(struct struct_080179f4 *arg0, struct KarateManCue *cue) {
 
     isBgFaceVer = karateManStruct->version == 1;
     isHigh = 0;
-    cue->unk0_b0 = 1;
+    cue->isHit = 1;
 
     // "Serious Mode"
     if (gKarateManInfo.serious) {
@@ -468,7 +477,7 @@ void func_08021a60(struct struct_080179f4 *arg0, struct KarateManCue *cue) {
 
     if (!isHigh) {
         // Low Flow
-        switch (cue->unk0_b5) {
+        switch (cue->object) {
             case 1:
             case 3: // Rock, Bomb 
                 cue->unk18 = 0;
@@ -521,7 +530,7 @@ void func_08021a60(struct struct_080179f4 *arg0, struct KarateManCue *cue) {
         karateManStruct->joe.isNotBeat = TRUE;
         func_0804d8f8(D_03005380, joe->joe, anim, 0, 1, 0x7f, 0);
         func_0804d160(D_03005380, D_088accfc, 0, 0x9e, 0x36, 0x4f00, 1, 0, 3);
-        switch (cue->unk0_b5) {
+        switch (cue->object) {
             case 1: // Rock
                 joe->smirk = func_0800c3a4(0x24);
                 func_08002634(&s_f_boxing_kansei_seqData);
@@ -559,7 +568,7 @@ void func_08021d38(struct struct_080179f4 *arg0, struct KarateManCue *cue) {
     struct KarateManJoe *joe = &gKarateManInfo.joe;
 
     isBgFaceVer = gKarateManInfo.version == 1;
-    cue->unk0_b0 = 1;
+    cue->isHit = 1;
     cue->unk18 = 0x40;
     cue->unk1C = -0x200;
     cue->unk24 = 0x20;
