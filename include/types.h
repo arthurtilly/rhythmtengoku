@@ -222,35 +222,35 @@ struct KarateManCue {
 
 // Game engine structs
 
-struct KarateManInfoSubstruct {
-	u16 unk0:4;
-    u8 pad01[3];
-    s16 unk4;
-    u16 unk6;
-    u16 unk8;
-    u16 unkA;
-    u16 unkC;
+struct KarateManJoe {
+	u16 isNotBeat:4; // Value:  Beat Animation Flag (1 when not in Beat Animation)
+    u16 unk2;        // Unused
+    s16 joe;         // Entity:  Joe
+    u16 barely;      // Counter: Barely Animation
+    u16 miss;        // Counter: Miss Animation
+    u16 smirk;       // Counter: Smirk Animation
+    u16 happy;       // Counter: Happy Animation
 };
 
 struct KarateManInfo {
-    u8 unk0;
-	struct KarateManInfoSubstruct unk_substruct;
-    s16 unk14;
-    u8 unk16;
-    u8 unk17;
-    u8 unk18;
-    u8 *unk1C;
-    s16 unk20;
-    u32 unk24;
-    s16 unk28;
-    u8 unk2A; // Tutorial Button Flag 
-    s16 unk2C;
-    s16 unk2E; // Tutorial Text Entity
-    u16 unk30;
-    u16 unk32;
-    u8 unk34;
-    u8 unk35;
-    u8 unk36;
+    u8 version;     // 0 = Karate Man; 1 = Karate Man (BG Faces); 2 = Karate Man ("Serious Mode"); 3 = Karate Man 2
+	struct KarateManJoe joe;
+    s16 flowBar;    // Entity:  Flow Bar
+    u8 flow;        // Value:   Flow
+    u8 flowBarFlag; // Value:   Flow Bar Flag
+    u8 bg;          // Value:   BG Byte 
+    u8 *bgPalIndex; // Pointer: BG Palette Index Table 
+    s16 cueText;    // Entity:  Cue Text
+    u32 unk24;      // Value:   unk24
+    s16 tutorialButton;    // Entity: Tutorial Button 
+    u8 tutorialButtonFlag; // Value:  Tutorial Button Flag 
+    s16 tutorialSkip;      // Entity:  Tutorial Skip 
+    s16 tutorialText;      // Entity:  Tutorial Text
+    u16 tutorialObjects;   // Value:   Tutorial Objects Counter
+    u16 bgFace;     // Counter: BG Face 
+    u8 serious;     // Value:   "Serious Mode" Flag
+    u8 seriousStop; // Value:   "Serious Mode" End Flag
+    u8 expression;  // Value:   Expression
 };
 
 
