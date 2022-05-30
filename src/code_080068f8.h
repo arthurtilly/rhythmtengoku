@@ -1,5 +1,8 @@
 #pragma once
 
+#include "global.h"
+#include "data/data_08936b54.h"
+
 // extern ? func_080068f8(?);
 // extern ? func_0800694c(?);
 // extern ? func_0800699c(?);
@@ -10,10 +13,10 @@
 // extern ? func_08006ac8(?);
 // extern ? func_08006b1c(?);
 // extern ? func_08006b30(?);
-// extern ? func_08006bb4(?);
-// extern ? func_08006c08(?);
-// extern ? func_08006ca4(?);
-// extern ? func_08006ce8(?);
+extern struct unk_struct_08006bb4 *func_08006bb4(struct unk_struct_08006bb4_init *);
+extern u32 func_08006c08(struct unk_struct_08006bb4 *);
+extern struct unk_struct_08006ca4 *func_08006ca4(struct unk_struct_08006ca4_init *);
+extern u32 func_08006ce8(struct unk_struct_08006ca4 *);
 // extern ? func_08006d80(?);
 // extern ? func_08006da8(?);
 // extern ? func_08006e00(?);

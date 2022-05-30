@@ -1,4 +1,3 @@
-#include "global.h"
 #include "code_08011ec0.h"
 
 // Might need more splitting

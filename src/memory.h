@@ -1,5 +1,7 @@
 #pragma once
 
+#include "global.h"
+
 #define SAVE_BUFFER_SIZE 0x3B04 // might need renaming
 
 extern s32 *D_030046a8;

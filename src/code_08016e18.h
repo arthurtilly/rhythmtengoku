@@ -1,5 +1,7 @@
 #pragma once
 
+#include "global.h"
+
 // extern ? func_08016e18(?);
 // extern ? func_08016e54(?);
 // extern ? func_08016e64(?);

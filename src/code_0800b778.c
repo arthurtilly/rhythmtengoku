@@ -1,6 +1,5 @@
-#include "global.h"
-#include "code_08003980.h"
 #include "code_0800b778.h"
+#include "code_08003980.h"
 #include "src/lib_0804c870.h"
 
 // Could use better split

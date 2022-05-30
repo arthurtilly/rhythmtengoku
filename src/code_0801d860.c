@@ -1,6 +1,5 @@
-#include "global.h"
-#include "code_08003980.h"
 #include "code_0801d860.h"
+#include "code_08003980.h"
 
 // Might need more splitting
 

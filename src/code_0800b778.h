@@ -1,5 +1,7 @@
 #pragma once
 
+#include "global.h"
+
 struct ScaledEntity {
     s16 unk0;        // Standard Entity
     u8  unk2;        // func_0800c42c()

@@ -271,6 +271,7 @@ struct unk_struct_080079bc *func_080079bc(struct unk_struct_080079bc_init *arg0)
     return temp;
 }
 
+// Linear movement with a vertical negative sine wave offset
 // D_08936c04 function 2
 u32 func_08007a14(struct unk_struct_08007aa0 *arg0) {
     s32 totalFrames = arg0->totalFrames;
@@ -278,10 +279,11 @@ u32 func_08007a14(struct unk_struct_08007aa0 *arg0) {
     u32 reachedEnd = (++arg0->framesPassed >= totalFrames);
     
     s32 framesPassed = arg0->framesPassed;
-    s24_8 temp_r8 = lerp(0, INT_TO_FIXED(8), framesPassed, totalFrames);
+    // Lerp from 0 to pi in terms of sine angle
+    s32 temp_r8 = lerp(0, 0x800, framesPassed, totalFrames);
     
     u16 xPos = arg0->startXPos + lerp(0, arg0->dx, framesPassed, totalFrames);
-    u16 yPos = arg0->startYPos + lerp(0, arg0->dy, framesPassed, totalFrames) - FIXED_TO_INT(func_080019a4(temp_r8) * arg0->unkA);
+    u16 yPos = arg0->startYPos + lerp(0, arg0->dy, framesPassed, totalFrames) - FIXED_TO_INT(func_080019a4(temp_r8) * arg0->amplitude);
 
     func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
     return reachedEnd;
@@ -301,7 +303,7 @@ struct unk_struct_08007aa0 *func_08007aa0(struct unk_struct_08007aa0_init *arg0)
     temp->startYPos = arg0->startY;
     temp->dx = arg0->destX - arg0->startX;
     temp->dy = arg0->destY - arg0->startY;
-    temp->unkA = arg0->unkA;
+    temp->amplitude = arg0->amplitude;
     temp->framesPassed = 0;
     temp->totalFrames = arg0->totalFrames;
 
@@ -403,12 +405,16 @@ u8 *func_080081a8(u8 *arg1, u8 *arg2) {
 
 #include "asm/code_08007468/asm_08008370.s"
 
+// D_08936c7c function 1
 #include "asm/code_08007468/asm_08008420.s"
 
+// D_08936c7c function 2
 #include "asm/code_08007468/asm_08008464.s"
 
+// D_08936c8c function 1
 #include "asm/code_08007468/asm_0800852c.s"
 
+// D_08936c8c function 2
 #include "asm/code_08007468/asm_08008548.s"
 
 #include "asm/code_08007468/asm_0800856c.s"
@@ -431,8 +437,10 @@ u8 *func_080081a8(u8 *arg1, u8 *arg2) {
 
 #include "asm/code_08007468/asm_08008720.s"
 
+// D_08936c9c function 1
 #include "asm/code_08007468/asm_0800873c.s"
 
+// D_08936c9c function 2
 #include "asm/code_08007468/asm_08008758.s"
 
 #include "asm/code_08007468/asm_080087b4.s"

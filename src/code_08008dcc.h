@@ -1,5 +1,7 @@
 #pragma once
 
+#include "global.h"
+
 #define UNK_SIZE_210 0x210
 
 extern void func_08008dcc(s8 arg0[], u32 length);

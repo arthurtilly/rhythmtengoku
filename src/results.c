@@ -1,4 +1,3 @@
-#include "global.h"
 #include "results.h"
 
 // Might need better splitting

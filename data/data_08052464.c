@@ -319,7 +319,7 @@ const char text_cosmic_dance_try_again[] = "お、おわりだー！！";
 // from deep space.
 // We come... in style.
 // (No practice)
-const char text_cosmic_dance_description[] = "宇宙を代表\する\n\
+const char text_cosmic_dance_description[] = "宇宙を代表\\する\n\
 ダンサーたち！\n\
 キレた動きに\n\
 くぎづけです！！";
@@ -767,7 +767,7 @@ const char text_ninja_bodyguard_try_again[] = "ゲッ！ トノが きぜつしてる！！";
 // challenge with both
 // of your hands. (NP)
 const char text_ninja_bodyguard_description[] = "敵襲(てきしゅう)だ！\n\
-十\字ボタンとAボタンで応戦(おうせん)だ！\n\
+十\\字ボタンとAボタンで応戦(おうせん)だ！\n\
 フジヤマ（ふじさん）！！";
 
 // Ninja Bodyguard
@@ -962,7 +962,7 @@ const char text_polyrhythm_try_again[] = "赤いモノ、量産は たいへんだなぁ…";
 // different buttons
 // at the same time! It
 // should be easy... (NP)
-const char text_polyrhythm_description[] = "十\字ボタンとＡボタンの同時押しをマスターだ！けっこうカンタンだ。たぶん…";
+const char text_polyrhythm_description[] = "十\\字ボタンとＡボタンの同時押しをマスターだ！けっこうカンタンだ。たぶん…";
 
 // Polyrhythm
 const char text_polyrhythm_name[] = "ポリリズム";

@@ -1,4 +1,3 @@
-#include "global.h"
 #include "main.h"
 #include "memory.h"
 #include "code_08003980.h"

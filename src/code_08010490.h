@@ -1,5 +1,7 @@
 #pragma once
 
+#include "global.h"
+
 struct struct_08011a18 {
 	u8 unk0;
 	u8 unk1[10];

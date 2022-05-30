@@ -1,5 +1,7 @@
 #pragma once
 
+#include "global.h"
+
 // Sneaky Spirits
 
 extern void func_0801ee98(u32);     // [func_0801ee98] ENGINE Func_00 - Appear At Position

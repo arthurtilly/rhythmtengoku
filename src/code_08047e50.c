@@ -1,4 +1,3 @@
-#include "global.h"
 #include "code_08047e50.h"
 
 // Misc MIDI playing functions?

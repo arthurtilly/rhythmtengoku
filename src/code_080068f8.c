@@ -1,4 +1,3 @@
-#include "global.h"
 #include "code_080068f8.h"
 
 // Can be better split
@@ -33,10 +32,59 @@ static s32 D_03000eac; // unknown type, unknown if exists
 #include "asm/code_080068f8/asm_08006b30.s"
 
 // D_08936b84 function 1
-#include "asm/code_080068f8/asm_08006bb4.s"
+struct unk_struct_08006bb4 *func_08006bb4(struct unk_struct_08006bb4_init *arg0) {
+    u8 *temp1;
+    struct unk_struct_08006bb4 *temp;
+
+    if (arg0->unk1C_1) {
+        return (void *)-1;
+    }
+    
+    temp1 = arg0->unk18;
+    temp = mem_heap_alloc(sizeof(struct unk_struct_08006bb4));
+    temp->unk0 = arg0;
+    temp->unk6 = temp->unkA = temp1[0] / 2;
+    temp->unk8 = temp->unkC = temp1[1] / 2;
+    func_0800699c(arg0);
+    func_08006b30(temp);
+    arg0->unk1C_1 = 2;
+
+    return temp;
+}
 
 // D_08936b84 function 2
-#include "asm/code_080068f8/asm_08006c08.s"
+u32 func_08006c08(struct unk_struct_08006bb4 *arg0) {
+    struct unk_struct_08006bb4_init *temp_r5 = arg0->unk0;
+    u8 *temp_r6 = temp_r5->unk18;
+    u32 temp1, temp2;
+
+    if (arg0->unk6 > 0) {
+        arg0->unk6--;
+    }
+    if (arg0->unkA < temp_r6[0]) {
+        arg0->unkA++;
+    }
+    if (arg0->unk8 > 0) {
+        arg0->unk8--;
+    }
+    if (arg0->unkC < temp_r6[1]) {
+        arg0->unkC++;
+    }
+    
+    func_080069d4(temp_r5);
+    func_08006b30(arg0);
+
+    temp1 = arg0->unkA - arg0->unk6;
+    temp2 = arg0->unkC - arg0->unk8;
+    if ((temp1 == temp_r6[0]) && (temp2 == temp_r6[1])) {
+        temp_r5->unk1C_1 = 1;
+        if (temp_r5->unk20 != NULL) {
+            temp_r5->unk20(temp_r5, temp_r5->unk24);
+        }
+        return TRUE;
+    }
+    return FALSE;
+}
 
 // D_08936b94 function 1
 #include "asm/code_080068f8/asm_08006ca4.s"

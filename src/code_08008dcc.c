@@ -1,4 +1,3 @@
-#include "global.h"
 #include "code_08008dcc.h"
 
 //#include "code_08001360.h" // Header was probably not included: u16 func_08001980(u16) read as s32(s32)

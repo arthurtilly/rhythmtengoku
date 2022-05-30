@@ -1044,6 +1044,8 @@ SECTIONS {
         build/bin/bindata_0890a3c4.bin.o(.rodata*);
         build/bin/bindata_08932444.bin.o(.rodata*);
 		build/bin/bindata_08935fac.bin.o(.rodata*);
+        build/data/data_08936b54.c.o(.rodata*);
+        build/bin/bindata_08936cac.bin.o(.rodata*);
         build/bin/bindata_089ccbc0.bin.o(.rodata*);
         build/data/beatscript_data_089ce344.c.o(.rodata*);
         build/bin/bindata_089cea24.bin.o(.rodata*);

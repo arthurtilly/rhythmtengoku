@@ -1,4 +1,3 @@
-#include "global.h"
 #include "memory.h"
 
 asm(".include \"include/gba.inc\"");//Temporary

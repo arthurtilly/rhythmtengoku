@@ -1,5 +1,7 @@
 #pragma once
 
+#include "global.h"
+
 typedef u32 (*D_0300009c_func)(void);
 
 extern u16 D_03004ac0;

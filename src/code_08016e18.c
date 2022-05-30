@@ -1,4 +1,3 @@
-#include "global.h"
 #include "code_08016e18.h"
 #include "code_08003980.h"
 

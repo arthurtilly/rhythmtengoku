@@ -1,5 +1,8 @@
 #pragma once
 
+#include "global.h"
+#include "data/data_08936b54.h"
+
 struct struct_03004ad0 {
     u32 unk0;
     u32 *unk4;
@@ -78,8 +81,8 @@ extern u32 *func_08004c0c(u32 *, char **, u32, u32);
 // extern ? func_08004cac(?);
 // extern ? func_08004ccc(?);
 // extern ? func_08004d44(?);
-// extern ? func_08004da0(?);
-// extern ? func_08004dc0(?);
+extern struct unk_struct_08004da0 *func_08004da0(struct unk_struct_08004da0_init *arg0);
+extern u32 func_08004dc0(struct unk_struct_08004da0 *arg0);
 // extern ? func_08004e60(?);
 // extern ? func_08004e88(?);
 // extern ? func_08004eac(?);
@@ -95,15 +98,15 @@ extern u32 *func_08004c0c(u32 *, char **, u32, u32);
 // extern ? func_08005328(?);
 // extern ? func_0800536c(?);
 // extern ? func_08005424(?);
-// extern ? func_080054b0(?);
-// extern ? func_080054f0(?);
+extern struct unk_struct_080054b0 *func_080054b0(struct unk_struct_080054b0_init *arg0);
+extern u32 func_080054f0(struct unk_struct_080054b0 *arg0);
 // extern ? func_080055fc(?);
 // extern ? func_08005640(?);
 // extern ? func_0800568c(?);
 // extern ? func_08005814(?);
 // extern ? func_0800584c(?);
-// extern ? func_08005858(?);
-// extern ? func_08005878(?);
+extern struct unk_struct_08005858 *func_08005858(struct unk_struct_08005858_init *arg0);
+extern u32 func_08005878(struct unk_struct_08005858 *arg0);
 // extern ? func_080058b0(?);
 // extern ? func_080058dc(?);
 // extern ? func_0800598c(?);

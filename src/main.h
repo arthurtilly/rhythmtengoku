@@ -1,5 +1,7 @@
 #pragma once
 
+#include "global.h"
+
 struct Scene {
 	void (*initFunc)(void *);
 	void *initParam;

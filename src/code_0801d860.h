@@ -1,5 +1,7 @@
 #pragma once
 
+#include "global.h"
+
 extern void func_0801d860(u32);
 extern void func_0801d86c(u32);
 extern u32 func_0801d8d8(void);
