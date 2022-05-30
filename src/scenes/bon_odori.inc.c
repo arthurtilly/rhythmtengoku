@@ -85,7 +85,7 @@ void func_08020834(void) {
 void func_0802085c(void) {
     func_0800c604(0);
     func_08017578();
-    D_03004b10.unk54[0xc2] = 0x7C00;
+    D_03004b10.unk54[0xc][2] = 0x7C00;
 }
 
 void func_08020880(void) {

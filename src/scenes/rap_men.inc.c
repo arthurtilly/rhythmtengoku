@@ -14,7 +14,7 @@ extern u32 *D_089e6518[];   // GFX Struct Index
 extern u8  D_089e6520;
 extern u8  D_089e6525;
 
-const struct SeqData *D_089e652c[2][2];
+extern const struct SequenceData *D_089e652c[2][2];
 extern u32 D_089e65f0[];
 
 extern const struct SequenceData s_RC_seqData;

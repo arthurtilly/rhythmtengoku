@@ -397,7 +397,7 @@ void func_0801f8d0(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
         yVel = 0x44;
     }
 
-    temp = func_0804ddb0(D_03005380, gSneakySpiritsInfo.ghostHit, 2);
+    temp = (u16)func_0804ddb0(D_03005380, gSneakySpiritsInfo.ghostHit, 2);
     func_0804cebc(D_03005380, gSneakySpiritsInfo.ghostHit, func_08001980(temp));
     func_0804d770(D_03005380, gSneakySpiritsInfo.ghostHit, 1);
     temp = func_0800e3e4(gSneakySpiritsInfo.ghostHit, 0x64, 0x4c, xVel, yVel, (u16) duration);

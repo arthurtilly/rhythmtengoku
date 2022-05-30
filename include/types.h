@@ -45,9 +45,9 @@ struct struct_03004b10 {
     u16 unk4E;
     u16 unk50;
     u16 unk52;
-    u16 unk54[0x100];   // bg palette buffer, 03004b64
-    u16 unk254[0x100];  // obj palette buffer, 03004d64
-    u32 unk454[0x100];  // oam obj buffer, 03004f64
+    u16 unk54[16][16];   // BG Palette Buffer, 03004b64
+    u16 unk254[0x100];   // OBJ Palette Buffer, 03004d64
+    u32 unk454[0x100];   // OAM Buffer, 03004f64
 };
 
 struct struct_080179f4_sub {
@@ -100,7 +100,7 @@ struct struct_080179f4 {
 	u8 pad0C[0x3C];
 	s8 unk48;
 	u8 pad49[3];
-	u16 unk4C;
+	u16 unk4C; // Cue ticks 
 	u16 unk4E;
 	u8 pad50[4];
 	struct struct_030046a4_sub3 unk54;
@@ -111,7 +111,7 @@ struct struct_080179f4 {
 	u8 unk68;
 };
 
-typedef void (*struct_030046a4_sub_func)(struct struct_080179f4 *,s32 *,s32);
+typedef void (*struct_030046a4_sub_func)(struct struct_080179f4 *, struct struct_080179f4_sub *, s32);
 
 struct struct_030046a4_sub2 {
     u8 pad00[0x4];
@@ -195,53 +195,61 @@ struct struct_030053c0 {
 };
 
 
-struct struct_030055d0_sub {
-    u8 unk0:4;
-    u8 pad01[3];
-    s16 unk4;
-    u16 unk6;
-    u16 unk8;
-    u16 unkA;
-    u16 unkC;
-    u8 pad0E[8];
-    u32 unk18;
-    u32 unk1C;
-    u8 pad20[4];
-    u32 unk24;
-    u8 pad28[5];
-    u8 unk2D;
+struct KarateManCue {
+    u16 isHit:4;   // Flag:   Object Hit
+    u16 miss:1;    // Flag:   Missed
+    u16 object:4;  // Value:  Object 
+    u16 unk2;      // Unused
+    s16 objects;   // Entity: Objects
+    s16 shadow;    // Entity: Object Shadow
+    s8 unk8;       // Value:  unk8 (Object Scale over time?)
+    s8 unk9;       // Value:  unk9 (Shadow Scale over time?)
+    s32 unkC;      // Value:  Object X Position 
+    s32 unk10;     // Value:  Object Y Position
+    s32 unk14;     // Value:  Object Y Land Position
+    u32 unk18;     // Value:  Hit Object X Movement
+    u32 unk1C;     // Value:  Hit Object Y Movement
+    u32 unk20;     // Value:  unk20
+    u32 unk24;     // Value:  Object Gravity
+    u16 unk28;     // Value:  Object Distance?
+    s16 unk2A;     // Value:  Object Scale
+    u8 unk2C;      // Value:  Object Angle 
+    u8 unk2D;      // Value:  Object Rotation
+    s16 unk2E;     // Value:  unk2E
 };
 
 
-struct KarateManInfoSubstruct {
-	u8 unk4:4;
-    u8 pad05[3];
-    s16 unk8;
-    u16 unkA;
-    u16 unkC;
-    u16 unkE;
-    u16 unk10;
+// Game engine structs
+
+struct KarateManJoe {
+	u16 isNotBeat:4; // Value:  Beat Animation Flag (1 when not in Beat Animation)
+    u16 unk2;        // Unused
+    s16 joe;         // Entity:  Joe
+    u16 barely;      // Counter: Barely Animation
+    u16 miss;        // Counter: Miss Animation
+    u16 smirk;       // Counter: Smirk Animation
+    u16 happy;       // Counter: Happy Animation
 };
 
 struct KarateManInfo {
-    u8 unk0;
-	struct KarateManInfoSubstruct unk_substruct;
-    s16 unk14;
-    u8 unk16;
-    u8 unk17;
-    u8 unk18;
-    u32 *unk1C;
-    s16 unk20;
-    u32 unk24;
-    s16 unk28;
-    u8 unk2A;
-    u8 pad2B[3];
-    s16 unk2E;
-    u16 unk30;
-    u16 unk32;
-    u8 unk34;
-    u8 unk35;
-    u8 unk36;
+    u8 version;     // 0 = Karate Man; 1 = Karate Man (BG Faces); 2 = Karate Man ("Serious Mode"); 3 = Karate Man 2
+	struct KarateManJoe joe;
+    s16 flowBar;    // Entity:  Flow Bar
+    u8 flow;        // Value:   Flow
+    u8 flowBarFlag; // Value:   Flow Bar Flag
+    u8 bg;          // Value:   BG Byte 
+    u8 *bgPalIndex; // Pointer: BG Palette Index Table 
+    s16 cueText;    // Entity:  Cue Text
+    u32 unk24;      // Value:   unk24
+    s16 tutorialButton;    // Entity: Tutorial Button 
+    u8 tutorialButtonFlag; // Value:  Tutorial Button Flag 
+    s16 tutorialSkip;      // Entity:  Tutorial Skip 
+    s16 tutorialText;      // Entity:  Tutorial Text
+    u16 tutorialObjects;   // Value:   Tutorial Objects Counter
+    u16 bgFace;     // Counter: BG Face Time on BG
+    u8 serious;     // Value:   "Serious Mode" Flag
+    u8 seriousStop; // Value:   "Serious Mode" End Flag
+    u8 expression;  // Value:   Expression
 };
 
 
