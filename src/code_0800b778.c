@@ -592,7 +592,12 @@ void func_08010008(struct ScalableSprite *scalable, u32 arg1, u32 arg2, u32 arg3
     func_0804dae0(D_03005380, scalable->sprite, arg1, arg2, arg3);
 }
 
-#include "asm/code_0800b778/asm_08010040.s"
+// [func_08010040] SCALABLE SPRITE - Start Animation
+void func_08010040(struct ScalableSprite *scalable, u32 start) {
+    if (scalable == 0) return;
+
+    func_0804d770(D_03005380, scalable->sprite, start);
+}
 
 #include "asm/code_0800b778/asm_08010064.s"
 
