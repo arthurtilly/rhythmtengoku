@@ -229,7 +229,7 @@ void func_0801ffcc(u32 ver) {
     gSpaceballInfo.poofL.x = 2;
     gSpaceballInfo.poofL.y = 52;
     gSpaceballInfo.poofL.z = 0;
-    func_0800ff44(gSpaceballInfo.poofL.sprite, 1); // Flip Horizontal?
+    func_0800ff44(gSpaceballInfo.poofL.sprite, 1); // Flip Horizontal
 
     gSpaceballInfo.currentStar = 0;
     gSpaceballInfo.zoom = -0x80;
@@ -255,10 +255,11 @@ void func_080201a4(void) {
 void func_080201cc(struct SpaceballBatter *batter) {
     if (batter->swingTimer == 0) return;
     batter->swingTimer--;
-    if (batter->swingTimer != 0) return;
-    func_08010008(batter->sprite, 0, 0, 0);
-    func_0800ffc0(batter->sprite, 0);
-    func_08017338(1,0);
+    if (batter->swingTimer == 0) {
+        func_08010008(batter->sprite, 0, 0, 0);
+        func_0800ffc0(batter->sprite, 0); // set frame?
+        func_08017338(1,0);
+    }
 }
 
 

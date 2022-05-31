@@ -539,7 +539,14 @@ struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
 
 #include "asm/code_0800b778/asm_0800fe44.s"
 
-#include "asm/code_0800b778/asm_0800fe60.s"
+// [func_0800fe60] SCALABLE SPRITE - Update Scaling
+void func_0800fe60(struct ScalableSprite *sprite, s16 z) {
+    if (sprite == 0) return;
+
+    sprite->unk4 = z;
+    sprite->unk6 = z;
+    func_0800f904(sprite);
+}
 
 #include "asm/code_0800b778/asm_0800fe78.s"
 
