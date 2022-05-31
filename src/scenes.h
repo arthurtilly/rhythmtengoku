@@ -43,9 +43,9 @@ extern void func_0801fd1c(void);    // [func_0801fd1c] Update BG Star Scaling
 extern void func_0801fd70(struct ScalableSprite *, s32, s32, s32);    // [func_0801fd70] Update Entity (Graphical)
 extern void func_0801fdc4(struct ScalableSprite *, s32, s32, s32, u32 *, u32 *);  // [func_0801fdc4] Update Batter (Graphical)
 extern void func_0801fe6c(void);    // [func_0801fe6c] Update Sprites, Stars & Camera
-extern void func_0801ff60(void);    // [func_0801ff60] GFX Init Func_00
+extern void func_0801ff60(void);    // [func_0801ff60] GFX Init Func_02
 extern void func_0801ff70(void);    // [func_0801ff70] GFX Init Func_01
-extern void func_0801ffa0(void);    // [func_0801ffa0] GFX Init Func_02
+extern void func_0801ffa0(void);    // [func_0801ffa0] GFX Init Func_00
 extern void func_0801ffcc(u32);     // [func_0801ffcc] MAIN - Init
 extern void func_080201a0(void);    // [func_080201a0] SCENE Func_06 - STUB
 extern void func_080201a4(void);    // [func_080201a4] SCENE Func_00 - Pitcher Prepare
@@ -1579,25 +1579,25 @@ extern void func_08039df8(void);
 
 // Wizard's Waltz
 
-extern void func_080449a4(void);                // [func_080449a4] GFX_LOAD Func_02
-extern void func_080449b4(void);                // [func_080449b4] GFX_LOAD Func_01
-extern void func_080449e4(void);                // [func_080449e4] GFX_LOAD Func_00
-extern void func_08044a10(u32);                 // [func_08044a10] MAIN - Load
-extern void func_08044b80(u32);                 // [func_08044b80] ENGINE Func_00 - Set Rotation Interval
-extern void func_08044ba8(struct ScalableSprite *, s32, s32, u32);    // [func_08044ba8] SUB - Update Entity Position
-extern void func_08044c04(void);                // [func_08044c04] MAIN - Loop
-extern void func_08044e60(u32);                 // [func_08044e60] ENGINE Func_01 - Set Tutorial Flag
-extern void func_08044e74_stub(void);           // [func_08044e74] MAIN - Unload (STUB)
-extern void func_08044e78(u32, struct struct_080179f4_sub *, u32);  // [func_08044e78] CUE Spawn
-extern u32  func_08044f94(u32, struct struct_080179f4_sub *, u32);  // [func_08044f94] CUE Update
-extern void func_08044fc0(u32, struct struct_080179f4_sub *, u32);  // [func_08044fc0] CUE Despawn
-extern void func_08044fcc(u32, struct struct_080179f4_sub *, u32);  // [func_08044fcc] CUE Hit
-extern void func_0804503c(u32, struct WizardsWaltzCue *, u32);  // [func_0804503c] CUE Barely
-extern void func_080450d0(u32, struct struct_080179f4_sub *, u32);  // [func_080450d0] CUE Miss
-extern void func_080450dc_stub(void);           // [func_080450dc] MAIN - Input Event (STUB)
-extern void func_080450e0_stub(void);           // [func_080450e0] GRAPHICAL Func_00 - Unknown (STUB, Unused)
-extern void func_080450e4_stub(void);           // [func_080450e4] GRAPHICAL Func_01 - Unknown (STUB, Unused)
-extern void func_080450e8(u32);                 // [func_080450e8] GRAPHICAL Func_02 - Unknown (Unused?)
+extern void func_080449a4(void);        // [func_080449a4] GFX Init Func_02
+extern void func_080449b4(void);        // [func_080449b4] GFX Init Func_01
+extern void func_080449e4(void);        // [func_080449e4] GFX Init Func_00
+extern void func_08044a10(u32);         // [func_08044a10] MAIN - Init
+extern void func_08044b80(u32);         // [func_08044b80] ENGINE Func_00 - Set Rotation Interval
+extern void func_08044ba8(struct ScalableSprite *, s32, s32, u32);  // [func_08044ba8] Update Entity Position
+extern void func_08044c04(void);        // [func_08044c04] MAIN - Update
+extern void func_08044e60(u32);         // [func_08044e60] ENGINE Func_01 - Set Tutorial Flag
+extern void func_08044e74_stub(void);   // [func_08044e74] MAIN - Close (STUB)
+extern void func_08044e78(u32, struct WizardsWaltzCue *, u32, u32);  // [func_08044e78] CUE - Spawn
+extern u32  func_08044f94(u32, struct WizardsWaltzCue *, u32);  // [func_08044f94] CUE - Update
+extern void func_08044fc0(u32, struct WizardsWaltzCue *, u32);  // [func_08044fc0] CUE - Despawn
+extern void func_08044fcc(u32, struct WizardsWaltzCue *, u32);  // [func_08044fcc] CUE - Hit
+extern void func_0804503c(u32, struct WizardsWaltzCue *, u32);  // [func_0804503c] CUE - Barely
+extern void func_080450d0(u32, struct WizardsWaltzCue *, u32);  // [func_080450d0] CUE - Miss
+extern void func_080450dc_stub(void);   // [func_080450dc] MAIN - Input Event (STUB)
+extern void func_080450e0_stub(void);   // [func_080450e0] COMMON Func_00 - STUB
+extern void func_080450e4_stub(void);   // [func_080450e4] COMMON Func_01 - STUB
+extern void func_080450e8(u32);         // [func_080450e8] COMMON Func_02 - Unknown
 
 // Prologue: Sneaky Spirits
 

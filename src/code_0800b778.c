@@ -458,7 +458,7 @@ u32 *func_0800c43c(u32 arg0) {
 
 #include "asm/code_0800b778/asm_0800f904.s"
 
-// Create Entity (w/ Rotation/Scaling Parameters)
+// Create Scalable Sprite (Sprite w/ Rotation/Scaling Parameters)
     // arg0 = ... [Animation Pointer]
     // arg1 = ... []
     // arg2 = ... [x]
@@ -477,7 +477,7 @@ struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
     s16 sprite;
     s8 offset;
 
-    // Create standard entity.
+    // Create standard sprite.
     sprite = func_0804d160(D_03005380, anim, arg1, x, y, arg4, arg7, arg8, arg9);
     if (sprite < 0) return NULL;
 
@@ -485,11 +485,11 @@ struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
     offset = func_0800c42c();
     if (offset < 0) return NULL;
 
-    // Allocate memory for the scalable entity.
+    // Allocate memory for the scalable sprite.
     scalable = (struct ScalableSprite *) func_0800c43c(0x14);
     if (scalable == NULL) return NULL;
 
-    // Initialise scalable entity.
+    // Initialise scalable sprite.
     scalable->sprite = sprite;
     scalable->unk2 = offset;
     scalable->doubleSize = doubleSize;
@@ -501,11 +501,11 @@ struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
     scalable->unkE = 0;
     scalable->unk10 = 0;
 
-    scalable->unk12_0 = 0;
-    scalable->unk12_1 = 1;
-    scalable->flipHorizontal = 0;
-    scalable->unk12_3 = 0;
-    scalable->unk12_4 = 0;
+    scalable->unk12_0 = FALSE;
+    scalable->unk12_1 = TRUE;
+    scalable->flipHorizontal = FALSE;
+    scalable->unk12_3 = FALSE;
+    scalable->unk12_4 = FALSE;
 
     func_08007468(sprite, offset);
     func_080022d8(offset);
