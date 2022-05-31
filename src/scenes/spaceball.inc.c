@@ -26,8 +26,6 @@ extern u32 (*D_03004ae4)(u32);
 extern s32 (*D_03004af8)(s32, s32);
 
 // Temporary External Functions:
-extern void func_0800fddc(struct ScalableSprite *, s16, s16); // SCALABLE SPRITE - Update X & Y
-extern void func_0800fe60(struct ScalableSprite *, s16); // SCALABLE SPRITE - Update Z (Scaling)
 extern void func_0804d5d4(s32, s16, s16, s16); // ??
 
 

@@ -241,7 +241,7 @@ extern struct ScalableSprite *func_0800fa6c(u32 *, s8, s16, s16, u16, s16, s16, 
 // extern ? func_0800fd60(?);
 // extern ? func_0800fd90(?);
 // extern ? func_0800fda4(?);
-// extern ? func_0800fddc(?);
+extern void func_0800fddc(struct ScalableSprite *, s16, s16); // [func_0800fddc] SCALABLE SPRITE - Update X/Y Position
 // extern ? func_0800fdf8(?);
 // extern ? func_0800fe0c(?);
 // extern ? func_0800fe20(?);

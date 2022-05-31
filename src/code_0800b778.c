@@ -529,7 +529,14 @@ struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
 
 #include "asm/code_0800b778/asm_0800fda4.s"
 
-#include "asm/code_0800b778/asm_0800fddc.s"
+// [func_0800fddc] SCALABLE SPRITE - Update X/Y Position
+void func_0800fddc(struct ScalableSprite *sprite, s16 x, s16 y) {
+    if (sprite == 0) return;
+
+    sprite->x = x;
+    sprite->y = y;
+    func_0800f904(sprite);
+}
 
 #include "asm/code_0800b778/asm_0800fdf8.s"
 
