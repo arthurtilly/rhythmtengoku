@@ -503,7 +503,7 @@ struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
 
     scalable->unk12_0 = 0;
     scalable->unk12_1 = 1;
-    scalable->unk12_2 = 0;
+    scalable->flipHorizontal = 0;
     scalable->unk12_3 = 0;
     scalable->unk12_4 = 0;
 
@@ -569,7 +569,13 @@ void func_0800fe60(struct ScalableSprite *sprite, s16 z) {
 
 #include "asm/code_0800b778/asm_0800ff10.s"
 
-#include "asm/code_0800b778/asm_0800ff44.s"
+// [func_0800ff44] SCALABLE SPRITE - Set Horizontal Flip
+void func_0800ff44(struct ScalableSprite *sprite, u32 flip) {
+    if (sprite == 0) return;
+
+    sprite->flipHorizontal = flip;
+    func_0800f904(sprite);
+}
 
 #include "asm/code_0800b778/asm_0800ff68.s"
 

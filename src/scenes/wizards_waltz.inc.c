@@ -257,20 +257,20 @@ void func_08044fcc(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
 
 
 // [func_0804503c] CUE Barely
-void func_0804503c(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
+void func_0804503c(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
     u32 temp;
     u32 isTutorial;
 
     // Set unknown parameter.
     temp = ((u32) ~func_08018054()) >> 0x1f;
-    if (arg1->unk6 > 0x200) {
+    if (cue->position > 0x200) {
         temp ^= 1;
     }
 
     // Play animation: "sprout_eaten"
-    func_08010064(arg1->unk0.u32, D_08932cbc, 0, 1, 0x7f, 0);
-    // Unknown function.
-    func_0800ff44(arg1->unk0.u32, temp);
+    func_08010064(cue->sprite, D_08932cbc, 0, 1, 0x7f, 0);
+    // Flip Horizontal if needed.
+    func_0800ff44(cue->sprite, temp);
 
     // Cycle through frames of "girl_sad" if isTutorial flag is not set.
     isTutorial = gWizardsWaltzInfo.isTutorial;

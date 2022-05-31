@@ -13,7 +13,7 @@ struct ScalableSprite {
     u16 unk10;       // ? (0)
     u8  unk12_0:1;   // ?
     u8  unk12_1:1;   // ?
-    u8  unk12_2:1;   // ?
+    u8  flipHorizontal:1;   // ?
     u8  unk12_3:1;   // ?
     u8  unk12_4:1;   // ?
 };
@@ -254,7 +254,7 @@ extern void func_0800fe60(struct ScalableSprite *, s16); // [func_0800fe60] SCAL
 // extern ? func_0800fed0(?);
 // extern ? func_0800feec(?);
 // extern ? func_0800ff10(?);
-// extern ? func_0800ff44(?);
+extern void func_0800ff44(struct ScalableSprite *, u32); // [func_0800ff44] SCALABLE SPRITE - Set Horizontal Flip
 // extern ? func_0800ff68(?);
 // extern ? func_0800ff8c(?);
 // extern ? func_0800ffc0(?);

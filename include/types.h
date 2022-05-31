@@ -258,6 +258,12 @@ struct RapMenInfo {
 };
 
 
+struct WizardsWaltzCue {
+    struct ScalableSprite *sprite;
+    u16 unk4;
+    s16 position;
+};
+
 struct WizardsWaltzSparkle {
     struct ScalableSprite *entity; // Entity:  unk0
     u8  state;      // Value:   unk4 {0,1,2}
