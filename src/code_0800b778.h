@@ -259,7 +259,7 @@ extern void func_0800ff44(struct ScalableSprite *, u32); // [func_0800ff44] SCAL
 // extern ? func_0800ff8c(?);
 // extern ? func_0800ffc0(?);
 // extern ? func_0800ffe4(?);
-// extern ? func_08010008(?);
+extern void func_08010008(struct ScalableSprite *, u32, u32, u32); // [func_08010008] SCALABLE SPRITE - Animate?
 // extern ? func_08010040(?);
 // extern ? func_08010064(?);
 // extern ? func_080100a8(?);
