@@ -248,7 +248,7 @@ extern void func_0800fddc(struct ScalableSprite *, s16, s16); // [func_0800fddc]
 // extern ? func_0800fe44(?);
 extern void func_0800fe60(struct ScalableSprite *, s16); // [func_0800fe60] SCALABLE SPRITE - Update Scaling
 // extern ? func_0800fe78(?);
-// extern ? func_0800fe94(?);
+extern void func_0800fe94(struct ScalableSprite *, s16); // [func_0800fe94] SCALABLE SPRITE - Set Rotation
 // extern ? func_0800fea8(?);
 // extern ? func_0800febc(?);
 // extern ? func_0800fed0(?);

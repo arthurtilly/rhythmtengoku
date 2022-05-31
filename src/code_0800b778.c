@@ -557,7 +557,13 @@ void func_0800fe60(struct ScalableSprite *sprite, s16 z) {
 
 #include "asm/code_0800b778/asm_0800fe78.s"
 
-#include "asm/code_0800b778/asm_0800fe94.s"
+// [func_0800fe94] SCALABLE SPRITE - Set Rotation
+void func_0800fe94(struct ScalableSprite *sprite, s16 rotation) {
+    if (sprite == 0) return;
+
+    sprite->rotation = rotation;
+    func_0800f904(sprite);
+}
 
 #include "asm/code_0800b778/asm_0800fea8.s"
 
