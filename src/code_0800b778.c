@@ -581,7 +581,12 @@ void func_0800ff44(struct ScalableSprite *sprite, u32 flip) {
 
 #include "asm/code_0800b778/asm_0800ff8c.s"
 
-#include "asm/code_0800b778/asm_0800ffc0.s"
+// [func_0800ffc0] SCALABLE SPRITE - Set Current Animation Frame
+void func_0800ffc0(struct ScalableSprite *scalable, u32 frame) {
+    if (scalable == 0) return;
+
+    func_0804cebc(D_03005380, scalable->sprite, frame);
+}
 
 #include "asm/code_0800b778/asm_0800ffe4.s"
 

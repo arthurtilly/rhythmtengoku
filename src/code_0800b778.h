@@ -257,7 +257,7 @@ extern void func_0800fe60(struct ScalableSprite *, s16); // [func_0800fe60] SCAL
 extern void func_0800ff44(struct ScalableSprite *, u32); // [func_0800ff44] SCALABLE SPRITE - Set Horizontal Flip
 // extern ? func_0800ff68(?);
 // extern ? func_0800ff8c(?);
-// extern ? func_0800ffc0(?);
+extern void func_0800ffc0(struct ScalableSprite *, u32); // [func_0800ffc0] SCALABLE SPRITE - Set Current Animation Frame
 // extern ? func_0800ffe4(?);
 extern void func_08010008(struct ScalableSprite *, u32, u32, u32); // [func_08010008] SCALABLE SPRITE - Animate?
 extern void func_08010040(struct ScalableSprite *, u32); // [func_08010040] SCALABLE SPRITE - Start Animation
