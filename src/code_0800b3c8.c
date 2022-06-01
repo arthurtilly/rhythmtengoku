@@ -113,7 +113,11 @@ void func_0800b698() {
     }
 }
 
-#include "asm/code_0800b3c8/asm_0800b6bc.s"
+void func_0800b6bc(void (*arg0)(u32), u32 arg1) {
+    D_030053c0.unk1C0 = arg0;
+    D_030053c0.unk1C4 = arg1;
+}
+
 
 #include "asm/code_0800b3c8/asm_0800b6dc.s"
 
