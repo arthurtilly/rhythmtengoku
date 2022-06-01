@@ -59,9 +59,19 @@ void func_0800b454(struct struct_0800b3c8* arg0, s32 arg1) {
 
 #include "asm/code_0800b3c8/asm_0800b4d8.s"
 
-#include "asm/code_0800b3c8/asm_0800b550.s"
+s16 func_0800b550(struct struct_0800b3c8* arg0) {
+    if (arg0 == NULL) {
+        return -1;
+    }
+    return arg0->unk2A;
+}
 
-#include "asm/code_0800b3c8/asm_0800b564.s"
+void func_0800b564() {
+    D_03001304 = 0;
+    D_03001308 = 0;
+    D_0300130e = REG_KEY;
+    D_0300130c = 0;
+}
 
 void func_0800b590() {
     u16 temp;
