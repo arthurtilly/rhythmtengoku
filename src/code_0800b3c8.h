@@ -50,7 +50,7 @@ extern void func_0800b564();
 extern void func_0800b590();
 extern u32 func_0800b60c(s32);
 // extern ? func_0800b634(?);
-// extern ? func_0800b698(?);
+extern void func_0800b698();
 // extern ? func_0800b6bc(?);
 // extern ? func_0800b6dc(?);
 extern void func_0800b71c(struct struct_0800b71c*, u32, u32, u32);

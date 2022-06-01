@@ -192,6 +192,9 @@ struct struct_030053c0 {
     u16 unk192;    // [D_03005552] BeatScript: Music Channel Selection Volume
     u16 unk194;    // [D_03005554] BeatScript: Music Channel Selection
     u16 unk196;    // [D_03005556] BeatScript: Music Pitch
+    u32 pad198[0xA];
+    void (*unk1C0)(u32);
+    u32 unk1C4;
 };
 
 

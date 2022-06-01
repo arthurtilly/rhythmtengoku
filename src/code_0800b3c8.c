@@ -107,7 +107,11 @@ u32 func_0800b60c(s32 arg0) {
 
 #include "asm/code_0800b3c8/asm_0800b634.s"
 
-#include "asm/code_0800b3c8/asm_0800b698.s"
+void func_0800b698() {
+    if (D_030053c0.unk1C0 != NULL) {
+        D_030053c0.unk1C0(D_030053c0.unk1C4);
+    }
+}
 
 #include "asm/code_0800b3c8/asm_0800b6bc.s"
 
