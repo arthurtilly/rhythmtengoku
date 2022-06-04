@@ -118,7 +118,15 @@ u32 func_0800b60c(s32 arg0) {
     return temp1 / temp;
 }
 
-#include "asm/code_0800b3c8/asm_0800b634.s"
+u8 func_0800b634(s16* arg0, s16* arg1, s16* arg2, s16* arg3) {
+    if (arg0[0] + arg1[0] < arg2[0] + arg3[0] + arg3[2] &&
+    arg2[0] + arg3[0] < arg0[0] + arg1[0] + arg1[2] &&
+    arg0[1] + arg1[1] < arg2[1] + arg3[1] + arg3[3] &&
+    arg2[1] + arg3[1] < arg0[1] + arg1[1] + arg1[3])
+        return TRUE;
+    else
+        return FALSE;
+}
 
 void func_0800b698() {
     if (D_030053c0.unk1C0 != NULL) {
