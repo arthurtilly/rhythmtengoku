@@ -44,7 +44,13 @@ void func_0802bee4() {
 
 #include "asm/scenes/showtime/asm_0802bee8.s"
 
-#include "asm/scenes/showtime/asm_0802bf00.s"
+u8 func_0802bf00(u32 unused_arg0, u32 unused_arg1, u32 arg2) {
+    if (arg2 > func_0800c3a4(0x78)) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
 
 void func_0802bf1c() {
     
@@ -120,6 +126,7 @@ void func_0802bf54() {
 
 #include "asm/scenes/showtime/asm_0802d2bc.s"
 
+//stack pointer moment
 void func_0802d38c(void) {
     u8 unused_temp[0xC]; //has to be a data type 0xC bytes long
 }
