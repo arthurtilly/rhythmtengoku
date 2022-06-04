@@ -2,43 +2,61 @@
 
 #include "asm/scenes/showtime/asm_0802bc78.s"
 
-#include "asm/scenes/showtime/asm_0802bd40.s"
+void func_0802bd40() {
+    
+}
 
 #include "asm/scenes/showtime/asm_0802bd44.s"
 
 #include "asm/scenes/showtime/asm_0802be10.s"
 
-#include "asm/scenes/showtime/asm_0802be24.s"
+void func_0802be24() {
+    D_03004b10.unk4C = 0;
+    D_03004b10.unk0 &= 0xDFFF;
+}
 
-#include "asm/scenes/showtime/asm_0802be40.s"
+void func_0802be40(u32 unused_arg0, u32* arg1) {
+    arg1[1] = func_0802ce70(0);
+    func_0802d38c();
+}
 
 #include "asm/scenes/showtime/asm_0802be58.s"
 
-#include "asm/scenes/showtime/asm_0802be74.s"
+void func_0802be74() {
+
+}
 
 #include "asm/scenes/showtime/asm_0802be78.s"
 
 #include "asm/scenes/showtime/asm_0802be90.s"
 
-#include "asm/scenes/showtime/asm_0802beac.s"
+void func_0802beac() {
+    
+}
 
 #include "asm/scenes/showtime/asm_0802beb0.s"
 
 #include "asm/scenes/showtime/asm_0802bec8.s"
 
-#include "asm/scenes/showtime/asm_0802bee4.s"
+void func_0802bee4() {
+    
+}
 
 #include "asm/scenes/showtime/asm_0802bee8.s"
 
 #include "asm/scenes/showtime/asm_0802bf00.s"
 
-#include "asm/scenes/showtime/asm_0802bf1c.s"
+void func_0802bf1c() {
+    
+}
 
 #include "asm/scenes/showtime/asm_0802bf20.s"
 
 #include "asm/scenes/showtime/asm_0802bf38.s"
 
-#include "asm/scenes/showtime/asm_0802bf54.s"
+void func_0802bf54() {
+    
+}
 
 #include "asm/scenes/showtime/asm_0802bf58.s"
 
@@ -102,7 +120,9 @@
 
 #include "asm/scenes/showtime/asm_0802d2bc.s"
 
-#include "asm/scenes/showtime/asm_0802d38c.s"
+void func_0802d38c(void) {
+    u8 unused_temp[0xC]; //has to be a data type 0xC bytes long
+}
 
 #include "asm/scenes/showtime/asm_0802d394.s"
 
