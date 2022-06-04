@@ -10,11 +10,13 @@ struct struct_0800b3c8 {
     u8 unk8;
     s16 unkA;
     u16 unkC;
-    s16 padE;
+    u16 unkE;
     s16 unk10;
     u16 pad12[2];
     s16 unk16;
-    u32 pad18[2];
+    u32 pad18;
+    s16 unk1C; //unknown type
+    s16 unk1E; //unknown type
     s16 pad20;
     s16 unk22;
     s16 unk24;
@@ -28,7 +30,6 @@ struct struct_0800b3c8 {
     s16 (*unk38)(s32);
 };
 
-
 struct struct_0800b71c_sub {
     u8 unk0;
     u32 unk1:10;
@@ -37,6 +38,8 @@ struct struct_0800b71c_sub {
 
 struct struct_0800b71c {
     u8 unk0;
+    u32 unk1_0:1;
+    u32 unk1_1:23;
     struct struct_0800b71c_sub *unk4;
 };
 
@@ -44,7 +47,7 @@ extern void func_0800b3c8(struct struct_0800b3c8*);
 extern void func_0800b3e8(struct struct_0800b3c8*);
 extern void func_0800b408(struct struct_0800b3c8*, s16, u32);
 extern void func_0800b454(struct struct_0800b3c8*, s32);
-// extern ? func_0800b4d8(?);
+extern void func_0800b4d8(struct struct_0800b3c8* arg0, u32* arg1);
 extern s16 func_0800b550(struct struct_0800b3c8*);
 extern void func_0800b564();
 extern void func_0800b590();

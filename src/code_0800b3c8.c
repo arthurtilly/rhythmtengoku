@@ -1,3 +1,5 @@
+#include "global.h"
+#include "lib_0804c870.h"
 #include "code_0800b3c8.h"
 
 // Could use better split
@@ -57,7 +59,18 @@ void func_0800b454(struct struct_0800b3c8* arg0, s32 arg1) {
     func_0800aac0(temp1, temp, temp2, temp3);
 }
 
-#include "asm/code_0800b3c8/asm_0800b4d8.s"
+void func_0800b4d8(struct struct_0800b3c8* arg0, u32* arg1) {
+    if (arg0 != NULL) {
+        if (arg0->unk2A >= 0)
+            func_0804d504(D_03005380, arg0->unk2A);
+        arg0->unk2A = -1;
+        if (arg1 != NULL) {
+            arg0->unk2A = func_0804d160(D_03005380, arg1, 0, arg0->unkA, func_0800ae1c(arg0), arg0->unkE, 1, 0, 0);
+            func_0804db44(D_03005380, arg0->unk2A, &arg0->unk1C, &arg0->unk1E);
+        }
+    }
+}
+
 
 s16 func_0800b550(struct struct_0800b3c8* arg0) {
     if (arg0 == NULL) {
@@ -118,8 +131,16 @@ void func_0800b6bc(void (*arg0)(u32), u32 arg1) {
     D_030053c0.unk1C4 = arg1;
 }
 
-
-#include "asm/code_0800b3c8/asm_0800b6dc.s"
+void func_0800b6dc(struct struct_0800b71c* arg0, u32 arg1, u32 arg2, struct struct_0800b71c_sub* arg3) {
+    u32 temp;
+    arg0->unk0 = 0;
+    arg0->unk1_0 = arg1;
+    arg0->unk1_1 = arg2;
+    arg0->unk4 = arg3;
+    arg3->unk0 = 0xFF;
+    arg3->unk1 = 0;
+    arg3->unk4 = 0;
+}
 
 
 void func_0800b71c(struct struct_0800b71c *arg0, u32 arg1, u32 arg2, u32 arg3) {
