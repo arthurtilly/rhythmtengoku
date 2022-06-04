@@ -1,3 +1,5 @@
+#define gShowtimeInfo D_030055d0->gameInfo.showtime
+
 #pragma once
 
 #include "global.h"
@@ -563,7 +565,7 @@ extern void func_0802221c(u32);
 // Showtime
 
 // extern ? func_0802bc4c(?);
-// extern ? func_0802bc78(?);
+extern void func_0802bc78(u8 arg0);
 extern void func_0802bd40();
 // extern ? func_0802bd44(?);
 // extern ? func_0802be10(?);

@@ -1,6 +1,31 @@
+#define gShowtimeInfo D_030055d0->gameInfo.showtime
+
+extern char D_0805a3cc[]; //data_08054950, empty string
+
 #include "asm/scenes/showtime/asm_0802bc4c.s"
 
-#include "asm/scenes/showtime/asm_0802bc78.s"
+void func_0802bc78(u8 arg0) {
+    u32* temp;
+    gShowtimeInfo.unk6 = arg0;
+    func_0802bc4c();
+    func_0800e0ec();
+    func_0800e0a0(1, 1, 0, 0, 0, 0x1d, 2);
+    func_0800e0a0(2, 1, 0, 0, 0, 0x1e, 0);
+    func_0802d96c();
+    gShowtimeInfo.unk0 = func_0800c660(0x340, 2);
+    temp = func_08004b98(gShowtimeInfo.unk0, &D_0805a3cc, 0, 0);
+    gShowtimeInfo.unk4 = func_0804d160(D_03005380, temp, 0, 0x78, 0x38, 0, 0, 0, 0);
+    func_08017338(1, 0);
+    func_0802c23c();    
+    func_0802d104();
+    func_0802c40c();
+    func_0802d394();
+    func_0802da84();
+    gShowtimeInfo.unk3C0 = 0;
+    gShowtimeInfo.unk3C8 = 0;
+    gShowtimeInfo.unk3CC = 0;
+    gShowtimeInfo.unk3D0 = 0;
+}
 
 void func_0802bd40() {
     

@@ -448,6 +448,18 @@ struct BonOdoriInfo {
     u16 unk864;
 };
 
+struct ShowtimeInfo {
+    u32* unk0;
+    u16 unk4;
+    u8 unk6;
+    u32 pad8[0xee];
+    u32 unk3C0;
+    u32 pad3C4;
+    u32 unk3C8;
+    u32 unk3CC;
+    u8 unk3D0;
+};
+
 
 struct SpaceballCue {
     u8 state;
@@ -509,6 +521,7 @@ struct struct_030055d0 {
         struct PrologueInfo prologues;
         struct BonOdoriInfo bonOdori;
         struct SpaceballInfo spaceball;
+        struct ShowtimeInfo showtime;
     } gameInfo;
 };
 
