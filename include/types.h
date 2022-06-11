@@ -453,7 +453,7 @@ struct ShowtimeInfo {
     u16 unk4;
     u8 unk6;
     u32 pad8[0xee];
-    u32 unk3C0;
+    u32 unk3C0; // beat related stuff???
     u32 pad3C4;
     u32 unk3C8;
     u32 unk3CC;

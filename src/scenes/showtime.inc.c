@@ -45,7 +45,13 @@ void func_0802be40(u32 unused_arg0, u32* arg1) {
     func_0802d38c();
 }
 
-#include "asm/scenes/showtime/asm_0802be58.s"
+u8 func_0802be58(u32 unused_arg0, u32 unused_arg1, u32 arg2) {
+    if (arg2 > func_0800c3a4(120)) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
 
 void func_0802be74() {
 
@@ -89,7 +95,12 @@ void func_0802bf54() {
     
 }
 
-#include "asm/scenes/showtime/asm_0802bf58.s"
+void func_0802bf58(u32 unused_arg0, u32* arg1) { //arg1 is probably a struct
+    func_0802cf8c(arg1[1]);
+    func_0802d81c(arg1[1]);
+    func_0802d2bc();
+    gShowtimeInfo.unk3C0 = func_0800c3a4(20);
+}
 
 #include "asm/scenes/showtime/asm_0802bf88.s"
 
