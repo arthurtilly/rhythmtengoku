@@ -327,7 +327,7 @@ struct RhythmTweezersCue {
     u32 null1C;
     u32 null20;
     u32 null24;
-    s16 unk28;
+    s16 rotation;
     u16 null2A;
     u16 pullTime; // Current pulling time.
     u16 pullTarget; // Target pulling time.

@@ -684,29 +684,29 @@ extern void func_0802eb7c(void);        // [func_0802eb7c] ENGINE Func_00 - Spaw
 extern void func_0802eba0(void);        // [func_0802eba0] Update Tweezers (Position)
 extern void func_0802ebdc(void);        // [func_0802ebdc] Update Tweezers (Vertical Screen Scroll)
 extern void func_0802ebf8(void);        // [func_0802ebf8] Update Tweezers
-extern void func_0802ec50(void);        // [func_0802ec50] GFX_LOAD Func_02
-extern void func_0802ec60(void);        // [func_0802ec60] GFX_LOAD Func_01
-extern void func_0802eca0(void);        // [func_0802eca0] GFX_LOAD Func_00
-extern void func_0802eccc(u8);          // [func_0802eccc] MAIN - Load
-extern void func_0802edc4_stub(void);   // [func_0802edc4] ENGINE Func_09 - Unknown (STUB, Unused)
-extern void func_0802edc8(void);        // [func_0802edc8] SUB - Update Mask
+extern void func_0802ec50(void);        // [func_0802ec50] GFX_INIT Func_02
+extern void func_0802ec60(void);        // [func_0802ec60] GFX_INIT Func_01
+extern void func_0802eca0(void);        // [func_0802eca0] GFX_INIT Func_00
+extern void func_0802eccc(u8);          // [func_0802eccc] MAIN - Init
+extern void func_0802edc4_stub(void);   // [func_0802edc4] ENGINE Func_09 - STUB
+extern void func_0802edc8(void);        // [func_0802edc8] Update Mask
 extern void func_0802ee00(void);        // [func_0802ee00] ENGINE Func_07 - Show Mask
 extern void func_0802ee10(void);        // [func_0802ee10] ENGINE Func_08 - Hide Mask
-extern void func_0802ee24(void);        // [func_0802ee24] MAIN - Loop
-extern void func_0802ee40_stub(void);   // [func_0802ee40] MAIN - Unload (STUB)
-extern void func_0802ee44(void);        // [func_0802ee44] ENGINE Func_01 - Reset Hair Position Cycle
-extern void func_0802ee6c(void);        // [func_0802ee6c] SUB - Update Hair Position Cycle
-extern void func_0802ee7c(u32, struct RhythmTweezersCue *, u32, u32);    // [func_0802ee7c] CUE - Spawn
-extern u32  func_0802ef54(u32, struct RhythmTweezersCue *, u32, u32);    // [func_0802ef54] CUE - Update (Short Hair)
-extern u32  func_0802ef68(u32, struct RhythmTweezersCue *, u32, u32);    // [func_0802ef68] CUE - Update (Long Hair)
-extern void func_0802f164(u32, struct RhythmTweezersCue *, u32, u32);    // [func_0802f164] CUE - Despawn
-extern void func_0802f170(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f170] CUE - Hit (Short Hair)
-extern void func_0802f21c(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f21c] CUE - Hit/Barely (Long Hair)
-extern void func_0802f2a0(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f2a0] CUE - Barely (Short Hair)
-extern void func_0802f330(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f330] CUE - Miss
+extern void func_0802ee24(void);        // [func_0802ee24] MAIN - Update
+extern void func_0802ee40_stub(void);   // [func_0802ee40] MAIN - Close (STUB)
+extern void func_0802ee44(void);        // [func_0802ee44] ENGINE Func_01 - Reset Hair Placement Cycle
+extern void func_0802ee6c(void);        // [func_0802ee6c] Update Hair Placement Cycle
+extern void func_0802ee7c(u32, struct RhythmTweezersCue *, u32, u32);   // [func_0802ee7c] CUE - Spawn
+extern u32  func_0802ef54(u32, struct RhythmTweezersCue *, u32, u32);   // [func_0802ef54] CUE - Update (Short Hair)
+extern u32  func_0802ef68(u32, struct RhythmTweezersCue *, u32, u32);   // [func_0802ef68] CUE - Update (Long Hair)
+extern void func_0802f164(u32, struct RhythmTweezersCue *, u32, u32);   // [func_0802f164] CUE - Despawn
+extern void func_0802f170(u32, struct RhythmTweezersCue *, u32, u32);   // [func_0802f170] CUE - Hit (Short Hair)
+extern void func_0802f21c(u32, struct RhythmTweezersCue *, u32, u32);   // [func_0802f21c] CUE - Hit/Barely (Long Hair)
+extern void func_0802f2a0(u32, struct RhythmTweezersCue *, u32, u32);   // [func_0802f2a0] CUE - Barely (Short Hair)
+extern void func_0802f330(u32, struct RhythmTweezersCue *, u32, u32);   // [func_0802f330] CUE - Miss
 extern void func_0802f33c(void);        // [func_0802f33c] MAIN - Input Event
-extern void func_0802f378_stub(void);   // [func_0802f378] GRAPHICAL Func_00 - Unknown (STUB, Unused)
-extern void func_0802f37c_stub(void);   // [func_0802f37c] GRAPHICAL Func_01 - Unknown (STUB, Unused)
+extern void func_0802f378_stub(void);   // [func_0802f378] COMMON Func_00 - STUB
+extern void func_0802f37c_stub(void);   // [func_0802f37c] COMMON Func_01 - STUB
 extern void func_0802f380(void);        // [func_0802f380] ENGINE Func_05 - Unknown (Unused)
 
 // Fireworks
