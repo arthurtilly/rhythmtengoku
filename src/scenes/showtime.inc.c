@@ -162,7 +162,9 @@ void func_0802c1f0(u32 unused_arg0, u16 arg1, u32 arg2) {
 
 #include "asm/scenes/showtime/asm_0802cfe0.s"
 
-#include "asm/scenes/showtime/asm_0802d068.s"
+u32 func_0802d068(u32 arg0) {
+    return gShowtimeInfo.unk2C[arg0].unk0;
+}
 
 #include "asm/scenes/showtime/asm_0802d080.s"
 
