@@ -3,6 +3,7 @@
 extern char D_0805a3cc[]; //data_08054950, empty string
 
 #include "asm/scenes/showtime/asm_0802bc4c.s"
+#include "src/lib_0804c870.h"
 
 void func_0802bc78(u8 arg0) {
     u32* temp;
@@ -59,7 +60,11 @@ void func_0802be74() {
 
 #include "asm/scenes/showtime/asm_0802be78.s"
 
-#include "asm/scenes/showtime/asm_0802be90.s"
+u8 func_0802be90(u32 unused_arg0, u32 unused_arg1, u32 arg2) {
+    if (arg2 > func_0800c3a4(0x90))
+        return TRUE;
+    return FALSE;
+}
 
 void func_0802beac() {
     
@@ -114,7 +119,16 @@ void func_0802bf58(u32 unused_arg0, u32* arg1) { //arg1 is probably a struct
 
 #include "asm/scenes/showtime/asm_0802c1cc.s"
 
-#include "asm/scenes/showtime/asm_0802c1f0.s"
+void func_0802c1f0(u32 unused_arg0, u16 arg1, u32 arg2) {
+    switch (gShowtimeInfo.unkC[arg2].unk0) {
+        case 0:
+            break;
+        case 1:
+            gShowtimeInfo.unkC[arg2].unk0 = 0;
+        func_0804cebc(D_03005380, arg1, 3);
+        func_0804dcb8(D_03005380, arg1, 0);
+    }
+}
 
 #include "asm/scenes/showtime/asm_0802c23c.s"
 
