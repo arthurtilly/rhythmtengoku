@@ -40,36 +40,36 @@ extern u32 *D_089e3ff4[]; // GFX Struct Index
 // [func_0802e750] SUB - Initialise Vegetable Face
 void func_0802e750(void) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
-    u8 ver = (gRhythmTweezersInfo.unk0 % 3);
+    u8 type = (gRhythmTweezersInfo.version % 3);
 
-    vegetable->spriteCurrent = func_0804d160(D_03005380, D_089e3d98[ver], 0, 0x78, 0x10, 0x4800, -1, 0, 0);
-    func_0804db44(D_03005380, vegetable->spriteCurrent, &gRhythmTweezersInfo.unk8E, &D_03004b10.unk12);
+    vegetable->spriteCurrent = func_0804d160(D_03005380, D_089e3d98[type], 0, 0x78, 0x10, 0x4800, -1, 0, 0);
+    func_0804db44(D_03005380, vegetable->spriteCurrent, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.unk12);
 
-    vegetable->spriteNext = func_0804d160(D_03005380, D_089e3d98[ver], 0, 0x78, 0x10, 0x4800, 0, 0, 0);
+    vegetable->spriteNext = func_0804d160(D_03005380, D_089e3d98[type], 0, 0x78, 0x10, 0x4800, 0, 0, 0);
     func_0804d614(D_03005380, vegetable->spriteNext, 0x178);
-    func_0804db44(D_03005380, vegetable->spriteNext, &gRhythmTweezersInfo.unk8E, &D_03004b10.unk12);
+    func_0804db44(D_03005380, vegetable->spriteNext, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.unk12);
 
-    vegetable->unk10 = 0;
-    gRhythmTweezersInfo.unk8E = 0;
-    vegetable->unk6 = 0;
+    vegetable->bgMapSide = 0;
+    gRhythmTweezersInfo.screenHorizontalPosition = 0;
+    vegetable->isScrolling = FALSE;
 }
 
 
 // [func_0802e828] ENGINE Func_02 - Scroll to New Vegetable
 void func_0802e828(u32 time) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
-    u32 temp;
-    u32 *vegetableBG;
+    u32 side;
+    u32 *bgMap;
 
-    vegetable->unk6 = 1;
-    vegetable->unk8 = 0;
-    vegetable->unkC = func_0800c3a4(time);
-    func_0804d8f8(D_03005380, vegetable->spriteNext, D_089e3d98[vegetable->unk5], 0, 0, 0, 0);
+    vegetable->isScrolling = TRUE;
+    vegetable->scrollPosition = 0;
+    vegetable->scrollTarget = func_0800c3a4(time);
+    func_0804d8f8(D_03005380, vegetable->spriteNext, D_089e3d98[vegetable->typeNext], 0, 0, 0, 0);
 
-    temp = vegetable->unk10;
-    vegetableBG = &RT_VEGETABLE_BG_MAP_R;
-    if (temp) vegetableBG = &RT_VEGETABLE_BG_MAP_L;
-    func_08003eb8(D_089e3da4[vegetable->unk5], vegetableBG);
+    side = vegetable->bgMapSide;
+    bgMap = &RT_VEGETABLE_BG_MAP_R;
+    if (side) bgMap = &RT_VEGETABLE_BG_MAP_L;
+    func_08003eb8(D_089e3da4[vegetable->typeNext], bgMap);
 }
 
 
@@ -82,41 +82,41 @@ void func_0802e89c(void) {
 // [func_0802e8ac] SUB - Update Vegetable Face - Scrolling To New Vegetable
 void func_0802e8ac(void) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
-    u32 temp;
+    u32 x;
 
-    vegetable->unk8 += 1;
+    vegetable->scrollPosition += 1;
 
     // Vegetable has reached its destination.
-    if (vegetable->unk8 >= vegetable->unkC) {
-        gRhythmTweezersInfo.unk8E = 0;
-        vegetable->unk10 ^= 1;
-        D_03004b10.unk10 = vegetable->unk10 << 8;
-        vegetable->unk6 = 0;
+    if (vegetable->scrollPosition >= vegetable->scrollTarget) {
+        gRhythmTweezersInfo.screenHorizontalPosition = 0;
+        vegetable->bgMapSide ^= 1;
+        D_03004b10.unk10 = vegetable->bgMapSide << 8;
+        vegetable->isScrolling = FALSE;
         func_080178ac();
 
-        func_0804d8f8(D_03005380, vegetable->spriteCurrent, D_089e3d98[vegetable->unk5], 0, -1, 0, 0);
-        vegetable->unk4 = vegetable->unk5;
+        func_0804d8f8(D_03005380, vegetable->spriteCurrent, D_089e3d98[vegetable->typeNext], 0, -1, 0, 0);
+        vegetable->typeCurrent = vegetable->typeNext;
     }
 
     // Vegetable has not yet reached its destination.
     else {
-        temp = (vegetable->unk8 << 0xa) / vegetable->unkC;
-        temp = (-coss(temp) + 0x100) >> 1;
+        x = 1024 * vegetable->scrollPosition / vegetable->scrollTarget;
+        x = (-coss(x) + 0x100) >> 1;
 
-        gRhythmTweezersInfo.unk8E = temp;
-        D_03004b10.unk10 = temp;
-        if (vegetable->unk10) {
-            D_03004b10.unk10 = temp + 0x100;
+        gRhythmTweezersInfo.screenHorizontalPosition = x;
+        D_03004b10.unk10 = x;
+        if (vegetable->bgMapSide != 0) {
+            D_03004b10.unk10 = x + 0x100;
         }
     }
 }
 
 
 // [func_0802e96c] ENGINE Func_03 - Define New Vegetable Type
-void func_0802e96c(u32 arg0) {
+void func_0802e96c(u32 type) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
 
-    vegetable->unk5 = arg0;
+    vegetable->typeNext = type;
 }
 
 
@@ -129,7 +129,7 @@ void func_0802e97c_stub(void) {
 void func_0802e980(void) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
 
-    if (vegetable->unk6 != 0) {
+    if (vegetable->isScrolling) {
         func_0802e8ac();
     }
 }
@@ -145,10 +145,10 @@ void func_0802e99c(void) {
         hair->sprite = func_0800fa6c(D_088e88e0, 0, 0x78, 0x10, 0x4800, 0x100, -0x200, 0, 0, 0x8000, 0);
         func_0800feec(hair->sprite, 1);
         func_0800fea8(hair->sprite, 0x4c);
-        hair->unk4 = 0xc800;
-        hair->unk8 = 0;
+        hair->fallDistance = 0xc800;
+        hair->fallSpeed = 0;
     }
-    gRhythmTweezersInfo.unk20 = 0;
+    gRhythmTweezersInfo.fallingHairsNext = 0;
 }
 
 
@@ -159,12 +159,11 @@ void func_0802ea20(void) {
 
     for (i; i <= 4; i++) {
         hair = &gRhythmTweezersInfo.fallingHairs[i];
-        if (hair->unk4 <= 0xc7ff) {
-            hair->unk8 += 0x20;
-            hair->unk4 += hair->unk8;
-            hair->unkC += hair->unkE;
-            func_0800fe0c(hair->sprite, (s16) ((hair->unk4 >> 8) + 0x10));
-            func_0800fe94(hair->sprite, hair->unkC);
+        if (hair->fallDistance <= 0xc7ff) {
+            hair->fallDistance += hair->fallSpeed += 0x20;
+            hair->rotation += hair->rotationSpeed;
+            func_0800fe0c(hair->sprite, (s16) ((hair->fallDistance >> 8) + 0x10));
+            func_0800fe94(hair->sprite, hair->rotation);
         }
     }
 }
@@ -173,24 +172,22 @@ void func_0802ea20(void) {
 // [func_0802ea74] SUB - Create Falling Hair
 void func_0802ea74(u32 arg0) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
-    struct RhythmTweezersFallingHair *hair = &gRhythmTweezersInfo.fallingHairs[gRhythmTweezersInfo.unk20];
-    u8 temp;
+    struct RhythmTweezersFallingHair *hair = &gRhythmTweezersInfo.fallingHairs[gRhythmTweezersInfo.fallingHairsNext];
 
-    hair->unkC = -0x200;
-    hair->unkE = func_08001980(0x1f) - 0xf;
+    hair->rotation = -0x200;
+    hair->rotationSpeed = func_08001980(0x1f) - 15;
 
     func_0800fe0c(hair->sprite, 0x10);
     func_0800febc(hair->sprite, tweezers->rotation);
-    func_0800fe94(hair->sprite, hair->unkC);
+    func_0800fe94(hair->sprite, hair->rotation);
     func_08010040(hair->sprite, 1);
 
-    hair->unk4 = 0;
-    hair->unk8 = 0;
+    hair->fallDistance = 0;
+    hair->fallSpeed = 0;
     func_0800ffc0(hair->sprite, arg0);
 
-    temp = gRhythmTweezersInfo.unk20 += 1;
-    if (temp > 4) {
-        gRhythmTweezersInfo.unk20 = 0;
+    if ((gRhythmTweezersInfo.fallingHairsNext += 1) > 4) {
+        gRhythmTweezersInfo.fallingHairsNext = 0;
     }
 }
 
@@ -285,7 +282,7 @@ void func_0802ec60(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_08002ee0(func_0800c3b8(), D_089e3ff4[gRhythmTweezersInfo.unk0], 0x2000);
+    temp = func_08002ee0(func_0800c3b8(), D_089e3ff4[gRhythmTweezersInfo.version], 0x2000);
     func_08005d38(temp, &func_0802ec50, 0);
 }
 
@@ -301,11 +298,11 @@ void func_0802eca0(void) {
 
 
 // [func_0802eccc] MAIN - Load
-void func_0802eccc(u8 arg0) {
+void func_0802eccc(u8 ver) {
     u32 temp;
 
     // Standard game setup.
-    gRhythmTweezersInfo.unk0 = arg0;
+    gRhythmTweezersInfo.version = ver;
     func_0802eca0(); // Load graphics.
     func_0800e0ec();
     func_0800e0a0(0, 1, 0, -0xa0, 2, 0x1c, 0x8000);
@@ -315,9 +312,9 @@ void func_0802eccc(u8 arg0) {
     func_0802eaf8(); // Initialise tweezers.
     func_0802e99c(); // Initialise falling hairs.
     func_0802e750(); // Initialise vegetable face.
-    gRhythmTweezersInfo.unk90 = -0xa0;
-    gRhythmTweezersInfo.unk92 = 0xfff8;
-    gRhythmTweezersInfo.unk8C = func_0804d160(D_03005380, D_088e8910, 0, 0x78, 0x96, 0, 0, 0, 0x8000);
+    gRhythmTweezersInfo.maskPosition = -160;
+    gRhythmTweezersInfo.maskVelocity = -8;
+    gRhythmTweezersInfo.tutorialSprite = func_0804d160(D_03005380, D_088e8910, 0, 0x78, 0x96, 0, 0, 0, 0x8000);
 
     // Other setup.
     temp = func_0800a204((u16) func_0800c3b8(), 1, 0xf0, 0x1e);
@@ -338,23 +335,20 @@ void func_0802edc4_stub(void) {
 
 // [func_0802edc8] SUB - Update Mask
 void func_0802edc8(void) {
-    u32 temp;
-
-    temp = func_080087d4(gRhythmTweezersInfo.unk90 + gRhythmTweezersInfo.unk92, -0xa0, 0);
-    gRhythmTweezersInfo.unk90 = temp;
-    D_03004b10.unkE = temp;
+    gRhythmTweezersInfo.maskPosition = func_080087d4(gRhythmTweezersInfo.maskPosition + gRhythmTweezersInfo.maskVelocity, -160, 0);
+    D_03004b10.unkE = gRhythmTweezersInfo.maskPosition;
 }
 
 
 // [func_0802ee00] ENGINE Func_07 - Show Mask
 void func_0802ee00(void) {
-    gRhythmTweezersInfo.unk92 = 8;
+    gRhythmTweezersInfo.maskVelocity = 8;
 }
 
 
 // [func_0802ee10] ENGINE Func_08 - Hide Mask
 void func_0802ee10(void) {
-    gRhythmTweezersInfo.unk92 = -8;
+    gRhythmTweezersInfo.maskVelocity = -8;
 }
 
 
@@ -375,8 +369,8 @@ void func_0802ee40_stub(void) {
 
 // [func_0802ee44] ENGINE Func_01 - Reset Hair Position Cycle
 void func_0802ee44(void) {
-    gRhythmTweezersInfo.unk18 = 0;
-    gRhythmTweezersInfo.unk1C = func_0800c3a4(0x48);
+    gRhythmTweezersInfo.hairCyclePosition = 0;
+    gRhythmTweezersInfo.hairCycleTarget = func_0800c3a4(0x48);
     gRhythmTweezersInfo.unk88.u16[0] = 0;
     gRhythmTweezersInfo.unk88.u16[1] = 0;
 }
@@ -384,7 +378,7 @@ void func_0802ee44(void) {
 
 // [func_0802ee6c] SUB - Update Hair Position Cycle
 void func_0802ee6c(void) {
-    gRhythmTweezersInfo.unk18 += 1;
+    gRhythmTweezersInfo.hairCyclePosition += 1;
     // Fantastic work, Nintendo SPD.
 }
 
@@ -508,5 +502,5 @@ void func_0802f37c_stub(void) {
 
 // [func_0802f380] ENGINE Func_05 - Unknown (Unused - relates to the unused Tutorial Text sprite)
 void func_0802f380(void) {
-    func_0804d770(D_03005380, gRhythmTweezersInfo.unk8C, 0);
+    func_0804d770(D_03005380, gRhythmTweezersInfo.tutorialSprite, 0);
 }

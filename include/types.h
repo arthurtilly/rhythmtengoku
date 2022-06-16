@@ -331,7 +331,7 @@ struct RhythmTweezersCue {
 };
 
 struct RhythmTweezersInfo {
-    u8 unk0;    // Value:   Version { 0..2 = Rhythm Tweezers; 3..5 = Rhythm Tweezers 2 }
+    u8 version; // Value:   Version { 0..2 = Rhythm Tweezers; 3..5 = Rhythm Tweezers 2 }
     struct RhythmTweezersTweezers {
         struct ScalableSprite *sprite; // Sprite: Tweezers
         u8  isMoving;   // Flag:    Active
@@ -341,34 +341,34 @@ struct RhythmTweezersInfo {
         u32 cycleTarget;    // Value:   Cycle Target
         u8  isPulling;  // Flag:    Pulling (assigned but never used)
     } tweezers;
-    u32 unk18;  // Counter: Hair Placement Cycle Position
-    u32 unk1C;  // Value:   Hair Placement Cycle Spacing
-    u8  unk20;  // Counter: Next Available Falling Hair {0..4}
+    u32 hairCyclePosition;  // Counter: Hair Placement Cycle Position
+    u32 hairCycleTarget;    // Value:   Hair Placement Cycle Target
+    u8  fallingHairsNext;  // Counter: Next Available Falling Hair {0..4}
     struct RhythmTweezersFallingHair {
         struct ScalableSprite *sprite; // Sprite: Falling Hair
-        s32 unk4;   // Value:   Vertical Velocity
-        u32 unk8;   // Counter: Vertical Position
-        s16 unkC;   // Value:   Rotation
-        u16 unkE;   // Value:   Randomised Rotation Speed ( func_08001980(0x1f) - 0xf )
+        s32 fallDistance;   // Counter:   Vertical Position
+        u32 fallSpeed;      // Value: Vertical Velocity
+        s16 rotation;       // Value:   Rotation
+        u16 rotationSpeed;  // Value:   Randomised Rotation Speed ( func_08001980(0x1f) - 0xf )
     } fallingHairs[5];
     struct RhythmTweezersVegetable {
         s16 spriteCurrent;  // Sprite:  Current Vegetable Face
         s16 spriteNext;     // Sprite:  Upcoming Vegetable Face
-        u8  unk4;       // State:   Current Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
-        u8  unk5;       // State:   Upcoming Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
-        u8  unk6;       // Flag:    Screen Scrolling
-        u32 unk8;       // Counter: Screen Scroll Position
-        u32 unkC;       // Value:   Screen Scroll Target
-        u8  unk10;      // Flag:    Destination Vegetable BG Map { 0 = D_0600f800 (Right); -1 = D_0600f000 (Left) }
+        u8  typeCurrent;    // State:   Current Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
+        u8  typeNext;       // State:   Upcoming Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
+        u8  isScrolling;    // Flag:    Screen Scrolling
+        u32 scrollPosition; // Counter: Screen Scroll Position
+        u32 scrollTarget;   // Value:   Screen Scroll Target
+        u8  bgMapSide;      // Flag:    Destination Vegetable BG Map { 0 = D_0600f800 (Right); -1 = D_0600f000 (Left) }
     } vegetable;
     union {     // Counter: Remaining Hairs
         u16 u16[2]; // Missed/Queued; Barely'd
         u32 u32;    // Combined (NOT Total)
     } unk88;
-    s16 unk8C;  // Sprite:  Tutorial Text (Unused)
-    u16 unk8E;  // Value:   Global Horizontal Position (for vegetable faces and hair)
-    s16 unk90;  // Value:   Mask Current Position
-    s16 unk92;  // Value:   Mask Vertical Motion
+    s16 tutorialSprite; // Sprite:  Tutorial Text (Unused)
+    u16 screenHorizontalPosition; // Value:   Global Horizontal Position (for vegetable faces and hair)
+    s16 maskPosition;  // Value:   Mask Vertical Position (-160 = Hidden; 0 = Fully Visible)
+    s16 maskVelocity;  // Value:   Mask Vertical Velocity (-8 = Down; 8 = Up)
 };
 
 
