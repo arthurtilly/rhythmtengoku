@@ -20,17 +20,20 @@ struct struct_030046a4_sub3 {
 };
 
 struct struct_03004b10 {
-    u16 unk0;
+    u16 DISPCNT;    // LCD Control
     u16 unk2;
-    u16 unk4[4];
-    u16 unkC;
-    u16 unkE;
-    u16 unk10;
-    u16 unk12;
-    u16 unk14;
-    u16 unk16;
-    u16 unk18;
-    u16 unk1A;
+    u16 BG0CNT;     // BG0 Control
+    u16 BG1CNT;     // BG1 Control
+    u16 BG2CNT;     // BG2 Control
+    u16 BG3CNT;     // BG3 Control
+    s16 BG0HOFS;    // BG0 X-Offset
+    s16 BG0VOFS;    // BG0 Y-Offset
+    s16 BG1HOFS;    // BG1 X-Offset
+    s16 BG1VOFS;    // BG1 Y-Offset
+    s16 BG2HOFS;    // BG2 X-Offset
+    s16 BG2VOFS;    // BG2 Y-Offset
+    s16 BG3HOFS;    // BG3 X-Offset
+    s16 BG3VOFS;    // BG3 Y-Offset
     u32 unk1C[4];
     u32 unk2C[4];
     u16 unk3C;

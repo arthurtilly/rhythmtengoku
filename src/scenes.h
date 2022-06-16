@@ -669,21 +669,21 @@ extern void func_0802221c(u32);
 #define RT_VEGETABLE_BG_MAP_L *(u32 *)(VRAMBase + 0xF000) // VRAM BG Map for vegetable textures (left).
 #define RT_VEGETABLE_BG_MAP_R *(u32 *)(VRAMBase + 0xF800) // VRAM BG Map for vegetable textures (right).
 
-extern void func_0802e750(void);        // [func_0802e750] SUB - Initialise Vegetable Face
+extern void func_0802e750(void);        // [func_0802e750] Initialise Vegetable Face
 extern void func_0802e828(u32);         // [func_0802e828] ENGINE Func_02 - Scroll to New Vegetable
 extern void func_0802e89c(void);        // [func_0802e89c] ENGINE Func_04 - Play Cash Register SFX
-extern void func_0802e8ac(void);        // [func_0802e8ac] SUB - Update Vegetable Face - Scrolling To New Vegetable
+extern void func_0802e8ac(void);        // [func_0802e8ac] Update Vegetable (Scrolling)
 extern void func_0802e96c(u32);         // [func_0802e96c] ENGINE Func_03 - Define New Vegetable Type
 extern void func_0802e97c_stub(void);   // [func_0802e97c] ENGINE Func_06 - Unknown (STUB)
-extern void func_0802e980(void);        // [func_0802e980] SUB - Update Vegetable Face
-extern void func_0802e99c(void);        // [func_0802e99c] SUB - Initialise Falling Hairs
-extern void func_0802ea20(void);        // [func_0802ea20] SUB - Update Falling Hairs
-extern void func_0802ea74(u32);         // [func_0802ea74] SUB - Create Falling Hair
-extern void func_0802eaf8(void);        // [func_0802eaf8] SUB - Initialise Tweezers
+extern void func_0802e980(void);        // [func_0802e980] Update Vegetable
+extern void func_0802e99c(void);        // [func_0802e99c] Initialise Falling Hairs
+extern void func_0802ea20(void);        // [func_0802ea20] Update Falling Hairs
+extern void func_0802ea74(u32);         // [func_0802ea74] Create Falling Hair
+extern void func_0802eaf8(void);        // [func_0802eaf8] Initialise Tweezers
 extern void func_0802eb7c(void);        // [func_0802eb7c] ENGINE Func_00 - Spawn Tweezers
-extern void func_0802eba0(void);        // [func_0802eba0] SUB - Update Tweezers - Position
-extern void func_0802ebdc(void);        // [func_0802ebdc] SUB - Update Tweezers - Vertical Scroll
-extern void func_0802ebf8(void);        // [func_0802ebf8] SUB - Update Tweezers
+extern void func_0802eba0(void);        // [func_0802eba0] Update Tweezers (Position)
+extern void func_0802ebdc(void);        // [func_0802ebdc] Update Tweezers (Vertical Screen Scroll)
+extern void func_0802ebf8(void);        // [func_0802ebf8] Update Tweezers
 extern void func_0802ec50(void);        // [func_0802ec50] GFX_LOAD Func_02
 extern void func_0802ec60(void);        // [func_0802ec60] GFX_LOAD Func_01
 extern void func_0802eca0(void);        // [func_0802eca0] GFX_LOAD Func_00

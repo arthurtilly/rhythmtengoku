@@ -34,20 +34,21 @@ extern u32 *D_089e3da4[]; // Array of BG Map pointers for vegetable textures
 extern u32 D_089e3db0;    // GFX-related Null
 extern u32 *D_089e3ff4[]; // GFX Struct Index
 
+
 /* RHYTHM TWEEZERS */
 
 
-// [func_0802e750] SUB - Initialise Vegetable Face
+// [func_0802e750] Initialise Vegetable Face
 void func_0802e750(void) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
     u8 type = (gRhythmTweezersInfo.version % 3);
 
-    vegetable->spriteCurrent = func_0804d160(D_03005380, D_089e3d98[type], 0, 0x78, 0x10, 0x4800, -1, 0, 0);
-    func_0804db44(D_03005380, vegetable->spriteCurrent, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.unk12);
+    vegetable->spriteCurrent = func_0804d160(D_03005380, D_089e3d98[type], 0, 120, 16, 0x4800, -1, 0, 0);
+    func_0804db44(D_03005380, vegetable->spriteCurrent, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.BG1VOFS);
 
-    vegetable->spriteNext = func_0804d160(D_03005380, D_089e3d98[type], 0, 0x78, 0x10, 0x4800, 0, 0, 0);
+    vegetable->spriteNext = func_0804d160(D_03005380, D_089e3d98[type], 0, 120, 16, 0x4800, 0, 0, 0);
     func_0804d614(D_03005380, vegetable->spriteNext, 0x178);
-    func_0804db44(D_03005380, vegetable->spriteNext, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.unk12);
+    func_0804db44(D_03005380, vegetable->spriteNext, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.BG1VOFS);
 
     vegetable->bgMapSide = 0;
     gRhythmTweezersInfo.screenHorizontalPosition = 0;
@@ -79,7 +80,7 @@ void func_0802e89c(void) {
 }
 
 
-// [func_0802e8ac] SUB - Update Vegetable Face - Scrolling To New Vegetable
+// [func_0802e8ac] Update Vegetable (Scrolling)
 void func_0802e8ac(void) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
     u32 x;
@@ -90,7 +91,7 @@ void func_0802e8ac(void) {
     if (vegetable->scrollPosition >= vegetable->scrollTarget) {
         gRhythmTweezersInfo.screenHorizontalPosition = 0;
         vegetable->bgMapSide ^= 1;
-        D_03004b10.unk10 = vegetable->bgMapSide << 8;
+        D_03004b10.BG1HOFS = vegetable->bgMapSide << 8;
         vegetable->isScrolling = FALSE;
         func_080178ac();
 
@@ -104,9 +105,9 @@ void func_0802e8ac(void) {
         x = (-coss(x) + 0x100) >> 1;
 
         gRhythmTweezersInfo.screenHorizontalPosition = x;
-        D_03004b10.unk10 = x;
+        D_03004b10.BG1HOFS = x;
         if (vegetable->bgMapSide != 0) {
-            D_03004b10.unk10 = x + 0x100;
+            D_03004b10.BG1HOFS = x + 0x100;
         }
     }
 }
@@ -125,7 +126,7 @@ void func_0802e97c_stub(void) {
 }
 
 
-// [func_0802e980] SUB - Update Vegetable Face
+// [func_0802e980] Update Vegetable
 void func_0802e980(void) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
 
@@ -135,7 +136,7 @@ void func_0802e980(void) {
 }
 
 
-// [func_0802e99c] SUB - Initialise Falling Hairs
+// [func_0802e99c] Initialise Falling Hairs
 void func_0802e99c(void) {
     struct RhythmTweezersFallingHair *hair;
     u32 i = 0;
@@ -152,7 +153,7 @@ void func_0802e99c(void) {
 }
 
 
-// [func_0802ea20] SUB - Update Falling Hairs
+// [func_0802ea20] Update Falling Hairs
 void func_0802ea20(void) {
     struct RhythmTweezersFallingHair *hair;
     u32 i = 0;
@@ -169,7 +170,7 @@ void func_0802ea20(void) {
 }
 
 
-// [func_0802ea74] SUB - Create Falling Hair
+// [func_0802ea74] Create Falling Hair
 void func_0802ea74(u32 arg0) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
     struct RhythmTweezersFallingHair *hair = &gRhythmTweezersInfo.fallingHairs[gRhythmTweezersInfo.fallingHairsNext];
@@ -192,7 +193,7 @@ void func_0802ea74(u32 arg0) {
 }
 
 
-// [func_0802eaf8] SUB - Initialise Tweezers
+// [func_0802eaf8] Initialise Tweezers
 void func_0802eaf8(void) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
 
@@ -219,7 +220,7 @@ void func_0802eb7c(void) {
 }
 
 
-// [func_0802eba0] SUB - Update Tweezers - Position
+// [func_0802eba0] Update Tweezers (Position)
 void func_0802eba0(void) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
     u32 a = 0x4ea;
@@ -235,19 +236,16 @@ void func_0802eba0(void) {
 }
 
 
-// [func_0802ebdc] SUB - Update Tweezers - Vertical Scroll
+// [func_0802ebdc] Update Tweezers (Vertical Screen Scroll)
 void func_0802ebdc(void) {
-    u16 temp_unsigned = D_03004b10.unk12;
-    s16 temp_signed = D_03004b10.unk12;
-
     // If the screen is not in the normal vertical position, scroll down.
-    if (temp_signed != 0) {
-        D_03004b10.unk12 = temp_unsigned - 1;
+    if (D_03004b10.BG1VOFS != 0) {
+        D_03004b10.BG1VOFS -= 1;
     }
 }
 
 
-// [func_0802ebf8] SUB - Update Tweezers
+// [func_0802ebf8] Update Tweezers
 void func_0802ebf8(void) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
     s8 temp;
@@ -336,7 +334,7 @@ void func_0802edc4_stub(void) {
 // [func_0802edc8] SUB - Update Mask
 void func_0802edc8(void) {
     gRhythmTweezersInfo.maskPosition = func_080087d4(gRhythmTweezersInfo.maskPosition + gRhythmTweezersInfo.maskVelocity, -160, 0);
-    D_03004b10.unkE = gRhythmTweezersInfo.maskPosition;
+    D_03004b10.BG0VOFS = gRhythmTweezersInfo.maskPosition;
 }
 
 
@@ -416,7 +414,7 @@ void func_0802f170(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2, u32 ar
 
     func_08010064(arg1->unk4, D_088e88f8, 0, 0, 0, 0);
     func_08010064(tweezers->sprite, D_088e87a8, 0, 1, 0x7f, 0);
-    D_03004b10.unk12 = 2; // Scroll screen upwards.
+    D_03004b10.BG1VOFS = 2;
 
     if (tweezers->heldHair) func_0802ea74(tweezers->heldHair - 1);
     tweezers->heldHair = HELD_HAIR_FULL;

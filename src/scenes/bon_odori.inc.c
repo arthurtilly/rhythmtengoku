@@ -185,9 +185,9 @@ void func_08020c8c(u32 arg0) {
         
         temp2 = gBonOdoriInfo.unk3C - 0x18;
         temp2 -= gBonOdoriInfo.unk38 * 0x18;
-        D_03004b10.unkE = temp2;
+        D_03004b10.BG0VOFS = temp2;
     
-        temp3 = func_0800c4b0(1, func_0800c3a4(arg0), &D_03004b10.unkC, temp0, temp1);    
+        temp3 = func_0800c4b0(1, func_0800c3a4(arg0), &D_03004b10.BG0HOFS, temp0, temp1);
         func_08005d38(temp3, func_08020c4c, gBonOdoriInfo.unk38);
     }
 }
