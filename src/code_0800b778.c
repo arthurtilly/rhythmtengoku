@@ -472,18 +472,18 @@ u32 *func_0800c43c(u32 arg0) {
     // arg10 = R/S [Double-Size Flag]
 
 struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
-                                    s16 scaling, s16 rotation, s8 arg7, s8 arg8, u16 arg9, u32 doubleSize) {
+                                    s16 scale, s16 rotation, s8 arg7, s8 arg8, u16 arg9, u32 doubleSize) {
     struct ScalableSprite *scalable;
     s16 sprite;
-    s8 offset;
+    s8 index;
 
     // Create standard sprite.
     sprite = func_0804d160(D_03005380, anim, arg1, x, y, arg4, arg7, arg8, arg9);
     if (sprite < 0) return NULL;
 
     // Generate offset from D_03000368 in words. (?)
-    offset = func_0800c42c();
-    if (offset < 0) return NULL;
+    index = func_0800c42c();
+    if (index < 0) return NULL;
 
     // Allocate memory for the scalable sprite.
     scalable = (struct ScalableSprite *) func_0800c43c(0x14);
@@ -491,25 +491,25 @@ struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
 
     // Initialise scalable sprite.
     scalable->sprite = sprite;
-    scalable->unk2 = offset;
+    scalable->index = index;
     scalable->doubleSize = doubleSize;
-    scalable->unk4 = scaling;
-    scalable->unk6 = scaling;
+    scalable->scaleX = scale;
+    scalable->scaleY = scale;
     scalable->rotation = rotation;
     scalable->x = x;
     scalable->y = y;
-    scalable->unkE = 0;
-    scalable->unk10 = 0;
+    scalable->fromCentreOffset = 0;
+    scalable->fromCentreAngle = 0;
 
-    scalable->unk12_0 = FALSE;
+    scalable->rotateAroundCentre = FALSE;
     scalable->unk12_1 = TRUE;
     scalable->flipHorizontal = FALSE;
     scalable->unk12_3 = FALSE;
     scalable->unk12_4 = FALSE;
 
-    func_08007468(sprite, offset);
-    func_080022d8(offset);
-    func_080074c4(offset, scalable->unk4, scalable->unk6, scalable->rotation);
+    func_08007468(sprite, index);
+    func_080022d8(index);
+    func_080074c4(index, scalable->scaleX, scalable->scaleY, scalable->rotation);
     func_0804dc8c(D_03005380, sprite, (doubleSize != 0 ? 3 : 1));
 
     return scalable;
@@ -517,7 +517,14 @@ struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
 
 #include "asm/code_0800b778/asm_0800fba0.s"
 
-#include "asm/code_0800b778/asm_0800fc70.s"
+// [func_0800fc70] SCALABLE SPRITE - Delete
+void func_0800fc70(struct ScalableSprite *scalable) {
+    if (scalable == 0) return;
+
+    func_0804d504(D_03005380, scalable->sprite);
+    if (scalable->index >= 0) func_080021b8(scalable->index);
+    mem_heap_dealloc(scalable);
+}
 
 #include "asm/code_0800b778/asm_0800fca0.s"
 
@@ -550,12 +557,19 @@ void func_0800fddc(struct ScalableSprite *sprite, s16 x, s16 y) {
 void func_0800fe60(struct ScalableSprite *sprite, s16 z) {
     if (sprite == 0) return;
 
-    sprite->unk4 = z;
-    sprite->unk6 = z;
+    sprite->scaleX = z;
+    sprite->scaleY = z;
     func_0800f904(sprite);
 }
 
-#include "asm/code_0800b778/asm_0800fe78.s"
+// [func_0800fe78] SCALABLE SPRITE - Update Scaling
+void func_0800fe78(struct ScalableSprite *sprite, s16 scaleX, s16 scaleY) {
+    if (sprite == 0) return;
+
+    sprite->scaleX = scaleX;
+    sprite->scaleY = scaleY;
+    func_0800f904(sprite);
+}
 
 // [func_0800fe94] SCALABLE SPRITE - Set Rotation
 void func_0800fe94(struct ScalableSprite *sprite, s16 rotation) {

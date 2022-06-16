@@ -2,18 +2,18 @@
 
 struct ScalableSprite {
     s16 sprite;      // Sprite ID
-    u8  unk2;        // func_0800c42c()
-    u8  doubleSize;  // Double-Size Flag
-    s16 unk4;        // Scaling (arg5)
-    s16 unk6;        // Scaling (arg5)
+    s8  index;       // func_0800c42c()
+    u8  doubleSize;  // "Double-Size" Flag
+    s16 scaleX;      // Horizontal Scale
+    s16 scaleY;      // Vertical Scale
     s16 rotation;    // Rotation
     u16 x;           // X Coordinate
     u16 y;           // Y Coordinate
-    u16 unkE;        // ? (0)
-    u16 unk10;       // ? (0)
-    u8  unk12_0:1;   // ?
+    s16 fromCentreOffset;   // Distance from Centre
+    s16 fromCentreAngle;    // Angle from Centre (0x800 = 360 degrees)
+    u8  rotateAroundCentre:1;   // "Rotate Around Centre" Flag
     u8  unk12_1:1;   // ?
-    u8  flipHorizontal:1;   // ?
+    u8  flipHorizontal:1;   // "Flip Horizontal" Flag
     u8  unk12_3:1;   // ?
     u8  unk12_4:1;   // ?
 };
@@ -233,9 +233,9 @@ extern void func_0800e62c(s16, u32, s16, u32, u16);
 // extern ? func_0800f8ec(?);
 // extern ? func_0800f8f8(?);
 // extern ? func_0800f904(?);
-extern struct ScalableSprite *func_0800fa6c(u32 *, s8, s16, s16, u16, s16, s16, s8, s8, u16, u32);
+extern struct ScalableSprite *func_0800fa6c(u32 *, s8, s16, s16, u16, s16, s16, s8, s8, u16, u32); // [func_0800fa6c] SCALABLE SPRITE - Create New
 // extern ? func_0800fba0(?);
-// extern ? func_0800fc70(?);
+extern void func_0800fc70(struct ScalableSprite *); // [func_0800fc70] SCALABLE SPRITE - Delete
 // extern ? func_0800fca0(?);
 // extern ? func_0800fd14(?);
 // extern ? func_0800fd60(?);
@@ -247,7 +247,7 @@ extern void func_0800fddc(struct ScalableSprite *, s16, s16); // [func_0800fddc]
 // extern ? func_0800fe20(?);
 // extern ? func_0800fe44(?);
 extern void func_0800fe60(struct ScalableSprite *, s16); // [func_0800fe60] SCALABLE SPRITE - Update Scaling
-// extern ? func_0800fe78(?);
+extern void func_0800fe78(struct ScalableSprite *, s16, s16); // [func_0800fe78] SCALABLE SPRITE - Update Scaling
 extern void func_0800fe94(struct ScalableSprite *, s16); // [func_0800fe94] SCALABLE SPRITE - Set Rotation
 // extern ? func_0800fea8(?);
 // extern ? func_0800febc(?);

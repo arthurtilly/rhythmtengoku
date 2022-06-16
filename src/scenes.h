@@ -696,14 +696,14 @@ extern void func_0802ee24(void);        // [func_0802ee24] MAIN - Loop
 extern void func_0802ee40_stub(void);   // [func_0802ee40] MAIN - Unload (STUB)
 extern void func_0802ee44(void);        // [func_0802ee44] ENGINE Func_01 - Reset Hair Position Cycle
 extern void func_0802ee6c(void);        // [func_0802ee6c] SUB - Update Hair Position Cycle
-extern void func_0802ee7c(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802ee7c] CUE Spawn - Short Hair, Long Hair
-extern u32  func_0802ef54(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802ef54] CUE Behaviour - Short Hair
-extern u32  func_0802ef68(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802ef68] CUE Behaviour - Long Hair
-extern void func_0802f164(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f164] CUE Despawn - Short Hair, Long Hair
-extern void func_0802f170(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f170] CUE Hit - Short Hair
-extern void func_0802f21c(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f21c] CUE Hit, CUE Barely - Long Hair
-extern void func_0802f2a0(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f2a0] CUE Barely - Short Hair
-extern void func_0802f330(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f330] CUE Miss - Short Hair, Long Hair
+extern void func_0802ee7c(u32, struct RhythmTweezersCue *, u32, u32);    // [func_0802ee7c] CUE - Spawn
+extern u32  func_0802ef54(u32, struct RhythmTweezersCue *, u32, u32);    // [func_0802ef54] CUE - Update (Short Hair)
+extern u32  func_0802ef68(u32, struct RhythmTweezersCue *, u32, u32);    // [func_0802ef68] CUE - Update (Long Hair)
+extern void func_0802f164(u32, struct RhythmTweezersCue *, u32, u32);    // [func_0802f164] CUE - Despawn
+extern void func_0802f170(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f170] CUE - Hit (Short Hair)
+extern void func_0802f21c(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f21c] CUE - Hit/Barely (Long Hair)
+extern void func_0802f2a0(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f2a0] CUE - Barely (Short Hair)
+extern void func_0802f330(u32, struct struct_080179f4_sub1 *, u32, u32);    // [func_0802f330] CUE - Miss
 extern void func_0802f33c(void);        // [func_0802f33c] MAIN - Input Event
 extern void func_0802f378_stub(void);   // [func_0802f378] GRAPHICAL Func_00 - Unknown (STUB, Unused)
 extern void func_0802f37c_stub(void);   // [func_0802f37c] GRAPHICAL Func_01 - Unknown (STUB, Unused)
