@@ -501,11 +501,11 @@ struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
     scalable->offsetDistance = 0;
     scalable->offsetAngle = 0;
 
-    scalable->rotateAroundCentre = FALSE;
-    scalable->unk12_1 = TRUE;
+    scalable->rotateWithOffset = FALSE;
+    scalable->highAnglePrecision = TRUE;
     scalable->flipHorizontal = FALSE;
     scalable->flipVertical = FALSE;
-    scalable->unk12_4 = FALSE;
+    scalable->ignoreUpdates = FALSE;
 
     func_08007468(sprite, index);
     func_080022d8(index);
@@ -519,22 +519,59 @@ struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
 
 // [func_0800fc70] SCALABLE SPRITE - Delete
 void func_0800fc70(struct ScalableSprite *scalable) {
-    if (scalable == 0) return;
+    if (scalable == NULL) return;
 
     func_0804d504(D_03005380, scalable->sprite);
     if (scalable->index >= 0) func_080021b8(scalable->index);
     mem_heap_dealloc(scalable);
 }
 
-#include "asm/code_0800b778/asm_0800fca0.s"
+// [func_0800fca0] SCALABLE SPRITE - Set/Remove Index
+void func_0800fca0(struct ScalableSprite *scalable, u32 setIndex) {
+    if (scalable == NULL) return;
+
+    if (setIndex && (scalable->index < 0)) {
+        scalable->index = func_0800c42c();
+        if (scalable->index >= 0) {
+            func_0804dc8c(D_03005380, scalable->sprite, (scalable->doubleSize ? 3 : 1));
+            func_08007468(scalable->sprite, scalable->index);
+            func_0800f904(scalable);
+        }
+    } else if (!setIndex) {
+        if (scalable->index >= 0) {
+            func_080021b8();
+            scalable->index = -1;
+            func_08007468(scalable->sprite, -1);
+        }
+    }
+}
 
 #include "asm/code_0800b778/asm_0800fd14.s"
 
-#include "asm/code_0800b778/asm_0800fd60.s"
+// [func_0800fd60] SCALABLE SPRITE - Set "Double-Size" Flag
+void func_0800fd60(struct ScalableSprite *scalable, u32 doubleSize) {
+    if (scalable->index >= 0) {
+        func_0804dc8c(D_03005380, scalable->sprite, (doubleSize ? 3 : 1));
+    }
+    scalable->doubleSize = doubleSize;
+}
 
-#include "asm/code_0800b778/asm_0800fd90.s"
+// [func_0800fd90] SCALABLE SPRITE - Get Sprite
+s16 func_0800fd90(struct ScalableSprite *scalable) {
+    if (scalable == NULL) return -1;
 
-#include "asm/code_0800b778/asm_0800fda4.s"
+    return scalable->sprite;
+}
+
+// [func_0800fda4] SCALABLE SPRITE - Set X & Y; func_0804d67c()
+void func_0800fda4(struct ScalableSprite *scalable, s16 x, s16 y, u16 arg3) {
+    if (scalable == NULL) return;
+
+    scalable->x = x;
+    scalable->y = y;
+    func_0804d67c(D_03005380, scalable->sprite, arg3);
+    func_0800f904(scalable);
+}
 
 // [func_0800fddc] SCALABLE SPRITE - Set X & Y
 void func_0800fddc(struct ScalableSprite *sprite, s16 x, s16 y) {
@@ -629,15 +666,22 @@ void func_0800fed0(struct ScalableSprite *sprite, s16 angle, s16 distance) {
     func_0800f904(sprite);
 }
 
-// [func_0800feec] SCALABLE SPRITE - Set "Rotate Around Centre" Flag
+// [func_0800feec] SCALABLE SPRITE - Set "Rotate With Offset Angle" Flag
 void func_0800feec(struct ScalableSprite *sprite, u32 rotate) {
     if (sprite == NULL) return;
 
-    sprite->rotateAroundCentre = rotate;
+    sprite->rotateWithOffset = rotate;
     func_0800f904(sprite);
 }
 
-#include "asm/code_0800b778/asm_0800ff10.s"
+// [func_0800ff10] SCALABLE SPRITE - Set Horizontal & Vertical Flip
+void func_0800ff10(struct ScalableSprite *sprite, u32 flipHorizontal, u32 flipVertical) {
+    if (sprite == NULL) return;
+
+    sprite->flipHorizontal = flipHorizontal;
+    sprite->flipVertical = flipVertical;
+    func_0800f904(sprite);
+}
 
 // [func_0800ff44] SCALABLE SPRITE - Set Horizontal Flip
 void func_0800ff44(struct ScalableSprite *sprite, u32 flip) {
@@ -655,7 +699,18 @@ void func_0800ff68(struct ScalableSprite *sprite, u32 flip) {
     func_0800f904(sprite);
 }
 
-#include "asm/code_0800b778/asm_0800ff8c.s"
+// [func_0800ff8c] SCALABLE SPRITE - Set "Ignore Updates" Flag (Inverted)
+void func_0800ff8c(struct ScalableSprite *sprite, u32 checkUpdates) {
+    if (sprite == NULL) return;
+
+    if (checkUpdates && sprite->ignoreUpdates) {
+        sprite->ignoreUpdates = FALSE;
+        func_0800f904(sprite);
+    }
+    else if (!checkUpdates) {
+        sprite->ignoreUpdates = TRUE;
+    }
+}
 
 // [func_0800ffc0] SCALABLE SPRITE - Set Current Animation Frame
 void func_0800ffc0(struct ScalableSprite *scalable, u32 frame) {
