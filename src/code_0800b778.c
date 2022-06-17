@@ -933,7 +933,12 @@ void func_08010238(struct AffineSprite *affineData, u32 arg1, u32 arg2) {
     func_0804daa8(D_03005380, affineData->sprite, arg1, arg2);
 }
 
-#include "asm/code_0800b778/asm_08010260.s"
+// [func_08010260] AFFINE SPRITE - func_0804df4c()
+void func_08010260(struct AffineSprite *affineData, s8 arg) {
+    if (affineData == NULL) return;
+
+    func_0804df4c(D_03005380, affineData->sprite, arg);
+}
 
 #include "asm/code_0800b778/asm_08010288.s"
 
