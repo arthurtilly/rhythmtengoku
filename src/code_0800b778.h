@@ -237,7 +237,7 @@ extern struct ScalableSprite *func_0800fa6c(u32 *, s8, s16, s16, u16, s16, s16, 
 // extern ? func_0800fba0(?);
 extern void func_0800fc70(struct ScalableSprite *); // [func_0800fc70] SCALABLE SPRITE - Delete
 extern void func_0800fca0(struct ScalableSprite *, u32); // [func_0800fca0] SCALABLE SPRITE - Set/Remove Index
-// extern ? func_0800fd14(?);
+extern void func_0800fd14(struct ScalableSprite *, u32); // [func_0800fd14] SCALABLE SPRITE - Set "High Angle Precision" Flag
 extern void func_0800fd60(struct ScalableSprite *, u32); // [func_0800fd60] SCALABLE SPRITE - Set "Double-Size" Flag
 extern s16  func_0800fd90(struct ScalableSprite *); // [func_0800fd90] SCALABLE SPRITE - Get Sprite
 extern void func_0800fda4(struct ScalableSprite *, s16, s16, u16); // [func_0800fda4] SCALABLE SPRITE - Set X & Y; func_0804d67c()

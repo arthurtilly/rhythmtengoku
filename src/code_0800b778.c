@@ -546,7 +546,21 @@ void func_0800fca0(struct ScalableSprite *scalable, u32 setIndex) {
     }
 }
 
-#include "asm/code_0800b778/asm_0800fd14.s"
+// [func_0800fd14] SCALABLE SPRITE - Set "High Angle Precision" Flag
+void func_0800fd14(struct ScalableSprite *sprite, u32 highPrecision) {
+    if (sprite == NULL) return;
+
+    if (sprite->highAnglePrecision != highPrecision) {
+        if (highPrecision) {
+            sprite->rotation <<= 3;
+            sprite->offsetAngle <<= 3;
+        } else {
+            sprite->rotation >>= 3;
+            sprite->offsetAngle >>= 3;
+        }
+        sprite->highAnglePrecision = highPrecision;
+    }
+}
 
 // [func_0800fd60] SCALABLE SPRITE - Set "Double-Size" Flag
 void func_0800fd60(struct ScalableSprite *scalable, u32 doubleSize) {
