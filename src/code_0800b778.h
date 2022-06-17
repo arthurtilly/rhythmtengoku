@@ -1,6 +1,6 @@
 #pragma once
 
-struct ScalableSprite {
+struct AffineSprite {
     s16 sprite;      // Sprite ID
     s8  index;       // func_0800c42c()
     u8  doubleSize;  // "Double-Size" Flag
@@ -232,35 +232,35 @@ extern void func_0800e62c(s16, u32, s16, u32, u16);
 // extern ? func_0800f8d8(?);
 // extern ? func_0800f8ec(?);
 // extern ? func_0800f8f8(?);
-extern void func_0800f904(struct ScalableSprite *); // [func_0800f904] SCALABLE SPRITE - Update
-extern struct ScalableSprite *func_0800fa6c(u32 *, s8, s16, s16, u16, s16, s16, s8, s8, u16, u32); // [func_0800fa6c] SCALABLE SPRITE - Create New
-extern struct ScalableSprite *func_0800fba0(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4, s8 arg5, s8 arg6, u16 arg7); // [func_0800fba0] SCALABLE SPRITE - Create New (with Default Parameters)
-extern void func_0800fc70(struct ScalableSprite *); // [func_0800fc70] SCALABLE SPRITE - Delete
-extern void func_0800fca0(struct ScalableSprite *, u32); // [func_0800fca0] SCALABLE SPRITE - Set/Remove Index
-extern void func_0800fd14(struct ScalableSprite *, u32); // [func_0800fd14] SCALABLE SPRITE - Set "High Angle Precision" Flag
-extern void func_0800fd60(struct ScalableSprite *, u32); // [func_0800fd60] SCALABLE SPRITE - Set "Double-Size" Flag
-extern s16  func_0800fd90(struct ScalableSprite *); // [func_0800fd90] SCALABLE SPRITE - Get Sprite
-extern void func_0800fda4(struct ScalableSprite *, s16, s16, u16); // [func_0800fda4] SCALABLE SPRITE - Set X & Y; func_0804d67c()
-extern void func_0800fddc(struct ScalableSprite *, s16, s16); // [func_0800fddc] SCALABLE SPRITE - Set X & Y
-extern void func_0800fdf8(struct ScalableSprite *, s16); // [func_0800fdf8] SCALABLE SPRITE - Set X
-extern void func_0800fe0c(struct ScalableSprite *, s16); // [func_0800fe0c] SCALABLE SPRITE - Set Y
-extern void func_0800fe20(struct ScalableSprite *, u16); // [func_0800fe20] SCALABLE SPRITE - func_0804d67c()
-extern void func_0800fe44(struct ScalableSprite *, s16, s16); // [func_0800fe44] SCALABLE SPRITE - Set Scaling & Rotation
-extern void func_0800fe60(struct ScalableSprite *, s16); // [func_0800fe60] SCALABLE SPRITE - Set Scaling
-extern void func_0800fe78(struct ScalableSprite *, s16, s16); // [func_0800fe78] SCALABLE SPRITE - Set Scaling
-extern void func_0800fe94(struct ScalableSprite *, s16); // [func_0800fe94] SCALABLE SPRITE - Set Rotation
-extern void func_0800fea8(struct ScalableSprite *, s16); // [func_0800fea8] SCALABLE SPRITE - Set Offset Distance from Centre
-extern void func_0800febc(struct ScalableSprite *, s16); // [func_0800febc] SCALABLE SPRITE - Set Offset Angle from Centre
-extern void func_0800fed0(struct ScalableSprite *, s16, s16); // [func_0800fed0] SCALABLE SPRITE - Set Offset from Centre
-extern void func_0800feec(struct ScalableSprite *, u32); // [func_0800feec] SCALABLE SPRITE - Set "Rotate Around Centre" Flag
-extern void func_0800ff10(struct ScalableSprite *, u32, u32); // [func_0800ff10] SCALABLE SPRITE - Set Horizontal & Vertical Flip
-extern void func_0800ff44(struct ScalableSprite *, u32); // [func_0800ff44] SCALABLE SPRITE - Set Horizontal Flip
-extern void func_0800ff68(struct ScalableSprite *, u32); // [func_0800ff68] SCALABLE SPRITE - Set Vertical Flip
-extern void func_0800ff8c(struct ScalableSprite *, u32); // [func_0800ff8c] SCALABLE SPRITE - Set "Ignore Updates" Flag (Inverted)
-extern void func_0800ffc0(struct ScalableSprite *, u32); // [func_0800ffc0] SCALABLE SPRITE - Set Current Animation Frame
-extern void func_0800ffe4(struct ScalableSprite *, u8); // [func_0800ffe4] SCALABLE SPRITE - func_0804ced0()
-extern void func_08010008(struct ScalableSprite *, u32, u32, u32); // [func_08010008] SCALABLE SPRITE - Animate?
-extern void func_08010040(struct ScalableSprite *, u32); // [func_08010040] SCALABLE SPRITE - Start Animation
+extern void func_0800f904(struct AffineSprite *); // [func_0800f904] AFFINE SPRITE - Update
+extern struct AffineSprite *func_0800fa6c(u32 *, s8, s16, s16, u16, s16, s16, s8, s8, u16, u32); // [func_0800fa6c] AFFINE SPRITE - Create New
+extern struct AffineSprite *func_0800fba0(u32 *, s8, s16, s16, u16, s8, s8, u16); // [func_0800fba0] AFFINE SPRITE - Create New (with Default Parameters)
+extern void func_0800fc70(struct AffineSprite *); // [func_0800fc70] AFFINE SPRITE - Delete
+extern void func_0800fca0(struct AffineSprite *, u32); // [func_0800fca0] AFFINE SPRITE - Set/Remove Index
+extern void func_0800fd14(struct AffineSprite *, u32); // [func_0800fd14] AFFINE SPRITE - Set "High Angle Precision" Flag
+extern void func_0800fd60(struct AffineSprite *, u32); // [func_0800fd60] AFFINE SPRITE - Set "Double-Size" Flag
+extern s16  func_0800fd90(struct AffineSprite *); // [func_0800fd90] AFFINE SPRITE - Get Sprite
+extern void func_0800fda4(struct AffineSprite *, s16, s16, u16); // [func_0800fda4] AFFINE SPRITE - Set X & Y; func_0804d67c()
+extern void func_0800fddc(struct AffineSprite *, s16, s16); // [func_0800fddc] AFFINE SPRITE - Set X & Y
+extern void func_0800fdf8(struct AffineSprite *, s16); // [func_0800fdf8] AFFINE SPRITE - Set X
+extern void func_0800fe0c(struct AffineSprite *, s16); // [func_0800fe0c] AFFINE SPRITE - Set Y
+extern void func_0800fe20(struct AffineSprite *, u16); // [func_0800fe20] AFFINE SPRITE - func_0804d67c()
+extern void func_0800fe44(struct AffineSprite *, s16, s16); // [func_0800fe44] AFFINE SPRITE - Set Scaling & Rotation
+extern void func_0800fe60(struct AffineSprite *, s16); // [func_0800fe60] AFFINE SPRITE - Set Scaling
+extern void func_0800fe78(struct AffineSprite *, s16, s16); // [func_0800fe78] AFFINE SPRITE - Set Scaling
+extern void func_0800fe94(struct AffineSprite *, s16); // [func_0800fe94] AFFINE SPRITE - Set Rotation
+extern void func_0800fea8(struct AffineSprite *, s16); // [func_0800fea8] AFFINE SPRITE - Set Offset Distance from Centre
+extern void func_0800febc(struct AffineSprite *, s16); // [func_0800febc] AFFINE SPRITE - Set Offset Angle from Centre
+extern void func_0800fed0(struct AffineSprite *, s16, s16); // [func_0800fed0] AFFINE SPRITE - Set Offset from Centre
+extern void func_0800feec(struct AffineSprite *, u32); // [func_0800feec] AFFINE SPRITE - Set "Rotate Around Centre" Flag
+extern void func_0800ff10(struct AffineSprite *, u32, u32); // [func_0800ff10] AFFINE SPRITE - Set Horizontal & Vertical Flip
+extern void func_0800ff44(struct AffineSprite *, u32); // [func_0800ff44] AFFINE SPRITE - Set Horizontal Flip
+extern void func_0800ff68(struct AffineSprite *, u32); // [func_0800ff68] AFFINE SPRITE - Set Vertical Flip
+extern void func_0800ff8c(struct AffineSprite *, u32); // [func_0800ff8c] AFFINE SPRITE - Set "Ignore Updates" Flag (Inverted)
+extern void func_0800ffc0(struct AffineSprite *, u32); // [func_0800ffc0] AFFINE SPRITE - Set Current Animation Frame
+extern void func_0800ffe4(struct AffineSprite *, u8); // [func_0800ffe4] AFFINE SPRITE - func_0804ced0()
+extern void func_08010008(struct AffineSprite *, u32, u32, u32); // [func_08010008] AFFINE SPRITE - Animate?
+extern void func_08010040(struct AffineSprite *, u32); // [func_08010040] AFFINE SPRITE - Start Animation
 // extern ? func_08010064(?);
 // extern ? func_080100a8(?);
 // extern ? func_080100cc(?);
