@@ -369,7 +369,7 @@ struct RhythmTweezersInfo {
         u16 half; // Barely'd
     } existingHairs;
     s16 tutorialSprite; // Sprite:  Tutorial Text (Unused)
-    u16 screenHorizontalPosition; // Value:   Global Horizontal Position (for vegetable faces and hair)
+    s16 screenHorizontalPosition; // Value:   Global Horizontal Position (for vegetable faces and hair)
     s16 maskPosition;  // Value:   Mask Vertical Position (-160 = Hidden; 0 = Fully Visible)
     s16 maskVelocity;  // Value:   Mask Vertical Velocity (-8 = Down; 8 = Up)
 };
