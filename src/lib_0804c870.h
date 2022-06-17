@@ -33,7 +33,7 @@ extern void func_0804d614(s32, s16, s16);
 // extern ? func_0804d648(?);
 extern void func_0804d67c(s32, s16, u16);
 extern s32  func_0804d6cc(s32, s16);
-// extern ? func_0804d708(?);
+extern u8   func_0804d708(s32, s16);
 extern void func_0804d770(s32, s16, u16);
 // extern ? func_0804d7b4(?);
 // extern ? func_0804d7e8(?);
