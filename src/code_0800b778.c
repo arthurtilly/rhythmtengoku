@@ -536,47 +536,60 @@ void func_0800fc70(struct ScalableSprite *scalable) {
 
 #include "asm/code_0800b778/asm_0800fda4.s"
 
-// [func_0800fddc] SCALABLE SPRITE - Set X/Y Position
+// [func_0800fddc] SCALABLE SPRITE - Set X & Y
 void func_0800fddc(struct ScalableSprite *sprite, s16 x, s16 y) {
-    if (sprite == 0) return;
+    if (sprite == NULL) return;
 
     sprite->x = x;
     sprite->y = y;
     func_0800f904(sprite);
 }
 
-// [func_0800fdf8] SCALABLE SPRITE - Set X Position
+// [func_0800fdf8] SCALABLE SPRITE - Set X
 void func_0800fdf8(struct ScalableSprite *sprite, s16 x) {
-    if (sprite == 0) return;
+    if (sprite == NULL) return;
 
     sprite->x = x;
     func_0800f904(sprite);
 }
 
-// [func_0800fe0c] SCALABLE SPRITE - Set Y Position
+// [func_0800fe0c] SCALABLE SPRITE - Set Y
 void func_0800fe0c(struct ScalableSprite *sprite, s16 y) {
-    if (sprite == 0) return;
+    if (sprite == NULL) return;
 
     sprite->y = y;
     func_0800f904(sprite);
 }
 
-#include "asm/code_0800b778/asm_0800fe20.s"
+// [func_0800fe20] SCALABLE SPRITE - func_0804d67c()
+void func_0800fe20(struct ScalableSprite *scalable, u16 arg) {
+    if (scalable == NULL) return;
 
-#include "asm/code_0800b778/asm_0800fe44.s"
+    func_0804d67c(D_03005380, scalable->sprite, arg);
+}
+
+// [func_0800fe44] SCALABLE SPRITE - Set Scaling & Rotation
+void func_0800fe44(struct ScalableSprite *sprite, s16 scale, s16 rotation) {
+    if (sprite == NULL) return;
+
+    sprite->scaleX = scale;
+    sprite->scaleY = scale;
+    sprite->rotation = rotation;
+    func_0800f904(sprite);
+}
 
 // [func_0800fe60] SCALABLE SPRITE - Set Scaling
-void func_0800fe60(struct ScalableSprite *sprite, s16 z) {
-    if (sprite == 0) return;
+void func_0800fe60(struct ScalableSprite *sprite, s16 scale) {
+    if (sprite == NULL) return;
 
-    sprite->scaleX = z;
-    sprite->scaleY = z;
+    sprite->scaleX = scale;
+    sprite->scaleY = scale;
     func_0800f904(sprite);
 }
 
 // [func_0800fe78] SCALABLE SPRITE - Set Scaling
 void func_0800fe78(struct ScalableSprite *sprite, s16 scaleX, s16 scaleY) {
-    if (sprite == 0) return;
+    if (sprite == NULL) return;
 
     sprite->scaleX = scaleX;
     sprite->scaleY = scaleY;
@@ -585,21 +598,40 @@ void func_0800fe78(struct ScalableSprite *sprite, s16 scaleX, s16 scaleY) {
 
 // [func_0800fe94] SCALABLE SPRITE - Set Rotation
 void func_0800fe94(struct ScalableSprite *sprite, s16 rotation) {
-    if (sprite == 0) return;
+    if (sprite == NULL) return;
 
     sprite->rotation = rotation;
     func_0800f904(sprite);
 }
 
-#include "asm/code_0800b778/asm_0800fea8.s"
+// [func_0800fea8] SCALABLE SPRITE - Set Offset Distance from Centre
+void func_0800fea8(struct ScalableSprite *sprite, s16 distance) {
+    if (sprite == NULL) return;
 
-#include "asm/code_0800b778/asm_0800febc.s"
+    sprite->offsetDistance = distance;
+    func_0800f904(sprite);
+}
 
-#include "asm/code_0800b778/asm_0800fed0.s"
+// [func_0800febc] SCALABLE SPRITE - Set Offset Angle from Centre
+void func_0800febc(struct ScalableSprite *sprite, s16 angle) {
+    if (sprite == NULL) return;
+
+    sprite->offsetAngle = angle;
+    func_0800f904(sprite);
+}
+
+// [func_0800fed0] SCALABLE SPRITE - Set Offset from Centre
+void func_0800fed0(struct ScalableSprite *sprite, s16 angle, s16 distance) {
+    if (sprite == NULL) return;
+
+    sprite->offsetAngle = angle;
+    sprite->offsetDistance = distance;
+    func_0800f904(sprite);
+}
 
 // [func_0800feec] SCALABLE SPRITE - Set "Rotate Around Centre" Flag
 void func_0800feec(struct ScalableSprite *sprite, u32 rotate) {
-    if (sprite == 0) return;
+    if (sprite == NULL) return;
 
     sprite->rotateAroundCentre = rotate;
     func_0800f904(sprite);
@@ -609,7 +641,7 @@ void func_0800feec(struct ScalableSprite *sprite, u32 rotate) {
 
 // [func_0800ff44] SCALABLE SPRITE - Set Horizontal Flip
 void func_0800ff44(struct ScalableSprite *sprite, u32 flip) {
-    if (sprite == 0) return;
+    if (sprite == NULL) return;
 
     sprite->flipHorizontal = flip;
     func_0800f904(sprite);
@@ -617,7 +649,7 @@ void func_0800ff44(struct ScalableSprite *sprite, u32 flip) {
 
 // [func_0800ff68] SCALABLE SPRITE - Set Vertical Flip
 void func_0800ff68(struct ScalableSprite *sprite, u32 flip) {
-    if (sprite == 0) return;
+    if (sprite == NULL) return;
 
     sprite->flipVertical = flip;
     func_0800f904(sprite);
@@ -627,23 +659,28 @@ void func_0800ff68(struct ScalableSprite *sprite, u32 flip) {
 
 // [func_0800ffc0] SCALABLE SPRITE - Set Current Animation Frame
 void func_0800ffc0(struct ScalableSprite *scalable, u32 frame) {
-    if (scalable == 0) return;
+    if (scalable == NULL) return;
 
     func_0804cebc(D_03005380, scalable->sprite, frame);
 }
 
-#include "asm/code_0800b778/asm_0800ffe4.s"
+// [func_0800ffe4] SCALABLE SPRITE - func_0804ced0()
+void func_0800ffe4(struct ScalableSprite *scalable, u8 arg) {
+    if (scalable == NULL) return;
+
+    func_0804ced0(D_03005380, scalable->sprite, arg);
+}
 
 // [func_08010008] SCALABLE SPRITE - Animate?
 void func_08010008(struct ScalableSprite *scalable, u32 arg1, u32 arg2, u32 arg3) {
-    if (scalable == 0) return;
+    if (scalable == NULL) return;
 
     func_0804dae0(D_03005380, scalable->sprite, arg1, arg2, arg3);
 }
 
 // [func_08010040] SCALABLE SPRITE - Start Animation
 void func_08010040(struct ScalableSprite *scalable, u32 start) {
-    if (scalable == 0) return;
+    if (scalable == NULL) return;
 
     func_0804d770(D_03005380, scalable->sprite, start);
 }

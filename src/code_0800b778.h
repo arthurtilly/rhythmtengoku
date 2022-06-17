@@ -7,8 +7,8 @@ struct ScalableSprite {
     s16 scaleX;      // Horizontal Scale
     s16 scaleY;      // Vertical Scale
     s16 rotation;    // Rotation
-    u16 x;           // X Coordinate
-    u16 y;           // Y Coordinate
+    s16 x;           // X Coordinate
+    s16 y;           // Y Coordinate
     s16 offsetDistance; // Distance from Centre
     s16 offsetAngle;    // Angle from Centre (0x800 = 360 degrees)
     u8  rotateAroundCentre:1;   // "Rotate Around Centre" Flag
@@ -244,15 +244,15 @@ extern void func_0800fc70(struct ScalableSprite *); // [func_0800fc70] SCALABLE 
 extern void func_0800fddc(struct ScalableSprite *, s16, s16); // [func_0800fddc] SCALABLE SPRITE - Set X/Y Position
 extern void func_0800fdf8(struct ScalableSprite *, s16); // [func_0800fdf8] SCALABLE SPRITE - Set X Position
 extern void func_0800fe0c(struct ScalableSprite *, s16); // [func_0800fe0c] SCALABLE SPRITE - Set Y Position
-// extern ? func_0800fe20(?);
-// extern ? func_0800fe44(?);
+extern void func_0800fe20(struct ScalableSprite *, u16); // [func_0800fe20] SCALABLE SPRITE - func_0804d67c()
+extern void func_0800fe44(struct ScalableSprite *, s16, s16); // [func_0800fe44] SCALABLE SPRITE - Set Scaling & Rotation
 extern void func_0800fe60(struct ScalableSprite *, s16); // [func_0800fe60] SCALABLE SPRITE - Set Scaling
 extern void func_0800fe78(struct ScalableSprite *, s16, s16); // [func_0800fe78] SCALABLE SPRITE - Set Scaling
 extern void func_0800fe94(struct ScalableSprite *, s16); // [func_0800fe94] SCALABLE SPRITE - Set Rotation
-// extern ? func_0800fea8(?);
-// extern ? func_0800febc(?);
-extern void func_0800fed0(struct ScalableSprite *, s16, s16); // [func_0800fed0] SCALABLE SPRITE - Set Offset & Distance from Centre
-// extern ? func_0800feec(?);
+extern void func_0800fea8(struct ScalableSprite *, s16); // [func_0800fea8] SCALABLE SPRITE - Set Offset Distance from Centre
+extern void func_0800febc(struct ScalableSprite *, s16); // [func_0800febc] SCALABLE SPRITE - Set Offset Angle from Centre
+extern void func_0800fed0(struct ScalableSprite *, s16, s16); // [func_0800fed0] SCALABLE SPRITE - Set Offset from Centre
+extern void func_0800feec(struct ScalableSprite *, u32); // [func_0800feec] SCALABLE SPRITE - Set "Rotate Around Centre" Flag
 // extern ? func_0800ff10(?);
 extern void func_0800ff44(struct ScalableSprite *, u32); // [func_0800ff44] SCALABLE SPRITE - Set Horizontal Flip
 extern void func_0800ff68(struct ScalableSprite *, u32); // [func_0800ff68] SCALABLE SPRITE - Set Vertical Flip
