@@ -40,8 +40,8 @@ extern void func_0801fc40(void);    // [func_0801fc40] GRAPHICAL Func_01 - Unkno
 extern void func_0801fc44(u32);     // [func_0801fc44] Initialise BG Star Position
 extern void func_0801fcb0(void);    // [func_0801fcb0] Update BG Star Position
 extern void func_0801fd1c(void);    // [func_0801fd1c] Update BG Star Scaling
-extern void func_0801fd70(struct ScalableSprite *, s32, s32, s32);    // [func_0801fd70] Update Entity (Graphical)
-extern void func_0801fdc4(struct ScalableSprite *, s32, s32, s32, u32 *, u32 *);  // [func_0801fdc4] Update Batter (Graphical)
+extern void func_0801fd70(struct AffineSprite *, s32, s32, s32);    // [func_0801fd70] Update Entity (Graphical)
+extern void func_0801fdc4(struct AffineSprite *, s32, s32, s32, u32 *, u32 *);  // [func_0801fdc4] Update Batter (Graphical)
 extern void func_0801fe6c(void);    // [func_0801fe6c] Update Sprites, Stars & Camera
 extern void func_0801ff60(void);    // [func_0801ff60] GFX Init Func_02
 extern void func_0801ff70(void);    // [func_0801ff70] GFX Init Func_01
@@ -1584,7 +1584,7 @@ extern void func_080449b4(void);        // [func_080449b4] GFX Init Func_01
 extern void func_080449e4(void);        // [func_080449e4] GFX Init Func_00
 extern void func_08044a10(u32);         // [func_08044a10] MAIN - Init
 extern void func_08044b80(u32);         // [func_08044b80] ENGINE Func_00 - Set Rotation Interval
-extern void func_08044ba8(struct ScalableSprite *, s32, s32, u32);  // [func_08044ba8] Update Entity Position
+extern void func_08044ba8(struct AffineSprite *, s32, s32, u32);  // [func_08044ba8] Update Entity Position
 extern void func_08044c04(void);        // [func_08044c04] MAIN - Update
 extern void func_08044e60(u32);         // [func_08044e60] ENGINE Func_01 - Set Tutorial Flag
 extern void func_08044e74_stub(void);   // [func_08044e74] MAIN - Close (STUB)

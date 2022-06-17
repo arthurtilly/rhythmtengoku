@@ -456,62 +456,61 @@ u32 *func_0800c43c(u32 arg0) {
 
 #include "asm/code_0800b778/asm_0800f8f8.s"
 
-// [func_0800f904] SCALABLE SPRITE - Update
-void func_0800f904(struct ScalableSprite *scalable) {
-    s16 x, y;
+// [func_0800f904] AFFINE SPRITE - Update
+void func_0800f904(struct AffineSprite *affineData) {
+    s16 x, y, rotation;
     s16 index;
     s16 offsetAngle;
     u8 offsetAngleLowPrec;
-    s16 rotation;
     u8 flip;
 
     // Self-explanatory
-    if (scalable->ignoreUpdates) return;
+    if (affineData->ignoreUpdates) return;
 
-    x = scalable->x;
-    y = scalable->y;
-    index = scalable->index;
-    offsetAngle = scalable->offsetAngle;
+    x = affineData->x;
+    y = affineData->y;
+    index = affineData->index;
+    offsetAngle = affineData->offsetAngle;
 
     // Update X & Y
-    if (scalable->offsetDistance != 0) {
-        if (scalable->highAnglePrecision) {
-            x += (scalable->offsetDistance * coss(offsetAngle)) >> 8;
-            y += (scalable->offsetDistance * sins(offsetAngle)) >> 8;
+    if (affineData->offsetDistance != 0) {
+        if (affineData->highAnglePrecision) {
+            x += (affineData->offsetDistance * coss(offsetAngle)) >> 8;
+            y += (affineData->offsetDistance * sins(offsetAngle)) >> 8;
         } else {
             offsetAngleLowPrec = offsetAngle;
-            x += (scalable->offsetDistance * coss2(offsetAngleLowPrec)) >> 8;
-            y += (scalable->offsetDistance * sins2(offsetAngleLowPrec)) >> 8;
+            x += (affineData->offsetDistance * coss2(offsetAngleLowPrec)) >> 8;
+            y += (affineData->offsetDistance * sins2(offsetAngleLowPrec)) >> 8;
         }
     }
-    func_0804d5d4(D_03005380, scalable->sprite, x, y);
+    func_0804d5d4(D_03005380, affineData->sprite, x, y);
 
     // It seems that the "index" may refer to a Rotation/Scaling Parameter Group (buffered at D_03000340)
     if (index >= 0) {
         // Get Rotation
-        rotation = scalable->rotation;
-        if (scalable->rotateWithOffset) {
+        rotation = affineData->rotation;
+        if (affineData->rotateWithOffset) {
             rotation += offsetAngle;
         }
 
         // Update Horizontal & Vertical Flip
-        flip = (scalable->flipHorizontal) ? 2 : 0;
-        if (scalable->flipVertical) flip |= 4;
+        flip = (affineData->flipHorizontal) ? 2 : 0;
+        if (affineData->flipVertical) flip |= 4;
         func_08002260(index, flip);
 
         // Update Angle Precision
-        if (scalable->highAnglePrecision) {
+        if (affineData->highAnglePrecision) {
             func_080022d8(index);
         } else {
             func_080022bc(index);
         }
 
         // Update Scaling & Rotation
-        func_080074c4(index, scalable->scaleX, scalable->scaleY, rotation);
+        func_080074c4(index, affineData->scaleX, affineData->scaleY, rotation);
     }
 }
 
-// Create Scalable Sprite (Sprite w/ Rotation/Scaling Parameters)
+// Create Affine Sprite (Sprite w/ Rotation/Scaling Parameters)
     // arg0  = ... [Animation Pointer]
     // arg1  = ... []
     // arg2  = ... [x]
@@ -524,9 +523,9 @@ void func_0800f904(struct ScalableSprite *scalable) {
     // arg9  = ... []
     // arg10 = R/S [Double-Size Flag]
 
-struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4, s16 scale,
+struct AffineSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4, s16 scale,
                                             s16 rotation, s8 arg7, s8 arg8, u16 arg9, u32 doubleSize) {
-    struct ScalableSprite *scalable;
+    struct AffineSprite *affineData;
     s16 sprite;
     s8 index;
 
@@ -538,302 +537,302 @@ struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
     index = func_0800c42c();
     if (index < 0) return NULL;
 
-    // Allocate memory for the scalable sprite.
-    scalable = (struct ScalableSprite *) func_0800c43c(0x14);
-    if (scalable == NULL) return NULL;
+    // Allocate memory for the affineData sprite.
+    affineData = (struct AffineSprite *) func_0800c43c(0x14);
+    if (affineData == NULL) return NULL;
 
-    // Initialise scalable sprite.
-    scalable->sprite = sprite;
-    scalable->index = index;
-    scalable->doubleSize = doubleSize;
-    scalable->scaleX = scale;
-    scalable->scaleY = scale;
-    scalable->rotation = rotation;
-    scalable->x = x;
-    scalable->y = y;
-    scalable->offsetDistance = 0;
-    scalable->offsetAngle = 0;
+    // Initialise Affine Sprite
+    affineData->sprite = sprite;
+    affineData->index = index;
+    affineData->doubleSize = doubleSize;
+    affineData->scaleX = scale;
+    affineData->scaleY = scale;
+    affineData->rotation = rotation;
+    affineData->x = x;
+    affineData->y = y;
+    affineData->offsetDistance = 0;
+    affineData->offsetAngle = 0;
 
-    scalable->rotateWithOffset = FALSE;
-    scalable->highAnglePrecision = TRUE;
-    scalable->flipHorizontal = FALSE;
-    scalable->flipVertical = FALSE;
-    scalable->ignoreUpdates = FALSE;
+    affineData->rotateWithOffset = FALSE;
+    affineData->highAnglePrecision = TRUE;
+    affineData->flipHorizontal = FALSE;
+    affineData->flipVertical = FALSE;
+    affineData->ignoreUpdates = FALSE;
 
     func_08007468(sprite, index);
     func_080022d8(index);
-    func_080074c4(index, scalable->scaleX, scalable->scaleY, scalable->rotation);
+    func_080074c4(index, affineData->scaleX, affineData->scaleY, affineData->rotation);
     func_0804dc8c(D_03005380, sprite, (doubleSize ? 3 : 1));
 
-    return scalable;
+    return affineData;
 }
 
-// [func_0800fba0] SCALABLE SPRITE - Create Scalable Sprite with Default Rotation/Scaling Parameters
-struct ScalableSprite *func_0800fba0(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4, s8 arg5, s8 arg6, u16 arg7) {
-    struct ScalableSprite *scalable;
+// [func_0800fba0] AFFINE SPRITE - Create Affine Sprite with Default Rotation/Scaling Parameters
+struct AffineSprite *func_0800fba0(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4, s8 arg5, s8 arg6, u16 arg7) {
+    struct AffineSprite *affineData;
     s16 sprite;
 
     sprite = func_0804d160(D_03005380, anim, arg1, x, y, arg4, arg5, arg6, arg7);
     if (sprite < 0) return NULL;
 
-    scalable = (struct ScalableSprite *) func_0800c43c(0x14);
-    if (scalable == NULL) return NULL;
+    affineData = (struct AffineSprite *) func_0800c43c(0x14);
+    if (affineData == NULL) return NULL;
 
-    scalable->sprite = sprite;
-    scalable->index = -1;
-    scalable->doubleSize = 0;
-    scalable->scaleX = 0x100;
-    scalable->scaleY = 0x100;
-    scalable->rotation = 0;
-    scalable->x = x;
-    scalable->y = y;
-    scalable->offsetDistance = 0;
-    scalable->offsetAngle = 0;
+    affineData->sprite = sprite;
+    affineData->index = -1;
+    affineData->doubleSize = 0;
+    affineData->scaleX = 0x100;
+    affineData->scaleY = 0x100;
+    affineData->rotation = 0;
+    affineData->x = x;
+    affineData->y = y;
+    affineData->offsetDistance = 0;
+    affineData->offsetAngle = 0;
 
-    scalable->rotateWithOffset = FALSE;
-    scalable->highAnglePrecision = TRUE;
-    scalable->flipHorizontal = FALSE;
-    scalable->flipVertical = FALSE;
-    scalable->ignoreUpdates = FALSE;
+    affineData->rotateWithOffset = FALSE;
+    affineData->highAnglePrecision = TRUE;
+    affineData->flipHorizontal = FALSE;
+    affineData->flipVertical = FALSE;
+    affineData->ignoreUpdates = FALSE;
 
-    return scalable;
+    return affineData;
 }
 
-// [func_0800fc70] SCALABLE SPRITE - Delete
-void func_0800fc70(struct ScalableSprite *scalable) {
-    if (scalable == NULL) return;
+// [func_0800fc70] AFFINE SPRITE - Delete
+void func_0800fc70(struct AffineSprite *affineData) {
+    if (affineData == NULL) return;
 
-    func_0804d504(D_03005380, scalable->sprite);
-    if (scalable->index >= 0) func_080021b8(scalable->index);
-    mem_heap_dealloc(scalable);
+    func_0804d504(D_03005380, affineData->sprite);
+    if (affineData->index >= 0) func_080021b8(affineData->index);
+    mem_heap_dealloc(affineData);
 }
 
-// [func_0800fca0] SCALABLE SPRITE - Set/Remove Index
-void func_0800fca0(struct ScalableSprite *scalable, u32 setIndex) {
-    if (scalable == NULL) return;
+// [func_0800fca0] AFFINE SPRITE - Set/Remove Index
+void func_0800fca0(struct AffineSprite *affineData, u32 setIndex) {
+    if (affineData == NULL) return;
 
-    if (setIndex && (scalable->index < 0)) {
-        scalable->index = func_0800c42c();
-        if (scalable->index >= 0) {
-            func_0804dc8c(D_03005380, scalable->sprite, (scalable->doubleSize ? 3 : 1));
-            func_08007468(scalable->sprite, scalable->index);
-            func_0800f904(scalable);
+    if (setIndex && (affineData->index < 0)) {
+        affineData->index = func_0800c42c();
+        if (affineData->index >= 0) {
+            func_0804dc8c(D_03005380, affineData->sprite, (affineData->doubleSize ? 3 : 1));
+            func_08007468(affineData->sprite, affineData->index);
+            func_0800f904(affineData);
         }
     } else if (!setIndex) {
-        if (scalable->index >= 0) {
+        if (affineData->index >= 0) {
             func_080021b8();
-            scalable->index = -1;
-            func_08007468(scalable->sprite, -1);
+            affineData->index = -1;
+            func_08007468(affineData->sprite, -1);
         }
     }
 }
 
-// [func_0800fd14] SCALABLE SPRITE - Set "High Angle Precision" Flag
-void func_0800fd14(struct ScalableSprite *sprite, u32 highPrecision) {
-    if (sprite == NULL) return;
+// [func_0800fd14] AFFINE SPRITE - Set "High Angle Precision" Flag
+void func_0800fd14(struct AffineSprite *affineData, u32 highPrecision) {
+    if (affineData == NULL) return;
 
-    if (sprite->highAnglePrecision != highPrecision) {
+    if (affineData->highAnglePrecision != highPrecision) {
         if (highPrecision) {
-            sprite->rotation <<= 3;
-            sprite->offsetAngle <<= 3;
+            affineData->rotation <<= 3;
+            affineData->offsetAngle <<= 3;
         } else {
-            sprite->rotation >>= 3;
-            sprite->offsetAngle >>= 3;
+            affineData->rotation >>= 3;
+            affineData->offsetAngle >>= 3;
         }
-        sprite->highAnglePrecision = highPrecision;
+        affineData->highAnglePrecision = highPrecision;
     }
 }
 
-// [func_0800fd60] SCALABLE SPRITE - Set "Double-Size" Flag
-void func_0800fd60(struct ScalableSprite *scalable, u32 doubleSize) {
-    if (scalable->index >= 0) {
-        func_0804dc8c(D_03005380, scalable->sprite, (doubleSize ? 3 : 1));
+// [func_0800fd60] AFFINE SPRITE - Set "Double-Size" Flag
+void func_0800fd60(struct AffineSprite *affineData, u32 doubleSize) {
+    if (affineData->index >= 0) {
+        func_0804dc8c(D_03005380, affineData->sprite, (doubleSize ? 3 : 1));
     }
-    scalable->doubleSize = doubleSize;
+    affineData->doubleSize = doubleSize;
 }
 
-// [func_0800fd90] SCALABLE SPRITE - Get Sprite
-s16 func_0800fd90(struct ScalableSprite *scalable) {
-    if (scalable == NULL) return -1;
+// [func_0800fd90] AFFINE SPRITE - Get Sprite
+s16 func_0800fd90(struct AffineSprite *affineData) {
+    if (affineData == NULL) return -1;
 
-    return scalable->sprite;
+    return affineData->sprite;
 }
 
-// [func_0800fda4] SCALABLE SPRITE - Set X & Y; func_0804d67c()
-void func_0800fda4(struct ScalableSprite *scalable, s16 x, s16 y, u16 arg3) {
-    if (scalable == NULL) return;
+// [func_0800fda4] AFFINE SPRITE - Set X & Y; func_0804d67c()
+void func_0800fda4(struct AffineSprite *affineData, s16 x, s16 y, u16 arg3) {
+    if (affineData == NULL) return;
 
-    scalable->x = x;
-    scalable->y = y;
-    func_0804d67c(D_03005380, scalable->sprite, arg3);
-    func_0800f904(scalable);
+    affineData->x = x;
+    affineData->y = y;
+    func_0804d67c(D_03005380, affineData->sprite, arg3);
+    func_0800f904(affineData);
 }
 
-// [func_0800fddc] SCALABLE SPRITE - Set X & Y
-void func_0800fddc(struct ScalableSprite *sprite, s16 x, s16 y) {
-    if (sprite == NULL) return;
+// [func_0800fddc] AFFINE SPRITE - Set X & Y
+void func_0800fddc(struct AffineSprite *affineData, s16 x, s16 y) {
+    if (affineData == NULL) return;
 
-    sprite->x = x;
-    sprite->y = y;
-    func_0800f904(sprite);
+    affineData->x = x;
+    affineData->y = y;
+    func_0800f904(affineData);
 }
 
-// [func_0800fdf8] SCALABLE SPRITE - Set X
-void func_0800fdf8(struct ScalableSprite *sprite, s16 x) {
-    if (sprite == NULL) return;
+// [func_0800fdf8] AFFINE SPRITE - Set X
+void func_0800fdf8(struct AffineSprite *affineData, s16 x) {
+    if (affineData == NULL) return;
 
-    sprite->x = x;
-    func_0800f904(sprite);
+    affineData->x = x;
+    func_0800f904(affineData);
 }
 
-// [func_0800fe0c] SCALABLE SPRITE - Set Y
-void func_0800fe0c(struct ScalableSprite *sprite, s16 y) {
-    if (sprite == NULL) return;
+// [func_0800fe0c] AFFINE SPRITE - Set Y
+void func_0800fe0c(struct AffineSprite *affineData, s16 y) {
+    if (affineData == NULL) return;
 
-    sprite->y = y;
-    func_0800f904(sprite);
+    affineData->y = y;
+    func_0800f904(affineData);
 }
 
-// [func_0800fe20] SCALABLE SPRITE - func_0804d67c()
-void func_0800fe20(struct ScalableSprite *scalable, u16 arg) {
-    if (scalable == NULL) return;
+// [func_0800fe20] AFFINE SPRITE - func_0804d67c()
+void func_0800fe20(struct AffineSprite *affineData, u16 arg) {
+    if (affineData == NULL) return;
 
-    func_0804d67c(D_03005380, scalable->sprite, arg);
+    func_0804d67c(D_03005380, affineData->sprite, arg);
 }
 
-// [func_0800fe44] SCALABLE SPRITE - Set Scaling & Rotation
-void func_0800fe44(struct ScalableSprite *sprite, s16 scale, s16 rotation) {
-    if (sprite == NULL) return;
+// [func_0800fe44] AFFINE SPRITE - Set Scaling & Rotation
+void func_0800fe44(struct AffineSprite *affineData, s16 scale, s16 rotation) {
+    if (affineData == NULL) return;
 
-    sprite->scaleX = scale;
-    sprite->scaleY = scale;
-    sprite->rotation = rotation;
-    func_0800f904(sprite);
+    affineData->scaleX = scale;
+    affineData->scaleY = scale;
+    affineData->rotation = rotation;
+    func_0800f904(affineData);
 }
 
-// [func_0800fe60] SCALABLE SPRITE - Set Scaling
-void func_0800fe60(struct ScalableSprite *sprite, s16 scale) {
-    if (sprite == NULL) return;
+// [func_0800fe60] AFFINE SPRITE - Set Scaling
+void func_0800fe60(struct AffineSprite *affineData, s16 scale) {
+    if (affineData == NULL) return;
 
-    sprite->scaleX = scale;
-    sprite->scaleY = scale;
-    func_0800f904(sprite);
+    affineData->scaleX = scale;
+    affineData->scaleY = scale;
+    func_0800f904(affineData);
 }
 
-// [func_0800fe78] SCALABLE SPRITE - Set Scaling
-void func_0800fe78(struct ScalableSprite *sprite, s16 scaleX, s16 scaleY) {
-    if (sprite == NULL) return;
+// [func_0800fe78] AFFINE SPRITE - Set Scaling
+void func_0800fe78(struct AffineSprite *affineData, s16 scaleX, s16 scaleY) {
+    if (affineData == NULL) return;
 
-    sprite->scaleX = scaleX;
-    sprite->scaleY = scaleY;
-    func_0800f904(sprite);
+    affineData->scaleX = scaleX;
+    affineData->scaleY = scaleY;
+    func_0800f904(affineData);
 }
 
-// [func_0800fe94] SCALABLE SPRITE - Set Rotation
-void func_0800fe94(struct ScalableSprite *sprite, s16 rotation) {
-    if (sprite == NULL) return;
+// [func_0800fe94] AFFINE SPRITE - Set Rotation
+void func_0800fe94(struct AffineSprite *affineData, s16 rotation) {
+    if (affineData == NULL) return;
 
-    sprite->rotation = rotation;
-    func_0800f904(sprite);
+    affineData->rotation = rotation;
+    func_0800f904(affineData);
 }
 
-// [func_0800fea8] SCALABLE SPRITE - Set Offset Distance from Centre
-void func_0800fea8(struct ScalableSprite *sprite, s16 distance) {
-    if (sprite == NULL) return;
+// [func_0800fea8] AFFINE SPRITE - Set Offset Distance from Centre
+void func_0800fea8(struct AffineSprite *affineData, s16 distance) {
+    if (affineData == NULL) return;
 
-    sprite->offsetDistance = distance;
-    func_0800f904(sprite);
+    affineData->offsetDistance = distance;
+    func_0800f904(affineData);
 }
 
-// [func_0800febc] SCALABLE SPRITE - Set Offset Angle from Centre
-void func_0800febc(struct ScalableSprite *sprite, s16 angle) {
-    if (sprite == NULL) return;
+// [func_0800febc] AFFINE SPRITE - Set Offset Angle from Centre
+void func_0800febc(struct AffineSprite *affineData, s16 angle) {
+    if (affineData == NULL) return;
 
-    sprite->offsetAngle = angle;
-    func_0800f904(sprite);
+    affineData->offsetAngle = angle;
+    func_0800f904(affineData);
 }
 
-// [func_0800fed0] SCALABLE SPRITE - Set Offset from Centre
-void func_0800fed0(struct ScalableSprite *sprite, s16 angle, s16 distance) {
-    if (sprite == NULL) return;
+// [func_0800fed0] AFFINE SPRITE - Set Offset from Centre
+void func_0800fed0(struct AffineSprite *affineData, s16 angle, s16 distance) {
+    if (affineData == NULL) return;
 
-    sprite->offsetAngle = angle;
-    sprite->offsetDistance = distance;
-    func_0800f904(sprite);
+    affineData->offsetAngle = angle;
+    affineData->offsetDistance = distance;
+    func_0800f904(affineData);
 }
 
-// [func_0800feec] SCALABLE SPRITE - Set "Rotate With Offset Angle" Flag
-void func_0800feec(struct ScalableSprite *sprite, u32 rotate) {
-    if (sprite == NULL) return;
+// [func_0800feec] AFFINE SPRITE - Set "Rotate With Offset Angle" Flag
+void func_0800feec(struct AffineSprite *affineData, u32 rotate) {
+    if (affineData == NULL) return;
 
-    sprite->rotateWithOffset = rotate;
-    func_0800f904(sprite);
+    affineData->rotateWithOffset = rotate;
+    func_0800f904(affineData);
 }
 
-// [func_0800ff10] SCALABLE SPRITE - Set Horizontal & Vertical Flip
-void func_0800ff10(struct ScalableSprite *sprite, u32 flipHorizontal, u32 flipVertical) {
-    if (sprite == NULL) return;
+// [func_0800ff10] AFFINE SPRITE - Set Horizontal & Vertical Flip
+void func_0800ff10(struct AffineSprite *affineData, u32 flipHorizontal, u32 flipVertical) {
+    if (affineData == NULL) return;
 
-    sprite->flipHorizontal = flipHorizontal;
-    sprite->flipVertical = flipVertical;
-    func_0800f904(sprite);
+    affineData->flipHorizontal = flipHorizontal;
+    affineData->flipVertical = flipVertical;
+    func_0800f904(affineData);
 }
 
-// [func_0800ff44] SCALABLE SPRITE - Set Horizontal Flip
-void func_0800ff44(struct ScalableSprite *sprite, u32 flip) {
-    if (sprite == NULL) return;
+// [func_0800ff44] AFFINE SPRITE - Set Horizontal Flip
+void func_0800ff44(struct AffineSprite *affineData, u32 flip) {
+    if (affineData == NULL) return;
 
-    sprite->flipHorizontal = flip;
-    func_0800f904(sprite);
+    affineData->flipHorizontal = flip;
+    func_0800f904(affineData);
 }
 
-// [func_0800ff68] SCALABLE SPRITE - Set Vertical Flip
-void func_0800ff68(struct ScalableSprite *sprite, u32 flip) {
-    if (sprite == NULL) return;
+// [func_0800ff68] AFFINE SPRITE - Set Vertical Flip
+void func_0800ff68(struct AffineSprite *affineData, u32 flip) {
+    if (affineData == NULL) return;
 
-    sprite->flipVertical = flip;
-    func_0800f904(sprite);
+    affineData->flipVertical = flip;
+    func_0800f904(affineData);
 }
 
-// [func_0800ff8c] SCALABLE SPRITE - Set "Ignore Updates" Flag (Inverted)
-void func_0800ff8c(struct ScalableSprite *sprite, u32 checkUpdates) {
-    if (sprite == NULL) return;
+// [func_0800ff8c] AFFINE SPRITE - Set "Ignore Updates" Flag (Inverted)
+void func_0800ff8c(struct AffineSprite *affineData, u32 checkUpdates) {
+    if (affineData == NULL) return;
 
-    if (checkUpdates && sprite->ignoreUpdates) {
-        sprite->ignoreUpdates = FALSE;
-        func_0800f904(sprite);
+    if (checkUpdates && affineData->ignoreUpdates) {
+        affineData->ignoreUpdates = FALSE;
+        func_0800f904(affineData);
     }
     else if (!checkUpdates) {
-        sprite->ignoreUpdates = TRUE;
+        affineData->ignoreUpdates = TRUE;
     }
 }
 
-// [func_0800ffc0] SCALABLE SPRITE - Set Current Animation Frame
-void func_0800ffc0(struct ScalableSprite *scalable, u32 frame) {
-    if (scalable == NULL) return;
+// [func_0800ffc0] AFFINE SPRITE - Set Current Animation Frame
+void func_0800ffc0(struct AffineSprite *affineData, u32 frame) {
+    if (affineData == NULL) return;
 
-    func_0804cebc(D_03005380, scalable->sprite, frame);
+    func_0804cebc(D_03005380, affineData->sprite, frame);
 }
 
-// [func_0800ffe4] SCALABLE SPRITE - func_0804ced0()
-void func_0800ffe4(struct ScalableSprite *scalable, u8 arg) {
-    if (scalable == NULL) return;
+// [func_0800ffe4] AFFINE SPRITE - func_0804ced0()
+void func_0800ffe4(struct AffineSprite *affineData, u8 arg) {
+    if (affineData == NULL) return;
 
-    func_0804ced0(D_03005380, scalable->sprite, arg);
+    func_0804ced0(D_03005380, affineData->sprite, arg);
 }
 
-// [func_08010008] SCALABLE SPRITE - Animate?
-void func_08010008(struct ScalableSprite *scalable, u32 arg1, u32 arg2, u32 arg3) {
-    if (scalable == NULL) return;
+// [func_08010008] AFFINE SPRITE - Animate?
+void func_08010008(struct AffineSprite *affineData, u32 arg1, u32 arg2, u32 arg3) {
+    if (affineData == NULL) return;
 
-    func_0804dae0(D_03005380, scalable->sprite, arg1, arg2, arg3);
+    func_0804dae0(D_03005380, affineData->sprite, arg1, arg2, arg3);
 }
 
-// [func_08010040] SCALABLE SPRITE - Start Animation
-void func_08010040(struct ScalableSprite *scalable, u32 start) {
-    if (scalable == NULL) return;
+// [func_08010040] AFFINE SPRITE - Start Animation
+void func_08010040(struct AffineSprite *affineData, u32 start) {
+    if (affineData == NULL) return;
 
-    func_0804d770(D_03005380, scalable->sprite, start);
+    func_0804d770(D_03005380, affineData->sprite, start);
 }
 
 #include "asm/code_0800b778/asm_08010064.s"
