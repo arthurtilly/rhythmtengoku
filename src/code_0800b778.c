@@ -459,16 +459,16 @@ u32 *func_0800c43c(u32 arg0) {
 #include "asm/code_0800b778/asm_0800f904.s"
 
 // Create Scalable Sprite (Sprite w/ Rotation/Scaling Parameters)
-    // arg0 = ... [Animation Pointer]
-    // arg1 = ... []
-    // arg2 = ... [x]
-    // arg3 = ... [y]
-    // arg4 = ... []
-    // arg5 = R/S [Scaling]
-    // arg6 = R/S [Rotation]
-    // arg7 = ... [Animation Run Type {0 = Still; 1 = Play Once; -1 = Loop; Other = Play First Frame Only?}]
-    // arg8 = ... []
-    // arg9 = ... []
+    // arg0  = ... [Animation Pointer]
+    // arg1  = ... []
+    // arg2  = ... [x]
+    // arg3  = ... [y]
+    // arg4  = ... []
+    // arg5  = R/S [Scaling]
+    // arg6  = R/S [Rotation]
+    // arg7  = ... [Animation Run Type {0 = Still; 1 = Play Once; -1 = Loop; Other = Play First Frame Only?}]
+    // arg8  = ... []
+    // arg9  = ... []
     // arg10 = R/S [Double-Size Flag]
 
 struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
@@ -498,19 +498,19 @@ struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
     scalable->rotation = rotation;
     scalable->x = x;
     scalable->y = y;
-    scalable->fromCentreOffset = 0;
-    scalable->fromCentreAngle = 0;
+    scalable->offsetDistance = 0;
+    scalable->offsetAngle = 0;
 
     scalable->rotateAroundCentre = FALSE;
     scalable->unk12_1 = TRUE;
     scalable->flipHorizontal = FALSE;
-    scalable->unk12_3 = FALSE;
+    scalable->flipVertical = FALSE;
     scalable->unk12_4 = FALSE;
 
     func_08007468(sprite, index);
     func_080022d8(index);
     func_080074c4(index, scalable->scaleX, scalable->scaleY, scalable->rotation);
-    func_0804dc8c(D_03005380, sprite, (doubleSize != 0 ? 3 : 1));
+    func_0804dc8c(D_03005380, sprite, (doubleSize ? 3 : 1));
 
     return scalable;
 }
@@ -536,7 +536,7 @@ void func_0800fc70(struct ScalableSprite *scalable) {
 
 #include "asm/code_0800b778/asm_0800fda4.s"
 
-// [func_0800fddc] SCALABLE SPRITE - Update X/Y Position
+// [func_0800fddc] SCALABLE SPRITE - Set X/Y Position
 void func_0800fddc(struct ScalableSprite *sprite, s16 x, s16 y) {
     if (sprite == 0) return;
 
@@ -545,15 +545,27 @@ void func_0800fddc(struct ScalableSprite *sprite, s16 x, s16 y) {
     func_0800f904(sprite);
 }
 
-#include "asm/code_0800b778/asm_0800fdf8.s"
+// [func_0800fdf8] SCALABLE SPRITE - Set X Position
+void func_0800fdf8(struct ScalableSprite *sprite, s16 x) {
+    if (sprite == 0) return;
 
-#include "asm/code_0800b778/asm_0800fe0c.s"
+    sprite->x = x;
+    func_0800f904(sprite);
+}
+
+// [func_0800fe0c] SCALABLE SPRITE - Set Y Position
+void func_0800fe0c(struct ScalableSprite *sprite, s16 y) {
+    if (sprite == 0) return;
+
+    sprite->y = y;
+    func_0800f904(sprite);
+}
 
 #include "asm/code_0800b778/asm_0800fe20.s"
 
 #include "asm/code_0800b778/asm_0800fe44.s"
 
-// [func_0800fe60] SCALABLE SPRITE - Update Scaling
+// [func_0800fe60] SCALABLE SPRITE - Set Scaling
 void func_0800fe60(struct ScalableSprite *sprite, s16 z) {
     if (sprite == 0) return;
 
@@ -562,7 +574,7 @@ void func_0800fe60(struct ScalableSprite *sprite, s16 z) {
     func_0800f904(sprite);
 }
 
-// [func_0800fe78] SCALABLE SPRITE - Update Scaling
+// [func_0800fe78] SCALABLE SPRITE - Set Scaling
 void func_0800fe78(struct ScalableSprite *sprite, s16 scaleX, s16 scaleY) {
     if (sprite == 0) return;
 
@@ -585,7 +597,13 @@ void func_0800fe94(struct ScalableSprite *sprite, s16 rotation) {
 
 #include "asm/code_0800b778/asm_0800fed0.s"
 
-#include "asm/code_0800b778/asm_0800feec.s"
+// [func_0800feec] SCALABLE SPRITE - Set "Rotate Around Centre" Flag
+void func_0800feec(struct ScalableSprite *sprite, u32 rotate) {
+    if (sprite == 0) return;
+
+    sprite->rotateAroundCentre = rotate;
+    func_0800f904(sprite);
+}
 
 #include "asm/code_0800b778/asm_0800ff10.s"
 
@@ -597,7 +615,13 @@ void func_0800ff44(struct ScalableSprite *sprite, u32 flip) {
     func_0800f904(sprite);
 }
 
-#include "asm/code_0800b778/asm_0800ff68.s"
+// [func_0800ff68] SCALABLE SPRITE - Set Vertical Flip
+void func_0800ff68(struct ScalableSprite *sprite, u32 flip) {
+    if (sprite == 0) return;
+
+    sprite->flipVertical = flip;
+    func_0800f904(sprite);
+}
 
 #include "asm/code_0800b778/asm_0800ff8c.s"
 

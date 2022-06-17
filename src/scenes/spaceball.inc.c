@@ -227,7 +227,7 @@ void func_0801ffcc(u32 ver) {
     gSpaceballInfo.poofL.x = 2;
     gSpaceballInfo.poofL.y = 52;
     gSpaceballInfo.poofL.z = 0;
-    func_0800ff44(gSpaceballInfo.poofL.sprite, 1); // Flip Horizontal
+    func_0800ff44(gSpaceballInfo.poofL.sprite, TRUE); // Flip Horizontal
 
     gSpaceballInfo.currentStar = 0;
     gSpaceballInfo.zoom = -0x80;
