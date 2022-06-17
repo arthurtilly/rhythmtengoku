@@ -232,9 +232,9 @@ extern void func_0800e62c(s16, u32, s16, u32, u16);
 // extern ? func_0800f8d8(?);
 // extern ? func_0800f8ec(?);
 // extern ? func_0800f8f8(?);
-// extern ? func_0800f904(?);
+extern void func_0800f904(struct ScalableSprite *); // [func_0800f904] SCALABLE SPRITE - Update
 extern struct ScalableSprite *func_0800fa6c(u32 *, s8, s16, s16, u16, s16, s16, s8, s8, u16, u32); // [func_0800fa6c] SCALABLE SPRITE - Create New
-// extern ? func_0800fba0(?);
+extern struct ScalableSprite *func_0800fba0(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4, s8 arg5, s8 arg6, u16 arg7); // [func_0800fba0] SCALABLE SPRITE - Create New (with Default Parameters)
 extern void func_0800fc70(struct ScalableSprite *); // [func_0800fc70] SCALABLE SPRITE - Delete
 extern void func_0800fca0(struct ScalableSprite *, u32); // [func_0800fca0] SCALABLE SPRITE - Set/Remove Index
 extern void func_0800fd14(struct ScalableSprite *, u32); // [func_0800fd14] SCALABLE SPRITE - Set "High Angle Precision" Flag

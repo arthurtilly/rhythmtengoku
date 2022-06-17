@@ -1,5 +1,7 @@
 #include "global.h"
+#include "code_08001360.h"
 #include "code_08003980.h"
+#include "code_08007468.h"
 #include "code_0800b778.h"
 #include "src/lib_0804c870.h"
 
@@ -170,8 +172,6 @@ u32 func_0800c3b8() {
 #include "asm/code_0800b778/asm_0800c428.s"
 
 #include "asm/code_0800b778/asm_0800c42c.s"
-
-// #include "asm/code_0800b778/asm_0800c43c.s"
 
 // Allocate memory for a struct of size [arg0] (bytes). (?)
 u32 *func_0800c43c(u32 arg0) {
@@ -456,7 +456,60 @@ u32 *func_0800c43c(u32 arg0) {
 
 #include "asm/code_0800b778/asm_0800f8f8.s"
 
-#include "asm/code_0800b778/asm_0800f904.s"
+// [func_0800f904] SCALABLE SPRITE - Update
+void func_0800f904(struct ScalableSprite *scalable) {
+    s16 x, y;
+    s16 index;
+    s16 offsetAngle;
+    u8 offsetAngleLowPrec;
+    s16 rotation;
+    u8 flip;
+
+    // Self-explanatory
+    if (scalable->ignoreUpdates) return;
+
+    x = scalable->x;
+    y = scalable->y;
+    index = scalable->index;
+    offsetAngle = scalable->offsetAngle;
+
+    // Update X & Y
+    if (scalable->offsetDistance != 0) {
+        if (scalable->highAnglePrecision) {
+            x += (scalable->offsetDistance * coss(offsetAngle)) >> 8;
+            y += (scalable->offsetDistance * sins(offsetAngle)) >> 8;
+        } else {
+            offsetAngleLowPrec = offsetAngle;
+            x += (scalable->offsetDistance * coss2(offsetAngleLowPrec)) >> 8;
+            y += (scalable->offsetDistance * sins2(offsetAngleLowPrec)) >> 8;
+        }
+    }
+    func_0804d5d4(D_03005380, scalable->sprite, x, y);
+
+    // It seems that the "index" may refer to a Rotation/Scaling Parameter Group (buffered at D_03000340)
+    if (index >= 0) {
+        // Get Rotation
+        rotation = scalable->rotation;
+        if (scalable->rotateWithOffset) {
+            rotation += offsetAngle;
+        }
+
+        // Update Horizontal & Vertical Flip
+        flip = (scalable->flipHorizontal) ? 2 : 0;
+        if (scalable->flipVertical) flip |= 4;
+        func_08002260(index, flip);
+
+        // Update Angle Precision
+        if (scalable->highAnglePrecision) {
+            func_080022d8(index);
+        } else {
+            func_080022bc(index);
+        }
+
+        // Update Scaling & Rotation
+        func_080074c4(index, scalable->scaleX, scalable->scaleY, rotation);
+    }
+}
 
 // Create Scalable Sprite (Sprite w/ Rotation/Scaling Parameters)
     // arg0  = ... [Animation Pointer]
@@ -471,8 +524,8 @@ u32 *func_0800c43c(u32 arg0) {
     // arg9  = ... []
     // arg10 = R/S [Double-Size Flag]
 
-struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
-                                    s16 scale, s16 rotation, s8 arg7, s8 arg8, u16 arg9, u32 doubleSize) {
+struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4, s16 scale,
+                                            s16 rotation, s8 arg7, s8 arg8, u16 arg9, u32 doubleSize) {
     struct ScalableSprite *scalable;
     s16 sprite;
     s8 index;
@@ -515,7 +568,36 @@ struct ScalableSprite *func_0800fa6c(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4,
     return scalable;
 }
 
-#include "asm/code_0800b778/asm_0800fba0.s"
+// [func_0800fba0] SCALABLE SPRITE - Create Scalable Sprite with Default Rotation/Scaling Parameters
+struct ScalableSprite *func_0800fba0(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4, s8 arg5, s8 arg6, u16 arg7) {
+    struct ScalableSprite *scalable;
+    s16 sprite;
+
+    sprite = func_0804d160(D_03005380, anim, arg1, x, y, arg4, arg5, arg6, arg7);
+    if (sprite < 0) return NULL;
+
+    scalable = (struct ScalableSprite *) func_0800c43c(0x14);
+    if (scalable == NULL) return NULL;
+
+    scalable->sprite = sprite;
+    scalable->index = -1;
+    scalable->doubleSize = 0;
+    scalable->scaleX = 0x100;
+    scalable->scaleY = 0x100;
+    scalable->rotation = 0;
+    scalable->x = x;
+    scalable->y = y;
+    scalable->offsetDistance = 0;
+    scalable->offsetAngle = 0;
+
+    scalable->rotateWithOffset = FALSE;
+    scalable->highAnglePrecision = TRUE;
+    scalable->flipHorizontal = FALSE;
+    scalable->flipVertical = FALSE;
+    scalable->ignoreUpdates = FALSE;
+
+    return scalable;
+}
 
 // [func_0800fc70] SCALABLE SPRITE - Delete
 void func_0800fc70(struct ScalableSprite *scalable) {

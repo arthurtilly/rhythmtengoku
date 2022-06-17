@@ -11,7 +11,7 @@ struct unk_struct_08008b00 {
 
 // extern ? func_08007468(?);
 // extern ? func_08007498(?);
-// extern ? func_080074c4(?);
+extern void func_080074c4(s8, s16, s16, s16); // ROTATION/SCALING PARAMETER GROUP - Update ScaleX, ScaleY, Rotation
 // extern ? func_080074ec(?);
 // extern ? func_08007544(?);
 // extern ? func_0800757c(?);
