@@ -263,54 +263,33 @@ struct RapMenInfo {
 
 struct WizardsWaltzCue {
     struct AffineSprite *sprite;
-    u16 unk4;
+    u16 null4;
     s16 position;
 };
 
-struct WizardsWaltzSparkle {
-    struct AffineSprite *entity; // Entity:  unk0
-    u8  state;      // Value:   unk4 {0,1,2}
-    u32 unk8;       // Counter: unk8
-    u32 unkC;       // Value:   posUnk0C
-    u32 unk10;      // Value:   posUnk10
-    u32 unk14;      // Value:   posUnk14
-    u32 unk18;      // Counter: unk18 {0..15}
+struct WizardsWaltzEntity {
+    struct AffineSprite *sprite;
+    u8  state;
+    s32 rotation;
+    s32 x;
+    s32 y;
+    s32 z;
+    u32 time;
     u32 null1C;
 };
 
 struct WizardsWaltzInfo {
-    u8 version;         // Value:   unk0
-    struct AffineSprite *wizardEntity; // Entity:  unk4
-    u8  wizardState;    // Value:   unk8 {0,1}
-    u32 unkC;           // Value:   posUnk0C
-    u32 unk10;          // Value:   posUnk10
-    s32 unk14;          // Value:   posUnk14
-    u32 unk18;          // Value:   posUnk18
-    u32 null1C;
-    u32 null20;
-    struct AffineSprite *shadowEntity; // Entity:  unk24
-    u32 null28;
-    u32 null2C;
-    u32 null30;
-    u32 null34;
-    u32 null38;
-    u32 null3C;
-    u32 null40;
-    struct WizardsWaltzSparkle sparkle[10]; // Struct: unk44[10]
-    struct AffineSprite *girlEntity; // Entity:  unk184
-    u8  girlState;      // Value:   unk188 {0,1,2}
-    u32 null18C;
-    u32 null190;
-    u32 null194;
-    u32 null198;
-    u32 null19C;
-    u32 null1A0;
-    s32 cyclePosition;  // Counter: unk1A4
-    s32 cycleInterval;  // Value:   unk1A8
-    s32 globalScale;    // Value:   unk1AC
-    u8  unk1B0;         // Counter: cycleUnk1B0 {0..9}
-    u8  flowerCount;    // Counter: unk1B1
-    u8  isTutorial;     // Flag:    unk1B2
+    u8 version;
+    struct WizardsWaltzEntity wizard;
+    struct WizardsWaltzEntity shadow;
+    struct WizardsWaltzEntity sparkle[10];
+    struct WizardsWaltzEntity girl;
+    s32 cyclePosition;
+    s32 cycleInterval;
+    s32 globalScale;
+    u8  currentSparkle; // Sparkle to operate on
+    u8  flowerCount;
+    u8  isTutorial;
 };
 
 
