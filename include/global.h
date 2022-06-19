@@ -26,8 +26,8 @@ typedef int32_t  s32;
 
 typedef s16 s8_8;
 typedef s32 s24_8;
-#define INT_TO_FIXED(x) ((x) << 8)
-#define FIXED_TO_INT(x) ((x) >> 8)
+#define INT_TO_FIXED(x) ((s32)((x) * 256))
+#define FIXED_TO_INT(x) ((s32)((x) >> 8))
 #define FIXED_POINT_MUL(a, b) (((a) * (b)) >> 8)
 
 #include "gba/gba.h"

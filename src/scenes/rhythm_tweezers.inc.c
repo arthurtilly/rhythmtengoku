@@ -6,62 +6,76 @@
 // For readability. !TODO - CHANGE/REMOVE
 #define gRhythmTweezersInfo D_030055d0->gameInfo.rhythmTweezers
 
+// Game-Specific Macros
+#define HELD_HAIR_NONE 0
+#define HELD_HAIR_FULL 1
+#define HELD_HAIR_BARELY 2
+#define VEGETABLE_ONION 0
+#define VEGETABLE_TURNIP 1
+#define VEGETABLE_POTATO 2
+
 // OAM Animations:
-extern u32 D_088e87a8[];  // Animation: "tweezer_pluck"
-extern u32 D_088e8848[];  // Animation: "tweezer_pluck_barely"
-extern u32 D_088e8898[];  // Animation: "tweezer_pluck_miss"
-extern u32 D_088e88e0[];  // Animation: "hair_fall"
-extern u32 D_088e88f8[];  // Animation: "hair_stubble"
-extern u32 D_088e8910[];  // Animation: "tutorial_text" (unused)
-extern u32 D_088e8a50[];  // Animation: "hair_long_pull"
+extern u32 D_088e8768;  // Animation: hair_appear_short
+extern u32 D_088e87a8;  // Animation: "tweezer_pluck"
+extern u32 D_088e8848;  // Animation: "tweezer_pluck_barely"
+extern u32 D_088e8898;  // Animation: "tweezer_pluck_miss"
+extern u32 D_088e88e0;  // Animation: "hair_fall"
+extern u32 D_088e88f8;  // Animation: "hair_stubble"
+extern u32 D_088e8910;  // Animation: "tutorial_text" (unused)
+extern u32 D_088e89a8;  // Animation: hair_appear_long
+extern u32 D_088e8a50;  // Animation: "hair_long_pull"
 
 // Sound Effects:
-extern const struct SequenceData s_f_hair_next_seqData;      // Sound: Cash Register
-extern const struct SequenceData s_f_hair_nuki_long_seqData; // Sound: ???
-extern const struct SequenceData s_f_hair_tuneru_seqData;    // Sound: ???
+extern const struct SequenceData s_f_hair_next_seqData;         // SFX: Cash Register
+extern const struct SequenceData s_f_hair_nuki_long_seqData;    // SFX: ???
+extern const struct SequenceData s_f_hair_tuneru_seqData;       // SFX: ???
+extern const struct SequenceData s_hanabi_pon_seqData;          // SFX: Hair Appear (Short)
+extern const struct SequenceData s_f_hair_appear_long_seqData;  // SFX: Hair Appear (Long)
 
 // Additional Data - Rhythm Tweezers:
 extern u32 *D_089e3d98[]; // Array of animation pointers for vegetable faces
 extern u32 *D_089e3da4[]; // Array of BG Map pointers for vegetable textures
 extern u32 D_089e3db0;    // GFX-related Null
 extern u32 *D_089e3ff4[]; // GFX Struct Index
+// extern s16 D_03004b22;    // BG1VOFS Buffer
+
 
 /* RHYTHM TWEEZERS */
 
 
-// [func_0802e750] SUB - Initialise Vegetable Face
+// [func_0802e750] Initialise Vegetable Face
 void func_0802e750(void) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
-    u8 ver = (gRhythmTweezersInfo.unk0 % 3);
+    u8 type = (gRhythmTweezersInfo.version % 3);
 
-    vegetable->entity0 = func_0804d160(D_03005380, D_089e3d98[ver], 0, 0x78, 0x10, 0x4800, -1, 0, 0);
-    func_0804db44(D_03005380, vegetable->entity0, &gRhythmTweezersInfo.unk8E, &D_03004b10.unk12);
+    vegetable->spriteCurrent = func_0804d160(D_03005380, D_089e3d98[type], 0, 120, 16, 0x4800, -1, 0, 0);
+    func_0804db44(D_03005380, vegetable->spriteCurrent, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.BG1VOFS);
 
-    vegetable->entity2 = func_0804d160(D_03005380, D_089e3d98[ver], 0, 0x78, 0x10, 0x4800, 0, 0, 0);
-    func_0804d614(D_03005380, vegetable->entity2, 0x178);
-    func_0804db44(D_03005380, vegetable->entity2, &gRhythmTweezersInfo.unk8E, &D_03004b10.unk12);
+    vegetable->spriteNext = func_0804d160(D_03005380, D_089e3d98[type], 0, 120, 16, 0x4800, 0, 0, 0);
+    func_0804d614(D_03005380, vegetable->spriteNext, 0x178);
+    func_0804db44(D_03005380, vegetable->spriteNext, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.BG1VOFS);
 
-    vegetable->unk10 = 0;
-    gRhythmTweezersInfo.unk8E = 0;
-    vegetable->unk6 = 0;
+    vegetable->bgMapSide = 0;
+    gRhythmTweezersInfo.screenHorizontalPosition = 0;
+    vegetable->isScrolling = FALSE;
 }
 
 
 // [func_0802e828] ENGINE Func_02 - Scroll to New Vegetable
 void func_0802e828(u32 time) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
-    u32 temp;
-    u32 *vegetableBG;
+    u32 side;
+    u32 *bgMap;
 
-    vegetable->unk6 = 1;
-    vegetable->unk8 = 0;
-    vegetable->unkC = func_0800c3a4(time);
-    func_0804d8f8(D_03005380, vegetable->entity2, D_089e3d98[vegetable->unk5], 0, 0, 0, 0);
+    vegetable->isScrolling = TRUE;
+    vegetable->scrollTime = 0;
+    vegetable->scrollTarget = func_0800c3a4(time);
+    func_0804d8f8(D_03005380, vegetable->spriteNext, D_089e3d98[vegetable->typeNext], 0, 0, 0, 0);
 
-    temp = vegetable->unk10;
-    vegetableBG = &RT_VEGETABLE_BG_MAP_R;
-    if (temp) vegetableBG = &RT_VEGETABLE_BG_MAP_L;
-    func_08003eb8(D_089e3da4[vegetable->unk5], vegetableBG);
+    side = vegetable->bgMapSide;
+    bgMap = &RT_VEGETABLE_BG_MAP_R;
+    if (side) bgMap = &RT_VEGETABLE_BG_MAP_L;
+    func_08003eb8(D_089e3da4[vegetable->typeNext], bgMap);
 }
 
 
@@ -71,135 +85,132 @@ void func_0802e89c(void) {
 }
 
 
-// [func_0802e8ac] SUB - Update Vegetable Face - Scrolling To New Vegetable
+// [func_0802e8ac] Update Vegetable (Scrolling)
 void func_0802e8ac(void) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
-    u32 temp;
+    u32 x;
 
-    vegetable->unk8 += 1;
+    vegetable->scrollTime += 1;
 
     // Vegetable has reached its destination.
-    if (vegetable->unk8 >= vegetable->unkC) {
-        gRhythmTweezersInfo.unk8E = 0;
-        vegetable->unk10 ^= 1;
-        D_03004b10.unk10 = vegetable->unk10 << 8;
-        vegetable->unk6 = 0;
+    if (vegetable->scrollTime >= vegetable->scrollTarget) {
+        gRhythmTweezersInfo.screenHorizontalPosition = 0;
+        vegetable->bgMapSide ^= 1;
+        D_03004b10.BG1HOFS = vegetable->bgMapSide << 8;
+        vegetable->isScrolling = FALSE;
         func_080178ac();
 
-        func_0804d8f8(D_03005380, vegetable->entity0, D_089e3d98[vegetable->unk5], 0, -1, 0, 0);
-        vegetable->unk4 = vegetable->unk5;
+        func_0804d8f8(D_03005380, vegetable->spriteCurrent, D_089e3d98[vegetable->typeNext], 0, -1, 0, 0);
+        vegetable->typeCurrent = vegetable->typeNext;
     }
 
     // Vegetable has not yet reached its destination.
     else {
-        temp = (vegetable->unk8 << 0xa) / vegetable->unkC;
-        temp = (-coss(temp) + 0x100) >> 1;
+        x = 1024 * vegetable->scrollTime / vegetable->scrollTarget;
+        x = (-coss(x) + 0x100) >> 1;
 
-        gRhythmTweezersInfo.unk8E = temp;
-        D_03004b10.unk10 = temp;
-        if (vegetable->unk10) {
-            D_03004b10.unk10 = temp + 0x100;
+        gRhythmTweezersInfo.screenHorizontalPosition = x;
+        D_03004b10.BG1HOFS = x;
+        if (vegetable->bgMapSide != 0) {
+            D_03004b10.BG1HOFS = x + 0x100;
         }
     }
 }
 
 
 // [func_0802e96c] ENGINE Func_03 - Define New Vegetable Type
-void func_0802e96c(u32 arg0) {
+void func_0802e96c(u32 type) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
 
-    vegetable->unk5 = arg0;
+    vegetable->typeNext = type;
 }
 
 
-// [func_0802e97c] ENGINE Func_06 - Unknown
+// [func_0802e97c] ENGINE Func_06 - STUB
 void func_0802e97c_stub(void) {
 }
 
 
-// [func_0802e980] SUB - Update Vegetable Face
+// [func_0802e980] Update Vegetable
 void func_0802e980(void) {
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
 
-    if (vegetable->unk6 != 0) {
+    if (vegetable->isScrolling) {
         func_0802e8ac();
     }
 }
 
 
-// [func_0802e99c] SUB - Initialise Falling Hairs
+// [func_0802e99c] Initialise Falling Hairs
 void func_0802e99c(void) {
     struct RhythmTweezersFallingHair *hair;
-    u32 i = 0;
+    u32 i;
 
-    for (i; i <= 4; i++) {
+    for (i = 0; i < 5; i++) {
         hair = &gRhythmTweezersInfo.fallingHairs[i];
-        hair->entity = func_0800fa6c(D_088e88e0, 0, 0x78, 0x10, 0x4800, 0x100, -0x200, 0, 0, 0x8000, 0);
-        func_0800feec(hair->entity, 1);
-        func_0800fea8(hair->entity, 0x4c);
-        hair->unk4 = 0xc800;
-        hair->unk8 = 0;
+        hair->sprite = func_0800fa6c(&D_088e88e0, 0, 120, 16, 0x4800, 0x100, -0x200, 0, 0, 0x8000, 0);
+        func_0800feec(hair->sprite, TRUE);
+        func_0800fea8(hair->sprite, 0x4c);
+        hair->fallDistance = 0xc800;
+        hair->fallSpeed = 0;
     }
-    gRhythmTweezersInfo.unk20 = 0;
+    gRhythmTweezersInfo.fallingHairsNext = 0;
 }
 
 
-// [func_0802ea20] SUB - Update Falling Hairs
+// [func_0802ea20] Update Falling Hairs
 void func_0802ea20(void) {
     struct RhythmTweezersFallingHair *hair;
     u32 i = 0;
 
     for (i; i <= 4; i++) {
         hair = &gRhythmTweezersInfo.fallingHairs[i];
-        if (hair->unk4 <= 0xc7ff) {
-            hair->unk8 += 0x20;
-            hair->unk4 += hair->unk8;
-            hair->unkC += hair->unkE;
-            func_0800fe0c(hair->entity, (s16) ((hair->unk4 >> 8) + 0x10));
-            func_0800fe94(hair->entity, hair->unkC);
+        if (hair->fallDistance <= 0xc7ff) {
+            hair->fallDistance += hair->fallSpeed += 0x20;
+            hair->rotation += hair->rotationSpeed;
+            func_0800fe0c(hair->sprite, (s16) ((hair->fallDistance >> 8) + 0x10));
+            func_0800fe94(hair->sprite, hair->rotation);
         }
     }
 }
 
 
-// [func_0802ea74] SUB - Create Falling Hair
+// [func_0802ea74] Create Falling Hair
 void func_0802ea74(u32 arg0) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
-    struct RhythmTweezersFallingHair *hair = &gRhythmTweezersInfo.fallingHairs[gRhythmTweezersInfo.unk20];
-    u8 temp;
+    struct RhythmTweezersFallingHair *hair = &gRhythmTweezersInfo.fallingHairs[gRhythmTweezersInfo.fallingHairsNext];
 
-    hair->unkC = -0x200;
-    hair->unkE = func_08001980(0x1f) - 0xf;
+    hair->rotation = -0x200;
+    hair->rotationSpeed = func_08001980(0x1f) - 15;
 
-    func_0800fe0c(hair->entity, 0x10);
-    func_0800febc(hair->entity, tweezers->unk6);
-    func_0800fe94(hair->entity, hair->unkC);
-    func_08010040(hair->entity, 1);
+    func_0800fe0c(hair->sprite, 0x10);
+    func_0800febc(hair->sprite, tweezers->rotation);
+    func_0800fe94(hair->sprite, hair->rotation);
+    func_08010040(hair->sprite, 1);
 
-    hair->unk4 = 0;
-    hair->unk8 = 0;
-    func_0800ffc0(hair->entity, arg0);
+    hair->fallDistance = 0;
+    hair->fallSpeed = 0;
+    func_0800ffc0(hair->sprite, arg0);
 
-    temp = gRhythmTweezersInfo.unk20 += 1;
-    if (temp > 4) {
-        gRhythmTweezersInfo.unk20 = 0;
+    if ((gRhythmTweezersInfo.fallingHairsNext += 1) > 4) {
+        gRhythmTweezersInfo.fallingHairsNext = 0;
     }
 }
 
 
-// [func_0802eaf8] SUB - Initialise Tweezers
+// [func_0802eaf8] Initialise Tweezers
 void func_0802eaf8(void) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
 
-    tweezers->unk6 = -0x200;
-    tweezers->entity = func_0800fa6c(D_088e87a8, 0x7f, 0x78, 0x10, 0x4800, 0x100, -0x200, 1, 0x7f, 0, 0);
-    func_0800fed0(tweezers->entity, tweezers->unk6, 0x4c);
-    func_0800feec(tweezers->entity, 1);
+    tweezers->rotation = -0x200;
+    tweezers->sprite = func_0800fa6c(&D_088e87a8, 0x7f, 120, 16, 0x4800, 0x100, -0x200, 1, 0x7f, 0, 0);
+    func_0800fed0(tweezers->sprite, tweezers->rotation, 0x4c);
+    func_0800feec(tweezers->sprite, TRUE);
 
-    tweezers->unk4 = 0;
-    tweezers->unk5 = 0;
-    tweezers->unk10 = 0;
-    gRhythmTweezersInfo.unk88.u16[0] = 0;
+    tweezers->isMoving = FALSE;
+    tweezers->heldHair = HELD_HAIR_NONE;
+    tweezers->isPulling = FALSE;
+    gRhythmTweezersInfo.existingHairs.full = 0;
 }
 
 
@@ -207,82 +218,79 @@ void func_0802eaf8(void) {
 void func_0802eb7c(void) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
 
-    tweezers->unk4 = 1;
-    tweezers->unk8 = 0;
-    tweezers->unkC = func_0800c3a4(0xa8);
-    tweezers->unk5 = 0;
+    tweezers->isMoving = TRUE;
+    tweezers->cycleTime = 0;
+    tweezers->cycleTarget = func_0800c3a4(0xa8);
+    tweezers->heldHair = HELD_HAIR_NONE;
 }
 
 
-// [func_0802eba0] SUB - Update Tweezers - Position
+// [func_0802eba0] Update Tweezers (Position)
 void func_0802eba0(void) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
     u32 a = 0x4ea;
-    u32 b = (tweezers->unk8 * 0x5d5) / tweezers->unkC;
+    u32 b = 0x5d5 * tweezers->cycleTime / tweezers->cycleTarget;
 
-    tweezers->unk6 = a - b;
-    tweezers->unk8 += 1;
+    tweezers->rotation = a - b;
+    tweezers->cycleTime += 1;
 
-    if (tweezers->unk8 >= tweezers->unkC) {
-        tweezers->unk4 = 0;
-        tweezers->unk5 = 0;
+    if (tweezers->cycleTime >= tweezers->cycleTarget) {
+        tweezers->isMoving = FALSE;
+        tweezers->heldHair = HELD_HAIR_NONE;
     }
 }
 
 
-// [func_0802ebdc] SUB - Update Tweezers - Vertical Scroll
+// [func_0802ebdc] Update Tweezers (Vertical Screen Scroll)
 void func_0802ebdc(void) {
-    u16 temp_unsigned = D_03004b10.unk12;
-    s16 temp_signed = D_03004b10.unk12;
-
     // If the screen is not in the normal vertical position, scroll down.
-    if (temp_signed != 0) {
-        D_03004b10.unk12 = temp_unsigned - 1;
+    if (D_03004b10.BG1VOFS != 0) {
+        D_03004b10.BG1VOFS -= 1;
     }
 }
 
 
-// [func_0802ebf8] SUB - Update Tweezers
+// [func_0802ebf8] Update Tweezers
 void func_0802ebf8(void) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
     s8 temp;
 
     func_0802ebdc();
-    if (tweezers->unk4 != 0) {
-        if (tweezers->unk4 == 1) {
+    if (tweezers->isMoving) {
+        if (tweezers->isMoving == TRUE) {
             func_0802eba0();
         }
     }
 
-    if (tweezers->unk5 != 0) {
-        temp = func_08010198(tweezers->entity);
-        if (temp == func_08010288(tweezers->entity) - 2) {
-            func_0802ea74(tweezers->unk5 - 1);
-            tweezers->unk5 = 0;
+    if (tweezers->heldHair != HELD_HAIR_NONE) {
+        temp = func_08010198(tweezers->sprite);
+        if (temp == func_08010288(tweezers->sprite) - 2) {
+            func_0802ea74(tweezers->heldHair - 1);
+            tweezers->heldHair = HELD_HAIR_NONE;
         }
     }
-    func_0800febc(tweezers->entity, tweezers->unk6);
+    func_0800febc(tweezers->sprite, tweezers->rotation);
 }
 
 
-// [func_0802ec50] GFX_LOAD Func_02
+// [func_0802ec50] GFX_INIT Func_02
 void func_0802ec50(void) {
     func_0800c604(0);
     func_08017578();
 }
 
 
-// [func_0802ec60] GFX_LOAD Func_01
+// [func_0802ec60] GFX_INIT Func_01
 void func_0802ec60(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_08002ee0(func_0800c3b8(), D_089e3ff4[gRhythmTweezersInfo.unk0], 0x2000);
+    temp = func_08002ee0(func_0800c3b8(), D_089e3ff4[gRhythmTweezersInfo.version], 0x2000);
     func_08005d38(temp, &func_0802ec50, 0);
 }
 
 
-// [func_0802eca0] GFX_LOAD Func_00
+// [func_0802eca0] GFX_INIT Func_00
 void func_0802eca0(void) {
     u32 temp;
 
@@ -292,24 +300,24 @@ void func_0802eca0(void) {
 }
 
 
-// [func_0802eccc] MAIN - Load
-void func_0802eccc(u8 arg0) {
+// [func_0802eccc] MAIN - Init
+void func_0802eccc(u8 ver) {
     u32 temp;
 
     // Standard game setup.
-    gRhythmTweezersInfo.unk0 = arg0;
+    gRhythmTweezersInfo.version = ver;
     func_0802eca0(); // Load graphics.
     func_0800e0ec();
-    func_0800e0a0(0, 1, 0, -0xa0, 2, 0x1c, 0x8000);
-    func_0800e0a0(1, 1, 0, 0, 0, 0x1e, 0x4002);
+    func_0800e0a0(0, 1, 0, -160, 2, 28, 0x8000);
+    func_0800e0a0(1, 1, 0, 0, 0, 30, 0x4002);
 
     // Rhythm Tweezers setup.
     func_0802eaf8(); // Initialise tweezers.
     func_0802e99c(); // Initialise falling hairs.
     func_0802e750(); // Initialise vegetable face.
-    gRhythmTweezersInfo.unk90 = -0xa0;
-    gRhythmTweezersInfo.unk92 = 0xfff8;
-    gRhythmTweezersInfo.unk8C = func_0804d160(D_03005380, D_088e8910, 0, 0x78, 0x96, 0, 0, 0, 0x8000);
+    gRhythmTweezersInfo.maskPosition = -160;
+    gRhythmTweezersInfo.maskVelocity = -8;
+    gRhythmTweezersInfo.tutorialSprite = func_0804d160(D_03005380, &D_088e8910, 0, 120, 150, 0, 0, 0, 0x8000);
 
     // Other setup.
     temp = func_0800a204((u16) func_0800c3b8(), 1, 0xf0, 0x1e);
@@ -323,34 +331,31 @@ void func_0802eccc(u8 arg0) {
 }
 
 
-// [func_0802edc4] ENGINE Func_09 - Unknown (Unused)
+// [func_0802edc4] ENGINE Func_09 - STUB
 void func_0802edc4_stub(void) {
 }
 
 
-// [func_0802edc8] SUB - Update Mask
+// [func_0802edc8] Update Mask
 void func_0802edc8(void) {
-    u32 temp;
-
-    temp = func_080087d4(gRhythmTweezersInfo.unk90 + gRhythmTweezersInfo.unk92, -0xa0, 0);
-    gRhythmTweezersInfo.unk90 = temp;
-    D_03004b10.unkE = temp;
+    gRhythmTweezersInfo.maskPosition = func_080087d4(gRhythmTweezersInfo.maskPosition + gRhythmTweezersInfo.maskVelocity, -160, 0);
+    D_03004b10.BG0VOFS = gRhythmTweezersInfo.maskPosition;
 }
 
 
 // [func_0802ee00] ENGINE Func_07 - Show Mask
 void func_0802ee00(void) {
-    gRhythmTweezersInfo.unk92 = 8;
+    gRhythmTweezersInfo.maskVelocity = 8;
 }
 
 
 // [func_0802ee10] ENGINE Func_08 - Hide Mask
 void func_0802ee10(void) {
-    gRhythmTweezersInfo.unk92 = -8;
+    gRhythmTweezersInfo.maskVelocity = -8;
 }
 
 
-// [func_0802ee24] MAIN - Loop
+// [func_0802ee24] MAIN - Update
 void func_0802ee24(void) {
     func_0802ebf8(); // Update tweezers.
     func_0802ea20(); // Update falling hairs.
@@ -360,92 +365,117 @@ void func_0802ee24(void) {
 }
 
 
-// [func_0802ee40] MAIN - Unload
+// [func_0802ee40] MAIN - Close (STUB)
 void func_0802ee40_stub(void) {
 }
 
 
-// [func_0802ee44] ENGINE Func_01 - Reset Hair Position Cycle
+// [func_0802ee44] ENGINE Func_01 - Reset Hair Placement Cycle
 void func_0802ee44(void) {
-    gRhythmTweezersInfo.unk18 = 0;
-    gRhythmTweezersInfo.unk1C = func_0800c3a4(0x48);
-    gRhythmTweezersInfo.unk88.u16[0] = 0;
-    gRhythmTweezersInfo.unk88.u16[1] = 0;
+    gRhythmTweezersInfo.hairCycleTime = 0;
+    gRhythmTweezersInfo.hairCycleTarget = func_0800c3a4(0x48);
+    gRhythmTweezersInfo.existingHairs.full = 0;
+    gRhythmTweezersInfo.existingHairs.half = 0;
 }
 
 
-// [func_0802ee6c] SUB - Update Hair Position Cycle
+// [func_0802ee6c] Update Hair Placement Cycle
 void func_0802ee6c(void) {
-    gRhythmTweezersInfo.unk18 += 1;
+    gRhythmTweezersInfo.hairCycleTime += 1;
     // Fantastic work, Nintendo SPD.
 }
 
 
-// !TODO - Stop it. Get some help: https://decomp.me/scratch/IGh3S
-// [func_0802ee7c] CUE Spawn - Short Hair, Long Hair
-#include "asm/scenes/rhythm_tweezers/asm_0802ee7c.s"
+// [func_0802ee7c] CUE - Spawn
+void func_0802ee7c(u32 arg0, struct RhythmTweezersCue *cue, u32 isLongHair, u32 arg3) {
+    struct RhythmTweezersInfo *gameInfo;
+    u32 *anim;
+    u32 rotation;
 
+    gameInfo = &gRhythmTweezersInfo;
+    rotation = 0x340;
+    rotation -= 640 * gameInfo->hairCycleTime / gameInfo->hairCycleTarget;
 
-// [func_0802ef54] CUE Behaviour - Short Hair
-u32 func_0802ef54(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2, u32 arg3) {
-    if (arg2 > arg3 * 2) {
-        return 1; }
-    else {
-        return 0; }
-}
+    anim = (!isLongHair) ? &D_088e8768 : &D_088e89a8;
+    cue->sprite = func_0800fa6c(anim, 0, 120, 16, 0x4800, 0x100, -0x200, 1, 0x7f, 0, 0);
+    func_0800feec(cue->sprite, TRUE);
 
+    func_0800fed0(cue->sprite, rotation, 0x4c);
+    func_080102a8(cue->sprite, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.BG1VOFS);
 
-// !TODO - It's always with these cue functions, I swear: https://decomp.me/scratch/xtw97
-// [func_0802ef68] CUE Behaviour - Long Hair
-#include "asm/scenes/rhythm_tweezers/asm_0802ef68.s"
+    cue->isLongHair = isLongHair;
+    cue->finished = FALSE;
 
+    gRhythmTweezersInfo.existingHairs.full += 1;
 
-// [func_0802f164] CUE Despawn - Short Hair, Long Hair
-void func_0802f164(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2, u32 arg3) {
-    func_0800fc70(arg1->unk4);
-}
-
-
-// [func_0802f170] CUE Hit - Short Hair
-void func_0802f170(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2, u32 arg3) {
-    struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
-    struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
-    u32 temp;
-
-    func_08010064(arg1->unk4, D_088e88f8, 0, 0, 0, 0);
-    func_08010064(tweezers->entity, D_088e87a8, 0, 1, 0x7f, 0);
-    D_03004b10.unk12 = 2; // Scroll screen upwards.
-
-    if (tweezers->unk5) func_0802ea74(tweezers->unk5 - 1);
-    tweezers->unk5 = 1;
-
-    func_0804cebc(D_03005380, vegetable->entity0, 1);
-    gRhythmTweezersInfo.unk88.u16[0] -= 1;
-
-    temp = gRhythmTweezersInfo.unk88.u32;
-    if (temp == 0) {
-        func_0804dae0(D_03005380, vegetable->entity0, 0, 0, 0);
-        func_0804cebc(D_03005380, vegetable->entity0, 2);
+    if (!isLongHair) {
+        func_08002698(&s_hanabi_pon_seqData, 0xd0, 0);
+    } else {
+        func_08002634(&s_f_hair_appear_long_seqData);
     }
 }
 
 
-// [func_0802f21c] CUE Hit, CUE Barely - Long Hair
-void func_0802f21c(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2, u32 arg3) {
+// [func_0802ef54] CUE - Update (Short Hair)
+u32 func_0802ef54(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) {
+    if (arg2 > arg3 * 2) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
+
+// !TODO - It's always with these cue functions, I swear: https://decomp.me/scratch/xtw97
+// [func_0802ef68] CUE - Update (Long Hair)
+#include "asm/scenes/rhythm_tweezers/asm_0802ef68.s"
+
+
+// [func_0802f164] CUE - Despawn
+void func_0802f164(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) {
+    func_0800fc70(cue->sprite);
+}
+
+
+// [func_0802f170] CUE - Hit (Short Hair)
+void func_0802f170(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) {
+    struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
+    struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
+    u32 temp;
+
+    func_08010064(cue->sprite, &D_088e88f8, 0, 0, 0, 0);
+    func_08010064(tweezers->sprite, &D_088e87a8, 0, 1, 0x7f, 0);
+    D_03004b10.BG1VOFS = 2;
+
+    if (tweezers->heldHair) func_0802ea74(tweezers->heldHair - 1);
+    tweezers->heldHair = HELD_HAIR_FULL;
+
+    func_0804cebc(D_03005380, vegetable->spriteCurrent, 1);
+    gRhythmTweezersInfo.existingHairs.full -= 1;
+
+    temp = *(u32 *)(&gRhythmTweezersInfo.existingHairs);
+    if (temp == 0) {
+        func_0804dae0(D_03005380, vegetable->spriteCurrent, 0, 0, 0);
+        func_0804cebc(D_03005380, vegetable->spriteCurrent, 2);
+    }
+}
+
+
+// [func_0802f21c] CUE - Hit/Barely (Long Hair)
+void func_0802f21c(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
     u32 temp;
 
     func_08018068();
-    if (tweezers->unk5) func_0802ea74(tweezers->unk5 - 1);
-    func_08010040(tweezers->entity, 0);
-    func_08010064(arg1->unk4, D_088e8a50, 0, 0, 0, 0);
+    if (tweezers->heldHair != HELD_HAIR_NONE) func_0802ea74(tweezers->heldHair - 1);
+    func_08010040(tweezers->sprite, 0);
+    func_08010064(cue->sprite, &D_088e8a50, 0, 0, 0, 0);
 
-    arg1->unk28 = tweezers->unk6;
-    tweezers->unk10 = 1;
-    temp = arg1->unk0.u8[1];
-    arg1->unk0.u8[1] = temp | 2;
-    arg1->unk2C = 0;
-    arg1->unk2E = func_0800c3a4(0xc) - func_08018054();
+    cue->rotation = tweezers->rotation;
+    tweezers->isPulling = TRUE;
+    cue->finished = TRUE;
+    cue->pullTime = 0;
+    cue->pullTarget = func_0800c3a4(0xc) - func_08018054();
     func_08017338(0, 0);
 
     func_0800274c(&s_f_hair_nuki_long_seqData);
@@ -453,26 +483,26 @@ void func_0802f21c(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2, u32 ar
 }
 
 
-// [func_0802f2a0] CUE Barely - Short Hair
-void func_0802f2a0(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2, u32 arg3) {
+// [func_0802f2a0] CUE - Barely (Short Hair)
+void func_0802f2a0(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo.vegetable;
 
-    func_08010064(arg1->unk4, D_088e88f8, 0, 1, 0x7f, 0);
-    func_08010064(tweezers->entity, D_088e8848, 0, 1, 0x7f, 0);
+    func_08010064(cue->sprite, &D_088e88f8, 0, 1, 0x7f, 0);
+    func_08010064(tweezers->sprite, &D_088e8848, 0, 1, 0x7f, 0);
 
-    if (tweezers->unk5) func_0802ea74(tweezers->unk5 - 1);
-    tweezers->unk5 = 2;
+    if (tweezers->heldHair != HELD_HAIR_NONE) func_0802ea74(tweezers->heldHair - 1);
+    tweezers->heldHair = HELD_HAIR_BARELY;
 
-    func_0804cebc(D_03005380, vegetable->entity0, 1);
+    func_0804cebc(D_03005380, vegetable->spriteCurrent, 1);
 
-    gRhythmTweezersInfo.unk88.u16[0] -= 1;
-    gRhythmTweezersInfo.unk88.u16[1] += 1;
+    gRhythmTweezersInfo.existingHairs.full -= 1;
+    gRhythmTweezersInfo.existingHairs.half += 1;
 }
 
 
-// [func_0802f330] CUE Miss - Short Hair, Long Hair
-void func_0802f330(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2, u32 arg3) {
+// [func_0802f330] CUE - Miss
+void func_0802f330(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) {
     func_0800bc40();
 }
 
@@ -481,24 +511,24 @@ void func_0802f330(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2, u32 ar
 void func_0802f33c(void) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo.tweezers;
 
-    func_08010064(tweezers->entity, D_088e8898, 0, 1, 0x7f, 0);
+    func_08010064(tweezers->sprite, &D_088e8898, 0, 1, 0x7f, 0);
 
-    if (tweezers->unk5 != 0) func_0802ea74(tweezers->unk5 - 1);
-    tweezers->unk5 = 0;
+    if (tweezers->heldHair != HELD_HAIR_NONE) func_0802ea74(tweezers->heldHair - 1);
+    tweezers->heldHair = HELD_HAIR_NONE;
 }
 
 
-// [func_0802f378] GRAPHICAL Func_00 - Unknown (Unused)
+// [func_0802f378] COMMON Func_00 - STUB
 void func_0802f378_stub(void) {
 }
 
 
-// [func_0802f37c] GRAPHICAL Func_01 - Unknown (Unused)
+// [func_0802f37c] COMMON Func_01 - STUB
 void func_0802f37c_stub(void) {
 }
 
 
-// [func_0802f380] ENGINE Func_05 - Unknown (Unused - relates to the unused Tutorial Text entity)
+// [func_0802f380] ENGINE Func_05 - Unknown (Unused - seems to hide(?) the unused Tutorial Text sprite)
 void func_0802f380(void) {
-    func_0804d770(D_03005380, gRhythmTweezersInfo.unk8C, 0);
+    func_0804d770(D_03005380, gRhythmTweezersInfo.tutorialSprite, 0);
 }

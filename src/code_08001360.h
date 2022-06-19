@@ -73,10 +73,10 @@ extern void func_08001fe0(u16, u8, u32, u32*, u32*, u16*);
 // extern ? func_08002194(?);
 // extern ? func_080021b8(?);
 // extern ? func_0800222c(?);
-// extern ? func_08002260(?);
+extern void func_08002260(s16, u32); // ROTATION/SCALING PARAMETER GROUP - Update Horizontal & Vertical Flip (and probably more)
 // extern ? func_08002280(?);
-// extern ? func_080022bc(?);
-// extern ? func_080022d8(?);
+extern void func_080022bc(s16); // ROTATION/SCALING PARAMETER GROUP - ?? (Reduced Angle Precision)
+extern void func_080022d8(s16); // ROTATION/SCALING PARAMETER GROUP - ?? (Fine Angle Precision)
 // extern ? func_080022f4(?);
 // extern ? func_08002310(?);
 // extern ? func_0800232c(?);

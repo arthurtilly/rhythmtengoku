@@ -1,4 +1,5 @@
 #include "src/code_08001360.h"
+#include "src/code_08003980.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
 #include "src/code_08016e18.h"
@@ -7,25 +8,30 @@
 // For readability. !TODO - CHANGE/REMOVE
 #define gSneakySpiritsInfo D_030055d0->gameInfo.sneakySpirits
 
+// Game-Specific Macros:
+#define VERSION_GAME_1 0
+#define VERSION_REMIX 1
+#define VERSION_GAME_2 2
+
 // OAM Animations:
-extern u32 D_088a0ca0[]; // Animation: "bow_draw"
-extern u32 D_088a0cd0[]; // Animation: "ghost_hit"
-extern u32 D_088a0cf8[]; // Animation: "door_back_wall"
-extern u32 D_088a0d08[]; // Animation: "door_open"
-extern u32 D_088a0d80[]; // Animation: "ghost_miss_taunt"
-extern u32 D_088a0df0[]; // Animation: "arrow_miss"
-extern u32 D_088a0e80[]; // Animation: "ghost_barely_scared"
-extern u32 D_088a0f28[]; // Animation: "tree"
-extern u32 D_088a0f58[]; // Animation: "ghost_walk"
-extern u32 D_088a0fb8[]; // Animation: "ghost_miss_dash"
-extern u32 D_088a0fd8[]; // Animation: "rain_fall"
-extern u32 D_088a1000[]; // Animation: "rain_splash"
-extern u32 D_088a1010[]; // Animation: "rain_fall_slow"
-extern u32 D_088a1158[]; // Animation: "bow_shoot"
-extern u32 D_088a11a8[]; // Animation: "ghost_mask" (might be masking)
-extern u32 D_088a11b8[]; // Animation: "ghost_barely_run"
-extern u32 D_088a1258[]; // Animation: "arrow_hit"
-extern u32 D_088a1280[]; // Animation: "ghost_dash_tutorial"
+extern u32 D_088a0ca0; // Animation: "bow_draw"
+extern u32 D_088a0cd0; // Animation: "ghost_hit"
+extern u32 D_088a0cf8; // Animation: "door_back_wall"
+extern u32 D_088a0d08; // Animation: "door_open"
+extern u32 D_088a0d80; // Animation: "ghost_miss_taunt"
+extern u32 D_088a0df0; // Animation: "arrow_miss"
+extern u32 D_088a0e80; // Animation: "ghost_barely_scared"
+extern u32 D_088a0f28; // Animation: "tree"
+extern u32 D_088a0f58; // Animation: "ghost_walk"
+extern u32 D_088a0fb8; // Animation: "ghost_miss_dash"
+extern u32 D_088a0fd8; // Animation: "rain_fall"
+extern u32 D_088a1000; // Animation: "rain_splash"
+extern u32 D_088a1010; // Animation: "rain_fall_slow"
+extern u32 D_088a1158; // Animation: "bow_shoot"
+extern u32 D_088a11a8; // Animation: "ghost_mask" (might be masking)
+extern u32 D_088a11b8; // Animation: "ghost_barely_run"
+extern u32 D_088a1258; // Animation: "arrow_hit"
+extern u32 D_088a1280; // Animation: "ghost_dash_tutorial"
 
 // Sound Effects:
 extern const struct SequenceData s_ghost_rain_seqData;           // Sound: Wind/Rain
@@ -38,59 +44,62 @@ extern const struct SequenceData s_ghost_dash_seqData;           // Sound: Ghost
 extern const struct SequenceData s_ghost_warai_seqData;          // Sound: Ghost Miss Voice
 
 // Additional Data:
-extern char D_08059f90[]; // Empty Default Text
+extern char D_08059f90;   // Empty Default Text
 extern u32  D_089de6e0;   // GFX Null
 extern u32 *D_089de7a4[]; // GFX Struct Index
+
 
 /* SNEAKY SPIRITS */
 
 
 // [func_0801ee98] ENGINE Func_00 - Appear At Position
 void func_0801ee98(u32 position) {
-    s16 ghost;
-    s32 posA = func_08008f04(8, 0x58, position, gSneakySpiritsInfo.unk7A - 1);
-    s32 posB = func_08008f04(0x50, 0x4c, position, gSneakySpiritsInfo.unk7A - 1);
-    posB += (0x100 - gSneakySpiritsInfo.ghostHeight) >> 3;
+    s16 ghostSprite;
+    s32 x, y;
 
-    ghost = gSneakySpiritsInfo.ghostWalk;
-    func_0804d5d4(D_03005380, ghost, posA, posB);
-    func_0804d770(D_03005380, ghost, 1);
-    func_0804cebc(D_03005380, ghost, 0);
-    func_0804dcb8(D_03005380, ghost, (func_0800c1a8() << 8) / 0x64);
-    func_0804d614(D_03005380, gSneakySpiritsInfo.ghostMask, posA);
+    x = func_08008f04(8, 88, position, gSneakySpiritsInfo.maxSteps - 1);
+    y = func_08008f04(80, 76, position, gSneakySpiritsInfo.maxSteps - 1);
+    y += (0x100 - gSneakySpiritsInfo.ghostHeight) >> 3;
+    ghostSprite = gSneakySpiritsInfo.ghostWalk;
+
+    func_0804d5d4(D_03005380, ghostSprite, x, y);
+    func_0804d770(D_03005380, ghostSprite, 1);
+    func_0804cebc(D_03005380, ghostSprite, 0);
+    func_0804dcb8(D_03005380, ghostSprite, (func_0800c1a8() << 8) / 100);
+    func_0804d614(D_03005380, gSneakySpiritsInfo.ghostMask, x);
     func_08002698(&s_ghost_walk_seqData, (gSneakySpiritsInfo.ghostHeight * 15) >> 5, 0);
 }
 
 
-// [func_0801ef70] SUB - Initialise Rain
+// [func_0801ef70] Initialise Rain
 void func_0801ef70(void) {
     u32 i;
 
     for (i = 0; i < 30; i++) {
-        gSneakySpiritsInfo.rainDrops[i] = func_0804d160(D_03005380, D_088a0fd8, 0, 0x78, 0x50, 0x800, 0, 0, 0x8000);
+        gSneakySpiritsInfo.rainDrops[i] = func_0804d160(D_03005380, &D_088a0fd8, 0, 120, 80, 0x800, 0, 0, 0x8000);
     }
     for (i = 0; i < 20; i++) {
-        gSneakySpiritsInfo.rainSplashes[i] = func_0804d160(D_03005380, D_088a1000, 0, 0x40, 0x40, 0x8400, 0, 0, 0x8002);
+        gSneakySpiritsInfo.rainSplashes[i] = func_0804d160(D_03005380, &D_088a1000, 0, 64, 64, 0x8400, 0, 0, 0x8002);
     }
 
     gSneakySpiritsInfo.rainDropNext = 0;
     gSneakySpiritsInfo.rainSplashNext = 0;
-    gSneakySpiritsInfo.rainSlow = 0;
-    gSneakySpiritsInfo.freezeRain = 0;
-    gSneakySpiritsInfo.tree = func_0804d160(D_03005380, D_088a0f28, 0, 0xdf, 0x4c, 0x4f00, 1, 0, 0);
+    gSneakySpiritsInfo.rainSlow = FALSE;
+    gSneakySpiritsInfo.freezeRain = FALSE;
+    gSneakySpiritsInfo.tree = func_0804d160(D_03005380, &D_088a0f28, 0, 223, 76, 0x4f00, 1, 0, 0);
 }
 
 
-// [func_0801f040] SUB - Update Rain
+// [func_0801f040] Update Rain
 void func_0801f040(void) {
     u32 i;
-    s16 entity;
+    s16 sprite;
 
     for (i = 0; i < 4; i++) {
-        entity = gSneakySpiritsInfo.rainDrops[gSneakySpiritsInfo.rainDropNext];
-        func_0804d8f8(D_03005380, entity, D_088a0fd8, 0, 1, 0, 2);
-        func_0804d5d4(D_03005380, entity, func_08001980(0xf0), func_08001980(0x40) + 0x30);
-        func_0804d770(D_03005380, entity, 1);
+        sprite = gSneakySpiritsInfo.rainDrops[gSneakySpiritsInfo.rainDropNext];
+        func_0804d8f8(D_03005380, sprite, &D_088a0fd8, 0, 1, 0, 2);
+        func_0804d5d4(D_03005380, sprite, func_08001980(240), func_08001980(64) + 48);
+        func_0804d770(D_03005380, sprite, 1);
 
         gSneakySpiritsInfo.rainDropNext += 1;
         if (gSneakySpiritsInfo.rainDropNext >= 30) {
@@ -99,10 +108,10 @@ void func_0801f040(void) {
     }
 
     for (i = 0; i < 4; i++) {
-        entity = gSneakySpiritsInfo.rainSplashes[gSneakySpiritsInfo.rainSplashNext];
-        func_0804cebc(D_03005380, entity, 0);
-        func_0804d5d4(D_03005380, entity, func_08001980(0xf0), func_08001980(0x32) + 0x6e);
-        func_0804d770(D_03005380, entity, 1);
+        sprite = gSneakySpiritsInfo.rainSplashes[gSneakySpiritsInfo.rainSplashNext];
+        func_0804cebc(D_03005380, sprite, 0);
+        func_0804d5d4(D_03005380, sprite, func_08001980(240), func_08001980(50) + 110);
+        func_0804d770(D_03005380, sprite, 1);
 
         gSneakySpiritsInfo.rainSplashNext += 1;
         if (gSneakySpiritsInfo.rainSplashNext >= 20) {
@@ -112,37 +121,34 @@ void func_0801f040(void) {
 }
 
 
-// [func_0801f17c] SUB - Update Rain If Not In Slow-Motion
+// [func_0801f17c] Update Rain If Not In Slow-Motion
 void func_0801f17c(void) {
     if (!gSneakySpiritsInfo.rainSlow) func_0801f040();
 }
 
 
-// [func_0801f194] SUB - Set Rain { 0 = Normal; 1 = Slow-Motion }
-void func_0801f194(u32 arg0) {
-    u32 i;
-    s16 element;
-    u32 temp;
+// [func_0801f194] Set Rain Speed
+void func_0801f194(u32 slowMotion) {
+    u32 i, temp;
+    s16 sprite;
 
-    if (gSneakySpiritsInfo.rainSlow == arg0) return;
-    gSneakySpiritsInfo.rainSlow = arg0;
+    if (gSneakySpiritsInfo.rainSlow == slowMotion) return;
+    gSneakySpiritsInfo.rainSlow = slowMotion;
 
-    if (arg0) {
+    if (slowMotion) {
         for (i = 0; i < 30; i++) {
-            element = gSneakySpiritsInfo.rainDrops[i];
-            if (!gSneakySpiritsInfo.freezeRain) {
-                temp = 0x100 / (func_08001980(3) + 1);
-            } else { temp = 0; }
+            sprite = gSneakySpiritsInfo.rainDrops[i];
+            temp = (!gSneakySpiritsInfo.freezeRain) ? 0x100 / (func_08001980(3) + 1) : 0;
 
-            func_0804d8f8(D_03005380, element, D_088a1010, 0, 1, 0x7f, 0);
-            func_0804d5d4(D_03005380, element, func_08001980(0xf0), func_08001980(0xa0));
-            func_0804dcb8(D_03005380, element, temp);
-            func_0804d770(D_03005380, element, 1);
+            func_0804d8f8(D_03005380, sprite, &D_088a1010, 0, 1, 0x7f, 0);
+            func_0804d5d4(D_03005380, sprite, func_08001980(240), func_08001980(160));
+            func_0804dcb8(D_03005380, sprite, temp);
+            func_0804d770(D_03005380, sprite, 1);
         }
 
         for (i = 0; i < 20; i++) {
-            element = gSneakySpiritsInfo.rainSplashes[i];
-            func_0804da20(D_03005380, element, 1);
+            sprite = gSneakySpiritsInfo.rainSplashes[i];
+            func_0804da20(D_03005380, sprite, 1);
         }
 
         func_0804da20(D_03005380, gSneakySpiritsInfo.tree, 1);
@@ -150,15 +156,15 @@ void func_0801f194(u32 arg0) {
 
     else {
         for (i = 0; i < 30; i++) {
-            element = gSneakySpiritsInfo.rainDrops[i];
+            sprite = gSneakySpiritsInfo.rainDrops[i];
 
-            func_0804d770(D_03005380, element, 0);
-            func_0804dcb8(D_03005380, element, 0x100);
+            func_0804d770(D_03005380, sprite, 0);
+            func_0804dcb8(D_03005380, sprite, 0x100);
         }
 
         for (i = 0; i < 20; i++) {
-            element = gSneakySpiritsInfo.rainSplashes[i];
-            func_0804da20(D_03005380, element, 0);
+            sprite = gSneakySpiritsInfo.rainSplashes[i];
+            func_0804da20(D_03005380, sprite, 0);
         }
 
         func_0804da20(D_03005380, gSneakySpiritsInfo.tree, 0);
@@ -166,26 +172,26 @@ void func_0801f194(u32 arg0) {
 }
 
 
-// [func_0801f30c] ENGINE Func_06 - Set Rain (Tutorial) { 0 = Normal; 1 = Slow-Motion }
-void func_0801f30c(u32 arg0) {
-    func_0801f194(arg0);
+// [func_0801f30c] ENGINE Func_06 - Set Rain Speed (Tutorial)
+void func_0801f30c(u32 slowMotion) {
+    func_0801f194(slowMotion);
 }
 
 
 // [func_0801f318] ENGINE Func_07 - Freeze Slow-Motion Rain (Tutorial)
-void func_0801f318(u32 arg0) {
-    gSneakySpiritsInfo.freezeRain = arg0;
+void func_0801f318(u32 freezeRain) {
+    gSneakySpiritsInfo.freezeRain = freezeRain;
 }
 
 
-// [func_0801f328] GFX_LOAD Func_02
+// [func_0801f328] GFX_INIT Func_02
 void func_0801f328(void) {
     func_0800c604(0);
     func_08017578();
 }
 
 
-// [func_0801f338] GFX_LOAD Func_01
+// [func_0801f338] GFX_INIT Func_01
 void func_0801f338(void) {
     u32 data;
 
@@ -195,7 +201,7 @@ void func_0801f338(void) {
 }
 
 
-// [func_0801f378] GFX_LOAD Func_00
+// [func_0801f378] GFX_INIT Func_00
 void func_0801f378(void) {
     u32 data;
 
@@ -205,9 +211,9 @@ void func_0801f378(void) {
 }
 
 
-// [func_0801f3a4] MAIN - Load
+// [func_0801f3a4] MAIN - Init
 void func_0801f3a4(u32 ver) {
-    u32 *temp;
+    u32 *textAnim;
 
     gSneakySpiritsInfo.version = ver;
     func_0801f378();
@@ -216,30 +222,30 @@ void func_0801f3a4(u32 ver) {
     func_0800e0a0(2, 1, 0, 0, 0, 30, 2);
 
     gSneakySpiritsInfo.unk0 = func_0800c660(0x380, 1);
-    temp = func_08004b98(gSneakySpiritsInfo.unk0, D_08059f90, 0, 0);
-    gSneakySpiritsInfo.text = func_0804d160(D_03005380, temp, 0, 0x78, 0x20, 0, 0, 0, 0);
+    textAnim = func_08004b98(gSneakySpiritsInfo.unk0, &D_08059f90, 0, 0);
+    gSneakySpiritsInfo.text = func_0804d160(D_03005380, textAnim, 0, 120, 32, 0, 0, 0, 0);
     func_0801ef70();
 
-    gSneakySpiritsInfo.bow = func_0804d160(D_03005380, D_088a0ca0, 0, 0xd2, 0x80, 0x4800, 0, 0, 0x8000);
-    gSneakySpiritsInfo.arrowReady = 0;
+    gSneakySpiritsInfo.bow = func_0804d160(D_03005380, &D_088a0ca0, 0, 210, 128, 0x4800, 0, 0, 0x8000);
+    gSneakySpiritsInfo.arrowReady = FALSE;
 
-    gSneakySpiritsInfo.door = func_0804d160(D_03005380, D_088a0d08, 0, 0x48, 0x30, 0x8800, 0, 0, 0);
-    gSneakySpiritsInfo.backWall = func_0804d160(D_03005380, D_088a0cf8, 0, 0x18, 0x2d, 0x879c, 0, 0, 0);
+    gSneakySpiritsInfo.door = func_0804d160(D_03005380, &D_088a0d08, 0, 72, 48, 0x8800, 0, 0, 0);
+    gSneakySpiritsInfo.backWall = func_0804d160(D_03005380, &D_088a0cf8, 0, 24, 45, 0x879c, 0, 0, 0);
 
-    gSneakySpiritsInfo.ghostWalk = func_0804d160(D_03005380, D_088a0f58, 0, 0x10, 0x50, 0x8792, 1, 0, 2);
-    func_0804d5d4(D_03005380, gSneakySpiritsInfo.ghostWalk, -0x64, -0x64);
-    gSneakySpiritsInfo.ghostMask = func_0804d160(D_03005380, D_088a11a8, 0, 0x58, 0x8c, 0x8791, 1, 0, 0);
-    gSneakySpiritsInfo.ghostHit = func_0804d160(D_03005380, D_088a0cd0, 0, 0x64, 0x4c, 0x87a6, 0, 0, 0x8000);
-    gSneakySpiritsInfo.unk7A = 7;
-    gSneakySpiritsInfo.tutorialGhost = func_0804d160(D_03005380, D_088a1280, 0, 0x78, 0x5c, 0x8792, 1, 0x7f, 0x8000);
+    gSneakySpiritsInfo.ghostWalk = func_0804d160(D_03005380, &D_088a0f58, 0, 16, 80, 0x8792, 1, 0, 2);
+    func_0804d5d4(D_03005380, gSneakySpiritsInfo.ghostWalk, -100, -100);
+    gSneakySpiritsInfo.ghostMask = func_0804d160(D_03005380, &D_088a11a8, 0, 88, 140, 0x8791, 1, 0, 0);
+    gSneakySpiritsInfo.ghostHit = func_0804d160(D_03005380, &D_088a0cd0, 0, 100, 76, 0x87a6, 0, 0, 0x8000);
+    gSneakySpiritsInfo.maxSteps = 7;
+    gSneakySpiritsInfo.tutorialGhost = func_0804d160(D_03005380, &D_088a1280, 0, 120, 92, 0x8792, 1, 0x7f, 0x8000);
     gSneakySpiritsInfo.ghostHeight = 0x100;
 
-    gSneakySpiritsInfo.rainChannel = 0;
+    gSneakySpiritsInfo.rainChannel = NULL;
 
     func_08017338(0, 0);
-    gSneakySpiritsInfo.slowMotionHit = 1;
-    if (ver == 1) {
-        gSneakySpiritsInfo.slowMotionHit = 0;
+    gSneakySpiritsInfo.slowMotionHit = TRUE;
+    if (ver == VERSION_REMIX) {
+        gSneakySpiritsInfo.slowMotionHit = FALSE;
     }
 }
 
@@ -250,86 +256,80 @@ void func_0801f5bc(void) {
 
 
 // [func_0801f5c0] ENGINE Func_01 - Next Vertical Position
-void func_0801f5c0(u32 arg0) {
-    gSneakySpiritsInfo.ghostHeight = arg0;
-    func_0800c4b0(1, func_0800c3a4(0xc), &D_030053c0.unk190, D_030053c0.unk190, arg0);
+void func_0801f5c0(u32 height) {
+    gSneakySpiritsInfo.ghostHeight = height;
+    func_0800c4b0(1, func_0800c3a4(0xc), &D_030053c0.unk190, D_030053c0.unk190, height);
 }
 
 
 // [func_0801f5f4] ENGINE Func_02 - Bow Appear
 void func_0801f5f4(void) {
-    func_0800e25c(gSneakySpiritsInfo.bow, 0x122, 0x80, 0xd2, 0x80, 0xe6);
+    func_0800e25c(gSneakySpiritsInfo.bow, 290, 128, 210, 128, 230);
     func_0804d770(D_03005380, gSneakySpiritsInfo.bow, 1);
 }
 
 
 // [func_0801f638] ENGINE Func_03 - Draw Bow
 void func_0801f638(void) {
-    if (gSneakySpiritsInfo.arrowReady == 0) {
-        gSneakySpiritsInfo.arrowReady = 1;
+    if (!gSneakySpiritsInfo.arrowReady) {
+        gSneakySpiritsInfo.arrowReady = TRUE;
         func_08017338(1, 0);
-        func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, D_088a0ca0, 0, 1, 0x7f, 0);
+        func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, &D_088a0ca0, 0, 1, 0x7f, 0);
     }
 }
 
 
 // [func_0801f684] ENGINE Func_04 - Play Wind/Rain SFX
-void func_0801f684(u32 arg0) {
-    if (!arg0) {
-        if (gSneakySpiritsInfo.rainChannel) {
-            func_08002920(gSneakySpiritsInfo.rainChannel, 0);
-            func_08002828(gSneakySpiritsInfo.rainChannel);
-            gSneakySpiritsInfo.rainChannel = 0;
-        }
-    } else {
+void func_0801f684(u32 play) {
+    if (!play && (gSneakySpiritsInfo.rainChannel != NULL)) {
+        func_08002920(gSneakySpiritsInfo.rainChannel, 0);
+        func_08002828(gSneakySpiritsInfo.rainChannel);
+        gSneakySpiritsInfo.rainChannel = NULL;
+    }
+    else if (play) {
         gSneakySpiritsInfo.rainChannel = func_08002634(&s_ghost_rain_seqData);
     }
 }
 
 
-// [func_0801f6d0] SUB - Cross-Fade Music and Wind/Rain SFX
+// [func_0801f6d0] Cross-Fade Music and Wind/Rain SFX
 void func_0801f6d0(void) {
-    s32 temp1;
-    u32 temp;
+    u32 rainVolume;
 
-    if (gSneakySpiritsInfo.rainChannel) {
-        temp1 = (0x100 - D_030053c0.unk190);
-        temp = func_080087d4(temp1 / 2, 0, 0x80) + 0x40;
-        func_08002920(gSneakySpiritsInfo.rainChannel, temp);
-    }
+    if (gSneakySpiritsInfo.rainChannel == NULL) return;
+
+    rainVolume = func_080087d4((0x100 - D_030053c0.unk190) / 2, 0, 128) + 0x40;
+    func_08002920(gSneakySpiritsInfo.rainChannel, rainVolume);
 }
 
 
 // [func_0801f71c] ENGINE Func_05 - Display Text (Tutorial)
 void func_0801f71c(char *string) {
-    u32 *temp;
-
     func_08007b04(gSneakySpiritsInfo.unk0, gSneakySpiritsInfo.text);
-    temp = func_08004b98(gSneakySpiritsInfo.unk0, string, 1, 0xc);
-    func_0804d8f8(D_03005380, gSneakySpiritsInfo.text, temp, 0, 1, 0, 0);
+    func_0804d8f8(D_03005380, gSneakySpiritsInfo.text, func_08004b98(gSneakySpiritsInfo.unk0, string, 1, 0xc), 0, 1, 0, 0);
 }
 
 
 // [func_0801f76c] ENGINE Func_08 - Display Dashing Sneaky Spirit (Tutorial)
-void func_0801f76c(u32 arg0) {
-    func_0804d770(D_03005380, gSneakySpiritsInfo.tutorialGhost, arg0);
+void func_0801f76c(u32 playAnim) {
+    func_0804d770(D_03005380, gSneakySpiritsInfo.tutorialGhost, playAnim);
 }
 
 
 // [func_0801f794] ENGINE Func_09 - Animate Dashing Sneaky Spirit (Tutorial)
-void func_0801f794(u32 arg0) {
-    func_0804cebc(D_03005380, gSneakySpiritsInfo.tutorialGhost, arg0);
+void func_0801f794(u32 frame) {
+    func_0804cebc(D_03005380, gSneakySpiritsInfo.tutorialGhost, frame);
 }
 
 
-// [func_0801f7bc] MAIN - Loop
+// [func_0801f7bc] MAIN - Update
 void func_0801f7bc(void) {
-    func_0801f17c();
-    func_0801f6d0();
+    func_0801f17c(); // Update Rain
+    func_0801f6d0(); // Update Wind/Rain SFX
 }
 
 
-// [func_0801f7cc] MAIN - Unload
+// [func_0801f7cc] MAIN - Close
 void func_0801f7cc(void) {
     func_0800be88(0x100);
     func_0800c0c4(0);
@@ -338,26 +338,25 @@ void func_0801f7cc(void) {
 
 
 // [func_0801f7e8] CUE - Spawn
-void func_0801f7e8(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
-    arg1->unk26 = arg2;
+void func_0801f7e8(u32 arg0, struct SneakySpiritsCue *cue, u32 disableTaunt) {
+    cue->disableTaunt = disableTaunt;
 }
 
 
-// [func_0801f7f0] CUE - Behaviour
-u32 func_0801f7f0(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
-    if (arg2 > func_0800c3a4(0x30)) {
-        return 1; }
-    else {
-        return 0; }
+// [func_0801f7f0] CUE - Update
+u32 func_0801f7f0(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
+    if (arg2 > func_0800c3a4(0x30)) return TRUE;
+
+    return FALSE;
 }
 
 
 // [func_0801f80c] CUE - Despawn (STUB)
-void func_0801f80c(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
+void func_0801f80c(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
 }
 
 
-// [func_0801f810] SUB - Revert Slow-Motion Effects
+// [func_0801f810] Revert Slow-Motion Effects
 void func_0801f810(void) {
     func_0800c604(0);
 
@@ -371,13 +370,13 @@ void func_0801f810(void) {
     func_0804dae0(D_03005380, gSneakySpiritsInfo.door, -1, 0, 0);
     func_0804cebc(D_03005380, gSneakySpiritsInfo.door, 3);
     func_0801f194(0);
-    func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, D_088a1158, 0, 1, 0x7f, 0);
-    func_0804dcb8(D_03005380, gSneakySpiritsInfo.ghostWalk, (func_0800c1a8() << 8) / 0x64);
+    func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, &D_088a1158, 0, 1, 0x7f, 0);
+    func_0804dcb8(D_03005380, gSneakySpiritsInfo.ghostWalk, (func_0800c1a8() << 8) / 100);
 }
 
 
 // [func_0801f8d0] CUE - Hit
-void func_0801f8d0(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
+void func_0801f8d0(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
     u32 duration;
     s8  xVel;
     s8  yVel;
@@ -386,21 +385,21 @@ void func_0801f8d0(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
     if (gSneakySpiritsInfo.slowMotionHit) {
         func_0800be88(0x40);        // Set Game Speed (0x40 = 0.25; Default = 0x100)
         func_0800c0c4(-0xc00);      // Set Music Pitch (-0xc00 = -12 semitones; Default = 0)
-        func_0800c0f8(0x200, 0);    // Set Music Channel 9 Volume to 0
+        func_0800c0f8((1 << 9), 0); // Set Music Channel 9 Volume to 0
 
         duration = func_0800c3a4(0x16) - func_08018054();
-        xVel = 0x44;
-        yVel = 0x3c;
+        xVel = 68;
+        yVel = 60;
     } else {
         duration = func_0800c3a4(0x30) - func_08018054();
-        xVel = 0x54;
-        yVel = 0x44;
+        xVel = 84;
+        yVel = 68;
     }
 
-    temp = (u16)func_0804ddb0(D_03005380, gSneakySpiritsInfo.ghostHit, 2);
+    temp = (u16) func_0804ddb0(D_03005380, gSneakySpiritsInfo.ghostHit, 2);
     func_0804cebc(D_03005380, gSneakySpiritsInfo.ghostHit, func_08001980(temp));
     func_0804d770(D_03005380, gSneakySpiritsInfo.ghostHit, 1);
-    temp = func_0800e3e4(gSneakySpiritsInfo.ghostHit, 0x64, 0x4c, xVel, yVel, (u16) duration);
+    temp = func_0800e3e4(gSneakySpiritsInfo.ghostHit, 100, 76, xVel, yVel, (u16) duration);
     func_08005d38(temp, func_0801f810, 0);
 
     func_0804dae0(D_03005380, gSneakySpiritsInfo.door, 1, 0x7f, 0);
@@ -408,68 +407,63 @@ void func_0801f8d0(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
 
     func_0801f194(1);
 
-    gSneakySpiritsInfo.arrowReady = 0;
+    gSneakySpiritsInfo.arrowReady = FALSE;
     func_08017338(0, 0);
-    func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, D_088a1158, 3, 0, 0, 0);
+    func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, &D_088a1158, 3, 0, 0, 0);
 
     func_08002634(&s_f_aim_just_hit_seqData);
     func_08002634(&s_f_aim_just_hit_voice_seqData);
 
-    func_0804d160(D_03005380, D_088a1258, 0, 0x80, 0x5a, 0x8792, 1, 0, 3);
+    func_0804d160(D_03005380, &D_088a1258, 0, 128, 90, 0x8792, 1, 0, 3);
 }
 
 
 // [func_0801fa4c] CUE - Barely
-void func_0801fa4c(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
-    gSneakySpiritsInfo.arrowReady = 0;
+void func_0801fa4c(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
+    gSneakySpiritsInfo.arrowReady = FALSE;
     func_08017338(0, 0);
-    func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, D_088a1158, 0, 1, 0x7f, 0);
+    func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, &D_088a1158, 0, 1, 0x7f, 0);
 
-    func_0804d160(D_03005380, D_088a0df0, 0, 0x46, 0x3a, 0x8792, 1, 0x7f, 3);
+    func_0804d160(D_03005380, &D_088a0df0, 0, 70, 58, 0x8792, 1, 0x7f, 3);
     if (func_08018054() < 0) {
-        func_0804d160(D_03005380, D_088a0e80, 0, 0x7a, 0x5e, 0x8792, 1, 0, 3);
+        func_0804d160(D_03005380, &D_088a0e80, 0, 122, 94, 0x8792, 1, 0, 3);
     } else {
-        func_0804d160(D_03005380, D_088a11b8, 0, 0x7a, 0x5e, 0x8792, 1, 0, 3);
+        func_0804d160(D_03005380, &D_088a11b8, 0, 122, 94, 0x8792, 1, 0, 3);
     }
     func_08002634(&s_ghost_miss_hit_seqData);
 }
 
 
 // [func_0801fb14] CUE - Miss
-void func_0801fb14(u32 arg0, struct struct_080179f4_sub1 *arg1, u32 arg2) {
-    u8 unk26;
-    u16 temp;
+void func_0801fb14(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
+    func_0804d160(D_03005380, &D_088a0fb8, 0, 120, 92, 0x8792, 1, 0, 3);
 
-    func_0804d160(D_03005380, D_088a0fb8, 0, 0x78, 0x5c, 0x8792, 1, 0, 3);
-
-    // Taunt if enabled.
-    unk26 = arg1->unk26;
-    if (!unk26) {
-        func_0804d160(D_03005380, D_088a0d80, 0, 0xa0, 0x69, 0x8792, 1, unk26, 3);
-        temp = func_0800c3b8();
-        func_0800856c(temp, func_08002634, &s_ghost_warai_seqData, func_0800c3a4(0xc));
+    if (!cue->disableTaunt) {
+        func_0804d160(D_03005380, &D_088a0d80, 0, 160, 105, 0x8792, 1, 0, 3);
+        func_0800856c((u16) func_0800c3b8(), func_08002634, &s_ghost_warai_seqData, func_0800c3a4(0xc));
     }
+
     func_08002634(&s_ghost_dash_seqData);
 }
 
 
 // [func_0801fbb0] MAIN - Input Event
 void func_0801fbb0(void) {
-    if (gSneakySpiritsInfo.arrowReady) {
-        gSneakySpiritsInfo.arrowReady = 0;
-        func_08017338(0, 0);
-        func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, D_088a1158, 0, 1, 0x7f, 0);
-        func_0804d160(D_03005380, D_088a0df0, 0, 0x46, 0x3a, 0x8792, 1, 0x7f, 3);
-        func_08002634(&s_ghost_gosha_seqData);
-    }
+    if (!gSneakySpiritsInfo.arrowReady) return;
+
+    gSneakySpiritsInfo.arrowReady = FALSE;
+    func_08017338(0, 0);
+    func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, &D_088a1158, 0, 1, 0x7f, 0);
+    func_0804d160(D_03005380, &D_088a0df0, 0, 70, 58, 0x8792, 1, 0x7f, 3);
+    func_08002634(&s_ghost_gosha_seqData);
 }
 
 
-// [func_0801fc3c] GRAPHICAL Func_00 - Unknown (STUB)
+// [func_0801fc3c] COMMON Func_00 - STUB
 void func_0801fc3c(void) {
 }
 
 
-// [func_0801fc40] GRAPHICAL Func_01 - Unknown (STUB)
+// [func_0801fc40] COMMON Func_01 - STUB
 void func_0801fc40(void) {
 }

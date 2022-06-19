@@ -20,17 +20,20 @@ struct struct_030046a4_sub3 {
 };
 
 struct struct_03004b10 {
-    u16 unk0;
+    u16 DISPCNT;    // LCD Control
     u16 unk2;
-    u16 unk4[4];
-    u16 unkC;
-    u16 unkE;
-    u16 unk10;
-    u16 unk12;
-    u16 unk14;
-    u16 unk16;
-    u16 unk18;
-    u16 unk1A;
+    u16 BG0CNT;     // BG0 Control
+    u16 BG1CNT;     // BG1 Control
+    u16 BG2CNT;     // BG2 Control
+    u16 BG3CNT;     // BG3 Control
+    s16 BG0HOFS;    // BG0 X-Offset
+    s16 BG0VOFS;    // BG0 Y-Offset
+    s16 BG1HOFS;    // BG1 X-Offset
+    s16 BG1VOFS;    // BG1 Y-Offset
+    s16 BG2HOFS;    // BG2 X-Offset
+    s16 BG2VOFS;    // BG2 Y-Offset
+    s16 BG3HOFS;    // BG3 X-Offset
+    s16 BG3VOFS;    // BG3 Y-Offset
     u32 unk1C[4];
     u32 unk2C[4];
     u16 unk3C;
@@ -269,133 +272,146 @@ struct RapMenInfo {
 };
 
 
-struct WizardsWaltzSparkle {
-    struct ScaledEntity *entity; // Entity:  unk0
-    u8  state;      // Value:   unk4 {0,1,2}
-    u32 unk8;       // Counter: unk8
-    u32 unkC;       // Value:   posUnk0C
-    u32 unk10;      // Value:   posUnk10
-    u32 unk14;      // Value:   posUnk14
-    u32 unk18;      // Counter: unk18 {0..15}
+struct WizardsWaltzCue {
+    struct AffineSprite *sprite;
+    u16 null4;
+    s16 position;
+};
+
+struct WizardsWaltzEntity {
+    struct AffineSprite *sprite;
+    u8  state;
+    s32 rotation;
+    s32 x;
+    s32 y;
+    s32 z;
+    u32 time;
     u32 null1C;
 };
 
 struct WizardsWaltzInfo {
-    u8 version;         // Value:   unk0
-    struct ScaledEntity *wizardEntity; // Entity:  unk4
-    u8  wizardState;    // Value:   unk8 {0,1}
-    u32 unkC;           // Value:   posUnk0C
-    u32 unk10;          // Value:   posUnk10
-    s32 unk14;          // Value:   posUnk14
-    u32 unk18;          // Value:   posUnk18
+    u8 version;
+    struct WizardsWaltzEntity wizard;
+    struct WizardsWaltzEntity shadow;
+    struct WizardsWaltzEntity sparkle[10];
+    struct WizardsWaltzEntity girl;
+    s32 cyclePosition;  // Current point in cycle
+    s32 cycleInterval;  // Duration of one cycle
+    s32 globalScale;    //
+    u8  currentSparkle; // Sparkle to operate on
+    u8  flowerCount;
+    u8  isTutorial;
+};
+
+
+struct RhythmTweezersCue {
+    u32 unk0_b0:5;
+    u32 isLongHair:4;
+    u32 finished:1;
+    struct AffineSprite *sprite;
+    u32 null8;
+    u32 nullC;
+    u32 null10;
+    u32 null14;
+    u32 null18;
     u32 null1C;
     u32 null20;
-    struct ScaledEntity *shadowEntity; // Entity:  unk24
-    u32 null28;
-    u32 null2C;
-    u32 null30;
-    u32 null34;
-    u32 null38;
-    u32 null3C;
-    u32 null40;
-    struct WizardsWaltzSparkle sparkle[10]; // Struct: unk44[10]
-    struct ScaledEntity *girlEntity; // Entity:  unk184
-    u8  girlState;      // Value:   unk188 {0,1,2}
-    u32 null18C;
-    u32 null190;
-    u32 null194;
-    u32 null198;
-    u32 null19C;
-    u32 null1A0;
-    s32 cyclePosition;  // Counter: unk1A4
-    s32 cycleInterval;  // Value:   unk1A8
-    s32 globalScale;    // Value:   unk1AC
-    u8  unk1B0;         // Counter: cycleUnk1B0 {0..9}
-    u8  flowerCount;    // Counter: unk1B1
-    u8  isTutorial;     // Flag:    unk1B2
-};
-
-
-struct RhythmTweezersTweezers {
-    struct ScaledEntity *entity; // Entity:  Tweezers
-    u8  unk4;   // Flag:    Active
-    u8  unk5;   // State:   Holding { 0 = False (Open); 1 = True (Full Hair); 2 = (Half Hair) }
-    s16 unk6;   // Value:   0x4ea - ((cyclePosition * 0x5d5) / cycleTarget)
-    u32 unk8;   // Counter: Cycle Position
-    u32 unkC;   // Value:   Cycle Target
-    u8  unk10;  // Flag:    Pulling (assigned but never used)
-};
-
-struct RhythmTweezersFallingHair {
-    struct ScaledEntity *entity; // Entity:  Falling Hair
-    s32 unk4;   // Value:   Vertical Velocity
-    u32 unk8;   // Counter: Vertical Position
-    s16 unkC;   // Value:   Distance From Tweezers
-    u16 unkE;   // Value:   Randomised Rotation Speed ( func_08001980(0x1f) - 0xf )
-};
-
-struct RhythmTweezersVegetable {
-    s16 entity0;    // Entity:  Current Vegetable Face
-    s16 entity2;    // Entity:  Upcoming Vegetable Face
-    u8  unk4;       // State:   Current Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
-    u8  unk5;       // State:   Upcoming Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
-    u8  unk6;       // Flag:    Screen Scrolling
-    u32 unk8;       // Counter: Screen Scroll Position
-    u32 unkC;       // Value:   Screen Scroll Target
-    u8  unk10;      // Flag:    Destination Vegetable BG Map { 0 = D_0600f800 (Right); -1 = D_0600f000 (Left) }
+    u32 null24;
+    s16 rotation;
+    u16 null2A;
+    u16 pullTime; // Current pulling time.
+    u16 pullTarget; // Target pulling time.
 };
 
 struct RhythmTweezersInfo {
-    u8 unk0;        // Value: Version { 0..2 = Rhythm Tweezers; 3..5 = Rhythm Tweezers 2 }
-    struct RhythmTweezersTweezers tweezers;
-    u32 unk18;      // Counter: Hair Placement Cycle Position
-    u32 unk1C;      // Value:   Hair Placement Cycle Spacing
-    u8  unk20;      // Counter: Next Available Falling Hair {0..4}
-    struct RhythmTweezersFallingHair fallingHairs[5];
-    struct RhythmTweezersVegetable vegetable;
-    union {         // Counter: Remaining Hairs
-        u16 u16[2];     // Missed/Queued; Barely'd
-        u32 u32;        // Combined (NOT Total)
-    } unk88;
-    s16 unk8C;      // Entity:  Tutorial Text (Unused)
-    u16 unk8E;      // Value:   Global Horizontal Position (for vegetable faces and hair)
-    s16 unk90;      // Value:   Mask Current Position
-    s16 unk92;      // Value:   Mask Vertical Motion
+    u8 version; // Value:   Version { 0..2 = Rhythm Tweezers; 3..5 = Rhythm Tweezers 2 }
+    struct RhythmTweezersTweezers {
+        struct AffineSprite *sprite; // Sprite: Tweezers
+        u8  isMoving;   // Flag:    Active
+        u8  heldHair;   // State:   Holding { 0 = None; 1 = Full Hair; 2 = Half Hair }
+        s16 rotation;   // Value:   0x800 = 360 degrees
+        u32 cycleTime;  // Counter: Cycle Position
+        u32 cycleTarget;    // Value:   Cycle Target
+        u8  isPulling;  // Flag:    Pulling (assigned but never used)
+    } tweezers;
+    u32 hairCycleTime;  // Counter: Hair Placement Cycle Position
+    u32 hairCycleTarget;    // Value:   Hair Placement Cycle Target
+    u8  fallingHairsNext;  // Counter: Next Available Falling Hair {0..4}
+    struct RhythmTweezersFallingHair {
+        struct AffineSprite *sprite; // Sprite: Falling Hair
+        s32 fallDistance;   // Counter:   Vertical Position
+        u32 fallSpeed;      // Value: Vertical Velocity
+        s16 rotation;       // Value:   Rotation
+        u16 rotationSpeed;  // Value:   Randomised Rotation Speed ( func_08001980(0x1f) - 0xf )
+    } fallingHairs[5];
+    struct RhythmTweezersVegetable {
+        s16 spriteCurrent;  // Sprite:  Current Vegetable Face
+        s16 spriteNext;     // Sprite:  Upcoming Vegetable Face
+        u8  typeCurrent;    // State:   Current Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
+        u8  typeNext;       // State:   Upcoming Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
+        u8  isScrolling;    // Flag:    Screen Scrolling
+        u32 scrollTime;     // Counter: Screen Scroll Time
+        u32 scrollTarget;   // Value:   Screen Scroll Target
+        u8  bgMapSide;      // Flag:    Destination Vegetable BG Map { 0 = D_0600f800 (Right); -1 = D_0600f000 (Left) }
+    } vegetable;
+    struct {
+        u16 full; // Queued/Missed
+        u16 half; // Barely'd
+    } existingHairs;
+    s16 tutorialSprite; // Sprite:  Tutorial Text (Unused)
+    s16 screenHorizontalPosition; // Value:   Global Horizontal Position (for vegetable faces and hair)
+    s16 maskPosition;  // Value:   Mask Vertical Position (-160 = Hidden; 0 = Fully Visible)
+    s16 maskVelocity;  // Value:   Mask Vertical Velocity (-8 = Down; 8 = Up)
 };
 
+
+struct SneakySpiritsCue {
+    u32 null0;
+    u32 null4;
+    u32 null8;
+    u32 nullC;
+    u32 null10;
+    u32 null14;
+    u32 null18;
+    u32 null1C;
+    u32 null20;
+    u16 null24;
+    u8 disableTaunt;
+};
 
 struct SneakySpiritsInfo {
     u32 *unk0;          // Pointer: ??? (Related to Tutorial Text)
     u8  version;        // Value:   Version
     u8  rainSlow;       // Flag:    Slow-Motion Rain
-    s16 rainDrops[30];      // Entity:  Raindrops
+    s16 rainDrops[30];      // Sprite:  Raindrops
     u16 rainDropNext;       // Counter: Next Raindrop to Update
-    s16 rainSplashes[20];   // Entity:  Rain Splashes
+    s16 rainSplashes[20];   // Sprite:  Rain Splashes
     u16 rainSplashNext;     // Counter: Next Rain Splash to Update
-    s16 tree;           // Entity:  Tree
-    s16 bow;            // Entity:  Bow
+    s16 tree;           // Sprite:  Tree
+    s16 bow;            // Sprite:  Bow
     u8  arrowReady;     // Flag:    Bow Has Arrow
-    s16 door;           // Entity:  Door
-    s16 backWall;       // Entity:  Back Wall
-    s16 ghostWalk;      // Entity:  Sneaky Spirit (Moving)
-    u16 unk7A;          // Value:   7 (used for determining horizontal position; only assigned in startup)
-    s16 ghostMask;      // Entity:  Wall Mask (used to hide the Sneaky Spirit when moving low)
-    s16 ghostHit;       // Entity:  Sneaky Spirit (Hit)
+    s16 door;           // Sprite:  Door
+    s16 backWall;       // Sprite:  Back Wall
+    s16 ghostWalk;      // Sprite:  Sneaky Spirit (Moving)
+    u16 maxSteps;       // Const:   7 (total number of horizontal positions the ghost can appear)
+    s16 ghostMask;      // Sprite:  Wall Mask (used to hide the Sneaky Spirit when moving low)
+    s16 ghostHit;       // Sprite:  Sneaky Spirit (Hit)
     u16 ghostHeight;    // Value:   Sneaky Spirit Height of Next Motion { Default = 0x100 }
-    u32 *rainChannel;   // Pointer: IRAM Sound Channel Playing Rain/Wind SFX
-    s16 text;           // Entity:  Tutorial Text
+    u32 *rainChannel;   // Pointer: Audio Channel Playing Wind/Rain SFX
+    s16 text;           // Sprite:  Tutorial Text
     u8  slowMotionHit;  // Flag:    Slow-Motion Effect On Hit
     u8  freezeRain;     // Flag:    Freeze Slow-Motion Rain
-    s16 tutorialGhost;  // Entity:  Sneaky Spirit (Tutorial Example)
+    s16 tutorialGhost;  // Sprite:  Sneaky Spirit (Tutorial Example)
 };
 
 
 struct PrologueInfo {
     u8  ver;        // Value:  Version
-    s16 entity2;    // Entity: Object 0
-    s16 entity4;    // Entity: Object 1
-    s16 entity6;    // Entity: Object 2
+    s16 sprite2;    // Sprite: Object 0
+    s16 sprite4;    // Sprite: Object 1
+    s16 sprite6;    // Sprite: Object 2
 };
+
 
 struct BonOdoriInfo_sub {
     s16 unk0;
@@ -433,6 +449,56 @@ struct BonOdoriInfo {
 };
 
 
+struct SpaceballCue {
+    u8 state;
+    struct AffineSprite *sprite;
+    u32 endTime;
+    s16 rotation;
+    s16 rotationSpeed;
+    s32 x;
+    s32 y;
+    s32 z;
+    u32 unk1C; // (90 * number of beats)
+    u32 xSpeed; // Used for 'Barely' arc only
+    u32 ySpeed; // Used for 'Barely' arc only
+    u8 missed;
+};
+
+struct SpaceballEntity {
+    struct AffineSprite *sprite;
+    s32 x;
+    s32 y;
+    s32 z;
+};
+
+struct SpaceballInfo {
+    u8 version;
+    s32 zoom;   // Value: Camera Position
+    struct SpaceballBatter {
+        struct AffineSprite *sprite;
+        s32 x;
+        s32 y;
+        s32 z;
+        u32 swingTimer;
+        u32 *animClose;
+        u32 *animFar;
+    } batter;
+    struct SpaceballEntity pitcher;
+    struct SpaceballEntity umpire;
+    struct SpaceballEntity poofR;   // Sprite used when a spaceball is missed (right)
+    struct SpaceballEntity poofL;   // Sprite used when a spaceball is missed (left)
+    u16 currentStar;    // Counter: Number of Existing BG Stars
+    s16 starSprite[24];
+    struct SpaceballStar {
+        s16 x;
+        s16 y;
+        s16 z;
+    } stars[24];
+    u8 totalMissed;
+    u8 spaceballType;
+};
+
+
 struct struct_030055d0 {
     union {
         struct KarateManInfo karateMan;
@@ -442,6 +508,7 @@ struct struct_030055d0 {
         struct SneakySpiritsInfo sneakySpirits;
         struct PrologueInfo prologues;
         struct BonOdoriInfo bonOdori;
+        struct SpaceballInfo spaceball;
     } gameInfo;
 };
 

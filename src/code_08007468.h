@@ -73,7 +73,7 @@ extern u32 func_08008548(struct unk_struct_0800852c *arg0);
 extern struct unk_struct_0800873c *func_0800873c(struct unk_struct_0800873c_init *arg0);
 extern u32 func_08008758(struct unk_struct_0800873c *arg0);
 extern u32 func_080087b4(u16, u32*);
-extern s32 func_080087d4(s32, s32, s32);
+extern s32 func_080087d4(s32, s32, s32); // [func_080087d4] MATH UTIL - Clamp Signed Integer (var, min, max)
 // extern ? func_080087e8(?);
 // extern ? func_08008910(?);
 // extern ? func_08008938(?);
