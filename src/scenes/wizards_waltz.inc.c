@@ -262,11 +262,9 @@ void func_08044e78(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2, u32 arg3) {
 
 // [func_08044f94] CUE - Update
 u32 func_08044f94(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
-    if (arg2 > (gWizardsWaltzInfo.cycleInterval + func_0800c3a4(0x30))) {
-        return TRUE;
-	} else {
-        return FALSE;
-	}
+    if (arg2 > (gWizardsWaltzInfo.cycleInterval + func_0800c3a4(0x30))) return TRUE;
+
+    return FALSE;
 }
 
 

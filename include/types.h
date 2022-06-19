@@ -358,9 +358,9 @@ struct SneakySpiritsInfo {
     u32 *unk0;          // Pointer: ??? (Related to Tutorial Text)
     u8  version;        // Value:   Version
     u8  rainSlow;       // Flag:    Slow-Motion Rain
-    s16 rainDrops[30];      // Entity:  Raindrops
+    s16 rainDrops[30];      // Sprite:  Raindrops
     u16 rainDropNext;       // Counter: Next Raindrop to Update
-    s16 rainSplashes[20];   // Entity:  Rain Splashes
+    s16 rainSplashes[20];   // Sprite:  Rain Splashes
     u16 rainSplashNext;     // Counter: Next Rain Splash to Update
     s16 tree;           // Sprite:  Tree
     s16 bow;            // Sprite:  Bow
@@ -368,7 +368,7 @@ struct SneakySpiritsInfo {
     s16 door;           // Sprite:  Door
     s16 backWall;       // Sprite:  Back Wall
     s16 ghostWalk;      // Sprite:  Sneaky Spirit (Moving)
-    u16 unk7A;          // Value:   7 (used for determining horizontal position; only assigned in startup)
+    u16 maxSteps;       // Const:   7 (total number of horizontal positions the ghost can appear)
     s16 ghostMask;      // Sprite:  Wall Mask (used to hide the Sneaky Spirit when moving low)
     s16 ghostHit;       // Sprite:  Sneaky Spirit (Hit)
     u16 ghostHeight;    // Value:   Sneaky Spirit Height of Next Motion { Default = 0x100 }
