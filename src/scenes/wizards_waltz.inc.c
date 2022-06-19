@@ -5,7 +5,7 @@
 // For readability. !TODO - CHANGE/REMOVE
 #define gWizardsWaltzInfo D_030055d0->gameInfo.wizardsWaltz
 
-// Game Macros:
+// Game-Specific Macros:
 #define SPARKLE_HIDDEN 0
 #define SPARKLE_QUEUED 1
 #define SPARKLE_ACTIVE 2
@@ -260,7 +260,7 @@ void func_08044e78(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2, u32 arg3) {
 }
 
 
-// [func_08044f94] CUE - Behaviour
+// [func_08044f94] CUE - Update
 u32 func_08044f94(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
     if (arg2 > (gWizardsWaltzInfo.cycleInterval + func_0800c3a4(0x30))) {
         return TRUE;
@@ -339,7 +339,7 @@ void func_080450d0(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
 }
 
 
-// [func_080450dc] MAIN - Input Event
+// [func_080450dc] MAIN - Input Event (STUB)
 void func_080450dc_stub(void) {
 }
 
@@ -357,9 +357,9 @@ void func_080450e4_stub(void) {
 // [func_080450e8] COMMON Func_02 - Unknown
 void func_080450e8(u32 arg) {
     if (arg) {
-        func_08017448(1);
+        func_08017448(TRUE);
         func_08017458(arg);
     } else {
-        func_08017448(0);
+        func_08017448(FALSE);
     }
 }

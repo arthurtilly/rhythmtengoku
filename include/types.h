@@ -284,9 +284,9 @@ struct WizardsWaltzInfo {
     struct WizardsWaltzEntity shadow;
     struct WizardsWaltzEntity sparkle[10];
     struct WizardsWaltzEntity girl;
-    s32 cyclePosition;
-    s32 cycleInterval;
-    s32 globalScale;
+    s32 cyclePosition;  // Current point in cycle
+    s32 cycleInterval;  // Duration of one cycle
+    s32 globalScale;    //
     u8  currentSparkle; // Sparkle to operate on
     u8  flowerCount;
     u8  isTutorial;
@@ -362,21 +362,21 @@ struct SneakySpiritsInfo {
     u16 rainDropNext;       // Counter: Next Raindrop to Update
     s16 rainSplashes[20];   // Entity:  Rain Splashes
     u16 rainSplashNext;     // Counter: Next Rain Splash to Update
-    s16 tree;           // Entity:  Tree
-    s16 bow;            // Entity:  Bow
+    s16 tree;           // Sprite:  Tree
+    s16 bow;            // Sprite:  Bow
     u8  arrowReady;     // Flag:    Bow Has Arrow
-    s16 door;           // Entity:  Door
-    s16 backWall;       // Entity:  Back Wall
-    s16 ghostWalk;      // Entity:  Sneaky Spirit (Moving)
+    s16 door;           // Sprite:  Door
+    s16 backWall;       // Sprite:  Back Wall
+    s16 ghostWalk;      // Sprite:  Sneaky Spirit (Moving)
     u16 unk7A;          // Value:   7 (used for determining horizontal position; only assigned in startup)
-    s16 ghostMask;      // Entity:  Wall Mask (used to hide the Sneaky Spirit when moving low)
-    s16 ghostHit;       // Entity:  Sneaky Spirit (Hit)
+    s16 ghostMask;      // Sprite:  Wall Mask (used to hide the Sneaky Spirit when moving low)
+    s16 ghostHit;       // Sprite:  Sneaky Spirit (Hit)
     u16 ghostHeight;    // Value:   Sneaky Spirit Height of Next Motion { Default = 0x100 }
-    u32 *rainChannel;   // Pointer: IRAM Sound Channel Playing Rain/Wind SFX
-    s16 text;           // Entity:  Tutorial Text
+    u32 *rainChannel;   // Pointer: Audio Channel Playing Wind/Rain SFX
+    s16 text;           // Sprite:  Tutorial Text
     u8  slowMotionHit;  // Flag:    Slow-Motion Effect On Hit
     u8  freezeRain;     // Flag:    Freeze Slow-Motion Rain
-    s16 tutorialGhost;  // Entity:  Sneaky Spirit (Tutorial Example)
+    s16 tutorialGhost;  // Sprite:  Sneaky Spirit (Tutorial Example)
 };
 
 
@@ -447,7 +447,7 @@ struct SpaceballEntity {
 };
 
 struct SpaceballInfo {
-    u8 ver;     // Value: Version
+    u8 version;
     s32 zoom;   // Value: Camera Position
     struct SpaceballBatter {
         struct AffineSprite *sprite;
@@ -460,8 +460,8 @@ struct SpaceballInfo {
     } batter;
     struct SpaceballEntity pitcher;
     struct SpaceballEntity umpire;
-    struct SpaceballEntity poofR;
-    struct SpaceballEntity poofL;
+    struct SpaceballEntity poofR;   // Sprite used when a spaceball is missed (right)
+    struct SpaceballEntity poofL;   // Sprite used when a spaceball is missed (left)
     u16 currentStar;    // Counter: Number of Existing BG Stars
     s16 starSprite[24];
     struct SpaceballStar {

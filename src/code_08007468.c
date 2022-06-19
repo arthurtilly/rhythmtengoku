@@ -140,14 +140,15 @@ u8 *func_080081a8(u8 *arg1, u8 *arg2) {
 
 #include "asm/code_08007468/asm_080087b4.s"
 
-s32 func_080087d4(s32 arg0, s32 arg1, s32 arg2) {
-    if (arg0 < arg1) {
-        return arg1;
+// [func_080087d4] MATH UTIL - Clamp Signed Integer
+s32 func_080087d4(s32 var, s32 min, s32 max) {
+    if (var < min) {
+        return min;
     }
-    if (arg0 > arg2) {
-        return arg2;
+    if (var > max) {
+        return max;
     }
-    return arg0;
+    return var;
 }
 
 #include "asm/code_08007468/asm_080087e8.s"

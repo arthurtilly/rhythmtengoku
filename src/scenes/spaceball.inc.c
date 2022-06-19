@@ -190,7 +190,7 @@ void func_0801ffa0(void) {
 
 // [func_0801ffcc] MAIN - Init
 void func_0801ffcc(u32 ver) {
-    gSpaceballInfo.ver = ver;
+    gSpaceballInfo.version = ver;
     func_0801ffa0();
     func_0800e018(1);
     func_0800e0ec();
