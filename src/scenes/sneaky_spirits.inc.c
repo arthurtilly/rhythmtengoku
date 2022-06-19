@@ -9,9 +9,9 @@
 #define gSneakySpiritsInfo D_030055d0->gameInfo.sneakySpirits
 
 // Game-Specific Macros:
-#define VERSION_GAME_1 0
-#define VERSION_REMIX 1
-#define VERSION_GAME_2 2
+#define SNEAKY_SPIRITS_VERSION_1 0
+#define SNEAKY_SPIRITS_VERSION_REMIX 1
+#define SNEAKY_SPIRITS_VERSION_2 2
 
 // OAM Animations:
 extern u32 D_088a0ca0; // Animation: "bow_draw"
@@ -244,7 +244,7 @@ void func_0801f3a4(u32 ver) {
 
     func_08017338(0, 0);
     gSneakySpiritsInfo.slowMotionHit = TRUE;
-    if (ver == VERSION_REMIX) {
+    if (ver == SNEAKY_SPIRITS_VERSION_REMIX) {
         gSneakySpiritsInfo.slowMotionHit = FALSE;
     }
 }

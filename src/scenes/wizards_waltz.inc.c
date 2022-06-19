@@ -6,12 +6,12 @@
 #define gWizardsWaltzInfo D_030055d0->gameInfo.wizardsWaltz
 
 // Game-Specific Macros:
-#define SPARKLE_HIDDEN 0
-#define SPARKLE_QUEUED 1
-#define SPARKLE_ACTIVE 2
-#define GIRL_NEUTRAL 0
-#define GIRL_HAPPY 1
-#define GIRL_SAD 2
+#define WIZARDS_WALTZ_SPARKLE_STATE_HIDDEN 0
+#define WIZARDS_WALTZ_SPARKLE_STATE_QUEUED 1
+#define WIZARDS_WALTZ_SPARKLE_STATE_ACTIVE 2
+#define WIZARDS_WALTZ_GIRL_STATE_NEUTRAL 0
+#define WIZARDS_WALTZ_GIRL_STATE_HAPPY 1
+#define WIZARDS_WALTZ_GIRL_STATE_SAD 2
 
 // OAM Animations:
 extern u32 D_08932bec; // Animation: "wizard_fly"
@@ -89,13 +89,13 @@ void func_08044a10(u32 ver) {
     gWizardsWaltzInfo.wizard.state = FALSE;
     gWizardsWaltzInfo.wizard.sprite = func_0800fa6c(&D_08932bec, 0, 120, gWizardsWaltzInfo.wizard.y, 0x4001, 0x80, 0, 1, 0, 0, 1);
     gWizardsWaltzInfo.shadow.sprite = func_0800fa6c(&D_08932edc, 0, 120, 80, 0x4082, 0x80, 0, 0, 0, 0, 1);
-    gWizardsWaltzInfo.girl.state = GIRL_NEUTRAL;
+    gWizardsWaltzInfo.girl.state = WIZARDS_WALTZ_GIRL_STATE_NEUTRAL;
     gWizardsWaltzInfo.girl.sprite = func_0800fa6c(&D_08932e3c, 0, 120, 80, 0x4040, 0x80, 0, 1, 0, 0, 1);
 
     // Create sparkles.
     for (i = 0; i < 10; i++) {
         struct AffineSprite *sprite;
-        gWizardsWaltzInfo.sparkle[i].state = SPARKLE_HIDDEN;
+        gWizardsWaltzInfo.sparkle[i].state = WIZARDS_WALTZ_SPARKLE_STATE_HIDDEN;
         sprite = func_0800fa6c(&D_08932c8c, 0, 0, 0, 0, 0x80, 0, 1, 0, 0, 0);
         gWizardsWaltzInfo.sparkle[i].sprite = sprite;
         func_08010040(sprite, 0);
@@ -172,7 +172,7 @@ void func_08044c04(void) {
 
     // Update sparkles.
     if ((gWizardsWaltzInfo.cyclePosition & 7) == 0) {
-        gWizardsWaltzInfo.sparkle[gWizardsWaltzInfo.currentSparkle].state = SPARKLE_QUEUED;
+        gWizardsWaltzInfo.sparkle[gWizardsWaltzInfo.currentSparkle].state = WIZARDS_WALTZ_SPARKLE_STATE_QUEUED;
         gWizardsWaltzInfo.currentSparkle += 1;
 
         if (gWizardsWaltzInfo.currentSparkle > 9) {
@@ -182,20 +182,20 @@ void func_08044c04(void) {
 
     // Update sparkles (continued).
     for (i = 0; i < 10; i++) {
-        if (gWizardsWaltzInfo.sparkle[i].state != SPARKLE_HIDDEN) {
-            if (gWizardsWaltzInfo.sparkle[i].state == SPARKLE_QUEUED) {
+        if (gWizardsWaltzInfo.sparkle[i].state != WIZARDS_WALTZ_SPARKLE_STATE_HIDDEN) {
+            if (gWizardsWaltzInfo.sparkle[i].state == WIZARDS_WALTZ_SPARKLE_STATE_QUEUED) {
                 gWizardsWaltzInfo.sparkle[i].rotation = gWizardsWaltzInfo.wizard.rotation - 0x200;
                 gWizardsWaltzInfo.sparkle[i].x = gWizardsWaltzInfo.wizard.x;
                 gWizardsWaltzInfo.sparkle[i].y = gWizardsWaltzInfo.wizard.y + 4;
                 gWizardsWaltzInfo.sparkle[i].z = gWizardsWaltzInfo.wizard.z;
-                gWizardsWaltzInfo.sparkle[i].state = SPARKLE_ACTIVE;
+                gWizardsWaltzInfo.sparkle[i].state = WIZARDS_WALTZ_SPARKLE_STATE_ACTIVE;
                 gWizardsWaltzInfo.sparkle[i].time = 0;
                 func_08010040(gWizardsWaltzInfo.sparkle[i].sprite, 1);
             } else {
                 gWizardsWaltzInfo.sparkle[i].y = ((gWizardsWaltzInfo.sparkle[i].y << 8) + 0x100) >> 8;
                 gWizardsWaltzInfo.sparkle[i].time += 1;
                 if (gWizardsWaltzInfo.sparkle[i].time > 15) {
-                    gWizardsWaltzInfo.sparkle[i].state = SPARKLE_HIDDEN;
+                    gWizardsWaltzInfo.sparkle[i].state = WIZARDS_WALTZ_SPARKLE_STATE_HIDDEN;
                     func_08010040(gWizardsWaltzInfo.sparkle[i].sprite, 0);
                 }
             }
@@ -284,7 +284,7 @@ void func_08044fcc(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
     // Cycle through frames of "girl_happy" if isTutorial flag is not set.
     isTutorial = gWizardsWaltzInfo.isTutorial;
     if (!isTutorial) {
-        gWizardsWaltzInfo.girl.state = GIRL_HAPPY;
+        gWizardsWaltzInfo.girl.state = WIZARDS_WALTZ_GIRL_STATE_HAPPY;
 
         // Increment frame for "girl_happy" if not at the maximum of 5.
         if (gWizardsWaltzInfo.flowerCount <= 5) {
@@ -314,7 +314,7 @@ void func_0804503c(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
 
     // Cycle through frames of "girl_sad" if isTutorial flag is not set.
     if (!gWizardsWaltzInfo.isTutorial) {
-        gWizardsWaltzInfo.girl.state = GIRL_SAD;
+        gWizardsWaltzInfo.girl.state = WIZARDS_WALTZ_GIRL_STATE_SAD;
 
         // Decrement frame for "girl_sad" if not at the minimum of 0.
         if (gWizardsWaltzInfo.flowerCount) {

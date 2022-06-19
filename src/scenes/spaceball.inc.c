@@ -8,9 +8,9 @@
 #define gSpaceballInfo D_030055d0->gameInfo.spaceball
 
 // Game-Specific Macros:
-#define SPACEBALL_LAUNCHED 0
-#define SPACEBALL_HIT 1
-#define SPACEBALL_BARELY 2
+#define SPACEBALL_CUE_STATE_LAUNCH 0
+#define SPACEBALL_CUE_STATE_HIT 1
+#define SPACEBALL_CUE_STATE_BARELY 2
 
 // OAM Animations:
 extern u32 D_088a1a70; // Animation: "batter_green"
@@ -407,13 +407,13 @@ u32 func_08020564(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     u32 finished;
 
     switch (cue->state) {
-        case SPACEBALL_LAUNCHED:
+        case SPACEBALL_CUE_STATE_LAUNCH:
             finished = func_080203fc(arg0, cue, arg2, unused3);
             break;
-        case SPACEBALL_HIT:
+        case SPACEBALL_CUE_STATE_HIT:
             finished = func_080204b8(arg0, cue, arg2, unused3);
             break;
-        case SPACEBALL_BARELY:
+        case SPACEBALL_CUE_STATE_BARELY:
             finished = func_08020500(arg0, cue, arg2, unused3);
             break;
     }
@@ -435,7 +435,7 @@ void func_080205ac(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     func_0800ffc0(batter->sprite, 1);
     batter->swingTimer = func_0800c3a4(0xa);
     cue->rotationSpeed = 8;
-    cue->state = SPACEBALL_HIT;
+    cue->state = SPACEBALL_CUE_STATE_HIT;
 }
 
 
@@ -449,7 +449,7 @@ void func_080205e8(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     cue->rotationSpeed = -8;
     cue->y = INT_TO_FIXED(cue->y);
     cue->ySpeed = INT_TO_FIXED(-4);
-    cue->state = SPACEBALL_BARELY;
+    cue->state = SPACEBALL_CUE_STATE_BARELY;
 }
 
 
