@@ -166,7 +166,7 @@ void func_0801fe6c(void) {
 }
 
 
-// [func_0801ff60] GFX_INIT Func_00
+// [func_0801ff60] GFX_INIT Func_02
 void func_0801ff60(void) {
     func_0800c604(0);
     func_08017578();
