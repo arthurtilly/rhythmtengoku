@@ -41,7 +41,7 @@ extern const struct SequenceData s_f_boxing_kansei_seqData;
 extern const struct SequenceData s_f_boxing_v_nua_seqData;
 
 // Additional Data - Karate Man:
-extern u16 D_088ad004[];    // Palette 
+extern u16 D_088ad004[8][16];  // Palette
 extern u32 *D_089df064[];   // GFX-related 
 extern u32 *D_089df1ac[];   // GFX Struct Index
 extern u32 D_089df1bc[];    // BG Face Graphics
@@ -540,7 +540,7 @@ void func_08021a60(struct struct_080179f4 *arg0, struct KarateManCue *cue) {
                 break;
         }
         if (gKarateManInfo.version == 2) { // BG Flash ("Serious Mode" version)
-            func_08001fe0((u16)func_0800c3b8(), 0xa, 1, &D_088ad004[0x60], &D_088ad004[0x50], &D_03004b10.unk54[4]);
+            func_08001fe0((u16)func_0800c3b8(), 0xa, 1, D_088ad004[6], D_088ad004[5], D_03004b10.bgPalette[4]);
         }
         func_08022114(); // Increment Flow
     }
@@ -740,23 +740,23 @@ void func_08022170(void) {
 
 // SUB - Update BG Palette 
 void func_080221cc(void) {
-    s8 tableByte;  // BG Palette Table byte
+    s8 paletteID;  // BG Palette Table byte
     u8 bg;         // Current BG
-    u16 *bgPalette, *bgPalette1;
+    u16 *palette4, *newPalette;
     u32 i;
     
     if (gKarateManInfo.version != 2) { // Don't update if in "Serious Mode"
         bg = gKarateManInfo.bg;
-        tableByte = gKarateManInfo.bgPalIndex[bg];
-        if (tableByte < 0) {
+        paletteID = gKarateManInfo.bgPalIndex[bg];
+        if (paletteID < 0) {
             bg = 0;
-            tableByte = gKarateManInfo.bgPalIndex[0];
+            paletteID = gKarateManInfo.bgPalIndex[0];
         }
         gKarateManInfo.bg = bg + 1;
-        bgPalette1 = D_03004b10.unk54[tableByte]; 
-        bgPalette = D_03004b10.unk54[4];
+        newPalette = D_03004b10.bgPalette[paletteID];
+        palette4 = D_03004b10.bgPalette[4];
         for (i = 0; i < 4; i++) {
-            bgPalette[i] = bgPalette1[i];
+            palette4[i] = newPalette[i];
         }
     }
 }

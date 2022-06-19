@@ -3,8 +3,8 @@
 extern const struct SequenceData s_tebyoushi_pati_seqData;
 extern const struct SequenceData s_HC_seqData;
 
-extern u32 *D_089deed4[];  // Index of pointers to palettes.
-extern u32 *D_089deecc[];  // Another index of pointers to palettes (more like sub-palettes).
+extern u16 *D_089deed4[];  // Index of pointers to palettes.
+extern u16 *D_089deecc[];  // Another index of pointers to palettes (more like sub-palettes).
 
 extern u16 D_089ded00[8];  // Seemingly numbers of ticks for animations.
 extern u8* D_089dece0[];   // Contains Donpan animation indexes. (Subarrays are the same animation but for different donpans)
@@ -85,7 +85,7 @@ void func_08020834(void) {
 void func_0802085c(void) {
     func_0800c604(0);
     func_08017578();
-    D_03004b10.unk54[0xc][2] = 0x7C00;
+    D_03004b10.bgPalette[12][2] = 0x7C00;
 }
 
 void func_08020880(void) {
@@ -128,10 +128,10 @@ void func_080208ec(u32 arg0) {
     gBonOdoriInfo.unk40 = 0;
     gBonOdoriInfo.unk42 = FALSE;
     func_080206c0();
-    gBonOdoriInfo.unk5C = D_089deed4[gBonOdoriInfo.unk0];
-    gBonOdoriInfo.unk58 = D_089deecc[gBonOdoriInfo.unk0];
-    func_08001ec4(0xc, 7, gBonOdoriInfo.unk5C, 0, &gBonOdoriInfo.unk460);
-    func_08001ec4(0x14, 7, gBonOdoriInfo.unk58, 0, &gBonOdoriInfo.unk60);
+    gBonOdoriInfo.objPalDark = D_089deed4[gBonOdoriInfo.unk0];
+    gBonOdoriInfo.bgPalDark = D_089deecc[gBonOdoriInfo.unk0];
+    func_08001ec4(0xc, 7, gBonOdoriInfo.objPalDark, 0, gBonOdoriInfo.objPalDarkBuf[0]);
+    func_08001ec4(0x14, 7, gBonOdoriInfo.bgPalDark, 0, gBonOdoriInfo.bgPalDarkBuf[0]);
     func_08017338(1, 0);
     gBonOdoriInfo.unk864 = 0;
 }
@@ -191,28 +191,28 @@ void func_08020c8c(u32 arg0) {
 }
 
 void func_08020d20(u32 arg0) {
-    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, &gBonOdoriInfo.unk60, gBonOdoriInfo.unk58, D_03004b10.unk54);
-    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, &gBonOdoriInfo.unk460, gBonOdoriInfo.unk5C, D_03004b10.unk254);
+    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.bgPalDarkBuf[0], gBonOdoriInfo.bgPalDark, D_03004b10.bgPalette[0]);
+    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.objPalDarkBuf[0], gBonOdoriInfo.objPalDark, D_03004b10.objPalette[0]);
 }
 
 void func_08020da0(u32 arg0) {
-    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.unk58, &gBonOdoriInfo.unk60, D_03004b10.unk54);
-    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.unk5C, &gBonOdoriInfo.unk460, D_03004b10.unk254);
+    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.bgPalDark, gBonOdoriInfo.bgPalDarkBuf[0], D_03004b10.bgPalette[0]);
+    func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.objPalDark, gBonOdoriInfo.objPalDarkBuf[0], D_03004b10.objPalette[0]);
 }
 
 void func_08020e1c(void) {
-    func_080018e0(0, &D_03004b10.unk54, 0xe0, 0x10, 0x200);
-    func_080018e0(0, &D_03004b10.unk254, 0xe0, 0x10, 0x200);
+    func_080018e0(0, &D_03004b10.bgPalette, 0xe0, 0x10, 0x200);
+    func_080018e0(0, &D_03004b10.objPalette, 0xe0, 0x10, 0x200);
 }
 
 void func_08020e50(void) {
-    func_0800186c(gBonOdoriInfo.unk58, &D_03004b10.unk54, 0xe0, 0x10, 0x200);
-    func_0800186c(gBonOdoriInfo.unk5C, &D_03004b10.unk254, 0xe0, 0x10, 0x200);
+    func_0800186c(gBonOdoriInfo.bgPalDark, D_03004b10.bgPalette[0], 0xe0, 0x10, 0x200);
+    func_0800186c(gBonOdoriInfo.objPalDark, D_03004b10.objPalette[0], 0xe0, 0x10, 0x200);
 }
 
 void func_08020e90(void) {
-    func_0800186c(&gBonOdoriInfo.unk60, &D_03004b10.unk54, 0xe0, 0x10, 0x200);
-    func_0800186c(&gBonOdoriInfo.unk460, &D_03004b10.unk254, 0xe0, 0x10, 0x200);
+    func_0800186c(&gBonOdoriInfo.bgPalDarkBuf[0], D_03004b10.bgPalette[0], 0xe0, 0x10, 0x200);
+    func_0800186c(&gBonOdoriInfo.objPalDarkBuf[0], D_03004b10.objPalette[0], 0xe0, 0x10, 0x200);
 }
 
 void func_08020ed4(void) {

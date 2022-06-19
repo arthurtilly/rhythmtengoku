@@ -48,8 +48,8 @@ struct struct_03004b10 {
     u16 unk4E;
     u16 unk50;
     u16 unk52;
-    u16 unk54[16][16];   // BG Palette Buffer, 03004b64
-    u16 unk254[0x100];   // OBJ Palette Buffer, 03004d64
+    u16 bgPalette[16][16];   // BG Palette Buffer, 03004b64, 0x54
+    u16 objPalette[16][16];  // OBJ Palette Buffer, 03004d64, 0x254
     u32 unk454[0x100];   // OAM Buffer, 03004f64
 };
 
@@ -437,12 +437,12 @@ struct BonOdoriInfo {
     u16 unk4C[4];
     u8 unk54;
     u8 unk55;
-    u32* unk58;
-    u32* unk5C;
-    u32 unk60;
-    u32 pad64[0xFF];
-    u32 unk460;
-    u32 unk464[0xFF];
+    u16* bgPalDark;
+    u16* objPalDark;
+    u16 bgPalDarkBuf[16][16];
+    u16 null260[16][16];
+    u16 objPalDarkBuf[16][16];
+    u16 null660[16][16];
     u16 unk860;
     u8 unk862;
     u16 unk864;
