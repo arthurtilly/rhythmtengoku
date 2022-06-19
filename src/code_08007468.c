@@ -494,12 +494,12 @@ void func_08008b00(u32 unused_arg0, u32 unused_arg1, s16 arg2, s24_8 arg3, s24_8
     ret_sp14 = fast_divsi3(160 * 256, arg8);
     ret_sp8 = fast_divsi3(ret_r5 * 240, 160);
 
-    temp_r7 = INT_TO_FIXED(-ret_r5) / 2;
+    temp_r7 = INT_TO_FIXED(-ret_r5) >> 1;
 
     ret_spc = fast_divsi3(INT_TO_FIXED(ret_r5), 160);
     temp_r7 += fast_divsi3(ret_r5 * arg7, 160);
     arg3 += fast_divsi3(ret_r5 * arg6, 160);
-    ret_sp10 = fast_divsi3(INT_TO_FIXED(ret_r5), 160);  
+    ret_sp10 = fast_divsi3(INT_TO_FIXED(ret_r5), 160);
 
     temp_sp18 = ret_sp14 * temp_sp0;
 

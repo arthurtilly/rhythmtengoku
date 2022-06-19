@@ -235,7 +235,7 @@ void func_08044e78(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
     xPos = (sins(angle) * 7) / 16;
     scale = (coss(angle) / 2) + 0x40;
 
-    if (func_08007b80(0xa000, scale - gWizardsWaltzInfo.globalScale) > 0x100) {
+    if (fast_divsi3(0xa000, scale - gWizardsWaltzInfo.globalScale) > 0x100) {
         doubleSize = TRUE;
     } else {
         doubleSize = FALSE;

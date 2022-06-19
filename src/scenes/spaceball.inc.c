@@ -1,3 +1,4 @@
+#include "global.h"
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
@@ -29,8 +30,8 @@ extern u32 *D_089de988[3]; // Batter Animations (Close)
 extern u32 *D_089de994[3]; // Batter Animations (Far)
 extern u32 *D_089de9a0[3]; // Spaceball Animations
 
-extern u32 (*D_03004ae4)(u32);
-extern s32 (*D_03004af8)(s32, s32);
+extern s32 (*D_03004ae4)(s32);
+extern s32 (*fast_udivsi3)(s32, s32);
 
 
 /* SPACEBALL */
@@ -42,8 +43,8 @@ void func_0801fc44(u32 current) {
     s32 scale, x, y;
 
     scale = func_08001980(INT_TO_FIXED(3)) + INT_TO_FIXED(1);
-    x = func_08007b80((func_08001980(240) - 120) * scale, INT_TO_FIXED(1));
-    y = func_08007b80((func_08001980(160) - 80) * scale, INT_TO_FIXED(1));
+    x = fast_divsi3((func_08001980(240) - 120) * scale, INT_TO_FIXED(1));
+    y = fast_divsi3((func_08001980(160) - 80) * scale, INT_TO_FIXED(1));
 
     star = &gSpaceballInfo.stars[current];
     star->x = x;
@@ -63,7 +64,7 @@ void func_0801fcb0(void) {
         sprite = gSpaceballInfo.starSprite[i];
         star = &gSpaceballInfo.stars[i];
 
-        scale = func_08007b80(INT_TO_FIXED(0x100), star->z - gSpaceballInfo.zoom);
+        scale = fast_divsi3(INT_TO_FIXED(0x100), star->z - gSpaceballInfo.zoom);
         x = FIXED_TO_INT(star->x * scale);
         y = FIXED_TO_INT(star->y * scale);
         func_0804d5d4(D_03005380, sprite, x + 120, y + 80);
@@ -93,7 +94,7 @@ void func_0801fd70(struct AffineSprite *sprite, s32 x, s32 y, s32 z) {
     s32 scale;
 
     z -= gSpaceballInfo.zoom;
-    scale = func_08007b80(INT_TO_FIXED(0x100), z);
+    scale = fast_divsi3(INT_TO_FIXED(0x100), z);
 
     x = FIXED_TO_INT(x * scale);
     y = FIXED_TO_INT(y * scale);
@@ -107,7 +108,7 @@ void func_0801fdc4(struct AffineSprite *sprite, s32 x, s32 y, s32 z, u32 *animCl
     s32 scale;
 
     z -= gSpaceballInfo.zoom;
-    scale = func_08007b80(INT_TO_FIXED(0x100), z);
+    scale = fast_divsi3(INT_TO_FIXED(0x100), z);
 
     x = FIXED_TO_INT(x * scale);
     y = FIXED_TO_INT(y * scale);
@@ -117,7 +118,7 @@ void func_0801fdc4(struct AffineSprite *sprite, s32 x, s32 y, s32 z, u32 *animCl
         func_0800fe60(sprite, scale);
         func_08010064(sprite, animClose, -1, 1, 0x7f, 0);
     } else {
-        scale = func_08007b80(INT_TO_FIXED(0x200), z);
+        scale = fast_divsi3(INT_TO_FIXED(0x200), z);
         func_0800fe60(sprite, scale);
         func_08010064(sprite, animFar, -1, 1, 0x7f, 0);
     }
@@ -364,7 +365,7 @@ u32 func_080203fc(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     else {
         temp = arg2 - (cue->endTime / 2);
         cue->x = func_08008f04(70, 138, arg2, cue->endTime);
-        cue->y = 120 - (cue->unk1C - D_03004af8(cue->unk1C * (temp << 2) * temp, cue->endTime * cue->endTime));
+        cue->y = 120 - (cue->unk1C - fast_udivsi3(cue->unk1C * (temp << 2) * temp, cue->endTime * cue->endTime));
         func_0801fd70(cue->sprite, cue->x - 120, cue->y - 80, cue->z);
         func_0800fe94(cue->sprite, cue->rotation);
         cue->rotation += cue->rotationSpeed;
