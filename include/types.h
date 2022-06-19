@@ -396,9 +396,9 @@ struct SneakySpiritsInfo {
 
 struct PrologueInfo {
     u8  ver;        // Value:  Version
-    s16 entity2;    // Entity: Object 0
-    s16 entity4;    // Entity: Object 1
-    s16 entity6;    // Entity: Object 2
+    s16 entity2;    // Sprite: Object 0
+    s16 entity4;    // Sprite: Object 1
+    s16 entity6;    // Sprite: Object 2
 };
 
 

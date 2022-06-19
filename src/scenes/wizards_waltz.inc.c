@@ -221,7 +221,7 @@ void func_08044e74_stub(void) {
 
 
 // [func_08044e78] CUE - Spawn
-void func_08044e78(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2, u32 arg3) {
+void func_08044e78(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
     u32 angle;
     s32 xPos;
     s32 scale;

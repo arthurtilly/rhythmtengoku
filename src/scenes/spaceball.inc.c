@@ -1,6 +1,7 @@
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
+#include "src/lib_0804c870.h"
 
 #define gSpaceballInfo D_030055d0->gameInfo.spaceball
 
@@ -25,21 +26,18 @@ extern u32 *D_089de9a0[3]; // Spaceball Animations
 extern u32 (*D_03004ae4)(u32);
 extern s32 (*D_03004af8)(s32, s32);
 
-// Temporary External Functions:
-extern void func_0804d5d4(s32, s16, s16, s16); // ??
-
 
 /* SPACEBALL */
 
 
-// [func_0801fc44] Initialise BG Star Position
+// [func_0801fc44] Initialise/Reset BG Star Position
 void func_0801fc44(u32 current) {
     struct SpaceballStar *star;
-    s32 scale = func_08001980(0x300) + 0x100;
-    s32 pos2 = func_08001980(0xf0) - 0x78;
-    s32 x = func_08007b80(pos2 * scale, 0x100);
-    s32 pos4 = func_08001980(0xa0) - 0x50;
-    s32 y = func_08007b80(pos4 * scale, 0x100);
+    s32 scale, x, y;
+
+    scale = func_08001980(0x300) + 0x100;
+    x = func_08007b80((func_08001980(240) - 120) * scale, 0x100);
+    y = func_08007b80((func_08001980(160) - 80) * scale, 0x100);
 
     star = &gSpaceballInfo.stars[current];
     star->x = x;
@@ -48,18 +46,17 @@ void func_0801fc44(u32 current) {
 }
 
 
-// [func_0801fcb0] Update BG Star Position
+// [func_0801fcb0] Update BG Star (x, y)
 void func_0801fcb0(void) {
     struct SpaceballStar *star;
     s16 sprite;
-    s32 scale;
-    s32 x;
-    s32 y;
+    s32 scale, x, y;
     u32 i;
 
     for (i = 0; i < 24; i++) {
         sprite = gSpaceballInfo.starSprite[i];
         star = &gSpaceballInfo.stars[i];
+
         scale = func_08007b80(0x10000, star->z - gSpaceballInfo.zoom);
         x = (star->x * scale) >> 8;
         y = (star->y * scale) >> 8;
@@ -68,24 +65,24 @@ void func_0801fcb0(void) {
 }
 
 
-// [func_0801fd1c] Update BG Star Scaling
+// [func_0801fd1c] Update BG Star (z)
 void func_0801fd1c(void) {
     struct SpaceballStar *star;
-    s32 scale100 = gSpaceballInfo.zoom + 0x100;
-    s32 scale400 = gSpaceballInfo.zoom + 0x400;
+    s32 zMin = gSpaceballInfo.zoom + 0x100;
+    s32 zMax = gSpaceballInfo.zoom + 0x400;
     u32 i;
 
     for (i = 0; i < 24; i++) {
         star = &gSpaceballInfo.stars[i];
         star->z -= 8;
-        if ((star->z < scale100) || (star->z > scale400)) {
+        if ((star->z < zMin) || (star->z > zMax)) {
             func_0801fc44(i);
         }
     }
 }
 
 
-// [func_0801fd70] Update Entity (Graphical)
+// [func_0801fd70] Update Entity Position
 void func_0801fd70(struct AffineSprite *sprite, s32 x, s32 y, s32 z) {
     s32 scale;
 
@@ -99,7 +96,7 @@ void func_0801fd70(struct AffineSprite *sprite, s32 x, s32 y, s32 z) {
 }
 
 
-// [func_0801fdc4] Update Batter (Graphical)
+// [func_0801fdc4] Update Batter Position
 void func_0801fdc4(struct AffineSprite *sprite, s32 x, s32 y, s32 z, u32 *animClose, u32 *animFar) {
     s32 scale;
 
@@ -123,10 +120,9 @@ void func_0801fdc4(struct AffineSprite *sprite, s32 x, s32 y, s32 z, u32 *animCl
 
 // [func_0801fe6c] Update Sprites, Stars & Camera
 void func_0801fe6c(void) {
-    s32 temp;
-    s32 z1;
-    s32 z2;
+    s32 scaleH, scaleV, h, v;
 
+    // Update Sprites
     func_0801fdc4(gSpaceballInfo.batter.sprite, gSpaceballInfo.batter.x, gSpaceballInfo.batter.y,
             gSpaceballInfo.batter.z, gSpaceballInfo.batter.animClose, gSpaceballInfo.batter.animFar);
 
@@ -142,14 +138,16 @@ void func_0801fe6c(void) {
     func_0801fd70(gSpaceballInfo.poofL.sprite, gSpaceballInfo.poofL.x, gSpaceballInfo.poofL.y,
             gSpaceballInfo.poofL.z);
 
-    temp = -((gSpaceballInfo.zoom * 60) << 10);
-    if (temp < 0) temp += 0xff;
-    z1 = temp >> 8;
-    temp = -((gSpaceballInfo.zoom * 40) << 10);
-    if (temp < 0) temp += 0xff;
-    z2 = temp >> 8;
-    func_08008910(2, 0x8000, 0xb000, z1, z2, 0);
+    // Update BG
+    scaleH = -((gSpaceballInfo.zoom * 240) << 8);
+    if (scaleH < 0) scaleH += 0xff;
+    h = scaleH >> 8;
+    scaleV = -((gSpaceballInfo.zoom * 160) << 8);
+    if (scaleV < 0) scaleV += 0xff;
+    v = scaleV >> 8;
+    func_08008910(2, (128 << 8), (176 << 8), h, v, 0);
 
+    // Update Stars
     if (gSpaceballInfo.currentStar < 24) {
         gSpaceballInfo.starSprite[gSpaceballInfo.currentStar] = func_0804d160(D_03005380, &D_088a1b90, 0, 0, 0, 0xc800, 1, 0, 0);
         func_0801fc44(gSpaceballInfo.currentStar);
@@ -161,14 +159,14 @@ void func_0801fe6c(void) {
 }
 
 
-// [func_0801ff60] GFX Init Func_00
+// [func_0801ff60] GFX_INIT Func_00
 void func_0801ff60(void) {
     func_0800c604(0);
     func_08017578();
 }
 
 
-// [func_0801ff70] GFX Init Func_01
+// [func_0801ff70] GFX_INIT Func_01
 void func_0801ff70(void) {
     u32 data;
 
@@ -178,7 +176,7 @@ void func_0801ff70(void) {
 }
 
 
-// [func_0801ffa0] GFX Init Func_00
+// [func_0801ffa0] GFX_INIT Func_00
 void func_0801ffa0(void) {
     u32 data;
 
@@ -311,7 +309,7 @@ void func_080202f0(void) {
 }
 
 
-// [func_08020308] STUB
+// [func_08020308] MAIN - Close (STUB)
 void func_08020308(void) {
 }
 

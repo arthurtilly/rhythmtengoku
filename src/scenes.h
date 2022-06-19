@@ -6,13 +6,13 @@ extern void func_0801ee98(u32);     // [func_0801ee98] ENGINE Func_00 - Appear A
 extern void func_0801ef70(void);    // [func_0801ef70] Initialise Rain
 extern void func_0801f040(void);    // [func_0801f040] Update Rain
 extern void func_0801f17c(void);    // [func_0801f17c] Update Rain If Not In Slow-Motion
-extern void func_0801f194(u32);     // [func_0801f194] Set Rain { 0 = Normal; 1 = Slow-Motion }
-extern void func_0801f30c(u32);     // [func_0801f30c] ENGINE Func_06 - Set Rain (Tutorial) { 0 = Normal; 1 = Slow-Motion }
+extern void func_0801f194(u32);     // [func_0801f194] Set Rain Speed
+extern void func_0801f30c(u32);     // [func_0801f30c] ENGINE Func_06 - Set Rain Speed (Tutorial)
 extern void func_0801f318(u32);     // [func_0801f318] ENGINE Func_07 - Freeze Slow-Motion Rain (Tutorial)
 extern void func_0801f328(void);    // [func_0801f328] GFX_INIT Func_02
 extern void func_0801f338(void);    // [func_0801f338] GFX_INIT Func_01
 extern void func_0801f378(void);    // [func_0801f378] GFX_INIT Func_00
-extern void func_0801f3a4(u32);     // [func_0801f3a4] MAIN - Load
+extern void func_0801f3a4(u32);     // [func_0801f3a4] MAIN - Init
 extern void func_0801f5bc(void);    // [func_0801f5bc] ENGINE Func_0A - STUB
 extern void func_0801f5c0(u32);     // [func_0801f5c0] ENGINE Func_01 - Next Vertical Position
 extern void func_0801f5f4(void);    // [func_0801f5f4] ENGINE Func_02 - Bow Appear
@@ -22,8 +22,8 @@ extern void func_0801f6d0(void);    // [func_0801f6d0] Cross-Fade Music and Wind
 extern void func_0801f71c(char *);  // [func_0801f71c] ENGINE Func_05 - Display Text (Tutorial)
 extern void func_0801f76c(u32);     // [func_0801f76c] ENGINE Func_08 - Display Dashing Sneaky Spirit (Tutorial)
 extern void func_0801f794(u32);     // [func_0801f794] ENGINE Func_09 - Animate Dashing Sneaky Spirit (Tutorial)
-extern void func_0801f7bc(void);    // [func_0801f7bc] MAIN - Loop
-extern void func_0801f7cc(void);    // [func_0801f7cc] MAIN - Unload
+extern void func_0801f7bc(void);    // [func_0801f7bc] MAIN - Update
+extern void func_0801f7cc(void);    // [func_0801f7cc] MAIN - Close
 extern void func_0801f7e8(u32, struct SneakySpiritsCue *, u32); // [func_0801f7e8] CUE - Spawn
 extern u32  func_0801f7f0(u32, struct SneakySpiritsCue *, u32); // [func_0801f7f0] CUE - Update
 extern void func_0801f80c(u32, struct SneakySpiritsCue *, u32); // [func_0801f80c] CUE - Despawn (STUB)
@@ -37,11 +37,11 @@ extern void func_0801fc40(void);    // [func_0801fc40] COMMON Func_01 - STUB
 
 // Spaceball
 
-extern void func_0801fc44(u32);     // [func_0801fc44] Initialise BG Star Position
-extern void func_0801fcb0(void);    // [func_0801fcb0] Update BG Star Position
-extern void func_0801fd1c(void);    // [func_0801fd1c] Update BG Star Scaling
-extern void func_0801fd70(struct AffineSprite *, s32, s32, s32);    // [func_0801fd70] Update Entity (Graphical)
-extern void func_0801fdc4(struct AffineSprite *, s32, s32, s32, u32 *, u32 *);  // [func_0801fdc4] Update Batter (Graphical)
+extern void func_0801fc44(u32);     // [func_0801fc44] Initialise/Reset BG Star Position
+extern void func_0801fcb0(void);    // [func_0801fcb0] Update BG Star (x, y)
+extern void func_0801fd1c(void);    // [func_0801fd1c] Update BG Star (z)
+extern void func_0801fd70(struct AffineSprite *, s32, s32, s32);    // [func_0801fd70] Update Entity Position
+extern void func_0801fdc4(struct AffineSprite *, s32, s32, s32, u32 *, u32 *);  // [func_0801fdc4] Update Batter Position
 extern void func_0801fe6c(void);    // [func_0801fe6c] Update Sprites, Stars & Camera
 extern void func_0801ff60(void);    // [func_0801ff60] GFX_INIT Func_02
 extern void func_0801ff70(void);    // [func_0801ff70] GFX_INIT Func_01
@@ -50,13 +50,13 @@ extern void func_0801ffcc(u32);     // [func_0801ffcc] MAIN - Init
 extern void func_080201a0(void);    // [func_080201a0] SCENE Func_06 - STUB
 extern void func_080201a4(void);    // [func_080201a4] SCENE Func_00 - Pitcher Prepare
 extern void func_080201cc(struct SpaceballBatter *); // [func_080201cc] Update Batter Swing
-extern void func_08020200(void);    // [func_08020200] SCENE Func_01 - Loop Exit Condition (Practice)
+extern void func_08020200(void);    // [func_08020200] SCENE Func_01 - Loop Exit Condition (Tutorial)
 extern void func_08020238(u32);     // [func_08020238] SCENE Func_02 - Set Camera Zoom
 extern void func_0802026c(u32);     // [func_0802026c] SCENE Func_03 - Set Batter Variant
 extern void func_08020290(u32);     // [func_08020290] SCENE Func_05 - Set Next Spaceball Sprite
 extern void func_080202a4(u32);     // [func_080202a4] SCENE Func_04 - Set Umpire Animation
 extern void func_080202f0(void);    // [func_080202f0] MAIN - Update
-extern void func_08020308(void);    // [func_08020308] STUB
+extern void func_08020308(void);    // [func_08020308] MAIN - Close (STUB)
 extern void func_0802030c(u32, struct SpaceballCue *, u32, u32); // [func_0802030c] CUE - Spawn
 extern u32  func_080203fc(u32, struct SpaceballCue *, u32, u32); // [func_080203fc] Update Spaceball (Launch)
 extern u32  func_080204b8(u32, struct SpaceballCue *, u32, u32); // [func_080204b8] Update Spaceball (Hit)
@@ -1588,7 +1588,7 @@ extern void func_08044ba8(struct AffineSprite *, s32, s32, u32);  // [func_08044
 extern void func_08044c04(void);        // [func_08044c04] MAIN - Update
 extern void func_08044e60(u32);         // [func_08044e60] ENGINE Func_01 - Set Tutorial Flag
 extern void func_08044e74_stub(void);   // [func_08044e74] MAIN - Close (STUB)
-extern void func_08044e78(u32, struct WizardsWaltzCue *, u32, u32);  // [func_08044e78] CUE - Spawn
+extern void func_08044e78(u32, struct WizardsWaltzCue *, u32);  // [func_08044e78] CUE - Spawn
 extern u32  func_08044f94(u32, struct WizardsWaltzCue *, u32);  // [func_08044f94] CUE - Update
 extern void func_08044fc0(u32, struct WizardsWaltzCue *, u32);  // [func_08044fc0] CUE - Despawn
 extern void func_08044fcc(u32, struct WizardsWaltzCue *, u32);  // [func_08044fcc] CUE - Hit

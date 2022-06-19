@@ -127,7 +127,7 @@ void func_0801f17c(void) {
 }
 
 
-// [func_0801f194] Set Rain { 0 = Normal; 1 = Slow-Motion }
+// [func_0801f194] Set Rain Speed
 void func_0801f194(u32 slowMotion) {
     u32 i, temp;
     s16 sprite;
@@ -172,7 +172,7 @@ void func_0801f194(u32 slowMotion) {
 }
 
 
-// [func_0801f30c] ENGINE Func_06 - Set Rain (Tutorial) { 0 = Normal; 1 = Slow-Motion }
+// [func_0801f30c] ENGINE Func_06 - Set Rain Speed (Tutorial)
 void func_0801f30c(u32 slowMotion) {
     func_0801f194(slowMotion);
 }
@@ -211,7 +211,7 @@ void func_0801f378(void) {
 }
 
 
-// [func_0801f3a4] MAIN - Load
+// [func_0801f3a4] MAIN - Init
 void func_0801f3a4(u32 ver) {
     u32 *textAnim;
 
@@ -459,11 +459,11 @@ void func_0801fbb0(void) {
 }
 
 
-// [func_0801fc3c] GRAPHICAL Func_00 - STUB
+// [func_0801fc3c] COMMON Func_00 - STUB
 void func_0801fc3c(void) {
 }
 
 
-// [func_0801fc40] GRAPHICAL Func_01 - STUB
+// [func_0801fc40] COMMON Func_01 - STUB
 void func_0801fc40(void) {
 }
