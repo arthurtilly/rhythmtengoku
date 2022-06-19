@@ -477,12 +477,12 @@ void func_0800f904(struct AffineSprite *affineData) {
     // Update X & Y
     if (affineData->offsetDistance != 0) {
         if (affineData->highAnglePrecision) {
-            x += (affineData->offsetDistance * coss(offsetAngle)) >> 8;
-            y += (affineData->offsetDistance * sins(offsetAngle)) >> 8;
+            x += FIXED_TO_INT(affineData->offsetDistance * coss(offsetAngle));
+            y += FIXED_TO_INT(affineData->offsetDistance * sins(offsetAngle));
         } else {
             offsetAngleLowPrec = offsetAngle;
-            x += (affineData->offsetDistance * coss2(offsetAngleLowPrec)) >> 8;
-            y += (affineData->offsetDistance * sins2(offsetAngleLowPrec)) >> 8;
+            x += FIXED_TO_INT(affineData->offsetDistance * coss2(offsetAngleLowPrec));
+            y += FIXED_TO_INT(affineData->offsetDistance * sins2(offsetAngleLowPrec));
         }
     }
     func_0804d5d4(D_03005380, affineData->sprite, x, y);
@@ -583,8 +583,8 @@ struct AffineSprite *func_0800fba0(u32 *anim, s8 arg1, s16 x, s16 y, u16 arg4, s
     affineData->sprite = sprite;
     affineData->index = -1;
     affineData->doubleSize = 0;
-    affineData->scaleX = 0x100;
-    affineData->scaleY = 0x100;
+    affineData->scaleX = INT_TO_FIXED(1);
+    affineData->scaleY = INT_TO_FIXED(1);
     affineData->rotation = 0;
     affineData->x = x;
     affineData->y = y;

@@ -5,8 +5,6 @@
 
 // For readability.
 #define gSpaceballInfo D_030055d0->gameInfo.spaceball
-#define FXP8(x) ((s32)((x) * 256))
-#define FXP8_TO_INT(x) ((s32)((x) >> 8))
 
 // Game-Specific Macros:
 #define SPACEBALL_LAUNCHED 0
@@ -43,9 +41,9 @@ void func_0801fc44(u32 current) {
     struct SpaceballStar *star;
     s32 scale, x, y;
 
-    scale = func_08001980(FXP8(3)) + FXP8(1);
-    x = func_08007b80((func_08001980(240) - 120) * scale, FXP8(1));
-    y = func_08007b80((func_08001980(160) - 80) * scale, FXP8(1));
+    scale = func_08001980(INT_TO_FIXED(3)) + INT_TO_FIXED(1);
+    x = func_08007b80((func_08001980(240) - 120) * scale, INT_TO_FIXED(1));
+    y = func_08007b80((func_08001980(160) - 80) * scale, INT_TO_FIXED(1));
 
     star = &gSpaceballInfo.stars[current];
     star->x = x;
@@ -65,9 +63,9 @@ void func_0801fcb0(void) {
         sprite = gSpaceballInfo.starSprite[i];
         star = &gSpaceballInfo.stars[i];
 
-        scale = func_08007b80(FXP8(0x100), star->z - gSpaceballInfo.zoom);
-        x = FXP8_TO_INT(star->x * scale);
-        y = FXP8_TO_INT(star->y * scale);
+        scale = func_08007b80(INT_TO_FIXED(0x100), star->z - gSpaceballInfo.zoom);
+        x = FIXED_TO_INT(star->x * scale);
+        y = FIXED_TO_INT(star->y * scale);
         func_0804d5d4(D_03005380, sprite, x + 120, y + 80);
     }
 }
@@ -76,8 +74,8 @@ void func_0801fcb0(void) {
 // [func_0801fd1c] Update BG Star Positions (Z)
 void func_0801fd1c(void) {
     struct SpaceballStar *star;
-    s32 zMin = gSpaceballInfo.zoom + FXP8(1);
-    s32 zMax = gSpaceballInfo.zoom + FXP8(4);
+    s32 zMin = gSpaceballInfo.zoom + INT_TO_FIXED(1);
+    s32 zMax = gSpaceballInfo.zoom + INT_TO_FIXED(4);
     u32 i;
 
     for (i = 0; i < 24; i++) {
@@ -95,10 +93,10 @@ void func_0801fd70(struct AffineSprite *sprite, s32 x, s32 y, s32 z) {
     s32 scale;
 
     z -= gSpaceballInfo.zoom;
-    scale = func_08007b80(FXP8(0x100), z);
+    scale = func_08007b80(INT_TO_FIXED(0x100), z);
 
-    x = FXP8_TO_INT(x * scale);
-    y = FXP8_TO_INT(y * scale);
+    x = FIXED_TO_INT(x * scale);
+    y = FIXED_TO_INT(y * scale);
     func_0800fddc(sprite, x + 120, y + 80);
     func_0800fe60(sprite, scale);
 }
@@ -109,17 +107,17 @@ void func_0801fdc4(struct AffineSprite *sprite, s32 x, s32 y, s32 z, u32 *animCl
     s32 scale;
 
     z -= gSpaceballInfo.zoom;
-    scale = func_08007b80(FXP8(0x100), z);
+    scale = func_08007b80(INT_TO_FIXED(0x100), z);
 
-    x = FXP8_TO_INT(x * scale);
-    y = FXP8_TO_INT(y * scale);
+    x = FIXED_TO_INT(x * scale);
+    y = FIXED_TO_INT(y * scale);
     func_0800fddc(sprite, x + 120, y + 80);
 
-    if (scale > FXP8(0.5)) {
+    if (scale > INT_TO_FIXED(0.5)) {
         func_0800fe60(sprite, scale);
         func_08010064(sprite, animClose, -1, 1, 0x7f, 0);
     } else {
-        scale = func_08007b80(FXP8(0x200), z);
+        scale = func_08007b80(INT_TO_FIXED(0x200), z);
         func_0800fe60(sprite, scale);
         func_08010064(sprite, animFar, -1, 1, 0x7f, 0);
     }
@@ -147,13 +145,13 @@ void func_0801fe6c(void) {
             gSpaceballInfo.poofL.z);
 
     // Update BG
-    scaleH = FXP8(gSpaceballInfo.zoom * -240);
+    scaleH = INT_TO_FIXED(gSpaceballInfo.zoom * -240);
     if (scaleH < 0) scaleH += 0xff;
-    h = FXP8_TO_INT(scaleH);
-    scaleV = FXP8(gSpaceballInfo.zoom * -160);
+    h = FIXED_TO_INT(scaleH);
+    scaleV = INT_TO_FIXED(gSpaceballInfo.zoom * -160);
     if (scaleV < 0) scaleV += 0xff;
-    v = FXP8_TO_INT(scaleV);
-    func_08008910(2, FXP8(128), FXP8(176), h, v, 0);
+    v = FIXED_TO_INT(scaleV);
+    func_08008910(2, INT_TO_FIXED(128), INT_TO_FIXED(176), h, v, 0);
 
     // Update Stars
     if (gSpaceballInfo.currentStar < 24) {
@@ -201,42 +199,42 @@ void func_0801ffcc(u32 ver) {
     func_0800e018(1);
     func_0800e0ec();
     func_0800e0a0(2, 1, 0, 0, 0, 30, 0x4082);
-    func_08008910(2, FXP8(120), FXP8(80), FXP8(240), FXP8(160), 0);
+    func_08008910(2, INT_TO_FIXED(120), INT_TO_FIXED(80), INT_TO_FIXED(240), INT_TO_FIXED(160), 0);
     func_0800e044(0);
     func_0800e044(1);
     func_0800e044(3);
 
-    gSpaceballInfo.batter.sprite = func_0800fa6c(&D_088a1a70, 0, 170, 80, 0x4800, FXP8(0.5), 0, 0, 0, 0, 1);
+    gSpaceballInfo.batter.sprite = func_0800fa6c(&D_088a1a70, 0, 170, 80, 0x4800, INT_TO_FIXED(0.5), 0, 0, 0, 0, 1);
     gSpaceballInfo.batter.x = 50;
     gSpaceballInfo.batter.y = 0;
     gSpaceballInfo.batter.z = 0;
     gSpaceballInfo.batter.swingTimer = 0;
     func_0802026c(0);
 
-    gSpaceballInfo.pitcher.sprite = func_0800fa6c(&D_088a1ad0, 2, 70, 128, 0x4800, FXP8(0.5), 0, 0, 0, 0, 1);
+    gSpaceballInfo.pitcher.sprite = func_0800fa6c(&D_088a1ad0, 2, 70, 128, 0x4800, INT_TO_FIXED(0.5), 0, 0, 0, 0, 1);
     gSpaceballInfo.pitcher.x = -50;
     gSpaceballInfo.pitcher.y = 48;
     gSpaceballInfo.pitcher.z = 0;
 
-    gSpaceballInfo.umpire.sprite = func_0800fa6c(&D_088a1bd0, 2, 120, 89, 0x4864, FXP8(0.5), 0, 1, 2, 0x8000, 1);
+    gSpaceballInfo.umpire.sprite = func_0800fa6c(&D_088a1bd0, 2, 120, 89, 0x4864, INT_TO_FIXED(0.5), 0, 1, 2, 0x8000, 1);
     gSpaceballInfo.umpire.x = 0;
     gSpaceballInfo.umpire.y = 9;
     gSpaceballInfo.umpire.z = 0;
     func_08010040(gSpaceballInfo.umpire.sprite, 1);
 
-    gSpaceballInfo.poofR.sprite = func_0800fa6c(&D_088a1b70, 2, 154, 132, 0x4864, FXP8(1), 0, 1, 0, 0x8002, 1);
+    gSpaceballInfo.poofR.sprite = func_0800fa6c(&D_088a1b70, 2, 154, 132, 0x4864, INT_TO_FIXED(1), 0, 1, 0, 0x8002, 1);
     gSpaceballInfo.poofR.x = 34;
     gSpaceballInfo.poofR.y = 52;
     gSpaceballInfo.poofR.z = 0;
 
-    gSpaceballInfo.poofL.sprite = func_0800fa6c(&D_088a1b70, 2, 122, 132, 0x4864, FXP8(1), 0, 1, 0, 0x8002, 1);
+    gSpaceballInfo.poofL.sprite = func_0800fa6c(&D_088a1b70, 2, 122, 132, 0x4864, INT_TO_FIXED(1), 0, 1, 0, 0x8002, 1);
     gSpaceballInfo.poofL.x = 2;
     gSpaceballInfo.poofL.y = 52;
     gSpaceballInfo.poofL.z = 0;
     func_0800ff44(gSpaceballInfo.poofL.sprite, TRUE); // Flip Horizontal
 
     gSpaceballInfo.currentStar = 0;
-    gSpaceballInfo.zoom = FXP8(-0.5);
+    gSpaceballInfo.zoom = INT_TO_FIXED(-0.5);
     gSpaceballInfo.totalMissed = 0;
     gSpaceballInfo.spaceballType = 0;
     func_08017338(1,0);
@@ -334,12 +332,12 @@ void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arcTime, u32 unused3)
     cue->rotationSpeed = 0x40;
     cue->z = 0;
     cue->unk1C = (arcTime >= 0x18) ? (90 * arcTime / 0x18) : 90;
-    cue->sprite = func_0800fa6c(D_089de9a0[gSpaceballInfo.spaceballType], 0, 70, 120, 0x479c, FXP8(1), cue->rotation, 1, 0, 0, 1);
+    cue->sprite = func_0800fa6c(D_089de9a0[gSpaceballInfo.spaceballType], 0, 70, 120, 0x479c, INT_TO_FIXED(1), cue->rotation, 1, 0, 0, 1);
 
     temp = cue->unk1C - 48;
-    div = D_03004ae4((temp << 0x10) / cue->unk1C);
+    div = D_03004ae4(256 * INT_TO_FIXED(temp) / cue->unk1C);
     time = func_0800c3a4(arcTime);
-    cue->endTime = FXP8(time * 2) / (div + FXP8(1));
+    cue->endTime = 2 * INT_TO_FIXED(time) / (div + INT_TO_FIXED(1));
 
     func_0801fd70(cue->sprite, -50, 40, cue->z);
     cue->missed = FALSE;
@@ -377,24 +375,24 @@ u32 func_080203fc(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
 
 // [func_080204b8] Update Spaceball (Hit)
 u32 func_080204b8(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
-    if (cue->z < gSpaceballInfo.zoom + FXP8(0.25)) return TRUE;
+    if (cue->z < gSpaceballInfo.zoom + INT_TO_FIXED(0.25)) return TRUE;
 
     func_0801fd70(cue->sprite, cue->x - 120, cue->y - 80, cue->z);
     func_0800fe94(cue->sprite, cue->rotation);
     cue->rotation += cue->rotationSpeed;
-    cue->z -= FXP8(0.25);
+    cue->z -= INT_TO_FIXED(0.25);
     return FALSE;
 }
 
 
 // [func_08020500] Update Spaceball (Barely)
 u32 func_08020500(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
-    if (cue->z < gSpaceballInfo.zoom + FXP8(0.25)) return TRUE;
-    if (FXP8_TO_INT(cue->y) > 1000) return TRUE;
+    if (cue->z < gSpaceballInfo.zoom + INT_TO_FIXED(0.25)) return TRUE;
+    if (FIXED_TO_INT(cue->y) > 1000) return TRUE;
 
     cue->x += cue->xSpeed;
     cue->y += cue->ySpeed;
-    cue->ySpeed += FXP8(0.25);
+    cue->ySpeed += INT_TO_FIXED(0.25);
     cue->z -= 4;
     func_0801fd70(cue->sprite, cue->x - 120, (cue->y >> 8) - 80, cue->z);
     func_0800fe94(cue->sprite, cue->rotation);
@@ -448,8 +446,8 @@ void func_080205e8(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     batter->swingTimer = func_0800c3a4(0xa);
     cue->xSpeed = (func_08018054() < 0) ? -3 : 3;
     cue->rotationSpeed = -8;
-    cue->y = FXP8(cue->y);
-    cue->ySpeed = FXP8(-4);
+    cue->y = INT_TO_FIXED(cue->y);
+    cue->ySpeed = INT_TO_FIXED(-4);
     cue->state = SPACEBALL_BARELY;
 }
 

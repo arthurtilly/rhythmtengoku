@@ -20,5 +20,11 @@ typedef int32_t  s32;
 #define sins2(x) D_08935fcc[((u32)(x))&0xFF]
 #define coss2(x) D_089361cc[((u32)(x))&0xFF]
 
+typedef s16 s8_8;
+typedef s32 s24_8;
+#define INT_TO_FIXED(x) ((s32)((x) * 256))
+#define FIXED_TO_INT(x) ((s32)((x) >> 8))
+#define FIXED_POINT_MUL(a, b) (((a) * (b)) >> 8)
+
 #include "gba/gba.h"
 #include "types.h"
