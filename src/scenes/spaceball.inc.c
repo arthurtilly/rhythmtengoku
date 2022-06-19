@@ -3,7 +3,15 @@
 #include "src/code_0800b778.h"
 #include "src/lib_0804c870.h"
 
+// For readability.
 #define gSpaceballInfo D_030055d0->gameInfo.spaceball
+#define FXP8(x) ((s32)((x) * 256))
+#define FXP8_TO_INT(x) ((s32)((x) >> 8))
+
+// Game-Specific Macros:
+#define SPACEBALL_LAUNCHED 0
+#define SPACEBALL_HIT 1
+#define SPACEBALL_BARELY 2
 
 // OAM Animations:
 extern u32 D_088a1a70; // Animation: "batter_green"
@@ -17,8 +25,8 @@ extern u32 D_088a1bd0; // Animation: "umpire_sway"
 extern const struct SequenceData s_f_batter_ball_land_seqData;
 
 // Additional Data:
-extern u32  D_089de93c; // GFX-related Null
-extern u32  D_089de940[]; // GFX Init Struct
+extern u32  D_089de93c;    // GFX-related Null
+extern u32  D_089de940[];  // GFX Init Struct
 extern u32 *D_089de988[3]; // Batter Animations (Close)
 extern u32 *D_089de994[3]; // Batter Animations (Far)
 extern u32 *D_089de9a0[3]; // Spaceball Animations
@@ -35,9 +43,9 @@ void func_0801fc44(u32 current) {
     struct SpaceballStar *star;
     s32 scale, x, y;
 
-    scale = func_08001980(0x300) + 0x100;
-    x = func_08007b80((func_08001980(240) - 120) * scale, 0x100);
-    y = func_08007b80((func_08001980(160) - 80) * scale, 0x100);
+    scale = func_08001980(FXP8(3)) + FXP8(1);
+    x = func_08007b80((func_08001980(240) - 120) * scale, FXP8(1));
+    y = func_08007b80((func_08001980(160) - 80) * scale, FXP8(1));
 
     star = &gSpaceballInfo.stars[current];
     star->x = x;
@@ -46,7 +54,7 @@ void func_0801fc44(u32 current) {
 }
 
 
-// [func_0801fcb0] Update BG Star (x, y)
+// [func_0801fcb0] Update BG Star Positions (X, Y)
 void func_0801fcb0(void) {
     struct SpaceballStar *star;
     s16 sprite;
@@ -57,19 +65,19 @@ void func_0801fcb0(void) {
         sprite = gSpaceballInfo.starSprite[i];
         star = &gSpaceballInfo.stars[i];
 
-        scale = func_08007b80(0x10000, star->z - gSpaceballInfo.zoom);
-        x = (star->x * scale) >> 8;
-        y = (star->y * scale) >> 8;
+        scale = func_08007b80(FXP8(0x100), star->z - gSpaceballInfo.zoom);
+        x = FXP8_TO_INT(star->x * scale);
+        y = FXP8_TO_INT(star->y * scale);
         func_0804d5d4(D_03005380, sprite, x + 120, y + 80);
     }
 }
 
 
-// [func_0801fd1c] Update BG Star (z)
+// [func_0801fd1c] Update BG Star Positions (Z)
 void func_0801fd1c(void) {
     struct SpaceballStar *star;
-    s32 zMin = gSpaceballInfo.zoom + 0x100;
-    s32 zMax = gSpaceballInfo.zoom + 0x400;
+    s32 zMin = gSpaceballInfo.zoom + FXP8(1);
+    s32 zMax = gSpaceballInfo.zoom + FXP8(4);
     u32 i;
 
     for (i = 0; i < 24; i++) {
@@ -87,10 +95,10 @@ void func_0801fd70(struct AffineSprite *sprite, s32 x, s32 y, s32 z) {
     s32 scale;
 
     z -= gSpaceballInfo.zoom;
-    scale = func_08007b80(0x10000, z);
+    scale = func_08007b80(FXP8(0x100), z);
 
-    x = (x * scale) >> 8;
-    y = (y * scale) >> 8;
+    x = FXP8_TO_INT(x * scale);
+    y = FXP8_TO_INT(y * scale);
     func_0800fddc(sprite, x + 120, y + 80);
     func_0800fe60(sprite, scale);
 }
@@ -101,28 +109,28 @@ void func_0801fdc4(struct AffineSprite *sprite, s32 x, s32 y, s32 z, u32 *animCl
     s32 scale;
 
     z -= gSpaceballInfo.zoom;
-    scale = func_08007b80(0x10000, z);
+    scale = func_08007b80(FXP8(0x100), z);
 
-    x = (x * scale) >> 8;
-    y = (y * scale) >> 8;
+    x = FXP8_TO_INT(x * scale);
+    y = FXP8_TO_INT(y * scale);
     func_0800fddc(sprite, x + 120, y + 80);
 
-    if (scale > 0x80) {
+    if (scale > FXP8(0.5)) {
         func_0800fe60(sprite, scale);
         func_08010064(sprite, animClose, -1, 1, 0x7f, 0);
     } else {
-        scale = func_08007b80(0x20000, z);
+        scale = func_08007b80(FXP8(0x200), z);
         func_0800fe60(sprite, scale);
         func_08010064(sprite, animFar, -1, 1, 0x7f, 0);
     }
 }
 
 
-// [func_0801fe6c] Update Sprites, Stars & Camera
+// [func_0801fe6c] Update Entities, Stars & Camera
 void func_0801fe6c(void) {
     s32 scaleH, scaleV, h, v;
 
-    // Update Sprites
+    // Update Entities
     func_0801fdc4(gSpaceballInfo.batter.sprite, gSpaceballInfo.batter.x, gSpaceballInfo.batter.y,
             gSpaceballInfo.batter.z, gSpaceballInfo.batter.animClose, gSpaceballInfo.batter.animFar);
 
@@ -139,13 +147,13 @@ void func_0801fe6c(void) {
             gSpaceballInfo.poofL.z);
 
     // Update BG
-    scaleH = -((gSpaceballInfo.zoom * 240) << 8);
+    scaleH = FXP8(gSpaceballInfo.zoom * -240);
     if (scaleH < 0) scaleH += 0xff;
-    h = scaleH >> 8;
-    scaleV = -((gSpaceballInfo.zoom * 160) << 8);
+    h = FXP8_TO_INT(scaleH);
+    scaleV = FXP8(gSpaceballInfo.zoom * -160);
     if (scaleV < 0) scaleV += 0xff;
-    v = scaleV >> 8;
-    func_08008910(2, (128 << 8), (176 << 8), h, v, 0);
+    v = FXP8_TO_INT(scaleV);
+    func_08008910(2, FXP8(128), FXP8(176), h, v, 0);
 
     // Update Stars
     if (gSpaceballInfo.currentStar < 24) {
@@ -193,54 +201,54 @@ void func_0801ffcc(u32 ver) {
     func_0800e018(1);
     func_0800e0ec();
     func_0800e0a0(2, 1, 0, 0, 0, 30, 0x4082);
-    func_08008910(2, (120 << 8), (80 << 8), (240 << 8), (160 << 8), 0);
+    func_08008910(2, FXP8(120), FXP8(80), FXP8(240), FXP8(160), 0);
     func_0800e044(0);
     func_0800e044(1);
     func_0800e044(3);
 
-    gSpaceballInfo.batter.sprite = func_0800fa6c(&D_088a1a70, 0, 170, 80, 0x4800, 0x80, 0, 0, 0, 0, 1);
+    gSpaceballInfo.batter.sprite = func_0800fa6c(&D_088a1a70, 0, 170, 80, 0x4800, FXP8(0.5), 0, 0, 0, 0, 1);
     gSpaceballInfo.batter.x = 50;
     gSpaceballInfo.batter.y = 0;
     gSpaceballInfo.batter.z = 0;
     gSpaceballInfo.batter.swingTimer = 0;
     func_0802026c(0);
 
-    gSpaceballInfo.pitcher.sprite = func_0800fa6c(&D_088a1ad0, 2, 70, 128, 0x4800, 0x80, 0, 0, 0, 0, 1);
+    gSpaceballInfo.pitcher.sprite = func_0800fa6c(&D_088a1ad0, 2, 70, 128, 0x4800, FXP8(0.5), 0, 0, 0, 0, 1);
     gSpaceballInfo.pitcher.x = -50;
     gSpaceballInfo.pitcher.y = 48;
     gSpaceballInfo.pitcher.z = 0;
 
-    gSpaceballInfo.umpire.sprite = func_0800fa6c(&D_088a1bd0, 2, 120, 89, 0x4864, 0x80, 0, 1, 2, 0x8000, 1);
+    gSpaceballInfo.umpire.sprite = func_0800fa6c(&D_088a1bd0, 2, 120, 89, 0x4864, FXP8(0.5), 0, 1, 2, 0x8000, 1);
     gSpaceballInfo.umpire.x = 0;
     gSpaceballInfo.umpire.y = 9;
     gSpaceballInfo.umpire.z = 0;
     func_08010040(gSpaceballInfo.umpire.sprite, 1);
 
-    gSpaceballInfo.poofR.sprite = func_0800fa6c(&D_088a1b70, 2, 154, 132, 0x4864, 0x100, 0, 1, 0, 0x8002, 1);
+    gSpaceballInfo.poofR.sprite = func_0800fa6c(&D_088a1b70, 2, 154, 132, 0x4864, FXP8(1), 0, 1, 0, 0x8002, 1);
     gSpaceballInfo.poofR.x = 34;
     gSpaceballInfo.poofR.y = 52;
     gSpaceballInfo.poofR.z = 0;
 
-    gSpaceballInfo.poofL.sprite = func_0800fa6c(&D_088a1b70, 2, 122, 132, 0x4864, 0x100, 0, 1, 0, 0x8002, 1);
+    gSpaceballInfo.poofL.sprite = func_0800fa6c(&D_088a1b70, 2, 122, 132, 0x4864, FXP8(1), 0, 1, 0, 0x8002, 1);
     gSpaceballInfo.poofL.x = 2;
     gSpaceballInfo.poofL.y = 52;
     gSpaceballInfo.poofL.z = 0;
     func_0800ff44(gSpaceballInfo.poofL.sprite, TRUE); // Flip Horizontal
 
     gSpaceballInfo.currentStar = 0;
-    gSpaceballInfo.zoom = -0x80;
+    gSpaceballInfo.zoom = FXP8(-0.5);
     gSpaceballInfo.totalMissed = 0;
     gSpaceballInfo.spaceballType = 0;
     func_08017338(1,0);
 }
 
 
-// [func_080201a0] SCENE Func_06 - STUB
+// [func_080201a0] ENGINE Func_06 - STUB
 void func_080201a0(void) {
 }
 
 
-// [func_080201a4] SCENE Func_00 - Pitcher Prepare
+// [func_080201a4] ENGINE Func_00 - Pitcher Prepare
 void func_080201a4(void) {
     func_08010008(gSpaceballInfo.pitcher.sprite, 0, 0, 0);
     func_0800ffc0(gSpaceballInfo.pitcher.sprite, 0);
@@ -250,16 +258,17 @@ void func_080201a4(void) {
 // [func_080201cc] Update Batter Swing
 void func_080201cc(struct SpaceballBatter *batter) {
     if (batter->swingTimer == 0) return;
+
     batter->swingTimer--;
     if (batter->swingTimer == 0) {
         func_08010008(batter->sprite, 0, 0, 0);
-        func_0800ffc0(batter->sprite, 0); // set frame?
+        func_0800ffc0(batter->sprite, 0);
         func_08017338(1,0);
     }
 }
 
 
-// [func_08020200] SCENE Func_01 - Loop Exit Condition (Practice)
+// [func_08020200] ENGINE Func_01 - Loop Exit Condition (Practice)
 void func_08020200(void) {
     if (gSpaceballInfo.totalMissed == 0) {
         func_0800bce4();
@@ -270,7 +279,7 @@ void func_08020200(void) {
 }
 
 
-// [func_08020238] SCENE Func_02 - Set Camera Zoom
+// [func_08020238] ENGINE Func_02 - Set Camera Zoom
 void func_08020238(u32 controls) {
     s32 target = (s32) controls >> 0x10;
     u32 time = controls & 0xffff;
@@ -278,20 +287,20 @@ void func_08020238(u32 controls) {
 }
 
 
-// [func_0802026c] SCENE Func_03 - Set Batter Variant
+// [func_0802026c] ENGINE Func_03 - Set Batter Variant
 void func_0802026c(u32 index) {
     gSpaceballInfo.batter.animClose = D_089de988[index];
     gSpaceballInfo.batter.animFar = D_089de994[index];
 }
 
 
-// [func_08020290] SCENE Func_05 - Set Next Spaceball Sprite
+// [func_08020290] ENGINE Func_05 - Set Next Spaceball Sprite
 void func_08020290(u32 index) {
     gSpaceballInfo.spaceballType = index;
 }
 
 
-// [func_080202a4] SCENE Func_04 - Set Umpire Animation
+// [func_080202a4] ENGINE Func_04 - Set Umpire Animation
 void func_080202a4(u32 show) {
     struct AffineSprite *sprite = gSpaceballInfo.umpire.sprite;
     if (show) {
@@ -315,7 +324,7 @@ void func_08020308(void) {
 
 
 // [func_0802030c] CUE - Spawn
-void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
+void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arcTime, u32 unused3) {
     u32 temp;
     u32 div;
     u32 time;
@@ -324,14 +333,15 @@ void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     cue->rotation = func_08001980(0x800);
     cue->rotationSpeed = 0x40;
     cue->z = 0;
-    cue->unk1C = (arg2 >= 0x18) ? 90 * arg2 / 0x18 : 90;
-    cue->sprite = func_0800fa6c(D_089de9a0[gSpaceballInfo.spaceballType], 0, 0x46, 0x78, 0x479c, 0x100, cue->rotation, 1, 0, 0, 1);
+    cue->unk1C = (arcTime >= 0x18) ? (90 * arcTime / 0x18) : 90;
+    cue->sprite = func_0800fa6c(D_089de9a0[gSpaceballInfo.spaceballType], 0, 70, 120, 0x479c, FXP8(1), cue->rotation, 1, 0, 0, 1);
 
     temp = cue->unk1C - 48;
     div = D_03004ae4((temp << 0x10) / cue->unk1C);
-    time = func_0800c3a4(arg2);
-    cue->unk8 = (time << 9) / (div + 0x100);
-    func_0801fd70(cue->sprite, -0x32, 0x28, cue->z);
+    time = func_0800c3a4(arcTime);
+    cue->endTime = FXP8(time * 2) / (div + FXP8(1));
+
+    func_0801fd70(cue->sprite, -50, 40, cue->z);
     cue->missed = FALSE;
     func_08010008(gSpaceballInfo.pitcher.sprite, 1, 0x7f, 0);
     func_0800ffc0(gSpaceballInfo.pitcher.sprite, 1);
@@ -342,7 +352,7 @@ void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
 u32 func_080203fc(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     u32 temp;
 
-    if (arg2 > cue->unk8) {
+    if (arg2 > cue->endTime) {
         func_08002634(&s_f_batter_ball_land_seqData);
         func_0800ffc0(gSpaceballInfo.poofR.sprite, 0);
         func_08010040(gSpaceballInfo.poofR.sprite, 1);
@@ -354,10 +364,10 @@ u32 func_080203fc(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
         return TRUE;
     }
     else {
-        temp = arg2 - (cue->unk8 / 2);
-        cue->x = func_08008f04(70, 138, arg2, cue->unk8);
-        cue->y = 0x78 - (cue->unk1C - D_03004af8(cue->unk1C * (temp << 2) * temp, cue->unk8 * cue->unk8));
-        func_0801fd70(cue->sprite, cue->x - 0x78, cue->y - 0x50, cue->z);
+        temp = arg2 - (cue->endTime / 2);
+        cue->x = func_08008f04(70, 138, arg2, cue->endTime);
+        cue->y = 120 - (cue->unk1C - D_03004af8(cue->unk1C * (temp << 2) * temp, cue->endTime * cue->endTime));
+        func_0801fd70(cue->sprite, cue->x - 120, cue->y - 80, cue->z);
         func_0800fe94(cue->sprite, cue->rotation);
         cue->rotation += cue->rotationSpeed;
         return FALSE;
@@ -367,26 +377,26 @@ u32 func_080203fc(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
 
 // [func_080204b8] Update Spaceball (Hit)
 u32 func_080204b8(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
-    if (cue->z < gSpaceballInfo.zoom + 0x40) return TRUE;
+    if (cue->z < gSpaceballInfo.zoom + FXP8(0.25)) return TRUE;
 
-    func_0801fd70(cue->sprite, cue->x - 0x78, cue->y - 0x50, cue->z);
+    func_0801fd70(cue->sprite, cue->x - 120, cue->y - 80, cue->z);
     func_0800fe94(cue->sprite, cue->rotation);
     cue->rotation += cue->rotationSpeed;
-    cue->z -= 0x40;
+    cue->z -= FXP8(0.25);
     return FALSE;
 }
 
 
 // [func_08020500] Update Spaceball (Barely)
 u32 func_08020500(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
-    if (cue->z < gSpaceballInfo.zoom + 0x40) return TRUE;
-    if ((cue->y >> 8) > 1000) return TRUE;
+    if (cue->z < gSpaceballInfo.zoom + FXP8(0.25)) return TRUE;
+    if (FXP8_TO_INT(cue->y) > 1000) return TRUE;
 
     cue->x += cue->xSpeed;
     cue->y += cue->ySpeed;
-    cue->ySpeed += 0x40;
+    cue->ySpeed += FXP8(0.25);
     cue->z -= 4;
-    func_0801fd70(cue->sprite, cue->x - 0x78, (cue->y >> 8) - 0x50, cue->z);
+    func_0801fd70(cue->sprite, cue->x - 120, (cue->y >> 8) - 80, cue->z);
     func_0800fe94(cue->sprite, cue->rotation);
     cue->rotation += cue->rotationSpeed;
     return FALSE;
@@ -398,9 +408,15 @@ u32 func_08020564(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     u32 finished;
 
     switch (cue->state) {
-        case 0: finished = func_080203fc(arg0, cue, arg2, unused3); break;
-        case 1: finished = func_080204b8(arg0, cue, arg2, unused3); break;
-        case 2: finished = func_08020500(arg0, cue, arg2, unused3); break;
+        case SPACEBALL_LAUNCHED:
+            finished = func_080203fc(arg0, cue, arg2, unused3);
+            break;
+        case SPACEBALL_HIT:
+            finished = func_080204b8(arg0, cue, arg2, unused3);
+            break;
+        case SPACEBALL_BARELY:
+            finished = func_08020500(arg0, cue, arg2, unused3);
+            break;
     }
     return finished;
 }
@@ -420,7 +436,7 @@ void func_080205ac(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     func_0800ffc0(batter->sprite, 1);
     batter->swingTimer = func_0800c3a4(0xa);
     cue->rotationSpeed = 8;
-    cue->state = 1;
+    cue->state = SPACEBALL_HIT;
 }
 
 
@@ -432,9 +448,9 @@ void func_080205e8(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     batter->swingTimer = func_0800c3a4(0xa);
     cue->xSpeed = (func_08018054() < 0) ? -3 : 3;
     cue->rotationSpeed = -8;
-    cue->y <<= 8;
-    cue->ySpeed = -0x400;
-    cue->state = 2;
+    cue->y = FXP8(cue->y);
+    cue->ySpeed = FXP8(-4);
+    cue->state = SPACEBALL_BARELY;
 }
 
 

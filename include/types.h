@@ -441,7 +441,7 @@ struct BonOdoriInfo {
 struct SpaceballCue {
     u8 state;
     struct AffineSprite *sprite;
-    u32 unk8;
+    u32 endTime;
     s16 rotation;
     s16 rotationSpeed;
     s32 x;
