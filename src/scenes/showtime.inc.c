@@ -136,7 +136,18 @@ void func_0802c1f0(u32 unused_arg0, u16 arg1, u32 arg2) {
 
 #include "asm/scenes/showtime/asm_0802c36c.s"
 
-#include "asm/scenes/showtime/asm_0802c3d0.s"
+u32 func_0802c3d0(u32 arg0) {
+    switch (gShowtimeInfo.unkC[arg0].unk4 / 4) {
+        case 1:
+            return 3;
+        case 0:
+            return 0;
+        case 2:
+            return 2;
+        default:
+            return 0;
+    }
+}
 
 #include "asm/scenes/showtime/asm_0802c40c.s"
 

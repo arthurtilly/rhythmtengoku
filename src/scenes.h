@@ -596,7 +596,7 @@ extern void func_0802c1f0(u32, u16, u32);
 // extern ? func_0802c23c(?);
 // extern ? func_0802c334(?);
 // extern ? func_0802c36c(?);
-// extern ? func_0802c3d0(?);
+extern u32 func_0802c3d0(u32);
 // extern ? func_0802c40c(?);
 // extern ? func_0802c4b0(?);
 // extern ? func_0802c4c0(?);

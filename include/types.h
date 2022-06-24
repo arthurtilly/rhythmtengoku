@@ -450,7 +450,8 @@ struct BonOdoriInfo {
 
 struct ShowtimeInfo_sub {
     u32 unk0;
-    u32 pad4[2];
+    s32 unk4;
+    u32 pad8;
 };
 
 struct ShowtimeInfo_sub1 {
