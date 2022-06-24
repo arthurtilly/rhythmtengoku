@@ -92,9 +92,16 @@ void func_0802bf1c() {
     
 }
 
-#include "asm/scenes/showtime/asm_0802bf20.s"
+void func_0802bf20(u32 unused_arg0, u32* arg1) {
+    arg1[1] = func_0802ce70(4);
+    func_0802d38c();
+}
 
-#include "asm/scenes/showtime/asm_0802bf38.s"
+u8 func_0802bf38(u32 unused_arg0, u32 unused_arg1, u32 arg2) {
+    if (arg2 > func_0800c3a4(0x78))
+        return TRUE;
+    return FALSE;
+}
 
 void func_0802bf54() {
     
