@@ -45,7 +45,7 @@ void func_0802bd40() {
 
 void func_0802be24() {
     D_03004b10.unk4C = 0;
-    D_03004b10.unk0 &= 0xDFFF;
+    D_03004b10.DISPCNT &= 0xDFFF;
 }
 
 void func_0802be40(u32 unused_arg0, u32* arg1) {
