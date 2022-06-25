@@ -7,9 +7,10 @@ extern u32 D_088cb4a4[];
 
 extern const struct SequenceData s_block_hit_seqData;
 
-#include "asm/scenes/showtime/asm_0802bc4c.s"
 #include "src/lib_0804c870.h"
 #include "src/code_08003980.h"
+
+#include "asm/scenes/showtime/asm_0802bc4c.s"
 
 void func_0802bc78(u8 arg0) {
     u32* temp;
