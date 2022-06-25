@@ -195,7 +195,10 @@ u32 func_0802c3d0(u32 arg0) {
 
 #include "asm/scenes/showtime/asm_0802cf8c.s"
 
-#include "asm/scenes/showtime/asm_0802cfa4.s"
+void func_0802cfa4(u32 arg0) {
+    gShowtimeInfo.unk24[arg0].unk18 = 0;
+    gShowtimeInfo.unk24[arg0].unk20 = 1;
+}
 
 #include "asm/scenes/showtime/asm_0802cfc8.s"
 
@@ -213,7 +216,7 @@ u32 func_0802d080(u32 arg0) {
     }
 }
 
-void func_0802d0b8(void) {
+void func_0802d0b8() {
     if (gShowtimeInfo.unk168 != 0) {
         if (gShowtimeInfo.unk168 == 2) {
             gShowtimeInfo.unk168 = 0;
@@ -243,7 +246,18 @@ void func_0802d38c(void) {
 
 #include "asm/scenes/showtime/asm_0802d81c.s"
 
-#include "asm/scenes/showtime/asm_0802d8bc.s"
+void func_0802d8bc(u32 arg0) {
+    int i;
+    for (i = 0; i < 8; i++) {
+        if (gShowtimeInfo.unk174[i].unk4 == 0) {
+            gShowtimeInfo.unk174[i].unk4 = 4;
+            gShowtimeInfo.unk174[i].unkC = arg0;
+            gShowtimeInfo.unk174[i].unk8 = 0;
+            func_0804d770(D_03005380, gShowtimeInfo.unk174[i].unk0, 1);
+            return;
+        }
+    }
+}
 
 #include "asm/scenes/showtime/asm_0802d918.s"
 

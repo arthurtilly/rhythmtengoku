@@ -459,7 +459,11 @@ struct ShowtimeInfo_sub1 {
     u32 pad4;
     u32 unk8;
     u32 unkC;
-    u32 pad10[6];
+    u32 pad10[2];
+    u32 unk18;
+    u32 pad1C;
+    u32 unk20;
+    u32 pad24;
 };
 
 struct ShowtimeInfo_sub2 {
