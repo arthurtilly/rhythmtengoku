@@ -127,24 +127,45 @@ void func_0802bf58(u32 unused_arg0, u32* arg1) { //arg1 is probably a struct
 #include "asm/scenes/showtime/asm_0802c1cc.s"
 
 void func_0802c1f0(u32 unused_arg0, u16 arg1, u32 arg2) {
-    switch (gShowtimeInfo.unkC[arg2].unk0) {
+    switch (gShowtimeInfo.unk8[arg2].unk4) {
         case 0:
             break;
         case 1:
-            gShowtimeInfo.unkC[arg2].unk0 = 0;
+            gShowtimeInfo.unk8[arg2].unk4 = 0;
         func_0804cebc(D_03005380, arg1, 3);
         func_0804dcb8(D_03005380, arg1, 0);
     }
 }
 
-#include "asm/scenes/showtime/asm_0802c23c.s"
+//arrays
+extern u32 D_088cb994[];
+extern u32 D_088cb4a4[];
+
+void func_0802c23c() {
+    s32 i;
+    for (i = 0; i < 2; i++) {
+        u8 temp = gShowtimeInfo.unk6;
+        gShowtimeInfo.unk8[i].unk4 = 0;
+        if (gShowtimeInfo.unk6 != 1) {
+            gShowtimeInfo.unk8[i].unk0 = func_0804d160(D_03005380, &D_088cb4a4, 0, 0x40, 0x40, 0x4800, 1, 0, 4);
+        } else {
+            gShowtimeInfo.unk8[i].unk0 = func_0804d160(D_03005380, &D_088cb994, 0, 0x40, 0x40, 0x4800, 1, 0, 4);
+        }
+        gShowtimeInfo.unk8[i].unk8 = 0;
+        func_0804daa8(D_03005380, gShowtimeInfo.unk8[i].unk0, func_0802c1f0, i);
+        func_0804cebc(D_03005380, gShowtimeInfo.unk8[i].unk0, 3);
+        func_0804dcb8(D_03005380, gShowtimeInfo.unk8[i].unk0, 0);
+    }
+    func_0804d5d4(D_03005380, gShowtimeInfo.unk8[0].unk0, 0xc8, 0x80);
+    func_0804d5d4(D_03005380, gShowtimeInfo.unk8[1].unk0, 0xb8, 0x90);
+}
 
 #include "asm/scenes/showtime/asm_0802c334.s"
 
 #include "asm/scenes/showtime/asm_0802c36c.s"
 
 u32 func_0802c3d0(u32 arg0) {
-    switch (gShowtimeInfo.unkC[arg0].unk4 / 4) {
+    switch (gShowtimeInfo.unk8[arg0].unk8 / 4) {
         case 1:
             return 3;
         case 0:
