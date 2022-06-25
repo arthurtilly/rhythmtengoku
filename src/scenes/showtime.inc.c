@@ -5,6 +5,8 @@ extern char D_0805a3cc[]; //data_08054950, empty string
 extern u32 D_088cb994[];
 extern u32 D_088cb4a4[];
 
+extern const struct SequenceData s_block_hit_seqData;
+
 #include "asm/scenes/showtime/asm_0802bc4c.s"
 #include "src/lib_0804c870.h"
 #include "src/code_08003980.h"
@@ -122,7 +124,14 @@ void func_0802bf58(u32 unused_arg0, u32* arg1) { //arg1 is probably a struct
 
 #include "asm/scenes/showtime/asm_0802c078.s"
 
-#include "asm/scenes/showtime/asm_0802c084.s"
+void func_0802c084() {
+    if (gShowtimeInfo.unk3C0 == 0) {
+        func_0802d918(-1);
+        func_0802d2bc();
+        gShowtimeInfo.unk3C0 = func_0800c3a4(30);
+        func_08002634(&s_block_hit_seqData);
+    }
+}
 
 #include "asm/scenes/showtime/asm_0802c0c8.s"
 
@@ -160,7 +169,14 @@ void func_0802c23c() {
     func_0804d5d4(D_03005380, gShowtimeInfo.unk8[1].unk0, 0xb8, 0x90);
 }
 
-#include "asm/scenes/showtime/asm_0802c334.s"
+void func_0802c334() {
+    s32 i;
+    for (i = 0; i < 2; i++) {
+        if (gShowtimeInfo.unk8[i].unk4 == 0) continue;
+        if (gShowtimeInfo.unk8[i].unk4 != 1) continue;
+        gShowtimeInfo.unk8[i].unk8 += 1;
+    }
+}
 
 #include "asm/scenes/showtime/asm_0802c36c.s"
 
