@@ -207,9 +207,18 @@ u32 func_0802d068(u32 arg0) {
 
 #include "asm/scenes/showtime/asm_0802d080.s"
 
-#include "asm/scenes/showtime/asm_0802d0b8.s"
+void func_0802d0b8(void) {
+    if (gShowtimeInfo.unk168 != 0) {
+        if (gShowtimeInfo.unk168 == 2) {
+            gShowtimeInfo.unk168 = 0;
+            }
+    }
+}
 
-#include "asm/scenes/showtime/asm_0802d0dc.s"
+void func_0802d0dc(u32 arg0, s16 arg1) {
+    func_0804cebc(D_03005380, arg1, 8);
+    func_0804dcb8(D_03005380, arg1, 0);
+}
 
 #include "asm/scenes/showtime/asm_0802d104.s"
 

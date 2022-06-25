@@ -459,6 +459,13 @@ struct ShowtimeInfo_sub1 {
     u32 pad4[9];
 };
 
+struct ShowtimeInfo_sub2 {
+    s16 unk0;
+    s32 unk4;
+    s32 unk8;
+    u32 unkC;
+};
+
 struct ShowtimeInfo {
     u32* unk0;
     u16 unk4;
@@ -466,7 +473,11 @@ struct ShowtimeInfo {
     struct ShowtimeInfo_sub unk8[2];
     u32 pad20[3];
     struct ShowtimeInfo_sub1 unk2C[2];
-    u32 pad7C[0xd1];
+    u32 pad7C[0x3b];
+    u32 unk168;
+    u32 pad16C[2];
+    struct ShowtimeInfo_sub2 unk174[8];
+    u32 pad1F4[0x73];
     u32 unk3C0; // beat related stuff???
     u32 pad3C4;
     u32 unk3C8;
