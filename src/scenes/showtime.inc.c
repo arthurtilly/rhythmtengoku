@@ -2,8 +2,12 @@
 
 extern char D_0805a3cc[]; //data_08054950, empty string
 
+extern u32 D_088cb994[];
+extern u32 D_088cb4a4[];
+
 #include "asm/scenes/showtime/asm_0802bc4c.s"
 #include "src/lib_0804c870.h"
+#include "src/code_08003980.h"
 
 void func_0802bc78(u8 arg0) {
     u32* temp;
@@ -14,7 +18,7 @@ void func_0802bc78(u8 arg0) {
     func_0800e0a0(2, 1, 0, 0, 0, 0x1e, 0);
     func_0802d96c();
     gShowtimeInfo.unk0 = func_0800c660(0x340, 2);
-    temp = func_08004b98(gShowtimeInfo.unk0, &D_0805a3cc, 0, 0);
+    temp = func_08004b98(gShowtimeInfo.unk0, D_0805a3cc, 0, 0);
     gShowtimeInfo.unk4 = func_0804d160(D_03005380, temp, 0, 0x78, 0x38, 0, 0, 0, 0);
     func_08017338(1, 0);
     func_0802c23c();    
@@ -137,19 +141,15 @@ void func_0802c1f0(u32 unused_arg0, u16 arg1, u32 arg2) {
     }
 }
 
-//arrays
-extern u32 D_088cb994[];
-extern u32 D_088cb4a4[];
-
 void func_0802c23c() {
     s32 i;
     for (i = 0; i < 2; i++) {
         u8 temp = gShowtimeInfo.unk6;
         gShowtimeInfo.unk8[i].unk4 = 0;
         if (gShowtimeInfo.unk6 != 1) {
-            gShowtimeInfo.unk8[i].unk0 = func_0804d160(D_03005380, &D_088cb4a4, 0, 0x40, 0x40, 0x4800, 1, 0, 4);
+            gShowtimeInfo.unk8[i].unk0 = func_0804d160(D_03005380, D_088cb4a4, 0, 0x40, 0x40, 0x4800, 1, 0, 4);
         } else {
-            gShowtimeInfo.unk8[i].unk0 = func_0804d160(D_03005380, &D_088cb994, 0, 0x40, 0x40, 0x4800, 1, 0, 4);
+            gShowtimeInfo.unk8[i].unk0 = func_0804d160(D_03005380, D_088cb994, 0, 0x40, 0x40, 0x4800, 1, 0, 4);
         }
         gShowtimeInfo.unk8[i].unk8 = 0;
         func_0804daa8(D_03005380, gShowtimeInfo.unk8[i].unk0, func_0802c1f0, i);
@@ -202,10 +202,16 @@ u32 func_0802c3d0(u32 arg0) {
 #include "asm/scenes/showtime/asm_0802cfe0.s"
 
 u32 func_0802d068(u32 arg0) {
-    return gShowtimeInfo.unk2C[arg0].unk0;
+    return gShowtimeInfo.unk24[arg0].unk8;
 }
 
-#include "asm/scenes/showtime/asm_0802d080.s"
+u32 func_0802d080(u32 arg0) {
+    if (gShowtimeInfo.unk24[arg0].unk0 == 8) {
+        return gShowtimeInfo.unk24[arg0].unkC + 0xd;
+    } else {
+        return gShowtimeInfo.unk24[arg0].unkC;
+    }
+}
 
 void func_0802d0b8(void) {
     if (gShowtimeInfo.unk168 != 0) {
