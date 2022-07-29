@@ -42,6 +42,8 @@ SECTIONS {
 		build/src/code_080092cc.c.o(.text);
 		build/src/code_0800b3c8.c.o(.text);
 		build/src/code_0800b778.c.o(.text);
+        build/src/affine_sprite.c.o(.text);
+        build/src/code_080102d0.c.o(.text);
 		build/src/code_08010490.c.o(.text);
 		build/src/code_08011ec0.c.o(.text);
 		build/src/code_08016e18.c.o(.text);

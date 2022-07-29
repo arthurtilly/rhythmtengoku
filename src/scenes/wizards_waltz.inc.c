@@ -1,6 +1,6 @@
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
-#include "src/code_0800b778.h"
+#include "src/affine_sprite.h"
 
 // For readability. !TODO - CHANGE/REMOVE
 #define gWizardsWaltzInfo D_030055d0->gameInfo.wizardsWaltz
