@@ -1,34 +1,9 @@
-#include "global.h"
+#include "src/engines/spaceball.h"
+
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
 #include "src/affine_sprite.h"
 #include "src/lib_0804c870.h"
-
-// For readability.
-#define gSpaceballInfo D_030055d0->gameInfo.spaceball
-
-// Game-Specific Macros:
-#define SPACEBALL_CUE_STATE_LAUNCH 0
-#define SPACEBALL_CUE_STATE_HIT 1
-#define SPACEBALL_CUE_STATE_BARELY 2
-
-// OAM Animations:
-extern u32 D_088a1a70; // Animation: "batter_green"
-extern u32 D_088a1ad0; // Animation: "pitcher_shoot
-extern u32 D_088a1b70; // Animation: "miss_poof"
-extern u32 D_088a1b90; // Animation: "bg_star"
-extern u32 D_088a1ba0; // Animation: "umpire_show"
-extern u32 D_088a1bd0; // Animation: "umpire_sway"
-
-// Sound Effects:
-extern const struct SequenceData s_f_batter_ball_land_seqData;
-
-// Additional Data:
-extern u32  D_089de93c;    // GFX-related Null
-extern u32  D_089de940[];  // GFX Init Struct
-extern u32 *D_089de988[3]; // Batter Animations (Close)
-extern u32 *D_089de994[3]; // Batter Animations (Far)
-extern u32 *D_089de9a0[3]; // Spaceball Animations
 
 extern s32 (*D_03004ae4)(s32);
 extern s32 (*fast_udivsi3)(s32, s32);
