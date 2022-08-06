@@ -40,6 +40,10 @@ SECTIONS {
 		build/src/engines/power_calligraphy.c.o(.bss*);
 		build/src/engines/rhythm_test.c.o(.bss*);
 		build/src/engines/marching_orders.c.o(.bss*);
+		build/src/engines/mr_upbeat.c.o(.bss*);
+		build/src/engines/metronome.c.o(.bss*);
+		build/src/engines/polyrhythm.c.o(.bss*);
+		build/src/engines/concert_hall.c.o(.bss*);
 		build/src/scenes.c.o(.bss*);
 		build/src/code_08047e50.c.o(.bss*);
 	}
@@ -84,6 +88,10 @@ SECTIONS {
 		build/src/engines/power_calligraphy.c.o(.text);
 		build/src/engines/rhythm_test.c.o(.text);
 		build/src/engines/marching_orders.c.o(.text);
+		build/src/engines/mr_upbeat.c.o(.text);
+		build/src/engines/metronome.c.o(.text);
+		build/src/engines/polyrhythm.c.o(.text);
+		build/src/engines/concert_hall.c.o(.text);
         build/src/scenes.c.o(.text);
 		build/src/code_08047e50.c.o(.text);
         build/bin/bindata_080482e0.bin.o(.rodata*); /* More ARM assembly */

@@ -9,14 +9,6 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-#include "src/scenes/mr_upbeat.inc.c"
-
-#include "src/scenes/metronome.inc.c"
-
-#include "src/scenes/polyrhythm.inc.c"
-
-#include "src/scenes/concert_hall.inc.c"
-
 #include "src/scenes/quiz_show.inc.c"
 
 #include "src/scenes/bunny_hop.inc.c"
