@@ -9,12 +9,6 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-#include "src/scenes/night_walk.inc.c"
-
-#include "src/scenes/showtime.inc.c"
-
-#include "src/scenes/bouncy_road.inc.c"
-
 #include "src/scenes/rhythm_tweezers.inc.c"
 
 #include "src/scenes/fireworks.inc.c"

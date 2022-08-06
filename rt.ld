@@ -30,6 +30,9 @@ SECTIONS {
 		build/src/engines/mannequin_factory.c.o(.bss*);
 		build/src/engines/staff_credit.c.o(.bss*);
 		build/src/engines/drumming_lessons.c.o(.bss*);
+		build/src/engines/night_walk.c.o(.bss*);
+		build/src/engines/showtime.c.o(.bss*);
+		build/src/engines/bouncy_road.c.o(.bss*);
 		build/src/scenes.c.o(.bss*);
 		build/src/code_08047e50.c.o(.bss*);
 	}
@@ -64,6 +67,9 @@ SECTIONS {
 		build/src/engines/mannequin_factory.c.o(.text);
 		build/src/engines/staff_credit.c.o(.text);
 		build/src/engines/drumming_lessons.c.o(.text);
+		build/src/engines/night_walk.c.o(.text);
+		build/src/engines/showtime.c.o(.text);
+		build/src/engines/bouncy_road.c.o(.text);
         build/src/scenes.c.o(.text);
 		build/src/code_08047e50.c.o(.text);
         build/bin/bindata_080482e0.bin.o(.rodata*); /* More ARM assembly */
