@@ -3,13 +3,12 @@
 #include "global.h"
 #include "sound.h"
 
-// For readability.
-#define gSpaceballInfo D_030055d0->gameInfo.spaceball
-
-// Game-Specific Macros:
-#define SPACEBALL_CUE_STATE_LAUNCH 0
-#define SPACEBALL_CUE_STATE_HIT 1
-#define SPACEBALL_CUE_STATE_BARELY 2
+// Engine Macros/Enums:
+enum SpaceballCueStatesEnum {
+    SPACEBALL_CUE_STATE_LAUNCH,
+    SPACEBALL_CUE_STATE_HIT,
+    SPACEBALL_CUE_STATE_BARELY
+};
 
 // OAM Animations:
 extern u32 D_088a1a70; // Animation: "batter_green"
@@ -19,8 +18,12 @@ extern u32 D_088a1b90; // Animation: "bg_star"
 extern u32 D_088a1ba0; // Animation: "umpire_show"
 extern u32 D_088a1bd0; // Animation: "umpire_sway"
 
+// Palettes:
+
 // Sound Effects:
 extern const struct SequenceData s_f_batter_ball_land_seqData;
+
+// Engine Data:
 
 // Engine Definition Data:
 extern u32  D_089de93c;    // GFX-related Null

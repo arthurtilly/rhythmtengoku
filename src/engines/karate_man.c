@@ -1,3 +1,5 @@
+#include "src/engines/karate_man.h"
+
 #include "syscall.h"
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
@@ -8,54 +10,13 @@
 // For readability. !TODO - CHANGE/REMOVE
 #define gKarateManInfo D_030055d0->gameInfo.karateMan
 
-// OAM Animations:
-extern u32 D_088acc2c[]; // Animation: "joe_stand"
-extern u32 D_088acc3c[]; // Animation: "objects"
-extern u32 D_088acc6c[]; // Animation: "objects_shadow"
-extern u32 D_088acc94[]; // Animation: "joe_punch_high"
-extern u32 D_088accdc[]; // Animation: "joe_beat"
-extern u32 D_088accfc[]; // Animation: "hit_effect"
-extern u32 D_088acd1c[]; // Animation: "flow_bar"
-extern u32 D_088acd54[]; // Animation: "joe_punch_low"
-extern u32 D_088acd94[]; // Animation: "joe_beat_barely"
-extern u32 D_088acdb4[]; // Animation: "joe_miss"
-extern u32 D_088acdd4[]; // Animation: "joe_beat_smirk"
-extern u32 D_088acdf4[]; // Animation: "joe_beat_happy"
-extern u32 D_088ace14[]; // Animation: "joe_punch_hard"
-extern u32 D_088acf04[]; // Animation: "cue_text"
-extern u32 D_088acf2c[]; // Animation: "tutorial_button"
-extern u32 D_088acf44[]; // Animation: "tutorial_skip"
-extern u32 D_088acf54[]; // Animation: "tutorial_text"
-extern u32 D_088acf7c[]; // Animation: "joe_punch_high_face" (Remix 8 face)
-extern u32 D_088acfc4[]; // Animation: "joe_punch_low_face" (Remix 8 face)
-
-// Sound Effects:
-extern const struct SequenceData s_f_boxing_score_reset_seqData;
-extern const struct SequenceData s_f_boxing_score_up_seqData;
-extern const struct SequenceData s_f_boxing_score_down_seqData;
-extern const struct SequenceData s_f_boxing_punch_seqData;
-extern const struct SequenceData s_f_boxing_land_seqData;
-extern const struct SequenceData s_f_boxing_hard_seqData;
-extern const struct SequenceData s_f_boxing_normal_seqData;
-extern const struct SequenceData s_f_boxing_kansei_seqData;
-extern const struct SequenceData s_f_boxing_v_nua_seqData;
-
-// Additional Data - Karate Man:
-extern u16 D_088ad004[8][16];  // Palette
-extern u32 *D_089df064[];   // GFX-related 
-extern u32 *D_089df1ac[];   // GFX Struct Index
-extern u32 D_089df1bc[];    // BG Face Graphics
-extern u8 D_089df37c[];     // BG Palette Index (Low Flow)
-extern u8 D_089df37e[];     // BG Palette Index (High Flow)
-
-// Additional Data - Global:
 extern u16 D_03004afc; // Input Queue(?)
 
 
 /* KARATE MAN */
 
 
-// GFX_LOAD Func_02
+// GFX_INIT Func_02
 void func_08021190(void) {
 	func_0800c604(0);
 	func_08017578();
@@ -63,7 +24,7 @@ void func_08021190(void) {
 }
 
 
-// GFX_LOAD Func_01
+// GFX_INIT Func_01
 void func_080211a4(void) {
     u32 temp;
 
@@ -73,7 +34,7 @@ void func_080211a4(void) {
 }
 
 
-// GFX_LOAD Func_00
+// GFX_INIT Func_00
 void func_080211e4(void) {
     u32 temp;
     
@@ -83,7 +44,7 @@ void func_080211e4(void) {
 }
 
 
-// MAIN - Load
+// MAIN - Init
 void func_08021210(u32 ver) {
     u32 temp;
 
@@ -131,7 +92,7 @@ void func_08021210(u32 ver) {
 }
 
 
-// SUB - Set the BG Face
+// Set the BG Face
 void func_0802139c(u32 bgFace, u32 ticks) {
     func_08003eb8(D_089df1bc[bgFace], VRAMBase + 0x8000);
     func_0800e030(0);
@@ -145,7 +106,7 @@ void func_080213d4(u32 ticks) {
 }
 
 
-// SUB - Decrement BG Face Counter
+// Decrement BG Face Counter
 void func_080213e4(void) {
    if (gKarateManInfo.bgFace) {
        gKarateManInfo.bgFace--;
@@ -255,7 +216,7 @@ void func_08021554(void) {
 }
 
 
-// MAIN - Unload
+// MAIN - Close
 void func_080215cc(void) {
     func_08021e40(&gKarateManInfo.joe);
     func_0804d504(D_03005380, gKarateManInfo.cueText);
@@ -265,7 +226,7 @@ void func_080215cc(void) {
 }
 
 
-// SUB - ???
+// ???
 void func_0802160c(struct struct_080179f4 *arg0) {
     struct struct_080179f4 *temp;
     struct KarateManCue *temp1;
@@ -304,7 +265,7 @@ void func_08021644(struct struct_080179f4 *arg0, struct KarateManCue *cue, u32 o
 }
 
 
-// SUB - Update Object Entity 
+// Update Object Entity
 void func_08021740(struct KarateManCue *cue) {
     s32 temp;
     s32 temp1;
@@ -324,7 +285,7 @@ void func_08021740(struct KarateManCue *cue) {
 }
 
 
-// SUB - Update Hit Object
+// Update Hit Object
 void func_080217ec(struct KarateManCue *cue) {
     u32 temp;
     u32 temp1;
@@ -337,7 +298,7 @@ void func_080217ec(struct KarateManCue *cue) {
 }
 
 
-// SUB - Update Not Hit Object
+// Update Not Hit Object
 void func_08021818(struct KarateManCue *cue) {
     s32 temparg = cue->unk28; // Distance?
     s32 temp;
@@ -361,7 +322,7 @@ void func_08021818(struct KarateManCue *cue) {
 }
 
 
-// CUE - Behaviour
+// CUE - Update
 u32 func_08021888(u32 arg0, struct KarateManCue *cue, u32 arg2, u32 arg3) {
     struct KarateManJoe *joe = &gKarateManInfo.joe;
     u16 temp;
@@ -418,7 +379,7 @@ void func_08021974(u32 arg0, struct KarateManCue *cue) {
 }
 
 
-// SUB - Enter "Serious Mode"
+// Enter "Serious Mode"
 void func_080219a8(void) {
     gKarateManInfo.serious = 0;
     func_0804d8c4(D_03005380, gKarateManInfo.joe.joe, 1);
@@ -431,7 +392,7 @@ void func_080219a8(void) {
 }
 
 
-// SUB - Stop "Serious Mode"
+// Stop "Serious Mode"
 void func_08021a0c(void) {
     gKarateManInfo.seriousStop = 0;
     func_0804d8c4(D_03005380, gKarateManInfo.joe.joe, 0);
@@ -592,7 +553,7 @@ void func_08021dcc(void) {
 }
 
 
-// SUB - Initialise Joe
+// Initialise Joe
 void func_08021dd8(struct KarateManJoe *arg0) {
     arg0->isNotBeat = FALSE;
     arg0->joe = func_0804d160(D_03005380, D_088acc2c, 0, 0x50, 0x58, 0x4800, 1, 0, 0);
@@ -606,13 +567,13 @@ void func_08021dd8(struct KarateManJoe *arg0) {
 }
 
 
-// SUB - Unload Joe
+// Unload Joe
 void func_08021e40(struct KarateManJoe *arg0) {
 	func_0804d504(D_03005380, arg0->joe);
 }
 
 
-// SUB - Update Joe
+// Update Joe
 void func_08021e58(struct KarateManJoe *arg0) {
     if (arg0->barely) arg0->barely--;
     if (arg0->miss) arg0->miss--;
@@ -621,7 +582,7 @@ void func_08021e58(struct KarateManJoe *arg0) {
 }
 
 
-// MAIN - Input
+// MAIN - Input Event
 void func_08021e88(void) {
     struct KarateManJoe *joe = &gKarateManInfo.joe;
 
@@ -677,7 +638,7 @@ void func_08022010(u32 arg0) {
 }
 
 
-// SUB - Initialise Flow
+// Initialise Flow
 void func_08022050(void) {
     gKarateManInfo.flow = 0;
     gKarateManInfo.flowBar = func_0804d160(D_03005380, D_088acd1c, gKarateManInfo.flow, 0x24, 0x10, 0x47f6, 0, 0, 0);
@@ -691,7 +652,7 @@ void func_08022050(void) {
 }
 
 
-// SUB - Reset Flow
+// Reset Flow
 void func_080220c4(void) {
     if (gKarateManInfo.flow > 2) {
         func_08002634(&s_f_boxing_score_reset_seqData);
@@ -704,7 +665,7 @@ void func_080220c4(void) {
 }
 
 
-// SUB - Increment Flow
+// Increment Flow
 void func_08022114(void) {
     if (gKarateManInfo.flowBarFlag) {
         if (gKarateManInfo.flow < 5) { // Flow can't go higher than 5

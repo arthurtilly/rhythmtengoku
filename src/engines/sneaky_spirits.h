@@ -3,13 +3,12 @@
 #include "global.h"
 #include "sound.h"
 
-// For readability. !TODO - CHANGE/REMOVE
-#define gSneakySpiritsInfo D_030055d0->gameInfo.sneakySpirits
-
-// Game-Specific Macros:
-#define SNEAKY_SPIRITS_VERSION_1 0
-#define SNEAKY_SPIRITS_VERSION_REMIX 1
-#define SNEAKY_SPIRITS_VERSION_2 2
+// Engine Macros/Enums:
+enum SneakySpiritsVersionsEnum {
+    SNEAKY_SPIRITS_VERSION_1,
+    SNEAKY_SPIRITS_VERSION_REMIX,
+    SNEAKY_SPIRITS_VERSION_2
+};
 
 // OAM Animations:
 extern u32 D_088a0ca0; // Animation: "bow_draw"
@@ -31,6 +30,8 @@ extern u32 D_088a11b8; // Animation: "ghost_barely_run"
 extern u32 D_088a1258; // Animation: "arrow_hit"
 extern u32 D_088a1280; // Animation: "ghost_dash_tutorial"
 
+// Palettes:
+
 // Sound Effects:
 extern const struct SequenceData s_ghost_rain_seqData;           // Sound: Wind/Rain
 extern const struct SequenceData s_ghost_gosha_seqData;          // Sound: Arrow Missed
@@ -41,7 +42,7 @@ extern const struct SequenceData s_ghost_miss_hit_seqData;       // Sound: Ghost
 extern const struct SequenceData s_ghost_dash_seqData;           // Sound: Ghost Miss
 extern const struct SequenceData s_ghost_warai_seqData;          // Sound: Ghost Miss Voice
 
-// Miscellaneous Engine Data:
+// Engine Data:
 extern char D_08059f90;   // Empty Default Text
 
 // Engine Definition Data:

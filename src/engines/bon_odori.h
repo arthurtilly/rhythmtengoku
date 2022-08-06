@@ -3,12 +3,17 @@
 #include "global.h"
 #include "sound.h"
 
-// For readability.
-#define gBonOdoriInfo D_030055d0->gameInfo.bonOdori
+// Engine Macros/Enums:
+
+// OAM Animations:
+
+// Palettes:
 
 // Sound Effects:
 extern const struct SequenceData s_tebyoushi_pati_seqData;
 extern const struct SequenceData s_HC_seqData;
+
+// Engine Data:
 
 // Engine Definition Data:
 extern u32 **D_089dec38[]; // Pointers to animation arrays, with each one consisting of two animations.
@@ -22,16 +27,16 @@ extern u16 *D_089deed4[];  // Index of pointers to palettes.
 // Functions:
 extern u32 *func_080206a0(u32);
 extern void func_080206c0(void);
-extern u32 *func_0802075c(u32, u32);  // Returns donpan animation
-extern void func_08020778(u32, u32); // Potentially sets donpan animation?
+extern u32 *func_0802075c(u32, u32);    // Returns donpan animation
+extern void func_08020778(u32, u32);    // Potentially sets donpan animation?
 extern void func_080207d0(u32);     // [func_080207d0] ENGINE Func_0B - Set Animation (CPU Donpans)
 extern void func_080207ec(u32);     // [func_080207ec] ENGINE Func_0C - Set Animation (Player)
 extern void func_080207f8(u32);     // [func_080207f8] ENGINE Func_0D - Set Animation (All Donpans)
 extern void func_0802080c(u32);     // [func_0802080c] ENGINE Func_0E - ?
 extern void func_08020834(void);
-extern void func_0802085c(void);
-extern void func_08020880(void);
-extern void func_080208c0(void);
+extern void func_0802085c(void);    // [func_0802085c] GFX_INIT Func_02
+extern void func_08020880(void);    // [func_08020880] GFX_INIT Func_01
+extern void func_080208c0(void);    // [func_080208c0] GFX_INIT Func_00
 extern void func_080208ec(u32);     // [func_080208ec] MAIN - Init
 extern void func_08020a48(void);    // [func_08020a48] ENGINE Func_11 - STUB
 extern void func_08020a4c(u32, s32, u32);
@@ -47,8 +52,8 @@ extern void func_08020da0(u32);     // [func_08020da0] ENGINE Func_07 - Darken S
 extern void func_08020e1c(void);    // [func_08020e1c] ENGINE Func_08 - ?
 extern void func_08020e50(void);    // [func_08020e50] ENGINE Func_09 - Lighten Screen (Instant)
 extern void func_08020e90(void);    // [func_08020e90] ENGINE Func_0A - Darken Screen (Instant)
-extern void func_08020ed4(void);    // [func_08020e90] ENGINE Func_0F - Test Player Inputs
-extern void func_08020ee8(void);    // [func_08020e90] ENGINE Func_10 - React to Player Inputs
+extern void func_08020ed4(void);    // [func_08020ed4] ENGINE Func_0F - Test Player Inputs
+extern void func_08020ee8(void);    // [func_08020ee8] ENGINE Func_10 - React to Player Inputs
 extern void func_08020f48(void);    // [func_08020f48] MAIN - Update
 extern void func_08020f8c(void);    // [func_08020f8c] MAIN - Close
 extern void func_08020f98(u32, struct struct_080179f4_sub *, u32);  // [func_08020f98] CUE - Spawn

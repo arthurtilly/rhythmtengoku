@@ -26,6 +26,7 @@ SECTIONS {
 		build/src/engines/sneaky_spirits.c.o(.bss*);
 		build/src/engines/spaceball.c.o(.bss*);
 		build/src/engines/bon_odori.c.o(.bss*);
+		build/src/engines/karate_man.c.o(.bss*);
 		build/src/scenes.c.o(.bss*);
 		build/src/code_08047e50.c.o(.bss*);
 	}
@@ -56,6 +57,7 @@ SECTIONS {
 		build/src/engines/sneaky_spirits.c.o(.text);
 		build/src/engines/spaceball.c.o(.text);
 		build/src/engines/bon_odori.c.o(.text);
+		build/src/engines/karate_man.c.o(.text);
         build/src/scenes.c.o(.text);
 		build/src/code_08047e50.c.o(.text);
         build/bin/bindata_080482e0.bin.o(.rodata*); /* More ARM assembly */

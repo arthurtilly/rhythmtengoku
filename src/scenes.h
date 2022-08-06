@@ -3,50 +3,6 @@
 #include "global.h"
 #include "sound.h"
 
-// Karate Man
-
-extern void func_08021190(void);
-extern void func_080211a4(void);
-extern void func_080211e4(void);
-extern void func_08021210(u32);
-extern void func_0802139c(u32, u32);
-extern void func_080213d4(u32);
-extern void func_080213e4(void);
-extern void func_08021408(void);
-extern void func_08021424(void);
-extern void func_08021440(char *);
-extern void func_08021458(void);
-extern void func_080214a0(u32);
-extern void func_080214d4(u32);
-extern void func_08021524(void);
-extern void func_08021544(u8);
-extern void func_08021554(void);
-extern void func_080215cc(void);
-extern void func_0802160c(struct struct_080179f4 *);
-extern void func_08021644(struct struct_080179f4 *, struct KarateManCue *, u32);
-extern void func_08021740(struct KarateManCue *);
-extern void func_080217ec(struct KarateManCue *);
-extern void func_08021818(struct KarateManCue *);
-extern u32 func_08021888(u32, struct KarateManCue *, u32, u32);
-extern void func_08021974(u32, struct KarateManCue *);
-extern void func_080219a8(void);
-extern void func_08021a0c(void);
-extern void func_08021a60(struct struct_080179f4 *, struct KarateManCue *);
-extern void func_08021d38(struct struct_080179f4 *, struct KarateManCue *);
-extern void func_08021dcc(void);
-extern void func_08021dd8(struct KarateManJoe *);
-extern void func_08021e40(struct KarateManJoe *);
-extern void func_08021e58(struct KarateManJoe *);
-extern void func_08021e88(void);
-extern void func_08021f04(void);
-extern void func_08022010(u32);
-extern void func_08022050(void);
-extern void func_080220c4(void);
-extern void func_08022114(void);
-extern void func_08022170(void);
-extern void func_080221cc(void);
-extern void func_0802221c(u32);
-
 // Mannequin Factory
 
 // extern ? func_08022244(?);

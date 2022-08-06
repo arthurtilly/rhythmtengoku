@@ -6,17 +6,22 @@
 #include "src/code_0800b778.h"
 #include "src/code_08016e18.h"
 #include "src/lib_0804c870.h"
-
 asm(".include \"include/gba.inc\""); // Temporary
+
+// For readability.
+#define gBonOdoriInfo D_030055d0->gameInfo.bonOdori
 
 
 /* THE BON ODORI */
 
 
+// [func_080206a0] ?
 u32* func_080206a0(u32 arg0) {
     return D_089dec38[arg0][gBonOdoriInfo.unk0];
 }
 
+
+// [func_080206c0] ?
 void func_080206c0(void) {
     u32* anim;
     u32 i;
@@ -37,16 +42,22 @@ void func_080206c0(void) {
     gBonOdoriInfo.unk862 = 1;
 }
 
+
+// [func_0802075c] ?
 u32* func_0802075c(u32 animation, u32 donpan) {
     return func_080206a0(D_089dece0[animation][donpan]);
 }
 
+
+// [func_08020778] ?
 void func_08020778(u32 animation, u32 donpan) {
     u32* temp = func_0802075c(animation, donpan);
     func_0804d8f8(D_03005380, gBonOdoriInfo.unk44[donpan], temp, 0, 1, 0x7f, 0);
     gBonOdoriInfo.unk4C[donpan] = func_0800c3a4(D_089ded00[animation]);
 }
 
+
+// [func_080207d0] ENGINE Func_0B - Set Animation (CPU Donpans)
 void func_080207d0(u32 arg0) {
     u32 i;
     for (i = 0; i < 3; i++) {
@@ -54,15 +65,21 @@ void func_080207d0(u32 arg0) {
     }
 }
 
+
+// [func_080207ec] ENGINE Func_0C - Set Animation (Player)
 void func_080207ec(u32 arg0) {
     func_08020778(arg0, 3);
 }
 
+
+// [func_080207f8] ENGINE Func_0D - Set Animation (All Donpans)
 void func_080207f8(u32 arg0) {
     func_080207d0(arg0);
     func_080207ec(arg0);
 }
 
+
+// [func_0802080c] ENGINE Func_0E - ?
 void func_0802080c(u32 arg0) {
     u32 i;
     for (i = 0; i < 3; i++) {
@@ -71,6 +88,8 @@ void func_0802080c(u32 arg0) {
     
 }
 
+
+// [func_08020834] ?
 void func_08020834(void) {
     u32 i;
     for (i = 0; i < 4; i++) {
@@ -81,12 +100,16 @@ void func_08020834(void) {
     }
 }
 
+
+// [func_0802085c] GFX_INIT Func_02
 void func_0802085c(void) {
     func_0800c604(0);
     func_08017578();
     D_03004b10.bgPalette[12][2] = 0x7C00;
 }
 
+
+// [func_08020880] GFX_INIT Func_01
 void func_08020880(void) {
     u32 data;
 
@@ -95,6 +118,8 @@ void func_08020880(void) {
     func_08005d38(data, func_0802085c, 0);
 }
 
+
+// [func_080208c0] GFX_INIT Func_00
 void func_080208c0(void) {
     u32 data;
     func_0800c604(0);
@@ -102,6 +127,8 @@ void func_080208c0(void) {
     func_08005d38(data, func_08020880, 0);
 }
 
+
+// [func_080208ec] MAIN - Init
 void func_080208ec(u32 arg0) {
     u32 i;
 
@@ -135,31 +162,47 @@ void func_080208ec(u32 arg0) {
     gBonOdoriInfo.unk864 = 0;
 }
 
+
+// [func_08020a48] ENGINE Func_11 - STUB
 void func_08020a48(void) {
 }
 
+
+// [func_08020a4c] ?
 #include "asm/scenes/bon_odori/asm_08020a4c.s" // Decomp attempt at https://decomp.me/scratch/lhu93
 
+
+// [func_08020be4] ENGINE Func_00 - ?
 void func_08020be4(u8 arg0) {
     gBonOdoriInfo.unk38 = arg0;
 }
 
+
+// [func_08020bf4] ENGINE Func_01 - Show Text (Middle)
 void func_08020bf4(s32 arg0) {
     func_08020a4c(arg0, gBonOdoriInfo.unk38, 0);
 }
 
+
+// [func_08020c0c] ENGINE Func_02 - Show Text (Left)
 void func_08020c0c(s32 arg0) {
     func_08020a4c(arg0, gBonOdoriInfo.unk38, 1);
 }
 
+
+// [func_08020c24] ENGINE Func_03 - Show Text (Right)
 void func_08020c24(s32 arg0) {
     func_08020a4c(arg0, gBonOdoriInfo.unk38, 2);
 }
 
+
+// [func_08020c3c] ENGINE Func_04 - ?
 void func_08020c3c(s32 arg0) {
     gBonOdoriInfo.unk3C = -arg0;
 }
 
+
+// [func_08020c4c] ?
 void func_08020c4c(u32 arg0) {
     struct BonOdoriInfo_sub* temp;
     func_0800c604(0);
@@ -168,6 +211,8 @@ void func_08020c4c(u32 arg0) {
     func_0804d8c4(D_03005380, temp->unk0, 0xa);
 }
 
+
+// [func_08020c8c] ENGINE Func_05 - Highlight Text
 void func_08020c8c(u32 arg0) {
     s32 temp0;
     s32 temp1;
@@ -189,35 +234,49 @@ void func_08020c8c(u32 arg0) {
     }
 }
 
+
+// [func_08020d20] ENGINE Func_06 - Lighten Screen (Gradual)
 void func_08020d20(u32 arg0) {
     func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.bgPalDarkBuf[0], gBonOdoriInfo.bgPalDark, D_03004b10.bgPalette[0]);
     func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.objPalDarkBuf[0], gBonOdoriInfo.objPalDark, D_03004b10.objPalette[0]);
 }
 
+
+// [func_08020da0] ENGINE Func_07 - Darken Screen (Gradual)
 void func_08020da0(u32 arg0) {
     func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.bgPalDark, gBonOdoriInfo.bgPalDarkBuf[0], D_03004b10.bgPalette[0]);
     func_08001fe0(func_0800c3b8(), func_0800c3a4(arg0), 7, gBonOdoriInfo.objPalDark, gBonOdoriInfo.objPalDarkBuf[0], D_03004b10.objPalette[0]);
 }
 
+
+// [func_08020e1c] ENGINE Func_08 - ?
 void func_08020e1c(void) {
     func_080018e0(0, &D_03004b10.bgPalette, 0xe0, 0x10, 0x200);
     func_080018e0(0, &D_03004b10.objPalette, 0xe0, 0x10, 0x200);
 }
 
+
+// [func_08020e50] ENGINE Func_09 - Lighten Screen (Instant)
 void func_08020e50(void) {
     func_0800186c(gBonOdoriInfo.bgPalDark, D_03004b10.bgPalette[0], 0xe0, 0x10, 0x200);
     func_0800186c(gBonOdoriInfo.objPalDark, D_03004b10.objPalette[0], 0xe0, 0x10, 0x200);
 }
 
+
+// [func_08020e90] ENGINE Func_0A - Darken Screen (Instant)
 void func_08020e90(void) {
     func_0800186c(&gBonOdoriInfo.bgPalDarkBuf[0], D_03004b10.bgPalette[0], 0xe0, 0x10, 0x200);
     func_0800186c(&gBonOdoriInfo.objPalDarkBuf[0], D_03004b10.objPalette[0], 0xe0, 0x10, 0x200);
 }
 
+
+// [func_08020ed4] ENGINE Func_0F - Test Player Inputs
 void func_08020ed4(void) {
     gBonOdoriInfo.unk860 = 0;
 }
 
+
+// [func_08020ee8] ENGINE Func_10 - React to Player Inputs
 void func_08020ee8(void) {
     u8 temp0;
     u32 temp1 = gBonOdoriInfo.unk860;
@@ -243,6 +302,8 @@ void func_08020ee8(void) {
     }
 }
 
+
+// [func_08020f48] MAIN - Update
 void func_08020f48(void) {
     if (gBonOdoriInfo.unk864 != 0) {
         gBonOdoriInfo.unk864 -= 1;
@@ -256,17 +317,21 @@ void func_08020f48(void) {
     }
 }
 
+
+// [func_08020f8c] MAIN - Close
 void func_08020f8c(void) {
     func_0800e128();
 }
 
-// Cue call handler
+
+// [func_08020f98] CUE - Spawn
 void func_08020f98(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     arg1->unk0.u8[0] = arg2;
     gBonOdoriInfo.unk862 = arg2;
 }
 
-// Cue update
+
+// [func_08020fb0] CUE - Update
 u8 func_08020fb0(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     u32 temp = func_0800c3a4(0x30);
     if (arg2 > temp) {
@@ -276,30 +341,36 @@ u8 func_08020fb0(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
     }
 }
 
-// Cue end
+
+// [func_08020fcc] CUE - Despawn
 void func_08020fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
 }
 
-// Successful cue hit
+
+// [func_08020fd0] CUE - Hit
 void func_08020fd0(u32 arg0, struct struct_080179f4_sub *arg1) {
     func_080207ec(arg1->unk0.u8[0]);
     func_08002634(&s_HC_seqData);
 }
 
-// "Barely/near" hit
+
+// [func_08020fe8] CUE - Barely
 void func_08020fe8(u32 arg0, struct struct_080179f4_sub *arg1) {
     func_080207ec(arg1->unk0.u8[0]);
     func_08002634(&s_tebyoushi_pati_seqData);
     gBonOdoriInfo.unk42 = TRUE;
 }
 
-// Cue miss
+
+// [func_0802100c] CUE - Miss
 void func_0802100c(u32 arg0, struct struct_080179f4_sub *arg1) {
     gBonOdoriInfo.unk860 += 1;
     func_0800bc40();
     gBonOdoriInfo.unk42 = TRUE;
 }
 
+
+// [func_08021034] MAIN - Input Event
 void func_08021034(void) {
     gBonOdoriInfo.unk864 = func_0800c3a4(6);
     func_08017338(0, 0);
@@ -308,6 +379,8 @@ void func_08021034(void) {
     func_08002634(&s_HC_seqData);
 }
 
+
+// [func_08021084] COMMON Func_00 - Beat Animation
 void func_08021084(void) {
     u32 i;
     u32* temp;
@@ -337,8 +410,11 @@ void func_08021084(void) {
 }
 
 
+// [func_08021188] COMMON Func_01 - STUB
 void func_08021188(void) {
 }
 
+
+// [func_0802118c] COMMON Func_02 - STUB
 void func_0802118c(void) {
 }
