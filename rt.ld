@@ -36,6 +36,10 @@ SECTIONS {
 		build/src/engines/rhythm_tweezers.c.o(.bss*);
 		build/src/engines/fireworks.c.o(.bss*);
 		build/src/engines/clappy_trio.c.o(.bss*);
+		build/src/engines/samurai_slice.c.o(.bss*);
+		build/src/engines/power_calligraphy.c.o(.bss*);
+		build/src/engines/rhythm_test.c.o(.bss*);
+		build/src/engines/marching_orders.c.o(.bss*);
 		build/src/scenes.c.o(.bss*);
 		build/src/code_08047e50.c.o(.bss*);
 	}
@@ -76,6 +80,10 @@ SECTIONS {
 		build/src/engines/rhythm_tweezers.c.o(.text);
 		build/src/engines/fireworks.c.o(.text);
 		build/src/engines/clappy_trio.c.o(.text);
+		build/src/engines/samurai_slice.c.o(.text);
+		build/src/engines/power_calligraphy.c.o(.text);
+		build/src/engines/rhythm_test.c.o(.text);
+		build/src/engines/marching_orders.c.o(.text);
         build/src/scenes.c.o(.text);
 		build/src/code_08047e50.c.o(.text);
         build/bin/bindata_080482e0.bin.o(.rodata*); /* More ARM assembly */

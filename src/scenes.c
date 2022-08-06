@@ -9,14 +9,6 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-#include "src/scenes/samurai_slice.inc.c"
-
-#include "src/scenes/power_calligraphy.inc.c"
-
-#include "src/scenes/rhythm_test.inc.c"
-
-#include "src/scenes/marching_orders.inc.c"
-
 #include "src/scenes/mr_upbeat.inc.c"
 
 #include "src/scenes/metronome.inc.c"
