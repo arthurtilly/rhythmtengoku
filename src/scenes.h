@@ -1,41 +1,7 @@
 #pragma once
 
 #include "global.h"
-
-// Sneaky Spirits
-
-extern void func_0801ee98(u32);     // [func_0801ee98] ENGINE Func_00 - Appear At Position
-extern void func_0801ef70(void);    // [func_0801ef70] Initialise Rain
-extern void func_0801f040(void);    // [func_0801f040] Update Rain
-extern void func_0801f17c(void);    // [func_0801f17c] Update Rain If Not In Slow-Motion
-extern void func_0801f194(u32);     // [func_0801f194] Set Rain Speed
-extern void func_0801f30c(u32);     // [func_0801f30c] ENGINE Func_06 - Set Rain Speed (Tutorial)
-extern void func_0801f318(u32);     // [func_0801f318] ENGINE Func_07 - Freeze Slow-Motion Rain (Tutorial)
-extern void func_0801f328(void);    // [func_0801f328] GFX_INIT Func_02
-extern void func_0801f338(void);    // [func_0801f338] GFX_INIT Func_01
-extern void func_0801f378(void);    // [func_0801f378] GFX_INIT Func_00
-extern void func_0801f3a4(u32);     // [func_0801f3a4] MAIN - Init
-extern void func_0801f5bc(void);    // [func_0801f5bc] ENGINE Func_0A - STUB
-extern void func_0801f5c0(u32);     // [func_0801f5c0] ENGINE Func_01 - Next Vertical Position
-extern void func_0801f5f4(void);    // [func_0801f5f4] ENGINE Func_02 - Bow Appear
-extern void func_0801f638(void);    // [func_0801f638] ENGINE Func_03 - Draw Bow
-extern void func_0801f684(u32);     // [func_0801f684] ENGINE Func_04 - Play Wind/Rain SFX
-extern void func_0801f6d0(void);    // [func_0801f6d0] Cross-Fade Music and Wind/Rain SFX
-extern void func_0801f71c(char *);  // [func_0801f71c] ENGINE Func_05 - Display Text (Tutorial)
-extern void func_0801f76c(u32);     // [func_0801f76c] ENGINE Func_08 - Display Dashing Sneaky Spirit (Tutorial)
-extern void func_0801f794(u32);     // [func_0801f794] ENGINE Func_09 - Animate Dashing Sneaky Spirit (Tutorial)
-extern void func_0801f7bc(void);    // [func_0801f7bc] MAIN - Update
-extern void func_0801f7cc(void);    // [func_0801f7cc] MAIN - Close
-extern void func_0801f7e8(u32, struct SneakySpiritsCue *, u32); // [func_0801f7e8] CUE - Spawn
-extern u32  func_0801f7f0(u32, struct SneakySpiritsCue *, u32); // [func_0801f7f0] CUE - Update
-extern void func_0801f80c(u32, struct SneakySpiritsCue *, u32); // [func_0801f80c] CUE - Despawn (STUB)
-extern void func_0801f810(void);    // [func_0801f810] Revert Slow-Motion Effects
-extern void func_0801f8d0(u32, struct SneakySpiritsCue *, u32); // [func_0801f8d0] CUE - Hit
-extern void func_0801fa4c(u32, struct SneakySpiritsCue *, u32); // [func_0801fa4c] CUE - Barely
-extern void func_0801fb14(u32, struct SneakySpiritsCue *, u32); // [func_0801fb14] CUE - Miss
-extern void func_0801fbb0(void);    // [func_0801fbb0] MAIN - Input Event
-extern void func_0801fc3c(void);    // [func_0801fc3c] COMMON Func_00 - STUB
-extern void func_0801fc40(void);    // [func_0801fc40] COMMON Func_01 - STUB
+#include "sound.h"
 
 // Spaceball
 
@@ -713,27 +679,27 @@ extern void func_0802f380(void);        // [func_0802f380] ENGINE Func_05 - Unkn
 
 // Fireworks
 
-// extern ? func_0802f3a4(?);
-// extern ? func_0802f3b4(?);
-// extern ? func_0802f3f4(?);
-// extern ? func_0802f420(?);
-// extern ? func_0802f5b8(?);
-// extern ? func_0802f5f0(?);
-// extern ? func_0802f650(?);
-// extern ? func_0802f664(?);
-// extern ? func_0802f74c(?);
-// extern ? func_0802fc38(?);
-// extern ? func_0802fc6c(?);
-// extern ? func_0802fc70(?);
-// extern ? func_0802ff70(?);
-// extern ? func_08030114(?);
-// extern ? func_0803012c(?);
-// extern ? func_080301d0(?);
-// extern ? func_08030288(?);
-// extern ? func_08030294(?);
-// extern ? func_08030298(?);
-// extern ? func_0803029c(?);
-// extern ? func_0803031c(?);
+// extern ? func_0802f3a4(?); // [func_0802f3a4] GFX_INIT Func_02
+// extern ? func_0802f3b4(?); // [func_0802f3b4] GFX_INIT Func_01
+// extern ? func_0802f3f4(?); // [func_0802f3f4] GFX_INIT Func_00
+// extern ? func_0802f420(?); // [func_0802f420] MAIN - Init
+// extern ? func_0802f5b8(?); // [func_0802f5b8] ENGINE Func_00 - Set Pattern Mode
+// extern ? func_0802f5f0(?); // [func_0802f5f0] ENGINE Func_01 - Play Sound
+// extern ? func_0802f650(?); // [func_0802f650] ENGINE Func_02 - Set Pattern
+// extern ? func_0802f664(?); // [func_0802f664] Update Particles
+// extern ? func_0802f74c(?); // [func_0802f74c] Create Explosion
+// extern ? func_0802fc38(?); // [func_0802fc38] MAIN - Update
+// extern ? func_0802fc6c(?); // [func_0802fc6c] MAIN - Close (STUB)
+// extern ? func_0802fc70(?); // [func_0802fc70] CUE - Spawn
+// extern ? func_0802ff70(?); // [func_0802ff70] CUE - Update
+// extern ? func_08030114(?); // [func_08030114] CUE - Despawn
+// extern ? func_0803012c(?); // [func_0803012c] CUE - Hit
+// extern ? func_080301d0(?); // [func_080301d0] CUE - Barely
+// extern ? func_08030288(?); // [func_08030288] CUE - Miss
+// extern ? func_08030294(?); // [func_08030294] MAIN - Input Event (STUB)
+// extern ? func_08030298(?); // [func_08030298] COMMON Func_00 - STUB
+// extern ? func_0803029c(?); // [func_0803029c] COMMON Func_01 - Display Text
+// extern ? func_0803031c(?); // [func_0803031c] COMMON Func_02 - Set Tutorial Mode
 
 // Clappy Trio
 

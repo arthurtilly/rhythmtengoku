@@ -23,6 +23,7 @@ SECTIONS {
 		build/src/results.c.o(.bss*);
 		build/src/code_0801a384.c.o(.bss*);
 		build/src/code_0801d860.c.o(.bss*);
+		build/src/engines/sneaky_spirits.c.o(.bss*);
 		build/src/scenes.c.o(.bss*);
 		build/src/code_08047e50.c.o(.bss*);
 	}
@@ -50,6 +51,7 @@ SECTIONS {
 		build/src/results.c.o(.text);
 		build/src/code_0801a384.c.o(.text);
         build/src/code_0801d860.c.o(.text);
+		build/src/engines/sneaky_spirits.c.o(.text);
         build/src/scenes.c.o(.text);
 		build/src/code_08047e50.c.o(.text);
         build/bin/bindata_080482e0.bin.o(.rodata*); /* More ARM assembly */

@@ -380,7 +380,7 @@ struct SneakySpiritsCue {
 };
 
 struct SneakySpiritsInfo {
-    u32 *unk0;          // Pointer: ??? (Related to Tutorial Text)
+    u32 *unk0;          // Pointer: Font? (Related to Tutorial Text)
     u8  version;        // Value:   Version
     u8  rainSlow;       // Flag:    Slow-Motion Rain
     s16 rainDrops[30];      // Sprite:  Raindrops
@@ -499,6 +499,43 @@ struct SpaceballInfo {
 };
 
 
+struct FireworksCue {
+    s16 sprite;     // Sprite
+    s32 x;          // X Position
+    s32 y;          // Y Position
+    s32 velX;       // X Velocity
+    s32 velY;       // Y Velocity
+    s32 targetX;    // Target X Position
+    s32 targetY;    // Target Y Position
+    u8  pattern;    // Pattern ID
+    u8  state;      // Current State (range varies between cues)
+    u8  type;       // Cue Type { 0..2 }
+    u8  exploded;   // Has Exploded
+};
+
+struct FireworksInfo {
+    u8  version;    // Version Number
+    u32 *unk4;      // Font?
+    s16 textSprite; // Tutorial Text (Sprite)
+    struct FireworksParticle {
+        s16 sprite;     // Sprite
+        u8  active;     // Currently in-use.
+        s32 x;          // X Position
+        s32 y;          // Y Position
+        s32 velX;       // X Velocity
+        s32 velY;       // Y Velocity
+        u8  initAngle;  // Trajectory Angle
+        s32 initVel;    // Trajectory Velocity
+        u8  colour;     // Colour ID { 0..3 }
+    } particles[72];        // Firework Particle Entities
+    s16 skipTutorialSprite; // Unused "Start to Skip" Text (Sprite)
+    u8  unk90E;             // ??
+    u8  patternTableNext;   // Current Position in Fireworks 1 Pattern Table
+    u8  patternMode;        // Pattern-Handling Mode { 0..3 }
+    u8  patternDefault;     // Pattern ID to use if Pattern Mode is not within { 0..3 }
+};
+
+
 struct struct_030055d0 {
     union {
         struct KarateManInfo karateMan;
@@ -509,6 +546,7 @@ struct struct_030055d0 {
         struct PrologueInfo prologues;
         struct BonOdoriInfo bonOdori;
         struct SpaceballInfo spaceball;
+        struct FireworksInfo fireworks;
     } gameInfo;
 };
 
