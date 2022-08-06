@@ -122,4 +122,4 @@ extern void func_08030288(u32, struct FireworksCue *, u32, u32); // [func_080302
 extern void func_08030294(void);    // [func_08030294] MAIN - Input Event (STUB)
 extern void func_08030298(void);    // [func_08030298] COMMON Func_00 - STUB
 extern void func_0803029c(char *);  // [func_0803029c] COMMON Func_01 - Display Text
-extern void func_0803031c(u32);     // [func_0803031c] COMMON Func_02 - Set Tutorial Mode
+extern void func_0803031c(u32);     // [func_0803031c] COMMON Func_02 - Set Tutorial Mode?

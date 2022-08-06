@@ -59,8 +59,8 @@ void func_0802f420(u32 ver) {
     D_03004b10.unk50 = 0;
     gFireworksInfo.skipTutorialSprite = func_0804d160(D_03005380, D_088e93bc, 0, 208, 152, 0x802, 0, 0, 0);
     func_0804d770(D_03005380, gFireworksInfo.skipTutorialSprite, 0);
-    gFireworksInfo.patternMode = 0;
-    gFireworksInfo.patternDefault = 0;
+    gFireworksInfo.patternMode = FIREWORKS_PATTERN_MODE_0;
+    gFireworksInfo.patternDefault = FIREWORKS_PATTERN_L3;
 
     for (i = 0; i < 72; i++) {
         gFireworksInfo.particles[i].sprite = func_0804d160(D_03005380, D_088e8f64, 0, 0, 0, 0x801, 0, 0, 0);
@@ -131,7 +131,7 @@ void func_0802f664(void) {
             gFireworksInfo.particles[i].velY += 6;
             func_0804d5d4(D_03005380, gFireworksInfo.particles[i].sprite, FIXED_TO_INT(gFireworksInfo.particles[i].x), FIXED_TO_INT(gFireworksInfo.particles[i].y));
             if ((s8) func_0804d6cc(D_03005380, gFireworksInfo.particles[i].sprite) >= D_0805a41c[gFireworksInfo.particles[i].colour]) {
-                gFireworksInfo.particles[i].active = 0;
+                gFireworksInfo.particles[i].active = FALSE;
                 func_0804d770(D_03005380, gFireworksInfo.particles[i].sprite, 0);
             }
         }
@@ -366,7 +366,7 @@ void func_0802fc70(u32 arg0, struct FireworksCue *cue, u32 type, u32 arg3) {
 
     cue->type = type;
     cue->state = 0;
-    cue->exploded = 0;
+    cue->exploded = FALSE;
 
     switch (gFireworksInfo.patternMode) {
         case FIREWORKS_PATTERN_MODE_0:
@@ -537,7 +537,8 @@ void func_0803012c(u32 arg0, struct FireworksCue *cue, u32 arg2, u32 arg3) {
         cue->state = 1;
         func_0804d8f8(D_03005380, cue->sprite, D_088e90c4, 0, 1, 127, 0);
         gFireworksInfo.unk90E = 0x10;
-    } else {
+    }
+    else {
         func_0804d8f8(D_03005380, cue->sprite, D_088e8f34, 0, 1, 127, 0);
         func_0802f74c(cue->pattern, cue->targetX, cue->targetY);
     }
@@ -620,11 +621,11 @@ void func_0803029c(char *text) {
 }
 
 
-// [func_0803031c] COMMON Func_02 - Set Tutorial Mode
-void func_0803031c(u32 isTutorial) {
-    if (isTutorial) {
+// [func_0803031c] COMMON Func_02 - Set Tutorial Mode?
+void func_0803031c(u32 arg) {
+    if (arg) {
         func_08017448(1);
-        func_08017458(isTutorial);
+        func_08017458(arg);
         func_0804d770(D_03005380, gFireworksInfo.skipTutorialSprite, 1);
     } else {
         func_08017448(0);
