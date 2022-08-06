@@ -9,12 +9,6 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-#include "src/scenes/tap_trial.inc.c"
-
-#include "src/scenes/toss_boys.inc.c"
-
-#include "src/scenes/tram_and_pauline.inc.c"
-
 #include "src/scenes/mechanical_horse.inc.c"
 
 #include "src/scenes/sick_beats.inc.c"
