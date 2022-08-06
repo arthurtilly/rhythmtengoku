@@ -63,14 +63,41 @@ struct FireworksParticleTrajectory {
 };
 
 // OAM Animations:
+extern u32 D_088e8f14[]; // Animation: ?
+extern u32 D_088e8f34[]; // Animation: ?
+extern u32 D_088e8f64[]; // Animation: Particle
+extern u32 D_088e8fb4[]; // Animation: ?
+extern u32 D_088e905c[]; // Animation: ?
+extern u32 D_088e90ac[]; // Animation: "taiko_bomber_launch"
+extern u32 D_088e90c4[]; // Animation: ?
+extern u32 D_088e92dc[]; // Animation: ?
+extern u32 D_088e93bc[]; // Animation: "Start to Skip" Text (unused)
+extern u32 D_088e93cc[]; // Animation: ?
+extern u32 D_088e93ec[]; // Animation: "spirit_sparkler_launch"
+extern u32 D_088e940c[]; // Animation: "normal_firework_launch"
 
 // Palettes:
 
 // Sound Effects:
+extern const struct SequenceData s_intro_comeon_seqData;
+extern const struct SequenceData s_intro_one_seqData;
+extern const struct SequenceData s_intro_two_seqData;
+extern const struct SequenceData s_intro_three_seqData;
+extern const struct SequenceData s_f_hanabi_v_nuei_seqData;
+extern const struct SequenceData s_hanabi_hyu_seqData;
+extern const struct SequenceData s_f_hanabi_v_tamaya_seqData;
+extern const struct SequenceData s_hanabi_ah_seqData;
+extern const struct SequenceData s_f_hanabi_kansei_seqData;
 
 // Engine Data:
+extern const char D_0805a3d0[];
+extern const struct FireworksPatternColours D_0805a3d4[];
+extern const s32 D_0805a41c[];
+extern const struct FireworksParticleTrajectory D_0805a42c[];
+extern const s32 D_0805a524[];
 
 // Engine Definition Data:
+extern u16 D_089e43e8[]; // Data: Expiration Time?
 
 // Functions:
 // extern ? func_0802f3a4(?); // [func_0802f3a4] GFX_INIT Func_02
