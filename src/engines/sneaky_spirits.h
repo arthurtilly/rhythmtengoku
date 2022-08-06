@@ -3,6 +3,50 @@
 #include "global.h"
 #include "sound.h"
 
+// For readability. !TODO - CHANGE/REMOVE
+#define gSneakySpiritsInfo D_030055d0->gameInfo.sneakySpirits
+
+// Game-Specific Macros:
+#define SNEAKY_SPIRITS_VERSION_1 0
+#define SNEAKY_SPIRITS_VERSION_REMIX 1
+#define SNEAKY_SPIRITS_VERSION_2 2
+
+// OAM Animations:
+extern u32 D_088a0ca0; // Animation: "bow_draw"
+extern u32 D_088a0cd0; // Animation: "ghost_hit"
+extern u32 D_088a0cf8; // Animation: "door_back_wall"
+extern u32 D_088a0d08; // Animation: "door_open"
+extern u32 D_088a0d80; // Animation: "ghost_miss_taunt"
+extern u32 D_088a0df0; // Animation: "arrow_miss"
+extern u32 D_088a0e80; // Animation: "ghost_barely_scared"
+extern u32 D_088a0f28; // Animation: "tree"
+extern u32 D_088a0f58; // Animation: "ghost_walk"
+extern u32 D_088a0fb8; // Animation: "ghost_miss_dash"
+extern u32 D_088a0fd8; // Animation: "rain_fall"
+extern u32 D_088a1000; // Animation: "rain_splash"
+extern u32 D_088a1010; // Animation: "rain_fall_slow"
+extern u32 D_088a1158; // Animation: "bow_shoot"
+extern u32 D_088a11a8; // Animation: "ghost_mask" (might be masking)
+extern u32 D_088a11b8; // Animation: "ghost_barely_run"
+extern u32 D_088a1258; // Animation: "arrow_hit"
+extern u32 D_088a1280; // Animation: "ghost_dash_tutorial"
+
+// Sound Effects:
+extern const struct SequenceData s_ghost_rain_seqData;           // Sound: Wind/Rain
+extern const struct SequenceData s_ghost_gosha_seqData;          // Sound: Arrow Missed
+extern const struct SequenceData s_ghost_walk_seqData;           // Sound: Ghost Moving
+extern const struct SequenceData s_f_aim_just_hit_seqData;       // Sound: Ghost Hit
+extern const struct SequenceData s_f_aim_just_hit_voice_seqData; // Sound: Ghost Hit Voice
+extern const struct SequenceData s_ghost_miss_hit_seqData;       // Sound: Ghost Barely
+extern const struct SequenceData s_ghost_dash_seqData;           // Sound: Ghost Miss
+extern const struct SequenceData s_ghost_warai_seqData;          // Sound: Ghost Miss Voice
+
+// Additional Data:
+extern char D_08059f90;   // Empty Default Text
+extern u32  D_089de6e0;   // GFX Null
+extern u32 *D_089de7a4[]; // GFX Struct Index
+
+// Functions:
 extern void func_0801ee98(u32);     // [func_0801ee98] ENGINE Func_00 - Appear At Position
 extern void func_0801ef70(void);    // [func_0801ef70] Initialise Rain
 extern void func_0801f040(void);    // [func_0801f040] Update Rain
