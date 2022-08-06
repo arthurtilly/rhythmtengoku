@@ -26,7 +26,7 @@ extern struct struct_03004ad0 D_03004ad0;
 // extern ? func_08003a78(?);
 // extern ? func_08003a88(?);
 // extern ? func_08003aa4(?);
-// extern ? func_08003ab8(?);
+extern u32  func_08003ab8();
 // extern ? func_08003ac4(?);
 // extern ? func_08003b28(?);
 // extern ? func_08003b34(?);

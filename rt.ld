@@ -56,7 +56,8 @@ SECTIONS {
 		build/src/engines/mechanical_horse.c.o(.bss*);
 		build/src/engines/sick_beats.c.o(.bss*);
 		build/src/engines/machines.c.o(.bss*);
-		build/src/scenes.c.o(.bss*);
+		build/src/engines/wizards_waltz.c.o(.bss*);
+		build/src/engines/prologues.c.o(.bss*);
 		build/src/code_08047e50.c.o(.bss*);
 	}
 	
@@ -116,7 +117,8 @@ SECTIONS {
 		build/src/engines/mechanical_horse.c.o(.text);
 		build/src/engines/sick_beats.c.o(.text);
 		build/src/engines/machines.c.o(.text);
-        build/src/scenes.c.o(.text);
+		build/src/engines/wizards_waltz.c.o(.text);
+		build/src/engines/prologues.c.o(.text);
 		build/src/code_08047e50.c.o(.text);
         build/bin/bindata_080482e0.bin.o(.rodata*); /* More ARM assembly */
         build/src/lib_08049144.c.o(.text);
