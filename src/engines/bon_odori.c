@@ -1,18 +1,17 @@
-#define gBonOdoriInfo D_030055d0->gameInfo.bonOdori
+#include "src/engines/bon_odori.h"
 
-extern const struct SequenceData s_tebyoushi_pati_seqData;
-extern const struct SequenceData s_HC_seqData;
+#include "src/code_08001360.h"
+#include "src/code_08003980.h"
+#include "src/code_08007468.h"
+#include "src/code_0800b778.h"
+#include "src/code_08016e18.h"
+#include "src/lib_0804c870.h"
 
-extern u16 *D_089deed4[];  // Index of pointers to palettes.
-extern u16 *D_089deecc[];  // Another index of pointers to palettes (more like sub-palettes).
+asm(".include \"include/gba.inc\""); // Temporary
 
-extern u16 D_089ded00[8];  // Seemingly numbers of ticks for animations.
-extern u8* D_089dece0[];   // Contains Donpan animation indexes. (Subarrays are the same animation but for different donpans)
-extern u32** D_089dec38[]; // Pointers to animation arrays, with each one consisting of two animations.
 
-extern u32 D_089ded10;     // GFX related
+/* THE BON ODORI */
 
-extern u32* D_089deec4[];
 
 u32* func_080206a0(u32 arg0) {
     return D_089dec38[arg0][gBonOdoriInfo.unk0];

@@ -41,8 +41,10 @@ extern const struct SequenceData s_ghost_miss_hit_seqData;       // Sound: Ghost
 extern const struct SequenceData s_ghost_dash_seqData;           // Sound: Ghost Miss
 extern const struct SequenceData s_ghost_warai_seqData;          // Sound: Ghost Miss Voice
 
-// Additional Data:
+// Miscellaneous Engine Data:
 extern char D_08059f90;   // Empty Default Text
+
+// Engine Definition Data:
 extern u32  D_089de6e0;   // GFX Null
 extern u32 *D_089de7a4[]; // GFX Struct Index
 

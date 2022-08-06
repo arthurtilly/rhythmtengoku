@@ -22,7 +22,7 @@ extern u32 D_088a1bd0; // Animation: "umpire_sway"
 // Sound Effects:
 extern const struct SequenceData s_f_batter_ball_land_seqData;
 
-// Additional Data:
+// Engine Definition Data:
 extern u32  D_089de93c;    // GFX-related Null
 extern u32  D_089de940[];  // GFX Init Struct
 extern u32 *D_089de988[3]; // Batter Animations (Close)

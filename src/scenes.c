@@ -9,8 +9,6 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-#include "src/scenes/bon_odori.inc.c"
-
 #include "src/scenes/karate_man.inc.c"
 
 #include "src/scenes/mannequin_factory.inc.c"
