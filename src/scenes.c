@@ -9,12 +9,6 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-#include "src/scenes/rhythm_tweezers.inc.c"
-
-#include "src/scenes/fireworks.inc.c"
-
-#include "src/scenes/clappy_trio.inc.c"
-
 #include "src/scenes/samurai_slice.inc.c"
 
 #include "src/scenes/power_calligraphy.inc.c"

@@ -33,6 +33,9 @@ SECTIONS {
 		build/src/engines/night_walk.c.o(.bss*);
 		build/src/engines/showtime.c.o(.bss*);
 		build/src/engines/bouncy_road.c.o(.bss*);
+		build/src/engines/rhythm_tweezers.c.o(.bss*);
+		build/src/engines/fireworks.c.o(.bss*);
+		build/src/engines/clappy_trio.c.o(.bss*);
 		build/src/scenes.c.o(.bss*);
 		build/src/code_08047e50.c.o(.bss*);
 	}
@@ -70,6 +73,9 @@ SECTIONS {
 		build/src/engines/night_walk.c.o(.text);
 		build/src/engines/showtime.c.o(.text);
 		build/src/engines/bouncy_road.c.o(.text);
+		build/src/engines/rhythm_tweezers.c.o(.text);
+		build/src/engines/fireworks.c.o(.text);
+		build/src/engines/clappy_trio.c.o(.text);
         build/src/scenes.c.o(.text);
 		build/src/code_08047e50.c.o(.text);
         build/bin/bindata_080482e0.bin.o(.rodata*); /* More ARM assembly */
