@@ -44,6 +44,9 @@ SECTIONS {
 		build/src/engines/metronome.c.o(.bss*);
 		build/src/engines/polyrhythm.c.o(.bss*);
 		build/src/engines/concert_hall.c.o(.bss*);
+		build/src/engines/quiz_show.c.o(.bss*);
+		build/src/engines/bunny_hop.c.o(.bss*);
+		build/src/engines/rap_men.c.o(.bss*);
 		build/src/scenes.c.o(.bss*);
 		build/src/code_08047e50.c.o(.bss*);
 	}
@@ -92,6 +95,9 @@ SECTIONS {
 		build/src/engines/metronome.c.o(.text);
 		build/src/engines/polyrhythm.c.o(.text);
 		build/src/engines/concert_hall.c.o(.text);
+		build/src/engines/quiz_show.c.o(.text);
+		build/src/engines/bunny_hop.c.o(.text);
+		build/src/engines/rap_men.c.o(.text);
         build/src/scenes.c.o(.text);
 		build/src/code_08047e50.c.o(.text);
         build/bin/bindata_080482e0.bin.o(.rodata*); /* More ARM assembly */
