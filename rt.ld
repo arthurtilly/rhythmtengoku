@@ -144,6 +144,8 @@ SECTIONS {
         build/data/data_08052464.c.o(.rodata*);
         build/data/data_08054950.s.o(.rodata*);
         build/data/data_08058f58.s.o(.rodata*);
+        build/data/fireworks_data.s.o(.rodata*);
+        build/data/data_0805a5d0.s.o(.rodata*);
         
         build/audio/samples/sfx_001.pcm.o(.rodata*);
         build/audio/samples/sfx_002.pcm.o(.rodata*);
