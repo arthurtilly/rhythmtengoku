@@ -73,7 +73,7 @@ extern u32  func_08003ab8();
 // extern ? func_08004b60(?);
 // extern ? func_08004b70(?);
 // extern ? func_08004b88(?);
-extern u32 *func_08004b98(u32 *, char *, u32, u32);
+extern u32 *func_08004b98(u32 *, const char *, u32, u32);
 // extern ? func_08004bfc(?);
 extern u32 *func_08004c0c(u32 *, char **, u32, u32);
 // extern ? func_08004c40(?);

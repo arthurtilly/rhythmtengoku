@@ -56,7 +56,7 @@ extern u32 func_0800c1a8(void);
 // extern ? func_0800c390(?);
 // extern ? func_0800c394(?);
 // extern ? func_0800c398(?);
-extern u32 func_0800c3a4(u32);
+extern s32 func_0800c3a4(u32);
 extern u32 func_0800c3b8();
 // extern ? func_0800c3c4(?);
 // extern ? func_0800c3e4(?);

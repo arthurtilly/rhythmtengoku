@@ -131,7 +131,7 @@ u32 func_0800c1a8(void) {
 #include "asm/code_0800b778/asm_0800c398.s"
 
 // Parse beat values.
-u32 func_0800c3a4(u32 arg0) {
+s32 func_0800c3a4(u32 arg0) {
     fast_divsi3(arg0 << 8, D_030053c0.unk14);
 }
 
