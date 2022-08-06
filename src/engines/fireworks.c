@@ -6,6 +6,7 @@
 #include "src/code_0800b778.h"
 #include "src/lib_0804c870.h"
 
+// For readability.
 #define gFireworksInfo D_030055d0->gameInfo.fireworks
 
 
@@ -249,6 +250,7 @@ void func_0802f74c(u8 pattern, s32 x, s32 y) {
                 gFireworksInfo.particles[i].initVel = 480;
             }
         }
+
         else if (pattern == FIREWORKS_PATTERN_SP_SPIRAL) {
             // Inner Loop [16 Particles]
             if (i < (min + 16)) {
@@ -261,6 +263,7 @@ void func_0802f74c(u8 pattern, s32 x, s32 y) {
                 gFireworksInfo.particles[i].initVel = ((i - min - 16) * 16) + 400;
             }
         }
+
         else if (pattern == FIREWORKS_PATTERN_SP_SMILE) {
             // Left Eye [8 Particles]
             if (i < (min + 8)) {
@@ -278,11 +281,13 @@ void func_0802f74c(u8 pattern, s32 x, s32 y) {
                 gFireworksInfo.particles[i].initVel = 480;
             }
         }
+
         else if (pattern == FIREWORKS_PATTERN_SP_TSUNKU) {
             // This one just reads it from a table, lol.
             gFireworksInfo.particles[i].initAngle = D_0805a42c[i - min].initAngle;
             gFireworksInfo.particles[i].initVel = D_0805a42c[i - min].initVelocity;
         }
+
         else { // STANDARD FIREWORK PATTERN
             // Inner Circle [8 Particles]
             if (i < (min + 8)) {
