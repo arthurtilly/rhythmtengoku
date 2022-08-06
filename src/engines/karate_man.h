@@ -40,6 +40,8 @@ extern const struct SequenceData s_f_boxing_normal_seqData;
 extern const struct SequenceData s_f_boxing_kansei_seqData;
 extern const struct SequenceData s_f_boxing_v_nua_seqData;
 
+// Engine Data:
+
 // Engine Definition Data:
 extern u32 *D_089df064[];   // GFX-related
 extern u32 *D_089df1ac[];   // GFX Struct Index

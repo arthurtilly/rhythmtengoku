@@ -1,3 +1,11 @@
+#include "src/engines/mannequin_factory.h"
+
+asm(".include \"include/gba.inc\""); // Temporary
+
+
+/* MANNEQUIN FACTORY */
+
+
 #include "asm/scenes/mannequin_factory/asm_08022244.s"
 
 #include "asm/scenes/mannequin_factory/asm_08022268.s"

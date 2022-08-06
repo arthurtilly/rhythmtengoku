@@ -1,3 +1,11 @@
+#include "src/engines/staff_credit.h"
+
+asm(".include \"include/gba.inc\""); // Temporary
+
+
+/* STAFF CREDIT */
+
+
 #include "asm/scenes/staff_credit/asm_08023580.s"
 
 #include "asm/scenes/staff_credit/asm_080235a8.s"

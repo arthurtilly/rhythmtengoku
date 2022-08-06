@@ -9,12 +9,6 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-#include "src/scenes/mannequin_factory.inc.c"
-
-#include "src/scenes/staff_credit.inc.c"
-
-#include "src/scenes/drumming_lessons.inc.c"
-
 #include "src/scenes/night_walk.inc.c"
 
 #include "src/scenes/showtime.inc.c"
