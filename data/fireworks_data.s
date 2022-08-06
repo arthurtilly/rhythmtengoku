@@ -3,30 +3,6 @@
 
 .include "include/gba.inc"
 
-/* 0805a3d0 */ .word 0x0
-
-/* 0805a3d4 */ .word 0x0
-/* 0805a3d8 */ .word 0x1
-/* 0805a3dc */ .word 0x2
-/* 0805a3e0 */ .word 0x0
-/* 0805a3e4 */ .word 0x2
-/* 0805a3e8 */ .word 0x1
-/* 0805a3ec */ .word 0x1
-/* 0805a3f0 */ .word 0x0
-/* 0805a3f4 */ .word 0x2
-/* 0805a3f8 */ .word 0x1
-/* 0805a3fc */ .word 0x2
-/* 0805a400 */ .word 0x0
-/* 0805a404 */ .word 0x2
-/* 0805a408 */ .word 0x0
-/* 0805a40c */ .word 0x1
-/* 0805a410 */ .word 0x2
-/* 0805a414 */ .word 0x1
-/* 0805a418 */ .word 0x0
-/* 0805a41c */ .word 0x8
-/* 0805a420 */ .word 0x10
-/* 0805a424 */ .word 0x8
-/* 0805a428 */ .word 0x18
 /* 0805a42c */ .word 0x0
 /* 0805a430 */ .word 0x0
 /* 0805a434 */ .word 0xe0

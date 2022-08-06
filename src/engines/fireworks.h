@@ -4,6 +4,63 @@
 #include "sound.h"
 
 // Engine Macros/Enums:
+enum FireworksPatternsEnum {
+    FIREWORKS_PATTERN_L3,           // Left;    3 Layers
+    FIREWORKS_PATTERN_C3,           // Centre;  3 Layers
+    FIREWORKS_PATTERN_R3,           // Right;   3 Layers
+    FIREWORKS_PATTERN_LL2,          // Far-Left;    2 Layers
+    FIREWORKS_PATTERN_CL2,          // Mid-Left;    2 Layers (unused)
+    FIREWORKS_PATTERN_CR2,          // Mid-Right;   2 Layers (unused)
+    FIREWORKS_PATTERN_RR2,          // Far-Right;   2 Layers
+    FIREWORKS_PATTERN_L3_BARELY,    // Centre;  1 Layer
+    FIREWORKS_PATTERN_C3_BARELY,    // Centre;  1 Layer
+    FIREWORKS_PATTERN_R3_BARELY,    // Centre;  1 Layer
+    FIREWORKS_PATTERN_LL2_BARELY,   // Centre;  1 Layer
+    FIREWORKS_PATTERN_CL2_BARELY,   // Centre;  1 Layer (unused)
+    FIREWORKS_PATTERN_CR2_BARELY,   // Centre;  1 Layer (unused)
+    FIREWORKS_PATTERN_RR2_BARELY,   // Centre;  1 Layer
+    FIREWORKS_PATTERN_SP_STAR,      // Centre;  Special - Large Star
+    FIREWORKS_PATTERN_SP_CIRCLE,    // Centre;  Special - Circle
+    FIREWORKS_PATTERN_SP_SPIRAL,    // Centre;  Special - Spiral
+    FIREWORKS_PATTERN_SP_SMILE,     // Centre;  Special - Smile
+    FIREWORKS_PATTERN_SP_TSUNKU,    // Centre;  Special - ♂ (unused)
+    FIREWORKS_PATTERN_TAIKO_BOMBER, // Hawfinch Taiko Bomber
+};
+enum FireworksParticlesEnum {
+    FIREWORKS_PARTICLE_RED,
+    FIREWORKS_PARTICLE_GREEN,
+    FIREWORKS_PARTICLE_BLUE,
+    FIREWORKS_PARTICLE_MULTI
+};
+enum FireworksPatternModesEnum {
+    FIREWORKS_PATTERN_MODE_0,
+    FIREWORKS_PATTERN_MODE_1,
+    FIREWORKS_PATTERN_MODE_TAIKO_BOMBER,
+    FIREWORKS_PATTERN_MODE_USE_TABLE
+};
+enum FireworksCueTypesEnum {
+    FIREWORKS_CUE_TYPE_SPIRIT_SPARKLER,
+    FIREWORKS_CUE_TYPE_NORMAL_FIREWORK,
+    FIREWORKS_CUE_TYPE_HAWFINCH_TAIKO_BOMBER
+};
+enum FireworksSoundsEnum {
+    FIREWORKS_SFX_COME_ON,
+    FIREWORKS_SFX_ONE,
+    FIREWORKS_SFX_TWO,
+    FIREWORKS_SFX_THREE,
+    FIREWORKS_SFX_NUEI
+};
+
+// Types:
+struct FireworksPatternColours {
+    s32 inner;
+    s32 middle;
+    s32 outer;
+};
+struct FireworksParticleTrajectory {
+    s32 initAngle; // Uses precision of sins2 table.
+    s32 initVelocity;
+};
 
 // OAM Animations:
 
