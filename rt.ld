@@ -47,6 +47,9 @@ SECTIONS {
 		build/src/engines/quiz_show.c.o(.bss*);
 		build/src/engines/bunny_hop.c.o(.bss*);
 		build/src/engines/rap_men.c.o(.bss*);
+		build/src/engines/rat_race.c.o(.bss*);
+		build/src/engines/ninja_bodyguard.c.o(.bss*);
+		build/src/engines/space_dance.c.o(.bss*);
 		build/src/scenes.c.o(.bss*);
 		build/src/code_08047e50.c.o(.bss*);
 	}
@@ -98,6 +101,9 @@ SECTIONS {
 		build/src/engines/quiz_show.c.o(.text);
 		build/src/engines/bunny_hop.c.o(.text);
 		build/src/engines/rap_men.c.o(.text);
+		build/src/engines/rat_race.c.o(.text);
+		build/src/engines/ninja_bodyguard.c.o(.text);
+		build/src/engines/space_dance.c.o(.text);
         build/src/scenes.c.o(.text);
 		build/src/code_08047e50.c.o(.text);
         build/bin/bindata_080482e0.bin.o(.rodata*); /* More ARM assembly */

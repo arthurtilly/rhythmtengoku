@@ -9,12 +9,6 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-#include "src/scenes/rat_race.inc.c"
-
-#include "src/scenes/ninja_bodyguard.inc.c"
-
-#include "src/scenes/space_dance.inc.c"
-
 #include "src/scenes/tap_trial.inc.c"
 
 #include "src/scenes/toss_boys.inc.c"
