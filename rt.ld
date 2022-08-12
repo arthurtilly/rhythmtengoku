@@ -1111,7 +1111,9 @@ SECTIONS {
         build/audio/samples/sfx_962.pcm.o(.rodata*);
 
         build/bin/bindata_sram_info.bin.o(.rodata*);
-        build/bin/bindata_088a069c.bin.o(.rodata*);
+        build/graphics/sneaky_spirits/sneaky_spirits_obj.bin.o(.rodata*);
+        build/graphics/sneaky_spirits/sneaky_spirits_pal.bin.o(.rodata*);
+        build/bin/bindata_088a16b0.bin.o(.rodata*);
         build/bin/bindata_088f5aec.bin.o(.rodata*);
         build/bin/bindata_089000cc.bin.o(.rodata*);
         build/bin/bindata_0890a3c4.bin.o(.rodata*);
