@@ -1111,8 +1111,14 @@ SECTIONS {
         build/audio/samples/sfx_962.pcm.o(.rodata*);
 
         build/bin/bindata_sram_info.bin.o(.rodata*);
-        build/graphics/sneaky_spirits/sneaky_spirits_obj.bin.o(.rodata*);
-        build/graphics/sneaky_spirits/sneaky_spirits_pal.bin.o(.rodata*);
+        build/graphics/sneaky_spirits/sneaky_spirits_anim.bin.o(.rodata*);
+        build/graphics/sneaky_spirits/sneaky_spirits_v0_pal.bin.o(.rodata*);
+        build/graphics/sneaky_spirits/sneaky_spirits_v2_pal.bin.o(.rodata*);
+        build/graphics/spaceball/spaceball_anim.bin.o(.rodata*);
+        build/graphics/spaceball/spaceball_pal.bin.o(.rodata*);
+        build/graphics/live/drum_samurai_band_anim.bin.o(.rodata*);
+        build/graphics/live/drum_samurai_band_pal_obj.bin.o(.rodata*);
+        build/graphics/live/drum_samurai_band_pal_bg.bin.o(.rodata*);
         build/bin/bindata_088a16b0.bin.o(.rodata*);
         build/bin/bindata_088f5aec.bin.o(.rodata*);
         build/bin/bindata_089000cc.bin.o(.rodata*);

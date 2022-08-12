@@ -48,7 +48,7 @@ BIN		       := bin
 AUDIO		   := audio
 MUSIC		   := $(AUDIO)/sequences
 SFX            := $(AUDIO)/samples
-GRAPHICS       := $(wildcard graphics/*)
+GRAPHICS       := graphics
 BUILD_DIRS     := $(BUILD) $(BUILD)/$(DATA) $(BUILD)/$(ASM) $(BUILD)/$(SOURCES) $(BUILD)/$(ENGINES) $(BUILD)/$(BIN) $(BUILD)/$(MUSIC) $(BUILD)/$(SFX) $(BUILD)/$(GRAPHICS)
 LD_SCRIPT      := rt.ld
 UNDEFINED_SYMS := undefined_syms.ld
@@ -95,7 +95,7 @@ export OUTPUT	:=	$(BUILD)/$(TARGET)
 CFILES		:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.c)) $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.c)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.c))
 CPPFILES	:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.c))
 SFILES		:=	$(foreach dir,$(ASM),$(wildcard $(dir)/*.s)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.s))
-BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) $(foreach dir,$(MUSIC),$(wildcard $(dir)/*.mid)) $(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.bin))
+BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) $(foreach dir,$(MUSIC),$(wildcard $(dir)/*.mid)) $(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*/*.bin))
 WAVFILES    :=  $(foreach dir,$(SFX),$(wildcard $(dir)/*.wav))
 JSONFILES   :=  $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.json))
 
@@ -166,6 +166,7 @@ $(OUTPUT).elf	:	$(OFILES)
 # Binary data
 $(BUILD)/%.bin.o	$(BUILD)/%.bin.h :	%.bin | $(BUILD_DIRS)
 	$(V)echo "Copying $< to $<.o"
+	$(V)if [ ! -d $(@D) ]; then mkdir -p $(@D); fi
 	$(V)bin2s -a 4 -H $(BUILD)/$<.h $< | $(AS) -o $(BUILD)/$<.o
 
 # MIDI files
