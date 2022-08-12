@@ -2,6 +2,7 @@
 
 #include "global.h"
 #include "sound.h"
+#include "graphics.h"
 
 // Engine Macros/Enums:
 enum SneakySpiritsVersionsEnum {
@@ -11,24 +12,24 @@ enum SneakySpiritsVersionsEnum {
 };
 
 // OAM Animations:
-extern u32 D_088a0ca0; // Animation: "bow_draw"
-extern u32 D_088a0cd0; // Animation: "ghost_hit"
-extern u32 D_088a0cf8; // Animation: "door_back_wall"
-extern u32 D_088a0d08; // Animation: "door_open"
-extern u32 D_088a0d80; // Animation: "ghost_miss_taunt"
-extern u32 D_088a0df0; // Animation: "arrow_miss"
-extern u32 D_088a0e80; // Animation: "ghost_barely_scared"
-extern u32 D_088a0f28; // Animation: "tree"
-extern u32 D_088a0f58; // Animation: "ghost_walk"
-extern u32 D_088a0fb8; // Animation: "ghost_miss_dash"
-extern u32 D_088a0fd8; // Animation: "rain_fall"
-extern u32 D_088a1000; // Animation: "rain_splash"
-extern u32 D_088a1010; // Animation: "rain_fall_slow"
-extern u32 D_088a1158; // Animation: "bow_shoot"
-extern u32 D_088a11a8; // Animation: "ghost_mask" (might be masking)
-extern u32 D_088a11b8; // Animation: "ghost_barely_run"
-extern u32 D_088a1258; // Animation: "arrow_hit"
-extern u32 D_088a1280; // Animation: "ghost_dash_tutorial"
+extern const struct Animation D_088a0ca0[]; // Animation: "bow_draw"
+extern const struct Animation D_088a0cd0[]; // Animation: "ghost_hit"
+extern const struct Animation D_088a0cf8[]; // Animation: "door_back_wall"
+extern const struct Animation D_088a0d08[]; // Animation: "door_open"
+extern const struct Animation D_088a0d80[]; // Animation: "ghost_miss_taunt"
+extern const struct Animation D_088a0df0[]; // Animation: "arrow_miss"
+extern const struct Animation D_088a0e80[]; // Animation: "ghost_barely_scared"
+extern const struct Animation D_088a0f28[]; // Animation: "tree"
+extern const struct Animation D_088a0f58[]; // Animation: "ghost_walk"
+extern const struct Animation D_088a0fb8[]; // Animation: "ghost_miss_dash"
+extern const struct Animation D_088a0fd8[]; // Animation: "rain_fall"
+extern const struct Animation D_088a1000[]; // Animation: "rain_splash"
+extern const struct Animation D_088a1010[]; // Animation: "rain_fall_slow"
+extern const struct Animation D_088a1158[]; // Animation: "bow_shoot"
+extern const struct Animation D_088a11a8[]; // Animation: "ghost_mask" (might be masking)
+extern const struct Animation D_088a11b8[]; // Animation: "ghost_barely_run"
+extern const struct Animation D_088a1258[]; // Animation: "arrow_hit"
+extern const struct Animation D_088a1280[]; // Animation: "ghost_dash_tutorial"
 
 // Palettes:
 
@@ -43,7 +44,7 @@ extern const struct SequenceData s_ghost_dash_seqData;           // Sound: Ghost
 extern const struct SequenceData s_ghost_warai_seqData;          // Sound: Ghost Miss Voice
 
 // Engine Data:
-extern char D_08059f90;   // Empty Default Text
+extern char D_08059f90[];   // Empty Default Text
 
 // Engine Definition Data:
 extern u32  D_089de6e0;   // GFX Null

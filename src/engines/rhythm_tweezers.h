@@ -18,15 +18,15 @@ enum RhythmTweezersVegetableTypesEnum {
 #define RT_VEGETABLE_BG_MAP_R *(u32 *)(VRAMBase + 0xF800) // VRAM BG Map for vegetable textures (right).
 
 // OAM Animations:
-extern u32 D_088e8768[];    // Animation: hair_appear_short
-extern u32 D_088e87a8[];    // Animation: "tweezer_pluck"
-extern u32 D_088e8848[];    // Animation: "tweezer_pluck_barely"
-extern u32 D_088e8898[];    // Animation: "tweezer_pluck_miss"
-extern u32 D_088e88e0[];    // Animation: "hair_fall"
-extern u32 D_088e88f8[];    // Animation: "hair_stubble"
-extern u32 D_088e8910[];    // Animation: "tutorial_text" (unused)
-extern u32 D_088e89a8[];    // Animation: hair_appear_long
-extern u32 D_088e8a50[];    // Animation: "hair_long_pull"
+extern const struct Animation D_088e8768[];    // Animation: hair_appear_short
+extern const struct Animation D_088e87a8[];    // Animation: "tweezer_pluck"
+extern const struct Animation D_088e8848[];    // Animation: "tweezer_pluck_barely"
+extern const struct Animation D_088e8898[];    // Animation: "tweezer_pluck_miss"
+extern const struct Animation D_088e88e0[];    // Animation: "hair_fall"
+extern const struct Animation D_088e88f8[];    // Animation: "hair_stubble"
+extern const struct Animation D_088e8910[];    // Animation: "tutorial_text" (unused)
+extern const struct Animation D_088e89a8[];    // Animation: hair_appear_long
+extern const struct Animation D_088e8a50[];    // Animation: "hair_long_pull"
 
 // Palettes:
 
@@ -40,7 +40,7 @@ extern const struct SequenceData s_f_hair_appear_long_seqData;  // SFX: Hair App
 // Engine Data:
 
 // Engine Definition Data:
-extern u32 *D_089e3d98[]; // Array of animation pointers for vegetable faces
+extern const struct Animation *D_089e3d98[]; // Array of animation pointers for vegetable faces
 extern u32 *D_089e3da4[]; // Array of BG Map pointers for vegetable textures
 extern u32 D_089e3db0;    // GFX-related Null
 extern u32 *D_089e3ff4[]; // GFX Struct Index

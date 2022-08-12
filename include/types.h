@@ -201,6 +201,9 @@ struct struct_030053c0 {
 };
 
 
+#include "graphics.h" // until we move D_030055d0 out of here
+
+
 struct KarateManCue {
     u16 isHit:4;   // Flag:   Object Hit
     u16 miss:1;    // Flag:   Missed
@@ -480,8 +483,8 @@ struct SpaceballInfo {
         s32 y;
         s32 z;
         u32 swingTimer;
-        u32 *animClose;
-        u32 *animFar;
+        const struct Animation *animClose;
+        const struct Animation *animFar;
     } batter;
     struct SpaceballEntity pitcher;
     struct SpaceballEntity umpire;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "graphics.h"
 
 struct AffineSprite {
     s16 sprite;      // Sprite ID
@@ -22,8 +23,8 @@ struct AffineSprite {
 
 
 extern void func_0800f904(struct AffineSprite *);           // [func_0800f904] AFFINE SPRITE - Update
-extern struct AffineSprite *func_0800fa6c(u32 *, s8, s16, s16, u16, s16, s16, s8, s8, u16, u32); // [func_0800fa6c] AFFINE SPRITE - Create New
-extern struct AffineSprite *func_0800fba0(u32 *, s8, s16, s16, u16, s8, s8, u16); // [func_0800fba0] AFFINE SPRITE - Create New (with Default Parameters)
+extern struct AffineSprite *func_0800fa6c(const struct Animation *, s8, s16, s16, u16, s16, s16, s8, s8, u16, u32); // [func_0800fa6c] AFFINE SPRITE - Create New
+extern struct AffineSprite *func_0800fba0(const struct Animation *, s8, s16, s16, u16, s8, s8, u16); // [func_0800fba0] AFFINE SPRITE - Create New (with Default Parameters)
 extern void func_0800fc70(struct AffineSprite *);           // [func_0800fc70] AFFINE SPRITE - Delete
 extern void func_0800fca0(struct AffineSprite *, u32);      // [func_0800fca0] AFFINE SPRITE - Set/Remove Index
 extern void func_0800fd14(struct AffineSprite *, u32);      // [func_0800fd14] AFFINE SPRITE - Set "High Angle Precision" Flag
@@ -50,7 +51,7 @@ extern void func_0800ffc0(struct AffineSprite *, u32);      // [func_0800ffc0] A
 extern void func_0800ffe4(struct AffineSprite *, u8);       // [func_0800ffe4] AFFINE SPRITE - func_0804ced0()
 extern void func_08010008(struct AffineSprite *, u32, u32, u32); // [func_08010008] AFFINE SPRITE - Animate?
 extern void func_08010040(struct AffineSprite *, u32);      // [func_08010040] AFFINE SPRITE - Start Animation
-extern void func_08010064(struct AffineSprite *, u32 *, u32, u32, u32, u32); // [func_08010064] AFFINE SPRITE - func_0804d8f8()
+extern void func_08010064(struct AffineSprite *, const struct Animation *, u32, u32, u32, u32); // [func_08010064] AFFINE SPRITE - Change Animation
 extern void func_080100a8(struct AffineSprite *, u32);      // [func_080100a8] AFFINE SPRITE - func_0804d8c4()
 extern void func_080100cc(struct AffineSprite *, u32);      // [func_080100cc] AFFINE SPRITE - func_0804d890()
 extern u32  func_080100f0(struct AffineSprite *);           // [func_080100f0] AFFINE SPRITE - func_0804ddb0(..., 4)

@@ -2,6 +2,7 @@
 
 #include "global.h"
 #include "sound.h"
+#include "graphics.h"
 
 // Engine Macros/Enums:
 enum SpaceballCueStatesEnum {
@@ -11,12 +12,12 @@ enum SpaceballCueStatesEnum {
 };
 
 // OAM Animations:
-extern u32 D_088a1a70; // Animation: "batter_green"
-extern u32 D_088a1ad0; // Animation: "pitcher_shoot
-extern u32 D_088a1b70; // Animation: "miss_poof"
-extern u32 D_088a1b90; // Animation: "bg_star"
-extern u32 D_088a1ba0; // Animation: "umpire_show"
-extern u32 D_088a1bd0; // Animation: "umpire_sway"
+extern const struct Animation D_088a1a70[]; // Animation: "batter_green"
+extern const struct Animation D_088a1ad0[]; // Animation: "pitcher_shoot
+extern const struct Animation D_088a1b70[]; // Animation: "miss_poof"
+extern const struct Animation D_088a1b90[]; // Animation: "bg_star"
+extern const struct Animation D_088a1ba0[]; // Animation: "umpire_show"
+extern const struct Animation D_088a1bd0[]; // Animation: "umpire_sway"
 
 // Palettes:
 
@@ -28,16 +29,16 @@ extern const struct SequenceData s_f_batter_ball_land_seqData;
 // Engine Definition Data:
 extern u32  D_089de93c;    // GFX-related Null
 extern u32  D_089de940[];  // GFX Init Struct
-extern u32 *D_089de988[3]; // Batter Animations (Close)
-extern u32 *D_089de994[3]; // Batter Animations (Far)
-extern u32 *D_089de9a0[3]; // Spaceball Animations
+extern const struct Animation *D_089de988[3]; // Batter Animations (Close)
+extern const struct Animation *D_089de994[3]; // Batter Animations (Far)
+extern const struct Animation *D_089de9a0[3]; // Spaceball Animations
 
 // Functions:
 extern void func_0801fc44(u32);     // [func_0801fc44] Initialise/Reset BG Star Position
 extern void func_0801fcb0(void);    // [func_0801fcb0] Update BG Star Positions (X, Y)
 extern void func_0801fd1c(void);    // [func_0801fd1c] Update BG Star Positions (Z)
 extern void func_0801fd70(struct AffineSprite *, s32, s32, s32);                // [func_0801fd70] Update Entity Position
-extern void func_0801fdc4(struct AffineSprite *, s32, s32, s32, u32 *, u32 *);  // [func_0801fdc4] Update Batter Position
+extern void func_0801fdc4(struct AffineSprite *, s32, s32, s32, const struct Animation *, const struct Animation *);  // [func_0801fdc4] Update Batter Position
 extern void func_0801fe6c(void);    // [func_0801fe6c] Update Entities, Stars & Camera
 extern void func_0801ff60(void);    // [func_0801ff60] GFX_INIT Func_02
 extern void func_0801ff70(void);    // [func_0801ff70] GFX_INIT Func_01

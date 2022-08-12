@@ -2,6 +2,7 @@
 
 #include "global.h"
 #include "sound.h"
+#include "graphics.h"
 
 // Engine Macros/Enums:
 enum FireworksPatternsEnum {
@@ -63,18 +64,18 @@ struct FireworksParticleTrajectory {
 };
 
 // OAM Animations:
-extern u32 D_088e8f14[]; // Animation: ?
-extern u32 D_088e8f34[]; // Animation: ?
-extern u32 D_088e8f64[]; // Animation: Particle
-extern u32 D_088e8fb4[]; // Animation: ?
-extern u32 D_088e905c[]; // Animation: ?
-extern u32 D_088e90ac[]; // Animation: "taiko_bomber_launch"
-extern u32 D_088e90c4[]; // Animation: ?
-extern u32 D_088e92dc[]; // Animation: ?
-extern u32 D_088e93bc[]; // Animation: "Start to Skip" Text (unused)
-extern u32 D_088e93cc[]; // Animation: ?
-extern u32 D_088e93ec[]; // Animation: "spirit_sparkler_launch"
-extern u32 D_088e940c[]; // Animation: "normal_firework_launch"
+extern const struct Animation D_088e8f14[]; // Animation: ?
+extern const struct Animation D_088e8f34[]; // Animation: ?
+extern const struct Animation D_088e8f64[]; // Animation: Particle
+extern const struct Animation D_088e8fb4[]; // Animation: ?
+extern const struct Animation D_088e905c[]; // Animation: ?
+extern const struct Animation D_088e90ac[]; // Animation: "taiko_bomber_launch"
+extern const struct Animation D_088e90c4[]; // Animation: ?
+extern const struct Animation D_088e92dc[]; // Animation: ?
+extern const struct Animation D_088e93bc[]; // Animation: "Start to Skip" Text (unused)
+extern const struct Animation D_088e93cc[]; // Animation: ?
+extern const struct Animation D_088e93ec[]; // Animation: "spirit_sparkler_launch"
+extern const struct Animation D_088e940c[]; // Animation: "normal_firework_launch"
 
 // Palettes:
 

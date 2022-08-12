@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "graphics.h"
 
 // extern ? func_0804c870(?);
 // extern ? func_0804c8b0(?);
@@ -24,7 +25,7 @@ extern void func_0804ced0(s32, s16, u8);
 // extern ? func_0804d0d8(?);
 // extern ? func_0804d11c(?);
 // extern ? func_0804d140(?);
-extern u32  func_0804d160(s32, u32 *, s8, s16, s16, u16, s8, s8, u16);
+extern u32  func_0804d160(s32, const struct Animation *, s8, s16, s16, u16, s8, s8, u16);
 // extern ? func_0804d294(?);
 // extern ? func_0804d3cc(?);
 // extern ? func_0804d468(?);
@@ -43,7 +44,7 @@ extern void func_0804d820(s32, s16, u32);
 // extern ? func_0804d858(?);
 extern void func_0804d890(s32, s16, s16);
 extern void func_0804d8c4(s32, s16, s8);
-extern void func_0804d8f8(s32, s16, u32 *, s8, s8, s8, u16);
+extern void func_0804d8f8(s32, s16, const struct Animation *, s8, s8, s8, u16);
 // extern ? func_0804d9b0(?);
 extern void func_0804da20(s32, s16, u16);
 // extern ? func_0804da68(?);

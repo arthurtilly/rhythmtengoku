@@ -359,7 +359,7 @@ void func_0802ee6c(void) {
 // [func_0802ee7c] CUE - Spawn
 void func_0802ee7c(u32 arg0, struct RhythmTweezersCue *cue, u32 isLongHair, u32 arg3) {
     struct RhythmTweezersInfo *gameInfo;
-    u32 *anim;
+    const struct Animation *anim;
     u32 rotation;
 
     gameInfo = &gRhythmTweezersInfo;
