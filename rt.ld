@@ -1119,6 +1119,15 @@ SECTIONS {
         build/graphics/live/drum_samurai_band_anim.bin.o(.rodata*);
         build/graphics/live/drum_samurai_band_pal_obj.bin.o(.rodata*);
         build/graphics/live/drum_samurai_band_pal_bg.bin.o(.rodata*);
+        build/graphics/bon_odori/bon_dance_anim.bin.o(.rodata*);
+        build/graphics/bon_odori/bon_dance_pal_obj.bin.o(.rodata*);
+        build/graphics/bon_odori/bon_dance_pal_bg.bin.o(.rodata*);
+        build/graphics/bon_odori/bon_odori_anim.bin.o(.rodata*);
+        build/graphics/bon_odori/bon_odori_pal_obj.bin.o(.rodata*);
+        build/graphics/bon_odori/bon_odori_pal_bg.bin.o(.rodata*);
+        build/graphics/karate_man/karate_man_anim.bin.o(.rodata*);
+        build/graphics/karate_man/karate_man_v0_pal.bin.o(.rodata*);
+        build/graphics/karate_man/karate_man_v3_pal.bin.o(.rodata*);
         build/bin/bindata_088a16b0.bin.o(.rodata*);
         build/bin/bindata_088f5aec.bin.o(.rodata*);
         build/bin/bindata_089000cc.bin.o(.rodata*);
