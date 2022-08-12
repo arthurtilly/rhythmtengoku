@@ -1109,8 +1109,9 @@ SECTIONS {
         build/audio/samples/sfx_960.pcm.o(.rodata*);
         build/audio/samples/sfx_961.pcm.o(.rodata*);
         build/audio/samples/sfx_962.pcm.o(.rodata*);
-        
-        build/bin/bindata_088a0650.bin.o(.rodata*);
+
+        build/bin/bindata_sram_info.bin.o(.rodata*);
+        build/bin/bindata_088a069c.bin.o(.rodata*);
         build/bin/bindata_088f5aec.bin.o(.rodata*);
         build/bin/bindata_089000cc.bin.o(.rodata*);
         build/bin/bindata_0890a3c4.bin.o(.rodata*);
