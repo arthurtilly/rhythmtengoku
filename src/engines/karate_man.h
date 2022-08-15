@@ -2,29 +2,30 @@
 
 #include "global.h"
 #include "sound.h"
+#include "graphics.h"
 
 // Engine Macros/Enums:
 
 // OAM Animations:
-extern u32 D_088acc2c[]; // Animation: "joe_stand"
-extern u32 D_088acc3c[]; // Animation: "objects"
-extern u32 D_088acc6c[]; // Animation: "objects_shadow"
-extern u32 D_088acc94[]; // Animation: "joe_punch_high"
-extern u32 D_088accdc[]; // Animation: "joe_beat"
-extern u32 D_088accfc[]; // Animation: "hit_effect"
-extern u32 D_088acd1c[]; // Animation: "flow_bar"
-extern u32 D_088acd54[]; // Animation: "joe_punch_low"
-extern u32 D_088acd94[]; // Animation: "joe_beat_barely"
-extern u32 D_088acdb4[]; // Animation: "joe_miss"
-extern u32 D_088acdd4[]; // Animation: "joe_beat_smirk"
-extern u32 D_088acdf4[]; // Animation: "joe_beat_happy"
-extern u32 D_088ace14[]; // Animation: "joe_punch_hard"
-extern u32 D_088acf04[]; // Animation: "cue_text"
-extern u32 D_088acf2c[]; // Animation: "tutorial_button"
-extern u32 D_088acf44[]; // Animation: "tutorial_skip"
-extern u32 D_088acf54[]; // Animation: "tutorial_text"
-extern u32 D_088acf7c[]; // Animation: "joe_punch_high_face" (Remix 8 face)
-extern u32 D_088acfc4[]; // Animation: "joe_punch_low_face" (Remix 8 face)
+extern const struct Animation D_088acc2c[]; // Animation: "joe_stand"
+extern const struct Animation D_088acc3c[]; // Animation: "objects"
+extern const struct Animation D_088acc6c[]; // Animation: "objects_shadow"
+extern const struct Animation D_088acc94[]; // Animation: "joe_punch_high"
+extern const struct Animation D_088accdc[]; // Animation: "joe_beat"
+extern const struct Animation D_088accfc[]; // Animation: "hit_effect"
+extern const struct Animation D_088acd1c[]; // Animation: "flow_bar"
+extern const struct Animation D_088acd54[]; // Animation: "joe_punch_low"
+extern const struct Animation D_088acd94[]; // Animation: "joe_beat_barely"
+extern const struct Animation D_088acdb4[]; // Animation: "joe_miss"
+extern const struct Animation D_088acdd4[]; // Animation: "joe_beat_smirk"
+extern const struct Animation D_088acdf4[]; // Animation: "joe_beat_happy"
+extern const struct Animation D_088ace14[]; // Animation: "joe_punch_hard"
+extern const struct Animation D_088acf04[]; // Animation: "cue_text"
+extern const struct Animation D_088acf2c[]; // Animation: "tutorial_button"
+extern const struct Animation D_088acf44[]; // Animation: "tutorial_skip"
+extern const struct Animation D_088acf54[]; // Animation: "tutorial_text"
+extern const struct Animation D_088acf7c[]; // Animation: "joe_punch_high_face" (Remix 8 face)
+extern const struct Animation D_088acfc4[]; // Animation: "joe_punch_low_face" (Remix 8 face)
 
 // Palettes:
 extern u16 D_088ad004[8][16]; // Palette

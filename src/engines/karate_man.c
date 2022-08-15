@@ -409,7 +409,7 @@ void func_08021a0c(void) {
 void func_08021a60(struct struct_080179f4 *arg0, struct KarateManCue *cue) {
     struct KarateManInfo *karateManStruct = &gKarateManInfo;
     struct KarateManJoe *joe = &karateManStruct->joe;
-    u32 *anim;
+    const struct Animation *anim;
     u32 bgFace;
     u32 isBgFaceVer;
     u32 isHigh;

@@ -12,24 +12,24 @@ enum SneakySpiritsVersionsEnum {
 };
 
 // OAM Animations:
-extern const struct Animation D_088a0ca0[]; // Animation: "bow_draw"
-extern const struct Animation D_088a0cd0[]; // Animation: "ghost_hit"
-extern const struct Animation D_088a0cf8[]; // Animation: "door_back_wall"
-extern const struct Animation D_088a0d08[]; // Animation: "door_open"
-extern const struct Animation D_088a0d80[]; // Animation: "ghost_miss_taunt"
-extern const struct Animation D_088a0df0[]; // Animation: "arrow_miss"
-extern const struct Animation D_088a0e80[]; // Animation: "ghost_barely_scared"
-extern const struct Animation D_088a0f28[]; // Animation: "tree"
-extern const struct Animation D_088a0f58[]; // Animation: "ghost_walk"
-extern const struct Animation D_088a0fb8[]; // Animation: "ghost_miss_dash"
-extern const struct Animation D_088a0fd8[]; // Animation: "rain_fall"
-extern const struct Animation D_088a1000[]; // Animation: "rain_splash"
-extern const struct Animation D_088a1010[]; // Animation: "rain_fall_slow"
-extern const struct Animation D_088a1158[]; // Animation: "bow_shoot"
-extern const struct Animation D_088a11a8[]; // Animation: "ghost_mask" (might be masking)
-extern const struct Animation D_088a11b8[]; // Animation: "ghost_barely_run"
-extern const struct Animation D_088a1258[]; // Animation: "arrow_hit"
-extern const struct Animation D_088a1280[]; // Animation: "ghost_dash_tutorial"
+extern const struct Animation sneaky_spirits_anim00[]; // Animation: "bow_draw"
+extern const struct Animation sneaky_spirits_anim01[]; // Animation: "ghost_hit"
+extern const struct Animation sneaky_spirits_anim02[]; // Animation: "door_back_wall"
+extern const struct Animation sneaky_spirits_anim03[]; // Animation: "door_open"
+extern const struct Animation sneaky_spirits_anim05[]; // Animation: "ghost_miss_taunt"
+extern const struct Animation sneaky_spirits_anim06[]; // Animation: "arrow_miss"
+extern const struct Animation sneaky_spirits_anim07[]; // Animation: "ghost_barely_scared"
+extern const struct Animation sneaky_spirits_anim08[]; // Animation: "tree"
+extern const struct Animation sneaky_spirits_anim10[]; // Animation: "ghost_walk"
+extern const struct Animation sneaky_spirits_anim11[]; // Animation: "ghost_miss_dash"
+extern const struct Animation sneaky_spirits_anim12[]; // Animation: "rain_fall"
+extern const struct Animation sneaky_spirits_anim13[]; // Animation: "rain_splash"
+extern const struct Animation sneaky_spirits_anim14[]; // Animation: "rain_fall_slow"
+extern const struct Animation sneaky_spirits_anim15[]; // Animation: "bow_shoot"
+extern const struct Animation sneaky_spirits_anim16[]; // Animation: "ghost_mask" (might be masking)
+extern const struct Animation sneaky_spirits_anim17[]; // Animation: "ghost_barely_run"
+extern const struct Animation sneaky_spirits_anim18[]; // Animation: "arrow_hit"
+extern const struct Animation sneaky_spirits_anim19[]; // Animation: "ghost_dash_tutorial"
 
 // Palettes:
 

@@ -2,6 +2,7 @@
 
 #include "global.h"
 #include "sound.h"
+#include "graphics.h"
 
 // Engine Macros/Enums:
 #define WIZARDS_WALTZ_SPARKLE_STATE_HIDDEN 0
@@ -12,17 +13,17 @@
 #define WIZARDS_WALTZ_GIRL_STATE_SAD 2
 
 // OAM Animations:
-extern u32 D_08932bec; // Animation: "wizard_fly"
-extern u32 D_08932c14; // Animation: "wizard_magic"
-extern u32 D_08932c8c; // Animation: "sparkle"
-extern u32 D_08932cbc; // Animation: "sprout_eaten"
-extern u32 D_08932d2c; // Animation: "sprout_grow"
-extern u32 D_08932de4; // Animation: "sprout_appear"
-extern u32 D_08932e3c; // Animation: "girl"
-extern u32 D_08932e64; // Animation: "girl_happy"
-extern u32 D_08932ea4; // Animation: "girl_sad"
-extern u32 D_08932edc; // Animation: "shadow"
-extern u32 D_08932f94; // Animation: "sprout_appear_tutorial"
+extern const struct Animation D_08932bec[]; // Animation: "wizard_fly"
+extern const struct Animation D_08932c14[]; // Animation: "wizard_magic"
+extern const struct Animation D_08932c8c[]; // Animation: "sparkle"
+extern const struct Animation D_08932cbc[]; // Animation: "sprout_eaten"
+extern const struct Animation D_08932d2c[]; // Animation: "sprout_grow"
+extern const struct Animation D_08932de4[]; // Animation: "sprout_appear"
+extern const struct Animation D_08932e3c[]; // Animation: "girl"
+extern const struct Animation D_08932e64[]; // Animation: "girl_happy"
+extern const struct Animation D_08932ea4[]; // Animation: "girl_sad"
+extern const struct Animation D_08932edc[]; // Animation: "shadow"
+extern const struct Animation D_08932f94[]; // Animation: "sprout_appear_tutorial"
 
 // Palettes:
 

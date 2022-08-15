@@ -10,7 +10,7 @@ const struct Animation sneaky_spirits_anim00[] = {
     /* 002 */ { sneaky_spirits_cel003, 3 },
     /* 003 */ { sneaky_spirits_cel004, 10 },
     /* 004 */ { sneaky_spirits_cel005, 40 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a0cd0] <description>
@@ -19,13 +19,13 @@ const struct Animation sneaky_spirits_anim01[] = {
     /* 001 */ { sneaky_spirits_cel014, 3 },
     /* 002 */ { sneaky_spirits_cel105, 3 },
     /* 003 */ { sneaky_spirits_cel106, 3 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a0cf8] <description>
 const struct Animation sneaky_spirits_anim02[] = {
     /* 000 */ { sneaky_spirits_cel015, 4 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a0d08] <description>
@@ -35,7 +35,7 @@ const struct Animation sneaky_spirits_anim03[] = {
     /* 002 */ { sneaky_spirits_cel017, 2 },
     /* 003 */ { sneaky_spirits_cel018, 3 },
     /* 004 */ { sneaky_spirits_cel019, 12 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a0d38] <description>
@@ -48,7 +48,7 @@ const struct Animation sneaky_spirits_anim04[] = {
     /* 005 */ { sneaky_spirits_cel024, 1 },
     /* 006 */ { sneaky_spirits_cel023, 1 },
     /* 007 */ { sneaky_spirits_cel022, 1 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a0d80] <description>
@@ -66,7 +66,7 @@ const struct Animation sneaky_spirits_anim05[] = {
     /* 010 */ { sneaky_spirits_cel038, 3 },
     /* 011 */ { sneaky_spirits_cel035, 3 },
     /* 012 */ { sneaky_spirits_cel036, 3 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a0df0] <description>
@@ -88,7 +88,7 @@ const struct Animation sneaky_spirits_anim06[] = {
     /* 014 */ { sneaky_spirits_cel046, 1 },
     /* 015 */ { sneaky_spirits_cel044, 1 },
     /* 016 */ { sneaky_spirits_cel046, 60 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a0e80] <description>
@@ -113,21 +113,21 @@ const struct Animation sneaky_spirits_anim07[] = {
     /* 017 */ { sneaky_spirits_cel053, 1 },
     /* 018 */ { sneaky_spirits_cel054, 1 },
     /* 019 */ { sneaky_spirits_cel000, 60 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a0f28] <description>
 const struct Animation sneaky_spirits_anim08[] = {
     /* 000 */ { sneaky_spirits_cel055, 6 },
     /* 001 */ { sneaky_spirits_cel006, 6 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a0f40] <description>
 const struct Animation sneaky_spirits_anim09[] = {
     /* 000 */ { sneaky_spirits_cel057, 4 },
     /* 001 */ { sneaky_spirits_cel058, 4 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a0f58] <description>
@@ -143,7 +143,7 @@ const struct Animation sneaky_spirits_anim10[] = {
     /* 008 */ { sneaky_spirits_cel032, 1 },
     /* 009 */ { sneaky_spirits_cel033, 1 },
     /* 010 */ { sneaky_spirits_cel034, 1 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a0fb8] <description>
@@ -151,7 +151,7 @@ const struct Animation sneaky_spirits_anim11[] = {
     /* 000 */ { sneaky_spirits_cel041, 1 },
     /* 001 */ { sneaky_spirits_cel042, 1 },
     /* 002 */ { sneaky_spirits_cel000, 60 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a0fd8] <description>
@@ -160,13 +160,13 @@ const struct Animation sneaky_spirits_anim12[] = {
     /* 001 */ { sneaky_spirits_cel061, 1 },
     /* 002 */ { sneaky_spirits_cel062, 1 },
     /* 003 */ { sneaky_spirits_cel063, 1 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a1000] <description>
 const struct Animation sneaky_spirits_anim13[] = {
     /* 000 */ { sneaky_spirits_cel059, 2 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a1010] <description>
@@ -211,7 +211,7 @@ const struct Animation sneaky_spirits_anim14[] = {
     /* 037 */ { sneaky_spirits_cel102, 4 },
     /* 038 */ { sneaky_spirits_cel103, 4 },
     /* 039 */ { sneaky_spirits_cel104, 4 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a1158] <description>
@@ -225,13 +225,13 @@ const struct Animation sneaky_spirits_anim15[] = {
     /* 006 */ { sneaky_spirits_cel009, 1 },
     /* 007 */ { sneaky_spirits_cel010, 1 },
     /* 008 */ { sneaky_spirits_cel009, 100 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a11a8] <description>
 const struct Animation sneaky_spirits_anim16[] = {
     /* 000 */ { sneaky_spirits_cel015, 4 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a11b8] <description>
@@ -255,7 +255,7 @@ const struct Animation sneaky_spirits_anim17[] = {
     /* 016 */ { sneaky_spirits_cel052, 8 },
     /* 017 */ { sneaky_spirits_cel054, 1 },
     /* 018 */ { sneaky_spirits_cel000, 60 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a1258] <description>
@@ -264,7 +264,7 @@ const struct Animation sneaky_spirits_anim18[] = {
     /* 001 */ { sneaky_spirits_cel108, 1 },
     /* 002 */ { sneaky_spirits_cel109, 1 },
     /* 003 */ { sneaky_spirits_cel000, 60 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
 
 // [D_088a1280] <description>
@@ -274,5 +274,5 @@ const struct Animation sneaky_spirits_anim19[] = {
     /* 002 */ { sneaky_spirits_cel041, 1 },
     /* 003 */ { sneaky_spirits_cel042, 1 },
     /* 004 */ { sneaky_spirits_cel000, 60 },
-    /* End */ { NULL, 0 }
+    /* End */ END_ANIMATION
 };
