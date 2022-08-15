@@ -1113,8 +1113,8 @@ SECTIONS {
         build/bin/bindata_sram_info.bin.o(.rodata*);
         build/graphics/sneaky_spirits/sneaky_spirits_anim.c.o(.rodata*);
         build/graphics/sneaky_spirits/sneaky_spirits_pal.c.o(.rodata*);
-        build/graphics/spaceball/spaceball_anim.bin.o(.rodata*);
-        build/graphics/spaceball/spaceball_pal.bin.o(.rodata*);
+        build/graphics/spaceball/spaceball_anim.c.o(.rodata*);
+        build/graphics/spaceball/spaceball_pal.c.o(.rodata*);
         build/graphics/live/drum_samurai_band_anim.bin.o(.rodata*);
         build/graphics/live/drum_samurai_band_pal_obj.bin.o(.rodata*);
         build/graphics/live/drum_samurai_band_pal_bg.bin.o(.rodata*);
