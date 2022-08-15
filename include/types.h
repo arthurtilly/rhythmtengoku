@@ -425,7 +425,7 @@ struct BonOdoriInfo_sub {
 };
 
 struct BonOdoriInfo {
-    u8 unk0;
+    u8 version;
     u8 pad1;
     u8 unk2;
     u32* unk4;
@@ -433,7 +433,7 @@ struct BonOdoriInfo {
     u8 unk38;
     u16 unk3A;
     s16 unk3C;
-    s16 unk3E;
+    s16 yaguraSprite;
     u16 unk40;
     u8 unk42;
     s16 unk44[4];

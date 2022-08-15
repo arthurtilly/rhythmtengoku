@@ -15,15 +15,15 @@ asm(".include \"include/gba.inc\""); // Temporary
 /* THE BON ODORI */
 
 
-// [func_080206a0] ?
-u32* func_080206a0(u32 arg0) {
-    return D_089dec38[arg0][gBonOdoriInfo.unk0];
+// [func_080206a0] Get OBJ Animation
+const struct Animation *func_080206a0(u32 anim) {
+    return D_089dec38[anim][gBonOdoriInfo.version];
 }
 
 
 // [func_080206c0] ?
 void func_080206c0(void) {
-    u32* anim;
+    const struct Animation *anim;
     u32 i;
     s32 xPos = 0x28;
     s16 temp = 0x78;
@@ -38,21 +38,21 @@ void func_080206c0(void) {
     }
 
     gBonOdoriInfo.unk54 = 0;
-    gBonOdoriInfo.unk55 = 0;
+    gBonOdoriInfo.unk55 = BON_ODORI_DONPAN_ANIM_00;
     gBonOdoriInfo.unk862 = 1;
 }
 
 
-// [func_0802075c] ?
-u32* func_0802075c(u32 animation, u32 donpan) {
+// [func_0802075c] Get Donpan Animation
+const struct Animation *func_0802075c(u32 animation, u32 donpan) {
     return func_080206a0(D_089dece0[animation][donpan]);
 }
 
 
 // [func_08020778] ?
 void func_08020778(u32 animation, u32 donpan) {
-    u32* temp = func_0802075c(animation, donpan);
-    func_0804d8f8(D_03005380, gBonOdoriInfo.unk44[donpan], temp, 0, 1, 0x7f, 0);
+    const struct Animation *anim = func_0802075c(animation, donpan);
+    func_0804d8f8(D_03005380, gBonOdoriInfo.unk44[donpan], anim, 0, 1, 0x7f, 0);
     gBonOdoriInfo.unk4C[donpan] = func_0800c3a4(D_089ded00[animation]);
 }
 
@@ -114,7 +114,7 @@ void func_08020880(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_08002ee0(func_0800c3b8(), D_089deec4[gBonOdoriInfo.unk0], 0x2000);
+    data = func_08002ee0(func_0800c3b8(), D_089deec4[gBonOdoriInfo.version], 0x2000);
     func_08005d38(data, func_0802085c, 0);
 }
 
@@ -129,10 +129,10 @@ void func_080208c0(void) {
 
 
 // [func_080208ec] MAIN - Init
-void func_080208ec(u32 arg0) {
+void func_080208ec(u32 ver) {
     u32 i;
 
-    gBonOdoriInfo.unk0 = arg0;
+    gBonOdoriInfo.version = ver;
     func_080208c0();
     func_0800e0ec();
     func_0800e114();
@@ -150,12 +150,12 @@ void func_080208ec(u32 arg0) {
     
     gBonOdoriInfo.unk3C = 0;
     gBonOdoriInfo.unk3A = 0;
-    gBonOdoriInfo.unk3E = func_0804d160(D_03005380, func_080206a0(0x1f), 0x7f, 0x78, 0x48, 0x8800, 1, 0x7f, 0);
+    gBonOdoriInfo.yaguraSprite = func_0804d160(D_03005380, func_080206a0(BON_ODORI_ANIM_31), 0x7f, 120, 72, 0x8800, 1, 0x7f, 0);
     gBonOdoriInfo.unk40 = 0;
     gBonOdoriInfo.unk42 = FALSE;
     func_080206c0();
-    gBonOdoriInfo.objPalDark = D_089deed4[gBonOdoriInfo.unk0];
-    gBonOdoriInfo.bgPalDark = D_089deecc[gBonOdoriInfo.unk0];
+    gBonOdoriInfo.objPalDark = D_089deed4[gBonOdoriInfo.version];
+    gBonOdoriInfo.bgPalDark = D_089deecc[gBonOdoriInfo.version];
     func_08001ec4(0xc, 7, gBonOdoriInfo.objPalDark, 0, gBonOdoriInfo.objPalDarkBuf[0]);
     func_08001ec4(0x14, 7, gBonOdoriInfo.bgPalDark, 0, gBonOdoriInfo.bgPalDarkBuf[0]);
     func_08017338(1, 0);
@@ -284,16 +284,16 @@ void func_08020ee8(void) {
     
     if (gBonOdoriInfo.unk860 != 0) {
         gBonOdoriInfo.unk54 = 3;
-        gBonOdoriInfo.unk55 = 4;
+        gBonOdoriInfo.unk55 = BON_ODORI_DONPAN_ANIM_04;
         func_0800bc40();
     } else {
         gBonOdoriInfo.unk54 = 3;
         
         temp2 = D_030055d0;
-        if ((u16)func_08001980(2) != 0) {
-            temp0 = 5;
+        if (func_08001980(2) != 0) {
+            temp0 = BON_ODORI_DONPAN_ANIM_05;
         } else {
-            temp0 = 6;
+            temp0 = BON_ODORI_DONPAN_ANIM_06;
         }
         temp2->gameInfo.bonOdori.unk55 = temp0;
         
@@ -383,25 +383,25 @@ void func_08021034(void) {
 // [func_08021084] COMMON Func_00 - Beat Animation
 void func_08021084(void) {
     u32 i;
-    u32* temp;
+    const struct Animation *anim;
 
     for (i = 0; i < 4; i++) {
         if (gBonOdoriInfo.unk4C[i] != 0) {
             continue;
         }
-        temp = func_0802075c(0, i);
+        anim = func_0802075c(BON_ODORI_DONPAN_ANIM_00, i);
         if (i < 3 && gBonOdoriInfo.unk54 != 0)  {
-            temp = func_0802075c(gBonOdoriInfo.unk55, i);
+            anim = func_0802075c(gBonOdoriInfo.unk55, i);
         }
-        func_0804d8f8(D_03005380, gBonOdoriInfo.unk44[i], temp, 0, 1, 0x7f, 0);
+        func_0804d8f8(D_03005380, gBonOdoriInfo.unk44[i], anim, 0, 1, 0x7f, 0);
     }
     if (gBonOdoriInfo.unk40 == 0) {
         if (gBonOdoriInfo.unk42) {
-            func_0804d8f8(D_03005380, gBonOdoriInfo.unk3E, func_080206a0(0x21), 0, 1, 0x7f, 0);
+            func_0804d8f8(D_03005380, gBonOdoriInfo.yaguraSprite, func_080206a0(BON_ODORI_ANIM_33), 0, 1, 0x7f, 0);
             gBonOdoriInfo.unk40 = func_0800c3a4(0x24);
             gBonOdoriInfo.unk42 = FALSE;
         } else {
-            func_0804d8f8(D_03005380, gBonOdoriInfo.unk3E, func_080206a0(0x1f), 0, 1, 0x7f, 0);
+            func_0804d8f8(D_03005380, gBonOdoriInfo.yaguraSprite, func_080206a0(BON_ODORI_ANIM_31), 0, 1, 0x7f, 0);
         }
     }
     if (gBonOdoriInfo.unk54 != 0) {

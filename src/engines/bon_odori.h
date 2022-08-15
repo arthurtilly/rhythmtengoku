@@ -2,8 +2,56 @@
 
 #include "global.h"
 #include "sound.h"
+#include "graphics.h"
 
 // Engine Macros/Enums:
+enum BonOdoriAnimationsEnum {
+    BON_ODORI_ANIM_00,
+    BON_ODORI_ANIM_01,
+    BON_ODORI_ANIM_02,
+    BON_ODORI_ANIM_03,
+    BON_ODORI_ANIM_04,
+    BON_ODORI_ANIM_05,
+    BON_ODORI_ANIM_06,
+    BON_ODORI_ANIM_07,
+    BON_ODORI_ANIM_08,
+    BON_ODORI_ANIM_09,
+    BON_ODORI_ANIM_10,
+    BON_ODORI_ANIM_11,
+    BON_ODORI_ANIM_12,
+    BON_ODORI_ANIM_13,
+    BON_ODORI_ANIM_14,
+    BON_ODORI_ANIM_15,
+    BON_ODORI_ANIM_16,
+    BON_ODORI_ANIM_17,
+    BON_ODORI_ANIM_18,
+    BON_ODORI_ANIM_19,
+    BON_ODORI_ANIM_20,
+    BON_ODORI_ANIM_21,
+    BON_ODORI_ANIM_22,
+    BON_ODORI_ANIM_23,
+    BON_ODORI_ANIM_24,
+    BON_ODORI_ANIM_25,
+    BON_ODORI_ANIM_26,
+    BON_ODORI_ANIM_27,
+    BON_ODORI_ANIM_28,
+    BON_ODORI_ANIM_29,
+    BON_ODORI_ANIM_30,
+    BON_ODORI_ANIM_31, // Yagura-chan - Beat
+    BON_ODORI_ANIM_32,
+    BON_ODORI_ANIM_33,
+};
+
+enum BonOdoriDonpanAnimationsEnum {
+    BON_ODORI_DONPAN_ANIM_00,
+    BON_ODORI_DONPAN_ANIM_01,
+    BON_ODORI_DONPAN_ANIM_02,
+    BON_ODORI_DONPAN_ANIM_03,
+    BON_ODORI_DONPAN_ANIM_04,
+    BON_ODORI_DONPAN_ANIM_05,
+    BON_ODORI_DONPAN_ANIM_06,
+    BON_ODORI_DONPAN_ANIM_07
+};
 
 // OAM Animations:
 
@@ -16,7 +64,7 @@ extern const struct SequenceData s_HC_seqData;
 // Engine Data:
 
 // Engine Definition Data:
-extern u32 **D_089dec38[]; // Pointers to animation arrays, with each one consisting of two animations.
+extern const struct Animation **D_089dec38[34]; // Pointers to animation arrays, with each one consisting of two animations.
 extern u8 *D_089dece0[];   // Contains Donpan animation indexes. (Subarrays are the same animation but for different donpans)
 extern u16 D_089ded00[8];  // Seemingly numbers of ticks for animations.
 extern u32 D_089ded10;     // GFX related
@@ -25,9 +73,9 @@ extern u16 *D_089deecc[];  // Another index of pointers to palettes (more like s
 extern u16 *D_089deed4[];  // Index of pointers to palettes.
 
 // Functions:
-extern u32 *func_080206a0(u32);
+extern const struct Animation *func_080206a0(u32);  // [func_080206a0] Get OBJ Animation
 extern void func_080206c0(void);
-extern u32 *func_0802075c(u32, u32);    // Returns donpan animation
+extern const struct Animation *func_0802075c(u32, u32); // [func_0802075c] Get Donpan Animation
 extern void func_08020778(u32, u32);    // Potentially sets donpan animation?
 extern void func_080207d0(u32);     // [func_080207d0] ENGINE Func_0B - Set Animation (CPU Donpans)
 extern void func_080207ec(u32);     // [func_080207ec] ENGINE Func_0C - Set Animation (Player)
