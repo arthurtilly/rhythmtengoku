@@ -2,6 +2,7 @@
 
 #include "global.h"
 #include "sound.h"
+#include "graphics.h"
 
 
   // // //  PROLOGUE: SNEAKY SPIRITS  // // //

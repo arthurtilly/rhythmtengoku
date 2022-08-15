@@ -1,4 +1,4 @@
-#include "src/engines/marching_orders.h"
+#include "engines/marching_orders.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

@@ -1,4 +1,4 @@
-#include "src/engines/rhythm_test.h"
+#include "engines/rhythm_test.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

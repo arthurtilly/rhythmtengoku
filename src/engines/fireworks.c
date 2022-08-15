@@ -1,4 +1,4 @@
-#include "src/engines/fireworks.h"
+#include "engines/fireworks.h"
 
 #include "src/code_08001360.h"
 #include "src/code_08003980.h"

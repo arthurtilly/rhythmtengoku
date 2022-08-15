@@ -1,4 +1,4 @@
-#include "src/engines/concert_hall.h"
+#include "engines/concert_hall.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

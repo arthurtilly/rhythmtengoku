@@ -1,4 +1,4 @@
-#include "src/engines/bunny_hop.h"
+#include "engines/bunny_hop.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

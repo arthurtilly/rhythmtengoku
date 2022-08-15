@@ -1,4 +1,4 @@
-#include "src/engines/tram_and_pauline.h"
+#include "engines/tram_and_pauline.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

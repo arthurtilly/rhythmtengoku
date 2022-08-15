@@ -1,4 +1,4 @@
-#include "src/engines/showtime.h"
+#include "engines/showtime.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

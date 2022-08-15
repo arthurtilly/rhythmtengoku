@@ -1,4 +1,4 @@
-#include "src/engines/toss_boys.h"
+#include "engines/toss_boys.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

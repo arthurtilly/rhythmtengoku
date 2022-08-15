@@ -1,4 +1,4 @@
-#include "src/engines/spaceball.h"
+#include "engines/spaceball.h"
 
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
@@ -134,7 +134,7 @@ void func_0801fe6c(void) {
 
     // Update Stars
     if (gSpaceballInfo.currentStar < 24) {
-        gSpaceballInfo.starSprite[gSpaceballInfo.currentStar] = func_0804d160(D_03005380, D_088a1b90, 0, 0, 0, 0xc800, 1, 0, 0);
+        gSpaceballInfo.starSprite[gSpaceballInfo.currentStar] = func_0804d160(D_03005380, spaceball_anim11, 0, 0, 0, 0xc800, 1, 0, 0);
         func_0801fc44(gSpaceballInfo.currentStar);
         gSpaceballInfo.currentStar++;
     } else {
@@ -183,30 +183,30 @@ void func_0801ffcc(u32 ver) {
     func_0800e044(1);
     func_0800e044(3);
 
-    gSpaceballInfo.batter.sprite = func_0800fa6c(D_088a1a70, 0, 170, 80, 0x4800, INT_TO_FIXED(0.5), 0, 0, 0, 0, 1);
+    gSpaceballInfo.batter.sprite = func_0800fa6c(spaceball_anim00, 0, 170, 80, 0x4800, INT_TO_FIXED(0.5), 0, 0, 0, 0, 1);
     gSpaceballInfo.batter.x = 50;
     gSpaceballInfo.batter.y = 0;
     gSpaceballInfo.batter.z = 0;
     gSpaceballInfo.batter.swingTimer = 0;
     func_0802026c(0);
 
-    gSpaceballInfo.pitcher.sprite = func_0800fa6c(D_088a1ad0, 2, 70, 128, 0x4800, INT_TO_FIXED(0.5), 0, 0, 0, 0, 1);
+    gSpaceballInfo.pitcher.sprite = func_0800fa6c(spaceball_anim02, 2, 70, 128, 0x4800, INT_TO_FIXED(0.5), 0, 0, 0, 0, 1);
     gSpaceballInfo.pitcher.x = -50;
     gSpaceballInfo.pitcher.y = 48;
     gSpaceballInfo.pitcher.z = 0;
 
-    gSpaceballInfo.umpire.sprite = func_0800fa6c(D_088a1bd0, 2, 120, 89, 0x4864, INT_TO_FIXED(0.5), 0, 1, 2, 0x8000, 1);
+    gSpaceballInfo.umpire.sprite = func_0800fa6c(spaceball_anim13, 2, 120, 89, 0x4864, INT_TO_FIXED(0.5), 0, 1, 2, 0x8000, 1);
     gSpaceballInfo.umpire.x = 0;
     gSpaceballInfo.umpire.y = 9;
     gSpaceballInfo.umpire.z = 0;
     func_08010040(gSpaceballInfo.umpire.sprite, 1);
 
-    gSpaceballInfo.poofR.sprite = func_0800fa6c(D_088a1b70, 2, 154, 132, 0x4864, INT_TO_FIXED(1), 0, 1, 0, 0x8002, 1);
+    gSpaceballInfo.poofR.sprite = func_0800fa6c(spaceball_anim10, 2, 154, 132, 0x4864, INT_TO_FIXED(1), 0, 1, 0, 0x8002, 1);
     gSpaceballInfo.poofR.x = 34;
     gSpaceballInfo.poofR.y = 52;
     gSpaceballInfo.poofR.z = 0;
 
-    gSpaceballInfo.poofL.sprite = func_0800fa6c(D_088a1b70, 2, 122, 132, 0x4864, INT_TO_FIXED(1), 0, 1, 0, 0x8002, 1);
+    gSpaceballInfo.poofL.sprite = func_0800fa6c(spaceball_anim10, 2, 122, 132, 0x4864, INT_TO_FIXED(1), 0, 1, 0, 0x8002, 1);
     gSpaceballInfo.poofL.x = 2;
     gSpaceballInfo.poofL.y = 52;
     gSpaceballInfo.poofL.z = 0;
@@ -281,9 +281,9 @@ void func_08020290(u32 index) {
 void func_080202a4(u32 show) {
     struct AffineSprite *sprite = gSpaceballInfo.umpire.sprite;
     if (show) {
-        func_08010064(sprite, D_088a1ba0, 0, 1, 1, 0);
+        func_08010064(sprite, spaceball_anim12, 0, 1, 1, 0);
     } else {
-        func_08010064(sprite, D_088a1bd0, 0, 1, 2, 0);
+        func_08010064(sprite, spaceball_anim13, 0, 1, 2, 0);
     }
 }
 

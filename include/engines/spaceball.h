@@ -12,12 +12,12 @@ enum SpaceballCueStatesEnum {
 };
 
 // OAM Animations:
-extern const struct Animation D_088a1a70[]; // Animation: "batter_green"
-extern const struct Animation D_088a1ad0[]; // Animation: "pitcher_shoot
-extern const struct Animation D_088a1b70[]; // Animation: "miss_poof"
-extern const struct Animation D_088a1b90[]; // Animation: "bg_star"
-extern const struct Animation D_088a1ba0[]; // Animation: "umpire_show"
-extern const struct Animation D_088a1bd0[]; // Animation: "umpire_sway"
+extern const struct Animation spaceball_anim00[]; // Animation: "batter_green"
+extern const struct Animation spaceball_anim02[]; // Animation: "pitcher_shoot"
+extern const struct Animation spaceball_anim10[]; // Animation: "miss_poof"
+extern const struct Animation spaceball_anim11[]; // Animation: "bg_star"
+extern const struct Animation spaceball_anim12[]; // Animation: "umpire_show"
+extern const struct Animation spaceball_anim13[]; // Animation: "umpire_sway"
 
 // Palettes:
 

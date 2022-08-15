@@ -1,4 +1,4 @@
-#include "src/engines/night_walk.h"
+#include "engines/night_walk.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

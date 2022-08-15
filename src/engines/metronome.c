@@ -1,4 +1,4 @@
-#include "src/engines/metronome.h"
+#include "engines/metronome.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

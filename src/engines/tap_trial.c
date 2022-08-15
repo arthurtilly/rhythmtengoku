@@ -1,4 +1,4 @@
-#include "src/engines/tap_trial.h"
+#include "engines/tap_trial.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

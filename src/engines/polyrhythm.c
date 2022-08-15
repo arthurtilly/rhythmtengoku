@@ -1,4 +1,4 @@
-#include "src/engines/polyrhythm.h"
+#include "engines/polyrhythm.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

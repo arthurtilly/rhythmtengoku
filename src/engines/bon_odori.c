@@ -1,4 +1,4 @@
-#include "src/engines/bon_odori.h"
+#include "engines/bon_odori.h"
 
 #include "src/code_08001360.h"
 #include "src/code_08003980.h"

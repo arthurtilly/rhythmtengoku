@@ -1,4 +1,4 @@
-#include "src/engines/rhythm_tweezers.h"
+#include "engines/rhythm_tweezers.h"
 
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"

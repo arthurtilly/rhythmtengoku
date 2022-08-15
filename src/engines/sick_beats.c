@@ -1,4 +1,4 @@
-#include "src/engines/sick_beats.h"
+#include "engines/sick_beats.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

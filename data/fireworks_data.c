@@ -1,4 +1,4 @@
-#include "src/engines/fireworks.h"
+#include "engines/fireworks.h"
 
 // [D_0805a3d0] Default Tutorial Text
 const char D_0805a3d0[] = "";

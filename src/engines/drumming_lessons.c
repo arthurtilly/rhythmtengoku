@@ -1,6 +1,6 @@
 // Might need some more splitting
 
-#include "src/engines/drumming_lessons.h"
+#include "engines/drumming_lessons.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

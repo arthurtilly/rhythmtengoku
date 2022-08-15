@@ -1,4 +1,4 @@
-#include "src/engines/clappy_trio.h"
+#include "engines/clappy_trio.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

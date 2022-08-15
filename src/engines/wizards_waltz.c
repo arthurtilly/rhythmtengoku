@@ -1,4 +1,4 @@
-#include "src/engines/wizards_waltz.h"
+#include "engines/wizards_waltz.h"
 
 #include "src/code_08001360.h"
 #include "src/code_08003980.h"

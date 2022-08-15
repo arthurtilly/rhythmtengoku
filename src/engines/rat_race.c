@@ -1,4 +1,4 @@
-#include "src/engines/rat_race.h"
+#include "engines/rat_race.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

@@ -1,4 +1,4 @@
-#include "src/engines/mr_upbeat.h"
+#include "engines/mr_upbeat.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

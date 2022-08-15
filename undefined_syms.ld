@@ -2130,31 +2130,6 @@ D_0806aaa8 = 0x0806aaa8;
 /* bindata_088a0650 */
 /* 0x088a0650 is .rodata section of the SRAM library */
 
-/* Spaceball Animations */
-D_088a1a70 = 0x088a1a70;
-D_088a1aa0 = 0x088a1aa0;
-D_088a1ad0 = 0x088a1ad0;
-D_088a1af0 = 0x088a1af0;
-D_088a1b10 = 0x088a1b10;
-D_088a1b20 = 0x088a1b20;
-D_088a1b30 = 0x088a1b30;
-D_088a1b40 = 0x088a1b40;
-D_088a1b50 = 0x088a1b50;
-D_088a1b60 = 0x088a1b60;
-D_088a1b70 = 0x088a1b70;
-D_088a1b90 = 0x088a1b90;
-D_088a1ba0 = 0x088a1ba0;
-D_088a1bd0 = 0x088a1bd0;
-D_088a1c28 = 0x088a1c28;
-D_088a1c58 = 0x088a1c58;
-D_088a1c80 = 0x088a1c80;
-D_088a1ce8 = 0x088a1ce8;
-D_088a1d18 = 0x088a1d18;
-D_088a1d48 = 0x088a1d48;
-D_088a1d78 = 0x088a1d78;
-D_088a1da8 = 0x088a1da8;
-/* Spaceball Palettes */
-D_088a1dd0 = 0x088a1dd0;
 /* LIVE ver2 OAM Frames */
 D_088a1f30 = 0x088a1f30;
 D_088a1f44 = 0x088a1f44;

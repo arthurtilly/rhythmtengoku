@@ -1,4 +1,4 @@
-#include "src/engines/mannequin_factory.h"
+#include "engines/mannequin_factory.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

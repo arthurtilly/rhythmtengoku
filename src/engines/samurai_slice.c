@@ -1,4 +1,4 @@
-#include "src/engines/samurai_slice.h"
+#include "engines/samurai_slice.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

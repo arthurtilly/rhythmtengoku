@@ -1,4 +1,4 @@
-#include "src/engines/staff_credit.h"
+#include "engines/staff_credit.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

@@ -1,4 +1,4 @@
-#include "src/engines/ninja_bodyguard.h"
+#include "engines/ninja_bodyguard.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

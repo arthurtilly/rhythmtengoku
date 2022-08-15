@@ -1,4 +1,4 @@
-#include "src/engines/power_calligraphy.h"
+#include "engines/power_calligraphy.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

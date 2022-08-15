@@ -1,4 +1,4 @@
-#include "src/engines/space_dance.h"
+#include "engines/space_dance.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

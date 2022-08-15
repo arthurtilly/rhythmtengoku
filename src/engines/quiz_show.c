@@ -1,4 +1,4 @@
-#include "src/engines/quiz_show.h"
+#include "engines/quiz_show.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

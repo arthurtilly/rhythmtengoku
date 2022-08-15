@@ -1,4 +1,4 @@
-#include "src/engines/mechanical_horse.h"
+#include "engines/mechanical_horse.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

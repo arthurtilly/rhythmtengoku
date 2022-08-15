@@ -1,4 +1,4 @@
-#include "src/engines/prologues.h"
+#include "engines/prologues.h"
 
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"

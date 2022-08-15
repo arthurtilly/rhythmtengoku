@@ -1,4 +1,4 @@
-#include "src/engines/bouncy_road.h"
+#include "engines/bouncy_road.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

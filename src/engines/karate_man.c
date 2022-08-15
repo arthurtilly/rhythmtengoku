@@ -1,4 +1,4 @@
-#include "src/engines/karate_man.h"
+#include "engines/karate_man.h"
 
 #include "syscall.h"
 #include "src/code_08001360.h"
