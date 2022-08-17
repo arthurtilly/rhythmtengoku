@@ -1208,6 +1208,18 @@ SECTIONS {
         build/graphics/prologues/prologue_wizards_waltz_pal.c.o(.rodata*);
         build/graphics/prologues/prologue_placeholder_anim.c.o(.rodata*);
         build/graphics/prologues/prologue_placeholder_pal.c.o(.rodata*);
+        build/graphics/mannequin_factory/mannequin_factory_anim.c.o(.rodata*);
+        build/graphics/mannequin_factory/mannequin_factory_pal.c.o(.rodata*);
+        build/graphics/space_dance/cosmic_dance_anim.c.o(.rodata*);
+        build/graphics/space_dance/cosmic_dance_pal.c.o(.rodata*);
+        build/graphics/live/drum_boys_anim.c.o(.rodata*);
+        build/graphics/live/drum_boys_pal.c.o(.rodata*);
+        build/graphics/live/drum_girls_anim.c.o(.rodata*);
+        build/graphics/live/drum_girls_pal.c.o(.rodata*);
+        build/graphics/drum_tutorial/drum_tutorial_anim.c.o(.rodata*);
+        build/graphics/drum_tutorial/drum_tutorial_pal.c.o(.rodata*);
+        build/graphics/drum_tutorial/drum_cutscene_anim.c.o(.rodata*);
+        build/graphics/drum_tutorial/drum_cutscene_pal.c.o(.rodata*);
 
         build/bin/bindata_088b90e4.bin.o(.rodata*);
         build/bin/bindata_088f5aec.bin.o(.rodata*);
