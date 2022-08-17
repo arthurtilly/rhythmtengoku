@@ -1728,8 +1728,3 @@ const AnimationCel drum_samurai_band_cel206[] = {
     /* 022 */ 0x0008, 0x41d1, 0x001e,
     /* 023 */ 0x0008, 0x51e1, 0x001e
 };
-
-// [D_088a3112]
-const AnimationCel drum_samurai_band_cel207[] = {
-    /* Len */ 0,
-};

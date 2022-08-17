@@ -1111,23 +1111,21 @@ SECTIONS {
         build/audio/samples/sfx_962.pcm.o(.rodata*);
 
         build/bin/bindata_sram_info.bin.o(.rodata*);
+
         build/graphics/sneaky_spirits/sneaky_spirits_anim.c.o(.rodata*);
         build/graphics/sneaky_spirits/sneaky_spirits_pal.c.o(.rodata*);
         build/graphics/spaceball/spaceball_anim.c.o(.rodata*);
         build/graphics/spaceball/spaceball_pal.c.o(.rodata*);
         build/graphics/live/drum_samurai_band_anim.c.o(.rodata*);
         build/graphics/live/drum_samurai_band_pal.c.o(.rodata*);
-        build/graphics/bon_odori/bon_dance_anim.bin.o(.rodata*);
-        build/graphics/bon_odori/bon_dance_pal_obj.bin.o(.rodata*);
-        build/graphics/bon_odori/bon_dance_pal_bg.bin.o(.rodata*);
-        build/graphics/bon_odori/bon_odori_anim.bin.o(.rodata*);
-        build/graphics/bon_odori/bon_odori_pal_obj.bin.o(.rodata*);
-        build/graphics/bon_odori/bon_odori_pal_bg.bin.o(.rodata*);
-        build/graphics/karate_man/karate_man_anim.bin.o(.rodata*);
-        build/graphics/karate_man/karate_man_v0_pal.bin.o(.rodata*);
-        build/graphics/karate_man/karate_man_v3_pal.bin.o(.rodata*);
-        build/graphics/prologues/prologue_sneaky_spirits_anim.bin.o(.rodata*);
-        build/graphics/prologues/prologue_sneaky_spirits_pal.bin.o(.rodata*);
+        build/graphics/bon_odori/bon_dance_anim.c.o(.rodata*);
+        build/graphics/bon_odori/bon_dance_pal.c.o(.rodata*);
+        build/graphics/bon_odori/bon_odori_anim.c.o(.rodata*);
+        build/graphics/bon_odori/bon_odori_pal.c.o(.rodata*);
+        build/graphics/karate_man/karate_man_anim.c.o(.rodata*);
+        build/graphics/karate_man/karate_man_pal.c.o(.rodata*);
+        build/graphics/prologues/prologue_sneaky_spirits_anim.c.o(.rodata*);
+        build/graphics/prologues/prologue_sneaky_spirits_pal.c.o(.rodata*);
         build/graphics/prologues/prologue_spaceball_anim.bin.o(.rodata*);
         build/graphics/prologues/prologue_spaceball_pal_obj.bin.o(.rodata*);
         build/graphics/prologues/prologue_spaceball_pal_bg.bin.o(.rodata*);
@@ -1157,6 +1155,7 @@ SECTIONS {
         build/graphics/prologues/prologue_clappy_trio_anim.bin.o(.rodata*);
         build/graphics/prologues/prologue_clappy_trio_pal_obj.bin.o(.rodata*);
         build/graphics/prologues/prologue_clappy_trio_pal_bg.bin.o(.rodata*);
+
         build/bin/bindata_088afc3c.bin.o(.rodata*);
         build/bin/bindata_088f5aec.bin.o(.rodata*);
         build/bin/bindata_089000cc.bin.o(.rodata*);
@@ -1173,7 +1172,7 @@ SECTIONS {
         build/bin/bindata_08a9e8e0.bin.o(.rodata*);
         build/bin/bindata_08aa06f8.bin.o(.rodata*);
 		build/audio/sample_table.json.c.o(.rodata*);
-        
+
         build/audio/sequences/Lesson1.mid.o(.rodata*);
         build/audio/sequences/Lesson2.mid.o(.rodata*);
         build/audio/sequences/Lesson3.mid.o(.rodata*);

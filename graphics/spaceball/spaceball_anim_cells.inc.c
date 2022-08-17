@@ -448,8 +448,3 @@ const AnimationCel spaceball_cel061[] = {
     /* Len */ 1,
     /* 000 */ 0x00f1, 0x81f0, 0x4190
 };
-
-// [D_088a1a6e]
-const AnimationCel spaceball_cel062[] = {
-    /* Len */ 0,
-};
