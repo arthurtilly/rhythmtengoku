@@ -1220,6 +1220,10 @@ SECTIONS {
         build/graphics/drum_tutorial/drum_tutorial_pal.c.o(.rodata*);
         build/graphics/drum_tutorial/drum_cutscene_anim.c.o(.rodata*);
         build/graphics/drum_tutorial/drum_cutscene_pal.c.o(.rodata*);
+        build/graphics/drum_lessons/drum_lessons_player_anim.c.o(.rodata*);
+        build/graphics/drum_lessons/drum_lessons_unk_anim.c.o(.rodata*);
+        build/graphics/drum_lessons/drum_lessons_teacher_anim.c.o(.rodata*);
+        build/graphics/drum_lessons/drum_lessons_pal.c.o(.rodata*);
 
         build/bin/bindata_088b90e4.bin.o(.rodata*);
         build/bin/bindata_088f5aec.bin.o(.rodata*);
