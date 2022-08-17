@@ -2351,194 +2351,67 @@ D_088afb9c = 0x088afb9c;
 /* Prologue - The Clappy Trio Palettes */
 D_088afbdc = 0x088afbdc;
 D_088afc1c = 0x088afc1c;
-/* Prologue - The Snappy Trio OAM Frames */
-D_088afc3c = 0x088afc3c;
-D_088afc44 = 0x088afc44;
-D_088afc52 = 0x088afc52;
-D_088afc72 = 0x088afc72;
-D_088afc9e = 0x088afc9e;
-D_088afcdc = 0x088afcdc;
-D_088afd50 = 0x088afd50;
 /* Prologue - The Snappy Trio Animations */
 D_088afdc4 = 0x088afdc4;
 /* Prologue - The Snappy Trio Palettes */
 D_088afe04 = 0x088afe04;
-/* Prologue - Samurai Slice OAM Frames */
-D_088afe44 = 0x088afe44;
-D_088afe4c = 0x088afe4c;
-D_088afe90 = 0x088afe90;
-D_088afece = 0x088afece;
-D_088aff12 = 0x088aff12;
-D_088aff56 = 0x088aff56;
-D_088aff9a = 0x088aff9a;
 /* Prologue - Samurai Slice Animations */
 D_088affe0 = 0x088affe0;
 /* Prologue - Samurai Slice Palettes */
 D_088b0018 = 0x088b0018;
-/* Prologue - Power Calligraphy OAM Frames */
-D_088b0058 = 0x088b0058;
-D_088b0060 = 0x088b0060;
-D_088b0074 = 0x088b0074;
-D_088b008e = 0x088b008e;
-D_088b0120 = 0x088b0120;
-D_088b01b2 = 0x088b01b2;
-D_088b0244 = 0x088b0244;
-D_088b02d6 = 0x088b02d6;
-D_088b0368 = 0x088b0368;
-D_088b03fa = 0x088b03fa;
-D_088b048c = 0x088b048c;
-D_088b051e = 0x088b051e;
-D_088b0598 = 0x088b0598;
-D_088b05fa = 0x088b05fa;
-D_088b0644 = 0x088b0644;
-D_088b0676 = 0x088b0676;
 /* Prologue - Power Calligraphy Animations */
 D_088b0690 = 0x088b0690;
 D_088b06a0 = 0x088b06a0;
 D_088b06b0 = 0x088b06b0;
 /* Prologue - Power Calligraphy Palettes */
 D_088b0720 = 0x088b0720;
-/* Prologue - Marching Orders OAM Frames */
-D_088b0800 = 0x088b0800;
-D_088b0808 = 0x088b0808;
-D_088b081c = 0x088b081c;
-D_088b083c = 0x088b083c;
-D_088b0874 = 0x088b0874;
-D_088b08b8 = 0x088b08b8;
-D_088b08fc = 0x088b08fc;
-D_088b094c = 0x088b094c;
 /* Prologue - Marching Orders Animations */
 D_088b09b4 = 0x088b09b4;
 /* Prologue - Marching Orders Palettes */
 D_088b09fc = 0x088b09fc;
 D_088b0a1c = 0x088b0a1c;
-/* Prologue - Marching Orders 2 OAM Frames */
-D_088b0a3c = 0x088b0a3c;
-D_088b0a44 = 0x088b0a44;
-D_088b0a58 = 0x088b0a58;
-D_088b0a78 = 0x088b0a78;
-D_088b0ab0 = 0x088b0ab0;
-D_088b0af4 = 0x088b0af4;
-D_088b0b38 = 0x088b0b38;
-D_088b0b88 = 0x088b0b88;
 /* Prologue - Marching Orders 2 Animations */
 D_088b0bf0 = 0x088b0bf0;
 /* Prologue - Marching Orders 2 Palettes */
 D_088b0c38 = 0x088b0c38;
 D_088b0c78 = 0x088b0c78;
-/* Prologue - Polyrhythm OAM Frames */
-D_088b0c98 = 0x088b0c98;
-D_088b0ca0 = 0x088b0ca0;
 /* Prologue - Polyrhythm Animations */
 D_088b0cb4 = 0x088b0cb4;
 /* Prologue - Polyrhythm Palettes */
 D_088b0ccc = 0x088b0ccc;
-/* Prologue - Quiz Show OAM Frames */
-D_088b0ecc = 0x088b0ecc;
-D_088b0f6a = 0x088b0f6a;
-D_088b100e = 0x088b100e;
-D_088b10ac = 0x088b10ac;
-D_088b114a = 0x088b114a;
-D_088b11e8 = 0x088b11e8;
-D_088b1286 = 0x088b1286;
-D_088b1324 = 0x088b1324;
 /* Prologue - Quiz Show Animations */
 D_088b13c4 = 0x088b13c4;
 /* Prologue - Quiz Show Palettes */
 D_088b141c = 0x088b141c;
-/* Prologue - Remix 1 OAM Frames */
-D_088b149c = 0x088b149c;
-D_088b14a4 = 0x088b14a4;
-D_088b14d0 = 0x088b14d0;
-D_088b1520 = 0x088b1520;
-D_088b1594 = 0x088b1594;
-D_088b162c = 0x088b162c;
-D_088b16ee = 0x088b16ee;
 /* Prologue - Remix 1 Animations */
 D_088b17d0 = 0x088b17d0;
 /* Prologue - Remix 1 Palettes */
 D_088b1810 = 0x088b1810;
 D_088b1830 = 0x088b1830;
-/* Prologue - Remix 2 OAM Frames */
-D_088b1950 = 0x088b1950;
-D_088b1958 = 0x088b1958;
-D_088b1984 = 0x088b1984;
-D_088b19da = 0x088b19da;
-D_088b1a4e = 0x088b1a4e;
-D_088b1ae6 = 0x088b1ae6;
-D_088b1ba8 = 0x088b1ba8;
 /* Prologue - Remix 2 Animations */
 D_088b1c9c = 0x088b1c9c;
 /* Prologue - Remix 2 Palettes */
 D_088b1cdc = 0x088b1cdc;
-/* Prologue - Remix 3 OAM Frames */
-D_088b1d1c = 0x088b1d1c;
-D_088b1d24 = 0x088b1d24;
-D_088b1d4a = 0x088b1d4a;
-D_088b1d9a = 0x088b1d9a;
-D_088b1e08 = 0x088b1e08;
-D_088b1e9a = 0x088b1e9a;
-D_088b1f56 = 0x088b1f56;
 /* Prologue - Remix 3 Animations */
 D_088b2044 = 0x088b2044;
 /* Prologue - Remix 3 Palettes */
 D_088b2084 = 0x088b2084;
-/* Prologue - Remix 4 OAM Frames */
-D_088b20c4 = 0x088b20c4;
-D_088b20cc = 0x088b20cc;
-D_088b20f2 = 0x088b20f2;
-D_088b2142 = 0x088b2142;
-D_088b21b0 = 0x088b21b0;
-D_088b2242 = 0x088b2242;
-D_088b22fe = 0x088b22fe;
 /* Prologue - Remix 4 Animations */
 D_088b23ec = 0x088b23ec;
 /* Prologue - Remix 4 Palettes */
 D_088b242c = 0x088b242c;
-/* Prologue - Remix 5 OAM Frames */
-D_088b24cc = 0x088b24cc;
-D_088b24d4 = 0x088b24d4;
-D_088b24fa = 0x088b24fa;
-D_088b254a = 0x088b254a;
-D_088b25b8 = 0x088b25b8;
-D_088b264a = 0x088b264a;
-D_088b2706 = 0x088b2706;
 /* Prologue - Remix 5 Animations */
 D_088b27f4 = 0x088b27f4;
 /* Prologue - Remix 5 Palettes */
 D_088b2834 = 0x088b2834;
-/* Prologue - Remix 6 OAM Frames */
-D_088b2874 = 0x088b2874;
-D_088b287c = 0x088b287c;
-D_088b28a2 = 0x088b28a2;
-D_088b28f2 = 0x088b28f2;
-D_088b2960 = 0x088b2960;
-D_088b29f2 = 0x088b29f2;
-D_088b2aae = 0x088b2aae;
 /* Prologue - Remix 6 Animations */
 D_088b2b9c = 0x088b2b9c;
 /* Prologue - Remix 6 Palettes */
 D_088b2bdc = 0x088b2bdc;
-/* Prologue - Remix 7 OAM Frames */
-D_088b2c1c = 0x088b2c1c;
-D_088b2c24 = 0x088b2c24;
-D_088b2c4a = 0x088b2c4a;
-D_088b2c9a = 0x088b2c9a;
-D_088b2d08 = 0x088b2d08;
-D_088b2d9a = 0x088b2d9a;
-D_088b2e56 = 0x088b2e56;
 /* Prologue - Remix 7 Animations */
 D_088b2f44 = 0x088b2f44;
 /* Prologue - Remix 7 Palettes */
 D_088b2f84 = 0x088b2f84;
-/* Prologue - Remix 8 OAM Frames */
-D_088b3004 = 0x088b3004;
-D_088b300c = 0x088b300c;
-D_088b3032 = 0x088b3032;
-D_088b3082 = 0x088b3082;
-D_088b30f0 = 0x088b30f0;
-D_088b3182 = 0x088b3182;
-D_088b323e = 0x088b323e;
 /* Prologue - Remix 8 Animations */
 D_088b332c = 0x088b332c;
 /* Prologue - Remix 8 Palettes */
