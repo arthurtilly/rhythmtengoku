@@ -1224,8 +1224,16 @@ SECTIONS {
         build/graphics/drum_lessons/drum_lessons_unk_anim.c.o(.rodata*);
         build/graphics/drum_lessons/drum_lessons_teacher_anim.c.o(.rodata*);
         build/graphics/drum_lessons/drum_lessons_pal.c.o(.rodata*);
+        build/graphics/night_walk/night_walk_anim.c.o(.rodata*);
+        build/graphics/night_walk/night_walk_pal.c.o(.rodata*);
+        build/graphics/showtime/showtime_anim.c.o(.rodata*);
+        build/graphics/showtime/showtime_pal.c.o(.rodata*);
+        build/graphics/bouncy_road/bouncy_road_anim.c.o(.rodata*);
+        build/graphics/bouncy_road/bouncy_road_pal.c.o(.rodata*);
 
-        build/bin/bindata_088b90e4.bin.o(.rodata*);
+        build/bin/bindata_088cc2e8.bin.o(.rodata*);
+
+        build/bin/bindata_088e7ee8.bin.o(.rodata*);
         build/bin/bindata_088f5aec.bin.o(.rodata*);
         build/bin/bindata_089000cc.bin.o(.rodata*);
         build/bin/bindata_0890a3c4.bin.o(.rodata*);
