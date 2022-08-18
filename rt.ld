@@ -1231,7 +1231,29 @@ SECTIONS {
         build/graphics/bouncy_road/bouncy_road_anim.c.o(.rodata*);
         build/graphics/bouncy_road/bouncy_road_pal.c.o(.rodata*);
 
-        build/bin/bindata_088cc2e8.bin.o(.rodata*);
+        build/graphics/font/bindata_088cc2e8.bin.o(.rodata*);
+
+        build/graphics/rhythm_tweezers/rhythm_tweezers_anim.c.o(.rodata*);
+        build/graphics/rhythm_tweezers/rhythm_tweezers_pal.c.o(.rodata*);
+        build/graphics/fireworks/fireworks_anim.c.o(.rodata*);
+        build/graphics/fireworks/fireworks_pal.c.o(.rodata*);
+        build/graphics/clappy_trio/clappy_trio_anim.c.o(.rodata*);
+        build/graphics/clappy_trio/clappy_trio_pal.c.o(.rodata*);
+        build/graphics/clappy_trio/snappy_trio_anim.c.o(.rodata*);
+        build/graphics/clappy_trio/snappy_trio_pal.c.o(.rodata*);
+        build/graphics/samurai_slice/samurai_slice_anim.c.o(.rodata*);
+        build/graphics/samurai_slice/samurai_slice_pal.c.o(.rodata*);
+        build/graphics/power_calligraphy/power_calligraphy_brush_anim.c.o(.rodata*);
+        build/graphics/power_calligraphy/power_calligraphy_people_anim.c.o(.rodata*);
+        build/graphics/power_calligraphy/power_calligraphy_pal.c.o(.rodata*);
+        build/graphics/rhythm_test/rhythm_test_anim.c.o(.rodata*);
+        build/graphics/rhythm_test/rhythm_test_pal.c.o(.rodata*);
+        build/graphics/marching_orders/marching_orders_anim.c.o(.rodata*);
+        build/graphics/marching_orders/marching_orders_pal.c.o(.rodata*);
+        build/graphics/marching_orders/marching_orders_2_anim.c.o(.rodata*);
+        build/graphics/marching_orders/marching_orders_2_pal.c.o(.rodata*);
+        build/graphics/metronome/metronome_anim.c.o(.rodata*);
+        build/graphics/metronome/metronome_pal.c.o(.rodata*);
 
         build/bin/bindata_088e7ee8.bin.o(.rodata*);
         build/bin/bindata_088f5aec.bin.o(.rodata*);
