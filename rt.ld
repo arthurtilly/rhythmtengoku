@@ -1263,8 +1263,16 @@ SECTIONS {
         build/graphics/concert_hall/concert_hall_pal.c.o(.rodata*);
         build/graphics/quiz_show/quiz_show_anim.c.o(.rodata*);
         build/graphics/quiz_show/quiz_show_pal.c.o(.rodata*);
+        build/graphics/bunny_hop/bunny_hop_anim.c.o(.rodata*);
+        build/graphics/bunny_hop/bunny_hop_pal.c.o(.rodata*);
+        build/graphics/rap_men/rap_men_anim.c.o(.rodata*);
+        build/graphics/rap_men/rap_men_pal.c.o(.rodata*);
+        build/graphics/rap_men/rap_women_anim.c.o(.rodata*);
+        build/graphics/rap_men/rap_women_pal.c.o(.rodata*);
+        build/graphics/rat_race/rat_race_anim.c.o(.rodata*);
+        build/graphics/rat_race/rat_race_pal.c.o(.rodata*);
 
-        build/bin/bindata_088f5aec.bin.o(.rodata*);
+        build/bin/bindata_088fe8cc.bin.o(.rodata*);
         build/bin/bindata_089000cc.bin.o(.rodata*);
         build/bin/bindata_0890a3c4.bin.o(.rodata*);
         build/bin/bindata_08932444.bin.o(.rodata*);
