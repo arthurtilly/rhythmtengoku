@@ -1254,8 +1254,16 @@ SECTIONS {
         build/graphics/marching_orders/marching_orders_2_pal.c.o(.rodata*);
         build/graphics/metronome/metronome_anim.c.o(.rodata*);
         build/graphics/metronome/metronome_pal.c.o(.rodata*);
+        build/graphics/drum_lessons/studio_bg_monitor_pal.c.o(.rodata*);
+        build/graphics/options/options_anim.c.o(.rodata*);
+        build/graphics/options/options_pal.c.o(.rodata*);
+        build/graphics/polyrhythm/polyrhythm_anim.c.o(.rodata*);
+        build/graphics/polyrhythm/polyrhythm_pal.c.o(.rodata*);
+        build/graphics/concert_hall/concert_hall_anim.c.o(.rodata*);
+        build/graphics/concert_hall/concert_hall_pal.c.o(.rodata*);
+        build/graphics/quiz_show/quiz_show_anim.c.o(.rodata*);
+        build/graphics/quiz_show/quiz_show_pal.c.o(.rodata*);
 
-        build/bin/bindata_088e7ee8.bin.o(.rodata*);
         build/bin/bindata_088f5aec.bin.o(.rodata*);
         build/bin/bindata_089000cc.bin.o(.rodata*);
         build/bin/bindata_0890a3c4.bin.o(.rodata*);
