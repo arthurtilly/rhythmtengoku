@@ -3472,15 +3472,8 @@ D_088fff2c = 0x088fff2c;
 D_088fff4c = 0x088fff4c;
 /* Magician */
 D_088fff6c = 0x088fff6c;
-/* Debug (Unused) */
+/* Placeholder (Unused) */
 D_088fffec = 0x088fffec;
-/* Arrival OAM Frames */
-D_0890000c = 0x0890000c;
-D_0890002c = 0x0890002c;
-D_0890004c = 0x0890004c;
-D_0890006c = 0x0890006c;
-D_0890008c = 0x0890008c;
-D_089000ac = 0x089000ac;
 
 /* bindata_089000cc (bad split) */
 /* Arrival Animations */
@@ -3488,17 +3481,6 @@ D_089000cc = 0x089000cc;
 D_089000f4 = 0x089000f4;
 /* Arrival Palettes */
 D_0890011c = 0x0890011c;
-/* Cafe OAM Frames */
-D_0890017c = 0x0890017c;
-D_08900184 = 0x08900184;
-D_0890018c = 0x0890018c;
-D_08900194 = 0x08900194;
-D_0890019c = 0x0890019c;
-D_089001a4 = 0x089001a4;
-D_089001ac = 0x089001ac;
-D_089001b4 = 0x089001b4;
-D_089001bc = 0x089001bc;
-D_089001c4 = 0x089001c4;
 /* Cafe Animations */
 D_089001cc = 0x089001cc;
 D_089001dc = 0x089001dc;
@@ -3507,11 +3489,6 @@ D_0890021c = 0x0890021c;
 /* Cafe Palettes */
 D_0890023c = 0x0890023c;
 D_0890035c = 0x0890035c;
-/* Endless Menu OAM Frames */
-D_089003dc = 0x089003dc;
-D_089003fc = 0x089003fc;
-D_0890041c = 0x0890041c;
-D_08900424 = 0x08900424;
 /* Endless Menu Animations */
 D_08900444 = 0x08900444;
 D_08900454 = 0x08900454;

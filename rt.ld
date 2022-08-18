@@ -1271,8 +1271,14 @@ SECTIONS {
         build/graphics/rap_men/rap_women_pal.c.o(.rodata*);
         build/graphics/rat_race/rat_race_anim.c.o(.rodata*);
         build/graphics/rat_race/rat_race_pal.c.o(.rodata*);
+        build/graphics/epilogues/epilogue_bg_pal.c.o(.rodata*);
+        build/graphics/library/library_anim.c.o(.rodata*);
+        build/graphics/library/library_pal.c.o(.rodata*);
+        build/graphics/cafe/cafe_anim.c.o(.rodata*);
+        build/graphics/cafe/cafe_pal.c.o(.rodata*);
+        build/graphics/extra_game_menus/endless_game_icons_anim.c.o(.rodata*);
+        build/graphics/extra_game_menus/endless_game_icons_pal.c.o(.rodata*);
 
-        build/bin/bindata_088fe8cc.bin.o(.rodata*);
         build/bin/bindata_089000cc.bin.o(.rodata*);
         build/bin/bindata_0890a3c4.bin.o(.rodata*);
         build/bin/bindata_08932444.bin.o(.rodata*);
