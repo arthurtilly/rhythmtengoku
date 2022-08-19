@@ -253,4 +253,3 @@ const AnimationCel data_room_menu_cel023[] = {
     /* 008 */ 0x00e7, 0x0031, 0xa098,
     /* 009 */ 0x00e0, 0x0022, 0xa099
 };
-

@@ -202,4 +202,3 @@ const Palette data_room_menu_pal[] = {
         /* 15 */ TO_RGB555(0x000030)
     }
 };
-

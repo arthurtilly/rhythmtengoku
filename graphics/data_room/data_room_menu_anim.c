@@ -83,4 +83,3 @@ const struct Animation data_room_menu_anim05[] = {
     /* 033 */ { data_room_menu_cel022, 100 },
     /* End */ END_ANIMATION
 };
-
