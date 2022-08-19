@@ -1254,7 +1254,7 @@ SECTIONS {
         build/graphics/marching_orders/marching_orders_2_pal.c.o(.rodata*);
         build/graphics/metronome/metronome_anim.c.o(.rodata*);
         build/graphics/metronome/metronome_pal.c.o(.rodata*);
-        build/graphics/drum_lessons/studio_bg_monitor_pal.c.o(.rodata*);
+        build/graphics/studio/studio_bg_monitor_pal.c.o(.rodata*);
         build/graphics/options/options_anim.c.o(.rodata*);
         build/graphics/options/options_pal.c.o(.rodata*);
         build/graphics/polyrhythm/polyrhythm_anim.c.o(.rodata*);
@@ -1278,6 +1278,12 @@ SECTIONS {
         build/graphics/cafe/cafe_pal.c.o(.rodata*);
         build/graphics/extra_game_menus/endless_game_icons_anim.c.o(.rodata*);
         build/graphics/extra_game_menus/endless_game_icons_pal.c.o(.rodata*);
+        build/graphics/studio/studio_memory_usage_graph_anim.c.o(.rodata*);
+        build/graphics/studio/studio_memory_usage_graph_pal.c.o(.rodata*);
+        build/graphics/extra_game_menus/drum_lesson_icons_anim.c.o(.rodata*);
+        build/graphics/extra_game_menus/drum_lesson_icons_pal.c.o(.rodata*);
+        build/graphics/data_room/data_room_menu_anim.c.o(.rodata*);
+        build/graphics/data_room/data_room_menu_pal.c.o(.rodata*);
 
         build/bin/bindata_089000cc.bin.o(.rodata*);
         build/bin/bindata_0890a3c4.bin.o(.rodata*);
