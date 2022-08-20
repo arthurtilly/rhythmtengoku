@@ -1286,11 +1286,20 @@ SECTIONS {
         build/graphics/data_room/data_room_menu_pal.c.o(.rodata*);
         build/graphics/game_select/game_select_anim.c.o(.rodata*);
         build/graphics/game_select/game_select_pal.c.o(.rodata*);
-        build/graphics/game_select/bindata_089031c0.bin.o(.rodata*);
-        build/graphics/game_select/game_select_icons_pal.c.o(.rodata*);
-        build/graphics/game_select/bindata_089057e0.bin.o(.rodata*);
+        build/graphics/game_select/game_select_overlay_pal.c.o(.rodata*);
+        build/graphics/game_select/game_select_overlay_tiles_089031c0.bin.o(.rodata*);
+        build/graphics/game_select/game_select_icon_pal.c.o(.rodata*);
+        build/graphics/game_select/game_select_icon_tiles_089057e0.bin.o(.rodata*);
+        build/graphics/main_menu/main_menu_anim.c.o(.rodata*);
+        build/graphics/main_menu/main_menu_pal.c.o(.rodata*);
+        build/graphics/perfect/perfect_certificate_pal.c.o(.rodata*);
+        build/graphics/common/game_overlay_anim.c.o(.rodata*);
+        build/graphics/common/game_overlay_pal.c.o(.rodata*);
+        build/graphics/data_room/data_room_reading_anim.c.o(.rodata*);
+        build/graphics/data_room/data_room_reading_pal.c.o(.rodata*);
+        build/graphics/data_room/read_error_anim.c.o(.rodata*);
+        build/graphics/data_room/read_error_pal.c.o(.rodata*);
 
-        build/bin/bindata_089000cc.bin.o(.rodata*);
         build/bin/bindata_0890a3c4.bin.o(.rodata*);
         build/bin/bindata_08932444.bin.o(.rodata*);
 		build/bin/bindata_08935fac.bin.o(.rodata*);
