@@ -1314,6 +1314,14 @@ SECTIONS {
         build/graphics/rhythm_toys/rap_machine_pal.c.o(.rodata*);
         build/graphics/rhythm_toys/confession_machine_anim.c.o(.rodata*);
         build/graphics/rhythm_toys/confession_machine_pal.c.o(.rodata*);
+        build/graphics/ninja_bodyguard/ninja_bodyguard_anim.c.o(.rodata*);
+        build/graphics/ninja_bodyguard/ninja_bodyguard_pal.c.o(.rodata*);
+        build/graphics/space_dance/space_dance_anim.c.o(.rodata*);
+        build/graphics/space_dance/space_dance_pal.c.o(.rodata*);
+        build/graphics/marching_orders/marching_orders_remix7_anim.c.o(.rodata*);
+        build/graphics/marching_orders/marching_orders_remix7_pal.c.o(.rodata*);
+        build/graphics/drum_tutorial/tanuki_and_monkey_anim.c.o(.rodata*);
+        build/graphics/drum_tutorial/tanuki_and_monkey_pal.c.o(.rodata*);
 
         build/bin/bindata_0890bcf8.bin.o(.rodata*);
         build/bin/bindata_08932444.bin.o(.rodata*);
