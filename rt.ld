@@ -1308,6 +1308,12 @@ SECTIONS {
         build/graphics/medal_corner/rhythm_toys_menu_anim.c.o(.rodata*);
         build/graphics/medal_corner/medal_corner_menus_anim.c.o(.rodata*);
         build/graphics/medal_corner/rhythm_toys_menu_pal.c.o(.rodata*);
+        build/graphics/rhythm_toys/cat_machine_anim.c.o(.rodata*);
+        build/graphics/rhythm_toys/cat_machine_pal.c.o(.rodata*);
+        build/graphics/rhythm_toys/rap_machine_anim.c.o(.rodata*);
+        build/graphics/rhythm_toys/rap_machine_pal.c.o(.rodata*);
+        build/graphics/rhythm_toys/confession_machine_anim.c.o(.rodata*);
+        build/graphics/rhythm_toys/confession_machine_pal.c.o(.rodata*);
 
         build/bin/bindata_0890bcf8.bin.o(.rodata*);
         build/bin/bindata_08932444.bin.o(.rodata*);
