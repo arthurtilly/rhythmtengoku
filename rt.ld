@@ -1230,9 +1230,7 @@ SECTIONS {
         build/graphics/showtime/showtime_pal.c.o(.rodata*);
         build/graphics/bouncy_road/bouncy_road_anim.c.o(.rodata*);
         build/graphics/bouncy_road/bouncy_road_pal.c.o(.rodata*);
-
-        build/graphics/font/bindata_088cc2e8.bin.o(.rodata*);
-
+        build/graphics/font/font_tiles_088cc2e8.bin.o(.rodata*);
         build/graphics/rhythm_tweezers/rhythm_tweezers_anim.c.o(.rodata*);
         build/graphics/rhythm_tweezers/rhythm_tweezers_pal.c.o(.rodata*);
         build/graphics/fireworks/fireworks_anim.c.o(.rodata*);
@@ -1276,12 +1274,12 @@ SECTIONS {
         build/graphics/library/library_pal.c.o(.rodata*);
         build/graphics/cafe/cafe_anim.c.o(.rodata*);
         build/graphics/cafe/cafe_pal.c.o(.rodata*);
-        build/graphics/medal_corner/endless_game_icons_anim.c.o(.rodata*);
-        build/graphics/medal_corner/endless_game_icons_pal.c.o(.rodata*);
+        build/graphics/medal_corner/endless_games_menu_anim.c.o(.rodata*);
+        build/graphics/medal_corner/endless_games_menu_pal.c.o(.rodata*);
         build/graphics/studio/studio_memory_usage_graph_anim.c.o(.rodata*);
         build/graphics/studio/studio_memory_usage_graph_pal.c.o(.rodata*);
-        build/graphics/medal_corner/drum_lesson_icons_anim.c.o(.rodata*);
-        build/graphics/medal_corner/drum_lesson_icons_pal.c.o(.rodata*);
+        build/graphics/medal_corner/drum_lessons_menu_anim.c.o(.rodata*);
+        build/graphics/medal_corner/drum_lessons_menu_pal.c.o(.rodata*);
         build/graphics/data_room/data_room_menu_anim.c.o(.rodata*);
         build/graphics/data_room/data_room_menu_pal.c.o(.rodata*);
         build/graphics/game_select/game_select_anim.c.o(.rodata*);
@@ -1299,8 +1297,19 @@ SECTIONS {
         build/graphics/data_room/data_room_reading_pal.c.o(.rodata*);
         build/graphics/data_room/read_error_anim.c.o(.rodata*);
         build/graphics/data_room/read_error_pal.c.o(.rodata*);
+        build/graphics/results/results_level_anim.c.o(.rodata*);
+        build/graphics/results/results_level_pal.c.o(.rodata*);
+        build/graphics/results/results_score_anim.c.o(.rodata*);
+        build/graphics/results/results_score_pal.c.o(.rodata*);
+        build/graphics/studio/studio_anim.c.o(.rodata*);
+        build/graphics/studio/studio_pal.c.o(.rodata*);
+        build/graphics/title/title_anim.c.o(.rodata*);
+        build/graphics/title/title_pal.c.o(.rodata*);
+        build/graphics/medal_corner/rhythm_toys_menu_anim.c.o(.rodata*);
+        build/graphics/medal_corner/medal_corner_menus_anim.c.o(.rodata*);
+        build/graphics/medal_corner/rhythm_toys_menu_pal.c.o(.rodata*);
 
-        build/bin/bindata_0890a3c4.bin.o(.rodata*);
+        build/bin/bindata_0890bcf8.bin.o(.rodata*);
         build/bin/bindata_08932444.bin.o(.rodata*);
 		build/bin/bindata_08935fac.bin.o(.rodata*);
         build/data/data_08936b54.c.o(.rodata*);
