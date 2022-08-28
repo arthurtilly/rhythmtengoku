@@ -1322,6 +1322,16 @@ SECTIONS {
         build/graphics/marching_orders/marching_orders_remix7_pal.c.o(.rodata*);
         build/graphics/drum_tutorial/tanuki_and_monkey_anim.c.o(.rodata*);
         build/graphics/drum_tutorial/tanuki_and_monkey_pal.c.o(.rodata*);
+        build/graphics/tap_trial/tap_trial_anim.c.o(.rodata*);
+        build/graphics/tap_trial/tap_trial_pal.c.o(.rodata*);
+        build/graphics/tap_trial/tap_trial_remix8_anim.c.o(.rodata*);
+        build/graphics/tap_trial/tap_trial_remix8_pal.c.o(.rodata*);
+        build/graphics/tap_trial/tap_trial_remix7_anim.c.o(.rodata*);
+        build/graphics/tap_trial/tap_trial_remix7_pal.c.o(.rodata*);
+        build/graphics/tap_trial/tap_trial_remix5_anim.c.o(.rodata*);
+        build/graphics/tap_trial/tap_trial_remix5_pal.c.o(.rodata*);
+        build/graphics/tap_trial/tap_trial_2_anim.c.o(.rodata*);
+        build/graphics/tap_trial/tap_trial_2_pal.c.o(.rodata*);
 
         build/bin/bindata_0890bcf8.bin.o(.rodata*);
         build/bin/bindata_08932444.bin.o(.rodata*);
