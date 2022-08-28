@@ -92,7 +92,7 @@ UNDEFINED_SYMS := undefined_syms.ld
 
 export OUTPUT	:=	$(BUILD)/$(TARGET)
 
-CFILES		:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.c)) $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.c)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.c))  $(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*/*.c))
+CFILES		:=	$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*/*.c)) $(foreach dir,$(SOURCES),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.c)) $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.c)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.c))
 CPPFILES	:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.cpp))
 SFILES		:=	$(foreach dir,$(ASM),$(wildcard $(dir)/*.s)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.s))
 BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) $(foreach dir,$(MUSIC),$(wildcard $(dir)/*.mid)) $(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*/*.bin))

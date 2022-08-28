@@ -1355,7 +1355,7 @@ SECTIONS {
         build/graphics/unknown/unknown_anim.c.o(.rodata*);
         build/graphics/unknown/unknown_pal.c.o(.rodata*);
 
-        build/bin/bindata_08932444.bin.o(.rodata*);
+        build/bin/bindata_08935dac.bin.o(.rodata*);
 		build/bin/bindata_08935fac.bin.o(.rodata*);
         build/data/data_08936b54.c.o(.rodata*);
         build/bin/bindata_08936cac.bin.o(.rodata*);
