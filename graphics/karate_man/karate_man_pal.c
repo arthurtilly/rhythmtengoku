@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088ad004] <description>
-const Palette karate_man_v0_pal[] = {
+const Palette karate_man_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x18F8E0),
         /* 01 */ TO_RGB555(0x000000),
@@ -150,7 +150,7 @@ const Palette karate_man_v0_pal[] = {
 };
 
 // [D_088ad104] <description>
-const Palette karate_man_v3_pal[] = {
+const Palette karate_man_2_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x18F8E0),
         /* 01 */ TO_RGB555(0x000000),

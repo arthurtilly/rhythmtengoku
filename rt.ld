@@ -1338,6 +1338,14 @@ SECTIONS {
         build/graphics/toss_boys/toss_boys_remix5_pal.c.o(.rodata*);
         build/graphics/toss_boys/toss_boys_2_anim.c.o(.rodata*);
         build/graphics/toss_boys/toss_boys_2_pal.c.o(.rodata*);
+        build/graphics/tram_and_pauline/tram_and_pauline_tutorial_anim.c.o(.rodata*);
+        build/graphics/tram_and_pauline/tram_and_pauline_tutorial_pal.c.o(.rodata*);
+        build/graphics/tram_and_pauline/tram_and_pauline_anim.c.o(.rodata*);
+        build/graphics/tram_and_pauline/tram_and_pauline_pal.c.o(.rodata*);
+        build/graphics/rhythm_toys/horse_machine_anim.c.o(.rodata*);
+        build/graphics/rhythm_toys/horse_machine_pal.c.o(.rodata*);
+        build/graphics/sick_beats/sick_beats_anim.c.o(.rodata*);
+        build/graphics/sick_beats/sick_beats_pal.c.o(.rodata*);
 
         build/bin/bindata_0890bcf8.bin.o(.rodata*);
         build/bin/bindata_08932444.bin.o(.rodata*);
