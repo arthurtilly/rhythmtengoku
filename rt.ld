@@ -1332,6 +1332,12 @@ SECTIONS {
         build/graphics/tap_trial/tap_trial_remix5_pal.c.o(.rodata*);
         build/graphics/tap_trial/tap_trial_2_anim.c.o(.rodata*);
         build/graphics/tap_trial/tap_trial_2_pal.c.o(.rodata*);
+        build/graphics/toss_boys/toss_boys_anim.c.o(.rodata*);
+        build/graphics/toss_boys/toss_boys_pal.c.o(.rodata*);
+        build/graphics/toss_boys/toss_boys_remix5_anim.c.o(.rodata*);
+        build/graphics/toss_boys/toss_boys_remix5_pal.c.o(.rodata*);
+        build/graphics/toss_boys/toss_boys_2_anim.c.o(.rodata*);
+        build/graphics/toss_boys/toss_boys_2_pal.c.o(.rodata*);
 
         build/bin/bindata_0890bcf8.bin.o(.rodata*);
         build/bin/bindata_08932444.bin.o(.rodata*);
