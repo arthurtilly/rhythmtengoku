@@ -1346,8 +1346,15 @@ SECTIONS {
         build/graphics/rhythm_toys/horse_machine_pal.c.o(.rodata*);
         build/graphics/sick_beats/sick_beats_anim.c.o(.rodata*);
         build/graphics/sick_beats/sick_beats_pal.c.o(.rodata*);
+        build/graphics/warning/warning_anim.c.o(.rodata*);
+        build/graphics/warning/warning_pal.c.o(.rodata*);
+        build/graphics/wizards_waltz/wizards_waltz_anim.c.o(.rodata*);
+        build/graphics/wizards_waltz/wizards_waltz_pal.c.o(.rodata*);
+        build/graphics/ninja_bodyguard/ninja_bodyguard_2_anim.c.o(.rodata*);
+        build/graphics/ninja_bodyguard/ninja_bodyguard_2_pal.c.o(.rodata*);
+        build/graphics/unknown/unknown_anim.c.o(.rodata*);
+        build/graphics/unknown/unknown_pal.c.o(.rodata*);
 
-        build/bin/bindata_0890bcf8.bin.o(.rodata*);
         build/bin/bindata_08932444.bin.o(.rodata*);
 		build/bin/bindata_08935fac.bin.o(.rodata*);
         build/data/data_08936b54.c.o(.rodata*);
