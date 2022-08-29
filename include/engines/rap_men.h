@@ -5,6 +5,19 @@
 #include "graphics.h"
 
 // Engine Macros/Enums:
+enum RapMenAnimationsEnum {
+    RAP_MEN_ANIM_00,
+    RAP_MEN_ANIM_01,
+    RAP_MEN_ANIM_02,
+    RAP_MEN_ANIM_03,
+    RAP_MEN_ANIM_04,
+    RAP_MEN_ANIM_05,
+    RAP_MEN_ANIM_06,
+    RAP_MEN_ANIM_07,
+    RAP_MEN_ANIM_08,
+    RAP_MEN_ANIM_09,
+    RAP_MEN_ANIM_10
+};
 
 // OAM Animations:
 
@@ -20,7 +33,7 @@ extern const struct SequenceData s_CC4_seqData;
 extern char D_0805a8b0[];   // Empty Default Text
 
 // Engine Definition Data:
-extern u32 **D_089e63f8[];  // Animation Index (index of pairs of animation pointers; 0 = Rap Men; 1 = Rap Women)
+extern const struct Animation **D_089e63f8[];  // Animation Index (index of pairs of animation pointers; 0 = Rap Men; 1 = Rap Women)
 extern u32 D_089e6424;      // GFX-related Null
 extern u32 *D_089e6518[];   // GFX Struct Index
 extern u8  D_089e6520;
@@ -29,7 +42,7 @@ extern const struct SequenceData *D_089e652c[2][2];
 extern u32 D_089e65f0[];
 
 // Functions:
-extern u32 *func_080398b4(u32);
+extern const struct Animation *func_080398b4(u32);
 extern void func_080398d4(void);    // [func_080398d4] GFX_INIT Func_02
 extern void func_080398e4(void);    // [func_080398e4] GFX_INIT Func_01
 extern void func_08039924(void);    // [func_08039924] GFX_INIT Func_00
