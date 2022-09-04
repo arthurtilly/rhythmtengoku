@@ -5,6 +5,7 @@
 #include "graphics.h"
 
 // Engine Macros/Enums:
+#define gShowtimeInfo D_030055d0->gameInfo.showtime
 
 // OAM Animations:
 
@@ -17,6 +18,8 @@
 // Engine Definition Data:
 
 // Functions:
+// extern ? func_0802bbfc(?);
+// extern ? func_0802bc0c(?);
 // extern ? func_0802bc4c(?);
 // extern ? func_0802bc78(?);
 // extern ? func_0802bd40(?);

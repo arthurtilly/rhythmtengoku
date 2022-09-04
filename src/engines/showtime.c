@@ -1,19 +1,27 @@
-#define gShowtimeInfo D_030055d0->gameInfo.showtime
-
 asm(".include \"include/gba.inc\""); // Temporary
-#include "global.h"
+#include "engines/showtime.h"
 
-#include "src/lib_0804c870.h"
 #include "src/code_08003980.h"
+#include "src/code_08007468.h"
+#include "src/lib_0804c870.h"
 
-extern char D_0805a3cc[]; //data_08054950, empty string
+extern char D_0805a3cc[];
 
 extern u32 D_088cb994[];
 extern u32 D_088cb4a4[];
+extern u32 D_089e384c[];
 
 extern const struct SequenceData s_block_hit_seqData;
 
-#include "asm/scenes/showtime/asm_0802bc4c.s"
+#include "asm/scenes/night_walk/asm_0802bbfc.s"
+
+extern void* func_0802bc0c();
+#include "asm/scenes/night_walk/asm_0802bc0c.s"
+
+void func_0802bc4c(void) {
+    func_0800c604(0);
+    func_08005d38(func_080087b4(func_0800c3b8(), D_089e384c), func_0802bc0c, 0);
+}
 
 void func_0802bc78(u8 arg0) {
     u32* temp;

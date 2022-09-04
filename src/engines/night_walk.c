@@ -145,7 +145,3 @@ static s32 D_03001568; // unknown type and length
 #include "asm/scenes/night_walk/asm_0802bbf4.s"
 
 #include "asm/scenes/night_walk/asm_0802bbf8.s"
-
-#include "asm/scenes/night_walk/asm_0802bbfc.s"
-
-#include "asm/scenes/night_walk/asm_0802bc0c.s"

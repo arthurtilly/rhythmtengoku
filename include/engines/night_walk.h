@@ -86,5 +86,3 @@
 // extern ? func_0802bb98(?);
 // extern ? func_0802bbf4(?);
 // extern ? func_0802bbf8(?);
-// extern ? func_0802bbfc(?);
-// extern ? func_0802bc0c(?);
