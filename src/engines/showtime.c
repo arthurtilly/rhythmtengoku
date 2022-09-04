@@ -1,8 +1,11 @@
 asm(".include \"include/gba.inc\""); // Temporary
+
 #include "engines/showtime.h"
 
+#include "src/code_08001360.h"
 #include "src/code_08003980.h"
 #include "src/code_08007468.h"
+#include "src/code_08016e18.h"
 #include "src/lib_0804c870.h"
 
 extern char D_0805a3cc[];
@@ -10,13 +13,19 @@ extern char D_0805a3cc[];
 extern u32 D_088cb994[];
 extern u32 D_088cb4a4[];
 extern u32 D_089e384c[];
+extern u32* D_089e3910[];
 
 extern const struct SequenceData s_block_hit_seqData;
 
-#include "asm/scenes/night_walk/asm_0802bbfc.s"
+void func_0802bbfc(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-extern void* func_0802bc0c();
-#include "asm/scenes/night_walk/asm_0802bc0c.s"
+void func_0802bc0c(void) {
+    func_0800c604(0);
+    func_08005d38(func_08002ee0(func_0800c3b8(), D_089e3910[gShowtimeInfo.unk6], 0x2000), func_0802bbfc, 0);
+}
 
 void func_0802bc4c(void) {
     func_0800c604(0);

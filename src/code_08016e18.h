@@ -34,7 +34,7 @@ extern s32 func_0801738c(struct struct_030046a4_sub *, s32);
 // extern ? func_080174e8(?);
 // extern ? func_08017514(?);
 // extern ? func_08017568(?);
-// extern ? func_08017578(?);
+extern void func_08017578(void);
 // extern ? func_080175a0(?);
 // extern ? func_080175b0(?);
 // extern ? func_080175c4(?);
