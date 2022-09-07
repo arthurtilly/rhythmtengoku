@@ -1,24 +1,5 @@
 #pragma once
 
-typedef s32 (*struct_030046a4_func)(s32);
-
-struct struct_030046a4_sub { // might be a list
-    u8 pad00[0x18];
-    struct_030046a4_func *unk18;
-};
-
-typedef union {
-        u8 asU8[4];
-        struct struct_030046a4_sub *asPoint;
-    } struct_030046a4_union;
-	
-struct struct_030046a4_sub3 {
-	void *unk0; // ???
-    void *unk4; // ???
-    void *unk8; // ???
-    void *unkC; // ???
-};
-
 struct struct_03004b10 {
     u16 DISPCNT;    // LCD Control
     u16 unk2;
@@ -75,30 +56,10 @@ struct struct_080179f4_sub {
     u8 unk2D;
 };
 
-struct struct_080179f4_sub1 {
-    union {
-        u16 u16;
-        u8 u8[2];
-    } unk0;
-    u32 unk4;
-    u32 null8;
-    u32 nullC;
-    u32 null10;
-    u32 null14;
-    u32 null18;
-    u32 null1C;
-    u32 null20;
-    u16 null24;
-    u8  unk26;
-    s16 unk28;
-    u16 null2A;
-    u16 unk2C;
-    u16 unk2E;
-};
-
+// In-Memory Cue Data
 struct struct_080179f4 {
-	struct struct_080179f4 *unk0;
-	struct struct_080179f4 *unk4;
+	struct struct_080179f4 *next;
+	struct struct_080179f4 *prev;
 	s32 unk8; // ???
 	u8 pad0C[0x3C];
 	s8 unk48;
@@ -106,49 +67,105 @@ struct struct_080179f4 {
 	u16 unk4C; // Cue ticks 
 	u16 unk4E;
 	u8 pad50[4];
-	struct struct_030046a4_sub3 unk54;
-	union {
-	    struct struct_080179f4_sub *type0;
-	    struct struct_080179f4_sub1 *type1;
-	} *unk64;
+	const struct SequenceData *spawnSfx;
+	const struct SequenceData *hitSfx;
+	const struct SequenceData *barelySfx;
+	const struct SequenceData *missSfx;
+	struct struct_080179f4_sub *unk64;
 	u8 unk68;
 };
 
-typedef void (*struct_030046a4_sub_func)(struct struct_080179f4 *, struct struct_080179f4_sub *, s32);
+typedef void (*CueSpawnFunc)(struct struct_080179f4 *, struct struct_080179f4_sub *, s32);
 
-struct struct_030046a4_sub2 {
-    u8 pad00[0x4];
-    u16 unk4;
-    u8 pad06[0x6];
-    u32 unkC;
-    struct_030046a4_sub_func unk10;
-    s32 unk14;
-    u8 pad18[0x14];
-    struct struct_030046a4_sub3 unk2C;
+// Read-Only Cue Definition
+struct CueDefinition {
+    s32 unk0; // ?
+    u16 duration; // Duration (in Beats)
+    u16 leniency; // Leniency
+    u16 endDelay; // End Delay
+    u16 unkA; // ?
+    u32 cueInfoSize; // Required Memory (in bytes)
+    CueSpawnFunc spawnFunc; // Spawn Function
+    s32 spawnParam; // Spawn Parameter
+    void *unk18; // Update Function
+    void *unk1C; // Close Function
+    void *unk20; // Hit Function
+    void *unk24; // Barely Function
+    void *unk28; // Miss Function
+	const struct SequenceData *spawnSfx;
+	const struct SequenceData *hitSfx;
+	const struct SequenceData *barelySfx;
+	const struct SequenceData *missSfx;
 };
 
-struct struct_030046a4 {
-	u8 pad00[0xA];
+typedef s32 (*EngineFunc)(s32);
+typedef void (*RhythmGameInitFunc)(u32);
+typedef void (*RhythmGameUpdateFunc)(void);
+typedef void (*RhythmGameCloseFunc)(void);
+
+struct GameEngine {
+    u32 gameInfoSize; // Size of Respective GameInfo Struct (in bytes)
+    RhythmGameInitFunc initFunc;
+    RhythmGameUpdateFunc updateFunc;
+    RhythmGameCloseFunc closeFunc;
+    const struct CueDefinition **cueDefinitions;
+    EngineFunc *commonFunctions;
+    EngineFunc *engineFunctions;
+};
+
+
+
+// For readability.
+#define gGameSelectInfo D_030046a4->gameSelect
+#define gRhythmGameInfo D_030046a4->rhythmGame
+
+// Game Select Scene Info
+struct GameSelectInfo {
+    s32 null0;
+    s32 null4;
+    s32 null8;
+    s16 unkC;
+    s16 unkE;
+    u8 unk10;
+    u8 unk11;
+};
+
+// Rhythm Game Scene Info
+struct RhythmGameInfo {
+	s32 unk0;
+	s32 unk4;
+	u8 unk8;
+	u8 unk9;
     s16 unkA;
 	s16 unkC;
 	s16 unkE;
-	struct_030046a4_union unk10;
-	u8 pad14[4];
-	struct struct_080179f4 *unk18;
-	struct struct_030046a4_sub2 *unk1C[12]; // ???
-	struct_030046a4_func *unk4C;
-	u8 pad50[8];
-	struct struct_080179f4 *unk58;
+	const struct GameEngine *currentEngine; // Game Engine Pointer
+	void *unk14; // ?
+	struct struct_080179f4 *previousCue; // Previous Cue (set to the Current Cue as soon as the latter is created)
+	const struct CueDefinition *cueDefinitions[12]; // Cue Definitions (copied from Game Engine)
+	EngineFunc commonFunctions[3]; // Engine "Common" Functions
+	struct struct_080179f4 *currentCue; // Current Cue
 	u8 unk5C;
 	u8 unk5D;
 	s32 unk60;
-    u8 pad64[4];
-    struct struct_030046a4_sub3 unk68;
-	u8 pad78;
-    s8 unk79;
-	u8 unk7A;
-	u8 pad7B[0xB];
+    s32 unk64;
+	const struct SequenceData *spawnSfx;
+	const struct SequenceData *hitSfx;
+	const struct SequenceData *barelySfx;
+	const struct SequenceData *missSfx;
+	u8 unk78;
+    s8 unk79; // Input Timing Offset (how early/late the most recent input was)
+	u8 unk7A; // Current Marking Criteria
+	u8 unk7B;
+	s32 unk7C;
+	s32 unk80;
+	s16 unk84;
     u16 unk86;
+};
+
+union struct_030046a4 {
+    struct GameSelectInfo gameSelect;
+    struct RhythmGameInfo rhythmGame;
 };
 
 
@@ -583,6 +600,7 @@ struct FireworksInfo {
 };
 
 
+// Game Engine Info
 struct struct_030055d0 {
     union {
         struct KarateManInfo karateMan;
@@ -616,7 +634,7 @@ struct struct_030055e0 {
 };
 
 
-extern struct struct_030046a4 *D_030046a4;
+extern union struct_030046a4 *D_030046a4;
 extern struct struct_03004b10 D_03004b10;
 extern s32 D_03005380;
 extern struct struct_030053c0 D_030053c0;

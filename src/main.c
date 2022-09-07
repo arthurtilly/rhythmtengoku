@@ -135,7 +135,7 @@ void func_0800046c(struct Scene *arg1) {
 }
 
 void process_scenes(void) {
-    struct struct_030046a4 *temp;
+    union struct_030046a4 *temp;
     
 	if (gCurrentScene != NULL) {
 		if (gCurrentScene->loopFunc != NULL) {

@@ -37,13 +37,13 @@ static s32 D_03001328; // unknown type, could be 2 words
 
 // D_030046a4->unkA = arg0; D_030046a4->unkC = arg1
 void func_08017338(s16 arg0, s16 arg1) {
-    D_030046a4->unkA = arg0;
-    D_030046a4->unkC = arg1;
+    gRhythmGameInfo.unkA = arg0;
+    gRhythmGameInfo.unkC = arg1;
 }
 
 s32 func_08017348(s32 arg1, s32 arg2) { // bobbing?
     s32 returnVal = 0;
-    struct_030046a4_func *temp = (struct_030046a4_func *)&D_030046a4->unk4C;
+    EngineFunc *temp = gRhythmGameInfo.commonFunctions;
     
     if (temp == NULL) { // literally never possible
         return returnVal;
@@ -57,18 +57,18 @@ s32 func_08017348(s32 arg1, s32 arg2) { // bobbing?
 }
 
 void func_08017380(s32 arg1) { // gfx command 1
-    D_030046a4->unk60 = arg1;
+    gRhythmGameInfo.unk60 = arg1;
 }
 
-s32 func_0801738c(struct struct_030046a4_sub *arg1, s32 arg2) { // gfx command 2
+s32 func_0801738c(struct GameEngine *arg1, s32 arg2) { // gfx command 2
     s32 returnVal = 0;
 
-    if (D_030046a4->unk10.asPoint != arg1) {
+    if (gRhythmGameInfo.currentEngine != arg1) {
         return returnVal;
     }
 
-    if ((D_030046a4->unk10.asPoint->unk18 != NULL) && (D_030046a4->unk10.asPoint->unk18[arg2] != NULL)) {
-        returnVal = D_030046a4->unk10.asPoint->unk18[arg2](D_030046a4->unk60);
+    if ((gRhythmGameInfo.currentEngine->engineFunctions != NULL) && (gRhythmGameInfo.currentEngine->engineFunctions[arg2] != NULL)) {
+        returnVal = gRhythmGameInfo.currentEngine->engineFunctions[arg2](gRhythmGameInfo.unk60);
     }
 
     return returnVal;
@@ -154,72 +154,72 @@ s32 func_0801738c(struct struct_030046a4_sub *arg1, s32 arg2) { // gfx command 2
 
 #include "asm/code_08016e18/asm_080179d8.s"
 
-void func_080179f4(s32 arg1) { // universal cue?
-    struct struct_030046a4_sub2 *temp;
-    struct struct_080179f4 *temp2, *temp4;
+void func_080179f4(s32 id) { // universal cue?
+    const struct CueDefinition *cueDef;
+    struct struct_080179f4 *newCue, *prevCue;
 
-    if ((D_030046a4->unk5C == 0) || ((temp = D_030046a4->unk1C[arg1]) == NULL)) {
+    if ((gRhythmGameInfo.unk5C == 0) || ((cueDef = gRhythmGameInfo.cueDefinitions[id]) == NULL)) {
         return;
     }
 
-    temp2 = mem_heap_alloc(sizeof(struct struct_080179f4));
-    if (temp->unkC != 0) {
-        temp2->unk64 = mem_heap_alloc(temp->unkC);
+    newCue = mem_heap_alloc(sizeof(struct struct_080179f4));
+    if (cueDef->cueInfoSize != 0) {
+        newCue->unk64 = mem_heap_alloc(cueDef->cueInfoSize);
     } else {
-        temp2->unk64 = NULL;
+        newCue->unk64 = NULL;
     }
-    func_0800186c(temp,&temp2->unk8,0x40,0x20,0x200);
+    func_0800186c(cueDef, &newCue->unk8, 0x40, 0x20, 0x200);
 
-    temp2->unk48 &= ~1;
-    temp2->unk48 &= ~2;
+    newCue->unk48 &= ~1;
+    newCue->unk48 &= ~2;
 
     do {} while (0); // fake matching / macro?
     
-    temp2->unk4C = 0;
+    newCue->unk4C = 0;
 
-    if (D_030046a4->unk86 != 0) {
-        temp2->unk4E = func_0800c3a4(D_030046a4->unk86);
-        D_030046a4->unk86 = 0;
+    if (gRhythmGameInfo.unk86 != 0) {
+        newCue->unk4E = func_0800c3a4(gRhythmGameInfo.unk86);
+        gRhythmGameInfo.unk86 = 0;
     } else {
-        temp2->unk4E = func_0800c3a4(temp->unk4);
+        newCue->unk4E = func_0800c3a4(cueDef->duration);
     }
 
-    temp2->unk54.unk0 = ((D_030046a4->unk68.unk0 != NULL) ? D_030046a4->unk68.unk0 : temp->unk2C.unk0);
-    temp2->unk54.unk4 = ((D_030046a4->unk68.unk4 != NULL) ? D_030046a4->unk68.unk4 : temp->unk2C.unk4);
-    temp2->unk54.unk8 = ((D_030046a4->unk68.unk8 != NULL) ? D_030046a4->unk68.unk8 : temp->unk2C.unk8);
-    temp2->unk54.unkC = ((D_030046a4->unk68.unkC != NULL) ? D_030046a4->unk68.unkC : temp->unk2C.unkC);
+    newCue->spawnSfx  = ((gRhythmGameInfo.spawnSfx != NULL)  ? gRhythmGameInfo.spawnSfx  : cueDef->spawnSfx);
+    newCue->hitSfx    = ((gRhythmGameInfo.hitSfx != NULL)    ? gRhythmGameInfo.hitSfx    : cueDef->hitSfx);
+    newCue->barelySfx = ((gRhythmGameInfo.barelySfx != NULL) ? gRhythmGameInfo.barelySfx : cueDef->barelySfx);
+    newCue->missSfx   = ((gRhythmGameInfo.missSfx != NULL)   ? gRhythmGameInfo.missSfx   : cueDef->missSfx);
 
-    temp2->unk68 = D_030046a4->unk7A;
+    newCue->unk68 = gRhythmGameInfo.unk7A;
 
-    D_030046a4->unk68.unk0 = NULL;
-    D_030046a4->unk68.unk4 = NULL;
-    D_030046a4->unk68.unk8 = NULL;
-    D_030046a4->unk68.unkC = NULL;
+    gRhythmGameInfo.spawnSfx = NULL;
+    gRhythmGameInfo.hitSfx = NULL;
+    gRhythmGameInfo.barelySfx = NULL;
+    gRhythmGameInfo.missSfx = NULL;
 
-    temp4 = D_030046a4->unk18;
+    prevCue = gRhythmGameInfo.previousCue;
     
-    temp2->unk0 = NULL;
-    temp2->unk4 = temp4;
+    newCue->next = NULL;
+    newCue->prev = prevCue;
 
-    if (temp4 != NULL) {
-        temp4->unk0 = temp2;
+    if (prevCue != NULL) {
+        prevCue->next = newCue;
     }
 
-    D_030046a4->unk18 = temp2;
+    gRhythmGameInfo.previousCue = newCue;
 
-    D_030046a4->unk5D = 0;
+    gRhythmGameInfo.unk5D = 0;
 
-    if (temp->unk10 != NULL) {
-        temp->unk10(temp2,temp2->unk64,temp->unk14);
+    if (cueDef->spawnFunc != NULL) {
+        cueDef->spawnFunc(newCue, newCue->unk64, cueDef->spawnParam);
     }
 
-    if (D_030046a4->unk5D != 0) {
-        D_030046a4->unk18 = temp4;
-        temp4->unk0 = NULL;
-        mem_heap_dealloc(temp2);
+    if (gRhythmGameInfo.unk5D != 0) {
+        gRhythmGameInfo.previousCue = prevCue;
+        prevCue->next = NULL;
+        mem_heap_dealloc(newCue);
     } else {
-        D_030046a4->unk58 = temp2;
-        func_08016e54(temp2->unk54.unk0);
+        gRhythmGameInfo.currentCue = newCue;
+        func_08016e54(newCue->spawnSfx);
     }
 }
 
@@ -241,7 +241,7 @@ void func_080179f4(s32 arg1) { // universal cue?
 
 // Return D_030046a4->unk79 (s8)
 s32 func_08018054(void) {
-    return D_030046a4->unk79;
+    return gRhythmGameInfo.unk79;
 }
 
 #include "asm/code_08016e18/asm_08018068.s"

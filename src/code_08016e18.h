@@ -18,8 +18,8 @@
 // extern ? func_0801732c(?);
 extern void func_08017338(s16, s16);
 extern s32 func_08017348(s32, s32); // [func_08017348] RHYTHM GAME - Call Engine-Common Function
-extern void func_08017380(s32); // [func_08017380] RHYTHM GAME - Set Third Parameter for Engine-Specific Command
-extern s32 func_0801738c(struct struct_030046a4_sub *, s32); // [func_0801738c] RHYTHM GAME - Call Engine-Specific Command
+extern void func_08017380(s32); // [func_08017380] RHYTHM GAME - Set Parameter for Engine-Specific Command
+extern s32 func_0801738c(struct GameEngine *, s32); // [func_0801738c] RHYTHM GAME - Call Engine-Specific Command
 // extern ? func_080173c4(?); // [func_080173c4] RHYTHM GAME - Enable Play Inputs
 // extern ? func_080173d0(?);
 // extern ? func_080173dc(?);

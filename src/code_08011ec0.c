@@ -158,16 +158,16 @@ void func_08013b98(s32 arg1, s32 arg2) {
     s16 temp;
     s16 temp2;
 
-    D_030046a4->unk10.asU8[0] = arg1;
-    D_030046a4->unk10.asU8[1] = arg2;
+    gGameSelectInfo.unk10 = arg1;
+    gGameSelectInfo.unk11 = arg2;
 
     func_0801332c(arg1,arg2,&temp,&temp2);
 
     temp += 47; // x coordinate of top left of menu
     temp2 += 68; // y coordinate of top left of menu
 
-    func_0804d5d4(D_03005380, D_030046a4->unkC,temp,temp2);
-    func_0804d5d4(D_03005380, D_030046a4->unkE,temp,temp2);
+    func_0804d5d4(D_03005380, gGameSelectInfo.unkC,temp,temp2);
+    func_0804d5d4(D_03005380, gGameSelectInfo.unkE,temp,temp2);
     func_08013b48();
 }
 
