@@ -30,13 +30,13 @@ extern void func_0801d9cc(void);
 // extern ? func_0801dedc(?);
 // extern ? func_0801def4(?);
 // extern ? func_0801df1c(?);
-// extern ? func_0801dfac(?);
-// extern ? func_0801dfdc(?);
-// extern ? func_0801dfe8(?);
-// extern ? func_0801e030(?);
-// extern ? func_0801e060(?);
-// extern ? func_0801e09c(?);
-// extern ? func_0801e0c8(?);
+// extern ? func_0801dfac(?); // [func_0801dfac] WARNING - ? (Script Function)
+// extern ? func_0801dfdc(?); // [func_0801dfdc] WARNING - Close
+// extern ? func_0801dfe8(?); // [func_0801dfe8] WARNING - Graphics Init. 2
+// extern ? func_0801e030(?); // [func_0801e030] WARNING - Graphics Init. 1
+// extern ? func_0801e060(?); // [func_0801e060] WARNING - Graphics Init. 0
+// extern ? func_0801e09c(?); // [func_0801e09c] WARNING - Scene Init.
+// extern ? func_0801e0c8(?); // [func_0801e0c8] WARNING - Scene Main
 // extern ? func_0801e100(?);
 // extern ? func_0801e154(?);
 // extern ? func_0801e174(?);

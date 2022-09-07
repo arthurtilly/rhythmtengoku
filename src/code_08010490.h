@@ -28,31 +28,31 @@ struct struct_08011a18 {
 // extern ? func_080108a0(?);
 // extern ? func_080108c8(?);
 // extern ? func_080108e8(?);
-// extern ? func_08010904(?);
-// extern ? func_08010938(?);
-// extern ? func_080109cc(?);
-// extern ? func_08010a04(?);
-// extern ? func_08010a28(?);
-// extern ? func_08010a3c(?);
-// extern ? func_08010ae0(?);
-// extern ? func_08010bc0(?);
-// extern ? func_08010be4(?);
-// extern ? func_080112dc(?);
-// extern ? func_080112e8(?);
-// extern ? func_080112f4(?);
-// extern ? func_08011300(?);
-// extern ? func_080113a8(?);
-// extern ? func_080113b4(?);
-// extern ? func_080113d0(?);
-// extern ? func_080113dc(?);
-// extern ? func_08011408(?);
-// extern ? func_08011438(?);
-// extern ? func_08011488(?);
-// extern ? func_080114d0(?);
-// extern ? func_080114d4(?);
-// extern ? func_080114f4(?);
-// extern ? func_08011510(?);
-// extern ? func_08011520(?);
+// extern ? func_08010904(?); // [func_08010904] CAFE - ?
+// extern ? func_08010938(?); // [func_08010938] CAFE - ?
+// extern ? func_080109cc(?); // [func_080109cc] CAFE - ?
+// extern ? func_08010a04(?); // [func_08010a04] CAFE - ?
+// extern ? func_08010a28(?); // [func_08010a28] CAFE - ?
+// extern ? func_08010a3c(?); // [func_08010a3c] CAFE - ?
+// extern ? func_08010ae0(?); // [func_08010ae0] CAFE - ?
+// extern ? func_08010bc0(?); // [func_08010bc0] CAFE - ?
+// extern ? func_08010be4(?); // [func_08010be4] CAFE - ?
+// extern ? func_080112dc(?); // [func_080112dc] CAFE - ?
+// extern ? func_080112e8(?); // [func_080112e8] CAFE - ?
+// extern ? func_080112f4(?); // [func_080112f4] CAFE - ?
+// extern ? func_08011300(?); // [func_08011300] CAFE - ?
+// extern ? func_080113a8(?); // [func_080113a8] CAFE - ?
+// extern ? func_080113b4(?); // [func_080113b4] CAFE - ?
+// extern ? func_080113d0(?); // [func_080113d0] CAFE - ?
+// extern ? func_080113dc(?); // [func_080113dc] CAFE - Graphics Init. 2
+// extern ? func_08011408(?); // [func_08011408] CAFE - Graphics Init. 1
+// extern ? func_08011438(?); // [func_08011438] CAFE - Graphics Init. 0
+// extern ? func_08011488(?); // [func_08011488] CAFE - Scene Init.
+// extern ? func_080114d0(?); // [func_080114d0] CAFE - Scene STUB
+// extern ? func_080114d4(?); // [func_080114d4] CAFE - Scene Main
+// extern ? func_080114f4(?); // [func_080114f4] CAFE - ?
+// extern ? func_08011510(?); // [func_08011510] CAFE - ? (Script Function)
+// extern ? func_08011520(?); // [func_08011520] CAFE - Scene Close
 // extern ? func_08011530(?);
 // extern ? func_08011534(?);
 // extern ? func_08011580(?);

@@ -83,47 +83,47 @@
 // extern ? func_0801c9ec(?);
 // extern ? func_0801ca08(?);
 // extern ? func_0801ca20(?);
-// extern ? func_0801ca34(?);
-// extern ? func_0801cb0c(?);
-// extern ? func_0801cc2c(?);
-// extern ? func_0801cc84(?);
-// extern ? func_0801ccd0(?);
-// extern ? func_0801cd14(?);
-// extern ? func_0801cd60(?);
-// extern ? func_0801cd64(?);
-// extern ? func_0801cd90(?);
-// extern ? func_0801cdc0(?);
-// extern ? func_0801cdfc(?);
-// extern ? func_0801cefc(?);
-// extern ? func_0801cf44(?);
-// extern ? func_0801cfa4(?);
-// extern ? func_0801cfa8(?);
-// extern ? func_0801d02c(?);
-// extern ? func_0801d08c(?);
-// extern ? func_0801d0a8(?);
-// extern ? func_0801d0b8(?);
-// extern ? func_0801d11c(?);
-// extern ? func_0801d14c(?);
-// extern ? func_0801d160(?);
-// extern ? func_0801d1f0(?);
-// extern ? func_0801d204(?);
-// extern ? func_0801d23c(?);
-// extern ? func_0801d388(?);
-// extern ? func_0801d410(?);
-// extern ? func_0801d438(?);
-// extern ? func_0801d474(?);
-// extern ? func_0801d4b0(?);
-// extern ? func_0801d4c8(?);
-// extern ? func_0801d580(?);
-// extern ? func_0801d594(?);
-// extern ? func_0801d5c0(?);
-// extern ? func_0801d5f4(?);
-// extern ? func_0801d630(?);
-// extern ? func_0801d6c4(?);
-// extern ? func_0801d6d0(?);
-// extern ? func_0801d6e0(?);
-// extern ? func_0801d6e4(?);
-// extern ? func_0801d700(?);
-// extern ? func_0801d818(?);
-// extern ? func_0801d834(?);
-// extern ? func_0801d848(?);
+// extern ? func_0801ca34(?); // [func_0801ca34] TITLE - ?
+// extern ? func_0801cb0c(?); // [func_0801cb0c] TITLE - ?
+// extern ? func_0801cc2c(?); // [func_0801cc2c] TITLE - Show Text? (Script Function)
+// extern ? func_0801cc84(?); // [func_0801cc84] TITLE - ?
+// extern ? func_0801ccd0(?); // [func_0801ccd0] TITLE - ?
+// extern ? func_0801cd14(?); // [func_0801cd14] TITLE - Animate Single Bubble? (Script Function)
+// extern ? func_0801cd60(?); // [func_0801cd60] TITLE - ?
+// extern ? func_0801cd64(?); // [func_0801cd64] TITLE - Graphics Init. 2
+// extern ? func_0801cd90(?); // [func_0801cd90] TITLE - Graphics Init. 1
+// extern ? func_0801cdc0(?); // [func_0801cdc0] TITLE - Graphics Init. 0
+// extern ? func_0801cdfc(?); // [func_0801cdfc] TITLE - Scene Init.
+// extern ? func_0801cefc(?); // [func_0801cefc] TITLE - ? (Script Function)
+// extern ? func_0801cf44(?); // [func_0801cf44] TITLE - Beat Animation? (Script Function)
+// extern ? func_0801cfa4(?); // [func_0801cfa4] TITLE - Scene STUB
+// extern ? func_0801cfa8(?); // [func_0801cfa8] TITLE - ?
+// extern ? func_0801d02c(?); // [func_0801d02c] TITLE - Scene Main
+// extern ? func_0801d08c(?); // [func_0801d08c] TITLE - ?
+// extern ? func_0801d0a8(?); // [func_0801d0a8] TITLE - Scene Close
+// extern ? func_0801d0b8(?); // [func_0801d0b8] MEDAL CORNER MENU - ?
+// extern ? func_0801d11c(?); // [func_0801d11c] MEDAL CORNER MENU - ?
+// extern ? func_0801d14c(?); // [func_0801d14c] MEDAL CORNER MENU - ?
+// extern ? func_0801d160(?); // [func_0801d160] MEDAL CORNER MENU - ?
+// extern ? func_0801d1f0(?); // [func_0801d1f0] MEDAL CORNER MENU - ?
+// extern ? func_0801d204(?); // [func_0801d204] MEDAL CORNER MENU - ?
+// extern ? func_0801d23c(?); // [func_0801d23c] MEDAL CORNER MENU - ?
+// extern ? func_0801d388(?); // [func_0801d388] MEDAL CORNER MENU - ?
+// extern ? func_0801d410(?); // [func_0801d410] MEDAL CORNER MENU - ?
+// extern ? func_0801d438(?); // [func_0801d438] MEDAL CORNER MENU - ?
+// extern ? func_0801d474(?); // [func_0801d474] MEDAL CORNER MENU - ?
+// extern ? func_0801d4b0(?); // [func_0801d4b0] MEDAL CORNER MENU - ?
+// extern ? func_0801d4c8(?); // [func_0801d4c8] MEDAL CORNER MENU - ?
+// extern ? func_0801d580(?); // [func_0801d580] MEDAL CORNER MENU - ?
+// extern ? func_0801d594(?); // [func_0801d594] MEDAL CORNER MENU - Graphics Init. 2
+// extern ? func_0801d5c0(?); // [func_0801d5c0] MEDAL CORNER MENU - Graphics Init. 1
+// extern ? func_0801d5f4(?); // [func_0801d5f4] MEDAL CORNER MENU - Graphics Init. 0
+// extern ? func_0801d630(?); // [func_0801d630] MEDAL CORNER MENU - Scene Init.
+// extern ? func_0801d6c4(?); // [func_0801d6c4] MEDAL CORNER MENU - ?
+// extern ? func_0801d6d0(?); // [func_0801d6d0] MEDAL CORNER MENU - ?
+// extern ? func_0801d6e0(?); // [func_0801d6e0] MEDAL CORNER MENU - Scene STUB
+// extern ? func_0801d6e4(?); // [func_0801d6e4] MEDAL CORNER MENU - ?
+// extern ? func_0801d700(?); // [func_0801d700] MEDAL CORNER MENU - Scene Main
+// extern ? func_0801d818(?); // [func_0801d818] MEDAL CORNER MENU - ?
+// extern ? func_0801d834(?); // [func_0801d834] MEDAL CORNER MENU - Scene Close
+// extern ? func_0801d848(?); // [func_0801d848] MEDAL CORNER MENU - ? (Script Function)
