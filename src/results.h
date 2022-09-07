@@ -46,9 +46,9 @@
 // extern ? func_08019268(?);
 // extern ? func_08019278(?);
 // extern ? func_080192a4(?);
-// extern ? func_08019304(?);
-// extern ? func_08019310(?);
-// extern ? func_08019324(?);
+// extern ? func_08019304(?); // [func_08019304] Import Criteria (Script Function)
+// extern ? func_08019310(?); // [func_08019310] Set Flavour Text (Script Function)
+// extern ? func_08019324(?); // [func_08019324] Assess Inputs (Script Function)
 // extern ? func_08019340(?);
 // extern ? func_08019350(?);
 // extern ? func_08019420(?);

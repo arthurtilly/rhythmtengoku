@@ -11,23 +11,25 @@ struct struct_08011a18 {
 };
 
 // extern ? func_08010490(?);
-// extern ? func_08010494(?);
-// extern ? func_080104c0(?);
-// extern ? func_080104f0(?);
-// extern ? func_0801052c(?);
-// extern ? func_08010688(?);
-// extern ? func_0801068c(?);
-// extern ? func_0801075c(?);
-// extern ? func_08010778(?);
-// extern ? func_08010788(?);
-// extern ? func_080107a8(?);
-// extern ? func_080107c8(?);
-// extern ? func_080107dc(?);
-// extern ? func_0801082c(?);
-// extern ? func_08010854(?);
-// extern ? func_080108a0(?);
-// extern ? func_080108c8(?);
-// extern ? func_080108e8(?);
+
+// extern ? func_08010494(?); // [func_08010494] RHYTHM LIBRARY - Graphics Init. 2
+// extern ? func_080104c0(?); // [func_080104c0] RHYTHM LIBRARY - Graphics Init. 1
+// extern ? func_080104f0(?); // [func_080104f0] RHYTHM LIBRARY - Graphics Init. 0
+// extern ? func_0801052c(?); // [func_0801052c] RHYTHM LIBRARY - Scene Init.
+// extern ? func_08010688(?); // [func_08010688] RHYTHM LIBRARY - Scene STUB
+// extern ? func_0801068c(?); // [func_0801068c] RHYTHM LIBRARY - Scene Main
+// extern ? func_0801075c(?); // [func_0801075c] RHYTHM LIBRARY - ?
+// extern ? func_08010778(?); // [func_08010778] RHYTHM LIBRARY - Scene Close
+// extern ? func_08010788(?); // [func_08010788] RHYTHM LIBRARY - ? (Script Function)
+
+// extern ? func_080107a8(?); // [func_080107a8] CAFE - ?
+// extern ? func_080107c8(?); // [func_080107c8] CAFE - ?
+// extern ? func_080107dc(?); // [func_080107dc] CAFE - ?
+// extern ? func_0801082c(?); // [func_0801082c] CAFE - ?
+// extern ? func_08010854(?); // [func_08010854] CAFE - ?
+// extern ? func_080108a0(?); // [func_080108a0] CAFE - ?
+// extern ? func_080108c8(?); // [func_080108c8] CAFE - ?
+// extern ? func_080108e8(?); // [func_080108e8] CAFE - ?
 // extern ? func_08010904(?); // [func_08010904] CAFE - ?
 // extern ? func_08010938(?); // [func_08010938] CAFE - ?
 // extern ? func_080109cc(?); // [func_080109cc] CAFE - ?
@@ -53,6 +55,7 @@ struct struct_08011a18 {
 // extern ? func_080114f4(?); // [func_080114f4] CAFE - ?
 // extern ? func_08011510(?); // [func_08011510] CAFE - ? (Script Function)
 // extern ? func_08011520(?); // [func_08011520] CAFE - Scene Close
+
 // extern ? func_08011530(?);
 // extern ? func_08011534(?);
 // extern ? func_08011580(?);

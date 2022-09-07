@@ -16,7 +16,7 @@
 // extern ? func_0800bd04(?);
 // extern ? func_0800bd1c(?);
 // extern ? func_0800bd2c(?);
-// extern ? func_0800bdf8(?);
+// extern ? func_0800bdf8(?); // [func_0800bdf8] BEATSCRIPT - Set Tempo
 // extern ? func_0800be64(?);
 // extern ? func_0800be88(?);
 // extern ? func_0800be9c(?);
@@ -28,19 +28,19 @@
 // extern ? func_0800bf9c(?);
 // extern ? func_0800bfac(?);
 // extern ? func_0800bfbc(?);
-// extern ? func_0800c01c(?);
+// extern ? func_0800c01c(?); // [func_0800c01c] BEATSCRIPT - Stop Music
 // extern ? func_0800c030(?);
 // extern ? func_0800c048(?);
 // extern ? func_0800c060(?);
 // extern ? func_0800c088(?);
 // extern ? func_0800c0c4(?);
-// extern ? func_0800c0d8(?);
+// extern ? func_0800c0d8(?); // [func_0800c0d8] BEATSCRIPT - Set Music Volume
 extern void func_0800c0f8(u16, u16);
 // extern ? func_0800c128(?);
 // extern ? func_0800c138(?);
 // extern ? func_0800c154(?);
 // extern ? func_0800c168(?);
-// extern ? func_0800c184(?);
+// extern ? func_0800c184(?); // [func_0800c184] BEATSCRIPT - Set Music Pitch (in Semitones)
 extern void func_0800c1a4_stub(void);
 extern u32 func_0800c1a8(void);
 // extern ? func_0800c1b4(?);

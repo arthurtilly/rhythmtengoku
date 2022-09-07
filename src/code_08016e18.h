@@ -9,18 +9,18 @@
 // extern ? func_08016e84(?);
 // extern ? func_08016e94(?);
 // extern ? func_08016ea4(?);
-// extern ? func_08016ec4(?);
+// extern ? func_08016ec4(?); // [func_08016ec4] RHYTHM GAME - Init. Common Graphics
 // extern ? func_08016ffc(?);
 // extern ? func_08017000(?);
 // extern ? func_0801714c(?);
 // extern ? func_08017168(?);
-// extern ? func_08017188(?);
+// extern ? func_08017188(?); // [func_08017188] RHYTHM GAME - Load New Engine
 // extern ? func_0801732c(?);
 extern void func_08017338(s16, s16);
-extern s32 func_08017348(s32, s32);
-extern void func_08017380(s32);
-extern s32 func_0801738c(struct struct_030046a4_sub *, s32);
-// extern ? func_080173c4(?);
+extern s32 func_08017348(s32, s32); // [func_08017348] RHYTHM GAME - Call Engine-Common Function
+extern void func_08017380(s32); // [func_08017380] RHYTHM GAME - Set Third Parameter for Engine-Specific Command
+extern s32 func_0801738c(struct struct_030046a4_sub *, s32); // [func_0801738c] RHYTHM GAME - Call Engine-Specific Command
+// extern ? func_080173c4(?); // [func_080173c4] RHYTHM GAME - Enable Play Inputs
 // extern ? func_080173d0(?);
 // extern ? func_080173dc(?);
 // extern ? func_080173e8(?);
@@ -30,18 +30,18 @@ extern s32 func_0801738c(struct struct_030046a4_sub *, s32);
 // extern ? func_08017448(?);
 // extern ? func_08017458(?);
 // extern ? func_08017468(?);
-// extern ? func_0801747c(?);
+// extern ? func_0801747c(?); // [func_0801747c] RHYTHM GAME - Set Skip Destination Scene (i.e. if Select is pressed in a tutorial)
 // extern ? func_080174e8(?);
 // extern ? func_08017514(?);
-// extern ? func_08017568(?);
+// extern ? func_08017568(?); // [func_08017568] RHYTHM GAME - Fade-In Screen
 extern void func_08017578(void);
 // extern ? func_080175a0(?);
 // extern ? func_080175b0(?);
 // extern ? func_080175c4(?);
 // extern ? func_080175d8(?);
-// extern ? func_080175e8(?);
-// extern ? func_08017604(?);
-// extern ? func_08017648(?);
+// extern ? func_080175e8(?); // [func_080175e8] RHYTHM GAME - Set Global Reverb
+// extern ? func_08017604(?); // [func_08017604] RHYTHM GAME - Start Perfect Campaign?
+// extern ? func_08017648(?); // [func_08017648] RHYTHM GAME - Check for Misses? (Perfect Campaign)
 // extern ? func_0801765c(?);
 // extern ? func_080176cc(?);
 // extern ? func_08017728(?);
@@ -54,13 +54,13 @@ extern void func_08017578(void);
 // extern ? func_080177f0(?);
 // extern ? func_080178ac(?);
 // extern ? func_080178e4(?);
-// extern ? func_08017908(?);
+// extern ? func_08017908(?); // [func_08017908] RHYTHM GAME - Set Current Marking Criteria
 // extern ? func_08017918(?);
 // extern ? func_08017928(?);
 // extern ? func_080179a0(?);
 // extern ? func_080179bc(?);
 // extern ? func_080179d8(?);
-extern void func_080179f4(s32);
+extern void func_080179f4(s32); // [func_080179f4] RHYTHM GAME - Spawn Cue
 // extern ? func_08017b34(?);
 // extern ? func_08017b44(?);
 // extern ? func_08017b88(?);
@@ -101,6 +101,6 @@ extern s32 func_08018054(void);
 // extern ? func_0801858c(?);
 // extern ? func_080185d0(?);
 // extern ? func_08018630(?);
-// extern ? func_08018660(?);
+// extern ? func_08018660(?); // [func_08018660] RHYTHM GAME - Display Text
 // extern ? func_08018698(?);
 // extern ? func_080186d4(?);

@@ -83,6 +83,7 @@
 // extern ? func_0801c9ec(?);
 // extern ? func_0801ca08(?);
 // extern ? func_0801ca20(?);
+
 // extern ? func_0801ca34(?); // [func_0801ca34] TITLE - ?
 // extern ? func_0801cb0c(?); // [func_0801cb0c] TITLE - ?
 // extern ? func_0801cc2c(?); // [func_0801cc2c] TITLE - Show Text? (Script Function)
@@ -101,6 +102,7 @@
 // extern ? func_0801d02c(?); // [func_0801d02c] TITLE - Scene Main
 // extern ? func_0801d08c(?); // [func_0801d08c] TITLE - ?
 // extern ? func_0801d0a8(?); // [func_0801d0a8] TITLE - Scene Close
+
 // extern ? func_0801d0b8(?); // [func_0801d0b8] MEDAL CORNER MENU - ?
 // extern ? func_0801d11c(?); // [func_0801d11c] MEDAL CORNER MENU - ?
 // extern ? func_0801d14c(?); // [func_0801d14c] MEDAL CORNER MENU - ?
