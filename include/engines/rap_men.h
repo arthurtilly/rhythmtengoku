@@ -52,12 +52,12 @@ extern void func_08039a44(u32);     // [func_08039a44] ENGINE Func_00 - ?
 extern void func_08039a98(u32);     // [func_08039a98] ENGINE Func_01 - ?
 extern void func_08039aa4(void);    // [func_08039aa4] MAIN - Update
 extern void func_08039ad4(void);    // [func_08039ad4] MAIN - Close (STUB)
-extern void func_08039ad8(u32, struct struct_080179f4_sub *, u32);  // [func_08039ad8] CUE - Spawn
-extern u32  func_08039b2c(u32, u32, u32);                           // [func_08039b2c] CUE - Update
-extern void func_08039b48(void);                                    // [func_08039b48] CUE - Despawn
-extern void func_08039b4c(u32, struct struct_080179f4_sub *);       // [func_08039b4c] CUE - Hit
-extern void func_08039c00(void);                                    // [func_08039c00] CUE - Barely
-extern void func_08039c60(void);                                    // [func_08039c60] CUE - Miss
+extern void func_08039ad8(u32, struct RapMenCue *, u32);    // [func_08039ad8] CUE - Spawn
+extern u32  func_08039b2c(u32, struct RapMenCue *, u32);    // [func_08039b2c] CUE - Update
+extern void func_08039b48(u32, struct RapMenCue *);         // [func_08039b48] CUE - Despawn
+extern void func_08039b4c(u32, struct RapMenCue *);         // [func_08039b4c] CUE - Hit
+extern void func_08039c00(u32, struct RapMenCue *);         // [func_08039c00] CUE - Barely
+extern void func_08039c60(u32, struct RapMenCue *);         // [func_08039c60] CUE - Miss
 extern void func_08039cb8(void);    // [func_08039cb8] MAIN - Input Event
 extern void func_08039d10(void);    // [func_08039d10] COMMON Func_00 - Beat Animation
 extern void func_08039d7c(char *);  // [func_08039d7c] COMMON Func_01 - Display Text

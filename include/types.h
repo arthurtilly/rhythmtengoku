@@ -244,9 +244,6 @@ struct KarateManCue {
     s16 unk2E;     // Value:  unk2E
 };
 
-
-// Game engine structs
-
 struct KarateManJoe {
 	u16 isNotBeat:4; // Value:  Beat Animation Flag (1 when not in Beat Animation)
     u16 unk2;        // Unused
@@ -278,6 +275,10 @@ struct KarateManInfo {
     u8 expression;  // Value:   Expression
 };
 
+
+struct RapMenCue {
+    u32 anim;
+};
 
 struct RapMenInfo {
     u8 unk0;

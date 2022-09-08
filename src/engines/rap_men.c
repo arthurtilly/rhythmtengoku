@@ -84,42 +84,42 @@ void func_08039aa4(void) {
 void func_08039ad4(void) {
 }
 
-void func_08039ad8(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
+void func_08039ad8(u32 arg0, struct RapMenCue *cue, u32 anim) {
     func_0804d8f8(D_03005380, gRapMenInfo.unkA, func_080398b4(RAP_MEN_ANIM_03), 0, 1, 0x7f, 0);
     gRapMenInfo.unk10 = func_0800c3a4(0x24);
     gRapMenInfo.unk12 = func_0800c3a4(0x24);
-    arg1->unk0.u32 = arg2;
+    cue->anim = anim;
 }
 
-u32 func_08039b2c(u32 arg0, u32 arg1, u32 arg2) {
-    if (arg2 > func_0800c3a4(0x30)) {
+u32 func_08039b2c(u32 arg0, struct RapMenCue *cue, u32 runningTime) {
+    if (runningTime > func_0800c3a4(0x30)) {
         return TRUE;
     } else {
         return FALSE;
     }
 }
 
-void func_08039b48(void) {
+void func_08039b48(u32 arg0, struct RapMenCue *cue) {
 }
 
-void func_08039b4c(u32 arg0, struct struct_080179f4_sub *arg1) {
+void func_08039b4c(u32 arg0, struct RapMenCue *cue) {
     func_0804d8f8(D_03005380, gRapMenInfo.unkA, func_080398b4(RAP_MEN_ANIM_02), 0, 1, 0x7f, 0);
     gRapMenInfo.unk10 = func_0800c3a4(0x24);
     func_0804d160(D_03005380, func_080398b4(RAP_MEN_ANIM_07), 0, 0xa0, 0x82, 0x47f6, 1, 0, 3);
     func_08039a44(3);
-    func_08002634(D_089e652c[gRapMenInfo.unk0][arg1->unk0.u32]);
+    func_08002634(D_089e652c[gRapMenInfo.unk0][cue->anim]);
     func_08002634(&s_SD1_seqData);
     func_08002634(&s_CC4_seqData);
 }
 
-void func_08039c00(void) {
+void func_08039c00(u32 arg0, struct RapMenCue *cue) {
     func_0804d8f8(D_03005380, gRapMenInfo.unkA, func_080398b4(RAP_MEN_ANIM_01), 0, 1, 0x7f, 0);
     gRapMenInfo.unk10 = func_0800c3a4(0x24);
     func_08002634(D_089e652c[gRapMenInfo.unk0][0]);
     func_08002634(&s_tom_M_seqData);
 }
 
-void func_08039c60(void) {
+void func_08039c60(u32 arg0, struct RapMenCue *cue) {
     if (!gRapMenInfo.unk14) {
         func_0804d8f8(D_03005380, gRapMenInfo.unkA, func_080398b4(RAP_MEN_ANIM_08), 0, 1, 0x7f, 0);
         gRapMenInfo.unk10 = func_0800c3a4(0x3c);
