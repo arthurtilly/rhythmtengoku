@@ -325,45 +325,44 @@ void func_08020f8c(void) {
 
 
 // [func_08020f98] CUE - Spawn
-void func_08020f98(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
-    arg1->unk0.u8[0] = arg2;
-    gBonOdoriInfo.unk862 = arg2;
+void func_08020f98(u32 arg0, struct BonOdoriCue *cue, u32 clapAnim) {
+    cue->type = clapAnim;
+    gBonOdoriInfo.unk862 = clapAnim;
 }
 
 
 // [func_08020fb0] CUE - Update
-u8 func_08020fb0(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
-    u32 temp = func_0800c3a4(0x30);
-    if (arg2 > temp) {
-        return 1;
+u8 func_08020fb0(u32 arg0, struct BonOdoriCue *cue, u32 runningTime) {
+    if (runningTime > func_0800c3a4(0x30)) {
+        return TRUE;
     } else {
-        return 0;
+        return FALSE;
     }
 }
 
 
 // [func_08020fcc] CUE - Despawn
-void func_08020fcc(u32 arg0, struct struct_080179f4_sub *arg1) {
+void func_08020fcc(u32 arg0, struct BonOdoriCue *cue) {
 }
 
 
 // [func_08020fd0] CUE - Hit
-void func_08020fd0(u32 arg0, struct struct_080179f4_sub *arg1) {
-    func_080207ec(arg1->unk0.u8[0]);
+void func_08020fd0(u32 arg0, struct BonOdoriCue *cue) {
+    func_080207ec(cue->type);
     func_08002634(&s_HC_seqData);
 }
 
 
 // [func_08020fe8] CUE - Barely
-void func_08020fe8(u32 arg0, struct struct_080179f4_sub *arg1) {
-    func_080207ec(arg1->unk0.u8[0]);
+void func_08020fe8(u32 arg0, struct BonOdoriCue *cue) {
+    func_080207ec(cue->type);
     func_08002634(&s_tebyoushi_pati_seqData);
     gBonOdoriInfo.unk42 = TRUE;
 }
 
 
 // [func_0802100c] CUE - Miss
-void func_0802100c(u32 arg0, struct struct_080179f4_sub *arg1) {
+void func_0802100c(u32 arg0, struct BonOdoriCue *cue) {
     gBonOdoriInfo.unk860 += 1;
     func_0800bc40();
     gBonOdoriInfo.unk42 = TRUE;

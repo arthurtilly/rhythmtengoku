@@ -104,12 +104,12 @@ extern void func_08020ed4(void);    // [func_08020ed4] ENGINE Func_0F - Test Pla
 extern void func_08020ee8(void);    // [func_08020ee8] ENGINE Func_10 - React to Player Inputs
 extern void func_08020f48(void);    // [func_08020f48] MAIN - Update
 extern void func_08020f8c(void);    // [func_08020f8c] MAIN - Close
-extern void func_08020f98(u32, struct struct_080179f4_sub *, u32);  // [func_08020f98] CUE - Spawn
-extern u8   func_08020fb0(u32, struct struct_080179f4_sub *, u32);  // [func_08020fb0] CUE - Update
-extern void func_08020fcc(u32, struct struct_080179f4_sub *);       // [func_08020fcc] CUE - Despawn
-extern void func_08020fd0(u32, struct struct_080179f4_sub *);       // [func_08020fd0] CUE - Hit
-extern void func_08020fe8(u32, struct struct_080179f4_sub *);       // [func_08020fe8] CUE - Barely
-extern void func_0802100c(u32, struct struct_080179f4_sub *);       // [func_0802100c] CUE - Miss
+extern void func_08020f98(u32, struct BonOdoriCue *, u32);  // [func_08020f98] CUE - Spawn
+extern u8   func_08020fb0(u32, struct BonOdoriCue *, u32);  // [func_08020fb0] CUE - Update
+extern void func_08020fcc(u32, struct BonOdoriCue *);       // [func_08020fcc] CUE - Despawn
+extern void func_08020fd0(u32, struct BonOdoriCue *);       // [func_08020fd0] CUE - Hit
+extern void func_08020fe8(u32, struct BonOdoriCue *);       // [func_08020fe8] CUE - Barely
+extern void func_0802100c(u32, struct BonOdoriCue *);       // [func_0802100c] CUE - Miss
 extern void func_08021034(void);    // [func_08021034] MAIN - Input Event
 extern void func_08021084(void);    // [func_08021084] COMMON Func_00 - Beat Animation
 extern void func_08021188(void);    // [func_08021188] COMMON Func_01 - STUB

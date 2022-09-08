@@ -433,6 +433,10 @@ struct PrologueInfo {
 };
 
 
+struct BonOdoriCue {
+    u8 type;
+};
+
 struct BonOdoriInfo_sub {
     s16 unk0;
     s16 unk2;
@@ -467,6 +471,7 @@ struct BonOdoriInfo {
     u8 unk862;
     u16 unk864;
 };
+
 
 struct ShowtimeInfo_sub {
     s16 unk0;
