@@ -15,3 +15,40 @@ typedef u16 Palette[16];
       (((((x) >> 16) & 0xff) >> 3) << 0 )   \
     | (((((x) >> 8 ) & 0xff) >> 3) << 5 )   \
     | (((((x) >> 0 ) & 0xff) >> 3) << 10)
+
+struct struct_03004b10 {
+    u16 DISPCNT;    // LCD Control
+    u16 unk2;
+    u16 BG0CNT;     // BG0 Control
+    u16 BG1CNT;     // BG1 Control
+    u16 BG2CNT;     // BG2 Control
+    u16 BG3CNT;     // BG3 Control
+    s16 BG0HOFS;    // BG0 X-Offset
+    s16 BG0VOFS;    // BG0 Y-Offset
+    s16 BG1HOFS;    // BG1 X-Offset
+    s16 BG1VOFS;    // BG1 Y-Offset
+    s16 BG2HOFS;    // BG2 X-Offset
+    s16 BG2VOFS;    // BG2 Y-Offset
+    s16 BG3HOFS;    // BG3 X-Offset
+    s16 BG3VOFS;    // BG3 Y-Offset
+    u32 unk1C[4];
+    u32 unk2C[4];
+    u16 unk3C;
+    u16 unk3E;
+    u16 unk40;
+    u16 unk42;
+    u16 unk44;
+    u16 unk46;
+    u16 unk48;
+    u16 unk4A;
+    u16 unk4C;
+    u16 unk4E;
+    u16 unk50;
+    u16 unk52;
+    u16 bgPalette[16][16];   // BG Palette Buffer, 03004b64, 0x54
+    u16 objPalette[16][16];  // OBJ Palette Buffer, 03004d64, 0x254
+    u32 unk454[0x100];   // OAM Buffer, 03004f64
+};
+
+extern struct struct_03004b10 D_03004b10;
+extern s32 D_03005380;
