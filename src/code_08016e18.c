@@ -156,13 +156,13 @@ s32 func_0801738c(struct GameEngine *arg1, s32 arg2) { // gfx command 2
 
 void func_080179f4(s32 id) { // universal cue?
     const struct CueDefinition *cueDef;
-    struct struct_080179f4 *newCue, *prevCue;
+    struct Cue *newCue, *prevCue;
 
     if ((gRhythmGameInfo.unk5C == 0) || ((cueDef = gRhythmGameInfo.cueDefinitions[id]) == NULL)) {
         return;
     }
 
-    newCue = mem_heap_alloc(sizeof(struct struct_080179f4));
+    newCue = mem_heap_alloc(sizeof(struct Cue));
     if (cueDef->cueInfoSize != 0) {
         newCue->unk64 = mem_heap_alloc(cueDef->cueInfoSize);
     } else {

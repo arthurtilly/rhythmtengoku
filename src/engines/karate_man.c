@@ -227,8 +227,8 @@ void func_080215cc(void) {
 
 
 // ???
-void func_0802160c(struct struct_080179f4 *arg0) {
-    struct struct_080179f4 *temp;
+void func_0802160c(struct Cue *arg0) {
+    struct Cue *temp;
     struct KarateManCue *temp1;
 
     func_08018124(&temp, &temp1); // Initialise temps
@@ -242,7 +242,7 @@ void func_0802160c(struct struct_080179f4 *arg0) {
 
 
 // CUE - Spawn
-void func_08021644(struct struct_080179f4 *arg0, struct KarateManCue *cue, u32 object) {
+void func_08021644(struct Cue *arg0, struct KarateManCue *cue, u32 object) {
     cue->isHit = 0;
     cue->unk8 = func_0800c42c();
     cue->objects = func_0804d160(D_03005380, D_088acc3c, 0, 0x9c, 0x34, 0x4800, 0, 0, 0);
@@ -323,7 +323,7 @@ void func_08021818(struct KarateManCue *cue) {
 
 
 // CUE - Update
-u32 func_08021888(u32 arg0, struct KarateManCue *cue, u32 arg2, u32 arg3) {
+u32 func_08021888(struct Cue *arg0, struct KarateManCue *cue, u32 arg2, u32 arg3) {
     struct KarateManJoe *joe = &gKarateManInfo.joe;
     u16 temp;
     u32 zero;
@@ -334,7 +334,7 @@ u32 func_08021888(u32 arg0, struct KarateManCue *cue, u32 arg2, u32 arg3) {
     
     zero = 0;
     switch (cue->isHit) {
-        case 0: // Object wasn't hit
+        case FALSE: // Object wasn't hit
             temp = cue->unk28 = Div(arg2 << 8, arg3);
             if (temp > 0x200) { // Object is on the floor
                 cue->isHit = 1;
@@ -352,7 +352,7 @@ u32 func_08021888(u32 arg0, struct KarateManCue *cue, u32 arg2, u32 arg3) {
             func_08021818(cue);
             func_08021740(cue);
             break;
-        case 1: // Object was hit
+        case TRUE: // Object was hit
             func_080217ec(cue);
             if ((cue->unkC >> 8) > 0x110) return 1;
             
@@ -371,7 +371,7 @@ u32 func_08021888(u32 arg0, struct KarateManCue *cue, u32 arg2, u32 arg3) {
 
 
 // CUE - Despawn 
-void func_08021974(u32 arg0, struct KarateManCue *cue) {
+void func_08021974(struct Cue *arg0, struct KarateManCue *cue) {
     func_0804d504(D_03005380, cue->objects);
     func_0804d504(D_03005380, cue->shadow);
     func_080021b8(cue->unk8);
@@ -406,7 +406,7 @@ void func_08021a0c(void) {
 
 
 // CUE - Hit
-void func_08021a60(struct struct_080179f4 *arg0, struct KarateManCue *cue) {
+void func_08021a60(struct Cue *arg0, struct KarateManCue *cue) {
     struct KarateManInfo *karateManStruct = &gKarateManInfo;
     struct KarateManJoe *joe = &karateManStruct->joe;
     const struct Animation *anim;
@@ -524,7 +524,7 @@ void func_08021a60(struct struct_080179f4 *arg0, struct KarateManCue *cue) {
 
 
 // CUE - Barely
-void func_08021d38(struct struct_080179f4 *arg0, struct KarateManCue *cue) {
+void func_08021d38(struct Cue *arg0, struct KarateManCue *cue) {
     u32 isBgFaceVer;
     struct KarateManJoe *joe = &gKarateManInfo.joe;
 
@@ -548,7 +548,7 @@ void func_08021d38(struct struct_080179f4 *arg0, struct KarateManCue *cue) {
 
 
 // CUE - Miss
-void func_08021dcc(void) {
+void func_08021dcc(struct Cue *arg0, struct KarateManCue *cue) {
 	func_0800bc40();
 }
 

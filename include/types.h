@@ -34,32 +34,13 @@ struct struct_03004b10 {
     u32 unk454[0x100];   // OAM Buffer, 03004f64
 };
 
-struct struct_080179f4_sub {
-    union {
-        u32 u32;
-        u8 u8[4];
-    } unk0;
-    s16 unk4;
-    s16 unk6;
-    s8 unk8;
-    s8 unk9;
-    u8 pad0A[2];
-    u32 unkC;
-    u32 unk10;
-    u32 unk14;
-    u32 unk18;
-    u32 unk1C;
-    u32 unk20;
-    u32 unk24;
-    u8 pad28[4];
-    u8 unk2C;
-    u8 unk2D;
+struct GameCueInfo {
 };
 
 // In-Memory Cue Data
-struct struct_080179f4 {
-	struct struct_080179f4 *next;
-	struct struct_080179f4 *prev;
+struct Cue {
+	struct Cue *next;
+	struct Cue *prev;
 	s32 unk8; // ???
 	u8 pad0C[0x3C];
 	s8 unk48;
@@ -71,11 +52,14 @@ struct struct_080179f4 {
 	const struct SequenceData *hitSfx;
 	const struct SequenceData *barelySfx;
 	const struct SequenceData *missSfx;
-	struct struct_080179f4_sub *unk64;
+	struct GameCueInfo *unk64;
 	u8 unk68;
 };
 
-typedef void (*CueSpawnFunc)(struct struct_080179f4 *, struct struct_080179f4_sub *, s32);
+typedef void (*CueSpawnFunc)(struct Cue *, struct GameCueInfo *, u32);
+typedef void (*CueUpdateFunc)(struct Cue *, struct GameCueInfo *, u32, u32);
+typedef void (*CueDespawnFunc)(struct Cue *, struct GameCueInfo *);
+typedef void (*CueInputFunc)(struct Cue *, struct GameCueInfo *);
 
 // Read-Only Cue Definition
 struct CueDefinition {
@@ -114,7 +98,6 @@ struct GameEngine {
 };
 
 
-
 // For readability.
 #define gGameSelectInfo D_030046a4->gameSelect
 #define gRhythmGameInfo D_030046a4->rhythmGame
@@ -141,10 +124,10 @@ struct RhythmGameInfo {
 	s16 unkE;
 	const struct GameEngine *currentEngine; // Game Engine Pointer
 	void *unk14; // ?
-	struct struct_080179f4 *previousCue; // Previous Cue (set to the Current Cue as soon as the latter is created)
+	struct Cue *previousCue; // Previous Cue (set to the Current Cue as soon as the latter is created)
 	const struct CueDefinition *cueDefinitions[12]; // Cue Definitions (copied from Game Engine)
 	EngineFunc commonFunctions[3]; // Engine "Common" Functions
-	struct struct_080179f4 *currentCue; // Current Cue
+	struct Cue *currentCue; // Current Cue
 	u8 unk5C;
 	u8 unk5D;
 	s32 unk60;

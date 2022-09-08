@@ -68,18 +68,18 @@ extern void func_08021524(void);
 extern void func_08021544(u8);
 extern void func_08021554(void);
 extern void func_080215cc(void);
-extern void func_0802160c(struct struct_080179f4 *);
-extern void func_08021644(struct struct_080179f4 *, struct KarateManCue *, u32);
+extern void func_0802160c(struct Cue *);
+extern void func_08021644(struct Cue *, struct KarateManCue *, u32); // CUE - Spawn
 extern void func_08021740(struct KarateManCue *);
 extern void func_080217ec(struct KarateManCue *);
 extern void func_08021818(struct KarateManCue *);
-extern u32  func_08021888(u32, struct KarateManCue *, u32, u32);
-extern void func_08021974(u32, struct KarateManCue *);
+extern u32  func_08021888(struct Cue *, struct KarateManCue *, u32, u32); // CUE - Update
+extern void func_08021974(struct Cue *, struct KarateManCue *); // CUE - Despawn
 extern void func_080219a8(void);
 extern void func_08021a0c(void);
-extern void func_08021a60(struct struct_080179f4 *, struct KarateManCue *);
-extern void func_08021d38(struct struct_080179f4 *, struct KarateManCue *);
-extern void func_08021dcc(void);
+extern void func_08021a60(struct Cue *, struct KarateManCue *); // CUE - Hit
+extern void func_08021d38(struct Cue *, struct KarateManCue *); // CUE - Barely
+extern void func_08021dcc(struct Cue *, struct KarateManCue *); // CUE - Miss
 extern void func_08021dd8(struct KarateManJoe *);
 extern void func_08021e40(struct KarateManJoe *);
 extern void func_08021e58(struct KarateManJoe *);
