@@ -2,30 +2,31 @@
 
 #include "global.h"
 
-// extern ? func_08011ec0(?);
-// extern ? func_08011ed0(?);
-// extern ? func_08011efc(?);
-// extern ? func_08011f2c(?);
-// extern ? func_08011f68(?);
-// extern ? func_08011fa8(?);
-// extern ? func_08012084(?);
-// extern ? func_08012090(?);
-// extern ? func_080120e4(?);
-// extern ? func_08012200(?);
-// extern ? func_08012214(?);
-// extern ? func_08012218(?);
-// extern ? func_080122a8(?);
-// extern ? func_080123e0(?);
-// extern ? func_080123fc(?);
-// extern ? func_0801242c(?);
-// extern ? func_08012438(?);
-// extern ? func_08012464(?);
-// extern ? func_08012494(?);
-// extern ? func_080124d0(?);
-// extern ? func_080125f8(?);
-// extern ? func_080125fc(?);
-// extern ? func_080127d0(?);
-// extern ? func_080127ec(?);
+// extern ? func_08011ec0(?); // [] DATA ROOM (MENU) - ?
+// extern ? func_08011ed0(?); // [func_08011ed0] DATA ROOM (MENU) - Graphics Init. 2
+// extern ? func_08011efc(?); // [func_08011efc] DATA ROOM (MENU) - Graphics Init. 1
+// extern ? func_08011f2c(?); // [func_08011f2c] DATA ROOM (MENU) - Graphics Init. 0
+// extern ? func_08011f68(?); // [] DATA ROOM (MENU) - ?
+// extern ? func_08011fa8(?); // [] DATA ROOM (MENU) - ?
+// extern ? func_08012084(?); // [] DATA ROOM (MENU) - ?
+// extern ? func_08012090(?); // [] DATA ROOM (MENU) - ?
+// extern ? func_080120e4(?); // [func_080120e4] DATA ROOM (MENU) - Scene Init.
+// extern ? func_08012200(?); // [] DATA ROOM (MENU) - ?
+// extern ? func_08012214(?); // [func_08012214] DATA ROOM (MENU) - Scene STUB
+// extern ? func_08012218(?); // [] DATA ROOM (MENU) - ?
+// extern ? func_080122a8(?); // [func_080122a8] DATA ROOM (MENU) - Scene Main
+// extern ? func_080123e0(?); // [] DATA ROOM (MENU) - ?
+// extern ? func_080123fc(?); // [func_080123fc] DATA ROOM (MENU) - Scene Close
+
+// extern ? func_0801242c(?); // [func_0801242c] MAIN MENU - ?
+// extern ? func_08012438(?); // [func_08012438] MAIN MENU - Graphics Init. 2
+// extern ? func_08012464(?); // [func_08012464] MAIN MENU - Graphics Init. 1
+// extern ? func_08012494(?); // [func_08012494] MAIN MENU - Graphics Init. 0
+// extern ? func_080124d0(?); // [func_080124d0] MAIN MENU - Scene Init.
+// extern ? func_080125f8(?); // [func_080125f8] MAIN MENU - Scene STUB
+// extern ? func_080125fc(?); // [func_080125fc] MAIN MENU - Scene Main
+// extern ? func_080127d0(?); // [func_080127d0] MAIN MENU - ?
+// extern ? func_080127ec(?); // [func_080127ec] MAIN MENU - Scene Close
 
 // extern ? func_080127fc(?); // [func_080127fc] GAME SELECT - ?
 // extern ? func_08012808(?); // [func_08012808] GAME SELECT - ?
@@ -59,7 +60,7 @@
 // extern ? func_0801338c(?); // [] GAME SELECT - ?
 // extern ? func_080133cc(?);
 // extern ? func_080134ec(?);
-// extern ? func_0801350c(?);
+// extern ? func_0801350c(?); // [] GAME SELECT - ?
 // extern ? func_08013530(?);
 // extern ? func_08013570(?); // [func_08013570] GAME SELECT - Graphics Init. 2
 // extern ? func_0801359c(?); // [func_0801359c] GAME SELECT - Graphics Init. 1
@@ -136,26 +137,28 @@ extern void func_08013b98(s32, s32); // [] GAME SELECT - ?
 // extern ? func_08016290(?); // [] GAME SELECT - ?
 // extern ? func_080162bc(?); // [func_080162bc] GAME SELECT - ?
 
-// extern ? func_080162c8(?);
-// extern ? func_080162cc(?);
-// extern ? func_080162f8(?);
-// extern ? func_08016328(?);
-// extern ? func_08016364(?);
-// extern ? func_080165f0(?);
+// extern ? func_080162c8(?); // [] OPTIONS MENU - ?
+// extern ? func_080162cc(?); // [] OPTIONS MENU - Graphics Init. 2
+// extern ? func_080162f8(?); // [] OPTIONS MENU - Graphics Init. 1
+// extern ? func_08016328(?); // [] OPTIONS MENU - Graphics Init. 0
+// extern ? func_08016364(?); // [] OPTIONS MENU - Scene Init.
+// extern ? func_080165f0(?); // [] OPTIONS MENU - Scene STUB
 // extern ? func_080165f4(?);
 // extern ? func_08016620(?);
 // extern ? func_0801685c(?);
-// extern ? func_080169b8(?);
+// extern ? func_080169b8(?); // [] OPTIONS MENU - Scene Main
 // extern ? func_080169fc(?);
-// extern ? func_08016a18(?);
-// extern ? func_08016a54(?);
-// extern ? func_08016a58(?);
-// extern ? func_08016a84(?);
-// extern ? func_08016ab4(?);
-// extern ? func_08016af0(?);
-// extern ? func_08016d5c(?);
-// extern ? func_08016d90(?);
-// extern ? func_08016d94(?);
-// extern ? func_08016dd8(?);
-// extern ? func_08016df4(?);
-// extern ? func_08016e04(?);
+// extern ? func_08016a18(?); // [] OPTIONS MENU - Scene Close
+
+// extern ? func_08016a54(?); // [func_08016a54] PERFECT CERTIFICATE - ?
+// extern ? func_08016a58(?); // [func_08016a58] PERFECT CERTIFICATE - Graphics Init. 2
+// extern ? func_08016a84(?); // [func_08016a84] PERFECT CERTIFICATE - Graphics Init. 1
+// extern ? func_08016ab4(?); // [func_08016ab4] PERFECT CERTIFICATE - Graphics Init. 0
+// extern ? func_08016af0(?); // [func_08016af0] PERFECT CERTIFICATE - Scene Init.
+// extern ? func_08016d5c(?); // [func_08016d5c] PERFECT CERTIFICATE - ?
+// extern ? func_08016d90(?); // [func_08016d90] PERFECT CERTIFICATE - Scene STUB
+// extern ? func_08016d94(?); // [func_08016d94] PERFECT CERTIFICATE - Scene Main
+// extern ? func_08016dd8(?); // [func_08016dd8] PERFECT CERTIFICATE - ?
+// extern ? func_08016df4(?); // [func_08016df4] PERFECT CERTIFICATE - Scene Close
+
+// extern ? func_08016e04(?); // [func_08016e04] RHYTHM GAME - ?
