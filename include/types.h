@@ -10,23 +10,24 @@ struct Cue {
 	struct Cue *prev;
 	s32 unk8; // ???
 	u8 pad0C[0x3C];
-	s8 unk48;
-	u8 pad49[3];
-	u16 unk4C; // Cue ticks 
-	u16 unk4E;
-	u8 pad50[4];
+	s8 unk48_b0:1;
+	s8 unk48_b1:1;
+	u16 unk4A;
+	u16 runningTime; // Cue ticks
+	u16 duration;
+	u32 null50;
 	const struct SequenceData *spawnSfx;
 	const struct SequenceData *hitSfx;
 	const struct SequenceData *barelySfx;
 	const struct SequenceData *missSfx;
-	struct GameCueInfo *unk64;
+	struct GameCueInfo *gameCueInfo;
 	u8 unk68;
 };
 
-typedef void (*CueSpawnFunc)(struct Cue *, struct GameCueInfo *, u32);
-typedef void (*CueUpdateFunc)(struct Cue *, struct GameCueInfo *, u32, u32); // arg2 = runningTime, arg3 = ?
-typedef void (*CueDespawnFunc)(struct Cue *, struct GameCueInfo *);
-typedef void (*CueInputFunc)(struct Cue *, struct GameCueInfo *);
+typedef void (*CueSpawnEvent)(struct Cue *, struct GameCueInfo *, u32);
+typedef void (*CueUpdateEvent)(struct Cue *, struct GameCueInfo *, u32, u32); // arg2 = runningTime, arg3 = ?
+typedef void (*CueDespawnEvent)(struct Cue *, struct GameCueInfo *);
+typedef void (*CueInputEvent)(struct Cue *, struct GameCueInfo *);
 
 // Read-Only Cue Definition
 struct CueDefinition {
@@ -36,13 +37,13 @@ struct CueDefinition {
     u16 endDelay; // End Delay
     u16 unkA; // ?
     u32 cueInfoSize; // Required Memory (in bytes)
-    CueSpawnFunc spawnFunc; // Spawn Function
+    CueSpawnEvent spawnFunc; // Spawn Function
     s32 spawnParam; // Spawn Parameter
-    void *unk18; // Update Function
-    void *unk1C; // Close Function
-    void *unk20; // Hit Function
-    void *unk24; // Barely Function
-    void *unk28; // Miss Function
+    CueUpdateEvent updateFunc; // Update Function
+    CueDespawnEvent despawnFunc; // Close Function
+    CueInputEvent hitFunc; // Hit Function
+    CueInputEvent barelyFunc; // Barely Function
+    CueInputEvent missFunc; // Miss Function
 	const struct SequenceData *spawnSfx;
 	const struct SequenceData *hitSfx;
 	const struct SequenceData *barelySfx;

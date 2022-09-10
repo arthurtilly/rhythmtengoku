@@ -5,6 +5,40 @@
 #include "sound.h"
 
 
+
+struct SpaceballCue {
+    u8 state;
+    struct AffineSprite *sprite;
+    u32 endTime;
+    s16 rotation;
+    s16 rotationSpeed;
+    s32 x;
+    s32 y;
+    s32 z;
+    u32 unk1C; // (90 * number of beats)
+    u32 xSpeed; // Used for 'Barely' arc only
+    u32 ySpeed; // Used for 'Barely' arc only
+    u8 missed;
+};
+
+struct SneakySpiritsCue {
+    u32 null0;
+    u32 null4;
+    u32 null8;
+    u32 nullC;
+    u32 null10;
+    u32 null14;
+    u32 null18;
+    u32 null1C;
+    u32 null20;
+    u16 null24;
+    u8 disableTaunt;
+};
+
+struct BonOdoriCue {
+    u8 type;
+};
+
 struct KarateManCue {
     u16 isHit:4;   // Flag:   Object Hit
     u16 miss:1;    // Flag:   Missed
@@ -28,16 +62,6 @@ struct KarateManCue {
     s16 unk2E;     // Value:  unk2E
 };
 
-struct RapMenCue {
-    u32 anim;
-};
-
-struct WizardsWaltzCue {
-    struct AffineSprite *sprite;
-    u16 null4;
-    s16 position;
-};
-
 struct RhythmTweezersCue {
     u32 unk0_b0:5;
     u32 isLongHair:4;
@@ -57,39 +81,6 @@ struct RhythmTweezersCue {
     u16 pullTarget; // Target pulling time.
 };
 
-struct SneakySpiritsCue {
-    u32 null0;
-    u32 null4;
-    u32 null8;
-    u32 nullC;
-    u32 null10;
-    u32 null14;
-    u32 null18;
-    u32 null1C;
-    u32 null20;
-    u16 null24;
-    u8 disableTaunt;
-};
-
-struct BonOdoriCue {
-    u8 type;
-};
-
-struct SpaceballCue {
-    u8 state;
-    struct AffineSprite *sprite;
-    u32 endTime;
-    s16 rotation;
-    s16 rotationSpeed;
-    s32 x;
-    s32 y;
-    s32 z;
-    u32 unk1C; // (90 * number of beats)
-    u32 xSpeed; // Used for 'Barely' arc only
-    u32 ySpeed; // Used for 'Barely' arc only
-    u8 missed;
-};
-
 struct FireworksCue {
     s16 sprite;     // Sprite
     s32 x;          // X Position
@@ -102,6 +93,16 @@ struct FireworksCue {
     u8  state;      // Current State (range varies between cues)
     u8  type;       // Cue Type { 0..2 }
     u8  exploded;   // Has Exploded
+};
+
+struct RapMenCue {
+    u32 anim;
+};
+
+struct WizardsWaltzCue {
+    struct AffineSprite *sprite;
+    u16 null4;
+    s16 position;
 };
 
 

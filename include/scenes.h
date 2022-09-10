@@ -34,7 +34,7 @@ struct RhythmGameInfo {
 	EngineFunc commonFunctions[3]; // Engine "Common" Functions
 	struct Cue *currentCue; // Current Cue
 	u8 unk5C;
-	u8 unk5D;
+	u8 unk5D; // Has the capacity to, when set, delete cues as soon as they are created, but is always set to FALSE when a cue is made.
 	s32 unk60;
     s32 unk64;
 	const struct SequenceData *spawnSfx;
@@ -48,7 +48,7 @@ struct RhythmGameInfo {
 	s32 unk7C;
 	s32 unk80;
 	s16 unk84;
-    u16 unk86;
+    u16 nextCueDuration;
 };
 
 union struct_030046a4 {

@@ -164,24 +164,24 @@ void func_080179f4(s32 id) { // universal cue?
 
     newCue = mem_heap_alloc(sizeof(struct Cue));
     if (cueDef->cueInfoSize != 0) {
-        newCue->unk64 = mem_heap_alloc(cueDef->cueInfoSize);
+        newCue->gameCueInfo = mem_heap_alloc(cueDef->cueInfoSize);
     } else {
-        newCue->unk64 = NULL;
+        newCue->gameCueInfo = NULL;
     }
     func_0800186c(cueDef, &newCue->unk8, 0x40, 0x20, 0x200);
 
-    newCue->unk48 &= ~1;
-    newCue->unk48 &= ~2;
+    newCue->unk48_b0 = 0;
+    newCue->unk48_b1 = 0;
 
     do {} while (0); // fake matching / macro?
     
-    newCue->unk4C = 0;
+    newCue->runningTime = 0;
 
-    if (gRhythmGameInfo.unk86 != 0) {
-        newCue->unk4E = func_0800c3a4(gRhythmGameInfo.unk86);
-        gRhythmGameInfo.unk86 = 0;
+    if (gRhythmGameInfo.nextCueDuration != 0) {
+        newCue->duration = func_0800c3a4(gRhythmGameInfo.nextCueDuration);
+        gRhythmGameInfo.nextCueDuration = 0;
     } else {
-        newCue->unk4E = func_0800c3a4(cueDef->duration);
+        newCue->duration = func_0800c3a4(cueDef->duration);
     }
 
     newCue->spawnSfx  = ((gRhythmGameInfo.spawnSfx != NULL)  ? gRhythmGameInfo.spawnSfx  : cueDef->spawnSfx);
@@ -207,13 +207,13 @@ void func_080179f4(s32 id) { // universal cue?
 
     gRhythmGameInfo.previousCue = newCue;
 
-    gRhythmGameInfo.unk5D = 0;
+    gRhythmGameInfo.unk5D = FALSE;
 
     if (cueDef->spawnFunc != NULL) {
-        cueDef->spawnFunc(newCue, newCue->unk64, cueDef->spawnParam);
+        cueDef->spawnFunc(newCue, newCue->gameCueInfo, cueDef->spawnParam);
     }
 
-    if (gRhythmGameInfo.unk5D != 0) {
+    if (gRhythmGameInfo.unk5D) {
         gRhythmGameInfo.previousCue = prevCue;
         prevCue->next = NULL;
         mem_heap_dealloc(newCue);
