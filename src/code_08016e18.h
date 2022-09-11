@@ -9,9 +9,9 @@
 // extern ? func_08016e84(?);
 // extern ? func_08016e94(?);
 // extern ? func_08016ea4(?);
-// extern ? func_08016ec4(?); // [func_08016ec4] RHYTHM GAME - Init. Common Graphics
-// extern ? func_08016ffc(?);
-// extern ? func_08017000(?);
+// extern ? func_08016ec4(?); // [func_08016ec4] RHYTHM GAME - Scene Init.
+// extern ? func_08016ffc(?); // [func_08016ffc] RHYTHM GAME - Scene STUB
+// extern ? func_08017000(?); // [func_08016ffc] RHYTHM GAME - Scene Main
 // extern ? func_0801714c(?);
 // extern ? func_08017168(?);
 // extern ? func_08017188(?); // [func_08017188] RHYTHM GAME - Load New Engine
@@ -51,7 +51,7 @@ extern void func_08017578(void);
 // extern ? func_080177a4(?);
 // extern ? func_080177c8(?);
 // extern ? func_080177dc(?);
-// extern ? func_080177f0(?);
+// extern ? func_080177f0(?); // [func_080177f0] RHYTHM GAME - Scene Close
 // extern ? func_080178ac(?);
 // extern ? func_080178e4(?);
 // extern ? func_08017908(?); // [func_08017908] RHYTHM GAME - Set Current Marking Criteria

@@ -2,24 +2,26 @@
 
 #include "global.h"
 
-// extern ? func_0801a384(?);
-// extern ? func_0801a3b0(?);
-// extern ? func_0801a3e4(?);
-// extern ? func_0801a414(?);
-// extern ? func_0801a450(?);
-// extern ? func_0801a5d8(?);
-// extern ? func_0801a70c(?);
-// extern ? func_0801a860(?);
-// extern ? func_0801a8a0(?);
-// extern ? func_0801a8b0(?);
-// extern ? func_0801a8c8(?);
-// extern ? func_0801a8f4(?);
-// extern ? func_0801a924(?);
-// extern ? func_0801a940(?);
-// extern ? func_0801a96c(?);
-// extern ? func_0801a99c(?);
-// extern ? func_0801a9b8(?);
-// extern ? func_0801a9c8(?);
+// extern ? func_0801a384(?); // [func_0801a384] READING - Graphics Init. 3 (BG?)
+// extern ? func_0801a3b0(?); // [func_0801a3b0] READING - Graphics Init. 2 (OBJ)
+// extern ? func_0801a3e4(?); // [func_0801a3e4] READING - Graphics Init. 1
+// extern ? func_0801a414(?); // [func_0801a414] READING - Graphics Init. 0
+// extern ? func_0801a450(?); // [func_0801a450] READING - Scene Init.
+// extern ? func_0801a5d8(?); // [func_0801a5d8] READING - ?
+// extern ? func_0801a70c(?); // [func_0801a70c] READING - Scene Main
+// extern ? func_0801a860(?); // [func_0801a860] READING - ?
+// extern ? func_0801a8a0(?); // [func_0801a8a0] READING - Scene Close
+// extern ? func_0801a8b0(?); // [func_0801a8b0] READING - ? (Script Function)
+
+// extern ? func_0801a8c8(?); // [func_0801a8c8] READ ERROR? - Graphics Init. 2
+// extern ? func_0801a8f4(?); // [func_0801a8f4] READ ERROR? - Graphics Init. 1
+// extern ? func_0801a924(?); // [func_0801a924] READ ERROR? - Graphics Init. 0
+// extern ? func_0801a940(?); // [func_0801a940] READ ERROR? - Scene Init.
+// extern ? func_0801a96c(?); // [func_0801a96c] READ ERROR? - Scene Main
+// extern ? func_0801a99c(?); // [func_0801a96c] READ ERROR? - ?
+// extern ? func_0801a9b8(?); // [func_0801a9b8] READ ERROR? - Scene Close
+
+// extern ? func_0801a9c8(?); // [func_0801a9c8] STUDIO MENU - ?
 // extern ? func_0801aa04(?);
 // extern ? func_0801aaa0(?);
 // extern ? func_0801ac38(?);
@@ -54,27 +56,27 @@
 // extern ? func_0801bce0(?);
 // extern ? func_0801c028(?);
 // extern ? func_0801c1b8(?);
-// extern ? func_0801c1ec(?);
-// extern ? func_0801c234(?);
-// extern ? func_0801c260(?);
-// extern ? func_0801c290(?);
-// extern ? func_0801c2ec(?);
+// extern ? func_0801c1ec(?); // [func_0801c1ec] STUDIO MENU - Graphics Init. 3
+// extern ? func_0801c234(?); // [func_0801c234] STUDIO MENU - Graphics Init. 2
+// extern ? func_0801c260(?); // [func_0801c260] STUDIO MENU - Graphics Init. 1
+// extern ? func_0801c290(?); // [func_0801c290] STUDIO MENU - Graphics Init. 0
+// extern ? func_0801c2ec(?); // [func_0801c2ec] STUDIO MENU - Scene Init.
 // extern ? func_0801c504(?);
 // extern ? func_0801c510(?);
 // extern ? func_0801c51c(?);
 // extern ? func_0801c530(?);
-// extern ? func_0801c5a0(?);
+// extern ? func_0801c5a0(?); // [func_0801c5a0] STUDIO MENU - Scene STUB
 // extern ? func_0801c5a4(?);
 // extern ? func_0801c674(?);
 // extern ? func_0801c6b8(?);
 // extern ? func_0801c6fc(?);
 // extern ? func_0801c7c0(?);
 // extern ? func_0801c7e8(?);
-// extern ? func_0801c7ec(?);
+// extern ? func_0801c7ec(?); // [func_0801c7ec] STUDIO MENU - Scene Main
 // extern ? func_0801c8b8(?);
-// extern ? func_0801c918(?);
-// extern ? func_0801c930(?);
-// extern ? func_0801c944(?);
+// extern ? func_0801c918(?); // [func_0801c918] STUDIO MENU - Scene Close
+// extern ? func_0801c930(?); // [func_0801c930] STUDIO MENU - ? (Script Function)
+// extern ? func_0801c944(?); // [func_0801c944] STUDIO MENU - ? (Script Function)
 // extern ? func_0801c960(?);
 // extern ? func_0801c96c(?);
 // extern ? func_0801c99c(?);
