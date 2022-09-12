@@ -7,7 +7,7 @@
 // extern ? func_08016e64(?);
 // extern ? func_08016e74(?);
 // extern ? func_08016e84(?);
-// extern ? func_08016e94(?);
+// extern ? func_08016e94(?); // [func_08016e94] RHYTHM GAME - ?
 // extern ? func_08016ea4(?);
 // extern ? func_08016ec4(?); // [func_08016ec4] RHYTHM GAME - Scene Init.
 // extern ? func_08016ffc(?); // [func_08016ffc] RHYTHM GAME - Scene STUB
