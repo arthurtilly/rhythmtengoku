@@ -18,7 +18,11 @@ SECTIONS {
 		build/src/code_0800b3c8.c.o(.bss*);
 		build/src/code_0800b778.c.o(.bss*);
 		build/src/code_08010490.c.o(.bss*);
-		build/src/code_08011ec0.c.o(.bss*);
+		build/src/data_room.c.o(.bss*);
+		build/src/main_menu.c.o(.bss*);
+		build/src/game_select.c.o(.bss*);
+		build/src/options.c.o(.bss*);
+		build/src/perfect_certificate.c.o(.bss*);
 		build/src/code_08016e18.c.o(.bss*);
 		build/src/results.c.o(.bss*);
 		build/src/code_0801a384.c.o(.bss*);
@@ -79,7 +83,11 @@ SECTIONS {
         build/src/affine_sprite.c.o(.text);
         build/src/code_080102d0.c.o(.text);
 		build/src/code_08010490.c.o(.text);
-		build/src/code_08011ec0.c.o(.text);
+		build/src/data_room.c.o(.text);
+		build/src/main_menu.c.o(.text);
+		build/src/game_select.c.o(.text);
+		build/src/options.c.o(.text);
+		build/src/perfect_certificate.c.o(.text);
 		build/src/code_08016e18.c.o(.text);
 		build/src/results.c.o(.text);
 		build/src/code_0801a384.c.o(.text);
