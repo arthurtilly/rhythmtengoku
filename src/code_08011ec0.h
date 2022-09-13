@@ -2,7 +2,7 @@
 
 #include "global.h"
 
-// extern ? func_08011ec0(?); // [] DATA ROOM (MENU) - ?
+// extern ? func_08011ec0(?); // [func_08011ec0] DATA ROOM (MENU) - Initialise Static Variables
 // extern ? func_08011ed0(?); // [func_08011ed0] DATA ROOM (MENU) - Graphics Init. 2
 // extern ? func_08011efc(?); // [func_08011efc] DATA ROOM (MENU) - Graphics Init. 1
 // extern ? func_08011f2c(?); // [func_08011f2c] DATA ROOM (MENU) - Graphics Init. 0
@@ -18,17 +18,17 @@
 // extern ? func_080123e0(?); // [] DATA ROOM (MENU) - ?
 // extern ? func_080123fc(?); // [func_080123fc] DATA ROOM (MENU) - Scene Close
 
-// extern ? func_0801242c(?); // [func_0801242c] MAIN MENU - ?
+// extern ? func_0801242c(?); // [func_0801242c] MAIN MENU - Initialise Static Variables
 // extern ? func_08012438(?); // [func_08012438] MAIN MENU - Graphics Init. 2
 // extern ? func_08012464(?); // [func_08012464] MAIN MENU - Graphics Init. 1
 // extern ? func_08012494(?); // [func_08012494] MAIN MENU - Graphics Init. 0
 // extern ? func_080124d0(?); // [func_080124d0] MAIN MENU - Scene Init.
 // extern ? func_080125f8(?); // [func_080125f8] MAIN MENU - Scene STUB
 // extern ? func_080125fc(?); // [func_080125fc] MAIN MENU - Scene Main
-// extern ? func_080127d0(?); // [func_080127d0] MAIN MENU - ?
+// extern ? func_080127d0(?); // [func_080127d0] MAIN MENU - Return screenReady
 // extern ? func_080127ec(?); // [func_080127ec] MAIN MENU - Scene Close
 
-// extern ? func_080127fc(?); // [func_080127fc] GAME SELECT - ?
+// extern ? func_080127fc(?); // [func_080127fc] GAME SELECT - Initialise Static Variables
 // extern ? func_08012808(?); // [func_08012808] GAME SELECT - ?
 // extern ? func_08012814(?); // [func_08012814] GAME SELECT - ? (Script Function)
 // extern ? func_08012850(?);

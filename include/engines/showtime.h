@@ -5,17 +5,22 @@
 #include "graphics.h"
 
 // Engine Macros/Enums:
-#define gShowtimeInfo D_030055d0->gameInfo.showtime
 
 // OAM Animations:
+extern const struct Animation D_088cb994[];
+extern const struct Animation D_088cb4a4[];
 
 // Palettes:
 
 // Sound Effects:
+extern const struct SequenceData s_block_hit_seqData;
 
 // Engine Data:
+extern char D_0805a3cc[];
 
 // Engine Definition Data:
+extern u32 D_089e384c[];
+extern u32* D_089e3910[];
 
 // Functions:
 // extern ? func_0802bbfc(?);

@@ -15,6 +15,7 @@ void func_080001f4_stub(void) {
 	
 }
 
+// Initialise Scenes (Initialise Static Variables)
 void func_080001f8(void) {
 	func_0801350c();
 	func_08018e60();

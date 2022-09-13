@@ -5,17 +5,11 @@ asm(".include \"include/gba.inc\""); // Temporary
 #include "src/code_08001360.h"
 #include "src/code_08003980.h"
 #include "src/code_08007468.h"
+#include "src/code_0800b778.h"
 #include "src/code_08016e18.h"
 #include "src/lib_0804c870.h"
 
-extern char D_0805a3cc[];
-
-extern u32 D_088cb994[];
-extern u32 D_088cb4a4[];
-extern u32 D_089e384c[];
-extern u32* D_089e3910[];
-
-extern const struct SequenceData s_block_hit_seqData;
+#define gShowtimeInfo D_030055d0->gameInfo.showtime
 
 void func_0802bbfc(void) {
     func_0800c604(0);
@@ -33,7 +27,7 @@ void func_0802bc4c(void) {
 }
 
 void func_0802bc78(u8 arg0) {
-    u32* temp;
+    struct Animation* textAnim;
     gShowtimeInfo.unk6 = arg0;
     func_0802bc4c();
     func_0800e0ec();
@@ -41,8 +35,8 @@ void func_0802bc78(u8 arg0) {
     func_0800e0a0(2, 1, 0, 0, 0, 0x1e, 0);
     func_0802d96c();
     gShowtimeInfo.unk0 = func_0800c660(0x340, 2);
-    temp = func_08004b98(gShowtimeInfo.unk0, D_0805a3cc, 0, 0);
-    gShowtimeInfo.unk4 = func_0804d160(D_03005380, temp, 0, 0x78, 0x38, 0, 0, 0, 0);
+    textAnim = func_08004b98(gShowtimeInfo.unk0, D_0805a3cc, 0, 0);
+    gShowtimeInfo.unk4 = func_0804d160(D_03005380, textAnim, 0, 120, 56, 0, 0, 0, 0);
     func_08017338(1, 0);
     func_0802c23c();    
     func_0802d104();
@@ -182,7 +176,7 @@ void func_0802c23c() {
             gShowtimeInfo.unk8[i].unk0 = func_0804d160(D_03005380, D_088cb994, 0, 0x40, 0x40, 0x4800, 1, 0, 4);
         }
         gShowtimeInfo.unk8[i].unk8 = 0;
-        func_0804daa8(D_03005380, gShowtimeInfo.unk8[i].unk0, func_0802c1f0, i);
+        func_0804daa8(D_03005380, gShowtimeInfo.unk8[i].unk0, &func_0802c1f0, i);
         func_0804cebc(D_03005380, gShowtimeInfo.unk8[i].unk0, 3);
         func_0804dcb8(D_03005380, gShowtimeInfo.unk8[i].unk0, 0);
     }
