@@ -6,6 +6,20 @@
 
 
 
+struct SneakySpiritsCue {
+    u32 null0;
+    u32 null4;
+    u32 null8;
+    u32 nullC;
+    u32 null10;
+    u32 null14;
+    u32 null18;
+    u32 null1C;
+    u32 null20;
+    u16 null24;
+    u8 disableTaunt;
+};
+
 struct SpaceballCue {
     u8 state;
     struct AffineSprite *sprite;
@@ -19,20 +33,6 @@ struct SpaceballCue {
     u32 xSpeed; // Used for 'Barely' arc only
     u32 ySpeed; // Used for 'Barely' arc only
     u8 missed;
-};
-
-struct SneakySpiritsCue {
-    u32 null0;
-    u32 null4;
-    u32 null8;
-    u32 nullC;
-    u32 null10;
-    u32 null14;
-    u32 null18;
-    u32 null1C;
-    u32 null20;
-    u16 null24;
-    u8 disableTaunt;
 };
 
 struct BonOdoriCue {
@@ -107,7 +107,15 @@ struct WizardsWaltzCue {
 
 
 
-struct GameCueInfo {
+union GameCueInfo {
+    struct SneakySpiritsCue sneakySpirits;
+    struct SpaceballCue spaceball;
+    struct BonOdoriCue bonOdori;
+    struct KarateManCue karateMan;
+    struct RhythmTweezersCue rhythmTweezers;
+    struct FireworksCue fireworks;
+    struct RapMenCue rapMen;
+    struct WizardsWaltzCue wizardsWaltz;
 };
 
 // In-Memory Cue Data
@@ -126,14 +134,14 @@ struct Cue {
 	const struct SequenceData *hitSfx;
 	const struct SequenceData *barelySfx;
 	const struct SequenceData *missSfx;
-	struct GameCueInfo *gameCueInfo;
+	union GameCueInfo *gameCueInfo;
 	u8 unk68;
 };
 
-typedef void (*CueSpawnEvent)(struct Cue *, struct GameCueInfo *, u32);
-typedef void (*CueUpdateEvent)(struct Cue *, struct GameCueInfo *, u32, u32); // arg2 = runningTime, arg3 = ?
-typedef void (*CueDespawnEvent)(struct Cue *, struct GameCueInfo *);
-typedef void (*CueInputEvent)(struct Cue *, struct GameCueInfo *);
+typedef void (*CueSpawnEvent)(struct Cue *, union GameCueInfo *, u32);
+typedef void (*CueUpdateEvent)(struct Cue *, union GameCueInfo *, u32, u32); // arg2 = runningTime, arg3 = ?
+typedef void (*CueDespawnEvent)(struct Cue *, union GameCueInfo *);
+typedef void (*CueInputEvent)(struct Cue *, union GameCueInfo *);
 
 // Read-Only Cue Definition
 struct CueDefinition {

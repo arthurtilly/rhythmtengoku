@@ -7,7 +7,7 @@
 #include "src/lib_0804c870.h"
 
 // For readability. !TODO - CHANGE/REMOVE
-#define gPrologueInfo D_030055d0->gameInfo.prologues
+#define gPrologueInfo D_030055d0->prologues
 
 
   // // //  PROLOGUE: SNEAKY SPIRITS  // // //

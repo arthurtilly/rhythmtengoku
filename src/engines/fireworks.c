@@ -7,7 +7,7 @@
 #include "src/lib_0804c870.h"
 
 // For readability.
-#define gFireworksInfo D_030055d0->gameInfo.fireworks
+#define gFireworksInfo D_030055d0->fireworks
 
 
 /* FIREWORKS */

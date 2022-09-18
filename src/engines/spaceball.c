@@ -9,7 +9,7 @@ extern s32 (*D_03004ae4)(s32);
 extern s32 (*fast_udivsi3)(s32, s32);
 
 // For readability.
-#define gSpaceballInfo D_030055d0->gameInfo.spaceball
+#define gSpaceballInfo D_030055d0->spaceball
 
 
 /* SPACEBALL */

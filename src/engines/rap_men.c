@@ -7,7 +7,7 @@
 #include "src/lib_0804c870.h"
 
 // For readability. !TODO - CHANGE/REMOVE
-#define gRapMenInfo D_030055d0->gameInfo.rapMen
+#define gRapMenInfo D_030055d0->rapMen
 
 
 /* RAP MEN */

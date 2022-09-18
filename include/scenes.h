@@ -53,8 +53,7 @@ struct RhythmGameInfo {
     u16 nextCueDuration;
 };
 
-union struct_030046a4 {
+extern union struct_030046a4 {
     struct GameSelectInfo gameSelect;
     struct RhythmGameInfo rhythmGame;
-};
-extern union struct_030046a4 *D_030046a4;
+} *D_030046a4;

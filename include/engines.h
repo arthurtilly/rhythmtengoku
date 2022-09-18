@@ -293,21 +293,18 @@ struct FireworksInfo {
 
 
 // Game Engine Info
-struct struct_030055d0 {
-    union {
-        struct KarateManInfo karateMan;
-        struct RapMenInfo rapMen;
-        struct WizardsWaltzInfo wizardsWaltz;
-        struct RhythmTweezersInfo rhythmTweezers;
-        struct SneakySpiritsInfo sneakySpirits;
-        struct PrologueInfo prologues;
-        struct BonOdoriInfo bonOdori;
-        struct SpaceballInfo spaceball;
-        struct FireworksInfo fireworks;
-        struct ShowtimeInfo showtime;
-    } gameInfo;
-};
-extern struct struct_030055d0 *D_030055d0;
+extern union struct_030055d0 {
+    struct KarateManInfo karateMan;
+    struct RapMenInfo rapMen;
+    struct WizardsWaltzInfo wizardsWaltz;
+    struct RhythmTweezersInfo rhythmTweezers;
+    struct SneakySpiritsInfo sneakySpirits;
+    struct PrologueInfo prologues;
+    struct BonOdoriInfo bonOdori;
+    struct SpaceballInfo spaceball;
+    struct FireworksInfo fireworks;
+    struct ShowtimeInfo showtime;
+} *D_030055d0;
 
 typedef s32 (*EngineFunc)(s32);
 typedef void (*RhythmGameInitFunc)(u32);

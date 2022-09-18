@@ -6,7 +6,7 @@
 #include "src/affine_sprite.h"
 
 // For readability. !TODO - CHANGE/REMOVE
-#define gWizardsWaltzInfo D_030055d0->gameInfo.wizardsWaltz
+#define gWizardsWaltzInfo D_030055d0->wizardsWaltz
 
 extern u16 D_03004afc; // "Button Pressed" Input Buffer
 

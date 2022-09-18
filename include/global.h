@@ -11,8 +11,10 @@ typedef int8_t    s8;
 typedef int16_t  s16;
 typedef int32_t  s32;
 
-#define TRUE 1
-#define FALSE 0
+typedef enum Boolean {
+    FALSE,
+    TRUE
+} boolean;
 
 #define ABS(x)  ((x) < 0 ? -(x) : (x))
 

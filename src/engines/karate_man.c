@@ -8,7 +8,7 @@
 #include "src/lib_0804c870.h"
 
 // For readability. !TODO - CHANGE/REMOVE
-#define gKarateManInfo D_030055d0->gameInfo.karateMan
+#define gKarateManInfo D_030055d0->karateMan
 
 extern u16 D_03004afc; // Input Queue(?)
 

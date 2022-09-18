@@ -9,7 +9,7 @@ asm(".include \"include/gba.inc\""); // Temporary
 #include "src/code_08016e18.h"
 #include "src/lib_0804c870.h"
 
-#define gShowtimeInfo D_030055d0->gameInfo.showtime
+#define gShowtimeInfo D_030055d0->showtime
 
 void func_0802bbfc(void) {
     func_0800c604(0);

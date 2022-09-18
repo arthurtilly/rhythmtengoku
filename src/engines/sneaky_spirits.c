@@ -8,7 +8,7 @@
 #include "src/lib_0804c870.h"
 
 // For readability.
-#define gSneakySpiritsInfo D_030055d0->gameInfo.sneakySpirits
+#define gSneakySpiritsInfo D_030055d0->sneakySpirits
 
 
 /* SNEAKY SPIRITS */

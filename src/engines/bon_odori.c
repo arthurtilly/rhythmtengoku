@@ -9,7 +9,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gBonOdoriInfo D_030055d0->gameInfo.bonOdori
+#define gBonOdoriInfo D_030055d0->bonOdori
 
 
 /* THE BON ODORI */
@@ -280,7 +280,7 @@ void func_08020ed4(void) {
 void func_08020ee8(void) {
     u8 temp0;
     u32 temp1 = gBonOdoriInfo.unk860;
-    struct struct_030055d0 *temp2;
+    union struct_030055d0 *temp2;
     
     if (gBonOdoriInfo.unk860 != 0) {
         gBonOdoriInfo.unk54 = 3;
@@ -295,7 +295,7 @@ void func_08020ee8(void) {
         } else {
             temp0 = BON_ODORI_DONPAN_ANIM_06;
         }
-        temp2->gameInfo.bonOdori.unk55 = temp0;
+        temp2->bonOdori.unk55 = temp0;
         
         gBonOdoriInfo.unk40 = temp1;
         gBonOdoriInfo.unk42 = FALSE;

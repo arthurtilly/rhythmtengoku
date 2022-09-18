@@ -7,7 +7,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gRhythmTweezersInfo D_030055d0->gameInfo.rhythmTweezers
+#define gRhythmTweezersInfo D_030055d0->rhythmTweezers
 
 
 /* RHYTHM TWEEZERS */
