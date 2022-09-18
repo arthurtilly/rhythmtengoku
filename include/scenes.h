@@ -1,7 +1,9 @@
 #pragma once
 
 #include "global.h"
+#include "graphics.h"
 #include "sound.h"
+#include "engines.h"
 
 // For readability.
 #define gGameSelectInfo D_030046a4->gameSelect

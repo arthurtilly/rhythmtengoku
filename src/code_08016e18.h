@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "scenes.h"
 
 // extern ? func_08016e04(?); // [func_08016e04] RHYTHM GAME - Initialise Static Variables
 // extern ? func_08016e18(?);

@@ -1,8 +1,7 @@
 #pragma once
 
 #include "global.h"
-#include "sound.h"
-#include "graphics.h"
+#include "engines.h"
 
 // Engine Macros/Enums:
 enum FireworksPatternsEnum {

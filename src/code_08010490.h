@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "scenes.h"
 
 struct struct_08011a18 {
 	u8 unk0;

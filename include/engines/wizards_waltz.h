@@ -1,8 +1,7 @@
 #pragma once
 
 #include "global.h"
-#include "sound.h"
-#include "graphics.h"
+#include "engines.h"
 
 // Engine Macros/Enums:
 #define WIZARDS_WALTZ_SPARKLE_STATE_HIDDEN 0

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "scenes.h"
 
 struct Scene {
 	void (*initFunc)(void *);

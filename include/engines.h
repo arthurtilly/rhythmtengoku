@@ -3,6 +3,7 @@
 #include "global.h"
 #include "graphics.h"
 #include "sound.h"
+#include "cues.h"
 
 /*
     General "Game Engine" header file.
@@ -307,3 +308,18 @@ struct struct_030055d0 {
     } gameInfo;
 };
 extern struct struct_030055d0 *D_030055d0;
+
+typedef s32 (*EngineFunc)(s32);
+typedef void (*RhythmGameInitFunc)(u32);
+typedef void (*RhythmGameUpdateFunc)(void);
+typedef void (*RhythmGameCloseFunc)(void);
+
+struct GameEngine {
+    u32 gameInfoSize; // Size of Respective GameInfo Struct (in bytes)
+    RhythmGameInitFunc initFunc;
+    RhythmGameUpdateFunc updateFunc;
+    RhythmGameCloseFunc closeFunc;
+    const struct CueDefinition **cueDefinitions;
+    EngineFunc *commonFunctions;
+    EngineFunc *engineFunctions;
+};

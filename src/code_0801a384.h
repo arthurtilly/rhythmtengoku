@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "scenes.h"
 
 // extern ? func_0801a384(?); // [func_0801a384] READING - Graphics Init. 3 (BG?)
 // extern ? func_0801a3b0(?); // [func_0801a3b0] READING - Graphics Init. 2 (OBJ)

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "scenes.h"
 
 // extern ? func_080162c8(?); // [func_080162c8] Initialise Static Variables
 // extern ? func_080162cc(?); // [func_080162cc] Graphics Init. 2
