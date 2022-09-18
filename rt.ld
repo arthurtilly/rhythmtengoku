@@ -23,7 +23,7 @@ SECTIONS {
 		build/src/game_select.c.o(.bss*);
 		build/src/options.c.o(.bss*);
 		build/src/perfect_certificate.c.o(.bss*);
-		build/src/code_08016e18.c.o(.bss*);
+		build/src/gameplay.c.o(.bss*);
 		build/src/results.c.o(.bss*);
 		build/src/code_0801a384.c.o(.bss*);
 		build/src/code_0801d860.c.o(.bss*);
@@ -88,7 +88,7 @@ SECTIONS {
 		build/src/game_select.c.o(.text);
 		build/src/options.c.o(.text);
 		build/src/perfect_certificate.c.o(.text);
-		build/src/code_08016e18.c.o(.text);
+		build/src/gameplay.c.o(.text);
 		build/src/results.c.o(.text);
 		build/src/code_0801a384.c.o(.text);
         build/src/code_0801d860.c.o(.text);

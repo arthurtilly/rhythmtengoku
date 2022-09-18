@@ -6,7 +6,7 @@ asm(".include \"include/gba.inc\""); // Temporary
 #include "src/code_08003980.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
-#include "src/code_08016e18.h"
+#include "src/gameplay.h"
 #include "src/lib_0804c870.h"
 
 #define gShowtimeInfo D_030055d0->showtime

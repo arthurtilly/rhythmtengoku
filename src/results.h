@@ -3,20 +3,17 @@
 #include "global.h"
 #include "scenes.h"
 
-// extern ? func_0801875c(?);
-// extern ? func_08018828(?);
-// extern ? func_0801884c(?);
-// extern ? func_08018870(?);
-// extern ? func_080188b4(?);
-// extern ? func_080188b8(?);
-// extern ? func_080188e4(?);
-// extern ? func_08018914(?);
-// extern ? func_08018934(?);
-// extern ? func_080189b0(?);
-// extern ? func_080189b4(?);
-// extern ? func_080189f4(?);
-// extern ? func_08018a10(?);
-// extern ? func_08018a20(?);
+// extern ? func_080188b4(?); // [func_080188b4] DEBUG Initialise Static Variables (STUB)
+// extern ? func_080188b8(?); // [func_080188b8] DEBUG Graphics Init. 2
+// extern ? func_080188e4(?); // [func_080188e4] DEBUG Graphics Init. 1
+// extern ? func_08018914(?); // [func_08018914] DEBUG Graphics Init. 0
+// extern ? func_08018934(?); // [func_08018934] DEBUG Scene Init.
+// extern ? func_080189b0(?); // [func_080189b0] DEBUG Scene STUB
+// extern ? func_080189b4(?); // [func_080189b4] DEBUG Scene Main
+// extern ? func_080189f4(?); // [func_080189f4] DEBUG ?
+// extern ? func_08018a10(?); // [func_08018a10] DEBUG Scene Close
+
+// extern ? func_08018a20(?); // [func_08018a20] LEVEL Initialise Static Variables (STUB)
 // extern ? func_08018a24(?); // [func_08018a24] LEVEL Graphics Init. 2
 // extern ? func_08018a50(?); // [func_08018a50] LEVEL Graphics Init. 1
 // extern ? func_08018a80(?); // [func_08018a80] LEVEL Graphics Init. 0
@@ -28,18 +25,20 @@
 // extern ? func_08018cc8(?); // [func_08018cc8] LEVEL ? (Script Function)
 // extern ? func_08018d68(?); // [func_08018d68] LEVEL ? (Script Function)
 // extern ? func_08018d9c(?); // [func_08018d9c] LEVEL ? (Script Function)
-// extern ? func_08018e60(?);
-// extern ? func_08018e74(?);
+
+// extern ? func_08018e60(?); // [func_08018e60] SCORE Initialise Static Variables
+// extern ? func_08018e74(?); // [func_08018e74] SCORE Graphics Init. 3
 // extern ? func_08018e94(?); // [func_08018e94] SCORE Graphics Init. 2
 // extern ? func_08018ec0(?); // [func_08018ec0] SCORE Graphics Init. 1
 // extern ? func_08018ef0(?); // [func_08018ef0] SCORE Graphics Init. 0
 // extern ? func_08018f10(?); // [func_08018f10] SCORE Scene Init.
-// extern ? func_0801911c(?);
-// extern ? func_08019128(?);
+// extern ? func_0801911c(?); // [func_0801911c] SCORE ?
+// extern ? func_08019128(?); // [func_08019128] SCORE ?
 // extern ? func_08019134(?); // [func_08019134] SCORE Scene STUB
 // extern ? func_08019138(?); // [func_08019138] SCORE Scene Main
 // extern ? func_08019178(?); // [func_08019178] SCORE Scene Close
 // extern ? func_08019188(?); // [func_08019188] SCORE ? (Script Function)
+
 // extern ? func_080191ac(?);
 // extern ? func_080191b8(?);
 // extern ? func_080191bc(?);
@@ -65,7 +64,7 @@
 // extern ? func_08019878(?);
 // extern ? func_080198b0(?);
 // extern ? func_080198e8(?);
-// extern ? func_080198f8(?);
+// extern ? func_080198f8(?); // [func_080198f8] DEBUG ? (Script Function)
 // extern ? func_08019a80(?);
 // extern ? func_08019bec(?);
 // extern ? func_08019d9c(?);

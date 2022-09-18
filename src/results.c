@@ -9,14 +9,6 @@ static s32 D_03001330; // unknown type
 static s32 D_03001334[131]; // unknown type
 static s32 D_03001540; // unknown type
 
-#include "asm/results/asm_0801875c.s"
-
-#include "asm/results/asm_08018828.s"
-
-#include "asm/results/asm_0801884c.s"
-
-#include "asm/results/asm_08018870.s"
-
 #include "asm/results/asm_080188b4.s"
 
 #include "asm/results/asm_080188b8.s"
