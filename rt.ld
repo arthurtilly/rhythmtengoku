@@ -17,7 +17,11 @@ SECTIONS {
 		build/src/code_080092cc.c.o(.bss*);
 		build/src/code_0800b3c8.c.o(.bss*);
 		build/src/code_0800b778.c.o(.bss*);
-		build/src/code_08010490.c.o(.bss*);
+		build/src/affine_sprite.c.o(.bss*);
+		build/src/code_080102d0.c.o(.bss*);
+		build/src/library.c.o(.bss*);
+		build/src/cafe.c.o(.bss*);
+		build/src/data.c.o(.bss*);
 		build/src/data_room.c.o(.bss*);
 		build/src/main_menu.c.o(.bss*);
 		build/src/game_select.c.o(.bss*);
@@ -82,7 +86,9 @@ SECTIONS {
 		build/src/code_0800b778.c.o(.text);
         build/src/affine_sprite.c.o(.text);
         build/src/code_080102d0.c.o(.text);
-		build/src/code_08010490.c.o(.text);
+		build/src/library.c.o(.text);
+		build/src/cafe.c.o(.text);
+		build/src/data.c.o(.text);
 		build/src/data_room.c.o(.text);
 		build/src/main_menu.c.o(.text);
 		build/src/game_select.c.o(.text);
