@@ -3,7 +3,7 @@
 #include "global.h"
 #include "scenes.h"
 
-// extern ? func_0801a9c8(?); // [func_0801a9c8] STUDIO MENU - ?
+// extern ? func_0801a9c8(?); // [func_0801a9c8] ?
 // extern ? func_0801aa04(?);
 // extern ? func_0801aaa0(?);
 // extern ? func_0801ac38(?);
@@ -37,28 +37,28 @@
 // extern ? func_0801bc0c(?);
 // extern ? func_0801bce0(?);
 // extern ? func_0801c028(?);
-// extern ? func_0801c1b8(?); // [func_0801c1b8] STUDIO MENU - Initialise Static Variables
-// extern ? func_0801c1ec(?); // [func_0801c1ec] STUDIO MENU - Graphics Init. 3
-// extern ? func_0801c234(?); // [func_0801c234] STUDIO MENU - Graphics Init. 2
-// extern ? func_0801c260(?); // [func_0801c260] STUDIO MENU - Graphics Init. 1
-// extern ? func_0801c290(?); // [func_0801c290] STUDIO MENU - Graphics Init. 0
-// extern ? func_0801c2ec(?); // [func_0801c2ec] STUDIO MENU - Scene Init.
+// extern ? func_0801c1b8(?); // [func_0801c1b8] Initialise Static Variables
+// extern ? func_0801c1ec(?); // [func_0801c1ec] Graphics Init. 3
+// extern ? func_0801c234(?); // [func_0801c234] Graphics Init. 2
+// extern ? func_0801c260(?); // [func_0801c260] Graphics Init. 1
+// extern ? func_0801c290(?); // [func_0801c290] Graphics Init. 0
+// extern ? func_0801c2ec(?); // [func_0801c2ec] Scene Init.
 // extern ? func_0801c504(?);
 // extern ? func_0801c510(?);
 // extern ? func_0801c51c(?);
 // extern ? func_0801c530(?);
-// extern ? func_0801c5a0(?); // [func_0801c5a0] STUDIO MENU - Scene STUB
+// extern ? func_0801c5a0(?); // [func_0801c5a0] Scene STUB
 // extern ? func_0801c5a4(?);
 // extern ? func_0801c674(?);
 // extern ? func_0801c6b8(?);
 // extern ? func_0801c6fc(?);
 // extern ? func_0801c7c0(?);
 // extern ? func_0801c7e8(?);
-// extern ? func_0801c7ec(?); // [func_0801c7ec] STUDIO MENU - Scene Main
+// extern ? func_0801c7ec(?); // [func_0801c7ec] Scene Main
 // extern ? func_0801c8b8(?);
-// extern ? func_0801c918(?); // [func_0801c918] STUDIO MENU - Scene Close
-// extern ? func_0801c930(?); // [func_0801c930] STUDIO MENU - ? (Script Function)
-// extern ? func_0801c944(?); // [func_0801c944] STUDIO MENU - ? (Script Function)
+// extern ? func_0801c918(?); // [func_0801c918] Scene Close
+// extern ? func_0801c930(?); // [func_0801c930] ? (Script Function)
+// extern ? func_0801c944(?); // [func_0801c944] ? (Script Function)
 // extern ? func_0801c960(?);
 // extern ? func_0801c96c(?);
 // extern ? func_0801c99c(?);

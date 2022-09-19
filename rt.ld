@@ -33,7 +33,9 @@ SECTIONS {
 		build/src/studio.c.o(.bss*);
 		build/src/title.c.o(.bss*);
 		build/src/medal_corner.c.o(.bss*);
-		build/src/code_0801d860.c.o(.bss*);
+		build/src/script.c.o(.bss*);
+		build/src/warning.c.o(.bss*);
+		build/src/debug.c.o(.bss*);
 		build/src/engines/sneaky_spirits.c.o(.bss*);
 		build/src/engines/spaceball.c.o(.bss*);
 		build/src/engines/bon_odori.c.o(.bss*);
@@ -103,7 +105,9 @@ SECTIONS {
 		build/src/studio.c.o(.text);
 		build/src/title.c.o(.text);
 		build/src/medal_corner.c.o(.text);
-        build/src/code_0801d860.c.o(.text);
+        build/src/script.c.o(.text);
+        build/src/warning.c.o(.text);
+        build/src/debug.c.o(.text);
 		build/src/engines/sneaky_spirits.c.o(.text);
 		build/src/engines/spaceball.c.o(.text);
 		build/src/engines/bon_odori.c.o(.text);
