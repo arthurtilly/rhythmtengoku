@@ -29,7 +29,10 @@ SECTIONS {
 		build/src/perfect_certificate.c.o(.bss*);
 		build/src/gameplay.c.o(.bss*);
 		build/src/results.c.o(.bss*);
-		build/src/code_0801a384.c.o(.bss*);
+		build/src/reading.c.o(.bss*);
+		build/src/studio.c.o(.bss*);
+		build/src/title.c.o(.bss*);
+		build/src/medal_corner.c.o(.bss*);
 		build/src/code_0801d860.c.o(.bss*);
 		build/src/engines/sneaky_spirits.c.o(.bss*);
 		build/src/engines/spaceball.c.o(.bss*);
@@ -96,7 +99,10 @@ SECTIONS {
 		build/src/perfect_certificate.c.o(.text);
 		build/src/gameplay.c.o(.text);
 		build/src/results.c.o(.text);
-		build/src/code_0801a384.c.o(.text);
+		build/src/reading.c.o(.text);
+		build/src/studio.c.o(.text);
+		build/src/title.c.o(.text);
+		build/src/medal_corner.c.o(.text);
         build/src/code_0801d860.c.o(.text);
 		build/src/engines/sneaky_spirits.c.o(.text);
 		build/src/engines/spaceball.c.o(.text);
