@@ -6,8 +6,21 @@
 #include "engines.h"
 
 // For readability.
+#define gMainMenuInfo   D_030046a4->mainMenu
 #define gGameSelectInfo D_030046a4->gameSelect
 #define gRhythmGameInfo D_030046a4->rhythmGame
+
+// Main Menu Scene Info
+struct MainMenuInfo {
+    struct Font *font;
+    struct Font *font2;
+    u32 screenReady; // Set to FALSE during screen fade-in/out.
+    u16 buttons[5];
+    s16 bgX;
+    s16 bgY;
+    u8 unk1A;
+    u8 unk1B;
+};
 
 // Game Select Scene Info
 struct GameSelectInfo {
@@ -20,7 +33,7 @@ struct GameSelectInfo {
     u8 unk11;
 };
 
-// Rhythm Game Scene Info
+// Gameplay Scene Info
 struct RhythmGameInfo {
 	s32 unk0;
 	s32 unk4;
@@ -54,6 +67,7 @@ struct RhythmGameInfo {
 };
 
 extern union struct_030046a4 {
+    struct MainMenuInfo mainMenu;
     struct GameSelectInfo gameSelect;
     struct RhythmGameInfo rhythmGame;
 } *D_030046a4;
