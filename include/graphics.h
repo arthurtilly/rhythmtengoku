@@ -9,12 +9,50 @@ struct Animation {
 
 #define END_ANIMATION { NULL, 0 }
 
+
+
 typedef u16 Palette[16];
 
 #define TO_RGB555(x)                        \
       (((((x) >> 16) & 0xff) >> 3) << 0 )   \
     | (((((x) >> 8 ) & 0xff) >> 3) << 5 )   \
     | (((((x) >> 0 ) & 0xff) >> 3) << 10)
+
+
+
+// Read-Only Definition for a Font (?)
+struct FontDefinition {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    u8 unk3;
+    u8 unk4;
+    u8 *font1Tiles;
+    u8 *font1Map;
+    u8 *font2Tiles;
+    u8 *font2Map;
+    u8 *font3Tiles;
+    u8 *font3Map;
+};
+
+// Internal Font Struct (?)
+struct Font {
+    struct FontDefinition *def;
+    u16 unk4;
+    u8 unk6;
+    u8 unk7;
+    void *unk8;
+    void *unkC;
+};
+
+
+
+enum BGLayersEnum {
+    BG_LAYER_0,
+    BG_LAYER_1,
+    BG_LAYER_2,
+    BG_LAYER_3
+};
 
 struct struct_03004b10 {
     u16 DISPCNT;    // LCD Control

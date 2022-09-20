@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "graphics.h"
 #include "data/data_08936b54.h"
 
 struct struct_03004ad0 {
@@ -73,9 +74,9 @@ extern u32  func_08003ab8();
 // extern ? func_08004b60(?);
 // extern ? func_08004b70(?);
 // extern ? func_08004b88(?);
-extern struct Animation *func_08004b98(u32 *, const char *, u32, u32);
+extern struct Animation *func_08004b98(struct Font *, const char *, u32, u32);
 // extern ? func_08004bfc(?);
-extern struct Animation *func_08004c0c(u32 *, const char *, u32, u32);
+extern struct Animation *func_08004c0c(struct Font *, const char *, u32, u32);
 // extern ? func_08004c40(?);
 // extern ? func_08004c50(?);
 // extern ? func_08004cac(?);
@@ -89,7 +90,7 @@ extern u32 func_08004dc0(struct unk_struct_08004da0 *arg0);
 // extern ? func_08004ff4(?);
 // extern ? func_08005014(?);
 // extern ? func_080050bc(?);
-// extern ? func_08005124(?);
+extern struct Font *func_08005124(u16, struct FontDefinition *, u8, u16, u8);
 // extern ? func_08005188(?);
 // extern ? func_080051a4(?);
 // extern ? func_080051c4(?);
@@ -103,7 +104,7 @@ extern u32 func_080054f0(struct unk_struct_080054b0 *arg0);
 // extern ? func_080055fc(?);
 // extern ? func_08005640(?);
 // extern ? func_0800568c(?);
-// extern ? func_08005814(?);
+extern u32 func_08005814(s32, struct Font *, u32 *, u16 *);
 // extern ? func_0800584c(?);
 extern struct unk_struct_08005858 *func_08005858(struct unk_struct_08005858_init *arg0);
 extern u32 func_08005878(struct unk_struct_08005858 *arg0);

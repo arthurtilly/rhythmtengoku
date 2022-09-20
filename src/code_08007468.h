@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "sound.h"
 #include "data/data_08936b54.h"
 
 struct unk_struct_08008b00 {
@@ -60,7 +61,7 @@ extern struct unk_struct_08008420 *func_08008420(struct unk_struct_08008420_init
 extern u32 func_08008464(struct unk_struct_08008420 *arg0);
 extern struct unk_struct_0800852c *func_0800852c(struct unk_struct_0800852c_init *arg0);
 extern u32 func_08008548(struct unk_struct_0800852c *arg0);
-// extern ? func_0800856c(?);
+extern u32  func_0800856c(u16, void *, const struct SequenceData *, u32); // second arg is a function, fourth arg is a duration value, third arg may be more vague
 // extern ? func_08008594(?);
 // extern ? func_080085e4(?);
 // extern ? func_08008608(?);
@@ -72,8 +73,8 @@ extern u32 func_08008548(struct unk_struct_0800852c *arg0);
 // extern ? func_08008720(?);
 extern struct unk_struct_0800873c *func_0800873c(struct unk_struct_0800873c_init *arg0);
 extern u32 func_08008758(struct unk_struct_0800873c *arg0);
-extern u32 func_080087b4(u16, u32*);
-extern s32 func_080087d4(s32, s32, s32); // [func_080087d4] MATH UTIL - Clamp Signed Integer (var, min, max)
+extern u32 func_080087b4(u16, u32 *);
+extern s32 func_080087d4(s32 var, s32 min, s32 max); // Signed Clamp
 // extern ? func_080087e8(?);
 // extern ? func_08008910(?);
 // extern ? func_08008938(?);

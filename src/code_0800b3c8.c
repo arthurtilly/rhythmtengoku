@@ -59,7 +59,7 @@ void func_0800b454(struct struct_0800b3c8* arg0, s32 arg1) {
     func_0800aac0(temp1, temp, temp2, temp3);
 }
 
-void func_0800b4d8(struct struct_0800b3c8* arg0, u32* arg1) {
+void func_0800b4d8(struct struct_0800b3c8 *arg0, struct Animation *arg1) {
     if (arg0 != NULL) {
         if (arg0->unk2A >= 0)
             func_0804d504(D_03005380, arg0->unk2A);

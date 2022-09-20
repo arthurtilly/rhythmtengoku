@@ -39,7 +39,7 @@ void func_08039924(void) {
 }
 
 void func_08039950(u32 arg0) {
-    u32 *temp;
+    struct Font *temp;
 
     gRapMenInfo.unk0 = arg0;
     func_08039924();

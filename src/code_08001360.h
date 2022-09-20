@@ -1,12 +1,13 @@
 #pragma once
 
 #include "global.h"
+#include "sound.h"
 
 typedef u32 (*D_0300009c_func)(void);
 
 extern u16 D_03004ac0;
 extern u16 D_03004afc;
-extern s16 D_030053b8;
+extern u16 D_030053b8;
 extern s16 D_03004b00;
 
 extern u16 D_030046b8;
@@ -64,7 +65,7 @@ extern u32 func_08001f34(struct struct_08001f94 *);
 extern u32 func_08001f64(struct struct_08001f94 *);
 extern u32 func_08001f94(struct struct_08001f94 *);
 extern u8 func_08001fc4(u8 *);
-extern void func_08001fe0(u16, u8, u32, u16*, u16*, u16*);
+extern void func_08001fe0(u16, u8, u32, u16 *, u16 *, u16 *);
 // extern ? func_08002018(?);
 // extern ? func_08002050(?);
 // extern ? func_08002088(?);
@@ -89,7 +90,7 @@ extern void func_080022d8(s16); // ROTATION/SCALING PARAMETER GROUP - ?? (Fine A
 // extern ? func_080025d8(?);
 // extern ? func_080025fc(?);
 // extern ? func_08002630(?);
-extern u32 *func_08002634();
+extern u32 *func_08002634(const struct SequenceData *);
 // extern ? func_0800267c(?);
 // extern ? func_08002698(?);
 // extern ? func_080026c4(?);
@@ -106,7 +107,7 @@ extern u32 *func_08002634();
 // extern ? func_080028c4(?);
 // extern ? func_080028d8(?);
 // extern ? func_080028ec(?);
-extern void func_08002920(u32*, u16);
+extern void func_08002920(u32 *, u16);
 // extern ? func_08002934(?);
 // extern ? func_0800294c(?);
 // extern ? func_08002968(?);

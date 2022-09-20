@@ -38,7 +38,7 @@ extern u32 *D_089e6518[];   // GFX Struct Index
 extern u8  D_089e6520;
 extern u8  D_089e6525;
 extern const struct SequenceData *D_089e652c[2][2];
-extern u32 D_089e65f0[];
+extern const struct SequenceData *D_089e65f0[2];
 
 // Functions:
 extern const struct Animation *func_080398b4(u32);

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "main.h"
 #include "scenes.h"
 
 // extern ? func_08016e04(?); // [func_08016e04] RHYTHM GAME - Initialise Static Variables
@@ -80,7 +81,7 @@ extern s32 func_08018054(void);
 // extern ? func_08018094(?);
 // extern ? func_08018098(?);
 // extern ? func_0801809c(?);
-// extern ? func_080180a0(?);
+extern struct SequenceData *func_080180a0(struct Cue *);
 // extern ? func_080180a4(?);
 // extern ? func_080180a8(?);
 // extern ? func_080180ac(?);
@@ -93,7 +94,7 @@ extern s32 func_08018054(void);
 // extern ? func_08018124(?);
 // extern ? func_08018138(?);
 // extern ? func_08018154(?);
-// extern ? func_080182ac(?);
+extern void func_080182ac(struct Scene *);
 // extern ? func_080182b8(?);
 // extern ? func_08018318(?);
 // extern ? func_08018344(?);
