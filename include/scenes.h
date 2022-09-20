@@ -8,7 +8,7 @@
 // For readability.
 #define gMainMenuInfo   D_030046a4->mainMenu
 #define gGameSelectInfo D_030046a4->gameSelect
-#define gRhythmGameInfo D_030046a4->rhythmGame
+#define gGameplayInfo   D_030046a4->gameplay
 
 // Main Menu Scene Info
 struct MainMenuInfo {
@@ -34,7 +34,7 @@ struct GameSelectInfo {
 };
 
 // Gameplay Scene Info
-struct RhythmGameInfo {
+struct GameplayInfo {
 	s32 unk0;
 	s32 unk4;
 	u8 unk8;
@@ -69,5 +69,5 @@ struct RhythmGameInfo {
 extern union struct_030046a4 {
     struct MainMenuInfo mainMenu;
     struct GameSelectInfo gameSelect;
-    struct RhythmGameInfo rhythmGame;
+    struct GameplayInfo gameplay;
 } *D_030046a4;

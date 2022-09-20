@@ -37,7 +37,7 @@ enum MainMenuButtonsEnum {
 
 // [func_0801242c] Initialise Static Variables
 void func_0801242c() {
-    D_030055d8 = 0;
+    D_030055d8 = GAME_SELECT;
 }
 
 // [func_08012438] Graphics Init. 2
@@ -90,12 +90,13 @@ void func_080124d0(u32 arg) {
     gMainMenuInfo.screenReady = FALSE;
     gMainMenuInfo.bgY = 0;
     gMainMenuInfo.bgX = 0;
-    gMainMenuInfo.unk1A = (-((u32)tempScene) | ((u32)tempScene)) >> 0x1f;
-    gMainMenuInfo.unk1B = 0;
+    gMainMenuInfo.unk1A = (tempScene != NULL);
+    gMainMenuInfo.unk1B = FALSE;
     func_08000584(&D_089ddbcc);
     func_080009a0();
 }
 
+// [func_080125f8] Scene STUB
 void func_080125f8(u32 arg) {
 }
 
@@ -145,7 +146,7 @@ void func_080125fc(u32 arg) {
                 case OPTIONS_MENU:
                     func_08000584(&D_089cfc1c); // Options Menu
                     func_080006b0(&D_089cfc1c, &D_089cde20); // Options Menu, Main Menu
-                    gMainMenuInfo.unk1B = 1;
+                    gMainMenuInfo.unk1B = TRUE;
                     break;
             }
             func_0800bd04(0);

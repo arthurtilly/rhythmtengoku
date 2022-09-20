@@ -19,11 +19,11 @@ void func_0802e750(void) {
     u8 type = (gRhythmTweezersInfo.version % 3);
 
     vegetable->spriteCurrent = func_0804d160(D_03005380, D_089e3d98[type], 0, 120, 16, 0x4800, -1, 0, 0);
-    func_0804db44(D_03005380, vegetable->spriteCurrent, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.BG1VOFS);
+    func_0804db44(D_03005380, vegetable->spriteCurrent, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.bgOffset[1].vertical);
 
     vegetable->spriteNext = func_0804d160(D_03005380, D_089e3d98[type], 0, 120, 16, 0x4800, 0, 0, 0);
     func_0804d614(D_03005380, vegetable->spriteNext, 0x178);
-    func_0804db44(D_03005380, vegetable->spriteNext, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.BG1VOFS);
+    func_0804db44(D_03005380, vegetable->spriteNext, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.bgOffset[1].vertical);
 
     vegetable->bgMapSide = 0;
     gRhythmTweezersInfo.screenHorizontalPosition = 0;
@@ -66,7 +66,7 @@ void func_0802e8ac(void) {
     if (vegetable->scrollTime >= vegetable->scrollTarget) {
         gRhythmTweezersInfo.screenHorizontalPosition = 0;
         vegetable->bgMapSide ^= 1;
-        D_03004b10.BG1HOFS = vegetable->bgMapSide << 8;
+        D_03004b10.bgOffset[1].horizontal = vegetable->bgMapSide << 8;
         vegetable->isScrolling = FALSE;
         func_080178ac();
 
@@ -80,9 +80,9 @@ void func_0802e8ac(void) {
         x = (-coss(x) + 0x100) >> 1;
 
         gRhythmTweezersInfo.screenHorizontalPosition = x;
-        D_03004b10.BG1HOFS = x;
+        D_03004b10.bgOffset[1].horizontal = x;
         if (vegetable->bgMapSide != 0) {
-            D_03004b10.BG1HOFS = x + 0x100;
+            D_03004b10.bgOffset[1].horizontal = x + 0x100;
         }
     }
 }
@@ -214,8 +214,8 @@ void func_0802eba0(void) {
 // [func_0802ebdc] Update Tweezers (Vertical Screen Scroll)
 void func_0802ebdc(void) {
     // If the screen is not in the normal vertical position, scroll down.
-    if (D_03004b10.BG1VOFS != 0) {
-        D_03004b10.BG1VOFS -= 1;
+    if (D_03004b10.bgOffset[1].vertical != 0) {
+        D_03004b10.bgOffset[1].vertical -= 1;
     }
 }
 
@@ -309,7 +309,7 @@ void func_0802edc4_stub(void) {
 // [func_0802edc8] Update Mask
 void func_0802edc8(void) {
     gRhythmTweezersInfo.maskPosition = func_080087d4(gRhythmTweezersInfo.maskPosition + gRhythmTweezersInfo.maskVelocity, -160, 0);
-    D_03004b10.BG0VOFS = gRhythmTweezersInfo.maskPosition;
+    D_03004b10.bgOffset[0].vertical = gRhythmTweezersInfo.maskPosition;
 }
 
 
@@ -371,7 +371,7 @@ void func_0802ee7c(u32 arg0, struct RhythmTweezersCue *cue, u32 isLongHair, u32 
     func_0800feec(cue->sprite, TRUE);
 
     func_0800fed0(cue->sprite, rotation, 0x4c);
-    func_080102a8(cue->sprite, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.BG1VOFS);
+    func_080102a8(cue->sprite, &gRhythmTweezersInfo.screenHorizontalPosition, &D_03004b10.bgOffset[1].vertical);
 
     cue->isLongHair = isLongHair;
     cue->finished = FALSE;
@@ -415,7 +415,7 @@ void func_0802f170(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) 
 
     func_08010064(cue->sprite, D_088e88f8, 0, 0, 0, 0);
     func_08010064(tweezers->sprite, D_088e87a8, 0, 1, 0x7f, 0);
-    D_03004b10.BG1VOFS = 2;
+    D_03004b10.bgOffset[1].vertical = 2;
 
     if (tweezers->heldHair) func_0802ea74(tweezers->heldHair - 1);
     tweezers->heldHair = TWEEZERS_HELD_HAIR_FULL;

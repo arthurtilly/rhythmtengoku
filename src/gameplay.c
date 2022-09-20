@@ -39,14 +39,14 @@ static s32 D_03001328; // unknown type, could be 2 words
 
 // D_030046a4->unkA = arg0; D_030046a4->unkC = arg1
 void func_08017338(s16 arg0, s16 arg1) {
-    gRhythmGameInfo.unkA = arg0;
-    gRhythmGameInfo.unkC = arg1;
+    gGameplayInfo.unkA = arg0;
+    gGameplayInfo.unkC = arg1;
 }
 
 s32 func_08017348(s32 arg1, s32 arg2) { // bobbing?
     s32 returnVal = 0;
-    EngineFunc *temp = gRhythmGameInfo.commonFunctions;
-    
+    EngineFunc *temp = gGameplayInfo.commonFunctions;
+
     if (temp == NULL) { // literally never possible
         return returnVal;
     }
@@ -54,23 +54,23 @@ s32 func_08017348(s32 arg1, s32 arg2) { // bobbing?
     if (temp[arg2] != NULL) {
         returnVal = temp[arg2](arg1);
     }
-    
+
     return returnVal;
 }
 
 void func_08017380(s32 arg1) { // gfx command 1
-    gRhythmGameInfo.unk60 = arg1;
+    gGameplayInfo.unk60 = arg1;
 }
 
 s32 func_0801738c(struct GameEngine *arg1, s32 arg2) { // gfx command 2
     s32 returnVal = 0;
 
-    if (gRhythmGameInfo.currentEngine != arg1) {
+    if (gGameplayInfo.currentEngine != arg1) {
         return returnVal;
     }
 
-    if ((gRhythmGameInfo.currentEngine->engineFunctions != NULL) && (gRhythmGameInfo.currentEngine->engineFunctions[arg2] != NULL)) {
-        returnVal = gRhythmGameInfo.currentEngine->engineFunctions[arg2](gRhythmGameInfo.unk60);
+    if ((gGameplayInfo.currentEngine->engineFunctions != NULL) && (gGameplayInfo.currentEngine->engineFunctions[arg2] != NULL)) {
+        returnVal = gGameplayInfo.currentEngine->engineFunctions[arg2](gGameplayInfo.unk60);
     }
 
     return returnVal;
@@ -160,7 +160,7 @@ void func_080179f4(s32 id) { // universal cue?
     const struct CueDefinition *cueDef;
     struct Cue *newCue, *prevCue;
 
-    if ((gRhythmGameInfo.unk5C == 0) || ((cueDef = gRhythmGameInfo.cueDefinitions[id]) == NULL)) {
+    if ((gGameplayInfo.unk5C == 0) || ((cueDef = gGameplayInfo.cueDefinitions[id]) == NULL)) {
         return;
     }
 
@@ -176,30 +176,30 @@ void func_080179f4(s32 id) { // universal cue?
     newCue->unk48_b1 = 0;
 
     do {} while (0); // fake matching / macro?
-    
+
     newCue->runningTime = 0;
 
-    if (gRhythmGameInfo.nextCueDuration != 0) {
-        newCue->duration = func_0800c3a4(gRhythmGameInfo.nextCueDuration);
-        gRhythmGameInfo.nextCueDuration = 0;
+    if (gGameplayInfo.nextCueDuration != 0) {
+        newCue->duration = func_0800c3a4(gGameplayInfo.nextCueDuration);
+        gGameplayInfo.nextCueDuration = 0;
     } else {
         newCue->duration = func_0800c3a4(cueDef->duration);
     }
 
-    newCue->spawnSfx  = ((gRhythmGameInfo.spawnSfx != NULL)  ? gRhythmGameInfo.spawnSfx  : cueDef->spawnSfx);
-    newCue->hitSfx    = ((gRhythmGameInfo.hitSfx != NULL)    ? gRhythmGameInfo.hitSfx    : cueDef->hitSfx);
-    newCue->barelySfx = ((gRhythmGameInfo.barelySfx != NULL) ? gRhythmGameInfo.barelySfx : cueDef->barelySfx);
-    newCue->missSfx   = ((gRhythmGameInfo.missSfx != NULL)   ? gRhythmGameInfo.missSfx   : cueDef->missSfx);
+    newCue->spawnSfx  = ((gGameplayInfo.spawnSfx != NULL)  ? gGameplayInfo.spawnSfx  : cueDef->spawnSfx);
+    newCue->hitSfx    = ((gGameplayInfo.hitSfx != NULL)    ? gGameplayInfo.hitSfx    : cueDef->hitSfx);
+    newCue->barelySfx = ((gGameplayInfo.barelySfx != NULL) ? gGameplayInfo.barelySfx : cueDef->barelySfx);
+    newCue->missSfx   = ((gGameplayInfo.missSfx != NULL)   ? gGameplayInfo.missSfx   : cueDef->missSfx);
 
-    newCue->unk68 = gRhythmGameInfo.unk7A;
+    newCue->unk68 = gGameplayInfo.unk7A;
 
-    gRhythmGameInfo.spawnSfx = NULL;
-    gRhythmGameInfo.hitSfx = NULL;
-    gRhythmGameInfo.barelySfx = NULL;
-    gRhythmGameInfo.missSfx = NULL;
+    gGameplayInfo.spawnSfx = NULL;
+    gGameplayInfo.hitSfx = NULL;
+    gGameplayInfo.barelySfx = NULL;
+    gGameplayInfo.missSfx = NULL;
 
-    prevCue = gRhythmGameInfo.previousCue;
-    
+    prevCue = gGameplayInfo.previousCue;
+
     newCue->next = NULL;
     newCue->prev = prevCue;
 
@@ -207,20 +207,20 @@ void func_080179f4(s32 id) { // universal cue?
         prevCue->next = newCue;
     }
 
-    gRhythmGameInfo.previousCue = newCue;
+    gGameplayInfo.previousCue = newCue;
 
-    gRhythmGameInfo.unk5D = FALSE;
+    gGameplayInfo.unk5D = FALSE;
 
     if (cueDef->spawnFunc != NULL) {
         cueDef->spawnFunc(newCue, newCue->gameCueInfo, cueDef->spawnParam);
     }
 
-    if (gRhythmGameInfo.unk5D) {
-        gRhythmGameInfo.previousCue = prevCue;
+    if (gGameplayInfo.unk5D) {
+        gGameplayInfo.previousCue = prevCue;
         prevCue->next = NULL;
         mem_heap_dealloc(newCue);
     } else {
-        gRhythmGameInfo.currentCue = newCue;
+        gGameplayInfo.currentCue = newCue;
         func_08016e54(newCue->spawnSfx);
     }
 }
@@ -243,7 +243,7 @@ void func_080179f4(s32 id) { // universal cue?
 
 // Return D_030046a4->unk79 (s8)
 s32 func_08018054(void) {
-    return gRhythmGameInfo.unk79;
+    return gGameplayInfo.unk79;
 }
 
 #include "asm/gameplay/asm_08018068.s"
