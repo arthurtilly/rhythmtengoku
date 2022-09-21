@@ -67,7 +67,7 @@ SECTIONS {
         build/asm/boot.s.o(.text);
         build/src/main.c.o(.text);
         build/src/memory.c.o(.text);
-        build/bin/bindata_08000a00.bin.o(.rodata*); /* Seems to be ARM assembly */
+        build/asm/code_08000a00.s.o(.text*)
         build/src/code_08001360.c.o(.text);
         build/src/code_08003980.c.o(.text);
 		build/src/code_080068f8.c.o(.text);

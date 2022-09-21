@@ -16,6 +16,13 @@
 	\value:
 .endm
 
+.macro arm_func_start value
+	.balign 4, 0
+	.arm
+	.global \value
+	\value:
+.endm
+
 .macro text_size_large
     .byte 0x03, 0x32
 .endm
