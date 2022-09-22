@@ -12,7 +12,7 @@
     }@
 */
 
-glabel D_080482e0   // struct ARMFuncDef
+glabel D_080482e0   // struct ARMFuncDef []
     .short 0
     .short 0x174
     .word func_080487d8
@@ -43,7 +43,7 @@ glabel D_08048310
 glabel D_08048312
     .short 0        // may just be alignment
 
-glabel D_08048314   // struct ARMFuncDef
+glabel D_08048314   // struct ARMFuncDef []
     .short 0
     .short 0xb4
     .word func_0804894c
@@ -64,20 +64,23 @@ glabel D_08048314   // struct ARMFuncDef
     .short 0xdc
     .word func_08048ed0
 
-glabel D_0804833e
+glabel D_0804833c
     .short 2
 
-func_0804833e:
-.thumb
-_804833e:	push	{lr}
-_8048340:	cmp	r0, #0
-_8048342:	bne.n	0x8048348
-_8048344:	ldr	r0, [pc, #16]	@ (0x8048358)
-_8048346:	b.n	0x804834a
-_8048348:	ldr	r0, [pc, #16]	@ (0x804835c)
-_804834a:	bl	0x8048352
-_804834e:	pop	{r0}
-_8048350:	bx	r0
+unaligned_thumb_func_start func_0804833e
+    push {lr}
+    cmp r0, #0
+    bne branch_08048348
+    ldr r0, [pc, #16]	@ (0x8048358)
+    b branch_0804834a
+branch_08048348:
+    ldr	r0, [pc, #16]	@ (0x804835c)
+branch_0804834a:
+    bl func_08048352
+    pop {r0}
+    bx r0
+
+unaligned_thumb_func_start func_08048352
 _8048352:	ldr	r1, [pc, #12]	@ (0x8048360)
 _8048354:	adds	r1, #1
 _8048356:	bx	r1

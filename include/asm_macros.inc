@@ -16,6 +16,13 @@
 	\value:
 .endm
 
+.macro unaligned_thumb_func_start value
+	.thumb
+	.thumb_func
+	.global \value
+	\value:
+.endm
+
 .macro arm_func_start value
 	.balign 4, 0
 	.arm
