@@ -3,8 +3,8 @@
 
 .include "include/asm_macros.inc"
 
-.set func_08048350, 0x08048350
 .set func_0804833e, 0x0804833e
+.set func_08048350, 0x08048350
 .set func_08048384, 0x08048384
 .set func_080483b8, 0x080483b8
 .set func_08048744, 0x08048744

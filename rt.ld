@@ -67,7 +67,7 @@ SECTIONS {
         build/asm/boot.s.o(.text);
         build/src/main.c.o(.text);
         build/src/memory.c.o(.text);
-        build/asm/code_08000a00.s.o(.text*)
+        build/asm/code_08000a00.s.o(.text)
         build/src/code_08001360.c.o(.text);
         build/src/code_08003980.c.o(.text);
 		build/src/code_080068f8.c.o(.text);
@@ -120,7 +120,7 @@ SECTIONS {
 		build/src/engines/wizards_waltz.c.o(.text);
 		build/src/engines/prologues.c.o(.text);
 		build/src/code_08047e50.c.o(.text);
-        build/bin/bindata_080482e0.bin.o(.rodata*); /* More ARM assembly */
+        build/asm/lib_080482e0.s.o(.text);
         build/src/lib_08049144.c.o(.text);
         build/asm/libagbsyscall.s.o(.text);
         build/src/lib_0804c870.c.o(.text);
