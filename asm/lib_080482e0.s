@@ -6,10 +6,10 @@
 /*
     D_080482e0 and D_08048314 are arrays of the following type
     struct ARMFuncDef {
-        u16 stopCode@
-        u16 dedicatedMemory@
-        void *armFunction@
-    }@
+        u16 stopCode;
+        u16 dedicatedMemory;
+        void *armFunction;
+    };
 */
 
 glabel D_080482e0   // struct ARMFuncDef []
@@ -84,40 +84,41 @@ unaligned_thumb_func_start func_08048352
 _8048352:	ldr	r1, [pc, #12]	@ (0x8048360)
 _8048354:	adds	r1, #1
 _8048356:	bx	r1
-_8048358:	strh	r0, [r4, #22]
-_804835a:	lsrs	r4, r0, #32
-_804835c:	strh	r4, [r2, #24]
-_804835e:	lsrs	r4, r0, #32
-_8048360:	strh	r4, [r4, #26]
-_8048362:	lsrs	r4, r0, #32
+_8048358:	.word D_080482e0
+_804835c:	.word D_08048314
+_8048360:	.word func_08048364
+
+unaligned_thumb_func_start func_08048364
 _8048364:	push	{r4, r5, r6, r7, lr}
 _8048366:	adds	r1, r0, #0
 _8048368:	ldr	r4, [pc, #64]	@ (0x80483ac)
 _804836a:	ldr	r6, [pc, #68]	@ (0x80483b0)
 _804836c:	ldrh	r3, [r1, #0]
 _804836e:	cmp	r3, #2
-_8048370:	beq.n	0x804837e
+_8048370:	beq	_804837e
 _8048372:	ldrh	r7, [r1, #2]
 _8048374:	ldr	r5, [r1, #4]
-_8048376:	bl	0x8048384
+_8048376:	bl func_08048384
 _804837a:	adds	r1, #8
-_804837c:	b.n	0x804836c
+_804837c:	b	_804836c
 _804837e:	pop	{r4, r5, r6, r7}
 _8048380:	pop	{r0}
 _8048382:	bx	r0
+
+thumb_func_start func_08048384
 _8048384:	adds	r0, r3, r6
 _8048386:	str	r0, [r4, #0]
 _8048388:	adds	r4, #4
 _804838a:	adds	r7, #3
 _804838c:	lsrs	r7, r7, #2
-_804838e:	bne.n	0x8048392
+_804838e:	bne	_8048392
 _8048390:	bx	lr
 _8048392:	ldr	r0, [r5, #0]
 _8048394:	str	r0, [r6, #0]
 _8048396:	adds	r5, #4
 _8048398:	adds	r6, #4
 _804839a:	subs	r7, #1
-_804839c:	bne.n	0x8048392
+_804839c:	bne	_8048392
 _804839e:	bx	lr
 _80483a0:	push	{r1}
 _80483a2:	lsls	r0, r0, #2
@@ -132,7 +133,7 @@ _80483b2:	lsls	r0, r0, #12
 _80483b4:	ldrh	r0, [r2, r5]
 _80483b6:	lsls	r0, r0, #12
 _80483b8:	orrs	r0, r0
-_80483ba:	bne.n	0x80483be
+_80483ba:	bne	_80483be
 _80483bc:	bx	lr
 _80483be:	push	{r4, r5, r6, r7, lr}
 _80483c0:	mov	r4, r8
@@ -173,7 +174,7 @@ _8048404:	mov	r0, r8
 _8048406:	ldr	r4, [r1, #16]
 _8048408:	subs	r4, r4, r0
 _804840a:	movs	r0, #3
-_804840c:	bl	0x8048744
+_804840c:	bl func_08048744
 _8048410:	pop	{r1}
 _8048412:	ldrb	r2, [r1, #0]
 _8048414:	movs	r3, #1
@@ -199,7 +200,7 @@ _8048434:	str	lr, [pc, #388]	@ 0x80485c0
 _8048438:	str	r4, [pc, #388]	@ 0x80485c4
 _804843c:	add	r0, fp, ip, lsr #8
 _8048440:	cmp	r0, r8
-_8048444:	bcs	0x8048510
+_8048444:	bcs	_8048510
 _8048448:	ldm	r6, {r0, r1, r2, r3}
 _804844c:	add	lr, r7, fp, lsr #14
 _8048450:	ldrsb	r4, [lr], #1
@@ -246,13 +247,13 @@ _80484f0:	add	fp, fp, ip, lsr #10
 _80484f4:	stmia	r6!, {r0, r1, r2, r3}
 _80484f8:	sub	ip, ip, #1
 _80484fc:	ands	r0, ip, #255	@ 0xff
-_8048500:	bne	0x804843c
+_8048500:	bne	_804843c
 _8048504:	mov	r0, #1
 _8048508:	ldr	lr, [pc, #176]	@ 0x80485c0
 _804850c:	bx	lr
 _8048510:	ldr	r2, [pc, #172]	@ 0x80485c4
 _8048514:	cmp	r2, #0
-_8048518:	beq	0x804857c
+_8048518:	beq	_804857c
 _804851c:	mov	r3, #4
 _8048520:	ldm	r6, {r0, r1}
 _8048524:	add	lr, r7, fp, lsr #14
@@ -268,12 +269,12 @@ _8048548:	add	fp, fp, ip, lsr #10
 _804854c:	stmia	r6!, {r0, r1}
 _8048550:	cmp	fp, r8
 _8048554:	addcs	fp, fp, r2
-_8048558:	bcs	0x8048550
+_8048558:	bcs	_8048550
 _804855c:	subs	r3, r3, #1
-_8048560:	bne	0x8048520
+_8048560:	bne	_8048520
 _8048564:	sub	ip, ip, #1
 _8048568:	ands	r0, ip, #255	@ 0xff
-_804856c:	bne	0x804843c
+_804856c:	bne	_804843c
 _8048570:	mov	r0, #1
 _8048574:	ldr	lr, [pc, #68]	@ 0x80485c0
 _8048578:	bx	lr
@@ -290,7 +291,7 @@ _80485a0:	mla	r1, r4, sl, r1
 _80485a4:	add	fp, fp, ip, lsr #10
 _80485a8:	stmia	r6!, {r0, r1}
 _80485ac:	cmp	fp, r8
-_80485b0:	bcc	0x804857c
+_80485b0:	bcc	_804857c
 _80485b4:	mov	r0, #0
 _80485b8:	ldr	lr, [pc]	@ 0x80485c0
 _80485bc:	bx	lr
@@ -302,7 +303,7 @@ _80485c8:	str	lr, [pc, #364]	@ 0x804873c
 _80485cc:	str	r4, [pc, #364]	@ 0x8048740
 _80485d0:	add	r0, fp, ip, lsr #8
 _80485d4:	cmp	r0, r8
-_80485d8:	bcs	0x804868c
+_80485d8:	bcs	_804868c
 _80485dc:	ldm	r6, {r0, r1, r2, r3}
 _80485e0:	add	lr, r7, fp, lsr #14
 _80485e4:	ldrsb	r4, [lr], #1
@@ -343,13 +344,13 @@ _804866c:	add	fp, fp, ip, lsr #10
 _8048670:	stmia	r6!, {r0, r1, r2, r3}
 _8048674:	sub	ip, ip, #1
 _8048678:	ands	r0, ip, #255	@ 0xff
-_804867c:	bne	0x80485d0
+_804867c:	bne	_80485d0
 _8048680:	mov	r0, #1
 _8048684:	ldr	lr, [pc, #176]	@ 0x804873c
 _8048688:	bx	lr
 _804868c:	ldr	r2, [pc, #172]	@ 0x8048740
 _8048690:	cmp	r2, #0
-_8048694:	beq	0x80486f8
+_8048694:	beq	_80486f8
 _8048698:	mov	r3, #4
 _804869c:	ldr	r0, [r6]
 _80486a0:	add	lr, r7, fp, lsr #14
@@ -365,12 +366,12 @@ _80486c4:	add	fp, fp, ip, lsr #10
 _80486c8:	str	r0, [r6], #4
 _80486cc:	cmp	fp, r8
 _80486d0:	addcs	fp, fp, r2
-_80486d4:	bcs	0x80486cc
+_80486d4:	bcs	_80486cc
 _80486d8:	subs	r3, r3, #1
-_80486dc:	bne	0x804869c
+_80486dc:	bne	_804869c
 _80486e0:	sub	ip, ip, #1
 _80486e4:	ands	r0, ip, #255	@ 0xff
-_80486e8:	bne	0x80485d0
+_80486e8:	bne	_80485d0
 _80486ec:	mov	r0, #1
 _80486f0:	ldr	lr, [pc, #68]	@ 0x804873c
 _80486f4:	bx	lr
@@ -387,14 +388,14 @@ _804871c:	mla	r1, r4, sl, r1
 _8048720:	add	fp, fp, ip, lsr #10
 _8048724:	str	r0, [r6], #4
 _8048728:	cmp	fp, r8
-_804872c:	bcc	0x80486f8
+_804872c:	bcc	_80486f8
 _8048730:	mov	r0, #0
 _8048734:	ldr	lr, [pc]	@ 0x804873c
 _8048738:	bx	lr
 _804873c:	.word 0
 _8048740:	.word 0
 
-.thumb
+unaligned_thumb_func_start func_08048744
 _8048744:	ldr	r1, [pc, #12]	@ (0x8048754)
 _8048746:	adds	r1, #1
 _8048748:	bx	r1
@@ -406,7 +407,7 @@ _8048752:	lsls	r0, r0, #12
 _8048754:	strh	r0, [r4, #28]
 _8048756:	lsrs	r4, r0, #32
 _8048758:	orrs	r0, r0
-_804875a:	bne.n	0x804875e
+_804875a:	bne	_804875e
 _804875c:	bx	lr
 _804875e:	push	{r4, r5, r6, r7, lr}
 _8048760:	mov	r4, r8
@@ -435,7 +436,7 @@ _804878c:	ldr	r1, [pc, #972]	@ (0x8048b5c)
 _804878e:	ldr	r1, [r1, #0]
 _8048790:	lsls	r1, r1, #2
 _8048792:	cmp	r0, r1
-_8048794:	bcc.n	0x8048798
+_8048794:	bcc	_8048798
 _8048796:	subs	r0, r0, r1
 _8048798:	adds	r7, r7, r0
 _804879a:	ldr	r0, [pc, #964]	@ (0x8048b60)
@@ -457,7 +458,7 @@ _80487b8:	ldr	r1, [pc, #952]	@ (0x8048b74)
 _80487ba:	ldr	r1, [r1, #0]
 _80487bc:	mov	fp, r1
 _80487be:	eors	r0, r0
-_80487c0:	bl	0x8048b40
+_80487c0:	bl func_08048b40
 _80487c4:	pop	{r4}
 _80487c6:	mov	ip, r4
 _80487c8:	pop	{r4, r5, r6, r7}
@@ -551,7 +552,7 @@ _8048908:	cmp	r7, fp
 _804890c:	ldrcs	r7, [pc, #44]	@ 0x8048940
 _8048910:	ldr	r1, [pc, #48]	@ 0x8048948
 _8048914:	subs	r1, r1, #1
-_8048918:	bne	0x804880c
+_8048918:	bne	_804880c
 _804891c:	ldr	r0, [pc, #32]	@ 0x8048944
 _8048920:	str	r2, [r0], #4
 _8048924:	str	r3, [r0], #4
@@ -605,7 +606,7 @@ _80489d8:	stmia	r5!, {r0, r1}
 _80489dc:	cmp	r6, sl
 _80489e0:	subcs	r6, r6, r9
 _80489e4:	subs	r4, r4, #1
-_80489e8:	bne	0x8048964
+_80489e8:	bne	_8048964
 _80489ec:	ldr	r0, [pc, #8]	@ 0x80489fc
 _80489f0:	str	r2, [r0], #4
 _80489f4:	str	r3, [r0], #4
@@ -614,7 +615,7 @@ _80489fc:	.word 0x03005600
 
 .thumb
 _8048a00:	orrs	r0, r0
-_8048a02:	bne.n	0x8048a06
+_8048a02:	bne	_8048a06
 _8048a04:	bx	lr
 _8048a06:	push	{r4, r5, r6, r7, lr}
 _8048a08:	mov	r4, r8
@@ -652,7 +653,7 @@ _8048a46:	mov	fp, r0
 _8048a48:	ldr	r0, [pc, #328]	@ (0x8048b94)
 _8048a4a:	mov	ip, r0
 _8048a4c:	movs	r0, #1
-_8048a4e:	bl	0x8048b40
+_8048a4e:	bl func_08048b40
 _8048a52:	pop	{r4}
 _8048a54:	mov	ip, r4
 _8048a56:	pop	{r4, r5, r6, r7}
@@ -699,7 +700,7 @@ _8048ad8:	cmp	r8, sl
 _8048adc:	ldrcs	r8, [pc, #12]	@ 0x8048af0
 _8048ae0:	ldrcs	r9, [pc, #12]	@ 0x8048af4
 _8048ae4:	subs	r6, r6, #1
-_8048ae8:	bne	0x8048a70
+_8048ae8:	bne	_8048a70
 _8048aec:	bx	lr
 _8048af0:	.word 0
 _8048af4:	.word 0
@@ -721,10 +722,11 @@ _8048b28:	str	r0, [r8], #4
 _8048b2c:	cmp	r8, sl
 _8048b30:	movcs	r8, r4
 _8048b34:	subs	r6, r6, #1
-_8048b38:	bne	0x8048af8
+_8048b38:	bne	_8048af8
 _8048b3c:	bx	lr
 
 .thumb
+thumb_func_start func_08048b40
 _8048b40:	ldr	r1, [pc, #84]	@ (0x8048b98)
 _8048b42:	adds	r1, #1
 _8048b44:	bx	r1
@@ -772,7 +774,7 @@ _8048b96:	movs	r0, r0
 _8048b98:	strh	r0, [r4, #28]
 _8048b9a:	lsrs	r4, r0, #32
 _8048b9c:	orrs	r0, r0
-_8048b9e:	bne.n	0x8048ba2
+_8048b9e:	bne	_8048ba2
 _8048ba0:	bx	lr
 _8048ba2:	push	{r4, r5, r6, r7, lr}
 _8048ba4:	mov	r4, r8
@@ -814,7 +816,7 @@ _8048bea:	mov	r8, r2
 _8048bec:	mov	r9, r3
 _8048bee:	push	{r1}
 _8048bf0:	movs	r0, #2
-_8048bf2:	bl	0x8048d44
+_8048bf2:	bl func_08048d44
 _8048bf6:	pop	{r1}
 _8048bf8:	ldrb	r2, [r1, #0]
 _8048bfa:	movs	r3, #1
@@ -841,16 +843,16 @@ _8048c1e:	movs	r0, r0
 func_08048c20:
 _8048c20:	str	lr, [pc, #280]	@ 0x8048d40
 _8048c24:	ands	r0, r7, #3
-_8048c28:	bne	0x8048cfc
+_8048c28:	bne	_8048cfc
 _8048c2c:	sub	r4, sl, r7
 _8048c30:	cmp	r4, r5
 _8048c34:	movcs	r4, r5
 _8048c38:	lsrs	r4, r4, #2
-_8048c3c:	beq	0x8048cfc
+_8048c3c:	beq	_8048cfc
 _8048c40:	sub	r5, r5, r4, lsl #2
 _8048c44:	tst	r4, #1
 _8048c48:	addne	r4, r4, #1
-_8048c4c:	bne	0x8048ca0
+_8048c4c:	bne	_8048ca0
 _8048c50:	ldr	ip, [r7], #4
 _8048c54:	ldm	r6, {r0, r1, r2, r3}
 _8048c58:	lsl	lr, ip, #24
@@ -892,8 +894,8 @@ _8048ce4:	mla	r2, r8, lr, r2
 _8048ce8:	mla	r3, r9, lr, r3
 _8048cec:	stmia	r6!, {r0, r1, r2, r3}
 _8048cf0:	subs	r4, r4, #2
-_8048cf4:	bne	0x8048c50
-_8048cf8:	b	0x8048d14
+_8048cf4:	bne	_8048c50
+_8048cf8:	b _8048d14
 _8048cfc:	ldrsb	ip, [r7], #1
 _8048d00:	ldm	r6, {r0, r1}
 _8048d04:	mla	r0, r8, ip, r0
@@ -901,19 +903,20 @@ _8048d08:	mla	r1, r9, ip, r1
 _8048d0c:	stmia	r6!, {r0, r1}
 _8048d10:	sub	r5, r5, #1
 _8048d14:	cmp	r7, sl
-_8048d18:	bcc	0x8048d2c
+_8048d18:	bcc	_8048d2c
 _8048d1c:	mov	r0, #0
 _8048d20:	cmp	fp, #0
-_8048d24:	beq	0x8048d38
+_8048d24:	beq	_8048d38
 _8048d28:	add	r7, r7, fp
 _8048d2c:	cmp	r5, #0
-_8048d30:	bne	0x8048c24
+_8048d30:	bne	_8048c24
 _8048d34:	mov	r0, #1
 _8048d38:	ldr	lr, [pc]	@ 0x8048d40
 _8048d3c:	bx	lr
 _8048d40:	andeq	r0, r0, r0
 
 .thumb
+thumb_func_start func_08048d44
 _8048d44:	ldr	r1, [pc, #12]	@ (0x8048d54)
 _8048d46:	adds	r1, #1
 _8048d48:	bx	r1
@@ -925,7 +928,7 @@ _8048d52:	lsls	r0, r0, #12
 _8048d54:	strh	r0, [r4, #28]
 _8048d56:	lsrs	r4, r0, #32
 _8048d58:	orrs	r0, r0
-_8048d5a:	bne.n	0x8048d5e
+_8048d5a:	bne	_8048d5e
 _8048d5c:	bx	lr
 _8048d5e:	push	{r4, r5, r6, r7, lr}
 _8048d60:	mov	r4, r8
@@ -966,7 +969,7 @@ _8048da4:	mov	r0, r8
 _8048da6:	ldr	r5, [r1, #16]
 _8048da8:	subs	r5, r5, r0
 _8048daa:	movs	r0, #4
-_8048dac:	bl	0x8048fac
+_8048dac:	bl	func_08048fac
 _8048db0:	pop	{r1}
 _8048db2:	ldrb	r2, [r1, #0]
 _8048db4:	movs	r3, #1
@@ -990,7 +993,7 @@ _8048dd2:	bx	r0
 func_08048dd4:
 _8048dd4:	add	r0, fp, ip, lsr #8
 _8048dd8:	cmp	r0, r8
-_8048ddc:	bcs	0x8048e54
+_8048ddc:	bcs	_8048e54
 _8048de0:	ldm	r6, {r0, r1, r2, r3}
 _8048de4:	add	r4, r7, fp, lsr #14
 _8048de8:	ldrsb	r4, [r4]
@@ -1017,11 +1020,11 @@ _8048e38:	add	fp, fp, ip, lsr #10
 _8048e3c:	stmia	r6!, {r0, r1, r2, r3}
 _8048e40:	sub	ip, ip, #1
 _8048e44:	ands	r0, ip, #255	@ 0xff
-_8048e48:	bne	0x8048dd4
+_8048e48:	bne	_8048dd4
 _8048e4c:	mov	r0, #1
 _8048e50:	bx	lr
 _8048e54:	cmp	r5, #0
-_8048e58:	beq	0x8048ea4
+_8048e58:	beq	_8048ea4
 _8048e5c:	mov	r3, #4
 _8048e60:	ldm	r6, {r0, r1}
 _8048e64:	add	r4, r7, fp, lsr #14
@@ -1032,12 +1035,12 @@ _8048e74:	add	fp, fp, ip, lsr #10
 _8048e78:	stmia	r6!, {r0, r1}
 _8048e7c:	cmp	fp, r8
 _8048e80:	addcs	fp, fp, r5
-_8048e84:	bcs	0x8048e7c
+_8048e84:	bcs	_8048e7c
 _8048e88:	subs	r3, r3, #1
-_8048e8c:	bne	0x8048e60
+_8048e8c:	bne	_8048e60
 _8048e90:	sub	ip, ip, #1
 _8048e94:	ands	r0, ip, #255	@ 0xff
-_8048e98:	bne	0x8048dd4
+_8048e98:	bne	_8048dd4
 _8048e9c:	mov	r0, #1
 _8048ea0:	bx	lr
 _8048ea4:	ldm	r6, {r0, r1}
@@ -1048,14 +1051,14 @@ _8048eb4:	mla	r1, r4, sl, r1
 _8048eb8:	add	fp, fp, ip, lsr #10
 _8048ebc:	stmia	r6!, {r0, r1}
 _8048ec0:	cmp	fp, r8
-_8048ec4:	bcc	0x8048ea4
+_8048ec4:	bcc	_8048ea4
 _8048ec8:	mov	r0, #0
 _8048ecc:	bx	lr
 
 func_08048ed0:
 _8048ed0:	add	r0, fp, ip, lsr #8
 _8048ed4:	cmp	r0, r8
-_8048ed8:	bcs	0x8048f38
+_8048ed8:	bcs	_8048f38
 _8048edc:	ldm	r6, {r0, r1, r2, r3}
 _8048ee0:	add	r4, r7, fp, lsr #14
 _8048ee4:	ldrsb	r4, [r4]
@@ -1076,11 +1079,11 @@ _8048f1c:	add	fp, fp, ip, lsr #10
 _8048f20:	stmia	r6!, {r0, r1, r2, r3}
 _8048f24:	sub	ip, ip, #1
 _8048f28:	ands	r0, ip, #255	@ 0xff
-_8048f2c:	bne	0x8048ed0
+_8048f2c:	bne	_8048ed0
 _8048f30:	mov	r0, #1
 _8048f34:	bx	lr
 _8048f38:	cmp	r5, #0
-_8048f3c:	beq	0x8048f84
+_8048f3c:	beq	_8048f84
 _8048f40:	mov	r3, #4
 _8048f44:	ldm	r6, {r0}
 _8048f48:	add	r4, r7, fp, lsr #14
@@ -1090,12 +1093,12 @@ _8048f54:	add	fp, fp, ip, lsr #10
 _8048f58:	stmia	r6!, {r0}
 _8048f5c:	cmp	fp, r8
 _8048f60:	addcs	fp, fp, r5
-_8048f64:	bcs	0x8048f5c
+_8048f64:	bcs	_8048f5c
 _8048f68:	subs	r3, r3, #1
-_8048f6c:	bne	0x8048f44
+_8048f6c:	bne	_8048f44
 _8048f70:	sub	ip, ip, #1
 _8048f74:	ands	r0, ip, #255	@ 0xff
-_8048f78:	bne	0x8048ed0
+_8048f78:	bne	_8048ed0
 _8048f7c:	mov	r0, #1
 _8048f80:	bx	lr
 _8048f84:	ldm	r6, {r0}
@@ -1105,11 +1108,12 @@ _8048f90:	mla	r0, r4, r9, r0
 _8048f94:	add	fp, fp, ip, lsr #10
 _8048f98:	stmia	r6!, {r0}
 _8048f9c:	cmp	fp, r8
-_8048fa0:	bcc	0x8048f84
+_8048fa0:	bcc	_8048f84
 _8048fa4:	mov	r0, #0
 _8048fa8:	bx	lr
 
 .thumb
+unaligned_thumb_func_start func_08048fac
 _8048fac:	ldr	r1, [pc, #12]	@ (0x8048fbc)
 _8048fae:	adds	r1, #1
 _8048fb0:	bx	r1
@@ -1121,8 +1125,10 @@ _8048fba:	lsls	r0, r0, #12
 _8048fbc:	strh	r0, [r4, #28]
 _8048fbe:	lsrs	r4, r0, #32
 _8048fc0:	orrs	r0, r0
-_8048fc2:	bne.n	0x8048fc6
+_8048fc2:	bne	func_08048fc6
 _8048fc4:	bx	lr
+
+unaligned_thumb_func_start func_08048fc6
 _8048fc6:	push	{r4, r5, r6, r7, lr}
 _8048fc8:	ldrb	r4, [r1, #0]
 _8048fca:	adds	r5, r0, #0
@@ -1132,7 +1138,7 @@ _8048fd0:	ldr	r6, [pc, #360]	@ (0x804913c)
 _8048fd2:	ldr	r6, [r6, #0]
 _8048fd4:	push	{r1}
 _8048fd6:	movs	r0, #5
-_8048fd8:	bl	0x8049134
+_8048fd8:	bl func_08049134
 _8048fdc:	pop	{r1}
 _8048fde:	str	r2, [r1, #4]
 _8048fe0:	str	r3, [r1, #8]
@@ -1144,7 +1150,7 @@ _8048fe4:	push	{r8, r9, sl, fp, lr}
 _8048fe8:	mov	lr, r5
 _8048fec:	mov	ip, r6
 _8048ff0:	cmp	r4, #128	@ 0x80
-_8048ff4:	bcs	0x8049084
+_8048ff4:	bcs	_8049084
 _8048ff8:	lsl	r4, r4, #1
 _8048ffc:	mov	r0, r4
 _8049000:	rsb	r1, r4, #256	@ 0x100
@@ -1177,7 +1183,7 @@ _8049068:	stmia	ip!, {r4, r5, r6, r7, r8, r9, sl, fp}
 _804906c:	mov	r2, sl
 _8049070:	mov	r3, fp
 _8049074:	subs	lr, lr, #1
-_8049078:	bne	0x8049004
+_8049078:	bne	_8049004
 _804907c:	pop	{r8, r9, sl, fp, lr}
 _8049080:	bx	lr
 _8049084:	sub	r4, r4, #128	@ 0x80
@@ -1221,11 +1227,12 @@ _8049118:	sub	r7, r7, r8, asr #8
 _804911c:	asr	r3, r8, #8
 _8049120:	stmia	ip!, {r4, r5, r6, r7}
 _8049124:	subs	lr, lr, #1
-_8049128:	bne	0x8049094
+_8049128:	bne	_8049094
 _804912c:	pop	{r8, r9, sl, fp, lr}
 _8049130:	bx	lr
 
 .thumb
+unaligned_thumb_func_start func_08049134
 _8049134:	ldr	r1, [pc, #8]	@ (0x8049140)
 _8049136:	adds	r1, #1
 _8049138:	bx	r1

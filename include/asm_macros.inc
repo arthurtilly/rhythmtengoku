@@ -18,7 +18,7 @@
 
 .macro unaligned_thumb_func_start value
 	.thumb
-	.thumb_func
+	@.thumb_func
 	.global \value
 	\value:
 .endm
