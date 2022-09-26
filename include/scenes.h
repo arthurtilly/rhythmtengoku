@@ -50,7 +50,7 @@ struct GameplayInfo {
 	struct Cue *currentCue; // Current Cue
 	u8 unk5C;
     u8 unk5D; // Has the capacity to, when set, delete cues as soon as they are created, but is always set to FALSE when a cue is made.
-    u8 unk5E;
+    u8 allowCueInputOverlap; // If multiple cues for the same input overlap, register the input for all cues (otherwise only consider the most relevant cue).
     s32 engineFuncParam; // Parameter used when calling Engine-specific Functions
     u8  unk64;
 	const struct SequenceData *nextCueSpawnSfx;

@@ -3,6 +3,7 @@
 #include "code_08003980.h"
 #include "code_08007468.h"
 #include "code_0800b778.h"
+#include "lib_0804c870.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
@@ -57,7 +58,7 @@ void func_08016ec4(s32 arg) {
     gGameplayInfo.skipDestination = NULL;
     gGameplayInfo.skipTutorialButton = SELECT_BUTTON;
     gGameplayInfo.fadeInTicks = 0x10;
-    gGameplayInfo.unk5E = 0;
+    gGameplayInfo.allowCueInputOverlap = FALSE;
     gGameplayInfo.unk8A = 0;
     gGameplayInfo.goingForPerfect = FALSE;
     gGameplayInfo.assessPerfectInputs = TRUE;
@@ -226,7 +227,20 @@ s32 func_0801738c(struct GameEngine *engine, s32 id) {
 
 #include "asm/gameplay/asm_08017468.s"
 
-#include "asm/gameplay/asm_0801747c.s"
+
+// [func_0801747c] Set Skip Destination
+void func_0801747c(struct Scene *scene) {
+    if (scene != NULL) {
+        func_08017448(TRUE); // set unk7B
+        func_08017458(scene); // set skipDestination
+        func_0804d770(D_03005380, gGameplayInfo.skipTutorialSprite, TRUE);
+    } else {
+        func_08017448(FALSE);
+        func_08017458(NULL);
+        func_0804d770(D_03005380, gGameplayInfo.skipTutorialSprite, FALSE);
+    }
+}
+
 
 #include "asm/gameplay/asm_080174e8.s"
 
@@ -246,7 +260,17 @@ s32 func_0801738c(struct GameEngine *engine, s32 id) {
 
 #include "asm/gameplay/asm_080175e8.s"
 
-#include "asm/gameplay/asm_08017604.s"
+
+// [func_08017604] Start Perfect Campaign
+void func_08017604(u32 start) {
+    if ((func_0801286c() < 0)) return; // (s8) D_03001320, related to Game Select
+
+    if (!gGameplayInfo.goingForPerfect) {
+        gGameplayInfo.goingForPerfect = TRUE;
+        func_0804d770(D_03005380, gGameplayInfo.perfectSprite, TRUE);
+    }
+}
+
 
 #include "asm/gameplay/asm_08017648.s"
 
@@ -270,9 +294,36 @@ s32 func_0801738c(struct GameEngine *engine, s32 id) {
 
 #include "asm/gameplay/asm_080177f0.s"
 
-#include "asm/gameplay/asm_080178ac.s"
 
-#include "asm/gameplay/asm_080178e4.s"
+// [func_080178ac] Reset All Cue Data
+void func_080178ac(void) {
+    struct Cue *cue, *prev;
+
+    cue = gGameplayInfo.cues;
+    while (cue != NULL) {
+        prev = cue->prev;
+        func_08017b44(cue);
+        cue = prev;
+    }
+
+    gGameplayInfo.cues = NULL;
+    gGameplayInfo.nextCueSpawnSfx = NULL;
+    gGameplayInfo.nextCueHitSfx = NULL;
+    gGameplayInfo.nextCueBarelySfx = NULL;
+    gGameplayInfo.nextCueMissSfx = NULL;
+    gGameplayInfo.nextCueDuration = 0;
+}
+
+
+// [func_080178e4] Initialise Cues
+void func_080178e4(void) {
+    gGameplayInfo.cues = NULL;
+    gGameplayInfo.currentCue = NULL;
+    gGameplayInfo.unk5C = TRUE;
+    gGameplayInfo.currentMarkingCriteria = 0;
+    func_080178ac();
+}
+
 
 #include "asm/gameplay/asm_08017908.s"
 
@@ -360,7 +411,35 @@ void func_080179f4(s32 id) {
 
 #include "asm/gameplay/asm_08017b34.s"
 
-#include "asm/gameplay/asm_08017b44.s"
+
+// [func_08017b44] Despawn Cue
+void func_08017b44(struct Cue *cue) {
+    struct Cue *prev, *next;
+
+    if (cue->data.despawnFunc != NULL) {
+        cue->data.despawnFunc(cue, cue->gameCueInfo);
+    }
+
+    if (cue->gameCueInfo != NULL) {
+        mem_heap_dealloc(cue->gameCueInfo);
+    }
+
+    next = cue->next;
+    prev = cue->prev;
+
+    if (next != NULL) {
+        next->prev = prev;
+    } else {
+        gGameplayInfo.cues = prev;
+    }
+
+    if (prev != NULL) {
+        prev->next = next;
+    }
+
+    mem_heap_dealloc(cue);
+}
+
 
 #include "asm/gameplay/asm_08017b88.s"
 
@@ -387,10 +466,10 @@ void func_08017b98(struct Cue *cue) {
                 cueDef->missFunc(cue, cue->gameCueInfo);
             }
             if (!gGameplayInfo.unk78) {
-                func_08017928(cue->markingCriteria, 2, 0);
+                func_08017928(cue->markingCriteria, CUE_RESULT_MISS, 0);
             }
             func_08016e54(cue->missSfx);
-            if (cueDef->deleteWithoutUpdate) { // another unused feature! awesome!
+            if (cueDef->deleteWithoutUpdate) { // unused feature! awesome!
                 func_08017b44(cue); // Despawn Cue
                 return;
             }
@@ -407,14 +486,154 @@ void func_08017b98(struct Cue *cue) {
 
 #include "asm/gameplay/asm_08017c68.s"
 
-#include "asm/gameplay/asm_08017c8c.s"
+
+// [func_08017c8c] Determine Cue Input Timing
+s32 func_08017c8c(struct Cue *cue, u16 pressed, u16 released, s32 *offset) {
+    struct CueDefinition *cueDef;
+    s32 runningTime, duration;
+    s32 hitEarly, hitLate, missEarly, missLate;
+    u16 input;
+
+    cueDef = &cue->data;
+    input = (cueDef->buttonFilter & 0x8000) ? released : pressed;
+
+    if ((input & cueDef->buttonFilter & ~0x8000) == 0) return CUE_TIMING_MISS;
+    if (cue->unk48_b0 || cue->hasExpired) return CUE_TIMING_MISS;
+
+    runningTime = cue->runningTime;
+    duration = cue->duration;
+
+    if (cueDef->tempoDependent) { // Used by the Rhythm Test, Mr. Upbeat, and the unused drumming tutorials.
+        hitEarly = func_0800c3a4(cueDef->hitWindowEarly);
+        hitLate = func_0800c3a4(cueDef->hitWindowLate);
+        missEarly = func_0800c3a4(cueDef->missWindowEarly);
+        missLate = func_0800c3a4(cueDef->missWindowLate);
+    } else {
+        hitEarly = cueDef->hitWindowEarly;
+        hitLate = cueDef->hitWindowLate;
+        missEarly = cueDef->missWindowEarly;
+        missLate = cueDef->missWindowLate;
+    }
+
+    hitEarly = func_080087d4(hitEarly, gGameplayInfo.earlinessRangeMin, gGameplayInfo.earlinessRangeMax);
+    hitLate = func_080087d4(hitLate, gGameplayInfo.latenessRangeMin, gGameplayInfo.latenessRangeMax);
+    missEarly = func_080087d4(missEarly, gGameplayInfo.earlinessRangeMin, gGameplayInfo.earlinessRangeMax);
+    missLate = func_080087d4(missLate, gGameplayInfo.latenessRangeMin, gGameplayInfo.latenessRangeMax);
+
+    if (gGameplayInfo.unk4A7) {
+        hitEarly = -1;
+        hitLate = 1;
+    }
+
+    hitEarly += duration;
+    hitLate += duration;
+    missEarly += duration;
+    missLate += duration;
+
+    if ((runningTime < missEarly) || (runningTime > missLate)) return CUE_TIMING_MISS;
+
+    if (cueDef->missCondition != NULL) { // unused feature! cool!
+        if (cueDef->missCondition(cue, cue->gameCueInfo)) return CUE_TIMING_MISS;
+    }
+
+    *offset = runningTime - duration;
+
+    if ((runningTime >= hitEarly) && (runningTime <= hitLate)) return CUE_TIMING_HIT;
+
+    return CUE_TIMING_BARELY;
+}
+
 
 #include "asm/gameplay/asm_08017e2c.s"
 
-#include "asm/gameplay/asm_08017ec8.s"
+
+// [func_08017ec8] Update Inputs
+void func_08017ec8(u32 pressed, u32 released) {
+    s32 timingOffset, closestCueTimingOffset; // input accuracy offset in ticks
+    s32 hitAnyCue, missInput, missedCuesForThisButton; // boolean
+    struct Cue *cue, *prev, *closestCue;
+    enum CueHitTiming timingLevel, closestCueTimingLevel;
+    u32 currentInput, unrelatedInputs; // button combo
+    u16 press, release; // button combo
+    u32 i;
+
+    hitAnyCue = FALSE;
+    missInput = FALSE;
+    unrelatedInputs = 0;
+
+    for (i = 0; i < 32; i++) {
+        currentInput = (pressed | (released << 0x10)) & (1 << i);
+
+        if (currentInput == 0) continue;
+
+        press = currentInput;
+        release = currentInput >> 0x10;
+        missedCuesForThisButton = TRUE;
+        closestCue = NULL;
+        closestCueTimingOffset = 9999;
+        closestCueTimingLevel = CUE_TIMING_MISS;
+
+        cue = gGameplayInfo.cues;
+        while (cue != NULL) {
+            prev = cue->prev;
+            timingLevel = func_08017c8c(cue, press, release, &timingOffset);
+            switch (gGameplayInfo.allowCueInputOverlap) {
+                case FALSE: // If cues overlap, only register the closest cue to this input.
+                    if (timingLevel != CUE_TIMING_MISS) {
+                        if (ABS(timingOffset) < ABS(closestCueTimingOffset)) {
+                            closestCue = cue;
+                            closestCueTimingOffset = timingOffset;
+                            closestCueTimingLevel = timingLevel;
+                        }
+                        missedCuesForThisButton = FALSE;
+                    }
+                    break;
+                case TRUE: // If cues overlap, register input for all.
+                    if (timingLevel != CUE_TIMING_MISS) {
+                        func_08017e2c(cue, timingLevel, timingOffset, press, release);
+                        hitAnyCue = TRUE;
+                        missedCuesForThisButton = FALSE;
+                    }
+                    break;
+            }
+            cue = prev;
+        }
+
+        if (closestCue != NULL) {
+            func_08017e2c(closestCue, closestCueTimingLevel, closestCueTimingOffset, press, release);
+            hitAnyCue = TRUE;
+        }
+
+        if (missedCuesForThisButton) {
+            unrelatedInputs |= currentInput;
+            missInput = TRUE;
+        }
+        pressed &= gGameplayInfo.buttonPressFilter;
+        released &= gGameplayInfo.buttonReleaseFilter;
+    }
+
+    if (!hitAnyCue) {
+        unrelatedInputs = press | (release << 0x10);
+        missInput = TRUE;
+    }
+
+    unrelatedInputs &= gGameplayInfo.buttonPressFilter | (gGameplayInfo.buttonReleaseFilter << 0x10);
+
+    if (unrelatedInputs == 0) {
+        missInput = FALSE;
+    }
+
+    if (missInput) {
+        func_08017928(0, CUE_RESULT_NONE, 0); // marking criteria, enum, accuracy
+        if (gGameplayInfo.gameEngine->inputFunc != NULL) {
+            gGameplayInfo.gameEngine->inputFunc(unrelatedInputs & 0xffff, unrelatedInputs >> 0x10);
+        }
+        gGameplayInfo.unk4A7 = func_0800c3a4(gGameplayInfo.unk4A8);
+    }
+}
 
 
-// [func_08018054] Get Timing Offset of Most Recent Input
+// [func_08018054] Get Timing Offset of Most Recent Hit/Barely
 s32 func_08018054(void) {
     return gGameplayInfo.unk79;
 }
@@ -478,17 +697,60 @@ s32 func_08018054(void) {
 
 #include "asm/gameplay/asm_0801858c.s"
 
-#include "asm/gameplay/asm_080185d0.s"
 
-#include "asm/gameplay/asm_08018630.s"
+// [func_080185d0] Display A Button Prompt
+void func_080185d0(s16 x, s16 y, s32 show) {
+    func_0804d770(D_03005380, gGameplayInfo.aButtonSprite, show);
+    if (show) {
+        func_0804d5d4(D_03005380, gGameplayInfo.aButtonSprite, x, y);
+    }
+}
 
-#include "asm/gameplay/asm_08018660.s"
+
+// [func_08018630] Initialise Text Elements
+void func_08018630(void *arg) {
+    gGameplayInfo.unk498 = arg;
+    gGameplayInfo.unk49C = 0;
+    gGameplayInfo.unk49D = 0;
+}
+
+
+// [func_08018660] Display Text
+void func_08018660(char *text) {
+    func_0800aa4c(gGameplayInfo.unk498, text);
+    func_080185d0(0, 0, FALSE);
+    gGameplayInfo.unk49D = 0;
+}
+
 
 #include "asm/gameplay/asm_08018698.s"
 
 #include "asm/gameplay/asm_080186d4.s"
 
-#include "asm/gameplay/asm_0801875c.s"
+
+// [func_0801875c] Update Text
+void func_0801875c(void) {
+    if (gGameplayInfo.unk7C) return;
+
+    func_0800a914(gGameplayInfo.unk498);
+
+    if (gGameplayInfo.unk49C == 0) return;
+
+    if (!func_0800ac58(gGameplayInfo.unk498) && gGameplayInfo.unk49D) {
+        func_08018698(); // Text-related
+        gGameplayInfo.unk49D = FALSE;
+    }
+
+    if (!func_0800ac58(gGameplayInfo.unk498) && (D_03004afc & A_BUTTON)) {
+        func_0800aa4c(gGameplayInfo.unk498, 0);
+        func_080185d0(0, 0, FALSE); // Hide A Button Prompt
+        func_08002634(&s_f_send_mes_seqData);
+        func_08017338(gGameplayInfo.unk49E, gGameplayInfo.unk4A0); // Add these to the input button filters
+        func_0800bd04(0);
+        gGameplayInfo.unk49C = 0;
+    }
+}
+
 
 #include "asm/gameplay/asm_08018828.s"
 

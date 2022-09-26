@@ -135,9 +135,10 @@ enum CueHitTiming {
 
 struct Cue;
 typedef void (*CueSpawnEvent)(struct Cue *, union GameCueInfo *, u32); // arg2 = spawn parameter
-typedef u32  (*CueUpdateEvent)(struct Cue *, union GameCueInfo *, u32, u32); // arg2 = runningTime, arg3 = duration
+typedef u32  (*CueUpdateEvent)(struct Cue *, union GameCueInfo *, u32, u32); // arg2 = runningTime; arg3 = duration
 typedef void (*CueDespawnEvent)(struct Cue *, union GameCueInfo *);
-typedef void (*CueInputEvent)(struct Cue *, union GameCueInfo *);
+typedef void (*CueHitEvent)(struct Cue *, union GameCueInfo *, u32, u32); // arg2 = buttons pressed; arg3 = buttons released
+typedef void (*CueMissEvent)(struct Cue *, union GameCueInfo *);
 typedef u32  (*CueMissCondition)(struct Cue *, union GameCueInfo *);
 
 // Read-Only Cue Definition
@@ -156,9 +157,9 @@ struct CueDefinition {
     s32 spawnParam;              // Spawn Parameter
     CueUpdateEvent updateFunc;   // Update Function
     CueDespawnEvent despawnFunc; // Close Function
-    CueInputEvent hitFunc;       // Hit Function
-    CueInputEvent barelyFunc;    // Barely Function
-    CueInputEvent missFunc;      // Miss Function
+    CueHitEvent hitFunc;         // Hit Function
+    CueHitEvent barelyFunc;      // Barely Function
+    CueMissEvent missFunc;       // Miss Function
 	const struct SequenceData *spawnSfx;
 	const struct SequenceData *hitSfx;
 	const struct SequenceData *barelySfx;
