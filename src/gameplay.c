@@ -1,11 +1,20 @@
 #include "gameplay.h"
+#include "code_08001360.h"
 #include "code_08003980.h"
-
-// Main gameplay stuff
+#include "code_08007468.h"
+#include "code_0800b778.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
+
+extern struct Scene D_089d77e4; // Results (Level-type)
+
+
+/* MAIN GAMEPLAY SCENE */
+
+
 static s32 D_03001328; // unknown type, could be 2 words
+
 
 #include "asm/gameplay/asm_08016e04.s"
 
@@ -23,11 +32,124 @@ static s32 D_03001328; // unknown type, could be 2 words
 
 #include "asm/gameplay/asm_08016ea4.s"
 
-#include "asm/gameplay/asm_08016ec4.s"
 
-#include "asm/gameplay/asm_08016ffc.s"
+// [func_08016ec4] Gameplay Scene Init.
+void func_08016ec4(s32 arg) {
+    func_08002e78(D_089cfd7c);
+    func_08007324(0);
+    func_080073f0();
+    func_08018154();
+    func_08018524(); // Script-related, D_030055e0
+    func_08018630(NULL);
+    gGameplayInfo.gameEngine = NULL;
+    func_080178e4();
+    func_08019324(0); // Results-related, some operation on bit-wise struct D_03001338
+    func_080192a4(); // Results-related, some operation on bit-wise struct D_03001338
+    gGameplayInfo.unk5B7 = 1;
+    gGameplayInfo.unk5B8 = 0;
+    gGameplayInfo.enablePlayInputs = FALSE;
+    gGameplayInfo.buttonPressFilter = 0;
+    gGameplayInfo.buttonReleaseFilter = 0;
+    gGameplayInfo.unk9 = 1;
+    gGameplayInfo.unk64 = 0;
+    gGameplayInfo.unk7B = FALSE;
+    gGameplayInfo.unk7C = 0;
+    gGameplayInfo.skipDestination = NULL;
+    gGameplayInfo.skipTutorialButton = SELECT_BUTTON;
+    gGameplayInfo.fadeInTicks = 0x10;
+    gGameplayInfo.unk5E = 0;
+    gGameplayInfo.unk8A = 0;
+    gGameplayInfo.goingForPerfect = FALSE;
+    gGameplayInfo.assessPerfectInputs = TRUE;
+    gGameplayInfo.unk4A6 = 0;
+    gGameplayInfo.unk4A7 = 0;
+    gGameplayInfo.unk4A8 = 0xC;
+    gGameplayInfo.unk5B4 = 1;
+    gGameplayInfo.unk5B5 = 1;
+    gGameplayInfo.earlinessRangeMax = -1;
+    gGameplayInfo.latenessRangeMin = 1;
+    gGameplayInfo.earlinessRangeMin = -0x80;
+    gGameplayInfo.latenessRangeMax = 0x7f;
+    func_0804c340(35, 2, 2, 4); // Reverb
+    if (func_08000608() == NULL) {
+        func_08000584(&D_089d77e4);
+    }
+    func_0801911c(0); // set D_03001330 to 0
+}
 
-#include "asm/gameplay/asm_08017000.s"
+
+// [func_08016ffc] Scene STUB
+void func_08016ffc(s32 arg) {
+}
+
+
+// [func_08017000] Scene Main
+void func_08017000(s32 arg) {
+    u32 pressed, released, buttonsOnly;
+
+    if (gGameplayInfo.unk7C) return;
+
+    if (gGameplayInfo.gameEngine != NULL) {
+        if (gGameplayInfo.gameEngine->updateFunc != NULL) {
+            gGameplayInfo.gameEngine->updateFunc();
+        }
+    }
+
+    pressed = D_03004afc & gGameplayInfo.buttonPressFilter;
+    released = D_03004b00 & gGameplayInfo.buttonReleaseFilter;
+
+    if (gGameplayInfo.unk5B4 == 1) {
+        if (gGameplayInfo.unk5B5 != 0) {
+            if (pressed & (DPAD_DOWN | DPAD_UP | DPAD_LEFT | DPAD_RIGHT)) {
+                buttonsOnly = pressed & ~(DPAD_DOWN | DPAD_UP | DPAD_LEFT | DPAD_RIGHT);
+                if (pressed & DPAD_UP) {
+                    pressed = DPAD_UP;
+                }
+                if (pressed & DPAD_DOWN) {
+                    pressed = DPAD_DOWN;
+                }
+                if (pressed & DPAD_LEFT) {
+                    pressed = DPAD_LEFT;
+                }
+                if (pressed & DPAD_RIGHT) {
+                    pressed = DPAD_RIGHT;
+                }
+                pressed |= buttonsOnly;
+                gGameplayInfo.unk5B5 = 0;
+                gGameplayInfo.unk5B6 = 10;
+            }
+        } else {
+            pressed &= ~(DPAD_DOWN | DPAD_UP | DPAD_LEFT | DPAD_RIGHT);
+            if (D_03004ac0 & (DPAD_DOWN | DPAD_UP | DPAD_LEFT | DPAD_RIGHT)) {
+                if (--gGameplayInfo.unk5B6 == 0) {
+                    gGameplayInfo.unk5B5 = 1;
+                }
+            } else {
+                gGameplayInfo.unk5B5 = 1;
+            }
+        }
+    }
+
+    if (func_0801714c()) { // if play inputs are enabled
+        if ((pressed != 0) || (released != 0)) {
+            func_08017ec8(pressed, released); // Update Inputs
+        }
+    }
+
+    func_08017c68(); // Update Cues
+    func_0801875c(); // Update Text
+
+    if (gGameplayInfo.unk4A7 != 0) {
+        gGameplayInfo.unk4A7--;
+    }
+
+    if (D_03004afc & gGameplayInfo.skipTutorialButton) {
+        if (gGameplayInfo.unk7B) {
+            func_08017514(); // Skip Tutorial
+        }
+    }
+}
+
 
 #include "asm/gameplay/asm_0801714c.s"
 
@@ -37,44 +159,52 @@ static s32 D_03001328; // unknown type, could be 2 words
 
 #include "asm/gameplay/asm_0801732c.s"
 
-// D_030046a4->unkA = arg0; D_030046a4->unkC = arg1
-void func_08017338(s16 arg0, s16 arg1) {
-    gGameplayInfo.unkA = arg0;
-    gGameplayInfo.unkC = arg1;
+
+// [func_08017338] Set Input Button Filters
+void func_08017338(u16 press, u16 release) {
+    gGameplayInfo.buttonPressFilter = press;
+    gGameplayInfo.buttonReleaseFilter = release;
 }
 
-s32 func_08017348(s32 arg1, s32 arg2) { // bobbing?
-    s32 returnVal = 0;
-    EngineFunc *temp = gGameplayInfo.commonFunctions;
 
-    if (temp == NULL) { // literally never possible
+// [func_08017348] Run Engine-Common Event
+s32 func_08017348(s32 param, s32 id) {
+    s32 returnVal = 0;
+    EngineFunc *functions = gGameplayInfo.commonFunctions;
+
+    if (functions == NULL) { // literally never possible
         return returnVal;
     }
 
-    if (temp[arg2] != NULL) {
-        returnVal = temp[arg2](arg1);
+    if (functions[id] != NULL) {
+        returnVal = functions[id](param);
     }
 
     return returnVal;
 }
 
-void func_08017380(s32 arg1) { // gfx command 1
-    gGameplayInfo.unk60 = arg1;
+
+// [func_08017380] Set Parameter for Engine-Specific Event
+void func_08017380(s32 param) {
+    gGameplayInfo.engineFuncParam = param;
 }
 
-s32 func_0801738c(struct GameEngine *arg1, s32 arg2) { // gfx command 2
+
+// [func_0801738c] Run Engine-Specific Event
+s32 func_0801738c(struct GameEngine *engine, s32 id) {
     s32 returnVal = 0;
 
-    if (gGameplayInfo.currentEngine != arg1) {
+    if (gGameplayInfo.gameEngine != engine) {
         return returnVal;
     }
 
-    if ((gGameplayInfo.currentEngine->engineFunctions != NULL) && (gGameplayInfo.currentEngine->engineFunctions[arg2] != NULL)) {
-        returnVal = gGameplayInfo.currentEngine->engineFunctions[arg2](gGameplayInfo.unk60);
+    if ((gGameplayInfo.gameEngine->engineFunctions != NULL) && (gGameplayInfo.gameEngine->engineFunctions[id] != NULL)) {
+        returnVal = gGameplayInfo.gameEngine->engineFunctions[id](gGameplayInfo.engineFuncParam);
     }
 
     return returnVal;
 }
+
 
 #include "asm/gameplay/asm_080173c4.s"
 
@@ -156,7 +286,9 @@ s32 func_0801738c(struct GameEngine *arg1, s32 arg2) { // gfx command 2
 
 #include "asm/gameplay/asm_080179d8.s"
 
-void func_080179f4(s32 id) { // universal cue?
+
+// [func_080179f4] Spawn Cue
+void func_080179f4(s32 id) {
     const struct CueDefinition *cueDef;
     struct Cue *newCue, *prevCue;
 
@@ -170,10 +302,10 @@ void func_080179f4(s32 id) { // universal cue?
     } else {
         newCue->gameCueInfo = NULL;
     }
-    func_0800186c(cueDef, &newCue->unk8, 0x40, 0x20, 0x200);
+    func_0800186c(cueDef, &newCue->data, sizeof(struct CueDefinition), 0x20, 0x200);
 
-    newCue->unk48_b0 = 0;
-    newCue->unk48_b1 = 0;
+    newCue->unk48_b0 = FALSE;
+    newCue->hasExpired = FALSE;
 
     do {} while (0); // fake matching / macro?
 
@@ -186,19 +318,19 @@ void func_080179f4(s32 id) { // universal cue?
         newCue->duration = func_0800c3a4(cueDef->duration);
     }
 
-    newCue->spawnSfx  = ((gGameplayInfo.spawnSfx != NULL)  ? gGameplayInfo.spawnSfx  : cueDef->spawnSfx);
-    newCue->hitSfx    = ((gGameplayInfo.hitSfx != NULL)    ? gGameplayInfo.hitSfx    : cueDef->hitSfx);
-    newCue->barelySfx = ((gGameplayInfo.barelySfx != NULL) ? gGameplayInfo.barelySfx : cueDef->barelySfx);
-    newCue->missSfx   = ((gGameplayInfo.missSfx != NULL)   ? gGameplayInfo.missSfx   : cueDef->missSfx);
+    newCue->spawnSfx  = ((gGameplayInfo.nextCueSpawnSfx != NULL)  ? gGameplayInfo.nextCueSpawnSfx  : cueDef->spawnSfx);
+    newCue->hitSfx    = ((gGameplayInfo.nextCueHitSfx != NULL)    ? gGameplayInfo.nextCueHitSfx    : cueDef->hitSfx);
+    newCue->barelySfx = ((gGameplayInfo.nextCueBarelySfx != NULL) ? gGameplayInfo.nextCueBarelySfx : cueDef->barelySfx);
+    newCue->missSfx   = ((gGameplayInfo.nextCueMissSfx != NULL)   ? gGameplayInfo.nextCueMissSfx   : cueDef->missSfx);
 
-    newCue->unk68 = gGameplayInfo.unk7A;
+    newCue->markingCriteria = gGameplayInfo.currentMarkingCriteria;
 
-    gGameplayInfo.spawnSfx = NULL;
-    gGameplayInfo.hitSfx = NULL;
-    gGameplayInfo.barelySfx = NULL;
-    gGameplayInfo.missSfx = NULL;
+    gGameplayInfo.nextCueSpawnSfx = NULL;
+    gGameplayInfo.nextCueHitSfx = NULL;
+    gGameplayInfo.nextCueBarelySfx = NULL;
+    gGameplayInfo.nextCueMissSfx = NULL;
 
-    prevCue = gGameplayInfo.previousCue;
+    prevCue = gGameplayInfo.cues;
 
     newCue->next = NULL;
     newCue->prev = prevCue;
@@ -207,7 +339,7 @@ void func_080179f4(s32 id) { // universal cue?
         prevCue->next = newCue;
     }
 
-    gGameplayInfo.previousCue = newCue;
+    gGameplayInfo.cues = newCue;
 
     gGameplayInfo.unk5D = FALSE;
 
@@ -216,7 +348,7 @@ void func_080179f4(s32 id) { // universal cue?
     }
 
     if (gGameplayInfo.unk5D) {
-        gGameplayInfo.previousCue = prevCue;
+        gGameplayInfo.cues = prevCue;
         prevCue->next = NULL;
         mem_heap_dealloc(newCue);
     } else {
@@ -225,13 +357,53 @@ void func_080179f4(s32 id) { // universal cue?
     }
 }
 
+
 #include "asm/gameplay/asm_08017b34.s"
 
 #include "asm/gameplay/asm_08017b44.s"
 
 #include "asm/gameplay/asm_08017b88.s"
 
-#include "asm/gameplay/asm_08017b98.s"
+
+// [func_08017b98] Update Cue
+void func_08017b98(struct Cue *cue) {
+    struct CueDefinition *cueDef;
+    s32 missTimeOffset;
+    u32 hasExpired;
+
+    cueDef = &cue->data;
+
+    cue->runningTime++;
+    gGameplayInfo.unk78 = FALSE;
+    if (cueDef->tempoDependent) {
+        missTimeOffset = func_0800c3a4(cueDef->missWindowLate);
+    } else {
+        missTimeOffset = cueDef->missWindowLate;
+    }
+    if (!cue->unk48_b0 && !cue->hasExpired) {
+        if (cue->runningTime > cue->duration + missTimeOffset) {
+            cue->hasExpired = TRUE;
+            if (cueDef->missFunc != NULL) {
+                cueDef->missFunc(cue, cue->gameCueInfo);
+            }
+            if (!gGameplayInfo.unk78) {
+                func_08017928(cue->markingCriteria, 2, 0);
+            }
+            func_08016e54(cue->missSfx);
+            if (cueDef->deleteWithoutUpdate) { // another unused feature! awesome!
+                func_08017b44(cue); // Despawn Cue
+                return;
+            }
+        }
+    }
+    if (cueDef->updateFunc != NULL) {
+        hasExpired = cueDef->updateFunc(cue, cue->gameCueInfo, cue->runningTime, cue->duration);
+        if (hasExpired) {
+            if (hasExpired == TRUE) func_08017b44(cue); // Despawn Cue
+        }
+    }
+}
+
 
 #include "asm/gameplay/asm_08017c68.s"
 
@@ -241,10 +413,12 @@ void func_080179f4(s32 id) { // universal cue?
 
 #include "asm/gameplay/asm_08017ec8.s"
 
-// Return D_030046a4->unk79 (s8)
+
+// [func_08018054] Get Timing Offset of Most Recent Input
 s32 func_08018054(void) {
     return gGameplayInfo.unk79;
 }
+
 
 #include "asm/gameplay/asm_08018068.s"
 

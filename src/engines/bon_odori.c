@@ -280,7 +280,7 @@ void func_08020ed4(void) {
 void func_08020ee8(void) {
     u8 temp0;
     u32 temp1 = gBonOdoriInfo.unk860;
-    union struct_030055d0 *temp2;
+    union GameEngineInfo *temp2;
     
     if (gBonOdoriInfo.unk860 != 0) {
         gBonOdoriInfo.unk54 = 3;

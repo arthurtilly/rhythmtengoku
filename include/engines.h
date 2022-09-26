@@ -293,7 +293,7 @@ struct FireworksInfo {
 
 
 // Game Engine Info
-extern union struct_030055d0 {
+extern union GameEngineInfo {
     struct KarateManInfo karateMan;
     struct RapMenInfo rapMen;
     struct WizardsWaltzInfo wizardsWaltz;
@@ -306,17 +306,20 @@ extern union struct_030055d0 {
     struct ShowtimeInfo showtime;
 } *D_030055d0;
 
-typedef s32 (*EngineFunc)(s32);
-typedef void (*RhythmGameInitFunc)(u32);
-typedef void (*RhythmGameUpdateFunc)(void);
-typedef void (*RhythmGameCloseFunc)(void);
+struct GameEngine;
+typedef s32  (*EngineFunc)(s32);
+typedef void (*EngineInitFunc)(u32);
+typedef void (*EngineUpdateFunc)(void);
+typedef void (*EngineCloseFunc)(struct GameEngine *);
+typedef void (*EngineInputFunc)(u32 pressed, u32 released);
 
 struct GameEngine {
     u32 gameInfoSize; // Size of Respective GameInfo Struct (in bytes)
-    RhythmGameInitFunc initFunc;
-    RhythmGameUpdateFunc updateFunc;
-    RhythmGameCloseFunc closeFunc;
+    EngineInitFunc initFunc;
+    EngineUpdateFunc updateFunc;
+    EngineCloseFunc closeFunc;
     const struct CueDefinition **cueDefinitions;
     EngineFunc *commonFunctions;
     EngineFunc *engineFunctions;
+    EngineInputFunc inputFunc;
 };

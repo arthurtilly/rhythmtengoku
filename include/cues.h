@@ -118,14 +118,61 @@ union GameCueInfo {
     struct WizardsWaltzCue wizardsWaltz;
 };
 
+
+
+enum CueHitResult {
+    CUE_RESULT_HIT,     // Cue was hit
+    CUE_RESULT_BARELY,  // Cue was barely'd
+    CUE_RESULT_MISS,    // Cue was missed
+    CUE_RESULT_NONE     // An input was made, but there was no relevant cue
+};
+
+enum CueHitTiming {
+    CUE_TIMING_MISS,
+    CUE_TIMING_BARELY,
+    CUE_TIMING_HIT
+};
+
+struct Cue;
+typedef void (*CueSpawnEvent)(struct Cue *, union GameCueInfo *, u32); // arg2 = spawn parameter
+typedef u32  (*CueUpdateEvent)(struct Cue *, union GameCueInfo *, u32, u32); // arg2 = runningTime, arg3 = duration
+typedef void (*CueDespawnEvent)(struct Cue *, union GameCueInfo *);
+typedef void (*CueInputEvent)(struct Cue *, union GameCueInfo *);
+typedef u32  (*CueMissCondition)(struct Cue *, union GameCueInfo *);
+
+// Read-Only Cue Definition
+struct CueDefinition {
+    u16 unk0;            // ?
+    u16 buttonFilter;    // Button Combination (if sign bit is set, refers to button release)
+    u16 duration;        // Duration (in Beats)
+    s8  hitWindowEarly;  // Early Leniency for Hit-Barely
+    s8  hitWindowLate;   // Late Leniency for Hit-Barely
+    s8  missWindowEarly; // Early Leniency for Barely-Miss
+    s8  missWindowLate;  // Late Leniency for Barely-Miss
+    u16 tempoDependent:1;        // Denote input timing values as beat values instead of immediate ticks.
+    u16 deleteWithoutUpdate:1;   // Cue is deleted without updating first.
+    u32 cueInfoSize;             // Required Memory (in bytes)
+    CueSpawnEvent spawnFunc;     // Spawn Function
+    s32 spawnParam;              // Spawn Parameter
+    CueUpdateEvent updateFunc;   // Update Function
+    CueDespawnEvent despawnFunc; // Close Function
+    CueInputEvent hitFunc;       // Hit Function
+    CueInputEvent barelyFunc;    // Barely Function
+    CueInputEvent missFunc;      // Miss Function
+	const struct SequenceData *spawnSfx;
+	const struct SequenceData *hitSfx;
+	const struct SequenceData *barelySfx;
+	const struct SequenceData *missSfx;
+	CueMissCondition missCondition;
+};
+
 // In-Memory Cue Data
 struct Cue {
 	struct Cue *next;
 	struct Cue *prev;
-	s32 unk8; // ???
-	u8 pad0C[0x3C];
+	struct CueDefinition data; // entire cue definition struct pasted into memory
 	s8 unk48_b0:1;
-	s8 unk48_b1:1;
+	s8 hasExpired:1;
 	u16 unk4A;
 	u16 runningTime; // Cue ticks
 	u16 duration;
@@ -135,31 +182,5 @@ struct Cue {
 	const struct SequenceData *barelySfx;
 	const struct SequenceData *missSfx;
 	union GameCueInfo *gameCueInfo;
-	u8 unk68;
-};
-
-typedef void (*CueSpawnEvent)(struct Cue *, union GameCueInfo *, u32);
-typedef void (*CueUpdateEvent)(struct Cue *, union GameCueInfo *, u32, u32); // arg2 = runningTime, arg3 = ?
-typedef void (*CueDespawnEvent)(struct Cue *, union GameCueInfo *);
-typedef void (*CueInputEvent)(struct Cue *, union GameCueInfo *);
-
-// Read-Only Cue Definition
-struct CueDefinition {
-    s32 unk0; // ?
-    u16 duration; // Duration (in Beats)
-    u16 leniency; // Leniency
-    u16 endDelay; // End Delay
-    u16 unkA; // ?
-    u32 cueInfoSize; // Required Memory (in bytes)
-    CueSpawnEvent spawnFunc; // Spawn Function
-    s32 spawnParam; // Spawn Parameter
-    CueUpdateEvent updateFunc; // Update Function
-    CueDespawnEvent despawnFunc; // Close Function
-    CueInputEvent hitFunc; // Hit Function
-    CueInputEvent barelyFunc; // Barely Function
-    CueInputEvent missFunc; // Miss Function
-	const struct SequenceData *spawnSfx;
-	const struct SequenceData *hitSfx;
-	const struct SequenceData *barelySfx;
-	const struct SequenceData *missSfx;
+	u8 markingCriteria;
 };

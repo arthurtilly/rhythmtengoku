@@ -6,9 +6,9 @@
 typedef u32 (*D_0300009c_func)(void);
 
 extern u16 D_03004ac0;
-extern u16 D_03004afc;
+extern u16 D_03004afc; // Button Press Buffer
 extern u16 D_030053b8;
-extern s16 D_03004b00;
+extern u16 D_03004b00; // Button Release Buffer
 
 extern u16 D_030046b8;
 extern u16 D_03005378;
