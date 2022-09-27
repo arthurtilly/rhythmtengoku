@@ -624,11 +624,11 @@ void func_0803029c(char *text) {
 // [func_0803031c] COMMON Func_02 - Set Tutorial Mode?
 void func_0803031c(u32 arg) {
     if (arg) {
-        func_08017448(1);
+        func_08017448(TRUE);
         func_08017458(arg);
         func_0804d770(D_03005380, gFireworksInfo.skipTutorialSprite, 1);
     } else {
-        func_08017448(0);
+        func_08017448(FALSE);
         func_0804d770(D_03005380, gFireworksInfo.skipTutorialSprite, 0);
     }
 }

@@ -143,7 +143,7 @@ typedef u32  (*CueMissCondition)(struct Cue *, union GameCueInfo *);
 
 // Read-Only Cue Definition
 struct CueDefinition {
-    u16 unk0;            // ?
+    u8  unk0;            // ?
     u16 buttonFilter;    // Button Combination (if sign bit is set, refers to button release)
     u16 duration;        // Duration (in Beats)
     s8  hitWindowEarly;  // Early Leniency for Hit-Barely

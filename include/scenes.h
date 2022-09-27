@@ -37,7 +37,7 @@ struct GameSelectInfo {
 struct GameplayInfo {
 	s32 unk0;
 	s32 unk4;
-	u8 enablePlayInputs; // A, B, +, L, R
+	u8 playInputsEnabled; // A, B, +, L, R
 	u8 unk9;
     u16 buttonPressFilter;
 	u16 buttonReleaseFilter;
@@ -52,7 +52,7 @@ struct GameplayInfo {
     u8 unk5D; // Has the capacity to, when set, delete cues as soon as they are created, but is always set to FALSE when a cue is made.
     u8 allowCueInputOverlap; // If multiple cues for the same input overlap, register the input for all cues (otherwise only consider the most relevant cue).
     s32 engineFuncParam; // Parameter used when calling Engine-specific Functions
-    u8  unk64;
+    u8 unk64;
 	const struct SequenceData *nextCueSpawnSfx;
 	const struct SequenceData *nextCueHitSfx;
 	const struct SequenceData *nextCueBarelySfx;
@@ -60,7 +60,7 @@ struct GameplayInfo {
 	u8 unk78;
     s8 lastCueInputOffset; // Most Recent Input Timing Offset (how early/late the most recent input was)
 	u8 currentMarkingCriteria; // Current Marking Criteria
-	u8 unk7B;
+	u8 isTutorial;
 	u8 unk7C;
 	const struct Scene *skipDestination; // Skip Tutorial destination scene
 	u16 fadeInTicks; // Remaining ticks for screen fade-in?
@@ -69,16 +69,10 @@ struct GameplayInfo {
     u16 unk8A;
     s16 pauseSprite;
     s16 pauseOptionsSprite;
-    u32 unk90[4];
-    u32 unkA0[8];
-    u32 unkC0[8];
-    u32 unkE0[8];
-    u32 unk100[64];
-    u32 unk200[64];
-    u32 unk300[64];
-    u32 unk400[32];
-    u32 unk480[4];
-    u32 unk490;
+    u8 unk90;
+    u8 unk91;
+    u16 unk92;
+    u16 unk94[0x200]; // ...
     s16 skipTutorialSprite;
     s16 aButtonSprite;
     void *unk498; // text manager or font or something
@@ -89,7 +83,7 @@ struct GameplayInfo {
     s16 perfectSprite;
     u8  goingForPerfect;
     u8  assessPerfectInputs;
-    u8  unk4A6;
+    u8  perfectFailed;
     u8  unk4A7;
     u8  unk4A8;
     s8  earlinessRangeMax; // Input Timing Window Duration - Early, Max.

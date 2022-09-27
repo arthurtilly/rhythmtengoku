@@ -52,14 +52,14 @@ void func_08016ec4(s32 arg) {
     func_080178e4();
     func_08019324(0); // Results-related, some operation on bit-wise struct D_03001338
     func_080192a4(); // Results-related, some operation on bit-wise struct D_03001338
-    gGameplayInfo.unk5B7 = 1;
+    gGameplayInfo.unk5B7 = TRUE;
     gGameplayInfo.unk5B8 = 0;
-    gGameplayInfo.enablePlayInputs = FALSE;
+    gGameplayInfo.playInputsEnabled = FALSE;
     gGameplayInfo.buttonPressFilter = 0;
     gGameplayInfo.buttonReleaseFilter = 0;
     gGameplayInfo.unk9 = 1;
     gGameplayInfo.unk64 = 0;
-    gGameplayInfo.unk7B = FALSE;
+    gGameplayInfo.isTutorial = FALSE;
     gGameplayInfo.unk7C = 0;
     gGameplayInfo.skipDestination = NULL;
     gGameplayInfo.skipTutorialButton = SELECT_BUTTON;
@@ -68,7 +68,7 @@ void func_08016ec4(s32 arg) {
     gGameplayInfo.unk8A = 0;
     gGameplayInfo.goingForPerfect = FALSE;
     gGameplayInfo.assessPerfectInputs = TRUE;
-    gGameplayInfo.unk4A6 = 0;
+    gGameplayInfo.perfectFailed = FALSE;
     gGameplayInfo.unk4A7 = 0;
     gGameplayInfo.unk4A8 = 0xC;
     gGameplayInfo.unk5B4 = 1;
@@ -151,7 +151,7 @@ void func_08017000(s32 arg) {
     }
 
     if (D_03004afc & gGameplayInfo.skipTutorialButton) {
-        if (gGameplayInfo.unk7B) {
+        if (gGameplayInfo.isTutorial) {
             func_08017514(); // Skip Tutorial
         }
     }
@@ -202,7 +202,7 @@ void func_08017380(s32 param) {
 
 
 // [func_0801738c] Run Engine-Specific Event
-s32 func_0801738c(struct GameEngine *engine, s32 id) {
+s32 func_0801738c(const struct GameEngine *engine, s32 id) {
     s32 returnVal = 0;
 
     if (gGameplayInfo.gameEngine != engine) {
@@ -217,9 +217,16 @@ s32 func_0801738c(struct GameEngine *engine, s32 id) {
 }
 
 
-#include "asm/gameplay/asm_080173c4.s"
+// [func_080173c4] Enable Play Inputs
+void func_080173c4(u32 enable) {
+    gGameplayInfo.playInputsEnabled = enable;
+}
 
-#include "asm/gameplay/asm_080173d0.s"
+
+// [func_080173d0] Set unk9
+void func_080173d0(u32 arg) {
+    gGameplayInfo.unk9 = arg;
+}
 
 
 // [func_080173dc] Set Next Cue Spawn SFX
@@ -248,7 +255,11 @@ void func_08017400(const struct SequenceData *sfx) {
 
 #include "asm/gameplay/asm_0801740c.s"
 
-#include "asm/gameplay/asm_08017448.s"
+
+// [func_08017448] Set isTutorial
+void func_08017448(u32 isTutorial) {
+    gGameplayInfo.isTutorial = isTutorial;
+}
 
 
 // [func_08017458] Set skipDestination
@@ -266,8 +277,8 @@ void func_08017468(u32 buttons) {
 // [func_0801747c] Set Skip Destination
 void func_0801747c(const struct Scene *scene) {
     if (scene != NULL) {
-        func_08017448(TRUE); // set unk7B
-        func_08017458(scene); // set skipDestination
+        func_08017448(TRUE);
+        func_08017458(scene);
         func_0804d770(D_03005380, gGameplayInfo.skipTutorialSprite, TRUE);
     } else {
         func_08017448(FALSE);
@@ -277,21 +288,53 @@ void func_0801747c(const struct Scene *scene) {
 }
 
 
-#include "asm/gameplay/asm_080174e8.s"
+// [func_080174e8] Display Skip Tutorial Icon
+void func_080174e8(u32 corner) {
+    func_0804cebc(D_03005380, gGameplayInfo.skipTutorialSprite, corner);
+}
+
 
 #include "asm/gameplay/asm_08017514.s"
 
-#include "asm/gameplay/asm_08017568.s"
 
-#include "asm/gameplay/asm_08017578.s"
+// [func_08017568] Set Screen Fade-In
+void func_08017568(u32 duration) {
+    gGameplayInfo.fadeInTicks = duration;
+}
 
-#include "asm/gameplay/asm_080175a0.s"
 
-#include "asm/gameplay/asm_080175b0.s"
+// [func_08017578] Fade-In Screen
+void func_08017578(void) {
+    if (gGameplayInfo.fadeInTicks != 0) {
+        func_0800703c(gGameplayInfo.fadeInTicks, 0);
+    }
+    func_08007324(1);
+    func_08007370();
+}
 
-#include "asm/gameplay/asm_080175c4.s"
 
-#include "asm/gameplay/asm_080175d8.s"
+// [func_080175a0] Set unk8A
+void func_080175a0(u32 count) {
+    gGameplayInfo.unk8A = count;
+}
+
+
+// [func_080175b0] Set unk88 to unk8A
+void func_080175b0(void) {
+    gGameplayInfo.unk88 = gGameplayInfo.unk8A;
+}
+
+
+// [func_080175c4] Increment unk88
+void func_080175c4(void) {
+    gGameplayInfo.unk88++;
+}
+
+
+// [func_080175d8] Get unk88
+u32 func_080175d8(void) {
+    return gGameplayInfo.unk88;
+}
 
 
 // [func_080175e8] Set Global Reverb
@@ -317,11 +360,29 @@ void func_08017648(u32 assessInputs) {
 }
 
 
-#include "asm/gameplay/asm_0801765c.s"
+// [func_0801765c] Register Imperfect Input
+void func_0801765c(void) {
+    if (!gGameplayInfo.perfectFailed && gGameplayInfo.goingForPerfect && gGameplayInfo.assessPerfectInputs) {
+        func_0804d8f8(D_03005380, gGameplayInfo.perfectSprite, D_0890aca0, 0, 1, 0, 2);
+        func_08002634(&s_f_fail_perfect_seqData);
+        gGameplayInfo.perfectFailed = TRUE;
+    }
+}
 
-#include "asm/gameplay/asm_080176cc.s"
 
-#include "asm/gameplay/asm_08017728.s"
+// [func_080176cc] Register Perfect Input
+void func_080176cc(void) {
+    if (!gGameplayInfo.perfectFailed && gGameplayInfo.goingForPerfect && gGameplayInfo.assessPerfectInputs) {
+        func_0804d8f8(D_03005380, gGameplayInfo.perfectSprite, D_0890ad60, 0, 1, 0x7f, 0);
+    }
+}
+
+
+// [func_08017728] Run Game Engine Event (convenience method)
+s32 func_08017728(const struct GameEngine *engine, u32 function, s32 param) {
+    func_08017380(param);
+    return func_0801738c(engine, function);
+}
 
 #include "asm/gameplay/asm_08017744.s"
 
@@ -380,25 +441,25 @@ u32 func_08017918(void) {
 }
 
 
-// [func_08017928] ?
+// [func_08017928] Register Cue Result
 void func_08017928(u32 markingCriteria, u32 cueResult, s32 timingOffset) {
-    u32 noCue;
-
-    noCue = (cueResult == CUE_RESULT_NONE);
+    u32 noCue = (cueResult == CUE_RESULT_NONE);
 
     if (!gGameplayInfo.unk9 && noCue) return;
 
+    // some kind of score-related mercy system or something
     if ((cueResult == CUE_RESULT_MISS) && gGameplayInfo.unk5B7 && (gGameplayInfo.unk5B8 != 0)) {
         cueResult = CUE_RESULT_BARELY;
         gGameplayInfo.unk5B8--;
     }
 
+    // Results
     func_08019350(0, cueResult, timingOffset);
-
     if (!noCue) {
         func_08019420(markingCriteria, cueResult, timingOffset);
     }
 
+    // Perfect Campaign
     if (cueResult == CUE_RESULT_HIT) {
         func_080176cc();
     } else if (cueResult < 4) {
@@ -407,11 +468,22 @@ void func_08017928(u32 markingCriteria, u32 cueResult, s32 timingOffset) {
 }
 
 
-#include "asm/gameplay/asm_080179a0.s"
+// [func_080179a0] Add Input Hit
+void func_080179a0(s32 offset) {
+    func_08017928(gGameplayInfo.currentMarkingCriteria, CUE_RESULT_HIT, offset);
+}
 
-#include "asm/gameplay/asm_080179bc.s"
 
-#include "asm/gameplay/asm_080179d8.s"
+// [func_080179bc] Add Input Barely
+void func_080179bc(s32 offset) {
+    func_08017928(gGameplayInfo.currentMarkingCriteria, CUE_RESULT_BARELY, offset);
+}
+
+
+// [func_080179d8] Add Input Miss
+void func_080179d8(s32 offset) {
+    func_08017928(gGameplayInfo.currentMarkingCriteria, CUE_RESULT_MISS, offset);
+}
 
 
 // [func_080179f4] Spawn Cue
@@ -566,7 +638,17 @@ void func_08017b98(struct Cue *cue) {
 }
 
 
-#include "asm/gameplay/asm_08017c68.s"
+// [func_08017c68] Update All Cues
+void func_08017c68(void) {
+    struct Cue *cue, *prev;
+
+    cue = gGameplayInfo.cues;
+    while (cue != NULL) {
+        prev = cue->prev;
+        func_08017b98(cue);
+        cue = prev;
+    }
+}
 
 
 // [func_08017c8c] Determine Cue Input Timing
@@ -780,11 +862,22 @@ const struct SequenceData *func_080180a4(struct Cue *cue) {
 }
 
 
-#include "asm/gameplay/asm_080180a8.s"
+// [func_080180a8] Get Cue Data unk0
+u32 func_080180a8(struct Cue *cue) {
+    return cue->data.unk0;
+}
 
-#include "asm/gameplay/asm_080180ac.s"
 
-#include "asm/gameplay/asm_080180b0.s"
+// [func_080180ac] Get Cue Input Buttons
+u32 func_080180ac(struct Cue *cue) {
+    return cue->data.buttonFilter;
+}
+
+
+// [func_080180b0] Set Cue Input Buttons
+void func_080180b0(struct Cue *cue, u32 buttons) {
+    cue->data.buttonFilter = buttons;
+}
 
 
 // [func_080180b4] Set Cue Duration

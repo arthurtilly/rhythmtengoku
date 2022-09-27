@@ -5,6 +5,11 @@
 #include "scenes.h"
 
 extern const struct SequenceData s_f_send_mes_seqData;
+extern const struct SequenceData s_f_fail_perfect_seqData;
+
+extern const struct Animation D_0890aca0[]; // Fail Perfect
+extern const struct Animation D_0890ad60[0]; // Perfect Input
+
 extern u32 D_089cfd7c[]; // Common Gameplay Graphics/Palettes (Pause Menu, etc.)
 
 /* AUDIO */
@@ -30,32 +35,32 @@ extern union GameEngineInfo *func_0801732c(void); // [func_0801732c] Get Current
 extern void func_08017338(u16 press, u16 release); // [func_08017338] Set Input Button Filters
 extern s32  func_08017348(s32 param, s32 id); // [func_08017348] Run Engine-Common Event
 extern void func_08017380(s32 param); // [func_08017380] Set Parameter for Engine-Specific Event
-extern s32  func_0801738c(struct GameEngine *engine, s32 id); // [func_0801738c] Run Engine-Specific Event
-// extern ? func_080173c4(?); // [func_080173c4] Enable Play Inputs
-// extern ? func_080173d0(?); // [func_080173d0] Set unk9
+extern s32  func_0801738c(const struct GameEngine *engine, s32 id); // [func_0801738c] Run Engine-Specific Event
+extern void func_080173c4(u32 enable); // [func_080173c4] Enable Play Inputs
+extern void func_080173d0(u32 arg); // [func_080173d0] Set unk9
 extern void func_080173dc(const struct SequenceData *sfx); // [func_080173dc] Set Next Cue Spawn SFX
 extern void func_080173e8(const struct SequenceData *sfx); // [func_080173e8] Set Next Cue Hit SFX
 extern void func_080173f4(const struct SequenceData *sfx); // [func_080173f4] Set Next Cue Barely SFX
 extern void func_08017400(const struct SequenceData *sfx); // [func_08017400] Set Next Cue Miss SFX
 // extern ? func_0801740c(?);
-// extern ? func_08017448(?); // [func_08017448] Set unk7B
+extern void func_08017448(u32 isTutorial); // [func_08017448] Set isTutorial
 extern void func_08017458(const struct Scene *scene); // [func_08017458] Set skipDestination
 extern void func_08017468(u32 buttons); // [func_08017468] Set Skip Tutorial Button
 extern void func_0801747c(const struct Scene *scene); // [func_0801747c] Set Skip Destination (i.e. if Select is pressed in a tutorial)
-// extern ? func_080174e8(?);
+extern void func_080174e8(u32 corner); // [func_080174e8] Display Skip Tutorial Icon
 // extern ? func_08017514(?); // [func_08017514] Skip Tutorial
-// extern ? func_08017568(?); // [func_08017568] Fade-In Screen
-extern void func_08017578(void);
-// extern ? func_080175a0(?);
-// extern ? func_080175b0(?);
-// extern ? func_080175c4(?);
-// extern ? func_080175d8(?);
+extern void func_08017568(u32 duration); // [func_08017568] Set Screen Fade-In
+extern void func_08017578(void); // [func_08017578] Fade-In Screen
+extern void func_080175a0(u32 count); // [func_080175a0] Set unk8A
+extern void func_080175b0(void); // [func_080175b0] Set unk88 to unk8A
+extern void func_080175c4(void); // [func_080175c4] Increment unk88
+extern u32  func_080175d8(void); // [func_080175d8] Get unk88
 extern void func_080175e8(u32 level); // [func_080175e8] Set Global Reverb
 extern void func_08017604(u32 start); // [func_08017604] Start Perfect Campaign
 extern void func_08017648(u32 assessInputs); // [func_08017648] Start/Stop Assessing Inputs for Perfect Campaign
-// extern ? func_0801765c(?);
-// extern ? func_080176cc(?);
-// extern ? func_08017728(?);
+extern void func_0801765c(void); // [func_0801765c] Register Imperfect Input
+extern void func_080176cc(void); // [func_080176cc] Register Perfect Input
+extern s32  func_08017728(const struct GameEngine *engine, u32 function, s32 param); // [func_08017728] Run Game Engine Event (convenience method)
 // extern ? func_08017744(?);
 // extern ? func_08017758(?);
 // extern ? func_0801777c(?);
@@ -69,16 +74,16 @@ extern void func_080178ac(void); // [func_080178ac] Reset All Cue Data
 extern void func_080178e4(void); // [func_080178e4] Init. All Cues
 extern void func_08017908(u32 criteria); // [func_08017908] Set Current Marking Criteria
 extern u32  func_08017918(void); // [func_08017918] Get Current Marking Criteria
-extern void func_08017928(u32 markingCriteria, u32 cueResult, s32 timingOffset); // [func_08017928] ?
-// extern ? func_080179a0(?);
-// extern ? func_080179bc(?);
-// extern ? func_080179d8(?);
+extern void func_08017928(u32 markingCriteria, u32 cueResult, s32 timingOffset); // [func_08017928] Register Cue Result
+extern void func_080179a0(s32 offset); // [func_080179a0] Add Input Hit
+extern void func_080179bc(s32 offset); // [func_080179bc] Add Input Barely
+extern void func_080179d8(s32 offset); // [func_080179d8] Add Input Miss
 extern void func_080179f4(s32 id); // [func_080179f4] Spawn Cue
 extern void func_08017b34(void); // [func_08017b34] Set unk5D to TRUE
 extern void func_08017b44(struct Cue *cue); // [func_08017b44] Despawn Cue
 extern void func_08017b88(u32 arg); // [func_08017b88] Set unk5C
 extern void func_08017b98(struct Cue *cue); // [func_08017b98] Update Cue
-// extern ? func_08017c68(?); // [func_08017c68] Update All Cues
+extern void func_08017c68(void); // [func_08017c68] Update All Cues
 extern s32  func_08017c8c(struct Cue *cue, u16 pressed, u16 released, s32 *offset); // [func_08017c8c] Determine Input Timing
 extern void func_08017e2c(struct Cue *cue, s32 timingLevel, s32 offset, u32 pressed, u32 released); // [func_08017e2c] Hit/Barely Event
 extern void func_08017ec8(u32 pressed, u32 released); // [func_08017ec8] Update Inputs
@@ -93,16 +98,18 @@ extern const struct SequenceData *func_08018098(struct Cue *cue); // [func_08018
 extern const struct SequenceData *func_0801809c(struct Cue *cue); // [func_0801809c] Get Cue Hit SFX
 extern const struct SequenceData *func_080180a0(struct Cue *cue); // [func_080180a0] Get Cue Barely SFX
 extern const struct SequenceData *func_080180a4(struct Cue *cue); // [func_080180a4] Get Cue Miss SFX
-// extern ? func_080180a8(?);
-// extern ? func_080180ac(?);
-// extern ? func_080180b0(?);
+extern u32  func_080180a8(struct Cue *cue); // [func_080180a8] Get Cue Data unk0
+extern u32  func_080180ac(struct Cue *cue); // [func_080180ac] Get Cue Input Buttons
+extern void func_080180b0(struct Cue *cue, u32 buttons); // [func_080180b0] Set Cue Input Buttons
 extern void func_080180b4(struct Cue *cue, u32 duration); // [func_080180b4] Set Cue Duration
 extern u32  func_080180bc(struct Cue *cue); // [func_080180bc] Get Cue Marking Criteria
-// extern ? func_080180c4(?);
-// extern ? func_080180ec(?);
+// extern ? func_080180c4(?); // [func_080180c4] Set (Early?) Cue Timing Bounds
+// extern ? func_080180ec(?); // [func_080180ec] Set (Late?) Cue Timing Bounds
 extern void func_08018114(u32 duration); // [func_08018114] Set Next Cue Duration
-// extern ? func_08018124(?);
-// extern ? func_08018138(?);
+// extern ? func_08018124(struct Cue *cue, struct GameCueInfo *info); // Get Cue and GameCueInfo
+// extern ? func_08018138(struct Cue *cue, struct Cue *prev, struct GameCueInfo *info); // Get Previous Cue and GameCueInfo
+
+/* VIDEO */
 // extern ? func_08018154(?); // [func_08018154] Initialise Common Graphics (Perfect Campaign, etc.)
 extern void func_080182ac(struct Scene *scene); // [func_080182ac] Set D_03001328
 // extern ? func_080182b8(?);
@@ -110,7 +117,7 @@ extern void func_080182ac(struct Scene *scene); // [func_080182ac] Set D_0300132
 // extern ? func_08018344(?);
 // extern ? func_080183c8(?);
 // extern ? func_08018524(?);
-// extern ? func_0801853c(?);
+// extern ? func_0801853c(?); // [func_0801853c] Set Text Advance Buttons
 // extern ? func_0801858c(?);
 extern void func_080185d0(s16 x, s16 y, s32 show); // [func_080185d0] Display A Button Prompt
 extern void func_08018630(void *arg); // [func_08018630] Init. Text
