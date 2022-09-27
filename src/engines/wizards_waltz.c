@@ -75,7 +75,7 @@ void func_08044a10(u32 ver) {
     }
 
     // Set default state.
-    func_08017338(1, 0);
+    func_08017338(A_BUTTON, 0);
     gWizardsWaltzInfo.isTutorial = FALSE;
     gWizardsWaltzInfo.cycleInterval = func_0800c3a4(0x90);
 }

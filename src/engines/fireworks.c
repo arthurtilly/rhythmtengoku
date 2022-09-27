@@ -75,8 +75,8 @@ void func_0802f420(u32 ver) {
     func_0800acb0(temp, 0);
     func_0800acbc(temp, 0);
     func_08018630(temp);
-    func_08017338(1, 0);
-    func_08018078(1);
+    func_08017338(A_BUTTON, 0);
+    func_08018078(TRUE);
 }
 
 

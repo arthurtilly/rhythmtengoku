@@ -216,7 +216,7 @@ void func_0801ffcc(u32 ver) {
     gSpaceballInfo.zoom = INT_TO_FIXED(-0.5);
     gSpaceballInfo.totalMissed = 0;
     gSpaceballInfo.spaceballType = 0;
-    func_08017338(1,0);
+    func_08017338(A_BUTTON, 0);
 }
 
 
@@ -240,7 +240,7 @@ void func_080201cc(struct SpaceballBatter *batter) {
     if (batter->swingTimer == 0) {
         func_08010008(batter->sprite, 0, 0, 0);
         func_0800ffc0(batter->sprite, 0);
-        func_08017338(1,0);
+        func_08017338(A_BUTTON, 0);
     }
 }
 

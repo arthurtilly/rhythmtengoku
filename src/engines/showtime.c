@@ -37,7 +37,7 @@ void func_0802bc78(u8 arg0) {
     gShowtimeInfo.unk0 = func_0800c660(0x340, 2);
     textAnim = func_08004b98(gShowtimeInfo.unk0, D_0805a3cc, 0, 0);
     gShowtimeInfo.unk4 = func_0804d160(D_03005380, textAnim, 0, 120, 56, 0, 0, 0, 0);
-    func_08017338(1, 0);
+    func_08017338(A_BUTTON, 0);
     func_0802c23c();    
     func_0802d104();
     func_0802c40c();

@@ -58,11 +58,11 @@ struct GameplayInfo {
 	const struct SequenceData *nextCueBarelySfx;
 	const struct SequenceData *nextCueMissSfx;
 	u8 unk78;
-    s8 unk79; // Most Recent Input Timing Offset (how early/late the most recent input was)
+    s8 lastCueInputOffset; // Most Recent Input Timing Offset (how early/late the most recent input was)
 	u8 currentMarkingCriteria; // Current Marking Criteria
 	u8 unk7B;
 	u8 unk7C;
-	struct Scene *skipDestination; // Skip Tutorial destination scene
+	const struct Scene *skipDestination; // Skip Tutorial destination scene
 	u16 fadeInTicks; // Remaining ticks for screen fade-in?
     u16 nextCueDuration;
     u16 unk88;
@@ -84,8 +84,8 @@ struct GameplayInfo {
     void *unk498; // text manager or font or something
     u8  unk49C; // Text-related
     u8  unk49D; // Text-related
-    u16 unk49E;
-    u16 unk4A0;
+    u16 textButtonPressFilter;
+    u16 textButtonReleaseFilter;
     s16 perfectSprite;
     u8  goingForPerfect;
     u8  assessPerfectInputs;

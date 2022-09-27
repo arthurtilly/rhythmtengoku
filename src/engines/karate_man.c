@@ -82,7 +82,7 @@ void func_08021210(u32 ver) {
     gKarateManInfo.tutorialSkip = func_0804d160(D_03005380, D_088acf44, 0, 0, 0xa0, 0, 0, 0, 0x8000);
     gKarateManInfo.tutorialText = func_0804d160(D_03005380, D_088acf54, 0, 0x1e, 0x4c, 0, 0, 0, 0x8000);
     gKarateManInfo.tutorialObjects = 0;
-    func_08017338(1, 0);
+    func_08017338(A_BUTTON, 0);
 
     // Initialise BG Face.
     if (gKarateManInfo.version != 0) {
@@ -152,10 +152,10 @@ void func_08021458(void) {
 
 
 // COMMON Func_03 - Unknown
-void func_080214a0(u32 arg0) {
-    if (arg0) {
+void func_080214a0(const struct Scene *arg) {
+    if (arg != NULL) {
         func_08017448(1);
-        func_08017458(arg0);
+        func_08017458(arg);
         func_0801853c(1, 1);
     } else {
         func_08017448(0);
@@ -198,7 +198,7 @@ void func_08021554(void) {
     if (gKarateManInfo.tutorialButtonFlag) {
         if (D_03004afc & 1) {
             func_0804d770(D_03005380, gKarateManInfo.tutorialButton, 0);
-            func_08017338(1, 0);
+            func_08017338(A_BUTTON, 0);
             func_0800bd04(0);
             gKarateManInfo.tutorialButtonFlag = 0;
         }

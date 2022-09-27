@@ -54,7 +54,7 @@ void func_08039950(u32 arg0) {
     gRapMenInfo.unk10 = 0;
     gRapMenInfo.unk12 = 0;
     gRapMenInfo.unk14 = 0;
-    func_08017338(1, 0); 
+    func_08017338(A_BUTTON, 0);
 }
 
 void func_08039a40(void) {

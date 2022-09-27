@@ -158,7 +158,7 @@ void func_080208ec(u32 ver) {
     gBonOdoriInfo.bgPalDark = D_089deecc[gBonOdoriInfo.version];
     func_08001ec4(0xc, 7, gBonOdoriInfo.objPalDark, 0, gBonOdoriInfo.objPalDarkBuf[0]);
     func_08001ec4(0x14, 7, gBonOdoriInfo.bgPalDark, 0, gBonOdoriInfo.bgPalDarkBuf[0]);
-    func_08017338(1, 0);
+    func_08017338(A_BUTTON, 0);
     gBonOdoriInfo.unk864 = 0;
 }
 
@@ -308,7 +308,7 @@ void func_08020f48(void) {
     if (gBonOdoriInfo.unk864 != 0) {
         gBonOdoriInfo.unk864 -= 1;
         if (gBonOdoriInfo.unk864 == 0) {
-            func_08017338(1, 0);
+            func_08017338(A_BUTTON, 0);
         }
     }
     func_08020834();

@@ -235,7 +235,7 @@ void func_0801f5f4(void) {
 void func_0801f638(void) {
     if (!gSneakySpiritsInfo.arrowReady) {
         gSneakySpiritsInfo.arrowReady = TRUE;
-        func_08017338(1, 0);
+        func_08017338(A_BUTTON, 0);
         func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, sneaky_spirits_anim00, 0, 1, 0x7f, 0);
     }
 }

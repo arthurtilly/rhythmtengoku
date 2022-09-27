@@ -310,7 +310,7 @@ struct GameEngine;
 typedef s32  (*EngineFunc)(s32);
 typedef void (*EngineInitFunc)(u32);
 typedef void (*EngineUpdateFunc)(void);
-typedef void (*EngineCloseFunc)(struct GameEngine *);
+typedef void (*EngineCloseFunc)(const struct GameEngine *);
 typedef void (*EngineInputFunc)(u32 pressed, u32 released);
 
 struct GameEngine {

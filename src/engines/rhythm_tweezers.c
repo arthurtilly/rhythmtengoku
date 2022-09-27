@@ -297,7 +297,7 @@ void func_0802eccc(u8 ver) {
     func_0800acb0(temp, 1);
     func_0800acbc(temp, 0);
     func_08018630(temp);
-    func_08017338(0xf1, 0);
+    func_08017338(A_BUTTON | DPAD_UP | DPAD_DOWN | DPAD_LEFT | DPAD_RIGHT, 0);
 }
 
 
