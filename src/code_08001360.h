@@ -89,25 +89,25 @@ extern void func_080022d8(s16); // ROTATION/SCALING PARAMETER GROUP - ?? (Fine A
 // extern ? func_080025bc(?);
 // extern ? func_080025d8(?);
 // extern ? func_080025fc(?);
-// extern ? func_08002630(?);
-extern u32 *func_08002634(const struct SequenceData *);
-// extern ? func_0800267c(?);
-// extern ? func_08002698(?);
-// extern ? func_080026c4(?);
+// extern ? func_08002630(?); // Get Sound ID
+extern struct SoundPlayer *func_08002634(const struct SequenceData *); // Play Sound
+extern struct SoundPlayer *func_0800267c(u32 player, const struct SequenceData *); // Play Sound in Specified Player
+extern struct SoundPlayer *func_08002698(const struct SequenceData *, u32 volume, s32 pitch); // Play Sound at Given Volume & Pitch
+extern struct SoundPlayer *func_080026c4(u32 player, const struct SequenceData *, u32 volume, s32 pitch); // Play Sound in Specified Player, at Given Volume & Pitch
 // extern ? func_080026fc(?);
-// extern ? func_0800274c(?);
+// extern ? func_0800274c(?); // Mute All Players Playing the Given Sound
 // extern ? func_08002794(?);
 // extern ? func_080027dc(?);
 // extern ? func_08002828(?);
 // extern ? func_08002838(?);
 // extern ? func_08002868(?);
 // extern ? func_08002880(?);
-// extern ? func_08002894(?);
-// extern ? func_080028a8(?);
-// extern ? func_080028c4(?);
+extern void func_08002894(struct SoundPlayer *player, u16 speed); // Set Player Speed Envelope
+extern void func_080028a8(struct SoundPlayer *player, s16 pitch); // Set Player Pitch Envelope
+// extern ? func_080028c4(?); // Fade-In Player for Given Duration
 // extern ? func_080028d8(?);
 // extern ? func_080028ec(?);
-extern void func_08002920(u32 *, u16);
+extern void func_08002920(struct SoundPlayer *player, u16 volume); // Set Player Gain Envelope
 // extern ? func_08002934(?);
 // extern ? func_0800294c(?);
 // extern ? func_08002968(?);

@@ -1,5 +1,9 @@
 #pragma once
 
+// !TODO - Describe fields of a single BeatScript instruction.
+struct BeatScript {
+};
+
 // Null = "Data Not Used YET"
 struct struct_030053c0 {
     u32 null0;
@@ -15,7 +19,7 @@ struct struct_030053c0 {
     u32 unk28_1:1;
     u32 unk28_2:4;
     u32 unk2C;
-    u32 unk30;
+    const struct BeatScript *beatScript;
     u32 unk34;
     u32 null38[2];
     u32 null40[4];

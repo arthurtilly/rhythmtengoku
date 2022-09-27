@@ -152,7 +152,7 @@ void func_08021458(void) {
 
 
 // COMMON Func_03 - Unknown
-void func_080214a0(const struct Scene *arg) {
+void func_080214a0(struct Scene *arg) {
     if (arg != NULL) {
         func_08017448(TRUE);
         func_08017458(arg);

@@ -142,7 +142,7 @@ struct SneakySpiritsInfo {
     s16 ghostMask;      // Sprite:  Wall Mask (used to hide the Sneaky Spirit when moving low)
     s16 ghostHit;       // Sprite:  Sneaky Spirit (Hit)
     u16 ghostHeight;    // Value:   Sneaky Spirit Height of Next Motion { Default = 0x100 }
-    u32 *rainChannel;   // Pointer: Audio Channel Playing Wind/Rain SFX
+    struct SoundPlayer *rainChannel; // Pointer: Audio Channel Playing Wind/Rain SFX
     s16 text;           // Sprite:  Tutorial Text
     u8  slowMotionHit;  // Flag:    Slow-Motion Effect On Hit
     u8  freezeRain;     // Flag:    Freeze Slow-Motion Rain
@@ -310,7 +310,7 @@ struct GameEngine;
 typedef s32  (*EngineFunc)(s32);
 typedef void (*EngineInitFunc)(u32);
 typedef void (*EngineUpdateFunc)(void);
-typedef void (*EngineCloseFunc)(const struct GameEngine *);
+typedef void (*EngineCloseFunc)();
 typedef void (*EngineInputFunc)(u32 pressed, u32 released);
 
 struct GameEngine {

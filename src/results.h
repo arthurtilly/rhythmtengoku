@@ -70,12 +70,12 @@
 // extern ? func_08019d9c(?);
 // extern ? func_08019ee0(?); // [func_08019ee0] LEVEL ? (Script Function)
 // extern ? func_0801a060(?);
-// extern ? func_0801a0ec(?);
-// extern ? func_0801a0f0(?);
-// extern ? func_0801a140(?);
-// extern ? func_0801a174(?);
-// extern ? func_0801a1b0(?);
-// extern ? func_0801a310(?);
-// extern ? func_0801a314(?);
-// extern ? func_0801a354(?);
-// extern ? func_0801a370(?);
+// extern ? func_0801a0ec(?); // [func_0801a0ec] ??? Initialise Static Variables
+// extern ? func_0801a0f0(?); // [func_0801a0f0] ??? Graphics Init. 2
+// extern ? func_0801a140(?); // [func_0801a140] ??? Graphics Init. 1
+// extern ? func_0801a174(?); // [func_0801a174] ??? Graphics Init. 0
+// extern ? func_0801a1b0(?); // [func_0801a1b0] ??? Scene Init.
+// extern ? func_0801a310(?); // [func_0801a310] ??? Scene STUB
+// extern ? func_0801a314(?); // [func_0801a314] ??? Scene Main
+// extern ? func_0801a354(?); // [func_0801a354] ??? ?
+// extern ? func_0801a370(?); // [func_0801a370] ??? Scene Close

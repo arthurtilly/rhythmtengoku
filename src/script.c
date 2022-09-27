@@ -81,12 +81,12 @@ u32 func_0801d8d8(void) {
     return 0;
 }
 
-void func_0801d95c(u32 arg0) {
-	D_030053c0.unk30 = arg0;
+void func_0801d95c(const struct BeatScript *script) {
+	D_030053c0.beatScript = script;
 }
 
-void func_0801d968(u32 arg0) {
-	D_030053c0.unk30 = arg0;
+void func_0801d968(const struct BeatScript *script) {
+	D_030053c0.beatScript = script;
 	D_030053c0.unk34 = 0;
 }
 

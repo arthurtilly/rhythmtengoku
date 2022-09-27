@@ -1,4 +1,5 @@
 #include "gameplay.h"
+#include "script.h"
 #include "code_08001360.h"
 #include "code_08003980.h"
 #include "code_08007468.h"
@@ -8,8 +9,19 @@
 asm(".include \"include/gba.inc\"");//Temporary
 
 
-extern struct Scene D_089d77e4; // Results (Level-type)
-extern struct Scene D_089ddbcc; // ?
+#define PAUSE_MENU_PALETTE_MOD 0x3DEF3DEF // Equivalent to RGB #7F7F7F
+
+enum PauseMenuOptionsEnum {
+    PAUSE_OPTION_CONTINUE,
+    PAUSE_OPTION_QUIT
+};
+
+
+extern struct Scene D_089cfd60; // Perfect Certificate Scene
+extern const struct BeatScript D_089cfda4[]; // Generic Fade-Out Sequence
+extern struct Scene D_089d77e4; // Results Scene (Level-type)
+extern struct Scene D_089d7c18; // Results Scene (???)
+extern struct Scene D_089ddbcc; // Debug Menu Scene
 
 
 /* MAIN GAMEPLAY SCENE */
@@ -18,17 +30,46 @@ extern struct Scene D_089ddbcc; // ?
 static struct Scene *D_03001328; // ?
 
 
-#include "asm/gameplay/asm_08016e04.s"
+// [func_08016e04] Set Sound Effect Original Tempo
+void func_08016e04(u32 tempo) {
+    gGameplayInfo.sfxTempo = tempo;
+}
 
-#include "asm/gameplay/asm_08016e18.s"
 
-#include "asm/gameplay/asm_08016e54.s"
+// [func_08016e18] Match SoundPlayer to Current Tempo
+struct SoundPlayer *func_08016e18(struct SoundPlayer *player) {
+    u16 tempo = gGameplayInfo.sfxTempo;
 
-#include "asm/gameplay/asm_08016e64.s"
+    if (tempo != 0) {
+        func_08002894(player, Div(func_0800c1a8() << 8, tempo));
+    }
 
-#include "asm/gameplay/asm_08016e74.s"
+    return player;
+}
 
-#include "asm/gameplay/asm_08016e84.s"
+
+// [func_08016e54] Play Sound
+struct SoundPlayer *func_08016e54(const struct SequenceData *sfx) {
+    return func_08016e18(func_08002634(sfx));
+}
+
+
+// [func_08016e64] Play Sound
+struct SoundPlayer *func_08016e64(u32 player, const struct SequenceData *sfx) {
+    return func_08016e18(func_0800267c(player, sfx));
+}
+
+
+// [func_08016e74] Play Sound
+struct SoundPlayer *func_08016e74(const struct SequenceData *sfx, u32 volume, u32 pitch) {
+    return func_08016e18(func_08002698(sfx, volume, pitch));
+}
+
+
+// [func_08016e84] Play Sound
+struct SoundPlayer *func_08016e84(u32 player, const struct SequenceData *sfx, u32 volume, s32 pitch) {
+    return func_08016e18(func_080026c4(player, sfx, volume, pitch));
+}
 
 
 // [func_08016e94] Initialise Static Variables
@@ -37,7 +78,13 @@ void func_08016e94(void) {
 }
 
 
-#include "asm/gameplay/asm_08016ea4.s"
+// [func_08016ea4] Graphics Init. 0
+void func_08016ea4(void) {
+    u32 data;
+
+    data = func_080087b4(0, D_089cfda0);
+    func_08005d38(data, func_0800bd04, 0);
+}
 
 
 // [func_08016ec4] Gameplay Scene Init.
@@ -60,7 +107,7 @@ void func_08016ec4(s32 arg) {
     gGameplayInfo.unk9 = 1;
     gGameplayInfo.unk64 = 0;
     gGameplayInfo.isTutorial = FALSE;
-    gGameplayInfo.unk7C = 0;
+    gGameplayInfo.skippingTutorial = FALSE;
     gGameplayInfo.skipDestination = NULL;
     gGameplayInfo.skipTutorialButton = SELECT_BUTTON;
     gGameplayInfo.fadeInTicks = 0x10;
@@ -94,7 +141,7 @@ void func_08016ffc(s32 arg) {
 void func_08017000(s32 arg) {
     u32 pressed, released, buttonsOnly;
 
-    if (gGameplayInfo.unk7C) return;
+    if (gGameplayInfo.skippingTutorial) return;
 
     if (gGameplayInfo.gameEngine != NULL) {
         if (gGameplayInfo.gameEngine->updateFunc != NULL) {
@@ -263,7 +310,7 @@ void func_08017448(u32 isTutorial) {
 
 
 // [func_08017458] Set skipDestination
-void func_08017458(const struct Scene *scene) {
+void func_08017458(struct Scene *scene) {
     gGameplayInfo.skipDestination = scene;
 }
 
@@ -275,7 +322,7 @@ void func_08017468(u32 buttons) {
 
 
 // [func_0801747c] Set Skip Destination
-void func_0801747c(const struct Scene *scene) {
+void func_0801747c(struct Scene *scene) {
     if (scene != NULL) {
         func_08017448(TRUE);
         func_08017458(scene);
@@ -294,7 +341,15 @@ void func_080174e8(u32 corner) {
 }
 
 
-#include "asm/gameplay/asm_08017514.s"
+// [func_08017514] Skip Tutorial
+void func_08017514(void) {
+    func_0804e0f0(D_03005380, func_0800c3b8(), 1);
+    func_08005e18(func_0800c3b8(), 1);
+    func_0800bd04(0);
+    func_0801d968(D_089cfda4);
+    func_0801db04(0);
+    gGameplayInfo.skippingTutorial = TRUE;
+}
 
 
 // [func_08017568] Set Screen Fade-In
@@ -384,6 +439,7 @@ s32 func_08017728(const struct GameEngine *engine, u32 function, s32 param) {
     return func_0801738c(engine, function);
 }
 
+
 #include "asm/gameplay/asm_08017744.s"
 
 #include "asm/gameplay/asm_08017758.s"
@@ -396,7 +452,37 @@ s32 func_08017728(const struct GameEngine *engine, u32 function, s32 param) {
 
 #include "asm/gameplay/asm_080177dc.s"
 
-#include "asm/gameplay/asm_080177f0.s"
+
+// [func_080177f0] Scene Close
+void func_080177f0(s32 arg) {
+    struct Scene *tempScene;
+
+    func_0804e0c4(D_03005380, 0x10);
+    func_080178ac(); // Reset Cues
+    if (gGameplayInfo.gameEngine->closeFunc != NULL) {
+        gGameplayInfo.gameEngine->closeFunc();
+    }
+    if (gGameplayInfo.gameEngineInfo != NULL) {
+        mem_heap_dealloc(gGameplayInfo.gameEngineInfo);
+    }
+    if (gGameplayInfo.skippingTutorial) {
+        if (gGameplayInfo.skipDestination != NULL) {
+            tempScene = func_08000608();
+            func_08000584(gGameplayInfo.skipDestination);
+            func_080006b0(gGameplayInfo.skipDestination, tempScene);
+        }
+        func_08002838(); // Sound
+    } else {
+        if (gGameplayInfo.goingForPerfect && !gGameplayInfo.perfectFailed) {
+            func_08000584(&D_089cfd60);
+            func_080006b0(&D_089cfd60, func_080005e0(&D_089d7c18));
+        }
+    }
+
+    func_08008628();
+    func_08004058();
+    func_0804c340(35, 2, 2, 4); // Reverb
+}
 
 
 // [func_080178ac] Reset All Cue Data
@@ -916,15 +1002,94 @@ void func_080182ac(struct Scene *scene) {
 };
 
 
-#include "asm/gameplay/asm_080182b8.s"
+// [func_080182b8] Screen Darken (Pause)
+void func_080182b8(void) {
+    u32 *palBuf;
+    u32 i;
 
-#include "asm/gameplay/asm_08018318.s"
+    palBuf = (u32 *)D_03004b10.bgPalette;
+    func_0800186c(palBuf, &gGameplayInfo.paletteBuffer, sizeof(gGameplayInfo.paletteBuffer), 0x20, 0x200);
 
-#include "asm/gameplay/asm_08018344.s"
+    for (i = 0; i < 0x3E; i++, palBuf += 4) {
+        palBuf[0] = (palBuf[0] / 2) & PAUSE_MENU_PALETTE_MOD;
+        palBuf[1] = (palBuf[1] / 2) & PAUSE_MENU_PALETTE_MOD;
+        palBuf[2] = (palBuf[2] / 2) & PAUSE_MENU_PALETTE_MOD;
+        palBuf[3] = (palBuf[3] / 2) & PAUSE_MENU_PALETTE_MOD;
+    }
+}
 
-#include "asm/gameplay/asm_080183c8.s"
 
-#include "asm/gameplay/asm_08018524.s"
+// [func_08018318] Screen Lighten (Unpause)
+void func_08018318(void) {
+    func_0800186c(&gGameplayInfo.paletteBuffer, D_03004b10.bgPalette, sizeof(D_03004b10.bgPalette) + sizeof(D_03004b10.objPalette), 0x20, 0x200);
+}
+
+
+// [func_08018344] Open Pause Menu
+void func_08018344(void) {
+    gGameplayInfo.unpausing = FALSE;
+    gGameplayInfo.currentPauseOption = PAUSE_OPTION_CONTINUE;
+    func_0804cebc(D_03005380, gGameplayInfo.pauseSprite, 0);
+    func_0804d8f8(D_03005380, gGameplayInfo.pauseOptionsSprite, D_0890ab88, 0, 1, 0, 0);
+    func_0804d770(D_03005380, gGameplayInfo.pauseSprite, TRUE);
+    func_0804d770(D_03005380, gGameplayInfo.pauseOptionsSprite, TRUE);
+    func_080182b8();
+    func_08002634(&s_f_pause_on_seqData);
+}
+
+
+// [func_080183c8] Update Pause Menu
+s32 func_080183c8(void) {
+    if (!gGameplayInfo.unpausing) {
+        if (D_03004afc & DPAD_LEFT) {
+            gGameplayInfo.currentPauseOption = PAUSE_OPTION_CONTINUE;
+            func_0804d8f8(D_03005380, gGameplayInfo.pauseOptionsSprite, D_0890ab88, 0, 1, 0, 0);
+            func_08002634(&s_f_pause_cursor_seqData);
+        }
+        if (D_03004afc & DPAD_RIGHT) {
+            gGameplayInfo.currentPauseOption = PAUSE_OPTION_QUIT;
+            func_0804d8f8(D_03005380, gGameplayInfo.pauseOptionsSprite, D_0890abb0, 0, 1, 0, 0);
+            func_08002634(&s_f_pause_cursor_seqData);
+        }
+        if (D_03004afc & A_BUTTON) {
+            func_0804d770(D_03005380, gGameplayInfo.pauseSprite, FALSE);
+            func_0804d770(D_03005380, gGameplayInfo.pauseOptionsSprite, FALSE);
+            if (gGameplayInfo.currentPauseOption == PAUSE_OPTION_CONTINUE) {
+                gGameplayInfo.unpausing = TRUE;
+                func_08002634(&s_f_pause_continue_seqData);
+                return 0;
+            } else {
+                gGameplayInfo.perfectFailed = TRUE;
+                func_08000584(D_03001328);
+                return 2;
+            }
+        }
+        if (D_03004afc & (B_BUTTON | START_BUTTON)) {
+            func_0804d770(D_03005380, gGameplayInfo.pauseSprite, FALSE);
+            func_0804d770(D_03005380, gGameplayInfo.pauseOptionsSprite, FALSE);
+            gGameplayInfo.unpausing = TRUE;
+            func_08002634(&s_f_pause_continue_seqData);
+            return 0;
+        }
+        return 0;
+    }
+
+    if (D_03004ac0 & (A_BUTTON | B_BUTTON | START_BUTTON)) {
+        return 0;
+    }
+
+    func_08018318();
+    D_03004b00 = 0;
+    return 1;
+}
+
+
+// [func_08018524] Initialise Pause Handler
+void func_08018524(void) {
+    func_0801daf8(&D_089cfde0);
+    func_0801db04(FALSE); // Disable Pause Menu
+}
+
 
 #include "asm/gameplay/asm_0801853c.s"
 
@@ -963,7 +1128,7 @@ void func_08018660(char *text) {
 
 // [func_0801875c] Update Text
 void func_0801875c(void) {
-    if (gGameplayInfo.unk7C) return;
+    if (gGameplayInfo.skippingTutorial) return;
 
     func_0800a914(gGameplayInfo.unk498);
 

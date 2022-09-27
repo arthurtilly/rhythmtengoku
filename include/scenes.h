@@ -61,18 +61,18 @@ struct GameplayInfo {
     s8 lastCueInputOffset; // Most Recent Input Timing Offset (how early/late the most recent input was)
 	u8 currentMarkingCriteria; // Current Marking Criteria
 	u8 isTutorial;
-	u8 unk7C;
-	const struct Scene *skipDestination; // Skip Tutorial destination scene
+	u8 skippingTutorial; // Currently changing scenes.
+	struct Scene *skipDestination; // Skip Tutorial destination scene
 	u16 fadeInTicks; // Remaining ticks for screen fade-in?
     u16 nextCueDuration;
     u16 unk88;
     u16 unk8A;
     s16 pauseSprite;
     s16 pauseOptionsSprite;
-    u8 unk90;
-    u8 unk91;
+    u8 unpausing; // Pause Menu is currently being exited.
+    u8 currentPauseOption;
     u16 unk92;
-    u16 unk94[0x200]; // ...
+    u16 paletteBuffer[0x200]; // Palette Buffer
     s16 skipTutorialSprite;
     s16 aButtonSprite;
     void *unk498; // text manager or font or something
@@ -90,16 +90,10 @@ struct GameplayInfo {
     s8  latenessRangeMin; // Input Timing Window Duration - Late, Min.
     s8  earlinessRangeMin; // Input Timing Window Duration - Early, Min.
     s8  latenessRangeMax; // Input Timing Window Duration - Late, Max.
-    u16 unk4AE;
+    u16 sfxTempo; // Assumed original tempo of any sound effect played.
     u16 skipTutorialButton; // Button filter for skipping tutorials.
-    u32 unk4B4;
-    u32 unk4B8;
-    u32 unk4BC;
-    u32 unk4C0[16];
-    u32 unk500[32];
-    u32 unk580[8];
-    u32 unk5A0[4];
-    u32 unk5B0;
+    u16 unk4B2;
+    u16 unk4B4[0x80];
     u8  unk5B4;
     u8  unk5B5;
     u8  unk5B6;

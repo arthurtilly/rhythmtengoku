@@ -127,7 +127,7 @@ extern u32 func_08005878(struct unk_struct_08005858 *arg0);
 // extern ? func_08005d74(?);
 // extern ? func_08005db0(?);
 extern void func_08005de4(u16);
-// extern ? func_08005e18(?);
+extern void func_08005e18(u16, u32);
 // extern ? func_08005e54(?);
 // extern ? func_08005ee4(?);
 // extern ? func_08005f04(?);

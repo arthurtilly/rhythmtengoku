@@ -6,23 +6,30 @@
 
 extern const struct SequenceData s_f_send_mes_seqData;
 extern const struct SequenceData s_f_fail_perfect_seqData;
+extern const struct SequenceData s_f_pause_on_seqData;
+extern const struct SequenceData s_f_pause_cursor_seqData;
+extern const struct SequenceData s_f_pause_continue_seqData;
 
+extern const struct Animation D_0890ab88[]; // Pause Menu Options (Continue)
+extern const struct Animation D_0890abb0[]; // Pause Menu Options (Quit)
 extern const struct Animation D_0890aca0[]; // Fail Perfect
-extern const struct Animation D_0890ad60[0]; // Perfect Input
+extern const struct Animation D_0890ad60[]; // Perfect Input
 
 extern u32 D_089cfd7c[]; // Common Gameplay Graphics/Palettes (Pause Menu, etc.)
+extern u32 D_089cfda0[]; // GFX Null..?
+extern struct struct_030055e0_sub D_089cfde0; // Pause Handler..?
 
 /* AUDIO */
-// extern ? func_08016e04(?); // [func_08016e04] Set Sound Effect Speed (124 = to tempo)
-// extern ? func_08016e18(?); // sound-related
-// extern ? func_08016e54(?); // sound-related
-// extern ? func_08016e64(?); // sound-related
-// extern ? func_08016e74(?); // sound-related
-// extern ? func_08016e84(?); // sound-related
+extern void func_08016e04(u32 tempo); // [func_08016e04] Set Sound Effect Original Tempo
+extern struct SoundPlayer *func_08016e18(struct SoundPlayer *player); // [func_08016e18] Match SoundPlayer to Current Tempo
+extern struct SoundPlayer *func_08016e54(const struct SequenceData *sfx); // [func_08016e54] Play Sound
+extern struct SoundPlayer *func_08016e64(u32 player, const struct SequenceData *sfx); // [func_08016e64] Play Sound
+extern struct SoundPlayer *func_08016e74(const struct SequenceData *sfx, u32 volume, u32 pitch); // [func_08016e74] Play Sound
+extern struct SoundPlayer *func_08016e84(u32 player, const struct SequenceData *sfx, u32 volume, s32 pitch); // [func_08016e84] Play Sound
 
 /* SCENE */
 extern void func_08016e94(void); // [func_08016e94] Initialise Static Variables
-// extern ? func_08016ea4(?); // [func_08016ea4] Graphics Init. 0
+extern void func_08016ea4(void); // [func_08016ea4] Graphics Init. 0
 extern void func_08016ec4(s32 arg); // [func_08016ec4] Scene Init.
 extern void func_08016ffc(s32 arg); // [func_08016ffc] Scene STUB
 extern void func_08017000(s32 arg); // [func_08016ffc] Scene Main
@@ -44,11 +51,11 @@ extern void func_080173f4(const struct SequenceData *sfx); // [func_080173f4] Se
 extern void func_08017400(const struct SequenceData *sfx); // [func_08017400] Set Next Cue Miss SFX
 // extern ? func_0801740c(?);
 extern void func_08017448(u32 isTutorial); // [func_08017448] Set isTutorial
-extern void func_08017458(const struct Scene *scene); // [func_08017458] Set skipDestination
+extern void func_08017458(struct Scene *scene); // [func_08017458] Set skipDestination
 extern void func_08017468(u32 buttons); // [func_08017468] Set Skip Tutorial Button
-extern void func_0801747c(const struct Scene *scene); // [func_0801747c] Set Skip Destination (i.e. if Select is pressed in a tutorial)
+extern void func_0801747c(struct Scene *scene); // [func_0801747c] Set Skip Destination (i.e. if Select is pressed in a tutorial)
 extern void func_080174e8(u32 corner); // [func_080174e8] Display Skip Tutorial Icon
-// extern ? func_08017514(?); // [func_08017514] Skip Tutorial
+extern void func_08017514(void); // [func_08017514] Skip Tutorial
 extern void func_08017568(u32 duration); // [func_08017568] Set Screen Fade-In
 extern void func_08017578(void); // [func_08017578] Fade-In Screen
 extern void func_080175a0(u32 count); // [func_080175a0] Set unk8A
@@ -67,7 +74,7 @@ extern s32  func_08017728(const struct GameEngine *engine, u32 function, s32 par
 // extern ? func_080177a4(?); // [func_080177a4] Set (unk5B4 = arg) and (unk5B5 = 1)
 // extern ? func_080177c8(?);
 // extern ? func_080177dc(?); // [func_080177dc] Set unk5B8
-// extern ? func_080177f0(?); // [func_080177f0] Scene Close
+extern void func_080177f0(s32 arg); // [func_080177f0] Scene Close
 
 /* CUES */
 extern void func_080178ac(void); // [func_080178ac] Reset All Cue Data
@@ -112,11 +119,11 @@ extern void func_08018114(u32 duration); // [func_08018114] Set Next Cue Duratio
 /* VIDEO */
 // extern ? func_08018154(?); // [func_08018154] Initialise Common Graphics (Perfect Campaign, etc.)
 extern void func_080182ac(struct Scene *scene); // [func_080182ac] Set D_03001328
-// extern ? func_080182b8(?);
-// extern ? func_08018318(?);
-// extern ? func_08018344(?);
-// extern ? func_080183c8(?);
-// extern ? func_08018524(?);
+extern void func_080182b8(void); // [func_080182b8] Screen Darken (Pause)
+extern void func_08018318(void); // [func_08018318] Screen Lighten (Unpause)
+extern void func_08018344(void); // [func_08018344] Open Pause Menu
+extern s32  func_080183c8(void); // [func_080183c8] Update Pause Menu
+extern void func_08018524(void); // [func_08018524] Initialise Pause Handler
 // extern ? func_0801853c(?); // [func_0801853c] Set Text Advance Buttons
 // extern ? func_0801858c(?);
 extern void func_080185d0(s16 x, s16 y, s32 show); // [func_080185d0] Display A Button Prompt

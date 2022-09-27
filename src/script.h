@@ -6,8 +6,8 @@
 extern void func_0801d860(u32);
 extern void func_0801d86c(u32); // [func_0801d86c] Script Init.
 extern u32 func_0801d8d8(void); // [func_0801d8d8] Script Main
-extern void func_0801d95c(u32);
-extern void func_0801d968(u32);
+extern void func_0801d95c(const struct BeatScript *);
+extern void func_0801d968(const struct BeatScript *);
 extern void func_0801d978(void);
 extern void func_0801d98c(void);
 extern void func_0801d9cc(void);
