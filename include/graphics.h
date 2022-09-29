@@ -79,6 +79,11 @@ struct struct_03004b10 {
     u16 bgPalette[16][16];   // BG Palette Buffer, 03004b64, 0x54
     u16 objPalette[16][16];  // OBJ Palette Buffer, 03004d64, 0x254
     u32 unk454[0x100];   // OAM Buffer, 03004f64
+    u16 unk854_0:1; // ???
+    u16 unk854_1:1;
+    u16 unk854_2:1;
+    u16 unk854_3:1;
+    u16 unk854_4:1;
 };
 
 extern struct struct_03004b10 D_03004b10;

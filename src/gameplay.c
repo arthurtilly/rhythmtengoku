@@ -347,7 +347,7 @@ void func_08017514(void) {
     func_08005e18(func_0800c3b8(), 1);
     func_0800bd04(0);
     func_0801d968(D_089cfda4);
-    func_0801db04(0);
+    func_0801db04(FALSE);
     gGameplayInfo.skippingTutorial = TRUE;
 }
 
@@ -1057,11 +1057,11 @@ s32 func_080183c8(void) {
             if (gGameplayInfo.currentPauseOption == PAUSE_OPTION_CONTINUE) {
                 gGameplayInfo.unpausing = TRUE;
                 func_08002634(&s_f_pause_continue_seqData);
-                return 0;
+                return PAUSE_MENU_SELECTION_PENDING;
             } else {
                 gGameplayInfo.perfectFailed = TRUE;
                 func_08000584(D_03001328);
-                return 2;
+                return PAUSE_MENU_SELECTION_QUIT;
             }
         }
         if (D_03004afc & (B_BUTTON | START_BUTTON)) {
@@ -1069,18 +1069,18 @@ s32 func_080183c8(void) {
             func_0804d770(D_03005380, gGameplayInfo.pauseOptionsSprite, FALSE);
             gGameplayInfo.unpausing = TRUE;
             func_08002634(&s_f_pause_continue_seqData);
-            return 0;
+            return PAUSE_MENU_SELECTION_PENDING;
         }
-        return 0;
+        return PAUSE_MENU_SELECTION_PENDING;
     }
 
     if (D_03004ac0 & (A_BUTTON | B_BUTTON | START_BUTTON)) {
-        return 0;
+        return PAUSE_MENU_SELECTION_PENDING;
     }
 
     func_08018318();
     D_03004b00 = 0;
-    return 1;
+    return PAUSE_MENU_SELECTION_CONTINUE;
 }
 
 

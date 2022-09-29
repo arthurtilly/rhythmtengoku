@@ -5,17 +5,19 @@
 
 extern void func_0801d860(u32);
 extern void func_0801d86c(u32); // [func_0801d86c] Script Init.
-extern u32 func_0801d8d8(void); // [func_0801d8d8] Script Main
+extern u32  func_0801d8d8(void); // [func_0801d8d8] Script Main
 extern void func_0801d95c(const struct BeatScript *);
 extern void func_0801d968(const struct BeatScript *);
 extern void func_0801d978(void);
 extern void func_0801d98c(void);
-extern void func_0801d9cc(void);
-// extern ? func_0801d9d0(?);
-// extern ? func_0801da48(?);
-// extern ? func_0801dabc(?);
-// extern ? func_0801daf8(?);
-// extern ? func_0801db04(?); // [func_0801db04] Enable Pause Menu
+extern u32  func_0801d9cc(void);
+
+extern u32  func_0801d9d0(void); // [func_0801d9d0] Update Pause Menu (State: Play)
+extern void func_0801da48(void); // [func_0801da48] Update Pause Menu (State: Pause)
+extern u32  func_0801dabc(void); // [func_0801dabc] Update Pause Menu (State: Stop)
+extern void func_0801daf8(const struct PauseHandlerDefinition *data); // [func_0801daf8] Set Pause Handler Definition
+extern void func_0801db04(u32 enable); // [func_0801db04] Enable Pause Menu
+
 // extern ? func_0801db1c(?);
 // extern ? func_0801db74(?);
 // extern ? func_0801dbe8(?);
@@ -28,6 +30,6 @@ extern void func_0801d9cc(void);
 // extern ? func_0801dec4(?);
 // extern ? func_0801decc(?);
 // extern ? func_0801ded4(?);
-// extern ? func_0801dedc(?);
-// extern ? func_0801def4(?);
-// extern ? func_0801df1c(?);
+// extern ? func_0801dedc(?); // D_089dd97c - Close
+// extern ? func_0801def4(?); // D_089dd97c - Init.
+// extern ? func_0801df1c(?); // D_089dd97c - Update

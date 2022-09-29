@@ -1,4 +1,5 @@
 #include "script.h"
+#include "code_08001360.h"
 #include "code_08003980.h"
 #include "lib_0804c870.h"
 
@@ -9,20 +10,23 @@ static u8 D_0300155d; // unused
 static u8 D_0300155e; // unused
 static u8 D_0300155f; // unused
 
-// SCRIPT
+
+/* SCRIPT HANDLING */
+
 
 void func_0801d860(u32 arg0) {
 	D_0300155c = arg0;
 }
 
+
 // Global BeatScript initialization
 void func_0801d86c(u32 arg0) {
     u32 temp[4];
 
-    D_030055e0.unk0 = 0;
-    D_030055e0.unk1_1 = 0;
-    D_030055e0.unk1_2 = 0;
-    D_030055e0.unk4 = 0;
+    D_030055e0.state = PAUSE_STATE_PLAY;
+    D_030055e0.enabled = FALSE;
+    D_030055e0.hasBeenUsed = FALSE;
+    D_030055e0.data = NULL;
     if (D_0300155c) {
         func_08006d80();
     }
@@ -38,61 +42,75 @@ void func_0801d86c(u32 arg0) {
     func_0800b834(&temp);
 }
 
+
 // Global BeatScript loop
 u32 func_0801d8d8(void) {
     func_08006e88();
     func_08003fb4();
-    if (D_030055e0.unk1_2) {
+    if (D_030055e0.hasBeenUsed) {
         func_0800b974();
     }
     func_08005ad4();
     func_08005a84();
-    switch(D_030055e0.unk0) {
-        case 0:
+
+    /* Pause Handling */
+    switch (D_030055e0.state) {
+        case PAUSE_STATE_PLAY:
+            /* Attempt to open a pause screen. */
             if (func_0801d9d0()) {
                 break;
             }
+            /* If unsuccessful... */
             func_0800b9fc();
             if (!func_0800bc14()) {
                 break;
             }
             func_0801d98c();
-            return 1;
-        case 1:
+            return TRUE;
+
+        case PAUSE_STATE_PAUSE:
+            /* Update the active pause screen. */
             func_0801da48();
-            if (D_030055e0.unk0) {
+            if (D_030055e0.state != PAUSE_STATE_PLAY) {
                 break;
             }
+            /* If a "Continue" option was selected... */
             func_0800b9fc();
             if (!func_0800bc14()) {
                 break;
             }
             func_0801d98c();
-            return 1;
-        case 2:
+            return TRUE;
+
+        case PAUSE_STATE_STOP:
             if (!func_0801dabc()) {
                 break;
             }
-            return 1;
+            return TRUE;
     }
+
     func_08007410();
     func_08006f84();
     func_080042a4();
-    return 0;
+    return FALSE;
 }
+
 
 void func_0801d95c(const struct BeatScript *script) {
 	D_030053c0.beatScript = script;
 }
+
 
 void func_0801d968(const struct BeatScript *script) {
 	D_030053c0.beatScript = script;
 	D_030053c0.unk34 = 0;
 }
 
+
 void func_0801d978(void) {
 	D_030053c0.unk28_2 = 0;
 }
+
 
 void func_0801d98c(void) {
     u32 i;
@@ -109,20 +127,85 @@ void func_0801d98c(void) {
     }
 }
 
-void func_0801d9cc(void) {
+
+u32 func_0801d9cc(void) {
 }
 
-// Pausing stuff
 
-#include "asm/script/asm_0801d9d0.s"
+// [func_0801d9d0] Update Pause Menu (State: Play)
+u32 func_0801d9d0(void) {
+    u32 i;
 
-#include "asm/script/asm_0801da48.s"
+    if (!D_030055e0.enabled
+     || D_030055e0.data == NULL
+     || (D_03004afc & D_030055e0.data->pauseButton) != D_030055e0.data->pauseButton) {
+        return FALSE;
+    }
 
-#include "asm/script/asm_0801dabc.s"
+    func_08002880(TRUE); // Pause Sound
+    func_0804e1bc(D_03005380, 1); // Pause Sprites..?
+    for (i = 0; i < 2;) { // idk might be related to font/text
+        i++;
+        func_08005e18(i, 1);
+    }
 
-#include "asm/script/asm_0801daf8.s"
+    if (D_030055e0.data->onPause != NULL) {
+        D_030055e0.data->onPause();
+    }
+    D_030055e0.state = PAUSE_STATE_PAUSE;
+    D_030055e0.hasBeenUsed = TRUE;
+    return TRUE;
+}
 
-#include "asm/script/asm_0801db04.s"
+
+// [func_0801da48] Update Pause Menu (State: Pause)
+void func_0801da48(void) {
+    u32 i;
+
+    switch (D_030055e0.data->update()) {
+        case PAUSE_MENU_SELECTION_CONTINUE:
+            func_08002880(FALSE); // Unpause Sound
+            func_0804e1bc(D_03005380, 0); // Unpause Sprites..?
+            for (i = 0; i < 2;) { // font? text?
+                i++;
+                func_08005e18(i, 0);
+            }
+            D_030055e0.state = PAUSE_STATE_PLAY;
+            break;
+
+        case PAUSE_MENU_SELECTION_QUIT:
+            func_080070c4(0x20, 0);
+            func_08002880(FALSE); // Unpause Sound
+            func_08002838(); // Fade-Out & Stop Sound
+            func_08002634(D_030055e0.data->quitSfx);
+            D_030055e0.state = PAUSE_STATE_STOP;
+            break;
+    }
+}
+
+
+// [func_0801dabc] Update Pause Menu (State: Stop)
+u32 func_0801dabc(void) {
+    if (!D_03004b10.unk854_3) return FALSE;
+
+    func_08002828(D_030053c0.musicPlayer); // Stop Music
+    func_08005ce0(0);
+    func_0800bd2c();
+    return TRUE;
+}
+
+
+// [func_0801daf8] Set Pause Handler Definition
+void func_0801daf8(const struct PauseHandlerDefinition *data) {
+    D_030055e0.data = data;
+}
+
+
+// [func_0801db04] Enable Pause Menu
+void func_0801db04(u32 enable) {
+    D_030055e0.enabled = enable;
+}
+
 
 // ??? (debug related?)
 

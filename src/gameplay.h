@@ -10,14 +10,20 @@ extern const struct SequenceData s_f_pause_on_seqData;
 extern const struct SequenceData s_f_pause_cursor_seqData;
 extern const struct SequenceData s_f_pause_continue_seqData;
 
+extern const struct Animation D_0890ab28[]; // Pause Menu Title
 extern const struct Animation D_0890ab88[]; // Pause Menu Options (Continue)
 extern const struct Animation D_0890abb0[]; // Pause Menu Options (Quit)
+extern const struct Animation D_0890abd8[]; // Skip Tutorial ("Select to Skip")
+extern const struct Animation D_0890ac00[]; // Black A Button Prompt
+extern const struct Animation D_0890ac20[]; // White A Button Prompt
+extern const struct Animation D_0890ac40[]; // Go For A Perfect!
 extern const struct Animation D_0890aca0[]; // Fail Perfect
 extern const struct Animation D_0890ad60[]; // Perfect Input
 
 extern u32 D_089cfd7c[]; // Common Gameplay Graphics/Palettes (Pause Menu, etc.)
 extern u32 D_089cfda0[]; // GFX Null..?
-extern struct struct_030055e0_sub D_089cfde0; // Pause Handler..?
+extern const struct PauseHandlerDefinition D_089cfde0; // Pause Handler Definition
+extern const struct Animation *D_089cfdf0[2]; // A Button Prompt Animations { 0 = Black; 1 = White }
 
 /* AUDIO */
 extern void func_08016e04(u32 tempo); // [func_08016e04] Set Sound Effect Original Tempo

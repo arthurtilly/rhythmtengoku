@@ -3,7 +3,7 @@
 
 #include "game_overlay_anim_cells.inc.c"
 
-// [D_0890ab28] <description>
+// [D_0890ab28] Pause Menu Title
 const struct Animation game_overlay_anim00[] = {
     /* 000 */ { game_overlay_cel001, 3 },
     /* 001 */ { game_overlay_cel002, 3 },
@@ -19,7 +19,7 @@ const struct Animation game_overlay_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890ab88] <description>
+// [D_0890ab88] Pause Menu Options ("Continue" Selected)
 const struct Animation game_overlay_anim01[] = {
     /* 000 */ { game_overlay_cel011, 3 },
     /* 001 */ { game_overlay_cel012, 9 },
@@ -28,7 +28,7 @@ const struct Animation game_overlay_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890abb0] <description>
+// [D_0890abb0] Pause Menu Options ("Quit" Selected)
 const struct Animation game_overlay_anim02[] = {
     /* 000 */ { game_overlay_cel014, 3 },
     /* 001 */ { game_overlay_cel015, 9 },
@@ -37,7 +37,7 @@ const struct Animation game_overlay_anim02[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890abd8] <description>
+// [D_0890abd8] Skip Tutorial ("Select to Skip")
 const struct Animation game_overlay_anim03[] = {
     /* 000 */ { game_overlay_cel017, 40 },
     /* 001 */ { game_overlay_cel018, 40 },
@@ -46,7 +46,7 @@ const struct Animation game_overlay_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890ac00] <description>
+// [D_0890ac00] A Button Prompt (Black)
 const struct Animation game_overlay_anim04[] = {
     /* 000 */ { game_overlay_cel022, 3 },
     /* 001 */ { game_overlay_cel023, 3 },
@@ -54,7 +54,7 @@ const struct Animation game_overlay_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890ac20] <description>
+// [D_0890ac20] A Button Prompt (White)
 const struct Animation game_overlay_anim05[] = {
     /* 000 */ { game_overlay_cel025, 3 },
     /* 001 */ { game_overlay_cel026, 3 },
@@ -62,7 +62,7 @@ const struct Animation game_overlay_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890ac40] <description>
+// [D_0890ac40] Go For A Perfect!
 const struct Animation game_overlay_anim06[] = {
     /* 000 */ { game_overlay_cel029, 40 },
     /* 001 */ { game_overlay_cel028, 20 },
@@ -78,7 +78,7 @@ const struct Animation game_overlay_anim06[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890aca0] <description>
+// [D_0890aca0] Fail Perfect
 const struct Animation game_overlay_anim07[] = {
     /* 000 */ { game_overlay_cel036, 2 },
     /* 001 */ { game_overlay_cel037, 20 },
@@ -106,7 +106,7 @@ const struct Animation game_overlay_anim07[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890ad60] <description>
+// [D_0890ad60] Perfect Input
 const struct Animation game_overlay_anim08[] = {
     /* 000 */ { game_overlay_cel030, 1 },
     /* 001 */ { game_overlay_cel031, 2 },

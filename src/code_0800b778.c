@@ -83,7 +83,7 @@ static s32 D_03001310[2]; // unknown type
 void func_0800c0f8(u16 selection, u16 volume) {
     D_030053c0.unk192 = volume;
     D_030053c0.unk194 = selection;
-    func_08002934(D_030053c0.unk4, selection, volume);
+    func_08002934(D_030053c0.musicPlayer, selection, volume);
 }
 
 #include "asm/code_0800b778/asm_0800c128.s"

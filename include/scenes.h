@@ -38,7 +38,7 @@ struct GameplayInfo {
 	s32 unk0;
 	s32 unk4;
 	u8 playInputsEnabled; // A, B, +, L, R
-	u8 unk9;
+	u8 unk9; // Register inputs with no relevant cue.
     u16 buttonPressFilter;
 	u16 buttonReleaseFilter;
 	s16 unkE;

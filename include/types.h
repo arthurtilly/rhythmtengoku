@@ -4,10 +4,14 @@
 struct BeatScript {
 };
 
-// Null = "Data Not Used YET"
+struct SoundPlayer;
+
+// BeatScript Handler
+// Null = "Data Not Known to be Used YET"
+
 struct struct_030053c0 {
     u32 null0;
-    u32 unk4;      // [D_030053c4] ??
+    struct SoundPlayer *musicPlayer; // [D_030053c4] Music Player
     u32 null8;
     u16 unkC;      // [D_030053cc] ??
     u16 nullE;
@@ -52,26 +56,41 @@ struct struct_030053c0 {
     u32 unk1C4;
 };
 
-typedef void (*struct_030055e0_func)(void);
-typedef u32 (*struct_030055e0_func_1)(void);
 
-struct struct_030055e0_sub {
-    u16 unk0;
-    struct_030055e0_func unk4;
-    struct_030055e0_func_1 unk8;
-    u32 unkC;
+
+enum PauseHandlerState {
+    PAUSE_STATE_PLAY,
+    PAUSE_STATE_PAUSE,
+    PAUSE_STATE_STOP
 };
 
-struct struct_030055e0 {
-    u8 unk0;
-    u8 unk1_1:1;
-    u8 unk1_2:1;
-    struct struct_030055e0_sub *unk4;
+enum PauseMenuSelectedOption {
+    PAUSE_MENU_SELECTION_PENDING,
+    PAUSE_MENU_SELECTION_CONTINUE,
+    PAUSE_MENU_SELECTION_QUIT
 };
+
+typedef void (*PauseMenuInitFunc)(void);
+typedef u32 (*PauseMenuUpdateFunc)(void);
+
+struct PauseHandlerDefinition {
+    u16 pauseButton;
+    PauseMenuInitFunc onPause;
+    PauseMenuUpdateFunc update;
+    const struct SequenceData *quitSfx;
+};
+
+struct PauseHandler {
+    u8 state;
+    u8 enabled:1;
+    u8 hasBeenUsed:1;
+    const struct PauseHandlerDefinition *data;
+};
+
 
 
 extern struct struct_030053c0 D_030053c0;
-extern struct struct_030055e0 D_030055e0;
+extern struct PauseHandler D_030055e0;
 extern s16 gSineTable[];
 extern s16 D_08935fcc[];
 extern s16 D_089361cc[];

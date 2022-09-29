@@ -98,10 +98,10 @@ extern struct SoundPlayer *func_080026c4(u32 player, const struct SequenceData *
 // extern ? func_0800274c(?); // Mute All Players Playing the Given Sound
 // extern ? func_08002794(?);
 // extern ? func_080027dc(?);
-// extern ? func_08002828(?);
-// extern ? func_08002838(?);
+extern void func_08002828(struct SoundPlayer *player); // Stop Player
+// extern ? func_08002838(?); // Stop All Players
 // extern ? func_08002868(?);
-// extern ? func_08002880(?);
+extern void func_08002880(u32 pause); // Pause All Players
 extern void func_08002894(struct SoundPlayer *player, u16 speed); // Set Player Speed Envelope
 extern void func_080028a8(struct SoundPlayer *player, s16 pitch); // Set Player Pitch Envelope
 // extern ? func_080028c4(?); // Fade-In Player for Given Duration
