@@ -24,13 +24,80 @@ struct MainMenuInfo {
 
 // Game Select Scene Info
 struct GameSelectInfo {
-    s32 null0;
-    s32 null4;
-    s32 null8;
-    s16 unkC;
-    s16 unkE;
-    u8 unk10;
-    u8 unk11;
+    u8 unk0;
+    u32 unk4;
+    s32 unk8_b0:1;
+    s32 unk8_b1:1;
+    u16 unkA;
+    s16 selectionBorderSprite;
+    s16 cursorSprite;
+    s8 cursorX; // { 1..9 }
+    s8 cursorY; // { 6..11 }
+    s16 stageTitleSprite;
+    s16 stageTitleBoxSprite;
+    u16 unk16;
+    u16 unk18;
+    u16 unk1A;
+    u32 null1C;
+    u32 null20;
+    u32 null24;
+    u32 null28;
+    u32 null2C;
+    u32 null30;
+    u32 null34;
+    u32 null38;
+    u32 null3C;
+    u32 null40;
+    u32 null44;
+    u32 null48;
+    u16 null4C;
+    u8 unk4E;
+    u16 unk50;
+    u16 unk52;
+    u16 unk54;
+    u16 unk56;
+    u32 null58;
+    u8 unk5C;
+    u16 unk5E;
+    u16 unk60;
+    u16 unk62;
+    u16 unk64;
+    u16 null66;
+    u16 null68;
+    s16 boxSprites[50];
+    struct {
+        s16 x;
+        s16 y;
+    } boxVectors[50];
+    void *null198;
+    void *null19C;
+    u32 null1A0[24];
+    u32 null200[52];
+    u32 null2D0;
+    u32 null2D4;
+    u8 unk2D8;
+    u8 unk2D9;
+    u8 unk2DA;
+    u8 unk2DB;
+    u8 unk2DC;
+    u32 null2E0[8];
+    u32 null300[8];
+    u8 unk320;
+    u32 null324;
+    u32 null328;
+    u32 null32C;
+    u32 null330[4];
+    u8 unk340;
+    u32 null344;
+    u32 null348;
+    u32 null34C;
+    u32 null350[44];
+    u32 null400[60];
+    u32 null4F0;
+    u8 unk4F4;
+    u8 unk4F5;
+    u8 unk4F6;
+    u16 unk4F8;
 };
 
 // Gameplay Scene Info
