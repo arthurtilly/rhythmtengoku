@@ -38,16 +38,24 @@ struct GameSelectInfo {
     u16 unk16;
     u16 unk18;
     u16 unk1A;
-    u32 null1C;
-    u32 null20;
-    u32 null24;
-    u32 null28;
-    u32 null2C;
-    u32 null30;
-    u32 null34;
-    u32 null38;
-    u32 null3C;
-    u32 null40;
+    struct GameSelectUnk1C {
+        u8 unk0;
+        u8 unk1;
+        u8 unk2;
+        u8 unk3;
+        u8 unk4;
+        u8 unk5;
+        u8 unk6;
+        u16 unk8;
+        u16 unkA;
+    } unk1C[2];
+    u16 unk34;
+    u32 unk38; // another pointer
+    u16 unk3C;
+    u8 unk3E;
+    u8 null3F;
+    u8 null40;
+    u8 unk41;
     u32 null44;
     u32 null48;
     u16 null4C;
@@ -64,17 +72,21 @@ struct GameSelectInfo {
     u16 unk64;
     u16 null66;
     u16 null68;
-    s16 boxSprites[50];
-    struct {
+    s16 squareSprites[50];
+    struct GameSelectSquareVector {
         s16 x;
         s16 y;
-    } boxVectors[50];
-    void *null198;
-    void *null19C;
-    u32 null1A0[24];
-    u32 null200[52];
-    u32 null2D0;
-    u32 null2D4;
+    } squareVectors[50];
+    struct GameSelectUnk198 {
+        u8 unk0;
+        u32 unk4;
+        u32 unk8;
+        u32 unkC;
+        u32 unk10;
+        u32 unk14;
+        u32 unk18;
+        u32 unk1C;
+    } unk198[10];
     u8 unk2D8;
     u8 unk2D9;
     u8 unk2DA;
@@ -87,17 +99,33 @@ struct GameSelectInfo {
     u32 null328;
     u32 null32C;
     u32 null330[4];
-    u8 unk340;
-    u32 null344;
-    u32 null348;
-    u32 null34C;
-    u32 null350[44];
-    u32 null400[60];
+    struct PerfectCampaignNotice {
+        u8 unk0;
+        s8 unk1;
+        s16 unk2;
+        s16 unk4;
+        s16 perfectBorderSprite;
+        u32 unk8;
+        u32 unkC; // pointer
+        s16 aButtonSprite;
+    } perfectCampaignNotice;
+    u32 null354;
+    u32 null358;
+    u32 null35C;
+    u32 null360[40];
+    u32 null400[56];
+    u32 null4E0;
+    u32 null4E4;
+    s16 medalsTextSprite;
+    s16 medalsNumSprite1;
+    s16 medalsNumSprite2;
+    u16 unk4EE;
     u32 null4F0;
     u8 unk4F4;
     u8 unk4F5;
     u8 unk4F6;
     u16 unk4F8;
+    s16 perfectClearedSprite;
 };
 
 // Gameplay Scene Info

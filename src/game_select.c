@@ -3,6 +3,7 @@
 #include "code_08001360.h"
 #include "code_08003980.h"
 #include "code_08007468.h"
+#include "code_080092cc.h"
 #include "code_0800b778.h"
 #include "lib_0804c870.h"
 
@@ -39,7 +40,60 @@ extern struct Scene D_089cdf08; // Game Select
 
 #include "asm/game_select/asm_080129e8.s"
 
-#include "asm/game_select/asm_08012a58.s"
+
+// Initialise Perfect Campaign Notice
+void func_08012a58(void) {
+    struct PerfectCampaignNotice *notice;
+    s16 *vector;
+    u32 temp;
+    u8 *temp2;
+
+    notice = &gGameSelectInfo.perfectCampaignNotice;
+    vector = &D_03004b10.bgOffset[BG_LAYER_1].horizontal;
+
+    notice->perfectBorderSprite = func_0804d160(D_03005380, D_08902c10, 0, 48, 72, 0x8878, 1, 0, 0x8000);
+    func_080140f8(notice->perfectBorderSprite);
+    notice->aButtonSprite = func_0804d160(D_03005380, D_08902c30, 0, 64, 64, 0x800, 1, 0, 0x8000);
+    func_0804db44(D_03005380, notice->aButtonSprite, &vector[0], &vector[1]);
+    notice->unkC = func_0800a204((u16) func_0800c3b8(), 4, 120, 26);
+    func_0800ac68(notice->unkC, 104, 320);
+    func_0800aca0(notice->unkC, 0x800);
+    func_0800acbc(notice->unkC, 0);
+    func_0800acb0(notice->unkC, 1);
+    func_0800ae00(notice->unkC, 16);
+    func_0800acd8(notice->unkC, 1);
+    func_0800ad98(notice->unkC, &vector[0], &vector[1]);
+    notice->unk0 = 0;
+    notice->unk1 = -1;
+    switch (D_030046a8->unk10[0x266]) {
+        case 0:
+            func_08012928();
+            if (D_030046a8->unk10[0x266] != 1) break;
+        case 1:
+            func_080129e8();
+            break;
+        case 2:
+            if ((D_030046a8->unk10[0x267] != 0) && (D_030046a8->unk10[0x26A] < 3)) {
+                temp = D_030046a8->unk10[0x269];
+                temp2 = &D_030046a8->unk10[0x236];
+                if (temp2[temp] == 0) {
+                    notice->unk1 = temp;
+                    notice->unk2 = D_089cdf24[notice->unk1].unk0;
+                    notice->unk4 = D_089cdf24[notice->unk1].unk1;
+                    func_08012fcc(notice->unk2, notice->unk4);
+                    break;
+                }
+            }
+            D_030046a8->unk10[0x266] = 0;
+            func_08012928();
+            if (D_030046a8->unk10[0x266] == 1) {
+                func_080129e8();
+            }
+            break;
+    }
+    func_08012850();
+}
+
 
 #include "asm/game_select/asm_08012c24.s"
 
@@ -73,11 +127,36 @@ extern struct Scene D_089cdf08; // Game Select
 
 #include "asm/game_select/asm_080131e8.s"
 
-#include "asm/game_select/asm_0801332c.s"
+
+// calculate something
+void func_0801332c(s32 inputX, s32 inputY, s16 *outputX, s16 *outputY) {
+    *outputX = (inputX * 40) - 39;
+    *outputY = (inputY * 24) - 36;
+}
+
 
 #include "asm/game_select/asm_08013348.s"
 
-#include "asm/game_select/asm_0801338c.s"
+
+// Initialise unk1C
+void func_0801338c(void) {
+    struct GameSelectUnk1C *unk1C;
+    u32 i;
+
+    for (i = 0; i < 2; i++) {
+        unk1C = &gGameSelectInfo.unk1C[i];
+        unk1C->unk3 = 31;
+        unk1C->unk2 = 31;
+        unk1C->unk1 = 31;
+        unk1C->unk6 = 31;
+        unk1C->unk5 = 31;
+        unk1C->unk4 = 31;
+        unk1C->unk0 = 0;
+        unk1C->unk8 = 1;
+        unk1C->unkA = (i == 0) ? 0xfe : 0xff;
+    }
+}
+
 
 #include "asm/game_select/asm_080133cc.s"
 
@@ -200,9 +279,9 @@ void func_08013644(s32 arg) {
         gGameSelectInfo.unk2D8 = 0;
         gGameSelectInfo.unk2D9 = 0;
         func_08010478();
-        if (gGameSelectInfo.unk340 != 0) {
+        if (gGameSelectInfo.perfectCampaignNotice.unk0 != 0) {
             func_08012cb4(D_030046a8->unk10[0x269]);
-            gGameSelectInfo.unk340 = 0;
+            gGameSelectInfo.perfectCampaignNotice.unk0 = 0;
         } else {
             gGameSelectInfo.unk0 = 2;
         }
@@ -236,6 +315,7 @@ void func_08013644(s32 arg) {
 #include "asm/game_select/asm_08013b48.s"
 
 
+// Set Position for Cursor and Selection Border
 void func_08013b98(s32 x, s32 y) {
     s16 offsetX;
     s16 offsetY;
@@ -268,11 +348,21 @@ void func_08013b98(s32 x, s32 y) {
 
 #include "asm/game_select/asm_0801401c.s"
 
-#include "asm/game_select/asm_080140a4.s"
+
+// Set Stage Title Text
+void func_080140a4(s32 x) {
+    func_0804d8f8(D_03005380, gGameSelectInfo.stageTitleSprite, D_089cf9ac[x], 0, 1, 0x7f, 0);
+    gGameSelectInfo.unk1A = 100;
+}
+
 
 #include "asm/game_select/asm_080140ec.s"
 
-#include "asm/game_select/asm_080140f8.s"
+
+// Link Sprite Position to BG Offset?
+void func_080140f8(s16 sprite) {
+    func_0804db44(D_03005380, sprite, &D_03004b10.bgOffset[BG_LAYER_3].horizontal, &D_03004b10.bgOffset[BG_LAYER_3].vertical);
+}
 
 
 // [func_08014118] Scene Main
@@ -348,7 +438,29 @@ void func_08014118(s32 arg) {
 
 #include "asm/game_select/asm_08014dbc.s"
 
-#include "asm/game_select/asm_08014df0.s"
+
+// Initialise... Game Description Boxes?
+void func_08014df0(void) {
+    s16 *vector;
+
+    vector = &D_03004b10.bgOffset[BG_LAYER_1].horizontal;
+    gGameSelectInfo.unk34 = -1;
+    gGameSelectInfo.unk3C = -1;
+    gGameSelectInfo.unk38 = func_0800a204((u16) func_0800c3b8(), 4, 104, 32);
+    func_0800ac68(gGameSelectInfo.unk38, 128, 55);
+    func_0800aca0(gGameSelectInfo.unk38, 0x800);
+    func_0800acbc(gGameSelectInfo.unk38, 0);
+    func_0800acb0(gGameSelectInfo.unk38, 8);
+    func_0800ae00(gGameSelectInfo.unk38, 14);
+    func_0800acd8(gGameSelectInfo.unk38, 1);
+    func_0800ad98(gGameSelectInfo.unk38, &vector[0], &vector[1]);
+    func_0800ae0c(gGameSelectInfo.unk38, -1);
+    gGameSelectInfo.perfectClearedSprite = func_0804d160(D_03005380, D_08902eb0, 0, 138, 115, 0x80a, 1, 0, 0x8000);
+    func_0804db44(D_03005380, gGameSelectInfo.perfectClearedSprite, &vector[0], &vector[1]);
+    gGameSelectInfo.unk3E = 1;
+    gGameSelectInfo.unk41 = 0;
+}
+
 
 #include "asm/game_select/asm_08014ef8.s"
 
@@ -378,11 +490,17 @@ void func_08014118(s32 arg) {
 
 #include "asm/game_select/asm_080158d4.s"
 
-#include "asm/game_select/asm_080158f0.s"
+
+void func_080158f0(void) {
+}
+
 
 #include "asm/game_select/asm_080158f4.s"
 
-#include "asm/game_select/asm_0801593c.s"
+
+void func_0801593c(void) {
+}
+
 
 #include "asm/game_select/asm_08015940.s"
 
@@ -398,7 +516,44 @@ void func_08014118(s32 arg) {
 
 #include "asm/game_select/asm_08015ccc.s"
 
-#include "asm/game_select/asm_08015cf4.s"
+
+// Initialise BG Squares
+void func_08015cf4(void) {
+    struct GameSelectSquareVector *vector;
+    s32 x, y;
+    u32 i;
+    s8 temp;
+
+    x = 544;
+    y = 384;
+
+    for (i = 0; i < 16; i++) {
+        vector = &gGameSelectInfo.squareVectors[i];
+        vector->x = func_08001980(x);
+        vector->y = func_08001980(y);
+        gGameSelectInfo.squareSprites[i] = func_0804d294(D_03005380, D_08902960, func_08001980(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
+        func_0804dcb8(D_03005380, gGameSelectInfo.squareSprites[i], (func_08001980(0x100) + 0x100));
+    }
+
+    x *= 2;
+    y *= 2;
+
+    for (i = 16; i < 50; i++) {
+        vector = &gGameSelectInfo.squareVectors[i];
+        vector->x = func_08001980(x);
+        vector->y = func_08001980(y);
+        gGameSelectInfo.squareSprites[i] = func_0804d294(D_03005380, D_08902998, func_08001980(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
+        func_0804dcb8(D_03005380, gGameSelectInfo.squareSprites[i], (func_08001980(0x100) + 0x100));
+    }
+
+    D_03004b10.unk4C = 0x2F00;
+    D_03004b10.unk4E = 0x1010;
+
+    for (i = 0; i < 10; i++) {
+        gGameSelectInfo.unk198[i].unk0 = 0;
+    }
+}
+
 
 #include "asm/game_select/asm_08015ea4.s"
 
