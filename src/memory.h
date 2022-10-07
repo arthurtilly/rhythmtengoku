@@ -4,15 +4,30 @@
 
 #define SAVE_BUFFER_SIZE 0x3B04 // might need renaming
 
-extern s32 *D_030046a8;
+extern struct SaveBuffer {
+    struct SaveBufferInfo {
+        char RIQ[4]; // "RIQ"
+        u32 bufferSize;
+        u32 unk8;
+        u32 unkC; // 0x26040000
+    } info;
+    u8 unk10[0x2A0];
+    u32 null2B0;
+    u32 unk2B4[4];
+    u32 soundMode;
+    u32 null2C8;
+    u32 null2CC;
+    u32 null2D0;
+    u32 unk2D4;
+} *D_030046a8;
 
 typedef void (struct_030064c8_func)(s32 *, s32 *, s32);
 extern struct_030064c8_func *D_030064c8;
 
-extern s32 *D_08935fb4;
-extern s32 *D_08935fb8;
-extern s32 D_08935fbc;
-extern s32 D_08935fc4;
+extern s32 *D_08935fb4; // CartRAMBase (0x0E000000)
+extern s32 *D_08935fb8; // CartRAMBase + 0x4000 (0x0E004000)
+extern char D_08935fbc[4]; // "RIQ"
+extern char D_08935fc4[4]; // "CAL"
 
 extern void init_ewram(void);
 extern void *get_save_buffer_start(void);
@@ -26,7 +41,7 @@ extern s32 func_08000868(s32 *);
 extern s32 func_080008bc(void);
 extern s32 func_080008d0(void);
 extern void func_080008e4(s32 *);
-extern s32 func_0800091c(s32 *);
+extern s32 func_0800091c(void *);
 extern void func_08000928(s32 *);
 extern void func_0800096c(s32 *, s32);
 extern void func_080009a0(void);

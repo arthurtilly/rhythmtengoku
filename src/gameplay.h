@@ -3,6 +3,7 @@
 #include "global.h"
 #include "main.h"
 #include "scenes.h"
+#include "script.h"
 
 extern const struct SequenceData s_f_send_mes_seqData;
 extern const struct SequenceData s_f_fail_perfect_seqData;

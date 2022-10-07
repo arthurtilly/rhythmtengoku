@@ -45,7 +45,7 @@ struct KarateManInfo {
 
 struct RapMenInfo {
     u8 unk0;
-    struct Font *unk4;
+    struct TextObject1 *unk4;
     s16 unk8;
     s16 unkA;
     s16 unkC;
@@ -125,7 +125,7 @@ struct RhythmTweezersInfo {
 
 
 struct SneakySpiritsInfo {
-    struct Font *unk0;  // Pointer: Font? (Related to Tutorial Text)
+    struct TextObject1 *unk0;  // Pointer: Font? (Related to Tutorial Text)
     u8  version;        // Value:   Version
     u8  rainSlow;       // Flag:    Slow-Motion Rain
     s16 rainDrops[30];      // Sprite:  Raindrops
@@ -170,7 +170,7 @@ struct BonOdoriInfo {
     u8 version;
     u8 pad1;
     u8 unk2;
-    struct Font *unk4;
+    struct TextObject1 *unk4;
     struct BonOdoriInfo_sub unk8[4];
     u8 unk38;
     u16 unk3A;
@@ -195,7 +195,7 @@ struct BonOdoriInfo {
 
 
 struct ShowtimeInfo {
-    struct Font *unk0;
+    struct TextObject1 *unk0;
     u16 unk4;
     u8 unk6;
     struct ShowtimeInfo_sub {
@@ -270,7 +270,7 @@ struct SpaceballInfo {
 
 struct FireworksInfo {
     u8  version;        // Version Number
-    struct Font *unk4;  // Font?
+    struct TextObject1 *unk4;  // Font?
     s16 textSprite;     // Tutorial Text (Sprite)
     struct FireworksParticle {
         s16 sprite;     // Sprite

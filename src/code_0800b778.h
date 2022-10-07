@@ -4,8 +4,8 @@
 // extern ? func_0800b778(?);
 // extern ? func_0800b834(?);
 // extern ? func_0800b974(?);
-// extern ? func_0800b9fc(?);
-// extern ? func_0800bc14(?);
+// extern ? func_0800b9fc(?); // BEATSCRIPT - Main
+// extern ? func_0800bc14(?); // BEATSCRIPT - Check if no threads are running
 // extern ? func_0800bc40(?);
 // extern ? func_0800bc58(?);
 // extern ? func_0800bc68(?);
@@ -16,33 +16,33 @@
 extern void func_0800bd04(u32);
 // extern ? func_0800bd1c(?);
 // extern ? func_0800bd2c(?);
-// extern ? func_0800bdf8(?); // [func_0800bdf8] BEATSCRIPT - Set Tempo
+// extern ? func_0800bdf8(?); // BEATSCRIPT - Set Tempo
 // extern ? func_0800be64(?);
-// extern ? func_0800be88(?);
+// extern ? func_0800be88(?); // BEATSCRIPT - Set Speed
 // extern ? func_0800be9c(?);
 // extern ? func_0800bea0(?);
 // extern ? func_0800bebc(?);
-// extern ? func_0800bed0(?);
-// extern ? func_0800bf7c(?);
-// extern ? func_0800bf8c(?);
-// extern ? func_0800bf9c(?);
-// extern ? func_0800bfac(?);
+// extern ? func_0800bed0(?); // BEATSCRIPT - Play Music (arg1 = Stop Previous; arg2 = SoundPlayer ID)
+// extern ? func_0800bf7c(?); // BEATSCRIPT - Play Music
+// extern ? func_0800bf8c(?); // BEATSCRIPT - Play Music (No Override)
+// extern ? func_0800bf9c(?); // BEATSCRIPT - Play Music in Given SoundPlayer
+// extern ? func_0800bfac(?); // BEATSCRIPT - Play Music in Given SoundPlayer (No Override)
 // extern ? func_0800bfbc(?);
-// extern ? func_0800c01c(?); // [func_0800c01c] BEATSCRIPT - Stop Music
+// extern ? func_0800c01c(?); // BEATSCRIPT - Stop Music
 // extern ? func_0800c030(?);
 // extern ? func_0800c048(?);
 // extern ? func_0800c060(?);
-// extern ? func_0800c088(?);
-// extern ? func_0800c0c4(?);
-// extern ? func_0800c0d8(?); // [func_0800c0d8] BEATSCRIPT - Set Music Volume
-extern void func_0800c0f8(u16, u16);
+// extern ? func_0800c088(?); // BEATSCRIPT - Set Music Pitch (CMD_3E)
+// extern ? func_0800c0c4(?); // BEATSCRIPT - Set Music Pitch (CMD_3D)
+// extern ? func_0800c0d8(?); // BEATSCRIPT - Set Music Volume
+extern void func_0800c0f8(u16, u16); // BEATSCRIPT - Set Music Volume for Selected Tracks
 // extern ? func_0800c128(?);
-// extern ? func_0800c138(?);
+// extern ? func_0800c138(u32 volume, u32 duration); // BEATSCRIPT - Change Music Volume
 // extern ? func_0800c154(?);
-// extern ? func_0800c168(?);
-// extern ? func_0800c184(?); // [func_0800c184] BEATSCRIPT - Set Music Pitch (in Semitones)
+// extern ? func_0800c168(u32 volume, u32 duration); // BEATSCRIPT - Change Music Volume for Selected Tracks
+// extern ? func_0800c184(?); // BEATSCRIPT - Set Music Pitch (in Semitones)
 extern void func_0800c1a4_stub(void);
-extern u32 func_0800c1a8(void);
+extern u32 func_0800c1a8(void); // BEATSCRIPT - Get Tempo
 // extern ? func_0800c1b4(?);
 // extern ? func_0800c1c0(?);
 // extern ? func_0800c1d0(?);
@@ -56,8 +56,8 @@ extern u32 func_0800c1a8(void);
 // extern ? func_0800c390(?);
 // extern ? func_0800c394(?);
 extern u32 func_0800c398(void);
-extern s32 func_0800c3a4(u32);
-extern u32 func_0800c3b8(void);
+extern s32 func_0800c3a4(u32); // BEATSCRIPT - Beats to Ticks
+extern u32 func_0800c3b8(void); // Get Next Memory ID(?)
 // extern ? func_0800c3c4(?);
 // extern ? func_0800c3e4(?);
 // extern ? func_0800c3e8(?);
@@ -89,7 +89,7 @@ extern u32 *func_0800c43c(u32);
 // extern ? func_0800c654(?);
 // extern ? func_0800c658(?);
 // extern ? func_0800c65c(?);
-extern struct Font *func_0800c660(u16, u8);
+extern struct TextObject1 *func_0800c660(u16, u8);
 // extern ? func_0800c694(?);
 // extern ? func_0800c6a4(?);
 // extern ? func_0800c6c8(?);
@@ -97,14 +97,14 @@ extern struct Font *func_0800c660(u16, u8);
 // extern ? func_0800c6d8(?);
 // extern ? func_0800c6dc(?);
 // extern ? func_0800c6e0(?);
-// extern ? func_0800c6e4(?);
-// extern ? func_0800c824(?);
-// extern ? func_0800c95c(?);
-// extern ? func_0800c9a4(?);
-// extern ? func_0800c9c8(?);
-// extern ? func_0800ca1c(?);
+// extern ? func_0800c6e4(?); // BEATSCRIPT - IF Statement Start
+// extern ? func_0800c824(?); // BEATSCRIPT - ELSE Statement Start
+// extern ? func_0800c95c(?); // BEATSCRIPT - SWITCH Statement Start
+// extern ? func_0800c9a4(?); // BEATSCRIPT - CASE Statement End
+// extern ? func_0800c9c8(?); // BEATSCRIPT - CMD_1E/CMD_1F Statement Start ("If?")
+// extern ? func_0800ca1c(?); // BEATSCRIPT - CMD_20 Statement Start ("Else"?)
 // extern ? func_0800ca70(?);
-// extern ? func_0800cb28(?);
+// extern ? func_0800cb28(?); // BEATSCRIPT - Update Stream
 // extern ? func_0800dfbc(?);
 // extern ? func_0800dfc0(?);
 // extern ? func_0800dfc4(?);
@@ -123,8 +123,8 @@ extern struct Font *func_0800c660(u16, u8);
 // extern ? func_0800e010(?);
 // extern ? func_0800e014(?);
 // extern ? func_0800e018(?);
-// extern ? func_0800e030(?);
-// extern ? func_0800e044(?);
+// extern ? func_0800e030(s32 layer); // Show Layer
+// extern ? func_0800e044(s32 layer); // Hide Layer
 extern void func_0800e058(s32 layer, s16 x, s16 y); // Move BG Layer
 // extern ? func_0800e068(?);
 // extern ? func_0800e084(?);
@@ -173,18 +173,18 @@ extern void func_0800e62c(s16, u32, s16, u32, u16);
 // extern ? func_0800eb0c(?);
 // extern ? func_0800eb1c(?);
 // extern ? func_0800ebac(?);
-// extern ? func_0800ebf8(?);
+// extern ? func_0800ebf8(u32 target, u32 duration); // BEATSCRIPT - Change Tempo
 // extern ? func_0800ec20(?);
 // extern ? func_0800ec34(?);
 // extern ? func_0800ecac(?);
-// extern ? func_0800ecec(?);
+// extern ? func_0800ecec(s32 target, u32 duration); // BEATSCRIPT - Change Music Pitch
 // extern ? func_0800ed08(?);
-// extern ? func_0800ed24(?);
-// extern ? func_0800ed3c(?);
+// extern ? func_0800ed24(?); // BEATSCRIPT - Fade-In Music
+// extern ? func_0800ed3c(?); // BEATSCRIPT - Fade-Out Music
 // extern ? func_0800ed54(?);
 // extern ? func_0800ed58(?);
 // extern ? func_0800ed5c(?);
-// extern ? func_0800ed60(?);
+// extern ? func_0800ed60(?); // Stub
 // extern ? func_0800ed64(?);
 // extern ? func_0800edb8(?);
 // extern ? func_0800edc8(?);

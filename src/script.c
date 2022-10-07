@@ -14,12 +14,13 @@ static u8 D_0300155f; // unused
 /* SCRIPT HANDLING */
 
 
-void func_0801d860(u32 arg0) {
-	D_0300155c = arg0;
+// [func_0801d860] Set D_0300155c
+void func_0801d860(u32 arg) {
+	D_0300155c = arg;
 }
 
 
-// Global BeatScript initialization
+// [func_0801d86c] Script Init.
 void func_0801d86c(u32 arg0) {
     u32 temp[4];
 
@@ -43,7 +44,7 @@ void func_0801d86c(u32 arg0) {
 }
 
 
-// Global BeatScript loop
+// [func_0801d8d8] Script Main
 u32 func_0801d8d8(void) {
     func_08006e88();
     func_08003fb4();
@@ -96,22 +97,26 @@ u32 func_0801d8d8(void) {
 }
 
 
+// [func_0801d95c] Change Script
 void func_0801d95c(const struct BeatScript *script) {
-	D_030053c0.beatScript = script;
+	D_030053c0.threads[0].current = script;
 }
 
 
+// [func_0801d968] Change Script (w/ Timer Reset)
 void func_0801d968(const struct BeatScript *script) {
-	D_030053c0.beatScript = script;
-	D_030053c0.unk34 = 0;
+	D_030053c0.threads[0].current = script;
+	D_030053c0.threads[0].unkC = 0;
 }
 
 
+// [func_0801d978] Reset BranchStack Position
 void func_0801d978(void) {
-	D_030053c0.unk28_2 = 0;
+	D_030053c0.threads[0].stackCounter = 0;
 }
 
 
+// [func_0801d98c] Script Close
 void func_0801d98c(void) {
     u32 i;
 

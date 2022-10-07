@@ -3,7 +3,7 @@
 
 #include "game_select_anim_cells.inc.c"
 
-// [D_08902960] <description>
+// [D_08902960] Large Rotating Square
 const struct Animation game_select_anim00[] = {
     /* 000 */ { game_select_cel031, 3 },
     /* 001 */ { game_select_cel032, 3 },
@@ -14,7 +14,7 @@ const struct Animation game_select_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902998] <description>
+// [D_08902998] Small Rotating Square
 const struct Animation game_select_anim01[] = {
     /* 000 */ { game_select_cel037, 3 },
     /* 001 */ { game_select_cel038, 3 },
@@ -25,7 +25,7 @@ const struct Animation game_select_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089029d0] <description>
+// [D_089029d0] Selected Rhythm Game Border
 const struct Animation game_select_anim02[] = {
     /* 000 */ { game_select_cel005, 5 },
     /* 001 */ { game_select_cel006, 5 },
@@ -37,7 +37,7 @@ const struct Animation game_select_anim02[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902a10] <description>
+// [D_08902a10] Rhythm Game Gradient Border
 const struct Animation game_select_anim03[] = {
     /* 000 */ { game_select_cel011, 2 },
     /* 001 */ { game_select_cel012, 2 },
@@ -47,7 +47,7 @@ const struct Animation game_select_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902a40] <description>
+// [D_08902a40] Flickering, Shrinking White Square
 const struct Animation game_select_anim04[] = {
     /* 000 */ { game_select_cel016, 2 },
     /* 001 */ { game_select_cel000, 1 },
@@ -69,7 +69,7 @@ const struct Animation game_select_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902ad0] <description>
+// [D_08902ad0] Rhythm Game Completed Shine
 const struct Animation game_select_anim05[] = {
     /* 000 */ { game_select_cel025, 2 },
     /* 001 */ { game_select_cel026, 2 },
@@ -87,7 +87,7 @@ const struct Animation game_select_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902b40] <description>
+// [D_08902b40] STAGE 1
 const struct Animation game_select_anim06[] = {
     /* 000 */ { game_select_cel043, 30 },
     /* 001 */ { game_select_cel044, 3 },
@@ -96,13 +96,13 @@ const struct Animation game_select_anim06[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902b68] <description>
+// [D_08902b68] Blank Stage Text Box
 const struct Animation game_select_anim07[] = {
     /* 000 */ { game_select_cel080, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08902b78] <description>
+// [D_08902b78] Flow Count Numbers
 const struct Animation game_select_anim08[] = {
     /* 000 */ { game_select_cel081, 4 },
     /* 001 */ { game_select_cel082, 4 },
@@ -118,14 +118,14 @@ const struct Animation game_select_anim08[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902bd8] <description>
+// [D_08902bd8] Your Flow
 const struct Animation game_select_anim09[] = {
     /* 000 */ { game_select_cel091, 20 },
     /* 001 */ { game_select_cel092, 10 },
     /* End */ END_ANIMATION
 };
 
-// [D_08902bf0] <description>
+// [D_08902bf0] Flow Direction
 const struct Animation game_select_anim10[] = {
     /* 000 */ { game_select_cel093, 40 },
     /* 001 */ { game_select_cel094, 40 },
@@ -133,7 +133,7 @@ const struct Animation game_select_anim10[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902c10] <description>
+// [D_08902c10] Perfect Campaign Border
 const struct Animation game_select_anim11[] = {
     /* 000 */ { game_select_cel097, 4 },
     /* 001 */ { game_select_cel098, 4 },
@@ -141,7 +141,7 @@ const struct Animation game_select_anim11[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902c30] <description>
+// [D_08902c30] A Button Prompt
 const struct Animation game_select_anim12[] = {
     /* 000 */ { game_select_cel107, 3 },
     /* 001 */ { game_select_cel108, 3 },
@@ -149,7 +149,7 @@ const struct Animation game_select_anim12[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902c50] <description>
+// [D_08902c50] Unused Medal Count
 const struct Animation game_select_anim13[] = {
     /* 000 */ { game_select_cel109, 3 },
     /* 001 */ { game_select_cel110, 3 },
@@ -160,7 +160,7 @@ const struct Animation game_select_anim13[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902c88] <description>
+// [D_08902c88] Medal Count Numbers
 const struct Animation game_select_anim14[] = {
     /* 000 */ { game_select_cel115, 10 },
     /* 001 */ { game_select_cel116, 10 },
@@ -176,19 +176,19 @@ const struct Animation game_select_anim14[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902ce8] <description>
+// [D_08902ce8] Medal Count Number 0
 const struct Animation game_select_anim15[] = {
     /* 000 */ { game_select_cel115, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08902cf8] <description>
+// [D_08902cf8] Medal Count Text
 const struct Animation game_select_anim16[] = {
     /* 000 */ { game_select_cel125, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08902d08] <description>
+// [D_08902d08] STAGE 2
 const struct Animation game_select_anim17[] = {
     /* 000 */ { game_select_cel047, 30 },
     /* 001 */ { game_select_cel048, 3 },
@@ -197,7 +197,7 @@ const struct Animation game_select_anim17[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902d30] <description>
+// [D_08902d30] STAGE 3
 const struct Animation game_select_anim18[] = {
     /* 000 */ { game_select_cel051, 30 },
     /* 001 */ { game_select_cel052, 3 },
@@ -206,7 +206,7 @@ const struct Animation game_select_anim18[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902d58] <description>
+// [D_08902d58] STAGE 4
 const struct Animation game_select_anim19[] = {
     /* 000 */ { game_select_cel055, 30 },
     /* 001 */ { game_select_cel056, 3 },
@@ -215,7 +215,7 @@ const struct Animation game_select_anim19[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902d80] <description>
+// [D_08902d80] STAGE 5
 const struct Animation game_select_anim20[] = {
     /* 000 */ { game_select_cel059, 30 },
     /* 001 */ { game_select_cel060, 3 },
@@ -224,7 +224,7 @@ const struct Animation game_select_anim20[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902da8] <description>
+// [D_08902da8] MEDAL CORNER
 const struct Animation game_select_anim21[] = {
     /* 000 */ { game_select_cel063, 30 },
     /* 001 */ { game_select_cel064, 3 },
@@ -233,7 +233,7 @@ const struct Animation game_select_anim21[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902dd0] <description>
+// [D_08902dd0] REVIVAL
 const struct Animation game_select_anim22[] = {
     /* 000 */ { game_select_cel067, 30 },
     /* 001 */ { game_select_cel068, 3 },
@@ -242,7 +242,7 @@ const struct Animation game_select_anim22[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902df8] <description>
+// [D_08902df8] TECHNICIAN
 const struct Animation game_select_anim23[] = {
     /* 000 */ { game_select_cel071, 30 },
     /* 001 */ { game_select_cel072, 3 },
@@ -251,7 +251,7 @@ const struct Animation game_select_anim23[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902e20] <description>
+// [D_08902e20] LAST TECHNICIAN
 const struct Animation game_select_anim24[] = {
     /* 000 */ { game_select_cel075, 30 },
     /* 001 */ { game_select_cel076, 3 },
@@ -260,7 +260,7 @@ const struct Animation game_select_anim24[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902e48] <description>
+// [D_08902e48] Perfect Campaign Border (Less Flowers)
 const struct Animation game_select_anim25[] = {
     /* 000 */ { game_select_cel100, 4 },
     /* 001 */ { game_select_cel101, 4 },
@@ -268,7 +268,7 @@ const struct Animation game_select_anim25[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902e68] <description>
+// [D_08902e68] Perfect Campaign Border (No Flowers)
 const struct Animation game_select_anim26[] = {
     /* 000 */ { game_select_cel103, 4 },
     /* 001 */ { game_select_cel104, 4 },
@@ -276,7 +276,7 @@ const struct Animation game_select_anim26[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902e88] <description>
+// [D_08902e88] Cursor
 const struct Animation game_select_anim27[] = {
     /* 000 */ { game_select_cel001, 4 },
     /* 001 */ { game_select_cel002, 2 },
@@ -285,7 +285,7 @@ const struct Animation game_select_anim27[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902eb0] <description>
+// [D_08902eb0] Perfect Cleared
 const struct Animation game_select_anim28[] = {
     /* 000 */ { game_select_cel126, 4 },
     /* End */ END_ANIMATION

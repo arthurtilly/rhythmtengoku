@@ -12,8 +12,8 @@
 
 // Main Menu Scene Info
 struct MainMenuInfo {
-    struct Font *font;
-    struct Font *font2;
+    struct TextObject2 *font2;
+    struct TextObject1 *font1;
     u32 screenReady; // Set to FALSE during screen fade-in/out.
     u16 buttons[5];
     s16 bgX;

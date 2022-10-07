@@ -45,7 +45,7 @@ extern u32  func_08003ab8();
 // extern ? func_08003fb4(?);
 // extern ? func_08003ff0(?);
 // extern ? func_0800402c(?);
-// extern ? func_08004058(?);
+// extern ? func_08004058(?); // ?
 // extern ? func_08004070(?);
 // extern ? func_080041d0(?);
 // extern ? func_08004248(?);
@@ -55,11 +55,11 @@ extern u32  func_08003ab8();
 // extern ? func_080042bc(?);
 // extern ? func_080043c8(?);
 // extern ? func_080044f0(?);
-// extern ? func_08004508(?);
+// extern ? func_08004508(?); // Create Text1 thing
 // extern ? func_08004574(?);
-// extern ? func_0800459c(?);
+// extern ? func_0800459c(?); // Set Text1 things
 // extern ? func_080045b4(?);
-// extern ? func_080045d0(?);
+// extern ? func_080045d0(?); // Clear Text1 text
 // extern ? func_080045fc(?);
 // extern ? func_08004628(?);
 // extern ? func_0800467c(?);
@@ -70,15 +70,15 @@ extern u32  func_08003ab8();
 // extern ? func_0800496c(?);
 // extern ? func_080049a0(?);
 // extern ? func_080049dc(?);
-// extern ? func_080049f0(?);
+// extern ? func_080049f0(?); // Render(?) Text1 thing
 // extern ? func_08004b60(?);
-// extern ? func_08004b70(?);
+// extern ? func_08004b70(?); // create an animation from text
 // extern ? func_08004b88(?);
-extern struct Animation *func_08004b98(struct Font *, const char *, u32, u32);
+extern struct Animation *func_08004b98(struct TextObject1 *, const char *, u32, u32); // create an animation from text
 // extern ? func_08004bfc(?);
-extern struct Animation *func_08004c0c(struct Font *, const char *, u32, u32);
+extern struct Animation *func_08004c0c(struct TextObject1 *, const char *, u32, u32); // create an animation from text
 // extern ? func_08004c40(?);
-// extern ? func_08004c50(?);
+// extern ? func_08004c50(?); // create an animation from text
 // extern ? func_08004cac(?);
 // extern ? func_08004ccc(?);
 // extern ? func_08004d44(?);
@@ -90,10 +90,10 @@ extern u32 func_08004dc0(struct unk_struct_08004da0 *arg0);
 // extern ? func_08004ff4(?);
 // extern ? func_08005014(?);
 // extern ? func_080050bc(?);
-extern struct Font *func_08005124(u16, struct FontDefinition *, u8, u16, u8);
+extern struct TextObject2 *func_08005124(u16, struct FontDefinition *, u8, u16, u8); // Create Text2 thing
 // extern ? func_08005188(?);
 // extern ? func_080051a4(?);
-// extern ? func_080051c4(?);
+// extern ? func_080051c4(?); // Clear Text2 text
 // extern ? func_080051f0(?);
 // extern ? func_08005208(?);
 // extern ? func_08005328(?);
@@ -103,9 +103,9 @@ extern struct unk_struct_080054b0 *func_080054b0(struct unk_struct_080054b0_init
 extern u32 func_080054f0(struct unk_struct_080054b0 *arg0);
 // extern ? func_080055fc(?);
 // extern ? func_08005640(?);
-// extern ? func_0800568c(?);
-extern u32 func_08005814(s32, struct Font *, u32 *, u16 *);
-// extern ? func_0800584c(?);
+// extern ? func_0800568c(?); // render some read-only sprite/text thing
+extern u32 func_08005814(struct SpriteHandler *, struct TextObject1 *, u32 *, u16 *); // do the above but for all in an array
+// extern ? func_0800584c(?); // set D_03004ae8
 extern struct unk_struct_08005858 *func_08005858(struct unk_struct_08005858_init *arg0);
 extern u32 func_08005878(struct unk_struct_08005858 *arg0);
 // extern ? func_080058b0(?);

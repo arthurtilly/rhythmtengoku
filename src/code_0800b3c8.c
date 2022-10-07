@@ -4,8 +4,6 @@
 
 // Could use better split
 
-extern void func_0804d5d4(s32, s16, s16, s16);
-
 asm(".include \"include/gba.inc\"");//Temporary
 
 static u32 D_03001304;

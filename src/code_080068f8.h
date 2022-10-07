@@ -25,8 +25,8 @@ extern u32 func_08006ce8(struct unk_struct_08006ca4 *);
 // extern ? func_08006f84(?);
 // extern ? func_08006fec(?);
 // extern ? func_08007014(?);
-// extern ? func_0800703c(?);
-// extern ? func_080070c4(?);
+// extern ? func_0800703c(u32 time, u16 colour); // Fade From Solid Colour
+// extern ? func_080070c4(u32 time, u16 colour); // Fade To Solid Colour
 // extern ? func_0800714c(?);
 // extern ? func_0800716c(?);
 // extern ? func_0800724c(?);

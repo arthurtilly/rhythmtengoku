@@ -50,7 +50,7 @@ void func_08000224(void) {
 		}
 	}
 	func_080009b4();
-	func_080029d8(D_030046a8[177]);
+	func_080029d8(D_030046a8->soundMode);
 	func_0800584c(func_0800c490());
 	func_080001f8();
 	func_08001360();
@@ -91,7 +91,7 @@ void agb_main(void) {
 	func_0801e100();
 	func_0804c778();
 	func_0804c340(35, 2, 2, 4);
-	func_080029d8(D_030046a8[177]);
+	func_080029d8(D_030046a8->soundMode);
 	
 	REG_DISPSTAT = 8;
 	REG_IE = (INTERRUPT_CART | INTERRUPT_DMA2 | INTERRUPT_TIMER3 | INTERRUPT_VBLANK);

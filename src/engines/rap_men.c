@@ -39,15 +39,12 @@ void func_08039924(void) {
 }
 
 void func_08039950(u32 arg0) {
-    struct Font *temp;
-
     gRapMenInfo.unk0 = arg0;
     func_08039924();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
-    temp = func_0800c660(0x340, 2);
-    gRapMenInfo.unk4 = temp;
-    gRapMenInfo.unkC = func_0804d160(D_03005380, func_08004c0c(temp, D_0805a8b0, 1, 14), 0, 0x78, 0x94, 0, 0, 0, 0);
+    gRapMenInfo.unk4 = func_0800c660(0x340, 2);
+    gRapMenInfo.unkC = func_0804d160(D_03005380, func_08004c0c(gRapMenInfo.unk4, D_0805a8b0, 1, 14), 0, 0x78, 0x94, 0, 0, 0, 0);
     gRapMenInfo.unk8 = func_0804d160(D_03005380, func_080398b4(RAP_MEN_ANIM_10), 0, 0x46, 0x82, 0x4800, 1, 0x7f, 0);
     gRapMenInfo.unkA = func_0804d160(D_03005380, func_080398b4(RAP_MEN_ANIM_09), 0, 0xa0, 0x82, 0x4800, 1, 0x7f, 0);
     gRapMenInfo.unkE = 0;

@@ -3,13 +3,48 @@
 #include "global.h"
 #include "scenes.h"
 
-extern void func_0801d860(u32);
+
+
+enum PauseHandlerState {
+    PAUSE_STATE_PLAY,
+    PAUSE_STATE_PAUSE,
+    PAUSE_STATE_STOP
+};
+
+enum PauseMenuSelectedOption {
+    PAUSE_MENU_SELECTION_PENDING,
+    PAUSE_MENU_SELECTION_CONTINUE,
+    PAUSE_MENU_SELECTION_QUIT
+};
+
+typedef void (*PauseMenuInitFunc)(void);
+typedef u32 (*PauseMenuUpdateFunc)(void);
+
+struct PauseHandlerDefinition {
+    u16 pauseButton;
+    PauseMenuInitFunc onPause;
+    PauseMenuUpdateFunc update;
+    const struct SequenceData *quitSfx;
+};
+
+struct PauseHandler {
+    u8 state;
+    u8 enabled:1;
+    u8 hasBeenUsed:1;
+    const struct PauseHandlerDefinition *data;
+};
+
+extern struct PauseHandler D_030055e0;
+
+
+
+extern void func_0801d860(u32); // [func_0801d860] Set D_0300155c
 extern void func_0801d86c(u32); // [func_0801d86c] Script Init.
 extern u32  func_0801d8d8(void); // [func_0801d8d8] Script Main
-extern void func_0801d95c(const struct BeatScript *);
-extern void func_0801d968(const struct BeatScript *);
-extern void func_0801d978(void);
-extern void func_0801d98c(void);
+extern void func_0801d95c(const struct BeatScript *); // [func_0801d95c] Change Script
+extern void func_0801d968(const struct BeatScript *); // [func_0801d968] Change Script (w/ Timer Reset)
+extern void func_0801d978(void); // [func_0801d978] Reset BranchStack Position
+extern void func_0801d98c(void); // [func_0801d98c] Script Close
 extern u32  func_0801d9cc(void);
 
 extern u32  func_0801d9d0(void); // [func_0801d9d0] Update Pause Menu (State: Play)

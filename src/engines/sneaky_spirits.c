@@ -220,7 +220,7 @@ void func_0801f5bc(void) {
 // [func_0801f5c0] ENGINE Func_01 - Next Vertical Position
 void func_0801f5c0(u32 height) {
     gSneakySpiritsInfo.ghostHeight = height;
-    func_0800c4b0(1, func_0800c3a4(0xc), &D_030053c0.unk190, D_030053c0.unk190, height);
+    func_0800c4b0(1, func_0800c3a4(0xc), &D_030053c0.musicGain, D_030053c0.musicGain, height);
 }
 
 
@@ -260,7 +260,7 @@ void func_0801f6d0(void) {
 
     if (gSneakySpiritsInfo.rainChannel == NULL) return;
 
-    rainVolume = func_080087d4((0x100 - D_030053c0.unk190) / 2, 0, 128) + 0x40;
+    rainVolume = func_080087d4((0x100 - D_030053c0.musicGain) / 2, 0, 128) + 0x40;
     func_08002920(gSneakySpiritsInfo.rainChannel, rainVolume);
 }
 

@@ -1,5 +1,9 @@
 #pragma once
 
+
+  //  //  //  OBJECT ANIMATION  //  //  //
+
+
 typedef u16 AnimationCel;
 
 struct Animation {
@@ -10,6 +14,8 @@ struct Animation {
 #define END_ANIMATION { NULL, 0 }
 
 
+  //  //  //  PALETTE  //  //  //
+
 
 typedef u16 Palette[16];
 
@@ -19,8 +25,10 @@ typedef u16 Palette[16];
     | (((((x) >> 0 ) & 0xff) >> 3) << 10)
 
 
+  //  //  //  FONT  //  //  //
 
-// Read-Only Definition for a Font (?)
+
+// Read-Only Definition for a Font
 struct FontDefinition {
     u8 unk0;
     u8 unk1;
@@ -35,16 +43,30 @@ struct FontDefinition {
     u8 *font3Map;
 };
 
-// Internal Font Struct (?)
-struct Font {
-    struct FontDefinition *def;
-    u16 unk4;
-    u8 unk6;
-    u8 unk7;
-    void *unk8;
-    void *unkC;
+typedef void (*FontFunc)(u8 *, u8 *);
+
+struct TextObject1 {
+    u16 id; // mem_id
+    const struct FontDefinition *data;
+    u16 unk8;
+    u8 length;
+    u16 *unkC; // text..?
+    u8 *unk10; // mapping..?
+    FontFunc unk14; // function
+    void *unk18; // some graphics sort of thing
 };
 
+struct TextObject2 {
+    const struct FontDefinition *data;
+    u16 unk4;
+    u8 unk6;
+    u8 length;
+    u16 *unk8; // text?
+    u8 *unkC; // mapping?
+};
+
+
+  //  //  //  GRAPHICS BUFFER  //  //  //
 
 
 enum BGLayersEnum {
@@ -54,7 +76,7 @@ enum BGLayersEnum {
     BG_LAYER_3
 };
 
-struct struct_03004b10 {
+extern struct GraphicsBuffer {
     u16 DISPCNT;    // LCD Control
     u16 unk2;
     u16 bgControl[4];
@@ -84,7 +106,6 @@ struct struct_03004b10 {
     u16 unk854_2:1;
     u16 unk854_3:1;
     u16 unk854_4:1;
-};
+} D_03004b10; // gGfxBuffer
 
-extern struct struct_03004b10 D_03004b10;
-extern s32 D_03005380;
+extern struct SpriteHandler *D_03005380; // gSpriteHandler
