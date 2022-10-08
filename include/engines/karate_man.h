@@ -62,7 +62,7 @@ extern void func_08021408(void);
 extern void func_08021424(void);
 extern void func_08021440(char *);
 extern void func_08021458(void);
-extern void func_080214a0(struct Scene *);
+extern void func_080214a0(const struct Scene *);
 extern void func_080214d4(u32);
 extern void func_08021524(void);
 extern void func_08021544(u8);

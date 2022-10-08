@@ -17,17 +17,17 @@ enum PauseMenuOptionsEnum {
 };
 
 
-extern struct Scene D_089cfd60; // Perfect Certificate Scene
+extern const struct Scene D_089cfd60; // Perfect Certificate Scene
 extern const struct BeatScript D_089cfda4[]; // Generic Fade-Out Sequence
-extern struct Scene D_089d77e4; // Results Scene (Level-type)
-extern struct Scene D_089d7c18; // Results Scene (???)
-extern struct Scene D_089ddbcc; // Debug Menu Scene
+extern const struct Scene D_089d77e4; // Results Scene (Level-type)
+extern const struct Scene D_089d7c18; // Results Scene (???)
+extern const struct Scene D_089ddbcc; // Debug Menu Scene
 
 
 /* MAIN GAMEPLAY SCENE */
 
 
-static struct Scene *D_03001328; // ?
+static const struct Scene *D_03001328; // ?
 
 
 // [func_08016e04] Set Sound Effect Original Tempo
@@ -310,7 +310,7 @@ void func_08017448(u32 isTutorial) {
 
 
 // [func_08017458] Set skipDestination
-void func_08017458(struct Scene *scene) {
+void func_08017458(const struct Scene *scene) {
     gGameplayInfo.skipDestination = scene;
 }
 
@@ -322,7 +322,7 @@ void func_08017468(u32 buttons) {
 
 
 // [func_0801747c] Set Skip Destination
-void func_0801747c(struct Scene *scene) {
+void func_0801747c(const struct Scene *scene) {
     if (scene != NULL) {
         func_08017448(TRUE);
         func_08017458(scene);
@@ -455,7 +455,7 @@ s32 func_08017728(const struct GameEngine *engine, u32 function, s32 param) {
 
 // [func_080177f0] Scene Close
 void func_080177f0(s32 arg) {
-    struct Scene *tempScene;
+    const struct Scene *tempScene;
 
     func_0804e0c4(D_03005380, 0x10);
     func_080178ac(); // Reset Cues
@@ -997,7 +997,7 @@ void func_08018114(u32 duration) {
 
 
 // [func_080182ac] Set D_03001328
-void func_080182ac(struct Scene *scene) {
+void func_080182ac(const struct Scene *scene) {
     D_03001328 = scene;
 };
 

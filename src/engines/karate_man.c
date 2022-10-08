@@ -151,11 +151,11 @@ void func_08021458(void) {
 }
 
 
-// COMMON Func_03 - Unknown
-void func_080214a0(struct Scene *arg) {
-    if (arg != NULL) {
+// COMMON Func_03 - Set Tutorial Destination Scene
+void func_080214a0(const struct Scene *scene) {
+    if (scene != NULL) {
         func_08017448(TRUE);
-        func_08017458(arg);
+        func_08017458(scene);
         func_0801853c(1, 1);
     } else {
         func_08017448(FALSE);

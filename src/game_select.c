@@ -9,20 +9,29 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-static s32 D_0300131c; // unknown type
-static s32 D_03001320; // unknown type
-static s32 D_03001324; // unknown type
+static u8 D_0300131c; // ?
+static u8 D_0300131d; // unused
+static u8 D_0300131e; // unused
+static u8 D_0300131f; // unused
+static s8 D_03001320; // ?
+static s32 D_03001324; // ?
 
-extern struct Scene D_089d77e4; // Results (Level-Type)
-extern struct Scene D_089d7c18; // Results (Epilogue..?)
-extern struct Scene D_089d7964; // Results (Score-Type)
-extern struct Scene D_089cdf08; // Game Select
+extern const struct Scene D_089d77e4; // Results (Level-Type)
+extern const struct Scene D_089d7c18; // Results (Epilogue..?)
+extern const struct Scene D_089d7964; // Results (Score-Type)
+extern const struct Scene D_089cdf08; // Game Select
+
 
 /* GAME SELECT */
 
-#include "asm/game_select/asm_080127fc.s"
 
-#include "asm/game_select/asm_08012808.s"
+extern void func_080127fc() {
+    D_0300131c = 0;
+}
+
+extern void func_08012808() {
+    D_0300131c = 1;
+}
 
 #include "asm/game_select/asm_08012814.s"
 

@@ -3,6 +3,7 @@
 #include "global.h"
 #include "scenes.h"
 
+
 /* SPRITE ANIMATIONS */
 extern const struct Animation D_08902960[]; // large rotating square
 extern const struct Animation D_08902998[]; // small rotating square
@@ -34,7 +35,9 @@ extern const struct Animation D_08902e68[]; // perfect campaign border (no flowe
 extern const struct Animation D_08902e88[]; // cursor
 extern const struct Animation D_08902eb0[]; // perfect cleared heart symbol
 
+
 /* SOUND EFFECTS */
+
 
 /* SCENE DATA */
 extern const struct {
@@ -43,9 +46,31 @@ extern const struct {
     u16 unk2;
     u32 unk4;
 } D_089cdf24[]; // ??? (related to perfect campaign)
+
+extern const struct GameSelectSceneEntry {
+    const struct Scene *scene;
+    const char *name;
+    const char *description;
+    u16 unkC;
+    u16 unkE;
+    const u32 **epilogueGfx;
+    const char *tryAgainText;
+    const char *okText;
+    const char *superbText;
+} D_089ce344[55];
+
+extern const struct GameSelectGridEntry {
+    s16 id;
+    char *unk4;
+    char *unk8;
+    char *unkC;
+    u32 unk10;
+} D_089ceafc[12 * 15];
+
 extern u32 D_089cf948[]; // Graphics Table
 extern u32 D_089cf9a8[]; // some empty list again
 extern const struct Animation *D_089cf9ac[14]; // Stage Title Text Animations
+
 
 /* FUNCTIONS */
 // extern ? func_080127fc(?); // [func_080127fc] Initialise Static Variables

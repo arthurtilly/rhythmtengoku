@@ -1,6 +1,7 @@
 #include "global.h"
-#include "beatscript_data_089ce344.h"
-#include "data_08052464.h"
+#include "scene_entries.h"
+#include "data/data_08052464.h"
+#include "src/game_select.h"
 
 const struct GameSelectSceneEntry D_089ce344[] = {
     // Karate Man 1
@@ -650,18 +651,17 @@ const struct GameSelectSceneEntry D_089ce344[] = {
         /* tryAgainText */ NULL,
         /* okText */       NULL,
         /* superbText */   NULL,
+    },
+    // Concert Hall Menu
+    {
+        /* scene */        &D_089d6f44,
+        /* name */         text_concert_hall_name,
+        /* description */  text_concert_hall_description,
+        /* unkC */         44,
+        /* unkE */         2,
+        /* epilogueGfx */  D_089ce338,
+        /* tryAgainText */ text_concert_hall_try_again,
+        /* okText */       text_concert_hall_ok,
+        /* superbText */   text_concert_hall_superb,
     }
-};
-
-// Concert Hall Menu
-const struct GameSelectSceneEntry D_089cea04 = {
-    /* scene */        &D_089d6f44,
-    /* name */         text_concert_hall_name,
-    /* description */  text_concert_hall_description,
-    /* unkC */         44,
-    /* unkE */         2,
-    /* epilogueGfx */  D_089ce338,
-    /* tryAgainText */ text_concert_hall_try_again,
-    /* okText */       text_concert_hall_ok,
-    /* superbText */   text_concert_hall_superb,
 };

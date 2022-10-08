@@ -157,7 +157,7 @@ struct GameplayInfo {
 	u8 currentMarkingCriteria; // Current Marking Criteria
 	u8 isTutorial;
 	u8 skippingTutorial; // Currently changing scenes.
-	struct Scene *skipDestination; // Skip Tutorial destination scene
+	const struct Scene *skipDestination; // Skip Tutorial destination scene
 	u16 fadeInTicks; // Remaining ticks for screen fade-in?
     u16 nextCueDuration;
     u16 unk88;

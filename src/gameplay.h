@@ -58,9 +58,9 @@ extern void func_080173f4(const struct SequenceData *sfx); // [func_080173f4] Se
 extern void func_08017400(const struct SequenceData *sfx); // [func_08017400] Set Next Cue Miss SFX
 // extern ? func_0801740c(?);
 extern void func_08017448(u32 isTutorial); // [func_08017448] Set isTutorial
-extern void func_08017458(struct Scene *scene); // [func_08017458] Set skipDestination
+extern void func_08017458(const struct Scene *scene); // [func_08017458] Set skipDestination
 extern void func_08017468(u32 buttons); // [func_08017468] Set Skip Tutorial Button
-extern void func_0801747c(struct Scene *scene); // [func_0801747c] Set Skip Destination (i.e. if Select is pressed in a tutorial)
+extern void func_0801747c(const struct Scene *scene); // [func_0801747c] Set Skip Destination (i.e. if Select is pressed in a tutorial)
 extern void func_080174e8(u32 corner); // [func_080174e8] Display Skip Tutorial Icon
 extern void func_08017514(void); // [func_08017514] Skip Tutorial
 extern void func_08017568(u32 duration); // [func_08017568] Set Screen Fade-In
@@ -125,7 +125,7 @@ extern void func_08018114(u32 duration); // [func_08018114] Set Next Cue Duratio
 
 /* VIDEO */
 // extern ? func_08018154(?); // [func_08018154] Initialise Common Graphics (Perfect Campaign, etc.)
-extern void func_080182ac(struct Scene *scene); // [func_080182ac] Set D_03001328
+extern void func_080182ac(const struct Scene *scene); // [func_080182ac] Set D_03001328
 extern void func_080182b8(void); // [func_080182b8] Screen Darken (Pause)
 extern void func_08018318(void); // [func_08018318] Screen Lighten (Unpause)
 extern void func_08018344(void); // [func_08018344] Open Pause Menu

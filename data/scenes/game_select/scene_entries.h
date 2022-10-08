@@ -2,19 +2,6 @@
 
 #include "src/main.h"
 
-extern const struct GameSelectSceneEntry {
-    const struct Scene *scene;
-    const char *name;
-    const char *description;
-    u16 unkC;
-    u16 unkE;
-    const u32 **epilogueGfx;
-    const char *tryAgainText;
-    const char *okText;
-    const char *superbText;
-} D_089ce344[];
-
-
 // Temporary
 extern const struct Scene D_089cfed0;
 extern const u32 *D_089ce0b0[];

@@ -4,12 +4,12 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-static struct Scene *gCurrentScene;
-static struct Scene *gNextScene;
+static const struct Scene *gCurrentScene;
+static const struct Scene *gNextScene;
 static struct SceneUnk03000008 D_03000008[10];
 static u8 D_03000080;
-static struct Scene *D_03000084;
-static struct Scene *D_03000088;
+static const struct Scene *D_03000084;
+static const struct Scene *D_03000088;
 
 void func_080001f4_stub(void) {
 	
@@ -128,7 +128,7 @@ void agb_main(void) {
 	
 }
 
-void func_0800046c(struct Scene *arg1) {
+void func_0800046c(const struct Scene *arg1) {
 	gCurrentScene = NULL;
 	gNextScene = arg1;
 	D_030046a4 = NULL;
@@ -186,13 +186,13 @@ void process_scenes(void) {
 	}
 }
 
-void func_08000568(struct Scene *arg1) {
+void func_08000568(const struct Scene *arg1) {
 	gCurrentScene = NULL;
 	gNextScene = arg1;
 	func_08000598();
 }
 
-void func_08000584(struct Scene *arg1) {
+void func_08000584(const struct Scene *arg1) {
 	func_080006b0(gCurrentScene, arg1);
 }
 
@@ -205,7 +205,7 @@ void func_08000598(void) {
 	}
 }
 
-struct SceneUnk03000008 *func_080005b8(struct Scene *arg1) {
+struct SceneUnk03000008 *func_080005b8(const struct Scene *arg1) {
 	u32 i;
 	for (i = 0; i < 10; i++) {
 		if (D_03000008[i].unk0 == arg1) {
@@ -215,7 +215,7 @@ struct SceneUnk03000008 *func_080005b8(struct Scene *arg1) {
 	return NULL;
 }
 
-struct Scene *func_080005e0(struct Scene *arg1) {
+const struct Scene *func_080005e0(const struct Scene *arg1) {
 	struct SceneUnk03000008 *temp = func_080005b8(arg1);
 	if (temp == NULL) {
 		return NULL;
@@ -223,7 +223,7 @@ struct Scene *func_080005e0(struct Scene *arg1) {
 	return temp->unk4;
 }
 
-struct Scene *func_080005f4(struct Scene *arg1) {
+const struct Scene *func_080005f4(const struct Scene *arg1) {
 	struct SceneUnk03000008 *temp = func_080005b8(arg1);
 	if (temp == NULL) {
 		return NULL;
@@ -231,15 +231,15 @@ struct Scene *func_080005f4(struct Scene *arg1) {
 	return temp->unk8;
 }
 
-struct Scene *func_08000608(void) {
+const struct Scene *func_08000608(void) {
 	return func_080005e0(gCurrentScene);
 }
 
-struct Scene *func_0800061c(void) {
+const struct Scene *func_0800061c(void) {
 	return func_080005f4(gCurrentScene);
 }
 
-struct SceneUnk03000008 *func_08000630(struct Scene *arg1) {
+struct SceneUnk03000008 *func_08000630(const struct Scene *arg1) {
 	u32 i;
 	if (arg1 == NULL) {
 		return NULL;
@@ -255,7 +255,7 @@ struct SceneUnk03000008 *func_08000630(struct Scene *arg1) {
 	return NULL;
 }
 
-void func_08000674(struct Scene *arg1) {
+void func_08000674(const struct Scene *arg1) {
 	if (arg1 != NULL) {
 		u32 i;
 		for (i = 0; i < 10; i++) {
@@ -268,26 +268,26 @@ void func_08000674(struct Scene *arg1) {
 	}
 }
 
-void func_080006b0(struct Scene *arg1, struct Scene *arg2) {
+void func_080006b0(const struct Scene *arg1, const struct Scene *arg2) {
 	struct SceneUnk03000008 *temp;
 	if (((temp = func_080005b8(arg1)) != NULL) || ((temp = func_08000630(arg1)) != NULL)) {
 		temp->unk4 = arg2;
 	}
 }
 
-void func_080006d0(struct Scene *arg1, struct Scene *arg2) {
+void func_080006d0(const struct Scene *arg1, const struct Scene *arg2) {
 	struct SceneUnk03000008 *temp;
 	if (((temp = func_080005b8(arg1)) != NULL) || ((temp = func_08000630(arg1)) != NULL)) {
 		temp->unk8 = arg2;
 	}
 }
 
-void func_080006f0(struct Scene *arg1, struct Scene *arg2) {
+void func_080006f0(const struct Scene *arg1, const struct Scene *arg2) {
 	D_03000080 = TRUE;
 	D_03000084 = arg1;
 	D_03000088 = arg2;
 }
 
-struct Scene *func_0800070c(void) {
+const struct Scene *func_0800070c(void) {
 	return gCurrentScene;
 }

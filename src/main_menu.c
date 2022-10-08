@@ -14,14 +14,14 @@
 extern u16 *D_0300558c; // ???
 
 extern struct FontDefinition D_089de670;
-extern struct Scene D_089ddbcc; // Debug Menu Script
-extern struct Scene D_089cdf08; // Game Select Script
-extern struct Scene D_089d7964; // Results (Score) Script
-extern struct Scene D_089cde20; // Main Menu Script
-extern struct Scene D_089d471c; // Rhythm Test Script
-extern struct Scene D_089cdc24; // Rhythm Data Room Script
-extern struct Scene D_089d85b4; // Studio Menu Script
-extern struct Scene D_089cfc1c; // Options Menu Script
+extern const struct Scene D_089ddbcc; // Debug Menu Script
+extern const struct Scene D_089cdf08; // Game Select Script
+extern const struct Scene D_089d7964; // Results (Score) Script
+extern const struct Scene D_089cde20; // Main Menu Script
+extern const struct Scene D_089d471c; // Rhythm Test Script
+extern const struct Scene D_089cdc24; // Rhythm Data Room Script
+extern const struct Scene D_089d85b4; // Studio Menu Script
+extern const struct Scene D_089cfc1c; // Options Menu Script
 
 enum MainMenuButtonsEnum {
     GAME_SELECT,
@@ -67,7 +67,7 @@ void func_08012494(void) {
 
 // [func_080124d0] Scene Init.
 void func_080124d0(u32 arg) {
-    struct Scene *tempScene;
+    const struct Scene *tempScene;
     u32 i;
 
     tempScene = func_0800061c();
