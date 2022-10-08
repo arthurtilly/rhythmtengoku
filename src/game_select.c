@@ -9,7 +9,7 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-static u8 D_0300131c; // ?
+static u8 D_0300131c; // If set, play "Game Select 2" music
 static u8 D_0300131d; // unused
 static u8 D_0300131e; // unused
 static u8 D_0300131f; // unused
@@ -25,15 +25,30 @@ extern const struct Scene D_089cdf08; // Game Select
 /* GAME SELECT */
 
 
-extern void func_080127fc() {
-    D_0300131c = 0;
+// Clear D_0300131c
+void func_080127fc(void) {
+    D_0300131c = FALSE;
 }
 
-extern void func_08012808() {
-    D_0300131c = 1;
+
+// Set D_0300131c
+void func_08012808(void) {
+    D_0300131c = TRUE;
 }
 
-#include "asm/game_select/asm_08012814.s"
+
+// Play Game Select Music
+void func_08012814(void) {
+    if (D_0300131c) {
+        func_0800bdf8(105); // Set Tempo
+        func_0800bf7c(&s_shibafu2_bgm_seqData); // Play Music
+        D_0300131c = FALSE;
+    } else {
+        func_0800bdf8(152); // Set Tempo
+        func_0800bf7c(&s_menu_bgm_seqData); // Play Music
+    }
+}
+
 
 #include "asm/game_select/asm_08012850.s"
 
@@ -122,15 +137,35 @@ void func_08012a58(void) {
 
 #include "asm/game_select/asm_080130e4.s"
 
-#include "asm/game_select/asm_08013100.s"
+
+// Get Game Select Scene Entry ID
+s32 func_08013100(u32 x, u32 y) {
+    if ((x < GAME_SELECT_GRID_WIDTH) && (y < GAME_SELECT_GRID_HEIGHT)) {
+        return D_089ceafc[x + (y * GAME_SELECT_GRID_WIDTH)].id;
+    }
+    return -1;
+}
+
 
 #include "asm/game_select/asm_08013130.s"
 
-#include "asm/game_select/asm_0801314c.s"
+
+// Get Completion State for a Game
+s32 func_0801314c(s32 gameID) {
+    u8 *temp = (u8 *)D_030046a8;
+
+    if (gameID < 0) return -1;
+
+    temp += 0x16;
+    return temp[gameID];
+}
+
 
 #include "asm/game_select/asm_0801316c.s"
 
-#include "asm/game_select/asm_0801317c.s"
+s32 func_0801317c(s32 x, s32 y) {
+    return func_0801314c(func_08013100(x, y));
+}
 
 #include "asm/game_select/asm_0801318c.s"
 

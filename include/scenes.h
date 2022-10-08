@@ -53,11 +53,12 @@ struct GameSelectInfo {
     u32 unk38; // another pointer
     u16 unk3C;
     u8 unk3E;
-    u8 null3F;
-    u8 null40;
+    u8 unk3F;
+    u8 unk40;
     u8 unk41;
-    u32 null44;
-    u32 null48;
+    const struct GameSelectEntry *currentGameEntry;
+    u16 currentGameID;
+    u16 null4A;
     u16 null4C;
     u8 unk4E;
     u16 unk50;

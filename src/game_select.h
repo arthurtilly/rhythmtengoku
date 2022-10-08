@@ -4,7 +4,53 @@
 #include "scenes.h"
 
 
+/* SCENE TYPES */
+
+
+struct struct_089cdf24 {
+    s8 unk0;
+    s8 unk1;
+    u16 unk2;
+    u32 unk4;
+};
+
+struct GameSelectSceneEntry {
+    const struct Scene *scene;
+    const char *name;
+    const char *description;
+    u16 unkC;
+    u16 unkE;
+    const u32 **epilogueGfx;
+    const char *tryAgainText;
+    const char *okText;
+    const char *superbText;
+};
+
+struct GameSelectGridEntry {
+    s16 id;
+    char *unk4;
+    char *unk8;
+    char *unkC;
+    u32 unk10;
+};
+
+
+/* SCENE MACROS & ENUMS */
+
+
+#define GAME_SELECT_GRID_WIDTH 15
+#define GAME_SELECT_GRID_HEIGHT 12
+
+enum PerfectCampaignBordersEnum {
+    PERFECT_BORDER_0_FLOWERS,
+    PERFECT_BORDER_3_FLOWERS,
+    PERFECT_BORDER_6_FLOWERS
+};
+
+
 /* SPRITE ANIMATIONS */
+
+
 extern const struct Animation D_08902960[]; // large rotating square
 extern const struct Animation D_08902998[]; // small rotating square
 extern const struct Animation D_089029d0[]; // selected game border
@@ -39,43 +85,28 @@ extern const struct Animation D_08902eb0[]; // perfect cleared heart symbol
 /* SOUND EFFECTS */
 
 
+extern const struct SequenceData s_menu_bgm_seqData; // BGM Game Select 1
+extern const struct SequenceData s_shibafu2_bgm_seqData; // BGM Game Select 2
+
+
 /* SCENE DATA */
-extern const struct {
-    s8 unk0;
-    s8 unk1;
-    u16 unk2;
-    u32 unk4;
-} D_089cdf24[]; // ??? (related to perfect campaign)
 
-extern const struct GameSelectSceneEntry {
-    const struct Scene *scene;
-    const char *name;
-    const char *description;
-    u16 unkC;
-    u16 unkE;
-    const u32 **epilogueGfx;
-    const char *tryAgainText;
-    const char *okText;
-    const char *superbText;
-} D_089ce344[55];
 
-extern const struct GameSelectGridEntry {
-    s16 id;
-    char *unk4;
-    char *unk8;
-    char *unkC;
-    u32 unk10;
-} D_089ceafc[12 * 15];
-
+extern const struct struct_089cdf24 D_089cdf24[48]; // ??? (related to perfect campaign)
+extern const struct Animation *D_089ce0a4[3]; // Perfect Campaign Border Animations { 0 = No Flowers; 1 = 3 Flowers; 2 = 6 Flowers }
+extern const struct GameSelectSceneEntry D_089ce344[55];
+extern const struct GameSelectGridEntry D_089ceafc[GAME_SELECT_GRID_HEIGHT * GAME_SELECT_GRID_WIDTH];
 extern u32 D_089cf948[]; // Graphics Table
 extern u32 D_089cf9a8[]; // some empty list again
 extern const struct Animation *D_089cf9ac[14]; // Stage Title Text Animations
 
 
 /* FUNCTIONS */
-// extern ? func_080127fc(?); // [func_080127fc] Initialise Static Variables
+
+
+extern void func_080127fc(void); // [func_080127fc] Initialise Static Variables (Clear D_0300131c)
 extern void func_08012808(void); // Set D_0300131c
-// extern ? func_08012814(?); // [func_08012814] ? (Script Function)
+extern void func_08012814(void); // [func_08012814] Play Music (Script Function)
 // extern ? func_08012850(?);
 // extern ? func_08012860(?);
 // extern ? func_0801286c(?);
@@ -93,12 +124,12 @@ extern void func_08012e24(void); // update something (state 3)
 // extern ? func_08013090(?);
 // extern ? func_080130b0(?);
 // extern ? func_080130e4(?);
-extern s32  func_08013100(s32, s32); // init. something
+extern s32 func_08013100(u32 x, u32 y); // Get Game Select Scene Entry ID
 // extern ? func_08013130(?);
-// extern ? func_0801314c(?);
+extern s32 func_0801314c(s32 gameID); // Get Completion State for a Game
 // extern ? func_0801316c(?);
-extern s32  func_0801317c(s32, s32); // init. something
-extern s32  func_0801318c(s32, s32 *, s32 *); // init. something
+extern s32 func_0801317c(s32 x, s32 y); // Get Completion State for a Game at Grid Position
+extern s32 func_0801318c(s32, s32 *, s32 *); // init. something
 extern void func_080131e8(void); // init. something
 extern void func_0801332c(s32 inputX, s32 inputY, s16 *outputX, s16 *outputY); // calculate some x/y position
 // extern ? func_08013348(?);
