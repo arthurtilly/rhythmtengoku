@@ -21,6 +21,21 @@ extern const struct Scene D_089d7c18; // Results (Epilogue..?)
 extern const struct Scene D_089d7964; // Results (Score-Type)
 extern const struct Scene D_089cdf08; // Game Select
 
+extern struct ReadingMaterial {
+    const char *title;
+    const char *text;
+    const u32 *graphics;
+    const struct SequenceData *music;
+} D_089d7e74[];
+
+extern struct StudioEntry {
+    const char *fullTitle;
+    const char *shortTitle;
+    const struct BeatScript *script;
+} D_089d81b4[]; // Studio Song Data
+
+extern const char *D_089d83d0[]; // Drum Kit Names
+
 
 /* GAME SELECT */
 
@@ -50,19 +65,70 @@ void func_08012814(void) {
 }
 
 
-#include "asm/game_select/asm_08012850.s"
+// "Clear" D_03001320 (set to -1)
+void func_08012850(void) {
+    D_03001320 = -1;
+}
 
-#include "asm/game_select/asm_08012860.s"
 
-#include "asm/game_select/asm_0801286c.s"
+// Set D_03001320
+void func_08012860(s32 arg) {
+    D_03001320 = arg;
+}
+
+
+// Get D_03001320
+s32 func_0801286c(void) {
+    return D_03001320;
+}
+
 
 #include "asm/game_select/asm_0801287c.s"
 
 #include "asm/game_select/asm_080128b8.s"
 
-#include "asm/game_select/asm_08012928.s"
 
-#include "asm/game_select/asm_080129e8.s"
+// ?
+void func_08012928(void) {
+    struct GameSelectInfo *sceneInfo;
+    u32 temp;
+
+    sceneInfo = &gGameSelectInfo;
+    func_080128b8();
+    if (sceneInfo->unk453 == 0) return;
+
+    temp = 0;
+    if (D_030046a8->unk10[0x28e] < 0x30) {
+        temp = 1;
+    }
+    if (D_030046a8->unk10[0x28e] < 0x2d) {
+        temp = func_08001980(2) + 2;
+    }
+    if (D_030046a8->unk10[0x28e] < 0x1e) {
+        temp = func_08001980(4) + 3;
+    }
+    D_030046a8->unk10[0x266] = 1;
+    D_030046a8->unk10[0x267] = 3;
+    D_030046a8->unk10[0x268] = temp;
+    D_030046a8->unk10[0x269] = sceneInfo->unk454[func_08001980(sceneInfo->unk453)];
+    D_030046a8->unk10[0x26A] = 0;
+    D_030046a8->unk10[0x291] = 0;
+}
+
+
+// ?
+void func_080129e8(void) {
+    struct PerfectCampaignNotice *notice;
+
+    notice = &gGameSelectInfo.perfectCampaignNotice;
+    if (D_030046a8->unk10[0x268] != 0) return;
+
+    D_030046a8->unk10[0x266] = 2;
+    notice->unk1 = D_030046a8->unk10[0x269];
+    notice->x = D_089cdf24[notice->unk1].x;
+    notice->y = D_089cdf24[notice->unk1].y;
+    notice->unk0 = 1;
+}
 
 
 // Initialise Perfect Campaign Notice
@@ -92,19 +158,24 @@ void func_08012a58(void) {
     switch (D_030046a8->unk10[0x266]) {
         case 0:
             func_08012928();
-            if (D_030046a8->unk10[0x266] != 1) break;
+            if (D_030046a8->unk10[0x266] == 1) {
+                func_080129e8();
+            }
+            break;
+
         case 1:
             func_080129e8();
             break;
+
         case 2:
             if ((D_030046a8->unk10[0x267] != 0) && (D_030046a8->unk10[0x26A] < 3)) {
                 temp = D_030046a8->unk10[0x269];
                 temp2 = &D_030046a8->unk10[0x236];
                 if (temp2[temp] == 0) {
                     notice->unk1 = temp;
-                    notice->unk2 = D_089cdf24[notice->unk1].unk0;
-                    notice->unk4 = D_089cdf24[notice->unk1].unk1;
-                    func_08012fcc(notice->unk2, notice->unk4);
+                    notice->x = D_089cdf24[notice->unk1].x;
+                    notice->y = D_089cdf24[notice->unk1].y;
+                    func_08012fcc(notice->x, notice->y);
                     break;
                 }
             }
@@ -119,15 +190,107 @@ void func_08012a58(void) {
 }
 
 
-#include "asm/game_select/asm_08012c24.s"
+// Get Perfect Campaign Reward Text
+const char *func_08012c24(s32 id, s32 shortenSongTitle) {
+    u32 rewardID, rewardType;
 
-#include "asm/game_select/asm_08012cb4.s"
+    if (id < 0) return D_08050bcc; // ""
+
+    rewardType = D_089cdf24[id].rewardType;
+    rewardID = D_089cdf24[id].rewardID;
+
+    switch (rewardType) {
+        case PERFECT_REWARD_TYPE_MUSIC:
+            if (shortenSongTitle) {
+                return D_089d81b4[rewardID].shortTitle;
+            } else {
+                return D_089d81b4[rewardID].fullTitle;
+            }
+
+        case PERFECT_REWARD_TYPE_DRUM_KIT:
+            return D_089d83d0[rewardID];
+
+        case PERFECT_REWARD_TYPE_READING_MATERIAL:
+            return D_089d7e74[rewardID].title;
+
+        case PERFECT_REWARD_TYPE_NEW_GAME: // Reward is New Game
+            return D_08050bd0; // "新ゲーム"
+    }
+}
+
+
+// Set Perfect Campaign Notice..?
+void func_08012cb4(s32 id) {
+    struct PerfectCampaignNotice *notice;
+    struct GameSelectSceneEntry *entry;
+    char *string;
+    u32 r9;
+    u32 rewardIsMusic;
+    u32 rewardType, rewardID, temp;
+
+    notice = &gGameSelectInfo.perfectCampaignNotice;
+    r9 = FALSE;
+    rewardIsMusic = FALSE;
+
+    rewardType = D_089cdf24[id].rewardType;
+    rewardID = D_089cdf24[id].rewardID;
+    if (rewardType == PERFECT_REWARD_TYPE_MUSIC) {
+        rewardIsMusic = TRUE;
+        if (rewardID < 7) {
+            temp = 5;
+            if (rewardID >= temp) {
+                rewardIsMusic = FALSE;
+                r9 = TRUE;
+            }
+        }
+    }
+    notice->x = D_089cdf24[id].x;
+    notice->y = D_089cdf24[id].y;
+
+    entry = func_0801316c(notice->x, notice->y);
+    string = notice->unk12;
+    memcpy(string, D_08050bdc, 11); // "ただいま「"
+    func_080081a8(string, entry->name); // "<game_name>"
+    func_080081a8(string, D_08050be8); // "」でパーフェクトを達成すると"
+    if (!r9) {
+        func_080081a8(string, D_08050c08); // "もれなく"
+    }
+    func_080081a8(string, D_08050c14); // "「"
+    func_080081a8(string, func_08012c24(id, 0)); // "<reward>"
+    func_080081a8(string, D_08050c18); // "」"
+    if (rewardIsMusic) {
+        func_080081a8(string, D_08050c1c); // "の曲"
+    }
+    func_080081a8(string, D_08050c24); // "をプレゼント!!"
+    func_0800aa4c(notice->unkC, string);
+
+    func_0804d770(D_03005380, gGameSelectInfo.selectionBorderSprite, FALSE);
+    notice->unk8 = 10;
+    notice->unkA = 60;
+    func_0800c138(100, func_0800c3a4(0x18));
+    gGameSelectInfo.unk0 = 3;
+}
+
 
 #include "asm/game_select/asm_08012de0.s"
 
 #include "asm/game_select/asm_08012e24.s"
 
-#include "asm/game_select/asm_08012fcc.s"
+
+// Display Perfect Campaign Border
+void func_08012fcc(s32 x, s32 y) {
+    struct PerfectCampaignNotice *notice;
+    s16 x2, y2;
+
+    notice = &gGameSelectInfo.perfectCampaignNotice;
+    func_0801332c(x, y, &x2, &y2);
+    x2 += 47;
+    y2 += 68;
+    func_0804d8f8(D_03005380, notice->perfectBorderSprite, D_089ce0a4[func_080087d4(D_030046a8->unk10[0x267], 1, 3) - 1], 0, 1, 0, 0);
+    func_0804d5d4(D_03005380, notice->perfectBorderSprite, x2, y2);
+    func_0804d770(D_03005380, notice->perfectBorderSprite, TRUE);
+}
+
 
 #include "asm/game_select/asm_08013068.s"
 
@@ -356,7 +519,15 @@ void func_08013644(s32 arg) {
 
 #include "asm/game_select/asm_08013a38.s"
 
-#include "asm/game_select/asm_08013b48.s"
+
+// Set... something to do with the selection border sprite
+void func_08013b48(void) {
+    if (func_0801317c(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY) == 5) {
+        func_0804d67c(D_03005380, gGameSelectInfo.selectionBorderSprite, 0x8800);
+    } else {
+        func_0804d67c(D_03005380, gGameSelectInfo.selectionBorderSprite, 0x4800);
+    }
+}
 
 
 // Set Position for Cursor and Selection Border
@@ -388,7 +559,27 @@ void func_08013b98(s32 x, s32 y) {
 
 #include "asm/game_select/asm_08013d20.s"
 
-#include "asm/game_select/asm_08013f9c.s"
+
+// Set Current Game Scene Entry
+void func_08013f9c(void) {
+    s32 completionState;
+
+    completionState = func_0801317c(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY);
+
+    switch (completionState + 1) {
+        case 0:
+        case 1:
+        case 3:
+            func_08015244(-1, 0, 10);
+            break;
+        case 4:
+        case 5:
+        case 6:
+            func_08015244(func_08013100(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY), completionState, 10);
+            break;
+    }
+}
+
 
 #include "asm/game_select/asm_0801401c.s"
 
@@ -501,14 +692,35 @@ void func_08014df0(void) {
     func_0800ae0c(gGameSelectInfo.unk38, -1);
     gGameSelectInfo.perfectClearedSprite = func_0804d160(D_03005380, D_08902eb0, 0, 138, 115, 0x80a, 1, 0, 0x8000);
     func_0804db44(D_03005380, gGameSelectInfo.perfectClearedSprite, &vector[0], &vector[1]);
-    gGameSelectInfo.unk3E = 1;
+    gGameSelectInfo.unk3E = TRUE;
     gGameSelectInfo.unk41 = 0;
 }
 
 
-#include "asm/game_select/asm_08014ef8.s"
+// Set... something to do with game description box sprites?
+void func_08014ef8(s16 *ptr) {
+    s16 sprite = *ptr;
 
-#include "asm/game_select/asm_08014f30.s"
+    if (sprite < 0) return;
+
+    func_0800a068(func_0804ddb0(D_03005380, sprite, 7));
+    func_0804d504(D_03005380, sprite);
+    *ptr = -1;
+}
+
+
+// Initialise... Current Game Description Box?
+void func_08014f30(void) {
+    if (gGameSelectInfo.unk3E) return;
+
+    func_0800a0f0(0, 24, 32, 8, 0);
+    func_08014ef8(&gGameSelectInfo.unk34);
+    func_08014ef8(&gGameSelectInfo.unk3C);
+    func_0800a934(gGameSelectInfo.unk38);
+    func_0804d770(D_03005380, gGameSelectInfo.perfectClearedSprite, FALSE);
+    gGameSelectInfo.unk3E = TRUE;
+}
+
 
 #include "asm/game_select/asm_08014f98.s"
 
@@ -518,7 +730,21 @@ void func_08014df0(void) {
 
 #include "asm/game_select/asm_08015108.s"
 
-#include "asm/game_select/asm_08015244.s"
+
+// Set Current Game Scene Entry
+void func_08015244(s32 gameID, s32 completionState, s32 arg2) {
+    func_08014f30();
+    if (gameID < 0) {
+        gGameSelectInfo.unk41 = 0;
+    } else {
+        gGameSelectInfo.currentGameID = gameID;
+        gGameSelectInfo.currentGameCompletionState = completionState;
+        gGameSelectInfo.unk40 = arg2;
+        gGameSelectInfo.currentGameEntry = &D_089ce344[gameID];
+        gGameSelectInfo.unk41 = 1;
+    }
+}
+
 
 #include "asm/game_select/asm_08015298.s"
 

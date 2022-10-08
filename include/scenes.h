@@ -53,10 +53,10 @@ struct GameSelectInfo {
     u32 unk38; // another pointer
     u16 unk3C;
     u8 unk3E;
-    u8 unk3F;
+    u8 currentGameCompletionState;
     u8 unk40;
     u8 unk41;
-    const struct GameSelectEntry *currentGameEntry;
+    const struct GameSelectSceneEntry *currentGameEntry;
     u16 currentGameID;
     u16 null4A;
     u16 null4C;
@@ -103,18 +103,24 @@ struct GameSelectInfo {
     struct PerfectCampaignNotice {
         u8 unk0;
         s8 unk1;
-        s16 unk2;
-        s16 unk4;
+        s16 x;
+        s16 y;
         s16 perfectBorderSprite;
-        u32 unk8;
+        u16 unk8;
+        u16 unkA;
         u32 unkC; // pointer
         s16 aButtonSprite;
+        char unk12[11];
     } perfectCampaignNotice;
-    u32 null354;
-    u32 null358;
-    u32 null35C;
     u32 null360[40];
-    u32 null400[56];
+    u32 null400[20];
+    u16 null450;
+    u8 null452;
+    u8 unk453;
+    u8 unk454[4];
+    u32 null458;
+    u32 null45C;
+    u32 null460[32];
     u32 null4E0;
     u32 null4E4;
     s16 medalsTextSprite;

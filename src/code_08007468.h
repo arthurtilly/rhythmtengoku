@@ -50,6 +50,7 @@ extern u32 func_08007fdc(struct unk_struct_08007f58 *arg0);
 // extern ? func_08008054(?);
 // extern ? func_08008090(?);
 // extern ? func_08008184(?);
+extern char *func_080081a8(char *, const char *); // Append String
 // extern ? func_080081d4(?);
 // extern ? func_0800820c(?); // Check if two strings are equal?
 // extern ? func_08008248(?);

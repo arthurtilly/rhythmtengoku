@@ -377,19 +377,22 @@ s32 fast_divsi3(s32 dividend, s32 divisor) {
 
 #include "asm/code_08007468/asm_08008184.s"
 
-u8 *func_080081a8(u8 *arg1, u8 *arg2) {
-    u8 *temp = arg1;
-    while (*arg1 != 0) {
-        arg1++;
+
+// Append String
+char *func_080081a8(char *s1, const char *s2) {
+    u8 *s = s1;
+    while (*s1 != 0) {
+        s1++;
     }
-    while (*arg2 != 0) {
-        *arg1 = *arg2;
-        arg2++;
-        arg1++;
+    while (*s2 != 0) {
+        *s1 = *s2;
+        s2++;
+        s1++;
     }
-    *arg1 = 0;
-    return temp;
+    *s1 = 0;
+    return s;
 }
+
 
 #include "asm/code_08007468/asm_080081d4.s"
 
