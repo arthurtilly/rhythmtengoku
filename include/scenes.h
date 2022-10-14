@@ -93,16 +93,28 @@ struct GameSelectInfo {
     u8 unk2DA;
     u8 unk2DB;
     u8 unk2DC;
-    u32 null2E0[8];
-    u32 null300[8];
+    struct RhythmGameCompletionData {
+        s8 x;
+        s8 y;
+        u8 completion;
+    } unk2E0[16];
     u8 unk320;
     u32 null324;
-    u32 null328;
-    u32 null32C;
-    u32 null330[4];
+    u8 unk328;
+    u8 unk329;
+    struct FlowDisplay {
+        s16 textSprite; // "Your Flow"
+        s16 numberSprites[3];
+        s16 arrowSprite;
+        u8 unkA;
+        u16 unkC;
+        u16 unkE;
+        u16 currentScore;
+        u16 previousScore; // flow value?
+    } flowDisplay;
     struct PerfectCampaignNotice {
         u8 unk0;
-        s8 unk1;
+        s8 id;
         s16 x;
         s16 y;
         s16 perfectBorderSprite;

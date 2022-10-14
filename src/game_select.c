@@ -98,21 +98,21 @@ void func_08012928(void) {
     if (sceneInfo->unk453 == 0) return;
 
     temp = 0;
-    if (D_030046a8->unk10[0x28e] < 48) {
+    if (D_030046a8->data.unk28E < 48) {
         temp = 1;
     }
-    if (D_030046a8->unk10[0x28e] < 45) {
+    if (D_030046a8->data.unk28E < 45) {
         temp = func_08001980(2) + 2;
     }
-    if (D_030046a8->unk10[0x28e] < 30) {
+    if (D_030046a8->data.unk28E < 30) {
         temp = func_08001980(4) + 3;
     }
-    D_030046a8->unk10[0x266] = 1;
-    D_030046a8->unk10[0x267] = 3;
-    D_030046a8->unk10[0x268] = temp;
-    D_030046a8->unk10[0x269] = sceneInfo->unk454[func_08001980(sceneInfo->unk453)];
-    D_030046a8->unk10[0x26A] = 0;
-    D_030046a8->unk10[0x291] = 0;
+    D_030046a8->data.unk266 = 1;
+    D_030046a8->data.perfectAttemptsRemaining = 3;
+    D_030046a8->data.unk268 = temp;
+    D_030046a8->data.perfectCampaignID = sceneInfo->unk454[func_08001980(sceneInfo->unk453)];
+    D_030046a8->data.unk26A = 0;
+    D_030046a8->data.unk291 = 0;
 }
 
 
@@ -121,12 +121,12 @@ void func_080129e8(void) {
     struct PerfectCampaignNotice *notice;
 
     notice = &gGameSelectInfo.perfectCampaignNotice;
-    if (D_030046a8->unk10[0x268] != 0) return;
+    if (D_030046a8->data.unk268 != 0) return;
 
-    D_030046a8->unk10[0x266] = 2;
-    notice->unk1 = D_030046a8->unk10[0x269];
-    notice->x = D_089cdf24[notice->unk1].x;
-    notice->y = D_089cdf24[notice->unk1].y;
+    D_030046a8->data.unk266 = 2;
+    notice->id = D_030046a8->data.perfectCampaignID;
+    notice->x = D_089cdf24[notice->id].x;
+    notice->y = D_089cdf24[notice->id].y;
     notice->unk0 = 1;
 }
 
@@ -135,8 +135,6 @@ void func_080129e8(void) {
 void func_08012a58(void) {
     struct PerfectCampaignNotice *notice;
     s16 *vector;
-    u32 temp;
-    u8 *temp2;
 
     notice = &gGameSelectInfo.perfectCampaignNotice;
     vector = &D_03004b10.bgOffset[BG_LAYER_1].horizontal;
@@ -154,11 +152,11 @@ void func_08012a58(void) {
     func_0800acd8(notice->unkC, 1);
     func_0800ad98(notice->unkC, &vector[0], &vector[1]);
     notice->unk0 = 0;
-    notice->unk1 = -1;
-    switch (D_030046a8->unk10[0x266]) {
+    notice->id = -1;
+    switch (D_030046a8->data.unk266) {
         case 0:
             func_08012928();
-            if (D_030046a8->unk10[0x266] == 1) {
+            if (D_030046a8->data.unk266 == 1) {
                 func_080129e8();
             }
             break;
@@ -168,23 +166,21 @@ void func_08012a58(void) {
             break;
 
         case 2:
-            if ((D_030046a8->unk10[0x267] != 0) && (D_030046a8->unk10[0x26A] < 3)) {
-                temp = D_030046a8->unk10[0x269];
-                temp2 = &D_030046a8->unk10[0x236];
-                if (temp2[temp] == 0) {
-                    notice->unk1 = temp;
-                    notice->x = D_089cdf24[notice->unk1].x;
-                    notice->y = D_089cdf24[notice->unk1].y;
-                    func_08012fcc(notice->x, notice->y);
-                    break;
+            if ((D_030046a8->data.perfectAttemptsRemaining != 0)
+             && (D_030046a8->data.unk26A < 3)
+             && (D_030046a8->data.unk236[D_030046a8->data.perfectCampaignID] == 0)) {
+                notice->id = D_030046a8->data.perfectCampaignID;
+                notice->x = D_089cdf24[notice->id].x;
+                notice->y = D_089cdf24[notice->id].y;
+                func_08012fcc(notice->x, notice->y);
+            } else {
+                D_030046a8->data.unk266 = 0;
+                func_08012928();
+                if (D_030046a8->data.unk266 == 1) {
+                    func_080129e8();
                 }
+                break;
             }
-            D_030046a8->unk10[0x266] = 0;
-            func_08012928();
-            if (D_030046a8->unk10[0x266] == 1) {
-                func_080129e8();
-            }
-            break;
     }
     func_08012850();
 }
@@ -286,7 +282,7 @@ void func_08012fcc(s32 x, s32 y) {
     func_0801332c(x, y, &x2, &y2);
     x2 += 47;
     y2 += 68;
-    func_0804d8f8(D_03005380, notice->perfectBorderSprite, D_089ce0a4[func_080087d4(D_030046a8->unk10[0x267], 1, 3) - 1], 0, 1, 0, 0);
+    func_0804d8f8(D_03005380, notice->perfectBorderSprite, D_089ce0a4[func_080087d4(D_030046a8->data.perfectAttemptsRemaining, 1, 3) - 1], 0, 1, 0, 0);
     func_0804d5d4(D_03005380, notice->perfectBorderSprite, x2, y2);
     func_0804d770(D_03005380, notice->perfectBorderSprite, TRUE);
 }
@@ -320,12 +316,11 @@ const struct GameSelectSceneEntry *func_08013130(s32 id) {
 
 // Get Completion State for a Game
 s32 func_0801314c(s32 gameID) {
-    u8 *temp = (u8 *)D_030046a8;
+    struct TengokuSaveData *saveData = &D_030046a8->data;
 
     if (gameID < 0) return -1;
 
-    temp += 0x16;
-    return temp[gameID];
+    return saveData->rhythmGameCompletion[gameID];
 }
 
 
@@ -449,18 +444,18 @@ void func_080135cc(void) {
 void func_08013644(s32 arg) {
     s16 bgOffsetX, bgOffsetY;
     s32 cursorX, cursorY;
-    u8 *r10;
-    s32 r6, currentGameCompletionState;
+    struct TengokuSaveData *saveData;
+    s32 recentCompletionLevel, previousCompletionLevel;
 
-    r10 = D_030046a8->unk10;
+    saveData = &D_030046a8->data;
     gGameSelectInfo.unk8_b0 = TRUE;
     func_08007324(0);
     func_080073f0();
     func_080135cc(); // gfx init. stuff
     func_0801338c();
     func_080158f0();
-    gGameSelectInfo.cursorX = D_030046a8->unk10[0];
-    gGameSelectInfo.cursorY = D_030046a8->unk10[1];
+    gGameSelectInfo.cursorX = D_030046a8->data.gameSelectCursorX;
+    gGameSelectInfo.cursorY = D_030046a8->data.gameSelectCursorY;
     func_0801332c(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY, &bgOffsetX, &bgOffsetY);
     func_0800e058(BG_LAYER_3, bgOffsetX, bgOffsetY);
     func_0800e058(BG_LAYER_2, bgOffsetX, bgOffsetY);
@@ -495,22 +490,22 @@ void func_08013644(s32 arg) {
     gGameSelectInfo.unk2DB = 0;
     gGameSelectInfo.unk2DC = 0;
     gGameSelectInfo.unk320 = 0;
-    cursorX = (s8) r10[2];
-    cursorY = (s8) r10[3];
-    r6 = (s8) r10[4];
-    currentGameCompletionState = func_0801317c(cursorX, cursorY);
+    cursorX = saveData->gameSelectPosX;
+    cursorY = saveData->gameSelectPosY;
+    recentCompletionLevel = saveData->recentGameCompletionLevel;
+    previousCompletionLevel = func_0801317c(cursorX, cursorY);
     gGameSelectInfo.unk4F4 = 0;
     gGameSelectInfo.unk4F8 = 0;
-    if (r6 > currentGameCompletionState) {
+    if (recentCompletionLevel > previousCompletionLevel) {
         func_08014938(60);
-        func_080141f8(cursorX, cursorY, r6);
-        if (r10[5] != 0) {
+        func_080141f8(cursorX, cursorY, recentCompletionLevel);
+        if (saveData->gameSelectUnk5 != 0) {
             gGameSelectInfo.unk4F4 = 1;
             gGameSelectInfo.unk4F5 = cursorX;
             gGameSelectInfo.unk4F6 = cursorY;
             gGameSelectInfo.unk4F8 = 60;
         }
-        if ((func_08013100(cursorX, cursorY) == SCENE_ENTRY_REMIX_6) && (r6 > 3)) {
+        if ((func_08013100(cursorX, cursorY) == SCENE_ENTRY_REMIX_6) && (recentCompletionLevel >= RHYTHM_GAME_STATE_CLEARED)) {
             func_08012808();
         }
     } else {
@@ -518,14 +513,14 @@ void func_08013644(s32 arg) {
         gGameSelectInfo.unk2D9 = 0;
         func_08010478();
         if (gGameSelectInfo.perfectCampaignNotice.unk0 != 0) {
-            func_08012cb4(D_030046a8->unk10[0x269]);
+            func_08012cb4(D_030046a8->data.perfectCampaignID);
             gGameSelectInfo.perfectCampaignNotice.unk0 = 0;
         } else {
             gGameSelectInfo.unk0 = 2;
         }
     }
-    r10[4] = -1;
-    r10[5] = 0;
+    saveData->recentGameCompletionLevel = -1;
+    saveData->gameSelectUnk5 = 0;
     func_080191ac(1);
     func_08013994();
     func_0801318c(SCENE_ENTRY_STAFF_CREDIT, &cursorX, &cursorY);
@@ -593,20 +588,20 @@ void func_08013b98(s32 x, s32 y) {
 
 // Set Current Game Scene Entry
 void func_08013f9c(void) {
-    s32 completionState;
+    s32 completionLevel;
 
-    completionState = func_0801317c(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY);
+    completionLevel = func_0801317c(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY);
 
-    switch (completionState + 1) {
-        case 0:
-        case 1:
-        case 3:
-            func_08015244(-1, 0, 10);
+    switch (completionLevel + 1) {
+        case (RHYTHM_GAME_STATE_NONE + 1):
+        case (RHYTHM_GAME_STATE_HIDDEN + 1):
+        case (RHYTHM_GAME_STATE_CLOSED + 1):
+            func_08015244(-1, RHYTHM_GAME_STATE_HIDDEN, 10);
             break;
-        case 4:
-        case 5:
-        case 6:
-            func_08015244(func_08013100(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY), completionState, 10);
+        case (RHYTHM_GAME_STATE_AVAILABLE + 1):
+        case (RHYTHM_GAME_STATE_CLEARED + 1):
+        case (RHYTHM_GAME_STATE_MEDAL_OBTAINED + 1):
+            func_08015244(func_08013100(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY), completionLevel, 10);
             break;
     }
 }
@@ -645,7 +640,7 @@ void func_08014118(s32 arg) {
             case 2:
                 func_08013d20();
                 break;
-            case 3:
+            case 3: // Update Perfect Campaign Notice
                 func_08012e24();
                 break;
         }
@@ -672,7 +667,25 @@ void func_08014118(s32 arg) {
 
 #include "asm/game_select/asm_080141d8.s"
 
-#include "asm/game_select/asm_080141f8.s"
+
+// ?
+void func_080141f8(s32 x, s32 y, s32 completionLevel) {
+    struct RhythmGameCompletionData *data;
+    s32 previous;
+
+    if (completionLevel == -1) return;
+
+    previous = func_0801317c(x, y);
+    if ((previous >= 0) && (previous < completionLevel)) {
+        data = &gGameSelectInfo.unk2E0[gGameSelectInfo.unk2DC];
+        data->x = x;
+        data->y = y;
+        data->completion = completionLevel;
+        gGameSelectInfo.unk2DA++;
+        if (++gGameSelectInfo.unk2DC > 15) gGameSelectInfo.unk2DC = 0;
+    }
+}
+
 
 #include "asm/game_select/asm_08014268.s"
 
@@ -690,7 +703,16 @@ void func_08014118(s32 arg) {
 
 #include "asm/game_select/asm_0801490c.s"
 
-#include "asm/game_select/asm_08014938.s"
+
+// ?
+void func_08014938(u32 arg) {
+    gGameSelectInfo.unk2D8 = 1;
+    gGameSelectInfo.unk328 = gGameSelectInfo.cursorX;
+    gGameSelectInfo.unk329 = gGameSelectInfo.cursorY;
+    gGameSelectInfo.unk2D9 = arg;
+    gGameSelectInfo.unk0 = 1;
+}
+
 
 #include "asm/game_select/asm_08014978.s"
 
@@ -779,13 +801,156 @@ void func_08015244(s32 gameID, s32 completionState, s32 arg2) {
 
 #include "asm/game_select/asm_08015298.s"
 
-#include "asm/game_select/asm_080152b0.s"
+
+// Calculate Flow?
+u32 func_080152b0(u32 *outMod, u32 *outScore) {
+    struct TengokuSaveData *saveData;
+    u32 totalGames, totalScore;
+    u32 i, score;
+    u32 modifier, modifiedScore;
+
+    saveData = &D_030046a8->data;
+    totalGames = 0;
+    totalScore = 0;
+    for (i = 0; i < 55; i++) {
+        score = saveData->unk40[i];
+        if (score != (u16) -1) {
+            totalGames++;
+            totalScore += score;
+        }
+    }
+
+    if (totalGames == 0) return 0;
+
+    modifier = (INT_TO_FIXED((totalGames + 48) * 7)) / 480u;
+    modifiedScore = (FIXED_TO_INT(modifier * totalScore)) / totalGames;
+    if (outMod != NULL) {
+        *outMod = modifier;
+    }
+    if (outScore != NULL) {
+        *outScore = totalScore / totalGames;
+    }
+    return modifiedScore;
+}
+
 
 #include "asm/game_select/asm_08015338.s"
 
-#include "asm/game_select/asm_080153a8.s"
 
-#include "asm/game_select/asm_080154f0.s"
+// Set Flow?
+u32 func_080153a8(void) {
+    struct TengokuSaveData *saveData;
+    struct FlowDisplay *flow;
+    u32 scoreModifier, averageScore;
+    u32 prevModifiedScoreAvg;
+    u32 newModifiedScoreAvg;
+    u32 newScore, prevScore, finalScore;
+    u32 scoreIncrement;
+    u32 medalWasObtained;
+    u32 previousCompletionLevel;
+    s8 x, y;
+    s32 id;
+    u32 i;
+
+    saveData = &D_030046a8->data;
+    flow = &gGameSelectInfo.flowDisplay;
+    medalWasObtained = FALSE;
+    newScore = saveData->unk3E;
+
+    if (newScore == (u16) -1) {
+        flow->previousScore = D_030046a8->data.currentFlow;
+        flow->currentScore = D_030046a8->data.currentFlow;
+        return 0;
+    }
+
+    x = saveData->gameSelectPosX;
+    y = saveData->gameSelectPosY;
+    id = func_08013100(x, y);
+    previousCompletionLevel = saveData->recentGameCompletionLevel;
+
+    if ((func_0801317c(x, y) < RHYTHM_GAME_STATE_MEDAL_OBTAINED)
+     && (previousCompletionLevel == RHYTHM_GAME_STATE_MEDAL_OBTAINED)) {
+        medalWasObtained = TRUE;
+    }
+
+    if (medalWasObtained) {
+        prevModifiedScoreAvg = func_080152b0(NULL, NULL);
+    }
+
+    if (id >= 0) {
+        prevScore = saveData->unk40[id];
+        if (prevScore == (u16) -1) {
+            prevScore = newScore;
+        } else if (prevScore < newScore) {
+            prevScore = (prevScore + (newScore * 3)) / 4;
+        } else {
+            prevScore = (((newScore + (prevScore * 3)) / 4) << 8) >> 8;
+        }
+        saveData->unk40[id] = prevScore;
+    }
+    saveData->unk3E = -1;
+    newModifiedScoreAvg = func_080152b0(&scoreModifier, &averageScore);
+
+    if (medalWasObtained) {
+        if (newModifiedScoreAvg < prevModifiedScoreAvg) {
+            scoreIncrement = ((INT_TO_FIXED(prevModifiedScoreAvg)) / scoreModifier) - averageScore + 1;
+            for (i = 0; i < 55; i++) {
+                prevScore = saveData->unk40[i];
+                if (prevScore != (u16) -1) {
+                    saveData->unk40[i] = func_080087d4(prevScore + scoreIncrement, 0, 1000);
+                }
+            }
+        }
+        newModifiedScoreAvg = func_080152b0(NULL, NULL);
+    }
+
+    finalScore = newModifiedScoreAvg / 10;
+    if (finalScore < 9) finalScore = 9;
+
+    flow->previousScore = saveData->currentFlow;
+    saveData->currentFlow = finalScore;
+    flow->currentScore = saveData->currentFlow;
+}
+
+
+// Initialise Flow Display
+void func_080154f0(void) {
+    struct FlowDisplay *flow;
+    s16 *vector;
+    u32 i;
+    u32 temp;
+    u32 score;
+
+    flow = &gGameSelectInfo.flowDisplay;
+    vector = &D_03004b10.bgOffset[BG_LAYER_1].horizontal;
+
+    for (i = 0; i < 3; i++) {
+        flow->numberSprites[i] = func_0804d160(D_03005380, D_08902b78, 10, 208 - (i * 8), 128, 0, 0, 0, 0);
+        func_0804db44(D_03005380, flow->numberSprites[i], &vector[0], &vector[1]);
+    }
+
+    flow->textSprite = func_0804d160(D_03005380, D_08902bd8, 0, 128, 128, 0, 0, 0, 0);
+    func_0804db44(D_03005380, flow->textSprite, &vector[0], &vector[1]);
+
+    flow->arrowSprite = func_0804d160(D_03005380, D_08902bf0, 0, 224, 128, 0, 0, 0, 0x8000);
+    func_0804db44(D_03005380, flow->arrowSprite, &vector[0], &vector[1]);
+    temp = func_080153a8();
+    score = flow->previousScore;
+
+    if (score != 0) {
+        for (i = 0; i < 3; i++) {
+            func_0804cebc(D_03005380, flow->numberSprites[i], ((score != 0) ? (score % 10) : 10));
+            score /= 10;
+        }
+    }
+
+    flow->unkA = ((flow->currentScore != 0) && (temp != 0));
+    flow->unkC = 60;
+    if (D_030046a8->data.gameSelectUnk5 != 0) {
+        flow->unkC = 180;
+    }
+}
+
 
 #include "asm/game_select/asm_08015660.s"
 

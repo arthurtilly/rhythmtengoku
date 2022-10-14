@@ -54,6 +54,16 @@ enum PerfectCampaignRewardTypesEnum {
     PERFECT_REWARD_TYPE_NEW_GAME
 };
 
+enum RhythmGameCompletionLevelsEnum {
+    RHYTHM_GAME_STATE_HIDDEN,
+    RHYTHM_GAME_STATE_INVALID,
+    RHYTHM_GAME_STATE_CLOSED,
+    RHYTHM_GAME_STATE_AVAILABLE,
+    RHYTHM_GAME_STATE_CLEARED,
+    RHYTHM_GAME_STATE_MEDAL_OBTAINED
+};
+#define RHYTHM_GAME_STATE_NONE -1
+
 enum GameSelectSceneEntriesEnum {
     SCENE_ENTRY_KARATE_MAN,
     SCENE_ENTRY_KARATE_MAN_2,
@@ -269,10 +279,10 @@ extern void func_08014f30(void); // Initialise... Current Game Description Box?
 // extern ? func_08015108(?);
 extern void func_08015244(s32 gameID, s32 completionState, s32 arg2); // Set Current Game Scene Entry
 extern void func_08015298(void); // update something
-// extern ? func_080152b0(?);
+extern u32 func_080152b0(u32 *outMod, u32 *outScore); // Calculate Flow?
 // extern ? func_08015338(?);
-// extern ? func_080153a8(?);
-extern void func_080154f0(void); // init. something
+extern u32 func_080153a8(void); // Set Flow?
+extern void func_080154f0(void); // Initialise Flow Display
 extern void func_08015660(void); // update something (cursor movement?)
 // extern ? func_080158d4(?); // [func_080158d4] Scene Close
 extern void func_080158f0(void); // STUB
