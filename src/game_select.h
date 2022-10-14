@@ -54,6 +54,64 @@ enum PerfectCampaignRewardTypesEnum {
     PERFECT_REWARD_TYPE_NEW_GAME
 };
 
+enum GameSelectSceneEntriesEnum {
+    SCENE_ENTRY_KARATE_MAN,
+    SCENE_ENTRY_KARATE_MAN_2,
+    SCENE_ENTRY_CLAPPY_TRIO,
+    SCENE_ENTRY_SNAPPY_TRIO,
+    SCENE_ENTRY_POLYRHYTHM,
+    SCENE_ENTRY_POLYRHYTHM_2,
+    SCENE_ENTRY_NIGHT_WALK,
+    SCENE_ENTRY_NIGHT_WALK_2,
+    SCENE_ENTRY_RHYTHM_TWEEZERS,
+    SCENE_ENTRY_RHYTHM_TWEEZERS_2,
+    SCENE_ENTRY_SICK_BEATS,
+    SCENE_ENTRY_BOUNCY_ROAD,
+    SCENE_ENTRY_BOUNCY_ROAD_2,
+    SCENE_ENTRY_NINJA_BODYGUARD,
+    SCENE_ENTRY_NINJA_BODYGUARD_2,
+    SCENE_ENTRY_SNEAKY_SPIRITS,
+    SCENE_ENTRY_SNEAKY_SPIRITS_2,
+    SCENE_ENTRY_SAMURAI_SLICE,
+    SCENE_ENTRY_SPACEBALL,
+    SCENE_ENTRY_SPACEBALL_2,
+    SCENE_ENTRY_TAP_TRIAL,
+    SCENE_ENTRY_TAP_TRIAL_2,
+    SCENE_ENTRY_MARCHING_ORDERS,
+    SCENE_ENTRY_MARCHING_ORDERS_2,
+    SCENE_ENTRY_WIZARDS_WALTZ,
+    SCENE_ENTRY_BUNNY_HOP,
+    SCENE_ENTRY_FIREWORKS,
+    SCENE_ENTRY_POWER_CALLIGRAPHY,
+    SCENE_ENTRY_POWER_CALLIGRAPHY_2,
+    SCENE_ENTRY_TOSS_BOYS,
+    SCENE_ENTRY_TOSS_BOYS_2,
+    SCENE_ENTRY_RAT_RACE,
+    SCENE_ENTRY_TRAM_AND_PAULINE,
+    SCENE_ENTRY_SHOWTIME,
+    SCENE_ENTRY_SPACE_DANCE,
+    SCENE_ENTRY_COSMIC_DANCE,
+    SCENE_ENTRY_RAP_MEN,
+    SCENE_ENTRY_RAP_WOMEN,
+    SCENE_ENTRY_QUIZ_SHOW,
+    SCENE_ENTRY_BON_ODORI,
+    SCENE_ENTRY_BON_DANCE,
+    SCENE_ENTRY_REMIX_1,
+    SCENE_ENTRY_REMIX_2,
+    SCENE_ENTRY_REMIX_3,
+    SCENE_ENTRY_REMIX_4,
+    SCENE_ENTRY_REMIX_5,
+    SCENE_ENTRY_REMIX_6,
+    SCENE_ENTRY_REMIX_7,
+    SCENE_ENTRY_REMIX_8,
+    SCENE_ENTRY_CAFE,
+    SCENE_ENTRY_RHYTHM_TOYS,
+    SCENE_ENTRY_ENDLESS_GAMES,
+    SCENE_ENTRY_DRUM_LESSONS,
+    SCENE_ENTRY_STAFF_CREDIT,
+    SCENE_ENTRY_LIVE_MENU
+};
+
 
 /* TEXT */
 
@@ -146,11 +204,11 @@ extern void func_08012fcc(s32 x, s32 y); // Display Perfect Campaign Border
 // extern ? func_080130b0(?);
 // extern ? func_080130e4(?);
 extern s32 func_08013100(u32 x, u32 y); // Get Game Select Scene Entry ID
-// extern ? func_08013130(?);
+extern const struct GameSelectSceneEntry *func_08013130(s32 id); // Get Game Scene Entry
 extern s32 func_0801314c(s32 gameID); // Get Completion State for a Game
-extern struct GameSelectSceneEntry *func_0801316c(s32 x, s32 y); // Get Game Scene Entry from Grid Position
+extern const struct GameSelectSceneEntry *func_0801316c(s32 x, s32 y); // Get Game Scene Entry from Grid Position
 extern s32 func_0801317c(s32 x, s32 y); // Get Completion State for a Game at Grid Position
-extern s32 func_0801318c(s32, s32 *, s32 *); // init. something
+extern void func_0801318c(s32, s32 *, s32 *); // Set X/Y from Game Select Grid Data
 extern void func_080131e8(void); // init. something
 extern void func_0801332c(s32 inputX, s32 inputY, s16 *outputX, s16 *outputY); // calculate some x/y position
 extern void func_08013b48(void); // Set... something to do with the selection border sprite

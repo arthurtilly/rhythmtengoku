@@ -98,13 +98,13 @@ void func_08012928(void) {
     if (sceneInfo->unk453 == 0) return;
 
     temp = 0;
-    if (D_030046a8->unk10[0x28e] < 0x30) {
+    if (D_030046a8->unk10[0x28e] < 48) {
         temp = 1;
     }
-    if (D_030046a8->unk10[0x28e] < 0x2d) {
+    if (D_030046a8->unk10[0x28e] < 45) {
         temp = func_08001980(2) + 2;
     }
-    if (D_030046a8->unk10[0x28e] < 0x1e) {
+    if (D_030046a8->unk10[0x28e] < 30) {
         temp = func_08001980(4) + 3;
     }
     D_030046a8->unk10[0x266] = 1;
@@ -221,8 +221,8 @@ const char *func_08012c24(s32 id, s32 shortenSongTitle) {
 
 // Set Perfect Campaign Notice..?
 void func_08012cb4(s32 id) {
+    const struct GameSelectSceneEntry *entry;
     struct PerfectCampaignNotice *notice;
-    struct GameSelectSceneEntry *entry;
     char *string;
     u32 r9;
     u32 rewardIsMusic;
@@ -256,7 +256,7 @@ void func_08012cb4(s32 id) {
         func_080081a8(string, D_08050c08); // "Ç‡ÇÍÇ»Ç≠"
     }
     func_080081a8(string, D_08050c14); // "Åu"
-    func_080081a8(string, func_08012c24(id, 0)); // "<reward>"
+    func_080081a8(string, func_08012c24(id, FALSE)); // "<reward>"
     func_080081a8(string, D_08050c18); // "Åv"
     if (rewardIsMusic) {
         func_080081a8(string, D_08050c1c); // "ÇÃã»"
@@ -310,7 +310,12 @@ s32 func_08013100(u32 x, u32 y) {
 }
 
 
-#include "asm/game_select/asm_08013130.s"
+// Get Game Scene Entry
+const struct GameSelectSceneEntry *func_08013130(s32 id) {
+    if (id < 0) return NULL;
+
+    return &D_089ce344[id];
+}
 
 
 // Get Completion State for a Game
@@ -324,13 +329,39 @@ s32 func_0801314c(s32 gameID) {
 }
 
 
-#include "asm/game_select/asm_0801316c.s"
+// Get Game Scene Entry from Grid Position
+const struct GameSelectSceneEntry *func_0801316c(s32 x, s32 y) {
+    return func_08013130(func_08013100(x, y));
+}
 
+
+// Get Completion State for a Game at Grid Position
 s32 func_0801317c(s32 x, s32 y) {
     return func_0801314c(func_08013100(x, y));
 }
 
-#include "asm/game_select/asm_0801318c.s"
+
+// Set X/Y from Game Select Grid Data
+void func_0801318c(s32 id, s32 *x, s32 *y) {
+    u32 i, j;
+
+    if (id < 0) {
+        *x = -1;
+        *y = -1;
+        return;
+    }
+
+    for (i = 0; i < GAME_SELECT_GRID_HEIGHT; i++) {
+        for (j = 0; j < GAME_SELECT_GRID_WIDTH; j++) {
+            if (D_089ceafc[j + (i * GAME_SELECT_GRID_WIDTH)].id == id) {
+                *x = j;
+                *y = i;
+                return;
+            }
+        }
+    }
+}
+
 
 #include "asm/game_select/asm_080131e8.s"
 
@@ -417,9 +448,9 @@ void func_080135cc(void) {
 // [func_08013644] Scene Init.
 void func_08013644(s32 arg) {
     s16 bgOffsetX, bgOffsetY;
-    s32 offsetX2, offsetY2;
+    s32 cursorX, cursorY;
     u8 *r10;
-    s32 r6, temp;
+    s32 r6, currentGameCompletionState;
 
     r10 = D_030046a8->unk10;
     gGameSelectInfo.unk8_b0 = TRUE;
@@ -464,22 +495,22 @@ void func_08013644(s32 arg) {
     gGameSelectInfo.unk2DB = 0;
     gGameSelectInfo.unk2DC = 0;
     gGameSelectInfo.unk320 = 0;
-    offsetX2 = (s8) r10[2];
-    offsetY2 = (s8) r10[3];
+    cursorX = (s8) r10[2];
+    cursorY = (s8) r10[3];
     r6 = (s8) r10[4];
-    temp = func_0801317c(offsetX2, offsetY2);
+    currentGameCompletionState = func_0801317c(cursorX, cursorY);
     gGameSelectInfo.unk4F4 = 0;
     gGameSelectInfo.unk4F8 = 0;
-    if (r6 > temp) {
+    if (r6 > currentGameCompletionState) {
         func_08014938(60);
-        func_080141f8(offsetX2, offsetY2, r6);
+        func_080141f8(cursorX, cursorY, r6);
         if (r10[5] != 0) {
             gGameSelectInfo.unk4F4 = 1;
-            gGameSelectInfo.unk4F5 = offsetX2;
-            gGameSelectInfo.unk4F6 = offsetY2;
+            gGameSelectInfo.unk4F5 = cursorX;
+            gGameSelectInfo.unk4F6 = cursorY;
             gGameSelectInfo.unk4F8 = 60;
         }
-        if ((func_08013100(offsetX2, offsetY2) == 46) && (r6 > 3)) {
+        if ((func_08013100(cursorX, cursorY) == SCENE_ENTRY_REMIX_6) && (r6 > 3)) {
             func_08012808();
         }
     } else {
@@ -497,8 +528,8 @@ void func_08013644(s32 arg) {
     r10[5] = 0;
     func_080191ac(1);
     func_08013994();
-    func_0801318c(53, &offsetX2, &offsetY2);
-    if (func_0801317c(offsetX2, offsetY2) > 3) {
+    func_0801318c(SCENE_ENTRY_STAFF_CREDIT, &cursorX, &cursorY);
+    if (func_0801317c(cursorX, cursorY) > 3) {
         func_08012808();
     }
     func_080006b0(&D_089d77e4, &D_089d7c18); // Results (Level), Results (Epilogue..?)
