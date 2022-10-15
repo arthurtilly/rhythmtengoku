@@ -9,6 +9,7 @@
 #define gMainMenuInfo   D_030046a4->mainMenu
 #define gGameSelectInfo D_030046a4->gameSelect
 #define gGameplayInfo   D_030046a4->gameplay
+#define gResultsInfo    D_030046a4->results
 
 // Main Menu Scene Info
 struct MainMenuInfo {
@@ -215,8 +216,29 @@ struct GameplayInfo {
     u8  unk5B8;
 };
 
+// Results Scene Info
+struct ResultsSceneInfo {
+    struct TextObject2 *textObj2;
+    struct TextObject1 *textObj1;
+    u32 awaitingInput;
+    u16 nullC;
+    s16 placeholderIcon;
+    s16 resultIcon;
+    u32 null14;
+    u32 null18;
+    u32 null1C;
+    u32 null20;
+    u8 unk24;
+    u32 null28;
+    u32 null2C;
+    u8 null30[0xf6];
+    u8 unk126;
+    u8 unk127;
+};
+
 extern union struct_030046a4 {
     struct MainMenuInfo mainMenu;
     struct GameSelectInfo gameSelect;
     struct GameplayInfo gameplay;
+    struct ResultsSceneInfo results;
 } *D_030046a4;

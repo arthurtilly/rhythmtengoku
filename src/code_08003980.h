@@ -90,7 +90,7 @@ extern u32 func_08004dc0(struct unk_struct_08004da0 *arg0);
 // extern ? func_08004ff4(?);
 // extern ? func_08005014(?);
 // extern ? func_080050bc(?);
-extern struct TextObject2 *func_08005124(u16, struct FontDefinition *, u8, u16, u8); // Create Text2 thing
+extern struct TextObject2 *func_08005124(u16, const struct FontDefinition *, u8, u16, u8); // Create Text2 thing
 // extern ? func_08005188(?);
 // extern ? func_080051a4(?);
 // extern ? func_080051c4(?); // Clear Text2 text

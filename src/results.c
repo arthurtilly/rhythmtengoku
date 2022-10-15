@@ -1,15 +1,29 @@
 #include "results.h"
 #include "cues.h"
+#include "src/code_08001360.h"
+#include "src/code_08003980.h"
+// #include "src/code_08007468.h"
+#include "src/code_0800b778.h"
+#include "src/lib_0804c870.h"
 
 // Might need better splitting
 
 asm(".include \"include/gba.inc\"");//Temporary
+
+#define RESULTS_TEXT_VRAM_ADDRESS (void *)(VRAMBase + 0x14000)
 
 static s32 D_0300132c; // unknown type, unknown if exists
 static s32 D_03001330; // unknown type
 static s32 D_03001334; // unknown type
 static u8 D_03001338[0x204]; // this is wrong though? this is the global score handler, which is 0x208 bytes, which is also equal to (0x1540 - 0x1338)
 static s32 D_03001540; // unknown type
+
+extern u8 D_03005b3c; // LFO Mode { 0 = Disabled; 1 = Note Triggered; 2 = Constant }
+extern const struct FontDefinition D_089de670;
+
+
+/* RESULTS */
+
 
 #include "asm/results/asm_080188b4.s"
 
@@ -29,21 +43,81 @@ static s32 D_03001540; // unknown type
 
 #include "asm/results/asm_08018a10.s"
 
-#include "asm/results/asm_08018a20.s"
 
-#include "asm/results/asm_08018a24.s"
+// [func_08018a20] LEVEL Initialise Static Variables (STUB)
+void func_08018a20(void) {
+}
 
-#include "asm/results/asm_08018a50.s"
 
-#include "asm/results/asm_08018a80.s"
+// [func_08018a24] LEVEL Graphics Init. 2
+void func_08018a24(void) {
+    u32 data;
 
-#include "asm/results/asm_08018aa0.s"
+    func_0800c604(0);
+    data = func_080087b4((u16) func_0800c3b8(), D_089d7684);
+    func_08005d38(data, func_0800bd04, 0);
+}
 
-#include "asm/results/asm_08018b9c.s"
 
-#include "asm/results/asm_08018ba0.s"
+// [func_08018a50] LEVEL Graphics Init. 1
+void func_08018a50(void) {
+    u32 data;
 
-#include "asm/results/asm_08018be0.s"
+    func_0800c604(0);
+    data = func_08002ee0(func_0800c3b8(), D_089d7654, 0x3000);
+    func_08005d38(data, func_08018a24, 0);
+}
+
+
+// [func_08018a80] LEVEL Graphics Init. 0
+void func_08018a80(void) {
+    func_0800856c((u16) func_0800c3b8(), func_08018a50, 0, 2);
+    func_0800e0ec();
+}
+
+
+// [func_08018aa0] LEVEL Scene Init.
+void func_08018aa0(s32 arg) {
+    func_08007324(0);
+    func_080073f0();
+    gResultsInfo.textObj2 = func_08005124(func_0800c3b8(), &D_089de670, 0, 0x340, 6);
+    gResultsInfo.textObj1 = func_0800c660(0x300, 4);
+    func_080018e0(0, RESULTS_TEXT_VRAM_ADDRESS, 0x4000, 0x20, 0x200);
+    gResultsInfo.unk24 = 0;
+
+    gResultsInfo.placeholderIcon = func_0804d160(D_03005380, D_0890b6ac, 0, 45, 24, 0x800, 0, 0, 0x8000);
+    gResultsInfo.resultIcon = func_0804d160(D_03005380, D_0890b6bc, 0, 180, 140, 0x800, 0, 0, 0x8000);
+    func_08018a80(); // gfx init.
+    D_03005b3c = 0;
+    gResultsInfo.awaitingInput = FALSE;
+    gResultsInfo.unk126 = 0;
+    gResultsInfo.unk127 = 0;
+}
+
+
+// [func_08018b9c] LEVEL Scene STUB
+void func_08018b9c(s32 arg) {
+}
+
+
+// [func_08018ba0] LEVEL Scene Main
+void func_08018ba0(s32 arg) {
+    if (!func_080189f4()) return;
+
+    if (D_03004afc & A_BUTTON) {
+        func_0800bd04(FALSE); // unpause
+        gResultsInfo.awaitingInput = FALSE;
+        func_08002698(&s_menu_se20_seqData, INT_TO_FIXED(0.5), 0);
+    }
+}
+
+
+// [func_08018be0] LEVEL Scene Close
+void func_08018be0(s32 arg) {
+    func_08008628();
+    func_08004058();
+}
+
 
 #include "asm/results/asm_08018bf0.s"
 
@@ -122,7 +196,7 @@ void func_080192a4(void) {
     }
 
     func_08019278();
-    D_089d7980->flavourText = NULL;
+    D_089d7980->headerText = NULL;
     D_089d7980->totalPoints = 0;
     D_089d7980->maximumPoints = 0;
 }
@@ -134,9 +208,9 @@ void func_08019304(const struct MarkingCriteria **markingData) {
 }
 
 
-// [func_08019310] Set Flavour Text (Script Function)
-void func_08019310(char *flavourText) {
-    D_089d7980->flavourText = flavourText;
+// [func_08019310] Set Header Text (Script Function)
+void func_08019310(char *headerText) {
+    D_089d7980->headerText = headerText;
 }
 
 

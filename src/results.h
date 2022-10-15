@@ -31,13 +31,31 @@ struct ScoreHandler {
     u16 unk74;
     const struct MarkingCriteria **markingData;
     struct InputScoreTracker cueInputTrackers[16];
-    char *flavourText; // text in the upper-right corner of the results comments screen
+    char *headerText; // text in the upper-right corner of the results comments screen
     u32 totalPoints;
     u32 maximumPoints;
 };
 
-/* DATA */
+/* TEXT */
 
+/* SPRITE ANIMATIONS */
+
+extern const struct Animation D_0890b6ac[]; // Placeholder Header ("nori-kan check")
+extern const struct Animation D_0890b6bc[]; // Result Icon { 0 = OK; 1 = Try Again; 2 = Superb }
+extern const struct Animation D_0890b6dc[]; // Positive Reinforcement Text Bubble
+extern const struct Animation D_0890b6ec[]; // Header Text Box
+extern const struct Animation D_0890b6fc[]; // Header Text Box Mask
+extern const struct Animation D_0890b70c[]; // "Medal Get!"
+extern const struct Animation D_0890b724[]; // "‚Å‚à" ("but")
+
+/* SOUND EFFECTS */
+
+extern const struct SequenceData s_menu_se20_seqData;
+
+/* SCENE DATA */
+
+extern u32 D_089d7654[]; // GFX Init. Struct
+extern u32 D_089d7684[]; // unused sprite thing i think
 struct ScoreHandler *D_089d7980; // ( = D_03001338)
 
 /* FUNCTIONS */
@@ -52,16 +70,16 @@ struct ScoreHandler *D_089d7980; // ( = D_03001338)
 // extern ? func_080189f4(?); // [func_080189f4] DEBUG ?
 // extern ? func_08018a10(?); // [func_08018a10] DEBUG Scene Close
 
-// extern ? func_08018a20(?); // [func_08018a20] LEVEL Initialise Static Variables (STUB)
-// extern ? func_08018a24(?); // [func_08018a24] LEVEL Graphics Init. 2
-// extern ? func_08018a50(?); // [func_08018a50] LEVEL Graphics Init. 1
-// extern ? func_08018a80(?); // [func_08018a80] LEVEL Graphics Init. 0
-// extern ? func_08018aa0(?); // [func_08018aa0] LEVEL Scene Init.
-// extern ? func_08018b9c(?); // [func_08018b9c] LEVEL Scene STUB
-// extern ? func_08018ba0(?); // [func_08018ba0] LEVEL Scene Main
-// extern ? func_08018be0(?); // [func_08018be0] LEVEL Scene Close
-// extern ? func_08018bf0(?); // [func_08018bf0] LEVEL ? (Script Function)
-// extern ? func_08018cc8(?); // [func_08018cc8] LEVEL ? (Script Function)
+extern void func_08018a20(void); // [func_08018a20] LEVEL Initialise Static Variables (STUB)
+extern void func_08018a24(void); // [func_08018a24] LEVEL Graphics Init. 2
+extern void func_08018a50(void); // [func_08018a50] LEVEL Graphics Init. 1
+extern void func_08018a80(void); // [func_08018a80] LEVEL Graphics Init. 0
+extern void func_08018aa0(s32); // [func_08018aa0] LEVEL Scene Init.
+extern void func_08018b9c(s32); // [func_08018b9c] LEVEL Scene STUB
+extern void func_08018ba0(s32); // [func_08018ba0] LEVEL Scene Main
+extern void func_08018be0(s32); // [func_08018be0] LEVEL Scene Close
+// extern ? func_08018bf0(?); // [func_08018bf0] LEVEL Display First Comment (Script Function)
+// extern ? func_08018cc8(?); // [func_08018cc8] LEVEL Display Result Icon (Script Function)
 // extern ? func_08018d68(?); // [func_08018d68] LEVEL ? (Script Function)
 // extern ? func_08018d9c(?); // [func_08018d9c] LEVEL ? (Script Function)
 
@@ -86,7 +104,7 @@ extern void func_08019268(struct InputScoreTracker *); // Initialise Any-Input T
 extern void func_08019278(void); // Initialise Cue Input Trackers and Marking Criteria
 extern void func_080192a4(void); // Initialise Score Handler
 extern void func_08019304(const struct MarkingCriteria **); // [func_08019304] Import Criteria (Script Function)
-extern void func_08019310(char *); // [func_08019310] Set Flavour Text (Script Function)
+extern void func_08019310(char *); // [func_08019310] Set Header Text (Script Function)
 extern void func_08019324(u32 assess); // [func_08019324] Assess Inputs (Script Function)
 extern u32 func_08019340(void); // Check if Assessing Inputs
 extern void func_08019350(u32 criterion, u32 level, s32 offset); // Register Input
@@ -107,7 +125,7 @@ extern void func_08019420(u32 criterion, u32 level, s32 offset); // Register Inp
 // extern ? func_08019a80(?);
 // extern ? func_08019bec(?);
 // extern ? func_08019d9c(?);
-// extern ? func_08019ee0(?); // [func_08019ee0] LEVEL ? (Script Function)
+// extern ? func_08019ee0(?); // [func_08019ee0] LEVEL Display Remaining Comments (Script Function)
 // extern ? func_0801a060(?);
 // extern ? func_0801a0ec(?); // [func_0801a0ec] ??? Initialise Static Variables
 // extern ? func_0801a0f0(?); // [func_0801a0f0] ??? Graphics Init. 2

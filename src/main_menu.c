@@ -13,7 +13,7 @@
 
 extern u16 *D_0300558c; // ???
 
-extern struct FontDefinition D_089de670;
+extern const struct FontDefinition D_089de670;
 extern const struct Scene D_089ddbcc; // Debug Menu Script
 extern const struct Scene D_089cdf08; // Game Select Script
 extern const struct Scene D_089d7964; // Results (Score) Script
