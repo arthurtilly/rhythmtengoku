@@ -1,9 +1,12 @@
 #include "results.h"
 #include "cues.h"
+#include "src/main.h"
+#include "src/memory.h"
 #include "src/code_08001360.h"
 #include "src/code_08003980.h"
 // #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
+#include "src/game_select.h"
 #include "src/lib_0804c870.h"
 
 // Might need better splitting
@@ -119,7 +122,24 @@ void func_08018be0(s32 arg) {
 }
 
 
-#include "asm/results/asm_08018bf0.s"
+// [func_08018bf0] LEVEL Display Header Text (Script Function)
+void func_08018bf0(void) {
+    struct Animation *textAnim;
+    s32 textSprite, textWidth;
+
+    if (D_089d7980->headerText == NULL) {
+        func_0804d770(D_03005380, gResultsInfo.placeholderIcon, TRUE);
+        return;
+    }
+
+    textAnim = func_08019210(D_089d7980->headerText, 2, 0);
+    textSprite = func_0804d160(D_03005380, textAnim, 0, 24, 24, 0x800, 0, 0, 0);
+    func_0804d8c4(D_03005380, textSprite, 4);
+    textWidth = func_0804ddb0(D_03005380, textSprite, 24);
+    func_0804d160(D_03005380, D_0890b6ec, 0, 120, 24, 0x864, 0, 0, 0);
+    func_0804d160(D_03005380, D_0890b6fc, 0, 120 + textWidth, 24, 0x850, 0, 0, 0);
+}
+
 
 #include "asm/results/asm_08018cc8.s"
 
@@ -336,7 +356,65 @@ void func_08019420(u32 criterion, u32 level, s32 offset) {
 
 #include "asm/results/asm_08019d9c.s"
 
-#include "asm/results/asm_08019ee0.s"
+
+// [func_08019ee0] LEVEL Display Comments (Script Function)
+void func_08019ee0(void) {
+    struct InputScoreTracker *tracker = D_089d7980->cueInputTrackers;
+    const struct MarkingCriteria **markingData = D_089d7980->markingData;
+    const struct Scene *scene;
+    struct Animation *textAnim;
+    s16 textSprite;
+    u32 r4, r7;
+    u32 previousResult;
+
+    func_0801287c();
+
+    while (*markingData != NULL) {
+        if (tracker->totalInputs != 0) {
+            func_08019480(tracker);
+        }
+        markingData++;
+        tracker++;
+    }
+
+    r4 = func_08019a80();
+    r7 = func_08019bec();
+    func_08019d9c();
+    if (r4 != 0) {
+        gResultsInfo.unkC = 0;
+        func_0804cebc(D_03005380, gResultsInfo.resultIcon, 1); // Try Again
+        func_080191bc(-1);
+        return;
+    }
+    if (func_080139a0() != 0) {
+        scene = func_080005e0(&D_089d7c18);
+        func_080006b0(&D_089d7c18, &D_089d6d74);
+        func_080006b0(&D_089d6d74, scene);
+        func_08013994();
+    }
+    if (r7 == 0) {
+        textAnim = func_08019210(D_089d7b40[func_08001980(4)], 1, 3);
+        textSprite = func_0804d160(D_03005380, textAnim, 0, 120, 80, 0x800, 0, 0, 0);
+        func_0804d8c4(D_03005380, textSprite, 4);
+    }
+    if (r7 == 0x100) {
+        gResultsInfo.unkC = 2;
+        func_0804cebc(D_03005380, gResultsInfo.resultIcon, 2); // Superb
+        func_080191bc(RHYTHM_GAME_STATE_MEDAL_OBTAINED);
+        previousResult = func_0801317c(D_030046a8->data.gameSelectPosX, D_030046a8->data.gameSelectPosY);
+        if (previousResult < RHYTHM_GAME_STATE_MEDAL_OBTAINED) {
+            gResultsInfo.unk126 = 1;
+        }
+        return;
+    }
+    gResultsInfo.unkC = 1;
+    func_0804cebc(D_03005380, gResultsInfo.resultIcon, 0); // OK
+    func_080191bc(RHYTHM_GAME_STATE_CLEARED);
+    if (r7 != 0) {
+        gResultsInfo.unk127 = 1;
+    }
+}
+
 
 #include "asm/results/asm_0801a060.s"
 

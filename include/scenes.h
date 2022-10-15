@@ -221,7 +221,7 @@ struct ResultsSceneInfo {
     struct TextObject2 *textObj2;
     struct TextObject1 *textObj1;
     u32 awaitingInput;
-    u16 nullC;
+    u8 unkC;
     s16 placeholderIcon;
     s16 resultIcon;
     u32 null14;
