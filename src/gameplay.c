@@ -97,7 +97,7 @@ void func_08016ec4(s32 arg) {
     func_08018630(NULL);
     gGameplayInfo.gameEngine = NULL;
     func_080178e4();
-    func_08019324(0); // Results-related, some operation on bit-wise struct D_03001338
+    func_08019324(FALSE); // Disable input assessment.
     func_080192a4(); // Results-related, some operation on bit-wise struct D_03001338
     gGameplayInfo.unk5B7 = TRUE;
     gGameplayInfo.unk5B8 = 0;

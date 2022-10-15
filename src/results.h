@@ -3,6 +3,45 @@
 #include "global.h"
 #include "scenes.h"
 
+/* TYPES */
+
+struct MarkingCriteria {
+    char *positiveRemark;
+    char *negativeRemark;
+    u8 padding8[8];
+};
+
+struct InputScoreTracker {
+    u16 totalInputs;
+    u16 totalHits;
+    u16 totalBarelies;
+    u16 totalEarliness;
+    u16 totalLateness;
+    u8 paddingA[14];
+};
+
+struct ScoreHandler {
+    u32 unk0_b0:1;
+    u32 markingInputs:1;
+    u32 null0_b2:30;
+    u16 unk4;
+    s8 unk6;
+    struct InputScoreTracker anyInputTrackers[4];
+    u8 padding68[12];
+    u16 unk74;
+    const struct MarkingCriteria **markingData;
+    struct InputScoreTracker cueInputTrackers[16];
+    char *flavourText; // text in the upper-right corner of the results comments screen
+    u32 totalPoints;
+    u32 maximumPoints;
+};
+
+/* DATA */
+
+struct ScoreHandler *D_089d7980; // ( = D_03001338)
+
+/* FUNCTIONS */
+
 // extern ? func_080188b4(?); // [func_080188b4] DEBUG Initialise Static Variables (STUB)
 // extern ? func_080188b8(?); // [func_080188b8] DEBUG Graphics Init. 2
 // extern ? func_080188e4(?); // [func_080188e4] DEBUG Graphics Init. 1
@@ -43,15 +82,15 @@
 // extern ? func_080191b8(?);
 // extern ? func_080191bc(?);
 // extern ? func_08019210(?);
-// extern ? func_08019268(?);
-// extern ? func_08019278(?);
-// extern ? func_080192a4(?);
-// extern ? func_08019304(?); // [func_08019304] Import Criteria (Script Function)
-// extern ? func_08019310(?); // [func_08019310] Set Flavour Text (Script Function)
-// extern ? func_08019324(?); // [func_08019324] Assess Inputs (Script Function)
-// extern ? func_08019340(?);
-// extern ? func_08019350(?);
-// extern ? func_08019420(?);
+extern void func_08019268(struct InputScoreTracker *); // Initialise Any-Input Trackers
+extern void func_08019278(void); // Initialise Cue Input Trackers and Marking Criteria
+extern void func_080192a4(void); // Initialise Score Handler
+extern void func_08019304(const struct MarkingCriteria **); // [func_08019304] Import Criteria (Script Function)
+extern void func_08019310(char *); // [func_08019310] Set Flavour Text (Script Function)
+extern void func_08019324(u32 assess); // [func_08019324] Assess Inputs (Script Function)
+extern u32 func_08019340(void); // Check if Assessing Inputs
+extern void func_08019350(u32 criterion, u32 level, s32 offset); // Register Input
+extern void func_08019420(u32 criterion, u32 level, s32 offset); // Register Input for Cue
 // extern ? func_08019480(?);
 // extern ? func_080194e8(?);
 // extern ? func_08019554(?);
