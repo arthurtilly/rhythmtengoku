@@ -199,7 +199,7 @@ extern void func_08012814(void); // [func_08012814] Play Music (Script Function)
 extern void func_08012850(void); // Set D_03001320 to -1
 extern void func_08012860(s32); // Set D_03001320
 extern s32 func_0801286c(void); // Get D_03001320
-// extern ? func_0801287c(?);
+// extern ? func_0801287c(?); // Reduce Perfect Campaign Attempts?
 // extern ? func_080128b8(?);
 extern void func_08012928(void);
 extern void func_080129e8(void);

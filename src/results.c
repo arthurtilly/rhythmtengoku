@@ -24,6 +24,12 @@ static s32 D_03001540; // unknown type
 extern u8 D_03005b3c; // LFO Mode { 0 = Disabled; 1 = Note Triggered; 2 = Constant }
 extern const struct FontDefinition D_089de670;
 
+extern struct Scene D_089d6d74; // Gameplay Scene..?
+extern struct Scene D_089d77e4; // Results (Level-Type)
+extern struct Scene D_089d7c18; // Results (Epilogue)
+extern struct Scene D_089d7964; // Results (Score-Type)
+extern struct Scene D_089cdf08; // Game Select
+
 
 /* RESULTS */
 
@@ -324,7 +330,22 @@ void func_08019420(u32 criterion, u32 level, s32 offset) {
 }
 
 
-#include "asm/results/asm_08019480.s"
+// Calculate Input Averages
+void func_08019480(struct InputScoreTracker *tracker) {
+    tracker->totalMisses = tracker->totalInputs - (tracker->totalHits + tracker->totalBarelies);
+
+    if (tracker->totalInputs == 0) return;
+
+    tracker->avgHits = Div(INT_TO_FIXED(tracker->totalHits), tracker->totalInputs);
+    tracker->avgBarelies = Div(INT_TO_FIXED(tracker->totalBarelies), tracker->totalInputs);
+    tracker->avgMisses = Div(INT_TO_FIXED(tracker->totalMisses), tracker->totalInputs);
+
+    if (tracker->totalInputs == tracker->totalMisses) return;
+
+    tracker->avgEarliness = Div(INT_TO_FIXED(tracker->totalEarliness), tracker->totalInputs - tracker->totalMisses);
+    tracker->avgLateness = Div(INT_TO_FIXED(tracker->totalLateness), tracker->totalInputs - tracker->totalMisses);
+}
+
 
 #include "asm/results/asm_080194e8.s"
 
@@ -350,9 +371,176 @@ void func_08019420(u32 criterion, u32 level, s32 offset) {
 
 #include "asm/results/asm_080198f8.s"
 
-#include "asm/results/asm_08019a80.s"
 
-#include "asm/results/asm_08019bec.s"
+// Prepare Negative Remarks (if any)
+u32 func_08019a80(void) {
+    const struct MarkingCriteria **criteriaPtr;
+    const struct MarkingCriteria *criteria;
+    struct InputScoreTracker *tracker;
+    const char *comments[3];
+    char *textDest;
+    u32 totalFailed, i;
+    u16 *commentSprites;
+    u32 requiresSufficientHits, overrideOtherComments;
+    u32 failedThisCriterion;
+    struct Animation *anim;
+    u16 sprite;
+
+
+    criteriaPtr = D_089d7980->markingData;
+    totalFailed = 0;
+    tracker = D_089d7980->cueInputTrackers;
+    commentSprites = gResultsInfo.commentSprites;
+    textDest = gResultsInfo.text;
+    gResultsInfo.unk128 = FALSE;
+
+    for (criteriaPtr; *criteriaPtr != NULL; tracker++, criteriaPtr++) {
+        if (tracker->totalInputs == 0) continue;
+
+        failedThisCriterion = FALSE;
+        criteria = *criteriaPtr;
+        requiresSufficientHits = criteria->flags & ~128;
+        overrideOtherComments = criteria->flags & 128;
+
+        if (!criteria->useAverageScores) {
+            if (tracker->totalMisses <= criteria->missThreshold)
+                goto label7A; // :vomit_emoji:
+        } else {
+            if (tracker->avgMisses > criteria->missThreshold)
+                failedThisCriterion = TRUE;
+
+            label7A:
+            if (!failedThisCriterion) {
+                if ((requiresSufficientHits == TRUE) && (tracker->avgHits < criteria->unkC))
+                    failedThisCriterion = TRUE;
+
+                if (!failedThisCriterion)
+                    continue;
+            }
+        }
+
+        if (overrideOtherComments) {
+            gResultsInfo.unk128 = TRUE;
+            comments[0] = criteria->negativeRemark;
+            totalFailed = 1;
+            break;
+        }
+
+        comments[totalFailed] = criteria->negativeRemark;
+        totalFailed++;
+        if (totalFailed > 2)
+            break;
+    }
+
+    for (i = 0; i < totalFailed; i++) {
+        strcpy(textDest, D_089d7b34[func_080087d4(i, 0, 2)]);
+        func_080081a8(textDest, comments[i]);
+        anim = func_08019210(textDest, 2, 3);
+        sprite = func_0804d160(D_03005380, anim, 0, 0, 0, 0x800, 0, 0, 0);
+        func_0804d8c4(D_03005380, sprite, 4);
+        commentSprites[i] = sprite;
+    }
+
+    gResultsInfo.totalNegativeComments = totalFailed;
+    return totalFailed;
+}
+
+
+// Prepare Positive Remarks (if any)
+u32 func_08019bec(void) {
+    const struct MarkingCriteria **criteriaPtr;
+    const struct MarkingCriteria *criteria;
+    struct InputScoreTracker *tracker;
+    char *textDest;
+    u32 totalSucceeded, totalCriteria, averageSucceeded;
+    u16 *commentSprites;
+    u32 notPerfect, succeededThisCriterion;
+    struct Animation *anim;
+    u16 sprite;
+    u32 palette;
+
+    criteriaPtr = D_089d7980->markingData;
+    totalSucceeded = 0;
+    totalCriteria = 0;
+    tracker = D_089d7980->cueInputTrackers;
+    commentSprites = &gResultsInfo.commentSprites[gResultsInfo.totalNegativeComments];
+    notPerfect = FALSE;
+    textDest = mem_heap_alloc(0x100);
+
+    for (criteriaPtr; *criteriaPtr != NULL; tracker++, criteriaPtr++) {
+        if (tracker->totalInputs == 0)
+            continue;
+
+        succeededThisCriterion = TRUE;
+        criteria = *criteriaPtr;
+
+        if (tracker->totalMisses != 0) {
+            succeededThisCriterion = FALSE;
+            notPerfect = TRUE;
+        }
+
+        if (criteria->unkA == 0)
+            continue;
+
+        totalCriteria++;
+
+        if (!succeededThisCriterion)
+            continue;
+
+        if (tracker->avgHits < criteria->unkA)
+            succeededThisCriterion = FALSE;
+
+        if (!succeededThisCriterion)
+            continue;
+
+        if (gResultsInfo.totalNegativeComments != 0) {
+            memcpy(textDest, D_08054f18, 9); // "…でも、"
+            func_080081a8(textDest, criteria->positiveRemark);
+            anim = func_08019210(textDest, 3, 3);
+            palette = 2;
+        } else {
+            switch (totalSucceeded) {
+                case 0:
+                    *textDest = *D_08054f14; // ""
+                    break;
+                case 1:
+                    memcpy(textDest, D_08054f24, 9); // "しかも、"
+                    break;
+                default:
+                    memcpy(textDest, D_08054f30, 9); // "さらに、"
+                    break;
+            }
+            func_080081a8(textDest, criteria->positiveRemark);
+            anim = func_08019210(textDest, 2, 3);
+            palette = 4;
+        }
+
+        sprite = func_0804d160(D_03005380, anim, 0, 0, 0, 0x800, 0, 0, 0);
+        func_0804d8c4(D_03005380, sprite, palette);
+        commentSprites[totalSucceeded] = sprite;
+
+        totalSucceeded++;
+        if (totalSucceeded > 2)
+            break;
+
+        if (gResultsInfo.totalNegativeComments) {
+            func_0804d770(D_03005380, commentSprites[0], FALSE);
+            break;
+        }
+    }
+
+    mem_heap_dealloc(textDest);
+    gResultsInfo.totalPositiveComments = totalSucceeded;
+    if (totalCriteria == 0)
+        return 0;
+
+    averageSucceeded = INT_TO_FIXED(totalSucceeded) / totalCriteria;
+    if (averageSucceeded == INT_TO_FIXED(1.0))
+        averageSucceeded -= notPerfect;
+
+    return averageSucceeded;
+}
+
 
 #include "asm/results/asm_08019d9c.s"
 
@@ -364,7 +552,7 @@ void func_08019ee0(void) {
     const struct Scene *scene;
     struct Animation *textAnim;
     s16 textSprite;
-    u32 r4, r7;
+    u32 totalCriteriaFailed, averageCriteriaSucceeded;
     u32 previousResult;
 
     func_0801287c();
@@ -377,10 +565,10 @@ void func_08019ee0(void) {
         tracker++;
     }
 
-    r4 = func_08019a80();
-    r7 = func_08019bec();
+    totalCriteriaFailed = func_08019a80();
+    averageCriteriaSucceeded = func_08019bec();
     func_08019d9c();
-    if (r4 != 0) {
+    if (totalCriteriaFailed != 0) {
         gResultsInfo.unkC = 0;
         func_0804cebc(D_03005380, gResultsInfo.resultIcon, 1); // Try Again
         func_080191bc(-1);
@@ -392,12 +580,12 @@ void func_08019ee0(void) {
         func_080006b0(&D_089d6d74, scene);
         func_08013994();
     }
-    if (r7 == 0) {
+    if (averageCriteriaSucceeded == 0) {
         textAnim = func_08019210(D_089d7b40[func_08001980(4)], 1, 3);
         textSprite = func_0804d160(D_03005380, textAnim, 0, 120, 80, 0x800, 0, 0, 0);
         func_0804d8c4(D_03005380, textSprite, 4);
     }
-    if (r7 == 0x100) {
+    if (averageCriteriaSucceeded == INT_TO_FIXED(1.0)) {
         gResultsInfo.unkC = 2;
         func_0804cebc(D_03005380, gResultsInfo.resultIcon, 2); // Superb
         func_080191bc(RHYTHM_GAME_STATE_MEDAL_OBTAINED);
@@ -410,7 +598,7 @@ void func_08019ee0(void) {
     gResultsInfo.unkC = 1;
     func_0804cebc(D_03005380, gResultsInfo.resultIcon, 0); // OK
     func_080191bc(RHYTHM_GAME_STATE_CLEARED);
-    if (r7 != 0) {
+    if (averageCriteriaSucceeded != 0) {
         gResultsInfo.unk127 = 1;
     }
 }

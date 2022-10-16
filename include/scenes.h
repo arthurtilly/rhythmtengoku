@@ -224,16 +224,17 @@ struct ResultsSceneInfo {
     u8 unkC;
     s16 placeholderIcon;
     s16 resultIcon;
-    u32 null14;
-    u32 null18;
+    u8 totalNegativeComments;
+    u8 totalPositiveComments;
+    u16 commentSprites[3];
     u32 null1C;
     u32 null20;
     u8 unk24;
-    u32 null28;
-    u32 null2C;
-    u8 null30[0xf6];
+    u8 null25;
+    char text[0x100];
     u8 unk126;
     u8 unk127;
+    u8 unk128;
 };
 
 extern union struct_030046a4 {

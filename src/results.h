@@ -6,9 +6,13 @@
 /* TYPES */
 
 struct MarkingCriteria {
-    char *positiveRemark;
-    char *negativeRemark;
-    u8 padding8[8];
+    const char *positiveRemark;
+    const char *negativeRemark;
+    u8 flags;
+    u8 useAverageScores;
+    u16 unkA;
+    u16 unkC;
+    u16 missThreshold;
 };
 
 struct InputScoreTracker {
@@ -17,7 +21,12 @@ struct InputScoreTracker {
     u16 totalBarelies;
     u16 totalEarliness;
     u16 totalLateness;
-    u8 paddingA[14];
+    u16 totalMisses;
+    u16 avgHits;      // [Q8.8] hits / inputs
+    u16 avgBarelies;  // [Q8.8] barelies / inputs
+    u16 avgMisses;    // [Q8.8] misses / inputs
+    u16 avgEarliness; // [Q8.8] earliness / (hits + barelies)
+    u16 avgLateness;  // [Q8.8] lateness / (hits + barelies)
 };
 
 struct ScoreHandler {
@@ -38,6 +47,11 @@ struct ScoreHandler {
 
 /* TEXT */
 
+extern const char D_08054f14[]; // ""
+extern const char D_08054f18[]; // "…でも、" ("...but,")
+extern const char D_08054f24[]; // "しかも、" ("moreover,")
+extern const char D_08054f30[]; // "さらに、" ("also,")
+
 /* SPRITE ANIMATIONS */
 
 extern const struct Animation D_0890b6ac[]; // Placeholder Header ("nori-kan check")
@@ -54,16 +68,11 @@ extern const struct SequenceData s_menu_se20_seqData;
 
 /* SCENE DATA */
 
-extern struct Scene D_089d6d74; // Gameplay Scene..?
-extern struct Scene D_089d77e4; // Results (Level-Type)
-extern struct Scene D_089d7c18; // Results (Epilogue..?)
-extern struct Scene D_089d7964; // Results (Score-Type)
-extern struct Scene D_089cdf08; // Game Select
-
 extern u32 D_089d7654[]; // GFX Init. Struct
 extern u32 D_089d7684[]; // unused sprite thing i think
 extern struct ScoreHandler *D_089d7980; // ( = D_03001338)
-extern char *D_089d7b40[]; // OK Comment Pool
+extern char *D_089d7b34[3]; // Comment Pool - Try Again
+extern char *D_089d7b40[4]; // Comment Pool - OK
 
 /* FUNCTIONS */
 
@@ -106,7 +115,7 @@ extern void func_08018bf0(void); // [func_08018bf0] LEVEL Display Header Text (S
 // extern ? func_080191ac(?);
 // extern ? func_080191b8(?);
 // extern ? func_080191bc(?);
-extern struct Animation *func_08019210(const char *, u32, u32); // Get Animation for Header Text
+extern struct Animation *func_08019210(const char *, u32, u32); // Get Animation for Text
 extern void func_08019268(struct InputScoreTracker *); // Initialise Any-Input Trackers
 extern void func_08019278(void); // Initialise Cue Input Trackers and Marking Criteria
 extern void func_080192a4(void); // Initialise Score Handler
@@ -116,7 +125,7 @@ extern void func_08019324(u32 assess); // [func_08019324] Assess Inputs (Script 
 extern u32 func_08019340(void); // Check if Assessing Inputs
 extern void func_08019350(u32 criterion, u32 level, s32 offset); // Register Input
 extern void func_08019420(u32 criterion, u32 level, s32 offset); // Register Input for Cue
-// extern ? func_08019480(?);
+extern void func_08019480(struct InputScoreTracker *); // Calculate Input Averages
 // extern ? func_080194e8(?);
 // extern ? func_08019554(?);
 // extern ? func_08019698(?);
@@ -129,17 +138,17 @@ extern void func_08019420(u32 criterion, u32 level, s32 offset); // Register Inp
 // extern ? func_080198b0(?);
 // extern ? func_080198e8(?);
 // extern ? func_080198f8(?); // [func_080198f8] DEBUG ? (Script Function)
-// extern ? func_08019a80(?);
-// extern ? func_08019bec(?);
-// extern ? func_08019d9c(?);
+extern u32 func_08019a80(void); // Prepare Negative Comments
+extern u32 func_08019bec(void); // Prepare Positive Comments
+extern void func_08019d9c(void); // Display Comments
 extern void func_08019ee0(void); // [func_08019ee0] LEVEL Display Comments (Script Function)
 // extern ? func_0801a060(?);
-// extern ? func_0801a0ec(?); // [func_0801a0ec] ??? Initialise Static Variables
-// extern ? func_0801a0f0(?); // [func_0801a0f0] ??? Graphics Init. 2
-// extern ? func_0801a140(?); // [func_0801a140] ??? Graphics Init. 1
-// extern ? func_0801a174(?); // [func_0801a174] ??? Graphics Init. 0
-// extern ? func_0801a1b0(?); // [func_0801a1b0] ??? Scene Init.
-// extern ? func_0801a310(?); // [func_0801a310] ??? Scene STUB
-// extern ? func_0801a314(?); // [func_0801a314] ??? Scene Main
-// extern ? func_0801a354(?); // [func_0801a354] ??? ?
-// extern ? func_0801a370(?); // [func_0801a370] ??? Scene Close
+// extern ? func_0801a0ec(?); // [func_0801a0ec] EPILOGUE Initialise Static Variables
+// extern ? func_0801a0f0(?); // [func_0801a0f0] EPILOGUE Graphics Init. 2
+// extern ? func_0801a140(?); // [func_0801a140] EPILOGUE Graphics Init. 1
+// extern ? func_0801a174(?); // [func_0801a174] EPILOGUE Graphics Init. 0
+// extern ? func_0801a1b0(?); // [func_0801a1b0] EPILOGUE Scene Init.
+// extern ? func_0801a310(?); // [func_0801a310] EPILOGUE Scene STUB
+// extern ? func_0801a314(?); // [func_0801a314] EPILOGUE Scene Main
+// extern ? func_0801a354(?); // [func_0801a354] EPILOGUE ?
+// extern ? func_0801a370(?); // [func_0801a370] EPILOGUE Scene Close
