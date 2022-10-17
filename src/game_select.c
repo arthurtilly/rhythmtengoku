@@ -90,26 +90,26 @@ s32 func_0801286c(void) {
 
 // ?
 void func_08012928(void) {
-    struct GameSelectInfo *sceneInfo;
-    u32 temp;
+    struct GameSelectSceneInfo *sceneInfo;
+    u32 playsUntilNewCampaign;
 
     sceneInfo = &gGameSelectInfo;
     func_080128b8();
     if (sceneInfo->unk453 == 0) return;
 
-    temp = 0;
-    if (D_030046a8->data.unk28E < 48) {
-        temp = 1;
+    playsUntilNewCampaign = 0;
+    if (D_030046a8->data.totalMedals < 48) {
+        playsUntilNewCampaign = 1;
     }
-    if (D_030046a8->data.unk28E < 45) {
-        temp = func_08001980(2) + 2;
+    if (D_030046a8->data.totalMedals < 45) {
+        playsUntilNewCampaign = func_08001980(2) + 2;
     }
-    if (D_030046a8->data.unk28E < 30) {
-        temp = func_08001980(4) + 3;
+    if (D_030046a8->data.totalMedals < 30) {
+        playsUntilNewCampaign = func_08001980(4) + 3;
     }
     D_030046a8->data.unk266 = 1;
     D_030046a8->data.perfectAttemptsRemaining = 3;
-    D_030046a8->data.unk268 = temp;
+    D_030046a8->data.playsUntilNextPerfectCampaign = playsUntilNewCampaign;
     D_030046a8->data.perfectCampaignID = sceneInfo->unk454[func_08001980(sceneInfo->unk453)];
     D_030046a8->data.unk26A = 0;
     D_030046a8->data.unk291 = 0;
@@ -118,10 +118,10 @@ void func_08012928(void) {
 
 // ?
 void func_080129e8(void) {
-    struct PerfectCampaignNotice *notice;
+    struct PerfectCampaignNotice *notice = &gGameSelectInfo.perfectCampaignNotice;
 
-    notice = &gGameSelectInfo.perfectCampaignNotice;
-    if (D_030046a8->data.unk268 != 0) return;
+    if (D_030046a8->data.playsUntilNextPerfectCampaign != 0)
+        return;
 
     D_030046a8->data.unk266 = 2;
     notice->id = D_030046a8->data.perfectCampaignID;
@@ -521,7 +521,7 @@ void func_08013644(s32 arg) {
     }
     saveData->recentGameCompletionLevel = -1;
     saveData->gameSelectUnk5 = 0;
-    func_080191ac(1);
+    func_080191ac(TRUE);
     func_08013994();
     func_0801318c(SCENE_ENTRY_STAFF_CREDIT, &cursorX, &cursorY);
     if (func_0801317c(cursorX, cursorY) > 3) {
@@ -813,7 +813,7 @@ u32 func_080152b0(u32 *outMod, u32 *outScore) {
     totalGames = 0;
     totalScore = 0;
     for (i = 0; i < 55; i++) {
-        score = saveData->unk40[i];
+        score = saveData->rhythmGameScores[i];
         if (score != (u16) -1) {
             totalGames++;
             totalScore += score;
@@ -855,7 +855,7 @@ u32 func_080153a8(void) {
     saveData = &D_030046a8->data;
     flow = &gGameSelectInfo.flowDisplay;
     medalWasObtained = FALSE;
-    newScore = saveData->unk3E;
+    newScore = saveData->recentGameScore;
 
     if (newScore == (u16) -1) {
         flow->previousScore = D_030046a8->data.currentFlow;
@@ -878,7 +878,7 @@ u32 func_080153a8(void) {
     }
 
     if (id >= 0) {
-        prevScore = saveData->unk40[id];
+        prevScore = saveData->rhythmGameScores[id];
         if (prevScore == (u16) -1) {
             prevScore = newScore;
         } else if (prevScore < newScore) {
@@ -886,18 +886,18 @@ u32 func_080153a8(void) {
         } else {
             prevScore = (((newScore + (prevScore * 3)) / 4) << 8) >> 8;
         }
-        saveData->unk40[id] = prevScore;
+        saveData->rhythmGameScores[id] = prevScore;
     }
-    saveData->unk3E = -1;
+    saveData->recentGameScore = -1;
     newModifiedScoreAvg = func_080152b0(&scoreModifier, &averageScore);
 
     if (medalWasObtained) {
         if (newModifiedScoreAvg < prevModifiedScoreAvg) {
             scoreIncrement = ((INT_TO_FIXED(prevModifiedScoreAvg)) / scoreModifier) - averageScore + 1;
             for (i = 0; i < 55; i++) {
-                prevScore = saveData->unk40[i];
+                prevScore = saveData->rhythmGameScores[i];
                 if (prevScore != (u16) -1) {
-                    saveData->unk40[i] = func_080087d4(prevScore + scoreIncrement, 0, 1000);
+                    saveData->rhythmGameScores[i] = func_080087d4(prevScore + scoreIncrement, 0, 1000);
                 }
             }
         }

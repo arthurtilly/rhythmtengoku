@@ -15,7 +15,7 @@ struct unk_struct_08008b00 {
 
 extern s32 (*D_03004ae4)(s32);
 
-extern void func_08007468(s16 arg0, s8 arg1);
+extern void func_08007468(s16 sprite, s8 affineParamID);
 extern void func_08007498(s8 arg0, s16 arg1, s16 arg2);
 extern void func_080074c4(s8 arg0, s16 arg1, s16 arg2, s16 arg3);
 extern struct unk_struct_080074ec *func_080074ec(struct unk_struct_080074ec_init *arg0);

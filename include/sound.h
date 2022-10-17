@@ -174,3 +174,33 @@ struct SoundPlayer {
     s8  midiController51;   // ??: [default = 64]
     u32 unk34;      // ??: (is set to midiReader->deltaTime upon hitting a loop start marker) [default = 0]
 };
+
+enum LfoModesEnum {
+    LFO_MODE_DISABLED,
+    LFO_MODE_KEYPRESS,
+    LFO_MODE_CONSTANT
+};
+
+// Low-Frequency Oscillator (used for an Auto-Wah)
+struct LFO {
+    u8  preDelay;   // Pre-Delay Time
+    u8  attack;     // Attack Time
+    u16 rate;       // Rate
+    u8  offset;     // Offset
+    u8  duration;   // Range
+    u8  stage;      // Current Envelope Stage { 0..3 }
+    s8  output;     // Output
+    u32 ticks;      // Running Time
+};
+
+// [D_03005b30] LFO - Low-Frequency Oscillator
+extern struct LFO D_03005b30;
+
+// [D_03005b3c] LFO - Mode { 0 = Disabled; 1 = Note Triggered; 2 = Constant }
+extern u8 D_03005b3c;
+
+enum DirectSoundModesEnum {
+    DIRECTSOUND_MODE_STEREO,
+    DIRECTSOUND_MODE_MONO1,
+    DIRECTSOUND_MODE_MONO2
+};

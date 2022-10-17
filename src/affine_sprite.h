@@ -51,8 +51,8 @@ extern void func_0800ffc0(struct AffineSprite *, u32);      // [func_0800ffc0] A
 extern void func_0800ffe4(struct AffineSprite *, u8);       // [func_0800ffe4] AFFINE SPRITE - func_0804ced0()
 extern void func_08010008(struct AffineSprite *, u32, u32, u32); // [func_08010008] AFFINE SPRITE - Animate?
 extern void func_08010040(struct AffineSprite *, u32);      // [func_08010040] AFFINE SPRITE - Start Animation
-extern void func_08010064(struct AffineSprite *, const struct Animation *, u32, u32, u32, u32); // [func_08010064] AFFINE SPRITE - Change Animation
-extern void func_080100a8(struct AffineSprite *, u32);      // [func_080100a8] AFFINE SPRITE - func_0804d8c4()
+extern void func_08010064(struct AffineSprite *, const struct Animation *, u32, u32, u32, u32); // [func_08010064] AFFINE SPRITE - Set Animation
+extern void func_080100a8(struct AffineSprite *, u32);      // [func_080100a8] AFFINE SPRITE - Set Palette
 extern void func_080100cc(struct AffineSprite *, u32);      // [func_080100cc] AFFINE SPRITE - func_0804d890()
 extern u32  func_080100f0(struct AffineSprite *);           // [func_080100f0] AFFINE SPRITE - func_0804ddb0(..., 4)
 extern u32  func_08010110(struct AffineSprite *);           // [func_08010110] AFFINE SPRITE - func_0804ddb0(..., 5)

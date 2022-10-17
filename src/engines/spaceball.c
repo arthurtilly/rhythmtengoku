@@ -420,6 +420,7 @@ void func_080205ac(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
 // [func_080205e8] CUE - Barely
 void func_080205e8(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     struct SpaceballBatter *batter = &gSpaceballInfo.batter;
+
     func_08010008(batter->sprite, 1, 0x7f, 0);
     func_0800ffc0(batter->sprite, 1);
     batter->swingTimer = func_0800c3a4(0xa);

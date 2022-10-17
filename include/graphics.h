@@ -1,6 +1,22 @@
 #pragma once
 
 
+  //  //  //  GBA GRAPHICS SPECS  //  //  //
+
+
+#define SCREEN_WIDTH 240
+#define SCREEN_HEIGHT 160
+#define SCREEN_CENTER_X (SCREEN_WIDTH/2)
+#define SCREEN_CENTER_Y (SCREEN_HEIGHT/2)
+
+enum BGLayersEnum {
+    BG_LAYER_0,
+    BG_LAYER_1,
+    BG_LAYER_2,
+    BG_LAYER_3
+};
+
+
   //  //  //  OBJECT ANIMATION  //  //  //
 
 
@@ -68,13 +84,6 @@ struct TextObject2 {
 
   //  //  //  GRAPHICS BUFFER  //  //  //
 
-
-enum BGLayersEnum {
-    BG_LAYER_0,
-    BG_LAYER_1,
-    BG_LAYER_2,
-    BG_LAYER_3
-};
 
 extern struct GraphicsBuffer {
     u16 DISPCNT;    // LCD Control

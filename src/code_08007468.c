@@ -1,6 +1,7 @@
 #include "global.h"
-#include "code_08007468.h"
-#include "lib_0804c870.h"
+#include "src/code_08007468.h"
+#include "src/code_08003980.h"
+#include "src/lib_0804c870.h"
 
 // Can be better split
 
@@ -10,8 +11,8 @@ static s32 D_03000eb0[136]; // unknown type
 static s32 D_030010d0[9]; // unknown type
 
 
-void func_08007468(s16 arg0, s8 arg1) {
-    func_0804dc10(D_03005380, arg0, arg1, func_08002520(arg1));
+void func_08007468(s16 sprite, s8 affineParamID) {
+    func_0804dc10(D_03005380, sprite, affineParamID, func_08002520(affineParamID));
 }
 
 

@@ -385,18 +385,18 @@ void func_08010040(struct AffineSprite *affineData, u32 start) {
     func_0804d770(D_03005380, affineData->sprite, start);
 }
 
-// [func_08010064] AFFINE SPRITE - Change Animation
+// [func_08010064] AFFINE SPRITE - Set Animation
 void func_08010064(struct AffineSprite *affineData, const struct Animation *anim, u32 arg2, u32 arg3, u32 arg4, u32 arg5) {
     if (affineData == NULL) return;
 
     func_0804d8f8(D_03005380, affineData->sprite, anim, arg2, arg3, arg4, arg5);
 }
 
-// [func_080100a8] AFFINE SPRITE - func_0804d8c4()
-void func_080100a8(struct AffineSprite *affineData, u32 arg) {
+// [func_080100a8] AFFINE SPRITE - Set Palette
+void func_080100a8(struct AffineSprite *affineData, u32 paletteID) {
     if (affineData == NULL) return;
 
-    func_0804d8c4(D_03005380, affineData->sprite, arg);
+    func_0804d8c4(D_03005380, affineData->sprite, paletteID);
 }
 
 // [func_080100cc] AFFINE SPRITE - func_0804d890()

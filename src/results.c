@@ -1,34 +1,47 @@
+#include "global.h"
 #include "results.h"
 #include "cues.h"
 #include "src/main.h"
 #include "src/memory.h"
 #include "src/code_08001360.h"
 #include "src/code_08003980.h"
-// #include "src/code_08007468.h"
+#include "src/code_08007468.h"
+#include "src/code_080092cc.h"
 #include "src/code_0800b778.h"
+#include "src/code_080102d0.h"
 #include "src/game_select.h"
 #include "src/lib_0804c870.h"
 
-// Might need better splitting
-
 asm(".include \"include/gba.inc\"");//Temporary
 
-#define RESULTS_TEXT_VRAM_ADDRESS (void *)(VRAMBase + 0x14000)
-
-static s32 D_0300132c; // unknown type, unknown if exists
-static s32 D_03001330; // unknown type
-static s32 D_03001334; // unknown type
-static u8 D_03001338[0x204]; // this is wrong though? this is the global score handler, which is 0x208 bytes, which is also equal to (0x1540 - 0x1338)
-static s32 D_03001540; // unknown type
-
-extern u8 D_03005b3c; // LFO Mode { 0 = Disabled; 1 = Note Triggered; 2 = Constant }
-extern const struct FontDefinition D_089de670;
+#define RESULTS_TEXT_TILES_ADDRESS (void *)(VRAMBase + 0x14000)
+#define LEVEL_COMMENT_PALETTE 4
+#define LEVEL_EXTRA_COMMENT_PALETTE 2
+#define LEVEL_COMMENT_LINE_SPACING 16
+#define LEVEL_EXTRA_COMMENT_MARGIN 8
+#define LEVEL_HEADER_Y 24
+#define LEVEL_HEADER_ICON_X 45
+#define LEVEL_HEADER_BOX_X 24
+#define LEVEL_RESULT_ICON_X 180
+#define LEVEL_RESULT_ICON_Y 140
+#define LEVEL_RESULT_ICON_BUT_X 88
+#define LEVEL_RESULT_ICON_BUT_Y 140
+#define MAX_POINTS_PER_INPUT 10
+#define POINTS_LOST_PER_MISS -20
 
 extern struct Scene D_089d6d74; // Gameplay Scene..?
 extern struct Scene D_089d77e4; // Results (Level-Type)
 extern struct Scene D_089d7c18; // Results (Epilogue)
 extern struct Scene D_089d7964; // Results (Score-Type)
 extern struct Scene D_089cdf08; // Game Select
+
+extern const struct FontDefinition D_089de670;
+
+static s32 D_0300132c; // unknown type, unknown if exists
+static s32 D_03001330; // unknown type
+static s32 D_03001334; // unknown type
+static u8 D_03001338[0x204]; // this is wrong though? this is the global score handler, which is 0x208 bytes, which is also equal to (0x1540 - 0x1338)
+static u8 D_03001540; // ?
 
 
 /* RESULTS */
@@ -63,7 +76,7 @@ void func_08018a24(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4((u16) func_0800c3b8(), D_089d7684);
+    data = func_080087b4(func_0800c3b8(), D_089d7684);
     func_08005d38(data, func_0800bd04, 0);
 }
 
@@ -80,7 +93,7 @@ void func_08018a50(void) {
 
 // [func_08018a80] LEVEL Graphics Init. 0
 void func_08018a80(void) {
-    func_0800856c((u16) func_0800c3b8(), func_08018a50, 0, 2);
+    func_0800856c(func_0800c3b8(), func_08018a50, 0, 2);
     func_0800e0ec();
 }
 
@@ -91,16 +104,16 @@ void func_08018aa0(s32 arg) {
     func_080073f0();
     gResultsInfo.textObj2 = func_08005124(func_0800c3b8(), &D_089de670, 0, 0x340, 6);
     gResultsInfo.textObj1 = func_0800c660(0x300, 4);
-    func_080018e0(0, RESULTS_TEXT_VRAM_ADDRESS, 0x4000, 0x20, 0x200);
+    func_080018e0(0, RESULTS_TEXT_TILES_ADDRESS, 0x4000, 0x20, 0x200);
     gResultsInfo.unk24 = 0;
 
-    gResultsInfo.placeholderIcon = func_0804d160(D_03005380, D_0890b6ac, 0, 45, 24, 0x800, 0, 0, 0x8000);
-    gResultsInfo.resultIcon = func_0804d160(D_03005380, D_0890b6bc, 0, 180, 140, 0x800, 0, 0, 0x8000);
+    gResultsInfo.placeholderIcon = func_0804d160(D_03005380, D_0890b6ac, 0, LEVEL_HEADER_ICON_X, LEVEL_HEADER_Y, 0x800, 0, 0, 0x8000);
+    gResultsInfo.resultIcon = func_0804d160(D_03005380, D_0890b6bc, 0, LEVEL_RESULT_ICON_X, LEVEL_RESULT_ICON_Y, 0x800, 0, 0, 0x8000);
     func_08018a80(); // gfx init.
-    D_03005b3c = 0;
+    D_03005b3c = LFO_MODE_DISABLED;
     gResultsInfo.awaitingInput = FALSE;
-    gResultsInfo.unk126 = 0;
-    gResultsInfo.unk127 = 0;
+    gResultsInfo.medalObtained = FALSE;
+    gResultsInfo.stillJustOK = FALSE;
 }
 
 
@@ -139,19 +152,68 @@ void func_08018bf0(void) {
     }
 
     textAnim = func_08019210(D_089d7980->headerText, 2, 0);
-    textSprite = func_0804d160(D_03005380, textAnim, 0, 24, 24, 0x800, 0, 0, 0);
-    func_0804d8c4(D_03005380, textSprite, 4);
+    textSprite = func_0804d160(D_03005380, textAnim, 0, LEVEL_HEADER_BOX_X, LEVEL_HEADER_Y, 0x800, 0, 0, 0);
+    func_0804d8c4(D_03005380, textSprite, LEVEL_COMMENT_PALETTE);
     textWidth = func_0804ddb0(D_03005380, textSprite, 24);
-    func_0804d160(D_03005380, D_0890b6ec, 0, 120, 24, 0x864, 0, 0, 0);
-    func_0804d160(D_03005380, D_0890b6fc, 0, 120 + textWidth, 24, 0x850, 0, 0, 0);
+    func_0804d160(D_03005380, D_0890b6ec, 0, SCREEN_CENTER_X, LEVEL_HEADER_Y, 0x864, 0, 0, 0);
+    func_0804d160(D_03005380, D_0890b6fc, 0, SCREEN_CENTER_X + textWidth, LEVEL_HEADER_Y, 0x850, 0, 0, 0);
 }
 
 
-#include "asm/results/asm_08018cc8.s"
+// [func_08018cc8] LEVEL Display Result Icon (Script Function)
+void func_08018cc8(void) {
+    func_0804d770(D_03005380, gResultsInfo.resultIcon, TRUE);
 
-#include "asm/results/asm_08018d68.s"
+    if (gResultsInfo.medalObtained) {
+        func_0804d160(D_03005380, D_0890b70c, 0, 180, 140, 0x700, 1, 0, 0);
+    }
 
-#include "asm/results/asm_08018d9c.s"
+    if (gResultsInfo.stillJustOK) {
+        func_0804d160(D_03005380, D_0890b724, 0, 180, 140, 0x700, 1, 0, 0);
+    }
+
+    func_0800267c(5, D_089d7688[gResultsInfo.finalResultLevel]);
+}
+
+
+// [func_08018d68] LEVEL Play Music (Script Function)
+void func_08018d68(void) {
+    const struct SequenceData *music = D_089d7694[gResultsInfo.finalResultLevel];
+
+    func_0800bf7c(music);
+    func_0800bdf8(func_080102d0(music));
+}
+
+
+// [func_08018d9c] LEVEL Display Positive Reinforcement (Script Function)
+void func_08018d9c(void) {
+    u16 *commentSprites;
+    u32 totalNegativeComments, totalComments;
+    u32 i;
+
+    commentSprites = gResultsInfo.commentSprites;
+    totalNegativeComments = gResultsInfo.totalNegativeComments;
+    totalComments = gResultsInfo.totalNegativeComments + gResultsInfo.totalPositiveComments;
+
+    if ((gResultsInfo.finalResultLevel != RESULT_LEVEL_TRY_AGAIN)
+      || (gResultsInfo.totalPositiveComments == 0)
+      || (gResultsInfo.singleCommentTryAgain)) {
+        return;
+    }
+
+    for (i = 0; i < totalComments; i++) {
+        s32 y = func_0804ddb0(D_03005380, commentSprites[i], 5);
+        func_0804d648(D_03005380, commentSprites[i], y - 10);
+    }
+
+    for (i = totalNegativeComments; i < totalComments; i++) {
+        func_0804d770(D_03005380, commentSprites[i], TRUE);
+    }
+
+    func_08002634(&s_f_result_mes_add_seqData);
+    func_0804d160(D_03005380, D_0890b6dc, 0, LEVEL_RESULT_ICON_BUT_X, LEVEL_RESULT_ICON_BUT_Y, 0, 0, 0, 0);
+}
+
 
 #include "asm/results/asm_08018e60.s"
 
@@ -177,13 +239,49 @@ void func_08018bf0(void) {
 
 #include "asm/results/asm_08019188.s"
 
-#include "asm/results/asm_080191ac.s"
 
-#include "asm/results/asm_080191b8.s"
+// Set D_03001540
+void func_080191ac(u32 updateSave) {
+    D_03001540 = updateSave;
+}
 
-#include "asm/results/asm_080191bc.s"
 
-#include "asm/results/asm_08019210.s"
+// Return TRUE
+u32 func_080191b8(void) {
+    return TRUE;
+}
+
+
+ // Save Result
+void func_080191bc(u32 level) {
+    struct TengokuSaveData *saveData = &D_030046a8->data;
+    s32 gameID;
+
+    if (!D_03001540) return;
+
+    saveData->recentGameCompletionLevel = level;
+    saveData->recentGameScore = func_0801a060();
+
+    gameID = func_08013100(saveData->gameSelectPosX, saveData->gameSelectPosY);
+    func_080108a0(gameID);
+
+    if (gameID >= 0)
+        D_030046a8->data.unk190[gameID]++;
+
+    func_080009a0();
+}
+
+
+// Get Animation for Text
+struct Animation *func_08019210(const char *string, u32 arg1, u32 arg2) {
+    struct Animation *anim;
+
+    if ((u32) 16 + (gResultsInfo.unk24 * 2) >= 32) return NULL;
+
+    anim = func_0800a004(func_0800c3b8(), 0, 16 + (gResultsInfo.unk24 * 2), 0, string, arg1, arg2, 0x100);
+    gResultsInfo.unk24++;
+    return anim;
+}
 
 
 // Initialise Any-Input Trackers
@@ -213,9 +311,9 @@ void func_080192a4(void) {
     u32 i;
 
     D_089d7980->unk0_b0 = FALSE;
-    D_089d7980->unk4 = 0;
-    D_089d7980->unk6 = -1;
-    D_089d7980->unk74 = 0;
+    D_089d7980->totalRecoveries = 0;
+    D_089d7980->prevInputLevel = -1;
+    D_089d7980->totalIrrelevantInputs = 0;
 
     for (i = 0; i < 4; i++) {
         func_08019268(&D_089d7980->anyInputTrackers[i]);
@@ -260,7 +358,7 @@ void func_08019350(u32 criterion, u32 level, s32 offset) {
     if (!D_089d7980->markingInputs) return;
 
     if (level == CUE_RESULT_NONE) {
-        D_089d7980->unk74++;
+        D_089d7980->totalIrrelevantInputs++;
         return;
     }
 
@@ -270,27 +368,27 @@ void func_08019350(u32 criterion, u32 level, s32 offset) {
     switch (level) {
         case CUE_RESULT_HIT:
             tracker->totalHits++;
-            if (D_089d7980->unk6 == 2) {
-                D_089d7980->unk4++;
+            if (D_089d7980->prevInputLevel == CUE_RESULT_MISS) {
+                D_089d7980->totalRecoveries++;
             }
-            points = 11 - ABS(offset);
+            points = MAX_POINTS_PER_INPUT - ABS(offset) + 1;
             break;
         case CUE_RESULT_BARELY:
             tracker->totalBarelies++;
-            if (D_089d7980->unk6 == 2) {
-                D_089d7980->unk4++;
+            if (D_089d7980->prevInputLevel == CUE_RESULT_MISS) {
+                D_089d7980->totalRecoveries++;
             }
-            points = 10 - ABS(offset);
+            points = MAX_POINTS_PER_INPUT - ABS(offset);
             break;
         case CUE_RESULT_MISS:
             offset = 0;
-            points = -20;
+            points = POINTS_LOST_PER_MISS;
             break;
     }
 
-    if (points > 10) points = 10;
+    if (points > MAX_POINTS_PER_INPUT) points = MAX_POINTS_PER_INPUT;
     D_089d7980->totalPoints += points;
-    D_089d7980->maximumPoints += 10;
+    D_089d7980->maximumPoints += MAX_POINTS_PER_INPUT;
 
     if (offset < 0) {
         tracker->totalEarliness -= offset;
@@ -298,7 +396,7 @@ void func_08019350(u32 criterion, u32 level, s32 offset) {
         tracker->totalLateness += offset;
     }
 
-    D_089d7980->unk6 = level;
+    D_089d7980->prevInputLevel = level;
 }
 
 
@@ -381,7 +479,7 @@ u32 func_08019a80(void) {
     char *textDest;
     u32 totalFailed, i;
     u16 *commentSprites;
-    u32 requiresSufficientHits, overrideOtherComments;
+    u32 checkAverageHits, overrideOtherComments;
     u32 failedThisCriterion;
     struct Animation *anim;
     u16 sprite;
@@ -391,27 +489,27 @@ u32 func_08019a80(void) {
     totalFailed = 0;
     tracker = D_089d7980->cueInputTrackers;
     commentSprites = gResultsInfo.commentSprites;
-    textDest = gResultsInfo.text;
-    gResultsInfo.unk128 = FALSE;
+    textDest = gResultsInfo.negativeCommentsText;
+    gResultsInfo.singleCommentTryAgain = FALSE;
 
     for (criteriaPtr; *criteriaPtr != NULL; tracker++, criteriaPtr++) {
         if (tracker->totalInputs == 0) continue;
 
         failedThisCriterion = FALSE;
         criteria = *criteriaPtr;
-        requiresSufficientHits = criteria->flags & ~128;
-        overrideOtherComments = criteria->flags & 128;
+        checkAverageHits = criteria->flags & ~0x80;
+        overrideOtherComments = criteria->flags & 0x80;
 
-        if (!criteria->useAverageScores) {
-            if (tracker->totalMisses <= criteria->missThreshold)
+        if (!criteria->checkAverageMisses) {
+            if (tracker->totalMisses <= criteria->maxMissesBeforeFail)
                 goto label7A; // :vomit_emoji:
         } else {
-            if (tracker->avgMisses > criteria->missThreshold)
+            if (tracker->avgMisses > criteria->maxMissesBeforeFail)
                 failedThisCriterion = TRUE;
 
             label7A:
             if (!failedThisCriterion) {
-                if ((requiresSufficientHits == TRUE) && (tracker->avgHits < criteria->unkC))
+                if ((checkAverageHits == TRUE) && (tracker->avgHits < criteria->minHitsBeforeFail))
                     failedThisCriterion = TRUE;
 
                 if (!failedThisCriterion)
@@ -420,7 +518,7 @@ u32 func_08019a80(void) {
         }
 
         if (overrideOtherComments) {
-            gResultsInfo.unk128 = TRUE;
+            gResultsInfo.singleCommentTryAgain = TRUE;
             comments[0] = criteria->negativeRemark;
             totalFailed = 1;
             break;
@@ -437,7 +535,7 @@ u32 func_08019a80(void) {
         func_080081a8(textDest, comments[i]);
         anim = func_08019210(textDest, 2, 3);
         sprite = func_0804d160(D_03005380, anim, 0, 0, 0, 0x800, 0, 0, 0);
-        func_0804d8c4(D_03005380, sprite, 4);
+        func_0804d8c4(D_03005380, sprite, LEVEL_COMMENT_PALETTE);
         commentSprites[i] = sprite;
     }
 
@@ -479,7 +577,7 @@ u32 func_08019bec(void) {
             notPerfect = TRUE;
         }
 
-        if (criteria->unkA == 0)
+        if (criteria->minHitsForSuccess == 0)
             continue;
 
         totalCriteria++;
@@ -487,7 +585,7 @@ u32 func_08019bec(void) {
         if (!succeededThisCriterion)
             continue;
 
-        if (tracker->avgHits < criteria->unkA)
+        if (tracker->avgHits < criteria->minHitsForSuccess)
             succeededThisCriterion = FALSE;
 
         if (!succeededThisCriterion)
@@ -497,7 +595,7 @@ u32 func_08019bec(void) {
             memcpy(textDest, D_08054f18, 9); // "c‚Å‚àA"
             func_080081a8(textDest, criteria->positiveRemark);
             anim = func_08019210(textDest, 3, 3);
-            palette = 2;
+            palette = LEVEL_EXTRA_COMMENT_PALETTE;
         } else {
             switch (totalSucceeded) {
                 case 0:
@@ -512,7 +610,7 @@ u32 func_08019bec(void) {
             }
             func_080081a8(textDest, criteria->positiveRemark);
             anim = func_08019210(textDest, 2, 3);
-            palette = 4;
+            palette = LEVEL_COMMENT_PALETTE;
         }
 
         sprite = func_0804d160(D_03005380, anim, 0, 0, 0, 0x800, 0, 0, 0);
@@ -542,7 +640,60 @@ u32 func_08019bec(void) {
 }
 
 
-#include "asm/results/asm_08019d9c.s"
+// Display Comments
+void func_08019d9c(void) {
+    u16 *commentSprites;
+    u32 totalNegativeComments, totalComments;
+    u32 negativeCommentWidth, positiveCommentWidth, totalWidth;
+    s32 y;
+    u32 i;
+
+    commentSprites = gResultsInfo.commentSprites;
+    totalNegativeComments = gResultsInfo.totalNegativeComments;
+    totalComments = gResultsInfo.totalNegativeComments + gResultsInfo.totalPositiveComments;
+
+    negativeCommentWidth = 0;
+    for (i = 0; i < totalNegativeComments; i++) {
+        u32 width = func_0804ddb0(D_03005380, commentSprites[i], 24);
+
+        if (negativeCommentWidth < width)
+            negativeCommentWidth = width;
+    }
+
+    positiveCommentWidth = 0;
+    for (i = totalNegativeComments; i < totalComments; i++) {
+        u32 width = func_0804ddb0(D_03005380, commentSprites[i], 24);
+
+        if (positiveCommentWidth < width)
+            positiveCommentWidth = width;
+    }
+
+    totalWidth = positiveCommentWidth;
+    if (totalWidth < negativeCommentWidth)
+        totalWidth = negativeCommentWidth;
+
+    if (totalNegativeComments != 0) {
+        y = SCREEN_CENTER_Y - ((totalNegativeComments - 1) * (LEVEL_COMMENT_LINE_SPACING / 2));
+
+        for (i = 0; i < totalNegativeComments; i++) {
+            func_0804d5d4(D_03005380, commentSprites[i], SCREEN_CENTER_X - (negativeCommentWidth / 2), y);
+            y += LEVEL_COMMENT_LINE_SPACING;
+        }
+        y += LEVEL_EXTRA_COMMENT_MARGIN;
+
+        for (i = totalNegativeComments; i < totalComments; i++) {
+            func_0804d5d4(D_03005380, commentSprites[i], SCREEN_CENTER_X + (totalWidth / 2), y);
+            y += LEVEL_COMMENT_LINE_SPACING;
+        }
+    } else {
+        y = SCREEN_CENTER_Y - ((totalComments - 1) * (LEVEL_COMMENT_LINE_SPACING / 2));
+
+        for (i = totalNegativeComments; i < totalComments; i++) {
+            func_0804d5d4(D_03005380, commentSprites[i], SCREEN_CENTER_X - (totalWidth / 2), y);
+            y += LEVEL_COMMENT_LINE_SPACING;
+        }
+    }
+}
 
 
 // [func_08019ee0] LEVEL Display Comments (Script Function)
@@ -558,9 +709,9 @@ void func_08019ee0(void) {
     func_0801287c();
 
     while (*markingData != NULL) {
-        if (tracker->totalInputs != 0) {
+        if (tracker->totalInputs != 0)
             func_08019480(tracker);
-        }
+
         markingData++;
         tracker++;
     }
@@ -568,47 +719,83 @@ void func_08019ee0(void) {
     totalCriteriaFailed = func_08019a80();
     averageCriteriaSucceeded = func_08019bec();
     func_08019d9c();
+
     if (totalCriteriaFailed != 0) {
-        gResultsInfo.unkC = 0;
-        func_0804cebc(D_03005380, gResultsInfo.resultIcon, 1); // Try Again
+        gResultsInfo.finalResultLevel = RESULT_LEVEL_TRY_AGAIN;
+        func_0804cebc(D_03005380, gResultsInfo.resultIcon, RESULT_ICON_TRY_AGAIN);
         func_080191bc(-1);
         return;
     }
+
     if (func_080139a0() != 0) {
         scene = func_080005e0(&D_089d7c18);
         func_080006b0(&D_089d7c18, &D_089d6d74);
         func_080006b0(&D_089d6d74, scene);
         func_08013994();
     }
+
     if (averageCriteriaSucceeded == 0) {
         textAnim = func_08019210(D_089d7b40[func_08001980(4)], 1, 3);
-        textSprite = func_0804d160(D_03005380, textAnim, 0, 120, 80, 0x800, 0, 0, 0);
-        func_0804d8c4(D_03005380, textSprite, 4);
+        textSprite = func_0804d160(D_03005380, textAnim, 0, SCREEN_CENTER_X, SCREEN_CENTER_Y, 0x800, 0, 0, 0);
+        func_0804d8c4(D_03005380, textSprite, LEVEL_COMMENT_PALETTE);
     }
+
     if (averageCriteriaSucceeded == INT_TO_FIXED(1.0)) {
-        gResultsInfo.unkC = 2;
-        func_0804cebc(D_03005380, gResultsInfo.resultIcon, 2); // Superb
+        gResultsInfo.finalResultLevel = RESULT_LEVEL_SUPERB;
+        func_0804cebc(D_03005380, gResultsInfo.resultIcon, RESULT_ICON_SUPERB);
         func_080191bc(RHYTHM_GAME_STATE_MEDAL_OBTAINED);
+
         previousResult = func_0801317c(D_030046a8->data.gameSelectPosX, D_030046a8->data.gameSelectPosY);
-        if (previousResult < RHYTHM_GAME_STATE_MEDAL_OBTAINED) {
-            gResultsInfo.unk126 = 1;
-        }
-        return;
+        if (previousResult < RHYTHM_GAME_STATE_MEDAL_OBTAINED)
+            gResultsInfo.medalObtained = TRUE;
     }
-    gResultsInfo.unkC = 1;
-    func_0804cebc(D_03005380, gResultsInfo.resultIcon, 0); // OK
-    func_080191bc(RHYTHM_GAME_STATE_CLEARED);
-    if (averageCriteriaSucceeded != 0) {
-        gResultsInfo.unk127 = 1;
+
+    else {
+        gResultsInfo.finalResultLevel = RESULT_LEVEL_OK;
+        func_0804cebc(D_03005380, gResultsInfo.resultIcon, RESULT_ICON_OK);
+        func_080191bc(RHYTHM_GAME_STATE_CLEARED);
+
+        if (averageCriteriaSucceeded != 0)
+            gResultsInfo.stillJustOK = TRUE;
     }
 }
 
 
-#include "asm/results/asm_0801a060.s"
+// Calculate Final Score
+u32 func_0801a060(void) {
+    s32 points, maxPoints;
+    s32 penalty, maxPenalty;
+    u32 result, maxResult;
 
-#include "asm/results/asm_0801a0ec.s"
+    maxPoints = D_089d7980->maximumPoints;
+    points = func_080087d4(D_089d7980->totalPoints, 0, D_089d7980->maximumPoints);
+
+    if (points > 0) {
+        maxPenalty = ((points * -15) << 1) / 100; // (awesome: they performed logical shift on a negative value)
+        penalty = D_089d7980->totalIrrelevantInputs * -10;
+        points += func_080087d4(penalty, maxPenalty, 0);
+    }
+    points = func_080087d4(points, 0, maxPoints);
+
+    result = points * points;
+    maxResult = maxPoints * maxPoints;
+
+    // Keep within the bounds of a short
+    while (maxResult > 0x10000) {
+        maxResult >>= 1;
+        result >>= 1;
+    }
+
+    if (maxPoints != 0)
+        return (result * 1000) / maxResult;
+
+    return 0;
+}
+
 
 // Epilogue screen
+
+#include "asm/results/asm_0801a0ec.s"
 
 #include "asm/results/asm_0801a0f0.s"
 

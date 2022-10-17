@@ -6,27 +6,27 @@
 // extern ? func_0800b974(?);
 // extern ? func_0800b9fc(?); // BEATSCRIPT - Main
 // extern ? func_0800bc14(?); // BEATSCRIPT - Check if no threads are running
-// extern ? func_0800bc40(?);
+// extern ? func_0800bc40(?); // related to loops
 // extern ? func_0800bc58(?);
 // extern ? func_0800bc68(?);
 // extern ? func_0800bcb8(?);
 // extern ? func_0800bcc4(?);
-// extern ? func_0800bce4(?);
+// extern ? func_0800bce4(?); // also related to loops
 // extern ? func_0800bcf4(?);
 extern void func_0800bd04(u32);
 // extern ? func_0800bd1c(?);
 // extern ? func_0800bd2c(?);
-// extern ? func_0800bdf8(?); // BEATSCRIPT - Set Tempo
+extern void func_0800bdf8(u16 tempo); // BEATSCRIPT - Set Tempo
 // extern ? func_0800be64(?);
 // extern ? func_0800be88(?); // BEATSCRIPT - Set Speed
 // extern ? func_0800be9c(?);
 // extern ? func_0800bea0(?);
 // extern ? func_0800bebc(?);
 // extern ? func_0800bed0(?); // BEATSCRIPT - Play Music (arg1 = Stop Previous; arg2 = SoundPlayer ID)
-// extern ? func_0800bf7c(?); // BEATSCRIPT - Play Music
-// extern ? func_0800bf8c(?); // BEATSCRIPT - Play Music (No Override)
-// extern ? func_0800bf9c(?); // BEATSCRIPT - Play Music in Given SoundPlayer
-// extern ? func_0800bfac(?); // BEATSCRIPT - Play Music in Given SoundPlayer (No Override)
+extern void func_0800bf7c(const struct SequenceData *); // BEATSCRIPT - Play Music
+extern void func_0800bf8c(const struct SequenceData *); // BEATSCRIPT - Play Music (No Override)
+extern void func_0800bf9c(const struct SequenceData *); // BEATSCRIPT - Play Music in Given SoundPlayer
+extern void func_0800bfac(const struct SequenceData *); // BEATSCRIPT - Play Music in Given SoundPlayer (No Override)
 // extern ? func_0800bfbc(?);
 // extern ? func_0800c01c(?); // BEATSCRIPT - Stop Music
 // extern ? func_0800c030(?);

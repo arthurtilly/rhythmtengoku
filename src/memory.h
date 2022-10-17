@@ -19,18 +19,20 @@ extern struct SaveBuffer {
         s8 recentGameCompletionLevel;
         u8 gameSelectUnk5;
         u8 rhythmGameCompletion[55];
-        u16 unk3E;
-        u16 unk40[55];
+        u16 recentGameScore;
+        u16 rhythmGameScores[55];
         u16 currentFlow;
-        u8 paddingB0[0x186];
+        u8 paddingB0[0xe0];
+        u8 unk190[48]; // number of attempts? (size not yet determined)
+        u8 padding1C0[0x76];
         u8 unk236[48];
         u8 unk266;
         u8 perfectAttemptsRemaining;
-        u8 unk268;
+        u8 playsUntilNextPerfectCampaign;
         u8 perfectCampaignID;
         u8 unk26A;
         u8 padding26B[0x23];
-        u8 unk28E;
+        u8 totalMedals;
         u8 padding28F[0x2];
         u8 unk291;
         u8 padding292[0x2];

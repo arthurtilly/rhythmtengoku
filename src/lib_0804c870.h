@@ -25,15 +25,15 @@ extern void func_0804ced0(struct SpriteHandler *, s16, u8);
 // extern ? func_0804d0d8(?);
 // extern ? func_0804d11c(?);
 // extern ? func_0804d140(?);
-extern u32  func_0804d160(struct SpriteHandler *, const struct Animation *, s8, s16, s16, u16, s8, s8, u16);
-extern u32  func_0804d294(struct SpriteHandler *, const struct Animation *, s8, s16, s16, u16, s8, s8, u16, u32);
+extern u32  func_0804d160(struct SpriteHandler *, const struct Animation *, s8, s16, s16, u16, s8, s8, u16); // Create New
+extern u32  func_0804d294(struct SpriteHandler *, const struct Animation *, s8, s16, s16, u16, s8, s8, u16, u32); // Create New (w/ additional parameter (layer..?))
 // extern ? func_0804d3cc(?);
 // extern ? func_0804d468(?);
 // extern ? func_0804d504(?);
 // extern ? func_0804d55c(?);
-extern void func_0804d5d4(struct SpriteHandler *, s16, s16, s16);
-extern void func_0804d614(struct SpriteHandler *, s16, s16);
-extern void func_0804d648(struct SpriteHandler *, s16, s16);
+extern void func_0804d5d4(struct SpriteHandler *, s16, s16, s16); // Set X/Y Position
+extern void func_0804d614(struct SpriteHandler *, s16, s16); // Set X Position
+extern void func_0804d648(struct SpriteHandler *, s16, s16); // Set Y Position
 extern void func_0804d67c(struct SpriteHandler *, s16, u16);
 extern s32  func_0804d6cc(struct SpriteHandler *, s16);
 extern u8   func_0804d708(struct SpriteHandler *, s16);
@@ -43,8 +43,8 @@ extern void func_0804d7e8(struct SpriteHandler *, s16, u32);
 extern void func_0804d820(struct SpriteHandler *, s16, u32);
 // extern ? func_0804d858(?);
 extern void func_0804d890(struct SpriteHandler *, s16, s16);
-extern void func_0804d8c4(struct SpriteHandler *, s16, s8);
-extern void func_0804d8f8(struct SpriteHandler *, s16, const struct Animation *, s8, s8, s8, u16);
+extern void func_0804d8c4(struct SpriteHandler *, s16, s8); // Set Palette
+extern void func_0804d8f8(struct SpriteHandler *, s16, const struct Animation *, s8, s8, s8, u16); // Set Animation
 // extern ? func_0804d9b0(?);
 extern void func_0804da20(struct SpriteHandler *, s16, u16);
 // extern ? func_0804da68(?);
@@ -56,8 +56,8 @@ extern void func_0804db44(struct SpriteHandler *, s16, s16 *, s16 *);
 // extern ? func_0804dc10(?);
 // extern ? func_0804dc8c(?);
 extern void func_0804dcb8(struct SpriteHandler *, s16, u16);
-// extern ? func_0804dcd8(?);
-extern u32  func_0804ddb0(struct SpriteHandler *, s16, u32);
+// extern ? func_0804dcd8(?); // Get Sprite Dimensions { Left, Right, Top, Bottom, Width, Height }
+extern u32  func_0804ddb0(struct SpriteHandler *, s16, u32); // Get Sprite Data { 20+ = func_0804dcd8() }
 extern void func_0804df4c(struct SpriteHandler *, s16, s8);
 // extern ? func_0804df6c(?);
 // extern ? func_0804df80(?);

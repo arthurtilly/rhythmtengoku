@@ -9,10 +9,10 @@ struct MarkingCriteria {
     const char *positiveRemark;
     const char *negativeRemark;
     u8 flags;
-    u8 useAverageScores;
-    u16 unkA;
-    u16 unkC;
-    u16 missThreshold;
+    u8 checkAverageMisses;
+    u16 minHitsForSuccess; // [Q8.8] Average Hits
+    u16 minHitsBeforeFail; // [Q8.8] Average Hits
+    u16 maxMissesBeforeFail; // Misses, either as exact value or Q8.8 average.
 };
 
 struct InputScoreTracker {
@@ -33,16 +33,30 @@ struct ScoreHandler {
     u32 unk0_b0:1;
     u32 markingInputs:1;
     u32 null0_b2:30;
-    u16 unk4;
-    s8 unk6;
+    u16 totalRecoveries;
+    s8 prevInputLevel;
     struct InputScoreTracker anyInputTrackers[4];
     u8 padding68[12];
-    u16 unk74;
+    u16 totalIrrelevantInputs;
     const struct MarkingCriteria **markingData;
     struct InputScoreTracker cueInputTrackers[16];
     char *headerText; // text in the upper-right corner of the results comments screen
     u32 totalPoints;
     u32 maximumPoints;
+};
+
+/* MACROS & ENUMS */
+
+enum ResultsLevelsEnum {
+    RESULT_LEVEL_TRY_AGAIN,
+    RESULT_LEVEL_OK,
+    RESULT_LEVEL_SUPERB
+};
+
+enum ResultsLevelIconsEnum {
+    RESULT_ICON_OK,
+    RESULT_ICON_TRY_AGAIN,
+    RESULT_ICON_SUPERB
 };
 
 /* TEXT */
@@ -65,14 +79,17 @@ extern const struct Animation D_0890b724[]; // "‚Å‚à" ("but")
 /* SOUND EFFECTS */
 
 extern const struct SequenceData s_menu_se20_seqData;
+extern const struct SequenceData s_f_result_mes_add_seqData;
 
 /* SCENE DATA */
 
-extern u32 D_089d7654[]; // GFX Init. Struct
-extern u32 D_089d7684[]; // unused sprite thing i think
+extern u32 D_089d7654[]; // LEVEL - GFX Init. Struct
+extern u32 D_089d7684[]; // LEVEL - unused sprite thing i think
 extern struct ScoreHandler *D_089d7980; // ( = D_03001338)
-extern char *D_089d7b34[3]; // Comment Pool - Try Again
-extern char *D_089d7b40[4]; // Comment Pool - OK
+extern char *D_089d7b34[3]; // LEVEL - Comment Pool (Try Again)
+extern char *D_089d7b40[4]; // LEVEL - Comment Pool (OK)
+extern const struct SequenceData *D_089d7688[3]; // LEVEL - Result SFX Pool
+extern const struct SequenceData *D_089d7694[3]; // LEVEL - Result BGM Pool
 
 /* FUNCTIONS */
 
@@ -95,9 +112,9 @@ extern void func_08018b9c(s32); // [func_08018b9c] LEVEL Scene STUB
 extern void func_08018ba0(s32); // [func_08018ba0] LEVEL Scene Main
 extern void func_08018be0(s32); // [func_08018be0] LEVEL Scene Close
 extern void func_08018bf0(void); // [func_08018bf0] LEVEL Display Header Text (Script Function)
-// extern ? func_08018cc8(?); // [func_08018cc8] LEVEL Display Result Icon (Script Function)
-// extern ? func_08018d68(?); // [func_08018d68] LEVEL ? (Script Function)
-// extern ? func_08018d9c(?); // [func_08018d9c] LEVEL ? (Script Function)
+extern void func_08018cc8(void); // [func_08018cc8] LEVEL Display Result Icon (Script Function)
+extern void func_08018d68(void); // [func_08018d68] LEVEL Play Music (Script Function)
+extern void func_08018d9c(void); // [func_08018d9c] LEVEL Display Positive Reinforcement (Script Function)
 
 // extern ? func_08018e60(?); // [func_08018e60] SCORE Initialise Static Variables
 // extern ? func_08018e74(?); // [func_08018e74] SCORE Graphics Init. 3
@@ -112,9 +129,9 @@ extern void func_08018bf0(void); // [func_08018bf0] LEVEL Display Header Text (S
 // extern ? func_08019178(?); // [func_08019178] SCORE Scene Close
 // extern ? func_08019188(?); // [func_08019188] SCORE ? (Script Function)
 
-// extern ? func_080191ac(?);
-// extern ? func_080191b8(?);
-// extern ? func_080191bc(?);
+extern void func_080191ac(u32 updateSave); // Set D_03001540
+extern u32 func_080191b8(void); // Return TRUE
+extern void func_080191bc(u32 level); // Save Result
 extern struct Animation *func_08019210(const char *, u32, u32); // Get Animation for Text
 extern void func_08019268(struct InputScoreTracker *); // Initialise Any-Input Trackers
 extern void func_08019278(void); // Initialise Cue Input Trackers and Marking Criteria
@@ -142,7 +159,7 @@ extern u32 func_08019a80(void); // Prepare Negative Comments
 extern u32 func_08019bec(void); // Prepare Positive Comments
 extern void func_08019d9c(void); // Display Comments
 extern void func_08019ee0(void); // [func_08019ee0] LEVEL Display Comments (Script Function)
-// extern ? func_0801a060(?);
+extern u32 func_0801a060(void); // Calculate Final Score
 // extern ? func_0801a0ec(?); // [func_0801a0ec] EPILOGUE Initialise Static Variables
 // extern ? func_0801a0f0(?); // [func_0801a0f0] EPILOGUE Graphics Init. 2
 // extern ? func_0801a140(?); // [func_0801a140] EPILOGUE Graphics Init. 1

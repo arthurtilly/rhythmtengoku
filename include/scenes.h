@@ -12,7 +12,7 @@
 #define gResultsInfo    D_030046a4->results
 
 // Main Menu Scene Info
-struct MainMenuInfo {
+struct MainMenuSceneInfo {
     struct TextObject2 *font2;
     struct TextObject1 *font1;
     u32 screenReady; // Set to FALSE during screen fade-in/out.
@@ -24,7 +24,7 @@ struct MainMenuInfo {
 };
 
 // Game Select Scene Info
-struct GameSelectInfo {
+struct GameSelectSceneInfo {
     u8 unk0;
     u32 unk4;
     s32 unk8_b0:1;
@@ -149,7 +149,7 @@ struct GameSelectInfo {
 };
 
 // Gameplay Scene Info
-struct GameplayInfo {
+struct GameplaySceneInfo {
 	s32 unk0;
 	s32 unk4;
 	u8 playInputsEnabled; // A, B, +, L, R
@@ -221,7 +221,7 @@ struct ResultsSceneInfo {
     struct TextObject2 *textObj2;
     struct TextObject1 *textObj1;
     u32 awaitingInput;
-    u8 unkC;
+    u8 finalResultLevel;
     s16 placeholderIcon;
     s16 resultIcon;
     u8 totalNegativeComments;
@@ -231,15 +231,15 @@ struct ResultsSceneInfo {
     u32 null20;
     u8 unk24;
     u8 null25;
-    char text[0x100];
-    u8 unk126;
-    u8 unk127;
-    u8 unk128;
+    char negativeCommentsText[0x100];
+    u8 medalObtained;
+    u8 stillJustOK;
+    u8 singleCommentTryAgain;
 };
 
 extern union struct_030046a4 {
-    struct MainMenuInfo mainMenu;
-    struct GameSelectInfo gameSelect;
-    struct GameplayInfo gameplay;
+    struct MainMenuSceneInfo mainMenu;
+    struct GameSelectSceneInfo gameSelect;
+    struct GameplaySceneInfo gameplay;
     struct ResultsSceneInfo results;
 } *D_030046a4;
