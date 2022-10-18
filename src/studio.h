@@ -8,7 +8,7 @@
 // extern ? func_0801aaa0(?);
 // extern ? func_0801ac38(?);
 // extern ? func_0801ad44(?);
-// extern ? func_0801ad9c(?);
+// extern ? func_0801ad9c(?); // ? (called when resetting global save data)
 // extern ? func_0801adf0(?);
 // extern ? func_0801ae34(?);
 // extern ? func_0801aea4(?);

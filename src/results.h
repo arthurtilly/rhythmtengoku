@@ -40,7 +40,7 @@ struct ScoreHandler {
     u16 totalIrrelevantInputs;
     const struct MarkingCriteria **markingData;
     struct InputScoreTracker cueInputTrackers[16];
-    char *headerText; // text in the upper-right corner of the results comments screen
+    char *headerText;
     u32 totalPoints;
     u32 maximumPoints;
 };
@@ -85,11 +85,11 @@ extern const struct SequenceData s_f_result_mes_add_seqData;
 
 extern u32 D_089d7654[]; // LEVEL - GFX Init. Struct
 extern u32 D_089d7684[]; // LEVEL - unused sprite thing i think
+extern const struct SequenceData *D_089d7688[3]; // LEVEL - Result SFX Pool
+extern const struct SequenceData *D_089d7694[3]; // LEVEL - Result BGM Pool
 extern struct ScoreHandler *D_089d7980; // ( = D_03001338)
 extern char *D_089d7b34[3]; // LEVEL - Comment Pool (Try Again)
 extern char *D_089d7b40[4]; // LEVEL - Comment Pool (OK)
-extern const struct SequenceData *D_089d7688[3]; // LEVEL - Result SFX Pool
-extern const struct SequenceData *D_089d7694[3]; // LEVEL - Result BGM Pool
 
 /* FUNCTIONS */
 

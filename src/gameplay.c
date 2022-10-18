@@ -20,7 +20,7 @@ enum PauseMenuOptionsEnum {
 extern const struct Scene D_089cfd60; // Perfect Certificate Scene
 extern const struct BeatScript D_089cfda4[]; // Generic Fade-Out Sequence
 extern const struct Scene D_089d77e4; // Results Scene (Level-type)
-extern const struct Scene D_089d7c18; // Results Scene (???)
+extern const struct Scene D_089d7c18; // Results Scene (Epilogue)
 extern const struct Scene D_089ddbcc; // Debug Menu Scene
 
 
@@ -93,7 +93,7 @@ void func_08016ec4(s32 arg) {
     func_08007324(0);
     func_080073f0();
     func_08018154();
-    func_08018524(); // Script-related, D_030055e0
+    func_08018524(); // Script-related, gPauseMenu
     func_08018630(NULL);
     gGameplayInfo.gameEngine = NULL;
     func_080178e4();

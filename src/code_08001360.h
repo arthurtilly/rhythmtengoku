@@ -42,7 +42,7 @@ extern void func_0800181c(u8);
 extern u32 func_08001828(void);
 extern u8 func_0800184c(void);
 // extern ? func_0800186c(?);
-// extern ? func_080018e0(?);
+// extern ? func_080018e0(?); // DMA3 Fill?
 extern void func_08001958(u32);
 extern u16 func_08001964(void);
 extern u16 func_08001980(u16);
@@ -89,6 +89,9 @@ extern void func_080022d8(s16); // ROTATION/SCALING PARAMETER GROUP - ?? (Fine A
 // extern ? func_080025bc(?);
 // extern ? func_080025d8(?);
 // extern ? func_080025fc(?);
+
+/* SOUND */
+
 // extern ? func_08002630(?); // Get Sound ID
 extern struct SoundPlayer *func_08002634(const struct SequenceData *); // Play Sound
 extern struct SoundPlayer *func_0800267c(u32 player, const struct SequenceData *); // Play Sound in Specified Player
@@ -117,9 +120,12 @@ extern void func_08002920(struct SoundPlayer *player, u16 volume); // Set Player
 // extern ? func_080029c4(?);
 // extern ? func_080029d8(?);
 // extern ? func_08002a18(?);
-// extern ? func_08002a54(?);
+
+/* Graphics..? */
+
+// extern ? func_08002a54(?); // Remove the highest bit from a pointer (since that shouldn't be set, not that this keeps the pointer in range though)
 // extern ? func_08002a6c(?);
-// extern ? func_08002b10(?);
+// extern ? func_08002b10(?); // Decompress Graphics..?
 // extern ? func_08002db0(?);
 // extern ? func_08002db8(?);
 // extern ? func_08002dc4(?);
@@ -129,9 +135,9 @@ extern void func_08002920(struct SoundPlayer *player, u16 volume); // Set Player
 // extern ? func_08002e44(?);
 // extern ? func_08002e5c(?);
 // extern ? func_08002e78(?);
-// extern ? func_08002eb0(?);
-// extern ? func_08002ecc(?);
-extern u32 func_08002ee0(u16, u32 *, u32);
+// extern ? func_08002eb0(?); // D_089363fc Function 0
+// extern ? func_08002ecc(?); // D_089363fc Function 2
+extern u32 func_08002ee0(u16, u32 *, u32); // Load Graphics (or something. uses D_089363fc)
 // extern ? func_08002f04(?);
 // extern ? func_08002f40(?);
 // extern ? func_08002f48(?);

@@ -15,17 +15,17 @@ void func_080001f4_stub(void) {
 	
 }
 
-// Initialise Scenes (Initialise Static Variables)
-void func_080001f8(void) {
-	func_0801350c();
-	func_08018e60();
-	func_0801242c();
-	func_08016e94();
-	func_08010490();
-	func_08011ec0();
-	func_0801c1b8();
-	func_0801d580();
-	func_080113d0();
+// Initialise Scenes (Init. Static Variables)
+void init_scene_static_var(void) {
+	func_0801350c(); // Game Select
+	func_08018e60(); // Results (Score-Type)
+	func_0801242c(); // Main Menu
+	func_08016e94(); // Gameplay
+	func_08010490(); // Rhythm Library
+	func_08011ec0(); // Rhythm Data Room
+	func_0801c1b8(); // Studio
+	func_0801d580(); // Medal Corner Menus
+	func_080113d0(); // Cafe
 }
 
 void func_08000224(void) {
@@ -50,9 +50,9 @@ void func_08000224(void) {
 		}
 	}
 	func_080009b4();
-	func_080029d8(D_030046a8->data.soundMode);
+	func_080029d8(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
 	func_0800584c(func_0800c490());
-	func_080001f8();
+	init_scene_static_var(); // Initialise Scenes
 	func_08001360();
 	func_08009150();
 	func_080091d8();
@@ -88,19 +88,19 @@ void agb_main(void) {
 	
 	init_ewram();
 	func_08000224();
-	func_0801e100();
-	func_0804c778();
-	func_0804c340(35, 2, 2, 4);
-	func_080029d8(D_030046a8->data.soundMode);
+	func_0801e100(); // Init. Debug Menu Scene (Init. Static Variables)
+	func_0804c778(); // Init. MIDI Sound Library
+	func_0804c340(35, 2, 2, 4); // Set Sound Reverb Levels
+	func_080029d8(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
 	
 	REG_DISPSTAT = 8;
 	REG_IE = (INTERRUPT_CART | INTERRUPT_DMA2 | INTERRUPT_TIMER3 | INTERRUPT_VBLANK);
 	REG_IF = 0xFFFF;
 	REG_IME = 1;
 	
-	func_0801d860(0);
-	func_0800046c(&D_089dda4c);
-	func_080006b0(&D_089dda4c, D_08935fac);
+	func_0801d860(0); // Init. Script Operator (Init. Static Variables)
+	func_0800046c(&D_089dda4c); // Warning Screen
+	func_080006b0(&D_089dda4c, D_08935fac); // Warning Screen, Title Screen
 	func_080015bc();
 	
 	while (1) {
@@ -128,9 +128,9 @@ void agb_main(void) {
 	
 }
 
-void func_0800046c(const struct Scene *arg1) {
+void func_0800046c(const struct Scene *next) {
 	gCurrentScene = NULL;
-	gNextScene = arg1;
+	gNextScene = next;
 	D_030046a4 = NULL;
 	func_08000598();
 }
@@ -140,11 +140,11 @@ void process_scenes(void) {
     
 	if (gCurrentScene != NULL) {
 		if (gCurrentScene->loopFunc != NULL) {
-            // Scene main loop
+            // Update Scene
             u32 sceneEnded = gCurrentScene->loopFunc(gCurrentScene->loopParam);
             
             if (sceneEnded) {
-                // End scene
+                // Close Scene
                 if (gCurrentScene->endFunc != NULL) {
                     gCurrentScene->endFunc(gCurrentScene->endParam);
                 }
@@ -175,8 +175,8 @@ void process_scenes(void) {
 		gNextScene = NULL;
 		D_03000080 = FALSE;
 		
-		if (gCurrentScene->unk18 != 0) {
-			temp = mem_heap_alloc(gCurrentScene->unk18);
+		if (gCurrentScene->requiredMemory != 0) {
+			temp = mem_heap_alloc(gCurrentScene->requiredMemory);
             D_030046a4 = temp;
 		}
 		
@@ -186,9 +186,9 @@ void process_scenes(void) {
 	}
 }
 
-void func_08000568(const struct Scene *arg1) {
+void func_08000568(const struct Scene *next) {
 	gCurrentScene = NULL;
-	gNextScene = arg1;
+	gNextScene = next;
 	func_08000598();
 }
 

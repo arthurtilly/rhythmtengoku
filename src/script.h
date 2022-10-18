@@ -20,21 +20,21 @@ enum PauseMenuSelectedOption {
 typedef void (*PauseMenuInitFunc)(void);
 typedef u32 (*PauseMenuUpdateFunc)(void);
 
-struct PauseHandlerDefinition {
+struct PauseMenuDefinition {
     u16 pauseButton;
     PauseMenuInitFunc onPause;
     PauseMenuUpdateFunc update;
     const struct SequenceData *quitSfx;
 };
 
-struct PauseHandler {
+struct PauseMenu {
     u8 state;
     u8 enabled:1;
     u8 hasBeenUsed:1;
-    const struct PauseHandlerDefinition *data;
+    const struct PauseMenuDefinition *data;
 };
 
-extern struct PauseHandler D_030055e0;
+extern struct PauseMenu gPauseMenu;
 
 
 
@@ -50,7 +50,7 @@ extern u32  func_0801d9cc(void);
 extern u32  func_0801d9d0(void); // [func_0801d9d0] Update Pause Menu (State: Play)
 extern void func_0801da48(void); // [func_0801da48] Update Pause Menu (State: Pause)
 extern u32  func_0801dabc(void); // [func_0801dabc] Update Pause Menu (State: Stop)
-extern void func_0801daf8(const struct PauseHandlerDefinition *data); // [func_0801daf8] Set Pause Handler Definition
+extern void func_0801daf8(const struct PauseMenuDefinition *data); // [func_0801daf8] Set Pause Handler Definition
 extern void func_0801db04(u32 enable); // [func_0801db04] Enable Pause Menu
 
 // extern ? func_0801db1c(?);

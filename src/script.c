@@ -24,10 +24,10 @@ void func_0801d860(u32 arg) {
 void func_0801d86c(u32 arg0) {
     u32 temp[4];
 
-    D_030055e0.state = PAUSE_STATE_PLAY;
-    D_030055e0.enabled = FALSE;
-    D_030055e0.hasBeenUsed = FALSE;
-    D_030055e0.data = NULL;
+    gPauseMenu.state = PAUSE_STATE_PLAY;
+    gPauseMenu.enabled = FALSE;
+    gPauseMenu.hasBeenUsed = FALSE;
+    gPauseMenu.data = NULL;
     if (D_0300155c) {
         func_08006d80();
     }
@@ -48,46 +48,46 @@ void func_0801d86c(u32 arg0) {
 u32 func_0801d8d8(void) {
     func_08006e88();
     func_08003fb4();
-    if (D_030055e0.hasBeenUsed) {
+    if (gPauseMenu.hasBeenUsed) {
         func_0800b974();
     }
     func_08005ad4();
     func_08005a84();
 
-    /* Pause Handling */
-    switch (D_030055e0.state) {
+    /* Script/Pause Handling */
+    switch (gPauseMenu.state) {
         case PAUSE_STATE_PLAY:
-            /* Attempt to open a pause screen. */
+            /* Check if Pause Screen should open. */
             if (func_0801d9d0()) {
                 break;
             }
-            /* If unsuccessful... */
+            /* Otherwise, update Script. */
             func_0800b9fc();
-            if (!func_0800bc14()) {
-                break;
+            if (func_0800bc14()) {
+                func_0801d98c();
+                return TRUE;
             }
-            func_0801d98c();
-            return TRUE;
+            break;
 
         case PAUSE_STATE_PAUSE:
-            /* Update the active pause screen. */
+            /* Update the Pause Screen. */
             func_0801da48();
-            if (D_030055e0.state != PAUSE_STATE_PLAY) {
+            if (gPauseMenu.state != PAUSE_STATE_PLAY) {
                 break;
             }
-            /* If a "Continue" option was selected... */
+            /* If "Continue" was selected, update Script. */
             func_0800b9fc();
-            if (!func_0800bc14()) {
-                break;
+            if (func_0800bc14()) {
+                func_0801d98c();
+                return TRUE;
             }
-            func_0801d98c();
-            return TRUE;
+            break;
 
         case PAUSE_STATE_STOP:
-            if (!func_0801dabc()) {
-                break;
+            if (func_0801dabc()) {
+                return TRUE;
             }
-            return TRUE;
+            break;
     }
 
     func_08007410();
@@ -141,9 +141,9 @@ u32 func_0801d9cc(void) {
 u32 func_0801d9d0(void) {
     u32 i;
 
-    if (!D_030055e0.enabled
-     || D_030055e0.data == NULL
-     || (D_03004afc & D_030055e0.data->pauseButton) != D_030055e0.data->pauseButton) {
+    if (!gPauseMenu.enabled
+     || gPauseMenu.data == NULL
+     || (D_03004afc & gPauseMenu.data->pauseButton) != gPauseMenu.data->pauseButton) {
         return FALSE;
     }
 
@@ -154,11 +154,11 @@ u32 func_0801d9d0(void) {
         func_08005e18(i, 1);
     }
 
-    if (D_030055e0.data->onPause != NULL) {
-        D_030055e0.data->onPause();
+    if (gPauseMenu.data->onPause != NULL) {
+        gPauseMenu.data->onPause();
     }
-    D_030055e0.state = PAUSE_STATE_PAUSE;
-    D_030055e0.hasBeenUsed = TRUE;
+    gPauseMenu.state = PAUSE_STATE_PAUSE;
+    gPauseMenu.hasBeenUsed = TRUE;
     return TRUE;
 }
 
@@ -167,7 +167,7 @@ u32 func_0801d9d0(void) {
 void func_0801da48(void) {
     u32 i;
 
-    switch (D_030055e0.data->update()) {
+    switch (gPauseMenu.data->update()) {
         case PAUSE_MENU_SELECTION_CONTINUE:
             func_08002880(FALSE); // Unpause Sound
             func_0804e1bc(D_03005380, 0); // Unpause Sprites..?
@@ -175,15 +175,15 @@ void func_0801da48(void) {
                 i++;
                 func_08005e18(i, 0);
             }
-            D_030055e0.state = PAUSE_STATE_PLAY;
+            gPauseMenu.state = PAUSE_STATE_PLAY;
             break;
 
         case PAUSE_MENU_SELECTION_QUIT:
             func_080070c4(0x20, 0);
             func_08002880(FALSE); // Unpause Sound
             func_08002838(); // Fade-Out & Stop Sound
-            func_08002634(D_030055e0.data->quitSfx);
-            D_030055e0.state = PAUSE_STATE_STOP;
+            func_08002634(gPauseMenu.data->quitSfx);
+            gPauseMenu.state = PAUSE_STATE_STOP;
             break;
     }
 }
@@ -201,14 +201,14 @@ u32 func_0801dabc(void) {
 
 
 // [func_0801daf8] Set Pause Handler Definition
-void func_0801daf8(const struct PauseHandlerDefinition *data) {
-    D_030055e0.data = data;
+void func_0801daf8(const struct PauseMenuDefinition *data) {
+    gPauseMenu.data = data;
 }
 
 
 // [func_0801db04] Enable Pause Menu
 void func_0801db04(u32 enable) {
-    D_030055e0.enabled = enable;
+    gPauseMenu.enabled = enable;
 }
 
 

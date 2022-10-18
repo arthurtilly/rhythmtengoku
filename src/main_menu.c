@@ -141,7 +141,7 @@ void func_080125fc(u32 arg) {
                 case STUDIO:
                     func_08000584(&D_089d85b4); // Studio
                     func_080006b0(&D_089d85b4, &D_089cde20); // Studio, Main Menu
-                    func_080006d0(&D_089d85b4, 0); // Studio, Null
+                    func_080006d0(&D_089d85b4, NULL); // Studio, Null
                     break;
                 case OPTIONS_MENU:
                     func_08000584(&D_089cfc1c); // Options Menu
@@ -149,7 +149,7 @@ void func_080125fc(u32 arg) {
                     gMainMenuInfo.unk1B = TRUE;
                     break;
             }
-            func_0800bd04(0);
+            func_0800bd04(FALSE);
             gMainMenuInfo.screenReady = FALSE;
             func_08002634(&s_menu_kettei1_seqData);
         }

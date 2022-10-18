@@ -10,7 +10,7 @@ struct Scene {
 	void *loopParam;
 	void (*endFunc)(void *);
 	void *endParam;
-	u16 unk18;
+	u16 requiredMemory;
 };
 
 struct SceneUnk03000008 {
@@ -26,17 +26,17 @@ extern void *interrupt_handler_rom;
 extern void *interrupt_handler;
 extern void *interrupt_handler_jtbl_rom;
 extern void *interrupt_handler_jtbl;
-extern const struct Scene *D_08935fac;
-extern const struct Scene *D_08935fb0;
-extern const struct Scene D_089dd97c;
-extern const struct Scene D_089dda4c;
+extern const struct Scene *D_08935fac; // Pointer to Title Screen
+extern const struct Scene *D_08935fb0; // Pointer to Title Screen (again)
+extern const struct Scene D_089dd97c; // some special type of scene (uses different script operation functions!)
+extern const struct Scene D_089dda4c; // Warning Screen
 
-extern void func_080001f8(void);
+extern void init_scene_static_var(void);
 extern void func_08000224(void);
 extern void agb_main(void);
-extern void func_0800046c(const struct Scene *);
+extern void func_0800046c(const struct Scene *next);
 extern void process_scenes(void);
-extern void func_08000568(const struct Scene *);
+extern void func_08000568(const struct Scene *next);
 extern void func_08000584(const struct Scene *);
 extern void func_08000598(void);
 extern struct SceneUnk03000008 *func_080005b8(const struct Scene *);

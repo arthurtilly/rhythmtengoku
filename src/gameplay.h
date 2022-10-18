@@ -23,7 +23,7 @@ extern const struct Animation D_0890ad60[]; // Perfect Input
 
 extern u32 D_089cfd7c[]; // Common Gameplay Graphics/Palettes (Pause Menu, etc.)
 extern u32 D_089cfda0[]; // GFX Null..?
-extern const struct PauseHandlerDefinition D_089cfde0; // Pause Handler Definition
+extern const struct PauseMenuDefinition D_089cfde0; // Pause Handler Definition
 extern const struct Animation *D_089cfdf0[2]; // A Button Prompt Animations { 0 = Black; 1 = White }
 
 /* AUDIO */

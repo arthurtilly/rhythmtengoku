@@ -20,7 +20,7 @@ thumb_func_start func_08016a18 \n\
 /* 08016a3c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08016a3e */ LDR R0, [R0] \n\
 /* 08016a40 */ BL func_080029d8 \n\
-/* 08016a44 */ BL func_080001f8 \n\
+/* 08016a44 */ BL init_scene_static_var \n\
  \n\
 branch_08016a48: \n\
 /* 08016a48 */ POP {R0} \n\
