@@ -109,12 +109,13 @@ extern struct GraphicsBuffer {
     u16 unk52;
     u16 bgPalette[16][16];   // BG Palette Buffer, 03004b64, 0x54
     u16 objPalette[16][16];  // OBJ Palette Buffer, 03004d64, 0x254
-    u32 unk454[0x100];   // OAM Buffer, 03004f64
-    u16 unk854_0:1; // ???
+    u32 oam[0x100];   // OAM Buffer, 03004f64
+    u16 updateDisplay:1;
     u16 unk854_1:1;
     u16 unk854_2:1;
     u16 unk854_3:1;
-    u16 unk854_4:1;
+    u16 unk854_4:12;
+    void (*modifyPalette)(Palette *);
 } D_03004b10; // gGfxBuffer
 
 extern struct SpriteHandler *D_03005380; // gSpriteHandler

@@ -1,12 +1,13 @@
 #include "code_080068f8.h"
+#include "src/code_08003980.h"
 
 // Can be better split
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-static s16 D_03000ea4; // unknown type
-static s16 D_03000ea6; // unknown type
-static s32 D_03000ea8; // unknown type
+static s16 D_03000ea4; // Some sort of time value
+static s16 D_03000ea6; // Another time value
+static u16 D_03000ea8; // Solid Colour used for Screen Fade-In/Fade-Out
 static s32 D_03000eac; // unknown type, unknown if exists
 
 // Graphic Control functions
@@ -94,7 +95,18 @@ u32 func_08006c08(struct unk_struct_08006bb4 *arg0) {
 
 #include "asm/code_080068f8/asm_08006d80.s"
 
-#include "asm/code_080068f8/asm_08006da8.s"
+
+// Reset Graphics Buffer
+void func_08006da8(void) {
+    D_03004b10.updateDisplay = FALSE;
+    D_03004b10.DISPCNT = 0;
+    D_03004b10.unk854_1 = FALSE;
+    D_03004b10.unk854_3 = FALSE;
+    D_03004b10.unk854_4 = FALSE;
+    D_03004b10.modifyPalette = NULL;
+    func_080018e0(0, D_03004b10.bgControl, 80, 0x20, 0x100);
+}
+
 
 #include "asm/code_080068f8/asm_08006e00.s"
 
@@ -102,34 +114,132 @@ u32 func_08006c08(struct unk_struct_08006bb4 *arg0) {
 
 #include "asm/code_080068f8/asm_08006e88.s"
 
-#include "asm/code_080068f8/asm_08006f84.s"
 
-#include "asm/code_080068f8/asm_08006fec.s"
+// Update Palette
+void func_08006f84(void) {
+    if (D_03004b10.unk854_1 || D_03004b10.unk854_4) {
+        func_0800186c(D_03004b10.bgPalette, D_030046c0, 0x400, 0x20, 0x100);
+    }
+    if (D_03004b10.unk854_4 && (D_03004b10.modifyPalette != NULL)) {
+        D_03004b10.modifyPalette(D_030046c0);
+    }
+    func_0800724c();
+}
 
-#include "asm/code_080068f8/asm_08007014.s"
 
-#include "asm/code_080068f8/asm_0800703c.s"
+// Clear OAM Buffer
+void func_08006fec(void) {
+    func_080018e0(0x22222222, D_03004b10.oam, 0x400, 0x20, 0x100);
+}
 
-#include "asm/code_080068f8/asm_080070c4.s"
 
-#include "asm/code_080068f8/asm_0800714c.s"
+// Fill Palette with Solid Colour
+void func_08007014(u16 colour) {
+    func_080018e0(colour | (colour << 16), D_03004b10.bgPalette, 0x400, 0x20, 0x100);
+}
+
+
+// Return Screen from Solid Colour
+void func_0800703c(u16 time, u16 colour) {
+    if (D_03004b10.unk854_1) {
+        D_03000ea6 = (D_03000ea6 * time) / D_03000ea4;
+    } else {
+        D_03000ea6 = time;
+    }
+    D_03000ea4 = time;
+    D_03000ea8 = colour;
+    D_03004b10.unk854_2 = FALSE;
+    D_03004b10.unk854_3 = FALSE;
+    D_03004b10.unk854_1 = TRUE;
+}
+
+
+// Fade Screen to Solid Colour
+void func_080070c4(u16 time, u16 colour) {
+    if (D_03004b10.unk854_1) {
+        D_03000ea6 = (D_03000ea6 * time) / D_03000ea4;
+    } else {
+        D_03000ea6 = 0;
+    }
+    D_03000ea4 = time;
+    D_03000ea8 = colour;
+    D_03004b10.unk854_2 = TRUE;
+    D_03004b10.unk854_3 = FALSE;
+    D_03004b10.unk854_1 = TRUE;
+}
+
+
+// ?
+void func_0800714c() {
+    D_03004b10.unk854_1 = FALSE;
+    D_03004b10.unk854_3 = FALSE;
+}
+
 
 #include "asm/code_080068f8/asm_0800716c.s"
 
-#include "asm/code_080068f8/asm_0800724c.s"
 
-#include "asm/code_080068f8/asm_08007324.s"
+// Update Palette Transition
+void func_0800724c(void) {
+    if (!D_03004b10.unk854_1) return;
 
-#include "asm/code_080068f8/asm_08007344.s"
+    if (D_03004b10.unk854_2) {
+        if (++D_03000ea6 >= D_03000ea4) {
+            D_03000ea6 = D_03000ea4;
+            D_03004b10.unk854_3 = TRUE;
+            D_03004b10.DISPCNT = 0;
+            func_080018e0(D_03000ea8, D_03004b10.bgPalette, 0x400, 0x10, 0x100);
+            func_080018e0(D_03000ea8, D_030046c0, 0x400, 0x10, 0x100);
+            return;
+        }
+    } else {
+        if (--D_03000ea6 <= 0) {
+            D_03000ea6 = 0;
+            D_03004b10.unk854_3 = TRUE;
+            D_03004b10.unk854_1 = FALSE;
+        }
+    }
+    func_0800716c(D_03000ea8, 0, D_03000ea4, D_03000ea6);
+}
 
-#include "asm/code_080068f8/asm_08007370.s"
+
+// Enable Display Updates
+void func_08007324(u32 update) {
+    D_03004b10.updateDisplay = update;
+}
+
+
+void func_08007344(void *paletteFunc) {
+    D_03004b10.unk854_4 = TRUE;
+    D_03004b10.modifyPalette = paletteFunc;
+}
+
+
+// ?
+void func_08007370(void) {
+    D_03004b10.unk854_4 = FALSE;
+    D_03004b10.modifyPalette = NULL;
+}
+
 
 #include "asm/code_080068f8/asm_08007394.s"
 
 #include "asm/code_080068f8/asm_080073b8.s"
 
-#include "asm/code_080068f8/asm_080073f0.s"
 
-#include "asm/code_080068f8/asm_08007410.s"
+// Init. OAM Buffer
+void func_080073f0(void) {
+    func_0804cbcc(D_03005380);
+    func_080020ec(0x20, D_03004b10.oam);
+}
+
+
+// Update OAM Buffer
+void func_08007410(void) {
+    func_08006fec();
+    func_0804e1c8(D_03005380);
+    func_08002584();
+}
+
 
 #include "asm/code_080068f8/asm_0800742c.s"

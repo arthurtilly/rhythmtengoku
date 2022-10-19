@@ -81,8 +81,8 @@ static s32 D_03001310[2]; // unknown type
 
 // Set Volume for Selected Music Channels
 void func_0800c0f8(u16 selection, u16 volume) {
-    D_030053c0.musicTrkGain = volume;
-    D_030053c0.musicTrkGainTargets = selection;
+    D_030053c0.musicTrkVolume = volume;
+    D_030053c0.musicTrkTargets = selection;
     func_08002934(D_030053c0.musicPlayer, selection, volume);
 }
 

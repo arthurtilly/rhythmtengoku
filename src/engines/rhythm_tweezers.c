@@ -398,7 +398,7 @@ u32 func_0802ef54(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) {
 
 // !TODO - It's always with these cue functions, I swear: https://decomp.me/scratch/xtw97
 // [func_0802ef68] CUE - Update (Long Hair)
-#include "asm/scenes/rhythm_tweezers/asm_0802ef68.s"
+#include "asm/engines/rhythm_tweezers/asm_0802ef68.s"
 
 
 // [func_0802f164] CUE - Despawn

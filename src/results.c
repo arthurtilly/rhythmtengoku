@@ -100,7 +100,7 @@ void func_08018a80(void) {
 
 // [func_08018aa0] LEVEL Scene Init.
 void func_08018aa0(s32 arg) {
-    func_08007324(0);
+    func_08007324(FALSE);
     func_080073f0();
     gResultsInfo.textObj2 = func_08005124(func_0800c3b8(), &D_089de670, 0, 0x340, 6);
     gResultsInfo.textObj1 = func_0800c660(0x300, 4);

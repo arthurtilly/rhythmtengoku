@@ -90,7 +90,7 @@ void func_08016ea4(void) {
 // [func_08016ec4] Gameplay Scene Init.
 void func_08016ec4(s32 arg) {
     func_08002e78(D_089cfd7c);
-    func_08007324(0);
+    func_08007324(FALSE);
     func_080073f0();
     func_08018154();
     func_08018524(); // Script-related, gPauseMenu
@@ -205,10 +205,23 @@ void func_08017000(s32 arg) {
 }
 
 
-#include "asm/gameplay/asm_0801714c.s"
+// [func_0801714c] Check if Play Inputs are Enabled
+u32 func_0801714c(void) {
+    if (gGameplayInfo.playInputsEnabled) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
 
-#include "asm/gameplay/asm_08017168.s"
 
+// Gameplay - Clear Secondary Palette Buffer
+void func_08017168(Palette buffer) {
+    func_080018e0(0, buffer, 0x3E0, 0x20, 0x200);
+}
+
+
+// [func_08017188] Load New Engine
 #include "asm/gameplay/asm_08017188.s"
 
 
@@ -363,7 +376,7 @@ void func_08017578(void) {
     if (gGameplayInfo.fadeInTicks != 0) {
         func_0800703c(gGameplayInfo.fadeInTicks, 0);
     }
-    func_08007324(1);
+    func_08007324(TRUE);
     func_08007370();
 }
 
@@ -794,6 +807,7 @@ s32 func_08017c8c(struct Cue *cue, u16 pressed, u16 released, s32 *offset) {
 }
 
 
+// [func_08017e2c] Hit/Barely Event
 #include "asm/gameplay/asm_08017e2c.s"
 
 

@@ -42,8 +42,8 @@ extern void func_08016ffc(s32 arg); // [func_08016ffc] Scene STUB
 extern void func_08017000(s32 arg); // [func_08016ffc] Scene Main
 
 /* ... */
-// extern ? func_0801714c(?); // [func_0801714c] Check if Play Inputs are Enabled
-// extern ? func_08017168(?);
+extern u32 func_0801714c(void); // [func_0801714c] Check if Play Inputs are Enabled
+extern void func_08017168(Palette buffer); // [func_08017168] Clear Secondary Palette Buffer (loaded to D_03004b10.unk858)
 // extern ? func_08017188(?); // [func_08017188] Load New Engine
 extern union GameEngineInfo *func_0801732c(void); // [func_0801732c] Get Current Game Engine Info
 extern void func_08017338(u16 press, u16 release); // [func_08017338] Set Input Button Filters

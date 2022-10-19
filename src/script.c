@@ -31,10 +31,10 @@ void func_0801d86c(u32 arg0) {
     if (D_0300155c) {
         func_08006d80();
     }
-    func_08006da8();
-    func_08007014(0);
-    func_08006fec();
-    func_080073f0();
+    func_08006da8(); // Reset Graphics
+    func_08007014(0); // Fill Palette (Black)
+    func_08006fec(); // Clear OAM Buffer
+    func_080073f0(); // Init. OAM Buffer
     func_08003f28();
     func_080013e8(func_0801d9cc);
     temp[0] = arg0;
@@ -46,7 +46,7 @@ void func_0801d86c(u32 arg0) {
 
 // [func_0801d8d8] Script Main
 u32 func_0801d8d8(void) {
-    func_08006e88();
+    func_08006e88(); // Flush Graphics Buffer
     func_08003fb4();
     if (gPauseMenu.hasBeenUsed) {
         func_0800b974();
@@ -90,8 +90,8 @@ u32 func_0801d8d8(void) {
             break;
     }
 
-    func_08007410();
-    func_08006f84();
+    func_08007410(); // Update OAM
+    func_08006f84(); // Update Palette
     func_080042a4();
     return FALSE;
 }
@@ -106,7 +106,7 @@ void func_0801d95c(const struct BeatScript *script) {
 // [func_0801d968] Change Script (w/ Timer Reset)
 void func_0801d968(const struct BeatScript *script) {
 	D_030053c0.threads[0].current = script;
-	D_030053c0.threads[0].unkC = 0;
+	D_030053c0.threads[0].timeUntilNext = 0;
 }
 
 

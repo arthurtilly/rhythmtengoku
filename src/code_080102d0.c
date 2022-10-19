@@ -25,7 +25,7 @@ u32 func_080102d0(const struct SequenceData *seqData) {
 
 // [func_080102f4] Reset Rhythm Tengoku Game Save Data
 void func_080102f4(void) {
-    struct TengokuSaveData *data = &D_030046a8->data; // r4
+    struct TengokuSaveData *data = &D_030046a8->data;
     u32 i;
 
     data->gameSelectCursorX = 2;
@@ -68,10 +68,10 @@ void func_080102f4(void) {
     for (i = 0; i < 16; i++) {
         data->unk294[i] = 0;
     }
-    D_030046a8->data.unk294[0] = 5; // High Score - Mr. Upbeat
-    D_030046a8->data.unk294[1] = 50; // High Score - Mannequin Factory
-    D_030046a8->data.unk294[2] = 100; // High Score - Sick Beats SP
-    D_030046a8->data.unk294[3] = 10; // High Score - Quiz Show EX
+    D_030046a8->data.unk294[0] = 5;     // High Score - Mr. Upbeat
+    D_030046a8->data.unk294[1] = 50;    // High Score - Mannequin Factory
+    D_030046a8->data.unk294[2] = 100;   // High Score - Sick Beats SP
+    D_030046a8->data.unk294[3] = 10;    // High Score - Quiz Show EX
     D_030046a8->data.unk294[8] = DIRECTSOUND_MODE_STEREO; // Sound Mode
 
     data->rhythmGameCompletion[SCENE_ENTRY_KARATE_MAN] = RHYTHM_GAME_STATE_AVAILABLE;

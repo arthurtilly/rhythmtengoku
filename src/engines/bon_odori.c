@@ -169,7 +169,7 @@ void func_08020a48(void) {
 
 
 // [func_08020a4c] ?
-#include "asm/scenes/bon_odori/asm_08020a4c.s" // Decomp attempt at https://decomp.me/scratch/lhu93
+#include "asm/engines/bon_odori/asm_08020a4c.s" // Decomp attempt at https://decomp.me/scratch/lhu93
 
 
 // [func_08020be4] ENGINE Func_00 - ?

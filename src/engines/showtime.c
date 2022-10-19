@@ -53,9 +53,9 @@ void func_0802bd40() {
     
 }
 
-#include "asm/scenes/showtime/asm_0802bd44.s"
+#include "asm/engines/showtime/asm_0802bd44.s"
 
-#include "asm/scenes/showtime/asm_0802be10.s"
+#include "asm/engines/showtime/asm_0802be10.s"
 
 void func_0802be24() {
     D_03004b10.unk4C = 0;
@@ -79,7 +79,7 @@ void func_0802be74() {
 
 }
 
-#include "asm/scenes/showtime/asm_0802be78.s"
+#include "asm/engines/showtime/asm_0802be78.s"
 
 u8 func_0802be90(u32 unused_arg0, u32 unused_arg1, u32 arg2) {
     if (arg2 > func_0800c3a4(0x90))
@@ -91,15 +91,15 @@ void func_0802beac() {
     
 }
 
-#include "asm/scenes/showtime/asm_0802beb0.s"
+#include "asm/engines/showtime/asm_0802beb0.s"
 
-#include "asm/scenes/showtime/asm_0802bec8.s"
+#include "asm/engines/showtime/asm_0802bec8.s"
 
 void func_0802bee4() {
     
 }
 
-#include "asm/scenes/showtime/asm_0802bee8.s"
+#include "asm/engines/showtime/asm_0802bee8.s"
 
 u8 func_0802bf00(u32 unused_arg0, u32 unused_arg1, u32 arg2) {
     if (arg2 > func_0800c3a4(0x78)) {
@@ -135,9 +135,9 @@ void func_0802bf58(u32 unused_arg0, u32* arg1) { //arg1 is probably a struct
     gShowtimeInfo.unk3C0 = func_0800c3a4(20);
 }
 
-#include "asm/scenes/showtime/asm_0802bf88.s"
+#include "asm/engines/showtime/asm_0802bf88.s"
 
-#include "asm/scenes/showtime/asm_0802c078.s"
+#include "asm/engines/showtime/asm_0802c078.s"
 
 void func_0802c084() {
     if (gShowtimeInfo.unk3C0 == 0) {
@@ -148,11 +148,11 @@ void func_0802c084() {
     }
 }
 
-#include "asm/scenes/showtime/asm_0802c0c8.s"
+#include "asm/engines/showtime/asm_0802c0c8.s"
 
-#include "asm/scenes/showtime/asm_0802c150.s"
+#include "asm/engines/showtime/asm_0802c150.s"
 
-#include "asm/scenes/showtime/asm_0802c1cc.s"
+#include "asm/engines/showtime/asm_0802c1cc.s"
 
 void func_0802c1f0(u32 unused_arg0, u16 arg1, u32 arg2) {
     switch (gShowtimeInfo.unk8[arg2].unk4) {
@@ -193,7 +193,7 @@ void func_0802c334() {
     }
 }
 
-#include "asm/scenes/showtime/asm_0802c36c.s"
+#include "asm/engines/showtime/asm_0802c36c.s"
 
 u32 func_0802c3d0(u32 arg0) {
     switch (gShowtimeInfo.unk8[arg0].unk8 / 4) {
@@ -208,32 +208,32 @@ u32 func_0802c3d0(u32 arg0) {
     }
 }
 
-#include "asm/scenes/showtime/asm_0802c40c.s"
+#include "asm/engines/showtime/asm_0802c40c.s"
 
-#include "asm/scenes/showtime/asm_0802c4b0.s"
+#include "asm/engines/showtime/asm_0802c4b0.s"
 
-#include "asm/scenes/showtime/asm_0802c4c0.s"
+#include "asm/engines/showtime/asm_0802c4c0.s"
 
-#include "asm/scenes/showtime/asm_0802c4f4.s"
+#include "asm/engines/showtime/asm_0802c4f4.s"
 
-#include "asm/scenes/showtime/asm_0802c528.s"
+#include "asm/engines/showtime/asm_0802c528.s"
 
-#include "asm/scenes/showtime/asm_0802c55c.s"
+#include "asm/engines/showtime/asm_0802c55c.s"
 
-#include "asm/scenes/showtime/asm_0802c5c8.s"
+#include "asm/engines/showtime/asm_0802c5c8.s"
 
-#include "asm/scenes/showtime/asm_0802ce70.s"
+#include "asm/engines/showtime/asm_0802ce70.s"
 
-#include "asm/scenes/showtime/asm_0802cf8c.s"
+#include "asm/engines/showtime/asm_0802cf8c.s"
 
 void func_0802cfa4(u32 arg0) {
     gShowtimeInfo.unk24[arg0].unk18 = 0;
     gShowtimeInfo.unk24[arg0].unk20 = 1;
 }
 
-#include "asm/scenes/showtime/asm_0802cfc8.s"
+#include "asm/engines/showtime/asm_0802cfc8.s"
 
-#include "asm/scenes/showtime/asm_0802cfe0.s"
+#include "asm/engines/showtime/asm_0802cfe0.s"
 
 u32 func_0802d068(u32 arg0) {
     return gShowtimeInfo.unk24[arg0].unk8;
@@ -260,22 +260,22 @@ void func_0802d0dc(u32 arg0, s16 arg1) {
     func_0804dcb8(D_03005380, arg1, 0);
 }
 
-#include "asm/scenes/showtime/asm_0802d104.s"
+#include "asm/engines/showtime/asm_0802d104.s"
 
-#include "asm/scenes/showtime/asm_0802d250.s"
+#include "asm/engines/showtime/asm_0802d250.s"
 
-#include "asm/scenes/showtime/asm_0802d2bc.s"
+#include "asm/engines/showtime/asm_0802d2bc.s"
 
 //stack pointer moment
 void func_0802d38c(void) {
     u8 unused_temp[0xC]; //has to be a data type 0xC bytes long
 }
 
-#include "asm/scenes/showtime/asm_0802d394.s"
+#include "asm/engines/showtime/asm_0802d394.s"
 
-#include "asm/scenes/showtime/asm_0802d43c.s"
+#include "asm/engines/showtime/asm_0802d43c.s"
 
-#include "asm/scenes/showtime/asm_0802d81c.s"
+#include "asm/engines/showtime/asm_0802d81c.s"
 
 void func_0802d8bc(u32 arg0) {
     int i;
@@ -290,14 +290,14 @@ void func_0802d8bc(u32 arg0) {
     }
 }
 
-#include "asm/scenes/showtime/asm_0802d918.s"
+#include "asm/engines/showtime/asm_0802d918.s"
 
-#include "asm/scenes/showtime/asm_0802d96c.s"
+#include "asm/engines/showtime/asm_0802d96c.s"
 
-#include "asm/scenes/showtime/asm_0802d9fc.s"
+#include "asm/engines/showtime/asm_0802d9fc.s"
 
-#include "asm/scenes/showtime/asm_0802da84.s"
+#include "asm/engines/showtime/asm_0802da84.s"
 
-#include "asm/scenes/showtime/asm_0802db08.s"
+#include "asm/engines/showtime/asm_0802db08.s"
 
-#include "asm/scenes/showtime/asm_0802dc54.s"
+#include "asm/engines/showtime/asm_0802dc54.s"

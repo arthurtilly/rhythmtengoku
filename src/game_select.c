@@ -449,7 +449,7 @@ void func_08013644(s32 arg) {
 
     saveData = &D_030046a8->data;
     gGameSelectInfo.unk8_b0 = TRUE;
-    func_08007324(0);
+    func_08007324(FALSE);
     func_080073f0();
     func_080135cc(); // gfx init. stuff
     func_0801338c();

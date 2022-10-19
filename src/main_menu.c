@@ -71,7 +71,7 @@ void func_080124d0(u32 arg) {
     u32 i;
 
     tempScene = func_0800061c();
-    func_08007324(0);
+    func_08007324(FALSE);
     func_080073f0();
     gMainMenuInfo.font2 = func_08005124(func_0800c3b8(), &D_089de670, 0, 0x340, 6);
     gMainMenuInfo.font1 = func_0800c660(0x300, 4);

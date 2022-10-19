@@ -12,15 +12,15 @@ struct BeatScript {
 struct BeatScriptThread {
     u8 active:1;  // Execution flag (?)
     u8 stackCounter:4;  // Stack Counter
-    u32 *unk4;
-    const struct BeatScript *current;  // Current thread (start?)
-    u32 unkC;
+    void *scene; // Scene Definition Struct (note: not the Script one that's currently called "Scene")
+    const struct BeatScript *current;  // Current Position
+    u32 timeUntilNext; // Time until next instruction (in Q24.8 Beats)
     const struct BeatScript *jumpStack[8];  // Stack
     u8 unk30[0x20];
-    const struct BeatScript *unk50; // Position in a previous script..? (it's always the title screen for some reason)
+    const struct BeatScript *loopStart; // Loop Start
     u16 unk54;
-    u16 unk56;
-    u8  unk58[0x40];
+    s16 sprites[0x20];
+    u16 unk96;
     u32 unk98;
 };
 
@@ -31,7 +31,7 @@ struct SoundPlayer;
 
 struct BeatScriptHandler {
     u32 unk0_b0:4;
-    u32 unk0_b4:1;
+    u32 bypassLoops:1;
     u32 unk0_b5:1;
     u32 unk0_b6:1;
     u32 unk0_b7:1;
@@ -53,9 +53,9 @@ struct BeatScriptHandler {
     u32 unk24;
     struct BeatScriptThread threads[2];
     u32 unk160[12];
-    u16 musicGain; // [D_03005550] BeatScript: Music Volume
-    u16 musicTrkGain; // [D_03005552] BeatScript: Music Channel Selection Volume
-    u16 musicTrkGainTargets; // [D_03005554] BeatScript: Music Channel Selection
+    u16 musicVolume; // [D_03005550] BeatScript: Music Volume
+    u16 musicTrkVolume; // [D_03005552] BeatScript: Music Channel Selection Volume
+    u16 musicTrkTargets; // [D_03005554] BeatScript: Music Channel Selection
     u16 musicPitchEnv; // [D_03005556] BeatScript: Music Pitch
     u32 null198;
     u32 null19C;
