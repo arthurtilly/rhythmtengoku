@@ -137,7 +137,7 @@ void func_08012a58(void) {
     s16 *vector;
 
     notice = &gGameSelectInfo.perfectCampaignNotice;
-    vector = &D_03004b10.bgOffset[BG_LAYER_1].horizontal;
+    vector = &D_03004b10.BG_OFS[BG_LAYER_1].horizontal;
 
     notice->perfectBorderSprite = func_0804d160(D_03005380, D_08902c10, 0, 48, 72, 0x8878, 1, 0, 0x8000);
     func_080140f8(notice->perfectBorderSprite);
@@ -442,7 +442,7 @@ void func_080135cc(void) {
 
 // [func_08013644] Scene Init.
 void func_08013644(s32 arg) {
-    s16 bgOffsetX, bgOffsetY;
+    s16 BG_OFSX, BG_OFSY;
     s32 cursorX, cursorY;
     struct TengokuSaveData *saveData;
     s32 recentCompletionLevel, previousCompletionLevel;
@@ -456,17 +456,17 @@ void func_08013644(s32 arg) {
     func_080158f0();
     gGameSelectInfo.cursorX = D_030046a8->data.gameSelectCursorX;
     gGameSelectInfo.cursorY = D_030046a8->data.gameSelectCursorY;
-    func_0801332c(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY, &bgOffsetX, &bgOffsetY);
-    func_0800e058(BG_LAYER_3, bgOffsetX, bgOffsetY);
-    func_0800e058(BG_LAYER_2, bgOffsetX, bgOffsetY);
+    func_0801332c(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY, &BG_OFSX, &BG_OFSY);
+    func_0800e058(BG_LAYER_3, BG_OFSX, BG_OFSY);
+    func_0800e058(BG_LAYER_2, BG_OFSX, BG_OFSY);
     gGameSelectInfo.selectionBorderSprite = func_0804d160(D_03005380, D_089029d0, 0, 48, 72, 0x4800, 1, 0, 0);
     gGameSelectInfo.cursorSprite = func_0804d160(D_03005380, D_08902e88, 0, 64, 64, 0x47ff, 1, 0, 0);
     func_080140f8(gGameSelectInfo.selectionBorderSprite);
     func_080140f8(gGameSelectInfo.cursorSprite);
     func_08013b98(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY);
     gGameSelectInfo.unk4E = 0;
-    gGameSelectInfo.unk50 = gGameSelectInfo.unk54 = bgOffsetX;
-    gGameSelectInfo.unk52 = gGameSelectInfo.unk56 = bgOffsetY;
+    gGameSelectInfo.unk50 = gGameSelectInfo.unk54 = BG_OFSX;
+    gGameSelectInfo.unk52 = gGameSelectInfo.unk56 = BG_OFSY;
     gGameSelectInfo.unk5C = 0;
     gGameSelectInfo.unk62 = 0;
     gGameSelectInfo.unk5E = 0;
@@ -622,17 +622,17 @@ void func_080140a4(s32 x) {
 
 // Link Sprite Position to BG Offset?
 void func_080140f8(s16 sprite) {
-    func_0804db44(D_03005380, sprite, &D_03004b10.bgOffset[BG_LAYER_3].horizontal, &D_03004b10.bgOffset[BG_LAYER_3].vertical);
+    func_0804db44(D_03005380, sprite, &D_03004b10.BG_OFS[BG_LAYER_3].horizontal, &D_03004b10.BG_OFS[BG_LAYER_3].vertical);
 }
 
 
 // [func_08014118] Scene Main
 void func_08014118(s32 arg) {
-    s16 bgOffsetX, bgOffsetY;
+    s16 BG_OFSX, BG_OFSY;
 
     if (!gGameSelectInfo.unk8_b0) {
-        bgOffsetX = D_03004b10.bgOffset[BG_LAYER_3].horizontal;
-        bgOffsetY = D_03004b10.bgOffset[BG_LAYER_3].vertical;
+        BG_OFSX = D_03004b10.BG_OFS[BG_LAYER_3].horizontal;
+        BG_OFSY = D_03004b10.BG_OFS[BG_LAYER_3].vertical;
         switch (gGameSelectInfo.unk0) {
             case 1:
                 func_08014978();
@@ -649,9 +649,9 @@ void func_08014118(s32 arg) {
         func_08015298();
         func_08013a38();
         func_080140ec();
-        bgOffsetX -= D_03004b10.bgOffset[BG_LAYER_3].horizontal;
-        bgOffsetY -= D_03004b10.bgOffset[BG_LAYER_3].vertical;
-        func_080162bc(bgOffsetX - 1, bgOffsetY);
+        BG_OFSX -= D_03004b10.BG_OFS[BG_LAYER_3].horizontal;
+        BG_OFSY -= D_03004b10.BG_OFS[BG_LAYER_3].vertical;
+        func_080162bc(BG_OFSX - 1, BG_OFSY);
         func_0801626c();
         func_08015660();
         func_08014db0();
@@ -731,7 +731,7 @@ void func_08014938(u32 arg) {
 void func_08014df0(void) {
     s16 *vector;
 
-    vector = &D_03004b10.bgOffset[BG_LAYER_1].horizontal;
+    vector = &D_03004b10.BG_OFS[BG_LAYER_1].horizontal;
     gGameSelectInfo.unk34 = -1;
     gGameSelectInfo.unk3C = -1;
     gGameSelectInfo.unk38 = func_0800a204((u16) func_0800c3b8(), 4, 104, 32);
@@ -922,7 +922,7 @@ void func_080154f0(void) {
     u32 score;
 
     flow = &gGameSelectInfo.flowDisplay;
-    vector = &D_03004b10.bgOffset[BG_LAYER_1].horizontal;
+    vector = &D_03004b10.BG_OFS[BG_LAYER_1].horizontal;
 
     for (i = 0; i < 3; i++) {
         flow->numberSprites[i] = func_0804d160(D_03005380, D_08902b78, 10, 208 - (i * 8), 128, 0, 0, 0, 0);

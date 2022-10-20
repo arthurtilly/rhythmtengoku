@@ -5,6 +5,8 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
+#define PALETTE_RAM ((volatile u16 *)(PaletteRAMBase))
+
 static s16 D_03000ea4; // Some sort of time value
 static s16 D_03000ea6; // Another time value
 static u16 D_03000ea8; // Solid Colour used for Screen Fade-In/Fade-Out
@@ -104,7 +106,7 @@ void func_08006da8(void) {
     D_03004b10.unk854_3 = FALSE;
     D_03004b10.unk854_4 = FALSE;
     D_03004b10.modifyPalette = NULL;
-    func_080018e0(0, D_03004b10.bgControl, 80, 0x20, 0x100);
+    func_080018e0(0, D_03004b10.BG_CNT, 80, 0x20, 0x100);
 }
 
 
@@ -112,7 +114,39 @@ void func_08006da8(void) {
 
 #include "asm/code_080068f8/asm_08006e30.s"
 
-#include "asm/code_080068f8/asm_08006e88.s"
+
+// Flush Graphics Buffer
+void func_08006e88(void) {
+    volatile u32 dummy1, dummy2;
+    u16 *srcPalette;
+    s32 offset;
+
+    if (!D_03004b10.updateDisplay) return;
+
+    DmaCopy32(3, D_03004b10.BG_CNT, &REG_BG0CNT, 24);
+    DmaCopy32(3, &D_03004b10.unk3C, &REG_WIN0H, 24);
+
+    func_0800186c(D_03004b10.oam, OAMBase, 0x400, 0x20, 0x100);
+    offset = func_08004270();
+    srcPalette = (D_03004b10.unk854_1 || D_03004b10.unk854_4) ? D_030046c0[0] : D_03004b10.bgPalette[0];
+
+    if (offset < 0) {
+        func_0800186c(srcPalette, PALETTE_RAM, 0x400, 0x20, 0x100);
+    } else {
+        if (offset > 0) {
+            func_0800186c(srcPalette, PALETTE_RAM, offset * 2, 0x10, 0x100);
+        }
+        if (offset < 0x1ff) {
+            volatile void *dest, *src;
+            u32 dumb = 1;
+
+            src = srcPalette + offset + 1;
+            dest = PALETTE_RAM + (offset + 1) * dumb; // likely a macro thing
+            func_0800186c(src, dest, (0x1ff - offset) * 2, 0x10, 0x100);
+        }
+    }
+    REG_DISPCNT = D_03004b10.DISPCNT;
+}
 
 
 // Update Palette

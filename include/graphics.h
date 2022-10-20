@@ -88,14 +88,14 @@ struct TextObject2 {
 extern struct GraphicsBuffer {
     u16 DISPCNT;    // LCD Control
     u16 unk2;
-    u16 bgControl[4];
+    u16 BG_CNT[4]; // BG Registers (IORAMBase + 0x8)
     struct {
         s16 horizontal;
         s16 vertical;
-    } bgOffset[4];
+    } BG_OFS[4];
     u32 unk1C[4];
     u32 unk2C[4];
-    u16 unk3C;
+    u16 unk3C; // Window Registers (IORAMBase + 0x40)
     u16 unk3E;
     u16 unk40;
     u16 unk42;
