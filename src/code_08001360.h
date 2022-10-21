@@ -111,15 +111,15 @@ extern void func_080028a8(struct SoundPlayer *player, s16 pitch); // Set Player 
 // extern ? func_080028d8(?);
 // extern ? func_080028ec(?);
 extern void func_08002920(struct SoundPlayer *player, u16 volume); // Set Player Gain Envelope
-// extern ? func_08002934(?);
+extern void func_08002934(struct SoundPlayer *player, u16 selection, u16 volume); // Set Player Volume for Selected Tracks
 // extern ? func_0800294c(?);
 // extern ? func_08002968(?);
 // extern ? func_08002978(?);
 // extern ? func_0800298c(?);
 // extern ? func_080029b0(?);
-// extern ? func_080029c4(?);
+extern void func_080029c4(struct SoundPlayer *player, s8 key); // Set Player Key Offset
 // extern ? func_080029d8(?);
-// extern ? func_08002a18(?);
+extern struct SoundPlayer *func_08002a18(const struct SequenceData *); // Return Player Currently Playing the Given Sound
 
 /* Graphics..? */
 

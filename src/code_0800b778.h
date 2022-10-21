@@ -1,11 +1,13 @@
 #pragma once
 #include "sound.h"
 
-// extern ? func_0800b778(?);
+/* Main Game Handler */
+
+// extern ? func_0800b778(?); // BeatScript Init.?
 // extern ? func_0800b834(?);
 // extern ? func_0800b974(?);
-// extern ? func_0800b9fc(?); // BEATSCRIPT - Main
-// extern ? func_0800bc14(?); // BEATSCRIPT - Check if no threads are running
+// extern ? func_0800b9fc(?); // BeatScript Main
+// extern ? func_0800bc14(?); // Check if no BeatScript Threads are running
 // extern ? func_0800bc40(?); // related to loops
 // extern ? func_0800bc58(?);
 // extern ? func_0800bc68(?);
@@ -15,34 +17,34 @@
 // extern ? func_0800bcf4(?);
 extern void func_0800bd04(u32);
 // extern ? func_0800bd1c(?);
-// extern ? func_0800bd2c(?);
-extern void func_0800bdf8(u16 tempo); // BEATSCRIPT - Set Tempo
-// extern ? func_0800be64(?);
-// extern ? func_0800be88(?); // BEATSCRIPT - Set Speed
+// extern ? func_0800bd2c(?); // BeatScript Stop?
+extern void func_0800bdf8(u16 tempo); // Set Script Tempo
+extern void func_0800be64(void); // Update Script Tempo (retain unk1_b7)
+extern void func_0800be88(u16 speed); // Set Script Speed (Q8.8)
 // extern ? func_0800be9c(?);
 // extern ? func_0800bea0(?);
 // extern ? func_0800bebc(?);
-// extern ? func_0800bed0(?); // BEATSCRIPT - Play Music (arg1 = Stop Previous; arg2 = SoundPlayer ID)
-extern void func_0800bf7c(const struct SequenceData *); // BEATSCRIPT - Play Music
-extern void func_0800bf8c(const struct SequenceData *); // BEATSCRIPT - Play Music (No Override)
-extern void func_0800bf9c(const struct SequenceData *); // BEATSCRIPT - Play Music in Given SoundPlayer
-extern void func_0800bfac(const struct SequenceData *); // BEATSCRIPT - Play Music in Given SoundPlayer (No Override)
-// extern ? func_0800bfbc(?);
-// extern ? func_0800c01c(?); // BEATSCRIPT - Stop Music
+extern u32  func_0800bed0(const struct SequenceData *, u32 override, s32 soundPlayer);
+extern void func_0800bf7c(const struct SequenceData *); // Play Music (Override)
+extern void func_0800bf8c(const struct SequenceData *); // Play Music (No Override)
+extern void func_0800bf9c(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (Override)
+extern void func_0800bfac(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (No Override)
+extern void func_0800bfbc(const struct SequenceData *); // Play Music (override, use predefined SoundPlayer ID)
+extern void func_0800c01c(void); // Stop Music
 // extern ? func_0800c030(?);
 // extern ? func_0800c048(?);
-// extern ? func_0800c060(?);
-// extern ? func_0800c088(?); // BEATSCRIPT - Set Music Pitch (CMD_3E)
-// extern ? func_0800c0c4(?); // BEATSCRIPT - Set Music Pitch (CMD_3D)
-// extern ? func_0800c0d8(?); // BEATSCRIPT - Set Music Volume
-extern void func_0800c0f8(u16, u16); // BEATSCRIPT - Set Music Volume for Selected Tracks
+extern void func_0800c060(void); // Update Music Pitch (retain unk2_b0)
+extern void func_0800c088(s16 pitch); // Set Music Pitch
+extern void func_0800c0c4(s16 pitch); // Set Music Pitch Source 2
+// extern ? func_0800c0d8(?); // Set Music Volume
+extern void func_0800c0f8(u16 selection, u16 volume); // Set Music Volume for Selected Tracks
 // extern ? func_0800c128(?);
-// extern ? func_0800c138(u32 volume, u32 duration); // BEATSCRIPT - Change Music Volume
+// extern ? func_0800c138(u32 volume, u32 duration); // Interpolate Music Volume
 // extern ? func_0800c154(?);
-// extern ? func_0800c168(u32 volume, u32 duration); // BEATSCRIPT - Change Music Volume for Selected Tracks
-// extern ? func_0800c184(?); // BEATSCRIPT - Set Music Pitch (in Semitones)
+// extern ? func_0800c168(u32 volume, u32 duration); // Interpolate Music Volume for Selected Tracks
+// extern ? func_0800c184(?); // Set Music Pitch
 extern void func_0800c1a4_stub(void);
-extern u32 func_0800c1a8(void); // BEATSCRIPT - Get Tempo
+extern u32 func_0800c1a8(void); // Get Current Script Tempo
 // extern ? func_0800c1b4(?);
 // extern ? func_0800c1c0(?);
 // extern ? func_0800c1d0(?);
@@ -56,8 +58,8 @@ extern u32 func_0800c1a8(void); // BEATSCRIPT - Get Tempo
 // extern ? func_0800c390(?);
 // extern ? func_0800c394(?);
 extern u32 func_0800c398(void);
-extern s32 func_0800c3a4(u32); // BEATSCRIPT - Beats to Ticks
-extern u32 func_0800c3b8(void); // Get Next Memory ID(?)
+extern s32 func_0800c3a4(u32); // (BeatScript) Beats to Ticks
+extern u32 func_0800c3b8(void); // Get Memory ID(?)
 // extern ? func_0800c3c4(?);
 // extern ? func_0800c3e4(?);
 // extern ? func_0800c3e8(?);
@@ -75,7 +77,7 @@ extern u32 func_0800c3b8(void); // Get Next Memory ID(?)
 // extern ? func_0800c424(?);
 // extern ? func_0800c428(?);
 // extern ? func_0800c42c(?);
-extern u32 *func_0800c43c(u32);
+extern void *func_0800c43c(u32 size); // Allocate Space in Memory Heap
 // extern ? func_0800c454(?);
 // extern ? func_0800c484(?);
 // extern ? func_0800c490(?);

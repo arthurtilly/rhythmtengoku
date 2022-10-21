@@ -1,8 +1,9 @@
 #include "global.h"
+#include "code_0800b778.h"
 #include "code_08001360.h"
 #include "code_08003980.h"
 #include "code_08007468.h"
-#include "code_0800b778.h"
+#include "src/lib_08049144.h"
 #include "src/lib_0804c870.h"
 
 // Could use better split
@@ -10,6 +11,8 @@
 asm(".include \"include/gba.inc\"");//Temporary
 
 static s32 D_03001310[2]; // unknown type
+
+/* Main Game Handler */
 
 #include "asm/code_0800b778/asm_0800b778.s"
 
@@ -41,11 +44,45 @@ static s32 D_03001310[2]; // unknown type
 
 #include "asm/code_0800b778/asm_0800bd2c.s"
 
-#include "asm/code_0800b778/asm_0800bdf8.s"
 
-#include "asm/code_0800b778/asm_0800be64.s"
+// Set Tempo
+void func_0800bdf8(u16 tempo) {
+    s32 speed;
 
-#include "asm/code_0800b778/asm_0800be88.s"
+    D_030053c0.scriptBaseBPM = tempo;
+    if (D_030053c0.unk0_b6 && D_030053c0.unk0_b7) {
+        tempo *= D_030053c0.unk1C;
+    }
+    tempo = FIXED_POINT_MUL(D_030053c0.scriptSpeed, tempo);
+    D_030053c0.scriptBPM = tempo;
+
+    speed = INT_TO_FIXED(tempo);
+    D_030053c0.unk10 = speed / 140;
+    speed /= D_030053c0.musicBaseBPM;
+    D_030053c0.unk14 = D_030053c0.musicBaseBPM * speed / 150u;
+    if (D_030053c0.musicPlayer != NULL) {
+        func_08002894(D_030053c0.musicPlayer, speed);
+    }
+    D_030053c0.unk1_b7 = FALSE;
+}
+
+
+// Update Script Tempo (retain unk1_b7)
+void func_0800be64(void) {
+    u32 flag;
+
+    flag = D_030053c0.unk1_b7;
+    func_0800bdf8(D_030053c0.scriptBaseBPM);
+    D_030053c0.unk1_b7 = flag;
+}
+
+
+// Set Script Speed (Q8.8)
+void func_0800be88(u16 speed) {
+    D_030053c0.scriptSpeed = speed;
+    func_0800be64();
+}
+
 
 #include "asm/code_0800b778/asm_0800be9c.s"
 
@@ -53,31 +90,112 @@ static s32 D_03001310[2]; // unknown type
 
 #include "asm/code_0800b778/asm_0800bebc.s"
 
-#include "asm/code_0800b778/asm_0800bed0.s"
 
-#include "asm/code_0800b778/asm_0800bf7c.s"
+// Play Music
+u32 func_0800bed0(const struct SequenceData *music, u32 override, s32 soundPlayer) {
+    if ((D_030053c0.musicPlayer != NULL) && override) {
+        func_08002828(D_030053c0.musicPlayer);
+    }
+    if (music == NULL) {
+        D_030053c0.musicPlayer = NULL;
+        return;
+    }
+    D_03005b3c = LFO_MODE_DISABLED;
+    func_08049be4();
+    func_08049b70(0);
+    D_030053c0.musicPlayer = (soundPlayer < 0) ? func_08002634(music) : func_0800267c(soundPlayer, music);
+    D_030053c0.musicBaseBPM = func_080102d0(music);
+    func_0800be64();
+    func_0800c060();
+    func_08002920(D_030053c0.musicPlayer, D_030053c0.musicVolume);
+    func_08002934(D_030053c0.musicPlayer, D_030053c0.musicTrkTargets, D_030053c0.musicTrkVolume);
+    func_080029c4(D_030053c0.musicPlayer, D_030053c0.musicPitchEnv);
+}
 
-#include "asm/code_0800b778/asm_0800bf8c.s"
 
-#include "asm/code_0800b778/asm_0800bf9c.s"
+// Play Music (Override Existing)
+void func_0800bf7c(const struct SequenceData *music) {
+    func_0800bed0(music, TRUE, -1);
+}
 
-#include "asm/code_0800b778/asm_0800bfac.s"
 
-#include "asm/code_0800b778/asm_0800bfbc.s"
+// Play Music (No Override)
+void func_0800bf8c(const struct SequenceData *music) {
+    func_0800bed0(music, FALSE, -1);
+}
 
-#include "asm/code_0800b778/asm_0800c01c.s"
+
+// Play Music in Given SoundPlayer (Override)
+void func_0800bf9c(const struct SequenceData *music, s32 soundPlayer) {
+    func_0800bed0(music, TRUE, soundPlayer);
+}
+
+
+// Play Music in Given SoundPlayer (No Override)
+void func_0800bfac(const struct SequenceData *music, s32 soundPlayer) {
+    func_0800bed0(music, FALSE, soundPlayer);
+}
+
+
+// Play Music (override, use predefined SoundPlayer ID)
+void func_0800bfbc(const struct SequenceData *music) {
+    struct SoundPlayer *player;
+
+    player = func_08002a18(music);
+    if (player == NULL) return;
+
+    D_030053c0.musicPlayer = player;
+    D_030053c0.musicBaseBPM = func_080102d0(music);
+    func_0800be64();
+    func_0800c060();
+    func_08002920(D_030053c0.musicPlayer, D_030053c0.musicVolume);
+    func_08002934(D_030053c0.musicPlayer, D_030053c0.musicTrkTargets, D_030053c0.musicTrkVolume);
+    func_080029c4(D_030053c0.musicPlayer, D_030053c0.musicPitchEnv);
+}
+
+
+// Stop Music
+void func_0800c01c(void) {
+    func_08002828(D_030053c0.musicPlayer);
+}
+
 
 #include "asm/code_0800b778/asm_0800c030.s"
 
 #include "asm/code_0800b778/asm_0800c048.s"
 
-#include "asm/code_0800b778/asm_0800c060.s"
 
-#include "asm/code_0800b778/asm_0800c088.s"
+// Update Music Pitch (retain unk2_b0)
+void func_0800c060(void) {
+    u32 flag;
 
-#include "asm/code_0800b778/asm_0800c0c4.s"
+    flag = D_030053c0.unk2_b0;
+    func_0800c088(D_030053c0.musicPitchSrc1);
+    D_030053c0.unk2_b0 = flag;
+}
+
+
+// Set Music Pitch
+void func_0800c088(s16 pitch) {
+    D_030053c0.musicPitchSrc1 = pitch;
+    pitch += D_030053c0.musicPitchSrc2;
+    D_030053c0.musicPitch = pitch;
+    if (D_030053c0.musicPlayer != NULL) {
+        func_080028a8(D_030053c0.musicPlayer, pitch);
+    }
+    D_030053c0.unk2_b0 = FALSE;
+}
+
+
+// Set Music Pitch Source 2
+void func_0800c0c4(s16 pitch) {
+    D_030053c0.musicPitchSrc2 = pitch;
+    func_0800c060();
+}
+
 
 #include "asm/code_0800b778/asm_0800c0d8.s"
+
 
 // Set Volume for Selected Music Channels
 void func_0800c0f8(u16 selection, u16 volume) {
@@ -85,6 +203,7 @@ void func_0800c0f8(u16 selection, u16 volume) {
     D_030053c0.musicTrkTargets = selection;
     func_08002934(D_030053c0.musicPlayer, selection, volume);
 }
+
 
 #include "asm/code_0800b778/asm_0800c128.s"
 
@@ -96,13 +215,16 @@ void func_0800c0f8(u16 selection, u16 volume) {
 
 #include "asm/code_0800b778/asm_0800c184.s"
 
+
 void func_0800c1a4_stub(void) {
 }
 
-// Return D_030053c0.unkC.
+
+// Get Current Script Tempo
 u32 func_0800c1a8(void) {
-    return D_030053c0.unkC;
+    return D_030053c0.scriptBPM;
 }
+
 
 #include "asm/code_0800b778/asm_0800c1b4.s"
 
@@ -130,14 +252,17 @@ u32 func_0800c1a8(void) {
 
 #include "asm/code_0800b778/asm_0800c398.s"
 
+
 // Parse beat values.
 s32 func_0800c3a4(u32 arg0) {
     fast_divsi3(arg0 << 8, D_030053c0.unk14);
 }
 
+
 u32 func_0800c3b8() {
     return D_03001310[0];
 }
+
 
 #include "asm/code_0800b778/asm_0800c3c4.s"
 
@@ -173,10 +298,12 @@ u32 func_0800c3b8() {
 
 #include "asm/code_0800b778/asm_0800c42c.s"
 
+
 // Allocate memory for a struct of size [arg0] (bytes). (?)
-u32 *func_0800c43c(u32 arg0) {
-    return mem_heap_alloc_id(func_0800c3b8(), arg0);
+void *func_0800c43c(u32 size) {
+    return mem_heap_alloc_id(func_0800c3b8(), size);
 }
+
 
 #include "asm/code_0800b778/asm_0800c454.s"
 

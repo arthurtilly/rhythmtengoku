@@ -16,10 +16,10 @@
 // extern ? func_08049ad8(?);
 // extern ? func_08049b34(?);
 // extern ? func_08049b5c(?);
-// extern ? func_08049b70(?);
+extern void func_08049b70(u32); // DIRECTSOUND - Set Filter EQ Position
 // extern ? func_08049b8c(?);
 // extern ? func_08049bac(?);
-// extern ? func_08049be4(?);
+extern void func_08049be4(void); // DIRECTSOUND - Reset Filter EQ
 // extern ? func_08049bfc(?);
 // extern ? func_08049c34(?);
 // extern ? func_08049d08(?);

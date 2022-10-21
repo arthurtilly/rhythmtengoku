@@ -37,19 +37,21 @@ struct BeatScriptHandler {
     u32 unk0_b7:1;
     u32 unk1_b0:1;
     u32 unk1_b1:3;
-    u32 unk1_b4:5;
-    u32 unk2_b1:1;
+    u32 unk1_b4:3;
+    u32 unk1_b7:1;
+    u32 unk2_b0:1;
     struct SoundPlayer *musicPlayer; // [D_030053c4] Music Player
-    u16 unk8;
-    u16 unkA;
-    u16 unkC;      // [D_030053cc] ??
-    u16 unkE;
-    u32 null10;
-    u32 unk14;     // [D_030053d4] ??
+    u16 musicBaseBPM;
+    u16 scriptBaseBPM;
+    u16 scriptBPM; // [D_030053cc] Tempo after speed multiplication.
+    u16 scriptSpeed; // [Q8.8] Speed Multiplier
+    u16 unk10; // [Q8.8] (currentTempo / 140)
+    u32 unk14; // [D_030053d4] ?? ([Q8.8] (currentTempo / 150))
     u32 null18;
-    u8  null1C;
-    u16 unk20;
-    u16 unk22;
+    u8  unk1C;
+    s16 musicPitchSrc1;
+    s16 musicPitchSrc2;
+    s16 musicPitch;
     u32 unk24;
     struct BeatScriptThread threads[2];
     u32 unk160[12];
