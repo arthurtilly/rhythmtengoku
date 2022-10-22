@@ -160,9 +160,16 @@ void func_0800c01c(void) {
 }
 
 
-#include "asm/code_0800b778/asm_0800c030.s"
+// Fade-In Music
+void func_0800c030(u16 duration) {
+    func_080028c4(D_030053c0.musicPlayer, duration);
+}
 
-#include "asm/code_0800b778/asm_0800c048.s"
+
+// Fade-Out Music
+void func_0800c048(u16 duration) {
+    func_080028d8(D_030053c0.musicPlayer, duration);
+}
 
 
 // Update Music Pitch (retain unk2_b0)
@@ -194,7 +201,11 @@ void func_0800c0c4(s16 pitch) {
 }
 
 
-#include "asm/code_0800b778/asm_0800c0d8.s"
+// Set Music Volume
+void func_0800c0d8(u16 volume) {
+    D_030053c0.musicVolume = volume;
+    func_08002920(D_030053c0.musicPlayer, volume);
+}
 
 
 // Set Volume for Selected Music Channels
@@ -205,7 +216,11 @@ void func_0800c0f8(u16 selection, u16 volume) {
 }
 
 
-#include "asm/code_0800b778/asm_0800c128.s"
+// Set Music Volume (it just calls func_0800c0d8())
+void func_0800c128(u16 volume) {
+    func_0800c0d8(volume);
+}
+
 
 #include "asm/code_0800b778/asm_0800c138.s"
 

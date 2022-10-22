@@ -34,7 +34,7 @@ void func_08000224(void) {
 	func_08007b4c();
 	func_08002f68();
 	mem_heap_init(get_memory_heap_start(), get_memory_heap_length());
-	func_08005a0c();
+	func_08005a0c(); // Initialise Thread Pool
 	func_08003e64();
 	func_08003f28();
 	func_080073b8();

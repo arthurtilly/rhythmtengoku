@@ -111,23 +111,29 @@ extern u32 func_08005878(struct unk_struct_08005858 *arg0);
 // extern ? func_080058b0(?);
 // extern ? func_080058dc(?);
 // extern ? func_0800598c(?);
-// extern ? func_08005a0c(?);
-// extern ? func_08005a40(?);
-// extern ? func_08005a84(?);
-// extern ? func_08005ad4(?);
-// extern ? func_08005b20(?);
-// extern ? func_08005bc4(?);
-// extern ? func_08005c00(?);
-// extern ? func_08005c3c(?);
-// extern ? func_08005c78(?);
-// extern ? func_08005ca8(?);
-// extern ? func_08005ce0(?);
+
+/* THREADS/EXECUTABLES */
+
+// extern ? func_08005a0c(?); // Initialise Thread Pool
+// extern ? func_08005a40(?); // Close Thread
+// extern ? func_08005a84(?); // Update Threads (Delayed)
+// extern ? func_08005ad4(?); // Update Threads (Constant)
+// extern ? func_08005b20(?); // Create Thread
+// extern ? func_08005bc4(?); // Close Thread by Pool ID
+// extern ? func_08005c00(?); // Close Thread by Pool ID (ignore Thread Close Function)
+// extern ? func_08005c3c(?); // Get Thread Static Data
+// extern ? func_08005c78(?); // Close All Active Threads
+// extern ? func_08005ca8(?); // Pause Thread by Pool ID
+// extern ? func_08005ce0(?); // Set D_03000900.unk4
 // extern ? func_08005cec(?);
 // extern ? func_08005d38(?);
 // extern ? func_08005d74(?);
 // extern ? func_08005db0(?);
-extern void func_08005de4(u16);
-extern void func_08005e18(u16, u32);
+extern void func_08005de4(u16); // Close All Threads by Mem. ID
+extern void func_08005e18(u16, u32); // Pause All Threads by Mem. ID
+
+/* ? */
+
 // extern ? func_08005e54(?);
 // extern ? func_08005ee4(?);
 // extern ? func_08005f04(?);
@@ -141,6 +147,9 @@ extern void func_08005e18(u16, u32);
 // extern ? func_08006364(?);
 // extern ? func_0800637c(?);
 // extern ? func_08006448(?);
+
+/* MEMORY HEAP */
+
 extern void mem_heap_init(u32 *, u32);
 extern void *mem_heap_alloc(u32);
 extern void *mem_heap_alloc_id(u16, u32);

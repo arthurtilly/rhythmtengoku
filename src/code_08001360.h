@@ -107,8 +107,8 @@ extern void func_08002828(struct SoundPlayer *player); // Stop Player
 extern void func_08002880(u32 pause); // Pause All Players
 extern void func_08002894(struct SoundPlayer *player, u16 speed); // Set Player Speed Envelope
 extern void func_080028a8(struct SoundPlayer *player, s16 pitch); // Set Player Pitch Envelope
-// extern ? func_080028c4(?); // Fade-In Player for Given Duration
-// extern ? func_080028d8(?);
+extern void func_080028c4(struct SoundPlayer *player, u16 duration); // Fade-In Player for Given Duration
+extern void func_080028d8(struct SoundPlayer *player, u16 duration); // Fade-Out Player and Remove Sound
 // extern ? func_080028ec(?);
 extern void func_08002920(struct SoundPlayer *player, u16 volume); // Set Player Gain Envelope
 extern void func_08002934(struct SoundPlayer *player, u16 selection, u16 volume); // Set Player Volume for Selected Tracks

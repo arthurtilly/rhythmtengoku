@@ -51,8 +51,8 @@ u32 func_0801d8d8(void) {
     if (gPauseMenu.hasBeenUsed) {
         func_0800b974();
     }
-    func_08005ad4();
-    func_08005a84();
+    func_08005ad4(); // Update Threads (Constant)
+    func_08005a84(); // Update Threads (Delayed)
 
     /* Script/Pause Handling */
     switch (gPauseMenu.state) {

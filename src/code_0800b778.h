@@ -31,14 +31,14 @@ extern void func_0800bf9c(const struct SequenceData *, s32 soundPlayer); // Play
 extern void func_0800bfac(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (No Override)
 extern void func_0800bfbc(const struct SequenceData *); // Play Music (override, use predefined SoundPlayer ID)
 extern void func_0800c01c(void); // Stop Music
-// extern ? func_0800c030(?);
-// extern ? func_0800c048(?);
+extern void func_0800c030(u16 duration); // Fade-In Music
+extern void func_0800c048(u16 duration); // Fade-Out Music
 extern void func_0800c060(void); // Update Music Pitch (retain unk2_b0)
 extern void func_0800c088(s16 pitch); // Set Music Pitch
 extern void func_0800c0c4(s16 pitch); // Set Music Pitch Source 2
-// extern ? func_0800c0d8(?); // Set Music Volume
+extern void func_0800c0d8(u16 volume); // Set Music Volume
 extern void func_0800c0f8(u16 selection, u16 volume); // Set Music Volume for Selected Tracks
-// extern ? func_0800c128(?);
+extern void func_0800c128(u16 volume); // Set Music Volume 2 (it just calls func_0800c0d8())
 // extern ? func_0800c138(u32 volume, u32 duration); // Interpolate Music Volume
 // extern ? func_0800c154(?);
 // extern ? func_0800c168(u32 volume, u32 duration); // Interpolate Music Volume for Selected Tracks

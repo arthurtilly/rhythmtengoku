@@ -36,8 +36,8 @@ extern struct unk_struct_08007aa0 *func_08007aa0(struct unk_struct_08007aa0_init
 // extern ? func_08007b2c(?);
 // extern ? func_08007b4c(?);
 extern s32 fast_divsi3(s32 dividend, s32 divisor);
-extern struct unk_struct_08007bb8 *func_08007bb8(struct unk_struct_08007bb8_init *arg0);
-extern u32 func_08007c30(struct unk_struct_08007bb8 *arg0);
+extern struct InterpolatorInfo *func_08007bb8(struct InterpolatorInfo *input);
+extern u32 func_08007c30(struct InterpolatorInfo *info);
 extern struct unk_struct_08007ca8 *func_08007ca8(struct unk_struct_08007ca8_init *arg0);
 extern u32 func_08007d20(struct unk_struct_08007ca8 *arg0);
 extern struct unk_struct_08007d88 *func_08007d88(struct unk_struct_08007d88_init *arg0);
