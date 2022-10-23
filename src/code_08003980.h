@@ -4,16 +4,6 @@
 #include "graphics.h"
 #include "data/data_08936b54.h"
 
-struct struct_03004ad0 {
-    u32 unk0;
-    u32 *unk4;
-    u32 unk8;
-    u32 unkC;
-    u32 unk10;
-};
-
-extern struct struct_03004ad0 D_03004ad0;
-
 // extern ? func_08003980(?);
 // extern ? func_080039a8(?);
 // extern ? func_080039d4(?);
@@ -112,7 +102,7 @@ extern u32 func_08005878(struct unk_struct_08005858 *arg0);
 // extern ? func_080058dc(?);
 // extern ? func_0800598c(?);
 
-/* THREADS/EXECUTABLES */
+/* TASKS */
 
 // extern ? func_08005a0c(?); // Initialise Thread Pool
 // extern ? func_08005a40(?); // Close Thread
@@ -147,15 +137,3 @@ extern void func_08005e18(u16, u32); // Pause All Threads by Mem. ID
 // extern ? func_08006364(?);
 // extern ? func_0800637c(?);
 // extern ? func_08006448(?);
-
-/* MEMORY HEAP */
-
-extern void mem_heap_init(u32 *, u32);
-extern void *mem_heap_alloc(u32);
-extern void *mem_heap_alloc_id(u16, u32);
-extern void mem_heap_dealloc_block(u32, s32);
-extern void mem_heap_dealloc(void *);
-extern void mem_heap_dealloc_with_id(u16);
-extern void mem_heap_get_allocated_space(void);
-// extern ? func_0800679c(?);
-// extern ? func_080067a4(?);

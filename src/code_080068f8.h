@@ -6,6 +6,8 @@
 
 extern Palette D_030046c0[32]; // Temporary space for palettes during fade-in
 
+// extern ? func_0800679c(?);
+// extern ? func_080067a4(?);
 // extern ? func_080068f8(?);
 // extern ? func_0800694c(?);
 // extern ? func_0800699c(?);

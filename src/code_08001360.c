@@ -1,4 +1,5 @@
 #include "code_08001360.h"
+#include "memory_heap.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 

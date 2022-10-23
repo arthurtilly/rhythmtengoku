@@ -5,6 +5,7 @@
 #include "src/memory.h"
 #include "src/code_08001360.h"
 #include "src/code_08003980.h"
+#include "src/memory_heap.h"
 #include "src/code_08007468.h"
 #include "src/code_080092cc.h"
 #include "src/code_0800b778.h"

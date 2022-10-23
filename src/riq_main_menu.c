@@ -4,6 +4,7 @@
 #include "main.h"
 #include "code_08001360.h"
 #include "code_08003980.h"
+#include "memory_heap.h"
 #include "code_080068f8.h"
 #include "code_08007468.h"
 #include "code_0800b3c8.h"

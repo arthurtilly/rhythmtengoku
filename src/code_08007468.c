@@ -1,6 +1,7 @@
 #include "global.h"
 #include "src/code_08007468.h"
 #include "src/code_08003980.h"
+#include "src/memory_heap.h"
 #include "src/lib_0804c870.h"
 
 // Can be better split

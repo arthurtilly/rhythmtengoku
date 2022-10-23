@@ -1,5 +1,6 @@
 #include "code_080068f8.h"
-#include "src/code_08003980.h"
+#include "code_08003980.h"
+#include "memory_heap.h"
 
 // Can be better split
 
@@ -13,6 +14,10 @@ static u16 D_03000ea8; // Solid Colour used for Screen Fade-In/Fade-Out
 static s32 D_03000eac; // unknown type, unknown if exists
 
 // Graphic Control functions
+
+#include "asm/code_080068f8/asm_0800679c.s"
+
+#include "asm/code_080068f8/asm_080067a4.s"
 
 #include "asm/code_080068f8/asm_080068f8.s"
 
