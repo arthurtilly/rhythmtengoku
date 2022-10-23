@@ -1,4 +1,7 @@
+#include "global.h"
 #include "code_080102d0.h"
+#include "src/memory.h"
+#include "src/riq_game_select.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 

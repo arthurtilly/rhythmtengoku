@@ -4,7 +4,7 @@
 #include "src/code_08003980.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
-#include "src/gameplay.h"
+#include "src/riq_gameplay.h"
 #include "src/lib_0804c870.h"
 
 // For readability.

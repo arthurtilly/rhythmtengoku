@@ -1,8 +1,9 @@
-#include "cafe.h"
+#include "global.h"
+#include "src/riq_cafe.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-// CAFE
+/* CAFE */
 
 #include "asm/cafe/asm_080107a8.s"
 

@@ -1,8 +1,9 @@
-#include "title.h"
+#include "global.h"
+#include "src/riq_title.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-// TITLE SCREEN
+/* TITLE SCREEN */
 
 #include "asm/title/asm_0801ca34.s"
 

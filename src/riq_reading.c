@@ -1,8 +1,9 @@
-#include "reading.h"
+#include "global.h"
+#include "src/riq_reading.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-// READING MATERIAL
+/* READING MATERIAL */
 
 #include "asm/reading/asm_0801a384.s"
 

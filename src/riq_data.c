@@ -1,8 +1,9 @@
-#include "data.h"
+#include "global.h"
+#include "src/riq_data.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-// DATA CHECK
+/* DATA CHECK */
 
 #include "asm/data/asm_08011530.s"
 

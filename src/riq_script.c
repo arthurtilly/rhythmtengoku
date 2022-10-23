@@ -1,7 +1,8 @@
-#include "script.h"
-#include "code_08001360.h"
-#include "code_08003980.h"
-#include "lib_0804c870.h"
+#include "global.h"
+#include "src/riq_script.h"
+#include "src/code_08001360.h"
+#include "src/code_08003980.h"
+#include "src/lib_0804c870.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 

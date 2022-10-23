@@ -1,4 +1,5 @@
-#include "options.h"
+#include "global.h"
+#include "src/riq_options.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 

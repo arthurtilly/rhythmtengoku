@@ -1,5 +1,5 @@
 #include "global.h"
-#include "results.h"
+#include "src/riq_results.h"
 #include "cues.h"
 #include "src/main.h"
 #include "src/memory.h"
@@ -9,7 +9,7 @@
 #include "src/code_080092cc.h"
 #include "src/code_0800b778.h"
 #include "src/code_080102d0.h"
-#include "src/game_select.h"
+#include "src/riq_game_select.h"
 #include "src/lib_0804c870.h"
 
 asm(".include \"include/gba.inc\"");//Temporary

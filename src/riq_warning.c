@@ -1,8 +1,9 @@
-#include "warning.h"
+#include "global.h"
+#include "src/riq_warning.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-// WARNING SCREEN
+/* WARNING SCREEN */
 
 #include "asm/warning/asm_0801dfac.s"
 

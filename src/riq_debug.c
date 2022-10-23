@@ -1,11 +1,12 @@
-#include "debug.h"
+#include "global.h"
+#include "src/riq_debug.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
 static s8 D_03001560; // unknown type
 static s8 D_03001561; // unknown type
 
-// DEBUG MENU
+/* DEBUG MENU */
 
 #include "asm/debug/asm_0801e100.s"
 
@@ -31,7 +32,7 @@ static s8 D_03001561; // unknown type
 
 #include "asm/debug/asm_0801e704.s"
 
-// FLASH MEMORY TEST
+/* FLASH MEMORY TEST */
 
 #include "asm/debug/asm_0801e708.s"
 
@@ -53,7 +54,7 @@ static s8 D_03001561; // unknown type
 
 #include "asm/debug/asm_0801e950.s"
 
-// DATA CLEAR
+/* DATA CLEAR */
 
 #include "asm/debug/asm_0801e954.s"
 
@@ -73,7 +74,7 @@ static s8 D_03001561; // unknown type
 
 #include "asm/debug/asm_0801ea84.s"
 
-// ASSET TEST(?)
+/* ASSET TEST(?) */
 
 #include "asm/debug/asm_0801ea88.s"
 
@@ -93,7 +94,7 @@ static s8 D_03001561; // unknown type
 
 #include "asm/debug/asm_0801ed4c.s"
 
-// UNKNOWN TEST
+/* UNKNOWN TEST */
 
 #include "asm/debug/asm_0801ed50.s"
 

@@ -1,4 +1,5 @@
-#include "game_select.h"
+#include "global.h"
+#include "src/riq_game_select.h"
 #include "memory.h"
 #include "code_08001360.h"
 #include "code_08003980.h"

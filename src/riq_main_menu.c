@@ -1,5 +1,5 @@
 #include "global.h"
-#include "main_menu.h"
+#include "src/riq_main_menu.h"
 
 #include "main.h"
 #include "code_08001360.h"
@@ -8,7 +8,7 @@
 #include "code_08007468.h"
 #include "code_0800b3c8.h"
 #include "code_0800b778.h"
-#include "gameplay.h"
+#include "src/riq_gameplay.h"
 #include "lib_0804c870.h"
 
 extern u16 *D_0300558c; // ???

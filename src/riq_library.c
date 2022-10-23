@@ -1,8 +1,9 @@
-#include "library.h"
+#include "global.h"
+#include "riq_library.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-// RHYTHM LIBRARY (ARRIVAL)
+/* RHYTHM LIBRARY (ARRIVAL) */
 
 #include "asm/library/asm_08010490.s"
 

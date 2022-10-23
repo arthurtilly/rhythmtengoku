@@ -1,4 +1,5 @@
-#include "perfect_certificate.h"
+#include "global.h"
+#include "src/riq_perfect.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
