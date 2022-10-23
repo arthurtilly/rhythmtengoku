@@ -1,39 +1,29 @@
 #pragma once
 
 #include "global.h"
+#include "src/task_pool.h"
 
-typedef void *(*ThreadInitFunc)(void *);
-typedef u32 (*ThreadUpdateFunc)(void *);
-typedef void (*ThreadCloseFunc)(void *);
-
-struct ThreadDefinition {
-    ThreadInitFunc init;
-    ThreadUpdateFunc update;
-    ThreadUpdateFunc update2;
-    ThreadCloseFunc close;
-};
-
-extern const struct ThreadDefinition D_08936b54;
-extern const struct ThreadDefinition D_08936b64;
-extern const struct ThreadDefinition D_08936b74;
-extern const struct ThreadDefinition D_08936b84;
-extern const struct ThreadDefinition D_08936b94;
-extern const struct ThreadDefinition D_08936ba4;
-extern const struct ThreadDefinition D_08936bb4;
-extern const struct ThreadDefinition D_08936bc4;
-extern const struct ThreadDefinition D_08936bd4;
-extern const struct ThreadDefinition D_08936be4;
-extern const struct ThreadDefinition D_08936bf4;
-extern const struct ThreadDefinition D_08936c04;
-extern const struct ThreadDefinition D_08936c14;
-extern const struct ThreadDefinition D_08936c24;
-extern const struct ThreadDefinition D_08936c34;
-extern const struct ThreadDefinition D_08936c44;
-extern const struct ThreadDefinition D_08936c54;
+extern const struct TaskMethods D_08936b54;
+extern const struct TaskMethods D_08936b64;
+extern const struct TaskMethods D_08936b74;
+extern const struct TaskMethods D_08936b84;
+extern const struct TaskMethods D_08936b94;
+extern const struct TaskMethods D_08936ba4;
+extern const struct TaskMethods D_08936bb4;
+extern const struct TaskMethods D_08936bc4;
+extern const struct TaskMethods D_08936bd4;
+extern const struct TaskMethods D_08936be4;
+extern const struct TaskMethods D_08936bf4;
+extern const struct TaskMethods D_08936c04;
+extern const struct TaskMethods D_08936c14;
+extern const struct TaskMethods D_08936c24;
+extern const struct TaskMethods D_08936c34;
+extern const struct TaskMethods D_08936c44;
+extern const struct TaskMethods D_08936c54;
 extern const char D_08936c64[];
-extern const struct ThreadDefinition D_08936c7c;
-extern const struct ThreadDefinition D_08936c8c;
-extern const struct ThreadDefinition D_08936c9c;
+extern const struct TaskMethods D_08936c7c;
+extern const struct TaskMethods D_08936c8c;
+extern const struct TaskMethods D_08936c9c;
 
 struct unk_struct_08004da0_init;
 struct unk_struct_08004da0;
@@ -211,7 +201,8 @@ struct unk_struct_08007aa0 {
     u16 totalFrames;
 };
 
-struct InterpolatorInfo {
+// Timed Data Interpolation (Linear)
+struct LinearDataInterpolator {
     u32 varSize:2;
     u32 duration:15;
     u32 runningTime:15;
