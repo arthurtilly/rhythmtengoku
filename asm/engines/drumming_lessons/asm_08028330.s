@@ -35,7 +35,7 @@ thumb_func_start func_08028330 \n\
 /* 0802836c */ BL func_08002050 \n\
 /* 08028370 */ LDR R1, =func_08028318 \n\
 /* 08028372 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08028374 */ BL func_08005d38 \n\
+/* 08028374 */ BL task_run_after \n\
 /* 08028378 */ LDR R0, [R5] \n\
 /* 0802837a */ MOVS R1, 0xFC @ Set R1 to 0xFC \n\
 /* 0802837c */ LSLS R1, R1, 0x2 \n\

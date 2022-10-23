@@ -18,7 +18,7 @@ thumb_func_start func_0800c454 \n\
 /* 0800c46e */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0800c470 */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
 /* 0800c472 */ MOV R3, R8 @ Set R3 to R8 \n\
-/* 0800c474 */ BL func_08005b20 \n\
+/* 0800c474 */ BL task_start \n\
 /* 0800c478 */ ADD SP, 0x4 \n\
 /* 0800c47a */ POP {R3} \n\
 /* 0800c47c */ MOV R8, R3 @ Set R8 to R3 \n\

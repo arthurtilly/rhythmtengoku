@@ -26,7 +26,7 @@ void func_0802f3b4(void) {
 
     func_0800c604(0);
     data = func_08002ee0(func_0800c3b8(), D_089e43d4[gFireworksInfo.version], 0x2000);
-    func_08005d38(data, func_0802f3a4, 0);
+    task_run_after(data, func_0802f3a4, 0);
 }
 
 
@@ -36,7 +36,7 @@ void func_0802f3f4(void) {
 
     func_0800c604(0);
     data = func_080087b4(func_0800c3b8(), &D_089e4214);
-    func_08005d38(data, func_0802f3b4, 0);
+    task_run_after(data, func_0802f3b4, 0);
 }
 
 

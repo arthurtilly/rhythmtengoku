@@ -47,7 +47,7 @@ void func_08012438(void) {
 
     func_0800c604(0);
     data = func_080087b4(func_0800c3b8(), D_089cdc8c);
-    func_08005d38(data, func_0800bd04, 0);
+    task_run_after(data, func_0800bd04, 0);
 }
 
 // [func_08012464] Graphics Init. 1
@@ -56,7 +56,7 @@ void func_08012464(void) {
 
     func_0800c604(0);
     data = func_08002ee0(func_0800c3b8(), D_089cdc44, 0x3000);
-    func_08005d38(data, func_08012438, 0);
+    task_run_after(data, func_08012438, 0);
 }
 
 // [func_08012494] Graphics Init. 0

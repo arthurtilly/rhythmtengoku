@@ -1,10 +1,25 @@
 #include "task_pool.h"
 
+#define TASK_POOL_DEFAULT_ID -1
+#define TASK_POOL_SIZE 48
+
+struct Task {
+    u16 alive:1;
+    u16 paused:15;
+    u16 memID; // func_0800c3b8()
+    const struct TaskMethods *methods;
+    s32 poolID;
+    void *info; // static data
+    TaskFinalFunc onFinish;
+    s32 onFinishArg;
+    u16 startDelay;
+};
+
 static struct TaskPool {
     u32 nextID;
-    u32 unk4;
-    struct Task tasks[48];
-} D_03000900;
+    u32 paused;
+    struct Task tasks[TASK_POOL_SIZE];
+} sTaskPool;
 
 
 /* TASK POOL */
@@ -14,17 +29,17 @@ static struct TaskPool {
 void task_pool_init(void) {
     u32 i;
 
-    D_03000900.nextID = 0;
+    sTaskPool.nextID = 0;
 
-    for (i = 0; i < 48; i++) {
-        D_03000900.tasks[i].alive = FALSE;
-        D_03000900.tasks[i].poolID = -1;
+    for (i = 0; i < TASK_POOL_SIZE; i++) {
+        sTaskPool.tasks[i].alive = FALSE;
+        sTaskPool.tasks[i].poolID = TASK_POOL_DEFAULT_ID;
     }
 }
 
 
 // Close Task
-void func_08005a40(struct Task *task, u32 incomplete) {
+void task_stop(struct Task *task, u32 incomplete) {
     if (task->methods->stop != NULL) {
         task->methods->stop(task->info);
     }
@@ -35,18 +50,18 @@ void func_08005a40(struct Task *task, u32 incomplete) {
         mem_heap_dealloc(task->info);
     }
     task->alive = FALSE;
-    task->poolID = -1;
+    task->poolID = TASK_POOL_DEFAULT_ID;
 }
 
 
 // Update Tasks (Delayed)
-void func_08005a84(void) {
+void task_pool_update_delayed(void) {
     struct Task *task;
     u32 i, completed;
 
-    if (D_03000900.unk4 != 0) return;
+    if (sTaskPool.paused) return;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (task->alive && !task->paused) {
             if (task->methods->delayedUpdate != NULL) {
                 if (task->startDelay != 0) {
@@ -55,7 +70,7 @@ void func_08005a84(void) {
                 }
                 completed = task->methods->delayedUpdate(task->info);
                 if (completed) {
-                    func_08005a40(task, FALSE);
+                    task_stop(task, FALSE);
                 }
             }
         }
@@ -63,19 +78,19 @@ void func_08005a84(void) {
 }
 
 
- // Update Tasks (Constant)
-void func_08005ad4(void) {
+// Update Tasks (Constant)
+void task_pool_update_constant(void) {
     struct Task *task;
     u32 i, completed;
 
-    if (D_03000900.unk4 != 0) return;
+    if (sTaskPool.paused) return;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (task->alive && !task->paused) {
             if (task->methods->constantUpdate != NULL) {
                 completed = task->methods->constantUpdate(task->info);
                 if (completed) {
-                    func_08005a40(task, FALSE);
+                    task_stop(task, FALSE);
                 }
             }
         }
@@ -84,16 +99,16 @@ void func_08005ad4(void) {
 
 
 // Create New Task
-s32 func_08005b20(u16 memID, const struct TaskMethods *methods, void *inputs, TaskFinalFunc onFinish, u32 onFinishArg) {
+s32 task_start(u16 memID, const struct TaskMethods *methods, void *inputs, TaskFinalFunc onFinish, u32 onFinishArg) {
     struct Task *task;
     void *info;
     u32 i;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (!task->alive) break;
     }
-    if (i >= 48) {
-        return -1;
+    if (i >= TASK_POOL_SIZE) {
+        return TASK_POOL_DEFAULT_ID;
     }
 
     if (methods->start != NULL) {
@@ -104,69 +119,69 @@ s32 func_08005b20(u16 memID, const struct TaskMethods *methods, void *inputs, Ta
 
     task->info = info;
     if (info == TASK_FAILED_TO_START) {
-        return -1;
+        return TASK_POOL_DEFAULT_ID;
     }
 
     task->alive = TRUE;
     task->paused = FALSE;
     task->methods = methods;
-    task->poolID = D_03000900.nextID;
+    task->poolID = sTaskPool.nextID;
     task->memID = memID;
     task->onFinish = onFinish;
     task->onFinishArg = onFinishArg;
     task->startDelay = 0;
-    D_03000900.nextID = (D_03000900.nextID + 1) & 0x7fffffff;
+    sTaskPool.nextID = (sTaskPool.nextID + 1) & 0x7fffffff;
     return task->poolID;
 }
 
 
 // Close Task by Pool ID (consider complete)
-void func_08005bc4(s32 poolID) {
+void task_forced_stop(s32 poolID) {
     struct Task *task;
     u32 i;
 
     if (poolID < 0) return;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (task->poolID == poolID) break;
     }
-    if (i < 48) {
+    if (i < TASK_POOL_SIZE) {
         if (task->alive) {
-            func_08005a40(task, FALSE);
+            task_stop(task, FALSE);
         }
     }
 }
 
 
 // Close Task by Pool ID (consider incomplete)
-void func_08005c00(s32 poolID) {
+void task_forced_cancel(s32 poolID) {
     struct Task *task;
     u32 i;
 
     if (poolID < 0) return;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (task->poolID == poolID) break;
     }
-    if (i < 48) {
+    if (i < TASK_POOL_SIZE) {
         if (task->alive) {
-            func_08005a40(task, TRUE);
+            task_stop(task, TRUE);
         }
     }
 }
 
 
 // Get Task Static Data
-void *func_08005c3c(s32 poolID) {
+void *task_get_info(s32 poolID) {
     struct Task *task;
     u32 i;
 
     if (poolID < 0) return NULL;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (task->poolID == poolID) break;
     }
-    if (i < 48) {
+    if (i < TASK_POOL_SIZE) {
         if (task->alive) {
             return task->info;
         }
@@ -176,26 +191,26 @@ void *func_08005c3c(s32 poolID) {
 
 
 // Close All Active Tasks
-void func_08005c78(void) {
+void task_pool_cancel_all(void) {
     struct Task *task;
     u32 i;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (task->alive && (task->poolID >= 0)) {
-            func_08005a40(task, TRUE);
+            task_stop(task, TRUE);
         }
     }
 }
 
 
 // Pause Task by Pool ID
-void func_08005ca8(s32 poolID, u32 pause) {
+void task_pause(s32 poolID, u32 pause) {
     struct Task *task;
     u32 i;
 
     if (poolID < 0) return;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (task->poolID == poolID) {
             task->paused = pause;
             return;
@@ -204,40 +219,41 @@ void func_08005ca8(s32 poolID, u32 pause) {
 }
 
 
-// Set D_03000900.unk4
-void func_08005ce0(u32 pause) {
-    D_03000900.unk4 = pause;
+// Pause Task Pool
+void task_pool_pause(u32 pause) {
+    sTaskPool.paused = pause;
 }
 
 
-u32 func_08005cec(s32 poolID) {
+// Get Task Paused State by Pool ID
+u32 task_get_state(s32 poolID) {
     struct Task *task;
     u32 i;
 
-    if (poolID < 0) return 0;
+    if (poolID < 0) return TASK_STATE_INVALID;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (task->alive && (task->poolID == poolID)) {
             if (task->paused) {
-                return 2;
+                return TASK_STATE_PAUSED;
             } else {
-                return 1;
+                return TASK_STATE_RUNNING;
             }
         }
     }
 
-    return 0;
+    return TASK_STATE_INVALID;
 }
 
 
 // Set Task onFinish Function by Pool ID
-void func_08005d38(s32 poolID, TaskFinalFunc onFinish, s32 onFinishArg) {
+void task_run_after(s32 poolID, TaskFinalFunc onFinish, s32 onFinishArg) {
     struct Task *task;
     u32 i;
 
     if (poolID < 0) return;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (task->alive && (task->poolID == poolID)) {
             task->onFinish = onFinish;
             task->onFinishArg = onFinishArg;
@@ -248,13 +264,13 @@ void func_08005d38(s32 poolID, TaskFinalFunc onFinish, s32 onFinishArg) {
 
 
 // Set Task Delay Duration by Pool ID
-void func_08005d74(s32 poolID, u16 startDelay) {
+void task_delay(s32 poolID, u16 startDelay) {
     struct Task *task;
     u32 i;
 
     if (poolID < 0) return;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (task->alive && (task->poolID == poolID)) {
             task->startDelay = startDelay;
             return;
@@ -264,37 +280,37 @@ void func_08005d74(s32 poolID, u16 startDelay) {
 
 
 // Close All Tasks by Mem. ID (consider complete)
-void func_08005db0(u16 memID) {
+void task_pool_forced_stop_id(u16 memID) {
     struct Task *task;
     u32 i;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (task->alive && (task->memID == memID)) {
-            func_08005a40(task, FALSE);
+            task_stop(task, FALSE);
         }
     }
 }
 
 
 // Close All Tasks by Mem. ID (consider incomplete)
-void func_08005de4(u16 memID) {
+void task_pool_forced_cancel_id(u16 memID) {
     struct Task *task;
     u32 i;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (task->alive && (task->memID == memID)) {
-            func_08005a40(task, TRUE);
+            task_stop(task, TRUE);
         }
     }
 }
 
 
 // Pause/Unpause All Tasks by Mem. ID
-void func_08005e18(u16 memID, u32 pause) {
+void task_pool_pause_id(u16 memID, u32 pause) {
     struct Task *task;
     u32 i;
 
-    for (i = 0, task = D_03000900.tasks; i < 48; i++, task++) {
+    for (i = 0, task = sTaskPool.tasks; i < TASK_POOL_SIZE; i++, task++) {
         if (task->alive && (task->memID == memID)) {
             task->paused = pause;
         }

@@ -78,7 +78,7 @@ branch_0800bda8: \n\
 /* 0800bdbc */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0800bdbe */ BL mem_heap_dealloc_with_id \n\
 /* 0800bdc2 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0800bdc4 */ BL func_08005de4 \n\
+/* 0800bdc4 */ BL task_pool_forced_cancel_id \n\
 /* 0800bdc8 */ LDRB R0, [R5] \n\
 /* 0800bdca */ MOVS R4, 0x2 @ Set R4 to 0x2 \n\
 /* 0800bdcc */ NEGS R4, R4 @ Set R4 to -R4 \n\

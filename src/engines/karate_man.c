@@ -31,7 +31,7 @@ void func_080211a4(void) {
 
     func_0800c604(0);
     temp = func_08002ee0(func_0800c3b8(), D_089df1ac[gKarateManInfo.version], 0x2000);
-    func_08005d38(temp, func_08021190, 0);
+    task_run_after(temp, func_08021190, 0);
 }
 
 
@@ -41,7 +41,7 @@ void func_080211e4(void) {
     
     func_0800c604(0);
     temp = func_080087b4(func_0800c3b8(), &D_089df064);
-    func_08005d38(temp, func_080211a4, 0);
+    task_run_after(temp, func_080211a4, 0);
 }
 
 

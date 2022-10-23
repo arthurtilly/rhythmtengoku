@@ -24,7 +24,7 @@ branch_0802898e: \n\
 /* 0802899c */ BL func_08002ee0 \n\
 /* 080289a0 */ LDR R1, =func_08028954 \n\
 /* 080289a2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080289a4 */ BL func_08005d38 \n\
+/* 080289a4 */ BL task_run_after \n\
 /* 080289a8 */ POP {R4} \n\
 /* 080289aa */ POP {R0} \n\
 /* 080289ac */ BX R0 \n\

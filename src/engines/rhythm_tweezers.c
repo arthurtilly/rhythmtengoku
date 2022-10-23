@@ -256,7 +256,7 @@ void func_0802ec60(void) {
 
     func_0800c604(0);
     temp = func_08002ee0(func_0800c3b8(), D_089e3ff4[gRhythmTweezersInfo.version], 0x2000);
-    func_08005d38(temp, &func_0802ec50, 0);
+    task_run_after(temp, &func_0802ec50, 0);
 }
 
 
@@ -266,7 +266,7 @@ void func_0802eca0(void) {
 
     func_0800c604(0);
     temp = func_080087b4(func_0800c3b8(), &D_089e3db0);
-    func_08005d38(temp, &func_0802ec60, 0);
+    task_run_after(temp, &func_0802ec60, 0);
 }
 
 

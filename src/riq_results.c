@@ -78,7 +78,7 @@ void func_08018a24(void) {
 
     func_0800c604(0);
     data = func_080087b4(func_0800c3b8(), D_089d7684);
-    func_08005d38(data, func_0800bd04, 0);
+    task_run_after(data, func_0800bd04, 0);
 }
 
 
@@ -88,7 +88,7 @@ void func_08018a50(void) {
 
     func_0800c604(0);
     data = func_08002ee0(func_0800c3b8(), D_089d7654, 0x3000);
-    func_08005d38(data, func_08018a24, 0);
+    task_run_after(data, func_08018a24, 0);
 }
 
 

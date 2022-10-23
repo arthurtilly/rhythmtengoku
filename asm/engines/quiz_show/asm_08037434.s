@@ -13,7 +13,7 @@ thumb_func_start func_08037434 \n\
 /* 08037446 */ BL func_080087b4 \n\
 /* 0803744a */ LDR R1, =func_08037404 \n\
 /* 0803744c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803744e */ BL func_08005d38 \n\
+/* 0803744e */ BL task_run_after \n\
 /* 08037452 */ POP {R0} \n\
 /* 08037454 */ BX R0 \n\
 \n\

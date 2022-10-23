@@ -115,7 +115,7 @@ void func_08020880(void) {
 
     func_0800c604(0);
     data = func_08002ee0(func_0800c3b8(), D_089deec4[gBonOdoriInfo.version], 0x2000);
-    func_08005d38(data, func_0802085c, 0);
+    task_run_after(data, func_0802085c, 0);
 }
 
 
@@ -124,7 +124,7 @@ void func_080208c0(void) {
     u32 data;
     func_0800c604(0);
     data = func_080087b4(func_0800c3b8(), &D_089ded10);
-    func_08005d38(data, func_08020880, 0);
+    task_run_after(data, func_08020880, 0);
 }
 
 
@@ -230,7 +230,7 @@ void func_08020c8c(u32 arg0) {
         D_03004b10.BG_OFS[0].vertical = temp2;
     
         temp3 = func_0800c4b0(1, func_0800c3a4(arg0), &D_03004b10.BG_OFS[0].horizontal, temp0, temp1);
-        func_08005d38(temp3, func_08020c4c, gBonOdoriInfo.unk38);
+        task_run_after(temp3, func_08020c4c, gBonOdoriInfo.unk38);
     }
 }
 

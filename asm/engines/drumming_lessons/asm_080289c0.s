@@ -13,7 +13,7 @@ thumb_func_start func_080289c0 \n\
 /* 080289d2 */ BL func_080087b4 \n\
 /* 080289d6 */ LDR R1, =func_08028978 \n\
 /* 080289d8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080289da */ BL func_08005d38 \n\
+/* 080289da */ BL task_run_after \n\
 /* 080289de */ POP {R0} \n\
 /* 080289e0 */ BX R0 \n\
 \n\

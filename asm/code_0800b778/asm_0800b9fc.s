@@ -213,7 +213,7 @@ branch_0800bb62: \n\
 /* 0800bb82 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0800bb84 */ BL mem_heap_dealloc_with_id \n\
 /* 0800bb88 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0800bb8a */ BL func_08005de4 \n\
+/* 0800bb8a */ BL task_pool_forced_cancel_id \n\
  \n\
 branch_0800bb8e: \n\
 /* 0800bb8e */ LDR R4, [SP] \n\

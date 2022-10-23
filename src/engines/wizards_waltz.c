@@ -27,7 +27,7 @@ void func_080449b4(void) {
 
     func_0800c604(0);
     data = func_08002ee0(func_0800c3b8(), D_089e9f14, 0x2000);
-    func_08005d38(data, func_080449a4, 0);
+    task_run_after(data, func_080449a4, 0);
 }
 
 
@@ -37,7 +37,7 @@ void func_080449e4(void) {
 
     func_0800c604(0);
     data = func_080087b4(func_0800c3b8(), &D_089e9f10);
-    func_08005d38(data, func_080449b4, 0);
+    task_run_after(data, func_080449b4, 0);
 }
 
 

@@ -18,12 +18,12 @@ void func_0802bbfc(void) {
 
 void func_0802bc0c(void) {
     func_0800c604(0);
-    func_08005d38(func_08002ee0(func_0800c3b8(), D_089e3910[gShowtimeInfo.unk6], 0x2000), func_0802bbfc, 0);
+    task_run_after(func_08002ee0(func_0800c3b8(), D_089e3910[gShowtimeInfo.unk6], 0x2000), func_0802bbfc, 0);
 }
 
 void func_0802bc4c(void) {
     func_0800c604(0);
-    func_08005d38(func_080087b4(func_0800c3b8(), D_089e384c), func_0802bc0c, 0);
+    task_run_after(func_080087b4(func_0800c3b8(), D_089e384c), func_0802bc0c, 0);
 }
 
 void func_0802bc78(u8 arg0) {

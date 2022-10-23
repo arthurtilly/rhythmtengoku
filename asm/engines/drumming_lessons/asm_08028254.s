@@ -82,7 +82,7 @@ thumb_func_start func_08028254 \n\
 /* 080282f0 */ LDR R1, =func_08028210 \n\
 /* 080282f2 */ ADDS R4, R4, R5 @ Set R4 to R4 + R5 \n\
 /* 080282f4 */ LDR R2, [R4] \n\
-/* 080282f6 */ BL func_08005d38 \n\
+/* 080282f6 */ BL task_run_after \n\
 /* 080282fa */ POP {R4, R5} \n\
 /* 080282fc */ POP {R0} \n\
 /* 080282fe */ BX R0 \n\

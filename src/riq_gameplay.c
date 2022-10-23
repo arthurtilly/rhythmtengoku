@@ -85,7 +85,7 @@ void func_08016ea4(void) {
     u32 data;
 
     data = func_080087b4(0, D_089cfda0);
-    func_08005d38(data, func_0800bd04, 0);
+    task_run_after(data, func_0800bd04, 0);
 }
 
 
@@ -359,8 +359,8 @@ void func_080174e8(u32 corner) {
 // [func_08017514] Skip Tutorial
 void func_08017514(void) {
     func_0804e0f0(D_03005380, func_0800c3b8(), 1);
-    func_08005e18(func_0800c3b8(), 1);
-    func_0800bd04(0);
+    task_pool_pause_id(func_0800c3b8(), TRUE);
+    func_0800bd04(FALSE);
     func_0801d968(D_089cfda4);
     func_0801db04(FALSE);
     gGameplayInfo.skippingTutorial = TRUE;

@@ -54,8 +54,8 @@ u32 func_0801d8d8(void) {
     if (gPauseMenu.hasBeenUsed) {
         func_0800b974();
     }
-    func_08005ad4(); // Update Threads (Constant)
-    func_08005a84(); // Update Threads (Delayed)
+    task_pool_update_constant();
+    task_pool_update_delayed();
 
     /* Script/Pause Handling */
     switch (gPauseMenu.state) {
@@ -130,7 +130,7 @@ void func_0801d98c(void) {
         i++;
         func_0804e0c4(D_03005380, i);
         func_0800222c(i);
-        func_08005de4(i);
+        task_pool_forced_cancel_id(i);
         mem_heap_dealloc_with_id(i);
     }
 }
@@ -152,9 +152,9 @@ u32 func_0801d9d0(void) {
 
     func_08002880(TRUE); // Pause Sound
     func_0804e1bc(D_03005380, 1); // Pause Sprites..?
-    for (i = 0; i < 2;) { // idk might be related to font/text
+    for (i = 0; i < 2;) {
         i++;
-        func_08005e18(i, 1);
+        task_pool_pause_id(i, TRUE);
     }
 
     if (gPauseMenu.data->onPause != NULL) {
@@ -174,9 +174,9 @@ void func_0801da48(void) {
         case PAUSE_MENU_SELECTION_CONTINUE:
             func_08002880(FALSE); // Unpause Sound
             func_0804e1bc(D_03005380, 0); // Unpause Sprites..?
-            for (i = 0; i < 2;) { // font? text?
+            for (i = 0; i < 2;) {
                 i++;
-                func_08005e18(i, 0);
+                task_pool_pause_id(i, FALSE);
             }
             gPauseMenu.state = PAUSE_STATE_PLAY;
             break;
@@ -197,7 +197,7 @@ u32 func_0801dabc(void) {
     if (!D_03004b10.unk854_3) return FALSE;
 
     func_08002828(D_030053c0.musicPlayer); // Stop Music
-    func_08005ce0(0);
+    task_pool_pause(FALSE);
     func_0800bd2c();
     return TRUE;
 }

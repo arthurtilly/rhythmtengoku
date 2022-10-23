@@ -418,7 +418,7 @@ void func_08013570(void) {
 
     func_0800c604(0);
     data = func_080087b4((u16)func_0800c3b8(), D_089cf9a8);
-    func_08005d38(data, func_08013530, 0);
+    task_run_after(data, func_08013530, 0);
 }
 
 
@@ -428,7 +428,7 @@ void func_0801359c(void) {
 
     func_0800c604(0);
     data = func_08002ee0((u16) func_0800c3b8(), D_089cf948, 0x3000);
-    func_08005d38(data, func_08013570, 0);
+    task_run_after(data, func_08013570, 0);
 }
 
 

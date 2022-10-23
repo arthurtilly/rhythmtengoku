@@ -60,7 +60,7 @@ thumb_func_start func_08040dd8 \n\
 /* 08040e46 */ BL func_08002050 \n\
 /* 08040e4a */ LDR R1, =func_08040d90 \n\
 /* 08040e4c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08040e4e */ BL func_08005d38 \n\
+/* 08040e4e */ BL task_run_after \n\
 /* 08040e52 */ ADD SP, 0x8 \n\
 /* 08040e54 */ POP {R4-R6} \n\
 /* 08040e56 */ POP {R0} \n\

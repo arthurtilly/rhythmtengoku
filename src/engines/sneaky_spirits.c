@@ -159,7 +159,7 @@ void func_0801f338(void) {
 
     func_0800c604(0);
     data = func_08002ee0(func_0800c3b8(), D_089de7a4[gSneakySpiritsInfo.version], 0x2000);
-    func_08005d38(data, func_0801f328, 0);
+    task_run_after(data, func_0801f328, 0);
 }
 
 
@@ -169,7 +169,7 @@ void func_0801f378(void) {
 
     func_0800c604(0);
     data = func_080087b4(func_0800c3b8(), &D_089de6e0);
-    func_08005d38(data, func_0801f338, 0);
+    task_run_after(data, func_0801f338, 0);
 }
 
 
@@ -362,7 +362,7 @@ void func_0801f8d0(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
     func_0804cebc(D_03005380, gSneakySpiritsInfo.ghostHit, func_08001980(temp));
     func_0804d770(D_03005380, gSneakySpiritsInfo.ghostHit, 1);
     temp = func_0800e3e4(gSneakySpiritsInfo.ghostHit, 100, 76, xVel, yVel, (u16) duration);
-    func_08005d38(temp, func_0801f810, 0);
+    task_run_after(temp, func_0801f810, 0);
 
     func_0804dae0(D_03005380, gSneakySpiritsInfo.door, 1, 0x7f, 0);
     func_0804cebc(D_03005380, gSneakySpiritsInfo.door, 1);
