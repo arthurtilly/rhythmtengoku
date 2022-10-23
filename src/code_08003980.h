@@ -104,36 +104,20 @@ extern u32 func_08005878(struct unk_struct_08005858 *arg0);
 
 /* TASKS */
 
-// extern ? func_08005a0c(?); // Initialise Thread Pool
-// extern ? func_08005a40(?); // Close Thread
-// extern ? func_08005a84(?); // Update Threads (Delayed)
-// extern ? func_08005ad4(?); // Update Threads (Constant)
-// extern ? func_08005b20(?); // Create Thread
-// extern ? func_08005bc4(?); // Close Thread by Pool ID
-// extern ? func_08005c00(?); // Close Thread by Pool ID (ignore Thread Close Function)
-// extern ? func_08005c3c(?); // Get Thread Static Data
-// extern ? func_08005c78(?); // Close All Active Threads
-// extern ? func_08005ca8(?); // Pause Thread by Pool ID
+// extern ? func_08005a0c(?); // Initialise Task Pool
+// extern ? func_08005a40(?); // Close Task
+// extern ? func_08005a84(?); // Update Tasks (Delayed)
+// extern ? func_08005ad4(?); // Update Tasks (Constant)
+// extern ? func_08005b20(?); // Create Task
+// extern ? func_08005bc4(?); // Close Task by Pool ID
+// extern ? func_08005c00(?); // Close Task by Pool ID (ignore Task Close Function)
+// extern ? func_08005c3c(?); // Get Task Static Data
+// extern ? func_08005c78(?); // Close All Active Tasks
+// extern ? func_08005ca8(?); // Pause Task by Pool ID
 // extern ? func_08005ce0(?); // Set D_03000900.unk4
 // extern ? func_08005cec(?);
 // extern ? func_08005d38(?);
 // extern ? func_08005d74(?);
 // extern ? func_08005db0(?);
-extern void func_08005de4(u16); // Close All Threads by Mem. ID
-extern void func_08005e18(u16, u32); // Pause All Threads by Mem. ID
-
-/* ? */
-
-// extern ? func_08005e54(?);
-// extern ? func_08005ee4(?);
-// extern ? func_08005f04(?);
-// extern ? func_08005f34(?);
-// extern ? func_08005fe4(?);
-// extern ? func_080060bc(?);
-// extern ? func_080061a4(?);
-// extern ? func_080061d0(?);
-// extern ? func_0800620c(?);
-// extern ? func_08006328(?);
-// extern ? func_08006364(?);
-// extern ? func_0800637c(?);
-// extern ? func_08006448(?);
+extern void func_08005de4(u16); // Close All Tasks by Mem. ID
+extern void func_08005e18(u16, u32); // Pause All Tasks by Mem. ID
