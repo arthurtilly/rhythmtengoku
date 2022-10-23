@@ -2,8 +2,6 @@
 
 #include "global.h"
 
-/* ? */
-
 // extern ? func_08005e54(?);
 // extern ? func_08005ee4(?);
 // extern ? func_08005f04(?);

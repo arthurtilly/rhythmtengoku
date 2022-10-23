@@ -11,6 +11,7 @@ SECTIONS {
         build/src/memory.c.o(.bss*);
 		build/src/code_08001360.c.o(.bss*);
 		build/src/code_08003980.c.o(.bss*);
+		build/src/task_pool.c.o(.bss*);
 		build/src/code_08005e54.c.o(.bss*);
 		build/src/memory_heap.c.o(.bss*);
 		build/src/code_080068f8.c.o(.bss*);
@@ -85,6 +86,7 @@ SECTIONS {
         build/bin/bindata_08000a00.bin.o(.rodata*); /* Seems to be ARM assembly */
         build/src/code_08001360.c.o(.text);
         build/src/code_08003980.c.o(.text);
+        build/src/task_pool.c.o(.text);
         build/src/code_08005e54.c.o(.text);
         build/src/memory_heap.c.o(.text);
 		build/src/code_080068f8.c.o(.text);
