@@ -108,7 +108,7 @@ s32 func_08000868(s32 *cartRAM) {
 
     D_030064c8(cartRAM, (s32 *)buffer, SAVE_BUFFER_SIZE);
 
-    if (func_0800820c(buffer->info.RIQ, D_08935fbc, sizeof(D_08935fbc))) {
+    if (func_0800820c(buffer->info.RIQ, D_08935fbc, 4)) {
         return 1;
     }
 
@@ -186,7 +186,7 @@ void func_080009cc_stub(void) {
 
 
 s32 func_080009d0(s16 *arg1) {
-    if ((func_0800820c(arg1, D_08935fc4, sizeof(D_08935fc4)) == 0) && (arg1[2] == arg1[3])) {
+    if ((func_0800820c(arg1, D_08935fc4, 4) == 0) && (arg1[2] == arg1[3])) {
         return arg1[2];
     }
     return 0;

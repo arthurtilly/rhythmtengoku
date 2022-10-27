@@ -4475,19 +4475,7 @@ D_08935d24 = 0x08935d24;
 /* Unknown - 116 Palettes */
 D_08935d6c = 0x08935d6c;
 
-
-/* bindata_08935dac */
-__clz_tab = 0x08935dac;
-
 /* bindata_08935fac */
-D_08935fac = 0x08935fac;
-D_08935fb0 = 0x08935fb0;
-D_08935fb4 = 0x08935fb4;
-D_08935fb8 = 0x08935fb8;
-D_08935fbc = 0x08935fbc;
-D_08935fc4 = 0x08935fc4;
-D_08935fcc = 0x08935fcc;
-D_089361cc = 0x089361cc;
 D_089363cc = 0x089363cc;
 D_089363dc = 0x089363dc;
 D_089363ec = 0x089363ec;

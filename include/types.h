@@ -76,6 +76,6 @@ struct BeatScriptHandler {
 
 
 extern struct BeatScriptHandler D_030053c0;
-extern s16 gSineTable[];
-extern s16 D_08935fcc[];
-extern s16 D_089361cc[];
+extern const s16 gSineTable[];
+extern const s16 D_08935fcc[];
+extern const s16 D_089361cc[];

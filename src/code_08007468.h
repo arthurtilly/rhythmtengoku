@@ -72,9 +72,9 @@ extern u32  func_0800856c(u16, void *, const struct SequenceData *, u32); // sec
 // extern ? func_0800869c(?);
 // extern ? func_080086c4(?);
 // extern ? func_08008720(?);
-extern struct unk_struct_0800873c *func_0800873c(struct unk_struct_0800873c_init *arg0);
-extern u32 func_08008758(struct unk_struct_0800873c *arg0);
-extern u32 func_080087b4(u16, u32 *);
+extern struct unk_struct_0800873c *func_0800873c(struct unk_struct_0800873c_init *arg0); // bg_texture_loader_task_start
+extern u32 func_08008758(struct unk_struct_0800873c *arg0); // bg_texture_loader_task_update
+extern u32 func_080087b4(u16, u32 *); // new_bg_texture_loader_task
 extern s32 func_080087d4(s32 var, s32 min, s32 max); // Signed Clamp
 // extern ? func_080087e8(?);
 // extern ? func_08008910(?);

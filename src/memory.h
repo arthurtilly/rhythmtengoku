@@ -78,8 +78,8 @@ extern struct_030064c8_func *D_030064c8;
 
 extern s32 *D_08935fb4; // CartRAMBase (0x0E000000)
 extern s32 *D_08935fb8; // CartRAMBase + 0x4000 (0x0E004000)
-extern char D_08935fbc[4]; // "RIQ"
-extern char D_08935fc4[4]; // "CAL"
+extern const char D_08935fbc[]; // "RIQ"
+extern const char D_08935fc4[]; // "CAL"
 
 extern void init_ewram(void);
 extern void *get_save_buffer_start(void);
