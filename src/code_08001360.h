@@ -2,6 +2,7 @@
 
 #include "global.h"
 #include "sound.h"
+#include "data/data_089363cc.h"
 
 typedef u32 (*D_0300009c_func)(void);
 
@@ -18,13 +19,10 @@ extern u16 D_030046b4;
 extern u32 D_030053b4;
 extern u32 D_03005374;
 
-struct struct_08001f94 {
-    u8 unk0;
-    u8 unk1;
-    u8 filler[2];
-    u32 unk4;
-    u32 unk8;
-    u32 unkC;
+struct GfxInitTable {
+    void *src;
+    void *dest;
+    s32 param;
 };
 
 extern void func_08001360(void);
@@ -135,8 +133,8 @@ extern struct SoundPlayer *func_08002a18(const struct SequenceData *); // Return
 // extern ? func_08002e44(?);
 // extern ? func_08002e5c(?);
 // extern ? func_08002e78(?);
-// extern ? func_08002eb0(?); // D_089363fc Function 0
-// extern ? func_08002ecc(?); // D_089363fc Function 2
+extern void *func_08002eb0(struct InitGfxTaskInputs *inputs); // D_089363fc Function 0
+extern u32 func_08002ecc(struct InitGfxTaskInfo *info); // D_089363fc Function 2
 extern u32 func_08002ee0(u16, u32 *, u32); // Load Graphics (or something. uses D_089363fc)
 // extern ? func_08002f04(?);
 // extern ? func_08002f40(?);

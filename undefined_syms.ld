@@ -4475,17 +4475,8 @@ D_08935d24 = 0x08935d24;
 /* Unknown - 116 Palettes */
 D_08935d6c = 0x08935d6c;
 
-/* bindata_08935fac */
-D_089363cc = 0x089363cc;
-D_089363dc = 0x089363dc;
-D_089363ec = 0x089363ec;
-D_089363fc = 0x089363fc;
-D_0893640c = 0x0893640c;
-D_0893644e = 0x0893644e;
+/* Karate Man BG Face Map */
 D_08936650 = 0x08936650;
-D_08936b50 = 0x08936b50;
-
-/* data_08936b54 */
 
 /* bindata_08936cac */
 gSineTable = 0x08936cac;

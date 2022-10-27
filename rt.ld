@@ -1388,7 +1388,8 @@ SECTIONS {
         build/data/__clz_tab.c.o(.rodata*);
         build/data/agb_main_data.c.o(.rodata*);
         build/data/math_tables.c.o(.rodata*);
-		build/bin/bindata_08935fac.bin.o(.rodata*);
+        build/data/data_089363cc.c.o(.rodata*);
+		build/bin/bindata_08936650.bin.o(.rodata*);
         build/data/data_08936b54.c.o(.rodata*);
         build/bin/bindata_08936cac.bin.o(.rodata*);
         build/bin/bindata_089ccbc0.bin.o(.rodata*);

@@ -3,6 +3,10 @@
 #include "src/code_080068f8.h"
 #include "src/code_08007468.h"
 
+extern const char D_0804f338[];
+
+const char *const D_08936b50 = D_0804f338;
+
 const struct TaskMethods D_08936b54 = {
     (TaskStartFunc)func_08004da0,
     (TaskUpdateFunc)func_08004dc0,
