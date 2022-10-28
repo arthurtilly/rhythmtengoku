@@ -1393,6 +1393,8 @@ SECTIONS {
         build/data/data_08936b54.c.o(.rodata*);
         build/bin/bindata_08936cac.bin.o(.rodata*);
         build/bin/bindata_089ccbc0.bin.o(.rodata*);
+        build/data/sound_tempo_table.c.o(.rodata*);
+        build/bin/bindata_089cd1a4.bin.o(.rodata*);
         build/data/scenes/game_select/scene_entries.c.o(.rodata*);
         build/bin/bindata_089cea24.bin.o(.rodata*);
         build/bin/bindata_089d3984.bin.o(.rodata*);

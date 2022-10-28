@@ -83,7 +83,7 @@ extern const struct SequenceData s_f_result_mes_add_seqData;
 
 /* SCENE DATA */
 
-extern u32 D_089d7654[]; // LEVEL - GFX Init. Struct
+extern const struct GfxInitTable D_089d7654[]; // LEVEL - GFX Init. Struct
 extern u32 D_089d7684[]; // LEVEL - unused sprite thing i think
 extern const struct SequenceData *D_089d7688[3]; // LEVEL - Result SFX Pool
 extern const struct SequenceData *D_089d7694[3]; // LEVEL - Result BGM Pool

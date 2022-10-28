@@ -67,7 +67,7 @@ extern const struct Animation **D_089dec38[34]; // Pointers to animation arrays,
 extern u8 *D_089dece0[];   // Contains Donpan animation indexes. (Subarrays are the same animation but for different donpans)
 extern u16 D_089ded00[8];  // Seemingly numbers of ticks for animations.
 extern u32 D_089ded10;     // GFX related
-extern u32 *D_089deec4[];
+extern const struct GfxInitTable *D_089deec4[];
 extern u16 *D_089deecc[];  // Another index of pointers to palettes (more like sub-palettes).
 extern u16 *D_089deed4[];  // Index of pointers to palettes.
 

@@ -5,15 +5,10 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-extern struct SequenceTempo {
-    const struct SequenceData *sequenceData;
-    u32 tempo;
-} D_089ccccc[155];
 
-
-// [func_080102d0] Get Music Tempo from D_089ccccc
+// [func_080102d0] Get Music Base Tempo
 u32 func_080102d0(const struct SequenceData *seqData) {
-    struct SequenceTempo *seqTempo = D_089ccccc;
+    const struct TempoTable *seqTempo = gSoundTempoTable;
 
     while (seqTempo->sequenceData != NULL) {
         if (seqTempo->sequenceData == seqData) {

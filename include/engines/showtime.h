@@ -19,7 +19,7 @@ extern char D_0805a3cc[];
 
 // Engine Definition Data:
 extern u32 D_089e384c[];
-extern u32* D_089e3910[];
+extern const struct GfxInitTable *D_089e3910[];
 
 // Functions:
 // extern ? func_0802bbfc(?);

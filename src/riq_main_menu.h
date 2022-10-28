@@ -21,7 +21,7 @@ extern const struct SequenceData s_menu_kettei1_seqData;
 
 // Scene Definition Data:
 extern u32 D_089cdc40[]; // Gfx Null
-extern u32 D_089cdc44[]; // GFX Struct
+extern const struct GfxInitTable D_089cdc44[]; // GFX Struct
 extern u32 D_089cdc8c[]; // ...another GFX-related Null..?
 extern const struct Animation *D_089cdc90[5]; // Button Animations (Highlighted)
 extern const struct Animation *D_089cdca4[5]; // Button Animations

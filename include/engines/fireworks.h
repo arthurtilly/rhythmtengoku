@@ -99,7 +99,7 @@ extern const s32 D_0805a524[];
 // Engine Definition Data:
 extern u16 D_089e43e8[];  // Cue Expiration Times?
 extern u32 D_089e4214;    // GFX-related Null
-extern u32 *D_089e43d4[]; // GFX Init Struct
+extern const struct GfxInitTable *D_089e43d4[]; // GFX Init Struct
 
 // Functions:
 extern void func_0802f3a4(void);    // [func_0802f3a4] GFX_INIT Func_02

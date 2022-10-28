@@ -119,3 +119,13 @@ extern struct GraphicsBuffer {
 } D_03004b10; // gGfxBuffer
 
 extern struct SpriteHandler *D_03005380; // gSpriteHandler
+
+
+  //  //  //  SCENE GRAPHICS  //  //  //
+
+
+struct GfxInitTable {
+    void *src;
+    void *dest;
+    s32 param;
+};

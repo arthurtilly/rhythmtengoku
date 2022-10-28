@@ -4606,7 +4606,8 @@ D_089ccc20 = 0x089ccc20;
 D_089ccc28 = 0x089ccc28;
 D_089ccc30 = 0x089ccc30;
 D_089ccc94 = 0x089ccc94;
-D_089ccccc = 0x089ccccc;
+
+/* bindata_089cd1a4 */
 D_089cd1a4 = 0x089cd1a4;
 D_089cd1ec = 0x089cd1ec;
 D_089cd1f0 = 0x089cd1f0;

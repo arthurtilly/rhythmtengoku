@@ -47,7 +47,7 @@ extern char D_08059f90[];   // Empty Default Text
 
 // Engine Definition Data:
 extern u32  D_089de6e0;   // GFX Null
-extern u32 *D_089de7a4[]; // GFX Struct Index
+extern const struct GfxInitTable *D_089de7a4[]; // GFX Struct Index
 
 // Functions:
 extern void func_0801ee98(u32);     // [func_0801ee98] ENGINE Func_00 - Appear At Position

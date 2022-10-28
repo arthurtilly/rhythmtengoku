@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "graphics.h"
 #include "sound.h"
 #include "data/data_089363cc.h"
 
@@ -18,12 +19,6 @@ extern u16 D_030046b4;
 
 extern u32 D_030053b4;
 extern u32 D_03005374;
-
-struct GfxInitTable {
-    void *src;
-    void *dest;
-    s32 param;
-};
 
 extern void func_08001360(void);
 extern void func_08001380(void);
@@ -135,7 +130,7 @@ extern struct SoundPlayer *func_08002a18(const struct SequenceData *); // Return
 // extern ? func_08002e78(?);
 extern void *func_08002eb0(struct InitGfxTaskInputs *inputs); // D_089363fc Function 0
 extern u32 func_08002ecc(struct InitGfxTaskInfo *info); // D_089363fc Function 2
-extern u32 func_08002ee0(u16, u32 *, u32); // Load Graphics (or something. uses D_089363fc)
+extern u32 func_08002ee0(u16, const struct GfxInitTable *, u32); // Load Graphics (or something. uses D_089363fc)
 // extern ? func_08002f04(?);
 // extern ? func_08002f40(?);
 // extern ? func_08002f48(?);

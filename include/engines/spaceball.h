@@ -27,7 +27,7 @@ extern const struct SequenceData s_f_batter_ball_land_seqData;
 
 // Engine Definition Data:
 extern u32  D_089de93c;    // GFX-related Null
-extern u32  D_089de940[];  // GFX Init Struct
+extern const struct GfxInitTable D_089de940[];  // GFX Init Struct
 extern const struct Animation *D_089de988[3]; // Batter Animations (Close)
 extern const struct Animation *D_089de994[3]; // Batter Animations (Far)
 extern const struct Animation *D_089de9a0[3]; // Spaceball Animations

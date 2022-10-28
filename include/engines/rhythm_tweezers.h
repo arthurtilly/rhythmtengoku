@@ -43,7 +43,7 @@ extern const struct SequenceData s_f_hair_appear_long_seqData;  // SFX: Hair App
 extern const struct Animation *D_089e3d98[]; // Array of animation pointers for vegetable faces
 extern u32 *D_089e3da4[]; // Array of BG Map pointers for vegetable textures
 extern u32 D_089e3db0;    // GFX-related Null
-extern u32 *D_089e3ff4[]; // GFX Struct Index
+extern const struct GfxInitTable *D_089e3ff4[]; // GFX Struct Index
 
 // Functions:
 extern void func_0802e750(void);        // [func_0802e750] Initialise Vegetable Face

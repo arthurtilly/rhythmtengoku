@@ -34,7 +34,7 @@ extern char D_0805a8b0[];   // Empty Default Text
 // Engine Definition Data:
 extern const struct Animation **D_089e63f8[];  // Animation Index (index of pairs of animation pointers; 0 = Rap Men; 1 = Rap Women)
 extern u32 D_089e6424;      // GFX-related Null
-extern u32 *D_089e6518[];   // GFX Struct Index
+extern const struct GfxInitTable *D_089e6518[];   // GFX Struct Index
 extern u8  D_089e6520;
 extern u8  D_089e6525;
 extern const struct SequenceData *D_089e652c[2][2];

@@ -33,7 +33,7 @@ extern const struct SequenceData s_witch_furu_seqData; // Sound for inputting wi
 
 // Engine Definition Data:
 extern u32 D_089e9f10;   // GFX-related Null
-extern u32 D_089e9f14[]; // GFX Struct
+extern const struct GfxInitTable D_089e9f14[]; // GFX Struct
 
 // Functions:
 extern void func_080449a4(void);        // [func_080449a4] GFX_INIT Func_02
