@@ -44,9 +44,9 @@ extern const struct SequenceData s_f_boxing_v_nua_seqData;
 // Engine Data:
 
 // Engine Definition Data:
-extern u32 *D_089df064[];   // GFX-related
-extern const struct GfxInitTable *D_089df1ac[];   // GFX Struct Index
-extern u32 D_089df1bc[];    // BG Face Graphics
+extern const struct CompressedGraphics *D_089df064[]; // Buffered Textures List
+extern const struct GraphicsTable *D_089df1ac[]; // Graphics Table
+extern const struct CompressedGraphics *D_089df1bc[]; // BG Face Graphics
 extern u8  D_089df37c[];    // BG Palette Index (Low Flow)
 extern u8  D_089df37e[];    // BG Palette Index (High Flow)
 

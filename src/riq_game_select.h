@@ -185,8 +185,8 @@ extern const struct PerfectCampaignData D_089cdf24[48]; // ??? (related to perfe
 extern const struct Animation *D_089ce0a4[3]; // Perfect Campaign Border Animations { 0 = No Flowers; 1 = 3 Flowers; 2 = 6 Flowers }
 extern const struct GameSelectSceneEntry D_089ce344[55];
 extern const struct GameSelectGridEntry D_089ceafc[GAME_SELECT_GRID_HEIGHT * GAME_SELECT_GRID_WIDTH];
-extern const struct GfxInitTable D_089cf948[]; // Graphics Table
-extern u32 D_089cf9a8[]; // some empty list again
+extern const struct GraphicsTable D_089cf948[]; // Graphics Table
+extern const struct CompressedGraphics *D_089cf9a8[]; // Buffered Textures List
 extern const struct Animation *D_089cf9ac[14]; // Stage Title Text Animations
 
 

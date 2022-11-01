@@ -34,7 +34,7 @@ void func_08039924(void) {
 	u32 temp;
 
 	func_0800c604(0);
-	temp = func_080087b4(func_0800c3b8(), &D_089e6424);
+	temp = func_080087b4(func_0800c3b8(), D_089e6424);
 	task_run_after(temp, func_080398e4, 0);
 }
 

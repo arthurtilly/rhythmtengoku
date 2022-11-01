@@ -46,8 +46,8 @@ extern const struct SequenceData s_ghost_warai_seqData;          // Sound: Ghost
 extern char D_08059f90[];   // Empty Default Text
 
 // Engine Definition Data:
-extern u32  D_089de6e0;   // GFX Null
-extern const struct GfxInitTable *D_089de7a4[]; // GFX Struct Index
+extern const struct CompressedGraphics *D_089de6e0[]; // Buffered Textures List
+extern const struct GraphicsTable *D_089de7a4[]; // Graphics Table
 
 // Functions:
 extern void func_0801ee98(u32);     // [func_0801ee98] ENGINE Func_00 - Appear At Position

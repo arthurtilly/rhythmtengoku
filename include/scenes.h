@@ -161,7 +161,7 @@ struct GameplaySceneInfo {
 	union GameEngineInfo *gameEngineInfo; // Same value as D_030055d0
 	struct Cue *cues; // Linked List (most recent element)
 	const struct CueDefinition *cueDefinitions[12]; // Cue Definitions (copied from Game Engine)
-	EngineFunc commonFunctions[3]; // Engine "Common" Functions
+	EngineEvent commonFunctions[3]; // Engine "Common" Functions
 	struct Cue *currentCue; // Current Cue
 	u8 unk5C;
     u8 unk5D; // Has the capacity to, when set, delete cues as soon as they are created, but is always set to FALSE when a cue is made.

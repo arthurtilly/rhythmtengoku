@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "graphics.h"
 #include "sound.h"
 #include "data/data_08936b54.h"
 
@@ -74,7 +75,7 @@ extern u32  func_0800856c(u16, void *, const struct SequenceData *, u32); // sec
 // extern ? func_08008720(?);
 extern struct unk_struct_0800873c *func_0800873c(struct unk_struct_0800873c_init *arg0); // bg_texture_loader_task_start
 extern u32 func_08008758(struct unk_struct_0800873c *arg0); // bg_texture_loader_task_update
-extern u32 func_080087b4(u16, u32 *); // new_bg_texture_loader_task
+extern u32 func_080087b4(u16, const struct CompressedGraphics **); // new_bg_texture_loader_task
 extern s32 func_080087d4(s32 var, s32 min, s32 max); // Signed Clamp
 // extern ? func_080087e8(?);
 // extern ? func_08008910(?);

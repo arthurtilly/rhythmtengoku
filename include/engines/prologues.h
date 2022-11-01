@@ -8,8 +8,8 @@
 
 
 // Assets:
-extern u32 D_089ea088;   // GFX Null   -  Prologue: Sneaky Spirits
-extern const struct GfxInitTable D_089ea08c[]; // GFX Array  -  Prologue: Sneaky Spirits
+extern const struct CompressedGraphics *D_089ea088[]; // Buffered Textures List  -  Prologue: Sneaky Spirits
+extern const struct GraphicsTable D_089ea08c[]; // Graphics Table  -  Prologue: Sneaky Spirits
 extern const struct Animation D_088ad2bc[]; // Animation  -  Text (Sneaky Spirits)
 
 // Functions:
@@ -27,8 +27,8 @@ extern void func_080451e4(u32);     // [func_080451e4] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089ea26c;   // GFX Null   -  Prologue: Spaceball
-extern const struct GfxInitTable D_089ea270[]; // GFX Array  -  Prologue: Spaceball
+extern const struct CompressedGraphics *D_089ea26c[]; // Buffered Textures List  -  Prologue: Spaceball
+extern const struct GraphicsTable D_089ea270[]; // Graphics Table  -  Prologue: Spaceball
 extern const struct Animation D_088ad3f4[]; // Animation  -  Text (Spaceball)
 
 // Functions:
@@ -46,8 +46,8 @@ extern void func_080452e0(u32);     // [func_080452e0] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089ea3e4;   // GFX Null   -  Prologue: The Bon Odori
-extern const struct GfxInitTable D_089ea3e8[]; // GFX Array  -  Prologue: The Bon Odori
+extern const struct CompressedGraphics *D_089ea3e4[]; // Buffered Textures List  -  Prologue: The Bon Odori
+extern const struct GraphicsTable D_089ea3e8[]; // Graphics Table  -  Prologue: The Bon Odori
 extern const struct Animation D_088ad530[]; // Animation  -  Text (The Bon Odori)
 
 // Functions:
@@ -65,8 +65,8 @@ extern void func_080453dc(void);    // [func_080453dc] Event 0 - Play Animation 
 
 
 // Assets:
-extern u32 D_089ea514;   // GFX Null   -  Prologue: Bon Dance
-extern const struct GfxInitTable D_089ea518[]; // GFX Array  -  Prologue: Bon Dance
+extern const struct CompressedGraphics *D_089ea514[]; // Buffered Textures List  -  Prologue: Bon Dance
+extern const struct GraphicsTable D_089ea518[]; // Graphics Table  -  Prologue: Bon Dance
 extern const struct Animation D_088ad898[]; // Animation  -  Text (Bon Dance)
 
 // Functions:
@@ -84,8 +84,8 @@ extern void func_080454e0(void);    // [func_080454e0] Event 0 - Play Animation 
 
 
 // Assets:
-extern u32 D_089ea650;   // GFX Null   -  Prologue: Karate Man
-extern const struct GfxInitTable D_089ea654[]; // GFX Array  -  Prologue: Karate Man
+extern const struct CompressedGraphics *D_089ea650[]; // Buffered Textures List  -  Prologue: Karate Man
+extern const struct GraphicsTable D_089ea654[]; // Graphics Table  -  Prologue: Karate Man
 extern const struct Animation D_088ada78[]; // Animation  -  Text (Karate Man)
 extern const struct Animation D_088adaa8[]; // Animation  -  Kick (Karate Man)
 
@@ -105,8 +105,8 @@ extern void func_08045628(void);    // [func_08045628] Event 1 - Play Animation 
 
 
 // Assets:
-extern u32 D_089ea864;   // GFX Null   -  Prologue: Cosmic Dance
-extern const struct GfxInitTable D_089ea868[]; // GFX Array  -  Prologue: Cosmic Dance
+extern const struct CompressedGraphics *D_089ea864[]; // Buffered Textures List  -  Prologue: Cosmic Dance
+extern const struct GraphicsTable D_089ea868[]; // Graphics Table  -  Prologue: Cosmic Dance
 extern const struct Animation D_088adb94[]; // Animation  -  Text (Cosmic Dance)
 extern const struct Animation D_088adba4[]; // Animation  -  Dancers (Cosmic Dance)
 
@@ -125,8 +125,8 @@ extern void func_0804573c(void);    // [func_0804573c] Event 0 - Show Dancers
 
 
 // Assets:
-extern u32 D_089ea988;   // GFX Null   -  Prologue: Night Walk
-extern const struct GfxInitTable D_089ea98c[]; // GFX Array  -  Prologue: Night Walk
+extern const struct CompressedGraphics *D_089ea988[]; // Buffered Textures List  -  Prologue: Night Walk
+extern const struct GraphicsTable D_089ea98c[]; // Graphics Table  -  Prologue: Night Walk
 extern const struct Animation D_088ae2a8[]; // Animation  -  Text (Night Walk)
 extern const struct Animation D_088ae048[]; // Animation  -  Play-yan (Night Walk)
 extern const struct Animation D_088ae160[]; // Animation  -  Balloons (Night Walk)
@@ -146,8 +146,8 @@ extern void func_080458ec(u32);     // [func_080458ec] Event 0 - Play Animation 
 
 
 // Assets:
-extern u32 D_089eaadc;   // GFX Null   -  Prologue: Showtime
-extern const struct GfxInitTable D_089eaae0[]; // GFX Array  -  Prologue: Showtime
+extern const struct CompressedGraphics *D_089eaadc[]; // Buffered Textures List  -  Prologue: Showtime
+extern const struct GraphicsTable D_089eaae0[]; // Graphics Table  -  Prologue: Showtime
 extern const struct Animation D_088ae3e4[]; // Animation  -  Text (Showtime)
 extern const struct Animation D_088ae3f4[]; // Animation  -  Penguin (Showtime)
 
@@ -166,8 +166,8 @@ extern void func_08045a50(void);    // [func_08045a50] Event 0 - Play Animation 
 
 
 // Assets:
-extern u32 D_089eac18;   // GFX Null   -  Prologue: Bouncy Road
-extern const struct GfxInitTable D_089eac1c[]; // GFX Array  -  Prologue: Bouncy Road
+extern const struct CompressedGraphics *D_089eac18[]; // Buffered Textures List  -  Prologue: Bouncy Road
+extern const struct GraphicsTable D_089eac1c[]; // Graphics Table  -  Prologue: Bouncy Road
 extern const struct Animation D_088af5a0[]; // Animation  -  Text (Bouncy Road)
 extern const struct Animation D_088af510[]; // Animation  -  Bouncers (Bouncy Road)
 
@@ -186,8 +186,8 @@ extern void func_08045b94(u32);     // [func_08045b94] Event 0 - Play Animation 
 
 
 // Assets:
-extern u32 D_089ead54;   // GFX Null   -  Prologue: Rhythm Tweezers
-extern const struct GfxInitTable D_089ead58[]; // GFX Array  -  Prologue: Rhythm Tweezers
+extern const struct CompressedGraphics *D_089ead54[]; // Buffered Textures List  -  Prologue: Rhythm Tweezers
+extern const struct GraphicsTable D_089ead58[]; // Graphics Table  -  Prologue: Rhythm Tweezers
 extern const struct Animation D_088af6b4[]; // Animation  -  Text (Rhythm Tweezers)
 
 // Functions:
@@ -205,8 +205,8 @@ extern void func_08045cc4(void);    // [func_08045cc4] Event 0 - Play Animation 
 
 
 // Assets:
-extern u32 D_089eae84;   // GFX Null   -  Prologue: Fireworks
-extern const struct GfxInitTable D_089eae88[]; // GFX Array  -  Prologue: Fireworks
+extern const struct CompressedGraphics *D_089eae84[]; // Buffered Textures List  -  Prologue: Fireworks
+extern const struct GraphicsTable D_089eae88[]; // Graphics Table  -  Prologue: Fireworks
 extern const struct Animation D_088af7d4[]; // Animation  -  Text (Fireworks)
 
 // Functions:
@@ -224,8 +224,8 @@ extern void func_08045dc8(u32);     // [func_08045dc8] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089eb014;   // GFX Null   -  Prologue: The Clappy Trio
-extern const struct GfxInitTable D_089eb018[]; // GFX Array  -  Prologue: The Clappy Trio
+extern const struct CompressedGraphics *D_089eb014[]; // Buffered Textures List  -  Prologue: The Clappy Trio
+extern const struct GraphicsTable D_089eb018[]; // Graphics Table  -  Prologue: The Clappy Trio
 extern const struct Animation D_088afb9c[]; // Animation  -  Text (The Clappy Trio)
 
 // Functions:
@@ -243,8 +243,8 @@ extern void func_08045ec4(u32);     // [func_08045ec4] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089eb1c8;   // GFX Null   -  Prologue: The Snappy Trio
-extern const struct GfxInitTable D_089eb1cc[]; // GFX Array  -  Prologue: The Snappy Trio
+extern const struct CompressedGraphics *D_089eb1c8[]; // Buffered Textures List  -  Prologue: The Snappy Trio
+extern const struct GraphicsTable D_089eb1cc[]; // Graphics Table  -  Prologue: The Snappy Trio
 extern const struct Animation D_088afdc4[]; // Animation  -  Text (The Snappy Trio)
 
 // Functions:
@@ -262,8 +262,8 @@ extern void func_08045fc0(u32);     // [func_08045fc0] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089eb37c;   // GFX Null   -  Prologue: Samurai Slice
-extern const struct GfxInitTable D_089eb380[]; // GFX Array  -  Prologue: Samurai Slice
+extern const struct CompressedGraphics *D_089eb37c[]; // Buffered Textures List  -  Prologue: Samurai Slice
+extern const struct GraphicsTable D_089eb380[]; // Graphics Table  -  Prologue: Samurai Slice
 extern const struct Animation D_088affe0[]; // Animation  -  Text (Samurai Slice)
 
 // Functions:
@@ -281,8 +281,8 @@ extern void func_080460d4(u32);     // [func_080460d4] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089eb530;   // GFX Null   -  Prologue: Power Calligraphy
-extern const struct GfxInitTable D_089eb534[]; // GFX Array  -  Prologue: Power Calligraphy
+extern const struct CompressedGraphics *D_089eb530[]; // Buffered Textures List  -  Prologue: Power Calligraphy
+extern const struct GraphicsTable D_089eb534[]; // Graphics Table  -  Prologue: Power Calligraphy
 extern const struct Animation D_088b0690[]; // Animation  -  Text (Power Calligraphy)
 extern const struct Animation D_088b06b0[]; // Animation  -  HAI (Power Calligraphy)
 extern const struct SequenceData s_sword_hi_seqData; // Sound Effect - HAI
@@ -303,8 +303,8 @@ extern void func_080461f4(void);    // [func_080461f4] Event 1 - HAI
 
 
 // Assets:
-extern u32 D_089eb66c;   // GFX Null   -  Prologue: Marching Orders
-extern const struct GfxInitTable D_089eb670[]; // GFX Array  -  Prologue: Marching Orders
+extern const struct CompressedGraphics *D_089eb66c[]; // Buffered Textures List  -  Prologue: Marching Orders
+extern const struct GraphicsTable D_089eb670[]; // Graphics Table  -  Prologue: Marching Orders
 extern const struct Animation D_088b09b4[]; // Animation  -  Text (Marching Orders)
 
 // Functions:
@@ -322,8 +322,8 @@ extern void func_0804630c(u32);     // [func_0804630c] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089eb814;   // GFX Null   -  Prologue: Marching Orders 2
-extern const struct GfxInitTable D_089eb818[]; // GFX Array  -  Prologue: Marching Orders 2
+extern const struct CompressedGraphics *D_089eb814[]; // Buffered Textures List  -  Prologue: Marching Orders 2
+extern const struct GraphicsTable D_089eb818[]; // Graphics Table  -  Prologue: Marching Orders 2
 extern const struct Animation D_088b0bf0[]; // Animation  -  Text (Marching Orders 2)
 
 // Functions:
@@ -341,8 +341,8 @@ extern void func_08046408(u32);     // [func_08046408] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089eb9bc;   // GFX Null   -  Prologue: Polyrhythm
-extern const struct GfxInitTable D_089eb9c0[]; // GFX Array  -  Prologue: Polyrhythm
+extern const struct CompressedGraphics *D_089eb9bc[]; // Buffered Textures List  -  Prologue: Polyrhythm
+extern const struct GraphicsTable D_089eb9c0[]; // Graphics Table  -  Prologue: Polyrhythm
 extern const struct Animation D_088b0cb4[]; // Animation  -  Text (Polyrhythm)
 
 // Functions:
@@ -360,8 +360,8 @@ extern void func_08046504(u32);     // [func_08046504] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089ebb7c;   // GFX Null   -  Prologue: Quiz Show
-extern const struct GfxInitTable D_089ebb80[]; // GFX Array  -  Prologue: Quiz Show
+extern const struct CompressedGraphics *D_089ebb7c[]; // Buffered Textures List  -  Prologue: Quiz Show
+extern const struct GraphicsTable D_089ebb80[]; // Graphics Table  -  Prologue: Quiz Show
 extern const struct Animation D_088b13c4[]; // Animation  -  Text (Quiz Show)
 
 // Functions:
@@ -379,8 +379,8 @@ extern void func_08046604(u32);     // [func_08046604] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089ebcac;   // GFX Null   -  Prologue: Remix 1
-extern const struct GfxInitTable D_089ebcb0[]; // GFX Array  -  Prologue: Remix 1
+extern const struct CompressedGraphics *D_089ebcac[]; // Buffered Textures List  -  Prologue: Remix 1
+extern const struct GraphicsTable D_089ebcb0[]; // Graphics Table  -  Prologue: Remix 1
 extern const struct Animation D_088b17d0[]; // Animation  -  Text (Remix 1)
 
 // Functions:
@@ -398,8 +398,8 @@ extern void func_08046700(u32);     // [func_08046700] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089ebe78;   // GFX Null   -  Prologue: Remix 2
-extern const struct GfxInitTable D_089ebe7c[]; // GFX Array  -  Prologue: Remix 2
+extern const struct CompressedGraphics *D_089ebe78[]; // Buffered Textures List  -  Prologue: Remix 2
+extern const struct GraphicsTable D_089ebe7c[]; // Graphics Table  -  Prologue: Remix 2
 extern const struct Animation D_088b1c9c[]; // Animation  -  Text (Remix 2)
 
 // Functions:
@@ -417,8 +417,8 @@ extern void func_080467fc(u32);     // [func_080467fc] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089ec044;   // GFX Null   -  Prologue: Remix 3
-extern const struct GfxInitTable D_089ec048[]; // GFX Array  -  Prologue: Remix 3
+extern const struct CompressedGraphics *D_089ec044[]; // Buffered Textures List  -  Prologue: Remix 3
+extern const struct GraphicsTable D_089ec048[]; // Graphics Table  -  Prologue: Remix 3
 extern const struct Animation D_088b2044[]; // Animation  -  Text (Remix 3)
 
 // Functions:
@@ -436,8 +436,8 @@ extern void func_080468f8(u32);     // [func_080468f8] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089ec210;   // GFX Null   -  Prologue: Remix 4
-extern const struct GfxInitTable D_089ec214[]; // GFX Array  -  Prologue: Remix 4
+extern const struct CompressedGraphics *D_089ec210[]; // Buffered Textures List  -  Prologue: Remix 4
+extern const struct GraphicsTable D_089ec214[]; // Graphics Table  -  Prologue: Remix 4
 extern const struct Animation D_088b23ec[]; // Animation  -  Text (Remix 4)
 
 // Functions:
@@ -455,8 +455,8 @@ extern void func_080469f4(u32);     // [func_080469f4] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089ec3e8;   // GFX Null   -  Prologue: Remix 5
-extern const struct GfxInitTable D_089ec3ec[]; // GFX Array  -  Prologue: Remix 5
+extern const struct CompressedGraphics *D_089ec3e8[]; // Buffered Textures List  -  Prologue: Remix 5
+extern const struct GraphicsTable D_089ec3ec[]; // Graphics Table  -  Prologue: Remix 5
 extern const struct Animation D_088b27f4[]; // Animation  -  Text (Remix 5)
 
 // Functions:
@@ -474,8 +474,8 @@ extern void func_08046af0(u32);     // [func_08046af0] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089ec5c0;   // GFX Null   -  Prologue: Remix 6
-extern const struct GfxInitTable D_089ec5c4[]; // GFX Array  -  Prologue: Remix 6
+extern const struct CompressedGraphics *D_089ec5c0[]; // Buffered Textures List  -  Prologue: Remix 6
+extern const struct GraphicsTable D_089ec5c4[]; // Graphics Table  -  Prologue: Remix 6
 extern const struct Animation D_088b2b9c[]; // Animation  -  Text (Remix 6)
 
 // Functions:
@@ -493,8 +493,8 @@ extern void func_08046bec(u32);     // [func_08046af0] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089ec7b0;   // GFX Null   -  Prologue: Remix 7
-extern const struct GfxInitTable D_089ec7b4[]; // GFX Array  -  Prologue: Remix 7
+extern const struct CompressedGraphics *D_089ec7b0[]; // Buffered Textures List  -  Prologue: Remix 7
+extern const struct GraphicsTable D_089ec7b4[]; // Graphics Table  -  Prologue: Remix 7
 extern const struct Animation D_088b2f44[]; // Animation  -  Text (Remix 7)
 
 // Functions:
@@ -512,8 +512,8 @@ extern void func_08046ce8(u32);     // [func_08046ce8] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089ec988;   // GFX Null   -  Prologue: Remix 8
-extern const struct GfxInitTable D_089ec98c[]; // GFX Array  -  Prologue: Remix 8
+extern const struct CompressedGraphics *D_089ec988[]; // Buffered Textures List  -  Prologue: Remix 8
+extern const struct GraphicsTable D_089ec98c[]; // Graphics Table  -  Prologue: Remix 8
 extern const struct Animation D_088b332c[]; // Animation  -  Text (Remix 8)
 
 // Functions:
@@ -531,8 +531,8 @@ extern void func_08046de4(u32);     // [func_08046de4] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089ecb60;   // GFX Null   -  Prologue: Bunny Hop
-extern const struct GfxInitTable D_089ecb64[]; // GFX Array  -  Prologue: Bunny Hop
+extern const struct CompressedGraphics *D_089ecb60[]; // Buffered Textures List  -  Prologue: Bunny Hop
+extern const struct GraphicsTable D_089ecb64[]; // Graphics Table  -  Prologue: Bunny Hop
 extern const struct Animation D_088b35dc[]; // Animation  -  Text (Bunny Hop)
 extern const struct Animation D_088b35a4[]; // Animation  -  Rabbits (Bunny Hop)
 
@@ -552,8 +552,8 @@ extern void func_08046f30(void);    // [func_08046f30] Event 1 - Play Animation 
 
 
 // Assets:
-extern u32 D_089ecd44;   // GFX Null   -  Prologue: Rap Men
-extern const struct GfxInitTable D_089ecd48[]; // GFX Array  -  Prologue: Rap Men
+extern const struct CompressedGraphics *D_089ecd44[]; // Buffered Textures List  -  Prologue: Rap Men
+extern const struct GraphicsTable D_089ecd48[]; // Graphics Table  -  Prologue: Rap Men
 extern const struct Animation D_088b37d8[]; // Animation  -  Text (Rap Men)
 
 // Functions:
@@ -571,8 +571,8 @@ extern void func_08047034(void);    // [func_08047034] Event 0 - Play Animation 
 
 
 // Assets:
-extern u32 D_089ece80;   // GFX Null   -  Prologue: Rap Women
-extern const struct GfxInitTable D_089ece84[]; // GFX Array  -  Prologue: Rap Women
+extern const struct CompressedGraphics *D_089ece80[]; // Buffered Textures List  -  Prologue: Rap Women
+extern const struct GraphicsTable D_089ece84[]; // Graphics Table  -  Prologue: Rap Women
 extern const struct Animation D_088b3ac4[]; // Animation  -  Text (Rap Women)
 
 // Functions:
@@ -590,8 +590,8 @@ extern void func_08047138(void);    // [func_08047138] Event 0 - Play Animation 
 
 
 // Assets:
-extern u32 D_089ecfbc;   // GFX Null   -  Prologue: Rat Race
-extern const struct GfxInitTable D_089ecfc0[]; // GFX Array  -  Prologue: Rat Race
+extern const struct CompressedGraphics *D_089ecfbc[]; // Buffered Textures List  -  Prologue: Rat Race
+extern const struct GraphicsTable D_089ecfc0[]; // Graphics Table  -  Prologue: Rat Race
 extern const struct Animation D_088b3d54[]; // Animation  -  Text (Rat Race)
 extern const struct Animation D_088b3d1c[]; // Animation  -  Rat (Rat Race)
 
@@ -611,8 +611,8 @@ extern void func_08047280(void);    // [func_08047280] Event 1 - Play Animation 
 
 
 // Assets:
-extern u32 D_089ed188;   // GFX Null   -  Prologue: Ninja Bodyguard
-extern const struct GfxInitTable D_089ed18c[]; // GFX Array  -  Prologue: Ninja Bodyguard
+extern const struct CompressedGraphics *D_089ed188[]; // Buffered Textures List  -  Prologue: Ninja Bodyguard
+extern const struct GraphicsTable D_089ed18c[]; // Graphics Table  -  Prologue: Ninja Bodyguard
 extern const struct Animation D_088b4054[]; // Animation  -  Text (Ninja Bodyguard)
 
 // Functions:
@@ -630,8 +630,8 @@ extern void func_080473a4(u32);     // [func_080473a4] Event 0 - Play Animation 
 
 
 // Assets:
-extern u32 D_089ed2c4;   // GFX Null   -  Prologue: Ninja Bodyguard 2
-extern const struct GfxInitTable D_089ed2c8[]; // GFX Array  -  Prologue: Ninja Bodyguard 2
+extern const struct CompressedGraphics *D_089ed2c4[]; // Buffered Textures List  -  Prologue: Ninja Bodyguard 2
+extern const struct GraphicsTable D_089ed2c8[]; // Graphics Table  -  Prologue: Ninja Bodyguard 2
 extern const struct Animation D_088b432c[]; // Animation  -  Text (Ninja Bodyguard 2)
 
 // Functions:
@@ -649,8 +649,8 @@ extern void func_080474ac(u32);     // [func_080474ac] Event 0 - Play Animation 
 
 
 // Assets:
-extern u32 D_089ed400;   // GFX Null   -  Prologue: Space Dance
-extern const struct GfxInitTable D_089ed404[]; // GFX Array  -  Prologue: Space Dance
+extern const struct CompressedGraphics *D_089ed400[]; // Buffered Textures List  -  Prologue: Space Dance
+extern const struct GraphicsTable D_089ed404[]; // Graphics Table  -  Prologue: Space Dance
 extern const struct Animation D_088b7338[]; // Animation  -  Text (Space Dance)
 extern const struct Animation D_088b7690[]; // Animation  -  Faces (Space Dance)
 extern const struct Animation D_088b7660[]; // Animation  -  Star (Space Dance)
@@ -670,8 +670,8 @@ extern void func_08047630(u32);     // [func_08047630] Event 0 - Animate Entity 
 
 
 // Assets:
-extern u32 D_089ed548;   // GFX Null   -  Prologue: Tap Trial
-extern const struct GfxInitTable D_089ed54c[]; // GFX Array  -  Prologue: Tap Trial
+extern const struct CompressedGraphics *D_089ed548[]; // Buffered Textures List  -  Prologue: Tap Trial
+extern const struct GraphicsTable D_089ed54c[]; // Graphics Table  -  Prologue: Tap Trial
 extern const struct Animation D_088b794c[]; // Animation  -  Text (Tap Trial)
 
 // Functions:
@@ -690,8 +690,8 @@ extern void func_08047794(void);    // [func_08047794] Event 1 - Animate Text
 
 
 // Assets:
-extern u32 D_089ed6b4;   // GFX Null   -  Prologue: Tap Trial 2
-extern const struct GfxInitTable D_089ed6b8[]; // GFX Array  -  Prologue: Tap Trial 2
+extern const struct CompressedGraphics *D_089ed6b4[]; // Buffered Textures List  -  Prologue: Tap Trial 2
+extern const struct GraphicsTable D_089ed6b8[]; // Graphics Table  -  Prologue: Tap Trial 2
 extern const struct Animation D_088b7c88[]; // Animation  -  Text (Tap Trial 2)
 
 // Functions:
@@ -710,8 +710,8 @@ extern void func_080478b8(void);    // [func_080478b8] Event 1 - Animate Text
 
 
 // Assets:
-extern u32 D_089ed820;   // GFX Null   -  Prologue: Toss Boys
-extern const struct GfxInitTable D_089ed824[]; // GFX Array  -  Prologue: Toss Boys
+extern const struct CompressedGraphics *D_089ed820[]; // Buffered Textures List  -  Prologue: Toss Boys
+extern const struct GraphicsTable D_089ed824[]; // Graphics Table  -  Prologue: Toss Boys
 extern const struct Animation D_088b8098[]; // Animation  -  Text (Toss Boys)
 
 // Functions:
@@ -729,8 +729,8 @@ extern void func_080479b0(u32);     // [func_080479b0] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089ed9ec;   // GFX Null   -  Prologue: Toss Boys 2
-extern const struct GfxInitTable D_089ed9f0[]; // GFX Array  -  Prologue: Toss Boys 2
+extern const struct CompressedGraphics *D_089ed9ec[]; // Buffered Textures List  -  Prologue: Toss Boys 2
+extern const struct GraphicsTable D_089ed9f0[]; // Graphics Table  -  Prologue: Toss Boys 2
 extern const struct Animation D_088b8388[]; // Animation  -  Text (Toss Boys 2)
 
 // Functions:
@@ -748,8 +748,8 @@ extern void func_08047aac(u32);     // [func_08047aac] Event 0 - Set Animation F
 
 
 // Assets:
-extern u32 D_089edbb8;   // GFX Null   -  Prologue: Tram & Pauline
-extern const struct GfxInitTable D_089edbbc[]; // GFX Array  -  Prologue: Tram & Pauline
+extern const struct CompressedGraphics *D_089edbb8[]; // Buffered Textures List  -  Prologue: Tram & Pauline
+extern const struct GraphicsTable D_089edbbc[]; // Graphics Table  -  Prologue: Tram & Pauline
 extern const struct Animation D_088b8844[]; // Animation  -  Text (Tram & Pauline)
 extern const struct Animation D_088b8834[]; // Animation  -  Tram & Pauline (Tram & Pauline)
 
@@ -768,8 +768,8 @@ extern void func_08047bdc(void);    // [func_08047bdc] Event 0 - Play Animation 
 
 
 // Assets:
-extern u32 D_089edcf4;   // GFX Null   -  Prologue: Sick Beats
-extern const struct GfxInitTable D_089edcf8[]; // GFX Array  -  Prologue: Sick Beats
+extern const struct CompressedGraphics *D_089edcf4[]; // Buffered Textures List  -  Prologue: Sick Beats
+extern const struct GraphicsTable D_089edcf8[]; // Graphics Table  -  Prologue: Sick Beats
 extern const struct Animation D_088b8cfc[]; // Animation  -  Text (Sick Beats)
 extern const struct Animation D_088b8cbc[]; // Animation  -  Virus (Sick Beats)
 
@@ -788,8 +788,8 @@ extern void func_08047d0c(void);    // [func_08047d0c] Event 0 - Play Animation 
 
 
 // Assets:
-extern u32 D_089ede24;   // GFX Null   -  Prologue: Wizard's Waltz
-extern const struct GfxInitTable D_089ede28[]; // GFX Array  -  Prologue: Wizard's Waltz
+extern const struct CompressedGraphics *D_089ede24[]; // Buffered Textures List  -  Prologue: Wizard's Waltz
+extern const struct GraphicsTable D_089ede28[]; // Graphics Table  -  Prologue: Wizard's Waltz
 extern const struct Animation D_088b8e50[]; // Animation  -  Text (Wizard's Waltz)
 
 // Functions:

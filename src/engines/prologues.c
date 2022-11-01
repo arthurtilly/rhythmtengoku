@@ -34,7 +34,7 @@ void func_0804514c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ea088);
+    data = func_080087b4(func_0800c3b8(), D_089ea088);
     task_run_after(data, func_0804511c, 0);
 }
 
@@ -91,7 +91,7 @@ void func_08045248(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ea26c);
+    data = func_080087b4(func_0800c3b8(), D_089ea26c);
     task_run_after(data, func_08045218, 0);
 }
 
@@ -148,7 +148,7 @@ void func_08045344(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ea3e4);
+    data = func_080087b4(func_0800c3b8(), D_089ea3e4);
     task_run_after(data, func_08045314, 0);
 }
 
@@ -205,7 +205,7 @@ void func_08045448(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ea514);
+    data = func_080087b4(func_0800c3b8(), D_089ea514);
     task_run_after(data, func_08045418, 0);
 }
 
@@ -262,7 +262,7 @@ void func_0804554c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ea650);
+    data = func_080087b4(func_0800c3b8(), D_089ea650);
     task_run_after(data, func_0804551c, 0);
 }
 
@@ -326,7 +326,7 @@ void func_080456a4(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ea864);
+    data = func_080087b4(func_0800c3b8(), D_089ea864);
     task_run_after(data, func_08045674, 0);
 }
 
@@ -393,7 +393,7 @@ void func_080457f4(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ea988);
+    data = func_080087b4(func_0800c3b8(), D_089ea988);
     task_run_after(data, func_080457c4, 0);
 }
 
@@ -459,7 +459,7 @@ void func_08045984(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089eaadc);
+    data = func_080087b4(func_0800c3b8(), D_089eaadc);
     task_run_after(data, func_08045954, 0);
 }
 
@@ -518,7 +518,7 @@ void func_08045ad0(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089eac18);
+    data = func_080087b4(func_0800c3b8(), D_089eac18);
     task_run_after(data, func_08045aa0, 0);
 }
 
@@ -583,7 +583,7 @@ void func_08045c2c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ead54);
+    data = func_080087b4(func_0800c3b8(), D_089ead54);
     task_run_after(data, func_08045bfc, 0);
 }
 
@@ -640,7 +640,7 @@ void func_08045d30(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089eae84);
+    data = func_080087b4(func_0800c3b8(), D_089eae84);
     task_run_after(data, func_08045d00, 0);
 }
 
@@ -697,7 +697,7 @@ void func_08045e2c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089eb014);
+    data = func_080087b4(func_0800c3b8(), D_089eb014);
     task_run_after(data, func_08045dfc, 0);
 }
 
@@ -754,7 +754,7 @@ void func_08045f28(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089eb1c8);
+    data = func_080087b4(func_0800c3b8(), D_089eb1c8);
     task_run_after(data, func_08045ef8, 0);
 }
 
@@ -811,7 +811,7 @@ void func_08046024(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089eb37c);
+    data = func_080087b4(func_0800c3b8(), D_089eb37c);
     task_run_after(data, func_08045ff4, 0);
 }
 
@@ -869,7 +869,7 @@ void func_08046138(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089eb530);
+    data = func_080087b4(func_0800c3b8(), D_089eb530);
     task_run_after(data, func_08046108, 0);
 }
 
@@ -932,7 +932,7 @@ void func_08046274(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089eb66c);
+    data = func_080087b4(func_0800c3b8(), D_089eb66c);
     task_run_after(data, func_08046244, 0);
 }
 
@@ -989,7 +989,7 @@ void func_08046370(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089eb814);
+    data = func_080087b4(func_0800c3b8(), D_089eb814);
     task_run_after(data, func_08046340, 0);
 }
 
@@ -1046,7 +1046,7 @@ void func_0804646c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089eb9bc);
+    data = func_080087b4(func_0800c3b8(), D_089eb9bc);
     task_run_after(data, func_0804643c, 0);
 }
 
@@ -1103,7 +1103,7 @@ void func_08046568(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ebb7c);
+    data = func_080087b4(func_0800c3b8(), D_089ebb7c);
     task_run_after(data, func_08046538, 0);
 }
 
@@ -1160,7 +1160,7 @@ void func_08046668(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ebcac);
+    data = func_080087b4(func_0800c3b8(), D_089ebcac);
     task_run_after(data, func_08046638, 0);
 }
 
@@ -1217,7 +1217,7 @@ void func_08046764(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ebe78);
+    data = func_080087b4(func_0800c3b8(), D_089ebe78);
     task_run_after(data, func_08046734, 0);
 }
 
@@ -1274,7 +1274,7 @@ void func_08046860(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ec044);
+    data = func_080087b4(func_0800c3b8(), D_089ec044);
     task_run_after(data, func_08046830, 0);
 }
 
@@ -1331,7 +1331,7 @@ void func_0804695c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ec210);
+    data = func_080087b4(func_0800c3b8(), D_089ec210);
     task_run_after(data, func_0804692c, 0);
 }
 
@@ -1388,7 +1388,7 @@ void func_08046a58(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ec3e8);
+    data = func_080087b4(func_0800c3b8(), D_089ec3e8);
     task_run_after(data, func_08046a28, 0);
 }
 
@@ -1445,7 +1445,7 @@ void func_08046b54(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ec5c0);
+    data = func_080087b4(func_0800c3b8(), D_089ec5c0);
     task_run_after(data, func_08046b24, 0);
 }
 
@@ -1502,7 +1502,7 @@ void func_08046c50(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ec7b0);
+    data = func_080087b4(func_0800c3b8(), D_089ec7b0);
     task_run_after(data, func_08046c20, 0);
 }
 
@@ -1559,7 +1559,7 @@ void func_08046d4c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ec988);
+    data = func_080087b4(func_0800c3b8(), D_089ec988);
     task_run_after(data, func_08046d1c, 0);
 }
 
@@ -1616,7 +1616,7 @@ void func_08046e48(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ecb60);
+    data = func_080087b4(func_0800c3b8(), D_089ecb60);
     task_run_after(data, func_08046e18, 0);
 }
 
@@ -1679,7 +1679,7 @@ void func_08046f9c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ecd44);
+    data = func_080087b4(func_0800c3b8(), D_089ecd44);
     task_run_after(data, func_08046f6c, 0);
 }
 
@@ -1736,7 +1736,7 @@ void func_080470a0(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ece80);
+    data = func_080087b4(func_0800c3b8(), D_089ece80);
     task_run_after(data, func_08047070, 0);
 }
 
@@ -1793,7 +1793,7 @@ void func_080471a4(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ecfbc);
+    data = func_080087b4(func_0800c3b8(), D_089ecfbc);
     task_run_after(data, func_08047174, 0);
 }
 
@@ -1857,7 +1857,7 @@ void func_080472fc(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ed188);
+    data = func_080087b4(func_0800c3b8(), D_089ed188);
     task_run_after(data, func_080472cc, 0);
 }
 
@@ -1915,7 +1915,7 @@ void func_08047414(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ed2c4);
+    data = func_080087b4(func_0800c3b8(), D_089ed2c4);
     task_run_after(data, func_080473e4, 0);
 }
 
@@ -1972,7 +1972,7 @@ void func_0804751c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ed400);
+    data = func_080087b4(func_0800c3b8(), D_089ed400);
     task_run_after(data, func_080474ec, 0);
 }
 
@@ -2044,7 +2044,7 @@ void func_080476b8(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ed548);
+    data = func_080087b4(func_0800c3b8(), D_089ed548);
     task_run_after(data, func_08047688, 0);
 }
 
@@ -2107,7 +2107,7 @@ void func_080477f4(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ed6b4);
+    data = func_080087b4(func_0800c3b8(), D_089ed6b4);
     task_run_after(data, func_080477c4, 0);
 }
 
@@ -2169,7 +2169,7 @@ void func_08047918(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ed820);
+    data = func_080087b4(func_0800c3b8(), D_089ed820);
     task_run_after(data, func_080478e8, 0);
 }
 
@@ -2226,7 +2226,7 @@ void func_08047a14(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ed9ec);
+    data = func_080087b4(func_0800c3b8(), D_089ed9ec);
     task_run_after(data, func_080479e4, 0);
 }
 
@@ -2283,7 +2283,7 @@ void func_08047b10(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089edbb8);
+    data = func_080087b4(func_0800c3b8(), D_089edbb8);
     task_run_after(data, func_08047ae0, 0);
 }
 
@@ -2341,7 +2341,7 @@ void func_08047c48(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089edcf4);
+    data = func_080087b4(func_0800c3b8(), D_089edcf4);
     task_run_after(data, func_08047c18, 0);
 }
 
@@ -2400,7 +2400,7 @@ void func_08047d8c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    data = func_080087b4(func_0800c3b8(), &D_089ede24);
+    data = func_080087b4(func_0800c3b8(), D_089ede24);
     task_run_after(data, func_08047d5c, 0);
 }
 

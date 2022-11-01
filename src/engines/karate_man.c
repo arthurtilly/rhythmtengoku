@@ -40,7 +40,7 @@ void func_080211e4(void) {
     u32 temp;
     
     func_0800c604(0);
-    temp = func_080087b4(func_0800c3b8(), &D_089df064);
+    temp = func_080087b4(func_0800c3b8(), D_089df064);
     task_run_after(temp, func_080211a4, 0);
 }
 

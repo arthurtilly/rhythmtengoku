@@ -21,13 +21,13 @@ extern const struct Animation D_0890ac40[]; // Go For A Perfect!
 extern const struct Animation D_0890aca0[]; // Fail Perfect
 extern const struct Animation D_0890ad60[]; // Perfect Input
 
-extern u32 D_089cfd7c[]; // Common Gameplay Graphics/Palettes (Pause Menu, etc.)
-extern u32 D_089cfda0[]; // GFX Null..?
+extern const struct GraphicsTable D_089cfd7c[]; // Graphics Table (Common Gameplay Graphics/Palettes, e.g. Pause Menu)
+extern const struct CompressedGraphics *D_089cfda0[]; // Buffered Textures List
 extern const struct PauseMenuDefinition D_089cfde0; // Pause Handler Definition
 extern const struct Animation *D_089cfdf0[2]; // A Button Prompt Animations { 0 = Black; 1 = White }
 
 /* AUDIO */
-extern void func_08016e04(u32 tempo); // [func_08016e04] Set Sound Effect Original Tempo
+extern void func_08016e04(u32 tempo); // [func_08016e04] Define Sound Effect Base Tempo
 extern struct SoundPlayer *func_08016e18(struct SoundPlayer *player); // [func_08016e18] Match SoundPlayer to Current Tempo
 extern struct SoundPlayer *func_08016e54(const struct SequenceData *sfx); // [func_08016e54] Play Sound
 extern struct SoundPlayer *func_08016e64(u32 player, const struct SequenceData *sfx); // [func_08016e64] Play Sound
@@ -56,7 +56,7 @@ extern void func_080173dc(const struct SequenceData *sfx); // [func_080173dc] Se
 extern void func_080173e8(const struct SequenceData *sfx); // [func_080173e8] Set Next Cue Hit SFX
 extern void func_080173f4(const struct SequenceData *sfx); // [func_080173f4] Set Next Cue Barely SFX
 extern void func_08017400(const struct SequenceData *sfx); // [func_08017400] Set Next Cue Miss SFX
-// extern ? func_0801740c(?);
+extern void func_0801740c(s32 midiTrack); // [func_0801740c] Force-Stop Music MIDI Track
 extern void func_08017448(u32 isTutorial); // [func_08017448] Set isTutorial
 extern void func_08017458(const struct Scene *scene); // [func_08017458] Set skipDestination
 extern void func_08017468(u32 buttons); // [func_08017468] Set Skip Tutorial Button

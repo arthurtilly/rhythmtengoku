@@ -20,9 +20,9 @@ extern const struct SequenceData s_menu_kettei1_seqData;
 // Scene Data:
 
 // Scene Definition Data:
-extern u32 D_089cdc40[]; // Gfx Null
-extern const struct GfxInitTable D_089cdc44[]; // GFX Struct
-extern u32 D_089cdc8c[]; // ...another GFX-related Null..?
+extern u32 D_089cdc40[]; // some unused sprite/text sort of thing
+extern const struct GraphicsTable D_089cdc44[]; // Graphics Table
+extern const struct CompressedGraphics *D_089cdc8c[]; // Buffered Textures List
 extern const struct Animation *D_089cdc90[5]; // Button Animations (Highlighted)
 extern const struct Animation *D_089cdca4[5]; // Button Animations
 

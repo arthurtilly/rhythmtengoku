@@ -243,7 +243,7 @@ void func_08017338(u16 press, u16 release) {
 // [func_08017348] Run Engine-Common Event
 s32 func_08017348(s32 param, s32 id) {
     s32 returnVal = 0;
-    EngineFunc *functions = gGameplayInfo.commonFunctions;
+    EngineEvent *functions = gGameplayInfo.commonFunctions;
 
     if (functions == NULL) { // literally never possible
         return returnVal;
@@ -315,7 +315,15 @@ void func_08017400(const struct SequenceData *sfx) {
 }
 
 
-#include "asm/gameplay/asm_0801740c.s"
+// [func_0801740c] Force-Stop Music MIDI Track
+void func_0801740c(s32 midiTrack) {
+    struct SoundPlayer *soundPlayer = D_030053c0.musicPlayer;
+
+    if ((soundPlayer == NULL) || (midiTrack < 0)) return;
+
+    soundPlayer->midiReader[midiTrack].active_curr = FALSE;
+    soundPlayer->midiReader[midiTrack].active_loop = FALSE;
+}
 
 
 // [func_08017448] Set isTutorial

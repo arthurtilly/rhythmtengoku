@@ -166,7 +166,7 @@ void func_0801ffa0(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(func_0800c3b8(), &D_089de93c);
+    data = func_080087b4(func_0800c3b8(), D_089de93c);
     task_run_after(data, func_0801ff70, 0);
 }
 

@@ -9,6 +9,10 @@
 #define SCREEN_CENTER_X (SCREEN_WIDTH/2)
 #define SCREEN_CENTER_Y (SCREEN_HEIGHT/2)
 
+#define BG_TILESET_BASE(offset) (void *)(VRAMBase + offset)
+#define BG_MAP_BASE(offset) (void *)(VRAMBase + offset)
+#define OBJ_TILESET_BASE(offset) (void *)(VRAMBase + 0x10000 + offset)
+
 enum BGLayersEnum {
     BG_LAYER_0,
     BG_LAYER_1,
@@ -118,13 +122,29 @@ extern struct GraphicsBuffer {
     void (*modifyPalette)(Palette *);
 } D_03004b10; // gGfxBuffer
 
+#define BG_PALETTE_BUFFER D_03004b10.bgPalette
+#define OBJ_PALETTE_BUFFER D_03004b10.objPalette
+
+
+  //  //  //  SPRITE HANDLER (LIBRARY)  //  //  //
+
+
 extern struct SpriteHandler *D_03005380; // gSpriteHandler
 
 
   //  //  //  SCENE GRAPHICS  //  //  //
 
 
-struct GfxInitTable {
+
+struct CompressedGraphics {
+};
+
+
+#define COMPRESSED_GFX_SOURCE -1
+#define FUNCTION_GFX_SOURCE -2
+#define END_OF_GRAPHICS_TABLE { NULL, NULL, 0 }
+
+struct GraphicsTable {
     void *src;
     void *dest;
     s32 param;

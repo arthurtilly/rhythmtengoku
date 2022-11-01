@@ -20,7 +20,7 @@ struct struct_08001f94 {
 };
 
 struct InitGfxTaskInputs {
-    const struct GfxInitTable *gfx;
+    const struct GraphicsTable *gfx;
     u32 arg;
 };
 
@@ -30,7 +30,7 @@ struct InitGfxTaskInfo {
     u16 unk0_b3:1;
     u16 unk0_b4:12;
     u32 arg;
-    const struct GfxInitTable *gfx;
+    const struct GraphicsTable *gfx;
     u8 *src;
     void *dest;
     u32 unk14;

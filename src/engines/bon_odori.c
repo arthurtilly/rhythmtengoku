@@ -123,7 +123,7 @@ void func_08020880(void) {
 void func_080208c0(void) {
     u32 data;
     func_0800c604(0);
-    data = func_080087b4(func_0800c3b8(), &D_089ded10);
+    data = func_080087b4(func_0800c3b8(), D_089ded10);
     task_run_after(data, func_08020880, 0);
 }
 

@@ -306,8 +306,10 @@ extern union GameEngineInfo {
     struct ShowtimeInfo showtime;
 } *D_030055d0;
 
+#define END_OF_POINTER_LIST (void *) -1
+
 struct GameEngine;
-typedef s32  (*EngineFunc)(s32);
+typedef s32  (*EngineEvent)(s32);
 typedef void (*EngineInitFunc)(u32);
 typedef void (*EngineUpdateFunc)(void);
 typedef void (*EngineCloseFunc)();
@@ -319,7 +321,7 @@ struct GameEngine {
     EngineUpdateFunc updateFunc;
     EngineCloseFunc closeFunc;
     const struct CueDefinition **cueDefinitions;
-    EngineFunc *commonFunctions;
-    EngineFunc *engineFunctions;
+    EngineEvent *commonFunctions;
+    EngineEvent *engineFunctions;
     EngineInputFunc inputFunc;
 };

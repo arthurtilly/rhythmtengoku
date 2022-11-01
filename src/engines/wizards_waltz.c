@@ -36,7 +36,7 @@ void func_080449e4(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(func_0800c3b8(), &D_089e9f10);
+    data = func_080087b4(func_0800c3b8(), D_089e9f10);
     task_run_after(data, func_080449b4, 0);
 }
 
