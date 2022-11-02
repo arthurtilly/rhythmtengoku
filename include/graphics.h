@@ -122,8 +122,8 @@ extern struct GraphicsBuffer {
     void (*modifyPalette)(Palette *);
 } D_03004b10; // gGfxBuffer
 
-#define BG_PALETTE_BUFFER D_03004b10.bgPalette
-#define OBJ_PALETTE_BUFFER D_03004b10.objPalette
+#define BG_PALETTE_BUFFER(p) ((u16 *)D_03004b10.bgPalette) + ((u32)((p)*0x10))
+#define OBJ_PALETTE_BUFFER(p) ((u16 *)D_03004b10.objPalette) + ((u32)((p)*0x10))
 
 
   //  //  //  SPRITE HANDLER (LIBRARY)  //  //  //
@@ -135,6 +135,7 @@ extern struct SpriteHandler *D_03005380; // gSpriteHandler
   //  //  //  SCENE GRAPHICS  //  //  //
 
 
+#define END_OF_BUFFERED_TEXTURES_LIST NULL
 
 struct CompressedGraphics {
 };
@@ -145,7 +146,7 @@ struct CompressedGraphics {
 #define END_OF_GRAPHICS_TABLE { NULL, NULL, 0 }
 
 struct GraphicsTable {
-    void *src;
+    const void *src;
     void *dest;
     s32 param;
 };

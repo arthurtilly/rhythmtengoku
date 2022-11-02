@@ -3,16 +3,6 @@
 #include "global.h"
 #include "scenes.h"
 
-struct Scene {
-	void (*initFunc)(void *);
-	void *initParam;
-	u32 (*loopFunc)(void *);
-	void *loopParam;
-	void (*endFunc)(void *);
-	void *endParam;
-	u16 requiredMemory;
-};
-
 struct SceneUnk03000008 {
     const struct Scene *unk0;
     const struct Scene *unk4;

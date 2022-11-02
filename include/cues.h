@@ -133,13 +133,17 @@ enum CueHitTiming {
     CUE_TIMING_HIT
 };
 
+#define PRESS_BUTTON(mask) ((0 << 15) | (mask))
+#define RELEASE_BUTTON(mask) ((1 << 15) | (mask))
+#define END_OF_CUE_INDEX (void *) -1
+
 struct Cue;
-typedef void (*CueSpawnEvent)(struct Cue *, union GameCueInfo *, u32); // arg2 = spawn parameter
-typedef u32  (*CueUpdateEvent)(struct Cue *, union GameCueInfo *, u32, u32); // arg2 = runningTime; arg3 = duration
-typedef void (*CueDespawnEvent)(struct Cue *, union GameCueInfo *);
-typedef void (*CueHitEvent)(struct Cue *, union GameCueInfo *, u32, u32); // arg2 = buttons pressed; arg3 = buttons released
-typedef void (*CueMissEvent)(struct Cue *, union GameCueInfo *);
-typedef u32  (*CueMissCondition)(struct Cue *, union GameCueInfo *);
+typedef void (*CueSpawnEvent)( /* struct Cue *cue, union GameCueInfo *info, u32 arg */ );
+typedef u32  (*CueUpdateEvent)( /* struct Cue *cue, union GameCueInfo *info, u32 runningTime, u32 duration */ );
+typedef void (*CueDespawnEvent)( /* struct Cue *cue, union GameCueInfo *info */ );
+typedef void (*CueHitEvent)( /* struct Cue *cue, union GameCueInfo *info, u32 pressed, u32 released */ );
+typedef void (*CueMissEvent)( /* struct Cue *cue, union GameCueInfo *info */ );
+typedef u32  (*CueMissCondition)( /* struct Cue *cue, union GameCueInfo *info */ );
 
 // Read-Only Cue Definition
 struct CueDefinition {

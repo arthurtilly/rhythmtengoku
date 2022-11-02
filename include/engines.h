@@ -306,7 +306,9 @@ extern union GameEngineInfo {
     struct ShowtimeInfo showtime;
 } *D_030055d0;
 
-#define END_OF_POINTER_LIST (void *) -1
+
+
+#define END_OF_COMMON_EVENT_LIST (void *) -1
 
 struct GameEngine;
 typedef s32  (*EngineEvent)(s32);
@@ -320,8 +322,19 @@ struct GameEngine {
     EngineInitFunc initFunc;
     EngineUpdateFunc updateFunc;
     EngineCloseFunc closeFunc;
-    const struct CueDefinition **cueDefinitions;
-    EngineEvent *commonFunctions;
-    EngineEvent *engineFunctions;
+    const struct CueDefinition *const *cueDefinitions;
+    const EngineEvent *commonFunctions;
+    const EngineEvent *engineFunctions;
     EngineInputFunc inputFunc;
 };
+
+/* The following are for documentation purposes only:
+ *
+ * typedef void (CommonEvent0)(s32 param);
+ * typedef void (CommonEvent1)(s32 param);
+ * typedef void (CommonEvent2)(const struct Scene *skipDest);
+ *
+ * Common Event 0: Play Beat Animation
+ * Common Event 1: Display Text
+ * Common Event 2: Initialise Tutorial
+ */

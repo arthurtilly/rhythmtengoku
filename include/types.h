@@ -1,5 +1,16 @@
 #pragma once
 
+// Script Operation Data
+struct Scene {
+	void (*initFunc)(void *);
+	void *initParam;
+	u32 (*loopFunc)(void *);
+	void *loopParam;
+	void (*endFunc)(void *);
+	void *endParam;
+	u16 requiredMemory;
+};
+
 // A Singular BeatScript Instruction
 struct BeatScript {
     u32 command:8;

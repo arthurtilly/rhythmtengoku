@@ -5362,18 +5362,9 @@ D_089de50a = 0x089de50a;
 D_089de568 = 0x089de568;
 D_089de5c8 = 0x089de5c8;
 D_089de670 = 0x089de670;
-D_089de6e0 = 0x089de6e0;
-D_089de6e4 = 0x089de6e4;
-D_089de744 = 0x089de744;
-D_089de7a4 = 0x089de7a4;
-D_089de7b0 = 0x089de7b0;
-D_089de7f0 = 0x089de7f0;
-D_089de830 = 0x089de830;
-D_089de870 = 0x089de870;
-D_089de8b0 = 0x089de8b0;
-D_089de8e4 = 0x089de8e4;
-D_089de8f0 = 0x089de8f0;
-D_089de91c = 0x089de91c;
+
+/* Game Engine - Sneaky Spirits */
+/* Game Engine - Spaceball */
 D_089de93c = 0x089de93c;
 D_089de940 = 0x089de940;
 D_089de988 = 0x089de988;

@@ -45,12 +45,15 @@ ASM            := asm
 INCLUDES	   := include
 DATA		   := data
 SCENES         := $(shell find $(DATA)/scenes -type d)
+ENGINE_DATA    := $(DATA)/engines
+PROLOGUE_DATA  := $(DATA)/engines/prologues
+ENGINE_SCRIPTS := $(DATA)/engines/scripts
 BIN		       := bin
 AUDIO		   := audio
 MUSIC		   := $(AUDIO)/sequences
 SFX            := $(AUDIO)/samples
 GRAPHICS       := $(shell find graphics -type d)
-BUILD_DIRS     := $(BUILD) $(BUILD)/$(DATA) $(foreach dir,$(SCENES),$(BUILD)/$(dir)) $(BUILD)/$(ASM) $(BUILD)/$(SOURCES) $(BUILD)/$(ENGINES) $(BUILD)/$(BIN) $(BUILD)/$(MUSIC) $(BUILD)/$(SFX) $(foreach dir,$(GRAPHICS),$(BUILD)/$(dir))
+BUILD_DIRS     := $(BUILD) $(BUILD)/$(DATA) $(foreach dir,$(SCENES),$(BUILD)/$(dir)) $(BUILD)/$(ENGINE_DATA) $(BUILD)/$(PROLOGUE_DATA) $(BUILD)/$(ENGINE_SCRIPTS) $(BUILD)/$(ASM) $(BUILD)/$(SOURCES) $(BUILD)/$(ENGINES) $(BUILD)/$(BIN) $(BUILD)/$(MUSIC) $(BUILD)/$(SFX) $(foreach dir,$(GRAPHICS),$(BUILD)/$(dir))
 LD_SCRIPT      := rt.ld
 UNDEFINED_SYMS := undefined_syms.ld
 
@@ -93,7 +96,7 @@ UNDEFINED_SYMS := undefined_syms.ld
 
 export OUTPUT	:=	$(BUILD)/$(TARGET)
 
-CFILES		:=	$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.c)) $(foreach dir,$(SOURCES),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.c)) $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.c)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCENES),$(wildcard $(dir)/*.c))
+CFILES		:=	$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.c)) $(foreach dir,$(SOURCES),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.c)) $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.c)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCENES),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINE_DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(PROLOGUE_DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINE_SCRIPTS),$(wildcard $(dir)/*.c))
 CPPFILES	:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.cpp))
 SFILES		:=	$(foreach dir,$(ASM),$(wildcard $(dir)/*.s)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.s))
 BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) $(foreach dir,$(MUSIC),$(wildcard $(dir)/*.mid)) $(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.bin))

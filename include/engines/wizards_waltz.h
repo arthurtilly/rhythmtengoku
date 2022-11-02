@@ -45,13 +45,13 @@ extern void func_08044ba8(struct AffineSprite *, s32, s32, u32); // [func_08044b
 extern void func_08044c04(void);        // [func_08044c04] MAIN - Update
 extern void func_08044e60(u32);         // [func_08044e60] ENGINE Func_01 - Set Tutorial Flag
 extern void func_08044e74_stub(void);   // [func_08044e74] MAIN - Close (STUB)
-extern void func_08044e78(u32, struct WizardsWaltzCue *, u32);  // [func_08044e78] CUE - Spawn
-extern u32  func_08044f94(u32, struct WizardsWaltzCue *, u32);  // [func_08044f94] CUE - Update
-extern void func_08044fc0(u32, struct WizardsWaltzCue *, u32);  // [func_08044fc0] CUE - Despawn
-extern void func_08044fcc(u32, struct WizardsWaltzCue *, u32);  // [func_08044fcc] CUE - Hit
-extern void func_0804503c(u32, struct WizardsWaltzCue *, u32);  // [func_0804503c] CUE - Barely
-extern void func_080450d0(u32, struct WizardsWaltzCue *, u32);  // [func_080450d0] CUE - Miss
+extern void func_08044e78(u32, struct WizardsWaltzCue *, u32); // [func_08044e78] CUE - Spawn
+extern u32  func_08044f94(u32, struct WizardsWaltzCue *, u32); // [func_08044f94] CUE - Update
+extern void func_08044fc0(u32, struct WizardsWaltzCue *, u32); // [func_08044fc0] CUE - Despawn
+extern void func_08044fcc(u32, struct WizardsWaltzCue *, u32); // [func_08044fcc] CUE - Hit
+extern void func_0804503c(u32, struct WizardsWaltzCue *, u32); // [func_0804503c] CUE - Barely
+extern void func_080450d0(u32, struct WizardsWaltzCue *, u32); // [func_080450d0] CUE - Miss
 extern void func_080450dc_stub(void);   // [func_080450dc] MAIN - Input Event (STUB)
-extern void func_080450e0_stub(void);   // [func_080450e0] COMMON Func_00 - STUB
-extern void func_080450e4_stub(void);   // [func_080450e4] COMMON Func_01 - STUB
-extern void func_080450e8(u32);         // [func_080450e8] COMMON Func_02 - ?
+extern void func_080450e0_stub(void);   // [func_080450e0] COMMON Func_00 - Beat Animation (STUB)
+extern void func_080450e4_stub(void);   // [func_080450e4] COMMON Func_01 - Display Text (STUB)
+extern void func_080450e8(const struct Scene *); // [func_080450e8] COMMON Func_02 - Init. Tutorial

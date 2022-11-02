@@ -46,8 +46,8 @@ extern const struct SequenceData s_ghost_warai_seqData;          // Sound: Ghost
 extern char D_08059f90[];   // Empty Default Text
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *D_089de6e0[]; // Buffered Textures List
-extern const struct GraphicsTable *D_089de7a4[]; // Graphics Table
+extern const struct CompressedGraphics *const sneaky_spirits_buffered_textures[]; // Buffered Textures List
+extern const struct GraphicsTable *const sneaky_spirits_gfx_tables[]; // Graphics Table
 
 // Functions:
 extern void func_0801ee98(u32);     // [func_0801ee98] ENGINE Func_00 - Appear At Position
@@ -72,13 +72,13 @@ extern void func_0801f76c(u32);     // [func_0801f76c] ENGINE Func_08 - Display 
 extern void func_0801f794(u32);     // [func_0801f794] ENGINE Func_09 - Animate Dashing Sneaky Spirit (Tutorial)
 extern void func_0801f7bc(void);    // [func_0801f7bc] MAIN - Update
 extern void func_0801f7cc(void);    // [func_0801f7cc] MAIN - Close
-extern void func_0801f7e8(u32, struct SneakySpiritsCue *, u32); // [func_0801f7e8] CUE - Spawn
-extern u32  func_0801f7f0(u32, struct SneakySpiritsCue *, u32); // [func_0801f7f0] CUE - Update
-extern void func_0801f80c(u32, struct SneakySpiritsCue *, u32); // [func_0801f80c] CUE - Despawn (STUB)
+extern void func_0801f7e8(struct Cue *, struct SneakySpiritsCue *, u32); // [func_0801f7e8] CUE - Spawn
+extern u32  func_0801f7f0(struct Cue *, struct SneakySpiritsCue *, u32, u32); // [func_0801f7f0] CUE - Update
+extern void func_0801f80c(struct Cue *, struct SneakySpiritsCue *); // [func_0801f80c] CUE - Despawn (STUB)
 extern void func_0801f810(void);    // [func_0801f810] Revert Slow-Motion Effects
-extern void func_0801f8d0(u32, struct SneakySpiritsCue *, u32); // [func_0801f8d0] CUE - Hit
-extern void func_0801fa4c(u32, struct SneakySpiritsCue *, u32); // [func_0801fa4c] CUE - Barely
-extern void func_0801fb14(u32, struct SneakySpiritsCue *, u32); // [func_0801fb14] CUE - Miss
-extern void func_0801fbb0(void);    // [func_0801fbb0] MAIN - Input Event
+extern void func_0801f8d0(struct Cue *, struct SneakySpiritsCue *, u32, u32); // [func_0801f8d0] CUE - Hit
+extern void func_0801fa4c(struct Cue *, struct SneakySpiritsCue *, u32, u32); // [func_0801fa4c] CUE - Barely
+extern void func_0801fb14(struct Cue *, struct SneakySpiritsCue *, u32, u32); // [func_0801fb14] CUE - Miss
+extern void func_0801fbb0(u32, u32); // [func_0801fbb0] MAIN - Input Event
 extern void func_0801fc3c(void);    // [func_0801fc3c] COMMON Func_00 - STUB
 extern void func_0801fc40(void);    // [func_0801fc40] COMMON Func_01 - STUB

@@ -326,10 +326,10 @@ void func_080450e4_stub(void) {
 
 
 // [func_080450e8] COMMON Func_02 - ?
-void func_080450e8(u32 arg) {
-    if (arg) {
+void func_080450e8(const struct Scene *skipDest) {
+    if (skipDest != NULL) {
         func_08017448(TRUE);
-        func_08017458(arg);
+        func_08017458(skipDest);
     } else {
         func_08017448(FALSE);
     }

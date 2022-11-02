@@ -155,11 +155,11 @@ void func_0801f328(void) {
 
 // [func_0801f338] GFX_INIT Func_01
 void func_0801f338(void) {
-    u32 data;
+    u32 task;
 
     func_0800c604(0);
-    data = func_08002ee0(func_0800c3b8(), D_089de7a4[gSneakySpiritsInfo.version], 0x2000);
-    task_run_after(data, func_0801f328, 0);
+    task = func_08002ee0(func_0800c3b8(), sneaky_spirits_gfx_tables[gSneakySpiritsInfo.version], 0x2000);
+    task_run_after(task, func_0801f328, 0);
 }
 
 
@@ -168,7 +168,7 @@ void func_0801f378(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(func_0800c3b8(), D_089de6e0);
+    data = func_080087b4(func_0800c3b8(), sneaky_spirits_buffered_textures);
     task_run_after(data, func_0801f338, 0);
 }
 
@@ -300,21 +300,23 @@ void func_0801f7cc(void) {
 
 
 // [func_0801f7e8] CUE - Spawn
-void func_0801f7e8(u32 arg0, struct SneakySpiritsCue *cue, u32 disableTaunt) {
-    cue->disableTaunt = disableTaunt;
+void func_0801f7e8(struct Cue *cue, struct SneakySpiritsCue *info, u32 disableTaunt) {
+    info->disableTaunt = disableTaunt;
 }
 
 
 // [func_0801f7f0] CUE - Update
-u32 func_0801f7f0(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
-    if (arg2 > func_0800c3a4(0x30)) return TRUE;
-
-    return FALSE;
+u32 func_0801f7f0(struct Cue *cue, struct SneakySpiritsCue *info, u32 runningTime, u32 duration) {
+    if (runningTime > func_0800c3a4(0x30)) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
 }
 
 
 // [func_0801f80c] CUE - Despawn (STUB)
-void func_0801f80c(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
+void func_0801f80c(struct Cue *cue, struct SneakySpiritsCue *info) {
 }
 
 
@@ -338,7 +340,7 @@ void func_0801f810(void) {
 
 
 // [func_0801f8d0] CUE - Hit
-void func_0801f8d0(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
+void func_0801f8d0(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, u32 released) {
     u32 duration;
     s8  xVel;
     s8  yVel;
@@ -381,7 +383,7 @@ void func_0801f8d0(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
 
 
 // [func_0801fa4c] CUE - Barely
-void func_0801fa4c(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
+void func_0801fa4c(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, u32 released) {
     gSneakySpiritsInfo.arrowReady = FALSE;
     func_08017338(0, 0);
     func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, sneaky_spirits_anim15, 0, 1, 0x7f, 0);
@@ -397,10 +399,10 @@ void func_0801fa4c(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
 
 
 // [func_0801fb14] CUE - Miss
-void func_0801fb14(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
+void func_0801fb14(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, u32 released) {
     func_0804d160(D_03005380, sneaky_spirits_anim11, 0, 120, 92, 0x8792, 1, 0, 3);
 
-    if (!cue->disableTaunt) {
+    if (!info->disableTaunt) {
         func_0804d160(D_03005380, sneaky_spirits_anim05, 0, 160, 105, 0x8792, 1, 0, 3);
         func_0800856c((u16) func_0800c3b8(), func_08002634, &s_ghost_warai_seqData, func_0800c3a4(0xc));
     }
@@ -410,7 +412,7 @@ void func_0801fb14(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
 
 
 // [func_0801fbb0] MAIN - Input Event
-void func_0801fbb0(void) {
+void func_0801fbb0(u32 pressed, u32 released) {
     if (!gSneakySpiritsInfo.arrowReady) return;
 
     gSneakySpiritsInfo.arrowReady = FALSE;
