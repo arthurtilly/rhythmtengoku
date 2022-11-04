@@ -120,11 +120,11 @@ struct AffineSprite *func_0800fa6c(const struct Animation *anim, s8 arg1, s16 x,
 }
 
 // [func_0800fba0] AFFINE SPRITE - Create Affine Sprite with Default Rotation/Scaling Parameters
-struct AffineSprite *func_0800fba0(const struct Animation *anim, s8 arg1, s16 x, s16 y, u16 arg4, s8 arg5, s8 arg6, u16 arg7) {
+struct AffineSprite *func_0800fba0(const struct Animation *anim, s8 arg1, s16 x, s16 y, u16 layer, s8 arg5, s8 arg6, u16 arg7) {
     struct AffineSprite *affineData;
     s16 sprite;
 
-    sprite = func_0804d160(D_03005380, anim, arg1, x, y, arg4, arg5, arg6, arg7);
+    sprite = func_0804d160(D_03005380, anim, arg1, x, y, layer, arg5, arg6, arg7);
     if (sprite < 0) return NULL;
 
     affineData = func_0800c43c(sizeof(struct AffineSprite));
@@ -210,17 +210,17 @@ s16 func_0800fd90(struct AffineSprite *affineData) {
     return affineData->sprite;
 }
 
-// [func_0800fda4] AFFINE SPRITE - Set X & Y; func_0804d67c()
-void func_0800fda4(struct AffineSprite *affineData, s16 x, s16 y, u16 arg3) {
+// [func_0800fda4] AFFINE SPRITE - Set X/Y and Layer
+void func_0800fda4(struct AffineSprite *affineData, s16 x, s16 y, u16 layer) {
     if (affineData == NULL) return;
 
     affineData->x = x;
     affineData->y = y;
-    func_0804d67c(D_03005380, affineData->sprite, arg3);
+    func_0804d67c(D_03005380, affineData->sprite, layer);
     func_0800f904(affineData);
 }
 
-// [func_0800fddc] AFFINE SPRITE - Set X & Y
+// [func_0800fddc] AFFINE SPRITE - Set X/Y
 void func_0800fddc(struct AffineSprite *affineData, s16 x, s16 y) {
     if (affineData == NULL) return;
 
@@ -246,10 +246,10 @@ void func_0800fe0c(struct AffineSprite *affineData, s16 y) {
 }
 
 // [func_0800fe20] AFFINE SPRITE - func_0804d67c()
-void func_0800fe20(struct AffineSprite *affineData, u16 arg) {
+void func_0800fe20(struct AffineSprite *affineData, u16 layer) {
     if (affineData == NULL) return;
 
-    func_0804d67c(D_03005380, affineData->sprite, arg);
+    func_0804d67c(D_03005380, affineData->sprite, layer);
 }
 
 // [func_0800fe44] AFFINE SPRITE - Set Scaling & Rotation

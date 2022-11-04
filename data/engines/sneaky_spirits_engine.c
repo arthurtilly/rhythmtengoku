@@ -232,9 +232,9 @@ const struct CueDefinition *const sneaky_spirits_cue_index[] = {
 
 // [D_089de8e4] Common Events
 const EngineEvent sneaky_spirits_common_events[] = {
-    /* 0 - Beat Animation */ (EngineEvent) func_0801fc3c,
-    /* 1 - Display Text   */ (EngineEvent) func_0801fc40,
-    /* 2 - Init. Tutorial */
+    /* BEAT_ANIMATION */ (EngineEvent) func_0801fc3c,
+    /* DISPLAY_TEXT   */ (EngineEvent) func_0801fc40,
+    /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 

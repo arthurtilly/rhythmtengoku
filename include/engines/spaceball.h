@@ -12,11 +12,27 @@ enum SpaceballCueStatesEnum {
 
 // OAM Animations:
 extern const struct Animation spaceball_anim00[]; // Animation: "batter_green"
+extern const struct Animation spaceball_anim01[]; // Animation: "?"
 extern const struct Animation spaceball_anim02[]; // Animation: "pitcher_shoot"
+extern const struct Animation spaceball_anim03[]; // Animation: "?"
+extern const struct Animation spaceball_anim04[]; // Animation: "?"
+extern const struct Animation spaceball_anim05[]; // Animation: "?"
+extern const struct Animation spaceball_anim06[]; // Animation: "?"
+extern const struct Animation spaceball_anim07[]; // Animation: "?"
+extern const struct Animation spaceball_anim08[]; // Animation: "?"
+extern const struct Animation spaceball_anim09[]; // Animation: "?"
 extern const struct Animation spaceball_anim10[]; // Animation: "miss_poof"
 extern const struct Animation spaceball_anim11[]; // Animation: "bg_star"
 extern const struct Animation spaceball_anim12[]; // Animation: "umpire_show"
 extern const struct Animation spaceball_anim13[]; // Animation: "umpire_sway"
+extern const struct Animation spaceball_anim14[]; // Animation: "?"
+extern const struct Animation spaceball_anim15[]; // Animation: "?"
+extern const struct Animation spaceball_anim16[]; // Animation: "?"
+extern const struct Animation spaceball_anim17[]; // Animation: "?"
+extern const struct Animation spaceball_anim18[]; // Animation: "?"
+extern const struct Animation spaceball_anim19[]; // Animation: "?"
+extern const struct Animation spaceball_anim20[]; // Animation: "?"
+extern const struct Animation spaceball_anim21[]; // Animation: "?"
 
 // Palettes:
 
@@ -26,11 +42,11 @@ extern const struct SequenceData s_f_batter_ball_land_seqData;
 // Engine Data:
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *D_089de93c[]; // Buffered Textures List
-extern const struct GraphicsTable D_089de940[]; // Graphics Table
-extern const struct Animation *D_089de988[3]; // Batter Animations (Close)
-extern const struct Animation *D_089de994[3]; // Batter Animations (Far)
-extern const struct Animation *D_089de9a0[3]; // Spaceball Animations
+extern const struct CompressedGraphics *const spaceball_buffered_textures[]; // Buffered Textures List
+extern const struct GraphicsTable spaceball_gfx_table[]; // Graphics Table
+extern const struct Animation *const spaceball_anim_table_batter_close[3]; // Batter Animations (Close)
+extern const struct Animation *const spaceball_anim_table_batter_far[3]; // Batter Animations (Far)
+extern const struct Animation *const spaceball_anim_table_ball[3]; // Spaceball Animations
 
 // Functions:
 extern void func_0801fc44(u32);     // [func_0801fc44] Initialise/Reset BG Star Position
@@ -62,6 +78,6 @@ extern void func_080205a0(u32, struct SpaceballCue *, u32, u32); // [func_080205
 extern void func_080205ac(u32, struct SpaceballCue *, u32, u32); // [func_080205ac] CUE - Hit
 extern void func_080205e8(u32, struct SpaceballCue *, u32, u32); // [func_080205e8] CUE - Barely
 extern void func_08020644(u32, struct SpaceballCue *, u32, u32); // [func_08020644] CUE - Miss
-extern void func_08020660(void);    // [func_08020660] MAIN - Input Event
+extern void func_08020660(u32, u32);    // [func_08020660] MAIN - Input Event
 extern void func_08020698(void);    // [func_08020698] COMMON Func_00 - STUB
 extern void func_0802069c(void);    // [func_0802069c] COMMON Func_01 - STUB

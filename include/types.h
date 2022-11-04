@@ -1,5 +1,7 @@
 #pragma once
 
+#define DPAD_ALL (DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN)
+
 // Script Operation Data
 struct Scene {
 	void (*initFunc)(void *);

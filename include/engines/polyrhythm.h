@@ -26,19 +26,24 @@ extern const struct Animation D_088f631c[]; // [D_088f631c] Up Arrow (D-Pad)
 // Palettes:
 
 // Sound Effects:
+extern const struct SequenceData s_f_poly_blast_seqData;
+extern const struct SequenceData s_poly_shototu_seqData;
 
 // Engine Data:
 
 // Engine Definition Data:
+extern s16 D_089e5c00[2];
+extern s16 D_089e5c04[2];
+extern s16 D_089e5c08[3];
 
 // Functions:
 // extern ? func_08035d1c(?); // Graphics Init. 2
 // extern ? func_08035d2c(?); // Graphics Init. 1
 // extern ? func_08035d6c(?); // Graphics Init. 0
-// extern ? func_08035d98(?); // Game Init.
-// extern ? func_08035e84(?); // Engine Event 0x05 (STUB)
-// extern ? func_08035e88(?); // Game Update
-// extern ? func_08035e94(?); // Game Close
+extern void func_08035d98(u32); // Game Init.
+extern void func_08035e84(void); // Engine Event 0x05 (STUB)
+extern void func_08035e88(void); // Game Update
+extern void func_08035e94(void); // Game Close (STUB)
 // extern ? func_08035e98(?); // Cue Spawn
 // extern ? func_08035eac(?); // Cue Update
 // extern ? func_08035ecc(?); // Cue Despawn
@@ -48,7 +53,7 @@ extern const struct Animation D_088f631c[]; // [D_088f631c] Up Arrow (D-Pad)
 // extern ? func_08035f4c(?); // Input Event
 // extern ? func_08035f74(?); // Common Event 0 (Beat Animation)
 // extern ? func_08035f78(?); // Common Event 1 (Display Text)
-// extern ? func_08035f7c(?); // Populate World
+extern void func_08035f7c(void); // Populate World
 // extern ? func_080360a8(?);
 // extern ? func_080360f8(?);
 // extern ? func_080361c0(?); // Engine Event 0x00 (Spawn Pattern)
@@ -56,23 +61,23 @@ extern const struct Animation D_088f631c[]; // [D_088f631c] Up Arrow (D-Pad)
 // extern ? func_080362e4(?); // Engine Event 0x02 (Retract Pistons)
 // extern ? func_0803638c(?);
 // extern ? func_08036428(?);
-// extern ? func_0803646c(?);
-// extern ? func_0803647c(?);
-// extern ? func_0803648c(?);
-// extern ? func_080364d4(?);
+extern s32 func_0803646c(u32); // Get Lane X
+extern s32 func_0803647c(u32); // Get Lane Y
+extern s32 func_0803648c(u32, s32); // Get Lane something
+extern s32 func_080364d4(u32, s32); // Get Layer
 // extern ? func_080364f4(?);
-// extern ? func_0803656c(?); // Initialise Rods
-// extern ? func_080365c8(?);
+extern void func_0803656c(void); // Initialise Rods
+extern s32 func_080365c8(struct PolyrhythmRod *, s32); // Get Rod Next unk10
 // extern ? func_080365f8(?);
-// extern ? func_08036604(?);
-// extern ? func_0803661c(?);
-// extern ? func_08036630(?); // Update Rod (State 0)
-// extern ? func_08036758(?); // Update Rod (State 1)
-// extern ? func_08036848(?); // Update Rod (State 2)
-// extern ? func_08036988(?); // STUB
-// extern ? func_0803698c(?); // Update Rods
-// extern ? func_08036aa4(?); // Spawn Rods (Polyrhythm 2)
-// extern ? func_08036b3c(?); // Engine Event 0x03 (Spawn Rods)
+extern s32 func_08036604(struct PolyrhythmRod *); // Get Rod Next unk14
+extern s32 func_0803661c(struct PolyrhythmRod *, s32); // Get Rod Next Layer
+extern void func_08036630(struct PolyrhythmRod *); // Update Rod (State 0)
+extern void func_08036758(struct PolyrhythmRod *); // Update Rod (State 1)
+extern void func_08036848(struct PolyrhythmRod *); // Update Rod (State 2)
+extern void func_08036988(void); // STUB
+extern void func_0803698c(void); // Update Rods
+extern void func_08036aa4(u32); // Spawn Rod
+extern void func_08036b3c(u32); // Engine Event 0x03 (Spawn Rod)
 // extern ? func_08036b48(?);
 // extern ? func_08036b94(?);
 // extern ? func_08036be0(?); // Engine Event 0x04 (Conditional Applause)

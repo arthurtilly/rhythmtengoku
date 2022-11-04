@@ -95,6 +95,9 @@ struct FireworksCue {
     u8  exploded;   // Has Exploded
 };
 
+struct PolyrhythmCue {
+};
+
 struct RapMenCue {
     u32 anim;
 };
@@ -114,6 +117,7 @@ union GameCueInfo {
     struct KarateManCue karateMan;
     struct RhythmTweezersCue rhythmTweezers;
     struct FireworksCue fireworks;
+    struct PolyrhythmCue polyrhythm;
     struct RapMenCue rapMen;
     struct WizardsWaltzCue wizardsWaltz;
 };

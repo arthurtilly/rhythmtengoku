@@ -30,11 +30,11 @@ extern void func_0800fca0(struct AffineSprite *, u32);      // [func_0800fca0] A
 extern void func_0800fd14(struct AffineSprite *, u32);      // [func_0800fd14] AFFINE SPRITE - Set "High Angle Precision" Flag
 extern void func_0800fd60(struct AffineSprite *, u32);      // [func_0800fd60] AFFINE SPRITE - Set "Double-Size" Flag
 extern s16  func_0800fd90(struct AffineSprite *);           // [func_0800fd90] AFFINE SPRITE - Get Sprite
-extern void func_0800fda4(struct AffineSprite *, s16, s16, u16); // [func_0800fda4] AFFINE SPRITE - Set X & Y; func_0804d67c()
-extern void func_0800fddc(struct AffineSprite *, s16, s16); // [func_0800fddc] AFFINE SPRITE - Set X & Y
+extern void func_0800fda4(struct AffineSprite *, s16, s16, u16); // [func_0800fda4] AFFINE SPRITE - Set X/Y and Layer
+extern void func_0800fddc(struct AffineSprite *, s16, s16); // [func_0800fddc] AFFINE SPRITE - Set X/Y
 extern void func_0800fdf8(struct AffineSprite *, s16);      // [func_0800fdf8] AFFINE SPRITE - Set X
 extern void func_0800fe0c(struct AffineSprite *, s16);      // [func_0800fe0c] AFFINE SPRITE - Set Y
-extern void func_0800fe20(struct AffineSprite *, u16);      // [func_0800fe20] AFFINE SPRITE - func_0804d67c()
+extern void func_0800fe20(struct AffineSprite *, u16);      // [func_0800fe20] AFFINE SPRITE - Set Layer
 extern void func_0800fe44(struct AffineSprite *, s16, s16); // [func_0800fe44] AFFINE SPRITE - Set Scaling & Rotation
 extern void func_0800fe60(struct AffineSprite *, s16);      // [func_0800fe60] AFFINE SPRITE - Set Scaling
 extern void func_0800fe78(struct AffineSprite *, s16, s16); // [func_0800fe78] AFFINE SPRITE - Set Scaling

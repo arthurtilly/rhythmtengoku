@@ -156,7 +156,7 @@ void func_0801ff70(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_08002ee0(func_0800c3b8(), D_089de940, 0x2000);
+    data = func_08002ee0(func_0800c3b8(), spaceball_gfx_table, 0x2000);
     task_run_after(data, func_0801ff60, 0);
 }
 
@@ -166,7 +166,7 @@ void func_0801ffa0(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(func_0800c3b8(), D_089de93c);
+    data = func_080087b4(func_0800c3b8(), spaceball_buffered_textures);
     task_run_after(data, func_0801ff70, 0);
 }
 
@@ -266,8 +266,8 @@ void func_08020238(u32 controls) {
 
 // [func_0802026c] ENGINE Func_03 - Set Batter Variant
 void func_0802026c(u32 index) {
-    gSpaceballInfo.batter.animClose = D_089de988[index];
-    gSpaceballInfo.batter.animFar = D_089de994[index];
+    gSpaceballInfo.batter.animClose = spaceball_anim_table_batter_close[index];
+    gSpaceballInfo.batter.animFar = spaceball_anim_table_batter_far[index];
 }
 
 
@@ -311,7 +311,7 @@ void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arcTime, u32 unused3)
     cue->rotationSpeed = 0x40;
     cue->z = 0;
     cue->unk1C = (arcTime >= 0x18) ? (90 * arcTime / 0x18) : 90;
-    cue->sprite = func_0800fa6c(D_089de9a0[gSpaceballInfo.spaceballType], 0, 70, 120, 0x479c, INT_TO_FIXED(1), cue->rotation, 1, 0, 0, 1);
+    cue->sprite = func_0800fa6c(spaceball_anim_table_ball[gSpaceballInfo.spaceballType], 0, 70, 120, 0x479c, INT_TO_FIXED(1), cue->rotation, 1, 0, 0, 1);
 
     temp = cue->unk1C - 48;
     div = D_03004ae4(256 * INT_TO_FIXED(temp) / cue->unk1C);
@@ -440,7 +440,7 @@ void func_08020644(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
 
 
 // [func_08020660] MAIN - Input Event
-void func_08020660(void) {
+void func_08020660(u32 pressed, u32 released) {
     struct SpaceballBatter *batter = &gSpaceballInfo.batter;
 
     func_08010008(batter->sprite, 1, 0x7f, 0);

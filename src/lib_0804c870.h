@@ -30,11 +30,11 @@ extern u32  func_0804d294(struct SpriteHandler *, const struct Animation *, s8, 
 // extern ? func_0804d3cc(?);
 // extern ? func_0804d468(?);
 // extern ? func_0804d504(?);
-// extern ? func_0804d55c(?);
+extern void func_0804d55c(struct SpriteHandler *, s16, s16, s16, u16); // Set X/Y Position and Layer
 extern void func_0804d5d4(struct SpriteHandler *, s16, s16, s16); // Set X/Y Position
 extern void func_0804d614(struct SpriteHandler *, s16, s16); // Set X Position
 extern void func_0804d648(struct SpriteHandler *, s16, s16); // Set Y Position
-extern void func_0804d67c(struct SpriteHandler *, s16, u16);
+extern void func_0804d67c(struct SpriteHandler *, s16, u16); // Set Layer
 extern s32  func_0804d6cc(struct SpriteHandler *, s16);
 extern u8   func_0804d708(struct SpriteHandler *, s16);
 extern void func_0804d770(struct SpriteHandler *, s16, u16);

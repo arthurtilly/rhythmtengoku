@@ -60,10 +60,10 @@
 #define BSC_COND_END BSC_UNDEFINED(0x15,0,0,0)
 
 // Command 0x16: Conditional - If Set
-#define BSC_COND_IF_BIT_SET(ptr,val) BSC_UNDEFINED(0x16,0,ptr,val)
+#define BSC_COND_IF_BIT_SET(ptr,bit) BSC_UNDEFINED(0x16,0,ptr,bit)
 
 // Command 0x17: Conditional - If Clear
-#define BSC_COND_IF_BIT_CLEAR(ptr,val) BSC_UNDEFINED(0x17,0,ptr,val)
+#define BSC_COND_IF_BIT_CLEAR(ptr,bit) BSC_UNDEFINED(0x17,0,ptr,bit)
 
 // Command 0x1A: Switch Statement Start
 #define BSC_SWITCH_ARG(ptr,type) BSC_UNDEFINED(0x1A,type,0,ptr)
@@ -134,7 +134,6 @@
  * Also includes commands related to script speed.
 */
 
-
 // Command 0x28: Play Music
 #define BSC_PLAY_MUSIC(playerID,music) BSC_UNDEFINED(0x28,0,playerID,music)
 
@@ -148,7 +147,7 @@
 #define BSC_PLAY_SOUND_1(sound,volume,pitch) BSC_UNDEFINED(0xAE,volume,pitch,sound)
 
 // Command 0xB2: Play Sound Effect to Tempo (at volume & pitch)
-#define BSC_PLAY_SOUND_2(sound,originalTempo,volume,pitch) BSC_UNDEFINED(0xB2,originalTempo,((pitch)<<16)&((u16)(volume)),sound)
+#define BSC_PLAY_SOUND_2(sound,baseBPM,volume,pitch) BSC_UNDEFINED(0xB2,baseBPM,((pitch)<<16)&((u16)(volume)),sound)
 
 // Command 0x35: Fade-In Music
 #define BSC_MUSIC_FADE_IN(duration,inBeats) BSC_UNDEFINED(0x35,inBeats,0,duration)
@@ -157,7 +156,7 @@
 #define BSC_MUSIC_FADE_OUT(duration,inBeats) BSC_UNDEFINED(0x36,inBeats,0,duration)
 
 // Command 0x38: Fade-Out Sound Effect
-#define BSC_MUSIC_FADE_OUT(sound,duration) BSC_UNDEFINED(0x38,0,sound,duration)
+#define BSC_SOUND_FADE_OUT(sound,duration) BSC_UNDEFINED(0x38,0,sound,duration)
 
 // Command 0x3C: Set Speed
 #define BSC_SET_SPEED(speed) BSC_UNDEFINED(0x3C,0,0,speed)
@@ -171,9 +170,104 @@
 // Command 0x3E: Set Music Pitch
 #define BSC_SET_MUSIC_PITCH_2(pitch) BSC_UNDEFINED(0x3E,0,0,pitch)
 
+// Command 0x4C: Gradually Change Tempo
+#define BSC_CHANGE_TEMPO(targetBPM,duration) BSC_UNDEFINED(0x4C,0,targetBPM,duration)
+
+// Command 0xAF: Gradually Multiply Speed
+#define BSC_MULTIPLY_SPEED(multiplier,duration) BSC_UNDEFINED(0xAF,0,multiplier,duration)
+
+// Command 0x4E: Gradually Change Music Pitch
+#define BSC_CHANGE_MUSIC_PITCH(targetPitch,duration) BSC_UNDEFINED(0x4E,0,targetPitch,duration)
+
+// Command 0x50: Gradually Change Music Volume
+#define BSC_CHANGE_VOLUME(targetVolume,duration) BSC_UNDEFINED(0x50,0,targetVolume,duration)
+
+// Command 0xAC: Set Music Track Volume
+#define BSC_SET_MUSIC_TRACK_VOLUME(volume,tracks) BSC_UNDEFINED(0xAC,tracks,volume,0)
+
+// Command 0xAD: Gradually Change Music Track Volume
+#define BSC_CHANGE_MUSIC_TRACK_VOLUME(targetVolume,duration,tracks) BSC_UNDEFINED(0xAD,tracks,targetVolume,duration)
+
 
 /*
  * GRAPHICS COMMANDS
  *
  * Commands related to modifying and displaying graphics.
 */
+
+// Command 0x47: Load Graphics Table
+#define BSC_LOAD_GRAPHICS_TABLE(ptr,arg) BSC_UNDEFINED(0x47,0,ptr,arg)
+
+// Command 0x3F: Modify BG Layer Display
+#define BSC_MODIFY_BG_LAYER(args,reverse,duration,inBeats) BSC_UNDEFINED(0x3F,reverse,args,((inBeats<<31)&(duration)))
+
+// Command 0x4A: Fade-In Palette From Solid Colour
+#define BSC_FADE_PALETTE_FROM_COLOUR(colour,reverse,duration) BSC_UNDEFINED(0x4A, reverse, duration, colour)
+
+
+/*
+ * COMMON FUNCTION CALLS
+ *
+ * Convenience macros for commonly-called functions.
+*/
+
+extern void func_0800bdf8();
+#define BSC3_SET_TEMPO(bpm) BSC_RUN_FUNC_1(func_0800bdf8,bpm)
+
+extern void func_0800c184();
+#define BSC3_SET_MUSIC_PITCH(pitch) BSC_RUN_FUNC_1(func_0800c184,pitch)
+
+extern void func_0800c0d8();
+#define BSC3_SET_MUSIC_VOLUME(volume) BSC_RUN_FUNC_1(func_0800c0d8,volume)
+
+extern void func_0801db04();
+#define BSC3_ENABLE_PAUSE_MENU(enable) BSC_RUN_FUNC_1(func_0801db04,enable)
+
+extern void func_080173c4();
+#define BSC3_ENABLE_PLAY_INPUTS(enable) BSC_RUN_FUNC_1(func_080173c4,enable)
+
+extern void func_08018660();
+#define BSC3_DISPLAY_TEXT(text) BSC_RUN_FUNC_1(func_08018660,text)
+
+
+
+extern void func_08019310();
+#define BSC3_SET_RESULTS_HEADER(text) BSC_RUN_FUNC_1(func_08019310,text)
+
+extern void func_08019304();
+#define BSC3_IMPORT_MARKING_CRITERIA(index) BSC_RUN_FUNC_1(func_08019304,index)
+
+extern void func_08019324();
+#define BSC3_ENABLE_INPUT_ASSESSMENT(enable) BSC_RUN_FUNC_1(func_08019324,enable)
+
+extern void func_08017908();
+#define BSC3_SET_CURRENT_MARKING_CRITERIA(id) BSC_RUN_FUNC_1(func_08017908,id)
+
+extern void func_080177dc();
+#define BSC3_FORGIVE_X_MISSES(x) BSC_RUN_FUNC_1(func_080177dc,x)
+
+
+
+extern void func_08017604();
+#define BSC3_START_PERFECT_CAMPAIGN BSC_RUN_FUNC_1(func_08017604,0)
+
+extern void func_08017648();
+#define BSC3_ENABLE_PERFECT_ASSESSMENT(enable) BSC_RUN_FUNC_1(func_08017648,enable)
+
+
+
+extern void func_08017188();
+#define BSC4_LOAD_GAME_ENGINE(engine,version) BSC_RUN_FUNC_1(func_08017188,version,engine)
+
+extern void func_08017380();
+extern s32 func_0801738c();
+#define BSC4_GAME_ENGINE_EVENT(engine,event,args) BSC_RUN_FUNC_1(func_08017380,args), BSC_RUN_FUNC_2(func_0801738c,event,engine)
+
+extern s32 func_08017348();
+#define BSC4_GAME_COMMON_EVENT(event,arg) BSC_RUN_FUNC_2(func_08017348,event,arg)
+#define BSC4_GAME_COMMON_BEAT_ANIMATION(arg) BSC4_GAME_COMMON_EVENT(0,arg)
+#define BSC4_GAME_COMMON_DISPLAY_TEXT(arg) BSC4_GAME_COMMON_EVENT(1,arg)
+#define BSC4_GAME_COMMON_INIT_TUTORIAL(scene) BSC4_GAME_COMMON_EVENT(2,scene)
+
+extern void func_080179f4();
+#define BSC3_SPAWN_CUE(id) BSC_RUN_FUNC_1(func_080179f4,id)
