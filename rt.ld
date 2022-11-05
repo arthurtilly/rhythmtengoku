@@ -171,7 +171,8 @@ SECTIONS {
 		
 		build/asm/boot.s.o(.rodata*);
         build/data/data_0804f338.c.o(.rodata*);
-        build/data/data_0804f338.s.o(.rodata*);
+        build/data/data_08050b38.c.o(.rodata*);
+        build/data/data_08050bcc.c.o(.rodata*);
         build/data/data_08052464.c.o(.rodata*);
         build/data/data_08054950.s.o(.rodata*);
         build/data/data_08058f58.s.o(.rodata*);
