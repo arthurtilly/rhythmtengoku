@@ -24,7 +24,7 @@ const struct CompressedGraphics *const spaceball_buffered_textures[] = {
 };
 
 
-// [D_089de940] Spaceball - Graphics Table
+// [D_089de940] Graphics Table
 const struct GraphicsTable spaceball_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bd5524,

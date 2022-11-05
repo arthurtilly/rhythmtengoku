@@ -170,6 +170,7 @@ SECTIONS {
         *libc.a:strlen.o(.text);
 		
 		build/asm/boot.s.o(.rodata*);
+        build/data/data_0804f338.c.o(.rodata*);
         build/data/data_0804f338.s.o(.rodata*);
         build/data/data_08052464.c.o(.rodata*);
         build/data/data_08054950.s.o(.rodata*);
@@ -1401,6 +1402,7 @@ SECTIONS {
         build/data/engines/sneaky_spirits_engine.c.o(.rodata*);
         build/data/engines/spaceball_engine.c.o(.rodata*);
         build/bin/bindata_089deb28.bin.o(.rodata*);
+        build/bin/bindata_089ea088.bin.o(.rodata*);
         build/audio/audio_data.c.o(.rodata*);
         build/bin/bindata_08a9e8e0.bin.o(.rodata*);
         build/bin/bindata_08aa06f8.bin.o(.rodata*);

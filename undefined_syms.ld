@@ -5430,6 +5430,8 @@ D_089def64 = 0x089def64;
 D_089def98 = 0x089def98;
 D_089defa8 = 0x089defa8;
 D_089deff0 = 0x089deff0;
+
+/* Game Engine - Karate Man */
 D_089df010 = 0x089df010;
 D_089df020 = 0x089df020;
 D_089df044 = 0x089df044;
