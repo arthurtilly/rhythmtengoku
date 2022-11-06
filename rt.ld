@@ -176,7 +176,9 @@ SECTIONS {
         build/data/data_08052464.c.o(.rodata*);
         build/data/data_08054950.c.o(.rodata*);
         build/data/data_08054f88.c.o(.rodata*);
-        build/data/data_08058f58.s.o(.rodata*);
+        build/data/data_08058f58.c.o(.rodata*);
+        build/data/data_08059668.c.o(.rodata*);
+        build/data/data_08059f90.c.o(.rodata*);
         build/data/fireworks_data.c.o(.rodata*);
         build/data/data_0805a5d0.s.o(.rodata*);
         
