@@ -8,7 +8,7 @@ extern const char D_0804f378[];
 extern const char D_0804f37c[];
 extern const char D_0804f380[];
 
-// Perfect Campaign
+// Rhythm Library
 extern const char D_0804f384[];
 extern const char D_0804f3a0[];
 extern const char D_0804f3dc[];

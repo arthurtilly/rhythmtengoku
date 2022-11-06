@@ -19,7 +19,7 @@ const char D_0804f37c[] = "ÅC";
 const char D_0804f380[] = "Å|";
 
 
-/* Perfect Campaign Certificate */
+/* Rhythm Library */
 
 
 // Notification from the Rhythm Reference Room
