@@ -2,10 +2,10 @@
 #include "data_08058f58.h"
 
 
-/* Studio - ? */
+/* Studio */
 
 
-// 0x34 is actually 4 but byte escape characters suck ass
+//
 const char D_08058f58[] = "\x04\x31" "4.";
 
 // Song Title - Perfect

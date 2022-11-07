@@ -180,6 +180,7 @@ SECTIONS {
         build/data/data_08059668.c.o(.rodata*);
         build/data/data_08059f90.c.o(.rodata*);
         build/data/fireworks_data.c.o(.rodata*);
+        build/data/data_0805a5d0.c.o(.rodata*);
         build/data/data_0805a5d0.s.o(.rodata*);
         
         build/audio/samples/sfx_001.pcm.o(.rodata*);

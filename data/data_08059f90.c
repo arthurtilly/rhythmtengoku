@@ -430,7 +430,8 @@ const struct GraphicsTable D_0805a370[] = {
 
 
 const char D_0805a3a0[] =
-    "今の演奏データですが、\nセーブしときますか？";
+    "今の演奏データですが、\n"
+    "セーブしときますか？";
 
 
 /* Showtime */
