@@ -38,6 +38,21 @@ struct SpaceballInfo {
     u8 spaceballType;
 };
 
+struct SpaceballCue {
+    u8 state;
+    struct AffineSprite *sprite;
+    u32 endTime;
+    s16 rotation;
+    s16 rotationSpeed;
+    s32 x;
+    s32 y;
+    s32 z;
+    u32 unk1C; // (90 * number of beats)
+    u32 xSpeed; // Used for 'Barely' arc only
+    u32 ySpeed; // Used for 'Barely' arc only
+    u8 missed;
+};
+
 
 // Engine Macros/Enums:
 enum SpaceballCueStatesEnum {

@@ -26,6 +26,20 @@ struct FireworksInfo {
     u8  patternDefault;     // Pattern ID to use if Pattern Mode is not within { 0..3 }
 };
 
+struct FireworksCue {
+    s16 sprite;     // Sprite
+    s32 x;          // X Position
+    s32 y;          // Y Position
+    s32 velX;       // X Velocity
+    s32 velY;       // Y Velocity
+    s32 targetX;    // Target X Position
+    s32 targetY;    // Target Y Position
+    u8  pattern;    // Pattern ID
+    u8  state;      // Current State (range varies between cues)
+    u8  type;       // Cue Type { 0..2 }
+    u8  exploded;   // Has Exploded
+};
+
 
 // Engine Macros/Enums:
 enum FireworksPatternsEnum {

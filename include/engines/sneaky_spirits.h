@@ -29,6 +29,20 @@ struct SneakySpiritsInfo {
     s16 tutorialGhost;  // Sprite:  Sneaky Spirit (Tutorial Example)
 };
 
+struct SneakySpiritsCue {
+    u32 null0;
+    u32 null4;
+    u32 null8;
+    u32 nullC;
+    u32 null10;
+    u32 null14;
+    u32 null18;
+    u32 null1C;
+    u32 null20;
+    u16 null24;
+    u8 disableTaunt;
+};
+
 
 // Engine Macros/Enums:
 enum SneakySpiritsVersionsEnum {

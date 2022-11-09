@@ -16,6 +16,10 @@ struct RapMenInfo {
     u8 unk14;
 };
 
+struct RapMenCue {
+    u32 anim;
+};
+
 
 // Engine Macros/Enums:
 enum RapMenAnimationsEnum {

@@ -39,6 +39,10 @@ struct BonOdoriInfo {
     u16 unk864;
 };
 
+struct BonOdoriCue {
+    u8 type;
+};
+
 
 // Engine Macros/Enums:
 enum BonOdoriAnimationsEnum {

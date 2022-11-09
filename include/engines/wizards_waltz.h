@@ -29,6 +29,12 @@ struct WizardsWaltzInfo {
     u8  isTutorial;
 };
 
+struct WizardsWaltzCue {
+    struct AffineSprite *sprite;
+    u16 null4;
+    s16 position;
+};
+
 
 // Engine Macros/Enums:
 #define WIZARDS_WALTZ_SPARKLE_STATE_HIDDEN 0

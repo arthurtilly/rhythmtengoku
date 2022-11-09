@@ -45,6 +45,25 @@ struct RhythmTweezersInfo {
     s16 maskVelocity;  // Value:   Mask Vertical Velocity (-8 = Down; 8 = Up)
 };
 
+struct RhythmTweezersCue {
+    u32 unk0_b0:5;
+    u32 isLongHair:4;
+    u32 finished:1;
+    struct AffineSprite *sprite;
+    u32 null8;
+    u32 nullC;
+    u32 null10;
+    u32 null14;
+    u32 null18;
+    u32 null1C;
+    u32 null20;
+    u32 null24;
+    s16 rotation;
+    u16 null2A;
+    u16 pullTime; // Current pulling time.
+    u16 pullTarget; // Target pulling time.
+};
+
 
 // Engine Macros/Enums:
 enum RhythmTweezersHeldHairsEnum {

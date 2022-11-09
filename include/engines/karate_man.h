@@ -36,6 +36,29 @@ struct KarateManInfo {
     u8 expression;  // Value:   Expression
 };
 
+struct KarateManCue {
+    u16 isHit:4;   // Flag:   Object Hit
+    u16 miss:1;    // Flag:   Missed
+    u16 object:4;  // Value:  Object
+    u16 unk2;      // Unused
+    s16 objects;   // Entity: Objects
+    s16 shadow;    // Entity: Object Shadow
+    s8 unk8;       // Value:  unk8 (Object Scale over time?)
+    s8 unk9;       // Value:  unk9 (Shadow Scale over time?)
+    s32 unkC;      // Value:  Object X Position
+    s32 unk10;     // Value:  Object Y Position
+    s32 unk14;     // Value:  Object Y Land Position
+    u32 unk18;     // Value:  Hit Object X Movement
+    u32 unk1C;     // Value:  Hit Object Y Movement
+    u32 unk20;     // Value:  unk20
+    u32 unk24;     // Value:  Object Gravity
+    u16 unk28;     // Value:  Object Distance?
+    s16 unk2A;     // Value:  Object Scale
+    u8 unk2C;      // Value:  Object Angle
+    u8 unk2D;      // Value:  Object Rotation
+    s16 unk2E;     // Value:  unk2E
+};
+
 
 // Engine Macros/Enums:
 

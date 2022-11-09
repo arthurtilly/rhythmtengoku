@@ -40,6 +40,9 @@ struct PolyrhythmInfo {
     s16 dPadArrowSprite;
 };
 
+struct PolyrhythmCue {
+};
+
 
 // Engine Macros/Enums:
 
