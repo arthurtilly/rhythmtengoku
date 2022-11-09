@@ -4,9 +4,9 @@
 #include "engines.h"
 
 
-struct BonOdoriInfo_sub {
+struct BonOdoriText {
     s16 unk0;
-    s16 unk2;
+    s16 sprite;
     u32 unk4;
     s16 unk8;
     u16 unkA;
@@ -14,29 +14,25 @@ struct BonOdoriInfo_sub {
 
 struct BonOdoriInfo {
     u8 version;
-    u8 pad1;
-    u8 unk2;
     struct TextObject1 *unk4;
-    struct BonOdoriInfo_sub unk8[4];
+    struct BonOdoriText unk8[4];
     u8 unk38;
     u16 unk3A;
     s16 unk3C;
     s16 yaguraSprite;
-    u16 unk40;
-    u8 unk42;
-    s16 unk44[4];
-    u16 unk4C[4];
-    u8 unk54;
-    u8 unk55;
-    u16* bgPalDark;
-    u16* objPalDark;
-    u16 bgPalDarkBuf[16][16];
-    u16 null260[16][16];
-    u16 objPalDarkBuf[16][16];
-    u16 null660[16][16];
-    u16 unk860;
-    u8 unk862;
-    u16 unk864;
+    u16 yaguraFrownTimer;
+    u8 yaguraNoticedMistake;
+    s16 donpanSprites[4];
+    u16 donpanAnimTimers[4];
+    u8 donpanEmoteTimer;
+    u8 donpanEmoteAnim;
+    const u16 *bgPalDark;
+    const u16 *objPalDark;
+    u16 bgPalDarkBuf[32][16];
+    u16 objPalDarkBuf[32][16];
+    u16 mistimedClaps;
+    u8 currentClapAnim;
+    u16 playerClapTimer;
 };
 
 struct BonOdoriCue {
@@ -46,51 +42,51 @@ struct BonOdoriCue {
 
 // Engine Macros/Enums:
 enum BonOdoriAnimationsEnum {
-    BON_ODORI_ANIM_00,
-    BON_ODORI_ANIM_01,
-    BON_ODORI_ANIM_02,
-    BON_ODORI_ANIM_03,
-    BON_ODORI_ANIM_04,
-    BON_ODORI_ANIM_05,
-    BON_ODORI_ANIM_06,
-    BON_ODORI_ANIM_07,
-    BON_ODORI_ANIM_08,
-    BON_ODORI_ANIM_09,
-    BON_ODORI_ANIM_10,
-    BON_ODORI_ANIM_11,
-    BON_ODORI_ANIM_12,
-    BON_ODORI_ANIM_13,
-    BON_ODORI_ANIM_14,
-    BON_ODORI_ANIM_15,
-    BON_ODORI_ANIM_16,
-    BON_ODORI_ANIM_17,
-    BON_ODORI_ANIM_18,
-    BON_ODORI_ANIM_19,
-    BON_ODORI_ANIM_20,
-    BON_ODORI_ANIM_21,
-    BON_ODORI_ANIM_22,
-    BON_ODORI_ANIM_23,
-    BON_ODORI_ANIM_24,
-    BON_ODORI_ANIM_25,
-    BON_ODORI_ANIM_26,
-    BON_ODORI_ANIM_27,
-    BON_ODORI_ANIM_28,
-    BON_ODORI_ANIM_29,
-    BON_ODORI_ANIM_30,
-    BON_ODORI_ANIM_31, // Yagura-chan - Beat
-    BON_ODORI_ANIM_32,
-    BON_ODORI_ANIM_33,
+    BON_ODORI_ANIM_DONPAN1_BEAT,
+    BON_ODORI_ANIM_DONPAN2_BEAT,
+    BON_ODORI_ANIM_DONPAN3_BEAT,
+    BON_ODORI_ANIM_PLAYER_BEAT,
+    BON_ODORI_ANIM_DONPAN1_CLAP_SIDE,
+    BON_ODORI_ANIM_DONPAN2_CLAP_SIDE,
+    BON_ODORI_ANIM_DONPAN3_CLAP_SIDE,
+    BON_ODORI_ANIM_PLAYER_CLAP_SIDE,
+    BON_ODORI_ANIM_DONPAN1_CLAP_FRONT,
+    BON_ODORI_ANIM_DONPAN2_CLAP_FRONT,
+    BON_ODORI_ANIM_DONPAN3_CLAP_FRONT,
+    BON_ODORI_ANIM_PLAYER_CLAP_FRONT,
+    BON_ODORI_ANIM_DONPAN1_BOW,
+    BON_ODORI_ANIM_DONPAN2_BOW,
+    BON_ODORI_ANIM_DONPAN3_BOW,
+    BON_ODORI_ANIM_PLAYER_BOW,
+    BON_ODORI_ANIM_DONPAN1_GLARE,
+    BON_ODORI_ANIM_DONPAN2_GLARE,
+    BON_ODORI_ANIM_DONPAN3_GLARE,
+    BON_ODORI_ANIM_DONPAN1_HAPPY,
+    BON_ODORI_ANIM_DONPAN2_HAPPY,
+    BON_ODORI_ANIM_DONPAN3_HAPPY,
+    BON_ODORI_ANIM_PLAYER_HAPPY,
+    BON_ODORI_ANIM_DONPAN1_VERY_HAPPY,
+    BON_ODORI_ANIM_DONPAN2_VERY_HAPPY,
+    BON_ODORI_ANIM_DONPAN3_VERY_HAPPY,
+    BON_ODORI_ANIM_PLAYER_VERY_HAPPY,
+    BON_ODORI_ANIM_DONPAN1_SPIN,
+    BON_ODORI_ANIM_DONPAN2_SPIN,
+    BON_ODORI_ANIM_DONPAN3_SPIN,
+    BON_ODORI_ANIM_PLAYER_SPIN,
+    BON_ODORI_ANIM_YAGURA_BEAT,
+    BON_ODORI_ANIM_YAGURA_SPEAK,
+    BON_ODORI_ANIM_YAGURA_FROWN,
 };
 
 enum BonOdoriDonpanAnimationsEnum {
-    BON_ODORI_DONPAN_ANIM_00,
-    BON_ODORI_DONPAN_ANIM_01,
-    BON_ODORI_DONPAN_ANIM_02,
-    BON_ODORI_DONPAN_ANIM_03,
-    BON_ODORI_DONPAN_ANIM_04,
-    BON_ODORI_DONPAN_ANIM_05,
-    BON_ODORI_DONPAN_ANIM_06,
-    BON_ODORI_DONPAN_ANIM_07
+    DONPAN_ANIM_BEAT,
+    DONPAN_ANIM_CLAP_FRONT,
+    DONPAN_ANIM_CLAP_SIDE,
+    DONPAN_ANIM_BOW,
+    DONPAN_ANIM_GLARE,
+    DONPAN_ANIM_HAPPY,
+    DONPAN_ANIM_VERY_HAPPY,
+    DONPAN_ANIM_SPIN
 };
 
 // OAM Animations:
@@ -104,34 +100,34 @@ extern const struct SequenceData s_HC_seqData;
 // Engine Data:
 
 // Engine Definition Data:
-extern const struct Animation **D_089dec38[34]; // Pointers to animation arrays, with each one consisting of two animations.
-extern u8 *D_089dece0[];   // Contains Donpan animation indexes. (Subarrays are the same animation but for different donpans)
-extern u16 D_089ded00[8];  // Seemingly numbers of ticks for animations.
-extern const struct CompressedGraphics *D_089ded10[]; // Buffered Textures List
-extern const struct GraphicsTable *D_089deec4[]; // Graphics Table
-extern u16 *D_089deecc[];  // Another index of pointers to palettes (more like sub-palettes).
-extern u16 *D_089deed4[];  // Index of pointers to palettes.
+extern const struct Animation *const *const D_089dec38[34]; // Pointers to animation arrays, with each one consisting of two animations.
+extern const u8 *const bon_odori_donpan_anim_id_table[];   // Contains Donpan animation indexes. (Subarrays are the same animation but for different donpans)
+extern const u16 bon_odori_anim_durations[8];  // Seemingly numbers of ticks for animations.
+extern const struct CompressedGraphics *const bon_odori_buffered_textures[]; // Buffered Textures List
+extern const struct GraphicsTable *const D_089deec4[]; // Graphics Table
+extern const u16 *const D_089deecc[];  // Another index of pointers to palettes (more like sub-palettes).
+extern const u16 *const D_089deed4[];  // Index of pointers to palettes.
 
 // Functions:
-extern const struct Animation *func_080206a0(u32);  // [func_080206a0] Get OBJ Animation
-extern void func_080206c0(void);
-extern const struct Animation *func_0802075c(u32, u32); // [func_0802075c] Get Donpan Animation
-extern void func_08020778(u32, u32);    // Potentially sets donpan animation?
+extern const struct Animation *bon_odori_get_anim(u32);  // [func_080206a0] Get OBJ Animation
+extern void func_080206c0(void); // [func_080206c0] Init. Donpans
+extern const struct Animation *bon_odori_get_donpan_anim(u32, u32); // [func_0802075c] Get Donpan Animation
+extern void func_08020778(u32, u32); // [func_08020778] Set Donpan Animation
 extern void func_080207d0(u32);     // [func_080207d0] ENGINE Func_0B - Set Animation (CPU Donpans)
 extern void func_080207ec(u32);     // [func_080207ec] ENGINE Func_0C - Set Animation (Player)
 extern void func_080207f8(u32);     // [func_080207f8] ENGINE Func_0D - Set Animation (All Donpans)
-extern void func_0802080c(u32);     // [func_0802080c] ENGINE Func_0E - ?
-extern void func_08020834(void);
+extern void func_0802080c(u32);     // [func_0802080c] ENGINE Func_0E - Set CPU Donpan Animation Timer
+extern void func_08020834(void);    // [func_08020834] Decrement Donpan Animation Timer
 extern void func_0802085c(void);    // [func_0802085c] GFX_INIT Func_02
 extern void func_08020880(void);    // [func_08020880] GFX_INIT Func_01
 extern void func_080208c0(void);    // [func_080208c0] GFX_INIT Func_00
 extern void func_080208ec(u32);     // [func_080208ec] MAIN - Init
 extern void func_08020a48(void);    // [func_08020a48] ENGINE Func_11 - STUB
-extern void func_08020a4c(u32, s32, u32);
+extern void func_08020a4c(const char *, s32, u32);
 extern void func_08020be4(u8);      // [func_08020be4] ENGINE Func_00 - ?
-extern void func_08020bf4(s32);     // [func_08020bf4] ENGINE Func_01 - Show Text (Middle)
-extern void func_08020c0c(s32);     // [func_08020c0c] ENGINE Func_02 - Show Text (Left)
-extern void func_08020c24(s32);     // [func_08020c24] ENGINE Func_03 - Show Text (Right)
+extern void func_08020bf4(const char *);     // [func_08020bf4] ENGINE Func_01 - Show Text (Middle)
+extern void func_08020c0c(const char *);     // [func_08020c0c] ENGINE Func_02 - Show Text (Left)
+extern void func_08020c24(const char *);     // [func_08020c24] ENGINE Func_03 - Show Text (Right)
 extern void func_08020c3c(s32);     // [func_08020c3c] ENGINE Func_04 - ?
 extern void func_08020c4c(u32);
 extern void func_08020c8c(u32);     // [func_08020c8c] ENGINE Func_05 - Highlight Text

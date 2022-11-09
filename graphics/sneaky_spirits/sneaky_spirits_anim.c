@@ -3,7 +3,7 @@
 
 #include "sneaky_spirits_anim_cells.inc.c"
 
-// [D_088a0ca0] <description>
+// [D_088a0ca0] Bow - Draw
 const struct Animation sneaky_spirits_anim00[] = {
     /* 000 */ { sneaky_spirits_cel001, 1 },
     /* 001 */ { sneaky_spirits_cel002, 2 },
@@ -13,7 +13,7 @@ const struct Animation sneaky_spirits_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a0cd0] <description>
+// [D_088a0cd0] Ghost - Hit
 const struct Animation sneaky_spirits_anim01[] = {
     /* 000 */ { sneaky_spirits_cel013, 3 },
     /* 001 */ { sneaky_spirits_cel014, 3 },
@@ -22,13 +22,13 @@ const struct Animation sneaky_spirits_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a0cf8] <description>
+// [D_088a0cf8] Wall
 const struct Animation sneaky_spirits_anim02[] = {
     /* 000 */ { sneaky_spirits_cel015, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088a0d08] <description>
+// [D_088a0d08] Door
 const struct Animation sneaky_spirits_anim03[] = {
     /* 000 */ { sneaky_spirits_cel020, 60 },
     /* 001 */ { sneaky_spirits_cel016, 1 },
@@ -38,7 +38,7 @@ const struct Animation sneaky_spirits_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a0d38] <description>
+// [D_088a0d38] Ghost - Walk (Unused)
 const struct Animation sneaky_spirits_anim04[] = {
     /* 000 */ { sneaky_spirits_cel021, 1 },
     /* 001 */ { sneaky_spirits_cel022, 1 },
@@ -51,7 +51,7 @@ const struct Animation sneaky_spirits_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a0d80] <description>
+// [D_088a0d80] Ghost - Taunt
 const struct Animation sneaky_spirits_anim05[] = {
     /* 000 */ { sneaky_spirits_cel000, 15 },
     /* 001 */ { sneaky_spirits_cel037, 3 },
@@ -69,7 +69,7 @@ const struct Animation sneaky_spirits_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a0df0] <description>
+// [D_088a0df0] Arrow - Miss
 const struct Animation sneaky_spirits_anim06[] = {
     /* 000 */ { sneaky_spirits_cel045, 1 },
     /* 001 */ { sneaky_spirits_cel043, 2 },
@@ -91,7 +91,7 @@ const struct Animation sneaky_spirits_anim06[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a0e80] <description>
+// [D_088a0e80] Ghost - Too Early
 const struct Animation sneaky_spirits_anim07[] = {
     /* 000 */ { sneaky_spirits_cel047, 2 },
     /* 001 */ { sneaky_spirits_cel048, 2 },
@@ -116,21 +116,21 @@ const struct Animation sneaky_spirits_anim07[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a0f28] <description>
+// [D_088a0f28] Tree
 const struct Animation sneaky_spirits_anim08[] = {
     /* 000 */ { sneaky_spirits_cel055, 6 },
     /* 001 */ { sneaky_spirits_cel006, 6 },
     /* End */ END_ANIMATION
 };
 
-// [D_088a0f40] <description>
+// [D_088a0f40] Raindrop Splash Test
 const struct Animation sneaky_spirits_anim09[] = {
     /* 000 */ { sneaky_spirits_cel057, 4 },
     /* 001 */ { sneaky_spirits_cel058, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088a0f58] <description>
+// [D_088a0f58] Ghost - Walk
 const struct Animation sneaky_spirits_anim10[] = {
     /* 000 */ { sneaky_spirits_cel030, 1 },
     /* 001 */ { sneaky_spirits_cel028, 1 },
@@ -146,7 +146,7 @@ const struct Animation sneaky_spirits_anim10[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a0fb8] <description>
+// [D_088a0fb8] Ghost - Dash
 const struct Animation sneaky_spirits_anim11[] = {
     /* 000 */ { sneaky_spirits_cel041, 1 },
     /* 001 */ { sneaky_spirits_cel042, 1 },
@@ -154,7 +154,7 @@ const struct Animation sneaky_spirits_anim11[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a0fd8] <description>
+// [D_088a0fd8] Rain Drop
 const struct Animation sneaky_spirits_anim12[] = {
     /* 000 */ { sneaky_spirits_cel060, 1 },
     /* 001 */ { sneaky_spirits_cel061, 1 },
@@ -163,13 +163,13 @@ const struct Animation sneaky_spirits_anim12[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1000] <description>
+// [D_088a1000] Rain Drop Splash
 const struct Animation sneaky_spirits_anim13[] = {
     /* 000 */ { sneaky_spirits_cel059, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088a1010] <description>
+// [D_088a1010] Rain Drop (Slow-Motion)
 const struct Animation sneaky_spirits_anim14[] = {
     /* 000 */ { sneaky_spirits_cel065, 4 },
     /* 001 */ { sneaky_spirits_cel066, 4 },
@@ -214,7 +214,7 @@ const struct Animation sneaky_spirits_anim14[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1158] <description>
+// [D_088a1158] Bow - Release
 const struct Animation sneaky_spirits_anim15[] = {
     /* 000 */ { sneaky_spirits_cel009, 1 },
     /* 001 */ { sneaky_spirits_cel011, 1 },
@@ -228,13 +228,13 @@ const struct Animation sneaky_spirits_anim15[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a11a8] <description>
+// [D_088a11a8] Wall
 const struct Animation sneaky_spirits_anim16[] = {
     /* 000 */ { sneaky_spirits_cel015, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088a11b8] <description>
+// [D_088a11b8] Ghost - Too Late
 const struct Animation sneaky_spirits_anim17[] = {
     /* 000 */ { sneaky_spirits_cel050, 2 },
     /* 001 */ { sneaky_spirits_cel051, 2 },
@@ -258,7 +258,7 @@ const struct Animation sneaky_spirits_anim17[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1258] <description>
+// [D_088a1258] Hit Effect
 const struct Animation sneaky_spirits_anim18[] = {
     /* 000 */ { sneaky_spirits_cel107, 1 },
     /* 001 */ { sneaky_spirits_cel108, 1 },
@@ -267,7 +267,7 @@ const struct Animation sneaky_spirits_anim18[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1280] <description>
+// [D_088a1280] Tutorial Ghost
 const struct Animation sneaky_spirits_anim19[] = {
     /* 000 */ { sneaky_spirits_cel039, 1 },
     /* 001 */ { sneaky_spirits_cel040, 100 },

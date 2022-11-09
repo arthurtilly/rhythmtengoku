@@ -3,7 +3,7 @@
 
 #include "spaceball_anim_cells.inc.c"
 
-// [D_088a1a70] <description>
+// [D_088a1a70] Batter Green - Close
 const struct Animation spaceball_anim00[] = {
     /* 000 */ { spaceball_cel001, 20 },
     /* 001 */ { spaceball_cel002, 3 },
@@ -13,7 +13,7 @@ const struct Animation spaceball_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1aa0] <description>
+// [D_088a1aa0] Batter Red - Close
 const struct Animation spaceball_anim01[] = {
     /* 000 */ { spaceball_cel009, 20 },
     /* 001 */ { spaceball_cel010, 3 },
@@ -23,7 +23,7 @@ const struct Animation spaceball_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1ad0] <description>
+// [D_088a1ad0] Pitcher
 const struct Animation spaceball_anim02[] = {
     /* 000 */ { spaceball_cel015, 20 },
     /* 001 */ { spaceball_cel016, 4 },
@@ -31,7 +31,7 @@ const struct Animation spaceball_anim02[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1af0] <description>
+// [D_088a1af0] Apple - Close
 const struct Animation spaceball_anim03[] = {
     /* 000 */ { spaceball_cel018, 20 },
     /* 001 */ { spaceball_cel019, 4 },
@@ -39,43 +39,43 @@ const struct Animation spaceball_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1b10] <description>
+// [D_088a1b10] Baseball - Close
 const struct Animation spaceball_anim04[] = {
     /* 000 */ { spaceball_cel006, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088a1b20] <description>
+// [D_088a1b20] Baseball - Far
 const struct Animation spaceball_anim05[] = {
     /* 000 */ { spaceball_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088a1b30] <description>
+// [D_088a1b30] Rice Ball - Close
 const struct Animation spaceball_anim06[] = {
     /* 000 */ { spaceball_cel008, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088a1b40] <description>
+// [D_088a1b40] Rice Ball - Far
 const struct Animation spaceball_anim07[] = {
     /* 000 */ { spaceball_cel020, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088a1b50] <description>
+// [D_088a1b50] Star
 const struct Animation spaceball_anim08[] = {
     /* 000 */ { spaceball_cel007, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088a1b60] <description>
+// [D_088a1b60] Apple - Close
 const struct Animation spaceball_anim09[] = {
     /* 000 */ { spaceball_cel022, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088a1b70] <description>
+// [D_088a1b70] Miss Poof
 const struct Animation spaceball_anim10[] = {
     /* 000 */ { spaceball_cel024, 4 },
     /* 001 */ { spaceball_cel025, 3 },
@@ -83,13 +83,13 @@ const struct Animation spaceball_anim10[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1b90] <description>
+// [D_088a1b90] BG Star
 const struct Animation spaceball_anim11[] = {
     /* 000 */ { spaceball_cel027, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088a1ba0] <description>
+// [D_088a1ba0] Umpire - Show
 const struct Animation spaceball_anim12[] = {
     /* 000 */ { spaceball_cel055, 4 },
     /* 001 */ { spaceball_cel060, 20 },
@@ -99,7 +99,7 @@ const struct Animation spaceball_anim12[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1bd0] <description>
+// [D_088a1bd0] Umpire - Idle
 const struct Animation spaceball_anim13[] = {
     /* 000 */ { spaceball_cel055, 4 },
     /* 001 */ { spaceball_cel054, 4 },
@@ -114,7 +114,7 @@ const struct Animation spaceball_anim13[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1c28] <description>
+// [D_088a1c28] Batter Pink - Close
 const struct Animation spaceball_anim14[] = {
     /* 000 */ { spaceball_cel030, 20 },
     /* 001 */ { spaceball_cel031, 3 },
@@ -124,7 +124,7 @@ const struct Animation spaceball_anim14[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1c58] <description>
+// [D_088a1c58] Flower Pot - Turn
 const struct Animation spaceball_anim15[] = {
     /* 000 */ { spaceball_cel035, 4 },
     /* 001 */ { spaceball_cel036, 4 },
@@ -133,7 +133,7 @@ const struct Animation spaceball_anim15[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1c80] <description>
+// [D_088a1c80] Flower Pot - Kiss Test
 const struct Animation spaceball_anim16[] = {
     /* 000 */ { spaceball_cel036, 4 },
     /* 001 */ { spaceball_cel037, 4 },
@@ -150,7 +150,7 @@ const struct Animation spaceball_anim16[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1ce8] <description>
+// [D_088a1ce8] Batter Green - Far
 const struct Animation spaceball_anim17[] = {
     /* 000 */ { spaceball_cel044, 20 },
     /* 001 */ { spaceball_cel044, 3 },
@@ -160,7 +160,7 @@ const struct Animation spaceball_anim17[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1d18] <description>
+// [D_088a1d18] Batter Red - Far
 const struct Animation spaceball_anim18[] = {
     /* 000 */ { spaceball_cel047, 20 },
     /* 001 */ { spaceball_cel047, 3 },
@@ -170,7 +170,7 @@ const struct Animation spaceball_anim18[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1d48] <description>
+// [D_088a1d48] Batter Pink - Far
 const struct Animation spaceball_anim19[] = {
     /* 000 */ { spaceball_cel050, 20 },
     /* 001 */ { spaceball_cel050, 3 },
@@ -180,7 +180,7 @@ const struct Animation spaceball_anim19[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1d78] <description>
+// [D_088a1d78] Flower Pot - Kiss 1
 const struct Animation spaceball_anim20[] = {
     /* 000 */ { spaceball_cel037, 4 },
     /* 001 */ { spaceball_cel038, 20 },
@@ -190,7 +190,7 @@ const struct Animation spaceball_anim20[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088a1da8] <description>
+// [D_088a1da8] Flower Pot - Kiss 2
 const struct Animation spaceball_anim21[] = {
     /* 000 */ { spaceball_cel041, 4 },
     /* 001 */ { spaceball_cel040, 4 },

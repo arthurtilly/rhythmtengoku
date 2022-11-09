@@ -3,13 +3,13 @@
 
 #include "karate_man_anim_cells.inc.c"
 
-// [D_088acc2c] <description>
+// [D_088acc2c] Test Joe
 const struct Animation karate_man_anim00[] = {
     /* 000 */ { karate_man_cel000, 24 },
     /* End */ END_ANIMATION
 };
 
-// [D_088acc3c] <description>
+// [D_088acc3c] Object { Pot, Rock, Soccer Ball, Bomb, Light Bulb }
 const struct Animation karate_man_anim01[] = {
     /* 000 */ { karate_man_cel035, 40 },
     /* 001 */ { karate_man_cel039, 40 },
@@ -19,20 +19,20 @@ const struct Animation karate_man_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088acc6c] <description>
+// [D_088acc6c] Object Shadow
 const struct Animation karate_man_anim02[] = {
     /* 000 */ { karate_man_cel040, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088acc7c] <description>
+// [D_088acc7c] Object Shards
 const struct Animation karate_man_anim03[] = {
     /* 000 */ { karate_man_cel041, 40 },
     /* 001 */ { karate_man_cel042, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_088acc94] <description>
+// [D_088acc94] Karate Joe - Punch (High Flow)
 const struct Animation karate_man_anim04[] = {
     /* 000 */ { karate_man_cel020, 1 },
     /* 001 */ { karate_man_cel019, 3 },
@@ -45,7 +45,7 @@ const struct Animation karate_man_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088accdc] <description>
+// [D_088accdc] Karate Joe - Beat
 const struct Animation karate_man_anim05[] = {
     /* 000 */ { karate_man_cel002, 3 },
     /* 001 */ { karate_man_cel001, 3 },
@@ -53,19 +53,19 @@ const struct Animation karate_man_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088accfc] <description>
+// [D_088accfc] Hit Effect
 const struct Animation karate_man_anim06[] = {
     /* 000 */ { karate_man_cel043, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088acd0c] <description>
+// [D_088acd0c] Karate Joe - Very Sad
 const struct Animation karate_man_anim07[] = {
     /* 000 */ { karate_man_cel027, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088acd1c] <description>
+// [D_088acd1c] Flow Gauge
 const struct Animation karate_man_anim08[] = {
     /* 000 */ { karate_man_cel044, 40 },
     /* 001 */ { karate_man_cel045, 40 },
@@ -76,7 +76,7 @@ const struct Animation karate_man_anim08[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088acd54] <description>
+// [D_088acd54] Karate Joe - Punch (Low Flow)
 const struct Animation karate_man_anim09[] = {
     /* 000 */ { karate_man_cel015, 4 },
     /* 001 */ { karate_man_cel016, 2 },
@@ -88,7 +88,7 @@ const struct Animation karate_man_anim09[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088acd94] <description>
+// [D_088acd94] Karate Joe - Barely
 const struct Animation karate_man_anim10[] = {
     /* 000 */ { karate_man_cel005, 3 },
     /* 001 */ { karate_man_cel004, 3 },
@@ -96,7 +96,7 @@ const struct Animation karate_man_anim10[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088acdb4] <description>
+// [D_088acdb4] Karate Joe - Miss
 const struct Animation karate_man_anim11[] = {
     /* 000 */ { karate_man_cel008, 3 },
     /* 001 */ { karate_man_cel007, 3 },
@@ -104,7 +104,7 @@ const struct Animation karate_man_anim11[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088acdd4] <description>
+// [D_088acdd4] Karate Joe - Smile
 const struct Animation karate_man_anim12[] = {
     /* 000 */ { karate_man_cel011, 3 },
     /* 001 */ { karate_man_cel010, 3 },
@@ -112,7 +112,7 @@ const struct Animation karate_man_anim12[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088acdf4] <description>
+// [D_088acdf4] Karate Joe - Happy
 const struct Animation karate_man_anim13[] = {
     /* 000 */ { karate_man_cel014, 3 },
     /* 001 */ { karate_man_cel013, 3 },
@@ -120,7 +120,7 @@ const struct Animation karate_man_anim13[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ace14] <description>
+// [D_088ace14] Karate Joe - Hurt Hand
 const struct Animation karate_man_anim14[] = {
     /* 000 */ { karate_man_cel024, 3 },
     /* 001 */ { karate_man_cel025, 2 },
@@ -138,7 +138,7 @@ const struct Animation karate_man_anim14[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ace84] <description>
+// [D_088ace84] Placeholder Flow Gauge
 const struct Animation karate_man_anim15[] = {
     /* 000 */ { karate_man_cel050, 4 },
     /* 001 */ { karate_man_cel051, 4 },
@@ -154,7 +154,7 @@ const struct Animation karate_man_anim15[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088acee4] <description>
+// [D_088acee4] Unused Light Bulbs
 const struct Animation karate_man_anim16[] = {
     /* 000 */ { karate_man_cel061, 4 },
     /* 001 */ { karate_man_cel062, 4 },
@@ -162,7 +162,7 @@ const struct Animation karate_man_anim16[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088acf04] <description>
+// [D_088acf04] Warning Text
 const struct Animation karate_man_anim17[] = {
     /* 000 */ { karate_man_cel065, 40 },
     /* 001 */ { karate_man_cel066, 40 },
@@ -171,20 +171,20 @@ const struct Animation karate_man_anim17[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088acf2c] <description>
+// [D_088acf2c] A Button Prompt
 const struct Animation karate_man_anim18[] = {
     /* 000 */ { karate_man_cel069, 10 },
     /* 001 */ { karate_man_cel068, 30 },
     /* End */ END_ANIMATION
 };
 
-// [D_088acf44] <description>
+// [D_088acf44] "Start to Skip" Text
 const struct Animation karate_man_anim19[] = {
     /* 000 */ { karate_man_cel070, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088acf54] <description>
+// [D_088acf54] Tutorial Counter
 const struct Animation karate_man_anim20[] = {
     /* 000 */ { karate_man_cel074, 40 },
     /* 001 */ { karate_man_cel071, 40 },
@@ -193,7 +193,7 @@ const struct Animation karate_man_anim20[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088acf7c] <description>
+// [D_088acf7c] Karate Joe - Smug (High Flow)
 const struct Animation karate_man_anim21[] = {
     /* 000 */ { karate_man_cel020, 1 },
     /* 001 */ { karate_man_cel019, 3 },
@@ -206,7 +206,7 @@ const struct Animation karate_man_anim21[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088acfc4] <description>
+// [D_088acfc4] Karate Joe - Smug (Low Flow)
 const struct Animation karate_man_anim22[] = {
     /* 000 */ { karate_man_cel031, 4 },
     /* 001 */ { karate_man_cel032, 2 },
