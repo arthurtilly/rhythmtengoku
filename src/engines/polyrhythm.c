@@ -5,7 +5,8 @@
 
 asm(".include \"include/gba.inc\""); // Temporary
 
-#define gPolyrhythmInfo D_030055d0->polyrhythm
+// For readability.
+#define gPolyrhythmInfo ((struct PolyrhythmInfo *)D_030055d0)
 
 
 /* POLYRHYTHM */
@@ -20,17 +21,17 @@ asm(".include \"include/gba.inc\""); // Temporary
 
 // Game Init.
 void func_08035d98(u32 ver) {
-    gPolyrhythmInfo.version = ver;
+    gPolyrhythmInfo->version = ver;
     func_08035d6c(); // Init. Graphics
     func_0800e0ec(); // Init. BG Layers
     func_0800e0a0(1, 1, 0, 0, 0, 29, 2); // Init. BG1
     func_08017338(A_BUTTON | DPAD_ALL, 0); // Init. Button Filters
     func_08035f7c(); // Populate World
     func_0803656c(); // Init. Rods
-    gPolyrhythmInfo.aButtonArrowSprite = func_0804d160(D_03005380, D_088f62fc, 0, 64, 64, 0x4800, 1, 0, 0x8000);
-    gPolyrhythmInfo.dPadArrowSprite = func_0804d160(D_03005380, D_088f631c, 0, 64, 64, 0x4800, 1, 0, 0x8000);
-    func_0804d7b4(D_03005380, gPolyrhythmInfo.aButtonArrowSprite, 0x1000000);
-    func_0804d7b4(D_03005380, gPolyrhythmInfo.dPadArrowSprite, 0x1000000);
+    gPolyrhythmInfo->aButtonArrowSprite = func_0804d160(D_03005380, D_088f62fc, 0, 64, 64, 0x4800, 1, 0, 0x8000);
+    gPolyrhythmInfo->dPadArrowSprite = func_0804d160(D_03005380, D_088f631c, 0, 64, 64, 0x4800, 1, 0, 0x8000);
+    func_0804d7b4(D_03005380, gPolyrhythmInfo->aButtonArrowSprite, 0x1000000);
+    func_0804d7b4(D_03005380, gPolyrhythmInfo->dPadArrowSprite, 0x1000000);
 }
 
 
@@ -85,7 +86,7 @@ void func_08035f7c(void) {
 
         func_0804d160(D_03005380, D_088f62e4, 1 - i, 122, 111, z - 1, 0, 0, 0);
 
-        block = gPolyrhythmInfo.lanes[i];
+        block = gPolyrhythmInfo->lanes[i];
         for (j = 0; j < 16; j++) {
             block->sprite = func_0804d160(D_03005380, D_088f61fc, 0, x, y, z, 0, 0, 0);
             block->unk0_b0 = 0;
@@ -95,7 +96,7 @@ void func_08035f7c(void) {
             z += 4;
             block++;
         }
-        gPolyrhythmInfo.unk104[i] = 0;
+        gPolyrhythmInfo->unk104[i] = 0;
     }
 }
 
@@ -137,7 +138,7 @@ s32 func_0803648c(u32 lane, s32 blockID) {
         return 0;
     }
 
-    block = &gPolyrhythmInfo.lanes[lane][blockID];
+    block = &gPolyrhythmInfo->lanes[lane][blockID];
     return D_089e5c08[block->unk0_b3];
 }
 
@@ -165,7 +166,7 @@ void func_0803656c(void) {
     struct PolyrhythmRod *rod;
     u32 i;
 
-    rod = gPolyrhythmInfo.rods;
+    rod = gPolyrhythmInfo->rods;
     for (i = 0; i < 8; i++) {
         rod->active = FALSE;
         rod->sprite = func_0804d160(D_03005380, D_088f6114, 0, 32, 96, 0, 1, 0, 0x8000);
@@ -267,7 +268,7 @@ void func_0803698c(void) {
     s32 x, y;
     u32 z;
 
-    rod = gPolyrhythmInfo.rods;
+    rod = gPolyrhythmInfo->rods;
 
     for (i = 0; i < 8; rod++, i++) {
         if (!rod->active) continue;
@@ -304,7 +305,7 @@ void func_08036aa4(u32 lane) {
     struct PolyrhythmRod *rod;
     u32 i;
 
-    rod = gPolyrhythmInfo.rods;
+    rod = gPolyrhythmInfo->rods;
     for (i = 0; i < 8; i++) {
         if (!rod->active) break;
         rod++;

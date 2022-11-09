@@ -3,6 +3,42 @@
 #include "global.h"
 #include "engines.h"
 
+
+struct SpaceballEntity {
+    struct AffineSprite *sprite;
+    s32 x;
+    s32 y;
+    s32 z;
+};
+
+struct SpaceballInfo {
+    u8 version;
+    s32 zoom;   // Value: Camera Position
+    struct SpaceballBatter {
+        struct AffineSprite *sprite;
+        s32 x;
+        s32 y;
+        s32 z;
+        u32 swingTimer;
+        const struct Animation *animClose;
+        const struct Animation *animFar;
+    } batter;
+    struct SpaceballEntity pitcher;
+    struct SpaceballEntity umpire;
+    struct SpaceballEntity poofR;   // Sprite used when a spaceball is missed (right)
+    struct SpaceballEntity poofL;   // Sprite used when a spaceball is missed (left)
+    u16 currentStar;    // Counter: Number of Existing BG Stars
+    s16 starSprite[24];
+    struct SpaceballStar {
+        s16 x;
+        s16 y;
+        s16 z;
+    } stars[24];
+    u8 totalMissed;
+    u8 spaceballType;
+};
+
+
 // Engine Macros/Enums:
 enum SpaceballCueStatesEnum {
     SPACEBALL_CUE_STATE_LAUNCH,

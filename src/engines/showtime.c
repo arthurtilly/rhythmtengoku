@@ -9,7 +9,8 @@ asm(".include \"include/gba.inc\""); // Temporary
 #include "src/riq_gameplay.h"
 #include "src/lib_0804c870.h"
 
-#define gShowtimeInfo D_030055d0->showtime
+// For readability.
+#define gShowtimeInfo ((struct ShowtimeInfo *)D_030055d0)
 
 void func_0802bbfc(void) {
     func_0800c604(0);
@@ -18,7 +19,7 @@ void func_0802bbfc(void) {
 
 void func_0802bc0c(void) {
     func_0800c604(0);
-    task_run_after(func_08002ee0(func_0800c3b8(), D_089e3910[gShowtimeInfo.unk6], 0x2000), func_0802bbfc, 0);
+    task_run_after(func_08002ee0(func_0800c3b8(), D_089e3910[gShowtimeInfo->unk6], 0x2000), func_0802bbfc, 0);
 }
 
 void func_0802bc4c(void) {
@@ -28,25 +29,25 @@ void func_0802bc4c(void) {
 
 void func_0802bc78(u8 arg0) {
     struct Animation* textAnim;
-    gShowtimeInfo.unk6 = arg0;
+    gShowtimeInfo->unk6 = arg0;
     func_0802bc4c();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 0x1d, 2);
     func_0800e0a0(2, 1, 0, 0, 0, 0x1e, 0);
     func_0802d96c();
-    gShowtimeInfo.unk0 = func_0800c660(0x340, 2);
-    textAnim = func_08004b98(gShowtimeInfo.unk0, D_0805a3cc, 0, 0);
-    gShowtimeInfo.unk4 = func_0804d160(D_03005380, textAnim, 0, 120, 56, 0, 0, 0, 0);
+    gShowtimeInfo->unk0 = func_0800c660(0x340, 2);
+    textAnim = func_08004b98(gShowtimeInfo->unk0, D_0805a3cc, 0, 0);
+    gShowtimeInfo->unk4 = func_0804d160(D_03005380, textAnim, 0, 120, 56, 0, 0, 0, 0);
     func_08017338(A_BUTTON, 0);
     func_0802c23c();    
     func_0802d104();
     func_0802c40c();
     func_0802d394();
     func_0802da84();
-    gShowtimeInfo.unk3C0 = 0;
-    gShowtimeInfo.unk3C8 = 0;
-    gShowtimeInfo.unk3CC = 0;
-    gShowtimeInfo.unk3D0 = 0;
+    gShowtimeInfo->unk3C0 = 0;
+    gShowtimeInfo->unk3C8 = 0;
+    gShowtimeInfo->unk3CC = 0;
+    gShowtimeInfo->unk3D0 = 0;
 }
 
 void func_0802bd40() {
@@ -132,7 +133,7 @@ void func_0802bf58(u32 unused_arg0, u32* arg1) { //arg1 is probably a struct
     func_0802cf8c(arg1[1]);
     func_0802d81c(arg1[1]);
     func_0802d2bc();
-    gShowtimeInfo.unk3C0 = func_0800c3a4(20);
+    gShowtimeInfo->unk3C0 = func_0800c3a4(20);
 }
 
 #include "asm/engines/showtime/asm_0802bf88.s"
@@ -140,10 +141,10 @@ void func_0802bf58(u32 unused_arg0, u32* arg1) { //arg1 is probably a struct
 #include "asm/engines/showtime/asm_0802c078.s"
 
 void func_0802c084() {
-    if (gShowtimeInfo.unk3C0 == 0) {
+    if (gShowtimeInfo->unk3C0 == 0) {
         func_0802d918(-1);
         func_0802d2bc();
-        gShowtimeInfo.unk3C0 = func_0800c3a4(30);
+        gShowtimeInfo->unk3C0 = func_0800c3a4(30);
         func_08002634(&s_block_hit_seqData);
     }
 }
@@ -155,11 +156,11 @@ void func_0802c084() {
 #include "asm/engines/showtime/asm_0802c1cc.s"
 
 void func_0802c1f0(u32 unused_arg0, u16 arg1, u32 arg2) {
-    switch (gShowtimeInfo.unk8[arg2].unk4) {
+    switch (gShowtimeInfo->unk8[arg2].unk4) {
         case 0:
             break;
         case 1:
-            gShowtimeInfo.unk8[arg2].unk4 = 0;
+            gShowtimeInfo->unk8[arg2].unk4 = 0;
         func_0804cebc(D_03005380, arg1, 3);
         func_0804dcb8(D_03005380, arg1, 0);
     }
@@ -168,35 +169,35 @@ void func_0802c1f0(u32 unused_arg0, u16 arg1, u32 arg2) {
 void func_0802c23c() {
     s32 i;
     for (i = 0; i < 2; i++) {
-        u8 temp = gShowtimeInfo.unk6;
-        gShowtimeInfo.unk8[i].unk4 = 0;
-        if (gShowtimeInfo.unk6 != 1) {
-            gShowtimeInfo.unk8[i].unk0 = func_0804d160(D_03005380, D_088cb4a4, 0, 0x40, 0x40, 0x4800, 1, 0, 4);
+        u8 temp = gShowtimeInfo->unk6;
+        gShowtimeInfo->unk8[i].unk4 = 0;
+        if (gShowtimeInfo->unk6 != 1) {
+            gShowtimeInfo->unk8[i].unk0 = func_0804d160(D_03005380, D_088cb4a4, 0, 0x40, 0x40, 0x4800, 1, 0, 4);
         } else {
-            gShowtimeInfo.unk8[i].unk0 = func_0804d160(D_03005380, D_088cb994, 0, 0x40, 0x40, 0x4800, 1, 0, 4);
+            gShowtimeInfo->unk8[i].unk0 = func_0804d160(D_03005380, D_088cb994, 0, 0x40, 0x40, 0x4800, 1, 0, 4);
         }
-        gShowtimeInfo.unk8[i].unk8 = 0;
-        func_0804daa8(D_03005380, gShowtimeInfo.unk8[i].unk0, &func_0802c1f0, i);
-        func_0804cebc(D_03005380, gShowtimeInfo.unk8[i].unk0, 3);
-        func_0804dcb8(D_03005380, gShowtimeInfo.unk8[i].unk0, 0);
+        gShowtimeInfo->unk8[i].unk8 = 0;
+        func_0804daa8(D_03005380, gShowtimeInfo->unk8[i].unk0, &func_0802c1f0, i);
+        func_0804cebc(D_03005380, gShowtimeInfo->unk8[i].unk0, 3);
+        func_0804dcb8(D_03005380, gShowtimeInfo->unk8[i].unk0, 0);
     }
-    func_0804d5d4(D_03005380, gShowtimeInfo.unk8[0].unk0, 0xc8, 0x80);
-    func_0804d5d4(D_03005380, gShowtimeInfo.unk8[1].unk0, 0xb8, 0x90);
+    func_0804d5d4(D_03005380, gShowtimeInfo->unk8[0].unk0, 0xc8, 0x80);
+    func_0804d5d4(D_03005380, gShowtimeInfo->unk8[1].unk0, 0xb8, 0x90);
 }
 
 void func_0802c334() {
     s32 i;
     for (i = 0; i < 2; i++) {
-        if (gShowtimeInfo.unk8[i].unk4 == 0) continue;
-        if (gShowtimeInfo.unk8[i].unk4 != 1) continue;
-        gShowtimeInfo.unk8[i].unk8 += 1;
+        if (gShowtimeInfo->unk8[i].unk4 == 0) continue;
+        if (gShowtimeInfo->unk8[i].unk4 != 1) continue;
+        gShowtimeInfo->unk8[i].unk8 += 1;
     }
 }
 
 #include "asm/engines/showtime/asm_0802c36c.s"
 
 u32 func_0802c3d0(u32 arg0) {
-    switch (gShowtimeInfo.unk8[arg0].unk8 / 4) {
+    switch (gShowtimeInfo->unk8[arg0].unk8 / 4) {
         case 1:
             return 3;
         case 0:
@@ -227,8 +228,8 @@ u32 func_0802c3d0(u32 arg0) {
 #include "asm/engines/showtime/asm_0802cf8c.s"
 
 void func_0802cfa4(u32 arg0) {
-    gShowtimeInfo.unk24[arg0].unk18 = 0;
-    gShowtimeInfo.unk24[arg0].unk20 = 1;
+    gShowtimeInfo->unk24[arg0].unk18 = 0;
+    gShowtimeInfo->unk24[arg0].unk20 = 1;
 }
 
 #include "asm/engines/showtime/asm_0802cfc8.s"
@@ -236,21 +237,21 @@ void func_0802cfa4(u32 arg0) {
 #include "asm/engines/showtime/asm_0802cfe0.s"
 
 u32 func_0802d068(u32 arg0) {
-    return gShowtimeInfo.unk24[arg0].unk8;
+    return gShowtimeInfo->unk24[arg0].unk8;
 }
 
 u32 func_0802d080(u32 arg0) {
-    if (gShowtimeInfo.unk24[arg0].unk0 == 8) {
-        return gShowtimeInfo.unk24[arg0].unkC + 0xd;
+    if (gShowtimeInfo->unk24[arg0].unk0 == 8) {
+        return gShowtimeInfo->unk24[arg0].unkC + 0xd;
     } else {
-        return gShowtimeInfo.unk24[arg0].unkC;
+        return gShowtimeInfo->unk24[arg0].unkC;
     }
 }
 
 void func_0802d0b8() {
-    if (gShowtimeInfo.unk168 != 0) {
-        if (gShowtimeInfo.unk168 == 2) {
-            gShowtimeInfo.unk168 = 0;
+    if (gShowtimeInfo->unk168 != 0) {
+        if (gShowtimeInfo->unk168 == 2) {
+            gShowtimeInfo->unk168 = 0;
             }
     }
 }
@@ -280,11 +281,11 @@ void func_0802d38c(void) {
 void func_0802d8bc(u32 arg0) {
     int i;
     for (i = 0; i < 8; i++) {
-        if (gShowtimeInfo.unk174[i].unk4 == 0) {
-            gShowtimeInfo.unk174[i].unk4 = 4;
-            gShowtimeInfo.unk174[i].unkC = arg0;
-            gShowtimeInfo.unk174[i].unk8 = 0;
-            func_0804d770(D_03005380, gShowtimeInfo.unk174[i].unk0, 1);
+        if (gShowtimeInfo->unk174[i].unk4 == 0) {
+            gShowtimeInfo->unk174[i].unk4 = 4;
+            gShowtimeInfo->unk174[i].unkC = arg0;
+            gShowtimeInfo->unk174[i].unk8 = 0;
+            func_0804d770(D_03005380, gShowtimeInfo->unk174[i].unk0, 1);
             return;
         }
     }

@@ -3,6 +3,49 @@
 #include "global.h"
 #include "engines.h"
 
+
+struct RhythmTweezersInfo {
+    u8 version; // Value:   Version { 0..2 = Rhythm Tweezers; 3..5 = Rhythm Tweezers 2 }
+    struct RhythmTweezersTweezers {
+        struct AffineSprite *sprite; // Sprite: Tweezers
+        u8  isMoving;   // Flag:    Active
+        u8  heldHair;   // State:   Holding { 0 = None; 1 = Full Hair; 2 = Half Hair }
+        s16 rotation;   // Value:   0x800 = 360 degrees
+        u32 cycleTime;  // Counter: Cycle Position
+        u32 cycleTarget;    // Value:   Cycle Target
+        u8  isPulling;  // Flag:    Pulling (assigned but never used)
+    } tweezers;
+    u32 hairCycleTime;  // Counter: Hair Placement Cycle Position
+    u32 hairCycleTarget;    // Value:   Hair Placement Cycle Target
+    u8  fallingHairsNext;  // Counter: Next Available Falling Hair {0..4}
+    struct RhythmTweezersFallingHair {
+        struct AffineSprite *sprite; // Sprite: Falling Hair
+        s32 fallDistance;   // Counter:   Vertical Position
+        u32 fallSpeed;      // Value: Vertical Velocity
+        s16 rotation;       // Value:   Rotation
+        u16 rotationSpeed;  // Value:   Randomised Rotation Speed ( func_08001980(0x1f) - 0xf )
+    } fallingHairs[5];
+    struct RhythmTweezersVegetable {
+        s16 spriteCurrent;  // Sprite:  Current Vegetable Face
+        s16 spriteNext;     // Sprite:  Upcoming Vegetable Face
+        u8  typeCurrent;    // State:   Current Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
+        u8  typeNext;       // State:   Upcoming Vegetable Type { 0 = Onion; 1 = Turnip; 2 = Potato }
+        u8  isScrolling;    // Flag:    Screen Scrolling
+        u32 scrollTime;     // Counter: Screen Scroll Time
+        u32 scrollTarget;   // Value:   Screen Scroll Target
+        u8  bgMapSide;      // Flag:    Destination Vegetable BG Map { 0 = D_0600f800 (Right); -1 = D_0600f000 (Left) }
+    } vegetable;
+    struct {
+        u16 full; // Queued/Missed
+        u16 half; // Barely'd
+    } existingHairs;
+    s16 tutorialSprite; // Sprite:  Tutorial Text (Unused)
+    s16 screenHorizontalPosition; // Value:   Global Horizontal Position (for vegetable faces and hair)
+    s16 maskPosition;  // Value:   Mask Vertical Position (-160 = Hidden; 0 = Fully Visible)
+    s16 maskVelocity;  // Value:   Mask Vertical Velocity (-8 = Down; 8 = Up)
+};
+
+
 // Engine Macros/Enums:
 enum RhythmTweezersHeldHairsEnum {
     TWEEZERS_HELD_HAIR_NONE,

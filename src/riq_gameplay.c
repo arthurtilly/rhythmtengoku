@@ -228,7 +228,7 @@ void func_08017168(Palette buffer) {
 
 
 // [func_0801732c] Get Current Game Engine Info
-union GameEngineInfo *func_0801732c(void) {
+void *func_0801732c(void) {
     return gGameplayInfo.gameEngineInfo;
 }
 

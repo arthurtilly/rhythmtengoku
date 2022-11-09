@@ -3,6 +3,44 @@
 #include "global.h"
 #include "engines.h"
 
+
+struct PolyrhythmInfo {
+    u8 version;
+    struct PolyrhythmBlock {
+        u32 unk0_b0:3;
+        u32 unk0_b3:3;
+        u32 unk0_b6:26;
+        s16 sprite;
+    } lanes[2][16];
+    u8 unk104[2];
+    struct PolyrhythmRod {
+        u32 active:1;
+        u32 unk0_b1:3;
+        u32 unk0_b4:3;
+        u32 lane:1;
+        u32 stopped:1;
+        u32 unk1_b1:7;
+        u16 unk2;
+        s16 sprite;
+        s32 x;
+        s32 y;
+        s32 yOffset;
+        s32 horizontal;
+        u32 unk18;
+        u32 unk1C;
+        u32 unk20;
+        u32 unk24;
+        s32 unk28;
+        s32 unk2C;
+        s32 runningTime;
+        s32 maxDuration;
+        u16 timeUntilExplosion;
+    } rods[8];
+    s16 aButtonArrowSprite;
+    s16 dPadArrowSprite;
+};
+
+
 // Engine Macros/Enums:
 
 // OAM Animations:

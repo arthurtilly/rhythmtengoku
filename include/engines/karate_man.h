@@ -4,6 +4,39 @@
 #include "engines.h"
 #include "src/main.h"
 
+
+struct KarateManJoe {
+	u16 isNotBeat:4; // Value:  Beat Animation Flag (1 when not in Beat Animation)
+    u16 unk2;        // Unused
+    s16 joe;         // Entity:  Joe
+    u16 barely;      // Counter: Barely Animation
+    u16 miss;        // Counter: Miss Animation
+    u16 smirk;       // Counter: Smirk Animation
+    u16 happy;       // Counter: Happy Animation
+};
+
+struct KarateManInfo {
+    u8 version;     // 0 = Karate Man; 1 = Karate Man (BG Faces); 2 = Karate Man ("Serious Mode"); 3 = Karate Man 2
+	struct KarateManJoe joe;
+    s16 flowBar;    // Entity:  Flow Bar
+    u8 flow;        // Value:   Flow
+    u8 flowBarFlag; // Value:   Flow Bar Flag
+    u8 bg;          // Value:   BG Byte
+    u8 *bgPalIndex; // Pointer: BG Palette Index Table
+    s16 cueText;    // Entity:  Cue Text
+    u32 unk24;      // Value:   unk24
+    s16 tutorialButton;    // Entity: Tutorial Button
+    u8 tutorialButtonFlag; // Value:  Tutorial Button Flag
+    s16 tutorialSkip;      // Entity:  Tutorial Skip
+    s16 tutorialText;      // Entity:  Tutorial Text
+    u16 tutorialObjects;   // Value:   Tutorial Objects Counter
+    u16 bgFace;     // Counter: BG Face Time on BG
+    u8 serious;     // Value:   "Serious Mode" Flag
+    u8 seriousStop; // Value:   "Serious Mode" End Flag
+    u8 expression;  // Value:   Expression
+};
+
+
 // Engine Macros/Enums:
 
 // OAM Animations:

@@ -3,6 +3,33 @@
 #include "global.h"
 #include "engines.h"
 
+
+struct WizardsWaltzEntity {
+    struct AffineSprite *sprite;
+    u8  state;
+    s32 rotation;
+    s32 x;
+    s32 y;
+    s32 z;
+    u32 time;
+    u32 null1C;
+};
+
+struct WizardsWaltzInfo {
+    u8 version;
+    struct WizardsWaltzEntity wizard;
+    struct WizardsWaltzEntity shadow;
+    struct WizardsWaltzEntity sparkle[10];
+    struct WizardsWaltzEntity girl;
+    s32 cyclePosition;  // Current point in cycle
+    s32 cycleInterval;  // Duration of one cycle
+    s32 globalScale;    //
+    u8  currentSparkle; // Sparkle to operate on
+    u8  flowerCount;
+    u8  isTutorial;
+};
+
+
 // Engine Macros/Enums:
 #define WIZARDS_WALTZ_SPARKLE_STATE_HIDDEN 0
 #define WIZARDS_WALTZ_SPARKLE_STATE_QUEUED 1

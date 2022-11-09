@@ -3,6 +3,20 @@
 #include "global.h"
 #include "engines.h"
 
+
+struct RapMenInfo {
+    u8 unk0;
+    struct TextObject1 *unk4;
+    s16 unk8;
+    s16 unkA;
+    s16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
+    u8 unk14;
+};
+
+
 // Engine Macros/Enums:
 enum RapMenAnimationsEnum {
     RAP_MEN_ANIM_00,

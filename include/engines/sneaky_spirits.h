@@ -3,6 +3,33 @@
 #include "global.h"
 #include "engines.h"
 
+
+struct SneakySpiritsInfo {
+    struct TextObject1 *unk0;  // Pointer: Font? (Related to Tutorial Text)
+    u8  version;        // Value:   Version
+    u8  rainSlow;       // Flag:    Slow-Motion Rain
+    s16 rainDrops[30];      // Sprite:  Raindrops
+    u16 rainDropNext;       // Counter: Next Raindrop to Update
+    s16 rainSplashes[20];   // Sprite:  Rain Splashes
+    u16 rainSplashNext;     // Counter: Next Rain Splash to Update
+    s16 tree;           // Sprite:  Tree
+    s16 bow;            // Sprite:  Bow
+    u8  arrowReady;     // Flag:    Bow Has Arrow
+    s16 door;           // Sprite:  Door
+    s16 backWall;       // Sprite:  Back Wall
+    s16 ghostWalk;      // Sprite:  Sneaky Spirit (Moving)
+    u16 maxSteps;       // Const:   7 (total number of horizontal positions the ghost can appear)
+    s16 ghostMask;      // Sprite:  Wall Mask (used to hide the Sneaky Spirit when moving low)
+    s16 ghostHit;       // Sprite:  Sneaky Spirit (Hit)
+    u16 ghostHeight;    // Value:   Sneaky Spirit Height of Next Motion { Default = 0x100 }
+    struct SoundPlayer *rainChannel; // Pointer: Audio Channel Playing Wind/Rain SFX
+    s16 text;           // Sprite:  Tutorial Text
+    u8  slowMotionHit;  // Flag:    Slow-Motion Effect On Hit
+    u8  freezeRain;     // Flag:    Freeze Slow-Motion Rain
+    s16 tutorialGhost;  // Sprite:  Sneaky Spirit (Tutorial Example)
+};
+
+
 // Engine Macros/Enums:
 enum SneakySpiritsVersionsEnum {
     SNEAKY_SPIRITS_VERSION_1,

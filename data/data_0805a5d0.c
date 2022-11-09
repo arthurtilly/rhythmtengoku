@@ -50,24 +50,19 @@ const char D_0805a670[] = "";
 /* Mr. Upbeat */
 
 
-const char D_0805a674[] =
-    "しんきろく！";
+const char D_0805a674[] = "しんきろく！";
 
-const char D_0805a684[] =
-    "おつかれさま";
+const char D_0805a684[] = "おつかれさま";
 
 
 /* Metronome */
 
 
-const char D_0805a694[] =
-    "音にあわせて、　Ａボタンを押しましょう。";
+const char D_0805a694[] = "音にあわせて、　Ａボタンを押しましょう。";
 
-const char D_0805a6c0[] =
-    "計測中";
+const char D_0805a6c0[] = "計測中";
 
-const char D_0805a6c8[] =
-    "計測おわり！ さて、 結果は…";
+const char D_0805a6c8[] = "計測おわり！ さて、 結果は…";
 
 
 /* LIVE Menu */
@@ -103,51 +98,41 @@ const char D_0805a830[] =
 /* Bunny Hop */
 
 
-const char D_0805a8ac[] =
-    "";
+const char D_0805a8ac[] = "";
 
 
 /* Rap Men */
 
 
-const char D_0805a8b0[] =
-    "";
+const char D_0805a8b0[] = "";
 
 
 /* Rat Race */
 
 
-const char D_0805a8b4[] =
-    "";
+const char D_0805a8b4[] = "";
 
 
 /* Space Dance */
 
 
-const char D_0805a8b8[] =
-    "";
+const char D_0805a8b8[] = "";
 
 
 /* Tap Trial */
 
 
-const char D_0805a8bc[] =
-    "";
+const char D_0805a8bc[] = "";
 
-const char D_0805a8c0[] =
-    "ホレたー！！";
+const char D_0805a8c0[] = "ホレたー！！";
 
-const char D_0805a8d0[] =
-    "イカスッす！！";
+const char D_0805a8d0[] = "イカスッす！！";
 
-const char D_0805a8e0[] =
-    "テクニシャン！";
+const char D_0805a8e0[] = "テクニシャン！";
 
-const char D_0805a8f0[] =
-    "カッコイイ！！";
+const char D_0805a8f0[] = "カッコイイ！！";
 
-const char D_0805a900[] =
-    "うまいっス！！";
+const char D_0805a900[] = "うまいっス！！";
 
 
 /* Tram & Pauline */

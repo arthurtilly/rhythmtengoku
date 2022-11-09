@@ -4,6 +4,14 @@
 #include "engines.h"
 
 
+struct PrologueInfo {
+    u8  ver;        // Value:  Version
+    s16 sprite2;    // Sprite: Object 0
+    s16 sprite4;    // Sprite: Object 1
+    s16 sprite6;    // Sprite: Object 2
+};
+
+
   // // //  PROLOGUE: SNEAKY SPIRITS  // // //
 
 

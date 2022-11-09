@@ -15,8 +15,8 @@
 // extern ? func_0800bcc4(?);
 // extern ? func_0800bce4(?); // also related to loops
 // extern ? func_0800bcf4(?);
-extern void func_0800bd04(u32);
-// extern ? func_0800bd1c(?);
+extern void func_0800bd04(u32); // Pause BeatScript Handler
+// extern ? func_0800bd1c(?); // Check if BeatScript Handler Is Paused
 // extern ? func_0800bd2c(?); // BeatScript Stop?
 extern void func_0800bdf8(u16 tempo); // Set Script Tempo
 extern void func_0800be64(void); // Update Script Tempo (retain unk1_b7)
@@ -24,7 +24,7 @@ extern void func_0800be88(u16 speed); // Set Script Speed (Q8.8)
 // extern ? func_0800be9c(?);
 // extern ? func_0800bea0(?);
 // extern ? func_0800bebc(?);
-extern u32  func_0800bed0(const struct SequenceData *, u32 override, s32 soundPlayer);
+extern u32  func_0800bed0(const struct SequenceData *, u32 override, s32 soundPlayer); // Play Music
 extern void func_0800bf7c(const struct SequenceData *); // Play Music (Override)
 extern void func_0800bf8c(const struct SequenceData *); // Play Music (No Override)
 extern void func_0800bf9c(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (Override)

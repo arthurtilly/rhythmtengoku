@@ -158,7 +158,7 @@ struct GameplaySceneInfo {
 	u16 buttonReleaseFilter;
 	s16 unkE;
 	const struct GameEngine *gameEngine; // Game Engine Pointer
-	union GameEngineInfo *gameEngineInfo; // Same value as D_030055d0
+	void *gameEngineInfo; // Same value as D_030055d0
 	struct Cue *cues; // Linked List (most recent element)
 	const struct CueDefinition *cueDefinitions[12]; // Cue Definitions (copied from Game Engine)
 	EngineEvent commonFunctions[3]; // Engine "Common" Functions

@@ -3,6 +3,30 @@
 #include "global.h"
 #include "engines.h"
 
+
+struct FireworksInfo {
+    u8  version;        // Version Number
+    struct TextObject1 *unk4;  // Font?
+    s16 textSprite;     // Tutorial Text (Sprite)
+    struct FireworksParticle {
+        s16 sprite;     // Sprite
+        u8  active;     // Currently in-use.
+        s32 x;          // X Position
+        s32 y;          // Y Position
+        s32 velX;       // X Velocity
+        s32 velY;       // Y Velocity
+        u8  initAngle;  // Trajectory Angle
+        s32 initVel;    // Trajectory Velocity
+        u8  colour;     // Colour ID { 0..3 }
+    } particles[72];        // Firework Particle Entities
+    s16 skipTutorialSprite; // Unused "Start to Skip" Text (Sprite)
+    u8  unk90E;             // ??
+    u8  patternTableNext;   // Current Position in Fireworks 1 Pattern Table
+    u8  patternMode;        // Pattern-Handling Mode { 0..3 }
+    u8  patternDefault;     // Pattern ID to use if Pattern Mode is not within { 0..3 }
+};
+
+
 // Engine Macros/Enums:
 enum FireworksPatternsEnum {
     FIREWORKS_PATTERN_L3,           // Left;    3 Layers

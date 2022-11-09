@@ -3,6 +3,43 @@
 #include "global.h"
 #include "engines.h"
 
+
+struct BonOdoriInfo_sub {
+    s16 unk0;
+    s16 unk2;
+    u32 unk4;
+    s16 unk8;
+    u16 unkA;
+};
+
+struct BonOdoriInfo {
+    u8 version;
+    u8 pad1;
+    u8 unk2;
+    struct TextObject1 *unk4;
+    struct BonOdoriInfo_sub unk8[4];
+    u8 unk38;
+    u16 unk3A;
+    s16 unk3C;
+    s16 yaguraSprite;
+    u16 unk40;
+    u8 unk42;
+    s16 unk44[4];
+    u16 unk4C[4];
+    u8 unk54;
+    u8 unk55;
+    u16* bgPalDark;
+    u16* objPalDark;
+    u16 bgPalDarkBuf[16][16];
+    u16 null260[16][16];
+    u16 objPalDarkBuf[16][16];
+    u16 null660[16][16];
+    u16 unk860;
+    u8 unk862;
+    u16 unk864;
+};
+
+
 // Engine Macros/Enums:
 enum BonOdoriAnimationsEnum {
     BON_ODORI_ANIM_00,

@@ -3,6 +3,46 @@
 #include "global.h"
 #include "engines.h"
 
+
+struct ShowtimeInfo {
+    struct TextObject1 *unk0;
+    u16 unk4;
+    u8 unk6;
+    struct ShowtimeInfo_sub {
+        s16 unk0;
+        u32 unk4;
+        s32 unk8;
+    } unk8[2];
+    u32 pad20;
+    struct ShowtimeInfo_sub1 {
+        u32 unk0;
+        u32 pad4;
+        u32 unk8;
+        u32 unkC;
+        u32 pad10[2];
+        u32 unk18;
+        u32 pad1C;
+        u32 unk20;
+        u32 pad24;
+    } unk24[2];
+    u32 pad74[0x3d];
+    u32 unk168;
+    u32 pad16C[2];
+    struct ShowtimeInfo_sub2 {
+        s16 unk0;
+        s32 unk4;
+        s32 unk8;
+        u32 unkC;
+    } unk174[8];
+    u32 pad1F4[0x73];
+    u32 unk3C0; // beat related stuff???
+    u32 pad3C4;
+    u32 unk3C8;
+    u32 unk3CC;
+    u8 unk3D0;
+};
+
+
 // Engine Macros/Enums:
 
 // OAM Animations:

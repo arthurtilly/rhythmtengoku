@@ -6,8 +6,8 @@
 #include "src/code_0800b778.h"
 #include "src/lib_0804c870.h"
 
-// For readability. !TODO - CHANGE/REMOVE
-#define gPrologueInfo D_030055d0->prologues
+// For readability.
+#define gPrologueInfo ((struct PrologueInfo *)D_030055d0)
 
 
   // // //  PROLOGUE: SNEAKY SPIRITS  // // //
@@ -40,13 +40,13 @@ void func_0804514c(void) {
 
 // [func_0804517c] MAIN - Init
 void func_0804517c(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_0804514c();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088ad2bc, 0, 0xa5, 0x5a, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088ad2bc, 0, 0xa5, 0x5a, 0, 0, 0x7f, 0);
 }
 
 // [func_080451d8] ENGINE Func_00
@@ -63,7 +63,7 @@ void func_080451e0(void) {
 
 // [func_080451e4] Event 0 - Set Animation Frame (Text)
 void func_080451e4(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -97,13 +97,13 @@ void func_08045248(void) {
 
 // [func_08045278] MAIN - Init
 void func_08045278(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08045248();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088ad3f4, 0, 0x78, 0x50, 0, 0, 0, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088ad3f4, 0, 0x78, 0x50, 0, 0, 0, 0);
 }
 
 // [func_080452d4] ENGINE Func_00
@@ -120,7 +120,7 @@ void func_080452dc(void) {
 
 // [func_080452e0] Event 0 - Set Animation Frame (Text)
 void func_080452e0(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -154,13 +154,13 @@ void func_08045344(void) {
 
 // [func_08045374] MAIN - Init
 void func_08045374(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08045344();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088ad530, 0, 0x50, 0x40, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088ad530, 0, 0x50, 0x40, 0, 0, 0x7f, 0);
 }
 
 // [func_080453d0] ENGINE Func_00
@@ -177,7 +177,7 @@ void func_080453d8(void) {
 
 // [func_080453dc] Event 0 - Play Animation (Text)
 void func_080453dc(void) {
-    func_0804dae0(D_03005380, gPrologueInfo.sprite2, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite2, 1, 0x7f, 0);
 }
 
 
@@ -211,13 +211,13 @@ void func_08045448(void) {
 
 // [func_08045478] MAIN - Init
 void func_08045478(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08045448();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088ad898, 0, 0x78, 0x8c, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088ad898, 0, 0x78, 0x8c, 0, 0, 0x7f, 0);
 }
 
 // [func_080454d4] ENGINE Func_00
@@ -234,7 +234,7 @@ void func_080454dc(void) {
 
 // [func_080454e0] Event 0 - Play Animation (Text)
 void func_080454e0(void) {
-    func_0804dae0(D_03005380, gPrologueInfo.sprite2, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite2, 1, 0x7f, 0);
 }
 
 
@@ -268,14 +268,14 @@ void func_0804554c(void) {
 
 // [func_0804557c] MAIN - Init
 void func_0804557c(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_0804554c();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088ada78, 0, 0x6e, 0x50, 0, 0, 0, 0);
-    gPrologueInfo.sprite4 = func_0804d160(D_03005380, D_088adaa8, 0, 0x60, 0x6e, 0, 0, 0, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088ada78, 0, 0x6e, 0x50, 0, 0, 0, 0);
+    gPrologueInfo->sprite4 = func_0804d160(D_03005380, D_088adaa8, 0, 0x60, 0x6e, 0, 0, 0, 0);
 }
 
 // [func_080455f8] ENGINE Func_00
@@ -292,13 +292,13 @@ void func_08045600(void) {
 
 // [func_08045604] Event 0 - Set Animation Frame (Text)
 void func_08045604(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 // [func_08045628] Event 1 - Play Animation (Kick)
 void func_08045628(void) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite4, 1);
-    func_0804dae0(D_03005380, gPrologueInfo.sprite4, 1, 0x7f, 0);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite4, 1);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite4, 1, 0x7f, 0);
 }
 
 
@@ -332,13 +332,13 @@ void func_080456a4(void) {
 
 // [func_080456d4] MAIN - Init
 void func_080456d4(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_080456a4();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088adb94, 0, 0x78, 0x50, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088adb94, 0, 0x78, 0x50, 0, 0, 0x7f, 0);
 }
 
 // [func_08045730] ENGINE Func_00
@@ -399,15 +399,15 @@ void func_080457f4(void) {
 
 // [func_08045824] MAIN - Init
 void func_08045824(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_080457f4();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088ae2a8, 0, 0x6e, 0x78, 0, 0, 0x7f, 0);
-    gPrologueInfo.sprite4 = func_0804d160(D_03005380, D_088ae048, 0, 0x3c, 0x78, 0, 0, 0x7f, 0);
-    gPrologueInfo.sprite6 = func_0804d160(D_03005380, D_088ae160, 0, 0x3c, 0x78, 0, 1, 0, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088ae2a8, 0, 0x6e, 0x78, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite4 = func_0804d160(D_03005380, D_088ae048, 0, 0x3c, 0x78, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite6 = func_0804d160(D_03005380, D_088ae160, 0, 0x3c, 0x78, 0, 1, 0, 0);
 }
 
 // [func_080458e0] ENGINE Func_00
@@ -426,10 +426,10 @@ void func_080458e8(void) {
 void func_080458ec(u32 event) {
     switch (event) {
         case 0: // Event 0 - Play Animation (Play-yan)
-            func_0804dae0(D_03005380, gPrologueInfo.sprite4, 1, 0x7f, 0);
+            func_0804dae0(D_03005380, gPrologueInfo->sprite4, 1, 0x7f, 0);
             break;
         case 1: // Event 1 - Play Animation (Text)
-            func_0804dae0(D_03005380, gPrologueInfo.sprite2, 1, 0x7f, 0);
+            func_0804dae0(D_03005380, gPrologueInfo->sprite2, 1, 0x7f, 0);
             break;
     }
 }
@@ -465,14 +465,14 @@ void func_08045984(void) {
 
 // [func_080459b4] MAIN - Init
 void func_080459b4(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08045984();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088ae3e4, 0, 0x40, 0x40, 0, 0, 0x7f, 0);
-    gPrologueInfo.sprite4 = func_0804d160(D_03005380, D_088ae3f4, 0, 0x88, 0x40, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088ae3e4, 0, 0x40, 0x40, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite4 = func_0804d160(D_03005380, D_088ae3f4, 0, 0x88, 0x40, 0, 0, 0x7f, 0);
 }
 
 // [func_08045a44] ENGINE Func_00
@@ -489,8 +489,8 @@ void func_08045a4c(void) {
 
 // [func_08045a50] Event 0 - Play Animation (Text), Play Animation (Penguin)
 void func_08045a50(void) {
-    func_0804dae0(D_03005380, gPrologueInfo.sprite2, 1, 0x7f, 0);
-    func_0804dae0(D_03005380, gPrologueInfo.sprite4, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite2, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite4, 1, 0x7f, 0);
 }
 
 
@@ -524,14 +524,14 @@ void func_08045ad0(void) {
 
 // [func_08045b00] MAIN - Init
 void func_08045b00(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08045ad0();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088af5a0, 0, 0x78, 0x78, 0, 0, 0x7f, 0);
-    gPrologueInfo.sprite4 = func_0804d160(D_03005380, D_088af510, 0, 0x77, 0x65, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088af5a0, 0, 0x78, 0x78, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite4 = func_0804d160(D_03005380, D_088af510, 0, 0x77, 0x65, 0, 0, 0x7f, 0);
 }
 
 // [func_08045b88] ENGINE Func_00
@@ -550,10 +550,10 @@ void func_08045b90(void) {
 void func_08045b94(u32 event) {
     switch (event) {
         case 0: // Event 0 - Play Animation (Bouncers)
-            func_0804dae0(D_03005380, gPrologueInfo.sprite4, 1, 0x7f, 0);
+            func_0804dae0(D_03005380, gPrologueInfo->sprite4, 1, 0x7f, 0);
             break;
         case 1: // Event 1 - Play Animation (Text)
-            func_0804dae0(D_03005380, gPrologueInfo.sprite2, 1, 0x7f, 0);
+            func_0804dae0(D_03005380, gPrologueInfo->sprite2, 1, 0x7f, 0);
             break;
     }
 }
@@ -589,13 +589,13 @@ void func_08045c2c(void) {
 
 // [func_08045c5c] MAIN - Init
 void func_08045c5c(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08045c2c();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 0x1d, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088af6b4, 0, 0x3c, 0x40, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088af6b4, 0, 0x3c, 0x40, 0, 0, 0x7f, 0);
 }
 
 // [func_08045cb8] ENGINE Func_00
@@ -612,7 +612,7 @@ void func_08045cc0(void) {
 
 // [func_08045cc4] Event 0 - Play Animation (Text)
 void func_08045cc4(void) {
-    func_0804dae0(D_03005380, gPrologueInfo.sprite2, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite2, 1, 0x7f, 0);
 }
 
 
@@ -646,13 +646,13 @@ void func_08045d30(void) {
 
 // [func_08045d60] MAIN - Init
 void func_08045d60(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08045d30();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088af7d4, 0, 0x78, 8, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088af7d4, 0, 0x78, 8, 0, 0, 0x7f, 0);
 }
 
 // [func_08045dbc] ENGINE Func_00
@@ -669,7 +669,7 @@ void func_08045dc4(void) {
 
 // [func_08045dc8] Event 0 - Set Animation Frame (Text)
 void func_08045dc8(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -703,13 +703,13 @@ void func_08045e2c(void) {
 
 // [func_08045e5c] MAIN - Init
 void func_08045e5c(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08045e2c();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088afb9c, 0, 0x78, 0x64, 0, 0, 0, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088afb9c, 0, 0x78, 0x64, 0, 0, 0, 0);
 }
 
 // [func_08045eb8] ENGINE Func_00
@@ -726,7 +726,7 @@ void func_08045ec0(void) {
 
 // [func_08045ec4] Event 0 - Set Animation Frame (Text)
 void func_08045ec4(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -760,13 +760,13 @@ void func_08045f28(void) {
 
 // [func_08045f58] MAIN - Init
 void func_08045f58(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08045f28();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088afdc4, 0, 0x78, 0x64, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088afdc4, 0, 0x78, 0x64, 0, 0, 0x7f, 0);
 }
 
 // [func_08045fb4] ENGINE Func_00
@@ -783,7 +783,7 @@ void func_08045fbc(void) {
 
 // [func_08045fc0] Event 0 - Set Animation Frame (Text)
 void func_08045fc0(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -817,14 +817,14 @@ void func_08046024(void) {
 
 // [func_08046054] MAIN - Init
 void func_08046054(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046024();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
     func_0800e0a0(2, 0, 0, 0, 0, 30, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088affe0, 0, 0x87, 0x14, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088affe0, 0, 0x87, 0x14, 0, 0, 0x7f, 0);
 }
 
 // [func_080460c8] ENGINE Func_00
@@ -841,7 +841,7 @@ void func_080460d0(void) {
 
 // [func_080460d4] Event 0 - Set Animation Frame (Text)
 void func_080460d4(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -875,13 +875,13 @@ void func_08046138(void) {
 
 // [func_08046168] MAIN - Init
 void func_08046168(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046138();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b0690, 0, 0xa0, 0x96, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b0690, 0, 0xa0, 0x96, 0, 0, 0x7f, 0);
 }
 
 // [func_080461c4] ENGINE Func_00
@@ -898,7 +898,7 @@ void func_080461cc(void) {
 
 // [func_080461d0] Event 0 - Set Animation Frame (Text)
 void func_080461d0(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 // [func_080461f4] Event 1 - HAI
@@ -938,13 +938,13 @@ void func_08046274(void) {
 
 // [func_080462a4] MAIN - Init
 void func_080462a4(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046274();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b09b4, 0, 0x70, 0x8c, 0, 0, 0, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b09b4, 0, 0x70, 0x8c, 0, 0, 0, 0);
 }
 
 // [func_08046300] ENGINE Func_00
@@ -961,7 +961,7 @@ void func_08046308(void) {
 
 // [func_0804630c] Event 0 - Set Animation Frame (Text)
 void func_0804630c(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -995,13 +995,13 @@ void func_08046370(void) {
 
 // [func_080463a0] MAIN - Init
 void func_080463a0(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046370();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b0bf0, 0, 0x70, 0x8c, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b0bf0, 0, 0x70, 0x8c, 0, 0, 0x7f, 0);
 }
 
 // [func_080463fc] ENGINE Func_00
@@ -1018,7 +1018,7 @@ void func_08046404(void) {
 
 // [func_08046408] Event 0 - Set Animation Frame (Text)
 void func_08046408(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -1052,13 +1052,13 @@ void func_0804646c(void) {
 
 // [func_0804649c] MAIN - Init
 void func_0804649c(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_0804646c();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b0cb4, 0, 0x70, 0x90, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b0cb4, 0, 0x70, 0x90, 0, 0, 0x7f, 0);
 }
 
 // [func_080464f8] ENGINE Func_00
@@ -1075,7 +1075,7 @@ void func_08046500(void) {
 
 // [func_08046504] Event 0 - Set Animation Frame (Text)
 void func_08046504(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -1109,13 +1109,13 @@ void func_08046568(void) {
 
 // [func_08046598] MAIN - Init
 void func_08046598(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046568();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b13c4, 0, 0x78, 0x5a, 0, 1, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b13c4, 0, 0x78, 0x5a, 0, 1, 0x7f, 0);
 }
 
 // [func_080465f8] ENGINE Func_00
@@ -1132,7 +1132,7 @@ void func_08046600(void) {
 
 // [func_08046604] Event 0 - Set Animation Frame (Text)
 void func_08046604(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -1166,13 +1166,13 @@ void func_08046668(void) {
 
 // [func_08046698] MAIN - Init
 void func_08046698(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046668();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b17d0, 0, 0x70, 0x80, 0, 0, 0, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b17d0, 0, 0x70, 0x80, 0, 0, 0, 0);
 }
 
 // [func_080466f4] ENGINE Func_00
@@ -1189,7 +1189,7 @@ void func_080466fc(void) {
 
 // [func_08046700] Event 0 - Set Animation Frame (Text)
 void func_08046700(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -1223,13 +1223,13 @@ void func_08046764(void) {
 
 // [func_08046794] MAIN - Init
 void func_08046794(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046764();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b1c9c, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b1c9c, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
 }
 
 // [func_080467f0] ENGINE Func_00
@@ -1246,7 +1246,7 @@ void func_080467f8(void) {
 
 // [func_080467fc] Event 0 - Set Animation Frame (Text)
 void func_080467fc(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -1280,13 +1280,13 @@ void func_08046860(void) {
 
 // [func_08046890] MAIN - Init
 void func_08046890(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046860();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b2044, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b2044, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
 }
 
 // [func_080468ec] ENGINE Func_00
@@ -1303,7 +1303,7 @@ void func_080468f4(void) {
 
 // [func_080468f8] Event 0 - Set Animation Frame (Text)
 void func_080468f8(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -1337,13 +1337,13 @@ void func_0804695c(void) {
 
 // [func_0804698c] MAIN - Init
 void func_0804698c(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_0804695c();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b23ec, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b23ec, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
 }
 
 // [func_080469e8] ENGINE Func_00
@@ -1360,7 +1360,7 @@ void func_080469f0(void) {
 
 // [func_080469f4] Event 0 - Set Animation Frame (Text)
 void func_080469f4(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -1394,13 +1394,13 @@ void func_08046a58(void) {
 
 // [func_08046a88] MAIN - Init
 void func_08046a88(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046a58();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b27f4, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b27f4, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
 }
 
 // [func_08046ae4] ENGINE Func_00
@@ -1417,7 +1417,7 @@ void func_08046aec(void) {
 
 // [func_08046af0] Event 0 - Set Animation Frame (Text)
 void func_08046af0(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -1451,13 +1451,13 @@ void func_08046b54(void) {
 
 // [func_08046b84] MAIN - Init
 void func_08046b84(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046b54();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b2b9c, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b2b9c, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
 }
 
 // [func_08046be0] ENGINE Func_00
@@ -1474,7 +1474,7 @@ void func_08046be8(void) {
 
 // [func_08046bec] Event 0 - Set Animation Frame (Text)
 void func_08046bec(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -1508,13 +1508,13 @@ void func_08046c50(void) {
 
 // [func_08046c80] MAIN - Init
 void func_08046c80(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046c50();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b2f44, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b2f44, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
 }
 
 // [func_08046cdc] ENGINE Func_00
@@ -1531,7 +1531,7 @@ void func_08046ce4(void) {
 
 // [func_08046ce8] Event 0 - Set Animation Frame (Text)
 void func_08046ce8(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -1565,13 +1565,13 @@ void func_08046d4c(void) {
 
 // [func_08046d7c] MAIN - Init
 void func_08046d7c(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046d4c();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b332c, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b332c, 0, 0x70, 0x80, 0, 0, 0x7f, 0);
 }
 
 // [func_08046dd8] ENGINE Func_00
@@ -1588,7 +1588,7 @@ void func_08046de0(void) {
 
 // [func_08046de4] Event 0 - Set Animation Frame (Text)
 void func_08046de4(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -1622,14 +1622,14 @@ void func_08046e48(void) {
 
 // [func_08046e78] MAIN - Init
 void func_08046e78(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046e48();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b35dc, 0, 0x16, 0xa2, 0, 0, 0x7f, 0);
-    gPrologueInfo.sprite4 = func_0804d160(D_03005380, D_088b35a4, 0, 0x72, 0x78, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b35dc, 0, 0x16, 0xa2, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite4 = func_0804d160(D_03005380, D_088b35a4, 0, 0x72, 0x78, 0, 0, 0x7f, 0);
 }
 
 // [func_08046f00] ENGINE Func_00
@@ -1646,12 +1646,12 @@ void func_08046f08(void) {
 
 // [func_08046f0c] Event 0 - Set Animation Frame (Text)
 void func_08046f0c(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 // [func_08046f30] Event 1 - Play Animation (Rabbits)
 void func_08046f30(void) {
-    func_0804dae0(D_03005380, gPrologueInfo.sprite4, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite4, 1, 0x7f, 0);
 }
 
 
@@ -1685,13 +1685,13 @@ void func_08046f9c(void) {
 
 // [func_08046fcc] MAIN - Init
 void func_08046fcc(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08046f9c();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b37d8, 0, 0xbe, 0x28, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b37d8, 0, 0xbe, 0x28, 0, 0, 0x7f, 0);
 }
 
 // [func_08047028] ENGINE Func_00
@@ -1708,7 +1708,7 @@ void func_08047030(void) {
 
 // [func_08047034] Event 0 - Play Animation (Text)
 void func_08047034(void) {
-    func_0804dae0(D_03005380, gPrologueInfo.sprite2, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite2, 1, 0x7f, 0);
 }
 
 
@@ -1742,13 +1742,13 @@ void func_080470a0(void) {
 
 // [func_080470d0] MAIN - Init
 void func_080470d0(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_080470a0();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b3ac4, 0, 0x78, 0x78, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b3ac4, 0, 0x78, 0x78, 0, 0, 0x7f, 0);
 }
 
 // [func_0804712c] ENGINE Func_00
@@ -1765,7 +1765,7 @@ void func_08047134(void) {
 
 // [func_08047138] Event 0 - Play Animation (Text)
 void func_08047138(void) {
-    func_0804dae0(D_03005380, gPrologueInfo.sprite2, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite2, 1, 0x7f, 0);
 }
 
 
@@ -1799,14 +1799,14 @@ void func_080471a4(void) {
 
 // [func_080471d4] MAIN - Init
 void func_080471d4(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_080471a4();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b3d54, 0, 8, 8, 0, 0, 0x7f, 0);
-    gPrologueInfo.sprite4 = func_0804d160(D_03005380, D_088b3d1c, 0, 0xbe, 0xa0, 0, 0, 0, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b3d54, 0, 8, 8, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite4 = func_0804d160(D_03005380, D_088b3d1c, 0, 0xbe, 0xa0, 0, 0, 0, 0);
 }
 
 // [func_08047250] ENGINE Func_00
@@ -1823,13 +1823,13 @@ void func_08047258(void) {
 
 // [func_0804725c] Event 0 - Set Animation Frame (Text)
 void func_0804725c(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 // [func_08047280] Event 1 - Play Animation (Rat)
 void func_08047280(void) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite4, 1);
-    func_0804dae0(D_03005380, gPrologueInfo.sprite4, 1, 0x7f, 0);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite4, 1);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite4, 1, 0x7f, 0);
 }
 
 
@@ -1863,14 +1863,14 @@ void func_080472fc(void) {
 
 // [func_0804732c] MAIN - Init
 void func_0804732c(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_080472fc();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b4054, 0, 0x78, 0x82, 0, 0, 0x7f, 0);
-    func_0804dcb8(D_03005380, gPrologueInfo.sprite2, 0x180);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b4054, 0, 0x78, 0x82, 0, 0, 0x7f, 0);
+    func_0804dcb8(D_03005380, gPrologueInfo->sprite2, 0x180);
 }
 
 // [func_08047398] ENGINE Func_00
@@ -1887,7 +1887,7 @@ void func_080473a0(void) {
 
 // [func_080473a4] Event 0 - Play Animation (Text)
 void func_080473a4(u32 speed) {
-    func_0804dae0(D_03005380, gPrologueInfo.sprite2, speed, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite2, speed, 0x7f, 0);
 }
 
 
@@ -1921,13 +1921,13 @@ void func_08047414(void) {
 
 // [func_08047444] MAIN - Init
 void func_08047444(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08047414();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b432c, 0, 0x78, 0x82, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b432c, 0, 0x78, 0x82, 0, 0, 0x7f, 0);
 }
 
 // [func_080474a0] ENGINE Func_00
@@ -1944,7 +1944,7 @@ void func_080474a8(void) {
 
 // [func_080474ac] Event 0 - Play Animation (Text)
 void func_080474ac(u32 speed) {
-    func_0804dae0(D_03005380, gPrologueInfo.sprite2, speed, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite2, speed, 0x7f, 0);
 }
 
 
@@ -1978,16 +1978,16 @@ void func_0804751c(void) {
 
 // [func_0804754c] MAIN - Init
 void func_0804754c(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_0804751c();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b7338, 0, 0x50, 0x20, 0, 1, 0x7f, 0x8000);
-    func_0804dcb8(D_03005380, gPrologueInfo.sprite2, 0x280);
-    gPrologueInfo.sprite4 = func_0804d160(D_03005380, D_088b7690, 1, 0x78, 0x78, 0, 0, 0x7f, 0x8000);
-    gPrologueInfo.sprite6 = func_0804d160(D_03005380, D_088b7660, 0, 0x40, 0x40, 0, 1, 0x7f, 0x8002);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b7338, 0, 0x50, 0x20, 0, 1, 0x7f, 0x8000);
+    func_0804dcb8(D_03005380, gPrologueInfo->sprite2, 0x280);
+    gPrologueInfo->sprite4 = func_0804d160(D_03005380, D_088b7690, 1, 0x78, 0x78, 0, 0, 0x7f, 0x8000);
+    gPrologueInfo->sprite6 = func_0804d160(D_03005380, D_088b7660, 0, 0x40, 0x40, 0, 1, 0x7f, 0x8002);
 }
 
 // [func_08047624] ENGINE Func_00
@@ -2007,13 +2007,13 @@ void func_08047630(u32 event) {
     u16 sprite;
     switch (event) {
         case 0: // sprite 0 - Text
-            sprite = gPrologueInfo.sprite2;
+            sprite = gPrologueInfo->sprite2;
             break;
         case 1: // sprite 1 - Faces
-            sprite = gPrologueInfo.sprite4;
+            sprite = gPrologueInfo->sprite4;
             break;
         case 2: // sprite 2 - Star
-            sprite = gPrologueInfo.sprite6;
+            sprite = gPrologueInfo->sprite6;
             break;
     }
     func_0804d770(D_03005380, sprite, 1);
@@ -2050,14 +2050,14 @@ void func_080476b8(void) {
 
 // [func_080476e8] MAIN - Init
 void func_080476e8(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_080476b8();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b794c, 0, 0x78, 0x50, 0, 1, 0x7f, 0x8000);
-    func_0804dcb8(D_03005380, gPrologueInfo.sprite2, 0x180);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b794c, 0, 0x78, 0x50, 0, 1, 0x7f, 0x8000);
+    func_0804dcb8(D_03005380, gPrologueInfo->sprite2, 0x180);
 }
 
 // [func_08047764] ENGINE Func_00
@@ -2074,12 +2074,12 @@ void func_0804776c(void) {
 
 // [func_08047770] Event 0 - Set Animation Frame (Text)
 void func_08047770(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 // [func_08047794] Event 1 - Animate Text
 void func_08047794(void) {
-    func_0804d770(D_03005380, gPrologueInfo.sprite2, 1);
+    func_0804d770(D_03005380, gPrologueInfo->sprite2, 1);
 }
 
 
@@ -2113,13 +2113,13 @@ void func_080477f4(void) {
 
 // [func_08047824] MAIN - Init
 void func_08047824(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_080477f4();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b7c88, 0, 0x69, 0x64, 0, 1, 0x7f, 0x8000);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b7c88, 0, 0x69, 0x64, 0, 1, 0x7f, 0x8000);
 }
 
 // [func_08047888] ENGINE Func_00
@@ -2136,12 +2136,12 @@ void func_08047890(void) {
 
 // [func_08047894] Event 0 - Set Animation Frame (Text)
 void func_08047894(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 // [func_080478b8] Event 1 - Animate Text
 void func_080478b8(void) {
-    func_0804d770(D_03005380, gPrologueInfo.sprite2, 1);
+    func_0804d770(D_03005380, gPrologueInfo->sprite2, 1);
 }
 
 
@@ -2175,13 +2175,13 @@ void func_08047918(void) {
 
 // [func_08047948] MAIN - Init
 void func_08047948(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08047918();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b8098, 0, 0x78, 0x78, 0, 0, 0, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b8098, 0, 0x78, 0x78, 0, 0, 0, 0);
 }
 
 // [func_080479a4] ENGINE Func_00
@@ -2198,7 +2198,7 @@ void func_080479ac(void) {
 
 // [func_080479b0] Event 0 - Set Animation Frame (Text)
 void func_080479b0(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -2232,13 +2232,13 @@ void func_08047a14(void) {
 
 // [func_08047a44] MAIN - Init
 void func_08047a44(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08047a14();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b8388, 0, 0x78, 0x78, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b8388, 0, 0x78, 0x78, 0, 0, 0x7f, 0);
 }
 
 // [func_08047aa0] ENGINE Func_00
@@ -2255,7 +2255,7 @@ void func_08047aa8(void) {
 
 // [func_08047aac] Event 0 - Set Animation Frame (Text)
 void func_08047aac(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo.sprite2, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->sprite2, frame);
 }
 
 
@@ -2289,13 +2289,13 @@ void func_08047b10(void) {
 
 // [func_08047b40] MAIN - Init
 void func_08047b40(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08047b10();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b8844, 0, 0x78, 0x96, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b8844, 0, 0x78, 0x96, 0, 0, 0x7f, 0);
     func_0804d160(D_03005380, D_088b8834, 0, 0x78, 0x96, 0x800, 0, 0x7f, 0);
 }
 
@@ -2313,7 +2313,7 @@ void func_08047bd8(void) {
 
 // [func_08047bdc] Event 0 - Show Text
 void func_08047bdc(void) {
-    func_0804dae0(D_03005380, gPrologueInfo.sprite2, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite2, 1, 0x7f, 0);
 }
 
 
@@ -2347,14 +2347,14 @@ void func_08047c48(void) {
 
 // [func_08047c78] MAIN - Init
 void func_08047c78(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08047c48();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b8cfc, 0, 0x60, 0x11, 0, 0, 0x7f, 0);
-    gPrologueInfo.sprite4 = func_0804d160(D_03005380, D_088b8cbc, 0, 0xa0, 0x30, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b8cfc, 0, 0x60, 0x11, 0, 0, 0x7f, 0);
+    gPrologueInfo->sprite4 = func_0804d160(D_03005380, D_088b8cbc, 0, 0xa0, 0x30, 0, 0, 0x7f, 0);
 }
 
 // [func_08047d00] ENGINE Func_00
@@ -2371,8 +2371,8 @@ void func_08047d08(void) {
 
 // [func_08047d0c] Event 0 - Play Animation (Text), Play Animation (Virus)
 void func_08047d0c(void) {
-    func_0804dae0(D_03005380, gPrologueInfo.sprite2, 1, 0x7f, 0);
-    func_0804dae0(D_03005380, gPrologueInfo.sprite4, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite2, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite4, 1, 0x7f, 0);
 }
 
 
@@ -2406,13 +2406,13 @@ void func_08047d8c(void) {
 
 // [func_08047dbc] MAIN - Init
 void func_08047dbc(u32 ver) {
-    gPrologueInfo.ver = ver;
+    gPrologueInfo->ver = ver;
 
     func_08047d8c();
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
 
-    gPrologueInfo.sprite2 = func_0804d160(D_03005380, D_088b8e50, 0, 0x40, 0x1e, 0, 1, 0, 0);
+    gPrologueInfo->sprite2 = func_0804d160(D_03005380, D_088b8e50, 0, 0x40, 0x1e, 0, 1, 0, 0);
 }
 
 // [func_08047e18] ENGINE Func_00
@@ -2429,5 +2429,5 @@ void func_08047e20(void) {
 
 // [func_08047e24] Event 0 - Play Animation (Text)
 void func_08047e24(void) {
-    func_0804dae0(D_03005380, gPrologueInfo.sprite2, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->sprite2, 1, 0x7f, 0);
 }
