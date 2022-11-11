@@ -499,9 +499,9 @@ u32 func_08010288(struct AffineSprite *affineData) {
     return func_0804ddb0(D_03005380, affineData->sprite, 2);
 }
 
-// [func_080102a8] AFFINE SPRITE - func_0804db44()
-void func_080102a8(struct AffineSprite *affineData, s16 *arg1, s16 *arg2) {
+// [func_080102a8] AFFINE SPRITE - Set X & Y Data Source
+void func_080102a8(struct AffineSprite *affineData, s16 *xSrc, s16 *ySrc) {
     if (affineData == NULL) return;
 
-    func_0804db44(D_03005380, affineData->sprite, arg1, arg2);
+    func_0804db44(D_03005380, affineData->sprite, xSrc, ySrc);
 }

@@ -26,7 +26,7 @@ extern void func_0804ced0(struct SpriteHandler *, s16, u8);
 // extern ? func_0804d11c(?);
 // extern ? func_0804d140(?);
 extern u32  func_0804d160(struct SpriteHandler *, const struct Animation *, s8, s16, s16, u16, s8, s8, u16); // Create New
-extern u32  func_0804d294(struct SpriteHandler *, const struct Animation *, s8, s16, s16, u16, s8, s8, u16, u32); // Create New (w/ additional parameter (layer..?))
+extern u32  func_0804d294(struct SpriteHandler *, const struct Animation *, s8, s16, s16, u16, s8, s8, u16, u32); // Create New (w/ additional parameter)
 // extern ? func_0804d3cc(?);
 // extern ? func_0804d468(?);
 // extern ? func_0804d504(?);
@@ -50,7 +50,7 @@ extern void func_0804da20(struct SpriteHandler *, s16, u16);
 // extern ? func_0804da68(?);
 extern void func_0804daa8(struct SpriteHandler *, s16, void *, u32);
 extern void func_0804dae0(struct SpriteHandler *, s16, s8, s8, u16);
-extern void func_0804db44(struct SpriteHandler *, s16, s16 *, s16 *);
+extern void func_0804db44(struct SpriteHandler *, s16, s16 *, s16 *); // Set X & Y Data Source
 // extern ? func_0804db90(?);
 // extern ? func_0804dbd0(?);
 // extern ? func_0804dc10(?);

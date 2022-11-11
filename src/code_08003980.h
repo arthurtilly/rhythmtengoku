@@ -64,14 +64,14 @@ extern u32  func_08003ab8();
 // extern ? func_08004b60(?);
 // extern ? func_08004b70(?); // create an animation from text
 // extern ? func_08004b88(?);
-extern struct Animation *func_08004b98(struct TextObject1 *, const char *, u32, u32); // create an animation from text
+extern struct Animation *func_08004b98(struct TextObject1 *, const char *, u32, u32); // create an animation from text (centre-aligned)
 // extern ? func_08004bfc(?);
-extern struct Animation *func_08004c0c(struct TextObject1 *, const char *, u32, u32); // create an animation from text
+extern struct Animation *func_08004c0c(struct TextObject1 *, const char *, u32, u32); // create an animation from text (left-aligned)
 // extern ? func_08004c40(?);
-// extern ? func_08004c50(?); // create an animation from text
+extern struct Animation *func_08004c50(struct TextObject1 *, const char *, u32, u32); // create an animation from text (right-aligned)
 // extern ? func_08004cac(?);
 // extern ? func_08004ccc(?);
-// extern ? func_08004d44(?);
+extern void func_08004d44(struct TextObject1 *, struct Animation *); // delete animation for text1 thing?
 extern struct unk_struct_08004da0 *func_08004da0(struct unk_struct_08004da0_init *arg0);
 extern u32 func_08004dc0(struct unk_struct_08004da0 *arg0);
 // extern ? func_08004e60(?);

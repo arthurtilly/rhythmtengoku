@@ -67,4 +67,4 @@ extern void func_08010218(struct AffineSprite *, u32);      // [func_08010218] A
 extern void func_08010238(struct AffineSprite *, void *, u32);  // [func_08010238] AFFINE SPRITE - func_0804daa8()
 extern void func_08010260(struct AffineSprite *, s8);       // [func_08010260] AFFINE SPRITE - func_0804df4c()
 extern u32  func_08010288(struct AffineSprite *);           // [func_08010288] AFFINE SPRITE - func_0804ddb0(..., 2)
-extern void func_080102a8(struct AffineSprite *, s16 *, s16 *); // [func_080102a8] AFFINE SPRITE - func_0804db44()
+extern void func_080102a8(struct AffineSprite *, s16 *, s16 *); // [func_080102a8] AFFINE SPRITE - Set X & Y Data Source

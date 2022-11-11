@@ -5,73 +5,73 @@
 
 
 extern const struct Animation bon_odori_anim_donpan1_beat[];
-extern const struct Animation D_088a7140[];
+extern const struct Animation bon_dance_anim_donpan1_beat[];
 extern const struct Animation bon_odori_anim_donpan2_beat[];
-extern const struct Animation D_088a7218[];
+extern const struct Animation bon_dance_anim_donpan2_beat[];
 extern const struct Animation bon_odori_anim_donpan3_beat[];
-extern const struct Animation D_088a7398[];
+extern const struct Animation bon_dance_anim_donpan3_beat[];
 extern const struct Animation bon_odori_anim_player_beat[];
-extern const struct Animation D_088a72d8[];
+extern const struct Animation bon_dance_anim_player_beat[];
 extern const struct Animation bon_odori_anim_donpan1_clap1[];
-extern const struct Animation D_088a7198[];
+extern const struct Animation bon_dance_anim_donpan1_clap1[];
 extern const struct Animation bon_odori_anim_donpan2_clap1[];
-extern const struct Animation D_088a7258[];
+extern const struct Animation bon_dance_anim_donpan2_clap1[];
 extern const struct Animation bon_odori_anim_donpan3_clap1[];
-extern const struct Animation D_088a73d8[];
+extern const struct Animation bon_dance_anim_donpan3_clap1[];
 extern const struct Animation bon_odori_anim_player_clap1[];
-extern const struct Animation D_088a7318[];
+extern const struct Animation bon_dance_anim_player_clap1[];
 extern const struct Animation bon_odori_anim_donpan1_clap2[];
-extern const struct Animation D_088a71e0[];
+extern const struct Animation bon_dance_anim_donpan1_clap2[];
 extern const struct Animation bon_odori_anim_donpan2_clap2[];
-extern const struct Animation D_088a72a0[];
+extern const struct Animation bon_dance_anim_donpan2_clap2[];
 extern const struct Animation bon_odori_anim_donpan3_clap2[];
-extern const struct Animation D_088a7420[];
+extern const struct Animation bon_dance_anim_donpan3_clap2[];
 extern const struct Animation bon_odori_anim_player_clap2[];
-extern const struct Animation D_088a7360[];
+extern const struct Animation bon_dance_anim_player_clap2[];
 extern const struct Animation bon_odori_anim_donpan1_bow[];
-extern const struct Animation D_088a74e0[];
+extern const struct Animation bon_dance_anim_donpan1_bow[];
 extern const struct Animation bon_odori_anim_donpan2_bow[];
-extern const struct Animation D_088a7508[];
+extern const struct Animation bon_dance_anim_donpan2_bow[];
 extern const struct Animation bon_odori_anim_donpan3_bow[];
-extern const struct Animation D_088a7558[];
+extern const struct Animation bon_dance_anim_donpan3_bow[];
 extern const struct Animation bon_odori_anim_player_bow[];
-extern const struct Animation D_088a7530[];
+extern const struct Animation bon_dance_anim_player_bow[];
 extern const struct Animation bon_odori_anim_donpan1_glare[];
-extern const struct Animation D_088a75c0[];
+extern const struct Animation bon_dance_anim_donpan1_glare[];
 extern const struct Animation bon_odori_anim_donpan2_glare[];
-extern const struct Animation D_088a7580[];
+extern const struct Animation bon_dance_anim_donpan2_glare[];
 extern const struct Animation bon_odori_anim_donpan3_glare[];
-extern const struct Animation D_088a7600[];
+extern const struct Animation bon_dance_anim_donpan3_glare[];
 extern const struct Animation bon_odori_anim_donpan1_happy1[];
-extern const struct Animation D_088a7678[];
+extern const struct Animation bon_dance_anim_donpan1_happy1[];
 extern const struct Animation bon_odori_anim_donpan2_happy1[];
-extern const struct Animation D_088a76b8[];
+extern const struct Animation bon_dance_anim_donpan2_happy1[];
 extern const struct Animation bon_odori_anim_donpan3_happy1[];
-extern const struct Animation D_088a7738[];
+extern const struct Animation bon_dance_anim_donpan3_happy1[];
 extern const struct Animation bon_odori_anim_player_happy1[];
-extern const struct Animation D_088a76f8[];
+extern const struct Animation bon_dance_anim_player_happy1[];
 extern const struct Animation bon_odori_anim_donpan1_happy2[];
-extern const struct Animation D_088a7778[];
+extern const struct Animation bon_dance_anim_donpan1_happy2[];
 extern const struct Animation bon_odori_anim_donpan2_happy2[];
-extern const struct Animation D_088a77b8[];
+extern const struct Animation bon_dance_anim_donpan2_happy2[];
 extern const struct Animation bon_odori_anim_donpan3_happy2[];
-extern const struct Animation D_088a7838[];
+extern const struct Animation bon_dance_anim_donpan3_happy2[];
 extern const struct Animation bon_odori_anim_player_happy2[];
-extern const struct Animation D_088a77f8[];
+extern const struct Animation bon_dance_anim_player_happy2[];
 extern const struct Animation bon_odori_anim_donpan1_spin[];
-extern const struct Animation D_088a7878[];
+extern const struct Animation bon_dance_anim_donpan1_spin[];
 extern const struct Animation bon_odori_anim_donpan2_spin[];
-extern const struct Animation D_088a78d8[];
+extern const struct Animation bon_dance_anim_donpan2_spin[];
 extern const struct Animation bon_odori_anim_donpan3_spin[];
-extern const struct Animation D_088a7938[];
+extern const struct Animation bon_dance_anim_donpan3_spin[];
 extern const struct Animation bon_odori_anim_player_spin[];
-extern const struct Animation D_088a7998[];
+extern const struct Animation bon_dance_anim_player_spin[];
 extern const struct Animation bon_odori_anim_yagura_beat[];
-extern const struct Animation D_088a7640[];
+extern const struct Animation bon_dance_anim_yagura_beat[];
 extern const struct Animation bon_odori_anim_yagura_speak[];
-extern const struct Animation D_088a7660[];
+extern const struct Animation bon_dance_anim_yagura_speak[];
 extern const struct Animation bon_odori_anim_yagura_frown[];
-extern const struct Animation D_088a79f8[];
+extern const struct Animation bon_dance_anim_yagura_frown[];
 
 extern const struct CompressedGraphics D_08bdc118; // BG Textures (Text Window?)
 extern const struct CompressedGraphics D_08bdc520; // BG Map (Text Window?)
@@ -96,40 +96,40 @@ extern const FontPalette D_089ccbf8[]; // Tutorial Font Palette
 
 // [D_089deb28] All Animations
 const struct Animation *const bon_odori_anim[][2] = {
-    { bon_odori_anim_donpan1_beat, D_088a7140 },
-    { bon_odori_anim_donpan2_beat, D_088a7218 },
-    { bon_odori_anim_donpan3_beat, D_088a7398 },
-    { bon_odori_anim_player_beat, D_088a72d8 },
-    { bon_odori_anim_donpan1_clap1, D_088a7198 },
-    { bon_odori_anim_donpan2_clap1, D_088a7258 },
-    { bon_odori_anim_donpan3_clap1, D_088a73d8 },
-    { bon_odori_anim_player_clap1, D_088a7318 },
-    { bon_odori_anim_donpan1_clap2, D_088a71e0 },
-    { bon_odori_anim_donpan2_clap2, D_088a72a0 },
-    { bon_odori_anim_donpan3_clap2, D_088a7420 },
-    { bon_odori_anim_player_clap2, D_088a7360 },
-    { bon_odori_anim_donpan1_bow, D_088a74e0 },
-    { bon_odori_anim_donpan2_bow, D_088a7508 },
-    { bon_odori_anim_donpan3_bow, D_088a7558 },
-    { bon_odori_anim_player_bow, D_088a7530 },
-    { bon_odori_anim_donpan1_glare, D_088a75c0 },
-    { bon_odori_anim_donpan2_glare, D_088a7580 },
-    { bon_odori_anim_donpan3_glare, D_088a7600 },
-    { bon_odori_anim_donpan1_happy1, D_088a7678 },
-    { bon_odori_anim_donpan2_happy1, D_088a76b8 },
-    { bon_odori_anim_donpan3_happy1, D_088a7738 },
-    { bon_odori_anim_player_happy1, D_088a76f8 },
-    { bon_odori_anim_donpan1_happy2, D_088a7778 },
-    { bon_odori_anim_donpan2_happy2, D_088a77b8 },
-    { bon_odori_anim_donpan3_happy2, D_088a7838 },
-    { bon_odori_anim_player_happy2, D_088a77f8 },
-    { bon_odori_anim_donpan1_spin, D_088a7878 },
-    { bon_odori_anim_donpan2_spin, D_088a78d8 },
-    { bon_odori_anim_donpan3_spin, D_088a7938 },
-    { bon_odori_anim_player_spin, D_088a7998 },
-    { bon_odori_anim_yagura_beat, D_088a7640 },
-    { bon_odori_anim_yagura_speak, D_088a7660 },
-    { bon_odori_anim_yagura_frown, D_088a79f8 }
+    { bon_odori_anim_donpan1_beat, bon_dance_anim_donpan1_beat },
+    { bon_odori_anim_donpan2_beat, bon_dance_anim_donpan2_beat },
+    { bon_odori_anim_donpan3_beat, bon_dance_anim_donpan3_beat },
+    { bon_odori_anim_player_beat,  bon_dance_anim_player_beat },
+    { bon_odori_anim_donpan1_clap1, bon_dance_anim_donpan1_clap1 },
+    { bon_odori_anim_donpan2_clap1, bon_dance_anim_donpan2_clap1 },
+    { bon_odori_anim_donpan3_clap1, bon_dance_anim_donpan3_clap1 },
+    { bon_odori_anim_player_clap1,  bon_dance_anim_player_clap1 },
+    { bon_odori_anim_donpan1_clap2, bon_dance_anim_donpan1_clap2 },
+    { bon_odori_anim_donpan2_clap2, bon_dance_anim_donpan2_clap2 },
+    { bon_odori_anim_donpan3_clap2, bon_dance_anim_donpan3_clap2 },
+    { bon_odori_anim_player_clap2,  bon_dance_anim_player_clap2 },
+    { bon_odori_anim_donpan1_bow, bon_dance_anim_donpan1_bow },
+    { bon_odori_anim_donpan2_bow, bon_dance_anim_donpan2_bow },
+    { bon_odori_anim_donpan3_bow, bon_dance_anim_donpan3_bow },
+    { bon_odori_anim_player_bow,  bon_dance_anim_player_bow },
+    { bon_odori_anim_donpan1_glare, bon_dance_anim_donpan1_glare },
+    { bon_odori_anim_donpan2_glare, bon_dance_anim_donpan2_glare },
+    { bon_odori_anim_donpan3_glare, bon_dance_anim_donpan3_glare },
+    { bon_odori_anim_donpan1_happy1, bon_dance_anim_donpan1_happy1 },
+    { bon_odori_anim_donpan2_happy1, bon_dance_anim_donpan2_happy1 },
+    { bon_odori_anim_donpan3_happy1, bon_dance_anim_donpan3_happy1 },
+    { bon_odori_anim_player_happy1,  bon_dance_anim_player_happy1 },
+    { bon_odori_anim_donpan1_happy2, bon_dance_anim_donpan1_happy2 },
+    { bon_odori_anim_donpan2_happy2, bon_dance_anim_donpan2_happy2 },
+    { bon_odori_anim_donpan3_happy2, bon_dance_anim_donpan3_happy2 },
+    { bon_odori_anim_player_happy2,  bon_dance_anim_player_happy2 },
+    { bon_odori_anim_donpan1_spin, bon_dance_anim_donpan1_spin },
+    { bon_odori_anim_donpan2_spin, bon_dance_anim_donpan2_spin },
+    { bon_odori_anim_donpan3_spin, bon_dance_anim_donpan3_spin },
+    { bon_odori_anim_player_spin,  bon_dance_anim_player_spin },
+    { bon_odori_anim_yagura_beat,  bon_dance_anim_yagura_beat },
+    { bon_odori_anim_yagura_speak, bon_dance_anim_yagura_speak },
+    { bon_odori_anim_yagura_frown, bon_dance_anim_yagura_frown }
 };
 
 // [D_089dec38] Animation Table
@@ -191,7 +191,7 @@ const u8 *const bon_odori_donpan_anim_id_table[] = {
     /* Glare  */ bon_odori_donpan_anim_map[4],
     /* Happy1 */ bon_odori_donpan_anim_map[5],
     /* Happy2 */ bon_odori_donpan_anim_map[6],
-    /* Spin   */ bon_odori_donpan_anim_map[7],
+    /* Spin   */ bon_odori_donpan_anim_map[7]
 };
 
 // [D_089ded00] Donpan Animation Durations (delay before any Beat Animation can play)
@@ -435,9 +435,9 @@ const u16 *const bon_odori_obj_palettes[] = {
 
 // [D_089deedc] Text Horizontal Positions
 const u16 bon_odori_text_x_offsets[] = {
-    /* UPPER  */ SCREEN_CENTER_X,
-    /* MIDDLE */ SCREEN_CENTER_X - 104,
-    /* LOWER  */ SCREEN_CENTER_X + 104
+    /* CENTRE */ SCREEN_CENTER_X,
+    /* LEFT   */ SCREEN_CENTER_X - 104,
+    /* RIGHT  */ SCREEN_CENTER_X + 104
 };
 
 
@@ -454,13 +454,13 @@ const struct CueDefinition bon_odori_cue_clap_front = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ sizeof(struct BonOdoriCue),
-    /* Func. Spawn     */ func_08020f98,
+    /* Func. Spawn     */ bon_odori_cue_spawn,
     /* Spawn Parameter */ DONPAN_ANIM_CLAP_FRONT,
-    /* Func. Update    */ func_08020fb0,
-    /* Func. Despawn   */ func_08020fcc,
-    /* Func. Hit       */ func_08020fd0,
-    /* Func. Barely    */ func_08020fe8,
-    /* Func. Miss      */ func_0802100c,
+    /* Func. Update    */ bon_odori_cue_update,
+    /* Func. Despawn   */ bon_odori_cue_despawn,
+    /* Func. Hit       */ bon_odori_cue_hit,
+    /* Func. Barely    */ bon_odori_cue_barely,
+    /* Func. Miss      */ bon_odori_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -478,13 +478,13 @@ const struct CueDefinition bon_odori_cue_clap_side = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ sizeof(struct BonOdoriCue),
-    /* Func. Spawn     */ func_08020f98,
+    /* Func. Spawn     */ bon_odori_cue_spawn,
     /* Spawn Parameter */ DONPAN_ANIM_CLAP_SIDE,
-    /* Func. Update    */ func_08020fb0,
-    /* Func. Despawn   */ func_08020fcc,
-    /* Func. Hit       */ func_08020fd0,
-    /* Func. Barely    */ func_08020fe8,
-    /* Func. Miss      */ func_0802100c,
+    /* Func. Update    */ bon_odori_cue_update,
+    /* Func. Despawn   */ bon_odori_cue_despawn,
+    /* Func. Hit       */ bon_odori_cue_hit,
+    /* Func. Barely    */ bon_odori_cue_barely,
+    /* Func. Miss      */ bon_odori_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -515,42 +515,42 @@ const struct CueDefinition *const bon_odori_cue_index[] = {
 
 // [D_089def98] Common Events
 const EngineEvent bon_odori_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) func_08021084,
-    /* DISPLAY_TEXT   */ (EngineEvent) func_08021188,
-    /* INIT_TUTORIAL  */ (EngineEvent) func_0802118c,
+    /* BEAT_ANIMATION */ (EngineEvent) bon_odori_common_beat_animation,
+    /* DISPLAY_TEXT   */ (EngineEvent) bon_odori_common_display_text,
+    /* INIT_TUTORIAL  */ (EngineEvent) bon_odori_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089defa8] Engine Events
 const EngineEvent bon_odori_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08020be4,
-    /* 0x01 */ (EngineEvent) func_08020bf4,
-    /* 0x02 */ (EngineEvent) func_08020c0c,
-    /* 0x03 */ (EngineEvent) func_08020c24,
-    /* 0x04 */ (EngineEvent) func_08020c3c,
-    /* 0x05 */ (EngineEvent) func_08020c8c,
-    /* 0x06 */ (EngineEvent) func_08020d20,
-    /* 0x07 */ (EngineEvent) func_08020da0,
-    /* 0x08 */ (EngineEvent) func_08020e1c,
-    /* 0x09 */ (EngineEvent) func_08020e50,
-    /* 0x0A */ (EngineEvent) func_08020e90,
-    /* 0x0B */ (EngineEvent) func_080207d0,
-    /* 0x0C */ (EngineEvent) func_080207ec,
-    /* 0x0D */ (EngineEvent) func_080207f8,
-    /* 0x0E */ (EngineEvent) func_0802080c,
-    /* 0x0F */ (EngineEvent) func_08020ed4,
-    /* 0x10 */ (EngineEvent) func_08020ee8,
-    /* 0x11 */ (EngineEvent) func_08020a48
+    /* 0x00 */ (EngineEvent) bon_odori_lyrics_set_current_line,
+    /* 0x01 */ (EngineEvent) bon_odori_lyrics_display_centre,
+    /* 0x02 */ (EngineEvent) bon_odori_lyrics_display_left,
+    /* 0x03 */ (EngineEvent) bon_odori_lyrics_display_right,
+    /* 0x04 */ (EngineEvent) bon_odori_lyrics_offset_y,
+    /* 0x05 */ (EngineEvent) bon_odori_lyrics_start_highlight,
+    /* 0x06 */ (EngineEvent) bon_odori_screen_lighten,
+    /* 0x07 */ (EngineEvent) bon_odori_screen_darken,
+    /* 0x08 */ (EngineEvent) bon_odori_screen_set_black,
+    /* 0x09 */ (EngineEvent) bon_odori_screen_set_light,
+    /* 0x0A */ (EngineEvent) bon_odori_screen_set_dark,
+    /* 0x0B */ (EngineEvent) bon_odori_set_cpu_donpan_anim,
+    /* 0x0C */ (EngineEvent) bon_odori_set_player_anim,
+    /* 0x0D */ (EngineEvent) bon_odori_set_all_donpan_anim,
+    /* 0x0E */ (EngineEvent) bon_odori_set_cpu_donpan_anim_timer,
+    /* 0x0F */ (EngineEvent) bon_odori_start_testing_inputs,
+    /* 0x10 */ (EngineEvent) bon_odori_finish_testing_inputs,
+    /* 0x11 */ (EngineEvent) bon_odori_engine_event_stub
 };
 
 // [D_089deff0] Bon Odori Game Engine
 const struct GameEngine D_089deff0 = {
     /* Size in Memory */ sizeof(struct BonOdoriInfo),
-    /* Init. Engine   */ func_080208ec,
-    /* Update Engine  */ func_08020f48,
-    /* Stop Engine    */ func_08020f8c,
+    /* Init. Engine   */ bon_odori_engine_init,
+    /* Update Engine  */ bon_odori_engine_update,
+    /* Stop Engine    */ bon_odori_engine_stop,
     /* Cue Index      */ bon_odori_cue_index,
     /* Common Events  */ bon_odori_common_events,
     /* Engine Events  */ bon_odori_engine_events,
-    /* Input Event    */ func_08021034
+    /* Input Event    */ bon_odori_input_event
 };
