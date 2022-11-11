@@ -10,7 +10,7 @@ extern const struct CompressedGraphics D_08bd2cf8; // BG Map
 extern const struct CompressedGraphics D_08bd245c; // OBJ Textures
 extern const Palette sneaky_spirits_v0_pal[];
 extern const Palette sneaky_spirits_v2_pal[];
-extern const Palette D_089ccbd0[]; // Font Palette
+extern const FontPalette D_089ccbd0[]; // Font Palette
 
 
   //  //  //  GRAPHICS DATA  //  //  //

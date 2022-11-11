@@ -38,6 +38,7 @@ struct Animation {
 
 
 typedef u16 Palette[16];
+typedef u16 FontPalette[4];
 
 #define TO_RGB555(x)                        \
       (((((x) >> 16) & 0xff) >> 3) << 0 )   \

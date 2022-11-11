@@ -26,10 +26,10 @@ struct BonOdoriInfo {
     u16 donpanAnimTimers[4];
     u8 donpanEmoteTimer;
     u8 donpanEmoteAnim;
-    const u16 *bgPalDark;
-    const u16 *objPalDark;
-    u16 bgPalDarkBuf[32][16];
-    u16 objPalDarkBuf[32][16];
+    const u16 *srcBgPal;
+    const u16 *srcObjPal;
+    u16 darkBgPalBuf[32][16];
+    u16 darkObjPalBuf[32][16];
     u16 mistimedClaps;
     u8 currentClapAnim;
     u16 playerClapTimer;
@@ -101,18 +101,18 @@ extern const struct SequenceData s_HC_seqData;
 
 // Engine Definition Data:
 extern const struct Animation *const *const D_089dec38[34]; // Pointers to animation arrays, with each one consisting of two animations.
-extern const u8 *const bon_odori_donpan_anim_id_table[];   // Contains Donpan animation indexes. (Subarrays are the same animation but for different donpans)
+extern const u8 *const bon_odori_donpan_anim_id_table[];   // Contains Donpan animation indexes. (Sub-arrays are the same animation but for different donpans)
 extern const u16 bon_odori_anim_durations[8];  // Seemingly numbers of ticks for animations.
 extern const struct CompressedGraphics *const bon_odori_buffered_textures[]; // Buffered Textures List
-extern const struct GraphicsTable *const D_089deec4[]; // Graphics Table
-extern const u16 *const D_089deecc[];  // Another index of pointers to palettes (more like sub-palettes).
-extern const u16 *const D_089deed4[];  // Index of pointers to palettes.
+extern const struct GraphicsTable *const bon_odori_gfx_tables[]; // Graphics Table Index
+extern const u16 *const bon_odori_bg_palettes[];  // Pointers to BG Palettes
+extern const u16 *const bon_odori_obj_palettes[];  // Pointers to OBJ Palettes
 
 // Functions:
 extern const struct Animation *bon_odori_get_anim(u32);  // [func_080206a0] Get OBJ Animation
-extern void func_080206c0(void); // [func_080206c0] Init. Donpans
+extern void bon_odori_init_donpans(void); // [func_080206c0] Init. Donpans
 extern const struct Animation *bon_odori_get_donpan_anim(u32, u32); // [func_0802075c] Get Donpan Animation
-extern void func_08020778(u32, u32); // [func_08020778] Set Donpan Animation
+extern void bon_odori_set_donpan_anim(u32, u32); // [func_08020778] Set Donpan Animation
 extern void func_080207d0(u32);     // [func_080207d0] ENGINE Func_0B - Set Animation (CPU Donpans)
 extern void func_080207ec(u32);     // [func_080207ec] ENGINE Func_0C - Set Animation (Player)
 extern void func_080207f8(u32);     // [func_080207f8] ENGINE Func_0D - Set Animation (All Donpans)
@@ -133,20 +133,20 @@ extern void func_08020c4c(u32);
 extern void func_08020c8c(u32);     // [func_08020c8c] ENGINE Func_05 - Highlight Text
 extern void func_08020d20(u32);     // [func_08020d20] ENGINE Func_06 - Lighten Screen (Gradual)
 extern void func_08020da0(u32);     // [func_08020da0] ENGINE Func_07 - Darken Screen (Gradual)
-extern void func_08020e1c(void);    // [func_08020e1c] ENGINE Func_08 - ?
+extern void func_08020e1c(void);    // [func_08020e1c] ENGINE Func_08 - Set Palette to Black
 extern void func_08020e50(void);    // [func_08020e50] ENGINE Func_09 - Lighten Screen (Instant)
 extern void func_08020e90(void);    // [func_08020e90] ENGINE Func_0A - Darken Screen (Instant)
 extern void func_08020ed4(void);    // [func_08020ed4] ENGINE Func_0F - Test Player Inputs
 extern void func_08020ee8(void);    // [func_08020ee8] ENGINE Func_10 - React to Player Inputs
 extern void func_08020f48(void);    // [func_08020f48] MAIN - Update
 extern void func_08020f8c(void);    // [func_08020f8c] MAIN - Close
-extern void func_08020f98(u32, struct BonOdoriCue *, u32);  // [func_08020f98] CUE - Spawn
-extern u8   func_08020fb0(u32, struct BonOdoriCue *, u32);  // [func_08020fb0] CUE - Update
-extern void func_08020fcc(u32, struct BonOdoriCue *);       // [func_08020fcc] CUE - Despawn
-extern void func_08020fd0(u32, struct BonOdoriCue *);       // [func_08020fd0] CUE - Hit
-extern void func_08020fe8(u32, struct BonOdoriCue *);       // [func_08020fe8] CUE - Barely
-extern void func_0802100c(u32, struct BonOdoriCue *);       // [func_0802100c] CUE - Miss
-extern void func_08021034(void);    // [func_08021034] MAIN - Input Event
+extern void func_08020f98(struct Cue *, struct BonOdoriCue *, u32);      // [func_08020f98] CUE - Spawn
+extern u32  func_08020fb0(struct Cue *, struct BonOdoriCue *, u32, u32); // [func_08020fb0] CUE - Update
+extern void func_08020fcc(struct Cue *, struct BonOdoriCue *);           // [func_08020fcc] CUE - Despawn
+extern void func_08020fd0(struct Cue *, struct BonOdoriCue *, u32, u32); // [func_08020fd0] CUE - Hit
+extern void func_08020fe8(struct Cue *, struct BonOdoriCue *, u32, u32); // [func_08020fe8] CUE - Barely
+extern void func_0802100c(struct Cue *, struct BonOdoriCue *);           // [func_0802100c] CUE - Miss
+extern void func_08021034(u32, u32); // [func_08021034] MAIN - Input Event
 extern void func_08021084(void);    // [func_08021084] COMMON Func_00 - Beat Animation
 extern void func_08021188(void);    // [func_08021188] COMMON Func_01 - STUB
 extern void func_0802118c(void);    // [func_0802118c] COMMON Func_02 - STUB
