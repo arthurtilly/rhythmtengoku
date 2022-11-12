@@ -2181,32 +2181,32 @@ D_088a3974 = 0x088a3974;
 D_088a399c = 0x088a399c;
 D_088a3a7c = 0x088a3a7c;
 /* Karate Man Animations */
-D_088acc2c = 0x088acc2c;
-D_088acc3c = 0x088acc3c;
-D_088acc6c = 0x088acc6c;
-D_088acc7c = 0x088acc7c;
-D_088acc94 = 0x088acc94;
-D_088accdc = 0x088accdc;
-D_088accfc = 0x088accfc;
-D_088acd0c = 0x088acd0c;
-D_088acd1c = 0x088acd1c;
-D_088acd54 = 0x088acd54;
-D_088acd94 = 0x088acd94;
-D_088acdb4 = 0x088acdb4;
-D_088acdd4 = 0x088acdd4;
-D_088acdf4 = 0x088acdf4;
-D_088ace14 = 0x088ace14;
-D_088ace84 = 0x088ace84;
-D_088acee4 = 0x088acee4;
-D_088acf04 = 0x088acf04;
-D_088acf2c = 0x088acf2c;
-D_088acf44 = 0x088acf44;
-D_088acf54 = 0x088acf54;
-D_088acf7c = 0x088acf7c;
-D_088acfc4 = 0x088acfc4;
+karate_anim_joe_test = 0x088acc2c;
+karate_anim_object = 0x088acc3c;
+karate_anim_object_shadow = 0x088acc6c;
+karate_anim_object_shards = 0x088acc7c;
+karate_anim_joe_punch_high = 0x088acc94;
+karate_anim_joe_beat = 0x088accdc;
+karate_anim_hit_effect = 0x088accfc;
+karate_anim_joe_sad = 0x088acd0c;
+karate_anim_flow_meter = 0x088acd1c;
+karate_anim_joe_punch_low = 0x088acd54;
+karate_anim_joe_barely = 0x088acd94;
+karate_anim_joe_miss = 0x088acdb4;
+karate_anim_joe_smirk = 0x088acdd4;
+karate_anim_joe_happy = 0x088acdf4;
+karate_anim_joe_punch_ouch = 0x088ace14;
+karate_anim_flow_meter_test1 = 0x088ace84;
+karate_anim_flow_meter_test2 = 0x088acee4;
+karate_anim_cue_warning = 0x088acf04;
+karate_anim_tutorial_text_button = 0x088acf2c;
+karate_anim_tutorial_skip = 0x088acf44;
+karate_anim_tutorial_counter = 0x088acf54;
+karate_anim_joe_smug_high = 0x088acf7c;
+karate_anim_joe_smug_low = 0x088acfc4;
 /* Karate Man Palettes */
-D_088ad004 = 0x088ad004;
-D_088ad104 = 0x088ad104;
+karate_man_pal = 0x088ad004;
+karate_man_2_pal = 0x088ad104;
 /* Prologue - Sneaky Spirits Animations */
 D_088ad2bc = 0x088ad2bc;
 /* Prologue - Sneaky Spirits Palette */
@@ -5286,26 +5286,9 @@ D_089de670 = 0x089de670;
 /* Game Engine - Sneaky Spirits */
 /* Game Engine - Spaceball */
 /* Game Engine - The Bon Odori */
-
 /* Game Engine - Karate Man */
-D_089df010 = 0x089df010;
-D_089df020 = 0x089df020;
-D_089df044 = 0x089df044;
-D_089df064 = 0x089df064;
-D_089df074 = 0x089df074;
-D_089df0e0 = 0x089df0e0;
-D_089df140 = 0x089df140;
-D_089df1ac = 0x089df1ac;
-D_089df1bc = 0x089df1bc;
-D_089df1c8 = 0x089df1c8;
-D_089df208 = 0x089df208;
-D_089df248 = 0x089df248;
-D_089df288 = 0x089df288;
-D_089df2c8 = 0x089df2c8;
-D_089df308 = 0x089df308;
-D_089df348 = 0x089df348;
-D_089df37c = 0x089df37c;
-D_089df37e = 0x089df37e;
+
+/* Game Engine - Mannequin Factory */
 D_089df384 = 0x089df384;
 D_089df3a4 = 0x089df3a4;
 D_089df3ac = 0x089df3ac;

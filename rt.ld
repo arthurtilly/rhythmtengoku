@@ -1407,7 +1407,8 @@ SECTIONS {
         build/data/engines/sneaky_spirits_engine.c.o(.rodata*);
         build/data/engines/spaceball_engine.c.o(.rodata*);
         build/data/engines/bon_odori_engine.c.o(.rodata*);
-        build/bin/bindata_089df010.bin.o(.rodata*);
+        build/data/engines/karate_man_engine.c.o(.rodata*);
+        build/bin/bindata_089df384.bin.o(.rodata*);
         build/bin/bindata_089ea088.bin.o(.rodata*);
         build/audio/audio_data.c.o(.rodata*);
         build/bin/bindata_08a9e8e0.bin.o(.rodata*);
