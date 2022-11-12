@@ -29,7 +29,7 @@ struct KarateManInfo {
     u8 awaitingInput; // Value:  Tutorial Button Flag
     s16 tutorialSkip;      // Sprite:  Tutorial Skip
     s16 tutorialText;      // Sprite:  Tutorial Text
-    u16 tutorialObjects;   // Value:   Tutorial Objects Counter
+    u16 tutorialCounter;   // Value:   Tutorial Objects Counter
     u16 bgFace;     // Counter: BG Face Time on BG
     u8 seriousModeStarted; // Value:   "Serious Mode" Flag
     u8 seriousModeStopped; // Value:   "Serious Mode" End Flag
@@ -39,10 +39,10 @@ struct KarateManInfo {
 struct KarateManCue {
     u16 isHit:4;   // Flag:   Object Hit
     u16 miss:1;    // Flag:   Missed
-    u16 object:4;  // Value:  Object
+    u16 type:4;  // Value:  Object
     u16 unk2;      // Unused
-    s16 objects;   // Entity: Objects
-    s16 shadow;    // Entity: Object Shadow
+    s16 sprite;    // Sprite: Objects
+    s16 shadow;    // Sprite: Object Shadow
     s8 unk8;       // Value:  unk8 (Object Scale over time?)
     s8 unk9;       // Value:  unk9 (Shadow Scale over time?)
     s32 unkC;      // Value:  Object X Position
@@ -54,13 +54,16 @@ struct KarateManCue {
     u32 unk24;     // Value:  Object Gravity
     u16 unk28;     // Value:  Object Distance?
     s16 unk2A;     // Value:  Object Scale
-    u8 unk2C;      // Value:  Object Angle
+    s8 unk2C;      // Value:  Object Angle
     u8 unk2D;      // Value:  Object Rotation
     s16 unk2E;     // Value:  unk2E
 };
 
 
 // Engine Macros/Enums:
+#define KARATE_PALETTE_NORMAL 0
+#define KARATE_PALETTE_SERIOUS 1
+
 enum KarateVersionsEnum {
     KARATE_VER_0,
     KARATE_VER_FACES,
@@ -152,40 +155,40 @@ extern void karate_init_gfx3(void);    // [func_08021190] GFX_INIT Func_02
 extern void karate_init_gfx2(void);
 extern void karate_init_gfx1(void);
 extern void karate_engine_init(u32);     // [func_08021210] MAIN - Init
-extern void func_0802139c(u32, u32);
-extern void func_080213d4(u32);
-extern void func_080213e4(void);
-extern void func_08021408(void);
-extern void func_08021424(void);
-extern void func_08021440(char *);
-extern void func_08021458(void);
-extern void func_080214a0(const struct Scene *);
-extern void func_080214d4(u32);
-extern void func_08021524(void);
-extern void func_08021544(u8);
+extern void karate_set_bg_face(u32, u32);
+extern void karate_reset_bg_face(u32);
+extern void karate_update_bg_face(void);
+extern void karate_start_serious_mode_next_hit(void);
+extern void karate_stop_serious_mode_next_hit(void);
+extern void karate_tutorial_display_text(char *);
+extern void karate_tutorial_wait_for_input(void);
+extern void karate_common_init_tutorial(const struct Scene *);
+extern void karate_tutorial_loop_start(u32);
+extern void karate_tutorial_loop_end(void);
+extern void karate_use_the_face(u8);
 extern void karate_engine_update(void);
 extern void karate_engine_stop(void);
-extern void func_0802160c(struct Cue *);
-extern void func_08021644(struct Cue *, struct KarateManCue *, u32); // CUE - Spawn
-extern void func_08021740(struct KarateManCue *);
-extern void func_080217ec(struct KarateManCue *);
-extern void func_08021818(struct KarateManCue *);
-extern u32  func_08021888(struct Cue *, struct KarateManCue *, u32, u32); // CUE - Update
-extern void func_08021974(struct Cue *, struct KarateManCue *); // CUE - Despawn
-extern void func_080219a8(void);
-extern void func_08021a0c(void);
-extern void func_08021a60(struct Cue *, struct KarateManCue *); // CUE - Hit
-extern void func_08021d38(struct Cue *, struct KarateManCue *); // CUE - Barely
-extern void func_08021dcc(struct Cue *, struct KarateManCue *); // CUE - Miss
-extern void func_08021dd8(struct KarateJoe *);
-extern void func_08021e40(struct KarateJoe *);
-extern void func_08021e58(struct KarateJoe *);
+extern void karate_cue_increment_z_for_existing_objects(struct Cue *);
+extern void karate_cue_spawn(struct Cue *, struct KarateManCue *, u32); // CUE - Spawn
+extern void karate_cue_update_object(struct KarateManCue *);
+extern void karate_cue_update_punched_object(struct KarateManCue *);
+extern void karate_cue_update_launched_object(struct KarateManCue *);
+extern u32  karate_cue_update(struct Cue *, struct KarateManCue *, u32, u32); // CUE - Update
+extern void karate_cue_despawn(struct Cue *, struct KarateManCue *); // CUE - Despawn
+extern void karate_start_serious_mode(void);
+extern void karate_stop_serious_mode(void);
+extern void karate_cue_hit(struct Cue *, struct KarateManCue *); // CUE - Hit
+extern void karate_cue_barely(struct Cue *, struct KarateManCue *); // CUE - Barely
+extern void karate_cue_miss(struct Cue *, struct KarateManCue *); // CUE - Miss
+extern void karate_joe_init(struct KarateJoe *);
+extern void karate_joe_delete(struct KarateJoe *);
+extern void karate_joe_update(struct KarateJoe *);
 extern void karate_input_event(u32, u32);
-extern void func_08021f04(void);
-extern void func_08022010(u32);
-extern void func_08022050(void);
-extern void func_080220c4(void);
-extern void func_08022114(void);
-extern void func_08022170(void);
-extern void func_080221cc(void);
-extern void func_0802221c(u32);
+extern void karate_common_beat_animation(void);
+extern void karate_common_display_text(u32);
+extern void karate_init_flow(void);
+extern void karate_reset_flow(void);
+extern void karate_increment_flow(void);
+extern void karate_decrement_flow(void);
+extern void karate_update_bg_palette(void);
+extern void karate_enable_flow(u32);
