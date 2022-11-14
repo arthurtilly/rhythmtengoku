@@ -53,5 +53,25 @@ extern const u32 D_0805a914[];
 extern const u32 D_0805a91c[];
 
 // Horse Machine
-// <bg gfx tables>
+extern const struct GraphicsTable D_0805a924[];
+extern const struct GraphicsTable D_0805a948[];
+extern const struct GraphicsTable D_0805a96c[];
+extern const struct GraphicsTable D_0805a990[];
+extern const struct GraphicsTable D_0805a9b4[];
+extern const struct GraphicsTable D_0805a9d8[];
 extern const char D_0805a9fc[];
+extern const s32 D_0805aa00[];
+extern const s32 D_0805aa10[];
+extern const s32 D_0805aa20[];
+extern const s32 D_0805aa40[];
+extern const u32 D_0805aa60[][4];
+extern const s32 D_0805aaa0[];
+extern const s32 D_0805aab0[][4];
+
+// Rhythm Toys - Confession Machine
+extern const struct SequenceData *const D_0805aaf0[];
+extern const struct SequenceData *const D_0805ab00[];
+extern const struct SequenceData *const D_0805ab10[];
+extern const struct SequenceData *const D_0805ab20[];
+extern const struct SequenceData *const D_0805ab30[];
+extern const struct SequenceData *const D_0805ab40[];

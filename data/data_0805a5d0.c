@@ -1,5 +1,6 @@
 #include "global.h"
 #include "graphics.h"
+#include "sound.h"
 #include "data_0805a5d0.h"
 
 
@@ -251,5 +252,117 @@ const struct GraphicsTable D_0805a9d8[] = {
     END_OF_GRAPHICS_TABLE
 };
 
+// Empty String
 const char D_0805a9fc[] = "";
 
+// ?
+const s32 D_0805aa00[] = {
+    3, 3, 2, 3
+};
+
+// ?
+const s32 D_0805aa10[] = {
+    3, 3, 2, 3
+};
+
+// ?
+const s32 D_0805aa20[] = {
+    0x60,  0x80,  0xc0,  0x100,
+    0x200, 0x400, 0x600, 0x800
+};
+
+// ?
+const s32 D_0805aa40[] = {
+    -0x200, -0x280, -0x300, -0x300,
+    -0x400, -0x380, -0x500, -0x400
+};
+
+// ? (duration values)
+const u32 D_0805aa60[][4] = {
+    { 0x10, 0x20, 0x10, 0x20 },
+    { 0x18, 0x18, 0x18, 0x18 },
+    { 0x18, 0x0C, 0x0C, 0x00 },
+    { 0x18, 0x0C, 0x0C, 0x0C }
+};
+
+const s32 D_0805aaa0[] = {
+    0xd800, 0x14000, 0x1e000, 0x28000
+};
+
+const s32 D_0805aab0[][4] = {
+    { 0x4c, 0x6c, 0x84, 0xa4 },
+    { 0x48, 0x68, 0x88, 0xa8 },
+    { 0x60, 0x78, 0x90, -0x40 },
+    { 0x5a, 0x6e, 0x82, 0x98 },
+};
+
+
+/* Rhythm Toys - Confession Machine */
+
+
+extern const struct SequenceData s_heat_v_anataga_seqData;
+extern const struct SequenceData s_heat_v_anatatara_seqData;
+extern const struct SequenceData s_heat_v_kimiga_seqData;
+extern const struct SequenceData s_heat_v_jituhane_seqData;
+extern const struct SequenceData s_heat_v_watasine_seqData;
+extern const struct SequenceData s_heat_v_watasitara_seqData;
+extern const struct SequenceData s_heat_v_okubyo_seqData;
+extern const struct SequenceData s_heat_v_majime_seqData;
+extern const struct SequenceData s_heat_v_kouitta_seqData;
+extern const struct SequenceData s_heat_v_doji_seqData;
+extern const struct SequenceData s_heat_v_sugoi_seqData;
+extern const struct SequenceData s_heat_v_koumietemo_seqData;
+extern const struct SequenceData s_heat_v_demo_seqData;
+extern const struct SequenceData s_heat_v_yappari_seqData;
+extern const struct SequenceData s_heat_v_dakedo_seqData;
+extern const struct SequenceData s_heat_v_suki_seqData;
+extern const struct SequenceData s_heat_v_kirai_seqData;
+extern const struct SequenceData s_heat_v_seki_seqData;
+
+// Sound Effect Pool
+const struct SequenceData *const D_0805aaf0[] = {
+    &s_heat_v_anataga_seqData,
+    &s_heat_v_anatatara_seqData,
+    &s_heat_v_kimiga_seqData,
+    NULL
+};
+
+// Sound Effect Pool
+const struct SequenceData *const D_0805ab00[] = {
+    &s_heat_v_jituhane_seqData,
+    &s_heat_v_watasine_seqData,
+    &s_heat_v_watasitara_seqData,
+    NULL
+};
+
+// Sound Effect Pool
+const struct SequenceData *const D_0805ab10[] = {
+    &s_heat_v_okubyo_seqData,
+    &s_heat_v_majime_seqData,
+    &s_heat_v_kouitta_seqData,
+    NULL
+};
+
+// Sound Effect Pool
+const struct SequenceData *const D_0805ab20[] = {
+    &s_heat_v_doji_seqData,
+    &s_heat_v_sugoi_seqData,
+    &s_heat_v_koumietemo_seqData,
+    NULL
+};
+
+// Sound Effect Pool
+const struct SequenceData *const D_0805ab30[] = {
+    &s_heat_v_demo_seqData,
+    &s_heat_v_yappari_seqData,
+    &s_heat_v_dakedo_seqData,
+    NULL
+};
+
+// Sound Effect Pool
+const struct SequenceData *const D_0805ab40[] = {
+    &s_heat_v_suki_seqData,
+    &s_heat_v_kirai_seqData,
+    &s_heat_v_seki_seqData,
+    NULL
+};
