@@ -122,8 +122,8 @@ extern void func_08018d9c(void); // [func_08018d9c] LEVEL Display Positive Reinf
 // extern ? func_08018ec0(?); // [func_08018ec0] SCORE Graphics Init. 1
 // extern ? func_08018ef0(?); // [func_08018ef0] SCORE Graphics Init. 0
 // extern ? func_08018f10(?); // [func_08018f10] SCORE Scene Init.
-// extern ? func_0801911c(?); // [func_0801911c] SCORE ?
-// extern ? func_08019128(?); // [func_08019128] SCORE ?
+// extern ? func_0801911c(?); // [func_0801911c] SCORE Import Criteria/Data? (Script Function)
+// extern ? func_08019128(?); // [func_08019128] SCORE Import Text? (Script Function)
 // extern ? func_08019134(?); // [func_08019134] SCORE Scene STUB
 // extern ? func_08019138(?); // [func_08019138] SCORE Scene Main
 // extern ? func_08019178(?); // [func_08019178] SCORE Scene Close

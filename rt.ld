@@ -197,6 +197,10 @@ SECTIONS {
         build/data/script_data_horse_machine.c.o(.rodata*);
         build/data/script_data_marching_orders.c.o(.rodata*);
         build/data/script_data_wizards_waltz.c.o(.rodata*);
+        build/data/script_data_remix1.c.o(.rodata*);
+        build/data/script_data_bunny_hop.c.o(.rodata*);
+        build/data/script_data_metronome.c.o(.rodata*);
+        build/data/script_data_fireworks.c.o(.rodata*);
         build/data/data_0805a5d0.s.o(.rodata*);
         
         build/audio/samples/sfx_001.pcm.o(.rodata*);
