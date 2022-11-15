@@ -208,6 +208,11 @@ SECTIONS {
         build/data/script_data_toss_boys.c.o(.rodata*);
         build/data/script_data_drumming_intro_unused2.c.o(.rodata*);
         build/data/script_data_tram_and_pauline.c.o(.rodata*);
+        build/data/script_data_tanuki_and_monkey.c.o(.rodata*);
+        build/data/script_data_drumming_intro.c.o(.rodata*);
+        build/data/script_data_showtime.c.o(.rodata*);
+        build/data/script_data_space_dance.c.o(.rodata*);
+        build/data/script_data_drumming_intro_unused3.c.o(.rodata*);
         build/data/data_0805a5d0.s.o(.rodata*);
         
         build/audio/samples/sfx_001.pcm.o(.rodata*);
