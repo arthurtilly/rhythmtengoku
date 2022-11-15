@@ -181,12 +181,22 @@ SECTIONS {
         build/data/data_08059f90.c.o(.rodata*);
         build/data/fireworks_data.c.o(.rodata*);
         build/data/data_0805a5d0.c.o(.rodata*);
-        build/data/text_karate_man.c.o(.rodata*);
-        build/data/text_clappy_trio.c.o(.rodata*);
-        build/data/text_polyrhythm.c.o(.rodata*);
-        build/data/text_night_walk.c.o(.rodata*);
-        build/data/text_karate_man_2.c.o(.rodata*);
-        build/data/text_rhythm_tweezers.c.o(.rodata*);
+        build/data/script_data_karate_man.c.o(.rodata*);
+        build/data/script_data_clappy_trio.c.o(.rodata*);
+        build/data/script_data_polyrhythm.c.o(.rodata*);
+        build/data/script_data_night_walk.c.o(.rodata*);
+        build/data/script_data_karate_man_2.c.o(.rodata*);
+        build/data/script_data_rhythm_tweezers.c.o(.rodata*);
+        build/data/script_data_sick_beats.c.o(.rodata*);
+        build/data/script_data_bouncy_road.c.o(.rodata*);
+        build/data/script_data_ninja_bodyguard.c.o(.rodata*);
+        build/data/script_data_sneaky_spirits.c.o(.rodata*);
+        build/data/script_data_samurai_slice.c.o(.rodata*);
+        build/data/script_data_spaceball.c.o(.rodata*);
+        build/data/script_data_tap_trial.c.o(.rodata*);
+        build/data/script_data_horse_machine.c.o(.rodata*);
+        build/data/script_data_marching_orders.c.o(.rodata*);
+        build/data/script_data_wizards_waltz.c.o(.rodata*);
         build/data/data_0805a5d0.s.o(.rodata*);
         
         build/audio/samples/sfx_001.pcm.o(.rodata*);
