@@ -213,6 +213,9 @@ SECTIONS {
         build/data/script_data_showtime.c.o(.rodata*);
         build/data/script_data_space_dance.c.o(.rodata*);
         build/data/script_data_drumming_intro_unused3.c.o(.rodata*);
+        build/data/script_data_rap_men.c.o(.rodata*);
+        build/data/script_data_quiz_show.c.o(.rodata*);
+        build/data/script_data_rhythm_test.c.o(.rodata*);
         build/data/data_0805a5d0.s.o(.rodata*);
         
         build/audio/samples/sfx_001.pcm.o(.rodata*);
