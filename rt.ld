@@ -181,6 +181,12 @@ SECTIONS {
         build/data/data_08059f90.c.o(.rodata*);
         build/data/fireworks_data.c.o(.rodata*);
         build/data/data_0805a5d0.c.o(.rodata*);
+        build/data/text_karate_man.c.o(.rodata*);
+        build/data/text_clappy_trio.c.o(.rodata*);
+        build/data/text_polyrhythm.c.o(.rodata*);
+        build/data/text_night_walk.c.o(.rodata*);
+        build/data/text_karate_man_2.c.o(.rodata*);
+        build/data/text_rhythm_tweezers.c.o(.rodata*);
         build/data/data_0805a5d0.s.o(.rodata*);
         
         build/audio/samples/sfx_001.pcm.o(.rodata*);
