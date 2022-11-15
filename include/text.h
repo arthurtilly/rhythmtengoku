@@ -20,3 +20,8 @@
 #define TEXT_STYLE_SHADOW_2 "\x05\x32"
 #define TEXT_STYLE_SHADOW_3 "\x05\x33"
 #define TEXT_STYLE_NORMAL "\x05\x34"
+
+// Things that make it appear as if we might be using the wrong encoding:
+#define SHIFT_JIS_WAVE_DASH "\x81\x60"
+#define SHIFT_JIS_KANJI_JUU "\x8f\x5c"
+#define SHIFT_JIS_KANJI_NOU "\x94\x5c"

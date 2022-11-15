@@ -1,4 +1,5 @@
 #include "global.h"
+#include "text.h"
 
 extern const char D_0805c3d4[];
 extern const char D_0805c3f0[];

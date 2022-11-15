@@ -1,4 +1,5 @@
 #include "global.h"
+#include "text.h"
 
 extern const char D_0805c0d0[];
 extern const char D_0805c0ec[];
@@ -44,7 +45,7 @@ extern const char D_0805c3cc[];
 
 const char D_0805c0d0[] = "きほんが　できてませんね。";
 
-const char D_0805c0ec[] = "適応\x94\x5c力　良いです！";
+const char D_0805c0ec[] = "適応" SHIFT_JIS_KANJI_NOU "力　良いです！";
 
 const char D_0805c104[] = "判断力が欠けてます。";
 
@@ -88,7 +89,7 @@ const char D_0805c290[] = "たいした　判断力だヨ！";
 
 const char D_0805c2a8[] = "もっと集中しよう。";
 
-const char D_0805c2bc[] = "すごい集中力だヨ\x81\x60！";
+const char D_0805c2bc[] = "すごい集中力だヨ" SHIFT_JIS_WAVE_DASH "！";
 
 const char D_0805c2d4[] = "ツメが甘いかも。";
 

@@ -1,7 +1,5 @@
 #include "global.h"
-
-// Things that make it appear as if we just might be using the wrong encoding #0x8160:
-#define SHIFT_JIS_WAVE_DASH "\x81\x60"
+#include "text.h"
 
 extern const char D_0805cd60[];
 extern const char D_0805cd7c[];

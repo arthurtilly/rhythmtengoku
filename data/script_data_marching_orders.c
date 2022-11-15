@@ -1,4 +1,5 @@
 #include "global.h"
+#include "text.h"
 
 extern const char D_0805c774[];
 extern const char D_0805c790[];
@@ -72,9 +73,9 @@ const char D_0805c910[] = "なかなか　よろしいですヨ！";
 
 const char D_0805c92c[] = "判断力が　欠けてるぅー。";
 
-const char D_0805c948[] = "すばらしい判断力だネ\x81\x60！";
+const char D_0805c948[] = "すばらしい判断力だネ" SHIFT_JIS_WAVE_DASH "！";
 
-const char D_0805c964[] = "もっと　ウデを　みがいたら\x81\x60？";
+const char D_0805c964[] = "もっと　ウデを　みがいたら" SHIFT_JIS_WAVE_DASH "？";
 
 const char D_0805c984[] = "とても　テクニカルでーす！";
 
