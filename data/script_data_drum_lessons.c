@@ -91,6 +91,60 @@ extern const struct BeatScript D_08060e20[];
 extern const char D_08060f10[];
 extern const struct BeatScript D_08060f4c[];
 extern const char D_08060fa0[];
+extern const struct BeatScript D_08060ff8[];
+extern const struct BeatScript D_0806104c[];
+extern const char D_08061070[];
+extern const struct BeatScript D_080610b0[];
+extern const char D_08061110[];
+extern const struct BeatScript D_08061154[];
+extern const char D_080611c0[];
+extern const struct BeatScript D_08061204[];
+extern const char D_08061288[];
+extern const struct BeatScript D_080612c4[];
+extern const char D_08061300[];
+extern const struct BeatScript D_08061330[];
+extern const char D_080613e4[];
+extern const struct BeatScript D_0806143c[];
+extern const struct BeatScript D_080614a8[];
+extern const char D_080614cc[];
+extern const struct BeatScript D_080614f4[];
+extern const char D_08061578[];
+extern const struct BeatScript D_080615a8[];
+extern const char D_080615e4[];
+extern const struct BeatScript D_08061614[];
+extern const struct BeatScript D_080616b0[];
+extern const char D_08061704[];
+extern const char D_08061740[];
+extern const char D_0806178c[];
+extern const char D_080617bc[];
+extern const char D_080617f0[];
+extern const char D_0806183c[];
+extern const char D_08061884[];
+extern const char D_0806189c[];
+extern const char D_080618d8[];
+extern const char D_08061910[];
+extern const char D_08061950[];
+extern const char D_08061980[];
+extern const char D_08061998[];
+extern const struct BeatScript D_080619f0[];
+extern const struct BeatScript D_08061a44[];
+extern const char D_08061a68[];
+extern const struct BeatScript D_08061a90[];
+extern const char D_08061ae4[];
+extern const struct BeatScript D_08061b10[];
+extern const char D_08061b64[];
+extern const struct BeatScript D_08061b94[];
+extern const char D_08061c00[];
+extern const struct BeatScript D_08061c2c[];
+extern const char D_08061cb0[];
+extern const struct BeatScript D_08061cdc[];
+extern const char D_08061d18[];
+extern const char D_08061d70[];
+extern const char D_08061dbc[];
+extern const char D_08061e04[];
+extern const char D_08061e24[];
+extern const struct BeatScript D_08061e7c[];
+extern const struct BeatScript D_08061ed0[];
 
 
 /* Game Text - Drum Lessons */
@@ -928,3 +982,417 @@ const char D_08060fa0[] =
     "演奏を止めると、\n"
     "お手本がきけるヨ！";
 
+const struct BeatScript D_08060ff8[] = {
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC_RETURN
+};
+
+const struct BeatScript D_0806104c[] = {
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x15),
+    BSC_RETURN
+};
+
+const char D_08061070[] =
+    "\n"
+    "１カ所、音がふえるヨ！\n"
+    "わかるかな？\n"
+    "ヒント：キックは前と同じ";
+
+const struct BeatScript D_080610b0[] = {
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(2),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC_RETURN
+};
+
+const char D_08061110[] =
+    "さらに１カ所、\n"
+    "音がふえるヨ！\n"
+    "わかるかな？\n"
+    "ヒント：キックは前と同じ";
+
+const struct BeatScript D_08061154[] = {
+    BSC3_SPAWN_CUE(2),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(2),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC_RETURN
+};
+
+const char D_080611c0[] =
+    "またまた１カ所、\n"
+    "音がふえるヨ！\n"
+    "わかるかな？\n"
+    "ヒント：" SHIFT_JIS_KANJI_JUU "字ボタン上";
+
+const struct BeatScript D_08061204[] = {
+    BSC3_SPAWN_CUE(2),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(4),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(2),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC_RETURN
+};
+
+const char D_08061288[] =
+    "\n"
+    "そしてまたなんと！\n"
+    "１カ所、音がふえるヨ！\n"
+    "わかるかな？\n";
+
+const struct BeatScript D_080612c4[] = {
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(4),
+    BSC_REST(0x09),
+    BSC_RETURN
+};
+
+
+const char D_08061300[] =
+    "\n"
+    "これまたなんと！\n"
+    "ノリノリだヨ！\n"
+    "できるかな？\n";
+
+const struct BeatScript D_08061330[] = {
+    BSC3_SPAWN_CUE(2),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(4),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(4),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(2),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(4),
+    BSC_REST(0x0C),
+    BSC_RETURN
+};
+
+const char D_080613e4[] =
+    "よくきいてマネしてね。\n"
+    "好きなタイミングでどうぞ。\n"
+    "演奏を止めると、\n"
+    "お手本がきけるヨ！";
+
+const struct BeatScript D_0806143c[] = {
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(2),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x18),
+    BSC_RETURN
+};
+
+const struct BeatScript D_080614a8[] = {
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x15),
+    BSC_RETURN
+};
+
+const char D_080614cc[] =
+    "\n"
+    "１カ所、音がふえるヨ！\n"
+    "わかるかな？\n";
+
+const struct BeatScript D_080614f4[] = {
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x06),
+    BSC3_SPAWN_CUE(2),
+    BSC_REST(0x06),
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x18),
+    BSC_RETURN
+};
+
+const char D_08061578[] =
+    "\n"
+    "さらに１カ所、\n"
+    "音がふえるヨ！\n"
+    "わかるかな？\n";
+
+const struct BeatScript D_080615a8[] = {
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(2),
+    BSC_REST(0x09),
+    BSC_RETURN
+};
+
+const char D_080615e4[] =
+    "\n"
+    "またまた１カ所、\n"
+    "音がふえるヨ！\n"
+    "わかるかな？\n";
+
+const struct BeatScript D_08061614[] = {
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x06),
+    BSC3_SPAWN_CUE(2),
+    BSC_REST(0x06),
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(2),
+    BSC_REST(0x0C),
+    BSC_RETURN
+};
+
+const struct BeatScript D_080616b0[] = {
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x06),
+    BSC3_SPAWN_CUE(2),
+    BSC_REST(0x06),
+    BSC3_SPAWN_CUE(3),
+    BSC_REST(0x09),
+    BSC_RETURN
+};
+
+const char D_08061704[] =
+    "\n"
+    "今回は、スネアドラムという\n"
+    "タイコをたたいてみましょう。\n";
+
+const char D_08061740[] =
+    "\n"
+    "Aボタンと" SHIFT_JIS_KANJI_JUU "字ボタンの左、\n"
+    "どちらでもスネアドラムを\n"
+    "たたくことができるヨ！";
+
+const char D_0806178c[] =
+    "\n"
+    "では　さっそくですが\n"
+    "レッスンをはじめまーす！"
+    "\n";
+
+const char D_080617bc[] =
+    "\n"
+    "上で光っているランプは、\n"
+    "タイミングランプです。";
+
+const char D_080617f0[] =
+    "\n"
+    "まん中のミドリがジャスト！\n"
+    "それより左はハシリ気味、\n"
+    "右はモタリ気味です。";
+
+const char D_0806183c[] =
+    "\n"
+    "うまく　できないときは、\n"
+    "上のランプを見てズレを\n"
+    "チェックしてみてネ！";
+
+const char D_08061884[] =
+    "\n"
+    "では、つぎ行きまーす！";
+
+const char D_0806189c[] =
+    "\n"
+    "演奏が速くて困ったら\n"
+    "スタートボタンを\n"
+    "押してネ！すると…";
+
+const char D_080618d8[] =
+    "\n"
+    "演奏が、ゆっくりに\n"
+    "なるんだヨ！\n"
+    "参考にしてみてネ。\n";
+
+const char D_08061910[] =
+    "\n"
+    "もとのテンポに戻るには\n"
+    "再度スタートボタンを\n"
+    "押せばＯＫです。";
+
+const char D_08061950[] =
+    "\n"
+    "ちなみにスロー演奏中は\n"
+    "レッスンが進まないヨ。";
+
+const char D_08061980[] =
+    "\n"
+    "では、次いってみよう！";
+
+const char D_08061998[] =
+    "よくきいてマネしてね。\n"
+    "好きなタイミングでどうぞ。\n"
+    "演奏を止めると、\n"
+    "お手本がきけるヨ！";
+
+const struct BeatScript D_080619f0[] = {
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC_RETURN
+};
+
+const struct BeatScript D_08061a44[] = {
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x15),
+    BSC_RETURN
+};
+
+const char D_08061a68[] =
+    "\n"
+    "１カ所、音が変わるヨ！\n"
+    "わかるかな？";
+
+const struct BeatScript D_08061a90[] = {
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(2),
+    BSC_REST(0x18),
+    BSC_RETURN
+};
+
+const char D_08061ae4[] =
+    "\n"
+    "さらに１カ所、\n"
+    "音が変わるヨ！\n"
+    "わかるかな？";
+
+const struct BeatScript D_08061b10[] = {
+    BSC3_SPAWN_CUE(2),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(2),
+    BSC_REST(0x18),
+    BSC_RETURN
+};
+
+const char D_08061b64[] =
+    "\n"
+    "こんどは１つ、\n"
+    "音がふえるヨ！\n"
+    "わかるかな？\n";
+
+const struct BeatScript D_08061b94[] = {
+    BSC3_SPAWN_CUE(2),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(2),
+    BSC_REST(0x18),
+    BSC_RETURN
+};
+
+const char D_08061c00[] =
+    "\n"
+    "さらに１つ、\n"
+    "音がふえるヨ！\n"
+    "わかるかな？";
+
+const struct BeatScript D_08061c2c[] = {
+    BSC3_SPAWN_CUE(2),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x06),
+    BSC3_SPAWN_CUE(0),
+    BSC_REST(0x06),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(2),
+    BSC_REST(0x18),
+    BSC_RETURN
+};
+
+const char D_08061cb0[] =
+    "\n"
+    "またまた１つ、\n"
+    "音がふえるヨ！\n"
+    "わかるかな？";
+
+const struct BeatScript D_08061cdc[] = {
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x0C),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x09),
+    BSC_RETURN
+};
+
+const char D_08061d18[] =
+    "今回は、バスドラムと\n"
+    "スネアドラムという、\n"
+    "２つのタイコを使って\n"
+    "レッスンをしましょう。";
+
+const char D_08061d70[] =
+    "\n"
+    "Bボタンと" SHIFT_JIS_KANJI_JUU "字ボタンの下、\n"
+    "どちらでもバスドラムを\n"
+    "たたくことができるヨ！";
+
+const char D_08061dbc[] =
+    "\n"
+    "しってると思うけど\n"
+    "スネアドラムはAボタンと\n"
+    SHIFT_JIS_KANJI_JUU "字ボタンの左だからネ。";
+
+const char D_08061e04[] =
+    "\n"
+    "では　ぼちぼち\n"
+    "はじめますネ" SHIFT_JIS_WAVE_DASH "\n"
+    "";
+
+const char D_08061e24[] =
+    "よくきいてマネしてね。\n"
+    "好きなタイミングでどうぞ。\n"
+    "演奏を止めると、\n"
+    "お手本がきけるヨ！";
+
+const struct BeatScript D_08061e7c[] = {
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x18),
+    BSC_RETURN
+};
+
+const struct BeatScript D_08061ed0[] = {
+    BSC3_SPAWN_CUE(1),
+    BSC_REST(0x15),
+    BSC_RETURN
+};
