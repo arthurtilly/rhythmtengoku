@@ -23,6 +23,7 @@
 
 // Things that make it appear as if we might be using the wrong encoding:
 #define SHIFT_JIS_WAVE_DASH "\x81\x60"
+#define SHIFT_JIS_KATAKANA_SO "\x83\x5c"
 #define SHIFT_JIS_KANJI_JUU "\x8f\x5c"
 #define SHIFT_JIS_KANJI_NOU "\x94\x5c"
 #define SHIFT_JIS_KANJI_HYOU "\x95\x5c"

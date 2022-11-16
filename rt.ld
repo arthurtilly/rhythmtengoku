@@ -217,6 +217,12 @@ SECTIONS {
         build/data/script_data_quiz_show.c.o(.rodata*);
         build/data/script_data_rhythm_test.c.o(.rodata*);
         build/data/script_data_drum_lessons.c.o(.rodata*);
+        build/data/script_data_bon_odori.c.o(.rodata*);
+        build/data/script_data_tap_trial_2.c.o(.rodata*);
+        build/data/script_data_snappy_trio.c.o(.rodata*);
+        build/data/script_data_rap_women.c.o(.rodata*);
+        build/data/script_data_remix2.c.o(.rodata*);
+        build/data/script_data_remix4.c.o(.rodata*);
         build/data/data_0805a5d0.s.o(.rodata*);
         
         build/audio/samples/sfx_001.pcm.o(.rodata*);
