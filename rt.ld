@@ -227,7 +227,12 @@ SECTIONS {
         build/data/script_data_cosmic_dance.c.o(.rodata*);
         build/data/script_data_quiz_show_ex.c.o(.rodata*);
         build/data/script_data_staff_credit.c.o(.rodata*);
-        build/data/data_0805a5d0.s.o(.rodata*);
+        build/data/script_data_remix3.c.o(.rodata*);
+        build/data/script_data_remix7.c.o(.rodata*);
+        build/data/script_data_remix5.c.o(.rodata*);
+        build/data/script_data_bon_dance.c.o(.rodata*);
+        build/data/script_data_remix6.c.o(.rodata*);
+        build/data/script_data_remix8.c.o(.rodata*);
         
         build/audio/samples/sfx_001.pcm.o(.rodata*);
         build/audio/samples/sfx_002.pcm.o(.rodata*);
