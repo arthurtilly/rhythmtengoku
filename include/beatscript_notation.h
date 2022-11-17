@@ -9,6 +9,17 @@
  */
 
 #include "global.h"
+#include "src/code_08001360.h"
+#include "src/code_0800b778.h"
+#include "src/riq_gameplay.h"
+#include "src/riq_results.h"
+
+enum BeatScriptArgType {
+    BEATSCRIPT_ARG_BYTE,
+    BEATSCRIPT_ARG_SHORT,
+    BEATSCRIPT_ARG_INTEGER,
+    BEATSCRIPT_ARG_FUNCTION
+};
 
 // New BeatScript Instruction
 #define BSC_UNDEFINED(cmd,arg1,arg2,arg3) { ((u32)(cmd)), ((u32)(arg1)), ((u32)(arg2)), ((u32)(arg3)) }
@@ -75,7 +86,7 @@
 #define BSC_CASE(var) BSC_UNDEFINED(0x1C,0,0,var)
 
 // Command 0x1D: Switch Case End
-#define BSC_CASE_END BSC_UNDEFINED(0x1C,0,0,0)
+#define BSC_CASE_END BSC_UNDEFINED(0x1D,0,0,0)
 
 // Command 0x21: Conditional (Scene) - If Equal
 #define BSC_COND_IF_SCENE_VAR_EQUAL(index,type,val) BSC_UNDEFINED(0x21,type,index,val)

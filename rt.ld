@@ -223,6 +223,10 @@ SECTIONS {
         build/data/script_data_rap_women.c.o(.rodata*);
         build/data/script_data_remix2.c.o(.rodata*);
         build/data/script_data_remix4.c.o(.rodata*);
+        build/data/script_data_mr_upbeat.c.o(.rodata*);
+        build/data/script_data_cosmic_dance.c.o(.rodata*);
+        build/data/script_data_quiz_show_ex.c.o(.rodata*);
+        build/data/script_data_staff_credit.c.o(.rodata*);
         build/data/data_0805a5d0.s.o(.rodata*);
         
         build/audio/samples/sfx_001.pcm.o(.rodata*);

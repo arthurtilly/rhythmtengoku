@@ -3,6 +3,13 @@
 #include "global.h"
 #include "engines.h"
 
+// Engine Types:
+struct QuizShowScriptTable {
+    const struct BeatScript *scriptA;
+    const struct BeatScript *scriptB;
+    const struct QuizShowScriptTable *const *scriptTable;
+};
+
 // Engine Macros/Enums:
 
 // OAM Animations:
@@ -14,6 +21,7 @@
 // Engine Data:
 
 // Engine Definition Data:
+extern const struct GameEngine D_089e5ec0;
 
 // Functions:
 // extern ? func_0803709c(?);
