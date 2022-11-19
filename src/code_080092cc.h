@@ -29,6 +29,7 @@
 // extern ? func_080097d0(?);
 // extern ? func_08009814(?);
 // extern ? func_0800982c(?);
+
 // extern ? func_08009844(?);
 // extern ? func_08009884(?);
 // extern ? func_08009898(?);
