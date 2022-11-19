@@ -1449,6 +1449,7 @@ SECTIONS {
 		build/bin/bindata_08936650.bin.o(.rodata*);
         build/data/data_08936b54.c.o(.rodata*);
         build/data/sine_table.c.o(.rodata*);
+        build/data/data_089380ac.c.o(.rodata*);
         build/bin/bindata_089380ac.bin.o(.rodata*);
         build/bin/bindata_089ccbc0.bin.o(.rodata*);
         build/data/sound_tempo_table.c.o(.rodata*);
