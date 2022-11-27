@@ -3,6 +3,7 @@
 #include "src/code_08001360.h"
 #include "src/code_08003980.h"
 #include "src/code_08007468.h"
+#include "src/text_printer.h"
 #include "src/code_0800b778.h"
 #include "src/lib_0804c870.h"
 
@@ -44,7 +45,7 @@ void func_0802f3f4(void) {
 void func_0802f420(u32 ver) {
     u8 i;
     struct Animation *textAnim;
-    u32 temp;
+    struct SimpleText *temp;
 
     gFireworksInfo->version = ver;
     func_0802f3f4();

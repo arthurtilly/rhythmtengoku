@@ -134,8 +134,8 @@ extern void func_08018524(void); // [func_08018524] Initialise Pause Handler
 // extern ? func_0801853c(?); // [func_0801853c] Set Text Advance Buttons
 // extern ? func_0801858c(?);
 extern void func_080185d0(s16 x, s16 y, s32 show); // [func_080185d0] Display A Button Prompt
-extern void func_08018630(void *arg); // [func_08018630] Init. Text
-extern void func_08018660(char *text); // [func_08018660] Display Text
+extern void func_08018630(struct SimpleText *simpleText); // [func_08018630] Init. Text
+extern void func_08018660(const char *text); // [func_08018660] Display Text
 // extern ? func_08018698(?);
 // extern ? func_080186d4(?);
 extern void func_0801875c(void); // [func_0801875c] Update Text

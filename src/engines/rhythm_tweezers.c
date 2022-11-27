@@ -2,6 +2,7 @@
 
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
+#include "src/text_printer.h"
 #include "src/affine_sprite.h"
 #include "src/lib_0804c870.h"
 asm(".include \"include/gba.inc\""); // Temporary
@@ -272,7 +273,7 @@ void func_0802eca0(void) {
 
 // [func_0802eccc] MAIN - Init
 void func_0802eccc(u8 ver) {
-    u32 temp;
+    struct SimpleText *simpleText;
 
     // Standard game setup.
     gRhythmTweezersInfo->version = ver;
@@ -290,13 +291,13 @@ void func_0802eccc(u8 ver) {
     gRhythmTweezersInfo->tutorialSprite = func_0804d160(D_03005380, D_088e8910, 0, 120, 150, 0, 0, 0, 0x8000);
 
     // Other setup.
-    temp = func_0800a204((u16) func_0800c3b8(), 1, 0xf0, 0x1e);
-    func_0800ac68(temp, 0, 0x8c);
-    func_0800aca0(temp, 0x8800);
-    func_0800acd8(temp, 1);
-    func_0800acb0(temp, 1);
-    func_0800acbc(temp, 0);
-    func_08018630(temp);
+    simpleText = func_0800a204(func_0800c3b8(), 1, 240, 30);
+    func_0800ac68(simpleText, 0, 140);
+    func_0800aca0(simpleText, 0x8800);
+    func_0800acd8(simpleText, 1);
+    func_0800acb0(simpleText, 1);
+    func_0800acbc(simpleText, 0);
+    func_08018630(simpleText);
     func_08017338(A_BUTTON | DPAD_UP | DPAD_DOWN | DPAD_LEFT | DPAD_RIGHT, 0);
 }
 

@@ -55,7 +55,7 @@ const struct GraphicsTable sneaky_spirits_1_gfx_table[] = {
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_089ccbd0,
+        /* Src.  */ D_089ccbc8[1],
         /* Dest. */ OBJ_PALETTE_BUFFER(12.5),
         /* Size  */ 0x8
     },
@@ -95,7 +95,7 @@ const struct GraphicsTable sneaky_spirits_2_gfx_table[] = {
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_089ccbd0,
+        /* Src.  */ D_089ccbc8[1],
         /* Dest. */ OBJ_PALETTE_BUFFER(12.5),
         /* Size  */ 0x8
     },

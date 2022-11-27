@@ -4,6 +4,7 @@
 #include "graphics.h"
 #include "sound.h"
 #include "engines.h"
+#include "data/wario_data.h"
 
 // For readability.
 #define gMainMenuInfo   D_030046a4->mainMenu
@@ -51,7 +52,7 @@ struct GameSelectSceneInfo {
         u16 unkA;
     } unk1C[2];
     u16 unk34;
-    u32 unk38; // another pointer
+    struct SimpleText *unk38;
     u16 unk3C;
     u8 unk3E;
     u8 currentGameCompletionState;
@@ -121,7 +122,7 @@ struct GameSelectSceneInfo {
         s16 perfectBorderSprite;
         u16 unk8;
         u16 unkA;
-        u32 unkC; // pointer
+        struct SimpleText *unkC;
         s16 aButtonSprite;
         char unk12[11];
     } perfectCampaignNotice;
@@ -190,7 +191,7 @@ struct GameplaySceneInfo {
     u16 paletteBuffer[0x200]; // Palette Buffer
     s16 skipTutorialSprite;
     s16 aButtonSprite;
-    void *unk498; // text manager or font or something
+    struct SimpleText *simpleText; // text handler
     u8  unk49C; // Text-related
     u8  unk49D; // Text-related
     u16 textButtonPressFilter;

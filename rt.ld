@@ -18,6 +18,7 @@ SECTIONS {
 		build/src/code_08007468.c.o(.bss*);
 		build/src/code_08008dcc.c.o(.bss*);
 		build/src/code_080092cc.c.o(.bss*);
+		build/src/text_printer.c.o(.bss*);
 		build/src/code_0800b3c8.c.o(.bss*);
 		build/src/code_0800b778.c.o(.bss*);
 		build/src/affine_sprite.c.o(.bss*);
@@ -93,6 +94,7 @@ SECTIONS {
 		build/src/code_08007468.c.o(.text);
 		build/src/code_08008dcc.c.o(.text);
 		build/src/code_080092cc.c.o(.text);
+		build/src/text_printer.c.o(.text);
 		build/src/code_0800b3c8.c.o(.text);
 		build/src/code_0800b778.c.o(.text);
         build/src/affine_sprite.c.o(.text);
@@ -1449,9 +1451,15 @@ SECTIONS {
 		build/bin/bindata_08936650.bin.o(.rodata*);
         build/data/data_08936b54.c.o(.rodata*);
         build/data/sine_table.c.o(.rodata*);
-        build/data/data_089380ac.c.o(.rodata*);
-        build/bin/bindata_089380ac.bin.o(.rodata*);
-        build/bin/bindata_089ccbc0.bin.o(.rodata*);
+        build/data/text_printer_data.c.o(.rodata*);
+        build/bin/text_small_glyphs.bin.o(.rodata*);
+        build/bin/text_small_glyph_sizes.bin.o(.rodata*);
+        build/bin/text_medium_glyphs.bin.o(.rodata*);
+        build/bin/text_medium_glyph_sizes.bin.o(.rodata*);
+        build/bin/text_large_glyphs.bin.o(.rodata*);
+        build/bin/text_large_glyph_sizes.bin.o(.rodata*);
+        build/data/unknown_anim_data.c.o(.rodata*);
+        build/data/wario_data.c.o(.rodata*);
         build/data/sound_tempo_table.c.o(.rodata*);
         build/bin/bindata_089cd1a4.bin.o(.rodata*);
         build/data/scenes/game_select/scene_entries.c.o(.rodata*);

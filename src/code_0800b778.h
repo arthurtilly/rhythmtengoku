@@ -1,5 +1,6 @@
 #pragma once
 #include "sound.h"
+#include "data/wario_data.h"
 
 /* Main Game Handler */
 

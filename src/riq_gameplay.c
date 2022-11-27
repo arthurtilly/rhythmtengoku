@@ -1130,16 +1130,16 @@ void func_080185d0(s16 x, s16 y, s32 show) {
 
 
 // [func_08018630] Initialise Text Elements
-void func_08018630(void *arg) {
-    gGameplayInfo.unk498 = arg;
+void func_08018630(struct SimpleText *simpleText) {
+    gGameplayInfo.simpleText = simpleText;
     gGameplayInfo.unk49C = 0;
     gGameplayInfo.unk49D = 0;
 }
 
 
 // [func_08018660] Display Text
-void func_08018660(char *text) {
-    func_0800aa4c(gGameplayInfo.unk498, text);
+void func_08018660(const char *text) {
+    func_0800aa4c(gGameplayInfo.simpleText, text);
     func_080185d0(0, 0, FALSE);
     gGameplayInfo.unk49D = 0;
 }
@@ -1154,21 +1154,21 @@ void func_08018660(char *text) {
 void func_0801875c(void) {
     if (gGameplayInfo.skippingTutorial) return;
 
-    func_0800a914(gGameplayInfo.unk498);
+    func_0800a914(gGameplayInfo.simpleText);
 
     if (gGameplayInfo.unk49C == 0) return;
 
-    if (!func_0800ac58(gGameplayInfo.unk498) && gGameplayInfo.unk49D) {
+    if (!func_0800ac58(gGameplayInfo.simpleText) && gGameplayInfo.unk49D) {
         func_08018698(); // Text-related
         gGameplayInfo.unk49D = FALSE;
     }
 
-    if (!func_0800ac58(gGameplayInfo.unk498) && (D_03004afc & A_BUTTON)) {
-        func_0800aa4c(gGameplayInfo.unk498, 0);
+    if (!func_0800ac58(gGameplayInfo.simpleText) && (D_03004afc & A_BUTTON)) {
+        func_0800aa4c(gGameplayInfo.simpleText, 0);
         func_080185d0(0, 0, FALSE); // Hide A Button Prompt
         func_08002634(&s_f_send_mes_seqData);
         func_08017338(gGameplayInfo.textButtonPressFilter, gGameplayInfo.textButtonReleaseFilter);
-        func_0800bd04(0);
+        func_0800bd04(FALSE);
         gGameplayInfo.unk49C = 0;
     }
 }

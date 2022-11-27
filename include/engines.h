@@ -4,6 +4,7 @@
 #include "graphics.h"
 #include "sound.h"
 #include "cues.h"
+#include "data/wario_data.h"
 
 /*
     General "Game Engine" header file.

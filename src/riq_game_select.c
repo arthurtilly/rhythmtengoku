@@ -5,7 +5,7 @@
 #include "code_08003980.h"
 #include "memory_heap.h"
 #include "code_08007468.h"
-#include "code_080092cc.h"
+#include "text_printer.h"
 #include "code_0800b778.h"
 #include "lib_0804c870.h"
 

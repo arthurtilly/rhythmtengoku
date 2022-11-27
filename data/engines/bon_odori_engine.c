@@ -88,7 +88,6 @@ extern const Palette bon_odori_bg_pal[]; // BG Palette (The Bon Odori)
 extern const Palette bon_odori_obj_pal[]; // OBJ Palette (The Bon Odori)
 extern const Palette bon_dance_bg_pal[]; // BG Palette (Bon Dance)
 extern const Palette bon_dance_obj_pal[]; // OBJ Palette (Bon Dance)
-extern const FontPalette D_089ccbf8[]; // Tutorial Font Palette
 
 
   //  //  //  GRAPHICS DATA  //  //  //
@@ -328,7 +327,7 @@ const struct GraphicsTable bon_odori_gfx_table[] = {
         /* Size  */ 0x8
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_089ccbf8,
+        /* Src.  */ D_089ccbc8[6],
         /* Dest. */ OBJ_PALETTE_BUFFER(13.5),
         /* Size  */ 0x8
     },
@@ -408,7 +407,7 @@ const struct GraphicsTable bon_dance_gfx_table[] = {
         /* Size  */ 0x8
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_089ccbf8,
+        /* Src.  */ D_089ccbc8[6],
         /* Dest. */ OBJ_PALETTE_BUFFER(13.5),
         /* Size  */ 0x8
     },
