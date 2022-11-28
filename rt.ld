@@ -84,7 +84,15 @@ SECTIONS {
         build/asm/boot.s.o(.text);
         build/src/main.c.o(.text);
         build/src/memory.c.o(.text);
-        build/bin/bindata_08000a00.bin.o(.rodata*); /* Seems to be ARM assembly */
+        build/bin/func_08000a00.bin.o(.rodata*); /* ARM Assembly */
+        build/bin/func_08000b2c.bin.o(.rodata*); /* ARM Assembly */
+        build/bin/func_08000cfc.bin.o(.rodata*); /* ARM Assembly */
+        build/bin/func_08000f08.bin.o(.rodata*); /* ARM Assembly */
+        build/bin/mem_heap_alloc_block_rom.bin.o(.rodata*); /* ARM Assembly */
+        build/bin/func_0800116c.bin.o(.rodata*); /* ARM Assembly */
+        build/bin/func_08001240.bin.o(.rodata*); /* ARM Assembly */
+        build/bin/func_080012bc.bin.o(.rodata*); /* ARM Assembly */
+        build/bin/func_08001334.bin.o(.rodata*); /* ARM Assembly */
         build/src/code_08001360.c.o(.text);
         build/src/code_08003980.c.o(.text);
         build/src/task_pool.c.o(.text);

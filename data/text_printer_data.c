@@ -3,11 +3,11 @@
 #include "text_printer_data.h"
 
 
-/* Text Printer Data */
+/* TEXT PRINTER DATA */
 
 
-// [D_089380ac]
-const struct struct_089380ac D_089380ac[] = {
+// [D_089380ac] Text Printer Font Table
+const struct TextPrinterFont D_089380ac[] = {
     /* Small Text */ {
         /* Glyph Data      */ text_small_glyphs_bin,
         /* Glyph Widths    */ text_small_glyph_sizes_bin,

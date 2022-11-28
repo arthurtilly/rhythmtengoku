@@ -273,7 +273,7 @@ void func_0802eca0(void) {
 
 // [func_0802eccc] MAIN - Init
 void func_0802eccc(u8 ver) {
-    struct SimpleText *simpleText;
+    struct TextPrinter *textPrinter;
 
     // Standard game setup.
     gRhythmTweezersInfo->version = ver;
@@ -291,13 +291,13 @@ void func_0802eccc(u8 ver) {
     gRhythmTweezersInfo->tutorialSprite = func_0804d160(D_03005380, D_088e8910, 0, 120, 150, 0, 0, 0, 0x8000);
 
     // Other setup.
-    simpleText = func_0800a204(func_0800c3b8(), 1, 240, 30);
-    func_0800ac68(simpleText, 0, 140);
-    func_0800aca0(simpleText, 0x8800);
-    func_0800acd8(simpleText, 1);
-    func_0800acb0(simpleText, 1);
-    func_0800acbc(simpleText, 0);
-    func_08018630(simpleText);
+    textPrinter = func_0800a204(func_0800c3b8(), 1, 240, 30);
+    func_0800ac68(textPrinter, 0, 140);
+    func_0800aca0(textPrinter, 0x8800);
+    func_0800acd8(textPrinter, 1);
+    func_0800acb0(textPrinter, 1);
+    func_0800acbc(textPrinter, 0);
+    func_08018630(textPrinter);
     func_08017338(A_BUTTON | DPAD_UP | DPAD_DOWN | DPAD_LEFT | DPAD_RIGHT, 0);
 }
 

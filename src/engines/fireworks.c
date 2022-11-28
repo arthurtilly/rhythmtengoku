@@ -45,7 +45,7 @@ void func_0802f3f4(void) {
 void func_0802f420(u32 ver) {
     u8 i;
     struct Animation *textAnim;
-    struct SimpleText *temp;
+    struct TextPrinter *temp;
 
     gFireworksInfo->version = ver;
     func_0802f3f4();

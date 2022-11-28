@@ -4,30 +4,30 @@
 #include "graphics.h"
 
 
-  //  //  //  SIMPLE TEXT  //  //  //
+  //  //  //  TEXT PRINTER  //  //  //
 
 
-struct SimpleText {
+struct TextPrinter {
     u16 memID;
     u8 updateWithoutRender;
     u8 currentlyPrinting;
     u8 unk4; // id for D_08938258 { 0..4 }
     u8 palette;
-    u8 unk6;
+    u8 lineColours;
     u16 maxWidth;
-    u8 textSize;
+    u8 font;
     u8 lineSpacing;
     s16 totalLines;
     s16 *lineSprites;
     s16 *unk14;
-    u8 *unk18;
+    u8 *lineAlignments;
     u32 *unk1C;
     s16 *lineShadowSprites;
-    u8 unk24;
-    u8 unk25;
+    u8 alignment;
+    u8 indentWidth;
     u16 unk26;
     u16 unk28;
-    u8 unk2A;
+    u8 currentLine;
     s16 x;
     s16 y;
     u16 z;
@@ -42,40 +42,40 @@ struct SimpleText {
     s16 *xSrc;
     s16 *ySrc;
     u8 unk54;
-    u8 unk55;
+    s8 shadowColours;
     u8 unk56;
 };
 
 extern void func_08009844(void); // Init. Static Variables
-extern s32 func_08009884(s32 textSize); // Get Spacing Width
-extern s32 func_08009898(s32 textSize, s32 glyphID); // Get Glyph Width
+extern s32 func_08009884(s32 font); // Get Spacing Width
+extern s32 func_08009898(s32 font, s32 glyphID); // Get Glyph Width
 // extern ? func_080098c4(?);
 // extern ? func_080098fc(?);
-extern void func_08009948(s32 tileOfsX, s32 tileOfsY, s32 textSize, s32 glyphID, s32 paletteParams); // Print Character to VRAM
-extern s32 func_080099a0(s32 tileBaseX, s32 tileBaseY, s32 textSize, const char *string, s32 maxWidth, s32 paletteParams); // Print Line to VRAM (return width in pixels)
+extern void func_08009948(s32 tileOfsX, s32 tileOfsY, s32 font, s32 glyphID, s32 lineColours); // Print Character to VRAM
+extern s32 func_080099a0(s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, s32 maxWidth, s32 lineColours); // Print Non-Formatted Line to VRAM (return width in pixels)
 // extern ? func_08009a54(?);
 // extern ? func_08009aa4(?);
-// extern ? func_08009af4(?);
-extern struct Animation *func_08009de4(u32 memID, u32 tileBaseX, u32 tileBaseY, u32 textSize, const char **string, u32 anchor, u32 arg6, u32 maxWidth, u32 arg8, u32 arg9, u32 arg10);
-extern struct Animation *func_0800a004(u32 memID, u32 tileBaseX, u32 tileBaseY, u32 textSize, const char *string, u32 anchor, u32 arg6, u32 maxWidth);
-extern struct Animation *func_0800a030(u32 memID, u32 tileBaseX, u32 tileBaseY, u32 textSize, const char **string, u32 anchor, u32 arg6, u32 maxWidth, u32 arg8, u32 arg9);
-// extern ? func_0800a05c(?);
+extern s32 func_08009af4(s32 tileBaseX, s32 tileBaseY, s32 font, const char **charStream, s32 maxWidth, s32 lineColours, s32 indentWidth, s32 shadowColours); // Print Formatted Line to VRAM (return width in pixels)
+extern struct Animation *func_08009de4(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char **string, u32 anchor, s32 lineColours, s32 maxWidth, s32 ignoreFormatting, s32 indentWidth, s32 shadowColours);
+extern struct Animation *func_0800a004(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, u32 anchor, s32 lineColours, s32 maxWidth);
+extern struct Animation *func_0800a030(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char **string, u32 anchor, s32 lineColours, s32 maxWidth, s32 indentWidth, s32 shadowColours);
+extern s32 func_0800a05c(void); // Get D_030012f8
 // extern ? func_0800a068(?);
-// extern ? func_0800a084(?);
+extern void func_0800a084(void *func); // Set D_0300121c
 // extern ? func_0800a090(?);
 // extern ? func_0800a0f0(?);
 // extern ? func_0800a108(?);
 extern u32 func_0800a1ac(u32 maxWidth);
 extern s32 func_0800a1d4(u32 totalLines, u32 id);
-extern struct SimpleText *func_0800a204(u16 memID, u32 totalLines, u32 maxWidth, u32 arg3); // Create New
-extern void func_0800a2f8();
-extern const char *func_0800a4a8(struct SimpleText *simpleText, u32 currentLine, const char *string);
+extern struct TextPrinter *func_0800a204(u16 memID, u32 totalLines, u32 maxWidth, u32 arg3); // Create New
+extern void func_0800a2f8(u32 arg, s32 xOffset); // Format Function for Escape Character '\1'
+extern const char *func_0800a4a8(struct TextPrinter *textPrinter, u32 currentLine, const char *string);
 // extern ? func_0800a6a0(?);
 // extern ? func_0800a794(?);
 // extern ? func_0800a7fc(?);
-extern void func_0800a818(struct SimpleText *simpleText); // Update and Render
+extern void func_0800a818(struct TextPrinter *textPrinter); // Update and Render
 // extern ? func_0800a890(?); // Update Without Render
-extern void func_0800a914(struct SimpleText *); // Update
+extern void func_0800a914(struct TextPrinter *); // Update
 // extern ? func_0800a934(?);
 // extern ? func_0800aa1c(?);
 // extern ? func_0800aa4c(?);
@@ -83,11 +83,11 @@ extern void func_0800a914(struct SimpleText *); // Update
 // extern ? func_0800aa9c(?);
 // extern ? func_0800aac0(?);
 // extern ? func_0800abb0(?);
-extern s32 func_0800ac58(struct SimpleText *simpleText); // Get Active Printing Status
-extern void func_0800ac68(struct SimpleText *simpleText, s16 x, s16 y); // Set X & Y
+extern s32 func_0800ac58(struct TextPrinter *textPrinter); // Get Active Printing Status
+extern void func_0800ac68(struct TextPrinter *textPrinter, s16 x, s16 y); // Set X & Y
 // extern ? func_0800ac80(?);
 // extern ? func_0800ac90(?);
-extern void func_0800aca0(struct SimpleText *simpleText, u16 z); // Set Z (Sprite Depth)
+extern void func_0800aca0(struct TextPrinter *textPrinter, u16 z); // Set Z (Sprite Depth)
 // extern ? func_0800acb0(?);
 // extern ? func_0800acbc(?);
 // extern ? func_0800acc8(?);

@@ -52,7 +52,7 @@ struct GameSelectSceneInfo {
         u16 unkA;
     } unk1C[2];
     u16 unk34;
-    struct SimpleText *unk38;
+    struct TextPrinter *unk38;
     u16 unk3C;
     u8 unk3E;
     u8 currentGameCompletionState;
@@ -122,7 +122,7 @@ struct GameSelectSceneInfo {
         s16 perfectBorderSprite;
         u16 unk8;
         u16 unkA;
-        struct SimpleText *unkC;
+        struct TextPrinter *unkC;
         s16 aButtonSprite;
         char unk12[11];
     } perfectCampaignNotice;
@@ -191,7 +191,7 @@ struct GameplaySceneInfo {
     u16 paletteBuffer[0x200]; // Palette Buffer
     s16 skipTutorialSprite;
     s16 aButtonSprite;
-    struct SimpleText *simpleText; // text handler
+    struct TextPrinter *textPrinter; // text handler
     u8  unk49C; // Text-related
     u8  unk49D; // Text-related
     u16 textButtonPressFilter;
