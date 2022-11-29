@@ -34,31 +34,31 @@ const struct TextPrinterFont D_089380ac[] = {
     },
 };
 
-// [D_089380d0]
+// [D_089380d0] Line Cut-Off Ellipsis
 const char D_089380d0[] = "…";
 
-// [D_089380d4]
+// [D_089380d4] Full-Width Open Brackets
 const char D_089380d4[] = "（〔［｛「『【";
 
-// [D_089380e4]
+// [D_089380e4] Half-Width Close Brackets
 const char D_089380e4[] = "([{";
 
-// [D_089380e8]
+// [D_089380e8] Full-Width Ending Punctuation
 const char D_089380e8[] = "、。，．？！ー～ァィゥェォッャュョヮヵヶぁぃぅぇぉっゃゅょゎ…‥）〕］｝」』】";
 
-// [D_08938138]
+// [D_08938138] Half-Width Ending Punctuation
 const char D_08938138[] = "!?,.)]}";
 
-// [D_08938140]
-const u16 D_08938140[] = {
-    0x0000, 0x00bc, 0x0178, 0x0234, 0xffff, 0xffff, 0x02f0, 0x02f0,
+// [D_08938140] Glyph IDs for Special Characters
+const s16 D_08938140[] = {
+         0, 0x00bc, 0x0178, 0x0234,     -1,     -1, 0x02f0, 0x02f0,
     0x03ac, 0x0468, 0x0524, 0x05e0, 0x069c, 0x0758, 0x0814, 0x08d0,
     0x098c, 0x0a48, 0x0b04, 0x0bc0, 0x0c7c, 0x0d38, 0x0df4, 0x0eb0,
     0x0f6c, 0x1028, 0x10e4, 0x11a0, 0x125c, 0x1318, 0x13d4
 };
 
-// [D_0893817e]
-const u16 D_0893817e[] = {
+// [D_0893817e] Glyph IDs for Special Characters
+const s16 D_0893817e[] = {
     0x1490, 0x154c, 0x1608, 0x16c4, 0x1780, 0x183c, 0x18f8, 0x19b4,
     0x1a70, 0x1b2c, 0x1be8
 };

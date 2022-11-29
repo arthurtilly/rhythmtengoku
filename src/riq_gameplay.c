@@ -1164,7 +1164,7 @@ void func_0801875c(void) {
     }
 
     if (!func_0800ac58(gGameplayInfo.textPrinter) && (D_03004afc & A_BUTTON)) {
-        func_0800aa4c(gGameplayInfo.textPrinter, 0);
+        func_0800aa4c(gGameplayInfo.textPrinter, NULL);
         func_080185d0(0, 0, FALSE); // Hide A Button Prompt
         func_08002634(&s_f_send_mes_seqData);
         func_08017338(gGameplayInfo.textButtonPressFilter, gGameplayInfo.textButtonReleaseFilter);

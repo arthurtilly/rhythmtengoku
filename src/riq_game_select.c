@@ -758,7 +758,7 @@ void func_08014ef8(s16 *ptr) {
 
     if (sprite < 0) return;
 
-    func_0800a068(func_0804ddb0(D_03005380, sprite, 7));
+    func_0800a068((void *)func_0804ddb0(D_03005380, sprite, 7));
     func_0804d504(D_03005380, sprite);
     *ptr = -1;
 }

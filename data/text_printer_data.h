@@ -17,13 +17,13 @@ struct TextPrinterFont {
 
 extern const struct TextPrinterFont D_089380ac[];
 
-extern const char D_089380d0[];
-extern const char D_089380d4[];
-extern const char D_089380e4[];
-extern const char D_089380e8[];
-extern const char D_08938138[];
-extern const u16 D_08938140[];
-extern const u16 D_0893817e[];
+extern const char D_089380d0[]; // Line Cut-Off Ellipsis
+extern const char D_089380d4[]; // Full-Width Open Brackets
+extern const char D_089380e4[]; // Half-Width Open Brackets
+extern const char D_089380e8[]; // Full-Width Ending Punctuation
+extern const char D_08938138[]; // Half-Width Ending Punctuation
+extern const s16 D_08938140[]; // Glyph IDs for Special Characters
+extern const s16 D_0893817e[]; // Glyph IDs for Special Characters
 extern const char D_08938194[];
 extern const u8 D_08938258[];
 extern const u8 D_0893825d[];

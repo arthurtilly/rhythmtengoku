@@ -9,7 +9,7 @@
 
 struct TextPrinter {
     u16 memID;
-    u8 updateWithoutRender;
+    u8 printMultipleStrings;
     u8 currentlyPrinting;
     u8 unk4; // id for D_08938258 { 0..4 }
     u8 palette;
@@ -19,9 +19,9 @@ struct TextPrinter {
     u8 lineSpacing;
     s16 totalLines;
     s16 *lineSprites;
-    s16 *unk14;
+    s16 *lineWidths;
     u8 *lineAlignments;
-    u32 *unk1C;
+    char **lineStrings;
     s16 *lineShadowSprites;
     u8 alignment;
     u8 indentWidth;
@@ -37,8 +37,8 @@ struct TextPrinter {
     u8 unk3A;
     void (*unk3C)();
     u32 unk40;
-    u32 unk44;
-    u32 null48;
+    void (*unk44)();
+    u32 unk48;
     s16 *xSrc;
     s16 *ySrc;
     u8 unk54;
@@ -49,36 +49,36 @@ struct TextPrinter {
 extern void func_08009844(void); // Init. Static Variables
 extern s32 func_08009884(s32 font); // Get Spacing Width
 extern s32 func_08009898(s32 font, s32 glyphID); // Get Glyph Width
-// extern ? func_080098c4(?);
-// extern ? func_080098fc(?);
+extern s32 func_080098c4(s32 font, const char **stream); // Get Glyph Width
+extern s32 func_080098fc(s32 font, const char *string); // Get Width of a String
 extern void func_08009948(s32 tileOfsX, s32 tileOfsY, s32 font, s32 glyphID, s32 lineColours); // Print Character to VRAM
 extern s32 func_080099a0(s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, s32 maxWidth, s32 lineColours); // Print Non-Formatted Line to VRAM (return width in pixels)
-// extern ? func_08009a54(?);
-// extern ? func_08009aa4(?);
+extern s32 func_08009a54(const char *c); // Check if Character is Any Sort of Open Bracket
+extern s32 func_08009aa4(const char *c); // Check if Character is Any Sort of Ending Punctuation
 extern s32 func_08009af4(s32 tileBaseX, s32 tileBaseY, s32 font, const char **charStream, s32 maxWidth, s32 lineColours, s32 indentWidth, s32 shadowColours); // Print Formatted Line to VRAM (return width in pixels)
 extern struct Animation *func_08009de4(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char **string, u32 anchor, s32 lineColours, s32 maxWidth, s32 ignoreFormatting, s32 indentWidth, s32 shadowColours);
 extern struct Animation *func_0800a004(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, u32 anchor, s32 lineColours, s32 maxWidth);
 extern struct Animation *func_0800a030(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char **string, u32 anchor, s32 lineColours, s32 maxWidth, s32 indentWidth, s32 shadowColours);
 extern s32 func_0800a05c(void); // Get D_030012f8
-// extern ? func_0800a068(?);
+extern void func_0800a068(struct StaticAnimation *anim); // Delete Text Animation
 extern void func_0800a084(void *func); // Set D_0300121c
-// extern ? func_0800a090(?);
-// extern ? func_0800a0f0(?);
-// extern ? func_0800a108(?);
+extern void func_0800a090(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, u32 unused, u32 color); // Fill Allocated Space With Given Pixel
+extern void func_0800a0f0(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, u32 unused, u32 color); // Fill Allocated Space With Given Pixel
+// extern ? func_0800a108(?); // Get Glyph ID
 extern u32 func_0800a1ac(u32 maxWidth);
 extern s32 func_0800a1d4(u32 totalLines, u32 id);
 extern struct TextPrinter *func_0800a204(u16 memID, u32 totalLines, u32 maxWidth, u32 arg3); // Create New
 extern void func_0800a2f8(u32 arg, s32 xOffset); // Format Function for Escape Character '\1'
 extern const char *func_0800a4a8(struct TextPrinter *textPrinter, u32 currentLine, const char *string);
-// extern ? func_0800a6a0(?);
-// extern ? func_0800a794(?);
-// extern ? func_0800a7fc(?);
-extern void func_0800a818(struct TextPrinter *textPrinter); // Update and Render
-// extern ? func_0800a890(?); // Update Without Render
+extern void func_0800a6a0(struct TextPrinter *textPrinter); // Align Sprites
+extern void func_0800a794(struct TextPrinter *textPrinter, u32 show); // Show/Hide Text
+extern void func_0800a7fc(struct TextPrinter *textPrinter, u32 show); // Show/Hide Text On Render
+extern void func_0800a818(struct TextPrinter *textPrinter); // Update Single-String
+extern void func_0800a890(struct TextPrinter *textPrinter); // Update Multi-String
 extern void func_0800a914(struct TextPrinter *); // Update
-// extern ? func_0800a934(?);
+extern void func_0800a934(struct TextPrinter *textPrinter); // Remove Text
 // extern ? func_0800aa1c(?);
-// extern ? func_0800aa4c(?);
+extern void func_0800aa4c(struct TextPrinter *textPrinter, const char *text); // Set Text
 // extern ? func_0800aa78(?);
 // extern ? func_0800aa9c(?);
 // extern ? func_0800aac0(?);

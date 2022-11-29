@@ -31,6 +31,11 @@ struct Animation {
     u8 duration;
 };
 
+struct StaticAnimation {
+    AnimationCel *cel;
+    u8 duration;
+};
+
 #define END_ANIMATION { NULL, 0 }
 
 
