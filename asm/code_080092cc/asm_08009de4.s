@@ -45,7 +45,7 @@ branch_08009e18: \n\
  \n\
 branch_08009e32: \n\
 /* 08009e32 */ MOV R10, R0 @ Set R10 to R0 \n\
-/* 08009e34 */ LDR R0, =D_030012f8 \n\
+/* 08009e34 */ LDR R0, =sCurrentLineWidth \n\
 /* 08009e36 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08009e38 */ STR R2, [R0] \n\
 /* 08009e3a */ MOV R0, R10 @ Set R0 to R10 \n\
