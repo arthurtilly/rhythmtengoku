@@ -58,46 +58,46 @@ thumb_func_start func_08037460 \n\
 /* 080374d6 */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
 /* 080374d8 */ MOVS R2, 0x50 @ Set R2 to 0x50 \n\
 /* 080374da */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\
-/* 080374dc */ BL func_0800a204 \n\
+/* 080374dc */ BL text_printer_create_new \n\
 /* 080374e0 */ LDR R2, =D_030055d0 \n\
 /* 080374e2 */ LDR R1, [R2] \n\
 /* 080374e4 */ STR R0, [R1, 0x4] \n\
 /* 080374e6 */ MOVS R1, 0x54 @ Set R1 to 0x54 \n\
 /* 080374e8 */ MOVS R2, 0x24 @ Set R2 to 0x24 \n\
-/* 080374ea */ BL func_0800ac68 \n\
+/* 080374ea */ BL text_printer_set_x_y \n\
 /* 080374ee */ LDR R1, =D_030055d0 \n\
 /* 080374f0 */ LDR R0, [R1] \n\
 /* 080374f2 */ LDR R0, [R0, 0x4] \n\
 /* 080374f4 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 080374f6 */ LSLS R1, R1, 0x4 \n\
-/* 080374f8 */ BL func_0800aca0 \n\
+/* 080374f8 */ BL text_printer_set_layer \n\
 /* 080374fc */ LDR R2, =D_030055d0 \n\
 /* 080374fe */ LDR R0, [R2] \n\
 /* 08037500 */ LDR R0, [R0, 0x4] \n\
 /* 08037502 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 08037504 */ BL func_0800acd8 \n\
+/* 08037504 */ BL text_printer_center_by_content \n\
 /* 08037508 */ LDR R1, =D_030055d0 \n\
 /* 0803750a */ LDR R0, [R1] \n\
 /* 0803750c */ LDR R0, [R0, 0x4] \n\
 /* 0803750e */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
-/* 08037510 */ BL func_0800acb0 \n\
+/* 08037510 */ BL text_printer_set_palette \n\
 /* 08037514 */ LDR R2, =D_030055d0 \n\
 /* 08037516 */ LDR R0, [R2] \n\
 /* 08037518 */ LDR R0, [R0, 0x4] \n\
 /* 0803751a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803751c */ BL func_0800acbc \n\
+/* 0803751c */ BL text_printer_set_colors \n\
 /* 08037520 */ LDR R1, =D_030055d0 \n\
 /* 08037522 */ LDR R0, [R1] \n\
 /* 08037524 */ LDR R0, [R0, 0x4] \n\
 /* 08037526 */ LDR R1, =func_0800e030 \n\
 /* 08037528 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 0803752a */ BL func_0800ad20 \n\
+/* 0803752a */ BL text_printer_run_func_on_finish \n\
 /* 0803752e */ LDR R2, =D_030055d0 \n\
 /* 08037530 */ LDR R0, [R2] \n\
 /* 08037532 */ LDR R0, [R0, 0x4] \n\
 /* 08037534 */ LDR R1, =func_0800e044 \n\
 /* 08037536 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 08037538 */ BL func_0800ad30 \n\
+/* 08037538 */ BL text_printer_run_func_on_clear \n\
 /* 0803753c */ LDR R1, =D_030055d0 \n\
 /* 0803753e */ LDR R0, [R1] \n\
 /* 08037540 */ LDR R0, [R0, 0x4] \n\

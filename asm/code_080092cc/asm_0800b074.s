@@ -49,7 +49,7 @@ branch_0800b09c: \n\
 /* 0800b0c2 */ ADDS R3, R3, R2 @ Set R3 to R3 + R2 \n\
 /* 0800b0c4 */ STRH R3, [R4, 0x24] \n\
 /* 0800b0c6 */ LDR R0, [R4, 0x4] \n\
-/* 0800b0c8 */ BL func_0800a914 \n\
+/* 0800b0c8 */ BL text_printer_update \n\
  \n\
 branch_0800b0cc: \n\
 /* 0800b0cc */ POP {R4, R5} \n\

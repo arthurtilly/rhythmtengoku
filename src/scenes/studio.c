@@ -1,5 +1,5 @@
 #include "global.h"
-#include "src/riq_studio.h"
+#include "src/scenes/studio.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 

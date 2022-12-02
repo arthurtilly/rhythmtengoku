@@ -40,7 +40,7 @@ void func_08000224(void) {
 	func_08003f28();
 	func_080073b8();
 	func_080073f0();
-	func_08009844();
+	text_printer_init();
 	func_0800861c();
 	func_08000804();
 	if (func_080008bc() != 0) {

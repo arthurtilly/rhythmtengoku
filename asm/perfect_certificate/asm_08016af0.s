@@ -133,34 +133,34 @@ branch_08016bfe: \n\
 /* 08016c06 */ MOVS R1, 0x4 @ Set R1 to 0x4 \n\
 /* 08016c08 */ MOVS R2, 0xEE @ Set R2 to 0xEE \n\
 /* 08016c0a */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08016c0c */ BL func_0800a204 \n\
+/* 08016c0c */ BL text_printer_create_new \n\
 /* 08016c10 */ LDR R5, =D_030046a4 \n\
 /* 08016c12 */ LDR R1, [R5] \n\
 /* 08016c14 */ STR R0, [R1] \n\
 /* 08016c16 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08016c18 */ MOVS R2, 0x58 @ Set R2 to 0x58 \n\
-/* 08016c1a */ BL func_0800ac68 \n\
+/* 08016c1a */ BL text_printer_set_x_y \n\
 /* 08016c1e */ LDR R0, [R5] \n\
 /* 08016c20 */ LDR R0, [R0] \n\
 /* 08016c22 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 08016c24 */ LSLS R1, R1, 0x4 \n\
-/* 08016c26 */ BL func_0800aca0 \n\
+/* 08016c26 */ BL text_printer_set_layer \n\
 /* 08016c2a */ LDR R0, [R5] \n\
 /* 08016c2c */ LDR R0, [R0] \n\
 /* 08016c2e */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 08016c30 */ BL func_0800acbc \n\
+/* 08016c30 */ BL text_printer_set_colors \n\
 /* 08016c34 */ LDR R0, [R5] \n\
 /* 08016c36 */ LDR R0, [R0] \n\
 /* 08016c38 */ MOVS R1, 0x4 @ Set R1 to 0x4 \n\
-/* 08016c3a */ BL func_0800acb0 \n\
+/* 08016c3a */ BL text_printer_set_palette \n\
 /* 08016c3e */ LDR R0, [R5] \n\
 /* 08016c40 */ LDR R0, [R0] \n\
 /* 08016c42 */ MOVS R1, 0x10 @ Set R1 to 0x10 \n\
-/* 08016c44 */ BL func_0800ae00 \n\
+/* 08016c44 */ BL text_printer_set_line_spacing \n\
 /* 08016c48 */ LDR R0, [R5] \n\
 /* 08016c4a */ LDR R0, [R0] \n\
 /* 08016c4c */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 08016c4e */ BL func_0800acd8 \n\
+/* 08016c4e */ BL text_printer_center_by_content \n\
 /* 08016c52 */ LDR R0, =D_030046a8 \n\
 /* 08016c54 */ LDR R0, [R0] \n\
 /* 08016c56 */ LDR R2, =0x245 \n\
@@ -250,7 +250,7 @@ branch_08016d30: \n\
 /* 08016d32 */ LDR R1, [R4] \n\
 /* 08016d34 */ LDR R0, [R1] \n\
 /* 08016d36 */ ADDS R1, 0xC @ Add 0xC to R1 \n\
-/* 08016d38 */ BL func_0800aa4c \n\
+/* 08016d38 */ BL text_printer_set_string \n\
 /* 08016d3c */ LDR R1, [R4] \n\
 /* 08016d3e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08016d40 */ STR R0, [R1, 0x4] \n\

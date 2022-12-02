@@ -35,7 +35,7 @@ branch_0801d066: \n\
 /* 0801d06a */ LDR R0, =D_030046a4 \n\
 /* 0801d06c */ LDR R0, [R0] \n\
 /* 0801d06e */ LDR R0, [R0, 0x8] \n\
-/* 0801d070 */ BL func_0800a914 \n\
+/* 0801d070 */ BL text_printer_update \n\
 /* 0801d074 */ POP {R4-R6} \n\
 /* 0801d076 */ POP {R0} \n\
 /* 0801d078 */ BX R0 \n\

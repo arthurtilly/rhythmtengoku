@@ -1,6 +1,6 @@
 #include "engines/polyrhythm.h"
 #include "src/code_0800b778.h"
-#include "src/riq_gameplay.h"
+#include "src/scenes/gameplay.h"
 #include "src/lib_0804c870.h"
 
 asm(".include \"include/gba.inc\""); // Temporary

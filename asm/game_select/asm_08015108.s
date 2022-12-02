@@ -82,7 +82,7 @@ jump_0801518c: \n\
 jump_0801519c: \n\
 /* 0801519c */ LDR R0, [R5] \n\
 /* 0801519e */ LDR R0, [R0, 0x38] \n\
-/* 080151a0 */ BL func_0800ac58 \n\
+/* 080151a0 */ BL text_printer_is_printing \n\
 /* 080151a4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080151a6 */ BNE branch_0801522a \n\
 /* 080151a8 */ LDR R6, =D_03005380 \n\

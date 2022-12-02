@@ -11,7 +11,7 @@ thumb_func_start func_08027ba0 \n\
 /* 08027baa */ LSLS R2, R2, 0x3 \n\
 /* 08027bac */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 08027bae */ LDR R0, [R0] \n\
-/* 08027bb0 */ BL func_0800aa4c \n\
+/* 08027bb0 */ BL text_printer_set_string \n\
 /* 08027bb4 */ POP {R0} \n\
 /* 08027bb6 */ BX R0 \n\
 \n\

@@ -48,24 +48,24 @@ thumb_func_start func_0802b104 \n\
 /* 0802b16c */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0802b16e */ MOVS R2, 0xF0 @ Set R2 to 0xF0 \n\
 /* 0802b170 */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\
-/* 0802b172 */ BL func_0800a204 \n\
+/* 0802b172 */ BL text_printer_create_new \n\
 /* 0802b176 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0802b178 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802b17a */ MOVS R2, 0x28 @ Set R2 to 0x28 \n\
-/* 0802b17c */ BL func_0800ac68 \n\
+/* 0802b17c */ BL text_printer_set_x_y \n\
 /* 0802b180 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 0802b182 */ LSLS R1, R1, 0x4 \n\
 /* 0802b184 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0802b186 */ BL func_0800aca0 \n\
+/* 0802b186 */ BL text_printer_set_layer \n\
 /* 0802b18a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802b18c */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 0802b18e */ BL func_0800acd8 \n\
+/* 0802b18e */ BL text_printer_center_by_content \n\
 /* 0802b192 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802b194 */ MOVS R1, 0x6 @ Set R1 to 0x6 \n\
-/* 0802b196 */ BL func_0800acb0 \n\
+/* 0802b196 */ BL text_printer_set_palette \n\
 /* 0802b19a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802b19c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0802b19e */ BL func_0800acbc \n\
+/* 0802b19e */ BL text_printer_set_colors \n\
 /* 0802b1a2 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802b1a4 */ BL func_08018630 \n\
 /* 0802b1a8 */ LDR R2, [R5] \n\

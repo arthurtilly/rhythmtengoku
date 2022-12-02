@@ -25,7 +25,7 @@ branch_0801aab8: \n\
 /* 0801aac2 */ ADDS R1, 0x14 @ Add 0x14 to R1 \n\
 /* 0801aac4 */ ADDS R0, R2, R1 @ Set R0 to R2 + R1 \n\
 /* 0801aac6 */ LDR R0, [R0] \n\
-/* 0801aac8 */ BL func_0800a914 \n\
+/* 0801aac8 */ BL text_printer_update \n\
 /* 0801aacc */ B branch_0801ac22 \n\
 \n\
 .ltorg \n\

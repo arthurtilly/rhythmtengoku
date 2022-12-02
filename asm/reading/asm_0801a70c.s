@@ -32,7 +32,7 @@ branch_0801a734: \n\
 /* 0801a73e */ LDR R4, =D_030046a4 \n\
 /* 0801a740 */ LDR R0, [R4] \n\
 /* 0801a742 */ LDR R0, [R0, 0x8] \n\
-/* 0801a744 */ BL func_0800aa78 \n\
+/* 0801a744 */ BL text_printer_get_text \n\
 /* 0801a748 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801a74a */ BEQ branch_0801a75a \n\
 /* 0801a74c */ LDR R0, [R4] \n\
@@ -53,7 +53,7 @@ branch_0801a75a: \n\
 /* 0801a766 */ LDR R4, =D_030046a4 \n\
 /* 0801a768 */ LDR R0, [R4] \n\
 /* 0801a76a */ LDR R0, [R0, 0x8] \n\
-/* 0801a76c */ BL func_0800aa78 \n\
+/* 0801a76c */ BL text_printer_get_text \n\
 /* 0801a770 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801a772 */ BEQ branch_0801a782 \n\
 /* 0801a774 */ LDR R0, [R4] \n\
@@ -154,10 +154,10 @@ branch_0801a83a: \n\
 /* 0801a83e */ LDR R4, =D_030046a4 \n\
 /* 0801a840 */ LDR R0, [R4] \n\
 /* 0801a842 */ LDR R0, [R0, 0x8] \n\
-/* 0801a844 */ BL func_0800a914 \n\
+/* 0801a844 */ BL text_printer_update \n\
 /* 0801a848 */ LDR R0, [R4] \n\
 /* 0801a84a */ LDR R0, [R0, 0x8] \n\
-/* 0801a84c */ BL func_0800a914 \n\
+/* 0801a84c */ BL text_printer_update \n\
 /* 0801a850 */ POP {R4, R5} \n\
 /* 0801a852 */ POP {R0} \n\
 /* 0801a854 */ BX R0 \n\

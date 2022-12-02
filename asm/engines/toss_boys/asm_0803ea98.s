@@ -311,7 +311,7 @@ branch_0803ed0a: \n\
 /* 0803ed22 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
 /* 0803ed24 */ MOVS R2, 0xF0 @ Set R2 to 0xF0 \n\
 /* 0803ed26 */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\
-/* 0803ed28 */ BL func_0800a204 \n\
+/* 0803ed28 */ BL text_printer_create_new \n\
 /* 0803ed2c */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803ed2e */ LDR R0, =D_030055d0 \n\
 /* 0803ed30 */ LDR R0, [R0] \n\
@@ -321,14 +321,14 @@ branch_0803ed0a: \n\
 /* 0803ed38 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803ed3a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803ed3c */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
-/* 0803ed3e */ BL func_0800ac68 \n\
+/* 0803ed3e */ BL text_printer_set_x_y \n\
 /* 0803ed42 */ MOVS R1, 0x98 @ Set R1 to 0x98 \n\
 /* 0803ed44 */ LSLS R1, R1, 0x7 \n\
 /* 0803ed46 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0803ed48 */ BL func_0800aca0 \n\
+/* 0803ed48 */ BL text_printer_set_layer \n\
 /* 0803ed4c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803ed4e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803ed50 */ BL func_0800acd8 \n\
+/* 0803ed50 */ BL text_printer_center_by_content \n\
 /* 0803ed54 */ B branch_0803edb4 \n\
 \n\
 .ltorg \n\
@@ -337,28 +337,28 @@ branch_0803ed90: \n\
 /* 0803ed90 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803ed92 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803ed94 */ MOVS R2, 0x14 @ Set R2 to 0x14 \n\
-/* 0803ed96 */ BL func_0800ac68 \n\
+/* 0803ed96 */ BL text_printer_set_x_y \n\
 /* 0803ed9a */ MOVS R1, 0x98 @ Set R1 to 0x98 \n\
 /* 0803ed9c */ LSLS R1, R1, 0x7 \n\
 /* 0803ed9e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0803eda0 */ BL func_0800aca0 \n\
+/* 0803eda0 */ BL text_printer_set_layer \n\
 /* 0803eda4 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803eda6 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
-/* 0803eda8 */ BL func_0800acc8 \n\
+/* 0803eda8 */ BL text_printer_set_alignment \n\
 /* 0803edac */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803edae */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 0803edb0 */ BL func_0800acd8 \n\
+/* 0803edb0 */ BL text_printer_center_by_content \n\
  \n\
 branch_0803edb4: \n\
 /* 0803edb4 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803edb6 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803edb8 */ BL func_0800acb0 \n\
+/* 0803edb8 */ BL text_printer_set_palette \n\
 /* 0803edbc */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803edbe */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803edc0 */ BL func_0800acbc \n\
+/* 0803edc0 */ BL text_printer_set_colors \n\
 /* 0803edc4 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803edc6 */ MOVS R1, 0x14 @ Set R1 to 0x14 \n\
-/* 0803edc8 */ BL func_0800ae00 \n\
+/* 0803edc8 */ BL text_printer_set_line_spacing \n\
 /* 0803edcc */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803edce */ BL func_08018630 \n\
 /* 0803edd2 */ LDR R1, =D_03004b10 \n\

@@ -770,11 +770,11 @@ branch_080112a0: \n\
 /* 080112a2 */ LDR R0, [R4] \n\
 /* 080112a4 */ LDR R0, [R0, 0x4] \n\
 /* 080112a6 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 080112a8 */ BL func_0800a7fc \n\
+/* 080112a8 */ BL text_printer_show_text \n\
 /* 080112ac */ LDR R0, [R4] \n\
 /* 080112ae */ LDR R0, [R0, 0x4] \n\
 /* 080112b0 */ MOV R1, R8 @ Set R1 to R8 \n\
-/* 080112b2 */ BL func_0800aa4c \n\
+/* 080112b2 */ BL text_printer_set_string \n\
 /* 080112b6 */ LDR R0, [SP, 0x8] \n\
 /* 080112b8 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080112ba */ BEQ branch_080112c0 \n\

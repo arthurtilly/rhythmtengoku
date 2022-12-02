@@ -15,7 +15,7 @@ thumb_func_start func_08018828 \n\
 /* 0801883a */ BEQ branch_08018844 \n\
 /* 0801883c */ LSLS R1, R1, 0x10 \n\
 /* 0801883e */ ASRS R1, R1, 0x10 \n\
-/* 08018840 */ BL func_0800ac80 \n\
+/* 08018840 */ BL text_printer_set_x \n\
  \n\
 branch_08018844: \n\
 /* 08018844 */ POP {R0} \n\

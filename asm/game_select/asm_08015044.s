@@ -29,7 +29,7 @@ branch_08015068: \n\
 /* 0801506e */ MOVS R1, 0x1A @ Set R1 to 0x1A \n\
 /* 08015070 */ MOVS R2, 0x10 @ Set R2 to 0x10 \n\
 /* 08015072 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
-/* 08015074 */ BL func_0800a0f0 \n\
+/* 08015074 */ BL text_printer_fill_vram_tiles \n\
 /* 08015078 */ LDR R1, =D_089cf9e8 \n\
 /* 0801507a */ LSLS R0, R6, 0x2 \n\
 /* 0801507c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
@@ -49,7 +49,7 @@ branch_08015068: \n\
 /* 0801509a */ MOVS R1, 0x10 @ Set R1 to 0x10 \n\
 /* 0801509c */ MOVS R2, 0x1A @ Set R2 to 0x1A \n\
 /* 0801509e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080150a0 */ BL func_0800a030 \n\
+/* 080150a0 */ BL text_printer_get_formatted_line_anim \n\
 /* 080150a4 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080150a6 */ LDR R5, =D_03005380 \n\
 /* 080150a8 */ LDR R0, [R5] \n\

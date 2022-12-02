@@ -40,12 +40,13 @@ endif
 TARGET		   := rhythmtengoku
 BUILD		   := build
 SOURCES		   := src
+SCENES         := $(SOURCES)/scenes
 ENGINES        := $(SOURCES)/engines
 ASM            := asm
 INCLUDES	   := include
 DATA		   := data
 SCRIPT_GEN     := $(DATA)/script_gen
-SCENES         := $(shell find $(DATA)/scenes -type d)
+SCENE_DATA     := $(shell find $(DATA)/scenes -type d)
 ENGINE_DATA    := $(DATA)/engines
 PROLOGUE_DATA  := $(DATA)/engines/prologues
 ENGINE_SCRIPTS := $(DATA)/engines/scripts
@@ -55,8 +56,8 @@ MUSIC		   := $(AUDIO)/sequences
 SFX            := $(AUDIO)/samples
 GRAPHICS       := $(shell find graphics -type d)
 BUILD_DIRS     := $(BUILD) $(BUILD)/$(BIN) $(BUILD)/$(DATA) $(BUILD)/$(SCRIPT_GEN) \
-                  $(foreach dir,$(SCENES),$(BUILD)/$(dir)) $(BUILD)/$(ENGINE_DATA) $(BUILD)/$(PROLOGUE_DATA) $(BUILD)/$(ENGINE_SCRIPTS) \
-                  $(BUILD)/$(ASM) $(BUILD)/$(SOURCES) $(BUILD)/$(ENGINES) \
+                  $(foreach dir,$(SCENE_DATA),$(BUILD)/$(dir)) $(BUILD)/$(ENGINE_DATA) $(BUILD)/$(PROLOGUE_DATA) $(BUILD)/$(ENGINE_SCRIPTS) \
+                  $(BUILD)/$(ASM) $(BUILD)/$(SOURCES) $(BUILD)/$(SCENES) $(BUILD)/$(ENGINES) \
                   $(BUILD)/$(MUSIC) $(BUILD)/$(SFX) $(foreach dir,$(GRAPHICS),$(BUILD)/$(dir))
 LD_SCRIPT      := rt.ld
 UNDEFINED_SYMS := undefined_syms.ld
@@ -101,12 +102,12 @@ UNDEFINED_SYMS := undefined_syms.ld
 export OUTPUT	:=	$(BUILD)/$(TARGET)
 
 CFILES		:=	$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.c)) $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.c)) \
-				$(foreach dir,$(DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCENES),$(wildcard $(dir)/*.c)) \
+				$(foreach dir,$(DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCENE_DATA),$(wildcard $(dir)/*.c)) \
 				$(foreach dir,$(ENGINE_DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(PROLOGUE_DATA),$(wildcard $(dir)/*.c)) \
 				$(foreach dir,$(ENGINE_SCRIPTS),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCRIPT_GEN),$(wildcard $(dir)/*.c)) \
-				$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.c))
+				$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCENES),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.c))
 
-CPPFILES	:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.cpp))
+CPPFILES	:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(SCENES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.cpp))
 SFILES		:=	$(foreach dir,$(ASM),$(wildcard $(dir)/*.s)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.s))
 BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) $(foreach dir,$(MUSIC),$(wildcard $(dir)/*.mid)) $(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.bin))
 WAVFILES    :=  $(foreach dir,$(SFX),$(wildcard $(dir)/*.wav))

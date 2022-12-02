@@ -15,7 +15,7 @@ thumb_func_start func_080186d4 \n\
 /* 080186e6 */ LSLS R2, R2, 0x3 \n\
 /* 080186e8 */ ADDS R0, R1, R2 @ Set R0 to R1 + R2 \n\
 /* 080186ea */ LDR R0, [R0] \n\
-/* 080186ec */ BL func_0800ac58 \n\
+/* 080186ec */ BL text_printer_is_printing \n\
 /* 080186f0 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 080186f2 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 080186f4 */ BEQ branch_0801870c \n\

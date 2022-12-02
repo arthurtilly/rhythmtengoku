@@ -7,7 +7,7 @@ thumb_func_start func_0801a5d8 \n\
 /* 0801a5da */ LDR R6, =D_030046a4 \n\
 /* 0801a5dc */ LDR R0, [R6] \n\
 /* 0801a5de */ LDR R0, [R0, 0x8] \n\
-/* 0801a5e0 */ BL func_0800ac58 \n\
+/* 0801a5e0 */ BL text_printer_is_printing \n\
 /* 0801a5e4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801a5e6 */ BNE branch_0801a628 \n\
 /* 0801a5e8 */ LDR R4, =D_03005380 \n\
@@ -32,7 +32,7 @@ thumb_func_start func_0801a5d8 \n\
 /* 0801a610 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0801a612 */ LDRSH R4, [R1, R3] \n\
 /* 0801a614 */ LDR R0, [R0, 0x8] \n\
-/* 0801a616 */ BL func_0800aa78 \n\
+/* 0801a616 */ BL text_printer_get_text \n\
 /* 0801a61a */ NEGS R2, R0 @ Set R2 to -R0 \n\
 /* 0801a61c */ ORRS R2, R0 @ Set R2 to R2 | R0 \n\
 /* 0801a61e */ LSRS R2, R2, 0x1F \n\
@@ -49,7 +49,7 @@ branch_0801a628: \n\
 /* 0801a632 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801a634 */ BEQ branch_0801a704 \n\
 /* 0801a636 */ LDR R0, [R1, 0x8] \n\
-/* 0801a638 */ BL func_0800ac58 \n\
+/* 0801a638 */ BL text_printer_is_printing \n\
 /* 0801a63c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801a63e */ BNE branch_0801a66a \n\
 /* 0801a640 */ LDR R0, [R6] \n\
@@ -125,7 +125,7 @@ branch_0801a6ac: \n\
 /* 0801a6bc */ STRB R0, [R1, 0xC] \n\
 /* 0801a6be */ LDR R0, [R5] \n\
 /* 0801a6c0 */ LDR R0, [R0, 0x8] \n\
-/* 0801a6c2 */ BL func_0800aa9c \n\
+/* 0801a6c2 */ BL text_printer_resume \n\
 /* 0801a6c6 */ LDR R1, [R5] \n\
 /* 0801a6c8 */ LDR R0, [R1, 0x8] \n\
 /* 0801a6ca */ MOVS R2, 0xC @ Set R2 to 0xC \n\
@@ -133,7 +133,7 @@ branch_0801a6ac: \n\
 /* 0801a6ce */ LSLS R2, R2, 0x3 \n\
 /* 0801a6d0 */ ADDS R2, 0x10 @ Add 0x10 to R2 \n\
 /* 0801a6d2 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
-/* 0801a6d4 */ BL func_0800ad40 \n\
+/* 0801a6d4 */ BL text_printer_export_data \n\
 /* 0801a6d8 */ B branch_0801a704 \n\
 \n\
 .ltorg \n\
@@ -155,7 +155,7 @@ branch_0801a6e0: \n\
 /* 0801a6fa */ LSLS R2, R2, 0x3 \n\
 /* 0801a6fc */ ADDS R2, 0x10 @ Add 0x10 to R2 \n\
 /* 0801a6fe */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
-/* 0801a700 */ BL func_0800ad68 \n\
+/* 0801a700 */ BL text_printer_import_data \n\
  \n\
 branch_0801a704: \n\
 /* 0801a704 */ POP {R4-R6} \n\

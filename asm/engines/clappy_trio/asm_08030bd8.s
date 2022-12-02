@@ -8,7 +8,7 @@ thumb_func_start func_08030bd8 \n\
 /* 08030bdc */ LDR R0, =D_030055d0 \n\
 /* 08030bde */ LDR R0, [R0] \n\
 /* 08030be0 */ LDR R0, [R0, 0x14] \n\
-/* 08030be2 */ BL func_0800aa4c \n\
+/* 08030be2 */ BL text_printer_set_string \n\
 /* 08030be6 */ POP {R0} \n\
 /* 08030be8 */ BX R0 \n\
 \n\

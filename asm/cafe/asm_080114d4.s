@@ -13,7 +13,7 @@ branch_080114e2: \n\
 /* 080114e2 */ LDR R0, =D_030046a4 \n\
 /* 080114e4 */ LDR R0, [R0] \n\
 /* 080114e6 */ LDR R0, [R0, 0x4] \n\
-/* 080114e8 */ BL func_0800a914 \n\
+/* 080114e8 */ BL text_printer_update \n\
 /* 080114ec */ POP {R0} \n\
 /* 080114ee */ BX R0 \n\
 \n\

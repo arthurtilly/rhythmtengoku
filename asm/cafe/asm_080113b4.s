@@ -10,7 +10,7 @@ thumb_func_start func_080113b4 \n\
 /* 080113be */ LDR R0, [R0] \n\
 /* 080113c0 */ LDR R0, [R0, 0x4] \n\
 /* 080113c2 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080113c4 */ BL func_0800a7fc \n\
+/* 080113c4 */ BL text_printer_show_text \n\
 /* 080113c8 */ POP {R0} \n\
 /* 080113ca */ BX R0 \n\
 \n\

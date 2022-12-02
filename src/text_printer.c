@@ -14,6 +14,7 @@ asm(".include \"include/gba.inc\"");//Temporary
 typedef void (PrintGlyphToVRAMFunc)(void *args);
 extern PrintGlyphToVRAMFunc func_0800116c;
 
+#define GLYPH_BUFFER_SIZE 0x80
 static struct FormattedGlyph {
     const char *formatSrc;
     const char *charSrc;
@@ -39,21 +40,21 @@ static s8 sPrinterShadowColors; // Printer Shadow Colors
 
 
 // Init. Static Variables
-void func_08009844(void) {
+void text_printer_init(void) {
     func_0800186c(func_0800116c, sPrintGlyphToVRAM, sizeof(sPrintGlyphToVRAM), 0x20, 0x100);
-    sGlyphBuffer = mem_heap_alloc(128 * sizeof(struct FormattedGlyph));
+    sGlyphBuffer = mem_heap_alloc(GLYPH_BUFFER_SIZE * sizeof(struct FormattedGlyph));
     sModifyPrinterSettings = NULL;
 }
 
 
 // Get Spacing Width
-s32 func_08009884(s32 font) {
+s32 text_font_get_spacing(s32 font) {
     return D_089380ac[font].glyphSpacing;
 }
 
 
 // Get Glyph Width
-s32 func_08009898(s32 font, s32 glyphID) {
+s32 text_font_get_glyph_width(s32 font, s32 glyphID) {
     if (glyphID < 0) return 0;
 
     return D_089380ac[font].glyphWidths[glyphID];
@@ -61,14 +62,14 @@ s32 func_08009898(s32 font, s32 glyphID) {
 
 
 // Get Glyph Width
-s32 func_080098c4(s32 font, const char **stream) {
+s32 text_font_get_next_glyph_width(s32 font, const char **stream) {
     s32 glyphID;
 
     if (**stream == '\0') {
         return 0;
     }
 
-    glyphID = func_0800a108(stream);
+    glyphID = text_printer_get_glyph_id(stream);
     if (glyphID < 0) {
         return 0;
     }
@@ -78,17 +79,17 @@ s32 func_080098c4(s32 font, const char **stream) {
 
 
 // Get Width of a String
-s32 func_080098fc(s32 font, const char *string) {
+s32 text_font_calculate_string_width(s32 font, const char *string) {
     s32 totalWidth, spacing;
     s32 glyphID;
 
     totalWidth = 0;
     spacing = D_089380ac[font].glyphSpacing;
 
-    while (*string != 0) {
-        glyphID = func_0800a108(&string);
+    while (*string != '\0') {
+        glyphID = text_printer_get_glyph_id(&string);
         if (glyphID >= 0) {
-            totalWidth += func_08009898(font, glyphID) + spacing;
+            totalWidth += text_font_get_glyph_width(font, glyphID) + spacing;
         }
     }
 
@@ -101,7 +102,7 @@ s32 func_080098fc(s32 font, const char *string) {
 
 
 // Print Glyph to VRAM
-void func_08009948(s32 tileOfsX, s32 tileOfsY, s32 font, s32 glyphID, s32 lineColors) {
+void text_printer_print_glyph(s32 tileOfsX, s32 tileOfsY, s32 font, s32 glyphID, s32 lineColors) {
     PrintGlyphToVRAMFunc *printGlyphToVRAM = (PrintGlyphToVRAMFunc *)(&sPrintGlyphToVRAM);
     u32 args[4];
 
@@ -116,39 +117,38 @@ void func_08009948(s32 tileOfsX, s32 tileOfsY, s32 font, s32 glyphID, s32 lineCo
 
 
 // Print String to VRAM (return width in pixels)
-s32 func_080099a0(s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, s32 maxWidth, s32 lineColors) {
-    const char *ellipsis, *s;
+s32 text_printer_print_unformatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, s32 maxWidth, s32 lineColors) {
+    const char *ellipsis;
     s32 ellipsisID, glyphID;
     s32 ellipsisWidth, glyphWidth;
     s32 spacing, totalWidth;
 
-    s = string;
     totalWidth = 0;
     spacing = D_089380ac[font].glyphSpacing;
     ellipsis = D_089380d0;
-    ellipsisID = func_0800a108(&ellipsis);
-    ellipsisWidth = func_08009898(font, ellipsisID);
+    ellipsisID = text_printer_get_glyph_id(&ellipsis);
+    ellipsisWidth = text_font_get_glyph_width(font, ellipsisID);
 
-    while (*s != '\0') {
-        glyphID = func_0800a108(&s);
+    while (*string != '\0') {
+        glyphID = text_printer_get_glyph_id(&string);
         if (glyphID < 0) continue;
 
-        glyphWidth = func_08009898(font, glyphID);
-        if (*s != '\0') {
+        glyphWidth = text_font_get_glyph_width(font, glyphID);
+        if (*string != '\0') {
             if ((totalWidth + glyphWidth + spacing + ellipsisWidth) > maxWidth) {
-                s = ellipsis;
+                string = ellipsis;
                 glyphID = ellipsisID;
                 glyphWidth = ellipsisWidth;
             }
         } else {
             if ((totalWidth + glyphWidth) > maxWidth) {
-                s = ellipsis;
+                string = ellipsis;
                 glyphID = ellipsisID;
                 glyphWidth = ellipsisWidth;
             }
         }
 
-        func_08009948(tileBaseX + totalWidth, tileBaseY, font, glyphID, lineColors);
+        text_printer_print_glyph(tileBaseX + totalWidth, tileBaseY, font, glyphID, lineColors);
         totalWidth += glyphWidth + spacing;
     }
 
@@ -161,7 +161,7 @@ s32 func_080099a0(s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, s3
 
 
 // Check if Character is Any Sort of Open Bracket
-s32 func_08009a54(const char *c) {
+s32 text_glyph_is_open_bracket(const char *c) {
     const char *brackets;
     char c1, c2;
 
@@ -170,14 +170,14 @@ s32 func_08009a54(const char *c) {
 
     if ((char)(c1 - '\x20') < '\x5f') {
         // Half-Width Open Brackets
-        for (brackets = D_089380e4; brackets[0] != 0; brackets += 1) {
+        for (brackets = D_089380e4; brackets[0] != '\0'; brackets += 1) {
             if (c1 == brackets[0]) {
                 return TRUE;
             }
         }
     } else {
         // Full-Width Open Brackets
-        for (brackets = D_089380d4; brackets[0] != 0; brackets += 2) {
+        for (brackets = D_089380d4; brackets[0] != '\0'; brackets += 2) {
             if ((c1 == brackets[0]) && (c2 == brackets[1])) {
                 return TRUE;
             }
@@ -189,7 +189,7 @@ s32 func_08009a54(const char *c) {
 
 
 // Check if Character is Any Sort of Ending Punctuation
-s32 func_08009aa4(const char *c) {
+s32 text_glyph_is_end_punctuation(const char *c) {
     const char *punctuation;
     char c1, c2;
 
@@ -198,14 +198,14 @@ s32 func_08009aa4(const char *c) {
 
     if ((char)(c1 - '\x20') < '\x5f') {
         // Half-Width Ending Punctuation
-        for (punctuation = D_08938138; punctuation[0] != 0; punctuation += 1) {
+        for (punctuation = D_08938138; punctuation[0] != '\0'; punctuation += 1) {
             if (c1 == punctuation[0]) {
                 return TRUE;
             }
         }
     } else {
         // Full-Width Ending Punctuation
-        for (punctuation = D_089380e8; punctuation[0] != 0; punctuation += 2) {
+        for (punctuation = D_089380e8; punctuation[0] != '\0'; punctuation += 2) {
             if ((c1 == punctuation[0]) && (c2 == punctuation[1])) {
                 return TRUE;
             }
@@ -217,7 +217,7 @@ s32 func_08009aa4(const char *c) {
 
 
 // Print Formatted Line to VRAM (return width in pixels)
-s32 func_08009af4(s32 tileBaseX, s32 tileBaseY, s32 font, const char **charStream, s32 maxWidth, s32 lineColors, s32 indentWidth, s32 shadowColors) {
+s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, const char **charStream, s32 maxWidth, s32 lineColors, s32 indentWidth, s32 shadowColors) {
     struct FormattedGlyph *fGlyphData;
     const char *stream, *tempStream;
     s32 spacing, glyphWidth, totalWidth, maxWidthWithShadow;
@@ -272,7 +272,7 @@ s32 func_08009af4(s32 tileBaseX, s32 tileBaseY, s32 font, const char **charStrea
                 case '\5': // Set Text Shadow
                     shadowColors = stream[1] - '0';
                     if (shadowColors > 3) {
-                        shadowColors = -1;
+                        shadowColors = TEXT_PRINTER_SHADOW_DISABLED;
                     }
                     stream += 2;
                     break;
@@ -282,12 +282,12 @@ s32 func_08009af4(s32 tileBaseX, s32 tileBaseY, s32 font, const char **charStrea
         }
 
         tempStream = stream;
-        glyphID = func_0800a108(&stream);
+        glyphID = text_printer_get_glyph_id(&stream);
         if (glyphID < 0) {
             continue;
         }
 
-        glyphWidth = func_08009898(font, glyphID);
+        glyphWidth = text_font_get_glyph_width(font, glyphID);
         maxWidthWithShadow = maxWidth + ((shadowColors >= 0) ? -1 : 0);
         if ((totalWidth + glyphWidth) > maxWidthWithShadow) {
             stream = tempStream;
@@ -315,17 +315,17 @@ s32 func_08009af4(s32 tileBaseX, s32 tileBaseY, s32 font, const char **charStrea
     }
 
     if (maxWidthExceeded && (totalGlyphs != 0)) {
-        if (func_08009a54(sGlyphBuffer[totalGlyphs - 1].charSrc)) {
+        if (text_glyph_is_open_bracket(sGlyphBuffer[totalGlyphs - 1].charSrc)) {
             fGlyphData--;
             totalGlyphs--;
             totalWidth -= (fGlyphData->width + fGlyphData->spacing);
             stream = fGlyphData->formatSrc;
-        } else if (func_08009aa4(stream)) {
+        } else if (text_glyph_is_end_punctuation(stream)) {
             do {
                 fGlyphData--;
                 totalGlyphs--;
                 totalWidth -= (fGlyphData->width + fGlyphData->spacing);
-            } while ((totalGlyphs != 0) && func_08009aa4(fGlyphData->charSrc));
+            } while ((totalGlyphs != 0) && text_glyph_is_end_punctuation(fGlyphData->charSrc));
             stream = fGlyphData->formatSrc;
         }
 
@@ -347,10 +347,10 @@ s32 func_08009af4(s32 tileBaseX, s32 tileBaseY, s32 font, const char **charStrea
     }
 
     for (fGlyphData = sGlyphBuffer, i = 0; i < totalGlyphs; i++, fGlyphData++) {
-        func_08009948((tileBaseX + fGlyphData->xOffset), tileBaseY, fGlyphData->font, fGlyphData->id, fGlyphData->lineColors);
+        text_printer_print_glyph((tileBaseX + fGlyphData->xOffset), tileBaseY, fGlyphData->font, fGlyphData->id, fGlyphData->lineColors);
 
         if (fGlyphData->shadowColors >= 0) {
-            func_08009948((tileBaseX + fGlyphData->xOffset + 1), tileBaseY, fGlyphData->font, fGlyphData->id, fGlyphData->shadowColors);
+            text_printer_print_glyph((tileBaseX + fGlyphData->xOffset + 1), tileBaseY, fGlyphData->font, fGlyphData->id, fGlyphData->shadowColors);
         }
     }
 
@@ -364,25 +364,25 @@ s32 func_08009af4(s32 tileBaseX, s32 tileBaseY, s32 font, const char **charStrea
 
 
 // Get Animation (Type 1)
-struct Animation *func_0800a004(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, u32 anchor, s32 lineColors, s32 maxWidth) {
+struct Animation *text_printer_get_unformatted_line_anim(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, u32 anchor, s32 lineColors, s32 maxWidth) {
     return func_08009de4(memID, tileBaseX, tileBaseY, font, &string, anchor, lineColors, maxWidth, TRUE, 0, -1);
 }
 
 
 // Get Animation (Type 2)
-struct Animation *func_0800a030(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char **string, u32 anchor, s32 lineColors, s32 maxWidth, s32 indentWidth, s32 shadowColors) {
+struct Animation *text_printer_get_formatted_line_anim(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char **string, u32 anchor, s32 lineColors, s32 maxWidth, s32 indentWidth, s32 shadowColors) {
     return func_08009de4(memID, tileBaseX, tileBaseY, font, string, anchor, lineColors, maxWidth, FALSE, indentWidth, shadowColors);
 }
 
 
 // Get sCurrentLineWidth
-s32 func_0800a05c(void) {
+s32 text_printer_get_current_line_width(void) {
     return sCurrentLineWidth;
 }
 
 
 // Delete Text Animation
-void func_0800a068(struct StaticAnimation *anim) {
+void text_printer_delete_anim(struct StaticAnimation *anim) {
     if (anim == NULL) return;
 
     mem_heap_dealloc(anim->cel);
@@ -391,13 +391,13 @@ void func_0800a068(struct StaticAnimation *anim) {
 
 
 // Set sModifyPrinterSettings
-void func_0800a084(void *func) {
+void text_printer_set_format_func(void *func) {
     sModifyPrinterSettings = func;
 }
 
 
 // Fill Allocated Space With Given Pixel
-void func_0800a090(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, u32 unused, u32 color) {
+void text_printer_clear_tiles(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, u32 unused, u32 color) {
     void *tilesetBase;
     u32 tileOffset;
     u32 tile;
@@ -416,8 +416,8 @@ void func_0800a090(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, u32 unused,
 
 
 // Fill Allocated Space With Given Pixel
-void func_0800a0f0(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, u32 unused, u32 color) {
-    func_0800a090(tileBaseX, tileBaseY + 64, allocatedTiles, unused, color);
+void text_printer_fill_vram_tiles(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, u32 unused, u32 color) {
+    text_printer_clear_tiles(tileBaseX, tileBaseY + 64, allocatedTiles, unused, color);
 }
 
 
@@ -450,13 +450,13 @@ s32 func_0800a1d4(u32 totalLines, u32 id) {
 
 
 // Create New
-struct TextPrinter *func_0800a204(u16 memID, u32 totalLines, u32 maxWidth, u32 arg3) {
+struct TextPrinter *text_printer_create_new(u16 memID, u32 totalLines, u32 maxWidth, u32 arg3) {
     struct TextPrinter *textPrinter;
     u32 i;
 
     textPrinter = mem_heap_alloc_id(memID, sizeof(struct TextPrinter));
     textPrinter->memID = memID;
-    textPrinter->printMultipleStrings = FALSE;
+    textPrinter->mode = TEXT_PRINTER_MODE_STANDARD;
     textPrinter->totalLines = totalLines;
     textPrinter->lineSprites = mem_heap_alloc_id(memID, totalLines * sizeof(s16));
     textPrinter->lineWidths = mem_heap_alloc_id(memID, totalLines * sizeof(s16));
@@ -484,24 +484,24 @@ struct TextPrinter *func_0800a204(u16 memID, u32 totalLines, u32 maxWidth, u32 a
     textPrinter->z = 0;
     textPrinter->currentlyPrinting = FALSE;
     textPrinter->string = NULL;
-    textPrinter->font = 0;
+    textPrinter->font = TEXT_PRINTER_FONT_SMALL;
     textPrinter->lineSpacing = 16;
-    textPrinter->unk38 = 0;
-    textPrinter->unk39 = 0;
-    textPrinter->unk3C = NULL;
-    textPrinter->unk44 = NULL;
+    textPrinter->centerText = FALSE;
+    textPrinter->finished = FALSE;
+    textPrinter->onFinish = NULL;
+    textPrinter->onClear = NULL;
     textPrinter->ySrc = NULL;
     textPrinter->xSrc = NULL;
     textPrinter->unk54 = 0;
-    textPrinter->shadowColors = -1;
-    textPrinter->unk56 = 1;
+    textPrinter->shadowColors = TEXT_PRINTER_SHADOW_DISABLED;
+    textPrinter->renderToScreen = TRUE;
 
     return textPrinter;
 }
 
 
 // Format Function for Escape Character '\1'
-void func_0800a2f8(u32 arg, s32 xOffset) {
+void text_printer_format_func(u32 arg, s32 xOffset) {
     switch (arg) {
         case '0':
         case '1':
@@ -516,25 +516,25 @@ void func_0800a2f8(u32 arg, s32 xOffset) {
             sPrinterShadowColors = arg - '4';
             break;
         case '8':
-            sPrinterShadowColors = -1;
+            sPrinterShadowColors = TEXT_PRINTER_SHADOW_DISABLED;
             break;
         case 'L':
-            sPrinterAlignment = 0;
+            sPrinterAlignment = TEXT_ALIGNMENT_LEFT;
             break;
         case 'R':
-            sPrinterAlignment = 1;
+            sPrinterAlignment = TEXT_ALIGNMENT_RIGHT;
             break;
         case 'C':
-            sPrinterAlignment = 2;
+            sPrinterAlignment = TEXT_ALIGNMENT_CENTER;
             break;
         case 's':
-            sPrinterFont = 0;
+            sPrinterFont = TEXT_PRINTER_FONT_SMALL;
             break;
         case 'm':
-            sPrinterFont = 1;
+            sPrinterFont = TEXT_PRINTER_FONT_MEDIUM;
             break;
         case 'l':
-            sPrinterFont = 2;
+            sPrinterFont = TEXT_PRINTER_FONT_LARGE;
             break;
         case '[':
             sPrinterIndentWidth = xOffset;
@@ -547,7 +547,7 @@ void func_0800a2f8(u32 arg, s32 xOffset) {
 
 
 //
-const char *func_0800a4a8(struct TextPrinter *textPrinter, u32 currentLine, const char *string) {
+const char *text_printer_process_next_line(struct TextPrinter *textPrinter, u32 currentLine, const char *string) {
     struct Animation *anim;
 
     u32 id;
@@ -573,7 +573,7 @@ const char *func_0800a4a8(struct TextPrinter *textPrinter, u32 currentLine, cons
     sPrinterFont = textPrinter->font;
     sPrinterIndentWidth = textPrinter->indentWidth;
     sPrinterShadowColors = textPrinter->shadowColors;
-    func_0800a084(func_0800a2f8);
+    text_printer_set_format_func(text_printer_format_func);
 
     id = textPrinter->unk4;
     allocatedTiles = D_08938258[id];
@@ -597,12 +597,12 @@ const char *func_0800a4a8(struct TextPrinter *textPrinter, u32 currentLine, cons
     y = (textPrinter->lineSpacing * currentDisplayLine) + textPrinter->y;
     z = textPrinter->z;
 
-    anim = func_0800a030(textPrinter->memID, tileX, tileY, textPrinter->font, &string, 2, textPrinter->lineColors, textPrinter->maxWidth, textPrinter->indentWidth, textPrinter->shadowColors);
+    anim = text_printer_get_formatted_line_anim(textPrinter->memID, tileX, tileY, textPrinter->font, &string, 2, textPrinter->lineColors, textPrinter->maxWidth, textPrinter->indentWidth, textPrinter->shadowColors);
     sprite = func_0804d160(D_03005380, anim, 0, x, y, z, 0, 0, 0x8000);
     func_0804d8c4(D_03005380, sprite, textPrinter->palette);
     func_0804db44(D_03005380, sprite, textPrinter->xSrc, textPrinter->ySrc);
     textPrinter->lineSprites[currentLine] = sprite;
-    textPrinter->lineWidths[currentLine] = func_0800a05c();
+    textPrinter->lineWidths[currentLine] = text_printer_get_current_line_width();
     textPrinter->lineAlignments[currentLine] = sPrinterAlignment;
     func_0804d55c(D_03005380, textPrinter->lineShadowSprites[currentLine], x, y, z + 1);
     func_0804db44(D_03005380, textPrinter->lineShadowSprites[currentLine], textPrinter->xSrc, textPrinter->ySrc);
@@ -618,12 +618,12 @@ const char *func_0800a4a8(struct TextPrinter *textPrinter, u32 currentLine, cons
 
 
 // Align Sprites
-void func_0800a6a0(struct TextPrinter *textPrinter) {
+void text_printer_align_sprites(struct TextPrinter *textPrinter) {
     u16 xCentre, xAligned;
     u32 greatestWidth;
     u32 i;
 
-    if (textPrinter->unk38) {
+    if (textPrinter->centerText) {
         greatestWidth = 0;
         for (i = 0; i < textPrinter->totalLines; i++) {
             if (textPrinter->lineSprites[i] >= 0) {
@@ -641,13 +641,13 @@ void func_0800a6a0(struct TextPrinter *textPrinter) {
     for (i = 0; i < textPrinter->totalLines; i++) {
         if (textPrinter->lineSprites[i] >= 0) {
             switch (textPrinter->lineAlignments[i]) {
-                case 0:
+                case TEXT_ALIGNMENT_LEFT:
                     xAligned = xCentre;
                     break;
-                case 1:
+                case TEXT_ALIGNMENT_RIGHT:
                     xAligned = (xCentre + greatestWidth) - textPrinter->lineWidths[i];
                     break;
-                case 2:
+                case TEXT_ALIGNMENT_CENTER:
                     xAligned = xCentre + ((greatestWidth - textPrinter->lineWidths[i]) / 2);
                     break;
             }
@@ -658,7 +658,7 @@ void func_0800a6a0(struct TextPrinter *textPrinter) {
 
 
 // Show/Hide Text
-void func_0800a794(struct TextPrinter *textPrinter, u32 show) {
+void text_printer_show_text_now(struct TextPrinter *textPrinter, u32 show) {
     u32 i;
 
     for (i = 0; i < textPrinter->totalLines; i++) {
@@ -673,18 +673,18 @@ void func_0800a794(struct TextPrinter *textPrinter, u32 show) {
 
 
 // Show/Hide Text On Render
-void func_0800a7fc(struct TextPrinter *textPrinter, u32 show) {
+void text_printer_show_text(struct TextPrinter *textPrinter, u32 show) {
     if (textPrinter == NULL) return;
 
-    textPrinter->unk56 = show;
+    textPrinter->renderToScreen = show;
     if (!textPrinter->currentlyPrinting) {
-        func_0800a794(textPrinter, show);
+        text_printer_show_text_now(textPrinter, show);
     }
 }
 
 
 // Update (Single-String)
-void func_0800a818(struct TextPrinter *textPrinter) {
+void text_printer_update_standard(struct TextPrinter *textPrinter) {
     if (textPrinter->currentlyPrinting == FALSE) {
         return;
     }
@@ -694,29 +694,29 @@ void func_0800a818(struct TextPrinter *textPrinter) {
         return;
     }
 
-    if (textPrinter->unk3A != 0) {
-        textPrinter->unk3A = 0;
+    if (textPrinter->canceled) {
+        textPrinter->canceled = FALSE;
         return;
     }
 
-    textPrinter->string = func_0800a4a8(textPrinter, textPrinter->currentLine, textPrinter->string);
+    textPrinter->string = text_printer_process_next_line(textPrinter, textPrinter->currentLine, textPrinter->string);
     textPrinter->currentLine++;
 
     if ((*textPrinter->string == '\0') || (textPrinter->currentLine >= textPrinter->totalLines)) {
-        func_0800a6a0(textPrinter);
-        func_0800a794(textPrinter, textPrinter->unk56);
+        text_printer_align_sprites(textPrinter);
+        text_printer_show_text_now(textPrinter, textPrinter->renderToScreen);
         textPrinter->currentlyPrinting = FALSE;
-        textPrinter->unk39 = 1;
+        textPrinter->finished = TRUE;
 
-        if (textPrinter->unk3C != NULL) {
-            textPrinter->unk3C(textPrinter->unk40);
+        if (textPrinter->onFinish != NULL) {
+            textPrinter->onFinish(textPrinter->onFinishArg);
         }
     }
 }
 
 
 // Update (Multi-String)
-void func_0800a890(struct TextPrinter *textPrinter) {
+void text_printer_update_split_table(struct TextPrinter *textPrinter) {
     u32 totalLineStrings;
     u32 firstLineString;
     u32 i;
@@ -733,7 +733,7 @@ void func_0800a890(struct TextPrinter *textPrinter) {
 
     if (totalLineStrings == 0) return;
 
-    func_0800a4a8(textPrinter, firstLineString, textPrinter->lineStrings[firstLineString]);
+    text_printer_process_next_line(textPrinter, firstLineString, textPrinter->lineStrings[firstLineString]);
 
     if (textPrinter->lineStrings[firstLineString] != NULL) {
         mem_heap_dealloc(textPrinter->lineStrings[firstLineString]);
@@ -742,46 +742,46 @@ void func_0800a890(struct TextPrinter *textPrinter) {
     textPrinter->lineStrings[firstLineString] = NULL;
 
     if (totalLineStrings < 2) {
-        func_0800a6a0(textPrinter);
-        func_0800a794(textPrinter, textPrinter->unk56);
+        text_printer_align_sprites(textPrinter);
+        text_printer_show_text_now(textPrinter, textPrinter->renderToScreen);
         textPrinter->currentlyPrinting = FALSE;
-        textPrinter->unk39 = 1;
-        if (textPrinter->unk3C != NULL) {
-            textPrinter->unk3C(textPrinter->unk40);
+        textPrinter->finished = TRUE;
+        if (textPrinter->onFinish != NULL) {
+            textPrinter->onFinish(textPrinter->onFinishArg);
         }
     }
 }
 
 
 // Update
-void func_0800a914(struct TextPrinter *textPrinter) {
+void text_printer_update(struct TextPrinter *textPrinter) {
     if (textPrinter == NULL) return;
 
-    switch (textPrinter->printMultipleStrings) {
-        case FALSE:
-            func_0800a818(textPrinter);
+    switch (textPrinter->mode) {
+        case TEXT_PRINTER_MODE_STANDARD:
+            text_printer_update_standard(textPrinter);
             break;
-        case TRUE:
-            func_0800a890(textPrinter);
+        case TEXT_PRINTER_MODE_STATIC_TABLE:
+            text_printer_update_split_table(textPrinter);
             break;
     }
 }
 
 
 // Remove Text
-void func_0800a934(struct TextPrinter *textPrinter) {
-    u32 unk39;
+void text_printer_clear(struct TextPrinter *textPrinter) {
+    u32 finished;
     s16 sprite;
     u32 i;
 
     if (textPrinter == NULL) return;
 
-    unk39 = textPrinter->unk39;
+    finished = textPrinter->finished;
 
     for (i = 0; i < textPrinter->totalLines; i++) {
         sprite = textPrinter->lineSprites[i];
         if (sprite >= 0) {
-            func_0800a068((void *)func_0804ddb0(D_03005380, sprite, 7));
+            text_printer_delete_anim((void *)func_0804ddb0(D_03005380, sprite, 7));
             func_0804d504(D_03005380, sprite);
             textPrinter->lineSprites[i] = -1;
         }
@@ -799,30 +799,40 @@ void func_0800a934(struct TextPrinter *textPrinter) {
 
     textPrinter->currentLine = 0;
     textPrinter->currentlyPrinting = FALSE;
-    textPrinter->unk39 = FALSE;
+    textPrinter->finished = FALSE;
     textPrinter->string = NULL;
     textPrinter->unk54 = 0;
 
-    if (unk39) {
-        if (textPrinter->unk44 != NULL) {
-            textPrinter->unk44(textPrinter->unk48);
+    if (finished) {
+        if (textPrinter->onClear != NULL) {
+            textPrinter->onClear(textPrinter->onClearArg);
         }
     }
 }
 
 
-#include "asm/code_080092cc/asm_0800aa1c.s"
+// Delete Text Printer
+void text_printer_delete(struct TextPrinter *textPrinter) {
+    if (textPrinter == NULL) return;
+
+    text_printer_clear(textPrinter);
+    mem_heap_dealloc(textPrinter->lineSprites);
+    mem_heap_dealloc(textPrinter->lineWidths);
+    mem_heap_dealloc(textPrinter->lineAlignments);
+    mem_heap_dealloc(textPrinter->lineShadowSprites);
+    mem_heap_dealloc(textPrinter);
+}
 
 
 // Set Text
-void func_0800aa4c(struct TextPrinter *textPrinter, const char *text) {
+void text_printer_set_string(struct TextPrinter *textPrinter, const char *text) {
     if (textPrinter == NULL) return;
 
-    if (!textPrinter->printMultipleStrings) {
-        func_0800a934(textPrinter);
+    if (textPrinter->mode == TEXT_PRINTER_MODE_STANDARD) {
+        text_printer_clear(textPrinter);
 
         if (text != NULL) {
-            textPrinter->unk3A = TRUE;
+            textPrinter->canceled = TRUE;
             textPrinter->currentlyPrinting = TRUE;
             textPrinter->string = text;
         }
@@ -831,10 +841,10 @@ void func_0800aa4c(struct TextPrinter *textPrinter, const char *text) {
 
 
 // Get Text
-const char *func_0800aa78(struct TextPrinter *textPrinter) {
+const char *text_printer_get_text(struct TextPrinter *textPrinter) {
     if (textPrinter == NULL) return NULL;
 
-    if (!textPrinter->printMultipleStrings) {
+    if (textPrinter->mode == TEXT_PRINTER_MODE_STANDARD) {
         if ((textPrinter->string != NULL) && (*textPrinter->string != '\0')) {
             return textPrinter->string;
         }
@@ -845,31 +855,66 @@ const char *func_0800aa78(struct TextPrinter *textPrinter) {
 
 
 // Reinsert Text ("Continue"?)
-void func_0800aa9c(struct TextPrinter *textPrinter) {
+void text_printer_resume(struct TextPrinter *textPrinter) {
     if (textPrinter == NULL) return;
 
-    if (!textPrinter->printMultipleStrings) {
+    if (textPrinter->mode == TEXT_PRINTER_MODE_STANDARD) {
         if ((textPrinter->string != NULL) && (*textPrinter->string != '\0')) {
-            func_0800aa4c(textPrinter, textPrinter->string);
+            text_printer_set_string(textPrinter, textPrinter->string);
         }
     }
 }
 
 
+// ? (https://decomp.me/scratch/477tU)
 #include "asm/code_080092cc/asm_0800aac0.s"
 
-#include "asm/code_080092cc/asm_0800abb0.s"
+
+// ?
+void func_0800abb0(void *printer, s32 line) {
+    struct TextPrinter *textPrinter = printer;
+    s16 sprite;
+    u32 i;
+
+    if (textPrinter == NULL) return;
+
+    if (textPrinter->mode == TEXT_PRINTER_MODE_STATIC_TABLE) {
+        line %= textPrinter->totalLines;
+        if (line < 0) {
+            line += textPrinter->totalLines;
+        }
+        textPrinter->unk54 = line;
+
+        for (i = 0; i < textPrinter->totalLines; i++) {
+            sprite = textPrinter->lineSprites[line];
+            if (sprite >= 0) {
+                func_0804d648(D_03005380, sprite, (textPrinter->lineSpacing * i) + textPrinter->y);
+            }
+
+            sprite = textPrinter->lineShadowSprites[line];
+            if (sprite >= 0) {
+                func_0804d648(D_03005380, sprite, (textPrinter->lineSpacing * i) + textPrinter->y);
+            }
+
+            line++;
+            if (line >= textPrinter->totalLines) {
+                line = 0;
+            }
+        }
+    }
+}
 
 
 // Get Active Printing Status
-s32 func_0800ac58(struct TextPrinter *textPrinter) {
+s32 text_printer_is_printing(struct TextPrinter *textPrinter) {
     if (textPrinter == NULL) return FALSE;
+
     return textPrinter->currentlyPrinting;
 }
 
 
 // Set X & Y
-void func_0800ac68(struct TextPrinter *textPrinter, s16 x, s16 y) {
+void text_printer_set_x_y(struct TextPrinter *textPrinter, s16 x, s16 y) {
     if (textPrinter == NULL) return;
 
     textPrinter->x = x;
@@ -878,7 +923,7 @@ void func_0800ac68(struct TextPrinter *textPrinter, s16 x, s16 y) {
 
 
 // Set X
-void func_0800ac80(struct TextPrinter *textPrinter, s16 x) {
+void text_printer_set_x(struct TextPrinter *textPrinter, s16 x) {
     if (textPrinter == NULL) return;
 
     textPrinter->x = x;
@@ -886,7 +931,7 @@ void func_0800ac80(struct TextPrinter *textPrinter, s16 x) {
 
 
 // Set Y
-void func_0800ac90(struct TextPrinter *textPrinter, s16 y) {
+void text_printer_set_y(struct TextPrinter *textPrinter, s16 y) {
     if (textPrinter == NULL) return;
 
     textPrinter->y = y;
@@ -894,7 +939,7 @@ void func_0800ac90(struct TextPrinter *textPrinter, s16 y) {
 
 
 // Set Z (Sprite Depth)
-void func_0800aca0(struct TextPrinter *textPrinter, u16 z) {
+void text_printer_set_layer(struct TextPrinter *textPrinter, u16 z) {
     if (textPrinter == NULL) return;
 
     textPrinter->z = z;
@@ -902,7 +947,7 @@ void func_0800aca0(struct TextPrinter *textPrinter, u16 z) {
 
 
 // Set Palette
-void func_0800acb0(struct TextPrinter *textPrinter, u32 palette) {
+void text_printer_set_palette(struct TextPrinter *textPrinter, u32 palette) {
     if (textPrinter == NULL) return;
 
     textPrinter->palette = palette;
@@ -910,7 +955,7 @@ void func_0800acb0(struct TextPrinter *textPrinter, u32 palette) {
 
 
 // Set Colors
-void func_0800acbc(struct TextPrinter *textPrinter, u32 colors) {
+void text_printer_set_colors(struct TextPrinter *textPrinter, u32 colors) {
     if (textPrinter == NULL) return;
 
     textPrinter->lineColors = colors;
@@ -918,18 +963,18 @@ void func_0800acbc(struct TextPrinter *textPrinter, u32 colors) {
 
 
 // Set Alignment
-void func_0800acc8(struct TextPrinter *textPrinter, u32 alignment) {
+void text_printer_set_alignment(struct TextPrinter *textPrinter, u32 alignment) {
     if (textPrinter == NULL) return;
 
     textPrinter->alignment = alignment;
 }
 
 
-// Set unk38
-void func_0800acd8(struct TextPrinter *textPrinter, u32 arg) {
+// Set Center Text
+void text_printer_center_by_content(struct TextPrinter *textPrinter, u32 center) {
     if (textPrinter == NULL) return;
 
-    textPrinter->unk38 = arg;
+    textPrinter->centerText = center;
 }
 
 
@@ -942,7 +987,7 @@ s32 func_0800ace8(struct TextPrinter *textPrinter) {
 
 
 // Store Centred X & Y to Vector
-void func_0800acf8(struct TextPrinter *textPrinter, s16 *vx, s16 *vy) {
+void text_printer_get_x_y(struct TextPrinter *textPrinter, s16 *vx, s16 *vy) {
     if (textPrinter == NULL) return;
 
     *vx = (textPrinter->maxWidth / 2) + textPrinter->x;
@@ -951,25 +996,25 @@ void func_0800acf8(struct TextPrinter *textPrinter, s16 *vx, s16 *vy) {
 
 
 // Set On-Print Function and Parameter
-void func_0800ad20(struct TextPrinter *textPrinter, void *onPrint, s32 param) {
+void text_printer_run_func_on_finish(struct TextPrinter *textPrinter, void *onPrint, s32 param) {
     if (textPrinter == NULL) return;
 
-    textPrinter->unk3C = onPrint;
-    textPrinter->unk40 = param;
+    textPrinter->onFinish = onPrint;
+    textPrinter->onFinishArg = param;
 }
 
 
 // Set On-Clear Function and Parameter
-void func_0800ad30(struct TextPrinter *textPrinter, void *onClear, s32 param) {
+void text_printer_run_func_on_clear(struct TextPrinter *textPrinter, void *onClear, s32 param) {
     if (textPrinter == NULL) return;
 
-    textPrinter->unk44 = onClear;
-    textPrinter->unk48 = param;
+    textPrinter->onClear = onClear;
+    textPrinter->onClearArg = param;
 }
 
 
 // Export Text Printer Data
-void func_0800ad40(struct TextPrinter *textPrinter, struct TextPrinterData *data) {
+void text_printer_export_data(struct TextPrinter *textPrinter, struct TextPrinterData *data) {
     if (textPrinter == NULL) return;
 
     data->string = textPrinter->string;
@@ -981,7 +1026,7 @@ void func_0800ad40(struct TextPrinter *textPrinter, struct TextPrinterData *data
 
 
 // Import Text Printer Data
-void func_0800ad68(struct TextPrinter *textPrinter, struct TextPrinterData *data) {
+void text_printer_import_data(struct TextPrinter *textPrinter, struct TextPrinterData *data) {
     if (textPrinter == NULL) return;
 
     textPrinter->string = data->string;
@@ -989,12 +1034,12 @@ void func_0800ad68(struct TextPrinter *textPrinter, struct TextPrinterData *data
     textPrinter->lineColors = data->colors;
     textPrinter->alignment = data->alignment;
     textPrinter->indentWidth = data->indentWidth;
-    func_0800aa9c(textPrinter);
+    text_printer_resume(textPrinter);
 }
 
 
 // Set X & Y Sources
-void func_0800ad98(struct TextPrinter *textPrinter, s16 *xSrc, s16 *ySrc) {
+void text_printer_set_x_y_controller(struct TextPrinter *textPrinter, s16 *xSrc, s16 *ySrc) {
     if (textPrinter == NULL) return;
 
     textPrinter->xSrc = xSrc;
@@ -1003,7 +1048,7 @@ void func_0800ad98(struct TextPrinter *textPrinter, s16 *xSrc, s16 *ySrc) {
 
 
 // Set X Source
-void func_0800ada8(struct TextPrinter *textPrinter, s16 *xSrc) {
+void text_printer_set_x_controller(struct TextPrinter *textPrinter, s16 *xSrc) {
     if (textPrinter == NULL) return;
 
     textPrinter->xSrc = xSrc;
@@ -1011,7 +1056,7 @@ void func_0800ada8(struct TextPrinter *textPrinter, s16 *xSrc) {
 
 
 // Set Y Source
-void func_0800adb4(struct TextPrinter *textPrinter, s16 *ySrc) {
+void text_printer_set_y_controller(struct TextPrinter *textPrinter, s16 *ySrc) {
     if (textPrinter == NULL) return;
 
     textPrinter->ySrc = ySrc;
@@ -1019,16 +1064,16 @@ void func_0800adb4(struct TextPrinter *textPrinter, s16 *ySrc) {
 
 
 // Set Print Mode
-void func_0800adc0(struct TextPrinter *textPrinter, u32 printMultipleStrings) {
+void text_printer_set_mode(struct TextPrinter *textPrinter, u32 mode) {
     if (textPrinter == NULL) return;
 
-    func_0800a934(textPrinter);
-    textPrinter->printMultipleStrings = printMultipleStrings;
+    text_printer_clear(textPrinter);
+    textPrinter->mode = mode;
 }
 
 
 // Get Line Sprite
-s16 func_0800add8(struct TextPrinter *textPrinter, s32 line) {
+s16 text_printer_get_line_sprite(struct TextPrinter *textPrinter, s32 line) {
     if (textPrinter == NULL) return -1;
 
     if ((line >= 0) && (line < textPrinter->totalLines)) {
@@ -1040,7 +1085,7 @@ s16 func_0800add8(struct TextPrinter *textPrinter, s32 line) {
 
 
 // Set Line Spacing
-void func_0800ae00(struct TextPrinter *textPrinter, u32 lineSpacing) {
+void text_printer_set_line_spacing(struct TextPrinter *textPrinter, u32 lineSpacing) {
     if (textPrinter == NULL) return;
 
     textPrinter->lineSpacing = lineSpacing;
@@ -1048,7 +1093,7 @@ void func_0800ae00(struct TextPrinter *textPrinter, u32 lineSpacing) {
 
 
 // Set Shadow Colors
-void func_0800ae0c(struct TextPrinter *textPrinter, s32 shadowColors) {
+void text_printer_set_shadow_colors(struct TextPrinter *textPrinter, s32 shadowColors) {
     if (textPrinter == NULL) return;
 
     textPrinter->shadowColors = shadowColors;

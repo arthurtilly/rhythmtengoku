@@ -83,7 +83,7 @@ branch_0801acce: \n\
 /* 0801acd4 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801acd6 */ LDR R0, [R0] \n\
 /* 0801acd8 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0801acda */ BL func_0800aa4c \n\
+/* 0801acda */ BL text_printer_set_string \n\
 /* 0801acde */ LDR R0, [R4] \n\
 /* 0801ace0 */ LDR R2, =0x4a2 \n\
 /* 0801ace2 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\

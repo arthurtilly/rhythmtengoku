@@ -1,12 +1,13 @@
 #include "global.h"
-#include "src/riq_gameplay.h"
-#include "code_08001360.h"
-#include "code_08003980.h"
-#include "task_pool.h"
-#include "memory_heap.h"
-#include "code_08007468.h"
-#include "code_0800b778.h"
-#include "lib_0804c870.h"
+#include "src/scenes/gameplay.h"
+#include "src/code_08001360.h"
+#include "src/code_08003980.h"
+#include "src/task_pool.h"
+#include "src/memory_heap.h"
+#include "src/code_08007468.h"
+#include "src/text_printer.h"
+#include "src/code_0800b778.h"
+#include "src/lib_0804c870.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
@@ -1117,7 +1118,11 @@ void func_08018524(void) {
 
 #include "asm/gameplay/asm_0801853c.s"
 
-#include "asm/gameplay/asm_0801858c.s"
+
+// Set Text Button Style
+void func_0801858c(u32 style) {
+    func_0804d8f8(D_03005380, gGameplayInfo.aButtonSprite, D_089cfdf0[style], 0, 1, 0, 0);
+}
 
 
 // [func_080185d0] Display A Button Prompt
@@ -1139,32 +1144,56 @@ void func_08018630(struct TextPrinter *textPrinter) {
 
 // [func_08018660] Display Text
 void func_08018660(const char *text) {
-    func_0800aa4c(gGameplayInfo.textPrinter, text);
+    text_printer_set_string(gGameplayInfo.textPrinter, text);
     func_080185d0(0, 0, FALSE);
     gGameplayInfo.unk49D = 0;
 }
 
 
-#include "asm/gameplay/asm_08018698.s"
+//
+void func_08018698(void) {
+    s16 x, y;
 
-#include "asm/gameplay/asm_080186d4.s"
+    if (gGameplayInfo.textPrinter != NULL) {
+        text_printer_get_x_y(gGameplayInfo.textPrinter, &x, &y);
+        func_080185d0(x, y, TRUE);
+    }
+}
+
+
+//
+void func_080186d4(void) {
+    if (gGameplayInfo.skippingTutorial) return;
+
+    if (text_printer_is_printing(gGameplayInfo.textPrinter)) {
+        gGameplayInfo.unk49D = TRUE;
+    } else {
+        func_08018698();
+        gGameplayInfo.unk49D = FALSE;
+    }
+    gGameplayInfo.textButtonPressFilter = gGameplayInfo.buttonPressFilter;
+    gGameplayInfo.textButtonReleaseFilter = gGameplayInfo.buttonReleaseFilter;
+    func_08017338(0, 0);
+    func_0800bd04(TRUE);
+    gGameplayInfo.unk49C = TRUE;
+}
 
 
 // [func_0801875c] Update Text
 void func_0801875c(void) {
     if (gGameplayInfo.skippingTutorial) return;
 
-    func_0800a914(gGameplayInfo.textPrinter);
+    text_printer_update(gGameplayInfo.textPrinter);
 
     if (gGameplayInfo.unk49C == 0) return;
 
-    if (!func_0800ac58(gGameplayInfo.textPrinter) && gGameplayInfo.unk49D) {
+    if (!text_printer_is_printing(gGameplayInfo.textPrinter) && gGameplayInfo.unk49D) {
         func_08018698(); // Text-related
         gGameplayInfo.unk49D = FALSE;
     }
 
-    if (!func_0800ac58(gGameplayInfo.textPrinter) && (D_03004afc & A_BUTTON)) {
-        func_0800aa4c(gGameplayInfo.textPrinter, NULL);
+    if (!text_printer_is_printing(gGameplayInfo.textPrinter) && (D_03004afc & A_BUTTON)) {
+        text_printer_set_string(gGameplayInfo.textPrinter, NULL);
         func_080185d0(0, 0, FALSE); // Hide A Button Prompt
         func_08002634(&s_f_send_mes_seqData);
         func_08017338(gGameplayInfo.textButtonPressFilter, gGameplayInfo.textButtonReleaseFilter);
@@ -1174,8 +1203,27 @@ void func_0801875c(void) {
 }
 
 
-#include "asm/gameplay/asm_08018828.s"
+// Set Text X Position
+void func_08018828(s32 x) {
+    if (gGameplayInfo.textPrinter != NULL) {
+        text_printer_set_x(gGameplayInfo.textPrinter, x);
+    }
+}
 
-#include "asm/gameplay/asm_0801884c.s"
 
-#include "asm/gameplay/asm_08018870.s"
+// Set Text Y Position
+void func_0801884c(s32 y) {
+    if (gGameplayInfo.textPrinter != NULL) {
+        text_printer_set_y(gGameplayInfo.textPrinter, y);
+    }
+}
+
+
+// Set Text Z Position (Sprite Depth/Layer)
+void func_08018870(u16 z) {
+    func_0804d67c(D_03005380, gGameplayInfo.aButtonSprite, z);
+
+    if (gGameplayInfo.textPrinter != NULL) {
+        text_printer_set_layer(gGameplayInfo.textPrinter, z);
+    }
+}

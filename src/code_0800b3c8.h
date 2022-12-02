@@ -6,8 +6,8 @@
 
 struct struct_0800b3c8 {
     u32 pad0;
-    u32 unk4;
-    u8 unk8;
+    void *printer;
+    u8 totalLines;
     s16 unkA;
     s16 unkC;
     u16 unkE;
@@ -15,18 +15,18 @@ struct struct_0800b3c8 {
     u16 pad12[2];
     s16 unk16;
     u32 pad18;
-    s16 unk1C; //unknown type
-    s16 unk1E; //unknown type
+    s16 x1; //unknown type
+    s16 y1; //unknown type
     s16 pad20;
-    s16 unk22;
-    s16 unk24;
+    s16 x2;
+    s16 y2;
     s16 unk26;
     s16 unk28;
     s16 unk2A;
     s16 unk2C;
     u16 pad2E;
     s16 unk30;
-    u32 (*unk34)(s32);
+    char *(*unk34)(s32);
     s16 (*unk38)(s32);
 };
 

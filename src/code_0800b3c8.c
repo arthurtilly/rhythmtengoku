@@ -52,67 +52,77 @@ s32 func_0800ae1c(struct struct_0800b3c8 *arg0) {
 #include "asm/code_080092cc/asm_0800b384.s"
 
 
-void func_0800b3c8(struct struct_0800b3c8* arg0) {
-    if (arg0 != NULL)
-        func_0804d770(D_03005380, arg0->unk2A, 1);
-}
-
-
-void func_0800b3e8(struct struct_0800b3c8* arg0) {
-    if (arg0 != NULL)
-        func_0804d770(D_03005380, arg0->unk2A, 0);
-}
-
-
-void func_0800b408(struct struct_0800b3c8* arg0, s16 arg1, u32 arg2) {
+void func_0800b3c8(struct struct_0800b3c8 *arg0) {
     if (arg0 == NULL) return;
-    func_0804db44(D_03005380, arg1, &arg0->unk22, &arg0->unk24);
-    func_0804d5d4(D_03005380, arg1, arg0->unkA, arg2 * arg0->unk10 + arg0->unkC);
+
+    func_0804d770(D_03005380, arg0->unk2A, TRUE);
 }
 
 
-void func_0800b454(struct struct_0800b3c8* arg0, s32 arg1) {
-    s32 temp;
-    u32 temp1;
-    u32 temp2;
-    s32 temp3;
-    
-    if (arg0 == NULL || arg1 < 0 || arg1 >= arg0->unk28) return;
-    
-    temp = arg1 - arg0->unk26 + arg0->unk2C + arg0->unk30;
-    if (temp < 0) return;
-    if (temp >= (s32)arg0->unk8) return;
+void func_0800b3e8(struct struct_0800b3c8 *arg0) {
+    if (arg0 == NULL) return;
 
-    temp += arg0->unk16;
-    temp %= (s32)arg0->unk8;
-    if (temp < 0)
-        temp += (s32)arg0->unk8;
-
-    temp1 = arg0->unk4;
-    temp2 = arg0->unk34(arg1);
-    if (arg0->unk38 != NULL) {
-        temp3 = arg0->unk38(arg1);
-    } else {
-        temp3 = -1;
-    }
-    func_0800aac0(temp1, temp, temp2, temp3);
+    func_0804d770(D_03005380, arg0->unk2A, FALSE);
 }
 
 
-void func_0800b4d8(struct struct_0800b3c8 *arg0, struct Animation *arg1) {
-    if (arg0 != NULL) {
-        if (arg0->unk2A >= 0)
-            func_0804d504(D_03005380, arg0->unk2A);
-        arg0->unk2A = -1;
-        if (arg1 != NULL) {
-            arg0->unk2A = func_0804d160(D_03005380, arg1, 0, arg0->unkA, func_0800ae1c(arg0), arg0->unkE, 1, 0, 0);
-            func_0804db44(D_03005380, arg0->unk2A, &arg0->unk1C, &arg0->unk1E);
+void func_0800b408(struct struct_0800b3c8 *arg0, s16 sprite, u32 arg2) {
+    if (arg0 == NULL) return;
+
+    func_0804db44(D_03005380, sprite, &arg0->x2, &arg0->y2);
+    func_0804d5d4(D_03005380, sprite, arg0->unkA, arg2 * arg0->unk10 + arg0->unkC);
+}
+
+
+void func_0800b454(struct struct_0800b3c8 *arg0, s32 arg1) {
+    void *printer;
+    s32 line;
+    char *string;
+    s32 backSprite;
+    s32 totalLines;
+
+    if (arg0 == NULL) return;
+
+    if (arg1 >= 0 && arg1 < arg0->unk28) {
+        line = arg1 - arg0->unk26 + arg0->unk2C + arg0->unk30;
+        if (line < 0) return;
+
+        totalLines = arg0->totalLines;
+        if (line >= totalLines) return;
+
+        line += arg0->unk16;
+        line %= totalLines;
+        if (line < 0) {
+            line += totalLines;
         }
+
+        printer = arg0->printer;
+        string = arg0->unk34(arg1);
+        if (arg0->unk38 != NULL) {
+            backSprite = arg0->unk38(arg1);
+        } else {
+            backSprite = -1;
+        }
+        func_0800aac0(printer, line, string, backSprite);
     }
 }
 
 
-s16 func_0800b550(struct struct_0800b3c8* arg0) {
+void func_0800b4d8(struct struct_0800b3c8 *arg0, struct Animation *anim) {
+    if (arg0 == NULL) return;
+
+    if (arg0->unk2A >= 0) {
+        func_0804d504(D_03005380, arg0->unk2A);
+    }
+    arg0->unk2A = -1;
+    if (anim != NULL) {
+        arg0->unk2A = func_0804d160(D_03005380, anim, 0, arg0->unkA, func_0800ae1c(arg0), arg0->unkE, 1, 0, 0);
+        func_0804db44(D_03005380, arg0->unk2A, &arg0->x1, &arg0->y1);
+    }
+}
+
+
+s16 func_0800b550(struct struct_0800b3c8 *arg0) {
     if (arg0 == NULL) {
         return -1;
     }
@@ -192,7 +202,7 @@ void func_0800b6dc(struct struct_0800b71c* arg0, u32 arg1, u32 arg2, struct stru
     arg0->unk1_0 = arg1;
     arg0->unk1_1 = arg2;
     arg0->unk4 = arg3;
-    arg3->unk0 = 0xFF;
+    arg3->unk0 = -1;
     arg3->unk1 = 0;
     arg3->unk4 = 0;
 }
@@ -201,14 +211,14 @@ void func_0800b6dc(struct struct_0800b71c* arg0, u32 arg1, u32 arg2, struct stru
 void func_0800b71c(struct struct_0800b71c *arg0, u32 arg1, u32 arg2, u32 arg3) {
     struct struct_0800b71c_sub *sub = arg0->unk4;
     
-    while(sub->unk0 != 0xff) { 
+    while(sub->unk0 != (u8)-1) {
         sub++;
     }
     sub->unk0 = arg1;
     sub->unk1 = arg2;
     sub->unk4 = arg3;
     sub++;
-    sub->unk0 = 0xff;
+    sub->unk0 = -1;
     sub->unk1 = 0;
     sub->unk4 = 0;
     arg0->unk0++;

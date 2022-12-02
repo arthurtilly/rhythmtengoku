@@ -52,14 +52,14 @@ thumb_func_start func_08033cac \n\
 /* 08033d14 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
 /* 08033d16 */ MOVS R2, 0xF0 @ Set R2 to 0xF0 \n\
 /* 08033d18 */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\
-/* 08033d1a */ BL func_0800a204 \n\
+/* 08033d1a */ BL text_printer_create_new \n\
 /* 08033d1e */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08033d20 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08033d22 */ MOVS R2, 0x10 @ Set R2 to 0x10 \n\
-/* 08033d24 */ BL func_0800ac68 \n\
+/* 08033d24 */ BL text_printer_set_x_y \n\
 /* 08033d28 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08033d2a */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 08033d2c */ BL func_0800acd8 \n\
+/* 08033d2c */ BL text_printer_center_by_content \n\
 /* 08033d30 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08033d32 */ BL func_08018630 \n\
 /* 08033d36 */ LDR R0, =0x48c8 \n\

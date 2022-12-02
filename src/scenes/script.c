@@ -1,5 +1,5 @@
 #include "global.h"
-#include "src/riq_script.h"
+#include "src/scenes/script.h"
 #include "src/code_08001360.h"
 #include "src/code_08003980.h"
 #include "src/task_pool.h"

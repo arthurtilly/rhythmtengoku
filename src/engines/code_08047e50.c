@@ -1,5 +1,5 @@
 #include "global.h"
-#include "src/riq_code_08047e50.h"
+#include "src/engines/code_08047e50.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 

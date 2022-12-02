@@ -12,7 +12,7 @@ thumb_func_start func_08014f98 \n\
 /* 08014fa4 */ MOVS R1, 0x1A @ Set R1 to 0x1A \n\
 /* 08014fa6 */ MOVS R2, 0x10 @ Set R2 to 0x10 \n\
 /* 08014fa8 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
-/* 08014faa */ BL func_0800a0f0 \n\
+/* 08014faa */ BL text_printer_fill_vram_tiles \n\
 /* 08014fae */ LDR R0, [R5, 0x4] \n\
 /* 08014fb0 */ STR R0, [SP, 0x18] \n\
 /* 08014fb2 */ BL func_0800c3b8 \n\
@@ -29,7 +29,7 @@ thumb_func_start func_08014f98 \n\
 /* 08014fca */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08014fcc */ MOVS R2, 0x1A @ Set R2 to 0x1A \n\
 /* 08014fce */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08014fd0 */ BL func_0800a030 \n\
+/* 08014fd0 */ BL text_printer_get_formatted_line_anim \n\
 /* 08014fd4 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08014fd6 */ LDR R6, =D_03005380 \n\
 /* 08014fd8 */ LDR R0, [R6] \n\

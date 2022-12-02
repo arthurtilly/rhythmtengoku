@@ -28,10 +28,10 @@ branch_080169de: \n\
 /* 080169de */ LDR R4, =D_030046a4 \n\
 /* 080169e0 */ LDR R0, [R4] \n\
 /* 080169e2 */ LDR R0, [R0, 0x14] \n\
-/* 080169e4 */ BL func_0800a914 \n\
+/* 080169e4 */ BL text_printer_update \n\
 /* 080169e8 */ LDR R0, [R4] \n\
 /* 080169ea */ LDR R0, [R0, 0x20] \n\
-/* 080169ec */ BL func_0800a914 \n\
+/* 080169ec */ BL text_printer_update \n\
 /* 080169f0 */ POP {R4} \n\
 /* 080169f2 */ POP {R0} \n\
 /* 080169f4 */ BX R0 \n\

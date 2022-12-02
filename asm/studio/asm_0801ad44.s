@@ -9,7 +9,7 @@ thumb_func_start func_0801ad44 \n\
 /* 0801ad4a */ LDR R1, =0x4b4 \n\
 /* 0801ad4c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801ad4e */ LDR R0, [R0] \n\
-/* 0801ad50 */ BL func_0800a934 \n\
+/* 0801ad50 */ BL text_printer_clear \n\
 /* 0801ad54 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801ad56 */ BL func_0800e044 \n\
 /* 0801ad5a */ LDR R0, =D_03005380 \n\

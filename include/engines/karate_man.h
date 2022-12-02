@@ -24,7 +24,7 @@ struct KarateManInfo {
     u8 bg;          // Value:   BG Byte
     const u8 *bgPalIndex; // Pointer: BG Palette Index Table
     s16 cueTextSprite;    // Sprite:  Cue Text
-    struct TextPrinter *unk24;      // Value:   unk24
+    struct TextPrinter *textPrinter;      // Pointer:   Text Printer
     s16 textButtonSprite;    // Sprite: Tutorial Button
     u8 awaitingInput; // Value:  Tutorial Button Flag
     s16 tutorialSkip;      // Sprite:  Tutorial Skip

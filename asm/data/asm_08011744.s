@@ -32,7 +32,7 @@ thumb_func_start func_08011744 \n\
 /* 0801177a */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0801177c */ BL func_0804d504 \n\
 /* 08011780 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 08011782 */ BL func_0800a068 \n\
+/* 08011782 */ BL text_printer_delete_anim \n\
  \n\
 branch_08011786: \n\
 /* 08011786 */ ADDS R5, R7, 0x0 @ Set R5 to R7 + 0x0 \n\
@@ -60,7 +60,7 @@ branch_08011786: \n\
 /* 080117b6 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080117b8 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 080117ba */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080117bc */ BL func_0800a004 \n\
+/* 080117bc */ BL text_printer_get_unformatted_line_anim \n\
 /* 080117c0 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 080117c2 */ LDR R5, =D_03005380 \n\
 /* 080117c4 */ LDR R0, [R5] \n\

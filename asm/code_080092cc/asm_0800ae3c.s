@@ -25,7 +25,7 @@ thumb_func_start func_0800ae3c \n\
  \n\
 branch_0800ae64: \n\
 /* 0800ae64 */ LDR R0, [R4, 0x4] \n\
-/* 0800ae66 */ BL func_0800add8 \n\
+/* 0800ae66 */ BL text_printer_get_line_sprite \n\
 /* 0800ae6a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800ae6c */ LDR R0, =D_03005380 \n\
 /* 0800ae6e */ LDR R0, [R0] \n\

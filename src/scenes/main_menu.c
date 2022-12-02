@@ -1,16 +1,16 @@
 #include "global.h"
-#include "src/riq_main_menu.h"
+#include "src/scenes/main_menu.h"
 
-#include "main.h"
-#include "code_08001360.h"
-#include "code_08003980.h"
-#include "memory_heap.h"
-#include "code_080068f8.h"
-#include "code_08007468.h"
-#include "code_0800b3c8.h"
-#include "code_0800b778.h"
-#include "src/riq_gameplay.h"
-#include "lib_0804c870.h"
+#include "src/main.h"
+#include "src/code_08001360.h"
+#include "src/code_08003980.h"
+#include "src/memory_heap.h"
+#include "src/code_080068f8.h"
+#include "src/code_08007468.h"
+#include "src/code_0800b3c8.h"
+#include "src/code_0800b778.h"
+#include "src/scenes/gameplay.h"
+#include "src/lib_0804c870.h"
 
 extern u16 *D_0300558c; // ???
 

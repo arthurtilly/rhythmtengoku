@@ -62,36 +62,36 @@ branch_08010564: \n\
 /* 080105aa */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 080105ac */ MOVS R2, 0xF0 @ Set R2 to 0xF0 \n\
 /* 080105ae */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 080105b0 */ BL func_0800a204 \n\
+/* 080105b0 */ BL text_printer_create_new \n\
 /* 080105b4 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 080105b6 */ MOVS R1, 0x18 @ Set R1 to 0x18 \n\
 /* 080105b8 */ MOVS R2, 0x30 @ Set R2 to 0x30 \n\
-/* 080105ba */ BL func_0800ac68 \n\
+/* 080105ba */ BL text_printer_set_x_y \n\
 /* 080105be */ LDR R1, =D_0804f384 \n\
 /* 080105c0 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 080105c2 */ BL func_0800aa4c \n\
+/* 080105c2 */ BL text_printer_set_string \n\
 /* 080105c6 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 080105c8 */ BL func_0800a914 \n\
+/* 080105c8 */ BL text_printer_update \n\
 /* 080105cc */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 080105ce */ BL func_0800a914 \n\
+/* 080105ce */ BL text_printer_update \n\
 /* 080105d2 */ BL func_0800c3b8 \n\
 /* 080105d6 */ LSLS R0, R0, 0x10 \n\
 /* 080105d8 */ LSRS R0, R0, 0x10 \n\
 /* 080105da */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 080105dc */ MOVS R2, 0xF0 @ Set R2 to 0xF0 \n\
 /* 080105de */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\
-/* 080105e0 */ BL func_0800a204 \n\
+/* 080105e0 */ BL text_printer_create_new \n\
 /* 080105e4 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 080105e6 */ MOVS R1, 0x18 @ Set R1 to 0x18 \n\
 /* 080105e8 */ MOVS R2, 0x60 @ Set R2 to 0x60 \n\
-/* 080105ea */ BL func_0800ac68 \n\
+/* 080105ea */ BL text_printer_set_x_y \n\
 /* 080105ee */ LDR R1, =D_0804f3a0 \n\
 /* 080105f0 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 080105f2 */ BL func_0800aa4c \n\
+/* 080105f2 */ BL text_printer_set_string \n\
 /* 080105f6 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 080105f8 */ BL func_0800a914 \n\
+/* 080105f8 */ BL text_printer_update \n\
 /* 080105fc */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 080105fe */ BL func_0800a914 \n\
+/* 080105fe */ BL text_printer_update \n\
 /* 08010602 */ LDR R1, =D_0804f3dc \n\
 /* 08010604 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08010606 */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\
@@ -108,21 +108,21 @@ branch_08010564: \n\
 /* 08010624 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08010626 */ MOVS R2, 0xF0 @ Set R2 to 0xF0 \n\
 /* 08010628 */ MOVS R3, 0x1C @ Set R3 to 0x1C \n\
-/* 0801062a */ BL func_0800a204 \n\
+/* 0801062a */ BL text_printer_create_new \n\
 /* 0801062e */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 08010630 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08010632 */ MOVS R2, 0x48 @ Set R2 to 0x48 \n\
-/* 08010634 */ BL func_0800ac68 \n\
+/* 08010634 */ BL text_printer_set_x_y \n\
 /* 08010638 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0801063a */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 0801063c */ BL func_0800acd8 \n\
+/* 0801063c */ BL text_printer_center_by_content \n\
 /* 08010640 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 08010642 */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
-/* 08010644 */ BL func_0800aa4c \n\
+/* 08010644 */ BL text_printer_set_string \n\
 /* 08010648 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0801064a */ BL func_0800a914 \n\
+/* 0801064a */ BL text_printer_update \n\
 /* 0801064e */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 08010650 */ BL func_0800a914 \n\
+/* 08010650 */ BL text_printer_update \n\
 /* 08010654 */ LDR R0, [R4] \n\
 /* 08010656 */ STR R5, [R0] \n\
 /* 08010658 */ ADD SP, 0x14 \n\

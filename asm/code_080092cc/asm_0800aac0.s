@@ -35,7 +35,7 @@ thumb_func_start func_0800aac0 \n\
 /* 0800aafa */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0800aafc */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
 /* 0800aafe */ BL func_0804ddb0 \n\
-/* 0800ab02 */ BL func_0800a068 \n\
+/* 0800ab02 */ BL text_printer_delete_anim \n\
 /* 0800ab06 */ LDR R0, [R4] \n\
 /* 0800ab08 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0800ab0a */ BL func_0804d504 \n\

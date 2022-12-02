@@ -26,7 +26,7 @@ thumb_func_start func_08009de4 \n\
 /* 08009e0c */ STR R2, [SP] \n\
 /* 08009e0e */ STR R5, [SP, 0x4] \n\
 /* 08009e10 */ MOV R2, R8 @ Set R2 to R8 \n\
-/* 08009e12 */ BL func_080099a0 \n\
+/* 08009e12 */ BL text_printer_print_unformatted_line \n\
 /* 08009e16 */ B branch_08009e32 \n\
  \n\
 branch_08009e18: \n\
@@ -41,7 +41,7 @@ branch_08009e18: \n\
 /* 08009e28 */ LDR R2, [SP, 0x5C] \n\
 /* 08009e2a */ STR R2, [SP, 0xC] \n\
 /* 08009e2c */ MOV R2, R8 @ Set R2 to R8 \n\
-/* 08009e2e */ BL func_08009af4 \n\
+/* 08009e2e */ BL text_printer_print_formatted_line \n\
  \n\
 branch_08009e32: \n\
 /* 08009e32 */ MOV R10, R0 @ Set R10 to R0 \n\

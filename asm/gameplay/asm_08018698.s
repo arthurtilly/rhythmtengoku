@@ -17,7 +17,7 @@ thumb_func_start func_08018698 \n\
 /* 080186ae */ ADDS R4, 0x2 @ Add 0x2 to R4 \n\
 /* 080186b0 */ MOV R1, SP @ Set R1 to SP \n\
 /* 080186b2 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 080186b4 */ BL func_0800acf8 \n\
+/* 080186b4 */ BL text_printer_get_x_y \n\
 /* 080186b8 */ MOV R0, SP @ Set R0 to SP \n\
 /* 080186ba */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080186bc */ LDRSH R0, [R0, R2] \n\

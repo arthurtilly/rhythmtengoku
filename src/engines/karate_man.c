@@ -6,7 +6,7 @@
 #include "src/text_printer.h"
 #include "src/code_0800b3c8.h"
 #include "src/code_0800b778.h"
-#include "src/riq_gameplay.h"
+#include "src/scenes/gameplay.h"
 #include "src/lib_0804c870.h"
 
 // For readability.
@@ -46,7 +46,6 @@ void karate_init_gfx1(void) {
 
 // MAIN - Init
 void karate_engine_init(u32 ver) {
-
     // Load graphical assets and other basic functionality.
     gKarateManInfo->version = ver;
     karate_init_gfx1();
@@ -67,10 +66,10 @@ void karate_engine_init(u32 ver) {
 
     // Initialise text.
     gKarateManInfo->cueTextSprite = func_0804d160(D_03005380, karate_anim_cue_warning, 0, 120, 24, 0, 0, 0, 0x8000);
-    gKarateManInfo->unk24 = func_0800a204((u16)func_0800c3b8(), 4, 112, 30);
-    func_0800ac68(gKarateManInfo->unk24, 124, 32);
-    func_0800aca0(gKarateManInfo->unk24, 0x4f00);
-    func_0800acd8(gKarateManInfo->unk24, 1);
+    gKarateManInfo->textPrinter = text_printer_create_new(func_0800c3b8(), 4, 112, 30);
+    text_printer_set_x_y(gKarateManInfo->textPrinter, 124, 32);
+    text_printer_set_layer(gKarateManInfo->textPrinter, 0x4f00);
+    text_printer_center_by_content(gKarateManInfo->textPrinter, 1);
 
     // Initialise tutorial.
     gKarateManInfo->awaitingInput = FALSE;
@@ -133,7 +132,7 @@ void karate_stop_serious_mode_next_hit(void) {
 
 // ENGINE Func_03 - Show Text
 void karate_tutorial_display_text(char *text) {
-	func_0800aa4c(gKarateManInfo->unk24, text);
+	text_printer_set_string(gKarateManInfo->textPrinter, text);
 
 }
 
@@ -153,7 +152,7 @@ void karate_common_init_tutorial(const struct Scene *scene) {
     if (scene != NULL) {
         func_08017448(TRUE);
         func_08017458(scene);
-        func_0801853c(1, 1);
+        func_0801853c(A_BUTTON, A_BUTTON);
     } else {
         func_08017448(FALSE);
         func_0801853c(0, 0);
@@ -209,7 +208,7 @@ void karate_engine_update(void) {
     }
 
     // Update text.
-    func_0800a914(gKarateManInfo->unk24);
+    text_printer_update(gKarateManInfo->textPrinter);
 }
 
 

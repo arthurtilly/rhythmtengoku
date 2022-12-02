@@ -119,7 +119,7 @@ branch_0801a248: \n\
 /* 0801a298 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0801a29a */ MOVS R2, 0x1E @ Set R2 to 0x1E \n\
 /* 0801a29c */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0801a29e */ BL func_0800a004 \n\
+/* 0801a29e */ BL text_printer_get_unformatted_line_anim \n\
 /* 0801a2a2 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801a2a4 */ LDR R5, =D_03005380 \n\
 /* 0801a2a6 */ LDR R0, [R5] \n\

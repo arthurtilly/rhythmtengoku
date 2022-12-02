@@ -43,9 +43,9 @@ void func_0802f3f4(void) {
 
 // [func_0802f420] MAIN - Init
 void func_0802f420(u32 ver) {
-    u8 i;
+    struct TextPrinter *textPrinter;
     struct Animation *textAnim;
-    struct TextPrinter *temp;
+    u8 i;
 
     gFireworksInfo->version = ver;
     func_0802f3f4();
@@ -69,13 +69,13 @@ void func_0802f420(u32 ver) {
         func_0804d770(D_03005380, gFireworksInfo->particles[i].sprite, 0);
     }
 
-    temp = func_0800a204((u16) func_0800c3b8(), 4, 240, 30);
-    func_0800ac68(temp, 0, 8);
-    func_0800aca0(temp, 0x7f7);
-    func_0800acd8(temp, 0);
-    func_0800acb0(temp, 0);
-    func_0800acbc(temp, 0);
-    func_08018630(temp);
+    textPrinter = text_printer_create_new(func_0800c3b8(), 4, 240, 30);
+    text_printer_set_x_y(textPrinter, 0, 8);
+    text_printer_set_layer(textPrinter, 0x7f7);
+    text_printer_center_by_content(textPrinter, FALSE);
+    text_printer_set_palette(textPrinter, 0);
+    text_printer_set_colors(textPrinter, 0);
+    func_08018630(textPrinter);
     func_08017338(A_BUTTON, 0);
     func_08018078(TRUE);
 }

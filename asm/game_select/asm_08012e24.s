@@ -87,7 +87,7 @@ branch_08012eb2: \n\
  \n\
 branch_08012ec0: \n\
 /* 08012ec0 */ LDR R0, [R7, 0xC] \n\
-/* 08012ec2 */ BL func_0800ac58 \n\
+/* 08012ec2 */ BL text_printer_is_printing \n\
 /* 08012ec6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08012ec8 */ BEQ branch_08012ece \n\
 /* 08012eca */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
@@ -113,7 +113,7 @@ branch_08012ece: \n\
 /* 08012eee */ ADDS R5, 0x6 @ Add 0x6 to R5 \n\
 /* 08012ef0 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08012ef2 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
-/* 08012ef4 */ BL func_0800acf8 \n\
+/* 08012ef4 */ BL text_printer_get_x_y \n\
 /* 08012ef8 */ LDR R6, =D_03005380 \n\
 /* 08012efa */ LDR R0, [R6] \n\
 /* 08012efc */ MOVS R2, 0x10 @ Set R2 to 0x10 \n\
@@ -195,7 +195,7 @@ branch_08012f18: \n\
  \n\
 branch_08012fa4: \n\
 /* 08012fa4 */ LDR R0, [R7, 0xC] \n\
-/* 08012fa6 */ BL func_0800a914 \n\
+/* 08012fa6 */ BL text_printer_update \n\
 /* 08012faa */ ADD SP, 0x8 \n\
 /* 08012fac */ POP {R3} \n\
 /* 08012fae */ MOV R8, R3 @ Set R8 to R3 \n\

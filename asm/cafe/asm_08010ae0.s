@@ -85,7 +85,7 @@ branch_08010b6a: \n\
 /* 08010b78 */ LDR R0, [R4] \n\
 /* 08010b7a */ LDR R0, [R0, 0x4] \n\
 /* 08010b7c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08010b7e */ BL func_0800aa4c \n\
+/* 08010b7e */ BL text_printer_set_string \n\
 /* 08010b82 */ LDR R0, =D_03005380 \n\
 /* 08010b84 */ LDR R0, [R0] \n\
 /* 08010b86 */ LDR R1, [R4] \n\

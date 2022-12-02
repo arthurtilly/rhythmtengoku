@@ -1,9 +1,9 @@
 #pragma once
 
 #include "global.h"
-#include "main.h"
 #include "scenes.h"
-#include "src/riq_script.h"
+#include "src/main.h"
+#include "src/scenes/script.h"
 
 extern const struct SequenceData s_f_send_mes_seqData;
 extern const struct SequenceData s_f_fail_perfect_seqData;
@@ -132,13 +132,13 @@ extern void func_08018344(void); // [func_08018344] Open Pause Menu
 extern s32  func_080183c8(void); // [func_080183c8] Update Pause Menu
 extern void func_08018524(void); // [func_08018524] Initialise Pause Handler
 // extern ? func_0801853c(?); // [func_0801853c] Set Text Advance Buttons
-// extern ? func_0801858c(?);
+extern void func_0801858c(u32 style); // [func_0801858c] Set Text Button Style
 extern void func_080185d0(s16 x, s16 y, s32 show); // [func_080185d0] Display A Button Prompt
 extern void func_08018630(struct TextPrinter *textPrinter); // [func_08018630] Init. Text
 extern void func_08018660(const char *text); // [func_08018660] Display Text
-// extern ? func_08018698(?);
-// extern ? func_080186d4(?);
+extern void func_08018698(void);
+extern void func_080186d4(void);
 extern void func_0801875c(void); // [func_0801875c] Update Text
-// extern ? func_08018828(?);
-// extern ? func_0801884c(?);
-// extern ? func_08018870(?);
+extern void func_08018828(s32 x); // [func_08018828] Set Text X Position
+extern void func_0801884c(s32 y); // [func_08018828] Set Text Y Position
+extern void func_08018870(u16 z); // [func_08018870] Set Text Z Position (Sprite Depth/Layer)

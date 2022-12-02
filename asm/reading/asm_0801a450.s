@@ -96,60 +96,60 @@ branch_0801a46c: \n\
 /* 0801a510 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0801a512 */ MOVS R2, 0xE8 @ Set R2 to 0xE8 \n\
 /* 0801a514 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 0801a516 */ BL func_0800a204 \n\
+/* 0801a516 */ BL text_printer_create_new \n\
 /* 0801a51a */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0801a51c */ MOVS R1, 0x4 @ Set R1 to 0x4 \n\
 /* 0801a51e */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 0801a520 */ BL func_0800ac68 \n\
+/* 0801a520 */ BL text_printer_set_x_y \n\
 /* 0801a524 */ MOVS R1, 0x90 @ Set R1 to 0x90 \n\
 /* 0801a526 */ LSLS R1, R1, 0x7 \n\
 /* 0801a528 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0801a52a */ BL func_0800aca0 \n\
+/* 0801a52a */ BL text_printer_set_layer \n\
 /* 0801a52e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801a530 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
-/* 0801a532 */ BL func_0800acc8 \n\
+/* 0801a532 */ BL text_printer_set_alignment \n\
 /* 0801a536 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801a538 */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
-/* 0801a53a */ BL func_0800acbc \n\
+/* 0801a53a */ BL text_printer_set_colors \n\
 /* 0801a53e */ LDR R1, [R7] \n\
 /* 0801a540 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0801a542 */ BL func_0800aa4c \n\
+/* 0801a542 */ BL text_printer_set_string \n\
 /* 0801a546 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0801a548 */ BL func_0800a914 \n\
+/* 0801a548 */ BL text_printer_update \n\
 /* 0801a54c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0801a54e */ BL func_0800a914 \n\
+/* 0801a54e */ BL text_printer_update \n\
 /* 0801a552 */ BL func_0800c3b8 \n\
 /* 0801a556 */ LSLS R0, R0, 0x10 \n\
 /* 0801a558 */ LSRS R0, R0, 0x10 \n\
 /* 0801a55a */ MOVS R1, 0x9 @ Set R1 to 0x9 \n\
 /* 0801a55c */ MOVS R2, 0xE6 @ Set R2 to 0xE6 \n\
 /* 0801a55e */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\
-/* 0801a560 */ BL func_0800a204 \n\
+/* 0801a560 */ BL text_printer_create_new \n\
 /* 0801a564 */ LDR R1, [R6] \n\
 /* 0801a566 */ STR R0, [R1, 0x8] \n\
 /* 0801a568 */ MOVS R1, 0x8 @ Set R1 to 0x8 \n\
 /* 0801a56a */ MOVS R2, 0x18 @ Set R2 to 0x18 \n\
-/* 0801a56c */ BL func_0800ac68 \n\
+/* 0801a56c */ BL text_printer_set_x_y \n\
 /* 0801a570 */ LDR R0, [R6] \n\
 /* 0801a572 */ LDR R0, [R0, 0x8] \n\
 /* 0801a574 */ MOVS R1, 0x88 @ Set R1 to 0x88 \n\
 /* 0801a576 */ LSLS R1, R1, 0x8 \n\
-/* 0801a578 */ BL func_0800aca0 \n\
+/* 0801a578 */ BL text_printer_set_layer \n\
 /* 0801a57c */ LDR R2, [R6] \n\
 /* 0801a57e */ LDR R0, [R2, 0x8] \n\
 /* 0801a580 */ MOVS R1, 0x8B @ Set R1 to 0x8B \n\
 /* 0801a582 */ LSLS R1, R1, 0x1 \n\
 /* 0801a584 */ ADDS R2, R2, R1 @ Set R2 to R2 + R1 \n\
 /* 0801a586 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0801a588 */ BL func_0800ad98 \n\
+/* 0801a588 */ BL text_printer_set_x_y_controller \n\
 /* 0801a58c */ LDR R0, [R6] \n\
 /* 0801a58e */ LDR R0, [R0, 0x8] \n\
 /* 0801a590 */ LDR R1, [R7, 0x4] \n\
-/* 0801a592 */ BL func_0800aa4c \n\
+/* 0801a592 */ BL text_printer_set_string \n\
 /* 0801a596 */ LDR R1, [R6] \n\
 /* 0801a598 */ LDR R0, [R1, 0x8] \n\
 /* 0801a59a */ ADDS R1, 0x10 @ Add 0x10 to R1 \n\
-/* 0801a59c */ BL func_0800ad40 \n\
+/* 0801a59c */ BL text_printer_export_data \n\
 /* 0801a5a0 */ LDR R0, [R6] \n\
 /* 0801a5a2 */ STR R5, [R0, 0x4] \n\
 /* 0801a5a4 */ ADD SP, 0x14 \n\

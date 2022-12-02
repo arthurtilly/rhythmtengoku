@@ -15,7 +15,7 @@ thumb_func_start func_08010a3c \n\
 /* 08010a4e */ ADDS R4, 0xE @ Add 0xE to R4 \n\
 /* 08010a50 */ ADD R1, SP, 0xC \n\
 /* 08010a52 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 08010a54 */ BL func_0800acf8 \n\
+/* 08010a54 */ BL text_printer_get_x_y \n\
 /* 08010a58 */ LDR R5, =D_03005380 \n\
 /* 08010a5a */ LDR R0, [R5] \n\
 /* 08010a5c */ LDR R1, [R6] \n\

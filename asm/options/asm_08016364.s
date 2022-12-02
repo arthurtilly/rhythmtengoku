@@ -140,33 +140,33 @@ thumb_func_start func_08016364 \n\
 /* 08016488 */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
 /* 0801648a */ MOVS R2, 0xD0 @ Set R2 to 0xD0 \n\
 /* 0801648c */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 0801648e */ BL func_0800a204 \n\
+/* 0801648e */ BL text_printer_create_new \n\
 /* 08016492 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08016494 */ MOVS R1, 0x10 @ Set R1 to 0x10 \n\
 /* 08016496 */ MOVS R2, 0x75 @ Set R2 to 0x75 \n\
-/* 08016498 */ BL func_0800ac68 \n\
+/* 08016498 */ BL text_printer_set_x_y \n\
 /* 0801649c */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0801649e */ MOV R1, R10 @ Set R1 to R10 \n\
-/* 080164a0 */ BL func_0800aca0 \n\
+/* 080164a0 */ BL text_printer_set_layer \n\
 /* 080164a4 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 080164a6 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
-/* 080164a8 */ BL func_0800acc8 \n\
+/* 080164a8 */ BL text_printer_set_alignment \n\
 /* 080164ac */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 080164ae */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 080164b0 */ BL func_0800acd8 \n\
+/* 080164b0 */ BL text_printer_center_by_content \n\
 /* 080164b4 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 080164b6 */ MOVS R1, 0xC @ Set R1 to 0xC \n\
-/* 080164b8 */ BL func_0800acb0 \n\
+/* 080164b8 */ BL text_printer_set_palette \n\
 /* 080164bc */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 080164be */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080164c0 */ BL func_0800acbc \n\
+/* 080164c0 */ BL text_printer_set_colors \n\
 /* 080164c4 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 080164c6 */ MOVS R1, 0xF @ Set R1 to 0xF \n\
-/* 080164c8 */ BL func_0800ae00 \n\
+/* 080164c8 */ BL text_printer_set_line_spacing \n\
 /* 080164cc */ LDR R0, =D_089cfb14 \n\
 /* 080164ce */ LDR R1, [R0] \n\
 /* 080164d0 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
-/* 080164d2 */ BL func_0800aa4c \n\
+/* 080164d2 */ BL text_printer_set_string \n\
 /* 080164d6 */ LDR R0, [R6] \n\
 /* 080164d8 */ STR R7, [R0, 0x14] \n\
 /* 080164da */ LDR R0, [R5] \n\
@@ -216,35 +216,35 @@ thumb_func_start func_08016364 \n\
 /* 0801653a */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
 /* 0801653c */ MOVS R2, 0x50 @ Set R2 to 0x50 \n\
 /* 0801653e */ MOVS R3, 0x1A @ Set R3 to 0x1A \n\
-/* 08016540 */ BL func_0800a204 \n\
+/* 08016540 */ BL text_printer_create_new \n\
 /* 08016544 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08016546 */ MOVS R1, 0x50 @ Set R1 to 0x50 \n\
 /* 08016548 */ MOVS R2, 0x4B @ Set R2 to 0x4B \n\
-/* 0801654a */ BL func_0800ac68 \n\
+/* 0801654a */ BL text_printer_set_x_y \n\
 /* 0801654e */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08016550 */ MOV R1, R10 @ Set R1 to R10 \n\
-/* 08016552 */ BL func_0800aca0 \n\
+/* 08016552 */ BL text_printer_set_layer \n\
 /* 08016556 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08016558 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
-/* 0801655a */ BL func_0800acc8 \n\
+/* 0801655a */ BL text_printer_set_alignment \n\
 /* 0801655e */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08016560 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08016562 */ BL func_0800acd8 \n\
+/* 08016562 */ BL text_printer_center_by_content \n\
 /* 08016566 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08016568 */ MOVS R1, 0xC @ Set R1 to 0xC \n\
-/* 0801656a */ BL func_0800acb0 \n\
+/* 0801656a */ BL text_printer_set_palette \n\
 /* 0801656e */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08016570 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08016572 */ BL func_0800acbc \n\
+/* 08016572 */ BL text_printer_set_colors \n\
 /* 08016576 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08016578 */ MOVS R1, 0xF @ Set R1 to 0xF \n\
-/* 0801657a */ BL func_0800ae00 \n\
+/* 0801657a */ BL text_printer_set_line_spacing \n\
 /* 0801657e */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08016580 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08016582 */ BL func_0800a7fc \n\
+/* 08016582 */ BL text_printer_show_text \n\
 /* 08016586 */ LDR R1, =D_08054950 \n\
 /* 08016588 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
-/* 0801658a */ BL func_0800aa4c \n\
+/* 0801658a */ BL text_printer_set_string \n\
 /* 0801658e */ LDR R0, [R6] \n\
 /* 08016590 */ STR R7, [R0, 0x20] \n\
 /* 08016592 */ STR R4, [R0, 0x10] \n\

@@ -1,5 +1,5 @@
 #include "global.h"
-#include "src/riq_results.h"
+#include "src/scenes/results.h"
 #include "cues.h"
 #include "src/main.h"
 #include "src/memory.h"
@@ -10,7 +10,7 @@
 #include "src/text_printer.h"
 #include "src/code_0800b778.h"
 #include "src/code_080102d0.h"
-#include "src/riq_game_select.h"
+#include "src/scenes/game_select.h"
 #include "src/lib_0804c870.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
@@ -279,7 +279,7 @@ struct Animation *func_08019210(const char *string, u32 arg1, u32 arg2) {
 
     if ((u32) 16 + (gResultsInfo.unk24 * 2) >= 32) return NULL;
 
-    anim = func_0800a004(func_0800c3b8(), 0, 16 + (gResultsInfo.unk24 * 2), 0, string, arg1, arg2, 0x100);
+    anim = text_printer_get_unformatted_line_anim(func_0800c3b8(), 0, 16 + (gResultsInfo.unk24 * 2), 0, string, arg1, arg2, 0x100);
     gResultsInfo.unk24++;
     return anim;
 }

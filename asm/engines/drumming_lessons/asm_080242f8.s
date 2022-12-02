@@ -495,18 +495,18 @@ branch_0802476c: \n\
 	MOVS R1, 0x4 \n\
 	MOVS R2, 0x80 \n\
 	MOVS R3, 0x1e \n\
-	BL func_0800a204 \n\
+	BL text_printer_create_new \n\
 	ADDS R4, R0, 0x0 \n\
 	BL func_08018630 \n\
 	ADDS R0, R4, 0x0 \n\
 	MOVS R1, 0xf \n\
-	BL func_0800acb0 \n\
+	BL text_printer_set_palette \n\
 	ADDS R0, R4, 0x0 \n\
 	MOVS R1, 0x0 \n\
-	BL func_0800acbc \n\
+	BL text_printer_set_colors \n\
 	ADDS R0, R4, 0x0 \n\
 	MOVS R1, 0x1 \n\
-	BL func_0800acd8 \n\
+	BL text_printer_center_by_content \n\
 	LDR R0, =D_030055d0 \n\
 	LDR R0, [R0] \n\
 	LDRB R0, [R0] \n\
@@ -534,28 +534,28 @@ branch_08024822: \n\
 	ADDS R0, R4, 0x0 \n\
 	MOVS R1, 0xa \n\
 	MOVS R2, 0x30 \n\
-	BL func_0800ac68 \n\
+	BL text_printer_set_x_y \n\
 	B branch_08024856 \n\
  \n\
 branch_0802482e: \n\
 	ADDS R0, R4, 0x0 \n\
 	MOVS R1, 0xc \n\
 	MOVS R2, 0xa \n\
-	BL func_0800ac68 \n\
+	BL text_printer_set_x_y \n\
 	B branch_08024856 \n\
  \n\
 branch_0802483a: \n\
 	ADDS R0, R4, 0x0 \n\
 	MOVS R1, 0xa \n\
 	MOVS R2, 0x20 \n\
-	BL func_0800ac68 \n\
+	BL text_printer_set_x_y \n\
 	B branch_08024856 \n\
  \n\
 branch_08024846: \n\
 	ADDS R0, R4, 0x0 \n\
 	MOVS R1, 0xa \n\
 	MOVS R2, 0x30 \n\
-	BL func_0800ac68 \n\
+	BL text_printer_set_x_y \n\
 	MOVS R0, 0x1 \n\
 	BL func_0801858c \n\
  \n\

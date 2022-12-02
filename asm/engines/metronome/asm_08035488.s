@@ -199,7 +199,7 @@ branch_080355e2: \n\
 /* 0803561a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803561c */ MOVS R2, 0x18 @ Set R2 to 0x18 \n\
 /* 0803561e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08035620 */ BL func_0800a004 \n\
+/* 08035620 */ BL text_printer_get_unformatted_line_anim \n\
 /* 08035624 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08035626 */ LDR R6, =D_03005380 \n\
 /* 08035628 */ LDR R0, [R6] \n\
@@ -239,7 +239,7 @@ branch_080355e2: \n\
 /* 08035672 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08035674 */ MOVS R2, 0x1A @ Set R2 to 0x1A \n\
 /* 08035676 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08035678 */ BL func_0800a004 \n\
+/* 08035678 */ BL text_printer_get_unformatted_line_anim \n\
 /* 0803567c */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803567e */ LDR R0, [R6] \n\
 /* 08035680 */ MOVS R1, 0x54 @ Set R1 to 0x54 \n\
@@ -273,7 +273,7 @@ branch_080355e2: \n\
 /* 080356be */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080356c0 */ MOVS R2, 0x1C @ Set R2 to 0x1C \n\
 /* 080356c2 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080356c4 */ BL func_0800a004 \n\
+/* 080356c4 */ BL text_printer_get_unformatted_line_anim \n\
 /* 080356c8 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080356ca */ LDR R0, [R6] \n\
 /* 080356cc */ MOVS R1, 0x40 @ Set R1 to 0x40 \n\

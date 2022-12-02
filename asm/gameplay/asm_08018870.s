@@ -24,7 +24,7 @@ thumb_func_start func_08018870 \n\
 /* 08018896 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08018898 */ BEQ branch_080188a0 \n\
 /* 0801889a */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 0801889c */ BL func_0800aca0 \n\
+/* 0801889c */ BL text_printer_set_layer \n\
  \n\
 branch_080188a0: \n\
 /* 080188a0 */ POP {R4, R5} \n\

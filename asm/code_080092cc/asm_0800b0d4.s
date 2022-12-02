@@ -8,7 +8,7 @@ thumb_func_start func_0800b0d4 \n\
 /* 0800b0d8 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0800b0da */ BEQ branch_0800b0fc \n\
 /* 0800b0dc */ LDR R0, [R4, 0x4] \n\
-/* 0800b0de */ BL func_0800aa1c \n\
+/* 0800b0de */ BL text_printer_delete \n\
 /* 0800b0e2 */ MOVS R1, 0x2A @ Set R1 to 0x2A \n\
 /* 0800b0e4 */ LDRSH R0, [R4, R1] \n\
 /* 0800b0e6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

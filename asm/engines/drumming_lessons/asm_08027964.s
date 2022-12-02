@@ -60,7 +60,7 @@ thumb_func_start func_08027964 \n\
 /* 080279d2 */ MOVS R1, 0x4 @ Set R1 to 0x4 \n\
 /* 080279d4 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080279d6 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 080279d8 */ BL func_0800a204 \n\
+/* 080279d8 */ BL text_printer_create_new \n\
 /* 080279dc */ LDR R1, [R4] \n\
 /* 080279de */ MOVS R5, 0x85 @ Set R5 to 0x85 \n\
 /* 080279e0 */ LSLS R5, R5, 0x3 \n\
@@ -68,7 +68,7 @@ thumb_func_start func_08027964 \n\
 /* 080279e4 */ STR R0, [R1] \n\
 /* 080279e6 */ MOVS R1, 0x6E @ Set R1 to 0x6E \n\
 /* 080279e8 */ MOVS R2, 0x28 @ Set R2 to 0x28 \n\
-/* 080279ea */ BL func_0800ac68 \n\
+/* 080279ea */ BL text_printer_set_x_y \n\
 /* 080279ee */ LDR R0, [R4] \n\
 /* 080279f0 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 080279f2 */ LDR R0, [R0] \n\
@@ -76,27 +76,27 @@ thumb_func_start func_08027964 \n\
 /* 080279f6 */ LSLS R2, R2, 0x3 \n\
 /* 080279f8 */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 080279fa */ MOV R1, R10 @ Set R1 to R10 \n\
-/* 080279fc */ BL func_0800aca0 \n\
+/* 080279fc */ BL text_printer_set_layer \n\
 /* 08027a00 */ LDR R0, [R4] \n\
 /* 08027a02 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 08027a04 */ LDR R0, [R0] \n\
 /* 08027a06 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08027a08 */ BL func_0800acbc \n\
+/* 08027a08 */ BL text_printer_set_colors \n\
 /* 08027a0c */ LDR R0, [R4] \n\
 /* 08027a0e */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 08027a10 */ LDR R0, [R0] \n\
 /* 08027a12 */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
-/* 08027a14 */ BL func_0800acb0 \n\
+/* 08027a14 */ BL text_printer_set_palette \n\
 /* 08027a18 */ LDR R0, [R4] \n\
 /* 08027a1a */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 08027a1c */ LDR R0, [R0] \n\
 /* 08027a1e */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 08027a20 */ BL func_0800acd8 \n\
+/* 08027a20 */ BL text_printer_center_by_content \n\
 /* 08027a24 */ LDR R0, [R4] \n\
 /* 08027a26 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 08027a28 */ LDR R0, [R0] \n\
 /* 08027a2a */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 08027a2c */ BL func_0800acc8 \n\
+/* 08027a2c */ BL text_printer_set_alignment \n\
 /* 08027a30 */ LDR R6, =D_03005380 \n\
 /* 08027a32 */ LDR R0, [R6] \n\
 /* 08027a34 */ LDR R1, =D_088c8490 \n\

@@ -1,13 +1,13 @@
 #include "global.h"
-#include "src/riq_game_select.h"
-#include "memory.h"
-#include "code_08001360.h"
-#include "code_08003980.h"
-#include "memory_heap.h"
-#include "code_08007468.h"
-#include "text_printer.h"
-#include "code_0800b778.h"
-#include "lib_0804c870.h"
+#include "src/scenes/game_select.h"
+#include "src/memory.h"
+#include "src/code_08001360.h"
+#include "src/code_08003980.h"
+#include "src/memory_heap.h"
+#include "src/code_08007468.h"
+#include "src/text_printer.h"
+#include "src/code_0800b778.h"
+#include "src/lib_0804c870.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
@@ -145,14 +145,14 @@ void func_08012a58(void) {
     func_080140f8(notice->perfectBorderSprite);
     notice->aButtonSprite = func_0804d160(D_03005380, D_08902c30, 0, 64, 64, 0x800, 1, 0, 0x8000);
     func_0804db44(D_03005380, notice->aButtonSprite, &vector[0], &vector[1]);
-    notice->unkC = func_0800a204((u16) func_0800c3b8(), 4, 120, 26);
-    func_0800ac68(notice->unkC, 104, 320);
-    func_0800aca0(notice->unkC, 0x800);
-    func_0800acbc(notice->unkC, 0);
-    func_0800acb0(notice->unkC, 1);
-    func_0800ae00(notice->unkC, 16);
-    func_0800acd8(notice->unkC, 1);
-    func_0800ad98(notice->unkC, &vector[0], &vector[1]);
+    notice->unkC = text_printer_create_new((u16) func_0800c3b8(), 4, 120, 26);
+    text_printer_set_x_y(notice->unkC, 104, 320);
+    text_printer_set_layer(notice->unkC, 0x800);
+    text_printer_set_colors(notice->unkC, 0);
+    text_printer_set_palette(notice->unkC, 1);
+    text_printer_set_line_spacing(notice->unkC, 16);
+    text_printer_center_by_content(notice->unkC, 1);
+    text_printer_set_x_y_controller(notice->unkC, &vector[0], &vector[1]);
     notice->unk0 = 0;
     notice->id = -1;
     switch (D_030046a8->data.unk266) {
@@ -260,7 +260,7 @@ void func_08012cb4(s32 id) {
         func_080081a8(string, D_08050c1c); // "‚Ì‹È"
     }
     func_080081a8(string, D_08050c24); // "‚ðƒvƒŒƒ[ƒ“ƒg!!"
-    func_0800aa4c(notice->unkC, string);
+    text_printer_set_string(notice->unkC, string);
 
     func_0804d770(D_03005380, gGameSelectInfo.selectionBorderSprite, FALSE);
     notice->unk8 = 10;
@@ -736,15 +736,15 @@ void func_08014df0(void) {
     vector = &D_03004b10.BG_OFS[BG_LAYER_1].horizontal;
     gGameSelectInfo.unk34 = -1;
     gGameSelectInfo.unk3C = -1;
-    gGameSelectInfo.unk38 = func_0800a204((u16) func_0800c3b8(), 4, 104, 32);
-    func_0800ac68(gGameSelectInfo.unk38, 128, 55);
-    func_0800aca0(gGameSelectInfo.unk38, 0x800);
-    func_0800acbc(gGameSelectInfo.unk38, 0);
-    func_0800acb0(gGameSelectInfo.unk38, 8);
-    func_0800ae00(gGameSelectInfo.unk38, 14);
-    func_0800acd8(gGameSelectInfo.unk38, 1);
-    func_0800ad98(gGameSelectInfo.unk38, &vector[0], &vector[1]);
-    func_0800ae0c(gGameSelectInfo.unk38, -1);
+    gGameSelectInfo.unk38 = text_printer_create_new((u16) func_0800c3b8(), 4, 104, 32);
+    text_printer_set_x_y(gGameSelectInfo.unk38, 128, 55);
+    text_printer_set_layer(gGameSelectInfo.unk38, 0x800);
+    text_printer_set_colors(gGameSelectInfo.unk38, 0);
+    text_printer_set_palette(gGameSelectInfo.unk38, 8);
+    text_printer_set_line_spacing(gGameSelectInfo.unk38, 14);
+    text_printer_center_by_content(gGameSelectInfo.unk38, 1);
+    text_printer_set_x_y_controller(gGameSelectInfo.unk38, &vector[0], &vector[1]);
+    text_printer_set_shadow_colors(gGameSelectInfo.unk38, -1);
     gGameSelectInfo.perfectClearedSprite = func_0804d160(D_03005380, D_08902eb0, 0, 138, 115, 0x80a, 1, 0, 0x8000);
     func_0804db44(D_03005380, gGameSelectInfo.perfectClearedSprite, &vector[0], &vector[1]);
     gGameSelectInfo.unk3E = TRUE;
@@ -758,7 +758,7 @@ void func_08014ef8(s16 *ptr) {
 
     if (sprite < 0) return;
 
-    func_0800a068((void *)func_0804ddb0(D_03005380, sprite, 7));
+    text_printer_delete_anim((void *)func_0804ddb0(D_03005380, sprite, 7));
     func_0804d504(D_03005380, sprite);
     *ptr = -1;
 }
@@ -768,10 +768,10 @@ void func_08014ef8(s16 *ptr) {
 void func_08014f30(void) {
     if (gGameSelectInfo.unk3E) return;
 
-    func_0800a0f0(0, 24, 32, 8, 0);
+    text_printer_fill_vram_tiles(0, 24, 32, 8, 0);
     func_08014ef8(&gGameSelectInfo.unk34);
     func_08014ef8(&gGameSelectInfo.unk3C);
-    func_0800a934(gGameSelectInfo.unk38);
+    text_printer_clear(gGameSelectInfo.unk38);
     func_0804d770(D_03005380, gGameSelectInfo.perfectClearedSprite, FALSE);
     gGameSelectInfo.unk3E = TRUE;
 }

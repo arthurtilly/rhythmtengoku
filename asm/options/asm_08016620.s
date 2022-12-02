@@ -163,7 +163,7 @@ branch_08016708: \n\
 /* 0801675a */ LDR R1, [R1, 0x4] \n\
  \n\
 branch_0801675c: \n\
-/* 0801675c */ BL func_0800aa4c \n\
+/* 0801675c */ BL text_printer_set_string \n\
 /* 08016760 */ LDR R0, =s_menu_cursor2_seqData \n\
 /* 08016762 */ BL func_08002634 \n\
 /* 08016766 */ B branch_08016846 \n\
@@ -230,7 +230,7 @@ branch_080167dc: \n\
 /* 08016804 */ LDR R0, [R5] \n\
 /* 08016806 */ LDR R0, [R0, 0x20] \n\
 /* 08016808 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 0801680a */ BL func_0800a7fc \n\
+/* 0801680a */ BL text_printer_show_text \n\
 /* 0801680e */ LDR R1, [R5] \n\
 /* 08016810 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 08016812 */ STRB R0, [R1] \n\

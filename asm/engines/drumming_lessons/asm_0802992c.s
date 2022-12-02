@@ -20,7 +20,7 @@ thumb_func_start func_0802992c \n\
 /* 0802994c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0802994e */ LDR R0, [R0] \n\
 /* 08029950 */ LDR R1, =D_0805a3a0 \n\
-/* 08029952 */ BL func_0800aa4c \n\
+/* 08029952 */ BL text_printer_set_string \n\
 /* 08029956 */ LDR R1, [R4] \n\
 /* 08029958 */ MOVS R2, 0xF2 @ Set R2 to 0xF2 \n\
 /* 0802995a */ LSLS R2, R2, 0x2 \n\

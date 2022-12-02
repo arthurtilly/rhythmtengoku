@@ -137,7 +137,7 @@ branch_08029b32: \n\
 /* 08029b4c */ LSLS R1, R1, 0x3 \n\
 /* 08029b4e */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08029b50 */ LDR R0, [R0] \n\
-/* 08029b52 */ BL func_0800a934 \n\
+/* 08029b52 */ BL text_printer_clear \n\
 /* 08029b56 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08029b58 */ BL func_0800bd04 \n\
 /* 08029b5c */ LDR R1, [R4] \n\
@@ -151,7 +151,7 @@ branch_08029b62: \n\
 /* 08029b68 */ LSLS R2, R2, 0x3 \n\
 /* 08029b6a */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 08029b6c */ LDR R0, [R0] \n\
-/* 08029b6e */ BL func_0800a914 \n\
+/* 08029b6e */ BL text_printer_update \n\
  \n\
 branch_08029b72: \n\
 /* 08029b72 */ ADD SP, 0xC \n\

@@ -26,7 +26,7 @@ branch_08016dbe: \n\
 /* 08016dbe */ LDR R0, =D_030046a4 \n\
 /* 08016dc0 */ LDR R0, [R0] \n\
 /* 08016dc2 */ LDR R0, [R0] \n\
-/* 08016dc4 */ BL func_0800a914 \n\
+/* 08016dc4 */ BL text_printer_update \n\
 /* 08016dc8 */ POP {R0} \n\
 /* 08016dca */ BX R0 \n\
 \n\

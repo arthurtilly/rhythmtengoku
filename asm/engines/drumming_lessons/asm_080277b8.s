@@ -48,7 +48,7 @@ branch_08027814: \n\
 /* 0802781c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0802781e */ LDR R0, [R0] \n\
 /* 08027820 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08027822 */ BL func_0800a7fc \n\
+/* 08027822 */ BL text_printer_show_text \n\
  \n\
 branch_08027826: \n\
 /* 08027826 */ LDR R1, [R6] \n\

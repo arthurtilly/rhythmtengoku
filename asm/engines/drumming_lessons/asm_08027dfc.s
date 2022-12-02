@@ -105,7 +105,7 @@ branch_08027ebe: \n\
 /* 08027ec8 */ LSLS R1, R1, 0x3 \n\
 /* 08027eca */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08027ecc */ LDR R0, [R0] \n\
-/* 08027ece */ BL func_0800a914 \n\
+/* 08027ece */ BL text_printer_update \n\
 /* 08027ed2 */ LDR R0, [R4] \n\
 /* 08027ed4 */ LDR R3, =0x0000045c \n\
 /* 08027ed6 */ ADDS R2, R0, R3 @ Set R2 to R0 + R3 \n\
