@@ -10,6 +10,7 @@
 
 #include "global.h"
 #include "src/code_08001360.h"
+#include "src/code_080068f8.h"
 #include "src/code_0800b778.h"
 #include "src/scenes/gameplay.h"
 #include "src/scenes/results.h"
@@ -268,7 +269,7 @@ extern void func_08017648();
 
 
 extern void func_08017188();
-#define BSC4_LOAD_GAME_ENGINE(engine,version) BSC_RUN_FUNC_1(func_08017188,version,engine)
+#define BSC4_LOAD_GAME_ENGINE(engine,version) BSC_RUN_FUNC_2(func_08017188,version,engine)
 
 extern void func_08017380();
 extern s32 func_0801738c();

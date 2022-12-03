@@ -74,6 +74,10 @@ SECTIONS {
 		build/src/engines/sick_beats.c.o(.bss*);
 		build/src/engines/machines.c.o(.bss*);
 		build/src/engines/wizards_waltz.c.o(.bss*);
+		build/src/engines/prologues/sneaky_spirits.c.o(.bss*);
+		build/src/engines/prologues/spaceball.c.o(.bss*);
+		build/src/engines/prologues/bon_odori.c.o(.bss*);
+		build/src/engines/prologues/bon_dance.c.o(.bss*);
 		build/src/engines/prologues.c.o(.bss*);
 		build/src/engines/code_08047e50.c.o(.bss*);
 	}
@@ -158,6 +162,10 @@ SECTIONS {
 		build/src/engines/sick_beats.c.o(.text);
 		build/src/engines/machines.c.o(.text);
 		build/src/engines/wizards_waltz.c.o(.text);
+		build/src/engines/prologues/sneaky_spirits.c.o(.text);
+		build/src/engines/prologues/spaceball.c.o(.text);
+		build/src/engines/prologues/bon_odori.c.o(.text);
+		build/src/engines/prologues/bon_dance.c.o(.text);
 		build/src/engines/prologues.c.o(.text);
 		build/src/engines/code_08047e50.c.o(.text);
         build/bin/bindata_080482e0.bin.o(.rodata*); /* More ARM assembly */
@@ -1478,6 +1486,10 @@ SECTIONS {
         build/data/engines/bon_odori_engine.c.o(.rodata*);
         build/data/engines/karate_man_engine.c.o(.rodata*);
         build/bin/bindata_089df384.bin.o(.rodata*);
+        build/data/engines/prologues/sneaky_spirits_script.c.o(.rodata*);
+        build/data/engines/prologues/spaceball_script.c.o(.rodata*);
+        build/data/engines/prologues/bon_odori_script.c.o(.rodata*);
+        build/data/engines/prologues/bon_dance_script.c.o(.rodata*);
         build/bin/bindata_089ea088.bin.o(.rodata*);
         build/audio/audio_data.c.o(.rodata*);
         build/bin/bindata_08a9e8e0.bin.o(.rodata*);

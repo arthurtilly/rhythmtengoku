@@ -42,6 +42,7 @@ BUILD		   := build
 SOURCES		   := src
 SCENES         := $(SOURCES)/scenes
 ENGINES        := $(SOURCES)/engines
+PROLOGUES      := $(SOURCES)/engines/prologues
 ASM            := asm
 INCLUDES	   := include
 DATA		   := data
@@ -57,7 +58,7 @@ SFX            := $(AUDIO)/samples
 GRAPHICS       := $(shell find graphics -type d)
 BUILD_DIRS     := $(BUILD) $(BUILD)/$(BIN) $(BUILD)/$(DATA) $(BUILD)/$(SCRIPT_GEN) \
                   $(foreach dir,$(SCENE_DATA),$(BUILD)/$(dir)) $(BUILD)/$(ENGINE_DATA) $(BUILD)/$(PROLOGUE_DATA) $(BUILD)/$(ENGINE_SCRIPTS) \
-                  $(BUILD)/$(ASM) $(BUILD)/$(SOURCES) $(BUILD)/$(SCENES) $(BUILD)/$(ENGINES) \
+                  $(BUILD)/$(ASM) $(BUILD)/$(SOURCES) $(BUILD)/$(SCENES) $(BUILD)/$(ENGINES) $(BUILD)/$(PROLOGUES) \
                   $(BUILD)/$(MUSIC) $(BUILD)/$(SFX) $(foreach dir,$(GRAPHICS),$(BUILD)/$(dir))
 LD_SCRIPT      := rt.ld
 UNDEFINED_SYMS := undefined_syms.ld
@@ -105,9 +106,10 @@ CFILES		:=	$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.c)) $(foreach dir,$(AUD
 				$(foreach dir,$(DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCENE_DATA),$(wildcard $(dir)/*.c)) \
 				$(foreach dir,$(ENGINE_DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(PROLOGUE_DATA),$(wildcard $(dir)/*.c)) \
 				$(foreach dir,$(ENGINE_SCRIPTS),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCRIPT_GEN),$(wildcard $(dir)/*.c)) \
-				$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCENES),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.c))
+				$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCENES),$(wildcard $(dir)/*.c)) \
+				$(foreach dir,$(ENGINES),$(wildcard $(dir)/*.c)) $(foreach dir,$(PROLOGUES),$(wildcard $(dir)/*.c))
 
-CPPFILES	:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(SCENES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.cpp))
+CPPFILES	:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(SCENES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(PROLOGUES),$(wildcard $(dir)/*.cpp))
 SFILES		:=	$(foreach dir,$(ASM),$(wildcard $(dir)/*.s)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.s))
 BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) $(foreach dir,$(MUSIC),$(wildcard $(dir)/*.mid)) $(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.bin))
 WAVFILES    :=  $(foreach dir,$(SFX),$(wildcard $(dir)/*.wav))
