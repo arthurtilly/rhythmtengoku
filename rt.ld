@@ -78,6 +78,20 @@ SECTIONS {
 		build/src/engines/prologues/spaceball.c.o(.bss*);
 		build/src/engines/prologues/bon_odori.c.o(.bss*);
 		build/src/engines/prologues/bon_dance.c.o(.bss*);
+		build/src/engines/prologues/karate_man.c.o(.bss*);
+		build/src/engines/prologues/cosmic_dance.c.o(.bss*);
+		build/src/engines/prologues/night_walk.c.o(.bss*);
+		build/src/engines/prologues/showtime.c.o(.bss*);
+		build/src/engines/prologues/bouncy_road.c.o(.bss*);
+		build/src/engines/prologues/rhythm_tweezers.c.o(.bss*);
+		build/src/engines/prologues/fireworks.c.o(.bss*);
+		build/src/engines/prologues/clappy_trio.c.o(.bss*);
+		build/src/engines/prologues/snappy_trio.c.o(.bss*);
+		build/src/engines/prologues/samurai_slice.c.o(.bss*);
+		build/src/engines/prologues/power_calligraphy.c.o(.bss*);
+		build/src/engines/prologues/marching_orders.c.o(.bss*);
+		build/src/engines/prologues/marching_orders_2.c.o(.bss*);
+		build/src/engines/prologues/polyrhythm.c.o(.bss*);
 		build/src/engines/prologues.c.o(.bss*);
 		build/src/engines/code_08047e50.c.o(.bss*);
 	}
@@ -166,6 +180,20 @@ SECTIONS {
 		build/src/engines/prologues/spaceball.c.o(.text);
 		build/src/engines/prologues/bon_odori.c.o(.text);
 		build/src/engines/prologues/bon_dance.c.o(.text);
+		build/src/engines/prologues/karate_man.c.o(.text);
+		build/src/engines/prologues/cosmic_dance.c.o(.text);
+		build/src/engines/prologues/night_walk.c.o(.text);
+		build/src/engines/prologues/showtime.c.o(.text);
+		build/src/engines/prologues/bouncy_road.c.o(.text);
+		build/src/engines/prologues/rhythm_tweezers.c.o(.text);
+		build/src/engines/prologues/fireworks.c.o(.text);
+		build/src/engines/prologues/clappy_trio.c.o(.text);
+		build/src/engines/prologues/snappy_trio.c.o(.text);
+		build/src/engines/prologues/samurai_slice.c.o(.text);
+		build/src/engines/prologues/power_calligraphy.c.o(.text);
+		build/src/engines/prologues/marching_orders.c.o(.text);
+		build/src/engines/prologues/marching_orders_2.c.o(.text);
+		build/src/engines/prologues/polyrhythm.c.o(.text);
 		build/src/engines/prologues.c.o(.text);
 		build/src/engines/code_08047e50.c.o(.text);
         build/bin/bindata_080482e0.bin.o(.rodata*); /* More ARM assembly */
