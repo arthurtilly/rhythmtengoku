@@ -9,8 +9,8 @@
 
 // Types:
 struct PrologueSpaceballInfo {
-    u8  ver;    // Value:  Version
-    s16 sprite; // Sprite: Text
+    u8  ver;        // Value:  Version
+    s16 textSprite; // Sprite: Text
 };
 
 // Assets:

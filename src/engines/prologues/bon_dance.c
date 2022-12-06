@@ -49,7 +49,7 @@ void func_08045478(u32 ver) {
     func_0800e0ec();
     func_0800e0a0(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->sprite = func_0804d160(D_03005380, D_088ad898, 0, 120, 140, 0, 0, 0x7f, 0);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088ad898, 0, 120, 140, 0, 0, 0x7f, 0);
 }
 
 
@@ -70,5 +70,5 @@ void func_080454dc(void) {
 
 // [func_080454e0] Event 0 - Play Animation (Text)
 void func_080454e0(void) {
-    func_0804dae0(D_03005380, gPrologueInfo->sprite, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueInfo->textSprite, 1, 0x7f, 0);
 }

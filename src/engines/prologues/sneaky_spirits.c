@@ -49,7 +49,7 @@ void func_0804517c(u32 ver) {
     func_0800e0ec();
     func_0800e0a0(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->sprite = func_0804d160(D_03005380, D_088ad2bc, 0, 165, 90, 0, 0, 0x7f, 0);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088ad2bc, 0, 165, 90, 0, 0, 0x7f, 0);
 }
 
 
@@ -70,5 +70,5 @@ void func_080451e0(void) {
 
 // [func_080451e4] Event 0 - Set Animation Frame (Text)
 void func_080451e4(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo->sprite, frame);
+    func_0804cebc(D_03005380, gPrologueInfo->textSprite, frame);
 }
