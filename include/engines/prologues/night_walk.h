@@ -16,11 +16,12 @@ struct PrologueNightWalkInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089ea988[]; // Buffered Textures
-extern const struct GraphicsTable D_089ea98c[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_night_walk_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_night_walk_gfx_table[]; // Graphics Table
 extern const struct Animation D_088ae2a8[]; // Animation: Text (Night Walk)
 extern const struct Animation D_088ae048[]; // Animation: Play-yan
 extern const struct Animation D_088ae160[]; // Animation: Balloons
+extern const struct SequenceData s_jingle_handclap_seqData;
 
 // Functions:
 extern void func_080457b4(void);    // [func_080457b4] GFX_INIT Func_02

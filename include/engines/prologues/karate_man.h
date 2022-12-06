@@ -15,10 +15,13 @@ struct PrologueKarateManInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089ea650[]; // Buffered Textures
-extern const struct GraphicsTable D_089ea654[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_karate_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_karate_gfx_table[]; // Graphics Table
 extern const struct Animation D_088ada78[]; // Animation: Text (Karate Man)
 extern const struct Animation D_088adaa8[]; // Animation: Kick
+extern const struct SequenceData s_jingle_karate_seqData;
+extern const struct SequenceData s_f_boxing_title_hit_seqData;
+extern const struct SequenceData s_intro_uh_seqData;
 
 // Functions:
 extern void func_0804550c(void);    // [func_0804550c] GFX_INIT Func_02

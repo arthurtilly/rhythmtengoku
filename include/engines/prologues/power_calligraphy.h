@@ -14,11 +14,12 @@ struct ProloguePowerCalligraphyInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089eb530[]; // Buffered Textures
-extern const struct GraphicsTable D_089eb534[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_power_calligraphy_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_power_calligraphy_gfx_table[]; // Graphics Table
 extern const struct Animation D_088b0690[]; // Animation: Text (Power Calligraphy)
 extern const struct Animation D_088b06b0[]; // Animation: HAI
 extern const struct SequenceData s_sword_hi_seqData; // Sound: HAI
+extern const struct SequenceData s_jingle_iai_seqData;
 
 // Functions:
 extern void func_080460f8(void);    // [func_080460f8] GFX_INIT Func_02

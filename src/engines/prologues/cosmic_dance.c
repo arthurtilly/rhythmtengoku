@@ -25,7 +25,7 @@ void func_08045674(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(func_0800c3b8(), D_089ea868, 0x2000);
+    task = func_08002ee0(func_0800c3b8(), prologue_cosmic_dance_gfx_table, 0x2000);
     task_run_after(task, func_08045664, 0);
 }
 
@@ -36,7 +36,7 @@ void func_080456a4(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(func_0800c3b8(), D_089ea864);
+    task = func_080087b4(func_0800c3b8(), prologue_cosmic_dance_buffered_textures);
     task_run_after(task, func_08045674, 0);
 }
 
@@ -49,7 +49,7 @@ void func_080456d4(u32 ver) {
     func_0800e0ec();
     func_0800e0a0(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->sprite = func_0804d160(D_03005380, D_088adb94, 0, 120, 80, 0, 0, 0x7f, 0);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088adb94, 0, 120, 80, 0, 0, 0x7f, 0);
 }
 
 

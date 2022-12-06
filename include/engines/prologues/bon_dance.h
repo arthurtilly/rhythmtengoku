@@ -14,10 +14,10 @@ struct PrologueBonDanceInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089ea514[]; // Buffered Textures
-extern const struct GraphicsTable D_089ea518[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_bon_dance_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_bon_dance_gfx_table[]; // Graphics Table
 extern const struct Animation D_088ad898[]; // Animation: Text (Bon Dance)
-extern const struct SequenceData s_jingle_bon_seqData; // Music: Prologue (The Bon Odori)
+extern const struct SequenceData s_jingle_bon_seqData;
 
 // Functions:
 extern void func_08045408(void);    // [func_08045408] GFX_INIT Func_02

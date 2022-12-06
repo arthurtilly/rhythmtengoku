@@ -15,10 +15,11 @@ struct PrologueShowtimeInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089eaadc[]; // Buffered Textures
-extern const struct GraphicsTable D_089eaae0[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_showtime_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_showtime_gfx_table[]; // Graphics Table
 extern const struct Animation D_088ae3e4[]; // Animation: Text (Showtime)
 extern const struct Animation D_088ae3f4[]; // Animation: Penguin
+extern const struct SequenceData s_jingle_quiz_seqData;
 
 // Functions:
 extern void func_08045944(void);    // [func_08045944] GFX_INIT Func_02

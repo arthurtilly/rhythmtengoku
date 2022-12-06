@@ -14,10 +14,10 @@ struct PrologueBonOdoriInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089ea3e4[]; // Buffered Textures
-extern const struct GraphicsTable D_089ea3e8[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_bon_odori_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_bon_odori_gfx_table[]; // Graphics Table
 extern const struct Animation D_088ad530[]; // Animation: Text (The Bon Odori)
-extern const struct SequenceData s_jingle_bon_seqData; // Music: Prologue (The Bon Odori)
+extern const struct SequenceData s_jingle_bon_seqData;
 
 // Functions:
 extern void func_08045304(void);    // [func_08045304] GFX_INIT Func_02

@@ -14,10 +14,10 @@ struct PrologueSneakySpiritsInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089ea088[]; // Buffered Textures
-extern const struct GraphicsTable D_089ea08c[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_sneaky_spirits_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_sneaky_spirits_gfx_table[]; // Graphics Table
 extern const struct Animation D_088ad2bc[]; // Animation: Text (Sneaky Spirits)
-extern const struct SequenceData s_jingle_ghost_seqData; // Music: Prologue (Sneaky Spirits)
+extern const struct SequenceData s_jingle_ghost_seqData;
 
 // Functions:
 extern void func_0804510c(void);    // [func_0804510c] GFX_INIT Func_02

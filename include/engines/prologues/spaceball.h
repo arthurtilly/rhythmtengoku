@@ -14,10 +14,10 @@ struct PrologueSpaceballInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089ea26c[]; // Buffered Textures
-extern const struct GraphicsTable D_089ea270[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_spaceball_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_spaceball_gfx_table[]; // Graphics Table
 extern const struct Animation D_088ad3f4[]; // Animation: Text (Spaceball)
-extern const struct SequenceData s_jingle_baseball_seqData; // Music: Prologue (Spaceball)
+extern const struct SequenceData s_jingle_baseball_seqData;
 
 // Functions:
 extern void func_08045208(void);    // [func_08045208] GFX_INIT Func_02

@@ -9,15 +9,16 @@
 
 // Types:
 struct PrologueCosmicDanceInfo {
-    u8  ver;    // Value:  Version
-    s16 sprite; // Sprite: Text
+    u8  ver;        // Value:  Version
+    s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089ea864[]; // Buffered Textures
-extern const struct GraphicsTable D_089ea868[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_cosmic_dance_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_cosmic_dance_gfx_table[]; // Graphics Table
 extern const struct Animation D_088adb94[]; // Animation: Text (Cosmic Dance)
 extern const struct Animation D_088adba4[]; // Animation: Cosmic Dancers
+extern const struct SequenceData s_jingle_handclap_seqData;
 
 // Functions:
 extern void func_08045664(void);    // [func_08045664] GFX_INIT Func_02

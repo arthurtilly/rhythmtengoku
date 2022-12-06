@@ -14,9 +14,10 @@ struct ProloguePolyrhythmInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089eb9bc[]; // Buffered Textures
-extern const struct GraphicsTable D_089eb9c0[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_polyrhythm_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_polyrhythm_gfx_table[]; // Graphics Table
 extern const struct Animation D_088b0cb4[]; // Animation: Text (Polyrhythm)
+extern const struct SequenceData s_jingle_poli_seqData;
 
 // Functions:
 extern void func_0804642c(void);    // [func_0804642c] GFX_INIT Func_02

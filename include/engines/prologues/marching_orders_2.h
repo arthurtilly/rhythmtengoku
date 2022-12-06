@@ -14,9 +14,10 @@ struct PrologueMarchingOrders2Info {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089eb814[]; // Buffered Textures
-extern const struct GraphicsTable D_089eb818[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_marching_orders_2_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_marching_orders_2_gfx_table[]; // Graphics Table
 extern const struct Animation D_088b0bf0[]; // Animation: Text (Marching Orders 2)
+extern const struct SequenceData s_jingle_march_seqData;
 
 // Functions:
 extern void func_08046330(void);    // [func_08046330] GFX_INIT Func_02

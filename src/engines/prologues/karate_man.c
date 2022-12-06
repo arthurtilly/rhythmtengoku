@@ -25,7 +25,7 @@ void func_0804551c(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(func_0800c3b8(), D_089ea654, 0x2000);
+    task = func_08002ee0(func_0800c3b8(), prologue_karate_gfx_table, 0x2000);
     task_run_after(task, func_0804550c, 0);
 }
 
@@ -36,7 +36,7 @@ void func_0804554c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(func_0800c3b8(), D_089ea650);
+    task = func_080087b4(func_0800c3b8(), prologue_karate_buffered_textures);
     task_run_after(task, func_0804551c, 0);
 }
 

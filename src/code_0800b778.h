@@ -126,8 +126,8 @@ extern struct TextObject1 *func_0800c660(u16, u8);
 // extern ? func_0800e010(?);
 // extern ? func_0800e014(?);
 // extern ? func_0800e018(?);
-// extern ? func_0800e030(s32 layer); // Show Layer
-// extern ? func_0800e044(s32 layer); // Hide Layer
+extern void func_0800e030(s32 layer); // Show Layer
+extern void func_0800e044(s32 layer); // Hide Layer
 extern void func_0800e058(s32 layer, s16 x, s16 y); // Move BG Layer
 // extern ? func_0800e068(?);
 // extern ? func_0800e084(?);
