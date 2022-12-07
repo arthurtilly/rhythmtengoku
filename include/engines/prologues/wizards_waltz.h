@@ -14,9 +14,10 @@ struct PrologueWizardsWaltzInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089ede24[]; // Buffered Textures
-extern const struct GraphicsTable D_089ede28[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_wizards_waltz_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_wizards_waltz_gfx_table[]; // Graphics Table
 extern const struct Animation D_088b8e50[]; // Animation: Text (Wizard's Waltz)
+extern const struct SequenceData s_jingle_witch_seqData;
 
 // Functions:
 extern void func_08047d4c(void);    // [func_08047d4c] GFX_INIT Func_02

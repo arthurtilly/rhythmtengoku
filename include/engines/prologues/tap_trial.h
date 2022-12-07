@@ -14,9 +14,10 @@ struct PrologueTapTrialInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089ed548[]; // Buffered Textures
-extern const struct GraphicsTable D_089ed54c[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_tap_trial_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_tap_trial_gfx_table[]; // Graphics Table
 extern const struct Animation D_088b794c[]; // Animation: Text (Tap Trial)
+extern const struct SequenceData s_jingle_tap_seqData;
 
 // Functions:
 extern void func_08047678(void);    // [func_08047678] GFX_INIT Func_02

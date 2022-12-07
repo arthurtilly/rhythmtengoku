@@ -16,11 +16,12 @@ struct PrologueSpaceDanceInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089ed400[]; // Buffered Textures
-extern const struct GraphicsTable D_089ed404[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_space_dance_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_space_dance_gfx_table[]; // Graphics Table
 extern const struct Animation D_088b7338[]; // Animation: Text (Space Dance)
 extern const struct Animation D_088b7690[]; // Animation: Faces
 extern const struct Animation D_088b7660[]; // Animation: Star
+extern const struct SequenceData s_jingle_handclap_seqData;
 
 // Functions:
 extern void func_080474dc(void);    // [func_080474dc] GFX_INIT Func_02

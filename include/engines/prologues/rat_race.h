@@ -15,10 +15,11 @@ struct PrologueRatRaceInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089ecfbc[]; // Buffered Textures
-extern const struct GraphicsTable D_089ecfc0[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_rat_race_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_rat_race_gfx_table[]; // Graphics Table
 extern const struct Animation D_088b3d54[]; // Animation: Text (Rat Race)
 extern const struct Animation D_088b3d1c[]; // Animation: Rat
+extern const struct SequenceData s_jingle_rat_seqData;
 
 // Functions:
 extern void func_08047164(void);    // [func_08047164] GFX_INIT Func_02

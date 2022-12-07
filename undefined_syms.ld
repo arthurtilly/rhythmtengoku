@@ -4302,6 +4302,8 @@ D_089ea01c = 0x089ea01c;
 D_089ea050 = 0x089ea050;
 D_089ea060 = 0x089ea060;
 D_089ea068 = 0x089ea068;
+
+/* Prologue Script Data */
 D_089ea088 = 0x089ea088;
 D_089ea08c = 0x089ea08c;
 D_089ea0d4 = 0x089ea0d4;
@@ -4508,6 +4510,8 @@ D_089ede28 = 0x089ede28;
 D_089ede70 = 0x089ede70;
 D_089ede74 = 0x089ede74;
 D_089ede94 = 0x089ede94;
+
+/* Rhythm Game Scripts */
 D_089edf48 = 0x089edf48;
 D_089edf58 = 0x089edf58;
 D_089edf68 = 0x089edf68;
@@ -5355,6 +5359,8 @@ D_08a85de0 = 0x08a85de0;
 D_08a85e10 = 0x08a85e10;
 D_08a85e88 = 0x08a85e88;
 D_08a85f00 = 0x08a85f00;
+
+/* MIDI Library Data */
 D_08a86008 = 0x08a86008;
 D_08a86108 = 0x08a86108;
 D_08a86140 = 0x08a86140;

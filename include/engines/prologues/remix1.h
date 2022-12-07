@@ -14,9 +14,11 @@ struct PrologueRemix1Info {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089ebcac[]; // Buffered Textures List
-extern const struct GraphicsTable D_089ebcb0[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_remix1_buffered_textures[]; // Buffered Textures List
+extern const struct GraphicsTable prologue_remix1_gfx_table[]; // Graphics Table
 extern const struct Animation D_088b17d0[]; // Animation: Text (Remix 1)
+extern const struct SequenceData s_jingle_remix_seqData;
+extern const struct SequenceData s_f_scratch_seqData;
 
 // Functions:
 extern void func_08046628(void);    // [func_08046628] GFX_INIT Func_02

@@ -25,7 +25,7 @@ void func_08046734(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(func_0800c3b8(), D_089ebe7c, 0x2000);
+    task = func_08002ee0(func_0800c3b8(), prologue_remix2_gfx_table, 0x2000);
     task_run_after(task, func_08046724, 0);
 }
 
@@ -36,7 +36,7 @@ void func_08046764(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(func_0800c3b8(), D_089ebe78);
+    task = func_080087b4(func_0800c3b8(), prologue_remix2_buffered_textures);
     task_run_after(task, func_08046734, 0);
 }
 

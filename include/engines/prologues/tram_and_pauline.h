@@ -14,10 +14,11 @@ struct PrologueTramPaulineInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089edbb8[]; // Buffered Textures
-extern const struct GraphicsTable D_089edbbc[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_tram_pauline_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_tram_pauline_gfx_table[]; // Graphics Table
 extern const struct Animation D_088b8844[]; // Animation: Text (Tram & Pauline)
 extern const struct Animation D_088b8834[]; // Animation: Tram & Pauline
+extern const struct SequenceData s_jingle_tap_seqData;
 
 // Functions:
 extern void func_08047ad0(void);    // [func_08047ad0] GFX_INIT Func_02

@@ -14,9 +14,10 @@ struct PrologueNinjaBodyguardInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *D_089ed188[]; // Buffered Textures
-extern const struct GraphicsTable D_089ed18c[]; // Graphics Table
+extern const struct CompressedGraphics *const prologue_ninja_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable prologue_ninja_gfx_table[]; // Graphics Table
 extern const struct Animation D_088b4054[]; // Animation: Text (Ninja Bodyguard)
+extern const struct SequenceData s_jingle_iai_seqData;
 
 // Functions:
 extern void func_080472bc(void);    // [func_080472bc] GFX_INIT Func_02
