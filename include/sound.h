@@ -11,6 +11,23 @@
 #define PSG_WAVE_CHANNEL 2
 #define PSG_NOISE_CHANNEL 3
 
+enum SoundPlayersEnum {
+    MUSIC_PLAYER_0,
+    MUSIC_PLAYER_1,
+    MUSIC_PLAYER_2,
+    SFX_PLAYER_0,
+    SFX_PLAYER_1,
+    SFX_PLAYER_2,
+    SFX_PLAYER_3,
+    SFX_PLAYER_4,
+    SFX_PLAYER_5,
+    SFX_PLAYER_6,
+    SFX_PLAYER_7,
+    SFX_PLAYER_8,
+    SFX_PLAYER_9,
+};
+
+
 struct SampleInfo {
 	u32 length;
 	u32 sampleRate;

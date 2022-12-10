@@ -107,7 +107,7 @@ void func_08016ec4(s32 arg) {
     gGameplayInfo.playInputsEnabled = FALSE;
     gGameplayInfo.buttonPressFilter = 0;
     gGameplayInfo.buttonReleaseFilter = 0;
-    gGameplayInfo.unk9 = 1;
+    gGameplayInfo.unk9 = TRUE;
     gGameplayInfo.unk64 = 0;
     gGameplayInfo.isTutorial = FALSE;
     gGameplayInfo.skippingTutorial = FALSE;
@@ -601,7 +601,7 @@ void func_080179f4(s32 id) {
     const struct CueDefinition *cueDef;
     struct Cue *newCue, *prevCue;
 
-    if ((gGameplayInfo.unk5C == 0) || ((cueDef = gGameplayInfo.cueDefinitions[id]) == NULL)) {
+    if ((!gGameplayInfo.unk5C) || ((cueDef = gGameplayInfo.cueDefinitions[id]) == NULL)) {
         return;
     }
 

@@ -57,7 +57,7 @@ extern void func_0804db44(struct SpriteHandler *, s16, s16 *, s16 *); // Set X &
 // extern ? func_0804dc8c(?);
 extern void func_0804dcb8(struct SpriteHandler *, s16, u16);
 // extern ? func_0804dcd8(?); // Get Sprite Dimensions { Left, Right, Top, Bottom, Width, Height }
-extern u32  func_0804ddb0(struct SpriteHandler *, s16, u32); // Get Sprite Data { 20+ = func_0804dcd8() }
+extern s32  func_0804ddb0(struct SpriteHandler *, s16, u32); // Get Sprite Data { 20+ = func_0804dcd8() }
 extern void func_0804df4c(struct SpriteHandler *, s16, s8);
 // extern ? func_0804df6c(?);
 // extern ? func_0804df80(?);
