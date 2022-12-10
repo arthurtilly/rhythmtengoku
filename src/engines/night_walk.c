@@ -2,6 +2,7 @@
 
 #include "src/code_08001360.h"
 #include "src/task_pool.h"
+#include "src/code_08007468.h"
 #include "src/text_printer.h"
 #include "src/code_0800b778.h"
 #include "src/scenes/gameplay.h"
@@ -32,7 +33,7 @@ enum BridgeTypesEnum {
 /* NIGHT WALK */
 
 
-static struct NightWalkData *D_03001568;
+static struct DrumTechController *D_03001568;
 
 
 // Init. Play-Yan
@@ -152,7 +153,7 @@ void func_0802a224(void) {
     struct PlayYan *playYan;
 
     playYan = &gNightWalkInfo->playYan;
-    playYan->state = 3;
+    playYan->state = PLAY_YAN_STATE_FALLING;
     playYan->yOrigin = func_0804ddb0(D_03005380, playYan->sprite, 5);
     playYan->yDistance = 0;
     playYan->yVelocity = 0;
@@ -175,7 +176,7 @@ void func_0802a2a4(void) {
     struct PlayYan *playYan;
 
     playYan = &gNightWalkInfo->playYan;
-    playYan->state = 4;
+    playYan->state = PLAY_YAN_STATE_STAR_WAND;
     func_0804d8f8(D_03005380, playYan->sprite, D_088c9f90, 0, 1, 0, 0);
     playYan->yOrigin = func_0804ddb0(D_03005380, playYan->sprite, 5);
     playYan->yDistance = 0;
@@ -268,6 +269,7 @@ void func_0802a500(void) {
 }
 
 
+// Init. Stars (https://decomp.me/scratch/D0g8d)
 #include "asm/engines/night_walk/asm_0802a564.s"
 
 
@@ -304,13 +306,49 @@ s32 func_0802a674(void) {
 }
 
 
-#include "asm/engines/night_walk/asm_0802a730.s"
+// End of Star Size-Up
+void func_0802a730(s32 arg0, s16 sprite, const struct Animation *anim) {
+    s32 var;
 
-#include "asm/engines/night_walk/asm_0802a78c.s"
+    func_0804d8f8(D_03005380, sprite, anim, 0, 1, 0, 0);
+    func_0804daa8(D_03005380, sprite, NULL, 0);
+    var = func_0804ddb0(D_03005380, sprite, 2);
+    func_0804cebc(D_03005380, sprite, func_08001980(var));
+}
 
-#include "asm/engines/night_walk/asm_0802a840.s"
 
-#include "asm/engines/night_walk/asm_0802a85c.s"
+// Increase Star Progress
+void func_0802a78c(void) {
+    struct NightWalkStar *star;
+
+    if (gNightWalkInfo->currentStarSize >= 4) return;
+
+    star = &gNightWalkInfo->stars[gNightWalkInfo->nextStar];
+    func_0804d8f8(D_03005380, star->sprite, D_089e2ee8[gNightWalkInfo->currentStarSize], 0, 1, 0, 4);
+    func_0804daa8(D_03005380, star->sprite, func_0802a730, (s32)D_089e2ed4[gNightWalkInfo->currentStarSize + 1]);
+    star->size = gNightWalkInfo->currentStarSize + 1;
+    gNightWalkInfo->nextStar++;
+    if (gNightWalkInfo->nextStar >= 32) {
+        gNightWalkInfo->nextStar = 0;
+        gNightWalkInfo->currentStarSize++;
+    }
+}
+
+
+// Increase Stars Progress
+void func_0802a840(u32 total) {
+    u32 i;
+
+    for (i = 0; i < total; i++) {
+        func_0802a78c();
+    }
+}
+
+
+// Engine Event 0x09 (Increase Stars Progress)
+void func_0802a85c(u32 total) {
+    func_0802a840(total);
+}
 
 
 // Decrease Star Progress
@@ -332,7 +370,7 @@ void func_0802a868(void) {
 }
 
 
-// Reduce Star Progress
+// Decrease Stars Progress
 void func_0802a8f0(u32 total) {
     u32 i;
 
@@ -342,7 +380,16 @@ void func_0802a8f0(u32 total) {
 }
 
 
-#include "asm/engines/night_walk/asm_0802a90c.s"
+// Clear Stars
+void func_0802a90c(void) {
+    struct NightWalkStar *star;
+    u32 i;
+
+    for (i = 0; i < 32; i++) {
+        star = &gNightWalkInfo->stars[i];
+        func_0804d8f8(D_03005380, star->sprite, D_088c9f58, 0, 1, 0, 3);
+    }
+}
 
 
 // Update Something
@@ -365,30 +412,30 @@ void func_0802a970(void) {
 }
 
 
-// Init. D_03001568->unk10
+// Init. D_03001568 Note Buffer
 void func_0802a994(void) {
     u32 i;
 
     for (i = 0; i < 100; i++) {
-        D_03001568->unk10[i].unk6 = 0;
+        D_03001568->noteBuffer[i].delay = 0;
     }
 }
 
 
 // Init. D_03001568
-void func_0802a9b4(struct NightWalkData *data) {
+void func_0802a9b4(struct DrumTechController *data) {
     u32 i;
 
     D_03001568 = data;
-    D_03001568->boxData = D_089e2f00;
+    D_03001568->drumKit = D_089e2f00;
 
     for (i = 0; i < 10; i++) {
-        D_03001568->unk0[i] = 0;
+        D_03001568->soundTimers[i] = 0;
     }
 
     func_0802a994();
-    D_03001568->unk330 = 0x100;
-    D_03001568->unk334 = 0;
+    D_03001568->unk330 = INT_TO_FIXED(1.0);
+    D_03001568->unk334 = NULL;
     D_03001568->unk338 = -1;
     D_03001568->unk33A = 9999;
     D_03001568->unk33C = INT_TO_FIXED(func_0800c3a4(0x18));
@@ -399,42 +446,89 @@ void func_0802a9b4(struct NightWalkData *data) {
 }
 
 
-#include "asm/engines/night_walk/asm_0802aa4c.s"
+// Update D_03001568 Sound Timers
+void func_0802aa4c(void) {
+    u32 i;
 
-#include "asm/engines/night_walk/asm_0802aa84.s"
+    for (i = 0; i < 10; i++) {
+        if (D_03001568->soundTimers[i] > 0) {
+            if (--D_03001568->soundTimers[i] == 0) {
+                func_08002828(D_08aa4460[i].soundPlayer);
+            }
+        }
+    }
+}
+
+
+// Update D_03001568 Notes
+void func_0802aa84(void) {
+    struct DrumTechNote *note;
+    u32 i;
+
+    for (i = 0; i < 100; i++) {
+        note = &D_03001568->noteBuffer[i];
+
+        if (note->delay > 0) {
+            if (--note->delay == 0) {
+                func_0802ab7c(note->drum, note->volume, note->pitch);
+            }
+        }
+    }
+}
 
 
 // ?
-void func_0802aac0(const struct NightWalkWhat *what, s32 timingOffset, s32 unused) {
-    struct NightWalkWhat *wh = D_03001568->unk10;
+void func_0802aac0(const struct DrumTechNote *noteSeq, s32 timingOffset, s32 unused) {
+    struct DrumTechNote *noteBuffer = D_03001568->noteBuffer;
     u32 i = 0;
     u32 ticks = 0;
     s32 r1;
 
     func_0802a994();
 
-    for (i = 0; (what->unk0 != 0xff) && (i < 100); what++) {
+    while ((noteSeq->drum != 0xff) && (i < 100)) {
         r1 = func_0800c3a4(ticks) + timingOffset;
         if (r1 <= 0 || ticks == 0) {
-            func_0802ab7c(what->unk0, what->unk2, what->unk4);
+            func_0802ab7c(noteSeq->drum, noteSeq->volume, noteSeq->pitch);
         } else {
-            wh->unk0 = what->unk0;
-            wh->unk2 = what->unk2;
-            wh->unk4 = what->unk4;
-            wh->unk6 = r1 + 1;
+            noteBuffer->drum = noteSeq->drum;
+            noteBuffer->volume = noteSeq->volume;
+            noteBuffer->pitch = noteSeq->pitch;
+            noteBuffer->delay = r1 + 1;
             i++;
-            wh++;
+            noteBuffer++;
         }
-        ticks += what->unk6;
+        ticks += noteSeq->delay;
+        noteSeq++;
     }
 }
 
 
-#include "asm/engines/night_walk/asm_0802ab34.s"
+// Update Something
+void func_0802ab34(void) {
+    func_0802aa4c();
+    func_0802aa84();
+}
 
-#include "asm/engines/night_walk/asm_0802ab44.s"
 
-#include "asm/engines/night_walk/asm_0802ab5c.s"
+// Parse Arguments for Engine Event 0x00 (Cowbell)
+void func_0802ab44(s32 args, u32 *drum, u32 *volume, s32 *pitch) {
+    *drum = (args) & 0xff;
+    *volume = (args >> 8) & 0x1ff;
+    *pitch = (args >> 17);
+}
+
+
+// Engine Event 0x00 (Cowbell)
+void func_0802ab5c(s32 args) {
+    u32 drum;
+    u32 volume;
+    s32 pitch;
+
+    func_0802ab44(args, &drum, &volume, &pitch);
+    func_0802ab7c(drum, volume, pitch);
+}
+
 
 #include "asm/engines/night_walk/asm_0802ab7c.s"
 
@@ -469,11 +563,32 @@ void func_0802b03c(u32 arg) {
 
 #include "asm/engines/night_walk/asm_0802b064.s"
 
-#include "asm/engines/night_walk/asm_0802b098.s"
 
-#include "asm/engines/night_walk/asm_0802b0a8.s"
+// Graphics Init. 2
+void func_0802b098(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/engines/night_walk/asm_0802b0d8.s"
+
+// Graphics Init. 1
+void func_0802b0a8(void) {
+    s32 task;
+
+    func_0800c604(0);
+    task = func_08002ee0(func_0800c3b8(), D_089e3384, 0x2000);
+    task_run_after(task, func_0802b098, 0);
+}
+
+
+// Graphics Init. 0
+void func_0802b0d8(void) {
+    s32 task;
+
+    func_0800c604(0);
+    task = func_080087b4(func_0800c3b8(), D_089e3380);
+    task_run_after(task, func_0802b0a8, 0);
+}
 
 
 // Game Engine Init.
@@ -562,7 +677,7 @@ void func_0802b288(void) {
 s32 func_0802b28c(struct NightWalkCue *info) {
     s32 max = 320;
 
-    return max - (INT_TO_FIXED(info->runningTime + info->unkC) / info->duration);
+    return max - (INT_TO_FIXED(info->runningTime + info->delayTime) / info->duration);
 }
 
 
@@ -583,8 +698,8 @@ void func_0802b2c8(struct Cue *cue, struct NightWalkCue *info, u32 type) {
 
     info->type = type;
     info->wasReached = FALSE;
-    info->unkA = gNightWalkInfo->nextCueDelayTime;
-    info->unkC = func_0800c3a4(gNightWalkInfo->nextCueDelayTime);
+    info->delayBeats = gNightWalkInfo->nextCueDelayTime;
+    info->delayTime = func_0800c3a4(gNightWalkInfo->nextCueDelayTime);
     info->hasFish = -1;
     func_080180b4(cue, func_0800c3a4(0xC0 - gNightWalkInfo->nextCueDelayTime)); // set cue duration
     info->hasFish = FALSE;
@@ -644,7 +759,7 @@ u32 func_0802b49c(struct Cue *cue, struct NightWalkCue *info, u32 runningTime, u
     tickOffset = (gNightWalkInfo->unk555) ? 0x10 : 0x0C;
 
     if (!gNightWalkInfo->stoppedScrolling && !info->endOfBridge && !info->wasReached) {
-        if (runningTime > (func_0800c3a4(0xC0 + tickOffset) - info->unkC)) {
+        if (runningTime > (func_0800c3a4(0xC0 + tickOffset) - info->delayTime)) {
             info->wasReached = TRUE;
             func_0804d8f8(D_03005380, info->boxSprite, D_088c9d10, 1, 1, 4, 0);
 
@@ -656,7 +771,7 @@ u32 func_0802b49c(struct Cue *cue, struct NightWalkCue *info, u32 runningTime, u
         }
     }
 
-    if (runningTime > func_0800c3a4(0x120 - info->unkA)) {
+    if (runningTime > func_0800c3a4(0x120 - info->delayBeats)) {
         if (info->playYanFellHere) {
             func_0802a224();
         }

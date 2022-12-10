@@ -27,6 +27,12 @@ enum SoundPlayersEnum {
     SFX_PLAYER_9,
 };
 
+enum DirectSoundModesEnum {
+    DIRECTSOUND_MODE_STEREO,
+    DIRECTSOUND_MODE_MONO1,
+    DIRECTSOUND_MODE_MONO2
+};
+
 
 struct SampleInfo {
 	u32 length;
@@ -216,8 +222,10 @@ extern struct LFO D_03005b30;
 // [D_03005b3c] LFO - Mode { 0 = Disabled; 1 = Note Triggered; 2 = Constant }
 extern u8 D_03005b3c;
 
-enum DirectSoundModesEnum {
-    DIRECTSOUND_MODE_STEREO,
-    DIRECTSOUND_MODE_MONO1,
-    DIRECTSOUND_MODE_MONO2
-};
+// [D_08aa4460] SoundPlayer Table
+extern struct SoundPlayerTable {
+    struct SoundPlayer *soundPlayer;
+    u32 null4; // unused
+    u16 trackCount;
+    u16 playerType;
+} const D_08aa4460[];
