@@ -107,6 +107,8 @@ enum NightWalkCuesEnum {
     NIGHT_WALK_CUE_STAR_WAND
 };
 
+#define END_OF_DRUM_TECH_SEQUENCE { 0xFF, 0, 0, 0 }
+
 
 // OAM Animations:
 extern const struct Animation D_088c9a98[]; // [D_088c9a98] Play-Yan Jump

@@ -38,9 +38,8 @@ static struct DrumTechController *D_03001568;
 
 // Init. Play-Yan
 void func_08029f0c(void) {
-    struct PlayYan *playYan;
+    struct PlayYan *playYan = &gNightWalkInfo->playYan;
 
-    playYan = &gNightWalkInfo->playYan;
     playYan->sprite = func_0804d160(D_03005380, D_088c9ab8, 0, 64, 120, 0x4800, 1, 0, 0);
     playYan->state = PLAY_YAN_STATE_WALKING;
     playYan->zapTime = 0;
@@ -49,11 +48,8 @@ void func_08029f0c(void) {
 
 // Play-Yan Jump
 void func_08029f68(s32 jumpOverGap, s32 timingOffset) {
-    struct PlayYan *playYan;
-    struct NightWalkUnk3B8 *unk3B8;
-
-    playYan = &gNightWalkInfo->playYan;
-    unk3B8 = &gNightWalkInfo->unk3B8;
+    struct PlayYan *playYan = &gNightWalkInfo->playYan;
+    struct NightWalkUnk3B8 *unk3B8 = &gNightWalkInfo->unk3B8;
 
     if (playYan->state == PLAY_YAN_STATE_JUMPING) {
         if (playYan->isAscending) {
@@ -71,14 +67,11 @@ void func_08029f68(s32 jumpOverGap, s32 timingOffset) {
 
 // Update Play-Yan (State 1)
 void func_08029fe8(struct PlayYan *playYan) {
-    struct NightWalkUnk3B8 *unk3B8;
+    struct NightWalkUnk3B8 *unk3B8 = &gNightWalkInfo->unk3B8;
     s32 ascending;
-    s32 maxJump;
+    s32 totalSteps;
     s32 jumpHeight;
-    s32 r0, r1;
-    s32 r4;
-
-    unk3B8 = &gNightWalkInfo->unk3B8;
+    s32 x, r0, r1;
 
     playYan->jumpTime++;
     if (playYan->jumpTime >= playYan->jumpDuration) {
@@ -95,18 +88,26 @@ void func_08029fe8(struct PlayYan *playYan) {
     }
 
     ascending = playYan->isAscending;
-    maxJump = (ascending) ? 27 : 32;
+    totalSteps = (ascending) ? 27 : 32;
 
-    r0 = maxJump * playYan->jumpTime / playYan->jumpDuration;
-    r0 -= 16;
-    r4 = 32;
-    r0 *= (r0 * 32);
+    // parabola: y = (x^2)
+    // inverted parabola where (y = x = 0): y = (a^2) - ((x-a)^2)
+
+    // jumpHeight = 32 - ( ( ( ( ( target * ( runningTime / totalTime ) ) - 16 ) ^ 2 ) * 32 ) / ( 8 * 32 ) )
+    // jumpHeight = 32 - (((x-16)^2) / 8)
+    // jumpHeight = w - (((x-(w/2))^2) / (w/4))
+    // jumpHeight = w - (((x-(w/2))^2) * 4 / w)
+    // jumpHeight = w - (((2x - w)^2) / w)
+    x = totalSteps * playYan->jumpTime / playYan->jumpDuration;
+    x -= 16;
+    jumpHeight = 32;
+    r0 = 32 * x * x;
     r1 = 256;
-    r4 -= (r0 / r1);
+    jumpHeight -= (r0 / r1);
     if (ascending) {
-        unk3B8->unk6 = unk3B8->unk8 - r4;
+        unk3B8->unk6 = unk3B8->unk8 - jumpHeight;
     } else {
-        func_0804d648(D_03005380, playYan->sprite, 120 - r4);
+        func_0804d648(D_03005380, playYan->sprite, 120 - jumpHeight);
     }
 
     if (playYan->zapTime != 0) {
@@ -129,11 +130,8 @@ void func_08029fe8(struct PlayYan *playYan) {
 
 // Play-Yan Hold On
 void func_0802a154(s16 x, s16 y) {
-    struct PlayYan *playYan;
-    struct NightWalkUnk3B8 *unk3B8;
-
-    playYan = &gNightWalkInfo->playYan;
-    unk3B8 = &gNightWalkInfo->unk3B8;
+    struct PlayYan *playYan = &gNightWalkInfo->playYan;
+    struct NightWalkUnk3B8 *unk3B8 = &gNightWalkInfo->unk3B8;
 
     playYan->state = PLAY_YAN_STATE_HANGING_ON;
     func_0804d8f8(D_03005380, playYan->sprite, D_088c9d58, 0, 1, 1, 0);
@@ -150,9 +148,8 @@ void func_0802a154(s16 x, s16 y) {
 
 // Play-Yan Fall
 void func_0802a224(void) {
-    struct PlayYan *playYan;
+    struct PlayYan *playYan = &gNightWalkInfo->playYan;
 
-    playYan = &gNightWalkInfo->playYan;
     playYan->state = PLAY_YAN_STATE_FALLING;
     playYan->yOrigin = func_0804ddb0(D_03005380, playYan->sprite, 5);
     playYan->yDistance = 0;
@@ -173,9 +170,8 @@ void func_0802a26c(struct PlayYan *playYan) {
 
 // Play-Yan Grab Star Wand
 void func_0802a2a4(void) {
-    struct PlayYan *playYan;
+    struct PlayYan *playYan = &gNightWalkInfo->playYan;
 
-    playYan = &gNightWalkInfo->playYan;
     playYan->state = PLAY_YAN_STATE_STAR_WAND;
     func_0804d8f8(D_03005380, playYan->sprite, D_088c9f90, 0, 1, 0, 0);
     playYan->yOrigin = func_0804ddb0(D_03005380, playYan->sprite, 5);
@@ -204,12 +200,11 @@ void func_0802a32c(struct PlayYan *playYan) {
 
 // Engine Event 0x01 (Give Play-Yan Balloons)
 void func_0802a38c(u32 balloonCount) {
-    struct PlayYan *playYan;
+    struct PlayYan *playYan = &gNightWalkInfo->playYan;
     u16 sprite;
     u16 x, y;
     u32 i;
 
-    playYan = &gNightWalkInfo->playYan;
     playYan->balloonCount = balloonCount;
 
     for (i = 0; i < balloonCount; i++) {
@@ -226,10 +221,9 @@ void func_0802a38c(u32 balloonCount) {
 
 // Engine Event 0x02 (Pop Balloon)
 void func_0802a48c(void) {
-    struct PlayYan *playYan;
+    struct PlayYan *playYan = &gNightWalkInfo->playYan;
     u32 total;
 
-    playYan = &gNightWalkInfo->playYan;
     if (playYan->balloonCount == 0) return;
 
     playYan->balloonCount--;
@@ -244,9 +238,7 @@ void func_0802a48c(void) {
 
 // Update Play-Yan
 void func_0802a500(void) {
-    struct PlayYan *playYan;
-
-    playYan = &gNightWalkInfo->playYan;
+    struct PlayYan *playYan = &gNightWalkInfo->playYan;
 
     switch (playYan->state) {
         case PLAY_YAN_STATE_WALKING:
@@ -275,14 +267,12 @@ void func_0802a500(void) {
 
 // Update Stars
 s32 func_0802a674(void) {
-    struct NightWalkUnk3B8 *unk3B8;
+    struct NightWalkUnk3B8 *unk3B8 = &gNightWalkInfo->unk3B8;
     struct NightWalkStar *star;
-    s32 hOffset;
-    s32 vOffset;
+    s32 hOffset, vOffset;
     s32 y;
     u32 i;
 
-    unk3B8 = &gNightWalkInfo->unk3B8;
     gNightWalkInfo->starsVOffset = unk3B8->unk6 / 2;
 
     hOffset = INT_TO_FIXED(-0.5);
@@ -402,9 +392,8 @@ void func_0802a954(void) {
 
 // Init. unk3B8
 void func_0802a970(void) {
-    struct NightWalkUnk3B8 *unk3B8;
+    struct NightWalkUnk3B8 *unk3B8 = &gNightWalkInfo->unk3B8;
 
-    unk3B8 = &gNightWalkInfo->unk3B8;
     unk3B8->unk4 = 120;
     unk3B8->unk0_b0 = FALSE;
     unk3B8->unk6 = 0;
@@ -482,19 +471,19 @@ void func_0802aac0(const struct DrumTechNote *noteSeq, s32 timingOffset, s32 unu
     struct DrumTechNote *noteBuffer = D_03001568->noteBuffer;
     u32 i = 0;
     u32 ticks = 0;
-    s32 r1;
+    s32 delay;
 
     func_0802a994();
 
     while ((noteSeq->drum != 0xff) && (i < 100)) {
-        r1 = func_0800c3a4(ticks) + timingOffset;
-        if (r1 <= 0 || ticks == 0) {
+        delay = func_0800c3a4(ticks) + timingOffset;
+        if (delay <= 0 || ticks == 0) {
             func_0802ab7c(noteSeq->drum, noteSeq->volume, noteSeq->pitch);
         } else {
             noteBuffer->drum = noteSeq->drum;
             noteBuffer->volume = noteSeq->volume;
             noteBuffer->pitch = noteSeq->pitch;
-            noteBuffer->delay = r1 + 1;
+            noteBuffer->delay = delay + 1;
             i++;
             noteBuffer++;
         }
@@ -675,9 +664,9 @@ void func_0802b288(void) {
 
 // Calculate Cue X Position
 s32 func_0802b28c(struct NightWalkCue *info) {
-    s32 max = 320;
+    s32 start = 320;
 
-    return max - (INT_TO_FIXED(info->runningTime + info->delayTime) / info->duration);
+    return start - (INT_TO_FIXED(info->runningTime + info->delayTime) / info->duration);
 }
 
 
@@ -689,12 +678,9 @@ void func_0802b2b4(u32 ticks) {
 
 // Cue - Spawn
 void func_0802b2c8(struct Cue *cue, struct NightWalkCue *info, u32 type) {
-    struct NightWalkUnk3B8 *unk3B8;
-    u32 endOfBridge;
+    struct NightWalkUnk3B8 *unk3B8 = &gNightWalkInfo->unk3B8;
+    u32 endOfBridge = FALSE;
     s32 x, y;
-
-    unk3B8 = &gNightWalkInfo->unk3B8;
-    endOfBridge = FALSE;
 
     info->type = type;
     info->wasReached = FALSE;
@@ -742,7 +728,7 @@ void func_0802b2c8(struct Cue *cue, struct NightWalkCue *info, u32 type) {
     }
 
     if (endOfBridge) {
-        unk3B8->unk4 -= 0x10;
+        unk3B8->unk4 -= 16;
     }
 
     info->playYanFellHere = FALSE;
@@ -839,10 +825,8 @@ void func_0802b6fc(struct NightWalkCue *info) {
 
 // Cue - Hit
 void func_0802b730(struct Cue *cue, struct NightWalkCue *info, u32 pressed, u32 released) {
+    s32 starWandObtained = FALSE;
     s32 timingOffset;
-    s32 starWandObtained;
-
-    starWandObtained = FALSE;
 
     if (gNightWalkInfo->stoppedScrolling) {
         func_08018068();
@@ -984,9 +968,7 @@ void func_0802bafc(struct Cue *cue, struct NightWalkCue *info) {
 
 // Input Event
 void func_0802bb98(u32 pressed, u32 released) {
-    struct PlayYan *playYan;
-
-    playYan = &gNightWalkInfo->playYan;
+    struct PlayYan *playYan = &gNightWalkInfo->playYan;
 
     if (!gNightWalkInfo->stoppedScrolling && (playYan->state == PLAY_YAN_STATE_WALKING)) {
         func_0804d8f8(D_03005380, playYan->sprite, D_088c9b98, 0, 1, 5, 0);
