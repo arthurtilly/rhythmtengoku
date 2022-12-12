@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0802a564 \n\
+thumb_func_start night_walk_init_stars \n\
 /* 0802a564 */ PUSH {R4-R7, LR} \n\
 /* 0802a566 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 0802a568 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -44,7 +44,7 @@ branch_0802a590: \n\
 /* 0802a5ae */ STR R1, [SP, 0x8] \n\
 /* 0802a5b0 */ STR R5, [SP, 0xC] \n\
 /* 0802a5b2 */ STR R5, [SP, 0x10] \n\
-/* 0802a5b4 */ LDR R1, =D_088c9ec8 \n\
+/* 0802a5b4 */ LDR R1, =anim_night_walk_star_tiny \n\
 /* 0802a5b6 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
 /* 0802a5b8 */ BL func_0804d160 \n\
 /* 0802a5bc */ STRH R0, [R4] \n\

@@ -73,7 +73,7 @@ const struct CompressedGraphics *const karate_buffered_textures[] = {
     &D_08bdd500,
     &D_08bddc8c,
     &D_08bde0d4,
-    NULL
+    END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089df074] Graphics Table (Faces)

@@ -1559,7 +1559,7 @@ SECTIONS {
         build/data/engines/karate_man_engine.c.o(.rodata*);
         build/bin/bindata_089df384.bin.o(.rodata*);
         build/data/engines/night_walk_engine.c.o(.rodata*);
-        build/bin/bindata_089e2ed4.bin.o(.rodata*);
+        build/bin/bindata_089e384c.bin.o(.rodata*);
         build/data/engines/prologues/sneaky_spirits_script.c.o(.rodata*);
         build/data/engines/prologues/spaceball_script.c.o(.rodata*);
         build/data/engines/prologues/bon_odori_script.c.o(.rodata*);

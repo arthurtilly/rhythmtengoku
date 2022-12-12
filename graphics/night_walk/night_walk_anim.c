@@ -4,7 +4,7 @@
 #include "night_walk_anim_cells.inc.c"
 
 // [D_088c9a60] Play-Yan Blink
-const struct Animation anim_night_walk_play_yan_blink[] = {
+const struct Animation anim_play_yan_blink[] = {
     /* 000 */ { night_walk_cel000, 90 },
     /* 001 */ { night_walk_cel001, 10 },
     /* 002 */ { night_walk_cel000, 30 },
@@ -15,19 +15,19 @@ const struct Animation anim_night_walk_play_yan_blink[] = {
 };
 
 // [D_088c9a98] Play-Yan Jump
-const struct Animation anim_night_walk_play_yan_jump[] = {
+const struct Animation anim_play_yan_jump[] = {
     /* 000 */ { night_walk_cel002, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088c9aa8] Play-Yan Crawl
-const struct Animation anim_night_walk_play_yan_crawl[] = {
+const struct Animation anim_play_yan_crawl[] = {
     /* 000 */ { night_walk_cel006, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088c9ab8] Play-Yan Walk
-const struct Animation anim_night_walk_play_yan_walk[] = {
+const struct Animation anim_play_yan_walk[] = {
     /* 000 */ { night_walk_cel007, 4 },
     /* 001 */ { night_walk_cel008, 4 },
     /* 002 */ { night_walk_cel009, 4 },
@@ -60,7 +60,7 @@ const struct Animation anim_night_walk_fish[] = {
 };
 
 // [D_088c9b40] Play-Yan Ooh
-const struct Animation anim_night_walk_play_yan_ooh[] = {
+const struct Animation anim_play_yan_ooh[] = {
     /* 000 */ { night_walk_cel011, 4 },
     /* End */ END_ANIMATION
 };
@@ -82,8 +82,8 @@ const struct Animation anim_night_walk_layout_test[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088c9b98] Walking Test
-const struct Animation anim_night_walk_play_yan_walk_test[] = {
+// [D_088c9b98] Play-Yan Short Hop
+const struct Animation anim_play_yan_short_hop[] = {
     /* 000 */ { night_walk_cel003, 1 },
     /* 001 */ { night_walk_cel004, 1 },
     /* 002 */ { night_walk_cel005, 3 },
@@ -167,7 +167,7 @@ const struct Animation anim_night_walk_note_bridge[] = {
 };
 
 // [D_088c9d58] Play-Yan Fall
-const struct Animation anim_night_walk_play_yan_fall[] = {
+const struct Animation anim_play_yan_fall[] = {
     /* 000 */ { night_walk_cel012, 4 },
     /* 001 */ { night_walk_cel013, 4 },
     /* 002 */ { night_walk_cel014, 4 },
@@ -270,8 +270,8 @@ const struct Animation anim_night_walk_star_huge[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088c9f58] End Flash
-const struct Animation anim_night_walk_end_flash[] = {
+// [D_088c9f58] Star Disappear
+const struct Animation anim_night_walk_star_disappear[] = {
     /* 000 */ { night_walk_cel105, 2 },
     /* 001 */ { night_walk_cel106, 1 },
     /* 002 */ { night_walk_cel107, 1 },
@@ -282,7 +282,7 @@ const struct Animation anim_night_walk_end_flash[] = {
 };
 
 // [D_088c9f90] Play-Yan Star Wand
-const struct Animation anim_night_walk_play_yan_wand[] = {
+const struct Animation anim_play_yan_star_wand[] = {
     /* 000 */ { night_walk_cel111, 30 },
     /* 001 */ { night_walk_cel112, 2 },
     /* 002 */ { night_walk_cel111, 10 },
@@ -342,29 +342,29 @@ const struct Animation anim_night_walk_ng_umbrella_box[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ca078] Small Star Flash
-const struct Animation anim_night_walk_star_flash_small[] = {
+// [D_088ca078] Very Small Star -> Small Star
+const struct Animation anim_night_walk_star_tiny_to_small[] = {
     /* 000 */ { night_walk_cel099, 3 },
     /* 001 */ { night_walk_cel114, 3 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ca090] Medium Star Flash
-const struct Animation anim_night_walk_star_flash_med[] = {
+// [D_088ca090] Small Star -> Medium Star
+const struct Animation anim_night_walk_star_small_to_med[] = {
     /* 000 */ { night_walk_cel101, 3 },
     /* 001 */ { night_walk_cel115, 3 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ca0a8] Large Star Flash
-const struct Animation anim_night_walk_star_flash_big[] = {
+// [D_088ca0a8] Medium Star -> Large Star
+const struct Animation anim_night_walk_star_med_to_big[] = {
     /* 000 */ { night_walk_cel107, 3 },
     /* 001 */ { night_walk_cel116, 3 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ca0c0] Very Large Star Flash
-const struct Animation anim_night_walk_star_flash_huge[] = {
+// [D_088ca0c0] Large Star -> Very Large Star
+const struct Animation anim_night_walk_star_big_to_huge[] = {
     /* 000 */ { night_walk_cel105, 3 },
     /* 001 */ { night_walk_cel117, 3 },
     /* End */ END_ANIMATION
@@ -399,7 +399,7 @@ const struct Animation anim_night_walk_fish_zap[] = {
 };
 
 // [D_088ca158] Play-Yan Violent Electrocution
-const struct Animation anim_night_walk_play_yan_violent_electrocution[] = {
+const struct Animation anim_play_yan_violent_electrocution[] = {
     /* 000 */ { night_walk_cel017, 3 },
     /* 001 */ { night_walk_cel016, 3 },
     /* End */ END_ANIMATION

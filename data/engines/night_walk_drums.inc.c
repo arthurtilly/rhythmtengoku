@@ -89,7 +89,7 @@ const struct SequenceData *const D_089e2ef8[] = {
 };
 
 // [D_089e2f00] DrumTech Instrument Bank
-const struct DrumTechInstrument D_089e2f00[] = {
+const struct DrumTechInstrument drumtech_drum_bank[] = {
     /* DRUM 000 */ {
         /* SoundPlayer  */ SFX_PLAYER_0,
         /* Duration     */ 0,

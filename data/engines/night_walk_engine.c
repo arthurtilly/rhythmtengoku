@@ -4,39 +4,52 @@
   /* NIGHT WALK - GAME ENGINE DATA */
 
 
-extern const struct Animation D_088c9ec8[]; // [D_088c9ec8] Very Small Star
-extern const struct Animation D_088c9df0[]; // [D_088c9df0] Small Star
-extern const struct Animation D_088c9e38[]; // [D_088c9e38] Medium Star
-extern const struct Animation D_088c9e80[]; // [D_088c9e80] Large Star
-extern const struct Animation D_088c9f10[]; // [D_088c9f10] Very Large Star
-extern const struct Animation D_088ca078[]; // [D_088ca078] Small Star Flash
-extern const struct Animation D_088ca090[]; // [D_088ca090] Medium Star Flash
-extern const struct Animation D_088ca0a8[]; // [D_088ca0a8] Large Star Flash
-extern const struct Animation D_088ca0c0[]; // [D_088ca0c0] Very Large Star Flash
+extern const struct Animation anim_night_walk_star_tiny[]; // [D_088c9ec8] Very Small Star
+extern const struct Animation anim_night_walk_star_small[]; // [D_088c9df0] Small Star
+extern const struct Animation anim_night_walk_star_med[]; // [D_088c9e38] Medium Star
+extern const struct Animation anim_night_walk_star_big[]; // [D_088c9e80] Large Star
+extern const struct Animation anim_night_walk_star_huge[]; // [D_088c9f10] Very Large Star
+extern const struct Animation anim_night_walk_star_tiny_to_small[]; // [D_088ca078] Small Star Flash
+extern const struct Animation anim_night_walk_star_small_to_med[]; // [D_088ca090] Medium Star Flash
+extern const struct Animation anim_night_walk_star_med_to_big[]; // [D_088ca0a8] Large Star Flash
+extern const struct Animation anim_night_walk_star_big_to_huge[]; // [D_088ca0c0] Very Large Star Flash
+extern const struct Animation anim_night_walk_heart_bridge[];
+extern const struct Animation anim_night_walk_lollipop_bridge[];
+extern const struct Animation anim_night_walk_umbrella_bridge[];
+extern const struct Animation anim_night_walk_heart_box[];
+extern const struct Animation anim_night_walk_lollipop_box[];
+extern const struct Animation anim_night_walk_umbrella_box[];
+extern const struct Animation anim_night_walk_ng_heart_bridge[];
+extern const struct Animation anim_night_walk_ng_lollipop_bridge[];
+extern const struct Animation anim_night_walk_ng_umbrella_bridge[];
+extern const struct Animation anim_night_walk_ng_heart_box[];
+extern const struct Animation anim_night_walk_ng_lollipop_box[];
+extern const struct Animation anim_night_walk_ng_umbrella_box[];
+extern const struct Animation anim_night_walk_ng_wand_box[];
 
 extern const struct CompressedGraphics D_08c52420;
 extern const struct CompressedGraphics D_08c524fc;
-extern const Palette D_088ca170[];
+extern const Palette night_walk_pal[];
 
 
   //  //  //  MISCELLANEOUS DATA  //  //  //
 
 
 // [D_089e2ed4] Star Animations
-const struct Animation *const D_089e2ed4[] = {
-    D_088c9ec8,
-    D_088c9df0,
-    D_088c9e38,
-    D_088c9e80,
-    D_088c9f10
+const struct Animation *const night_walk_star_anim[] = {
+    anim_night_walk_star_tiny,
+    anim_night_walk_star_small,
+    anim_night_walk_star_med,
+    anim_night_walk_star_big,
+    anim_night_walk_star_huge
 };
 
 // [D_089e2ee8] Star Expand Animations
-const struct Animation *const D_089e2ee8[] = {
-    D_088ca078,
-    D_088ca090,
-    D_088ca0a8,
-    D_088ca0c0
+const struct Animation *const night_walk_star_expand_anim[] = {
+    anim_night_walk_star_tiny_to_small,
+    anim_night_walk_star_small_to_med,
+    anim_night_walk_star_med_to_big,
+    anim_night_walk_star_big_to_huge
 };
 
 #include "data/engines/night_walk_drums.inc.c"
@@ -46,12 +59,12 @@ const struct Animation *const D_089e2ee8[] = {
 
 
 // [D_089e3380] Buffered Textures List
-const struct CompressedGraphics *const D_089e3380[] = {
-    NULL
+const struct CompressedGraphics *const night_walk_buffered_textures[] = {
+    END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e3384] Graphics Table
-const struct GraphicsTable D_089e3384[] = {
+const struct GraphicsTable night_walk_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c52420,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -68,12 +81,12 @@ const struct GraphicsTable D_089e3384[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088ca170,
+        /* Src.  */ night_walk_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088ca170,
+        /* Src.  */ night_walk_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -85,7 +98,7 @@ const struct GraphicsTable D_089e3384[] = {
 
 
 // [D_089e33cc] DrumTech Sequence
-const struct DrumTechNote D_089e33cc[] = {
+const struct DrumTechNote drum_seq_night_walk_kick1[] = {
     {
         /* Drum ID */ 4,
         /* Volume  */ 0x100,
@@ -96,7 +109,7 @@ const struct DrumTechNote D_089e33cc[] = {
 };
 
 // [D_089e33dc] DrumTech Sequence
-const struct DrumTechNote D_089e33dc[] = {
+const struct DrumTechNote drum_seq_night_walk_kick_barely[] = {
     {
         /* Drum ID */ 1,
         /* Volume  */ 0x100,
@@ -106,13 +119,13 @@ const struct DrumTechNote D_089e33dc[] = {
     END_OF_DRUM_TECH_SEQUENCE
 };
 
-// [D_089e33ec] DrumTech Sequence List
-const struct DrumTechNote *const D_089e33ec[] = {
-    /* 00 */ D_089e33cc
+// [D_089e33ec] DrumTech Sequence Pool (Kick)
+const struct DrumTechNote *const night_walk_drum_seq_kick[] = {
+    /* 00 */ drum_seq_night_walk_kick1
 };
 
 // [D_089e33f0] DrumTech Sequence
-const struct DrumTechNote D_089e33f0[] = {
+const struct DrumTechNote drum_seq_night_walk_kick_swing1[] = {
     {
         /* Drum ID */ 4,
         /* Volume  */ 0x100,
@@ -123,7 +136,7 @@ const struct DrumTechNote D_089e33f0[] = {
 };
 
 // [D_089e3400] DrumTech Sequence
-const struct DrumTechNote D_089e3400[] = {
+const struct DrumTechNote drum_seq_night_walk_kick_swing_barely[] = {
     {
         /* Drum ID */ 1,
         /* Volume  */ 0x100,
@@ -133,13 +146,13 @@ const struct DrumTechNote D_089e3400[] = {
     END_OF_DRUM_TECH_SEQUENCE
 };
 
-// [D_089e3410] DrumTech Sequence List
-const struct DrumTechNote *const D_089e3410[] = {
-    /* 00 */ D_089e33f0
+// [D_089e3410] DrumTech Sequence Pool (Kick - Swing)
+const struct DrumTechNote *const night_walk_drum_seq_kick_swing[] = {
+    /* 00 */ drum_seq_night_walk_kick_swing1
 };
 
 // [D_089e3414] DrumTech Sequence
-const struct DrumTechNote D_089e3414[] = {
+const struct DrumTechNote drum_seq_night_walk_snare1[] = {
     {
         /* Drum ID */ 4,
         /* Volume  */ 0x100,
@@ -156,7 +169,7 @@ const struct DrumTechNote D_089e3414[] = {
 };
 
 // [D_089e342c] DrumTech Sequence
-const struct DrumTechNote D_089e342c[] = {
+const struct DrumTechNote drum_seq_night_walk_snare_barely[] = {
     {
         /* Drum ID */ 13,
         /* Volume  */ 0x100,
@@ -172,13 +185,13 @@ const struct DrumTechNote D_089e342c[] = {
     END_OF_DRUM_TECH_SEQUENCE
 };
 
-// [D_089e3444] DrumTech Sequence List
-const struct DrumTechNote *const D_089e3444[] = {
-    /* 00 */ D_089e3414
+// [D_089e3444] DrumTech Sequence Pool (Snare)
+const struct DrumTechNote *const night_walk_drum_seq_snare[] = {
+    /* 00 */ drum_seq_night_walk_snare1
 };
 
 // [D_089e3448] DrumTech Sequence
-const struct DrumTechNote D_089e3448[] = {
+const struct DrumTechNote drum_seq_night_walk_snare_swing1[] = {
     {
         /* Drum ID */ 4,
         /* Volume  */ 0x100,
@@ -195,7 +208,7 @@ const struct DrumTechNote D_089e3448[] = {
 };
 
 // [D_089e3460] DrumTech Sequence
-const struct DrumTechNote D_089e3460[] = {
+const struct DrumTechNote drum_seq_night_walk_snare_swing_barely[] = {
     {
         /* Drum ID */ 13,
         /* Volume  */ 0x100,
@@ -211,13 +224,13 @@ const struct DrumTechNote D_089e3460[] = {
     END_OF_DRUM_TECH_SEQUENCE
 };
 
-// [D_089e3478] DrumTech Sequence List
-const struct DrumTechNote *const D_089e3478[] = {
-    /* 00 */ D_089e3448
+// [D_089e3478] DrumTech Sequence Pool (Snare - Swing)
+const struct DrumTechNote *const night_walk_drum_seq_snare_swing[] = {
+    /* 00 */ drum_seq_night_walk_snare_swing1
 };
 
 // [D_089e347c] DrumTech Sequence
-const struct DrumTechNote D_089e347c[] = {
+const struct DrumTechNote drum_seq_night_walk_cymbal1[] = {
     {
         /* Drum ID */ 4,
         /* Volume  */ 0x100,
@@ -239,13 +252,13 @@ const struct DrumTechNote D_089e347c[] = {
     END_OF_DRUM_TECH_SEQUENCE
 };
 
-// [D_089e349c] DrumTech Sequence List
-const struct DrumTechNote *const D_089e349c[] = {
-    /* 00 */ D_089e347c
+// [D_089e349c] DrumTech Sequence Pool (Cymbal)
+const struct DrumTechNote *const night_walk_drum_seq_cymbal[] = {
+    /* 00 */ drum_seq_night_walk_cymbal1
 };
 
 // [D_089e34a0] DrumTech Sequence
-const struct DrumTechNote D_089e34a0[] = {
+const struct DrumTechNote drum_seq_night_walk_roll1[] = {
     {
         /* Drum ID */ 4,
         /* Volume  */ 0x100,
@@ -280,7 +293,7 @@ const struct DrumTechNote D_089e34a0[] = {
 };
 
 // [D_089e34d0] DrumTech Sequence
-const struct DrumTechNote D_089e34d0[] = {
+const struct DrumTechNote drum_seq_night_walk_roll2[] = {
     {
         /* Drum ID */ 4,
         /* Volume  */ 0x100,
@@ -309,7 +322,7 @@ const struct DrumTechNote D_089e34d0[] = {
 };
 
 // [D_089e34f8] DrumTech Sequence
-const struct DrumTechNote D_089e34f8[] = {
+const struct DrumTechNote drum_seq_night_walk_roll3[] = {
     {
         /* Drum ID */ 4,
         /* Volume  */ 0x100,
@@ -332,7 +345,7 @@ const struct DrumTechNote D_089e34f8[] = {
 };
 
 // [D_089e3518] DrumTech Sequence
-const struct DrumTechNote D_089e3518[] = {
+const struct DrumTechNote drum_seq_night_walk_roll4[] = {
     {
         /* Drum ID */ 4,
         /* Volume  */ 0x100,
@@ -342,16 +355,16 @@ const struct DrumTechNote D_089e3518[] = {
     END_OF_DRUM_TECH_SEQUENCE
 };
 
-// [D_089e3528] DrumTech Sequence List
-const struct DrumTechNote *const D_089e3528[] = {
-    /* 00 */ D_089e34a0,
-    /* 01 */ D_089e34d0,
-    /* 02 */ D_089e34f8,
-    /* 03 */ D_089e3518
+// [D_089e3528] DrumTech Sequence Pool (Drum Roll)
+const struct DrumTechNote *const night_walk_drum_seq_roll[] = {
+    /* 00 */ drum_seq_night_walk_roll1,
+    /* 01 */ drum_seq_night_walk_roll2,
+    /* 02 */ drum_seq_night_walk_roll3,
+    /* 03 */ drum_seq_night_walk_roll4
 };
 
 // [D_089e3538] DrumTech Sequence
-const struct DrumTechNote D_089e3538[] = {
+const struct DrumTechNote drum_seq_night_walk_default[] = {
     {
         /* Drum ID */ 2,
         /* Volume  */ 0x100,
@@ -362,7 +375,7 @@ const struct DrumTechNote D_089e3538[] = {
 };
 
 // [D_089e3548] DrumTech Sequence
-const struct DrumTechNote D_089e3548[] = {
+const struct DrumTechNote drum_seq_night_walk_offbeat_kick[] = {
     {
         /* Drum ID */ 40,
         /* Volume  */ 0x100,
@@ -379,7 +392,7 @@ const struct DrumTechNote D_089e3548[] = {
 };
 
 // [D_089e3560] DrumTech Sequence
-const struct DrumTechNote D_089e3560[] = {
+const struct DrumTechNote drum_seq_night_walk_offbeat_snare[] = {
     {
         /* Drum ID */ 40,
         /* Volume  */ 0x100,
@@ -402,7 +415,7 @@ const struct DrumTechNote D_089e3560[] = {
 };
 
 // [D_089e3580] DrumTech Sequence
-const struct DrumTechNote D_089e3580[] = {
+const struct DrumTechNote drum_seq_night_walk_offbeat_cymbal[] = {
     {
         /* Drum ID */ 40,
         /* Volume  */ 0x100,
@@ -430,16 +443,16 @@ const struct DrumTechNote D_089e3580[] = {
     END_OF_DRUM_TECH_SEQUENCE
 };
 
-// [D_089e35a8] DrumTech Sequence List
-const struct DrumTechNote *const D_089e35a8[] = {
-    /* 00 */ D_089e3548,
-    /* 01 */ D_089e3560,
-    /* 02 */ D_089e3580,
-    /* 03 */ D_089e3548
+// [D_089e35a8] DrumTech Sequences (Walking Click)
+const struct DrumTechNote *const night_walk_drum_seq_offbeat[] = {
+    /* KICK   */ drum_seq_night_walk_offbeat_kick,
+    /* SNARE  */ drum_seq_night_walk_offbeat_snare,
+    /* CYMBAL */ drum_seq_night_walk_offbeat_cymbal,
+    /* ROLL   */ drum_seq_night_walk_offbeat_kick
 };
 
 // [D_089e35b8] DrumTech Sequence
-const struct DrumTechNote D_089e35b8[] = {
+const struct DrumTechNote drum_seq_night_walk_offbeat_swing_kick[] = {
     {
         /* Drum ID */ 40,
         /* Volume  */ 0x100,
@@ -456,7 +469,7 @@ const struct DrumTechNote D_089e35b8[] = {
 };
 
 // [D_089e35d0] DrumTech Sequence
-const struct DrumTechNote D_089e35d0[] = {
+const struct DrumTechNote drum_seq_night_walk_offbeat_swing_snare[] = {
     {
         /* Drum ID */ 40,
         /* Volume  */ 0x60,
@@ -479,7 +492,7 @@ const struct DrumTechNote D_089e35d0[] = {
 };
 
 // [D_089e35f0] DrumTech Sequence
-const struct DrumTechNote D_089e35f0[] = {
+const struct DrumTechNote drum_seq_night_walk_offbeat_swing_cymbal[] = {
     {
         /* Drum ID */ 40,
         /* Volume  */ 0x60,
@@ -501,21 +514,229 @@ const struct DrumTechNote D_089e35f0[] = {
     END_OF_DRUM_TECH_SEQUENCE
 };
 
-// [D_089e3610] DrumTech Sequence List
-const struct DrumTechNote *const D_089e3610[] = {
-    /* 00 */ D_089e35b8,
-    /* 01 */ D_089e35d0,
-    /* 02 */ D_089e35f0,
-    /* 03 */ D_089e35b8
+// [D_089e3610] DrumTech Sequences (Walking Click - Swing)
+const struct DrumTechNote *const night_walk_drum_seq_offbeat_swing[] = {
+    /* KICK   */ drum_seq_night_walk_offbeat_swing_kick,
+    /* SNARE  */ drum_seq_night_walk_offbeat_swing_snare,
+    /* CYMBAL */ drum_seq_night_walk_offbeat_swing_cymbal,
+    /* ROLL   */ drum_seq_night_walk_offbeat_swing_kick
+};
+
+// [D_089e3620] Bridge Hit Animations
+const struct Animation *const night_walk_bridge_anim[] = {
+    /* KICK   */ anim_night_walk_heart_bridge,
+    /* SNARE  */ anim_night_walk_lollipop_bridge,
+    /* CYMBAL */ anim_night_walk_umbrella_bridge,
+    /* ROLL   */ anim_night_walk_heart_bridge,
+    /* WAND   */ anim_night_walk_umbrella_bridge
+};
+
+// [D_089e3634] Box Hit Animations
+const struct Animation *const night_walk_box_anim[] = {
+    /* KICK   */ anim_night_walk_heart_box,
+    /* SNARE  */ anim_night_walk_lollipop_box,
+    /* CYMBAL */ anim_night_walk_umbrella_box,
+    /* ROLL   */ anim_night_walk_heart_box,
+    /* WAND   */ anim_night_walk_ng_wand_box
+};
+
+// [D_089e3648] Bridge/Box Barely Animations
+const struct Animation *const night_walk_barely_anim[][2] = {
+    /* KICK   */ { anim_night_walk_ng_heart_bridge, anim_night_walk_ng_heart_box },
+    /* SNARE  */ { anim_night_walk_ng_lollipop_bridge, anim_night_walk_ng_lollipop_box },
+    /* CYMBAL */ { anim_night_walk_ng_umbrella_bridge, anim_night_walk_ng_umbrella_box },
+    /* ROLL   */ { anim_night_walk_ng_heart_bridge, anim_night_walk_ng_heart_box },
+    /* WAND   */ { anim_night_walk_ng_heart_bridge, anim_night_walk_ng_heart_box }
 };
 
 
+  //  //  //  CUE DATA  //  //  //
+
+
+// [D_089e3670] Cue 00 (Heart)
+const struct CueDefinition night_walk_cue_kick = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
+    /* Total Duration  */ 0xC0,
+    /* Hit Window      */ -0x03, 0x03,
+    /* Barely Window   */ -0x05, 0x05,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct NightWalkCue),
+    /* Func. Spawn     */ night_walk_cue_spawn,
+    /* Spawn Parameter */ NIGHT_WALK_CUE_HEART,
+    /* Func. Update    */ night_walk_cue_update,
+    /* Func. Despawn   */ night_walk_cue_despawn,
+    /* Func. Hit       */ night_walk_cue_hit,
+    /* Func. Barely    */ night_walk_cue_barely,
+    /* Func. Miss      */ night_walk_cue_miss,
+    /* SFX Spawn       */ NULL,
+    /* SFX Hit         */ NULL,
+    /* SFX Barely      */ NULL,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089e36b0] Cue 01 (Lollipop)
+const struct CueDefinition night_walk_cue_snare = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
+    /* Total Duration  */ 0xC0,
+    /* Hit Window      */ -0x03, 0x03,
+    /* Barely Window   */ -0x05, 0x05,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct NightWalkCue),
+    /* Func. Spawn     */ night_walk_cue_spawn,
+    /* Spawn Parameter */ NIGHT_WALK_CUE_LOLLIPOP,
+    /* Func. Update    */ night_walk_cue_update,
+    /* Func. Despawn   */ night_walk_cue_despawn,
+    /* Func. Hit       */ night_walk_cue_hit,
+    /* Func. Barely    */ night_walk_cue_barely,
+    /* Func. Miss      */ night_walk_cue_miss,
+    /* SFX Spawn       */ NULL,
+    /* SFX Hit         */ NULL,
+    /* SFX Barely      */ NULL,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089e36f0] Cue 02 (Umbrella)
+const struct CueDefinition night_walk_cue_cymbal = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
+    /* Total Duration  */ 0xC0,
+    /* Hit Window      */ -0x03, 0x03,
+    /* Barely Window   */ -0x05, 0x05,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct NightWalkCue),
+    /* Func. Spawn     */ night_walk_cue_spawn,
+    /* Spawn Parameter */ NIGHT_WALK_CUE_UMBRELLA,
+    /* Func. Update    */ night_walk_cue_update,
+    /* Func. Despawn   */ night_walk_cue_despawn,
+    /* Func. Hit       */ night_walk_cue_hit,
+    /* Func. Barely    */ night_walk_cue_barely,
+    /* Func. Miss      */ night_walk_cue_miss,
+    /* SFX Spawn       */ NULL,
+    /* SFX Hit         */ NULL,
+    /* SFX Barely      */ NULL,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089e3730] Cue 03 (Heart w/ Drum Roll)
+const struct CueDefinition night_walk_cue_roll = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
+    /* Total Duration  */ 0xC0,
+    /* Hit Window      */ -0x03, 0x03,
+    /* Barely Window   */ -0x05, 0x05,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct NightWalkCue),
+    /* Func. Spawn     */ night_walk_cue_spawn,
+    /* Spawn Parameter */ NIGHT_WALK_CUE_HEART_2,
+    /* Func. Update    */ night_walk_cue_update,
+    /* Func. Despawn   */ night_walk_cue_despawn,
+    /* Func. Hit       */ night_walk_cue_hit,
+    /* Func. Barely    */ night_walk_cue_barely,
+    /* Func. Miss      */ night_walk_cue_miss,
+    /* SFX Spawn       */ NULL,
+    /* SFX Hit         */ NULL,
+    /* SFX Barely      */ NULL,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089e3770] Cue 04 (Star Wand)
+const struct CueDefinition night_walk_cue_star_wand = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
+    /* Total Duration  */ 0xC0,
+    /* Hit Window      */ -0x04, 0x04,
+    /* Barely Window   */ -0x04, 0x04,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct NightWalkCue),
+    /* Func. Spawn     */ night_walk_cue_spawn,
+    /* Spawn Parameter */ NIGHT_WALK_CUE_STAR_WAND,
+    /* Func. Update    */ night_walk_cue_update,
+    /* Func. Despawn   */ night_walk_cue_despawn,
+    /* Func. Hit       */ night_walk_cue_hit,
+    /* Func. Barely    */ night_walk_cue_barely,
+    /* Func. Miss      */ night_walk_cue_miss,
+    /* SFX Spawn       */ NULL,
+    /* SFX Hit         */ NULL,
+    /* SFX Barely      */ NULL,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089e37b0] Cue Definition Index
+const struct CueDefinition *const night_walk_cue_index[] = {
+    /* 0x00 */ &night_walk_cue_kick,
+    /* 0x01 */ &night_walk_cue_snare,
+    /* 0x02 */ &night_walk_cue_cymbal,
+    /* 0x03 */ &night_walk_cue_roll,
+    /* 0x04 */ &night_walk_cue_star_wand,
+    /* 0x05 */ NULL,
+    /* 0x06 */ NULL,
+    /* 0x07 */ NULL,
+    /* 0x08 */ NULL,
+    /* 0x09 */ NULL,
+    /* 0x0A */ NULL,
+    /* 0x0B */ NULL,
+    END_OF_CUE_INDEX
+};
+
+// [D_089e37e4] DrumTech Sequence (Non-Cue Input)
+const struct DrumTechNote drum_seq_night_walk_short_hop[] = {
+    {
+        /* Drum ID */ 38,
+        /* Volume  */ 0x80,
+        /* Pitch   */ -0xc00,
+        /* Delta   */ 0x0C
+    },
+    END_OF_DRUM_TECH_SEQUENCE
+};
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
+// [D_089e37f4] Common Events
+const EngineEvent night_walk_common_events[] = {
+    /* BEAT_ANIMATION */ (EngineEvent) night_walk_common_beat_animation,
+    /* DISPLAY_TEXT   */ (EngineEvent) night_walk_common_display_text,
+    /* INIT_TUTORIAL  */ // None
+    END_OF_COMMON_EVENT_LIST
+};
 
 
-  //  //  //  CUE DATA  //  //  //
+// [D_089e3800] Engine Events
+const EngineEvent night_walk_engine_events[] = {
+    /* 0x00 */ (EngineEvent) func_0802ab5c,
+    /* 0x01 */ (EngineEvent) night_walk_init_balloons,
+    /* 0x02 */ (EngineEvent) night_walk_pop_balloon,
+    /* 0x03 */ (EngineEvent) night_walk_set_ending_script,
+    /* 0x04 */ (EngineEvent) night_walk_set_bridge_type,
+    /* 0x05 */ (EngineEvent) night_walk_set_marking_criteria,
+    /* 0x06 */ (EngineEvent) night_walk_set_cue_delay,
+    /* 0x07 */ (EngineEvent) night_walk_set_swing,
+    /* 0x08 */ (EngineEvent) night_walk_set_drum_volume,
+    /* 0x09 */ (EngineEvent) night_walk_event_expand_stars,
+    /* 0x0A */ (EngineEvent) night_walk_engine_event_stub
+};
 
+// [D_089e382c] Night Walk Game Engine
+const struct GameEngine D_089e382c = {
+    /* Size in Memory */ sizeof(struct NightWalkInfo),
+    /* Init. Engine   */ night_walk_engine_init,
+    /* Update Engine  */ night_walk_engine_update,
+    /* Stop Engine    */ night_walk_engine_stop,
+    /* Cue Index      */ night_walk_cue_index,
+    /* Common Events  */ night_walk_common_events,
+    /* Engine Events  */ night_walk_engine_events,
+    /* Input Event    */ night_walk_input_event
+};
