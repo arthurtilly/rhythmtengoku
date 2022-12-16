@@ -29,7 +29,7 @@ thumb_func_start func_0803ee58 \n\
 /* 0803ee86 */ STRH R0, [R1] \n\
 /* 0803ee88 */ LDRH R0, [R1] \n\
 /* 0803ee8a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803ee8c */ BL func_08017338 \n\
+/* 0803ee8c */ BL gameplay_set_input_buttons \n\
  \n\
 branch_0803ee90: \n\
 /* 0803ee90 */ POP {R4, R5} \n\

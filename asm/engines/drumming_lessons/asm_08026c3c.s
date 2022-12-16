@@ -12,12 +12,12 @@ thumb_func_start func_08026c3c \n\
 /* 08026c48 */ LDR R6, [R0] \n\
 /* 08026c4a */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 08026c4c */ BEQ branch_08026c7a \n\
-/* 08026c4e */ BL func_08018054 \n\
+/* 08026c4e */ BL gameplay_get_last_hit_offset \n\
 /* 08026c52 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08026c54 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 08026c56 */ BL func_0800c3a4 \n\
+/* 08026c56 */ BL beats_to_ticks \n\
 /* 08026c5a */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
-/* 08026c5c */ BL func_0800c1a8 \n\
+/* 08026c5c */ BL get_beatscript_tempo \n\
 /* 08026c60 */ SUBS R4, R5, R4 @ Set R4 to R5 - R4 \n\
 /* 08026c62 */ MULS R0, R4 @ Multiply R0 by R4 \n\
 /* 08026c64 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
@@ -27,7 +27,7 @@ thumb_func_start func_08026c3c \n\
 /* 08026c6e */ BL func_080087d4 \n\
 /* 08026c72 */ LSLS R0, R0, 0x10 \n\
 /* 08026c74 */ LSRS R0, R0, 0x10 \n\
-/* 08026c76 */ BL func_0800bdf8 \n\
+/* 08026c76 */ BL set_beatscript_tempo \n\
  \n\
 branch_08026c7a: \n\
 /* 08026c7a */ POP {R4-R6} \n\

@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0800e184 \n\
+thumb_func_start scene_set_bg_mosaic_size \n\
 /* 0800e184 */ PUSH {R4, LR} \n\
 /* 0800e186 */ LSLS R0, R0, 0x10 \n\
 /* 0800e188 */ LSLS R1, R1, 0x10 \n\

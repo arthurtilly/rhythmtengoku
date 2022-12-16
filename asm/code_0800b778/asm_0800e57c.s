@@ -83,7 +83,7 @@ branch_0800e602: \n\
 /* 0800e602 */ STRH R0, [R1, 0xC] \n\
  \n\
 branch_0800e604: \n\
-/* 0800e604 */ BL func_0800c3b8 \n\
+/* 0800e604 */ BL get_current_mem_id \n\
 /* 0800e608 */ LSLS R0, R0, 0x10 \n\
 /* 0800e60a */ LSRS R0, R0, 0x10 \n\
 /* 0800e60c */ LDR R1, =D_08936bf4 \n\

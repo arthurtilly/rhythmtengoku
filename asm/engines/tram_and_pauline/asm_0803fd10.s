@@ -14,7 +14,7 @@ thumb_func_start func_0803fd10 \n\
 /* 0803fd20 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0803fd22 */ STRB R0, [R1] \n\
 /* 0803fd24 */ BL func_0803fce4 \n\
-/* 0803fd28 */ BL func_0800e0ec \n\
+/* 0803fd28 */ BL scene_show_obj_layer \n\
 /* 0803fd2c */ LDR R0, [R7] \n\
 /* 0803fd2e */ LDRB R4, [R0] \n\
 /* 0803fd30 */ CMP R4, 0x1 @ Compare R4 and 0x1 \n\
@@ -29,7 +29,7 @@ thumb_func_start func_0803fd10 \n\
 /* 0803fd42 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0803fd44 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803fd46 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803fd48 */ BL func_0800e0a0 \n\
+/* 0803fd48 */ BL scene_set_bg_layer_display \n\
 /* 0803fd4c */ STR R5, [SP] \n\
 /* 0803fd4e */ MOVS R0, 0x1F @ Set R0 to 0x1F \n\
 /* 0803fd50 */ STR R0, [SP, 0x4] \n\
@@ -38,7 +38,7 @@ thumb_func_start func_0803fd10 \n\
 /* 0803fd56 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0803fd58 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803fd5a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803fd5c */ BL func_0800e0a0 \n\
+/* 0803fd5c */ BL scene_set_bg_layer_display \n\
  \n\
 branch_0803fd60: \n\
 /* 0803fd60 */ LDR R0, [R7] \n\
@@ -54,7 +54,7 @@ branch_0803fd60: \n\
 /* 0803fd74 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0803fd76 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803fd78 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803fd7a */ BL func_0800e0a0 \n\
+/* 0803fd7a */ BL scene_set_bg_layer_display \n\
  \n\
 branch_0803fd7e: \n\
 /* 0803fd7e */ LDR R0, [R7] \n\
@@ -71,7 +71,7 @@ branch_0803fd7e: \n\
 /* 0803fd94 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803fd96 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803fd98 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803fd9a */ BL func_0800e0a0 \n\
+/* 0803fd9a */ BL scene_set_bg_layer_display \n\
 /* 0803fd9e */ STR R5, [SP] \n\
 /* 0803fda0 */ MOVS R0, 0x1F @ Set R0 to 0x1F \n\
 /* 0803fda2 */ STR R0, [SP, 0x4] \n\
@@ -81,7 +81,7 @@ branch_0803fd7e: \n\
 /* 0803fdaa */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0803fdac */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803fdae */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803fdb0 */ BL func_0800e0a0 \n\
+/* 0803fdb0 */ BL scene_set_bg_layer_display \n\
  \n\
 branch_0803fdb4: \n\
 /* 0803fdb4 */ MOVS R0, 0xD0 @ Set R0 to 0xD0 \n\
@@ -401,7 +401,7 @@ branch_08040006: \n\
 /* 0804003e */ STR R5, [R0, 0x44] \n\
 /* 08040040 */ MOVS R0, 0xF1 @ Set R0 to 0xF1 \n\
 /* 08040042 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08040044 */ BL func_08017338 \n\
+/* 08040044 */ BL gameplay_set_input_buttons \n\
 /* 08040048 */ ADD SP, 0x1C \n\
 /* 0804004a */ POP {R3-R5} \n\
 /* 0804004c */ MOV R8, R3 @ Set R8 to R3 \n\

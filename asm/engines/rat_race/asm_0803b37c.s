@@ -188,7 +188,7 @@ branch_0803b4f4: \n\
 /* 0803b4fa */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
 /* 0803b4fc */ STRB R1, [R0] \n\
 /* 0803b4fe */ LDR R0, =s_rat_crush_L_seqData \n\
-/* 0803b500 */ BL func_08002634 \n\
+/* 0803b500 */ BL play_sound \n\
 /* 0803b504 */ LDR R2, =D_030055d0 \n\
 /* 0803b506 */ LDR R0, [R2] \n\
 /* 0803b508 */ MOVS R3, 0x8F @ Set R3 to 0x8F \n\
@@ -200,7 +200,7 @@ branch_0803b4f4: \n\
 /* 0803b514 */ BLT branch_0803b56e \n\
 /* 0803b516 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
 /* 0803b518 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803b51a */ BL func_08017928 \n\
+/* 0803b51a */ BL gameplay_add_cue_result \n\
 /* 0803b51e */ B branch_0803b56e \n\
 \n\
 .ltorg \n\

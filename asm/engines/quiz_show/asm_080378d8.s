@@ -175,7 +175,7 @@ branch_08037a1c: \n\
  \n\
 branch_08037a40: \n\
 /* 08037a40 */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
-/* 08037a42 */ BL func_0800267c \n\
+/* 08037a42 */ BL play_sound_in_player \n\
 /* 08037a46 */ B branch_08037a5a \n\
 \n\
 .ltorg \n\

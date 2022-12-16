@@ -10,7 +10,7 @@ thumb_func_start func_0800c660 \n\
 /* 0800c668 */ LSRS R4, R4, 0x10 \n\
 /* 0800c66a */ LSLS R5, R5, 0x18 \n\
 /* 0800c66c */ LSRS R5, R5, 0x18 \n\
-/* 0800c66e */ BL func_0800c3b8 \n\
+/* 0800c66e */ BL get_current_mem_id \n\
 /* 0800c672 */ LSLS R0, R0, 0x10 \n\
 /* 0800c674 */ LSRS R0, R0, 0x10 \n\
 /* 0800c676 */ LDR R1, =D_089de5c8 \n\

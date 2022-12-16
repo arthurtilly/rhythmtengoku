@@ -25,7 +25,7 @@ thumb_func_start func_0802372c \n\
 /* 08023754 */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 08023756 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 08023758 */ BL text_printer_fill_vram_tiles \n\
-/* 0802375c */ BL func_0800c3b8 \n\
+/* 0802375c */ BL get_current_mem_id \n\
 /* 08023760 */ ADD R1, SP, 0x18 \n\
 /* 08023762 */ STR R1, [SP] \n\
 /* 08023764 */ LDR R1, =D_089df628 \n\

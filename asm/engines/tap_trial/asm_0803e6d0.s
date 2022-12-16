@@ -15,9 +15,9 @@ thumb_func_start func_0803e6d0 \n\
 branch_0803e6e0: \n\
 /* 0803e6e0 */ BL func_0803e644 \n\
 /* 0803e6e4 */ LDR R0, =s_f_tap_tap_seqData \n\
-/* 0803e6e6 */ BL func_0800274c \n\
+/* 0803e6e6 */ BL stop_sound \n\
 /* 0803e6ea */ LDR R0, =s_tebyoushi_pati_seqData \n\
-/* 0803e6ec */ BL func_08002634 \n\
+/* 0803e6ec */ BL play_sound \n\
  \n\
 branch_0803e6f0: \n\
 /* 0803e6f0 */ LDR R0, =D_030055d0 \n\

@@ -30,7 +30,7 @@ branch_0801df46: \n\
 /* 0801df48 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0801df4a */ BL func_080070c4 \n\
 /* 0801df4e */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0801df50 */ BL func_080028ec \n\
+/* 0801df50 */ BL fade_out_all_soundplayers \n\
 /* 0801df54 */ B branch_0801df6a \n\
  \n\
 branch_0801df56: \n\
@@ -61,8 +61,8 @@ branch_0801df7c: \n\
 /* 0801df84 */ CMP R0, 0xF @ Compare R0 and 0xF \n\
 /* 0801df86 */ BEQ branch_0801df94 \n\
 /* 0801df88 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801df8a */ BL func_08002880 \n\
-/* 0801df8e */ BL func_08002838 \n\
+/* 0801df8a */ BL pause_all_soundplayers \n\
+/* 0801df8e */ BL stop_all_soundplayers \n\
 /* 0801df92 */ MOVS R5, 0x1 @ Set R5 to 0x1 \n\
  \n\
 branch_0801df94: \n\

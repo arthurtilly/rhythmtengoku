@@ -19,13 +19,13 @@ thumb_func_start func_08030588 \n\
 /* 080305a2 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 080305a4 */ STRB R0, [R2, 0x1] \n\
 /* 080305a6 */ BL func_0803055c \n\
-/* 080305aa */ BL func_0800e0ec \n\
+/* 080305aa */ BL scene_show_obj_layer \n\
 /* 080305ae */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 080305b0 */ BL func_0800e044 \n\
+/* 080305b0 */ BL scene_hide_bg_layer \n\
 /* 080305b4 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 080305b6 */ BL func_0800e044 \n\
+/* 080305b6 */ BL scene_hide_bg_layer \n\
 /* 080305ba */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 080305bc */ BL func_0800e044 \n\
+/* 080305bc */ BL scene_hide_bg_layer \n\
 /* 080305c0 */ MOV R0, R9 @ Set R0 to R9 \n\
 /* 080305c2 */ STR R0, [SP] \n\
 /* 080305c4 */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\
@@ -36,7 +36,7 @@ thumb_func_start func_08030588 \n\
 /* 080305ce */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 080305d0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080305d2 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080305d4 */ BL func_0800e0a0 \n\
+/* 080305d4 */ BL scene_set_bg_layer_display \n\
 /* 080305d8 */ LDR R0, [R4] \n\
 /* 080305da */ ADDS R0, 0x4 @ Add 0x4 to R0 \n\
 /* 080305dc */ BL func_080303a4 \n\
@@ -46,7 +46,7 @@ thumb_func_start func_08030588 \n\
 /* 080305e6 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 080305e8 */ LSLS R0, R0, 0x1 \n\
 /* 080305ea */ STRH R0, [R1, 0x18] \n\
-/* 080305ec */ BL func_0800c3b8 \n\
+/* 080305ec */ BL get_current_mem_id \n\
 /* 080305f0 */ LSLS R0, R0, 0x10 \n\
 /* 080305f2 */ LSRS R0, R0, 0x10 \n\
 /* 080305f4 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
@@ -102,7 +102,7 @@ thumb_func_start func_08030588 \n\
 /* 08030668 */ STRB R3, [R0, 0x11] \n\
 /* 0803066a */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803066c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803066e */ BL func_08017338 \n\
+/* 0803066e */ BL gameplay_set_input_buttons \n\
 /* 08030672 */ ADD SP, 0x14 \n\
 /* 08030674 */ POP {R3, R4} \n\
 /* 08030676 */ MOV R8, R3 @ Set R8 to R3 \n\

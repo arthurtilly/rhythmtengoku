@@ -23,7 +23,7 @@ thumb_func_start func_0803ca8c \n\
 /* 0803cab0 */ STR R3, [SP, 0x8] \n\
 /* 0803cab2 */ BL func_0804d8f8 \n\
 /* 0803cab6 */ LDR R0, =s_f_ninja_v_nanu_seqData \n\
-/* 0803cab8 */ BL func_08002634 \n\
+/* 0803cab8 */ BL play_sound \n\
 /* 0803cabc */ ADD SP, 0xC \n\
 /* 0803cabe */ POP {R0} \n\
 /* 0803cac0 */ BX R0 \n\

@@ -34,7 +34,7 @@ branch_0804403a: \n\
 /* 0804404c */ ADDS R0, R4, R0 @ Set R0 to R4 + R0 \n\
 /* 0804404e */ LDR R1, [R0] \n\
 /* 08044050 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08044052 */ BL func_0800267c \n\
+/* 08044052 */ BL play_sound_in_player \n\
 /* 08044056 */ LDR R1, =D_030055d0 \n\
 /* 08044058 */ LDR R1, [R1] \n\
 /* 0804405a */ MOVS R2, 0xDF @ Set R2 to 0xDF \n\

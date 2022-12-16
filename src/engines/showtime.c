@@ -14,31 +14,31 @@ asm(".include \"include/gba.inc\""); // Temporary
 
 void func_0802bbfc(void) {
     func_0800c604(0);
-    func_08017578();
+    gameplay_start_screen_fade_in();
 }
 
 void func_0802bc0c(void) {
     func_0800c604(0);
-    task_run_after(func_08002ee0(func_0800c3b8(), D_089e3910[gShowtimeInfo->unk6], 0x2000), func_0802bbfc, 0);
+    task_run_after(func_08002ee0(get_current_mem_id(), D_089e3910[gShowtimeInfo->unk6], 0x2000), func_0802bbfc, 0);
 }
 
 void func_0802bc4c(void) {
     func_0800c604(0);
-    task_run_after(func_080087b4(func_0800c3b8(), D_089e384c), func_0802bc0c, 0);
+    task_run_after(func_080087b4(get_current_mem_id(), D_089e384c), func_0802bc0c, 0);
 }
 
 void func_0802bc78(u8 arg0) {
     struct Animation* textAnim;
     gShowtimeInfo->unk6 = arg0;
     func_0802bc4c();
-    func_0800e0ec();
-    func_0800e0a0(1, 1, 0, 0, 0, 0x1d, 2);
-    func_0800e0a0(2, 1, 0, 0, 0, 0x1e, 0);
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(1, 1, 0, 0, 0, 0x1d, 2);
+    scene_set_bg_layer_display(2, 1, 0, 0, 0, 0x1e, 0);
     func_0802d96c();
     gShowtimeInfo->unk0 = func_0800c660(0x340, 2);
     textAnim = func_08004b98(gShowtimeInfo->unk0, D_0805a3cc, 0, 0);
     gShowtimeInfo->unk4 = func_0804d160(D_03005380, textAnim, 0, 120, 56, 0, 0, 0, 0);
-    func_08017338(A_BUTTON, 0);
+    gameplay_set_input_buttons(A_BUTTON, 0);
     func_0802c23c();    
     func_0802d104();
     func_0802c40c();
@@ -69,7 +69,7 @@ void func_0802be40(u32 unused_arg0, u32* arg1) {
 }
 
 u8 func_0802be58(u32 unused_arg0, u32 unused_arg1, u32 arg2) {
-    if (arg2 > func_0800c3a4(120)) {
+    if (arg2 > beats_to_ticks(120)) {
         return TRUE;
     } else {
         return FALSE;
@@ -83,7 +83,7 @@ void func_0802be74() {
 #include "asm/engines/showtime/asm_0802be78.s"
 
 u8 func_0802be90(u32 unused_arg0, u32 unused_arg1, u32 arg2) {
-    if (arg2 > func_0800c3a4(0x90))
+    if (arg2 > beats_to_ticks(0x90))
         return TRUE;
     return FALSE;
 }
@@ -103,7 +103,7 @@ void func_0802bee4() {
 #include "asm/engines/showtime/asm_0802bee8.s"
 
 u8 func_0802bf00(u32 unused_arg0, u32 unused_arg1, u32 arg2) {
-    if (arg2 > func_0800c3a4(0x78)) {
+    if (arg2 > beats_to_ticks(0x78)) {
         return TRUE;
     } else {
         return FALSE;
@@ -120,7 +120,7 @@ void func_0802bf20(u32 unused_arg0, u32* arg1) {
 }
 
 u8 func_0802bf38(u32 unused_arg0, u32 unused_arg1, u32 arg2) {
-    if (arg2 > func_0800c3a4(0x78))
+    if (arg2 > beats_to_ticks(0x78))
         return TRUE;
     return FALSE;
 }
@@ -133,7 +133,7 @@ void func_0802bf58(u32 unused_arg0, u32* arg1) { //arg1 is probably a struct
     func_0802cf8c(arg1[1]);
     func_0802d81c(arg1[1]);
     func_0802d2bc();
-    gShowtimeInfo->unk3C0 = func_0800c3a4(20);
+    gShowtimeInfo->unk3C0 = beats_to_ticks(20);
 }
 
 #include "asm/engines/showtime/asm_0802bf88.s"
@@ -144,8 +144,8 @@ void func_0802c084() {
     if (gShowtimeInfo->unk3C0 == 0) {
         func_0802d918(-1);
         func_0802d2bc();
-        gShowtimeInfo->unk3C0 = func_0800c3a4(30);
-        func_08002634(&s_block_hit_seqData);
+        gShowtimeInfo->unk3C0 = beats_to_ticks(30);
+        play_sound(&s_block_hit_seqData);
     }
 }
 

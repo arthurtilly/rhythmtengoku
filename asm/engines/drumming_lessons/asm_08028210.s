@@ -9,10 +9,10 @@ thumb_func_start func_08028210 \n\
 /* 08028216 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08028218 */ BL func_0800c604 \n\
 /* 0802821c */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0802821e */ BL func_0800e030 \n\
+/* 0802821e */ BL scene_show_bg_layer \n\
 /* 08028222 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 08028224 */ BL func_0800e030 \n\
-/* 08028228 */ BL func_0800c3b8 \n\
+/* 08028224 */ BL scene_show_bg_layer \n\
+/* 08028228 */ BL get_current_mem_id \n\
 /* 0802822c */ LSLS R0, R0, 0x10 \n\
 /* 0802822e */ LSRS R0, R0, 0x10 \n\
 /* 08028230 */ LDR R1, =D_088c88e0 \n\

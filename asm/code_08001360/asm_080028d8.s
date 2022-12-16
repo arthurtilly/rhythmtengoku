@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080028d8 \n\
+thumb_func_start fade_out_soundplayer \n\
 /* 080028d8 */ PUSH {LR} \n\
 /* 080028da */ LSLS R1, R1, 0x10 \n\
 /* 080028dc */ LSRS R1, R1, 0x10 \n\

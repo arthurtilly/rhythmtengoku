@@ -10,7 +10,7 @@ thumb_func_start func_08048184 \n\
 /* 0804818c */ LDR R1, =s_intro_stick_seqData \n\
 /* 0804818e */ MOVS R0, 0x8 @ Set R0 to 0x8 \n\
 /* 08048190 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08048192 */ BL func_080026c4 \n\
+/* 08048192 */ BL play_sound_in_player_w_pitch_volume \n\
 /* 08048196 */ B branch_080481a4 \n\
 \n\
 .ltorg \n\
@@ -18,7 +18,7 @@ thumb_func_start func_08048184 \n\
 branch_0804819c: \n\
 /* 0804819c */ LDR R1, =s_intro_stick_seqData \n\
 /* 0804819e */ MOVS R0, 0x8 @ Set R0 to 0x8 \n\
-/* 080481a0 */ BL func_0800267c \n\
+/* 080481a0 */ BL play_sound_in_player \n\
  \n\
 branch_080481a4: \n\
 /* 080481a4 */ POP {R0} \n\

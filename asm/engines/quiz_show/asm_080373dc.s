@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start func_080373dc \n\
 /* 080373dc */ PUSH {LR} \n\
-/* 080373de */ BL func_0800c3a4 \n\
+/* 080373de */ BL beats_to_ticks \n\
 /* 080373e2 */ LDR R1, =D_030055d0 \n\
 /* 080373e4 */ LDR R1, [R1] \n\
 /* 080373e6 */ STR R0, [R1, 0x3C] \n\

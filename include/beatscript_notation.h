@@ -223,23 +223,23 @@ enum BeatScriptArgType {
  * Convenience macros for commonly-called functions.
 */
 
-extern void func_0800bdf8();
-#define BSC3_SET_TEMPO(bpm) BSC_RUN_FUNC_1(func_0800bdf8,bpm)
+extern void set_beatscript_tempo();
+#define BSC3_SET_TEMPO(bpm) BSC_RUN_FUNC_1(set_beatscript_tempo,bpm)
 
-extern void func_0800c184();
-#define BSC3_SET_MUSIC_PITCH(pitch) BSC_RUN_FUNC_1(func_0800c184,pitch)
+extern void beatscript_scene_set_music_key();
+#define BSC3_SET_MUSIC_PITCH(pitch) BSC_RUN_FUNC_1(beatscript_scene_set_music_key,pitch)
 
-extern void func_0800c0d8();
-#define BSC3_SET_MUSIC_VOLUME(volume) BSC_RUN_FUNC_1(func_0800c0d8,volume)
+extern void beatscript_scene_set_music_volume();
+#define BSC3_SET_MUSIC_VOLUME(volume) BSC_RUN_FUNC_1(beatscript_scene_set_music_volume,volume)
 
 extern void func_0801db04();
 #define BSC3_ENABLE_PAUSE_MENU(enable) BSC_RUN_FUNC_1(func_0801db04,enable)
 
-extern void func_080173c4();
-#define BSC3_ENABLE_PLAY_INPUTS(enable) BSC_RUN_FUNC_1(func_080173c4,enable)
+extern void gameplay_enable_inputs();
+#define BSC3_ENABLE_PLAY_INPUTS(enable) BSC_RUN_FUNC_1(gameplay_enable_inputs,enable)
 
-extern void func_08018660();
-#define BSC3_DISPLAY_TEXT(text) BSC_RUN_FUNC_1(func_08018660,text)
+extern void gameplay_display_text();
+#define BSC3_DISPLAY_TEXT(text) BSC_RUN_FUNC_1(gameplay_display_text,text)
 
 
 
@@ -252,34 +252,34 @@ extern void func_08019304();
 extern void func_08019324();
 #define BSC3_ENABLE_INPUT_ASSESSMENT(enable) BSC_RUN_FUNC_1(func_08019324,enable)
 
-extern void func_08017908();
-#define BSC3_SET_CURRENT_MARKING_CRITERIA(id) BSC_RUN_FUNC_1(func_08017908,id)
+extern void gameplay_set_marking_criteria();
+#define BSC3_SET_CURRENT_MARKING_CRITERIA(id) BSC_RUN_FUNC_1(gameplay_set_marking_criteria,id)
 
 extern void func_080177dc();
 #define BSC3_FORGIVE_X_MISSES(x) BSC_RUN_FUNC_1(func_080177dc,x)
 
 
 
-extern void func_08017604();
-#define BSC3_START_PERFECT_CAMPAIGN BSC_RUN_FUNC_1(func_08017604,0)
+extern void gameplay_start_perfect_campaign();
+#define BSC3_START_PERFECT_CAMPAIGN BSC_RUN_FUNC_1(gameplay_start_perfect_campaign,0)
 
-extern void func_08017648();
-#define BSC3_ENABLE_PERFECT_ASSESSMENT(enable) BSC_RUN_FUNC_1(func_08017648,enable)
+extern void gameplay_check_for_perfect();
+#define BSC3_ENABLE_PERFECT_ASSESSMENT(enable) BSC_RUN_FUNC_1(gameplay_check_for_perfect,enable)
 
 
 
-extern void func_08017188();
-#define BSC4_LOAD_GAME_ENGINE(engine,version) BSC_RUN_FUNC_2(func_08017188,version,engine)
+extern void gameplay_set_current_engine();
+#define BSC4_LOAD_GAME_ENGINE(engine,version) BSC_RUN_FUNC_2(gameplay_set_current_engine,version,engine)
 
-extern void func_08017380();
-extern s32 func_0801738c();
-#define BSC4_GAME_ENGINE_EVENT(engine,event,args) BSC_RUN_FUNC_1(func_08017380,args), BSC_RUN_FUNC_2(func_0801738c,event,engine)
+extern void gameplay_set_engine_event_arg();
+extern s32 gameplay_run_engine_event();
+#define BSC4_GAME_ENGINE_EVENT(engine,event,args) BSC_RUN_FUNC_1(gameplay_set_engine_event_arg,args), BSC_RUN_FUNC_2(gameplay_run_engine_event,event,engine)
 
-extern s32 func_08017348();
-#define BSC4_GAME_COMMON_EVENT(event,arg) BSC_RUN_FUNC_2(func_08017348,event,arg)
+extern s32 gameplay_run_common_event();
+#define BSC4_GAME_COMMON_EVENT(event,arg) BSC_RUN_FUNC_2(gameplay_run_common_event,event,arg)
 #define BSC4_GAME_COMMON_BEAT_ANIMATION(arg) BSC4_GAME_COMMON_EVENT(0,arg)
 #define BSC4_GAME_COMMON_DISPLAY_TEXT(arg) BSC4_GAME_COMMON_EVENT(1,arg)
 #define BSC4_GAME_COMMON_INIT_TUTORIAL(scene) BSC4_GAME_COMMON_EVENT(2,scene)
 
-extern void func_080179f4();
-#define BSC3_SPAWN_CUE(id) BSC_RUN_FUNC_1(func_080179f4,id)
+extern void gameplay_spawn_cue();
+#define BSC3_SPAWN_CUE(id) BSC_RUN_FUNC_1(gameplay_spawn_cue,id)

@@ -85,7 +85,7 @@ branch_0801a248: \n\
 /* 0801a248 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801a24a */ BL func_08007324 \n\
 /* 0801a24e */ BL func_080073f0 \n\
-/* 0801a252 */ BL func_0800c3b8 \n\
+/* 0801a252 */ BL get_current_mem_id \n\
 /* 0801a256 */ LSLS R0, R0, 0x10 \n\
 /* 0801a258 */ LSRS R0, R0, 0x10 \n\
 /* 0801a25a */ LDR R1, =D_089de670 \n\
@@ -108,7 +108,7 @@ branch_0801a248: \n\
 /* 0801a27e */ BL func_080018e0 \n\
 /* 0801a282 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 0801a284 */ BEQ branch_0801a2ca \n\
-/* 0801a286 */ BL func_0800c3b8 \n\
+/* 0801a286 */ BL get_current_mem_id \n\
 /* 0801a28a */ STR R5, [SP] \n\
 /* 0801a28c */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0801a28e */ STR R1, [SP, 0x4] \n\

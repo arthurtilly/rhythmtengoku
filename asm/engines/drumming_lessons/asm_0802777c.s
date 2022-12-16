@@ -12,7 +12,7 @@ thumb_func_start func_0802777c \n\
 /* 08027788 */ STRB R1, [R0] \n\
 /* 0802778a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0802778c */ BL func_08027f4c \n\
-/* 08027790 */ BL func_0800bc40 \n\
+/* 08027790 */ BL beatscript_enable_loops \n\
 /* 08027794 */ POP {R0} \n\
 /* 08027796 */ BX R0 \n\
 \n\

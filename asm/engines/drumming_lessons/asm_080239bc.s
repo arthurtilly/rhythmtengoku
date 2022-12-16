@@ -8,12 +8,12 @@ thumb_func_start func_080239bc \n\
 /* 080239c0 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 080239c2 */ BGE branch_080239cc \n\
 /* 080239c4 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 080239c6 */ BL func_0800e044 \n\
+/* 080239c6 */ BL scene_hide_bg_layer \n\
 /* 080239ca */ B branch_080239e2 \n\
  \n\
 branch_080239cc: \n\
 /* 080239cc */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 080239ce */ BL func_0800e030 \n\
+/* 080239ce */ BL scene_show_bg_layer \n\
 /* 080239d2 */ LDR R1, =D_03004b10 \n\
 /* 080239d4 */ LSLS R0, R4, 0x3 \n\
 /* 080239d6 */ SUBS R0, R0, R4 @ Set R0 to R0 - R4 \n\

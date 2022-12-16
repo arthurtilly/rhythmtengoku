@@ -37,7 +37,7 @@ branch_0803cd5c: \n\
 /* 0803cd7a */ BL func_0804d8f8 \n\
 /* 0803cd7e */ MOVS R0, 0xF0 @ Set R0 to 0xF0 \n\
 /* 0803cd80 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803cd82 */ BL func_08017338 \n\
+/* 0803cd82 */ BL gameplay_set_input_buttons \n\
 /* 0803cd86 */ LDR R0, [R4] \n\
 /* 0803cd88 */ LDR R1, [R7] \n\
 /* 0803cd8a */ MOVS R2, 0xBB @ Set R2 to 0xBB \n\
@@ -68,7 +68,7 @@ branch_0803cd9c: \n\
 /* 0803cdba */ BL func_0804d8f8 \n\
 /* 0803cdbe */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803cdc0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803cdc2 */ BL func_08017338 \n\
+/* 0803cdc2 */ BL gameplay_set_input_buttons \n\
 /* 0803cdc6 */ LDR R0, [R4] \n\
 /* 0803cdc8 */ LDR R1, [R7] \n\
 /* 0803cdca */ MOVS R2, 0xBB @ Set R2 to 0xBB \n\
@@ -88,12 +88,12 @@ branch_0803cdde: \n\
 /* 0803cde2 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
 /* 0803cde4 */ BL func_0803c710 \n\
 /* 0803cde8 */ LDR R0, =s_ninja_hit_seqData \n\
-/* 0803cdea */ BL func_08002634 \n\
+/* 0803cdea */ BL play_sound \n\
 /* 0803cdee */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803cdf0 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 0803cdf2 */ LDRH R1, [R0] \n\
 /* 0803cdf4 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0803cdf6 */ BL func_08002920 \n\
+/* 0803cdf6 */ BL set_soundplayer_volume \n\
 /* 0803cdfa */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0803cdfc */ LDRH R1, [R2] \n\
 /* 0803cdfe */ LSLS R1, R1, 0x11 \n\
@@ -102,7 +102,7 @@ branch_0803cdde: \n\
 /* 0803ce04 */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 0803ce06 */ ASRS R1, R1, 0x10 \n\
 /* 0803ce08 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0803ce0a */ BL func_080028a8 \n\
+/* 0803ce0a */ BL set_soundplayer_pitch \n\
 /* 0803ce0e */ ADD SP, 0xC \n\
 /* 0803ce10 */ POP {R3} \n\
 /* 0803ce12 */ MOV R8, R3 @ Set R8 to R3 \n\

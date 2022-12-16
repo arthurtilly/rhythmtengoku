@@ -6,7 +6,7 @@ thumb_func_start func_0802424c \n\
 /* 0802424c */ PUSH {LR} \n\
 /* 0802424e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08024250 */ BL func_0800c604 \n\
-/* 08024254 */ BL func_08017578 \n\
+/* 08024254 */ BL gameplay_start_screen_fade_in \n\
 /* 08024258 */ LDR R2, =D_03004b10 \n\
 /* 0802425a */ LDR R0, =0x00000436 \n\
 /* 0802425c */ ADDS R3, R2, R0 @ Set R3 to R2 + R0 \n\

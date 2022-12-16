@@ -26,7 +26,7 @@ thumb_func_start func_0802df44 \n\
 /* 0802df70 */ BNE branch_0802df84 \n\
 /* 0802df72 */ LDR R0, =s_change_ball_seqData \n\
 /* 0802df74 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802df76 */ BL func_08002698 \n\
+/* 0802df76 */ BL play_sound_w_pitch_volume \n\
 /* 0802df7a */ LDR R0, [R4] \n\
 /* 0802df7c */ LDR R2, =0x1d3 \n\
 /* 0802df7e */ ADDS R1, R0, R2 @ Set R1 to R0 + R2 \n\

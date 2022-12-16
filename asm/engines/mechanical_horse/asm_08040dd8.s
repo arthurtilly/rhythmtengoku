@@ -36,7 +36,7 @@ thumb_func_start func_08040dd8 \n\
 /* 08040e14 */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 08040e16 */ MOVS R0, 0xFF @ Set R0 to 0xFF \n\
 /* 08040e18 */ STRB R0, [R1] \n\
-/* 08040e1a */ BL func_0800c3b8 \n\
+/* 08040e1a */ BL get_current_mem_id \n\
 /* 08040e1e */ LSLS R0, R0, 0x10 \n\
 /* 08040e20 */ LSRS R0, R0, 0x10 \n\
 /* 08040e22 */ LDR R4, [R4] \n\

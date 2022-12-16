@@ -17,7 +17,7 @@ thumb_func_start func_0804299c \n\
 /* 080429b6 */ LDR R4, =D_089e90d0 \n\
 /* 080429b8 */ LSLS R0, R0, 0x10 \n\
 /* 080429ba */ LSRS R0, R0, 0x10 \n\
-/* 080429bc */ BL func_08001980 \n\
+/* 080429bc */ BL agb_random \n\
 /* 080429c0 */ LSLS R0, R0, 0x10 \n\
 /* 080429c2 */ LSRS R0, R0, 0xF \n\
 /* 080429c4 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
@@ -25,7 +25,7 @@ thumb_func_start func_0804299c \n\
 /* 080429c8 */ LDRSH R2, [R0, R1] \n\
 /* 080429ca */ LDR R0, =s_f_virus_note_land_seqData \n\
 /* 080429cc */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
-/* 080429ce */ BL func_08002698 \n\
+/* 080429ce */ BL play_sound_w_pitch_volume \n\
 /* 080429d2 */ POP {R4} \n\
 /* 080429d4 */ POP {R0} \n\
 /* 080429d6 */ BX R0 \n\

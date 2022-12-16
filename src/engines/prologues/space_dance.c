@@ -16,7 +16,7 @@
 // [func_080474dc] GFX_INIT Func_02
 void func_080474dc(void) {
     func_0800c604(0);
-    func_08017578();
+    gameplay_start_screen_fade_in();
 }
 
 
@@ -25,7 +25,7 @@ void func_080474ec(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(func_0800c3b8(), prologue_space_dance_gfx_table, 0x2000);
+    task = func_08002ee0(get_current_mem_id(), prologue_space_dance_gfx_table, 0x2000);
     task_run_after(task, func_080474dc, 0);
 }
 
@@ -36,7 +36,7 @@ void func_0804751c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(func_0800c3b8(), prologue_space_dance_buffered_textures);
+    task = func_080087b4(get_current_mem_id(), prologue_space_dance_buffered_textures);
     task_run_after(task, func_080474ec, 0);
 }
 
@@ -46,8 +46,8 @@ void func_0804754c(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_0804751c();
-    func_0800e0ec();
-    func_0800e0a0(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
     gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088b7338, 0, 80, 32, 0, 1, 0x7f, 0x8000);
     func_0804dcb8(D_03005380, gPrologueInfo->textSprite, 0x280);

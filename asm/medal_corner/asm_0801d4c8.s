@@ -11,7 +11,7 @@ thumb_func_start func_0801d4c8 \n\
 /* 0801d4d2 */ LDR R0, [R4] \n\
 /* 0801d4d4 */ LDR R0, [R0, 0x14] \n\
 /* 0801d4d6 */ LDRB R6, [R0] \n\
-/* 0801d4d8 */ BL func_0800c3b8 \n\
+/* 0801d4d8 */ BL get_current_mem_id \n\
 /* 0801d4dc */ LSLS R0, R0, 0x10 \n\
 /* 0801d4de */ LSRS R0, R0, 0x10 \n\
 /* 0801d4e0 */ MOVS R1, 0xA @ Set R1 to 0xA \n\

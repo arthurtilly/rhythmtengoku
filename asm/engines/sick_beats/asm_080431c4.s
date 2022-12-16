@@ -42,7 +42,7 @@ jump_08043208: \n\
 /* 0804320e */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 08043210 */ BL func_080432d8 \n\
 /* 08043214 */ LDR R0, =s_f_virus_face_fadeout_seqData \n\
-/* 08043216 */ BL func_08002634 \n\
+/* 08043216 */ BL play_sound \n\
 /* 0804321a */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
 /* 0804321c */ BL func_080435e8 \n\
  \n\

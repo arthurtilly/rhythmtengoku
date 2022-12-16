@@ -58,12 +58,12 @@ branch_0802564e: \n\
 /* 0802564e */ LDRB R0, [R1] \n\
 /* 08025650 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 08025652 */ STRB R0, [R1] \n\
-/* 08025654 */ BL func_0800c3b8 \n\
+/* 08025654 */ BL get_current_mem_id \n\
 /* 08025658 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0802565a */ LSLS R4, R4, 0x10 \n\
 /* 0802565c */ LSRS R4, R4, 0x10 \n\
 /* 0802565e */ MOVS R0, 0x48 @ Set R0 to 0x48 \n\
-/* 08025660 */ BL func_0800c3a4 \n\
+/* 08025660 */ BL beats_to_ticks \n\
 /* 08025664 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08025666 */ LSLS R1, R1, 0x18 \n\
 /* 08025668 */ LSRS R1, R1, 0x18 \n\
@@ -78,12 +78,12 @@ branch_0802564e: \n\
 /* 0802567a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802567c */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 0802567e */ BL func_08001fe0 \n\
-/* 08025682 */ BL func_0800c3b8 \n\
+/* 08025682 */ BL get_current_mem_id \n\
 /* 08025686 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08025688 */ LSLS R4, R4, 0x10 \n\
 /* 0802568a */ LSRS R4, R4, 0x10 \n\
 /* 0802568c */ MOVS R0, 0x48 @ Set R0 to 0x48 \n\
-/* 0802568e */ BL func_0800c3a4 \n\
+/* 0802568e */ BL beats_to_ticks \n\
 /* 08025692 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08025694 */ LSLS R1, R1, 0x18 \n\
 /* 08025696 */ LSRS R1, R1, 0x18 \n\

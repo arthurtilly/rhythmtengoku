@@ -15,7 +15,7 @@ thumb_func_start func_08023c6c \n\
 /* 08023c7e */ LSLS R1, R4, 0x1 \n\
 /* 08023c80 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08023c82 */ LDRH R1, [R1] \n\
-/* 08023c84 */ BL func_080180b0 \n\
+/* 08023c84 */ BL gameplay_set_cue_input_buttons \n\
 /* 08023c88 */ CMP R4, 0x1 @ Compare R4 and 0x1 \n\
 /* 08023c8a */ BEQ branch_08023cc0 \n\
 /* 08023c8c */ CMP R4, 0x1 @ Compare R4 and 0x1 \n\

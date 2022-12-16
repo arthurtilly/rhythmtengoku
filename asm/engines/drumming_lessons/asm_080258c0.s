@@ -97,12 +97,12 @@ branch_0802596c: \n\
 /* 08025996 */ MOVS R0, 0x10 @ Set R0 to 0x10 \n\
 /* 08025998 */ MOVS R1, 0x4 @ Set R1 to 0x4 \n\
 /* 0802599a */ BL func_08001ddc \n\
-/* 0802599e */ BL func_0800c3b8 \n\
+/* 0802599e */ BL get_current_mem_id \n\
 /* 080259a2 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 080259a4 */ LSLS R4, R4, 0x10 \n\
 /* 080259a6 */ LSRS R4, R4, 0x10 \n\
 /* 080259a8 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 080259aa */ BL func_0800c3a4 \n\
+/* 080259aa */ BL beats_to_ticks \n\
 /* 080259ae */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080259b0 */ LSLS R1, R1, 0x18 \n\
 /* 080259b2 */ LSRS R1, R1, 0x18 \n\
@@ -118,12 +118,12 @@ branch_0802596c: \n\
 /* 080259c6 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 080259c8 */ ADDS R3, R6, 0x0 @ Set R3 to R6 + 0x0 \n\
 /* 080259ca */ BL func_08001fe0 \n\
-/* 080259ce */ BL func_0800c3b8 \n\
+/* 080259ce */ BL get_current_mem_id \n\
 /* 080259d2 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 080259d4 */ LSLS R4, R4, 0x10 \n\
 /* 080259d6 */ LSRS R4, R4, 0x10 \n\
 /* 080259d8 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 080259da */ BL func_0800c3a4 \n\
+/* 080259da */ BL beats_to_ticks \n\
 /* 080259de */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080259e0 */ LSLS R1, R1, 0x18 \n\
 /* 080259e2 */ LSRS R1, R1, 0x18 \n\

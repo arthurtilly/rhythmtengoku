@@ -21,7 +21,7 @@ branch_08035792: \n\
  \n\
 branch_0803579a: \n\
 /* 0803579a */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 0803579c */ BL func_0800c3a4 \n\
+/* 0803579c */ BL beats_to_ticks \n\
 /* 080357a0 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080357a2 */ LDR R4, =D_030055d0 \n\
 /* 080357a4 */ LDR R2, [R4] \n\

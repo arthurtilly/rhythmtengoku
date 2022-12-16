@@ -28,18 +28,18 @@ branch_080133dc: \n\
 /* 080133f4 */ LDRB R0, [R6, 0x6] \n\
 /* 080133f6 */ STRB R0, [R6, 0x3] \n\
 /* 080133f8 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 080133fa */ BL func_08001980 \n\
+/* 080133fa */ BL agb_random \n\
 /* 080133fe */ LSLS R0, R0, 0x10 \n\
 /* 08013400 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08013402 */ BEQ branch_0801344e \n\
 /* 08013404 */ MOVS R0, 0x20 @ Set R0 to 0x20 \n\
-/* 08013406 */ BL func_08001980 \n\
+/* 08013406 */ BL agb_random \n\
 /* 0801340a */ STRB R0, [R6, 0x4] \n\
 /* 0801340c */ MOVS R0, 0x20 @ Set R0 to 0x20 \n\
-/* 0801340e */ BL func_08001980 \n\
+/* 0801340e */ BL agb_random \n\
 /* 08013412 */ STRB R0, [R6, 0x5] \n\
 /* 08013414 */ MOVS R0, 0x20 @ Set R0 to 0x20 \n\
-/* 08013416 */ BL func_08001980 \n\
+/* 08013416 */ BL agb_random \n\
 /* 0801341a */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0801341c */ STRB R0, [R6, 0x6] \n\
 /* 0801341e */ LDRB R4, [R6, 0x4] \n\
@@ -73,21 +73,21 @@ branch_08013442: \n\
  \n\
 branch_0801344e: \n\
 /* 0801344e */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08013450 */ BL func_08001980 \n\
+/* 08013450 */ BL agb_random \n\
 /* 08013454 */ LSLS R0, R0, 0x10 \n\
 /* 08013456 */ LSRS R0, R0, 0x10 \n\
 /* 08013458 */ LSLS R1, R0, 0x5 \n\
 /* 0801345a */ SUBS R1, R1, R0 @ Set R1 to R1 - R0 \n\
 /* 0801345c */ STRB R1, [R6, 0x4] \n\
 /* 0801345e */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08013460 */ BL func_08001980 \n\
+/* 08013460 */ BL agb_random \n\
 /* 08013464 */ LSLS R0, R0, 0x10 \n\
 /* 08013466 */ LSRS R0, R0, 0x10 \n\
 /* 08013468 */ LSLS R1, R0, 0x5 \n\
 /* 0801346a */ SUBS R1, R1, R0 @ Set R1 to R1 - R0 \n\
 /* 0801346c */ STRB R1, [R6, 0x5] \n\
 /* 0801346e */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08013470 */ BL func_08001980 \n\
+/* 08013470 */ BL agb_random \n\
 /* 08013474 */ LSLS R0, R0, 0x10 \n\
 /* 08013476 */ LSRS R0, R0, 0x10 \n\
 /* 08013478 */ LSLS R1, R0, 0x5 \n\
@@ -138,7 +138,7 @@ branch_08013484: \n\
 /* 080134d0 */ CMP R0, 0x5F @ Compare R0 and 0x5F \n\
 /* 080134d2 */ BLS branch_080134e2 \n\
 /* 080134d4 */ MOVS R0, 0x3C @ Set R0 to 0x3C \n\
-/* 080134d6 */ BL func_08001980 \n\
+/* 080134d6 */ BL agb_random \n\
 /* 080134da */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 080134dc */ STRH R0, [R6, 0x8] \n\
 /* 080134de */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

@@ -15,7 +15,7 @@ thumb_func_start func_08014f98 \n\
 /* 08014faa */ BL text_printer_fill_vram_tiles \n\
 /* 08014fae */ LDR R0, [R5, 0x4] \n\
 /* 08014fb0 */ STR R0, [SP, 0x18] \n\
-/* 08014fb2 */ BL func_0800c3b8 \n\
+/* 08014fb2 */ BL get_current_mem_id \n\
 /* 08014fb6 */ ADD R1, SP, 0x18 \n\
 /* 08014fb8 */ STR R1, [SP] \n\
 /* 08014fba */ MOVS R5, 0x1 @ Set R5 to 0x1 \n\

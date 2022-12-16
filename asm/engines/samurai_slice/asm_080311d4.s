@@ -11,7 +11,7 @@ thumb_func_start func_080311d4 \n\
 /* 080311de */ ADDS R6, R2, 0x0 @ Set R6 to R2 + 0x0 \n\
 /* 080311e0 */ MOV R8, R3 @ Set R8 to R3 \n\
 /* 080311e2 */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\
-/* 080311e4 */ BL func_0800c3a4 \n\
+/* 080311e4 */ BL beats_to_ticks \n\
 /* 080311e8 */ CMP R6, R0 @ Check R6 - R0 \n\
 /* 080311ea */ BLS branch_080311f0 \n\
 /* 080311ec */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
@@ -35,7 +35,7 @@ branch_080311f0: \n\
 /* 0803120c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803120e */ BEQ branch_08031294 \n\
 /* 08031210 */ MOVS R0, 0xE @ Set R0 to 0xE \n\
-/* 08031212 */ BL func_0800c3a4 \n\
+/* 08031212 */ BL beats_to_ticks \n\
 /* 08031216 */ ADD R0, R8 @ Add R8 to R0 \n\
 /* 08031218 */ CMP R6, R0 @ Check R6 - R0 \n\
 /* 0803121a */ BCC branch_08031294 \n\
@@ -82,7 +82,7 @@ branch_0803124c: \n\
 /* 0803126c */ ADDS R0, R2, R1 @ Set R0 to R2 + R1 \n\
 /* 0803126e */ LDRH R0, [R0] \n\
 /* 08031270 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08031272 */ BL func_0800c0f8 \n\
+/* 08031272 */ BL beatscript_scene_set_music_track_volume \n\
 /* 08031276 */ LDR R1, [R7] \n\
 /* 08031278 */ MOVS R2, 0xEC @ Set R2 to 0xEC \n\
 /* 0803127a */ LSLS R2, R2, 0x1 \n\

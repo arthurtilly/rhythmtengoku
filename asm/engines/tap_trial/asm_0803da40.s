@@ -54,13 +54,13 @@ branch_0803da9e: \n\
 /* 0803daa0 */ BNE branch_0803dac4 \n\
 /* 0803daa2 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0803daa4 */ MOV R8, R2 @ Set R8 to R2 \n\
-/* 0803daa6 */ BL func_0800c3b8 \n\
+/* 0803daa6 */ BL get_current_mem_id \n\
 /* 0803daaa */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803daac */ LSLS R4, R4, 0x10 \n\
 /* 0803daae */ LSRS R4, R4, 0x10 \n\
 /* 0803dab0 */ LDR R5, =func_0803da40 \n\
 /* 0803dab2 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
-/* 0803dab4 */ BL func_0800c3a4 \n\
+/* 0803dab4 */ BL beats_to_ticks \n\
 /* 0803dab8 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0803daba */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803dabc */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
@@ -87,7 +87,7 @@ branch_0803dacc: \n\
 /* 0803dae0 */ BL func_0804ddb0 \n\
 /* 0803dae4 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803dae6 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 0803dae8 */ BL func_0800c3a4 \n\
+/* 0803dae8 */ BL beats_to_ticks \n\
 /* 0803daec */ LSLS R0, R0, 0x10 \n\
 /* 0803daee */ LSRS R0, R0, 0x10 \n\
 /* 0803daf0 */ LSLS R4, R4, 0x10 \n\
@@ -101,7 +101,7 @@ branch_0803dacc: \n\
  \n\
 branch_0803db02: \n\
 /* 0803db02 */ LDRB R0, [R6, 0x8] \n\
-/* 0803db04 */ BL func_0800c3a4 \n\
+/* 0803db04 */ BL beats_to_ticks \n\
 /* 0803db08 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 0803db0a */ LDR R1, [R2] \n\
 /* 0803db0c */ STRH R0, [R1, 0xA] \n\

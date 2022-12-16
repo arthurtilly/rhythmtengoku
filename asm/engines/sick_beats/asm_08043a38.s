@@ -345,7 +345,7 @@ branch_08043cf2: \n\
 /* 08043d00 */ LDR R0, [SP, 0x2C] \n\
 /* 08043d02 */ LDR R1, [SP, 0x30] \n\
 /* 08043d04 */ BL func_080100a8 \n\
-/* 08043d08 */ BL func_0800c1a8 \n\
+/* 08043d08 */ BL get_beatscript_tempo \n\
 /* 08043d0c */ LSLS R0, R0, 0x8 \n\
 /* 08043d0e */ MOVS R1, 0x7D @ Set R1 to 0x7D \n\
 /* 08043d10 */ BL __udivsi3 \n\
@@ -384,7 +384,7 @@ branch_08043cf2: \n\
 /* 08043d5a */ STRB R0, [R3] \n\
 /* 08043d5c */ LDR R1, =s_block_hit_seqData \n\
 /* 08043d5e */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 08043d60 */ BL func_0800267c \n\
+/* 08043d60 */ BL play_sound_in_player \n\
 /* 08043d64 */ B branch_08043d84 \n\
 \n\
 .ltorg \n\
@@ -396,7 +396,7 @@ branch_08043d74: \n\
 /* 08043d7a */ ADDS R0, R3, R0 @ Set R0 to R3 + R0 \n\
 /* 08043d7c */ STRB R1, [R0] \n\
 /* 08043d7e */ LDR R0, [SP, 0x20] \n\
-/* 08043d80 */ BL func_08002634 \n\
+/* 08043d80 */ BL play_sound \n\
  \n\
 branch_08043d84: \n\
 /* 08043d84 */ LDR R0, [SP, 0x2C] \n\

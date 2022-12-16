@@ -14,7 +14,7 @@ thumb_func_start func_080441cc \n\
 /* 080441dc */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080441de */ BEQ branch_080441e6 \n\
 /* 080441e0 */ MOVS R1, 0x1E @ Set R1 to 0x1E \n\
-/* 080441e2 */ BL func_080028d8 \n\
+/* 080441e2 */ BL fade_out_soundplayer \n\
  \n\
 branch_080441e6: \n\
 /* 080441e6 */ LDR R1, =D_089e9b04 \n\

@@ -43,10 +43,10 @@ branch_080255aa: \n\
 /* 080255aa */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080255ac */ MOVS R2, 0x50 @ Set R2 to 0x50 \n\
 /* 080255ae */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080255b0 */ BL func_080026c4 \n\
+/* 080255b0 */ BL play_sound_in_player_w_pitch_volume \n\
 /* 080255b4 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 080255b6 */ LSLS R1, R1, 0x1 \n\
-/* 080255b8 */ BL func_08002894 \n\
+/* 080255b8 */ BL set_soundplayer_speed \n\
 /* 080255bc */ B branch_080255ee \n\
 \n\
 .ltorg \n\
@@ -56,9 +56,9 @@ jump_080255c4: \n\
 /* 080255c6 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080255c8 */ MOVS R2, 0x50 @ Set R2 to 0x50 \n\
 /* 080255ca */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080255cc */ BL func_080026c4 \n\
+/* 080255cc */ BL play_sound_in_player_w_pitch_volume \n\
 /* 080255d0 */ MOVS R1, 0xC0 @ Set R1 to 0xC0 \n\
-/* 080255d2 */ BL func_08002894 \n\
+/* 080255d2 */ BL set_soundplayer_speed \n\
 /* 080255d6 */ B branch_080255ee \n\
 \n\
 .ltorg \n\
@@ -68,9 +68,9 @@ jump_080255dc: \n\
 /* 080255de */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080255e0 */ MOVS R2, 0x60 @ Set R2 to 0x60 \n\
 /* 080255e2 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080255e4 */ BL func_080026c4 \n\
+/* 080255e4 */ BL play_sound_in_player_w_pitch_volume \n\
 /* 080255e8 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
-/* 080255ea */ BL func_08002894 \n\
+/* 080255ea */ BL set_soundplayer_speed \n\
  \n\
 branch_080255ee: \n\
 /* 080255ee */ POP {R0} \n\

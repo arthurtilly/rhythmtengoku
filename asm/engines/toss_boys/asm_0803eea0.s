@@ -43,7 +43,7 @@ branch_0803eeb6: \n\
 /* 0803eee6 */ STRH R0, [R2] \n\
 /* 0803eee8 */ LDRH R0, [R2] \n\
 /* 0803eeea */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803eeec */ BL func_08017338 \n\
+/* 0803eeec */ BL gameplay_set_input_buttons \n\
 /* 0803eef0 */ MOV R6, R8 @ Set R6 to R8 \n\
 /* 0803eef2 */ LDR R3, [R6] \n\
 /* 0803eef4 */ LDR R1, =0x35d \n\

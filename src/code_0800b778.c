@@ -18,7 +18,7 @@ static s32 D_03001310[2]; // unknown type
 
 
 // BeatScript Engine Init.
-void func_0800b778(u32 memID) {
+void start_beatscript_scene(u32 memID) {
     u32 i;
 
     D_030053c0.memID = memID;
@@ -32,13 +32,13 @@ void func_0800b778(u32 memID) {
     D_030053c0.scriptBaseBPM = 120;
     D_030053c0.musicBaseBPM = 120;
     D_030053c0.scriptSpeed = INT_TO_FIXED(1.0);
-    func_0800bdf8(120);
+    set_beatscript_tempo(120);
     D_030053c0.musicPitchSrc2 = 0;
-    func_0800c088(INT_TO_FIXED(0.0));
+    beatscript_scene_set_music_pitch(INT_TO_FIXED(0.0));
     D_030053c0.musicVolume = INT_TO_FIXED(1.0);
     D_030053c0.musicTrkVolume = INT_TO_FIXED(1.0);
     D_030053c0.musicTrkTargets = 0;
-    D_030053c0.musicPitchEnv = 0;
+    D_030053c0.musicKey = 0;
 
     for (i = 0; i < 2; i++) {
         D_030053c0.threads[i].active = FALSE;
@@ -54,7 +54,7 @@ void func_0800b778(u32 memID) {
 
 
 // Set SubScenes
-void func_0800b834(const struct SubScene **subScenes) {
+void set_beatscript_subscenes(const struct SubScene **subScenes) {
     struct BeatScriptThread *thread;
     u32 i;
 
@@ -70,7 +70,7 @@ void func_0800b834(const struct SubScene **subScenes) {
 
     for (i = 0; (i < 2) && (subScenes[i] != NULL); i++) {
         D_030053c0.currentThread = i;
-        func_0800c3c4(D_030053c0.currentThread + 1);
+        set_current_mem_id(D_030053c0.currentThread + 1);
         D_030053c0.threads[i].active = TRUE;
         D_030053c0.threads[i].subScene = subScenes[i];
         D_030053c0.threads[i].current = subScenes[i]->script;
@@ -91,13 +91,13 @@ void func_0800b834(const struct SubScene **subScenes) {
 
 
 // ? (called each loop after the pause menu has been opened at least once, probably by accident)
-void func_0800b974(void) {
+void update_paused_beatscript_scene(void) {
     const struct SubScene *subScene;
     u32 i;
 
     for (i = 0; i < 2; i++) {
         D_030053c0.currentThread = i;
-        func_0800c3c4(D_030053c0.currentThread + 1);
+        set_current_mem_id(D_030053c0.currentThread + 1);
 
         if (D_030053c0.threads[i].active) {
             if (D_030053c0.threads[i].startDelay == 0) {
@@ -114,7 +114,7 @@ void func_0800b974(void) {
 
 
 // BeatScript Engine Update
-void func_0800b9fc(void) {
+void update_active_beatscript_scene(void) {
     struct BeatScriptThread *thread;
     const struct SubScene *subScene;
     void (*subSceneFunc)();
@@ -136,7 +136,7 @@ void func_0800b9fc(void) {
 
     for (i = 0; i < 2; i++) {
         D_030053c0.currentThread = i;
-        func_0800c3c4(D_030053c0.currentThread + 1);
+        set_current_mem_id(D_030053c0.currentThread + 1);
         thread = &D_030053c0.threads[i];
         i2 = i + 1;
 
@@ -184,8 +184,8 @@ void func_0800b9fc(void) {
         func_0800e970();
         func_0800eb1c();
         func_0800ec34();
-        func_08002934(D_030053c0.musicPlayer, D_030053c0.musicTrkTargets, D_030053c0.musicTrkVolume);
-        func_08002920(D_030053c0.musicPlayer, D_030053c0.musicVolume);
+        set_soundplayer_track_volume(D_030053c0.musicPlayer, D_030053c0.musicTrkTargets, D_030053c0.musicTrkVolume);
+        set_soundplayer_volume(D_030053c0.musicPlayer, D_030053c0.musicVolume);
     }
 
     if (!D_030053c0.paused) {
@@ -198,7 +198,7 @@ void func_0800b9fc(void) {
 
 
 // Check if No BeatScript Threads Are Active
-s32 func_0800bc14(void) {
+s32 beatscript_scene_is_inactive(void) {
     u32 i;
 
     for (i = 0; i < 2; i++) {
@@ -211,7 +211,7 @@ s32 func_0800bc14(void) {
 
 
 // Start Loop
-void func_0800bc40(void) {
+void beatscript_enable_loops(void) {
     D_030053c0.bypassLoops = FALSE;
     D_030053c0.exitLoopNextUpdate = FALSE;
 }
@@ -224,13 +224,13 @@ void func_0800bc58(void) {
 
 
 // Exit Loop After Delay
-void func_0800bc68(u32 duration) {
+void beatscript_exit_loop_after_delay(u32 duration) {
     if (D_030053c0.bypassLoops) {
         return;
     }
 
     if (!D_030053c0.exitLoopNextUpdate) {
-        func_0800856c((u16)func_0800c3b8(), func_0800bc58, 0, func_0800c3a4(duration));
+        func_0800856c((u16)get_current_mem_id(), func_0800bc58, 0, beats_to_ticks(duration));
         if (D_030053c0.memID == 1) {
             func_0800c3ec(2);
         }
@@ -239,13 +239,13 @@ void func_0800bc68(u32 duration) {
 
 
 // Exit Loop After One Beat
-void func_0800bcb8(void) {
-    func_0800bc68(0x18);
+void beatscript_exit_loop_after_one_beat(void) {
+    beatscript_exit_loop_after_delay(0x18);
 }
 
 
 // Exit Loop (If Within a Loop)
-void func_0800bcc4(void) {
+void beatscript_force_exit_loop(void) {
     if (D_030053c0.bypassLoops) {
         return;
     }
@@ -257,38 +257,38 @@ void func_0800bcc4(void) {
 
 
 // Force Stop Loop
-void func_0800bce4(void) {
+void beatscript_disable_loops(void) {
     D_030053c0.bypassLoops = TRUE;
 }
 
 
 // Exit Loop on Next Update
-void func_0800bcf4(void) {
+void beatscript_force_exit_loop_next_update(void) {
     D_030053c0.exitLoopNextUpdate = TRUE;
 }
 
 
 // Pause Script
-void func_0800bd04(u32 pause) {
+void pause_beatscript_scene(u32 pause) {
     D_030053c0.paused = pause;
 }
 
 
 // Check if BeatScript Handler Is Paused
-u32 func_0800bd1c(void) {
+u32 beatscript_scene_is_paused(void) {
     return D_030053c0.paused;
 }
 
 
 // BeatScript Engine Force Quit
-void func_0800bd2c(void) {
+void stop_beatscript_scene(void) {
     struct BeatScriptThread *thread;
     const struct SubScene *subScene;
     u32 i, i2;
 
     for (i = 0; i < 2; i++) {
         D_030053c0.currentThread = i;
-        func_0800c3c4(D_030053c0.currentThread + 1);
+        set_current_mem_id(D_030053c0.currentThread + 1);
         thread = &D_030053c0.threads[i];
         subScene = thread->subScene;
         i2 = i + 1;
@@ -310,7 +310,7 @@ void func_0800bd2c(void) {
 
 
 // Set Tempo
-void func_0800bdf8(u16 tempo) {
+void set_beatscript_tempo(u16 tempo) {
     s32 speed;
 
     D_030053c0.scriptBaseBPM = tempo;
@@ -325,26 +325,26 @@ void func_0800bdf8(u16 tempo) {
     speed /= D_030053c0.musicBaseBPM;
     D_030053c0.unk14 = D_030053c0.musicBaseBPM * speed / 150u;
     if (D_030053c0.musicPlayer != NULL) {
-        func_08002894(D_030053c0.musicPlayer, speed);
+        set_soundplayer_speed(D_030053c0.musicPlayer, speed);
     }
     D_030053c0.unk1_b7 = FALSE;
 }
 
 
 // Update Script Tempo (retain unk1_b7)
-void func_0800be64(void) {
+void update_beatscript_tempo(void) {
     u32 flag;
 
     flag = D_030053c0.unk1_b7;
-    func_0800bdf8(D_030053c0.scriptBaseBPM);
+    set_beatscript_tempo(D_030053c0.scriptBaseBPM);
     D_030053c0.unk1_b7 = flag;
 }
 
 
 // Set Script Speed (Q8.8)
-void func_0800be88(u16 speed) {
+void set_beatscript_speed(u16 speed) {
     D_030053c0.scriptSpeed = speed;
-    func_0800be64();
+    update_beatscript_tempo();
 }
 
 
@@ -356,21 +356,21 @@ void func_0800be9c(void) {
 // Set unk0_b7
 void func_0800bea0(u32 arg) {
     D_030053c0.unk0_b7 = arg;
-    func_0800be64();
+    update_beatscript_tempo();
 }
 
 
 // Set unk1C
 void func_0800bebc(u32 arg) {
     D_030053c0.unk1C = arg;
-    func_0800be64();
+    update_beatscript_tempo();
 }
 
 
 // Play Music
-u32 func_0800bed0(const struct SequenceData *music, u32 override, s32 soundPlayer) {
+u32 beatscript_scene_new_music(const struct SequenceData *music, u32 override, s32 soundPlayer) {
     if ((D_030053c0.musicPlayer != NULL) && override) {
-        func_08002828(D_030053c0.musicPlayer);
+        stop_soundplayer(D_030053c0.musicPlayer);
     }
     if (music == NULL) {
         D_030053c0.musicPlayer = NULL;
@@ -379,122 +379,122 @@ u32 func_0800bed0(const struct SequenceData *music, u32 override, s32 soundPlaye
     D_03005b3c = LFO_MODE_DISABLED;
     func_08049be4();
     func_08049b70(0);
-    D_030053c0.musicPlayer = (soundPlayer < 0) ? func_08002634(music) : func_0800267c(soundPlayer, music);
-    D_030053c0.musicBaseBPM = func_080102d0(music);
-    func_0800be64();
-    func_0800c060();
-    func_08002920(D_030053c0.musicPlayer, D_030053c0.musicVolume);
-    func_08002934(D_030053c0.musicPlayer, D_030053c0.musicTrkTargets, D_030053c0.musicTrkVolume);
-    func_080029c4(D_030053c0.musicPlayer, D_030053c0.musicPitchEnv);
+    D_030053c0.musicPlayer = (soundPlayer < 0) ? play_sound(music) : play_sound_in_player(soundPlayer, music);
+    D_030053c0.musicBaseBPM = get_music_base_tempo(music);
+    update_beatscript_tempo();
+    beatscript_scene_update_music_pitch();
+    set_soundplayer_volume(D_030053c0.musicPlayer, D_030053c0.musicVolume);
+    set_soundplayer_track_volume(D_030053c0.musicPlayer, D_030053c0.musicTrkTargets, D_030053c0.musicTrkVolume);
+    set_soundplayer_key(D_030053c0.musicPlayer, D_030053c0.musicKey);
 }
 
 
 // Play Music (Override Existing)
-void func_0800bf7c(const struct SequenceData *music) {
-    func_0800bed0(music, TRUE, -1);
+void beatscript_scene_set_music(const struct SequenceData *music) {
+    beatscript_scene_new_music(music, TRUE, -1);
 }
 
 
 // Play Music (No Override)
-void func_0800bf8c(const struct SequenceData *music) {
-    func_0800bed0(music, FALSE, -1);
+void beatscript_scene_play_music(const struct SequenceData *music) {
+    beatscript_scene_new_music(music, FALSE, -1);
 }
 
 
 // Play Music in Given SoundPlayer (Override)
-void func_0800bf9c(const struct SequenceData *music, s32 soundPlayer) {
-    func_0800bed0(music, TRUE, soundPlayer);
+void beatscript_scene_set_music_with_soundplayer(const struct SequenceData *music, s32 soundPlayer) {
+    beatscript_scene_new_music(music, TRUE, soundPlayer);
 }
 
 
 // Play Music in Given SoundPlayer (No Override)
-void func_0800bfac(const struct SequenceData *music, s32 soundPlayer) {
-    func_0800bed0(music, FALSE, soundPlayer);
+void beatscript_scene_play_music_with_soundplayer(const struct SequenceData *music, s32 soundPlayer) {
+    beatscript_scene_new_music(music, FALSE, soundPlayer);
 }
 
 
 // Play Music (override, use predefined SoundPlayer ID)
-void func_0800bfbc(const struct SequenceData *music) {
+void beatscript_scene_play_music_ignore_lfo(const struct SequenceData *music) {
     struct SoundPlayer *player;
 
-    player = func_08002a18(music);
+    player = get_soundplayer_by_sound(music);
     if (player == NULL) return;
 
     D_030053c0.musicPlayer = player;
-    D_030053c0.musicBaseBPM = func_080102d0(music);
-    func_0800be64();
-    func_0800c060();
-    func_08002920(D_030053c0.musicPlayer, D_030053c0.musicVolume);
-    func_08002934(D_030053c0.musicPlayer, D_030053c0.musicTrkTargets, D_030053c0.musicTrkVolume);
-    func_080029c4(D_030053c0.musicPlayer, D_030053c0.musicPitchEnv);
+    D_030053c0.musicBaseBPM = get_music_base_tempo(music);
+    update_beatscript_tempo();
+    beatscript_scene_update_music_pitch();
+    set_soundplayer_volume(D_030053c0.musicPlayer, D_030053c0.musicVolume);
+    set_soundplayer_track_volume(D_030053c0.musicPlayer, D_030053c0.musicTrkTargets, D_030053c0.musicTrkVolume);
+    set_soundplayer_key(D_030053c0.musicPlayer, D_030053c0.musicKey);
 }
 
 
 // Stop Music
-void func_0800c01c(void) {
-    func_08002828(D_030053c0.musicPlayer);
+void beatscript_scene_stop_music(void) {
+    stop_soundplayer(D_030053c0.musicPlayer);
 }
 
 
 // Fade-In Music
-void func_0800c030(u16 duration) {
-    func_080028c4(D_030053c0.musicPlayer, duration);
+void beatscript_scene_fade_in_music(u16 duration) {
+    fade_in_soundplayer(D_030053c0.musicPlayer, duration);
 }
 
 
 // Fade-Out Music
-void func_0800c048(u16 duration) {
-    func_080028d8(D_030053c0.musicPlayer, duration);
+void beatscript_scene_fade_out_music(u16 duration) {
+    fade_out_soundplayer(D_030053c0.musicPlayer, duration);
 }
 
 
 // Update Music Pitch (retain unk2_b0)
-void func_0800c060(void) {
+void beatscript_scene_update_music_pitch(void) {
     u32 flag;
 
     flag = D_030053c0.unk2_b0;
-    func_0800c088(D_030053c0.musicPitchSrc1);
+    beatscript_scene_set_music_pitch(D_030053c0.musicPitchSrc1);
     D_030053c0.unk2_b0 = flag;
 }
 
 
 // Set Music Pitch
-void func_0800c088(s16 pitch) {
+void beatscript_scene_set_music_pitch(s16 pitch) {
     D_030053c0.musicPitchSrc1 = pitch;
     pitch += D_030053c0.musicPitchSrc2;
     D_030053c0.musicPitch = pitch;
     if (D_030053c0.musicPlayer != NULL) {
-        func_080028a8(D_030053c0.musicPlayer, pitch);
+        set_soundplayer_pitch(D_030053c0.musicPlayer, pitch);
     }
     D_030053c0.unk2_b0 = FALSE;
 }
 
 
 // Set Music Pitch Source 2
-void func_0800c0c4(s16 pitch) {
+void beatscript_scene_set_music_pitch_env(s16 pitch) {
     D_030053c0.musicPitchSrc2 = pitch;
-    func_0800c060();
+    beatscript_scene_update_music_pitch();
 }
 
 
 // Set Music Volume
-void func_0800c0d8(u16 volume) {
+void beatscript_scene_set_music_volume(u16 volume) {
     D_030053c0.musicVolume = volume;
-    func_08002920(D_030053c0.musicPlayer, volume);
+    set_soundplayer_volume(D_030053c0.musicPlayer, volume);
 }
 
 
 // Set Volume for Selected Music Channels
-void func_0800c0f8(u16 selection, u16 volume) {
+void beatscript_scene_set_music_track_volume(u16 selection, u16 volume) {
     D_030053c0.musicTrkVolume = volume;
     D_030053c0.musicTrkTargets = selection;
-    func_08002934(D_030053c0.musicPlayer, selection, volume);
+    set_soundplayer_track_volume(D_030053c0.musicPlayer, selection, volume);
 }
 
 
-// Set Music Volume (it just calls func_0800c0d8())
-void func_0800c128(u16 volume) {
-    func_0800c0d8(volume);
+// Set Music Volume (it just calls beatscript_scene_set_music_volume())
+void beatscript_scene_set_music_volume_env(u16 volume) {
+    beatscript_scene_set_music_volume(volume);
 }
 
 
@@ -512,7 +512,7 @@ void func_0800c1a4_stub(void) {
 
 
 // Get Current Script Tempo
-u32 func_0800c1a8(void) {
+u32 get_beatscript_tempo(void) {
     return D_030053c0.scriptBPM;
 }
 
@@ -545,19 +545,19 @@ u32 func_0800c1a8(void) {
 
 
 // Convert Script Beats To Real-Time Ticks
-s32 func_0800c3a4(u32 beats) {
+s32 beats_to_ticks(u32 beats) {
     fast_divsi3(INT_TO_FIXED(beats), D_030053c0.unk14);
 }
 
 
 // Get Current Active Thread (Memory ID / SubScene)
-u32 func_0800c3b8() {
+u32 get_current_mem_id() {
     return D_03001310[0];
 }
 
 
 // Set Current Active Thread (Memory ID / SubScene)
-void func_0800c3c4(u32 id) {
+void set_current_mem_id(u32 id) {
     D_03001310[0] = id;
     func_0804e0bc(D_03005380, id);
 }
@@ -597,8 +597,8 @@ void func_0800c3c4(u32 id) {
 
 
 // Allocate memory for a struct of size [arg0] (bytes). (?)
-void *func_0800c43c(u32 size) {
-    return mem_heap_alloc_id(func_0800c3b8(), size);
+void *beatscript_scene_mem_heap_alloc(u32 size) {
+    return mem_heap_alloc_id(get_current_mem_id(), size);
 }
 
 
@@ -675,12 +675,12 @@ void func_0800dfc0(void) {
 s32 func_0800dfc4(void) {
     void *r0;
 
-    r0 = (s32 *)((func_0800c3b8() * 0x9c));
+    r0 = (s32 *)((get_current_mem_id() * 0x9c));
     r0 += ((s32)&D_030053c0 - 0x74); // ((s32)&D_03004b10 + 0x83c)
     r0 += 0x98;
     return *((s32 *)r0);
 
-    // return *((s32 *)&D_030053c0.threads[func_0800c3b8()]-1);
+    // return *((s32 *)&D_030053c0.threads[get_current_mem_id()]-1);
 }
 
 
@@ -755,7 +755,7 @@ void func_0800e014(void) {
 
 
 // Set Video Mode
-void func_0800e018(s32 videoMode) {
+void scene_set_video_mode(s32 videoMode) {
     u16 *displayControls = &D_03004b10.DISPCNT;
 
     *displayControls &= ~DISPCNT_VIDEO_MODE_MASK;
@@ -764,19 +764,19 @@ void func_0800e018(s32 videoMode) {
 
 
 // Show BG Layer
-void func_0800e030(s32 layer) {
+void scene_show_bg_layer(s32 layer) {
     D_03004b10.DISPCNT |= (DISPCNT_DISPLAY_BG(layer));
 }
 
 
 // Hide BG Layer
-void func_0800e044(s32 layer) {
+void scene_hide_bg_layer(s32 layer) {
     D_03004b10.DISPCNT &= ~(DISPCNT_DISPLAY_BG(layer));
 }
 
 
 // Set BG Layer Position
-void func_0800e058(s32 layer, s16 x, s16 y) {
+void scene_set_bg_layer_pos(s32 layer, s16 x, s16 y) {
     struct Vector2 *bgOfs = D_03004b10.BG_OFS;
 
     bgOfs[layer].x = x;
@@ -785,7 +785,7 @@ void func_0800e058(s32 layer, s16 x, s16 y) {
 
 
 // Set BG Layer Render Data
-void func_0800e068(s32 layer, s32 tileset, s32 map, s32 priority) {
+void scene_set_bg_layer_controls(s32 layer, s32 tileset, s32 map, s32 priority) {
     u16 *bgControls = D_03004b10.BG_CNT;
 
     bgControls[layer] = BGCNT_TILEDATA_ADDR(tileset) | BGCNT_TILEMAP_ADDR(map) | BGCNT_PRIORITY(priority);
@@ -793,7 +793,7 @@ void func_0800e068(s32 layer, s32 tileset, s32 map, s32 priority) {
 
 
 // Set BG Layer Priority
-void func_0800e084(s32 layer, s32 priority) {
+void scene_set_bg_layer_priority(s32 layer, s32 priority) {
     u16 *bgControls = D_03004b10.BG_CNT;
 
     bgControls[layer] &= ~BGCNT_PRIORITY_MASK;
@@ -802,20 +802,20 @@ void func_0800e084(s32 layer, s32 priority) {
 
 
 // Set BG Layer Controls
-void func_0800e0a0(s32 layer, s32 show, s32 x, s32 y, s32 tileset, s32 map, s32 priority) {
-    func_0800e058(layer, x, y);
-    func_0800e068(layer, tileset, map, priority);
+void scene_set_bg_layer_display(s32 layer, s32 show, s32 x, s32 y, s32 tileset, s32 map, s32 priority) {
+    scene_set_bg_layer_pos(layer, x, y);
+    scene_set_bg_layer_controls(layer, tileset, map, priority);
 
     if (show) {
-        func_0800e030(layer);
+        scene_show_bg_layer(layer);
     } else {
-        func_0800e044(layer);
+        scene_hide_bg_layer(layer);
     }
 }
 
 
 // Display OBJ Layer
-void func_0800e0ec(void) {
+void scene_show_obj_layer(void) {
     u16 *displayControls = &D_03004b10.DISPCNT;
 
     *displayControls |= DISPCNT_DISPLAY_OAM;
@@ -823,7 +823,7 @@ void func_0800e0ec(void) {
 
 
 // Hide OBJ Layer
-void func_0800e100(void) {
+void scene_hide_obj_layer(void) {
     u16 *displayControls = &D_03004b10.DISPCNT;
 
     *displayControls &= ~DISPCNT_DISPLAY_OAM;
@@ -831,7 +831,7 @@ void func_0800e100(void) {
 
 
 // Enable OBJ Windows
-void func_0800e114(void) {
+void scene_enable_obj_windows(void) {
     u16 *displayControls = &D_03004b10.DISPCNT;
 
     *displayControls |= DISPCNT_ENABLE_SPRITE_WINDOWS;
@@ -839,7 +839,7 @@ void func_0800e114(void) {
 
 
 // Disable OBJ Windows
-void func_0800e128(void) {
+void scene_disable_obj_windows(void) {
     u16 *displayControls = &D_03004b10.DISPCNT;
 
     *displayControls &= ~DISPCNT_ENABLE_SPRITE_WINDOWS;
@@ -847,7 +847,7 @@ void func_0800e128(void) {
 
 
 // Set OBJ Mosaic Size
-void func_0800e13c(s16 xSize, s16 ySize) {
+void scene_set_obj_mosaic_size(s16 xSize, s16 ySize) {
     if (xSize >= 0) {
         D_03004b10.MOSAIC &= ~MOSAIC_SPR_XSIZE_MASK;
         D_03004b10.MOSAIC |= MOSAIC_SPR_XSIZE(xSize);
@@ -860,7 +860,7 @@ void func_0800e13c(s16 xSize, s16 ySize) {
 
 
 // Set BG Mosaic Size
-void func_0800e184(s16 xSize, s16 ySize) {
+void scene_set_bg_mosaic_size(s16 xSize, s16 ySize) {
     if (xSize >= 0) {
         D_03004b10.MOSAIC &= ~MOSAIC_BG_XSIZE_MASK;
         D_03004b10.MOSAIC |= MOSAIC_BG_XSIZE(xSize);

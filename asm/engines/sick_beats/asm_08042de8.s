@@ -42,7 +42,7 @@ branch_08042e1c: \n\
  \n\
 branch_08042e2a: \n\
 /* 08042e2a */ LDRB R0, [R5, 0x1] \n\
-/* 08042e2c */ BL func_08017908 \n\
+/* 08042e2c */ BL gameplay_set_marking_criteria \n\
 /* 08042e30 */ B branch_08042e66 \n\
  \n\
 branch_08042e32: \n\
@@ -72,7 +72,7 @@ branch_08042e3e: \n\
 /* 08042e5c */ ADDS R1, R6, R2 @ Set R1 to R6 + R2 \n\
 /* 08042e5e */ STRB R0, [R1] \n\
 /* 08042e60 */ LDRB R0, [R5, 0x1] \n\
-/* 08042e62 */ BL func_080179f4 \n\
+/* 08042e62 */ BL gameplay_spawn_cue \n\
  \n\
 branch_08042e66: \n\
 /* 08042e66 */ ADDS R5, 0x4 @ Add 0x4 to R5 \n\

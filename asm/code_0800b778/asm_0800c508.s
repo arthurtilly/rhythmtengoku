@@ -26,7 +26,7 @@ thumb_func_start func_0800c508 \n\
 /* 0800c530 */ STR R2, [SP, 0x8] \n\
 /* 0800c532 */ STR R3, [SP, 0xC] \n\
 /* 0800c534 */ STR R7, [SP, 0x10] \n\
-/* 0800c536 */ BL func_0800c3b8 \n\
+/* 0800c536 */ BL get_current_mem_id \n\
 /* 0800c53a */ LSLS R0, R0, 0x10 \n\
 /* 0800c53c */ LSRS R0, R0, 0x10 \n\
 /* 0800c53e */ LDR R1, =D_08936c24 \n\

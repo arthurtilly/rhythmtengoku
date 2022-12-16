@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080186d4 \n\
+thumb_func_start gameplay_display_text_and_wait \n\
 /* 080186d4 */ PUSH {R4, R5, LR} \n\
 /* 080186d6 */ LDR R5, =D_030046a4 \n\
 /* 080186d8 */ LDR R1, [R5] \n\
@@ -29,7 +29,7 @@ thumb_func_start func_080186d4 \n\
 .ltorg \n\
  \n\
 branch_0801870c: \n\
-/* 0801870c */ BL func_08018698 \n\
+/* 0801870c */ BL gameplay_align_text_advance_icon_to_text \n\
 /* 08018710 */ LDR R0, [R5] \n\
 /* 08018712 */ LDR R1, =0x49d \n\
 /* 08018714 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
@@ -49,9 +49,9 @@ branch_08018718: \n\
 /* 0801872c */ STRH R1, [R0] \n\
 /* 0801872e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08018730 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08018732 */ BL func_08017338 \n\
+/* 08018732 */ BL gameplay_set_input_buttons \n\
 /* 08018736 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 08018738 */ BL func_0800bd04 \n\
+/* 08018738 */ BL pause_beatscript_scene \n\
 /* 0801873c */ LDR R0, [R4] \n\
 /* 0801873e */ LDR R3, =0x49c \n\
 /* 08018740 */ ADDS R0, R0, R3 @ Set R0 to R0 + R3 \n\

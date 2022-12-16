@@ -29,7 +29,7 @@ branch_080385bc: \n\
 /* 080385c6 */ MOVS R1, 0xC0 @ Set R1 to 0xC0 \n\
 /* 080385c8 */ LSLS R1, R1, 0x1 \n\
 /* 080385ca */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080385cc */ BL func_08002698 \n\
+/* 080385cc */ BL play_sound_w_pitch_volume \n\
 /* 080385d0 */ B branch_080385e8 \n\
 \n\
 .ltorg \n\
@@ -39,7 +39,7 @@ branch_080385dc: \n\
 /* 080385de */ MOVS R1, 0xC0 @ Set R1 to 0xC0 \n\
 /* 080385e0 */ LSLS R1, R1, 0x1 \n\
 /* 080385e2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080385e4 */ BL func_08002698 \n\
+/* 080385e4 */ BL play_sound_w_pitch_volume \n\
  \n\
 branch_080385e8: \n\
 /* 080385e8 */ POP {R4, R5} \n\

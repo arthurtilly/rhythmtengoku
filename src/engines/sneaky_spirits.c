@@ -27,9 +27,9 @@ void func_0801ee98(u32 position) {
     func_0804d5d4(D_03005380, ghostSprite, x, y);
     func_0804d770(D_03005380, ghostSprite, 1);
     func_0804cebc(D_03005380, ghostSprite, 0);
-    func_0804dcb8(D_03005380, ghostSprite, (func_0800c1a8() << 8) / 100);
+    func_0804dcb8(D_03005380, ghostSprite, (get_beatscript_tempo() << 8) / 100);
     func_0804d614(D_03005380, gSneakySpiritsInfo->ghostMask, x);
-    func_08002698(&s_ghost_walk_seqData, (gSneakySpiritsInfo->ghostHeight * 15) >> 5, 0);
+    play_sound_w_pitch_volume(&s_ghost_walk_seqData, (gSneakySpiritsInfo->ghostHeight * 15) >> 5, 0);
 }
 
 
@@ -60,7 +60,7 @@ void func_0801f040(void) {
     for (i = 0; i < 4; i++) {
         sprite = gSneakySpiritsInfo->rainDrops[gSneakySpiritsInfo->rainDropNext];
         func_0804d8f8(D_03005380, sprite, sneaky_spirits_anim12, 0, 1, 0, 2);
-        func_0804d5d4(D_03005380, sprite, func_08001980(240), func_08001980(64) + 48);
+        func_0804d5d4(D_03005380, sprite, agb_random(240), agb_random(64) + 48);
         func_0804d770(D_03005380, sprite, 1);
 
         gSneakySpiritsInfo->rainDropNext += 1;
@@ -72,7 +72,7 @@ void func_0801f040(void) {
     for (i = 0; i < 4; i++) {
         sprite = gSneakySpiritsInfo->rainSplashes[gSneakySpiritsInfo->rainSplashNext];
         func_0804cebc(D_03005380, sprite, 0);
-        func_0804d5d4(D_03005380, sprite, func_08001980(240), func_08001980(50) + 110);
+        func_0804d5d4(D_03005380, sprite, agb_random(240), agb_random(50) + 110);
         func_0804d770(D_03005380, sprite, 1);
 
         gSneakySpiritsInfo->rainSplashNext += 1;
@@ -100,10 +100,10 @@ void func_0801f194(u32 slowMotion) {
     if (slowMotion) {
         for (i = 0; i < 30; i++) {
             sprite = gSneakySpiritsInfo->rainDrops[i];
-            temp = (!gSneakySpiritsInfo->freezeRain) ? 0x100 / (func_08001980(3) + 1) : 0;
+            temp = (!gSneakySpiritsInfo->freezeRain) ? 0x100 / (agb_random(3) + 1) : 0;
 
             func_0804d8f8(D_03005380, sprite, sneaky_spirits_anim14, 0, 1, 0x7f, 0);
-            func_0804d5d4(D_03005380, sprite, func_08001980(240), func_08001980(160));
+            func_0804d5d4(D_03005380, sprite, agb_random(240), agb_random(160));
             func_0804dcb8(D_03005380, sprite, temp);
             func_0804d770(D_03005380, sprite, 1);
         }
@@ -149,7 +149,7 @@ void func_0801f318(u32 freezeRain) {
 // [func_0801f328] GFX_INIT Func_02
 void func_0801f328(void) {
     func_0800c604(0);
-    func_08017578();
+    gameplay_start_screen_fade_in();
 }
 
 
@@ -158,7 +158,7 @@ void func_0801f338(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(func_0800c3b8(), sneaky_spirits_gfx_tables[gSneakySpiritsInfo->version], 0x2000);
+    task = func_08002ee0(get_current_mem_id(), sneaky_spirits_gfx_tables[gSneakySpiritsInfo->version], 0x2000);
     task_run_after(task, func_0801f328, 0);
 }
 
@@ -168,7 +168,7 @@ void func_0801f378(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(func_0800c3b8(), sneaky_spirits_buffered_textures);
+    data = func_080087b4(get_current_mem_id(), sneaky_spirits_buffered_textures);
     task_run_after(data, func_0801f338, 0);
 }
 
@@ -179,9 +179,9 @@ void func_0801f3a4(u32 ver) {
 
     gSneakySpiritsInfo->version = ver;
     func_0801f378();
-    func_0800e0ec();
-    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
-    func_0800e0a0(2, 1, 0, 0, 0, 30, 2);
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
+    scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, 2);
 
     gSneakySpiritsInfo->unk0 = func_0800c660(0x380, 1);
     textAnim = func_08004b98(gSneakySpiritsInfo->unk0, D_08059f90, 0, 0);
@@ -204,7 +204,7 @@ void func_0801f3a4(u32 ver) {
 
     gSneakySpiritsInfo->rainChannel = NULL;
 
-    func_08017338(0, 0);
+    gameplay_set_input_buttons(0, 0);
     gSneakySpiritsInfo->slowMotionHit = TRUE;
     if (ver == SNEAKY_SPIRITS_VERSION_REMIX) {
         gSneakySpiritsInfo->slowMotionHit = FALSE;
@@ -220,7 +220,7 @@ void func_0801f5bc(void) {
 // [func_0801f5c0] ENGINE Func_01 - Next Vertical Position
 void func_0801f5c0(u32 height) {
     gSneakySpiritsInfo->ghostHeight = height;
-    func_0800c4b0(1, func_0800c3a4(0xc), &D_030053c0.musicVolume, D_030053c0.musicVolume, height);
+    func_0800c4b0(1, beats_to_ticks(0xc), &D_030053c0.musicVolume, D_030053c0.musicVolume, height);
 }
 
 
@@ -235,7 +235,7 @@ void func_0801f5f4(void) {
 void func_0801f638(void) {
     if (!gSneakySpiritsInfo->arrowReady) {
         gSneakySpiritsInfo->arrowReady = TRUE;
-        func_08017338(A_BUTTON, 0);
+        gameplay_set_input_buttons(A_BUTTON, 0);
         func_0804d8f8(D_03005380, gSneakySpiritsInfo->bow, sneaky_spirits_anim00, 0, 1, 0x7f, 0);
     }
 }
@@ -244,12 +244,12 @@ void func_0801f638(void) {
 // [func_0801f684] ENGINE Func_04 - Play Wind/Rain SFX
 void func_0801f684(u32 play) {
     if (!play && (gSneakySpiritsInfo->rainChannel != NULL)) {
-        func_08002920(gSneakySpiritsInfo->rainChannel, 0);
-        func_08002828(gSneakySpiritsInfo->rainChannel);
+        set_soundplayer_volume(gSneakySpiritsInfo->rainChannel, 0);
+        stop_soundplayer(gSneakySpiritsInfo->rainChannel);
         gSneakySpiritsInfo->rainChannel = NULL;
     }
     else if (play) {
-        gSneakySpiritsInfo->rainChannel = func_08002634(&s_ghost_rain_seqData);
+        gSneakySpiritsInfo->rainChannel = play_sound(&s_ghost_rain_seqData);
     }
 }
 
@@ -261,7 +261,7 @@ void func_0801f6d0(void) {
     if (gSneakySpiritsInfo->rainChannel == NULL) return;
 
     rainVolume = func_080087d4((0x100 - D_030053c0.musicVolume) / 2, 0, 128) + 0x40;
-    func_08002920(gSneakySpiritsInfo->rainChannel, rainVolume);
+    set_soundplayer_volume(gSneakySpiritsInfo->rainChannel, rainVolume);
 }
 
 
@@ -293,9 +293,9 @@ void func_0801f7bc(void) {
 
 // [func_0801f7cc] MAIN - Close
 void func_0801f7cc(void) {
-    func_0800be88(0x100);
-    func_0800c0c4(0);
-    func_0800c0f8(0, 0);
+    set_beatscript_speed(0x100);
+    beatscript_scene_set_music_pitch_env(0);
+    beatscript_scene_set_music_track_volume(0, 0);
 }
 
 
@@ -307,7 +307,7 @@ void func_0801f7e8(struct Cue *cue, struct SneakySpiritsCue *info, u32 disableTa
 
 // [func_0801f7f0] CUE - Update
 u32 func_0801f7f0(struct Cue *cue, struct SneakySpiritsCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > func_0800c3a4(0x30)) {
+    if (runningTime > beats_to_ticks(0x30)) {
         return TRUE;
     } else {
         return FALSE;
@@ -325,17 +325,17 @@ void func_0801f810(void) {
     func_0800c604(0);
 
     if (gSneakySpiritsInfo->slowMotionHit) {
-        func_0800be88(0x100);   // Reset Game Speed
-        func_0800c0c4(0);       // Reset Music Pitch
-        func_0800c0f8(0, 0);    // Reset Music Channel Volume
+        set_beatscript_speed(0x100);   // Reset Game Speed
+        beatscript_scene_set_music_pitch_env(0);       // Reset Music Pitch
+        beatscript_scene_set_music_track_volume(0, 0);    // Reset Music Channel Volume
     }
 
     func_0804d770(D_03005380, gSneakySpiritsInfo->ghostHit, 0);
     func_0804dae0(D_03005380, gSneakySpiritsInfo->door, -1, 0, 0);
     func_0804cebc(D_03005380, gSneakySpiritsInfo->door, 3);
-    func_0801f194(0);
+    func_0801f194(FALSE);
     func_0804d8f8(D_03005380, gSneakySpiritsInfo->bow, sneaky_spirits_anim15, 0, 1, 0x7f, 0);
-    func_0804dcb8(D_03005380, gSneakySpiritsInfo->ghostWalk, (func_0800c1a8() << 8) / 100);
+    func_0804dcb8(D_03005380, gSneakySpiritsInfo->ghostWalk, (get_beatscript_tempo() << 8) / 100);
 }
 
 
@@ -347,21 +347,21 @@ void func_0801f8d0(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, 
     u32 temp;
 
     if (gSneakySpiritsInfo->slowMotionHit) {
-        func_0800be88(0x40);        // Set Game Speed (0x40 = 0.25; Default = 0x100)
-        func_0800c0c4(-0xc00);      // Set Music Pitch (-0xc00 = -12 semitones; Default = 0)
-        func_0800c0f8((1 << 9), 0); // Set Music Channel 9 Volume to 0
+        set_beatscript_speed(0x40);        // Set Game Speed (0x40 = 0.25; Default = 0x100)
+        beatscript_scene_set_music_pitch_env(-0xc00);      // Set Music Pitch (-0xc00 = -12 semitones; Default = 0)
+        beatscript_scene_set_music_track_volume((1 << 9), 0); // Set Music Channel 9 Volume to 0
 
-        duration = func_0800c3a4(0x16) - func_08018054();
+        duration = beats_to_ticks(0x16) - gameplay_get_last_hit_offset();
         xVel = 68;
         yVel = 60;
     } else {
-        duration = func_0800c3a4(0x30) - func_08018054();
+        duration = beats_to_ticks(0x30) - gameplay_get_last_hit_offset();
         xVel = 84;
         yVel = 68;
     }
 
     temp = (u16) func_0804ddb0(D_03005380, gSneakySpiritsInfo->ghostHit, 2);
-    func_0804cebc(D_03005380, gSneakySpiritsInfo->ghostHit, func_08001980(temp));
+    func_0804cebc(D_03005380, gSneakySpiritsInfo->ghostHit, agb_random(temp));
     func_0804d770(D_03005380, gSneakySpiritsInfo->ghostHit, 1);
     temp = func_0800e3e4(gSneakySpiritsInfo->ghostHit, 100, 76, xVel, yVel, duration);
     task_run_after(temp, func_0801f810, 0);
@@ -369,14 +369,14 @@ void func_0801f8d0(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, 
     func_0804dae0(D_03005380, gSneakySpiritsInfo->door, 1, 0x7f, 0);
     func_0804cebc(D_03005380, gSneakySpiritsInfo->door, 1);
 
-    func_0801f194(1);
+    func_0801f194(TRUE);
 
     gSneakySpiritsInfo->arrowReady = FALSE;
-    func_08017338(0, 0);
+    gameplay_set_input_buttons(0, 0);
     func_0804d8f8(D_03005380, gSneakySpiritsInfo->bow, sneaky_spirits_anim15, 3, 0, 0, 0);
 
-    func_08002634(&s_f_aim_just_hit_seqData);
-    func_08002634(&s_f_aim_just_hit_voice_seqData);
+    play_sound(&s_f_aim_just_hit_seqData);
+    play_sound(&s_f_aim_just_hit_voice_seqData);
 
     func_0804d160(D_03005380, sneaky_spirits_anim18, 0, 128, 90, 0x8792, 1, 0, 3);
 }
@@ -385,16 +385,16 @@ void func_0801f8d0(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, 
 // [func_0801fa4c] CUE - Barely
 void func_0801fa4c(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, u32 released) {
     gSneakySpiritsInfo->arrowReady = FALSE;
-    func_08017338(0, 0);
+    gameplay_set_input_buttons(0, 0);
     func_0804d8f8(D_03005380, gSneakySpiritsInfo->bow, sneaky_spirits_anim15, 0, 1, 0x7f, 0);
 
     func_0804d160(D_03005380, sneaky_spirits_anim06, 0, 70, 58, 0x8792, 1, 0x7f, 3);
-    if (func_08018054() < 0) {
+    if (gameplay_get_last_hit_offset() < 0) {
         func_0804d160(D_03005380, sneaky_spirits_anim07, 0, 122, 94, 0x8792, 1, 0, 3);
     } else {
         func_0804d160(D_03005380, sneaky_spirits_anim17, 0, 122, 94, 0x8792, 1, 0, 3);
     }
-    func_08002634(&s_ghost_miss_hit_seqData);
+    play_sound(&s_ghost_miss_hit_seqData);
 }
 
 
@@ -404,10 +404,10 @@ void func_0801fb14(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, 
 
     if (!info->disableTaunt) {
         func_0804d160(D_03005380, sneaky_spirits_anim05, 0, 160, 105, 0x8792, 1, 0, 3);
-        func_0800856c(func_0800c3b8(), func_08002634, (u32)&s_ghost_warai_seqData, func_0800c3a4(0x0C));
+        func_0800856c(get_current_mem_id(), play_sound, (u32)&s_ghost_warai_seqData, beats_to_ticks(0x0C));
     }
 
-    func_08002634(&s_ghost_dash_seqData);
+    play_sound(&s_ghost_dash_seqData);
 }
 
 
@@ -416,10 +416,10 @@ void func_0801fbb0(u32 pressed, u32 released) {
     if (!gSneakySpiritsInfo->arrowReady) return;
 
     gSneakySpiritsInfo->arrowReady = FALSE;
-    func_08017338(0, 0);
+    gameplay_set_input_buttons(0, 0);
     func_0804d8f8(D_03005380, gSneakySpiritsInfo->bow, sneaky_spirits_anim15, 0, 1, 0x7f, 0);
     func_0804d160(D_03005380, sneaky_spirits_anim06, 0, 70, 58, 0x8792, 1, 0x7f, 3);
-    func_08002634(&s_ghost_gosha_seqData);
+    play_sound(&s_ghost_gosha_seqData);
 }
 
 

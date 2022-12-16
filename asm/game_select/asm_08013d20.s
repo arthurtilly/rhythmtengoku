@@ -88,7 +88,7 @@ branch_08013db4: \n\
 /* 08013dd2 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 08013dd4 */ BL func_080006d0 \n\
 /* 08013dd8 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08013dda */ BL func_080182ac \n\
+/* 08013dda */ BL gameplay_pause_menu_set_quit_destination \n\
 /* 08013dde */ CMP R7, 0x2E @ Compare R7 and 0x2E \n\
 /* 08013de0 */ BNE branch_08013dee \n\
 /* 08013de2 */ MOV R0, R8 @ Set R0 to R8 \n\
@@ -120,7 +120,7 @@ branch_08013e08: \n\
 /* 08013e22 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 08013e24 */ BL func_080006d0 \n\
 /* 08013e28 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08013e2a */ BL func_080182ac \n\
+/* 08013e2a */ BL gameplay_pause_menu_set_quit_destination \n\
 /* 08013e2e */ B branch_08013e48 \n\
 \n\
 .ltorg \n\
@@ -131,7 +131,7 @@ branch_08013e38: \n\
 /* 08013e3c */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08013e3e */ BL func_080006b0 \n\
 /* 08013e42 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08013e44 */ BL func_080182ac \n\
+/* 08013e44 */ BL gameplay_pause_menu_set_quit_destination \n\
  \n\
 branch_08013e48: \n\
 /* 08013e48 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
@@ -218,20 +218,20 @@ branch_08013ef0: \n\
 branch_08013efc: \n\
 /* 08013efc */ BL func_08010478 \n\
 /* 08013f00 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08013f02 */ BL func_0800bd04 \n\
+/* 08013f02 */ BL pause_beatscript_scene \n\
 /* 08013f06 */ LDR R0, =D_030046a4 \n\
 /* 08013f08 */ LDR R1, [R0] \n\
 /* 08013f0a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08013f0c */ STR R0, [R1, 0x4] \n\
 /* 08013f0e */ LDR R0, =s_menu_kettei1_seqData \n\
-/* 08013f10 */ BL func_08002634 \n\
+/* 08013f10 */ BL play_sound \n\
 /* 08013f14 */ B branch_08013f7e \n\
 \n\
 .ltorg \n\
  \n\
 branch_08013f24: \n\
 /* 08013f24 */ LDR R0, =s_menu_error_seqData \n\
-/* 08013f26 */ BL func_08002634 \n\
+/* 08013f26 */ BL play_sound \n\
 /* 08013f2a */ B branch_08013f7e \n\
 \n\
 .ltorg \n\
@@ -266,11 +266,11 @@ branch_08013f30: \n\
 /* 08013f68 */ STRB R0, [R1, 0x14] \n\
 /* 08013f6a */ BL func_08010478 \n\
 /* 08013f6e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08013f70 */ BL func_0800bd04 \n\
+/* 08013f70 */ BL pause_beatscript_scene \n\
 /* 08013f74 */ LDR R0, [R4] \n\
 /* 08013f76 */ STR R5, [R0, 0x4] \n\
 /* 08013f78 */ LDR R0, =s_menu_cancel3_seqData \n\
-/* 08013f7a */ BL func_08002634 \n\
+/* 08013f7a */ BL play_sound \n\
  \n\
 branch_08013f7e: \n\
 /* 08013f7e */ POP {R3, R4} \n\

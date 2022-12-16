@@ -180,7 +180,7 @@ jump_08043864: \n\
 /* 08043864 */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 08043866 */ BNE branch_080438b6 \n\
 /* 08043868 */ LDR R0, =s_f_virus_uhihi_seqData \n\
-/* 0804386a */ BL func_08002634 \n\
+/* 0804386a */ BL play_sound \n\
 /* 0804386e */ B branch_080438b6 \n\
 \n\
 .ltorg \n\
@@ -188,35 +188,35 @@ jump_08043874: \n\
 /* 08043874 */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 08043876 */ BNE branch_080438b6 \n\
 /* 08043878 */ LDR R0, =s_virus_dash_seqData \n\
-/* 0804387a */ BL func_08002634 \n\
+/* 0804387a */ BL play_sound \n\
 /* 0804387e */ B branch_080438b6 \n\
 \n\
 .ltorg \n\
 jump_08043884: \n\
 /* 08043884 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 08043886 */ MOVS R1, 0x10 @ Set R1 to 0x10 \n\
-/* 08043888 */ BL func_080180b0 \n\
+/* 08043888 */ BL gameplay_set_cue_input_buttons \n\
 /* 0804388c */ B branch_080438b6 \n\
 jump_0804388e: \n\
 /* 0804388e */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 08043890 */ MOVS R1, 0x40 @ Set R1 to 0x40 \n\
-/* 08043892 */ BL func_080180b0 \n\
+/* 08043892 */ BL gameplay_set_cue_input_buttons \n\
 /* 08043896 */ B branch_080438b6 \n\
 jump_08043898: \n\
 /* 08043898 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0804389a */ MOVS R1, 0x20 @ Set R1 to 0x20 \n\
-/* 0804389c */ BL func_080180b0 \n\
+/* 0804389c */ BL gameplay_set_cue_input_buttons \n\
 /* 080438a0 */ B branch_080438b6 \n\
 jump_080438a2: \n\
 /* 080438a2 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 080438a4 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
-/* 080438a6 */ BL func_080180b0 \n\
+/* 080438a6 */ BL gameplay_set_cue_input_buttons \n\
 /* 080438aa */ B branch_080438b6 \n\
 jump_080438ac: \n\
 /* 080438ac */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 080438ae */ BNE branch_080438b6 \n\
 /* 080438b0 */ LDR R0, =s_f_virus_in_seqData \n\
-/* 080438b2 */ BL func_08002634 \n\
+/* 080438b2 */ BL play_sound \n\
  \n\
 branch_080438b6: \n\
 /* 080438b6 */ ADD SP, 0x1C \n\

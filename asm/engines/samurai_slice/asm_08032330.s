@@ -76,7 +76,7 @@ branch_08032394: \n\
 /* 080323a8 */ STR R0, [R2] \n\
  \n\
 branch_080323aa: \n\
-/* 080323aa */ BL func_0800c1a8 \n\
+/* 080323aa */ BL get_beatscript_tempo \n\
 /* 080323ae */ LDR R1, [R4] \n\
 /* 080323b0 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
 /* 080323b2 */ ADDS R4, 0x84 @ Add 0x84 to R4 \n\
@@ -98,7 +98,7 @@ branch_080323ca: \n\
 /* 080323d0 */ ASRS R2, R2, 0x10 \n\
 /* 080323d2 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080323d4 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080323d6 */ BL func_0800e058 \n\
+/* 080323d6 */ BL scene_set_bg_layer_pos \n\
 /* 080323da */ LDR R0, [R5] \n\
 /* 080323dc */ ADDS R0, 0x80 @ Add 0x80 to R0 \n\
 /* 080323de */ LDR R2, [R0] \n\
@@ -106,7 +106,7 @@ branch_080323ca: \n\
 /* 080323e2 */ ASRS R2, R2, 0x10 \n\
 /* 080323e4 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 080323e6 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080323e8 */ BL func_0800e058 \n\
+/* 080323e8 */ BL scene_set_bg_layer_pos \n\
 /* 080323ec */ LDR R2, =D_03004b10 \n\
 /* 080323ee */ LDR R0, [R5] \n\
 /* 080323f0 */ ADDS R0, 0x84 @ Add 0x84 to R0 \n\
@@ -130,7 +130,7 @@ branch_080323ca: \n\
 /* 08032414 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08032416 */ LSLS R1, R1, 0x12 \n\
 /* 08032418 */ LSRS R1, R1, 0x10 \n\
-/* 0803241a */ BL func_0800c0f8 \n\
+/* 0803241a */ BL beatscript_scene_set_music_track_volume \n\
 /* 0803241e */ POP {R4, R5} \n\
 /* 08032420 */ POP {R0} \n\
 /* 08032422 */ BX R0 \n\

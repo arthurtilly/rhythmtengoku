@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_08011300 \n\
 /* 08011300 */ PUSH {R4, R5, LR} \n\
 /* 08011302 */ SUB SP, 0x14 \n\
-/* 08011304 */ BL func_0800c3b8 \n\
+/* 08011304 */ BL get_current_mem_id \n\
 /* 08011308 */ LSLS R0, R0, 0x10 \n\
 /* 0801130a */ LSRS R0, R0, 0x10 \n\
 /* 0801130c */ MOVS R1, 0x6 @ Set R1 to 0x6 \n\

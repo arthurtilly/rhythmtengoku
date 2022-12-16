@@ -30,7 +30,7 @@ enum BlockStatesEnum {
 // Graphics Init. 2
 void func_08035d1c(void) {
     func_0800c604(0);
-    func_08017578();
+    gameplay_start_screen_fade_in();
 }
 
 
@@ -39,7 +39,7 @@ void func_08035d2c(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(func_0800c3b8(), D_089e59fc[gPolyrhythmInfo->version], 0x2000);
+    task = func_08002ee0(get_current_mem_id(), D_089e59fc[gPolyrhythmInfo->version], 0x2000);
     task_run_after(task, func_08035d1c, 0);
 }
 
@@ -49,7 +49,7 @@ void func_08035d6c(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_080087b4(func_0800c3b8(), D_089e5968);
+    task = func_080087b4(get_current_mem_id(), D_089e5968);
     task_run_after(task, func_08035d2c, 0);
 }
 
@@ -58,9 +58,9 @@ void func_08035d6c(void) {
 void func_08035d98(u32 ver) {
     gPolyrhythmInfo->version = ver;
     func_08035d6c(); // Init. Graphics
-    func_0800e0ec(); // Init. BG Layers
-    func_0800e0a0(BG_LAYER_1, TRUE, 0, 0, 0, 29, 2); // Init. BG1
-    func_08017338(A_BUTTON | DPAD_ALL, 0); // Init. Button Filters
+    scene_show_obj_layer(); // Init. BG Layers
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 2); // Init. BG1
+    gameplay_set_input_buttons(A_BUTTON | DPAD_ALL, 0); // Init. Button Filters
     func_08035f7c(); // Populate World
     func_0803656c(); // Init. Rods
     gPolyrhythmInfo->aButtonArrowSprite = func_0804d160(D_03005380, D_088f62fc, 0, 64, 64, 0x4800, 1, 0, 0x8000);
@@ -94,7 +94,7 @@ void func_08035e98(struct Cue *cue, struct PolyrhythmCue *info, u32 lane) {
 
 // Cue - Update
 u32 func_08035eac(struct Cue *cue, struct PolyrhythmCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > (duration + func_0800c3a4(0xC))) {
+    if (runningTime > (duration + beats_to_ticks(0xC))) {
         return TRUE;
     }
     return FALSE;
@@ -115,7 +115,7 @@ void func_08035ed0(struct Cue *cue, struct PolyrhythmCue *info, u32 pressed, u32
     if (!func_080364f4(info->lane, pistonID)) {
         func_08018068();
         if (pistonID >= 0) {
-            func_08017928(0, 3, 0);
+            gameplay_add_cue_result(0, 3, 0);
         }
     }
 }
@@ -130,7 +130,7 @@ void func_08035f08(struct Cue *cue, struct PolyrhythmCue *info, u32 pressed, u32
     if (!func_080364f4(info->lane, pistonID)) {
         func_08018068();
         if (pistonID >= 0) {
-            func_08017928(0, 3, 0);
+            gameplay_add_cue_result(0, 3, 0);
         }
     }
 }
@@ -276,7 +276,7 @@ s32 func_0803638c(u32 lane) {
     piston->state = BLOCK_STATE_OPEN_PISTON;
     func_0804d8f8(D_03005380, piston->sprite, D_089e5c1c[piston->type], 0, 1, 0x7f, 0);
     gPolyrhythmInfo->unk104[lane]++;
-    func_08002634(D_089e5c34[piston->type]);
+    play_sound(D_089e5c34[piston->type]);
     func_080360f8(lane, nextPistonID);
     return currentPistonID;
 }
@@ -401,7 +401,7 @@ void func_08036630(struct PolyrhythmRod *rod) {
         rod->yOffset = prevYOffset;
         z = prevZ;
         if (!rod->stopped) {
-            func_08002634(&s_poly_shototu_seqData);
+            play_sound(&s_poly_shototu_seqData);
         }
         rod->stopped = TRUE;
         func_0804dae0(D_03005380, rod->sprite, 0, 0, 0);
@@ -414,7 +414,7 @@ void func_08036630(struct PolyrhythmRod *rod) {
     func_0804d55c(D_03005380, rod->sprite, x, y, z);
     func_0804d770(D_03005380, rod->sprite, TRUE);
     rod->runningTime++;
-    if (rod->runningTime > (rod->maxDuration - func_0800c3a4(0x18))) {
+    if (rod->runningTime > (rod->maxDuration - beats_to_ticks(0x18))) {
         rod->active = FALSE;
     }
 }
@@ -461,8 +461,8 @@ void func_0803698c(void) {
                 func_0804d160(D_03005380, D_088f62bc, 0, x, y, z, 1, 0, 3);
                 func_0804d770(D_03005380, rod->sprite, FALSE);
                 rod->active = FALSE;
-                func_08017928(func_08017918(), 2, 0);
-                func_08002634(&s_f_poly_blast_seqData);
+                gameplay_add_cue_result(gameplay_get_marking_criteria(), 2, 0);
+                play_sound(&s_f_poly_blast_seqData);
             }
         }
     }
@@ -486,10 +486,10 @@ void func_08036aa4(u32 lane) {
     rod->horizontal = 0;
     rod->yOffset = 0x10;
     rod->runningTime = 0;
-    rod->maxDuration = func_0800c3a4(0x120);
+    rod->maxDuration = beats_to_ticks(0x120);
     rod->lane = lane;
     rod->unk0_b4 = 0;
-    rod->timeUntilExplosion = func_0800c3a4(0x18);
+    rod->timeUntilExplosion = beats_to_ticks(0x18);
     func_0804dae0(D_03005380, rod->sprite, 1, 0, 0);
     func_0804dcb8(D_03005380, rod->sprite, 0x200);
 }

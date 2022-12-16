@@ -25,7 +25,7 @@ branch_0802dc64: \n\
 /* 0802dc76 */ STR R0, [R1] \n\
 /* 0802dc78 */ MOVS R0, 0x90 @ Set R0 to 0x90 \n\
 /* 0802dc7a */ LSLS R0, R0, 0x1 \n\
-/* 0802dc7c */ BL func_08001980 \n\
+/* 0802dc7c */ BL agb_random \n\
 /* 0802dc80 */ LDR R2, [R5] \n\
 /* 0802dc82 */ MOVS R3, 0x85 @ Set R3 to 0x85 \n\
 /* 0802dc84 */ LSLS R3, R3, 0x2 \n\
@@ -38,7 +38,7 @@ branch_0802dc64: \n\
 /* 0802dc92 */ STR R1, [R2] \n\
 /* 0802dc94 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 0802dc96 */ LSLS R0, R0, 0x1 \n\
-/* 0802dc98 */ BL func_08001980 \n\
+/* 0802dc98 */ BL agb_random \n\
 /* 0802dc9c */ LDR R2, [R5] \n\
 /* 0802dc9e */ MOVS R3, 0x86 @ Set R3 to 0x86 \n\
 /* 0802dca0 */ LSLS R3, R3, 0x2 \n\

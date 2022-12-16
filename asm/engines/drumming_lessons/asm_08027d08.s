@@ -60,7 +60,7 @@ branch_08027d58: \n\
 /* 08027d82 */ LDR R3, =0x00000566 \n\
 /* 08027d84 */ ADDS R0, R0, R3 @ Set R0 to R0 + R3 \n\
 /* 08027d86 */ LDRH R0, [R0] \n\
-/* 08027d88 */ BL func_0800bdf8 \n\
+/* 08027d88 */ BL set_beatscript_tempo \n\
 /* 08027d8c */ LDR R0, [R4] \n\
 /* 08027d8e */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 08027d90 */ STRB R5, [R0] \n\
@@ -84,7 +84,7 @@ branch_08027da0: \n\
 /* 08027db8 */ LDRSH R1, [R1, R2] \n\
 /* 08027dba */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 08027dbc */ BL func_0804d770 \n\
-/* 08027dc0 */ BL func_0800c1a8 \n\
+/* 08027dc0 */ BL get_beatscript_tempo \n\
 /* 08027dc4 */ LDR R1, [R4] \n\
 /* 08027dc6 */ LDR R3, =0x00000566 \n\
 /* 08027dc8 */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
@@ -93,7 +93,7 @@ branch_08027da0: \n\
 /* 08027dce */ LSLS R0, R1, 0x2 \n\
 /* 08027dd0 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08027dd2 */ LSRS R0, R0, 0x3 \n\
-/* 08027dd4 */ BL func_0800bdf8 \n\
+/* 08027dd4 */ BL set_beatscript_tempo \n\
 /* 08027dd8 */ LDR R0, [R4] \n\
 /* 08027dda */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 08027ddc */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\

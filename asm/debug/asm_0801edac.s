@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start func_0801edac \n\
 /* 0801edac */ PUSH {LR} \n\
-/* 0801edae */ BL func_0800c3b8 \n\
+/* 0801edae */ BL get_current_mem_id \n\
 /* 0801edb2 */ LSLS R0, R0, 0x10 \n\
 /* 0801edb4 */ LSRS R0, R0, 0x10 \n\
 /* 0801edb6 */ LDR R1, =func_0801ed7c \n\

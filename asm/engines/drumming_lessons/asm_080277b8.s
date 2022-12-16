@@ -35,7 +35,7 @@ thumb_func_start func_080277b8 \n\
 /* 080277f4 */ BL func_08019324 \n\
 /* 080277f8 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080277fa */ BL func_08027c90 \n\
-/* 080277fe */ BL func_0800bce4 \n\
+/* 080277fe */ BL beatscript_disable_loops \n\
 /* 08027802 */ B branch_08027852 \n\
 \n\
 .ltorg \n\
@@ -77,7 +77,7 @@ branch_08027852: \n\
 /* 08027852 */ ADD R4, SP, 0x4 \n\
 /* 08027854 */ MOV R0, SP @ Set R0 to SP \n\
 /* 08027856 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08027858 */ BL func_08018124 \n\
+/* 08027858 */ BL gameplay_get_cue_info \n\
 /* 0802785c */ B branch_0802787a \n\
  \n\
 branch_0802785e: \n\
@@ -95,7 +95,7 @@ branch_08027870: \n\
 /* 08027870 */ LDR R0, [SP] \n\
 /* 08027872 */ MOV R1, SP @ Set R1 to SP \n\
 /* 08027874 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 08027876 */ BL func_08018138 \n\
+/* 08027876 */ BL gameplay_get_previous_cue_info \n\
  \n\
 branch_0802787a: \n\
 /* 0802787a */ LDR R0, [SP] \n\

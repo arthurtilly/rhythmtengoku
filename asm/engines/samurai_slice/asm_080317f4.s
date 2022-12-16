@@ -55,7 +55,7 @@ branch_0803182a: \n\
 /* 0803185c */ LDR R0, [R7] \n\
 /* 0803185e */ MOVS R1, 0xC @ Set R1 to 0xC \n\
 /* 08031860 */ LDRSH R4, [R0, R1] \n\
-/* 08031862 */ BL func_0800c1a8 \n\
+/* 08031862 */ BL get_beatscript_tempo \n\
 /* 08031866 */ LSLS R0, R0, 0x8 \n\
 /* 08031868 */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 0803186a */ BL __udivsi3 \n\
@@ -69,7 +69,7 @@ branch_0803182a: \n\
 /* 0803187e */ STRB R6, [R0, 0xE] \n\
 /* 08031880 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08031882 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08031884 */ BL func_08017338 \n\
+/* 08031884 */ BL gameplay_set_input_buttons \n\
 /* 08031888 */ LDR R1, [R7] \n\
 /* 0803188a */ MOVS R5, 0xEC @ Set R5 to 0xEC \n\
 /* 0803188c */ LSLS R5, R5, 0x1 \n\
@@ -136,7 +136,7 @@ branch_080318e4: \n\
 /* 08031904 */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 08031906 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08031908 */ LDRSH R4, [R0, R1] \n\
-/* 0803190a */ BL func_0800c1a8 \n\
+/* 0803190a */ BL get_beatscript_tempo \n\
 /* 0803190e */ LSLS R0, R0, 0x8 \n\
 /* 08031910 */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 08031912 */ BL __udivsi3 \n\

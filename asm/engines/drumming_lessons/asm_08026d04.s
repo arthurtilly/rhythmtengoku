@@ -14,7 +14,7 @@ thumb_func_start func_08026d04 \n\
 /* 08026d14 */ BEQ branch_08026d1e \n\
 /* 08026d16 */ LSLS R0, R0, 0x10 \n\
 /* 08026d18 */ LSRS R0, R0, 0x10 \n\
-/* 08026d1a */ BL func_0800bdf8 \n\
+/* 08026d1a */ BL set_beatscript_tempo \n\
  \n\
 branch_08026d1e: \n\
 /* 08026d1e */ POP {R0} \n\

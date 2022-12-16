@@ -7,7 +7,7 @@ thumb_func_start func_0802e6ec \n\
 /* 0802e6ee */ LDRH R0, [R1] \n\
 /* 0802e6f0 */ BL func_0802df08 \n\
 /* 0802e6f4 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 0802e6f6 */ BL func_0800bc40 \n\
+/* 0802e6f6 */ BL beatscript_enable_loops \n\
 /* 0802e6fa */ LDRB R0, [R4, 0x4] \n\
 /* 0802e6fc */ LSLS R0, R0, 0x19 \n\
 /* 0802e6fe */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

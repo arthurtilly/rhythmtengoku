@@ -11,7 +11,7 @@ thumb_func_start func_08034ff4 \n\
 /* 08034ffe */ LDR R6, [R0] \n\
 /* 08035000 */ ADDS R7, R6, 0x4 @ Set R7 to R6 + 0x4 \n\
 /* 08035002 */ LDR R0, =s_tap_kick_monky_seqData \n\
-/* 08035004 */ BL func_08002634 \n\
+/* 08035004 */ BL play_sound \n\
 /* 08035008 */ LDRB R5, [R7, 0x4] \n\
 /* 0803500a */ CMP R5, 0x1 @ Compare R5 and 0x1 \n\
 /* 0803500c */ BEQ branch_0803501c \n\

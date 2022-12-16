@@ -6,7 +6,7 @@ thumb_func_start func_08047f98 \n\
 /* 08047f98 */ PUSH {R4, LR} \n\
 /* 08047f9a */ LDR R4, =s_studio_bgm_seqData \n\
 /* 08047f9c */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
-/* 08047f9e */ BL func_0800c3a4 \n\
+/* 08047f9e */ BL beats_to_ticks \n\
 /* 08047fa2 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08047fa4 */ LSLS R1, R1, 0x10 \n\
 /* 08047fa6 */ LSRS R1, R1, 0x10 \n\

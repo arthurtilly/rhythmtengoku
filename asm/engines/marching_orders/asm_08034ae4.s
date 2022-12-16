@@ -18,7 +18,7 @@ thumb_func_start func_08034ae4 \n\
 /* 08034afc */ LDRH R1, [R2, 0x4] \n\
 /* 08034afe */ MOVS R3, 0x6 @ Set R3 to 0x6 \n\
 /* 08034b00 */ LDRSH R2, [R2, R3] \n\
-/* 08034b02 */ BL func_08002698 \n\
+/* 08034b02 */ BL play_sound_w_pitch_volume \n\
 /* 08034b06 */ POP {R0} \n\
 /* 08034b08 */ BX R0 \n\
 \n\

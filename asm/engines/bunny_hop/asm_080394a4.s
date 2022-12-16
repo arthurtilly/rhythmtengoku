@@ -13,7 +13,7 @@ thumb_func_start func_080394a4 \n\
 /* 080394b2 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080394b4 */ BNE branch_08039514 \n\
 /* 080394b6 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 080394b8 */ BL func_0800c3a4 \n\
+/* 080394b8 */ BL beats_to_ticks \n\
 /* 080394bc */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080394be */ LDR R4, [R6] \n\
 /* 080394c0 */ ADDS R5, R4, 0x0 @ Set R5 to R4 + 0x0 \n\
@@ -33,7 +33,7 @@ thumb_func_start func_080394a4 \n\
 /* 080394de */ CMP R0, R1 @ Check R0 - R1 \n\
 /* 080394e0 */ BLT branch_080394fc \n\
 /* 080394e2 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 080394e4 */ BL func_0800c3a4 \n\
+/* 080394e4 */ BL beats_to_ticks \n\
 /* 080394e8 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080394ea */ LDR R4, [R6] \n\
 /* 080394ec */ ADDS R4, 0xE8 @ Add 0xE8 to R4 \n\
@@ -46,7 +46,7 @@ thumb_func_start func_080394a4 \n\
  \n\
 branch_080394fc: \n\
 /* 080394fc */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 080394fe */ BL func_0800c3a4 \n\
+/* 080394fe */ BL beats_to_ticks \n\
 /* 08039502 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08039504 */ LDR R4, [R6] \n\
 /* 08039506 */ ADDS R4, 0xEC @ Add 0xEC to R4 \n\
@@ -81,7 +81,7 @@ branch_08039530: \n\
 /* 0803953a */ ASRS R2, R2, 0x10 \n\
 /* 0803953c */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803953e */ ADDS R1, R3, 0x0 @ Set R1 to R3 + 0x0 \n\
-/* 08039540 */ BL func_0800e058 \n\
+/* 08039540 */ BL scene_set_bg_layer_pos \n\
 /* 08039544 */ LDR R1, [R5] \n\
 /* 08039546 */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 08039548 */ ADDS R0, 0xE8 @ Add 0xE8 to R0 \n\
@@ -103,7 +103,7 @@ branch_08039560: \n\
 /* 08039564 */ ASRS R2, R2, 0x10 \n\
 /* 08039566 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 08039568 */ ADDS R1, R3, 0x0 @ Set R1 to R3 + 0x0 \n\
-/* 0803956a */ BL func_0800e058 \n\
+/* 0803956a */ BL scene_set_bg_layer_pos \n\
 /* 0803956e */ LDR R0, =D_03005380 \n\
 /* 08039570 */ LDR R4, [R0] \n\
 /* 08039572 */ LDR R0, [R5] \n\
@@ -145,7 +145,7 @@ branch_08039594: \n\
 /* 080395ba */ ASRS R1, R1, 0x10 \n\
 /* 080395bc */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
 /* 080395be */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080395c0 */ BL func_0800e058 \n\
+/* 080395c0 */ BL scene_set_bg_layer_pos \n\
 /* 080395c4 */ POP {R4-R7} \n\
 /* 080395c6 */ POP {R0} \n\
 /* 080395c8 */ BX R0 \n\

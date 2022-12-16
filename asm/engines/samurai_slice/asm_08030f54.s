@@ -26,15 +26,15 @@ thumb_func_start func_08030f54 \n\
 /* 08030f82 */ BNE branch_08030fe8 \n\
 /* 08030f84 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08030f86 */ LSLS R0, R0, 0x1 \n\
-/* 08030f88 */ BL func_0800be88 \n\
+/* 08030f88 */ BL set_beatscript_speed \n\
 /* 08030f8c */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08030f8e */ BL func_0800c0c4 \n\
+/* 08030f8e */ BL beatscript_scene_set_music_pitch_env \n\
 /* 08030f92 */ LDR R5, =D_03005380 \n\
 /* 08030f94 */ LDR R6, [R5] \n\
 /* 08030f96 */ LDR R0, [R7] \n\
 /* 08030f98 */ MOVS R1, 0xC @ Set R1 to 0xC \n\
 /* 08030f9a */ LDRSH R4, [R0, R1] \n\
-/* 08030f9c */ BL func_0800c1a8 \n\
+/* 08030f9c */ BL get_beatscript_tempo \n\
 /* 08030fa0 */ LSLS R0, R0, 0x8 \n\
 /* 08030fa2 */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 08030fa4 */ BL __udivsi3 \n\
@@ -51,7 +51,7 @@ thumb_func_start func_08030f54 \n\
 /* 08030fbe */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 08030fc0 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08030fc2 */ LDRSH R4, [R0, R3] \n\
-/* 08030fc4 */ BL func_0800c1a8 \n\
+/* 08030fc4 */ BL get_beatscript_tempo \n\
 /* 08030fc8 */ LSLS R0, R0, 0x8 \n\
 /* 08030fca */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 08030fcc */ BL __udivsi3 \n\
@@ -69,11 +69,11 @@ branch_08030fe8: \n\
 /* 08030fe8 */ CMP R0, 0x56 @ Compare R0 and 0x56 \n\
 /* 08030fea */ BGT branch_08030ffe \n\
 /* 08030fec */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 08030fee */ BL func_0800e030 \n\
+/* 08030fee */ BL scene_show_bg_layer \n\
 /* 08030ff2 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08030ff4 */ BL func_0800e030 \n\
+/* 08030ff4 */ BL scene_show_bg_layer \n\
 /* 08030ff8 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 08030ffa */ BL func_0800e030 \n\
+/* 08030ffa */ BL scene_show_bg_layer \n\
  \n\
 branch_08030ffe: \n\
 /* 08030ffe */ LDR R1, =D_030055d0 \n\

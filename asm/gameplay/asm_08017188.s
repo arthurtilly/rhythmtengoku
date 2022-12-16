@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08017188 \n\
+thumb_func_start gameplay_set_current_engine \n\
 /* 08017188 */ PUSH {R4-R7, LR} \n\
 /* 0801718a */ MOV R7, R9 @ Set R7 to R9 \n\
 /* 0801718c */ MOV R6, R8 @ Set R6 to R8 \n\
@@ -15,7 +15,7 @@ thumb_func_start func_08017188 \n\
 /* 0801719a */ LDR R0, [R0, 0x10] \n\
 /* 0801719c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801719e */ BEQ branch_080171fe \n\
-/* 080171a0 */ BL func_080178ac \n\
+/* 080171a0 */ BL gameplay_reset_cues \n\
 /* 080171a4 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080171a6 */ BL func_08017b88 \n\
 /* 080171aa */ LDR R0, [R4] \n\
@@ -35,36 +35,36 @@ branch_080171b8: \n\
 branch_080171c4: \n\
 /* 080171c4 */ LDR R0, =D_03005380 \n\
 /* 080171c6 */ LDR R4, [R0] \n\
-/* 080171c8 */ BL func_0800c3b8 \n\
+/* 080171c8 */ BL get_current_mem_id \n\
 /* 080171cc */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080171ce */ LSLS R1, R1, 0x10 \n\
 /* 080171d0 */ LSRS R1, R1, 0x10 \n\
 /* 080171d2 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 080171d4 */ BL func_0804e0c4 \n\
-/* 080171d8 */ BL func_0800c3b8 \n\
+/* 080171d8 */ BL get_current_mem_id \n\
 /* 080171dc */ BL func_0800222c \n\
-/* 080171e0 */ BL func_0800c3b8 \n\
+/* 080171e0 */ BL get_current_mem_id \n\
 /* 080171e4 */ LSLS R0, R0, 0x10 \n\
 /* 080171e6 */ LSRS R0, R0, 0x10 \n\
 /* 080171e8 */ BL task_pool_forced_cancel_id \n\
-/* 080171ec */ BL func_0800c3b8 \n\
+/* 080171ec */ BL get_current_mem_id \n\
 /* 080171f0 */ LSLS R0, R0, 0x10 \n\
 /* 080171f2 */ LSRS R0, R0, 0x10 \n\
 /* 080171f4 */ BL mem_heap_dealloc_with_id \n\
 /* 080171f8 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 080171fa */ BL func_08018630 \n\
+/* 080171fa */ BL gameplay_set_text_printer \n\
  \n\
 branch_080171fe: \n\
 /* 080171fe */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08017200 */ BL func_0800e018 \n\
+/* 08017200 */ BL scene_set_video_mode \n\
 /* 08017204 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08017206 */ BL func_0800e044 \n\
+/* 08017206 */ BL scene_hide_bg_layer \n\
 /* 0801720a */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 0801720c */ BL func_0800e044 \n\
+/* 0801720c */ BL scene_hide_bg_layer \n\
 /* 08017210 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08017212 */ BL func_0800e044 \n\
+/* 08017212 */ BL scene_hide_bg_layer \n\
 /* 08017216 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 08017218 */ BL func_0800e044 \n\
+/* 08017218 */ BL scene_hide_bg_layer \n\
 /* 0801721c */ BL func_08004058 \n\
 /* 08017220 */ LDR R0, =func_08017168 \n\
 /* 08017222 */ BL func_08007344 \n\

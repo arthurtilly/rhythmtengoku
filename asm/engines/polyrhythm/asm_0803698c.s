@@ -118,12 +118,12 @@ branch_080369e8: \n\
 /* 08036a6a */ ADDS R1, R2, 0x0 @ Set R1 to R2 + 0x0 \n\
 /* 08036a6c */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 08036a6e */ STRB R0, [R6] \n\
-/* 08036a70 */ BL func_08017918 \n\
+/* 08036a70 */ BL gameplay_get_marking_criteria \n\
 /* 08036a74 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
 /* 08036a76 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08036a78 */ BL func_08017928 \n\
+/* 08036a78 */ BL gameplay_add_cue_result \n\
 /* 08036a7c */ LDR R0, =s_f_poly_blast_seqData \n\
-/* 08036a7e */ BL func_08002634 \n\
+/* 08036a7e */ BL play_sound \n\
  \n\
 branch_08036a82: \n\
 /* 08036a82 */ ADDS R6, 0x3C @ Add 0x3C to R6 \n\

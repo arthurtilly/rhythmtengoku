@@ -25,9 +25,9 @@ thumb_func_start func_08022fb8 \n\
 /* 08022fde */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 08022fe0 */ ADDS R0, 0xB0 @ Add 0xB0 to R0 \n\
 /* 08022fe2 */ LDRH R0, [R0] \n\
-/* 08022fe4 */ BL func_0800bdf8 \n\
+/* 08022fe4 */ BL set_beatscript_tempo \n\
 /* 08022fe8 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08022fea */ BL func_0800c088 \n\
+/* 08022fea */ BL beatscript_scene_set_music_pitch \n\
 /* 08022fee */ LDR R0, [R4] \n\
 /* 08022ff0 */ ADDS R0, 0xB2 @ Add 0xB2 to R0 \n\
 /* 08022ff2 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\

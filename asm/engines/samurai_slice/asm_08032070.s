@@ -33,7 +33,7 @@ thumb_func_start func_08032070 \n\
 /* 080320ac */ BL func_0804dcb8 \n\
 /* 080320b0 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080320b2 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080320b4 */ BL func_08017338 \n\
+/* 080320b4 */ BL gameplay_set_input_buttons \n\
 /* 080320b8 */ ADD SP, 0xC \n\
 /* 080320ba */ POP {R4, R5} \n\
 /* 080320bc */ POP {R0} \n\

@@ -8,7 +8,7 @@ thumb_func_start func_0801eb20 \n\
 /* 0801eb24 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801eb26 */ BL func_08007324 \n\
 /* 0801eb2a */ BL func_080073f0 \n\
-/* 0801eb2e */ BL func_0800c3b8 \n\
+/* 0801eb2e */ BL get_current_mem_id \n\
 /* 0801eb32 */ LSLS R0, R0, 0x10 \n\
 /* 0801eb34 */ LSRS R0, R0, 0x10 \n\
 /* 0801eb36 */ LDR R1, =D_089de670 \n\

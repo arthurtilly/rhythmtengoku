@@ -90,7 +90,7 @@ branch_0801a46c: \n\
 /* 0801a502 */ LDR R0, [R6] \n\
 /* 0801a504 */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 0801a506 */ STRB R1, [R0, 0xC] \n\
-/* 0801a508 */ BL func_0800c3b8 \n\
+/* 0801a508 */ BL get_current_mem_id \n\
 /* 0801a50c */ LSLS R0, R0, 0x10 \n\
 /* 0801a50e */ LSRS R0, R0, 0x10 \n\
 /* 0801a510 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
@@ -118,7 +118,7 @@ branch_0801a46c: \n\
 /* 0801a548 */ BL text_printer_update \n\
 /* 0801a54c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801a54e */ BL text_printer_update \n\
-/* 0801a552 */ BL func_0800c3b8 \n\
+/* 0801a552 */ BL get_current_mem_id \n\
 /* 0801a556 */ LSLS R0, R0, 0x10 \n\
 /* 0801a558 */ LSRS R0, R0, 0x10 \n\
 /* 0801a55a */ MOVS R1, 0x9 @ Set R1 to 0x9 \n\

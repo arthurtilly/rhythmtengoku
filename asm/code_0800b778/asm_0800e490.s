@@ -34,7 +34,7 @@ thumb_func_start func_0800e490 \n\
 /* 0800e4c8 */ STRH R4, [R0, 0xE] \n\
 /* 0800e4ca */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 0800e4cc */ STRH R1, [R0, 0x10] \n\
-/* 0800e4ce */ BL func_0800c3b8 \n\
+/* 0800e4ce */ BL get_current_mem_id \n\
 /* 0800e4d2 */ LSLS R0, R0, 0x10 \n\
 /* 0800e4d4 */ LSRS R0, R0, 0x10 \n\
 /* 0800e4d6 */ LDR R1, =D_08936be4 \n\

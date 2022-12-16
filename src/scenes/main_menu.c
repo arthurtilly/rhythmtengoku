@@ -45,8 +45,8 @@ void func_08012438(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(func_0800c3b8(), D_089cdc8c);
-    task_run_after(data, func_0800bd04, 0);
+    data = func_080087b4(get_current_mem_id(), D_089cdc8c);
+    task_run_after(data, pause_beatscript_scene, FALSE);
 }
 
 
@@ -55,16 +55,16 @@ void func_08012464(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_08002ee0(func_0800c3b8(), D_089cdc44, 0x3000);
+    data = func_08002ee0(get_current_mem_id(), D_089cdc44, 0x3000);
     task_run_after(data, func_08012438, 0);
 }
 
 
 // [func_08012494] Graphics Init. 0
 void func_08012494(void) {
-    func_0800856c(func_0800c3b8(), func_08012464, 0, 2);
-    func_0800e0ec();
-    func_0800e0a0(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
+    func_0800856c(get_current_mem_id(), func_08012464, 0, 2);
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 }
 
 
@@ -76,7 +76,7 @@ void func_080124d0(u32 arg) {
     tempScene = func_0800061c();
     func_08007324(FALSE);
     func_080073f0();
-    gMainMenuInfo.font2 = func_08005124(func_0800c3b8(), &D_089de670, 0, 0x340, 6);
+    gMainMenuInfo.font2 = func_08005124(get_current_mem_id(), &D_089de670, 0, 0x340, 6);
     gMainMenuInfo.font1 = func_0800c660(0x300, 4);
     func_08005814(D_03005380, gMainMenuInfo.font1, D_089cdc40, D_0300558c);
     func_08012494();
@@ -111,7 +111,7 @@ void func_080125fc(u32 arg) {
 
     gMainMenuInfo.bgX += 1;
     gMainMenuInfo.bgY -= 1;
-    func_0800e058(BG_LAYER_1, gMainMenuInfo.bgX >> 2, gMainMenuInfo.bgY >> 2);
+    scene_set_bg_layer_pos(BG_LAYER_1, gMainMenuInfo.bgX >> 2, gMainMenuInfo.bgY >> 2);
 
     if (func_080127d0()) {
         prevButton = D_030055d8;
@@ -124,7 +124,7 @@ void func_080125fc(u32 arg) {
         D_030055d8 = func_080087d4(D_030055d8, 0, 4);
 
         if (prevButton != D_030055d8) {
-            func_08002634(&s_menu_cursor2_seqData);
+            play_sound(&s_menu_cursor2_seqData);
             func_0804d8f8(D_03005380, gMainMenuInfo.buttons[prevButton], D_089cdca4[prevButton], 0, 1, 0, 0);
             func_0804d8f8(D_03005380, gMainMenuInfo.buttons[D_030055d8], D_089cdc90[D_030055d8], 0, 1, 0, 0);
         }
@@ -137,7 +137,7 @@ void func_080125fc(u32 arg) {
                 case RHYTHM_TEST:
                     func_080006b0(&D_089d7964, &D_089cde20); // Results (Score), Main Menu
                     func_08000584(&D_089d471c); // Rhythm Test
-                    func_080182ac(&D_089cde20); // Main Menu
+                    gameplay_pause_menu_set_quit_destination(&D_089cde20); // Main Menu
                     break;
                 case RHYTHM_DATA_ROOM:
                     func_08000584(&D_089cdc24); // Data Room
@@ -154,9 +154,9 @@ void func_080125fc(u32 arg) {
                     gMainMenuInfo.unk1B = TRUE;
                     break;
             }
-            func_0800bd04(FALSE);
+            pause_beatscript_scene(FALSE);
             gMainMenuInfo.screenReady = FALSE;
-            func_08002634(&s_menu_kettei1_seqData);
+            play_sound(&s_menu_kettei1_seqData);
         }
     }
 }

@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08018698 \n\
+thumb_func_start gameplay_align_text_advance_icon_to_text \n\
 /* 08018698 */ PUSH {R4, LR} \n\
 /* 0801869a */ SUB SP, 0x4 \n\
 /* 0801869c */ LDR R0, =D_030046a4 \n\
@@ -24,7 +24,7 @@ thumb_func_start func_08018698 \n\
 /* 080186be */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080186c0 */ LDRSH R1, [R4, R2] \n\
 /* 080186c2 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 080186c4 */ BL func_080185d0 \n\
+/* 080186c4 */ BL gameplay_display_text_advance_icon \n\
  \n\
 branch_080186c8: \n\
 /* 080186c8 */ ADD SP, 0x4 \n\

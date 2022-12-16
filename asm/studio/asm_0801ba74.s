@@ -18,7 +18,7 @@ thumb_func_start func_0801ba74 \n\
 /* 0801ba8c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801ba8e */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
 /* 0801ba90 */ STRB R5, [R0] \n\
-/* 0801ba92 */ BL func_0800c3b8 \n\
+/* 0801ba92 */ BL get_current_mem_id \n\
 /* 0801ba96 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0801ba98 */ LSLS R4, R4, 0x10 \n\
 /* 0801ba9a */ LSRS R4, R4, 0x10 \n\

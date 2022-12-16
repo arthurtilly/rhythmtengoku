@@ -191,13 +191,13 @@ branch_080392c6: \n\
 /* 080392e2 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 080392e4 */ BGE branch_08039318 \n\
 /* 080392e6 */ MOVS R0, 0x20 @ Set R0 to 0x20 \n\
-/* 080392e8 */ BL func_08001980 \n\
+/* 080392e8 */ BL agb_random \n\
 /* 080392ec */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 080392ee */ ADDS R4, 0x90 @ Add 0x90 to R4 \n\
 /* 080392f0 */ LSLS R4, R4, 0x10 \n\
 /* 080392f2 */ ASRS R4, R4, 0x10 \n\
 /* 080392f4 */ MOVS R0, 0x20 @ Set R0 to 0x20 \n\
-/* 080392f6 */ BL func_08001980 \n\
+/* 080392f6 */ BL agb_random \n\
 /* 080392fa */ LDR R1, =D_030055d0 \n\
 /* 080392fc */ LDR R2, [R1] \n\
 /* 080392fe */ ADDS R2, 0xE0 @ Add 0xE0 to R2 \n\

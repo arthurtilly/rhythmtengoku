@@ -61,7 +61,7 @@ branch_08030842: \n\
 /* 0803086e */ LDR R0, =s_HC_seqData \n\
 /* 08030870 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08030872 */ LSLS R2, R2, 0x2 \n\
-/* 08030874 */ BL func_08002698 \n\
+/* 08030874 */ BL play_sound_w_pitch_volume \n\
 /* 08030878 */ ADD SP, 0xC \n\
 /* 0803087a */ POP {R4} \n\
 /* 0803087c */ POP {R0} \n\

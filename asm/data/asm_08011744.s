@@ -48,7 +48,7 @@ branch_08011786: \n\
 /* 0801179a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801179c */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 0801179e */ BL func_080018e0 \n\
-/* 080117a2 */ BL func_0800c3b8 \n\
+/* 080117a2 */ BL get_current_mem_id \n\
 /* 080117a6 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 080117a8 */ STR R1, [SP] \n\
 /* 080117aa */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\

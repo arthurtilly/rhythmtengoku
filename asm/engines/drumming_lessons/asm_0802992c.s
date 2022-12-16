@@ -13,7 +13,7 @@ thumb_func_start func_0802992c \n\
 /* 0802993c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0802993e */ BNE branch_08029974 \n\
 /* 08029940 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 08029942 */ BL func_0800bd04 \n\
+/* 08029942 */ BL pause_beatscript_scene \n\
 /* 08029946 */ LDR R0, [R4] \n\
 /* 08029948 */ MOVS R1, 0x82 @ Set R1 to 0x82 \n\
 /* 0802994a */ LSLS R1, R1, 0x3 \n\

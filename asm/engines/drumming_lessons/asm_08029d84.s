@@ -7,7 +7,7 @@ thumb_func_start func_08029d84 \n\
 /* 08029d86 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
 /* 08029d88 */ ADDS R5, R2, 0x0 @ Set R5 to R2 + 0x0 \n\
 /* 08029d8a */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 08029d8c */ BL func_0800c3a4 \n\
+/* 08029d8c */ BL beats_to_ticks \n\
 /* 08029d90 */ CMP R5, R0 @ Check R5 - R0 \n\
 /* 08029d92 */ BLS branch_08029df2 \n\
 /* 08029d94 */ LDR R3, [R4] \n\
@@ -58,7 +58,7 @@ branch_08029dea: \n\
  \n\
 branch_08029df2: \n\
 /* 08029df2 */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
-/* 08029df4 */ BL func_0800c3a4 \n\
+/* 08029df4 */ BL beats_to_ticks \n\
 /* 08029df8 */ CMP R5, R0 @ Check R5 - R0 \n\
 /* 08029dfa */ BHI branch_08029e04 \n\
 /* 08029dfc */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

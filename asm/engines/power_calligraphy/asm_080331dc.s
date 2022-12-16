@@ -32,14 +32,14 @@ branch_08033200: \n\
 branch_0803320a: \n\
 /* 0803320a */ STRB R0, [R1, 0x9] \n\
 /* 0803320c */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 0803320e */ BL func_0800e030 \n\
+/* 0803320e */ BL scene_show_bg_layer \n\
 /* 08033212 */ LDR R0, =D_03004b10 \n\
 /* 08033214 */ MOVS R2, 0x14 @ Set R2 to 0x14 \n\
 /* 08033216 */ LDRSH R1, [R0, R2] \n\
 /* 08033218 */ MOVS R3, 0x16 @ Set R3 to 0x16 \n\
 /* 0803321a */ LDRSH R2, [R0, R3] \n\
 /* 0803321c */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 0803321e */ BL func_0800e058 \n\
+/* 0803321e */ BL scene_set_bg_layer_pos \n\
 /* 08033222 */ LDR R6, =D_030055d0 \n\
 /* 08033224 */ LDR R1, [R6] \n\
 /* 08033226 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
@@ -111,7 +111,7 @@ branch_080332aa: \n\
 /* 080332bc */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 080332be */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080332c0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080332c2 */ BL func_0800e058 \n\
+/* 080332c2 */ BL scene_set_bg_layer_pos \n\
 /* 080332c6 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 080332c8 */ B branch_080332ea \n\
 \n\

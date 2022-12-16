@@ -17,7 +17,7 @@ thumb_func_start func_080341ac \n\
 /* 080341c2 */ LDRB R1, [R1, 0x14] \n\
 /* 080341c4 */ STRB R1, [R0] \n\
 /* 080341c6 */ BL func_08034180 \n\
-/* 080341ca */ BL func_0800e0ec \n\
+/* 080341ca */ BL scene_show_obj_layer \n\
 /* 080341ce */ STR R4, [SP] \n\
 /* 080341d0 */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\
 /* 080341d2 */ STR R0, [SP, 0x4] \n\
@@ -27,7 +27,7 @@ thumb_func_start func_080341ac \n\
 /* 080341da */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 080341dc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080341de */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080341e0 */ BL func_0800e0a0 \n\
+/* 080341e0 */ BL scene_set_bg_layer_display \n\
 /* 080341e4 */ STR R4, [SP] \n\
 /* 080341e6 */ MOVS R0, 0x1E @ Set R0 to 0x1E \n\
 /* 080341e8 */ STR R0, [SP, 0x4] \n\
@@ -37,7 +37,7 @@ thumb_func_start func_080341ac \n\
 /* 080341f0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080341f2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080341f4 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080341f6 */ BL func_0800e0a0 \n\
+/* 080341f6 */ BL scene_set_bg_layer_display \n\
 /* 080341fa */ STR R4, [SP] \n\
 /* 080341fc */ MOVS R0, 0x1F @ Set R0 to 0x1F \n\
 /* 080341fe */ STR R0, [SP, 0x4] \n\
@@ -46,7 +46,7 @@ thumb_func_start func_080341ac \n\
 /* 08034204 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08034206 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08034208 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803420a */ BL func_0800e0a0 \n\
+/* 0803420a */ BL scene_set_bg_layer_display \n\
 /* 0803420e */ MOVS R0, 0xD0 @ Set R0 to 0xD0 \n\
 /* 08034210 */ LSLS R0, R0, 0x2 \n\
 /* 08034212 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
@@ -216,7 +216,7 @@ branch_08034258: \n\
 /* 08034372 */ BNE branch_0803439c \n\
 /* 08034374 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
 /* 08034376 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08034378 */ BL func_08017338 \n\
+/* 08034378 */ BL gameplay_set_input_buttons \n\
 /* 0803437c */ B branch_080343a4 \n\
 \n\
 .ltorg \n\
@@ -224,7 +224,7 @@ branch_08034258: \n\
 branch_0803439c: \n\
 /* 0803439c */ MOVS R0, 0x33 @ Set R0 to 0x33 \n\
 /* 0803439e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080343a0 */ BL func_08017338 \n\
+/* 080343a0 */ BL gameplay_set_input_buttons \n\
  \n\
 branch_080343a4: \n\
 /* 080343a4 */ ADD SP, 0x1C \n\

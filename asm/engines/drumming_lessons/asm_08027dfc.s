@@ -20,7 +20,7 @@ thumb_func_start func_08027dfc \n\
 /* 08027e18 */ STR R1, [R0] \n\
 /* 08027e1a */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08027e1c */ LSLS R0, R0, 0x1 \n\
-/* 08027e1e */ BL func_0800c128 \n\
+/* 08027e1e */ BL beatscript_scene_set_music_volume_env \n\
 /* 08027e22 */ LDR R1, [R4] \n\
 /* 08027e24 */ LDR R2, =0x0000041c \n\
 /* 08027e26 */ ADDS R0, R1, R2 @ Set R0 to R1 + R2 \n\
@@ -79,7 +79,7 @@ branch_08027e8a: \n\
 /* 08027e98 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08027e9a */ LSLS R0, R0, 0x1 \n\
 /* 08027e9c */ SUBS R0, R0, R4 @ Set R0 to R0 - R4 \n\
-/* 08027e9e */ BL func_0800c128 \n\
+/* 08027e9e */ BL beatscript_scene_set_music_volume_env \n\
  \n\
 branch_08027ea2: \n\
 /* 08027ea2 */ LDR R0, =D_030055d0 \n\
@@ -121,9 +121,9 @@ branch_08027ebe: \n\
 /* 08027eea */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08027eec */ STRB R0, [R2] \n\
 /* 08027eee */ LDR R0, =0x08a9db84 \n\
-/* 08027ef0 */ BL func_08002634 \n\
+/* 08027ef0 */ BL play_sound \n\
 /* 08027ef4 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08027ef6 */ BL func_0800bd04 \n\
+/* 08027ef6 */ BL pause_beatscript_scene \n\
  \n\
 branch_08027efa: \n\
 /* 08027efa */ BL func_08027d08 \n\

@@ -206,7 +206,7 @@ branch_08034516: \n\
 /* 08034522 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08034524 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 08034526 */ LSLS R1, R1, 0x1 \n\
-/* 08034528 */ BL func_08002698 \n\
+/* 08034528 */ BL play_sound_w_pitch_volume \n\
  \n\
 branch_0803452c: \n\
 /* 0803452c */ ADD SP, 0xC \n\

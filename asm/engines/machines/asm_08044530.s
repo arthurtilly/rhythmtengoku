@@ -21,9 +21,9 @@ thumb_func_start func_08044530 \n\
 /* 0804454e */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08044550 */ LDR R0, [R0] \n\
 /* 08044552 */ LDRH R0, [R0] \n\
-/* 08044554 */ BL func_0800bdf8 \n\
+/* 08044554 */ BL set_beatscript_tempo \n\
 /* 08044558 */ BL func_08044504 \n\
-/* 0804455c */ BL func_0800e0ec \n\
+/* 0804455c */ BL scene_show_obj_layer \n\
 /* 08044560 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08044562 */ STR R2, [SP] \n\
 /* 08044564 */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\
@@ -34,7 +34,7 @@ thumb_func_start func_08044530 \n\
 /* 0804456e */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08044570 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08044572 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08044574 */ BL func_0800e0a0 \n\
+/* 08044574 */ BL scene_set_bg_layer_display \n\
 /* 08044578 */ MOVS R0, 0x7 @ Set R0 to 0x7 \n\
 /* 0804457a */ BL func_08044208 \n\
 /* 0804457e */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
@@ -134,7 +134,7 @@ branch_08044644: \n\
 /* 08044650 */ BLS branch_08044644 \n\
 /* 08044652 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08044654 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08044656 */ BL func_08017338 \n\
+/* 08044656 */ BL gameplay_set_input_buttons \n\
 /* 0804465a */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
  \n\
 branch_0804465c: \n\
@@ -208,7 +208,7 @@ branch_0804465c: \n\
 /* 080446ee */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 080446f0 */ STRB R2, [R1] \n\
 /* 080446f2 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 080446f4 */ BL func_08001980 \n\
+/* 080446f4 */ BL agb_random \n\
 /* 080446f8 */ LDR R1, [R4] \n\
 /* 080446fa */ MOVS R2, 0xE0 @ Set R2 to 0xE0 \n\
 /* 080446fc */ LSLS R2, R2, 0x2 \n\

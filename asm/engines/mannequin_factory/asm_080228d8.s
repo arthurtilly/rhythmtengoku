@@ -64,7 +64,7 @@ jump_0802291c: \n\
 /* 0802295a */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0802295c */ BL func_08022894 \n\
 /* 08022960 */ LDR R0, =s_ghost_walk_seqData \n\
-/* 08022962 */ BL func_08002634 \n\
+/* 08022962 */ BL play_sound \n\
 /* 08022966 */ B branch_080229b0 \n\
 \n\
 .ltorg \n\
@@ -79,7 +79,7 @@ branch_0802297c: \n\
 \n\
 jump_0802298c: \n\
 /* 0802298c */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
-/* 0802298e */ BL func_080179f4 \n\
+/* 0802298e */ BL gameplay_spawn_cue \n\
 /* 08022992 */ B branch_080229b0 \n\
 \n\
 jump_08022994: \n\
@@ -87,17 +87,17 @@ jump_08022994: \n\
 /* 08022996 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
 /* 08022998 */ BNE branch_080229a2 \n\
 /* 0802299a */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 0802299c */ BL func_080179f4 \n\
+/* 0802299c */ BL gameplay_spawn_cue \n\
 /* 080229a0 */ B branch_080229b0 \n\
  \n\
 branch_080229a2: \n\
 /* 080229a2 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 080229a4 */ BL func_080179f4 \n\
+/* 080229a4 */ BL gameplay_spawn_cue \n\
 /* 080229a8 */ B branch_080229b0 \n\
 \n\
 jump_080229aa: \n\
 /* 080229aa */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 080229ac */ BL func_080179f4 \n\
+/* 080229ac */ BL gameplay_spawn_cue \n\
  \n\
 branch_080229b0: \n\
 /* 080229b0 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

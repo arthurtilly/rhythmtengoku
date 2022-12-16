@@ -9,7 +9,7 @@ thumb_func_start func_0802e650 \n\
 /* 0802e656 */ LDRH R0, [R6] \n\
 /* 0802e658 */ BL func_0802df08 \n\
 /* 0802e65c */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
-/* 0802e65e */ BL func_08018054 \n\
+/* 0802e65e */ BL gameplay_get_last_hit_offset \n\
 /* 0802e662 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0802e664 */ LDRB R0, [R5, 0x4] \n\
 /* 0802e666 */ LSLS R1, R0, 0x19 \n\
@@ -36,7 +36,7 @@ branch_0802e682: \n\
 /* 0802e68c */ STRB R1, [R0] \n\
 /* 0802e68e */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0802e690 */ BGE branch_0802e6ac \n\
-/* 0802e692 */ BL func_0800c3b8 \n\
+/* 0802e692 */ BL get_current_mem_id \n\
 /* 0802e696 */ LSLS R0, R0, 0x10 \n\
 /* 0802e698 */ LSRS R0, R0, 0x10 \n\
 /* 0802e69a */ LDR R1, =func_0802e644 \n\
@@ -59,14 +59,14 @@ branch_0802e6b4: \n\
 /* 0802e6bc */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0802e6be */ BEQ branch_0802e6cc \n\
 /* 0802e6c0 */ LDR R0, =s_change_hit_a_seqData \n\
-/* 0802e6c2 */ BL func_08002634 \n\
+/* 0802e6c2 */ BL play_sound \n\
 /* 0802e6c6 */ B branch_0802e6d2 \n\
 \n\
 .ltorg \n\
  \n\
 branch_0802e6cc: \n\
 /* 0802e6cc */ LDR R0, =s_change_hit_b_seqData \n\
-/* 0802e6ce */ BL func_08002634 \n\
+/* 0802e6ce */ BL play_sound \n\
  \n\
 branch_0802e6d2: \n\
 /* 0802e6d2 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\

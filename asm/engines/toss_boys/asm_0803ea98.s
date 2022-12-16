@@ -16,7 +16,7 @@ thumb_func_start func_0803ea98 \n\
 /* 0803eaac */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 0803eaae */ STRB R0, [R1] \n\
 /* 0803eab0 */ BL func_0803ea6c \n\
-/* 0803eab4 */ BL func_0800e0ec \n\
+/* 0803eab4 */ BL scene_show_obj_layer \n\
 /* 0803eab8 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0803eaba */ STR R0, [SP] \n\
 /* 0803eabc */ MOVS R0, 0x1C @ Set R0 to 0x1C \n\
@@ -28,7 +28,7 @@ thumb_func_start func_0803ea98 \n\
 /* 0803eac8 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0803eaca */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803eacc */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803eace */ BL func_0800e0a0 \n\
+/* 0803eace */ BL scene_set_bg_layer_display \n\
 /* 0803ead2 */ MOV R3, R10 @ Set R3 to R10 \n\
 /* 0803ead4 */ STR R3, [SP] \n\
 /* 0803ead6 */ MOVS R0, 0x1E @ Set R0 to 0x1E \n\
@@ -39,7 +39,7 @@ thumb_func_start func_0803ea98 \n\
 /* 0803eae0 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0803eae2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803eae4 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803eae6 */ BL func_0800e0a0 \n\
+/* 0803eae6 */ BL scene_set_bg_layer_display \n\
 /* 0803eaea */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803eaec */ BL func_0803e990 \n\
 /* 0803eaf0 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
@@ -290,7 +290,7 @@ branch_0803eb86: \n\
 /* 0803ecf8 */ MOVS R0, 0xF3 @ Set R0 to 0xF3 \n\
 /* 0803ecfa */ STRH R0, [R1] \n\
 /* 0803ecfc */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803ecfe */ BL func_08017338 \n\
+/* 0803ecfe */ BL gameplay_set_input_buttons \n\
 /* 0803ed02 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803ed04 */ MOVS R4, 0xE1 @ Set R4 to 0xE1 \n\
 /* 0803ed06 */ LSLS R4, R4, 0x2 \n\
@@ -305,7 +305,7 @@ branch_0803ed0a: \n\
 /* 0803ed14 */ ADDS R2, 0x1 @ Add 0x1 to R2 \n\
 /* 0803ed16 */ CMP R2, 0x2 @ Compare R2 and 0x2 \n\
 /* 0803ed18 */ BLS branch_0803ed0a \n\
-/* 0803ed1a */ BL func_0800c3b8 \n\
+/* 0803ed1a */ BL get_current_mem_id \n\
 /* 0803ed1e */ LSLS R0, R0, 0x10 \n\
 /* 0803ed20 */ LSRS R0, R0, 0x10 \n\
 /* 0803ed22 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
@@ -360,7 +360,7 @@ branch_0803edb4: \n\
 /* 0803edc6 */ MOVS R1, 0x14 @ Set R1 to 0x14 \n\
 /* 0803edc8 */ BL text_printer_set_line_spacing \n\
 /* 0803edcc */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0803edce */ BL func_08018630 \n\
+/* 0803edce */ BL gameplay_set_text_printer \n\
 /* 0803edd2 */ LDR R1, =D_03004b10 \n\
 /* 0803edd4 */ ADDS R2, R1, 0x0 @ Set R2 to R1 + 0x0 \n\
 /* 0803edd6 */ ADDS R2, 0x4C @ Add 0x4C to R2 \n\

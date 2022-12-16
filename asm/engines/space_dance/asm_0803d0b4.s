@@ -15,7 +15,7 @@ thumb_func_start func_0803d0b4 \n\
 /* 0803d0c6 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0803d0c8 */ STRB R4, [R0, 0x4] \n\
 /* 0803d0ca */ BL func_0803d088 \n\
-/* 0803d0ce */ BL func_0800e0ec \n\
+/* 0803d0ce */ BL scene_show_obj_layer \n\
 /* 0803d0d2 */ STR R5, [SP] \n\
 /* 0803d0d4 */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\
 /* 0803d0d6 */ STR R0, [SP, 0x4] \n\
@@ -24,7 +24,7 @@ thumb_func_start func_0803d0b4 \n\
 /* 0803d0dc */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0803d0de */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803d0e0 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803d0e2 */ BL func_0800e0a0 \n\
+/* 0803d0e2 */ BL scene_set_bg_layer_display \n\
 /* 0803d0e6 */ STR R5, [SP] \n\
 /* 0803d0e8 */ MOVS R0, 0x1E @ Set R0 to 0x1E \n\
 /* 0803d0ea */ STR R0, [SP, 0x4] \n\
@@ -33,11 +33,11 @@ thumb_func_start func_0803d0b4 \n\
 /* 0803d0f0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803d0f2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803d0f4 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803d0f6 */ BL func_0800e0a0 \n\
+/* 0803d0f6 */ BL scene_set_bg_layer_display \n\
 /* 0803d0fa */ CMP R4, 0x1 @ Compare R4 and 0x1 \n\
 /* 0803d0fc */ BNE branch_0803d104 \n\
 /* 0803d0fe */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0803d100 */ BL func_0800e030 \n\
+/* 0803d100 */ BL scene_show_bg_layer \n\
  \n\
 branch_0803d104: \n\
 /* 0803d104 */ LDR R0, [R6] \n\
@@ -225,7 +225,7 @@ branch_0803d158: \n\
 /* 0803d27e */ STRH R0, [R1, 0x32] \n\
 /* 0803d280 */ MOVS R0, 0x91 @ Set R0 to 0x91 \n\
 /* 0803d282 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803d284 */ BL func_08017338 \n\
+/* 0803d284 */ BL gameplay_set_input_buttons \n\
 /* 0803d288 */ LDR R0, [R4] \n\
 /* 0803d28a */ ADDS R0, 0x35 @ Add 0x35 to R0 \n\
 /* 0803d28c */ MOV R1, R8 @ Set R1 to R8 \n\

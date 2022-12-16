@@ -16,7 +16,7 @@
 // [func_080478d8] GFX_INIT Func_02
 void func_080478d8(void) {
     func_0800c604(0);
-    func_08017578();
+    gameplay_start_screen_fade_in();
 }
 
 
@@ -25,7 +25,7 @@ void func_080478e8(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(func_0800c3b8(), prologue_toss_boys_gfx_table, 0x2000);
+    task = func_08002ee0(get_current_mem_id(), prologue_toss_boys_gfx_table, 0x2000);
     task_run_after(task, func_080478d8, 0);
 }
 
@@ -36,7 +36,7 @@ void func_08047918(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(func_0800c3b8(), prologue_toss_boys_buffered_textures);
+    task = func_080087b4(get_current_mem_id(), prologue_toss_boys_buffered_textures);
     task_run_after(task, func_080478e8, 0);
 }
 
@@ -46,8 +46,8 @@ void func_08047948(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08047918();
-    func_0800e0ec();
-    func_0800e0a0(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
     gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088b8098, 0, 120, 120, 0, 0, 0, 0);
 }

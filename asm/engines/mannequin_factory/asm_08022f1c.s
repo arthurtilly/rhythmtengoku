@@ -18,7 +18,7 @@ thumb_func_start func_08022f1c \n\
 /* 08022f36 */ ADDS R1, 0xB0 @ Add 0xB0 to R1 \n\
 /* 08022f38 */ STRH R0, [R1] \n\
 /* 08022f3a */ LDRH R0, [R1] \n\
-/* 08022f3c */ BL func_0800bdf8 \n\
+/* 08022f3c */ BL set_beatscript_tempo \n\
 /* 08022f40 */ POP {R4} \n\
 /* 08022f42 */ POP {R0} \n\
 /* 08022f44 */ BX R0 \n\

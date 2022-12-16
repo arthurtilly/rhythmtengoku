@@ -6,7 +6,7 @@ thumb_func_start func_0801ed7c \n\
 /* 0801ed7c */ PUSH {LR} \n\
 /* 0801ed7e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801ed80 */ BL func_0800c604 \n\
-/* 0801ed84 */ BL func_0800c3b8 \n\
+/* 0801ed84 */ BL get_current_mem_id \n\
 /* 0801ed88 */ LSLS R0, R0, 0x10 \n\
 /* 0801ed8a */ LSRS R0, R0, 0x10 \n\
 /* 0801ed8c */ LDR R1, =D_089de244 \n\

@@ -6,27 +6,27 @@ thumb_func_start func_08044074 \n\
 /* 08044074 */ PUSH {R4-R6, LR} \n\
 /* 08044076 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 08044078 */ LDR R0, =s_rap_15ji_desuka_seqData \n\
-/* 0804407a */ BL func_0800274c \n\
+/* 0804407a */ BL stop_sound \n\
 /* 0804407e */ LDR R0, =s_rap_oyatu_desuka_seqData \n\
-/* 08044080 */ BL func_0800274c \n\
+/* 08044080 */ BL stop_sound \n\
 /* 08044084 */ LDR R0, =s_rap_wakari_desuka_seqData \n\
-/* 08044086 */ BL func_0800274c \n\
+/* 08044086 */ BL stop_sound \n\
 /* 0804408a */ LDR R0, =s_rap_oisi_kamone_seqData \n\
-/* 0804408c */ BL func_0800274c \n\
+/* 0804408c */ BL stop_sound \n\
 /* 08044090 */ LDR R0, =s_rap_herusi_kamone_seqData \n\
-/* 08044092 */ BL func_0800274c \n\
+/* 08044092 */ BL stop_sound \n\
 /* 08044096 */ LDR R0, =s_rap_soremoso_kamone_seqData \n\
-/* 08044098 */ BL func_0800274c \n\
+/* 08044098 */ BL stop_sound \n\
 /* 0804409c */ LDR R0, =s_rap_tanosi_kamone_seqData \n\
-/* 0804409e */ BL func_0800274c \n\
+/* 0804409e */ BL stop_sound \n\
 /* 080440a2 */ LDR R0, =s_rap_oyatuha_saiko_seqData \n\
-/* 080440a4 */ BL func_0800274c \n\
+/* 080440a4 */ BL stop_sound \n\
 /* 080440a8 */ LDR R0, =s_rap_kibunha_saiko_seqData \n\
-/* 080440aa */ BL func_0800274c \n\
+/* 080440aa */ BL stop_sound \n\
 /* 080440ae */ LDR R0, =s_rap_orette_saiko_seqData \n\
-/* 080440b0 */ BL func_0800274c \n\
+/* 080440b0 */ BL stop_sound \n\
 /* 080440b4 */ LDR R0, =s_rap_kimitte_saiko_seqData \n\
-/* 080440b6 */ BL func_0800274c \n\
+/* 080440b6 */ BL stop_sound \n\
 /* 080440ba */ LDR R4, =D_030055d0 \n\
 /* 080440bc */ LDR R0, [R4] \n\
 /* 080440be */ LDR R5, =0x382 \n\
@@ -35,7 +35,7 @@ thumb_func_start func_08044074 \n\
 /* 080440c4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080440c6 */ BNE branch_080440d8 \n\
 /* 080440c8 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 080440ca */ BL func_08001980 \n\
+/* 080440ca */ BL agb_random \n\
 /* 080440ce */ LDR R1, [R4] \n\
 /* 080440d0 */ MOVS R2, 0xE0 @ Set R2 to 0xE0 \n\
 /* 080440d2 */ LSLS R2, R2, 0x2 \n\
@@ -44,7 +44,7 @@ thumb_func_start func_08044074 \n\
  \n\
 branch_080440d8: \n\
 /* 080440d8 */ MOVS R0, 0x24 @ Set R0 to 0x24 \n\
-/* 080440da */ BL func_0800c3a4 \n\
+/* 080440da */ BL beats_to_ticks \n\
 /* 080440de */ LDR R1, [R4] \n\
 /* 080440e0 */ ADDS R2, R1, R5 @ Set R2 to R1 + R5 \n\
 /* 080440e2 */ STRH R0, [R2] \n\
@@ -59,7 +59,7 @@ branch_080440d8: \n\
 /* 080440f4 */ LSLS R0, R6, 0x2 \n\
 /* 080440f6 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 080440f8 */ LDR R0, [R0] \n\
-/* 080440fa */ BL func_08002634 \n\
+/* 080440fa */ BL play_sound \n\
 /* 080440fe */ LDR R2, [R4] \n\
 /* 08044100 */ MOVS R3, 0xDF @ Set R3 to 0xDF \n\
 /* 08044102 */ LSLS R3, R3, 0x2 \n\

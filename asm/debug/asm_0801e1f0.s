@@ -11,7 +11,7 @@ thumb_func_start func_0801e1f0 \n\
 /* 0801e1fa */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801e1fc */ BL func_08007324 \n\
 /* 0801e200 */ BL func_080073f0 \n\
-/* 0801e204 */ BL func_0800c3b8 \n\
+/* 0801e204 */ BL get_current_mem_id \n\
 /* 0801e208 */ LSLS R0, R0, 0x10 \n\
 /* 0801e20a */ LSRS R0, R0, 0x10 \n\
 /* 0801e20c */ LDR R1, =D_089de670 \n\
@@ -161,14 +161,14 @@ branch_0801e318: \n\
 /* 0801e338 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0801e33a */ BL func_080006d0 \n\
 /* 0801e33e */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0801e340 */ BL func_08001980 \n\
+/* 0801e340 */ BL agb_random \n\
 /* 0801e344 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801e346 */ LSLS R1, R1, 0x10 \n\
 /* 0801e348 */ LSRS R1, R1, 0x10 \n\
 /* 0801e34a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801e34c */ BL func_080006d0 \n\
 /* 0801e350 */ LDR R0, =D_089ddbcc \n\
-/* 0801e352 */ BL func_080182ac \n\
+/* 0801e352 */ BL gameplay_pause_menu_set_quit_destination \n\
 /* 0801e356 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801e358 */ BL func_080191ac \n\
 /* 0801e35c */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\

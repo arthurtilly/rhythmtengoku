@@ -90,7 +90,7 @@ struct AffineSprite *func_0800fa6c(const struct Animation *anim, s8 arg1, s16 x,
     if (index < 0) return NULL;
 
     // Allocate memory for the affineData sprite.
-    affineData = func_0800c43c(sizeof(struct AffineSprite));
+    affineData = beatscript_scene_mem_heap_alloc(sizeof(struct AffineSprite));
     if (affineData == NULL) return NULL;
 
     // Initialise Affine Sprite
@@ -127,7 +127,7 @@ struct AffineSprite *func_0800fba0(const struct Animation *anim, s8 arg1, s16 x,
     sprite = func_0804d160(D_03005380, anim, arg1, x, y, layer, arg5, arg6, arg7);
     if (sprite < 0) return NULL;
 
-    affineData = func_0800c43c(sizeof(struct AffineSprite));
+    affineData = beatscript_scene_mem_heap_alloc(sizeof(struct AffineSprite));
     if (affineData == NULL) return NULL;
 
     affineData->sprite = sprite;

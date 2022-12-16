@@ -36,7 +36,7 @@ thumb_func_start func_08033f28 \n\
 branch_08033f66: \n\
 /* 08033f66 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 08033f68 */ LSLS R1, R1, 0x1 \n\
-/* 08033f6a */ BL func_08002698 \n\
+/* 08033f6a */ BL play_sound_w_pitch_volume \n\
  \n\
 branch_08033f6e: \n\
 /* 08033f6e */ POP {R4-R6} \n\

@@ -26,7 +26,7 @@ branch_0803935c: \n\
  \n\
 branch_08039374: \n\
 /* 08039374 */ LDR R0, =s_f_rabbit_ready_seqData \n\
-/* 08039376 */ BL func_08002634 \n\
+/* 08039376 */ BL play_sound \n\
 /* 0803937a */ POP {R0} \n\
 /* 0803937c */ BX R0 \n\
 \n\

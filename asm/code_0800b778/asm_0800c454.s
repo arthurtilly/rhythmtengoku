@@ -11,7 +11,7 @@ thumb_func_start func_0800c454 \n\
 /* 0800c45e */ ADDS R6, R1, 0x0 @ Set R6 to R1 + 0x0 \n\
 /* 0800c460 */ MOV R8, R2 @ Set R8 to R2 \n\
 /* 0800c462 */ ADDS R4, R3, 0x0 @ Set R4 to R3 + 0x0 \n\
-/* 0800c464 */ BL func_0800c3b8 \n\
+/* 0800c464 */ BL get_current_mem_id \n\
 /* 0800c468 */ LSLS R0, R0, 0x10 \n\
 /* 0800c46a */ LSRS R0, R0, 0x10 \n\
 /* 0800c46c */ STR R4, [SP] \n\

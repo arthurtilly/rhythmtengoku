@@ -13,14 +13,14 @@ thumb_func_start func_08037dc8 \n\
 /* 08037dd6 */ LDRB R0, [R0] \n\
 /* 08037dd8 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08037dda */ BNE branch_08037e10 \n\
-/* 08037ddc */ BL func_0800c1a8 \n\
+/* 08037ddc */ BL get_beatscript_tempo \n\
 /* 08037de0 */ LDR R1, [R4] \n\
 /* 08037de2 */ ADDS R2, R1, 0x0 @ Set R2 to R1 + 0x0 \n\
 /* 08037de4 */ ADDS R2, 0x46 @ Add 0x46 to R2 \n\
 /* 08037de6 */ STRH R0, [R2] \n\
 /* 08037de8 */ ADDS R1, 0x44 @ Add 0x44 to R1 \n\
 /* 08037dea */ LDRH R0, [R1] \n\
-/* 08037dec */ BL func_0800bdf8 \n\
+/* 08037dec */ BL set_beatscript_tempo \n\
 /* 08037df0 */ B branch_08037e10 \n\
 \n\
 .ltorg \n\
@@ -36,7 +36,7 @@ branch_08037df8: \n\
 /* 08037e06 */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 08037e08 */ ADDS R0, 0x46 @ Add 0x46 to R0 \n\
 /* 08037e0a */ LDRH R0, [R0] \n\
-/* 08037e0c */ BL func_0800bdf8 \n\
+/* 08037e0c */ BL set_beatscript_tempo \n\
  \n\
 branch_08037e10: \n\
 /* 08037e10 */ LDR R0, =D_030055d0 \n\

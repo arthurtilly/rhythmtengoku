@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08017e2c \n\
+thumb_func_start gameplay_register_hit_barely \n\
 /* 08017e2c */ PUSH {R4-R7, LR} \n\
 /* 08017e2e */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08017e30 */ ADDS R7, R2, 0x0 @ Set R7 to R2 + 0x0 \n\
@@ -45,9 +45,9 @@ branch_08017e6a: \n\
 /* 08017e78 */ LDRB R0, [R0] \n\
 /* 08017e7a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08017e7c */ ADDS R2, R7, 0x0 @ Set R2 to R7 + 0x0 \n\
-/* 08017e7e */ BL func_08017928 \n\
+/* 08017e7e */ BL gameplay_add_cue_result \n\
 /* 08017e82 */ LDR R0, [R5, 0x58] \n\
-/* 08017e84 */ BL func_08016e54 \n\
+/* 08017e84 */ BL gameplay_play_sound \n\
 /* 08017e88 */ B branch_08017ec0 \n\
 \n\
 .ltorg \n\
@@ -73,9 +73,9 @@ branch_08017ea2: \n\
 /* 08017eb0 */ LDRB R0, [R0] \n\
 /* 08017eb2 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08017eb4 */ ADDS R2, R7, 0x0 @ Set R2 to R7 + 0x0 \n\
-/* 08017eb6 */ BL func_08017928 \n\
+/* 08017eb6 */ BL gameplay_add_cue_result \n\
 /* 08017eba */ LDR R0, [R5, 0x5C] \n\
-/* 08017ebc */ BL func_08016e54 \n\
+/* 08017ebc */ BL gameplay_play_sound \n\
  \n\
 branch_08017ec0: \n\
 /* 08017ec0 */ POP {R4-R7} \n\

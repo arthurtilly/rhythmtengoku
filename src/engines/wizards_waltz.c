@@ -17,7 +17,7 @@ extern u16 D_03004afc; // "Button Pressed" Input Buffer
 // [func_080449a4] GFX_INIT Func_02
 void func_080449a4(void) {
     func_0800c604(0);
-    func_08017578();
+    gameplay_start_screen_fade_in();
 }
 
 
@@ -26,7 +26,7 @@ void func_080449b4(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_08002ee0(func_0800c3b8(), D_089e9f14, 0x2000);
+    data = func_08002ee0(get_current_mem_id(), D_089e9f14, 0x2000);
     task_run_after(data, func_080449a4, 0);
 }
 
@@ -36,7 +36,7 @@ void func_080449e4(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(func_0800c3b8(), D_089e9f10);
+    data = func_080087b4(get_current_mem_id(), D_089e9f10);
     task_run_after(data, func_080449b4, 0);
 }
 
@@ -48,8 +48,8 @@ void func_08044a10(u32 ver) {
     // Load graphical assets.
     gWizardsWaltzInfo->version = ver;
     func_080449e4();
-    func_0800e0ec();
-    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(1, 1, 0, 0, 0, 29, 1);
 
     // Initialise variables.
     gWizardsWaltzInfo->globalScale = -160;
@@ -75,16 +75,16 @@ void func_08044a10(u32 ver) {
     }
 
     // Set default state.
-    func_08017338(A_BUTTON, 0);
+    gameplay_set_input_buttons(A_BUTTON, 0);
     gWizardsWaltzInfo->isTutorial = FALSE;
-    gWizardsWaltzInfo->cycleInterval = func_0800c3a4(0x90);
+    gWizardsWaltzInfo->cycleInterval = beats_to_ticks(0x90);
 }
 
 
 // [func_08044b80] ENGINE Func_00 - Set Rotation Interval
 void func_08044b80(u32 time) {
     gWizardsWaltzInfo->cyclePosition = 0;
-    gWizardsWaltzInfo->cycleInterval = func_0800c3a4(time);
+    gWizardsWaltzInfo->cycleInterval = beats_to_ticks(time);
 }
 
 
@@ -113,7 +113,7 @@ void func_08044c04(void) {
         // Play animation: "wizard_magic"
         func_08010064(gWizardsWaltzInfo->wizard.sprite, D_08932c14, 0, 1, 0x7f, 0);
         // Play sound.
-        func_08002634(&s_witch_furu_seqData);
+        play_sound(&s_witch_furu_seqData);
     }
 
     // If the Wizard is "using magic" and animation frame data is exhausted (>6):
@@ -227,7 +227,7 @@ void func_08044e78(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
 
     cue->sprite = func_0800fa6c(anim, 0, 120, 80, var4, 0x100, 0, 1, 0x7f, 0, doubleSize);
     func_08044ba8(cue->sprite, xPos, 32, scale);
-    func_080180b4(arg0, gWizardsWaltzInfo->cycleInterval);
+    gameplay_set_cue_duration(arg0, gWizardsWaltzInfo->cycleInterval);
 
     angle = 0; // Required to match
 }
@@ -235,7 +235,7 @@ void func_08044e78(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
 
 // [func_08044f94] CUE - Update
 u32 func_08044f94(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
-    if (arg2 > (gWizardsWaltzInfo->cycleInterval + func_0800c3a4(0x30))) return TRUE;
+    if (arg2 > (gWizardsWaltzInfo->cycleInterval + beats_to_ticks(0x30))) return TRUE;
 
     return FALSE;
 }
@@ -275,7 +275,7 @@ void func_0804503c(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
     u32 flip;
 
     // Check for flip.
-    flip = ((u32) ~func_08018054()) >> 0x1f;
+    flip = ((u32) ~gameplay_get_last_hit_offset()) >> 0x1f;
     if (cue->position > 0x200) {
         flip ^= 1;
     }
@@ -299,14 +299,14 @@ void func_0804503c(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
     }
 
     // Unknown function - likely related to score.
-    func_0800bc40();
+    beatscript_enable_loops();
 }
 
 
 // [func_080450d0] CUE - Miss
 void func_080450d0(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
     // Unknown function - likely related to score.
-    func_0800bc40();
+    beatscript_enable_loops();
 }
 
 
@@ -328,9 +328,9 @@ void func_080450e4_stub(void) {
 // [func_080450e8] COMMON Func_02 - ?
 void func_080450e8(const struct Scene *skipDest) {
     if (skipDest != NULL) {
-        func_08017448(TRUE);
-        func_08017458(skipDest);
+        gameplay_enable_tutorial(TRUE);
+        gameplay_set_skip_destination(skipDest);
     } else {
-        func_08017448(FALSE);
+        gameplay_enable_tutorial(FALSE);
     }
 }

@@ -21,7 +21,7 @@ thumb_func_start func_08028330 \n\
 /* 0802834e */ LSLS R0, R0, 0x3 \n\
 /* 08028350 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 08028352 */ LDR R4, [R0] \n\
-/* 08028354 */ BL func_0800c3b8 \n\
+/* 08028354 */ BL get_current_mem_id \n\
 /* 08028358 */ LSLS R0, R0, 0x10 \n\
 /* 0802835a */ LSRS R0, R0, 0x10 \n\
 /* 0802835c */ LDR R1, =D_088c88e0 \n\

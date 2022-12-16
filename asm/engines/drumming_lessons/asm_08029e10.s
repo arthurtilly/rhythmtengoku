@@ -9,7 +9,7 @@ thumb_func_start func_08029e10 \n\
 /* 08029e16 */ LDRB R0, [R0] \n\
 /* 08029e18 */ CMP R0, 0x4 @ Compare R0 and 0x4 \n\
 /* 08029e1a */ BNE branch_08029e66 \n\
-/* 08029e1c */ BL func_08018054 \n\
+/* 08029e1c */ BL gameplay_get_last_hit_offset \n\
 /* 08029e20 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 08029e22 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 08029e24 */ BLE branch_08029e28 \n\

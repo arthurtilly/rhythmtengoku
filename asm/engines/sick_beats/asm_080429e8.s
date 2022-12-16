@@ -32,7 +32,7 @@ thumb_func_start func_080429e8 \n\
 /* 08042a1e */ LDR R3, =0x26f \n\
 /* 08042a20 */ ADDS R0, R0, R3 @ Set R0 to R0 + R3 \n\
 /* 08042a22 */ LDRB R0, [R0] \n\
-/* 08042a24 */ BL func_08001980 \n\
+/* 08042a24 */ BL agb_random \n\
 /* 08042a28 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08042a2a */ LSLS R2, R2, 0x18 \n\
 /* 08042a2c */ ASRS R2, R2, 0x18 \n\
@@ -45,7 +45,7 @@ thumb_func_start func_080429e8 \n\
 /* 08042a3c */ MOVS R3, 0x8A @ Set R3 to 0x8A \n\
 /* 08042a3e */ BL func_0804d5d4 \n\
 /* 08042a42 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08042a44 */ BL func_08001980 \n\
+/* 08042a44 */ BL agb_random \n\
 /* 08042a48 */ LSLS R0, R0, 0x10 \n\
 /* 08042a4a */ LSRS R0, R0, 0xF \n\
 /* 08042a4c */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
@@ -58,30 +58,30 @@ thumb_func_start func_080429e8 \n\
 /* 08042a5a */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 08042a5c */ LSRS R4, R4, 0x10 \n\
 /* 08042a5e */ MOVS R0, 0x20 @ Set R0 to 0x20 \n\
-/* 08042a60 */ BL func_08001980 \n\
+/* 08042a60 */ BL agb_random \n\
 /* 08042a64 */ LDR R1, =0xfff0 \n\
 /* 08042a66 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08042a68 */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 08042a6a */ LSLS R4, R4, 0x10 \n\
 /* 08042a6c */ LSRS R4, R4, 0x10 \n\
 /* 08042a6e */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 08042a70 */ BL func_08001980 \n\
+/* 08042a70 */ BL agb_random \n\
 /* 08042a74 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08042a76 */ LDR R2, =0x1007e \n\
 /* 08042a78 */ ADDS R5, R5, R2 @ Set R5 to R5 + R2 \n\
 /* 08042a7a */ LSLS R5, R5, 0x10 \n\
 /* 08042a7c */ LSRS R5, R5, 0x10 \n\
 /* 08042a7e */ MOVS R0, 0x20 @ Set R0 to 0x20 \n\
-/* 08042a80 */ BL func_08001980 \n\
+/* 08042a80 */ BL agb_random \n\
 /* 08042a84 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 08042a86 */ ADDS R6, 0x20 @ Add 0x20 to R6 \n\
 /* 08042a88 */ LSLS R6, R6, 0x10 \n\
 /* 08042a8a */ ASRS R6, R6, 0x10 \n\
 /* 08042a8c */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 08042a8e */ BL func_0800c3a4 \n\
+/* 08042a8e */ BL beats_to_ticks \n\
 /* 08042a92 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08042a94 */ MOVS R0, 0x1E @ Set R0 to 0x1E \n\
-/* 08042a96 */ BL func_08001980 \n\
+/* 08042a96 */ BL agb_random \n\
 /* 08042a9a */ ADD R0, R8 @ Add R8 to R0 \n\
 /* 08042a9c */ SUBS R0, 0xA @ Subtract 0xA from R0 \n\
 /* 08042a9e */ LSLS R0, R0, 0x10 \n\
@@ -100,10 +100,10 @@ thumb_func_start func_080429e8 \n\
 /* 08042aba */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08042abc */ BL task_run_after \n\
 /* 08042ac0 */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\
-/* 08042ac2 */ BL func_0800c3a4 \n\
+/* 08042ac2 */ BL beats_to_ticks \n\
 /* 08042ac6 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08042ac8 */ MOVS R0, 0xB4 @ Set R0 to 0xB4 \n\
-/* 08042aca */ BL func_08001980 \n\
+/* 08042aca */ BL agb_random \n\
 /* 08042ace */ LDR R2, [R7] \n\
 /* 08042ad0 */ ADD R10, R2 @ Add R2 to R10 \n\
 /* 08042ad2 */ MOV R3, R10 @ Set R3 to R10 \n\

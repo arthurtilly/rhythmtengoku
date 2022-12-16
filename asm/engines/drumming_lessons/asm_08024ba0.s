@@ -14,7 +14,7 @@ thumb_func_start func_08024ba0 \n\
 /* 08024bb0 */ BEQ branch_08024bc4 \n\
 /* 08024bb2 */ LDR R0, =0x000003f3 \n\
 /* 08024bb4 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08024bb6 */ BL func_08017338 \n\
+/* 08024bb6 */ BL gameplay_set_input_buttons \n\
 /* 08024bba */ B branch_08024bcc \n\
 \n\
 .ltorg \n\
@@ -22,7 +22,7 @@ thumb_func_start func_08024ba0 \n\
 branch_08024bc4: \n\
 /* 08024bc4 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08024bc6 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08024bc8 */ BL func_08017338 \n\
+/* 08024bc8 */ BL gameplay_set_input_buttons \n\
  \n\
 branch_08024bcc: \n\
 /* 08024bcc */ POP {R0} \n\

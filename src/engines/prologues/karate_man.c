@@ -16,7 +16,7 @@
 // [func_0804550c] GFX_INIT Func_02
 void func_0804550c(void) {
     func_0800c604(0);
-    func_08017578();
+    gameplay_start_screen_fade_in();
 }
 
 
@@ -25,7 +25,7 @@ void func_0804551c(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(func_0800c3b8(), prologue_karate_gfx_table, 0x2000);
+    task = func_08002ee0(get_current_mem_id(), prologue_karate_gfx_table, 0x2000);
     task_run_after(task, func_0804550c, 0);
 }
 
@@ -36,7 +36,7 @@ void func_0804554c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(func_0800c3b8(), prologue_karate_buffered_textures);
+    task = func_080087b4(get_current_mem_id(), prologue_karate_buffered_textures);
     task_run_after(task, func_0804551c, 0);
 }
 
@@ -46,8 +46,8 @@ void func_0804557c(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_0804554c();
-    func_0800e0ec();
-    func_0800e0a0(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
     gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088ada78, 0, 110, 80, 0, 0, 0, 0);
     gPrologueInfo->kickSprite = func_0804d160(D_03005380, D_088adaa8, 0, 96, 110, 0, 0, 0, 0);

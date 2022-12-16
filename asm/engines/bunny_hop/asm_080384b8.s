@@ -85,7 +85,7 @@ branch_08038540: \n\
 /* 08038540 */ LDR R0, =s_witch_donats_seqData \n\
  \n\
 branch_08038542: \n\
-/* 08038542 */ BL func_08002634 \n\
+/* 08038542 */ BL play_sound \n\
 /* 08038546 */ LDR R0, [R4] \n\
 /* 08038548 */ ADDS R0, 0xF6 @ Add 0xF6 to R0 \n\
 /* 0803854a */ LDRB R0, [R0] \n\
@@ -98,7 +98,7 @@ branch_08038542: \n\
  \n\
 branch_0803855c: \n\
 /* 0803855c */ LDR R0, =s_rabbit_HC_seqData \n\
-/* 0803855e */ BL func_08002634 \n\
+/* 0803855e */ BL play_sound \n\
 /* 08038562 */ LDR R0, [R5] \n\
 /* 08038564 */ ADDS R0, 0xF6 @ Add 0xF6 to R0 \n\
 /* 08038566 */ LDRB R0, [R0] \n\

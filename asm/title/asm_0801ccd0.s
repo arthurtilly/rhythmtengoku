@@ -21,7 +21,7 @@ branch_0801ccd8: \n\
 /* 0801ccea */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801ccec */ STRH R0, [R4, 0x18] \n\
 /* 0801ccee */ MOVS R0, 0x40 @ Set R0 to 0x40 \n\
-/* 0801ccf0 */ BL func_08001980 \n\
+/* 0801ccf0 */ BL agb_random \n\
 /* 0801ccf4 */ LDRH R1, [R4, 0x16] \n\
 /* 0801ccf6 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801ccf8 */ SUBS R0, 0x20 @ Subtract 0x20 from R0 \n\

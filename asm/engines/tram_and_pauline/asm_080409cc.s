@@ -15,7 +15,7 @@ thumb_func_start func_080409cc \n\
 /* 080409e0 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 080409e2 */ BGT branch_08040a08 \n\
 /* 080409e4 */ MOVS R0, 0xC0 @ Set R0 to 0xC0 \n\
-/* 080409e6 */ BL func_0800c3a4 \n\
+/* 080409e6 */ BL beats_to_ticks \n\
 /* 080409ea */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080409ec */ LDR R4, [R4] \n\
 /* 080409ee */ MOVS R0, 0xA0 @ Set R0 to 0xA0 \n\
@@ -28,7 +28,7 @@ thumb_func_start func_080409cc \n\
 /* 080409fe */ ASRS R2, R2, 0x10 \n\
 /* 08040a00 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08040a02 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08040a04 */ BL func_0800e058 \n\
+/* 08040a04 */ BL scene_set_bg_layer_pos \n\
  \n\
 branch_08040a08: \n\
 /* 08040a08 */ POP {R4} \n\

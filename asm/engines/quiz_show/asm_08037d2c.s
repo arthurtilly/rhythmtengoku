@@ -24,7 +24,7 @@ branch_08037d40: \n\
 branch_08037d4a: \n\
 /* 08037d4a */ LSLS R0, R2, 0x10 \n\
 /* 08037d4c */ LSRS R0, R0, 0x10 \n\
-/* 08037d4e */ BL func_08001980 \n\
+/* 08037d4e */ BL agb_random \n\
 /* 08037d52 */ LDR R1, =D_030055d0 \n\
 /* 08037d54 */ LDR R1, [R1] \n\
 /* 08037d56 */ LSLS R0, R0, 0x10 \n\

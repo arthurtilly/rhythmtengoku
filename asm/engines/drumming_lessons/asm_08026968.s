@@ -15,7 +15,7 @@ thumb_func_start func_08026968 \n\
 /* 0802697a */ BEQ branch_080269de \n\
 /* 0802697c */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 0802697e */ BEQ branch_080269ac \n\
-/* 08026980 */ BL func_0800c1a8 \n\
+/* 08026980 */ BL get_beatscript_tempo \n\
 /* 08026984 */ LDR R2, [R4] \n\
 /* 08026986 */ MOVS R3, 0xE7 @ Set R3 to 0xE7 \n\
 /* 08026988 */ LSLS R3, R3, 0x2 \n\
@@ -42,7 +42,7 @@ branch_080269ac: \n\
 /* 080269b6 */ BEQ branch_080269de \n\
 /* 080269b8 */ LSLS R0, R0, 0x10 \n\
 /* 080269ba */ LSRS R0, R0, 0x10 \n\
-/* 080269bc */ BL func_0800bdf8 \n\
+/* 080269bc */ BL set_beatscript_tempo \n\
 /* 080269c0 */ LDR R1, [R4] \n\
 /* 080269c2 */ MOVS R2, 0xE7 @ Set R2 to 0xE7 \n\
 /* 080269c4 */ LSLS R2, R2, 0x2 \n\

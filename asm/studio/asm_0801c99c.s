@@ -9,7 +9,7 @@ thumb_func_start func_0801c99c \n\
 /* 0801c9a2 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
 /* 0801c9a4 */ BNE branch_0801c9ac \n\
 /* 0801c9a6 */ LDR R0, =s_intro_stick_seqData \n\
-/* 0801c9a8 */ BL func_08002634 \n\
+/* 0801c9a8 */ BL play_sound \n\
  \n\
 branch_0801c9ac: \n\
 /* 0801c9ac */ POP {R0} \n\

@@ -166,7 +166,7 @@ branch_0803a9ee: \n\
 /* 0803aa40 */ ASRS R2, R2, 0x10 \n\
 /* 0803aa42 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803aa44 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803aa46 */ BL func_0800e058 \n\
+/* 0803aa46 */ BL scene_set_bg_layer_pos \n\
  \n\
 branch_0803aa4a: \n\
 /* 0803aa4a */ POP {R4, R5} \n\

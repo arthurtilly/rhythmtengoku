@@ -19,7 +19,7 @@ thumb_func_start func_080438c8 \n\
  \n\
 branch_080438e2: \n\
 /* 080438e2 */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\
-/* 080438e4 */ BL func_0800c3a4 \n\
+/* 080438e4 */ BL beats_to_ticks \n\
 /* 080438e8 */ CMP R6, R0 @ Check R6 - R0 \n\
 /* 080438ea */ BLS branch_080438ee \n\
 /* 080438ec */ B branch_08043a06 \n\
@@ -60,7 +60,7 @@ jump_08043944: \n\
 /* 08043946 */ MOVS R4, 0x80 @ Set R4 to 0x80 \n\
 /* 08043948 */ LSLS R4, R4, 0x1 \n\
 /* 0804394a */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 0804394c */ BL func_0800c3a4 \n\
+/* 0804394c */ BL beats_to_ticks \n\
 /* 08043950 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 08043952 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08043954 */ MOVS R1, 0xB0 @ Set R1 to 0xB0 \n\
@@ -82,7 +82,7 @@ jump_08043970: \n\
 /* 08043974 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08043976 */ BLT branch_08043990 \n\
 /* 08043978 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 0804397a */ BL func_0800c3a4 \n\
+/* 0804397a */ BL beats_to_ticks \n\
 /* 0804397e */ CMP R6, R0 @ Check R6 - R0 \n\
 /* 08043980 */ BLS branch_08043990 \n\
 /* 08043982 */ LDRB R0, [R5] \n\
@@ -90,13 +90,13 @@ jump_08043970: \n\
 /* 08043986 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 08043988 */ STRB R0, [R5] \n\
 /* 0804398a */ LDR R0, =s_virus_dash_seqData \n\
-/* 0804398c */ BL func_08002634 \n\
+/* 0804398c */ BL play_sound \n\
  \n\
 branch_08043990: \n\
 /* 08043990 */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
  \n\
 branch_08043992: \n\
-/* 08043992 */ BL func_0800c3a4 \n\
+/* 08043992 */ BL beats_to_ticks \n\
 /* 08043996 */ CMP R6, R0 @ Check R6 - R0 \n\
 /* 08043998 */ BLS branch_08043a18 \n\
 /* 0804399a */ B branch_08043a06 \n\
@@ -105,7 +105,7 @@ branch_08043992: \n\
 jump_080439a0: \n\
 /* 080439a0 */ LDR R4, [R5, 0x8] \n\
 /* 080439a2 */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
-/* 080439a4 */ BL func_0800c3a4 \n\
+/* 080439a4 */ BL beats_to_ticks \n\
 /* 080439a8 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 080439aa */ MOVS R0, 0x68 @ Set R0 to 0x68 \n\
 /* 080439ac */ MOVS R1, 0x8A @ Set R1 to 0x8A \n\
@@ -121,7 +121,7 @@ jump_080439a0: \n\
 /* 080439c4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080439c6 */ BLT branch_080439ee \n\
 /* 080439c8 */ MOVS R0, 0x28 @ Set R0 to 0x28 \n\
-/* 080439ca */ BL func_0800c3a4 \n\
+/* 080439ca */ BL beats_to_ticks \n\
 /* 080439ce */ CMP R6, R0 @ Check R6 - R0 \n\
 /* 080439d0 */ BLS branch_080439ee \n\
 /* 080439d2 */ LDRB R0, [R5] \n\
@@ -140,7 +140,7 @@ jump_080439a0: \n\
  \n\
 branch_080439ee: \n\
 /* 080439ee */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
-/* 080439f0 */ BL func_0800c3a4 \n\
+/* 080439f0 */ BL beats_to_ticks \n\
 /* 080439f4 */ CMP R6, R0 @ Check R6 - R0 \n\
 /* 080439f6 */ BLS branch_08043a18 \n\
 /* 080439f8 */ LDRB R0, [R5, 0x4] \n\
@@ -148,7 +148,7 @@ branch_080439ee: \n\
 /* 080439fc */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080439fe */ STRB R1, [R0] \n\
 /* 08043a00 */ LDR R0, =s_virus_miss_seqData \n\
-/* 08043a02 */ BL func_08002634 \n\
+/* 08043a02 */ BL play_sound \n\
  \n\
 branch_08043a06: \n\
 /* 08043a06 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\

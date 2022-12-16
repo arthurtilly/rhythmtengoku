@@ -78,16 +78,16 @@ const struct GameEngine D_089eb3d8 = {
 
 // [D_089eb3f8] Prologue (Samurai Slice) BeatScript - Main
 const struct BeatScript D_089eb3f8[] = {
-    BSC_RUN_FUNC_1(func_08017568, 0x8),
+    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x8),
     BSC4_LOAD_GAME_ENGINE(&D_089eb3d8, 0),
-    BSC_RUN_FUNC_1(func_08002838, 0),
+    BSC_RUN_FUNC_1(stop_all_soundplayers, 0),
     BSC_PLAY_SOUND(&s_jingle_iai_seqData),
     BSC_REST(0x18),
     BSC_REST(0x18),
     BSC_REST(0x18),
     BSC_PLAY_SOUND_1(&s_f_iai_title_seqData, 0xC0, 0x00),
-    BSC_RUN_FUNC_1(func_0800e044, 1),
-    BSC_RUN_FUNC_1(func_0800e030, 2),
+    BSC_RUN_FUNC_1(scene_hide_bg_layer, 1),
+    BSC_RUN_FUNC_1(scene_show_bg_layer, 2),
     BSC_REST(0x18),
     BSC_RUN_FUNC_1(func_080460d4, 1),
     BSC_REST(0x06),
@@ -102,6 +102,6 @@ const struct BeatScript D_089eb3f8[] = {
     BSC_REST(0x18),
     BSC_RUN_FUNC_1(func_08006d80, 0),
     BSC_REST(0x18),
-    BSC_RUN_FUNC_1(func_08017568, 0x10),
+    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x10),
     BSC_RETURN
 };

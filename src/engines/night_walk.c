@@ -61,7 +61,7 @@ void night_walk_play_yan_jump(s32 jumpOverGap, s32 timingOffset) {
     playYan->state = PLAY_YAN_STATE_JUMPING;
     func_0804d8f8(D_03005380, playYan->sprite, anim_play_yan_jump, 0, 0, 0, 0);
     playYan->jumpTime = 0;
-    playYan->jumpDuration = func_0800c3a4(0x14) - timingOffset;
+    playYan->jumpDuration = beats_to_ticks(0x14) - timingOffset;
 }
 
 
@@ -117,12 +117,12 @@ void night_walk_play_yan_update_jump(struct PlayYan *playYan) {
             if (gNightWalkInfo->endScript != NULL) {
                 func_0801d95c(gNightWalkInfo->endScript);
             }
-            func_08017928(gNightWalkInfo->markingCriteria, 2, 0);
+            gameplay_add_cue_result(gNightWalkInfo->markingCriteria, 2, 0);
             func_0804d8f8(D_03005380, playYan->sprite, anim_play_yan_violent_electrocution, 0, 1, 0, 0);
             func_0804d8f8(D_03005380, playYan->fishSprite, anim_night_walk_fish_zap, 0, 1, 0, 0);
-            playYan->zapTime = func_0800c3a4(0x48);
+            playYan->zapTime = beats_to_ticks(0x48);
             playYan->state = PLAY_YAN_STATE_ZAPPED;
-            func_08002634(&s_f_drumtech_damage_seqData);
+            play_sound(&s_f_drumtech_damage_seqData);
         }
     }
 }
@@ -138,11 +138,11 @@ void night_walk_play_yan_hold_on(s16 x, s16 y) {
     func_0804db44(D_03005380, playYan->sprite, NULL, &unk3B8->unk6);
     func_0804d5d4(D_03005380, playYan->sprite, x, y);
     gNightWalkInfo->stoppedScrolling = TRUE;
-    func_08002634(&s_f_drumtech_miss_seqData);
+    play_sound(&s_f_drumtech_miss_seqData);
     if (gNightWalkInfo->endScript != NULL) {
         func_0801d95c(gNightWalkInfo->endScript);
     }
-    func_08017928(gNightWalkInfo->markingCriteria, 2, 0);
+    gameplay_add_cue_result(gNightWalkInfo->markingCriteria, 2, 0);
 }
 
 
@@ -154,7 +154,7 @@ void night_walk_play_yan_fall(void) {
     playYan->yOrigin = func_0804ddb0(D_03005380, playYan->sprite, 5);
     playYan->yDistance = 0;
     playYan->yVelocity = 0;
-    func_08002634(&s_f_drumtech_fall_seqData);
+    play_sound(&s_f_drumtech_fall_seqData);
 }
 
 
@@ -208,9 +208,9 @@ void night_walk_init_balloons(u32 balloonCount) {
     playYan->balloonCount = balloonCount;
 
     for (i = 0; i < balloonCount; i++) {
-        x = func_08001980(i * 3) + 64 - (i * 3 / 2) - i;
+        x = agb_random(i * 3) + 64 - (i * 3 / 2) - i;
         y = 120 - (i * 2);
-        sprite = func_0804d160(D_03005380, anim_night_walk_balloon, func_08001980(6), x, y, (0x47ff - i), 1, 0, 0);
+        sprite = func_0804d160(D_03005380, anim_night_walk_balloon, agb_random(6), x, y, (0x47ff - i), 1, 0, 0);
         playYan->balloonSprites[i] = sprite;
         func_0804d8c4(D_03005380, sprite, i % 5);
     }
@@ -303,7 +303,7 @@ void night_walk_finish_star_expansion(s32 arg0, s16 sprite, const struct Animati
     func_0804d8f8(D_03005380, sprite, anim, 0, 1, 0, 0);
     func_0804daa8(D_03005380, sprite, NULL, 0);
     frame = func_0804ddb0(D_03005380, sprite, 2);
-    func_0804cebc(D_03005380, sprite, func_08001980(frame));
+    func_0804cebc(D_03005380, sprite, agb_random(frame));
 }
 
 
@@ -427,7 +427,7 @@ void func_0802a9b4(struct DrumTechController *data) {
     D_03001568->unk334 = NULL;
     D_03001568->unk338 = -1;
     D_03001568->unk33A = 9999;
-    D_03001568->unk33C = INT_TO_FIXED(func_0800c3a4(0x18));
+    D_03001568->unk33C = INT_TO_FIXED(beats_to_ticks(0x18));
     D_03001568->unk342 = 37;
     D_03001568->unk344 = -1;
     D_03001568->unk348 = 0;
@@ -442,7 +442,7 @@ void func_0802aa4c(void) {
     for (i = 0; i < 10; i++) {
         if (D_03001568->soundTimers[i] > 0) {
             if (--D_03001568->soundTimers[i] == 0) {
-                func_08002828(D_08aa4460[i].soundPlayer);
+                stop_soundplayer(D_08aa4460[i].soundPlayer);
             }
         }
     }
@@ -476,7 +476,7 @@ void func_0802aac0(const struct DrumTechNote *sequence, s32 timingOffset, s32 un
     func_0802a994();
 
     while ((sequence->drumID != 0xff) && (i < 100)) {
-        delay = func_0800c3a4(ticks) + timingOffset;
+        delay = beats_to_ticks(ticks) + timingOffset;
         if (delay <= 0 || ticks == 0) {
             func_0802ab7c(sequence->drumID, sequence->volume, sequence->pitch);
         } else {
@@ -564,7 +564,7 @@ void func_0802b064(void) {
 
     for (i = 0; i < 10; i++) {
         if (D_03001568->soundTimers[i] != 0) {
-            func_08002828(D_08aa4460[i].soundPlayer);
+            stop_soundplayer(D_08aa4460[i].soundPlayer);
         }
     }
 }
@@ -573,7 +573,7 @@ void func_0802b064(void) {
 // Graphics Init. 2
 void night_walk_init_gfx3(void) {
     func_0800c604(0);
-    func_08017578();
+    gameplay_start_screen_fade_in();
 }
 
 
@@ -582,7 +582,7 @@ void night_walk_init_gfx2(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(func_0800c3b8(), night_walk_gfx_table, 0x2000);
+    task = func_08002ee0(get_current_mem_id(), night_walk_gfx_table, 0x2000);
     task_run_after(task, night_walk_init_gfx3, 0);
 }
 
@@ -592,7 +592,7 @@ void night_walk_init_gfx1(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_080087b4(func_0800c3b8(), night_walk_buffered_textures);
+    task = func_080087b4(get_current_mem_id(), night_walk_buffered_textures);
     task_run_after(task, night_walk_init_gfx2, 0);
 }
 
@@ -603,23 +603,23 @@ void night_walk_engine_init(u32 ver) {
 
     gNightWalkInfo->version = ver;
     night_walk_init_gfx1();
-    func_0800e0ec();
-    func_0800e0a0(BG_LAYER_1, FALSE, 0, 0, 0, 29, 0);
-    func_080173c4(FALSE);
-    func_08017338(A_BUTTON, 0);
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(BG_LAYER_1, FALSE, 0, 0, 0, 29, 0);
+    gameplay_enable_inputs(FALSE);
+    gameplay_set_input_buttons(A_BUTTON, 0);
     func_0802a9b4(&gNightWalkInfo->drumTech);
     gNightWalkInfo->drumVolume = INT_TO_FIXED(1.0);
     night_walk_init_play_yan();
     func_0802a970();
     night_walk_init_stars();
 
-    textPrinter = text_printer_create_new(func_0800c3b8(), 1, 240, 30);
+    textPrinter = text_printer_create_new(get_current_mem_id(), 1, 240, 30);
     text_printer_set_x_y(textPrinter, 0, 40);
     text_printer_set_layer(textPrinter, 0x800);
     text_printer_center_by_content(textPrinter, TRUE);
     text_printer_set_palette(textPrinter, 6);
     text_printer_set_colors(textPrinter, 0);
-    func_08018630(textPrinter);
+    gameplay_set_text_printer(textPrinter);
 
     gNightWalkInfo->stoppedScrolling = FALSE;
     gNightWalkInfo->nextBridgeType = PLATFORM_TYPE_BRIDGE;
@@ -702,9 +702,9 @@ void night_walk_cue_spawn(struct Cue *cue, struct NightWalkCue *info, u32 type) 
     info->type = type;
     info->hasOpened = FALSE;
     info->delayBeats = gNightWalkInfo->cueDelayTime;
-    info->delayTime = func_0800c3a4(gNightWalkInfo->cueDelayTime);
+    info->delayTime = beats_to_ticks(gNightWalkInfo->cueDelayTime);
     info->hasFish = -1;
-    func_080180b4(cue, func_0800c3a4(0xC0 - gNightWalkInfo->cueDelayTime)); // set cue duration
+    gameplay_set_cue_duration(cue, beats_to_ticks(0xC0 - gNightWalkInfo->cueDelayTime)); // set cue duration
     info->hasFish = FALSE;
 
     switch (gNightWalkInfo->nextBridgeType) {
@@ -715,7 +715,7 @@ void night_walk_cue_spawn(struct Cue *cue, struct NightWalkCue *info, u32 type) 
             endOfBridge = TRUE;
             break;
         case PLATFORM_TYPE_RANDOM:
-            endOfBridge = (func_08001980(4) == 0);
+            endOfBridge = (agb_random(4) == 0);
             break;
         case PLATFORM_TYPE_FISH:
             endOfBridge = FALSE;
@@ -727,7 +727,7 @@ void night_walk_cue_spawn(struct Cue *cue, struct NightWalkCue *info, u32 type) 
     }
 
     info->runningTime = 0;
-    info->duration = func_0800c3a4(0xC0);
+    info->duration = beats_to_ticks(0xC0);
     x = night_walk_cue_get_x(info);
     y = unk3B8->unk4;
     info->endOfBridge = endOfBridge;
@@ -762,7 +762,7 @@ u32 night_walk_cue_update(struct Cue *cue, struct NightWalkCue *info, u32 runnin
     noteBoxDelay = (gNightWalkInfo->inSwing) ? 0x10 : 0x0C;
 
     if (!gNightWalkInfo->stoppedScrolling && !info->endOfBridge && !info->hasOpened) {
-        if (runningTime > (func_0800c3a4(0xC0 + noteBoxDelay) - info->delayTime)) {
+        if (runningTime > (beats_to_ticks(0xC0 + noteBoxDelay) - info->delayTime)) {
             info->hasOpened = TRUE;
             func_0804d8f8(D_03005380, info->boxSprite, anim_night_walk_note_bridge, 1, 1, 4, 0);
 
@@ -774,7 +774,7 @@ u32 night_walk_cue_update(struct Cue *cue, struct NightWalkCue *info, u32 runnin
         }
     }
 
-    if (runningTime > func_0800c3a4(0x120 - info->delayBeats)) {
+    if (runningTime > beats_to_ticks(0x120 - info->delayBeats)) {
         if (info->playYanFellHere) {
             night_walk_play_yan_fall();
         }
@@ -820,7 +820,7 @@ void night_walk_cue_despawn(struct Cue *cue, struct NightWalkCue *info) {
             func_0804d8f8(D_03005380, info->boxSprite, anim_night_walk_bridge_disappear, 0, 1, 0, 3);
         }
         if (func_0804ddb0(D_03005380, info->boxSprite, 4) < 244) {
-            func_0800267c(SFX_PLAYER_4, &s_4beat_jiban_seqData);
+            play_sound_in_player(SFX_PLAYER_4, &s_4beat_jiban_seqData);
         }
     } else {
         func_0804d504(D_03005380, info->boxSprite);
@@ -835,7 +835,7 @@ void night_walk_cue_despawn(struct Cue *cue, struct NightWalkCue *info) {
 void night_walk_cue_check_for_fish(struct NightWalkCue *info) {
     if (!info->hasFish) return;
 
-    gNightWalkInfo->playYan.zapTime = func_0800c3a4(0x08);
+    gNightWalkInfo->playYan.zapTime = beats_to_ticks(0x08);
     gNightWalkInfo->playYan.fishSprite = info->fishSprite;
 }
 
@@ -850,45 +850,45 @@ void night_walk_cue_hit(struct Cue *cue, struct NightWalkCue *info, u32 pressed,
         return;
     }
 
-    timingOffset = ~(func_08018054());
+    timingOffset = ~(gameplay_get_last_hit_offset());
 
     if (D_03004afc & A_BUTTON) {
         if (gNightWalkInfo->inSwing) {
             if (info->type == NIGHT_WALK_CUE_HEART) {
-                func_0802aac0(night_walk_drum_seq_kick_swing[func_08001980(1)], timingOffset, 0);
+                func_0802aac0(night_walk_drum_seq_kick_swing[agb_random(1)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_LOLLIPOP) {
-                func_0802aac0(night_walk_drum_seq_snare_swing[func_08001980(1)], timingOffset, 0);
+                func_0802aac0(night_walk_drum_seq_snare_swing[agb_random(1)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_UMBRELLA) {
-                func_0802aac0(night_walk_drum_seq_cymbal[func_08001980(1)], timingOffset, 0);
+                func_0802aac0(night_walk_drum_seq_cymbal[agb_random(1)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_HEART_2) {
-                func_0802aac0(night_walk_drum_seq_roll[func_08001980(4)], timingOffset, 0);
+                func_0802aac0(night_walk_drum_seq_roll[agb_random(4)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_STAR_WAND) {
                 if (info->starWandIsAvailable) {
-                    func_0802aac0(night_walk_drum_seq_cymbal[func_08001980(1)], timingOffset, 0);
+                    func_0802aac0(night_walk_drum_seq_cymbal[agb_random(1)], timingOffset, 0);
                 } else {
                     func_0802aac0(drum_seq_night_walk_default, timingOffset, 0);
                 }
             }
         } else {
             if (info->type == NIGHT_WALK_CUE_HEART) {
-                func_0802aac0(night_walk_drum_seq_kick[func_08001980(1)], timingOffset, 0);
+                func_0802aac0(night_walk_drum_seq_kick[agb_random(1)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_LOLLIPOP) {
-                func_0802aac0(night_walk_drum_seq_snare[func_08001980(1)], timingOffset, 0);
+                func_0802aac0(night_walk_drum_seq_snare[agb_random(1)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_UMBRELLA) {
-                func_0802aac0(night_walk_drum_seq_cymbal[func_08001980(1)], timingOffset, 0);
+                func_0802aac0(night_walk_drum_seq_cymbal[agb_random(1)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_HEART_2) {
-                func_0802aac0(night_walk_drum_seq_roll[func_08001980(4)], timingOffset, 0);
+                func_0802aac0(night_walk_drum_seq_roll[agb_random(4)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_STAR_WAND) {
                 if (info->starWandIsAvailable) {
-                    func_0802aac0(night_walk_drum_seq_cymbal[func_08001980(1)], timingOffset, 0);
+                    func_0802aac0(night_walk_drum_seq_cymbal[agb_random(1)], timingOffset, 0);
                 } else {
                     func_0802aac0(drum_seq_night_walk_default, timingOffset, 0);
                 }
@@ -910,10 +910,10 @@ void night_walk_cue_hit(struct Cue *cue, struct NightWalkCue *info, u32 pressed,
         if (gNightWalkInfo->endScript != NULL) {
             func_0801d95c(gNightWalkInfo->endScript);
         }
-        func_08017928(gNightWalkInfo->markingCriteria, 0, 0); // register cue result
+        gameplay_add_cue_result(gNightWalkInfo->markingCriteria, 0, 0); // register cue result
         func_0804d8f8(D_03005380, info->boxSprite, anim_night_walk_ng_wand_box, 1, 1, 0x7f, 0);
     } else {
-        night_walk_play_yan_jump(info->endOfBridge, func_08018054());
+        night_walk_play_yan_jump(info->endOfBridge, gameplay_get_last_hit_offset());
         func_0804dae0(D_03005380, info->boxSprite, 1, 0x7f, 0);
         func_0804cebc(D_03005380, info->boxSprite, 1);
         night_walk_expand_stars(1);
@@ -932,7 +932,7 @@ void night_walk_cue_barely(struct Cue *cue, struct NightWalkCue *info, u32 press
         return;
     }
 
-    timingOffset = -(func_08018054());
+    timingOffset = -(gameplay_get_last_hit_offset());
 
     if (info->type == NIGHT_WALK_CUE_HEART) {
         func_0802aac0(drum_seq_night_walk_kick_barely, timingOffset, 0);
@@ -950,7 +950,7 @@ void night_walk_cue_barely(struct Cue *cue, struct NightWalkCue *info, u32 press
         func_0802aac0(drum_seq_night_walk_snare_barely, timingOffset, 0);
     }
 
-    night_walk_play_yan_jump(info->endOfBridge, func_08018054());
+    night_walk_play_yan_jump(info->endOfBridge, gameplay_get_last_hit_offset());
     info->hasOpened = TRUE;
     func_0804d8f8(D_03005380, info->boxSprite, night_walk_barely_anim[info->type][info->endOfBridge], 0, 1, 0x7f, 0);
     if (gNightWalkInfo->version == NIGHT_WALK_VER_1) {

@@ -31,7 +31,7 @@ thumb_func_start func_08027c90 \n\
 /* 08027cc4 */ LDR R1, =0x00000566 \n\
 /* 08027cc6 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08027cc8 */ LDRH R0, [R0] \n\
-/* 08027cca */ BL func_0800bdf8 \n\
+/* 08027cca */ BL set_beatscript_tempo \n\
 /* 08027cce */ LDR R0, [R5] \n\
 /* 08027cd0 */ LDR R2, =0x00000563 \n\
 /* 08027cd2 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\

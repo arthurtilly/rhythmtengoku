@@ -38,7 +38,7 @@ branch_0802e0a6: \n\
 /* 0802e0b8 */ BGE branch_0802e0d0 \n\
 /* 0802e0ba */ BL func_0802dfa4 \n\
 /* 0802e0be */ LDR R0, =s_change_goal_seqData \n\
-/* 0802e0c0 */ BL func_08002634 \n\
+/* 0802e0c0 */ BL play_sound \n\
 /* 0802e0c4 */ B branch_0802e200 \n\
 \n\
 .ltorg \n\
@@ -71,12 +71,12 @@ branch_0802e0dc: \n\
 /* 0802e100 */ ADDS R0, R5, R0 @ Set R0 to R5 + R0 \n\
 /* 0802e102 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802e104 */ STRB R1, [R0, 0x19] \n\
-/* 0802e106 */ BL func_08017918 \n\
+/* 0802e106 */ BL gameplay_get_marking_criteria \n\
 /* 0802e10a */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0802e10c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0802e10e */ ADDS R0, 0x26 @ Add 0x26 to R0 \n\
 /* 0802e110 */ LDRB R0, [R0] \n\
-/* 0802e112 */ BL func_08017908 \n\
+/* 0802e112 */ BL gameplay_set_marking_criteria \n\
 /* 0802e116 */ LDR R0, =D_030055d0 \n\
 /* 0802e118 */ LDR R0, [R0] \n\
 /* 0802e11a */ LDRH R1, [R5, 0x8] \n\
@@ -85,9 +85,9 @@ branch_0802e0dc: \n\
 /* 0802e120 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0802e122 */ STRH R1, [R0] \n\
 /* 0802e124 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0802e126 */ BL func_080179f4 \n\
+/* 0802e126 */ BL gameplay_spawn_cue \n\
 /* 0802e12a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0802e12c */ BL func_08017908 \n\
+/* 0802e12c */ BL gameplay_set_marking_criteria \n\
  \n\
 branch_0802e130: \n\
 /* 0802e130 */ LDRB R0, [R5, 0xE] \n\

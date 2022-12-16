@@ -142,7 +142,7 @@ branch_0801c3da: \n\
 /* 0801c42a */ STRB R5, [R1] \n\
 /* 0801c42c */ BL func_0801aa04 \n\
 /* 0801c430 */ LDR R0, =s_studio_bgm_seqData \n\
-/* 0801c432 */ BL func_08002634 \n\
+/* 0801c432 */ BL play_sound \n\
 /* 0801c436 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0801c438 */ LDR R1, [R2] \n\
 /* 0801c43a */ MOVS R3, 0x97 @ Set R3 to 0x97 \n\
@@ -201,7 +201,7 @@ branch_0801c3da: \n\
 /* 0801c4ac */ LSLS R1, R1, 0x2 \n\
 /* 0801c4ae */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801c4b0 */ STR R4, [R0] \n\
-/* 0801c4b2 */ BL func_0800c3b8 \n\
+/* 0801c4b2 */ BL get_current_mem_id \n\
 /* 0801c4b6 */ LSLS R0, R0, 0x10 \n\
 /* 0801c4b8 */ LSRS R0, R0, 0x10 \n\
 /* 0801c4ba */ MOVS R1, 0xE0 @ Set R1 to 0xE0 \n\

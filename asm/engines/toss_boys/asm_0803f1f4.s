@@ -87,7 +87,7 @@ branch_0803f28c: \n\
 /* 0803f292 */ LDR R4, =0x372 \n\
 /* 0803f294 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0803f296 */ LDRH R0, [R0] \n\
-/* 0803f298 */ BL func_0800c3a4 \n\
+/* 0803f298 */ BL beats_to_ticks \n\
 /* 0803f29c */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0803f29e */ SUBS R1, 0x5 @ Subtract 0x5 from R1 \n\
 /* 0803f2a0 */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
@@ -142,7 +142,7 @@ branch_0803f28c: \n\
 /* 0803f306 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803f308 */ BL func_0804cebc \n\
 /* 0803f30c */ LDR R0, =s_f_toss_ball_seqData \n\
-/* 0803f30e */ BL func_08002634 \n\
+/* 0803f30e */ BL play_sound \n\
 /* 0803f312 */ LDR R0, =D_089e86b8 \n\
 /* 0803f314 */ LDR R3, [SP, 0xC] \n\
 /* 0803f316 */ ADDS R0, R3, R0 @ Set R0 to R3 + R0 \n\

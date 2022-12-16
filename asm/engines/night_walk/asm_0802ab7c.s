@@ -47,13 +47,13 @@ branch_0802abb8: \n\
 /* 0802abd0 */ LSLS R0, R0, 0x2 \n\
 /* 0802abd2 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0802abd4 */ LDR R0, [R0] \n\
-/* 0802abd6 */ BL func_08002828 \n\
+/* 0802abd6 */ BL stop_soundplayer \n\
 /* 0802abda */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0802abdc */ LDRSB R0, [R5, R0] \n\
 /* 0802abde */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0802abe0 */ BGE branch_0802abf4 \n\
 /* 0802abe2 */ LDR R0, [R5, 0x8] \n\
-/* 0802abe4 */ BL func_08002634 \n\
+/* 0802abe4 */ BL play_sound \n\
 /* 0802abe8 */ B branch_0802abfe \n\
 \n\
 .ltorg \n\
@@ -62,7 +62,7 @@ branch_0802abf4: \n\
 /* 0802abf4 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0802abf6 */ LDRSB R0, [R5, R0] \n\
 /* 0802abf8 */ LDR R1, [R5, 0x8] \n\
-/* 0802abfa */ BL func_0800267c \n\
+/* 0802abfa */ BL play_sound_in_player \n\
  \n\
 branch_0802abfe: \n\
 /* 0802abfe */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
@@ -78,13 +78,13 @@ branch_0802abfe: \n\
 /* 0802ac12 */ MULS R1, R0 @ Multiply R1 by R0 \n\
 /* 0802ac14 */ LSRS R1, R1, 0x10 \n\
 /* 0802ac16 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0802ac18 */ BL func_08002920 \n\
+/* 0802ac18 */ BL set_soundplayer_volume \n\
 /* 0802ac1c */ LDRH R1, [R5, 0x4] \n\
 /* 0802ac1e */ ADDS R1, R1, R7 @ Set R1 to R1 + R7 \n\
 /* 0802ac20 */ LSLS R1, R1, 0x10 \n\
 /* 0802ac22 */ ASRS R1, R1, 0x10 \n\
 /* 0802ac24 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0802ac26 */ BL func_080028a8 \n\
+/* 0802ac26 */ BL set_soundplayer_pitch \n\
 /* 0802ac2a */ LDR R0, [R4] \n\
 /* 0802ac2c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802ac2e */ LDRSB R1, [R5, R1] \n\

@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start func_08035bc0 \n\
 /* 08035bc0 */ PUSH {LR} \n\
-/* 08035bc2 */ BL func_08018054 \n\
+/* 08035bc2 */ BL gameplay_get_last_hit_offset \n\
 /* 08035bc6 */ ADDS R0, 0x5 @ Add 0x5 to R0 \n\
 /* 08035bc8 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08035bca */ MOVS R2, 0xA @ Set R2 to 0xA \n\

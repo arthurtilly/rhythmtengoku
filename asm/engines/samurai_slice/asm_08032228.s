@@ -19,7 +19,7 @@ thumb_func_start func_08032228 \n\
 /* 08032242 */ ASRS R2, R2, 0x10 \n\
 /* 08032244 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08032246 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08032248 */ BL func_0800e058 \n\
+/* 08032248 */ BL scene_set_bg_layer_pos \n\
 /* 0803224c */ LDR R0, [R4] \n\
 /* 0803224e */ ADDS R0, 0x80 @ Add 0x80 to R0 \n\
 /* 08032250 */ LDR R2, [R0] \n\
@@ -27,7 +27,7 @@ thumb_func_start func_08032228 \n\
 /* 08032254 */ ASRS R2, R2, 0x10 \n\
 /* 08032256 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 08032258 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803225a */ BL func_0800e058 \n\
+/* 0803225a */ BL scene_set_bg_layer_pos \n\
 /* 0803225e */ LDR R0, [R4] \n\
 /* 08032260 */ ADDS R0, 0x89 @ Add 0x89 to R0 \n\
 /* 08032262 */ STRB R5, [R0] \n\

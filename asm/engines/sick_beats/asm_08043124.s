@@ -10,7 +10,7 @@ thumb_func_start func_08043124 \n\
 /* 0804312c */ ADDS R5, R6, 0x0 @ Set R5 to R6 + 0x0 \n\
 /* 0804312e */ ADDS R5, 0xC @ Add 0xC to R5 \n\
 /* 08043130 */ MOVS R0, 0x1E @ Set R0 to 0x1E \n\
-/* 08043132 */ BL func_0800c3a4 \n\
+/* 08043132 */ BL beats_to_ticks \n\
 /* 08043136 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08043138 */ MOVS R0, 0x40 @ Set R0 to 0x40 \n\
 /* 0804313a */ ANDS R0, R4 @ Set R0 to R0 & R4 \n\

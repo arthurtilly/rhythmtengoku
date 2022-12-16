@@ -73,9 +73,9 @@ const struct GameEngine D_089eda3c = {
 
 // [D_089eda5c] Prologue (Toss Boys 2) BeatScript - Main
 const struct BeatScript D_089eda5c[] = {
-    BSC_RUN_FUNC_1(func_08017568, 0x8),
+    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x8),
     BSC4_LOAD_GAME_ENGINE(&D_089eda3c, 0),
-    BSC_RUN_FUNC_1(func_08002838, 0),
+    BSC_RUN_FUNC_1(stop_all_soundplayers, 0),
     BSC_PLAY_SOUND(&s_jingle_toss_seqData),
     BSC_REST(0x18),
     BSC_REST(0x18),
@@ -100,6 +100,6 @@ const struct BeatScript D_089eda5c[] = {
     BSC_REST(0x0C),
     BSC_RUN_FUNC_1(func_08006d80, 0),
     BSC_REST(0x18),
-    BSC_RUN_FUNC_1(func_08017568, 0x10),
+    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x10),
     BSC_RETURN
 };

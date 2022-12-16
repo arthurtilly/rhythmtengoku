@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_08043df0 \n\
 /* 08043df0 */ PUSH {R4, LR} \n\
 /* 08043df2 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
-/* 08043df4 */ BL func_08018054 \n\
+/* 08043df4 */ BL gameplay_get_last_hit_offset \n\
 /* 08043df8 */ LDR R1, =D_08931bec \n\
 /* 08043dfa */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08043dfc */ BGE branch_08043e00 \n\

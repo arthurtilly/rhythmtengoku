@@ -12,7 +12,7 @@ thumb_func_start func_0803d2c0 \n\
 /* 0803d2cc */ LSLS R0, R6, 0x2 \n\
 /* 0803d2ce */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0803d2d0 */ LDR R0, [R0] \n\
-/* 0803d2d2 */ BL func_08002634 \n\
+/* 0803d2d2 */ BL play_sound \n\
 /* 0803d2d6 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0803d2d8 */ LDR R0, =D_089e6e8c \n\
 /* 0803d2da */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
@@ -46,7 +46,7 @@ branch_0803d2e8: \n\
 /* 0803d30c */ STR R3, [SP, 0x8] \n\
 /* 0803d30e */ BL func_0804d8f8 \n\
 /* 0803d312 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0803d314 */ BL func_0800c3a4 \n\
+/* 0803d314 */ BL beats_to_ticks \n\
 /* 0803d318 */ LDR R1, [R7] \n\
 /* 0803d31a */ ADDS R1, 0xE @ Add 0xE to R1 \n\
 /* 0803d31c */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
@@ -82,7 +82,7 @@ branch_0803d320: \n\
 /* 0803d356 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803d358 */ BL func_0804d8f8 \n\
 /* 0803d35c */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0803d35e */ BL func_0800c3a4 \n\
+/* 0803d35e */ BL beats_to_ticks \n\
 /* 0803d362 */ LDR R1, [R5] \n\
 /* 0803d364 */ STRH R0, [R1, 0x18] \n\
  \n\

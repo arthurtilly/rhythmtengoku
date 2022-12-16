@@ -113,7 +113,7 @@ thumb_func_start func_08026454 \n\
 /* 0802654a */ STRH R5, [R7, 0x10] \n\
 /* 0802654c */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0802654e */ LDR R4, [R1] \n\
-/* 08026550 */ BL func_0800c3b8 \n\
+/* 08026550 */ BL get_current_mem_id \n\
 /* 08026554 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08026556 */ LSLS R1, R1, 0x10 \n\
 /* 08026558 */ LSRS R1, R1, 0x10 \n\
@@ -183,7 +183,7 @@ thumb_func_start func_08026454 \n\
 /* 080265e2 */ BL func_0802a9b4 \n\
 /* 080265e6 */ MOVS R0, 0xF3 @ Set R0 to 0xF3 \n\
 /* 080265e8 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080265ea */ BL func_08017338 \n\
+/* 080265ea */ BL gameplay_set_input_buttons \n\
 /* 080265ee */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080265f0 */ BL func_080177a4 \n\
 /* 080265f4 */ BL func_08025b88 \n\

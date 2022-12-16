@@ -141,7 +141,7 @@ branch_0801b960: \n\
  \n\
 branch_0801b966: \n\
 /* 0801b966 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0801b968 */ BL func_0800267c \n\
+/* 0801b968 */ BL play_sound_in_player \n\
 /* 0801b96c */ B branch_0801b9e0 \n\
 \n\
 .ltorg \n\
@@ -149,7 +149,7 @@ branch_0801b966: \n\
 branch_0801b974: \n\
 /* 0801b974 */ LDR R1, =s_menu_cancel3_seqData \n\
 /* 0801b976 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0801b978 */ BL func_0800267c \n\
+/* 0801b978 */ BL play_sound_in_player \n\
 /* 0801b97c */ LDR R4, =D_030046a4 \n\
 /* 0801b97e */ LDR R0, [R4] \n\
 /* 0801b980 */ MOVS R1, 0xDA @ Set R1 to 0xDA \n\

@@ -23,7 +23,7 @@ thumb_func_start func_08035f08 \n\
 /* 08035f30 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08035f32 */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
 /* 08035f34 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08035f36 */ BL func_08017928 \n\
+/* 08035f36 */ BL gameplay_add_cue_result \n\
  \n\
 branch_08035f3a: \n\
 /* 08035f3a */ POP {R4, R5} \n\

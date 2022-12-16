@@ -14,7 +14,7 @@ thumb_func_start func_080317c8 \n\
 /* 080317d8 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080317da */ BNE branch_080317e2 \n\
 /* 080317dc */ LDR R0, =s_furi_seqData \n\
-/* 080317de */ BL func_08002634 \n\
+/* 080317de */ BL play_sound \n\
  \n\
 branch_080317e2: \n\
 /* 080317e2 */ BL func_080317f4 \n\

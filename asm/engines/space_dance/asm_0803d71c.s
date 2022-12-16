@@ -31,7 +31,7 @@ thumb_func_start func_0803d71c \n\
 /* 0803d750 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0803d752 */ BL func_0804d8f8 \n\
 /* 0803d756 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0803d758 */ BL func_0800c3a4 \n\
+/* 0803d758 */ BL beats_to_ticks \n\
 /* 0803d75c */ LDR R1, [R6] \n\
 /* 0803d75e */ STRH R0, [R1, 0x14] \n\
 /* 0803d760 */ MOVS R0, 0xD @ Set R0 to 0xD \n\
@@ -59,14 +59,14 @@ thumb_func_start func_0803d71c \n\
 /* 0803d78e */ BL func_0804d160 \n\
 /* 0803d792 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803d794 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803d796 */ BL func_08017338 \n\
-/* 0803d79a */ BL func_0800c3b8 \n\
+/* 0803d796 */ BL gameplay_set_input_buttons \n\
+/* 0803d79a */ BL get_current_mem_id \n\
 /* 0803d79e */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803d7a0 */ LSLS R4, R4, 0x10 \n\
 /* 0803d7a2 */ LSRS R4, R4, 0x10 \n\
 /* 0803d7a4 */ LDR R5, =func_0803d5e4 \n\
 /* 0803d7a6 */ MOVS R0, 0x10 @ Set R0 to 0x10 \n\
-/* 0803d7a8 */ BL func_0800c3a4 \n\
+/* 0803d7a8 */ BL beats_to_ticks \n\
 /* 0803d7ac */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0803d7ae */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803d7b0 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
@@ -74,21 +74,21 @@ thumb_func_start func_0803d71c \n\
 /* 0803d7b4 */ BL func_0800856c \n\
 /* 0803d7b8 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803d7ba */ BL func_0803d6c0 \n\
-/* 0803d7be */ BL func_0800bc40 \n\
+/* 0803d7be */ BL beatscript_enable_loops \n\
 /* 0803d7c2 */ LDR R0, =s_space_kou_right_seqData \n\
-/* 0803d7c4 */ BL func_0800274c \n\
+/* 0803d7c4 */ BL stop_sound \n\
 /* 0803d7c8 */ LDR R0, =s_space_kou_down_seqData \n\
-/* 0803d7ca */ BL func_0800274c \n\
+/* 0803d7ca */ BL stop_sound \n\
 /* 0803d7ce */ LDR R0, =s_space_kou_punch_seqData \n\
-/* 0803d7d0 */ BL func_0800274c \n\
+/* 0803d7d0 */ BL stop_sound \n\
 /* 0803d7d4 */ LDR R0, =s_space_ikeo_right_seqData \n\
-/* 0803d7d6 */ BL func_0800274c \n\
+/* 0803d7d6 */ BL stop_sound \n\
 /* 0803d7da */ LDR R0, =s_space_ikeo_down_seqData \n\
-/* 0803d7dc */ BL func_0800274c \n\
+/* 0803d7dc */ BL stop_sound \n\
 /* 0803d7e0 */ LDR R0, =s_space_ikeo_punch_seqData \n\
-/* 0803d7e2 */ BL func_0800274c \n\
+/* 0803d7e2 */ BL stop_sound \n\
 /* 0803d7e6 */ LDR R0, =s_witch_donats_seqData \n\
-/* 0803d7e8 */ BL func_08002634 \n\
+/* 0803d7e8 */ BL play_sound \n\
 /* 0803d7ec */ ADD SP, 0x14 \n\
 /* 0803d7ee */ POP {R3-R5} \n\
 /* 0803d7f0 */ MOV R8, R3 @ Set R8 to R3 \n\

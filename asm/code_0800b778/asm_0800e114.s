@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0800e114 \n\
+thumb_func_start scene_enable_obj_windows \n\
 /* 0800e114 */ LDR R0, =D_03004b10 \n\
 /* 0800e116 */ LDRH R1, [R0] \n\
 /* 0800e118 */ MOVS R3, 0x80 @ Set R3 to 0x80 \n\

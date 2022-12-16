@@ -27,7 +27,7 @@ thumb_func_start func_0803cf00 \n\
 /* 0803cf2e */ STR R3, [SP, 0x8] \n\
 /* 0803cf30 */ BL func_0804d8f8 \n\
 /* 0803cf34 */ LDR R0, =s_f_ninja_kabe_seqData \n\
-/* 0803cf36 */ BL func_08002634 \n\
+/* 0803cf36 */ BL play_sound \n\
 /* 0803cf3a */ LDR R1, [R4] \n\
 /* 0803cf3c */ LDR R0, =0x2cf \n\
 /* 0803cf3e */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\

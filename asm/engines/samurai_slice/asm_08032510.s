@@ -53,7 +53,7 @@ branch_0803255a: \n\
 /* 08032560 */ STR R1, [R7, 0x4] \n\
 /* 08032562 */ STR R2, [R7, 0x8] \n\
 /* 08032564 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
-/* 08032566 */ BL func_08001980 \n\
+/* 08032566 */ BL agb_random \n\
 /* 0803256a */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0803256c */ LDR R1, =D_030055d0 \n\
 /* 0803256e */ LDR R0, [R1] \n\
@@ -66,9 +66,9 @@ branch_0803255a: \n\
 /* 0803257c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0803257e */ LSLS R0, R0, 0x15 \n\
 /* 08032580 */ LSRS R0, R0, 0x10 \n\
-/* 08032582 */ BL func_08001980 \n\
+/* 08032582 */ BL agb_random \n\
 /* 08032586 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 08032588 */ BL func_0800c1a8 \n\
+/* 08032588 */ BL get_beatscript_tempo \n\
 /* 0803258c */ LDR R2, =D_0805a5d4 \n\
 /* 0803258e */ MOV R3, R10 @ Set R3 to R10 \n\
 /* 08032590 */ LSLS R3, R3, 0x1 \n\
@@ -163,9 +163,9 @@ branch_0803264c: \n\
 branch_0803264e: \n\
 /* 0803264e */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08032650 */ LSLS R0, R0, 0x1 \n\
-/* 08032652 */ BL func_08001980 \n\
+/* 08032652 */ BL agb_random \n\
 /* 08032656 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 08032658 */ BL func_0800c1a8 \n\
+/* 08032658 */ BL get_beatscript_tempo \n\
 /* 0803265c */ LDR R1, =D_0805a5d4 \n\
 /* 0803265e */ MOV R9, R1 @ Set R9 to R1 \n\
 /* 08032660 */ ADD R5, R10 @ Add R10 to R5 \n\
@@ -184,12 +184,12 @@ branch_0803264e: \n\
 /* 0803267a */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 0803267c */ BL __divsi3 \n\
 /* 08032680 */ STR R0, [R7, 0x10] \n\
-/* 08032682 */ BL func_0800c1a8 \n\
+/* 08032682 */ BL get_beatscript_tempo \n\
 /* 08032686 */ LSLS R0, R0, 0x3 \n\
 /* 08032688 */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 0803268a */ BL __udivsi3 \n\
 /* 0803268e */ STR R0, [R7, 0x14] \n\
-/* 08032690 */ BL func_0800c1a8 \n\
+/* 08032690 */ BL get_beatscript_tempo \n\
 /* 08032694 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08032696 */ LSLS R0, R1, 0x1 \n\
 /* 08032698 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

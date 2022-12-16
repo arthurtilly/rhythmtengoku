@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_0801a9c8 \n\
 /* 0801a9c8 */ PUSH {R4, LR} \n\
 /* 0801a9ca */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801a9cc */ BL func_0800e030 \n\
+/* 0801a9cc */ BL scene_show_bg_layer \n\
 /* 0801a9d0 */ LDR R0, =D_03005380 \n\
 /* 0801a9d2 */ LDR R0, [R0] \n\
 /* 0801a9d4 */ LDR R4, =D_030046a4 \n\

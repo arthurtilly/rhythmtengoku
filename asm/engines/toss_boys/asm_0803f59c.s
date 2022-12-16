@@ -40,7 +40,7 @@ branch_0803f5d8: \n\
 /* 0803f5e0 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803f5e2 */ STRB R0, [R1] \n\
 /* 0803f5e4 */ MOVS R0, 0x24 @ Set R0 to 0x24 \n\
-/* 0803f5e6 */ BL func_0800c3a4 \n\
+/* 0803f5e6 */ BL beats_to_ticks \n\
 /* 0803f5ea */ LDR R1, [R4] \n\
 /* 0803f5ec */ MOVS R2, 0xD8 @ Set R2 to 0xD8 \n\
 /* 0803f5ee */ LSLS R2, R2, 0x2 \n\
@@ -75,7 +75,7 @@ branch_0803f61c: \n\
 /* 0803f620 */ B branch_0803f788 \n\
  \n\
 branch_0803f622: \n\
-/* 0803f622 */ BL func_08018054 \n\
+/* 0803f622 */ BL gameplay_get_last_hit_offset \n\
 /* 0803f626 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803f628 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0803f62a */ BL func_0803f400 \n\
@@ -84,7 +84,7 @@ branch_0803f622: \n\
 /* 0803f632 */ BL func_0803f9a0 \n\
 /* 0803f636 */ LDRB R4, [R7] \n\
 /* 0803f638 */ MOVS R0, 0x8 @ Set R0 to 0x8 \n\
-/* 0803f63a */ BL func_0800c3a4 \n\
+/* 0803f63a */ BL beats_to_ticks \n\
 /* 0803f63e */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803f640 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803f642 */ BL func_0803ee58 \n\
@@ -96,7 +96,7 @@ branch_0803f622: \n\
 /* 0803f650 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 0803f652 */ LSLS R1, R1, 0x1 \n\
 /* 0803f654 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803f656 */ BL func_08002698 \n\
+/* 0803f656 */ BL play_sound_w_pitch_volume \n\
 /* 0803f65a */ MOVS R0, 0x7 @ Set R0 to 0x7 \n\
 /* 0803f65c */ BL func_0803e990 \n\
 /* 0803f660 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
@@ -151,7 +151,7 @@ branch_0803f6a0: \n\
 /* 0803f6da */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 0803f6dc */ LSLS R1, R1, 0x1 \n\
 /* 0803f6de */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803f6e0 */ BL func_08002698 \n\
+/* 0803f6e0 */ BL play_sound_w_pitch_volume \n\
 /* 0803f6e4 */ B branch_0803f788 \n\
 \n\
 .ltorg \n\
@@ -175,7 +175,7 @@ branch_0803f6f8: \n\
 /* 0803f71a */ BL func_0804d770 \n\
 /* 0803f71e */ LDRB R4, [R7] \n\
 /* 0803f720 */ MOVS R0, 0x24 @ Set R0 to 0x24 \n\
-/* 0803f722 */ BL func_0800c3a4 \n\
+/* 0803f722 */ BL beats_to_ticks \n\
 /* 0803f726 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803f728 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803f72a */ BL func_0803ee58 \n\
@@ -187,7 +187,7 @@ branch_0803f6f8: \n\
 /* 0803f738 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 0803f73a */ LSLS R1, R1, 0x1 \n\
 /* 0803f73c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803f73e */ BL func_08002698 \n\
+/* 0803f73e */ BL play_sound_w_pitch_volume \n\
 /* 0803f742 */ LDRB R0, [R7] \n\
 /* 0803f744 */ ADDS R0, 0x1F @ Add 0x1F to R0 \n\
 /* 0803f746 */ BL func_0803e9b0 \n\

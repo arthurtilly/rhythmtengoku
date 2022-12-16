@@ -127,7 +127,7 @@ branch_08016bf0: \n\
 /* 08016bfc */ LDR R7, [R0, 0x4] \n\
  \n\
 branch_08016bfe: \n\
-/* 08016bfe */ BL func_0800c3b8 \n\
+/* 08016bfe */ BL get_current_mem_id \n\
 /* 08016c02 */ LSLS R0, R0, 0x10 \n\
 /* 08016c04 */ LSRS R0, R0, 0x10 \n\
 /* 08016c06 */ MOVS R1, 0x4 @ Set R1 to 0x4 \n\

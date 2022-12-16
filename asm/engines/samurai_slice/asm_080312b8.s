@@ -188,9 +188,9 @@ branch_08031426: \n\
  \n\
 branch_08031430: \n\
 /* 08031430 */ MOVS R0, 0x40 @ Set R0 to 0x40 \n\
-/* 08031432 */ BL func_0800be88 \n\
+/* 08031432 */ BL set_beatscript_speed \n\
 /* 08031436 */ LDR R0, =0xfffff400 \n\
-/* 08031438 */ BL func_0800c0c4 \n\
+/* 08031438 */ BL beatscript_scene_set_music_pitch_env \n\
 /* 0803143c */ LDR R4, =D_030055d0 \n\
 /* 0803143e */ LDR R2, [R4] \n\
 /* 08031440 */ MOVS R0, 0xE9 @ Set R0 to 0xE9 \n\
@@ -222,7 +222,7 @@ branch_0803147c: \n\
  \n\
 branch_0803147e: \n\
 /* 0803147e */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 08031480 */ BL func_0800267c \n\
+/* 08031480 */ BL play_sound_in_player \n\
 /* 08031484 */ LDR R1, [R4] \n\
 /* 08031486 */ MOVS R2, 0xEA @ Set R2 to 0xEA \n\
 /* 08031488 */ LSLS R2, R2, 0x1 \n\
@@ -235,18 +235,18 @@ branch_0803147e: \n\
 /* 08031496 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 08031498 */ LDR R0, [R0] \n\
 /* 0803149a */ MOVS R1, 0x40 @ Set R1 to 0x40 \n\
-/* 0803149c */ BL func_08002894 \n\
+/* 0803149c */ BL set_soundplayer_speed \n\
 /* 080314a0 */ LDR R0, [R5] \n\
 /* 080314a2 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 080314a4 */ LDR R0, [R0] \n\
 /* 080314a6 */ LDR R1, =0xfffff400 \n\
-/* 080314a8 */ BL func_080028a8 \n\
+/* 080314a8 */ BL set_soundplayer_pitch \n\
 /* 080314ac */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 080314ae */ BL func_0800e044 \n\
+/* 080314ae */ BL scene_hide_bg_layer \n\
 /* 080314b2 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 080314b4 */ BL func_0800e044 \n\
+/* 080314b4 */ BL scene_hide_bg_layer \n\
 /* 080314b8 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 080314ba */ BL func_0800e044 \n\
+/* 080314ba */ BL scene_hide_bg_layer \n\
 /* 080314be */ B branch_0803153e \n\
 \n\
 .ltorg \n\
@@ -278,7 +278,7 @@ branch_080314f4: \n\
  \n\
 branch_080314f6: \n\
 /* 080314f6 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 080314f8 */ BL func_0800267c \n\
+/* 080314f8 */ BL play_sound_in_player \n\
 /* 080314fc */ LDR R1, [R4] \n\
 /* 080314fe */ MOVS R2, 0xEA @ Set R2 to 0xEA \n\
 /* 08031500 */ LSLS R2, R2, 0x1 \n\
@@ -292,7 +292,7 @@ branch_080314f6: \n\
 /* 08031510 */ LDR R0, [R0] \n\
 /* 08031512 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 08031514 */ LSLS R1, R1, 0x1 \n\
-/* 08031516 */ BL func_08002894 \n\
+/* 08031516 */ BL set_soundplayer_speed \n\
 /* 0803151a */ LDR R0, [R5] \n\
 /* 0803151c */ ADDS R4, R0, R4 @ Set R4 to R0 + R4 \n\
 /* 0803151e */ LDR R4, [R4] \n\
@@ -311,7 +311,7 @@ branch_08031534: \n\
 /* 08031534 */ LSLS R1, R0, 0x10 \n\
 /* 08031536 */ ASRS R1, R1, 0x10 \n\
 /* 08031538 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0803153a */ BL func_080028a8 \n\
+/* 0803153a */ BL set_soundplayer_pitch \n\
  \n\
 branch_0803153e: \n\
 /* 0803153e */ BL func_080317f4 \n\

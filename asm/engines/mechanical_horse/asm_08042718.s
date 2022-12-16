@@ -18,7 +18,7 @@ thumb_func_start func_08042718 \n\
 /* 08042740 */ LSLS R1, R1, 0x2 \n\
 /* 08042742 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08042744 */ LDRH R0, [R0] \n\
-/* 08042746 */ BL func_0800c0d8 \n\
+/* 08042746 */ BL beatscript_scene_set_music_volume \n\
 /* 0804274a */ POP {R0} \n\
 /* 0804274c */ BX R0 \n\
 \n\

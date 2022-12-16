@@ -33,7 +33,7 @@ thumb_func_start func_0803e1a4 \n\
 /* 0803e1dc */ BL func_0804d8f8 \n\
 /* 0803e1e0 */ LDR R4, =D_089e8054 \n\
 /* 0803e1e2 */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
-/* 0803e1e4 */ BL func_08001980 \n\
+/* 0803e1e4 */ BL agb_random \n\
 /* 0803e1e8 */ LSLS R0, R0, 0x10 \n\
 /* 0803e1ea */ LSRS R0, R0, 0xE \n\
 /* 0803e1ec */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\

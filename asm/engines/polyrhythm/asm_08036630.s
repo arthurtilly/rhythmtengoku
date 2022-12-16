@@ -67,7 +67,7 @@ branch_08036698: \n\
 /* 080366a6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080366a8 */ BNE branch_080366b0 \n\
 /* 080366aa */ LDR R0, =s_poly_shototu_seqData \n\
-/* 080366ac */ BL func_08002634 \n\
+/* 080366ac */ BL play_sound \n\
  \n\
 branch_080366b0: \n\
 /* 080366b0 */ LDRB R0, [R6, 0x1] \n\
@@ -128,7 +128,7 @@ branch_080366ca: \n\
 /* 08036724 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 08036726 */ STR R0, [R6, 0x30] \n\
 /* 08036728 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 0803672a */ BL func_0800c3a4 \n\
+/* 0803672a */ BL beats_to_ticks \n\
 /* 0803672e */ LDR R1, [R6, 0x34] \n\
 /* 08036730 */ SUBS R1, R1, R0 @ Set R1 to R1 - R0 \n\
 /* 08036732 */ LDR R0, [R6, 0x30] \n\

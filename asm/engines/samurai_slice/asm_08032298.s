@@ -10,7 +10,7 @@ thumb_func_start func_08032298 \n\
 /* 080322a0 */ LDRB R0, [R0] \n\
 /* 080322a2 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080322a4 */ BNE branch_080322bc \n\
-/* 080322a6 */ BL func_0800c1a8 \n\
+/* 080322a6 */ BL get_beatscript_tempo \n\
 /* 080322aa */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080322ac */ LDR R4, [R4] \n\
 /* 080322ae */ ADDS R4, 0x84 @ Add 0x84 to R4 \n\
@@ -22,7 +22,7 @@ thumb_func_start func_08032298 \n\
 .ltorg \n\
  \n\
 branch_080322bc: \n\
-/* 080322bc */ BL func_0800c1a8 \n\
+/* 080322bc */ BL get_beatscript_tempo \n\
 /* 080322c0 */ LDR R4, [R4] \n\
 /* 080322c2 */ ADDS R4, 0x84 @ Add 0x84 to R4 \n\
 /* 080322c4 */ LSLS R0, R0, 0x6 \n\
@@ -72,7 +72,7 @@ branch_080322f0: \n\
 /* 08032316 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08032318 */ LSLS R1, R1, 0x12 \n\
 /* 0803231a */ LSRS R1, R1, 0x10 \n\
-/* 0803231c */ BL func_0800c0f8 \n\
+/* 0803231c */ BL beatscript_scene_set_music_track_volume \n\
 /* 08032320 */ POP {R4} \n\
 /* 08032322 */ POP {R0} \n\
 /* 08032324 */ BX R0 \n\

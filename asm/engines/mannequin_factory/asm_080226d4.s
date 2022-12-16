@@ -54,7 +54,7 @@ branch_0802270a: \n\
 /* 08022720 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
 /* 08022722 */ BEQ branch_0802273c \n\
 /* 08022724 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08022726 */ BL func_08001980 \n\
+/* 08022726 */ BL agb_random \n\
 /* 0802272a */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 0802272c */ B branch_0802273e \n\
 \n\

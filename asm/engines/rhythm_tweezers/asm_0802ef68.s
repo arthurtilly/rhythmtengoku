@@ -65,7 +65,7 @@ branch_0802ef9e: \n\
 /* 0802efe0 */ LDR R0, [R5, 0x4] \n\
 /* 0802efe2 */ BL func_0800ffc0 \n\
 /* 0802efe6 */ MOV R0, R10 @ Set R0 to R10 \n\
-/* 0802efe8 */ BL func_080180bc \n\
+/* 0802efe8 */ BL gameplay_get_cue_marking_criteria \n\
 /* 0802efec */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 0802efee */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802eff0 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
@@ -95,7 +95,7 @@ branch_0802f012: \n\
 /* 0802f018 */ MOV R0, R10 @ Set R0 to R10 \n\
 /* 0802f01a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802f01c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802f01e */ BL func_08017928 \n\
+/* 0802f01e */ BL gameplay_add_cue_result \n\
 /* 0802f022 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 0802f024 */ LDR R0, [R2] \n\
 /* 0802f026 */ MOV R3, R8 @ Set R3 to R8 \n\
@@ -137,11 +137,11 @@ branch_0802f012: \n\
 /* 0802f078 */ STRB R0, [R7, 0x10] \n\
 /* 0802f07a */ MOVS R0, 0xF1 @ Set R0 to 0xF1 \n\
 /* 0802f07c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0802f07e */ BL func_08017338 \n\
+/* 0802f07e */ BL gameplay_set_input_buttons \n\
 /* 0802f082 */ LDR R0, =s_f_hair_tuneru_seqData \n\
-/* 0802f084 */ BL func_0800274c \n\
+/* 0802f084 */ BL stop_sound \n\
 /* 0802f088 */ LDR R0, =s_f_hair_nuki_long_seqData \n\
-/* 0802f08a */ BL func_08002634 \n\
+/* 0802f08a */ BL play_sound \n\
 /* 0802f08e */ LDR R3, =D_030055d0 \n\
 /* 0802f090 */ LDR R1, [R3] \n\
 /* 0802f092 */ ADDS R1, 0x88 @ Add 0x88 to R1 \n\
@@ -174,7 +174,7 @@ branch_0802f0c4: \n\
 /* 0802f0c8 */ MOV R0, R10 @ Set R0 to R10 \n\
 /* 0802f0ca */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0802f0cc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802f0ce */ BL func_08017928 \n\
+/* 0802f0ce */ BL gameplay_add_cue_result \n\
 /* 0802f0d2 */ LDR R0, [R5, 0x4] \n\
 /* 0802f0d4 */ LDR R1, =D_088e89a8 \n\
 /* 0802f0d6 */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
@@ -198,12 +198,12 @@ branch_0802f0c4: \n\
 /* 0802f100 */ STRB R4, [R7, 0x10] \n\
 /* 0802f102 */ MOVS R0, 0xF1 @ Set R0 to 0xF1 \n\
 /* 0802f104 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0802f106 */ BL func_08017338 \n\
+/* 0802f106 */ BL gameplay_set_input_buttons \n\
 /* 0802f10a */ LDR R0, =s_f_hair_tuneru_seqData \n\
-/* 0802f10c */ BL func_0800274c \n\
+/* 0802f10c */ BL stop_sound \n\
 /* 0802f110 */ LDR R0, =s_witch_donats_seqData  \n\
-/* 0802f112 */ BL func_08002634 \n\
-/* 0802f116 */ BL func_0800bc40 \n\
+/* 0802f112 */ BL play_sound \n\
+/* 0802f116 */ BL beatscript_enable_loops \n\
 /* 0802f11a */ LDR R0, =D_030055d0 \n\
 /* 0802f11c */ LDR R1, [R0] \n\
 /* 0802f11e */ ADDS R1, 0x8A @ Add 0x8A to R1 \n\

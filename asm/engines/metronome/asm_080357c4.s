@@ -17,7 +17,7 @@ thumb_func_start func_080357c4 \n\
 /* 080357dc */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 080357de */ BEQ branch_080357e6 \n\
 /* 080357e0 */ LDR R0, =s_metro_count1_seqData \n\
-/* 080357e2 */ BL func_08002634 \n\
+/* 080357e2 */ BL play_sound \n\
  \n\
 branch_080357e6: \n\
 /* 080357e6 */ LDR R1, [R5] \n\
@@ -39,14 +39,14 @@ branch_080357e6: \n\
 /* 08035808 */ CMP R0, 0x3 @ Compare R0 and 0x3 \n\
 /* 0803580a */ BHI branch_0803582a \n\
 /* 0803580c */ LDR R0, =s_metro_count2_seqData \n\
-/* 0803580e */ BL func_08002634 \n\
+/* 0803580e */ BL play_sound \n\
 /* 08035812 */ B branch_0803582a \n\
 \n\
 .ltorg \n\
  \n\
 branch_08035824: \n\
 /* 08035824 */ LDR R0, =s_metro_tin_seqData \n\
-/* 08035826 */ BL func_08002634 \n\
+/* 08035826 */ BL play_sound \n\
  \n\
 branch_0803582a: \n\
 /* 0803582a */ LDR R6, =D_030055d0 \n\
@@ -75,7 +75,7 @@ branch_0803582a: \n\
  \n\
 branch_0803585c: \n\
 /* 0803585c */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0803585e */ BL func_0800c3a4 \n\
+/* 0803585e */ BL beats_to_ticks \n\
 /* 08035862 */ LSLS R0, R0, 0x10 \n\
 /* 08035864 */ LSRS R0, R0, 0x10 \n\
 /* 08035866 */ LSLS R4, R4, 0x10 \n\
@@ -87,7 +87,7 @@ branch_0803585c: \n\
  \n\
 branch_08035874: \n\
 /* 08035874 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 08035876 */ BL func_0800c3a4 \n\
+/* 08035876 */ BL beats_to_ticks \n\
 /* 0803587a */ LSLS R0, R0, 0x10 \n\
 /* 0803587c */ LSRS R0, R0, 0x10 \n\
 /* 0803587e */ LSLS R4, R4, 0x10 \n\

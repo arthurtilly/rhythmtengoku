@@ -70,7 +70,7 @@ thumb_func_start func_08028254 \n\
 /* 080282d4 */ ADDS R0, R4, R0 @ Set R0 to R4 + R0 \n\
 /* 080282d6 */ LDR R0, [R0] \n\
 /* 080282d8 */ STR R0, [R1] \n\
-/* 080282da */ BL func_0800c3b8 \n\
+/* 080282da */ BL get_current_mem_id \n\
 /* 080282de */ LSLS R0, R0, 0x10 \n\
 /* 080282e0 */ LSRS R0, R0, 0x10 \n\
 /* 080282e2 */ ADDS R1, R5, 0x4 @ Set R1 to R5 + 0x4 \n\

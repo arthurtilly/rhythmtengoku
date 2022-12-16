@@ -15,7 +15,7 @@ thumb_func_start func_08028978 \n\
 /* 0802898c */ LDR R4, =D_089e2a50 \n\
  \n\
 branch_0802898e: \n\
-/* 0802898e */ BL func_0800c3b8 \n\
+/* 0802898e */ BL get_current_mem_id \n\
 /* 08028992 */ LSLS R0, R0, 0x10 \n\
 /* 08028994 */ LSRS R0, R0, 0x10 \n\
 /* 08028996 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\

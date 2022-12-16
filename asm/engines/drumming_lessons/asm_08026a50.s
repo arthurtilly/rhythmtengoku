@@ -9,7 +9,7 @@ thumb_func_start func_08026a50 \n\
 /* 08026a56 */ LDRB R0, [R0] \n\
 /* 08026a58 */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\
 /* 08026a5a */ BNE branch_08026a94 \n\
-/* 08026a5c */ BL func_0800c1a8 \n\
+/* 08026a5c */ BL get_beatscript_tempo \n\
 /* 08026a60 */ LSLS R0, R0, 0x8 \n\
 /* 08026a62 */ MOVS R1, 0x78 @ Set R1 to 0x78 \n\
 /* 08026a64 */ BL __udivsi3 \n\

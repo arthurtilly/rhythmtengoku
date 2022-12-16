@@ -31,7 +31,7 @@ thumb_func_start func_0802c36c \n\
 /* 0802c3a0 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0802c3a2 */ MOVS R1, 0x8 @ Set R1 to 0x8 \n\
 /* 0802c3a4 */ LDRSH R4, [R0, R1] \n\
-/* 0802c3a6 */ BL func_0800c1a8 \n\
+/* 0802c3a6 */ BL get_beatscript_tempo \n\
 /* 0802c3aa */ LSLS R0, R0, 0x8 \n\
 /* 0802c3ac */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 0802c3ae */ BL __udivsi3 \n\

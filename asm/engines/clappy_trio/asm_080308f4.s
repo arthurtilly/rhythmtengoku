@@ -28,7 +28,7 @@ thumb_func_start func_080308f4 \n\
 /* 08030924 */ LSLS R1, R1, 0x1 \n\
 /* 08030926 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08030928 */ LSLS R2, R2, 0x3 \n\
-/* 0803092a */ BL func_08002698 \n\
+/* 0803092a */ BL play_sound_w_pitch_volume \n\
 /* 0803092e */ LDRH R0, [R4] \n\
 /* 08030930 */ LSLS R0, R0, 0x17 \n\
 /* 08030932 */ LSRS R0, R0, 0x1C \n\
@@ -43,7 +43,7 @@ branch_0803093e: \n\
 /* 08030940 */ LDRB R0, [R0, 0x10] \n\
 /* 08030942 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08030944 */ BEQ branch_08030984 \n\
-/* 08030946 */ BL func_0800c3b8 \n\
+/* 08030946 */ BL get_current_mem_id \n\
 /* 0803094a */ LSLS R0, R0, 0x10 \n\
 /* 0803094c */ LSRS R0, R0, 0x10 \n\
 /* 0803094e */ LDR R5, =0x7fff \n\
@@ -55,7 +55,7 @@ branch_0803093e: \n\
 /* 0803095a */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 0803095c */ ADDS R3, R5, 0x0 @ Set R3 to R5 + 0x0 \n\
 /* 0803095e */ BL func_08002018 \n\
-/* 08030962 */ BL func_0800c3b8 \n\
+/* 08030962 */ BL get_current_mem_id \n\
 /* 08030966 */ LSLS R0, R0, 0x10 \n\
 /* 08030968 */ LSRS R0, R0, 0x10 \n\
 /* 0803096a */ LDR R1, =(D_088e9f78 + 0x20) \n\

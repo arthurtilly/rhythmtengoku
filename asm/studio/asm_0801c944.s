@@ -11,7 +11,7 @@ thumb_func_start func_0801c944 \n\
 /* 0801c94e */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801c950 */ LDR R0, [R0] \n\
 /* 0801c952 */ MOVS R1, 0x10 @ Set R1 to 0x10 \n\
-/* 0801c954 */ BL func_080028d8 \n\
+/* 0801c954 */ BL fade_out_soundplayer \n\
 /* 0801c958 */ POP {R0} \n\
 /* 0801c95a */ BX R0 \n\
 \n\

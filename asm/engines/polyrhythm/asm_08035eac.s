@@ -7,7 +7,7 @@ thumb_func_start func_08035eac \n\
 /* 08035eae */ ADDS R5, R2, 0x0 @ Set R5 to R2 + 0x0 \n\
 /* 08035eb0 */ ADDS R4, R3, 0x0 @ Set R4 to R3 + 0x0 \n\
 /* 08035eb2 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 08035eb4 */ BL func_0800c3a4 \n\
+/* 08035eb4 */ BL beats_to_ticks \n\
 /* 08035eb8 */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 08035eba */ CMP R5, R4 @ Check R5 - R4 \n\
 /* 08035ebc */ BHI branch_08035ec2 \n\

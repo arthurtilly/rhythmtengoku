@@ -14,9 +14,9 @@ thumb_func_start func_08016d94 \n\
 /* 08016da6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08016da8 */ BEQ branch_08016dbe \n\
 /* 08016daa */ LDR R0, =s_menu_kettei2_seqData \n\
-/* 08016dac */ BL func_08002634 \n\
+/* 08016dac */ BL play_sound \n\
 /* 08016db0 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08016db2 */ BL func_0800bd04 \n\
+/* 08016db2 */ BL pause_beatscript_scene \n\
 /* 08016db6 */ LDR R0, =D_030046a4 \n\
 /* 08016db8 */ LDR R1, [R0] \n\
 /* 08016dba */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

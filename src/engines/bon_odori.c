@@ -63,7 +63,7 @@ const struct Animation *bon_odori_get_donpan_anim(u32 animation, u32 donpan) {
 void bon_odori_set_donpan_anim(u32 animation, u32 donpan) {
     const struct Animation *anim = bon_odori_get_donpan_anim(animation, donpan);
     func_0804d8f8(D_03005380, gBonOdoriInfo->donpanSprites[donpan], anim, 0, 1, 0x7f, 0);
-    gBonOdoriInfo->donpanAnimTimers[donpan] = func_0800c3a4(bon_odori_anim_durations[animation]);
+    gBonOdoriInfo->donpanAnimTimers[donpan] = beats_to_ticks(bon_odori_anim_durations[animation]);
 }
 
 
@@ -95,7 +95,7 @@ void bon_odori_set_cpu_donpan_anim_timer(u32 duration) {
     u32 i;
 
     for (i = 0; i < 3; i++) {
-        gBonOdoriInfo->donpanAnimTimers[i] = func_0800c3a4(duration);
+        gBonOdoriInfo->donpanAnimTimers[i] = beats_to_ticks(duration);
     }
 }
 
@@ -115,7 +115,7 @@ void bon_odori_update_donpans(void) {
 // [func_0802085c] GFX_INIT Func_02
 void bon_odori_init_gfx3(void) {
     func_0800c604(0);
-    func_08017578();
+    gameplay_start_screen_fade_in();
     D_03004b10.bgPalette[12][2] = 0x7C00;
 }
 
@@ -125,7 +125,7 @@ void bon_odori_init_gfx2(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(func_0800c3b8(), bon_odori_gfx_tables[gBonOdoriInfo->version], 0x2000);
+    task = func_08002ee0(get_current_mem_id(), bon_odori_gfx_tables[gBonOdoriInfo->version], 0x2000);
     task_run_after(task, bon_odori_init_gfx3, 0);
 }
 
@@ -135,7 +135,7 @@ void bon_odori_init_gfx1(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_080087b4(func_0800c3b8(), bon_odori_buffered_textures);
+    task = func_080087b4(get_current_mem_id(), bon_odori_buffered_textures);
     task_run_after(task, bon_odori_init_gfx2, 0);
 }
 
@@ -146,18 +146,18 @@ void bon_odori_engine_init(u32 ver) {
 
     gBonOdoriInfo->version = ver;
     bon_odori_init_gfx1();
-    func_0800e0ec();
-    func_0800e114();
-    func_0800e0a0(BG_LAYER_0, TRUE, 0, -64, 2, 24, 0xC000);
-    func_0800e0a0(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
-    func_0800e0a0(BG_LAYER_2, TRUE, 0, 0, 0, 30, 1);
+    scene_show_obj_layer();
+    scene_enable_obj_windows();
+    scene_set_bg_layer_display(BG_LAYER_0, TRUE, 0, -64, 2, 24, 0xC000);
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
+    scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, 1);
     gBonOdoriInfo->unk4 = func_0800c660(0x340, 2);
     D_03004b10.WINOUT = (WINOUT_OUT_BG1 | WINOUT_OUT_BG2 | WINOUT_OUT_BG3 | WINOUT_OUT_SPRITES | WINOUT_SPRW_BG0 | WINOUT_SPRW_SPRITES | WINOUT_SPRW_BLENDS);
     D_03004b10.BLDMOD = (BLDMOD_BG0_SRC | BLDMOD_BLEND_MODE(BLEND_MODE_ALPHA) | BLDMOD_SPRITES_TGT);
     D_03004b10.COLEV = (COLEV_SRC_PIXEL(0x10) | COLEV_TGT_PIXEL(0x10));
 
     for (i = 0; i < 4; i++) {
-        gBonOdoriInfo->lyrics[i].textSprite |= -1;
+        gBonOdoriInfo->lyrics[i].textSprite = -1;
     }
 
     gBonOdoriInfo->lyricsY = 0;
@@ -170,7 +170,7 @@ void bon_odori_engine_init(u32 ver) {
     gBonOdoriInfo->srcBgPal = bon_odori_bg_palettes[gBonOdoriInfo->version];
     func_08001ec4(0x0C, 7, gBonOdoriInfo->srcObjPal, 0, gBonOdoriInfo->darkObjPalBuf[0]);
     func_08001ec4(0x14, 7, gBonOdoriInfo->srcBgPal, 0, gBonOdoriInfo->darkBgPalBuf[0]);
-    func_08017338(A_BUTTON, 0);
+    gameplay_set_input_buttons(A_BUTTON, 0);
     gBonOdoriInfo->playerClapTimer = 0;
 }
 
@@ -297,22 +297,22 @@ void bon_odori_lyrics_start_highlight(u32 duration) {
     y -= gBonOdoriInfo->currentLyric * 24;
     D_03004b10.BG_OFS[BG_LAYER_0].y = y;
 
-    task = func_0800c4b0(1, func_0800c3a4(duration), &D_03004b10.BG_OFS[BG_LAYER_0].x, initX, targetX);
+    task = func_0800c4b0(1, beats_to_ticks(duration), &D_03004b10.BG_OFS[BG_LAYER_0].x, initX, targetX);
     task_run_after(task, bon_odori_lyrics_finish_highlight, gBonOdoriInfo->currentLyric);
 }
 
 
 // [func_08020d20] ENGINE Func_06 - Lighten Screen (Gradual)
 void bon_odori_screen_lighten(u32 duration) {
-    func_08001fe0(func_0800c3b8(), func_0800c3a4(duration), 7, gBonOdoriInfo->darkBgPalBuf[0], gBonOdoriInfo->srcBgPal, BG_PALETTE_BUFFER(0));
-    func_08001fe0(func_0800c3b8(), func_0800c3a4(duration), 7, gBonOdoriInfo->darkObjPalBuf[0], gBonOdoriInfo->srcObjPal, OBJ_PALETTE_BUFFER(0));
+    func_08001fe0(get_current_mem_id(), beats_to_ticks(duration), 7, gBonOdoriInfo->darkBgPalBuf[0], gBonOdoriInfo->srcBgPal, BG_PALETTE_BUFFER(0));
+    func_08001fe0(get_current_mem_id(), beats_to_ticks(duration), 7, gBonOdoriInfo->darkObjPalBuf[0], gBonOdoriInfo->srcObjPal, OBJ_PALETTE_BUFFER(0));
 }
 
 
 // [func_08020da0] ENGINE Func_07 - Darken Screen (Gradual)
 void bon_odori_screen_darken(u32 duration) {
-    func_08001fe0(func_0800c3b8(), func_0800c3a4(duration), 7, gBonOdoriInfo->srcBgPal, gBonOdoriInfo->darkBgPalBuf[0], BG_PALETTE_BUFFER(0));
-    func_08001fe0(func_0800c3b8(), func_0800c3a4(duration), 7, gBonOdoriInfo->srcObjPal, gBonOdoriInfo->darkObjPalBuf[0], OBJ_PALETTE_BUFFER(0));
+    func_08001fe0(get_current_mem_id(), beats_to_ticks(duration), 7, gBonOdoriInfo->srcBgPal, gBonOdoriInfo->darkBgPalBuf[0], BG_PALETTE_BUFFER(0));
+    func_08001fe0(get_current_mem_id(), beats_to_ticks(duration), 7, gBonOdoriInfo->srcObjPal, gBonOdoriInfo->darkObjPalBuf[0], OBJ_PALETTE_BUFFER(0));
 }
 
 
@@ -348,11 +348,11 @@ void bon_odori_finish_testing_inputs(void) {
     if (gBonOdoriInfo->mistimedClaps != 0) {
         gBonOdoriInfo->donpanEmoteTimer = 3;
         gBonOdoriInfo->donpanEmoteAnim = DONPAN_ANIM_GLARE;
-        func_0800bc40();
+        beatscript_enable_loops();
     } else {
         gBonOdoriInfo->donpanEmoteTimer = 3;
         do {
-            gBonOdoriInfo->donpanEmoteAnim = (func_08001980(2) != 0) ? DONPAN_ANIM_HAPPY : DONPAN_ANIM_VERY_HAPPY;
+            gBonOdoriInfo->donpanEmoteAnim = (agb_random(2) != 0) ? DONPAN_ANIM_HAPPY : DONPAN_ANIM_VERY_HAPPY;
         } while (0);
         gBonOdoriInfo->yaguraFrownTimer = 0;
         gBonOdoriInfo->yaguraNoticedMistake = FALSE;
@@ -365,7 +365,7 @@ void bon_odori_engine_update(void) {
     if (gBonOdoriInfo->playerClapTimer != 0) {
         gBonOdoriInfo->playerClapTimer--;
         if (gBonOdoriInfo->playerClapTimer == 0) {
-            func_08017338(A_BUTTON, 0);
+            gameplay_set_input_buttons(A_BUTTON, 0);
         }
     }
     bon_odori_update_donpans();
@@ -377,7 +377,7 @@ void bon_odori_engine_update(void) {
 
 // [func_08020f8c] MAIN - Close
 void bon_odori_engine_stop(void) {
-    func_0800e128();
+    scene_disable_obj_windows();
 }
 
 
@@ -390,7 +390,7 @@ void bon_odori_cue_spawn(struct Cue *cue, struct BonOdoriCue *info, u32 clapAnim
 
 // [func_08020fb0] CUE - Update
 u32 bon_odori_cue_update(struct Cue *cue, struct BonOdoriCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > func_0800c3a4(0x30)) {
+    if (runningTime > beats_to_ticks(0x30)) {
         return TRUE;
     } else {
         return FALSE;
@@ -406,14 +406,14 @@ void bon_odori_cue_despawn(struct Cue *cue, struct BonOdoriCue *info) {
 // [func_08020fd0] CUE - Hit
 void bon_odori_cue_hit(struct Cue *cue, struct BonOdoriCue *info, u32 pressed, u32 released) {
     bon_odori_set_player_anim(info->type);
-    func_08002634(&s_HC_seqData);
+    play_sound(&s_HC_seqData);
 }
 
 
 // [func_08020fe8] CUE - Barely
 void bon_odori_cue_barely(struct Cue *cue, struct BonOdoriCue *info, u32 pressed, u32 released) {
     bon_odori_set_player_anim(info->type);
-    func_08002634(&s_tebyoushi_pati_seqData);
+    play_sound(&s_tebyoushi_pati_seqData);
     gBonOdoriInfo->yaguraNoticedMistake = TRUE;
 }
 
@@ -421,18 +421,18 @@ void bon_odori_cue_barely(struct Cue *cue, struct BonOdoriCue *info, u32 pressed
 // [func_0802100c] CUE - Miss
 void bon_odori_cue_miss(struct Cue *cue, struct BonOdoriCue *info) {
     gBonOdoriInfo->mistimedClaps++;
-    func_0800bc40();
+    beatscript_enable_loops();
     gBonOdoriInfo->yaguraNoticedMistake = TRUE;
 }
 
 
 // [func_08021034] MAIN - Input Event
 void bon_odori_input_event(u32 pressed, u32 released) {
-    gBonOdoriInfo->playerClapTimer = func_0800c3a4(6);
-    func_08017338(0, 0);
+    gBonOdoriInfo->playerClapTimer = beats_to_ticks(6);
+    gameplay_set_input_buttons(0, 0);
     bon_odori_set_player_anim(gBonOdoriInfo->currentClapAnim);
     gBonOdoriInfo->mistimedClaps++;
-    func_08002634(&s_HC_seqData);
+    play_sound(&s_HC_seqData);
 }
 
 
@@ -454,7 +454,7 @@ void bon_odori_common_beat_animation(u32 arg) {
     if (gBonOdoriInfo->yaguraFrownTimer == 0) {
         if (gBonOdoriInfo->yaguraNoticedMistake) {
             func_0804d8f8(D_03005380, gBonOdoriInfo->yaguraSprite, bon_odori_get_anim(BON_ODORI_ANIM_YAGURA_FROWN), 0, 1, 0x7f, 0);
-            gBonOdoriInfo->yaguraFrownTimer = func_0800c3a4(0x24);
+            gBonOdoriInfo->yaguraFrownTimer = beats_to_ticks(0x24);
             gBonOdoriInfo->yaguraNoticedMistake = FALSE;
         } else {
             func_0804d8f8(D_03005380, gBonOdoriInfo->yaguraSprite, bon_odori_get_anim(BON_ODORI_ANIM_YAGURA_BEAT), 0, 1, 0x7f, 0);

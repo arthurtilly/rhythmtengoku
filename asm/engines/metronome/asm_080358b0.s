@@ -9,7 +9,7 @@ thumb_func_start func_080358b0 \n\
 /* 080358b6 */ LDRH R0, [R0, 0x28] \n\
 /* 080358b8 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080358ba */ BEQ branch_080358cc \n\
-/* 080358bc */ BL func_0800bc40 \n\
+/* 080358bc */ BL beatscript_enable_loops \n\
 /* 080358c0 */ LDR R1, [R4] \n\
 /* 080358c2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080358c4 */ STRH R0, [R1, 0x28] \n\
@@ -18,7 +18,7 @@ thumb_func_start func_080358b0 \n\
 .ltorg \n\
  \n\
 branch_080358cc: \n\
-/* 080358cc */ BL func_0800bce4 \n\
+/* 080358cc */ BL beatscript_disable_loops \n\
  \n\
 branch_080358d0: \n\
 /* 080358d0 */ POP {R4} \n\

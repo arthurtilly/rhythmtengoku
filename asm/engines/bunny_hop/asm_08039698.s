@@ -43,7 +43,7 @@ branch_080396d0: \n\
 /* 080396de */ STR R0, [R5, 0x4] \n\
 /* 080396e0 */ MOVS R0, 0xF0 @ Set R0 to 0xF0 \n\
 /* 080396e2 */ LSLS R0, R0, 0x1 \n\
-/* 080396e4 */ BL func_08001980 \n\
+/* 080396e4 */ BL agb_random \n\
 /* 080396e8 */ LSLS R0, R0, 0x10 \n\
 /* 080396ea */ LSRS R0, R0, 0x10 \n\
 /* 080396ec */ NEGS R0, R0 @ Set R0 to -R0 \n\

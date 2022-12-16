@@ -37,7 +37,7 @@ branch_080348d2: \n\
  \n\
 branch_080348e0: \n\
 /* 080348e0 */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
-/* 080348e2 */ BL func_08002634 \n\
+/* 080348e2 */ BL play_sound \n\
 /* 080348e6 */ BL func_0803494c \n\
 /* 080348ea */ B branch_0803491e \n\
 \n\
@@ -65,7 +65,7 @@ branch_08034900: \n\
  \n\
 branch_08034914: \n\
 /* 08034914 */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
-/* 08034916 */ BL func_08002634 \n\
+/* 08034916 */ BL play_sound \n\
 /* 0803491a */ BL func_080349d0 \n\
  \n\
 branch_0803491e: \n\

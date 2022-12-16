@@ -26,7 +26,7 @@ thumb_func_start func_0800e694 \n\
 /* 0800e6bc */ STRH R6, [R0, 0xA] \n\
 /* 0800e6be */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0800e6c0 */ STRH R1, [R0, 0xC] \n\
-/* 0800e6c2 */ BL func_0800c3b8 \n\
+/* 0800e6c2 */ BL get_current_mem_id \n\
 /* 0800e6c6 */ LSLS R0, R0, 0x10 \n\
 /* 0800e6c8 */ LSRS R0, R0, 0x10 \n\
 /* 0800e6ca */ LDR R1, =D_08936c04 \n\

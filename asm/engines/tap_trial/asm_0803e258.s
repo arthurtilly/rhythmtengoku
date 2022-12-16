@@ -17,7 +17,7 @@ thumb_func_start func_0803e258 \n\
 /* 0803e26e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803e270 */ BL func_0804d770 \n\
 /* 0803e274 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0803e276 */ BL func_0800e044 \n\
+/* 0803e276 */ BL scene_hide_bg_layer \n\
 /* 0803e27a */ B branch_0803e2ce \n\
 \n\
 .ltorg \n\
@@ -54,7 +54,7 @@ branch_0803e284: \n\
 /* 0803e2c2 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0803e2c4 */ BL func_0804d770 \n\
 /* 0803e2c8 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0803e2ca */ BL func_0800e030 \n\
+/* 0803e2ca */ BL scene_show_bg_layer \n\
  \n\
 branch_0803e2ce: \n\
 /* 0803e2ce */ ADD SP, 0xC \n\

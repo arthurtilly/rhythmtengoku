@@ -163,7 +163,7 @@ branch_08015778: \n\
  \n\
 branch_0801578c: \n\
 /* 0801578c */ LDR R0, =s_f_point_stop_seqData \n\
-/* 0801578e */ BL func_08002634 \n\
+/* 0801578e */ BL play_sound \n\
 /* 08015792 */ B branch_080158b8 \n\
 \n\
 .ltorg \n\
@@ -182,7 +182,7 @@ branch_080157a8: \n\
 /* 080157ac */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 080157ae */ LDRSH R6, [R7, R3] \n\
 /* 080157b0 */ MOVS R0, 0xA @ Set R0 to 0xA \n\
-/* 080157b2 */ BL func_08001980 \n\
+/* 080157b2 */ BL agb_random \n\
 /* 080157b6 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080157b8 */ LSLS R2, R2, 0x18 \n\
 /* 080157ba */ ASRS R2, R2, 0x18 \n\
@@ -193,7 +193,7 @@ branch_080157a8: \n\
 /* 080157c6 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
 /* 080157c8 */ LDRSH R6, [R7, R0] \n\
 /* 080157ca */ MOVS R0, 0xA @ Set R0 to 0xA \n\
-/* 080157cc */ BL func_08001980 \n\
+/* 080157cc */ BL agb_random \n\
 /* 080157d0 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080157d2 */ LSLS R2, R2, 0x18 \n\
 /* 080157d4 */ ASRS R2, R2, 0x18 \n\
@@ -211,7 +211,7 @@ branch_080157a8: \n\
  \n\
 branch_080157ee: \n\
 /* 080157ee */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
-/* 080157f0 */ BL func_08001980 \n\
+/* 080157f0 */ BL agb_random \n\
 /* 080157f4 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080157f6 */ LSLS R2, R2, 0x18 \n\
 /* 080157f8 */ ASRS R2, R2, 0x18 \n\
@@ -226,7 +226,7 @@ branch_080157ee: \n\
 /* 0801580c */ LDR R0, =s_f_point_roll_seqData \n\
 /* 0801580e */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08015810 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08015812 */ BL func_08002698 \n\
+/* 08015812 */ BL play_sound_w_pitch_volume \n\
 /* 08015816 */ B branch_080158b8 \n\
 \n\
 .ltorg \n\

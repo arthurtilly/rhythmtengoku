@@ -36,7 +36,7 @@ branch_08038470: \n\
 /* 08038470 */ LDR R0, =s_witch_donats_seqData \n\
  \n\
 branch_08038472: \n\
-/* 08038472 */ BL func_08002634 \n\
+/* 08038472 */ BL play_sound \n\
 /* 08038476 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
 /* 08038478 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803847a */ BL func_08038fbc \n\
@@ -49,7 +49,7 @@ branch_08038484: \n\
 /* 08038486 */ MOVS R1, 0xC0 @ Set R1 to 0xC0 \n\
 /* 08038488 */ LSLS R1, R1, 0x1 \n\
 /* 0803848a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803848c */ BL func_08002698 \n\
+/* 0803848c */ BL play_sound_w_pitch_volume \n\
 /* 08038490 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
 /* 08038492 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08038494 */ BL func_08038fbc \n\

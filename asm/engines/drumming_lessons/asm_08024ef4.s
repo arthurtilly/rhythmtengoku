@@ -36,7 +36,7 @@ branch_08024f1e: \n\
 /* 08024f2e */ STR R4, [R0] \n\
 /* 08024f30 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 08024f32 */ BEQ branch_08024f56 \n\
-/* 08024f34 */ BL func_0800c3b8 \n\
+/* 08024f34 */ BL get_current_mem_id \n\
 /* 08024f38 */ LSLS R0, R0, 0x10 \n\
 /* 08024f3a */ LSRS R0, R0, 0x10 \n\
 /* 08024f3c */ LDR R1, [R4, 0x18] \n\

@@ -46,7 +46,7 @@ thumb_func_start func_08036758 \n\
 /* 080367b0 */ ANDS R1, R0 @ Set R1 to R1 & R0 \n\
 /* 080367b2 */ STRB R1, [R6] \n\
 /* 080367b4 */ LDR R0, =s_poly_rakka_seqData \n\
-/* 080367b6 */ BL func_08002634 \n\
+/* 080367b6 */ BL play_sound \n\
  \n\
 branch_080367ba: \n\
 /* 080367ba */ LDR R0, [R6, 0x14] \n\
@@ -92,7 +92,7 @@ branch_080367ba: \n\
 /* 08036812 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 08036814 */ STR R0, [R6, 0x30] \n\
 /* 08036816 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 08036818 */ BL func_0800c3a4 \n\
+/* 08036818 */ BL beats_to_ticks \n\
 /* 0803681c */ LDR R1, [R6, 0x34] \n\
 /* 0803681e */ SUBS R1, R1, R0 @ Set R1 to R1 - R0 \n\
 /* 08036820 */ LDR R0, [R6, 0x30] \n\

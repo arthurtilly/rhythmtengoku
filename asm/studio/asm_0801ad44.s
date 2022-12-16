@@ -11,7 +11,7 @@ thumb_func_start func_0801ad44 \n\
 /* 0801ad4e */ LDR R0, [R0] \n\
 /* 0801ad50 */ BL text_printer_clear \n\
 /* 0801ad54 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801ad56 */ BL func_0800e044 \n\
+/* 0801ad56 */ BL scene_hide_bg_layer \n\
 /* 0801ad5a */ LDR R0, =D_03005380 \n\
 /* 0801ad5c */ LDR R0, [R0] \n\
 /* 0801ad5e */ LDR R1, [R4] \n\

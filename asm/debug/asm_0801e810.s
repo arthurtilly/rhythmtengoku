@@ -104,7 +104,7 @@ branch_0801e8aa: \n\
 branch_0801e8b8: \n\
 /* 0801e8b8 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 0801e8ba */ LSLS R0, R0, 0x1 \n\
-/* 0801e8bc */ BL func_08001980 \n\
+/* 0801e8bc */ BL agb_random \n\
 /* 0801e8c0 */ MOV R2, SP @ Set R2 to SP \n\
 /* 0801e8c2 */ ADDS R1, R2, R4 @ Set R1 to R2 + R4 \n\
 /* 0801e8c4 */ STRB R0, [R1] \n\
@@ -120,7 +120,7 @@ branch_0801e8cc: \n\
 /* 0801e8d4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801e8d6 */ BEQ branch_0801e8e6 \n\
 /* 0801e8d8 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801e8da */ BL func_0800bd04 \n\
+/* 0801e8da */ BL pause_beatscript_scene \n\
 /* 0801e8de */ LDR R0, =D_030046a4 \n\
 /* 0801e8e0 */ LDR R1, [R0] \n\
 /* 0801e8e2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

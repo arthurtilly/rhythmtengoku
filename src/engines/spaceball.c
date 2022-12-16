@@ -20,9 +20,9 @@ void func_0801fc44(u32 current) {
     struct SpaceballStar *star;
     s32 scale, x, y;
 
-    scale = func_08001980(INT_TO_FIXED(3)) + INT_TO_FIXED(1);
-    x = fast_divsi3((func_08001980(240) - 120) * scale, INT_TO_FIXED(1));
-    y = fast_divsi3((func_08001980(160) - 80) * scale, INT_TO_FIXED(1));
+    scale = agb_random(INT_TO_FIXED(3)) + INT_TO_FIXED(1);
+    x = fast_divsi3((agb_random(240) - 120) * scale, INT_TO_FIXED(1));
+    y = fast_divsi3((agb_random(160) - 80) * scale, INT_TO_FIXED(1));
 
     star = &gSpaceballInfo->stars[current];
     star->x = x;
@@ -147,7 +147,7 @@ void func_0801fe6c(void) {
 // [func_0801ff60] GFX_INIT Func_02
 void func_0801ff60(void) {
     func_0800c604(0);
-    func_08017578();
+    gameplay_start_screen_fade_in();
 }
 
 
@@ -156,7 +156,7 @@ void func_0801ff70(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_08002ee0(func_0800c3b8(), spaceball_gfx_table, 0x2000);
+    data = func_08002ee0(get_current_mem_id(), spaceball_gfx_table, 0x2000);
     task_run_after(data, func_0801ff60, 0);
 }
 
@@ -166,7 +166,7 @@ void func_0801ffa0(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(func_0800c3b8(), spaceball_buffered_textures);
+    data = func_080087b4(get_current_mem_id(), spaceball_buffered_textures);
     task_run_after(data, func_0801ff70, 0);
 }
 
@@ -175,13 +175,13 @@ void func_0801ffa0(void) {
 void func_0801ffcc(u32 ver) {
     gSpaceballInfo->version = ver;
     func_0801ffa0();
-    func_0800e018(1);
-    func_0800e0ec();
-    func_0800e0a0(2, 1, 0, 0, 0, 30, 0x4082);
-    func_08008910(2, INT_TO_FIXED(120), INT_TO_FIXED(80), INT_TO_FIXED(240), INT_TO_FIXED(160), 0);
-    func_0800e044(0);
-    func_0800e044(1);
-    func_0800e044(3);
+    scene_set_video_mode(VIDEO_MODE_2TEXT_1ROT);
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, 0x4082);
+    func_08008910(BG_LAYER_2, INT_TO_FIXED(120), INT_TO_FIXED(80), INT_TO_FIXED(240), INT_TO_FIXED(160), 0);
+    scene_hide_bg_layer(BG_LAYER_0);
+    scene_hide_bg_layer(BG_LAYER_1);
+    scene_hide_bg_layer(BG_LAYER_3);
 
     gSpaceballInfo->batter.sprite = func_0800fa6c(spaceball_anim00, 0, 170, 80, 0x4800, INT_TO_FIXED(0.5), 0, 0, 0, 0, 1);
     gSpaceballInfo->batter.x = 50;
@@ -199,7 +199,7 @@ void func_0801ffcc(u32 ver) {
     gSpaceballInfo->umpire.x = 0;
     gSpaceballInfo->umpire.y = 9;
     gSpaceballInfo->umpire.z = 0;
-    func_08010040(gSpaceballInfo->umpire.sprite, 1);
+    func_08010040(gSpaceballInfo->umpire.sprite, TRUE);
 
     gSpaceballInfo->poofR.sprite = func_0800fa6c(spaceball_anim10, 2, 154, 132, 0x4864, INT_TO_FIXED(1), 0, 1, 0, 0x8002, 1);
     gSpaceballInfo->poofR.x = 34;
@@ -216,7 +216,7 @@ void func_0801ffcc(u32 ver) {
     gSpaceballInfo->zoom = INT_TO_FIXED(-0.5);
     gSpaceballInfo->totalMissed = 0;
     gSpaceballInfo->spaceballType = 0;
-    func_08017338(A_BUTTON, 0);
+    gameplay_set_input_buttons(A_BUTTON, 0);
 }
 
 
@@ -240,7 +240,7 @@ void func_080201cc(struct SpaceballBatter *batter) {
     if (batter->swingTimer == 0) {
         func_08010008(batter->sprite, 0, 0, 0);
         func_0800ffc0(batter->sprite, 0);
-        func_08017338(A_BUTTON, 0);
+        gameplay_set_input_buttons(A_BUTTON, 0);
     }
 }
 
@@ -248,9 +248,9 @@ void func_080201cc(struct SpaceballBatter *batter) {
 // [func_08020200] ENGINE Func_01 - Loop Exit Condition (Practice)
 void func_08020200(void) {
     if (gSpaceballInfo->totalMissed == 0) {
-        func_0800bce4();
+        beatscript_disable_loops();
     } else {
-        func_0800bc40();
+        beatscript_enable_loops();
     }
     gSpaceballInfo->totalMissed = 0;
 }
@@ -260,7 +260,7 @@ void func_08020200(void) {
 void func_08020238(u32 controls) {
     s32 target = (s32) controls >> 0x10;
     u32 time = controls & 0xffff;
-    func_0800c4b0(2, func_0800c3a4(time), &gSpaceballInfo->zoom, gSpaceballInfo->zoom, target);
+    func_0800c4b0(2, beats_to_ticks(time), &gSpaceballInfo->zoom, gSpaceballInfo->zoom, target);
 }
 
 
@@ -307,7 +307,7 @@ void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arcTime, u32 unused3)
     u32 time;
 
     cue->state = 0;
-    cue->rotation = func_08001980(0x800);
+    cue->rotation = agb_random(0x800);
     cue->rotationSpeed = 0x40;
     cue->z = 0;
     cue->unk1C = (arcTime >= 0x18) ? (90 * arcTime / 0x18) : 90;
@@ -315,7 +315,7 @@ void func_0802030c(u32 arg0, struct SpaceballCue *cue, u32 arcTime, u32 unused3)
 
     temp = cue->unk1C - 48;
     div = D_03004ae4(256 * INT_TO_FIXED(temp) / cue->unk1C);
-    time = func_0800c3a4(arcTime);
+    time = beats_to_ticks(arcTime);
     cue->endTime = 2 * INT_TO_FIXED(time) / (div + INT_TO_FIXED(1));
 
     func_0801fd70(cue->sprite, -50, 40, cue->z);
@@ -330,13 +330,13 @@ u32 func_080203fc(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
     u32 temp;
 
     if (arg2 > cue->endTime) {
-        func_08002634(&s_f_batter_ball_land_seqData);
+        play_sound(&s_f_batter_ball_land_seqData);
         func_0800ffc0(gSpaceballInfo->poofR.sprite, 0);
-        func_08010040(gSpaceballInfo->poofR.sprite, 1);
+        func_08010040(gSpaceballInfo->poofR.sprite, TRUE);
         func_0800ffc0(gSpaceballInfo->poofL.sprite, 0);
-        func_08010040(gSpaceballInfo->poofL.sprite, 1);
+        func_08010040(gSpaceballInfo->poofL.sprite, TRUE);
         if (!cue->missed) {
-            func_08017928(func_080180bc(arg0), 2, 0);
+            gameplay_add_cue_result(gameplay_get_cue_marking_criteria(arg0), 2, 0);
         }
         return TRUE;
     }
@@ -411,7 +411,7 @@ void func_080205ac(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
 
     func_08010008(batter->sprite, 1, 0x7f, 0);
     func_0800ffc0(batter->sprite, 1);
-    batter->swingTimer = func_0800c3a4(0xa);
+    batter->swingTimer = beats_to_ticks(0xa);
     cue->rotationSpeed = 8;
     cue->state = SPACEBALL_CUE_STATE_HIT;
 }
@@ -423,8 +423,8 @@ void func_080205e8(u32 arg0, struct SpaceballCue *cue, u32 arg2, u32 unused3) {
 
     func_08010008(batter->sprite, 1, 0x7f, 0);
     func_0800ffc0(batter->sprite, 1);
-    batter->swingTimer = func_0800c3a4(0xa);
-    cue->xSpeed = (func_08018054() < 0) ? -3 : 3;
+    batter->swingTimer = beats_to_ticks(0xa);
+    cue->xSpeed = (gameplay_get_last_hit_offset() < 0) ? -3 : 3;
     cue->rotationSpeed = -8;
     cue->y = INT_TO_FIXED(cue->y);
     cue->ySpeed = INT_TO_FIXED(-4);
@@ -445,8 +445,8 @@ void func_08020660(u32 pressed, u32 released) {
 
     func_08010008(batter->sprite, 1, 0x7f, 0);
     func_0800ffc0(batter->sprite, 1);
-    batter->swingTimer = func_0800c3a4(0xa);
-    func_08017338(0,0);
+    batter->swingTimer = beats_to_ticks(0xa);
+    gameplay_set_input_buttons(0,0);
 }
 
 

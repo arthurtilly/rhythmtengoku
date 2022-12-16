@@ -578,7 +578,7 @@ branch_0802c9c0: \n\
 /* 0802ca62 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0802ca64 */ BEQ branch_0802ca80 \n\
 /* 0802ca66 */ LDR R0, =s_warai_solo_seqData \n\
-/* 0802ca68 */ BL func_08002634 \n\
+/* 0802ca68 */ BL play_sound \n\
 /* 0802ca6c */ B branch_0802caa2 \n\
 \n\
 .ltorg \n\
@@ -593,14 +593,14 @@ branch_0802ca80: \n\
 /* 0802ca8c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0802ca8e */ BLT branch_0802ca9c \n\
 /* 0802ca90 */ LDR R0, =s_hakushu_solo_seqData \n\
-/* 0802ca92 */ BL func_08002634 \n\
+/* 0802ca92 */ BL play_sound \n\
 /* 0802ca96 */ B branch_0802caa2 \n\
 \n\
 .ltorg \n\
  \n\
 branch_0802ca9c: \n\
 /* 0802ca9c */ LDR R0, =s_kansei_solo_seqData \n\
-/* 0802ca9e */ BL func_08002634 \n\
+/* 0802ca9e */ BL play_sound \n\
  \n\
 branch_0802caa2: \n\
 /* 0802caa2 */ LDR R0, [SP, 0x18] \n\
@@ -670,11 +670,11 @@ branch_0802cacc: \n\
 /* 0802cb1e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0802cb20 */ BEQ branch_0802cb28 \n\
 /* 0802cb22 */ LDR R0, =s_warai_solo_seqData \n\
-/* 0802cb24 */ BL func_08002634 \n\
+/* 0802cb24 */ BL play_sound \n\
  \n\
 branch_0802cb28: \n\
 /* 0802cb28 */ LDR R0, =s_f_esa_splash_penguin_seqData \n\
-/* 0802cb2a */ BL func_08002634 \n\
+/* 0802cb2a */ BL play_sound \n\
 /* 0802cb2e */ MOVS R4, 0x7 @ Set R4 to 0x7 \n\
  \n\
 branch_0802cb30: \n\

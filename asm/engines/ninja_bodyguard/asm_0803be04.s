@@ -15,7 +15,7 @@ thumb_func_start func_0803be04 \n\
 /* 0803be16 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0803be18 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803be1a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803be1c */ BL func_0800e0a0 \n\
+/* 0803be1c */ BL scene_set_bg_layer_display \n\
 /* 0803be20 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0803be22 */ BNE branch_0803be36 \n\
 /* 0803be24 */ LDR R0, =D_030055d0 \n\

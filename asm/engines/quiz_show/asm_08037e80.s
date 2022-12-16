@@ -39,7 +39,7 @@ thumb_func_start func_08037e80 \n\
 /* 08037ec6 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08037ec8 */ BL func_080378d8 \n\
 /* 08037ecc */ LDR R0, =s_f_quiz_hit_ply_seqData \n\
-/* 08037ece */ BL func_08002634 \n\
+/* 08037ece */ BL play_sound \n\
  \n\
 branch_08037ed2: \n\
 /* 08037ed2 */ MOVS R0, 0xF0 @ Set R0 to 0xF0 \n\
@@ -67,7 +67,7 @@ branch_08037ed2: \n\
 /* 08037f02 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08037f04 */ BL func_080378d8 \n\
 /* 08037f08 */ LDR R0, =s_f_quiz_hit_ply_seqData \n\
-/* 08037f0a */ BL func_08002634 \n\
+/* 08037f0a */ BL play_sound \n\
  \n\
 branch_08037f0e: \n\
 /* 08037f0e */ LDR R0, =D_03005380 \n\

@@ -77,8 +77,8 @@ void func_08018a24(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(func_0800c3b8(), D_089d7684);
-    task_run_after(data, func_0800bd04, 0);
+    data = func_080087b4(get_current_mem_id(), D_089d7684);
+    task_run_after(data, pause_beatscript_scene, FALSE);
 }
 
 
@@ -87,15 +87,15 @@ void func_08018a50(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_08002ee0(func_0800c3b8(), D_089d7654, 0x3000);
+    data = func_08002ee0(get_current_mem_id(), D_089d7654, 0x3000);
     task_run_after(data, func_08018a24, 0);
 }
 
 
 // [func_08018a80] LEVEL Graphics Init. 0
 void func_08018a80(void) {
-    func_0800856c(func_0800c3b8(), func_08018a50, 0, 2);
-    func_0800e0ec();
+    func_0800856c(get_current_mem_id(), func_08018a50, 0, 2);
+    scene_show_obj_layer();
 }
 
 
@@ -103,7 +103,7 @@ void func_08018a80(void) {
 void func_08018aa0(s32 arg) {
     func_08007324(FALSE);
     func_080073f0();
-    gResultsInfo.textObj2 = func_08005124(func_0800c3b8(), &D_089de670, 0, 0x340, 6);
+    gResultsInfo.textObj2 = func_08005124(get_current_mem_id(), &D_089de670, 0, 0x340, 6);
     gResultsInfo.textObj1 = func_0800c660(0x300, 4);
     func_080018e0(0, RESULTS_TEXT_TILES_ADDRESS, 0x4000, 0x20, 0x200);
     gResultsInfo.unk24 = 0;
@@ -128,9 +128,9 @@ void func_08018ba0(s32 arg) {
     if (!func_080189f4()) return;
 
     if (D_03004afc & A_BUTTON) {
-        func_0800bd04(FALSE); // unpause
+        pause_beatscript_scene(FALSE); // unpause
         gResultsInfo.awaitingInput = FALSE;
-        func_08002698(&s_menu_se20_seqData, INT_TO_FIXED(0.5), 0);
+        play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), 0);
     }
 }
 
@@ -173,7 +173,7 @@ void func_08018cc8(void) {
         func_0804d160(D_03005380, D_0890b724, 0, 180, 140, 0x700, 1, 0, 0);
     }
 
-    func_0800267c(5, D_089d7688[gResultsInfo.finalResultLevel]);
+    play_sound_in_player(5, D_089d7688[gResultsInfo.finalResultLevel]);
 }
 
 
@@ -181,8 +181,8 @@ void func_08018cc8(void) {
 void func_08018d68(void) {
     const struct SequenceData *music = D_089d7694[gResultsInfo.finalResultLevel];
 
-    func_0800bf7c(music);
-    func_0800bdf8(func_080102d0(music));
+    beatscript_scene_set_music(music);
+    set_beatscript_tempo(get_music_base_tempo(music));
 }
 
 
@@ -211,7 +211,7 @@ void func_08018d9c(void) {
         func_0804d770(D_03005380, commentSprites[i], TRUE);
     }
 
-    func_08002634(&s_f_result_mes_add_seqData);
+    play_sound(&s_f_result_mes_add_seqData);
     func_0804d160(D_03005380, D_0890b6dc, 0, LEVEL_RESULT_ICON_BUT_X, LEVEL_RESULT_ICON_BUT_Y, 0, 0, 0, 0);
 }
 
@@ -279,7 +279,7 @@ struct Animation *func_08019210(const char *string, u32 arg1, u32 arg2) {
 
     if ((u32) 16 + (gResultsInfo.unk24 * 2) >= 32) return NULL;
 
-    anim = text_printer_get_unformatted_line_anim(func_0800c3b8(), 0, 16 + (gResultsInfo.unk24 * 2), 0, string, arg1, arg2, 0x100);
+    anim = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, 16 + (gResultsInfo.unk24 * 2), 0, string, arg1, arg2, 0x100);
     gResultsInfo.unk24++;
     return anim;
 }
@@ -736,7 +736,7 @@ void func_08019ee0(void) {
     }
 
     if (averageCriteriaSucceeded == 0) {
-        textAnim = func_08019210(D_089d7b40[func_08001980(4)], 1, 3);
+        textAnim = func_08019210(D_089d7b40[agb_random(4)], 1, 3);
         textSprite = func_0804d160(D_03005380, textAnim, 0, SCREEN_CENTER_X, SCREEN_CENTER_Y, 0x800, 0, 0, 0);
         func_0804d8c4(D_03005380, textSprite, LEVEL_COMMENT_PALETTE);
     }

@@ -84,9 +84,9 @@ branch_0801d762: \n\
 /* 0801d7a0 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0801d7a2 */ BL func_0801d6c4 \n\
 /* 0801d7a6 */ LDR R0, =s_menu_kettei2_seqData \n\
-/* 0801d7a8 */ BL func_08002634 \n\
+/* 0801d7a8 */ BL play_sound \n\
 /* 0801d7ac */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801d7ae */ BL func_0800bd04 \n\
+/* 0801d7ae */ BL pause_beatscript_scene \n\
 /* 0801d7b2 */ LDR R1, [R6] \n\
 /* 0801d7b4 */ B branch_0801d7fc \n\
 \n\
@@ -94,7 +94,7 @@ branch_0801d762: \n\
  \n\
 branch_0801d7c0: \n\
 /* 0801d7c0 */ LDR R0, =s_menu_error_seqData \n\
-/* 0801d7c2 */ BL func_08002634 \n\
+/* 0801d7c2 */ BL play_sound \n\
 /* 0801d7c6 */ B branch_0801d800 \n\
 \n\
 .ltorg \n\
@@ -119,9 +119,9 @@ branch_0801d7dc: \n\
  \n\
 branch_0801d7ec: \n\
 /* 0801d7ec */ LDR R0, =s_menu_cancel3_seqData \n\
-/* 0801d7ee */ BL func_08002634 \n\
+/* 0801d7ee */ BL play_sound \n\
 /* 0801d7f2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801d7f4 */ BL func_0800bd04 \n\
+/* 0801d7f4 */ BL pause_beatscript_scene \n\
 /* 0801d7f8 */ LDR R0, =D_030046a4 \n\
 /* 0801d7fa */ LDR R1, [R0] \n\
  \n\

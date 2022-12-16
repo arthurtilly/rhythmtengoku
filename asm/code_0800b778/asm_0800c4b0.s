@@ -26,7 +26,7 @@ thumb_func_start func_0800c4b0 \n\
 /* 0800c4d8 */ STR R2, [SP, 0x8] \n\
 /* 0800c4da */ STR R3, [SP, 0xC] \n\
 /* 0800c4dc */ STR R7, [SP, 0x10] \n\
-/* 0800c4de */ BL func_0800c3b8 \n\
+/* 0800c4de */ BL get_current_mem_id \n\
 /* 0800c4e2 */ LSLS R0, R0, 0x10 \n\
 /* 0800c4e4 */ LSRS R0, R0, 0x10 \n\
 /* 0800c4e6 */ LDR R1, =D_08936c14 \n\

@@ -42,7 +42,7 @@ branch_080333f8: \n\
 /* 08033432 */ LSLS R0, R0, 0x2 \n\
 /* 08033434 */ BL func_080331c0 \n\
 /* 08033438 */ LDR R0, =s_furi_seqData \n\
-/* 0803343a */ BL func_08002634 \n\
+/* 0803343a */ BL play_sound \n\
 /* 0803343e */ B branch_0803345c \n\
 \n\
 .ltorg \n\

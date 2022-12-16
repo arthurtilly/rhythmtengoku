@@ -10,7 +10,7 @@ thumb_func_start func_0802e718 \n\
 /* 0802e720 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0802e722 */ BEQ branch_0802e72a \n\
 /* 0802e724 */ LDR R0, =s_change_a_seqData \n\
-/* 0802e726 */ BL func_08002634 \n\
+/* 0802e726 */ BL play_sound \n\
  \n\
 branch_0802e72a: \n\
 /* 0802e72a */ MOVS R0, 0xF0 @ Set R0 to 0xF0 \n\
@@ -18,7 +18,7 @@ branch_0802e72a: \n\
 /* 0802e72e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0802e730 */ BEQ branch_0802e738 \n\
 /* 0802e732 */ LDR R0, =s_change_b_seqData \n\
-/* 0802e734 */ BL func_08002634 \n\
+/* 0802e734 */ BL play_sound \n\
  \n\
 branch_0802e738: \n\
 /* 0802e738 */ POP {R4} \n\

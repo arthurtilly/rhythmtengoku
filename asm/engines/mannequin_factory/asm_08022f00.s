@@ -10,7 +10,7 @@ thumb_func_start func_08022f00 \n\
 /* 08022f08 */ STRH R0, [R1] \n\
 /* 08022f0a */ LSLS R0, R0, 0x10 \n\
 /* 08022f0c */ LSRS R0, R0, 0x10 \n\
-/* 08022f0e */ BL func_0800bdf8 \n\
+/* 08022f0e */ BL set_beatscript_tempo \n\
 /* 08022f12 */ POP {R0} \n\
 /* 08022f14 */ BX R0 \n\
 \n\

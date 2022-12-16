@@ -50,7 +50,7 @@ branch_0802ae24: \n\
  \n\
 branch_0802ae30: \n\
 /* 0802ae30 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0802ae32 */ BL func_0800c3a4 \n\
+/* 0802ae32 */ BL beats_to_ticks \n\
 /* 0802ae36 */ LDR R2, [R6] \n\
 /* 0802ae38 */ ADDS R1, R2, R4 @ Set R1 to R2 + R4 \n\
 /* 0802ae3a */ LDRH R1, [R1] \n\

@@ -53,7 +53,7 @@ branch_0803687e: \n\
 /* 080368aa */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080368ac */ BNE branch_080368b4 \n\
 /* 080368ae */ LDR R0, =s_poly_shototu_seqData \n\
-/* 080368b0 */ BL func_08002634 \n\
+/* 080368b0 */ BL play_sound \n\
  \n\
 branch_080368b4: \n\
 /* 080368b4 */ LDRB R0, [R6, 0x1] \n\
@@ -73,7 +73,7 @@ branch_080368ce: \n\
 /* 080368ce */ LDR R0, [R6, 0x2C] \n\
 /* 080368d0 */ SUBS R0, 0x30 @ Subtract 0x30 from R0 \n\
 /* 080368d2 */ STR R0, [R6, 0x2C] \n\
-/* 080368d4 */ BL func_0800c1a8 \n\
+/* 080368d4 */ BL get_beatscript_tempo \n\
 /* 080368d8 */ LDR R1, [R6, 0x2C] \n\
 /* 080368da */ MULS R0, R1 @ Multiply R0 by R1 \n\
 /* 080368dc */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
@@ -137,7 +137,7 @@ branch_080368fc: \n\
 /* 08036956 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 08036958 */ STR R0, [R6, 0x30] \n\
 /* 0803695a */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 0803695c */ BL func_0800c3a4 \n\
+/* 0803695c */ BL beats_to_ticks \n\
 /* 08036960 */ LDR R1, [R6, 0x34] \n\
 /* 08036962 */ SUBS R1, R1, R0 @ Set R1 to R1 - R0 \n\
 /* 08036964 */ LDR R0, [R6, 0x30] \n\

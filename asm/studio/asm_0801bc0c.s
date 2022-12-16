@@ -76,7 +76,7 @@ branch_0801bc6a: \n\
 /* 0801bca4 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0801bca6 */ STRB R1, [R0] \n\
 /* 0801bca8 */ LDR R0, =s_studio_bgm_seqData \n\
-/* 0801bcaa */ BL func_08002634 \n\
+/* 0801bcaa */ BL play_sound \n\
 /* 0801bcae */ LDR R1, [R4] \n\
 /* 0801bcb0 */ MOVS R2, 0x97 @ Set R2 to 0x97 \n\
 /* 0801bcb2 */ LSLS R2, R2, 0x3 \n\

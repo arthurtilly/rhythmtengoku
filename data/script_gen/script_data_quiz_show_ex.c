@@ -87,7 +87,7 @@ const struct BeatScript D_08068358[] = {
     BSC4_GAME_ENGINE_EVENT(&D_089e5ec0, 0x02, 1),
     BSC_REST(0x06),
 
-    BSC_RUN_FUNC_1(func_08001980, 3),
+    BSC_RUN_FUNC_1(agb_random, 3),
     BSC_SWITCH_ARG(&D_030053c0.unk24, BEATSCRIPT_ARG_BYTE),
         BSC_CASE(0),
             BSC4_GAME_ENGINE_EVENT(&D_089e5ec0, 0x02, 0),
@@ -116,7 +116,7 @@ const struct BeatScript D_08068358[] = {
             BSC_CASE_END,
     BSC_SWITCH_END,
 
-    BSC_RUN_FUNC_1(func_08001980, 3),
+    BSC_RUN_FUNC_1(agb_random, 3),
     BSC_SWITCH_ARG(&D_030053c0.unk24, BEATSCRIPT_ARG_BYTE),
         BSC_CASE(0),
             BSC4_GAME_ENGINE_EVENT(&D_089e5ec0, 0x02, 0),
@@ -348,7 +348,7 @@ const struct BeatScript D_0806901c[] = {
     BSC_REST(0x18),
     BSC_REST(0x18),
 
-    BSC_RUN_FUNC_1(func_08001980, 2),
+    BSC_RUN_FUNC_1(agb_random, 2),
     BSC_SWITCH_ARG(&D_030053c0.unk24, BEATSCRIPT_ARG_BYTE),
         BSC_CASE(0),
             BSC4_GAME_ENGINE_EVENT(&D_089e5ec0, 0x02, 0x0),
@@ -362,7 +362,7 @@ const struct BeatScript D_0806901c[] = {
             BSC_CASE_END,
     BSC_SWITCH_END,
 
-    BSC_RUN_FUNC_1(func_08001980, 3),
+    BSC_RUN_FUNC_1(agb_random, 3),
     BSC_SWITCH_ARG(&D_030053c0.unk24, BEATSCRIPT_ARG_BYTE),
         BSC_CASE(0),
             BSC4_GAME_ENGINE_EVENT(&D_089e5ec0, 0x02, 0x0),
@@ -392,7 +392,7 @@ const struct BeatScript D_0806901c[] = {
             BSC_CASE_END,
     BSC_SWITCH_END,
 
-    BSC_RUN_FUNC_1(func_08001980, 3),
+    BSC_RUN_FUNC_1(agb_random, 3),
     BSC_SWITCH_ARG(&D_030053c0.unk24, BEATSCRIPT_ARG_BYTE),
         BSC_CASE(0),
             BSC4_GAME_ENGINE_EVENT(&D_089e5ec0, 0x02, 0x0),

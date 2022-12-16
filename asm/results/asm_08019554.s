@@ -53,7 +53,7 @@ branch_080195a2: \n\
 /* 080195a6 */ LDR R5, [R0, 0x4] \n\
 /* 080195a8 */ LSLS R0, R3, 0x10 \n\
 /* 080195aa */ LSRS R0, R0, 0x10 \n\
-/* 080195ac */ BL func_08001980 \n\
+/* 080195ac */ BL agb_random \n\
 /* 080195b0 */ ADDS R4, R4, R6 @ Set R4 to R4 + R6 \n\
 /* 080195b2 */ LSLS R4, R4, 0x2 \n\
 /* 080195b4 */ ADD R4, R8 @ Add R8 to R4 \n\

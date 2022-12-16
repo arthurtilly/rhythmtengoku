@@ -73,7 +73,7 @@ branch_0802da64: \n\
 /* 0802da74 */ LSLS R2, R2, 0x15 \n\
 /* 0802da76 */ ASRS R2, R2, 0x10 \n\
 /* 0802da78 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0802da7a */ BL func_0800e058 \n\
+/* 0802da7a */ BL scene_set_bg_layer_pos \n\
 /* 0802da7e */ POP {R4-R7} \n\
 /* 0802da80 */ POP {R0} \n\
 /* 0802da82 */ BX R0 \n\

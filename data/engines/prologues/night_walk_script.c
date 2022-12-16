@@ -72,9 +72,9 @@ const struct GameEngine D_089ea9d8 = {
 
 // [D_089ea9f8] Prologue (Night Walk) BeatScript - Main
 const struct BeatScript D_089ea9f8[] = {
-    BSC_RUN_FUNC_1(func_08017568, 0x8),
+    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x8),
     BSC4_LOAD_GAME_ENGINE(&D_089ea9d8, 0),
-    BSC_RUN_FUNC_1(func_08002838, 0),
+    BSC_RUN_FUNC_1(stop_all_soundplayers, 0),
     BSC_RUN_FUNC_1(func_080458ec, 0),
     BSC_REST(0x18),
     BSC_REST(0x18),
@@ -89,6 +89,6 @@ const struct BeatScript D_089ea9f8[] = {
     BSC_REST(0x18),
     BSC_RUN_FUNC_1(func_08006d80, 0),
     BSC_REST(0x18),
-    BSC_RUN_FUNC_1(func_08017568, 0x10),
+    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x10),
     BSC_RETURN
 };

@@ -30,7 +30,7 @@ branch_0802c4e4: \n\
 /* 0802c4e4 */ LDR R0, =s_esa_pengin2_1_seqData \n\
  \n\
 branch_0802c4e6: \n\
-/* 0802c4e6 */ BL func_08002634 \n\
+/* 0802c4e6 */ BL play_sound \n\
  \n\
 branch_0802c4ea: \n\
 /* 0802c4ea */ POP {R0} \n\

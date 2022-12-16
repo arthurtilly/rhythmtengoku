@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0800e084 \n\
+thumb_func_start scene_set_bg_layer_priority \n\
 /* 0800e084 */ LDR R2, =(D_03004b10 + 4) \n\
 /* 0800e086 */ LSLS R0, R0, 0x1 \n\
 /* 0800e088 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\

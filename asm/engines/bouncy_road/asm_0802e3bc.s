@@ -6,7 +6,7 @@ thumb_func_start func_0802e3bc \n\
 /* 0802e3bc */ PUSH {LR} \n\
 /* 0802e3be */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0802e3c0 */ BL func_0800c604 \n\
-/* 0802e3c4 */ BL func_08017578 \n\
+/* 0802e3c4 */ BL gameplay_start_screen_fade_in \n\
 /* 0802e3c8 */ MOVS R0, 0x88 @ Set R0 to 0x88 \n\
 /* 0802e3ca */ LSLS R0, R0, 0x1 \n\
 /* 0802e3cc */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\

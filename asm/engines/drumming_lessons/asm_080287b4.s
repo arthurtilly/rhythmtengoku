@@ -186,7 +186,7 @@ branch_08028916: \n\
 /* 0802891c */ LSLS R0, R2, 0x10 \n\
 /* 0802891e */ LSRS R0, R0, 0x10 \n\
 /* 08028920 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08028922 */ BL func_08017338 \n\
+/* 08028922 */ BL gameplay_set_input_buttons \n\
 /* 08028926 */ ADD SP, 0xC \n\
 /* 08028928 */ POP {R3} \n\
 /* 0802892a */ MOV R8, R3 @ Set R8 to R3 \n\

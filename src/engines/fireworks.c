@@ -17,7 +17,7 @@
 // [func_0802f3a4] GFX_INIT Func_02
 void func_0802f3a4(void) {
     func_0800c604(0);
-    func_08017578();
+    gameplay_start_screen_fade_in();
 }
 
 
@@ -26,7 +26,7 @@ void func_0802f3b4(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_08002ee0(func_0800c3b8(), D_089e43d4[gFireworksInfo->version], 0x2000);
+    data = func_08002ee0(get_current_mem_id(), D_089e43d4[gFireworksInfo->version], 0x2000);
     task_run_after(data, func_0802f3a4, 0);
 }
 
@@ -36,7 +36,7 @@ void func_0802f3f4(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(func_0800c3b8(), D_089e4214);
+    data = func_080087b4(get_current_mem_id(), D_089e4214);
     task_run_after(data, func_0802f3b4, 0);
 }
 
@@ -49,8 +49,8 @@ void func_0802f420(u32 ver) {
 
     gFireworksInfo->version = ver;
     func_0802f3f4();
-    func_0800e0ec();
-    func_0800e0a0(1, 1, 0, 0, 0, 29, 0);
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 0);
     gFireworksInfo->unk4 = func_0800c660(0x340, 2);
     textAnim = func_08004b98(gFireworksInfo->unk4, D_0805a3d0, 1, 15);
     gFireworksInfo->textSprite = func_0804d160(D_03005380, textAnim, 0, 120, 144, 0x7f7, 0, 0, 0);
@@ -66,18 +66,18 @@ void func_0802f420(u32 ver) {
     for (i = 0; i < 72; i++) {
         gFireworksInfo->particles[i].sprite = func_0804d160(D_03005380, D_088e8f64, 0, 0, 0, 0x801, 0, 0, 0);
         gFireworksInfo->particles[i].active = FALSE;
-        func_0804d770(D_03005380, gFireworksInfo->particles[i].sprite, 0);
+        func_0804d770(D_03005380, gFireworksInfo->particles[i].sprite, FALSE);
     }
 
-    textPrinter = text_printer_create_new(func_0800c3b8(), 4, 240, 30);
+    textPrinter = text_printer_create_new(get_current_mem_id(), 4, 240, 30);
     text_printer_set_x_y(textPrinter, 0, 8);
     text_printer_set_layer(textPrinter, 0x7f7);
     text_printer_center_by_content(textPrinter, FALSE);
     text_printer_set_palette(textPrinter, 0);
     text_printer_set_colors(textPrinter, 0);
-    func_08018630(textPrinter);
-    func_08017338(A_BUTTON, 0);
-    func_08018078(TRUE);
+    gameplay_set_text_printer(textPrinter);
+    gameplay_set_input_buttons(A_BUTTON, 0);
+    gameplay_enable_cue_input_overlap(TRUE);
 }
 
 
@@ -95,19 +95,19 @@ void func_0802f5b8(u32 mode) {
 void func_0802f5f0(u32 sound) {
     switch (sound) {
         case FIREWORKS_SFX_COME_ON:
-            func_0800267c(2, &s_intro_comeon_seqData);
+            play_sound_in_player(2, &s_intro_comeon_seqData);
             break;
         case FIREWORKS_SFX_ONE:
-            func_0800267c(2, &s_intro_one_seqData);
+            play_sound_in_player(2, &s_intro_one_seqData);
             break;
         case FIREWORKS_SFX_TWO:
-            func_0800267c(2, &s_intro_two_seqData);
+            play_sound_in_player(2, &s_intro_two_seqData);
             break;
         case FIREWORKS_SFX_THREE:
-            func_0800267c(2, &s_intro_three_seqData);
+            play_sound_in_player(2, &s_intro_three_seqData);
             break;
         case FIREWORKS_SFX_NUEI:
-            func_08002634(&s_f_hanabi_v_nuei_seqData);
+            play_sound(&s_f_hanabi_v_nuei_seqData);
             break;
     }
 }
@@ -151,64 +151,64 @@ void func_0802f74c(u8 pattern, s32 x, s32 y) {
         case FIREWORKS_PATTERN_L3:
             min = 0;
             max = 24;
-            colour = func_08001980(6);
+            colour = agb_random(6);
             break;
         case FIREWORKS_PATTERN_C3:
             min = 24;
             max = 48;
-            colour = func_08001980(6);
+            colour = agb_random(6);
             break;
         case FIREWORKS_PATTERN_R3:
             min = 48;
             max = 72;
-            colour = func_08001980(6);
+            colour = agb_random(6);
             break;
         case FIREWORKS_PATTERN_LL2:
             min = 0;
             max = 16;
-            colour = func_08001980(3);
+            colour = agb_random(3);
             break;
         case FIREWORKS_PATTERN_CL2:
             min = 16;
             max = 32;
-            colour = func_08001980(3);
+            colour = agb_random(3);
             break;
         case FIREWORKS_PATTERN_CR2:
             min = 32;
             max = 48;
-            colour = func_08001980(3);
+            colour = agb_random(3);
             break;
         case FIREWORKS_PATTERN_RR2:
             min = 48;
             max = 64;
-            colour = func_08001980(3);
+            colour = agb_random(3);
             break;
         case FIREWORKS_PATTERN_L3_BARELY:
         case FIREWORKS_PATTERN_LL2_BARELY:
             min = 0;
             max = 8;
-            colour = func_08001980(3);
+            colour = agb_random(3);
             break;
         case FIREWORKS_PATTERN_C3_BARELY:
         case FIREWORKS_PATTERN_CL2_BARELY:
             min = 16;
             max = 24;
-            colour = func_08001980(3);
+            colour = agb_random(3);
             break;
         case FIREWORKS_PATTERN_R3_BARELY:
             min = 40;
             max = 48;
-            colour = func_08001980(3);
+            colour = agb_random(3);
             break;
         case FIREWORKS_PATTERN_CR2_BARELY:
             min = 32;
             max = 40;
-            colour = func_08001980(3);
+            colour = agb_random(3);
             break;
         case FIREWORKS_PATTERN_RR2_BARELY:
             min = 48;
             max = 56;
-            colour = func_08001980(3);
+            colour = agb_random(3);
             break;
         case FIREWORKS_PATTERN_SP_STAR:
             min = 16;
@@ -391,31 +391,31 @@ void func_0802fc70(u32 arg0, struct FireworksCue *cue, u32 type, u32 arg3) {
     switch (cue->pattern) {
         case FIREWORKS_PATTERN_L3:
             cue->targetX = INT_TO_FIXED(60);
-            cue->targetY = INT_TO_FIXED(48) + (func_08001980(5) << 11);
+            cue->targetY = INT_TO_FIXED(48) + (agb_random(5) << 11);
             break;
         case FIREWORKS_PATTERN_C3:
             cue->targetX = INT_TO_FIXED(120);
-            cue->targetY = INT_TO_FIXED(48) + (func_08001980(5) << 11);
+            cue->targetY = INT_TO_FIXED(48) + (agb_random(5) << 11);
             break;
         case FIREWORKS_PATTERN_R3:
             cue->targetX = INT_TO_FIXED(180);
-            cue->targetY = INT_TO_FIXED(48) + (func_08001980(5) << 11);
+            cue->targetY = INT_TO_FIXED(48) + (agb_random(5) << 11);
             break;
         case FIREWORKS_PATTERN_LL2:
             cue->targetX = INT_TO_FIXED(30);
-            cue->targetY = INT_TO_FIXED(48) + (func_08001980(5) << 11);
+            cue->targetY = INT_TO_FIXED(48) + (agb_random(5) << 11);
             break;
         case FIREWORKS_PATTERN_CL2:
             cue->targetX = INT_TO_FIXED(90);
-            cue->targetY = INT_TO_FIXED(48) + (func_08001980(5) << 11);
+            cue->targetY = INT_TO_FIXED(48) + (agb_random(5) << 11);
             break;
         case FIREWORKS_PATTERN_CR2:
             cue->targetX = INT_TO_FIXED(150);
-            cue->targetY = INT_TO_FIXED(48) + (func_08001980(5) << 11);
+            cue->targetY = INT_TO_FIXED(48) + (agb_random(5) << 11);
             break;
         case FIREWORKS_PATTERN_RR2:
             cue->targetX = INT_TO_FIXED(210);
-            cue->targetY = INT_TO_FIXED(48) + (func_08001980(5) << 11);
+            cue->targetY = INT_TO_FIXED(48) + (agb_random(5) << 11);
             break;
         case FIREWORKS_PATTERN_TAIKO_BOMBER:
             cue->targetX = INT_TO_FIXED(120);
@@ -430,7 +430,7 @@ void func_0802fc70(u32 arg0, struct FireworksCue *cue, u32 type, u32 arg3) {
             cue->x = cue->targetX;
             cue->velX = 0;
             cue->y = INT_TO_FIXED(160);
-            cue->velY = (cue->targetY - cue->y) / func_0800c3a4(0x18);
+            cue->velY = (cue->targetY - cue->y) / beats_to_ticks(0x18);
             cue->sprite = func_0804d160(D_03005380, D_088e93ec, 0, FIXED_TO_INT(cue->x), FIXED_TO_INT(cue->y), 0x801, 1, 0, 0);
             break;
 
@@ -438,22 +438,22 @@ void func_0802fc70(u32 arg0, struct FireworksCue *cue, u32 type, u32 arg3) {
             cue->x = cue->targetX;
             cue->velX = 0;
             cue->y = INT_TO_FIXED(160);
-            cue->velY = (cue->targetY - cue->y) / func_0800c3a4(0x48);
+            cue->velY = (cue->targetY - cue->y) / beats_to_ticks(0x48);
             cue->sprite = func_0804d160(D_03005380, D_088e940c, 0, FIXED_TO_INT(cue->x), FIXED_TO_INT(cue->y), 0x801, 1, 0, 0);
-            func_08002634(&s_hanabi_hyu_seqData);
+            play_sound(&s_hanabi_hyu_seqData);
             break;
 
         case FIREWORKS_CUE_TYPE_HAWFINCH_TAIKO_BOMBER:
             cue->velX = INT_TO_FIXED(2);
-            cue->velY = -(func_0800c3a4(0x30) * 64);
-            cue->x = cue->targetX - (func_0800c3a4(0x30) * cue->velX);
+            cue->velY = -(beats_to_ticks(0x30) * 64);
+            cue->x = cue->targetX - (beats_to_ticks(0x30) * cue->velX);
             accum = 0;
-            for (i = 0; i < (s32) func_0800c3a4(0x30); i++) {
+            for (i = 0; i < (s32) beats_to_ticks(0x30); i++) {
                 accum += i;
             }
-            cue->y = cue->targetY - (func_0800c3a4(0x30) * cue->velY) - (accum * 64);
+            cue->y = cue->targetY - (beats_to_ticks(0x30) * cue->velY) - (accum * 64);
             cue->sprite = func_0804d160(D_03005380, D_088e90ac, 0, FIXED_TO_INT(cue->x), FIXED_TO_INT(cue->y), 0x801, 0, 0, 0);
-            func_08002634(&s_f_hanabi_v_tamaya_seqData);
+            play_sound(&s_f_hanabi_v_tamaya_seqData);
             break;
     }
 }
@@ -466,12 +466,12 @@ u32 func_0802ff70(u32 arg0, struct FireworksCue *cue, u32 arg2, u32 arg3) {
             cue->y += cue->velY;
             func_0804d648(D_03005380, cue->sprite, FIXED_TO_INT(cue->y));
             if (cue->state == 0) {
-                if (arg2 > func_0800c3a4(7)) {
+                if (arg2 > beats_to_ticks(7)) {
                     cue->state = 1;
                     func_0804d8f8(D_03005380, cue->sprite, D_088e93cc, 0, 1, 0, 0);
                 }
             } else if (cue->state == 1) {
-                if (arg2 > func_0800c3a4(0x13)) {
+                if (arg2 > beats_to_ticks(0x13)) {
                     cue->state = 2;
                     func_0804d8f8(D_03005380, cue->sprite, D_088e8f14, 0, 1, 0, 0);
                 }
@@ -483,19 +483,19 @@ u32 func_0802ff70(u32 arg0, struct FireworksCue *cue, u32 arg2, u32 arg3) {
             func_0804d648(D_03005380, cue->sprite, FIXED_TO_INT(cue->y));
             switch (cue->state) {
                 case 0:
-                    if (arg2 > func_0800c3a4(0x13)) {
+                    if (arg2 > beats_to_ticks(0x13)) {
                         cue->state = 1;
                         func_0804d8f8(D_03005380, cue->sprite, D_088e93ec, 0, 1, 0, 0);
                     }
                     break;
                 case 1:
-                    if (arg2 > func_0800c3a4(0x2b)) {
+                    if (arg2 > beats_to_ticks(0x2b)) {
                         cue->state = 2;
                         func_0804d8f8(D_03005380, cue->sprite, D_088e93cc, 0, 1, 0, 0);
                     }
                     break;
                 case 2:
-                    if (arg2 > func_0800c3a4(0x43)) {
+                    if (arg2 > beats_to_ticks(0x43)) {
                         cue->state = 3;
                         func_0804d8f8(D_03005380, cue->sprite, D_088e8f14, 0, 1, 0, 0);
                     }
@@ -513,9 +513,9 @@ u32 func_0802ff70(u32 arg0, struct FireworksCue *cue, u32 arg2, u32 arg3) {
             break;
     }
 
-    if (arg2 > func_0800c3a4(D_089e43e8[cue->type])) {
+    if (arg2 > beats_to_ticks(D_089e43e8[cue->type])) {
         if (!cue->exploded) {
-            func_08002698(&s_hanabi_ah_seqData, 48, 0);
+            play_sound_w_pitch_volume(&s_hanabi_ah_seqData, 48, 0);
         }
         return TRUE;
     }
@@ -545,7 +545,7 @@ void func_0803012c(u32 arg0, struct FireworksCue *cue, u32 arg2, u32 arg3) {
     }
 
     if ((gFireworksInfo->patternTableNext == 19) || (gFireworksInfo->patternTableNext == 42)) {
-        func_08002634(&s_f_hanabi_kansei_seqData);
+        play_sound(&s_f_hanabi_kansei_seqData);
     }
 }
 
@@ -587,13 +587,13 @@ void func_080301d0(u32 arg0, struct FireworksCue *cue, u32 arg2, u32 arg3) {
         func_0802f74c(pattern, cue->targetX, cue->targetY);
     }
 
-    func_0800bc40();
+    beatscript_enable_loops();
 }
 
 
 // [func_08030288] CUE - Miss
 void func_08030288(u32 arg0, struct FireworksCue *cue, u32 arg2, u32 arg3) {
-    func_0800bc40();
+    beatscript_enable_loops();
 }
 
 
@@ -625,11 +625,11 @@ void func_0803029c(char *text) {
 // [func_0803031c] COMMON Func_02 - Set Tutorial Mode?
 void func_0803031c(u32 arg) {
     if (arg) {
-        func_08017448(TRUE);
-        func_08017458(arg);
+        gameplay_enable_tutorial(TRUE);
+        gameplay_set_skip_destination(arg);
         func_0804d770(D_03005380, gFireworksInfo->skipTutorialSprite, 1);
     } else {
-        func_08017448(FALSE);
+        gameplay_enable_tutorial(FALSE);
         func_0804d770(D_03005380, gFireworksInfo->skipTutorialSprite, 0);
     }
 }

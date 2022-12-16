@@ -9,7 +9,7 @@ thumb_func_start func_0801052c \n\
 /* 08010532 */ SUB SP, 0x14 \n\
 /* 08010534 */ LDR R0, =D_089cd1f0 \n\
 /* 08010536 */ MOV R8, R0 @ Set R8 to R0 \n\
-/* 08010538 */ BL func_0800c3b8 \n\
+/* 08010538 */ BL get_current_mem_id \n\
 /* 0801053c */ LSLS R0, R0, 0x10 \n\
 /* 0801053e */ LSRS R0, R0, 0x10 \n\
 /* 08010540 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
@@ -56,7 +56,7 @@ branch_08010564: \n\
 /* 0801059c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801059e */ STRH R0, [R1, 0x4] \n\
 /* 080105a0 */ STRB R2, [R1, 0x6] \n\
-/* 080105a2 */ BL func_0800c3b8 \n\
+/* 080105a2 */ BL get_current_mem_id \n\
 /* 080105a6 */ LSLS R0, R0, 0x10 \n\
 /* 080105a8 */ LSRS R0, R0, 0x10 \n\
 /* 080105aa */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
@@ -74,7 +74,7 @@ branch_08010564: \n\
 /* 080105c8 */ BL text_printer_update \n\
 /* 080105cc */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 080105ce */ BL text_printer_update \n\
-/* 080105d2 */ BL func_0800c3b8 \n\
+/* 080105d2 */ BL get_current_mem_id \n\
 /* 080105d6 */ LSLS R0, R0, 0x10 \n\
 /* 080105d8 */ LSRS R0, R0, 0x10 \n\
 /* 080105da */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
@@ -102,7 +102,7 @@ branch_08010564: \n\
 /* 08010614 */ LDR R1, =D_0804f3e4 \n\
 /* 08010616 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08010618 */ BL func_080081a8 \n\
-/* 0801061c */ BL func_0800c3b8 \n\
+/* 0801061c */ BL get_current_mem_id \n\
 /* 08010620 */ LSLS R0, R0, 0x10 \n\
 /* 08010622 */ LSRS R0, R0, 0x10 \n\
 /* 08010624 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\

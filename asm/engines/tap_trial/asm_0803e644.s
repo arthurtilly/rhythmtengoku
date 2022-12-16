@@ -59,7 +59,7 @@ branch_0803e6ba: \n\
 /* 0803e6ba */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0803e6bc */ BL func_0803da40 \n\
 /* 0803e6c0 */ LDR R0, =s_f_tap_tap_seqData \n\
-/* 0803e6c2 */ BL func_08002634 \n\
+/* 0803e6c2 */ BL play_sound \n\
  \n\
 branch_0803e6c6: \n\
 /* 0803e6c6 */ POP {R0} \n\

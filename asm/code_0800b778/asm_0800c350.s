@@ -25,7 +25,7 @@ branch_0800c36c: \n\
 /* 0800c36e */ BEQ branch_0800c386 \n\
 /* 0800c370 */ LSLS R0, R2, 0x10 \n\
 /* 0800c372 */ LSRS R0, R0, 0x10 \n\
-/* 0800c374 */ BL func_08001980 \n\
+/* 0800c374 */ BL agb_random \n\
 /* 0800c378 */ LSLS R0, R0, 0x10 \n\
 /* 0800c37a */ LSRS R0, R0, 0xE \n\
 /* 0800c37c */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\

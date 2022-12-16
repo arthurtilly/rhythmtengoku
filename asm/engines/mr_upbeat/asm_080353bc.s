@@ -12,7 +12,7 @@ thumb_func_start func_080353bc \n\
 /* 080353cc */ BEQ branch_080353e2 \n\
 /* 080353ce */ BL func_08018068 \n\
 /* 080353d2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 080353d4 */ BL func_080179d8 \n\
+/* 080353d4 */ BL gameplay_add_cue_result_miss \n\
 /* 080353d8 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 080353da */ ADDS R0, 0x30 @ Add 0x30 to R0 \n\
 /* 080353dc */ LDRB R0, [R0] \n\

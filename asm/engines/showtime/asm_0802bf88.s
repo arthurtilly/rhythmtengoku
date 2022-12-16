@@ -48,7 +48,7 @@ thumb_func_start func_0802bf88 \n\
 /* 0802bfe4 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0802bfe6 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802bfe8 */ LDRSH R4, [R0, R1] \n\
-/* 0802bfea */ BL func_0800c1a8 \n\
+/* 0802bfea */ BL get_beatscript_tempo \n\
 /* 0802bfee */ LSLS R0, R0, 0x8 \n\
 /* 0802bff0 */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 0802bff2 */ BL __udivsi3 \n\
@@ -72,7 +72,7 @@ thumb_func_start func_0802bf88 \n\
 /* 0802c01c */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0802c01e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802c020 */ LDRSH R4, [R0, R1] \n\
-/* 0802c022 */ BL func_0800c1a8 \n\
+/* 0802c022 */ BL get_beatscript_tempo \n\
 /* 0802c026 */ LSLS R0, R0, 0x8 \n\
 /* 0802c028 */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 0802c02a */ BL __udivsi3 \n\
@@ -83,20 +83,20 @@ thumb_func_start func_0802bf88 \n\
 /* 0802c036 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0802c038 */ BL func_0804dcb8 \n\
 /* 0802c03c */ MOVS R0, 0x24 @ Set R0 to 0x24 \n\
-/* 0802c03e */ BL func_0800c3a4 \n\
+/* 0802c03e */ BL beats_to_ticks \n\
 /* 0802c042 */ LDR R1, [R5] \n\
 /* 0802c044 */ MOVS R2, 0xB8 @ Set R2 to 0xB8 \n\
 /* 0802c046 */ LSLS R2, R2, 0x1 \n\
 /* 0802c048 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0802c04a */ STRH R0, [R1] \n\
 /* 0802c04c */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0802c04e */ BL func_0800c3a4 \n\
+/* 0802c04e */ BL beats_to_ticks \n\
 /* 0802c052 */ LDR R1, [R5] \n\
 /* 0802c054 */ MOVS R2, 0xF0 @ Set R2 to 0xF0 \n\
 /* 0802c056 */ LSLS R2, R2, 0x2 \n\
 /* 0802c058 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0802c05a */ STR R0, [R1] \n\
-/* 0802c05c */ BL func_0800bc40 \n\
+/* 0802c05c */ BL beatscript_enable_loops \n\
 /* 0802c060 */ ADD SP, 0xC \n\
 /* 0802c062 */ POP {R3} \n\
 /* 0802c064 */ MOV R8, R3 @ Set R8 to R3 \n\

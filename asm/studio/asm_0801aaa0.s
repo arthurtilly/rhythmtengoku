@@ -74,7 +74,7 @@ branch_0801ab14: \n\
 /* 0801ab1e */ BEQ branch_0801ab58 \n\
 /* 0801ab20 */ LDR R1, =s_menu_cursor1_seqData \n\
 /* 0801ab22 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0801ab24 */ BL func_0800267c \n\
+/* 0801ab24 */ BL play_sound_in_player \n\
 /* 0801ab28 */ LDR R0, [R7] \n\
 /* 0801ab2a */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 0801ab2c */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
@@ -103,7 +103,7 @@ branch_0801ab58: \n\
 branch_0801ab62: \n\
 /* 0801ab62 */ LDR R1, [R0] \n\
 /* 0801ab64 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0801ab66 */ BL func_0800267c \n\
+/* 0801ab66 */ BL play_sound_in_player \n\
 /* 0801ab6a */ MOVS R5, 0x1 @ Set R5 to 0x1 \n\
 /* 0801ab6c */ B branch_0801ac04 \n\
 \n\
@@ -116,7 +116,7 @@ branch_0801ab74: \n\
 /* 0801ab7a */ BEQ branch_0801ac00 \n\
 /* 0801ab7c */ LDR R1, =s_menu_cancel3_seqData \n\
 /* 0801ab7e */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0801ab80 */ BL func_0800267c \n\
+/* 0801ab80 */ BL play_sound_in_player \n\
 /* 0801ab84 */ MOVS R5, 0x3 @ Set R5 to 0x3 \n\
 /* 0801ab86 */ B branch_0801ac04 \n\
 \n\
@@ -131,7 +131,7 @@ branch_0801ab8c: \n\
 /* 0801ab96 */ BEQ branch_0801abd8 \n\
 /* 0801ab98 */ LDR R1, =s_menu_cursor1_seqData \n\
 /* 0801ab9a */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0801ab9c */ BL func_0800267c \n\
+/* 0801ab9c */ BL play_sound_in_player \n\
 /* 0801aba0 */ LDR R0, [R7] \n\
 /* 0801aba2 */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 0801aba4 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
@@ -163,7 +163,7 @@ branch_0801abd8: \n\
 /* 0801abde */ BEQ branch_0801abf0 \n\
 /* 0801abe0 */ LDR R1, =s_menu_cancel3_seqData \n\
 /* 0801abe2 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0801abe4 */ BL func_0800267c \n\
+/* 0801abe4 */ BL play_sound_in_player \n\
 /* 0801abe8 */ MOVS R5, 0x2 @ Set R5 to 0x2 \n\
 /* 0801abea */ B branch_0801ac04 \n\
 \n\
@@ -175,7 +175,7 @@ branch_0801abf0: \n\
 /* 0801abf4 */ BEQ branch_0801ac00 \n\
 /* 0801abf6 */ LDR R1, =s_menu_cancel3_seqData \n\
 /* 0801abf8 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0801abfa */ BL func_0800267c \n\
+/* 0801abfa */ BL play_sound_in_player \n\
 /* 0801abfe */ MOVS R5, 0x3 @ Set R5 to 0x3 \n\
  \n\
 branch_0801ac00: \n\

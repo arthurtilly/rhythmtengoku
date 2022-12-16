@@ -9,11 +9,11 @@ thumb_func_start func_0803960c \n\
 /* 08039612 */ LSLS R1, R1, 0x18 \n\
 /* 08039614 */ LSRS R7, R1, 0x18 \n\
 /* 08039616 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08039618 */ BL func_08001980 \n\
+/* 08039618 */ BL agb_random \n\
 /* 0803961c */ LSLS R0, R0, 0x18 \n\
 /* 0803961e */ ASRS R6, R0, 0x18 \n\
 /* 08039620 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08039622 */ BL func_08001980 \n\
+/* 08039622 */ BL agb_random \n\
 /* 08039626 */ LSLS R0, R0, 0x10 \n\
 /* 08039628 */ LDR R3, =0x800a \n\
 /* 0803962a */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
@@ -41,7 +41,7 @@ branch_08039630: \n\
 /* 08039654 */ STR R0, [R5, 0x4] \n\
 /* 08039656 */ MOVS R0, 0xF0 @ Set R0 to 0xF0 \n\
 /* 08039658 */ LSLS R0, R0, 0x1 \n\
-/* 0803965a */ BL func_08001980 \n\
+/* 0803965a */ BL agb_random \n\
 /* 0803965e */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 08039660 */ LSLS R3, R3, 0x10 \n\
 /* 08039662 */ LSRS R3, R3, 0x10 \n\

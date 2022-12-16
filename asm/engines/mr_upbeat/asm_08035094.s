@@ -78,13 +78,13 @@ branch_080350c8: \n\
 /* 08035116 */ MOVS R2, 0x3 @ Set R2 to 0x3 \n\
 /* 08035118 */ BL func_0804cebc \n\
 /* 0803511c */ LDR R0, =s_f_shuji_v_ouch_seqData \n\
-/* 0803511e */ BL func_08002634 \n\
+/* 0803511e */ BL play_sound \n\
 /* 08035122 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 08035124 */ BL func_0800c3a4 \n\
+/* 08035124 */ BL beats_to_ticks \n\
 /* 08035128 */ STRH R0, [R5, 0x6] \n\
 /* 0803512a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803512c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803512e */ BL func_08017338 \n\
+/* 0803512e */ BL gameplay_set_input_buttons \n\
 /* 08035132 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 08035134 */ ADDS R1, 0x21 @ Add 0x21 to R1 \n\
 /* 08035136 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\

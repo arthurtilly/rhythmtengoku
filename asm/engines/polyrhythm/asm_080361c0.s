@@ -51,7 +51,7 @@ thumb_func_start func_080361c0 \n\
 /* 0803621c */ LDR R0, =D_089e5c28 \n\
 /* 0803621e */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 08036220 */ LDR R0, [R4] \n\
-/* 08036222 */ BL func_08002634 \n\
+/* 08036222 */ BL play_sound \n\
 /* 08036226 */ ADD R2, SP, 0x10 \n\
 /* 08036228 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0803622a */ ADD R1, SP, 0xC \n\

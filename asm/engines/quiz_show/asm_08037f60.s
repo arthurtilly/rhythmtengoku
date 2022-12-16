@@ -8,14 +8,14 @@ thumb_func_start func_08037f60 \n\
 /* 08037f64 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 08037f66 */ BEQ branch_08037f76 \n\
 /* 08037f68 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 08037f6a */ BL func_08017448 \n\
+/* 08037f6a */ BL gameplay_enable_tutorial \n\
 /* 08037f6e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08037f70 */ BL func_08017458 \n\
+/* 08037f70 */ BL gameplay_set_skip_destination \n\
 /* 08037f74 */ B branch_08037f7c \n\
  \n\
 branch_08037f76: \n\
 /* 08037f76 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08037f78 */ BL func_08017448 \n\
+/* 08037f78 */ BL gameplay_enable_tutorial \n\
  \n\
 branch_08037f7c: \n\
 /* 08037f7c */ POP {R4} \n\

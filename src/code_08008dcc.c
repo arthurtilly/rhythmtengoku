@@ -1,6 +1,6 @@
 #include "code_08008dcc.h"
 
-//#include "code_08001360.h" // Header was probably not included: u16 func_08001980(u16) read as s32(s32)
+//#include "code_08001360.h" // Header was probably not included: u16 agb_random(u16) read as s32(s32)
 
 static u32 D_030010f4;
 static u8 D_030010f8;
@@ -39,7 +39,7 @@ void func_08008e10(s8 arg0[], u32 length) {
     func_08008dcc(arg0, length);
     
     for (i = 0; i < length; i++) {
-        u32 randIndex = func_08001980(length);
+        u32 randIndex = agb_random(length);
         s8 temp = arg0[i];
         arg0[i] = arg0[randIndex];
         arg0[randIndex] = temp;
@@ -52,7 +52,7 @@ void func_08008e40(s16 arg0[], u32 length) {
     func_08008de4(arg0, length);
     
     for (i = 0; i < length; i++) {
-        u32 randIndex = func_08001980(length);
+        u32 randIndex = agb_random(length);
         s16 temp = arg0[i];
         arg0[i] = arg0[randIndex];
         arg0[randIndex] = temp;
@@ -65,7 +65,7 @@ void func_08008e74(s32 arg0[], u32 length) {
     func_08008dfc(arg0, length);
     
     for (i = 0; i < length; i++) {
-        u32 randIndex = func_08001980(length);
+        u32 randIndex = agb_random(length);
         s32 temp = arg0[i];
         arg0[i] = arg0[randIndex];
         arg0[randIndex] = temp;

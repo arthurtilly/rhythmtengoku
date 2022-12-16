@@ -14,7 +14,7 @@ thumb_func_start func_0803aa9c \n\
 /* 0803aaac */ ASRS R1, R1, 0x10 \n\
 /* 0803aaae */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803aab0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803aab2 */ BL func_0800e058 \n\
+/* 0803aab2 */ BL scene_set_bg_layer_pos \n\
 /* 0803aab6 */ LDR R0, [R5] \n\
 /* 0803aab8 */ LDR R1, [R0, 0x30] \n\
 /* 0803aaba */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
@@ -24,7 +24,7 @@ thumb_func_start func_0803aa9c \n\
 /* 0803aac2 */ ASRS R1, R1, 0x10 \n\
 /* 0803aac4 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0803aac6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803aac8 */ BL func_0800e058 \n\
+/* 0803aac8 */ BL scene_set_bg_layer_pos \n\
 /* 0803aacc */ LDR R1, [R5] \n\
 /* 0803aace */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 0803aad0 */ ADDS R0, 0xD3 @ Add 0xD3 to R0 \n\
@@ -82,7 +82,7 @@ branch_0803ab00: \n\
 /* 0803ab36 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803ab38 */ STRB R0, [R1, 0x1C] \n\
 /* 0803ab3a */ LDR R0, =s_f_rat_goal_seqData \n\
-/* 0803ab3c */ BL func_08002634 \n\
+/* 0803ab3c */ BL play_sound \n\
  \n\
 branch_0803ab40: \n\
 /* 0803ab40 */ LDR R4, =D_030055d0 \n\
@@ -96,7 +96,7 @@ branch_0803ab40: \n\
 /* 0803ab50 */ ASRS R1, R1, 0x10 \n\
 /* 0803ab52 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803ab54 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803ab56 */ BL func_0800e058 \n\
+/* 0803ab56 */ BL scene_set_bg_layer_pos \n\
 /* 0803ab5a */ LDR R0, =D_03005380 \n\
 /* 0803ab5c */ LDR R0, [R0] \n\
 /* 0803ab5e */ LDR R3, [R4] \n\

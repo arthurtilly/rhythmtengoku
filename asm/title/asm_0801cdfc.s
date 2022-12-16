@@ -54,7 +54,7 @@ thumb_func_start func_0801cdfc \n\
 /* 0801ce62 */ BL func_0804d160 \n\
 /* 0801ce66 */ LDR R1, [R5] \n\
 /* 0801ce68 */ STRH R0, [R1, 0xE] \n\
-/* 0801ce6a */ BL func_0800c3b8 \n\
+/* 0801ce6a */ BL get_current_mem_id \n\
 /* 0801ce6e */ LSLS R0, R0, 0x10 \n\
 /* 0801ce70 */ LSRS R0, R0, 0x10 \n\
 /* 0801ce72 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\

@@ -24,11 +24,11 @@ thumb_func_start func_08030a10 \n\
 /* 08030a36 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 08030a38 */ BL func_0804d8f8 \n\
 /* 08030a3c */ LDR R0, =s_witch_donats_seqData \n\
-/* 08030a3e */ BL func_08002634 \n\
+/* 08030a3e */ BL play_sound \n\
 /* 08030a42 */ STRB R5, [R4, 0x8] \n\
 /* 08030a44 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 08030a46 */ STRB R0, [R4, 0x9] \n\
-/* 08030a48 */ BL func_0800bc40 \n\
+/* 08030a48 */ BL beatscript_enable_loops \n\
 /* 08030a4c */ ADD SP, 0xC \n\
 /* 08030a4e */ POP {R4, R5} \n\
 /* 08030a50 */ POP {R0} \n\

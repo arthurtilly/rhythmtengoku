@@ -10,7 +10,7 @@ thumb_func_start func_0803cb60 \n\
 /* 0803cb6a */ ADDS R0, 0x54 @ Add 0x54 to R0 \n\
 /* 0803cb6c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803cb6e */ STRH R1, [R0] \n\
-/* 0803cb70 */ BL func_08017578 \n\
+/* 0803cb70 */ BL gameplay_start_screen_fade_in \n\
 /* 0803cb74 */ POP {R0} \n\
 /* 0803cb76 */ BX R0 \n\
 \n\

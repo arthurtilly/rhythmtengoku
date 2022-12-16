@@ -114,7 +114,7 @@ branch_08038e20: \n\
  \n\
 branch_08038e32: \n\
 /* 08038e32 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 08038e34 */ BL func_08001980 \n\
+/* 08038e34 */ BL agb_random \n\
 /* 08038e38 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08038e3a */ MOV R0, R9 @ Set R0 to R9 \n\
 /* 08038e3c */ LSLS R0, R0, 0x2 \n\
@@ -124,7 +124,7 @@ branch_08038e32: \n\
 /* 08038e44 */ LSLS R4, R4, 0x10 \n\
 /* 08038e46 */ ASRS R4, R4, 0x10 \n\
 /* 08038e48 */ MOVS R0, 0x40 @ Set R0 to 0x40 \n\
-/* 08038e4a */ BL func_08001980 \n\
+/* 08038e4a */ BL agb_random \n\
 /* 08038e4e */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08038e50 */ LSLS R5, R1, 0x7 \n\
 /* 08038e52 */ LSLS R0, R0, 0x10 \n\
@@ -132,7 +132,7 @@ branch_08038e32: \n\
 /* 08038e56 */ ADDS R5, R5, R0 @ Set R5 to R5 + R0 \n\
 /* 08038e58 */ SUBS R5, 0x20 @ Subtract 0x20 from R5 \n\
 /* 08038e5a */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
-/* 08038e5c */ BL func_08001980 \n\
+/* 08038e5c */ BL agb_random \n\
 /* 08038e60 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 08038e62 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08038e64 */ NEGS R6, R2 @ Set R6 to -R2 \n\
@@ -147,7 +147,7 @@ branch_08038e32: \n\
 /* 08038e76 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 08038e78 */ BL func_0803978c \n\
 /* 08038e7c */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 08038e7e */ BL func_08001980 \n\
+/* 08038e7e */ BL agb_random \n\
 /* 08038e82 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08038e84 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 08038e86 */ SUBS R5, R5, R0 @ Set R5 to R5 - R0 \n\
@@ -155,14 +155,14 @@ branch_08038e32: \n\
 /* 08038e8a */ LSLS R5, R5, 0x10 \n\
 /* 08038e8c */ ASRS R5, R5, 0x10 \n\
 /* 08038e8e */ MOVS R0, 0x40 @ Set R0 to 0x40 \n\
-/* 08038e90 */ BL func_08001980 \n\
+/* 08038e90 */ BL agb_random \n\
 /* 08038e94 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08038e96 */ LSLS R4, R4, 0x10 \n\
 /* 08038e98 */ LSRS R4, R4, 0x10 \n\
 /* 08038e9a */ ADDS R4, R6, R4 @ Set R4 to R6 + R4 \n\
 /* 08038e9c */ SUBS R4, 0x20 @ Subtract 0x20 from R4 \n\
 /* 08038e9e */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
-/* 08038ea0 */ BL func_08001980 \n\
+/* 08038ea0 */ BL agb_random \n\
 /* 08038ea4 */ LSLS R0, R0, 0x10 \n\
 /* 08038ea6 */ LSRS R0, R0, 0x10 \n\
 /* 08038ea8 */ ADD R0, R10 @ Add R10 to R0 \n\

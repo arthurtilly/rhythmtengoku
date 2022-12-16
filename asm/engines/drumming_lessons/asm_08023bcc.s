@@ -15,7 +15,7 @@ thumb_func_start func_08023bcc \n\
 /* 08023bde */ LSLS R1, R1, 0x2 \n\
 /* 08023be0 */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 08023be2 */ LDR R0, [R1] \n\
-/* 08023be4 */ BL func_08018660 \n\
+/* 08023be4 */ BL gameplay_display_text \n\
 /* 08023be8 */ POP {R0} \n\
 /* 08023bea */ BX R0 \n\
 \n\

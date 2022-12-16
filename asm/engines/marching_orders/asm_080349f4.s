@@ -40,7 +40,7 @@ branch_08034a2a: \n\
 /* 08034a32 */ BL func_080349ac \n\
  \n\
 branch_08034a36: \n\
-/* 08034a36 */ BL func_0800bc40 \n\
+/* 08034a36 */ BL beatscript_enable_loops \n\
 /* 08034a3a */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08034a3c */ BL func_080346e0 \n\
 /* 08034a40 */ POP {R4, R5} \n\

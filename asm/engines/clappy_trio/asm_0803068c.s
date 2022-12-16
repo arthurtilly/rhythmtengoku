@@ -75,7 +75,7 @@ thumb_func_start func_0803068c \n\
 /* 08030726 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08030728 */ BNE branch_08030730 \n\
 /* 0803072a */ LDR R0, =s_f_handclap_ready_seqData \n\
-/* 0803072c */ BL func_08002634 \n\
+/* 0803072c */ BL play_sound \n\
  \n\
 branch_08030730: \n\
 /* 08030730 */ ADD SP, 0xC \n\

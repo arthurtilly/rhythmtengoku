@@ -68,7 +68,7 @@ branch_08010aa2: \n\
 /* 08010ac0 */ LDR R0, [R5] \n\
 /* 08010ac2 */ STRB R4, [R0, 0xC] \n\
 /* 08010ac4 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 08010ac6 */ BL func_0800bd04 \n\
+/* 08010ac6 */ BL pause_beatscript_scene \n\
  \n\
 branch_08010aca: \n\
 /* 08010aca */ ADD SP, 0x10 \n\

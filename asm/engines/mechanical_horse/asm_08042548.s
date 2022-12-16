@@ -54,14 +54,14 @@ branch_08042572: \n\
 /* 080425a6 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 080425a8 */ BEQ branch_080425c4 \n\
 /* 080425aa */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 080425ac */ BL func_0800e030 \n\
+/* 080425ac */ BL scene_show_bg_layer \n\
 /* 080425b0 */ B branch_080425ca \n\
 \n\
 .ltorg \n\
  \n\
 branch_080425c4: \n\
 /* 080425c4 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 080425c6 */ BL func_0800e044 \n\
+/* 080425c6 */ BL scene_hide_bg_layer \n\
  \n\
 branch_080425ca: \n\
 /* 080425ca */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
@@ -102,7 +102,7 @@ branch_080425d6: \n\
 /* 0804260e */ LDR R1, =0xffffff00 \n\
 /* 08042610 */ ADDS R7, R0, R1 @ Set R7 to R0 + R1 \n\
 /* 08042612 */ MOVS R0, 0x40 @ Set R0 to 0x40 \n\
-/* 08042614 */ BL func_08001980 \n\
+/* 08042614 */ BL agb_random \n\
 /* 08042618 */ MOVS R6, 0xAA @ Set R6 to 0xAA \n\
 /* 0804261a */ LSLS R0, R0, 0x10 \n\
 /* 0804261c */ LSRS R0, R0, 0x10 \n\
@@ -151,7 +151,7 @@ branch_080425d6: \n\
  \n\
 branch_0804267a: \n\
 /* 0804267a */ MOVS R0, 0x40 @ Set R0 to 0x40 \n\
-/* 0804267c */ BL func_08001980 \n\
+/* 0804267c */ BL agb_random \n\
 /* 08042680 */ LSLS R0, R0, 0x10 \n\
 /* 08042682 */ LSRS R0, R0, 0x10 \n\
 /* 08042684 */ LDR R1, =0x352 \n\

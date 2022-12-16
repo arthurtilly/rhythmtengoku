@@ -131,7 +131,7 @@ branch_0801e47a: \n\
 /* 0801e49c */ LDR R0, [R0] \n\
 /* 0801e49e */ BL func_08000584 \n\
 /* 0801e4a2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801e4a4 */ BL func_0800bd04 \n\
+/* 0801e4a4 */ BL pause_beatscript_scene \n\
 /* 0801e4a8 */ LDR R1, [R4] \n\
 /* 0801e4aa */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801e4ac */ STR R0, [R1, 0x8] \n\

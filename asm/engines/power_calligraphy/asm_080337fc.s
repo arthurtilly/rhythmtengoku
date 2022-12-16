@@ -16,7 +16,7 @@ thumb_func_start func_080337fc \n\
 /* 08033810 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08033812 */ STR R3, [SP] \n\
 /* 08033814 */ BL func_0804dae0 \n\
-/* 08033818 */ BL func_0800bc40 \n\
+/* 08033818 */ BL beatscript_enable_loops \n\
 /* 0803381c */ ADD SP, 0x4 \n\
 /* 0803381e */ POP {R0} \n\
 /* 08033820 */ BX R0 \n\

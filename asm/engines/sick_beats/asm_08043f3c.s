@@ -68,7 +68,7 @@ branch_08043f8c: \n\
  \n\
 branch_08043fb8: \n\
 /* 08043fb8 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 08043fba */ BL func_0800c3a4 \n\
+/* 08043fba */ BL beats_to_ticks \n\
 /* 08043fbe */ LDR R1, [R7] \n\
 /* 08043fc0 */ MOVS R2, 0xFA @ Set R2 to 0xFA \n\
 /* 08043fc2 */ LSLS R2, R2, 0x1 \n\

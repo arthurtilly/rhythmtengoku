@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08002894 \n\
+thumb_func_start set_soundplayer_speed \n\
 /* 08002894 */ PUSH {LR} \n\
 /* 08002896 */ LSLS R1, R1, 0x10 \n\
 /* 08002898 */ LSRS R1, R1, 0x10 \n\

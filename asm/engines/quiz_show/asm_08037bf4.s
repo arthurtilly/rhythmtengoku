@@ -85,7 +85,7 @@ branch_08037c52: \n\
 /* 08037c96 */ LDR R1, [R4] \n\
 /* 08037c98 */ STRH R0, [R1, 0x18] \n\
 /* 08037c9a */ LDR R0, =s_f_quiz_hit_com_seqData \n\
-/* 08037c9c */ BL func_08002634 \n\
+/* 08037c9c */ BL play_sound \n\
 /* 08037ca0 */ ADD SP, 0xC \n\
 /* 08037ca2 */ POP {R4} \n\
 /* 08037ca4 */ POP {R0} \n\

@@ -63,7 +63,7 @@ branch_0803633c: \n\
 /* 08036350 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08036352 */ STRB R1, [R0] \n\
 /* 08036354 */ LDR R0, =s_f_poly_close_seqData \n\
-/* 08036356 */ BL func_08002634 \n\
+/* 08036356 */ BL play_sound \n\
 /* 0803635a */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0803635c */ ADD R1, SP, 0xC \n\
 /* 0803635e */ MOV R2, R9 @ Set R2 to R9 \n\

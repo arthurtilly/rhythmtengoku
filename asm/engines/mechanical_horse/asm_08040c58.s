@@ -80,7 +80,7 @@ branch_08040ce2: \n\
 /* 08040cee */ ASRS R1, R1, 0x10 \n\
 /* 08040cf0 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08040cf2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08040cf4 */ BL func_0800e058 \n\
+/* 08040cf4 */ BL scene_set_bg_layer_pos \n\
 /* 08040cf8 */ POP {R0} \n\
 /* 08040cfa */ BX R0 \n\
 .balign 4, 0 \n\

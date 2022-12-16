@@ -16,7 +16,7 @@ branch_0801eba0: \n\
 /* 0801eba6 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 0801eba8 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801ebaa */ BEQ branch_0801ebbe \n\
-/* 0801ebac */ BL func_0800c3b8 \n\
+/* 0801ebac */ BL get_current_mem_id \n\
 /* 0801ebb0 */ LSLS R0, R0, 0x10 \n\
 /* 0801ebb2 */ LSRS R0, R0, 0x10 \n\
 /* 0801ebb4 */ LDR R1, =D_089de134 \n\
@@ -155,7 +155,7 @@ branch_0801ecae: \n\
 /* 0801ecb8 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801ecba */ BEQ branch_0801ecf8 \n\
 /* 0801ecbc */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 0801ecbe */ BL func_08001980 \n\
+/* 0801ecbe */ BL agb_random \n\
 /* 0801ecc2 */ LSLS R0, R0, 0x10 \n\
 /* 0801ecc4 */ LSRS R0, R0, 0x10 \n\
 /* 0801ecc6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
@@ -184,7 +184,7 @@ branch_0801ecf8: \n\
 /* 0801ed00 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801ed02 */ BEQ branch_0801ed12 \n\
 /* 0801ed04 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801ed06 */ BL func_0800bd04 \n\
+/* 0801ed06 */ BL pause_beatscript_scene \n\
 /* 0801ed0a */ LDR R0, =D_030046a4 \n\
 /* 0801ed0c */ LDR R1, [R0] \n\
 /* 0801ed0e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

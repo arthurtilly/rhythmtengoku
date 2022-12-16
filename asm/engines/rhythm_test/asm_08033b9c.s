@@ -6,7 +6,7 @@ thumb_func_start func_08033b9c \n\
 /* 08033b9c */ PUSH {R4-R7, LR} \n\
 /* 08033b9e */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 08033ba0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08033ba2 */ BL func_0800e084 \n\
+/* 08033ba2 */ BL scene_set_bg_layer_priority \n\
 /* 08033ba6 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 08033ba8 */ LDR R1, =D_030055d0 \n\
 /* 08033baa */ LDR R0, [R1] \n\

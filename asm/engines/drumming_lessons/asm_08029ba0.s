@@ -43,7 +43,7 @@ thumb_func_start func_08029ba0 \n\
  \n\
 branch_08029bee: \n\
 /* 08029bee */ MOVS R0, 0x5A @ Set R0 to 0x5A \n\
-/* 08029bf0 */ BL func_0800c3a4 \n\
+/* 08029bf0 */ BL beats_to_ticks \n\
 /* 08029bf4 */ LDR R1, [R4] \n\
 /* 08029bf6 */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
 /* 08029bf8 */ STRH R0, [R1] \n\

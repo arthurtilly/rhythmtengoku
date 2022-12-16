@@ -42,8 +42,8 @@ void func_0801d86c(const struct SubScene *subScene) {
     func_080013e8(func_0801d9cc);
     subScenes[0] = subScene;
     subScenes[1] = NULL;
-    func_0800b778(0);
-    func_0800b834(subScenes);
+    start_beatscript_scene(0);
+    set_beatscript_subscenes(subScenes);
 }
 
 
@@ -52,7 +52,7 @@ u32 func_0801d8d8(void) {
     func_08006e88(); // Flush Graphics Buffer
     func_08003fb4();
     if (gPauseMenu.hasBeenUsed) {
-        func_0800b974();
+        update_paused_beatscript_scene();
     }
     task_pool_update_constant();
     task_pool_update_delayed();
@@ -65,8 +65,8 @@ u32 func_0801d8d8(void) {
                 break;
             }
             /* Otherwise, update Script. */
-            func_0800b9fc();
-            if (func_0800bc14()) {
+            update_active_beatscript_scene();
+            if (beatscript_scene_is_inactive()) {
                 func_0801d98c();
                 return TRUE;
             }
@@ -79,8 +79,8 @@ u32 func_0801d8d8(void) {
                 break;
             }
             /* If "Continue" was selected, update Script. */
-            func_0800b9fc();
-            if (func_0800bc14()) {
+            update_active_beatscript_scene();
+            if (beatscript_scene_is_inactive()) {
                 func_0801d98c();
                 return TRUE;
             }
@@ -150,7 +150,7 @@ u32 func_0801d9d0(void) {
         return FALSE;
     }
 
-    func_08002880(TRUE); // Pause Sound
+    pause_all_soundplayers(TRUE); // Pause Sound
     func_0804e1bc(D_03005380, 1); // Pause Sprites..?
     for (i = 0; i < 2; i++) {
         task_pool_pause_id(i+1, TRUE);
@@ -171,7 +171,7 @@ void func_0801da48(void) {
 
     switch (gPauseMenu.data->update()) {
         case PAUSE_MENU_SELECTION_CONTINUE:
-            func_08002880(FALSE); // Unpause Sound
+            pause_all_soundplayers(FALSE); // Unpause Sound
             func_0804e1bc(D_03005380, 0); // Unpause Sprites..?
             for (i = 0; i < 2; i++) {
                 task_pool_pause_id(i+1, FALSE);
@@ -181,9 +181,9 @@ void func_0801da48(void) {
 
         case PAUSE_MENU_SELECTION_QUIT:
             func_080070c4(0x20, 0);
-            func_08002880(FALSE); // Unpause Sound
-            func_08002838(); // Fade-Out & Stop Sound
-            func_08002634(gPauseMenu.data->quitSfx);
+            pause_all_soundplayers(FALSE); // Unpause Sound
+            stop_all_soundplayers(); // Fade-Out & Stop Sound
+            play_sound(gPauseMenu.data->quitSfx);
             gPauseMenu.state = PAUSE_STATE_STOP;
             break;
     }
@@ -194,9 +194,9 @@ void func_0801da48(void) {
 u32 func_0801dabc(void) {
     if (!D_03004b10.unk854_3) return FALSE;
 
-    func_08002828(D_030053c0.musicPlayer); // Stop Music
+    stop_soundplayer(D_030053c0.musicPlayer); // Stop Music
     task_pool_pause(FALSE);
-    func_0800bd2c();
+    stop_beatscript_scene();
     return TRUE;
 }
 

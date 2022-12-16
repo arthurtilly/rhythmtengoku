@@ -37,9 +37,9 @@ branch_0801cfde: \n\
 /* 0801cfee */ MOVS R1, 0xA0 @ Set R1 to 0xA0 \n\
 /* 0801cff0 */ LSLS R1, R1, 0x1 \n\
 /* 0801cff2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0801cff4 */ BL func_08002698 \n\
+/* 0801cff4 */ BL play_sound_w_pitch_volume \n\
 /* 0801cff8 */ MOVS R0, 0x64 @ Set R0 to 0x64 \n\
-/* 0801cffa */ BL func_0800c128 \n\
+/* 0801cffa */ BL beatscript_scene_set_music_volume_env \n\
 /* 0801cffe */ LDR R0, =D_030046a8 \n\
 /* 0801d000 */ LDR R0, [R0] \n\
 /* 0801d002 */ ADDS R0, 0xC0 @ Add 0xC0 to R0 \n\

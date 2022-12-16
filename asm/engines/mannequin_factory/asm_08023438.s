@@ -39,7 +39,7 @@ branch_08023472: \n\
 /* 0802347a */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0802347c */ BL func_08022a7c \n\
 /* 08023480 */ LDR R0, =s_HC_seqData \n\
-/* 08023482 */ BL func_08002634 \n\
+/* 08023482 */ BL play_sound \n\
 /* 08023486 */ B branch_080234ea \n\
 \n\
 .ltorg \n\
@@ -62,7 +62,7 @@ branch_0802348c: \n\
 branch_080234ac: \n\
 /* 080234ac */ LDR R0, [R5] \n\
 /* 080234ae */ LDRB R4, [R0, 0xA] \n\
-/* 080234b0 */ BL func_08018054 \n\
+/* 080234b0 */ BL gameplay_get_last_hit_offset \n\
 /* 080234b4 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080234b6 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 080234b8 */ BL func_080223d0 \n\
@@ -75,7 +75,7 @@ branch_080234ac: \n\
  \n\
 branch_080234ca: \n\
 /* 080234ca */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080234cc */ BL func_080026c4 \n\
+/* 080234cc */ BL play_sound_in_player_w_pitch_volume \n\
 /* 080234d0 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080234d2 */ BL func_080233b4 \n\
 /* 080234d6 */ B branch_080234ea \n\
@@ -87,7 +87,7 @@ branch_080234dc: \n\
 /* 080234de */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 080234e0 */ BL func_08022b0c \n\
 /* 080234e4 */ LDR R0, =s_SD4_seqData \n\
-/* 080234e6 */ BL func_08002634 \n\
+/* 080234e6 */ BL play_sound \n\
  \n\
 branch_080234ea: \n\
 /* 080234ea */ POP {R4, R5} \n\

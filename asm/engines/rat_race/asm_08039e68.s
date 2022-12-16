@@ -13,7 +13,7 @@ thumb_func_start func_08039e68 \n\
 /* 08039e76 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08039e78 */ STRB R0, [R1] \n\
 /* 08039e7a */ BL func_08039e3c \n\
-/* 08039e7e */ BL func_0800e0ec \n\
+/* 08039e7e */ BL scene_show_obj_layer \n\
 /* 08039e82 */ STR R4, [SP] \n\
 /* 08039e84 */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\
 /* 08039e86 */ STR R0, [SP, 0x4] \n\
@@ -22,7 +22,7 @@ thumb_func_start func_08039e68 \n\
 /* 08039e8c */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08039e8e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08039e90 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08039e92 */ BL func_0800e0a0 \n\
+/* 08039e92 */ BL scene_set_bg_layer_display \n\
 /* 08039e96 */ STR R4, [SP] \n\
 /* 08039e98 */ MOVS R0, 0x1E @ Set R0 to 0x1E \n\
 /* 08039e9a */ STR R0, [SP, 0x4] \n\
@@ -33,7 +33,7 @@ thumb_func_start func_08039e68 \n\
 /* 08039ea4 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08039ea6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08039ea8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08039eaa */ BL func_0800e0a0 \n\
+/* 08039eaa */ BL scene_set_bg_layer_display \n\
 /* 08039eae */ STR R4, [SP] \n\
 /* 08039eb0 */ MOVS R0, 0x1F @ Set R0 to 0x1F \n\
 /* 08039eb2 */ STR R0, [SP, 0x4] \n\
@@ -43,7 +43,7 @@ thumb_func_start func_08039e68 \n\
 /* 08039eba */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08039ebc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08039ebe */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08039ec0 */ BL func_0800e0a0 \n\
+/* 08039ec0 */ BL scene_set_bg_layer_display \n\
 /* 08039ec4 */ STR R4, [SP] \n\
 /* 08039ec6 */ MOVS R0, 0x1A @ Set R0 to 0x1A \n\
 /* 08039ec8 */ STR R0, [SP, 0x4] \n\
@@ -53,7 +53,7 @@ thumb_func_start func_08039e68 \n\
 /* 08039ed0 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08039ed2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08039ed4 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08039ed6 */ BL func_0800e0a0 \n\
+/* 08039ed6 */ BL scene_set_bg_layer_display \n\
 /* 08039eda */ MOVS R0, 0xD0 @ Set R0 to 0xD0 \n\
 /* 08039edc */ LSLS R0, R0, 0x2 \n\
 /* 08039ede */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
@@ -146,7 +146,7 @@ branch_08039f80: \n\
 /* 08039fa4 */ ADDS R0, 0xD2 @ Add 0xD2 to R0 \n\
 /* 08039fa6 */ STRB R1, [R0] \n\
 /* 08039fa8 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 08039faa */ BL func_08017338 \n\
+/* 08039faa */ BL gameplay_set_input_buttons \n\
 /* 08039fae */ LDR R0, [R4] \n\
 /* 08039fb0 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08039fb2 */ ADDS R5, 0x3C @ Add 0x3C to R5 \n\

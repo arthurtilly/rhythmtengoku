@@ -10,13 +10,13 @@ thumb_func_start func_080230cc \n\
 /* 080230d4 */ ORRS R6, R1 @ Set R6 to R6 | R1 \n\
 /* 080230d6 */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 080230d8 */ BEQ branch_08023100 \n\
-/* 080230da */ BL func_0800c3b8 \n\
+/* 080230da */ BL get_current_mem_id \n\
 /* 080230de */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 080230e0 */ LSLS R4, R4, 0x10 \n\
 /* 080230e2 */ LSRS R4, R4, 0x10 \n\
 /* 080230e4 */ LDR R5, =func_0802308c \n\
 /* 080230e6 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
-/* 080230e8 */ BL func_0800c3a4 \n\
+/* 080230e8 */ BL beats_to_ticks \n\
 /* 080230ec */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 080230ee */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 080230f0 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\

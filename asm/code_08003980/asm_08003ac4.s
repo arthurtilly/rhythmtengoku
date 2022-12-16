@@ -38,7 +38,7 @@ branch_08003aea: \n\
  \n\
 branch_08003afc: \n\
 /* 08003afc */ LSRS R0, R6, 0x10 \n\
-/* 08003afe */ BL func_08001980 \n\
+/* 08003afe */ BL agb_random \n\
 /* 08003b02 */ LSLS R0, R0, 0x10 \n\
 /* 08003b04 */ LDRH R2, [R4] \n\
 /* 08003b06 */ LSRS R0, R0, 0xF \n\

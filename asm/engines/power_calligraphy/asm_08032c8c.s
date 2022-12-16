@@ -18,7 +18,7 @@ thumb_func_start func_08032c8c \n\
 /* 08032ca4 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08032ca6 */ STRH R3, [R1] \n\
 /* 08032ca8 */ SUBS R0, 0x8 @ Subtract 0x8 from R0 \n\
-/* 08032caa */ BL func_0800c3a4 \n\
+/* 08032caa */ BL beats_to_ticks \n\
 /* 08032cae */ LDR R1, [R4] \n\
 /* 08032cb0 */ MOVS R2, 0xD4 @ Set R2 to 0xD4 \n\
 /* 08032cb2 */ LSLS R2, R2, 0x1 \n\
@@ -33,14 +33,14 @@ branch_08032cbe: \n\
 /* 08032cc0 */ ADDS R4, R0, R5 @ Set R4 to R0 + R5 \n\
 /* 08032cc2 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08032cc4 */ LSLS R0, R0, 0x4 \n\
-/* 08032cc6 */ BL func_08001980 \n\
+/* 08032cc6 */ BL agb_random \n\
 /* 08032cca */ STRH R0, [R4, 0x2] \n\
 /* 08032ccc */ MOVS R0, 0x20 @ Set R0 to 0x20 \n\
-/* 08032cce */ BL func_08001980 \n\
+/* 08032cce */ BL agb_random \n\
 /* 08032cd2 */ ADDS R0, 0x10 @ Add 0x10 to R0 \n\
 /* 08032cd4 */ STRH R0, [R4, 0x4] \n\
 /* 08032cd6 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08032cd8 */ BL func_08001980 \n\
+/* 08032cd8 */ BL agb_random \n\
 /* 08032cdc */ LSLS R0, R0, 0x10 \n\
 /* 08032cde */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08032ce0 */ BEQ branch_08032ce8 \n\
@@ -50,12 +50,12 @@ branch_08032cbe: \n\
  \n\
 branch_08032ce8: \n\
 /* 08032ce8 */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\
-/* 08032cea */ BL func_08001980 \n\
+/* 08032cea */ BL agb_random \n\
 /* 08032cee */ ADDS R0, 0x78 @ Add 0x78 to R0 \n\
 /* 08032cf0 */ STRH R0, [R4, 0x6] \n\
 /* 08032cf2 */ MOVS R0, 0xFA @ Set R0 to 0xFA \n\
 /* 08032cf4 */ LSLS R0, R0, 0x2 \n\
-/* 08032cf6 */ BL func_08001980 \n\
+/* 08032cf6 */ BL agb_random \n\
 /* 08032cfa */ NEGS R0, R0 @ Set R0 to -R0 \n\
 /* 08032cfc */ STRH R0, [R4, 0x8] \n\
 /* 08032cfe */ LDR R0, =D_03005380 \n\

@@ -37,7 +37,7 @@ thumb_func_start func_080238c0 \n\
 /* 08023900 */ LDRSH R0, [R3, R1] \n\
 /* 08023902 */ CMP R0, R5 @ Check R0 - R5 \n\
 /* 08023904 */ BNE branch_08023928 \n\
-/* 08023906 */ BL func_0800c3b8 \n\
+/* 08023906 */ BL get_current_mem_id \n\
 /* 0802390a */ LSLS R0, R0, 0x10 \n\
 /* 0802390c */ LSRS R0, R0, 0x10 \n\
 /* 0802390e */ LDR R1, [R4] \n\

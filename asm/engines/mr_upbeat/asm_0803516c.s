@@ -33,18 +33,18 @@ thumb_func_start func_0803516c \n\
 /* 080351a4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080351a6 */ BEQ branch_080351cc \n\
 /* 080351a8 */ LDR R0, =D_0805a674 \n\
-/* 080351aa */ BL func_08018660 \n\
+/* 080351aa */ BL gameplay_display_text \n\
 /* 080351ae */ LDR R0, =s_intro_pat1_seqData \n\
-/* 080351b0 */ BL func_08002634 \n\
+/* 080351b0 */ BL play_sound \n\
 /* 080351b4 */ B branch_080351d8 \n\
 \n\
 .ltorg \n\
  \n\
 branch_080351cc: \n\
 /* 080351cc */ LDR R0, =D_0805a684 \n\
-/* 080351ce */ BL func_08018660 \n\
+/* 080351ce */ BL gameplay_display_text \n\
 /* 080351d2 */ LDR R0, =s_gameover_fan_seqData \n\
-/* 080351d4 */ BL func_08002634 \n\
+/* 080351d4 */ BL play_sound \n\
  \n\
 branch_080351d8: \n\
 /* 080351d8 */ ADD SP, 0xC \n\

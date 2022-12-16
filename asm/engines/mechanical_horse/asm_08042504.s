@@ -27,7 +27,7 @@ thumb_func_start func_08042504 \n\
 /* 0804252e */ MULS R0, R1 @ Multiply R0 by R1 \n\
 /* 08042530 */ LSLS R0, R0, 0x8 \n\
 /* 08042532 */ LSRS R0, R0, 0x10 \n\
-/* 08042534 */ BL func_0800bdf8 \n\
+/* 08042534 */ BL set_beatscript_tempo \n\
  \n\
 branch_08042538: \n\
 /* 08042538 */ POP {R0} \n\

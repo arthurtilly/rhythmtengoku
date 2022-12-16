@@ -21,7 +21,7 @@ thumb_func_start func_08012e24 \n\
 /* 08012e42 */ CMP R0, 0x1E @ Compare R0 and 0x1E \n\
 /* 08012e44 */ BNE branch_08012e4c \n\
 /* 08012e46 */ LDR R0, =s_f_campaign_notice_seqData \n\
-/* 08012e48 */ BL func_08002634 \n\
+/* 08012e48 */ BL play_sound \n\
  \n\
 branch_08012e4c: \n\
 /* 08012e4c */ LDRH R0, [R7, 0xA] \n\
@@ -181,14 +181,14 @@ branch_08012f18: \n\
 /* 08012f82 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 08012f84 */ STRB R0, [R2, 0x8] \n\
 /* 08012f86 */ LDR R0, =s_menu_kettei2_seqData \n\
-/* 08012f88 */ BL func_08002634 \n\
+/* 08012f88 */ BL play_sound \n\
 /* 08012f8c */ MOVS R4, 0x80 @ Set R4 to 0x80 \n\
 /* 08012f8e */ LSLS R4, R4, 0x1 \n\
 /* 08012f90 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 08012f92 */ BL func_0800c3a4 \n\
+/* 08012f92 */ BL beats_to_ticks \n\
 /* 08012f96 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08012f98 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08012f9a */ BL func_0800c138 \n\
+/* 08012f9a */ BL beatscript_scene_interpolate_music_volume \n\
 /* 08012f9e */ LDR R1, [R5] \n\
 /* 08012fa0 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 08012fa2 */ STRB R0, [R1] \n\

@@ -16,7 +16,7 @@ branch_0802b06e: \n\
 /* 0802b076 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0802b078 */ BEQ branch_0802b080 \n\
 /* 0802b07a */ LDR R0, [R5] \n\
-/* 0802b07c */ BL func_08002828 \n\
+/* 0802b07c */ BL stop_soundplayer \n\
  \n\
 branch_0802b080: \n\
 /* 0802b080 */ ADDS R5, 0xC @ Add 0xC to R5 \n\

@@ -40,7 +40,7 @@ void func_0802e828(u32 time) {
 
     vegetable->isScrolling = TRUE;
     vegetable->scrollTime = 0;
-    vegetable->scrollTarget = func_0800c3a4(time);
+    vegetable->scrollTarget = beats_to_ticks(time);
     func_0804d8f8(D_03005380, vegetable->spriteNext, D_089e3d98[vegetable->typeNext], 0, 0, 0, 0);
 
     side = vegetable->bgMapSide;
@@ -52,7 +52,7 @@ void func_0802e828(u32 time) {
 
 // [func_0802e89c] ENGINE Func_04 - Play Cash Register SFX
 void func_0802e89c(void) {
-    func_08002634(&s_f_hair_next_seqData);
+    play_sound(&s_f_hair_next_seqData);
 }
 
 
@@ -69,7 +69,7 @@ void func_0802e8ac(void) {
         vegetable->bgMapSide ^= 1;
         D_03004b10.BG_OFS[BG_LAYER_1].x = vegetable->bgMapSide << 8;
         vegetable->isScrolling = FALSE;
-        func_080178ac();
+        gameplay_reset_cues();
 
         func_0804d8f8(D_03005380, vegetable->spriteCurrent, D_089e3d98[vegetable->typeNext], 0, -1, 0, 0);
         vegetable->typeCurrent = vegetable->typeNext;
@@ -152,7 +152,7 @@ void func_0802ea74(u32 arg0) {
     struct RhythmTweezersFallingHair *hair = &gRhythmTweezersInfo->fallingHairs[gRhythmTweezersInfo->fallingHairsNext];
 
     hair->rotation = -0x200;
-    hair->rotationSpeed = func_08001980(0x1f) - 15;
+    hair->rotationSpeed = agb_random(0x1f) - 15;
 
     func_0800fe0c(hair->sprite, 0x10);
     func_0800febc(hair->sprite, tweezers->rotation);
@@ -191,7 +191,7 @@ void func_0802eb7c(void) {
 
     tweezers->isMoving = TRUE;
     tweezers->cycleTime = 0;
-    tweezers->cycleTarget = func_0800c3a4(0xa8);
+    tweezers->cycleTarget = beats_to_ticks(0xa8);
     tweezers->heldHair = TWEEZERS_HELD_HAIR_NONE;
 }
 
@@ -247,7 +247,7 @@ void func_0802ebf8(void) {
 // [func_0802ec50] GFX_INIT Func_02
 void func_0802ec50(void) {
     func_0800c604(0);
-    func_08017578();
+    gameplay_start_screen_fade_in();
 }
 
 
@@ -256,7 +256,7 @@ void func_0802ec60(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_08002ee0(func_0800c3b8(), D_089e3ff4[gRhythmTweezersInfo->version], 0x2000);
+    temp = func_08002ee0(get_current_mem_id(), D_089e3ff4[gRhythmTweezersInfo->version], 0x2000);
     task_run_after(temp, &func_0802ec50, 0);
 }
 
@@ -266,7 +266,7 @@ void func_0802eca0(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_080087b4(func_0800c3b8(), &D_089e3db0);
+    temp = func_080087b4(get_current_mem_id(), &D_089e3db0);
     task_run_after(temp, &func_0802ec60, 0);
 }
 
@@ -278,9 +278,9 @@ void func_0802eccc(u8 ver) {
     // Standard game setup.
     gRhythmTweezersInfo->version = ver;
     func_0802eca0(); // Load graphics.
-    func_0800e0ec();
-    func_0800e0a0(0, 1, 0, -160, 2, 28, 0x8000);
-    func_0800e0a0(1, 1, 0, 0, 0, 30, 0x4002);
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(BG_LAYER_0, TRUE, 0, -160, 2, 28, 0x8000);
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 30, 0x4002);
 
     // Rhythm Tweezers setup.
     func_0802eaf8(); // Initialise tweezers.
@@ -291,14 +291,14 @@ void func_0802eccc(u8 ver) {
     gRhythmTweezersInfo->tutorialSprite = func_0804d160(D_03005380, D_088e8910, 0, 120, 150, 0, 0, 0, 0x8000);
 
     // Other setup.
-    textPrinter = text_printer_create_new(func_0800c3b8(), 1, 240, 30);
+    textPrinter = text_printer_create_new(get_current_mem_id(), 1, 240, 30);
     text_printer_set_x_y(textPrinter, 0, 140);
     text_printer_set_layer(textPrinter, 0x8800);
     text_printer_center_by_content(textPrinter, TRUE);
     text_printer_set_palette(textPrinter, 1);
     text_printer_set_colors(textPrinter, 0);
-    func_08018630(textPrinter);
-    func_08017338(A_BUTTON | DPAD_UP | DPAD_DOWN | DPAD_LEFT | DPAD_RIGHT, 0);
+    gameplay_set_text_printer(textPrinter);
+    gameplay_set_input_buttons(A_BUTTON | DPAD_ALL, 0);
 }
 
 
@@ -344,7 +344,7 @@ void func_0802ee40_stub(void) {
 // [func_0802ee44] ENGINE Func_01 - Reset Hair Placement Cycle
 void func_0802ee44(void) {
     gRhythmTweezersInfo->hairCycleTime = 0;
-    gRhythmTweezersInfo->hairCycleTarget = func_0800c3a4(0x48);
+    gRhythmTweezersInfo->hairCycleTarget = beats_to_ticks(0x48);
     gRhythmTweezersInfo->existingHairs.full = 0;
     gRhythmTweezersInfo->existingHairs.half = 0;
 }
@@ -380,9 +380,9 @@ void func_0802ee7c(u32 arg0, struct RhythmTweezersCue *cue, u32 isLongHair, u32 
     gRhythmTweezersInfo->existingHairs.full += 1;
 
     if (!isLongHair) {
-        func_08002698(&s_hanabi_pon_seqData, 0xd0, 0);
+        play_sound_w_pitch_volume(&s_hanabi_pon_seqData, 0xd0, 0);
     } else {
-        func_08002634(&s_f_hair_appear_long_seqData);
+        play_sound(&s_f_hair_appear_long_seqData);
     }
 }
 
@@ -446,11 +446,11 @@ void func_0802f21c(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) 
     tweezers->isPulling = TRUE;
     cue->finished = TRUE;
     cue->pullTime = 0;
-    cue->pullTarget = func_0800c3a4(0xc) - func_08018054();
-    func_08017338(0, 0);
+    cue->pullTarget = beats_to_ticks(0xc) - gameplay_get_last_hit_offset();
+    gameplay_set_input_buttons(0, 0);
 
-    func_0800274c(&s_f_hair_nuki_long_seqData);
-    func_08002634(&s_f_hair_tuneru_seqData);
+    stop_sound(&s_f_hair_nuki_long_seqData);
+    play_sound(&s_f_hair_tuneru_seqData);
 }
 
 
@@ -474,7 +474,7 @@ void func_0802f2a0(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) 
 
 // [func_0802f330] CUE - Miss
 void func_0802f330(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) {
-    func_0800bc40();
+    beatscript_enable_loops();
 }
 
 

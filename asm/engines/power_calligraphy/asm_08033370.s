@@ -31,7 +31,7 @@ thumb_func_start func_08033370 \n\
 /* 080333a2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080333a4 */ STRB R0, [R3, 0x7] \n\
 /* 080333a6 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 080333a8 */ BL func_0800e044 \n\
+/* 080333a8 */ BL scene_hide_bg_layer \n\
 /* 080333ac */ LDR R0, =D_03005380 \n\
 /* 080333ae */ LDR R0, [R0] \n\
 /* 080333b0 */ LDR R1, [R5] \n\
@@ -47,7 +47,7 @@ branch_080333cc: \n\
 /* 080333cc */ LSLS R1, R4, 0x10 \n\
 /* 080333ce */ ASRS R1, R1, 0x10 \n\
 /* 080333d0 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 080333d2 */ BL func_0800e058 \n\
+/* 080333d2 */ BL scene_set_bg_layer_pos \n\
  \n\
 branch_080333d6: \n\
 /* 080333d6 */ POP {R4-R6} \n\

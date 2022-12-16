@@ -52,9 +52,9 @@ branch_08031c14: \n\
  \n\
 branch_08031c22: \n\
 /* 08031c22 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08031c24 */ BL func_08002634 \n\
+/* 08031c24 */ BL play_sound \n\
 /* 08031c28 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 08031c2a */ BL func_0800c1a8 \n\
+/* 08031c2a */ BL get_beatscript_tempo \n\
 /* 08031c2e */ LSLS R0, R0, 0x8 \n\
 /* 08031c30 */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 08031c32 */ BL __udivsi3 \n\
@@ -62,7 +62,7 @@ branch_08031c22: \n\
 /* 08031c38 */ LSLS R1, R1, 0x10 \n\
 /* 08031c3a */ LSRS R1, R1, 0x10 \n\
 /* 08031c3c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08031c3e */ BL func_08002894 \n\
+/* 08031c3e */ BL set_soundplayer_speed \n\
  \n\
 branch_08031c42: \n\
 /* 08031c42 */ POP {R4-R6} \n\

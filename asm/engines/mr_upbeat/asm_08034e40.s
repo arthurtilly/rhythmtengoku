@@ -13,7 +13,7 @@ thumb_func_start func_08034e40 \n\
 /* 08034e4e */ BL task_forced_cancel \n\
  \n\
 branch_08034e52: \n\
-/* 08034e52 */ BL func_0800c3b8 \n\
+/* 08034e52 */ BL get_current_mem_id \n\
 /* 08034e56 */ LSLS R0, R0, 0x10 \n\
 /* 08034e58 */ LSRS R0, R0, 0x10 \n\
 /* 08034e5a */ LDR R3, =(D_088f40a0 + 0x40) \n\

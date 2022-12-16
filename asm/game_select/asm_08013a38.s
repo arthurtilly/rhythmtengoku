@@ -54,11 +54,11 @@ thumb_func_start func_08013a38 \n\
 /* 08013a9c */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
 /* 08013a9e */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 08013aa0 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 08013aa2 */ BL func_0800e058 \n\
+/* 08013aa2 */ BL scene_set_bg_layer_pos \n\
 /* 08013aa6 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 08013aa8 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 08013aaa */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 08013aac */ BL func_0800e058 \n\
+/* 08013aac */ BL scene_set_bg_layer_pos \n\
 /* 08013ab0 */ LDR R1, [R6] \n\
 /* 08013ab2 */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 08013ab4 */ ADDS R0, 0x58 @ Add 0x58 to R0 \n\
@@ -118,7 +118,7 @@ branch_08013ac2: \n\
 /* 08013b20 */ LSLS R2, R0, 0x10 \n\
 /* 08013b22 */ ASRS R2, R2, 0x10 \n\
 /* 08013b24 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 08013b26 */ BL func_0800e058 \n\
+/* 08013b26 */ BL scene_set_bg_layer_pos \n\
 /* 08013b2a */ LDR R1, [R6] \n\
 /* 08013b2c */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 08013b2e */ ADDS R0, 0x66 @ Add 0x66 to R0 \n\

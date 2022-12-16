@@ -14,7 +14,7 @@ thumb_func_start func_080189b4 \n\
 /* 080189c6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080189c8 */ BEQ branch_080189e2 \n\
 /* 080189ca */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 080189cc */ BL func_0800bd04 \n\
+/* 080189cc */ BL pause_beatscript_scene \n\
 /* 080189d0 */ LDR R0, =D_030046a4 \n\
 /* 080189d2 */ LDR R1, [R0] \n\
 /* 080189d4 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
@@ -22,7 +22,7 @@ thumb_func_start func_080189b4 \n\
 /* 080189d8 */ LDR R0, =s_menu_se20_seqData \n\
 /* 080189da */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 080189dc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080189de */ BL func_08002698 \n\
+/* 080189de */ BL play_sound_w_pitch_volume \n\
  \n\
 branch_080189e2: \n\
 /* 080189e2 */ POP {R0} \n\

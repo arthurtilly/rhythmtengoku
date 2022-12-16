@@ -159,7 +159,7 @@ branch_0803168a: \n\
 /* 080316c8 */ ADDS R0, R2, R1 @ Set R0 to R2 + R1 \n\
 /* 080316ca */ LDRH R0, [R0] \n\
 /* 080316cc */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080316ce */ BL func_0800c0f8 \n\
+/* 080316ce */ BL beatscript_scene_set_music_track_volume \n\
 /* 080316d2 */ POP {R4-R6} \n\
 /* 080316d4 */ POP {R0} \n\
 /* 080316d6 */ BX R0 \n\

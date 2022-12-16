@@ -30,7 +30,7 @@ thumb_func_start func_08012090 \n\
  \n\
 branch_080120c4: \n\
 /* 080120c4 */ LDR R0, =s_menu_cursor1_seqData \n\
-/* 080120c6 */ BL func_08002634 \n\
+/* 080120c6 */ BL play_sound \n\
 /* 080120ca */ ADD SP, 0xC \n\
 /* 080120cc */ POP {R4, R5} \n\
 /* 080120ce */ POP {R0} \n\

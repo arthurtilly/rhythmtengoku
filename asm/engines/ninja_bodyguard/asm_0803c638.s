@@ -21,7 +21,7 @@ thumb_func_start func_0803c638 \n\
 branch_0803c654: \n\
 /* 0803c654 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803c656 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803c658 */ BL func_08017338 \n\
+/* 0803c658 */ BL gameplay_set_input_buttons \n\
 /* 0803c65c */ MOVS R0, 0x10 @ Set R0 to 0x10 \n\
 /* 0803c65e */ BL func_0803bd88 \n\
 /* 0803c662 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
@@ -51,7 +51,7 @@ branch_0803c654: \n\
 branch_0803c694: \n\
 /* 0803c694 */ MOVS R0, 0xF0 @ Set R0 to 0xF0 \n\
 /* 0803c696 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803c698 */ BL func_08017338 \n\
+/* 0803c698 */ BL gameplay_set_input_buttons \n\
 /* 0803c69c */ MOVS R0, 0xF @ Set R0 to 0xF \n\
 /* 0803c69e */ BL func_0803bd88 \n\
 /* 0803c6a2 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\

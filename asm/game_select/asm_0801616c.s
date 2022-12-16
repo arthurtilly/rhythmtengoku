@@ -111,7 +111,7 @@ branch_080161f8: \n\
 /* 08016244 */ STR R4, [SP] \n\
 /* 08016246 */ BL func_0804d55c \n\
 /* 0801624a */ LDR R0, =s_f_appear_game_seqData \n\
-/* 0801624c */ BL func_08002634 \n\
+/* 0801624c */ BL play_sound \n\
 /* 08016250 */ STRB R5, [R6] \n\
  \n\
 branch_08016252: \n\

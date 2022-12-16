@@ -120,7 +120,7 @@ branch_080448f4: \n\
 /* 08044900 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08044902 */ BEQ branch_08044932 \n\
 /* 08044904 */ BL func_0802b064 \n\
-/* 08044908 */ BL func_0800bce4 \n\
+/* 08044908 */ BL beatscript_disable_loops \n\
 /* 0804490c */ LDR R2, =D_030055d0 \n\
 /* 0804490e */ LDR R0, [R2] \n\
 /* 08044910 */ LDR R1, =0x35e \n\
@@ -135,11 +135,11 @@ branch_080448f4: \n\
 /* 08044922 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08044924 */ BEQ branch_0804492c \n\
 /* 08044926 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 08044928 */ BL func_080028d8 \n\
+/* 08044928 */ BL fade_out_soundplayer \n\
  \n\
 branch_0804492c: \n\
 /* 0804492c */ LDR R0, =s_menu_cancel2_seqData \n\
-/* 0804492e */ BL func_08002634 \n\
+/* 0804492e */ BL play_sound \n\
  \n\
 branch_08044932: \n\
 /* 08044932 */ LDR R0, =D_030055d0 \n\

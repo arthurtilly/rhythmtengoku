@@ -136,7 +136,7 @@ branch_080199e4: \n\
 /* 080199fc */ BL func_080087d4 \n\
 /* 08019a00 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08019a02 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 08019a04 */ BL func_08001980 \n\
+/* 08019a04 */ BL agb_random \n\
 /* 08019a08 */ LSLS R0, R0, 0x10 \n\
 /* 08019a0a */ LSRS R0, R0, 0x10 \n\
 /* 08019a0c */ ADDS R3, R4, R0 @ Set R3 to R4 + R0 \n\

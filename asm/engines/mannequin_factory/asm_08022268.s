@@ -58,12 +58,12 @@ branch_080222a0: \n\
 /* 080222c2 */ BL func_0804dcb8 \n\
 /* 080222c6 */ STRH R7, [R6, 0x4] \n\
 /* 080222c8 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 080222ca */ BL func_0800c3a4 \n\
+/* 080222ca */ BL beats_to_ticks \n\
 /* 080222ce */ STRH R0, [R6, 0x6] \n\
 /* 080222d0 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
 /* 080222d2 */ STRB R0, [R6] \n\
 /* 080222d4 */ LDR R0, =s_poly_shototu_seqData \n\
-/* 080222d6 */ BL func_08002634 \n\
+/* 080222d6 */ BL play_sound \n\
 /* 080222da */ B branch_08022398 \n\
 \n\
 .ltorg \n\
@@ -83,7 +83,7 @@ branch_080222e8: \n\
 /* 08022300 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08022302 */ STRB R0, [R6] \n\
 /* 08022304 */ LDR R0, =s_virus_fork_seqData \n\
-/* 08022306 */ BL func_08002634 \n\
+/* 08022306 */ BL play_sound \n\
 /* 0802230a */ B branch_08022398 \n\
 \n\
 .ltorg \n\
@@ -106,7 +106,7 @@ branch_08022318: \n\
 /* 08022334 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08022336 */ BL func_0804d8f8 \n\
 /* 0802233a */ LDR R0, =s_ghost_walk_seqData \n\
-/* 0802233c */ BL func_08002634 \n\
+/* 0802233c */ BL play_sound \n\
 /* 08022340 */ B branch_08022394 \n\
 \n\
 .ltorg \n\

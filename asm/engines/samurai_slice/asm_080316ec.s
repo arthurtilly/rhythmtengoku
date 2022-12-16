@@ -57,7 +57,7 @@ branch_08031726: \n\
 /* 08031758 */ BL func_0804dcb8 \n\
 /* 0803175c */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803175e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08031760 */ BL func_08017338 \n\
+/* 08031760 */ BL gameplay_set_input_buttons \n\
 /* 08031764 */ ADD SP, 0xC \n\
 /* 08031766 */ POP {R4-R6} \n\
 /* 08031768 */ POP {R0} \n\

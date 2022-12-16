@@ -84,19 +84,19 @@ branch_0801cb28: \n\
 /* 0801cbaa */ LDRH R0, [R5, 0x6] \n\
 /* 0801cbac */ STRH R0, [R4, 0xA] \n\
 /* 0801cbae */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0801cbb0 */ BL func_08001980 \n\
+/* 0801cbb0 */ BL agb_random \n\
 /* 0801cbb4 */ ADDS R0, 0x96 @ Add 0x96 to R0 \n\
 /* 0801cbb6 */ STRH R0, [R4, 0xC] \n\
 /* 0801cbb8 */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
-/* 0801cbba */ BL func_08001980 \n\
+/* 0801cbba */ BL agb_random \n\
 /* 0801cbbe */ ADDS R0, 0xEE @ Add 0xEE to R0 \n\
 /* 0801cbc0 */ STRH R0, [R4, 0xE] \n\
 /* 0801cbc2 */ MOVS R0, 0x20 @ Set R0 to 0x20 \n\
-/* 0801cbc4 */ BL func_08001980 \n\
+/* 0801cbc4 */ BL agb_random \n\
 /* 0801cbc8 */ SUBS R0, 0x10 @ Subtract 0x10 from R0 \n\
 /* 0801cbca */ STRH R0, [R4, 0x10] \n\
 /* 0801cbcc */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0801cbce */ BL func_08001980 \n\
+/* 0801cbce */ BL agb_random \n\
 /* 0801cbd2 */ ADDS R0, 0x8 @ Add 0x8 to R0 \n\
 /* 0801cbd4 */ STRH R0, [R4, 0x12] \n\
 /* 0801cbd6 */ LDRH R0, [R5, 0x8] \n\

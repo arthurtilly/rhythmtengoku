@@ -24,7 +24,7 @@ thumb_func_start func_08041444 \n\
 /* 08041468 */ LSLS R0, R0, 0x2 \n\
 /* 0804146a */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0804146c */ LDR R0, [R0] \n\
-/* 0804146e */ BL func_08002634 \n\
+/* 0804146e */ BL play_sound \n\
 /* 08041472 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08041474 */ B branch_080414e4 \n\
 \n\
@@ -48,7 +48,7 @@ branch_08041480: \n\
 /* 0804149c */ LSLS R1, R1, 0x2 \n\
 /* 0804149e */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 080414a0 */ LDR R0, [R1] \n\
-/* 080414a2 */ BL func_08002634 \n\
+/* 080414a2 */ BL play_sound \n\
 /* 080414a6 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 080414a8 */ LDR R5, [R5] \n\
 /* 080414aa */ LDRB R0, [R5, 0x6] \n\
@@ -83,7 +83,7 @@ branch_080414da: \n\
 /* 080414da */ LSLS R1, R2, 0x10 \n\
 /* 080414dc */ LSRS R1, R1, 0x10 \n\
 /* 080414de */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
-/* 080414e0 */ BL func_08002920 \n\
+/* 080414e0 */ BL set_soundplayer_volume \n\
  \n\
 branch_080414e4: \n\
 /* 080414e4 */ LDR R2, =D_03005380 \n\

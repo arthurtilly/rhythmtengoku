@@ -15,7 +15,7 @@ thumb_func_start func_0800ed64 \n\
 /* 0800ed76 */ LSRS R6, R6, 0x10 \n\
 /* 0800ed78 */ LSLS R4, R4, 0x10 \n\
 /* 0800ed7a */ LSRS R4, R4, 0x10 \n\
-/* 0800ed7c */ BL func_0800c3b8 \n\
+/* 0800ed7c */ BL get_current_mem_id \n\
 /* 0800ed80 */ LSLS R0, R0, 0x10 \n\
 /* 0800ed82 */ LSRS R0, R0, 0x10 \n\
 /* 0800ed84 */ MOVS R1, 0xA0 @ Set R1 to 0xA0 \n\

@@ -34,7 +34,7 @@ branch_0803ce3c: \n\
 /* 0803ce5a */ BL func_0804d8f8 \n\
 /* 0803ce5e */ MOVS R0, 0xF0 @ Set R0 to 0xF0 \n\
 /* 0803ce60 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803ce62 */ BL func_08017338 \n\
+/* 0803ce62 */ BL gameplay_set_input_buttons \n\
 /* 0803ce66 */ LDR R0, [R4] \n\
 /* 0803ce68 */ LDR R1, [R7] \n\
 /* 0803ce6a */ MOVS R2, 0xBB @ Set R2 to 0xBB \n\
@@ -70,7 +70,7 @@ branch_0803ce8c: \n\
 /* 0803ceaa */ BL func_0804d8f8 \n\
 /* 0803ceae */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803ceb0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803ceb2 */ BL func_08017338 \n\
+/* 0803ceb2 */ BL gameplay_set_input_buttons \n\
 /* 0803ceb6 */ LDR R0, [R4] \n\
 /* 0803ceb8 */ LDR R1, [R7] \n\
 /* 0803ceba */ MOVS R2, 0xBB @ Set R2 to 0xBB \n\
@@ -87,7 +87,7 @@ branch_0803ce8c: \n\
  \n\
 branch_0803ced4: \n\
 /* 0803ced4 */ LDR R0, =s_ninja_kin_seqData \n\
-/* 0803ced6 */ BL func_08002634 \n\
+/* 0803ced6 */ BL play_sound \n\
 /* 0803ceda */ LDR R0, =D_030055d0 \n\
 /* 0803cedc */ LDR R1, [R0] \n\
 /* 0803cede */ LDR R0, =0x2ce \n\

@@ -19,7 +19,7 @@
 // GFX_INIT Func_02
 void karate_init_gfx3(void) {
 	func_0800c604(0);
-	func_08017578();
+	gameplay_start_screen_fade_in();
 	karate_update_bg_palette();
 }
 
@@ -29,7 +29,7 @@ void karate_init_gfx2(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_08002ee0(func_0800c3b8(), karate_gfx_tables[gKarateManInfo->version], 0x2000);
+    temp = func_08002ee0(get_current_mem_id(), karate_gfx_tables[gKarateManInfo->version], 0x2000);
     task_run_after(temp, karate_init_gfx3, 0);
 }
 
@@ -39,7 +39,7 @@ void karate_init_gfx1(void) {
     u32 temp;
     
     func_0800c604(0);
-    temp = func_080087b4(func_0800c3b8(), karate_buffered_textures);
+    temp = func_080087b4(get_current_mem_id(), karate_buffered_textures);
     task_run_after(temp, karate_init_gfx2, 0);
 }
 
@@ -49,12 +49,12 @@ void karate_engine_init(u32 ver) {
     // Load graphical assets and other basic functionality.
     gKarateManInfo->version = ver;
     karate_init_gfx1();
-    func_0800e0ec();
-    func_0800e0a0(0, 0, 0, 0, 2, 28, 1);
-    func_0800e0a0(1, 1, 0, 0, 0, 29, 2);
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(BG_LAYER_0, FALSE, 0, 0, 2, 28, 1);
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 2);
     if (gKarateManInfo->version == KARATE_VER_SERIOUS) {
-        func_0800e030(0);
-        func_0800e044(1);
+        scene_show_bg_layer(BG_LAYER_0);
+        scene_hide_bg_layer(BG_LAYER_1);
     }
 
     // Initialise variables.
@@ -66,10 +66,10 @@ void karate_engine_init(u32 ver) {
 
     // Initialise text.
     gKarateManInfo->cueTextSprite = func_0804d160(D_03005380, karate_anim_cue_warning, 0, 120, 24, 0, 0, 0, 0x8000);
-    gKarateManInfo->textPrinter = text_printer_create_new(func_0800c3b8(), 4, 112, 30);
+    gKarateManInfo->textPrinter = text_printer_create_new(get_current_mem_id(), 4, 112, 30);
     text_printer_set_x_y(gKarateManInfo->textPrinter, 124, 32);
     text_printer_set_layer(gKarateManInfo->textPrinter, 0x4f00);
-    text_printer_center_by_content(gKarateManInfo->textPrinter, 1);
+    text_printer_center_by_content(gKarateManInfo->textPrinter, TRUE);
 
     // Initialise tutorial.
     gKarateManInfo->awaitingInput = FALSE;
@@ -78,7 +78,7 @@ void karate_engine_init(u32 ver) {
     gKarateManInfo->tutorialSkip = func_0804d160(D_03005380, karate_anim_tutorial_skip, 0, 0, 160, 0, 0, 0, 0x8000);
     gKarateManInfo->tutorialText = func_0804d160(D_03005380, karate_anim_tutorial_counter, 0, 30, 76, 0, 0, 0, 0x8000);
     gKarateManInfo->tutorialCounter = 0;
-    func_08017338(A_BUTTON, 0);
+    gameplay_set_input_buttons(A_BUTTON, 0);
 
     // Initialise BG Face.
     if (gKarateManInfo->version != KARATE_VER_0) {
@@ -92,8 +92,8 @@ void karate_engine_init(u32 ver) {
 // Set the BG Face
 void karate_set_bg_face(u32 bgFace, u32 duration) {
     func_08003eb8(karate_bg_face_textures[bgFace], VRAMBase + 0x8000);
-    func_0800e030(0);
-    gKarateManInfo->bgFace = func_0800c3a4(duration + 1);
+    scene_show_bg_layer(0);
+    gKarateManInfo->bgFace = beats_to_ticks(duration + 1);
 }
 
 
@@ -108,7 +108,7 @@ void karate_update_bg_face(void) {
    if (gKarateManInfo->bgFace) {
        gKarateManInfo->bgFace--;
        if (!gKarateManInfo->bgFace) {
-           func_0800e044(0);
+           scene_hide_bg_layer(0);
        }
    }
 }
@@ -141,8 +141,8 @@ void karate_tutorial_display_text(char *text) {
 void karate_tutorial_wait_for_input(void) {
     func_0804cebc(D_03005380, gKarateManInfo->textButtonSprite, 0);
     func_0804d770(D_03005380, gKarateManInfo->textButtonSprite, TRUE);
-    func_08017338(0, 0);
-    func_0800bd04(TRUE);
+    gameplay_set_input_buttons(0, 0);
+    pause_beatscript_scene(TRUE);
     gKarateManInfo->awaitingInput = TRUE;
 }
 
@@ -150,12 +150,12 @@ void karate_tutorial_wait_for_input(void) {
 // COMMON Func_03 - Set Tutorial Destination Scene
 void karate_common_init_tutorial(const struct Scene *scene) {
     if (scene != NULL) {
-        func_08017448(TRUE);
-        func_08017458(scene);
-        func_0801853c(A_BUTTON, A_BUTTON);
+        gameplay_enable_tutorial(TRUE);
+        gameplay_set_skip_destination(scene);
+        gameplay_set_text_advance_buttons(A_BUTTON, A_BUTTON);
     } else {
-        func_08017448(FALSE);
-        func_0801853c(0, 0);
+        gameplay_enable_tutorial(FALSE);
+        gameplay_set_text_advance_buttons(0, 0);
     } 
 }
 
@@ -175,9 +175,9 @@ void karate_tutorial_loop_start(u32 inputs) {
 // ENGINE Func_07 - Unknown (Tutorial Related)
 void karate_tutorial_loop_end(void) {
     if (gKarateManInfo->tutorialCounter != 0) {
-        func_0800bc40();
+        beatscript_enable_loops();
     } else {
-        func_0800bce4();
+        beatscript_disable_loops();
     }
 }
 
@@ -193,8 +193,8 @@ void karate_engine_update(void) {
     if (gKarateManInfo->awaitingInput) {
         if (D_03004afc & A_BUTTON) {
             func_0804d770(D_03005380, gKarateManInfo->textButtonSprite, FALSE);
-            func_08017338(A_BUTTON, 0);
-            func_0800bd04(FALSE);
+            gameplay_set_input_buttons(A_BUTTON, 0);
+            pause_beatscript_scene(FALSE);
             gKarateManInfo->awaitingInput = FALSE;
         }
     }
@@ -217,8 +217,8 @@ void karate_engine_stop(void) {
     karate_joe_delete(&gKarateManInfo->joe);
     func_0804d504(D_03005380, gKarateManInfo->cueTextSprite);
     func_0804d504(D_03005380, gKarateManInfo->flowSprite);
-    func_0800e044(0);
-    func_0800e044(1);
+    scene_hide_bg_layer(0);
+    scene_hide_bg_layer(1);
 }
 
 
@@ -227,12 +227,12 @@ void karate_cue_increment_z_for_existing_objects(struct Cue *targetCue) {
     struct Cue *cue;
     struct KarateManCue *data;
 
-    func_08018124(&cue, &data);
+    gameplay_get_cue_info(&cue, &data);
     while (cue != NULL) {
         if (cue != targetCue) {
             data->unk2E++;
         }
-        func_08018138(cue, &cue, &data);
+        gameplay_get_previous_cue_info(cue, &cue, &data);
     }
 }
 
@@ -321,7 +321,7 @@ u32 karate_cue_update(struct Cue *cue, struct KarateManCue *data, u32 runningTim
     u16 temp;
     u32 zero;
 
-    if (runningTime > func_0800c3a4(0x78)) {
+    if (runningTime > beats_to_ticks(0x78)) {
         return TRUE; // Cue is over
     }
 
@@ -331,15 +331,15 @@ u32 karate_cue_update(struct Cue *cue, struct KarateManCue *data, u32 runningTim
             temp = data->unk28 = Div(INT_TO_FIXED(runningTime), duration);
             if (temp > 0x200) { // Object is on the floor
                 data->isHit = TRUE;
-                data->unk2C += func_08001980(16);
+                data->unk2C += agb_random(16);
                 karate_reset_flow(); // Reset Flow
-                func_08002634(&s_f_boxing_land_seqData);
+                play_sound(&s_f_boxing_land_seqData);
                 return FALSE;
             }
             if (temp > 0x180) { // Object is out of player's range
                 if ((s16)data->miss <= 0) {
                     data->miss = TRUE;
-                    joe->miss = func_0800c3a4(0x24);
+                    joe->miss = beats_to_ticks(0x24);
                 }
             }
             karate_cue_update_launched_object(data);
@@ -379,12 +379,12 @@ void karate_cue_despawn(struct Cue *cue, struct KarateManCue *data) {
 void karate_start_serious_mode(void) {
     gKarateManInfo->seriousModeStarted = FALSE;
     func_0804d8c4(D_03005380, gKarateManInfo->joe.sprite, KARATE_PALETTE_SERIOUS);
-    func_0800e030(0);
-    func_0800e044(1);
+    scene_show_bg_layer(0);
+    scene_hide_bg_layer(1);
     func_0804d770(D_03005380, gKarateManInfo->flowSprite, FALSE);
     gKarateManInfo->version = KARATE_VER_SERIOUS;
-    func_0800c128(0);
-    func_0800c138(0x100, func_0800c3a4(0x60));
+    beatscript_scene_set_music_volume_env(0);
+    beatscript_scene_interpolate_music_volume(0x100, beats_to_ticks(0x60));
 }
 
 
@@ -392,12 +392,12 @@ void karate_start_serious_mode(void) {
 void karate_stop_serious_mode(void) {
     gKarateManInfo->seriousModeStopped = FALSE;
     func_0804d8c4(D_03005380, gKarateManInfo->joe.sprite, KARATE_PALETTE_NORMAL);
-    func_0800e044(0);
-    func_0800e030(1);
+    scene_hide_bg_layer(0);
+    scene_show_bg_layer(1);
     func_0804d770(D_03005380, gKarateManInfo->flowSprite, TRUE);
     gKarateManInfo->version = KARATE_VER_0;
     karate_update_bg_palette();
-    func_080173c4(FALSE); // Disable inputs
+    gameplay_enable_inputs(FALSE); // Disable inputs
 }
 
 
@@ -447,12 +447,12 @@ void karate_cue_hit(struct Cue *cue, struct KarateManCue *data) {
                 karateManStruct->joe.isNotBeat = TRUE;
                 func_0804d8f8(D_03005380, joe->sprite, karate_anim_joe_punch_ouch, 0, 1, 0x7f, 0);
                 if (isBgFaceVer) {
-                    func_08002634(func_080180a0(cue));
+                    play_sound(gameplay_get_cue_barely_sfx(cue));
                 } else {
-                    func_08002634(&s_f_boxing_hard_seqData);
+                    play_sound(&s_f_boxing_hard_seqData);
                 }
                 func_08018068();
-                func_08017928(func_080180bc(cue), 1, func_08018054());
+                gameplay_add_cue_result(gameplay_get_cue_marking_criteria(cue), 1, gameplay_get_last_hit_offset());
                 karate_decrement_flow();
                 isHighBgFace = TRUE;
                 break;
@@ -471,7 +471,7 @@ void karate_cue_hit(struct Cue *cue, struct KarateManCue *data) {
                 func_0804d8f8(D_03005380, joe->sprite, anim, 0, 1, 0x7f, 0);
                 func_0804d160(D_03005380, karate_anim_hit_effect, 0, 0x9e, 0x36, 0x4f00, 1, 0, 3);
                 if (!isBgFaceVer) {
-                    func_0801808c(cue, &s_f_boxing_normal_seqData);
+                    gameplay_set_cue_hit_sfx(cue, &s_f_boxing_normal_seqData);
                 }
                 karate_increment_flow(); // Increment Flow
                 break;
@@ -491,15 +491,15 @@ void karate_cue_hit(struct Cue *cue, struct KarateManCue *data) {
         func_0804d160(D_03005380, karate_anim_hit_effect, 0, 0x9e, 0x36, 0x4f00, 1, 0, 3);
         switch (data->type) {
             case 1: // Rock
-                joe->smirk = func_0800c3a4(0x24);
-                func_08002634(&s_f_boxing_kansei_seqData);
+                joe->smirk = beats_to_ticks(0x24);
+                play_sound(&s_f_boxing_kansei_seqData);
                 break;
             case 3: // Bomb
-                joe->happy = func_0800c3a4(0x6c);
+                joe->happy = beats_to_ticks(0x6c);
                 break;
         }
         if (gKarateManInfo->version == KARATE_VER_SERIOUS) { // BG Flash ("Serious Mode" version)
-            func_08001fe0((u16)func_0800c3b8(), 0x0A, 1, karate_man_pal[6], karate_man_pal[5], BG_PALETTE_BUFFER(4));
+            func_08001fe0((u16)get_current_mem_id(), 0x0A, 1, karate_man_pal[6], karate_man_pal[5], BG_PALETTE_BUFFER(4));
         }
         karate_increment_flow(); // Increment Flow
     }
@@ -534,20 +534,20 @@ void karate_cue_barely(struct Cue *cue, struct KarateManCue *data) {
     data->unk2D = 4;
     joe->isNotBeat = TRUE;
     func_0804d8f8(D_03005380, joe->sprite, karate_anim_joe_punch_high, 0, 1, 0x7f, 0);
-    joe->barely = func_0800c3a4(0x24);
+    joe->barely = beats_to_ticks(0x24);
     karate_decrement_flow(); // Decrement Flow
 
     // BG Face
     if (isBgFaceVer) {
         karate_set_bg_face(2, 0x30);
     }
-    func_0800bc40();
+    beatscript_enable_loops();
 }
 
 
 // CUE - Miss
 void karate_cue_miss(struct Cue *cue, struct KarateManCue *data) {
-	func_0800bc40();
+	beatscript_enable_loops();
 }
 
 
@@ -590,7 +590,7 @@ void karate_input_event(u32 pressed, u32 released) {
     } else {
         func_0804d8f8(D_03005380, joe->sprite, karate_anim_joe_punch_high, 0, 1, 0x7f, 0);
     }
-    func_08002634(&s_f_boxing_punch_seqData);
+    play_sound(&s_f_boxing_punch_seqData);
 }
 
 
@@ -622,7 +622,7 @@ void karate_common_beat_animation(void) {
     }
     if (joe->miss) {
         func_0804d8f8(D_03005380, joe->sprite, karate_anim_joe_miss, 0, 1, 0x7f, 0); // Miss
-        func_08002634(&s_f_boxing_v_nua_seqData);
+        play_sound(&s_f_boxing_v_nua_seqData);
     }
 }
 
@@ -653,7 +653,7 @@ void karate_init_flow(void) {
 // Reset Flow
 void karate_reset_flow(void) {
     if (gKarateManInfo->flowLevel > 2) {
-        func_08002634(&s_f_boxing_score_reset_seqData);
+        play_sound(&s_f_boxing_score_reset_seqData);
     }
     gKarateManInfo->flowLevel = 0;
     func_0804cebc(D_03005380, gKarateManInfo->flowSprite, gKarateManInfo->flowLevel);
@@ -673,7 +673,7 @@ void karate_increment_flow(void) {
                 gKarateManInfo->bg = 0;
                 gKarateManInfo->bgPalIndex = karate_flow_palette_high;
                 karate_update_bg_palette(); // Update BG Palette
-                func_08002634(&s_f_boxing_score_up_seqData);
+                play_sound(&s_f_boxing_score_up_seqData);
             }
         }
     }
@@ -690,7 +690,7 @@ void karate_decrement_flow(void) {
                 gKarateManInfo->bg = 0;
                 gKarateManInfo->bgPalIndex = karate_flow_palette_low;
                 karate_update_bg_palette(); // Update BG Palette
-                func_08002634(&s_f_boxing_score_down_seqData);
+                play_sound(&s_f_boxing_score_down_seqData);
             }
         }
     }

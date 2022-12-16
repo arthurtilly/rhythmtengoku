@@ -21,14 +21,14 @@ branch_08024996: \n\
 /* 08024998 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0802499a */ BNE branch_080249a4 \n\
 /* 0802499c */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
-/* 0802499e */ BL func_08018660 \n\
+/* 0802499e */ BL gameplay_display_text \n\
 /* 080249a2 */ B branch_080249b8 \n\
  \n\
 branch_080249a4: \n\
 /* 080249a4 */ CMP R6, R7 @ Check R6 - R7 \n\
 /* 080249a6 */ BNE branch_080249ae \n\
 /* 080249a8 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 080249aa */ BL func_08018660 \n\
+/* 080249aa */ BL gameplay_display_text \n\
  \n\
 branch_080249ae: \n\
 /* 080249ae */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\

@@ -141,7 +141,7 @@ branch_08030b66: \n\
 /* 08030b6a */ LDRB R0, [R0, 0x11] \n\
 /* 08030b6c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08030b6e */ BEQ branch_08030bae \n\
-/* 08030b70 */ BL func_0800c3b8 \n\
+/* 08030b70 */ BL get_current_mem_id \n\
 /* 08030b74 */ LSLS R0, R0, 0x10 \n\
 /* 08030b76 */ LSRS R0, R0, 0x10 \n\
 /* 08030b78 */ LDR R3, =(D_088e9f78 + 0x80) \n\
@@ -152,7 +152,7 @@ branch_08030b66: \n\
 /* 08030b82 */ MOVS R1, 0x10 @ Set R1 to 0x10 \n\
 /* 08030b84 */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 08030b86 */ BL func_08001fe0 \n\
-/* 08030b8a */ BL func_0800c3b8 \n\
+/* 08030b8a */ BL get_current_mem_id \n\
 /* 08030b8e */ LSLS R0, R0, 0x10 \n\
 /* 08030b90 */ LSRS R0, R0, 0x10 \n\
 /* 08030b92 */ LDR R3, =(D_088e9f78 + 0x20) \n\

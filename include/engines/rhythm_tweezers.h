@@ -23,7 +23,7 @@ struct RhythmTweezersInfo {
         s32 fallDistance;   // Counter:   Vertical Position
         u32 fallSpeed;      // Value: Vertical Velocity
         s16 rotation;       // Value:   Rotation
-        u16 rotationSpeed;  // Value:   Randomised Rotation Speed ( func_08001980(0x1f) - 0xf )
+        u16 rotationSpeed;  // Value:   Randomised Rotation Speed ( agb_random(0x1f) - 0xf )
     } fallingHairs[5];
     struct RhythmTweezersVegetable {
         s16 spriteCurrent;  // Sprite:  Current Vegetable Face

@@ -20,7 +20,7 @@ thumb_func_start func_080242f8 \n\
 	LDRB R2, [R2, 0x14] \n\
 	STRB R2, [R0] \n\
 	BL func_080242cc \n\
-	BL func_0800e0ec \n\
+	BL scene_show_obj_layer \n\
 	MOVS R2, 0x40 \n\
 	RSBS R2, R2, 0x0 \n\
 	MOVS R3, 0x10 \n\
@@ -31,7 +31,7 @@ thumb_func_start func_080242f8 \n\
 	MOVS R0, 0x1 \n\
 	STR R0, [SP, 0x8] \n\
 	MOVS R1, 0x0 \n\
-	BL func_0800e0a0 \n\
+	BL scene_set_bg_layer_display \n\
 	BL func_08024bd0 \n\
 	LDR R4, =D_088c3f7c \n\
 	CMP R0, 0x0 \n\
@@ -489,7 +489,7 @@ branch_0802476c: \n\
 	STRH R0, [R7, 0xe] \n\
 	LDRH R0, [R6, 0x2] \n\
 	STRH R0, [R7, 0x10] \n\
-	BL func_0800c3b8 \n\
+	BL get_current_mem_id \n\
 	LSLS R0, R0, 0x10 \n\
 	LSRS R0, R0, 0x10 \n\
 	MOVS R1, 0x4 \n\
@@ -497,7 +497,7 @@ branch_0802476c: \n\
 	MOVS R3, 0x1e \n\
 	BL text_printer_create_new \n\
 	ADDS R4, R0, 0x0 \n\
-	BL func_08018630 \n\
+	BL gameplay_set_text_printer \n\
 	ADDS R0, R4, 0x0 \n\
 	MOVS R1, 0xf \n\
 	BL text_printer_set_palette \n\
@@ -557,12 +557,12 @@ branch_08024846: \n\
 	MOVS R2, 0x30 \n\
 	BL text_printer_set_x_y \n\
 	MOVS R0, 0x1 \n\
-	BL func_0801858c \n\
+	BL gameplay_set_text_advance_icon \n\
  \n\
 branch_08024856: \n\
 	MOVS R0, 0xf3 \n\
 	MOVS R1, 0x0 \n\
-	BL func_08017338 \n\
+	BL gameplay_set_input_buttons \n\
 	LDR R5, =D_030055d0 \n\
 	LDR R0, [R5] \n\
 	MOVS R2, 0xe0 \n\
@@ -579,7 +579,7 @@ branch_08024856: \n\
 	BL func_0802a9b4 \n\
 	BL func_08024ed0 \n\
 	MOVS R0, 0x0 \n\
-	BL func_080174e8 \n\
+	BL gameplay_display_skip_icon \n\
 	LDR R2, [SP, 0x14] \n\
 	CMP R2, 0x1 \n\
 	BEQ branch_080248be \n\
@@ -601,7 +601,7 @@ branch_080248a8: \n\
 	MOVS R1, 0x1 \n\
 	MOVS R2, 0x0 \n\
 	MOVS R3, 0x0 \n\
-	BL func_0800e0a0 \n\
+	BL scene_set_bg_layer_display \n\
 	B branch_08024966 \n\
  \n\
 branch_080248be: \n\
@@ -614,7 +614,7 @@ branch_080248be: \n\
 	MOVS R1, 0x1 \n\
 	MOVS R2, 0x0 \n\
 	MOVS R3, 0x0 \n\
-	BL func_0800e0a0 \n\
+	BL scene_set_bg_layer_display \n\
 	LDR R0, =D_03005380 \n\
 	LDR R0, [R0] \n\
 	LDR R1, =D_088c2f58 \n\
@@ -649,7 +649,7 @@ branch_08024910: \n\
 	MOVS R1, 0x1 \n\
 	MOVS R2, 0x0 \n\
 	MOVS R3, 0x0 \n\
-	BL func_0800e0a0 \n\
+	BL scene_set_bg_layer_display \n\
 	MOVS R2, 0x6c \n\
 	RSBS R2, R2, 0x0 \n\
 	STR R4, [SP] \n\
@@ -659,14 +659,14 @@ branch_08024910: \n\
 	MOVS R0, 0x3 \n\
 	MOVS R1, 0x0 \n\
 	MOVS R3, 0x0 \n\
-	BL func_0800e0a0 \n\
+	BL scene_set_bg_layer_display \n\
 	BL func_08023a18 \n\
 	MOVS R1, 0x40 \n\
 	RSBS R1, R1, 0x0 \n\
 	MOVS R2, 0x14 \n\
 	RSBS R2, R2, 0x0 \n\
 	MOVS R0, 0x1 \n\
-	BL func_0800e058 \n\
+	BL scene_set_bg_layer_pos \n\
 	B branch_08024966 \n\
  \n\
 branch_08024950: \n\

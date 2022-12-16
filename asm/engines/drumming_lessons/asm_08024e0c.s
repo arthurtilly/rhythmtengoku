@@ -27,7 +27,7 @@ branch_08024e30: \n\
 /* 08024e34 */ LDRB R0, [R0] \n\
 /* 08024e36 */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\
 /* 08024e38 */ BNE branch_08024e3e \n\
-/* 08024e3a */ BL func_0800bc40 \n\
+/* 08024e3a */ BL beatscript_enable_loops \n\
  \n\
 branch_08024e3e: \n\
 /* 08024e3e */ POP {R0} \n\

@@ -4,48 +4,48 @@
 
 /* Main Game Handler */
 
-extern void func_0800b778(u32 memID); // BeatScript Init.
-extern void func_0800b834(const struct SubScene **subScenes); // Set SubScenes
-extern void func_0800b974(void); // ? (called each loop after the pause menu has been opened at least once)
-extern void func_0800b9fc(void); // BeatScript Update
-extern s32 func_0800bc14(void); // Check if No BeatScript Threads Are Active
-extern void func_0800bc40(void); // Enable Loops
+extern void start_beatscript_scene(u32 memID); // BeatScript Init.
+extern void set_beatscript_subscenes(const struct SubScene **subScenes); // Set SubScenes
+extern void update_paused_beatscript_scene(void); // ? (called each loop after the pause menu has been opened at least once)
+extern void update_active_beatscript_scene(void); // BeatScript Update
+extern s32 beatscript_scene_is_inactive(void); // Check if No BeatScript Threads Are Active
+extern void beatscript_enable_loops(void); // Enable Loops
 extern void func_0800bc58(void); // Delayed Loop Exit Task Function
-extern void func_0800bc68(u32 duration); // Exit Loop After Delay
-extern void func_0800bcb8(void); // Exit Loop After One Beat
-extern void func_0800bcc4(void); // Exit Loop (If Within a Loop)
-extern void func_0800bce4(void); // Force Stop Loop
-extern void func_0800bcf4(void); // Exit Loop on Next Update
-extern void func_0800bd04(u32); // Pause Script
-extern u32 func_0800bd1c(void); // Check if BeatScript Handler Is Paused
-extern void func_0800bd2c(void); // BeatScript Engine Force Quit
-extern void func_0800bdf8(u16 tempo); // Set Script Tempo
-extern void func_0800be64(void); // Update Script Tempo (retain unk1_b7)
-extern void func_0800be88(u16 speed); // Set Script Speed (Q8.8)
+extern void beatscript_exit_loop_after_delay(u32 duration); // Exit Loop After Delay
+extern void beatscript_exit_loop_after_one_beat(void); // Exit Loop After One Beat
+extern void beatscript_force_exit_loop(void); // Exit Loop (If Within a Loop)
+extern void beatscript_disable_loops(void); // Force Stop Loop
+extern void beatscript_force_exit_loop_next_update(void); // Exit Loop on Next Update
+extern void pause_beatscript_scene(u32); // Pause Script
+extern u32 beatscript_scene_is_paused(void); // Check if BeatScript Handler Is Paused
+extern void stop_beatscript_scene(void); // BeatScript Engine Force Quit
+extern void set_beatscript_tempo(u16 tempo); // Set Script Tempo
+extern void update_beatscript_tempo(void); // Update Script Tempo (retain unk1_b7)
+extern void set_beatscript_speed(u16 speed); // Set Script Speed (Q8.8)
 extern void func_0800be9c(void); // Stub
 extern void func_0800bea0(u32 arg); // Set unk0_b7
 extern void func_0800bebc(u32 arg); // Set unk1C
-extern u32  func_0800bed0(const struct SequenceData *, u32 override, s32 soundPlayer); // Play Music
-extern void func_0800bf7c(const struct SequenceData *); // Play Music (Override)
-extern void func_0800bf8c(const struct SequenceData *); // Play Music (No Override)
-extern void func_0800bf9c(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (Override)
-extern void func_0800bfac(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (No Override)
-extern void func_0800bfbc(const struct SequenceData *); // Play Music (override, use predefined SoundPlayer ID)
-extern void func_0800c01c(void); // Stop Music
-extern void func_0800c030(u16 duration); // Fade-In Music
-extern void func_0800c048(u16 duration); // Fade-Out Music
-extern void func_0800c060(void); // Update Music Pitch (retain unk2_b0)
-extern void func_0800c088(s16 pitch); // Set Music Pitch
-extern void func_0800c0c4(s16 pitch); // Set Music Pitch Source 2
-extern void func_0800c0d8(u16 volume); // Set Music Volume
-extern void func_0800c0f8(u16 selection, u16 volume); // Set Music Volume for Selected Tracks
-extern void func_0800c128(u16 volume); // Set Music Volume 2 (it just calls func_0800c0d8())
-// extern ? func_0800c138(u32 volume, u32 duration); // Interpolate Music Volume
-// extern ? func_0800c154(?);
-// extern ? func_0800c168(u32 volume, u32 duration); // Interpolate Music Volume for Selected Tracks
-// extern ? func_0800c184(?); // Set Music Pitch
+extern u32  beatscript_scene_new_music(const struct SequenceData *, u32 override, s32 soundPlayer); // Play Music
+extern void beatscript_scene_set_music(const struct SequenceData *); // Play Music (Override)
+extern void beatscript_scene_play_music(const struct SequenceData *); // Play Music (No Override)
+extern void beatscript_scene_set_music_with_soundplayer(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (Override)
+extern void beatscript_scene_play_music_with_soundplayer(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (No Override)
+extern void beatscript_scene_play_music_ignore_lfo(const struct SequenceData *); // Play Music (override, use predefined SoundPlayer ID)
+extern void beatscript_scene_stop_music(void); // Stop Music
+extern void beatscript_scene_fade_in_music(u16 duration); // Fade-In Music
+extern void beatscript_scene_fade_out_music(u16 duration); // Fade-Out Music
+extern void beatscript_scene_update_music_pitch(void); // Update Music Pitch (retain unk2_b0)
+extern void beatscript_scene_set_music_pitch(s16 pitch); // Set Music Pitch
+extern void beatscript_scene_set_music_pitch_env(s16 pitch); // Set Music Pitch Source 2
+extern void beatscript_scene_set_music_volume(u16 volume); // Set Music Volume
+extern void beatscript_scene_set_music_track_volume(u16 selection, u16 volume); // Set Music Volume for Selected Tracks
+extern void beatscript_scene_set_music_volume_env(u16 volume); // Set Music Volume 2 (just calls the other one)
+// extern ? beatscript_scene_interpolate_music_volume(u32 volume, u32 duration); // Interpolate Music Volume
+// extern ? beatscript_scene_set_music_track_volume_env(?); // Set Music Volume for Selected Tracks 2 (just calls the other one)
+// extern ? beatscript_scene_interpolate_music_track_volume(u32 volume, u32 duration); // Interpolate Music Volume for Selected Tracks
+// extern ? beatscript_scene_set_music_key(?); // Set Music Key
 extern void func_0800c1a4_stub(void);
-extern u32 func_0800c1a8(void); // Get Current Script Tempo
+extern u32 get_beatscript_tempo(void); // Get Current Script Tempo
 // extern ? func_0800c1b4(?);
 // extern ? func_0800c1c0(?);
 // extern ? func_0800c1d0(?);
@@ -59,9 +59,9 @@ extern u32 func_0800c1a8(void); // Get Current Script Tempo
 // extern ? func_0800c390(?);
 // extern ? func_0800c394(?);
 extern u32 func_0800c398(void);
-extern s32 func_0800c3a4(u32); // Convert Script Beats To Real-Time Ticks
-extern u32 func_0800c3b8(void); // Get Current Active Thread (Memory ID / SubScene)
-extern void func_0800c3c4(u32 id); // Set Current Active Thread (Memory ID / SubScene)
+extern s32 beats_to_ticks(u32); // Convert Script Beats To Real-Time Ticks
+extern u32 get_current_mem_id(void); // Get Current Active Thread (Memory ID / SubScene)
+extern void set_current_mem_id(u32 id); // Set Current Active Thread (Memory ID / SubScene)
 // extern ? func_0800c3e4(?);
 // extern ? func_0800c3e8(?);
 // extern ? func_0800c3ec(?);
@@ -78,7 +78,7 @@ extern void func_0800c3c4(u32 id); // Set Current Active Thread (Memory ID / Sub
 // extern ? func_0800c424(?);
 // extern ? func_0800c428(?);
 // extern ? func_0800c42c(?);
-extern void *func_0800c43c(u32 size); // Allocate Space in Memory Heap
+extern void *beatscript_scene_mem_heap_alloc(u32 size); // Allocate Space in Memory Heap
 // extern ? func_0800c454(?);
 // extern ? func_0800c484(?);
 // extern ? func_0800c490(?);
@@ -125,19 +125,19 @@ extern void func_0800e008(void); // Stub
 extern void func_0800e00c(void); // Stub
 extern void func_0800e010(void); // Stub
 extern void func_0800e014(void); // Stub
-extern void func_0800e018(s32 videoMode); // VIDEO - Set Video Mode
-extern void func_0800e030(s32 layer); // VIDEO - Show BG Layer
-extern void func_0800e044(s32 layer); // VIDEO - Hide BG Layer
-extern void func_0800e058(s32 layer, s16 x, s16 y); // VIDEO - Set BG Layer Position
-extern void func_0800e068(s32 layer, s32 tileset, s32 map, s32 priority); // VIDEO - Set BG Layer Render Data
-extern void func_0800e084(s32 layer, s32 priority); // VIDEO - Set BG Layer Priority
-extern void func_0800e0a0(s32 layer, s32 show, s32 x, s32 y, s32 tileset, s32 map, s32 priority); // VIDEO - Set BG Layer Controls
-extern void func_0800e0ec(void); // VIDEO - Display OBJ Layer
-extern void func_0800e100(void); // VIDEO - Hide OBJ Layer
-extern void func_0800e114(void); // Enable OBJ Windows
-extern void func_0800e128(void); // Disable OBJ Windows
-extern void func_0800e13c(s16 xSize, s16 ySize); // Set OBJ Mosaic Size
-extern void func_0800e184(s16 xSize, s16 ySize); // Set BG Mosaic Size
+extern void scene_set_video_mode(s32 videoMode); // VIDEO - Set Video Mode
+extern void scene_show_bg_layer(s32 layer); // VIDEO - Show BG Layer
+extern void scene_hide_bg_layer(s32 layer); // VIDEO - Hide BG Layer
+extern void scene_set_bg_layer_pos(s32 layer, s16 x, s16 y); // VIDEO - Set BG Layer Position
+extern void scene_set_bg_layer_controls(s32 layer, s32 tileset, s32 map, s32 priority); // VIDEO - Set BG Layer Render Data
+extern void scene_set_bg_layer_priority(s32 layer, s32 priority); // VIDEO - Set BG Layer Priority
+extern void scene_set_bg_layer_display(s32 layer, s32 show, s32 x, s32 y, s32 tileset, s32 map, s32 priority); // VIDEO - Set BG Layer Controls
+extern void scene_show_obj_layer(void); // VIDEO - Display OBJ Layer
+extern void scene_hide_obj_layer(void); // VIDEO - Hide OBJ Layer
+extern void scene_enable_obj_windows(void); // Enable OBJ Windows
+extern void scene_disable_obj_windows(void); // Disable OBJ Windows
+extern void scene_set_obj_mosaic_size(s16 xSize, s16 ySize); // Set OBJ Mosaic Size
+extern void scene_set_bg_mosaic_size(s16 xSize, s16 ySize); // Set BG Mosaic Size
 // extern ? func_0800e1cc(?);
 // extern ? func_0800e208(?);
 // extern ? func_0800e25c(?);

@@ -54,7 +54,7 @@ branch_0803f04e: \n\
 /* 0803f096 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 0803f098 */ LSLS R1, R1, 0x10 \n\
 /* 0803f09a */ ASRS R1, R1, 0x10 \n\
-/* 0803f09c */ BL func_080028a8 \n\
+/* 0803f09c */ BL set_soundplayer_pitch \n\
 /* 0803f0a0 */ POP {R4-R7} \n\
 /* 0803f0a2 */ POP {R0} \n\
 /* 0803f0a4 */ BX R0 \n\

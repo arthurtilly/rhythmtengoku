@@ -69,7 +69,7 @@ thumb_func_start func_080320c8 \n\
 /* 08032150 */ LDR R0, [R4] \n\
 /* 08032152 */ MOVS R1, 0xC @ Set R1 to 0xC \n\
 /* 08032154 */ LDRSH R4, [R0, R1] \n\
-/* 08032156 */ BL func_0800c1a8 \n\
+/* 08032156 */ BL get_beatscript_tempo \n\
 /* 0803215a */ LSLS R0, R0, 0x8 \n\
 /* 0803215c */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 0803215e */ BL __udivsi3 \n\
@@ -80,10 +80,10 @@ thumb_func_start func_080320c8 \n\
 /* 0803216a */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0803216c */ BL func_0804dcb8 \n\
 /* 08032170 */ LDR R0, =s_iai_yarare_seqData \n\
-/* 08032172 */ BL func_08002634 \n\
+/* 08032172 */ BL play_sound \n\
 /* 08032176 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08032178 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803217a */ BL func_08017338 \n\
+/* 0803217a */ BL gameplay_set_input_buttons \n\
  \n\
 branch_0803217e: \n\
 /* 0803217e */ LDR R0, [R6, 0x8] \n\

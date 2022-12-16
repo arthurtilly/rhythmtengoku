@@ -20,7 +20,7 @@ thumb_func_start func_08036e28 \n\
 /* 08036e44 */ BEQ branch_08036e4e \n\
 /* 08036e46 */ SUBS R4, 0x1 @ Subtract 0x1 from R4 \n\
 /* 08036e48 */ LDR R0, =s_keytoy_count2_seqData \n\
-/* 08036e4a */ BL func_08002634 \n\
+/* 08036e4a */ BL play_sound \n\
  \n\
 branch_08036e4e: \n\
 /* 08036e4e */ LDR R0, =D_03004afc \n\
@@ -33,7 +33,7 @@ branch_08036e4e: \n\
 /* 08036e5c */ BHI branch_08036e66 \n\
 /* 08036e5e */ ADDS R4, 0x1 @ Add 0x1 to R4 \n\
 /* 08036e60 */ LDR R0, =s_keytoy_count1_seqData \n\
-/* 08036e62 */ BL func_08002634 \n\
+/* 08036e62 */ BL play_sound \n\
  \n\
 branch_08036e66: \n\
 /* 08036e66 */ LDR R5, =D_030055d0 \n\

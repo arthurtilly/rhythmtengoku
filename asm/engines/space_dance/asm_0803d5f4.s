@@ -28,19 +28,19 @@ thumb_func_start func_0803d5f4 \n\
 /* 0803d622 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803d624 */ BL func_0804d8f8 \n\
 /* 0803d628 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0803d62a */ BL func_0800c3a4 \n\
+/* 0803d62a */ BL beats_to_ticks \n\
 /* 0803d62e */ LDR R1, [R5] \n\
 /* 0803d630 */ STRH R0, [R1, 0x14] \n\
 /* 0803d632 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803d634 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803d636 */ BL func_08017338 \n\
-/* 0803d63a */ BL func_0800c3b8 \n\
+/* 0803d636 */ BL gameplay_set_input_buttons \n\
+/* 0803d63a */ BL get_current_mem_id \n\
 /* 0803d63e */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803d640 */ LSLS R4, R4, 0x10 \n\
 /* 0803d642 */ LSRS R4, R4, 0x10 \n\
 /* 0803d644 */ LDR R5, =func_0803d5e4 \n\
 /* 0803d646 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0803d648 */ BL func_0800c3a4 \n\
+/* 0803d648 */ BL beats_to_ticks \n\
 /* 0803d64c */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0803d64e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803d650 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\

@@ -102,7 +102,7 @@ extern struct BeatScriptHandler {
     u16 musicVolume; // [D_03005550] BeatScript: Music Volume
     u16 musicTrkVolume; // [D_03005552] BeatScript: Music Channel Selection Volume
     u16 musicTrkTargets; // [D_03005554] BeatScript: Music Channel Selection
-    u8 musicPitchEnv; // [D_03005556] BeatScript: Music Pitch
+    u8  musicKey; // [D_03005556] BeatScript: Music Key
     u32 null198;
     u32 null19C;
     u32 null1A0;

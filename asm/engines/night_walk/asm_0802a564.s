@@ -31,7 +31,7 @@ branch_0802a590: \n\
 /* 0802a592 */ LDR R4, [R0] \n\
 /* 0802a594 */ ADDS R4, R4, R6 @ Set R4 to R4 + R6 \n\
 /* 0802a596 */ MOVS R0, 0x8 @ Set R0 to 0x8 \n\
-/* 0802a598 */ BL func_08001980 \n\
+/* 0802a598 */ BL agb_random \n\
 /* 0802a59c */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0802a59e */ LSLS R2, R2, 0x18 \n\
 /* 0802a5a0 */ ASRS R2, R2, 0x18 \n\
@@ -49,21 +49,21 @@ branch_0802a590: \n\
 /* 0802a5b8 */ BL func_0804d160 \n\
 /* 0802a5bc */ STRH R0, [R4] \n\
 /* 0802a5be */ MOV R0, R9 @ Set R0 to R9 \n\
-/* 0802a5c0 */ BL func_08001980 \n\
+/* 0802a5c0 */ BL agb_random \n\
 /* 0802a5c4 */ LSLS R0, R0, 0x10 \n\
 /* 0802a5c6 */ LSRS R0, R0, 0x8 \n\
 /* 0802a5c8 */ LDR R1, =0xfffff800 \n\
 /* 0802a5ca */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0802a5cc */ STR R0, [R4, 0x4] \n\
 /* 0802a5ce */ MOVS R0, 0xB0 @ Set R0 to 0xB0 \n\
-/* 0802a5d0 */ BL func_08001980 \n\
+/* 0802a5d0 */ BL agb_random \n\
 /* 0802a5d4 */ LSLS R0, R0, 0x10 \n\
 /* 0802a5d6 */ LSRS R0, R0, 0x8 \n\
 /* 0802a5d8 */ LDR R2, =0xfffff800 \n\
 /* 0802a5da */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0802a5dc */ STR R0, [R4, 0x8] \n\
 /* 0802a5de */ MOV R0, R9 @ Set R0 to R9 \n\
-/* 0802a5e0 */ BL func_08001980 \n\
+/* 0802a5e0 */ BL agb_random \n\
 /* 0802a5e4 */ LSLS R0, R0, 0x10 \n\
 /* 0802a5e6 */ LSRS R0, R0, 0x10 \n\
 /* 0802a5e8 */ LDR R2, [R4, 0x4] \n\

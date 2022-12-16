@@ -10,7 +10,7 @@ thumb_func_start func_08018e74 \n\
 /* 08018e7c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08018e7e */ STRH R1, [R0] \n\
 /* 08018e80 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08018e82 */ BL func_0800bd04 \n\
+/* 08018e82 */ BL pause_beatscript_scene \n\
 /* 08018e86 */ POP {R0} \n\
 /* 08018e88 */ BX R0 \n\
 \n\

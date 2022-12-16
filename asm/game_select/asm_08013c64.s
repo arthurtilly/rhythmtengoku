@@ -91,7 +91,7 @@ branch_08013cae: \n\
  \n\
 branch_08013d02: \n\
 /* 08013d02 */ LDR R0, =s_menu_cursor1_seqData \n\
-/* 08013d04 */ BL func_08002634 \n\
+/* 08013d04 */ BL play_sound \n\
  \n\
 branch_08013d08: \n\
 /* 08013d08 */ ADD SP, 0xC \n\

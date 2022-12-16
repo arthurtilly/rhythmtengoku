@@ -52,7 +52,7 @@ branch_08041802: \n\
 /* 08041808 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0804180a */ STRB R1, [R0] \n\
 /* 0804180c */ LDR R0, =s_uma_hihin_seqData \n\
-/* 0804180e */ BL func_08002634 \n\
+/* 0804180e */ BL play_sound \n\
 /* 08041812 */ LDR R0, [R6] \n\
 /* 08041814 */ ADDS R2, R0, R7 @ Set R2 to R0 + R7 \n\
 /* 08041816 */ LDRB R0, [R2] \n\
@@ -63,7 +63,7 @@ branch_08041802: \n\
 /* 08041820 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08041822 */ LDR R4, [R0] \n\
 /* 08041824 */ MOVS R0, 0x60 @ Set R0 to 0x60 \n\
-/* 08041826 */ BL func_0800c3a4 \n\
+/* 08041826 */ BL beats_to_ticks \n\
 /* 0804182a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0804182c */ LSLS R1, R1, 0x10 \n\
 /* 0804182e */ LSRS R1, R1, 0x10 \n\
@@ -80,7 +80,7 @@ branch_08041854: \n\
 /* 0804185a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0804185c */ LDR R4, [R0] \n\
 /* 0804185e */ MOVS R0, 0xC0 @ Set R0 to 0xC0 \n\
-/* 08041860 */ BL func_0800c3a4 \n\
+/* 08041860 */ BL beats_to_ticks \n\
 /* 08041864 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08041866 */ LSLS R1, R1, 0x10 \n\
 /* 08041868 */ LSRS R1, R1, 0x10 \n\
@@ -90,13 +90,13 @@ branch_08041854: \n\
 branch_08041870: \n\
 /* 08041870 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08041872 */ BL func_08041744 \n\
-/* 08041876 */ BL func_0800bce4 \n\
+/* 08041876 */ BL beatscript_disable_loops \n\
 /* 0804187a */ B branch_08041884 \n\
 \n\
 .ltorg \n\
  \n\
 branch_08041880: \n\
-/* 08041880 */ BL func_0800bc40 \n\
+/* 08041880 */ BL beatscript_enable_loops \n\
  \n\
 branch_08041884: \n\
 /* 08041884 */ ADD SP, 0xC \n\

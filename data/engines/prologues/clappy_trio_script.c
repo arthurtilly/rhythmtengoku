@@ -73,9 +73,9 @@ const struct GameEngine D_089eb064 = {
 
 // [D_089eb084] Prologue (The Clappy Trio) BeatScript - Main
 const struct BeatScript D_089eb084[] = {
-    BSC_RUN_FUNC_1(func_08017568, 0x8),
+    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x8),
     BSC4_LOAD_GAME_ENGINE(&D_089eb064, 0),
-    BSC_RUN_FUNC_1(func_08002838, 0),
+    BSC_RUN_FUNC_1(stop_all_soundplayers, 0),
     BSC_REST(0x18),
     BSC_PLAY_SOUND(&s_jingle_handclap_seqData),
     BSC_RUN_FUNC_1(func_08045ec4, 1),
@@ -98,6 +98,6 @@ const struct BeatScript D_089eb084[] = {
     BSC_REST(0x0C),
     BSC_RUN_FUNC_1(func_08006d80, 0),
     BSC_REST(0x0C),
-    BSC_RUN_FUNC_1(func_08017568, 0x10),
+    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x10),
     BSC_RETURN
 };

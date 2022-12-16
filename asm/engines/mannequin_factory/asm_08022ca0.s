@@ -29,7 +29,7 @@ branch_08022ca4: \n\
 /* 08022cca */ STRH R1, [R2, 0x2] \n\
 /* 08022ccc */ LDRH R0, [R2, 0x2] \n\
 /* 08022cce */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08022cd0 */ BL func_08017338 \n\
+/* 08022cd0 */ BL gameplay_set_input_buttons \n\
  \n\
 branch_08022cd4: \n\
 /* 08022cd4 */ ADDS R4, 0x1 @ Add 0x1 to R4 \n\

@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start func_08035b64 \n\
 /* 08035b64 */ PUSH {R4-R6, LR} \n\
-/* 08035b66 */ BL func_08018054 \n\
+/* 08035b66 */ BL gameplay_get_last_hit_offset \n\
 /* 08035b6a */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08035b6c */ LDR R6, =D_03005380 \n\
 /* 08035b6e */ LDR R0, [R6] \n\
@@ -28,9 +28,9 @@ thumb_func_start func_08035b64 \n\
 /* 08035b96 */ ASRS R2, R2, 0x18 \n\
 /* 08035b98 */ BL func_0804cebc \n\
 /* 08035b9c */ LDR R0, =s_metro_hit_seqData \n\
-/* 08035b9e */ BL func_08002634 \n\
+/* 08035b9e */ BL play_sound \n\
 /* 08035ba2 */ LDR R0, =s_metro_hato_seqData \n\
-/* 08035ba4 */ BL func_08002634 \n\
+/* 08035ba4 */ BL play_sound \n\
 /* 08035ba8 */ POP {R4-R6} \n\
 /* 08035baa */ POP {R0} \n\
 /* 08035bac */ BX R0 \n\

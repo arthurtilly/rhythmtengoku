@@ -10,7 +10,7 @@ thumb_func_start func_080290c4 \n\
 /* 080290cc */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 080290ce */ LDRB R4, [R0] \n\
 /* 080290d0 */ LDR R0, =s_menu_cancel2_seqData \n\
-/* 080290d2 */ BL func_08002634 \n\
+/* 080290d2 */ BL play_sound \n\
 /* 080290d6 */ LDR R0, [R5] \n\
 /* 080290d8 */ LDR R2, =0x000003ce \n\
 /* 080290da */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
@@ -51,7 +51,7 @@ branch_08029120: \n\
 /* 08029132 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08029134 */ BL func_08001724 \n\
 /* 08029138 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0802913a */ BL func_0800bd04 \n\
+/* 0802913a */ BL pause_beatscript_scene \n\
 /* 0802913e */ LDR R0, =D_089e2ad4 \n\
 /* 08029140 */ BL func_0801d968 \n\
  \n\
@@ -68,7 +68,7 @@ branch_08029144: \n\
 /* 08029156 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08029158 */ BEQ branch_08029160 \n\
 /* 0802915a */ MOVS R1, 0xA @ Set R1 to 0xA \n\
-/* 0802915c */ BL func_080028d8 \n\
+/* 0802915c */ BL fade_out_soundplayer \n\
  \n\
 branch_08029160: \n\
 /* 08029160 */ POP {R4, R5} \n\

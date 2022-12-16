@@ -35,7 +35,7 @@ branch_08015068: \n\
 /* 0801507c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801507e */ LDR R0, [R0] \n\
 /* 08015080 */ STR R0, [SP, 0x18] \n\
-/* 08015082 */ BL func_0800c3b8 \n\
+/* 08015082 */ BL get_current_mem_id \n\
 /* 08015086 */ ADD R1, SP, 0x18 \n\
 /* 08015088 */ STR R1, [SP] \n\
 /* 0801508a */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\

@@ -13,7 +13,7 @@ thumb_func_start func_080382f4 \n\
 /* 08038302 */ LDR R0, [R0] \n\
 /* 08038304 */ LSLS R1, R1, 0x10 \n\
 /* 08038306 */ LSRS R1, R1, 0x10 \n\
-/* 08038308 */ BL func_08002920 \n\
+/* 08038308 */ BL set_soundplayer_volume \n\
 /* 0803830c */ POP {R0} \n\
 /* 0803830e */ BX R0 \n\
 \n\

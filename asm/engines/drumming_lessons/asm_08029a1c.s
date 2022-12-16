@@ -92,7 +92,7 @@ branch_08029ad0: \n\
 /* 08029ada */ ADDS R0, R0, R3 @ Set R0 to R0 + R3 \n\
 /* 08029adc */ STRB R4, [R0] \n\
 /* 08029ade */ LDR R0, =s_menu_cursor1_seqData \n\
-/* 08029ae0 */ BL func_08002634 \n\
+/* 08029ae0 */ BL play_sound \n\
 /* 08029ae4 */ B branch_08029b72 \n\
 \n\
 .ltorg \n\
@@ -111,7 +111,7 @@ branch_08029afc: \n\
 /* 08029b10 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08029b12 */ BNE branch_08029b2c \n\
 /* 08029b14 */ LDR R0, =s_menu_kettei2_seqData \n\
-/* 08029b16 */ BL func_08002634 \n\
+/* 08029b16 */ BL play_sound \n\
 /* 08029b1a */ BL func_08029988 \n\
 /* 08029b1e */ B branch_08029b32 \n\
 \n\
@@ -119,7 +119,7 @@ branch_08029afc: \n\
  \n\
 branch_08029b2c: \n\
 /* 08029b2c */ LDR R0, =s_menu_cancel3_seqData \n\
-/* 08029b2e */ BL func_08002634 \n\
+/* 08029b2e */ BL play_sound \n\
  \n\
 branch_08029b32: \n\
 /* 08029b32 */ LDR R0, =D_03005380 \n\
@@ -139,7 +139,7 @@ branch_08029b32: \n\
 /* 08029b50 */ LDR R0, [R0] \n\
 /* 08029b52 */ BL text_printer_clear \n\
 /* 08029b56 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08029b58 */ BL func_0800bd04 \n\
+/* 08029b58 */ BL pause_beatscript_scene \n\
 /* 08029b5c */ LDR R1, [R4] \n\
 /* 08029b5e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08029b60 */ STRB R0, [R1, 0x1] \n\

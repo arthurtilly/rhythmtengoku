@@ -14,7 +14,7 @@ thumb_func_start func_08037d6c \n\
 /* 08037d7c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08037d7e */ BEQ branch_08037d86 \n\
 /* 08037d80 */ LDRH R0, [R2] \n\
-/* 08037d82 */ BL func_0800bdf8 \n\
+/* 08037d82 */ BL set_beatscript_tempo \n\
  \n\
 branch_08037d86: \n\
 /* 08037d86 */ POP {R0} \n\

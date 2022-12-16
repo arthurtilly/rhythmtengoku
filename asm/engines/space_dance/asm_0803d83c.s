@@ -51,26 +51,26 @@ branch_0803d874: \n\
 /* 0803d890 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803d892 */ BL func_0804d8f8 \n\
 /* 0803d896 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0803d898 */ BL func_0800c3a4 \n\
+/* 0803d898 */ BL beats_to_ticks \n\
 /* 0803d89c */ LDR R1, [R6] \n\
 /* 0803d89e */ STRH R0, [R1, 0x14] \n\
 /* 0803d8a0 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803d8a2 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803d8a4 */ BL func_08017338 \n\
-/* 0803d8a8 */ BL func_0800c3b8 \n\
+/* 0803d8a4 */ BL gameplay_set_input_buttons \n\
+/* 0803d8a8 */ BL get_current_mem_id \n\
 /* 0803d8ac */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803d8ae */ LSLS R4, R4, 0x10 \n\
 /* 0803d8b0 */ LSRS R4, R4, 0x10 \n\
 /* 0803d8b2 */ LDR R5, =func_0803d82c \n\
 /* 0803d8b4 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0803d8b6 */ BL func_0800c3a4 \n\
+/* 0803d8b6 */ BL beats_to_ticks \n\
 /* 0803d8ba */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0803d8bc */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803d8be */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0803d8c0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803d8c2 */ BL func_0800856c \n\
 /* 0803d8c6 */ LDR R0, =s_tebyoushi_pati_seqData \n\
-/* 0803d8c8 */ BL func_08002634 \n\
+/* 0803d8c8 */ BL play_sound \n\
 /* 0803d8cc */ LDR R1, [R6] \n\
 /* 0803d8ce */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 0803d8d0 */ ADDS R0, 0x35 @ Add 0x35 to R0 \n\
@@ -83,14 +83,14 @@ branch_0803d874: \n\
 /* 0803d8de */ LDR R0, =s_warai_solo_seqData \n\
 /* 0803d8e0 */ MOVS R1, 0x40 @ Set R1 to 0x40 \n\
 /* 0803d8e2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803d8e4 */ BL func_08002698 \n\
+/* 0803d8e4 */ BL play_sound_w_pitch_volume \n\
 /* 0803d8e8 */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
-/* 0803d8ea */ BL func_0800c3a4 \n\
+/* 0803d8ea */ BL beats_to_ticks \n\
 /* 0803d8ee */ LDR R1, [R6] \n\
 /* 0803d8f0 */ STRH R0, [R1, 0x36] \n\
  \n\
 branch_0803d8f2: \n\
-/* 0803d8f2 */ BL func_0800bc40 \n\
+/* 0803d8f2 */ BL beatscript_enable_loops \n\
 /* 0803d8f6 */ ADD SP, 0xC \n\
 /* 0803d8f8 */ POP {R4-R6} \n\
 /* 0803d8fa */ POP {R0} \n\

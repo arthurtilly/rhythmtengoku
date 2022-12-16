@@ -50,7 +50,7 @@ thumb_func_start func_0803c08c \n\
 /* 0803c0e8 */ BL func_0804d8f8 \n\
 /* 0803c0ec */ LDR R1, =s_ninja_yumi_seqData \n\
 /* 0803c0ee */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 0803c0f0 */ BL func_0800267c \n\
+/* 0803c0f0 */ BL play_sound_in_player \n\
 /* 0803c0f4 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0803c0f6 */ LDR R0, [R6] \n\
 /* 0803c0f8 */ MOVS R4, 0xBC @ Set R4 to 0xBC \n\
@@ -58,7 +58,7 @@ thumb_func_start func_0803c08c \n\
 /* 0803c0fc */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0803c0fe */ LDRH R1, [R0] \n\
 /* 0803c100 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0803c102 */ BL func_08002920 \n\
+/* 0803c102 */ BL set_soundplayer_volume \n\
 /* 0803c106 */ LDR R0, [R6] \n\
 /* 0803c108 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0803c10a */ LDRH R1, [R0] \n\
@@ -68,7 +68,7 @@ thumb_func_start func_0803c08c \n\
 /* 0803c112 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 0803c114 */ ASRS R1, R1, 0x10 \n\
 /* 0803c116 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0803c118 */ BL func_080028a8 \n\
+/* 0803c118 */ BL set_soundplayer_pitch \n\
 /* 0803c11c */ LDR R1, [R6] \n\
 /* 0803c11e */ LDR R0, =0x2da \n\
 /* 0803c120 */ ADDS R2, R1, R0 @ Set R2 to R1 + R0 \n\

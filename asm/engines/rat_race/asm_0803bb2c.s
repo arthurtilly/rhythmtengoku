@@ -42,7 +42,7 @@ branch_0803bb54: \n\
 /* 0803bb6e */ LSLS R4, R4, 0x8 \n\
 /* 0803bb70 */ ASRS R4, R4, 0x10 \n\
 /* 0803bb72 */ MOVS R0, 0xE @ Set R0 to 0xE \n\
-/* 0803bb74 */ BL func_08001980 \n\
+/* 0803bb74 */ BL agb_random \n\
 /* 0803bb78 */ MOVS R3, 0x90 @ Set R3 to 0x90 \n\
 /* 0803bb7a */ SUBS R3, R3, R0 @ Set R3 to R3 - R0 \n\
 /* 0803bb7c */ LSLS R3, R3, 0x10 \n\

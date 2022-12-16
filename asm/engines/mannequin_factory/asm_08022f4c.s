@@ -9,9 +9,9 @@ thumb_func_start func_08022f4c \n\
 /* 08022f52 */ ADDS R0, 0xB0 @ Add 0xB0 to R0 \n\
 /* 08022f54 */ LDRH R0, [R0] \n\
 /* 08022f56 */ LSRS R0, R0, 0x1 \n\
-/* 08022f58 */ BL func_0800bdf8 \n\
+/* 08022f58 */ BL set_beatscript_tempo \n\
 /* 08022f5c */ LDR R0, =0xfffff500 \n\
-/* 08022f5e */ BL func_0800c088 \n\
+/* 08022f5e */ BL beatscript_scene_set_music_pitch \n\
 /* 08022f62 */ LDR R0, [R4] \n\
 /* 08022f64 */ ADDS R0, 0xB2 @ Add 0xB2 to R0 \n\
 /* 08022f66 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
@@ -21,7 +21,7 @@ thumb_func_start func_08022f4c \n\
 /* 08022f6e */ ADDS R0, 0xB4 @ Add 0xB4 to R0 \n\
 /* 08022f70 */ STR R2, [R0] \n\
 /* 08022f72 */ MOVS R0, 0x16 @ Set R0 to 0x16 \n\
-/* 08022f74 */ BL func_0800c3a4 \n\
+/* 08022f74 */ BL beats_to_ticks \n\
 /* 08022f78 */ LDR R1, [R4] \n\
 /* 08022f7a */ ADDS R1, 0xB8 @ Add 0xB8 to R1 \n\
 /* 08022f7c */ STR R0, [R1] \n\

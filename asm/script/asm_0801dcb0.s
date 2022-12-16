@@ -46,7 +46,7 @@ branch_0801dcfe: \n\
 /* 0801dd06 */ ADDS R1, 0x1 @ Add 0x1 to R1 \n\
 /* 0801dd08 */ CMP R1, 0x1E @ Compare R1 and 0x1E \n\
 /* 0801dd0a */ BLS branch_0801dcfe \n\
-/* 0801dd0c */ BL func_0800c3b8 \n\
+/* 0801dd0c */ BL get_current_mem_id \n\
 /* 0801dd10 */ LSLS R0, R0, 0x10 \n\
 /* 0801dd12 */ LSRS R0, R0, 0x10 \n\
 /* 0801dd14 */ LDR R1, [R5] \n\

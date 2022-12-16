@@ -46,7 +46,7 @@ branch_080397b4: \n\
 /* 080397d6 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080397d8 */ LDRSH R5, [R5, R0] \n\
 /* 080397da */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 080397dc */ BL func_08001980 \n\
+/* 080397dc */ BL agb_random \n\
 /* 080397e0 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080397e2 */ LSLS R2, R2, 0x18 \n\
 /* 080397e4 */ ASRS R2, R2, 0x18 \n\

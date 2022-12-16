@@ -59,7 +59,7 @@ branch_0803acf4: \n\
  \n\
 branch_0803ad06: \n\
 /* 0803ad06 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0803ad08 */ BL func_08002634 \n\
+/* 0803ad08 */ BL play_sound \n\
 /* 0803ad0c */ B branch_0803ad2a \n\
 \n\
 .ltorg \n\

@@ -16,7 +16,7 @@ thumb_func_start func_0800e1cc \n\
 /* 0800e1e0 */ STRH R2, [R0, 0x4] \n\
 /* 0800e1e2 */ STRH R3, [R0, 0x6] \n\
 /* 0800e1e4 */ STRH R5, [R0, 0x8] \n\
-/* 0800e1e6 */ BL func_0800c3b8 \n\
+/* 0800e1e6 */ BL get_current_mem_id \n\
 /* 0800e1ea */ LSLS R0, R0, 0x10 \n\
 /* 0800e1ec */ LSRS R0, R0, 0x10 \n\
 /* 0800e1ee */ LDR R1, =D_08936ba4 \n\

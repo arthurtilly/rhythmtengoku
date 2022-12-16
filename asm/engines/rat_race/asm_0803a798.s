@@ -100,7 +100,7 @@ jump_0803a838: \n\
 .ltorg \n\
 jump_0803a86c: \n\
 /* 0803a86c */ LDR R0, =s_rat_cat_seqData \n\
-/* 0803a86e */ BL func_08002634 \n\
+/* 0803a86e */ BL play_sound \n\
 /* 0803a872 */ LDR R5, =D_03005380 \n\
 /* 0803a874 */ LDR R0, [R5] \n\
 /* 0803a876 */ LDR R4, =D_030055d0 \n\

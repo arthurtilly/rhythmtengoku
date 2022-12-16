@@ -505,7 +505,7 @@ jump_0801104c: \n\
 branch_080110a8: \n\
 /* 080110a8 */ LDR R4, =D_089cd44c \n\
 /* 080110aa */ MOVS R0, 0xA @ Set R0 to 0xA \n\
-/* 080110ac */ BL func_08001980 \n\
+/* 080110ac */ BL agb_random \n\
 /* 080110b0 */ LSLS R0, R0, 0x10 \n\
 /* 080110b2 */ LSRS R0, R0, 0xE \n\
 /* 080110b4 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
@@ -518,7 +518,7 @@ branch_080110a8: \n\
 jump_080110c0: \n\
 /* 080110c0 */ LDR R4, =D_089cd348 \n\
 /* 080110c2 */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
-/* 080110c4 */ BL func_08001980 \n\
+/* 080110c4 */ BL agb_random \n\
 /* 080110c8 */ LSLS R0, R0, 0x10 \n\
 /* 080110ca */ LSRS R0, R0, 0xE \n\
 /* 080110cc */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
@@ -652,7 +652,7 @@ jump_080111bc: \n\
 /* 080111c8 */ BNE branch_080111f8 \n\
 /* 080111ca */ LDR R4, =D_089cd35c \n\
 /* 080111cc */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
-/* 080111ce */ BL func_08001980 \n\
+/* 080111ce */ BL agb_random \n\
 /* 080111d2 */ LSLS R0, R0, 0x10 \n\
 /* 080111d4 */ LSRS R0, R0, 0xE \n\
 /* 080111d6 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
@@ -778,7 +778,7 @@ branch_080112a0: \n\
 /* 080112b6 */ LDR R0, [SP, 0x8] \n\
 /* 080112b8 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080112ba */ BEQ branch_080112c0 \n\
-/* 080112bc */ BL func_0800bce4 \n\
+/* 080112bc */ BL beatscript_disable_loops \n\
  \n\
 branch_080112c0: \n\
 /* 080112c0 */ LDR R1, =D_030046a4 \n\

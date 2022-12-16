@@ -66,7 +66,7 @@ branch_08043350: \n\
 /* 08043358 */ LSLS R0, R6, 0x1 \n\
 /* 0804335a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0804335c */ LDRH R0, [R0] \n\
-/* 0804335e */ BL func_0800c3a4 \n\
+/* 0804335e */ BL beats_to_ticks \n\
 /* 08043362 */ STRH R0, [R7, 0x4] \n\
 /* 08043364 */ ADD SP, 0xC \n\
 /* 08043366 */ POP {R4-R7} \n\

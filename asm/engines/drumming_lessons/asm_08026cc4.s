@@ -15,7 +15,7 @@ thumb_func_start func_08026cc4 \n\
 /* 08026cd6 */ BEQ branch_08026ce0 \n\
 /* 08026cd8 */ LSLS R0, R0, 0x10 \n\
 /* 08026cda */ LSRS R0, R0, 0x10 \n\
-/* 08026cdc */ BL func_0800bdf8 \n\
+/* 08026cdc */ BL set_beatscript_tempo \n\
  \n\
 branch_08026ce0: \n\
 /* 08026ce0 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\

@@ -43,7 +43,7 @@ thumb_func_start func_0802d2bc \n\
 /* 0802d30a */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0802d30c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802d30e */ LDRSH R4, [R0, R1] \n\
-/* 0802d310 */ BL func_0800c1a8 \n\
+/* 0802d310 */ BL get_beatscript_tempo \n\
 /* 0802d314 */ LSLS R0, R0, 0x8 \n\
 /* 0802d316 */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 0802d318 */ BL __udivsi3 \n\
@@ -67,7 +67,7 @@ thumb_func_start func_0802d2bc \n\
 /* 0802d342 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0802d344 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802d346 */ LDRSH R4, [R0, R1] \n\
-/* 0802d348 */ BL func_0800c1a8 \n\
+/* 0802d348 */ BL get_beatscript_tempo \n\
 /* 0802d34c */ LSLS R0, R0, 0x8 \n\
 /* 0802d34e */ MOVS R1, 0x8C @ Set R1 to 0x8C \n\
 /* 0802d350 */ BL __udivsi3 \n\
@@ -78,7 +78,7 @@ thumb_func_start func_0802d2bc \n\
 /* 0802d35c */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0802d35e */ BL func_0804dcb8 \n\
 /* 0802d362 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0802d364 */ BL func_0800c3a4 \n\
+/* 0802d364 */ BL beats_to_ticks \n\
 /* 0802d368 */ LDR R1, [R6] \n\
 /* 0802d36a */ MOVS R2, 0xB8 @ Set R2 to 0xB8 \n\
 /* 0802d36c */ LSLS R2, R2, 0x1 \n\

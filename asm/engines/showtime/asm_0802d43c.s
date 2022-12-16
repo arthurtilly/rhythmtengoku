@@ -157,7 +157,7 @@ jump_0802d4e4: \n\
  \n\
 branch_0802d56e: \n\
 /* 0802d56e */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0802d570 */ BL func_08001980 \n\
+/* 0802d570 */ BL agb_random \n\
 /* 0802d574 */ LSLS R0, R0, 0x10 \n\
 /* 0802d576 */ LSRS R4, R0, 0x10 \n\
 /* 0802d578 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
@@ -201,7 +201,7 @@ branch_0802d5a8: \n\
 /* 0802d5c0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802d5c2 */ STR R1, [R0] \n\
 /* 0802d5c4 */ LDR R0, =s_esa_catch_seqData \n\
-/* 0802d5c6 */ BL func_08002634 \n\
+/* 0802d5c6 */ BL play_sound \n\
 /* 0802d5ca */ B branch_0802d62a \n\
 \n\
 .ltorg \n\
@@ -241,7 +241,7 @@ branch_0802d5dc: \n\
 /* 0802d61e */ MOVS R3, 0x74 @ Set R3 to 0x74 \n\
 /* 0802d620 */ BL func_0804d5d4 \n\
 /* 0802d624 */ LDR R0, =s_esa_catch_seqData \n\
-/* 0802d626 */ BL func_08002634 \n\
+/* 0802d626 */ BL play_sound \n\
  \n\
 branch_0802d62a: \n\
 /* 0802d62a */ LDR R0, =D_030055d0 \n\
@@ -274,21 +274,21 @@ branch_0802d65c: \n\
  \n\
 branch_0802d662: \n\
 /* 0802d662 */ LDR R0, =s_esa_pengin3_1_seqData \n\
-/* 0802d664 */ BL func_08002634 \n\
+/* 0802d664 */ BL play_sound \n\
 /* 0802d668 */ B branch_0802d7f2 \n\
 \n\
 .ltorg \n\
  \n\
 branch_0802d670: \n\
 /* 0802d670 */ LDR R0, =s_esa_pengin1_1_seqData \n\
-/* 0802d672 */ BL func_08002634 \n\
+/* 0802d672 */ BL play_sound \n\
 /* 0802d676 */ B branch_0802d7f2 \n\
 \n\
 .ltorg \n\
  \n\
 branch_0802d67c: \n\
 /* 0802d67c */ LDR R0, =s_esa_pengin2_1_seqData \n\
-/* 0802d67e */ BL func_08002634 \n\
+/* 0802d67e */ BL play_sound \n\
 /* 0802d682 */ B branch_0802d7f2 \n\
 \n\
 .ltorg \n\
@@ -463,7 +463,7 @@ jump_0802d720: \n\
 /* 0802d7e8 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0802d7ea */ STR R2, [R0] \n\
 /* 0802d7ec */ LDR R0, =s_f_esa_splash_ball_seqData \n\
-/* 0802d7ee */ BL func_08002634 \n\
+/* 0802d7ee */ BL play_sound \n\
  \n\
 branch_0802d7f2: \n\
 /* 0802d7f2 */ LDR R3, [SP] \n\

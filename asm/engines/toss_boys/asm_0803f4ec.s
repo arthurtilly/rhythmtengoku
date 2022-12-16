@@ -56,7 +56,7 @@ thumb_func_start func_0803f4ec \n\
 /* 0803f550 */ BEQ branch_0803f564 \n\
 /* 0803f552 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 0803f554 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803f556 */ BL func_080180b0 \n\
+/* 0803f556 */ BL gameplay_set_cue_input_buttons \n\
 /* 0803f55a */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803f55c */ STRB R0, [R4, 0xB] \n\
 /* 0803f55e */ LDR R0, [R5] \n\

@@ -41,7 +41,7 @@ branch_08035934: \n\
 /* 0803593e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08035940 */ BL func_0804cebc \n\
 /* 08035944 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
-/* 08035946 */ BL func_0800c3a4 \n\
+/* 08035946 */ BL beats_to_ticks \n\
 /* 0803594a */ LSLS R0, R0, 0x10 \n\
 /* 0803594c */ LSRS R0, R0, 0x10 \n\
 /* 0803594e */ LDR R1, =D_089e5890 \n\
@@ -78,7 +78,7 @@ branch_08035984: \n\
 /* 0803598e */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 08035990 */ BL func_0804cebc \n\
 /* 08035994 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
-/* 08035996 */ BL func_0800c3a4 \n\
+/* 08035996 */ BL beats_to_ticks \n\
 /* 0803599a */ LSLS R0, R0, 0x10 \n\
 /* 0803599c */ LSRS R0, R0, 0x10 \n\
 /* 0803599e */ LDR R2, =D_089e58a0 \n\

@@ -11,7 +11,7 @@ thumb_func_start func_08012de0 \n\
 /* 08012dea */ LDRB R0, [R1] \n\
 /* 08012dec */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08012dee */ BEQ branch_08012e18 \n\
-/* 08012df0 */ BL func_08001980 \n\
+/* 08012df0 */ BL agb_random \n\
 /* 08012df4 */ LSLS R0, R0, 0x10 \n\
 /* 08012df6 */ LSRS R0, R0, 0x10 \n\
 /* 08012df8 */ LDR R2, =0x454 \n\

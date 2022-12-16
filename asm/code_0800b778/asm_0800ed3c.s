@@ -9,7 +9,7 @@ thumb_func_start func_0800ed3c \n\
 /* 0800ed42 */ LDR R0, [R0, 0x4] \n\
 /* 0800ed44 */ LSLS R1, R1, 0x10 \n\
 /* 0800ed46 */ LSRS R1, R1, 0x10 \n\
-/* 0800ed48 */ BL func_080028d8 \n\
+/* 0800ed48 */ BL fade_out_soundplayer \n\
 /* 0800ed4c */ POP {R0} \n\
 /* 0800ed4e */ BX R0 \n\
 \n\

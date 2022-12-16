@@ -5,9 +5,9 @@ asm(".syntax unified \n\
 thumb_func_start func_0803c2f4 \n\
 /* 0803c2f4 */ PUSH {R4-R6, LR} \n\
 /* 0803c2f6 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0803c2f8 */ BL func_0800e044 \n\
+/* 0803c2f8 */ BL scene_hide_bg_layer \n\
 /* 0803c2fc */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 0803c2fe */ BL func_0800e044 \n\
+/* 0803c2fe */ BL scene_hide_bg_layer \n\
 /* 0803c302 */ LDR R0, =D_03005380 \n\
 /* 0803c304 */ LDR R0, [R0] \n\
 /* 0803c306 */ LDR R1, =D_030055d0 \n\
@@ -91,7 +91,7 @@ branch_0803c33e: \n\
 /* 0803c3a6 */ BL func_0804d770 \n\
 /* 0803c3aa */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803c3ac */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803c3ae */ BL func_08017338 \n\
+/* 0803c3ae */ BL gameplay_set_input_buttons \n\
 /* 0803c3b2 */ POP {R4-R6} \n\
 /* 0803c3b4 */ POP {R0} \n\
 /* 0803c3b6 */ BX R0 \n\

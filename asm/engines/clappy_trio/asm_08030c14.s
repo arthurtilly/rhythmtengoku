@@ -8,20 +8,20 @@ thumb_func_start func_08030c14 \n\
 /* 08030c18 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 08030c1a */ BEQ branch_08030c32 \n\
 /* 08030c1c */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 08030c1e */ BL func_08017448 \n\
+/* 08030c1e */ BL gameplay_enable_tutorial \n\
 /* 08030c22 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08030c24 */ BL func_08017458 \n\
+/* 08030c24 */ BL gameplay_set_skip_destination \n\
 /* 08030c28 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08030c2a */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 08030c2c */ BL func_0801853c \n\
+/* 08030c2c */ BL gameplay_set_text_advance_buttons \n\
 /* 08030c30 */ B branch_08030c40 \n\
  \n\
 branch_08030c32: \n\
 /* 08030c32 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08030c34 */ BL func_08017448 \n\
+/* 08030c34 */ BL gameplay_enable_tutorial \n\
 /* 08030c38 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08030c3a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08030c3c */ BL func_0801853c \n\
+/* 08030c3c */ BL gameplay_set_text_advance_buttons \n\
  \n\
 branch_08030c40: \n\
 /* 08030c40 */ POP {R4} \n\

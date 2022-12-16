@@ -57,12 +57,12 @@ void func_08012808(void) {
 // Play Game Select Music
 void func_08012814(void) {
     if (D_0300131c) {
-        func_0800bdf8(105); // Set Tempo
-        func_0800bf7c(&s_shibafu2_bgm_seqData); // Play Music
+        set_beatscript_tempo(105); // Set Tempo
+        beatscript_scene_set_music(&s_shibafu2_bgm_seqData); // Play Music
         D_0300131c = FALSE;
     } else {
-        func_0800bdf8(152); // Set Tempo
-        func_0800bf7c(&s_menu_bgm_seqData); // Play Music
+        set_beatscript_tempo(152); // Set Tempo
+        beatscript_scene_set_music(&s_menu_bgm_seqData); // Play Music
     }
 }
 
@@ -104,15 +104,15 @@ void func_08012928(void) {
         playsUntilNewCampaign = 1;
     }
     if (D_030046a8->data.totalMedals < 45) {
-        playsUntilNewCampaign = func_08001980(2) + 2;
+        playsUntilNewCampaign = agb_random(2) + 2;
     }
     if (D_030046a8->data.totalMedals < 30) {
-        playsUntilNewCampaign = func_08001980(4) + 3;
+        playsUntilNewCampaign = agb_random(4) + 3;
     }
     D_030046a8->data.unk266 = 1;
     D_030046a8->data.perfectAttemptsRemaining = 3;
     D_030046a8->data.playsUntilNextPerfectCampaign = playsUntilNewCampaign;
-    D_030046a8->data.perfectCampaignID = sceneInfo->unk454[func_08001980(sceneInfo->unk453)];
+    D_030046a8->data.perfectCampaignID = sceneInfo->unk454[agb_random(sceneInfo->unk453)];
     D_030046a8->data.unk26A = 0;
     D_030046a8->data.unk291 = 0;
 }
@@ -145,7 +145,7 @@ void func_08012a58(void) {
     func_080140f8(notice->perfectBorderSprite);
     notice->aButtonSprite = func_0804d160(D_03005380, D_08902c30, 0, 64, 64, 0x800, 1, 0, 0x8000);
     func_0804db44(D_03005380, notice->aButtonSprite, &vector[0], &vector[1]);
-    notice->unkC = text_printer_create_new((u16) func_0800c3b8(), 4, 120, 26);
+    notice->unkC = text_printer_create_new((u16) get_current_mem_id(), 4, 120, 26);
     text_printer_set_x_y(notice->unkC, 104, 320);
     text_printer_set_layer(notice->unkC, 0x800);
     text_printer_set_colors(notice->unkC, 0);
@@ -265,7 +265,7 @@ void func_08012cb4(s32 id) {
     func_0804d770(D_03005380, gGameSelectInfo.selectionBorderSprite, FALSE);
     notice->unk8 = 10;
     notice->unkA = 60;
-    func_0800c138(100, func_0800c3a4(0x18));
+    beatscript_scene_interpolate_music_volume(100, beats_to_ticks(0x18));
     gGameSelectInfo.unk0 = 3;
 }
 
@@ -403,7 +403,7 @@ void func_0801338c(void) {
 // [func_08013530] Graphics Init. 3
 void func_08013530(void) {
     func_0800c604(0);
-    func_0800bd04(0);
+    pause_beatscript_scene(FALSE);
     func_080041d0((u8) -2, (u8) -1, 0);
     func_0800425c(0x10, 0x90);
     func_080131e8();
@@ -417,7 +417,7 @@ void func_08013570(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4((u16)func_0800c3b8(), D_089cf9a8);
+    data = func_080087b4((u16)get_current_mem_id(), D_089cf9a8);
     task_run_after(data, func_08013530, 0);
 }
 
@@ -427,18 +427,18 @@ void func_0801359c(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_08002ee0((u16) func_0800c3b8(), D_089cf948, 0x3000);
+    data = func_08002ee0((u16) get_current_mem_id(), D_089cf948, 0x3000);
     task_run_after(data, func_08013570, 0);
 }
 
 
 // [func_080135cc] Graphics Init. 0
 void func_080135cc(void) {
-    func_0800856c(func_0800c3b8(), func_0801359c, 0, 2);
-    func_0800e0ec();
-    func_0800e0a0(1, 1, 0, 0, 2, 22, 0x8000);
-    func_0800e0a0(2, 1, 0, 0, 2, 24, 0xc001);
-    func_0800e0a0(3, 1, 0, 0, 0, 28, 0xc002);
+    func_0800856c(get_current_mem_id(), func_0801359c, 0, 2);
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(1, 1, 0, 0, 2, 22, 0x8000);
+    scene_set_bg_layer_display(2, 1, 0, 0, 2, 24, 0xc001);
+    scene_set_bg_layer_display(3, 1, 0, 0, 0, 28, 0xc002);
 }
 
 
@@ -459,8 +459,8 @@ void func_08013644(s32 arg) {
     gGameSelectInfo.cursorX = D_030046a8->data.gameSelectCursorX;
     gGameSelectInfo.cursorY = D_030046a8->data.gameSelectCursorY;
     func_0801332c(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY, &BG_OFSX, &BG_OFSY);
-    func_0800e058(BG_LAYER_3, BG_OFSX, BG_OFSY);
-    func_0800e058(BG_LAYER_2, BG_OFSX, BG_OFSY);
+    scene_set_bg_layer_pos(BG_LAYER_3, BG_OFSX, BG_OFSY);
+    scene_set_bg_layer_pos(BG_LAYER_2, BG_OFSX, BG_OFSY);
     gGameSelectInfo.selectionBorderSprite = func_0804d160(D_03005380, D_089029d0, 0, 48, 72, 0x4800, 1, 0, 0);
     gGameSelectInfo.cursorSprite = func_0804d160(D_03005380, D_08902e88, 0, 64, 64, 0x47ff, 1, 0, 0);
     func_080140f8(gGameSelectInfo.selectionBorderSprite);
@@ -736,7 +736,7 @@ void func_08014df0(void) {
     vector = &D_03004b10.BG_OFS[BG_LAYER_1].x;
     gGameSelectInfo.unk34 = -1;
     gGameSelectInfo.unk3C = -1;
-    gGameSelectInfo.unk38 = text_printer_create_new((u16) func_0800c3b8(), 4, 104, 32);
+    gGameSelectInfo.unk38 = text_printer_create_new((u16) get_current_mem_id(), 4, 104, 32);
     text_printer_set_x_y(gGameSelectInfo.unk38, 128, 55);
     text_printer_set_layer(gGameSelectInfo.unk38, 0x800);
     text_printer_set_colors(gGameSelectInfo.unk38, 0);
@@ -997,10 +997,10 @@ void func_08015cf4(void) {
 
     for (i = 0; i < 16; i++) {
         vector = &gGameSelectInfo.squareVectors[i];
-        vector->x = func_08001980(x);
-        vector->y = func_08001980(y);
-        gGameSelectInfo.squareSprites[i] = func_0804d294(D_03005380, D_08902960, func_08001980(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
-        func_0804dcb8(D_03005380, gGameSelectInfo.squareSprites[i], (func_08001980(0x100) + 0x100));
+        vector->x = agb_random(x);
+        vector->y = agb_random(y);
+        gGameSelectInfo.squareSprites[i] = func_0804d294(D_03005380, D_08902960, agb_random(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
+        func_0804dcb8(D_03005380, gGameSelectInfo.squareSprites[i], (agb_random(0x100) + 0x100));
     }
 
     x *= 2;
@@ -1008,10 +1008,10 @@ void func_08015cf4(void) {
 
     for (i = 16; i < 50; i++) {
         vector = &gGameSelectInfo.squareVectors[i];
-        vector->x = func_08001980(x);
-        vector->y = func_08001980(y);
-        gGameSelectInfo.squareSprites[i] = func_0804d294(D_03005380, D_08902998, func_08001980(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
-        func_0804dcb8(D_03005380, gGameSelectInfo.squareSprites[i], (func_08001980(0x100) + 0x100));
+        vector->x = agb_random(x);
+        vector->y = agb_random(y);
+        gGameSelectInfo.squareSprites[i] = func_0804d294(D_03005380, D_08902998, agb_random(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
+        func_0804dcb8(D_03005380, gGameSelectInfo.squareSprites[i], (agb_random(0x100) + 0x100));
     }
 
     D_03004b10.BLDMOD = (BLDMOD_BG0_TGT | BLDMOD_BG1_TGT | BLDMOD_BG2_TGT | BLDMOD_BG3_TGT | BLDMOD_BACKDROP_TGT);

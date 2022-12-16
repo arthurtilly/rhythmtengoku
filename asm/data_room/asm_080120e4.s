@@ -40,7 +40,7 @@ branch_0801211e: \n\
 /* 0801212c */ ADDS R2, 0x1 @ Add 0x1 to R2 \n\
 /* 0801212e */ CMP R2, 0x7 @ Compare R2 and 0x7 \n\
 /* 08012130 */ BLS branch_0801211e \n\
-/* 08012132 */ BL func_0800c3b8 \n\
+/* 08012132 */ BL get_current_mem_id \n\
 /* 08012136 */ LSLS R0, R0, 0x10 \n\
 /* 08012138 */ LSRS R0, R0, 0x10 \n\
 /* 0801213a */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\

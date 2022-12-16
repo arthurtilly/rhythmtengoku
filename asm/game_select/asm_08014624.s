@@ -94,7 +94,7 @@ branch_08014698: \n\
 /* 080146ce */ ASRS R0, R0, 0x10 \n\
 /* 080146d0 */ BL func_080140f8 \n\
 /* 080146d4 */ LDR R0, =s_f_open_game_seqData \n\
-/* 080146d6 */ BL func_08002634 \n\
+/* 080146d6 */ BL play_sound \n\
 /* 080146da */ B branch_080147fc \n\
 \n\
 .ltorg \n\
@@ -130,7 +130,7 @@ branch_080146ec: \n\
 /* 08014724 */ ASRS R0, R0, 0x10 \n\
 /* 08014726 */ BL func_080140f8 \n\
 /* 0801472a */ LDR R0, =s_f_clear_game_seqData \n\
-/* 0801472c */ BL func_08002634 \n\
+/* 0801472c */ BL play_sound \n\
 /* 08014730 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 08014732 */ BL func_080108c8 \n\
 /* 08014736 */ LDR R0, =D_030046a8 \n\
@@ -182,9 +182,9 @@ branch_08014768: \n\
 /* 080147a8 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080147aa */ LSLS R2, R2, 0x2 \n\
 /* 080147ac */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
-/* 080147ae */ BL func_08002698 \n\
+/* 080147ae */ BL play_sound_w_pitch_volume \n\
 /* 080147b2 */ LDR R0, =s_f_get_medal_seqData \n\
-/* 080147b4 */ BL func_08002634 \n\
+/* 080147b4 */ BL play_sound \n\
 /* 080147b8 */ LDR R4, =D_030046a8 \n\
 /* 080147ba */ LDR R1, [R4] \n\
 /* 080147bc */ LDR R0, =0x29e \n\

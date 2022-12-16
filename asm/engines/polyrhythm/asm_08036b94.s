@@ -25,9 +25,9 @@ branch_08036b9e: \n\
 /* 08036bb6 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
 /* 08036bb8 */ BHI branch_08036bd0 \n\
 /* 08036bba */ LDR R0, =s_kansei_seqData \n\
-/* 08036bbc */ BL func_08002634 \n\
+/* 08036bbc */ BL play_sound \n\
 /* 08036bc0 */ MOVS R1, 0x78 @ Set R1 to 0x78 \n\
-/* 08036bc2 */ BL func_08002920 \n\
+/* 08036bc2 */ BL set_soundplayer_volume \n\
 /* 08036bc6 */ B branch_08036bd8 \n\
 \n\
 .ltorg \n\

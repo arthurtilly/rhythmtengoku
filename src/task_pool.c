@@ -6,7 +6,7 @@
 struct Task {
     u16 alive:1;
     u16 paused:15;
-    u16 memID; // func_0800c3b8()
+    u16 memID; // get_current_mem_id()
     const struct TaskMethods *methods;
     s32 poolID;
     void *info; // static data

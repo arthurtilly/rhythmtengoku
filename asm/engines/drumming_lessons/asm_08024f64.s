@@ -32,9 +32,9 @@ branch_08024f96: \n\
 /* 08024f96 */ LDR R0, [R6] \n\
 /* 08024f98 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 08024f9a */ LDR R0, [R0] \n\
-/* 08024f9c */ BL func_08018660 \n\
+/* 08024f9c */ BL gameplay_display_text \n\
 /* 08024fa0 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08024fa2 */ BL func_08002634 \n\
+/* 08024fa2 */ BL play_sound \n\
  \n\
 branch_08024fa6: \n\
 /* 08024fa6 */ POP {R4-R6} \n\

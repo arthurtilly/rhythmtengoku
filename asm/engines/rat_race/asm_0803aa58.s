@@ -28,7 +28,7 @@ thumb_func_start func_0803aa58 \n\
 /* 0803aa84 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803aa86 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0803aa88 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803aa8a */ BL func_0800e0a0 \n\
+/* 0803aa8a */ BL scene_set_bg_layer_display \n\
 /* 0803aa8e */ ADD SP, 0xC \n\
 /* 0803aa90 */ POP {R4} \n\
 /* 0803aa92 */ POP {R0} \n\

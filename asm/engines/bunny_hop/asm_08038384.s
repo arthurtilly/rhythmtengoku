@@ -10,7 +10,7 @@ thumb_func_start func_08038384 \n\
 /* 0803838c */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0803838e */ ADDS R6, R1, 0x0 @ Set R6 to R1 + 0x0 \n\
 /* 08038390 */ MOV R8, R2 @ Set R8 to R2 \n\
-/* 08038392 */ BL func_0800c3b8 \n\
+/* 08038392 */ BL get_current_mem_id \n\
 /* 08038396 */ LSLS R0, R0, 0x10 \n\
 /* 08038398 */ LSRS R0, R0, 0x10 \n\
 /* 0803839a */ MOV R1, R8 @ Set R1 to R8 \n\
@@ -30,7 +30,7 @@ thumb_func_start func_08038384 \n\
 /* 080383b6 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080383b8 */ MOVS R2, 0x9 @ Set R2 to 0x9 \n\
 /* 080383ba */ BL func_08001fe0 \n\
-/* 080383be */ BL func_0800c3b8 \n\
+/* 080383be */ BL get_current_mem_id \n\
 /* 080383c2 */ LSLS R0, R0, 0x10 \n\
 /* 080383c4 */ LSRS R0, R0, 0x10 \n\
 /* 080383c6 */ LDR R3, [R5] \n\

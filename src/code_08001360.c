@@ -167,7 +167,7 @@ u16 func_08001964(void) {
     return D_030000b4;
 }
 
-u16 func_08001980(u16 arg1) {   // Random
+u16 agb_random(u16 arg1) {   // Random
     D_030000b4 = D_030000b4 * 0x6d + 0x3fd;
     return (D_030000b4 * arg1) >> 0x10;
 }

@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_0802dfa4 \n\
 /* 0802dfa4 */ PUSH {LR} \n\
 /* 0802dfa6 */ LDR R0, =s_change_ball_seqData \n\
-/* 0802dfa8 */ BL func_0800274c \n\
+/* 0802dfa8 */ BL stop_sound \n\
 /* 0802dfac */ LDR R0, =D_030055d0 \n\
 /* 0802dfae */ LDR R0, [R0] \n\
 /* 0802dfb0 */ LDR R2, =0x1d3 \n\
