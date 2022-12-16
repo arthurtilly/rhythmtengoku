@@ -54,10 +54,10 @@ void func_0802f420(u32 ver) {
     gFireworksInfo->unk4 = func_0800c660(0x340, 2);
     textAnim = func_08004b98(gFireworksInfo->unk4, D_0805a3d0, 1, 15);
     gFireworksInfo->textSprite = func_0804d160(D_03005380, textAnim, 0, 120, 144, 0x7f7, 0, 0, 0);
-    gFireworksInfo->unk90E = 0;
+    gFireworksInfo->screenBrightness = 0;
     gFireworksInfo->patternTableNext = 0;
-    D_03004b10.unk4C = 0x82; // There are probably appropriate macros for this.
-    D_03004b10.unk50 = 0;
+    D_03004b10.BLDMOD = BLDMOD_BG1_SRC | BLDMOD_BLEND_MODE(BLEND_MODE_LIGHTEN);
+    D_03004b10.COLEY = 0;
     gFireworksInfo->skipTutorialSprite = func_0804d160(D_03005380, D_088e93bc, 0, 208, 152, 0x802, 0, 0, 0);
     func_0804d770(D_03005380, gFireworksInfo->skipTutorialSprite, 0);
     gFireworksInfo->patternMode = FIREWORKS_PATTERN_MODE_0;
@@ -348,9 +348,9 @@ void func_0802f74c(u8 pattern, s32 x, s32 y) {
 // [func_0802fc38] MAIN - Update
 void func_0802fc38(void) {
     func_0802f664();
-    if (gFireworksInfo->unk90E != 0) {
-        gFireworksInfo->unk90E--;
-        D_03004b10.unk50 = gFireworksInfo->unk90E;
+    if (gFireworksInfo->screenBrightness != 0) {
+        gFireworksInfo->screenBrightness--;
+        D_03004b10.COLEY = gFireworksInfo->screenBrightness;
     }
 }
 
@@ -537,7 +537,7 @@ void func_0803012c(u32 arg0, struct FireworksCue *cue, u32 arg2, u32 arg3) {
     if (cue->pattern == FIREWORKS_PATTERN_TAIKO_BOMBER) {
         cue->state = 1;
         func_0804d8f8(D_03005380, cue->sprite, D_088e90c4, 0, 1, 127, 0);
-        gFireworksInfo->unk90E = 0x10;
+        gFireworksInfo->screenBrightness = 0x10;
     }
     else {
         func_0804d8f8(D_03005380, cue->sprite, D_088e8f34, 0, 1, 127, 0);

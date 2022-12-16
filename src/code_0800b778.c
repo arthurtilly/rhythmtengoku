@@ -13,37 +13,300 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 static s32 D_03001310[2]; // unknown type
 
+
 /* Main Game Handler */
 
-#include "asm/code_0800b778/asm_0800b778.s"
 
-#include "asm/code_0800b778/asm_0800b834.s"
+// BeatScript Engine Init.
+void func_0800b778(u32 memID) {
+    u32 i;
 
-#include "asm/code_0800b778/asm_0800b974.s"
+    D_030053c0.memID = memID;
+    D_030053c0.bypassLoops = FALSE;
+    D_030053c0.exitLoopNextUpdate = FALSE;
+    D_030053c0.paused = FALSE;
+    D_030053c0.musicPlayer = NULL;
+    D_030053c0.unk0_b7 = FALSE;
+    D_030053c0.unk0_b6 = FALSE;
+    D_030053c0.unk1C = 2;
+    D_030053c0.scriptBaseBPM = 120;
+    D_030053c0.musicBaseBPM = 120;
+    D_030053c0.scriptSpeed = INT_TO_FIXED(1.0);
+    func_0800bdf8(120);
+    D_030053c0.musicPitchSrc2 = 0;
+    func_0800c088(INT_TO_FIXED(0.0));
+    D_030053c0.musicVolume = INT_TO_FIXED(1.0);
+    D_030053c0.musicTrkVolume = INT_TO_FIXED(1.0);
+    D_030053c0.musicTrkTargets = 0;
+    D_030053c0.musicPitchEnv = 0;
 
-#include "asm/code_0800b778/asm_0800b9fc.s"
+    for (i = 0; i < 2; i++) {
+        D_030053c0.threads[i].active = FALSE;
+    }
 
-#include "asm/code_0800b778/asm_0800bc14.s"
+    func_0800e948();
+    func_0800eb0c();
+    func_0800ec20();
+    D_030053c0.unk2_b1 = TRUE;
+    D_030053c0.unk1C0 = NULL;
+    D_030053c0.unk1C4 = 0;
+}
 
-#include "asm/code_0800b778/asm_0800bc40.s"
 
-#include "asm/code_0800b778/asm_0800bc58.s"
+// Set SubScenes
+void func_0800b834(const struct SubScene **subScenes) {
+    struct BeatScriptThread *thread;
+    u32 i;
 
-#include "asm/code_0800b778/asm_0800bc68.s"
+    D_030053c0.paused = FALSE;
+    D_030053c0.bypassLoops = FALSE;
+    D_030053c0.exitLoopNextUpdate = FALSE;
+    D_030053c0.unk18 = 0;
 
-#include "asm/code_0800b778/asm_0800bcb8.s"
+    for (i = 0; i < 2; i++) {
+        D_030053c0.threads[i].active = FALSE;
+        D_030053c0.threads[i].unk0_b7 = FALSE;
+    }
 
-#include "asm/code_0800b778/asm_0800bcc4.s"
+    for (i = 0; (i < 2) && (subScenes[i] != NULL); i++) {
+        D_030053c0.currentThread = i;
+        func_0800c3c4(D_030053c0.currentThread + 1);
+        D_030053c0.threads[i].active = TRUE;
+        D_030053c0.threads[i].subScene = subScenes[i];
+        D_030053c0.threads[i].current = subScenes[i]->script;
+        D_030053c0.threads[i].timeUntilNext = 0;
+        D_030053c0.threads[i].stackCounter = 0;
+        D_03005588 = &D_030053c0.unk160[i];
+        D_0300558c = D_030053c0.threads[i].sprites;
+        if ((D_030053c0.memID == 1) && (i == 1)) {
+            D_030053c0.threads[1].startDelay = 2;
+        } else {
+            if (subScenes[i]->initFunc != NULL) {
+                subScenes[i]->initFunc(&D_030053c0.unk160[i], subScenes[i]->initParam);
+            }
+            D_030053c0.threads[i].startDelay = 0;
+        }
+    }
+}
 
-#include "asm/code_0800b778/asm_0800bce4.s"
 
-#include "asm/code_0800b778/asm_0800bcf4.s"
+// ? (called each loop after the pause menu has been opened at least once, probably by accident)
+void func_0800b974(void) {
+    const struct SubScene *subScene;
+    u32 i;
 
-#include "asm/code_0800b778/asm_0800bd04.s"
+    for (i = 0; i < 2; i++) {
+        D_030053c0.currentThread = i;
+        func_0800c3c4(D_030053c0.currentThread + 1);
 
-#include "asm/code_0800b778/asm_0800bd1c.s"
+        if (D_030053c0.threads[i].active) {
+            if (D_030053c0.threads[i].startDelay == 0) {
+                D_03005588 = &D_030053c0.unk160[i];
+                D_0300558c = D_030053c0.threads[i].sprites;
+                subScene = D_030053c0.threads[i].subScene;
+                if (subScene->unkFunc != NULL) {
+                    subScene->unkFunc(&D_030053c0.unk160[i], subScene->unkParam);
+                }
+            }
+        }
+    }
+}
 
-#include "asm/code_0800b778/asm_0800bd2c.s"
+
+// BeatScript Engine Update
+void func_0800b9fc(void) {
+    struct BeatScriptThread *thread;
+    const struct SubScene *subScene;
+    void (*subSceneFunc)();
+    u32 isId1;
+    u32 i, i2;
+
+    isId1 = (D_030053c0.memID == 1);
+
+    if (D_030053c0.exitLoopNextUpdate) {
+        D_030053c0.bypassLoops = TRUE;
+        D_030053c0.exitLoopNextUpdate = FALSE;
+    }
+    if (isId1) {
+        thread = &D_030053c0.threads[1];
+        if (thread->active && (thread->startDelay == 0)) {
+            func_0800e004(); // stub function
+        }
+    }
+
+    for (i = 0; i < 2; i++) {
+        D_030053c0.currentThread = i;
+        func_0800c3c4(D_030053c0.currentThread + 1);
+        thread = &D_030053c0.threads[i];
+        i2 = i + 1;
+
+        if (thread->active) {
+            D_03005588 = &D_030053c0.unk160[i];
+            D_0300558c = D_030053c0.threads[i].sprites;
+            while (thread->active && (thread->timeUntilNext < D_030053c0.unk14) && !D_030053c0.paused) {
+                func_0800cb28(i);
+            }
+
+            subScene = thread->subScene;
+            if (thread->active) {
+                if (thread->startDelay != 0) {
+                    thread->startDelay--;
+                    if (thread->startDelay == 0) {
+                        subSceneFunc = subScene->initFunc;
+                        if (subSceneFunc != NULL) {
+                            subSceneFunc(&D_030053c0.unk160[i], subScene->initParam);
+                        }
+                    }
+                } else {
+                    subSceneFunc = subScene->loopFunc;
+                    if (subSceneFunc != NULL) {
+                        subSceneFunc(&D_030053c0.unk160[i], subScene->loopParam);
+                    }
+                }
+            }
+
+            if (!thread->active) {
+                subSceneFunc = subScene->endFunc;
+                if (subSceneFunc != NULL) {
+                    subSceneFunc(&D_030053c0.unk160[i], subScene->endParam);
+                }
+                if (!thread->unk0_b7) {
+                    func_0804e0c4(D_03005380, i2);
+                    func_0800222c(i2);
+                    mem_heap_dealloc_with_id(i2);
+                    task_pool_forced_cancel_id(i2);
+                }
+            }
+        }
+    }
+
+    if (D_030053c0.unk2_b1) {
+        func_0800e970();
+        func_0800eb1c();
+        func_0800ec34();
+        func_08002934(D_030053c0.musicPlayer, D_030053c0.musicTrkTargets, D_030053c0.musicTrkVolume);
+        func_08002920(D_030053c0.musicPlayer, D_030053c0.musicVolume);
+    }
+
+    if (!D_030053c0.paused) {
+        for (i = 0; i < 2; i++) {
+            D_030053c0.threads[i].timeUntilNext -= D_030053c0.unk14;
+        }
+        D_030053c0.unk18 += D_030053c0.unk14;
+    }
+}
+
+
+// Check if No BeatScript Threads Are Active
+s32 func_0800bc14(void) {
+    u32 i;
+
+    for (i = 0; i < 2; i++) {
+        if (D_030053c0.threads[i].active) {
+            return FALSE;
+        }
+    }
+    return TRUE;
+}
+
+
+// Start Loop
+void func_0800bc40(void) {
+    D_030053c0.bypassLoops = FALSE;
+    D_030053c0.exitLoopNextUpdate = FALSE;
+}
+
+
+// Delayed Loop Exit Task Function
+void func_0800bc58(void) {
+    D_030053c0.exitLoopNextUpdate = TRUE;
+}
+
+
+// Exit Loop After Delay
+void func_0800bc68(u32 duration) {
+    if (D_030053c0.bypassLoops) {
+        return;
+    }
+
+    if (!D_030053c0.exitLoopNextUpdate) {
+        func_0800856c((u16)func_0800c3b8(), func_0800bc58, 0, func_0800c3a4(duration));
+        if (D_030053c0.memID == 1) {
+            func_0800c3ec(2);
+        }
+    }
+}
+
+
+// Exit Loop After One Beat
+void func_0800bcb8(void) {
+    func_0800bc68(0x18);
+}
+
+
+// Exit Loop (If Within a Loop)
+void func_0800bcc4(void) {
+    if (D_030053c0.bypassLoops) {
+        return;
+    }
+
+    if (!D_030053c0.exitLoopNextUpdate) {
+        D_030053c0.exitLoopNextUpdate = TRUE;
+    }
+}
+
+
+// Force Stop Loop
+void func_0800bce4(void) {
+    D_030053c0.bypassLoops = TRUE;
+}
+
+
+// Exit Loop on Next Update
+void func_0800bcf4(void) {
+    D_030053c0.exitLoopNextUpdate = TRUE;
+}
+
+
+// Pause Script
+void func_0800bd04(u32 pause) {
+    D_030053c0.paused = pause;
+}
+
+
+// Check if BeatScript Handler Is Paused
+u32 func_0800bd1c(void) {
+    return D_030053c0.paused;
+}
+
+
+// BeatScript Engine Force Quit
+void func_0800bd2c(void) {
+    struct BeatScriptThread *thread;
+    const struct SubScene *subScene;
+    u32 i, i2;
+
+    for (i = 0; i < 2; i++) {
+        D_030053c0.currentThread = i;
+        func_0800c3c4(D_030053c0.currentThread + 1);
+        thread = &D_030053c0.threads[i];
+        subScene = thread->subScene;
+        i2 = i + 1;
+
+        if (thread->active) {
+            D_03005588 = &D_030053c0.unk160[i];
+            D_0300558c = D_030053c0.threads[i].sprites;
+            if (subScene->endFunc != NULL) {
+                subScene->endFunc(&D_030053c0.unk160[i], subScene->endParam);
+            }
+            func_0804e0c4(D_03005380, i2);
+            func_0800222c(i2);
+            mem_heap_dealloc_with_id(i2);
+            task_pool_forced_cancel_id(i2);
+            thread->active = FALSE;
+        }
+    }
+}
 
 
 // Set Tempo
@@ -85,11 +348,23 @@ void func_0800be88(u16 speed) {
 }
 
 
-#include "asm/code_0800b778/asm_0800be9c.s"
+// Stub
+void func_0800be9c(void) {
+}
 
-#include "asm/code_0800b778/asm_0800bea0.s"
 
-#include "asm/code_0800b778/asm_0800bebc.s"
+// Set unk0_b7
+void func_0800bea0(u32 arg) {
+    D_030053c0.unk0_b7 = arg;
+    func_0800be64();
+}
+
+
+// Set unk1C
+void func_0800bebc(u32 arg) {
+    D_030053c0.unk1C = arg;
+    func_0800be64();
+}
 
 
 // Play Music
@@ -269,18 +544,24 @@ u32 func_0800c1a8(void) {
 #include "asm/code_0800b778/asm_0800c398.s"
 
 
-// Parse beat values.
-s32 func_0800c3a4(u32 arg0) {
-    fast_divsi3(arg0 << 8, D_030053c0.unk14);
+// Convert Script Beats To Real-Time Ticks
+s32 func_0800c3a4(u32 beats) {
+    fast_divsi3(INT_TO_FIXED(beats), D_030053c0.unk14);
 }
 
 
+// Get Current Active Thread (Memory ID / SubScene)
 u32 func_0800c3b8() {
     return D_03001310[0];
 }
 
 
-#include "asm/code_0800b778/asm_0800c3c4.s"
+// Set Current Active Thread (Memory ID / SubScene)
+void func_0800c3c4(u32 id) {
+    D_03001310[0] = id;
+    func_0804e0bc(D_03005380, id);
+}
+
 
 #include "asm/code_0800b778/asm_0800c3e4.s"
 
@@ -379,65 +660,217 @@ void *func_0800c43c(u32 size) {
 
 #include "asm/code_0800b778/asm_0800cb28.s"
 
-#include "asm/code_0800b778/asm_0800dfbc.s"
 
-#include "asm/code_0800b778/asm_0800dfc0.s"
+// Stub
+void func_0800dfbc(void) {
+}
 
-#include "asm/code_0800b778/asm_0800dfc4.s"
 
-#include "asm/code_0800b778/asm_0800dfe0.s"
+// Stub
+void func_0800dfc0(void) {
+}
 
-#include "asm/code_0800b778/asm_0800dfe4.s"
 
-#include "asm/code_0800b778/asm_0800dfe8.s"
+// a very broken (and unused) function
+s32 func_0800dfc4(void) {
+    void *r0;
 
-#include "asm/code_0800b778/asm_0800dfec.s"
+    r0 = (s32 *)((func_0800c3b8() * 0x9c));
+    r0 += ((s32)&D_030053c0 - 0x74); // ((s32)&D_03004b10 + 0x83c)
+    r0 += 0x98;
+    return *((s32 *)r0);
 
-#include "asm/code_0800b778/asm_0800dff0.s"
+    // return *((s32 *)&D_030053c0.threads[func_0800c3b8()]-1);
+}
 
-#include "asm/code_0800b778/asm_0800dff4.s"
 
-#include "asm/code_0800b778/asm_0800dff8.s"
+// Stub
+void func_0800dfe0(void) {
+}
 
-#include "asm/code_0800b778/asm_0800dffc.s"
 
-#include "asm/code_0800b778/asm_0800e000.s"
+// Stub
+void func_0800dfe4(void) {
+}
 
-#include "asm/code_0800b778/asm_0800e004.s"
 
-#include "asm/code_0800b778/asm_0800e008.s"
+// Stub
+void func_0800dfe8(void) {
+}
 
-#include "asm/code_0800b778/asm_0800e00c.s"
 
-#include "asm/code_0800b778/asm_0800e010.s"
+// Stub
+void func_0800dfec(void) {
+}
 
-#include "asm/code_0800b778/asm_0800e014.s"
 
-#include "asm/code_0800b778/asm_0800e018.s"
+// Stub
+void func_0800dff0(void) {
+}
 
-#include "asm/code_0800b778/asm_0800e030.s"
 
-#include "asm/code_0800b778/asm_0800e044.s"
+// Stub
+void func_0800dff4(void) {
+}
 
-#include "asm/code_0800b778/asm_0800e058.s"
 
-#include "asm/code_0800b778/asm_0800e068.s"
+// Stub
+void func_0800dff8(void) {
+}
 
-#include "asm/code_0800b778/asm_0800e084.s"
 
-#include "asm/code_0800b778/asm_0800e0a0.s"
+// Stub
+void func_0800dffc(void) {
+}
 
-#include "asm/code_0800b778/asm_0800e0ec.s"
 
-#include "asm/code_0800b778/asm_0800e100.s"
+// Stub
+void func_0800e000(void) {
+}
 
-#include "asm/code_0800b778/asm_0800e114.s"
 
-#include "asm/code_0800b778/asm_0800e128.s"
+// Stub
+void func_0800e004(void) {
+}
 
-#include "asm/code_0800b778/asm_0800e13c.s"
 
-#include "asm/code_0800b778/asm_0800e184.s"
+// Stub
+void func_0800e008(void) {
+}
+
+
+// Stub
+void func_0800e00c(void) {
+}
+
+
+// Stub
+void func_0800e010(void) {
+}
+
+
+// Stub
+void func_0800e014(void) {
+}
+
+
+// Set Video Mode
+void func_0800e018(s32 videoMode) {
+    u16 *displayControls = &D_03004b10.DISPCNT;
+
+    *displayControls &= ~DISPCNT_VIDEO_MODE_MASK;
+    *displayControls |= videoMode;
+}
+
+
+// Show BG Layer
+void func_0800e030(s32 layer) {
+    D_03004b10.DISPCNT |= (DISPCNT_DISPLAY_BG(layer));
+}
+
+
+// Hide BG Layer
+void func_0800e044(s32 layer) {
+    D_03004b10.DISPCNT &= ~(DISPCNT_DISPLAY_BG(layer));
+}
+
+
+// Set BG Layer Position
+void func_0800e058(s32 layer, s16 x, s16 y) {
+    struct Vector2 *bgOfs = D_03004b10.BG_OFS;
+
+    bgOfs[layer].x = x;
+    bgOfs[layer].y = y;
+}
+
+
+// Set BG Layer Render Data
+void func_0800e068(s32 layer, s32 tileset, s32 map, s32 priority) {
+    u16 *bgControls = D_03004b10.BG_CNT;
+
+    bgControls[layer] = BGCNT_TILEDATA_ADDR(tileset) | BGCNT_TILEMAP_ADDR(map) | BGCNT_PRIORITY(priority);
+}
+
+
+// Set BG Layer Priority
+void func_0800e084(s32 layer, s32 priority) {
+    u16 *bgControls = D_03004b10.BG_CNT;
+
+    bgControls[layer] &= ~BGCNT_PRIORITY_MASK;
+    bgControls[layer] |= priority;
+}
+
+
+// Set BG Layer Controls
+void func_0800e0a0(s32 layer, s32 show, s32 x, s32 y, s32 tileset, s32 map, s32 priority) {
+    func_0800e058(layer, x, y);
+    func_0800e068(layer, tileset, map, priority);
+
+    if (show) {
+        func_0800e030(layer);
+    } else {
+        func_0800e044(layer);
+    }
+}
+
+
+// Display OBJ Layer
+void func_0800e0ec(void) {
+    u16 *displayControls = &D_03004b10.DISPCNT;
+
+    *displayControls |= DISPCNT_DISPLAY_OAM;
+}
+
+
+// Hide OBJ Layer
+void func_0800e100(void) {
+    u16 *displayControls = &D_03004b10.DISPCNT;
+
+    *displayControls &= ~DISPCNT_DISPLAY_OAM;
+}
+
+
+// Enable OBJ Windows
+void func_0800e114(void) {
+    u16 *displayControls = &D_03004b10.DISPCNT;
+
+    *displayControls |= DISPCNT_ENABLE_SPRITE_WINDOWS;
+}
+
+
+// Disable OBJ Windows
+void func_0800e128(void) {
+    u16 *displayControls = &D_03004b10.DISPCNT;
+
+    *displayControls &= ~DISPCNT_ENABLE_SPRITE_WINDOWS;
+}
+
+
+// Set OBJ Mosaic Size
+void func_0800e13c(s16 xSize, s16 ySize) {
+    if (xSize >= 0) {
+        D_03004b10.MOSAIC &= ~MOSAIC_SPR_XSIZE_MASK;
+        D_03004b10.MOSAIC |= MOSAIC_SPR_XSIZE(xSize);
+    }
+    if (ySize >= 0) {
+        D_03004b10.MOSAIC &= ~MOSAIC_SPR_YSIZE_MASK;
+        D_03004b10.MOSAIC |= MOSAIC_SPR_YSIZE(ySize);
+    }
+}
+
+
+// Set BG Mosaic Size
+void func_0800e184(s16 xSize, s16 ySize) {
+    if (xSize >= 0) {
+        D_03004b10.MOSAIC &= ~MOSAIC_BG_XSIZE_MASK;
+        D_03004b10.MOSAIC |= MOSAIC_BG_XSIZE(xSize);
+    }
+    if (ySize >= 0) {
+        D_03004b10.MOSAIC &= ~MOSAIC_BG_YSIZE_MASK;
+        D_03004b10.MOSAIC |= MOSAIC_BG_YSIZE(ySize);
+    }
+}
+
 
 #include "asm/code_0800b778/asm_0800e1cc.s"
 

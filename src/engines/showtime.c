@@ -59,8 +59,8 @@ void func_0802bd40() {
 #include "asm/engines/showtime/asm_0802be10.s"
 
 void func_0802be24() {
-    D_03004b10.unk4C = 0;
-    D_03004b10.DISPCNT &= 0xDFFF;
+    D_03004b10.BLDMOD = BLDMOD_BLEND_MODE(BLEND_MODE_OFF);
+    D_03004b10.DISPCNT &= ~DISPCNT_ENABLE_WINDOW0;
 }
 
 void func_0802be40(u32 unused_arg0, u32* arg1) {

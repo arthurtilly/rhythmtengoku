@@ -4,27 +4,27 @@
 
 /* Main Game Handler */
 
-// extern ? func_0800b778(?); // BeatScript Init.?
-// extern ? func_0800b834(?);
-// extern ? func_0800b974(?);
-// extern ? func_0800b9fc(?); // BeatScript Main
-// extern ? func_0800bc14(?); // Check if no BeatScript Threads are running
-// extern ? func_0800bc40(?); // related to loops
-// extern ? func_0800bc58(?);
-// extern ? func_0800bc68(?);
-// extern ? func_0800bcb8(?);
-// extern ? func_0800bcc4(?);
-// extern ? func_0800bce4(?); // also related to loops
-// extern ? func_0800bcf4(?);
-extern void func_0800bd04(u32); // Pause BeatScript Handler
-// extern ? func_0800bd1c(?); // Check if BeatScript Handler Is Paused
-// extern ? func_0800bd2c(?); // BeatScript Stop?
+extern void func_0800b778(u32 memID); // BeatScript Init.
+extern void func_0800b834(const struct SubScene **subScenes); // Set SubScenes
+extern void func_0800b974(void); // ? (called each loop after the pause menu has been opened at least once)
+extern void func_0800b9fc(void); // BeatScript Update
+extern s32 func_0800bc14(void); // Check if No BeatScript Threads Are Active
+extern void func_0800bc40(void); // Enable Loops
+extern void func_0800bc58(void); // Delayed Loop Exit Task Function
+extern void func_0800bc68(u32 duration); // Exit Loop After Delay
+extern void func_0800bcb8(void); // Exit Loop After One Beat
+extern void func_0800bcc4(void); // Exit Loop (If Within a Loop)
+extern void func_0800bce4(void); // Force Stop Loop
+extern void func_0800bcf4(void); // Exit Loop on Next Update
+extern void func_0800bd04(u32); // Pause Script
+extern u32 func_0800bd1c(void); // Check if BeatScript Handler Is Paused
+extern void func_0800bd2c(void); // BeatScript Engine Force Quit
 extern void func_0800bdf8(u16 tempo); // Set Script Tempo
 extern void func_0800be64(void); // Update Script Tempo (retain unk1_b7)
 extern void func_0800be88(u16 speed); // Set Script Speed (Q8.8)
-// extern ? func_0800be9c(?);
-// extern ? func_0800bea0(?);
-// extern ? func_0800bebc(?);
+extern void func_0800be9c(void); // Stub
+extern void func_0800bea0(u32 arg); // Set unk0_b7
+extern void func_0800bebc(u32 arg); // Set unk1C
 extern u32  func_0800bed0(const struct SequenceData *, u32 override, s32 soundPlayer); // Play Music
 extern void func_0800bf7c(const struct SequenceData *); // Play Music (Override)
 extern void func_0800bf8c(const struct SequenceData *); // Play Music (No Override)
@@ -59,9 +59,9 @@ extern u32 func_0800c1a8(void); // Get Current Script Tempo
 // extern ? func_0800c390(?);
 // extern ? func_0800c394(?);
 extern u32 func_0800c398(void);
-extern s32 func_0800c3a4(u32); // (BeatScript) Beats to Ticks
-extern u32 func_0800c3b8(void); // Get Memory ID(?)
-// extern ? func_0800c3c4(?);
+extern s32 func_0800c3a4(u32); // Convert Script Beats To Real-Time Ticks
+extern u32 func_0800c3b8(void); // Get Current Active Thread (Memory ID / SubScene)
+extern void func_0800c3c4(u32 id); // Set Current Active Thread (Memory ID / SubScene)
 // extern ? func_0800c3e4(?);
 // extern ? func_0800c3e8(?);
 // extern ? func_0800c3ec(?);
@@ -108,48 +108,48 @@ extern struct TextObject1 *func_0800c660(u16, u8);
 // extern ? func_0800ca1c(?); // BEATSCRIPT - CMD_20 Statement Start ("Else"?)
 // extern ? func_0800ca70(?);
 // extern ? func_0800cb28(?); // BEATSCRIPT - Update Stream
-// extern ? func_0800dfbc(?);
-// extern ? func_0800dfc0(?);
-// extern ? func_0800dfc4(?);
-// extern ? func_0800dfe0(?);
-// extern ? func_0800dfe4(?);
-// extern ? func_0800dfe8(?);
-// extern ? func_0800dfec(?);
-// extern ? func_0800dff0(?);
-// extern ? func_0800dff4(?);
-// extern ? func_0800dff8(?);
-// extern ? func_0800dffc(?);
-// extern ? func_0800e000(?);
-// extern ? func_0800e004(?);
-// extern ? func_0800e008(?);
-// extern ? func_0800e00c(?);
-// extern ? func_0800e010(?);
-// extern ? func_0800e014(?);
-// extern ? func_0800e018(?);
-extern void func_0800e030(s32 layer); // Show Layer
-extern void func_0800e044(s32 layer); // Hide Layer
-extern void func_0800e058(s32 layer, s16 x, s16 y); // Move BG Layer
-// extern ? func_0800e068(?);
-// extern ? func_0800e084(?);
-// extern ? func_0800e0a0(?);
-extern void func_0800e0ec(void);
-// extern ? func_0800e100(?);
-// extern ? func_0800e114(?);
-// extern ? func_0800e128(?);
-// extern ? func_0800e13c(?);
-// extern ? func_0800e184(?);
+extern void func_0800dfbc(void); // Stub
+extern void func_0800dfc0(void); // Stub
+extern s32 func_0800dfc4(void); // a very broken (and unused) function
+extern void func_0800dfe0(void); // Stub
+extern void func_0800dfe4(void); // Stub
+extern void func_0800dfe8(void); // Stub
+extern void func_0800dfec(void); // Stub
+extern void func_0800dff0(void); // Stub
+extern void func_0800dff4(void); // Stub
+extern void func_0800dff8(void); // Stub
+extern void func_0800dffc(void); // Stub
+extern void func_0800e000(void); // Stub
+extern void func_0800e004(void); // Stub
+extern void func_0800e008(void); // Stub
+extern void func_0800e00c(void); // Stub
+extern void func_0800e010(void); // Stub
+extern void func_0800e014(void); // Stub
+extern void func_0800e018(s32 videoMode); // VIDEO - Set Video Mode
+extern void func_0800e030(s32 layer); // VIDEO - Show BG Layer
+extern void func_0800e044(s32 layer); // VIDEO - Hide BG Layer
+extern void func_0800e058(s32 layer, s16 x, s16 y); // VIDEO - Set BG Layer Position
+extern void func_0800e068(s32 layer, s32 tileset, s32 map, s32 priority); // VIDEO - Set BG Layer Render Data
+extern void func_0800e084(s32 layer, s32 priority); // VIDEO - Set BG Layer Priority
+extern void func_0800e0a0(s32 layer, s32 show, s32 x, s32 y, s32 tileset, s32 map, s32 priority); // VIDEO - Set BG Layer Controls
+extern void func_0800e0ec(void); // VIDEO - Display OBJ Layer
+extern void func_0800e100(void); // VIDEO - Hide OBJ Layer
+extern void func_0800e114(void); // Enable OBJ Windows
+extern void func_0800e128(void); // Disable OBJ Windows
+extern void func_0800e13c(s16 xSize, s16 ySize); // Set OBJ Mosaic Size
+extern void func_0800e184(s16 xSize, s16 ySize); // Set BG Mosaic Size
 // extern ? func_0800e1cc(?);
 // extern ? func_0800e208(?);
 // extern ? func_0800e25c(?);
 // extern ? func_0800e2a8(?);
 // extern ? func_0800e30c(?);
 // extern ? func_0800e364(?);
-extern u32 func_0800e3e4(s16, u32, u32, s8, s8, u16);
+extern u32 func_0800e3e4(s16 sprite, s32 x, s32 y, s8 xVel, s8 yVel, u16 duration);
 // extern ? func_0800e430(?);
 // extern ? func_0800e490(?);
 // extern ? func_0800e4f8(?);
 // extern ? func_0800e57c(?);
-extern void func_0800e62c(s16, u32, s16, u32, u16);
+extern void func_0800e62c(s16 sprite, u32 arg1, s16 x, s16 y, u16 duration);
 // extern ? func_0800e694(?);
 // extern ? func_0800e6ec(?);
 // extern ? func_0800e75c(?);

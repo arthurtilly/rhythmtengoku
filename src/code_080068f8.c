@@ -129,7 +129,7 @@ void func_08006e88(void) {
     if (!D_03004b10.updateDisplay) return;
 
     DmaCopy32(3, D_03004b10.BG_CNT, &REG_BG0CNT, 24);
-    DmaCopy32(3, &D_03004b10.unk3C, &REG_WIN0H, 24);
+    DmaCopy32(3, &D_03004b10.WIN0H, &REG_WIN0H, 24);
 
     func_0800186c(D_03004b10.oam, OAMBase, 0x400, 0x20, 0x100);
     offset = func_08004270();
@@ -248,6 +248,7 @@ void func_08007324(u32 update) {
 }
 
 
+// Set Palette Modifier Function
 void func_08007344(void *paletteFunc) {
     D_03004b10.unk854_4 = TRUE;
     D_03004b10.modifyPalette = paletteFunc;

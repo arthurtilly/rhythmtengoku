@@ -70,15 +70,13 @@ void func_08045738(void) {
 
 // [func_0804573c] Event 0 - Show Dancers
 void func_0804573c(void) {
-    u32 i = 0;
-    u32 fpX = 0x480000;
-    u32 intX;
-    u16 dancer;
+    s16 dancer;
+    s16 x;
+    u32 i;
 
-    for (i; i < 4; i++) {
+    for (i = 0; i < 4; i++) {
         dancer = func_0804d160(D_03005380, D_088adba4, 0, 300, 120, 0x4800 - i, 0, 0, 0);
-        intX = fpX >> 0x10;
-        func_0800e62c(dancer, 0, intX, 120, func_0800c3a4(0x12));
-        fpX += 0x200000;
+        x = 72 + (i * 32);
+        func_0800e62c(dancer, 0, x, 120, func_0800c3a4(0x12));
     }
 }

@@ -13,7 +13,7 @@ struct DrumTechInstrument {
 };
 
 struct DrumTechNote {
-    u16 drum;
+    u16 drumID;
     u16 volume;
     s16 pitch;
     u16 deltaTime;
@@ -202,10 +202,10 @@ extern void func_0802aa4c(void); // Update DrumTech Sound Timers
 extern void func_0802aa84(void); // Update DrumTech Sequence
 extern void func_0802aac0(const struct DrumTechNote *noteSeq, s32 timingOffset, s32 unused); // Import DrumTech Sequence
 extern void func_0802ab34(void); // Update DrumTech
-extern void func_0802ab44(s32 args, u32 *drum, u32 *volume, s32 *pitch); // Parse Arguments for Engine Event 0x00 (Cowbell)
+extern void func_0802ab44(s32 args, u32 *drumID, u32 *volume, s32 *pitch); // Parse Arguments for Engine Event 0x00 (Cowbell)
 extern void func_0802ab5c(s32 args); // Engine Event 0x00 (Cowbell)
-// extern ? func_0802ab7c(?);
-// extern ? func_0802ac44(?);
+// extern ? func_0802ab7c(?); // (https://decomp.me/scratch/0YYov)
+extern void func_0802ac44(const struct DrumTechInstrument *drumBank); // Set DrumTech Bank
 // extern ? func_0802ac50(?);
 // extern ? func_0802ac8c(?);
 // extern ? func_0802ad20(?);
@@ -216,8 +216,8 @@ extern void func_0802ab5c(s32 args); // Engine Event 0x00 (Cowbell)
 // extern ? func_0802af7c(?);
 // extern ? func_0802afb0(?);
 extern void func_0802b03c(u32 volume); // Set DrumTech Volume
-// extern ? func_0802b050(?);
-// extern ? func_0802b064(?);
+// extern ? func_0802b050(?); // Set ?
+extern void func_0802b064(void); // Stop DrumTech
 
 extern void night_walk_init_gfx3(void); // Graphics Init. 2
 extern void night_walk_init_gfx2(void); // Graphics Init. 1

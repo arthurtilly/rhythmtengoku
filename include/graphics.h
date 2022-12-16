@@ -95,27 +95,36 @@ struct TextObject2 {
   //  //  //  GRAPHICS BUFFER  //  //  //
 
 
+#define DISPCNT_DISPLAY_BG(x)   ((1 << 8) << (x))
+#define BGCNT_PRIORITY(x)       ((x) << 0)
+#define BGCNT_TILEDATA_ADDR(x)  ((x) << 2)
+#define BGCNT_TILEMAP_ADDR(x)   ((x) << 8)
+#define MOSAIC_BG_XSIZE(x)      ((x) << 0)
+#define MOSAIC_BG_YSIZE(y)      ((y) << 4)
+#define MOSAIC_SPR_XSIZE(x)     ((x) << 8)
+#define MOSAIC_SPR_YSIZE(y)     ((y) << 12)
+#define BLDMOD_BLEND_MODE(x)    ((x) << 6)
+#define COLEV_SRC_PIXEL(x)      ((x) << 0)
+#define COLEV_TGT_PIXEL(x)      ((x) << 8)
+
 extern struct GraphicsBuffer {
     u16 DISPCNT;    // LCD Control
     u16 unk2;
     u16 BG_CNT[4]; // BG Registers (IORAMBase + 0x8)
-    struct {
-        s16 horizontal;
-        s16 vertical;
-    } BG_OFS[4];
+    struct Vector2 BG_OFS[4]; // BG Horizontal & Vertical Offsets
     u32 unk1C[4];
     u32 unk2C[4];
-    u16 unk3C; // Window Registers (IORAMBase + 0x40)
-    u16 unk3E;
-    u16 unk40;
-    u16 unk42;
-    u16 unk44;
-    u16 unk46;
-    u16 unk48;
+    u16 WIN0H; // Window Registers (IORAMBase + 0x40)
+    u16 WIN1H;
+    u16 WIN0V;
+    u16 WIN1V;
+    u16 WININ;
+    u16 WINOUT;
+    u16 MOSAIC;
     u16 unk4A;
-    u16 unk4C;
-    u16 unk4E;
-    u16 unk50;
+    u16 BLDMOD;
+    u16 COLEV;
+    u16 COLEY;
     u16 unk52;
     u16 bgPalette[16][16];   // BG Palette Buffer, 03004b64, 0x54
     u16 objPalette[16][16];  // OBJ Palette Buffer, 03004d64, 0x254

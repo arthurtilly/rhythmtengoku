@@ -148,13 +148,13 @@ void bon_odori_engine_init(u32 ver) {
     bon_odori_init_gfx1();
     func_0800e0ec();
     func_0800e114();
-    func_0800e0a0(0, 1, 0, -64, 2, 24, 0xC000);
-    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
-    func_0800e0a0(2, 1, 0, 0, 0, 30, 1);
+    func_0800e0a0(BG_LAYER_0, TRUE, 0, -64, 2, 24, 0xC000);
+    func_0800e0a0(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
+    func_0800e0a0(BG_LAYER_2, TRUE, 0, 0, 0, 30, 1);
     gBonOdoriInfo->unk4 = func_0800c660(0x340, 2);
-    D_03004b10.unk46 = 0x311e;
-    D_03004b10.unk4C = 0x1041;
-    D_03004b10.unk4E = 0x1010;
+    D_03004b10.WINOUT = (WINOUT_OUT_BG1 | WINOUT_OUT_BG2 | WINOUT_OUT_BG3 | WINOUT_OUT_SPRITES | WINOUT_SPRW_BG0 | WINOUT_SPRW_SPRITES | WINOUT_SPRW_BLENDS);
+    D_03004b10.BLDMOD = (BLDMOD_BG0_SRC | BLDMOD_BLEND_MODE(BLEND_MODE_ALPHA) | BLDMOD_SPRITES_TGT);
+    D_03004b10.COLEV = (COLEV_SRC_PIXEL(0x10) | COLEV_TGT_PIXEL(0x10));
 
     for (i = 0; i < 4; i++) {
         gBonOdoriInfo->lyrics[i].textSprite |= -1;
@@ -295,9 +295,9 @@ void bon_odori_lyrics_start_highlight(u32 duration) {
 
     y = gBonOdoriInfo->lyricsY - 24;
     y -= gBonOdoriInfo->currentLyric * 24;
-    D_03004b10.BG_OFS[BG_LAYER_0].vertical = y;
+    D_03004b10.BG_OFS[BG_LAYER_0].y = y;
 
-    task = func_0800c4b0(1, func_0800c3a4(duration), &D_03004b10.BG_OFS[BG_LAYER_0].horizontal, initX, targetX);
+    task = func_0800c4b0(1, func_0800c3a4(duration), &D_03004b10.BG_OFS[BG_LAYER_0].x, initX, targetX);
     task_run_after(task, bon_odori_lyrics_finish_highlight, gBonOdoriInfo->currentLyric);
 }
 

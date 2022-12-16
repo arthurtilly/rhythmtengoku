@@ -363,7 +363,7 @@ void func_0801f8d0(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, 
     temp = (u16) func_0804ddb0(D_03005380, gSneakySpiritsInfo->ghostHit, 2);
     func_0804cebc(D_03005380, gSneakySpiritsInfo->ghostHit, func_08001980(temp));
     func_0804d770(D_03005380, gSneakySpiritsInfo->ghostHit, 1);
-    temp = func_0800e3e4(gSneakySpiritsInfo->ghostHit, 100, 76, xVel, yVel, (u16) duration);
+    temp = func_0800e3e4(gSneakySpiritsInfo->ghostHit, 100, 76, xVel, yVel, duration);
     task_run_after(temp, func_0801f810, 0);
 
     func_0804dae0(D_03005380, gSneakySpiritsInfo->door, 1, 0x7f, 0);
@@ -404,7 +404,7 @@ void func_0801fb14(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, 
 
     if (!info->disableTaunt) {
         func_0804d160(D_03005380, sneaky_spirits_anim05, 0, 160, 105, 0x8792, 1, 0, 3);
-        func_0800856c((u16) func_0800c3b8(), func_08002634, &s_ghost_warai_seqData, func_0800c3a4(0xc));
+        func_0800856c(func_0800c3b8(), func_08002634, (u32)&s_ghost_warai_seqData, func_0800c3a4(0x0C));
     }
 
     func_08002634(&s_ghost_dash_seqData);

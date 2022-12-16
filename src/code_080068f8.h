@@ -26,7 +26,7 @@ extern void func_08006d80(); // Disable Graphics Buffer?
 extern void func_08006da8(void); // Reset Graphics Buffer
 // extern ? func_08006e00(?);
 // extern ? func_08006e30(?);
-// extern ? func_08006e88(?); // Flush Graphics Buffer
+extern void func_08006e88(void); // Flush Graphics Buffer
 extern void func_08006f84(void); // Update Palette
 extern void func_08006fec(void); // Clear OAM Buffer
 extern void func_08007014(u16 colour); // Fill Palette with Solid Colour

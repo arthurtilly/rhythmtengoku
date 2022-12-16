@@ -20,7 +20,7 @@ struct FireworksInfo {
         u8  colour;     // Colour ID { 0..3 }
     } particles[72];        // Firework Particle Entities
     s16 skipTutorialSprite; // Unused "Start to Skip" Text (Sprite)
-    u8  unk90E;             // ??
+    u8  screenBrightness;   // Screen Brightness (for Taiko Bomber screen flash)
     u8  patternTableNext;   // Current Position in Fireworks 1 Pattern Table
     u8  patternMode;        // Pattern-Handling Mode { 0..3 }
     u8  patternDefault;     // Pattern ID to use if Pattern Mode is not within { 0..3 }

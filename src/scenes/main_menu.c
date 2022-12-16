@@ -12,8 +12,6 @@
 #include "src/scenes/gameplay.h"
 #include "src/lib_0804c870.h"
 
-extern u16 *D_0300558c; // ???
-
 extern const struct FontDefinition D_089de670;
 extern const struct Scene D_089ddbcc; // Debug Menu Script
 extern const struct Scene D_089cdf08; // Game Select Script
@@ -41,6 +39,7 @@ void func_0801242c() {
     D_030055d8 = GAME_SELECT;
 }
 
+
 // [func_08012438] Graphics Init. 2
 void func_08012438(void) {
     u32 data;
@@ -49,6 +48,7 @@ void func_08012438(void) {
     data = func_080087b4(func_0800c3b8(), D_089cdc8c);
     task_run_after(data, func_0800bd04, 0);
 }
+
 
 // [func_08012464] Graphics Init. 1
 void func_08012464(void) {
@@ -59,12 +59,14 @@ void func_08012464(void) {
     task_run_after(data, func_08012438, 0);
 }
 
+
 // [func_08012494] Graphics Init. 0
 void func_08012494(void) {
     func_0800856c(func_0800c3b8(), func_08012464, 0, 2);
     func_0800e0ec();
-    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
+    func_0800e0a0(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 }
+
 
 // [func_080124d0] Scene Init.
 void func_080124d0(u32 arg) {
@@ -97,9 +99,11 @@ void func_080124d0(u32 arg) {
     func_080009a0();
 }
 
+
 // [func_080125f8] Scene STUB
 void func_080125f8(u32 arg) {
 }
+
 
 // [func_080125fc] Scene Main
 void func_080125fc(u32 arg) {
@@ -157,6 +161,7 @@ void func_080125fc(u32 arg) {
     }
 }
 
+
 // Check if screen is ready to receive inputs.
 u32 func_080127d0(void) {
     if (gMainMenuInfo.screenReady) {
@@ -165,6 +170,7 @@ u32 func_080127d0(void) {
         return FALSE;
     }
 }
+
 
 // [func_080127ec] Scene Close
 void func_080127ec(u32 arg) {

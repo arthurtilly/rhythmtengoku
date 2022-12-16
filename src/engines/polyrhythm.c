@@ -1,4 +1,8 @@
 #include "engines/polyrhythm.h"
+
+#include "src/code_08001360.h"
+#include "src/task_pool.h"
+#include "src/code_08007468.h"
 #include "src/code_0800b778.h"
 #include "src/scenes/gameplay.h"
 #include "src/lib_0804c870.h"
@@ -8,23 +12,54 @@ asm(".include \"include/gba.inc\""); // Temporary
 // For readability.
 #define gPolyrhythmInfo ((struct PolyrhythmInfo *)D_030055d0)
 
+enum BlockTypesEnum {
+    BLOCK_TYPE_PLATFORM,
+    BLOCK_TYPE_PISTON_UPSIDE,
+    BLOCK_TYPE_PISTON_DOWNSIDE
+};
+
+enum BlockStatesEnum {
+    BLOCK_STATE_HIDDEN,
+    BLOCK_STATE_PLATFORM,
+    BLOCK_STATE_OPEN_PISTON
+};
 
 /* POLYRHYTHM */
 
 
-#include "asm/engines/polyrhythm/asm_08035d1c.s"
+// Graphics Init. 2
+void func_08035d1c(void) {
+    func_0800c604(0);
+    func_08017578();
+}
 
-#include "asm/engines/polyrhythm/asm_08035d2c.s"
 
-#include "asm/engines/polyrhythm/asm_08035d6c.s"
+// Graphics Init. 1
+void func_08035d2c(void) {
+    s32 task;
+
+    func_0800c604(0);
+    task = func_08002ee0(func_0800c3b8(), D_089e59fc[gPolyrhythmInfo->version], 0x2000);
+    task_run_after(task, func_08035d1c, 0);
+}
 
 
-// Game Init.
+// Graphics Init. 0
+void func_08035d6c(void) {
+    s32 task;
+
+    func_0800c604(0);
+    task = func_080087b4(func_0800c3b8(), D_089e5968);
+    task_run_after(task, func_08035d2c, 0);
+}
+
+
+// Game Engine Init.
 void func_08035d98(u32 ver) {
     gPolyrhythmInfo->version = ver;
     func_08035d6c(); // Init. Graphics
     func_0800e0ec(); // Init. BG Layers
-    func_0800e0a0(1, 1, 0, 0, 0, 29, 2); // Init. BG1
+    func_0800e0a0(BG_LAYER_1, TRUE, 0, 0, 0, 29, 2); // Init. BG1
     func_08017338(A_BUTTON | DPAD_ALL, 0); // Init. Button Filters
     func_08035f7c(); // Populate World
     func_0803656c(); // Init. Rods
@@ -40,34 +75,92 @@ void func_08035e84(void) {
 }
 
 
-// Game Update
+// Game Engine Update
 void func_08035e88(void) {
     func_0803698c();
 }
 
 
-// Game Close
+// Game Engine Close
 void func_08035e94(void) {
 }
 
 
-#include "asm/engines/polyrhythm/asm_08035e98.s"
+// Cue - Spawn
+void func_08035e98(struct Cue *cue, struct PolyrhythmCue *info, u32 lane) {
+    info->lane = lane;
+}
 
-#include "asm/engines/polyrhythm/asm_08035eac.s"
 
-#include "asm/engines/polyrhythm/asm_08035ecc.s"
+// Cue - Update
+u32 func_08035eac(struct Cue *cue, struct PolyrhythmCue *info, u32 runningTime, u32 duration) {
+    if (runningTime > (duration + func_0800c3a4(0xC))) {
+        return TRUE;
+    }
+    return FALSE;
+}
 
-#include "asm/engines/polyrhythm/asm_08035ed0.s"
 
-#include "asm/engines/polyrhythm/asm_08035f08.s"
+// Cue - Despawn
+void func_08035ecc(struct Cue *cue, struct PolyrhythmCue *info) {
+}
 
-#include "asm/engines/polyrhythm/asm_08035f40.s"
 
-#include "asm/engines/polyrhythm/asm_08035f4c.s"
+// Cue - Hit
+void func_08035ed0(struct Cue *cue, struct PolyrhythmCue *info, u32 pressed, u32 released) {
+    s32 pistonID;
 
-#include "asm/engines/polyrhythm/asm_08035f74.s"
+    pistonID = func_0803638c(info->lane);
 
-#include "asm/engines/polyrhythm/asm_08035f78.s"
+    if (!func_080364f4(info->lane, pistonID)) {
+        func_08018068();
+        if (pistonID >= 0) {
+            func_08017928(0, 3, 0);
+        }
+    }
+}
+
+
+// Cue - Barely
+void func_08035f08(struct Cue *cue, struct PolyrhythmCue *info, u32 pressed, u32 released) {
+    s32 pistonID;
+
+    pistonID = func_0803638c(info->lane);
+
+    if (!func_080364f4(info->lane, pistonID)) {
+        func_08018068();
+        if (pistonID >= 0) {
+            func_08017928(0, 3, 0);
+        }
+    }
+}
+
+
+// Cue - Miss
+void func_08035f40(struct Cue *cue, struct PolyrhythmCue *info) {
+    func_08018068();
+}
+
+
+// Input Event
+void func_08035f4c(u32 pressed, u32 released) {
+    if (pressed & A_BUTTON) {
+        func_0803638c(1);
+    }
+    if (pressed & DPAD_ALL) {
+        func_0803638c(0);
+    }
+}
+
+
+// Common Event 0 (Beat Animation)
+void func_08035f74(void) {
+}
+
+
+// Common Event 1 (Display Text)
+void func_08035f78(void) {
+}
 
 
 // Populate World
@@ -89,9 +182,9 @@ void func_08035f7c(void) {
         block = gPolyrhythmInfo->lanes[i];
         for (j = 0; j < 16; j++) {
             block->sprite = func_0804d160(D_03005380, D_088f61fc, 0, x, y, z, 0, 0, 0);
-            block->unk0_b0 = 0;
-            block->unk0_b3 = 0;
-            x += 0x10;
+            block->type = BLOCK_TYPE_PLATFORM;
+            block->state = BLOCK_STATE_HIDDEN;
+            x += 16;
             y -= 8;
             z += 4;
             block++;
@@ -101,17 +194,93 @@ void func_08035f7c(void) {
 }
 
 
-#include "asm/engines/polyrhythm/asm_080360a8.s"
+// Get Next Two Pistons
+void func_080360a8(u32 lane, s32 *piston1ID, s32 *piston2ID) {
+    struct PolyrhythmBlock *block;
+    u32 i;
 
-#include "asm/engines/polyrhythm/asm_080360f8.s"
+    *piston2ID = -1;
+    *piston1ID = -1;
 
+    for (i = 0; i < 16; i++) {
+        block = &gPolyrhythmInfo->lanes[lane][i];
+
+        if ((block->type == BLOCK_TYPE_PISTON_UPSIDE) || (block->type == BLOCK_TYPE_PISTON_DOWNSIDE)) {
+            if (block->state == BLOCK_STATE_PLATFORM) {
+                if (*piston1ID < 0) {
+                    *piston1ID = i;
+                } else {
+                    *piston2ID = i;
+                    break;
+                }
+            }
+        }
+    }
+}
+
+
+// Display Arrow Sprite
+void func_080360f8(u32 lane, s32 blockID) {
+    struct PolyrhythmBlock *block;
+    s16 arrowSprite;
+    s32 x, y;
+    u32 z;
+
+    if (gPolyrhythmInfo->version == 1) {
+        return;
+    }
+
+    if (gPolyrhythmInfo->version == 2) {
+        return;
+    }
+
+    if (lane != 0) {
+        arrowSprite = gPolyrhythmInfo->aButtonArrowSprite;
+    } else {
+        arrowSprite = gPolyrhythmInfo->dPadArrowSprite;
+    }
+
+    if (blockID >= 0) {
+        block = &gPolyrhythmInfo->lanes[lane][blockID];
+        x = func_0804ddb0(D_03005380, block->sprite, 4);
+        y = func_0804ddb0(D_03005380, block->sprite, 5);
+        z = func_080364d4(lane, blockID) - 5;
+        func_0804d55c(D_03005380, arrowSprite, x, y, z);
+        func_0804d770(D_03005380, arrowSprite, TRUE);
+    } else {
+        func_0804d770(D_03005380, arrowSprite, FALSE);
+    }
+}
+
+
+// (https://decomp.me/scratch/1esDB)
 #include "asm/engines/polyrhythm/asm_080361c0.s"
 
 #include "asm/engines/polyrhythm/asm_08036250.s"
 
 #include "asm/engines/polyrhythm/asm_080362e4.s"
 
-#include "asm/engines/polyrhythm/asm_0803638c.s"
+
+// Piston Push
+s32 func_0803638c(u32 lane) {
+    struct PolyrhythmBlock *piston;
+    s32 currentPistonID, nextPistonID;
+
+    func_080360a8(lane, &currentPistonID, &nextPistonID);
+
+    if (currentPistonID < 0) {
+        return -1;
+    }
+
+    piston = &gPolyrhythmInfo->lanes[lane][currentPistonID];
+    piston->state = BLOCK_STATE_OPEN_PISTON;
+    func_0804d8f8(D_03005380, piston->sprite, D_089e5c1c[piston->type], 0, 1, 0x7f, 0);
+    gPolyrhythmInfo->unk104[lane]++;
+    func_08002634(D_089e5c34[piston->type]);
+    func_080360f8(lane, nextPistonID);
+    return currentPistonID;
+}
+
 
 #include "asm/engines/polyrhythm/asm_08036428.s"
 
@@ -128,7 +297,7 @@ s32 func_0803647c(u32 lane) {
 }
 
 
-//
+// Get Lane something
 s32 func_0803648c(u32 lane, s32 blockID) {
     struct PolyrhythmBlock *block;
     if (blockID < 0) {
@@ -139,7 +308,7 @@ s32 func_0803648c(u32 lane, s32 blockID) {
     }
 
     block = &gPolyrhythmInfo->lanes[lane][blockID];
-    return D_089e5c08[block->unk0_b3];
+    return D_089e5c08[block->state];
 }
 
 

@@ -139,7 +139,7 @@ void func_08012a58(void) {
     s16 *vector;
 
     notice = &gGameSelectInfo.perfectCampaignNotice;
-    vector = &D_03004b10.BG_OFS[BG_LAYER_1].horizontal;
+    vector = &D_03004b10.BG_OFS[BG_LAYER_1].x;
 
     notice->perfectBorderSprite = func_0804d160(D_03005380, D_08902c10, 0, 48, 72, 0x8878, 1, 0, 0x8000);
     func_080140f8(notice->perfectBorderSprite);
@@ -434,7 +434,7 @@ void func_0801359c(void) {
 
 // [func_080135cc] Graphics Init. 0
 void func_080135cc(void) {
-    func_0800856c((u16) func_0800c3b8(), func_0801359c, 0, 2);
+    func_0800856c(func_0800c3b8(), func_0801359c, 0, 2);
     func_0800e0ec();
     func_0800e0a0(1, 1, 0, 0, 2, 22, 0x8000);
     func_0800e0a0(2, 1, 0, 0, 2, 24, 0xc001);
@@ -624,7 +624,7 @@ void func_080140a4(s32 x) {
 
 // Link Sprite Position to BG Offset?
 void func_080140f8(s16 sprite) {
-    func_0804db44(D_03005380, sprite, &D_03004b10.BG_OFS[BG_LAYER_3].horizontal, &D_03004b10.BG_OFS[BG_LAYER_3].vertical);
+    func_0804db44(D_03005380, sprite, &D_03004b10.BG_OFS[BG_LAYER_3].x, &D_03004b10.BG_OFS[BG_LAYER_3].y);
 }
 
 
@@ -633,8 +633,8 @@ void func_08014118(s32 arg) {
     s16 BG_OFSX, BG_OFSY;
 
     if (!gGameSelectInfo.unk8_b0) {
-        BG_OFSX = D_03004b10.BG_OFS[BG_LAYER_3].horizontal;
-        BG_OFSY = D_03004b10.BG_OFS[BG_LAYER_3].vertical;
+        BG_OFSX = D_03004b10.BG_OFS[BG_LAYER_3].x;
+        BG_OFSY = D_03004b10.BG_OFS[BG_LAYER_3].y;
         switch (gGameSelectInfo.unk0) {
             case 1:
                 func_08014978();
@@ -651,8 +651,8 @@ void func_08014118(s32 arg) {
         func_08015298();
         func_08013a38();
         func_080140ec();
-        BG_OFSX -= D_03004b10.BG_OFS[BG_LAYER_3].horizontal;
-        BG_OFSY -= D_03004b10.BG_OFS[BG_LAYER_3].vertical;
+        BG_OFSX -= D_03004b10.BG_OFS[BG_LAYER_3].x;
+        BG_OFSY -= D_03004b10.BG_OFS[BG_LAYER_3].y;
         func_080162bc(BG_OFSX - 1, BG_OFSY);
         func_0801626c();
         func_08015660();
@@ -733,7 +733,7 @@ void func_08014938(u32 arg) {
 void func_08014df0(void) {
     s16 *vector;
 
-    vector = &D_03004b10.BG_OFS[BG_LAYER_1].horizontal;
+    vector = &D_03004b10.BG_OFS[BG_LAYER_1].x;
     gGameSelectInfo.unk34 = -1;
     gGameSelectInfo.unk3C = -1;
     gGameSelectInfo.unk38 = text_printer_create_new((u16) func_0800c3b8(), 4, 104, 32);
@@ -924,7 +924,7 @@ void func_080154f0(void) {
     u32 score;
 
     flow = &gGameSelectInfo.flowDisplay;
-    vector = &D_03004b10.BG_OFS[BG_LAYER_1].horizontal;
+    vector = &D_03004b10.BG_OFS[BG_LAYER_1].x;
 
     for (i = 0; i < 3; i++) {
         flow->numberSprites[i] = func_0804d160(D_03005380, D_08902b78, 10, 208 - (i * 8), 128, 0, 0, 0, 0);
@@ -1014,8 +1014,8 @@ void func_08015cf4(void) {
         func_0804dcb8(D_03005380, gGameSelectInfo.squareSprites[i], (func_08001980(0x100) + 0x100));
     }
 
-    D_03004b10.unk4C = 0x2F00;
-    D_03004b10.unk4E = 0x1010;
+    D_03004b10.BLDMOD = (BLDMOD_BG0_TGT | BLDMOD_BG1_TGT | BLDMOD_BG2_TGT | BLDMOD_BG3_TGT | BLDMOD_BACKDROP_TGT);
+    D_03004b10.COLEV = (COLEV_SRC_PIXEL(0x10) | COLEV_TGT_PIXEL(0x10));
 
     for (i = 0; i < 10; i++) {
         gGameSelectInfo.unk198[i].unk0 = 0;

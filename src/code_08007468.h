@@ -63,7 +63,7 @@ extern struct unk_struct_08008420 *func_08008420(struct unk_struct_08008420_init
 extern u32 func_08008464(struct unk_struct_08008420 *arg0);
 extern struct unk_struct_0800852c *func_0800852c(struct unk_struct_0800852c_init *arg0);
 extern u32 func_08008548(struct unk_struct_0800852c *arg0);
-extern u32  func_0800856c(u16, void *, const struct SequenceData *, u32); // second arg is a function, fourth arg is a duration value, third arg may be more vague
+extern u32 func_0800856c(u16 memID, void *func, s32 arg, u32 delayTicks); // Run Function with Parameter after given Delay Time
 // extern ? func_08008594(?);
 // extern ? func_080085e4(?);
 // extern ? func_08008608(?);

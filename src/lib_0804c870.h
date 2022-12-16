@@ -62,7 +62,7 @@ extern void func_0804df4c(struct SpriteHandler *, s16, s8);
 // extern ? func_0804df6c(?);
 // extern ? func_0804df80(?);
 // extern ? func_0804e0a0(?);
-// extern ? func_0804e0bc(?);
+extern void func_0804e0bc(struct SpriteHandler *, u16);
 // extern ? func_0804e0c0(?);
 extern void func_0804e0c4(struct SpriteHandler *, u16);
 // extern ? func_0804e0d8(?);

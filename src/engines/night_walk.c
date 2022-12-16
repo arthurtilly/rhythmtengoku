@@ -459,7 +459,7 @@ void func_0802aa84(void) {
 
         if (note->deltaTime > 0) {
             if (--note->deltaTime == 0) {
-                func_0802ab7c(note->drum, note->volume, note->pitch);
+                func_0802ab7c(note->drumID, note->volume, note->pitch);
             }
         }
     }
@@ -475,12 +475,12 @@ void func_0802aac0(const struct DrumTechNote *sequence, s32 timingOffset, s32 un
 
     func_0802a994();
 
-    while ((sequence->drum != 0xff) && (i < 100)) {
+    while ((sequence->drumID != 0xff) && (i < 100)) {
         delay = func_0800c3a4(ticks) + timingOffset;
         if (delay <= 0 || ticks == 0) {
-            func_0802ab7c(sequence->drum, sequence->volume, sequence->pitch);
+            func_0802ab7c(sequence->drumID, sequence->volume, sequence->pitch);
         } else {
-            seqBuffer->drum = sequence->drum;
+            seqBuffer->drumID = sequence->drumID;
             seqBuffer->volume = sequence->volume;
             seqBuffer->pitch = sequence->pitch;
             seqBuffer->deltaTime = delay + 1;
@@ -493,7 +493,7 @@ void func_0802aac0(const struct DrumTechNote *sequence, s32 timingOffset, s32 un
 }
 
 
-// Update Something
+// Update DrumTech
 void func_0802ab34(void) {
     func_0802aa4c();
     func_0802aa84();
@@ -501,8 +501,8 @@ void func_0802ab34(void) {
 
 
 // Parse Arguments for Engine Event 0x00 (Cowbell)
-void func_0802ab44(s32 args, u32 *drum, u32 *volume, s32 *pitch) {
-    *drum = (args) & 0xff;
+void func_0802ab44(s32 args, u32 *drumID, u32 *volume, s32 *pitch) {
+    *drumID = (args) & 0xff;
     *volume = (args >> 8) & 0x1ff;
     *pitch = (args >> 17);
 }
@@ -510,18 +510,23 @@ void func_0802ab44(s32 args, u32 *drum, u32 *volume, s32 *pitch) {
 
 // Engine Event 0x00 (Cowbell)
 void func_0802ab5c(s32 args) {
-    u32 drum;
+    u32 drumID;
     u32 volume;
     s32 pitch;
 
-    func_0802ab44(args, &drum, &volume, &pitch);
-    func_0802ab7c(drum, volume, pitch);
+    func_0802ab44(args, &drumID, &volume, &pitch);
+    func_0802ab7c(drumID, volume, pitch);
 }
 
 
 #include "asm/engines/night_walk/asm_0802ab7c.s"
 
-#include "asm/engines/night_walk/asm_0802ac44.s"
+
+// Set DrumTech Bank
+void func_0802ac44(const struct DrumTechInstrument *drumBank) {
+    D_03001568->drumBank = drumBank;
+}
+
 
 #include "asm/engines/night_walk/asm_0802ac50.s"
 
@@ -550,7 +555,19 @@ void func_0802b03c(u32 volume) {
 
 #include "asm/engines/night_walk/asm_0802b050.s"
 
-#include "asm/engines/night_walk/asm_0802b064.s"
+
+// Stop DrumTech
+void func_0802b064(void) {
+    u32 i;
+
+    func_0802a994();
+
+    for (i = 0; i < 10; i++) {
+        if (D_03001568->soundTimers[i] != 0) {
+            func_08002828(D_08aa4460[i].soundPlayer);
+        }
+    }
+}
 
 
 // Graphics Init. 2

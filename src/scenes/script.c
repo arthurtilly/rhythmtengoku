@@ -24,8 +24,8 @@ void func_0801d860(u32 arg) {
 
 
 // [func_0801d86c] Script Init.
-void func_0801d86c(u32 arg0) {
-    u32 temp[4];
+void func_0801d86c(const struct SubScene *subScene) {
+    const struct SubScene *subScenes[4];
 
     gPauseMenu.state = PAUSE_STATE_PLAY;
     gPauseMenu.enabled = FALSE;
@@ -40,10 +40,10 @@ void func_0801d86c(u32 arg0) {
     func_080073f0(); // Init. OAM Buffer
     func_08003f28();
     func_080013e8(func_0801d9cc);
-    temp[0] = arg0;
-    temp[1] = 0;
+    subScenes[0] = subScene;
+    subScenes[1] = NULL;
     func_0800b778(0);
-    func_0800b834(&temp);
+    func_0800b834(subScenes);
 }
 
 
@@ -152,9 +152,8 @@ u32 func_0801d9d0(void) {
 
     func_08002880(TRUE); // Pause Sound
     func_0804e1bc(D_03005380, 1); // Pause Sprites..?
-    for (i = 0; i < 2;) {
-        i++;
-        task_pool_pause_id(i, TRUE);
+    for (i = 0; i < 2; i++) {
+        task_pool_pause_id(i+1, TRUE);
     }
 
     if (gPauseMenu.data->onPause != NULL) {
@@ -174,9 +173,8 @@ void func_0801da48(void) {
         case PAUSE_MENU_SELECTION_CONTINUE:
             func_08002880(FALSE); // Unpause Sound
             func_0804e1bc(D_03005380, 0); // Unpause Sprites..?
-            for (i = 0; i < 2;) {
-                i++;
-                task_pool_pause_id(i, FALSE);
+            for (i = 0; i < 2; i++) {
+                task_pool_pause_id(i+1, FALSE);
             }
             gPauseMenu.state = PAUSE_STATE_PLAY;
             break;
