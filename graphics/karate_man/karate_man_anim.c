@@ -54,7 +54,7 @@ const struct Animation karate_anim_joe_beat[] = {
 };
 
 // [D_088accfc] Hit Effect
-const struct Animation karate_anim_hit[] = {
+const struct Animation karate_anim_hit_effect[] = {
     /* 000 */ { karate_man_cel043, 2 },
     /* End */ END_ANIMATION
 };

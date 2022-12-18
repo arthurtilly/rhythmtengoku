@@ -58,11 +58,11 @@ void func_08012808(void) {
 void func_08012814(void) {
     if (D_0300131c) {
         set_beatscript_tempo(105); // Set Tempo
-        beatscript_scene_set_music(&s_shibafu2_bgm_seqData); // Play Music
+        scene_set_music(&s_shibafu2_bgm_seqData); // Play Music
         D_0300131c = FALSE;
     } else {
         set_beatscript_tempo(152); // Set Tempo
-        beatscript_scene_set_music(&s_menu_bgm_seqData); // Play Music
+        scene_set_music(&s_menu_bgm_seqData); // Play Music
     }
 }
 
@@ -265,7 +265,7 @@ void func_08012cb4(s32 id) {
     func_0804d770(D_03005380, gGameSelectInfo.selectionBorderSprite, FALSE);
     notice->unk8 = 10;
     notice->unkA = 60;
-    beatscript_scene_interpolate_music_volume(100, beats_to_ticks(0x18));
+    scene_interpolate_music_volume(100, beats_to_ticks(0x18));
     gGameSelectInfo.unk0 = 3;
 }
 

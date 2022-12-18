@@ -70,7 +70,7 @@ jump_08043944: \n\
 /* 0804395e */ LSLS R1, R1, 0x10 \n\
 /* 08043960 */ ASRS R1, R1, 0x10 \n\
 /* 08043962 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08043964 */ BL func_0800fdf8 \n\
+/* 08043964 */ BL affine_sprite_set_x \n\
 /* 08043968 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
 /* 0804396a */ B branch_08043992 \n\
 jump_0804396c: \n\
@@ -115,7 +115,7 @@ jump_080439a0: \n\
 /* 080439b6 */ LSLS R1, R1, 0x10 \n\
 /* 080439b8 */ ASRS R1, R1, 0x10 \n\
 /* 080439ba */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 080439bc */ BL func_0800fe0c \n\
+/* 080439bc */ BL affine_sprite_set_y \n\
 /* 080439c0 */ LDRB R0, [R5] \n\
 /* 080439c2 */ LSLS R0, R0, 0x1B \n\
 /* 080439c4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

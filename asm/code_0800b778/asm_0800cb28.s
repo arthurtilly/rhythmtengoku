@@ -1075,12 +1075,12 @@ jump_0800d3ba: \n\
 /* 0800d3bc */ BHI branch_0800d3ca \n\
 /* 0800d3be */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 0800d3c0 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0800d3c2 */ BL beatscript_scene_set_music_with_soundplayer \n\
+/* 0800d3c2 */ BL scene_set_music_with_soundplayer \n\
 /* 0800d3c6 */ BL branch_0800df9e \n\
  \n\
 branch_0800d3ca: \n\
 /* 0800d3ca */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d3cc */ BL beatscript_scene_set_music \n\
+/* 0800d3cc */ BL scene_set_music \n\
 /* 0800d3d0 */ BL branch_0800df9e \n\
 \n\
 jump_0800d3d4: \n\
@@ -1088,12 +1088,12 @@ jump_0800d3d4: \n\
 /* 0800d3d6 */ BHI branch_0800d3e4 \n\
 /* 0800d3d8 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 0800d3da */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0800d3dc */ BL beatscript_scene_play_music_with_soundplayer \n\
+/* 0800d3dc */ BL scene_play_music_with_soundplayer \n\
 /* 0800d3e0 */ BL branch_0800df9e \n\
  \n\
 branch_0800d3e4: \n\
 /* 0800d3e4 */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d3e6 */ BL beatscript_scene_play_music \n\
+/* 0800d3e6 */ BL scene_play_music \n\
 /* 0800d3ea */ BL branch_0800df9e \n\
 \n\
 jump_0800d3ee: \n\
@@ -1233,7 +1233,7 @@ jump_0800d4ee: \n\
 \n\
 jump_0800d4fc: \n\
 /* 0800d4fc */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d4fe */ BL beatscript_scene_set_music \n\
+/* 0800d4fe */ BL scene_set_music \n\
 /* 0800d502 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 0800d504 */ BL get_music_base_tempo \n\
 /* 0800d508 */ LSLS R0, R0, 0x10 \n\
@@ -1245,14 +1245,14 @@ jump_0800d514: \n\
 /* 0800d514 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0800d516 */ LSLS R0, R1, 0x10 \n\
 /* 0800d518 */ ASRS R0, R0, 0x10 \n\
-/* 0800d51a */ BL beatscript_scene_set_music_pitch_env \n\
+/* 0800d51a */ BL scene_set_music_pitch_env \n\
 /* 0800d51e */ BL branch_0800df9e \n\
 \n\
 jump_0800d522: \n\
 /* 0800d522 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0800d524 */ LSLS R0, R2, 0x10 \n\
 /* 0800d526 */ ASRS R0, R0, 0x10 \n\
-/* 0800d528 */ BL beatscript_scene_set_music_pitch \n\
+/* 0800d528 */ BL scene_set_music_pitch \n\
 /* 0800d52c */ BL branch_0800df9e \n\
 \n\
 jump_0800d530: \n\
@@ -1616,7 +1616,7 @@ jump_0800d820: \n\
 /* 0800d822 */ BL beats_to_ticks \n\
 /* 0800d826 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800d828 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0800d82a */ BL beatscript_scene_interpolate_music_volume \n\
+/* 0800d82a */ BL scene_interpolate_music_volume \n\
 /* 0800d82e */ B branch_0800df9e \n\
 \n\
 jump_0800d830: \n\
@@ -1624,7 +1624,7 @@ jump_0800d830: \n\
 /* 0800d832 */ LSRS R0, R0, 0x10 \n\
 /* 0800d834 */ LSLS R1, R6, 0x10 \n\
 /* 0800d836 */ LSRS R1, R1, 0x10 \n\
-/* 0800d838 */ BL beatscript_scene_set_music_track_volume \n\
+/* 0800d838 */ BL scene_set_music_track_volume \n\
 /* 0800d83c */ B branch_0800df9e \n\
 \n\
 jump_0800d83e: \n\
@@ -1635,12 +1635,12 @@ jump_0800d83e: \n\
 /* 0800d846 */ LSLS R2, R2, 0x1 \n\
 /* 0800d848 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0800d84a */ LDRH R1, [R1] \n\
-/* 0800d84c */ BL beatscript_scene_set_music_track_volume \n\
+/* 0800d84c */ BL scene_set_music_track_volume \n\
 /* 0800d850 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 0800d852 */ BL beats_to_ticks \n\
 /* 0800d856 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800d858 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0800d85a */ BL beatscript_scene_interpolate_music_track_volume \n\
+/* 0800d85a */ BL scene_interpolate_music_track_volume \n\
 /* 0800d85e */ B branch_0800df9e \n\
 \n\
 .ltorg \n\

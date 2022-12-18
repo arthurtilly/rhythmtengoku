@@ -188,7 +188,7 @@ branch_08012f18: \n\
 /* 08012f92 */ BL beats_to_ticks \n\
 /* 08012f96 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08012f98 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08012f9a */ BL beatscript_scene_interpolate_music_volume \n\
+/* 08012f9a */ BL scene_interpolate_music_volume \n\
 /* 08012f9e */ LDR R1, [R5] \n\
 /* 08012fa0 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 08012fa2 */ STRB R0, [R1] \n\

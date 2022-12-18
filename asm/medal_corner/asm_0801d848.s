@@ -8,7 +8,7 @@ thumb_func_start func_0801d848 \n\
 /* 0801d84c */ LDR R0, [R0] \n\
 /* 0801d84e */ LDR R0, [R0, 0x14] \n\
 /* 0801d850 */ LDR R0, [R0, 0x4] \n\
-/* 0801d852 */ BL beatscript_scene_set_music \n\
+/* 0801d852 */ BL scene_set_music \n\
 /* 0801d856 */ POP {R0} \n\
 /* 0801d858 */ BX R0 \n\
 \n\

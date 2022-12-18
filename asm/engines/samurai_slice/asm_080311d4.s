@@ -82,7 +82,7 @@ branch_0803124c: \n\
 /* 0803126c */ ADDS R0, R2, R1 @ Set R0 to R2 + R1 \n\
 /* 0803126e */ LDRH R0, [R0] \n\
 /* 08031270 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08031272 */ BL beatscript_scene_set_music_track_volume \n\
+/* 08031272 */ BL scene_set_music_track_volume \n\
 /* 08031276 */ LDR R1, [R7] \n\
 /* 08031278 */ MOVS R2, 0xEC @ Set R2 to 0xEC \n\
 /* 0803127a */ LSLS R2, R2, 0x1 \n\

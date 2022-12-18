@@ -226,11 +226,11 @@ enum BeatScriptArgType {
 extern void set_beatscript_tempo();
 #define BSC3_SET_TEMPO(bpm) BSC_RUN_FUNC_1(set_beatscript_tempo,bpm)
 
-extern void beatscript_scene_set_music_key();
-#define BSC3_SET_MUSIC_PITCH(pitch) BSC_RUN_FUNC_1(beatscript_scene_set_music_key,pitch)
+extern void scene_set_music_key();
+#define BSC3_SET_MUSIC_PITCH(pitch) BSC_RUN_FUNC_1(scene_set_music_key,pitch)
 
-extern void beatscript_scene_set_music_volume();
-#define BSC3_SET_MUSIC_VOLUME(volume) BSC_RUN_FUNC_1(beatscript_scene_set_music_volume,volume)
+extern void scene_set_music_volume();
+#define BSC3_SET_MUSIC_VOLUME(volume) BSC_RUN_FUNC_1(scene_set_music_volume,volume)
 
 extern void func_0801db04();
 #define BSC3_ENABLE_PAUSE_MENU(enable) BSC_RUN_FUNC_1(func_0801db04,enable)

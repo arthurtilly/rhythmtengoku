@@ -25,7 +25,7 @@ thumb_func_start func_08035ab0 \n\
 /* 08035ad6 */ LDR R0, [R2, 0x4] \n\
 /* 08035ad8 */ LSLS R1, R1, 0x8 \n\
 /* 08035ada */ ASRS R1, R1, 0x10 \n\
-/* 08035adc */ BL func_0800fe94 \n\
+/* 08035adc */ BL affine_sprite_set_rotation \n\
 /* 08035ae0 */ LDR R3, =D_03004afc \n\
 /* 08035ae2 */ LDRH R0, [R3] \n\
 /* 08035ae4 */ ANDS R4, R0 @ Set R4 to R4 & R0 \n\

@@ -43,7 +43,7 @@ thumb_func_start func_080372e8 \n\
 /* 08037334 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08037336 */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\
 /* 08037338 */ MOVS R3, 0x4C @ Set R3 to 0x4C \n\
-/* 0803733a */ BL func_0800fa6c \n\
+/* 0803733a */ BL create_affine_sprite \n\
 /* 0803733e */ LDR R1, [R5] \n\
 /* 08037340 */ STR R0, [R1, 0x34] \n\
 /* 08037342 */ MOV R2, R8 @ Set R2 to R8 \n\

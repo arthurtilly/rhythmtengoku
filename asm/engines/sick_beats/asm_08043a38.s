@@ -21,11 +21,11 @@ thumb_func_start func_08043a38 \n\
 /* 08043a56 */ STR R0, [SP, 0x28] \n\
 /* 08043a58 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08043a5a */ STR R1, [SP, 0x2C] \n\
-/* 08043a5c */ BL func_080100f0 \n\
+/* 08043a5c */ BL affine_sprite_get_base_sprite_x \n\
 /* 08043a60 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08043a62 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08043a64 */ LDR R0, [R2, 0x8] \n\
-/* 08043a66 */ BL func_08010110 \n\
+/* 08043a66 */ BL affine_sprite_get_base_sprite_y \n\
 /* 08043a6a */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08043a6c */ MOVS R3, 0x2F @ Set R3 to 0x2F \n\
 /* 08043a6e */ ADD R3, R10 @ Add R10 to R3 \n\
@@ -133,7 +133,7 @@ branch_08043b10: \n\
 /* 08043b3c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08043b3e */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
 /* 08043b40 */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 08043b42 */ BL func_0800fa6c \n\
+/* 08043b42 */ BL create_affine_sprite \n\
 /* 08043b46 */ STR R0, [SP, 0x2C] \n\
 /* 08043b48 */ LDR R0, =D_03005380 \n\
 /* 08043b4a */ LDR R0, [R0] \n\
@@ -184,7 +184,7 @@ branch_08043b7c: \n\
 /* 08043baa */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08043bac */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 08043bae */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 08043bb0 */ BL func_0800fa6c \n\
+/* 08043bb0 */ BL create_affine_sprite \n\
 /* 08043bb4 */ STR R0, [SP, 0x2C] \n\
 /* 08043bb6 */ LDR R0, =D_03005380 \n\
 /* 08043bb8 */ LDR R0, [R0] \n\
@@ -236,7 +236,7 @@ branch_08043bec: \n\
 /* 08043c1c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08043c1e */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 08043c20 */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 08043c22 */ BL func_0800fa6c \n\
+/* 08043c22 */ BL create_affine_sprite \n\
 /* 08043c26 */ STR R0, [SP, 0x2C] \n\
 /* 08043c28 */ LDR R0, =D_03005380 \n\
 /* 08043c2a */ LDR R0, [R0] \n\
@@ -291,7 +291,7 @@ branch_08043c60: \n\
 /* 08043c90 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08043c92 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 08043c94 */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 08043c96 */ BL func_0800fa6c \n\
+/* 08043c96 */ BL create_affine_sprite \n\
 /* 08043c9a */ STR R0, [SP, 0x2C] \n\
 /* 08043c9c */ LDR R0, =D_03005380 \n\
 /* 08043c9e */ LDR R0, [R0] \n\
@@ -344,7 +344,7 @@ branch_08043cf2: \n\
 /* 08043cfc */ BL func_08010238 \n\
 /* 08043d00 */ LDR R0, [SP, 0x2C] \n\
 /* 08043d02 */ LDR R1, [SP, 0x30] \n\
-/* 08043d04 */ BL func_080100a8 \n\
+/* 08043d04 */ BL affine_sprite_set_palette \n\
 /* 08043d08 */ BL get_beatscript_tempo \n\
 /* 08043d0c */ LSLS R0, R0, 0x8 \n\
 /* 08043d0e */ MOVS R1, 0x7D @ Set R1 to 0x7D \n\
@@ -356,7 +356,7 @@ branch_08043cf2: \n\
 /* 08043d1c */ BL func_08010174 \n\
 /* 08043d20 */ LDR R0, [SP, 0x28] \n\
 /* 08043d22 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08043d24 */ BL func_08010040 \n\
+/* 08043d24 */ BL affine_sprite_play_anim \n\
 /* 08043d28 */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 08043d2a */ ADDS R1, 0x2E @ Add 0x2E to R1 \n\
 /* 08043d2c */ LDRB R0, [R1] \n\

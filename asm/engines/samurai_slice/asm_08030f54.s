@@ -28,7 +28,7 @@ thumb_func_start func_08030f54 \n\
 /* 08030f86 */ LSLS R0, R0, 0x1 \n\
 /* 08030f88 */ BL set_beatscript_speed \n\
 /* 08030f8c */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08030f8e */ BL beatscript_scene_set_music_pitch_env \n\
+/* 08030f8e */ BL scene_set_music_pitch_env \n\
 /* 08030f92 */ LDR R5, =D_03005380 \n\
 /* 08030f94 */ LDR R6, [R5] \n\
 /* 08030f96 */ LDR R0, [R7] \n\

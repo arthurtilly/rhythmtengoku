@@ -43,7 +43,7 @@ thumb_func_start func_0800e970 \n\
 /* 0800e9c0 */ MULS R0, R4 @ Multiply R0 by R4 \n\
 /* 0800e9c2 */ LSLS R0, R0, 0x8 \n\
 /* 0800e9c4 */ ASRS R0, R0, 0x10 \n\
-/* 0800e9c6 */ BL beatscript_scene_set_music_pitch_env \n\
+/* 0800e9c6 */ BL scene_set_music_pitch_env \n\
  \n\
 branch_0800e9ca: \n\
 /* 0800e9ca */ POP {R4, R5} \n\

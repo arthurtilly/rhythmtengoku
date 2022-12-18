@@ -25,25 +25,25 @@ extern void set_beatscript_speed(u16 speed); // Set Script Speed (Q8.8)
 extern void func_0800be9c(void); // Stub
 extern void func_0800bea0(u32 arg); // Set unk0_b7
 extern void func_0800bebc(u32 arg); // Set unk1C
-extern u32  beatscript_scene_new_music(const struct SequenceData *, u32 override, s32 soundPlayer); // Play Music
-extern void beatscript_scene_set_music(const struct SequenceData *); // Play Music (Override)
-extern void beatscript_scene_play_music(const struct SequenceData *); // Play Music (No Override)
-extern void beatscript_scene_set_music_with_soundplayer(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (Override)
-extern void beatscript_scene_play_music_with_soundplayer(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (No Override)
-extern void beatscript_scene_play_music_ignore_lfo(const struct SequenceData *); // Play Music (override, use predefined SoundPlayer ID)
-extern void beatscript_scene_stop_music(void); // Stop Music
-extern void beatscript_scene_fade_in_music(u16 duration); // Fade-In Music
-extern void beatscript_scene_fade_out_music(u16 duration); // Fade-Out Music
-extern void beatscript_scene_update_music_pitch(void); // Update Music Pitch (retain unk2_b0)
-extern void beatscript_scene_set_music_pitch(s16 pitch); // Set Music Pitch
-extern void beatscript_scene_set_music_pitch_env(s16 pitch); // Set Music Pitch Source 2
-extern void beatscript_scene_set_music_volume(u16 volume); // Set Music Volume
-extern void beatscript_scene_set_music_track_volume(u16 selection, u16 volume); // Set Music Volume for Selected Tracks
-extern void beatscript_scene_set_music_volume_env(u16 volume); // Set Music Volume 2 (just calls the other one)
-// extern ? beatscript_scene_interpolate_music_volume(u32 volume, u32 duration); // Interpolate Music Volume
-// extern ? beatscript_scene_set_music_track_volume_env(?); // Set Music Volume for Selected Tracks 2 (just calls the other one)
-// extern ? beatscript_scene_interpolate_music_track_volume(u32 volume, u32 duration); // Interpolate Music Volume for Selected Tracks
-// extern ? beatscript_scene_set_music_key(?); // Set Music Key
+extern u32  scene_change_music(const struct SequenceData *, u32 override, s32 soundPlayer); // Play Music
+extern void scene_set_music(const struct SequenceData *); // Play Music (Override)
+extern void scene_play_music(const struct SequenceData *); // Play Music (No Override)
+extern void scene_set_music_with_soundplayer(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (Override)
+extern void scene_play_music_with_soundplayer(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (No Override)
+extern void scene_play_music_ignore_lfo(const struct SequenceData *); // Play Music (override, use predefined SoundPlayer ID)
+extern void scene_stop_music(void); // Stop Music
+extern void scene_fade_in_music(u16 duration); // Fade-In Music
+extern void scene_fade_out_music(u16 duration); // Fade-Out Music
+extern void scene_update_music_pitch(void); // Update Music Pitch (retain unk2_b0)
+extern void scene_set_music_pitch(s16 pitch); // Set Music Pitch
+extern void scene_set_music_pitch_env(s16 pitch); // Set Music Pitch Source 2
+extern void scene_set_music_volume(u16 volume); // Set Music Volume
+extern void scene_set_music_track_volume(u16 selection, u16 volume); // Set Music Volume for Selected Tracks
+extern void scene_set_music_volume_env(u16 volume); // Set Music Volume 2 (just calls the other one)
+// extern ? scene_interpolate_music_volume(u32 volume, u32 duration); // Interpolate Music Volume
+// extern ? scene_set_music_track_volume_env(?); // Set Music Volume for Selected Tracks 2 (just calls the other one)
+// extern ? scene_interpolate_music_track_volume(u32 volume, u32 duration); // Interpolate Music Volume for Selected Tracks
+// extern ? scene_set_music_key(?); // Set Music Key
 extern void func_0800c1a4_stub(void);
 extern u32 get_beatscript_tempo(void); // Get Current Script Tempo
 // extern ? func_0800c1b4(?);
@@ -78,7 +78,7 @@ extern void set_current_mem_id(u32 id); // Set Current Active Thread (Memory ID 
 // extern ? func_0800c424(?);
 // extern ? func_0800c428(?);
 // extern ? func_0800c42c(?);
-extern void *beatscript_scene_mem_heap_alloc(u32 size); // Allocate Space in Memory Heap
+extern void *scene_mem_heap_alloc(u32 size); // Allocate Space in Memory Heap
 // extern ? func_0800c454(?);
 // extern ? func_0800c484(?);
 // extern ? func_0800c490(?);

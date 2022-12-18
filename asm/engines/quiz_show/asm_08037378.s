@@ -20,7 +20,7 @@ thumb_func_start func_08037378 \n\
 /* 08037396 */ LDR R0, [R4, 0x34] \n\
 /* 08037398 */ LSLS R1, R1, 0x10 \n\
 /* 0803739a */ ASRS R1, R1, 0x10 \n\
-/* 0803739c */ BL func_0800fe94 \n\
+/* 0803739c */ BL affine_sprite_set_rotation \n\
  \n\
 branch_080373a0: \n\
 /* 080373a0 */ POP {R4} \n\

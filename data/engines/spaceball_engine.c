@@ -57,25 +57,25 @@ const struct GraphicsTable spaceball_gfx_table[] = {
 
 // [D_089de988] Batter Animations (Close)
 const struct Animation *const spaceball_anim_table_batter_close[] = {
-    spaceball_anim00,
-    spaceball_anim01,
-    spaceball_anim14
+    anim_spaceball_batter_green,
+    anim_spaceball_batter_red,
+    anim_spaceball_batter_pink
 };
 
 
 // [D_089de994] Batter Animations (Far)
 const struct Animation *const spaceball_anim_table_batter_far[] = {
-    spaceball_anim17,
-    spaceball_anim18,
-    spaceball_anim19
+    anim_spaceball_batter_green_far,
+    anim_spaceball_batter_red_far,
+    anim_spaceball_batter_pink_far
 };
 
 
 // [D_089de9a0] Ball Animations
 const struct Animation *const spaceball_anim_table_ball[] = {
-    spaceball_anim04,
-    spaceball_anim06,
-    spaceball_anim08
+    anim_spaceball_baseball,
+    anim_spaceball_rice_ball,
+    anim_spaceball_star_ball
 };
 
 
@@ -92,13 +92,13 @@ const struct CueDefinition spaceball_cue_low_fast = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ sizeof(struct SpaceballCue),
-    /* Func. Spawn     */ func_0802030c,
+    /* Func. Spawn     */ spaceball_cue_spawn,
     /* Spawn Parameter */ 0xC,
-    /* Func. Update    */ func_08020564,
-    /* Func. Despawn   */ func_080205a0,
-    /* Func. Hit       */ func_080205ac,
-    /* Func. Barely    */ func_080205e8,
-    /* Func. Miss      */ func_08020644,
+    /* Func. Update    */ spaceball_cue_update,
+    /* Func. Despawn   */ spaceball_cue_despawn,
+    /* Func. Hit       */ spaceball_cue_hit,
+    /* Func. Barely    */ spaceball_cue_barely,
+    /* Func. Miss      */ spaceball_cue_miss,
     /* SFX Spawn       */ &s_f_dummy_vol0_seqData,
     /* SFX Hit         */ &s_f_dummy_vol0_seqData,
     /* SFX Barely      */ &s_witch_donats_seqData,
@@ -116,13 +116,13 @@ const struct CueDefinition spaceball_cue_low = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ sizeof(struct SpaceballCue),
-    /* Func. Spawn     */ func_0802030c,
+    /* Func. Spawn     */ spaceball_cue_spawn,
     /* Spawn Parameter */ 0x18,
-    /* Func. Update    */ func_08020564,
-    /* Func. Despawn   */ func_080205a0,
-    /* Func. Hit       */ func_080205ac,
-    /* Func. Barely    */ func_080205e8,
-    /* Func. Miss      */ func_08020644,
+    /* Func. Update    */ spaceball_cue_update,
+    /* Func. Despawn   */ spaceball_cue_despawn,
+    /* Func. Hit       */ spaceball_cue_hit,
+    /* Func. Barely    */ spaceball_cue_barely,
+    /* Func. Miss      */ spaceball_cue_miss,
     /* SFX Spawn       */ &s_batter_mit_seqData,
     /* SFX Hit         */ &s_batter_hit_seqData,
     /* SFX Barely      */ &s_witch_donats_seqData,
@@ -140,13 +140,13 @@ const struct CueDefinition spaceball_cue_high = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ sizeof(struct SpaceballCue),
-    /* Func. Spawn     */ func_0802030c,
+    /* Func. Spawn     */ spaceball_cue_spawn,
     /* Spawn Parameter */ 0x30,
-    /* Func. Update    */ func_08020564,
-    /* Func. Despawn   */ func_080205a0,
-    /* Func. Hit       */ func_080205ac,
-    /* Func. Barely    */ func_080205e8,
-    /* Func. Miss      */ func_08020644,
+    /* Func. Update    */ spaceball_cue_update,
+    /* Func. Despawn   */ spaceball_cue_despawn,
+    /* Func. Hit       */ spaceball_cue_hit,
+    /* Func. Barely    */ spaceball_cue_barely,
+    /* Func. Miss      */ spaceball_cue_miss,
     /* SFX Spawn       */ &s_f_batter_ball_high_seqData,
     /* SFX Hit         */ &s_batter_hit_seqData,
     /* SFX Barely      */ &s_witch_donats_seqData,
@@ -164,13 +164,13 @@ const struct CueDefinition spaceball_cue_high_fast = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ sizeof(struct SpaceballCue),
-    /* Func. Spawn     */ func_0802030c,
+    /* Func. Spawn     */ spaceball_cue_spawn,
     /* Spawn Parameter */ 0x24,
-    /* Func. Update    */ func_08020564,
-    /* Func. Despawn   */ func_080205a0,
-    /* Func. Hit       */ func_080205ac,
-    /* Func. Barely    */ func_080205e8,
-    /* Func. Miss      */ func_08020644,
+    /* Func. Update    */ spaceball_cue_update,
+    /* Func. Despawn   */ spaceball_cue_despawn,
+    /* Func. Hit       */ spaceball_cue_hit,
+    /* Func. Barely    */ spaceball_cue_barely,
+    /* Func. Miss      */ spaceball_cue_miss,
     /* SFX Spawn       */ &s_f_batter_ball_high_seqData,
     /* SFX Hit         */ &s_batter_hit_seqData,
     /* SFX Barely      */ &s_witch_donats_seqData,
@@ -201,31 +201,31 @@ const struct CueDefinition *const spaceball_cue_index[] = {
 
 // [D_089deae0] Common Events
 const EngineEvent spaceball_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) func_08020698,
-    /* DISPLAY_TEXT   */ (EngineEvent) func_0802069c,
+    /* BEAT_ANIMATION */ (EngineEvent) spaceball_common_beat_animation,
+    /* DISPLAY_TEXT   */ (EngineEvent) spaceball_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089deaec] Engine Events
 const EngineEvent spaceball_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080201a4,
-    /* 0x01 */ (EngineEvent) func_08020200,
-    /* 0x02 */ (EngineEvent) func_08020238,
-    /* 0x03 */ (EngineEvent) func_0802026c,
-    /* 0x04 */ (EngineEvent) func_080202a4,
-    /* 0x05 */ (EngineEvent) func_08020290,
-    /* 0x06 */ (EngineEvent) func_080201a0
+    /* 0x00 */ (EngineEvent) spaceball_prepare_pitcher,
+    /* 0x01 */ (EngineEvent) spaceball_loop_exit_condition,
+    /* 0x02 */ (EngineEvent) spaceball_set_camera_zoom,
+    /* 0x03 */ (EngineEvent) spaceball_set_batter_type,
+    /* 0x04 */ (EngineEvent) spaceball_open_ufo,
+    /* 0x05 */ (EngineEvent) spaceball_set_ball_type,
+    /* 0x06 */ (EngineEvent) spaceball_engine_event_stub
 };
 
 // [D_089deb08] Spaceball Game Engine
 const struct GameEngine D_089deb08 = {
     /* Size in Memory */ sizeof(struct SpaceballInfo),
-    /* Init. Engine   */ func_0801ffcc,
-    /* Update Engine  */ func_080202f0,
-    /* Stop Engine    */ func_08020308,
+    /* Init. Engine   */ spaceball_engine_init,
+    /* Update Engine  */ spaceball_engine_update,
+    /* Stop Engine    */ spaceball_engine_stop,
     /* Cue Index      */ spaceball_cue_index,
     /* Common Events  */ spaceball_common_events,
     /* Engine Events  */ spaceball_engine_events,
-    /* Input Event    */ func_08020660
+    /* Input Event    */ spaceball_input_event
 };

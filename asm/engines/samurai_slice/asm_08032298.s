@@ -72,7 +72,7 @@ branch_080322f0: \n\
 /* 08032316 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08032318 */ LSLS R1, R1, 0x12 \n\
 /* 0803231a */ LSRS R1, R1, 0x10 \n\
-/* 0803231c */ BL beatscript_scene_set_music_track_volume \n\
+/* 0803231c */ BL scene_set_music_track_volume \n\
 /* 08032320 */ POP {R4} \n\
 /* 08032322 */ POP {R0} \n\
 /* 08032324 */ BX R0 \n\

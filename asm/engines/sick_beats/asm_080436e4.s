@@ -83,7 +83,7 @@ thumb_func_start func_080436e4 \n\
 /* 0804377e */ STR R1, [SP, 0x18] \n\
 /* 08043780 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08043782 */ MOV R3, R12 @ Set R3 to R12 \n\
-/* 08043784 */ BL func_0800fa6c \n\
+/* 08043784 */ BL create_affine_sprite \n\
 /* 08043788 */ B branch_080437c6 \n\
 \n\
 .ltorg \n\
@@ -106,7 +106,7 @@ branch_080437a0: \n\
 /* 080437bc */ LDRH R1, [R4, 0xA] \n\
 /* 080437be */ STR R1, [SP, 0xC] \n\
 /* 080437c0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080437c2 */ BL func_0800fba0 \n\
+/* 080437c2 */ BL create_default_affine_sprite \n\
  \n\
 branch_080437c6: \n\
 /* 080437c6 */ STR R0, [R5, 0x8] \n\
@@ -117,7 +117,7 @@ branch_080437c6: \n\
 /* 080437d2 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 080437d4 */ ADDS R1, 0x2F @ Add 0x2F to R1 \n\
 /* 080437d6 */ LDRB R1, [R1] \n\
-/* 080437d8 */ BL func_080100a8 \n\
+/* 080437d8 */ BL affine_sprite_set_palette \n\
 /* 080437dc */ LDRH R0, [R5] \n\
 /* 080437de */ LSLS R0, R0, 0x15 \n\
 /* 080437e0 */ LSRS R0, R0, 0x1B \n\
@@ -137,7 +137,7 @@ branch_080437f0: \n\
 /* 080437f8 */ BNE branch_08043804 \n\
 /* 080437fa */ LDR R0, [R5, 0x8] \n\
 /* 080437fc */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080437fe */ BL func_08010040 \n\
+/* 080437fe */ BL affine_sprite_play_anim \n\
 /* 08043802 */ MOVS R7, 0x1 @ Set R7 to 0x1 \n\
  \n\
 branch_08043804: \n\

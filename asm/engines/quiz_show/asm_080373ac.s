@@ -17,7 +17,7 @@ thumb_func_start func_080373ac \n\
 /* 080373c4 */ LDR R0, [R4] \n\
 /* 080373c6 */ LDR R0, [R0, 0x34] \n\
 /* 080373c8 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 080373ca */ BL func_08010040 \n\
+/* 080373ca */ BL affine_sprite_play_anim \n\
 /* 080373ce */ POP {R4, R5} \n\
 /* 080373d0 */ POP {R0} \n\
 /* 080373d2 */ BX R0 \n\

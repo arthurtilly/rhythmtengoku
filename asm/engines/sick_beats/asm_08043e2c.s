@@ -40,7 +40,7 @@ branch_08043e5a: \n\
 /* 08043e66 */ STRB R0, [R4] \n\
 /* 08043e68 */ LDR R0, [R4, 0x8] \n\
 /* 08043e6a */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 08043e6c */ BL func_08010040 \n\
+/* 08043e6c */ BL affine_sprite_play_anim \n\
  \n\
 branch_08043e70: \n\
 /* 08043e70 */ POP {R4} \n\

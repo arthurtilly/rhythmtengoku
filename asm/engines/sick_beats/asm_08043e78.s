@@ -79,7 +79,7 @@ branch_08043edc: \n\
 /* 08043f02 */ STR R1, [SP, 0x14] \n\
 /* 08043f04 */ STR R4, [SP, 0x18] \n\
 /* 08043f06 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08043f08 */ BL func_0800fa6c \n\
+/* 08043f08 */ BL create_affine_sprite \n\
 /* 08043f0c */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08043f0e */ CMP R2, 0x0 @ Compare R2 and 0x0 \n\
 /* 08043f10 */ BEQ branch_08043f18 \n\

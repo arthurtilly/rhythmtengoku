@@ -39,11 +39,11 @@ branch_0803c540: \n\
 /* 0803c56a */ LSLS R2, R2, 0x8 \n\
 /* 0803c56c */ ASRS R2, R2, 0x10 \n\
 /* 0803c56e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0803c570 */ BL func_0800fddc \n\
+/* 0803c570 */ BL affine_sprite_set_x_y \n\
 /* 0803c574 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
 /* 0803c576 */ LDRSH R1, [R5, R0] \n\
 /* 0803c578 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0803c57a */ BL func_0800fe94 \n\
+/* 0803c57a */ BL affine_sprite_set_rotation \n\
 /* 0803c57e */ LDR R0, [R5, 0x4] \n\
 /* 0803c580 */ ASRS R1, R0, 0x8 \n\
 /* 0803c582 */ LDR R0, [R5, 0x8] \n\

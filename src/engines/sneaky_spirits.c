@@ -294,8 +294,8 @@ void func_0801f7bc(void) {
 // [func_0801f7cc] MAIN - Close
 void func_0801f7cc(void) {
     set_beatscript_speed(0x100);
-    beatscript_scene_set_music_pitch_env(0);
-    beatscript_scene_set_music_track_volume(0, 0);
+    scene_set_music_pitch_env(0);
+    scene_set_music_track_volume(0, 0);
 }
 
 
@@ -326,8 +326,8 @@ void func_0801f810(void) {
 
     if (gSneakySpiritsInfo->slowMotionHit) {
         set_beatscript_speed(0x100);   // Reset Game Speed
-        beatscript_scene_set_music_pitch_env(0);       // Reset Music Pitch
-        beatscript_scene_set_music_track_volume(0, 0);    // Reset Music Channel Volume
+        scene_set_music_pitch_env(0);       // Reset Music Pitch
+        scene_set_music_track_volume(0, 0);    // Reset Music Channel Volume
     }
 
     func_0804d770(D_03005380, gSneakySpiritsInfo->ghostHit, 0);
@@ -348,8 +348,8 @@ void func_0801f8d0(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, 
 
     if (gSneakySpiritsInfo->slowMotionHit) {
         set_beatscript_speed(0x40);        // Set Game Speed (0x40 = 0.25; Default = 0x100)
-        beatscript_scene_set_music_pitch_env(-0xc00);      // Set Music Pitch (-0xc00 = -12 semitones; Default = 0)
-        beatscript_scene_set_music_track_volume((1 << 9), 0); // Set Music Channel 9 Volume to 0
+        scene_set_music_pitch_env(-0xc00);      // Set Music Pitch (-0xc00 = -12 semitones; Default = 0)
+        scene_set_music_track_volume((1 << 9), 0); // Set Music Channel 9 Volume to 0
 
         duration = beats_to_ticks(0x16) - gameplay_get_last_hit_offset();
         xVel = 68;

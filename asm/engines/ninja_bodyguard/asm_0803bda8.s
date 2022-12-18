@@ -26,7 +26,7 @@ thumb_func_start func_0803bda8 \n\
 /* 0803bdd2 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803bdd4 */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\
 /* 0803bdd6 */ MOVS R3, 0xC8 @ Set R3 to 0xC8 \n\
-/* 0803bdd8 */ BL func_0800fa6c \n\
+/* 0803bdd8 */ BL create_affine_sprite \n\
 /* 0803bddc */ LDR R5, =D_030055d0 \n\
 /* 0803bdde */ LDR R1, [R5] \n\
 /* 0803bde0 */ MOVS R2, 0xBD @ Set R2 to 0xBD \n\
@@ -34,7 +34,7 @@ thumb_func_start func_0803bda8 \n\
 /* 0803bde4 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0803bde6 */ STR R0, [R1] \n\
 /* 0803bde8 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 0803bdea */ BL func_0800feec \n\
+/* 0803bdea */ BL affine_sprite_rotate_with_orbit \n\
 /* 0803bdee */ LDR R0, [R5] \n\
 /* 0803bdf0 */ MOVS R1, 0xBF @ Set R1 to 0xBF \n\
 /* 0803bdf2 */ LSLS R1, R1, 0x2 \n\

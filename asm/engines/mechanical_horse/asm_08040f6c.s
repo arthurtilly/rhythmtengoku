@@ -471,7 +471,7 @@ branch_08041266: \n\
 /* 08041332 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08041334 */ MOVS R2, 0x57 @ Set R2 to 0x57 \n\
 /* 08041336 */ MOVS R3, 0x90 @ Set R3 to 0x90 \n\
-/* 08041338 */ BL func_0800fa6c \n\
+/* 08041338 */ BL create_affine_sprite \n\
 /* 0804133c */ LDR R6, =D_030055d0 \n\
 /* 0804133e */ LDR R1, [R6] \n\
 /* 08041340 */ MOVS R3, 0xBD @ Set R3 to 0xBD \n\
@@ -491,7 +491,7 @@ branch_08041266: \n\
 /* 0804135c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0804135e */ MOVS R2, 0x8F @ Set R2 to 0x8F \n\
 /* 08041360 */ MOVS R3, 0x90 @ Set R3 to 0x90 \n\
-/* 08041362 */ BL func_0800fa6c \n\
+/* 08041362 */ BL create_affine_sprite \n\
 /* 08041366 */ LDR R1, [R6] \n\
 /* 08041368 */ MOVS R3, 0xBE @ Set R3 to 0xBE \n\
 /* 0804136a */ LSLS R3, R3, 0x2 \n\

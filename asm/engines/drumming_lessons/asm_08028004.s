@@ -107,7 +107,7 @@ branch_080280a2: \n\
 /* 080280ec */ LDR R0, =D_089e178c \n\
 /* 080280ee */ ADDS R0, R4, R0 @ Set R0 to R4 + R0 \n\
 /* 080280f0 */ LDR R0, [R0] \n\
-/* 080280f2 */ BL beatscript_scene_set_music \n\
+/* 080280f2 */ BL scene_set_music \n\
 /* 080280f6 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080280f8 */ BL pause_beatscript_scene \n\
 /* 080280fc */ LDR R5, =D_030055d0 \n\

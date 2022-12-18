@@ -45,7 +45,7 @@ branch_0803c33e: \n\
 /* 0803c342 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 0803c344 */ LDR R0, [R0] \n\
 /* 0803c346 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0803c348 */ BL func_08010040 \n\
+/* 0803c348 */ BL affine_sprite_play_anim \n\
 /* 0803c34c */ ADDS R5, 0x1C @ Add 0x1C to R5 \n\
 /* 0803c34e */ ADDS R4, 0x1 @ Add 0x1 to R4 \n\
 /* 0803c350 */ CMP R4, 0x17 @ Compare R4 and 0x17 \n\

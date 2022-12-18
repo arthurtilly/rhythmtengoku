@@ -9,7 +9,7 @@ thumb_func_start func_0803ccb4 \n\
 /* 0803ccbc */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803ccbe */ LSLS R4, R4, 0x10 \n\
 /* 0803ccc0 */ LSRS R4, R4, 0x10 \n\
-/* 0803ccc2 */ LDR R5, =beatscript_scene_stop_music \n\
+/* 0803ccc2 */ LDR R5, =scene_stop_music \n\
 /* 0803ccc4 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0803ccc6 */ BL beats_to_ticks \n\
 /* 0803ccca */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\

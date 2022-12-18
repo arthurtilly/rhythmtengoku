@@ -383,8 +383,8 @@ void karate_start_serious_mode(void) {
     scene_hide_bg_layer(1);
     func_0804d770(D_03005380, gKarateManInfo->flowSprite, FALSE);
     gKarateManInfo->version = KARATE_VER_SERIOUS;
-    beatscript_scene_set_music_volume_env(0);
-    beatscript_scene_interpolate_music_volume(0x100, beats_to_ticks(0x60));
+    scene_set_music_volume_env(0);
+    scene_interpolate_music_volume(0x100, beats_to_ticks(0x60));
 }
 
 

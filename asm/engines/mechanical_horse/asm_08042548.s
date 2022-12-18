@@ -33,14 +33,14 @@ branch_08042572: \n\
 /* 08042576 */ ADDS R0, R2, R1 @ Set R0 to R2 + R1 \n\
 /* 08042578 */ LDR R0, [R0] \n\
 /* 0804257a */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0804257c */ BL func_08010040 \n\
+/* 0804257c */ BL affine_sprite_play_anim \n\
 /* 08042580 */ LDR R0, [R4] \n\
 /* 08042582 */ MOVS R2, 0xBE @ Set R2 to 0xBE \n\
 /* 08042584 */ LSLS R2, R2, 0x2 \n\
 /* 08042586 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 08042588 */ LDR R0, [R0] \n\
 /* 0804258a */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0804258c */ BL func_08010040 \n\
+/* 0804258c */ BL affine_sprite_play_anim \n\
 /* 08042590 */ LDR R0, =D_03005380 \n\
 /* 08042592 */ LDR R0, [R0] \n\
 /* 08042594 */ LDR R1, [R4] \n\
@@ -132,7 +132,7 @@ branch_080425d6: \n\
 /* 08042650 */ LDR R0, [R0] \n\
 /* 08042652 */ LSLS R1, R4, 0x10 \n\
 /* 08042654 */ ASRS R1, R1, 0x10 \n\
-/* 08042656 */ BL func_0800fe94 \n\
+/* 08042656 */ BL affine_sprite_set_rotation \n\
 /* 0804265a */ LSLS R0, R6, 0x1 \n\
 /* 0804265c */ ADDS R0, 0xAA @ Add 0xAA to R0 \n\
 /* 0804265e */ CMP R4, R0 @ Check R4 - R0 \n\
@@ -177,7 +177,7 @@ branch_0804267a: \n\
 /* 080426b0 */ LDR R0, [R0] \n\
 /* 080426b2 */ LSLS R1, R4, 0x10 \n\
 /* 080426b4 */ ASRS R1, R1, 0x10 \n\
-/* 080426b6 */ BL func_0800fe94 \n\
+/* 080426b6 */ BL affine_sprite_set_rotation \n\
 /* 080426ba */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 080426bc */ LDR R0, [R1] \n\
 /* 080426be */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\

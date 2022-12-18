@@ -32,7 +32,7 @@ branch_0802dd1a: \n\
 /* 0802dd38 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802dd3a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802dd3c */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0802dd3e */ BL func_0800fa6c \n\
+/* 0802dd3e */ BL create_affine_sprite \n\
 /* 0802dd42 */ STR R0, [R4] \n\
 /* 0802dd44 */ LDRB R0, [R4, 0x4] \n\
 /* 0802dd46 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\

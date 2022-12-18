@@ -119,9 +119,9 @@ void func_0802e99c(void) {
 
     for (i = 0; i < 5; i++) {
         hair = &gRhythmTweezersInfo->fallingHairs[i];
-        hair->sprite = func_0800fa6c(D_088e88e0, 0, 120, 16, 0x4800, 0x100, -0x200, 0, 0, 0x8000, 0);
-        func_0800feec(hair->sprite, TRUE);
-        func_0800fea8(hair->sprite, 0x4c);
+        hair->sprite = create_affine_sprite(D_088e88e0, 0, 120, 16, 0x4800, 0x100, -0x200, 0, 0, 0x8000, 0);
+        affine_sprite_rotate_with_orbit(hair->sprite, TRUE);
+        affine_sprite_set_orbit_distance(hair->sprite, 0x4c);
         hair->fallDistance = 0xc800;
         hair->fallSpeed = 0;
     }
@@ -139,8 +139,8 @@ void func_0802ea20(void) {
         if (hair->fallDistance <= 0xc7ff) {
             hair->fallDistance += hair->fallSpeed += 0x20;
             hair->rotation += hair->rotationSpeed;
-            func_0800fe0c(hair->sprite, (s16) ((hair->fallDistance >> 8) + 0x10));
-            func_0800fe94(hair->sprite, hair->rotation);
+            affine_sprite_set_y(hair->sprite, (s16) ((hair->fallDistance >> 8) + 0x10));
+            affine_sprite_set_rotation(hair->sprite, hair->rotation);
         }
     }
 }
@@ -154,14 +154,14 @@ void func_0802ea74(u32 arg0) {
     hair->rotation = -0x200;
     hair->rotationSpeed = agb_random(0x1f) - 15;
 
-    func_0800fe0c(hair->sprite, 0x10);
-    func_0800febc(hair->sprite, tweezers->rotation);
-    func_0800fe94(hair->sprite, hair->rotation);
-    func_08010040(hair->sprite, 1);
+    affine_sprite_set_y(hair->sprite, 0x10);
+    affine_sprite_set_orbit_angle(hair->sprite, tweezers->rotation);
+    affine_sprite_set_rotation(hair->sprite, hair->rotation);
+    affine_sprite_play_anim(hair->sprite, 1);
 
     hair->fallDistance = 0;
     hair->fallSpeed = 0;
-    func_0800ffc0(hair->sprite, arg0);
+    affine_sprite_set_anim_frame(hair->sprite, arg0);
 
     if ((gRhythmTweezersInfo->fallingHairsNext += 1) > 4) {
         gRhythmTweezersInfo->fallingHairsNext = 0;
@@ -174,9 +174,9 @@ void func_0802eaf8(void) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo->tweezers;
 
     tweezers->rotation = -0x200;
-    tweezers->sprite = func_0800fa6c(D_088e87a8, 0x7f, 120, 16, 0x4800, 0x100, -0x200, 1, 0x7f, 0, 0);
-    func_0800fed0(tweezers->sprite, tweezers->rotation, 0x4c);
-    func_0800feec(tweezers->sprite, TRUE);
+    tweezers->sprite = create_affine_sprite(D_088e87a8, 0x7f, 120, 16, 0x4800, 0x100, -0x200, 1, 0x7f, 0, 0);
+    affine_sprite_set_orbit(tweezers->sprite, tweezers->rotation, 0x4c);
+    affine_sprite_rotate_with_orbit(tweezers->sprite, TRUE);
 
     tweezers->isMoving = FALSE;
     tweezers->heldHair = TWEEZERS_HELD_HAIR_NONE;
@@ -235,12 +235,12 @@ void func_0802ebf8(void) {
 
     if (tweezers->heldHair != TWEEZERS_HELD_HAIR_NONE) {
         temp = func_08010198(tweezers->sprite);
-        if (temp == func_08010288(tweezers->sprite) - 2) {
+        if (temp == affine_sprite_get_total_frames(tweezers->sprite) - 2) {
             func_0802ea74(tweezers->heldHair - 1);
             tweezers->heldHair = TWEEZERS_HELD_HAIR_NONE;
         }
     }
-    func_0800febc(tweezers->sprite, tweezers->rotation);
+    affine_sprite_set_orbit_angle(tweezers->sprite, tweezers->rotation);
 }
 
 
@@ -368,11 +368,11 @@ void func_0802ee7c(u32 arg0, struct RhythmTweezersCue *cue, u32 isLongHair, u32 
     rotation -= 640 * gameInfo->hairCycleTime / gameInfo->hairCycleTarget;
 
     anim = (!isLongHair) ? D_088e8768 : D_088e89a8;
-    cue->sprite = func_0800fa6c(anim, 0, 120, 16, 0x4800, 0x100, -0x200, 1, 0x7f, 0, 0);
-    func_0800feec(cue->sprite, TRUE);
+    cue->sprite = create_affine_sprite(anim, 0, 120, 16, 0x4800, 0x100, -0x200, 1, 0x7f, 0, 0);
+    affine_sprite_rotate_with_orbit(cue->sprite, TRUE);
 
-    func_0800fed0(cue->sprite, rotation, 0x4c);
-    func_080102a8(cue->sprite, &gRhythmTweezersInfo->screenHorizontalPosition, &D_03004b10.BG_OFS[BG_LAYER_1].y);
+    affine_sprite_set_orbit(cue->sprite, rotation, 0x4c);
+    affine_sprite_set_x_y_controllers(cue->sprite, &gRhythmTweezersInfo->screenHorizontalPosition, &D_03004b10.BG_OFS[BG_LAYER_1].y);
 
     cue->isLongHair = isLongHair;
     cue->finished = FALSE;
@@ -404,7 +404,7 @@ u32 func_0802ef54(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) {
 
 // [func_0802f164] CUE - Despawn
 void func_0802f164(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) {
-    func_0800fc70(cue->sprite);
+    delete_affine_sprite(cue->sprite);
 }
 
 
@@ -414,8 +414,8 @@ void func_0802f170(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) 
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo->vegetable;
     u32 temp;
 
-    func_08010064(cue->sprite, D_088e88f8, 0, 0, 0, 0);
-    func_08010064(tweezers->sprite, D_088e87a8, 0, 1, 0x7f, 0);
+    affine_sprite_change_anim(cue->sprite, D_088e88f8, 0, 0, 0, 0);
+    affine_sprite_change_anim(tweezers->sprite, D_088e87a8, 0, 1, 0x7f, 0);
     D_03004b10.BG_OFS[BG_LAYER_1].y = 2;
 
     if (tweezers->heldHair) func_0802ea74(tweezers->heldHair - 1);
@@ -439,8 +439,8 @@ void func_0802f21c(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) 
 
     func_08018068();
     if (tweezers->heldHair != TWEEZERS_HELD_HAIR_NONE) func_0802ea74(tweezers->heldHair - 1);
-    func_08010040(tweezers->sprite, 0);
-    func_08010064(cue->sprite, D_088e8a50, 0, 0, 0, 0);
+    affine_sprite_play_anim(tweezers->sprite, 0);
+    affine_sprite_change_anim(cue->sprite, D_088e8a50, 0, 0, 0, 0);
 
     cue->rotation = tweezers->rotation;
     tweezers->isPulling = TRUE;
@@ -459,8 +459,8 @@ void func_0802f2a0(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) 
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo->tweezers;
     struct RhythmTweezersVegetable *vegetable = &gRhythmTweezersInfo->vegetable;
 
-    func_08010064(cue->sprite, D_088e88f8, 0, 1, 0x7f, 0);
-    func_08010064(tweezers->sprite, D_088e8848, 0, 1, 0x7f, 0);
+    affine_sprite_change_anim(cue->sprite, D_088e88f8, 0, 1, 0x7f, 0);
+    affine_sprite_change_anim(tweezers->sprite, D_088e8848, 0, 1, 0x7f, 0);
 
     if (tweezers->heldHair != TWEEZERS_HELD_HAIR_NONE) func_0802ea74(tweezers->heldHair - 1);
     tweezers->heldHair = TWEEZERS_HELD_HAIR_BARELY;
@@ -482,7 +482,7 @@ void func_0802f330(u32 arg0, struct RhythmTweezersCue *cue, u32 arg2, u32 arg3) 
 void func_0802f33c(void) {
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo->tweezers;
 
-    func_08010064(tweezers->sprite, D_088e8898, 0, 1, 0x7f, 0);
+    affine_sprite_change_anim(tweezers->sprite, D_088e8898, 0, 1, 0x7f, 0);
 
     if (tweezers->heldHair != TWEEZERS_HELD_HAIR_NONE) func_0802ea74(tweezers->heldHair - 1);
     tweezers->heldHair = TWEEZERS_HELD_HAIR_NONE;

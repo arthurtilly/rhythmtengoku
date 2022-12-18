@@ -35,7 +35,7 @@ extern void func_0804d5d4(struct SpriteHandler *, s16, s16, s16); // Set X/Y Pos
 extern void func_0804d614(struct SpriteHandler *, s16, s16); // Set X Position
 extern void func_0804d648(struct SpriteHandler *, s16, s16); // Set Y Position
 extern void func_0804d67c(struct SpriteHandler *, s16, u16); // Set Layer
-extern s32  func_0804d6cc(struct SpriteHandler *, s16);
+extern s32  func_0804d6cc(struct SpriteHandler *, s16); // Get Running Time..?
 extern u8   func_0804d708(struct SpriteHandler *, s16);
 extern void func_0804d770(struct SpriteHandler *, s16, u16); // Show/Display Sprite
 extern void func_0804d7b4(struct SpriteHandler *, s16, u32);
@@ -55,7 +55,7 @@ extern void func_0804db44(struct SpriteHandler *, s16, s16 *, s16 *); // Set X &
 // extern ? func_0804dbd0(?);
 // extern ? func_0804dc10(?);
 // extern ? func_0804dc8c(?);
-extern void func_0804dcb8(struct SpriteHandler *, s16, u16);
+extern void func_0804dcb8(struct SpriteHandler *, s16, u16); // Set Animation Speed..?
 // extern ? func_0804dcd8(?); // Get Sprite Dimensions { Left, Right, Top, Bottom, Width, Height }
 extern s32  func_0804ddb0(struct SpriteHandler *, s16, u32); // Get Sprite Data { 20+ = func_0804dcd8() }
 extern void func_0804df4c(struct SpriteHandler *, s16, s8);

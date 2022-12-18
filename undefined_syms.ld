@@ -233,33 +233,6 @@ D_088a3974 = 0x088a3974;
 /* LIVE ver2 Palette */
 D_088a399c = 0x088a399c;
 D_088a3a7c = 0x088a3a7c;
-/* Karate Man Animations */
-karate_anim_joe_test = 0x088acc2c;
-karate_anim_object = 0x088acc3c;
-karate_anim_object_shadow = 0x088acc6c;
-karate_anim_object_shards = 0x088acc7c;
-karate_anim_joe_punch_high = 0x088acc94;
-karate_anim_joe_beat = 0x088accdc;
-karate_anim_hit_effect = 0x088accfc;
-karate_anim_joe_sad = 0x088acd0c;
-karate_anim_flow_meter = 0x088acd1c;
-karate_anim_joe_punch_low = 0x088acd54;
-karate_anim_joe_barely = 0x088acd94;
-karate_anim_joe_miss = 0x088acdb4;
-karate_anim_joe_smirk = 0x088acdd4;
-karate_anim_joe_happy = 0x088acdf4;
-karate_anim_joe_punch_ouch = 0x088ace14;
-karate_anim_flow_meter_test1 = 0x088ace84;
-karate_anim_flow_meter_test2 = 0x088acee4;
-karate_anim_cue_warning = 0x088acf04;
-karate_anim_tutorial_text_button = 0x088acf2c;
-karate_anim_tutorial_skip = 0x088acf44;
-karate_anim_tutorial_counter = 0x088acf54;
-karate_anim_joe_smug_high = 0x088acf7c;
-karate_anim_joe_smug_low = 0x088acfc4;
-/* Karate Man Palettes */
-karate_man_pal = 0x088ad004;
-karate_man_2_pal = 0x088ad104;
 /* Prologue - Sneaky Spirits Animations */
 D_088ad2bc = 0x088ad2bc;
 /* Prologue - Sneaky Spirits Palette */
@@ -792,53 +765,6 @@ D_088c85f8 = 0x088c85f8;
 D_088c8620 = 0x088c8620;
 D_088c87a0 = 0x088c87a0;
 D_088c88e0 = 0x088c88e0;
-/* Night Walk Animations */
-D_088c9a60 = 0x088c9a60;
-anim_play_yan_jump = 0x088c9a98;
-D_088c9aa8 = 0x088c9aa8;
-anim_play_yan_walk = 0x088c9ab8;
-D_088c9ae0 = 0x088c9ae0;
-D_088c9af8 = 0x088c9af8;
-anim_night_walk_fish = 0x088c9b08;
-D_088c9b40 = 0x088c9b40;
-anim_night_walk_heart_bridge = 0x088c9b50;
-D_088c9b88 = 0x088c9b88;
-anim_play_yan_short_hop = 0x088c9b98;
-anim_night_walk_heart_box = 0x088c9be8;
-anim_night_walk_lollipop_bridge = 0x088c9c20;
-anim_night_walk_umbrella_bridge = 0x088c9c58;
-anim_night_walk_lollipop_box = 0x088c9c98;
-anim_night_walk_umbrella_box = 0x088c9cd0;
-anim_night_walk_note_bridge = 0x088c9d10;
-anim_play_yan_fall = 0x088c9d58;
-anim_night_walk_balloon = 0x088c9d88;
-anim_night_walk_balloon_pop = 0x088c9dc0;
-anim_night_walk_bridge_disappear = 0x088c9dd0;
-anim_night_walk_box_disappear = 0x088c9de0;
-anim_night_walk_star_small = 0x088c9df0;
-anim_night_walk_star_med = 0x088c9e38;
-anim_night_walk_star_big = 0x088c9e80;
-anim_night_walk_star_tiny = 0x088c9ec8;
-anim_night_walk_star_huge = 0x088c9f10;
-anim_night_walk_star_disappear = 0x088c9f58;
-anim_play_yan_star_wand = 0x088c9f90;
-D_088c9fb8 = 0x088c9fb8;
-anim_night_walk_ng_heart_bridge = 0x088c9fe8;
-anim_night_walk_ng_lollipop_bridge = 0x088ca000;
-anim_night_walk_ng_umbrella_bridge = 0x088ca018;
-anim_night_walk_ng_heart_box = 0x088ca030;
-anim_night_walk_ng_lollipop_box = 0x088ca048;
-anim_night_walk_ng_umbrella_box = 0x088ca060;
-anim_night_walk_star_tiny_to_small = 0x088ca078;
-anim_night_walk_star_small_to_med = 0x088ca090;
-anim_night_walk_star_med_to_big = 0x088ca0a8;
-anim_night_walk_star_big_to_huge = 0x088ca0c0;
-anim_night_walk_wand_box = 0x088ca0d8;
-anim_night_walk_ng_wand_box = 0x088ca120;
-anim_night_walk_fish_zap = 0x088ca140;
-anim_play_yan_violent_electrocution = 0x088ca158;
-/* Night Walk Palettes */
-night_walk_pal = 0x088ca170;
 /* Showtime Animations */
 D_088cb47c = 0x088cb47c;
 D_088cb4a4 = 0x088cb4a4;

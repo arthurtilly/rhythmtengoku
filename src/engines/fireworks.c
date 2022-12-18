@@ -133,7 +133,7 @@ void func_0802f664(void) {
             func_0804d5d4(D_03005380, gFireworksInfo->particles[i].sprite, FIXED_TO_INT(gFireworksInfo->particles[i].x), FIXED_TO_INT(gFireworksInfo->particles[i].y));
             if ((s8) func_0804d6cc(D_03005380, gFireworksInfo->particles[i].sprite) >= D_0805a41c[gFireworksInfo->particles[i].colour]) {
                 gFireworksInfo->particles[i].active = FALSE;
-                func_0804d770(D_03005380, gFireworksInfo->particles[i].sprite, 0);
+                func_0804d770(D_03005380, gFireworksInfo->particles[i].sprite, FALSE);
             }
         }
     }

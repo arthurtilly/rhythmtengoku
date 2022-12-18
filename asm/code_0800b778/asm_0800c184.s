@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start beatscript_scene_set_music_key \n\
+thumb_func_start scene_set_music_key \n\
 /* 0800c184 */ PUSH {LR} \n\
 /* 0800c186 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800c188 */ LDR R0, =D_030053c0 \n\

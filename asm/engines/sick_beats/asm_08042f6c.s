@@ -51,7 +51,7 @@ thumb_func_start func_08042f6c \n\
 /* 08042fc8 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08042fca */ MOVS R2, 0x68 @ Set R2 to 0x68 \n\
 /* 08042fcc */ MOVS R3, 0x3C @ Set R3 to 0x3C \n\
-/* 08042fce */ BL func_0800fa6c \n\
+/* 08042fce */ BL create_affine_sprite \n\
 /* 08042fd2 */ STR R0, [R5, 0x4] \n\
 /* 08042fd4 */ STR R7, [SP] \n\
 /* 08042fd6 */ STR R6, [SP, 0x4] \n\
@@ -68,7 +68,7 @@ thumb_func_start func_08042f6c \n\
 /* 08042fec */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08042fee */ MOVS R2, 0x68 @ Set R2 to 0x68 \n\
 /* 08042ff0 */ MOVS R3, 0x3C @ Set R3 to 0x3C \n\
-/* 08042ff2 */ BL func_0800fa6c \n\
+/* 08042ff2 */ BL create_affine_sprite \n\
 /* 08042ff6 */ STR R0, [R5, 0x8] \n\
 /* 08042ff8 */ STR R7, [SP] \n\
 /* 08042ffa */ STR R6, [SP, 0x4] \n\
@@ -85,7 +85,7 @@ thumb_func_start func_08042f6c \n\
 /* 08043010 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08043012 */ MOVS R2, 0x68 @ Set R2 to 0x68 \n\
 /* 08043014 */ MOVS R3, 0x3C @ Set R3 to 0x3C \n\
-/* 08043016 */ BL func_0800fa6c \n\
+/* 08043016 */ BL create_affine_sprite \n\
 /* 0804301a */ STR R0, [R5, 0xC] \n\
 /* 0804301c */ STR R7, [SP] \n\
 /* 0804301e */ MOV R2, R9 @ Set R2 to R9 \n\
@@ -97,7 +97,7 @@ thumb_func_start func_08042f6c \n\
 /* 0804302a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0804302c */ MOVS R2, 0x68 @ Set R2 to 0x68 \n\
 /* 0804302e */ MOVS R3, 0x3C @ Set R3 to 0x3C \n\
-/* 08043030 */ BL func_0800fba0 \n\
+/* 08043030 */ BL create_default_affine_sprite \n\
 /* 08043034 */ STR R0, [R5, 0x10] \n\
 /* 08043036 */ STRH R4, [R5, 0x14] \n\
 /* 08043038 */ STRH R4, [R5, 0x16] \n\

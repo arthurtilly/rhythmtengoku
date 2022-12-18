@@ -12,7 +12,7 @@ thumb_func_start func_0802310c \n\
 /* 0802311a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0802311c */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0802311e */ STRB R1, [R0] \n\
-/* 08023120 */ BL beatscript_scene_stop_music \n\
+/* 08023120 */ BL scene_stop_music \n\
 /* 08023124 */ LDR R0, =s_ghost_just_hit_seqData \n\
 /* 08023126 */ BL play_sound \n\
 /* 0802312a */ LDR R0, [R4] \n\

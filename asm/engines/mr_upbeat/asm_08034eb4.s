@@ -41,7 +41,7 @@ branch_08034ed6: \n\
 /* 08034efa */ LDR R0, [R5, 0x10] \n\
 /* 08034efc */ LSLS R1, R1, 0x8 \n\
 /* 08034efe */ ASRS R1, R1, 0x10 \n\
-/* 08034f00 */ BL func_0800fe94 \n\
+/* 08034f00 */ BL affine_sprite_set_rotation \n\
  \n\
 branch_08034f04: \n\
 /* 08034f04 */ POP {R4, R5} \n\

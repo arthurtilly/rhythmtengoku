@@ -28,7 +28,7 @@ thumb_func_start func_0803be44 \n\
 /* 0803be72 */ LSLS R1, R1, 0x10 \n\
 /* 0803be74 */ ASRS R1, R1, 0x10 \n\
 /* 0803be76 */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\
-/* 0803be78 */ BL func_0800fed0 \n\
+/* 0803be78 */ BL affine_sprite_set_orbit \n\
 /* 0803be7c */ POP {R4, R5} \n\
 /* 0803be7e */ POP {R0} \n\
 /* 0803be80 */ BX R0 \n\

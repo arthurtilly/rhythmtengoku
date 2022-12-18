@@ -130,7 +130,7 @@ branch_080323ca: \n\
 /* 08032414 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08032416 */ LSLS R1, R1, 0x12 \n\
 /* 08032418 */ LSRS R1, R1, 0x10 \n\
-/* 0803241a */ BL beatscript_scene_set_music_track_volume \n\
+/* 0803241a */ BL scene_set_music_track_volume \n\
 /* 0803241e */ POP {R4, R5} \n\
 /* 08032420 */ POP {R0} \n\
 /* 08032422 */ BX R0 \n\

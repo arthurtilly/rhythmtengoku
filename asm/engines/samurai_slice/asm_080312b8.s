@@ -190,7 +190,7 @@ branch_08031430: \n\
 /* 08031430 */ MOVS R0, 0x40 @ Set R0 to 0x40 \n\
 /* 08031432 */ BL set_beatscript_speed \n\
 /* 08031436 */ LDR R0, =0xfffff400 \n\
-/* 08031438 */ BL beatscript_scene_set_music_pitch_env \n\
+/* 08031438 */ BL scene_set_music_pitch_env \n\
 /* 0803143c */ LDR R4, =D_030055d0 \n\
 /* 0803143e */ LDR R2, [R4] \n\
 /* 08031440 */ MOVS R0, 0xE9 @ Set R0 to 0xE9 \n\

@@ -34,7 +34,7 @@ void start_beatscript_scene(u32 memID) {
     D_030053c0.scriptSpeed = INT_TO_FIXED(1.0);
     set_beatscript_tempo(120);
     D_030053c0.musicPitchSrc2 = 0;
-    beatscript_scene_set_music_pitch(INT_TO_FIXED(0.0));
+    scene_set_music_pitch(INT_TO_FIXED(0.0));
     D_030053c0.musicVolume = INT_TO_FIXED(1.0);
     D_030053c0.musicTrkVolume = INT_TO_FIXED(1.0);
     D_030053c0.musicTrkTargets = 0;
@@ -368,7 +368,7 @@ void func_0800bebc(u32 arg) {
 
 
 // Play Music
-u32 beatscript_scene_new_music(const struct SequenceData *music, u32 override, s32 soundPlayer) {
+u32 scene_change_music(const struct SequenceData *music, u32 override, s32 soundPlayer) {
     if ((D_030053c0.musicPlayer != NULL) && override) {
         stop_soundplayer(D_030053c0.musicPlayer);
     }
@@ -382,7 +382,7 @@ u32 beatscript_scene_new_music(const struct SequenceData *music, u32 override, s
     D_030053c0.musicPlayer = (soundPlayer < 0) ? play_sound(music) : play_sound_in_player(soundPlayer, music);
     D_030053c0.musicBaseBPM = get_music_base_tempo(music);
     update_beatscript_tempo();
-    beatscript_scene_update_music_pitch();
+    scene_update_music_pitch();
     set_soundplayer_volume(D_030053c0.musicPlayer, D_030053c0.musicVolume);
     set_soundplayer_track_volume(D_030053c0.musicPlayer, D_030053c0.musicTrkTargets, D_030053c0.musicTrkVolume);
     set_soundplayer_key(D_030053c0.musicPlayer, D_030053c0.musicKey);
@@ -390,31 +390,31 @@ u32 beatscript_scene_new_music(const struct SequenceData *music, u32 override, s
 
 
 // Play Music (Override Existing)
-void beatscript_scene_set_music(const struct SequenceData *music) {
-    beatscript_scene_new_music(music, TRUE, -1);
+void scene_set_music(const struct SequenceData *music) {
+    scene_change_music(music, TRUE, -1);
 }
 
 
 // Play Music (No Override)
-void beatscript_scene_play_music(const struct SequenceData *music) {
-    beatscript_scene_new_music(music, FALSE, -1);
+void scene_play_music(const struct SequenceData *music) {
+    scene_change_music(music, FALSE, -1);
 }
 
 
 // Play Music in Given SoundPlayer (Override)
-void beatscript_scene_set_music_with_soundplayer(const struct SequenceData *music, s32 soundPlayer) {
-    beatscript_scene_new_music(music, TRUE, soundPlayer);
+void scene_set_music_with_soundplayer(const struct SequenceData *music, s32 soundPlayer) {
+    scene_change_music(music, TRUE, soundPlayer);
 }
 
 
 // Play Music in Given SoundPlayer (No Override)
-void beatscript_scene_play_music_with_soundplayer(const struct SequenceData *music, s32 soundPlayer) {
-    beatscript_scene_new_music(music, FALSE, soundPlayer);
+void scene_play_music_with_soundplayer(const struct SequenceData *music, s32 soundPlayer) {
+    scene_change_music(music, FALSE, soundPlayer);
 }
 
 
 // Play Music (override, use predefined SoundPlayer ID)
-void beatscript_scene_play_music_ignore_lfo(const struct SequenceData *music) {
+void scene_play_music_ignore_lfo(const struct SequenceData *music) {
     struct SoundPlayer *player;
 
     player = get_soundplayer_by_sound(music);
@@ -423,7 +423,7 @@ void beatscript_scene_play_music_ignore_lfo(const struct SequenceData *music) {
     D_030053c0.musicPlayer = player;
     D_030053c0.musicBaseBPM = get_music_base_tempo(music);
     update_beatscript_tempo();
-    beatscript_scene_update_music_pitch();
+    scene_update_music_pitch();
     set_soundplayer_volume(D_030053c0.musicPlayer, D_030053c0.musicVolume);
     set_soundplayer_track_volume(D_030053c0.musicPlayer, D_030053c0.musicTrkTargets, D_030053c0.musicTrkVolume);
     set_soundplayer_key(D_030053c0.musicPlayer, D_030053c0.musicKey);
@@ -431,35 +431,35 @@ void beatscript_scene_play_music_ignore_lfo(const struct SequenceData *music) {
 
 
 // Stop Music
-void beatscript_scene_stop_music(void) {
+void scene_stop_music(void) {
     stop_soundplayer(D_030053c0.musicPlayer);
 }
 
 
 // Fade-In Music
-void beatscript_scene_fade_in_music(u16 duration) {
+void scene_fade_in_music(u16 duration) {
     fade_in_soundplayer(D_030053c0.musicPlayer, duration);
 }
 
 
 // Fade-Out Music
-void beatscript_scene_fade_out_music(u16 duration) {
+void scene_fade_out_music(u16 duration) {
     fade_out_soundplayer(D_030053c0.musicPlayer, duration);
 }
 
 
 // Update Music Pitch (retain unk2_b0)
-void beatscript_scene_update_music_pitch(void) {
+void scene_update_music_pitch(void) {
     u32 flag;
 
     flag = D_030053c0.unk2_b0;
-    beatscript_scene_set_music_pitch(D_030053c0.musicPitchSrc1);
+    scene_set_music_pitch(D_030053c0.musicPitchSrc1);
     D_030053c0.unk2_b0 = flag;
 }
 
 
 // Set Music Pitch
-void beatscript_scene_set_music_pitch(s16 pitch) {
+void scene_set_music_pitch(s16 pitch) {
     D_030053c0.musicPitchSrc1 = pitch;
     pitch += D_030053c0.musicPitchSrc2;
     D_030053c0.musicPitch = pitch;
@@ -471,30 +471,30 @@ void beatscript_scene_set_music_pitch(s16 pitch) {
 
 
 // Set Music Pitch Source 2
-void beatscript_scene_set_music_pitch_env(s16 pitch) {
+void scene_set_music_pitch_env(s16 pitch) {
     D_030053c0.musicPitchSrc2 = pitch;
-    beatscript_scene_update_music_pitch();
+    scene_update_music_pitch();
 }
 
 
 // Set Music Volume
-void beatscript_scene_set_music_volume(u16 volume) {
+void scene_set_music_volume(u16 volume) {
     D_030053c0.musicVolume = volume;
     set_soundplayer_volume(D_030053c0.musicPlayer, volume);
 }
 
 
 // Set Volume for Selected Music Channels
-void beatscript_scene_set_music_track_volume(u16 selection, u16 volume) {
+void scene_set_music_track_volume(u16 selection, u16 volume) {
     D_030053c0.musicTrkVolume = volume;
     D_030053c0.musicTrkTargets = selection;
     set_soundplayer_track_volume(D_030053c0.musicPlayer, selection, volume);
 }
 
 
-// Set Music Volume (it just calls beatscript_scene_set_music_volume())
-void beatscript_scene_set_music_volume_env(u16 volume) {
-    beatscript_scene_set_music_volume(volume);
+// Set Music Volume (it just calls scene_set_music_volume())
+void scene_set_music_volume_env(u16 volume) {
+    scene_set_music_volume(volume);
 }
 
 
@@ -597,7 +597,7 @@ void set_current_mem_id(u32 id) {
 
 
 // Allocate memory for a struct of size [arg0] (bytes). (?)
-void *beatscript_scene_mem_heap_alloc(u32 size) {
+void *scene_mem_heap_alloc(u32 size) {
     return mem_heap_alloc_id(get_current_mem_id(), size);
 }
 

@@ -84,7 +84,7 @@ branch_0803c4b8: \n\
 /* 0803c4da */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803c4dc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803c4de */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0803c4e0 */ BL func_0800fa6c \n\
+/* 0803c4e0 */ BL create_affine_sprite \n\
 /* 0803c4e4 */ LDR R5, =D_030055d0 \n\
 /* 0803c4e6 */ LDR R3, [R5] \n\
 /* 0803c4e8 */ ADDS R1, R3, 0x0 @ Set R1 to R3 + 0x0 \n\
