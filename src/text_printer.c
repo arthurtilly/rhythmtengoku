@@ -41,7 +41,7 @@ static s8 sPrinterShadowColors; // Printer Shadow Colors
 
 // Init. Static Variables
 void text_printer_init(void) {
-    func_0800186c(func_0800116c, sPrintGlyphToVRAM, sizeof(sPrintGlyphToVRAM), 0x20, 0x100);
+    dma3_set(func_0800116c, sPrintGlyphToVRAM, sizeof(sPrintGlyphToVRAM), 0x20, 0x100);
     sGlyphBuffer = mem_heap_alloc(GLYPH_BUFFER_SIZE * sizeof(struct FormattedGlyph));
     sModifyPrinterSettings = NULL;
 }
@@ -409,9 +409,9 @@ void text_printer_clear_tiles(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, 
 
     tileOffset = (tileBaseX + (tileBaseY * 0x20)) * 0x20;
     tilesetBase = (void *)(VRAMBase + tileOffset);
-    func_080018e0(tile, tilesetBase, allocatedTiles * 0x20, 0x20, 0x200);
+    dma3_fill(tile, tilesetBase, allocatedTiles * 0x20, 0x20, 0x200);
     tilesetBase = (void *)(VRAMBase + tileOffset + 0x400);
-    func_080018e0(tile, tilesetBase, allocatedTiles * 0x20, 0x20, 0x200);
+    dma3_fill(tile, tilesetBase, allocatedTiles * 0x20, 0x20, 0x200);
 }
 
 
@@ -549,22 +549,16 @@ void text_printer_format_func(u32 arg, s32 xOffset) {
 //
 const char *text_printer_process_next_line(struct TextPrinter *textPrinter, u32 currentLine, const char *string) {
     struct Animation *anim;
-
     u32 id;
     u32 allocatedTiles;
-    u32 r4;
-
-    u32 r5;
-    u32 r0;
-
-    u32 tileX;
-    u32 tileY;
+    u32 linesPerGridRow;
+    u32 gridX, gridY;
+    u32 tileX, tileY;
     u32 tileOffset;
     void *tilesetBase;
 
     s32 currentDisplayLine;
-    u16 x;
-    u16 y;
+    u16 x, y;
     u32 z;
     u16 sprite;
 
@@ -577,17 +571,17 @@ const char *text_printer_process_next_line(struct TextPrinter *textPrinter, u32 
 
     id = textPrinter->unk4;
     allocatedTiles = D_08938258[id];
-    r4 = D_0893825d[id];
-    r5 = currentLine % r4;
-    r0 = currentLine / r4;
-    tileX = r5 * allocatedTiles;
-    tileY = textPrinter->unk26 + (r0 * 2);
+    linesPerGridRow = D_0893825d[id];
+    gridX = currentLine % linesPerGridRow;
+    gridY = currentLine / linesPerGridRow;
+    tileX = gridX * allocatedTiles;
+    tileY = textPrinter->unk26 + (gridY * 2);
 
     tileOffset = ((tileY * 0x20) + tileX) * 0x20;
     tilesetBase = OBJ_TILESET_BASE(tileOffset);
-    func_080018e0(0, tilesetBase, allocatedTiles * 0x20, 0x20, 0x200);
+    dma3_fill(0, tilesetBase, allocatedTiles * 0x20, 0x20, 0x200);
     tilesetBase = OBJ_TILESET_BASE(tileOffset + 0x400);
-    func_080018e0(0, tilesetBase, allocatedTiles * 0x20, 0x20, 0x200);
+    dma3_fill(0, tilesetBase, allocatedTiles * 0x20, 0x20, 0x200);
 
     currentDisplayLine = currentLine - textPrinter->unk54;
     if (currentDisplayLine < 0) {

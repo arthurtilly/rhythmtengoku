@@ -34,11 +34,11 @@ extern void func_0800152c(u16);
 extern void func_0800181c(u8);
 extern u32 func_08001828(void);
 extern u8 func_0800184c(void);
-// extern ? func_0800186c(?);
-// extern ? func_080018e0(?); // DMA3 Fill?
-extern void func_08001958(u32);
-extern u16 func_08001964(void);
-extern u16 agb_random(u16);
+extern void dma3_set(const void *source, void *destination, u32 bytesToSet, u16 unit, u32 bytesPerInterrupt); // DMA3 Set
+extern void dma3_fill(u32 value, void *destination, u32 bytesToFill, u16 unit, u32 bytesPerInterrupt); // DMA3 Fill
+extern void set_agb_random_var(u32); // Set Global Random Value
+extern u16 get_agb_random_var(void); // Get Global Random Value
+extern u16 agb_random(u16); // AGB Random
 // extern ? func_080019a4(?);
 // extern ? func_080019e4(?);
 extern void func_08001a24_stub(void);
@@ -54,9 +54,9 @@ extern void func_08001a24_stub(void);
 // extern ? func_08001ddc(?);
 // extern ? func_08001e4c(?);
 // extern ? func_08001ec4(?);
-extern u32 func_08001f34(struct struct_08001f94 *);
-extern u32 func_08001f64(struct struct_08001f94 *);
-extern u32 func_08001f94(struct struct_08001f94 *);
+extern void *func_08001f34(struct struct_08001f94 *);
+extern void *func_08001f64(struct struct_08001f94 *);
+extern void *func_08001f94(struct struct_08001f94 *);
 extern u8 func_08001fc4(u8 *);
 extern void func_08001fe0(u16 id, u8 duration, u32 size, const u16 *initial, const u16 *final, u16 *target); // Gradual Set (may be about palettes specifically)
 // extern ? func_08002018(u16 id, u8 duration, u32 size, u32 initial, u32 final, u16 *target); // Gradual Set (for a singular initial and final)
@@ -85,32 +85,32 @@ extern void func_080022d8(s16); // ROTATION/SCALING PARAMETER GROUP - ?? (Fine A
 
 /* SOUND */
 
-// extern ? func_08002630(?); // Get Sound ID
+extern u16 get_sound_num(struct SequenceData *); // Get Sound ID
 extern struct SoundPlayer *play_sound(const struct SequenceData *); // Play Sound
 extern struct SoundPlayer *play_sound_in_player(u32 player, const struct SequenceData *); // Play Sound in Specified Player
 extern struct SoundPlayer *play_sound_w_pitch_volume(const struct SequenceData *, u32 volume, s32 pitch); // Play Sound at Given Volume & Pitch
 extern struct SoundPlayer *play_sound_in_player_w_pitch_volume(u32 player, const struct SequenceData *, u32 volume, s32 pitch); // Play Sound in Specified Player, at Given Volume & Pitch
-// extern ? func_080026fc(?);
+// extern ? func_080026fc(?); // Play Sound Unless It Is Already Playing
 // extern ? stop_sound(?); // Mute All Players Playing the Given Sound
 // extern ? func_08002794(?);
 // extern ? func_080027dc(?);
 extern void stop_soundplayer(struct SoundPlayer *player); // Stop Player
 extern void stop_all_soundplayers(); // Stop All Players
-// extern ? func_08002868(?);
+extern void pause_soundplayer(u32 pause); // Pause Player
 extern void pause_all_soundplayers(u32 pause); // Pause All Players
 extern void set_soundplayer_speed(struct SoundPlayer *player, u16 speed); // Set Player Speed Envelope
 extern void set_soundplayer_pitch(struct SoundPlayer *player, s16 pitch); // Set Player Pitch Envelope
 extern void fade_in_soundplayer(struct SoundPlayer *player, u16 duration); // Fade-In Player for Given Duration
 extern void fade_out_soundplayer(struct SoundPlayer *player, u16 duration); // Fade-Out Player and Remove Sound
-// extern ? fade_out_all_soundplayers(?);
+extern void fade_out_all_soundplayers(u16 duration); // Fade-Out All Players
 extern void set_soundplayer_volume(struct SoundPlayer *player, u16 volume); // Set Player Gain Envelope
 extern void set_soundplayer_track_volume(struct SoundPlayer *player, u16 selection, u16 volume); // Set Player Volume for Selected Tracks
-// extern ? func_0800294c(?);
-// extern ? func_08002968(?);
-// extern ? func_08002978(?);
-// extern ? func_0800298c(?);
-// extern ? func_080029b0(?);
-extern void set_soundplayer_key(struct SoundPlayer *player, s8 key); // Set Player Key Offset
+extern void set_soundplayer_panning(struct SoundPlayer *player, s8 panning); // Set Player Panning
+extern struct SequenceData *get_sound_from_player(struct SoundPlayer *player); // Get Sound from SoundPlayer
+extern struct SequenceData *get_sound_from_player_id(u32 player); // Get Sound from Player ID
+extern struct SoundPlayer *get_soundplayer_from_id(u32 id); // Get Player from ID
+extern u32 soundplayer_is_playing(struct SoundPlayer *player); // Check if Player is Currently Playing Sound
+extern void set_soundplayer_key(struct SoundPlayer *player, s32 key); // Set Player Key Offset
 // extern ? func_080029d8(?);
 extern struct SoundPlayer *get_soundplayer_by_sound(const struct SequenceData *); // Return Player Currently Playing the Given Sound
 

@@ -20,7 +20,7 @@ thumb_func_start func_080258c0 \n\
 /* 080258dc */ STR R5, [SP] \n\
 /* 080258de */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080258e0 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 080258e2 */ BL func_0800186c \n\
+/* 080258e2 */ BL dma3_set \n\
 /* 080258e6 */ LDR R1, [R4] \n\
 /* 080258e8 */ LDR R2, =0x0000169c \n\
 /* 080258ea */ ADDS R0, R1, R2 @ Set R0 to R1 + R2 \n\
@@ -29,7 +29,7 @@ thumb_func_start func_080258c0 \n\
 /* 080258f0 */ STR R5, [SP] \n\
 /* 080258f2 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080258f4 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 080258f6 */ BL func_0800186c \n\
+/* 080258f6 */ BL dma3_set \n\
 /* 080258fa */ LDR R2, [R4] \n\
 /* 080258fc */ LDR R1, =0x00001414 \n\
 /* 080258fe */ ADDS R0, R2, R1 @ Set R0 to R2 + R1 \n\
@@ -53,7 +53,7 @@ branch_08025924: \n\
 /* 08025932 */ STR R5, [SP] \n\
 /* 08025934 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08025936 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08025938 */ BL func_0800186c \n\
+/* 08025938 */ BL dma3_set \n\
 /* 0802593c */ LDR R2, =D_089e06a4 \n\
 /* 0802593e */ LDR R1, [R4] \n\
 /* 08025940 */ LDRB R0, [R1] \n\
@@ -65,7 +65,7 @@ branch_08025924: \n\
 /* 0802594c */ STR R5, [SP] \n\
 /* 0802594e */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08025950 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08025952 */ BL func_0800186c \n\
+/* 08025952 */ BL dma3_set \n\
 /* 08025956 */ B branch_0802596c \n\
 \n\
 .ltorg \n\

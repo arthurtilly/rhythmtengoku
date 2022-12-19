@@ -39,7 +39,7 @@ void func_08011a18(struct struct_08011a18 *arg0) {
         arg0->unkC[i] = 0;
     }
 
-    func_080018e0(0, &arg0->unk20, 0x3800, 0x20, 0x200);
+    dma3_fill(0, &arg0->unk20, 0x3800, 0x20, 0x200);
 }
 
 #include "asm/data/asm_08011a58.s"

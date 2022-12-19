@@ -185,7 +185,7 @@ branch_080355e2: \n\
 /* 080355fa */ STR R0, [SP] \n\
 /* 080355fc */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080355fe */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08035600 */ BL func_080018e0 \n\
+/* 08035600 */ BL dma3_fill \n\
 /* 08035604 */ BL get_current_mem_id \n\
 /* 08035608 */ LDR R1, =D_0805a694 \n\
 /* 0803560a */ STR R1, [SP] \n\

@@ -33,7 +33,7 @@ thumb_func_start func_08018f10 \n\
 /* 08018f4e */ STR R0, [SP] \n\
 /* 08018f50 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08018f52 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08018f54 */ BL func_080018e0 \n\
+/* 08018f54 */ BL dma3_fill \n\
 /* 08018f58 */ MOVS R0, 0xC0 @ Set R0 to 0xC0 \n\
 /* 08018f5a */ LSLS R0, R0, 0x2 \n\
 /* 08018f5c */ MOVS R1, 0x4 @ Set R1 to 0x4 \n\

@@ -42,7 +42,7 @@ thumb_func_start func_08006e88 \n\
 /* 08006ed0 */ STR R6, [SP] \n\
 /* 08006ed2 */ ADDS R2, R7, 0x0 @ Set R2 to R7 + 0x0 \n\
 /* 08006ed4 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08006ed6 */ BL func_0800186c \n\
+/* 08006ed6 */ BL dma3_set \n\
 /* 08006eda */ BL func_08004270 \n\
 /* 08006ede */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08006ee0 */ MOV R2, R8 @ Set R2 to R8 \n\
@@ -63,7 +63,7 @@ branch_08006ef0: \n\
 /* 08006efa */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08006efc */ ADDS R2, R7, 0x0 @ Set R2 to R7 + 0x0 \n\
 /* 08006efe */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08006f00 */ BL func_0800186c \n\
+/* 08006f00 */ BL dma3_set \n\
 /* 08006f04 */ B branch_08006f62 \n\
 \n\
 .ltorg \n\
@@ -77,7 +77,7 @@ branch_08006f2c: \n\
 /* 08006f36 */ STR R6, [SP] \n\
 /* 08006f38 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08006f3a */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
-/* 08006f3c */ BL func_0800186c \n\
+/* 08006f3c */ BL dma3_set \n\
  \n\
 branch_08006f40: \n\
 /* 08006f40 */ MOVS R0, 0xFF @ Set R0 to 0xFF \n\
@@ -95,7 +95,7 @@ branch_08006f40: \n\
 /* 08006f58 */ LSLS R2, R2, 0x1 \n\
 /* 08006f5a */ STR R6, [SP] \n\
 /* 08006f5c */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
-/* 08006f5e */ BL func_0800186c \n\
+/* 08006f5e */ BL dma3_set \n\
  \n\
 branch_08006f62: \n\
 /* 08006f62 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\

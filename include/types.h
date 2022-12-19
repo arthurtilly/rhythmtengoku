@@ -90,8 +90,8 @@ extern struct BeatScriptHandler {
     u16 scriptBPM; // [D_030053cc] Tempo after speed multiplication.
     u16 scriptSpeed; // [Q8.8] Speed Multiplier
     u16 unk10; // [Q8.8] (currentTempo / 140)
-    s32 unk14; // [D_030053d4] ?? ([Q8.8] (currentTempo / 150))
-    u32 unk18;
+    s32 deltaTime; // [D_030053d4] Script Ticks per Game Update ([Q8.8] (currentTempo / 150))
+    u32 runningTime;
     u8  unk1C;
     s16 musicPitchSrc1;
     s16 musicPitchSrc2;
@@ -102,7 +102,7 @@ extern struct BeatScriptHandler {
     u16 musicVolume; // [D_03005550] BeatScript: Music Volume
     u16 musicTrkVolume; // [D_03005552] BeatScript: Music Channel Selection Volume
     u16 musicTrkTargets; // [D_03005554] BeatScript: Music Channel Selection
-    u8  musicKey; // [D_03005556] BeatScript: Music Key
+    s8  musicKey; // [D_03005556] BeatScript: Music Key
     u32 null198;
     u32 null19C;
     u32 null1A0;

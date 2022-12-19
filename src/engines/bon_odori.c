@@ -318,22 +318,22 @@ void bon_odori_screen_darken(u32 duration) {
 
 // [func_08020e1c] ENGINE Func_08 - Set Palette to Black
 void bon_odori_screen_set_black(void) {
-    func_080018e0(0, BG_PALETTE_BUFFER(0), 0xe0, 0x10, 0x200);
-    func_080018e0(0, OBJ_PALETTE_BUFFER(0), 0xe0, 0x10, 0x200);
+    dma3_fill(0, BG_PALETTE_BUFFER(0), 0xe0, 0x10, 0x200);
+    dma3_fill(0, OBJ_PALETTE_BUFFER(0), 0xe0, 0x10, 0x200);
 }
 
 
 // [func_08020e50] ENGINE Func_09 - Lighten Screen (Instant)
 void bon_odori_screen_set_light(void) {
-    func_0800186c(gBonOdoriInfo->srcBgPal, BG_PALETTE_BUFFER(0), 0xe0, 0x10, 0x200);
-    func_0800186c(gBonOdoriInfo->srcObjPal, OBJ_PALETTE_BUFFER(0), 0xe0, 0x10, 0x200);
+    dma3_set(gBonOdoriInfo->srcBgPal, BG_PALETTE_BUFFER(0), 0xe0, 0x10, 0x200);
+    dma3_set(gBonOdoriInfo->srcObjPal, OBJ_PALETTE_BUFFER(0), 0xe0, 0x10, 0x200);
 }
 
 
 // [func_08020e90] ENGINE Func_0A - Darken Screen (Instant)
 void bon_odori_screen_set_dark(void) {
-    func_0800186c(&gBonOdoriInfo->darkBgPalBuf[0], BG_PALETTE_BUFFER(0), 0xe0, 0x10, 0x200);
-    func_0800186c(&gBonOdoriInfo->darkObjPalBuf[0], OBJ_PALETTE_BUFFER(0), 0xe0, 0x10, 0x200);
+    dma3_set(&gBonOdoriInfo->darkBgPalBuf[0], BG_PALETTE_BUFFER(0), 0xe0, 0x10, 0x200);
+    dma3_set(&gBonOdoriInfo->darkObjPalBuf[0], OBJ_PALETTE_BUFFER(0), 0xe0, 0x10, 0x200);
 }
 
 

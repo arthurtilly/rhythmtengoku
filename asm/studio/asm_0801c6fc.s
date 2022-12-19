@@ -27,7 +27,7 @@ thumb_func_start func_0801c6fc \n\
 /* 0801c726 */ STR R0, [SP] \n\
 /* 0801c728 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801c72a */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 0801c72c */ BL func_080018e0 \n\
+/* 0801c72c */ BL dma3_fill \n\
 /* 0801c730 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0801c732 */ BL func_0801c960 \n\
 /* 0801c736 */ LDR R0, [R7] \n\

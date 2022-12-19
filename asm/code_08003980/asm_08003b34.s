@@ -36,7 +36,7 @@ branch_08003b60: \n\
 /* 08003b68 */ LSLS R3, R3, 0x1 \n\
 /* 08003b6a */ STR R3, [SP] \n\
 /* 08003b6c */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08003b6e */ BL func_0800186c \n\
+/* 08003b6e */ BL dma3_set \n\
 /* 08003b72 */ B branch_08003bb0 \n\
  \n\
 branch_08003b74: \n\

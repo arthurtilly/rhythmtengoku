@@ -113,7 +113,7 @@ branch_08006188: \n\
 /* 08006190 */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
 /* 08006192 */ MOVS R2, 0x14 @ Set R2 to 0x14 \n\
 /* 08006194 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08006196 */ BL func_0800186c \n\
+/* 08006196 */ BL dma3_set \n\
  \n\
 branch_0800619a: \n\
 /* 0800619a */ ADD SP, 0x4 \n\

@@ -48,7 +48,7 @@ branch_080293cc: \n\
 /* 08029402 */ STR R0, [SP] \n\
 /* 08029404 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08029406 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08029408 */ BL func_080018e0 \n\
+/* 08029408 */ BL dma3_fill \n\
 /* 0802940c */ LDR R2, [R4] \n\
 /* 0802940e */ LDRB R0, [R2] \n\
 /* 08029410 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\

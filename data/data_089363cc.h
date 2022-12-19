@@ -11,12 +11,12 @@ extern const u8 D_0893640c[];
 extern const u16 D_0893644e[];
 
 struct struct_08001f94 {
-    u8 unk0;
-    u8 unk1;
+    u8 duration;
+    u8 total;
     u8 filler[2];
-    u32 unk4;
-    u32 unk8;
-    u32 unkC;
+    const void *srcInit;
+    const void *srcTarget;
+    void *dest;
 };
 
 struct InitGfxTaskInputs {

@@ -80,7 +80,7 @@ branch_08002b7c: \n\
 /* 08002b80 */ STR R0, [SP] \n\
 /* 08002b82 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 08002b84 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 08002b86 */ BL func_0800186c \n\
+/* 08002b86 */ BL dma3_set \n\
 /* 08002b8a */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08002b8c */ SUBS R2, R2, R4 @ Set R2 to R2 - R4 \n\
 /* 08002b8e */ MOV R8, R2 @ Set R8 to R2 \n\

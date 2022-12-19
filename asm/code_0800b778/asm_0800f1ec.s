@@ -20,7 +20,7 @@ thumb_func_start func_0800f1ec \n\
 /* 0800f208 */ STR R0, [SP] \n\
 /* 0800f20a */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 0800f20c */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 0800f20e */ BL func_0800186c \n\
+/* 0800f20e */ BL dma3_set \n\
 /* 0800f212 */ ADD SP, 0x4 \n\
 /* 0800f214 */ POP {R0} \n\
 /* 0800f216 */ BX R0 \n\

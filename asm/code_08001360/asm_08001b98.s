@@ -36,7 +36,7 @@ branch_08001bc0: \n\
 /* 08001bcc */ STR R0, [SP] \n\
 /* 08001bce */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 08001bd0 */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
-/* 08001bd2 */ BL func_0800186c \n\
+/* 08001bd2 */ BL dma3_set \n\
 /* 08001bd6 */ B branch_08001bf2 \n\
  \n\
 branch_08001bd8: \n\
@@ -51,7 +51,7 @@ branch_08001bd8: \n\
 /* 08001be8 */ STR R0, [SP] \n\
 /* 08001bea */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 08001bec */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
-/* 08001bee */ BL func_080018e0 \n\
+/* 08001bee */ BL dma3_fill \n\
  \n\
 branch_08001bf2: \n\
 /* 08001bf2 */ ADD SP, 0x4 \n\

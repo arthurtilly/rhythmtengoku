@@ -50,7 +50,7 @@ branch_0802526a: \n\
 /* 0802529c */ STR R4, [SP] \n\
 /* 0802529e */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080252a0 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 080252a2 */ BL func_0800186c \n\
+/* 080252a2 */ BL dma3_set \n\
 /* 080252a6 */ LDR R5, =D_089e06a4 \n\
 /* 080252a8 */ LDR R1, [R7] \n\
 /* 080252aa */ LDRB R0, [R1] \n\
@@ -62,7 +62,7 @@ branch_0802526a: \n\
 /* 080252b6 */ STR R4, [SP] \n\
 /* 080252b8 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080252ba */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 080252bc */ BL func_0800186c \n\
+/* 080252bc */ BL dma3_set \n\
 /* 080252c0 */ LDR R1, [R7] \n\
 /* 080252c2 */ LDRB R0, [R1] \n\
 /* 080252c4 */ LSLS R0, R0, 0x2 \n\
@@ -73,7 +73,7 @@ branch_0802526a: \n\
 /* 080252ce */ STR R4, [SP] \n\
 /* 080252d0 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080252d2 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 080252d4 */ BL func_0800186c \n\
+/* 080252d4 */ BL dma3_set \n\
 /* 080252d8 */ LDR R1, [R7] \n\
 /* 080252da */ LDRB R0, [R1] \n\
 /* 080252dc */ LSLS R0, R0, 0x2 \n\
@@ -84,7 +84,7 @@ branch_0802526a: \n\
 /* 080252e6 */ STR R4, [SP] \n\
 /* 080252e8 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080252ea */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 080252ec */ BL func_0800186c \n\
+/* 080252ec */ BL dma3_set \n\
 /* 080252f0 */ LDR R1, [R7] \n\
 /* 080252f2 */ LDRB R0, [R1] \n\
 /* 080252f4 */ LSLS R0, R0, 0x2 \n\
@@ -95,7 +95,7 @@ branch_0802526a: \n\
 /* 080252fe */ STR R4, [SP] \n\
 /* 08025300 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08025302 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08025304 */ BL func_0800186c \n\
+/* 08025304 */ BL dma3_set \n\
 /* 08025308 */ LDR R1, [R7] \n\
 /* 0802530a */ LDRB R0, [R1] \n\
 /* 0802530c */ LSLS R0, R0, 0x2 \n\
@@ -106,7 +106,7 @@ branch_0802526a: \n\
 /* 08025316 */ STR R4, [SP] \n\
 /* 08025318 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 0802531a */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 0802531c */ BL func_0800186c \n\
+/* 0802531c */ BL dma3_set \n\
 /* 08025320 */ LDR R2, =0x0000294a \n\
 /* 08025322 */ LDR R1, [R7] \n\
 /* 08025324 */ LDRB R0, [R1] \n\

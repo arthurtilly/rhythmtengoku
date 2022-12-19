@@ -19,7 +19,7 @@ branch_08002f0e: \n\
 /* 08002f1a */ LSLS R3, R3, 0x1 \n\
 /* 08002f1c */ STR R3, [SP] \n\
 /* 08002f1e */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08002f20 */ BL func_0800186c \n\
+/* 08002f20 */ BL dma3_set \n\
 /* 08002f24 */ ADDS R4, 0xC @ Add 0xC to R4 \n\
  \n\
 branch_08002f26: \n\

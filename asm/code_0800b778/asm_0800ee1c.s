@@ -12,7 +12,7 @@ thumb_func_start func_0800ee1c \n\
 /* 0800ee28 */ LSLS R3, R3, 0x1 \n\
 /* 0800ee2a */ STR R3, [SP] \n\
 /* 0800ee2c */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
-/* 0800ee2e */ BL func_0800186c \n\
+/* 0800ee2e */ BL dma3_set \n\
 /* 0800ee32 */ ADD SP, 0x4 \n\
 /* 0800ee34 */ POP {R0} \n\
 /* 0800ee36 */ BX R0 \n\

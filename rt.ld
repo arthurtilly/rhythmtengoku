@@ -1557,6 +1557,8 @@ SECTIONS {
         build/data/engines/spaceball_engine.c.o(.rodata*);
         build/data/engines/bon_odori_engine.c.o(.rodata*);
         build/data/engines/karate_man_engine.c.o(.rodata*);
+        build/data/engines/mannequin_factory_engine.c.o(.rodata*);
+        build/data/engines/staff_credit_engine.c.o(.rodata*);
         build/bin/bindata_089df384.bin.o(.rodata*);
         build/data/engines/night_walk_engine.c.o(.rodata*);
         build/bin/bindata_089e384c.bin.o(.rodata*);

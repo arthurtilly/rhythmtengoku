@@ -20,9 +20,9 @@ void spaceball_reset_star(u32 current) {
     struct SpaceballStar *star;
     s32 scale, x, y;
 
-    scale = agb_random(INT_TO_FIXED(3)) + INT_TO_FIXED(1);
-    x = fast_divsi3((agb_random(240) - 120) * scale, INT_TO_FIXED(1));
-    y = fast_divsi3((agb_random(160) - 80) * scale, INT_TO_FIXED(1));
+    scale = agb_random(INT_TO_FIXED(3.0)) + INT_TO_FIXED(1.0);
+    x = fast_divsi3((agb_random(SCREEN_WIDTH) - SCREEN_CENTER_X) * scale, INT_TO_FIXED(1.0));
+    y = fast_divsi3((agb_random(SCREEN_HEIGHT) - SCREEN_CENTER_Y) * scale, INT_TO_FIXED(1.0));
 
     star = &gSpaceballInfo->stars[current];
     star->x = x;
@@ -42,10 +42,10 @@ void spaceball_update_stars_x_y(void) {
         sprite = gSpaceballInfo->starSprite[i];
         star = &gSpaceballInfo->stars[i];
 
-        scale = fast_divsi3(INT_TO_FIXED(0x100), star->z - gSpaceballInfo->zoom);
+        scale = fast_divsi3(INT_TO_FIXED(256.0), star->z - gSpaceballInfo->zoom);
         x = FIXED_TO_INT(star->x * scale);
         y = FIXED_TO_INT(star->y * scale);
-        func_0804d5d4(D_03005380, sprite, x + 120, y + 80);
+        func_0804d5d4(D_03005380, sprite, x + SCREEN_CENTER_X, y + SCREEN_CENTER_Y);
     }
 }
 
@@ -72,11 +72,11 @@ void spaceball_update_entity(struct AffineSprite *sprite, s32 x, s32 y, s32 z) {
     s32 scale;
 
     z -= gSpaceballInfo->zoom;
-    scale = fast_divsi3(INT_TO_FIXED(0x100), z);
+    scale = fast_divsi3(INT_TO_FIXED(256.0), z);
 
     x = FIXED_TO_INT(x * scale);
     y = FIXED_TO_INT(y * scale);
-    affine_sprite_set_x_y(sprite, x + 120, y + 80);
+    affine_sprite_set_x_y(sprite, x + SCREEN_CENTER_X, y + SCREEN_CENTER_Y);
     affine_sprite_set_scale(sprite, scale);
 }
 
@@ -86,17 +86,17 @@ void spaceball_update_batter(struct AffineSprite *sprite, s32 x, s32 y, s32 z, c
     s32 scale;
 
     z -= gSpaceballInfo->zoom;
-    scale = fast_divsi3(INT_TO_FIXED(0x100), z);
+    scale = fast_divsi3(INT_TO_FIXED(256.0), z);
 
     x = FIXED_TO_INT(x * scale);
     y = FIXED_TO_INT(y * scale);
-    affine_sprite_set_x_y(sprite, x + 120, y + 80);
+    affine_sprite_set_x_y(sprite, x + SCREEN_CENTER_X, y + SCREEN_CENTER_Y);
 
     if (scale > INT_TO_FIXED(0.5)) {
         affine_sprite_set_scale(sprite, scale);
         affine_sprite_change_anim(sprite, animClose, -1, 1, 0x7f, 0);
     } else {
-        scale = fast_divsi3(INT_TO_FIXED(0x200), z);
+        scale = fast_divsi3(INT_TO_FIXED(512.0), z);
         affine_sprite_set_scale(sprite, scale);
         affine_sprite_change_anim(sprite, animFar, -1, 1, 0x7f, 0);
     }
@@ -124,10 +124,10 @@ void spaceball_update_graphics(void) {
             gSpaceballInfo->poofL.z);
 
     // Update BG
-    scaleH = INT_TO_FIXED(gSpaceballInfo->zoom * -240);
+    scaleH = -INT_TO_FIXED(gSpaceballInfo->zoom * SCREEN_WIDTH);
     if (scaleH < 0) scaleH += 0xff;
     h = FIXED_TO_INT(scaleH);
-    scaleV = INT_TO_FIXED(gSpaceballInfo->zoom * -160);
+    scaleV = -INT_TO_FIXED(gSpaceballInfo->zoom * SCREEN_HEIGHT);
     if (scaleV < 0) scaleV += 0xff;
     v = FIXED_TO_INT(scaleV);
     func_08008910(BG_LAYER_2, INT_TO_FIXED(128), INT_TO_FIXED(176), h, v, 0);
@@ -177,8 +177,8 @@ void spaceball_engine_init(u32 ver) {
     spaceball_init_gfx1();
     scene_set_video_mode(VIDEO_MODE_2TEXT_1ROT);
     scene_show_obj_layer();
-    scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, 0x4082);
-    func_08008910(BG_LAYER_2, INT_TO_FIXED(120), INT_TO_FIXED(80), INT_TO_FIXED(240), INT_TO_FIXED(160), 0);
+    scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, (BGCNT_TILEMAP_SIZE(BG_ROT_TILEMAP_32x32) | BGCNT_256_PALETTE | BGCNT_PRIORITY(BG_PRIORITY_LOW)));
+    func_08008910(BG_LAYER_2, INT_TO_FIXED(SCREEN_CENTER_X), INT_TO_FIXED(SCREEN_CENTER_Y), INT_TO_FIXED(SCREEN_WIDTH), INT_TO_FIXED(SCREEN_HEIGHT), 0);
     scene_hide_bg_layer(BG_LAYER_0);
     scene_hide_bg_layer(BG_LAYER_1);
     scene_hide_bg_layer(BG_LAYER_3);
@@ -201,16 +201,16 @@ void spaceball_engine_init(u32 ver) {
     gSpaceballInfo->umpire.z = 0;
     affine_sprite_play_anim(gSpaceballInfo->umpire.sprite, TRUE);
 
-    gSpaceballInfo->poofR.sprite = create_affine_sprite(anim_spaceball_poof, 2, 154, 132, 0x4864, INT_TO_FIXED(1), 0, 1, 0, 0x8002, TRUE);
+    gSpaceballInfo->poofR.sprite = create_affine_sprite(anim_spaceball_poof, 2, 154, 132, 0x4864, INT_TO_FIXED(1.0), 0, 1, 0, 0x8002, TRUE);
     gSpaceballInfo->poofR.x = 34;
     gSpaceballInfo->poofR.y = 52;
     gSpaceballInfo->poofR.z = 0;
 
-    gSpaceballInfo->poofL.sprite = create_affine_sprite(anim_spaceball_poof, 2, 122, 132, 0x4864, INT_TO_FIXED(1), 0, 1, 0, 0x8002, TRUE);
+    gSpaceballInfo->poofL.sprite = create_affine_sprite(anim_spaceball_poof, 2, 122, 132, 0x4864, INT_TO_FIXED(1.0), 0, 1, 0, 0x8002, TRUE);
     gSpaceballInfo->poofL.x = 2;
     gSpaceballInfo->poofL.y = 52;
     gSpaceballInfo->poofL.z = 0;
-    affine_sprite_set_flip_h(gSpaceballInfo->poofL.sprite, TRUE); // Flip Horizontal
+    affine_sprite_set_flip_h(gSpaceballInfo->poofL.sprite, TRUE);
 
     gSpaceballInfo->currentStar = 0;
     gSpaceballInfo->zoom = INT_TO_FIXED(-0.5);
@@ -316,7 +316,7 @@ void spaceball_cue_spawn(struct Cue *cue, struct SpaceballCue *cueInfo, u32 arcT
     temp = cueInfo->unk1C - 48;
     div = D_03004ae4(INT_TO_FIXED(1.0) * INT_TO_FIXED(temp) / cueInfo->unk1C);
     time = beats_to_ticks(arcTime);
-    cueInfo->endTime = 2 * INT_TO_FIXED(time) / (div + INT_TO_FIXED(1));
+    cueInfo->endTime = 2 * INT_TO_FIXED(time) / (div + INT_TO_FIXED(1.0));
 
     spaceball_update_entity(cueInfo->sprite, -50, 40, cueInfo->z);
     cueInfo->missed = FALSE;
@@ -344,7 +344,7 @@ u32 spaceball_cue_update_launch(struct Cue *cue, struct SpaceballCue *cueInfo, u
         temp = runningTime - (cueInfo->endTime / 2);
         cueInfo->x = func_08008f04(70, 138, runningTime, cueInfo->endTime);
         cueInfo->y = 120 - (cueInfo->unk1C - fast_udivsi3(cueInfo->unk1C * (temp << 2) * temp, cueInfo->endTime * cueInfo->endTime));
-        spaceball_update_entity(cueInfo->sprite, cueInfo->x - 120, cueInfo->y - 80, cueInfo->z);
+        spaceball_update_entity(cueInfo->sprite, cueInfo->x - SCREEN_CENTER_X, cueInfo->y - SCREEN_CENTER_Y, cueInfo->z);
         affine_sprite_set_rotation(cueInfo->sprite, cueInfo->rotation);
         cueInfo->rotation += cueInfo->rotationSpeed;
         return FALSE;
@@ -356,7 +356,7 @@ u32 spaceball_cue_update_launch(struct Cue *cue, struct SpaceballCue *cueInfo, u
 u32 spaceball_cue_update_hit(struct Cue *cue, struct SpaceballCue *cueInfo, u32 runningTime, u32 duration) {
     if (cueInfo->z < gSpaceballInfo->zoom + INT_TO_FIXED(0.25)) return TRUE;
 
-    spaceball_update_entity(cueInfo->sprite, cueInfo->x - 120, cueInfo->y - 80, cueInfo->z);
+    spaceball_update_entity(cueInfo->sprite, cueInfo->x - SCREEN_CENTER_X, cueInfo->y - SCREEN_CENTER_Y, cueInfo->z);
     affine_sprite_set_rotation(cueInfo->sprite, cueInfo->rotation);
     cueInfo->rotation += cueInfo->rotationSpeed;
     cueInfo->z -= INT_TO_FIXED(0.25);
@@ -373,7 +373,7 @@ u32 spaceball_cue_update_barely(struct Cue *cue, struct SpaceballCue *cueInfo, u
     cueInfo->y += cueInfo->ySpeed;
     cueInfo->ySpeed += INT_TO_FIXED(0.25);
     cueInfo->z -= 4;
-    spaceball_update_entity(cueInfo->sprite, cueInfo->x - 120, (cueInfo->y >> 8) - 80, cueInfo->z);
+    spaceball_update_entity(cueInfo->sprite, cueInfo->x - SCREEN_CENTER_X, (cueInfo->y >> 8) - SCREEN_CENTER_Y, cueInfo->z);
     affine_sprite_set_rotation(cueInfo->sprite, cueInfo->rotation);
     cueInfo->rotation += cueInfo->rotationSpeed;
     return FALSE;
@@ -446,7 +446,7 @@ void spaceball_input_event(u32 pressed, u32 released) {
     affine_sprite_set_playback(batter->sprite, 1, 0x7f, 0);
     affine_sprite_set_anim_frame(batter->sprite, 1);
     batter->swingTimer = beats_to_ticks(0x0A);
-    gameplay_set_input_buttons(0,0);
+    gameplay_set_input_buttons(0, 0);
 }
 
 

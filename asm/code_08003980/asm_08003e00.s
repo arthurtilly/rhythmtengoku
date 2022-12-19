@@ -38,7 +38,7 @@ branch_08003e36: \n\
 /* 08003e3c */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08003e3e */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 08003e40 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08003e42 */ BL func_0800186c \n\
+/* 08003e42 */ BL dma3_set \n\
 /* 08003e46 */ ADDS R7, R7, R5 @ Set R7 to R7 + R5 \n\
 /* 08003e48 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08003e4a */ LSLS R0, R2, 0x5 \n\

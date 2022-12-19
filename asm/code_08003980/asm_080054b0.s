@@ -16,7 +16,7 @@ thumb_func_start func_080054b0 \n\
 /* 080054c6 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 080054c8 */ MOVS R2, 0x14 @ Set R2 to 0x14 \n\
 /* 080054ca */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 080054cc */ BL func_0800186c \n\
+/* 080054cc */ BL dma3_set \n\
 /* 080054d0 */ LDRB R1, [R4, 0x4] \n\
 /* 080054d2 */ MOVS R0, 0x10 @ Set R0 to 0x10 \n\
 /* 080054d4 */ NEGS R0, R0 @ Set R0 to -R0 \n\

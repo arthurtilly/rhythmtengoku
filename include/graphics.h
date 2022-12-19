@@ -99,6 +99,7 @@ struct TextObject2 {
 #define BGCNT_PRIORITY(x)       ((x) << 0)
 #define BGCNT_TILEDATA_ADDR(x)  ((x) << 2)
 #define BGCNT_TILEMAP_ADDR(x)   ((x) << 8)
+#define BGCNT_TILEMAP_SIZE(x)   ((x) << 14)
 #define MOSAIC_BG_XSIZE(x)      ((x) << 0)
 #define MOSAIC_BG_YSIZE(y)      ((y) << 4)
 #define MOSAIC_SPR_XSIZE(x)     ((x) << 8)

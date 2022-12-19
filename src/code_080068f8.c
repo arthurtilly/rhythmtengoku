@@ -111,7 +111,7 @@ void func_08006da8(void) {
     D_03004b10.unk854_3 = FALSE;
     D_03004b10.unk854_4 = FALSE;
     D_03004b10.modifyPalette = NULL;
-    func_080018e0(0, D_03004b10.BG_CNT, 80, 0x20, 0x100);
+    dma3_fill(0, D_03004b10.BG_CNT, 80, 0x20, 0x100);
 }
 
 
@@ -131,15 +131,15 @@ void func_08006e88(void) {
     DmaCopy32(3, D_03004b10.BG_CNT, &REG_BG0CNT, 24);
     DmaCopy32(3, &D_03004b10.WIN0H, &REG_WIN0H, 24);
 
-    func_0800186c(D_03004b10.oam, OAMBase, 0x400, 0x20, 0x100);
+    dma3_set(D_03004b10.oam, OAMBase, 0x400, 0x20, 0x100);
     offset = func_08004270();
     srcPalette = (D_03004b10.unk854_1 || D_03004b10.unk854_4) ? D_030046c0[0] : D_03004b10.bgPalette[0];
 
     if (offset < 0) {
-        func_0800186c(srcPalette, PALETTE_RAM, 0x400, 0x20, 0x100);
+        dma3_set(srcPalette, PALETTE_RAM, 0x400, 0x20, 0x100);
     } else {
         if (offset > 0) {
-            func_0800186c(srcPalette, PALETTE_RAM, offset * 2, 0x10, 0x100);
+            dma3_set(srcPalette, PALETTE_RAM, offset * 2, 0x10, 0x100);
         }
         if (offset < 0x1ff) {
             volatile void *dest, *src;
@@ -147,7 +147,7 @@ void func_08006e88(void) {
 
             src = srcPalette + offset + 1;
             dest = PALETTE_RAM + (offset + 1) * dumb; // likely a macro thing
-            func_0800186c(src, dest, (0x1ff - offset) * 2, 0x10, 0x100);
+            dma3_set(src, dest, (0x1ff - offset) * 2, 0x10, 0x100);
         }
     }
     REG_DISPCNT = D_03004b10.DISPCNT;
@@ -157,7 +157,7 @@ void func_08006e88(void) {
 // Update Palette
 void func_08006f84(void) {
     if (D_03004b10.unk854_1 || D_03004b10.unk854_4) {
-        func_0800186c(D_03004b10.bgPalette, D_030046c0, 0x400, 0x20, 0x100);
+        dma3_set(D_03004b10.bgPalette, D_030046c0, 0x400, 0x20, 0x100);
     }
     if (D_03004b10.unk854_4 && (D_03004b10.modifyPalette != NULL)) {
         D_03004b10.modifyPalette(D_030046c0);
@@ -168,13 +168,13 @@ void func_08006f84(void) {
 
 // Clear OAM Buffer
 void func_08006fec(void) {
-    func_080018e0(0x22222222, D_03004b10.oam, 0x400, 0x20, 0x100);
+    dma3_fill(0x22222222, D_03004b10.oam, 0x400, 0x20, 0x100);
 }
 
 
 // Fill Palette with Solid Colour
 void func_08007014(u16 colour) {
-    func_080018e0(colour | (colour << 16), D_03004b10.bgPalette, 0x400, 0x20, 0x100);
+    dma3_fill(colour | (colour << 16), D_03004b10.bgPalette, 0x400, 0x20, 0x100);
 }
 
 
@@ -227,8 +227,8 @@ void func_0800724c(void) {
             D_03000ea6 = D_03000ea4;
             D_03004b10.unk854_3 = TRUE;
             D_03004b10.DISPCNT = 0;
-            func_080018e0(D_03000ea8, D_03004b10.bgPalette, 0x400, 0x10, 0x100);
-            func_080018e0(D_03000ea8, D_030046c0, 0x400, 0x10, 0x100);
+            dma3_fill(D_03000ea8, D_03004b10.bgPalette, 0x400, 0x10, 0x100);
+            dma3_fill(D_03000ea8, D_030046c0, 0x400, 0x10, 0x100);
             return;
         }
     } else {

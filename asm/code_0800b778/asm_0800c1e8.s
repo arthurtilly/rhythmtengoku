@@ -31,7 +31,7 @@ branch_0800c212: \n\
 /* 0800c212 */ LSLS R1, R2, 0x18 \n\
 /* 0800c214 */ ASRS R1, R1, 0x18 \n\
 /* 0800c216 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
-/* 0800c218 */ BL func_0800294c \n\
+/* 0800c218 */ BL set_soundplayer_panning \n\
 /* 0800c21c */ POP {R0} \n\
 /* 0800c21e */ BX R0 \n\
 \n\

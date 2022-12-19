@@ -12,7 +12,7 @@ thumb_func_start func_080158f4 \n\
 /* 08015900 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08015902 */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 08015904 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08015906 */ BL func_080018e0 \n\
+/* 08015906 */ BL dma3_fill \n\
 /* 0801590a */ LDR R1, =D_089cfa74 \n\
 /* 0801590c */ LDR R0, [R1] \n\
 /* 0801590e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

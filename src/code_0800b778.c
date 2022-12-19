@@ -61,7 +61,7 @@ void set_beatscript_subscenes(const struct SubScene **subScenes) {
     D_030053c0.paused = FALSE;
     D_030053c0.bypassLoops = FALSE;
     D_030053c0.exitLoopNextUpdate = FALSE;
-    D_030053c0.unk18 = 0;
+    D_030053c0.runningTime = 0;
 
     for (i = 0; i < 2; i++) {
         D_030053c0.threads[i].active = FALSE;
@@ -143,7 +143,7 @@ void update_active_beatscript_scene(void) {
         if (thread->active) {
             D_03005588 = &D_030053c0.unk160[i];
             D_0300558c = D_030053c0.threads[i].sprites;
-            while (thread->active && (thread->timeUntilNext < D_030053c0.unk14) && !D_030053c0.paused) {
+            while (thread->active && (thread->timeUntilNext < D_030053c0.deltaTime) && !D_030053c0.paused) {
                 func_0800cb28(i);
             }
 
@@ -190,9 +190,9 @@ void update_active_beatscript_scene(void) {
 
     if (!D_030053c0.paused) {
         for (i = 0; i < 2; i++) {
-            D_030053c0.threads[i].timeUntilNext -= D_030053c0.unk14;
+            D_030053c0.threads[i].timeUntilNext -= D_030053c0.deltaTime;
         }
-        D_030053c0.unk18 += D_030053c0.unk14;
+        D_030053c0.runningTime += D_030053c0.deltaTime;
     }
 }
 
@@ -323,7 +323,7 @@ void set_beatscript_tempo(u16 tempo) {
     speed = INT_TO_FIXED(tempo);
     D_030053c0.unk10 = speed / 140;
     speed /= D_030053c0.musicBaseBPM;
-    D_030053c0.unk14 = D_030053c0.musicBaseBPM * speed / 150u;
+    D_030053c0.deltaTime = D_030053c0.musicBaseBPM * speed / 150u;
     if (D_030053c0.musicPlayer != NULL) {
         set_soundplayer_speed(D_030053c0.musicPlayer, speed);
     }
@@ -498,13 +498,31 @@ void scene_set_music_volume_env(u16 volume) {
 }
 
 
-#include "asm/code_0800b778/asm_0800c138.s"
+// Interpolate Music Volume
+void scene_interpolate_music_volume(u32 volume, u32 duration) {
+    func_0800c4b0(1, duration, &D_030053c0.musicVolume, D_030053c0.musicVolume, volume);
+}
 
-#include "asm/code_0800b778/asm_0800c154.s"
 
-#include "asm/code_0800b778/asm_0800c168.s"
+// Set Music Volume for Selected Tracks (Integer)
+void scene_set_music_track_volume_env(u32 selection, u32 volume) {
+    scene_set_music_track_volume(selection, volume);
+}
 
-#include "asm/code_0800b778/asm_0800c184.s"
+
+// Interpolate Music Volume for Selected Tracks
+void scene_interpolate_music_track_volume(u32 volume, u32 duration) {
+    func_0800c4b0(1, duration, &D_030053c0.musicTrkVolume, D_030053c0.musicTrkVolume, volume);
+}
+
+
+// Set Music Key
+void scene_set_music_key(s32 key) {
+    D_030053c0.musicKey = key;
+    if (D_030053c0.musicPlayer != NULL) {
+        set_soundplayer_key(D_030053c0.musicPlayer, key);
+    }
+}
 
 
 void func_0800c1a4_stub(void) {
@@ -517,11 +535,23 @@ u32 get_beatscript_tempo(void) {
 }
 
 
-#include "asm/code_0800b778/asm_0800c1b4.s"
+// Get unk10
+u32 func_0800c1b4(void) {
+    return D_030053c0.unk10;
+}
 
-#include "asm/code_0800b778/asm_0800c1c0.s"
 
-#include "asm/code_0800b778/asm_0800c1d0.s"
+// Return (arg * unk10)
+s32 func_0800c1c0(s24_8 arg) {
+    return FIXED_POINT_MUL(arg, D_030053c0.unk10);
+}
+
+
+// Return (arg * (unk10 * unk10))
+s32 func_0800c1d0(s24_8 arg) {
+    return FIXED_POINT_MUL(arg, FIXED_POINT_MUL(D_030053c0.unk10, D_030053c0.unk10));
+}
+
 
 #include "asm/code_0800b778/asm_0800c1e8.s"
 
@@ -546,7 +576,7 @@ u32 get_beatscript_tempo(void) {
 
 // Convert Script Beats To Real-Time Ticks
 s32 beats_to_ticks(u32 beats) {
-    fast_divsi3(INT_TO_FIXED(beats), D_030053c0.unk14);
+    fast_divsi3(INT_TO_FIXED(beats), D_030053c0.deltaTime);
 }
 
 

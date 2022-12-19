@@ -92,7 +92,7 @@ branch_080171fe: \n\
 /* 08017254 */ STR R0, [SP] \n\
 /* 08017256 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08017258 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 0801725a */ BL func_080018e0 \n\
+/* 0801725a */ BL dma3_fill \n\
 /* 0801725e */ B branch_08017272 \n\
 \n\
 .ltorg \n\

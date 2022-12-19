@@ -54,7 +54,7 @@ branch_08011b06: \n\
 /* 08011b2a */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08011b2c */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
 /* 08011b2e */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08011b30 */ BL func_0800186c \n\
+/* 08011b30 */ BL dma3_set \n\
 /* 08011b34 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 08011b36 */ ADDS R0, 0xFF @ Add 0xFF to R0 \n\
 /* 08011b38 */ LSRS R0, R0, 0x8 \n\

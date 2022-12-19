@@ -106,7 +106,7 @@ void agb_main(void) {
 	
 	while (1) {
 		func_080013a8();
-		func_08001964();
+		get_agb_random_var();
 		func_080015bc();
 		D_030046a0 += 1;
 		process_scenes();

@@ -2575,7 +2575,7 @@ jump_0800df6a: \n\
 /* 0800df72 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0800df74 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0800df76 */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
-/* 0800df78 */ BL func_0800186c \n\
+/* 0800df78 */ BL dma3_set \n\
 /* 0800df7c */ B branch_0800df9e \n\
 \n\
 jump_0800df7e: \n\

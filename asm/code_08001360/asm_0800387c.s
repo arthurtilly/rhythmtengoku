@@ -20,7 +20,7 @@ branch_08003886: \n\
 /* 08003894 */ LSLS R3, R3, 0x1 \n\
 /* 08003896 */ STR R3, [SP] \n\
 /* 08003898 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 0800389a */ BL func_0800186c \n\
+/* 0800389a */ BL dma3_set \n\
 /* 0800389e */ ADDS R4, 0x8 @ Add 0x8 to R4 \n\
  \n\
 branch_080038a0: \n\

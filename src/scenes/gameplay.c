@@ -220,7 +220,7 @@ u32 gameplay_inputs_are_enabled(void) {
 
 // Gameplay - Clear Secondary Palette Buffer
 void func_08017168(Palette buffer) {
-    func_080018e0(0, buffer, 0x3E0, 0x20, 0x200);
+    dma3_fill(0, buffer, 0x3E0, 0x20, 0x200);
 }
 
 
@@ -611,7 +611,7 @@ void gameplay_spawn_cue(s32 id) {
     } else {
         newCue->gameCueInfo = NULL;
     }
-    func_0800186c(cueDef, &newCue->data, sizeof(struct CueDefinition), 0x20, 0x200);
+    dma3_set(cueDef, &newCue->data, sizeof(struct CueDefinition), 0x20, 0x200);
 
     newCue->unk48_b0 = FALSE;
     newCue->hasExpired = FALSE;
@@ -1033,7 +1033,7 @@ void gameplay_pause_menu_darken_screen(void) {
     u32 i;
 
     palBuf = (u32 *)D_03004b10.bgPalette;
-    func_0800186c(palBuf, &gGameplayInfo.paletteBuffer, sizeof(gGameplayInfo.paletteBuffer), 0x20, 0x200);
+    dma3_set(palBuf, &gGameplayInfo.paletteBuffer, sizeof(gGameplayInfo.paletteBuffer), 0x20, 0x200);
 
     for (i = 0; i < 0x3E; i++, palBuf += 4) {
         palBuf[0] = (palBuf[0] / 2) & PAUSE_MENU_PALETTE_MOD;
@@ -1046,7 +1046,7 @@ void gameplay_pause_menu_darken_screen(void) {
 
 // [func_08018318] Screen Lighten (Unpause)
 void gameplay_pause_menu_lighten_screen(void) {
-    func_0800186c(&gGameplayInfo.paletteBuffer, D_03004b10.bgPalette, sizeof(D_03004b10.bgPalette) + sizeof(D_03004b10.objPalette), 0x20, 0x200);
+    dma3_set(&gGameplayInfo.paletteBuffer, D_03004b10.bgPalette, sizeof(D_03004b10.bgPalette) + sizeof(D_03004b10.objPalette), 0x20, 0x200);
 }
 
 

@@ -123,7 +123,7 @@ branch_08003146: \n\
 /* 08003152 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08003154 */ MULS R2, R3 @ Multiply R2 by R3 \n\
 /* 08003156 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08003158 */ BL func_0800186c \n\
+/* 08003158 */ BL dma3_set \n\
 /* 0800315c */ LDRB R0, [R7, 0x14] \n\
 /* 0800315e */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08003160 */ MULS R1, R0 @ Multiply R1 by R0 \n\

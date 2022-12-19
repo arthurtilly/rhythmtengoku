@@ -31,7 +31,7 @@ thumb_func_start func_08015940 \n\
 /* 08015974 */ LSLS R3, R3, 0x2 \n\
 /* 08015976 */ STR R3, [SP] \n\
 /* 08015978 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 0801597a */ BL func_0800186c \n\
+/* 0801597a */ BL dma3_set \n\
 /* 0801597e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08015980 */ ADD SP, 0x4 \n\
 /* 08015982 */ POP {R4, R5} \n\

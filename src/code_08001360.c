@@ -16,7 +16,7 @@ static u8 D_030000a9;
 static s16 D_030000aa; // unknown type
 static u16 D_030000ac;
 static s32 D_030000b0; // unknown type
-static u16 D_030000b4;
+static u16 sRandom; // [D_030000b4] Static Random Variable
 static s32 D_030000b8[32]; // unknown type
 static s32 D_03000138[64]; // unknown type
 static s32 D_03000238[64]; // unknown type
@@ -47,7 +47,7 @@ void func_080013a8(void) {
     volatile u32 temp;
     if (!(REG_DISPCNT & 0x80)) {
         while (!D_03000098) {
-			temp = *((u32*)GameROMBase + func_08001964());
+			temp = *((u32*)GameROMBase + get_agb_random_var());
 		}
     }
     D_03000098 = 0;
@@ -153,31 +153,91 @@ u8 func_0800184c(void) {
     return D_030053b4 >= D_03005374;
 }
 
-#include "asm/code_08001360/asm_0800186c.s"
 
-#include "asm/code_08001360/asm_080018e0.s"
+// DMA3 Set
+void dma3_set(const void *source, void *destination, u32 bytesToSet, u16 unit, u32 bytesPerInterrupt) {
+    const void *src = source;
+    void *dest = destination;
+    u32 dmaSize = unit / 16;
 
-void func_08001958(u32 arg1) {
-    D_030000b4 = arg1;
+    while (bytesToSet != 0) {
+        REG_DMA3SAD = (u32)src;
+        REG_DMA3DAD = (u32)dest;
+
+        if (bytesToSet <= bytesPerInterrupt) {
+            bytesPerInterrupt = bytesToSet;
+        }
+
+        REG_DMA3CNT_L = bytesPerInterrupt >> dmaSize;
+        REG_DMA3CNT_H = (
+            DMACNT_DEST_INC_TYPE_INCREMENT
+            | DMACNT_SRC_INC_TYPE_INCREMENT
+            | ((dmaSize != 1) << 10)
+            | DMACNT_START_MODE_IMMEDIATE
+            | DMACNT_ENABLE
+        );
+
+        src += bytesPerInterrupt;
+        dest += bytesPerInterrupt;
+        bytesToSet -= bytesPerInterrupt;
+    }
+}
+
+
+// DMA3 Fill
+void dma3_fill(u32 value, void *destination, u32 bytesToFill, u16 unit, u32 bytesPerInterrupt) {
+    void *dest = destination;
+    u32 dmaSize = unit / 16;
+
+    while (bytesToFill != 0) {
+        REG_DMA3SAD = (u32)&value;
+        REG_DMA3DAD = (u32)dest;
+
+        if (bytesToFill <= bytesPerInterrupt) {
+            bytesPerInterrupt = bytesToFill;
+        }
+
+        REG_DMA3CNT_L = bytesPerInterrupt >> dmaSize;
+        REG_DMA3CNT_H = (
+            DMACNT_DEST_INC_TYPE_INCREMENT
+            | DMACNT_SRC_INC_TYPE_UNCHANGED
+            | ((dmaSize != 1) << 10)
+            | DMACNT_START_MODE_IMMEDIATE
+            | DMACNT_ENABLE
+        );
+
+        dest += bytesPerInterrupt;
+        bytesToFill -= bytesPerInterrupt;
+    }
+}
+
+
+// Set Global Random Value
+void set_agb_random_var(u32 val) {
+    sRandom = val;
     return;
 }
 
-u16 func_08001964(void) {
-    D_030000b4 = D_030000b4 * 0x6d + 0x3fd;
-    return D_030000b4;
+
+// Get Global Random Value
+u16 get_agb_random_var(void) {
+    sRandom = sRandom * 109 + 1021;
+    return sRandom;
 }
 
-u16 agb_random(u16 arg1) {   // Random
-    D_030000b4 = D_030000b4 * 0x6d + 0x3fd;
-    return (D_030000b4 * arg1) >> 0x10;
+
+// AGB Random
+u16 agb_random(u16 var) {   // Random
+    sRandom = sRandom * 109 + 1021;
+    return (sRandom * var) >> 16;
 }
+
 
 #include "asm/code_08001360/asm_080019a4.s"
 
 #include "asm/code_08001360/asm_080019e4.s"
 
 void func_08001a24_stub(void) {
-
 }
 
 #include "asm/code_08001360/asm_08001a28.s"
@@ -204,31 +264,37 @@ void func_08001a24_stub(void) {
 
 #include "asm/code_08001360/asm_08001ec4.s"
 
-u32 func_08001f34(struct struct_08001f94 *arg1) {
-    u32 temp;
+
+// Gradual (Palette) Set - Task Init.
+void *func_08001f34(struct struct_08001f94 *arg1) {
+    void *temp;
     temp = mem_heap_alloc(0x18);
-    func_08001bf8(temp, arg1->unk0, arg1->unk1, arg1->unk4, arg1->unk8, 0, arg1->unkC);
+    func_08001bf8(temp, arg1->duration, arg1->total, arg1->srcInit, arg1->srcTarget, 0, arg1->dest);
     return temp;
 }
 
-u32 func_08001f64(struct struct_08001f94 *arg1) {
-    u32 temp;
+
+void *func_08001f64(struct struct_08001f94 *arg1) {
+    void *temp;
     temp = mem_heap_alloc(0x18);
-    func_08001c64(temp, arg1->unk0, arg1->unk1, arg1->unk4, arg1->unk8, 0, arg1->unkC);
+    func_08001c64(temp, arg1->duration, arg1->total, arg1->srcInit, arg1->srcTarget, 0, arg1->dest);
     return temp;
 }
 
-u32 func_08001f94(struct struct_08001f94 *arg1) {
-    u32 temp;
+
+void *func_08001f94(struct struct_08001f94 *arg1) {
+    void *temp;
     temp = mem_heap_alloc(0x18);
-    func_08001cd8(temp, arg1->unk0, arg1->unk1, arg1->unk4, arg1->unk8, 0, arg1->unkC);
+    func_08001cd8(temp, arg1->duration, arg1->total, arg1->srcInit, arg1->srcTarget, 0, arg1->dest);
     return temp;
 }
+
 
 u8 func_08001fc4(u8 *arg1) {
     func_08001b48();
     return ((*arg1 << 31) == 0);
 }
+
 
 #include "asm/code_08001360/asm_08001fe0.s"
 

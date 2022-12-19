@@ -47,7 +47,7 @@ branch_08011b7a: \n\
 /* 08011b9e */ LSLS R3, R3, 0x2 \n\
 /* 08011ba0 */ STR R3, [SP] \n\
 /* 08011ba2 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08011ba4 */ BL func_0800186c \n\
+/* 08011ba4 */ BL dma3_set \n\
 /* 08011ba8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08011baa */ MOV R12, R9 @ Set R12 to R9 \n\
 /* 08011bac */ MOV R3, R10 @ Set R3 to R10 \n\

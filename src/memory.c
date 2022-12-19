@@ -94,7 +94,7 @@ void func_08000804(void) {
 void func_0800081c(void) {
     struct SaveBuffer *buffer = D_030046a8;
 
-    func_080018e0(0, buffer, SAVE_BUFFER_SIZE, 0x20, 0x100);
+    dma3_fill(0, buffer, SAVE_BUFFER_SIZE, 0x20, 0x100);
     strcpy(buffer->info.RIQ, D_08935fbc);
     buffer->info.bufferSize = SAVE_BUFFER_SIZE;
     buffer->info.unk8 = 0;

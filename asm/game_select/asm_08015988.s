@@ -54,7 +54,7 @@ branch_080159ca: \n\
 /* 080159e0 */ LSLS R3, R3, 0x2 \n\
 /* 080159e2 */ STR R3, [SP] \n\
 /* 080159e4 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 080159e6 */ BL func_0800186c \n\
+/* 080159e6 */ BL dma3_set \n\
  \n\
 branch_080159ea: \n\
 /* 080159ea */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

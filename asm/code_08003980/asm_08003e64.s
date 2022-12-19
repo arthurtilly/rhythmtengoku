@@ -14,7 +14,7 @@ thumb_func_start func_08003e64 \n\
 /* 08003e74 */ STR R1, [SP] \n\
 /* 08003e76 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08003e78 */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
-/* 08003e7a */ BL func_0800186c \n\
+/* 08003e7a */ BL dma3_set \n\
 /* 08003e7e */ LDR R0, =D_03004af0 \n\
 /* 08003e80 */ STR R4, [R0] \n\
 /* 08003e82 */ LDR R1, =D_030053b0 \n\

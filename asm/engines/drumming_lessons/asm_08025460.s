@@ -39,7 +39,7 @@ branch_0802547a: \n\
 /* 0802549a */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0802549c */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 0802549e */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 080254a0 */ BL func_0800186c \n\
+/* 080254a0 */ BL dma3_set \n\
 /* 080254a4 */ LDR R0, [R6] \n\
 /* 080254a6 */ LDR R1, =0x0000149c \n\
 /* 080254a8 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
@@ -48,7 +48,7 @@ branch_0802547a: \n\
 /* 080254ae */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 080254b0 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080254b2 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 080254b4 */ BL func_0800186c \n\
+/* 080254b4 */ BL dma3_set \n\
  \n\
 branch_080254b8: \n\
 /* 080254b8 */ LDR R2, [R6] \n\

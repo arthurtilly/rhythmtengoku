@@ -41,7 +41,7 @@ branch_08027918: \n\
 /* 08027926 */ STR R2, [SP] \n\
 /* 08027928 */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 0802792a */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
-/* 0802792c */ BL func_0800186c \n\
+/* 0802792c */ BL dma3_set \n\
 /* 08027930 */ ADD SP, 0x4 \n\
 /* 08027932 */ POP {R4} \n\
 /* 08027934 */ POP {R0} \n\

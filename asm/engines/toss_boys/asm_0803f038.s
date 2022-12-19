@@ -47,7 +47,7 @@ branch_0803f04e: \n\
 /* 0803f086 */ ADDS R2, R2, R0 @ Set R2 to R2 + R0 \n\
 /* 0803f088 */ STRH R2, [R5] \n\
 /* 0803f08a */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
-/* 0803f08c */ BL func_0800298c \n\
+/* 0803f08c */ BL get_soundplayer_from_id \n\
 /* 0803f090 */ LDR R1, [R7] \n\
 /* 0803f092 */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\
 /* 0803f094 */ LDRH R1, [R1] \n\

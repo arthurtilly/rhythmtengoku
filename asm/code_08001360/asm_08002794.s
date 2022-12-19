@@ -28,7 +28,7 @@ branch_080027b6: \n\
 /* 080027b8 */ BEQ branch_080027c2 \n\
 /* 080027ba */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 080027bc */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
-/* 080027be */ BL func_08002868 \n\
+/* 080027be */ BL pause_soundplayer \n\
  \n\
 branch_080027c2: \n\
 /* 080027c2 */ ADDS R5, 0xC @ Add 0xC to R5 \n\

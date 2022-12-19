@@ -40,16 +40,16 @@ extern void scene_set_music_pitch_env(s16 pitch); // Set Music Pitch Source 2
 extern void scene_set_music_volume(u16 volume); // Set Music Volume
 extern void scene_set_music_track_volume(u16 selection, u16 volume); // Set Music Volume for Selected Tracks
 extern void scene_set_music_volume_env(u16 volume); // Set Music Volume 2 (just calls the other one)
-// extern ? scene_interpolate_music_volume(u32 volume, u32 duration); // Interpolate Music Volume
-// extern ? scene_set_music_track_volume_env(?); // Set Music Volume for Selected Tracks 2 (just calls the other one)
-// extern ? scene_interpolate_music_track_volume(u32 volume, u32 duration); // Interpolate Music Volume for Selected Tracks
-// extern ? scene_set_music_key(?); // Set Music Key
+extern void scene_interpolate_music_volume(u32 volume, u32 duration); // Interpolate Music Volume
+extern void scene_set_music_track_volume_env(u32 selection, u32 volume); // Set Music Volume for Selected Tracks (Integer)
+extern void scene_interpolate_music_track_volume(u32 volume, u32 duration); // Interpolate Music Volume for Selected Tracks
+extern void scene_set_music_key(s32 key); // Set Music Key Offset
 extern void func_0800c1a4_stub(void);
 extern u32 get_beatscript_tempo(void); // Get Current Script Tempo
-// extern ? func_0800c1b4(?);
-// extern ? func_0800c1c0(?);
-// extern ? func_0800c1d0(?);
-// extern ? func_0800c1e8(?);
+extern u32 func_0800c1b4(void); // Get unk10
+extern s32 func_0800c1c0(s24_8 arg); // Return (arg * unk10)
+extern s32 func_0800c1d0(s24_8 arg); // Return (arg * (unk10 * unk10))
+// extern ? func_0800c1e8(?); // Set Music Panning
 // extern ? func_0800c228(?);
 // extern ? func_0800c280(?);
 // extern ? func_0800c2b0(?);

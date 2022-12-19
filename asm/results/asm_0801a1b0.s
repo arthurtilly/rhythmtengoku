@@ -105,7 +105,7 @@ branch_0801a248: \n\
 /* 0801a278 */ STR R0, [SP] \n\
 /* 0801a27a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801a27c */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 0801a27e */ BL func_080018e0 \n\
+/* 0801a27e */ BL dma3_fill \n\
 /* 0801a282 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 0801a284 */ BEQ branch_0801a2ca \n\
 /* 0801a286 */ BL get_current_mem_id \n\

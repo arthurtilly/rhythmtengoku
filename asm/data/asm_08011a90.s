@@ -27,7 +27,7 @@ thumb_func_start func_08011a90 \n\
 /* 08011aba */ ADDS R1, R2, 0x0 @ Set R1 to R2 + 0x0 \n\
 /* 08011abc */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 08011abe */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08011ac0 */ BL func_0800186c \n\
+/* 08011ac0 */ BL dma3_set \n\
 /* 08011ac4 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08011ac6 */ B branch_08011acc \n\
  \n\

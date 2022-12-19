@@ -105,7 +105,7 @@ void func_08018aa0(s32 arg) {
     func_080073f0();
     gResultsInfo.textObj2 = func_08005124(get_current_mem_id(), &D_089de670, 0, 0x340, 6);
     gResultsInfo.textObj1 = func_0800c660(0x300, 4);
-    func_080018e0(0, RESULTS_TEXT_TILES_ADDRESS, 0x4000, 0x20, 0x200);
+    dma3_fill(0, RESULTS_TEXT_TILES_ADDRESS, 0x4000, 0x20, 0x200);
     gResultsInfo.unk24 = 0;
 
     gResultsInfo.placeholderIcon = func_0804d160(D_03005380, D_0890b6ac, 0, LEVEL_HEADER_ICON_X, LEVEL_HEADER_Y, 0x800, 0, 0, 0x8000);
