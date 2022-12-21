@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0802bf88 \n\
+thumb_func_start showtime_cue_barely \n\
 /* 0802bf88 */ PUSH {R4-R6, LR} \n\
 /* 0802bf8a */ MOV R6, R8 @ Set R6 to R8 \n\
 /* 0802bf8c */ PUSH {R6} \n\

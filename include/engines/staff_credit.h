@@ -42,14 +42,14 @@ extern void staff_credit_init_gfx3(void); // Graphics Init. 2
 extern void staff_credit_init_gfx2(void); // Graphics Init. 1
 extern void staff_credit_init_gfx1(void); // Graphics Init. 0
 extern void staff_credit_engine_start(u32 version); // Game Engine Start
-extern void func_08023690(); // Engine Event 4
+extern void func_08023690(); // Engine Event 4 (?)
 // extern ? func_08023694(?);
 // extern ? func_080236e4(?);
-extern void func_0802372c(); // Engine Event 0
-extern void func_080237ec(); // Engine Event 1
-extern void func_080237f8(); // Engine Event 2
+extern void func_0802372c(); // Engine Event 0 (?)
+extern void func_080237ec(); // Engine Event 1 (?)
+extern void func_080237f8(); // Engine Event 2 (?)
 // extern ? func_08023808(?);
-extern void func_08023898(); // Engine Event 3
+extern void func_08023898(); // Engine Event 3 (?)
 // extern ? func_080238ac(?);
 // extern ? func_080238c0(?);
 extern void staff_credit_engine_update(void); // Game Engine Update

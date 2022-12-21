@@ -7,9 +7,9 @@
 struct ShowtimeInfo {
     struct TextObject1 *unk0;
     u16 unk4;
-    u8 unk6;
+    u8 version;
     struct ShowtimeInfo_sub {
-        s16 unk0;
+        s16 sprite;
         u32 unk4;
         s32 unk8;
     } unk8[2];
@@ -29,7 +29,7 @@ struct ShowtimeInfo {
     u32 unk168;
     u32 pad16C[2];
     struct ShowtimeInfo_sub2 {
-        s16 unk0;
+        s16 sprite;
         s32 unk4;
         s32 unk8;
         u32 unkC;
@@ -42,57 +42,77 @@ struct ShowtimeInfo {
     u8 unk3D0;
 };
 
+struct ShowtimeCue {
+    u32 unk0;
+    u32 unk4;
+};
+
 
 // Engine Macros/Enums:
+enum ShowtimeVersionsEnum {
+    SHOWTIME_VER_0,
+    SHOWTIME_VER_REMIX3
+};
+
 
 // OAM Animations:
 extern const struct Animation D_088cb994[];
 extern const struct Animation D_088cb4a4[];
 
+
 // Palettes:
+
 
 // Sound Effects:
 extern const struct SequenceData s_block_hit_seqData;
 
+
 // Engine Data:
 extern char D_0805a3cc[];
 
+
 // Engine Definition Data:
-extern const struct CompressedGraphics *D_089e384c[]; // Buffered Textures List
-extern const struct GraphicsTable *D_089e3910[]; // Graphics Table
+extern const struct CompressedGraphics *const showtime_buffered_textures[]; // Buffered Textures List
+extern const struct GraphicsTable *const showtime_gfx_tables[]; // Graphics Table Index
+extern const struct Animation *const D_089e3ac4[];
+extern const struct Animation *const D_089e3ad8[];
+extern const struct Animation *const D_089e3aec[];
+extern const struct Animation *const D_089e3b00[];
+extern const u32 D_089e3b14[][5];
+
 
 // Functions:
-// extern ? func_0802bbfc(?);
-extern void func_0802bc0c(void);
-extern void func_0802bc4c(void);
-extern void func_0802bc78(u8 arg0);
-extern void func_0802bd40(void);
-// extern ? func_0802bd44(?);
-// extern ? func_0802be10(?);
-extern void func_0802be24(void);
-extern void func_0802be40(u32, u32*);
-extern u8 func_0802be58(u32, u32, u32);
-extern void func_0802be74(void);
-// extern ? func_0802be78(?);
-extern u8 func_0802be90(u32, u32, u32);
-extern void func_0802beac(void);
-// extern ? func_0802beb0(?);
-// extern ? func_0802bec8(?);
-extern void func_0802bee4(void);
-// extern ? func_0802bee8(?);
-extern u8 func_0802bf00(u32, u32, u32);
-extern void func_0802bf1c(void);
-extern void func_0802bf20(u32, u32*) ;
-extern u8 func_0802bf38(u32, u32, u32) ;
-extern void func_0802bf54(void);
-extern void func_0802bf58(u32, u32*);
-// extern ? func_0802bf88(?);
-// extern ? func_0802c078(?);
-extern void func_0802c084(void);
-// extern ? func_0802c0c8(?);
-// extern ? func_0802c150(?);
-// extern ? func_0802c1cc(?);
-extern void func_0802c1f0(u32, u16, u32);
+extern void showtime_init_gfx3(void); // Graphics Init. 3
+extern void showtime_init_gfx2(void); // Graphics Init. 2
+extern void showtime_init_gfx1(void); // Graphics Init. 1
+extern void showtime_engine_start(u32 version); // Game Engine Start
+extern void showtime_engine_event_stub(void); // Engine Event 1 (STUB)
+extern void showtime_engine_update(void); // Game Engine Update
+extern void func_0802be10(); // Engine Event 0 (?)
+extern void showtime_engine_stop(void); // Game Engine Stop
+extern void showtime_cue_spawn_gray(struct Cue *, struct ShowtimeCue *, u32);
+extern u32  showtime_cue_update_gray(struct Cue *, struct ShowtimeCue *, u32 runningTime, u32 duration);
+extern void showtime_cue_despawn_gray(struct Cue *, struct ShowtimeCue *);
+extern void showtime_cue_spawn_black(struct Cue *, struct ShowtimeCue *, u32);
+extern u32  showtime_cue_update_black(struct Cue *, struct ShowtimeCue *, u32 runningTime, u32 duration);
+extern void showtime_cue_despawn_black(struct Cue *, struct ShowtimeCue *);
+extern void showtime_cue_spawn_white_fast(struct Cue *, struct ShowtimeCue *, u32);
+extern u32  showtime_cue_update_white_fast(struct Cue *, struct ShowtimeCue *, u32 runningTime, u32 duration);
+extern void showtime_cue_despawn_white_fast(struct Cue *, struct ShowtimeCue *);
+extern void showtime_cue_spawn_white_fast_swing(struct Cue *, struct ShowtimeCue *, u32);
+extern u32  showtime_cue_update_white_fast_swing(struct Cue *, struct ShowtimeCue *, u32 runningTime, u32 duration);
+extern void showtime_cue_despawn_white_fast_swing(struct Cue *, struct ShowtimeCue *);
+extern void showtime_cue_spawn_white(struct Cue *, struct ShowtimeCue *, u32);
+extern u32  showtime_cue_update_white(struct Cue *, struct ShowtimeCue *, u32 runningTime, u32 duration);
+extern void showtime_cue_despawn_white(struct Cue *, struct ShowtimeCue *);
+extern void showtime_cue_hit(struct Cue *, struct ShowtimeCue *, u32 pressed, u32 released); // Cue - Hit
+extern void showtime_cue_barely(struct Cue *, struct ShowtimeCue *, u32 pressed, u32 released); // Cue - Barely
+extern void showtime_cue_miss(struct Cue *, struct ShowtimeCue *); // Cue - Miss
+extern void showtime_input_event(u32 pressed, u32 released); // Input Event
+extern void showtime_common_beat_animation(); // Common Event 0 (Beat Animation)
+extern void showtime_common_display_text(); // Common Event 1 (Display Text)
+extern void showtime_common_init_tutorial(); // Common Event 2 (Init. Tutorial)
+extern void func_0802c1f0(u32, s16, u32);
 extern void func_0802c23c(void);
 extern void func_0802c334(void);
 // extern ? func_0802c36c(?);

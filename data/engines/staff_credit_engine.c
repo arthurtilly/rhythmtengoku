@@ -37,7 +37,7 @@ const struct CreditsTextStartPos D_089df628[] = {
   //  //  //  CUE DATA  //  //  //
 
 
-// [D_089df634] Cue 0
+// [D_089df634] Cue 00
 const struct CueDefinition staff_credit_cue_00 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),

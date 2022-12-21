@@ -3586,24 +3586,6 @@ D_089e2e34 = 0x089e2e34;
 D_089e2ea0 = 0x089e2ea0;
 /* Game Engine - Night Walk */
 /* Game Engine - Showtime */
-D_089e384c = 0x089e384c;
-D_089e3850 = 0x089e3850;
-D_089e38b0 = 0x089e38b0;
-D_089e3910 = 0x089e3910;
-D_089e3918 = 0x089e3918;
-D_089e3958 = 0x089e3958;
-D_089e3998 = 0x089e3998;
-D_089e39d8 = 0x089e39d8;
-D_089e3a18 = 0x089e3a18;
-D_089e3a58 = 0x089e3a58;
-D_089e3a8c = 0x089e3a8c;
-D_089e3a9c = 0x089e3a9c;
-D_089e3aa4 = 0x089e3aa4;
-D_089e3ac4 = 0x089e3ac4;
-D_089e3ad8 = 0x089e3ad8;
-D_089e3aec = 0x089e3aec;
-D_089e3b00 = 0x089e3b00;
-D_089e3b14 = 0x089e3b14;
 /* Game Engine - Bouncy Road */
 D_089e3c0c = 0x089e3c0c;
 D_089e3c10 = 0x089e3c10;
