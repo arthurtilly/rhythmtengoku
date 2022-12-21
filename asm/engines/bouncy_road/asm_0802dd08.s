@@ -28,7 +28,7 @@ branch_0802dd1a: \n\
 /* 0802dd30 */ LSLS R0, R0, 0x8 \n\
 /* 0802dd32 */ STR R0, [SP, 0x14] \n\
 /* 0802dd34 */ STR R5, [SP, 0x18] \n\
-/* 0802dd36 */ LDR R0, =D_088cbe00 \n\
+/* 0802dd36 */ LDR R0, =anim_bouncy_road_ball \n\
 /* 0802dd38 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802dd3a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802dd3c */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\

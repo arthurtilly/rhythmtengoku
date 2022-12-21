@@ -11,19 +11,9 @@ extern const struct CompressedGraphics D_08c54f7c;
 extern const struct CompressedGraphics D_08c56bd8;
 extern const struct CompressedGraphics D_08c57650;
 extern const struct CompressedGraphics D_08c577d8;
-extern const struct CompressedGraphics D_08c54f7c;
 extern const Palette showtime_bg_pal[];
 extern const Palette showtime_obj_pal[];
 extern const Palette showtime_remix3_bg_pal[];
-extern const struct SequenceData s_f_esa_jump_seqData;
-extern const struct Animation showtime_anim00[];
-extern const struct Animation showtime_anim11[];
-extern const struct Animation showtime_anim08[];
-extern const struct Animation showtime_anim16[];
-extern const struct Animation showtime_anim07[];
-extern const struct Animation showtime_anim15[];
-extern const struct Animation showtime_anim09[];
-extern const struct Animation showtime_anim23[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //

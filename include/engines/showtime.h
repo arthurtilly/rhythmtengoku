@@ -58,6 +58,14 @@ enum ShowtimeVersionsEnum {
 // OAM Animations:
 extern const struct Animation D_088cb994[];
 extern const struct Animation D_088cb4a4[];
+extern const struct Animation showtime_anim00[];
+extern const struct Animation showtime_anim11[];
+extern const struct Animation showtime_anim08[];
+extern const struct Animation showtime_anim16[];
+extern const struct Animation showtime_anim07[];
+extern const struct Animation showtime_anim15[];
+extern const struct Animation showtime_anim09[];
+extern const struct Animation showtime_anim23[];
 
 
 // Palettes:
@@ -65,6 +73,7 @@ extern const struct Animation D_088cb4a4[];
 
 // Sound Effects:
 extern const struct SequenceData s_block_hit_seqData;
+extern const struct SequenceData s_f_esa_jump_seqData;
 
 
 // Engine Data:

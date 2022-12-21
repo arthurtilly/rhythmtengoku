@@ -2,14 +2,14 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0802e448 \n\
+thumb_func_start bouncy_road_engine_start \n\
 /* 0802e448 */ PUSH {R4-R6, LR} \n\
 /* 0802e44a */ SUB SP, 0xC \n\
 /* 0802e44c */ LDR R6, =D_030055d0 \n\
 /* 0802e44e */ LDR R1, [R6] \n\
 /* 0802e450 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0802e452 */ STRB R0, [R1] \n\
-/* 0802e454 */ BL func_0802e41c \n\
+/* 0802e454 */ BL bouncy_road_init_gfx1 \n\
 /* 0802e458 */ BL scene_show_obj_layer \n\
 /* 0802e45c */ LDR R0, [R6] \n\
 /* 0802e45e */ LDRB R4, [R0] \n\

@@ -799,10 +799,10 @@ D_088cba2c = 0x088cba2c;
 D_088cbb0c = 0x088cbb0c;
 D_088cbb2c = 0x088cbb2c;
 /* Bouncy Road Animations */
-D_088cbd90 = 0x088cbd90;
-D_088cbdc8 = 0x088cbdc8;
-D_088cbe00 = 0x088cbe00;
-D_088cbe10 = 0x088cbe10;
+anim_bouncy_road_player_a = 0x088cbd90;
+anim_bouncy_road_player_dpad = 0x088cbdc8;
+anim_bouncy_road_ball = 0x088cbe00;
+anim_bouncy_road_path = 0x088cbe10;
 /* Bouncy Road Palettes */
 D_088cbe48 = 0x088cbe48;
 D_088cbf88 = 0x088cbf88;
@@ -3587,16 +3587,6 @@ D_089e2ea0 = 0x089e2ea0;
 /* Game Engine - Night Walk */
 /* Game Engine - Showtime */
 /* Game Engine - Bouncy Road */
-D_089e3c0c = 0x089e3c0c;
-D_089e3c10 = 0x089e3c10;
-D_089e3c40 = 0x089e3c40;
-D_089e3ca0 = 0x089e3ca0;
-D_089e3cd0 = 0x089e3cd0;
-D_089e3cdc = 0x089e3cdc;
-D_089e3d1c = 0x089e3d1c;
-D_089e3d50 = 0x089e3d50;
-D_089e3d5c = 0x089e3d5c;
-D_089e3d78 = 0x089e3d78;
 /* Game Engine - Rhythm Tweezers */
 D_089e3d98 = 0x089e3d98;
 D_089e3da4 = 0x089e3da4;

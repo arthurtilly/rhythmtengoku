@@ -30,15 +30,15 @@ branch_0802e30a: \n\
 /* 0802e31e */ ADD R2, SP, 0x1C \n\
 /* 0802e320 */ MOV R3, R9 @ Set R3 to R9 \n\
 /* 0802e322 */ BL func_0802e270 \n\
-/* 0802e326 */ LDR R1, =D_088cbe10 \n\
+/* 0802e326 */ LDR R1, =anim_bouncy_road_path \n\
 /* 0802e328 */ CMP R4, 0xC @ Compare R4 and 0xC \n\
 /* 0802e32a */ BNE branch_0802e32e \n\
-/* 0802e32c */ LDR R1, =D_088cbd90 \n\
+/* 0802e32c */ LDR R1, =anim_bouncy_road_player_a \n\
  \n\
 branch_0802e32e: \n\
 /* 0802e32e */ CMP R4, 0xD @ Compare R4 and 0xD \n\
 /* 0802e330 */ BNE branch_0802e334 \n\
-/* 0802e332 */ LDR R1, =D_088cbdc8 \n\
+/* 0802e332 */ LDR R1, =anim_bouncy_road_player_dpad \n\
  \n\
 branch_0802e334: \n\
 /* 0802e334 */ LDR R2, [SP, 0x1C] \n\

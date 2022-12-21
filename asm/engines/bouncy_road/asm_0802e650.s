@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0802e650 \n\
+thumb_func_start bouncy_road_cue_hit \n\
 /* 0802e650 */ PUSH {R4-R7, LR} \n\
 /* 0802e652 */ ADDS R6, R1, 0x0 @ Set R6 to R1 + 0x0 \n\
 /* 0802e654 */ ADDS R7, R2, 0x0 @ Set R7 to R2 + 0x0 \n\
@@ -24,7 +24,7 @@ branch_0802e674: \n\
 /* 0802e674 */ BL func_08018068 \n\
 /* 0802e678 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0802e67a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0802e67c */ BL func_0802e718 \n\
+/* 0802e67c */ BL bouncy_road_input_event \n\
 /* 0802e680 */ B branch_0802e6d6 \n\
  \n\
 branch_0802e682: \n\
