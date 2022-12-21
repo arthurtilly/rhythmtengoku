@@ -123,7 +123,7 @@ extern void bon_odori_update_donpans(void);                         // [func_080
 extern void bon_odori_init_gfx3(void);                              // [func_0802085c] GFX_INIT Func_02
 extern void bon_odori_init_gfx2(void);                              // [func_08020880] GFX_INIT Func_01
 extern void bon_odori_init_gfx1(void);                              // [func_080208c0] GFX_INIT Func_00
-extern void bon_odori_engine_init(u32);                             // [func_080208ec] MAIN - Init
+extern void bon_odori_engine_start(u32);                            // [func_080208ec] MAIN - Init
 extern void bon_odori_engine_event_stub(void);                      // [func_08020a48] ENGINE Func_11 - STUB
 extern void bon_odori_lyrics_display_line(const char *, u32, u32);  // [func_08020a4c] Display Text
 extern void bon_odori_lyrics_set_current_line(u32);                 // [func_08020be4] ENGINE Func_00 - Set Target Lyrics (by Vertical Position)

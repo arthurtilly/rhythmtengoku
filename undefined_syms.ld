@@ -3164,16 +3164,8 @@ D_089de670 = 0x089de670;
 /* Game Engine - The Bon Odori */
 /* Game Engine - Karate Man */
 /* Game Engine - Mannequin Factory */
-
 /* Game Engine - Staff Credit */
-D_089df618 = 0x089df618;
-D_089df61c = 0x089df61c;
-D_089df628 = 0x089df628;
-D_089df634 = 0x089df634;
-D_089df674 = 0x089df674;
-D_089df6a8 = 0x089df6a8;
-D_089df6b8 = 0x089df6b8;
-D_089df6cc = 0x089df6cc;
+
 /* Game Engine - Drumming */
 D_089df6ec = 0x089df6ec;
 D_089df81c = 0x089df81c;

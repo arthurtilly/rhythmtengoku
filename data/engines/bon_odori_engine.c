@@ -545,7 +545,7 @@ const EngineEvent bon_odori_engine_events[] = {
 // [D_089deff0] Bon Odori Game Engine
 const struct GameEngine D_089deff0 = {
     /* Size in Memory */ sizeof(struct BonOdoriInfo),
-    /* Init. Engine   */ bon_odori_engine_init,
+    /* Start Engine   */ bon_odori_engine_start,
     /* Update Engine  */ bon_odori_engine_update,
     /* Stop Engine    */ bon_odori_engine_stop,
     /* Cue Index      */ bon_odori_cue_index,

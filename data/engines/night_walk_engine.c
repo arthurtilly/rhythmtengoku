@@ -732,7 +732,7 @@ const EngineEvent night_walk_engine_events[] = {
 // [D_089e382c] Night Walk Game Engine
 const struct GameEngine D_089e382c = {
     /* Size in Memory */ sizeof(struct NightWalkInfo),
-    /* Init. Engine   */ night_walk_engine_init,
+    /* Start Engine   */ night_walk_engine_start,
     /* Update Engine  */ night_walk_engine_update,
     /* Stop Engine    */ night_walk_engine_stop,
     /* Cue Index      */ night_walk_cue_index,

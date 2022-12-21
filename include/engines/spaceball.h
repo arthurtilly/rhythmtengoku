@@ -109,7 +109,7 @@ extern void spaceball_update_graphics(void);        // Update Entities, Stars & 
 extern void spaceball_init_gfx3(void);              // GFX_INIT Func_02
 extern void spaceball_init_gfx2(void);              // GFX_INIT Func_01
 extern void spaceball_init_gfx1(void);              // GFX_INIT Func_00
-extern void spaceball_engine_init(u32);             // MAIN - Init
+extern void spaceball_engine_start(u32);            // MAIN - Init
 extern void spaceball_engine_event_stub(void);      // ENGINE Func_06 - STUB
 extern void spaceball_prepare_pitcher(void);        // ENGINE Func_00 - Pitcher Prepare
 extern void spaceball_update_batter_swing(struct SpaceballBatter *); // Update Batter Swing

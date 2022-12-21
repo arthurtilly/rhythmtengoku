@@ -598,7 +598,7 @@ void night_walk_init_gfx1(void) {
 
 
 // Game Engine Init.
-void night_walk_engine_init(u32 ver) {
+void night_walk_engine_start(u32 ver) {
     struct TextPrinter *textPrinter;
 
     gNightWalkInfo->version = ver;

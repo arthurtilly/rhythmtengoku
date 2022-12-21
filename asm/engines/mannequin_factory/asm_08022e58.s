@@ -2,14 +2,14 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08022e58 \n\
+thumb_func_start mannequin_engine_start \n\
 /* 08022e58 */ PUSH {R4-R6, LR} \n\
 /* 08022e5a */ SUB SP, 0xC \n\
 /* 08022e5c */ LDR R4, =D_030055d0 \n\
 /* 08022e5e */ LDR R1, [R4] \n\
 /* 08022e60 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 08022e62 */ STRB R0, [R1] \n\
-/* 08022e64 */ BL func_08022e2c \n\
+/* 08022e64 */ BL mannequin_init_gfx1 \n\
 /* 08022e68 */ BL scene_show_obj_layer \n\
 /* 08022e6c */ LDR R0, [R4] \n\
 /* 08022e6e */ LDRB R0, [R0] \n\

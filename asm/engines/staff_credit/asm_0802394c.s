@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0802394c \n\
+thumb_func_start staff_credit_engine_stop \n\
 /* 0802394c */ LDR R2, =D_03004b10 \n\
 /* 0802394e */ LDRH R1, [R2] \n\
 /* 08023950 */ LDR R0, =0x0000dfff \n\

@@ -45,7 +45,7 @@ void karate_init_gfx1(void) {
 
 
 // MAIN - Init
-void karate_engine_init(u32 ver) {
+void karate_engine_start(u32 ver) {
     // Load graphical assets and other basic functionality.
     gKarateManInfo->version = ver;
     karate_init_gfx1();

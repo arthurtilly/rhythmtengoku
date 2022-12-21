@@ -141,7 +141,7 @@ void bon_odori_init_gfx1(void) {
 
 
 // [func_080208ec] MAIN - Init
-void bon_odori_engine_init(u32 ver) {
+void bon_odori_engine_start(u32 ver) {
     u32 i;
 
     gBonOdoriInfo->version = ver;

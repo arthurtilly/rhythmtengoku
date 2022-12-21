@@ -2,6 +2,9 @@
 
 asm(".include \"include/gba.inc\""); // Temporary
 
+// For readability.
+#define gStaffCreditInfo ((struct StaffCreditInfo *)D_030055d0)
+
 
 /* STAFF CREDIT */
 

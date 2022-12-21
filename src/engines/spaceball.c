@@ -172,7 +172,7 @@ void spaceball_init_gfx1(void) {
 
 
 // MAIN - Init
-void spaceball_engine_init(u32 ver) {
+void spaceball_engine_start(u32 ver) {
     gSpaceballInfo->version = ver;
     spaceball_init_gfx1();
     scene_set_video_mode(VIDEO_MODE_2TEXT_1ROT);

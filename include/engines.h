@@ -5,6 +5,7 @@
 #include "sound.h"
 #include "cues.h"
 #include "data/wario_data.h"
+#include "src/text_printer.h"
 
 /*
     General "Game Engine" header file.

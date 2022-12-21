@@ -2,14 +2,14 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08023604 \n\
+thumb_func_start staff_credit_engine_start \n\
 /* 08023604 */ PUSH {R4, R5, LR} \n\
 /* 08023606 */ SUB SP, 0xC \n\
 /* 08023608 */ LDR R5, =D_030055d0 \n\
 /* 0802360a */ LDR R1, [R5] \n\
 /* 0802360c */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0802360e */ STRB R0, [R1] \n\
-/* 08023610 */ BL func_080235d8 \n\
+/* 08023610 */ BL staff_credit_init_gfx1 \n\
 /* 08023614 */ BL scene_show_obj_layer \n\
 /* 08023618 */ STR R4, [SP] \n\
 /* 0802361a */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\

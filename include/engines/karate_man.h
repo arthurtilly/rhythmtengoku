@@ -6,7 +6,6 @@
 
 
 // Engine Types:
-
 struct KarateManInfo {
     u8 version;     // 0 = Karate Man; 1 = Karate Man (BG Faces); 2 = Karate Man ("Serious Mode"); 3 = Karate Man 2
 	struct KarateJoe {
@@ -154,7 +153,7 @@ extern const u8 karate_flow_palette_high[];    // BG Palette Index (High Flow)
 extern void karate_init_gfx3(void);    // [func_08021190] GFX_INIT Func_02
 extern void karate_init_gfx2(void);
 extern void karate_init_gfx1(void);
-extern void karate_engine_init(u32);     // [func_08021210] MAIN - Init
+extern void karate_engine_start(u32);     // [func_08021210] MAIN - Init
 extern void karate_set_bg_face(u32, u32);
 extern void karate_reset_bg_face(u32);
 extern void karate_update_bg_face(void);
