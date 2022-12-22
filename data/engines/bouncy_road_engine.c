@@ -144,7 +144,7 @@ const struct CueDefinition bouncy_road_cue_default = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e3d1c] Cue Index
+// [D_089e3d1c] Cue Definition Index
 const struct CueDefinition *const bouncy_road_cue_index[] = {
     /* 0x00 */ &bouncy_road_cue_default,
     /* 0x01 */ NULL,

@@ -1,0 +1,491 @@
+#include "engines/rhythm_tweezers.h"
+
+
+  /* RHYTHM TWEEZERS - GAME ENGINE DATA */
+
+
+extern const struct CompressedGraphics D_08c5af04; // BG Tiles - Vegetables
+extern const struct CompressedGraphics D_08c5bd6c; // BG Map - Onion
+extern const struct CompressedGraphics D_08c5bf7c; // BG Map - Turnip
+extern const struct CompressedGraphics D_08c5c134; // BG Map - Potato
+extern const struct CompressedGraphics D_08c5915c; // OBJ Tiles
+extern const struct CompressedGraphics D_08c5badc; // BG Tiles - Mask
+extern const struct CompressedGraphics D_08c5c3a0; // BG Map - Mask
+extern const Palette rhythm_tweezers_pal[];
+extern const Palette rhythm_tweezers_2_pal[];
+
+
+  //  //  //  GRAPHICS DATA  //  //  //
+
+
+// [D_089e3d98] Vegetable Face Animations
+const struct Animation *const rhythm_tweezers_veg_face_anim[] = {
+    /* 0x00 */ anim_veg_face_onion,
+    /* 0x01 */ anim_veg_face_turnip,
+    /* 0x02 */ anim_veg_face_potato
+};
+
+// [D_089e3da4] Vegetable BG Maps
+const struct CompressedGraphics *const rhythm_tweezers_veg_bg_maps[] = {
+    &D_08c5bd6c,
+    &D_08c5bf7c,
+    &D_08c5c134
+};
+
+// [D_089e3db0] Buffered Textures List
+const struct CompressedGraphics *const rhythm_tweezers_buffered_textures[] = {
+    END_OF_BUFFERED_TEXTURES_LIST
+};
+
+// [D_089e3db4] Graphics Table (Rhythm Tweezers - Onion)
+const struct GraphicsTable rhythm_tweezers_1_onion_gfx_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &D_08c5af04,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08c5bd6c,
+        /* Dest. */ BG_MAP_BASE(0xF000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &D_08c5915c,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ rhythm_tweezers_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ rhythm_tweezers_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* BG Tileset */ {
+        /* Src.  */ &D_08c5badc,
+        /* Dest. */ BG_TILESET_BASE(0x8000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08c5c3a0,
+        /* Dest. */ BG_MAP_BASE(0xE000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
+// [D_089e3e14] Graphics Table (Rhythm Tweezers - Turnip)
+const struct GraphicsTable rhythm_tweezers_1_turnip_gfx_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &D_08c5af04,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08c5bf7c,
+        /* Dest. */ BG_MAP_BASE(0xF000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &D_08c5915c,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ rhythm_tweezers_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ rhythm_tweezers_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* BG Tileset */ {
+        /* Src.  */ &D_08c5badc,
+        /* Dest. */ BG_TILESET_BASE(0x8000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08c5c3a0,
+        /* Dest. */ BG_MAP_BASE(0xE000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
+// [D_089e3e74] Graphics Table (Rhythm Tweezers - Potato)
+const struct GraphicsTable rhythm_tweezers_1_potato_gfx_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &D_08c5af04,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08c5c134,
+        /* Dest. */ BG_MAP_BASE(0xF000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &D_08c5915c,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ rhythm_tweezers_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ rhythm_tweezers_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* BG Tileset */ {
+        /* Src.  */ &D_08c5badc,
+        /* Dest. */ BG_TILESET_BASE(0x8000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08c5c3a0,
+        /* Dest. */ BG_MAP_BASE(0xE000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
+// [D_089e3ed4] Graphics Table (Rhythm Tweezers 2 - Onion)
+const struct GraphicsTable rhythm_tweezers_2_onion_gfx_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &D_08c5af04,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08c5bd6c,
+        /* Dest. */ BG_MAP_BASE(0xF000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &D_08c5915c,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ rhythm_tweezers_2_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ rhythm_tweezers_2_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* BG Tileset */ {
+        /* Src.  */ &D_08c5badc,
+        /* Dest. */ BG_TILESET_BASE(0x8000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08c5c3a0,
+        /* Dest. */ BG_MAP_BASE(0xE000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
+// [D_089e3f34] Graphics Table (Rhythm Tweezers 2 - Turnip)
+const struct GraphicsTable rhythm_tweezers_2_turnip_gfx_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &D_08c5af04,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08c5bf7c,
+        /* Dest. */ BG_MAP_BASE(0xF000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &D_08c5915c,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ rhythm_tweezers_2_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ rhythm_tweezers_2_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* BG Tileset */ {
+        /* Src.  */ &D_08c5badc,
+        /* Dest. */ BG_TILESET_BASE(0x8000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08c5c3a0,
+        /* Dest. */ BG_MAP_BASE(0xE000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
+// [D_089e3f94] Graphics Table (Rhythm Tweezers 2 - Potato)
+const struct GraphicsTable rhythm_tweezers_2_potato_gfx_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &D_08c5af04,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08c5c134,
+        /* Dest. */ BG_MAP_BASE(0xF000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &D_08c5915c,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ rhythm_tweezers_2_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ rhythm_tweezers_2_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* BG Tileset */ {
+        /* Src.  */ &D_08c5badc,
+        /* Dest. */ BG_TILESET_BASE(0x8000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08c5c3a0,
+        /* Dest. */ BG_MAP_BASE(0xE000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
+// [D_089e3ff4] Graphics Table Index
+const struct GraphicsTable *const rhythm_tweezers_gfx_tables[] = {
+    /* 0x00 */ rhythm_tweezers_1_onion_gfx_table,
+    /* 0x01 */ rhythm_tweezers_1_turnip_gfx_table,
+    /* 0x02 */ rhythm_tweezers_1_potato_gfx_table,
+    /* 0x03 */ rhythm_tweezers_2_onion_gfx_table,
+    /* 0x04 */ rhythm_tweezers_2_turnip_gfx_table,
+    /* 0x05 */ rhythm_tweezers_2_potato_gfx_table
+};
+
+
+  //  //  //  CUE DATA  //  //  //
+
+
+// [D_089e400c] Cue 00 (Short Hair, 4 Beats)
+const struct CueDefinition rhythm_tweezers_cue_short_4beat = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
+    /* Total Duration  */ 0x60,
+    /* Hit Window      */ -0x03, 0x03,
+    /* Barely Window   */ -0x05, 0x05,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct RhythmTweezersCue),
+    /* Func. Spawn     */ rhythm_tweezers_cue_spawn,
+    /* Spawn Parameter */ 0,
+    /* Func. Update    */ rhythm_tweezers_cue_update_short,
+    /* Func. Despawn   */ rhythm_tweezers_cue_despawn,
+    /* Func. Hit       */ rhythm_tweezers_cue_hit_short,
+    /* Func. Barely    */ rhythm_tweezers_cue_barely_short,
+    /* Func. Miss      */ rhythm_tweezers_cue_miss,
+    /* SFX Spawn       */ NULL,
+    /* SFX Hit         */ &s_datumo_nuki_seqData,
+    /* SFX Barely      */ &s_f_hair_kegire_seqData,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089e404c] Cue 01 (Long Hair, 4 Beats)
+const struct CueDefinition rhythm_tweezers_cue_long_4beat = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
+    /* Total Duration  */ 0x60,
+    /* Hit Window      */ -0x04, 0x04,
+    /* Barely Window   */ -0x04, 0x04,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct RhythmTweezersCue),
+    /* Func. Spawn     */ rhythm_tweezers_cue_spawn,
+    /* Spawn Parameter */ 1,
+    /* Func. Update    */ rhythm_tweezers_cue_update_long,
+    /* Func. Despawn   */ rhythm_tweezers_cue_despawn,
+    /* Func. Hit       */ rhythm_tweezers_cue_hit_long,
+    /* Func. Barely    */ rhythm_tweezers_cue_hit_long,
+    /* Func. Miss      */ rhythm_tweezers_cue_miss,
+    /* SFX Spawn       */ NULL,
+    /* SFX Hit         */ &s_witch_furu_seqData,
+    /* SFX Barely      */ NULL,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089e408c] Cue 02 (Short Hair, 4 Beats, Lenient)
+const struct CueDefinition rhythm_tweezers_cue_fast_4beat = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
+    /* Total Duration  */ 0x60,
+    /* Hit Window      */ -0x04, 0x04,
+    /* Barely Window   */ -0x06, 0x06,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct RhythmTweezersCue),
+    /* Func. Spawn     */ rhythm_tweezers_cue_spawn,
+    /* Spawn Parameter */ 0,
+    /* Func. Update    */ rhythm_tweezers_cue_update_short,
+    /* Func. Despawn   */ rhythm_tweezers_cue_despawn,
+    /* Func. Hit       */ rhythm_tweezers_cue_hit_short,
+    /* Func. Barely    */ rhythm_tweezers_cue_barely_short,
+    /* Func. Miss      */ rhythm_tweezers_cue_miss,
+    /* SFX Spawn       */ NULL,
+    /* SFX Hit         */ &s_datumo_nuki_seqData,
+    /* SFX Barely      */ &s_f_hair_kegire_seqData,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089e40cc] Cue 04 (Short Hair, 8 Beats)
+const struct CueDefinition rhythm_tweezers_cue_short_8beat = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
+    /* Total Duration  */ 0xC0,
+    /* Hit Window      */ -0x03, 0x03,
+    /* Barely Window   */ -0x05, 0x05,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct RhythmTweezersCue),
+    /* Func. Spawn     */ rhythm_tweezers_cue_spawn,
+    /* Spawn Parameter */ 0,
+    /* Func. Update    */ rhythm_tweezers_cue_update_short,
+    /* Func. Despawn   */ rhythm_tweezers_cue_despawn,
+    /* Func. Hit       */ rhythm_tweezers_cue_hit_short,
+    /* Func. Barely    */ rhythm_tweezers_cue_barely_short,
+    /* Func. Miss      */ rhythm_tweezers_cue_miss,
+    /* SFX Spawn       */ NULL,
+    /* SFX Hit         */ &s_datumo_nuki_seqData,
+    /* SFX Barely      */ &s_f_hair_kegire_seqData,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089e410c] Cue 05 (Long Hair, 8 Beats)
+const struct CueDefinition rhythm_tweezers_cue_long_8beat = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
+    /* Total Duration  */ 0xC0,
+    /* Hit Window      */ -0x04, 0x04,
+    /* Barely Window   */ -0x04, 0x04,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct RhythmTweezersCue),
+    /* Func. Spawn     */ rhythm_tweezers_cue_spawn,
+    /* Spawn Parameter */ 1,
+    /* Func. Update    */ rhythm_tweezers_cue_update_long,
+    /* Func. Despawn   */ rhythm_tweezers_cue_despawn,
+    /* Func. Hit       */ rhythm_tweezers_cue_hit_long,
+    /* Func. Barely    */ rhythm_tweezers_cue_hit_long,
+    /* Func. Miss      */ rhythm_tweezers_cue_miss,
+    /* SFX Spawn       */ NULL,
+    /* SFX Hit         */ &s_witch_furu_seqData,
+    /* SFX Barely      */ NULL,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089e414c] Cue 06 (Short Hair, 8 Beats, Lenient)
+const struct CueDefinition rhythm_tweezers_cue_fast_8beat = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
+    /* Total Duration  */ 0xC0,
+    /* Hit Window      */ -0x04, 0x04,
+    /* Barely Window   */ -0x06, 0x06,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct RhythmTweezersCue),
+    /* Func. Spawn     */ rhythm_tweezers_cue_spawn,
+    /* Spawn Parameter */ 0,
+    /* Func. Update    */ rhythm_tweezers_cue_update_short,
+    /* Func. Despawn   */ rhythm_tweezers_cue_despawn,
+    /* Func. Hit       */ rhythm_tweezers_cue_hit_short,
+    /* Func. Barely    */ rhythm_tweezers_cue_barely_short,
+    /* Func. Miss      */ rhythm_tweezers_cue_miss,
+    /* SFX Spawn       */ NULL,
+    /* SFX Hit         */ &s_datumo_nuki_seqData,
+    /* SFX Barely      */ &s_f_hair_kegire_seqData,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089e418c] Cue Definition Index
+const struct CueDefinition *const rhythm_tweezers_cue_index[] = {
+    /* 0x00 */ &rhythm_tweezers_cue_short_4beat,
+    /* 0x01 */ &rhythm_tweezers_cue_long_4beat,
+    /* 0x02 */ &rhythm_tweezers_cue_fast_4beat,
+    /* 0x03 */ NULL,
+    /* 0x04 */ &rhythm_tweezers_cue_short_8beat,
+    /* 0x05 */ &rhythm_tweezers_cue_long_8beat,
+    /* 0x06 */ &rhythm_tweezers_cue_fast_8beat,
+    /* 0x07 */ NULL,
+    /* 0x08 */ NULL,
+    /* 0x09 */ NULL,
+    /* 0x0A */ NULL,
+    /* 0x0B */ NULL,
+    END_OF_CUE_INDEX
+};
+
+
+  //  //  //  GAME ENGINE DATA  //  //  //
+
+
+// [D_089e41c0] Common Events
+const EngineEvent rhythm_tweezers_common_events[] = {
+    /* BEAT_ANIMATION */ (EngineEvent) rhythm_tweezers_common_beat_animation,
+    /* DISPLAY_TEXT   */ (EngineEvent) rhythm_tweezers_common_display_text,
+    /* INIT_TUTORIAL  */ // None
+    END_OF_COMMON_EVENT_LIST
+};
+
+// [D_089e41cc] Engine Events
+const EngineEvent rhythm_tweezers_engine_events[] = {
+    /* 0x00 */ (EngineEvent) rhythm_tweezers_spawn_tweezers,
+    /* 0x01 */ (EngineEvent) rhythm_tweezers_start_hair_cycle,
+    /* 0x02 */ (EngineEvent) rhythm_tweezers_scroll_to_next_veg,
+    /* 0x03 */ (EngineEvent) rhythm_tweezers_set_next_veg_type,
+    /* 0x04 */ (EngineEvent) rhythm_tweezers_play_cash_reg_sfx,
+    /* 0x05 */ (EngineEvent) rhythm_tweezers_hide_tutorial_text,
+    /* 0x06 */ (EngineEvent) rhythm_tweezers_removed_engine_event,
+    /* 0x07 */ (EngineEvent) rhythm_tweezers_show_mask,
+    /* 0x08 */ (EngineEvent) rhythm_tweezers_hide_mask,
+    /* 0x09 */ (EngineEvent) rhythm_tweezers_engine_event_stub
+};
+
+// [D_089e41f4] Rhythm Tweezers Game Engine
+const struct GameEngine D_089e41f4 = {
+    /* Size in Memory */ sizeof(struct RhythmTweezersInfo),
+    /* Start Engine   */ rhythm_tweezers_engine_start,
+    /* Update Engine  */ rhythm_tweezers_engine_update,
+    /* Stop Engine    */ rhythm_tweezers_engine_stop,
+    /* Cue Index      */ rhythm_tweezers_cue_index,
+    /* Common Events  */ rhythm_tweezers_common_events,
+    /* Engine Events  */ rhythm_tweezers_engine_events,
+    /* Input Event    */ rhythm_tweezers_input_event
+};

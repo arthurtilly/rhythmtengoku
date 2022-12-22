@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0802ef68 \n\
+thumb_func_start rhythm_tweezers_cue_update_long \n\
 /* 0802ef68 */ PUSH {R4-R7, LR} \n\
 /* 0802ef6a */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 0802ef6c */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -107,7 +107,7 @@ branch_0802f012: \n\
 /* 0802f034 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0802f036 */ STRH R0, [R1, 0x12] \n\
 /* 0802f038 */ LDR R0, [R5, 0x4] \n\
-/* 0802f03a */ LDR R1, =D_088e88f8 \n\
+/* 0802f03a */ LDR R1, =anim_rhythm_tweezers_hair_stubble \n\
 /* 0802f03c */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0802f03e */ STR R3, [SP] \n\
 /* 0802f040 */ STR R3, [SP, 0x4] \n\
@@ -117,7 +117,7 @@ branch_0802f012: \n\
 /* 0802f04a */ LDR R1, =0xfffffe00 \n\
 /* 0802f04c */ BL affine_sprite_set_rotation \n\
 /* 0802f050 */ LDR R0, [R6, 0x4] \n\
-/* 0802f052 */ LDR R1, =D_088e87a8 \n\
+/* 0802f052 */ LDR R1, =anim_tweezers_pluck_hit \n\
 /* 0802f054 */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 0802f056 */ STR R2, [SP] \n\
 /* 0802f058 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
@@ -176,7 +176,7 @@ branch_0802f0c4: \n\
 /* 0802f0cc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802f0ce */ BL gameplay_add_cue_result \n\
 /* 0802f0d2 */ LDR R0, [R5, 0x4] \n\
-/* 0802f0d4 */ LDR R1, =D_088e89a8 \n\
+/* 0802f0d4 */ LDR R1, =anim_rhythm_tweezers_long_hair \n\
 /* 0802f0d6 */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 0802f0d8 */ STR R2, [SP] \n\
 /* 0802f0da */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
