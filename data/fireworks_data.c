@@ -5,7 +5,7 @@ const char D_0805a3d0[] = "";
 
 
 // [D_0805a3d4] Unique 3-Colour Patterns
-const struct FireworksPatternColours D_0805a3d4[] = {
+const struct FireworksPatternColours fireworks_particle_combinations[] = {
     /* RGB */ {
         /* INNER  */ FIREWORKS_PARTICLE_RED,
         /* MIDDLE */ FIREWORKS_PARTICLE_GREEN,
@@ -40,16 +40,16 @@ const struct FireworksPatternColours D_0805a3d4[] = {
 
 
 // [D_0805a41c] Particle Durations
-const s32 D_0805a41c[] = {
-    /* RED   */ 0x8,
+const s32 fireworks_particle_durations[] = {
+    /* RED   */ 0x08,
     /* GREEN */ 0x10,
-    /* BLUE  */ 0x8,
+    /* BLUE  */ 0x08,
     /* MULTI */ 0x18
 };
 
 
-// [D_0805a42c] Particle Trajectory for Åâ Pattern (unused)
-const struct FireworksParticleTrajectory D_0805a42c[] = {
+// [D_0805a42c] Particle Trajectory for Åâ Pattern (Unused)
+const struct FireworksParticleTrajectory fireworks_mars_pattern[] = {
     /* 00 */ {   0,   0 },
     /* 01 */ { 224,  64 },
     /* 02 */ { 224, 128 },
@@ -85,7 +85,7 @@ const struct FireworksParticleTrajectory D_0805a42c[] = {
 
 
 // [D_0805a524] Pattern Sequence for Fireworks 1
-const s32 D_0805a524[] = {
+const s32 fireworks_1_pattern_sequence[] = {
     FIREWORKS_PATTERN_L3,
     FIREWORKS_PATTERN_C3,
     FIREWORKS_PATTERN_R3,
