@@ -3,17 +3,51 @@
 #include "global.h"
 #include "engines.h"
 
+// Engine Types:
+struct ClappyTrioInfo {
+    /* add fields here */
+};
+
+struct ClappyTrioCue {
+    /* add fields here */
+};
+
+
 // Engine Macros/Enums:
+enum ClappyTrioVersionsEnum {
+    CLAPPY_TRIO_VER_0,
+    CLAPPY_TRIO_VER_SNAPPY
+};
+
+enum ClappyTrioAnimationsEnum {
+    CLAPPY_TRIO_ANIM_BEAT,
+    CLAPPY_TRIO_ANIM_SMILE,
+    CLAPPY_TRIO_ANIM_GLARE,
+    CLAPPY_TRIO_ANIM_SMIRK,
+    CLAPPY_TRIO_ANIM_CLAP,
+    CLAPPY_TRIO_ANIM_YOU,
+    CLAPPY_TRIO_ANIM_SIGN,
+    CLAPPY_TRIO_ANIM_TEXT_BOX
+};
+
 
 // OAM Animations:
 
+
 // Palettes:
+
 
 // Sound Effects:
 
+
 // Engine Data:
 
+
 // Engine Definition Data:
+extern const struct Animation *const *const clappy_trio_anim_table[];
+extern const struct CompressedGraphics *const clappy_trio_buffered_textures[];
+extern const struct GraphicsTable *const clappy_trio_gfx_tables[];
+
 
 // Functions:
 // extern ? func_08030384(?);
@@ -21,22 +55,22 @@
 // extern ? func_0803050c(?);
 // extern ? func_0803051c(?);
 // extern ? func_0803055c(?);
-// extern ? func_08030588(?);
-// extern ? func_0803068c(?);
-// extern ? func_0803074c(?);
-// extern ? func_0803080c(?);
-// extern ? func_0803088c(?);
-// extern ? func_08030898(?);
-// extern ? func_080308a4(?);
-// extern ? func_080308b8(?);
-// extern ? func_080308bc(?);
-// extern ? func_080308d4(?);
-// extern ? func_080308f0(?);
-// extern ? func_080308f4(?);
-// extern ? func_080309a8(?);
-// extern ? func_080309f4(?);
-// extern ? func_08030a10(?);
-// extern ? func_08030a60(?);
-// extern ? func_08030bd8(?);
-// extern ? func_08030bf0(?);
-// extern ? func_08030c14(?);
+extern void clappy_trio_engine_start(u32 version); // Game Engine Start
+extern void func_0803068c(void); // Engine Event 00 (Crouch)
+extern void func_0803074c(void); // Engine Event 01 (Crouch - Smirk)
+extern void func_0803080c(u32 lion); // Engine Event 02 (Clap)
+extern void func_0803088c(); // Engine Event 04 (?)
+extern void func_08030898(u32 enable); // Engine Event 03 (Enable Grayscale Effect)
+extern void clappy_trio_engine_update(void); // Game Engine Update
+extern void clappy_trio_engine_stop(void); // Game Engine Stop
+extern void clappy_trio_cue_spawn(struct Cue *, struct ClappyTrioCue *, u32 smileAfter);
+extern u32  clappy_trio_cue_update(struct Cue *, struct ClappyTrioCue *, u32 runningTime, u32 duration);
+extern void clappy_trio_cue_despawn(struct Cue *, struct ClappyTrioCue *);
+extern void clappy_trio_cue_hit(struct Cue *, struct ClappyTrioCue *, u32 pressed, u32 released);
+extern void clappy_trio_cue_barely(struct Cue *, struct ClappyTrioCue *, u32 pressed, u32 released);
+extern void clappy_trio_cue_miss(struct Cue *, struct ClappyTrioCue *);
+extern void clappy_trio_input_event(u32 pressed, u32 released); // Input Event
+extern void clappy_trio_common_beat_animation(void); // Common Event 0 (Beat Animation)
+extern void clappy_trio_common_display_text(const char *); // Common Event 1 (Display Text)
+extern void func_08030bf0(); // Engine Event 05 (?)
+extern void clappy_trio_common_init_tutorial(const struct Scene *); // Common Event 2 (Init. Tutorial)

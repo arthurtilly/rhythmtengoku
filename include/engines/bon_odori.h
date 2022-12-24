@@ -90,15 +90,20 @@ enum BonOdoriDonpanAnimationsEnum {
     DONPAN_ANIM_SPIN
 };
 
+
 // OAM Animations:
 
+
 // Palettes:
+
 
 // Sound Effects:
 extern const struct SequenceData s_tebyoushi_pati_seqData;
 extern const struct SequenceData s_HC_seqData;
 
+
 // Engine Data:
+
 
 // Engine Definition Data:
 extern const struct Animation *const *const bon_odori_anim_table[34]; // Pointers to animation arrays, with each one consisting of two animations.
@@ -109,6 +114,7 @@ extern const struct GraphicsTable *const bon_odori_gfx_tables[]; // Graphics Tab
 extern const u16 *const bon_odori_bg_palettes[]; // Pointers to BG Palettes
 extern const u16 *const bon_odori_obj_palettes[]; // Pointers to OBJ Palettes
 extern const u16 bon_odori_text_x_offsets[]; // Lyrics Horizontal Positions (by Text Alignment)
+
 
 // Functions:
 extern const struct Animation *bon_odori_get_anim(u32);             // [func_080206a0] Get OBJ Animation

@@ -798,16 +798,6 @@ D_088cb9fc = 0x088cb9fc;
 D_088cba2c = 0x088cba2c;
 D_088cbb0c = 0x088cbb0c;
 D_088cbb2c = 0x088cbb2c;
-/* Bouncy Road Animations */
-anim_bouncy_road_player_a = 0x088cbd90;
-anim_bouncy_road_player_dpad = 0x088cbdc8;
-anim_bouncy_road_ball = 0x088cbe00;
-anim_bouncy_road_path = 0x088cbe10;
-/* Bouncy Road Palettes */
-D_088cbe48 = 0x088cbe48;
-D_088cbf88 = 0x088cbf88;
-D_088cc0c8 = 0x088cc0c8;
-D_088cc208 = 0x088cc208;
 /* Font Textures */ /* Uncompressed */
 D_088cc2e8 = 0x088cc2e8;
 D_088ccfe8 = 0x088ccfe8;
@@ -830,75 +820,6 @@ D_088e41e8 = 0x088e41e8;
 D_088e46e8 = 0x088e46e8;
 D_088e75e8 = 0x088e75e8;
 D_088e7c68 = 0x088e7c68;
-/* Rhythm Tweezers Animations */
-D_088e86d8 = 0x088e86d8;
-D_088e86f8 = 0x088e86f8;
-D_088e8718 = 0x088e8718;
-anim_rhythm_tweezers_short_hair = 0x088e8768;
-anim_tweezers_pluck_hit = 0x088e87a8;
-D_088e87f8 = 0x088e87f8;
-anim_tweezers_pluck_barely = 0x088e8848;
-anim_tweezers_pluck_miss = 0x088e8898;
-anim_rhythm_tweezers_falling_hair = 0x088e88e0;
-anim_rhythm_tweezers_hair_stubble = 0x088e88f8;
-anim_rhythm_tweezers_tutorial_text = 0x088e8910;
-D_088e8920 = 0x088e8920;
-anim_rhythm_tweezers_long_hair = 0x088e89a8;
-anim_tweezers_pull = 0x088e8a50;
-D_088e8b58 = 0x088e8b58;
-/* Rhythm Tweezers Palettes */
-D_088e8b78 = 0x088e8b78;
-D_088e8c38 = 0x088e8c38;
-/* Fireworks Animations */
-anim_fireworks_rocket4 = 0x088e8f14;
-anim_fireworks_rocket_explode = 0x088e8f34;
-anim_fireworks_particle_red = 0x088e8f64;
-anim_fireworks_particle_green = 0x088e8fb4;
-anim_fireworks_particle_circle = 0x088e904c;
-anim_fireworks_particle_blue = 0x088e905c;
-anim_fireworks_bomb = 0x088e90ac;
-anim_fireworks_bomb_explode = 0x088e90c4;
-anim_fireworks_particle_tri_rbg = 0x088e911c;
-anim_fireworks_particle_tri_grb = 0x088e91fc;
-anim_fireworks_particle_tri_rgb = 0x088e92dc;
-anim_fireworks_skip_tutorial_icon = 0x088e93bc;
-anim_fireworks_rocket3 = 0x088e93cc;
-anim_fireworks_rocket2 = 0x088e93ec;
-anim_fireworks_rocket1 = 0x088e940c;
-anim_fireworks_count = 0x088e942c;
-/* Fireworks Palettes */
-D_088e9454 = 0x088e9454;
-D_088e95b4 = 0x088e95b4;
-/* The Clappy Trio Animations */
-D_088e9d80 = 0x088e9d80;
-D_088e9df0 = 0x088e9df0;
-D_088e9e10 = 0x088e9e10;
-D_088e9e30 = 0x088e9e30;
-D_088e9e50 = 0x088e9e50;
-D_088e9e70 = 0x088e9e70;
-D_088e9e90 = 0x088e9e90;
-D_088e9eb0 = 0x088e9eb0;
-D_088e9ee0 = 0x088e9ee0;
-D_088e9ef0 = 0x088e9ef0;
-D_088e9f08 = 0x088e9f08;
-/* The Clappy Trio Palettes */
-D_088e9f18 = 0x088e9f18;
-D_088e9f78 = 0x088e9f78;
-/* The Snappy Trio Animations */
-D_088ea4c4 = 0x088ea4c4;
-D_088ea534 = 0x088ea534;
-D_088ea554 = 0x088ea554;
-D_088ea574 = 0x088ea574;
-D_088ea594 = 0x088ea594;
-D_088ea5b4 = 0x088ea5b4;
-D_088ea5d4 = 0x088ea5d4;
-D_088ea5f4 = 0x088ea5f4;
-D_088ea624 = 0x088ea624;
-D_088ea634 = 0x088ea634;
-D_088ea64c = 0x088ea64c;
-/* The Snappy Trio Palettes */
-D_088ea65c = 0x088ea65c;
-D_088ea85c = 0x088ea85c;
 /* Samurai Slice Animations */
 D_088eb804 = 0x088eb804;
 D_088eb82c = 0x088eb82c;
@@ -3590,27 +3511,6 @@ D_089e2ea0 = 0x089e2ea0;
 /* Game Engine - Rhythm Tweezers */
 /* Game Engine - Fireworks */
 /* Game Engine - The Clappy Trio */
-D_089e4520 = 0x089e4520;
-D_089e4528 = 0x089e4528;
-D_089e4530 = 0x089e4530;
-D_089e4538 = 0x089e4538;
-D_089e4540 = 0x089e4540;
-D_089e4548 = 0x089e4548;
-D_089e4550 = 0x089e4550;
-D_089e4558 = 0x089e4558;
-D_089e4560 = 0x089e4560;
-D_089e4580 = 0x089e4580;
-D_089e4584 = 0x089e4584;
-D_089e45cc = 0x089e45cc;
-D_089e4614 = 0x089e4614;
-D_089e461c = 0x089e461c;
-D_089e465c = 0x089e465c;
-D_089e469c = 0x089e469c;
-D_089e46dc = 0x089e46dc;
-D_089e471c = 0x089e471c;
-D_089e4750 = 0x089e4750;
-D_089e4760 = 0x089e4760;
-D_089e4778 = 0x089e4778;
 /* Game Engine - Samurai Slice */
 D_089e4798 = 0x089e4798;
 D_089e479c = 0x089e479c;

@@ -2,6 +2,9 @@
 
 asm(".include \"include/gba.inc\""); // Temporary
 
+// For readability.
+#define gClappyTrioInfo ((struct ClappyTrioInfo *)D_030055d0)
+
 
 /* THE CLAPPY TRIO */
 

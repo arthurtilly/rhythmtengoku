@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080308f4 \n\
+thumb_func_start clappy_trio_cue_hit \n\
 /* 080308f4 */ PUSH {R4-R7, LR} \n\
 /* 080308f6 */ SUB SP, 0xC \n\
 /* 080308f8 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
@@ -47,7 +47,7 @@ branch_0803093e: \n\
 /* 0803094a */ LSLS R0, R0, 0x10 \n\
 /* 0803094c */ LSRS R0, R0, 0x10 \n\
 /* 0803094e */ LDR R5, =0x7fff \n\
-/* 08030950 */ LDR R1, =(D_088e9f78 + 0x80) \n\
+/* 08030950 */ LDR R1, =(clappy_trio_bg_pal + 0x80) \n\
 /* 08030952 */ STR R1, [SP] \n\
 /* 08030954 */ LDR R4, =(D_03004b10 + 0x54) \n\
 /* 08030956 */ STR R4, [SP, 0x4] \n\
@@ -58,7 +58,7 @@ branch_0803093e: \n\
 /* 08030962 */ BL get_current_mem_id \n\
 /* 08030966 */ LSLS R0, R0, 0x10 \n\
 /* 08030968 */ LSRS R0, R0, 0x10 \n\
-/* 0803096a */ LDR R1, =(D_088e9f78 + 0x20) \n\
+/* 0803096a */ LDR R1, =(clappy_trio_bg_pal + 0x20) \n\
 /* 0803096c */ STR R1, [SP] \n\
 /* 0803096e */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 08030970 */ LSLS R1, R1, 0x2 \n\

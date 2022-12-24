@@ -16,7 +16,6 @@ extern const struct CompressedGraphics D_08c5fa80;
 extern const struct CompressedGraphics D_08c609a4;
 extern const Palette fireworks_obj_pal[];
 extern const Palette fireworks_bg_pal[];
-extern const FontPalette D_089ccbc8[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
