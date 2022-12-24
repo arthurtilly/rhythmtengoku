@@ -1566,6 +1566,7 @@ SECTIONS {
         build/data/engines/rhythm_tweezers_engine.c.o(.rodata*);
         build/data/engines/fireworks_engine.c.o(.rodata*);
         build/data/engines/clappy_trio_engine.c.o(.rodata*);
+        build/data/engines/samurai_slice_engine.c.o(.rodata*);
         build/bin/bindata_089e384c.bin.o(.rodata*);
         build/data/engines/prologues/sneaky_spirits_script.c.o(.rodata*);
         build/data/engines/prologues/spaceball_script.c.o(.rodata*);

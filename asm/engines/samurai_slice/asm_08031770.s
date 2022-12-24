@@ -15,7 +15,7 @@ thumb_func_start func_08031770 \n\
 /* 08031782 */ LDR R1, [R1] \n\
 /* 08031784 */ MOVS R5, 0xC @ Set R5 to 0xC \n\
 /* 08031786 */ LDRSH R4, [R2, R5] \n\
-/* 08031788 */ LDR R2, =D_089e48c8 \n\
+/* 08031788 */ LDR R2, =samurai_beat_anim \n\
 /* 0803178a */ LSLS R0, R0, 0x10 \n\
 /* 0803178c */ LSRS R0, R0, 0x10 \n\
 /* 0803178e */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\

@@ -11,34 +11,34 @@
 const char D_0805a5d0[] = "";
 
 // ?
-extern const struct Animation D_088ebbb4[];
-extern const struct Animation D_088eba24[];
-extern const struct Animation D_088eba7c[];
-extern const struct Animation D_088eba24[];
-extern const struct Animation D_088ebacc[];
-extern const struct Animation D_088ebb3c[];
-extern const struct Animation D_088ebb84[];
-extern const struct Animation D_088ebb94[];
-extern const struct Animation D_088eba34[];
-extern const struct Animation D_088eba8c[];
-extern const struct Animation D_088ebadc[];
-extern const struct Animation D_088ebb4c[];
-extern const struct Animation D_088ebba4[];
+extern const struct Animation anim_demon_hurt[];
+extern const struct Animation anim_small_demon_hit[];
+extern const struct Animation anim_med_demon_hit[];
+extern const struct Animation anim_small_demon_hit[];
+extern const struct Animation anim_propeller_demon_hit[];
+extern const struct Animation anim_winged_demon_hit[];
+extern const struct Animation anim_large_demon_hit1[];
+extern const struct Animation anim_large_demon_hit2[];
+extern const struct Animation anim_small_demon_barely[];
+extern const struct Animation anim_med_demon_barely[];
+extern const struct Animation anim_propeller_demon_barely[];
+extern const struct Animation anim_winged_demon_barely[];
+extern const struct Animation anim_large_demon_barely[];
 
 const struct SamuraiSlice_0805a5d4 D_0805a5d4[] = {
-    { D_088ebbb4, 0x80, -0x200 },
-    { D_088eba24, 0x80, -0x300 },
-    { D_088eba7c, 0x80, -0x300 },
-    { D_088eba24, 0x80, -0x300 },
-    { D_088ebacc, 0x80, -0x500 },
-    { D_088ebb3c, 0x80, -0x300 },
-    { D_088ebb84, 0x80, -0x400 },
-    { D_088ebb94, 0x80, -0x400 },
-    { D_088eba34, 0x80, 0x100 },
-    { D_088eba8c, 0x80, 0x100 },
-    { D_088ebadc, 0x80, 0x100 },
-    { D_088ebb4c, 0x80, 0x100 },
-    { D_088ebba4, 0x80, 0x100 },
+    { anim_demon_hurt, 0x80, -0x200 },
+    { anim_small_demon_hit, 0x80, -0x300 },
+    { anim_med_demon_hit, 0x80, -0x300 },
+    { anim_small_demon_hit, 0x80, -0x300 },
+    { anim_propeller_demon_hit, 0x80, -0x500 },
+    { anim_winged_demon_hit, 0x80, -0x300 },
+    { anim_large_demon_hit1, 0x80, -0x400 },
+    { anim_large_demon_hit2, 0x80, -0x400 },
+    { anim_small_demon_barely, 0x80, 0x100 },
+    { anim_med_demon_barely, 0x80, 0x100 },
+    { anim_propeller_demon_barely, 0x80, 0x100 },
+    { anim_winged_demon_barely, 0x80, 0x100 },
+    { anim_large_demon_barely, 0x80, 0x100 },
 };
 
 

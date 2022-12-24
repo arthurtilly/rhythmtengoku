@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080312b8 \n\
+thumb_func_start samurai_slice_cue_hit \n\
 /* 080312b8 */ PUSH {R4-R6, LR} \n\
 /* 080312ba */ LDR R0, =D_030055d0 \n\
 /* 080312bc */ LDR R2, [R0] \n\
@@ -25,7 +25,7 @@ thumb_func_start func_080312b8 \n\
 /* 080312de */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
 /* 080312e0 */ BL func_0804ddb0 \n\
 /* 080312e4 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 080312e6 */ LDR R0, =D_088eb9fc \n\
+/* 080312e6 */ LDR R0, =anim_small_demon_hop \n\
 /* 080312e8 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 080312ea */ BNE branch_08031300 \n\
 /* 080312ec */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
@@ -36,7 +36,7 @@ thumb_func_start func_080312b8 \n\
 .ltorg \n\
  \n\
 branch_08031300: \n\
-/* 08031300 */ LDR R0, =D_088eba54 \n\
+/* 08031300 */ LDR R0, =anim_med_demon_hop \n\
 /* 08031302 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 08031304 */ BNE branch_08031314 \n\
 /* 08031306 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
@@ -47,7 +47,7 @@ branch_08031300: \n\
 .ltorg \n\
  \n\
 branch_08031314: \n\
-/* 08031314 */ LDR R0, =D_088eba9c \n\
+/* 08031314 */ LDR R0, =anim_propeller_demon_hover \n\
 /* 08031316 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 08031318 */ BNE branch_0803132c \n\
 /* 0803131a */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
@@ -62,7 +62,7 @@ branch_08031320: \n\
 .ltorg \n\
  \n\
 branch_0803132c: \n\
-/* 0803132c */ LDR R0, =D_088ebaec \n\
+/* 0803132c */ LDR R0, =anim_winged_demon_fly \n\
 /* 0803132e */ ADDS R6, R5, 0x0 @ Set R6 to R5 + 0x0 \n\
 /* 08031330 */ ADDS R6, 0x30 @ Add 0x30 to R6 \n\
 /* 08031332 */ CMP R1, R0 @ Check R1 - R0 \n\

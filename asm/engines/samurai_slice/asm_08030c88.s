@@ -9,7 +9,7 @@ thumb_func_start func_08030c88 \n\
 /* 08030c90 */ BL get_current_mem_id \n\
 /* 08030c94 */ LSLS R0, R0, 0x10 \n\
 /* 08030c96 */ LSRS R0, R0, 0x10 \n\
-/* 08030c98 */ LDR R1, =D_089e4798 \n\
+/* 08030c98 */ LDR R1, =samurai_slice_buffered_textures \n\
 /* 08030c9a */ BL func_080087b4 \n\
 /* 08030c9e */ LDR R1, =func_08030c58 \n\
 /* 08030ca0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\

@@ -97,7 +97,7 @@ branch_08031b1a: \n\
 /* 08031b28 */ LDR R0, [R0] \n\
 /* 08031b2a */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08031b2c */ LDRSH R1, [R6, R2] \n\
-/* 08031b2e */ LDR R2, =D_088ebb74 \n\
+/* 08031b2e */ LDR R2, =anim_large_demon_shadow \n\
 /* 08031b30 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08031b32 */ STR R3, [SP] \n\
 /* 08031b34 */ STR R3, [SP, 0x4] \n\
@@ -112,7 +112,7 @@ branch_08031b4c: \n\
 /* 08031b4e */ LDR R0, [R0] \n\
 /* 08031b50 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08031b52 */ LDRSH R1, [R6, R2] \n\
-/* 08031b54 */ LDR R2, =D_088eba44 \n\
+/* 08031b54 */ LDR R2, =anim_demon_shadow \n\
 /* 08031b56 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08031b58 */ STR R3, [SP] \n\
 /* 08031b5a */ STR R3, [SP, 0x4] \n\

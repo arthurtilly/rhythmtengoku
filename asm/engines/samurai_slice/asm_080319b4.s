@@ -10,7 +10,7 @@ thumb_func_start func_080319b4 \n\
 /* 080319bc */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 080319be */ LDR R6, =D_03005380 \n\
 /* 080319c0 */ LDR R0, [R6] \n\
-/* 080319c2 */ LDR R1, =D_088eba54 \n\
+/* 080319c2 */ LDR R1, =anim_med_demon_hop \n\
 /* 080319c4 */ MOVS R2, 0x42 @ Set R2 to 0x42 \n\
 /* 080319c6 */ STR R2, [SP] \n\
 /* 080319c8 */ LDR R2, =0x800a \n\
@@ -26,7 +26,7 @@ thumb_func_start func_080319b4 \n\
 /* 080319de */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 080319e0 */ STRH R0, [R5] \n\
 /* 080319e2 */ LDR R0, [R6] \n\
-/* 080319e4 */ LDR R1, =D_088eba44 \n\
+/* 080319e4 */ LDR R1, =anim_demon_shadow \n\
 /* 080319e6 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 080319e8 */ STR R2, [SP] \n\
 /* 080319ea */ LDR R2, =0x8014 \n\

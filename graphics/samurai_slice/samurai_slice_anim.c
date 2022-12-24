@@ -3,8 +3,8 @@
 
 #include "samurai_slice_anim_cells.inc.c"
 
-// [D_088eb804] <description>
-const struct Animation samurai_slice_anim00[] = {
+// [D_088eb804] Samurai - Beat (Low Power)
+const struct Animation anim_samurai_beat_1[] = {
     /* 000 */ { samurai_slice_cel020, 4 },
     /* 001 */ { samurai_slice_cel019, 3 },
     /* 002 */ { samurai_slice_cel018, 3 },
@@ -12,8 +12,8 @@ const struct Animation samurai_slice_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088eb82c] <description>
-const struct Animation samurai_slice_anim01[] = {
+// [D_088eb82c] Samurai - Beat (Mid. Power)
+const struct Animation anim_samurai_beat_2[] = {
     /* 000 */ { samurai_slice_cel031, 4 },
     /* 001 */ { samurai_slice_cel030, 3 },
     /* 002 */ { samurai_slice_cel028, 3 },
@@ -21,8 +21,8 @@ const struct Animation samurai_slice_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088eb854] <description>
-const struct Animation samurai_slice_anim02[] = {
+// [D_088eb854] Samurai - Beat (Full Power)
+const struct Animation anim_samurai_beat_3[] = {
     /* 000 */ { samurai_slice_cel043, 4 },
     /* 001 */ { samurai_slice_cel042, 3 },
     /* 002 */ { samurai_slice_cel041, 3 },
@@ -30,16 +30,16 @@ const struct Animation samurai_slice_anim02[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088eb87c] <description>
-const struct Animation samurai_slice_anim03[] = {
+// [D_088eb87c] Flames
+const struct Animation anim_samurai_flames[] = {
     /* 000 */ { samurai_slice_cel000, 6 },
     /* 001 */ { samurai_slice_cel002, 6 },
     /* 002 */ { samurai_slice_cel001, 6 },
     /* End */ END_ANIMATION
 };
 
-// [D_088eb89c] <description>
-const struct Animation samurai_slice_anim04[] = {
+// [D_088eb89c] Samurai - Slice (Low Power)
+const struct Animation anim_samurai_slice_1[] = {
     /* 000 */ { samurai_slice_cel020, 64 },
     /* 001 */ { samurai_slice_cel021, 2 },
     /* 002 */ { samurai_slice_cel022, 1 },
@@ -52,8 +52,8 @@ const struct Animation samurai_slice_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088eb8ec] <description>
-const struct Animation samurai_slice_anim05[] = {
+// [D_088eb8ec] Samurai - Slice (Mid. Power)
+const struct Animation anim_samurai_slice_2[] = {
     /* 000 */ { samurai_slice_cel030, 64 },
     /* 001 */ { samurai_slice_cel033, 2 },
     /* 002 */ { samurai_slice_cel034, 1 },
@@ -68,8 +68,8 @@ const struct Animation samurai_slice_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088eb94c] <description>
-const struct Animation samurai_slice_anim06[] = {
+// [D_088eb94c] Samurai - Slice (Full Power)
+const struct Animation anim_samurai_slice_3[] = {
     /* 000 */ { samurai_slice_cel042, 64 },
     /* 001 */ { samurai_slice_cel044, 2 },
     /* 002 */ { samurai_slice_cel045, 1 },
@@ -87,23 +87,23 @@ const struct Animation samurai_slice_anim06[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088eb9c4] <description>
-const struct Animation samurai_slice_anim07[] = {
+// [D_088eb9c4] Samurai - Hurt
+const struct Animation anim_samurai_hurt[] = {
     /* 000 */ { samurai_slice_cel051, 2 },
     /* 001 */ { samurai_slice_cel052, 32 },
     /* End */ END_ANIMATION
 };
 
-// [D_088eb9dc] <description>
-const struct Animation samurai_slice_anim08[] = {
+// [D_088eb9dc] Slice Effect
+const struct Animation anim_samurai_slice_effect[] = {
     /* 000 */ { samurai_slice_cel088, 1 },
     /* 001 */ { samurai_slice_cel089, 4 },
     /* 002 */ { samurai_slice_cel090, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088eb9fc] <description>
-const struct Animation samurai_slice_anim09[] = {
+// [D_088eb9fc] Small Demon - Hop
+const struct Animation anim_small_demon_hop[] = {
     /* 000 */ { samurai_slice_cel070, 8 },
     /* 001 */ { samurai_slice_cel067, 2 },
     /* 002 */ { samurai_slice_cel068, 4 },
@@ -111,26 +111,26 @@ const struct Animation samurai_slice_anim09[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088eba24] <description>
-const struct Animation samurai_slice_anim10[] = {
+// [D_088eba24] Small Demon - Hit (Mask)
+const struct Animation anim_small_demon_hit[] = {
     /* 000 */ { samurai_slice_cel078, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088eba34] <description>
-const struct Animation samurai_slice_anim11[] = {
+// [D_088eba34] Small Demon - Barely
+const struct Animation anim_small_demon_barely[] = {
     /* 000 */ { samurai_slice_cel076, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088eba44] <description>
-const struct Animation samurai_slice_anim12[] = {
+// [D_088eba44] Demon Shadow
+const struct Animation anim_demon_shadow[] = {
     /* 000 */ { samurai_slice_cel080, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088eba54] <description>
-const struct Animation samurai_slice_anim13[] = {
+// [D_088eba54] Medium Demon - Hop
+const struct Animation anim_med_demon_hop[] = {
     /* 000 */ { samurai_slice_cel058, 8 },
     /* 001 */ { samurai_slice_cel053, 2 },
     /* 002 */ { samurai_slice_cel054, 4 },
@@ -138,20 +138,20 @@ const struct Animation samurai_slice_anim13[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088eba7c] <description>
-const struct Animation samurai_slice_anim14[] = {
+// [D_088eba7c] Medium Demon - Hit (Mask)
+const struct Animation anim_med_demon_hit[] = {
     /* 000 */ { samurai_slice_cel064, 8 },
     /* End */ END_ANIMATION
 };
 
-// [D_088eba8c] <description>
-const struct Animation samurai_slice_anim15[] = {
+// [D_088eba8c] Medium Demon - Barely
+const struct Animation anim_med_demon_barely[] = {
     /* 000 */ { samurai_slice_cel056, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088eba9c] <description>
-const struct Animation samurai_slice_anim16[] = {
+// [D_088eba9c] Propeller Demon - Hover
+const struct Animation anim_propeller_demon_hover[] = {
     /* 000 */ { samurai_slice_cel071, 3 },
     /* 001 */ { samurai_slice_cel072, 3 },
     /* 002 */ { samurai_slice_cel073, 3 },
@@ -160,20 +160,20 @@ const struct Animation samurai_slice_anim16[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ebacc] <description>
-const struct Animation samurai_slice_anim17[] = {
+// [D_088ebacc] Propeller Demon - Hit (Propeller)
+const struct Animation anim_propeller_demon_hit[] = {
     /* 000 */ { samurai_slice_cel079, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ebadc] <description>
-const struct Animation samurai_slice_anim18[] = {
+// [D_088ebadc] Propeller Demon - Barely
+const struct Animation anim_propeller_demon_barely[] = {
     /* 000 */ { samurai_slice_cel077, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ebaec] <description>
-const struct Animation samurai_slice_anim19[] = {
+// [D_088ebaec] Winged Demon - Fly
+const struct Animation anim_winged_demon_fly[] = {
     /* 000 */ { samurai_slice_cel059, 6 },
     /* 001 */ { samurai_slice_cel060, 4 },
     /* 002 */ { samurai_slice_cel061, 4 },
@@ -182,79 +182,79 @@ const struct Animation samurai_slice_anim19[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ebb1c] <description>
-const struct Animation samurai_slice_anim20[] = {
+// [D_088ebb1c] Winged Demon - Fly (Cut-Off Halfway)
+const struct Animation anim_winged_demon_fly_half[] = {
     /* 000 */ { samurai_slice_cel059, 6 },
     /* 001 */ { samurai_slice_cel060, 4 },
     /* 002 */ { samurai_slice_cel061, 64 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ebb3c] <description>
-const struct Animation samurai_slice_anim21[] = {
+// [D_088ebb3c] Winged Demon - Hit
+const struct Animation anim_winged_demon_hit[] = {
     /* 000 */ { samurai_slice_cel065, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ebb4c] <description>
-const struct Animation samurai_slice_anim22[] = {
+// [D_088ebb4c] Winged Demon - Barely
+const struct Animation anim_winged_demon_barely[] = {
     /* 000 */ { samurai_slice_cel057, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ebb5c] <description>
-const struct Animation samurai_slice_anim23[] = {
+// [D_088ebb5c] Large Demon - Walk
+const struct Animation anim_large_demon_walk[] = {
     /* 000 */ { samurai_slice_cel084, 12 },
     /* 001 */ { samurai_slice_cel085, 12 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ebb74] <description>
-const struct Animation samurai_slice_anim24[] = {
+// [D_088ebb74] Large Demon Shadow
+const struct Animation anim_large_demon_shadow[] = {
     /* 000 */ { samurai_slice_cel087, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ebb84] <description>
-const struct Animation samurai_slice_anim25[] = {
+// [D_088ebb84] Large Demon - Hit (Upper Half)
+const struct Animation anim_large_demon_hit1[] = {
     /* 000 */ { samurai_slice_cel082, 8 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ebb94] <description>
-const struct Animation samurai_slice_anim26[] = {
+// [D_088ebb94] Large Demon - Hit (Lower Half)
+const struct Animation anim_large_demon_hit2[] = {
     /* 000 */ { samurai_slice_cel083, 8 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ebba4] <description>
-const struct Animation samurai_slice_anim27[] = {
+// [D_088ebba4] Large Demon - Barely
+const struct Animation anim_large_demon_barely[] = {
     /* 000 */ { samurai_slice_cel086, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ebbb4] <description>
-const struct Animation samurai_slice_anim28[] = {
+// [D_088ebbb4] Demon - Hit (Lower Half)
+const struct Animation anim_demon_hurt[] = {
     /* 000 */ { samurai_slice_cel066, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ebbc4] <description>
-const struct Animation samurai_slice_anim29[] = {
+// [D_088ebbc4] Demon Chain (Unused)
+const struct Animation anim_demon_chain_walk[] = {
     /* 000 */ { samurai_slice_cel091, 12 },
     /* 001 */ { samurai_slice_cel092, 12 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ebbdc] <description>
-const struct Animation samurai_slice_anim30[] = {
+// [D_088ebbdc] Samurai - Look Up
+const struct Animation anim_samurai_finish1[] = {
     /* 000 */ { samurai_slice_cel028, 4 },
     /* 001 */ { samurai_slice_cel017, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ebbf4] <description>
-const struct Animation samurai_slice_anim31[] = {
+// [D_088ebbf4] Samurai - Breathe
+const struct Animation anim_samurai_finish2[] = {
     /* 000 */ { samurai_slice_cel003, 2 },
     /* 001 */ { samurai_slice_cel004, 2 },
     /* 002 */ { samurai_slice_cel005, 2 },

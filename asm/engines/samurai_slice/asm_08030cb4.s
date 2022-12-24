@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08030cb4 \n\
+thumb_func_start samurai_slice_engine_start \n\
 /* 08030cb4 */ PUSH {R4-R7, LR} \n\
 /* 08030cb6 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 08030cb8 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -85,7 +85,7 @@ thumb_func_start func_08030cb4 \n\
 /* 08030d62 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08030d64 */ BL gameplay_set_input_buttons \n\
 /* 08030d68 */ LDR R0, [R5] \n\
-/* 08030d6a */ LDR R1, =D_088eb804 \n\
+/* 08030d6a */ LDR R1, =anim_samurai_beat_1 \n\
 /* 08030d6c */ MOVS R2, 0x7B @ Set R2 to 0x7B \n\
 /* 08030d6e */ STR R2, [SP] \n\
 /* 08030d70 */ MOVS R2, 0xA @ Set R2 to 0xA \n\
@@ -102,7 +102,7 @@ thumb_func_start func_08030cb4 \n\
 /* 08030d88 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 08030d8a */ STRB R0, [R1, 0xE] \n\
 /* 08030d8c */ LDR R0, [R5] \n\
-/* 08030d8e */ LDR R1, =D_088eb87c \n\
+/* 08030d8e */ LDR R1, =anim_samurai_flames \n\
 /* 08030d90 */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\
 /* 08030d92 */ STR R2, [SP] \n\
 /* 08030d94 */ MOVS R2, 0x14 @ Set R2 to 0x14 \n\
@@ -146,7 +146,7 @@ branch_08030dd0: \n\
 /* 08030de2 */ BL func_08032228 \n\
 /* 08030de6 */ LDR R4, =D_03005380 \n\
 /* 08030de8 */ LDR R0, [R4] \n\
-/* 08030dea */ LDR R1, =D_088eb9dc \n\
+/* 08030dea */ LDR R1, =anim_samurai_slice_effect \n\
 /* 08030dec */ MOVS R2, 0x60 @ Set R2 to 0x60 \n\
 /* 08030dee */ STR R2, [SP] \n\
 /* 08030df0 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\

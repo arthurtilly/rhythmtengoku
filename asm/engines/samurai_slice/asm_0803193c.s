@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803193c \n\
+thumb_func_start samurai_slice_common_beat_animation \n\
 /* 0803193c */ PUSH {R4, R5, LR} \n\
 /* 0803193e */ SUB SP, 0x4 \n\
 /* 08031940 */ LDR R0, =D_030055d0 \n\
@@ -17,13 +17,13 @@ thumb_func_start func_0803193c \n\
 /* 08031952 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
 /* 08031954 */ BL func_0804ddb0 \n\
 /* 08031958 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0803195a */ LDR R0, =D_088eb82c \n\
+/* 0803195a */ LDR R0, =anim_samurai_beat_2 \n\
 /* 0803195c */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 0803195e */ BEQ branch_0803196c \n\
-/* 08031960 */ LDR R0, =D_088eb804 \n\
+/* 08031960 */ LDR R0, =anim_samurai_beat_1 \n\
 /* 08031962 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 08031964 */ BEQ branch_0803196c \n\
-/* 08031966 */ LDR R0, =D_088eb854 \n\
+/* 08031966 */ LDR R0, =anim_samurai_beat_3 \n\
 /* 08031968 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 0803196a */ BNE branch_08031992 \n\
  \n\

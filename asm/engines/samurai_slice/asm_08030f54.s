@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08030f54 \n\
+thumb_func_start samurai_slice_engine_update \n\
 /* 08030f54 */ PUSH {R4-R7, LR} \n\
 /* 08030f56 */ SUB SP, 0xC \n\
 /* 08030f58 */ BL func_080321c8 \n\
@@ -151,14 +151,14 @@ jump_0803108c: \n\
 /* 08031094 */ LDRSH R1, [R1, R2] \n\
 /* 08031096 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
 /* 08031098 */ BL func_0804ddb0 \n\
-/* 0803109c */ LDR R1, =D_088eb854 \n\
+/* 0803109c */ LDR R1, =anim_samurai_beat_3 \n\
 /* 0803109e */ CMP R0, R1 @ Check R0 - R1 \n\
 /* 080310a0 */ BNE branch_08031128 \n\
 /* 080310a2 */ LDR R0, [R5] \n\
 /* 080310a4 */ LDR R1, [R4] \n\
 /* 080310a6 */ MOVS R3, 0xC @ Set R3 to 0xC \n\
 /* 080310a8 */ LDRSH R1, [R1, R3] \n\
-/* 080310aa */ LDR R2, =D_088eb82c \n\
+/* 080310aa */ LDR R2, =anim_samurai_beat_2 \n\
 /* 080310ac */ B branch_080310dc \n\
 \n\
 .ltorg \n\
@@ -170,14 +170,14 @@ jump_080310bc: \n\
 /* 080310c4 */ LDRSH R1, [R1, R2] \n\
 /* 080310c6 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
 /* 080310c8 */ BL func_0804ddb0 \n\
-/* 080310cc */ LDR R1, =D_088eb82c \n\
+/* 080310cc */ LDR R1, =anim_samurai_beat_2 \n\
 /* 080310ce */ CMP R0, R1 @ Check R0 - R1 \n\
 /* 080310d0 */ BNE branch_08031128 \n\
 /* 080310d2 */ LDR R0, [R5] \n\
 /* 080310d4 */ LDR R1, [R4] \n\
 /* 080310d6 */ MOVS R3, 0xC @ Set R3 to 0xC \n\
 /* 080310d8 */ LDRSH R1, [R1, R3] \n\
-/* 080310da */ LDR R2, =D_088eb804 \n\
+/* 080310da */ LDR R2, =anim_samurai_beat_1 \n\
  \n\
 branch_080310dc: \n\
 /* 080310dc */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
@@ -196,14 +196,14 @@ jump_080310f8: \n\
 /* 08031100 */ LDRSH R1, [R1, R2] \n\
 /* 08031102 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
 /* 08031104 */ BL func_0804ddb0 \n\
-/* 08031108 */ LDR R1, =D_088eb804 \n\
+/* 08031108 */ LDR R1, =anim_samurai_beat_1 \n\
 /* 0803110a */ CMP R0, R1 @ Check R0 - R1 \n\
 /* 0803110c */ BNE branch_08031128 \n\
 /* 0803110e */ LDR R0, [R5] \n\
 /* 08031110 */ LDR R1, [R4] \n\
 /* 08031112 */ MOVS R3, 0xC @ Set R3 to 0xC \n\
 /* 08031114 */ LDRSH R1, [R1, R3] \n\
-/* 08031116 */ LDR R2, =D_088ebbf4 \n\
+/* 08031116 */ LDR R2, =anim_samurai_finish2 \n\
 /* 08031118 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0803111a */ STR R3, [SP] \n\
 /* 0803111c */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\

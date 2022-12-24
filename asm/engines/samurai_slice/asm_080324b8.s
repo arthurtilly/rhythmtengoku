@@ -12,7 +12,7 @@ thumb_func_start func_080324b8 \n\
 /* 080324c6 */ STRB R0, [R5, 0x2] \n\
 /* 080324c8 */ LDR R6, =D_03005380 \n\
 /* 080324ca */ LDR R0, [R6] \n\
-/* 080324cc */ LDR R1, =D_088eba54 \n\
+/* 080324cc */ LDR R1, =anim_med_demon_hop \n\
 /* 080324ce */ MOVS R2, 0x42 @ Set R2 to 0x42 \n\
 /* 080324d0 */ STR R2, [SP] \n\
 /* 080324d2 */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\

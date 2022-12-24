@@ -20,13 +20,13 @@ thumb_func_start func_08030e84 \n\
 /* 08030ea0 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
 /* 08030ea2 */ BL func_0804ddb0 \n\
 /* 08030ea6 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 08030ea8 */ LDR R0, =D_088eb82c \n\
+/* 08030ea8 */ LDR R0, =anim_samurai_beat_2 \n\
 /* 08030eaa */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 08030eac */ BEQ branch_08030eba \n\
-/* 08030eae */ LDR R0, =D_088eb804 \n\
+/* 08030eae */ LDR R0, =anim_samurai_beat_1 \n\
 /* 08030eb0 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 08030eb2 */ BEQ branch_08030eba \n\
-/* 08030eb4 */ LDR R0, =D_088eb854 \n\
+/* 08030eb4 */ LDR R0, =anim_samurai_beat_3 \n\
 /* 08030eb6 */ CMP R1, R0 @ Check R1 - R0 \n\
 /* 08030eb8 */ BNE branch_08030ee0 \n\
  \n\
