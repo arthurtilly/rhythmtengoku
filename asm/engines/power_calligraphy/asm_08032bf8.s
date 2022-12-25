@@ -33,7 +33,7 @@ branch_08032c10: \n\
 /* 08032c2a */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 08032c2c */ LSLS R1, R1, 0x8 \n\
 /* 08032c2e */ STR R1, [SP, 0x10] \n\
-/* 08032c30 */ LDR R1, =D_088eefd8 \n\
+/* 08032c30 */ LDR R1, =anim_calligraphy_ink_dot \n\
 /* 08032c32 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08032c34 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
 /* 08032c36 */ BL func_0804d160 \n\

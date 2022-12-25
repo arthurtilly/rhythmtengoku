@@ -55,9 +55,9 @@ extern const struct Animation *const samurai_beat_anim[];
 
 
 // Functions:
-// extern ? func_08030c48(?);
-// extern ? func_08030c58(?);
-// extern ? func_08030c88(?);
+extern void samurai_slice_init_gfx3(void); // Graphics Init. 3
+extern void samurai_slice_init_gfx2(void); // Graphics Init. 2
+extern void samurai_slice_init_gfx1(void); // Graphics Init. 1
 extern void samurai_slice_engine_start(u32 version); // Game Engine Start
 // extern ? func_08030e84(?);
 extern void func_08030f00(void); // Engine Event 00 (STUB)

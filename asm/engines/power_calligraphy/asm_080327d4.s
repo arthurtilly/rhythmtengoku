@@ -20,7 +20,7 @@ thumb_func_start func_080327d4 \n\
 /* 080327f0 */ MOV R9, R3 @ Set R9 to R3 \n\
  \n\
 branch_080327f2: \n\
-/* 080327f2 */ LDR R0, =D_089e4958 \n\
+/* 080327f2 */ LDR R0, =calligraphy_people_start_pos \n\
 /* 080327f4 */ LSLS R1, R2, 0x2 \n\
 /* 080327f6 */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 080327f8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
@@ -39,7 +39,7 @@ branch_08032808: \n\
 /* 0803280e */ STRB R0, [R4, 0x2] \n\
 /* 08032810 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08032812 */ LDR R0, [R1] \n\
-/* 08032814 */ LDR R2, =D_089e4960 \n\
+/* 08032814 */ LDR R2, =calligraphy_people_dance_anim \n\
 /* 08032816 */ LDRB R1, [R4, 0x2] \n\
 /* 08032818 */ LSLS R1, R1, 0x3 \n\
 /* 0803281a */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\

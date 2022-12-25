@@ -29,7 +29,7 @@ branch_080333f8: \n\
 /* 08033414 */ BL func_0804d6cc \n\
 /* 08033418 */ LSLS R0, R0, 0x18 \n\
 /* 0803341a */ ASRS R1, R0, 0x18 \n\
-/* 0803341c */ LDR R0, =D_088eeee0 \n\
+/* 0803341c */ LDR R0, =anim_calligraphy_kokoro_input2 \n\
 /* 0803341e */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 08033420 */ BNE branch_08033450 \n\
 /* 08033422 */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\

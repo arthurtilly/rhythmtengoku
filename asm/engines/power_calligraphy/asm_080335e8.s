@@ -27,7 +27,7 @@ thumb_func_start func_080335e8 \n\
 /* 08033616 */ LDR R1, [R4] \n\
 /* 08033618 */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 0803361a */ LDRSH R1, [R1, R2] \n\
-/* 0803361c */ LDR R2, =D_088eef28 \n\
+/* 0803361c */ LDR R2, =anim_calligraphy_brush \n\
 /* 0803361e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08033620 */ STR R3, [SP] \n\
 /* 08033622 */ STR R3, [SP, 0x4] \n\

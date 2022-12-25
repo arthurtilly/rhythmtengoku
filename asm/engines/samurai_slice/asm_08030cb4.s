@@ -18,7 +18,7 @@ thumb_func_start samurai_slice_engine_start \n\
 /* 08030ccc */ ADDS R6, 0x90 @ Add 0x90 to R6 \n\
 /* 08030cce */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08030cd0 */ STRB R0, [R1, 0x4] \n\
-/* 08030cd2 */ BL func_08030c88 \n\
+/* 08030cd2 */ BL samurai_slice_init_gfx1 \n\
 /* 08030cd6 */ BL scene_show_obj_layer \n\
 /* 08030cda */ STR R4, [SP] \n\
 /* 08030cdc */ MOVS R0, 0x1C @ Set R0 to 0x1C \n\
