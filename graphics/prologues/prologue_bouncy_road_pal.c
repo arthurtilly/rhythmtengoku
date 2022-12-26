@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088af5f0] <description>
+// [D_088af5f0] Palette
 const Palette prologue_bouncy_road_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x707070),
@@ -58,4 +58,3 @@ const Palette prologue_bouncy_road_pal[] = {
         /* 15 */ TO_RGB555(0x000000)
     }
 };
-

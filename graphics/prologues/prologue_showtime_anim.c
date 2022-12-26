@@ -3,14 +3,14 @@
 
 #include "prologue_showtime_anim_cells.inc.c"
 
-// [D_088ae3e4] <description>
-const struct Animation prologue_showtime_anim00[] = {
+// [D_088ae3e4] Title
+const struct Animation anim_prologue_showtime_title[] = {
     /* 000 */ { prologue_showtime_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ae3f4] <description>
-const struct Animation prologue_showtime_anim01[] = {
+// [D_088ae3f4] Penguin
+const struct Animation anim_prologue_showtime_penguin[] = {
     /* 000 */ { prologue_showtime_cel001, 4 },
     /* 001 */ { prologue_showtime_cel002, 4 },
     /* 002 */ { prologue_showtime_cel003, 4 },
@@ -22,4 +22,3 @@ const struct Animation prologue_showtime_anim01[] = {
     /* 008 */ { prologue_showtime_cel005, 100 },
     /* End */ END_ANIMATION
 };
-

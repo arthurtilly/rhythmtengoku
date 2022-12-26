@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088b242c] <description>
+// [D_088b242c] Palette
 const Palette prologue_remix4_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00B828),
@@ -94,4 +94,3 @@ const Palette prologue_remix4_pal[] = {
         /* 15 */ TO_RGB555(0xF8F800)
     }
 };
-

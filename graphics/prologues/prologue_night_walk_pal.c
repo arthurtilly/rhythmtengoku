@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088ae2f8] <description>
+// [D_088ae2f8] Palette
 const Palette prologue_night_walk_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x580028),
@@ -22,4 +22,3 @@ const Palette prologue_night_walk_pal[] = {
         /* 15 */ TO_RGB555(0xF8F8F8)
     }
 };
-

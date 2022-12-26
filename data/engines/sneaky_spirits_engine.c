@@ -8,8 +8,8 @@ extern const struct CompressedGraphics D_08bd2a00; // BG Textures
 extern const struct CompressedGraphics D_08bd2b58; // BG Map
 extern const struct CompressedGraphics D_08bd2cf8; // BG Map
 extern const struct CompressedGraphics D_08bd245c; // OBJ Textures
-extern const Palette sneaky_spirits_v0_pal[];
-extern const Palette sneaky_spirits_v2_pal[];
+extern const Palette sneaky_spirits_1_pal[];
+extern const Palette sneaky_spirits_2_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
@@ -19,7 +19,6 @@ extern const Palette sneaky_spirits_v2_pal[];
 const struct CompressedGraphics *const sneaky_spirits_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
-
 
 // [D_089de6e4] Graphics Table (Sneaky Spirits)
 const struct GraphicsTable sneaky_spirits_1_gfx_table[] = {
@@ -44,12 +43,12 @@ const struct GraphicsTable sneaky_spirits_1_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ sneaky_spirits_v0_pal,
+        /* Src.  */ sneaky_spirits_1_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ sneaky_spirits_v0_pal,
+        /* Src.  */ sneaky_spirits_1_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -84,12 +83,12 @@ const struct GraphicsTable sneaky_spirits_2_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ sneaky_spirits_v2_pal,
+        /* Src.  */ sneaky_spirits_2_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ sneaky_spirits_v2_pal,
+        /* Src.  */ sneaky_spirits_2_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -122,13 +121,13 @@ const struct CueDefinition sneaky_spirits_cue_0 = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ sizeof(struct SneakySpiritsCue),
-    /* Func. Spawn     */ func_0801f7e8,
+    /* Func. Spawn     */ sneaky_spirits_cue_spawn,
     /* Spawn Parameter */ FALSE,
-    /* Func. Update    */ func_0801f7f0,
-    /* Func. Despawn   */ func_0801f80c,
-    /* Func. Hit       */ func_0801f8d0,
-    /* Func. Barely    */ func_0801fa4c,
-    /* Func. Miss      */ func_0801fb14,
+    /* Func. Update    */ sneaky_spirits_cue_update,
+    /* Func. Despawn   */ sneaky_spirits_cue_despawn,
+    /* Func. Hit       */ sneaky_spirits_cue_hit,
+    /* Func. Barely    */ sneaky_spirits_cue_barely,
+    /* Func. Miss      */ sneaky_spirits_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -146,13 +145,13 @@ const struct CueDefinition sneaky_spirits_cue_1 = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ sizeof(struct SneakySpiritsCue),
-    /* Func. Spawn     */ func_0801f7e8,
+    /* Func. Spawn     */ sneaky_spirits_cue_spawn,
     /* Spawn Parameter */ FALSE,
-    /* Func. Update    */ func_0801f7f0,
-    /* Func. Despawn   */ func_0801f80c,
-    /* Func. Hit       */ func_0801f8d0,
-    /* Func. Barely    */ func_0801fa4c,
-    /* Func. Miss      */ func_0801fb14,
+    /* Func. Update    */ sneaky_spirits_cue_update,
+    /* Func. Despawn   */ sneaky_spirits_cue_despawn,
+    /* Func. Hit       */ sneaky_spirits_cue_hit,
+    /* Func. Barely    */ sneaky_spirits_cue_barely,
+    /* Func. Miss      */ sneaky_spirits_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -170,13 +169,13 @@ const struct CueDefinition sneaky_spirits_cue_2 = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ sizeof(struct SneakySpiritsCue),
-    /* Func. Spawn     */ func_0801f7e8,
+    /* Func. Spawn     */ sneaky_spirits_cue_spawn,
     /* Spawn Parameter */ FALSE,
-    /* Func. Update    */ func_0801f7f0,
-    /* Func. Despawn   */ func_0801f80c,
-    /* Func. Hit       */ func_0801f8d0,
-    /* Func. Barely    */ func_0801fa4c,
-    /* Func. Miss      */ func_0801fb14,
+    /* Func. Update    */ sneaky_spirits_cue_update,
+    /* Func. Despawn   */ sneaky_spirits_cue_despawn,
+    /* Func. Hit       */ sneaky_spirits_cue_hit,
+    /* Func. Barely    */ sneaky_spirits_cue_barely,
+    /* Func. Miss      */ sneaky_spirits_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -194,13 +193,13 @@ const struct CueDefinition sneaky_spirits_cue_tutorial = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ sizeof(struct SneakySpiritsCue),
-    /* Func. Spawn     */ func_0801f7e8,
+    /* Func. Spawn     */ sneaky_spirits_cue_spawn,
     /* Spawn Parameter */ TRUE,
-    /* Func. Update    */ func_0801f7f0,
-    /* Func. Despawn   */ func_0801f80c,
-    /* Func. Hit       */ func_0801f8d0,
-    /* Func. Barely    */ func_0801fa4c,
-    /* Func. Miss      */ func_0801fb14,
+    /* Func. Update    */ sneaky_spirits_cue_update,
+    /* Func. Despawn   */ sneaky_spirits_cue_despawn,
+    /* Func. Hit       */ sneaky_spirits_cue_hit,
+    /* Func. Barely    */ sneaky_spirits_cue_barely,
+    /* Func. Miss      */ sneaky_spirits_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -231,35 +230,35 @@ const struct CueDefinition *const sneaky_spirits_cue_index[] = {
 
 // [D_089de8e4] Common Events
 const EngineEvent sneaky_spirits_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) func_0801fc3c,
-    /* DISPLAY_TEXT   */ (EngineEvent) func_0801fc40,
+    /* BEAT_ANIMATION */ (EngineEvent) sneaky_spirits_common_beat_animation,
+    /* DISPLAY_TEXT   */ (EngineEvent) sneaky_spirits_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089de8f0] Engine Events
 const EngineEvent sneaky_spirits_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_0801ee98,
-    /* 0x01 */ (EngineEvent) func_0801f5c0,
-    /* 0x02 */ (EngineEvent) func_0801f5f4,
-    /* 0x03 */ (EngineEvent) func_0801f638,
-    /* 0x04 */ (EngineEvent) func_0801f684,
-    /* 0x05 */ (EngineEvent) func_0801f71c,
-    /* 0x06 */ (EngineEvent) func_0801f30c,
-    /* 0x07 */ (EngineEvent) func_0801f318,
-    /* 0x08 */ (EngineEvent) func_0801f76c,
-    /* 0x09 */ (EngineEvent) func_0801f794,
-    /* 0x0A */ (EngineEvent) func_0801f5bc
+    /* 0x00 */ (EngineEvent) sneaky_spirits_show_ghost,
+    /* 0x01 */ (EngineEvent) sneaky_spirits_set_ghost_height,
+    /* 0x02 */ (EngineEvent) sneaky_spirits_spawn_bow,
+    /* 0x03 */ (EngineEvent) sneaky_spirits_draw_bow,
+    /* 0x04 */ (EngineEvent) sneaky_spirits_enable_wind_sfx,
+    /* 0x05 */ (EngineEvent) sneaky_spirits_display_text,
+    /* 0x06 */ (EngineEvent) sneaky_spirits_event_set_rain_speed,
+    /* 0x07 */ (EngineEvent) sneaky_spirits_freeze_slow_rain,
+    /* 0x08 */ (EngineEvent) sneaky_spirits_display_tutorial_ghost,
+    /* 0x09 */ (EngineEvent) sneaky_spirits_animate_tutorial_ghost,
+    /* 0x0A */ (EngineEvent) sneaky_spirits_engine_event_stub
 };
 
 // [D_089de91c] Sneaky Spirits Game Engine
 const struct GameEngine D_089de91c = {
     /* Size in Memory */ sizeof(struct SneakySpiritsInfo),
-    /* Init. Engine   */ func_0801f3a4,
-    /* Update Engine  */ func_0801f7bc,
-    /* Stop Engine    */ func_0801f7cc,
+    /* Init. Engine   */ sneaky_spirits_engine_start,
+    /* Update Engine  */ sneaky_spirits_engine_update,
+    /* Stop Engine    */ sneaky_spirits_engine_stop,
     /* Cue Index      */ sneaky_spirits_cue_index,
     /* Common Events  */ sneaky_spirits_common_events,
     /* Engine Events  */ sneaky_spirits_engine_events,
-    /* Input Event    */ func_0801fbb0
+    /* Input Event    */ sneaky_spirits_input_event
 };

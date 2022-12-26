@@ -88,7 +88,7 @@ branch_080161f8: \n\
 /* 08016214 */ LDR R0, [R4] \n\
 /* 08016216 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08016218 */ LDRSH R1, [R6, R2] \n\
-/* 0801621a */ LDR R2, =D_08902a40 \n\
+/* 0801621a */ LDR R2, =anim_game_select_clear_game \n\
 /* 0801621c */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0801621e */ STR R3, [SP] \n\
 /* 08016220 */ STR R5, [SP, 0x4] \n\

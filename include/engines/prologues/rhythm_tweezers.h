@@ -16,7 +16,7 @@ struct PrologueRhythmTweezersInfo {
 // Assets:
 extern const struct CompressedGraphics *const prologue_rhythm_tweezers_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable prologue_rhythm_tweezers_gfx_table[]; // Graphics Table
-extern const struct Animation D_088af6b4[]; // Animation: Text (Rhythm Tweezers)
+extern const struct Animation anim_prologue_rhythm_tweezers_title[]; // Animation: Text (Rhythm Tweezers)
 extern const struct SequenceData s_jingle_datumo_seqData;
 
 // Functions:

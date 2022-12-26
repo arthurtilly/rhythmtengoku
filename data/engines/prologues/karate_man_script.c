@@ -8,8 +8,8 @@
 extern const struct CompressedGraphics D_08bea934;
 extern const struct CompressedGraphics D_08beab8c;
 extern const struct CompressedGraphics D_08be9f5c;
-extern const Palette D_088adb20[];
-extern const Palette D_088adae0[];
+extern const Palette prologue_karate_man_bg_pal[];
+extern const Palette prologue_karate_man_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -38,12 +38,12 @@ const struct GraphicsTable prologue_karate_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088adb20,
+        /* Src.  */ prologue_karate_man_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088adae0,
+        /* Src.  */ prologue_karate_man_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

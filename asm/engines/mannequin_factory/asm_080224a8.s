@@ -33,7 +33,7 @@ branch_080224c8: \n\
 /* 080224da */ STR R5, [SP, 0xC] \n\
 /* 080224dc */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080224de */ STR R1, [SP, 0x10] \n\
-/* 080224e0 */ LDR R1, =D_088ba10c \n\
+/* 080224e0 */ LDR R1, =anim_mannequin_head \n\
 /* 080224e2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080224e4 */ MOVS R3, 0x68 @ Set R3 to 0x68 \n\
 /* 080224e6 */ BL func_0804d160 \n\
@@ -46,7 +46,7 @@ branch_080224c8: \n\
 /* 080224f6 */ STR R5, [SP, 0xC] \n\
 /* 080224f8 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080224fa */ STR R1, [SP, 0x10] \n\
-/* 080224fc */ LDR R1, =D_088ba134 \n\
+/* 080224fc */ LDR R1, =anim_mannequin_eye_l \n\
 /* 080224fe */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08022500 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
 /* 08022502 */ BL func_0804d160 \n\
@@ -59,7 +59,7 @@ branch_080224c8: \n\
 /* 08022512 */ STR R5, [SP, 0xC] \n\
 /* 08022514 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08022516 */ STR R1, [SP, 0x10] \n\
-/* 08022518 */ LDR R1, =D_088ba15c \n\
+/* 08022518 */ LDR R1, =anim_mannequin_eye_r \n\
 /* 0802251a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802251c */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
 /* 0802251e */ BL func_0804d160 \n\
@@ -73,7 +73,7 @@ branch_080224c8: \n\
 /* 08022530 */ STR R5, [SP, 0xC] \n\
 /* 08022532 */ LDR R1, =0x00008002 \n\
 /* 08022534 */ STR R1, [SP, 0x10] \n\
-/* 08022536 */ LDR R1, =D_088ba4e4 \n\
+/* 08022536 */ LDR R1, =anim_mannequin_dash_effect \n\
 /* 08022538 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802253a */ MOVS R3, 0xC8 @ Set R3 to 0xC8 \n\
 /* 0802253c */ BL func_0804d160 \n\

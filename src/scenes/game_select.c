@@ -141,9 +141,9 @@ void func_08012a58(void) {
     notice = &gGameSelectInfo.perfectCampaignNotice;
     vector = &D_03004b10.BG_OFS[BG_LAYER_1].x;
 
-    notice->perfectBorderSprite = func_0804d160(D_03005380, D_08902c10, 0, 48, 72, 0x8878, 1, 0, 0x8000);
+    notice->perfectBorderSprite = func_0804d160(D_03005380, anim_game_select_border_perfect3, 0, 48, 72, 0x8878, 1, 0, 0x8000);
     func_080140f8(notice->perfectBorderSprite);
-    notice->aButtonSprite = func_0804d160(D_03005380, D_08902c30, 0, 64, 64, 0x800, 1, 0, 0x8000);
+    notice->aButtonSprite = func_0804d160(D_03005380, anim_game_select_text_button, 0, 64, 64, 0x800, 1, 0, 0x8000);
     func_0804db44(D_03005380, notice->aButtonSprite, &vector[0], &vector[1]);
     notice->unkC = text_printer_create_new((u16) get_current_mem_id(), 4, 120, 26);
     text_printer_set_x_y(notice->unkC, 104, 320);
@@ -461,8 +461,8 @@ void func_08013644(s32 arg) {
     func_0801332c(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY, &BG_OFSX, &BG_OFSY);
     scene_set_bg_layer_pos(BG_LAYER_3, BG_OFSX, BG_OFSY);
     scene_set_bg_layer_pos(BG_LAYER_2, BG_OFSX, BG_OFSY);
-    gGameSelectInfo.selectionBorderSprite = func_0804d160(D_03005380, D_089029d0, 0, 48, 72, 0x4800, 1, 0, 0);
-    gGameSelectInfo.cursorSprite = func_0804d160(D_03005380, D_08902e88, 0, 64, 64, 0x47ff, 1, 0, 0);
+    gGameSelectInfo.selectionBorderSprite = func_0804d160(D_03005380, anim_game_select_border_target, 0, 48, 72, 0x4800, 1, 0, 0);
+    gGameSelectInfo.cursorSprite = func_0804d160(D_03005380, anim_game_select_cursor, 0, 64, 64, 0x47ff, 1, 0, 0);
     func_080140f8(gGameSelectInfo.selectionBorderSprite);
     func_080140f8(gGameSelectInfo.cursorSprite);
     func_08013b98(gGameSelectInfo.cursorX, gGameSelectInfo.cursorY);
@@ -474,8 +474,8 @@ void func_08013644(s32 arg) {
     gGameSelectInfo.unk5E = 0;
     gGameSelectInfo.unk64 = 0;
     gGameSelectInfo.unk60 = 0;
-    gGameSelectInfo.stageTitleSprite = func_0804d160(D_03005380, D_08902b40, 0x7f, 60, 140, 0x479c, 1, 0x7f, 0);
-    gGameSelectInfo.stageTitleBoxSprite = func_0804d294(D_03005380, D_08902b68, 0, 60, 140, 0x479d, 0, 0, 0, 0);
+    gGameSelectInfo.stageTitleSprite = func_0804d160(D_03005380, anim_game_select_stage1, 0x7f, 60, 140, 0x479c, 1, 0x7f, 0);
+    gGameSelectInfo.stageTitleBoxSprite = func_0804d294(D_03005380, anim_game_select_stage_box, 0, 60, 140, 0x479d, 0, 0, 0, 0);
     gGameSelectInfo.unk16 = 140;
     gGameSelectInfo.unk18 = 0;
     gGameSelectInfo.unk8_b1 = FALSE;
@@ -745,7 +745,7 @@ void func_08014df0(void) {
     text_printer_center_by_content(gGameSelectInfo.unk38, 1);
     text_printer_set_x_y_controller(gGameSelectInfo.unk38, &vector[0], &vector[1]);
     text_printer_set_shadow_colors(gGameSelectInfo.unk38, -1);
-    gGameSelectInfo.perfectClearedSprite = func_0804d160(D_03005380, D_08902eb0, 0, 138, 115, 0x80a, 1, 0, 0x8000);
+    gGameSelectInfo.perfectClearedSprite = func_0804d160(D_03005380, anim_game_select_perfect_rank, 0, 138, 115, 0x80a, 1, 0, 0x8000);
     func_0804db44(D_03005380, gGameSelectInfo.perfectClearedSprite, &vector[0], &vector[1]);
     gGameSelectInfo.unk3E = TRUE;
     gGameSelectInfo.unk41 = 0;
@@ -927,14 +927,14 @@ void func_080154f0(void) {
     vector = &D_03004b10.BG_OFS[BG_LAYER_1].x;
 
     for (i = 0; i < 3; i++) {
-        flow->numberSprites[i] = func_0804d160(D_03005380, D_08902b78, 10, 208 - (i * 8), 128, 0, 0, 0, 0);
+        flow->numberSprites[i] = func_0804d160(D_03005380, anim_game_select_flow_num, 10, 208 - (i * 8), 128, 0, 0, 0, 0);
         func_0804db44(D_03005380, flow->numberSprites[i], &vector[0], &vector[1]);
     }
 
-    flow->textSprite = func_0804d160(D_03005380, D_08902bd8, 0, 128, 128, 0, 0, 0, 0);
+    flow->textSprite = func_0804d160(D_03005380, anim_game_select_flow_text, 0, 128, 128, 0, 0, 0, 0);
     func_0804db44(D_03005380, flow->textSprite, &vector[0], &vector[1]);
 
-    flow->arrowSprite = func_0804d160(D_03005380, D_08902bf0, 0, 224, 128, 0, 0, 0, 0x8000);
+    flow->arrowSprite = func_0804d160(D_03005380, anim_game_select_flow_arrow, 0, 224, 128, 0, 0, 0, 0x8000);
     func_0804db44(D_03005380, flow->arrowSprite, &vector[0], &vector[1]);
     temp = func_080153a8();
     score = flow->previousScore;
@@ -999,7 +999,7 @@ void func_08015cf4(void) {
         vector = &gGameSelectInfo.squareVectors[i];
         vector->x = agb_random(x);
         vector->y = agb_random(y);
-        gGameSelectInfo.squareSprites[i] = func_0804d294(D_03005380, D_08902960, agb_random(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
+        gGameSelectInfo.squareSprites[i] = func_0804d294(D_03005380, anim_game_select_bg_square_large, agb_random(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
         func_0804dcb8(D_03005380, gGameSelectInfo.squareSprites[i], (agb_random(0x100) + 0x100));
     }
 
@@ -1010,7 +1010,7 @@ void func_08015cf4(void) {
         vector = &gGameSelectInfo.squareVectors[i];
         vector->x = agb_random(x);
         vector->y = agb_random(y);
-        gGameSelectInfo.squareSprites[i] = func_0804d294(D_03005380, D_08902998, agb_random(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
+        gGameSelectInfo.squareSprites[i] = func_0804d294(D_03005380, anim_game_select_bg_square_small, agb_random(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
         func_0804dcb8(D_03005380, gGameSelectInfo.squareSprites[i], (agb_random(0x100) + 0x100));
     }
 

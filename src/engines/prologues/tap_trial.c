@@ -49,7 +49,7 @@ void func_080476e8(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088b794c, 0, 120, 80, 0, 1, 0x7f, 0x8000);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_tap_trial_title, 0, 120, 80, 0, 1, 0x7f, 0x8000);
     func_0804dcb8(D_03005380, gPrologueInfo->textSprite, 0x180);
 }
 

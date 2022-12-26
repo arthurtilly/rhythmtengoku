@@ -11,7 +11,7 @@ thumb_func_start func_08022bb4 \n\
 /* 08022bbe */ SUB SP, 0x14 \n\
 /* 08022bc0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08022bc2 */ LDR R7, =D_03005380 \n\
-/* 08022bc4 */ LDR R5, =D_088ba184 \n\
+/* 08022bc4 */ LDR R5, =anim_mannequin_hand_r \n\
 /* 08022bc6 */ LDR R4, =D_030055d0 \n\
 /* 08022bc8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
  \n\
@@ -47,7 +47,7 @@ branch_08022bca: \n\
 /* 08022c04 */ LDR R1, [R5] \n\
 /* 08022c06 */ STRH R0, [R1, 0x6] \n\
 /* 08022c08 */ LDR R0, [R7] \n\
-/* 08022c0a */ LDR R1, =D_088ba1b4 \n\
+/* 08022c0a */ LDR R1, =anim_mannequin_hand_l \n\
 /* 08022c0c */ STR R4, [SP] \n\
 /* 08022c0e */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08022c10 */ STR R2, [SP, 0x4] \n\
@@ -68,7 +68,7 @@ branch_08022bca: \n\
 /* 08022c30 */ MOVS R2, 0x24 @ Set R2 to 0x24 \n\
 /* 08022c32 */ BL func_0804d614 \n\
 /* 08022c36 */ LDR R0, [R7] \n\
-/* 08022c38 */ LDR R1, =D_088ba244 \n\
+/* 08022c38 */ LDR R1, =anim_mannequin_stamp_r \n\
 /* 08022c3a */ MOVS R4, 0x40 @ Set R4 to 0x40 \n\
 /* 08022c3c */ STR R4, [SP] \n\
 /* 08022c3e */ MOV R2, R9 @ Set R2 to R9 \n\
@@ -84,7 +84,7 @@ branch_08022bca: \n\
 /* 08022c54 */ LDR R1, [R5] \n\
 /* 08022c56 */ STRH R0, [R1, 0x8] \n\
 /* 08022c58 */ LDR R0, [R7] \n\
-/* 08022c5a */ LDR R1, =D_088ba1e4 \n\
+/* 08022c5a */ LDR R1, =anim_mannequin_stamp_l \n\
 /* 08022c5c */ STR R4, [SP] \n\
 /* 08022c5e */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08022c60 */ STR R2, [SP, 0x4] \n\

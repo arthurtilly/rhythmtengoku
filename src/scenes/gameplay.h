@@ -11,15 +11,15 @@ extern const struct SequenceData s_f_pause_on_seqData;
 extern const struct SequenceData s_f_pause_cursor_seqData;
 extern const struct SequenceData s_f_pause_continue_seqData;
 
-extern const struct Animation D_0890ab28[]; // Pause Menu Title
-extern const struct Animation D_0890ab88[]; // Pause Menu Options (Continue)
-extern const struct Animation D_0890abb0[]; // Pause Menu Options (Quit)
-extern const struct Animation D_0890abd8[]; // Skip Tutorial ("Select to Skip")
-extern const struct Animation D_0890ac00[]; // Black A Button Prompt
-extern const struct Animation D_0890ac20[]; // White A Button Prompt
-extern const struct Animation D_0890ac40[]; // Go For A Perfect!
-extern const struct Animation D_0890aca0[]; // Fail Perfect
-extern const struct Animation D_0890ad60[]; // Perfect Input
+extern const struct Animation anim_gameplay_pause_title[]; // Pause Menu Title
+extern const struct Animation anim_gameplay_pause_option1[]; // Pause Menu Options (Continue)
+extern const struct Animation anim_gameplay_pause_option2[]; // Pause Menu Options (Quit)
+extern const struct Animation anim_gameplay_skip_icon[]; // Skip Tutorial ("Select to Skip")
+extern const struct Animation anim_gameplay_text_button_black[]; // Black A Button Prompt
+extern const struct Animation anim_gameplay_text_button_white[]; // White A Button Prompt
+extern const struct Animation anim_gameplay_perfect_icon[]; // Go For A Perfect!
+extern const struct Animation anim_gameplay_perfect_miss[]; // Fail Perfect
+extern const struct Animation anim_gameplay_perfect_hit[]; // Perfect Input
 
 extern const struct GraphicsTable D_089cfd7c[]; // Graphics Table (Common Gameplay Graphics/Palettes, e.g. Pause Menu)
 extern const struct CompressedGraphics *D_089cfda0[]; // Buffered Textures List

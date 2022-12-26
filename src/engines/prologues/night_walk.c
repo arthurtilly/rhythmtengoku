@@ -49,9 +49,9 @@ void func_08045824(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088ae2a8, 0, 110, 120, 0, 0, 0x7f, 0);
-    gPrologueInfo->playYanSprite = func_0804d160(D_03005380, D_088ae048, 0, 60, 120, 0, 0, 0x7f, 0);
-    gPrologueInfo->balloonsSprite = func_0804d160(D_03005380, D_088ae160, 0, 60, 120, 0, 1, 0, 0);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_night_walk_title, 0, 110, 120, 0, 0, 0x7f, 0);
+    gPrologueInfo->playYanSprite = func_0804d160(D_03005380, anim_prologue_night_walk_play_yan, 0, 60, 120, 0, 0, 0x7f, 0);
+    gPrologueInfo->balloonsSprite = func_0804d160(D_03005380, anim_prologue_night_walk_balloons, 0, 60, 120, 0, 1, 0, 0);
 }
 
 

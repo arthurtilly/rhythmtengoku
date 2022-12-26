@@ -39,10 +39,10 @@ branch_08022a92: \n\
 /* 08022abe */ MOVS R2, 0xA @ Set R2 to 0xA \n\
 /* 08022ac0 */ LDRSB R2, [R4, R2] \n\
 /* 08022ac2 */ BL func_0804cebc \n\
-/* 08022ac6 */ LDR R2, =D_088ba2d4 \n\
+/* 08022ac6 */ LDR R2, =anim_mannequin_slap_effect_l \n\
 /* 08022ac8 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 08022aca */ BGE branch_08022ace \n\
-/* 08022acc */ LDR R2, =D_088ba2b4 \n\
+/* 08022acc */ LDR R2, =anim_mannequin_slap_effect_r \n\
  \n\
 branch_08022ace: \n\
 /* 08022ace */ LDR R0, [R5] \n\

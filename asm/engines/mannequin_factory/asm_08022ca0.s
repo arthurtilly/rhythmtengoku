@@ -21,7 +21,7 @@ branch_08022ca4: \n\
 /* 08022cba */ LSLS R0, R0, 0x10 \n\
 /* 08022cbc */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08022cbe */ BNE branch_08022cd4 \n\
-/* 08022cc0 */ LDR R0, =D_089df3a4 \n\
+/* 08022cc0 */ LDR R0, =mannequin_input_buttons \n\
 /* 08022cc2 */ ADDS R0, R3, R0 @ Set R0 to R3 + R0 \n\
 /* 08022cc4 */ LDRH R1, [R2, 0x2] \n\
 /* 08022cc6 */ LDRH R0, [R0] \n\

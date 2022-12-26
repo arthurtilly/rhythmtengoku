@@ -16,7 +16,7 @@ struct PrologueQuizShowInfo {
 // Assets:
 extern const struct CompressedGraphics *const prologue_quiz_show_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable prologue_quiz_show_gfx_table[]; // Graphics Table
-extern const struct Animation D_088b13c4[]; // Animation: Text (Quiz Show)
+extern const struct Animation anim_prologue_quiz_title[]; // Animation: Text (Quiz Show)
 extern const struct SequenceData s_jingle_quiz_seqData;
 
 // Functions:

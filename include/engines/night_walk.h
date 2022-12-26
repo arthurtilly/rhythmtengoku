@@ -219,9 +219,9 @@ extern void func_0802b03c(u32 volume); // Set DrumTech Volume
 // extern ? func_0802b050(?); // Set ?
 extern void func_0802b064(void); // Stop DrumTech
 
-extern void night_walk_init_gfx3(void); // Graphics Init. 2
-extern void night_walk_init_gfx2(void); // Graphics Init. 1
-extern void night_walk_init_gfx1(void); // Graphics Init. 0
+extern void night_walk_init_gfx3(void); // Graphics Init. 3
+extern void night_walk_init_gfx2(void); // Graphics Init. 2
+extern void night_walk_init_gfx1(void); // Graphics Init. 1
 extern void night_walk_engine_start(u32 ver); // Game Engine Start
 extern void night_walk_engine_event_stub(void); // Engine Event 0x0A (STUB)
 extern void night_walk_set_ending_script(const struct BeatScript *script); // Engine Event 0x03 (Set Ending Script)

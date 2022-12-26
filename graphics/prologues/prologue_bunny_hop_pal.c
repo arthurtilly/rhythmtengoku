@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088b361c] <description>
+// [D_088b361c] Palette
 const Palette prologue_bunny_hop_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x980000),
@@ -40,4 +40,3 @@ const Palette prologue_bunny_hop_pal[] = {
         /* 15 */ TO_RGB555(0x000000)
     }
 };
-

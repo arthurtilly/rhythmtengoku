@@ -18,9 +18,9 @@ struct PrologueSpaceDanceInfo {
 // Assets:
 extern const struct CompressedGraphics *const prologue_space_dance_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable prologue_space_dance_gfx_table[]; // Graphics Table
-extern const struct Animation D_088b7338[]; // Animation: Text (Space Dance)
-extern const struct Animation D_088b7690[]; // Animation: Faces
-extern const struct Animation D_088b7660[]; // Animation: Star
+extern const struct Animation anim_prologue_space_dance_title[]; // Animation: Text (Space Dance)
+extern const struct Animation anim_prologue_space_dance_faces[]; // Animation: Faces
+extern const struct Animation anim_prologue_space_dance_star[]; // Animation: Star
 extern const struct SequenceData s_jingle_handclap_seqData;
 
 // Functions:

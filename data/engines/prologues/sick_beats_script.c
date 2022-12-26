@@ -8,7 +8,7 @@
 extern const struct CompressedGraphics D_08c33214;
 extern const struct CompressedGraphics D_08c3355c;
 extern const struct CompressedGraphics D_08c31e6c;
-extern const Palette D_088b8db4[];
+extern const Palette prologue_sick_beats_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -37,12 +37,12 @@ const struct GraphicsTable prologue_sick_beats_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088b8db4,
+        /* Src.  */ prologue_sick_beats_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088b8db4,
+        /* Src.  */ prologue_sick_beats_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

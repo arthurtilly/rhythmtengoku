@@ -8,7 +8,7 @@
 extern const struct CompressedGraphics D_08bf0eb8;
 extern const struct CompressedGraphics D_08bf12dc;
 extern const struct CompressedGraphics D_08bef660;
-extern const Palette D_088af814[];
+extern const Palette prologue_fireworks_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -37,12 +37,12 @@ const struct GraphicsTable prologue_fireworks_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088af814,
+        /* Src.  */ prologue_fireworks_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088af814,
+        /* Src.  */ prologue_fireworks_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

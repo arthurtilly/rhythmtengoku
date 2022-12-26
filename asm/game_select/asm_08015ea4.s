@@ -295,7 +295,7 @@ branch_08016090: \n\
 /* 080160ce */ LDR R0, =D_03005380 \n\
 /* 080160d0 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 080160d2 */ LDR R0, [R0] \n\
-/* 080160d4 */ LDR R1, =D_08902960 \n\
+/* 080160d4 */ LDR R1, =anim_game_select_bg_square_large \n\
 /* 080160d6 */ LSLS R3, R4, 0x10 \n\
 /* 080160d8 */ ASRS R3, R3, 0x10 \n\
 /* 080160da */ LSLS R2, R5, 0x10 \n\

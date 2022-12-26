@@ -8,7 +8,7 @@
 extern const struct CompressedGraphics D_08c1f24c;
 extern const struct CompressedGraphics D_08c1f308;
 extern const struct CompressedGraphics D_08c1f214;
-extern const Palette D_088b361c[];
+extern const Palette prologue_bunny_hop_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -37,12 +37,12 @@ const struct GraphicsTable prologue_bunny_hop_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088b361c,
+        /* Src.  */ prologue_bunny_hop_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088b361c,
+        /* Src.  */ prologue_bunny_hop_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

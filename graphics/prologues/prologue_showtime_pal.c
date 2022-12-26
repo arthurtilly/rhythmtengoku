@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088ae444] <description>
+// [D_088ae444] Palette
 const Palette prologue_showtime_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF88800),
@@ -40,4 +40,3 @@ const Palette prologue_showtime_pal[] = {
         /* 15 */ TO_RGB555(0x000000)
     }
 };
-

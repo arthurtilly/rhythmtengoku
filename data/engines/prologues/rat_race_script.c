@@ -8,7 +8,7 @@
 extern const struct CompressedGraphics D_08c22764;
 extern const struct CompressedGraphics D_08c229b4;
 extern const struct CompressedGraphics D_08c21f88;
-extern const Palette D_088b3dbc[];
+extern const Palette prologue_rat_race_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -37,12 +37,12 @@ const struct GraphicsTable prologue_rat_race_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088b3dbc,
+        /* Src.  */ prologue_rat_race_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088b3dbc,
+        /* Src.  */ prologue_rat_race_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

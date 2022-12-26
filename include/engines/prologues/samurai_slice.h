@@ -16,7 +16,7 @@ struct PrologueSamuraiSliceInfo {
 // Assets:
 extern const struct CompressedGraphics *const prologue_samurai_slice_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable prologue_samurai_slice_gfx_table[]; // Graphics Table
-extern const struct Animation D_088affe0[]; // Animation: Text (Samurai Slice)
+extern const struct Animation anim_prologue_samurai_slice_title[]; // Animation: Text (Samurai Slice)
 extern const struct SequenceData s_jingle_iai_seqData;
 extern const struct SequenceData s_f_iai_title_seqData;
 

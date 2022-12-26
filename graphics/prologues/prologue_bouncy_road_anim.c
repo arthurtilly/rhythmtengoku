@@ -3,8 +3,8 @@
 
 #include "prologue_bouncy_road_anim_cells.inc.c"
 
-// [D_088af4e0] <description>
-const struct Animation prologue_bouncy_road_anim00[] = {
+// [D_088af4e0] ? (Unused)
+const struct Animation anim_prologue_bouncy_road_unused[] = {
     /* 000 */ { prologue_bouncy_road_cel002, 4 },
     /* 001 */ { prologue_bouncy_road_cel003, 4 },
     /* 002 */ { prologue_bouncy_road_cel004, 4 },
@@ -13,8 +13,8 @@ const struct Animation prologue_bouncy_road_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088af510] <description>
-const struct Animation prologue_bouncy_road_anim01[] = {
+// [D_088af510] Bouncers
+const struct Animation anim_prologue_bouncy_road_path[] = {
     /* 000 */ { prologue_bouncy_road_cel026, 20 },
     /* 001 */ { prologue_bouncy_road_cel012, 3 },
     /* 002 */ { prologue_bouncy_road_cel014, 3 },
@@ -34,13 +34,13 @@ const struct Animation prologue_bouncy_road_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088af598] <description>
-const struct Animation prologue_bouncy_road_anim02[] = {
+// [D_088af598] Null Animation
+const struct Animation anim_prologue_bouncy_road_null[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088af5a0] <description>
-const struct Animation prologue_bouncy_road_anim03[] = {
+// [D_088af5a0] Title
+const struct Animation anim_prologue_bouncy_road_title[] = {
     /* 000 */ { prologue_bouncy_road_cel000, 20 },
     /* 001 */ { prologue_bouncy_road_cel027, 3 },
     /* 002 */ { prologue_bouncy_road_cel028, 3 },
@@ -52,4 +52,3 @@ const struct Animation prologue_bouncy_road_anim03[] = {
     /* 008 */ { prologue_bouncy_road_cel034, 60 },
     /* End */ END_ANIMATION
 };
-

@@ -3,8 +3,8 @@
 
 #include "prologue_quiz_show_anim_cells.inc.c"
 
-// [D_088b13c4] <description>
-const struct Animation prologue_quiz_show_anim00[] = {
+// [D_088b13c4] Title
+const struct Animation anim_prologue_quiz_title[] = {
     /* 000 */ { prologue_quiz_show_cel000, 10 },
     /* 001 */ { prologue_quiz_show_cel001, 10 },
     /* 002 */ { prologue_quiz_show_cel002, 10 },
@@ -17,4 +17,3 @@ const struct Animation prologue_quiz_show_anim00[] = {
     /* 009 */ { prologue_quiz_show_cel007, 10 },
     /* End */ END_ANIMATION
 };
-

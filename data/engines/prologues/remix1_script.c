@@ -8,8 +8,8 @@
 extern const struct CompressedGraphics D_08c06384;
 extern const struct CompressedGraphics D_08c06888;
 extern const struct CompressedGraphics D_08c04fec;
-extern const Palette D_088b1830[];
-extern const Palette D_088b1810[];
+extern const Palette prologue_remix1_bg_pal[];
+extern const Palette prologue_remix1_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -38,12 +38,12 @@ const struct GraphicsTable prologue_remix1_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088b1830,
+        /* Src.  */ prologue_remix1_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088b1810,
+        /* Src.  */ prologue_remix1_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

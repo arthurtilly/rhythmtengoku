@@ -30,16 +30,16 @@ struct SneakySpiritsInfo {
 };
 
 struct SneakySpiritsCue {
-    u32 null0;
-    u32 null4;
-    u32 null8;
-    u32 nullC;
-    u32 null10;
-    u32 null14;
-    u32 null18;
-    u32 null1C;
-    u32 null20;
-    u16 null24;
+    u32 unused0;
+    u32 unused4;
+    u32 unused8;
+    u32 unusedC;
+    u32 unused10;
+    u32 unused14;
+    u32 unused18;
+    u32 unused1C;
+    u32 unused20;
+    u16 unused24;
     u8 disableTaunt;
 };
 
@@ -52,24 +52,24 @@ enum SneakySpiritsVersionsEnum {
 };
 
 // OAM Animations:
-extern const struct Animation sneaky_spirits_anim00[]; // Animation: "bow_draw"
-extern const struct Animation sneaky_spirits_anim01[]; // Animation: "ghost_hit"
-extern const struct Animation sneaky_spirits_anim02[]; // Animation: "door_back_wall"
-extern const struct Animation sneaky_spirits_anim03[]; // Animation: "door_open"
-extern const struct Animation sneaky_spirits_anim05[]; // Animation: "ghost_miss_taunt"
-extern const struct Animation sneaky_spirits_anim06[]; // Animation: "arrow_miss"
-extern const struct Animation sneaky_spirits_anim07[]; // Animation: "ghost_barely_scared"
-extern const struct Animation sneaky_spirits_anim08[]; // Animation: "tree"
-extern const struct Animation sneaky_spirits_anim10[]; // Animation: "ghost_walk"
-extern const struct Animation sneaky_spirits_anim11[]; // Animation: "ghost_miss_dash"
-extern const struct Animation sneaky_spirits_anim12[]; // Animation: "rain_fall"
-extern const struct Animation sneaky_spirits_anim13[]; // Animation: "rain_splash"
-extern const struct Animation sneaky_spirits_anim14[]; // Animation: "rain_fall_slow"
-extern const struct Animation sneaky_spirits_anim15[]; // Animation: "bow_shoot"
-extern const struct Animation sneaky_spirits_anim16[]; // Animation: "ghost_mask" (might be masking)
-extern const struct Animation sneaky_spirits_anim17[]; // Animation: "ghost_barely_run"
-extern const struct Animation sneaky_spirits_anim18[]; // Animation: "arrow_hit"
-extern const struct Animation sneaky_spirits_anim19[]; // Animation: "ghost_dash_tutorial"
+extern const struct Animation anim_sneaky_spirits_bow[]; // Animation: "bow_draw"
+extern const struct Animation anim_sneaky_spirit_hit[]; // Animation: "ghost_hit"
+extern const struct Animation anim_sneaky_spirits_back_wall[]; // Animation: "door_back_wall"
+extern const struct Animation anim_sneaky_spirits_door[]; // Animation: "door_open"
+extern const struct Animation anim_sneaky_spirit_taunt[]; // Animation: "ghost_miss_taunt"
+extern const struct Animation anim_sneaky_spirits_arrow_miss[]; // Animation: "arrow_miss"
+extern const struct Animation anim_sneaky_spirit_scared_early[]; // Animation: "ghost_barely_scared"
+extern const struct Animation anim_sneaky_spirits_tree[]; // Animation: "tree"
+extern const struct Animation anim_sneaky_spirit_walk[]; // Animation: "ghost_walk"
+extern const struct Animation anim_sneaky_spirit_dash[]; // Animation: "ghost_miss_dash"
+extern const struct Animation anim_sneaky_spirits_rain[]; // Animation: "rain_fall"
+extern const struct Animation anim_sneaky_spirits_splash[]; // Animation: "rain_splash"
+extern const struct Animation anim_sneaky_spirits_rain_slow[]; // Animation: "rain_fall_slow"
+extern const struct Animation anim_sneaky_spirits_bow_shoot[]; // Animation: "bow_shoot"
+extern const struct Animation anim_sneaky_spirits_wall_mask[]; // Animation: "ghost_mask" (might be masking)
+extern const struct Animation anim_sneaky_spirit_scared_late[]; // Animation: "ghost_barely_run"
+extern const struct Animation anim_sneaky_spirit_hit_effect[]; // Animation: "arrow_hit"
+extern const struct Animation anim_sneaky_spirit_tutorial[]; // Animation: "ghost_dash_tutorial"
 
 // Palettes:
 
@@ -91,35 +91,35 @@ extern const struct CompressedGraphics *const sneaky_spirits_buffered_textures[]
 extern const struct GraphicsTable *const sneaky_spirits_gfx_tables[]; // Graphics Table
 
 // Functions:
-extern void func_0801ee98(u32);     // [func_0801ee98] ENGINE Func_00 - Appear At Position
-extern void func_0801ef70(void);    // [func_0801ef70] Initialise Rain
-extern void func_0801f040(void);    // [func_0801f040] Update Rain
-extern void func_0801f17c(void);    // [func_0801f17c] Update Rain If Not In Slow-Motion
-extern void func_0801f194(u32);     // [func_0801f194] Set Rain Speed
-extern void func_0801f30c(u32);     // [func_0801f30c] ENGINE Func_06 - Set Rain Speed (Tutorial)
-extern void func_0801f318(u32);     // [func_0801f318] ENGINE Func_07 - Freeze Slow-Motion Rain (Tutorial)
-extern void func_0801f328(void);    // [func_0801f328] GFX_INIT Func_02
-extern void func_0801f338(void);    // [func_0801f338] GFX_INIT Func_01
-extern void func_0801f378(void);    // [func_0801f378] GFX_INIT Func_00
-extern void func_0801f3a4(u32);     // [func_0801f3a4] MAIN - Init
-extern void func_0801f5bc(void);    // [func_0801f5bc] ENGINE Func_0A - STUB
-extern void func_0801f5c0(u32);     // [func_0801f5c0] ENGINE Func_01 - Next Vertical Position
-extern void func_0801f5f4(void);    // [func_0801f5f4] ENGINE Func_02 - Bow Appear
-extern void func_0801f638(void);    // [func_0801f638] ENGINE Func_03 - Draw Bow
-extern void func_0801f684(u32);     // [func_0801f684] ENGINE Func_04 - Play Wind/Rain SFX
-extern void func_0801f6d0(void);    // [func_0801f6d0] Cross-Fade Music and Wind/Rain SFX
-extern void func_0801f71c(char *);  // [func_0801f71c] ENGINE Func_05 - Display Text (Tutorial)
-extern void func_0801f76c(u32);     // [func_0801f76c] ENGINE Func_08 - Display Dashing Sneaky Spirit (Tutorial)
-extern void func_0801f794(u32);     // [func_0801f794] ENGINE Func_09 - Animate Dashing Sneaky Spirit (Tutorial)
-extern void func_0801f7bc(void);    // [func_0801f7bc] MAIN - Update
-extern void func_0801f7cc(void);    // [func_0801f7cc] MAIN - Close
-extern void func_0801f7e8(struct Cue *, struct SneakySpiritsCue *, u32); // [func_0801f7e8] CUE - Spawn
-extern u32  func_0801f7f0(struct Cue *, struct SneakySpiritsCue *, u32, u32); // [func_0801f7f0] CUE - Update
-extern void func_0801f80c(struct Cue *, struct SneakySpiritsCue *); // [func_0801f80c] CUE - Despawn (STUB)
-extern void func_0801f810(void);    // [func_0801f810] Revert Slow-Motion Effects
-extern void func_0801f8d0(struct Cue *, struct SneakySpiritsCue *, u32, u32); // [func_0801f8d0] CUE - Hit
-extern void func_0801fa4c(struct Cue *, struct SneakySpiritsCue *, u32, u32); // [func_0801fa4c] CUE - Barely
-extern void func_0801fb14(struct Cue *, struct SneakySpiritsCue *, u32, u32); // [func_0801fb14] CUE - Miss
-extern void func_0801fbb0(u32, u32); // [func_0801fbb0] MAIN - Input Event
-extern void func_0801fc3c(void);    // [func_0801fc3c] COMMON Func_00 - STUB
-extern void func_0801fc40(void);    // [func_0801fc40] COMMON Func_01 - STUB
+extern void sneaky_spirits_show_ghost(u32); // Engine Event 00 (Show Ghost)
+extern void sneaky_spirits_init_rain(void); // Initialise Rain
+extern void sneaky_spirits_update_fast_rain(void); // Update Rain
+extern void sneaky_spirits_update_rain(void); // Update Rain If Not In Slow-Motion
+extern void sneaky_spirits_set_rain_speed(u32); // Set Rain Speed
+extern void sneaky_spirits_event_set_rain_speed(u32); // Engine Event 06 (Set Rain Speed)
+extern void sneaky_spirits_freeze_slow_rain(u32); // Engine Event 07 (Freeze Slow-Motion Rain)
+extern void sneaky_spirits_init_gfx3(void); // Graphics Init. 3
+extern void sneaky_spirits_init_gfx2(void); // Graphics Init. 2
+extern void sneaky_spirits_init_gfx1(void); // Graphics Init. 1
+extern void sneaky_spirits_engine_start(u32 version); // Game Engine Start
+extern void sneaky_spirits_engine_event_stub(void); // Engine Event 0A (Stub)
+extern void sneaky_spirits_set_ghost_height(u32); // Engine Event 01 (Set Next Vertical Position)
+extern void sneaky_spirits_spawn_bow(void); // Engine Event 02 (Spawn Bow)
+extern void sneaky_spirits_draw_bow(void); // Engine Event 03 (Draw Bow)
+extern void sneaky_spirits_enable_wind_sfx(u32); // Engine Event 04 (Play Wind/Rain SFX)
+extern void sneaky_spirits_update_wind_sfx(void); // Cross-Fade Music and Wind/Rain SFX
+extern void sneaky_spirits_display_text(char *); // Engine Event 05 (Display Text)
+extern void sneaky_spirits_display_tutorial_ghost(u32); // Engine Event 08 (Display Tutorial Sneaky Spirit)
+extern void sneaky_spirits_animate_tutorial_ghost(u32); // Engine Event 09 (Animate Tutorial Sneaky Spirit)
+extern void sneaky_spirits_engine_update(void); // Game Engine Update
+extern void sneaky_spirits_engine_stop(void); // Game Engine Close
+extern void sneaky_spirits_cue_spawn(struct Cue *, struct SneakySpiritsCue *, u32 disableTaunt); // Cue - Spawn
+extern u32  sneaky_spirits_cue_update(struct Cue *, struct SneakySpiritsCue *, u32 runningTime, u32 duration); // Cue - Update
+extern void sneaky_spirits_cue_despawn(struct Cue *, struct SneakySpiritsCue *); // Cue - Despawn
+extern void sneaky_spirits_stop_slow_motion(void); // Revert Slow-Motion Effects
+extern void sneaky_spirits_cue_hit(struct Cue *, struct SneakySpiritsCue *, u32 pressed, u32 released); // Cue - Hit
+extern void sneaky_spirits_cue_barely(struct Cue *, struct SneakySpiritsCue *, u32 pressed, u32 released); // Cue - Barely
+extern void sneaky_spirits_cue_miss(struct Cue *, struct SneakySpiritsCue *); // Cue - Miss
+extern void sneaky_spirits_input_event(u32 pressed, u32 released); // Input Event
+extern void sneaky_spirits_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
+extern void sneaky_spirits_common_display_text(void); // Common Event 1 (Display Text, Unimplemented)

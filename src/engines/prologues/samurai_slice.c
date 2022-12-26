@@ -50,7 +50,7 @@ void func_08046054(u32 ver) {
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
     scene_set_bg_layer_display(BG_LAYER_2, FALSE, 0, 0, 0, 30, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088affe0, 0, 135, 20, 0, 0, 0x7f, 0);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_samurai_slice_title, 0, 135, 20, 0, 0, 0x7f, 0);
 }
 
 

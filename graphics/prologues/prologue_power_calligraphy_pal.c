@@ -1,8 +1,8 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088b0720] <description>
-const Palette prologue_power_calligraphy_pal[] = {
+// [D_088b0720] Palette
+const Palette prologue_calligraphy_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),
         /* 01 */ TO_RGB555(0x000000),
@@ -130,4 +130,3 @@ const Palette prologue_power_calligraphy_pal[] = {
         /* 15 */ TO_RGB555(0x000000)
     }
 };
-

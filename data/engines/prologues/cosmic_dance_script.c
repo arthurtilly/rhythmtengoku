@@ -8,8 +8,8 @@
 extern const struct CompressedGraphics D_08beb2f8;
 extern const struct CompressedGraphics D_08beb48c;
 extern const struct CompressedGraphics D_08beaf78;
-extern const Palette D_088adbd4[];
-extern const Palette D_088adbb4[];
+extern const Palette prologue_cosmic_dance_bg_pal[];
+extern const Palette prologue_cosmic_dance_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -38,12 +38,12 @@ const struct GraphicsTable prologue_cosmic_dance_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088adbd4,
+        /* Src.  */ prologue_cosmic_dance_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088adbb4,
+        /* Src.  */ prologue_cosmic_dance_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

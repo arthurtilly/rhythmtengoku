@@ -75,7 +75,7 @@ branch_08014698: \n\
 /* 080146a6 */ STRH R0, [R4] \n\
 /* 080146a8 */ LDR R0, =D_03005380 \n\
 /* 080146aa */ LDR R0, [R0] \n\
-/* 080146ac */ LDR R1, =D_08902a10 \n\
+/* 080146ac */ LDR R1, =anim_game_select_new_game \n\
 /* 080146ae */ ADD R2, SP, 0x14 \n\
 /* 080146b0 */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
 /* 080146b2 */ LDRSH R3, [R2, R6] \n\
@@ -110,7 +110,7 @@ branch_080146ec: \n\
 /* 080146fa */ STRH R0, [R4] \n\
 /* 080146fc */ LDR R0, =D_03005380 \n\
 /* 080146fe */ LDR R0, [R0] \n\
-/* 08014700 */ LDR R1, =D_08902a40 \n\
+/* 08014700 */ LDR R1, =anim_game_select_clear_game \n\
 /* 08014702 */ ADD R2, SP, 0x14 \n\
 /* 08014704 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 08014706 */ LDRSH R3, [R2, R5] \n\
@@ -159,7 +159,7 @@ branch_08014768: \n\
 /* 08014776 */ STRH R0, [R4] \n\
 /* 08014778 */ LDR R0, =D_03005380 \n\
 /* 0801477a */ LDR R0, [R0] \n\
-/* 0801477c */ LDR R1, =D_08902ad0 \n\
+/* 0801477c */ LDR R1, =anim_game_select_get_superb \n\
 /* 0801477e */ ADD R2, SP, 0x14 \n\
 /* 08014780 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 08014782 */ LDRSH R3, [R2, R5] \n\

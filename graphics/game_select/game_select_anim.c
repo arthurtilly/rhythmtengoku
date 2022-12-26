@@ -4,7 +4,7 @@
 #include "game_select_anim_cells.inc.c"
 
 // [D_08902960] Large Rotating Square
-const struct Animation game_select_anim00[] = {
+const struct Animation anim_game_select_bg_square_large[] = {
     /* 000 */ { game_select_cel031, 3 },
     /* 001 */ { game_select_cel032, 3 },
     /* 002 */ { game_select_cel033, 3 },
@@ -15,7 +15,7 @@ const struct Animation game_select_anim00[] = {
 };
 
 // [D_08902998] Small Rotating Square
-const struct Animation game_select_anim01[] = {
+const struct Animation anim_game_select_bg_square_small[] = {
     /* 000 */ { game_select_cel037, 3 },
     /* 001 */ { game_select_cel038, 3 },
     /* 002 */ { game_select_cel039, 3 },
@@ -26,7 +26,7 @@ const struct Animation game_select_anim01[] = {
 };
 
 // [D_089029d0] Selected Rhythm Game Border
-const struct Animation game_select_anim02[] = {
+const struct Animation anim_game_select_border_target[] = {
     /* 000 */ { game_select_cel005, 5 },
     /* 001 */ { game_select_cel006, 5 },
     /* 002 */ { game_select_cel009, 5 },
@@ -38,7 +38,7 @@ const struct Animation game_select_anim02[] = {
 };
 
 // [D_08902a10] Rhythm Game Gradient Border
-const struct Animation game_select_anim03[] = {
+const struct Animation anim_game_select_new_game[] = {
     /* 000 */ { game_select_cel011, 2 },
     /* 001 */ { game_select_cel012, 2 },
     /* 002 */ { game_select_cel013, 2 },
@@ -48,7 +48,7 @@ const struct Animation game_select_anim03[] = {
 };
 
 // [D_08902a40] Flickering, Shrinking White Square
-const struct Animation game_select_anim04[] = {
+const struct Animation anim_game_select_clear_game[] = {
     /* 000 */ { game_select_cel016, 2 },
     /* 001 */ { game_select_cel000, 1 },
     /* 002 */ { game_select_cel017, 2 },
@@ -69,8 +69,8 @@ const struct Animation game_select_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902ad0] Rhythm Game Completed Shine
-const struct Animation game_select_anim05[] = {
+// [D_08902ad0] Rhythm Game Get Superb Shine
+const struct Animation anim_game_select_get_superb[] = {
     /* 000 */ { game_select_cel025, 2 },
     /* 001 */ { game_select_cel026, 2 },
     /* 002 */ { game_select_cel027, 2 },
@@ -88,7 +88,7 @@ const struct Animation game_select_anim05[] = {
 };
 
 // [D_08902b40] STAGE 1
-const struct Animation game_select_anim06[] = {
+const struct Animation anim_game_select_stage1[] = {
     /* 000 */ { game_select_cel043, 30 },
     /* 001 */ { game_select_cel044, 3 },
     /* 002 */ { game_select_cel045, 3 },
@@ -97,13 +97,13 @@ const struct Animation game_select_anim06[] = {
 };
 
 // [D_08902b68] Blank Stage Text Box
-const struct Animation game_select_anim07[] = {
+const struct Animation anim_game_select_stage_box[] = {
     /* 000 */ { game_select_cel080, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08902b78] Flow Count Numbers
-const struct Animation game_select_anim08[] = {
+const struct Animation anim_game_select_flow_num[] = {
     /* 000 */ { game_select_cel081, 4 },
     /* 001 */ { game_select_cel082, 4 },
     /* 002 */ { game_select_cel083, 4 },
@@ -119,22 +119,22 @@ const struct Animation game_select_anim08[] = {
 };
 
 // [D_08902bd8] Your Flow
-const struct Animation game_select_anim09[] = {
+const struct Animation anim_game_select_flow_text[] = {
     /* 000 */ { game_select_cel091, 20 },
     /* 001 */ { game_select_cel092, 10 },
     /* End */ END_ANIMATION
 };
 
 // [D_08902bf0] Flow Direction
-const struct Animation game_select_anim10[] = {
+const struct Animation anim_game_select_flow_arrow[] = {
     /* 000 */ { game_select_cel093, 40 },
     /* 001 */ { game_select_cel094, 40 },
     /* 002 */ { game_select_cel095, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_08902c10] Perfect Campaign Border
-const struct Animation game_select_anim11[] = {
+// [D_08902c10] Perfect Campaign Border (3 Attempts Remaining)
+const struct Animation anim_game_select_border_perfect3[] = {
     /* 000 */ { game_select_cel097, 4 },
     /* 001 */ { game_select_cel098, 4 },
     /* 002 */ { game_select_cel099, 4 },
@@ -142,7 +142,7 @@ const struct Animation game_select_anim11[] = {
 };
 
 // [D_08902c30] A Button Prompt
-const struct Animation game_select_anim12[] = {
+const struct Animation anim_game_select_text_button[] = {
     /* 000 */ { game_select_cel107, 3 },
     /* 001 */ { game_select_cel108, 3 },
     /* 002 */ { game_select_cel106, 40 },
@@ -150,7 +150,7 @@ const struct Animation game_select_anim12[] = {
 };
 
 // [D_08902c50] Unused Medal Count
-const struct Animation game_select_anim13[] = {
+const struct Animation anim_game_select_medal_count_unused[] = {
     /* 000 */ { game_select_cel109, 3 },
     /* 001 */ { game_select_cel110, 3 },
     /* 002 */ { game_select_cel111, 3 },
@@ -161,7 +161,7 @@ const struct Animation game_select_anim13[] = {
 };
 
 // [D_08902c88] Medal Count Numbers
-const struct Animation game_select_anim14[] = {
+const struct Animation anim_game_select_medal_num[] = {
     /* 000 */ { game_select_cel115, 10 },
     /* 001 */ { game_select_cel116, 10 },
     /* 002 */ { game_select_cel117, 10 },
@@ -177,19 +177,19 @@ const struct Animation game_select_anim14[] = {
 };
 
 // [D_08902ce8] Medal Count Number 0
-const struct Animation game_select_anim15[] = {
+const struct Animation anim_game_select_medal_num0[] = {
     /* 000 */ { game_select_cel115, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08902cf8] Medal Count Text
-const struct Animation game_select_anim16[] = {
+const struct Animation anim_game_select_medal_text[] = {
     /* 000 */ { game_select_cel125, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08902d08] STAGE 2
-const struct Animation game_select_anim17[] = {
+const struct Animation anim_game_select_stage2[] = {
     /* 000 */ { game_select_cel047, 30 },
     /* 001 */ { game_select_cel048, 3 },
     /* 002 */ { game_select_cel049, 3 },
@@ -198,7 +198,7 @@ const struct Animation game_select_anim17[] = {
 };
 
 // [D_08902d30] STAGE 3
-const struct Animation game_select_anim18[] = {
+const struct Animation anim_game_select_stage3[] = {
     /* 000 */ { game_select_cel051, 30 },
     /* 001 */ { game_select_cel052, 3 },
     /* 002 */ { game_select_cel053, 3 },
@@ -207,7 +207,7 @@ const struct Animation game_select_anim18[] = {
 };
 
 // [D_08902d58] STAGE 4
-const struct Animation game_select_anim19[] = {
+const struct Animation anim_game_select_stage4[] = {
     /* 000 */ { game_select_cel055, 30 },
     /* 001 */ { game_select_cel056, 3 },
     /* 002 */ { game_select_cel057, 3 },
@@ -216,7 +216,7 @@ const struct Animation game_select_anim19[] = {
 };
 
 // [D_08902d80] STAGE 5
-const struct Animation game_select_anim20[] = {
+const struct Animation anim_game_select_stage5[] = {
     /* 000 */ { game_select_cel059, 30 },
     /* 001 */ { game_select_cel060, 3 },
     /* 002 */ { game_select_cel061, 3 },
@@ -225,7 +225,7 @@ const struct Animation game_select_anim20[] = {
 };
 
 // [D_08902da8] MEDAL CORNER
-const struct Animation game_select_anim21[] = {
+const struct Animation anim_game_select_stage0[] = {
     /* 000 */ { game_select_cel063, 30 },
     /* 001 */ { game_select_cel064, 3 },
     /* 002 */ { game_select_cel065, 3 },
@@ -234,7 +234,7 @@ const struct Animation game_select_anim21[] = {
 };
 
 // [D_08902dd0] REVIVAL
-const struct Animation game_select_anim22[] = {
+const struct Animation anim_game_select_stage6[] = {
     /* 000 */ { game_select_cel067, 30 },
     /* 001 */ { game_select_cel068, 3 },
     /* 002 */ { game_select_cel069, 3 },
@@ -243,7 +243,7 @@ const struct Animation game_select_anim22[] = {
 };
 
 // [D_08902df8] TECHNICIAN
-const struct Animation game_select_anim23[] = {
+const struct Animation anim_game_select_stage7[] = {
     /* 000 */ { game_select_cel071, 30 },
     /* 001 */ { game_select_cel072, 3 },
     /* 002 */ { game_select_cel073, 3 },
@@ -252,7 +252,7 @@ const struct Animation game_select_anim23[] = {
 };
 
 // [D_08902e20] LAST TECHNICIAN
-const struct Animation game_select_anim24[] = {
+const struct Animation anim_game_select_stage8[] = {
     /* 000 */ { game_select_cel075, 30 },
     /* 001 */ { game_select_cel076, 3 },
     /* 002 */ { game_select_cel077, 3 },
@@ -260,16 +260,16 @@ const struct Animation game_select_anim24[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08902e48] Perfect Campaign Border (Less Flowers)
-const struct Animation game_select_anim25[] = {
+// [D_08902e48] Perfect Campaign Border (2 Attempts Remaining)
+const struct Animation anim_game_select_border_perfect2[] = {
     /* 000 */ { game_select_cel100, 4 },
     /* 001 */ { game_select_cel101, 4 },
     /* 002 */ { game_select_cel102, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08902e68] Perfect Campaign Border (No Flowers)
-const struct Animation game_select_anim26[] = {
+// [D_08902e68] Perfect Campaign Border (1 Attempt Remaining)
+const struct Animation anim_game_select_border_perfect1[] = {
     /* 000 */ { game_select_cel103, 4 },
     /* 001 */ { game_select_cel104, 4 },
     /* 002 */ { game_select_cel105, 4 },
@@ -277,7 +277,7 @@ const struct Animation game_select_anim26[] = {
 };
 
 // [D_08902e88] Cursor
-const struct Animation game_select_anim27[] = {
+const struct Animation anim_game_select_cursor[] = {
     /* 000 */ { game_select_cel001, 4 },
     /* 001 */ { game_select_cel002, 2 },
     /* 002 */ { game_select_cel003, 5 },
@@ -286,7 +286,7 @@ const struct Animation game_select_anim27[] = {
 };
 
 // [D_08902eb0] Perfect Cleared
-const struct Animation game_select_anim28[] = {
+const struct Animation anim_game_select_perfect_rank[] = {
     /* 000 */ { game_select_cel126, 4 },
     /* End */ END_ANIMATION
 };

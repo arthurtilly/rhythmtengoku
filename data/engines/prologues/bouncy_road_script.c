@@ -8,7 +8,7 @@
 extern const struct CompressedGraphics D_08bee468;
 extern const struct CompressedGraphics D_08bee52c;
 extern const struct CompressedGraphics D_08bee430;
-extern const Palette D_088af5f0[];
+extern const Palette prologue_bouncy_road_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -37,12 +37,12 @@ const struct GraphicsTable prologue_bouncy_road_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088af5f0,
+        /* Src.  */ prologue_bouncy_road_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088af5f0,
+        /* Src.  */ prologue_bouncy_road_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

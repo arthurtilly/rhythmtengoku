@@ -3,8 +3,8 @@
 
 #include "prologue_sick_beats_anim_cells.inc.c"
 
-// [D_088b8cbc] <description>
-const struct Animation prologue_sick_beats_anim00[] = {
+// [D_088b8cbc] Virus
+const struct Animation anim_prologue_sick_beats_virus[] = {
     /* 000 */ { prologue_sick_beats_cel000, 20 },
     /* 001 */ { prologue_sick_beats_cel001, 4 },
     /* 002 */ { prologue_sick_beats_cel002, 4 },
@@ -15,8 +15,8 @@ const struct Animation prologue_sick_beats_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088b8cfc] <description>
-const struct Animation prologue_sick_beats_anim01[] = {
+// [D_088b8cfc] Title
+const struct Animation anim_prologue_sick_beats_title[] = {
     /* 000 */ { prologue_sick_beats_cel000, 60 },
     /* 001 */ { prologue_sick_beats_cel016, 4 },
     /* 002 */ { prologue_sick_beats_cel017, 4 },
@@ -31,8 +31,8 @@ const struct Animation prologue_sick_beats_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088b8d5c] <description>
-const struct Animation prologue_sick_beats_anim02[] = {
+// [D_088b8d5c] ? (Unused)
+const struct Animation anim_prologue_sick_beats_unused[] = {
     /* 000 */ { prologue_sick_beats_cel000, 60 },
     /* 001 */ { prologue_sick_beats_cel007, 12 },
     /* 002 */ { prologue_sick_beats_cel008, 4 },
@@ -45,4 +45,3 @@ const struct Animation prologue_sick_beats_anim02[] = {
     /* 009 */ { prologue_sick_beats_cel015, 60 },
     /* End */ END_ANIMATION
 };
-

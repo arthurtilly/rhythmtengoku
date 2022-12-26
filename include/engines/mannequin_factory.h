@@ -27,8 +27,8 @@ struct MannequinFactoryCue {
 
 
 // Engine Definition Data:
-extern const struct Animation *const D_089df384[];
-extern const u16 D_089df3a4[];
+extern const struct Animation *const mannequin_finish_anim[];
+extern const u16 mannequin_input_buttons[];
 extern const struct CompressedGraphics *const mannequin_buffered_textures[];
 extern const struct GraphicsTable mannequin_gfx_table[];
 extern const struct SequenceData *const D_089df404[];
@@ -54,9 +54,9 @@ extern void func_08022ba0(); // Engine Event 6 (?)
 // extern ? func_08022bb4(?);
 // extern ? func_08022ca0(?);
 // extern ? func_08022ce8(?);
-extern void mannequin_init_gfx3(void); // Graphics Init. 2
-extern void mannequin_init_gfx2(void); // Graphics Init. 1
-extern void mannequin_init_gfx1(void); // Graphics Init. 0
+extern void mannequin_init_gfx3(void); // Graphics Init. 3
+extern void mannequin_init_gfx2(void); // Graphics Init. 2
+extern void mannequin_init_gfx1(void); // Graphics Init. 1
 extern void mannequin_engine_start(u32); // Game Engine Start
 extern void func_08022efc(); // Engine Event 7 (?)
 extern void func_08022f00(); // Engine Event 2 (?)

@@ -49,8 +49,8 @@ void func_08046e78(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088b35dc, 0, 22, 162, 0, 0, 0x7f, 0);
-    gPrologueInfo->rabbitsSprite = func_0804d160(D_03005380, D_088b35a4, 0, 114, 120, 0, 0, 0x7f, 0);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_bunny_hop_title, 0, 22, 162, 0, 0, 0x7f, 0);
+    gPrologueInfo->rabbitsSprite = func_0804d160(D_03005380, anim_prologue_bunny_hop_rabbits, 0, 114, 120, 0, 0, 0x7f, 0);
 }
 
 

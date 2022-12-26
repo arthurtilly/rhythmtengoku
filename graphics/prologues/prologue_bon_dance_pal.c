@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088ad560] <description>
+// [D_088ad560] OBJ Palette
 const Palette prologue_bon_dance_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xE8F800),
@@ -41,7 +41,7 @@ const Palette prologue_bon_dance_obj_pal[] = {
     }
 };
 
-// [D_088ad5a0] <description>
+// [D_088ad5a0] BG Palette
 const Palette prologue_bon_dance_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
@@ -62,4 +62,3 @@ const Palette prologue_bon_dance_bg_pal[] = {
         /* 15 */ TO_RGB555(0xF8E8A8)
     }
 };
-

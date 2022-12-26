@@ -21,7 +21,7 @@ thumb_func_start gameplay_init_overlay \n\
 /* 08018174 */ MOVS R1, 0x10 @ Set R1 to 0x10 \n\
 /* 08018176 */ BL func_0804e0bc \n\
 /* 0801817a */ LDR R0, [R5] \n\
-/* 0801817c */ LDR R1, =D_0890ab28 \n\
+/* 0801817c */ LDR R1, =anim_gameplay_pause_title \n\
 /* 0801817e */ MOVS R6, 0x50 @ Set R6 to 0x50 \n\
 /* 08018180 */ STR R6, [SP] \n\
 /* 08018182 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
@@ -42,7 +42,7 @@ thumb_func_start gameplay_init_overlay \n\
 /* 080181a2 */ ADDS R1, 0x8C @ Add 0x8C to R1 \n\
 /* 080181a4 */ STRH R0, [R1] \n\
 /* 080181a6 */ LDR R0, [R5] \n\
-/* 080181a8 */ LDR R1, =D_0890ab88 \n\
+/* 080181a8 */ LDR R1, =anim_gameplay_pause_option1 \n\
 /* 080181aa */ STR R6, [SP] \n\
 /* 080181ac */ STR R4, [SP, 0x4] \n\
 /* 080181ae */ STR R7, [SP, 0x8] \n\
@@ -57,7 +57,7 @@ thumb_func_start gameplay_init_overlay \n\
 /* 080181c2 */ ADDS R1, 0x8E @ Add 0x8E to R1 \n\
 /* 080181c4 */ STRH R0, [R1] \n\
 /* 080181c6 */ LDR R0, [R5] \n\
-/* 080181c8 */ LDR R1, =D_0890abd8 \n\
+/* 080181c8 */ LDR R1, =anim_gameplay_skip_icon \n\
 /* 080181ca */ STR R6, [SP] \n\
 /* 080181cc */ STR R4, [SP, 0x4] \n\
 /* 080181ce */ STR R4, [SP, 0x8] \n\
@@ -73,7 +73,7 @@ thumb_func_start gameplay_init_overlay \n\
 /* 080181e4 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 080181e6 */ STRH R0, [R1] \n\
 /* 080181e8 */ LDR R0, [R5] \n\
-/* 080181ea */ LDR R1, =D_0890ac00 \n\
+/* 080181ea */ LDR R1, =anim_gameplay_text_button_black \n\
 /* 080181ec */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 080181ee */ STR R2, [SP] \n\
 /* 080181f0 */ MOVS R2, 0x64 @ Set R2 to 0x64 \n\
@@ -91,7 +91,7 @@ thumb_func_start gameplay_init_overlay \n\
 /* 0801820a */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 0801820c */ STRH R0, [R1] \n\
 /* 0801820e */ LDR R0, [R5] \n\
-/* 08018210 */ LDR R1, =D_0890ac40 \n\
+/* 08018210 */ LDR R1, =anim_gameplay_perfect_icon \n\
 /* 08018212 */ MOVS R2, 0xA @ Set R2 to 0xA \n\
 /* 08018214 */ STR R2, [SP] \n\
 /* 08018216 */ MOVS R2, 0x5A @ Set R2 to 0x5A \n\

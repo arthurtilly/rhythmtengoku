@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088ad2fc] <description>
+// [D_088ad2fc] Palette
 const Palette prologue_sneaky_spirits_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x18B8B0),
@@ -40,4 +40,3 @@ const Palette prologue_sneaky_spirits_pal[] = {
         /* 15 */ TO_RGB555(0x000000)
     }
 };
-

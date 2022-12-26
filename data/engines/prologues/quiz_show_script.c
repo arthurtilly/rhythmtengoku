@@ -8,7 +8,7 @@
 extern const struct CompressedGraphics D_08c04434;
 extern const struct CompressedGraphics D_08c04940;
 extern const struct CompressedGraphics D_08c02a34;
-extern const Palette D_088b141c[];
+extern const Palette prologue_quiz_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -37,12 +37,12 @@ const struct GraphicsTable prologue_quiz_show_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088b141c,
+        /* Src.  */ prologue_quiz_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088b141c,
+        /* Src.  */ prologue_quiz_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

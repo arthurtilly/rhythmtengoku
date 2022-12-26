@@ -17,8 +17,8 @@ struct PrologueBunnyHopInfo {
 // Assets:
 extern const struct CompressedGraphics *const prologue_bunny_hop_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable prologue_bunny_hop_gfx_table[]; // Graphics Table
-extern const struct Animation D_088b35dc[]; // Animation: Text (Bunny Hop)
-extern const struct Animation D_088b35a4[]; // Animation: Rabbits
+extern const struct Animation anim_prologue_bunny_hop_title[]; // Animation: Text (Bunny Hop)
+extern const struct Animation anim_prologue_bunny_hop_rabbits[]; // Animation: Rabbits
 extern const struct SequenceData s_jingle_rat_seqData;
 
 // Functions:

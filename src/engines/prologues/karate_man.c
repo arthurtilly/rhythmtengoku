@@ -49,8 +49,8 @@ void func_0804557c(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088ada78, 0, 110, 80, 0, 0, 0, 0);
-    gPrologueInfo->kickSprite = func_0804d160(D_03005380, D_088adaa8, 0, 96, 110, 0, 0, 0, 0);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_karate_title, 0, 110, 80, 0, 0, 0, 0);
+    gPrologueInfo->kickSprite = func_0804d160(D_03005380, anim_prologue_karate_kick, 0, 96, 110, 0, 0, 0, 0);
 }
 
 

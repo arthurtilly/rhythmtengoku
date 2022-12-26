@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_089056e0] <description>
+// [D_089056e0] Game Icons Palette
 const Palette game_select_bg_icon_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x384050),

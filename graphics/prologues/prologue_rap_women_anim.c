@@ -3,8 +3,8 @@
 
 #include "prologue_rap_women_anim_cells.inc.c"
 
-// [D_088b3ac4] <description>
-const struct Animation prologue_rap_women_anim00[] = {
+// [D_088b3ac4] Title
+const struct Animation anim_prologue_rap_women_title[] = {
     /* 000 */ { prologue_rap_women_cel000, 100 },
     /* 001 */ { prologue_rap_women_cel001, 6 },
     /* 002 */ { prologue_rap_women_cel002, 6 },
@@ -17,4 +17,3 @@ const struct Animation prologue_rap_women_anim00[] = {
     /* 009 */ { prologue_rap_women_cel009, 100 },
     /* End */ END_ANIMATION
 };
-

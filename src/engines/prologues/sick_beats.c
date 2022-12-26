@@ -49,8 +49,8 @@ void func_08047c78(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088b8cfc, 0, 96, 17, 0, 0, 0x7f, 0);
-    gPrologueInfo->virusSprite = func_0804d160(D_03005380, D_088b8cbc, 0, 160, 48, 0, 0, 0x7f, 0);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_sick_beats_title, 0, 96, 17, 0, 0, 0x7f, 0);
+    gPrologueInfo->virusSprite = func_0804d160(D_03005380, anim_prologue_sick_beats_virus, 0, 160, 48, 0, 0, 0x7f, 0);
 }
 
 

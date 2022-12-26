@@ -3,8 +3,8 @@
 
 #include "prologue_tap_trial_anim_cells.inc.c"
 
-// [D_088b7914] <description>
-const struct Animation prologue_tap_trial_anim00[] = {
+// [D_088b7914] ? (Unused)
+const struct Animation anim_prologue_tap_trial_unused[] = {
     /* 000 */ { prologue_tap_trial_cel000, 40 },
     /* 001 */ { prologue_tap_trial_cel001, 6 },
     /* 002 */ { prologue_tap_trial_cel003, 6 },
@@ -14,8 +14,8 @@ const struct Animation prologue_tap_trial_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088b794c] <description>
-const struct Animation prologue_tap_trial_anim01[] = {
+// [D_088b794c] Title
+const struct Animation anim_prologue_tap_trial_title[] = {
     /* 000 */ { prologue_tap_trial_cel004, 1 },
     /* 001 */ { prologue_tap_trial_cel005, 2 },
     /* 002 */ { prologue_tap_trial_cel006, 3 },
@@ -30,4 +30,3 @@ const struct Animation prologue_tap_trial_anim01[] = {
     /* 011 */ { prologue_tap_trial_cel015, 60 },
     /* End */ END_ANIMATION
 };
-

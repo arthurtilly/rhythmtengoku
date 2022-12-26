@@ -16,7 +16,7 @@ struct PrologueRemix4Info {
 // Assets:
 extern const struct CompressedGraphics *const prologue_remix4_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable prologue_remix4_gfx_table[]; // Graphics Table
-extern const struct Animation D_088b23ec[]; // Animation: Text (Remix 4)
+extern const struct Animation anim_prologue_remix4_title[]; // Animation: Text (Remix 4)
 extern const struct SequenceData s_jingle_remix_seqData;
 extern const struct SequenceData s_f_scratch_seqData;
 

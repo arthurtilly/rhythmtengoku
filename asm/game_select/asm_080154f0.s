@@ -39,7 +39,7 @@ branch_0801551a: \n\
 /* 0801552e */ STR R4, [SP, 0x8] \n\
 /* 08015530 */ STR R4, [SP, 0xC] \n\
 /* 08015532 */ STR R4, [SP, 0x10] \n\
-/* 08015534 */ LDR R1, =D_08902b78 \n\
+/* 08015534 */ LDR R1, =anim_game_select_flow_num \n\
 /* 08015536 */ MOVS R2, 0xA @ Set R2 to 0xA \n\
 /* 08015538 */ BL func_0804d160 \n\
 /* 0801553c */ LSLS R2, R7, 0x1 \n\
@@ -58,7 +58,7 @@ branch_0801551a: \n\
 /* 08015558 */ BLS branch_0801551a \n\
 /* 0801555a */ LDR R5, =D_03005380 \n\
 /* 0801555c */ LDR R0, [R5] \n\
-/* 0801555e */ LDR R1, =D_08902bd8 \n\
+/* 0801555e */ LDR R1, =anim_game_select_flow_text \n\
 /* 08015560 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 08015562 */ STR R3, [SP] \n\
 /* 08015564 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
@@ -78,7 +78,7 @@ branch_0801551a: \n\
 /* 08015582 */ MOV R3, R10 @ Set R3 to R10 \n\
 /* 08015584 */ BL func_0804db44 \n\
 /* 08015588 */ LDR R0, [R5] \n\
-/* 0801558a */ LDR R1, =D_08902bf0 \n\
+/* 0801558a */ LDR R1, =anim_game_select_flow_arrow \n\
 /* 0801558c */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 0801558e */ STR R3, [SP] \n\
 /* 08015590 */ STR R4, [SP, 0x4] \n\

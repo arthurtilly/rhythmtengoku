@@ -4,9 +4,9 @@
   /* MANNEQUIN FACTORY - GAME ENGINE DATA */
 
 
-extern const struct Animation mannequin_factory_anim27[];
-extern const struct Animation mannequin_factory_anim26[];
-extern const struct Animation mannequin_factory_anim28[];
+extern const struct Animation anim_mannequin_complete_l[];
+extern const struct Animation anim_mannequin_complete_c[];
+extern const struct Animation anim_mannequin_complete_r[];
 extern const struct CompressedGraphics D_08c34478;
 extern const struct CompressedGraphics D_08c35f18;
 extern const struct CompressedGraphics D_08c360b0;
@@ -21,20 +21,20 @@ extern const struct SequenceData s_tom_L_seqData;
   //  //  //  GRAPHICS DATA  //  //  //
 
 
-// [D_089df384] ?
-const struct Animation *const D_089df384[] = {
-    /* 0x00 */ mannequin_factory_anim27,
-    /* 0x01 */ mannequin_factory_anim26,
-    /* 0x02 */ mannequin_factory_anim28,
+// [D_089df384] Mannequin Completion Animations
+const struct Animation *const mannequin_finish_anim[] = {
+    /* 0x00 */ anim_mannequin_complete_l,
+    /* 0x01 */ anim_mannequin_complete_c,
+    /* 0x02 */ anim_mannequin_complete_r,
     /* 0x03 */ NULL,
-    /* 0x04 */ mannequin_factory_anim27,
-    /* 0x05 */ mannequin_factory_anim26,
-    /* 0x06 */ mannequin_factory_anim28,
+    /* 0x04 */ anim_mannequin_complete_l,
+    /* 0x05 */ anim_mannequin_complete_c,
+    /* 0x06 */ anim_mannequin_complete_r,
     /* 0x07 */ NULL
 };
 
-// [D_089df3a4] ?
-const u16 D_089df3a4[] = {
+// [D_089df3a4] Input Buttons
+const u16 mannequin_input_buttons[] = {
     A_BUTTON,
     B_BUTTON,
     DPAD_RIGHT,

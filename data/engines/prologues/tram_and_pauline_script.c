@@ -8,7 +8,7 @@
 extern const struct CompressedGraphics D_08c3106c;
 extern const struct CompressedGraphics D_08c3153c;
 extern const struct CompressedGraphics D_08c30910;
-extern const Palette D_088b88ac[];
+extern const Palette prologue_tram_and_pauline_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -37,12 +37,12 @@ const struct GraphicsTable prologue_tram_pauline_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088b88ac,
+        /* Src.  */ prologue_tram_and_pauline_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088b88ac,
+        /* Src.  */ prologue_tram_and_pauline_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

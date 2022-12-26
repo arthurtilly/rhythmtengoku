@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088b0018] <description>
+// [D_088b0018] Palette
 const Palette prologue_samurai_slice_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x009800),
@@ -40,4 +40,3 @@ const Palette prologue_samurai_slice_pal[] = {
         /* 15 */ TO_RGB555(0xF8F8F8)
     }
 };
-

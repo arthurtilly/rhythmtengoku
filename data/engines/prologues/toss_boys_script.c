@@ -8,8 +8,8 @@
 extern const struct CompressedGraphics D_08c2d448;
 extern const struct CompressedGraphics D_08c2d960;
 extern const struct CompressedGraphics D_08c2a208;
-extern const Palette D_088b8118[];
-extern const Palette D_088b80d8[];
+extern const Palette prologue_toss_boys_bg_pal[];
+extern const Palette prologue_toss_boys_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -38,12 +38,12 @@ const struct GraphicsTable prologue_toss_boys_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088b8118,
+        /* Src.  */ prologue_toss_boys_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088b80d8,
+        /* Src.  */ prologue_toss_boys_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

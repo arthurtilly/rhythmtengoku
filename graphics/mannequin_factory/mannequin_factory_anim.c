@@ -3,14 +3,14 @@
 
 #include "mannequin_factory_anim_cells.inc.c"
 
-// [D_088ba0fc] <description>
-const struct Animation mannequin_factory_anim00[] = {
+// [D_088ba0fc] Mannequin - Base? (Unused)
+const struct Animation anim_mannequin_base[] = {
     /* 000 */ { mannequin_factory_cel002, 10 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba10c] <description>
-const struct Animation mannequin_factory_anim01[] = {
+// [D_088ba10c] Mannequin - Head
+const struct Animation anim_mannequin_head[] = {
     /* 000 */ { mannequin_factory_cel003, 40 },
     /* 001 */ { mannequin_factory_cel006, 40 },
     /* 002 */ { mannequin_factory_cel009, 40 },
@@ -18,8 +18,8 @@ const struct Animation mannequin_factory_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba134] <description>
-const struct Animation mannequin_factory_anim02[] = {
+// [D_088ba134] Mannequin - Left Eye
+const struct Animation anim_mannequin_eye_l[] = {
     /* 000 */ { mannequin_factory_cel000, 40 },
     /* 001 */ { mannequin_factory_cel013, 20 },
     /* 002 */ { mannequin_factory_cel016, 40 },
@@ -27,8 +27,8 @@ const struct Animation mannequin_factory_anim02[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba15c] <description>
-const struct Animation mannequin_factory_anim03[] = {
+// [D_088ba15c] Mannequin - Right Eye
+const struct Animation anim_mannequin_eye_r[] = {
     /* 000 */ { mannequin_factory_cel017, 40 },
     /* 001 */ { mannequin_factory_cel020, 20 },
     /* 002 */ { mannequin_factory_cel000, 40 },
@@ -36,8 +36,8 @@ const struct Animation mannequin_factory_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba184] <description>
-const struct Animation mannequin_factory_anim04[] = {
+// [D_088ba184] Right Hand
+const struct Animation anim_mannequin_hand_r[] = {
     /* 000 */ { mannequin_factory_cel024, 1 },
     /* 001 */ { mannequin_factory_cel025, 2 },
     /* 002 */ { mannequin_factory_cel026, 2 },
@@ -46,8 +46,8 @@ const struct Animation mannequin_factory_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba1b4] <description>
-const struct Animation mannequin_factory_anim05[] = {
+// [D_088ba1b4] Left Hand
+const struct Animation anim_mannequin_hand_l[] = {
     /* 000 */ { mannequin_factory_cel030, 1 },
     /* 001 */ { mannequin_factory_cel031, 2 },
     /* 002 */ { mannequin_factory_cel032, 2 },
@@ -56,8 +56,8 @@ const struct Animation mannequin_factory_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba1e4] <description>
-const struct Animation mannequin_factory_anim06[] = {
+// [D_088ba1e4] Left Eye Stamp
+const struct Animation anim_mannequin_stamp_l[] = {
     /* 000 */ { mannequin_factory_cel036, 1 },
     /* 001 */ { mannequin_factory_cel037, 1 },
     /* 002 */ { mannequin_factory_cel038, 2 },
@@ -72,8 +72,8 @@ const struct Animation mannequin_factory_anim06[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba244] <description>
-const struct Animation mannequin_factory_anim07[] = {
+// [D_088ba244] Right Eye Stamp
+const struct Animation anim_mannequin_stamp_r[] = {
     /* 000 */ { mannequin_factory_cel048, 1 },
     /* 001 */ { mannequin_factory_cel049, 1 },
     /* 002 */ { mannequin_factory_cel050, 2 },
@@ -88,44 +88,44 @@ const struct Animation mannequin_factory_anim07[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba2a4] <description>
-const struct Animation mannequin_factory_anim08[] = {
+// [D_088ba2a4] Blank Mannequin
+const struct Animation anim_mannequin_head_blank[] = {
     /* 000 */ { mannequin_factory_cel001, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba2b4] <description>
-const struct Animation mannequin_factory_anim09[] = {
+// [D_088ba2b4] Right Hand Slap Effect
+const struct Animation anim_mannequin_slap_effect_r[] = {
     /* 000 */ { mannequin_factory_cel028, 2 },
     /* 001 */ { mannequin_factory_cel029, 2 },
     /* 002 */ { mannequin_factory_cel000, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba2d4] <description>
-const struct Animation mannequin_factory_anim10[] = {
+// [D_088ba2d4] Left Hand Slap Effect
+const struct Animation anim_mannequin_slap_effect_l[] = {
     /* 000 */ { mannequin_factory_cel034, 2 },
     /* 001 */ { mannequin_factory_cel035, 2 },
     /* 002 */ { mannequin_factory_cel000, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba2f4] <description>
-const struct Animation mannequin_factory_anim11[] = {
+// [D_088ba2f4] Left Eye Stamp Effect
+const struct Animation anim_mannequin_stamp_effect_l[] = {
     /* 000 */ { mannequin_factory_cel047, 2 },
     /* 001 */ { mannequin_factory_cel000, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba30c] <description>
-const struct Animation mannequin_factory_anim12[] = {
+// [D_088ba30c] Right Eye Stamp Effect
+const struct Animation anim_mannequin_stamp_effect_r[] = {
     /* 000 */ { mannequin_factory_cel059, 2 },
     /* 001 */ { mannequin_factory_cel000, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba324] <description>
-const struct Animation mannequin_factory_anim13[] = {
+// [D_088ba324] Mannequin with Smooth Rotation
+const struct Animation anim_mannequin_head_smooth_rotation[] = {
     /* 000 */ { mannequin_factory_cel003, 40 },
     /* 001 */ { mannequin_factory_cel004, 1 },
     /* 002 */ { mannequin_factory_cel005, 1 },
@@ -136,8 +136,8 @@ const struct Animation mannequin_factory_anim13[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba364] <description>
-const struct Animation mannequin_factory_anim14[] = {
+// [D_088ba364] "No Good" Effect
+const struct Animation anim_mannequin_ng_effect[] = {
     /* 000 */ { mannequin_factory_cel060, 2 },
     /* 001 */ { mannequin_factory_cel061, 1 },
     /* 002 */ { mannequin_factory_cel062, 1 },
@@ -146,34 +146,34 @@ const struct Animation mannequin_factory_anim14[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba394] <description>
-const struct Animation mannequin_factory_anim15[] = {
+// [D_088ba394] Surprised Left Eye
+const struct Animation anim_mannequin_ng_eye_l[] = {
     /* 000 */ { mannequin_factory_cel064, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba3a4] <description>
-const struct Animation mannequin_factory_anim16[] = {
+// [D_088ba3a4] Surprised Right Eye
+const struct Animation anim_mannequin_ng_eye_r[] = {
     /* 000 */ { mannequin_factory_cel065, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba3b4] <description>
-const struct Animation mannequin_factory_anim17[] = {
+// [D_088ba3b4] Surprised Mannequin Effect
+const struct Animation anim_mannequin_ng_head_effect[] = {
     /* 000 */ { mannequin_factory_cel066, 2 },
     /* 001 */ { mannequin_factory_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba3cc] <description>
-const struct Animation mannequin_factory_anim18[] = {
+// [D_088ba3cc] "OK" Speech Bubble
+const struct Animation anim_mannequin_emote_ok[] = {
     /* 000 */ { mannequin_factory_cel067, 12 },
     /* 001 */ { mannequin_factory_cel000, 60 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba3e4] <description>
-const struct Animation mannequin_factory_anim19[] = {
+// [D_088ba3e4] Score Count Numbers
+const struct Animation anim_mannequin_score_num[] = {
     /* 000 */ { mannequin_factory_cel068, 4 },
     /* 001 */ { mannequin_factory_cel069, 4 },
     /* 002 */ { mannequin_factory_cel070, 4 },
@@ -188,8 +188,8 @@ const struct Animation mannequin_factory_anim19[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba444] <description>
-const struct Animation mannequin_factory_anim20[] = {
+// [D_088ba444] Star Score Meter
+const struct Animation anim_mannequin_score_stars[] = {
     /* 000 */ { mannequin_factory_cel000, 4 },
     /* 001 */ { mannequin_factory_cel088, 4 },
     /* 002 */ { mannequin_factory_cel089, 4 },
@@ -198,22 +198,22 @@ const struct Animation mannequin_factory_anim20[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba474] <description>
-const struct Animation mannequin_factory_anim21[] = {
+// [D_088ba474] Music Note Speech Bubble (Right)
+const struct Animation anim_mannequin_emote_music_note_r[] = {
     /* 000 */ { mannequin_factory_cel092, 9 },
     /* 001 */ { mannequin_factory_cel000, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba48c] <description>
-const struct Animation mannequin_factory_anim22[] = {
+// [D_088ba48c] Music Note Speech Bubble (Left)
+const struct Animation anim_mannequin_emote_music_note_l[] = {
     /* 000 */ { mannequin_factory_cel093, 9 },
     /* 001 */ { mannequin_factory_cel000, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba4a4] <description>
-const struct Animation mannequin_factory_anim23[] = {
+// [D_088ba4a4] Cowbell
+const struct Animation anim_mannequin_cowbell[] = {
     /* 000 */ { mannequin_factory_cel094, 2 },
     /* 001 */ { mannequin_factory_cel095, 2 },
     /* 002 */ { mannequin_factory_cel096, 2 },
@@ -222,20 +222,20 @@ const struct Animation mannequin_factory_anim23[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba4d4] <description>
-const struct Animation mannequin_factory_anim24[] = {
+// [D_088ba4d4] Five Blank Mannequins in a Row
+const struct Animation anim_mannequin_council[] = {
     /* 000 */ { mannequin_factory_cel099, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba4e4] <description>
-const struct Animation mannequin_factory_anim25[] = {
+// [D_088ba4e4] Mannequin Dash Effect
+const struct Animation anim_mannequin_dash_effect[] = {
     /* 000 */ { mannequin_factory_cel100, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba4f4] <description>
-const struct Animation mannequin_factory_anim26[] = {
+// [D_088ba4f4] Stamp Mannequin (Facing Forward)
+const struct Animation anim_mannequin_complete_c[] = {
     /* 000 */ { mannequin_factory_cel101, 2 },
     /* 001 */ { mannequin_factory_cel102, 2 },
     /* 002 */ { mannequin_factory_cel103, 3 },
@@ -248,8 +248,8 @@ const struct Animation mannequin_factory_anim26[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba544] <description>
-const struct Animation mannequin_factory_anim27[] = {
+// [D_088ba544] Stamp Mannequin (Facing Left)
+const struct Animation anim_mannequin_complete_l[] = {
     /* 000 */ { mannequin_factory_cel112, 2 },
     /* 001 */ { mannequin_factory_cel113, 2 },
     /* 002 */ { mannequin_factory_cel114, 3 },
@@ -258,8 +258,8 @@ const struct Animation mannequin_factory_anim27[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba574] <description>
-const struct Animation mannequin_factory_anim28[] = {
+// [D_088ba574] Stamp Mannequin (Facing Right)
+const struct Animation anim_mannequin_complete_r[] = {
     /* 000 */ { mannequin_factory_cel117, 2 },
     /* 001 */ { mannequin_factory_cel118, 2 },
     /* 002 */ { mannequin_factory_cel119, 3 },
@@ -268,20 +268,20 @@ const struct Animation mannequin_factory_anim28[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba5a4] <description>
-const struct Animation mannequin_factory_anim29[] = {
+// [D_088ba5a4] Crane Holding Mannequin
+const struct Animation anim_mannequin_crane[] = {
     /* 000 */ { mannequin_factory_cel110, 100 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba5b4] <description>
-const struct Animation mannequin_factory_anim30[] = {
+// [D_088ba5b4] Crane Dash Effect
+const struct Animation anim_mannequin_crane_dash_effect[] = {
     /* 000 */ { mannequin_factory_cel111, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088ba5c4] <description>
-const struct Animation mannequin_factory_anim31[] = {
+// [D_088ba5c4] "Game Over" Icon
+const struct Animation anim_mannequin_game_over[] = {
     /* 000 */ { mannequin_factory_cel122, 4 },
     /* 001 */ { mannequin_factory_cel123, 10 },
     /* 002 */ { mannequin_factory_cel122, 4 },
@@ -289,8 +289,8 @@ const struct Animation mannequin_factory_anim31[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ba5ec] <description>
-const struct Animation mannequin_factory_anim32[] = {
+// [D_088ba5ec] High Score Count Numbers
+const struct Animation anim_mannequin_high_score_num[] = {
     /* 000 */ { mannequin_factory_cel078, 4 },
     /* 001 */ { mannequin_factory_cel079, 4 },
     /* 002 */ { mannequin_factory_cel080, 4 },

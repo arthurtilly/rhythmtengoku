@@ -49,8 +49,8 @@ void func_08047b40(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088b8844, 0, 120, 150, 0, 0, 0x7f, 0);
-    func_0804d160(D_03005380, D_088b8834, 0, 120, 150, 0x800, 0, 0x7f, 0);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_tram_and_pauline_title, 0, 120, 150, 0, 0, 0x7f, 0);
+    func_0804d160(D_03005380, anim_prologue_tram_and_pauline_characters, 0, 120, 150, 0x800, 0, 0x7f, 0);
 }
 
 

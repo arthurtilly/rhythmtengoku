@@ -38,9 +38,9 @@ extern const struct CreditsTextStartPos D_089df628[];
 
 
 // Functions:
-extern void staff_credit_init_gfx3(void); // Graphics Init. 2
-extern void staff_credit_init_gfx2(void); // Graphics Init. 1
-extern void staff_credit_init_gfx1(void); // Graphics Init. 0
+extern void staff_credit_init_gfx3(void); // Graphics Init. 3
+extern void staff_credit_init_gfx2(void); // Graphics Init. 2
+extern void staff_credit_init_gfx1(void); // Graphics Init. 1
 extern void staff_credit_engine_start(u32 version); // Game Engine Start
 extern void func_08023690(); // Engine Event 4 (?)
 // extern ? func_08023694(?);

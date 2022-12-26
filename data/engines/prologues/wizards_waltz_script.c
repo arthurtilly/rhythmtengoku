@@ -8,7 +8,7 @@
 extern const struct CompressedGraphics D_08c339dc;
 extern const struct CompressedGraphics D_08c33c14;
 extern const struct CompressedGraphics D_08c33640;
-extern const Palette D_088b8e70[];
+extern const Palette prologue_wizards_waltz_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -37,12 +37,12 @@ const struct GraphicsTable prologue_wizards_waltz_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088b8e70,
+        /* Src.  */ prologue_wizards_waltz_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088b8e70,
+        /* Src.  */ prologue_wizards_waltz_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

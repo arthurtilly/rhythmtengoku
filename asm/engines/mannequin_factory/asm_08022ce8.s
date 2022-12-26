@@ -95,7 +95,7 @@ branch_08022d7c: \n\
 branch_08022daa: \n\
 /* 08022daa */ LDR R5, =D_030055d0 \n\
 /* 08022dac */ LDR R1, [R5] \n\
-/* 08022dae */ LDR R0, =D_089df3a4 \n\
+/* 08022dae */ LDR R0, =mannequin_input_buttons \n\
 /* 08022db0 */ LSLS R4, R6, 0x1 \n\
 /* 08022db2 */ ADDS R0, R4, R0 @ Set R0 to R4 + R0 \n\
 /* 08022db4 */ LDRH R2, [R0] \n\

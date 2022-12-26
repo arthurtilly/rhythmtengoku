@@ -233,242 +233,40 @@ D_088a3974 = 0x088a3974;
 /* LIVE ver2 Palette */
 D_088a399c = 0x088a399c;
 D_088a3a7c = 0x088a3a7c;
-/* Prologue - Sneaky Spirits Animations */
-D_088ad2bc = 0x088ad2bc;
-/* Prologue - Sneaky Spirits Palette */
-D_088ad2fc = 0x088ad2fc;
-/* Prologue - Spaceball Animations */
-D_088ad3f4 = 0x088ad3f4;
-/* Prologue - Spaceball Palettes */
-D_088ad424 = 0x088ad424;
-D_088ad464 = 0x088ad464;
-/* Prologue - Bon Dance Animations */
-D_088ad530 = 0x088ad530;
-/* Prologue - Bon Dance Palettes */
-D_088ad560 = 0x088ad560;
-D_088ad5a0 = 0x088ad5a0;
-/* Prologue - The Bon Odori Animations */
-D_088ad898 = 0x088ad898;
-/* Prologue - The Bon Odori Palettes */
-D_088ad918 = 0x088ad918;
-D_088ad938 = 0x088ad938;
-/* Prologue - Karate Man Animations */
-D_088ada78 = 0x088ada78;
-D_088adaa8 = 0x088adaa8;
-/* Prologue - Karate Man Palettes */
-D_088adae0 = 0x088adae0;
-D_088adb20 = 0x088adb20;
-/* Prologue - Cosmic Dance Animations */
-D_088adb94 = 0x088adb94;
-D_088adba4 = 0x088adba4;
-/* Prologue - Cosmic Dance Palettes */
-D_088adbb4 = 0x088adbb4;
-D_088adbd4 = 0x088adbd4;
-/* Prologue - Night Walk Animations */
-D_088ae048 = 0x088ae048;
-D_088ae160 = 0x088ae160;
-D_088ae2a8 = 0x088ae2a8;
-/* Prologue - Night Walk Palettes */
-D_088ae2f8 = 0x088ae2f8;
-/* Prologue - Showtime Animations */
-D_088ae3e4 = 0x088ae3e4;
-D_088ae3f4 = 0x088ae3f4;
-/* Prologue - Showtime Palettes */
-D_088ae444 = 0x088ae444;
-/* Prologue - Bouncy Road Animations */
-D_088af4e0 = 0x088af4e0;
-D_088af510 = 0x088af510;
-D_088af598 = 0x088af598;
-D_088af5a0 = 0x088af5a0;
-/* Prologue - Bouncy Road Palettes */
-D_088af5f0 = 0x088af5f0;
-/* Prologue - Rhythm Tweezers Animations */
-D_088af6b4 = 0x088af6b4;
-/* Prologue - Rhythm Tweezers Palettes */
-D_088af6e4 = 0x088af6e4;
-D_088af784 = 0x088af784;
-/* Prologue - Fireworks Animations */
-D_088af7d4 = 0x088af7d4;
-D_088af7f4 = 0x088af7f4;
-/* Prologue - Fireworks Palettes */
-D_088af814 = 0x088af814;
-/* Prologue - The Clappy Trio Animations */
-D_088afb9c = 0x088afb9c;
-/* Prologue - The Clappy Trio Palettes */
-D_088afbdc = 0x088afbdc;
-D_088afc1c = 0x088afc1c;
-/* Prologue - The Snappy Trio Animations */
-D_088afdc4 = 0x088afdc4;
-/* Prologue - The Snappy Trio Palettes */
-D_088afe04 = 0x088afe04;
-/* Prologue - Samurai Slice Animations */
-D_088affe0 = 0x088affe0;
-/* Prologue - Samurai Slice Palettes */
-D_088b0018 = 0x088b0018;
-/* Prologue - Power Calligraphy Animations */
-D_088b0690 = 0x088b0690;
-D_088b06a0 = 0x088b06a0;
-D_088b06b0 = 0x088b06b0;
-/* Prologue - Power Calligraphy Palettes */
-D_088b0720 = 0x088b0720;
-/* Prologue - Marching Orders Animations */
-D_088b09b4 = 0x088b09b4;
-/* Prologue - Marching Orders Palettes */
-D_088b09fc = 0x088b09fc;
-D_088b0a1c = 0x088b0a1c;
-/* Prologue - Marching Orders 2 Animations */
-D_088b0bf0 = 0x088b0bf0;
-/* Prologue - Marching Orders 2 Palettes */
-D_088b0c38 = 0x088b0c38;
-D_088b0c78 = 0x088b0c78;
-/* Prologue - Polyrhythm Animations */
-D_088b0cb4 = 0x088b0cb4;
-/* Prologue - Polyrhythm Palettes */
-D_088b0ccc = 0x088b0ccc;
-/* Prologue - Quiz Show Animations */
-D_088b13c4 = 0x088b13c4;
-/* Prologue - Quiz Show Palettes */
-D_088b141c = 0x088b141c;
-/* Prologue - Remix 1 Animations */
-D_088b17d0 = 0x088b17d0;
-/* Prologue - Remix 1 Palettes */
-D_088b1810 = 0x088b1810;
-D_088b1830 = 0x088b1830;
-/* Prologue - Remix 2 Animations */
-D_088b1c9c = 0x088b1c9c;
-/* Prologue - Remix 2 Palettes */
-D_088b1cdc = 0x088b1cdc;
-/* Prologue - Remix 3 Animations */
-D_088b2044 = 0x088b2044;
-/* Prologue - Remix 3 Palettes */
-D_088b2084 = 0x088b2084;
-/* Prologue - Remix 4 Animations */
-D_088b23ec = 0x088b23ec;
-/* Prologue - Remix 4 Palettes */
-D_088b242c = 0x088b242c;
-/* Prologue - Remix 5 Animations */
-D_088b27f4 = 0x088b27f4;
-/* Prologue - Remix 5 Palettes */
-D_088b2834 = 0x088b2834;
-/* Prologue - Remix 6 Animations */
-D_088b2b9c = 0x088b2b9c;
-/* Prologue - Remix 6 Palettes */
-D_088b2bdc = 0x088b2bdc;
-/* Prologue - Remix 7 Animations */
-D_088b2f44 = 0x088b2f44;
-/* Prologue - Remix 7 Palettes */
-D_088b2f84 = 0x088b2f84;
-/* Prologue - Remix 8 Animations */
-D_088b332c = 0x088b332c;
-/* Prologue - Remix 8 Palettes */
-D_088b336c = 0x088b336c;
-/* Prologue - Bunny Hop Animations */
-D_088b35a4 = 0x088b35a4;
-D_088b35dc = 0x088b35dc;
-/* Prologue - Bunny Hop Palettes */
-D_088b361c = 0x088b361c;
-/* Prologue - Rap Men Animations */
-D_088b37d8 = 0x088b37d8;
-/* Prologue - Rap Men Palettes */
-D_088b3830 = 0x088b3830;
-/* Prologue - Rap Women Animations */
-D_088b3ac4 = 0x088b3ac4;
-/* Prologue - Rap Women Palettes */
-D_088b3b1c = 0x088b3b1c;
-/* Prologue - Rat Race Animations */
-D_088b3d1c = 0x088b3d1c;
-D_088b3d54 = 0x088b3d54;
-/* Prologue - Rat Race Palettes */
-D_088b3dbc = 0x088b3dbc;
-/* Prologue - Ninja Bodyguard Animations */
-D_088b4054 = 0x088b4054;
-/* Prologue - Ninja Bodyguard Palettes */
-D_088b40b4 = 0x088b40b4;
-/* Prologue - Ninja Bodyguard 2 Animations */
-D_088b432c = 0x088b432c;
-/* Prologue - Ninja Bodyguard 2 Palettes */
-D_088b438c = 0x088b438c;
-/* Prologue - Space Dance Animations */
-D_088b7338 = 0x088b7338;
-D_088b7660 = 0x088b7660;
-D_088b7690 = 0x088b7690;
-/* Prologue - Space Dance Palettes */
-D_088b76a8 = 0x088b76a8;
-/* Prologue - Tap Trial Animations */
-D_088b7914 = 0x088b7914;
-D_088b794c = 0x088b794c;
-/* Prologue - Tap Trial Palettes */
-D_088b79b4 = 0x088b79b4;
-D_088b79d4 = 0x088b79d4;
-/* Prologue - Tap Trial 2 Animations */
-D_088b7c78 = 0x088b7c78;
-D_088b7c88 = 0x088b7c88;
-/* Prologue - Tap Trial 2 Palettes */
-D_088b7d08 = 0x088b7d08;
-D_088b7d28 = 0x088b7d28;
-/* Prologue - Toss Boys Animations */
-D_088b8098 = 0x088b8098;
-/* Prologue - Toss Boys Palettes */
-D_088b80d8 = 0x088b80d8;
-D_088b8118 = 0x088b8118;
-/* Prologue - Toss Boys 2 Animations */
-D_088b8388 = 0x088b8388;
-/* Prologue - Toss Boys 2 Palettes */
-D_088b83c8 = 0x088b83c8;
-D_088b8408 = 0x088b8408;
-/* Prologue - Tram & Pauline Animations */
-D_088b8834 = 0x088b8834;
-D_088b8844 = 0x088b8844;
-/* Prologue - Tram & Pauline Palettes */
-D_088b88ac = 0x088b88ac;
-/* Prologue - Sick Beats Animations */
-D_088b8cbc = 0x088b8cbc;
-D_088b8cfc = 0x088b8cfc;
-D_088b8d5c = 0x088b8d5c;
-/* Prologue - Sick Beats Palettes */
-D_088b8db4 = 0x088b8db4;
-/* Prologue - Wizard's Waltz Animations */
-D_088b8e50 = 0x088b8e50;
-/* Prologue - Wizard's Waltz Palettes */
-D_088b8e70 = 0x088b8e70;
-/* Placeholder Prologue Animations */
-D_088b908c = 0x088b908c;
-/* Placeholder Prologue Palettes */
-D_088b90c4 = 0x088b90c4;
 /* Mannequin Factory Animations */
-D_088ba0fc = 0x088ba0fc;
-D_088ba10c = 0x088ba10c;
-D_088ba134 = 0x088ba134;
-D_088ba15c = 0x088ba15c;
-D_088ba184 = 0x088ba184;
-D_088ba1b4 = 0x088ba1b4;
-D_088ba1e4 = 0x088ba1e4;
-D_088ba244 = 0x088ba244;
-D_088ba2a4 = 0x088ba2a4;
-D_088ba2b4 = 0x088ba2b4;
-D_088ba2d4 = 0x088ba2d4;
-D_088ba2f4 = 0x088ba2f4;
-D_088ba30c = 0x088ba30c;
-D_088ba324 = 0x088ba324;
-D_088ba364 = 0x088ba364;
-D_088ba394 = 0x088ba394;
-D_088ba3a4 = 0x088ba3a4;
-D_088ba3b4 = 0x088ba3b4;
-D_088ba3cc = 0x088ba3cc;
-D_088ba3e4 = 0x088ba3e4;
-D_088ba444 = 0x088ba444;
-D_088ba474 = 0x088ba474;
-D_088ba48c = 0x088ba48c;
-D_088ba4a4 = 0x088ba4a4;
-D_088ba4d4 = 0x088ba4d4;
-D_088ba4e4 = 0x088ba4e4;
-D_088ba4f4 = 0x088ba4f4;
-D_088ba544 = 0x088ba544;
-D_088ba574 = 0x088ba574;
-D_088ba5a4 = 0x088ba5a4;
-D_088ba5b4 = 0x088ba5b4;
-D_088ba5c4 = 0x088ba5c4;
-D_088ba5ec = 0x088ba5ec;
+anim_mannequin_base = 0x088ba0fc;
+anim_mannequin_head = 0x088ba10c;
+anim_mannequin_eye_l = 0x088ba134;
+anim_mannequin_eye_r = 0x088ba15c;
+anim_mannequin_hand_r = 0x088ba184;
+anim_mannequin_hand_l = 0x088ba1b4;
+anim_mannequin_stamp_l = 0x088ba1e4;
+anim_mannequin_stamp_r = 0x088ba244;
+anim_mannequin_head_blank = 0x088ba2a4;
+anim_mannequin_slap_effect_r = 0x088ba2b4;
+anim_mannequin_slap_effect_l = 0x088ba2d4;
+anim_mannequin_stamp_effect_l = 0x088ba2f4;
+anim_mannequin_stamp_effect_r = 0x088ba30c;
+anim_mannequin_head_smooth_rotation = 0x088ba324;
+anim_mannequin_ng_effect = 0x088ba364;
+anim_mannequin_ng_eye_l = 0x088ba394;
+anim_mannequin_ng_eye_r = 0x088ba3a4;
+anim_mannequin_ng_head_effect = 0x088ba3b4;
+anim_mannequin_emote_ok = 0x088ba3cc;
+anim_mannequin_score_num = 0x088ba3e4;
+anim_mannequin_score_stars = 0x088ba444;
+anim_mannequin_emote_music_note_r = 0x088ba474;
+anim_mannequin_emote_music_note_l = 0x088ba48c;
+anim_mannequin_cowbell = 0x088ba4a4;
+anim_mannequin_council = 0x088ba4d4;
+anim_mannequin_dash_effect = 0x088ba4e4;
+anim_mannequin_complete_c = 0x088ba4f4;
+anim_mannequin_complete_l = 0x088ba544;
+anim_mannequin_complete_r = 0x088ba574;
+anim_mannequin_crane = 0x088ba5a4;
+anim_mannequin_crane_dash_effect = 0x088ba5b4;
+anim_mannequin_game_over = 0x088ba5c4;
+anim_mannequin_high_score_num = 0x088ba5ec;
 /* Mannequin Factory Palettes */
 D_088ba64c = 0x088ba64c;
 /* Cosmic Dance Animations */
@@ -1273,36 +1071,6 @@ D_08901980 = 0x08901980;
 D_089019a8 = 0x089019a8;
 /* Rhythm Data Room - Menu Palettes */
 D_08901ac0 = 0x08901ac0;
-/* Game Select Animations */
-D_08902960 = 0x08902960;
-D_08902998 = 0x08902998;
-D_089029d0 = 0x089029d0;
-D_08902a10 = 0x08902a10;
-D_08902a40 = 0x08902a40;
-D_08902ad0 = 0x08902ad0;
-D_08902b40 = 0x08902b40;
-D_08902b68 = 0x08902b68;
-D_08902b78 = 0x08902b78;
-D_08902bd8 = 0x08902bd8;
-D_08902bf0 = 0x08902bf0;
-D_08902c10 = 0x08902c10;
-D_08902c30 = 0x08902c30;
-D_08902c50 = 0x08902c50;
-D_08902c88 = 0x08902c88;
-D_08902ce8 = 0x08902ce8;
-D_08902cf8 = 0x08902cf8;
-D_08902d08 = 0x08902d08;
-D_08902d30 = 0x08902d30;
-D_08902d58 = 0x08902d58;
-D_08902d80 = 0x08902d80;
-D_08902da8 = 0x08902da8;
-D_08902dd0 = 0x08902dd0;
-D_08902df8 = 0x08902df8;
-D_08902e20 = 0x08902e20;
-D_08902e48 = 0x08902e48;
-D_08902e68 = 0x08902e68;
-D_08902e88 = 0x08902e88;
-D_08902eb0 = 0x08902eb0;
 /* Game Select Palettes */
 D_08902ec0 = 0x08902ec0;
 D_08903020 = 0x08903020;
@@ -1390,18 +1158,6 @@ D_0890a4d4 = 0x0890a4d4;
 D_0890a4f4 = 0x0890a4f4;
 /* Perfect Campaign Palettes */
 D_0890a694 = 0x0890a694;
-/* Common Game Elements Animations */
-D_0890ab28 = 0x0890ab28;
-D_0890ab88 = 0x0890ab88;
-D_0890abb0 = 0x0890abb0;
-D_0890abd8 = 0x0890abd8;
-D_0890ac00 = 0x0890ac00;
-D_0890ac20 = 0x0890ac20;
-D_0890ac40 = 0x0890ac40;
-D_0890aca0 = 0x0890aca0;
-D_0890ad60 = 0x0890ad60;
-/* Common Game Elements Palettes */
-D_0890ada0 = 0x0890ada0;
 /* Rhythm Data Room - Reading Animations */
 D_0890ae24 = 0x0890ae24;
 D_0890ae34 = 0x0890ae34;
@@ -3931,214 +3687,6 @@ D_089ea01c = 0x089ea01c;
 D_089ea050 = 0x089ea050;
 D_089ea060 = 0x089ea060;
 D_089ea068 = 0x089ea068;
-
-/* Prologue Script Data */
-D_089ea088 = 0x089ea088;
-D_089ea08c = 0x089ea08c;
-D_089ea0d4 = 0x089ea0d4;
-D_089ea0d8 = 0x089ea0d8;
-D_089ea0f8 = 0x089ea0f8;
-prologue_spaceball_buffered_textures = 0x089ea26c;
-prologue_spaceball_gfx_table = 0x089ea270;
-D_089ea2b8 = 0x089ea2b8;
-D_089ea2bc = 0x089ea2bc;
-D_089ea2dc = 0x089ea2dc;
-prologue_bon_odori_buffered_textures = 0x089ea3e4;
-prologue_bon_odori_gfx_table = 0x089ea3e8;
-D_089ea430 = 0x089ea430;
-D_089ea434 = 0x089ea434;
-D_089ea454 = 0x089ea454;
-prologue_bon_dance_buffered_textures = 0x089ea514;
-prologue_bon_dance_gfx_table = 0x089ea518;
-D_089ea560 = 0x089ea560;
-D_089ea564 = 0x089ea564;
-D_089ea584 = 0x089ea584;
-D_089ea650 = 0x089ea650;
-D_089ea654 = 0x089ea654;
-D_089ea69c = 0x089ea69c;
-D_089ea6a0 = 0x089ea6a0;
-D_089ea6c0 = 0x089ea6c0;
-D_089ea864 = 0x089ea864;
-D_089ea868 = 0x089ea868;
-D_089ea8b0 = 0x089ea8b0;
-D_089ea8b4 = 0x089ea8b4;
-D_089ea8d4 = 0x089ea8d4;
-D_089ea988 = 0x089ea988;
-D_089ea98c = 0x089ea98c;
-D_089ea9d4 = 0x089ea9d4;
-D_089ea9d8 = 0x089ea9d8;
-D_089ea9f8 = 0x089ea9f8;
-D_089eaa89 = 0x089eaa89;
-D_089eaadc = 0x089eaadc;
-D_089eaae0 = 0x089eaae0;
-D_089eab28 = 0x089eab28;
-D_089eab2c = 0x089eab2c;
-D_089eab4c = 0x089eab4c;
-D_089eac18 = 0x089eac18;
-D_089eac1c = 0x089eac1c;
-D_089eac64 = 0x089eac64;
-D_089eac68 = 0x089eac68;
-D_089eac88 = 0x089eac88;
-D_089ead54 = 0x089ead54;
-D_089ead58 = 0x089ead58;
-D_089eada0 = 0x089eada0;
-D_089eada4 = 0x089eada4;
-D_089eadc4 = 0x089eadc4;
-D_089eae84 = 0x089eae84;
-D_089eae88 = 0x089eae88;
-D_089eaed0 = 0x089eaed0;
-D_089eaed4 = 0x089eaed4;
-D_089eaef4 = 0x089eaef4;
-D_089eb014 = 0x089eb014;
-D_089eb018 = 0x089eb018;
-D_089eb060 = 0x089eb060;
-D_089eb064 = 0x089eb064;
-D_089eb084 = 0x089eb084;
-D_089eb1c8 = 0x089eb1c8;
-D_089eb1cc = 0x089eb1cc;
-D_089eb214 = 0x089eb214;
-D_089eb218 = 0x089eb218;
-D_089eb238 = 0x089eb238;
-D_089eb37c = 0x089eb37c;
-D_089eb380 = 0x089eb380;
-D_089eb3d4 = 0x089eb3d4;
-D_089eb3d8 = 0x089eb3d8;
-D_089eb3f8 = 0x089eb3f8;
-D_089eb530 = 0x089eb530;
-D_089eb534 = 0x089eb534;
-D_089eb57c = 0x089eb57c;
-D_089eb580 = 0x089eb580;
-D_089eb5a0 = 0x089eb5a0;
-D_089eb66c = 0x089eb66c;
-D_089eb670 = 0x089eb670;
-D_089eb6b8 = 0x089eb6b8;
-D_089eb6bc = 0x089eb6bc;
-D_089eb6dc = 0x089eb6dc;
-D_089eb814 = 0x089eb814;
-D_089eb818 = 0x089eb818;
-D_089eb860 = 0x089eb860;
-D_089eb864 = 0x089eb864;
-D_089eb884 = 0x089eb884;
-D_089eb9bc = 0x089eb9bc;
-D_089eb9c0 = 0x089eb9c0;
-D_089eba08 = 0x089eba08;
-D_089eba0c = 0x089eba0c;
-D_089eba2c = 0x089eba2c;
-D_089ebb7c = 0x089ebb7c;
-D_089ebb80 = 0x089ebb80;
-D_089ebbc8 = 0x089ebbc8;
-D_089ebbcc = 0x089ebbcc;
-D_089ebbec = 0x089ebbec;
-D_089ebcac = 0x089ebcac;
-D_089ebcb0 = 0x089ebcb0;
-D_089ebcf8 = 0x089ebcf8;
-D_089ebcfc = 0x089ebcfc;
-D_089ebd1c = 0x089ebd1c;
-D_089ebe78 = 0x089ebe78;
-D_089ebe7c = 0x089ebe7c;
-D_089ebec4 = 0x089ebec4;
-D_089ebec8 = 0x089ebec8;
-D_089ebee8 = 0x089ebee8;
-D_089ec044 = 0x089ec044;
-D_089ec048 = 0x089ec048;
-D_089ec090 = 0x089ec090;
-D_089ec094 = 0x089ec094;
-D_089ec0b4 = 0x089ec0b4;
-D_089ec210 = 0x089ec210;
-D_089ec214 = 0x089ec214;
-D_089ec25c = 0x089ec25c;
-D_089ec260 = 0x089ec260;
-D_089ec280 = 0x089ec280;
-D_089ec3e8 = 0x089ec3e8;
-D_089ec3ec = 0x089ec3ec;
-D_089ec434 = 0x089ec434;
-D_089ec438 = 0x089ec438;
-D_089ec458 = 0x089ec458;
-D_089ec5c0 = 0x089ec5c0;
-D_089ec5c4 = 0x089ec5c4;
-D_089ec60c = 0x089ec60c;
-D_089ec610 = 0x089ec610;
-D_089ec630 = 0x089ec630;
-D_089ec7b0 = 0x089ec7b0;
-D_089ec7b4 = 0x089ec7b4;
-D_089ec7fc = 0x089ec7fc;
-D_089ec800 = 0x089ec800;
-D_089ec820 = 0x089ec820;
-D_089ec988 = 0x089ec988;
-D_089ec98c = 0x089ec98c;
-D_089ec9d4 = 0x089ec9d4;
-D_089ec9d8 = 0x089ec9d8;
-D_089ec9f8 = 0x089ec9f8;
-D_089ecb60 = 0x089ecb60;
-D_089ecb64 = 0x089ecb64;
-D_089ecbac = 0x089ecbac;
-D_089ecbb0 = 0x089ecbb0;
-D_089ecbd0 = 0x089ecbd0;
-D_089ecd44 = 0x089ecd44;
-D_089ecd48 = 0x089ecd48;
-D_089ecd90 = 0x089ecd90;
-D_089ecd94 = 0x089ecd94;
-D_089ecdb4 = 0x089ecdb4;
-D_089ece80 = 0x089ece80;
-D_089ece84 = 0x089ece84;
-D_089ececc = 0x089ececc;
-D_089eced0 = 0x089eced0;
-D_089ecef0 = 0x089ecef0;
-D_089ecfbc = 0x089ecfbc;
-D_089ecfc0 = 0x089ecfc0;
-D_089ed008 = 0x089ed008;
-D_089ed00c = 0x089ed00c;
-D_089ed02c = 0x089ed02c;
-D_089ed188 = 0x089ed188;
-D_089ed18c = 0x089ed18c;
-D_089ed1d4 = 0x089ed1d4;
-D_089ed1d8 = 0x089ed1d8;
-D_089ed1f8 = 0x089ed1f8;
-D_089ed2c4 = 0x089ed2c4;
-D_089ed2c8 = 0x089ed2c8;
-D_089ed310 = 0x089ed310;
-D_089ed314 = 0x089ed314;
-D_089ed334 = 0x089ed334;
-D_089ed400 = 0x089ed400;
-D_089ed404 = 0x089ed404;
-D_089ed44c = 0x089ed44c;
-D_089ed450 = 0x089ed450;
-D_089ed470 = 0x089ed470;
-D_089ed548 = 0x089ed548;
-D_089ed54c = 0x089ed54c;
-D_089ed594 = 0x089ed594;
-D_089ed598 = 0x089ed598;
-D_089ed5b8 = 0x089ed5b8;
-D_089ed6b4 = 0x089ed6b4;
-D_089ed6b8 = 0x089ed6b8;
-D_089ed700 = 0x089ed700;
-D_089ed704 = 0x089ed704;
-D_089ed724 = 0x089ed724;
-D_089ed820 = 0x089ed820;
-D_089ed824 = 0x089ed824;
-D_089ed86c = 0x089ed86c;
-D_089ed870 = 0x089ed870;
-D_089ed890 = 0x089ed890;
-D_089ed9ec = 0x089ed9ec;
-D_089ed9f0 = 0x089ed9f0;
-D_089eda38 = 0x089eda38;
-D_089eda3c = 0x089eda3c;
-D_089eda5c = 0x089eda5c;
-D_089edbb8 = 0x089edbb8;
-D_089edbbc = 0x089edbbc;
-D_089edc04 = 0x089edc04;
-D_089edc08 = 0x089edc08;
-D_089edc28 = 0x089edc28;
-D_089edcf4 = 0x089edcf4;
-D_089edcf8 = 0x089edcf8;
-D_089edd40 = 0x089edd40;
-D_089edd44 = 0x089edd44;
-D_089edd64 = 0x089edd64;
-D_089ede24 = 0x089ede24;
-D_089ede28 = 0x089ede28;
-D_089ede70 = 0x089ede70;
-D_089ede74 = 0x089ede74;
-D_089ede94 = 0x089ede94;
 
 /* Rhythm Game Scripts */
 D_089edf48 = 0x089edf48;

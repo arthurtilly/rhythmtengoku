@@ -50,7 +50,7 @@ branch_080232c2: \n\
 /* 080232d0 */ STR R1, [SP, 0x8] \n\
 /* 080232d2 */ STR R1, [SP, 0xC] \n\
 /* 080232d4 */ STR R1, [SP, 0x10] \n\
-/* 080232d6 */ LDR R1, =D_088ba3e4 \n\
+/* 080232d6 */ LDR R1, =anim_mannequin_score_num \n\
 /* 080232d8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080232da */ MOVS R3, 0x58 @ Set R3 to 0x58 \n\
 /* 080232dc */ BL func_0804d160 \n\
@@ -100,7 +100,7 @@ branch_08023328: \n\
 /* 08023336 */ STR R1, [SP, 0x8] \n\
 /* 08023338 */ STR R1, [SP, 0xC] \n\
 /* 0802333a */ STR R1, [SP, 0x10] \n\
-/* 0802333c */ LDR R1, =D_088ba5ec \n\
+/* 0802333c */ LDR R1, =anim_mannequin_high_score_num \n\
 /* 0802333e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08023340 */ MOVS R3, 0x60 @ Set R3 to 0x60 \n\
 /* 08023342 */ BL func_0804d160 \n\

@@ -16,7 +16,7 @@ struct PrologueBonDanceInfo {
 // Assets:
 extern const struct CompressedGraphics *const prologue_bon_dance_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable prologue_bon_dance_gfx_table[]; // Graphics Table
-extern const struct Animation D_088ad898[]; // Animation: Text (Bon Dance)
+extern const struct Animation anim_prologue_bon_odori_title[]; // Animation: Text (Bon Dance)
 extern const struct SequenceData s_jingle_bon_seqData;
 
 // Functions:

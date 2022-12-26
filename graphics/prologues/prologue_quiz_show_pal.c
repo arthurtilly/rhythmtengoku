@@ -1,8 +1,8 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088b141c] <description>
-const Palette prologue_quiz_show_pal[] = {
+// [D_088b141c] Palette
+const Palette prologue_quiz_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00D000),
         /* 01 */ TO_RGB555(0x007810),
@@ -76,4 +76,3 @@ const Palette prologue_quiz_show_pal[] = {
         /* 15 */ TO_RGB555(0x000000)
     }
 };
-

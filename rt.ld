@@ -1468,8 +1468,8 @@ SECTIONS {
         build/graphics/main_menu/main_menu_anim.c.o(.rodata*);
         build/graphics/main_menu/main_menu_pal.c.o(.rodata*);
         build/graphics/perfect/perfect_certificate_pal.c.o(.rodata*);
-        build/graphics/common/game_overlay_anim.c.o(.rodata*);
-        build/graphics/common/game_overlay_pal.c.o(.rodata*);
+        build/graphics/gameplay/gameplay_anim.c.o(.rodata*);
+        build/graphics/gameplay/gameplay_pal.c.o(.rodata*);
         build/graphics/data_room/data_room_reading_anim.c.o(.rodata*);
         build/graphics/data_room/data_room_reading_pal.c.o(.rodata*);
         build/graphics/data_room/read_error_anim.c.o(.rodata*);

@@ -3,8 +3,8 @@
 
 #include "prologue_ninja_bodyguard_anim_cells.inc.c"
 
-// [D_088b4054] <description>
-const struct Animation prologue_ninja_bodyguard_anim00[] = {
+// [D_088b4054] Title
+const struct Animation anim_prologue_ninja_title[] = {
     /* 000 */ { prologue_ninja_bodyguard_cel005, 4 },
     /* 001 */ { prologue_ninja_bodyguard_cel004, 8 },
     /* 002 */ { prologue_ninja_bodyguard_cel003, 8 },
@@ -18,4 +18,3 @@ const struct Animation prologue_ninja_bodyguard_anim00[] = {
     /* 010 */ { prologue_ninja_bodyguard_cel005, 100 },
     /* End */ END_ANIMATION
 };
-

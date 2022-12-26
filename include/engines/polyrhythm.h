@@ -96,9 +96,9 @@ extern const struct SequenceData *const D_089e5c28[]; // Piston - Appear
 extern const struct SequenceData *const D_089e5c34[]; // Piston - Push
 
 // Functions:
-extern void func_08035d1c(void); // Graphics Init. 2
-extern void func_08035d2c(void); // Graphics Init. 1
-extern void func_08035d6c(void); // Graphics Init. 0
+extern void func_08035d1c(void); // Graphics Init. 3
+extern void func_08035d2c(void); // Graphics Init. 2
+extern void func_08035d6c(void); // Graphics Init. 1
 extern void func_08035d98(u32 ver); // Game Engine Init.
 extern void func_08035e84(void); // Engine Event 0x05 (STUB)
 extern void func_08035e88(void); // Game Engine Update

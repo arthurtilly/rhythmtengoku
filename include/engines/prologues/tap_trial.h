@@ -16,7 +16,7 @@ struct PrologueTapTrialInfo {
 // Assets:
 extern const struct CompressedGraphics *const prologue_tap_trial_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable prologue_tap_trial_gfx_table[]; // Graphics Table
-extern const struct Animation D_088b794c[]; // Animation: Text (Tap Trial)
+extern const struct Animation anim_prologue_tap_trial_title[]; // Animation: Text (Tap Trial)
 extern const struct SequenceData s_jingle_tap_seqData;
 
 // Functions:

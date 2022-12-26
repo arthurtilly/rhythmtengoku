@@ -442,7 +442,7 @@ void gameplay_check_for_perfect(u32 assessInputs) {
 // [func_0801765c] Register Imperfect Input
 void gameplay_register_imperfect_input(void) {
     if (!gGameplayInfo.perfectFailed && gGameplayInfo.goingForPerfect && gGameplayInfo.assessPerfectInputs) {
-        func_0804d8f8(D_03005380, gGameplayInfo.perfectSprite, D_0890aca0, 0, 1, 0, 2);
+        func_0804d8f8(D_03005380, gGameplayInfo.perfectSprite, anim_gameplay_perfect_miss, 0, 1, 0, 2);
         play_sound(&s_f_fail_perfect_seqData);
         gGameplayInfo.perfectFailed = TRUE;
     }
@@ -452,7 +452,7 @@ void gameplay_register_imperfect_input(void) {
 // [func_080176cc] Register Perfect Input
 void gameplay_register_perfect_input(void) {
     if (!gGameplayInfo.perfectFailed && gGameplayInfo.goingForPerfect && gGameplayInfo.assessPerfectInputs) {
-        func_0804d8f8(D_03005380, gGameplayInfo.perfectSprite, D_0890ad60, 0, 1, 0x7f, 0);
+        func_0804d8f8(D_03005380, gGameplayInfo.perfectSprite, anim_gameplay_perfect_hit, 0, 1, 0x7f, 0);
     }
 }
 
@@ -1055,7 +1055,7 @@ void gameplay_start_pause_menu(void) {
     gGameplayInfo.unpausing = FALSE;
     gGameplayInfo.currentPauseOption = PAUSE_OPTION_CONTINUE;
     func_0804cebc(D_03005380, gGameplayInfo.pauseSprite, 0);
-    func_0804d8f8(D_03005380, gGameplayInfo.pauseOptionsSprite, D_0890ab88, 0, 1, 0, 0);
+    func_0804d8f8(D_03005380, gGameplayInfo.pauseOptionsSprite, anim_gameplay_pause_option1, 0, 1, 0, 0);
     func_0804d770(D_03005380, gGameplayInfo.pauseSprite, TRUE);
     func_0804d770(D_03005380, gGameplayInfo.pauseOptionsSprite, TRUE);
     gameplay_pause_menu_darken_screen();
@@ -1068,12 +1068,12 @@ s32 gameplay_update_pause_menu(void) {
     if (!gGameplayInfo.unpausing) {
         if (D_03004afc & DPAD_LEFT) {
             gGameplayInfo.currentPauseOption = PAUSE_OPTION_CONTINUE;
-            func_0804d8f8(D_03005380, gGameplayInfo.pauseOptionsSprite, D_0890ab88, 0, 1, 0, 0);
+            func_0804d8f8(D_03005380, gGameplayInfo.pauseOptionsSprite, anim_gameplay_pause_option1, 0, 1, 0, 0);
             play_sound(&s_f_pause_cursor_seqData);
         }
         if (D_03004afc & DPAD_RIGHT) {
             gGameplayInfo.currentPauseOption = PAUSE_OPTION_QUIT;
-            func_0804d8f8(D_03005380, gGameplayInfo.pauseOptionsSprite, D_0890abb0, 0, 1, 0, 0);
+            func_0804d8f8(D_03005380, gGameplayInfo.pauseOptionsSprite, anim_gameplay_pause_option2, 0, 1, 0, 0);
             play_sound(&s_f_pause_cursor_seqData);
         }
         if (D_03004afc & A_BUTTON) {

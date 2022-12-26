@@ -101,25 +101,25 @@ enum KarateCuesEnum {
 
 
 // OAM Animations:
-extern const struct Animation karate_anim_joe_test[]; // Animation: "joe_stand"
-extern const struct Animation karate_anim_object[]; // Animation: "objects"
-extern const struct Animation karate_anim_object_shadow[]; // Animation: "objects_shadow"
-extern const struct Animation karate_anim_joe_punch_high[]; // Animation: "joe_punch_high"
-extern const struct Animation karate_anim_joe_beat[]; // Animation: "joe_beat"
-extern const struct Animation karate_anim_hit_effect[]; // Animation: "hit_effect"
-extern const struct Animation karate_anim_flow_meter[]; // Animation: "flow_bar"
-extern const struct Animation karate_anim_joe_punch_low[]; // Animation: "joe_punch_low"
-extern const struct Animation karate_anim_joe_barely[]; // Animation: "joe_beat_barely"
-extern const struct Animation karate_anim_joe_miss[]; // Animation: "joe_miss"
-extern const struct Animation karate_anim_joe_smirk[]; // Animation: "joe_beat_smirk"
-extern const struct Animation karate_anim_joe_happy[]; // Animation: "joe_beat_happy"
-extern const struct Animation karate_anim_joe_punch_ouch[]; // Animation: "joe_punch_hard"
-extern const struct Animation karate_anim_cue_warning[]; // Animation: "cue_text"
-extern const struct Animation karate_anim_tutorial_text_button[]; // Animation: "tutorial_button"
-extern const struct Animation karate_anim_tutorial_skip[]; // Animation: "tutorial_skip"
-extern const struct Animation karate_anim_tutorial_counter[]; // Animation: "tutorial_text"
-extern const struct Animation karate_anim_joe_smug_high[]; // Animation: "joe_punch_high_face" (Remix 8 face)
-extern const struct Animation karate_anim_joe_smug_low[]; // Animation: "joe_punch_low_face" (Remix 8 face)
+extern const struct Animation anim_karate_joe_stand[]; // Animation: "joe_stand"
+extern const struct Animation anim_karate_object[]; // Animation: "objects"
+extern const struct Animation anim_karate_object_shadow[]; // Animation: "objects_shadow"
+extern const struct Animation anim_karate_joe_punch_high[]; // Animation: "joe_punch_high"
+extern const struct Animation anim_karate_joe_beat[]; // Animation: "joe_beat"
+extern const struct Animation anim_karate_hit_effect[]; // Animation: "hit_effect"
+extern const struct Animation anim_karate_flow_meter[]; // Animation: "flow_bar"
+extern const struct Animation anim_karate_joe_punch_low[]; // Animation: "joe_punch_low"
+extern const struct Animation anim_karate_joe_barely[]; // Animation: "joe_beat_barely"
+extern const struct Animation anim_karate_joe_miss[]; // Animation: "joe_miss"
+extern const struct Animation anim_karate_joe_smirk[]; // Animation: "joe_beat_smirk"
+extern const struct Animation anim_karate_joe_happy[]; // Animation: "joe_beat_happy"
+extern const struct Animation anim_karate_joe_punch_ouch[]; // Animation: "joe_punch_hard"
+extern const struct Animation anim_karate_cue_warning[]; // Animation: "cue_text"
+extern const struct Animation anim_karate_tutorial_text_button[]; // Animation: "tutorial_button"
+extern const struct Animation anim_karate_tutorial_skip[]; // Animation: "tutorial_skip"
+extern const struct Animation anim_karate_tutorial_counter[]; // Animation: "tutorial_text"
+extern const struct Animation anim_karate_joe_smug_high[]; // Animation: "joe_punch_high_face" (Remix 8 face)
+extern const struct Animation anim_karate_joe_smug_low[]; // Animation: "joe_punch_low_face" (Remix 8 face)
 
 
 // Palettes:

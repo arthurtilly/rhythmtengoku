@@ -12,7 +12,7 @@ thumb_func_start func_08014c10 \n\
 /* 08014c1c */ LDR R0, =D_03005380 \n\
 /* 08014c1e */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08014c20 */ LDR R0, [R0] \n\
-/* 08014c22 */ LDR R1, =D_08902cf8 \n\
+/* 08014c22 */ LDR R1, =anim_game_select_medal_text \n\
 /* 08014c24 */ MOVS R2, 0x97 @ Set R2 to 0x97 \n\
 /* 08014c26 */ MOV R9, R2 @ Set R9 to R2 \n\
 /* 08014c28 */ STR R2, [SP] \n\
@@ -34,7 +34,7 @@ thumb_func_start func_08014c10 \n\
 /* 08014c4a */ STRH R0, [R1] \n\
 /* 08014c4c */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08014c4e */ LDR R0, [R1] \n\
-/* 08014c50 */ LDR R7, =D_08902c88 \n\
+/* 08014c50 */ LDR R7, =anim_game_select_medal_num \n\
 /* 08014c52 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08014c54 */ STR R2, [SP] \n\
 /* 08014c56 */ STR R4, [SP, 0x4] \n\

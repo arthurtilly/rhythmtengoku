@@ -46,7 +46,7 @@ jump_0802291c: \n\
 /* 08022932 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08022934 */ BL func_0804d67c \n\
 /* 08022938 */ LDR R0, [R6] \n\
-/* 0802293a */ LDR R2, =D_088ba364 \n\
+/* 0802293a */ LDR R2, =anim_mannequin_ng_effect \n\
 /* 0802293c */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0802293e */ STR R1, [SP] \n\
 /* 08022940 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\

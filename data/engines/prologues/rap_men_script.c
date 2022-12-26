@@ -8,7 +8,7 @@
 extern const struct CompressedGraphics D_08c2052c;
 extern const struct CompressedGraphics D_08c207cc;
 extern const struct CompressedGraphics D_08c1f4b4;
-extern const Palette D_088b3830[];
+extern const Palette prologue_rap_men_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -37,12 +37,12 @@ const struct GraphicsTable prologue_rap_men_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088b3830,
+        /* Src.  */ prologue_rap_men_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088b3830,
+        /* Src.  */ prologue_rap_men_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

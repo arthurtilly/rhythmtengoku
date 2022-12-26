@@ -8,7 +8,7 @@
 extern const struct CompressedGraphics D_08be1c50;
 extern const struct CompressedGraphics D_08be1dfc;
 extern const struct CompressedGraphics D_08be0ff8;
-extern const Palette D_088ad2fc[];
+extern const Palette prologue_sneaky_spirits_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -37,12 +37,12 @@ const struct GraphicsTable prologue_sneaky_spirits_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088ad2fc,
+        /* Src.  */ prologue_sneaky_spirits_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088ad2fc,
+        /* Src.  */ prologue_sneaky_spirits_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

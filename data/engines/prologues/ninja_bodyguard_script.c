@@ -8,7 +8,7 @@
 extern const struct CompressedGraphics D_08c23a3c;
 extern const struct CompressedGraphics D_08c23cd0;
 extern const struct CompressedGraphics D_08c22ee4;
-extern const Palette D_088b40b4[];
+extern const Palette prologue_ninja_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -37,12 +37,12 @@ const struct GraphicsTable prologue_ninja_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_088b40b4,
+        /* Src.  */ prologue_ninja_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ D_088b40b4,
+        /* Src.  */ prologue_ninja_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

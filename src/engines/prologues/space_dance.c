@@ -49,10 +49,10 @@ void func_0804754c(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, D_088b7338, 0, 80, 32, 0, 1, 0x7f, 0x8000);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_space_dance_title, 0, 80, 32, 0, 1, 0x7f, 0x8000);
     func_0804dcb8(D_03005380, gPrologueInfo->textSprite, 0x280);
-    gPrologueInfo->facesSprite = func_0804d160(D_03005380, D_088b7690, 1, 120, 120, 0, 0, 0x7f, 0x8000);
-    gPrologueInfo->starSprite = func_0804d160(D_03005380, D_088b7660, 0, 64, 64, 0, 1, 0x7f, 0x8002);
+    gPrologueInfo->facesSprite = func_0804d160(D_03005380, anim_prologue_space_dance_faces, 1, 120, 120, 0, 0, 0x7f, 0x8000);
+    gPrologueInfo->starSprite = func_0804d160(D_03005380, anim_prologue_space_dance_star, 0, 64, 64, 0, 1, 0x7f, 0x8002);
 }
 
 
