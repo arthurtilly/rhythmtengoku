@@ -16,7 +16,7 @@ branch_08034e52: \n\
 /* 08034e52 */ BL get_current_mem_id \n\
 /* 08034e56 */ LSLS R0, R0, 0x10 \n\
 /* 08034e58 */ LSRS R0, R0, 0x10 \n\
-/* 08034e5a */ LDR R3, =(D_088f40a0 + 0x40) \n\
+/* 08034e5a */ LDR R3, =(metronome_pal + 0x40) \n\
 /* 08034e5c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08034e5e */ STR R1, [SP] \n\
 /* 08034e60 */ LDR R1, =(D_03004b10 + 0x254 + 0x40) \n\

@@ -14,7 +14,7 @@ thumb_func_start func_08034f64 \n\
 /* 08034f74 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08034f76 */ LDR R6, =D_03005380 \n\
 /* 08034f78 */ LDR R0, [R6] \n\
-/* 08034f7a */ LDR R1, =D_088f3e58 \n\
+/* 08034f7a */ LDR R1, =anim_mr_upbeat_l_step \n\
 /* 08034f7c */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 08034f7e */ STR R2, [SP] \n\
 /* 08034f80 */ MOVS R2, 0x90 @ Set R2 to 0x90 \n\
@@ -37,7 +37,7 @@ thumb_func_start func_08034f64 \n\
 /* 08034fa4 */ MOVS R3, 0x50 @ Set R3 to 0x50 \n\
 /* 08034fa6 */ BL func_0804d5d4 \n\
 /* 08034faa */ LDR R0, [R6] \n\
-/* 08034fac */ LDR R1, =D_088f3ce0 \n\
+/* 08034fac */ LDR R1, =anim_mr_upbeat_shadow \n\
 /* 08034fae */ MOVS R2, 0x50 @ Set R2 to 0x50 \n\
 /* 08034fb0 */ STR R2, [SP] \n\
 /* 08034fb2 */ LDR R2, =0x4814 \n\

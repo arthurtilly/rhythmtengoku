@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088f40a0] <description>
+// [D_088f40a0] Metronome & Mr. Upbeat
 const Palette metronome_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),

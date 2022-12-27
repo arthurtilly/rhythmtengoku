@@ -11,7 +11,7 @@ thumb_func_start func_0803516c \n\
 /* 08035176 */ LDR R0, [R0] \n\
 /* 08035178 */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
 /* 0803517a */ LDRSH R1, [R2, R3] \n\
-/* 0803517c */ LDR R4, =D_089e56c8 \n\
+/* 0803517c */ LDR R4, =mr_upbeat_game_over_anim \n\
 /* 0803517e */ LDRB R3, [R2, 0xC] \n\
 /* 08035180 */ LSLS R3, R3, 0x2 \n\
 /* 08035182 */ ADDS R2, 0x52 @ Add 0x52 to R2 \n\

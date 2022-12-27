@@ -16,7 +16,7 @@ thumb_func_start func_08035488 \n\
 /* 0803549c */ STRB R0, [R1] \n\
 /* 0803549e */ BL func_0803545c \n\
 /* 080354a2 */ BL scene_show_obj_layer \n\
-/* 080354a6 */ LDR R0, =D_088f3b58 \n\
+/* 080354a6 */ LDR R0, =anim_metronome_pendulum \n\
 /* 080354a8 */ MOVS R1, 0x90 @ Set R1 to 0x90 \n\
 /* 080354aa */ LSLS R1, R1, 0x7 \n\
 /* 080354ac */ STR R1, [SP] \n\
@@ -43,7 +43,7 @@ thumb_func_start func_08035488 \n\
 /* 080354d8 */ LDR R0, =D_03005380 \n\
 /* 080354da */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 080354dc */ LDR R0, [R0] \n\
-/* 080354de */ LDR R1, =D_088f3b68 \n\
+/* 080354de */ LDR R1, =anim_metronome_bird_marker \n\
 /* 080354e0 */ MOVS R6, 0x20 @ Set R6 to 0x20 \n\
 /* 080354e2 */ STR R6, [SP] \n\
 /* 080354e4 */ LDR R7, =0x480a \n\
@@ -62,7 +62,7 @@ thumb_func_start func_08035488 \n\
 /* 08035500 */ STRH R0, [R1, 0xE] \n\
 /* 08035502 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08035504 */ LDR R0, [R1] \n\
-/* 08035506 */ LDR R1, =D_088f3c58 \n\
+/* 08035506 */ LDR R1, =anim_metronome_timing_meter \n\
 /* 08035508 */ STR R6, [SP] \n\
 /* 0803550a */ STR R7, [SP, 0x4] \n\
 /* 0803550c */ STR R4, [SP, 0x8] \n\
@@ -76,7 +76,7 @@ thumb_func_start func_08035488 \n\
 /* 0803551e */ STRH R0, [R1, 0x10] \n\
 /* 08035520 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08035522 */ LDR R0, [R1] \n\
-/* 08035524 */ LDR R1, =D_088f3b98 \n\
+/* 08035524 */ LDR R1, =anim_metronome_bird \n\
 /* 08035526 */ STR R6, [SP] \n\
 /* 08035528 */ STR R7, [SP, 0x4] \n\
 /* 0803552a */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
@@ -92,7 +92,7 @@ thumb_func_start func_08035488 \n\
 /* 08035540 */ STRH R0, [R1, 0x12] \n\
 /* 08035542 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08035544 */ LDR R0, [R1] \n\
-/* 08035546 */ LDR R1, =D_088f3be8 \n\
+/* 08035546 */ LDR R1, =anim_metronome_score_counter \n\
 /* 08035548 */ MOVS R2, 0x14 @ Set R2 to 0x14 \n\
 /* 0803554a */ STR R2, [SP] \n\
 /* 0803554c */ LDR R2, =0x479d \n\
@@ -123,7 +123,7 @@ branch_08035568: \n\
 /* 0803557c */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 0803557e */ LSLS R1, R1, 0x8 \n\
 /* 08035580 */ STR R1, [SP, 0x10] \n\
-/* 08035582 */ LDR R1, =D_088f3bf8 \n\
+/* 08035582 */ LDR R1, =anim_metronome_score_num \n\
 /* 08035584 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08035586 */ MOVS R3, 0xD8 @ Set R3 to 0xD8 \n\
 /* 08035588 */ BL func_0804d160 \n\
@@ -137,7 +137,7 @@ branch_08035568: \n\
 /* 0803559a */ CMP R4, 0x2 @ Compare R4 and 0x2 \n\
 /* 0803559c */ BLS branch_08035568 \n\
 /* 0803559e */ LDR R0, [R5] \n\
-/* 080355a0 */ LDR R1, =D_088f3bb8 \n\
+/* 080355a0 */ LDR R1, =anim_metronome_face_l \n\
 /* 080355a2 */ MOVS R4, 0xFA @ Set R4 to 0xFA \n\
 /* 080355a4 */ LSLS R4, R4, 0x2 \n\
 /* 080355a6 */ STR R4, [SP] \n\
@@ -153,7 +153,7 @@ branch_08035568: \n\
 /* 080355bc */ LDR R1, [R7] \n\
 /* 080355be */ STRH R0, [R1, 0x1C] \n\
 /* 080355c0 */ LDR R0, [R5] \n\
-/* 080355c2 */ LDR R1, =D_088f3bd0 \n\
+/* 080355c2 */ LDR R1, =anim_metronome_face_r \n\
 /* 080355c4 */ STR R4, [SP] \n\
 /* 080355c6 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 080355c8 */ STR R2, [SP, 0x4] \n\

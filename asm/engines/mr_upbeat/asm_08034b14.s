@@ -7,7 +7,7 @@ thumb_func_start func_08034b14 \n\
 /* 08034b16 */ SUB SP, 0x14 \n\
 /* 08034b18 */ LDR R0, =D_03005380 \n\
 /* 08034b1a */ LDR R0, [R0] \n\
-/* 08034b1c */ LDR R1, =D_088f3be8 \n\
+/* 08034b1c */ LDR R1, =anim_metronome_score_counter \n\
 /* 08034b1e */ MOVS R2, 0x14 @ Set R2 to 0x14 \n\
 /* 08034b20 */ STR R2, [SP] \n\
 /* 08034b22 */ LDR R2, =0x4801 \n\
@@ -37,7 +37,7 @@ branch_08034b40: \n\
 /* 08034b50 */ MOVS R1, 0x7F @ Set R1 to 0x7F \n\
 /* 08034b52 */ STR R1, [SP, 0xC] \n\
 /* 08034b54 */ STR R5, [SP, 0x10] \n\
-/* 08034b56 */ LDR R1, =D_088f3bf8 \n\
+/* 08034b56 */ LDR R1, =anim_metronome_score_num \n\
 /* 08034b58 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08034b5a */ MOVS R3, 0xD8 @ Set R3 to 0xD8 \n\
 /* 08034b5c */ BL func_0804d160 \n\
@@ -65,7 +65,7 @@ branch_08034b76: \n\
 /* 08034b86 */ MOVS R1, 0x7F @ Set R1 to 0x7F \n\
 /* 08034b88 */ STR R1, [SP, 0xC] \n\
 /* 08034b8a */ STR R6, [SP, 0x10] \n\
-/* 08034b8c */ LDR R1, =D_088f3ee0 \n\
+/* 08034b8c */ LDR R1, =anim_mr_upbeat_high_score_num \n\
 /* 08034b8e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08034b90 */ MOVS R3, 0xD8 @ Set R3 to 0xD8 \n\
 /* 08034b92 */ BL func_0804d160 \n\

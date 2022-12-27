@@ -42,7 +42,7 @@ branch_080350c8: \n\
 /* 080350ca */ LDR R0, [R0] \n\
 /* 080350cc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080350ce */ LDRSH R1, [R5, R2] \n\
-/* 080350d0 */ LDR R3, =D_089e56b8 \n\
+/* 080350d0 */ LDR R3, =mr_upbeat_trip_anim \n\
 /* 080350d2 */ LDRB R2, [R5, 0x8] \n\
 /* 080350d4 */ LSLS R2, R2, 0x2 \n\
 /* 080350d6 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\

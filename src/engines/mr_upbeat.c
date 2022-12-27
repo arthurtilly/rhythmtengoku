@@ -2,6 +2,9 @@
 
 asm(".include \"include/gba.inc\""); // Temporary
 
+// For readability.
+#define gMrUpbeatInfo ((struct MrUpbeatInfo *)D_030055d0)
+
 
 /* MR. UPBEAT */
 

@@ -2,21 +2,21 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08035254 \n\
+thumb_func_start mr_upbeat_engine_start \n\
 /* 08035254 */ PUSH {R4, R5, LR} \n\
 /* 08035256 */ SUB SP, 0x14 \n\
 /* 08035258 */ LDR R4, =D_030055d0 \n\
 /* 0803525a */ LDR R1, [R4] \n\
 /* 0803525c */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0803525e */ STRB R0, [R1] \n\
-/* 08035260 */ BL func_08035228 \n\
+/* 08035260 */ BL mr_upbeat_init_gfx1 \n\
 /* 08035264 */ BL scene_show_obj_layer \n\
 /* 08035268 */ BL func_08034f64 \n\
 /* 0803526c */ BL func_08034dd0 \n\
 /* 08035270 */ BL func_08034b14 \n\
 /* 08035274 */ LDR R0, =D_03005380 \n\
 /* 08035276 */ LDR R0, [R0] \n\
-/* 08035278 */ LDR R1, =D_088f3e38 \n\
+/* 08035278 */ LDR R1, =anim_mr_upbeat_beep \n\
 /* 0803527a */ MOVS R2, 0x1E @ Set R2 to 0x1E \n\
 /* 0803527c */ STR R2, [SP] \n\
 /* 0803527e */ LDR R2, =0x4864 \n\

@@ -26,7 +26,7 @@ branch_0803501c: \n\
 /* 0803501e */ LDR R0, [R4] \n\
 /* 08035020 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08035022 */ LDRSH R1, [R6, R2] \n\
-/* 08035024 */ LDR R2, =D_088f3e58 \n\
+/* 08035024 */ LDR R2, =anim_mr_upbeat_l_step \n\
 /* 08035026 */ STR R5, [SP] \n\
 /* 08035028 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
 /* 0803502a */ STR R3, [SP, 0x4] \n\
@@ -51,7 +51,7 @@ branch_08035050: \n\
 /* 08035054 */ LDR R0, [R0] \n\
 /* 08035056 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08035058 */ LDRSH R1, [R6, R2] \n\
-/* 0803505a */ LDR R2, =D_088f3d08 \n\
+/* 0803505a */ LDR R2, =anim_mr_upbeat_r_step \n\
 /* 0803505c */ MOVS R5, 0x1 @ Set R5 to 0x1 \n\
 /* 0803505e */ STR R5, [SP] \n\
 /* 08035060 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\

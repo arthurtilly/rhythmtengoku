@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08035320 \n\
+thumb_func_start mr_upbeat_engine_update \n\
 /* 08035320 */ PUSH {LR} \n\
 /* 08035322 */ BL func_08034eb4 \n\
 /* 08035326 */ BL func_08035168 \n\

@@ -570,14 +570,14 @@ void func_0802b064(void) {
 }
 
 
-// Graphics Init. 2
+// Graphics Init. 3
 void night_walk_init_gfx3(void) {
     func_0800c604(0);
     gameplay_start_screen_fade_in();
 }
 
 
-// Graphics Init. 1
+// Graphics Init. 2
 void night_walk_init_gfx2(void) {
     s32 task;
 
@@ -587,7 +587,7 @@ void night_walk_init_gfx2(void) {
 }
 
 
-// Graphics Init. 0
+// Graphics Init. 1
 void night_walk_init_gfx1(void) {
     s32 task;
 

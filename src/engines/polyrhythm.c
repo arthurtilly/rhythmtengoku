@@ -27,14 +27,14 @@ enum BlockStatesEnum {
 /* POLYRHYTHM */
 
 
-// Graphics Init. 2
+// Graphics Init. 3
 void func_08035d1c(void) {
     func_0800c604(0);
     gameplay_start_screen_fade_in();
 }
 
 
-// Graphics Init. 1
+// Graphics Init. 2
 void func_08035d2c(void) {
     s32 task;
 
@@ -44,7 +44,7 @@ void func_08035d2c(void) {
 }
 
 
-// Graphics Init. 0
+// Graphics Init. 1
 void func_08035d6c(void) {
     s32 task;
 
