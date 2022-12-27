@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080340cc \n\
+thumb_func_start rhythm_test_common_beat_animation \n\
 /* 080340cc */ PUSH {LR} \n\
 /* 080340ce */ LDR R0, =D_030055d0 \n\
 /* 080340d0 */ LDR R0, [R0] \n\

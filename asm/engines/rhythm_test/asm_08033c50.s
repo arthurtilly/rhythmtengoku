@@ -9,7 +9,7 @@ thumb_func_start func_08033c50 \n\
 /* 08033c58 */ BL get_current_mem_id \n\
 /* 08033c5c */ LSLS R0, R0, 0x10 \n\
 /* 08033c5e */ LSRS R0, R0, 0x10 \n\
-/* 08033c60 */ LDR R1, =D_089e4f74 \n\
+/* 08033c60 */ LDR R1, =rhythm_test_gfx_table \n\
 /* 08033c62 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08033c64 */ LSLS R2, R2, 0x6 \n\
 /* 08033c66 */ BL func_08002ee0 \n\

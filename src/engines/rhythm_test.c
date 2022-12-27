@@ -2,6 +2,9 @@
 
 asm(".include \"include/gba.inc\""); // Temporary
 
+// For readability.
+#define gRhythmTestInfo ((struct RhythmTestInfo *)D_030055d0)
+
 
 /* RHYTHM TEST */
 

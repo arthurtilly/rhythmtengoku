@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08033cac \n\
+thumb_func_start rhythm_test_engine_start \n\
 /* 08033cac */ PUSH {R4-R7, LR} \n\
 /* 08033cae */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 08033cb0 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -66,7 +66,7 @@ thumb_func_start func_08033cac \n\
 /* 08033d38 */ BL gameplay_set_text_z \n\
 /* 08033d3c */ LDR R5, =D_03005380 \n\
 /* 08033d3e */ LDR R0, [R5] \n\
-/* 08033d40 */ LDR R1, =D_088effe0 \n\
+/* 08033d40 */ LDR R1, =anim_rhythm_test_button \n\
 /* 08033d42 */ MOVS R2, 0x64 @ Set R2 to 0x64 \n\
 /* 08033d44 */ STR R2, [SP] \n\
 /* 08033d46 */ MOVS R6, 0x90 @ Set R6 to 0x90 \n\
@@ -86,7 +86,7 @@ thumb_func_start func_08033cac \n\
 /* 08033d64 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
 /* 08033d66 */ STRH R0, [R1, 0x4] \n\
 /* 08033d68 */ LDR R0, [R5] \n\
-/* 08033d6a */ LDR R1, =D_088eff98 \n\
+/* 08033d6a */ LDR R1, =anim_rhythm_test_monitor_note \n\
 /* 08033d6c */ MOVS R2, 0x3C @ Set R2 to 0x3C \n\
 /* 08033d6e */ MOV R8, R2 @ Set R8 to R2 \n\
 /* 08033d70 */ STR R2, [SP] \n\
@@ -106,7 +106,7 @@ thumb_func_start func_08033cac \n\
 /* 08033d8e */ STRH R0, [R1, 0x6] \n\
 /* 08033d90 */ STRB R7, [R1, 0x8] \n\
 /* 08033d92 */ LDR R0, [R5] \n\
-/* 08033d94 */ LDR R1, =D_088f0128 \n\
+/* 08033d94 */ LDR R1, =anim_rhythm_test_monitor_count_num \n\
 /* 08033d96 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08033d98 */ STR R2, [SP] \n\
 /* 08033d9a */ STR R6, [SP, 0x4] \n\

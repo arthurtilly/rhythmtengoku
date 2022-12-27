@@ -35,7 +35,7 @@ branch_080339e4: \n\
 /* 080339f0 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 080339f2 */ LDR R7, =D_03005380 \n\
 /* 080339f4 */ LDR R0, [R7] \n\
-/* 080339f6 */ LDR R1, =D_088f0018 \n\
+/* 080339f6 */ LDR R1, =anim_rhythm_test_chart_marker \n\
 /* 080339f8 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 080339fa */ ADDS R2, 0x78 @ Add 0x78 to R2 \n\
 /* 080339fc */ LSLS R2, R2, 0x10 \n\
@@ -77,7 +77,7 @@ branch_080339e4: \n\
 /* 08033a48 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08033a4a */ BEQ branch_08033ad4 \n\
 /* 08033a4c */ LDR R0, [R7] \n\
-/* 08033a4e */ LDR R1, =D_088f0028 \n\
+/* 08033a4e */ LDR R1, =anim_rhythm_test_chart_line \n\
 /* 08033a50 */ ADDS R2, 0x8E @ Add 0x8E to R2 \n\
 /* 08033a52 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08033a54 */ LDRSH R2, [R2, R3] \n\

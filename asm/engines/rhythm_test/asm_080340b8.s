@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080340b8 \n\
+thumb_func_start rhythm_test_input_event \n\
 /* 080340b8 */ PUSH {LR} \n\
 /* 080340ba */ BL func_08033f08 \n\
 /* 080340be */ BL func_080340a4 \n\

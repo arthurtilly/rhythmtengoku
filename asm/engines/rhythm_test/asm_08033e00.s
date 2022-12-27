@@ -46,23 +46,23 @@ jtbl_08033e4c: \n\
 .word jump_08033e80 \n\
 .word jump_08033e90 \n\
 jump_08033e64: \n\
-/* 08033e64 */ LDR R6, =D_088eff98 \n\
+/* 08033e64 */ LDR R6, =anim_rhythm_test_monitor_note \n\
 /* 08033e66 */ B branch_08033eaa \n\
 \n\
 .ltorg \n\
 jump_08033e6c: \n\
-/* 08033e6c */ LDR R6, =D_088f0000 \n\
+/* 08033e6c */ LDR R6, =anim_rhythm_test_monitor_text2 \n\
 /* 08033e6e */ B branch_08033eaa \n\
 \n\
 .ltorg \n\
 jump_08033e74: \n\
-/* 08033e74 */ LDR R6, =D_088effc0 \n\
+/* 08033e74 */ LDR R6, =anim_rhythm_test_monitor_text1 \n\
 /* 08033e76 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
 /* 08033e78 */ B branch_08033eaa \n\
 \n\
 .ltorg \n\
 jump_08033e80: \n\
-/* 08033e80 */ LDR R6, =D_088effc0 \n\
+/* 08033e80 */ LDR R6, =anim_rhythm_test_monitor_text1 \n\
 /* 08033e82 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08033e84 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08033e86 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
@@ -70,7 +70,7 @@ jump_08033e80: \n\
 \n\
 .ltorg \n\
 jump_08033e90: \n\
-/* 08033e90 */ LDR R6, =D_088f0100 \n\
+/* 08033e90 */ LDR R6, =anim_rhythm_test_monitor_count_bg \n\
 /* 08033e92 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08033e94 */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 08033e96 */ MOVS R7, 0x1 @ Set R7 to 0x1 \n\
