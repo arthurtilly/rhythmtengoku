@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803493c \n\
+thumb_func_start marching_cue_miss \n\
 /* 0803493c */ PUSH {LR} \n\
 /* 0803493e */ BL beatscript_enable_loops \n\
 /* 08034942 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\

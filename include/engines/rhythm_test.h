@@ -42,9 +42,9 @@ extern void func_08033b24(); // Engine Event 01 (?)
 extern void func_08033b34(); // Engine Event 02 (?)
 // extern ? func_08033b48(?);
 extern void func_08033b9c(); // Engine Event 03 (?)
-// extern ? func_08033c2c(?);
-// extern ? func_08033c50(?);
-// extern ? func_08033c80(?);
+extern void rhythm_test_init_gfx3(void); // Graphics Init. 3
+extern void rhythm_test_init_gfx2(void); // Graphics Init. 2
+extern void rhythm_test_init_gfx1(void); // Graphics Init. 1
 extern void rhythm_test_engine_start(u32 version); // Game Engine Start
 extern void rhythm_test_engine_event_stub(); // Engine Event 07 (STUB)
 extern void func_08033e00(); // Engine Event 00 (?)

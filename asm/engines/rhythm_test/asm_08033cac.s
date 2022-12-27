@@ -13,7 +13,7 @@ thumb_func_start rhythm_test_engine_start \n\
 /* 08033cba */ MOV R10, R1 @ Set R10 to R1 \n\
 /* 08033cbc */ LDR R1, [R1] \n\
 /* 08033cbe */ STR R0, [R1] \n\
-/* 08033cc0 */ BL func_08033c80 \n\
+/* 08033cc0 */ BL rhythm_test_init_gfx1 \n\
 /* 08033cc4 */ BL scene_show_obj_layer \n\
 /* 08033cc8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08033cca */ MOV R9, R2 @ Set R9 to R2 \n\

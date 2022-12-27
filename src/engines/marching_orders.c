@@ -2,6 +2,9 @@
 
 asm(".include \"include/gba.inc\""); // Temporary
 
+// For readability.
+#define gMarchingOrdersInfo ((struct MarchingOrdersInfo *)D_030055d0)
+
 
 /* MARCHING ORDERS */
 

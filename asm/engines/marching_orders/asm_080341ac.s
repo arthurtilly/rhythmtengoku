@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080341ac \n\
+thumb_func_start marching_engine_start \n\
 /* 080341ac */ PUSH {R4-R7, LR} \n\
 /* 080341ae */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 080341b0 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -16,7 +16,7 @@ thumb_func_start func_080341ac \n\
 /* 080341c0 */ MOV R1, SP @ Set R1 to SP \n\
 /* 080341c2 */ LDRB R1, [R1, 0x14] \n\
 /* 080341c4 */ STRB R1, [R0] \n\
-/* 080341c6 */ BL func_08034180 \n\
+/* 080341c6 */ BL marching_init_gfx1 \n\
 /* 080341ca */ BL scene_show_obj_layer \n\
 /* 080341ce */ STR R4, [SP] \n\
 /* 080341d0 */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\

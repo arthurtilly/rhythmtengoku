@@ -618,48 +618,6 @@ D_088e41e8 = 0x088e41e8;
 D_088e46e8 = 0x088e46e8;
 D_088e75e8 = 0x088e75e8;
 D_088e7c68 = 0x088e7c68;
-/* Marching Orders Animations */
-anim_marching1_test = 0x088f124c;
-anim_marching1_turn_l = 0x088f136c;
-anim_marching1_turn_r = 0x088f1394;
-anim_marching1_point_l = 0x088f13bc;
-anim_marching1_point_r = 0x088f13e4;
-anim_marching1_commander_angry = 0x088f140c;
-anim_marching1_stop_beat = 0x088f1434;
-anim_marching1_clap = 0x088f1454;
-anim_marching1_beat = 0x088f1474;
-anim_marching1_step_r = 0x088f1494;
-anim_marching1_step_l = 0x088f14c4;
-anim_marching1_head_turn_r = 0x088f14f4;
-anim_marching1_head_turn_l = 0x088f151c;
-anim_marching1_tutorial_icons = 0x088f1544;
-anim_marching1_tutorial_skip_icon = 0x088f1574;
-anim_marching1_angry_puff = 0x088f1584;
-anim_marching1_commander_annoyed = 0x088f15bc;
-/* Marching Orders Palettes */
-marching_orders_obj_pal = 0x088f15dc;
-marching_orders_bg_pal = 0x088f163c;
-/* Marching Orders 2 Animations */
-anim_marching2_test = 0x088f288c;
-anim_marching2_turn_l = 0x088f29ac;
-anim_marching2_turn_r = 0x088f29d4;
-anim_marching2_point_l = 0x088f29fc;
-anim_marching2_point_r = 0x088f2a24;
-anim_marching2_commander_angry = 0x088f2a4c;
-anim_marching2_stop_beat = 0x088f2a74;
-anim_marching2_clap = 0x088f2a94;
-anim_marching2_beat = 0x088f2ab4;
-anim_marching2_step_r = 0x088f2ad4;
-anim_marching2_step_l = 0x088f2b04;
-anim_marching2_head_turn_r = 0x088f2b34;
-anim_marching2_head_turn_l = 0x088f2b5c;
-anim_marching2_tutorial_icons = 0x088f2b84;
-anim_marching2_tutorial_skip_icon = 0x088f2ba4;
-anim_marching2_angry_puff = 0x088f2bb4;
-anim_marching2_commander_annoyed = 0x088f2bec;
-/* Marching Orders 2 Palettes */
-marching_orders_2_obj_pal = 0x088f2c0c;
-marching_orders_2_bg_pal = 0x088f2c6c;
 /* Mr. Upbeat, Metronome Animations */
 D_088f3b58 = 0x088f3b58;
 D_088f3b68 = 0x088f3b68;
@@ -1353,33 +1311,6 @@ D_08912bdc = 0x08912bdc;
 D_08912bfc = 0x08912bfc;
 D_08912cdc = 0x08912cdc;
 D_08912cfc = 0x08912cfc;
-/* Marching Orders - Remix 7 + Remix 8 Animations */
-anim_space_rabbit_test = 0x08913930;
-anim_space_rabbit_turn_l = 0x08913a50;
-anim_space_rabbit_turn_r = 0x08913a78;
-anim_space_rabbit_point_l = 0x08913aa0;
-anim_space_rabbit_point_r = 0x08913ac8;
-anim_space_rabbit_commander_angry = 0x08913af0;
-anim_space_rabbit_stop_beat = 0x08913b18;
-anim_space_rabbit_clap = 0x08913b38;
-anim_space_rabbit_beat = 0x08913b58;
-anim_space_rabbit_step_r = 0x08913b78;
-anim_space_rabbit_step_l = 0x08913bc8;
-anim_space_rabbit_head_turn_r = 0x08913c18;
-anim_space_rabbit_head_turn_l = 0x08913c40;
-anim_space_rabbit_tutorial_icons = 0x08913c68;
-anim_space_rabbit_tutorial_skip_icon = 0x08913c88;
-anim_space_rabbit_angry_puff = 0x08913c98;
-anim_space_rabbit_dance_body = 0x08913cd0;
-anim_space_rabbit_dance_head = 0x08913d18;
-anim_space_rabbit_step_test1 = 0x08913d58;
-anim_space_rabbit_step_test2 = 0x08913df0;
-anim_space_rabbit_blank1 = 0x08913e88;
-anim_space_rabbit_blank2 = 0x08913e98;
-anim_space_rabbit_commander_annoyed = 0x08913ea8;
-/* Marching Orders - Remix 7 + Remix 8 Palettes */
-marching_orders_remix7_obj_pal = 0x08913ec8;
-marching_orders_remix7_bg_pal = 0x08913f28;
 /* Tanooki & Monkey Animations */
 D_08914818 = 0x08914818;
 D_08914870 = 0x08914870;
@@ -3179,37 +3110,6 @@ D_089e2ea0 = 0x089e2ea0;
 /* Game Engine - Power Calligraphy */
 /* Game Engine - Rhythm Test */
 /* Game Engine - Marching Orders */
-D_089e50d8 = 0x089e50d8;
-D_089e50e8 = 0x089e50e8;
-D_089e50f8 = 0x089e50f8;
-D_089e5108 = 0x089e5108;
-D_089e5118 = 0x089e5118;
-D_089e5128 = 0x089e5128;
-D_089e5138 = 0x089e5138;
-D_089e5148 = 0x089e5148;
-D_089e5158 = 0x089e5158;
-D_089e5168 = 0x089e5168;
-D_089e5178 = 0x089e5178;
-D_089e5188 = 0x089e5188;
-D_089e5198 = 0x089e5198;
-D_089e51a8 = 0x089e51a8;
-D_089e51b8 = 0x089e51b8;
-D_089e51c8 = 0x089e51c8;
-D_089e5204 = 0x089e5204;
-D_089e5208 = 0x089e5208;
-D_089e5280 = 0x089e5280;
-D_089e52ec = 0x089e52ec;
-D_089e5358 = 0x089e5358;
-D_089e5368 = 0x089e5368;
-D_089e53b8 = 0x089e53b8;
-D_089e53f8 = 0x089e53f8;
-D_089e5438 = 0x089e5438;
-D_089e5478 = 0x089e5478;
-D_089e54b8 = 0x089e54b8;
-D_089e54ec = 0x089e54ec;
-D_089e54fc = 0x089e54fc;
-D_089e5518 = 0x089e5518;
-D_089e5538 = 0x089e5538;
 /* Game Engine - Mr. Upbeat */
 D_089e56b8 = 0x089e56b8;
 D_089e56c8 = 0x089e56c8;
