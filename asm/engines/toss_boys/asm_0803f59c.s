@@ -27,7 +27,7 @@ thumb_func_start func_0803f59c \n\
 /* 0803f5c6 */ BEQ branch_0803f5d8 \n\
  \n\
 branch_0803f5c8: \n\
-/* 0803f5c8 */ BL func_08018068 \n\
+/* 0803f5c8 */ BL gameplay_ignore_this_cue_result \n\
 /* 0803f5cc */ B branch_0803f794 \n\
 \n\
 .ltorg \n\

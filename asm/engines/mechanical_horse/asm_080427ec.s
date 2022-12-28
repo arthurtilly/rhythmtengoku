@@ -11,7 +11,7 @@ thumb_func_start func_080427ec \n\
 /* 080427f6 */ LDRB R0, [R0] \n\
 /* 080427f8 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080427fa */ BNE branch_0804280c \n\
-/* 080427fc */ BL func_08018068 \n\
+/* 080427fc */ BL gameplay_ignore_this_cue_result \n\
 /* 08042800 */ B branch_0804281c \n\
 \n\
 .ltorg \n\

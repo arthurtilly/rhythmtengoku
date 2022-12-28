@@ -90,7 +90,7 @@ branch_080350c8: \n\
 /* 08035136 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08035138 */ STRB R0, [R1] \n\
 /* 0803513a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0803513c */ BL func_08017b88 \n\
+/* 0803513c */ BL gameplay_enable_cue_spawning \n\
 /* 08035140 */ LDR R0, =D_030055d0 \n\
 /* 08035142 */ LDR R0, [R0] \n\
 /* 08035144 */ LDR R0, [R0, 0x38] \n\

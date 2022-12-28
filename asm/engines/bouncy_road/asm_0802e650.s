@@ -21,7 +21,7 @@ thumb_func_start bouncy_road_cue_hit \n\
 /* 0802e672 */ BEQ branch_0802e682 \n\
  \n\
 branch_0802e674: \n\
-/* 0802e674 */ BL func_08018068 \n\
+/* 0802e674 */ BL gameplay_ignore_this_cue_result \n\
 /* 0802e678 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0802e67a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802e67c */ BL bouncy_road_input_event \n\

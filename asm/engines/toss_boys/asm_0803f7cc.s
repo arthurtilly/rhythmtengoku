@@ -17,7 +17,7 @@ thumb_func_start func_0803f7cc \n\
 /* 0803f7e2 */ LDRH R6, [R0] \n\
 /* 0803f7e4 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 0803f7e6 */ BEQ branch_0803f7f8 \n\
-/* 0803f7e8 */ BL func_08018068 \n\
+/* 0803f7e8 */ BL gameplay_ignore_this_cue_result \n\
 /* 0803f7ec */ B branch_0803f964 \n\
 \n\
 .ltorg \n\
@@ -29,14 +29,14 @@ branch_0803f7f8: \n\
 /* 0803f7fe */ LDRB R0, [R0] \n\
 /* 0803f800 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803f802 */ BNE branch_0803f82c \n\
-/* 0803f804 */ BL func_08018068 \n\
+/* 0803f804 */ BL gameplay_ignore_this_cue_result \n\
 /* 0803f808 */ LDRB R0, [R7, 0xB] \n\
 /* 0803f80a */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803f80c */ BNE branch_0803f810 \n\
 /* 0803f80e */ B branch_0803f964 \n\
  \n\
 branch_0803f810: \n\
-/* 0803f810 */ BL func_08018068 \n\
+/* 0803f810 */ BL gameplay_ignore_this_cue_result \n\
 /* 0803f814 */ LDRB R3, [R7, 0x7] \n\
 /* 0803f816 */ LDRH R0, [R7, 0x4] \n\
 /* 0803f818 */ MOVS R1, 0x64 @ Set R1 to 0x64 \n\

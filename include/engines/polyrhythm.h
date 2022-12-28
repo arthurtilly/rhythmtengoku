@@ -3,7 +3,6 @@
 #include "global.h"
 #include "engines.h"
 
-
 // Engine Types:
 struct PolyrhythmInfo {
     u8 version;
@@ -43,7 +42,7 @@ struct PolyrhythmInfo {
 
 struct PolyrhythmCue {
     u32 unused0:9;
-    u8 lane:1;
+    u8  lane:1;
     u32 unused4;
     u32 unused8;
     u32 unusedC;
@@ -57,86 +56,105 @@ struct PolyrhythmCue {
 
 
 // Engine Macros/Enums:
+enum PolyrhythmVersionsEnum {
+    POLYRHYTHM_VER_0,
+    POLYRHYTHM_VER_REMIX,
+    POLYRHYTHM_VER_2
+};
+
+enum PolyrhythmLanesEnum {
+    POLYRHYTHM_LANE_UPSIDE,
+    POLYRHYTHM_LANE_DOWNSIDE
+};
+
 
 // OAM Animations:
-extern const struct Animation D_088f60f4[]; // [D_088f60f4] Layout/Spacing Demonstration (Upside)
-extern const struct Animation D_088f6104[]; // [D_088f6104] Layout/Spacing Demonstration (Downside)
-extern const struct Animation D_088f6114[]; // [D_088f6114] Rolling Rod
-extern const struct Animation D_088f615c[]; // [D_088f615c] Large Up Arrow (Unused)
-extern const struct Animation D_088f616c[]; // [D_088f616c] Upside Piston
-extern const struct Animation D_088f61ac[]; // [D_088f61ac] Downside Piston
-extern const struct Animation D_088f61ec[]; // [D_088f61ec] Starting Blocks Structure
-extern const struct Animation D_088f61fc[]; // [D_088f61fc] Spawn Block
-extern const struct Animation D_088f622c[]; // [D_088f622c] Spawn Upside Piston
-extern const struct Animation D_088f625c[]; // [D_088f625c] Spawn Downside Piston
-extern const struct Animation D_088f628c[]; // [D_088f628c] Push Upside Piston
-extern const struct Animation D_088f62a4[]; // [D_088f62a4] Push Downside Piston
-extern const struct Animation D_088f62bc[]; // [D_088f62bc] Rod Explosion
-extern const struct Animation D_088f62e4[]; // [D_088f62e4] Button Signs
-extern const struct Animation D_088f62fc[]; // [D_088f62fc] Up Arrow (A Button)
-extern const struct Animation D_088f631c[]; // [D_088f631c] Up Arrow (D-Pad)
+extern const struct Animation anim_polyrhythm_test_upside[]; // Layout/Spacing Demonstration (Upside)
+extern const struct Animation anim_polyrhythm_test_downside[]; // Layout/Spacing Demonstration (Downside)
+extern const struct Animation anim_polyrhythm_rod[]; // Rolling Rod
+extern const struct Animation anim_polyrhythm_arrow_large[]; // Large Up Arrow (Unused)
+extern const struct Animation anim_polyrhythm_upside_piston[]; // Upside Piston
+extern const struct Animation anim_polyrhythm_downside_piston[]; // Downside Piston
+extern const struct Animation anim_polyrhythm_world_start[]; // Starting Blocks Structure
+extern const struct Animation anim_polyrhythm_block[]; // Spawn Block
+extern const struct Animation anim_polyrhythm_spawn_upside[]; // Spawn Upside Piston
+extern const struct Animation anim_polyrhythm_spawn_downside[]; // Spawn Downside Piston
+extern const struct Animation anim_polyrhythm_push_upside[]; // Push Upside Piston
+extern const struct Animation anim_polyrhythm_push_downside[]; // Push Downside Piston
+extern const struct Animation anim_polyrhythm_rod_explode[]; // Rod Explosion
+extern const struct Animation anim_polyrhythm_signs[]; // Button Signs
+extern const struct Animation anim_polyrhythm_arrow_a[]; // Up Arrow (A Button)
+extern const struct Animation anim_polyrhythm_arrow_dpad[]; // Up Arrow (D-Pad)
+
 
 // Palettes:
+
 
 // Sound Effects:
 extern const struct SequenceData s_f_poly_blast_seqData;
 extern const struct SequenceData s_poly_shototu_seqData;
+extern const struct SequenceData s_f_poly_open_upside_seqData;
+extern const struct SequenceData s_f_poly_open_downside_seqData;
+extern const struct SequenceData s_f_poly_appear_upside_seqData;
+
 
 // Engine Data:
 
+
 // Engine Definition Data:
-extern const struct CompressedGraphics *const D_089e5968[];
-extern const struct GraphicsTable *const D_089e59fc[];
-extern const s16 D_089e5c00[2];
-extern const s16 D_089e5c04[2];
-extern const s16 D_089e5c08[3];
-extern const struct Animation *const D_089e5c10[]; // Piston - Appear
-extern const struct Animation *const D_089e5c1c[]; // Piston - Push
-extern const struct SequenceData *const D_089e5c28[]; // Piston - Appear
-extern const struct SequenceData *const D_089e5c34[]; // Piston - Push
+extern const struct CompressedGraphics *const polyrhythm_buffered_textures[];
+extern const struct GraphicsTable *const polyrhythm_gfx_tables[];
+extern const s16 polyrhythm_lane_start_x[2]; // Lane Start X Positions
+extern const s16 polyrhythm_lane_start_y[2]; // Lane Start Y Positions
+extern const s16 polyrhythm_block_heights[3]; // Block Heights
+extern const struct Animation *const polyrhythm_block_appear_anim[]; // Block - Appear
+extern const struct Animation *const polyrhythm_block_open_anim[]; // Block - Open
+extern const struct SequenceData *const polyrhythm_block_appear_sfx[]; // Block - Appear
+extern const struct SequenceData *const polyrhythm_block_open_sfx[]; // Block - Open
+
 
 // Functions:
-extern void func_08035d1c(void); // Graphics Init. 3
-extern void func_08035d2c(void); // Graphics Init. 2
-extern void func_08035d6c(void); // Graphics Init. 1
-extern void func_08035d98(u32 ver); // Game Engine Init.
-extern void func_08035e84(void); // Engine Event 0x05 (STUB)
-extern void func_08035e88(void); // Game Engine Update
-extern void func_08035e94(void); // Game Engine Close (STUB)
-extern void func_08035e98(struct Cue *cue, struct PolyrhythmCue *info, u32 lane); // Cue Spawn
-extern u32 func_08035eac(struct Cue *cue, struct PolyrhythmCue *info, u32 runningTime, u32 duration); // Cue Update
-extern void func_08035ecc(struct Cue *cue, struct PolyrhythmCue *info); // Cue Despawn
-extern void func_08035ed0(struct Cue *cue, struct PolyrhythmCue *info, u32 pressed, u32 released); // Cue On-Hit
-extern void func_08035f08(struct Cue *cue, struct PolyrhythmCue *info, u32 pressed, u32 released); // Cue On-Barely
-extern void func_08035f40(struct Cue *cue, struct PolyrhythmCue *info); // Cue On-Miss
-extern void func_08035f4c(u32 pressed, u32 released); // Input Event
-extern void func_08035f74(void); // Common Event 0 (Beat Animation)
-extern void func_08035f78(void); // Common Event 1 (Display Text)
-extern void func_08035f7c(void); // Populate World
-extern void func_080360a8(u32 lane, s32 *piston1ID, s32 *piston2ID); // Get Next Two Pistons
-extern void func_080360f8(u32 lane, s32 blockID); // Display Arrow Sprite
-// extern ? func_080361c0(?); // Engine Event 0x00 (Spawn Pattern)
-// extern ? func_08036250(?); // Engine Event 0x01 (Despawn Pattern)
-// extern ? func_080362e4(?); // Engine Event 0x02 (Retract Pistons)
-extern s32 func_0803638c(u32 lane); // Piston Push
+extern void polyrhythm_init_gfx3(void); // Graphics Init. 3
+extern void polyrhythm_init_gfx2(void); // Graphics Init. 2
+extern void polyrhythm_init_gfx1(void); // Graphics Init. 1
+extern void polyrhythm_engine_start(u32 version); // Game Engine Start
+extern void polyrhythm_engine_event_stub(void); // Engine Event 05 (STUB)
+extern void polyrhythm_engine_update(void); // Game Engine Update
+extern void polyrhythm_engine_stop(void); // Game Engine Stop
+extern void polyrhythm_cue_spawn(struct Cue *, struct PolyrhythmCue *, u32 lane); // Cue - Spawn
+extern u32  polyrhythm_cue_update(struct Cue *, struct PolyrhythmCue *, u32 runningTime, u32 duration); // Cue - Update
+extern void polyrhythm_cue_despawn(struct Cue *, struct PolyrhythmCue *); // Cue - Despawn
+extern void polyrhythm_cue_hit(struct Cue *, struct PolyrhythmCue *, u32 pressed, u32 released); // Cue - Hit
+extern void polyrhythm_cue_barely(struct Cue *, struct PolyrhythmCue *, u32 pressed, u32 released); // Cue - Barely
+extern void polyrhythm_cue_miss(struct Cue *, struct PolyrhythmCue *); // Cue - Miss
+extern void polyrhythm_input_event(u32 pressed, u32 released); // Input Event
+extern void polyrhythm_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
+extern void polyrhythm_common_display_text(void); // Common Event 1 (Display Text, Unimplemented)
+extern void polyrhythm_populate_world(void); // Populate World
+extern void polyrhythm_get_pistons(u32 lane, s32 *piston1ID, s32 *piston2ID); // Get Next Two Pistons
+extern void polyrhythm_display_arrow(u32 lane, s32 blockID); // Display Arrow Sprite
+extern void polyrhythm_spawn_piston(); // Engine Event 00 (Spawn Pattern)
+extern void polyrhythm_despawn_piston(); // Engine Event 01 (Despawn Pattern)
+extern void polyrhythm_retract_pistons(); // Engine Event 02 (Retract Pistons)
+extern s32 polyrhythm_push_piston(u32 lane); // Piston Push
 // extern ? func_08036428(?);
-extern s32 func_0803646c(u32); // Get Lane X
-extern s32 func_0803647c(u32); // Get Lane Y
-extern s32 func_0803648c(u32, s32); // Get Lane something
-extern s32 func_080364d4(u32, s32); // Get Layer
+extern s32 polyrhythm_get_lane_start_x(u32); // Get Lane X
+extern s32 polyrhythm_get_lane_start_y(u32); // Get Lane Y
+extern s32 polyrhythm_get_block_height(u32, s32); // Get Block Height
+extern s32 polyrhythm_get_block_z(u32, s32); // Get Layer
 // extern ? func_080364f4(?);
-extern void func_0803656c(void); // Initialise Rods
+extern void polyrhythm_init_rods(void); // Initialise Rods
 extern s32 func_080365c8(struct PolyrhythmRod *, s32); // Get Rod Next unk10
 // extern ? func_080365f8(?);
-extern s32 func_08036604(struct PolyrhythmRod *); // Get Rod Next unk14
+extern s32 func_08036604(struct PolyrhythmRod *); // Get Rod Next Horizontal
 extern s32 func_0803661c(struct PolyrhythmRod *, s32); // Get Rod Next Layer
 extern void func_08036630(struct PolyrhythmRod *); // Update Rod (State 0)
 extern void func_08036758(struct PolyrhythmRod *); // Update Rod (State 1)
 extern void func_08036848(struct PolyrhythmRod *); // Update Rod (State 2)
 extern void func_08036988(void); // STUB
-extern void func_0803698c(void); // Update Rods
-extern void func_08036aa4(u32); // Spawn Rod
-extern void func_08036b3c(u32); // Engine Event 0x03 (Spawn Rod)
+extern void polyrhythm_update_rods(void); // Update Rods
+extern void polyrhythm_spawn_rod(u32); // Spawn Rod
+extern void polyrhythm_event_spawn_rod(u32); // Engine Event 03 (Spawn Rod)
 // extern ? func_08036b48(?);
-// extern ? func_08036b94(?);
-// extern ? func_08036be0(?); // Engine Event 0x04 (Conditional Applause)
+extern void polyrhythm_play_applause(void); // Conditional Applause
+extern void polyrhythm_event_play_applause(void); // Engine Event 04 (Conditional Applause)

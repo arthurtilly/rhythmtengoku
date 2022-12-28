@@ -529,9 +529,9 @@ void func_08013644(s32 arg) {
     if (func_0801317c(cursorX, cursorY) > 3) {
         func_08012808();
     }
-    func_080006b0(&D_089d77e4, &D_089d7c18); // Results (Level), Results (Epilogue..?)
+    func_080006b0(&D_089d77e4, &D_089d7c18); // Results (Level), Results (Epilogue)
     func_080006b0(&D_089d7964, &D_089cdf08); // Results (Score), Game Select
-    func_080006b0(&D_089d7c18, &D_089cdf08); // Results (Epilogue..?), Game Select
+    func_080006b0(&D_089d7c18, &D_089cdf08); // Results (Epilogue), Game Select
 }
 
 
@@ -1000,7 +1000,7 @@ void func_08015cf4(void) {
         vector->x = agb_random(x);
         vector->y = agb_random(y);
         gGameSelectInfo.squareSprites[i] = func_0804d294(D_03005380, anim_game_select_bg_square_large, agb_random(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
-        func_0804dcb8(D_03005380, gGameSelectInfo.squareSprites[i], (agb_random(0x100) + 0x100));
+        func_0804dcb8(D_03005380, gGameSelectInfo.squareSprites[i], agb_random(INT_TO_FIXED(1.0)) + INT_TO_FIXED(1.0));
     }
 
     x *= 2;
@@ -1011,7 +1011,7 @@ void func_08015cf4(void) {
         vector->x = agb_random(x);
         vector->y = agb_random(y);
         gGameSelectInfo.squareSprites[i] = func_0804d294(D_03005380, anim_game_select_bg_square_small, agb_random(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
-        func_0804dcb8(D_03005380, gGameSelectInfo.squareSprites[i], (agb_random(0x100) + 0x100));
+        func_0804dcb8(D_03005380, gGameSelectInfo.squareSprites[i], agb_random(INT_TO_FIXED(1.0)) + INT_TO_FIXED(1.0));
     }
 
     D_03004b10.BLDMOD = (BLDMOD_BG0_TGT | BLDMOD_BG1_TGT | BLDMOD_BG2_TGT | BLDMOD_BG3_TGT | BLDMOD_BACKDROP_TGT);

@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080362e4 \n\
+thumb_func_start polyrhythm_retract_pistons \n\
 /* 080362e4 */ PUSH {R4-R7, LR} \n\
 /* 080362e6 */ MOV R7, R9 @ Set R7 to R9 \n\
 /* 080362e8 */ MOV R6, R8 @ Set R6 to R8 \n\
@@ -17,7 +17,7 @@ thumb_func_start func_080362e4 \n\
 /* 080362fa */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 080362fc */ ADD R0, SP, 0x10 \n\
 /* 080362fe */ MOV R9, R0 @ Set R9 to R0 \n\
-/* 08036300 */ LDR R1, =D_089e5c10 \n\
+/* 08036300 */ LDR R1, =polyrhythm_block_appear_anim \n\
 /* 08036302 */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 08036304 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
  \n\
@@ -67,10 +67,10 @@ branch_0803633c: \n\
 /* 0803635a */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0803635c */ ADD R1, SP, 0xC \n\
 /* 0803635e */ MOV R2, R9 @ Set R2 to R9 \n\
-/* 08036360 */ BL func_080360a8 \n\
+/* 08036360 */ BL polyrhythm_get_pistons \n\
 /* 08036364 */ LDR R1, [SP, 0xC] \n\
 /* 08036366 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 08036368 */ BL func_080360f8 \n\
+/* 08036368 */ BL polyrhythm_display_arrow \n\
 /* 0803636c */ ADD SP, 0x14 \n\
 /* 0803636e */ POP {R3, R4} \n\
 /* 08036370 */ MOV R8, R3 @ Set R8 to R3 \n\

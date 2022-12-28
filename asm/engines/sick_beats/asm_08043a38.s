@@ -319,7 +319,7 @@ branch_08043c60: \n\
 .ltorg \n\
  \n\
 branch_08043cd4: \n\
-/* 08043cd4 */ BL func_08018068 \n\
+/* 08043cd4 */ BL gameplay_ignore_this_cue_result \n\
  \n\
 branch_08043cd8: \n\
 /* 08043cd8 */ LSLS R0, R4, 0x10 \n\

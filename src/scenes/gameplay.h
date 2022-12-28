@@ -93,16 +93,16 @@ extern void gameplay_add_cue_result_hit(s32 offset); // [func_080179a0] Add Inpu
 extern void gameplay_add_cue_result_barely(s32 offset); // [func_080179bc] Add Input Barely
 extern void gameplay_add_cue_result_miss(s32 offset); // [func_080179d8] Add Input Miss
 extern void gameplay_spawn_cue(s32 id); // [func_080179f4] Spawn Cue
-extern void func_08017b34(void); // [func_08017b34] Set unk5D to TRUE
+extern void gameplay_cancel_this_cue_spawn(void); // [func_08017b34] Request Scene to Delete the Currently-Spawning Cue
 extern void gameplay_despawn_cue(struct Cue *cue); // [func_08017b44] Despawn Cue
-extern void func_08017b88(u32 arg); // [func_08017b88] Set unk5C
+extern void gameplay_enable_cue_spawning(u32 enable); // [func_08017b88] Enable Cue Spawning
 extern void gameplay_update_cue(struct Cue *cue); // [func_08017b98] Update Cue
 extern void gameplay_update_all_cues(void); // [func_08017c68] Update All Cues
 extern s32  gameplay_calculate_input_timing(struct Cue *cue, u16 pressed, u16 released, s32 *offset); // [func_08017c8c] Determine Input Timing
 extern void gameplay_register_hit_barely(struct Cue *cue, s32 timingLevel, s32 offset, u32 pressed, u32 released); // [gameplay_register_hit_barely] Hit/Barely Event
 extern void gameplay_update_inputs(u32 pressed, u32 released); // [func_08017ec8] Update Inputs
 extern s32  gameplay_get_last_hit_offset(void); // [func_08018054] Get Timing Offset of Most Recent Hit/Barely
-extern void func_08018068(void); // [func_08018068] Set unk78 to TRUE
+extern void gameplay_ignore_this_cue_result(void); // [func_08018068] Prevent Scene from Updating Results for This Cue
 extern void gameplay_enable_cue_input_overlap(u32 allow); // [func_08018078] Allow Cue Input Overlap
 extern void gameplay_set_cue_spawn_sfx(struct Cue *cue, const struct SequenceData *sfx); // [func_08018088] Set Cue Spawn SFX
 extern void gameplay_set_cue_hit_sfx(struct Cue *cue, const struct SequenceData *sfx); // [func_0801808c] Set Cue Hit SFX
@@ -112,16 +112,16 @@ extern const struct SequenceData *gameplay_get_cue_spawn_sfx(struct Cue *cue); /
 extern const struct SequenceData *gameplay_get_cue_hit_sfx(struct Cue *cue); // [func_0801809c] Get Cue Hit SFX
 extern const struct SequenceData *gameplay_get_cue_barely_sfx(struct Cue *cue); // [func_080180a0] Get Cue Barely SFX
 extern const struct SequenceData *gameplay_get_cue_miss_sfx(struct Cue *cue); // [func_080180a4] Get Cue Miss SFX
-extern u32  func_080180a8(struct Cue *cue); // [func_080180a8] Get Cue Data unk0
+extern u32  gameplay_get_cue_unk0(struct Cue *cue); // [func_080180a8] Get Cue Data unk0
 extern u32  gameplay_get_cue_input_buttons(struct Cue *cue); // [func_080180ac] Get Cue Input Buttons
 extern void gameplay_set_cue_input_buttons(struct Cue *cue, u32 buttons); // [func_080180b0] Set Cue Input Buttons
 extern void gameplay_set_cue_duration(struct Cue *cue, u32 duration); // [func_080180b4] Set Cue Duration
 extern u32  gameplay_get_cue_marking_criteria(struct Cue *cue); // [func_080180bc] Get Cue Marking Criteria
-// extern ? func_080180c4(?); // [func_080180c4] Set (Early?) Cue Timing Bounds
-// extern ? func_080180ec(?); // [func_080180ec] Set (Late?) Cue Timing Bounds
+extern void gameplay_set_cue_hit_window(s32 time); // [func_080180c4] Set Cue Hit Window
+extern void gameplay_set_cue_barely_window(s32 time); // [func_080180ec] Set Cue Barely Window
 extern void gameplay_set_next_cue_duration(u32 duration); // [func_08018114] Set Next Cue Duration
-// extern ? gameplay_get_cue_info(struct Cue *cue, struct GameCueInfo *info); // Get Cue and GameCueInfo
-// extern ? gameplay_get_previous_cue_info(struct Cue *cue, struct Cue *prev, struct GameCueInfo *info); // Get Previous Cue and GameCueInfo
+extern void gameplay_get_cue_info(struct Cue **cue, void **info); // [func_08018124] Get Cue and GameCueInfo
+extern void gameplay_get_previous_cue_info(struct Cue *cue, struct Cue **prev, void **info); // [func_08018138] Get Previous Cue and GameCueInfo
 
 /* VIDEO */
 // extern ? gameplay_init_overlay(?); // [func_08018154] Initialise Common Graphics (Perfect Campaign, etc.)

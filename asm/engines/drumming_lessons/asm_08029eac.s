@@ -14,7 +14,7 @@ thumb_func_start func_08029eac \n\
 /* 08029ebc */ LSLS R0, R0, 0x19 \n\
 /* 08029ebe */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08029ec0 */ BGE branch_08029ec6 \n\
-/* 08029ec2 */ BL func_08018068 \n\
+/* 08029ec2 */ BL gameplay_ignore_this_cue_result \n\
  \n\
 branch_08029ec6: \n\
 /* 08029ec6 */ BL func_08027f90 \n\

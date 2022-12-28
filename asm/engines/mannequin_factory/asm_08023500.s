@@ -17,7 +17,7 @@ thumb_func_start mannequin_cue_miss \n\
 /* 08023518 */ LDRB R0, [R4, 0x4] \n\
 /* 0802351a */ CMP R0, 0x5 @ Compare R0 and 0x5 \n\
 /* 0802351c */ BNE branch_08023522 \n\
-/* 0802351e */ BL func_08018068 \n\
+/* 0802351e */ BL gameplay_ignore_this_cue_result \n\
  \n\
 branch_08023522: \n\
 /* 08023522 */ POP {R4} \n\

@@ -439,7 +439,7 @@ void rhythm_tweezers_cue_hit_long(struct Cue *cue, struct RhythmTweezersCue *inf
     struct RhythmTweezersTweezers *tweezers = &gRhythmTweezersInfo->tweezers;
     u32 temp;
 
-    func_08018068();
+    gameplay_ignore_this_cue_result();
     if (tweezers->heldHair != TWEEZERS_HELD_HAIR_NONE) rhythm_tweezers_spawn_falling_hair(tweezers->heldHair - 1);
     affine_sprite_play_anim(tweezers->sprite, 0);
     affine_sprite_change_anim(info->sprite, anim_tweezers_pull, 0, 0, 0, 0);

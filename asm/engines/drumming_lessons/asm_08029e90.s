@@ -8,7 +8,7 @@ thumb_func_start func_08029e90 \n\
 /* 08029e94 */ LSLS R0, R0, 0x19 \n\
 /* 08029e96 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08029e98 */ BGE branch_08029e9e \n\
-/* 08029e9a */ BL func_08018068 \n\
+/* 08029e9a */ BL gameplay_ignore_this_cue_result \n\
  \n\
 branch_08029e9e: \n\
 /* 08029e9e */ BL func_08029e10 \n\

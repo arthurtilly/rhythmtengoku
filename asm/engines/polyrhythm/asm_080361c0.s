@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080361c0 \n\
+thumb_func_start polyrhythm_spawn_piston \n\
 /* 080361c0 */ PUSH {R4, R5, LR} \n\
 /* 080361c2 */ SUB SP, 0x14 \n\
 /* 080361c4 */ MOVS R3, 0xF @ Set R3 to 0xF \n\
@@ -36,7 +36,7 @@ thumb_func_start func_080361c0 \n\
 /* 080361fc */ LDR R0, [R0] \n\
 /* 080361fe */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
 /* 08036200 */ LDRSH R1, [R2, R3] \n\
-/* 08036202 */ LDR R2, =D_089e5c10 \n\
+/* 08036202 */ LDR R2, =polyrhythm_block_appear_anim \n\
 /* 08036204 */ LSLS R4, R4, 0x2 \n\
 /* 08036206 */ ADDS R2, R4, R2 @ Set R2 to R4 + R2 \n\
 /* 08036208 */ LDR R2, [R2] \n\
@@ -48,17 +48,17 @@ thumb_func_start func_080361c0 \n\
 /* 08036214 */ STR R3, [SP, 0x8] \n\
 /* 08036216 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 08036218 */ BL func_0804d8f8 \n\
-/* 0803621c */ LDR R0, =D_089e5c28 \n\
+/* 0803621c */ LDR R0, =polyrhythm_block_appear_sfx \n\
 /* 0803621e */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 08036220 */ LDR R0, [R4] \n\
 /* 08036222 */ BL play_sound \n\
 /* 08036226 */ ADD R2, SP, 0x10 \n\
 /* 08036228 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0803622a */ ADD R1, SP, 0xC \n\
-/* 0803622c */ BL func_080360a8 \n\
+/* 0803622c */ BL polyrhythm_get_pistons \n\
 /* 08036230 */ LDR R1, [SP, 0xC] \n\
 /* 08036232 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08036234 */ BL func_080360f8 \n\
+/* 08036234 */ BL polyrhythm_display_arrow \n\
 /* 08036238 */ ADD SP, 0x14 \n\
 /* 0803623a */ POP {R4, R5} \n\
 /* 0803623c */ POP {R0} \n\

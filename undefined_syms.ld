@@ -678,26 +678,6 @@ D_088f5bcc = 0x088f5bcc;
 D_088f5bdc = 0x088f5bdc;
 /* Main Menu - Options Palettes */
 D_088f5bfc = 0x088f5bfc;
-/* Polyrhythm Animations */
-D_088f60f4 = 0x088f60f4;
-D_088f6104 = 0x088f6104;
-D_088f6114 = 0x088f6114;
-D_088f615c = 0x088f615c;
-D_088f616c = 0x088f616c;
-D_088f61ac = 0x088f61ac;
-D_088f61ec = 0x088f61ec;
-D_088f61fc = 0x088f61fc;
-D_088f622c = 0x088f622c;
-D_088f625c = 0x088f625c;
-D_088f628c = 0x088f628c;
-D_088f62a4 = 0x088f62a4;
-D_088f62bc = 0x088f62bc;
-D_088f62e4 = 0x088f62e4;
-D_088f62fc = 0x088f62fc;
-D_088f631c = 0x088f631c;
-/* Polyrhythm Palettes */
-D_088f633c = 0x088f633c;
-D_088f653c = 0x088f653c;
 /* LIVE Menu Animations */
 D_088f67d0 = 0x088f67d0;
 D_088f67e8 = 0x088f67e8;
@@ -3082,27 +3062,6 @@ D_089e2ea0 = 0x089e2ea0;
 /* Game Engine - Mr. Upbeat */
 /* Game Engine - Metronome */
 /* Game Engine - Polyrhythm */
-D_089e5968 = 0x089e5968;
-D_089e596c = 0x089e596c;
-D_089e59b4 = 0x089e59b4;
-D_089e59fc = 0x089e59fc;
-D_089e5a08 = 0x089e5a08;
-D_089e5a48 = 0x089e5a48;
-D_089e5a88 = 0x089e5a88;
-D_089e5ac8 = 0x089e5ac8;
-D_089e5b08 = 0x089e5b08;
-D_089e5b48 = 0x089e5b48;
-D_089e5b88 = 0x089e5b88;
-D_089e5bbc = 0x089e5bbc;
-D_089e5bc8 = 0x089e5bc8;
-D_089e5be0 = 0x089e5be0;
-D_089e5c00 = 0x089e5c00;
-D_089e5c04 = 0x089e5c04;
-D_089e5c08 = 0x089e5c08;
-D_089e5c10 = 0x089e5c10;
-D_089e5c1c = 0x089e5c1c;
-D_089e5c28 = 0x089e5c28;
-D_089e5c34 = 0x089e5c34;
 /* Game Engine - LIVE Menu */
 D_089e5c40 = 0x089e5c40;
 D_089e5c44 = 0x089e5c44;

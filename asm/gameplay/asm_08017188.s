@@ -17,7 +17,7 @@ thumb_func_start gameplay_set_current_engine \n\
 /* 0801719e */ BEQ branch_080171fe \n\
 /* 080171a0 */ BL gameplay_reset_cues \n\
 /* 080171a4 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 080171a6 */ BL func_08017b88 \n\
+/* 080171a6 */ BL gameplay_enable_cue_spawning \n\
 /* 080171aa */ LDR R0, [R4] \n\
 /* 080171ac */ LDR R0, [R0, 0x10] \n\
 /* 080171ae */ LDR R1, [R0, 0xC] \n\

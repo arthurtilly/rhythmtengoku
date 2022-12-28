@@ -437,10 +437,10 @@ void func_08010150(struct AffineSprite *affineData, u16 arg) {
 }
 
 // [func_08010174] AFFINE SPRITE - func_0804dcb8()
-void func_08010174(struct AffineSprite *affineData, u16 arg) {
+void func_08010174(struct AffineSprite *affineData, u16 speed) {
     if (affineData == NULL) return;
 
-    func_0804dcb8(D_03005380, affineData->sprite, arg);
+    func_0804dcb8(D_03005380, affineData->sprite, speed);
 }
 
 // [func_08010198] AFFINE SPRITE - func_0804d6cc()

@@ -223,16 +223,16 @@ void karate_engine_stop(void) {
 
 
 // ???
-void karate_cue_increment_z_for_existing_objects(struct Cue *targetCue) {
+void karate_cue_increment_z_for_existing_objects(struct Cue *currentCue) {
     struct Cue *cue;
     struct KarateManCue *data;
 
-    gameplay_get_cue_info(&cue, &data);
+    gameplay_get_cue_info(&cue, (void **)&data);
     while (cue != NULL) {
-        if (cue != targetCue) {
+        if (cue != currentCue) {
             data->unk2E++;
         }
-        gameplay_get_previous_cue_info(cue, &cue, &data);
+        gameplay_get_previous_cue_info(cue, &cue, (void **)&data);
     }
 }
 
@@ -451,7 +451,7 @@ void karate_cue_hit(struct Cue *cue, struct KarateManCue *data) {
                 } else {
                     play_sound(&s_f_boxing_hard_seqData);
                 }
-                func_08018068();
+                gameplay_ignore_this_cue_result();
                 gameplay_add_cue_result(gameplay_get_cue_marking_criteria(cue), 1, gameplay_get_last_hit_offset());
                 karate_decrement_flow();
                 isHighBgFace = TRUE;

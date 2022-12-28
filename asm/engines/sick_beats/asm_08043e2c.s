@@ -10,7 +10,7 @@ thumb_func_start func_08043e2c \n\
 /* 08043e34 */ LSRS R0, R0, 0x1B \n\
 /* 08043e36 */ CMP R0, 0xB @ Compare R0 and 0xB \n\
 /* 08043e38 */ BEQ branch_08043e3e \n\
-/* 08043e3a */ BL func_08018068 \n\
+/* 08043e3a */ BL gameplay_ignore_this_cue_result \n\
  \n\
 branch_08043e3e: \n\
 /* 08043e3e */ LDRH R0, [R4] \n\

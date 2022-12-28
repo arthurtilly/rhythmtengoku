@@ -24,77 +24,79 @@ enum BlockStatesEnum {
     BLOCK_STATE_OPEN_PISTON
 };
 
+
 /* POLYRHYTHM */
 
 
 // Graphics Init. 3
-void func_08035d1c(void) {
+void polyrhythm_init_gfx3(void) {
     func_0800c604(0);
     gameplay_start_screen_fade_in();
 }
 
 
 // Graphics Init. 2
-void func_08035d2c(void) {
+void polyrhythm_init_gfx2(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), D_089e59fc[gPolyrhythmInfo->version], 0x2000);
-    task_run_after(task, func_08035d1c, 0);
+    task = func_08002ee0(get_current_mem_id(), polyrhythm_gfx_tables[gPolyrhythmInfo->version], 0x2000);
+    task_run_after(task, polyrhythm_init_gfx3, 0);
 }
 
 
 // Graphics Init. 1
-void func_08035d6c(void) {
+void polyrhythm_init_gfx1(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_080087b4(get_current_mem_id(), D_089e5968);
-    task_run_after(task, func_08035d2c, 0);
+    task = func_080087b4(get_current_mem_id(), polyrhythm_buffered_textures);
+    task_run_after(task, polyrhythm_init_gfx2, 0);
 }
 
 
-// Game Engine Init.
-void func_08035d98(u32 ver) {
-    gPolyrhythmInfo->version = ver;
-    func_08035d6c(); // Init. Graphics
+// Game Engine Start
+void polyrhythm_engine_start(u32 version) {
+    gPolyrhythmInfo->version = version;
+    polyrhythm_init_gfx1(); // Init. Graphics
     scene_show_obj_layer(); // Init. BG Layers
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 2); // Init. BG1
+
     gameplay_set_input_buttons(A_BUTTON | DPAD_ALL, 0); // Init. Button Filters
-    func_08035f7c(); // Populate World
-    func_0803656c(); // Init. Rods
-    gPolyrhythmInfo->aButtonArrowSprite = func_0804d160(D_03005380, D_088f62fc, 0, 64, 64, 0x4800, 1, 0, 0x8000);
-    gPolyrhythmInfo->dPadArrowSprite = func_0804d160(D_03005380, D_088f631c, 0, 64, 64, 0x4800, 1, 0, 0x8000);
+    polyrhythm_populate_world(); // Populate World
+    polyrhythm_init_rods(); // Init. Rods
+    gPolyrhythmInfo->aButtonArrowSprite = func_0804d160(D_03005380, anim_polyrhythm_arrow_a, 0, 64, 64, 0x4800, 1, 0, 0x8000);
+    gPolyrhythmInfo->dPadArrowSprite = func_0804d160(D_03005380, anim_polyrhythm_arrow_dpad, 0, 64, 64, 0x4800, 1, 0, 0x8000);
     func_0804d7b4(D_03005380, gPolyrhythmInfo->aButtonArrowSprite, 0x1000000);
     func_0804d7b4(D_03005380, gPolyrhythmInfo->dPadArrowSprite, 0x1000000);
 }
 
 
-// Engine Event 0x05 (STUB)
-void func_08035e84(void) {
+// Engine Event 05 (STUB)
+void polyrhythm_engine_event_stub(void) {
 }
 
 
 // Game Engine Update
-void func_08035e88(void) {
-    func_0803698c();
+void polyrhythm_engine_update(void) {
+    polyrhythm_update_rods();
 }
 
 
-// Game Engine Close
-void func_08035e94(void) {
+// Game Engine Stop
+void polyrhythm_engine_stop(void) {
 }
 
 
 // Cue - Spawn
-void func_08035e98(struct Cue *cue, struct PolyrhythmCue *info, u32 lane) {
+void polyrhythm_cue_spawn(struct Cue *cue, struct PolyrhythmCue *info, u32 lane) {
     info->lane = lane;
 }
 
 
 // Cue - Update
-u32 func_08035eac(struct Cue *cue, struct PolyrhythmCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > (duration + beats_to_ticks(0xC))) {
+u32 polyrhythm_cue_update(struct Cue *cue, struct PolyrhythmCue *info, u32 runningTime, u32 duration) {
+    if (runningTime > (duration + beats_to_ticks(0x0C))) {
         return TRUE;
     }
     return FALSE;
@@ -102,18 +104,18 @@ u32 func_08035eac(struct Cue *cue, struct PolyrhythmCue *info, u32 runningTime, 
 
 
 // Cue - Despawn
-void func_08035ecc(struct Cue *cue, struct PolyrhythmCue *info) {
+void polyrhythm_cue_despawn(struct Cue *cue, struct PolyrhythmCue *info) {
 }
 
 
 // Cue - Hit
-void func_08035ed0(struct Cue *cue, struct PolyrhythmCue *info, u32 pressed, u32 released) {
+void polyrhythm_cue_hit(struct Cue *cue, struct PolyrhythmCue *info, u32 pressed, u32 released) {
     s32 pistonID;
 
-    pistonID = func_0803638c(info->lane);
+    pistonID = polyrhythm_push_piston(info->lane);
 
     if (!func_080364f4(info->lane, pistonID)) {
-        func_08018068();
+        gameplay_ignore_this_cue_result();
         if (pistonID >= 0) {
             gameplay_add_cue_result(0, 3, 0);
         }
@@ -122,13 +124,13 @@ void func_08035ed0(struct Cue *cue, struct PolyrhythmCue *info, u32 pressed, u32
 
 
 // Cue - Barely
-void func_08035f08(struct Cue *cue, struct PolyrhythmCue *info, u32 pressed, u32 released) {
+void polyrhythm_cue_barely(struct Cue *cue, struct PolyrhythmCue *info, u32 pressed, u32 released) {
     s32 pistonID;
 
-    pistonID = func_0803638c(info->lane);
+    pistonID = polyrhythm_push_piston(info->lane);
 
     if (!func_080364f4(info->lane, pistonID)) {
-        func_08018068();
+        gameplay_ignore_this_cue_result();
         if (pistonID >= 0) {
             gameplay_add_cue_result(0, 3, 0);
         }
@@ -137,51 +139,51 @@ void func_08035f08(struct Cue *cue, struct PolyrhythmCue *info, u32 pressed, u32
 
 
 // Cue - Miss
-void func_08035f40(struct Cue *cue, struct PolyrhythmCue *info) {
-    func_08018068();
+void polyrhythm_cue_miss(struct Cue *cue, struct PolyrhythmCue *info) {
+    gameplay_ignore_this_cue_result();
 }
 
 
 // Input Event
-void func_08035f4c(u32 pressed, u32 released) {
+void polyrhythm_input_event(u32 pressed, u32 released) {
     if (pressed & A_BUTTON) {
-        func_0803638c(1);
+        polyrhythm_push_piston(POLYRHYTHM_LANE_DOWNSIDE);
     }
     if (pressed & DPAD_ALL) {
-        func_0803638c(0);
+        polyrhythm_push_piston(POLYRHYTHM_LANE_UPSIDE);
     }
 }
 
 
 // Common Event 0 (Beat Animation)
-void func_08035f74(void) {
+void polyrhythm_common_beat_animation(void) {
 }
 
 
 // Common Event 1 (Display Text)
-void func_08035f78(void) {
+void polyrhythm_common_display_text(void) {
 }
 
 
 // Populate World
-void func_08035f7c(void) {
+void polyrhythm_populate_world(void) {
     struct PolyrhythmBlock *block;
     u32 i, j;
     s16 x, y;
     u16 z;
 
-    func_0804d160(D_03005380, D_088f61ec, 0, 32, 112, 0x4400, 0, 0, 0);
+    func_0804d160(D_03005380, anim_polyrhythm_world_start, 0, 32, 112, 0x4400, 0, 0, 0);
 
     for (i = 0; i < 2; i++) {
-        x = D_089e5c00[i];
-        y = D_089e5c04[i];
-        z = ((1 - i) << 10) + 0x4404;
+        x = polyrhythm_lane_start_x[i];
+        y = polyrhythm_lane_start_y[i];
+        z = ((1 - i) * 0x400) + 0x4404;
 
-        func_0804d160(D_03005380, D_088f62e4, 1 - i, 122, 111, z - 1, 0, 0, 0);
+        func_0804d160(D_03005380, anim_polyrhythm_signs, 1 - i, 122, 111, z - 1, 0, 0, 0);
 
         block = gPolyrhythmInfo->lanes[i];
         for (j = 0; j < 16; j++) {
-            block->sprite = func_0804d160(D_03005380, D_088f61fc, 0, x, y, z, 0, 0, 0);
+            block->sprite = func_0804d160(D_03005380, anim_polyrhythm_block, 0, x, y, z, 0, 0, 0);
             block->type = BLOCK_TYPE_PLATFORM;
             block->state = BLOCK_STATE_HIDDEN;
             x += 16;
@@ -195,7 +197,7 @@ void func_08035f7c(void) {
 
 
 // Get Next Two Pistons
-void func_080360a8(u32 lane, s32 *piston1ID, s32 *piston2ID) {
+void polyrhythm_get_pistons(u32 lane, s32 *piston1ID, s32 *piston2ID) {
     struct PolyrhythmBlock *block;
     u32 i;
 
@@ -220,21 +222,21 @@ void func_080360a8(u32 lane, s32 *piston1ID, s32 *piston2ID) {
 
 
 // Display Arrow Sprite
-void func_080360f8(u32 lane, s32 blockID) {
+void polyrhythm_display_arrow(u32 lane, s32 blockID) {
     struct PolyrhythmBlock *block;
     s16 arrowSprite;
     s32 x, y;
     u32 z;
 
-    if (gPolyrhythmInfo->version == 1) {
+    if (gPolyrhythmInfo->version == POLYRHYTHM_VER_REMIX) {
         return;
     }
 
-    if (gPolyrhythmInfo->version == 2) {
+    if (gPolyrhythmInfo->version == POLYRHYTHM_VER_2) {
         return;
     }
 
-    if (lane != 0) {
+    if (lane != POLYRHYTHM_LANE_UPSIDE) {
         arrowSprite = gPolyrhythmInfo->aButtonArrowSprite;
     } else {
         arrowSprite = gPolyrhythmInfo->dPadArrowSprite;
@@ -244,7 +246,7 @@ void func_080360f8(u32 lane, s32 blockID) {
         block = &gPolyrhythmInfo->lanes[lane][blockID];
         x = func_0804ddb0(D_03005380, block->sprite, 4);
         y = func_0804ddb0(D_03005380, block->sprite, 5);
-        z = func_080364d4(lane, blockID) - 5;
+        z = polyrhythm_get_block_z(lane, blockID) - 5;
         func_0804d55c(D_03005380, arrowSprite, x, y, z);
         func_0804d770(D_03005380, arrowSprite, TRUE);
     } else {
@@ -262,11 +264,11 @@ void func_080360f8(u32 lane, s32 blockID) {
 
 
 // Piston Push
-s32 func_0803638c(u32 lane) {
+s32 polyrhythm_push_piston(u32 lane) {
     struct PolyrhythmBlock *piston;
     s32 currentPistonID, nextPistonID;
 
-    func_080360a8(lane, &currentPistonID, &nextPistonID);
+    polyrhythm_get_pistons(lane, &currentPistonID, &nextPistonID);
 
     if (currentPistonID < 0) {
         return -1;
@@ -274,10 +276,10 @@ s32 func_0803638c(u32 lane) {
 
     piston = &gPolyrhythmInfo->lanes[lane][currentPistonID];
     piston->state = BLOCK_STATE_OPEN_PISTON;
-    func_0804d8f8(D_03005380, piston->sprite, D_089e5c1c[piston->type], 0, 1, 0x7f, 0);
+    func_0804d8f8(D_03005380, piston->sprite, polyrhythm_block_open_anim[piston->type], 0, 1, 0x7f, 0);
     gPolyrhythmInfo->unk104[lane]++;
-    play_sound(D_089e5c34[piston->type]);
-    func_080360f8(lane, nextPistonID);
+    play_sound(polyrhythm_block_open_sfx[piston->type]);
+    polyrhythm_display_arrow(lane, nextPistonID);
     return currentPistonID;
 }
 
@@ -286,38 +288,38 @@ s32 func_0803638c(u32 lane) {
 
 
 // Get Lane X
-s32 func_0803646c(u32 lane) {
-    return D_089e5c00[lane];
+s32 polyrhythm_get_lane_start_x(u32 lane) {
+    return polyrhythm_lane_start_x[lane];
 }
 
 
 // Get Lane Y
-s32 func_0803647c(u32 lane) {
-    return D_089e5c04[lane];
+s32 polyrhythm_get_lane_start_y(u32 lane) {
+    return polyrhythm_lane_start_y[lane];
 }
 
 
-// Get Lane something
-s32 func_0803648c(u32 lane, s32 blockID) {
+// Get Block Height
+s32 polyrhythm_get_block_height(u32 lane, s32 blockID) {
     struct PolyrhythmBlock *block;
     if (blockID < 0) {
-        return D_089e5c08[1];
+        return polyrhythm_block_heights[BLOCK_STATE_PLATFORM];
     }
     if (blockID > 15) {
         return 0;
     }
 
     block = &gPolyrhythmInfo->lanes[lane][blockID];
-    return D_089e5c08[block->state];
+    return polyrhythm_block_heights[block->state];
 }
 
 
 // Get Layer
-s32 func_080364d4(u32 lane, s32 blockID) {
+s32 polyrhythm_get_block_z(u32 lane, s32 blockID) {
     u32 z = 0x4400;
 
     if (blockID >= 0) {
-        if (lane == 0) {
+        if (lane == POLYRHYTHM_LANE_UPSIDE) {
             z += 0x400;
         }
         z += 4;
@@ -331,14 +333,13 @@ s32 func_080364d4(u32 lane, s32 blockID) {
 
 
 // Init. Rods
-void func_0803656c(void) {
-    struct PolyrhythmRod *rod;
+void polyrhythm_init_rods(void) {
+    struct PolyrhythmRod *rod = gPolyrhythmInfo->rods;
     u32 i;
 
-    rod = gPolyrhythmInfo->rods;
     for (i = 0; i < 8; i++) {
         rod->active = FALSE;
-        rod->sprite = func_0804d160(D_03005380, D_088f6114, 0, 32, 96, 0, 1, 0, 0x8000);
+        rod->sprite = func_0804d160(D_03005380, anim_polyrhythm_rod, 0, 32, 96, 0, 1, 0, 0x8000);
         rod++;
     }
 }
@@ -347,15 +348,15 @@ void func_0803656c(void) {
 // Get Rod Next Y Offset
 s32 func_080365c8(struct PolyrhythmRod *rod, s32 h) {
     s32 block1, block2;
-    s32 c, d;
+    s32 h1, h2;
 
     h += 8;
     block1 = (h - 2) >> 4;
     block2 = (h + 2) >> 4;
-    c = func_0803648c(rod->lane, block1);
-    d = func_0803648c(rod->lane, block2);
+    h1 = polyrhythm_get_block_height(rod->lane, block1);
+    h2 = polyrhythm_get_block_height(rod->lane, block2);
 
-    return (d < c) ? c : d;
+    return (h2 < h1) ? h1 : h2;
 }
 
 
@@ -371,15 +372,16 @@ s32 func_08036604(struct PolyrhythmRod *rod) {
 // Get Rod Next Layer
 s32 func_0803661c(struct PolyrhythmRod *rod, s32 h) {
     s32 block = (h + 6) >> 4;
-    return func_080364d4(rod->lane, block) - 2;
+
+    return polyrhythm_get_block_z(rod->lane, block) - 2;
 }
 
 
 // Update Rod (State 0)
 void func_08036630(struct PolyrhythmRod *rod) {
-    s32 prevYOffset; // r4
-    s32 prevHorizontal; // r5
-    u32 prevZ; // r7
+    s32 prevYOffset;
+    s32 prevHorizontal;
+    u32 prevZ;
     s32 x, y;
     u32 z;
 
@@ -409,8 +411,8 @@ void func_08036630(struct PolyrhythmRod *rod) {
 
     rod->x = rod->horizontal;
     rod->y = (-rod->horizontal / 2) + (-rod->yOffset);
-    x = func_0803646c(rod->lane) + rod->x;
-    y = func_0803647c(rod->lane) + rod->y;
+    x = polyrhythm_get_lane_start_x(rod->lane) + rod->x;
+    y = polyrhythm_get_lane_start_y(rod->lane) + rod->y;
     func_0804d55c(D_03005380, rod->sprite, x, y, z);
     func_0804d770(D_03005380, rod->sprite, TRUE);
     rod->runningTime++;
@@ -431,38 +433,38 @@ void func_08036988(void) {
 
 
 // Update Rods
-void func_0803698c(void) {
+void polyrhythm_update_rods(void) {
     struct PolyrhythmRod *rod;
     u32 i;
     s32 x, y;
     u32 z;
 
-    rod = gPolyrhythmInfo->rods;
+    for (rod = gPolyrhythmInfo->rods, i = 0; i < 8; rod++, i++) {
+        if (rod->active) {
+            switch (rod->unk0_b4) {
+                case 0:
+                    func_08036630(rod);
+                    break;
+                case 1:
+                    func_08036758(rod);
+                    break;
+                case 2:
+                    func_08036848(rod);
+                    break;
+            }
 
-    for (i = 0; i < 8; rod++, i++) {
-        if (!rod->active) continue;
-        switch (rod->unk0_b4) {
-            case 0:
-                func_08036630(rod);
-                break;
-            case 1:
-                func_08036758(rod);
-                break;
-            case 2:
-                func_08036848(rod);
-                break;
-        }
-        if (rod->stopped) {
-            rod->timeUntilExplosion--;
-            if (rod->timeUntilExplosion == 0) {
-                x = func_0804ddb0(D_03005380, rod->sprite, 4);
-                y = func_0804ddb0(D_03005380, rod->sprite, 5);
-                z = func_0804ddb0(D_03005380, rod->sprite, 6);
-                func_0804d160(D_03005380, D_088f62bc, 0, x, y, z, 1, 0, 3);
-                func_0804d770(D_03005380, rod->sprite, FALSE);
-                rod->active = FALSE;
-                gameplay_add_cue_result(gameplay_get_marking_criteria(), 2, 0);
-                play_sound(&s_f_poly_blast_seqData);
+            if (rod->stopped) {
+                rod->timeUntilExplosion--;
+                if (rod->timeUntilExplosion == 0) {
+                    x = func_0804ddb0(D_03005380, rod->sprite, 4);
+                    y = func_0804ddb0(D_03005380, rod->sprite, 5);
+                    z = func_0804ddb0(D_03005380, rod->sprite, 6);
+                    func_0804d160(D_03005380, anim_polyrhythm_rod_explode, 0, x, y, z, 1, 0, 3);
+                    func_0804d770(D_03005380, rod->sprite, FALSE);
+                    rod->active = FALSE;
+                    gameplay_add_cue_result(gameplay_get_marking_criteria(), 2, 0);
+                    play_sound(&s_f_poly_blast_seqData);
+                }
             }
         }
     }
@@ -470,34 +472,38 @@ void func_0803698c(void) {
 
 
 // Spawn Rod
-void func_08036aa4(u32 lane) {
-    struct PolyrhythmRod *rod;
+void polyrhythm_spawn_rod(u32 lane) {
+    struct PolyrhythmRod *rod = gPolyrhythmInfo->rods;
     u32 i;
 
-    rod = gPolyrhythmInfo->rods;
     for (i = 0; i < 8; i++) {
-        if (!rod->active) break;
+        if (!rod->active) {
+            break;
+        }
         rod++;
     }
-    if (i >= 8) return;
+
+    if (i >= 8) {
+        return;
+    }
 
     rod->active = TRUE;
     rod->stopped = FALSE;
     rod->horizontal = 0;
-    rod->yOffset = 0x10;
+    rod->yOffset = 16;
     rod->runningTime = 0;
     rod->maxDuration = beats_to_ticks(0x120);
     rod->lane = lane;
     rod->unk0_b4 = 0;
     rod->timeUntilExplosion = beats_to_ticks(0x18);
     func_0804dae0(D_03005380, rod->sprite, 1, 0, 0);
-    func_0804dcb8(D_03005380, rod->sprite, 0x200);
+    func_0804dcb8(D_03005380, rod->sprite, INT_TO_FIXED(2.0));
 }
 
 
-// Engine Event 0x03 (Spawn Rod)
-void func_08036b3c(u32 lane) {
-    func_08036aa4(lane);
+// Engine Event 03 (Spawn Rod)
+void polyrhythm_event_spawn_rod(u32 lane) {
+    polyrhythm_spawn_rod(lane);
 }
 
 

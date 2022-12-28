@@ -846,7 +846,7 @@ void night_walk_cue_hit(struct Cue *cue, struct NightWalkCue *info, u32 pressed,
     s32 timingOffset;
 
     if (gNightWalkInfo->stoppedScrolling) {
-        func_08018068();
+        gameplay_ignore_this_cue_result();
         return;
     }
 
@@ -928,7 +928,7 @@ void night_walk_cue_barely(struct Cue *cue, struct NightWalkCue *info, u32 press
     s32 timingOffset;
 
     if (gNightWalkInfo->stoppedScrolling) {
-        func_08018068();
+        gameplay_ignore_this_cue_result();
         return;
     }
 
@@ -969,7 +969,7 @@ void night_walk_cue_miss(struct Cue *cue, struct NightWalkCue *info) {
     s32 x, y;
 
     if (gNightWalkInfo->stoppedScrolling || !info->endOfBridge || info->hasOpened) {
-        func_08018068();
+        gameplay_ignore_this_cue_result();
         if (!gNightWalkInfo->stoppedScrolling && !info->endOfBridge && !info->hasOpened) {
             func_0804d8f8(D_03005380, info->boxSprite, anim_night_walk_note_bridge, 0, 0, 0, 0);
         }
@@ -978,7 +978,7 @@ void night_walk_cue_miss(struct Cue *cue, struct NightWalkCue *info) {
         x = func_0804ddb0(D_03005380, info->boxSprite, 4);
         y = func_0804ddb0(D_03005380, info->boxSprite, 5);
         night_walk_play_yan_hold_on(x, y);
-        func_08017b88(FALSE);
+        gameplay_enable_cue_spawning(FALSE);
     }
 }
 

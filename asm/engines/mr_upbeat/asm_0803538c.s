@@ -10,7 +10,7 @@ thumb_func_start mr_upbeat_cue_hit \n\
 /* 08035396 */ BL func_08035358 \n\
 /* 0803539a */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803539c */ BEQ branch_080353b2 \n\
-/* 0803539e */ BL func_08018068 \n\
+/* 0803539e */ BL gameplay_ignore_this_cue_result \n\
 /* 080353a2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080353a4 */ BL gameplay_add_cue_result_miss \n\
 /* 080353a8 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\

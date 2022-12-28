@@ -27,7 +27,7 @@ void sneaky_spirits_show_ghost(u32 position) {
     func_0804d5d4(D_03005380, ghostSprite, x, y);
     func_0804d770(D_03005380, ghostSprite, 1);
     func_0804cebc(D_03005380, ghostSprite, 0);
-    func_0804dcb8(D_03005380, ghostSprite, (get_beatscript_tempo() << 8) / 100);
+    func_0804dcb8(D_03005380, ghostSprite, INT_TO_FIXED(get_beatscript_tempo()) / 100u);
     func_0804d614(D_03005380, gSneakySpiritsInfo->ghostMask, x);
     play_sound_w_pitch_volume(&s_ghost_walk_seqData, (gSneakySpiritsInfo->ghostHeight * 15) >> 5, 0);
 }
@@ -91,7 +91,8 @@ void sneaky_spirits_update_rain(void) {
 
 // Set Rain Speed
 void sneaky_spirits_set_rain_speed(u32 slowMotion) {
-    u32 i, temp;
+    u32 i;
+    u32 animSpeed;
     s16 sprite;
 
     if (gSneakySpiritsInfo->rainSlow == slowMotion) return;
@@ -100,11 +101,11 @@ void sneaky_spirits_set_rain_speed(u32 slowMotion) {
     if (slowMotion) {
         for (i = 0; i < 30; i++) {
             sprite = gSneakySpiritsInfo->rainDrops[i];
-            temp = (!gSneakySpiritsInfo->freezeRain) ? 0x100 / (agb_random(3) + 1) : 0;
+            animSpeed = (!gSneakySpiritsInfo->freezeRain) ? INT_TO_FIXED(1.0) / (agb_random(3) + 1) : 0;
 
             func_0804d8f8(D_03005380, sprite, anim_sneaky_spirits_rain_slow, 0, 1, 0x7f, 0);
             func_0804d5d4(D_03005380, sprite, agb_random(240), agb_random(160));
-            func_0804dcb8(D_03005380, sprite, temp);
+            func_0804dcb8(D_03005380, sprite, animSpeed);
             func_0804d770(D_03005380, sprite, 1);
         }
 
@@ -121,7 +122,7 @@ void sneaky_spirits_set_rain_speed(u32 slowMotion) {
             sprite = gSneakySpiritsInfo->rainDrops[i];
 
             func_0804d770(D_03005380, sprite, 0);
-            func_0804dcb8(D_03005380, sprite, 0x100);
+            func_0804dcb8(D_03005380, sprite, INT_TO_FIXED(1.0));
         }
 
         for (i = 0; i < 20; i++) {
@@ -335,7 +336,7 @@ void sneaky_spirits_stop_slow_motion(void) {
     func_0804cebc(D_03005380, gSneakySpiritsInfo->door, 3);
     sneaky_spirits_set_rain_speed(FALSE);
     func_0804d8f8(D_03005380, gSneakySpiritsInfo->bow, anim_sneaky_spirits_bow_shoot, 0, 1, 0x7f, 0);
-    func_0804dcb8(D_03005380, gSneakySpiritsInfo->ghostWalk, (get_beatscript_tempo() << 8) / 100);
+    func_0804dcb8(D_03005380, gSneakySpiritsInfo->ghostWalk, INT_TO_FIXED(get_beatscript_tempo()) / 100u);
 }
 
 

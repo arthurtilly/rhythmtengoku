@@ -533,7 +533,7 @@ void gameplay_reset_cues(void) {
 void gameplay_init_cues(void) {
     gGameplayInfo.cues = NULL;
     gGameplayInfo.currentCue = NULL;
-    gGameplayInfo.unk5C = TRUE;
+    gGameplayInfo.cueSpawnsEnabled = TRUE;
     gGameplayInfo.currentMarkingCriteria = 0;
     gameplay_reset_cues();
 }
@@ -601,7 +601,7 @@ void gameplay_spawn_cue(s32 id) {
     const struct CueDefinition *cueDef;
     struct Cue *newCue, *prevCue;
 
-    if ((!gGameplayInfo.unk5C) || ((cueDef = gGameplayInfo.cueDefinitions[id]) == NULL)) {
+    if ((!gGameplayInfo.cueSpawnsEnabled) || ((cueDef = gGameplayInfo.cueDefinitions[id]) == NULL)) {
         return;
     }
 
@@ -650,13 +650,13 @@ void gameplay_spawn_cue(s32 id) {
 
     gGameplayInfo.cues = newCue;
 
-    gGameplayInfo.unk5D = FALSE;
+    gGameplayInfo.cancelThisCueSpawning = FALSE;
 
     if (cueDef->spawnFunc != NULL) {
         cueDef->spawnFunc(newCue, newCue->gameCueInfo, cueDef->spawnParam);
     }
 
-    if (gGameplayInfo.unk5D) {
+    if (gGameplayInfo.cancelThisCueSpawning) {
         gGameplayInfo.cues = prevCue;
         prevCue->next = NULL;
         mem_heap_dealloc(newCue);
@@ -667,9 +667,9 @@ void gameplay_spawn_cue(s32 id) {
 }
 
 
-// [func_08017b34] Set unk5D to TRUE
-void func_08017b34(void) {
-    gGameplayInfo.unk5D = TRUE;
+// [func_08017b34] Request Scene to Delete the Currently-Spawning Cue
+void gameplay_cancel_this_cue_spawn(void) {
+    gGameplayInfo.cancelThisCueSpawning = TRUE;
 }
 
 
@@ -702,9 +702,9 @@ void gameplay_despawn_cue(struct Cue *cue) {
 }
 
 
-// [func_08017b88] Set unk5C
-void func_08017b88(u32 arg) {
-    gGameplayInfo.unk5C = arg;
+// [func_08017b88] Enable Cue Spawning
+void gameplay_enable_cue_spawning(u32 enable) {
+    gGameplayInfo.cueSpawnsEnabled = enable;
 }
 
 
@@ -717,7 +717,7 @@ void gameplay_update_cue(struct Cue *cue) {
     cueDef = &cue->data;
 
     cue->runningTime++;
-    gGameplayInfo.unk78 = FALSE;
+    gGameplayInfo.ignoreThisCueResult = FALSE;
     if (cueDef->tempoDependent) {
         missTimeOffset = beats_to_ticks(cueDef->missWindowLate);
     } else {
@@ -729,7 +729,7 @@ void gameplay_update_cue(struct Cue *cue) {
             if (cueDef->missFunc != NULL) {
                 cueDef->missFunc(cue, cue->gameCueInfo);
             }
-            if (!gGameplayInfo.unk78) {
+            if (!gGameplayInfo.ignoreThisCueResult) {
                 gameplay_add_cue_result(cue->markingCriteria, CUE_RESULT_MISS, 0);
             }
             gameplay_play_sound(cue->missSfx);
@@ -913,9 +913,9 @@ s32 gameplay_get_last_hit_offset(void) {
     return gGameplayInfo.lastCueInputOffset;
 }
 
-// [func_08018068] Set unk78 to TRUE
-void func_08018068(void) {
-    gGameplayInfo.unk78 = TRUE;
+// [func_08018068] Prevent Scene from Updating Results for This Cue
+void gameplay_ignore_this_cue_result(void) {
+    gGameplayInfo.ignoreThisCueResult = TRUE;
 }
 
 
@@ -974,7 +974,7 @@ const struct SequenceData *gameplay_get_cue_miss_sfx(struct Cue *cue) {
 
 
 // [func_080180a8] Get Cue Data unk0
-u32 func_080180a8(struct Cue *cue) {
+u32 gameplay_get_cue_unk0(struct Cue *cue) {
     return cue->data.unk0;
 }
 
@@ -1003,9 +1003,18 @@ u32 gameplay_get_cue_marking_criteria(struct Cue *cue) {
 }
 
 
-#include "asm/gameplay/asm_080180c4.s"
+// [func_080180c4] Set Cue Hit Window
+void gameplay_set_cue_hit_window(s32 time) {
+    gGameplayInfo.earlinessRangeMax = -time;
+    gGameplayInfo.latenessRangeMin = time;
+}
 
-#include "asm/gameplay/asm_080180ec.s"
+
+// [func_080180ec] Set Cue Barely Window
+void gameplay_set_cue_barely_window(s32 time) {
+    gGameplayInfo.earlinessRangeMin = -time;
+    gGameplayInfo.latenessRangeMax = time;
+}
 
 
 // [func_08018114] Set Next Cue Duration
@@ -1014,10 +1023,25 @@ void gameplay_set_next_cue_duration(u32 duration) {
 }
 
 
-#include "asm/gameplay/asm_08018124.s"
+// [func_08018124] Get Cue and GameCueInfo
+void gameplay_get_cue_info(struct Cue **cue, void **info) {
+    *cue = gGameplayInfo.cues;
+    *info = (*cue)->gameCueInfo;
+}
 
-#include "asm/gameplay/asm_08018138.s"
+// [func_08018138] Get Previous Cue and GameCueInfo
+void gameplay_get_previous_cue_info(struct Cue *cue, struct Cue **prev, void **info) {
+    if ((cue != NULL) && (cue->prev != NULL)) {
+        *prev = cue->prev;
+        *info = (*prev)->gameCueInfo;
+    } else {
+        *prev = NULL;
+        *info = NULL;
+    }
+}
 
+
+// [func_08018154] Initialise Common Graphics (Perfect Campaign, etc.)
 #include "asm/gameplay/asm_08018154.s"
 
 

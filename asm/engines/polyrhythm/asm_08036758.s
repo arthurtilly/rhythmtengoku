@@ -59,13 +59,13 @@ branch_080367ba: \n\
 /* 080367c8 */ STR R0, [R6, 0xC] \n\
 /* 080367ca */ LDRB R0, [R6] \n\
 /* 080367cc */ LSRS R0, R0, 0x7 \n\
-/* 080367ce */ BL func_0803646c \n\
+/* 080367ce */ BL polyrhythm_get_lane_start_x \n\
 /* 080367d2 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 080367d4 */ LDR R0, [R6, 0x8] \n\
 /* 080367d6 */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 080367d8 */ LDRB R0, [R6] \n\
 /* 080367da */ LSRS R0, R0, 0x7 \n\
-/* 080367dc */ BL func_0803647c \n\
+/* 080367dc */ BL polyrhythm_get_lane_start_y \n\
 /* 080367e0 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 080367e2 */ LDR R0, [R6, 0xC] \n\
 /* 080367e4 */ ADDS R3, R3, R0 @ Set R3 to R3 + R0 \n\

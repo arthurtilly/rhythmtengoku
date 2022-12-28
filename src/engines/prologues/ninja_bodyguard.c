@@ -50,7 +50,7 @@ void func_0804732c(u32 ver) {
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
     gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_ninja_title, 0, 120, 130, 0, 0, 0x7f, 0);
-    func_0804dcb8(D_03005380, gPrologueInfo->textSprite, 0x180);
+    func_0804dcb8(D_03005380, gPrologueInfo->textSprite, INT_TO_FIXED(1.5));
 }
 
 

@@ -104,13 +104,13 @@ branch_080368fc: \n\
 /* 0803690c */ STR R0, [R6, 0xC] \n\
 /* 0803690e */ LDRB R0, [R6] \n\
 /* 08036910 */ LSRS R0, R0, 0x7 \n\
-/* 08036912 */ BL func_0803646c \n\
+/* 08036912 */ BL polyrhythm_get_lane_start_x \n\
 /* 08036916 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08036918 */ LDR R0, [R6, 0x8] \n\
 /* 0803691a */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 0803691c */ LDRB R0, [R6] \n\
 /* 0803691e */ LSRS R0, R0, 0x7 \n\
-/* 08036920 */ BL func_0803647c \n\
+/* 08036920 */ BL polyrhythm_get_lane_start_y \n\
 /* 08036924 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 08036926 */ LDR R0, [R6, 0xC] \n\
 /* 08036928 */ ADDS R3, R3, R0 @ Set R3 to R3 + R0 \n\
