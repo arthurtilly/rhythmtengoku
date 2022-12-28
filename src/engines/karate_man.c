@@ -152,10 +152,10 @@ void karate_common_init_tutorial(const struct Scene *scene) {
     if (scene != NULL) {
         gameplay_enable_tutorial(TRUE);
         gameplay_set_skip_destination(scene);
-        gameplay_set_text_advance_buttons(A_BUTTON, A_BUTTON);
+        gameplay_set_skip_icon(1, TRUE);
     } else {
         gameplay_enable_tutorial(FALSE);
-        gameplay_set_text_advance_buttons(0, 0);
+        gameplay_set_skip_icon(0, FALSE);
     } 
 }
 

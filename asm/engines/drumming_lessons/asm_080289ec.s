@@ -651,7 +651,7 @@ branch_08028fc6: \n\
 /* 08028ff0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08028ff2 */ BL gameplay_set_input_buttons \n\
 /* 08028ff6 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08028ff8 */ BL func_080177a4 \n\
+/* 08028ff8 */ BL gameplay_prevent_dpad_overlap \n\
 /* 08028ffc */ LDR R1, [R5] \n\
 /* 08028ffe */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08029000 */ STRB R0, [R1, 0x1] \n\
@@ -720,7 +720,7 @@ branch_08028fc6: \n\
 branch_08029084: \n\
 /* 08029084 */ BL func_080287b4 \n\
 /* 08029088 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0802908a */ BL func_080173d0 \n\
+/* 0802908a */ BL gameplay_assess_irrelevant_inputs \n\
 /* 0802908e */ ADD SP, 0x20 \n\
 /* 08029090 */ POP {R3-R5} \n\
 /* 08029092 */ MOV R8, R3 @ Set R8 to R3 \n\

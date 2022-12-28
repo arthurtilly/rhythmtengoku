@@ -154,10 +154,9 @@ struct GameplaySceneInfo {
 	s32 unk0;
 	s32 unk4;
 	u8 playInputsEnabled; // A, B, +, L, R
-	u8 unk9; // Register inputs with no relevant cue.
+	u8 assessIrrelevantInputs; // Register inputs with no relevant cue.
     u16 buttonPressFilter;
 	u16 buttonReleaseFilter;
-	s16 unkE;
 	const struct GameEngine *gameEngine; // Game Engine Pointer
 	void *gameEngineInfo; // Same value as D_030055d0
 	struct Cue *cues; // Linked List (most recent element)
@@ -187,34 +186,32 @@ struct GameplaySceneInfo {
     s16 pauseOptionsSprite;
     u8 unpausing; // Pause Menu is currently being exited.
     u8 currentPauseOption;
-    u16 unk92;
-    u16 paletteBuffer[0x200]; // Palette Buffer
+    u32 paletteBuffer[0x100]; // Palette Buffer
     s16 skipTutorialSprite;
     s16 aButtonSprite;
-    struct TextPrinter *textPrinter; // text handler
-    u8  unk49C; // Text-related
-    u8  unk49D; // Text-related
+    struct TextPrinter *textPrinter;
+    u8  pausedAtTextBox;
+    u8  printingTutorialText;
     u16 textButtonPressFilter;
     u16 textButtonReleaseFilter;
     s16 perfectSprite;
     u8  goingForPerfect;
     u8  assessPerfectInputs;
     u8  perfectFailed;
-    u8  unk4A7;
-    u8  unk4A8;
+    u8  missPunishmentTimer;
+    u8  missPunishmentInterval;
     s8  earlinessRangeMax; // Input Timing Window Duration - Early, Max.
     s8  latenessRangeMin; // Input Timing Window Duration - Late, Min.
     s8  earlinessRangeMin; // Input Timing Window Duration - Early, Min.
     s8  latenessRangeMax; // Input Timing Window Duration - Late, Max.
     u16 sfxTempo; // Assumed original tempo of any sound effect played.
     u16 skipTutorialButton; // Button filter for skipping tutorials.
-    u16 unk4B2;
-    u16 unk4B4[0x80];
-    u8  unk5B4;
-    u8  unk5B5;
-    u8  unk5B6;
-    u8  unk5B7;
-    u8  unk5B8;
+    s32 interEngineVariableSpace[64];
+    u8  dpadCannotOverlap;
+    u8  dpadIsOpen;
+    u8  dpadClosedTimer;
+    u8  mercyEnabled;
+    u8  forgivableMisses;
 };
 
 // Results Scene Info

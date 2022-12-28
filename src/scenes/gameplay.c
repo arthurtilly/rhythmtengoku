@@ -34,7 +34,7 @@ static const struct Scene *D_03001328; // ?
 
 
 // [func_08016e04] Set Sound Effect Original Tempo
-void gameplay_get_sound_tempo(u32 tempo) {
+void gameplay_set_sound_tempo(u32 tempo) {
     gGameplayInfo.sfxTempo = tempo;
 }
 
@@ -44,7 +44,7 @@ struct SoundPlayer *gameplay_align_soundplayer_to_tempo(struct SoundPlayer *play
     u16 tempo = gGameplayInfo.sfxTempo;
 
     if (tempo != 0) {
-        set_soundplayer_speed(player, Div(get_beatscript_tempo() << 8, tempo));
+        set_soundplayer_speed(player, Div(INT_TO_FIXED(get_beatscript_tempo()), tempo));
     }
 
     return player;
@@ -76,12 +76,12 @@ struct SoundPlayer *gameplay_play_sound_in_player_w_pitch_volume(u32 player, con
 
 
 // [func_08016e94] Initialise Static Variables
-void gameplay_start_scene_static_var(void) {
+void gameplay_init_scene_static_var(void) {
     gameplay_pause_menu_set_quit_destination(&D_089ddbcc);
 }
 
 
-// [func_08016ea4] Graphics Init. 0
+// [func_08016ea4] Graphics Init. 1
 void gameplay_init_gfx1(void) {
     u32 data;
 
@@ -96,18 +96,18 @@ void gameplay_start_scene(s32 arg) {
     func_08007324(FALSE);
     func_080073f0();
     gameplay_init_overlay();
-    gameplay_init_pause_menu(); // Script-related, gPauseMenu
+    gameplay_init_pause_menu();
     gameplay_set_text_printer(NULL);
     gGameplayInfo.gameEngine = NULL;
     gameplay_init_cues();
     func_08019324(FALSE); // Disable input assessment.
-    func_080192a4(); // Results-related, some operation on bit-wise struct D_03001338
-    gGameplayInfo.unk5B7 = TRUE;
-    gGameplayInfo.unk5B8 = 0;
+    func_080192a4(); // Reset results handler.
+    gGameplayInfo.mercyEnabled = TRUE;
+    gGameplayInfo.forgivableMisses = 0;
     gGameplayInfo.playInputsEnabled = FALSE;
     gGameplayInfo.buttonPressFilter = 0;
     gGameplayInfo.buttonReleaseFilter = 0;
-    gGameplayInfo.unk9 = TRUE;
+    gGameplayInfo.assessIrrelevantInputs = TRUE;
     gGameplayInfo.unk64 = 0;
     gGameplayInfo.isTutorial = FALSE;
     gGameplayInfo.skippingTutorial = FALSE;
@@ -119,10 +119,10 @@ void gameplay_start_scene(s32 arg) {
     gGameplayInfo.goingForPerfect = FALSE;
     gGameplayInfo.assessPerfectInputs = TRUE;
     gGameplayInfo.perfectFailed = FALSE;
-    gGameplayInfo.unk4A7 = 0;
-    gGameplayInfo.unk4A8 = 0xC;
-    gGameplayInfo.unk5B4 = 1;
-    gGameplayInfo.unk5B5 = 1;
+    gGameplayInfo.missPunishmentTimer = 0;
+    gGameplayInfo.missPunishmentInterval = 0x0C;
+    gGameplayInfo.dpadCannotOverlap = TRUE;
+    gGameplayInfo.dpadIsOpen = TRUE;
     gGameplayInfo.earlinessRangeMax = -1;
     gGameplayInfo.latenessRangeMin = 1;
     gGameplayInfo.earlinessRangeMin = -0x80;
@@ -155,10 +155,10 @@ void gameplay_update_scene(s32 arg) {
     pressed = D_03004afc & gGameplayInfo.buttonPressFilter;
     released = D_03004b00 & gGameplayInfo.buttonReleaseFilter;
 
-    if (gGameplayInfo.unk5B4 == 1) {
-        if (gGameplayInfo.unk5B5 != 0) {
-            if (pressed & (DPAD_DOWN | DPAD_UP | DPAD_LEFT | DPAD_RIGHT)) {
-                buttonsOnly = pressed & ~(DPAD_DOWN | DPAD_UP | DPAD_LEFT | DPAD_RIGHT);
+    if (gGameplayInfo.dpadCannotOverlap == TRUE) {
+        if (gGameplayInfo.dpadIsOpen) {
+            if (pressed & DPAD_ALL) {
+                buttonsOnly = pressed & ~DPAD_ALL;
                 if (pressed & DPAD_UP) {
                     pressed = DPAD_UP;
                 }
@@ -172,17 +172,17 @@ void gameplay_update_scene(s32 arg) {
                     pressed = DPAD_RIGHT;
                 }
                 pressed |= buttonsOnly;
-                gGameplayInfo.unk5B5 = 0;
-                gGameplayInfo.unk5B6 = 10;
+                gGameplayInfo.dpadIsOpen = FALSE;
+                gGameplayInfo.dpadClosedTimer = 10;
             }
         } else {
-            pressed &= ~(DPAD_DOWN | DPAD_UP | DPAD_LEFT | DPAD_RIGHT);
-            if (D_03004ac0 & (DPAD_DOWN | DPAD_UP | DPAD_LEFT | DPAD_RIGHT)) {
-                if (--gGameplayInfo.unk5B6 == 0) {
-                    gGameplayInfo.unk5B5 = 1;
+            pressed &= ~DPAD_ALL;
+            if (D_03004ac0 & DPAD_ALL) {
+                if (--gGameplayInfo.dpadClosedTimer == 0) {
+                    gGameplayInfo.dpadIsOpen = TRUE;
                 }
             } else {
-                gGameplayInfo.unk5B5 = 1;
+                gGameplayInfo.dpadIsOpen = TRUE;
             }
         }
     }
@@ -196,8 +196,8 @@ void gameplay_update_scene(s32 arg) {
     gameplay_update_all_cues(); // Update Cues
     gameplay_update_text(); // Update Text
 
-    if (gGameplayInfo.unk4A7 != 0) {
-        gGameplayInfo.unk4A7--;
+    if (gGameplayInfo.missPunishmentTimer != 0) {
+        gGameplayInfo.missPunishmentTimer--;
     }
 
     if (D_03004afc & gGameplayInfo.skipTutorialButton) {
@@ -218,8 +218,8 @@ u32 gameplay_inputs_are_enabled(void) {
 }
 
 
-// Gameplay - Clear Secondary Palette Buffer
-void func_08017168(Palette buffer) {
+// [func_08017168] Clear Secondary Palette Buffer
+void gameplay_clear_palette_buffer(Palette buffer) {
     dma3_fill(0, buffer, 0x3E0, 0x20, 0x200);
 }
 
@@ -259,7 +259,7 @@ s32 gameplay_run_common_event(s32 param, s32 id) {
 
 
 // [func_08017380] Set Parameter for Engine-Specific Event
-void gameplay_set_engine_event_arg(s32 param) {
+void gameplay_set_engine_event_param(s32 param) {
     gGameplayInfo.engineFuncParam = param;
 }
 
@@ -286,9 +286,9 @@ void gameplay_enable_inputs(u32 enable) {
 }
 
 
-// [func_080173d0] Set unk9
-void func_080173d0(u32 arg) {
-    gGameplayInfo.unk9 = arg;
+// [func_080173d0] Assess Non-Cue Inputs
+void gameplay_assess_irrelevant_inputs(u32 arg) {
+    gGameplayInfo.assessIrrelevantInputs = arg;
 }
 
 
@@ -459,22 +459,54 @@ void gameplay_register_perfect_input(void) {
 
 // [func_08017728] Run Game Engine Event (convenience method)
 s32 gameplay_run_engine_event_w_param(const struct GameEngine *engine, u32 function, s32 param) {
-    gameplay_set_engine_event_arg(param);
+    gameplay_set_engine_event_param(param);
     return gameplay_run_engine_event(engine, function);
 }
 
 
-#include "asm/gameplay/asm_08017744.s"
+// [func_08017744] Set Miss Punishment Interval
+void gameplay_set_miss_punishment_duration(u32 duration) {
+    gGameplayInfo.missPunishmentInterval = duration;
+}
 
-#include "asm/gameplay/asm_08017758.s"
 
-#include "asm/gameplay/asm_0801777c.s"
+// [func_08017758] Set Inter-Engine Variable
+void gameplay_set_inter_engine_variable(u32 i, s32 val) {
+    if (i >= 64) {
+        return;
+    }
 
-#include "asm/gameplay/asm_080177a4.s"
+    gGameplayInfo.interEngineVariableSpace[i] = val;
+}
 
-#include "asm/gameplay/asm_080177c8.s"
 
-#include "asm/gameplay/asm_080177dc.s"
+// [func_0801777c] Get Inter-Engine Variable
+s32 gameplay_get_inter_engine_variable(u32 i) {
+    if (i >= 64) {
+        return 0;
+    }
+
+    return gGameplayInfo.interEngineVariableSpace[i];
+}
+
+
+// [func_080177a4] Set D-Pad Input Overlap Handling
+void gameplay_prevent_dpad_overlap(u32 preventOverlap) {
+    gGameplayInfo.dpadCannotOverlap = preventOverlap;
+    gGameplayInfo.dpadIsOpen = TRUE;
+}
+
+
+// [func_080177c8] Enable Mercy
+void gameplay_enable_mercy(u32 enable) {
+    gGameplayInfo.mercyEnabled = enable;
+}
+
+
+// [func_080177dc] Set Total Forgivable Misses
+void gameplay_set_mercy_count(u32 total) {
+    gGameplayInfo.forgivableMisses = total;
+}
 
 
 // [func_080177f0] Scene Close
@@ -555,12 +587,14 @@ u32 gameplay_get_marking_criteria(void) {
 void gameplay_add_cue_result(u32 markingCriteria, u32 cueResult, s32 timingOffset) {
     u32 noCue = (cueResult == CUE_RESULT_NONE);
 
-    if (!gGameplayInfo.unk9 && noCue) return;
+    if (!gGameplayInfo.assessIrrelevantInputs && noCue) {
+        return;
+    }
 
     // some kind of score-related mercy system or something
-    if ((cueResult == CUE_RESULT_MISS) && gGameplayInfo.unk5B7 && (gGameplayInfo.unk5B8 != 0)) {
+    if ((cueResult == CUE_RESULT_MISS) && gGameplayInfo.mercyEnabled && (gGameplayInfo.forgivableMisses != 0)) {
         cueResult = CUE_RESULT_BARELY;
-        gGameplayInfo.unk5B8--;
+        gGameplayInfo.forgivableMisses--;
     }
 
     // Results
@@ -771,8 +805,9 @@ s32 gameplay_calculate_input_timing(struct Cue *cue, u16 pressed, u16 released, 
     cueDef = &cue->data;
     input = (cueDef->buttonFilter & 0x8000) ? released : pressed;
 
-    if ((input & cueDef->buttonFilter & ~0x8000) == 0) return CUE_TIMING_MISS;
-    if (cue->unk48_b0 || cue->hasExpired) return CUE_TIMING_MISS;
+    if (((input & cueDef->buttonFilter & ~0x8000) == 0) || cue->unk48_b0 || cue->hasExpired) {
+        return CUE_TIMING_MISS;
+    }
 
     runningTime = cue->runningTime;
     duration = cue->duration;
@@ -794,7 +829,7 @@ s32 gameplay_calculate_input_timing(struct Cue *cue, u16 pressed, u16 released, 
     missEarly = func_080087d4(missEarly, gGameplayInfo.earlinessRangeMin, gGameplayInfo.earlinessRangeMax);
     missLate = func_080087d4(missLate, gGameplayInfo.latenessRangeMin, gGameplayInfo.latenessRangeMax);
 
-    if (gGameplayInfo.unk4A7) {
+    if (gGameplayInfo.missPunishmentTimer != 0) {
         hitEarly = -1;
         hitLate = 1;
     }
@@ -804,17 +839,22 @@ s32 gameplay_calculate_input_timing(struct Cue *cue, u16 pressed, u16 released, 
     missEarly += duration;
     missLate += duration;
 
-    if ((runningTime < missEarly) || (runningTime > missLate)) return CUE_TIMING_MISS;
+    if ((runningTime < missEarly) || (runningTime > missLate)) {
+        return CUE_TIMING_MISS;
+    }
 
     if (cueDef->missCondition != NULL) { // unused feature! cool!
-        if (cueDef->missCondition(cue, cue->gameCueInfo)) return CUE_TIMING_MISS;
+        if (cueDef->missCondition(cue, cue->gameCueInfo)) {
+            return CUE_TIMING_MISS;
+        }
     }
 
     *offset = runningTime - duration;
-
-    if ((runningTime >= hitEarly) && (runningTime <= hitLate)) return CUE_TIMING_HIT;
-
-    return CUE_TIMING_BARELY;
+    if ((runningTime >= hitEarly) && (runningTime <= hitLate)) {
+        return CUE_TIMING_HIT;
+    } else {
+        return CUE_TIMING_BARELY;
+    }
 }
 
 
@@ -837,12 +877,14 @@ void gameplay_update_inputs(u32 pressed, u32 released) {
     unrelatedInputs = 0;
 
     for (i = 0; i < 32; i++) {
-        currentInput = (pressed | (released << 0x10)) & (1 << i);
+        currentInput = (pressed | (released << 16)) & (1 << i);
 
-        if (currentInput == 0) continue;
+        if (currentInput == 0) {
+            continue;
+        }
 
         press = currentInput;
-        release = currentInput >> 0x10;
+        release = currentInput >> 16;
         missedCuesForThisButton = TRUE;
         closestCue = NULL;
         closestCueTimingOffset = 9999;
@@ -888,11 +930,11 @@ void gameplay_update_inputs(u32 pressed, u32 released) {
     }
 
     if (!hitAnyCue) {
-        unrelatedInputs = press | (release << 0x10);
+        unrelatedInputs = press | (release << 16);
         missInput = TRUE;
     }
 
-    unrelatedInputs &= gGameplayInfo.buttonPressFilter | (gGameplayInfo.buttonReleaseFilter << 0x10);
+    unrelatedInputs &= gGameplayInfo.buttonPressFilter | (gGameplayInfo.buttonReleaseFilter << 16);
 
     if (unrelatedInputs == 0) {
         missInput = FALSE;
@@ -901,9 +943,9 @@ void gameplay_update_inputs(u32 pressed, u32 released) {
     if (missInput) {
         gameplay_add_cue_result(0, CUE_RESULT_NONE, 0); // marking criteria, enum, accuracy
         if (gGameplayInfo.gameEngine->inputFunc != NULL) {
-            gGameplayInfo.gameEngine->inputFunc(unrelatedInputs & 0xffff, unrelatedInputs >> 0x10);
+            gGameplayInfo.gameEngine->inputFunc(unrelatedInputs & 0xffff, unrelatedInputs >> 16);
         }
-        gGameplayInfo.unk4A7 = beats_to_ticks(gGameplayInfo.unk4A8);
+        gGameplayInfo.missPunishmentTimer = beats_to_ticks(gGameplayInfo.missPunishmentInterval);
     }
 }
 
@@ -1140,7 +1182,11 @@ void gameplay_init_pause_menu(void) {
 }
 
 
-#include "asm/gameplay/asm_0801853c.s"
+// [func_0801853c] Set Skip Tutorial Icon Display
+void gameplay_set_skip_icon(u32 corner, u32 show) {
+    func_0804cebc(D_03005380, gGameplayInfo.skipTutorialSprite, corner);
+    func_0804d770(D_03005380, gGameplayInfo.skipTutorialSprite, show);
+}
 
 
 // [func_0801858c] Set Text Button Style
@@ -1161,8 +1207,8 @@ void gameplay_display_text_advance_icon(s16 x, s16 y, s32 show) {
 // [func_08018630] Initialise Text Elements
 void gameplay_set_text_printer(struct TextPrinter *textPrinter) {
     gGameplayInfo.textPrinter = textPrinter;
-    gGameplayInfo.unk49C = 0;
-    gGameplayInfo.unk49D = 0;
+    gGameplayInfo.pausedAtTextBox = FALSE;
+    gGameplayInfo.printingTutorialText = FALSE;
 }
 
 
@@ -1170,12 +1216,12 @@ void gameplay_set_text_printer(struct TextPrinter *textPrinter) {
 void gameplay_display_text(const char *text) {
     text_printer_set_string(gGameplayInfo.textPrinter, text);
     gameplay_display_text_advance_icon(0, 0, FALSE);
-    gGameplayInfo.unk49D = 0;
+    gGameplayInfo.printingTutorialText = FALSE;
 }
 
 
 //
-void gameplay_align_text_advance_icon_to_text(void) {
+void gameplay_align_text_advance_icon(void) {
     s16 x, y;
 
     if (gGameplayInfo.textPrinter != NULL) {
@@ -1190,30 +1236,34 @@ void gameplay_display_text_and_wait(void) {
     if (gGameplayInfo.skippingTutorial) return;
 
     if (text_printer_is_printing(gGameplayInfo.textPrinter)) {
-        gGameplayInfo.unk49D = TRUE;
+        gGameplayInfo.printingTutorialText = TRUE;
     } else {
-        gameplay_align_text_advance_icon_to_text();
-        gGameplayInfo.unk49D = FALSE;
+        gameplay_align_text_advance_icon();
+        gGameplayInfo.printingTutorialText = FALSE;
     }
     gGameplayInfo.textButtonPressFilter = gGameplayInfo.buttonPressFilter;
     gGameplayInfo.textButtonReleaseFilter = gGameplayInfo.buttonReleaseFilter;
     gameplay_set_input_buttons(0, 0);
     pause_beatscript_scene(TRUE);
-    gGameplayInfo.unk49C = TRUE;
+    gGameplayInfo.pausedAtTextBox = TRUE;
 }
 
 
 // [func_0801875c] Update Text
 void gameplay_update_text(void) {
-    if (gGameplayInfo.skippingTutorial) return;
+    if (gGameplayInfo.skippingTutorial) {
+        return;
+    }
 
     text_printer_update(gGameplayInfo.textPrinter);
 
-    if (gGameplayInfo.unk49C == 0) return;
+    if (!gGameplayInfo.pausedAtTextBox) {
+        return;
+    }
 
-    if (!text_printer_is_printing(gGameplayInfo.textPrinter) && gGameplayInfo.unk49D) {
-        gameplay_align_text_advance_icon_to_text(); // Text-related
-        gGameplayInfo.unk49D = FALSE;
+    if (!text_printer_is_printing(gGameplayInfo.textPrinter) && gGameplayInfo.printingTutorialText) {
+        gameplay_align_text_advance_icon(); // Text-related
+        gGameplayInfo.printingTutorialText = FALSE;
     }
 
     if (!text_printer_is_printing(gGameplayInfo.textPrinter) && (D_03004afc & A_BUTTON)) {
@@ -1222,7 +1272,7 @@ void gameplay_update_text(void) {
         play_sound(&s_f_send_mes_seqData);
         gameplay_set_input_buttons(gGameplayInfo.textButtonPressFilter, gGameplayInfo.textButtonReleaseFilter);
         pause_beatscript_scene(FALSE);
-        gGameplayInfo.unk49C = 0;
+        gGameplayInfo.pausedAtTextBox = FALSE;
     }
 }
 

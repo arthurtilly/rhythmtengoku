@@ -12,7 +12,7 @@ thumb_func_start func_08047ecc \n\
 /* 08047eda */ BL set_soundplayer_speed \n\
 /* 08047ede */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08047ee0 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08047ee2 */ BL func_08017758 \n\
+/* 08047ee2 */ BL gameplay_set_inter_engine_variable \n\
 /* 08047ee6 */ POP {R4} \n\
 /* 08047ee8 */ POP {R0} \n\
 /* 08047eea */ BX R0 \n\

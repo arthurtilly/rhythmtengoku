@@ -255,8 +255,8 @@ extern void func_08019324();
 extern void gameplay_set_marking_criteria();
 #define BSC3_SET_CURRENT_MARKING_CRITERIA(id) BSC_RUN_FUNC_1(gameplay_set_marking_criteria,id)
 
-extern void func_080177dc();
-#define BSC3_FORGIVE_X_MISSES(x) BSC_RUN_FUNC_1(func_080177dc,x)
+extern void gameplay_set_mercy_count();
+#define BSC3_FORGIVE_X_MISSES(x) BSC_RUN_FUNC_1(gameplay_set_mercy_count,x)
 
 
 
@@ -271,9 +271,9 @@ extern void gameplay_check_for_perfect();
 extern void gameplay_set_current_engine();
 #define BSC4_LOAD_GAME_ENGINE(engine,version) BSC_RUN_FUNC_2(gameplay_set_current_engine,version,engine)
 
-extern void gameplay_set_engine_event_arg();
+extern void gameplay_set_engine_event_param();
 extern s32 gameplay_run_engine_event();
-#define BSC4_GAME_ENGINE_EVENT(engine,event,args) BSC_RUN_FUNC_1(gameplay_set_engine_event_arg,args), BSC_RUN_FUNC_2(gameplay_run_engine_event,event,engine)
+#define BSC4_GAME_ENGINE_EVENT(engine,event,args) BSC_RUN_FUNC_1(gameplay_set_engine_event_param,args), BSC_RUN_FUNC_2(gameplay_run_engine_event,event,engine)
 
 extern s32 gameplay_run_common_event();
 #define BSC4_GAME_COMMON_EVENT(event,arg) BSC_RUN_FUNC_2(gameplay_run_common_event,event,arg)

@@ -182,7 +182,7 @@ branch_0804465c: \n\
 /* 080446b6 */ CMP R7, 0x5 @ Compare R7 and 0x5 \n\
 /* 080446b8 */ BLS branch_0804465c \n\
 /* 080446ba */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 080446bc */ BL func_080177a4 \n\
+/* 080446bc */ BL gameplay_prevent_dpad_overlap \n\
 /* 080446c0 */ BL func_08044268 \n\
 /* 080446c4 */ LDR R0, [R4] \n\
 /* 080446c6 */ LDR R1, =0x35e \n\

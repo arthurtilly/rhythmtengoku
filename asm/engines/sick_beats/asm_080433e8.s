@@ -117,7 +117,7 @@ thumb_func_start func_080433e8 \n\
 /* 080434e0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080434e2 */ BL gameplay_set_input_buttons \n\
 /* 080434e6 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 080434e8 */ BL func_080177a4 \n\
+/* 080434e8 */ BL gameplay_prevent_dpad_overlap \n\
 /* 080434ec */ LDR R0, [R4] \n\
 /* 080434ee */ LDR R1, =0x202 \n\
 /* 080434f0 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

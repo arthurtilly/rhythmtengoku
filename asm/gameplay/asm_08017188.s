@@ -66,10 +66,10 @@ branch_080171fe: \n\
 /* 08017216 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
 /* 08017218 */ BL scene_hide_bg_layer \n\
 /* 0801721c */ BL func_08004058 \n\
-/* 08017220 */ LDR R0, =func_08017168 \n\
+/* 08017220 */ LDR R0, =gameplay_clear_palette_buffer \n\
 /* 08017222 */ BL func_08007344 \n\
 /* 08017226 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 08017228 */ BL func_080177a4 \n\
+/* 08017228 */ BL gameplay_prevent_dpad_overlap \n\
 /* 0801722c */ LDR R4, =D_030046a4 \n\
 /* 0801722e */ LDR R2, [R4] \n\
 /* 08017230 */ LDR R0, =0x4ae \n\

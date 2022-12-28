@@ -21,7 +21,7 @@ void init_scene_static_var(void) {
 	func_0801350c(); // Game Select
 	func_08018e60(); // Results (Score-Type)
 	func_0801242c(); // Main Menu
-	gameplay_start_scene_static_var(); // Gameplay
+	gameplay_init_scene_static_var(); // Gameplay
 	func_08010490(); // Rhythm Library
 	func_08011ec0(); // Rhythm Data Room
 	func_0801c1b8(); // Studio

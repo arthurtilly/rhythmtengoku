@@ -22,12 +22,12 @@ extern const struct Animation anim_gameplay_perfect_miss[]; // Fail Perfect
 extern const struct Animation anim_gameplay_perfect_hit[]; // Perfect Input
 
 extern const struct GraphicsTable D_089cfd7c[]; // Graphics Table (Common Gameplay Graphics/Palettes, e.g. Pause Menu)
-extern const struct CompressedGraphics *D_089cfda0[]; // Buffered Textures List
+extern const struct CompressedGraphics *const D_089cfda0[]; // Buffered Textures List
 extern const struct PauseMenuDefinition D_089cfde0; // Pause Handler Definition
-extern const struct Animation *D_089cfdf0[2]; // A Button Prompt Animations { 0 = Black; 1 = White }
+extern const struct Animation *const D_089cfdf0[2]; // A Button Prompt Animations { 0 = Black; 1 = White }
 
 /* AUDIO */
-extern void gameplay_get_sound_tempo(u32 tempo); // [func_08016e04] Define Sound Effect Base Tempo
+extern void gameplay_set_sound_tempo(u32 tempo); // [func_08016e04] Define Sound Effect Base Tempo
 extern struct SoundPlayer *gameplay_align_soundplayer_to_tempo(struct SoundPlayer *player); // [func_08016e18] Match SoundPlayer to Current Tempo
 extern struct SoundPlayer *gameplay_play_sound(const struct SequenceData *sfx); // [func_08016e54] Play Sound
 extern struct SoundPlayer *gameplay_play_sound_in_player(u32 player, const struct SequenceData *sfx); // [func_08016e64] Play Sound
@@ -35,23 +35,23 @@ extern struct SoundPlayer *gameplay_play_sound_w_pitch_volume(const struct Seque
 extern struct SoundPlayer *gameplay_play_sound_in_player_w_pitch_volume(u32 player, const struct SequenceData *sfx, u32 volume, s32 pitch); // [func_08016e84] Play Sound
 
 /* SCENE */
-extern void gameplay_start_scene_static_var(void); // [func_08016e94] Initialise Static Variables
-extern void gameplay_init_gfx1(void); // [func_08016ea4] Graphics Init. 0
+extern void gameplay_init_scene_static_var(void); // [func_08016e94] Initialise Static Variables
+extern void gameplay_init_gfx1(void); // [func_08016ea4] Graphics Init. 1
 extern void gameplay_start_scene(s32 arg); // [func_08016ec4] Scene Init.
 extern void func_08016ffc(s32 arg); // [func_08016ffc] Scene STUB
 extern void gameplay_update_scene(s32 arg); // [func_08017000] Scene Main
 
 /* ... */
 extern u32 gameplay_inputs_are_enabled(void); // [func_0801714c] Check if Play Inputs are Enabled
-extern void func_08017168(Palette buffer); // [func_08017168] Clear Secondary Palette Buffer (loaded to D_03004b10.unk858)
+extern void gameplay_clear_palette_buffer(Palette buffer); // [func_08017168] Clear Secondary Palette Buffer (loaded to D_03004b10.unk858)
 // extern ? gameplay_set_current_engine(?); // [func_08017188] Load New Engine
 extern void *gameplay_get_engine_info(void); // [func_0801732c] Get Current Game Engine Info
 extern void gameplay_set_input_buttons(u16 press, u16 release); // [func_08017338] Set Input Button Filters
 extern s32  gameplay_run_common_event(s32 param, s32 id); // [func_08017348] Run Engine-Common Event
-extern void gameplay_set_engine_event_arg(s32 param); // [func_08017380] Set Parameter for Engine-Specific Event
+extern void gameplay_set_engine_event_param(s32 param); // [func_08017380] Set Parameter for Engine-Specific Event
 extern s32  gameplay_run_engine_event(const struct GameEngine *engine, s32 id); // [func_0801738c] Run Engine-Specific Event
 extern void gameplay_enable_inputs(u32 enable); // [func_080173c4] Enable Play Inputs
-extern void func_080173d0(u32 arg); // [func_080173d0] Set unk9
+extern void gameplay_assess_irrelevant_inputs(u32 assess); // [func_080173d0] Assess Non-Cue Inputs
 extern void gameplay_set_next_cue_spawn_sfx(const struct SequenceData *sfx); // [func_080173dc] Set Next Cue Spawn SFX
 extern void gameplay_set_next_cue_hit_sfx(const struct SequenceData *sfx); // [func_080173e8] Set Next Cue Hit SFX
 extern void gameplay_set_next_cue_barely_sfx(const struct SequenceData *sfx); // [func_080173f4] Set Next Cue Barely SFX
@@ -75,12 +75,12 @@ extern void gameplay_check_for_perfect(u32 assessInputs); // [func_08017648] Sta
 extern void gameplay_register_imperfect_input(void); // [func_0801765c] Register Imperfect Input
 extern void gameplay_register_perfect_input(void); // [func_080176cc] Register Perfect Input
 extern s32  gameplay_run_engine_event_w_param(const struct GameEngine *engine, u32 function, s32 param); // [func_08017728] Run Game Engine Event (convenience method)
-// extern ? func_08017744(?);
-// extern ? func_08017758(?);
-// extern ? func_0801777c(?);
-// extern ? func_080177a4(?); // [func_080177a4] Set (unk5B4 = arg) and (unk5B5 = 1)
-// extern ? func_080177c8(?);
-// extern ? func_080177dc(?); // [func_080177dc] Set unk5B8
+extern void gameplay_set_miss_punishment_duration(u32 duration); // [func_08017744] Set Miss Punishment Interval
+extern void gameplay_set_inter_engine_variable(u32 i, s32 val); // [func_08017758] Set Inter-Engine Variable
+extern s32  gameplay_get_inter_engine_variable(u32 i); // [func_0801777c] Get Inter-Engine Variable
+extern void gameplay_prevent_dpad_overlap(u32 preventOverlap); // [func_080177a4] Set D-Pad Input Overlap Handling
+extern void gameplay_enable_mercy(u32 enable); // [func_080177c8] Enable Mercy
+extern void gameplay_set_mercy_count(u32 total); // [func_080177dc] Set Total Forgivable Misses
 extern void gameplay_stop_scene(s32 arg); // [func_080177f0] Scene Close
 
 /* CUES */
@@ -99,7 +99,7 @@ extern void gameplay_enable_cue_spawning(u32 enable); // [func_08017b88] Enable 
 extern void gameplay_update_cue(struct Cue *cue); // [func_08017b98] Update Cue
 extern void gameplay_update_all_cues(void); // [func_08017c68] Update All Cues
 extern s32  gameplay_calculate_input_timing(struct Cue *cue, u16 pressed, u16 released, s32 *offset); // [func_08017c8c] Determine Input Timing
-extern void gameplay_register_hit_barely(struct Cue *cue, s32 timingLevel, s32 offset, u32 pressed, u32 released); // [gameplay_register_hit_barely] Hit/Barely Event
+extern void gameplay_register_hit_barely(struct Cue *cue, s32 timingLevel, s32 offset, u32 pressed, u32 released); // [func_08017e2c] Hit/Barely Event
 extern void gameplay_update_inputs(u32 pressed, u32 released); // [func_08017ec8] Update Inputs
 extern s32  gameplay_get_last_hit_offset(void); // [func_08018054] Get Timing Offset of Most Recent Hit/Barely
 extern void gameplay_ignore_this_cue_result(void); // [func_08018068] Prevent Scene from Updating Results for This Cue
@@ -131,13 +131,13 @@ extern void gameplay_pause_menu_lighten_screen(void); // [func_08018318] Screen 
 extern void gameplay_start_pause_menu(void); // [func_08018344] Open Pause Menu
 extern s32  gameplay_update_pause_menu(void); // [func_080183c8] Update Pause Menu
 extern void gameplay_init_pause_menu(void); // [func_08018524] Initialise Pause Handler
-// extern ? gameplay_set_text_advance_buttons(?); // [func_0801853c] Set Text Advance Buttons
+extern void gameplay_set_skip_icon(u32 corner, u32 show); // [func_0801853c] Set Skip Tutorial Icon Display
 extern void gameplay_set_text_advance_icon(u32 style); // [func_0801858c] Set Text Button Style
 extern void gameplay_display_text_advance_icon(s16 x, s16 y, s32 show); // [func_080185d0] Display A Button Prompt
 extern void gameplay_set_text_printer(struct TextPrinter *textPrinter); // [func_08018630] Init. Text
 extern void gameplay_display_text(const char *text); // [func_08018660] Display Text
-extern void gameplay_align_text_advance_icon_to_text(void);
-extern void gameplay_display_text_and_wait(void);
+extern void gameplay_align_text_advance_icon(void); // [func_08018698]
+extern void gameplay_display_text_and_wait(void); // [func_080186d4]
 extern void gameplay_update_text(void); // [func_0801875c] Update Text
 extern void gameplay_set_text_x(s32 x); // [func_08018828] Set Text X Position
 extern void gameplay_set_text_y(s32 y); // [func_0801884c] Set Text Y Position
