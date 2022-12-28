@@ -342,7 +342,7 @@ void sneaky_spirits_stop_slow_motion(void) {
 // Cue - Hit
 void sneaky_spirits_cue_hit(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, u32 released) {
     u32 duration;
-    s8 xVel, yVel;
+    s8 targetX, targetY;
     u32 totalFrames;
     s32 task;
 
@@ -352,18 +352,18 @@ void sneaky_spirits_cue_hit(struct Cue *cue, struct SneakySpiritsCue *info, u32 
         scene_set_music_track_volume((1 << 9), 0); // Set Music Channel 9 Volume to 0
 
         duration = beats_to_ticks(0x16) - gameplay_get_last_hit_offset();
-        xVel = 68;
-        yVel = 60;
+        targetX = 68;
+        targetY = 60;
     } else {
         duration = beats_to_ticks(0x30) - gameplay_get_last_hit_offset();
-        xVel = 84;
-        yVel = 68;
+        targetX = 84;
+        targetY = 68;
     }
 
     totalFrames = (u16) func_0804ddb0(D_03005380, gSneakySpiritsInfo->ghostHit, 2);
     func_0804cebc(D_03005380, gSneakySpiritsInfo->ghostHit, agb_random(totalFrames));
     func_0804d770(D_03005380, gSneakySpiritsInfo->ghostHit, 1);
-    task = func_0800e3e4(gSneakySpiritsInfo->ghostHit, 100, 76, xVel, yVel, duration);
+    task = func_0800e3e4(gSneakySpiritsInfo->ghostHit, 100, 76, targetX, targetY, duration);
     task_run_after(task, sneaky_spirits_stop_slow_motion, 0);
 
     func_0804dae0(D_03005380, gSneakySpiritsInfo->door, 1, 0x7f, 0);

@@ -618,37 +618,6 @@ D_088e41e8 = 0x088e41e8;
 D_088e46e8 = 0x088e46e8;
 D_088e75e8 = 0x088e75e8;
 D_088e7c68 = 0x088e7c68;
-/* Mr. Upbeat, Metronome Animations */
-anim_metronome_pendulum = 0x088f3b58;
-anim_metronome_bird_marker = 0x088f3b68;
-anim_metronome_bird = 0x088f3b98;
-anim_metronome_face_l = 0x088f3bb8;
-anim_metronome_face_r = 0x088f3bd0;
-anim_metronome_score_counter = 0x088f3be8;
-anim_metronome_score_num = 0x088f3bf8;
-anim_metronome_timing_meter = 0x088f3c58;
-anim_mr_upbeat_beat = 0x088f3cb8;
-anim_mr_upbeat_shadow = 0x088f3ce0;
-anim_mr_upbeat_r_step = 0x088f3d08;
-anim_mr_upbeat_r_shadow = 0x088f3d30;
-anim_mr_upbeat_r_test = 0x088f3d40;
-anim_mr_upbeat_r_trip_r = 0x088f3dd8;
-anim_mr_upbeat_r_trip_l = 0x088f3e08;
-anim_mr_upbeat_beep = 0x088f3e38;
-anim_mr_upbeat_l_step = 0x088f3e58;
-anim_mr_upbeat_l_trip_l = 0x088f3e80;
-anim_mr_upbeat_l_trip_r = 0x088f3eb0;
-anim_mr_upbeat_high_score_num = 0x088f3ee0;
-anim_mr_upbeat_l_cheer_r = 0x088f3f40;
-anim_mr_upbeat_l_mope_r = 0x088f3f68;
-anim_mr_upbeat_r_cheer_l = 0x088f3f98;
-anim_mr_upbeat_r_mope_l = 0x088f3fc0;
-anim_mr_upbeat_r_cheer_r = 0x088f3ff0;
-anim_mr_upbeat_l_cheer_l = 0x088f4018;
-anim_mr_upbeat_r_mope_r = 0x088f4040;
-anim_mr_upbeat_l_mope_l = 0x088f4070;
-/* Mr. Upbeat, Metronome Palettes */
-metronome_pal = 0x088f40a0;
 /* Studio Drumming Palettes */
 D_088f4140 = 0x088f4140;
 D_088f41c0 = 0x088f41c0;
@@ -3112,15 +3081,6 @@ D_089e2ea0 = 0x089e2ea0;
 /* Game Engine - Marching Orders */
 /* Game Engine - Mr. Upbeat */
 /* Game Engine - Metronome */
-D_089e585c = 0x089e585c;
-D_089e5860 = 0x089e5860;
-D_089e5890 = 0x089e5890;
-D_089e58a0 = 0x089e58a0;
-D_089e58b0 = 0x089e58b0;
-D_089e58f0 = 0x089e58f0;
-D_089e5924 = 0x089e5924;
-D_089e5934 = 0x089e5934;
-D_089e5948 = 0x089e5948;
 /* Game Engine - Polyrhythm */
 D_089e5968 = 0x089e5968;
 D_089e596c = 0x089e596c;

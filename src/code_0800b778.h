@@ -144,7 +144,7 @@ extern void scene_set_bg_mosaic_size(s16 xSize, s16 ySize); // Set BG Mosaic Siz
 // extern ? func_0800e2a8(?);
 // extern ? func_0800e30c(?);
 // extern ? func_0800e364(?);
-extern u32 func_0800e3e4(s16 sprite, s32 x, s32 y, s8 xVel, s8 yVel, u16 duration);
+extern s32 func_0800e3e4(s16 sprite, s32 initX, s32 initY, s32 targetX, s32 targetY, u16 duration); // Sprite LERP Task
 // extern ? func_0800e430(?);
 // extern ? func_0800e490(?);
 // extern ? func_0800e4f8(?);

@@ -2,6 +2,9 @@
 
 asm(".include \"include/gba.inc\""); // Temporary
 
+// For readability.
+#define gMetronomeInfo ((struct MetronomeInfo *)D_030055d0)
+
 
 /* METRONOME */
 

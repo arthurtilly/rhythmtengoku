@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08035488 \n\
+thumb_func_start metronome_engine_start \n\
 /* 08035488 */ PUSH {R4-R7, LR} \n\
 /* 0803548a */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 0803548c */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -14,7 +14,7 @@ thumb_func_start func_08035488 \n\
 /* 08035498 */ LDR R1, [R1] \n\
 /* 0803549a */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0803549c */ STRB R0, [R1] \n\
-/* 0803549e */ BL func_0803545c \n\
+/* 0803549e */ BL metronome_init_gfx1 \n\
 /* 080354a2 */ BL scene_show_obj_layer \n\
 /* 080354a6 */ LDR R0, =anim_metronome_pendulum \n\
 /* 080354a8 */ MOVS R1, 0x90 @ Set R1 to 0x90 \n\

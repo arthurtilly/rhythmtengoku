@@ -275,9 +275,9 @@ void func_0804503c(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
     u32 flip;
 
     // Check for flip.
-    flip = ((u32) ~gameplay_get_last_hit_offset()) >> 0x1f;
+    flip = (gameplay_get_last_hit_offset() >= 0);
     if (cue->position > 0x200) {
-        flip ^= 1;
+        flip ^= TRUE;
     }
 
     // Play animation: "sprout_eaten"
