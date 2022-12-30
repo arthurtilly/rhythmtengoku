@@ -233,42 +233,6 @@ D_088a3974 = 0x088a3974;
 /* LIVE ver2 Palette */
 D_088a399c = 0x088a399c;
 D_088a3a7c = 0x088a3a7c;
-/* Mannequin Factory Animations */
-anim_mannequin_base = 0x088ba0fc;
-anim_mannequin_head = 0x088ba10c;
-anim_mannequin_eye_l = 0x088ba134;
-anim_mannequin_eye_r = 0x088ba15c;
-anim_mannequin_hand_r = 0x088ba184;
-anim_mannequin_hand_l = 0x088ba1b4;
-anim_mannequin_stamp_l = 0x088ba1e4;
-anim_mannequin_stamp_r = 0x088ba244;
-anim_mannequin_head_blank = 0x088ba2a4;
-anim_mannequin_slap_effect_r = 0x088ba2b4;
-anim_mannequin_slap_effect_l = 0x088ba2d4;
-anim_mannequin_stamp_effect_l = 0x088ba2f4;
-anim_mannequin_stamp_effect_r = 0x088ba30c;
-anim_mannequin_head_smooth_rotation = 0x088ba324;
-anim_mannequin_ng_effect = 0x088ba364;
-anim_mannequin_ng_eye_l = 0x088ba394;
-anim_mannequin_ng_eye_r = 0x088ba3a4;
-anim_mannequin_ng_head_effect = 0x088ba3b4;
-anim_mannequin_emote_ok = 0x088ba3cc;
-anim_mannequin_score_num = 0x088ba3e4;
-anim_mannequin_score_stars = 0x088ba444;
-anim_mannequin_emote_music_note_r = 0x088ba474;
-anim_mannequin_emote_music_note_l = 0x088ba48c;
-anim_mannequin_cowbell = 0x088ba4a4;
-anim_mannequin_council = 0x088ba4d4;
-anim_mannequin_dash_effect = 0x088ba4e4;
-anim_mannequin_complete_c = 0x088ba4f4;
-anim_mannequin_complete_l = 0x088ba544;
-anim_mannequin_complete_r = 0x088ba574;
-anim_mannequin_crane = 0x088ba5a4;
-anim_mannequin_crane_dash_effect = 0x088ba5b4;
-anim_mannequin_game_over = 0x088ba5c4;
-anim_mannequin_high_score_num = 0x088ba5ec;
-/* Mannequin Factory Palettes */
-D_088ba64c = 0x088ba64c;
 /* Cosmic Dance Animations */
 D_088bc970 = 0x088bc970;
 D_088bc9b8 = 0x088bc9b8;
@@ -678,30 +642,6 @@ D_088f5bcc = 0x088f5bcc;
 D_088f5bdc = 0x088f5bdc;
 /* Main Menu - Options Palettes */
 D_088f5bfc = 0x088f5bfc;
-/* Bunny Hop Animations */
-D_088f8ce0 = 0x088f8ce0;
-D_088f8d08 = 0x088f8d08;
-D_088f8d28 = 0x088f8d28;
-D_088f8d40 = 0x088f8d40;
-D_088f8d58 = 0x088f8d58;
-D_088f8d70 = 0x088f8d70;
-D_088f8d88 = 0x088f8d88;
-D_088f8de0 = 0x088f8de0;
-D_088f8df8 = 0x088f8df8;
-D_088f8e30 = 0x088f8e30;
-D_088f8e48 = 0x088f8e48;
-D_088f8eb8 = 0x088f8eb8;
-D_088f8ed0 = 0x088f8ed0;
-D_088f8ee8 = 0x088f8ee8;
-D_088f8f00 = 0x088f8f00;
-D_088f8f18 = 0x088f8f18;
-D_088f8f70 = 0x088f8f70;
-D_088f8f88 = 0x088f8f88;
-D_088f8fa0 = 0x088f8fa0;
-D_088f8fb8 = 0x088f8fb8;
-/* Bunny Hop Palettes */
-D_088f8fc8 = 0x088f8fc8;
-D_088f91c8 = 0x088f91c8;
 /* Rap Men Animations */
 D_088faf2c = 0x088faf2c;
 D_088faf54 = 0x088faf54;
@@ -3012,29 +2952,6 @@ D_089e2ea0 = 0x089e2ea0;
 /* Game Engine - LIVE Menu */
 /* Game Engine - Quiz Show */
 /* Game Engine - Bunny Hop */
-D_089e5ee0 = 0x089e5ee0;
-D_089e5ee4 = 0x089e5ee4;
-D_089e5f50 = 0x089e5f50;
-D_089e5fbc = 0x089e5fbc;
-D_089e5fcc = 0x089e5fcc;
-D_089e6020 = 0x089e6020;
-D_089e6030 = 0x089e6030;
-D_089e6038 = 0x089e6038;
-D_089e6078 = 0x089e6078;
-D_089e60b8 = 0x089e60b8;
-D_089e60f8 = 0x089e60f8;
-D_089e6138 = 0x089e6138;
-D_089e6178 = 0x089e6178;
-D_089e61b8 = 0x089e61b8;
-D_089e61f8 = 0x089e61f8;
-D_089e6238 = 0x089e6238;
-D_089e6278 = 0x089e6278;
-D_089e62b8 = 0x089e62b8;
-D_089e62f8 = 0x089e62f8;
-D_089e632c = 0x089e632c;
-D_089e633c = 0x089e633c;
-D_089e6364 = 0x089e6364;
-D_089e6384 = 0x089e6384;
 /* Game Engine - Rap Men */
 D_089e63a0 = 0x089e63a0;
 D_089e63a8 = 0x089e63a8;

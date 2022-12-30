@@ -42,7 +42,7 @@ branch_08038d7c: \n\
 /* 08038d94 */ STR R2, [SP, 0x4] \n\
 /* 08038d96 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08038d98 */ STR R2, [SP, 0x8] \n\
-/* 08038d9a */ LDR R2, =D_088f8d88 \n\
+/* 08038d9a */ LDR R2, =anim_bunny_hop_4beat_whale_bounce \n\
 /* 08038d9c */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 08038d9e */ BL func_0804d8f8 \n\
 /* 08038da2 */ B branch_08038e20 \n\
@@ -62,7 +62,7 @@ branch_08038db0: \n\
 /* 08038dc2 */ STR R2, [SP, 0x4] \n\
 /* 08038dc4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08038dc6 */ STR R2, [SP, 0x8] \n\
-/* 08038dc8 */ LDR R2, =D_088f8f18 \n\
+/* 08038dc8 */ LDR R2, =anim_bunny_hop_8beat_whale_bounce \n\
 /* 08038dca */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 08038dcc */ BL func_0804d8f8 \n\
 /* 08038dd0 */ B branch_08038e20 \n\

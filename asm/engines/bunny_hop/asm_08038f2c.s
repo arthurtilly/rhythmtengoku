@@ -24,7 +24,7 @@ thumb_func_start func_08038f2c \n\
 /* 08038f50 */ LDR R0, =D_03005380 \n\
 /* 08038f52 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08038f54 */ LDR R0, [R0] \n\
-/* 08038f56 */ LDR R1, =D_088f8d08 \n\
+/* 08038f56 */ LDR R1, =anim_bunny_hop_run \n\
 /* 08038f58 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08038f5a */ STR R2, [SP] \n\
 /* 08038f5c */ LDR R2, =0x8005 \n\

@@ -17,7 +17,7 @@ thumb_func_start func_08038384 \n\
 /* 0803839c */ LSLS R1, R1, 0x18 \n\
 /* 0803839e */ LSRS R1, R1, 0x18 \n\
 /* 080383a0 */ MOV R8, R1 @ Set R8 to R1 \n\
-/* 080383a2 */ LDR R1, =D_089e6030 \n\
+/* 080383a2 */ LDR R1, =bunny_hop_palettes \n\
 /* 080383a4 */ LSLS R5, R5, 0x2 \n\
 /* 080383a6 */ ADDS R5, R5, R1 @ Set R5 to R5 + R1 \n\
 /* 080383a8 */ LDR R3, [R5] \n\

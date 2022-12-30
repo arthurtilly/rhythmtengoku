@@ -75,7 +75,7 @@ branch_080389fe: \n\
 /* 08038a18 */ LDR R0, [R5] \n\
 /* 08038a1a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08038a1c */ LDRSH R1, [R6, R2] \n\
-/* 08038a1e */ LDR R3, =D_089e6384 \n\
+/* 08038a1e */ LDR R3, =bunny_hop_platform_anim \n\
 /* 08038a20 */ LDRB R2, [R6, 0x3] \n\
 /* 08038a22 */ LSLS R2, R2, 0x2 \n\
 /* 08038a24 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\
@@ -104,7 +104,7 @@ branch_080389fe: \n\
 /* 08038a58 */ LDR R0, [R5] \n\
 /* 08038a5a */ MOVS R2, 0x10 @ Set R2 to 0x10 \n\
 /* 08038a5c */ LDRSH R1, [R6, R2] \n\
-/* 08038a5e */ LDR R2, =D_088f8df8 \n\
+/* 08038a5e */ LDR R2, =anim_bunny_hop_water_spout_start \n\
 /* 08038a60 */ STR R4, [SP] \n\
 /* 08038a62 */ STR R4, [SP, 0x4] \n\
 /* 08038a64 */ STR R4, [SP, 0x8] \n\

@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088f8fc8] <description>
+// [D_088f8fc8] Bunny Hop (BG & OBJ)
 const Palette bunny_hop_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00C8F8),
@@ -293,7 +293,7 @@ const Palette bunny_hop_pal[] = {
     }
 };
 
-// [D_088f91c8] <description>
+// [D_088f91c8] Remix 3 (BG & OBJ)
 const Palette bunny_hop_remix3_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8D028),

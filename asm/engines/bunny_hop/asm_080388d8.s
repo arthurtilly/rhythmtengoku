@@ -17,7 +17,7 @@ thumb_func_start func_080388d8 \n\
 /* 080388ee */ STR R0, [R4, 0x8] \n\
 /* 080388f0 */ LDR R6, =D_03005380 \n\
 /* 080388f2 */ LDR R0, [R6] \n\
-/* 080388f4 */ LDR R1, =D_088f8d28 \n\
+/* 080388f4 */ LDR R1, =anim_bunny_hop_1beat_turtle \n\
 /* 080388f6 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080388f8 */ MOV R9, R2 @ Set R9 to R2 \n\
 /* 080388fa */ STR R2, [SP] \n\
@@ -50,7 +50,7 @@ thumb_func_start func_080388d8 \n\
 /* 08038936 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 08038938 */ STRB R0, [R4, 0xE] \n\
 /* 0803893a */ LDR R0, [R6] \n\
-/* 0803893c */ LDR R1, =D_088f8df8 \n\
+/* 0803893c */ LDR R1, =anim_bunny_hop_water_spout_start \n\
 /* 0803893e */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08038940 */ STR R2, [SP] \n\
 /* 08038942 */ LDR R2, =0x8009 \n\

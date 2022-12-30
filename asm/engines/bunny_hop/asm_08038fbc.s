@@ -137,7 +137,7 @@ branch_080390b6: \n\
 /* 080390be */ LDR R0, [R0] \n\
 /* 080390c0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080390c2 */ LDRSH R1, [R5, R2] \n\
-/* 080390c4 */ LDR R2, =D_088f8ce0 \n\
+/* 080390c4 */ LDR R2, =anim_bunny_hop_jump \n\
 /* 080390c6 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 080390c8 */ STR R3, [SP] \n\
 /* 080390ca */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
@@ -163,7 +163,7 @@ branch_080390f4: \n\
 /* 080390f6 */ LDR R0, [R0] \n\
 /* 080390f8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080390fa */ LDRSH R1, [R5, R3] \n\
-/* 080390fc */ LDR R2, =D_088f8f00 \n\
+/* 080390fc */ LDR R2, =anim_bunny_hop_miss \n\
 /* 080390fe */ MOVS R4, 0x1 @ Set R4 to 0x1 \n\
 /* 08039100 */ STR R4, [SP] \n\
 /* 08039102 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\

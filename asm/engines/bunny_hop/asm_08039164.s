@@ -146,7 +146,7 @@ branch_08039208: \n\
 /* 08039272 */ LDR R0, [R4] \n\
 /* 08039274 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08039276 */ LDRSH R1, [R6, R2] \n\
-/* 08039278 */ LDR R2, =D_088f8fa0 \n\
+/* 08039278 */ LDR R2, =anim_bunny_hop_sparkle \n\
 /* 0803927a */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0803927c */ STR R3, [SP] \n\
 /* 0803927e */ STR R5, [SP, 0x4] \n\

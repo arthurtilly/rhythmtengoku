@@ -23,7 +23,7 @@ thumb_func_start func_0803960c \n\
 branch_08039630: \n\
 /* 08039630 */ LDR R4, =D_03005380 \n\
 /* 08039632 */ LDR R0, [R4] \n\
-/* 08039634 */ LDR R1, =D_088f8ed0 \n\
+/* 08039634 */ LDR R1, =anim_bunny_hop_cloud \n\
 /* 08039636 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 08039638 */ STR R2, [SP] \n\
 /* 0803963a */ STR R3, [SP, 0x4] \n\

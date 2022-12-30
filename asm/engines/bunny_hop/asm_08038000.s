@@ -2,14 +2,14 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08038000 \n\
+thumb_func_start bunny_hop_engine_start \n\
 /* 08038000 */ PUSH {R4-R6, LR} \n\
 /* 08038002 */ SUB SP, 0x14 \n\
 /* 08038004 */ LDR R6, =D_030055d0 \n\
 /* 08038006 */ LDR R1, [R6] \n\
 /* 08038008 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0803800a */ STRB R0, [R1] \n\
-/* 0803800c */ BL func_08037fd4 \n\
+/* 0803800c */ BL bunny_hop_init_gfx1 \n\
 /* 08038010 */ BL scene_show_obj_layer \n\
 /* 08038014 */ STR R4, [SP] \n\
 /* 08038016 */ MOVS R0, 0x1C @ Set R0 to 0x1C \n\
@@ -165,7 +165,7 @@ branch_0803812e: \n\
 /* 0803814c */ STR R1, [R0] \n\
 /* 0803814e */ LDR R4, =D_03005380 \n\
 /* 08038150 */ LDR R0, [R4] \n\
-/* 08038152 */ LDR R1, =D_088f8f70 \n\
+/* 08038152 */ LDR R1, =anim_bunny_hop_moon \n\
 /* 08038154 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 08038156 */ STR R2, [SP] \n\
 /* 08038158 */ LDR R2, =0x8006 \n\
