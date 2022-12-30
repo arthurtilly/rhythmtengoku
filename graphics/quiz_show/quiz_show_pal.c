@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088f8788] <description>
+// [D_088f8788] Quiz Show OBJ Palette
 const Palette quiz_show_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x18E000),
@@ -149,7 +149,7 @@ const Palette quiz_show_obj_pal[] = {
     }
 };
 
-// [D_088f8888] <description>
+// [D_088f8888] Quiz Show BG Palette
 const Palette quiz_show_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x18E000),

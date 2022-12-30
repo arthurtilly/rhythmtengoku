@@ -22,7 +22,7 @@ thumb_func_start func_08037e80 \n\
 /* 08037ea0 */ LDR R0, [R4] \n\
 /* 08037ea2 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08037ea4 */ LDRSH R1, [R5, R2] \n\
-/* 08037ea6 */ LDR R2, =D_088f7fb8 \n\
+/* 08037ea6 */ LDR R2, =anim_quiz_player_arm_r \n\
 /* 08037ea8 */ STR R7, [SP] \n\
 /* 08037eaa */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
 /* 08037eac */ STR R3, [SP, 0x4] \n\
@@ -50,7 +50,7 @@ branch_08037ed2: \n\
 /* 08037edc */ LDR R0, [R4] \n\
 /* 08037ede */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08037ee0 */ LDRSH R1, [R5, R2] \n\
-/* 08037ee2 */ LDR R2, =D_088f7f70 \n\
+/* 08037ee2 */ LDR R2, =anim_quiz_player_arm_l \n\
 /* 08037ee4 */ STR R7, [SP] \n\
 /* 08037ee6 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
 /* 08037ee8 */ STR R3, [SP, 0x4] \n\

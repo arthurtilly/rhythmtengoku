@@ -28,7 +28,7 @@ thumb_func_start func_08037178 \n\
 /* 080371a4 */ LDR R0, =D_03005380 \n\
 /* 080371a6 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 080371a8 */ LDR R0, [R0] \n\
-/* 080371aa */ LDR R1, =D_088f8698 \n\
+/* 080371aa */ LDR R1, =anim_quiz_current_score_label \n\
 /* 080371ac */ MOVS R6, 0x4 @ Set R6 to 0x4 \n\
 /* 080371ae */ STR R6, [SP] \n\
 /* 080371b0 */ MOVS R5, 0x80 @ Set R5 to 0x80 \n\
@@ -42,7 +42,7 @@ thumb_func_start func_08037178 \n\
 /* 080371c0 */ BL func_0804d160 \n\
 /* 080371c4 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080371c6 */ LDR R0, [R1] \n\
-/* 080371c8 */ LDR R1, =D_088f86a8 \n\
+/* 080371c8 */ LDR R1, =anim_quiz_high_score_label \n\
 /* 080371ca */ STR R6, [SP] \n\
 /* 080371cc */ STR R5, [SP, 0x4] \n\
 /* 080371ce */ STR R4, [SP, 0x8] \n\
@@ -70,7 +70,7 @@ branch_080371de: \n\
 /* 080371f8 */ MOVS R1, 0x7F @ Set R1 to 0x7F \n\
 /* 080371fa */ STR R1, [SP, 0xC] \n\
 /* 080371fc */ STR R5, [SP, 0x10] \n\
-/* 080371fe */ LDR R1, =D_088f86b8 \n\
+/* 080371fe */ LDR R1, =anim_quiz_score_num \n\
 /* 08037200 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037202 */ BL func_0804d160 \n\
 /* 08037206 */ LDR R1, =D_030055d0 \n\
@@ -102,7 +102,7 @@ branch_0803721c: \n\
 /* 08037236 */ MOVS R1, 0x7F @ Set R1 to 0x7F \n\
 /* 08037238 */ STR R1, [SP, 0xC] \n\
 /* 0803723a */ STR R5, [SP, 0x10] \n\
-/* 0803723c */ LDR R1, =D_088f86b8 \n\
+/* 0803723c */ LDR R1, =anim_quiz_score_num \n\
 /* 0803723e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037240 */ BL func_0804d160 \n\
 /* 08037244 */ LDR R1, =D_030055d0 \n\

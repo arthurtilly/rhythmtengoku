@@ -52,6 +52,8 @@ extern const struct CompressedGraphics *const samurai_slice_buffered_textures[];
 extern const struct GraphicsTable samurai_slice_gfx_table[];
 extern const struct Animation *const samurai_slicing_anim[];
 extern const struct Animation *const samurai_beat_anim[];
+extern const struct Animation *const D_089e4928[];
+extern const struct Animation *const D_089e4940[];
 
 
 // Functions:

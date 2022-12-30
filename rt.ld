@@ -1573,6 +1573,7 @@ SECTIONS {
         build/data/engines/mr_upbeat_engine.c.o(.rodata*);
         build/data/engines/metronome_engine.c.o(.rodata*);
         build/data/engines/polyrhythm_engine.c.o(.rodata*);
+        build/data/engines/concert_hall_engine.c.o(.rodata*);
         build/bin/bindata_089e384c.bin.o(.rodata*);
         build/data/engines/prologues/sneaky_spirits_script.c.o(.rodata*);
         build/data/engines/prologues/spaceball_script.c.o(.rodata*);

@@ -23,9 +23,9 @@ extern const char D_0805a6c0[];
 extern const char D_0805a6c8[];
 
 // LIVE Menu
-extern const char D_0805a6e8[];
-extern const char D_0805a7a8[];
-extern const char D_0805a830[];
+extern const char text_concert_hall_poster_band[];
+extern const char text_concert_hall_poster_boys[];
+extern const char text_concert_hall_poster_girls[];
 
 // Bunny Hop
 extern const char D_0805a8ac[];

@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 
-/* LIVE - MENU */
+/* LIVE MENU */
 
 
 #include "asm/engines/concert_hall/asm_08036bec.s"
