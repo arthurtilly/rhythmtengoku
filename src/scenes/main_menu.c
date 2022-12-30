@@ -1,5 +1,5 @@
 #include "global.h"
-#include "src/scenes/main_menu.h"
+#include "scenes/main_menu.h"
 
 #include "src/main.h"
 #include "src/code_08001360.h"
@@ -9,7 +9,7 @@
 #include "src/code_08007468.h"
 #include "src/code_0800b3c8.h"
 #include "src/code_0800b778.h"
-#include "src/scenes/gameplay.h"
+#include "scenes/gameplay.h"
 #include "src/lib_0804c870.h"
 
 extern const struct FontDefinition D_089de670;

@@ -12,8 +12,8 @@
 #include "src/code_08001360.h"
 #include "src/code_080068f8.h"
 #include "src/code_0800b778.h"
-#include "src/scenes/gameplay.h"
-#include "src/scenes/results.h"
+#include "scenes/gameplay.h"
+#include "scenes/results.h"
 
 enum BeatScriptArgType {
     BEATSCRIPT_ARG_BYTE,

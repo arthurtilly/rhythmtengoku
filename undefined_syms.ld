@@ -678,13 +678,6 @@ D_088f5bcc = 0x088f5bcc;
 D_088f5bdc = 0x088f5bdc;
 /* Main Menu - Options Palettes */
 D_088f5bfc = 0x088f5bfc;
-/* LIVE Menu Animations */
-anim_concert_hall_arrow_up = 0x088f67d0;
-anim_concert_hall_arrow_down = 0x088f67e8;
-anim_concert_hall_start_icon = 0x088f6800;
-anim_concert_hall_poster = 0x088f6810;
-/* LIVE Menu Palettes */
-concert_hall_pal = 0x088f6830;
 /* Quiz Show Animations */
 anim_quiz_player_arm_l = 0x088f7f70;
 anim_quiz_player_arm_r = 0x088f7fb8;
@@ -3063,14 +3056,6 @@ D_089e2ea0 = 0x089e2ea0;
 /* Game Engine - Metronome */
 /* Game Engine - Polyrhythm */
 /* Game Engine - LIVE Menu */
-concert_hall_buffered_textures = 0x089e5c40;
-concert_hall_gfx_table = 0x089e5c44;
-concert_hall_poster_desc = 0x089e5c74;
-concert_hall_cue_default = 0x089e5c80;
-concert_hall_cue_index = 0x089e5cc0;
-concert_hall_common_events = 0x089e5cf4;
-concert_hall_engine_events = 0x089e5d04;
-D_089e5d0c = 0x089e5d0c;
 /* Game Engine - Quiz Show */
 D_089e5d2c = 0x089e5d2c;
 D_089e5d30 = 0x089e5d30;

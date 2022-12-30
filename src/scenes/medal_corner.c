@@ -1,5 +1,5 @@
 #include "global.h"
-#include "src/scenes/medal_corner.h"
+#include "scenes/medal_corner.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 

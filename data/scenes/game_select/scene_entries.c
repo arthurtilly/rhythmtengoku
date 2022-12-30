@@ -1,7 +1,7 @@
 #include "global.h"
 #include "scene_entries.h"
 #include "data/data_08052464.h"
-#include "src/scenes/game_select.h"
+#include "scenes/game_select.h"
 
 const struct GameSelectSceneEntry D_089ce344[] = {
     // Karate Man 1

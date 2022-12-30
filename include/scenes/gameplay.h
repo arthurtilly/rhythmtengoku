@@ -4,7 +4,7 @@
 #include "scenes.h"
 #include "engines.h"
 #include "src/main.h"
-#include "src/scenes/script.h"
+#include "scenes/script.h"
 
 // Scene Types:
 struct GameplaySceneInfo {
