@@ -678,52 +678,6 @@ D_088f5bcc = 0x088f5bcc;
 D_088f5bdc = 0x088f5bdc;
 /* Main Menu - Options Palettes */
 D_088f5bfc = 0x088f5bfc;
-/* Quiz Show Animations */
-anim_quiz_player_arm_l = 0x088f7f70;
-anim_quiz_player_arm_r = 0x088f7fb8;
-anim_quiz_host_arm_r = 0x088f8000;
-anim_quiz_host_arm_l = 0x088f8048;
-anim_quiz_podium_num = 0x088f8090;
-anim_quiz_podium_num_dupe = 0x088f80f0;
-anim_quiz_blank = 0x088f8148;
-anim_quiz_button_player_l = 0x088f8160;
-anim_quiz_button_player_r = 0x088f8180;
-anim_quiz_button_host_l = 0x088f81a0;
-anim_quiz_button_host_r = 0x088f81c0;
-anim_quiz_host_head = 0x088f81e0;
-anim_quiz_host_head_success = 0x088f81f0;
-anim_quiz_host_head_failure = 0x088f8250;
-anim_quiz_player_head = 0x088f8290;
-anim_quiz_player_head_success = 0x088f82a0;
-anim_quiz_player_head_failure = 0x088f8300;
-anim_quiz_player_body = 0x088f8340;
-anim_quiz_host_body = 0x088f8360;
-anim_quiz_num0_1 = 0x088f8380;
-anim_quiz_num0_2 = 0x088f8390;
-anim_quiz_num0_3 = 0x088f83a0;
-anim_quiz_num0_4 = 0x088f83b0;
-anim_quiz_player_raise_arm_l = 0x088f83c0;
-anim_quiz_player_raise_arm_r = 0x088f83e8;
-anim_quiz_host_raise_arm_r = 0x088f8410;
-anim_quiz_host_raise_arm_l = 0x088f8438;
-anim_quiz_explode_sign = 0x088f8460;
-anim_quiz_explode_player_podium = 0x088f84f8;
-anim_quiz_explode_host_podium = 0x088f8560;
-anim_quiz_clock = 0x088f85c8;
-anim_quiz_clock_hand = 0x088f85d8;
-anim_quiz_host_head_endless2 = 0x088f85e8;
-anim_quiz_host_head_endless3 = 0x088f8610;
-anim_quiz_player_head_endless2 = 0x088f8640;
-anim_quiz_player_head_endless3 = 0x088f8658;
-anim_quiz_host_head_endless1 = 0x088f8680;
-anim_quiz_current_score_label = 0x088f8698;
-anim_quiz_high_score_label = 0x088f86a8;
-anim_quiz_score_num = 0x088f86b8;
-anim_quiz_host_head_endless4 = 0x088f8718;
-anim_quiz_player_head_endless4 = 0x088f8758;
-/* Quiz Show Palettes */
-quiz_show_obj_pal = 0x088f8788;
-quiz_show_bg_pal = 0x088f8888;
 /* Bunny Hop Animations */
 D_088f8ce0 = 0x088f8ce0;
 D_088f8d08 = 0x088f8d08;
@@ -3057,21 +3011,6 @@ D_089e2ea0 = 0x089e2ea0;
 /* Game Engine - Polyrhythm */
 /* Game Engine - LIVE Menu */
 /* Game Engine - Quiz Show */
-D_089e5d2c = 0x089e5d2c;
-D_089e5d30 = 0x089e5d30;
-D_089e5d9c = 0x089e5d9c;
-D_089e5da4 = 0x089e5da4;
-D_089e5dac = 0x089e5dac;
-D_089e5db4 = 0x089e5db4;
-D_089e5dbc = 0x089e5dbc;
-D_089e5dc4 = 0x089e5dc4;
-D_089e5dcc = 0x089e5dcc;
-D_089e5de0 = 0x089e5de0;
-D_089e5e20 = 0x089e5e20;
-D_089e5e54 = 0x089e5e54;
-D_089e5e68 = 0x089e5e68;
-D_089e5e78 = 0x089e5e78;
-D_089e5ec0 = 0x089e5ec0;
 /* Game Engine - Bunny Hop */
 D_089e5ee0 = 0x089e5ee0;
 D_089e5ee4 = 0x089e5ee4;

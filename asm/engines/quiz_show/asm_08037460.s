@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08037460 \n\
+thumb_func_start quiz_engine_start \n\
 /* 08037460 */ PUSH {R4-R7, LR} \n\
 /* 08037462 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 08037464 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -13,7 +13,7 @@ thumb_func_start func_08037460 \n\
 /* 0803746e */ LDR R1, [R2] \n\
 /* 08037470 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08037472 */ STRB R0, [R1] \n\
-/* 08037474 */ BL func_08037434 \n\
+/* 08037474 */ BL quiz_init_gfx1 \n\
 /* 08037478 */ BL scene_show_obj_layer \n\
 /* 0803747c */ STR R4, [SP] \n\
 /* 0803747e */ MOVS R0, 0x1C @ Set R0 to 0x1C \n\
@@ -142,7 +142,7 @@ thumb_func_start func_08037460 \n\
 /* 08037592 */ BL func_0804d160 \n\
 /* 08037596 */ STRH R0, [R7, 0x2] \n\
 /* 08037598 */ LDR R0, [R5] \n\
-/* 0803759a */ LDR R1, =anim_quiz_host_arm_r \n\
+/* 0803759a */ LDR R1, =anim_quiz_host_press_button_r \n\
 /* 0803759c */ MOVS R2, 0x65 @ Set R2 to 0x65 \n\
 /* 0803759e */ STR R2, [SP] \n\
 /* 080375a0 */ LDR R2, =0x8805 \n\
@@ -157,7 +157,7 @@ thumb_func_start func_08037460 \n\
 /* 080375b2 */ BL func_0804d160 \n\
 /* 080375b6 */ STRH R0, [R7, 0x4] \n\
 /* 080375b8 */ LDR R0, [R5] \n\
-/* 080375ba */ LDR R1, =anim_quiz_host_arm_l \n\
+/* 080375ba */ LDR R1, =anim_quiz_host_press_button_l \n\
 /* 080375bc */ MOVS R2, 0x69 @ Set R2 to 0x69 \n\
 /* 080375be */ STR R2, [SP] \n\
 /* 080375c0 */ LDR R2, =0x87fb \n\
@@ -233,7 +233,7 @@ thumb_func_start func_08037460 \n\
 /* 08037658 */ LDR R0, [R5] \n\
 /* 0803765a */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 0803765c */ LDRSH R1, [R7, R2] \n\
-/* 0803765e */ LDR R2, =anim_quiz_host_raise_arm_r \n\
+/* 0803765e */ LDR R2, =anim_quiz_host_arm_r \n\
 /* 08037660 */ STR R4, [SP] \n\
 /* 08037662 */ STR R4, [SP, 0x4] \n\
 /* 08037664 */ STR R4, [SP, 0x8] \n\
@@ -242,7 +242,7 @@ thumb_func_start func_08037460 \n\
 /* 0803766c */ LDR R0, [R5] \n\
 /* 0803766e */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08037670 */ LDRSH R1, [R7, R2] \n\
-/* 08037672 */ LDR R2, =anim_quiz_host_raise_arm_l \n\
+/* 08037672 */ LDR R2, =anim_quiz_host_arm_l \n\
 /* 08037674 */ STR R4, [SP] \n\
 /* 08037676 */ STR R4, [SP, 0x4] \n\
 /* 08037678 */ STR R4, [SP, 0x8] \n\
@@ -286,7 +286,7 @@ thumb_func_start func_08037460 \n\
 /* 080376c8 */ BL func_0804d160 \n\
 /* 080376cc */ STRH R0, [R7, 0x2] \n\
 /* 080376ce */ LDR R0, [R5] \n\
-/* 080376d0 */ LDR R1, =anim_quiz_player_arm_r \n\
+/* 080376d0 */ LDR R1, =anim_quiz_player_press_button_r \n\
 /* 080376d2 */ MOVS R2, 0x69 @ Set R2 to 0x69 \n\
 /* 080376d4 */ STR R2, [SP] \n\
 /* 080376d6 */ LDR R2, =0x87fb \n\
@@ -301,7 +301,7 @@ thumb_func_start func_08037460 \n\
 /* 080376e8 */ BL func_0804d160 \n\
 /* 080376ec */ STRH R0, [R7, 0x4] \n\
 /* 080376ee */ LDR R0, [R5] \n\
-/* 080376f0 */ LDR R1, =anim_quiz_player_arm_l \n\
+/* 080376f0 */ LDR R1, =anim_quiz_player_press_button_l \n\
 /* 080376f2 */ MOVS R2, 0x65 @ Set R2 to 0x65 \n\
 /* 080376f4 */ STR R2, [SP] \n\
 /* 080376f6 */ LDR R2, =0x8805 \n\
@@ -377,7 +377,7 @@ thumb_func_start func_08037460 \n\
 /* 0803778e */ LDR R0, [R5] \n\
 /* 08037790 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08037792 */ LDRSH R1, [R7, R2] \n\
-/* 08037794 */ LDR R2, =anim_quiz_player_raise_arm_r \n\
+/* 08037794 */ LDR R2, =anim_quiz_player_arm_r \n\
 /* 08037796 */ STR R4, [SP] \n\
 /* 08037798 */ STR R4, [SP, 0x4] \n\
 /* 0803779a */ STR R4, [SP, 0x8] \n\
@@ -386,7 +386,7 @@ thumb_func_start func_08037460 \n\
 /* 080377a2 */ LDR R0, [R5] \n\
 /* 080377a4 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 080377a6 */ LDRSH R1, [R7, R2] \n\
-/* 080377a8 */ LDR R2, =anim_quiz_player_raise_arm_l \n\
+/* 080377a8 */ LDR R2, =anim_quiz_player_arm_l \n\
 /* 080377aa */ STR R4, [SP] \n\
 /* 080377ac */ STR R4, [SP, 0x4] \n\
 /* 080377ae */ STR R4, [SP, 0x8] \n\

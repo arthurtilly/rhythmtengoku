@@ -4,7 +4,7 @@
 #include "quiz_show_anim_cells.inc.c"
 
 // [D_088f7f70] Contestant - Left Arm
-const struct Animation anim_quiz_player_arm_l[] = {
+const struct Animation anim_quiz_player_press_button_l[] = {
     /* 000 */ { quiz_show_cel008, 2 },
     /* 001 */ { quiz_show_cel009, 2 },
     /* 002 */ { quiz_show_cel020, 2 },
@@ -17,7 +17,7 @@ const struct Animation anim_quiz_player_arm_l[] = {
 };
 
 // [D_088f7fb8] Contestant - Right Arm
-const struct Animation anim_quiz_player_arm_r[] = {
+const struct Animation anim_quiz_player_press_button_r[] = {
     /* 000 */ { quiz_show_cel018, 2 },
     /* 001 */ { quiz_show_cel019, 2 },
     /* 002 */ { quiz_show_cel021, 2 },
@@ -30,7 +30,7 @@ const struct Animation anim_quiz_player_arm_r[] = {
 };
 
 // [D_088f8000] Host - Right Arm
-const struct Animation anim_quiz_host_arm_r[] = {
+const struct Animation anim_quiz_host_press_button_r[] = {
     /* 000 */ { quiz_show_cel030, 2 },
     /* 001 */ { quiz_show_cel031, 2 },
     /* 002 */ { quiz_show_cel032, 2 },
@@ -43,7 +43,7 @@ const struct Animation anim_quiz_host_arm_r[] = {
 };
 
 // [D_088f8048] Host - Left Arm
-const struct Animation anim_quiz_host_arm_l[] = {
+const struct Animation anim_quiz_host_press_button_l[] = {
     /* 000 */ { quiz_show_cel041, 2 },
     /* 001 */ { quiz_show_cel042, 2 },
     /* 002 */ { quiz_show_cel043, 2 },
@@ -234,7 +234,7 @@ const struct Animation anim_quiz_num0_4[] = {
 };
 
 // [D_088f83c0] Contestant - Raise Left Arm
-const struct Animation anim_quiz_player_raise_arm_l[] = {
+const struct Animation anim_quiz_player_arm_l[] = {
     /* 000 */ { quiz_show_cel007, 40 },
     /* 001 */ { quiz_show_cel016, 4 },
     /* 002 */ { quiz_show_cel015, 4 },
@@ -243,7 +243,7 @@ const struct Animation anim_quiz_player_raise_arm_l[] = {
 };
 
 // [D_088f83e8] Contestant - Raise Right Arm
-const struct Animation anim_quiz_player_raise_arm_r[] = {
+const struct Animation anim_quiz_player_arm_r[] = {
     /* 000 */ { quiz_show_cel017, 40 },
     /* 001 */ { quiz_show_cel028, 4 },
     /* 002 */ { quiz_show_cel027, 4 },
@@ -252,7 +252,7 @@ const struct Animation anim_quiz_player_raise_arm_r[] = {
 };
 
 // [D_088f8410] Host - Raise Right Arm
-const struct Animation anim_quiz_host_raise_arm_r[] = {
+const struct Animation anim_quiz_host_arm_r[] = {
     /* 000 */ { quiz_show_cel029, 40 },
     /* 001 */ { quiz_show_cel039, 4 },
     /* 002 */ { quiz_show_cel038, 4 },
@@ -261,7 +261,7 @@ const struct Animation anim_quiz_host_raise_arm_r[] = {
 };
 
 // [D_088f8438] Host - Raise Left Arm
-const struct Animation anim_quiz_host_raise_arm_l[] = {
+const struct Animation anim_quiz_host_arm_l[] = {
     /* 000 */ { quiz_show_cel040, 40 },
     /* 001 */ { quiz_show_cel050, 4 },
     /* 002 */ { quiz_show_cel049, 4 },
