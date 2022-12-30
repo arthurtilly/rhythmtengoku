@@ -94,7 +94,7 @@ extern u32 func_080054f0(struct unk_struct_080054b0 *arg0);
 // extern ? func_080055fc(?);
 // extern ? func_08005640(?);
 // extern ? func_0800568c(?); // render some read-only sprite/text thing
-extern u32 func_08005814(struct SpriteHandler *, struct TextObject1 *, u32 *, u16 *); // do the above but for all in an array
+extern u32 func_08005814(struct SpriteHandler *, struct TextObject1 *, const void *, u16 *); // do the above but for all in an array
 // extern ? func_0800584c(?); // set D_03004ae8
 extern struct unk_struct_08005858 *func_08005858(struct unk_struct_08005858_init *arg0);
 extern u32 func_08005878(struct unk_struct_08005858 *arg0);

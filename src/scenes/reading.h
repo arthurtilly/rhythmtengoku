@@ -3,6 +3,33 @@
 #include "global.h"
 #include "scenes.h"
 
+// Scene Types:
+struct ReadingSceneInfo {
+    /* add fields here */
+};
+
+struct ReadingMaterial {
+    const char *title;
+    const char *text;
+    const u32 *graphics;
+    const struct SequenceData *music;
+};
+
+
+// Scene Macros/Enums:
+
+
+// OAM Animations:
+
+
+// Sound Effects:
+
+
+// Scene Definition Data:
+extern const struct ReadingMaterial D_089d7e74[];
+
+
+// Scene Functions:
 // extern ? func_0801a384(?); // [func_0801a384] READING - Graphics Init. 3 (BG?)
 // extern ? func_0801a3b0(?); // [func_0801a3b0] READING - Graphics Init. 2 (OBJ)
 // extern ? func_0801a3e4(?); // [func_0801a3e4] READING - Graphics Init. 1

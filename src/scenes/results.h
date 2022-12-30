@@ -3,7 +3,26 @@
 #include "global.h"
 #include "scenes.h"
 
-/* TYPES */
+// Scene Types:
+struct ResultsSceneInfo {
+    struct TextObject2 *textObj2;
+    struct TextObject1 *textObj1;
+    u32 awaitingInput;
+    u8 finalResultLevel;
+    s16 placeholderIcon;
+    s16 resultIcon;
+    u8 totalNegativeComments;
+    u8 totalPositiveComments;
+    u16 commentSprites[3];
+    u32 null1C;
+    u32 null20;
+    u8 unk24;
+    u8 null25;
+    char negativeCommentsText[0x100];
+    u8 medalObtained;
+    u8 stillJustOK;
+    u8 singleCommentTryAgain;
+};
 
 struct MarkingCriteria {
     const char *positiveRemark;
@@ -45,8 +64,8 @@ struct ScoreHandler {
     u32 maximumPoints;
 };
 
-/* MACROS & ENUMS */
 
+// Scene Macros/Enums:
 enum ResultsLevelsEnum {
     RESULT_LEVEL_TRY_AGAIN,
     RESULT_LEVEL_OK,
@@ -59,15 +78,15 @@ enum ResultsLevelIconsEnum {
     RESULT_ICON_SUPERB
 };
 
-/* TEXT */
 
+// Text:
 extern const char D_08054f14[]; // ""
 extern const char D_08054f18[]; // "…でも、" ("...but,")
 extern const char D_08054f24[]; // "しかも、" ("moreover,")
 extern const char D_08054f30[]; // "さらに、" ("also,")
 
-/* SPRITE ANIMATIONS */
 
+// OAM Animations:
 extern const struct Animation D_0890b6ac[]; // Placeholder Header ("nori-kan check")
 extern const struct Animation D_0890b6bc[]; // Result Icon { 0 = OK; 1 = Try Again; 2 = Superb }
 extern const struct Animation D_0890b6dc[]; // Positive Reinforcement Text Bubble
@@ -76,23 +95,23 @@ extern const struct Animation D_0890b6fc[]; // Header Text Box Mask
 extern const struct Animation D_0890b70c[]; // "Medal Get!"
 extern const struct Animation D_0890b724[]; // "でも" ("but")
 
-/* SOUND EFFECTS */
 
+// Sound Effects:
 extern const struct SequenceData s_menu_se20_seqData;
 extern const struct SequenceData s_f_result_mes_add_seqData;
 
-/* SCENE DATA */
 
+// Scene Definition Data:
 extern const struct GraphicsTable D_089d7654[]; // LEVEL - Graphics Table
-extern const struct CompressedGraphics *D_089d7684[]; // LEVEL - Buffered Textures List
-extern const struct SequenceData *D_089d7688[3]; // LEVEL - Result SFX Pool
-extern const struct SequenceData *D_089d7694[3]; // LEVEL - Result BGM Pool
+extern const struct CompressedGraphics *const D_089d7684[]; // LEVEL - Buffered Textures List
+extern const struct SequenceData *const D_089d7688[3]; // LEVEL - Result SFX Pool
+extern const struct SequenceData *const D_089d7694[3]; // LEVEL - Result BGM Pool
 extern struct ScoreHandler *D_089d7980; // ( = D_03001338)
-extern char *D_089d7b34[3]; // LEVEL - Comment Pool (Try Again)
-extern char *D_089d7b40[4]; // LEVEL - Comment Pool (OK)
+extern const char *const D_089d7b34[3]; // LEVEL - Comment Pool (Try Again)
+extern const char *const D_089d7b40[4]; // LEVEL - Comment Pool (OK)
 
-/* FUNCTIONS */
 
+// Functions:
 // extern ? func_080188b4(?); // [func_080188b4] DEBUG Initialise Static Variables (STUB)
 // extern ? func_080188b8(?); // [func_080188b8] DEBUG Graphics Init. 2
 // extern ? func_080188e4(?); // [func_080188e4] DEBUG Graphics Init. 1

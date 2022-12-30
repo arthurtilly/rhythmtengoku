@@ -3,6 +3,33 @@
 #include "global.h"
 #include "scenes.h"
 
+// Scene Types:
+struct StudioSceneInfo {
+    /* add fields here */
+};
+
+struct StudioEntry {
+    const char *fullTitle;
+    const char *shortTitle;
+    const struct BeatScript *script;
+};
+
+
+// Scene Macros/Enums:
+
+
+// OAM Animations:
+
+
+// Sound Effects:
+
+
+// Scene Definition Data:
+extern const struct StudioEntry D_089d81b4[]; // Studio Song Data
+extern const char *const D_089d83d0[]; // Drum Kit Names
+
+
+// Functions:
 // extern ? func_0801a9c8(?); // [func_0801a9c8] ?
 // extern ? func_0801aa04(?);
 // extern ? func_0801aaa0(?);

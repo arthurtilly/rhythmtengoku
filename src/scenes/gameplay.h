@@ -2,15 +2,80 @@
 
 #include "global.h"
 #include "scenes.h"
+#include "engines.h"
 #include "src/main.h"
 #include "src/scenes/script.h"
 
-extern const struct SequenceData s_f_send_mes_seqData;
-extern const struct SequenceData s_f_fail_perfect_seqData;
-extern const struct SequenceData s_f_pause_on_seqData;
-extern const struct SequenceData s_f_pause_cursor_seqData;
-extern const struct SequenceData s_f_pause_continue_seqData;
+// Scene Types:
+struct GameplaySceneInfo {
+	s32 unk0;
+	s32 unk4;
+	u8 playInputsEnabled; // A, B, +, L, R
+	u8 assessIrrelevantInputs; // Register inputs with no relevant cue.
+    u16 buttonPressFilter;
+	u16 buttonReleaseFilter;
+	const struct GameEngine *gameEngine; // Game Engine Pointer
+	void *gameEngineInfo; // Same value as D_030055d0
+	struct Cue *cues; // Linked List (most recent element)
+	const struct CueDefinition *cueDefinitions[12]; // Cue Definitions (copied from Game Engine)
+	EngineEvent commonFunctions[3]; // Engine "Common" Functions
+	struct Cue *currentCue; // Current Cue
+	u8 cueSpawnsEnabled;
+    u8 cancelThisCueSpawning;
+    u8 allowCueInputOverlap; // If multiple cues for the same input overlap, register the input for all cues (otherwise only consider the most relevant cue).
+    s32 engineFuncParam; // Parameter used when calling Engine-specific Functions
+    u8 unk64;
+	const struct SequenceData *nextCueSpawnSfx;
+	const struct SequenceData *nextCueHitSfx;
+	const struct SequenceData *nextCueBarelySfx;
+	const struct SequenceData *nextCueMissSfx;
+	u8 ignoreThisCueResult;
+    s8 lastCueInputOffset; // Most Recent Input Timing Offset (how early/late the most recent input was)
+	u8 currentMarkingCriteria; // Current Marking Criteria
+	u8 isTutorial;
+	u8 skippingTutorial; // Currently changing scenes.
+	const struct Scene *skipDestination; // Skip Tutorial destination scene
+	u16 fadeInTicks; // Remaining ticks for screen fade-in?
+    u16 nextCueDuration;
+    u16 unk88;
+    u16 unk8A;
+    s16 pauseSprite;
+    s16 pauseOptionsSprite;
+    u8 unpausing; // Pause Menu is currently being exited.
+    u8 currentPauseOption;
+    u32 paletteBuffer[0x100]; // Palette Buffer
+    s16 skipTutorialSprite;
+    s16 aButtonSprite;
+    struct TextPrinter *textPrinter;
+    u8  pausedAtTextBox;
+    u8  printingTutorialText;
+    u16 textButtonPressFilter;
+    u16 textButtonReleaseFilter;
+    s16 perfectSprite;
+    u8  goingForPerfect;
+    u8  assessPerfectInputs;
+    u8  perfectFailed;
+    u8  missPunishmentTimer;
+    u8  missPunishmentInterval;
+    s8  earlinessRangeMax; // Input Timing Window Duration - Early, Max.
+    s8  latenessRangeMin; // Input Timing Window Duration - Late, Min.
+    s8  earlinessRangeMin; // Input Timing Window Duration - Early, Min.
+    s8  latenessRangeMax; // Input Timing Window Duration - Late, Max.
+    u16 sfxTempo; // Assumed original tempo of any sound effect played.
+    u16 skipTutorialButton; // Button filter for skipping tutorials.
+    s32 interEngineVariableSpace[64];
+    u8  dpadCannotOverlap;
+    u8  dpadIsOpen;
+    u8  dpadClosedTimer;
+    u8  mercyEnabled;
+    u8  forgivableMisses;
+};
 
+
+// Scene Macros/Enums:
+
+
+// OAM Animations:
 extern const struct Animation anim_gameplay_pause_title[]; // Pause Menu Title
 extern const struct Animation anim_gameplay_pause_option1[]; // Pause Menu Options (Continue)
 extern const struct Animation anim_gameplay_pause_option2[]; // Pause Menu Options (Quit)
@@ -21,12 +86,23 @@ extern const struct Animation anim_gameplay_perfect_icon[]; // Go For A Perfect!
 extern const struct Animation anim_gameplay_perfect_miss[]; // Fail Perfect
 extern const struct Animation anim_gameplay_perfect_hit[]; // Perfect Input
 
+
+// Sound Effects:
+extern const struct SequenceData s_f_send_mes_seqData;
+extern const struct SequenceData s_f_fail_perfect_seqData;
+extern const struct SequenceData s_f_pause_on_seqData;
+extern const struct SequenceData s_f_pause_cursor_seqData;
+extern const struct SequenceData s_f_pause_continue_seqData;
+
+
+// Scene Definition Data:
 extern const struct GraphicsTable D_089cfd7c[]; // Graphics Table (Common Gameplay Graphics/Palettes, e.g. Pause Menu)
 extern const struct CompressedGraphics *const D_089cfda0[]; // Buffered Textures List
 extern const struct PauseMenuDefinition D_089cfde0; // Pause Handler Definition
 extern const struct Animation *const D_089cfdf0[2]; // A Button Prompt Animations { 0 = Black; 1 = White }
 
-/* AUDIO */
+
+// Functions - Audio:
 extern void gameplay_set_sound_tempo(u32 tempo); // [func_08016e04] Define Sound Effect Base Tempo
 extern struct SoundPlayer *gameplay_align_soundplayer_to_tempo(struct SoundPlayer *player); // [func_08016e18] Match SoundPlayer to Current Tempo
 extern struct SoundPlayer *gameplay_play_sound(const struct SequenceData *sfx); // [func_08016e54] Play Sound
@@ -34,15 +110,13 @@ extern struct SoundPlayer *gameplay_play_sound_in_player(u32 player, const struc
 extern struct SoundPlayer *gameplay_play_sound_w_pitch_volume(const struct SequenceData *sfx, u32 volume, u32 pitch); // [func_08016e74] Play Sound
 extern struct SoundPlayer *gameplay_play_sound_in_player_w_pitch_volume(u32 player, const struct SequenceData *sfx, u32 volume, s32 pitch); // [func_08016e84] Play Sound
 
-/* SCENE */
+// Functions - Scene:
 extern void gameplay_init_scene_static_var(void); // [func_08016e94] Initialise Static Variables
 extern void gameplay_init_gfx1(void); // [func_08016ea4] Graphics Init. 1
-extern void gameplay_start_scene(s32 arg); // [func_08016ec4] Scene Init.
-extern void func_08016ffc(s32 arg); // [func_08016ffc] Scene STUB
-extern void gameplay_update_scene(s32 arg); // [func_08017000] Scene Main
-
-/* ... */
-extern u32 gameplay_inputs_are_enabled(void); // [func_0801714c] Check if Play Inputs are Enabled
+extern void gameplay_start_scene(s32 unused); // [func_08016ec4] Scene Start
+extern void func_08016ffc(s32 unused); // [func_08016ffc] Scene Update Frozen
+extern void gameplay_update_scene(s32 unused); // [func_08017000] Scene Update
+extern u32  gameplay_inputs_are_enabled(void); // [func_0801714c] Check if Play Inputs are Enabled
 extern void gameplay_clear_palette_buffer(Palette buffer); // [func_08017168] Clear Secondary Palette Buffer (loaded to D_03004b10.unk858)
 // extern ? gameplay_set_current_engine(?); // [func_08017188] Load New Engine
 extern void *gameplay_get_engine_info(void); // [func_0801732c] Get Current Game Engine Info
@@ -81,9 +155,9 @@ extern s32  gameplay_get_inter_engine_variable(u32 i); // [func_0801777c] Get In
 extern void gameplay_prevent_dpad_overlap(u32 preventOverlap); // [func_080177a4] Set D-Pad Input Overlap Handling
 extern void gameplay_enable_mercy(u32 enable); // [func_080177c8] Enable Mercy
 extern void gameplay_set_mercy_count(u32 total); // [func_080177dc] Set Total Forgivable Misses
-extern void gameplay_stop_scene(s32 arg); // [func_080177f0] Scene Close
+extern void gameplay_stop_scene(s32 unused); // [func_080177f0] Scene Stop
 
-/* CUES */
+// Functions - Cues:
 extern void gameplay_reset_cues(void); // [func_080178ac] Reset All Cue Data
 extern void gameplay_init_cues(void); // [func_080178e4] Init. All Cues
 extern void gameplay_set_marking_criteria(u32 criteria); // [func_08017908] Set Current Marking Criteria
@@ -123,7 +197,7 @@ extern void gameplay_set_next_cue_duration(u32 duration); // [func_08018114] Set
 extern void gameplay_get_cue_info(struct Cue **cue, void **info); // [func_08018124] Get Cue and GameCueInfo
 extern void gameplay_get_previous_cue_info(struct Cue *cue, struct Cue **prev, void **info); // [func_08018138] Get Previous Cue and GameCueInfo
 
-/* VIDEO */
+// Functions - Video:
 // extern ? gameplay_init_overlay(?); // [func_08018154] Initialise Common Graphics (Perfect Campaign, etc.)
 extern void gameplay_pause_menu_set_quit_destination(const struct Scene *scene); // [func_080182ac] Set D_03001328
 extern void gameplay_pause_menu_darken_screen(void); // [func_080182b8] Screen Darken (Pause)

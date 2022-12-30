@@ -15,6 +15,9 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
+// For readability.
+#define gResultsInfo ((struct ResultsSceneInfo *)D_030046a4)
+
 #define RESULTS_TEXT_TILES_ADDRESS (void *)(VRAMBase + 0x14000)
 #define LEVEL_COMMENT_PALETTE 4
 #define LEVEL_EXTRA_COMMENT_PALETTE 2
@@ -103,18 +106,18 @@ void func_08018a80(void) {
 void func_08018aa0(s32 arg) {
     func_08007324(FALSE);
     func_080073f0();
-    gResultsInfo.textObj2 = func_08005124(get_current_mem_id(), &D_089de670, 0, 0x340, 6);
-    gResultsInfo.textObj1 = func_0800c660(0x300, 4);
+    gResultsInfo->textObj2 = func_08005124(get_current_mem_id(), &D_089de670, 0, 0x340, 6);
+    gResultsInfo->textObj1 = func_0800c660(0x300, 4);
     dma3_fill(0, RESULTS_TEXT_TILES_ADDRESS, 0x4000, 0x20, 0x200);
-    gResultsInfo.unk24 = 0;
+    gResultsInfo->unk24 = 0;
 
-    gResultsInfo.placeholderIcon = func_0804d160(D_03005380, D_0890b6ac, 0, LEVEL_HEADER_ICON_X, LEVEL_HEADER_Y, 0x800, 0, 0, 0x8000);
-    gResultsInfo.resultIcon = func_0804d160(D_03005380, D_0890b6bc, 0, LEVEL_RESULT_ICON_X, LEVEL_RESULT_ICON_Y, 0x800, 0, 0, 0x8000);
+    gResultsInfo->placeholderIcon = func_0804d160(D_03005380, D_0890b6ac, 0, LEVEL_HEADER_ICON_X, LEVEL_HEADER_Y, 0x800, 0, 0, 0x8000);
+    gResultsInfo->resultIcon = func_0804d160(D_03005380, D_0890b6bc, 0, LEVEL_RESULT_ICON_X, LEVEL_RESULT_ICON_Y, 0x800, 0, 0, 0x8000);
     func_08018a80(); // gfx init.
     D_03005b3c = LFO_MODE_DISABLED;
-    gResultsInfo.awaitingInput = FALSE;
-    gResultsInfo.medalObtained = FALSE;
-    gResultsInfo.stillJustOK = FALSE;
+    gResultsInfo->awaitingInput = FALSE;
+    gResultsInfo->medalObtained = FALSE;
+    gResultsInfo->stillJustOK = FALSE;
 }
 
 
@@ -129,7 +132,7 @@ void func_08018ba0(s32 arg) {
 
     if (D_03004afc & A_BUTTON) {
         pause_beatscript_scene(FALSE); // unpause
-        gResultsInfo.awaitingInput = FALSE;
+        gResultsInfo->awaitingInput = FALSE;
         play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), 0);
     }
 }
@@ -148,7 +151,7 @@ void func_08018bf0(void) {
     s32 textSprite, textWidth;
 
     if (D_089d7980->headerText == NULL) {
-        func_0804d770(D_03005380, gResultsInfo.placeholderIcon, TRUE);
+        func_0804d770(D_03005380, gResultsInfo->placeholderIcon, TRUE);
         return;
     }
 
@@ -163,23 +166,23 @@ void func_08018bf0(void) {
 
 // [func_08018cc8] LEVEL Display Result Icon (Script Function)
 void func_08018cc8(void) {
-    func_0804d770(D_03005380, gResultsInfo.resultIcon, TRUE);
+    func_0804d770(D_03005380, gResultsInfo->resultIcon, TRUE);
 
-    if (gResultsInfo.medalObtained) {
+    if (gResultsInfo->medalObtained) {
         func_0804d160(D_03005380, D_0890b70c, 0, 180, 140, 0x700, 1, 0, 0);
     }
 
-    if (gResultsInfo.stillJustOK) {
+    if (gResultsInfo->stillJustOK) {
         func_0804d160(D_03005380, D_0890b724, 0, 180, 140, 0x700, 1, 0, 0);
     }
 
-    play_sound_in_player(5, D_089d7688[gResultsInfo.finalResultLevel]);
+    play_sound_in_player(5, D_089d7688[gResultsInfo->finalResultLevel]);
 }
 
 
 // [func_08018d68] LEVEL Play Music (Script Function)
 void func_08018d68(void) {
-    const struct SequenceData *music = D_089d7694[gResultsInfo.finalResultLevel];
+    const struct SequenceData *music = D_089d7694[gResultsInfo->finalResultLevel];
 
     scene_set_music(music);
     set_beatscript_tempo(get_music_base_tempo(music));
@@ -192,13 +195,13 @@ void func_08018d9c(void) {
     u32 totalNegativeComments, totalComments;
     u32 i;
 
-    commentSprites = gResultsInfo.commentSprites;
-    totalNegativeComments = gResultsInfo.totalNegativeComments;
-    totalComments = gResultsInfo.totalNegativeComments + gResultsInfo.totalPositiveComments;
+    commentSprites = gResultsInfo->commentSprites;
+    totalNegativeComments = gResultsInfo->totalNegativeComments;
+    totalComments = gResultsInfo->totalNegativeComments + gResultsInfo->totalPositiveComments;
 
-    if ((gResultsInfo.finalResultLevel != RESULT_LEVEL_TRY_AGAIN)
-      || (gResultsInfo.totalPositiveComments == 0)
-      || (gResultsInfo.singleCommentTryAgain)) {
+    if ((gResultsInfo->finalResultLevel != RESULT_LEVEL_TRY_AGAIN)
+      || (gResultsInfo->totalPositiveComments == 0)
+      || (gResultsInfo->singleCommentTryAgain)) {
         return;
     }
 
@@ -277,10 +280,10 @@ void func_080191bc(u32 level) {
 struct Animation *func_08019210(const char *string, u32 arg1, u32 arg2) {
     struct Animation *anim;
 
-    if ((u32) 16 + (gResultsInfo.unk24 * 2) >= 32) return NULL;
+    if ((u32) 16 + (gResultsInfo->unk24 * 2) >= 32) return NULL;
 
-    anim = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, 16 + (gResultsInfo.unk24 * 2), 0, string, arg1, arg2, 0x100);
-    gResultsInfo.unk24++;
+    anim = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, 16 + (gResultsInfo->unk24 * 2), 0, string, arg1, arg2, 0x100);
+    gResultsInfo->unk24++;
     return anim;
 }
 
@@ -489,9 +492,9 @@ u32 func_08019a80(void) {
     criteriaPtr = D_089d7980->markingData;
     totalFailed = 0;
     tracker = D_089d7980->cueInputTrackers;
-    commentSprites = gResultsInfo.commentSprites;
-    textDest = gResultsInfo.negativeCommentsText;
-    gResultsInfo.singleCommentTryAgain = FALSE;
+    commentSprites = gResultsInfo->commentSprites;
+    textDest = gResultsInfo->negativeCommentsText;
+    gResultsInfo->singleCommentTryAgain = FALSE;
 
     for (criteriaPtr; *criteriaPtr != NULL; tracker++, criteriaPtr++) {
         if (tracker->totalInputs == 0) continue;
@@ -519,7 +522,7 @@ u32 func_08019a80(void) {
         }
 
         if (overrideOtherComments) {
-            gResultsInfo.singleCommentTryAgain = TRUE;
+            gResultsInfo->singleCommentTryAgain = TRUE;
             comments[0] = criteria->negativeRemark;
             totalFailed = 1;
             break;
@@ -540,7 +543,7 @@ u32 func_08019a80(void) {
         commentSprites[i] = sprite;
     }
 
-    gResultsInfo.totalNegativeComments = totalFailed;
+    gResultsInfo->totalNegativeComments = totalFailed;
     return totalFailed;
 }
 
@@ -562,7 +565,7 @@ u32 func_08019bec(void) {
     totalSucceeded = 0;
     totalCriteria = 0;
     tracker = D_089d7980->cueInputTrackers;
-    commentSprites = &gResultsInfo.commentSprites[gResultsInfo.totalNegativeComments];
+    commentSprites = &gResultsInfo->commentSprites[gResultsInfo->totalNegativeComments];
     notPerfect = FALSE;
     textDest = mem_heap_alloc(0x100);
 
@@ -592,7 +595,7 @@ u32 func_08019bec(void) {
         if (!succeededThisCriterion)
             continue;
 
-        if (gResultsInfo.totalNegativeComments != 0) {
+        if (gResultsInfo->totalNegativeComments != 0) {
             memcpy(textDest, D_08054f18, 9); // "c‚Å‚àA"
             func_080081a8(textDest, criteria->positiveRemark);
             anim = func_08019210(textDest, 3, 3);
@@ -622,14 +625,14 @@ u32 func_08019bec(void) {
         if (totalSucceeded > 2)
             break;
 
-        if (gResultsInfo.totalNegativeComments) {
+        if (gResultsInfo->totalNegativeComments) {
             func_0804d770(D_03005380, commentSprites[0], FALSE);
             break;
         }
     }
 
     mem_heap_dealloc(textDest);
-    gResultsInfo.totalPositiveComments = totalSucceeded;
+    gResultsInfo->totalPositiveComments = totalSucceeded;
     if (totalCriteria == 0)
         return 0;
 
@@ -649,9 +652,9 @@ void func_08019d9c(void) {
     s32 y;
     u32 i;
 
-    commentSprites = gResultsInfo.commentSprites;
-    totalNegativeComments = gResultsInfo.totalNegativeComments;
-    totalComments = gResultsInfo.totalNegativeComments + gResultsInfo.totalPositiveComments;
+    commentSprites = gResultsInfo->commentSprites;
+    totalNegativeComments = gResultsInfo->totalNegativeComments;
+    totalComments = gResultsInfo->totalNegativeComments + gResultsInfo->totalPositiveComments;
 
     negativeCommentWidth = 0;
     for (i = 0; i < totalNegativeComments; i++) {
@@ -722,8 +725,8 @@ void func_08019ee0(void) {
     func_08019d9c();
 
     if (totalCriteriaFailed != 0) {
-        gResultsInfo.finalResultLevel = RESULT_LEVEL_TRY_AGAIN;
-        func_0804cebc(D_03005380, gResultsInfo.resultIcon, RESULT_ICON_TRY_AGAIN);
+        gResultsInfo->finalResultLevel = RESULT_LEVEL_TRY_AGAIN;
+        func_0804cebc(D_03005380, gResultsInfo->resultIcon, RESULT_ICON_TRY_AGAIN);
         func_080191bc(-1);
         return;
     }
@@ -742,22 +745,22 @@ void func_08019ee0(void) {
     }
 
     if (averageCriteriaSucceeded == INT_TO_FIXED(1.0)) {
-        gResultsInfo.finalResultLevel = RESULT_LEVEL_SUPERB;
-        func_0804cebc(D_03005380, gResultsInfo.resultIcon, RESULT_ICON_SUPERB);
+        gResultsInfo->finalResultLevel = RESULT_LEVEL_SUPERB;
+        func_0804cebc(D_03005380, gResultsInfo->resultIcon, RESULT_ICON_SUPERB);
         func_080191bc(RHYTHM_GAME_STATE_MEDAL_OBTAINED);
 
         previousResult = func_0801317c(D_030046a8->data.gameSelectPosX, D_030046a8->data.gameSelectPosY);
         if (previousResult < RHYTHM_GAME_STATE_MEDAL_OBTAINED)
-            gResultsInfo.medalObtained = TRUE;
+            gResultsInfo->medalObtained = TRUE;
     }
 
     else {
-        gResultsInfo.finalResultLevel = RESULT_LEVEL_OK;
-        func_0804cebc(D_03005380, gResultsInfo.resultIcon, RESULT_ICON_OK);
+        gResultsInfo->finalResultLevel = RESULT_LEVEL_OK;
+        func_0804cebc(D_03005380, gResultsInfo->resultIcon, RESULT_ICON_OK);
         func_080191bc(RHYTHM_GAME_STATE_CLEARED);
 
         if (averageCriteriaSucceeded != 0)
-            gResultsInfo.stillJustOK = TRUE;
+            gResultsInfo->stillJustOK = TRUE;
     }
 }
 

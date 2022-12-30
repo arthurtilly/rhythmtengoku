@@ -4,8 +4,130 @@
 #include "scenes.h"
 
 
-/* SCENE TYPES */
-
+// Scene Types:
+struct GameSelectSceneInfo {
+    u8 unk0;
+    u32 unk4;
+    s32 unk8_b0:1;
+    s32 unk8_b1:1;
+    u16 unkA;
+    s16 selectionBorderSprite;
+    s16 cursorSprite;
+    s8 cursorX; // { 1..9 }
+    s8 cursorY; // { 6..11 }
+    s16 stageTitleSprite;
+    s16 stageTitleBoxSprite;
+    u16 unk16;
+    u16 unk18;
+    u16 unk1A;
+    struct GameSelectUnk1C {
+        u8 unk0;
+        u8 unk1;
+        u8 unk2;
+        u8 unk3;
+        u8 unk4;
+        u8 unk5;
+        u8 unk6;
+        u16 unk8;
+        u16 unkA;
+    } unk1C[2];
+    u16 unk34;
+    struct TextPrinter *unk38;
+    u16 unk3C;
+    u8 unk3E;
+    u8 currentGameCompletionState;
+    u8 unk40;
+    u8 unk41;
+    const struct GameSelectSceneEntry *currentGameEntry;
+    u16 currentGameID;
+    u16 null4A;
+    u16 null4C;
+    u8 unk4E;
+    u16 unk50;
+    u16 unk52;
+    u16 unk54;
+    u16 unk56;
+    u32 null58;
+    u8 unk5C;
+    u16 unk5E;
+    u16 unk60;
+    u16 unk62;
+    u16 unk64;
+    u16 null66;
+    u16 null68;
+    s16 squareSprites[50];
+    struct GameSelectSquareVector {
+        s16 x;
+        s16 y;
+    } squareVectors[50];
+    struct GameSelectUnk198 {
+        u8 unk0;
+        u32 unk4;
+        u32 unk8;
+        u32 unkC;
+        u32 unk10;
+        u32 unk14;
+        u32 unk18;
+        u32 unk1C;
+    } unk198[10];
+    u8 unk2D8;
+    u8 unk2D9;
+    u8 unk2DA;
+    u8 unk2DB;
+    u8 unk2DC;
+    struct RhythmGameCompletionData {
+        s8 x;
+        s8 y;
+        u8 completion;
+    } unk2E0[16];
+    u8 unk320;
+    u32 null324;
+    u8 unk328;
+    u8 unk329;
+    struct FlowDisplay {
+        s16 textSprite; // "Your Flow"
+        s16 numberSprites[3];
+        s16 arrowSprite;
+        u8 unkA;
+        u16 unkC;
+        u16 unkE;
+        u16 currentScore;
+        u16 previousScore; // flow value?
+    } flowDisplay;
+    struct PerfectCampaignNotice {
+        u8 unk0;
+        s8 id;
+        s16 x;
+        s16 y;
+        s16 perfectBorderSprite;
+        u16 unk8;
+        u16 unkA;
+        struct TextPrinter *unkC;
+        s16 aButtonSprite;
+        char unk12[11];
+    } perfectCampaignNotice;
+    u32 null360[40];
+    u32 null400[20];
+    u16 null450;
+    u8 null452;
+    u8 unk453;
+    u8 unk454[4];
+    u32 null458;
+    u32 null45C;
+    u32 null460[32];
+    u32 null4E0;
+    u32 null4E4;
+    s16 medalsTextSprite;
+    s16 medalsNumSprite1;
+    s16 medalsNumSprite2;
+    u16 unk4EE;
+    u32 null4F0;
+    u8 unk4F4;
+    u8 unk4F5;
+    u8 unk4F6;
+    u16 unk4F8;
+    s16 perfectClearedSprite;
+};
 
 struct PerfectCampaignData {
     s8 x;
@@ -35,9 +157,7 @@ struct GameSelectGridEntry {
 };
 
 
-/* SCENE MACROS & ENUMS */
-
-
+// Scene Macros/Enums:
 #define GAME_SELECT_GRID_WIDTH 15
 #define GAME_SELECT_GRID_HEIGHT 12
 
@@ -123,9 +243,7 @@ enum GameSelectSceneEntriesEnum {
 };
 
 
-/* TEXT */
-
-
+// Text
 extern const char D_08050bcc[]; // "" (null reward for getting a perfect)
 extern const char D_08050bd0[]; // "新ゲーム"
 extern const char D_08050bdc[]; // "ただいま「"
@@ -137,9 +255,7 @@ extern const char D_08050c1c[]; // "の曲"
 extern const char D_08050c24[]; // "をプレゼント!!"
 
 
-/* SPRITE ANIMATIONS */
-
-
+// OAM Animations:
 extern const struct Animation anim_game_select_bg_square_large[]; // large rotating square
 extern const struct Animation anim_game_select_bg_square_small[]; // small rotating square
 extern const struct Animation anim_game_select_border_target[]; // selected game border
@@ -171,23 +287,19 @@ extern const struct Animation anim_game_select_cursor[]; // cursor
 extern const struct Animation anim_game_select_perfect_rank[]; // perfect cleared heart symbol
 
 
-/* SOUND EFFECTS */
-
-
+// Sound Effects:
 extern const struct SequenceData s_menu_bgm_seqData; // BGM Game Select 1
 extern const struct SequenceData s_shibafu2_bgm_seqData; // BGM Game Select 2
 
 
-/* SCENE DATA */
-
-
+// Scene Definition Data:
 extern const struct PerfectCampaignData D_089cdf24[48]; // ??? (related to perfect campaign)
-extern const struct Animation *D_089ce0a4[3]; // Perfect Campaign Border Animations { 0 = No Flowers; 1 = 3 Flowers; 2 = 6 Flowers }
+extern const struct Animation *const D_089ce0a4[3]; // Perfect Campaign Border Animations { 0 = No Flowers; 1 = 3 Flowers; 2 = 6 Flowers }
 extern const struct GameSelectSceneEntry D_089ce344[55];
 extern const struct GameSelectGridEntry D_089ceafc[GAME_SELECT_GRID_HEIGHT * GAME_SELECT_GRID_WIDTH];
 extern const struct GraphicsTable D_089cf948[]; // Graphics Table
-extern const struct CompressedGraphics *D_089cf9a8[]; // Buffered Textures List
-extern const struct Animation *D_089cf9ac[14]; // Stage Title Text Animations
+extern const struct CompressedGraphics *const D_089cf9a8[]; // Buffered Textures List
+extern const struct Animation *const D_089cf9ac[14]; // Stage Title Text Animations
 
 
 /* FUNCTIONS */
