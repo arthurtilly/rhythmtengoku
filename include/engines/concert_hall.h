@@ -58,12 +58,12 @@ extern void func_08036f94(); // Engine Event 00 (?)
 // extern ? func_08036ff4(?);
 extern void concert_hall_engine_update(void); // Game Engine Update
 extern void concert_hall_engine_stop(void); // Game Engine Stop
-extern void func_0803705c(struct Cue *cue, struct ConcertHallCue *); // Cue - Spawn
-extern u32  func_08037060(struct Cue *cue, struct ConcertHallCue *, u32 runningTime, u32 duration); // Cue - Update
-extern void func_0803707c(struct Cue *cue, struct ConcertHallCue *); // Cue - Despawn
-extern void func_08037080(struct Cue *cue, struct ConcertHallCue *, u32 pressed, u32 released); // Cue - Hit
-extern void func_08037084(struct Cue *cue, struct ConcertHallCue *, u32 pressed, u32 released); // Cue - Barely
-extern void func_08037088(struct Cue *cue, struct ConcertHallCue *); // Cue - Miss
+extern void concert_hall_cue_spawn(struct Cue *cue, struct ConcertHallCue *); // Cue - Spawn
+extern u32  concert_hall_cue_update(struct Cue *cue, struct ConcertHallCue *, u32 runningTime, u32 duration); // Cue - Update
+extern void concert_hall_cue_despawn(struct Cue *cue, struct ConcertHallCue *); // Cue - Despawn
+extern void concert_hall_cue_hit(struct Cue *cue, struct ConcertHallCue *, u32 pressed, u32 released); // Cue - Hit
+extern void concert_hall_cue_barely(struct Cue *cue, struct ConcertHallCue *, u32 pressed, u32 released); // Cue - Barely
+extern void concert_hall_cue_miss(struct Cue *cue, struct ConcertHallCue *); // Cue - Miss
 extern void concert_hall_input_event(u32 pressed, u32 released); // Input Event
 extern void concert_hall_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
 extern void concert_hall_common_display_text(void); // Common Event 1 (Display Text, Unimplemented)
