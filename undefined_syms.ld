@@ -642,69 +642,6 @@ D_088f5bcc = 0x088f5bcc;
 D_088f5bdc = 0x088f5bdc;
 /* Main Menu - Options Palettes */
 D_088f5bfc = 0x088f5bfc;
-/* Rap Men Animations */
-anim_rap_men_red_desuka = 0x088faf2c;
-anim_rap_men_yellow_barely = 0x088faf54;
-anim_rap_men_yellow_hit = 0x088faf74;
-anim_rap_men_yellow_start = 0x088fafbc;
-anim_rap_men_red_kamone = 0x088faff4;
-anim_rap_men_red_saiko = 0x088fb024;
-anim_rap_men_red_recoil = 0x088fb04c;
-anim_rap_men_smoke_effect = 0x088fb084;
-anim_rap_men_yellow_miss = 0x088fb0ec;
-anim_rap_men_yellow_beat = 0x088fb124;
-anim_rap_men_red_beat = 0x088fb144;
-/* Rap Men Palettes */
-rap_men_obj_pal = 0x088fb164;
-rap_men_bg_pal = 0x088fb1e4;
-/* Rap Women Animations */
-anim_rap_women_red_desuka = 0x088fccdc;
-anim_rap_women_blue_barely = 0x088fcd04;
-anim_rap_women_blue_hit = 0x088fcd24;
-anim_rap_women_blue_start = 0x088fcd6c;
-anim_rap_women_red_kamone = 0x088fcda4;
-anim_rap_women_red_saiko = 0x088fcdd4;
-anim_rap_women_red_recoil = 0x088fcdfc;
-anim_rap_women_smoke_effect = 0x088fce34;
-anim_rap_women_blue_miss = 0x088fce9c;
-anim_rap_women_blue_beat = 0x088fced4;
-anim_rap_women_red_beat = 0x088fcef4;
-/* Rap Women Palettes */
-rap_women_obj_pal = 0x088fcf14;
-rap_women_bg_pal = 0x088fcfb4;
-/* Rat Race Animations */
-anim_rat_run = 0x088fdf9c;
-anim_rat_stop = 0x088fdfc4;
-anim_rat_duck = 0x088fdfdc;
-anim_rat_collide_run = 0x088fdfec;
-anim_rat_collide_stop = 0x088fe05c;
-anim_rat_prepare_dash = 0x088fe0dc;
-anim_rat_cheer = 0x088fe0f4;
-anim_rat_angry_run_l = 0x088fe17c;
-anim_rat_angry_run_r = 0x088fe1c4;
-anim_rat_angry_stop_r = 0x088fe20c;
-anim_rat_cheer_full = 0x088fe254;
-anim_rat_fear_particles_all = 0x088fe334;
-anim_rat_fear_particles_barely = 0x088fe384;
-anim_rat_fear_particles_miss = 0x088fe3a4;
-anim_cat_pupils = 0x088fe3d4;
-anim_cat_eyelids = 0x088fe424;
-anim_cat_paw = 0x088fe464;
-anim_rat_race_crockery = 0x088fe48c;
-anim_rat_race_plates = 0x088fe4a4;
-anim_rat_text_bubble_r = 0x088fe4c4;
-anim_rat_text_bubble_l = 0x088fe50c;
-anim_rat_emote_bubble_r = 0x088fe554;
-anim_rat_emote_bubble_l = 0x088fe56c;
-anim_rat_race_blank = 0x088fe584;
-anim_rat_dash_particle = 0x088fe594;
-anim_rat_traffic_light = 0x088fe5b4;
-anim_rat_race_player_label = 0x088fe5e4;
-anim_rat_stop_barely = 0x088fe5f4;
-anim_rat_stop_miss = 0x088fe62c;
-anim_rat_stumble = 0x088fe65c;
-/* Rat Race Palettes */
-rat_race_pal = 0x088fe6cc;
 /* Epilogue Palettes */
 /* Sneaky Spirits */
 D_088fe8cc = 0x088fe8cc;
@@ -2953,47 +2890,7 @@ D_089e2ea0 = 0x089e2ea0;
 /* Game Engine - Quiz Show */
 /* Game Engine - Bunny Hop */
 /* Game Engine - Rap Men */
-rap_men_anim = 0x089e63a0;
-D_089e63a8 = 0x089e63a8;
-D_089e63b0 = 0x089e63b0;
-D_089e63b8 = 0x089e63b8;
-D_089e63c0 = 0x089e63c0;
-D_089e63c8 = 0x089e63c8;
-D_089e63d0 = 0x089e63d0;
-D_089e63d8 = 0x089e63d8;
-D_089e63e0 = 0x089e63e0;
-D_089e63e8 = 0x089e63e8;
-D_089e63f0 = 0x089e63f0;
-rap_men_anim_table = 0x089e63f8;
-rap_men_buffered_textures = 0x089e6424;
-rap_men_gfx_table = 0x089e6428;
-rap_women_gfx_table = 0x089e64a0;
-rap_men_gfx_tables = 0x089e6518;
-rapping_anim_map = 0x089e6520;
-rapping_anim_durations = 0x089e6525;
-rap_men_cue_hit_sfx = 0x089e652c;
-rap_men_cue_short = 0x089e653c;
-rap_men_cue_long = 0x089e657c;
-rap_men_cue_index = 0x089e65bc;
-rap_men_cue_miss_sfx = 0x089e65f0;
-rap_men_common_events = 0x089e65f8;
-rap_men_engine_events = 0x089e6608;
-D_089e6614 = 0x089e6614;
 /* Game Engine - Rat Race */
-D_089e6634 = 0x089e6634;
-D_089e6638 = 0x089e6638;
-D_089e66bc = 0x089e66bc;
-D_089e66c4 = 0x089e66c4;
-D_089e6704 = 0x089e6704;
-D_089e6744 = 0x089e6744;
-D_089e6784 = 0x089e6784;
-D_089e67b8 = 0x089e67b8;
-D_089e67c8 = 0x089e67c8;
-D_089e6814 = 0x089e6814;
-D_089e6834 = 0x089e6834;
-D_089e684c = 0x089e684c;
-D_089e687c = 0x089e687c;
-D_089e68ac = 0x089e68ac;
 /* Game Engine - Ninja Bodyguard */
 D_089e68b8 = 0x089e68b8;
 D_089e68c0 = 0x089e68c0;

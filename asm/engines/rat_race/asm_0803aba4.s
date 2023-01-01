@@ -7,7 +7,7 @@ thumb_func_start func_0803aba4 \n\
 /* 0803aba6 */ SUB SP, 0x14 \n\
 /* 0803aba8 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 0803abaa */ LSLS R1, R1, 0x18 \n\
-/* 0803abac */ LDR R2, =D_089e687c \n\
+/* 0803abac */ LDR R2, =rat_race_init_rat_data \n\
 /* 0803abae */ LSRS R1, R1, 0x14 \n\
 /* 0803abb0 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0803abb2 */ LDMIA R1!, {R2-R4} \n\

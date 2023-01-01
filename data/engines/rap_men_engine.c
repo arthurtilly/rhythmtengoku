@@ -221,7 +221,7 @@ const struct CueDefinition rap_men_cue_short = {
     /* Barely Window   */ -0x05, 0x05,
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
-    /* Size in Memory  */ 0x4,
+    /* Size in Memory  */ sizeof(struct RapMenCue),
     /* Func. Spawn     */ rap_men_cue_spawn,
     /* Spawn Parameter */ RAP_CUE_SFX_SHORT,
     /* Func. Update    */ rap_men_cue_update,
@@ -245,7 +245,7 @@ const struct CueDefinition rap_men_cue_long = {
     /* Barely Window   */ -0x05, 0x05,
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
-    /* Size in Memory  */ 0x4,
+    /* Size in Memory  */ sizeof(struct RapMenCue),
     /* Func. Spawn     */ rap_men_cue_spawn,
     /* Spawn Parameter */ RAP_CUE_SFX_LONG,
     /* Func. Update    */ rap_men_cue_update,
@@ -304,7 +304,7 @@ const EngineEvent rap_men_engine_events[] = {
 
 // [D_089e6614] Rap Men Game Engine
 const struct GameEngine D_089e6614 = {
-    /* Size in Memory */ 0x18,
+    /* Size in Memory */ sizeof(struct RapMenInfo),
     /* Start Engine   */ rap_men_engine_start,
     /* Update Engine  */ rap_men_engine_update,
     /* Stop Engine    */ rap_men_engine_stop,

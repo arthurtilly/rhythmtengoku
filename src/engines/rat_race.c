@@ -2,6 +2,9 @@
 
 asm(".include \"include/gba.inc\""); // Temporary
 
+// For readability.
+#define gRatRaceInfo ((struct RatRaceInfo *)D_030055d0)
+
 
 /* RAT RACE */
 
