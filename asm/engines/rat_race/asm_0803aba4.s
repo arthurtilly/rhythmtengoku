@@ -16,7 +16,7 @@ thumb_func_start func_0803aba4 \n\
 /* 0803abb8 */ STR R1, [R0] \n\
 /* 0803abba */ LDR R5, =D_03005380 \n\
 /* 0803abbc */ LDR R0, [R5] \n\
-/* 0803abbe */ LDR R1, =D_088fdf9c \n\
+/* 0803abbe */ LDR R1, =anim_rat_run \n\
 /* 0803abc0 */ MOVS R2, 0x90 @ Set R2 to 0x90 \n\
 /* 0803abc2 */ STR R2, [SP] \n\
 /* 0803abc4 */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\
@@ -41,7 +41,7 @@ thumb_func_start func_0803aba4 \n\
  \n\
 branch_0803abee: \n\
 /* 0803abee */ LDR R0, [R5] \n\
-/* 0803abf0 */ LDR R1, =D_088fe384 \n\
+/* 0803abf0 */ LDR R1, =anim_rat_fear_particles_barely \n\
 /* 0803abf2 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 0803abf4 */ STR R2, [SP] \n\
 /* 0803abf6 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\

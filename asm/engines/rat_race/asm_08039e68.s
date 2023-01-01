@@ -89,7 +89,7 @@ thumb_func_start func_08039e68 \n\
 /* 08039f20 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08039f22 */ STRB R1, [R0, 0x14] \n\
 /* 08039f24 */ LDR R0, [R6] \n\
-/* 08039f26 */ LDR R1, =D_088fe50c \n\
+/* 08039f26 */ LDR R1, =anim_rat_text_bubble_l \n\
 /* 08039f28 */ MOVS R2, 0x68 @ Set R2 to 0x68 \n\
 /* 08039f2a */ STR R2, [SP] \n\
 /* 08039f2c */ STR R7, [SP, 0x4] \n\
@@ -164,7 +164,7 @@ branch_08039fb6: \n\
 /* 08039fc8 */ BLS branch_08039fb6 \n\
 /* 08039fca */ LDR R5, =D_03005380 \n\
 /* 08039fcc */ LDR R0, [R5] \n\
-/* 08039fce */ LDR R1, =D_088fe5e4 \n\
+/* 08039fce */ LDR R1, =anim_rat_race_player_label \n\
 /* 08039fd0 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 08039fd2 */ STR R2, [SP] \n\
 /* 08039fd4 */ MOVS R2, 0x3 @ Set R2 to 0x3 \n\
@@ -218,7 +218,7 @@ branch_0803a00e: \n\
 /* 0803a038 */ LDR R0, =D_03005380 \n\
 /* 0803a03a */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0803a03c */ LDR R0, [R0] \n\
-/* 0803a03e */ LDR R1, =D_088fe584 \n\
+/* 0803a03e */ LDR R1, =anim_rat_race_blank \n\
 /* 0803a040 */ MOVS R2, 0x88 @ Set R2 to 0x88 \n\
 /* 0803a042 */ STR R2, [SP] \n\
 /* 0803a044 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
@@ -260,7 +260,7 @@ branch_0803a00e: \n\
 /* 0803a092 */ STRB R0, [R1] \n\
 /* 0803a094 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0803a096 */ LDR R0, [R1] \n\
-/* 0803a098 */ LDR R1, =D_088fe5b4 \n\
+/* 0803a098 */ LDR R1, =anim_rat_traffic_light \n\
 /* 0803a09a */ STR R6, [SP] \n\
 /* 0803a09c */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 0803a09e */ STR R2, [SP, 0x4] \n\

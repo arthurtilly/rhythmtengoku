@@ -99,7 +99,7 @@ jump_0803b420: \n\
 /* 0803b440 */ LDR R0, [R0] \n\
 /* 0803b442 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803b444 */ LDRSH R1, [R7, R2] \n\
-/* 0803b446 */ LDR R2, =D_088fdf9c \n\
+/* 0803b446 */ LDR R2, =anim_rat_run \n\
 /* 0803b448 */ STR R3, [SP] \n\
 /* 0803b44a */ STR R4, [SP, 0x4] \n\
 /* 0803b44c */ STR R4, [SP, 0x8] \n\
@@ -130,7 +130,7 @@ branch_0803b47c: \n\
 /* 0803b482 */ LDR R0, [R6] \n\
 /* 0803b484 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803b486 */ LDRSH R1, [R7, R2] \n\
-/* 0803b488 */ LDR R2, =D_088fe05c \n\
+/* 0803b488 */ LDR R2, =anim_rat_collide_stop \n\
 /* 0803b48a */ MOVS R5, 0x1 @ Set R5 to 0x1 \n\
 /* 0803b48c */ STR R5, [SP] \n\
 /* 0803b48e */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
@@ -156,7 +156,7 @@ branch_0803b47c: \n\
 /* 0803b4ba */ ADDS R1, 0x5C @ Add 0x5C to R1 \n\
 /* 0803b4bc */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803b4be */ LDRSH R1, [R1, R3] \n\
-/* 0803b4c0 */ LDR R2, =D_088fdfec \n\
+/* 0803b4c0 */ LDR R2, =anim_rat_collide_run \n\
 /* 0803b4c2 */ STR R5, [SP] \n\
 /* 0803b4c4 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 0803b4c6 */ STR R3, [SP, 0x4] \n\
@@ -459,7 +459,7 @@ branch_0803b738: \n\
 /* 0803b756 */ LDR R0, [R5] \n\
 /* 0803b758 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 0803b75a */ LDRSH R1, [R7, R2] \n\
-/* 0803b75c */ LDR R2, =D_088fe384 \n\
+/* 0803b75c */ LDR R2, =anim_rat_fear_particles_barely \n\
 /* 0803b75e */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0803b760 */ NEGS R3, R3 @ Set R3 to -R3 \n\
 /* 0803b762 */ STR R4, [SP] \n\
@@ -472,7 +472,7 @@ branch_0803b738: \n\
 /* 0803b772 */ LDRSH R1, [R7, R3] \n\
 /* 0803b774 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
 /* 0803b776 */ BL func_0804ddb0 \n\
-/* 0803b77a */ LDR R1, =D_088fe1c4 \n\
+/* 0803b77a */ LDR R1, =anim_rat_angry_run_r \n\
 /* 0803b77c */ CMP R0, R1 @ Check R0 - R1 \n\
 /* 0803b77e */ BNE branch_0803b7b0 \n\
 /* 0803b780 */ LDR R4, [R5] \n\
@@ -556,7 +556,7 @@ branch_0803b81c: \n\
 /* 0803b820 */ LDR R0, [R3] \n\
 /* 0803b822 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 0803b824 */ LDRSH R1, [R7, R2] \n\
-/* 0803b826 */ LDR R2, =D_088fe3a4 \n\
+/* 0803b826 */ LDR R2, =anim_rat_fear_particles_miss \n\
 /* 0803b828 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0803b82a */ NEGS R3, R3 @ Set R3 to -R3 \n\
 /* 0803b82c */ MOVS R4, 0x1 @ Set R4 to 0x1 \n\
@@ -587,7 +587,7 @@ branch_0803b81c: \n\
 /* 0803b866 */ LDR R0, [R3] \n\
 /* 0803b868 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803b86a */ LDRSH R1, [R7, R2] \n\
-/* 0803b86c */ LDR R2, =D_088fdfdc \n\
+/* 0803b86c */ LDR R2, =anim_rat_duck \n\
 /* 0803b86e */ STR R4, [SP] \n\
 /* 0803b870 */ STR R4, [SP, 0x4] \n\
 /* 0803b872 */ STR R4, [SP, 0x8] \n\

@@ -51,7 +51,7 @@ branch_0803ba30: \n\
 /* 0803ba46 */ LDR R0, [R0] \n\
 /* 0803ba48 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803ba4a */ LDRSH R1, [R5, R2] \n\
-/* 0803ba4c */ LDR R2, =D_088fdf9c \n\
+/* 0803ba4c */ LDR R2, =anim_rat_run \n\
 /* 0803ba4e */ STR R3, [SP] \n\
 /* 0803ba50 */ STR R4, [SP, 0x4] \n\
 /* 0803ba52 */ STR R4, [SP, 0x8] \n\

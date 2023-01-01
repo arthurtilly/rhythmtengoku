@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088fe6cc] <description>
+// [D_088fe6cc] Rat Race Palette
 const Palette rat_race_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xD0D0C0),

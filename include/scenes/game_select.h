@@ -56,10 +56,7 @@ struct GameSelectSceneInfo {
     u16 null66;
     u16 null68;
     s16 squareSprites[50];
-    struct GameSelectSquareVector {
-        s16 x;
-        s16 y;
-    } squareVectors[50];
+    struct Vector2 squareVectors[50];
     struct GameSelectUnk198 {
         u8 unk0;
         u32 unk4;
@@ -102,9 +99,9 @@ struct GameSelectSceneInfo {
         s16 perfectBorderSprite;
         u16 unk8;
         u16 unkA;
-        struct TextPrinter *unkC;
+        struct TextPrinter *printer;
         s16 aButtonSprite;
-        char unk12[11];
+        char text[11];
     } perfectCampaignNotice;
     u32 null360[40];
     u32 null400[20];
@@ -342,10 +339,10 @@ extern void func_08013530(void); // [func_08013530] Graphics Init. 3
 extern void func_08013570(void); // [func_08013570] Graphics Init. 2
 extern void func_0801359c(void); // [func_0801359c] Graphics Init. 1
 extern void func_080135cc(void); // [func_080135cc] Graphics Init. 0
-extern void func_08013644(s32);  // [func_08013644] Scene Init.
+extern void game_select_scene_start(s32);  // [func_08013644] Scene Init.
 extern void func_08013994(void); // init. something
 // extern ? func_080139a0(?);
-// extern ? func_080139ac(?); // [func_080139ac] Scene STUB
+extern void game_select_scene_update_frozen(s32 unused); // [func_080139ac] Scene STUB
 // extern ? func_080139b0(?);
 // extern ? func_080139f4(?);
 extern void func_08013a38(void); // update something
@@ -361,7 +358,7 @@ extern void func_08013f9c(void); // Set Current Game Scene Entry
 extern void func_080140a4(s32 x); // Set Stage Title Text
 extern void func_080140ec(void); // update something
 extern void func_080140f8(s16 sprite); // Link Sprite Position to BG Offset?
-extern void func_08014118(s32); // [func_08014118] Scene Main
+extern void game_select_scene_update(s32); // [func_08014118] Scene Main
 // extern ? func_080141a4(?);
 // extern ? func_080141c0(?);
 // extern ? func_080141d4(?);
@@ -396,7 +393,7 @@ extern u32 func_080152b0(u32 *outMod, u32 *outScore); // Calculate Flow?
 extern u32 func_080153a8(void); // Set Flow?
 extern void func_080154f0(void); // Initialise Flow Display
 extern void func_08015660(void); // update something (cursor movement?)
-// extern ? func_080158d4(?); // [func_080158d4] Scene Close
+extern void game_select_scene_stop(s32 unused); // [func_080158d4] Scene Close
 extern void func_080158f0(void); // STUB
 extern void func_080158f4(void); // init. something
 extern void func_0801593c(void); // STUB

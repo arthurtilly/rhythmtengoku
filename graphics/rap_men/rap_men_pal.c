@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088fb164] <description>
+// [D_088fb164] Rap Men OBJ Palette
 const Palette rap_men_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00E0A8),
@@ -77,7 +77,7 @@ const Palette rap_men_obj_pal[] = {
     }
 };
 
-// [D_088fb1e4] <description>
+// [D_088fb1e4] Rap Men BG Palette
 const Palette rap_men_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00A8F8),

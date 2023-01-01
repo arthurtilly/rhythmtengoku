@@ -3,8 +3,8 @@
 
 #include "rap_women_anim_cells.inc.c"
 
-// [D_088fccdc] <description>
-const struct Animation rap_women_anim00[] = {
+// [D_088fccdc] Red - "Yo," / "-ka?"
+const struct Animation anim_rap_women_red_desuka[] = {
     /* 000 */ { rap_women_cel001, 2 },
     /* 001 */ { rap_women_cel002, 2 },
     /* 002 */ { rap_women_cel003, 4 },
@@ -12,16 +12,16 @@ const struct Animation rap_women_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088fcd04] <description>
-const struct Animation rap_women_anim01[] = {
+// [D_088fcd04] Blue - Barely
+const struct Animation anim_rap_women_blue_barely[] = {
     /* 000 */ { rap_women_cel007, 4 },
     /* 001 */ { rap_women_cel006, 4 },
     /* 002 */ { rap_women_cel005, 20 },
     /* End */ END_ANIMATION
 };
 
-// [D_088fcd24] <description>
-const struct Animation rap_women_anim02[] = {
+// [D_088fcd24] Blue - Hit
+const struct Animation anim_rap_women_blue_hit[] = {
     /* 000 */ { rap_women_cel008, 4 },
     /* 001 */ { rap_women_cel009, 2 },
     /* 002 */ { rap_women_cel010, 1 },
@@ -33,8 +33,8 @@ const struct Animation rap_women_anim02[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088fcd6c] <description>
-const struct Animation rap_women_anim03[] = {
+// [D_088fcd6c] Blue - Prepare
+const struct Animation anim_rap_women_blue_start[] = {
     /* 000 */ { rap_women_cel016, 4 },
     /* 001 */ { rap_women_cel017, 4 },
     /* 002 */ { rap_women_cel018, 4 },
@@ -44,8 +44,8 @@ const struct Animation rap_women_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088fcda4] <description>
-const struct Animation rap_women_anim04[] = {
+// [D_088fcda4] Red - "-ne?"
+const struct Animation anim_rap_women_red_kamone[] = {
     /* 000 */ { rap_women_cel019, 4 },
     /* 001 */ { rap_women_cel020, 4 },
     /* 002 */ { rap_women_cel021, 4 },
@@ -54,8 +54,8 @@ const struct Animation rap_women_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088fcdd4] <description>
-const struct Animation rap_women_anim05[] = {
+// [D_088fcdd4] Red - "-ko!!"
+const struct Animation anim_rap_women_red_saiko[] = {
     /* 000 */ { rap_women_cel024, 4 },
     /* 001 */ { rap_women_cel025, 4 },
     /* 002 */ { rap_women_cel026, 4 },
@@ -63,8 +63,8 @@ const struct Animation rap_women_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088fcdfc] <description>
-const struct Animation rap_women_anim06[] = {
+// [D_088fcdfc] Red - Recoil
+const struct Animation anim_rap_women_red_recoil[] = {
     /* 000 */ { rap_women_cel028, 4 },
     /* 001 */ { rap_women_cel029, 4 },
     /* 002 */ { rap_women_cel030, 4 },
@@ -74,8 +74,8 @@ const struct Animation rap_women_anim06[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088fce34] <description>
-const struct Animation rap_women_anim07[] = {
+// [D_088fce34] Smoke Effect
+const struct Animation anim_rap_women_smoke_effect[] = {
     /* 000 */ { rap_women_cel034, 2 },
     /* 001 */ { rap_women_cel035, 2 },
     /* 002 */ { rap_women_cel036, 2 },
@@ -91,8 +91,8 @@ const struct Animation rap_women_anim07[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088fce9c] <description>
-const struct Animation rap_women_anim08[] = {
+// [D_088fce9c] Blue - Miss
+const struct Animation anim_rap_women_blue_miss[] = {
     /* 000 */ { rap_women_cel045, 4 },
     /* 001 */ { rap_women_cel046, 4 },
     /* 002 */ { rap_women_cel047, 4 },
@@ -102,16 +102,16 @@ const struct Animation rap_women_anim08[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088fced4] <description>
-const struct Animation rap_women_anim09[] = {
+// [D_088fced4] Blue - Beat
+const struct Animation anim_rap_women_blue_beat[] = {
     /* 000 */ { rap_women_cel052, 3 },
     /* 001 */ { rap_women_cel051, 3 },
     /* 002 */ { rap_women_cel005, 21 },
     /* End */ END_ANIMATION
 };
 
-// [D_088fcef4] <description>
-const struct Animation rap_women_anim10[] = {
+// [D_088fcef4] Red - Beat
+const struct Animation anim_rap_women_red_beat[] = {
     /* 000 */ { rap_women_cel055, 3 },
     /* 001 */ { rap_women_cel054, 3 },
     /* 002 */ { rap_women_cel053, 21 },

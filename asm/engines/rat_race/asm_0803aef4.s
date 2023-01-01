@@ -34,7 +34,7 @@ jump_0803af30: \n\
 /* 0803af32 */ LDR R0, [R0] \n\
 /* 0803af34 */ LSLS R1, R4, 0x10 \n\
 /* 0803af36 */ ASRS R1, R1, 0x10 \n\
-/* 0803af38 */ LDR R2, =D_088fdf9c \n\
+/* 0803af38 */ LDR R2, =anim_rat_run \n\
 /* 0803af3a */ MOVS R4, 0x1 @ Set R4 to 0x1 \n\
 /* 0803af3c */ STR R4, [SP] \n\
 /* 0803af3e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
@@ -50,7 +50,7 @@ jump_0803af54: \n\
 /* 0803af56 */ LDR R0, [R0] \n\
 /* 0803af58 */ LSLS R1, R4, 0x10 \n\
 /* 0803af5a */ ASRS R1, R1, 0x10 \n\
-/* 0803af5c */ LDR R2, =D_088fdfc4 \n\
+/* 0803af5c */ LDR R2, =anim_rat_stop \n\
 /* 0803af5e */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0803af60 */ STR R3, [SP] \n\
 /* 0803af62 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
@@ -68,10 +68,10 @@ jump_0803af7c: \n\
 /* 0803af80 */ LSLS R0, R4, 0x10 \n\
 /* 0803af82 */ ASRS R5, R0, 0x10 \n\
 /* 0803af84 */ LDRB R0, [R7, 0x5] \n\
-/* 0803af86 */ LDR R2, =D_088fe17c \n\
+/* 0803af86 */ LDR R2, =anim_rat_angry_run_l \n\
 /* 0803af88 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
 /* 0803af8a */ BNE branch_0803af8e \n\
-/* 0803af8c */ LDR R2, =D_088fe1c4 \n\
+/* 0803af8c */ LDR R2, =anim_rat_angry_run_r \n\
  \n\
 branch_0803af8e: \n\
 /* 0803af8e */ MOVS R4, 0x1 @ Set R4 to 0x1 \n\
@@ -100,7 +100,7 @@ jump_0803afc8: \n\
 /* 0803afca */ LDR R0, [R5] \n\
 /* 0803afcc */ LSLS R4, R4, 0x10 \n\
 /* 0803afce */ ASRS R4, R4, 0x10 \n\
-/* 0803afd0 */ LDR R2, =D_088fe20c \n\
+/* 0803afd0 */ LDR R2, =anim_rat_angry_stop_r \n\
 /* 0803afd2 */ MOVS R6, 0x1 @ Set R6 to 0x1 \n\
 /* 0803afd4 */ STR R6, [SP] \n\
 /* 0803afd6 */ MOVS R1, 0x7F @ Set R1 to 0x7F \n\
@@ -125,7 +125,7 @@ jump_0803b004: \n\
 /* 0803b006 */ LDR R0, [R0] \n\
 /* 0803b008 */ LSLS R1, R4, 0x10 \n\
 /* 0803b00a */ ASRS R1, R1, 0x10 \n\
-/* 0803b00c */ LDR R2, =D_088fe0dc \n\
+/* 0803b00c */ LDR R2, =anim_rat_prepare_dash \n\
 /* 0803b00e */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0803b010 */ STR R3, [SP] \n\
 /* 0803b012 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\

@@ -89,7 +89,7 @@ branch_0803b0a2: \n\
 /* 0803b0c0 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 0803b0c2 */ STR R3, [SP, 0x4] \n\
 /* 0803b0c4 */ STR R2, [SP, 0x8] \n\
-/* 0803b0c6 */ LDR R2, =D_088fe0dc \n\
+/* 0803b0c6 */ LDR R2, =anim_rat_prepare_dash \n\
 /* 0803b0c8 */ B branch_0803b152 \n\
 \n\
 .ltorg \n\
@@ -116,7 +116,7 @@ branch_0803b0e2: \n\
 /* 0803b0f4 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0803b0f6 */ STR R2, [SP, 0x4] \n\
 /* 0803b0f8 */ STR R6, [SP, 0x8] \n\
-/* 0803b0fa */ LDR R2, =D_088fdfc4 \n\
+/* 0803b0fa */ LDR R2, =anim_rat_stop \n\
 /* 0803b0fc */ B branch_0803b152 \n\
 \n\
 .ltorg \n\
@@ -134,7 +134,7 @@ branch_0803b104: \n\
 /* 0803b116 */ STR R2, [SP, 0x4] \n\
 /* 0803b118 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 0803b11a */ STR R2, [SP, 0x8] \n\
-/* 0803b11c */ LDR R2, =D_088fe1c4 \n\
+/* 0803b11c */ LDR R2, =anim_rat_angry_run_r \n\
 /* 0803b11e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803b120 */ BL func_0804d8f8 \n\
 /* 0803b124 */ LDR R0, [R7] \n\
@@ -157,7 +157,7 @@ branch_0803b140: \n\
 /* 0803b14a */ STR R5, [SP] \n\
 /* 0803b14c */ STR R6, [SP, 0x4] \n\
 /* 0803b14e */ STR R6, [SP, 0x8] \n\
-/* 0803b150 */ LDR R2, =D_088fdf9c \n\
+/* 0803b150 */ LDR R2, =anim_rat_run \n\
  \n\
 branch_0803b152: \n\
 /* 0803b152 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
@@ -185,7 +185,7 @@ branch_0803b16c: \n\
 /* 0803b17a */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 0803b17c */ STR R3, [SP, 0x4] \n\
 /* 0803b17e */ STR R6, [SP, 0x8] \n\
-/* 0803b180 */ LDR R2, =D_088fe0dc \n\
+/* 0803b180 */ LDR R2, =anim_rat_prepare_dash \n\
 /* 0803b182 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803b184 */ BL func_0804d8f8 \n\
  \n\

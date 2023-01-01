@@ -126,23 +126,23 @@ void func_080129e8(void) {
 // Initialise Perfect Campaign Notice
 void func_08012a58(void) {
     struct PerfectCampaignNotice *notice;
-    s16 *vector;
+    struct Vector2 *vector;
 
     notice = &gGameSelectInfo->perfectCampaignNotice;
-    vector = &D_03004b10.BG_OFS[BG_LAYER_1].x;
+    vector = &D_03004b10.BG_OFS[BG_LAYER_1];
 
     notice->perfectBorderSprite = func_0804d160(D_03005380, anim_game_select_border_perfect3, 0, 48, 72, 0x8878, 1, 0, 0x8000);
     func_080140f8(notice->perfectBorderSprite);
     notice->aButtonSprite = func_0804d160(D_03005380, anim_game_select_text_button, 0, 64, 64, 0x800, 1, 0, 0x8000);
-    func_0804db44(D_03005380, notice->aButtonSprite, &vector[0], &vector[1]);
-    notice->unkC = text_printer_create_new((u16) get_current_mem_id(), 4, 120, 26);
-    text_printer_set_x_y(notice->unkC, 104, 320);
-    text_printer_set_layer(notice->unkC, 0x800);
-    text_printer_set_colors(notice->unkC, 0);
-    text_printer_set_palette(notice->unkC, 1);
-    text_printer_set_line_spacing(notice->unkC, 16);
-    text_printer_center_by_content(notice->unkC, 1);
-    text_printer_set_x_y_controller(notice->unkC, &vector[0], &vector[1]);
+    func_0804db44(D_03005380, notice->aButtonSprite, &vector->x, &vector->y);
+    notice->printer = text_printer_create_new(get_current_mem_id(), 4, 120, 26);
+    text_printer_set_x_y(notice->printer, 104, 320);
+    text_printer_set_layer(notice->printer, 0x800);
+    text_printer_set_colors(notice->printer, 0);
+    text_printer_set_palette(notice->printer, 1);
+    text_printer_set_line_spacing(notice->printer, 16);
+    text_printer_center_by_content(notice->printer, 1);
+    text_printer_set_x_y_controller(notice->printer, &vector->x, &vector->y);
     notice->unk0 = 0;
     notice->id = -1;
     switch (D_030046a8->data.unk266) {
@@ -236,7 +236,7 @@ void func_08012cb4(s32 id) {
     notice->y = D_089cdf24[id].y;
 
     entry = func_0801316c(notice->x, notice->y);
-    string = notice->unk12;
+    string = notice->text;
     memcpy(string, D_08050bdc, 11); // "ただいま「"
     func_080081a8(string, entry->name); // "<game_name>"
     func_080081a8(string, D_08050be8); // "」でパーフェクトを達成すると"
@@ -250,7 +250,7 @@ void func_08012cb4(s32 id) {
         func_080081a8(string, D_08050c1c); // "の曲"
     }
     func_080081a8(string, D_08050c24); // "をプレゼント!!"
-    text_printer_set_string(notice->unkC, string);
+    text_printer_set_string(notice->printer, string);
 
     func_0804d770(D_03005380, gGameSelectInfo->selectionBorderSprite, FALSE);
     notice->unk8 = 10;
@@ -404,21 +404,21 @@ void func_08013530(void) {
 
 // [func_08013570] Graphics Init. 2
 void func_08013570(void) {
-    u32 data;
+    s32 task;
 
     func_0800c604(0);
-    data = func_080087b4((u16)get_current_mem_id(), D_089cf9a8);
-    task_run_after(data, func_08013530, 0);
+    task = func_080087b4(get_current_mem_id(), D_089cf9a8);
+    task_run_after(task, func_08013530, 0);
 }
 
 
 // [func_0801359c] Graphics Init. 1
 void func_0801359c(void) {
-    u32 data;
+    s32 task;
 
     func_0800c604(0);
-    data = func_08002ee0((u16) get_current_mem_id(), D_089cf948, 0x3000);
-    task_run_after(data, func_08013570, 0);
+    task = func_08002ee0(get_current_mem_id(), D_089cf948, 0x3000);
+    task_run_after(task, func_08013570, 0);
 }
 
 
@@ -426,14 +426,14 @@ void func_0801359c(void) {
 void func_080135cc(void) {
     func_0800856c(get_current_mem_id(), func_0801359c, 0, 2);
     scene_show_obj_layer();
-    scene_set_bg_layer_display(1, 1, 0, 0, 2, 22, 0x8000);
-    scene_set_bg_layer_display(2, 1, 0, 0, 2, 24, 0xc001);
-    scene_set_bg_layer_display(3, 1, 0, 0, 0, 28, 0xc002);
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 2, 22, 0x8000);
+    scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 2, 24, 0xc001);
+    scene_set_bg_layer_display(BG_LAYER_3, TRUE, 0, 0, 0, 28, 0xc002);
 }
 
 
 // [func_08013644] Scene Init.
-void func_08013644(s32 arg) {
+void game_select_scene_start(s32 unused) {
     s16 BG_OFSX, BG_OFSY;
     s32 cursorX, cursorY;
     struct TengokuSaveData *saveData;
@@ -612,14 +612,14 @@ void func_080140a4(s32 x) {
 #include "asm/game_select/asm_080140ec.s"
 
 
-// Link Sprite Position to BG Offset?
+// Link Sprite Position to BG
 void func_080140f8(s16 sprite) {
     func_0804db44(D_03005380, sprite, &D_03004b10.BG_OFS[BG_LAYER_3].x, &D_03004b10.BG_OFS[BG_LAYER_3].y);
 }
 
 
 // [func_08014118] Scene Main
-void func_08014118(s32 arg) {
+void game_select_scene_update(s32 unused) {
     s16 BG_OFSX, BG_OFSY;
 
     if (!gGameSelectInfo->unk8_b0) {
@@ -663,18 +663,23 @@ void func_08014118(s32 arg) {
 // ?
 void func_080141f8(s32 x, s32 y, s32 completionLevel) {
     struct RhythmGameCompletionData *data;
-    s32 previous;
+    s32 id;
 
-    if (completionLevel == -1) return;
+    if (completionLevel == -1) {
+        return;
+    }
 
-    previous = func_0801317c(x, y);
-    if ((previous >= 0) && (previous < completionLevel)) {
+    id = func_0801317c(x, y);
+    if ((id >= 0) && (id < completionLevel)) {
         data = &gGameSelectInfo->unk2E0[gGameSelectInfo->unk2DC];
         data->x = x;
         data->y = y;
         data->completion = completionLevel;
+
         gGameSelectInfo->unk2DA++;
-        if (++gGameSelectInfo->unk2DC > 15) gGameSelectInfo->unk2DC = 0;
+        if (++gGameSelectInfo->unk2DC > 15) {
+            gGameSelectInfo->unk2DC = 0;
+        }
     }
 }
 
@@ -908,24 +913,24 @@ u32 func_080153a8(void) {
 // Initialise Flow Display
 void func_080154f0(void) {
     struct FlowDisplay *flow;
-    s16 *vector;
+    struct Vector2 *vector;
     u32 i;
     u32 temp;
     u32 score;
 
     flow = &gGameSelectInfo->flowDisplay;
-    vector = &D_03004b10.BG_OFS[BG_LAYER_1].x;
+    vector = &D_03004b10.BG_OFS[BG_LAYER_1];
 
     for (i = 0; i < 3; i++) {
         flow->numberSprites[i] = func_0804d160(D_03005380, anim_game_select_flow_num, 10, 208 - (i * 8), 128, 0, 0, 0, 0);
-        func_0804db44(D_03005380, flow->numberSprites[i], &vector[0], &vector[1]);
+        func_0804db44(D_03005380, flow->numberSprites[i], &vector->x, &vector->y);
     }
 
     flow->textSprite = func_0804d160(D_03005380, anim_game_select_flow_text, 0, 128, 128, 0, 0, 0, 0);
-    func_0804db44(D_03005380, flow->textSprite, &vector[0], &vector[1]);
+    func_0804db44(D_03005380, flow->textSprite, &vector->x, &vector->y);
 
     flow->arrowSprite = func_0804d160(D_03005380, anim_game_select_flow_arrow, 0, 224, 128, 0, 0, 0, 0x8000);
-    func_0804db44(D_03005380, flow->arrowSprite, &vector[0], &vector[1]);
+    func_0804db44(D_03005380, flow->arrowSprite, &vector->x, &vector->y);
     temp = func_080153a8();
     score = flow->previousScore;
 
@@ -977,7 +982,7 @@ void func_0801593c(void) {
 
 // Initialise BG Squares
 void func_08015cf4(void) {
-    struct GameSelectSquareVector *vector;
+    struct Vector2 *vector;
     s32 x, y;
     u32 i;
     s8 temp;

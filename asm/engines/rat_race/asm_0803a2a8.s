@@ -33,10 +33,10 @@ branch_0803a2d6: \n\
 /* 0803a2dc */ MOVS R2, 0x12 @ Set R2 to 0x12 \n\
 /* 0803a2de */ LDRSH R1, [R0, R2] \n\
 /* 0803a2e0 */ LDRB R0, [R0, 0x14] \n\
-/* 0803a2e2 */ LDR R2, =D_088fe50c \n\
+/* 0803a2e2 */ LDR R2, =anim_rat_text_bubble_l \n\
 /* 0803a2e4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803a2e6 */ BEQ branch_0803a2ea \n\
-/* 0803a2e8 */ LDR R2, =D_088fe4c4 \n\
+/* 0803a2e8 */ LDR R2, =anim_rat_text_bubble_r \n\
  \n\
 branch_0803a2ea: \n\
 /* 0803a2ea */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\

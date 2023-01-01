@@ -1576,6 +1576,7 @@ SECTIONS {
         build/data/engines/concert_hall_engine.c.o(.rodata*);
         build/data/engines/quiz_show_engine.c.o(.rodata*);
         build/data/engines/bunny_hop_engine.c.o(.rodata*);
+        build/data/engines/rap_men_engine.c.o(.rodata*);
         build/bin/bindata_089e384c.bin.o(.rodata*);
         build/data/engines/prologues/sneaky_spirits_script.c.o(.rodata*);
         build/data/engines/prologues/spaceball_script.c.o(.rodata*);

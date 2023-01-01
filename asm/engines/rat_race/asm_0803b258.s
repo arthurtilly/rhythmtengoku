@@ -33,7 +33,7 @@ thumb_func_start func_0803b258 \n\
 /* 0803b28e */ LDR R0, [R4] \n\
 /* 0803b290 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803b292 */ LDRSH R1, [R7, R2] \n\
-/* 0803b294 */ LDR R2, =D_088fdfec \n\
+/* 0803b294 */ LDR R2, =anim_rat_collide_run \n\
 /* 0803b296 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0803b298 */ MOV R10, R3 @ Set R10 to R3 \n\
 /* 0803b29a */ STR R3, [SP] \n\
@@ -61,7 +61,7 @@ thumb_func_start func_0803b258 \n\
 /* 0803b2ca */ ADDS R1, 0x4C @ Add 0x4C to R1 \n\
 /* 0803b2cc */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803b2ce */ LDRSH R1, [R1, R3] \n\
-/* 0803b2d0 */ LDR R2, =D_088fe05c \n\
+/* 0803b2d0 */ LDR R2, =anim_rat_collide_stop \n\
 /* 0803b2d2 */ MOV R3, R10 @ Set R3 to R10 \n\
 /* 0803b2d4 */ STR R3, [SP] \n\
 /* 0803b2d6 */ STR R6, [SP, 0x4] \n\

@@ -10,7 +10,7 @@ thumb_func_start func_0803a4f8 \n\
 /* 0803a500 */ STRB R2, [R4, 0x2] \n\
 /* 0803a502 */ LDR R5, =D_03005380 \n\
 /* 0803a504 */ LDR R0, [R5] \n\
-/* 0803a506 */ LDR R1, =D_088fe48c \n\
+/* 0803a506 */ LDR R1, =anim_rat_race_crockery \n\
 /* 0803a508 */ MOVS R2, 0x7E @ Set R2 to 0x7E \n\
 /* 0803a50a */ STR R2, [SP] \n\
 /* 0803a50c */ MOVS R2, 0xA @ Set R2 to 0xA \n\

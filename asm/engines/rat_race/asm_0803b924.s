@@ -48,7 +48,7 @@ branch_0803b950: \n\
 /* 0803b96c */ LDR R0, [R0] \n\
 /* 0803b96e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803b970 */ LDRSH R1, [R5, R2] \n\
-/* 0803b972 */ LDR R2, =D_088fdfc4 \n\
+/* 0803b972 */ LDR R2, =anim_rat_stop \n\
 /* 0803b974 */ STR R3, [SP] \n\
 /* 0803b976 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
 /* 0803b978 */ STR R3, [SP, 0x4] \n\
@@ -64,7 +64,7 @@ branch_0803b990: \n\
 /* 0803b992 */ LDR R0, [R0] \n\
 /* 0803b994 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803b996 */ LDRSH R1, [R5, R2] \n\
-/* 0803b998 */ LDR R2, =D_088fe5f4 \n\
+/* 0803b998 */ LDR R2, =anim_rat_stop_barely \n\
 /* 0803b99a */ STR R3, [SP] \n\
 /* 0803b99c */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
 /* 0803b99e */ STR R3, [SP, 0x4] \n\
