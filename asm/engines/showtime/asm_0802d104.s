@@ -19,7 +19,7 @@ thumb_func_start func_0802d104 \n\
 /* 0802d11e */ STR R2, [R0] \n\
 /* 0802d120 */ LDR R5, =D_03005380 \n\
 /* 0802d122 */ LDR R0, [R5] \n\
-/* 0802d124 */ LDR R1, =D_088cb87c \n\
+/* 0802d124 */ LDR R1, =anim_showtime_monkey_beat2 \n\
 /* 0802d126 */ MOVS R3, 0x88 @ Set R3 to 0x88 \n\
 /* 0802d128 */ MOV R10, R3 @ Set R10 to R3 \n\
 /* 0802d12a */ STR R3, [SP] \n\
@@ -106,7 +106,7 @@ thumb_func_start func_0802d104 \n\
 /* 0802d1da */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802d1dc */ BL func_0804dcb8 \n\
 /* 0802d1e0 */ LDR R0, [R5] \n\
-/* 0802d1e2 */ LDR R1, =D_088cb4f4 \n\
+/* 0802d1e2 */ LDR R1, =anim_showtime_ball \n\
 /* 0802d1e4 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 0802d1e6 */ STR R2, [SP] \n\
 /* 0802d1e8 */ MOVS R3, 0x90 @ Set R3 to 0x90 \n\

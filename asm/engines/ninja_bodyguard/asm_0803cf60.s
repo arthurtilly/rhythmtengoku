@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803cf60 \n\
+thumb_func_start ninja_input_event \n\
 /* 0803cf60 */ PUSH {R4-R7, LR} \n\
 /* 0803cf62 */ SUB SP, 0xC \n\
 /* 0803cf64 */ LDR R7, =D_030055d0 \n\
@@ -18,7 +18,7 @@ thumb_func_start func_0803cf60 \n\
  \n\
 branch_0803cf78: \n\
 /* 0803cf78 */ MOVS R0, 0xF @ Set R0 to 0xF \n\
-/* 0803cf7a */ BL func_0803bd88 \n\
+/* 0803cf7a */ BL ninja_get_anim \n\
 /* 0803cf7e */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803cf80 */ LDR R4, =D_03005380 \n\
 /* 0803cf82 */ LDR R0, [R4] \n\
@@ -49,7 +49,7 @@ branch_0803cf78: \n\
  \n\
 branch_0803cfb8: \n\
 /* 0803cfb8 */ MOVS R0, 0x10 @ Set R0 to 0x10 \n\
-/* 0803cfba */ BL func_0803bd88 \n\
+/* 0803cfba */ BL ninja_get_anim \n\
 /* 0803cfbe */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803cfc0 */ LDR R4, =D_03005380 \n\
 /* 0803cfc2 */ LDR R0, [R4] \n\

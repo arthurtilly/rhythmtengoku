@@ -30,7 +30,7 @@ branch_0802da98: \n\
 /* 0802dab0 */ STR R1, [SP, 0x8] \n\
 /* 0802dab2 */ STR R5, [SP, 0xC] \n\
 /* 0802dab4 */ STR R5, [SP, 0x10] \n\
-/* 0802dab6 */ LDR R1, =D_088cb89c \n\
+/* 0802dab6 */ LDR R1, =anim_showtime_bubble \n\
 /* 0802dab8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802daba */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
 /* 0802dabc */ BL func_0804d160 \n\

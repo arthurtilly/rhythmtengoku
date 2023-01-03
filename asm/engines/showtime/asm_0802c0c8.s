@@ -25,7 +25,7 @@ thumb_func_start showtime_common_beat_animation \n\
 /* 0802c0ee */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
 /* 0802c0f0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802c0f2 */ LDRSH R1, [R1, R2] \n\
-/* 0802c0f4 */ LDR R2, =D_088cb87c \n\
+/* 0802c0f4 */ LDR R2, =anim_showtime_monkey_beat2 \n\
 /* 0802c0f6 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0802c0f8 */ STR R3, [SP] \n\
 /* 0802c0fa */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\

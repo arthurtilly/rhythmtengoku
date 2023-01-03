@@ -82,7 +82,7 @@ thumb_func_start func_080287b4 \n\
 /* 08028864 */ LDR R0, [R5] \n\
 /* 08028866 */ MOVS R2, 0x16 @ Set R2 to 0x16 \n\
 /* 08028868 */ LDRSH R1, [R4, R2] \n\
-/* 0802886a */ LDR R5, =D_088c6190 \n\
+/* 0802886a */ LDR R5, =anim_drum_student_use_pedal_r \n\
 /* 0802886c */ MOVS R7, 0x1 @ Set R7 to 0x1 \n\
 /* 0802886e */ STR R7, [SP] \n\
 /* 08028870 */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
@@ -98,7 +98,7 @@ thumb_func_start func_080287b4 \n\
 /* 08028888 */ LDRSH R0, [R4, R2] \n\
 /* 0802888a */ MOVS R2, 0x16 @ Set R2 to 0x16 \n\
 /* 0802888c */ LDRSH R1, [R4, R2] \n\
-/* 0802888e */ LDR R3, =D_088c6520 \n\
+/* 0802888e */ LDR R3, =anim_drum_student_use_pedal_hihat \n\
 /* 08028890 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 08028892 */ BL func_0802af7c \n\
 /* 08028896 */ LDR R1, =D_089e2988 \n\

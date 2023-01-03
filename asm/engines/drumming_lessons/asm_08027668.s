@@ -54,7 +54,7 @@ thumb_func_start func_08027668 \n\
 /* 080276d8 */ LDR R0, [R5] \n\
 /* 080276da */ MOVS R2, 0x16 @ Set R2 to 0x16 \n\
 /* 080276dc */ LDRSH R1, [R4, R2] \n\
-/* 080276de */ LDR R2, =D_088c8338 \n\
+/* 080276de */ LDR R2, =anim_drum_teacher_use_pedal_r \n\
 /* 080276e0 */ MOVS R4, 0x1 @ Set R4 to 0x1 \n\
 /* 080276e2 */ STR R4, [SP] \n\
 /* 080276e4 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\

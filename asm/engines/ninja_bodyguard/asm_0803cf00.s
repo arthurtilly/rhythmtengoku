@@ -2,13 +2,13 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803cf00 \n\
+thumb_func_start ninja_cue_miss \n\
 /* 0803cf00 */ PUSH {R4, LR} \n\
 /* 0803cf02 */ SUB SP, 0xC \n\
 /* 0803cf04 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0803cf06 */ BL func_0803c710 \n\
 /* 0803cf0a */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 0803cf0c */ BL func_0803bd88 \n\
+/* 0803cf0c */ BL ninja_get_anim \n\
 /* 0803cf10 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803cf12 */ LDR R0, =D_03005380 \n\
 /* 0803cf14 */ LDR R0, [R0] \n\

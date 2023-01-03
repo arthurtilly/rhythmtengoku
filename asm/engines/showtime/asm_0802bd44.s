@@ -35,7 +35,7 @@ branch_0802bd50: \n\
 /* 0802bd7a */ STR R4, [SP, 0xC] \n\
 /* 0802bd7c */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
 /* 0802bd7e */ STR R1, [SP, 0x10] \n\
-/* 0802bd80 */ LDR R1, =D_088cb55c \n\
+/* 0802bd80 */ LDR R1, =anim_showtime_splash_ball \n\
 /* 0802bd82 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802bd84 */ BL func_0804d160 \n\
 /* 0802bd88 */ B branch_0802bdba \n\
@@ -56,7 +56,7 @@ branch_0802bd98: \n\
 /* 0802bdac */ STR R6, [SP, 0xC] \n\
 /* 0802bdae */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
 /* 0802bdb0 */ STR R1, [SP, 0x10] \n\
-/* 0802bdb2 */ LDR R1, =D_088cb5b4 \n\
+/* 0802bdb2 */ LDR R1, =anim_showtime_splash_penguin \n\
 /* 0802bdb4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802bdb6 */ BL func_0804d160 \n\
  \n\

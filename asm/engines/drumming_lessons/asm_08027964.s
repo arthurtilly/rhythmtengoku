@@ -99,7 +99,7 @@ thumb_func_start func_08027964 \n\
 /* 08027a2c */ BL text_printer_set_alignment \n\
 /* 08027a30 */ LDR R6, =D_03005380 \n\
 /* 08027a32 */ LDR R0, [R6] \n\
-/* 08027a34 */ LDR R1, =D_088c8490 \n\
+/* 08027a34 */ LDR R1, =anim_drum_lessons_text_adv_icon \n\
 /* 08027a36 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 08027a38 */ STR R3, [SP] \n\
 /* 08027a3a */ MOV R2, R10 @ Set R2 to R10 \n\
@@ -126,7 +126,7 @@ thumb_func_start func_08027964 \n\
 /* 08027a66 */ MOV R9, R2 @ Set R9 to R2 \n\
 /* 08027a68 */ BL func_0804d890 \n\
 /* 08027a6c */ LDR R0, [R6] \n\
-/* 08027a6e */ LDR R1, =D_088c6548 \n\
+/* 08027a6e */ LDR R1, =anim_drum_lessons_rank_s \n\
 /* 08027a70 */ MOVS R2, 0x60 @ Set R2 to 0x60 \n\
 /* 08027a72 */ STR R2, [SP] \n\
 /* 08027a74 */ MOV R3, R10 @ Set R3 to R10 \n\
@@ -143,7 +143,7 @@ thumb_func_start func_08027964 \n\
 /* 08027a8c */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 08027a8e */ STRH R0, [R1] \n\
 /* 08027a90 */ LDR R0, [R6] \n\
-/* 08027a92 */ LDR R1, =D_088c84b0 \n\
+/* 08027a92 */ LDR R1, =anim_drum_lessons_slow_icon \n\
 /* 08027a94 */ MOVS R2, 0x50 @ Set R2 to 0x50 \n\
 /* 08027a96 */ STR R2, [SP] \n\
 /* 08027a98 */ MOVS R2, 0xC0 @ Set R2 to 0xC0 \n\

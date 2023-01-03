@@ -60,7 +60,7 @@ extern void func_0804dcb8(struct SpriteHandler *, s16, u16); // Set Animation Sp
 extern s32  func_0804ddb0(struct SpriteHandler *, s16, u32); // Get Sprite Data { 20+ = func_0804dcd8() }
 extern void func_0804df4c(struct SpriteHandler *, s16, s8);
 // extern ? func_0804df6c(?);
-// extern ? func_0804df80(?);
+// extern ? func_0804df80(?); // Set Values by Mem. ID
 // extern ? func_0804e0a0(?);
 extern void func_0804e0bc(struct SpriteHandler *, u16);
 // extern ? func_0804e0c0(?);
@@ -73,7 +73,7 @@ extern void func_0804e0f0(struct SpriteHandler *, u16, u16);
 // extern ? func_0804e144(?);
 // extern ? func_0804e158(?);
 // extern ? func_0804e170(?);
-// extern ? func_0804e188(?);
+extern void func_0804e188(struct SpriteHandler *, u16 memID, s16 *xController, s16 *yController); // Set X & Y Data Source by Mem. ID
 // extern ? func_0804e1a4(?);
 // extern ? func_0804e1bc(?);
 // extern ? func_0804e1c0(?);

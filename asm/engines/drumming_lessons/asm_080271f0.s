@@ -52,7 +52,7 @@ branch_08027254: \n\
 /* 08027256 */ LDR R0, [R0] \n\
 /* 08027258 */ MOVS R2, 0x12 @ Set R2 to 0x12 \n\
 /* 0802725a */ LDRSH R1, [R5, R2] \n\
-/* 0802725c */ LDR R2, =D_088c82f8 \n\
+/* 0802725c */ LDR R2, =anim_drum_teacher_head \n\
 /* 0802725e */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 08027260 */ STR R3, [SP] \n\
 /* 08027262 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
@@ -85,7 +85,7 @@ branch_08027298: \n\
 /* 0802729a */ LDR R0, [R0] \n\
 /* 0802729c */ MOVS R2, 0x1A @ Set R2 to 0x1A \n\
 /* 0802729e */ LDRSH R1, [R5, R2] \n\
-/* 080272a0 */ LDR R2, =D_088c80f0 \n\
+/* 080272a0 */ LDR R2, =anim_drum_teacher_use_snare_r \n\
 /* 080272a2 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 080272a4 */ STR R3, [SP] \n\
 /* 080272a6 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
@@ -118,7 +118,7 @@ branch_080272dc: \n\
 /* 080272de */ LDR R0, [R0] \n\
 /* 080272e0 */ MOVS R2, 0x1C @ Set R2 to 0x1C \n\
 /* 080272e2 */ LDRSH R1, [R5, R2] \n\
-/* 080272e4 */ LDR R2, =D_088c81b0 \n\
+/* 080272e4 */ LDR R2, =anim_drum_teacher_use_snare_l \n\
 /* 080272e6 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 080272e8 */ STR R3, [SP] \n\
 /* 080272ea */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\

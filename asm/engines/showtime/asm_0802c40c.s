@@ -31,7 +31,7 @@ branch_0802c426: \n\
 /* 0802c43a */ STR R3, [SP, 0x8] \n\
 /* 0802c43c */ STR R5, [SP, 0xC] \n\
 /* 0802c43e */ STR R5, [SP, 0x10] \n\
-/* 0802c440 */ LDR R1, =D_088cb47c \n\
+/* 0802c440 */ LDR R1, =anim_showtime_penguin_beat \n\
 /* 0802c442 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802c444 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
 /* 0802c446 */ BL func_0804d160 \n\

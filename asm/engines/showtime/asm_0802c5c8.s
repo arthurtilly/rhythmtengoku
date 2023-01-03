@@ -372,7 +372,7 @@ branch_0802c8b6: \n\
 /* 0802c8bc */ ADDS R1, R2, R5 @ Set R1 to R2 + R5 \n\
 /* 0802c8be */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 0802c8c0 */ LDRSH R1, [R1, R3] \n\
-/* 0802c8c2 */ LDR R3, =D_089e3ad8 \n\
+/* 0802c8c2 */ LDR R3, =showtime_penguin_jump_prepare_anim \n\
 /* 0802c8c4 */ ADDS R2, 0x40 @ Add 0x40 to R2 \n\
 /* 0802c8c6 */ ADDS R2, R2, R5 @ Set R2 to R2 + R5 \n\
 /* 0802c8c8 */ LDR R2, [R2] \n\
@@ -418,7 +418,7 @@ branch_0802c914: \n\
 /* 0802c91e */ ADDS R1, R2, R5 @ Set R1 to R2 + R5 \n\
 /* 0802c920 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 0802c922 */ LDRSH R1, [R1, R3] \n\
-/* 0802c924 */ LDR R3, =D_089e3aec \n\
+/* 0802c924 */ LDR R3, =showtime_penguin_jump_anim \n\
 /* 0802c926 */ ADDS R2, 0x40 @ Add 0x40 to R2 \n\
 /* 0802c928 */ ADDS R2, R2, R5 @ Set R2 to R2 + R5 \n\
 /* 0802c92a */ LDR R2, [R2] \n\
@@ -539,7 +539,7 @@ branch_0802c9c0: \n\
 /* 0802ca10 */ ADDS R1, R2, R5 @ Set R1 to R2 + R5 \n\
 /* 0802ca12 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 0802ca14 */ LDRSH R1, [R1, R3] \n\
-/* 0802ca16 */ LDR R3, =D_089e3b00 \n\
+/* 0802ca16 */ LDR R3, =showtime_penguin_slide_anim \n\
 /* 0802ca18 */ ADDS R2, 0x40 @ Add 0x40 to R2 \n\
 /* 0802ca1a */ ADDS R2, R2, R5 @ Set R2 to R2 + R5 \n\
 /* 0802ca1c */ LDR R2, [R2] \n\
@@ -650,7 +650,7 @@ branch_0802cacc: \n\
 /* 0802caf4 */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\
 /* 0802caf6 */ MOVS R4, 0x20 @ Set R4 to 0x20 \n\
 /* 0802caf8 */ LDRSH R1, [R1, R4] \n\
-/* 0802cafa */ LDR R2, =D_088cb47c \n\
+/* 0802cafa */ LDR R2, =anim_showtime_penguin_beat \n\
 /* 0802cafc */ STR R7, [SP] \n\
 /* 0802cafe */ STR R5, [SP, 0x4] \n\
 /* 0802cb00 */ STR R5, [SP, 0x8] \n\
@@ -763,7 +763,7 @@ branch_0802cbe8: \n\
 /* 0802cbee */ ADDS R1, R1, R7 @ Set R1 to R1 + R7 \n\
 /* 0802cbf0 */ MOVS R4, 0x20 @ Set R4 to 0x20 \n\
 /* 0802cbf2 */ LDRSH R1, [R1, R4] \n\
-/* 0802cbf4 */ LDR R2, =D_088cb8bc \n\
+/* 0802cbf4 */ LDR R2, =anim_showtime_penguin_catch_para \n\
 /* 0802cbf6 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0802cbf8 */ STR R3, [SP] \n\
 /* 0802cbfa */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
@@ -781,7 +781,7 @@ branch_0802cc0c: \n\
 /* 0802cc12 */ ADDS R1, R1, R7 @ Set R1 to R1 + R7 \n\
 /* 0802cc14 */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 0802cc16 */ LDRSH R1, [R1, R2] \n\
-/* 0802cc18 */ LDR R2, =D_088cb8e4 \n\
+/* 0802cc18 */ LDR R2, =anim_showtime_penguin_float_para \n\
 /* 0802cc1a */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0802cc1c */ STR R3, [SP] \n\
 /* 0802cc1e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
@@ -836,7 +836,7 @@ branch_0802cc3a: \n\
 /* 0802cc7c */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 0802cc7e */ MOVS R4, 0x20 @ Set R4 to 0x20 \n\
 /* 0802cc80 */ LDRSH R1, [R1, R4] \n\
-/* 0802cc82 */ LDR R2, =D_088cb47c \n\
+/* 0802cc82 */ LDR R2, =anim_showtime_penguin_beat \n\
 /* 0802cc84 */ LDR R3, [SP, 0x24] \n\
 /* 0802cc86 */ STR R3, [SP] \n\
 /* 0802cc88 */ STR R6, [SP, 0x4] \n\
@@ -923,14 +923,14 @@ branch_0802cd10: \n\
 /* 0802cd3a */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\
 /* 0802cd3c */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 0802cd3e */ LDRSH R1, [R1, R2] \n\
-/* 0802cd40 */ LDR R2, =D_088cb47c \n\
+/* 0802cd40 */ LDR R2, =anim_showtime_penguin_beat \n\
 /* 0802cd42 */ STR R5, [SP] \n\
 /* 0802cd44 */ STR R4, [SP, 0x4] \n\
 /* 0802cd46 */ STR R4, [SP, 0x8] \n\
 /* 0802cd48 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0802cd4a */ BL func_0804d8f8 \n\
 /* 0802cd4e */ LDR R0, [R7] \n\
-/* 0802cd50 */ LDR R1, =D_088cb5b4 \n\
+/* 0802cd50 */ LDR R1, =anim_showtime_splash_penguin \n\
 /* 0802cd52 */ MOVS R2, 0x94 @ Set R2 to 0x94 \n\
 /* 0802cd54 */ STR R2, [SP] \n\
 /* 0802cd56 */ STR R4, [SP, 0x4] \n\
@@ -1021,7 +1021,7 @@ jump_0802cd7c: \n\
 /* 0802ce14 */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\
 /* 0802ce16 */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 0802ce18 */ LDRSH R1, [R1, R2] \n\
-/* 0802ce1a */ LDR R2, =D_088cb47c \n\
+/* 0802ce1a */ LDR R2, =anim_showtime_penguin_beat \n\
 /* 0802ce1c */ STR R5, [SP] \n\
 /* 0802ce1e */ STR R4, [SP, 0x4] \n\
 /* 0802ce20 */ STR R4, [SP, 0x8] \n\

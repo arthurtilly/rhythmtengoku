@@ -42,7 +42,7 @@ thumb_func_start func_0802cfe0 \n\
 /* 0802d02c */ ADDS R2, R2, R6 @ Set R2 to R2 + R6 \n\
 /* 0802d02e */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 0802d030 */ LDRSH R1, [R2, R3] \n\
-/* 0802d032 */ LDR R2, =D_088cb904 \n\
+/* 0802d032 */ LDR R2, =anim_showtime_penguin_catch \n\
 /* 0802d034 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0802d036 */ STR R3, [SP] \n\
 /* 0802d038 */ STR R4, [SP, 0x4] \n\

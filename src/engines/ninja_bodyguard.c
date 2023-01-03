@@ -2,6 +2,9 @@
 
 asm(".include \"include/gba.inc\""); // Temporary
 
+// For readability.
+#define gNinjaBodyguardInfo ((struct NinjaBodyguardInfo *)D_030055d0)
+
 
 /* NINJA BODYGUARD */
 

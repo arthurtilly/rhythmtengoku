@@ -25,7 +25,7 @@ thumb_func_start func_0803c190 \n\
 /* 0803c1ba */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0803c1bc */ BL func_0804d770 \n\
 /* 0803c1c0 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0803c1c2 */ BL func_0803bd88 \n\
+/* 0803c1c2 */ BL ninja_get_anim \n\
 /* 0803c1c6 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803c1c8 */ LDR R0, [R5] \n\
 /* 0803c1ca */ LDR R1, [R4] \n\

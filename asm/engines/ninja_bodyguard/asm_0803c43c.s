@@ -6,7 +6,7 @@ thumb_func_start func_0803c43c \n\
 /* 0803c43c */ PUSH {R4-R7, LR} \n\
 /* 0803c43e */ SUB SP, 0x1C \n\
 /* 0803c440 */ MOVS R0, 0x13 @ Set R0 to 0x13 \n\
-/* 0803c442 */ BL func_0803bd88 \n\
+/* 0803c442 */ BL ninja_get_anim \n\
 /* 0803c446 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803c448 */ LDR R0, =D_03005380 \n\
 /* 0803c44a */ LDR R0, [R0] \n\
@@ -32,7 +32,7 @@ thumb_func_start func_0803c43c \n\
  \n\
 branch_0803c474: \n\
 /* 0803c474 */ MOVS R0, 0xA @ Set R0 to 0xA \n\
-/* 0803c476 */ BL func_0803bd88 \n\
+/* 0803c476 */ BL ninja_get_anim \n\
 /* 0803c47a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803c47c */ LDR R0, =D_03005380 \n\
 /* 0803c47e */ LDR R0, [R0] \n\
@@ -66,7 +66,7 @@ branch_0803c474: \n\
  \n\
 branch_0803c4b8: \n\
 /* 0803c4b8 */ MOVS R0, 0xD @ Set R0 to 0xD \n\
-/* 0803c4ba */ BL func_0803bd88 \n\
+/* 0803c4ba */ BL ninja_get_anim \n\
 /* 0803c4be */ MOVS R1, 0x90 @ Set R1 to 0x90 \n\
 /* 0803c4c0 */ LSLS R1, R1, 0x7 \n\
 /* 0803c4c2 */ STR R1, [SP] \n\

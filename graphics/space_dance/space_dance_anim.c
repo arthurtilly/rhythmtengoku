@@ -3,8 +3,8 @@
 
 #include "space_dance_anim_cells.inc.c"
 
-// [D_0891249c] <description>
-const struct Animation space_dance_anim00[] = {
+// [D_0891249c] Dancer - Turn Right (Input)
+const struct Animation anim_space_dancer_right[] = {
     /* 000 */ { space_dance_cel010, 10 },
     /* 001 */ { space_dance_cel009, 3 },
     /* 002 */ { space_dance_cel008, 3 },
@@ -16,8 +16,8 @@ const struct Animation space_dance_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089124e4] <description>
-const struct Animation space_dance_anim01[] = {
+// [D_089124e4] Dancer - Pa-Pa-Pa-Punch (Input)
+const struct Animation anim_space_dancer_punch[] = {
     /* 000 */ { space_dance_cel011, 10 },
     /* 001 */ { space_dance_cel012, 3 },
     /* 002 */ { space_dance_cel013, 3 },
@@ -29,8 +29,8 @@ const struct Animation space_dance_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0891252c] <description>
-const struct Animation space_dance_anim02[] = {
+// [D_0891252c] Dancer - Let's Sit Down (Input)
+const struct Animation anim_space_dancer_down[] = {
     /* 000 */ { space_dance_cel020, 10 },
     /* 001 */ { space_dance_cel021, 3 },
     /* 002 */ { space_dance_cel022, 3 },
@@ -42,8 +42,8 @@ const struct Animation space_dance_anim02[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08912574] <description>
-const struct Animation space_dance_anim03[] = {
+// [D_08912574] Dancer - Let's Sit Down (Input, Reversed)
+const struct Animation anim_space_dancer_down_rev[] = {
     /* 000 */ { space_dance_cel003, 20 },
     /* 001 */ { space_dance_cel024, 4 },
     /* 002 */ { space_dance_cel023, 4 },
@@ -52,74 +52,74 @@ const struct Animation space_dance_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089125a4] <description>
-const struct Animation space_dance_anim04[] = {
+// [D_089125a4] Space Gramps - Beat
+const struct Animation anim_space_gramps_beat[] = {
     /* 000 */ { space_dance_cel027, 3 },
     /* 001 */ { space_dance_cel028, 3 },
     /* 002 */ { space_dance_cel029, 30 },
     /* End */ END_ANIMATION
 };
 
-// [D_089125c4] <description>
-const struct Animation space_dance_anim05[] = {
+// [D_089125c4] Speech Bubble - Down
+const struct Animation anim_space_gramps_instruct_down[] = {
     /* 000 */ { space_dance_cel033, 20 },
     /* 001 */ { space_dance_cel035, 16 },
     /* 002 */ { space_dance_cel000, 20 },
     /* End */ END_ANIMATION
 };
 
-// [D_089125e4] <description>
-const struct Animation space_dance_anim06[] = {
+// [D_089125e4] Speech Bubble - Punch
+const struct Animation anim_space_gramps_instruct_punch[] = {
     /* 000 */ { space_dance_cel034, 20 },
     /* 001 */ { space_dance_cel036, 16 },
     /* 002 */ { space_dance_cel000, 20 },
     /* End */ END_ANIMATION
 };
 
-// [D_08912604] <description>
-const struct Animation space_dance_anim07[] = {
+// [D_08912604] Speech Bubble - Right
+const struct Animation anim_space_gramps_instruct_right[] = {
     /* 000 */ { space_dance_cel034, 20 },
     /* 001 */ { space_dance_cel037, 16 },
     /* 002 */ { space_dance_cel000, 20 },
     /* End */ END_ANIMATION
 };
 
-// [D_08912624] <description>
-const struct Animation space_dance_anim08[] = {
+// [D_08912624] Dancer Spacing Test - Right
+const struct Animation anim_space_dancer_test_right[] = {
     /* 000 */ { space_dance_cel038, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08912634] <description>
-const struct Animation space_dance_anim09[] = {
+// [D_08912634] Dancer Spacing Test - Punch
+const struct Animation anim_space_dancer_test_punch[] = {
     /* 000 */ { space_dance_cel039, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08912644] <description>
-const struct Animation space_dance_anim10[] = {
+// [D_08912644] Dancer Spacing Test - Down
+const struct Animation anim_space_dancer_test_down[] = {
     /* 000 */ { space_dance_cel040, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08912654] <description>
-const struct Animation space_dance_anim11[] = {
+// [D_08912654] Dancer Spacing Test - All
+const struct Animation anim_space_dancer_test_all[] = {
     /* 000 */ { space_dance_cel038, 40 },
     /* 001 */ { space_dance_cel039, 40 },
     /* 002 */ { space_dance_cel040, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_08912674] <description>
-const struct Animation space_dance_anim12[] = {
+// [D_08912674] Dancer - Beat
+const struct Animation anim_space_dancer_beat[] = {
     /* 000 */ { space_dance_cel001, 3 },
     /* 001 */ { space_dance_cel002, 3 },
     /* 002 */ { space_dance_cel003, 30 },
     /* End */ END_ANIMATION
 };
 
-// [D_08912694] <description>
-const struct Animation space_dance_anim13[] = {
+// [D_08912694] Dancer - Hurt
+const struct Animation anim_space_dancer_hurt[] = {
     /* 000 */ { space_dance_cel003, 3 },
     /* 001 */ { space_dance_cel042, 3 },
     /* 002 */ { space_dance_cel043, 3 },
@@ -128,8 +128,8 @@ const struct Animation space_dance_anim13[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089126c4] <description>
-const struct Animation space_dance_anim14[] = {
+// [D_089126c4] Dancer - Turn Right (Cue)
+const struct Animation anim_space_dancer_right_cue[] = {
     /* 000 */ { space_dance_cel046, 3 },
     /* 001 */ { space_dance_cel047, 3 },
     /* 002 */ { space_dance_cel048, 3 },
@@ -137,8 +137,8 @@ const struct Animation space_dance_anim14[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089126ec] <description>
-const struct Animation space_dance_anim15[] = {
+// [D_089126ec] Dancer - Pa-Pa-Pa-Punch (Cue, Unused Version)
+const struct Animation anim_space_dancer_punch_cue[] = {
     /* 000 */ { space_dance_cel050, 2 },
     /* 001 */ { space_dance_cel051, 2 },
     /* 002 */ { space_dance_cel052, 2 },
@@ -163,8 +163,8 @@ const struct Animation space_dance_anim15[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0891279c] <description>
-const struct Animation space_dance_anim16[] = {
+// [D_0891279c] Dancer - Let's Sit Down (Cue)
+const struct Animation anim_space_dancer_down_cue[] = {
     /* 000 */ { space_dance_cel059, 3 },
     /* 001 */ { space_dance_cel060, 3 },
     /* 002 */ { space_dance_cel061, 3 },
@@ -173,24 +173,24 @@ const struct Animation space_dance_anim16[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089127cc] <description>
-const struct Animation space_dance_anim17[] = {
+// [D_089127cc] Dancer - Pa-Pa-Pa-Punch (Cue, Part 1)
+const struct Animation anim_space_dancer_punch_cue1[] = {
     /* 000 */ { space_dance_cel052, 3 },
     /* 001 */ { space_dance_cel051, 2 },
     /* 002 */ { space_dance_cel050, 30 },
     /* End */ END_ANIMATION
 };
 
-// [D_089127ec] <description>
-const struct Animation space_dance_anim18[] = {
+// [D_089127ec] Dancer - Pa-Pa-Pa-Punch (Cue, Part 2)
+const struct Animation anim_space_dancer_punch_cue2[] = {
     /* 000 */ { space_dance_cel056, 3 },
     /* 001 */ { space_dance_cel055, 2 },
     /* 002 */ { space_dance_cel050, 30 },
     /* End */ END_ANIMATION
 };
 
-// [D_0891280c] <description>
-const struct Animation space_dance_anim19[] = {
+// [D_0891280c] Dancer Impact Effect
+const struct Animation anim_space_dancer_hurt_effect[] = {
     /* 000 */ { space_dance_cel064, 2 },
     /* 001 */ { space_dance_cel065, 2 },
     /* 002 */ { space_dance_cel066, 2 },
@@ -198,14 +198,14 @@ const struct Animation space_dance_anim19[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08912834] <description>
-const struct Animation space_dance_anim20[] = {
+// [D_08912834] Blank
+const struct Animation anim_space_dance_blank1[] = {
     /* 000 */ { space_dance_cel067, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08912844] <description>
-const struct Animation space_dance_anim21[] = {
+// [D_08912844] Tutorial Icons
+const struct Animation anim_space_dance_tutorial_icons[] = {
     /* 000 */ { space_dance_cel000, 50 },
     /* 001 */ { space_dance_cel068, 50 },
     /* 002 */ { space_dance_cel069, 50 },
@@ -214,8 +214,8 @@ const struct Animation space_dance_anim21[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08912874] <description>
-const struct Animation space_dance_anim22[] = {
+// [D_08912874] Sparkle
+const struct Animation anim_space_dance_sparkle[] = {
     /* 000 */ { space_dance_cel072, 6 },
     /* 001 */ { space_dance_cel073, 6 },
     /* 002 */ { space_dance_cel074, 6 },
@@ -224,8 +224,8 @@ const struct Animation space_dance_anim22[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089128a4] <description>
-const struct Animation space_dance_anim23[] = {
+// [D_089128a4] Blank
+const struct Animation anim_space_dance_blank2[] = {
     /* 000 */ { space_dance_cel077, 20 },
     /* 001 */ { space_dance_cel079, 4 },
     /* 002 */ { space_dance_cel080, 3 },
@@ -233,8 +233,8 @@ const struct Animation space_dance_anim23[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089128cc] <description>
-const struct Animation space_dance_anim24[] = {
+// [D_089128cc] Space Gramps - Turn Right (Input)
+const struct Animation anim_space_gramps_right[] = {
     /* 000 */ { space_dance_cel030, 10 },
     /* 001 */ { space_dance_cel031, 3 },
     /* 002 */ { space_dance_cel032, 3 },
@@ -246,8 +246,8 @@ const struct Animation space_dance_anim24[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08912914] <description>
-const struct Animation space_dance_anim25[] = {
+// [D_08912914] Space Gramps - Turn Right (Cue)
+const struct Animation anim_space_gramps_right_cue[] = {
     /* 000 */ { space_dance_cel086, 3 },
     /* 001 */ { space_dance_cel087, 3 },
     /* 002 */ { space_dance_cel088, 3 },
@@ -255,8 +255,8 @@ const struct Animation space_dance_anim25[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0891293c] <description>
-const struct Animation space_dance_anim26[] = {
+// [D_0891293c] Space Gramps - Pa-Pa-Pa-Punch (Input)
+const struct Animation anim_space_gramps_punch[] = {
     /* 000 */ { space_dance_cel090, 10 },
     /* 001 */ { space_dance_cel091, 3 },
     /* 002 */ { space_dance_cel092, 3 },
@@ -268,8 +268,8 @@ const struct Animation space_dance_anim26[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08912984] <description>
-const struct Animation space_dance_anim27[] = {
+// [D_08912984] Space Gramps - Pa-Pa-Pa-Punch (Cue, Unused Version)
+const struct Animation anim_space_gramps_punch_cue[] = {
     /* 000 */ { space_dance_cel097, 2 },
     /* 001 */ { space_dance_cel098, 2 },
     /* 002 */ { space_dance_cel099, 2 },
@@ -294,8 +294,8 @@ const struct Animation space_dance_anim27[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08912a34] <description>
-const struct Animation space_dance_anim28[] = {
+// [D_08912a34] Space Gramps - Let's Sit Down (Input)
+const struct Animation anim_space_gramps_down[] = {
     /* 000 */ { space_dance_cel108, 10 },
     /* 001 */ { space_dance_cel109, 3 },
     /* 002 */ { space_dance_cel110, 3 },
@@ -307,8 +307,8 @@ const struct Animation space_dance_anim28[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08912a7c] <description>
-const struct Animation space_dance_anim29[] = {
+// [D_08912a7c] Space Gramps - Let's Sit Down (Cue)
+const struct Animation anim_space_gramps_down_cue[] = {
     /* 000 */ { space_dance_cel027, 3 },
     /* 001 */ { space_dance_cel028, 3 },
     /* 002 */ { space_dance_cel029, 3 },
@@ -317,8 +317,8 @@ const struct Animation space_dance_anim29[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08912aac] <description>
-const struct Animation space_dance_anim30[] = {
+// [D_08912aac] Space Gramps - Pa-Pa-Pa-Punch (Cue, Part 1)
+const struct Animation anim_space_gramps_punch_cue1[] = {
     /* 000 */ { space_dance_cel102, 2 },
     /* 001 */ { space_dance_cel101, 2 },
     /* 002 */ { space_dance_cel100, 2 },
@@ -329,8 +329,8 @@ const struct Animation space_dance_anim30[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08912aec] <description>
-const struct Animation space_dance_anim31[] = {
+// [D_08912aec] Space Gramps - Pa-Pa-Pa-Punch (Cue, Part 2)
+const struct Animation anim_space_gramps_punch_cue2[] = {
     /* 000 */ { space_dance_cel107, 2 },
     /* 001 */ { space_dance_cel106, 2 },
     /* 002 */ { space_dance_cel105, 2 },
@@ -341,8 +341,8 @@ const struct Animation space_dance_anim31[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08912b2c] <description>
-const struct Animation space_dance_anim32[] = {
+// [D_08912b2c] Space Gramps - Speaking
+const struct Animation anim_space_gramps_speak[] = {
     /* 000 */ { space_dance_cel029, 20 },
     /* 001 */ { space_dance_cel117, 10 },
     /* 002 */ { space_dance_cel029, 10 },
@@ -356,8 +356,8 @@ const struct Animation space_dance_anim32[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08912b84] <description>
-const struct Animation space_dance_anim33[] = {
+// [D_08912b84] Space Gramps - Blinking
+const struct Animation anim_space_gramps_blink[] = {
     /* 000 */ { space_dance_cel029, 60 },
     /* 001 */ { space_dance_cel116, 8 },
     /* 002 */ { space_dance_cel029, 80 },
@@ -367,16 +367,16 @@ const struct Animation space_dance_anim33[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08912bbc] <description>
-const struct Animation space_dance_anim34[] = {
+// [D_08912bbc] Space Gramps - Beat (Miss)
+const struct Animation anim_space_gramps_frown[] = {
     /* 000 */ { space_dance_cel118, 3 },
     /* 001 */ { space_dance_cel119, 3 },
     /* 002 */ { space_dance_cel120, 30 },
     /* End */ END_ANIMATION
 };
 
-// [D_08912bdc] <description>
-const struct Animation space_dance_anim35[] = {
+// [D_08912bdc] Space Gramps - Beat (Barely)
+const struct Animation anim_space_gramps_raise_brow[] = {
     /* 000 */ { space_dance_cel121, 3 },
     /* 001 */ { space_dance_cel122, 3 },
     /* 002 */ { space_dance_cel123, 30 },

@@ -6,7 +6,7 @@ thumb_func_start func_0803bda8 \n\
 /* 0803bda8 */ PUSH {R4, R5, LR} \n\
 /* 0803bdaa */ SUB SP, 0x1C \n\
 /* 0803bdac */ MOVS R0, 0x16 @ Set R0 to 0x16 \n\
-/* 0803bdae */ BL func_0803bd88 \n\
+/* 0803bdae */ BL ninja_get_anim \n\
 /* 0803bdb2 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 0803bdb4 */ LSLS R1, R1, 0x4 \n\
 /* 0803bdb6 */ STR R1, [SP] \n\

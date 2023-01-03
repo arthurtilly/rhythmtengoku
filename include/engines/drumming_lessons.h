@@ -3,17 +3,99 @@
 #include "global.h"
 #include "engines.h"
 
+// Engine Types:
+struct DrumIntroInfo {
+    /* add fields here */
+};
+
+struct DrumIntroCue {
+    /* add fields here */
+};
+
+struct DrumLiveInfo {
+    /* add fields here */
+};
+
+struct DrumLiveCue {
+    /* add fields here */
+};
+
+struct StudioDrummer {
+    s16 snareDrum;
+    s16 bassDrum;
+    s16 tomDrum;
+    s16 hiHat;
+    s16 leftPedal;
+    s16 rightPedal;
+    s16 crashCymbal;
+    s16 splashCymbal;
+    s16 pedalHiHat;
+    s16 head;
+    s16 body;
+    s16 rightLeg;
+    s16 leftLeg;
+    s16 rightArm;
+    s16 leftArm;
+    s16 coffeeSteam;
+    u16 unk22;
+    u16 unk24;
+    u16 unk26;
+    u16 unk28;
+    u16 unk2A;
+    u16 unk2C;
+    s16 xController;
+    s16 yController;
+};
+
+struct DrumLessonsInfo {
+    u8 version; // 0x000
+    u32 null4;
+    u32 null8;
+    u32 nullC;
+    u8 padding10[0x344];
+    struct StudioDrummer student; // 0x354
+    u32 null388;
+    struct StudioDrummer teacher; // 0x38C;
+    u32 null3C0;
+    u32 null3C4;
+    u32 null3C8;
+    u32 null3CC;
+    u32 padding3D0[0x20];
+    u16 unk3F0;
+    s16 memoryWarningSprite; // 0x3F2
+    struct TextPrinter *songTitlePrinter; // 0x3F4
+    s16 songTitleBgSprite; // 0x3F8
+    u32 null3FC;
+    u32 null400;
+    u32 null404;
+    u16 null408;
+    s16 replaySaveOptionSprite; // 0x40A
+    u8 unk40C;
+    struct TextPrinter *textPrinter; // 0x410
+};
+
+struct DrumLessonsCue {
+    /* add fields here */
+};
+
+
 // Engine Macros/Enums:
+
 
 // OAM Animations:
 
+
 // Palettes:
+
 
 // Sound Effects:
 
+
 // Engine Data:
 
+
 // Engine Definition Data:
+
 
 // Functions - Intro Drumming Scenes:
 // extern ? func_080239a0(?); // DRUM INTRO - Engine Event 0x08 (?)
@@ -161,7 +243,7 @@
 
 // Functions - Drum Lessons:
 // extern ? func_08026e10(?);
-// extern ? func_08026e74(?);
+// extern ? func_08026e74(?); // Init. Drum Samurai
 // extern ? func_080271a8(?);
 // extern ? func_080271d4(?);
 // extern ? func_080271f0(?); // DRUM LESSON - Engine Event 0x12 (?)
@@ -229,8 +311,8 @@
 // extern ? func_08028954(?);
 // extern ? func_08028978(?);
 // extern ? func_080289c0(?);
-// extern ? func_080289ec(?); // DRUM LESSON - Game Engine Init.
-// extern ? func_080290c0(?); // DRUM LESSON - Engine Event 0x1A (?)
+extern void func_080289ec(u32 version); // DRUM LESSON - Game Engine Start
+extern void func_080290c0(void); // DRUM LESSON - Engine Event 0x1A (STUB)
 // extern ? func_080290c4(?);
 // extern ? func_08029178(?); // DRUM LESSON - Engine Event 0x02 (?)
 // extern ? func_0802918c(?);
@@ -248,18 +330,18 @@
 // extern ? func_08029988(?);
 // extern ? func_08029a1c(?);
 // extern ? func_08029b8c(?); // DRUM LESSON - Engine Event 0x06 (?)
-// extern ? func_08029ba0(?); // DRUM LESSON - Game Engine Update
+extern void func_08029ba0(void); // DRUM LESSON - Game Engine Update
 // extern ? func_08029cac(?);
 // extern ? func_08029cec(?); // DRUM LESSON - Engine Event 0x13 (?)
-// extern ? func_08029d20(?); // DRUM LESSON - Game Engine Stop
-// extern ? func_08029d40(?); // DRUM LESSON - Cue Spawn
-// extern ? func_08029d84(?); // DRUM LESSON - Cue Update
-// extern ? func_08029e0c(?); // DRUM LESSON - Cue Despawn
+extern void func_08029d20(void); // DRUM LESSON - Game Engine Stop
+extern void func_08029d40(struct Cue *, struct DrumLessonsCue *, u32 param); // DRUM LESSON - Cue - Spawn
+extern u32  func_08029d84(struct Cue *, struct DrumLessonsCue *, u32 runningTime, u32 duration); // DRUM LESSON - Cue - Update
+extern void func_08029e0c(struct Cue *, struct DrumLessonsCue *); // DRUM LESSON - Cue - Despawn
 // extern ? func_08029e10(?);
-// extern ? func_08029e74(?); // DRUM LESSON - Cue Hit
-// extern ? func_08029e90(?); // DRUM LESSON - Cue Barely
-// extern ? func_08029eac(?); // DRUM LESSON - Cue Miss
-// extern ? func_08029ed8(?); // DRUM LESSON - Input Event
-// extern ? func_08029f00(?); // DRUM LESSON - Common Event 0 (Beat Animation)
-// extern ? func_08029f04(?); // DRUM LESSON - Common Event 1 (Display Text)
-// extern ? func_08029f08(?); // DRUM LESSON - Common Event 2 (Set Tutorial Skip Destination)
+extern void func_08029e74(struct Cue *, struct DrumLessonsCue *, u32 pressed, u32 released); // DRUM LESSON - Cue - Hit
+extern void func_08029e90(struct Cue *, struct DrumLessonsCue *, u32 pressed, u32 released); // DRUM LESSON - Cue - Barely
+extern void func_08029eac(struct Cue *, struct DrumLessonsCue *); // DRUM LESSON - Cue - Miss
+extern void func_08029ed8(u32 pressed, u32 released); // DRUM LESSON - Input Event
+extern void func_08029f00(void); // DRUM LESSON - Common Event 0 (Beat Animation, Unimplemented)
+extern void func_08029f04(void); // DRUM LESSON - Common Event 1 (Display Text, Unimplemented)
+extern void func_08029f08(void); // DRUM LESSON - Common Event 2 (Set Tutorial Skip Destination, Unimplemented)

@@ -21,7 +21,7 @@ thumb_func_start func_0802d2bc \n\
 /* 0802d2da */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 0802d2dc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802d2de */ LDRSH R1, [R1, R2] \n\
-/* 0802d2e0 */ LDR R2, =D_088cb704 \n\
+/* 0802d2e0 */ LDR R2, =anim_showtime_monkey_swing \n\
 /* 0802d2e2 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0802d2e4 */ STR R3, [SP] \n\
 /* 0802d2e6 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\

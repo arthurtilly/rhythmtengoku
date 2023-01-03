@@ -55,7 +55,7 @@ thumb_func_start func_080289ec \n\
 /* 08028a58 */ LDR R1, =D_03005380 \n\
 /* 08028a5a */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 08028a5c */ LDR R0, [R1] \n\
-/* 08028a5e */ LDR R1, =D_088c5da0 \n\
+/* 08028a5e */ LDR R1, =anim_drum_student_kit_snare \n\
 /* 08028a60 */ MOVS R6, 0x64 @ Set R6 to 0x64 \n\
 /* 08028a62 */ STR R6, [SP] \n\
 /* 08028a64 */ LDR R2, =0x0000480c \n\
@@ -72,7 +72,7 @@ thumb_func_start func_080289ec \n\
 /* 08028a7c */ STRH R0, [R5] \n\
 /* 08028a7e */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08028a80 */ LDR R0, [R1] \n\
-/* 08028a82 */ LDR R1, =D_088c5dc0 \n\
+/* 08028a82 */ LDR R1, =anim_drum_student_kit_bass \n\
 /* 08028a84 */ STR R6, [SP] \n\
 /* 08028a86 */ LDR R2, =0x0000480f \n\
 /* 08028a88 */ STR R2, [SP, 0x4] \n\
@@ -87,7 +87,7 @@ thumb_func_start func_080289ec \n\
 /* 08028a9c */ STRH R0, [R5, 0x2] \n\
 /* 08028a9e */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08028aa0 */ LDR R0, [R1] \n\
-/* 08028aa2 */ LDR R1, =D_088c5e78 \n\
+/* 08028aa2 */ LDR R1, =anim_drum_student_kit_tom \n\
 /* 08028aa4 */ STR R6, [SP] \n\
 /* 08028aa6 */ LDR R2, =0x00004814 \n\
 /* 08028aa8 */ STR R2, [SP, 0x4] \n\
@@ -102,7 +102,7 @@ thumb_func_start func_080289ec \n\
 /* 08028abc */ STRH R0, [R5, 0x4] \n\
 /* 08028abe */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08028ac0 */ LDR R0, [R1] \n\
-/* 08028ac2 */ LDR R1, =D_088c5de0 \n\
+/* 08028ac2 */ LDR R1, =anim_drum_student_kit_hihat \n\
 /* 08028ac4 */ STR R6, [SP] \n\
 /* 08028ac6 */ LDR R2, =0x00004819 \n\
 /* 08028ac8 */ STR R2, [SP, 0x4] \n\
@@ -117,7 +117,7 @@ thumb_func_start func_080289ec \n\
 /* 08028adc */ STRH R0, [R5, 0x6] \n\
 /* 08028ade */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08028ae0 */ LDR R0, [R1] \n\
-/* 08028ae2 */ LDR R1, =D_088c64f8 \n\
+/* 08028ae2 */ LDR R1, =anim_drum_student_kit_pedal_hihat \n\
 /* 08028ae4 */ STR R6, [SP] \n\
 /* 08028ae6 */ LDR R2, =0x00004808 \n\
 /* 08028ae8 */ STR R2, [SP, 0x4] \n\
@@ -133,7 +133,7 @@ thumb_func_start func_080289ec \n\
 /* 08028afe */ STRH R0, [R5, 0x10] \n\
 /* 08028b00 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08028b02 */ LDR R0, [R1] \n\
-/* 08028b04 */ LDR R1, =D_088c5f08 \n\
+/* 08028b04 */ LDR R1, =anim_drum_student_kit_pedal_r \n\
 /* 08028b06 */ MOVS R2, 0x61 @ Set R2 to 0x61 \n\
 /* 08028b08 */ STR R2, [SP] \n\
 /* 08028b0a */ LDR R2, =0x0000480a \n\
@@ -149,7 +149,7 @@ thumb_func_start func_080289ec \n\
 /* 08028b20 */ STRH R0, [R5, 0xA] \n\
 /* 08028b22 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08028b24 */ LDR R0, [R1] \n\
-/* 08028b26 */ LDR R1, =D_088c62f0 \n\
+/* 08028b26 */ LDR R1, =anim_drum_student_kit_pedal_l \n\
 /* 08028b28 */ MOVS R2, 0x60 @ Set R2 to 0x60 \n\
 /* 08028b2a */ STR R2, [SP] \n\
 /* 08028b2c */ LDR R2, =0x0000480b \n\
@@ -165,7 +165,7 @@ thumb_func_start func_080289ec \n\
 /* 08028b42 */ STRH R0, [R5, 0x8] \n\
 /* 08028b44 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08028b46 */ LDR R0, [R1] \n\
-/* 08028b48 */ LDR R1, =D_088c5e98 \n\
+/* 08028b48 */ LDR R1, =anim_drum_student_kit_splash \n\
 /* 08028b4a */ STR R6, [SP] \n\
 /* 08028b4c */ LDR R2, =0x0000481e \n\
 /* 08028b4e */ STR R2, [SP, 0x4] \n\
@@ -180,7 +180,7 @@ thumb_func_start func_080289ec \n\
 /* 08028b62 */ STRH R0, [R5, 0xE] \n\
 /* 08028b64 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08028b66 */ LDR R0, [R1] \n\
-/* 08028b68 */ LDR R1, =D_088c5e08 \n\
+/* 08028b68 */ LDR R1, =anim_drum_student_kit_crash \n\
 /* 08028b6a */ STR R6, [SP] \n\
 /* 08028b6c */ LDR R2, =0x000047ec \n\
 /* 08028b6e */ MOV R10, R2 @ Set R10 to R2 \n\
@@ -196,7 +196,7 @@ thumb_func_start func_080289ec \n\
 /* 08028b84 */ STRH R0, [R5, 0xC] \n\
 /* 08028b86 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 08028b88 */ LDR R0, [R3] \n\
-/* 08028b8a */ LDR R1, =D_088c6150 \n\
+/* 08028b8a */ LDR R1, =anim_drum_student_head \n\
 /* 08028b8c */ STR R6, [SP] \n\
 /* 08028b8e */ LDR R2, =0x000047f4 \n\
 /* 08028b90 */ STR R2, [SP, 0x4] \n\
@@ -211,7 +211,7 @@ thumb_func_start func_080289ec \n\
 /* 08028ba4 */ STRH R0, [R5, 0x12] \n\
 /* 08028ba6 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08028ba8 */ LDR R0, [R1] \n\
-/* 08028baa */ LDR R1, =D_088c6170 \n\
+/* 08028baa */ LDR R1, =anim_drum_student_body \n\
 /* 08028bac */ STR R6, [SP] \n\
 /* 08028bae */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08028bb0 */ STR R2, [SP, 0x4] \n\
@@ -226,7 +226,7 @@ thumb_func_start func_080289ec \n\
 /* 08028bc4 */ STRH R0, [R5, 0x14] \n\
 /* 08028bc6 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 08028bc8 */ LDR R0, [R3] \n\
-/* 08028bca */ LDR R1, =D_088c6190 \n\
+/* 08028bca */ LDR R1, =anim_drum_student_use_pedal_r \n\
 /* 08028bcc */ STR R6, [SP] \n\
 /* 08028bce */ LDR R2, =0x000047ee \n\
 /* 08028bd0 */ STR R2, [SP, 0x4] \n\
@@ -241,7 +241,7 @@ thumb_func_start func_080289ec \n\
 /* 08028be4 */ STRH R0, [R5, 0x16] \n\
 /* 08028be6 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08028be8 */ LDR R0, [R1] \n\
-/* 08028bea */ LDR R1, =D_088c62d0 \n\
+/* 08028bea */ LDR R1, =anim_drum_student_use_pedal_l \n\
 /* 08028bec */ STR R6, [SP] \n\
 /* 08028bee */ LDR R2, =0x000047fb \n\
 /* 08028bf0 */ STR R2, [SP, 0x4] \n\
@@ -256,7 +256,7 @@ thumb_func_start func_080289ec \n\
 /* 08028c04 */ STRH R0, [R5, 0x18] \n\
 /* 08028c06 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08028c08 */ LDR R0, [R1] \n\
-/* 08028c0a */ LDR R1, =D_088c6000 \n\
+/* 08028c0a */ LDR R1, =anim_drum_student_use_snare_l \n\
 /* 08028c0c */ MOVS R2, 0x5A @ Set R2 to 0x5A \n\
 /* 08028c0e */ STR R2, [SP] \n\
 /* 08028c10 */ LDR R2, =0x000047f6 \n\
@@ -272,7 +272,7 @@ thumb_func_start func_080289ec \n\
 /* 08028c26 */ STRH R0, [R5, 0x1C] \n\
 /* 08028c28 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 08028c2a */ LDR R0, [R3] \n\
-/* 08028c2c */ LDR R1, =D_088c5fb0 \n\
+/* 08028c2c */ LDR R1, =anim_drum_student_use_snare_r \n\
 /* 08028c2e */ STR R6, [SP] \n\
 /* 08028c30 */ LDR R2, =0x000047e2 \n\
 /* 08028c32 */ STR R2, [SP, 0x4] \n\
@@ -287,7 +287,7 @@ thumb_func_start func_080289ec \n\
 /* 08028c46 */ STRH R0, [R5, 0x1A] \n\
 /* 08028c48 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08028c4a */ LDR R0, [R1] \n\
-/* 08028c4c */ LDR R1, =D_088c5f40 \n\
+/* 08028c4c */ LDR R1, =anim_drum_student_kit_seat \n\
 /* 08028c4e */ STR R6, [SP] \n\
 /* 08028c50 */ LDR R2, =0x000047f0 \n\
 /* 08028c52 */ STR R2, [SP, 0x4] \n\
@@ -302,7 +302,7 @@ thumb_func_start func_080289ec \n\
 /* 08028c66 */ STRH R0, [R5, 0x1E] \n\
 /* 08028c68 */ MOV R4, R8 @ Set R4 to R8 \n\
 /* 08028c6a */ LDR R0, [R4] \n\
-/* 08028c6c */ LDR R1, =D_088c6378 \n\
+/* 08028c6c */ LDR R1, =anim_drum_student_coffee_steam \n\
 /* 08028c6e */ MOVS R2, 0x52 @ Set R2 to 0x52 \n\
 /* 08028c70 */ STR R2, [SP] \n\
 /* 08028c72 */ LDR R2, =0x000047eb \n\
@@ -390,7 +390,7 @@ thumb_func_start func_080289ec \n\
 /* 08028d2a */ BL text_printer_set_x_controller \n\
 /* 08028d2e */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 08028d30 */ LDR R0, [R3] \n\
-/* 08028d32 */ LDR R1, =D_088c61d8 \n\
+/* 08028d32 */ LDR R1, =anim_drum_studio_song_title_bubble \n\
 /* 08028d34 */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 08028d36 */ STR R2, [SP] \n\
 /* 08028d38 */ MOVS R5, 0x80 @ Set R5 to 0x80 \n\
@@ -425,7 +425,7 @@ thumb_func_start func_080289ec \n\
 /* 08028d76 */ STRH R1, [R0] \n\
 /* 08028d78 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08028d7a */ LDR R0, [R2] \n\
-/* 08028d7c */ LDR R1, =D_088c61f0 \n\
+/* 08028d7c */ LDR R1, =anim_drum_studio_save_option_y \n\
 /* 08028d7e */ MOVS R3, 0x66 @ Set R3 to 0x66 \n\
 /* 08028d80 */ STR R3, [SP] \n\
 /* 08028d82 */ STR R5, [SP, 0x4] \n\
@@ -488,7 +488,7 @@ branch_08028e94: \n\
 /* 08028ea8 */ BL text_printer_center_by_content \n\
 /* 08028eac */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 08028eae */ LDR R0, [R3] \n\
-/* 08028eb0 */ LDR R1, =D_088c61c0 \n\
+/* 08028eb0 */ LDR R1, =anim_drum_studio_memory_warning \n\
 /* 08028eb2 */ MOVS R2, 0xA0 @ Set R2 to 0xA0 \n\
 /* 08028eb4 */ STR R2, [SP] \n\
 /* 08028eb6 */ STR R5, [SP, 0x4] \n\

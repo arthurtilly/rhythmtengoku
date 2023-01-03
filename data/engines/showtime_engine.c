@@ -21,7 +21,7 @@ extern const Palette showtime_remix3_bg_pal[];
 
 // [D_089e384c] Buffered Textures List
 const struct CompressedGraphics *const showtime_buffered_textures[] = {
-    NULL
+    END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e3850] Graphics Table (Showtime)
@@ -285,43 +285,43 @@ const struct GameEngine D_089e3aa4 = {
   //  //  //  MISCELLANEOUS DATA  //  //  //
 
 
-// [D_089e3ac4] ?
-const struct Animation *const D_089e3ac4[] = {
-    /* 0x00 */ showtime_anim00,
-    /* 0x01 */ showtime_anim11,
-    /* 0x02 */ showtime_anim00,
-    /* 0x03 */ showtime_anim00,
-    /* 0x04 */ showtime_anim00
+// [D_089e3ac4] Penguin Beat Animations
+const struct Animation *const showtime_penguin_beat_anim[] = {
+    /* 0x00 */ anim_showtime_penguin_beat,
+    /* 0x01 */ anim_showtime_big_penguin_beat,
+    /* 0x02 */ anim_showtime_penguin_beat,
+    /* 0x03 */ anim_showtime_penguin_beat,
+    /* 0x04 */ anim_showtime_penguin_beat
 };
 
-// [D_089e3ad8] ?
-const struct Animation *const D_089e3ad8[] = {
-    /* 0x00 */ showtime_anim08,
-    /* 0x01 */ showtime_anim16,
-    /* 0x02 */ showtime_anim08,
-    /* 0x03 */ showtime_anim08,
-    /* 0x04 */ showtime_anim08
+// [D_089e3ad8] Penguin Jump Prepare Animations
+const struct Animation *const showtime_penguin_jump_prepare_anim[] = {
+    /* 0x00 */ anim_showtime_penguin_jump_prepare,
+    /* 0x01 */ anim_showtime_big_penguin_jump_prepare,
+    /* 0x02 */ anim_showtime_penguin_jump_prepare,
+    /* 0x03 */ anim_showtime_penguin_jump_prepare,
+    /* 0x04 */ anim_showtime_penguin_jump_prepare
 };
 
-// [D_089e3aec] ?
-const struct Animation *const D_089e3aec[] = {
-    /* 0x00 */ showtime_anim07,
-    /* 0x01 */ showtime_anim15,
-    /* 0x02 */ showtime_anim07,
-    /* 0x03 */ showtime_anim07,
-    /* 0x04 */ showtime_anim07
+// [D_089e3aec] Penguin Jump Animations
+const struct Animation *const showtime_penguin_jump_anim[] = {
+    /* 0x00 */ anim_showtime_penguin_jump,
+    /* 0x01 */ anim_showtime_big_penguin_jump,
+    /* 0x02 */ anim_showtime_penguin_jump,
+    /* 0x03 */ anim_showtime_penguin_jump,
+    /* 0x04 */ anim_showtime_penguin_jump
 };
 
-// [D_089e3b00] ?
-const struct Animation *const D_089e3b00[] = {
-    /* 0x00 */ showtime_anim09,
-    /* 0x01 */ showtime_anim23,
-    /* 0x02 */ showtime_anim09,
-    /* 0x03 */ showtime_anim09,
-    /* 0x04 */ showtime_anim09
+// [D_089e3b00] Penguin Slide Animations
+const struct Animation *const showtime_penguin_slide_anim[] = {
+    /* 0x00 */ anim_showtime_penguin_slide,
+    /* 0x01 */ anim_showtime_big_penguin_slide,
+    /* 0x02 */ anim_showtime_penguin_slide,
+    /* 0x03 */ anim_showtime_penguin_slide,
+    /* 0x04 */ anim_showtime_penguin_slide
 };
 
-// [D_089e3b14] ?
+// [D_089e3b14] Step Durations?
 const u32 D_089e3b14[][5] = {
     { 0x00, 0x00, 0x00, 0x00, 0x00 },
     { 0x18, 0x18, 0x18, 0x18, 0x10 },

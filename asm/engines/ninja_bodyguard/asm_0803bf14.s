@@ -9,7 +9,7 @@ thumb_func_start func_0803bf14 \n\
  \n\
 branch_0803bf1a: \n\
 /* 0803bf1a */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
-/* 0803bf1c */ BL func_0803bd88 \n\
+/* 0803bf1c */ BL ninja_get_anim \n\
 /* 0803bf20 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803bf22 */ LDR R0, =D_03005380 \n\
 /* 0803bf24 */ LDR R0, [R0] \n\

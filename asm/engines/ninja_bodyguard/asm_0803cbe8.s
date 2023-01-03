@@ -2,14 +2,14 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803cbe8 \n\
+thumb_func_start ninja_engine_start \n\
 /* 0803cbe8 */ PUSH {R4-R6, LR} \n\
 /* 0803cbea */ SUB SP, 0x14 \n\
 /* 0803cbec */ LDR R6, =D_030055d0 \n\
 /* 0803cbee */ LDR R1, [R6] \n\
 /* 0803cbf0 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0803cbf2 */ STRB R0, [R1] \n\
-/* 0803cbf4 */ BL func_0803cbbc \n\
+/* 0803cbf4 */ BL ninja_init_gfx1 \n\
 /* 0803cbf8 */ BL scene_show_obj_layer \n\
 /* 0803cbfc */ STR R4, [SP] \n\
 /* 0803cbfe */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\
@@ -37,7 +37,7 @@ thumb_func_start func_0803cbe8 \n\
 /* 0803cc32 */ BL func_0803bf14 \n\
 /* 0803cc36 */ BL func_0803bda8 \n\
 /* 0803cc3a */ MOVS R0, 0x15 @ Set R0 to 0x15 \n\
-/* 0803cc3c */ BL func_0803bd88 \n\
+/* 0803cc3c */ BL ninja_get_anim \n\
 /* 0803cc40 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803cc42 */ LDR R5, =D_03005380 \n\
 /* 0803cc44 */ LDR R0, [R5] \n\

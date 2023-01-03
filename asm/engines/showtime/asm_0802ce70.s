@@ -40,7 +40,7 @@ branch_0802ce94: \n\
 /* 0802ceac */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\
 /* 0802ceae */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 0802ceb0 */ LDRSH R1, [R1, R3] \n\
-/* 0802ceb2 */ LDR R3, =D_089e3ac4 \n\
+/* 0802ceb2 */ LDR R3, =showtime_penguin_beat_anim \n\
 /* 0802ceb4 */ LSLS R2, R5, 0x2 \n\
 /* 0802ceb6 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\
 /* 0802ceb8 */ LDR R2, [R2] \n\

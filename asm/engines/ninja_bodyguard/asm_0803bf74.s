@@ -61,7 +61,7 @@ branch_0803bfae: \n\
 /* 0803bfde */ STR R4, [SP] \n\
 /* 0803bfe0 */ BL func_0804d55c \n\
 /* 0803bfe4 */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
-/* 0803bfe6 */ BL func_0803bd88 \n\
+/* 0803bfe6 */ BL ninja_get_anim \n\
 /* 0803bfea */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803bfec */ LDR R1, =D_03005380 \n\
 /* 0803bfee */ LDR R0, [R1] \n\

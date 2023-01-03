@@ -4,6 +4,11 @@
 
 asm(".include \"include/gba.inc\""); // Temporary
 
+// For readability.
+#define gDrumIntroInfo ((struct DrumIntroInfo *)D_030055d0)
+#define gDrumLiveInfo ((struct DrumLiveInfo *)D_030055d0)
+#define gDrumLessonsInfo ((struct DrumLessonsInfo *)D_030055d0)
+
 static s32 D_03001564; // unknown type
 
 

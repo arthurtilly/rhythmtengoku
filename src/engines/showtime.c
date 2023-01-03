@@ -210,9 +210,9 @@ void func_0802c23c() {
         gShowtimeInfo->unk8[i].unk4 = 0;
 
         if (gShowtimeInfo->version != SHOWTIME_VER_REMIX3) {
-            gShowtimeInfo->unk8[i].sprite = func_0804d160(D_03005380, D_088cb4a4, 0, 64, 64, 0x4800, 1, 0, 4);
+            gShowtimeInfo->unk8[i].sprite = func_0804d160(D_03005380, anim_showtime_block, 0, 64, 64, 0x4800, 1, 0, 4);
         } else {
-            gShowtimeInfo->unk8[i].sprite = func_0804d160(D_03005380, D_088cb994, 0, 64, 64, 0x4800, 1, 0, 4);
+            gShowtimeInfo->unk8[i].sprite = func_0804d160(D_03005380, anim_showtime_block_pink, 0, 64, 64, 0x4800, 1, 0, 4);
         }
 
         gShowtimeInfo->unk8[i].unk8 = 0;

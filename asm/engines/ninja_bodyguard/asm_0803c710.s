@@ -79,7 +79,7 @@ branch_0803c790: \n\
 /* 0803c79a */ MOVS R0, 0xE @ Set R0 to 0xE \n\
  \n\
 branch_0803c79c: \n\
-/* 0803c79c */ BL func_0803bd88 \n\
+/* 0803c79c */ BL ninja_get_anim \n\
 /* 0803c7a0 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
  \n\
 branch_0803c7a2: \n\

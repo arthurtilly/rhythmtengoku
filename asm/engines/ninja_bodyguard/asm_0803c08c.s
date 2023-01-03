@@ -26,7 +26,7 @@ thumb_func_start func_0803c08c \n\
 /* 0803c0b6 */ CMP R5, R4 @ Check R5 - R4 \n\
 /* 0803c0b8 */ BCS branch_0803c170 \n\
 /* 0803c0ba */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0803c0bc */ BL func_0803bd88 \n\
+/* 0803c0bc */ BL ninja_get_anim \n\
 /* 0803c0c0 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803c0c2 */ LDR R4, =D_03005380 \n\
 /* 0803c0c4 */ LDR R0, [R4] \n\
@@ -91,7 +91,7 @@ thumb_func_start func_0803c08c \n\
 /* 0803c144 */ LSLS R0, R0, 0x10 \n\
 /* 0803c146 */ LSRS R5, R0, 0x10 \n\
 /* 0803c148 */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
-/* 0803c14a */ BL func_0803bd88 \n\
+/* 0803c14a */ BL ninja_get_anim \n\
 /* 0803c14e */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803c150 */ LDR R1, =D_03005380 \n\
 /* 0803c152 */ LDR R0, [R1] \n\

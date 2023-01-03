@@ -1578,6 +1578,7 @@ SECTIONS {
         build/data/engines/bunny_hop_engine.c.o(.rodata*);
         build/data/engines/rap_men_engine.c.o(.rodata*);
         build/data/engines/rat_race_engine.c.o(.rodata*);
+        build/data/engines/ninja_bodyguard_engine.c.o(.rodata*);
         build/bin/bindata_089e384c.bin.o(.rodata*);
         build/data/engines/prologues/sneaky_spirits_script.c.o(.rodata*);
         build/data/engines/prologues/spaceball_script.c.o(.rodata*);

@@ -32,7 +32,7 @@ thumb_func_start func_080292e0 \n\
 /* 0802931a */ LDR R0, [R4] \n\
 /* 0802931c */ MOVS R2, 0x14 @ Set R2 to 0x14 \n\
 /* 0802931e */ LDRSH R1, [R5, R2] \n\
-/* 08029320 */ LDR R2, =D_088c63f0 \n\
+/* 08029320 */ LDR R2, =anim_drum_student_drink_coffee \n\
 /* 08029322 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 08029324 */ STR R3, [SP] \n\
 /* 08029326 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
@@ -73,7 +73,7 @@ branch_08029358: \n\
 /* 0802937e */ LDR R0, [R4] \n\
 /* 08029380 */ MOVS R2, 0x14 @ Set R2 to 0x14 \n\
 /* 08029382 */ LDRSH R1, [R5, R2] \n\
-/* 08029384 */ LDR R2, =D_088c6170 \n\
+/* 08029384 */ LDR R2, =anim_drum_student_body \n\
 /* 08029386 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 08029388 */ STR R3, [SP] \n\
 /* 0802938a */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\

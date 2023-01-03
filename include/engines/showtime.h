@@ -56,16 +56,16 @@ enum ShowtimeVersionsEnum {
 
 
 // OAM Animations:
-extern const struct Animation D_088cb994[];
-extern const struct Animation D_088cb4a4[];
-extern const struct Animation showtime_anim00[];
-extern const struct Animation showtime_anim11[];
-extern const struct Animation showtime_anim08[];
-extern const struct Animation showtime_anim16[];
-extern const struct Animation showtime_anim07[];
-extern const struct Animation showtime_anim15[];
-extern const struct Animation showtime_anim09[];
-extern const struct Animation showtime_anim23[];
+extern const struct Animation anim_showtime_block_pink[];
+extern const struct Animation anim_showtime_block[];
+extern const struct Animation anim_showtime_penguin_beat[];
+extern const struct Animation anim_showtime_big_penguin_beat[];
+extern const struct Animation anim_showtime_penguin_jump_prepare[];
+extern const struct Animation anim_showtime_big_penguin_jump_prepare[];
+extern const struct Animation anim_showtime_penguin_jump[];
+extern const struct Animation anim_showtime_big_penguin_jump[];
+extern const struct Animation anim_showtime_penguin_slide[];
+extern const struct Animation anim_showtime_big_penguin_slide[];
 
 
 // Palettes:
@@ -83,10 +83,10 @@ extern char D_0805a3cc[];
 // Engine Definition Data:
 extern const struct CompressedGraphics *const showtime_buffered_textures[]; // Buffered Textures List
 extern const struct GraphicsTable *const showtime_gfx_tables[]; // Graphics Table Index
-extern const struct Animation *const D_089e3ac4[];
-extern const struct Animation *const D_089e3ad8[];
-extern const struct Animation *const D_089e3aec[];
-extern const struct Animation *const D_089e3b00[];
+extern const struct Animation *const showtime_penguin_beat_anim[];
+extern const struct Animation *const showtime_penguin_jump_prepare_anim[];
+extern const struct Animation *const showtime_penguin_jump_anim[];
+extern const struct Animation *const showtime_penguin_slide_anim[];
 extern const u32 D_089e3b14[][5];
 
 

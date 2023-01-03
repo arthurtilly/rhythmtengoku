@@ -4,7 +4,7 @@
 #include "drum_lessons_unk_anim_cells.inc.c"
 
 // [D_088c7144] <description>
-const struct Animation drum_lessons_unk_anim00[] = {
+const struct Animation anim_drum_lessons_unk00[] = {
     /* 000 */ { drum_lessons_unk_cel000, 4 },
     /* 001 */ { drum_lessons_unk_cel001, 4 },
     /* 002 */ { drum_lessons_unk_cel002, 4 },
@@ -74,7 +74,7 @@ const struct Animation drum_lessons_unk_anim00[] = {
 };
 
 // [D_088c7354] <description>
-const struct Animation drum_lessons_unk_anim01[] = {
+const struct Animation anim_drum_lessons_unk01[] = {
     /* 000 */ { drum_lessons_unk_cel065, 20 },
     /* 001 */ { drum_lessons_unk_cel066, 20 },
     /* 002 */ { drum_lessons_unk_cel067, 20 },

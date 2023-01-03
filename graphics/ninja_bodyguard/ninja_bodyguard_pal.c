@@ -1,8 +1,8 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0890fccc] <description>
-const Palette ninja_bodyguard_bg_pal[] = {
+// [D_0890fccc] Ninja Bodyguard BG Palette
+const Palette ninja_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00E0F8),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -41,8 +41,8 @@ const Palette ninja_bodyguard_bg_pal[] = {
     }
 };
 
-// [D_0890fd0c] <description>
-const Palette ninja_bodyguard_obj_pal[] = {
+// [D_0890fd0c] Ninja Bodyguard OBJ Palette
+const Palette ninja_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00E0F8),
         /* 01 */ TO_RGB555(0xF8F8F8),

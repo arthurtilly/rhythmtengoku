@@ -52,7 +52,7 @@ branch_08029a64: \n\
 /* 08029a80 */ ADDS R1, R5, R2 @ Set R1 to R5 + R2 \n\
 /* 08029a82 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08029a84 */ LDRSH R1, [R1, R2] \n\
-/* 08029a86 */ LDR R2, =D_088c61f0 \n\
+/* 08029a86 */ LDR R2, =anim_drum_studio_save_option_y \n\
 /* 08029a88 */ STR R3, [SP] \n\
 /* 08029a8a */ STR R4, [SP, 0x4] \n\
 /* 08029a8c */ STR R4, [SP, 0x8] \n\
@@ -78,7 +78,7 @@ branch_08029aa4: \n\
 /* 08029ac0 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08029ac2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08029ac4 */ LDRSH R1, [R1, R2] \n\
-/* 08029ac6 */ LDR R2, =D_088c6210 \n\
+/* 08029ac6 */ LDR R2, =anim_drum_studio_save_option_n \n\
 /* 08029ac8 */ MOVS R4, 0x1 @ Set R4 to 0x1 \n\
 /* 08029aca */ STR R4, [SP] \n\
 /* 08029acc */ STR R3, [SP, 0x4] \n\

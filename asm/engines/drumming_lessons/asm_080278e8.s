@@ -34,7 +34,7 @@ branch_08027918: \n\
 /* 08027918 */ LDR R1, =(D_03004b10 + 0x54) \n\
 /* 0802791a */ ADDS R0, R2, 0x4 @ Set R0 to R2 + 0x4 \n\
 /* 0802791c */ LSLS R0, R0, 0x5 \n\
-/* 0802791e */ LDR R2, =D_088c87a0 \n\
+/* 0802791e */ LDR R2, =drum_lessons_bg_pal \n\
 /* 08027920 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 08027922 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08027924 */ LSLS R2, R2, 0x2 \n\

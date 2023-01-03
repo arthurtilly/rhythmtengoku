@@ -24,7 +24,7 @@ thumb_func_start func_08028330 \n\
 /* 08028354 */ BL get_current_mem_id \n\
 /* 08028358 */ LSLS R0, R0, 0x10 \n\
 /* 0802835a */ LSRS R0, R0, 0x10 \n\
-/* 0802835c */ LDR R1, =D_088c88e0 \n\
+/* 0802835c */ LDR R1, =drum_lessons_bg_screen_pal \n\
 /* 0802835e */ LDRH R1, [R1] \n\
 /* 08028360 */ STR R1, [SP] \n\
 /* 08028362 */ LDR R1, =(D_03004b10 + 0x54) \n\

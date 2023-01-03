@@ -14,7 +14,7 @@ thumb_func_start func_08028504 \n\
 /* 08028514 */ LDR R0, [R5] \n\
 /* 08028516 */ MOVS R2, 0x1C @ Set R2 to 0x1C \n\
 /* 08028518 */ LDRSH R1, [R4, R2] \n\
-/* 0802851a */ LDR R2, =D_088c60a8 \n\
+/* 0802851a */ LDR R2, =anim_drum_student_use_tom \n\
 /* 0802851c */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0802851e */ STR R3, [SP] \n\
 /* 08028520 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\

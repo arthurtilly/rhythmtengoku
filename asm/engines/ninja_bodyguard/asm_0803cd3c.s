@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803cd3c \n\
+thumb_func_start ninja_cue_hit \n\
 /* 0803cd3c */ PUSH {R4-R7, LR} \n\
 /* 0803cd3e */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 0803cd40 */ PUSH {R7} \n\
@@ -21,7 +21,7 @@ thumb_func_start func_0803cd3c \n\
  \n\
 branch_0803cd5c: \n\
 /* 0803cd5c */ MOVS R0, 0x11 @ Set R0 to 0x11 \n\
-/* 0803cd5e */ BL func_0803bd88 \n\
+/* 0803cd5e */ BL ninja_get_anim \n\
 /* 0803cd62 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803cd64 */ LDR R4, =D_03005380 \n\
 /* 0803cd66 */ LDR R0, [R4] \n\
@@ -52,7 +52,7 @@ branch_0803cd5c: \n\
  \n\
 branch_0803cd9c: \n\
 /* 0803cd9c */ MOVS R0, 0x12 @ Set R0 to 0x12 \n\
-/* 0803cd9e */ BL func_0803bd88 \n\
+/* 0803cd9e */ BL ninja_get_anim \n\
 /* 0803cda2 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803cda4 */ LDR R4, =D_03005380 \n\
 /* 0803cda6 */ LDR R0, [R4] \n\

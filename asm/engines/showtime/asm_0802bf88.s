@@ -26,7 +26,7 @@ thumb_func_start showtime_cue_barely \n\
 /* 0802bfb4 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 0802bfb6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802bfb8 */ LDRSH R1, [R1, R2] \n\
-/* 0802bfba */ LDR R2, =D_088cb9fc \n\
+/* 0802bfba */ LDR R2, =anim_showtime_monkey_sad_swing \n\
 /* 0802bfbc */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0802bfbe */ STR R3, [SP] \n\
 /* 0802bfc0 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
