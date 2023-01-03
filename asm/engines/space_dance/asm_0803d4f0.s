@@ -12,7 +12,7 @@ thumb_func_start func_0803d4f0 \n\
 /* 0803d4fc */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803d4fe */ BEQ branch_0803d572 \n\
 /* 0803d500 */ MOVS R0, 0x10 @ Set R0 to 0x10 \n\
-/* 0803d502 */ BL func_0803d018 \n\
+/* 0803d502 */ BL space_dance_get_anim \n\
 /* 0803d506 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803d508 */ LDR R4, =D_03005380 \n\
 /* 0803d50a */ LDR R0, [R4] \n\

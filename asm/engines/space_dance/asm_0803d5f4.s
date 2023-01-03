@@ -2,17 +2,17 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803d5f4 \n\
+thumb_func_start space_dance_cue_hit \n\
 /* 0803d5f4 */ PUSH {R4, R5, LR} \n\
 /* 0803d5f6 */ SUB SP, 0xC \n\
 /* 0803d5f8 */ LDR R5, =D_030055d0 \n\
 /* 0803d5fa */ LDR R0, [R5] \n\
 /* 0803d5fc */ LDRH R4, [R0, 0xC] \n\
-/* 0803d5fe */ LDR R2, =D_089e6eb8 \n\
+/* 0803d5fe */ LDR R2, =space_dance_cue_anim_map \n\
 /* 0803d600 */ LDR R0, [R1] \n\
 /* 0803d602 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0803d604 */ LDRB R0, [R0] \n\
-/* 0803d606 */ BL func_0803d018 \n\
+/* 0803d606 */ BL space_dance_get_anim \n\
 /* 0803d60a */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803d60c */ LDR R0, =D_03005380 \n\
 /* 0803d60e */ LDR R0, [R0] \n\

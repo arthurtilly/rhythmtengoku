@@ -8,13 +8,13 @@ thumb_func_start func_0803d2c0 \n\
 /* 0803d2c4 */ PUSH {R7} \n\
 /* 0803d2c6 */ SUB SP, 0xC \n\
 /* 0803d2c8 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
-/* 0803d2ca */ LDR R1, =D_089e6e9c \n\
+/* 0803d2ca */ LDR R1, =space_dancer_sounds \n\
 /* 0803d2cc */ LSLS R0, R6, 0x2 \n\
 /* 0803d2ce */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0803d2d0 */ LDR R0, [R0] \n\
 /* 0803d2d2 */ BL play_sound \n\
 /* 0803d2d6 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
-/* 0803d2d8 */ LDR R0, =D_089e6e8c \n\
+/* 0803d2d8 */ LDR R0, =space_dancer_anim_map \n\
 /* 0803d2da */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 0803d2dc */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0803d2de */ LDR R7, =D_030055d0 \n\
@@ -28,7 +28,7 @@ branch_0803d2e0: \n\
 branch_0803d2e8: \n\
 /* 0803d2e8 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0803d2ea */ LDRB R0, [R1] \n\
-/* 0803d2ec */ BL func_0803d018 \n\
+/* 0803d2ec */ BL space_dance_get_anim \n\
 /* 0803d2f0 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803d2f2 */ LDR R0, =D_03005380 \n\
 /* 0803d2f4 */ LDR R0, [R0] \n\
@@ -64,10 +64,10 @@ branch_0803d320: \n\
 /* 0803d330 */ LDRH R4, [R1, 0x1C] \n\
 /* 0803d332 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0803d334 */ BNE branch_0803d366 \n\
-/* 0803d336 */ LDR R0, =D_089e6e93 \n\
+/* 0803d336 */ LDR R0, =space_gramps_anim_map \n\
 /* 0803d338 */ ADDS R0, R6, R0 @ Set R0 to R6 + R0 \n\
 /* 0803d33a */ LDRB R0, [R0] \n\
-/* 0803d33c */ BL func_0803d018 \n\
+/* 0803d33c */ BL space_dance_get_anim \n\
 /* 0803d340 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803d342 */ LDR R0, =D_03005380 \n\
 /* 0803d344 */ LDR R0, [R0] \n\

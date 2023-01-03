@@ -43,7 +43,7 @@ branch_0803d3b6: \n\
 /* 0803d3c6 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0803d3c8 */ BNE branch_0803d3ea \n\
 /* 0803d3ca */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 0803d3cc */ BL func_0803d018 \n\
+/* 0803d3cc */ BL space_dance_get_anim \n\
 /* 0803d3d0 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803d3d2 */ LDR R0, =D_03005380 \n\
 /* 0803d3d4 */ LDR R0, [R0] \n\

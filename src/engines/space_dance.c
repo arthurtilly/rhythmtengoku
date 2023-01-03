@@ -2,6 +2,9 @@
 
 asm(".include \"include/gba.inc\""); // Temporary
 
+// For readability.
+#define gSpaceDanceInfo ((struct SpaceDanceInfo *)D_030055d0)
+
 
 /* SPACE DANCE */
 

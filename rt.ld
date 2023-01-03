@@ -1389,6 +1389,7 @@ SECTIONS {
         build/graphics/mannequin_factory/mannequin_factory_pal.c.o(.rodata*);
         build/graphics/space_dance/cosmic_dance_anim.c.o(.rodata*);
         build/graphics/space_dance/cosmic_dance_pal.c.o(.rodata*);
+        build/graphics/staff_credit/staff_credit_pal.c.o(.rodata*);
         build/graphics/live/drum_boys_anim.c.o(.rodata*);
         build/graphics/live/drum_boys_pal.c.o(.rodata*);
         build/graphics/live/drum_girls_anim.c.o(.rodata*);
@@ -1579,6 +1580,7 @@ SECTIONS {
         build/data/engines/rap_men_engine.c.o(.rodata*);
         build/data/engines/rat_race_engine.c.o(.rodata*);
         build/data/engines/ninja_bodyguard_engine.c.o(.rodata*);
+        build/data/engines/space_dance_engine.c.o(.rodata*);
         build/bin/bindata_089e384c.bin.o(.rodata*);
         build/data/engines/prologues/sneaky_spirits_script.c.o(.rodata*);
         build/data/engines/prologues/spaceball_script.c.o(.rodata*);

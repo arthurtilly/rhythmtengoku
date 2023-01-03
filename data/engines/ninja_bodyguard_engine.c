@@ -95,7 +95,7 @@ const struct Animation *const ninja_anim[][2] = {
     /* 0x13 */ { anim_ninja_appear, anim_tanaka_appear },
     /* 0x14 */ { anim_ninja_raise_sword, anim_tanaka_raise_stick },
     /* 0x15 */ { anim_ninja1_button_indicators, anim_ninja2_button_indicators },
-    /* 0x16 */ { anim_ninja1_cutscene_arrow, anim_ninja2_cutscene_rock },
+    /* 0x16 */ { anim_ninja1_cutscene_arrow, anim_ninja2_cutscene_rock }
 };
 
 // [D_089e6970] Animation Table

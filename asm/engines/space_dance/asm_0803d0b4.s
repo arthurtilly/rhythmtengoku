@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803d0b4 \n\
+thumb_func_start space_dance_engine_start \n\
 /* 0803d0b4 */ PUSH {R4-R7, LR} \n\
 /* 0803d0b6 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 0803d0b8 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -14,7 +14,7 @@ thumb_func_start func_0803d0b4 \n\
 /* 0803d0c4 */ LDR R0, [R6] \n\
 /* 0803d0c6 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0803d0c8 */ STRB R4, [R0, 0x4] \n\
-/* 0803d0ca */ BL func_0803d088 \n\
+/* 0803d0ca */ BL space_dance_gfx_init1 \n\
 /* 0803d0ce */ BL scene_show_obj_layer \n\
 /* 0803d0d2 */ STR R5, [SP] \n\
 /* 0803d0d4 */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\
@@ -86,7 +86,7 @@ branch_0803d11a: \n\
  \n\
 branch_0803d158: \n\
 /* 0803d158 */ MOVS R0, 0x7 @ Set R0 to 0x7 \n\
-/* 0803d15a */ BL func_0803d018 \n\
+/* 0803d15a */ BL space_dance_get_anim \n\
 /* 0803d15e */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803d160 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 0803d162 */ LDR R0, [R2] \n\
@@ -138,7 +138,7 @@ branch_0803d158: \n\
 /* 0803d1c2 */ BLS branch_0803d158 \n\
 /* 0803d1c4 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0803d1c6 */ MOVS R0, 0xF @ Set R0 to 0xF \n\
-/* 0803d1c8 */ BL func_0803d018 \n\
+/* 0803d1c8 */ BL space_dance_get_anim \n\
 /* 0803d1cc */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803d1ce */ LDR R6, =D_03005380 \n\
 /* 0803d1d0 */ LDR R0, [R6] \n\
@@ -158,7 +158,7 @@ branch_0803d158: \n\
 /* 0803d1ee */ MOV R8, R3 @ Set R8 to R3 \n\
 /* 0803d1f0 */ STRH R0, [R1, 0x2C] \n\
 /* 0803d1f2 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 0803d1f4 */ BL func_0803d018 \n\
+/* 0803d1f4 */ BL space_dance_get_anim \n\
 /* 0803d1f8 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803d1fa */ LDR R0, [R6] \n\
 /* 0803d1fc */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\
@@ -197,7 +197,7 @@ branch_0803d158: \n\
 /* 0803d242 */ ADDS R0, 0x28 @ Add 0x28 to R0 \n\
 /* 0803d244 */ STRB R2, [R0] \n\
 /* 0803d246 */ MOVS R0, 0x11 @ Set R0 to 0x11 \n\
-/* 0803d248 */ BL func_0803d018 \n\
+/* 0803d248 */ BL space_dance_get_anim \n\
 /* 0803d24c */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803d24e */ LDR R0, [R6] \n\
 /* 0803d250 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\

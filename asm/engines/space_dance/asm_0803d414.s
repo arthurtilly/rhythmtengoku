@@ -12,10 +12,10 @@ thumb_func_start func_0803d414 \n\
 /* 0803d420 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0803d422 */ BNE branch_0803d44a \n\
 /* 0803d424 */ STRH R4, [R0, 0x1C] \n\
-/* 0803d426 */ LDR R0, =D_089e6e93 \n\
+/* 0803d426 */ LDR R0, =space_gramps_anim_map \n\
 /* 0803d428 */ ADDS R0, R1, R0 @ Set R0 to R1 + R0 \n\
 /* 0803d42a */ LDRB R0, [R0] \n\
-/* 0803d42c */ BL func_0803d018 \n\
+/* 0803d42c */ BL space_dance_get_anim \n\
 /* 0803d430 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803d432 */ LDR R0, =D_03005380 \n\
 /* 0803d434 */ LDR R0, [R0] \n\

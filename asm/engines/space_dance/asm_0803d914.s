@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803d914 \n\
+thumb_func_start space_dance_common_beat_animation \n\
 /* 0803d914 */ PUSH {R4-R7, LR} \n\
 /* 0803d916 */ SUB SP, 0xC \n\
 /* 0803d918 */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
@@ -17,7 +17,7 @@ branch_0803d91c: \n\
 /* 0803d926 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 0803d928 */ BNE branch_0803d950 \n\
 /* 0803d92a */ MOVS R0, 0x7 @ Set R0 to 0x7 \n\
-/* 0803d92c */ BL func_0803d018 \n\
+/* 0803d92c */ BL space_dance_get_anim \n\
 /* 0803d930 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803d932 */ LDR R0, =D_03005380 \n\
 /* 0803d934 */ LDR R0, [R0] \n\
@@ -50,7 +50,7 @@ branch_0803d950: \n\
 /* 0803d968 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0803d96a */ BNE branch_0803d98e \n\
 /* 0803d96c */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 0803d96e */ BL func_0803d018 \n\
+/* 0803d96e */ BL space_dance_get_anim \n\
 /* 0803d972 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803d974 */ LDR R0, =D_03005380 \n\
 /* 0803d976 */ LDR R0, [R0] \n\
