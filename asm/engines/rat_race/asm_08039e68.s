@@ -12,7 +12,7 @@ thumb_func_start rat_race_engine_start \n\
 /* 08039e74 */ LDR R1, [R5] \n\
 /* 08039e76 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08039e78 */ STRB R0, [R1] \n\
-/* 08039e7a */ BL rat_race_gfx_init1 \n\
+/* 08039e7a */ BL rat_race_init_gfx1 \n\
 /* 08039e7e */ BL scene_show_obj_layer \n\
 /* 08039e82 */ STR R4, [SP] \n\
 /* 08039e84 */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\

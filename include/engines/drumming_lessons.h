@@ -2,6 +2,7 @@
 
 #include "global.h"
 #include "engines.h"
+#include "engines/night_walk.h"
 
 // Engine Types:
 struct DrumIntroInfo {
@@ -36,6 +37,7 @@ struct StudioDrummer {
     s16 leftLeg;
     s16 rightArm;
     s16 leftArm;
+    s16 seat;
     s16 coffeeSteam;
     u16 unk22;
     u16 unk24;
@@ -49,40 +51,159 @@ struct StudioDrummer {
 
 struct DrumLessonsInfo {
     u8 version; // 0x000
-    u32 null4;
-    u32 null8;
-    u32 nullC;
-    u8 padding10[0x344];
+    u8 unk1;
+    struct DrumTechController drumTech; // 0x004
     struct StudioDrummer student; // 0x354
-    u32 null388;
+    u8 unk388;
     struct StudioDrummer teacher; // 0x38C;
-    u32 null3C0;
-    u32 null3C4;
+    u8 unk3C0;
+    u8 unk3C1;
+    u16 drummingButtons; // 0x3C2
+    void *unk3C4;
     u32 null3C8;
-    u32 null3CC;
-    u32 padding3D0[0x20];
-    u16 unk3F0;
+    u8 unk3CC;
+    u8 unk3CD;
+    u8 unk3CE;
+    u32 unk3D0;
+    u32 unk3D4;
+    u32 unk3D8;
+    u32 unk3DC;
+    u32 unk3E0;
+    u32 unk3E4;
+    u32 unk3E8;
+    u32 unk3EC;
+    u8 unk3F0;
     s16 memoryWarningSprite; // 0x3F2
     struct TextPrinter *songTitlePrinter; // 0x3F4
     s16 songTitleBgSprite; // 0x3F8
-    u32 null3FC;
+    s16 songTitlePosX; // 0x3FA
+    u16 unk3FC; // 0x3FC
     u32 null400;
     u32 null404;
     u16 null408;
     s16 replaySaveOptionSprite; // 0x40A
     u8 unk40C;
-    struct TextPrinter *textPrinter; // 0x410
+    struct TextPrinter *replayTextPrinter; // 0x410
+    u32 null414;
+    u32 null418;
+    u16 unk41C;
+    u32 unk420;
+    u8 unk424;
+    u8 unk425;
+    u8 unk426;
+    u8 unk427;
+    struct TextPrinter *lessonTextPrinter; // 0x428
+    s16 textAdvIconSprite; // 0x42C
+    u8 unk42E;
+    u32 null430;
+    u32 null434;
+    u32 null438;
+    u32 null43C;
+    u32 null440;
+    u32 null444;
+    u32 null448;
+    u32 null44C;
+    u32 null450;
+    u32 null454;
+    u8 unk458;
+    u16 unk45A;
+    u8 unk45C;
+    s16 lessonRankSprite; // 0x45E
+    u8 padding460[0x100];
+    s16 slowIconSprite; // 0x560
+    u8 unk562;
+    u8 unk563;
+    u16 unk564;
+    u16 null566;
+    s16 accuracyLightSprites[7]; // 0x568
+    u8 unk576;
+    u32 unk578;
+    u32 unk57C;
 };
 
 struct DrumLessonsCue {
     /* add fields here */
 };
 
+typedef void (*DrumPlayFunc)(void);
+
+struct DrumKit {
+    const struct DrumTechPhrase *aButton;
+    const struct DrumTechPhrase *bButton;
+    const struct DrumTechPhrase *dpadUp;
+    const struct DrumTechPhrase *dpadDown;
+    const struct DrumTechPhrase *dpadLeft;
+    const struct DrumTechPhrase *dpadRight;
+    const struct DrumTechPhrase *lButton;
+    const struct DrumTechPhrase *rButton;
+    s32 null20;
+    s32 null24;
+};
+
 
 // Engine Macros/Enums:
+enum DrumIntroVersionsEnum {
+    ENGINE_VER_DRUM_INTRO_TEACHER,
+    ENGINE_VER_DRUM_INTRO_PLAYER,
+    ENGINE_VER_DRUM_INTRO_TANUKI_MONKEY,
+    ENGINE_VER_DRUM_INTRO_CUTSCENE
+};
+
+enum DrumLiveVersionsEnum {
+    ENGINE_VER_DRUM_GIRLS_LIVE,
+    ENGINE_VER_DRUM_BOYS_LIVE,
+    ENGINE_VER_DRUM_SAMURAI_BAND_LIVE
+};
+
+enum DrumLessonsVersionsEnum {
+    ENGINE_VER_DRUM_STUDIO_0,
+    ENGINE_VER_DRUM_STUDIO_1,
+    ENGINE_VER_DRUM_STUDIO_2,
+    ENGINE_VER_DRUM_STUDIO_3,
+    ENGINE_VER_DRUM_LESSONS
+};
 
 
 // OAM Animations:
+extern const struct Animation anim_drum_student_kit_snare[];
+extern const struct Animation anim_drum_student_kit_bass[];
+extern const struct Animation anim_drum_student_kit_tom[];
+extern const struct Animation anim_drum_student_kit_hihat[];
+extern const struct Animation anim_drum_student_kit_pedal_hihat[];
+extern const struct Animation anim_drum_student_kit_pedal_r[];
+extern const struct Animation anim_drum_student_kit_pedal_l[];
+extern const struct Animation anim_drum_student_kit_splash[];
+extern const struct Animation anim_drum_student_kit_crash[];
+extern const struct Animation anim_drum_student_head[];
+extern const struct Animation anim_drum_student_happy[];
+extern const struct Animation anim_drum_student_body[];
+extern const struct Animation anim_drum_student_use_pedal_r[];
+extern const struct Animation anim_drum_student_use_pedal_l[];
+extern const struct Animation anim_drum_student_use_snare_l[];
+extern const struct Animation anim_drum_student_use_snare_r[];
+extern const struct Animation anim_drum_student_kit_seat[];
+extern const struct Animation anim_drum_student_coffee_steam[];
+extern const struct Animation anim_drum_studio_song_title_bubble[];
+extern const struct Animation anim_drum_studio_save_option_y[];
+extern const struct Animation anim_drum_studio_memory_warning[];
+extern const struct Animation anim_drum_teacher_kit_snare[];
+extern const struct Animation anim_drum_teacher_kit_bass[];
+extern const struct Animation anim_drum_teacher_kit_tom[];
+extern const struct Animation anim_drum_teacher_kit_hihat[];
+extern const struct Animation anim_drum_teacher_kit_pedal_r[];
+extern const struct Animation anim_drum_teacher_kit_pedal_l[];
+extern const struct Animation anim_drum_teacher_kit_splash[];
+extern const struct Animation anim_drum_teacher_kit_crash[];
+extern const struct Animation anim_drum_teacher_head[];
+extern const struct Animation anim_drum_teacher_body[];
+extern const struct Animation anim_drum_teacher_use_pedal_r[];
+extern const struct Animation anim_drum_teacher_use_pedal_l[];
+extern const struct Animation anim_drum_teacher_use_snare_l[];
+extern const struct Animation anim_drum_teacher_use_snare_r[];
+extern const struct Animation anim_drum_teacher_kit_seat[];
+extern const struct Animation anim_drum_lessons_text_adv_icon[];
+extern const struct Animation anim_drum_lessons_rank_s[];
+extern const struct Animation anim_drum_lessons_slow_icon[];
 
 
 // Palettes:
@@ -92,6 +213,13 @@ struct DrumLessonsCue {
 
 
 // Engine Data:
+extern const DrumPlayFunc D_089e2988[];
+extern const struct Animation *const D_089e172c[]; // Accuracy Meter Lights 1-7
+extern const struct Vector2 D_089e1748[]; // Accuracy Meter Light Positions
+extern const struct CompressedGraphics *const D_089e2a04[];
+extern const struct GraphicsTable D_089e2a08[];
+extern const struct GraphicsTable D_089e2a50[];
+extern const struct GameEngine D_089e2ea0;
 
 
 // Engine Definition Data:
@@ -270,7 +398,7 @@ struct DrumLessonsCue {
 // extern ? func_080278d0(?); // DRUM LESSON - Engine Event 0x0F (?)
 // extern ? func_080278e8(?);
 // extern ? func_08027948(?);
-// extern ? func_08027964(?);
+extern void func_08027964(void); // Init. Drum Lessons
 // extern ? func_08027ba0(?); // DRUM LESSON - Engine Event 0x0D (?)
 // extern ? func_08027bbc(?); // DRUM LESSON - Engine Event 0x10 (?)
 // extern ? func_08027bd8(?); // DRUM LESSON - Engine Event 0x15 (?)
@@ -306,11 +434,11 @@ struct DrumLessonsCue {
 // extern ? func_080286f4(?);
 // extern ? func_0802871c(?);
 // extern ? func_08028744(?);
-// extern ? func_080287b4(?);
-// extern ? func_08028950(?);
-// extern ? func_08028954(?);
-// extern ? func_08028978(?);
-// extern ? func_080289c0(?);
+extern void func_080287b4(void); // init. something
+extern s32 func_08028950(void); // Get Maximum something
+extern void func_08028954(void); // Graphics Init. 3
+extern void func_08028978(void); // Graphics Init. 2
+extern void func_080289c0(void); // Graphics Init. 1
 extern void func_080289ec(u32 version); // DRUM LESSON - Game Engine Start
 extern void func_080290c0(void); // DRUM LESSON - Engine Event 0x1A (STUB)
 // extern ? func_080290c4(?);
@@ -334,7 +462,7 @@ extern void func_08029ba0(void); // DRUM LESSON - Game Engine Update
 // extern ? func_08029cac(?);
 // extern ? func_08029cec(?); // DRUM LESSON - Engine Event 0x13 (?)
 extern void func_08029d20(void); // DRUM LESSON - Game Engine Stop
-extern void func_08029d40(struct Cue *, struct DrumLessonsCue *, u32 param); // DRUM LESSON - Cue - Spawn
+extern void func_08029d40(struct Cue *, struct DrumLessonsCue *, u32 drum); // DRUM LESSON - Cue - Spawn
 extern u32  func_08029d84(struct Cue *, struct DrumLessonsCue *, u32 runningTime, u32 duration); // DRUM LESSON - Cue - Update
 extern void func_08029e0c(struct Cue *, struct DrumLessonsCue *); // DRUM LESSON - Cue - Despawn
 // extern ? func_08029e10(?);

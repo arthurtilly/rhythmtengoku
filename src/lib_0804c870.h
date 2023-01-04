@@ -3,6 +3,10 @@
 #include "global.h"
 #include "graphics.h"
 
+// Library Types:
+
+
+// Functions:
 // extern ? func_0804c870(?);
 // extern ? func_0804c8b0(?);
 // extern ? func_0804c920(?);

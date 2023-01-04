@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start rat_race_gfx_init1 \n\
+thumb_func_start rat_race_init_gfx1 \n\
 /* 08039e3c */ PUSH {LR} \n\
 /* 08039e3e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08039e40 */ BL func_0800c604 \n\
@@ -11,7 +11,7 @@ thumb_func_start rat_race_gfx_init1 \n\
 /* 08039e4a */ LSRS R0, R0, 0x10 \n\
 /* 08039e4c */ LDR R1, =rat_race_buffered_textures \n\
 /* 08039e4e */ BL func_080087b4 \n\
-/* 08039e52 */ LDR R1, =rat_race_gfx_init2 \n\
+/* 08039e52 */ LDR R1, =rat_race_init_gfx2 \n\
 /* 08039e54 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08039e56 */ BL task_run_after \n\
 /* 08039e5a */ POP {R0} \n\

@@ -19,6 +19,15 @@ struct DrumTechNote {
     u16 deltaTime;
 };
 
+struct DrumTechPhrase {
+    u8 drumID;
+    u16 volume;
+    s16 pitch;
+    const struct DrumTechNote *sequence;
+    void (*onPlay)();
+    s32 onPlayArg;
+};
+
 struct DrumTechController {
     u8 soundTimers[10]; // Timers for SoundPlayers
     const struct DrumTechInstrument *drumBank;

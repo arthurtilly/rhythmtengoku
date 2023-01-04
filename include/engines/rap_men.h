@@ -90,9 +90,9 @@ extern const struct SequenceData *const rap_men_cue_miss_sfx[2];
 
 // Functions:
 extern const struct Animation *rap_men_get_anim(u32); // Get Animation
-extern void rap_men_gfx_init3(void); // Graphics Init. 3
-extern void rap_men_gfx_init2(void); // Graphics Init. 2
-extern void rap_men_gfx_init1(void); // Graphics Init. 1
+extern void rap_men_init_gfx3(void); // Graphics Init. 3
+extern void rap_men_init_gfx2(void); // Graphics Init. 2
+extern void rap_men_init_gfx1(void); // Graphics Init. 1
 extern void rap_men_engine_start(u32 version); // Game Engine Start
 extern void rap_men_engine_event_stub(void); // Engine Event 02 (STUB)
 extern void rap_men_set_rapper_anim(u32 anim); // Engine Event 00 (Set Rapper Animation)

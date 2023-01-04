@@ -14,7 +14,7 @@ thumb_func_start space_dance_engine_start \n\
 /* 0803d0c4 */ LDR R0, [R6] \n\
 /* 0803d0c6 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0803d0c8 */ STRB R4, [R0, 0x4] \n\
-/* 0803d0ca */ BL space_dance_gfx_init1 \n\
+/* 0803d0ca */ BL space_dance_init_gfx1 \n\
 /* 0803d0ce */ BL scene_show_obj_layer \n\
 /* 0803d0d2 */ STR R5, [SP] \n\
 /* 0803d0d4 */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\

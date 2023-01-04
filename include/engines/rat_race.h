@@ -52,9 +52,9 @@ extern const s32 D_089e68ac[];
 
 
 // Functions:
-extern void rat_race_gfx_init3(void); // Graphics Init. 3
-extern void rat_race_gfx_init2(void); // Graphics Init. 2
-extern void rat_race_gfx_init1(void); // Graphics Init. 1
+extern void rat_race_init_gfx3(void); // Graphics Init. 3
+extern void rat_race_init_gfx2(void); // Graphics Init. 2
+extern void rat_race_init_gfx1(void); // Graphics Init. 1
 extern void rat_race_engine_start(u32 version); // Game Engine Start
 extern void rat_race_engine_event_stub(); // Engine Event 00 (STUB)
 extern void func_0803a158(); // Engine Event 02 (?)

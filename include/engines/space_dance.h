@@ -78,9 +78,9 @@ extern const s16 D_089e6ebc[];
 
 // Functions:
 extern const struct Animation *space_dance_get_anim(u32 anim); // Get Animation
-extern void space_dance_gfx_init3(void); // Graphics Init. 3
-extern void space_dance_gfx_init2(void); // Graphics Init. 2
-extern void space_dance_gfx_init1(void); // Graphics Init. 1
+extern void space_dance_init_gfx3(void); // Graphics Init. 3
+extern void space_dance_init_gfx2(void); // Graphics Init. 2
+extern void space_dance_init_gfx1(void); // Graphics Init. 1
 extern void space_dance_engine_start(u32 version); // Game Engine Start
 extern void space_dance_engine_event_stub(); // Engine Event 08 (STUB)
 extern void func_0803d2c0(); // Engine Event 00 (?)

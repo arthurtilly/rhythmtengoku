@@ -20,36 +20,36 @@ const struct Animation *rap_men_get_anim(u32 anim) {
 
 
 // Graphics Init. 3
-void rap_men_gfx_init3(void) {
+void rap_men_init_gfx3(void) {
 	func_0800c604(0);
 	gameplay_start_screen_fade_in();
 }
 
 
 // Graphics Init. 2
-void rap_men_gfx_init2(void) {
+void rap_men_init_gfx2(void) {
 	s32 task;
 
 	func_0800c604(0);
 	task = func_08002ee0(get_current_mem_id(), rap_men_gfx_tables[gRapMenInfo->version], 0x2000);
-	task_run_after(task, rap_men_gfx_init3, 0);
+	task_run_after(task, rap_men_init_gfx3, 0);
 }
 
 
 // Graphics Init. 1
-void rap_men_gfx_init1(void) {
+void rap_men_init_gfx1(void) {
 	s32 task;
 
 	func_0800c604(0);
 	task = func_080087b4(get_current_mem_id(), rap_men_buffered_textures);
-	task_run_after(task, rap_men_gfx_init2, 0);
+	task_run_after(task, rap_men_init_gfx2, 0);
 }
 
 
 // Game Engine Start
 void rap_men_engine_start(u32 version) {
     gRapMenInfo->version = version;
-    rap_men_gfx_init1();
+    rap_men_init_gfx1();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
     gRapMenInfo->unk4 = func_0800c660(0x340, 2);

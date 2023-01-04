@@ -1561,6 +1561,7 @@ SECTIONS {
         build/data/engines/mannequin_factory_engine.c.o(.rodata*);
         build/data/engines/staff_credit_engine.c.o(.rodata*);
         build/bin/bindata_089df6ec.bin.o(.rodata*);
+        build/data/engines/drum_studio_engine.c.o(.rodata*);
         build/data/engines/night_walk_engine.c.o(.rodata*);
         build/data/engines/showtime_engine.c.o(.rodata*);
         build/data/engines/bouncy_road_engine.c.o(.rodata*);
