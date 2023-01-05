@@ -86,7 +86,7 @@ branch_0801c84e: \n\
 /* 0801c894 */ LDR R3, =D_030046b4 \n\
 /* 0801c896 */ LDRH R3, [R3] \n\
 /* 0801c898 */ BL func_08029cac \n\
-/* 0801c89c */ BL func_0802ab34 \n\
+/* 0801c89c */ BL update_drumtech \n\
 /* 0801c8a0 */ POP {R4} \n\
 /* 0801c8a2 */ POP {R0} \n\
 /* 0801c8a4 */ BX R0 \n\

@@ -39,7 +39,7 @@ extern void func_0804d5d4(struct SpriteHandler *, s16, s16, s16); // Set X/Y Pos
 extern void func_0804d614(struct SpriteHandler *, s16, s16); // Set X Position
 extern void func_0804d648(struct SpriteHandler *, s16, s16); // Set Y Position
 extern void func_0804d67c(struct SpriteHandler *, s16, u16); // Set Layer
-extern s32  func_0804d6cc(struct SpriteHandler *, s16); // Get Running Time..?
+extern s8   func_0804d6cc(struct SpriteHandler *, s16); // Get Running Time..?
 extern u8   func_0804d708(struct SpriteHandler *, s16);
 extern void func_0804d770(struct SpriteHandler *, s16, u16); // Show/Display Sprite
 extern void func_0804d7b4(struct SpriteHandler *, s16, u32);

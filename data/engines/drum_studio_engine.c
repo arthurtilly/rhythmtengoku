@@ -40,12 +40,12 @@ const DrumPlayFunc D_089e2988[] = {
     /* 0x07 */ NULL,
     /* 0x08 */ NULL,
     /* 0x09 */ func_080286f4,
-    /* 0x0a */ func_0802871c,
-    /* 0x0b */ NULL,
-    /* 0x0c */ NULL,
-    /* 0x0d */ NULL,
-    /* 0x0e */ NULL,
-    /* 0x0f */ func_08028744,
+    /* 0x0A */ func_0802871c,
+    /* 0x0B */ NULL,
+    /* 0x0C */ NULL,
+    /* 0x0D */ NULL,
+    /* 0x0E */ NULL,
+    /* 0x0F */ func_08028744,
 };
 
 // [D_089e29c8] Drum Kits
@@ -480,8 +480,8 @@ const EngineEvent drum_studio_common_events[] = {
 extern void func_080293b0();
 extern void func_080295d4();
 extern void func_08029178();
-extern void func_0802830c();
-extern void func_080283a0();
+extern void drum_studio_event_start_monitor();
+extern void drum_studio_event_stop_monitor();
 extern void func_0802992c();
 extern void func_08029b8c();
 extern void func_08027728();
@@ -509,8 +509,8 @@ const EngineEvent drum_studio_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080293b0,
     /* 0x01 */ (EngineEvent) func_080295d4,
     /* 0x02 */ (EngineEvent) func_08029178,
-    /* 0x03 */ (EngineEvent) func_0802830c,
-    /* 0x04 */ (EngineEvent) func_080283a0,
+    /* 0x03 */ (EngineEvent) drum_studio_event_start_monitor,
+    /* 0x04 */ (EngineEvent) drum_studio_event_stop_monitor,
     /* 0x05 */ (EngineEvent) func_0802992c,
     /* 0x06 */ (EngineEvent) func_08029b8c,
     /* 0x07 */ (EngineEvent) func_08027728,

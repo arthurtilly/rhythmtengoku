@@ -126,7 +126,7 @@ thumb_func_start rhythm_test_engine_start \n\
 /* 08033dba */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 08033dbc */ LDR R0, [R1] \n\
 /* 08033dbe */ ADDS R0, 0x98 @ Add 0x98 to R0 \n\
-/* 08033dc0 */ BL func_0802a9b4 \n\
+/* 08033dc0 */ BL init_drumtech \n\
 /* 08033dc4 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08033dc6 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08033dc8 */ BL gameplay_set_input_buttons \n\

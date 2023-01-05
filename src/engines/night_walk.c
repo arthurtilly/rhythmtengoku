@@ -401,7 +401,7 @@ void func_0802a970(void) {
 }
 
 
-// Init. D_03001568 Sequence
+// Init. DrumTech Sequence
 void func_0802a994(void) {
     u32 i;
 
@@ -411,8 +411,8 @@ void func_0802a994(void) {
 }
 
 
-// Init. D_03001568
-void func_0802a9b4(struct DrumTechController *data) {
+// Init. DrumTech
+void init_drumtech(struct DrumTechController *data) {
     u32 i;
 
     D_03001568 = data;
@@ -425,17 +425,17 @@ void func_0802a9b4(struct DrumTechController *data) {
     func_0802a994();
     D_03001568->volume = INT_TO_FIXED(1.0);
     D_03001568->unk334 = NULL;
-    D_03001568->unk338 = -1;
+    D_03001568->hiHatSprite = -1;
     D_03001568->unk33A = 9999;
     D_03001568->unk33C = INT_TO_FIXED(beats_to_ticks(0x18));
     D_03001568->unk342 = 37;
-    D_03001568->unk344 = -1;
-    D_03001568->unk348 = 0;
-    D_03001568->unk34C = 0;
+    D_03001568->rightLegSprite = -1;
+    D_03001568->useKickPedalAnim = NULL;
+    D_03001568->useHiHatPedalAnim = NULL;
 }
 
 
-// Update D_03001568 Sound Timers
+// Update DrumTech Sound Timers
 void func_0802aa4c(void) {
     u32 i;
 
@@ -449,7 +449,7 @@ void func_0802aa4c(void) {
 }
 
 
-// Update D_03001568 Sequence
+// Update DrumTech Sequence
 void func_0802aa84(void) {
     struct DrumTechNote *note;
     u32 i;
@@ -467,7 +467,7 @@ void func_0802aa84(void) {
 
 
 // Import DrumTech Sequence
-void func_0802aac0(const struct DrumTechNote *sequence, s32 timingOffset, s32 unused) {
+void play_drumtech_seq(const struct DrumTechNote *sequence, s32 timingOffset, s32 unused) {
     struct DrumTechNote *seqBuffer = D_03001568->drumSequence;
     u32 i = 0;
     u32 ticks = 0;
@@ -494,7 +494,7 @@ void func_0802aac0(const struct DrumTechNote *sequence, s32 timingOffset, s32 un
 
 
 // Update DrumTech
-void func_0802ab34(void) {
+void update_drumtech(void) {
     func_0802aa4c();
     func_0802aa84();
 }
@@ -523,7 +523,7 @@ void func_0802ab5c(s32 args) {
 
 
 // Set DrumTech Bank
-void func_0802ac44(const struct DrumTechInstrument *drumBank) {
+void set_drumtech_bank(const struct DrumTechInstrument *drumBank) {
     D_03001568->drumBank = drumBank;
 }
 
@@ -540,15 +540,27 @@ void func_0802ac44(const struct DrumTechInstrument *drumBank) {
 
 #include "asm/engines/night_walk/asm_0802ade0.s"
 
-#include "asm/engines/night_walk/asm_0802af68.s"
 
-#include "asm/engines/night_walk/asm_0802af7c.s"
+// Set DrumTech Hi-Hat Graphics
+void set_drumtech_hihat_gfx(s16 hiHatSprite) {
+    D_03001568->hiHatSprite = hiHatSprite;
+}
+
+
+// Set DrumTech Pedal Hi-Hat Graphics
+void set_drumtech_pedal_hihat_gfx(s16 pedalHiHatSprite, s16 rightLegSprite, const struct Animation *useKick, const struct Animation *useHiHat) {
+    D_03001568->pedalHiHatSprite = pedalHiHatSprite;
+    D_03001568->rightLegSprite = rightLegSprite;
+    D_03001568->useKickPedalAnim = useKick;
+    D_03001568->useHiHatPedalAnim = useHiHat;
+}
+
 
 #include "asm/engines/night_walk/asm_0802afb0.s"
 
 
 // Set DrumTech Volume
-void func_0802b03c(u32 volume) {
+void set_drumtech_volume(u32 volume) {
     D_03001568->volume = volume;
 }
 
@@ -557,7 +569,7 @@ void func_0802b03c(u32 volume) {
 
 
 // Stop DrumTech
-void func_0802b064(void) {
+void stop_drumtech(void) {
     u32 i;
 
     func_0802a994();
@@ -607,7 +619,7 @@ void night_walk_engine_start(u32 ver) {
     scene_set_bg_layer_display(BG_LAYER_1, FALSE, 0, 0, 0, 29, 0);
     gameplay_enable_inputs(FALSE);
     gameplay_set_input_buttons(A_BUTTON, 0);
-    func_0802a9b4(&gNightWalkInfo->drumTech);
+    init_drumtech(&gNightWalkInfo->drumTech);
     gNightWalkInfo->drumVolume = INT_TO_FIXED(1.0);
     night_walk_init_play_yan();
     func_0802a970();
@@ -662,13 +674,13 @@ void night_walk_set_swing(u32 inSwing) {
 // Engine Event 0x08 (Set Drum Volume)
 void night_walk_set_drum_volume(u32 volume) {
     gNightWalkInfo->drumVolume = volume;
-    func_0802b03c(volume);
+    set_drumtech_volume(volume);
 }
 
 
 // Game Engine Update
 void night_walk_engine_update(void) {
-    func_0802ab34();
+    update_drumtech();
     night_walk_update_play_yan();
     night_walk_update_stars();
 }
@@ -767,9 +779,9 @@ u32 night_walk_cue_update(struct Cue *cue, struct NightWalkCue *info, u32 runnin
             func_0804d8f8(D_03005380, info->boxSprite, anim_night_walk_note_bridge, 1, 1, 4, 0);
 
             if (gNightWalkInfo->inSwing) {
-                func_0802aac0(night_walk_drum_seq_offbeat_swing[info->type], 0, 0);
+                play_drumtech_seq(night_walk_drum_seq_offbeat_swing[info->type], 0, 0);
             } else {
-                func_0802aac0(night_walk_drum_seq_offbeat[info->type], 0, 0);
+                play_drumtech_seq(night_walk_drum_seq_offbeat[info->type], 0, 0);
             }
         }
     }
@@ -855,42 +867,42 @@ void night_walk_cue_hit(struct Cue *cue, struct NightWalkCue *info, u32 pressed,
     if (D_03004afc & A_BUTTON) {
         if (gNightWalkInfo->inSwing) {
             if (info->type == NIGHT_WALK_CUE_HEART) {
-                func_0802aac0(night_walk_drum_seq_kick_swing[agb_random(1)], timingOffset, 0);
+                play_drumtech_seq(night_walk_drum_seq_kick_swing[agb_random(1)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_LOLLIPOP) {
-                func_0802aac0(night_walk_drum_seq_snare_swing[agb_random(1)], timingOffset, 0);
+                play_drumtech_seq(night_walk_drum_seq_snare_swing[agb_random(1)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_UMBRELLA) {
-                func_0802aac0(night_walk_drum_seq_cymbal[agb_random(1)], timingOffset, 0);
+                play_drumtech_seq(night_walk_drum_seq_cymbal[agb_random(1)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_HEART_2) {
-                func_0802aac0(night_walk_drum_seq_roll[agb_random(4)], timingOffset, 0);
+                play_drumtech_seq(night_walk_drum_seq_roll[agb_random(4)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_STAR_WAND) {
                 if (info->starWandIsAvailable) {
-                    func_0802aac0(night_walk_drum_seq_cymbal[agb_random(1)], timingOffset, 0);
+                    play_drumtech_seq(night_walk_drum_seq_cymbal[agb_random(1)], timingOffset, 0);
                 } else {
-                    func_0802aac0(drum_seq_night_walk_default, timingOffset, 0);
+                    play_drumtech_seq(drum_seq_night_walk_default, timingOffset, 0);
                 }
             }
         } else {
             if (info->type == NIGHT_WALK_CUE_HEART) {
-                func_0802aac0(night_walk_drum_seq_kick[agb_random(1)], timingOffset, 0);
+                play_drumtech_seq(night_walk_drum_seq_kick[agb_random(1)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_LOLLIPOP) {
-                func_0802aac0(night_walk_drum_seq_snare[agb_random(1)], timingOffset, 0);
+                play_drumtech_seq(night_walk_drum_seq_snare[agb_random(1)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_UMBRELLA) {
-                func_0802aac0(night_walk_drum_seq_cymbal[agb_random(1)], timingOffset, 0);
+                play_drumtech_seq(night_walk_drum_seq_cymbal[agb_random(1)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_HEART_2) {
-                func_0802aac0(night_walk_drum_seq_roll[agb_random(4)], timingOffset, 0);
+                play_drumtech_seq(night_walk_drum_seq_roll[agb_random(4)], timingOffset, 0);
             }
             if (info->type == NIGHT_WALK_CUE_STAR_WAND) {
                 if (info->starWandIsAvailable) {
-                    func_0802aac0(night_walk_drum_seq_cymbal[agb_random(1)], timingOffset, 0);
+                    play_drumtech_seq(night_walk_drum_seq_cymbal[agb_random(1)], timingOffset, 0);
                 } else {
-                    func_0802aac0(drum_seq_night_walk_default, timingOffset, 0);
+                    play_drumtech_seq(drum_seq_night_walk_default, timingOffset, 0);
                 }
             }
         }
@@ -898,7 +910,7 @@ void night_walk_cue_hit(struct Cue *cue, struct NightWalkCue *info, u32 pressed,
             starWandObtained = TRUE;
         }
     } else {
-        func_0802aac0(drum_seq_night_walk_default, timingOffset, 0);
+        play_drumtech_seq(drum_seq_night_walk_default, timingOffset, 0);
     }
 
     info->hasOpened = TRUE;
@@ -935,19 +947,19 @@ void night_walk_cue_barely(struct Cue *cue, struct NightWalkCue *info, u32 press
     timingOffset = -(gameplay_get_last_hit_offset());
 
     if (info->type == NIGHT_WALK_CUE_HEART) {
-        func_0802aac0(drum_seq_night_walk_kick_barely, timingOffset, 0);
+        play_drumtech_seq(drum_seq_night_walk_kick_barely, timingOffset, 0);
     }
     if (info->type == NIGHT_WALK_CUE_LOLLIPOP) {
-        func_0802aac0(drum_seq_night_walk_snare_barely, timingOffset, 0);
+        play_drumtech_seq(drum_seq_night_walk_snare_barely, timingOffset, 0);
     }
     if (info->type == NIGHT_WALK_CUE_UMBRELLA) {
-        func_0802aac0(drum_seq_night_walk_snare_barely, timingOffset, 0);
+        play_drumtech_seq(drum_seq_night_walk_snare_barely, timingOffset, 0);
     }
     if (info->type == NIGHT_WALK_CUE_HEART_2) {
-        func_0802aac0(drum_seq_night_walk_snare_barely, timingOffset, 0);
+        play_drumtech_seq(drum_seq_night_walk_snare_barely, timingOffset, 0);
     }
     if (info->type == NIGHT_WALK_CUE_STAR_WAND) {
-        func_0802aac0(drum_seq_night_walk_snare_barely, timingOffset, 0);
+        play_drumtech_seq(drum_seq_night_walk_snare_barely, timingOffset, 0);
     }
 
     night_walk_play_yan_jump(info->endOfBridge, gameplay_get_last_hit_offset());
@@ -989,7 +1001,7 @@ void night_walk_input_event(u32 pressed, u32 released) {
 
     if (!gNightWalkInfo->stoppedScrolling && (playYan->state == PLAY_YAN_STATE_WALKING)) {
         func_0804d8f8(D_03005380, playYan->sprite, anim_play_yan_short_hop, 0, 1, 5, 0);
-        func_0802aac0(drum_seq_night_walk_short_hop, 0, 0);
+        play_drumtech_seq(drum_seq_night_walk_short_hop, 0, 0);
     }
 }
 

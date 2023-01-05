@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+extern struct DrumTechController *D_03001568;
+
 // Engine Types:
 struct DrumTechInstrument {
     s8 soundPlayerID;
@@ -34,14 +36,14 @@ struct DrumTechController {
     struct DrumTechNote drumSequence[100];
     u16 volume;
     void (*unk334)(s32);
-    u16 unk338;
+    s16 hiHatSprite;
     u16 unk33A;
     u32 unk33C;
-    u16 unk340;
+    s16 pedalHiHatSprite;
     u16 unk342;
-    u16 unk344;
-    u32 unk348;
-    u32 unk34C;
+    s16 rightLegSprite;
+    const struct Animation *useKickPedalAnim;
+    const struct Animation *useHiHatPedalAnim;
 };
 
 struct NightWalkInfo {
@@ -206,27 +208,27 @@ extern void night_walk_update_stars(void); // Update Stars (if [...])
 extern void func_0802a970(void); // Init. unk3B8
 
 extern void func_0802a994(void); // Init. DrumTech Sequence
-extern void func_0802a9b4(struct DrumTechController *data); // Init. DrumTech
+extern void init_drumtech(struct DrumTechController *data); // Init. DrumTech
 extern void func_0802aa4c(void); // Update DrumTech Sound Timers
 extern void func_0802aa84(void); // Update DrumTech Sequence
-extern void func_0802aac0(const struct DrumTechNote *noteSeq, s32 timingOffset, s32 unused); // Import DrumTech Sequence
-extern void func_0802ab34(void); // Update DrumTech
+extern void play_drumtech_seq(const struct DrumTechNote *noteSeq, s32 timingOffset, s32 unused); // Import DrumTech Sequence
+extern void update_drumtech(void); // Update DrumTech
 extern void func_0802ab44(s32 args, u32 *drumID, u32 *volume, s32 *pitch); // Parse Arguments for Engine Event 0x00 (Cowbell)
 extern void func_0802ab5c(s32 args); // Engine Event 0x00 (Cowbell)
 // extern ? func_0802ab7c(?); // (https://decomp.me/scratch/0YYov)
-extern void func_0802ac44(const struct DrumTechInstrument *drumBank); // Set DrumTech Bank
+extern void set_drumtech_bank(const struct DrumTechInstrument *drumBank); // Set DrumTech Bank
 // extern ? func_0802ac50(?);
 // extern ? func_0802ac8c(?);
 // extern ? func_0802ad20(?);
 // extern ? func_0802ad2c(?);
 // extern ? func_0802ad38(?);
 // extern ? func_0802ade0(?);
-// extern ? func_0802af68(?);
-// extern ? func_0802af7c(?);
+extern void set_drumtech_hihat_gfx(s16 hiHatSprite); // Set DrumTech Hi-Hat Graphics
+extern void set_drumtech_pedal_hihat_gfx(s16 pedalHiHatSprite, s16 rightLegSprite, const struct Animation *useKick, const struct Animation *useHiHat); // Set DrumTech Pedal Hi-Hat Graphics
 // extern ? func_0802afb0(?);
-extern void func_0802b03c(u32 volume); // Set DrumTech Volume
+extern void set_drumtech_volume(u32 volume); // Set DrumTech Volume
 // extern ? func_0802b050(?); // Set ?
-extern void func_0802b064(void); // Stop DrumTech
+extern void stop_drumtech(void); // Stop DrumTech
 
 extern void night_walk_init_gfx3(void); // Graphics Init. 3
 extern void night_walk_init_gfx2(void); // Graphics Init. 2

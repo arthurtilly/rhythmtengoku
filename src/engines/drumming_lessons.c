@@ -304,7 +304,19 @@ static s32 D_03001564; // unknown type
 
 #include "asm/engines/drumming_lessons/asm_08026dec.s"
 
-#include "asm/engines/drumming_lessons/asm_08026e10.s"
+
+
+
+
+// Init. Drum Samurai Sprite
+void drum_lessons_init_teacher_sprite(s16 sprite) {
+    struct StudioDrummer *teacher = &gDrumLessonsInfo->teacher;
+
+    func_0804d5d4(D_03005380, sprite, 152, 136);
+    func_0804db44(D_03005380, sprite, &teacher->xController, &teacher->yController);
+    func_0804d890(D_03005380, sprite, 640);
+    gDrumLessonsInfo->unk3C0 = 0;
+}
 
 
 // Init. Drum Samurai
@@ -329,31 +341,31 @@ void drum_lessons_init_teacher(void) {
     teacher->seat = func_0804d160(D_03005380, anim_drum_teacher_kit_seat, 0, 64, 64, 0x47f0, 1, 0x7f, 0);
     teacher->coffeeSteam = -1;
 
-    func_08026e10(teacher->snareDrum);
-    func_08026e10(teacher->bassDrum);
-    func_08026e10(teacher->tomDrum);
-    func_08026e10(teacher->hiHat);
-    func_08026e10(teacher->rightPedal);
-    func_08026e10(teacher->leftPedal);
-    func_08026e10(teacher->splashCymbal);
-    func_08026e10(teacher->crashCymbal);
-    func_08026e10(teacher->head);
-    func_08026e10(teacher->body);
-    func_08026e10(teacher->rightLeg);
-    func_08026e10(teacher->leftLeg);
-    func_08026e10(teacher->leftArm);
-    func_08026e10(teacher->rightArm);
-    func_08026e10(teacher->seat);
+    drum_lessons_init_teacher_sprite(teacher->snareDrum);
+    drum_lessons_init_teacher_sprite(teacher->bassDrum);
+    drum_lessons_init_teacher_sprite(teacher->tomDrum);
+    drum_lessons_init_teacher_sprite(teacher->hiHat);
+    drum_lessons_init_teacher_sprite(teacher->rightPedal);
+    drum_lessons_init_teacher_sprite(teacher->leftPedal);
+    drum_lessons_init_teacher_sprite(teacher->splashCymbal);
+    drum_lessons_init_teacher_sprite(teacher->crashCymbal);
+    drum_lessons_init_teacher_sprite(teacher->head);
+    drum_lessons_init_teacher_sprite(teacher->body);
+    drum_lessons_init_teacher_sprite(teacher->rightLeg);
+    drum_lessons_init_teacher_sprite(teacher->leftLeg);
+    drum_lessons_init_teacher_sprite(teacher->leftArm);
+    drum_lessons_init_teacher_sprite(teacher->rightArm);
+    drum_lessons_init_teacher_sprite(teacher->seat);
 
     teacher->xController = 0;
     teacher->yController = 0;
-    teacher->unk22 = 152;
-    teacher->unk24 = 136;
-    teacher->unk26 = 152;
-    teacher->unk28 = 136;
-    teacher->unk2A = 152;
-    teacher->unk2C = 136;
-    gDrumLessonsInfo->unk3C1 = 1;
+    teacher->headPosX = 152;
+    teacher->headPosY = 136;
+    teacher->leftArmPosX = 152;
+    teacher->leftArmPosY = 136;
+    teacher->rightArmPosX = 152;
+    teacher->rightArmPosY = 136;
+    gDrumLessonsInfo->unk3C1 = TRUE;
 }
 
 
@@ -483,17 +495,69 @@ void drum_lessons_init_lesson(void) {
 
 #include "asm/engines/drumming_lessons/asm_080281fc.s"
 
-#include "asm/engines/drumming_lessons/asm_08028210.s"
 
-#include "asm/engines/drumming_lessons/asm_08028254.s"
+// Change BG Monitor Palette
+void drum_studio_start_monitor2(const Palette *palette) {
+    func_0800c604(0);
+    scene_show_bg_layer(BG_LAYER_2);
+    scene_show_bg_layer(BG_LAYER_3);
+    func_08002018(get_current_mem_id(), 0x40, 4, drum_lessons_bg_screen_pal[0][0], palette, BG_PALETTE_BUFFER(0));
+}
 
-#include "asm/engines/drumming_lessons/asm_0802830c.s"
 
-#include "asm/engines/drumming_lessons/asm_08028318.s"
+// Start BG Monitor Display
+void drum_studio_start_monitor1(void) {
+    s32 task;
+    u32 id;
 
-#include "asm/engines/drumming_lessons/asm_08028330.s"
+    id = *gDrumLessonsInfo->unk3C8;
+    gDrumLessonsInfo->unk3F0 = id;
+    gDrumLessonsInfo->bg2PosX = gDrumLessonsInfo->bg2PosY = 0;
+    gDrumLessonsInfo->bg3PosX = gDrumLessonsInfo->bg3PosY = 0;
+    gDrumLessonsInfo->bg2VelX = D_089e17a0[id].bg2VelX;
+    gDrumLessonsInfo->bg2VelY = D_089e17a0[id].bg2VelY;
+    gDrumLessonsInfo->bg3VelX = D_089e17a0[id].bg3VelX;
+    gDrumLessonsInfo->bg3VelY = D_089e17a0[id].bg3VelY;
+    task = func_08002ee0(get_current_mem_id(), D_089e17a0[id].gfxTable, 0x2000);
+    task_run_after(task, drum_studio_start_monitor2, (s32)D_089e17a0[id].palette);
+}
 
-#include "asm/engines/drumming_lessons/asm_080283a0.s"
+
+// Engine Event 03 (Start BG Monitor Display)
+void drum_studio_event_start_monitor(u32 unused) {
+    drum_studio_start_monitor1();
+}
+
+
+// Stop BG Monitor Display
+void drum_studio_stop_monitor2(void) {
+    func_0800c604(0);
+    scene_hide_bg_layer(BG_LAYER_2);
+    scene_hide_bg_layer(BG_LAYER_3);
+}
+
+
+// Revert BG Monitor Palette
+void drum_studio_stop_monitor1(void) {
+    const Palette *palette;
+    s32 task;
+
+    if (gDrumLessonsInfo->unk3F0 < 0) {
+        return;
+    }
+
+    palette = D_089e17a0[gDrumLessonsInfo->unk3F0].palette;
+    task = func_08002050(get_current_mem_id(), 0x20, 4, palette, drum_lessons_bg_screen_pal[0][0], BG_PALETTE_BUFFER(0));
+    task_run_after(task, drum_studio_stop_monitor2, 0);
+    gDrumLessonsInfo->unk3F0 = -1;
+}
+
+
+// Engine Event 04 (Stop BG Monitor Display)
+void drum_studio_event_stop_monitor(void) {
+    drum_studio_stop_monitor1();
+}
+
 
 #include "asm/engines/drumming_lessons/asm_080283ac.s"
 
@@ -540,8 +604,8 @@ void drum_studio_init_kit(void) {
     func_0804d770(D_03005380, student->pedalHiHat, FALSE);
     func_0804dae0(D_03005380, student->pedalHiHat, 1, 0x7f, 0);
     func_0804d8f8(D_03005380, student->rightLeg, anim_drum_student_use_pedal_r, 0x7f, 1, 0x7f, 0);
-    func_0802af68(student->hiHat);
-    func_0802af7c(student->pedalHiHat, student->rightLeg, anim_drum_student_use_pedal_r, anim_drum_student_use_pedal_hihat);
+    set_drumtech_hihat_gfx(student->hiHat);
+    set_drumtech_pedal_hihat_gfx(student->pedalHiHat, student->rightLeg, anim_drum_student_use_pedal_r, anim_drum_student_use_pedal_hihat);
 
     playFunc = D_089e2988[gDrumLessonsInfo->studioKitID];
     if (playFunc != NULL) {
@@ -653,12 +717,12 @@ void drum_studio_engine_start(u32 version) {
     student->xController = 56;
     student->yController = -8;
     func_0804e188(D_03005380, get_current_mem_id(), &student->xController, &student->yController);
-    student->unk22 = 120;
-    student->unk24 = 100;
-    student->unk26 = 102;
-    student->unk28 = 90;
-    student->unk2A = 120;
-    student->unk2C = 100;
+    student->headPosX = 120;
+    student->headPosY = 100;
+    student->leftArmPosX = 102;
+    student->leftArmPosY = 90;
+    student->rightArmPosX = 120;
+    student->rightArmPosY = 100;
 
     gDrumLessonsInfo->songTitlePrinter = text_printer_create_new(get_current_mem_id(), 1, 144, 32);
     text_printer_set_x_y(gDrumLessonsInfo->songTitlePrinter, 96, 9);
@@ -683,7 +747,7 @@ void drum_studio_engine_start(u32 version) {
 
     gDrumLessonsInfo->memoryWarningSprite = func_0804d160(D_03005380, anim_drum_studio_memory_warning, 0, 240, 160, 0x800, 1, 0, 0x8000);
 
-    func_0802a9b4(&gDrumLessonsInfo->drumTech);
+    init_drumtech(&gDrumLessonsInfo->drumTech);
 
     gDrumLessonsInfo->unk3CC = 0;
     switch (version) {
@@ -718,13 +782,13 @@ void drum_studio_engine_start(u32 version) {
     gameplay_prevent_dpad_overlap(FALSE);
     gDrumLessonsInfo->unk1 = 1;
     gDrumLessonsInfo->unk3CD = 0;
-    gDrumLessonsInfo->unk3CE = 0;
-    gDrumLessonsInfo->unk3D0 = gDrumLessonsInfo->unk3D4 = 0;
-    gDrumLessonsInfo->unk3D8 = gDrumLessonsInfo->unk3DC = 0;
-    gDrumLessonsInfo->unk3E0 = gDrumLessonsInfo->unk3E4 = 0;
-    gDrumLessonsInfo->unk3E8 = gDrumLessonsInfo->unk3EC = 0;
+    gDrumLessonsInfo->unk3CE = FALSE;
+    gDrumLessonsInfo->bg2PosX = gDrumLessonsInfo->bg2PosY = 0;
+    gDrumLessonsInfo->bg2VelX = gDrumLessonsInfo->bg2VelY = 0;
+    gDrumLessonsInfo->bg3PosX = gDrumLessonsInfo->bg3PosY = 0;
+    gDrumLessonsInfo->bg3VelX = gDrumLessonsInfo->bg3VelY = 0;
     gDrumLessonsInfo->unk3F0 = -1;
-    gDrumLessonsInfo->unk3C1 = 0;
+    gDrumLessonsInfo->unk3C1 = FALSE;
     gDrumLessonsInfo->unk57C = 0;
 
     switch (version) {
@@ -767,11 +831,31 @@ void drum_studio_engine_event_stub(void) {
 
 #include "asm/engines/drumming_lessons/asm_080295d4.s"
 
-#include "asm/engines/drumming_lessons/asm_080296b0.s"
+
+// Align Drummer Parts to Body
+void drum_studio_align_drummer_sprites(struct StudioDrummer *drummer, const struct Vector2 *vecOfs) {
+    vecOfs += func_0804d6cc(D_03005380, drummer->body);
+    func_0804d5d4(D_03005380, drummer->head, drummer->headPosX + vecOfs->x, drummer->headPosY + vecOfs->y);
+    func_0804d5d4(D_03005380, drummer->leftArm, drummer->leftArmPosX + vecOfs->x, drummer->leftArmPosY + vecOfs->y);
+    func_0804d5d4(D_03005380, drummer->rightArm, drummer->rightArmPosX + vecOfs->x, drummer->rightArmPosY + vecOfs->y);
+}
+
 
 #include "asm/engines/drumming_lessons/asm_0802972c.s"
 
-#include "asm/engines/drumming_lessons/asm_0802979c.s"
+
+// Update BG Monitor Display
+void drum_studio_update_monitor(void) {
+    gDrumLessonsInfo->bg2PosX += gDrumLessonsInfo->bg2VelX;
+    gDrumLessonsInfo->bg2PosY += gDrumLessonsInfo->bg2VelY;
+    gDrumLessonsInfo->bg3PosX += gDrumLessonsInfo->bg3VelX;
+    gDrumLessonsInfo->bg3PosY += gDrumLessonsInfo->bg3VelY;
+    D_03004b10.BG_OFS[BG_LAYER_2].x = FIXED_TO_INT(gDrumLessonsInfo->bg2PosX);
+    D_03004b10.BG_OFS[BG_LAYER_2].y = FIXED_TO_INT(gDrumLessonsInfo->bg2PosY);
+    D_03004b10.BG_OFS[BG_LAYER_3].x = FIXED_TO_INT(gDrumLessonsInfo->bg3PosX);
+    D_03004b10.BG_OFS[BG_LAYER_3].y = FIXED_TO_INT(gDrumLessonsInfo->bg3PosY);
+}
+
 
 #include "asm/engines/drumming_lessons/asm_0802981c.s"
 
@@ -785,7 +869,45 @@ void drum_studio_engine_event_stub(void) {
 
 #include "asm/engines/drumming_lessons/asm_08029b8c.s"
 
-#include "asm/engines/drumming_lessons/asm_08029ba0.s"
+
+// Game Engine Update
+void drum_studio_engine_update(void) {
+    if (gDrumLessonsInfo->version == 4) {
+        func_08027dfc();
+        if ((gDrumLessonsInfo->unk1 == 1) && (gDrumLessonsInfo->unk3CD == 1)) {
+            if (D_03004afc & gDrumLessonsInfo->drummingButtons) {
+                set_drumtech_volume(INT_TO_FIXED(1.0));
+                if (gDrumLessonsInfo->unk41C < 30) {
+                    gDrumLessonsInfo->unk45A = 30;
+                }
+                gDrumLessonsInfo->unk41C = beats_to_ticks(0x5A);
+            }
+        }
+    }
+
+    switch (gDrumLessonsInfo->unk1) {
+        case 1:
+            func_0802981c();
+            break;
+        case 2:
+            func_08029a1c();
+            break;
+    }
+
+    update_drumtech();
+    drum_studio_align_drummer_sprites(&gDrumLessonsInfo->student, D_089e2b58);
+    if (gDrumLessonsInfo->unk3C1) {
+        drum_studio_align_drummer_sprites(&gDrumLessonsInfo->teacher, D_089e2b78);
+    }
+    func_0802972c();
+    drum_studio_update_monitor();
+    func_08029204();
+    if (gDrumLessonsInfo->unk3CE && (D_03004afc & SELECT_BUTTON)) {
+        func_080290c4();
+    }
+    gDrumLessonsInfo->unk57C++;
+}
+
 
 #include "asm/engines/drumming_lessons/asm_08029cac.s"
 

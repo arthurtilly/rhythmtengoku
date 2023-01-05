@@ -58,9 +58,9 @@ extern void *func_08001f34(struct struct_08001f94 *);
 extern void *func_08001f64(struct struct_08001f94 *);
 extern void *func_08001f94(struct struct_08001f94 *);
 extern u8 func_08001fc4(u8 *);
-extern void func_08001fe0(u16 id, u8 duration, u32 size, const u16 *initial, const u16 *final, u16 *target); // Gradual Set (may be about palettes specifically)
-// extern ? func_08002018(u16 id, u8 duration, u32 size, u32 initial, u32 final, u16 *target); // Gradual Set (for a singular initial and final)
-// extern ? func_08002050(u16 id, u8 duration, u32 size, u16 *initial, u32 final, u16 *target); // Gradual Set (for an array initial and singular final)
+extern s32 func_08001fe0(u16 id, u8 duration, u32 count, const u16 *initial, const u16 *final, u16 *target); // Gradual Set (may be about palettes specifically)
+extern s32 func_08002018(u16 id, u8 duration, u32 count, u32 initial, const void *final, void *target); // Gradual Set (for a singular initial and array final)
+extern s32 func_08002050(u16 id, u8 duration, u32 count, const void *initial, u32 final, void *target); // Gradual Set (for an array initial and singular final)
 // extern ? func_08002088(?);
 // extern ? func_080020ec(?);
 // extern ? func_08002150(?);

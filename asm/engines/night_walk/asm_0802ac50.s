@@ -13,7 +13,7 @@ thumb_func_start func_0802ac50 \n\
 /* 0802ac5e */ BEQ branch_0802ac6a \n\
 /* 0802ac60 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802ac62 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802ac64 */ BL func_0802aac0 \n\
+/* 0802ac64 */ BL play_drumtech_seq \n\
 /* 0802ac68 */ B branch_0802ac76 \n\
  \n\
 branch_0802ac6a: \n\

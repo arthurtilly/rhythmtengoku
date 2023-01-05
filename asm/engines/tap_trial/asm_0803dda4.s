@@ -278,7 +278,7 @@ branch_0803ddca: \n\
 /* 0803e002 */ STRB R3, [R1, 0x1E] \n\
 /* 0803e004 */ LDR R0, [R5] \n\
 /* 0803e006 */ ADDS R0, 0x24 @ Add 0x24 to R0 \n\
-/* 0803e008 */ BL func_0802a9b4 \n\
+/* 0803e008 */ BL init_drumtech \n\
 /* 0803e00c */ LDR R4, [R5] \n\
 /* 0803e00e */ MOVS R5, 0xDD @ Set R5 to 0xDD \n\
 /* 0803e010 */ LSLS R5, R5, 0x2 \n\

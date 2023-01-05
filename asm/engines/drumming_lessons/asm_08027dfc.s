@@ -75,7 +75,7 @@ branch_08027e8a: \n\
 /* 08027e8e */ LDR R4, [R0] \n\
 /* 08027e90 */ LSRS R4, R4, 0x8 \n\
 /* 08027e92 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08027e94 */ BL func_0802b03c \n\
+/* 08027e94 */ BL set_drumtech_volume \n\
 /* 08027e98 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08027e9a */ LSLS R0, R0, 0x1 \n\
 /* 08027e9c */ SUBS R0, R0, R4 @ Set R0 to R0 - R4 \n\

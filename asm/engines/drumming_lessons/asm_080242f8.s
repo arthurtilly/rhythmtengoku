@@ -576,7 +576,7 @@ branch_08024856: \n\
 	LDR R1, =0x0000ffff \n\
 	STRH R1, [R2] \n\
 	ADDS R0, 0x4 \n\
-	BL func_0802a9b4 \n\
+	BL init_drumtech \n\
 	BL func_08024ed0 \n\
 	MOVS R0, 0x0 \n\
 	BL gameplay_display_skip_icon \n\

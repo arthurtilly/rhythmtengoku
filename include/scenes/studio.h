@@ -88,7 +88,7 @@ extern const char *const D_089d83d0[]; // Drum Kit Names
 // extern ? func_0801c944(?); // [func_0801c944] ? (Script Function)
 // extern ? func_0801c960(?);
 // extern ? func_0801c96c(?);
-// extern ? func_0801c99c(?);
+// extern ? func_0801c99c(?); // Play Count-In Click
 // extern ? func_0801c9b8(?);
 // extern ? func_0801c9c4(?);
 // extern ? func_0801c9ec(?);

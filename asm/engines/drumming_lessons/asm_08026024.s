@@ -632,7 +632,7 @@ branch_08026454: \n\
 /* 080265dc */ ADDS R1, R0, R3 @ Set R1 to R0 + R3 \n\
 /* 080265de */ STRH R2, [R1] \n\
 /* 080265e0 */ ADDS R0, 0x4 @ Add 0x4 to R0 \n\
-/* 080265e2 */ BL func_0802a9b4 \n\
+/* 080265e2 */ BL init_drumtech \n\
 /* 080265e6 */ MOVS R0, 0xF3 @ Set R0 to 0xF3 \n\
 /* 080265e8 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080265ea */ BL gameplay_set_input_buttons \n\

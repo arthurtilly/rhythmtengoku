@@ -118,7 +118,7 @@ branch_08044632: \n\
 /* 08044632 */ LDR R4, =D_030055d0 \n\
 /* 08044634 */ LDR R0, [R4] \n\
 /* 08044636 */ ADDS R0, 0x4 @ Add 0x4 to R0 \n\
-/* 08044638 */ BL func_0802a9b4 \n\
+/* 08044638 */ BL init_drumtech \n\
 /* 0804463c */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
 /* 0804463e */ MOVS R2, 0xD6 @ Set R2 to 0xD6 \n\
 /* 08044640 */ LSLS R2, R2, 0x2 \n\

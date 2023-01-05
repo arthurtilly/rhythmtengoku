@@ -18,7 +18,7 @@ thumb_func_start func_0801c2ec \n\
 /* 0801c30c */ LDR R4, =D_030046a4 \n\
 /* 0801c30e */ LDR R0, [R4] \n\
 /* 0801c310 */ ADDS R0, 0x8 @ Add 0x8 to R0 \n\
-/* 0801c312 */ BL func_0802a9b4 \n\
+/* 0801c312 */ BL init_drumtech \n\
 /* 0801c316 */ LDR R0, =D_03001545 \n\
 /* 0801c318 */ LDRB R1, [R0] \n\
 /* 0801c31a */ LDR R0, =D_03001546 \n\

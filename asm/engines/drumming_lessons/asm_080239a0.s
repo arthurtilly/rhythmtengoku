@@ -10,7 +10,7 @@ thumb_func_start func_080239a0 \n\
 /* 080239a8 */ LDR R0, [R0] \n\
 /* 080239aa */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080239ac */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080239ae */ BL func_0802aac0 \n\
+/* 080239ae */ BL play_drumtech_seq \n\
 /* 080239b2 */ POP {R0} \n\
 /* 080239b4 */ BX R0 \n\
 \n\

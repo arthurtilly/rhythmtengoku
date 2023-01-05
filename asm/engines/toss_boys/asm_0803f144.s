@@ -7,7 +7,7 @@ thumb_func_start func_0803f144 \n\
 /* 0803f146 */ BL func_0803eea0 \n\
 /* 0803f14a */ BL func_0803ee18 \n\
 /* 0803f14e */ BL func_0803ef64 \n\
-/* 0803f152 */ BL func_0802ab34 \n\
+/* 0803f152 */ BL update_drumtech \n\
 /* 0803f156 */ BL func_0803f038 \n\
 /* 0803f15a */ LDR R0, =D_030055d0 \n\
 /* 0803f15c */ LDR R1, [R0] \n\

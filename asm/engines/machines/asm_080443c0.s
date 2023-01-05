@@ -35,7 +35,7 @@ thumb_func_start func_080443c0 \n\
 /* 080443fc */ LDRSH R1, [R1, R2] \n\
 /* 080443fe */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08044400 */ BL func_0804cebc \n\
-/* 08044404 */ BL func_0802b064 \n\
+/* 08044404 */ BL stop_drumtech \n\
 /* 08044408 */ LDR R0, [R7] \n\
 /* 0804440a */ LDR R1, =0x362 \n\
 /* 0804440c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

@@ -46,7 +46,7 @@ branch_08022ea4: \n\
 /* 08022eb0 */ LDR R4, =D_030055d0 \n\
 /* 08022eb2 */ LDR R0, [R4] \n\
 /* 08022eb4 */ ADDS R0, 0xBC @ Add 0xBC to R0 \n\
-/* 08022eb6 */ BL func_0802a9b4 \n\
+/* 08022eb6 */ BL init_drumtech \n\
 /* 08022eba */ BL func_0802327c \n\
 /* 08022ebe */ LDR R1, [R4] \n\
 /* 08022ec0 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\

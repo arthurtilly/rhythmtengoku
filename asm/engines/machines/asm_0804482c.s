@@ -112,14 +112,14 @@ branch_080448dc: \n\
 /* 080448f0 */ BL func_08044320 \n\
  \n\
 branch_080448f4: \n\
-/* 080448f4 */ BL func_0802ab34 \n\
+/* 080448f4 */ BL update_drumtech \n\
 /* 080448f8 */ LDR R0, =D_03004afc \n\
 /* 080448fa */ LDRH R1, [R0] \n\
 /* 080448fc */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
 /* 080448fe */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 08044900 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08044902 */ BEQ branch_08044932 \n\
-/* 08044904 */ BL func_0802b064 \n\
+/* 08044904 */ BL stop_drumtech \n\
 /* 08044908 */ BL beatscript_disable_loops \n\
 /* 0804490c */ LDR R2, =D_030055d0 \n\
 /* 0804490e */ LDR R0, [R2] \n\

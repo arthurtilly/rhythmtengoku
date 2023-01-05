@@ -54,7 +54,7 @@ branch_08024ce0: \n\
 /* 08024d12 */ STRH R0, [R1, 0x16] \n\
  \n\
 branch_08024d14: \n\
-/* 08024d14 */ BL func_0802ab34 \n\
+/* 08024d14 */ BL update_drumtech \n\
 /* 08024d18 */ BL func_08024c2c \n\
 /* 08024d1c */ POP {R4} \n\
 /* 08024d1e */ POP {R0} \n\

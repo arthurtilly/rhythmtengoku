@@ -29,7 +29,7 @@ branch_0804403a: \n\
 /* 08044040 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
 /* 08044042 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08044044 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08044046 */ BL func_0802aac0 \n\
+/* 08044046 */ BL play_drumtech_seq \n\
 /* 0804404a */ LDR R0, =D_089e97e0 \n\
 /* 0804404c */ ADDS R0, R4, R0 @ Set R0 to R4 + R0 \n\
 /* 0804404e */ LDR R1, [R0] \n\

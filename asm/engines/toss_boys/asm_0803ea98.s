@@ -271,9 +271,9 @@ branch_0803eb86: \n\
 /* 0803ecce */ ADDS R1, R0, R3 @ Set R1 to R0 + R3 \n\
 /* 0803ecd0 */ STRH R2, [R1] \n\
 /* 0803ecd2 */ ADDS R0, 0x4 @ Add 0x4 to R0 \n\
-/* 0803ecd4 */ BL func_0802a9b4 \n\
+/* 0803ecd4 */ BL init_drumtech \n\
 /* 0803ecd8 */ LDR R0, =D_089e8390 \n\
-/* 0803ecda */ BL func_0802ac44 \n\
+/* 0803ecda */ BL set_drumtech_bank \n\
 /* 0803ecde */ LDR R1, [R6] \n\
 /* 0803ece0 */ MOVS R0, 0xE4 @ Set R0 to 0xE4 \n\
 /* 0803ece2 */ LSLS R0, R0, 0x2 \n\

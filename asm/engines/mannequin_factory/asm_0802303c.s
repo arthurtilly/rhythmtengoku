@@ -8,7 +8,7 @@ thumb_func_start mannequin_engine_update \n\
 /* 08023042 */ BL func_08022ca0 \n\
 /* 08023046 */ BL func_080226a0 \n\
 /* 0802304a */ BL func_080223ac \n\
-/* 0802304e */ BL func_0802ab34 \n\
+/* 0802304e */ BL update_drumtech \n\
 /* 08023052 */ LDR R5, =D_030055d0 \n\
 /* 08023054 */ LDR R0, [R5] \n\
 /* 08023056 */ LDR R4, =0x414 \n\
