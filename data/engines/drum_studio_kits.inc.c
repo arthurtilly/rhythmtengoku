@@ -1,12 +1,3 @@
-extern void func_080283ac();
-extern void func_080283f8();
-extern void func_08028444();
-extern void func_080284a4();
-extern void func_08028504();
-extern void func_08028564();
-extern void func_080285d4();
-extern void func_08028634();
-extern void func_08028694();
 
 
   //  //  //  DRUM KIT 01  //  //  //

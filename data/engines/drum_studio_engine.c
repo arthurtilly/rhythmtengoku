@@ -13,6 +13,7 @@ extern const struct CompressedGraphics D_08c4f5ac;
 extern const struct CompressedGraphics D_08c50f54;
 extern const struct CompressedGraphics D_08c510d4;
 extern const struct CompressedGraphics D_08c50e04;
+
 extern const Palette drum_lessons_bg_screen_pal[];
 extern const Palette drum_lessons_obj_pal[];
 extern const Palette drum_lessons_bg_pal[];
@@ -48,7 +49,7 @@ const DrumPlayFunc D_089e2988[] = {
 };
 
 // [D_089e29c8] Drum Kits
-const struct DrumKit *const D_089e29c8[] = {
+const struct DrumKit *const drum_studio_kits[] = {
     /* 0x00 */ &D_089e201c,
     /* 0x01 */ &D_089e1cac,
     /* 0x02 */ &D_089e1d88,
@@ -71,12 +72,12 @@ const struct DrumKit *const D_089e29c8[] = {
 
 
 // [D_089e2a04] Buffered Textures List
-const struct CompressedGraphics *const D_089e2a04[] = {
+const struct CompressedGraphics *const drum_studio_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e2a08] Graphics Table (Studio Drumming)
-const struct GraphicsTable D_089e2a08[] = {
+const struct GraphicsTable drum_studio_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c4fc44,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -106,7 +107,7 @@ const struct GraphicsTable D_089e2a08[] = {
 };
 
 // [D_089e2a50] Graphics Table (Drum Lessons)
-const struct GraphicsTable D_089e2a50[] = {
+const struct GraphicsTable drum_lessons_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c4fc44,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -235,7 +236,7 @@ const u16 D_089e2ba8[] = {
 };
 
 // [D_089e2bbc] Cue 00 (Bass Drum - Left Pedal)
-const struct CueDefinition D_089e2bbc = {
+const struct CueDefinition drum_studio_cue_kick_l = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -244,13 +245,13 @@ const struct CueDefinition D_089e2bbc = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ 0x4,
-    /* Func. Spawn     */ func_08029d40,
+    /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 0,
-    /* Func. Update    */ func_08029d84,
-    /* Func. Despawn   */ func_08029e0c,
-    /* Func. Hit       */ func_08029e74,
-    /* Func. Barely    */ func_08029e90,
-    /* Func. Miss      */ func_08029eac,
+    /* Func. Update    */ drum_studio_cue_update,
+    /* Func. Despawn   */ drum_studio_cue_despawn,
+    /* Func. Hit       */ drum_studio_cue_hit,
+    /* Func. Barely    */ drum_studio_cue_barely,
+    /* Func. Miss      */ drum_studio_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -259,7 +260,7 @@ const struct CueDefinition D_089e2bbc = {
 };
 
 // [D_089e2bfc] Cue 01 (Bass Drum - Right Pedal)
-const struct CueDefinition D_089e2bfc = {
+const struct CueDefinition drum_studio_cue_kick_r = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -268,13 +269,13 @@ const struct CueDefinition D_089e2bfc = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ 0x4,
-    /* Func. Spawn     */ func_08029d40,
+    /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 1,
-    /* Func. Update    */ func_08029d84,
-    /* Func. Despawn   */ func_08029e0c,
-    /* Func. Hit       */ func_08029e74,
-    /* Func. Barely    */ func_08029e90,
-    /* Func. Miss      */ func_08029eac,
+    /* Func. Update    */ drum_studio_cue_update,
+    /* Func. Despawn   */ drum_studio_cue_despawn,
+    /* Func. Hit       */ drum_studio_cue_hit,
+    /* Func. Barely    */ drum_studio_cue_barely,
+    /* Func. Miss      */ drum_studio_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -283,7 +284,7 @@ const struct CueDefinition D_089e2bfc = {
 };
 
 // [D_089e2c3c] Cue 02 (Snare Drum - Left Hand)
-const struct CueDefinition D_089e2c3c = {
+const struct CueDefinition drum_studio_cue_snare_l = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_LEFT),
     /* Total Duration  */ 0x18,
@@ -292,13 +293,13 @@ const struct CueDefinition D_089e2c3c = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ 0x4,
-    /* Func. Spawn     */ func_08029d40,
+    /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 2,
-    /* Func. Update    */ func_08029d84,
-    /* Func. Despawn   */ func_08029e0c,
-    /* Func. Hit       */ func_08029e74,
-    /* Func. Barely    */ func_08029e90,
-    /* Func. Miss      */ func_08029eac,
+    /* Func. Update    */ drum_studio_cue_update,
+    /* Func. Despawn   */ drum_studio_cue_despawn,
+    /* Func. Hit       */ drum_studio_cue_hit,
+    /* Func. Barely    */ drum_studio_cue_barely,
+    /* Func. Miss      */ drum_studio_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -307,7 +308,7 @@ const struct CueDefinition D_089e2c3c = {
 };
 
 // [D_089e2c7c] Cue 03 (Snare Drum - Right Hand)
-const struct CueDefinition D_089e2c7c = {
+const struct CueDefinition drum_studio_cue_snare_r = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_LEFT),
     /* Total Duration  */ 0x18,
@@ -316,13 +317,13 @@ const struct CueDefinition D_089e2c7c = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ 0x4,
-    /* Func. Spawn     */ func_08029d40,
+    /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 3,
-    /* Func. Update    */ func_08029d84,
-    /* Func. Despawn   */ func_08029e0c,
-    /* Func. Hit       */ func_08029e74,
-    /* Func. Barely    */ func_08029e90,
-    /* Func. Miss      */ func_08029eac,
+    /* Func. Update    */ drum_studio_cue_update,
+    /* Func. Despawn   */ drum_studio_cue_despawn,
+    /* Func. Hit       */ drum_studio_cue_hit,
+    /* Func. Barely    */ drum_studio_cue_barely,
+    /* Func. Miss      */ drum_studio_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -331,7 +332,7 @@ const struct CueDefinition D_089e2c7c = {
 };
 
 // [D_089e2cbc] Cue 04 (Hi-Hat / Roll)
-const struct CueDefinition D_089e2cbc = {
+const struct CueDefinition drum_studio_cue_04 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_UP),
     /* Total Duration  */ 0x18,
@@ -340,13 +341,13 @@ const struct CueDefinition D_089e2cbc = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ 0x4,
-    /* Func. Spawn     */ func_08029d40,
+    /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 4,
-    /* Func. Update    */ func_08029d84,
-    /* Func. Despawn   */ func_08029e0c,
-    /* Func. Hit       */ func_08029e74,
-    /* Func. Barely    */ func_08029e90,
-    /* Func. Miss      */ func_08029eac,
+    /* Func. Update    */ drum_studio_cue_update,
+    /* Func. Despawn   */ drum_studio_cue_despawn,
+    /* Func. Hit       */ drum_studio_cue_hit,
+    /* Func. Barely    */ drum_studio_cue_barely,
+    /* Func. Miss      */ drum_studio_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -355,7 +356,7 @@ const struct CueDefinition D_089e2cbc = {
 };
 
 // [D_089e2cfc] Cue 05 (Tom Drum)
-const struct CueDefinition D_089e2cfc = {
+const struct CueDefinition drum_studio_cue_tom = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT),
     /* Total Duration  */ 0x18,
@@ -364,13 +365,13 @@ const struct CueDefinition D_089e2cfc = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ 0x4,
-    /* Func. Spawn     */ func_08029d40,
+    /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 5,
-    /* Func. Update    */ func_08029d84,
-    /* Func. Despawn   */ func_08029e0c,
-    /* Func. Hit       */ func_08029e74,
-    /* Func. Barely    */ func_08029e90,
-    /* Func. Miss      */ func_08029eac,
+    /* Func. Update    */ drum_studio_cue_update,
+    /* Func. Despawn   */ drum_studio_cue_despawn,
+    /* Func. Hit       */ drum_studio_cue_hit,
+    /* Func. Barely    */ drum_studio_cue_barely,
+    /* Func. Miss      */ drum_studio_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -379,7 +380,7 @@ const struct CueDefinition D_089e2cfc = {
 };
 
 // [D_089e2d3c] Cue 06 (Splash Cymbal)
-const struct CueDefinition D_089e2d3c = {
+const struct CueDefinition drum_studio_cue_splash = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(RIGHT_SHOULDER_BUTTON | LEFT_SHOULDER_BUTTON),
     /* Total Duration  */ 0x18,
@@ -388,13 +389,13 @@ const struct CueDefinition D_089e2d3c = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ 0x4,
-    /* Func. Spawn     */ func_08029d40,
+    /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 6,
-    /* Func. Update    */ func_08029d84,
-    /* Func. Despawn   */ func_08029e0c,
-    /* Func. Hit       */ func_08029e74,
-    /* Func. Barely    */ func_08029e90,
-    /* Func. Miss      */ func_08029eac,
+    /* Func. Update    */ drum_studio_cue_update,
+    /* Func. Despawn   */ drum_studio_cue_despawn,
+    /* Func. Hit       */ drum_studio_cue_hit,
+    /* Func. Barely    */ drum_studio_cue_barely,
+    /* Func. Miss      */ drum_studio_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -403,7 +404,7 @@ const struct CueDefinition D_089e2d3c = {
 };
 
 // [D_089e2d7c] Cue 07 (Crash Cymbal)
-const struct CueDefinition D_089e2d7c = {
+const struct CueDefinition drum_studio_cue_crash = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(RIGHT_SHOULDER_BUTTON | LEFT_SHOULDER_BUTTON),
     /* Total Duration  */ 0x18,
@@ -412,13 +413,13 @@ const struct CueDefinition D_089e2d7c = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ 0x4,
-    /* Func. Spawn     */ func_08029d40,
+    /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 7,
-    /* Func. Update    */ func_08029d84,
-    /* Func. Despawn   */ func_08029e0c,
-    /* Func. Hit       */ func_08029e74,
-    /* Func. Barely    */ func_08029e90,
-    /* Func. Miss      */ func_08029eac,
+    /* Func. Update    */ drum_studio_cue_update,
+    /* Func. Despawn   */ drum_studio_cue_despawn,
+    /* Func. Hit       */ drum_studio_cue_hit,
+    /* Func. Barely    */ drum_studio_cue_barely,
+    /* Func. Miss      */ drum_studio_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -427,7 +428,7 @@ const struct CueDefinition D_089e2d7c = {
 };
 
 // [D_089e2dbc] Cue 08 (Hi-Hat / Roll)
-const struct CueDefinition D_089e2dbc = {
+const struct CueDefinition drum_studio_cue_08 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_UP),
     /* Total Duration  */ 0x18,
@@ -436,13 +437,13 @@ const struct CueDefinition D_089e2dbc = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ 0x4,
-    /* Func. Spawn     */ func_08029d40,
+    /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 8,
-    /* Func. Update    */ func_08029d84,
-    /* Func. Despawn   */ func_08029e0c,
-    /* Func. Hit       */ func_08029e74,
-    /* Func. Barely    */ func_08029e90,
-    /* Func. Miss      */ func_08029eac,
+    /* Func. Update    */ drum_studio_cue_update,
+    /* Func. Despawn   */ drum_studio_cue_despawn,
+    /* Func. Hit       */ drum_studio_cue_hit,
+    /* Func. Barely    */ drum_studio_cue_barely,
+    /* Func. Miss      */ drum_studio_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -451,16 +452,16 @@ const struct CueDefinition D_089e2dbc = {
 };
 
 // [D_089e2dfc] Cue Definition Index
-const struct CueDefinition *const D_089e2dfc[] = {
-    /* 0x00 */ &D_089e2bbc,
-    /* 0x01 */ &D_089e2bfc,
-    /* 0x02 */ &D_089e2c3c,
-    /* 0x03 */ &D_089e2c7c,
-    /* 0x04 */ &D_089e2cbc,
-    /* 0x05 */ &D_089e2cfc,
-    /* 0x06 */ &D_089e2d3c,
-    /* 0x07 */ &D_089e2d7c,
-    /* 0x08 */ &D_089e2dbc,
+const struct CueDefinition *const drum_studio_cue_index[] = {
+    /* 0x00 */ &drum_studio_cue_kick_l,
+    /* 0x01 */ &drum_studio_cue_kick_r,
+    /* 0x02 */ &drum_studio_cue_snare_l,
+    /* 0x03 */ &drum_studio_cue_snare_r,
+    /* 0x04 */ &drum_studio_cue_04,
+    /* 0x05 */ &drum_studio_cue_tom,
+    /* 0x06 */ &drum_studio_cue_splash,
+    /* 0x07 */ &drum_studio_cue_crash,
+    /* 0x08 */ &drum_studio_cue_08,
     END_OF_CUE_INDEX
 };
 
@@ -469,10 +470,10 @@ const struct CueDefinition *const D_089e2dfc[] = {
 
 
 // [D_089e2e24] Common Events
-const EngineEvent D_089e2e24[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) func_08029f00,
-    /* DISPLAY_TEXT   */ (EngineEvent) func_08029f04,
-    /* INIT_TUTORIAL  */ (EngineEvent) func_08029f08,
+const EngineEvent drum_studio_common_events[] = {
+    /* BEAT_ANIMATION */ (EngineEvent) drum_studio_common_beat_animation,
+    /* DISPLAY_TEXT   */ (EngineEvent) drum_studio_common_display_text,
+    /* INIT_TUTORIAL  */ (EngineEvent) drum_studio_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
@@ -502,10 +503,9 @@ extern void func_08027c54();
 extern void func_08027c90();
 extern void func_080281e8();
 extern void func_080281fc();
-extern void func_080290c0();
 
 // [D_089e2e34] Engine Events
-const EngineEvent D_089e2e34[] = {
+const EngineEvent drum_studio_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080293b0,
     /* 0x01 */ (EngineEvent) func_080295d4,
     /* 0x02 */ (EngineEvent) func_08029178,
@@ -532,19 +532,19 @@ const EngineEvent D_089e2e34[] = {
     /* 0x17 */ (EngineEvent) func_08027c90,
     /* 0x18 */ (EngineEvent) func_080281e8,
     /* 0x19 */ (EngineEvent) func_080281fc,
-    /* 0x1A */ (EngineEvent) func_080290c0
+    /* 0x1A */ (EngineEvent) drum_studio_engine_event_stub
 };
 
 // [D_089e2ea0] Drum Lessons Game Engine
 const struct GameEngine D_089e2ea0 = {
     /* Size in Memory */ 0x580,
-    /* Start Engine   */ func_080289ec,
-    /* Update Engine  */ func_08029ba0,
-    /* Stop Engine    */ func_08029d20,
-    /* Cue Index      */ D_089e2dfc,
-    /* Common Events  */ D_089e2e24,
-    /* Engine Events  */ D_089e2e34,
-    /* Input Event    */ func_08029ed8
+    /* Start Engine   */ drum_studio_engine_start,
+    /* Update Engine  */ drum_studio_engine_update,
+    /* Stop Engine    */ drum_studio_engine_stop,
+    /* Cue Index      */ drum_studio_cue_index,
+    /* Common Events  */ drum_studio_common_events,
+    /* Engine Events  */ drum_studio_engine_events,
+    /* Input Event    */ drum_studio_input_event
 };
 
 

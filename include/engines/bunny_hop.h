@@ -26,6 +26,7 @@ struct BunnyHopCue {
 
 
 // Engine Data:
+extern const char D_0805a8ac[];
 
 
 // Engine Definition Data:

@@ -77,7 +77,7 @@ extern const struct SequenceData s_f_esa_jump_seqData;
 
 
 // Engine Data:
-extern char D_0805a3cc[];
+extern const char D_0805a3cc[];
 
 
 // Engine Definition Data:

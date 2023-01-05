@@ -33,6 +33,9 @@ struct MetronomeUnknownMovementData {
 
 
 // Engine Data:
+extern const char D_0805a694[];
+extern const char D_0805a6c0[];
+extern const char D_0805a6c8[];
 
 
 // Engine Definition Data:

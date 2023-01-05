@@ -13,7 +13,7 @@ thumb_func_start func_08029cac \n\
 /* 08029cba */ LSRS R4, R4, 0x10 \n\
 /* 08029cbc */ LSLS R3, R3, 0x10 \n\
 /* 08029cbe */ LSRS R3, R3, 0x10 \n\
-/* 08029cc0 */ LDR R1, =D_089e29c8 \n\
+/* 08029cc0 */ LDR R1, =drum_studio_kits \n\
 /* 08029cc2 */ LSLS R0, R0, 0x2 \n\
 /* 08029cc4 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08029cc6 */ LDR R5, [R0] \n\

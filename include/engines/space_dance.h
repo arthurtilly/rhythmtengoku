@@ -63,6 +63,7 @@ enum SpaceDanceAnimationsEnum {
 
 
 // Engine Data:
+extern const char D_0805a8b8[];
 
 
 // Engine Definition Data:

@@ -75,7 +75,7 @@ extern const struct SequenceData s_CC4_seqData;
 
 
 // Engine Data:
-extern char D_0805a8b0[]; // Empty Default Text
+extern const char D_0805a8b0[]; // Empty Default Text
 
 
 // Engine Definition Data:

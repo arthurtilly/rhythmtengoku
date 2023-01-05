@@ -308,7 +308,7 @@ static s32 D_03001564; // unknown type
 
 
 // Init. Drum Samurai
-void func_08026e74(void) {
+void drum_lessons_init_teacher(void) {
     struct StudioDrummer *teacher = &gDrumLessonsInfo->teacher;
 
     teacher->snareDrum = func_0804d160(D_03005380, anim_drum_teacher_kit_snare, 0, 64, 64, 0x480c, 1, 0x7f, 0);
@@ -411,7 +411,7 @@ void func_08026e74(void) {
 
 
 // Init. Drum Lessons
-void func_08027964(void) {
+void drum_lessons_init_lesson(void) {
     u32 i;
 
     gDrumLessonsInfo->unk426 = 64;
@@ -519,17 +519,76 @@ void func_08027964(void) {
 
 #include "asm/engines/drumming_lessons/asm_08028744.s"
 
-#include "asm/engines/drumming_lessons/asm_080287b4.s"
+
+// Init. Drum Kit
+void drum_studio_init_kit(void) {
+    struct StudioDrummer *student = &gDrumLessonsInfo->student;
+    const struct DrumKit *drumKit;
+    DrumPlayFunc playFunc;
+    u32 drummingButtons;
+
+    func_0804d770(D_03005380, student->snareDrum, TRUE);
+    func_0804d770(D_03005380, student->bassDrum, TRUE);
+    func_0804d770(D_03005380, student->tomDrum, TRUE);
+    func_0804d770(D_03005380, student->hiHat, TRUE);
+    func_0804d770(D_03005380, student->leftPedal, TRUE);
+    func_0804d770(D_03005380, student->rightPedal, TRUE);
+    func_0804d770(D_03005380, student->crashCymbal, TRUE);
+    func_0804d770(D_03005380, student->splashCymbal, TRUE);
+    func_0804dae0(D_03005380, student->hiHat, 0, 0, 0);
+    func_0804cebc(D_03005380, student->hiHat, 2);
+    func_0804d770(D_03005380, student->pedalHiHat, FALSE);
+    func_0804dae0(D_03005380, student->pedalHiHat, 1, 0x7f, 0);
+    func_0804d8f8(D_03005380, student->rightLeg, anim_drum_student_use_pedal_r, 0x7f, 1, 0x7f, 0);
+    func_0802af68(student->hiHat);
+    func_0802af7c(student->pedalHiHat, student->rightLeg, anim_drum_student_use_pedal_r, anim_drum_student_use_pedal_hihat);
+
+    playFunc = D_089e2988[gDrumLessonsInfo->studioKitID];
+    if (playFunc != NULL) {
+        CALL_DRUM_PLAY_FUNC(playFunc);
+    }
+
+    drumKit = drum_studio_kits[gDrumLessonsInfo->studioKitID];
+    drummingButtons = 0;
+
+    if (drumKit->aButton != NULL) {
+        drummingButtons |= A_BUTTON;
+    }
+    if (drumKit->bButton != NULL) {
+        drummingButtons |= B_BUTTON;
+    }
+    if (drumKit->dpadUp != NULL) {
+        drummingButtons |= DPAD_UP;
+    }
+    if (drumKit->dpadDown != NULL) {
+        drummingButtons |= DPAD_DOWN;
+    }
+    if (drumKit->dpadLeft != NULL) {
+        drummingButtons |= DPAD_LEFT;
+    }
+    if (drumKit->dpadRight != NULL) {
+        drummingButtons |= DPAD_RIGHT;
+    }
+    if (drumKit->lButton != NULL) {
+        drummingButtons |= LEFT_SHOULDER_BUTTON;
+    }
+    if (drumKit->rButton != NULL) {
+        drummingButtons |= RIGHT_SHOULDER_BUTTON;
+    }
+
+    gDrumLessonsInfo->drummingButtons = drummingButtons;
+    gameplay_set_input_buttons(drummingButtons, 0);
+}
 
 
-// Get Maximum something
-s32 func_08028950(void) {
+// Get Total Drum Kits (15)
+s32 drum_studio_get_total_kits(void) {
     return 15;
 }
 
 
 // Graphics Init. 3
-void func_08028954(void) {
+void drum_studio_init_gfx3(void) {
     func_0800c604(0);
     gameplay_start_screen_fade_in();
     func_080041d0(0, 1, 0);
@@ -538,37 +597,37 @@ void func_08028954(void) {
 
 
 // Graphics Init. 2
-void func_08028978(void) {
-    const struct GraphicsTable *gfxTable = D_089e2a08;
+void drum_studio_init_gfx2(void) {
+    const struct GraphicsTable *gfxTable = drum_studio_gfx_table;
     s32 task;
 
     func_0800c604(0);
     if (gDrumLessonsInfo->version == 4) {
-        gfxTable = D_089e2a50;
+        gfxTable = drum_lessons_gfx_table;
     }
     task = func_08002ee0(get_current_mem_id(), gfxTable, 0x2000);
-    task_run_after(task, func_08028954, 0);
+    task_run_after(task, drum_studio_init_gfx3, 0);
 
 }
 
 
 // Graphics Init. 1
-void func_080289c0(void) {
+void drum_studio_init_gfx1(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_080087b4(get_current_mem_id(), D_089e2a04);
-    task_run_after(task, func_08028978, 0);
+    task = func_080087b4(get_current_mem_id(), drum_studio_buffered_textures);
+    task_run_after(task, drum_studio_init_gfx2, 0);
 }
 
 
 // Game Engine Start
-void func_080289ec(u32 version) {
+void drum_studio_engine_start(u32 version) {
     struct StudioDrummer *student = &gDrumLessonsInfo->student;
     s32 var;
 
     gDrumLessonsInfo->version = version;
-    func_080289c0();
+    drum_studio_init_gfx1();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, BG_PRIORITY_HIGH);
     scene_set_bg_layer_display(BG_LAYER_2, FALSE, 0, 0, 2, 30, BG_PRIORITY_LOW);
@@ -643,13 +702,13 @@ void func_080289ec(u32 version) {
         }
     }
 
-    gDrumLessonsInfo->unk388 = 0;
+    gDrumLessonsInfo->studioKitID = 0;
     switch (version) {
         case 1:
-            gDrumLessonsInfo->unk388 = func_080087d4(func_0801c504(), 0, func_08028950());
+            gDrumLessonsInfo->studioKitID = func_080087d4(func_0801c504(), 0, drum_studio_get_total_kits());
             break;
         case 3:
-            gDrumLessonsInfo->unk388 = D_030046a8->data.unkB4[gDrumLessonsInfo->unk3CC].unk2;
+            gDrumLessonsInfo->studioKitID = D_030046a8->data.unkB4[gDrumLessonsInfo->unk3CC].unk2;
             break;
     }
 
@@ -677,17 +736,20 @@ void func_080289ec(u32 version) {
         case 4: // Drum Lessons
             scene_show_bg_layer(BG_LAYER_2);
             scene_show_bg_layer(BG_LAYER_3);
-            func_08027964();
-            func_08026e74();
+            drum_lessons_init_lesson();
+            drum_lessons_init_teacher();
             break;
     }
 
-    func_080287b4();
+    drum_studio_init_kit();
     gameplay_assess_irrelevant_inputs(FALSE);
 }
 
 
-#include "asm/engines/drumming_lessons/asm_080290c0.s"
+// Engine Event 0x1A (STUB)
+void drum_studio_engine_event_stub(void) {
+}
+
 
 #include "asm/engines/drumming_lessons/asm_080290c4.s"
 
@@ -747,8 +809,17 @@ void func_080289ec(u32 version) {
 
 #include "asm/engines/drumming_lessons/asm_08029ed8.s"
 
-#include "asm/engines/drumming_lessons/asm_08029f00.s"
 
-#include "asm/engines/drumming_lessons/asm_08029f04.s"
+// Common Event 0 (Beat Animation)
+void drum_studio_common_beat_animation(void) {
+}
 
-#include "asm/engines/drumming_lessons/asm_08029f08.s"
+
+// Common Event 1 (Display Text)
+void drum_studio_common_display_text(void) {
+}
+
+
+// Common Event 2 (Init. Tutorial)
+void drum_studio_common_init_tutorial(void) {
+}

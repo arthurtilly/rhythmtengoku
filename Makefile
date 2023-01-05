@@ -45,6 +45,8 @@ ENGINES        := $(SOURCES)/engines
 PROLOGUES      := $(SOURCES)/engines/prologues
 ASM            := asm
 INCLUDES	   := include
+TEXT           := text
+ENGINE_TEXT    := $(TEXT)/engines
 DATA		   := data
 SCRIPT_GEN     := $(DATA)/script_gen
 SCENE_DATA     := $(shell find $(DATA)/scenes -type d)
@@ -56,7 +58,7 @@ AUDIO		   := audio
 MUSIC		   := $(AUDIO)/sequences
 SFX            := $(AUDIO)/samples
 GRAPHICS       := $(shell find graphics -type d)
-BUILD_DIRS     := $(BUILD) $(BUILD)/$(BIN) $(BUILD)/$(DATA) $(BUILD)/$(SCRIPT_GEN) \
+BUILD_DIRS     := $(BUILD) $(BUILD)/$(BIN) $(BUILD)/$(TEXT) $(BUILD)/$(ENGINE_TEXT) $(BUILD)/$(DATA) $(BUILD)/$(SCRIPT_GEN) \
                   $(foreach dir,$(SCENE_DATA),$(BUILD)/$(dir)) $(BUILD)/$(ENGINE_DATA) $(BUILD)/$(PROLOGUE_DATA) $(BUILD)/$(ENGINE_SCRIPTS) \
                   $(BUILD)/$(ASM) $(BUILD)/$(SOURCES) $(BUILD)/$(SCENES) $(BUILD)/$(ENGINES) $(BUILD)/$(PROLOGUES) \
                   $(BUILD)/$(MUSIC) $(BUILD)/$(SFX) $(foreach dir,$(GRAPHICS),$(BUILD)/$(dir))
@@ -103,6 +105,7 @@ UNDEFINED_SYMS := undefined_syms.ld
 export OUTPUT	:=	$(BUILD)/$(TARGET)
 
 CFILES		:=	$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.c)) $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.c)) \
+				$(foreach dir,$(TEXT),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINE_TEXT),$(wildcard $(dir)/*.c)) \
 				$(foreach dir,$(DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCENE_DATA),$(wildcard $(dir)/*.c)) \
 				$(foreach dir,$(ENGINE_DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(PROLOGUE_DATA),$(wildcard $(dir)/*.c)) \
 				$(foreach dir,$(ENGINE_SCRIPTS),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCRIPT_GEN),$(wildcard $(dir)/*.c)) \

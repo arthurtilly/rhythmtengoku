@@ -95,7 +95,7 @@ branch_0802944a: \n\
 /* 0802944c */ LSLS R5, R5, 0x2 \n\
 /* 0802944e */ ADDS R0, R2, R5 @ Set R0 to R2 + R5 \n\
 /* 08029450 */ STRB R7, [R0] \n\
-/* 08029452 */ BL func_080287b4 \n\
+/* 08029452 */ BL drum_studio_init_kit \n\
  \n\
 branch_08029456: \n\
 /* 08029456 */ LDR R2, =D_089d81b4 \n\
@@ -197,7 +197,7 @@ branch_08029506: \n\
 branch_0802951c: \n\
 /* 0802951c */ BL func_0801c504 \n\
 /* 08029520 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 08029522 */ BL func_08028950 \n\
+/* 08029522 */ BL drum_studio_get_total_kits \n\
 /* 08029526 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08029528 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802952a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
@@ -243,7 +243,7 @@ branch_08029554: \n\
 /* 08029590 */ LSLS R2, R2, 0x2 \n\
 /* 08029592 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 08029594 */ STRB R1, [R0] \n\
-/* 08029596 */ BL func_080287b4 \n\
+/* 08029596 */ BL drum_studio_init_kit \n\
  \n\
 branch_0802959a: \n\
 /* 0802959a */ LDR R0, =D_030055d0 \n\

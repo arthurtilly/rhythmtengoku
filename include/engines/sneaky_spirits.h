@@ -3,7 +3,7 @@
 #include "global.h"
 #include "engines.h"
 
-
+// Engine Types:
 struct SneakySpiritsInfo {
     struct TextObject1 *unk0;  // Pointer: Font? (Related to Tutorial Text)
     u8  version;        // Value:   Version
@@ -51,6 +51,7 @@ enum SneakySpiritsVersionsEnum {
     SNEAKY_SPIRITS_VERSION_2
 };
 
+
 // OAM Animations:
 extern const struct Animation anim_sneaky_spirits_bow[]; // Animation: "bow_draw"
 extern const struct Animation anim_sneaky_spirit_hit[]; // Animation: "ghost_hit"
@@ -71,7 +72,9 @@ extern const struct Animation anim_sneaky_spirit_scared_late[]; // Animation: "g
 extern const struct Animation anim_sneaky_spirit_hit_effect[]; // Animation: "arrow_hit"
 extern const struct Animation anim_sneaky_spirit_tutorial[]; // Animation: "ghost_dash_tutorial"
 
+
 // Palettes:
+
 
 // Sound Effects:
 extern const struct SequenceData s_ghost_rain_seqData;           // Sound: Wind/Rain
@@ -83,12 +86,15 @@ extern const struct SequenceData s_ghost_miss_hit_seqData;       // Sound: Ghost
 extern const struct SequenceData s_ghost_dash_seqData;           // Sound: Ghost Miss
 extern const struct SequenceData s_ghost_warai_seqData;          // Sound: Ghost Miss Voice
 
+
 // Engine Data:
 extern char D_08059f90[];   // Empty Default Text
+
 
 // Engine Definition Data:
 extern const struct CompressedGraphics *const sneaky_spirits_buffered_textures[]; // Buffered Textures List
 extern const struct GraphicsTable *const sneaky_spirits_gfx_tables[]; // Graphics Table
+
 
 // Functions:
 extern void sneaky_spirits_show_ghost(u32); // Engine Event 00 (Show Ghost)

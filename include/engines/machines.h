@@ -3,17 +3,32 @@
 #include "global.h"
 #include "engines.h"
 
+// Engine Types:
+
+
 // Engine Macros/Enums:
+
 
 // OAM Animations:
 
+
 // Palettes:
+
 
 // Sound Effects:
 
+
 // Engine Data:
+extern const struct SequenceData *const D_0805aaf0[];
+extern const struct SequenceData *const D_0805ab00[];
+extern const struct SequenceData *const D_0805ab10[];
+extern const struct SequenceData *const D_0805ab20[];
+extern const struct SequenceData *const D_0805ab30[];
+extern const struct SequenceData *const D_0805ab40[];
+
 
 // Engine Definition Data:
+
 
 // Functions:
 // extern ? func_08044014(?);

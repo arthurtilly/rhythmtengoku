@@ -26,6 +26,8 @@ struct MrUpbeatCue {
 
 
 // Engine Data:
+extern const char D_0805a674[];
+extern const char D_0805a684[];
 
 
 // Engine Definition Data:

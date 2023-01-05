@@ -70,7 +70,7 @@ extern const char *const D_089d83d0[]; // Drum Kit Names
 // extern ? func_0801c260(?); // [func_0801c260] Graphics Init. 1
 // extern ? func_0801c290(?); // [func_0801c290] Graphics Init. 0
 // extern ? func_0801c2ec(?); // [func_0801c2ec] Scene Init.
-// extern ? func_0801c504(?);
+// extern ? func_0801c504(?); // Get Selected Drum Kit
 // extern ? func_0801c510(?);
 // extern ? func_0801c51c(?);
 // extern ? func_0801c530(?);

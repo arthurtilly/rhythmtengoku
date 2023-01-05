@@ -39,6 +39,7 @@ extern const struct SequenceData s_f_rat_error_seqData;
 
 
 // Engine Data:
+extern const char D_0805a8b4[];
 
 
 // Engine Definition Data:

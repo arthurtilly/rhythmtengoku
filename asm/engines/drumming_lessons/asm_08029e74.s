@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08029e74 \n\
+thumb_func_start drum_studio_cue_hit \n\
 /* 08029e74 */ PUSH {LR} \n\
 /* 08029e76 */ LDR R0, [R1] \n\
 /* 08029e78 */ LSLS R0, R0, 0x19 \n\

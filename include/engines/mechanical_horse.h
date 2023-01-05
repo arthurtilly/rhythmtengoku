@@ -3,17 +3,40 @@
 #include "global.h"
 #include "engines.h"
 
+// Engine Types:
+
+
 // Engine Macros/Enums:
+
 
 // OAM Animations:
 
+
 // Palettes:
+
 
 // Sound Effects:
 
+
 // Engine Data:
+extern const struct GraphicsTable D_0805a924[];
+extern const struct GraphicsTable D_0805a948[];
+extern const struct GraphicsTable D_0805a96c[];
+extern const struct GraphicsTable D_0805a990[];
+extern const struct GraphicsTable D_0805a9b4[];
+extern const struct GraphicsTable D_0805a9d8[];
+extern const char D_0805a9fc[];
+extern const s32 D_0805aa00[];
+extern const s32 D_0805aa10[];
+extern const s32 D_0805aa20[];
+extern const s32 D_0805aa40[];
+extern const u32 D_0805aa60[][4];
+extern const s32 D_0805aaa0[];
+extern const s32 D_0805aab0[][4];
+
 
 // Engine Definition Data:
+
 
 // Functions:
 // extern ? func_08040c2c(?);

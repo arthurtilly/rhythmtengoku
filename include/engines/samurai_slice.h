@@ -12,6 +12,12 @@ struct SamuraiSliceCue {
     /* add fields here */
 };
 
+struct SamuraiSlice_0805a5d4 {
+    const struct Animation *anim;
+    u32 unk4;
+    u32 unk8;
+};
+
 
 // Engine Macros/Enums:
 enum SamuraiSliceVersionsEnum {
@@ -45,6 +51,8 @@ extern const struct SequenceData s_f_iai_cut2_seqData;
 
 
 // Engine Data:
+extern const char D_0805a5d0[];
+extern const struct SamuraiSlice_0805a5d4 D_0805a5d4[];
 
 
 // Engine Definition Data:

@@ -71,6 +71,7 @@ enum MarchingOrdersSoundEffectsEnum {
 
 
 // Engine Data:
+extern const char D_0805a670[];
 
 
 // Engine Definition Data:
