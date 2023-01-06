@@ -244,7 +244,7 @@ const struct CueDefinition drum_studio_cue_kick_l = {
     /* Barely Window   */ -0x05, 0x05,
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
-    /* Size in Memory  */ 0x4,
+    /* Size in Memory  */ sizeof(struct DrumLessonsCue),
     /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 0,
     /* Func. Update    */ drum_studio_cue_update,
@@ -268,7 +268,7 @@ const struct CueDefinition drum_studio_cue_kick_r = {
     /* Barely Window   */ -0x05, 0x05,
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
-    /* Size in Memory  */ 0x4,
+    /* Size in Memory  */ sizeof(struct DrumLessonsCue),
     /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 1,
     /* Func. Update    */ drum_studio_cue_update,
@@ -292,7 +292,7 @@ const struct CueDefinition drum_studio_cue_snare_l = {
     /* Barely Window   */ -0x05, 0x05,
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
-    /* Size in Memory  */ 0x4,
+    /* Size in Memory  */ sizeof(struct DrumLessonsCue),
     /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 2,
     /* Func. Update    */ drum_studio_cue_update,
@@ -316,7 +316,7 @@ const struct CueDefinition drum_studio_cue_snare_r = {
     /* Barely Window   */ -0x05, 0x05,
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
-    /* Size in Memory  */ 0x4,
+    /* Size in Memory  */ sizeof(struct DrumLessonsCue),
     /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 3,
     /* Func. Update    */ drum_studio_cue_update,
@@ -340,7 +340,7 @@ const struct CueDefinition drum_studio_cue_04 = {
     /* Barely Window   */ -0x05, 0x05,
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
-    /* Size in Memory  */ 0x4,
+    /* Size in Memory  */ sizeof(struct DrumLessonsCue),
     /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 4,
     /* Func. Update    */ drum_studio_cue_update,
@@ -364,7 +364,7 @@ const struct CueDefinition drum_studio_cue_tom = {
     /* Barely Window   */ -0x05, 0x05,
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
-    /* Size in Memory  */ 0x4,
+    /* Size in Memory  */ sizeof(struct DrumLessonsCue),
     /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 5,
     /* Func. Update    */ drum_studio_cue_update,
@@ -388,7 +388,7 @@ const struct CueDefinition drum_studio_cue_splash = {
     /* Barely Window   */ -0x08, 0x08,
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
-    /* Size in Memory  */ 0x4,
+    /* Size in Memory  */ sizeof(struct DrumLessonsCue),
     /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 6,
     /* Func. Update    */ drum_studio_cue_update,
@@ -412,7 +412,7 @@ const struct CueDefinition drum_studio_cue_crash = {
     /* Barely Window   */ -0x08, 0x08,
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
-    /* Size in Memory  */ 0x4,
+    /* Size in Memory  */ sizeof(struct DrumLessonsCue),
     /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 7,
     /* Func. Update    */ drum_studio_cue_update,
@@ -436,7 +436,7 @@ const struct CueDefinition drum_studio_cue_08 = {
     /* Barely Window   */ -0x08, 0x08,
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
-    /* Size in Memory  */ 0x4,
+    /* Size in Memory  */ sizeof(struct DrumLessonsCue),
     /* Func. Spawn     */ drum_studio_cue_spawn,
     /* Spawn Parameter */ 8,
     /* Func. Update    */ drum_studio_cue_update,
@@ -477,12 +477,7 @@ const EngineEvent drum_studio_common_events[] = {
     END_OF_COMMON_EVENT_LIST
 };
 
-extern void func_080293b0();
-extern void func_080295d4();
 extern void func_08029178();
-extern void drum_studio_event_start_monitor();
-extern void drum_studio_event_stop_monitor();
-extern void func_0802992c();
 extern void func_08029b8c();
 extern void func_08027728();
 extern void func_08027744();

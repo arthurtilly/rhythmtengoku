@@ -46,7 +46,7 @@ void func_080102f4(void) {
         data->unk1C7[i] = 0;
         data->unk1FE[i] = 0;
     }
-    func_08011a18(data->drummingRecordings);
+    func_08011a18(&data->saveDataAllocator);
     data->unk235 = 0;
     for (i = 0; i < 48; i++) {
         data->unk236[i] = 0; // perfects?

@@ -5,12 +5,12 @@
 #define SAVE_BUFFER_SIZE 0x3B04 // might need renaming
 
 extern struct SaveBuffer {
-    struct SaveBufferInfo {
+    struct SaveBufferHeader {
         char RIQ[4]; // "RIQ"
         u32 bufferSize;
-        u32 unk8;
+        u32 checksum;
         u32 unkC; // 0x26040000
-    } info;
+    } header;
     struct TengokuSaveData {
         s8 gameSelectCursorX;
         s8 gameSelectCursorY;
@@ -25,12 +25,12 @@ extern struct SaveBuffer {
         u16 unkB0;
         u8 unkB2; // relates to studio
         u8 unkB3; // above
-        struct {
-            u8 unk0;
-            u8 unk1;
-            u8 unk2;
+        struct DrumReplayData {
+            u8 songID;
+            s8 saveID;
+            u8 drumKitID;
             u8 unk3;
-        } unkB4[55];
+        } drumReplayData[55];
         u8 unk190[55]; // number of plays?
         u8 unk1C7[55];
         u8 unk1FE[55];
@@ -67,7 +67,13 @@ extern struct SaveBuffer {
             u32 unk2CC;
             u32 unk2D0;
         */
-        u8 drummingRecordings[0];
+        struct SaveDataAllocator {
+            u8 unk0;
+            u8 unk1[10];
+            u8 unkB;
+            u16 unkC[10];
+            u8 saveMemory[0];
+        } saveDataAllocator;
     } data;
 } *D_030046a8;
 

@@ -27,20 +27,23 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 #include "asm/data/asm_08011a08.s"
 
+
 // Data Util Functions
 
-void func_08011a18(struct struct_08011a18 *arg0) {
+
+void func_08011a18(struct SaveDataAllocator *allocator) {
     u32 i;
 
-    arg0->unk0 = 0;
+    allocator->unk0 = 0;
     
     for (i = 0; i < 10; i++) {
-        arg0->unk1[i] = 0;
-        arg0->unkC[i] = 0;
+        allocator->unk1[i] = 0;
+        allocator->unkC[i] = 0;
     }
 
-    dma3_fill(0, &arg0->unk20, 0x3800, 0x20, 0x200);
+    dma3_fill(0, allocator->saveMemory, 0x3800, 0x20, 0x200);
 }
+
 
 #include "asm/data/asm_08011a58.s"
 
@@ -50,21 +53,24 @@ void func_08011a18(struct struct_08011a18 *arg0) {
 
 #include "asm/data/asm_08011b50.s"
 
-s32 func_08011bec(u8 *param_1) {
-    return (56 - *param_1) * 256;
+
+u32 func_08011bec(struct SaveDataAllocator *allocator) {
+    return (56 - allocator->unk0) * 0x100;
 }
 
-s32 func_08011bf8(struct struct_08011a18 *arg0) {
+
+u32 func_08011bf8(struct SaveDataAllocator *allocator) {
     u32 i;
 
     for (i = 0; i < 10; i++) {
-        if (arg0->unkC[i] == 0) {
+        if (allocator->unkC[i] == 0) {
             return i;
         }
     }
 
     return -1;
 }
+
 
 #include "asm/data/asm_08011c1c.s"
 

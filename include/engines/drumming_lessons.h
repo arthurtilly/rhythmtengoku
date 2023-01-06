@@ -1,6 +1,7 @@
 #pragma once
 
 #include "global.h"
+#include "scenes/studio.h"
 #include "engines.h"
 #include "engines/night_walk.h"
 
@@ -51,20 +52,20 @@ struct StudioDrummer {
 
 struct DrumLessonsInfo {
     u8 version; // 0x000
-    u8 unk1;
+    u8 state; // 0x001
     struct DrumTechController drumTech; // 0x004
     struct StudioDrummer student; // 0x354
-    u8 studioKitID;
+    u8 studioKitID; // 0x388
     struct StudioDrummer teacher; // 0x38C;
     u8 unk3C0;
     u8 unk3C1;
     u16 drummingButtons; // 0x3C2
     void *unk3C4;
-    u8 *unk3C8;
-    u8 unk3CC;
-    u8 unk3CD;
-    u8 unk3CE;
-    s24_8 bg2PosX;
+    struct DrumReplayData *replayData; // 0x3C8
+    u8 replayID; // 0x3CC
+    u8 unk3CD; // 0x3CD
+    u8 unk3CE; // 0x3CE
+    s24_8 bg2PosX; // 0x3D0
     s24_8 bg2PosY;
     s24_8 bg2VelX;
     s24_8 bg2VelY;
@@ -72,20 +73,24 @@ struct DrumLessonsInfo {
     s24_8 bg3PosY;
     s24_8 bg3VelX;
     s24_8 bg3VelY;
-    s8 unk3F0;
+    s8 unk3F0; // 0x3F0
     s16 memoryWarningSprite; // 0x3F2
     struct TextPrinter *songTitlePrinter; // 0x3F4
     s16 songTitleBgSprite; // 0x3F8
     s16 songTitlePosX; // 0x3FA
     u16 unk3FC; // 0x3FC
-    u32 null400;
+    u16 null3FE;
+    u16 null400;
+    u16 unk402;
     u32 null404;
     u16 null408;
     s16 replaySaveOptionSprite; // 0x40A
     u8 unk40C;
     struct TextPrinter *replayTextPrinter; // 0x410
-    u32 null414;
-    u32 null418;
+    u16 unk414;
+    u16 unk416;
+    u8 unk418;
+    u16 null41A;
     u16 unk41C;
     u32 unk420;
     u8 unk424;
@@ -117,12 +122,15 @@ struct DrumLessonsInfo {
     u16 null566;
     s16 accuracyLightSprites[7]; // 0x568
     u8 unk576;
-    u32 unk578;
+    struct SoundPlayer *musicPlayer; // 0x578
     u32 unk57C;
 };
 
 struct DrumLessonsCue {
-    /* add fields here */
+    u32 bit0:1;
+    u32 drum:4;
+    u32 bit4:1;
+    u32 bit5:1;
 };
 
 typedef void (*DrumPlayFunc)(void);
@@ -167,9 +175,9 @@ enum DrumLiveVersionsEnum {
 
 enum DrumLessonsVersionsEnum {
     ENGINE_VER_DRUM_STUDIO_0,
-    ENGINE_VER_DRUM_STUDIO_1,
+    ENGINE_VER_DRUM_STUDIO_PLAY,
     ENGINE_VER_DRUM_STUDIO_2,
-    ENGINE_VER_DRUM_STUDIO_3,
+    ENGINE_VER_DRUM_STUDIO_LISTEN,
     ENGINE_VER_DRUM_LESSONS
 };
 
@@ -222,6 +230,7 @@ extern const Palette drum_lessons_bg_screen_pal[];
 
 
 // Sound Effects:
+extern const struct SequenceData s_menu_cancel2_seqData;
 
 
 // Engine Data:
@@ -483,22 +492,22 @@ extern void drum_studio_init_gfx2(void); // Graphics Init. 2
 extern void drum_studio_init_gfx1(void); // Graphics Init. 1
 extern void drum_studio_engine_start(u32 version); // DRUM LESSON - Game Engine Start
 extern void drum_studio_engine_event_stub(void); // DRUM LESSON - Engine Event 0x1A (STUB)
-// extern void func_080290c4(void); // SELECT_BUTTON Pressed Event
+extern void func_080290c4(void); // SELECT_BUTTON Pressed Event
 // extern ? func_08029178(?); // DRUM LESSON - Engine Event 0x02 (?)
 // extern ? func_0802918c(?);
 // extern ? func_080291bc(?);
 // extern void func_08029204(void); // Update something
 // extern ? func_080292e0(?);
-// extern ? func_080293b0(?); // DRUM LESSON - Engine Event 0x00 (?)
-// extern ? func_080295d4(?); // DRUM LESSON - Engine Event 0x01 (?)
+const struct BeatScript *func_080293b0(void); // DRUM LESSON - Engine Event 0x00 (Init. Studio Script & Recording)
+extern s32 func_080295d4(void); // DRUM LESSON - Engine Event 0x01 (?)
 extern void drum_studio_align_drummer_sprites(struct StudioDrummer *drummer, const struct Vector2 *vecOfs); // Align Drummer Parts to Body
 // extern void func_0802972c(void); // Update something
 extern void drum_studio_update_monitor(void); // Update BG Monitor Display
-// extern void func_0802981c(void); // Update something (unk1 == 1)
-// extern ? func_080298e0(?);
-// extern ? func_0802992c(?); // DRUM LESSON - Engine Event 0x05 (?)
+// extern void func_0802981c(void); // Update something (state == main drumming state)
+extern s32 func_080298e0(void); // Check if Replay Cannot Be Saved?
+extern void func_0802992c(void); // DRUM LESSON - Engine Event 0x05 (Show Replay Save Options)
 // extern ? func_08029988(?);
-// extern void func_08029a1c(void); // Update something (unk1 == 2)
+// extern void func_08029a1c(void); // Update something (state == saving replay)
 // extern ? func_08029b8c(?); // DRUM LESSON - Engine Event 0x06 (?)
 extern void drum_studio_engine_update(void); // DRUM LESSON - Game Engine Update
 // extern ? func_08029cac(?);
@@ -507,7 +516,7 @@ extern void drum_studio_engine_stop(void); // DRUM LESSON - Game Engine Stop
 extern void drum_studio_cue_spawn(struct Cue *, struct DrumLessonsCue *, u32 drum); // DRUM LESSON - Cue - Spawn
 extern u32  drum_studio_cue_update(struct Cue *, struct DrumLessonsCue *, u32 runningTime, u32 duration); // DRUM LESSON - Cue - Update
 extern void drum_studio_cue_despawn(struct Cue *, struct DrumLessonsCue *); // DRUM LESSON - Cue - Despawn
-// extern ? func_08029e10(?);
+extern void drum_studio_flash_accuracy_meter(void); // Flash Accuracy Meter Light
 extern void drum_studio_cue_hit(struct Cue *, struct DrumLessonsCue *, u32 pressed, u32 released); // DRUM LESSON - Cue - Hit
 extern void drum_studio_cue_barely(struct Cue *, struct DrumLessonsCue *, u32 pressed, u32 released); // DRUM LESSON - Cue - Barely
 extern void drum_studio_cue_miss(struct Cue *, struct DrumLessonsCue *); // DRUM LESSON - Cue - Miss

@@ -16,6 +16,9 @@ struct StudioEntry {
 
 
 // Scene Macros/Enums:
+enum StudioSongsEnum {
+    STUDIO_SONG_SILENCE
+};
 
 
 // OAM Animations:

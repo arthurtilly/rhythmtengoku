@@ -2,14 +2,7 @@
 
 #include "global.h"
 #include "scenes.h"
-
-struct struct_08011a18 {
-	u8 unk0;
-	u8 unk1[10];
-	u8 unkB;
-	u16 unkC[10];
-	u32 unk20;
-};
+#include "src/memory.h"
 
 // extern ? func_08011530(?); // [func_08011530] DATA CHECK - Initialise Static Variables
 // extern ? func_08011534(?); // [func_08011534] DATA CHECK - Graphics Init. 2
@@ -23,13 +16,13 @@ struct struct_08011a18 {
 // extern ? func_08011820(?); // [func_08011820] DATA CHECK - ?
 // extern ? func_08011a08(?); // [func_08011a08] DATA CHECK - Scene Close
 
-extern void func_08011a18(struct struct_08011a18 *arg0);
+extern void func_08011a18(struct SaveDataAllocator *allocator);
 // extern ? func_08011a58(?);
 // extern ? func_08011a90(?);
 // extern ? func_08011ad4(?);
 // extern ? func_08011b50(?);
-extern s32 func_08011bec(u8 *param_1);
-extern s32 func_08011bf8(struct struct_08011a18 *arg0);
+extern u32 func_08011bec(struct SaveDataAllocator *allocator);
+extern u32 func_08011bf8(struct SaveDataAllocator *allocator);
 // extern ? func_08011c1c(?);
 // extern ? func_08011d8c(?);
 // extern ? func_08011e74(?);

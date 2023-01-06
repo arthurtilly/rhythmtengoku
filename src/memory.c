@@ -60,7 +60,7 @@ s32 func_08000794(s32 *buffer, u32 bufferSize) {
 		total += buffer[0];
 		total += buffer[1];
 		total += buffer[2];
-		//total += buffer[3]; // lmao why is this missing
+		// total += buffer[3]; // lmao why is this missing
 		total += buffer[4];
 		total += buffer[5];
 		total += buffer[6];
@@ -95,10 +95,10 @@ void func_0800081c(void) {
     struct SaveBuffer *buffer = D_030046a8;
 
     dma3_fill(0, buffer, SAVE_BUFFER_SIZE, 0x20, 0x100);
-    strcpy(buffer->info.RIQ, D_08935fbc);
-    buffer->info.bufferSize = SAVE_BUFFER_SIZE;
-    buffer->info.unk8 = 0;
-    buffer->info.unkC = 0x26040000;
+    strcpy(buffer->header.RIQ, D_08935fbc);
+    buffer->header.bufferSize = SAVE_BUFFER_SIZE;
+    buffer->header.checksum = 0;
+    buffer->header.unkC = 0x26040000;
     func_080102f4();
 }
 
@@ -108,11 +108,11 @@ s32 func_08000868(s32 *cartRAM) {
 
     D_030064c8(cartRAM, (s32 *)buffer, SAVE_BUFFER_SIZE);
 
-    if (func_0800820c(buffer->info.RIQ, D_08935fbc, 4)) {
+    if (func_0800820c(buffer->header.RIQ, D_08935fbc, 4)) {
         return 1;
     }
 
-    if ((func_08000794((s32 *)D_030046a8, SAVE_BUFFER_SIZE) - buffer->info.unk8) != buffer->info.unk8) {
+    if ((func_08000794((s32 *)D_030046a8, SAVE_BUFFER_SIZE) - buffer->header.checksum) != buffer->header.checksum) {
         return 2;
     }
 
@@ -133,8 +133,8 @@ s32 func_080008d0(void) {
 void func_080008e4(s32 *cartRAM) {
     struct SaveBuffer *buffer = D_030046a8;
 
-    buffer->info.unk8 = 0;
-    buffer->info.unk8 = func_08000794((s32 *)D_030046a8, SAVE_BUFFER_SIZE);
+    buffer->header.checksum = 0;
+    buffer->header.checksum = func_08000794((s32 *)D_030046a8, SAVE_BUFFER_SIZE);
 
     func_0804c8b0(D_030046a8, cartRAM, SAVE_BUFFER_SIZE);
 }
@@ -150,8 +150,8 @@ void func_08000928(s32 *cartRAM) {
     struct SaveBuffer *buffer = D_030046a8;
     s32 bufferOffset = func_0800091c(buffer); // isn't this literally always 0
 
-    buffer->info.unk8 = 0;
-    buffer->info.unk8 = func_08000794((s32 *)D_030046a8, SAVE_BUFFER_SIZE);
+    buffer->header.checksum = 0;
+    buffer->header.checksum = func_08000794((s32 *)D_030046a8, SAVE_BUFFER_SIZE);
 
     func_0804c8b0((void *)((u32)D_030046a8 + bufferOffset), (void *)((u32)cartRAM + bufferOffset), 0x10);
 }
