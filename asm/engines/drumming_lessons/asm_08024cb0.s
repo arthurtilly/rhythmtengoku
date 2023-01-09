@@ -24,7 +24,7 @@ thumb_func_start func_08024cb0 \n\
 /* 08024cd6 */ LDRH R3, [R1] \n\
 /* 08024cd8 */ LDRH R1, [R2] \n\
 /* 08024cda */ ANDS R1, R3 @ Set R1 to R1 & R3 \n\
-/* 08024cdc */ BL func_0802ad20 \n\
+/* 08024cdc */ BL play_drumtech_kit_w_anim \n\
  \n\
 branch_08024ce0: \n\
 /* 08024ce0 */ LDR R1, [R4] \n\

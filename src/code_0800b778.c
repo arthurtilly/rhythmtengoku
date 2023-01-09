@@ -493,7 +493,7 @@ void scene_set_music_track_volume(u16 selection, u16 volume) {
 
 
 // Set Music Volume (it just calls scene_set_music_volume())
-void scene_set_music_volume_env(u16 volume) {
+void scene_set_music_volume_env(u32 volume) {
     scene_set_music_volume(volume);
 }
 

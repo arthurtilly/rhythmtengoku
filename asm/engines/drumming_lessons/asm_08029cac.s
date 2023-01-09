@@ -20,12 +20,12 @@ thumb_func_start func_08029cac \n\
 /* 08029cc8 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08029cca */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08029ccc */ STR R3, [SP] \n\
-/* 08029cce */ BL func_0802ad2c \n\
+/* 08029cce */ BL play_drumtech_kit_no_anim \n\
 /* 08029cd2 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08029cd4 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 08029cd6 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 08029cd8 */ LDR R3, [SP] \n\
-/* 08029cda */ BL func_0802afb0 \n\
+/* 08029cda */ BL update_drumtech_hihat \n\
 /* 08029cde */ ADD SP, 0x4 \n\
 /* 08029ce0 */ POP {R4-R6} \n\
 /* 08029ce2 */ POP {R0} \n\

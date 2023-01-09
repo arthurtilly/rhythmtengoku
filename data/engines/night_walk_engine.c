@@ -716,7 +716,7 @@ const EngineEvent night_walk_common_events[] = {
 
 // [D_089e3800] Engine Events
 const EngineEvent night_walk_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_0802ab5c,
+    /* 0x00 */ (EngineEvent) play_drumtech_seq_from_beatscript,
     /* 0x01 */ (EngineEvent) night_walk_init_balloons,
     /* 0x02 */ (EngineEvent) night_walk_pop_balloon,
     /* 0x03 */ (EngineEvent) night_walk_set_ending_script,

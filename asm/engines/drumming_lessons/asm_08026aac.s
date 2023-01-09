@@ -20,7 +20,7 @@ thumb_func_start func_08026aac \n\
 /* 08026aca */ LDR R0, [R0] \n\
 /* 08026acc */ LDR R1, =D_03004afc \n\
 /* 08026ace */ LDRH R1, [R1] \n\
-/* 08026ad0 */ BL func_0802ad20 \n\
+/* 08026ad0 */ BL play_drumtech_kit_w_anim \n\
 /* 08026ad4 */ BL update_drumtech \n\
 /* 08026ad8 */ LDR R0, [R4] \n\
 /* 08026ada */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\

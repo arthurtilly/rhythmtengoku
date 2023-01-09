@@ -14,16 +14,149 @@ extern const struct CompressedGraphics D_08c50f54;
 extern const struct CompressedGraphics D_08c510d4;
 extern const struct CompressedGraphics D_08c50e04;
 
-extern const Palette drum_lessons_bg_screen_pal[];
-extern const Palette drum_lessons_obj_pal[];
-extern const Palette drum_lessons_bg_pal[];
 
-extern void func_080286f4(void);
-extern void func_0802871c(void);
-extern void func_08028744(void);
+  //  //  //  DRUM SAMURAI DATA  //  //  //
 
 
-  //  //  //  DRUM KIT DATA  //  //  //
+// [D_089e0ce0] Drum Samurai Expressions
+const struct DrumTeacherExpression drum_teacher_expressions_anim[] = {
+    /* 0x00 */ {
+        /* Head   */ NULL,
+        /* R. Arm */ NULL,
+        /* L. Arm */ NULL
+    },
+    /* 0x01 */ {
+        /* Head   */ anim_drum_teacher_watching,
+        /* R. Arm */ NULL,
+        /* L. Arm */ NULL
+    },
+    /* 0x02 */ {
+        /* Head   */ anim_drum_teacher_finish_pattern_face,
+        /* R. Arm */ NULL,
+        /* L. Arm */ anim_drum_teacher_finish_pattern_arm
+    },
+    /* 0x03 */ {
+        /* Head   */ anim_drum_teacher_fail_pattern_face,
+        /* R. Arm */ anim_drum_teacher_fail_pattern_arm_r,
+        /* L. Arm */ anim_drum_teacher_fail_pattern_arm_l
+    },
+    /* 0x04 */ {
+        /* Head   */ anim_drum_teacher_finish_lesson_face,
+        /* R. Arm */ anim_drum_teacher_finish_lesson_arm,
+        /* L. Arm */ NULL
+    }
+};
+
+
+  //  //  //  DRUM SAMURAI KIT DATA  //  //  //
+
+
+#include "drum_lessons_kits.inc.c"
+
+// [D_089e16b0] ?
+const DrumPlayFunc D_089e16b0[] = {
+    /* 0x00 */ NULL,
+    /* 0x01 */ NULL,
+    /* 0x02 */ NULL,
+    /* 0x03 */ NULL,
+    /* 0x04 */ NULL,
+    /* 0x05 */ NULL,
+    /* 0x06 */ NULL,
+    /* 0x07 */ NULL,
+    /* 0x08 */ NULL,
+    /* 0x09 */ func_080275a8,
+    /* 0x0A */ func_080275d0,
+    /* 0x0B */ NULL,
+    /* 0x0C */ NULL,
+    /* 0x0D */ NULL,
+    /* 0x0E */ NULL,
+    /* 0x0F */ func_080275f8
+};
+
+// [D_089e16f0] Samurai Drummer's Kits
+const struct DrumKit *const drum_teacher_kits[] = {
+    /* 0x00 */ &D_089e1160,
+    /* 0x01 */ &D_089e0df0,
+    /* 0x02 */ &D_089e0ecc,
+    /* 0x03 */ &D_089e0fa8,
+    /* 0x04 */ &D_089e1084,
+    /* 0x05 */ &D_089e1160,
+    /* 0x06 */ &D_089e123c,
+    /* 0x07 */ &D_089e1318,
+    /* 0x08 */ &D_089e13f4,
+    /* 0x09 */ &D_089e14d0,
+    /* 0x0A */ &D_089e15ac,
+    /* 0x0B */ &D_089e1160,
+    /* 0x0C */ &D_089e1160,
+    /* 0x0D */ &D_089e1160,
+    /* 0x0E */ &D_089e1160
+};
+
+
+  //  //  //  ACCURACY METER DATA  //  //  //
+
+
+// [D_089e172c] Accuracy Meter Lights
+const struct Animation *const drum_lessons_accuracy_light_anim[] = {
+    /* 0x00 */ anim_drum_lessons_accuracy_light1,
+    /* 0x01 */ anim_drum_lessons_accuracy_light2,
+    /* 0x02 */ anim_drum_lessons_accuracy_light3,
+    /* 0x03 */ anim_drum_lessons_accuracy_light4,
+    /* 0x04 */ anim_drum_lessons_accuracy_light5,
+    /* 0x05 */ anim_drum_lessons_accuracy_light6,
+    /* 0x06 */ anim_drum_lessons_accuracy_light7
+};
+
+// [D_089e1748] Accuracy Meter Light Positions
+const struct Vector2 drum_lessons_accuracy_light_positions[] = {
+    /* 0x00 */ {  89, 19 },
+    /* 0x01 */ { 100, 19 },
+    /* 0x02 */ { 111, 18 },
+    /* 0x03 */ { 122, 18 },
+    /* 0x04 */ { 133, 18 },
+    /* 0x05 */ { 144, 17 },
+    /* 0x06 */ { 155, 17 },
+};
+
+
+  //  //  //  RESULTS DATA  //  //  //
+
+
+// [D_089e1764] Rank Animations
+const struct Animation *const drum_lessons_rank_anim[] = {
+    /* RANK_0 */ anim_drum_lessons_rank_c,
+    /* RANK_C */ anim_drum_lessons_rank_c,
+    /* RANK_B */ anim_drum_lessons_rank_b,
+    /* RANK_A */ anim_drum_lessons_rank_a,
+    /* RANK_S */ anim_drum_lessons_rank_s
+};
+
+// [D_089e1778] Rank Text
+const char *const drum_lessons_rank_text[] = {
+    /* RANK_0 */ D_0805a0bc,
+    /* RANK_C */ D_0805a0ac,
+    /* RANK_B */ D_0805a098,
+    /* RANK_A */ D_0805a088,
+    /* RANK_S */ D_0805a074,
+};
+
+// [D_089e178c] Rank SFX
+const struct SequenceData *const drum_lessons_rank_sfx[] = {
+    /* RANK_0 */ NULL,
+    /* RANK_C */ &s_f_lesson_c_seqData,
+    /* RANK_B */ &s_f_lesson_b_seqData,
+    /* RANK_A */ &s_f_lesson_a_seqData,
+    /* RANK_S */ &s_f_lesson_s_seqData
+};
+
+
+  //  //  //  STUDIO BG MONITOR DATA  //  //  //
+
+
+#include "drum_studio_monitor_gfx.inc.c"
+
+
+  //  //  //  PLAYER DRUM KIT DATA  //  //  //
 
 
 #include "drum_studio_kits.inc.c"
@@ -489,8 +622,6 @@ extern void func_08027ba0();
 extern void func_08027888();
 extern void func_080278d0();
 extern void func_08027bbc();
-extern void func_08027f70();
-extern void func_080271f0();
 extern void func_08029cec();
 extern void func_08028004();
 extern void func_08027bd8();
@@ -519,7 +650,7 @@ const EngineEvent drum_studio_engine_events[] = {
     /* 0x0F */ (EngineEvent) func_080278d0,
     /* 0x10 */ (EngineEvent) func_08027bbc,
     /* 0x11 */ (EngineEvent) func_08027f70,
-    /* 0x12 */ (EngineEvent) func_080271f0,
+    /* 0x12 */ (EngineEvent) drum_lessons_set_teacher_expression,
     /* 0x13 */ (EngineEvent) func_08029cec,
     /* 0x14 */ (EngineEvent) func_08028004,
     /* 0x15 */ (EngineEvent) func_08027bd8,

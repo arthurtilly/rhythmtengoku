@@ -402,7 +402,7 @@ void func_0802a970(void) {
 
 
 // Init. DrumTech Sequence
-void func_0802a994(void) {
+void reset_drumtech_seq(void) {
     u32 i;
 
     for (i = 0; i < 100; i++) {
@@ -422,13 +422,13 @@ void init_drumtech(struct DrumTechController *data) {
         D_03001568->soundTimers[i] = 0;
     }
 
-    func_0802a994();
+    reset_drumtech_seq();
     D_03001568->volume = INT_TO_FIXED(1.0);
     D_03001568->unk334 = NULL;
     D_03001568->hiHatSprite = -1;
     D_03001568->unk33A = 9999;
     D_03001568->unk33C = INT_TO_FIXED(beats_to_ticks(0x18));
-    D_03001568->unk342 = 37;
+    D_03001568->pedalHiHatDrumID = 37;
     D_03001568->rightLegSprite = -1;
     D_03001568->useKickPedalAnim = NULL;
     D_03001568->useHiHatPedalAnim = NULL;
@@ -436,7 +436,7 @@ void init_drumtech(struct DrumTechController *data) {
 
 
 // Update DrumTech Sound Timers
-void func_0802aa4c(void) {
+void update_drumtech_timers(void) {
     u32 i;
 
     for (i = 0; i < 10; i++) {
@@ -450,7 +450,7 @@ void func_0802aa4c(void) {
 
 
 // Update DrumTech Sequence
-void func_0802aa84(void) {
+void update_drumtech_seq(void) {
     struct DrumTechNote *note;
     u32 i;
 
@@ -473,7 +473,7 @@ void play_drumtech_seq(const struct DrumTechNote *sequence, s32 timingOffset, s3
     u32 ticks = 0;
     s32 delay;
 
-    func_0802a994();
+    reset_drumtech_seq();
 
     while ((sequence->drumID != 0xff) && (i < 100)) {
         delay = beats_to_ticks(ticks) + timingOffset;
@@ -495,13 +495,13 @@ void play_drumtech_seq(const struct DrumTechNote *sequence, s32 timingOffset, s3
 
 // Update DrumTech
 void update_drumtech(void) {
-    func_0802aa4c();
-    func_0802aa84();
+    update_drumtech_timers();
+    update_drumtech_seq();
 }
 
 
 // Parse Arguments for Engine Event 0x00 (Cowbell)
-void func_0802ab44(s32 args, u32 *drumID, u32 *volume, s32 *pitch) {
+void parse_drumtech_seq_beatscript_args(s32 args, u32 *drumID, u32 *volume, s32 *pitch) {
     *drumID = (args) & 0xff;
     *volume = (args >> 8) & 0x1ff;
     *pitch = (args >> 17);
@@ -509,12 +509,12 @@ void func_0802ab44(s32 args, u32 *drumID, u32 *volume, s32 *pitch) {
 
 
 // Engine Event 0x00 (Cowbell)
-void func_0802ab5c(s32 args) {
+void play_drumtech_seq_from_beatscript(s32 args) {
     u32 drumID;
     u32 volume;
     s32 pitch;
 
-    func_0802ab44(args, &drumID, &volume, &pitch);
+    parse_drumtech_seq_beatscript_args(args, &drumID, &volume, &pitch);
     func_0802ab7c(drumID, volume, pitch);
 }
 
@@ -528,17 +528,138 @@ void set_drumtech_bank(const struct DrumTechInstrument *drumBank) {
 }
 
 
-#include "asm/engines/night_walk/asm_0802ac50.s"
+// Play Drum
+void play_drumtech_phrase(const struct DrumTechPhrase *phrase, u32 runOnPlayFunc) {
+    if (phrase == NULL) {
+        return;
+    }
+    if (phrase->sequence != NULL) {
+        play_drumtech_seq(phrase->sequence, 0, 0);
+    } else {
+        func_0802ab7c(phrase->drumID, phrase->volume, phrase->pitch);
+    }
+    if (runOnPlayFunc) {
+        if (phrase->onPlay != NULL) {
+            phrase->onPlay(phrase->onPlayArg);
+        }
+    }
+}
 
-#include "asm/engines/night_walk/asm_0802ac8c.s"
 
-#include "asm/engines/night_walk/asm_0802ad20.s"
+// Play Drum Kit
+void play_drumtech_kit(const struct DrumKit *drumKit, u32 inputs, u32 runOnPlayFunc) {
+    if (inputs & A_BUTTON) {
+        play_drumtech_phrase(drumKit->aButton, runOnPlayFunc);
+    }
+    if (inputs & B_BUTTON) {
+        play_drumtech_phrase(drumKit->bButton, runOnPlayFunc);
+    }
+    if (inputs & DPAD_UP) {
+        play_drumtech_phrase(drumKit->dpadUp, runOnPlayFunc);
+    }
+    if (inputs & DPAD_DOWN) {
+        play_drumtech_phrase(drumKit->dpadDown, runOnPlayFunc);
+    }
+    if (inputs & DPAD_LEFT) {
+        play_drumtech_phrase(drumKit->dpadLeft, runOnPlayFunc);
+    }
+    if (inputs & DPAD_RIGHT) {
+        play_drumtech_phrase(drumKit->dpadRight, runOnPlayFunc);
+    }
+    if (inputs & RIGHT_SHOULDER_BUTTON) {
+        play_drumtech_phrase(drumKit->rButton, runOnPlayFunc);
+    }
+    if (inputs & LEFT_SHOULDER_BUTTON) {
+        play_drumtech_phrase(drumKit->lButton, runOnPlayFunc);
+    }
+}
 
-#include "asm/engines/night_walk/asm_0802ad2c.s"
 
-#include "asm/engines/night_walk/asm_0802ad38.s"
+// Play Drum Kit (Run OnPlay Functions)
+void play_drumtech_kit_w_anim(const struct DrumKit *drumKit, u32 inputs) {
+    play_drumtech_kit(drumKit, inputs, TRUE);
+}
 
-#include "asm/engines/night_walk/asm_0802ade0.s"
+
+// Play Drum Kit (Don't Run OnPlay Functions)
+void play_drumtech_kit_no_anim(const struct DrumKit *drumKit, u32 inputs) {
+    play_drumtech_kit(drumKit, inputs, FALSE);
+}
+
+
+// Update DrumTech Open/Close Hi-Hat
+void update_drumtech_open_hihat(const struct DrumKit *drumKit, u16 inputs, u16 released) {
+    const struct SequenceData *const *sounds = D_089e2ef8;
+    s16 hiHatSprite = D_03001568->hiHatSprite;
+
+    if (inputs & DPAD_UP) {
+        if (hiHatSprite >= 0) {
+            func_0804dae0(D_03005380, hiHatSprite, -1, 0, 0);
+        }
+    } else {
+        if (hiHatSprite >= 0) {
+            func_0804dae0(D_03005380, hiHatSprite, 1, 0x7f, 0);
+        }
+    }
+
+    if (released & DPAD_UP) {
+        while (*sounds != NULL) {
+            func_080027dc(*sounds++, 4);
+        }
+        if (hiHatSprite >= 0) {
+            func_0804cebc(D_03005380, hiHatSprite, 3);
+        }
+    }
+}
+
+
+// Update DrumTech Pedal Hi-Hat
+void update_drumtech_pedal_hihat(const struct DrumKit *drumKit, u16 inputs, u16 pressed, u16 released) {
+    s32 openTicks;
+    u32 volume;
+
+    if (!(inputs & B_BUTTON) && !(released & B_BUTTON)) {
+        return;
+    }
+
+    D_03001568->unk33A++;
+    if (D_03001568->unk33A > 9999) {
+        D_03001568->unk33A = 9999;
+    }
+    if (pressed & B_BUTTON) {
+        D_03001568->unk33A = 0;
+    }
+    openTicks = D_03001568->unk33A - beats_to_ticks(0x0C);
+    if (openTicks == -9) {
+        if (D_03001568->rightLegSprite >= 0) {
+            func_0804d8f8(D_03005380, D_03001568->rightLegSprite, D_03001568->useHiHatPedalAnim, 0, 1, 0x7f, 0);
+        }
+        if (D_03001568->pedalHiHatSprite != 0) {
+            func_0804dae0(D_03005380, D_03001568->pedalHiHatSprite, -1, 0, 0);
+        }
+    }
+    if (released & B_BUTTON) {
+        if (openTicks < 0) {
+            if (openTicks < -5) {
+                volume = 0;
+            } else {
+                volume = (openTicks * 0x10) + 0x60;
+            }
+        } else {
+            volume = 0x60;
+        }
+        if (D_03001568->pedalHiHatDrumID >= 0) {
+            func_0802ab7c(D_03001568->pedalHiHatDrumID, volume, 0);
+        }
+        if (D_03001568->rightLegSprite >= 0) {
+                func_0804d8f8(D_03005380, D_03001568->rightLegSprite, D_03001568->useKickPedalAnim, 0x7f, 1, 0x7f, 0);
+        }
+        if (D_03001568->pedalHiHatSprite != 0) {
+            func_0804dae0(D_03005380, D_03001568->pedalHiHatSprite, 1, 0x7f, 0);
+            func_0804cebc(D_03005380, D_03001568->pedalHiHatSprite, 0x7f);
+        }
+    }
+}
 
 
 // Set DrumTech Hi-Hat Graphics
@@ -556,7 +677,28 @@ void set_drumtech_pedal_hihat_gfx(s16 pedalHiHatSprite, s16 rightLegSprite, cons
 }
 
 
-#include "asm/engines/night_walk/asm_0802afb0.s"
+// Play DrumTech Hi-Hats
+void update_drumtech_hihat(const struct DrumKit *drumKit, u16 inputs, u16 pressed, u16 released) {
+    u32 hasOpenHiHat = drumKit->unk20 & 1;
+    u32 hasPedalHiHat = drumKit->unk20 & 2;
+    s16 hiHatSprite = D_03001568->hiHatSprite;
+
+    if (hasOpenHiHat) {
+        update_drumtech_open_hihat(drumKit, inputs, released);
+    }
+
+    if (hasPedalHiHat) {
+        update_drumtech_pedal_hihat(drumKit, inputs, pressed, released);
+    }
+
+    if (!hasOpenHiHat && (hiHatSprite >= 0)) {
+        func_0804dae0(D_03005380, hiHatSprite, 1, 0x7f, 0);
+    }
+
+    if (drumKit->unk24 != NULL) {
+        drumKit->unk24();
+    }
+}
 
 
 // Set DrumTech Volume
@@ -572,7 +714,7 @@ void set_drumtech_volume(u32 volume) {
 void stop_drumtech(void) {
     u32 i;
 
-    func_0802a994();
+    reset_drumtech_seq();
 
     for (i = 0; i < 10; i++) {
         if (D_03001568->soundTimers[i] != 0) {

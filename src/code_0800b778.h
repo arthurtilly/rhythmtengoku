@@ -39,7 +39,7 @@ extern void scene_set_music_pitch(s16 pitch); // Set Music Pitch
 extern void scene_set_music_pitch_env(s16 pitch); // Set Music Pitch Source 2
 extern void scene_set_music_volume(u16 volume); // Set Music Volume
 extern void scene_set_music_track_volume(u16 selection, u16 volume); // Set Music Volume for Selected Tracks
-extern void scene_set_music_volume_env(u16 volume); // Set Music Volume 2 (just calls the other one)
+extern void scene_set_music_volume_env(u32 volume); // Set Music Volume 2 (just calls the other one)
 extern void scene_interpolate_music_volume(u32 volume, u32 duration); // Interpolate Music Volume
 extern void scene_set_music_track_volume_env(u32 selection, u32 volume); // Set Music Volume for Selected Tracks (Integer)
 extern void scene_interpolate_music_track_volume(u32 volume, u32 duration); // Interpolate Music Volume for Selected Tracks

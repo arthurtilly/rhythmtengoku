@@ -16,7 +16,7 @@ thumb_func_start func_080249c0 \n\
 /* 080249d4 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 080249d6 */ LDRH R1, [R1] \n\
 /* 080249d8 */ ANDS R1, R3 @ Set R1 to R1 & R3 \n\
-/* 080249da */ BL func_0802ad20 \n\
+/* 080249da */ BL play_drumtech_kit_w_anim \n\
 /* 080249de */ POP {R0} \n\
 /* 080249e0 */ BX R0 \n\
 \n\

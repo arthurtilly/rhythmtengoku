@@ -54,10 +54,10 @@ struct DrumLessonsInfo {
     u8 version; // 0x000
     u8 state; // 0x001
     struct DrumTechController drumTech; // 0x004
-    struct StudioDrummer student; // 0x354
-    u8 studioKitID; // 0x388
+    struct StudioDrummer player; // 0x354
+    u8 playerDrumKitID; // 0x388
     struct StudioDrummer teacher; // 0x38C;
-    u8 unk3C0;
+    u8 teacherDrumKitID; // 0x3C0
     u8 unk3C1;
     u16 drummingButtons; // 0x3C2
     void *unk3C4;
@@ -79,11 +79,11 @@ struct DrumLessonsInfo {
     s16 songTitleBgSprite; // 0x3F8
     s16 songTitlePosX; // 0x3FA
     u16 unk3FC; // 0x3FC
-    u16 null3FE;
-    u16 null400;
+    s16 unk3FE; // 0x3FE
+    s16 unk400;
     u16 unk402;
-    u32 null404;
-    u16 null408;
+    const char *songTitleText; // 0x404
+    s8 unk408; // 0x408
     s16 replaySaveOptionSprite; // 0x40A
     u8 unk40C;
     struct TextPrinter *replayTextPrinter; // 0x410
@@ -92,7 +92,7 @@ struct DrumLessonsInfo {
     u8 unk418;
     u16 null41A;
     u16 unk41C;
-    u32 unk420;
+    u32 drumVolume; // 0x420
     u8 unk424;
     u8 unk425;
     u8 unk426;
@@ -136,19 +136,6 @@ struct DrumLessonsCue {
 typedef void (*DrumPlayFunc)(void);
 #define CALL_DRUM_PLAY_FUNC(func) ((DrumPlayFunc)(((u32)func)|1))()
 
-struct DrumKit {
-    const struct DrumTechPhrase *aButton;
-    const struct DrumTechPhrase *bButton;
-    const struct DrumTechPhrase *dpadUp;
-    const struct DrumTechPhrase *dpadDown;
-    const struct DrumTechPhrase *dpadLeft;
-    const struct DrumTechPhrase *dpadRight;
-    const struct DrumTechPhrase *lButton;
-    const struct DrumTechPhrase *rButton;
-    s32 null20;
-    s32 null24;
-};
-
 struct DrumStudioMonitorData {
     const Palette *palette;
     const struct GraphicsTable *gfxTable;
@@ -156,6 +143,19 @@ struct DrumStudioMonitorData {
     s24_8 bg2VelY;
     s24_8 bg3VelX;
     s24_8 bg3VelY;
+};
+
+struct DrumLessonPattern {
+    const struct BeatScript *beat1;
+    const struct BeatScript *beat2;
+    const struct SequenceData *audienceSfx;
+    const char *dialogue;
+};
+
+struct DrumTeacherExpression {
+    const struct Animation *head;
+    const struct Animation *rightArm;
+    const struct Animation *leftArm;
 };
 
 
@@ -179,6 +179,14 @@ enum DrumLessonsVersionsEnum {
     ENGINE_VER_DRUM_STUDIO_2,
     ENGINE_VER_DRUM_STUDIO_LISTEN,
     ENGINE_VER_DRUM_LESSONS
+};
+
+enum DrumLessonsRanksEnum {
+    DRUM_LESSON_RANK_0,
+    DRUM_LESSON_RANK_C,
+    DRUM_LESSON_RANK_B,
+    DRUM_LESSON_RANK_A,
+    DRUM_LESSON_RANK_S,
 };
 
 
@@ -220,17 +228,51 @@ extern const struct Animation anim_drum_teacher_use_pedal_l[];
 extern const struct Animation anim_drum_teacher_use_snare_l[];
 extern const struct Animation anim_drum_teacher_use_snare_r[];
 extern const struct Animation anim_drum_teacher_kit_seat[];
+extern const struct Animation anim_drum_teacher_watching[];
+extern const struct Animation anim_drum_teacher_finish_pattern_face[];
+extern const struct Animation anim_drum_teacher_finish_pattern_arm[];
+extern const struct Animation anim_drum_teacher_fail_pattern_face[];
+extern const struct Animation anim_drum_teacher_fail_pattern_arm_r[];
+extern const struct Animation anim_drum_teacher_fail_pattern_arm_l[];
+extern const struct Animation anim_drum_teacher_finish_lesson_face[];
+extern const struct Animation anim_drum_teacher_finish_lesson_arm[];
+extern const struct Animation anim_drum_lessons_accuracy_light1[];
+extern const struct Animation anim_drum_lessons_accuracy_light2[];
+extern const struct Animation anim_drum_lessons_accuracy_light3[];
+extern const struct Animation anim_drum_lessons_accuracy_light4[];
+extern const struct Animation anim_drum_lessons_accuracy_light5[];
+extern const struct Animation anim_drum_lessons_accuracy_light6[];
+extern const struct Animation anim_drum_lessons_accuracy_light7[];
 extern const struct Animation anim_drum_lessons_text_adv_icon[];
 extern const struct Animation anim_drum_lessons_rank_s[];
 extern const struct Animation anim_drum_lessons_slow_icon[];
+extern const struct Animation anim_drum_lessons_rank_c[];
+extern const struct Animation anim_drum_lessons_rank_b[];
+extern const struct Animation anim_drum_lessons_rank_a[];
+extern const struct Animation anim_drum_lessons_rank_s[];
 
 
 // Palettes:
 extern const Palette drum_lessons_bg_screen_pal[];
+extern const Palette drum_lessons_obj_pal[];
+extern const Palette drum_lessons_bg_pal[];
 
 
 // Sound Effects:
 extern const struct SequenceData s_menu_cancel2_seqData;
+extern const struct SequenceData s_f_send_mes_seqData;
+extern const struct SequenceData s_f_lesson_c_seqData;
+extern const struct SequenceData s_f_lesson_b_seqData;
+extern const struct SequenceData s_f_lesson_a_seqData;
+extern const struct SequenceData s_f_lesson_s_seqData;
+
+
+// Text:
+extern const char D_0805a0bc[];
+extern const char D_0805a0ac[];
+extern const char D_0805a098[];
+extern const char D_0805a088[];
+extern const char D_0805a074[];
 
 
 // Engine Data:
@@ -259,8 +301,10 @@ extern const char D_0805a3a0[];
 
 
 // Engine Definition Data:
-extern const struct Animation *const D_089e172c[]; // Accuracy Meter Lights 1-7
-extern const struct Vector2 D_089e1748[]; // Accuracy Meter Light Positions
+extern const struct DrumTeacherExpression drum_teacher_expressions_anim[];
+extern const struct DrumKit *const drum_teacher_kits[]; // Drum Samurai's Kit?
+extern const struct Animation *const drum_lessons_accuracy_light_anim[]; // Accuracy Meter Lights 1-7
+extern const struct Vector2 drum_lessons_accuracy_light_positions[]; // Accuracy Meter Light Positions
 extern const struct DrumStudioMonitorData D_089e17a0[];
 extern const DrumPlayFunc D_089e2988[];
 extern const struct DrumKit *const drum_studio_kits[];
@@ -423,49 +467,49 @@ extern const struct GameEngine D_089e2ea0;
 // Functions - Drum Lessons:
 extern void drum_lessons_init_teacher_sprite(s16 sprite); // Init. Drum Samurai Sprite
 extern void drum_lessons_init_teacher(void); // Init. Drum Samurai
-// extern ? func_080271a8(?);
-// extern ? func_080271d4(?);
-// extern ? func_080271f0(?); // DRUM LESSON - Engine Event 0x12 (?)
-// extern ? func_08027304(?);
-// extern ? func_08027350(?);
-// extern ? func_0802739c(?);
-// extern ? func_080273e4(?);
-// extern ? func_0802742c(?);
-// extern ? func_08027474(?);
-// extern ? func_080274d0(?);
-// extern ? func_08027518(?);
-// extern ? func_08027560(?);
-// extern ? func_080275a8(?);
-// extern ? func_080275d0(?);
-// extern ? func_080275f8(?);
+extern void func_080271a8(u16 button); // Play Drum Kit (Drum Samurai)
+extern void func_080271d4(u32 drumKitID, u32 unused1, u16 button, u32 unused3); // Play Drum Kit (Drum Samurai)
+extern void drum_lessons_set_teacher_expression(u32 expression); // DRUM LESSON - Engine Event 0x12 (Set Drum Samurai Expression)
+extern void func_08027304(); // Teacher Drum Kit Event - D-Pad Down
+extern void func_08027350(); // Teacher Drum Kit Event - B Button
+extern void func_0802739c(); // Teacher Drum Kit Event - D-Pad Left
+extern void func_080273e4(); // Teacher Drum Kit Event - A Button
+extern void func_0802742c(); // Teacher Drum Kit Event - D-Pad Right
+extern void func_08027474(); // Teacher Drum Kit Event - D-Pad Up (Hi-Hat)
+extern void func_080274d0(); // Teacher Drum Kit Event - L Button
+extern void func_08027518(); // Teacher Drum Kit Event - R Button
+extern void func_08027560(); // Teacher Drum Kit Event - D-Pad Up (Snare Roll)
+extern void func_080275a8(void); // Teacher DrumPlayFunc 0x09 (?)
+extern void func_080275d0(void); // Teacher DrumPlayFunc 0x0A (?)
+extern void func_080275f8(void); // Teacher DrumPlayFunc 0x0F (?)
 // extern ? func_08027668(?);
-// extern ? func_08027728(?); // DRUM LESSON - Engine Event 0x07 (?)
-// extern ? func_08027744(?); // DRUM LESSON - Engine Event 0x08 (?)
-// extern ? func_08027760(?); // DRUM LESSON - Engine Event 0x09 (?)
-// extern ? func_0802777c(?); // DRUM LESSON - Engine Event 0x0A (?)
-// extern ? func_080277a0(?); // DRUM LESSON - Engine Event 0x0B (?)
-// extern ? func_080277b8(?); // DRUM LESSON - Engine Event 0x0C (?)
-// extern ? func_08027888(?); // DRUM LESSON - Engine Event 0x0E (?)
-// extern ? func_080278d0(?); // DRUM LESSON - Engine Event 0x0F (?)
+// extern ? func_08027728(u32); // DRUM LESSON - Engine Event 0x07 (?) [called once before and after each pattern loop]
+// extern ? func_08027744(u32); // DRUM LESSON - Engine Event 0x08 (?) [called at the start of any drum lesson]
+// extern ? func_08027760(u32); // DRUM LESSON - Engine Event 0x09 (?) [called at the start of any drum lesson]
+// extern ? func_0802777c(u32); // DRUM LESSON - Engine Event 0x0A (?) [called before pattern loop]
+// extern ? func_080277a0(void); // DRUM LESSON - Engine Event 0x0B (?) [called within pattern loop, at the start]
+// extern ? func_080277b8(void); // DRUM LESSON - Engine Event 0x0C (?) [called within pattern loop, at the end]
+// extern ? func_08027888(const void *); // DRUM LESSON - Engine Event 0x0E (Load Lesson Pattern Script/SFX)
+// extern ? func_080278d0(u32); // DRUM LESSON - Engine Event 0x0F (Get Lesson Pattern Script?)
 // extern ? func_080278e8(?);
 // extern ? func_08027948(?);
 extern void drum_lessons_init_lesson(void); // Init. Drum Lessons
-// extern ? func_08027ba0(?); // DRUM LESSON - Engine Event 0x0D (?)
-// extern ? func_08027bbc(?); // DRUM LESSON - Engine Event 0x10 (?)
-// extern ? func_08027bd8(?); // DRUM LESSON - Engine Event 0x15 (?)
-// extern ? func_08027c54(?); // DRUM LESSON - Engine Event 0x16 (?)
-// extern ? func_08027c90(?); // DRUM LESSON - Engine Event 0x17 (?)
+// extern ? func_08027ba0(const char *); // DRUM LESSON - Engine Event 0x0D (Display Lesson Dialogue)
+// extern ? func_08027bbc(u32); // DRUM LESSON - Engine Event 0x10 (?) [called before dialogue is displayed]
+// extern ? func_08027bd8(void); // DRUM LESSON - Engine Event 0x15 (?) [called for each dialogue with text advance prompt]
+// extern ? func_08027c54(void); // DRUM LESSON - Engine Event 0x16 (?) [called for each dialogue with text advance prompt]
+// extern ? func_08027c90(u32); // DRUM LESSON - Engine Event 0x17 (?) [called once before and after each pattern loop]
 // extern ? func_08027d08(?);
-// extern void func_08027dfc(void); // Update Drum Lessons
-// extern ? func_08027f1c(?);
-// extern ? func_08027f4c(?);
-// extern ? func_08027f70(?); // DRUM LESSON - Engine Event 0x11 (?)
-// extern ? func_08027f90(?);
+extern void drum_lessons_update_lesson(void); // Update Drum Lesson
+extern void func_08027f1c(void); // Decrement unk426
+extern void func_08027f4c(u32 arg); // Set unk424
+extern void func_08027f70(void); // DRUM LESSON - Engine Event 0x11 (?) [called at the end of each lesson pattern]
+extern void func_08027f90(void); // ?
 // extern ? func_08027fc8(?);
-// extern ? func_08028004(?); // DRUM LESSON - Engine Event 0x14 (?)
+// extern ? func_08028004(u32); // DRUM LESSON - Engine Event 0x14 (?) [called at the end of any drum lesson, after 0x12]
 // extern ? func_0802818c(?);
 // extern ? func_080281c4(?);
-// extern ? func_080281e8(?); // DRUM LESSON - Engine Event 0x18 (?)
+// extern ? func_080281e8(void); // DRUM LESSON - Engine Event 0x18 (?) []
 // extern ? func_080281fc(?); // DRUM LESSON - Engine Event 0x19 (?)
 extern void drum_studio_start_monitor2(const Palette *palette); // Change BG Monitor Palette
 extern void drum_studio_start_monitor1(void); // Start BG Monitor Display
@@ -482,9 +526,9 @@ extern void func_08028564(); // Studio Drum Kit Event - D-Pad Up (Hi-Hat)
 extern void func_080285d4(); // Studio Drum Kit Event - L Button
 extern void func_08028634(); // Studio Drum Kit Event - R Button
 extern void func_08028694(); // Studio Drum Kit Event - D-Pad Up (Snare Roll)
-// extern ? func_080286f4(?);
-// extern ? func_0802871c(?);
-// extern ? func_08028744(?);
+extern void func_080286f4(void); // Studio DrumPlayFunc 0x09 (?)
+extern void func_0802871c(void); // Studio DrumPlayFunc 0x0A (?)
+extern void func_08028744(void); // Studio DrumPlayFunc 0x0F (?)
 extern void drum_studio_init_kit(void); // Init. Drum Kit
 extern s32 drum_studio_get_total_kits(void); // Get Total Drum Kits (15)
 extern void drum_studio_init_gfx3(void); // Graphics Init. 3
@@ -492,26 +536,26 @@ extern void drum_studio_init_gfx2(void); // Graphics Init. 2
 extern void drum_studio_init_gfx1(void); // Graphics Init. 1
 extern void drum_studio_engine_start(u32 version); // DRUM LESSON - Game Engine Start
 extern void drum_studio_engine_event_stub(void); // DRUM LESSON - Engine Event 0x1A (STUB)
-extern void func_080290c4(void); // SELECT_BUTTON Pressed Event
-// extern ? func_08029178(?); // DRUM LESSON - Engine Event 0x02 (?)
+extern void drum_studio_select_button_exit(void); // SELECT_BUTTON Pressed Event
+// extern void func_08029178(u32); // DRUM LESSON - Engine Event 0x02 (Set unk3CE)
 // extern ? func_0802918c(?);
 // extern ? func_080291bc(?);
-// extern void func_08029204(void); // Update something
+extern void drum_studio_update_song_title(void); // Update Song Title
 // extern ? func_080292e0(?);
 const struct BeatScript *func_080293b0(void); // DRUM LESSON - Engine Event 0x00 (Init. Studio Script & Recording)
 extern s32 func_080295d4(void); // DRUM LESSON - Engine Event 0x01 (?)
 extern void drum_studio_align_drummer_sprites(struct StudioDrummer *drummer, const struct Vector2 *vecOfs); // Align Drummer Parts to Body
-// extern void func_0802972c(void); // Update something
+extern void func_0802972c(void); // Update something
 extern void drum_studio_update_monitor(void); // Update BG Monitor Display
-// extern void func_0802981c(void); // Update something (state == main drumming state)
+extern void drum_studio_update_inputs(void); // Update (Main Drumming State)
 extern s32 func_080298e0(void); // Check if Replay Cannot Be Saved?
 extern void func_0802992c(void); // DRUM LESSON - Engine Event 0x05 (Show Replay Save Options)
 // extern ? func_08029988(?);
-// extern void func_08029a1c(void); // Update something (state == saving replay)
+// extern void func_08029a1c(void); // Update (Save Replay Prompt State)
 // extern ? func_08029b8c(?); // DRUM LESSON - Engine Event 0x06 (?)
 extern void drum_studio_engine_update(void); // DRUM LESSON - Game Engine Update
 // extern ? func_08029cac(?);
-// extern ? func_08029cec(?); // DRUM LESSON - Engine Event 0x13 (?)
+// extern ? func_08029cec(u32); // DRUM LESSON - Engine Event 0x13 (?) [called at the end of each lesson pattern]
 extern void drum_studio_engine_stop(void); // DRUM LESSON - Game Engine Stop
 extern void drum_studio_cue_spawn(struct Cue *, struct DrumLessonsCue *, u32 drum); // DRUM LESSON - Cue - Spawn
 extern u32  drum_studio_cue_update(struct Cue *, struct DrumLessonsCue *, u32 runningTime, u32 duration); // DRUM LESSON - Cue - Update

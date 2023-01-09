@@ -94,7 +94,7 @@ branch_080280a2: \n\
 /* 080280ca */ LDR R1, =D_0805a0cc \n\
 /* 080280cc */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 080280ce */ BL func_080081a8 \n\
-/* 080280d2 */ LDR R0, =D_089e1778 \n\
+/* 080280d2 */ LDR R0, =drum_lessons_rank_text \n\
 /* 080280d4 */ LSLS R4, R7, 0x2 \n\
 /* 080280d6 */ ADDS R0, R4, R0 @ Set R0 to R4 + R0 \n\
 /* 080280d8 */ LDR R1, [R0] \n\
@@ -104,7 +104,7 @@ branch_080280a2: \n\
 /* 080280e2 */ BL func_08027ba0 \n\
 /* 080280e6 */ MOVS R0, 0x96 @ Set R0 to 0x96 \n\
 /* 080280e8 */ BL set_beatscript_tempo \n\
-/* 080280ec */ LDR R0, =D_089e178c \n\
+/* 080280ec */ LDR R0, =drum_lessons_rank_sfx \n\
 /* 080280ee */ ADDS R0, R4, R0 @ Set R0 to R4 + R0 \n\
 /* 080280f0 */ LDR R0, [R0] \n\
 /* 080280f2 */ BL scene_set_music \n\
@@ -124,7 +124,7 @@ branch_080280a2: \n\
 /* 08028112 */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\
 /* 08028114 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08028116 */ LDRSH R1, [R1, R2] \n\
-/* 08028118 */ LDR R2, =D_089e1764 \n\
+/* 08028118 */ LDR R2, =drum_lessons_rank_anim \n\
 /* 0802811a */ ADDS R4, R4, R2 @ Set R4 to R4 + R2 \n\
 /* 0802811c */ LDR R2, [R4] \n\
 /* 0802811e */ STR R3, [SP] \n\

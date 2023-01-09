@@ -149,7 +149,7 @@ u32 func_08001828(void) {
     return D_030053b4;
 }
 
-u8 func_0800184c(void) {
+u32 func_0800184c(void) {
     return D_030053b4 >= D_03005374;
 }
 

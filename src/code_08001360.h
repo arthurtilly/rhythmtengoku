@@ -33,7 +33,7 @@ extern void func_0800152c(u16);
 // extern ? func_08001724(?);
 extern void func_0800181c(u8);
 extern u32 func_08001828(void);
-extern u8 func_0800184c(void);
+extern u32 func_0800184c(void);
 extern void dma3_set(const void *source, void *destination, u32 bytesToSet, u16 unit, u32 bytesPerInterrupt); // DMA3 Set
 extern void dma3_fill(u32 value, void *destination, u32 bytesToFill, u16 unit, u32 bytesPerInterrupt); // DMA3 Fill
 extern void set_agb_random_var(u32); // Set Global Random Value

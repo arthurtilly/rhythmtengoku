@@ -321,7 +321,7 @@ void drum_lessons_init_teacher_sprite(s16 sprite) {
     func_0804d5d4(D_03005380, sprite, 152, 136);
     func_0804db44(D_03005380, sprite, &teacher->xController, &teacher->yController);
     func_0804d890(D_03005380, sprite, 640);
-    gDrumLessonsInfo->unk3C0 = 0;
+    gDrumLessonsInfo->teacherDrumKitID = 0;
 }
 
 
@@ -375,11 +375,52 @@ void drum_lessons_init_teacher(void) {
 }
 
 
-#include "asm/engines/drumming_lessons/asm_080271a8.s"
+// Play Drum Kit (Drum Samurai)
+void func_080271a8(u16 button) {
+    play_drumtech_kit_w_anim(drum_teacher_kits[gDrumLessonsInfo->teacherDrumKitID], button);
+}
 
-#include "asm/engines/drumming_lessons/asm_080271d4.s"
 
-#include "asm/engines/drumming_lessons/asm_080271f0.s"
+// Play Drum Kit (Drum Samurai)
+void func_080271d4(u32 drumKitID, u32 unused1, u16 button, u32 unused3) {
+    play_drumtech_kit_no_anim(drum_teacher_kits[drumKitID], button);
+}
+
+
+// Engine Event 12 (Set Drum Samurai Expression)
+void drum_lessons_set_teacher_expression(u32 expression) {
+    struct StudioDrummer *teacher = &gDrumLessonsInfo->teacher;
+    const struct Animation *headAnim;
+    const struct Animation *rightArmAnim;
+    const struct Animation *leftArmAnim;
+
+    if (!gDrumLessonsInfo->unk3C1) {
+        return;
+    }
+
+    headAnim = drum_teacher_expressions_anim[expression].head;
+    rightArmAnim = drum_teacher_expressions_anim[expression].rightArm;
+    leftArmAnim = drum_teacher_expressions_anim[expression].leftArm;
+
+    if (headAnim != NULL) {
+        func_0804d8f8(D_03005380, teacher->head, headAnim, 0, 1, 0x7f, 0);
+    } else {
+        func_0804d8f8(D_03005380, teacher->head, anim_drum_teacher_head, 0x7f, 1, 0x7f, 0);
+    }
+
+    if (rightArmAnim != NULL) {
+        func_0804d8f8(D_03005380, teacher->rightArm, rightArmAnim, 0, 1, 0x7f, 0);
+    } else {
+        func_0804d8f8(D_03005380, teacher->rightArm, anim_drum_teacher_use_snare_r, 0x7f, 1, 0x7f, 0);
+    }
+
+    if (leftArmAnim != NULL) {
+        func_0804d8f8(D_03005380, teacher->leftArm, leftArmAnim, 0, 1, 0x7f, 0);
+    } else {
+        func_0804d8f8(D_03005380, teacher->leftArm, anim_drum_teacher_use_snare_l, 0x7f, 1, 0x7f, 0);
+    }
+}
+
 
 #include "asm/engines/drumming_lessons/asm_08027304.s"
 
@@ -434,7 +475,7 @@ void drum_lessons_init_lesson(void) {
 
     gDrumLessonsInfo->unk426 = 64;
     gDrumLessonsInfo->unk41C = 0;
-    gDrumLessonsInfo->unk420 = 0x7800;
+    gDrumLessonsInfo->drumVolume = INT_TO_FIXED(120.0);
     gDrumLessonsInfo->unk427 = 0;
     gDrumLessonsInfo->unk42E = 0;
     gDrumLessonsInfo->unk424 = 0;
@@ -458,7 +499,7 @@ void drum_lessons_init_lesson(void) {
     gDrumLessonsInfo->unk564 = 0;
 
     for (i = 0; i < 7; i++) {
-        gDrumLessonsInfo->accuracyLightSprites[i] = func_0804d160(D_03005380, D_089e172c[i], 0x7f, D_089e1748[i].x, D_089e1748[i].y, 0x4f00, 1, 0x7f, 0x8002);
+        gDrumLessonsInfo->accuracyLightSprites[i] = func_0804d160(D_03005380, drum_lessons_accuracy_light_anim[i], 0x7f, drum_lessons_accuracy_light_positions[i].x, drum_lessons_accuracy_light_positions[i].y, 0x4f00, 1, 0x7f, 0x8002);
         func_0804d890(D_03005380, gDrumLessonsInfo->accuracyLightSprites[i], 640);
     }
 
@@ -479,15 +520,88 @@ void drum_lessons_init_lesson(void) {
 
 #include "asm/engines/drumming_lessons/asm_08027d08.s"
 
-#include "asm/engines/drumming_lessons/asm_08027dfc.s"
 
-#include "asm/engines/drumming_lessons/asm_08027f1c.s"
+// Update Drum Lesson
+void drum_lessons_update_lesson(void) {
+    u32 volume;
 
-#include "asm/engines/drumming_lessons/asm_08027f4c.s"
+    if (gDrumLessonsInfo->unk41C > 0) {
+        gDrumLessonsInfo->unk41C--;
+        gDrumLessonsInfo->drumVolume = INT_TO_FIXED(0.0);
+        scene_set_music_volume_env(INT_TO_FIXED(1.0));
+        if ((gDrumLessonsInfo->unk41C == 30) && !gDrumLessonsInfo->unk427) {
+            drum_lessons_set_teacher_expression(0);
+        }
+        if (gDrumLessonsInfo->unk45A > 0) {
+            if (--gDrumLessonsInfo->unk45A == 0) {
+                drum_lessons_set_teacher_expression(1);
+            }
+        }
+    } else {
+        gDrumLessonsInfo->drumVolume += INT_TO_FIXED(8.0);
+        if (gDrumLessonsInfo->drumVolume > INT_TO_FIXED(120.0)) {
+            gDrumLessonsInfo->drumVolume = INT_TO_FIXED(120.0);
+        }
+        volume = FIXED_TO_INT(gDrumLessonsInfo->drumVolume);
+        set_drumtech_volume(volume);
+        scene_set_music_volume_env(INT_TO_FIXED(1.0) - volume);
+    }
 
-#include "asm/engines/drumming_lessons/asm_08027f70.s"
+    if (gDrumLessonsInfo->unk427 && (gDrumLessonsInfo->unk426 < 64)) {
+        gDrumLessonsInfo->unk426++;
+    }
+    func_080278e8();
+    text_printer_update(gDrumLessonsInfo->lessonTextPrinter);
+    if (gDrumLessonsInfo->unk45C) {
+        if (D_03004afc & A_BUTTON) {
+            gDrumLessonsInfo->unk45C = 0;
+            play_sound((void *)0x08a9db84);
+            pause_beatscript_scene(FALSE);
+        }
+    }
+    func_08027d08();
+}
 
-#include "asm/engines/drumming_lessons/asm_08027f90.s"
+
+// Decrement unk426
+void func_08027f1c(void) {
+    if (!gDrumLessonsInfo->unk427) {
+        if (gDrumLessonsInfo->unk426 > 0) {
+            gDrumLessonsInfo->unk426--;
+        }
+    }
+}
+
+
+// Set unk424
+void func_08027f4c(u32 arg) {
+    if (!gDrumLessonsInfo->unk427) {
+        gDrumLessonsInfo->unk424 = arg;
+    }
+}
+
+
+// Engine Event 11 (?)
+void func_08027f70(void) {
+    gDrumLessonsInfo->unk427 = FALSE;
+    func_08027f4c(0);
+}
+
+
+// ?
+void func_08027f90(void) {
+    if (gDrumLessonsInfo->version != 4) {
+        return;
+    }
+
+    if (!gDrumLessonsInfo->unk427) {
+        if (gDrumLessonsInfo->unk424 > 1) {
+            drum_lessons_set_teacher_expression(3);
+        }
+        func_08027f4c(0);
+    }
+}
+
 
 #include "asm/engines/drumming_lessons/asm_08027fc8.s"
 
@@ -592,33 +706,33 @@ void drum_studio_event_stop_monitor(void) {
 
 // Init. Drum Kit
 void drum_studio_init_kit(void) {
-    struct StudioDrummer *student = &gDrumLessonsInfo->student;
+    struct StudioDrummer *player = &gDrumLessonsInfo->player;
     const struct DrumKit *drumKit;
     DrumPlayFunc playFunc;
     u32 drummingButtons;
 
-    func_0804d770(D_03005380, student->snareDrum, TRUE);
-    func_0804d770(D_03005380, student->bassDrum, TRUE);
-    func_0804d770(D_03005380, student->tomDrum, TRUE);
-    func_0804d770(D_03005380, student->hiHat, TRUE);
-    func_0804d770(D_03005380, student->leftPedal, TRUE);
-    func_0804d770(D_03005380, student->rightPedal, TRUE);
-    func_0804d770(D_03005380, student->crashCymbal, TRUE);
-    func_0804d770(D_03005380, student->splashCymbal, TRUE);
-    func_0804dae0(D_03005380, student->hiHat, 0, 0, 0);
-    func_0804cebc(D_03005380, student->hiHat, 2);
-    func_0804d770(D_03005380, student->pedalHiHat, FALSE);
-    func_0804dae0(D_03005380, student->pedalHiHat, 1, 0x7f, 0);
-    func_0804d8f8(D_03005380, student->rightLeg, anim_drum_student_use_pedal_r, 0x7f, 1, 0x7f, 0);
-    set_drumtech_hihat_gfx(student->hiHat);
-    set_drumtech_pedal_hihat_gfx(student->pedalHiHat, student->rightLeg, anim_drum_student_use_pedal_r, anim_drum_student_use_pedal_hihat);
+    func_0804d770(D_03005380, player->snareDrum, TRUE);
+    func_0804d770(D_03005380, player->bassDrum, TRUE);
+    func_0804d770(D_03005380, player->tomDrum, TRUE);
+    func_0804d770(D_03005380, player->hiHat, TRUE);
+    func_0804d770(D_03005380, player->leftPedal, TRUE);
+    func_0804d770(D_03005380, player->rightPedal, TRUE);
+    func_0804d770(D_03005380, player->crashCymbal, TRUE);
+    func_0804d770(D_03005380, player->splashCymbal, TRUE);
+    func_0804dae0(D_03005380, player->hiHat, 0, 0, 0);
+    func_0804cebc(D_03005380, player->hiHat, 2);
+    func_0804d770(D_03005380, player->pedalHiHat, FALSE);
+    func_0804dae0(D_03005380, player->pedalHiHat, 1, 0x7f, 0);
+    func_0804d8f8(D_03005380, player->rightLeg, anim_drum_student_use_pedal_r, 0x7f, 1, 0x7f, 0);
+    set_drumtech_hihat_gfx(player->hiHat);
+    set_drumtech_pedal_hihat_gfx(player->pedalHiHat, player->rightLeg, anim_drum_student_use_pedal_r, anim_drum_student_use_pedal_hihat);
 
-    playFunc = D_089e2988[gDrumLessonsInfo->studioKitID];
+    playFunc = D_089e2988[gDrumLessonsInfo->playerDrumKitID];
     if (playFunc != NULL) {
         CALL_DRUM_PLAY_FUNC(playFunc);
     }
 
-    drumKit = drum_studio_kits[gDrumLessonsInfo->studioKitID];
+    drumKit = drum_studio_kits[gDrumLessonsInfo->playerDrumKitID];
     drummingButtons = 0;
 
     if (drumKit->aButton != NULL) {
@@ -693,7 +807,7 @@ void drum_studio_init_gfx1(void) {
 
 // Game Engine Start
 void drum_studio_engine_start(u32 version) {
-    struct StudioDrummer *student = &gDrumLessonsInfo->student;
+    struct StudioDrummer *player = &gDrumLessonsInfo->player;
     s32 var;
 
     gDrumLessonsInfo->version = version;
@@ -703,32 +817,32 @@ void drum_studio_engine_start(u32 version) {
     scene_set_bg_layer_display(BG_LAYER_2, FALSE, 0, 0, 2, 30, BG_PRIORITY_LOW);
     scene_set_bg_layer_display(BG_LAYER_3, FALSE, 0, 0, 2, 31, BG_PRIORITY_LOWEST);
 
-    student->snareDrum = func_0804d160(D_03005380, anim_drum_student_kit_snare, 0, 120, 100, 0x480c, 1, 0x7f, 0);
-    student->bassDrum = func_0804d160(D_03005380, anim_drum_student_kit_bass, 0, 120, 100, 0x480f, 1, 0x7f, 0);
-    student->tomDrum = func_0804d160(D_03005380, anim_drum_student_kit_tom, 0, 120, 100, 0x4814, 1, 0x7f, 0);
-    student->hiHat = func_0804d160(D_03005380, anim_drum_student_kit_hihat, 0, 120, 100, 0x4819, 1, 0x7f, 0);
-    student->pedalHiHat = func_0804d160(D_03005380, anim_drum_student_kit_pedal_hihat, 0, 120, 100, 0x4808, 1, 0x7f, 0x8000);
-    student->rightPedal = func_0804d160(D_03005380, anim_drum_student_kit_pedal_r, 0, 123, 97, 0x480a, 1, 0x7f, 0);
-    student->leftPedal = func_0804d160(D_03005380, anim_drum_student_kit_pedal_l, 0, 119, 96, 0x480b, 1, 0x7f, 0);
-    student->splashCymbal = func_0804d160(D_03005380, anim_drum_student_kit_splash, 0, 120, 100, 0x481e, 1, 0x7f, 0);
-    student->crashCymbal = func_0804d160(D_03005380, anim_drum_student_kit_crash, 0, 120, 100, 0x47ec, 1, 0x7f, 0);
-    student->head = func_0804d160(D_03005380, anim_drum_student_head, 0, 120, 100, 0x47f4, 1, 0x7f, 0);
-    student->body = func_0804d160(D_03005380, anim_drum_student_body, 0, 120, 100, 0x47ec, 1, 0x7f, 0);
-    student->rightLeg = func_0804d160(D_03005380, anim_drum_student_use_pedal_r, 0, 120, 100, 0x47ee, 1, 0x7f, 0);
-    student->leftLeg = func_0804d160(D_03005380, anim_drum_student_use_pedal_l, 0, 120, 100, 0x47fb, 1, 0x7f, 0);
-    student->leftArm = func_0804d160(D_03005380, anim_drum_student_use_snare_l, 0, 102, 90, 0x47f6, 1, 0x7f, 0);
-    student->rightArm = func_0804d160(D_03005380, anim_drum_student_use_snare_r, 0, 120, 100, 0x47e2, 1, 0x7f, 0);
-    student->seat = func_0804d160(D_03005380, anim_drum_student_kit_seat, 0, 120, 100, 0x47f0, 1, 0x7f, 0);
-    student->coffeeSteam = func_0804d160(D_03005380, anim_drum_student_coffee_steam, 0, 99, 82, 0x47eb, 1, 0, 0x8000);
-    student->xController = 56;
-    student->yController = -8;
-    func_0804e188(D_03005380, get_current_mem_id(), &student->xController, &student->yController);
-    student->headPosX = 120;
-    student->headPosY = 100;
-    student->leftArmPosX = 102;
-    student->leftArmPosY = 90;
-    student->rightArmPosX = 120;
-    student->rightArmPosY = 100;
+    player->snareDrum = func_0804d160(D_03005380, anim_drum_student_kit_snare, 0, 120, 100, 0x480c, 1, 0x7f, 0);
+    player->bassDrum = func_0804d160(D_03005380, anim_drum_student_kit_bass, 0, 120, 100, 0x480f, 1, 0x7f, 0);
+    player->tomDrum = func_0804d160(D_03005380, anim_drum_student_kit_tom, 0, 120, 100, 0x4814, 1, 0x7f, 0);
+    player->hiHat = func_0804d160(D_03005380, anim_drum_student_kit_hihat, 0, 120, 100, 0x4819, 1, 0x7f, 0);
+    player->pedalHiHat = func_0804d160(D_03005380, anim_drum_student_kit_pedal_hihat, 0, 120, 100, 0x4808, 1, 0x7f, 0x8000);
+    player->rightPedal = func_0804d160(D_03005380, anim_drum_student_kit_pedal_r, 0, 123, 97, 0x480a, 1, 0x7f, 0);
+    player->leftPedal = func_0804d160(D_03005380, anim_drum_student_kit_pedal_l, 0, 119, 96, 0x480b, 1, 0x7f, 0);
+    player->splashCymbal = func_0804d160(D_03005380, anim_drum_student_kit_splash, 0, 120, 100, 0x481e, 1, 0x7f, 0);
+    player->crashCymbal = func_0804d160(D_03005380, anim_drum_student_kit_crash, 0, 120, 100, 0x47ec, 1, 0x7f, 0);
+    player->head = func_0804d160(D_03005380, anim_drum_student_head, 0, 120, 100, 0x47f4, 1, 0x7f, 0);
+    player->body = func_0804d160(D_03005380, anim_drum_student_body, 0, 120, 100, 0x47ec, 1, 0x7f, 0);
+    player->rightLeg = func_0804d160(D_03005380, anim_drum_student_use_pedal_r, 0, 120, 100, 0x47ee, 1, 0x7f, 0);
+    player->leftLeg = func_0804d160(D_03005380, anim_drum_student_use_pedal_l, 0, 120, 100, 0x47fb, 1, 0x7f, 0);
+    player->leftArm = func_0804d160(D_03005380, anim_drum_student_use_snare_l, 0, 102, 90, 0x47f6, 1, 0x7f, 0);
+    player->rightArm = func_0804d160(D_03005380, anim_drum_student_use_snare_r, 0, 120, 100, 0x47e2, 1, 0x7f, 0);
+    player->seat = func_0804d160(D_03005380, anim_drum_student_kit_seat, 0, 120, 100, 0x47f0, 1, 0x7f, 0);
+    player->coffeeSteam = func_0804d160(D_03005380, anim_drum_student_coffee_steam, 0, 99, 82, 0x47eb, 1, 0, 0x8000);
+    player->xController = 56;
+    player->yController = -8;
+    func_0804e188(D_03005380, get_current_mem_id(), &player->xController, &player->yController);
+    player->headPosX = 120;
+    player->headPosY = 100;
+    player->leftArmPosX = 102;
+    player->leftArmPosY = 90;
+    player->rightArmPosX = 120;
+    player->rightArmPosY = 100;
 
     gDrumLessonsInfo->songTitlePrinter = text_printer_create_new(get_current_mem_id(), 1, 144, 32);
     text_printer_set_x_y(gDrumLessonsInfo->songTitlePrinter, 96, 9);
@@ -772,13 +886,13 @@ void drum_studio_engine_start(u32 version) {
         }
     }
 
-    gDrumLessonsInfo->studioKitID = 0;
+    gDrumLessonsInfo->playerDrumKitID = 0;
     switch (version) {
         case ENGINE_VER_DRUM_STUDIO_PLAY:
-            gDrumLessonsInfo->studioKitID = func_080087d4(func_0801c504(), 0, drum_studio_get_total_kits());
+            gDrumLessonsInfo->playerDrumKitID = func_080087d4(func_0801c504(), 0, drum_studio_get_total_kits());
             break;
         case ENGINE_VER_DRUM_STUDIO_LISTEN:
-            gDrumLessonsInfo->studioKitID = D_030046a8->data.drumReplayData[gDrumLessonsInfo->replayID].drumKitID;
+            gDrumLessonsInfo->playerDrumKitID = D_030046a8->data.drumReplayData[gDrumLessonsInfo->replayID].drumKitID;
             break;
     }
 
@@ -825,7 +939,7 @@ void drum_studio_engine_event_stub(void) {
 
 
 // Exit (SELECT_BUTTON Was Pressed)
-void func_080290c4(void) {
+void drum_studio_select_button_exit(void) {
     u32 unk3CD = gDrumLessonsInfo->unk3CD;
 
     play_sound(&s_menu_cancel2_seqData);
@@ -854,7 +968,28 @@ void func_080290c4(void) {
 
 #include "asm/engines/drumming_lessons/asm_080291bc.s"
 
-#include "asm/engines/drumming_lessons/asm_08029204.s"
+
+// Update Song Title
+void drum_studio_update_song_title(void) {
+    if (gDrumLessonsInfo->unk402 > 0) {
+        if (--gDrumLessonsInfo->unk402 == 0) {
+            gDrumLessonsInfo->unk3FC = INT_TO_FIXED(1.0);
+            gDrumLessonsInfo->unk3FE = -144;
+            gDrumLessonsInfo->unk400 = 0;
+            text_printer_set_string(gDrumLessonsInfo->songTitlePrinter, gDrumLessonsInfo->songTitleText);
+            func_0804cebc(D_03005380, gDrumLessonsInfo->songTitleBgSprite, gDrumLessonsInfo->unk408);
+        }
+    }
+
+    if (gDrumLessonsInfo->unk3FC != 0) {
+        gDrumLessonsInfo->unk3FC = ((gDrumLessonsInfo->unk3FC << 4) - gDrumLessonsInfo->unk3FC) >> 4;
+        gDrumLessonsInfo->songTitlePosX = FIXED_TO_INT((INT_TO_FIXED(1.0) - gDrumLessonsInfo->unk3FC) * (gDrumLessonsInfo->unk400 - gDrumLessonsInfo->unk3FE));
+        gDrumLessonsInfo->songTitlePosX += gDrumLessonsInfo->unk3FE;
+    }
+
+    text_printer_update(gDrumLessonsInfo->songTitlePrinter);
+}
+
 
 #include "asm/engines/drumming_lessons/asm_080292e0.s"
 
@@ -890,7 +1025,7 @@ const struct BeatScript *func_080293b0(void) {
             if (replayData->unk3 & 1) {
                 r7 = 3;
             } else {
-                gDrumLessonsInfo->studioKitID = 0;
+                gDrumLessonsInfo->playerDrumKitID = 0;
                 drum_studio_init_kit();
             }
             func_0802918c(D_089d81b4[replayData->songID].fullTitle, replayData->unk3 & 1);
@@ -917,13 +1052,13 @@ const struct BeatScript *func_080293b0(void) {
                 func_0804d770(D_03005380, gDrumLessonsInfo->memoryWarningSprite, TRUE);
             }
             drumKitID = func_0801c504();
-            gDrumLessonsInfo->studioKitID = func_080087d4(drumKitID, 0, drum_studio_get_total_kits());
+            gDrumLessonsInfo->playerDrumKitID = func_080087d4(drumKitID, 0, drum_studio_get_total_kits());
             break;
         case 3:
             func_0801c960(2);
             r3 = func_08011a90(&D_030046a8->data.saveDataAllocator, replayData->saveID, gDrumLessonsInfo->unk3C4);
             func_08001724(3, 0x3ff, gDrumLessonsInfo->unk3C4, r3 / 2);
-            gDrumLessonsInfo->studioKitID = replayData->drumKitID;
+            gDrumLessonsInfo->playerDrumKitID = replayData->drumKitID;
             drum_studio_init_kit();
             break;
     }
@@ -978,7 +1113,22 @@ void drum_studio_align_drummer_sprites(struct StudioDrummer *drummer, const stru
 }
 
 
-#include "asm/engines/drumming_lessons/asm_0802972c.s"
+// Update something
+void func_0802972c(void) {
+    if (gDrumLessonsInfo->unk3CD == 2) {
+        if (func_0800184c()) {
+            func_0804d770(D_03005380, gDrumLessonsInfo->memoryWarningSprite, TRUE);
+        }
+    }
+
+    if (gDrumLessonsInfo->unk3CD == 3) {
+        if (gDrumLessonsInfo->replayData->songID == 0) {
+            if (func_0800184c()) {
+                gDrumLessonsInfo->unk418 = 1;
+            }
+        }
+    }
+}
 
 
 // Update BG Monitor Display
@@ -994,7 +1144,40 @@ void drum_studio_update_monitor(void) {
 }
 
 
-#include "asm/engines/drumming_lessons/asm_0802981c.s"
+// Update (Main Drumming State)
+void drum_studio_update_inputs(void) {
+    const struct DrumKit *drumKit = drum_studio_kits[gDrumLessonsInfo->playerDrumKitID];
+    u16 r4, pressed, released;
+
+    switch (gDrumLessonsInfo->unk3CD) {
+        case 0:
+            r4 = D_03004ac0;
+            pressed = 0;
+            released = 0;
+            break;
+        case 1:
+            r4 = D_03004ac0;
+            pressed = D_03004afc;
+            released = D_03004b00;
+            break;
+        case 2:
+            r4 = D_03004ac0;
+            pressed = D_03004afc;
+            released = D_03004b00;
+            break;
+        case 3:
+            r4 = D_030046b8;
+            pressed = D_03005378;
+            released = D_030046b4;
+            break;
+    }
+
+    r4 &= gDrumLessonsInfo->drummingButtons;
+    pressed &= gDrumLessonsInfo->drummingButtons;
+    released &= gDrumLessonsInfo->drummingButtons;
+    play_drumtech_kit_w_anim(drumKit, pressed);
+    update_drumtech_hihat(drumKit, r4, pressed, released);
+}
 
 
 // Check if Replay Cannot Be Saved?
@@ -1033,7 +1216,7 @@ void func_0802992c(void) {
 // Game Engine Update
 void drum_studio_engine_update(void) {
     if (gDrumLessonsInfo->version == ENGINE_VER_DRUM_LESSONS) {
-        func_08027dfc();
+        drum_lessons_update_lesson();
         if ((gDrumLessonsInfo->state == DRUM_STUDIO_STATE_DRUMMING) && (gDrumLessonsInfo->unk3CD == 1)) {
             if (D_03004afc & gDrumLessonsInfo->drummingButtons) {
                 set_drumtech_volume(INT_TO_FIXED(1.0));
@@ -1047,7 +1230,7 @@ void drum_studio_engine_update(void) {
 
     switch (gDrumLessonsInfo->state) {
         case DRUM_STUDIO_STATE_DRUMMING:
-            func_0802981c();
+            drum_studio_update_inputs();
             break;
         case DRUM_STUDIO_STATE_SAVING_REPLAY:
             func_08029a1c();
@@ -1055,15 +1238,15 @@ void drum_studio_engine_update(void) {
     }
 
     update_drumtech();
-    drum_studio_align_drummer_sprites(&gDrumLessonsInfo->student, D_089e2b58);
+    drum_studio_align_drummer_sprites(&gDrumLessonsInfo->player, D_089e2b58);
     if (gDrumLessonsInfo->unk3C1) {
         drum_studio_align_drummer_sprites(&gDrumLessonsInfo->teacher, D_089e2b78);
     }
     func_0802972c();
     drum_studio_update_monitor();
-    func_08029204();
+    drum_studio_update_song_title();
     if (gDrumLessonsInfo->unk3CE && (D_03004afc & SELECT_BUTTON)) {
-        func_080290c4();
+        drum_studio_select_button_exit();
     }
     gDrumLessonsInfo->unk57C++;
 }
@@ -1092,7 +1275,7 @@ u32 drum_studio_cue_update(struct Cue *cue, struct DrumLessonsCue *info, u32 run
             if (gDrumLessonsInfo->unk3C1) {
                 func_080271a8(D_089e2ba8[info->drum]);
             } else {
-                func_080271d4(gDrumLessonsInfo->unk3C0, 0, D_089e2ba8[info->drum], 0);
+                func_080271d4(gDrumLessonsInfo->teacherDrumKitID, 0, D_089e2ba8[info->drum], 0);
             }
         }
         info->bit0 = TRUE;
