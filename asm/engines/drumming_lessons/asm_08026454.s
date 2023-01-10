@@ -8,7 +8,7 @@ thumb_func_start func_08026454 \n\
 /* 08026458 */ BL func_0804d160 \n\
 /* 0802645c */ STRH R0, [R7] \n\
 /* 0802645e */ MOVS R0, 0x1C @ Set R0 to 0x1C \n\
-/* 08026460 */ BL func_08025228 \n\
+/* 08026460 */ BL drum_live_get_anim \n\
 /* 08026464 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08026466 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 08026468 */ LDR R0, [R3] \n\
@@ -25,7 +25,7 @@ thumb_func_start func_08026454 \n\
 /* 0802647e */ BL func_0804d160 \n\
 /* 08026482 */ STRH R0, [R7, 0x2] \n\
 /* 08026484 */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\
-/* 08026486 */ BL func_08025228 \n\
+/* 08026486 */ BL drum_live_get_anim \n\
 /* 0802648a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0802648c */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 0802648e */ LDR R0, [R3] \n\
@@ -42,7 +42,7 @@ thumb_func_start func_08026454 \n\
 /* 080264a4 */ BL func_0804d160 \n\
 /* 080264a8 */ STRH R0, [R7, 0x8] \n\
 /* 080264aa */ MOVS R0, 0x1E @ Set R0 to 0x1E \n\
-/* 080264ac */ BL func_08025228 \n\
+/* 080264ac */ BL drum_live_get_anim \n\
 /* 080264b0 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080264b2 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 080264b4 */ LDR R0, [R3] \n\
@@ -58,7 +58,7 @@ thumb_func_start func_08026454 \n\
 /* 080264c8 */ BL func_0804d160 \n\
 /* 080264cc */ STRH R0, [R7, 0x4] \n\
 /* 080264ce */ MOVS R0, 0x1F @ Set R0 to 0x1F \n\
-/* 080264d0 */ BL func_08025228 \n\
+/* 080264d0 */ BL drum_live_get_anim \n\
 /* 080264d4 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080264d6 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 080264d8 */ LDR R0, [R2] \n\
@@ -94,7 +94,7 @@ thumb_func_start func_08026454 \n\
 /* 0802651e */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
 /* 08026520 */ BL func_08025fbc \n\
 /* 08026524 */ MOVS R0, 0x28 @ Set R0 to 0x28 \n\
-/* 08026526 */ BL func_08025228 \n\
+/* 08026526 */ BL drum_live_get_anim \n\
 /* 0802652a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0802652c */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0802652e */ LDR R0, [R2] \n\
@@ -133,7 +133,7 @@ thumb_func_start func_08026454 \n\
 /* 08026576 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08026578 */ STRB R1, [R0] \n\
 /* 0802657a */ MOVS R0, 0x26 @ Set R0 to 0x26 \n\
-/* 0802657c */ BL func_08025228 \n\
+/* 0802657c */ BL drum_live_get_anim \n\
 /* 08026580 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08026582 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08026584 */ LDR R0, [R2] \n\
@@ -159,7 +159,7 @@ thumb_func_start func_08026454 \n\
 /* 080265ae */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 080265b0 */ STRH R0, [R1] \n\
 /* 080265b2 */ MOVS R0, 0x27 @ Set R0 to 0x27 \n\
-/* 080265b4 */ BL func_08025228 \n\
+/* 080265b4 */ BL drum_live_get_anim \n\
 /* 080265b8 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080265ba */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 080265bc */ LDR R0, [R2] \n\

@@ -63,10 +63,10 @@ jtbl_080266b4: \n\
 .word jump_0802686c \n\
 \n\
 jump_080266c8: \n\
-/* 080266c8 */ LDR R0, =D_089e0ad4 \n\
+/* 080266c8 */ LDR R0, =drum_live_guitarist_anim_map_head \n\
 /* 080266ca */ ADDS R0, R6, R0 @ Set R0 to R6 + R0 \n\
 /* 080266cc */ LDRB R0, [R0] \n\
-/* 080266ce */ BL func_08025228 \n\
+/* 080266ce */ BL drum_live_get_anim \n\
 /* 080266d2 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080266d4 */ LDR R4, =D_03005380 \n\
 /* 080266d6 */ LDR R0, [R4] \n\
@@ -82,10 +82,10 @@ jump_080266c8: \n\
 /* 080266ea */ STR R5, [SP, 0x8] \n\
 /* 080266ec */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080266ee */ BL func_0804d8f8 \n\
-/* 080266f2 */ LDR R0, =D_089e0ad6 \n\
+/* 080266f2 */ LDR R0, =drum_live_guitarist_anim_map_body \n\
 /* 080266f4 */ ADDS R0, R6, R0 @ Set R0 to R6 + R0 \n\
 /* 080266f6 */ LDRB R0, [R0] \n\
-/* 080266f8 */ BL func_08025228 \n\
+/* 080266f8 */ BL drum_live_get_anim \n\
 /* 080266fc */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080266fe */ LDR R0, [R4] \n\
 /* 08026700 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
@@ -97,10 +97,10 @@ jump_080266c8: \n\
 /* 0802670c */ STR R5, [SP, 0x8] \n\
 /* 0802670e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08026710 */ BL func_0804d8f8 \n\
-/* 08026714 */ LDR R0, =D_089e0ad8 \n\
+/* 08026714 */ LDR R0, =drum_live_guitarist_anim_map_legs \n\
 /* 08026716 */ ADDS R0, R6, R0 @ Set R0 to R6 + R0 \n\
 /* 08026718 */ LDRB R0, [R0] \n\
-/* 0802671a */ BL func_08025228 \n\
+/* 0802671a */ BL drum_live_get_anim \n\
 /* 0802671e */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08026720 */ LDR R0, [R4] \n\
 /* 08026722 */ MOVS R3, 0x8 @ Set R3 to 0x8 \n\
@@ -112,10 +112,10 @@ jump_080266c8: \n\
 /* 0802672e */ STR R5, [SP, 0x8] \n\
 /* 08026730 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08026732 */ BL func_0804d8f8 \n\
-/* 08026736 */ LDR R0, =D_089e0ada \n\
+/* 08026736 */ LDR R0, =drum_live_guitarist_anim_map_arm_l \n\
 /* 08026738 */ ADDS R0, R6, R0 @ Set R0 to R6 + R0 \n\
 /* 0802673a */ LDRB R0, [R0] \n\
-/* 0802673c */ BL func_08025228 \n\
+/* 0802673c */ BL drum_live_get_anim \n\
 /* 08026740 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08026742 */ LDR R0, [R4] \n\
 /* 08026744 */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
@@ -127,10 +127,10 @@ jump_080266c8: \n\
 /* 08026750 */ STR R5, [SP, 0x8] \n\
 /* 08026752 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08026754 */ BL func_0804d8f8 \n\
-/* 08026758 */ LDR R0, =D_089e0adc \n\
+/* 08026758 */ LDR R0, =drum_live_guitarist_anim_map_arm_r \n\
 /* 0802675a */ ADDS R0, R6, R0 @ Set R0 to R6 + R0 \n\
 /* 0802675c */ LDRB R0, [R0] \n\
-/* 0802675e */ BL func_08025228 \n\
+/* 0802675e */ BL drum_live_get_anim \n\
 /* 08026762 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08026764 */ LDR R0, [R4] \n\
 /* 08026766 */ MOVS R3, 0x6 @ Set R3 to 0x6 \n\
@@ -167,18 +167,18 @@ jump_080266c8: \n\
 .ltorg \n\
 \n\
 jump_080267c4: \n\
-/* 080267c4 */ LDR R0, =D_089e0ade \n\
+/* 080267c4 */ LDR R0, =drum_live_guitarist_anim_map_crouch \n\
 /* 080267c6 */ B branch_080267ce \n\
 \n\
 .ltorg \n\
 \n\
 jump_080267cc: \n\
-/* 080267cc */ LDR R0, =D_089e0ae0 \n\
+/* 080267cc */ LDR R0, =drum_live_guitarist_anim_map_jump_strum \n\
  \n\
 branch_080267ce: \n\
 /* 080267ce */ ADDS R0, R6, R0 @ Set R0 to R6 + R0 \n\
 /* 080267d0 */ LDRB R0, [R0] \n\
-/* 080267d2 */ BL func_08025228 \n\
+/* 080267d2 */ BL drum_live_get_anim \n\
 /* 080267d6 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080267d8 */ LDR R0, =D_03005380 \n\
 /* 080267da */ LDR R0, [R0] \n\
@@ -196,10 +196,10 @@ branch_080267ce: \n\
 .ltorg \n\
 \n\
 jump_080267fc: \n\
-/* 080267fc */ LDR R0, =D_089e0ae2 \n\
+/* 080267fc */ LDR R0, =drum_live_guitarist_anim_map_jump \n\
 /* 080267fe */ ADDS R0, R6, R0 @ Set R0 to R6 + R0 \n\
 /* 08026800 */ LDRB R0, [R0] \n\
-/* 08026802 */ BL func_08025228 \n\
+/* 08026802 */ BL drum_live_get_anim \n\
 /* 08026806 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08026808 */ LDR R4, =D_03005380 \n\
 /* 0802680a */ LDR R0, [R4] \n\
@@ -245,10 +245,10 @@ jump_080267fc: \n\
 .ltorg \n\
 \n\
 jump_0802686c: \n\
-/* 0802686c */ LDR R0, =D_089e0ade \n\
+/* 0802686c */ LDR R0, =drum_live_guitarist_anim_map_crouch \n\
 /* 0802686e */ ADDS R0, R6, R0 @ Set R0 to R6 + R0 \n\
 /* 08026870 */ LDRB R0, [R0] \n\
-/* 08026872 */ BL func_08025228 \n\
+/* 08026872 */ BL drum_live_get_anim \n\
 /* 08026876 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08026878 */ LDR R4, =D_03005380 \n\
 /* 0802687a */ LDR R0, [R4] \n\

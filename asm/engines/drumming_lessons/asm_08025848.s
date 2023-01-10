@@ -17,7 +17,7 @@ thumb_func_start func_08025848 \n\
 /* 0802585e */ LDR R2, =D_089e06c0 \n\
 /* 08025860 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 08025862 */ LDRB R5, [R0] \n\
-/* 08025864 */ LDR R2, =D_089e0698 \n\
+/* 08025864 */ LDR R2, =drum_live_obj_palettes \n\
 /* 08025866 */ LDRB R0, [R1] \n\
 /* 08025868 */ LSLS R0, R0, 0x2 \n\
 /* 0802586a */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
@@ -29,7 +29,7 @@ thumb_func_start func_08025848 \n\
 /* 08025876 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08025878 */ ADDS R3, R5, 0x0 @ Set R3 to R5 + 0x0 \n\
 /* 0802587a */ BL func_080257b8 \n\
-/* 0802587e */ LDR R2, =D_089e06a4 \n\
+/* 0802587e */ LDR R2, =drum_live_bg_palettes \n\
 /* 08025880 */ LDR R1, [R4] \n\
 /* 08025882 */ LDRB R0, [R1] \n\
 /* 08025884 */ LSLS R0, R0, 0x2 \n\

@@ -11,7 +11,7 @@ thumb_func_start func_08025d9c \n\
 /* 08025da6 */ LSLS R0, R0, 0x2 \n\
 /* 08025da8 */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 08025daa */ MOVS R0, 0x9 @ Set R0 to 0x9 \n\
-/* 08025dac */ BL func_08025228 \n\
+/* 08025dac */ BL drum_live_get_anim \n\
 /* 08025db0 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08025db2 */ LDR R5, =D_03005380 \n\
 /* 08025db4 */ LDR R0, [R5] \n\

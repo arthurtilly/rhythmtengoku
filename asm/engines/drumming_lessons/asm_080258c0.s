@@ -43,7 +43,7 @@ thumb_func_start func_080258c0 \n\
 .ltorg \n\
  \n\
 branch_08025924: \n\
-/* 08025924 */ LDR R1, =D_089e0698 \n\
+/* 08025924 */ LDR R1, =drum_live_obj_palettes \n\
 /* 08025926 */ LDRB R0, [R2] \n\
 /* 08025928 */ LSLS R0, R0, 0x2 \n\
 /* 0802592a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
@@ -54,7 +54,7 @@ branch_08025924: \n\
 /* 08025934 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08025936 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 08025938 */ BL dma3_set \n\
-/* 0802593c */ LDR R2, =D_089e06a4 \n\
+/* 0802593c */ LDR R2, =drum_live_bg_palettes \n\
 /* 0802593e */ LDR R1, [R4] \n\
 /* 08025940 */ LDRB R0, [R1] \n\
 /* 08025942 */ LSLS R0, R0, 0x2 \n\

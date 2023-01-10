@@ -21,6 +21,51 @@ enum DrumLiveVersionsEnum {
     ENGINE_VER_DRUM_SAMURAI_BAND_LIVE
 };
 
+enum DrumLiveAnimationsEnum {
+    LIVE_ANIM_DRUMMER_HEAD,
+    LIVE_ANIM_DRUMMER_BODY,
+    LIVE_ANIM_DRUMMER_HEAD_TURN_L,
+    LIVE_ANIM_DRUMMER_HEAD_TURN_R,
+    LIVE_ANIM_DRUMMER_USE_SPLASH,
+    LIVE_ANIM_DRUMMER_USE_SNARE_L,
+    LIVE_ANIM_DRUMMER_USE_CRASH,
+    LIVE_ANIM_DRUMMER_USE_SNARE_R,
+    LIVE_ANIM_DRUMMER_USE_HIHAT,
+    LIVE_ANIM_DRUMMER_USE_TOM,
+    LIVE_ANIM_DRUM_KIT_SPLASH,
+    LIVE_ANIM_DRUM_KIT_CRASH,
+    LIVE_ANIM_DRUM_KIT_BASS_L,
+    LIVE_ANIM_DRUM_KIT_BASS_R,
+    LIVE_ANIM_DRUM_KIT_SNARE,
+    LIVE_ANIM_DRUM_KIT_HIHAT,
+    LIVE_ANIM_DRUM_KIT_TOM,
+    LIVE_ANIM_BASSIST_HEAD,
+    LIVE_ANIM_BASSIST_BODY,
+    LIVE_ANIM_BASSIST_LEGS,
+    LIVE_ANIM_BASSIST_ARM_L,
+    LIVE_ANIM_BASSIST_ARM_R,
+    LIVE_ANIM_BASSIST_CROUCH,
+    LIVE_ANIM_BASSIST_JUMP,
+    LIVE_ANIM_BASSIST_HEAD_TURN_L,
+    LIVE_ANIM_BASSIST_HEAD_TURN_R,
+    LIVE_ANIM_BASSIST_JUMP_STRUM,
+    LIVE_ANIM_GUITARIST_HEAD,
+    LIVE_ANIM_GUITARIST_BODY,
+    LIVE_ANIM_GUITARIST_LEGS,
+    LIVE_ANIM_GUITARIST_ARM_L,
+    LIVE_ANIM_GUITARIST_ARM_R,
+    LIVE_ANIM_GUITARIST_CROUCH,
+    LIVE_ANIM_GUITARIST_JUMP,
+    LIVE_ANIM_GUITARIST_JUMP_STRUM,
+    LIVE_ANIM_GUITARIST_HEAD_TURN_R,
+    LIVE_ANIM_GUITARIST_HEAD_TURN_L,
+    LIVE_ANIM_REC_MODE_ICON,
+    LIVE_ANIM_ADJUST_MODE_ICON,
+    LIVE_ANIM_BUSY_ICON,
+    LIVE_ANIM_MICROPHONE,
+    LIVE_ANIM_LIGHT_FLASH
+};
+
 
 // Sprite Animations:
 
@@ -35,70 +80,89 @@ enum DrumLiveVersionsEnum {
 
 
 // Engine Definition Data:
+extern const struct Animation *const *const drum_live_anim_table[];
+extern const Palette *const drum_live_obj_palettes[];
+extern const Palette *const drum_live_bg_palettes[];
+extern const u16 D_089e06b0[];
+extern const u8 D_089e06c0[];
+extern const u16 *const D_089e0758[];
+extern const struct DrumKit *const drum_live_kits[];
+extern const struct CompressedGraphics *const drum_live_buffered_textures[];
+extern const struct GraphicsTable *const drum_live_gfx_tables[];
+extern const struct Vector2 D_089e0ab0[];
+extern const u8 drum_live_guitarist_anim_map_head[];
+extern const u8 drum_live_guitarist_anim_map_body[];
+extern const u8 drum_live_guitarist_anim_map_legs[];
+extern const u8 drum_live_guitarist_anim_map_arm_l[];
+extern const u8 drum_live_guitarist_anim_map_arm_r[];
+extern const u8 drum_live_guitarist_anim_map_crouch[];
+extern const u8 drum_live_guitarist_anim_map_jump_strum[];
+extern const u8 drum_live_guitarist_anim_map_jump[];
+extern const u8 drum_live_kit_map[];
 
 
 // Functions:
-// extern ? func_08025228(?); // Get Animation
+extern const struct Animation *drum_live_get_anim(u32 anim); // Get Animation
 // extern ? func_08025248(?);
 // extern ? func_08025460(?);
 // extern ? func_08025538(?);
 // extern ? func_0802555c(?);
 // extern ? func_080255f8(?);
-// extern ? func_08025748(?); // DRUM LIVE - Engine Event 0x05 (?)
+extern void func_08025748(); // DRUM LIVE - Engine Event 0x05 (?)
 // extern ? func_0802575c(?);
 // extern ? func_080257b8(?);
 // extern ? func_08025848(?);
 // extern ? func_080258c0(?);
-// extern ? func_08025a2c(?); // DRUM LIVE - Engine Event 0x06 (?)
-// extern ? func_08025a58(?); // DRUM LIVE - Engine Event 0x07 (?)
+extern void func_08025a2c(); // DRUM LIVE - Engine Event 0x06 (?)
+extern void func_08025a58(); // DRUM LIVE - Engine Event 0x07 (?)
 // extern ? func_08025a64(?);
-// extern ? func_08025a98(?); // DRUM LIVE - Engine Event 0x02 (?)
+extern void func_08025a98(); // DRUM LIVE - Engine Event 0x02 (?)
 // extern ? func_08025aa4(?);
 // extern ? func_08025abc(?);
-// extern ? func_08025ad4(?); // DRUM LIVE - Engine Event 0x03 (?)
-// extern ? func_08025ae8(?); // DRUM LIVE - Engine Event 0x04 (?)
+extern void func_08025ad4(); // DRUM LIVE - Engine Event 0x03 (?)
+extern void func_08025ae8(); // DRUM LIVE - Engine Event 0x04 (?)
 // extern ? func_08025afc(?);
 // extern ? func_08025b88(?);
-// extern ? func_08025bcc(?); // DRUM LIVE - Engine Event 0x09 (?)
+extern void func_08025bcc(); // DRUM LIVE - Engine Event 0x09 (?)
 // extern ? func_08025be0(?);
 // extern ? func_08025bec(?);
-// extern ? func_08025c48(?);
-// extern ? func_08025c4c(?);
-// extern ? func_08025c8c(?);
+extern void func_08025c48(); // Drum LIVE Kit Event - D-Pad Up (Drum Roll)
+extern void func_08025c4c(); // Drum LIVE Kit Event - D-Pad Down
+extern void func_08025c8c(); // Drum LIVE Kit Event - B Button
 // extern ? func_08025ccc(?);
-// extern ? func_08025cd0(?);
-// extern ? func_08025d34(?);
-// extern ? func_08025d98(?);
-// extern ? func_08025d9c(?);
-// extern ? func_08025e00(?);
-// extern ? func_08025e74(?);
-// extern ? func_08025ed8(?);
+extern void func_08025cd0(); // Drum LIVE Kit Event - D-Pad Left
+extern void func_08025d34(); // Drum LIVE Kit Event - A Button
+extern void func_08025d98(); // Drum LIVE Kit Event - ?
+extern void func_08025d9c(); // Drum LIVE Kit Event - D-Pad Right
+extern void func_08025e00(); // Drum LIVE Kit Event - D-Pad Up (Hi-Hat)
+extern void func_08025e74(); // Drum LIVE Kit Event - L Button
+extern void func_08025ed8(); // Drum LIVE Kit Event - R Button
 // extern ? func_08025f3c(?);
 // extern ? func_08025f50(?);
 // extern ? func_08025f90(?);
 // extern ? func_08025fbc(?);
-// extern ? func_08026024(?); // DRUM LIVE - Game Engine Init.
-// extern ? func_0802663c(?); // DRUM LIVE - Engine Event 0x0A (?)
+extern void drum_live_engine_start(u32 version); // DRUM LIVE - Game Engine Start
+extern void drum_live_engine_event_stub(void); // DRUM LIVE - Engine Event 0x0A (STUB)
 // extern ? func_08026640(?);
-// extern ? func_080268cc(?); // DRUM LIVE - Engine Event 0x00 (?)
+extern void func_080268cc(); // DRUM LIVE - Engine Event 0x00 (?)
 // extern ? func_08026930(?);
-// extern ? func_08026968(?); // DRUM LIVE - Engine Event 0x01 (?)
-// extern ? func_080269e8(?); // DRUM LIVE - Engine Event 0x08 (?)
+extern void func_08026968(); // DRUM LIVE - Engine Event 0x01 (?)
+extern void func_080269e8(); // DRUM LIVE - Engine Event 0x08 (?)
 // extern ? func_08026a0c(?);
 // extern ? func_08026a50(?);
-// extern ? func_08026aac(?); // DRUM LIVE - Game Engine Update
+extern void drum_live_engine_update(void); // DRUM LIVE - Game Engine Update
 // extern ? func_08026b0c(?);
 // extern ? func_08026b18(?);
-// extern ? func_08026b24(?); // DRUM LIVE - Game Engine Stop
+extern void drum_live_engine_stop(void); // DRUM LIVE - Game Engine Stop
 // extern ? func_08026b3c(?);
-// extern ? func_08026bc8(?); // DRUM LIVE - Cue Spawn
-// extern ? func_08026c1c(?); // DRUM LIVE - Cue Update
-// extern ? func_08026c38(?); // DRUM LIVE - Cue Despawn
+extern void drum_live_cue_spawn(struct Cue *, struct DrumLiveCue *, u32 param); // DRUM LIVE - Cue Spawn
+extern u32  drum_live_cue_update(struct Cue *, struct DrumLiveCue *, u32 runningTime, u32 duration); // DRUM LIVE - Cue Update
+extern void drum_live_cue_despawn(struct Cue *, struct DrumLiveCue *); // DRUM LIVE - Cue Despawn
 // extern ? func_08026c3c(?);
-// extern ? func_08026c84(?); // DRUM LIVE - Cue Hit
-// extern ? func_08026cc4(?); // DRUM LIVE - Cue Barely
-// extern ? func_08026d04(?); // DRUM LIVE - Cue Miss
-// extern ? func_08026d28(?); // DRUM LIVE - Input Event
-// extern ? func_08026d68(?); // DRUM LIVE - Common Event 0 (Beat Animation)
-// extern ? func_08026de8(?); // DRUM LIVE - Common Event 1 (Display Text)
-// extern ? func_08026dec(?); // DRUM LIVE - Common Event 2 (Set Tutorial Skip Destination)
+extern void drum_live_cue_hit(struct Cue *, struct DrumLiveCue *, u32 pressed, u32 released); // DRUM LIVE - Cue Hit
+extern void drum_live_cue_barely(struct Cue *, struct DrumLiveCue *, u32 pressed, u32 released); // DRUM LIVE - Cue Barely
+extern void drum_live_cue_miss(struct Cue *, struct DrumLiveCue *); // DRUM LIVE - Cue Miss
+extern void drum_live_input_event(u32 pressed, u32 released); // DRUM LIVE - Input Event
+extern void drum_live_common_beat_animation(void); // DRUM LIVE - Common Event 0 (Beat Animation)
+extern void drum_live_common_display_text(void); // DRUM LIVE - Common Event 1 (Display Text, Unimplemented)
+extern void drum_live_common_init_tutorial(const struct Scene *); // DRUM LIVE - Common Event 2 (Init. Tutorial)

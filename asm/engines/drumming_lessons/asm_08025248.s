@@ -15,7 +15,7 @@ thumb_func_start func_08025248 \n\
 /* 0802525a */ STRB R2, [R1] \n\
 /* 0802525c */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0802525e */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
-/* 08025260 */ LDR R3, =D_089e0698 \n\
+/* 08025260 */ LDR R3, =drum_live_obj_palettes \n\
 /* 08025262 */ MOV R8, R3 @ Set R8 to R3 \n\
 /* 08025264 */ ADDS R3, R7, 0x0 @ Set R3 to R7 + 0x0 \n\
 /* 08025266 */ LDR R2, =0x000013fb \n\
@@ -51,7 +51,7 @@ branch_0802526a: \n\
 /* 0802529e */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080252a0 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 080252a2 */ BL dma3_set \n\
-/* 080252a6 */ LDR R5, =D_089e06a4 \n\
+/* 080252a6 */ LDR R5, =drum_live_bg_palettes \n\
 /* 080252a8 */ LDR R1, [R7] \n\
 /* 080252aa */ LDRB R0, [R1] \n\
 /* 080252ac */ LSLS R0, R0, 0x2 \n\
@@ -142,7 +142,7 @@ branch_0802526a: \n\
  \n\
 branch_08025364: \n\
 /* 08025364 */ MOVS R0, 0x29 @ Set R0 to 0x29 \n\
-/* 08025366 */ BL func_08025228 \n\
+/* 08025366 */ BL drum_live_get_anim \n\
 /* 0802536a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0802536c */ LDR R0, [R7] \n\
 /* 0802536e */ ASRS R3, R5, 0x10 \n\

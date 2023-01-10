@@ -2,8 +2,8 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08025228 \n\
-/* 08025228 */ LDR R1, =D_089e05f0 \n\
+thumb_func_start drum_live_get_anim \n\
+/* 08025228 */ LDR R1, =drum_live_anim_table \n\
 /* 0802522a */ LSLS R0, R0, 0x2 \n\
 /* 0802522c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0802522e */ LDR R1, =D_030055d0 \n\

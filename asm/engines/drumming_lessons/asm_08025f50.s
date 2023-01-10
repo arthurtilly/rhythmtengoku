@@ -9,7 +9,7 @@ thumb_func_start func_08025f50 \n\
 /* 08025f58 */ BL get_current_mem_id \n\
 /* 08025f5c */ LSLS R0, R0, 0x10 \n\
 /* 08025f5e */ LSRS R0, R0, 0x10 \n\
-/* 08025f60 */ LDR R2, =D_089e0aa4 \n\
+/* 08025f60 */ LDR R2, =drum_live_gfx_tables \n\
 /* 08025f62 */ LDR R1, =D_030055d0 \n\
 /* 08025f64 */ LDR R1, [R1] \n\
 /* 08025f66 */ LDRB R1, [R1] \n\

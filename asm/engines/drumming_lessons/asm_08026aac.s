@@ -2,15 +2,15 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08026aac \n\
+thumb_func_start drum_live_engine_update \n\
 /* 08026aac */ PUSH {R4, R5, LR} \n\
 /* 08026aae */ LDR R4, =D_030055d0 \n\
 /* 08026ab0 */ LDR R0, [R4] \n\
 /* 08026ab2 */ LDR R5, =0x000013a8 \n\
 /* 08026ab4 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 08026ab6 */ BL func_08003b34 \n\
-/* 08026aba */ LDR R2, =D_089e0978 \n\
-/* 08026abc */ LDR R1, =D_089e0ae4 \n\
+/* 08026aba */ LDR R2, =drum_live_kits \n\
+/* 08026abc */ LDR R1, =drum_live_kit_map \n\
 /* 08026abe */ LDR R0, [R4] \n\
 /* 08026ac0 */ LDRB R0, [R0] \n\
 /* 08026ac2 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
