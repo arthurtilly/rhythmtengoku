@@ -17,7 +17,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023a2e */ LDR R0, =D_03005380 \n\
 /* 08023a30 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08023a32 */ LDR R0, [R0] \n\
-/* 08023a34 */ LDR R1, =D_08914978 \n\
+/* 08023a34 */ LDR R1, =anim_drum_tanuki_beat \n\
 /* 08023a36 */ MOVS R2, 0x8C @ Set R2 to 0x8C \n\
 /* 08023a38 */ MOV R9, R2 @ Set R9 to R2 \n\
 /* 08023a3a */ STR R2, [SP] \n\
@@ -39,7 +39,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023a5c */ BL func_080239ec \n\
 /* 08023a60 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08023a62 */ LDR R0, [R1] \n\
-/* 08023a64 */ LDR R1, =D_08914870 \n\
+/* 08023a64 */ LDR R1, =anim_drum_tanuki_use_tom_l \n\
 /* 08023a66 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08023a68 */ STR R2, [SP] \n\
 /* 08023a6a */ LDR R2, =0x00004bf6 \n\
@@ -57,7 +57,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023a84 */ BL func_080239ec \n\
 /* 08023a88 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08023a8a */ LDR R0, [R1] \n\
-/* 08023a8c */ LDR R1, =D_08914818 \n\
+/* 08023a8c */ LDR R1, =anim_drum_tanuki_use_tom_r \n\
 /* 08023a8e */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08023a90 */ STR R2, [SP] \n\
 /* 08023a92 */ MOV R2, R10 @ Set R2 to R10 \n\
@@ -74,7 +74,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023aaa */ BL func_080239ec \n\
 /* 08023aae */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08023ab0 */ LDR R0, [R1] \n\
-/* 08023ab2 */ LDR R1, =D_08914a58 \n\
+/* 08023ab2 */ LDR R1, =anim_drum_tanuki_kit_tom2 \n\
 /* 08023ab4 */ MOVS R2, 0x96 @ Set R2 to 0x96 \n\
 /* 08023ab6 */ STR R2, [SP] \n\
 /* 08023ab8 */ LDR R2, =0x00004bec \n\
@@ -96,7 +96,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023adc */ ADDS R7, R0, R2 @ Set R7 to R0 + R2 \n\
 /* 08023ade */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08023ae0 */ LDR R0, [R1] \n\
-/* 08023ae2 */ LDR R1, =D_08914998 \n\
+/* 08023ae2 */ LDR R1, =anim_drum_monkey_beat \n\
 /* 08023ae4 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08023ae6 */ STR R2, [SP] \n\
 /* 08023ae8 */ MOVS R2, 0x98 @ Set R2 to 0x98 \n\
@@ -114,7 +114,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023b02 */ BL func_080239ec \n\
 /* 08023b06 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08023b08 */ LDR R0, [R1] \n\
-/* 08023b0a */ LDR R1, =D_08914920 \n\
+/* 08023b0a */ LDR R1, =anim_drum_monkey_use_snare_l \n\
 /* 08023b0c */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08023b0e */ STR R2, [SP] \n\
 /* 08023b10 */ MOV R2, R10 @ Set R2 to R10 \n\
@@ -131,7 +131,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023b28 */ BL func_080239ec \n\
 /* 08023b2c */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08023b2e */ LDR R0, [R1] \n\
-/* 08023b30 */ LDR R1, =D_089148c8 \n\
+/* 08023b30 */ LDR R1, =anim_drum_monkey_use_snare_r \n\
 /* 08023b32 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08023b34 */ STR R2, [SP] \n\
 /* 08023b36 */ MOV R2, R10 @ Set R2 to R10 \n\
@@ -148,7 +148,7 @@ thumb_func_start func_08023a18 \n\
 /* 08023b4e */ BL func_080239ec \n\
 /* 08023b52 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08023b54 */ LDR R0, [R1] \n\
-/* 08023b56 */ LDR R1, =D_089149f8 \n\
+/* 08023b56 */ LDR R1, =anim_drum_monkey_kit_snare1 \n\
 /* 08023b58 */ MOVS R2, 0x96 @ Set R2 to 0x96 \n\
 /* 08023b5a */ STR R2, [SP] \n\
 /* 08023b5c */ LDR R2, =0x00004bec \n\

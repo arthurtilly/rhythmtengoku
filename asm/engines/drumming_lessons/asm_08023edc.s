@@ -17,7 +17,7 @@ thumb_func_start func_08023edc \n\
 /* 08023ef4 */ LDR R3, =0x088c3d84 \n\
 /* 08023ef6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08023ef8 */ BEQ branch_08023efc \n\
-/* 08023efa */ LDR R3, =D_088c2a48 \n\
+/* 08023efa */ LDR R3, =anim_drum_player_use_snare_r \n\
  \n\
 branch_08023efc: \n\
 /* 08023efc */ LDR R6, =D_03005380 \n\

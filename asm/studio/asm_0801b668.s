@@ -20,12 +20,12 @@ branch_0801b676: \n\
 /* 0801b682 */ MOVS R2, 0xE3 @ Set R2 to 0xE3 \n\
 /* 0801b684 */ LSLS R2, R2, 0x2 \n\
 /* 0801b686 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
-/* 0801b688 */ LDR R0, =D_08059330 \n\
+/* 0801b688 */ LDR R0, =text_studio_kit_default \n\
 /* 0801b68a */ LDRB R0, [R0] \n\
 /* 0801b68c */ STRB R0, [R1] \n\
 /* 0801b68e */ LDR R0, [R5] \n\
 /* 0801b690 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
-/* 0801b692 */ LDR R1, =D_08059334 \n\
+/* 0801b692 */ LDR R1, =text_studio_kit_formatting \n\
 /* 0801b694 */ BL func_080081a8 \n\
 /* 0801b698 */ LDR R0, =D_030046a8 \n\
 /* 0801b69a */ LDR R0, [R0] \n\
@@ -52,7 +52,7 @@ branch_0801b6d4: \n\
 /* 0801b6d6 */ MOVS R1, 0xE3 @ Set R1 to 0xE3 \n\
 /* 0801b6d8 */ LSLS R1, R1, 0x2 \n\
 /* 0801b6da */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
-/* 0801b6dc */ LDR R1, =D_08059338 \n\
+/* 0801b6dc */ LDR R1, =text_studio_kit_not_unlocked \n\
 /* 0801b6de */ BL func_080081a8 \n\
  \n\
 branch_0801b6e2: \n\

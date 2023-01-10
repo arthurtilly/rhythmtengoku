@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088c1bd4] <description>
+// [D_088c1bd4] Drum Girls LIVE OBJ Palette
 const Palette drum_girls_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x48E8F8),
@@ -113,7 +113,7 @@ const Palette drum_girls_obj_pal[] = {
     }
 };
 
-// [D_088c1c94] <description>
+// [D_088c1c94] Drum Girls LIVE BG Palette
 const Palette drum_girls_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x48E8F8),

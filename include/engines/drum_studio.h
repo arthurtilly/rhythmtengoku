@@ -1,27 +1,11 @@
 #pragma once
 
 #include "global.h"
-#include "scenes/studio.h"
 #include "engines.h"
 #include "engines/night_walk.h"
+#include "scenes/studio.h"
 
 // Engine Types:
-struct DrumIntroInfo {
-    /* add fields here */
-};
-
-struct DrumIntroCue {
-    /* add fields here */
-};
-
-struct DrumLiveInfo {
-    /* add fields here */
-};
-
-struct DrumLiveCue {
-    /* add fields here */
-};
-
 struct StudioDrummer {
     s16 snareDrum;
     s16 bassDrum;
@@ -114,7 +98,7 @@ struct DrumLessonsInfo {
     u16 unk45A;
     u8 unk45C;
     s16 lessonRankSprite; // 0x45E
-    u8 padding460[0x100];
+    char lessonResultText[0x100]; // 0x460
     s16 slowIconSprite; // 0x560
     u8 unk562;
     u8 unk563;
@@ -160,19 +144,6 @@ struct DrumTeacherExpression {
 
 
 // Engine Macros/Enums:
-enum DrumIntroVersionsEnum {
-    ENGINE_VER_DRUM_INTRO_TEACHER,
-    ENGINE_VER_DRUM_INTRO_PLAYER,
-    ENGINE_VER_DRUM_INTRO_TANUKI_MONKEY,
-    ENGINE_VER_DRUM_INTRO_CUTSCENE
-};
-
-enum DrumLiveVersionsEnum {
-    ENGINE_VER_DRUM_GIRLS_LIVE,
-    ENGINE_VER_DRUM_BOYS_LIVE,
-    ENGINE_VER_DRUM_SAMURAI_BAND_LIVE
-};
-
 enum DrumLessonsVersionsEnum {
     ENGINE_VER_DRUM_STUDIO_0,
     ENGINE_VER_DRUM_STUDIO_PLAY,
@@ -267,27 +238,7 @@ extern const struct SequenceData s_f_lesson_a_seqData;
 extern const struct SequenceData s_f_lesson_s_seqData;
 
 
-// Text:
-extern const char D_0805a0bc[];
-extern const char D_0805a0ac[];
-extern const char D_0805a098[];
-extern const char D_0805a088[];
-extern const char D_0805a074[];
-
-
 // Engine Data:
-extern const char D_08059f94[];
-extern const char D_08059f98[];
-extern const char D_08059f9c[];
-extern const char D_08059fb4[];
-extern const char D_08059fd0[];
-extern const char D_08059fe8[];
-extern const char D_0805a004[];
-extern const char D_0805a020[];
-extern const char D_0805a038[];
-extern const char D_0805a048[];
-extern const char D_0805a058[];
-extern const char D_0805a06c[];
 extern const char D_0805a074[];
 extern const char D_0805a088[];
 extern const char D_0805a098[];
@@ -302,9 +253,13 @@ extern const char D_0805a3a0[];
 
 // Engine Definition Data:
 extern const struct DrumTeacherExpression drum_teacher_expressions_anim[];
+extern const DrumPlayFunc D_089e16b0[];
 extern const struct DrumKit *const drum_teacher_kits[]; // Drum Samurai's Kit?
 extern const struct Animation *const drum_lessons_accuracy_light_anim[]; // Accuracy Meter Lights 1-7
 extern const struct Vector2 drum_lessons_accuracy_light_positions[]; // Accuracy Meter Light Positions
+extern const struct Animation *const drum_lessons_rank_anim[];
+extern const char *const drum_lessons_rank_text[];
+extern const struct SequenceData *const drum_lessons_rank_sfx[];
 extern const struct DrumStudioMonitorData D_089e17a0[];
 extern const DrumPlayFunc D_089e2988[];
 extern const struct DrumKit *const drum_studio_kits[];
@@ -319,150 +274,6 @@ extern const struct SpritePlaybackData D_089e2b98[];
 extern const u16 D_089e2ba8[];
 extern const struct GameEngine D_089e2ea0;
 
-
-// Functions - Intro Drumming Scenes:
-// extern ? func_080239a0(?); // DRUM INTRO - Engine Event 0x08 (?)
-// extern ? func_080239bc(?); // DRUM INTRO - Engine Event 0x09 (?)
-// extern ? func_080239ec(?);
-// extern ? func_08023a18(?);
-// extern ? func_08023bb8(?); // DRUM INTRO - Engine Event 0x0B (?)
-// extern ? func_08023bcc(?); // DRUM INTRO - Engine Event 0x0C (?)
-// extern ? func_08023bf4(?); // DRUM INTRO - Engine Event 0x0D (?)
-// extern ? func_08023c0c(?); // DRUM INTRO - Engine Event 0x0E (?)
-// extern ? func_08023c44(?); // DRUM INTRO - Engine Event 0x0F (?)
-// extern ? func_08023c58(?); // DRUM INTRO - Engine Event 0x0A (?)
-// extern ? func_08023c6c(?); // DRUM INTRO - Cue Spawn (5)
-// extern ? func_08023d44(?); // DRUM INTRO - Cue Update (5)
-// extern ? func_08023d60(?); // DRUM INTRO - Cue Despawn (5)
-// extern ? func_08023d64(?); // DRUM INTRO - Cue Hit (5)
-// extern ? func_08023d68(?); // DRUM INTRO - Cue Barely (5)
-// extern ? func_08023d6c(?); // DRUM INTRO - Cue Miss (5)
-// extern ? func_08023d78(?);
-// extern ? func_08023da0(?);
-// extern ? func_08023da4(?);
-// extern ? func_08023df8(?);
-// extern ? func_08023e4c(?);
-// extern ? func_08023e50(?);
-// extern ? func_08023edc(?);
-// extern ? func_08023f68(?);
-// extern ? func_08023f6c(?);
-// extern ? func_08023ffc(?);
-// extern ? func_080240a4(?);
-// extern ? func_08024134(?);
-// extern ? func_080241c0(?);
-// extern ? func_0802424c(?);
-// extern ? func_0802428c(?);
-// extern ? func_080242cc(?);
-// extern ? func_080242f8(?); // DRUM INTRO - Game Engine Init.
-// extern ? func_08024978(?); // DRUM INTRO - Engine Event 0x10 (STUB)
-// extern ? func_0802497c(?); // DRUM INTRO - Engine Event 0x00 (?)
-// extern ? func_080249c0(?); // DRUM INTRO - Engine Event 0x01 (?)
-// extern ? func_080249f0(?);
-// extern ? func_08024a4c(?); // DRUM INTRO - Engine Event 0x02 (?)
-// extern ? func_08024ae4(?); // DRUM INTRO - Engine Event 0x03 (?)
-// extern ? func_08024ba0(?); // DRUM INTRO - Engine Event 0x04 (?)
-// extern ? func_08024bd0(?);
-// extern ? func_08024be8(?); // DRUM INTRO - Engine Event 0x07 (?)
-// extern ? func_08024bfc(?);
-// extern ? func_08024c2c(?);
-// extern ? func_08024cb0(?); // DRUM INTRO - Game Engine Update
-// extern ? func_08024d44(?); // DRUM INTRO - Game Engine Stop
-// extern ? func_08024d48(?); // DRUM INTRO - Cue Spawn (0-4)
-// extern ? func_08024d4c(?); // DRUM INTRO - Cue Update (0-4)
-// extern ? func_08024d68(?); // DRUM INTRO - Cue Despawn (0-4)
-// extern ? func_08024d6c(?); // DRUM INTRO - Cue Hit (0-4)
-// extern ? func_08024da4(?); // DRUM INTRO - Cue Barely (0-4)
-// extern ? func_08024ddc(?); // DRUM INTRO - Cue Miss (0-4)
-// extern ? func_08024e0c(?); // DRUM INTRO - Input Event
-// extern ? func_08024e48(?); // DRUM INTRO - Common Event 0 (Beat Animation)
-// extern ? func_08024ecc(?); // DRUM INTRO - Common Event 1 (Display Text)
-// extern ? func_08024ed0(?);
-// extern ? func_08024ef4(?); // DRUM INTRO - Engine Event 0x05 (?)
-// extern ? func_08024f64(?); // DRUM INTRO - Engine Event 0x06 (?)
-// extern ? func_08024fb4(?);
-// extern ? func_08024fbc(?);
-// extern ? func_08024fc4(?);
-// extern ? func_08024ff4(?);
-// extern ? func_08025020(?);
-// extern ? func_08025038(?);
-// extern ? func_080251d0(?);
-// extern ? func_080251d8(?);
-// extern ? func_080251e8(?);
-// extern ? func_080251ec(?);
-// extern ? func_080251f0(?);
-// extern ? func_080251fc(?);
-// extern ? func_08025204(?);
-// extern ? func_0802520c(?);
-// extern ? func_08025214(?);
-// extern ? func_08025218(?);
-// extern ? func_0802521c(?);
-// extern ? func_08025220(?);
-
-// Functions - LIVE:
-// extern ? func_08025228(?);
-// extern ? func_08025248(?);
-// extern ? func_08025460(?);
-// extern ? func_08025538(?);
-// extern ? func_0802555c(?);
-// extern ? func_080255f8(?);
-// extern ? func_08025748(?); // DRUM LIVE - Engine Event 0x05 (?)
-// extern ? func_0802575c(?);
-// extern ? func_080257b8(?);
-// extern ? func_08025848(?);
-// extern ? func_080258c0(?);
-// extern ? func_08025a2c(?); // DRUM LIVE - Engine Event 0x06 (?)
-// extern ? func_08025a58(?); // DRUM LIVE - Engine Event 0x07 (?)
-// extern ? func_08025a64(?);
-// extern ? func_08025a98(?); // DRUM LIVE - Engine Event 0x02 (?)
-// extern ? func_08025aa4(?);
-// extern ? func_08025abc(?);
-// extern ? func_08025ad4(?); // DRUM LIVE - Engine Event 0x03 (?)
-// extern ? func_08025ae8(?); // DRUM LIVE - Engine Event 0x04 (?)
-// extern ? func_08025afc(?);
-// extern ? func_08025b88(?);
-// extern ? func_08025bcc(?); // DRUM LIVE - Engine Event 0x09 (?)
-// extern ? func_08025be0(?);
-// extern ? func_08025bec(?);
-// extern ? func_08025c48(?);
-// extern ? func_08025c4c(?);
-// extern ? func_08025c8c(?);
-// extern ? func_08025ccc(?);
-// extern ? func_08025cd0(?);
-// extern ? func_08025d34(?);
-// extern ? func_08025d98(?);
-// extern ? func_08025d9c(?);
-// extern ? func_08025e00(?);
-// extern ? func_08025e74(?);
-// extern ? func_08025ed8(?);
-// extern ? func_08025f3c(?);
-// extern ? func_08025f50(?);
-// extern ? func_08025f90(?);
-// extern ? func_08025fbc(?);
-// extern ? func_08026024(?); // DRUM LIVE - Game Engine Init.
-// extern ? func_0802663c(?); // DRUM LIVE - Engine Event 0x0A (?)
-// extern ? func_08026640(?);
-// extern ? func_080268cc(?); // DRUM LIVE - Engine Event 0x00 (?)
-// extern ? func_08026930(?);
-// extern ? func_08026968(?); // DRUM LIVE - Engine Event 0x01 (?)
-// extern ? func_080269e8(?); // DRUM LIVE - Engine Event 0x08 (?)
-// extern ? func_08026a0c(?);
-// extern ? func_08026a50(?);
-// extern ? func_08026aac(?); // DRUM LIVE - Game Engine Update
-// extern ? func_08026b0c(?);
-// extern ? func_08026b18(?);
-// extern ? func_08026b24(?); // DRUM LIVE - Game Engine Stop
-// extern ? func_08026b3c(?);
-// extern ? func_08026bc8(?); // DRUM LIVE - Cue Spawn
-// extern ? func_08026c1c(?); // DRUM LIVE - Cue Update
-// extern ? func_08026c38(?); // DRUM LIVE - Cue Despawn
-// extern ? func_08026c3c(?);
-// extern ? func_08026c84(?); // DRUM LIVE - Cue Hit
-// extern ? func_08026cc4(?); // DRUM LIVE - Cue Barely
-// extern ? func_08026d04(?); // DRUM LIVE - Cue Miss
-// extern ? func_08026d28(?); // DRUM LIVE - Input Event
-// extern ? func_08026d68(?); // DRUM LIVE - Common Event 0 (Beat Animation)
-// extern ? func_08026de8(?); // DRUM LIVE - Common Event 1 (Display Text)
-// extern ? func_08026dec(?); // DRUM LIVE - Common Event 2 (Set Tutorial Skip Destination)
 
 // Functions - Drum Lessons:
 extern void drum_lessons_init_teacher_sprite(s16 sprite); // Init. Drum Samurai Sprite
@@ -506,7 +317,7 @@ extern void func_08027f4c(u32 arg); // Set unk424
 extern void func_08027f70(void); // DRUM LESSON - Engine Event 0x11 (?) [called at the end of each lesson pattern]
 extern void func_08027f90(void); // ?
 // extern ? func_08027fc8(?);
-// extern ? func_08028004(u32); // DRUM LESSON - Engine Event 0x14 (?) [called at the end of any drum lesson, after 0x12]
+extern void func_08028004(void); // DRUM LESSON - Engine Event 0x14 (Calculate & Display Rank)
 // extern ? func_0802818c(?);
 // extern ? func_080281c4(?);
 // extern ? func_080281e8(void); // DRUM LESSON - Engine Event 0x18 (?) []

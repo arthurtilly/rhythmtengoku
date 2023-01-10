@@ -1,4 +1,4 @@
-#include "engines/drumming_lessons.h"
+#include "engines/drum_studio.h"
 #include "beatscript_notation.h"
 
 
@@ -623,7 +623,6 @@ extern void func_08027888();
 extern void func_080278d0();
 extern void func_08027bbc();
 extern void func_08029cec();
-extern void func_08028004();
 extern void func_08027bd8();
 extern void func_08027c54();
 extern void func_08027c90();

@@ -1,6 +1,6 @@
 // Might need some more splitting
 
-#include "engines/drumming_lessons.h"
+#include "engines/drum_studio.h"
 #include "scenes/gameplay.h"
 #include "src/memory.h"
 #include "src/code_08001360.h"
@@ -14,8 +14,6 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gDrumIntroInfo ((struct DrumIntroInfo *)D_030055d0)
-#define gDrumLiveInfo ((struct DrumLiveInfo *)D_030055d0)
 #define gDrumLessonsInfo ((struct DrumLessonsInfo *)D_030055d0)
 
 enum DrumStudioStatesEnum {
@@ -24,294 +22,8 @@ enum DrumStudioStatesEnum {
     DRUM_STUDIO_STATE_SAVING_REPLAY
 };
 
-static s32 D_03001564; // unknown type
 
-
-/* DRUMMING LESSONS */
-
-
-#include "asm/engines/drumming_lessons/asm_080239a0.s"
-
-#include "asm/engines/drumming_lessons/asm_080239bc.s"
-
-#include "asm/engines/drumming_lessons/asm_080239ec.s"
-
-#include "asm/engines/drumming_lessons/asm_08023a18.s"
-
-#include "asm/engines/drumming_lessons/asm_08023bb8.s"
-
-#include "asm/engines/drumming_lessons/asm_08023bcc.s"
-
-#include "asm/engines/drumming_lessons/asm_08023bf4.s"
-
-#include "asm/engines/drumming_lessons/asm_08023c0c.s"
-
-#include "asm/engines/drumming_lessons/asm_08023c44.s"
-
-#include "asm/engines/drumming_lessons/asm_08023c58.s"
-
-#include "asm/engines/drumming_lessons/asm_08023c6c.s"
-
-#include "asm/engines/drumming_lessons/asm_08023d44.s"
-
-#include "asm/engines/drumming_lessons/asm_08023d60.s"
-
-#include "asm/engines/drumming_lessons/asm_08023d64.s"
-
-#include "asm/engines/drumming_lessons/asm_08023d68.s"
-
-#include "asm/engines/drumming_lessons/asm_08023d6c.s"
-
-#include "asm/engines/drumming_lessons/asm_08023d78.s"
-
-#include "asm/engines/drumming_lessons/asm_08023da0.s"
-
-#include "asm/engines/drumming_lessons/asm_08023da4.s"
-
-#include "asm/engines/drumming_lessons/asm_08023df8.s"
-
-#include "asm/engines/drumming_lessons/asm_08023e4c.s"
-
-#include "asm/engines/drumming_lessons/asm_08023e50.s"
-
-#include "asm/engines/drumming_lessons/asm_08023edc.s"
-
-#include "asm/engines/drumming_lessons/asm_08023f68.s"
-
-#include "asm/engines/drumming_lessons/asm_08023f6c.s"
-
-#include "asm/engines/drumming_lessons/asm_08023ffc.s"
-
-#include "asm/engines/drumming_lessons/asm_080240a4.s"
-
-#include "asm/engines/drumming_lessons/asm_08024134.s"
-
-#include "asm/engines/drumming_lessons/asm_080241c0.s"
-
-#include "asm/engines/drumming_lessons/asm_0802424c.s"
-
-#include "asm/engines/drumming_lessons/asm_0802428c.s"
-
-#include "asm/engines/drumming_lessons/asm_080242cc.s"
-
-#include "asm/engines/drumming_lessons/asm_080242f8.s"
-
-#include "asm/engines/drumming_lessons/asm_08024978.s"
-
-#include "asm/engines/drumming_lessons/asm_0802497c.s"
-
-#include "asm/engines/drumming_lessons/asm_080249c0.s"
-
-#include "asm/engines/drumming_lessons/asm_080249f0.s"
-
-#include "asm/engines/drumming_lessons/asm_08024a4c.s"
-
-#include "asm/engines/drumming_lessons/asm_08024ae4.s"
-
-#include "asm/engines/drumming_lessons/asm_08024ba0.s"
-
-#include "asm/engines/drumming_lessons/asm_08024bd0.s"
-
-#include "asm/engines/drumming_lessons/asm_08024be8.s"
-
-#include "asm/engines/drumming_lessons/asm_08024bfc.s"
-
-#include "asm/engines/drumming_lessons/asm_08024c2c.s"
-
-#include "asm/engines/drumming_lessons/asm_08024cb0.s"
-
-#include "asm/engines/drumming_lessons/asm_08024d44.s"
-
-#include "asm/engines/drumming_lessons/asm_08024d48.s"
-
-#include "asm/engines/drumming_lessons/asm_08024d4c.s"
-
-#include "asm/engines/drumming_lessons/asm_08024d68.s"
-
-#include "asm/engines/drumming_lessons/asm_08024d6c.s"
-
-#include "asm/engines/drumming_lessons/asm_08024da4.s"
-
-#include "asm/engines/drumming_lessons/asm_08024ddc.s"
-
-#include "asm/engines/drumming_lessons/asm_08024e0c.s"
-
-#include "asm/engines/drumming_lessons/asm_08024e48.s"
-
-#include "asm/engines/drumming_lessons/asm_08024ecc.s"
-
-#include "asm/engines/drumming_lessons/asm_08024ed0.s"
-
-#include "asm/engines/drumming_lessons/asm_08024ef4.s"
-
-#include "asm/engines/drumming_lessons/asm_08024f64.s"
-
-#include "asm/engines/drumming_lessons/asm_08024fb4.s"
-
-#include "asm/engines/drumming_lessons/asm_08024fbc.s"
-
-#include "asm/engines/drumming_lessons/asm_08024fc4.s"
-
-#include "asm/engines/drumming_lessons/asm_08024ff4.s"
-
-#include "asm/engines/drumming_lessons/asm_08025020.s"
-
-#include "asm/engines/drumming_lessons/asm_08025038.s"
-
-#include "asm/engines/drumming_lessons/asm_080251d0.s"
-
-#include "asm/engines/drumming_lessons/asm_080251d8.s"
-
-#include "asm/engines/drumming_lessons/asm_080251e8.s"
-
-#include "asm/engines/drumming_lessons/asm_080251ec.s"
-
-#include "asm/engines/drumming_lessons/asm_080251f0.s"
-
-#include "asm/engines/drumming_lessons/asm_080251fc.s"
-
-#include "asm/engines/drumming_lessons/asm_08025204.s"
-
-#include "asm/engines/drumming_lessons/asm_0802520c.s"
-
-#include "asm/engines/drumming_lessons/asm_08025214.s"
-
-#include "asm/engines/drumming_lessons/asm_08025218.s"
-
-#include "asm/engines/drumming_lessons/asm_0802521c.s"
-
-#include "asm/engines/drumming_lessons/asm_08025220.s"
-
-#include "asm/engines/drumming_lessons/asm_08025228.s"
-
-#include "asm/engines/drumming_lessons/asm_08025248.s"
-
-#include "asm/engines/drumming_lessons/asm_08025460.s"
-
-#include "asm/engines/drumming_lessons/asm_08025538.s"
-
-#include "asm/engines/drumming_lessons/asm_0802555c.s"
-
-#include "asm/engines/drumming_lessons/asm_080255f8.s"
-
-#include "asm/engines/drumming_lessons/asm_08025748.s"
-
-#include "asm/engines/drumming_lessons/asm_0802575c.s"
-
-#include "asm/engines/drumming_lessons/asm_080257b8.s"
-
-#include "asm/engines/drumming_lessons/asm_08025848.s"
-
-#include "asm/engines/drumming_lessons/asm_080258c0.s"
-
-#include "asm/engines/drumming_lessons/asm_08025a2c.s"
-
-#include "asm/engines/drumming_lessons/asm_08025a58.s"
-
-#include "asm/engines/drumming_lessons/asm_08025a64.s"
-
-#include "asm/engines/drumming_lessons/asm_08025a98.s"
-
-#include "asm/engines/drumming_lessons/asm_08025aa4.s"
-
-#include "asm/engines/drumming_lessons/asm_08025abc.s"
-
-#include "asm/engines/drumming_lessons/asm_08025ad4.s"
-
-#include "asm/engines/drumming_lessons/asm_08025ae8.s"
-
-#include "asm/engines/drumming_lessons/asm_08025afc.s"
-
-#include "asm/engines/drumming_lessons/asm_08025b88.s"
-
-#include "asm/engines/drumming_lessons/asm_08025bcc.s"
-
-#include "asm/engines/drumming_lessons/asm_08025be0.s"
-
-#include "asm/engines/drumming_lessons/asm_08025bec.s"
-
-#include "asm/engines/drumming_lessons/asm_08025c48.s"
-
-#include "asm/engines/drumming_lessons/asm_08025c4c.s"
-
-#include "asm/engines/drumming_lessons/asm_08025c8c.s"
-
-#include "asm/engines/drumming_lessons/asm_08025ccc.s"
-
-#include "asm/engines/drumming_lessons/asm_08025cd0.s"
-
-#include "asm/engines/drumming_lessons/asm_08025d34.s"
-
-#include "asm/engines/drumming_lessons/asm_08025d98.s"
-
-#include "asm/engines/drumming_lessons/asm_08025d9c.s"
-
-#include "asm/engines/drumming_lessons/asm_08025e00.s"
-
-#include "asm/engines/drumming_lessons/asm_08025e74.s"
-
-#include "asm/engines/drumming_lessons/asm_08025ed8.s"
-
-#include "asm/engines/drumming_lessons/asm_08025f3c.s"
-
-#include "asm/engines/drumming_lessons/asm_08025f50.s"
-
-#include "asm/engines/drumming_lessons/asm_08025f90.s"
-
-#include "asm/engines/drumming_lessons/asm_08025fbc.s"
-
-#include "asm/engines/drumming_lessons/asm_08026024.s"
-
-#include "asm/engines/drumming_lessons/asm_0802663c.s"
-
-#include "asm/engines/drumming_lessons/asm_08026640.s"
-
-#include "asm/engines/drumming_lessons/asm_080268cc.s"
-
-#include "asm/engines/drumming_lessons/asm_08026930.s"
-
-#include "asm/engines/drumming_lessons/asm_08026968.s"
-
-#include "asm/engines/drumming_lessons/asm_080269e8.s"
-
-#include "asm/engines/drumming_lessons/asm_08026a0c.s"
-
-#include "asm/engines/drumming_lessons/asm_08026a50.s"
-
-#include "asm/engines/drumming_lessons/asm_08026aac.s"
-
-#include "asm/engines/drumming_lessons/asm_08026b0c.s"
-
-#include "asm/engines/drumming_lessons/asm_08026b18.s"
-
-#include "asm/engines/drumming_lessons/asm_08026b24.s"
-
-#include "asm/engines/drumming_lessons/asm_08026b3c.s"
-
-#include "asm/engines/drumming_lessons/asm_08026bc8.s"
-
-#include "asm/engines/drumming_lessons/asm_08026c1c.s"
-
-#include "asm/engines/drumming_lessons/asm_08026c38.s"
-
-#include "asm/engines/drumming_lessons/asm_08026c3c.s"
-
-#include "asm/engines/drumming_lessons/asm_08026c84.s"
-
-#include "asm/engines/drumming_lessons/asm_08026cc4.s"
-
-#include "asm/engines/drumming_lessons/asm_08026d04.s"
-
-#include "asm/engines/drumming_lessons/asm_08026d28.s"
-
-#include "asm/engines/drumming_lessons/asm_08026d68.s"
-
-#include "asm/engines/drumming_lessons/asm_08026de8.s"
-
-#include "asm/engines/drumming_lessons/asm_08026dec.s"
-
-
-
+/* DRUM LESSONS */
 
 
 // Init. Drum Samurai Sprite
@@ -605,7 +317,64 @@ void func_08027f90(void) {
 
 #include "asm/engines/drumming_lessons/asm_08027fc8.s"
 
-#include "asm/engines/drumming_lessons/asm_08028004.s"
+
+// Engine Event 14 (Calculate & Display Rank)
+void func_08028004(void) {
+    char *resultsText = gDrumLessonsInfo->lessonResultText;
+    char num[2];
+    u32 score, rank;
+    u32 digit1, digit2, digit3, digit4;
+    s32 sVar; // value of a static variable in Medal Corner code
+
+    num[1] = '\0';
+    score = func_0801a060();
+    rank = func_08027fc8(score);
+    digit1 = score % 10;
+    score /= 10;
+    digit2 = score % 10;
+    score /= 10;
+    digit3 = score % 10;
+    score /= 10;
+    digit4 = score % 10;
+
+    memcpy(resultsText, D_0805a0c0, 7);
+
+    if (digit4 > 0) {
+        num[0] = ('0' + digit4);
+        func_080081a8(resultsText, num);
+    }
+
+    if ((digit4 > 0) || (digit3 > 0)) {
+        num[0] = ('0' + digit3);
+        func_080081a8(resultsText, num);
+    }
+
+    num[0] = ('0' + digit2);
+    func_080081a8(resultsText, num);
+    func_080081a8(resultsText, D_0805a0c8);
+
+    num[0] = ('0' + digit1);
+    func_080081a8(resultsText, num);
+    func_080081a8(resultsText, D_0805a0cc);
+    func_080081a8(resultsText, drum_lessons_rank_text[rank]);
+
+    func_08027ba0(resultsText);
+    set_beatscript_tempo(150);
+    scene_set_music(drum_lessons_rank_sfx[rank]);
+    pause_beatscript_scene(TRUE);
+
+    gDrumLessonsInfo->unk45C = 1;
+    func_0804d8f8(D_03005380, gDrumLessonsInfo->lessonRankSprite, drum_lessons_rank_anim[rank], 0, 1, 0, 0);
+    func_0804d770(D_03005380, gDrumLessonsInfo->lessonRankSprite, TRUE);
+
+    sVar = func_0801d6d0();
+    if (sVar >= 0) {
+        if (func_080281c4(sVar) < rank) {
+            func_0802818c(sVar, rank);
+        }
+    }
+}
+
 
 #include "asm/engines/drumming_lessons/asm_0802818c.s"
 

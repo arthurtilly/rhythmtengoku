@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080242f8 \n\
+thumb_func_start drum_intro_engine_start \n\
 	PUSH {R4-R7, LR} \n\
 	MOV R7, R10 \n\
 	MOV R6, R9 \n\
@@ -33,10 +33,10 @@ thumb_func_start func_080242f8 \n\
 	MOVS R1, 0x0 \n\
 	BL scene_set_bg_layer_display \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c3f7c \n\
+	LDR R4, =anim_drum_samurai_body \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_08024344 \n\
-	LDR R4, =D_088c2c40 \n\
+	LDR R4, =anim_drum_player_body \n\
  \n\
 branch_08024344: \n\
 	BL func_08024bd0 \n\
@@ -60,7 +60,7 @@ branch_08024344: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7, 0x2] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c3f5c \n\
+	LDR R4, =anim_drum_samurai_head \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_0802437e \n\
 	LDR R4, =0x088c2c20 \n\
@@ -86,10 +86,10 @@ branch_0802437e: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c3f9c \n\
+	LDR R4, =anim_drum_samurai_waist \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_080243b6 \n\
-	LDR R4, =D_088c2c60 \n\
+	LDR R4, =anim_drum_player_waist \n\
  \n\
 branch_080243b6: \n\
 	BL func_08024bd0 \n\
@@ -112,10 +112,10 @@ branch_080243b6: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7, 0x4] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c3d2c \n\
+	LDR R4, =anim_drum_samurai_use_snare_l \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_080243ee \n\
-	LDR R4, =D_088c29f0 \n\
+	LDR R4, =anim_drum_player_use_snare_l \n\
  \n\
 branch_080243ee: \n\
 	BL func_08024bd0 \n\
@@ -138,10 +138,10 @@ branch_080243ee: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7, 0x6] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c3d84 \n\
+	LDR R4, =anim_drum_samurai_use_snare_r \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_08024426 \n\
-	LDR R4, =D_088c2a48 \n\
+	LDR R4, =anim_drum_player_use_snare_r \n\
  \n\
 branch_08024426: \n\
 	BL func_08024bd0 \n\
@@ -164,10 +164,10 @@ branch_08024426: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7, 0x8] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c3fbc \n\
+	LDR R4, =anim_drum_samurai_use_pedal_l \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_0802445e \n\
-	LDR R4, =D_088c2c80 \n\
+	LDR R4, =anim_drum_player_use_pedal_l \n\
  \n\
 branch_0802445e: \n\
 	BL func_08024bd0 \n\
@@ -192,10 +192,10 @@ branch_0802445e: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7, 0xa] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c3fdc \n\
+	LDR R4, =anim_drum_samurai_use_pedal_r \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_0802449a \n\
-	LDR R4, =D_088c2ca0 \n\
+	LDR R4, =anim_drum_player_use_pedal_r \n\
  \n\
 branch_0802449a: \n\
 	BL func_08024bd0 \n\
@@ -216,10 +216,10 @@ branch_0802449a: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7, 0xc] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c40fc \n\
+	LDR R4, =anim_drum_samurai_kit_bass_l \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_080244ce \n\
-	LDR R4, =D_088c2dc0 \n\
+	LDR R4, =anim_drum_player_kit_bass_l \n\
  \n\
 branch_080244ce: \n\
 	BL func_08024bd0 \n\
@@ -240,10 +240,10 @@ branch_080244ce: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7, 0x12] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c40dc \n\
+	LDR R4, =anim_drum_samurai_kit_bass_r \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_08024502 \n\
-	LDR R4, =D_088c2da0 \n\
+	LDR R4, =anim_drum_player_kit_bass_r \n\
  \n\
 branch_08024502: \n\
 	BL func_08024bd0 \n\
@@ -264,10 +264,10 @@ branch_08024502: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7, 0x14] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c413c \n\
+	LDR R4, =anim_drum_samurai_kit_snare \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_08024536 \n\
-	LDR R4, =D_088c2e00 \n\
+	LDR R4, =anim_drum_player_kit_snare \n\
  \n\
 branch_08024536: \n\
 	BL func_08024bd0 \n\
@@ -288,10 +288,10 @@ branch_08024536: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7, 0x16] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c415c \n\
+	LDR R4, =anim_drum_samurai_kit_tom \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_0802456a \n\
-	LDR R4, =D_088c2e20 \n\
+	LDR R4, =anim_drum_player_kit_tom \n\
  \n\
 branch_0802456a: \n\
 	BL func_08024bd0 \n\
@@ -312,10 +312,10 @@ branch_0802456a: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7, 0x18] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c411c \n\
+	LDR R4, =anim_drum_samurai_kit_hihat \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_0802459e \n\
-	LDR R4, =D_088c2de0 \n\
+	LDR R4, =anim_drum_player_kit_hihat \n\
  \n\
 branch_0802459e: \n\
 	BL func_08024bd0 \n\
@@ -336,10 +336,10 @@ branch_0802459e: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7, 0x1a] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c406c \n\
+	LDR R4, =anim_drum_samurai_kit_splash \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_080245d2 \n\
-	LDR R4, =D_088c2d30 \n\
+	LDR R4, =anim_drum_player_kit_splash \n\
  \n\
 branch_080245d2: \n\
 	BL func_08024bd0 \n\
@@ -360,10 +360,10 @@ branch_080245d2: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7, 0x1c] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c3ffc \n\
+	LDR R4, =anim_drum_samurai_kit_crash \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_08024606 \n\
-	LDR R4, =D_088c2cc0 \n\
+	LDR R4, =anim_drum_player_kit_crash \n\
  \n\
 branch_08024606: \n\
 	BL func_08024bd0 \n\
@@ -384,10 +384,10 @@ branch_08024606: \n\
 	BL func_0804d160 \n\
 	STRH R0, [R7, 0x1e] \n\
 	BL func_08024bd0 \n\
-	LDR R4, =D_088c417c \n\
+	LDR R4, =anim_drum_samurai_kit_seat \n\
 	CMP R0, 0x0 \n\
 	BEQ branch_0802463a \n\
-	LDR R4, =D_088c2e40 \n\
+	LDR R4, =anim_drum_player_kit_seat \n\
  \n\
 branch_0802463a: \n\
 	BL func_08024bd0 \n\
@@ -617,7 +617,7 @@ branch_080248be: \n\
 	BL scene_set_bg_layer_display \n\
 	LDR R0, =D_03005380 \n\
 	LDR R0, [R0] \n\
-	LDR R1, =D_088c2f58 \n\
+	LDR R1, =anim_drum_player_unk25 \n\
 	MOVS R2, 0x30 \n\
 	STR R2, [SP] \n\
 	LDR R2, =0x000048c8 \n\

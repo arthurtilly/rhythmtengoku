@@ -39,7 +39,7 @@ branch_08024b18: \n\
 /* 08024b24 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 08024b26 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08024b28 */ LDRSH R1, [R1, R2] \n\
-/* 08024b2a */ LDR R2, =D_088c2f58 \n\
+/* 08024b2a */ LDR R2, =anim_drum_player_unk25 \n\
 /* 08024b2c */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 08024b2e */ STR R3, [SP] \n\
 /* 08024b30 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
@@ -67,7 +67,7 @@ branch_08024b58: \n\
 /* 08024b64 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 08024b66 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08024b68 */ LDRSH R1, [R1, R2] \n\
-/* 08024b6a */ LDR R2, =D_088c2f40 \n\
+/* 08024b6a */ LDR R2, =anim_drum_player_unk24 \n\
 /* 08024b6c */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 08024b6e */ STR R3, [SP] \n\
 /* 08024b70 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\

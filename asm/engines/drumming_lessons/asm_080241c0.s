@@ -14,10 +14,10 @@ thumb_func_start func_080241c0 \n\
 /* 080241d0 */ LSLS R7, R7, 0x2 \n\
 /* 080241d2 */ ADD R7, R8 @ Add R8 to R7 \n\
 /* 080241d4 */ BL func_08024bd0 \n\
-/* 080241d8 */ LDR R3, =D_088c418c \n\
+/* 080241d8 */ LDR R3, =anim_drum_samurai_snare_roll \n\
 /* 080241da */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080241dc */ BEQ branch_080241e0 \n\
-/* 080241de */ LDR R3, =D_088c2e50 \n\
+/* 080241de */ LDR R3, =anim_drum_player_snare_roll \n\
  \n\
 branch_080241e0: \n\
 /* 080241e0 */ LDR R6, =D_03005380 \n\

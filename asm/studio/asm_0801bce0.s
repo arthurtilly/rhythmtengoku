@@ -84,7 +84,7 @@ branch_0801bd56: \n\
 /* 0801bd6a */ BL func_0801bb24 \n\
 /* 0801bd6e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801bd70 */ BEQ branch_0801bd9c \n\
-/* 0801bd72 */ LDR R1, =D_0805942c \n\
+/* 0801bd72 */ LDR R1, =text_studio_warning_no_checks1 \n\
 /* 0801bd74 */ LDR R2, =func_0801bbd4 \n\
 /* 0801bd76 */ LDR R4, =s_menu_kettei2_seqData \n\
 /* 0801bd78 */ STR R4, [SP] \n\
@@ -116,7 +116,7 @@ branch_0801bd9c: \n\
 /* 0801bdba */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 0801bdbc */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801bdbe */ BEQ branch_0801bdf0 \n\
-/* 0801bdc0 */ LDR R1, =D_0805945c \n\
+/* 0801bdc0 */ LDR R1, =text_studio_warning_no_checks2 \n\
 /* 0801bdc2 */ LDR R2, =func_0801bbe8 \n\
 /* 0801bdc4 */ LDR R0, =s_menu_se24_seqData \n\
 /* 0801bdc6 */ STR R0, [SP] \n\
@@ -182,7 +182,7 @@ branch_0801be60: \n\
 /* 0801be60 */ LDR R1, =s_menu_kettei2_seqData \n\
 /* 0801be62 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0801be64 */ BL play_sound_in_player \n\
-/* 0801be68 */ LDR R1, =D_080594a0 \n\
+/* 0801be68 */ LDR R1, =text_studio_warning_delete \n\
 /* 0801be6a */ LDR R2, =func_0801bc0c \n\
 /* 0801be6c */ LDR R0, =s_menu_se13_seqData \n\
 /* 0801be6e */ STR R0, [SP] \n\

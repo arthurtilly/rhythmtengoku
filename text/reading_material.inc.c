@@ -45,7 +45,7 @@
 // "Rhythm sense will grow exceptionally
 // even in adults so long as you try
 // to be conscious of your rhythm."
-const char D_08054f88[] =
+const char text_reading_rhythm_haiku_folio[] =
     "\n"
     "\x01\x4c" "\x03\x32" "\x01\x6c" "鍛えよう\n"
     "\x01\x4c" "\x03\x32" "\x01\x6c" "\n"
@@ -86,7 +86,7 @@ const char D_08054f88[] =
     "\x01\x4c" "\x03\x30" "\x01\x73" "「リズムを意識しようとする心がけで、リズム感は成人してからでも格段に良くなってゆく」\n";
 
 // Rhythm Haiku Folio
-const char D_08055304[] = "リズム俳句集";
+const char text_reading_rhythm_haiku_folio_title[] = "リズム俳句集";
 
 // "Nurture"
 
@@ -116,7 +116,7 @@ const char D_08055304[] = "リズム俳句集";
 // Hey, Baby!
 // Hold onto your ambition.
 // Hey! Oh, Yeah!
-const char D_08055314[] =
+const char text_reading_rhythm_poem_digest[] =
     "\x01\x43" "\x03\x31" "\x01\x6d" "「そだてる」\n"
     "\n"
     "\x01\x43" "\x03\x30" "\x01\x73" "わたしはそれを育てている。\n"
@@ -145,7 +145,7 @@ const char D_08055314[] =
     "Hey! Oh, Yeah!\n";
 
 // Rhythm Poem Digest
-const char D_08055514[] = "リズムポエム集";
+const char text_reading_rhythm_poem_digest_title[] = "リズムポエム集";
 
 // \x95\x5c should be 表, assembles to \x95
 
@@ -366,7 +366,7 @@ const char D_08055514[] = "リズムポエム集";
 // It would probably be more enjoyable that way.
 
 // -23-
-const char D_08055524[] =
+const char text_reading_rhythm_diagnosis[] =
     "\x01\x43" "\x03\x31" "\x01\x6d" "リズム感タイプ診断\n"
     "\x03\x30" "\x01\x73" "\n"
     "あなたのリズム感を診断します。\n"
@@ -562,7 +562,7 @@ const char D_08055524[] =
     "\x01\x43" "-23-\n";
 
 // Rhythm Diagnosis
-const char D_080560bc[] = "リズム感タイプ診断";
+const char text_reading_rhythm_diagnosis_title[] = "リズム感タイプ診断";
 
 // \x95\x5c should be 表, assembles to \x95
 
@@ -589,7 +589,7 @@ const char D_080560bc[] = "リズム感タイプ診断";
 
 // Explanation: A good dancer does not
 // necessarily have good Rhythm Sense.
-const char D_080560d0[] =
+const char text_reading_the_rhythm_formula[] =
     "\x01\x43" "\x03\x32" "\x01\x6c" "\n"
     "\n"
     "リズム感 ⊃ ノリ\n"
@@ -615,8 +615,7 @@ const char D_080560d0[] =
     "解説：ダンスの上手な人が、「リズム感が良い」とは限らないのだ。\n";
 
 // The Rhythm Formula
-const char D_08056258[] =
-    "わかる！リズムの公式";
+const char text_reading_the_rhythm_formula_title[] = "わかる！リズムの公式";
 
 // \x95\x5c should be 表, assembles to \x95
 
@@ -654,7 +653,7 @@ const char D_08056258[] =
 // Now try it for yourself, to see where
 // your sense of rhythm takes you! Tell your
 // friends and share the magic of Rhythm Heaven!!
-const char D_08056270[] =
+const char text_reading_fan_mailbag[] =
     "\n"
     "リズム天国を楽しんでいただいた方からたくさんのよろこびの声が届きました。あまりに多くの方からお手紙やメールをいただき（！）、すべては紹介しきれませんが、そのなかのごく一部をここで紹介させていただきます。みなさんも、ぜひ一度お試しくださり、その効果をお友達にもお伝えください！！\n"
     "\n"
@@ -675,7 +674,7 @@ const char D_08056270[] =
     "\x01\x4c";
 
 // Fan Mailbag
-const char D_08056548[] = "よろこびの声";
+const char text_reading_fan_mailbag_title[] = "よろこびの声";
 
 // \x83\x5c should be ソ, assembles to \x83
 
@@ -785,7 +784,7 @@ const char D_08056548[] = "よろこびの声";
 
 // Both: “Thank you ladies and gentlemen, and
 // enjoy the rest of the game!”
-const char D_08056558[] =
+const char text_reading_rhythm_stand_up[] =
     "きーやん「どうもー、きーやんでーす！」\n"
     "あおくん「どうもー、あおくんでーす！」\n"
     "ふたり「Y&Bでーす！よろしくどうぞ～！」\n"
@@ -820,7 +819,7 @@ const char D_08056558[] =
     "ふたり「しっつれいしましたー！」";
 
 // Rhythm Stand-Up
-const char D_08056c08[] = "リズム漫才";
+const char text_reading_rhythm_stand_up_title[] = "リズム漫才";
 
 // Nice to meet you, everyone. My name's Tanaka.
 // That's my real name, but don't tell my
@@ -866,7 +865,7 @@ const char D_08056c08[] = "リズム漫才";
 // Could my ancestor's ninjitsu been at work?
 // Perhaps I should put my anger behind me
 // and study the way of the ninja instead...
-const char D_08056c14[] =
+const char text_reading_the_ninja_scroll[] =
     "みなさん、はじめまして。オレは田中っていいます。この前、うらの倉庫で古い巻物をみつけたんです。その中にはこう書いてありました。\n"
     "\n"
     "「これを見ているオヌシ。オヌシは、この巻物をたまたま見つけたのではない。見つけるべくして、見つかるように忍術をかけておいたものなのだ。わかるか？そう、これを書いているワシは忍者であり、オヌシのご先祖さまというわけだ。\n"
@@ -874,7 +873,7 @@ const char D_08056c14[] =
     "今、オレの心にはある女性がいます。その女性は、先日、パチンコで狙いうちされそうになっているのを、オレが必死で助けた女性です。これから、どうなるってわけじゃないけど、ここはひとつ、ご先祖様の忍術にまんまとかけられてみようかな…";
 
 // The Ninja Scroll
-const char D_08057004[] = "忍者の巻物";
+const char text_reading_the_ninja_scroll_title[] = "忍者の巻物";
 
 // \x95\x5c should be 表, assembles to \x95
 // \x8f\x5c should be 十, assembles to \x8f
@@ -927,7 +926,7 @@ const char D_08057004[] = "忍者の巻物";
 // Representative for the Rhythm League
 
 // Space Uncle
-const char D_08057010[] =
+const char text_reading_the_final_letter[] =
     "なぞのリズム組織から最後の通達が届きました。\n"
     "\n"
     "「おめでとう！！リミックス８のパーフェクト、かなりサイコーでした～！…と、明るく祝福するのはやめておく。たしかにキミは、この「リズム天国」でスバラシイ成績を残した。これはまぎれもない事実で、我々も\x8f\x5c分みとめている。キミは最高だ！もう、超サイコーなんでーす！！…と、つい、うれしくなってしまうが、楽しくたたえるのは やめておく。\n"
@@ -943,7 +942,7 @@ const char D_08057010[] =
     "\x01\x52" "スペースおじさん";
 
 // The Final Letter
-const char D_080573d0[] = "さいごの通達";
+const char text_reading_the_final_letter_title[] = "さいごの通達";
 
 // WISH Can't Wait For You
 
@@ -987,7 +986,7 @@ const char D_080573d0[] = "さいごの通達";
 
 // Our favorite station makes me remember
 // Lonely, our happy moments
-const char D_080573e0[] =
+const char text_reading_lyrics_wish[] =
     "ＷＩＳＨ　君を待てなくて　\n"
     "うた：田中総史\n"
     "作詞/作曲：つんく\n"
@@ -1026,7 +1025,7 @@ const char D_080573e0[] =
     "寂しく想い出させる";
 
 // Lyrics: WISH
-const char D_08057628[] = "歌詞カード③";
+const char text_reading_lyrics_wish_title[] = "歌詞カード③";
 
 // Honey Sweet Angel of Love
 
@@ -1055,7 +1054,7 @@ const char D_08057628[] = "歌詞カード③";
 // Charm of love Wonder of love
 // Shape of love Nuance of love
 // Honey sweet angel
-const char D_08057638[] =
+const char text_reading_lyrics_sweet_angel[] =
     "恋のハニースイ～トエンジェル\n"
     "うた：時東ぁみ\n"
     "作詞/作曲：つんく\n"
@@ -1084,7 +1083,7 @@ const char D_08057638[] =
     "ハニースイ～トエンジェル\n";
 
 // Lyrics: Sweet Angel
-const char D_080577c4[] = "歌詞カード②";
+const char text_reading_lyrics_sweet_angel_title[] = "歌詞カード②";
 
 // The☆Bon Odori
 
@@ -1138,7 +1137,7 @@ const char D_080577c4[] = "歌詞カード②";
 // Now we turn around and
 // dondo pa--n pan
 // Haa～ Bon Odori
-const char D_080577d4[] =
+const char text_reading_lyrics_bon_odori[] =
     "ザ☆ぼんおどり\n"
     "うた：時東ぁみ\n"
     "作詞/作曲：つんく\n"
@@ -1165,8 +1164,7 @@ const char D_080577d4[] =
     "は～　盆踊り～";
 
 // Lyrics: The☆Bon-Odori
-const char D_08057958[] =
-    "歌詞カード①";
+const char text_reading_lyrics_bon_odori_title[] = "歌詞カード①";
 
 // Hello! This is DJ MAN-K!!
 // We have another fantastic guest today,
@@ -1218,7 +1216,7 @@ const char D_08057958[] =
 
 // Raise your mood with a little music...
 // Rhythm Heaven! Buy it!
-const char D_08057968[] =
+const char text_reading_rap_report[] =
     "はいどーもー！DJ SALUでーす！\n"
     "今日もステキなゲストが来てくれています。ラップメン（RM）のおふたりでーす。よろしくどうぞ～！\n"
     "RM「あ、どうも ラップメンです」\n"
@@ -1244,7 +1242,7 @@ const char D_08057968[] =
     "\x01\x52" "おわり";
 
 // Rap Report
-const char D_08057cb4[] = "とあるラジオ番組";
+const char text_reading_rap_report_title[] = "とあるラジオ番組";
 
 // April 16 - Today I enlisted in the Marcher Corps!
 // I'm gonna do my best for my new comrades!
@@ -1275,7 +1273,7 @@ const char D_08057cb4[] = "とあるラジオ番組";
 // The diary ends here.
 
 // What could have happened to the commander!?
-const char D_08057cc8[] =
+const char text_reading_marchers_diary[] =
     "４月１６日 今日からマーチャに入隊！みんなの役に立つようにがんばるぞー！\n"
     "\n"
     "４月２０日 今日はみんなと「あしぶみ」がそろわず、隊長におこられちゃった。\n"
@@ -1294,7 +1292,7 @@ const char D_08057cc8[] =
     "いったい、隊長の身になにが！？";
 
 // Marcher's Diary
-const char D_08057f50[] = "マーチャ活動記録";
+const char text_reading_marchers_diary_title[] = "マーチャ活動記録";
 
 // \x95\x5c should be 表, assembles to \x95
 
@@ -1331,7 +1329,7 @@ const char D_08057f50[] = "マーチャ活動記録";
 // You are so dedicated to your craft, Mr. F.
 // We will anxiously await your next creation.
 // Thank you.
-const char D_08057f64[] =
+const char text_reading_horse_machines_story[] =
     "メダルでもらえるおまけ「うまマシーン」の開発にたずさわった、Fさんに開発のお話をきくことができました。\n"
     "Fさん「うまを走らせる気持ちよさを伝えたいという想いから開発がスタートしました」\n"
     "シンプルながら熱い想いをことばに託すFさん。\n"
@@ -1341,7 +1339,7 @@ const char D_08057f64[] =
     "サービス精神旺盛なFさん。これからの作品も期待しております。ありがとうございました。";
 
 // Horse Machine's Story
-const char D_080581dc[] = "うまマシーン開発秘話";
+const char text_reading_horse_machines_story_title[] = "うまマシーン開発秘話";
 
 // From Radio Heaven News in Deep Space, I'm Ryan
 // Williams.
@@ -1396,7 +1394,7 @@ const char D_080581dc[] = "うまマシーン開発秘話";
 // That's all the information we're getting out
 // of him. Ryan Williams, Radio Heaven News,
 // Deep Space.
-const char D_080581f4[] =
+const char text_reading_inside_spaceball[] =
     "ただいま宇宙空間で活躍中のエアーバッターさんにインタビューしてみました！\n"
     "\n"
     "Q．今シーズンの調子はどうですか？\n"
@@ -1423,7 +1421,7 @@ const char D_080581f4[] =
     "ここで、エアーバッターさんは席を外されてしまいました。なにかワケありのようです。以上、宇宙空間からでした。";
 
 // Inside Spaceball
-const char D_08058424[] = "エアーバッター速報";
+const char text_reading_inside_spaceball_title[] = "エアーバッター速報";
 
 // You know that little guy in Night Walk?
 // It turns out he really loves music.
@@ -1462,7 +1460,7 @@ const char D_08058424[] = "エアーバッター速報";
 // answer tr⑤ pushing the buttons as m③ny
 // times ⑥s possible for a cool surprise!
 // Well, at least I think it's prett④ cool.
-const char D_08058438[] =
+const char text_reading_night_walk_riddle[] =
     "ナイトウォークに出演している彼は、とっても音楽がスキなのだそうです。以前も音楽関係の仕事をしていたそうで、そのコネで今回このゲームに出演しているのだそうです。この前、街で偶然彼をみつけたので話をきいてみると「音楽大スキ！」と言い残し、階段をのぼってどっかに行っちゃいました。そんな音楽好きの彼に またどこかで会えたらいいなぁと、チョットだけ思いました。そういえば彼、なんていう名前なのかなぁ？\n"
     "さぁ、ここでクイズです！\n"
     "その彼は名前は…\n"
@@ -1478,7 +1476,7 @@ const char D_08058438[] =
     "あのゲームは、" "\x03\x31" "\x01\x6d" "①②③④" "\x03\x30" "\x01\x73" "ーがボタ" "\x03\x31" "\x01\x6d" "⑤" "\x03\x30" "\x01\x73" "をたたくと、たた" "\x03\x31" "\x01\x6d" "③" "\x03\x30" "\x01\x73" "た数だけカウントされますよね？実は、ゲームをほっと" "\x03\x31" "\x01\x6d" "③" "\x03\x30" "\x01\x73" "て、ボタ" "\x03\x31" "\x01\x6d" "⑤" "\x03\x30" "\x01\x73" "をたたきまくると、た" "\x03\x31" "\x01\x6d" "③" "\x03\x30" "\x01\x73" "へ" "\x03\x31" "\x01\x6d" "⑤" "\x03\x30" "\x01\x73" "なことがおきる" "\x03\x31" "\x01\x6d" "⑤" "\x03\x30" "\x01\x73" "です。と" "\x03\x31" "\x01\x6d" "③" "\x03\x30" "\x01\x73" "っても、まぁ、あまり期待しな" "\x03\x31" "\x01\x6d" "③" "\x03\x30" "\x01\x73" "でネ～！";
 
 // Night Walk Riddle
-const char D_080587ac[] = "ナイトウォーク情報";
+const char text_reading_night_walk_riddle_title[] = "ナイトウォーク情報";
 
 // I'm retired, but I grow vegetables to pass the
 // time. Lately, my vegetables have been growing
@@ -1497,11 +1495,11 @@ const char D_080587ac[] = "ナイトウォーク情報";
 // should try plucking the hairs from vegetables!
 
 // - Uncle Sabiir
-const char D_080587c0[] =
+const char text_reading_letter_to_the_editor[] =
     "わたしは野菜をつくっているおじさんです。最近、うちの野菜たちにヒゲが生えるんです！とてもブキミだし、これでは売り物にならないんでヒゲをぬくんですが、これがまたキレイにぬけないのです。こまったわたしは気をまぎらわせようと、音楽をききながらノリノリで野菜たちの毛をぬきました。するとなんと！キレイにぬけるのです！しかもなんだか楽しいんです！音楽のチカラってすばらしいですね。みなさんもぜひ野菜の毛をぬいてみてください！";
 
 // Letter to the Editor
-const char D_08058960[] = "毛ぬき投書";
+const char text_reading_letter_to_the_editor_title[] = "毛ぬき投書";
 
 // Hi there. I run the local cafe. You can say I'm
 // a “manager." Thanks to the regulars, the
@@ -1535,7 +1533,7 @@ const char D_08058960[] = "毛ぬき投書";
 
 // I hang out at all sorts of places around town,
 // so if you see me, please pet me!
-const char D_0805896c[] =
+const char text_reading_more_than_a_barista[] =
     "私は喫茶店を経営しております。まぁ、分かりやすく言うと喫茶店のマスターです。経営のほうは常連さんのおかげで、まずまずといったカンジですね。あ、そうそう、先に言っておきますが、私は犬です。\n"
     "うちのお客さんは、音楽が好きな方が多いんですよねぇ。とくに、リズムに関して、かなりのこだわりをお持ちの方が来られます。なかには、パーフェクトキャンペーンをいくつも達成されてる方もいらっしゃって、もう ビックリしちゃいますヨ！\n"
     "まぁ、いつもはこんなカンジで喫茶店のほうを営んでおりますが、実はこれ、仮のすがたなんです。本当の私は… おはずかしい話ですが、犬用のヘッドホンをしながらノリノリで、はしゃぎまわっているんです！やはり、ノリノリなしではやってられないんですよねぇ。こまったものです。ははは。\n"
@@ -1543,7 +1541,7 @@ const char D_0805896c[] =
     "ではまた。";
 
 // More Than a Barista
-const char D_08058c7c[] = "経営者に聞く";
+const char text_reading_more_than_a_barista_title[] = "経営者に聞く";
 
 // How to Play this Game
 
@@ -1558,7 +1556,7 @@ const char D_08058c7c[] = "経営者に聞く";
 // body feels the beat. That's our advice.
 
 // That's about it. Pleasure to meet you!
-const char D_08058c8c[] =
+const char text_reading_handling_instructions[] =
     "このゲームの遊び方\n"
     "\n"
     "っていうか、とくに説明がいるほど複雑なゲームじゃないんですヨ～。だから、ここに書くこともとくにないんですよねぇ。\n"
@@ -1566,7 +1564,7 @@ const char D_08058c8c[] =
     "そんなとこですね。よろしくどうぞ～。";
 
 // Handling Instructions
-const char D_08058d94[] = "取り扱い説明書";
+const char text_reading_handling_instructions_title[] = "取り扱い説明書";
 
 // Hello!
 
@@ -1583,7 +1581,7 @@ const char D_08058d94[] = "取り扱い説明書";
 // Thank you.
 
 // <Translator's Note and translation credits go here>
-const char D_08058da4[] =
+const char text_reading_rhythm_tengoku_welcome[] =
     "ごあいさつ\n"
     "このたびは、「リズム天国」をお買い上げいただきまことにありがとうございます。あ、おともだちに借りているのかな？そ、それとも、ちゅ、中古ですか！？\n"
     "ま、それはさておき。このゲームに興味をもっていただいて光栄です。あなたとの出会いに感謝です！\n"
@@ -1591,5 +1589,4 @@ const char D_08058da4[] =
     "ありがとうございました。";
 
 // Rhythm Heaven Welcome
-const char D_08058ee8[] =
-    "リズム天国へようこそ！";
+const char text_reading_rhythm_tengoku_welcome_title[] = "リズム天国へようこそ！";

@@ -6,250 +6,253 @@
 /* Studio */
 
 
-//
-const char D_08058f58[] = "\x04\x31" "4.";
+// Song Title Formatting
+const char text_studio_song_formatting[] = "\4" "14.";
 
 // Song Title - Perfect
-const char D_08058f60[] = "パーフェクト";
+const char text_studio_song_perfect[] = "パーフェクト";
 
 // Song Title - Superb
-const char D_08058f70[] = "ハイレベル";
+const char text_studio_song_superb[] = "ハイレベル";
 
 // Song Title - OK
-const char D_08058f7c[] = "平凡";
+const char text_studio_song_ok[] = "平凡";
 
 // Song Title - Try Again
-const char D_08058f84[] = "やりなおし";
+const char text_studio_song_try_again[] = "やりなおし";
 
 // Song Title - Cafe
-const char D_08058f90[] = "喫茶カウンセル";
+const char text_studio_song_cafe[] = "喫茶カウンセル";
 
 // Song Title - Game Select 2
-const char D_08058fa0[] = "ゲームセレクト２";
+const char text_studio_song_game_select_2[] = "ゲームセレクト２";
 
 // Song Title - Credits
-const char D_08058fb4[] = "スタッフクレジット";
+const char text_studio_song_credits[] = "スタッフクレジット";
 
 // Song Title - Introduction
-const char D_08058fc8[] = "オープニング";
+const char text_studio_song_opening[] = "オープニング";
 
 // Song Title - E-Mail
-const char D_08058fd8[] = "リズム資料室";
+const char text_studio_song_data_room[] = "リズム資料室";
 
 // Song Title - Game Select
-const char D_08058fe8[] = "ゲームセレクト";
+const char text_studio_song_game_select[] = "ゲームセレクト";
 
 // Song Title - Menu
-const char D_08058ff8[] = "メニュー";
+const char text_studio_song_main_menu[] = "メニュー";
 
 // Song Title - Title
-const char D_08059004[] = "タイトル";
+const char text_studio_song_title[] = "タイトル";
 
 // Song Title - Remix 6
-const char D_08059010[] = "リミックス６";
+const char text_studio_song_remix6[] = "リミックス６";
 
 // Song Title - Remix 8
-const char D_08059020[] = "リミックス８";
+const char text_studio_song_remix8[] = "リミックス８";
 
 // Song Title - Remix 7
-const char D_08059030[] = "リミックス７";
+const char text_studio_song_remix7[] = "リミックス７";
 
 // Song Title - Fireworks
-const char D_08059040[] = "花火";
+const char text_studio_song_fireworks[] = "花火";
 
 // Song Title - Toss Boys
-const char D_08059048[] = "トスボーイズ";
+const char text_studio_song_toss_boys[] = "トスボーイズ";
 
 // Song Title - Bouncy Road
-const char D_08059058[] = "ホッピングロード";
+const char text_studio_song_bouncy_road[] = "ホッピングロード";
 
 // Song Title - Polyrhythm
-const char D_0805906c[] = "ポリリズム";
+const char text_studio_song_polyrhythm[] = "ポリリズム";
 
 // Song Title - Power Calligraphy
-const char D_08059078[] = "リズムお習字";
+const char text_studio_song_power_calligraphy[] = "リズムお習字";
 
 // Song Title - Quiz Show
-const char D_08059088[] = "クイズ";
+const char text_studio_song_quiz_show[] = "クイズ";
 
 // Song Title - Tram & Pauline
-const char D_08059090[] = "トランとポリン";
+const char text_studio_song_tram_and_pauline[] = "トランとポリン";
 
 // Song Title - Bunny Hop
-const char D_080590a0[] = "ウサギとび";
+const char text_studio_song_bunny_hop[] = "ウサギとび";
 
 // Song Title - Showtime
-const char D_080590ac[] = "ショータイム";
+const char text_studio_song_showtime[] = "ショータイム";
 
 // Song Title - Sick Beats
-const char D_080590bc[] = "バイキンはかせ";
+const char text_studio_song_sick_beats[] = "バイキンはかせ";
 
 // Song Title - Rat Race
-const char D_080590cc[] = "こっそりラット";
+const char text_studio_song_rat_race[] = "こっそりラット";
 
 // Song Title - Samurai Slice
-const char D_080590dc[] = "ゐあひ斬り";
+const char text_studio_song_samurai_slice[] = "ゐあひ斬り";
 
 // Song Title - Sneaky Spirits
-const char D_080590e8[] = "しろいおばけ";
+const char text_studio_song_sneaky_spirits[] = "しろいおばけ";
 
 // Song Title - Spaceball
-const char D_080590f8[] = "エアーバッター";
+const char text_studio_song_spaceball[] = "エアーバッター";
 
 // Song Title - Marching Orders
-const char D_08059108[] = "マーチャ";
+const char text_studio_song_marching_orders[] = "マーチャ";
 
 // Song Title - Wizard's Waltz
-const char D_08059114[] = "まほうつかい";
+const char text_studio_song_wizards_waltz[] = "まほうつかい";
 
 // Song Title - Turbo Tap Trial
-const char D_08059124[] = "スーパータップ";
+const char text_studio_song_tap_trial_2[] = "スーパータップ";
 
 // Song Title - The Snappy Trio
-const char D_08059134[] = "バリバリ三人衆";
+const char text_studio_song_snappy_trio[] = "バリバリ三人衆";
 
 // Song Title - Rhythm Tweezers
-const char D_08059144[] = "リズム脱毛";
+const char text_studio_song_rhythm_tweezers[] = "リズム脱毛";
 
 // Song Title - Cosmic Dance
-const char D_08059150[] = "コスモダンス";
+const char text_studio_song_cosmic_dance[] = "コスモダンス";
 
 // Song Title - The☆Bon Dance
-const char D_08059160[] = "ボンダンス";
+const char text_studio_song_bon_dance[] = "ボンダンス";
 
 // Song Title - The☆Bon-Odori
-const char D_0805916c[] = "ザ☆ぼんおどり";
+const char text_studio_song_bon_odori[] = "ザ☆ぼんおどり";
 
 // Song Title - Night Walk
-const char D_0805917c[] = "ナイトウォーク";
+const char text_studio_song_night_walk[] = "ナイトウォーク";
 
 // Song Title - WISH Can't Wait...
-const char D_0805918c[] = "WISH 君を待て…";
+const char text_studio_song_remix5_short[] = "WISH 君を待て…";
 
 // Song Title - WISH Can't Wait For You
-const char D_0805919c[] = "WISH 君を待てなくて";
+const char text_studio_song_remix5[] = "WISH 君を待てなくて";
 
 // Song Title - Love's Honey Swe...
-const char D_080591b0[] = "恋のハニースイ～…";
+const char text_studio_song_remix3_short[] = "恋のハニースイ～…";
 
 // Song Title - Love's Honey Sweet Angel
-const char D_080591c4[] = "恋のハニースイ～トエンジェル";
+const char text_studio_song_remix3[] = "恋のハニースイ～トエンジェル";
 
 // Song Title - Space Dance
-const char D_080591e4[] = "スペースダンス";
+const char text_studio_song_space_dance[] = "スペースダンス";
 
 // Song Title - Tap Trial
-const char D_080591f4[] = "タップダンズ";
+const char text_studio_song_tap_trial[] = "タップダンズ";
 
 // Song Title - The Clappy Trio
-const char D_08059204[] = "パチパチ三人衆";
+const char text_studio_song_clappy_trio[] = "パチパチ三人衆";
 
 // Song Title - Karate Man
-const char D_08059214[] = "カラテ家";
+const char text_studio_song_karate_man[] = "カラテ家";
 
 // Song Title - Silence
-const char D_08059220[] = "サイレント";
+const char text_studio_song_silence[] = "サイレント";
 
 // Drum Kit Title - Samurai Drum
-const char D_0805922c[] = "さむらいドラム";
+const char text_studio_kit_samurai_drum[] = "さむらいドラム";
 
 // Drum Kit Title - Air-Cutter Drum
-const char D_0805923c[] = "風切るドラム";
+const char text_studio_kit_air_cutter_drum[] = "風切るドラム";
 
 // Drum Kit Title - Tap Drum
-const char D_0805924c[] = "タップなドラム";
+const char text_studio_kit_tap_drum[] = "タップなドラム";
 
 // Drum Kit Title - Sound Effects Drum
-const char D_0805925c[] = "音効なドラム";
+const char text_studio_kit_sfx_drum[] = "音効なドラム";
 
 // Drum Kit Title - Heel Tech Drum 2
-const char D_0805926c[] = "カカトテクなドラム ２";
+const char text_studio_kit_heel_tech_drum_2[] = "カカトテクなドラム ２";
 
 // Drum Kit Title - Heel Tech Drum 1
-const char D_08059284[] = "カカトテクなドラム １";
+const char text_studio_kit_heel_tech_drum_1[] = "カカトテクなドラム １";
 
 // Drum Kit Title - Hi-hat Drum
-const char D_0805929c[] = "ハットテクなドラム";
+const char text_studio_kit_hihat_drum[] = "ハットテクなドラム";
 
 // Drum Kit Title - Heavy Drum
-const char D_080592b0[] = "ハードなドラム";
+const char text_studio_kit_heavy_drum[] = "ハードなドラム";
 
 // Drum Kit Title - Light Drum
-const char D_080592c0[] = "ライトなドラム";
+const char text_studio_kit_light_drum[] = "ライトなドラム";
 
 // Drum Kit Title - Asian Drum
-const char D_080592d0[] = "アジアなドラム";
+const char text_studio_kit_asian_drum[] = "アジアなドラム";
 
 // Drum Kit Title - Matte Drum
-const char D_080592e0[] = "マットなドラム";
+const char text_studio_kit_matte_drum[] = "マットなドラム";
 
 // Drum Kit Title - Techno Drum
-const char D_080592f0[] = "テクノなドラム";
+const char text_studio_kit_techno_drum[] = "テクノなドラム";
 
 // Drum Kit Title - Power Drum
-const char D_08059300[] = "パワーなドラム";
+const char text_studio_kit_power_drum[] = "パワーなドラム";
 
 // Drum Kit Title - Dry Drum
-const char D_08059310[] = "ドライなドラム";
+const char text_studio_kit_dry_drum[] = "ドライなドラム";
 
 // Drum Kit Title - Regular Drum
-const char D_08059320[] = "フツーなドラム";
+const char text_studio_kit_standard_drum[] = "フツーなドラム";
 
-const char D_08059330[] = "";
+// Drum Kit Title Start
+const char text_studio_kit_default[] = "";
 
-const char D_08059334[] = "\x04\x38" ".";
+// Drum Kit Name Formatting
+const char text_studio_kit_formatting[] = "\4" "8.";
 
-// ???
-const char D_08059338[] = "？？？";
+// Drum Kit Title - Not Unlocked
+const char text_studio_kit_not_unlocked[] = "？？？";
 
 // There's not much memory left.
 // Perform anyway?
-const char D_08059340[] =
+const char text_studio_warning_low_mem[] =
     "メモリが少なくなってきてます。\n"
     "このまま演奏する？";
 
 // You can only save 10 recitals.
 // Perform without saving?
-const char D_08059374[] =
+const char text_studio_warning_no_slots[] =
     "演奏データは10コしか残せません。\n"
     "データは残らないけど演奏する？";
 
 // You can't save any more data.
 // Perform without saving?
-const char D_080593b4[] =
+const char text_studio_warning_no_mem[] =
     "メモリがいっぱいです。\n"
     "データは残らないけど演奏する？";
 
-// Mark
-const char D_080593ec[] = "チェック";
+// Option - Mark
+const char text_studio_option_mark[] = "チェック";
 
-// Sort
-const char D_080593f8[] = "ならびかえ";
+// Option - Sort
+const char text_studio_option_sort[] = "ならびかえ";
 
-// Drum
-const char D_08059404[] = "ドラミング";
+// Option - Drum
+const char text_studio_option_drum[] = "ドラミング";
 
-// Listen
-const char D_08059410[] = "リスニング";
+// Option - Listen
+const char text_studio_option_listen[] = "リスニング";
 
-// Erase Data
-const char D_0805941c[] = "データ消去";
+// Option - Erase Data
+const char text_studio_option_delete[] = "データ消去";
 
-const char D_08059428[] = "";
+// Option Text Start
+const char text_studio_option_default[] = "";
 
 // Not even one song has
 // a check mark on it.
-const char D_0805942c[] =
+const char text_studio_warning_no_checks1[] =
     "チェックのついている曲が、\n"
     "ひとつもありません。";
 
 // In listening mode, only the songs
 // with a check mark will be played.
-const char D_0805945c[] =
+const char text_studio_warning_no_checks2[] =
     "リスニングではチェックのある曲だけ再生します。　よろしいですか～？";
 
 // You'll erase this performance
 // data! Is that really OK?
-const char D_080594a0[] =
+const char text_studio_warning_delete[] =
     "この演奏データを削除するヨ！\n"
     "ホントにOK？";

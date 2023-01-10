@@ -9,7 +9,7 @@ thumb_func_start func_0802428c \n\
 /* 08024294 */ BL get_current_mem_id \n\
 /* 08024298 */ LSLS R0, R0, 0x10 \n\
 /* 0802429a */ LSRS R0, R0, 0x10 \n\
-/* 0802429c */ LDR R2, =D_089e0154 \n\
+/* 0802429c */ LDR R2, =drum_intro_gfx_tables \n\
 /* 0802429e */ LDR R1, =D_030055d0 \n\
 /* 080242a0 */ LDR R1, [R1] \n\
 /* 080242a2 */ LDRB R1, [R1] \n\

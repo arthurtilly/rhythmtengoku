@@ -37,7 +37,7 @@ const struct GraphicsTable D_08058f00[] = {
 };
 
 // Invalid Data
-const char D_08058f30[] =
+const char text_reading_warning_invalid[] =
     "\x01\x43" "\x03\x32" "\x01\x6c" "\n"
     "\n"
     "\n"
@@ -45,4 +45,4 @@ const char D_08058f30[] =
     "無効データ";
 
 // Error
-const char D_08058f48[] = "\x02\x33" "\x01\x33" "\x01\x43" "エラー";
+const char text_reading_warning_error[] = "\x02\x33" "\x01\x33" "\x01\x43" "エラー";

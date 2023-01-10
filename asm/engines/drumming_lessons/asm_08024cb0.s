@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08024cb0 \n\
+thumb_func_start drum_intro_engine_update \n\
 /* 08024cb0 */ PUSH {R4, LR} \n\
 /* 08024cb2 */ BL func_080249f0 \n\
 /* 08024cb6 */ LDR R4, =D_030055d0 \n\
@@ -13,7 +13,7 @@ thumb_func_start func_08024cb0 \n\
 /* 08024cc0 */ LDRB R0, [R0] \n\
 /* 08024cc2 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08024cc4 */ BEQ branch_08024ce0 \n\
-/* 08024cc6 */ LDR R1, =D_089e0014 \n\
+/* 08024cc6 */ LDR R1, =drum_intro_kits \n\
 /* 08024cc8 */ LDRB R0, [R2] \n\
 /* 08024cca */ LSLS R0, R0, 0x2 \n\
 /* 08024ccc */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

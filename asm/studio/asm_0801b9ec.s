@@ -34,7 +34,7 @@ branch_0801ba18: \n\
 /* 0801ba22 */ MOVS R4, 0xE3 @ Set R4 to 0xE3 \n\
 /* 0801ba24 */ LSLS R4, R4, 0x2 \n\
 /* 0801ba26 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
-/* 0801ba28 */ LDR R0, =D_08059428 \n\
+/* 0801ba28 */ LDR R0, =text_studio_option_default \n\
 /* 0801ba2a */ LDRB R0, [R0] \n\
 /* 0801ba2c */ STRB R0, [R1] \n\
 /* 0801ba2e */ LDR R1, [R6] \n\

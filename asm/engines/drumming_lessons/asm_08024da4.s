@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08024da4 \n\
+thumb_func_start drum_intro_cue_barely \n\
 /* 08024da4 */ PUSH {R4, R5, LR} \n\
 /* 08024da6 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
 /* 08024da8 */ BL gameplay_get_last_hit_offset \n\

@@ -46,7 +46,9 @@ SECTIONS {
 		build/src/engines/karate_man.c.o(.bss*);
 		build/src/engines/mannequin_factory.c.o(.bss*);
 		build/src/engines/staff_credit.c.o(.bss*);
-		build/src/engines/drumming_lessons.c.o(.bss*);
+		build/src/engines/drum_intro.c.o(.bss*);
+		build/src/engines/drum_live.c.o(.bss*);
+		build/src/engines/drum_studio.c.o(.bss*);
 		build/src/engines/night_walk.c.o(.bss*);
 		build/src/engines/showtime.c.o(.bss*);
 		build/src/engines/bouncy_road.c.o(.bss*);
@@ -170,7 +172,9 @@ SECTIONS {
 		build/src/engines/karate_man.c.o(.text);
 		build/src/engines/mannequin_factory.c.o(.text);
 		build/src/engines/staff_credit.c.o(.text);
-		build/src/engines/drumming_lessons.c.o(.text);
+		build/src/engines/drum_intro.c.o(.text);
+		build/src/engines/drum_live.c.o(.text);
+		build/src/engines/drum_studio.c.o(.text);
 		build/src/engines/night_walk.c.o(.text);
 		build/src/engines/showtime.c.o(.text);
 		build/src/engines/bouncy_road.c.o(.text);
@@ -1578,6 +1582,8 @@ SECTIONS {
         build/data/engines/karate_man_engine.c.o(.rodata*);
         build/data/engines/mannequin_factory_engine.c.o(.rodata*);
         build/data/engines/staff_credit_engine.c.o(.rodata*);
+        build/data/engines/drum_intro_engine.c.o(.rodata*);
+        build/data/engines/drum_live_engine.c.o(.rodata*);
         build/bin/bindata_089df6ec.bin.o(.rodata*);
         build/data/engines/drum_studio_engine.c.o(.rodata*);
         build/data/engines/night_walk_engine.c.o(.rodata*);
