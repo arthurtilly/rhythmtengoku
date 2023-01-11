@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803db30 \n\
+thumb_func_start tap_trial_play_monkey_action \n\
 /* 0803db30 */ PUSH {R4-R7, LR} \n\
 /* 0803db32 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 0803db34 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -12,7 +12,7 @@ thumb_func_start func_0803db30 \n\
 /* 0803db3c */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 0803db3e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803db40 */ MOV R8, R0 @ Set R8 to R0 \n\
-/* 0803db42 */ LDR R2, =D_089e7e00 \n\
+/* 0803db42 */ LDR R2, =tap_trial_monkey_action_table \n\
 /* 0803db44 */ LDR R0, =D_030055d0 \n\
 /* 0803db46 */ LDR R0, [R0] \n\
 /* 0803db48 */ LDRB R1, [R0] \n\
@@ -33,7 +33,7 @@ thumb_func_start func_0803db30 \n\
 branch_0803db64: \n\
 /* 0803db64 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803db66 */ LDRSB R0, [R6, R0] \n\
-/* 0803db68 */ BL func_0803da20 \n\
+/* 0803db68 */ BL tap_trial_get_anim \n\
 /* 0803db6c */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803db6e */ LDR R0, =D_03005380 \n\
 /* 0803db70 */ LDR R0, [R0] \n\
@@ -69,7 +69,7 @@ branch_0803db9e: \n\
 /* 0803dbac */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803dbae */ LSLS R4, R4, 0x10 \n\
 /* 0803dbb0 */ LSRS R4, R4, 0x10 \n\
-/* 0803dbb2 */ LDR R5, =func_0803db30 \n\
+/* 0803dbb2 */ LDR R5, =tap_trial_play_monkey_action \n\
 /* 0803dbb4 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
 /* 0803dbb6 */ BL beats_to_ticks \n\
 /* 0803dbba */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
@@ -204,7 +204,7 @@ jtbl_0803dcbc: \n\
  \n\
 branch_0803dcf0: \n\
 /* 0803dcf0 */ MOV R0, R9 @ Set R0 to R9 \n\
-/* 0803dcf2 */ BL func_0803da40 \n\
+/* 0803dcf2 */ BL tap_trial_play_girl_action \n\
 jump_0803dcf6: \n\
 /* 0803dcf6 */ ADD SP, 0xC \n\
 /* 0803dcf8 */ POP {R3-R5} \n\

@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803dda4 \n\
+thumb_func_start tap_trial_engine_start \n\
 /* 0803dda4 */ PUSH {R4-R7, LR} \n\
 /* 0803dda6 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 0803dda8 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -23,7 +23,7 @@ thumb_func_start func_0803dda4 \n\
 /* 0803ddc8 */ STRB R0, [R1] \n\
  \n\
 branch_0803ddca: \n\
-/* 0803ddca */ BL func_0803dd58 \n\
+/* 0803ddca */ BL tap_trial_init_gfx1 \n\
 /* 0803ddce */ BL scene_show_obj_layer \n\
 /* 0803ddd2 */ STR R7, [SP] \n\
 /* 0803ddd4 */ MOVS R0, 0x1C @ Set R0 to 0x1C \n\
@@ -102,7 +102,7 @@ branch_0803ddca: \n\
 /* 0803de74 */ MOVS R0, 0xA0 @ Set R0 to 0xA0 \n\
 /* 0803de76 */ STRH R0, [R1, 0xE] \n\
 /* 0803de78 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0803de7a */ BL func_0803da20 \n\
+/* 0803de7a */ BL tap_trial_get_anim \n\
 /* 0803de7e */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803de80 */ LDR R0, [R4] \n\
 /* 0803de82 */ LDR R2, [R5] \n\
@@ -131,7 +131,7 @@ branch_0803ddca: \n\
 /* 0803deb2 */ LDRSH R0, [R1, R5] \n\
 /* 0803deb4 */ BL func_0803dd84 \n\
 /* 0803deb8 */ MOVS R0, 0x1C @ Set R0 to 0x1C \n\
-/* 0803deba */ BL func_0803da20 \n\
+/* 0803deba */ BL tap_trial_get_anim \n\
 /* 0803debe */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803dec0 */ LDR R0, [R4] \n\
 /* 0803dec2 */ MOV R3, R10 @ Set R3 to R10 \n\
@@ -151,7 +151,7 @@ branch_0803ddca: \n\
 /* 0803dee0 */ ASRS R0, R0, 0x10 \n\
 /* 0803dee2 */ BL func_0803dd84 \n\
 /* 0803dee6 */ MOVS R0, 0x1B @ Set R0 to 0x1B \n\
-/* 0803dee8 */ BL func_0803da20 \n\
+/* 0803dee8 */ BL tap_trial_get_anim \n\
 /* 0803deec */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803deee */ LDR R0, [R4] \n\
 /* 0803def0 */ MOV R3, R8 @ Set R3 to R8 \n\
@@ -169,7 +169,7 @@ branch_0803ddca: \n\
 /* 0803df0a */ LDR R1, [R3] \n\
 /* 0803df0c */ STRH R0, [R1, 0x12] \n\
 /* 0803df0e */ MOVS R0, 0x1B @ Set R0 to 0x1B \n\
-/* 0803df10 */ BL func_0803da20 \n\
+/* 0803df10 */ BL tap_trial_get_anim \n\
 /* 0803df14 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803df16 */ LDR R0, [R4] \n\
 /* 0803df18 */ MOV R2, R8 @ Set R2 to R8 \n\
@@ -195,7 +195,7 @@ branch_0803ddca: \n\
 /* 0803df46 */ LDR R0, [R5] \n\
 /* 0803df48 */ STRH R7, [R0, 0x16] \n\
 /* 0803df4a */ MOVS R0, 0x1C @ Set R0 to 0x1C \n\
-/* 0803df4c */ BL func_0803da20 \n\
+/* 0803df4c */ BL tap_trial_get_anim \n\
 /* 0803df50 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803df52 */ LDR R0, [R4] \n\
 /* 0803df54 */ MOV R5, R8 @ Set R5 to R8 \n\
@@ -213,7 +213,7 @@ branch_0803ddca: \n\
 /* 0803df6e */ ASRS R0, R0, 0x10 \n\
 /* 0803df70 */ BL func_0803dd84 \n\
 /* 0803df74 */ MOVS R0, 0x1C @ Set R0 to 0x1C \n\
-/* 0803df76 */ BL func_0803da20 \n\
+/* 0803df76 */ BL tap_trial_get_anim \n\
 /* 0803df7a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803df7c */ LDR R0, [R4] \n\
 /* 0803df7e */ STR R5, [SP] \n\
@@ -230,7 +230,7 @@ branch_0803ddca: \n\
 /* 0803df96 */ ASRS R0, R0, 0x10 \n\
 /* 0803df98 */ BL func_0803dd84 \n\
 /* 0803df9c */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\
-/* 0803df9e */ BL func_0803da20 \n\
+/* 0803df9e */ BL tap_trial_get_anim \n\
 /* 0803dfa2 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803dfa4 */ LDR R0, [R4] \n\
 /* 0803dfa6 */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\

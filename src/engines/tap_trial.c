@@ -2,6 +2,9 @@
 
 asm(".include \"include/gba.inc\""); // Temporary
 
+// For readability.
+#define gTapTrialInfo ((struct TapTrialInfo *)D_030055d0)
+
 
 /* TAP TRIAL */
 

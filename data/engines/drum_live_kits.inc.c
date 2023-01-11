@@ -127,7 +127,7 @@ const struct DrumTechPhrase D_089e0840 = {
 };
 
 // [D_089e0854] Drum Kit 1
-const struct DrumKit D_089e0854 = {
+const struct DrumTechKit D_089e0854 = {
     /* A_BUTTON   */ &D_089e07c8,
     /* B_BUTTON   */ &D_089e07a0,
     /* DPAD_UP    */ &D_089e0840,
@@ -258,7 +258,7 @@ const struct DrumTechPhrase D_089e093c = {
 };
 
 // [D_089e0950] Drum Kit 2
-const struct DrumKit D_089e0950 = {
+const struct DrumTechKit D_089e0950 = {
     /* A_BUTTON   */ &D_089e08d8,
     /* B_BUTTON   */ &D_089e08b0,
     /* DPAD_UP    */ &D_089e093c,

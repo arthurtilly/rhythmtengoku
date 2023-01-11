@@ -74,7 +74,7 @@ const DrumPlayFunc D_089e16b0[] = {
 };
 
 // [D_089e16f0] Samurai Drummer's Kits
-const struct DrumKit *const drum_teacher_kits[] = {
+const struct DrumTechKit *const drum_teacher_kits[] = {
     /* 0x00 */ &D_089e1160,
     /* 0x01 */ &D_089e0df0,
     /* 0x02 */ &D_089e0ecc,
@@ -182,7 +182,7 @@ const DrumPlayFunc D_089e2988[] = {
 };
 
 // [D_089e29c8] Drum Kits
-const struct DrumKit *const drum_studio_kits[] = {
+const struct DrumTechKit *const drum_studio_kits[] = {
     /* 0x00 */ &D_089e201c,
     /* 0x01 */ &D_089e1cac,
     /* 0x02 */ &D_089e1d88,

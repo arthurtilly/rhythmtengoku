@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803e580 \n\
+thumb_func_start tap_trial_cue_miss \n\
 /* 0803e580 */ PUSH {R4-R6, LR} \n\
 /* 0803e582 */ SUB SP, 0xC \n\
 /* 0803e584 */ LDR R5, =D_030055d0 \n\
@@ -18,7 +18,7 @@ thumb_func_start func_0803e580 \n\
 /* 0803e598 */ CMP R4, 0xD @ Compare R4 and 0xD \n\
 /* 0803e59a */ BNE branch_0803e61a \n\
 /* 0803e59c */ MOVS R0, 0xD @ Set R0 to 0xD \n\
-/* 0803e59e */ BL func_0803da20 \n\
+/* 0803e59e */ BL tap_trial_get_anim \n\
 /* 0803e5a2 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803e5a4 */ LDR R0, =D_03005380 \n\
 /* 0803e5a6 */ LDR R0, [R0] \n\
@@ -47,7 +47,7 @@ thumb_func_start func_0803e580 \n\
  \n\
 branch_0803e5e4: \n\
 /* 0803e5e4 */ MOVS R0, 0xE @ Set R0 to 0xE \n\
-/* 0803e5e6 */ BL func_0803da20 \n\
+/* 0803e5e6 */ BL tap_trial_get_anim \n\
 /* 0803e5ea */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803e5ec */ LDR R0, =D_03005380 \n\
 /* 0803e5ee */ LDR R0, [R0] \n\

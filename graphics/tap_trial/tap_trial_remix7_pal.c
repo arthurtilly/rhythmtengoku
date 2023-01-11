@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0891c964] <description>
+// [D_0891c964] Tap Trial (Pig Ver.) OBJ Palette
 const Palette tap_trial_remix7_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x10E8A8),
@@ -95,7 +95,7 @@ const Palette tap_trial_remix7_obj_pal[] = {
     }
 };
 
-// [D_0891ca04] <description>
+// [D_0891ca04] Tap Trial (Pig Ver.) BG Palette
 const Palette tap_trial_remix7_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x40F8F8),

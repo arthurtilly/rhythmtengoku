@@ -254,7 +254,7 @@ extern const char D_0805a3a0[];
 // Engine Definition Data:
 extern const struct DrumTeacherExpression drum_teacher_expressions_anim[];
 extern const DrumPlayFunc D_089e16b0[];
-extern const struct DrumKit *const drum_teacher_kits[]; // Drum Samurai's Kit?
+extern const struct DrumTechKit *const drum_teacher_kits[]; // Drum Samurai's Kit?
 extern const struct Animation *const drum_lessons_accuracy_light_anim[]; // Accuracy Meter Lights 1-7
 extern const struct Vector2 drum_lessons_accuracy_light_positions[]; // Accuracy Meter Light Positions
 extern const struct Animation *const drum_lessons_rank_anim[];
@@ -262,7 +262,7 @@ extern const char *const drum_lessons_rank_text[];
 extern const struct SequenceData *const drum_lessons_rank_sfx[];
 extern const struct DrumStudioMonitorData D_089e17a0[];
 extern const DrumPlayFunc D_089e2988[];
-extern const struct DrumKit *const drum_studio_kits[];
+extern const struct DrumTechKit *const drum_studio_kits[];
 extern const struct CompressedGraphics *const drum_studio_buffered_textures[];
 extern const struct GraphicsTable drum_studio_gfx_table[];
 extern const struct GraphicsTable drum_lessons_gfx_table[];

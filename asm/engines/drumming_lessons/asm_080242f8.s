@@ -19,7 +19,7 @@ thumb_func_start drum_intro_engine_start \n\
 	MOV R2, SP \n\
 	LDRB R2, [R2, 0x14] \n\
 	STRB R2, [R0] \n\
-	BL func_080242cc \n\
+	BL drum_intro_init_gfx1 \n\
 	BL scene_show_obj_layer \n\
 	MOVS R2, 0x40 \n\
 	RSBS R2, R2, 0x0 \n\

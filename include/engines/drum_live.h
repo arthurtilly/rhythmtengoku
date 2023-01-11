@@ -86,7 +86,7 @@ extern const Palette *const drum_live_bg_palettes[];
 extern const u16 D_089e06b0[];
 extern const u8 D_089e06c0[];
 extern const u16 *const D_089e0758[];
-extern const struct DrumKit *const drum_live_kits[];
+extern const struct DrumTechKit *const drum_live_kits[];
 extern const struct CompressedGraphics *const drum_live_buffered_textures[];
 extern const struct GraphicsTable *const drum_live_gfx_tables[];
 extern const struct Vector2 D_089e0ab0[];
@@ -137,9 +137,9 @@ extern void func_08025d9c(); // Drum LIVE Kit Event - D-Pad Right
 extern void func_08025e00(); // Drum LIVE Kit Event - D-Pad Up (Hi-Hat)
 extern void func_08025e74(); // Drum LIVE Kit Event - L Button
 extern void func_08025ed8(); // Drum LIVE Kit Event - R Button
-// extern ? func_08025f3c(?);
-// extern ? func_08025f50(?);
-// extern ? func_08025f90(?);
+extern void drum_live_init_gfx3(void); // Graphics Init. 3
+extern void drum_live_init_gfx2(void); // Graphics Init. 2
+extern void drum_live_init_gfx1(void); // Graphics Init. 1
 // extern ? func_08025fbc(?);
 extern void drum_live_engine_start(u32 version); // DRUM LIVE - Game Engine Start
 extern void drum_live_engine_event_stub(void); // DRUM LIVE - Engine Event 0x0A (STUB)

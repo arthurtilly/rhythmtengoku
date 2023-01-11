@@ -11,7 +11,7 @@ thumb_func_start func_0803e160 \n\
 /* 0803e16a */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0803e16c */ BNE branch_0803e194 \n\
 /* 0803e16e */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\
-/* 0803e170 */ BL func_0803da20 \n\
+/* 0803e170 */ BL tap_trial_get_anim \n\
 /* 0803e174 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803e176 */ LDR R0, =D_03005380 \n\
 /* 0803e178 */ LDR R0, [R0] \n\

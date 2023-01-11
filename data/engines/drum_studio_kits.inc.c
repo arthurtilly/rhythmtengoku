@@ -117,7 +117,7 @@ const struct DrumTechPhrase D_089e1c98 = {
 };
 
 // [D_089e1cac] Drum Kit
-const struct DrumKit D_089e1cac = {
+const struct DrumTechKit D_089e1cac = {
     /* A_BUTTON   */ &D_089e1c34,
     /* B_BUTTON   */ &D_089e1c0c,
     /* DPAD_UP    */ &D_089e1c5c,
@@ -225,7 +225,7 @@ const struct DrumTechPhrase D_089e1d74 = {
 };
 
 // [D_089e1d88] Drum Kit
-const struct DrumKit D_089e1d88 = {
+const struct DrumTechKit D_089e1d88 = {
     /* A_BUTTON   */ &D_089e1d10,
     /* B_BUTTON   */ &D_089e1ce8,
     /* DPAD_UP    */ &D_089e1d74,
@@ -333,7 +333,7 @@ const struct DrumTechPhrase D_089e1e50 = {
 };
 
 // [D_089e1e64] Drum Kit
-const struct DrumKit D_089e1e64 = {
+const struct DrumTechKit D_089e1e64 = {
     /* A_BUTTON   */ &D_089e1dec,
     /* B_BUTTON   */ &D_089e1dc4,
     /* DPAD_UP    */ &D_089e1e50,
@@ -441,7 +441,7 @@ const struct DrumTechPhrase D_089e1f2c = {
 };
 
 // [D_089e1f40] Drum Kit
-const struct DrumKit D_089e1f40 = {
+const struct DrumTechKit D_089e1f40 = {
     /* A_BUTTON   */ &D_089e1ec8,
     /* B_BUTTON   */ &D_089e1ea0,
     /* DPAD_UP    */ &D_089e1ef0,
@@ -549,7 +549,7 @@ const struct DrumTechPhrase D_089e2008 = {
 };
 
 // [D_089e201c] Drum Kit
-const struct DrumKit D_089e201c = {
+const struct DrumTechKit D_089e201c = {
     /* A_BUTTON   */ &D_089e1fa4,
     /* B_BUTTON   */ &D_089e1f7c,
     /* DPAD_UP    */ &D_089e2008,
@@ -657,7 +657,7 @@ const struct DrumTechPhrase D_089e20e4 = {
 };
 
 // [D_089e20f8] Drum Kit
-const struct DrumKit D_089e20f8 = {
+const struct DrumTechKit D_089e20f8 = {
     /* A_BUTTON   */ &D_089e2080,
     /* B_BUTTON   */ &D_089e2058,
     /* DPAD_UP    */ &D_089e20e4,
@@ -765,7 +765,7 @@ const struct DrumTechPhrase D_089e21c0 = {
 };
 
 // [D_089e21d4] Drum Kit
-const struct DrumKit D_089e21d4 = {
+const struct DrumTechKit D_089e21d4 = {
     /* A_BUTTON   */ &D_089e215c,
     /* B_BUTTON   */ &D_089e2134,
     /* DPAD_UP    */ &D_089e21c0,
@@ -873,7 +873,7 @@ const struct DrumTechPhrase D_089e229c = {
 };
 
 // [D_089e22b0] Drum Kit
-const struct DrumKit D_089e22b0 = {
+const struct DrumTechKit D_089e22b0 = {
     /* A_BUTTON   */ &D_089e2238,
     /* B_BUTTON   */ &D_089e2210,
     /* DPAD_UP    */ &D_089e2260,
@@ -981,7 +981,7 @@ const struct DrumTechPhrase D_089e2378 = {
 };
 
 // [D_089e238c] Drum Kit
-const struct DrumKit D_089e238c = {
+const struct DrumTechKit D_089e238c = {
     /* A_BUTTON   */ &D_089e2314,
     /* B_BUTTON   */ &D_089e22ec,
     /* DPAD_UP    */ &D_089e2378,
@@ -1089,7 +1089,7 @@ const struct DrumTechPhrase D_089e2454 = {
 };
 
 // [D_089e2468] Drum Kit
-const struct DrumKit D_089e2468 = {
+const struct DrumTechKit D_089e2468 = {
     /* A_BUTTON   */ &D_089e23f0,
     /* B_BUTTON   */ &D_089e23c8,
     /* DPAD_UP    */ &D_089e2418,
@@ -1197,7 +1197,7 @@ const struct DrumTechPhrase D_089e2530 = {
 };
 
 // [D_089e2544] Drum Kit
-const struct DrumKit D_089e2544 = {
+const struct DrumTechKit D_089e2544 = {
     /* A_BUTTON   */ &D_089e24cc,
     /* B_BUTTON   */ NULL,
     /* DPAD_UP    */ &D_089e2530,
@@ -1295,7 +1295,7 @@ const struct DrumTechPhrase D_089e25f8 = {
 };
 
 // [D_089e260c] Drum Kit
-const struct DrumKit D_089e260c = {
+const struct DrumTechKit D_089e260c = {
     /* A_BUTTON   */ &D_089e25a8,
     /* B_BUTTON   */ &D_089e2580,
     /* DPAD_UP    */ &D_089e25d0,
@@ -1393,7 +1393,7 @@ const struct DrumTechPhrase D_089e26c0 = {
 };
 
 // [D_089e26d4] Drum Kit
-const struct DrumKit D_089e26d4 = {
+const struct DrumTechKit D_089e26d4 = {
     /* A_BUTTON   */ &D_089e2670,
     /* B_BUTTON   */ &D_089e2648,
     /* DPAD_UP    */ &D_089e2698,
@@ -1524,7 +1524,7 @@ const struct DrumTechPhrase D_089e27bc = {
 };
 
 // [D_089e27d0] Drum Kit
-const struct DrumKit D_089e27d0 = {
+const struct DrumTechKit D_089e27d0 = {
     /* A_BUTTON   */ &D_089e2758,
     /* B_BUTTON   */ &D_089e2730,
     /* DPAD_UP    */ &D_089e27bc,
@@ -1626,7 +1626,7 @@ const struct DrumTechPhrase D_089e2884 = {
 
 
 // [D_089e2898] Drum Kit
-const struct DrumKit D_089e2898 = {
+const struct DrumTechKit D_089e2898 = {
     /* A_BUTTON   */ &D_089e2834,
     /* B_BUTTON   */ &D_089e280c,
     /* DPAD_UP    */ &D_089e285c,
@@ -1720,7 +1720,7 @@ const struct DrumTechPhrase D_089e294c = {
 };
 
 // [D_089e2960] Drum Kit
-const struct DrumKit D_089e2960 = {
+const struct DrumTechKit D_089e2960 = {
     /* A_BUTTON   */ &D_089e28fc,
     /* B_BUTTON   */ &D_089e28d4,
     /* DPAD_UP    */ &D_089e2924,

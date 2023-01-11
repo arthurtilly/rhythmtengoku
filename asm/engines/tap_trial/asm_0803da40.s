@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803da40 \n\
+thumb_func_start tap_trial_play_girl_action \n\
 /* 0803da40 */ PUSH {R4-R7, LR} \n\
 /* 0803da42 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 0803da44 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -12,7 +12,7 @@ thumb_func_start func_0803da40 \n\
 /* 0803da4c */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 0803da4e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803da50 */ MOV R8, R0 @ Set R8 to R0 \n\
-/* 0803da52 */ LDR R0, =D_089e789c \n\
+/* 0803da52 */ LDR R0, =tap_trial_girl_action_table \n\
 /* 0803da54 */ LDR R1, =D_030055d0 \n\
 /* 0803da56 */ MOV R10, R1 @ Set R10 to R1 \n\
 /* 0803da58 */ LDR R2, [R1] \n\
@@ -31,7 +31,7 @@ thumb_func_start func_0803da40 \n\
 /* 0803da72 */ LDRSB R0, [R6, R0] \n\
 /* 0803da74 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803da76 */ BLT branch_0803da9e \n\
-/* 0803da78 */ BL func_0803da20 \n\
+/* 0803da78 */ BL tap_trial_get_anim \n\
 /* 0803da7c */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803da7e */ LDR R0, =D_03005380 \n\
 /* 0803da80 */ LDR R0, [R0] \n\
@@ -58,7 +58,7 @@ branch_0803da9e: \n\
 /* 0803daaa */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803daac */ LSLS R4, R4, 0x10 \n\
 /* 0803daae */ LSRS R4, R4, 0x10 \n\
-/* 0803dab0 */ LDR R5, =func_0803da40 \n\
+/* 0803dab0 */ LDR R5, =tap_trial_play_girl_action \n\
 /* 0803dab2 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
 /* 0803dab4 */ BL beats_to_ticks \n\
 /* 0803dab8 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\

@@ -17,7 +17,7 @@ thumb_func_start drum_live_engine_start \n\
 /* 0802603a */ ADD R4, R9 @ Add R9 to R4 \n\
 /* 0802603c */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0802603e */ STRB R0, [R1] \n\
-/* 08026040 */ BL func_08025f90 \n\
+/* 08026040 */ BL drum_live_init_gfx1 \n\
 /* 08026044 */ BL scene_show_obj_layer \n\
 /* 08026048 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0802604a */ STR R0, [SP] \n\

@@ -340,7 +340,7 @@ const u16 *const D_089e0758[] = {
 #include "drum_live_kits.inc.c"
 
 // [D_089e0978] Drum LIVE Kits
-const struct DrumKit *const drum_live_kits[] = {
+const struct DrumTechKit *const drum_live_kits[] = {
     /* 0x00 */ &D_089e0854,
     /* 0x01 */ &D_089e0950
 };

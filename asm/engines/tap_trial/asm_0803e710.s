@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803e710 \n\
+thumb_func_start tap_trial_common_beat_animation \n\
 /* 0803e710 */ PUSH {R4-R7, LR} \n\
 /* 0803e712 */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 0803e714 */ PUSH {R7} \n\
@@ -14,7 +14,7 @@ thumb_func_start func_0803e710 \n\
 /* 0803e720 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0803e722 */ BNE branch_0803e748 \n\
 /* 0803e724 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0803e726 */ BL func_0803da20 \n\
+/* 0803e726 */ BL tap_trial_get_anim \n\
 /* 0803e72a */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803e72c */ LDR R0, =D_03005380 \n\
 /* 0803e72e */ LDR R0, [R0] \n\
@@ -37,7 +37,7 @@ branch_0803e748: \n\
 /* 0803e74e */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0803e750 */ BNE branch_0803e794 \n\
 /* 0803e752 */ MOVS R0, 0x1B @ Set R0 to 0x1B \n\
-/* 0803e754 */ BL func_0803da20 \n\
+/* 0803e754 */ BL tap_trial_get_anim \n\
 /* 0803e758 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803e75a */ LDR R6, =D_03005380 \n\
 /* 0803e75c */ LDR R0, [R6] \n\
@@ -53,7 +53,7 @@ branch_0803e748: \n\
 /* 0803e770 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803e772 */ BL func_0804d8f8 \n\
 /* 0803e776 */ MOVS R0, 0x1B @ Set R0 to 0x1B \n\
-/* 0803e778 */ BL func_0803da20 \n\
+/* 0803e778 */ BL tap_trial_get_anim \n\
 /* 0803e77c */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803e77e */ LDR R0, [R6] \n\
 /* 0803e780 */ MOV R3, R8 @ Set R3 to R8 \n\

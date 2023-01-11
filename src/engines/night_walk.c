@@ -547,7 +547,7 @@ void play_drumtech_phrase(const struct DrumTechPhrase *phrase, u32 runOnPlayFunc
 
 
 // Play Drum Kit
-void play_drumtech_kit(const struct DrumKit *drumKit, u32 inputs, u32 runOnPlayFunc) {
+void play_drumtech_kit(const struct DrumTechKit *drumKit, u32 inputs, u32 runOnPlayFunc) {
     if (inputs & A_BUTTON) {
         play_drumtech_phrase(drumKit->aButton, runOnPlayFunc);
     }
@@ -576,19 +576,19 @@ void play_drumtech_kit(const struct DrumKit *drumKit, u32 inputs, u32 runOnPlayF
 
 
 // Play Drum Kit (Run OnPlay Functions)
-void play_drumtech_kit_w_anim(const struct DrumKit *drumKit, u32 inputs) {
+void play_drumtech_kit_w_anim(const struct DrumTechKit *drumKit, u32 inputs) {
     play_drumtech_kit(drumKit, inputs, TRUE);
 }
 
 
 // Play Drum Kit (Don't Run OnPlay Functions)
-void play_drumtech_kit_no_anim(const struct DrumKit *drumKit, u32 inputs) {
+void play_drumtech_kit_no_anim(const struct DrumTechKit *drumKit, u32 inputs) {
     play_drumtech_kit(drumKit, inputs, FALSE);
 }
 
 
 // Update DrumTech Open/Close Hi-Hat
-void update_drumtech_open_hihat(const struct DrumKit *drumKit, u16 inputs, u16 released) {
+void update_drumtech_open_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 released) {
     const struct SequenceData *const *sounds = D_089e2ef8;
     s16 hiHatSprite = D_03001568->hiHatSprite;
 
@@ -614,7 +614,7 @@ void update_drumtech_open_hihat(const struct DrumKit *drumKit, u16 inputs, u16 r
 
 
 // Update DrumTech Pedal Hi-Hat
-void update_drumtech_pedal_hihat(const struct DrumKit *drumKit, u16 inputs, u16 pressed, u16 released) {
+void update_drumtech_pedal_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 pressed, u16 released) {
     s32 openTicks;
     u32 volume;
 
@@ -678,7 +678,7 @@ void set_drumtech_pedal_hihat_gfx(s16 pedalHiHatSprite, s16 rightLegSprite, cons
 
 
 // Play DrumTech Hi-Hats
-void update_drumtech_hihat(const struct DrumKit *drumKit, u16 inputs, u16 pressed, u16 released) {
+void update_drumtech_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 pressed, u16 released) {
     u32 hasOpenHiHat = drumKit->unk20 & 1;
     u32 hasPedalHiHat = drumKit->unk20 & 2;
     s16 hiHatSprite = D_03001568->hiHatSprite;

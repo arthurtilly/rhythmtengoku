@@ -122,7 +122,7 @@ const struct DrumTechPhrase D_089dffb0 = {
 };
 
 // [D_089dffc4] Drum Kit 1
-const struct DrumKit drum_intro_kit1 = {
+const struct DrumTechKit drum_intro_kit1 = {
     /* A_BUTTON   */ &D_089dff38,
     /* B_BUTTON   */ &D_089dff10,
     /* DPAD_UP    */ &D_089dffb0,
@@ -136,7 +136,7 @@ const struct DrumKit drum_intro_kit1 = {
 };
 
 // [D_089dffec] Drum Kit 2
-const struct DrumKit drum_intro_kit2 = {
+const struct DrumTechKit drum_intro_kit2 = {
     /* A_BUTTON   */ &D_089dff38,
     /* B_BUTTON   */ &D_089dff10,
     /* DPAD_UP    */ &D_089dff74,

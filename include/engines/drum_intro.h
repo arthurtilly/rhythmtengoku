@@ -68,7 +68,7 @@ extern const char D_0805a06c[];
 // Engine Definition Data:
 extern const struct DrumTechNote *const tanuki_and_monkey_bgm_seq_table[];
 extern const u16 D_089dfe94[];
-extern const struct DrumKit *const drum_intro_kits[];
+extern const struct DrumTechKit *const drum_intro_kits[];
 extern const struct CompressedGraphics *const drum_intro_buffered_textures[];
 extern const struct GraphicsTable *const drum_intro_gfx_tables[];
 extern const struct Vector2 D_089e0164[];
@@ -112,9 +112,9 @@ extern void func_08023ffc(); // Drum Kit Event - D-Pad Up (Drum Kit 2)
 extern void func_080240a4(); // Drum Kit Event - L Button
 extern void func_08024134(); // Drum Kit Event - R Button
 extern void func_080241c0(); // Drum Kit Event - D-Pad Up (Drum Kit 1)
-// extern ? func_0802424c(?);
-// extern ? func_0802428c(?);
-// extern ? func_080242cc(?);
+extern void drum_intro_init_gfx3(void); // Graphics Init. 3
+extern void drum_intro_init_gfx2(void); // Graphics Init. 2
+extern void drum_intro_init_gfx1(void); // Graphics Init. 1
 extern void drum_intro_engine_start(u32 version); // Game Engine Start
 extern void drum_intro_engine_event_stub(); // Engine Event 0x10 (STUB)
 extern void func_0802497c(); // Engine Event 0x00 (?)

@@ -476,7 +476,7 @@ void drum_studio_event_stop_monitor(void) {
 // Init. Drum Kit
 void drum_studio_init_kit(void) {
     struct StudioDrummer *player = &gDrumLessonsInfo->player;
-    const struct DrumKit *drumKit;
+    const struct DrumTechKit *drumKit;
     DrumPlayFunc playFunc;
     u32 drummingButtons;
 
@@ -915,7 +915,7 @@ void drum_studio_update_monitor(void) {
 
 // Update (Main Drumming State)
 void drum_studio_update_inputs(void) {
-    const struct DrumKit *drumKit = drum_studio_kits[gDrumLessonsInfo->playerDrumKitID];
+    const struct DrumTechKit *drumKit = drum_studio_kits[gDrumLessonsInfo->playerDrumKitID];
     u16 r4, pressed, released;
 
     switch (gDrumLessonsInfo->unk3CD) {

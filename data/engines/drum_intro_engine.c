@@ -87,7 +87,7 @@ const struct CueDefinition drum_intro_cue_auto = {
 #include "drum_intro_kits.inc.c"
 
 // [D_089e0014] Drum Intro Kits
-const struct DrumKit *const drum_intro_kits[] = {
+const struct DrumTechKit *const drum_intro_kits[] = {
     /* 0x00 */ &drum_intro_kit1,
     /* 0x01 */ &drum_intro_kit1,
     /* 0x02 */ &drum_intro_kit2,

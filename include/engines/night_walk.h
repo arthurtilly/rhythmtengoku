@@ -30,7 +30,7 @@ struct DrumTechPhrase {
     s32 onPlayArg;
 };
 
-struct DrumKit {
+struct DrumTechKit {
     const struct DrumTechPhrase *aButton;
     const struct DrumTechPhrase *bButton;
     const struct DrumTechPhrase *dpadUp;
@@ -232,14 +232,14 @@ extern void play_drumtech_seq_from_beatscript(s32 args); // Engine Event 0x00 (C
 // extern ? func_0802ab7c(?); // (https://decomp.me/scratch/0YYov)
 extern void set_drumtech_bank(const struct DrumTechInstrument *drumBank); // Set DrumTech Bank
 extern void play_drumtech_phrase(const struct DrumTechPhrase *phrase, u32 runOnPlayFunc); // Play Drum (Phrase)
-extern void play_drumtech_kit(const struct DrumKit *drumKit, u32 inputs, u32 runOnPlayFunc); // Play Drum Kit
-extern void play_drumtech_kit_w_anim(const struct DrumKit *drumKit, u32 inputs); // Play Drum Kit (Run OnPlay Functions)
-extern void play_drumtech_kit_no_anim(const struct DrumKit *drumKit, u32 inputs); // Play Drum Kit (Don't Run OnPlay Functions)
-extern void update_drumtech_open_hihat(const struct DrumKit *drumKit, u16 inputs, u16 released); // Update DrumTech Open/Close Hi-Hat
-extern void update_drumtech_pedal_hihat(const struct DrumKit *drumKit, u16 inputs, u16 pressed, u16 released); // Update DrumTech Pedal Hi-Hat
+extern void play_drumtech_kit(const struct DrumTechKit *drumKit, u32 inputs, u32 runOnPlayFunc); // Play Drum Kit
+extern void play_drumtech_kit_w_anim(const struct DrumTechKit *drumKit, u32 inputs); // Play Drum Kit (Run OnPlay Functions)
+extern void play_drumtech_kit_no_anim(const struct DrumTechKit *drumKit, u32 inputs); // Play Drum Kit (Don't Run OnPlay Functions)
+extern void update_drumtech_open_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 released); // Update DrumTech Open/Close Hi-Hat
+extern void update_drumtech_pedal_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 pressed, u16 released); // Update DrumTech Pedal Hi-Hat
 extern void set_drumtech_hihat_gfx(s16 hiHatSprite); // Set DrumTech Hi-Hat Graphics
 extern void set_drumtech_pedal_hihat_gfx(s16 pedalHiHatSprite, s16 rightLegSprite, const struct Animation *useKick, const struct Animation *useHiHat); // Set DrumTech Pedal Hi-Hat Graphics
-extern void update_drumtech_hihat(const struct DrumKit *drumKit, u16 inputs, u16 pressed, u16 released); // Update DrumTech Hi-Hats
+extern void update_drumtech_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 pressed, u16 released); // Update DrumTech Hi-Hats
 extern void set_drumtech_volume(u32 volume); // Set DrumTech Volume
 // extern ? func_0802b050(?); // Set DrumTech unk334
 extern void stop_drumtech(void); // Stop DrumTech
