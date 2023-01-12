@@ -27,6 +27,8 @@ enum SoundPlayersEnum {
     SFX_PLAYER_9,
 };
 
+#define DEFAULT_SOUND_PLAYER 0xff
+
 enum DirectSoundModesEnum {
     DIRECTSOUND_MODE_STEREO,
     DIRECTSOUND_MODE_MONO1,

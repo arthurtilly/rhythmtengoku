@@ -33,7 +33,7 @@ branch_0803eeb6: \n\
 /* 0803eed2 */ MOVS R0, 0xE0 @ Set R0 to 0xE0 \n\
 /* 0803eed4 */ LSLS R0, R0, 0x2 \n\
 /* 0803eed6 */ ADDS R2, R2, R0 @ Set R2 to R2 + R0 \n\
-/* 0803eed8 */ LDR R1, =D_089e8658 \n\
+/* 0803eed8 */ LDR R1, =toss_boys_button_masks \n\
 /* 0803eeda */ LSLS R3, R7, 0x1 \n\
 /* 0803eedc */ MOV R10, R3 @ Set R10 to R3 \n\
 /* 0803eede */ ADD R1, R10 @ Add R10 to R1 \n\

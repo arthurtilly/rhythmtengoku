@@ -42,13 +42,13 @@ branch_0803f9d6: \n\
 /* 0803f9e0 */ LDRB R0, [R0] \n\
 /* 0803f9e2 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803f9e4 */ BEQ branch_0803f9fc \n\
-/* 0803f9e6 */ LDR R1, =D_089e8994 \n\
+/* 0803f9e6 */ LDR R1, =toss_boys_barely_anim_ids \n\
 /* 0803f9e8 */ B branch_0803f9fe \n\
 \n\
 .ltorg \n\
  \n\
 branch_0803f9fc: \n\
-/* 0803f9fc */ LDR R1, =D_089e8988 \n\
+/* 0803f9fc */ LDR R1, =toss_boys_hit_anim_ids \n\
  \n\
 branch_0803f9fe: \n\
 /* 0803f9fe */ LSLS R0, R3, 0x1 \n\
@@ -58,7 +58,7 @@ branch_0803f9fe: \n\
 /* 0803fa06 */ LDRB R0, [R0] \n\
 /* 0803fa08 */ LSLS R0, R0, 0x18 \n\
 /* 0803fa0a */ ASRS R0, R0, 0x18 \n\
-/* 0803fa0c */ BL func_0803e990 \n\
+/* 0803fa0c */ BL toss_boys_get_anim \n\
 /* 0803fa10 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803fa12 */ LDR R0, =D_03005380 \n\
 /* 0803fa14 */ LDR R0, [R0] \n\

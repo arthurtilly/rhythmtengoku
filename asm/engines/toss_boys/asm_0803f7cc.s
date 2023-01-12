@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803f7cc \n\
+thumb_func_start toss_boys_cue_miss \n\
 /* 0803f7cc */ PUSH {R4-R7, LR} \n\
 /* 0803f7ce */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 0803f7d0 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -68,11 +68,11 @@ branch_0803f82c: \n\
 /* 0803f846 */ MOVS R1, 0x18 @ Set R1 to 0x18 \n\
 /* 0803f848 */ BL __divsi3 \n\
 /* 0803f84c */ STRH R0, [R7, 0x2] \n\
-/* 0803f84e */ LDR R1, =D_089e86f4 \n\
+/* 0803f84e */ LDR R1, =toss_boys_miss_anim_ids \n\
 /* 0803f850 */ LDRB R0, [R7] \n\
 /* 0803f852 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0803f854 */ LDRB R0, [R0] \n\
-/* 0803f856 */ BL func_0803e990 \n\
+/* 0803f856 */ BL toss_boys_get_anim \n\
 /* 0803f85a */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803f85c */ LDR R3, =D_03005380 \n\
 /* 0803f85e */ MOV R9, R3 @ Set R9 to R3 \n\
@@ -115,7 +115,7 @@ branch_0803f82c: \n\
 /* 0803f8ae */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803f8b0 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803f8b2 */ BL func_0803ee58 \n\
-/* 0803f8b6 */ LDR R1, =D_089e86f8 \n\
+/* 0803f8b6 */ LDR R1, =toss_boys_ball_miss_sfx \n\
 /* 0803f8b8 */ LDRB R0, [R7] \n\
 /* 0803f8ba */ LSLS R0, R0, 0x2 \n\
 /* 0803f8bc */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
@@ -125,7 +125,7 @@ branch_0803f82c: \n\
 /* 0803f8c4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803f8c6 */ BL play_sound_w_pitch_volume \n\
 /* 0803f8ca */ MOVS R0, 0x7 @ Set R0 to 0x7 \n\
-/* 0803f8cc */ BL func_0803e990 \n\
+/* 0803f8cc */ BL toss_boys_get_anim \n\
 /* 0803f8d0 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803f8d2 */ MOV R3, R9 @ Set R3 to R9 \n\
 /* 0803f8d4 */ LDR R0, [R3] \n\
@@ -156,7 +156,7 @@ branch_0803f82c: \n\
 /* 0803f90a */ LDR R0, =D_089e86a8 \n\
 /* 0803f90c */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 0803f90e */ MOVS R0, 0x11 @ Set R0 to 0x11 \n\
-/* 0803f910 */ BL func_0803e990 \n\
+/* 0803f910 */ BL toss_boys_get_anim \n\
 /* 0803f914 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803f916 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 0803f918 */ LDR R0, [R2] \n\

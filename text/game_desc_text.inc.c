@@ -11,10 +11,11 @@ const char text_concert_hall_try_again[] = "おばちゃん「またつぎ、がんばりなよ！
 // Your Sense of Rhythm
 // is good, so you get
 // to play in the band!
-const char text_concert_hall_desc[] = "ライブに出演だ！\n\
-キミのリズム感は\n\
-よいと思うから\n\
-どうぞお気楽に～";
+const char text_concert_hall_desc[] =
+    "ライブに出演だ！\n"
+    "キミのリズム感は\n"
+    "よいと思うから\n"
+    "どうぞお気楽に～";
 
 // Concert Hall
 const char text_concert_hall_name[] = "ライブ";
@@ -23,10 +24,11 @@ const char text_concert_hall_name[] = "ライブ";
 // take a look. They're
 // the people who made
 // the game.
-const char text_credits_desc[] = "もし よかったら\n\
-見てみてネ。\n\
-このゲームの\n\
-スタッフたちです。";
+const char text_credits_desc[] =
+    "もし よかったら\n"
+    "見てみてネ。\n"
+    "このゲームの\n"
+    "スタッフたちです。";
 
 // Credits
 const char text_credits_name[] = "スタッフ";
@@ -35,10 +37,10 @@ const char text_credits_name[] = "スタッフ";
 // free drum lessons!
 // You paid good money
 // for them, so why not?
-const char text_drum_lessons_desc[] = "メダルを あつめて\n\
-ドラムのレッスンを\n\
-うけてみよう。\n\
-上手になってネ！";
+const char text_drum_lessons_desc[] = "メダルを あつめて\n"
+"ドラムのレッスンを\n"
+"うけてみよう。\n"
+"上手になってネ！";
 
 // Drum Lessons
 const char text_drum_lessons_name[] = "ドラムレッスン";
@@ -47,10 +49,11 @@ const char text_drum_lessons_name[] = "ドラムレッスン";
 // unlock special
 // games. See how
 // far you can get!
-const char text_endless_games_desc[] = "メダルを あつめて\n\
-とくべつなゲームに\n\
-挑戦してみてネ！\n\
-いくつかあるヨ。";
+const char text_endless_games_desc[] =
+    "メダルを あつめて\n"
+    "とくべつなゲームに\n"
+    "挑戦してみてネ！\n"
+    "いくつかあるヨ。";
 
 // Endless Games
 const char text_endless_games_name[] = "ゲーム";
@@ -59,10 +62,11 @@ const char text_endless_games_name[] = "ゲーム";
 // to play with more
 // toys. Everyone
 // likes toys!
-const char text_rhythm_toys_desc[] = "メダルを あつめて\n\
-音のでるおもちゃで\n\
-あそんでみてネ！\n\
-いくつかあるヨ。";
+const char text_rhythm_toys_desc[] =
+    "メダルを あつめて\n"
+    "音のでるおもちゃで\n"
+    "あそんでみてネ！\n"
+    "いくつかあるヨ。";
 
 // Rhythm Toys
 const char text_rhythm_toys_name[] = "おもちゃ";
@@ -71,10 +75,11 @@ const char text_rhythm_toys_name[] = "おもちゃ";
 // been lately?
 // Come here for
 // a consultation.
-const char text_cafe_desc[] = "最近の調子 どう？\n\
-なにか気になれば\n\
-ここで相談を\n\
-してみよう。";
+const char text_cafe_desc[] =
+    "最近の調子 どう？\n"
+    "なにか気になれば\n"
+    "ここで相談を\n"
+    "してみよう。";
 
 // Cafe
 const char text_cafe_name[] = "喫茶カウンセル";
@@ -184,10 +189,11 @@ const char text_remix1_try_again[] = "今回のデキ ： 猫のおやつクラス";
 // merit? Your skill so
 // far speaks for
 // itself, you know! (NP)
-const char text_remix1_desc[] = "キミの実力を\n\
-試してみてみる？\n\
-これまでの経験が\n\
-モノを言うヨ～！";
+const char text_remix1_desc[] =
+    "キミの実力を\n"
+    "試してみてみる？\n"
+    "これまでの経験が\n"
+    "モノを言うヨ～！";
 
 // Remix 1
 const char text_remix1_name[] = "リミックス １";
@@ -206,10 +212,11 @@ const char text_bon_dance_try_again[] = "もういや…";
 // Bon festival again!
 // We're all in high
 // spirits, yay! (NP)
-const char text_bon_dance_desc[] = "これが いまどきの\n\
-ぼんおどり！\n\
-ノリノリだヨ！\n\
-イェーイ！";
+const char text_bon_dance_desc[] =
+    "これが いまどきの\n"
+    "ぼんおどり！\n"
+    "ノリノリだヨ！\n"
+    "イェーイ！";
 
 // The☆Bon Dance
 const char text_bon_dance_name[] = "ボンダンス";
@@ -228,10 +235,11 @@ const char text_bon_odori_try_again[] = "さむいわ…";
 // Bon festival!
 // Clap your hands
 // and sing along!
-const char text_bon_odori_desc[] = "ぼんおどりの\n\
-うたに あわせて\n\
-パンッと 手を\n\
-たたきましょう。";
+const char text_bon_odori_desc[] =
+    "ぼんおどりの\n"
+    "うたに あわせて\n"
+    "パンッと 手を\n"
+    "たたきましょう。";
 
 // The☆Bon-Odori
 const char text_bon_odori_name[] = "ザ☆ぼんおどり";
@@ -250,10 +258,11 @@ const char text_quiz_show_try_again[] = "ま、 こんなものさ。";
 // all style and no
 // substance... just
 // what viewers want.
-const char text_quiz_show_desc[] = "司会者の、\n\
-「たたいた回数」を\n\
-当てるカンタンな\n\
-クイズです。";
+const char text_quiz_show_desc[] =
+    "司会者の、\n"
+    "「たたいた回数」を\n"
+    "当てるカンタンな\n"
+    "クイズです。";
 
 // Quiz Show
 const char text_quiz_show_name[] = "クイズ";
@@ -272,10 +281,11 @@ const char text_rap_women_try_again[] = "こんなん ちゃうわぁ…";
 // Rap Men are here!
 // Be charmed by their
 // cute voices! (NP)
-const char text_rap_women_desc[] = "あのラップメンに\n\
-ライバルが登場だ！\n\
-キュートなボイスに\n\
-もう メロメロ！";
+const char text_rap_women_desc[] =
+    "あのラップメンに\n"
+    "ライバルが登場だ！\n"
+    "キュートなボイスに\n"
+    "もう メロメロ！";
 
 // Rap Women
 const char text_rap_women_name[] = "ラップウイメン";
@@ -294,10 +304,11 @@ const char text_rap_men_try_again[] = "オレたち、 ダサいやん…";
 // with a cool rap.
 // Fitting, because they
 // are pretty cool too.
-const char text_rap_men_desc[] = "クールなふたり組が\n\
-やってきた！\n\
-アツいラップで\n\
-大コーフンだぜ！";
+const char text_rap_men_desc[] =
+    "クールなふたり組が\n"
+    "やってきた！\n"
+    "アツいラップで\n"
+    "大コーフンだぜ！";
 
 // Rap Men
 const char text_rap_men_name[] = "ラップメン";
@@ -316,10 +327,11 @@ const char text_cosmic_dance_try_again[] = "お、おわりだー！！";
 // from deep space.
 // We come... in style.
 // (No practice)
-const char text_cosmic_dance_desc[] = "宇宙を代表\\する\n\
-ダンサーたち！\n\
-キレた動きに\n\
-くぎづけです！！";
+const char text_cosmic_dance_desc[] =
+    "宇宙を代表\\する\n"
+    "ダンサーたち！\n"
+    "キレた動きに\n"
+    "くぎづけです！！";
 
 // Cosmic Dance
 const char text_cosmic_dance_name[] = "コスモダンス";
@@ -338,9 +350,10 @@ const char text_space_dance_try_again[] = "ブ、 ブラックホールだー！！";
 // outer space.
 // But, let's dance.
 // Let's Space Dance!
-const char text_space_dance_desc[] = "ここは無重力の宇宙。\n\
-でも、 おどろうヨ！\n\
-レッツスペースダンス！";
+const char text_space_dance_desc[] =
+    "ここは無重力の宇宙。\n"
+    "でも、 おどろうヨ！\n"
+    "レッツスペースダンス！";
 
 // Space Dance
 const char text_space_dance_name[] = "スペースダンス";
@@ -358,10 +371,11 @@ const char text_showtime_try_again[] = "お客さん、 おこってたネ…";
 // It's a sold out show
 // for the penguins'
 // opening night!
-const char text_showtime_desc[] = "ペンギン君たちの\n\
-ショータイムが\n\
-はじまるヨ！\n\
-わーいわーい！";
+const char text_showtime_desc[] =
+    "ペンギン君たちの\n"
+    "ショータイムが\n"
+    "はじまるヨ！\n"
+    "わーいわーい！";
 
 // Showtime
 const char text_showtime_name[] = "ショータイム";
@@ -380,9 +394,10 @@ const char text_tram_and_pauline_try_again[] = "大しっぱいだ～！！";
 // acrobatic foxes!
 // Quick, their show
 // is about to start!
-const char text_tram_and_pauline_desc[] = "こぎつねトラン、\n\
-そしてポリンの\n\
-アクロバティックショーがはじまるヨ！";
+const char text_tram_and_pauline_desc[] =
+    "こぎつねトラン、\n"
+    "そしてポリンの\n"
+    "アクロバティックショーがはじまるヨ！";
 
 // Tram & Pauline
 const char text_tram_and_pauline_name[] = "トランとポリン";
@@ -401,10 +416,11 @@ const char text_rat_race_try_again[] = "チーズ 食べたいよ～…";
 // One last job, and
 // I'm out of this
 // business for good.
-const char text_rat_race_desc[] = "あなたはネズミ。\n\
-大スキなチーズを\n\
-めざして\n\
-ストップ＆ゴー！！";
+const char text_rat_race_desc[] =
+    "あなたはネズミ。\n"
+    "大スキなチーズを\n"
+    "めざして\n"
+    "ストップ＆ゴー！！";
 
 // Rat Race
 const char text_rat_race_name[] = "こっそり ラット";
@@ -432,10 +448,11 @@ const char text_toss_boys_try_again[] = "ダメダメだァ～！";
 // tossing technique
 // with these three
 // close friends!
-const char text_toss_boys_desc[] = "なかよし３人組、\n\
-声をかけあいながら\n\
-いつも楽しくトスの\n\
-練習してます。";
+const char text_toss_boys_desc[] =
+    "なかよし３人組、\n"
+    "声をかけあいながら\n"
+    "いつも楽しくトスの\n"
+    "練習してます。";
 
 // Toss Boys
 const char text_toss_boys_name[] = "トスボーイズ";
@@ -457,10 +474,11 @@ const char text_power_calligraphy_try_again[] = "ふ～…  アカンわ。";
 // with the brush.
 // (You only have to
 // do the fun parts.)
-const char text_power_calligraphy_desc[] = "筆を使って日本語を\n\
-書きます。\n\
-あなたがするのは\n\
-オイシイとこだけ。";
+const char text_power_calligraphy_desc[] =
+    "筆を使って日本語を\n"
+    "書きます。\n"
+    "あなたがするのは\n"
+    "オイシイとこだけ。";
 
 // Power Calligraphy
 const char text_power_calligraphy_name[] = "リズムお習字";
@@ -479,10 +497,11 @@ const char text_fireworks_try_again[] = "ゲホゲホッ… 失敗。";
 // means it's time for
 // fireworks. The colors
 // are amazing!
-const char text_fireworks_desc[] = "夏といえばさ、\n\
-やっぱ花火かな？\n\
-色あざやかに\n\
-打ち上げよう！";
+const char text_fireworks_desc[] =
+    "夏といえばさ、\n"
+    "やっぱ花火かな？\n"
+    "色あざやかに\n"
+    "打ち上げよう！";
 
 // Fireworks
 const char text_fireworks_name[] = "花火";
@@ -501,10 +520,11 @@ const char text_bunny_hop_try_again[] = "月に帰りた～い！";
 // to the beat and
 // cross the sea!
 // (No practice.)
-const char text_bunny_hop_desc[] = "ジャンプが得意な\n\
-白いウサギさん。\n\
-ビートにのって\n\
-海をわたろう！";
+const char text_bunny_hop_desc[] =
+    "ジャンプが得意な\n"
+    "白いウサギさん。\n"
+    "ビートにのって\n"
+    "海をわたろう！";
 
 // Bunny Hop
 const char text_bunny_hop_name[] = "ウサギとび";
@@ -523,10 +543,11 @@ const char text_wizards_waltz_try_again[] = "こんなのヤダ～、 こわいヨ～！";
 // a sad face like a
 // beautiful flower!
 // Let's see some magic!
-const char text_wizards_waltz_desc[] = "あなたはまほう使い。\n\
-さみしがりやの\n\
-おじょうちゃんに花を\n\
-プレゼントしよう。";
+const char text_wizards_waltz_desc[] =
+    "あなたはまほう使い。\n"
+    "さみしがりやの\n"
+    "おじょうちゃんに花を\n"
+    "プレゼントしよう。";
 
 // Wizard's Waltz
 const char text_wizards_waltz_name[] = "まほうつかい";
@@ -545,10 +566,11 @@ const char text_marching_orders_2_try_again[] = "こ、これでは、イカン！う～む…"
 // a different beat.
 // Listen to the cues
 // and hop to it! (NP)
-const char text_marching_orders_2_desc[] = "行進をするのだ。\n\
-こんどのは ちょっと\n\
-テクニカルだ！\n\
-がんばりたまえ。";
+const char text_marching_orders_2_desc[] =
+    "行進をするのだ。\n"
+    "こんどのは ちょっと\n"
+    "テクニカルだ！\n"
+    "がんばりたまえ。";
 
 // Marcher 2
 const char text_marching_orders_2_name[] = "マーチャ ２";
@@ -567,9 +589,10 @@ const char text_marching_orders_try_again[] = "わぁっ！おいてけぼりされた！";
 // unit builds a sense
 // of camaraderie.
 // Also, rhythm.
-const char text_marching_orders_desc[] = "行進をするのだ。\n\
-かってな行動はチームをダメにする！\n\
-がんばりたまえ。";
+const char text_marching_orders_desc[] =
+    "行進をするのだ。\n"
+    "かってな行動はチームをダメにする！\n"
+    "がんばりたまえ。";
 
 // Marching Orders
 const char text_marching_orders_name[] = "マーチャ";
@@ -588,10 +611,11 @@ const char text_tap_trial_2_try_again[] = "ガーン！";
 // powered up! Can you
 // keep up? Don't lose!
 // (No practice.)
-const char text_tap_trial_2_desc[] = "サルがパワーアップ！\n\
-あなたは かれらに\n\
-ついていけるか！？\n\
-まけるな～！";
+const char text_tap_trial_2_desc[] =
+    "サルがパワーアップ！\n"
+    "あなたは かれらに\n"
+    "ついていけるか！？\n"
+    "まけるな～！";
 
 // Tap Trial 2
 const char text_tap_trial_2_name[] = "スーパータップ";
@@ -610,10 +634,11 @@ const char text_tap_trial_try_again[] = "無念だわ。";
 // what it takes to
 // tap-dance with
 // the monkeys?
-const char text_tap_trial_desc[] = "あなたは女の子。\n\
-となりのサルたちに\n\
-合わせてタップを\n\
-きざむッス！";
+const char text_tap_trial_desc[] =
+    "あなたは女の子。\n"
+    "となりのサルたちに\n"
+    "合わせてタップを\n"
+    "きざむッス！";
 
 // Tap Trial
 const char text_tap_trial_name[] = "タップダンズ";
@@ -632,10 +657,11 @@ const char text_spaceball_2_try_again[] = "ナニスルノデスカー！";
 // Free your mind.
 // Hit the ball.
 // Don't cry. (NP)
-const char text_spaceball_2_desc[] = "ズームをきにするな！\n\
-心でボールを打て！\n\
-視覚に頼るな！\n\
-涙もふくな～！";
+const char text_spaceball_2_desc[] =
+    "ズームをきにするな！\n"
+    "心でボールを打て！\n"
+    "視覚に頼るな！\n"
+    "涙もふくな～！";
 
 // Spaceball 2
 const char text_spaceball_2_name[] = "エアーバッター ２";
@@ -654,10 +680,11 @@ const char text_spaceball_try_again[] = "これで ゆるしてください。";
 // the zoom! Follow
 // the trajectories
 // in your heart!
-const char text_spaceball_desc[] = "ズームをきにするな！\n\
-心でボールを打て！\n\
-視覚に頼るな！\n\
-どんと行け～！";
+const char text_spaceball_desc[] =
+    "ズームをきにするな！\n"
+    "心でボールを打て！\n"
+    "視覚に頼るな！\n"
+    "どんと行け～！";
 
 // Spaceball
 const char text_spaceball_name[] = "エアーバッター";
@@ -676,10 +703,11 @@ const char text_samurai_slice_try_again[] = "刃こぼれしちまった！";
 // You're a samurai, so
 // you can stay behind
 // and stop them. (NP)
-const char text_samurai_slice_desc[] = "そこのけ そこのけ\n\
-奴らが通る。\n\
-おぬしは サムライ、\n\
-斬り捨て 御免！";
+const char text_samurai_slice_desc[] =
+    "そこのけ そこのけ\n"
+    "奴らが通る。\n"
+    "おぬしは サムライ、\n"
+    "斬り捨て 御免！";
 
 // Samurai Slice
 const char text_samurai_slice_name[] = "ゐあひ斬り";
@@ -697,10 +725,11 @@ const char text_sneaky_spirits_2_try_again[] = "うわー！ やられほうだいだ！";
 // it again! Grab your
 // arrows and aim
 // for their souls! (NP)
-const char text_sneaky_spirits_2_desc[] = "白いヤツが こちらを\n\
-ナメきっている！\n\
-ムカムカーッ！！\n\
-こらしめちゃおう！";
+const char text_sneaky_spirits_2_desc[] =
+    "白いヤツが こちらを\n"
+    "ナメきっている！\n"
+    "ムカムカーッ！！\n"
+    "こらしめちゃおう！";
 
 // Sneaky Spirits 2
 const char text_sneaky_spirits_2_name[] = "しろいおばけ ２";
@@ -719,10 +748,11 @@ const char text_sneaky_spirits_try_again[] = "逃げたヤツにイタズラされた！";
 // to escape their
 // haunted house! Grab
 // your trusty bow!
-const char text_sneaky_spirits_desc[] = "白いヤツが こちらを\n\
-バカにしている！\n\
-ムキーッ！！\n\
-こらしめちゃおう！";
+const char text_sneaky_spirits_desc[] =
+    "白いヤツが こちらを\n"
+    "バカにしている！\n"
+    "ムキーッ！！\n"
+    "こらしめちゃおう！";
 
 // Sneaky Spirits
 const char text_sneaky_spirits_name[] = "しろいおばけ";
@@ -741,10 +771,11 @@ const char text_ninja_bodyguard_2_try_again[] = "まけるな！ おまえが頼りなのだー
 // warrior just like
 // my ancestors!
 // (No practice.)
-const char text_ninja_bodyguard_2_desc[] = "オレのじいちゃんの\n\
-じいちゃんの\n\
-じいちゃんは\n\
-忍者なんだぜ。";
+const char text_ninja_bodyguard_2_desc[] =
+    "オレのじいちゃんの\n"
+    "じいちゃんの\n"
+    "じいちゃんは\n"
+    "忍者なんだぜ。";
 
 // Ninja Reincarnate
 const char text_ninja_bodyguard_2_name[] = "忍者の子孫";
@@ -763,9 +794,10 @@ const char text_ninja_bodyguard_try_again[] = "ゲッ！ トノが きぜつしてる！！";
 // Take on their
 // challenge with both
 // of your hands. (NP)
-const char text_ninja_bodyguard_desc[] = "敵襲(てきしゅう)だ！\n\
-十\\字ボタンとAボタンで応戦(おうせん)だ！\n\
-フジヤマ（ふじさん）！！";
+const char text_ninja_bodyguard_desc[] =
+    "敵襲(てきしゅう)だ！\n"
+    "十\\字ボタンとAボタンで応戦(おうせん)だ！\n"
+    "フジヤマ（ふじさん）！！";
 
 // Ninja Bodyguard
 const char text_ninja_bodyguard_name[] = "忍者";
@@ -784,10 +816,11 @@ const char text_bouncy_road_2_try_again[] = "エーン！ しっぱい！！";
 // They're our good
 // friends, and they
 // need our help! (NP)
-const char text_bouncy_road_2_desc[] = "とんでくる丸い玉。\n\
-ほんとにイイやつ\n\
-なんですヨ～。\n\
-落とさないでネ！";
+const char text_bouncy_road_2_desc[] =
+    "とんでくる丸い玉。\n"
+    "ほんとにイイやつ\n"
+    "なんですヨ～。\n"
+    "落とさないでネ！";
 
 // Bouncy Road 2
 const char text_bouncy_road_2_name[] = "ホッピングロード２";
@@ -806,9 +839,10 @@ const char text_bouncy_road_try_again[] = "なかなか ムズカシー！";
 // need your help.
 // They're good to us,
 // so don't drop them!
-const char text_bouncy_road_desc[] = "とんでくる丸い玉。\n\
-あれはイイやつです。\n\
-落とさないでネ！";
+const char text_bouncy_road_desc[] =
+    "とんでくる丸い玉。\n"
+    "あれはイイやつです。\n"
+    "落とさないでネ！";
 
 // Bouncy Road
 const char text_bouncy_road_name[] = "ホッピングロード";
@@ -827,10 +861,11 @@ const char text_sick_beats_try_again[] = "研究は失敗だ。";
 // We have quite a germ
 // outbreak on our
 // hands. Help us! (NP)
-const char text_sick_beats_desc[] = "助手からの知らせ\n\
-「大変です！\n\
-バイキン発生です！！\n\
-先生、たすけて～」";
+const char text_sick_beats_desc[] =
+    "助手からの知らせ\n"
+    "「大変です！\n"
+    "バイキン発生です！！\n"
+    "先生、たすけて～」";
 
 // Sick Beats
 const char text_sick_beats_name[] = "バイキン はかせ";
@@ -849,10 +884,11 @@ const char text_rhythm_tweezers_2_try_again[] = "なんで 毛が はえるんだー！？";
 // but their heirs
 // are a huge pain!
 // (No practice.)
-const char text_rhythm_tweezers_2_desc[] = "またしても生えてくる\n\
-うっとうしい「毛」！\n\
-ぬいちゃえ、 \n\
-ぬいちゃえ！";
+const char text_rhythm_tweezers_2_desc[] =
+    "またしても生えてくる\n"
+    "うっとうしい「毛」！\n"
+    "ぬいちゃえ、 \n"
+    "ぬいちゃえ！";
 
 // Rhythm Tweezers 2
 const char text_rhythm_tweezers_2_name[] = "リズム脱毛 ２";
@@ -871,10 +907,11 @@ const char text_rhythm_tweezers_try_again[] = "これじゃ 売りものに ならん！";
 // keep growing!
 // Pluck'em,
 // pluck'em!
-const char text_rhythm_tweezers_desc[] = "どんどん生えてくる\n\
-うっとうしい「毛」！\n\
-ぬいちゃえ、 \n\
-ぬいちゃえ！";
+const char text_rhythm_tweezers_desc[] =
+    "どんどん生えてくる\n"
+    "うっとうしい「毛」！\n"
+    "ぬいちゃえ、 \n"
+    "ぬいちゃえ！";
 
 // Rhythm Tweezers
 const char text_rhythm_tweezers_name[] = "リズム脱毛";
@@ -893,10 +930,11 @@ const char text_night_walk_2_try_again[] = "うひゃー！ しっぱいしちゃった！！";
 // We just have to
 // watch out for those
 // fish! (No practice.)
-const char text_night_walk_2_desc[] = "音楽にあわせて\n\
-ジャンプしてネ！\n\
-ビリビリウオに\n\
-気をつけよう。";
+const char text_night_walk_2_desc[] =
+    "音楽にあわせて\n"
+    "ジャンプしてネ！\n"
+    "ビリビリウオに\n"
+    "気をつけよう。";
 
 // Night Walk 2
 const char text_night_walk_2_name[] = "ナイトウォーク ２";
@@ -915,10 +953,11 @@ const char text_night_walk_try_again[] = "つぎは もっと がんばってネ…";
 // The stars will gather
 // and put a spring in
 // your step. (NP)
-const char text_night_walk_desc[] = "音楽にあわせて\n\
-ジャンプしてネ！\n\
-星たちが あつまって\n\
-あなたも夜空へ…";
+const char text_night_walk_desc[] =
+    "音楽にあわせて\n"
+    "ジャンプしてネ！\n"
+    "星たちが あつまって\n"
+    "あなたも夜空へ…";
 
 // Night Walk
 const char text_night_walk_name[] = "ナイトウォーク";
@@ -937,10 +976,11 @@ const char text_polyrhythm_2_try_again[] = "赤いモノ、もっと生産しなきゃ…";
 // for our widgets! Use
 // both hands to meet
 // our quotas! (NP)
-const char text_polyrhythm_2_desc[] = "これぞ左右独立！\n\
-テンポよく こなして\n\
-レッツ ポリリズム！\n\
-イェーイ！";
+const char text_polyrhythm_2_desc[] =
+    "これぞ左右独立！\n"
+    "テンポよく こなして\n"
+    "レッツ ポリリズム！\n"
+    "イェーイ！";
 
 // Polyrhythm 2
 const char text_polyrhythm_2_name[] = "ポリリズム ２";
@@ -978,10 +1018,11 @@ const char text_snappy_trio_try_again[] = "キャー！ ゆるしてー！！";
 // is on a world tour!
 // Their new style is
 // just too cool! (NP)
-const char text_snappy_trio_desc[] = "ラフだった彼らが\n\
-バリっとスーツを\n\
-着てきたヨ！\n\
-カッコイイ！！";
+const char text_snappy_trio_desc[] =
+    "ラフだった彼らが\n"
+    "バリっとスーツを\n"
+    "着てきたヨ！\n"
+    "カッコイイ！！";
 
 // The Snappy Trio
 const char text_snappy_trio_name[] = "バリバリ三人衆";
@@ -1000,9 +1041,10 @@ const char text_clappy_trio_try_again[] = "仲間が帰っちゃった！";
 // Clappy Trio never
 // misses a beat. Watch
 // the other two!
-const char text_clappy_trio_desc[] = "順番に拍手をするヨ！\n\
-あなたは３番目。\n\
-前の2人をよく見てネ！";
+const char text_clappy_trio_desc[] =
+    "順番に拍手をするヨ！\n"
+    "あなたは３番目。\n"
+    "前の2人をよく見てネ！";
 
 // The Clappy Trio
 const char text_clappy_trio_name[] = "パチパチ三人衆";
@@ -1021,10 +1063,11 @@ const char text_karate_man_2_try_again[] = "テンポが なんだー！！";
 // rhythm again...
 // But watch for the
 // tempo change! (NP)
-const char text_karate_man_2_desc[] = "とんでくるモノを\n\
-Aボタンでパンチ！\n\
-でも、 スピードが\n\
-ヘンテコだヨ。";
+const char text_karate_man_2_desc[] =
+    "とんでくるモノを\n"
+    "Aボタンでパンチ！\n"
+    "でも、 スピードが\n"
+    "ヘンテコだヨ。";
 
 // Karate Man 2
 const char text_karate_man_2_name[] = "カラテ家 ２";
@@ -1043,10 +1086,11 @@ const char text_karate_man_try_again[] = "明日が あるさ。";
 // training at its most
 // intense! (Or, at its
 // most unorthodox...)
-const char text_karate_man_desc[] = "とんでくるモノを\n\
-Aボタンでパンチ！\n\
-よくあるゲーム？\n\
-…かもね。";
+const char text_karate_man_desc[] =
+    "とんでくるモノを\n"
+    "Aボタンでパンチ！\n"
+    "よくあるゲーム？\n"
+    "…かもね。";
 
 // Karate Man
 const char text_karate_man_name[] = "カラテ家";

@@ -143,11 +143,11 @@ branch_0803f28c: \n\
 /* 0803f308 */ BL func_0804cebc \n\
 /* 0803f30c */ LDR R0, =s_f_toss_ball_seqData \n\
 /* 0803f30e */ BL play_sound \n\
-/* 0803f312 */ LDR R0, =D_089e86b8 \n\
+/* 0803f312 */ LDR R0, =toss_boys_arrow_anim_ids \n\
 /* 0803f314 */ LDR R3, [SP, 0xC] \n\
 /* 0803f316 */ ADDS R0, R3, R0 @ Set R0 to R3 + R0 \n\
 /* 0803f318 */ LDRB R0, [R0] \n\
-/* 0803f31a */ BL func_0803e990 \n\
+/* 0803f31a */ BL toss_boys_get_anim \n\
 /* 0803f31e */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803f320 */ LDR R0, [R4] \n\
 /* 0803f322 */ MOV R6, R10 @ Set R6 to R10 \n\

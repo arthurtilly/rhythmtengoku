@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803ea98 \n\
+thumb_func_start toss_boys_engine_start \n\
 /* 0803ea98 */ PUSH {R4-R7, LR} \n\
 /* 0803ea9a */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 0803ea9c */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -15,7 +15,7 @@ thumb_func_start func_0803ea98 \n\
 /* 0803eaaa */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803eaac */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 0803eaae */ STRB R0, [R1] \n\
-/* 0803eab0 */ BL func_0803ea6c \n\
+/* 0803eab0 */ BL toss_boys_init_gfx1 \n\
 /* 0803eab4 */ BL scene_show_obj_layer \n\
 /* 0803eab8 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0803eaba */ STR R0, [SP] \n\
@@ -41,7 +41,7 @@ thumb_func_start func_0803ea98 \n\
 /* 0803eae4 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803eae6 */ BL scene_set_bg_layer_display \n\
 /* 0803eaea */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0803eaec */ BL func_0803e990 \n\
+/* 0803eaec */ BL toss_boys_get_anim \n\
 /* 0803eaf0 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803eaf2 */ LDR R5, =D_03005380 \n\
 /* 0803eaf4 */ LDR R0, [R5] \n\
@@ -64,7 +64,7 @@ thumb_func_start func_0803ea98 \n\
 /* 0803eb18 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0803eb1a */ STRH R0, [R1] \n\
 /* 0803eb1c */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 0803eb1e */ BL func_0803e990 \n\
+/* 0803eb1e */ BL toss_boys_get_anim \n\
 /* 0803eb22 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803eb24 */ LDR R0, [R5] \n\
 /* 0803eb26 */ MOVS R2, 0x8C @ Set R2 to 0x8C \n\
@@ -86,7 +86,7 @@ thumb_func_start func_0803ea98 \n\
 /* 0803eb48 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0803eb4a */ STRH R0, [R1] \n\
 /* 0803eb4c */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 0803eb4e */ BL func_0803e990 \n\
+/* 0803eb4e */ BL toss_boys_get_anim \n\
 /* 0803eb52 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803eb54 */ LDR R0, [R5] \n\
 /* 0803eb56 */ MOVS R2, 0x7C @ Set R2 to 0x7C \n\
@@ -130,7 +130,7 @@ branch_0803eb86: \n\
 /* 0803eba0 */ CMP R2, 0x2 @ Compare R2 and 0x2 \n\
 /* 0803eba2 */ BLS branch_0803eb86 \n\
 /* 0803eba4 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
-/* 0803eba6 */ BL func_0803e990 \n\
+/* 0803eba6 */ BL toss_boys_get_anim \n\
 /* 0803ebaa */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803ebac */ LDR R3, =D_03005380 \n\
 /* 0803ebae */ MOV R10, R3 @ Set R10 to R3 \n\
@@ -159,7 +159,7 @@ branch_0803eb86: \n\
 /* 0803ebde */ MOV R9, R2 @ Set R9 to R2 \n\
 /* 0803ebe0 */ STRH R0, [R1] \n\
 /* 0803ebe2 */ MOVS R0, 0x7 @ Set R0 to 0x7 \n\
-/* 0803ebe4 */ BL func_0803e990 \n\
+/* 0803ebe4 */ BL toss_boys_get_anim \n\
 /* 0803ebe8 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803ebea */ MOV R3, R10 @ Set R3 to R10 \n\
 /* 0803ebec */ LDR R0, [R3] \n\
@@ -247,7 +247,7 @@ branch_0803eb86: \n\
 /* 0803ec9a */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 0803ec9c */ STRB R1, [R0] \n\
 /* 0803ec9e */ MOVS R0, 0x21 @ Set R0 to 0x21 \n\
-/* 0803eca0 */ BL func_0803e990 \n\
+/* 0803eca0 */ BL toss_boys_get_anim \n\
 /* 0803eca4 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803eca6 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 0803eca8 */ LDR R0, [R2] \n\
@@ -272,7 +272,7 @@ branch_0803eb86: \n\
 /* 0803ecd0 */ STRH R2, [R1] \n\
 /* 0803ecd2 */ ADDS R0, 0x4 @ Add 0x4 to R0 \n\
 /* 0803ecd4 */ BL init_drumtech \n\
-/* 0803ecd8 */ LDR R0, =D_089e8390 \n\
+/* 0803ecd8 */ LDR R0, =toss_boys_drumtech_bank \n\
 /* 0803ecda */ BL set_drumtech_bank \n\
 /* 0803ecde */ LDR R1, [R6] \n\
 /* 0803ece0 */ MOVS R0, 0xE4 @ Set R0 to 0xE4 \n\

@@ -34,7 +34,7 @@ branch_0803fa98: \n\
 /* 0803fa98 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
  \n\
 branch_0803fa9a: \n\
-/* 0803fa9a */ LDR R1, =D_089e89a0 \n\
+/* 0803fa9a */ LDR R1, =toss_boys_ready_anim_ids \n\
 /* 0803fa9c */ LSLS R0, R2, 0x1 \n\
 /* 0803fa9e */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0803faa0 */ ADDS R5, R4, R0 @ Set R5 to R4 + R0 \n\
@@ -43,7 +43,7 @@ branch_0803fa9a: \n\
 /* 0803faa6 */ LDRSB R0, [R1, R0] \n\
 /* 0803faa8 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803faaa */ BLT branch_0803fae2 \n\
-/* 0803faac */ BL func_0803e990 \n\
+/* 0803faac */ BL toss_boys_get_anim \n\
 /* 0803fab0 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803fab2 */ LDR R0, =D_03005380 \n\
 /* 0803fab4 */ LDR R0, [R0] \n\
@@ -56,7 +56,7 @@ branch_0803fa9a: \n\
 /* 0803fac2 */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 0803fac4 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803fac6 */ LDRSH R1, [R1, R3] \n\
-/* 0803fac8 */ LDR R3, =D_089e89ac \n\
+/* 0803fac8 */ LDR R3, =toss_boys_ready_anim_playback \n\
 /* 0803faca */ ADDS R3, R5, R3 @ Set R3 to R5 + R3 \n\
 /* 0803facc */ LDRB R3, [R3] \n\
 /* 0803face */ LSLS R3, R3, 0x18 \n\

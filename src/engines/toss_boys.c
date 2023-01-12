@@ -2,6 +2,9 @@
 
 asm(".include \"include/gba.inc\""); // Temporary
 
+// For readability.
+#define gTossBoysInfo ((struct TossBoysInfo *)D_030055d0)
+
 
 /* TOSS BOYS */
 

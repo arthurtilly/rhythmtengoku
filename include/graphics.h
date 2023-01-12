@@ -158,18 +158,36 @@ struct SpritePlaybackData {
   //  //  //  SCENE GRAPHICS  //  //  //
 
 
-#define END_OF_BUFFERED_TEXTURES_LIST NULL
-
-struct CompressedGraphics {
+struct Huffman {
+    const u16 *data;
+    u16 size;
+    u16 count;
+    const u32 *window1;
+    const u32 *window2;
 };
 
+struct CompressedGraphics {
+    union {
+        const struct Huffman *huffman;
+        const u16 *raw;
+    } data;
+    const u8 *rleData;
+    u16 rleSize;
+    u16 rleOffset;
+    u8 doubleCompressed;
+};
 
-#define COMPRESSED_GFX_SOURCE -1
-#define FUNCTION_GFX_SOURCE -2
-#define END_OF_GRAPHICS_TABLE { NULL, NULL, 0 }
+#define END_OF_BUFFERED_TEXTURES_LIST NULL
+
+
+typedef void (*GfxTableSrcFunc)(void *dest);
 
 struct GraphicsTable {
     const void *src;
     void *dest;
-    s32 param;
+    s32 size;
 };
+
+#define COMPRESSED_GFX_SOURCE -1
+#define FUNCTION_GFX_SOURCE -2
+#define END_OF_GRAPHICS_TABLE { NULL, NULL, 0 }

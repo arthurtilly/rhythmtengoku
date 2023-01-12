@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803fbd8 \n\
+thumb_func_start toss_boys_common_beat_animation \n\
 /* 0803fbd8 */ PUSH {R4-R6, LR} \n\
 /* 0803fbda */ SUB SP, 0xC \n\
 /* 0803fbdc */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
@@ -41,7 +41,7 @@ branch_0803fc16: \n\
 /* 0803fc16 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
  \n\
 branch_0803fc18: \n\
-/* 0803fc18 */ LDR R1, =D_089e89b8 \n\
+/* 0803fc18 */ LDR R1, =toss_boys_beat_anim_ids \n\
 /* 0803fc1a */ LSLS R0, R2, 0x1 \n\
 /* 0803fc1c */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0803fc1e */ ADDS R4, R5, R0 @ Set R4 to R5 + R0 \n\
@@ -50,7 +50,7 @@ branch_0803fc18: \n\
 /* 0803fc24 */ LDRSB R0, [R1, R0] \n\
 /* 0803fc26 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803fc28 */ BLT branch_0803fc60 \n\
-/* 0803fc2a */ BL func_0803e990 \n\
+/* 0803fc2a */ BL toss_boys_get_anim \n\
 /* 0803fc2e */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803fc30 */ LDR R0, =D_03005380 \n\
 /* 0803fc32 */ LDR R0, [R0] \n\
@@ -63,7 +63,7 @@ branch_0803fc18: \n\
 /* 0803fc40 */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 0803fc42 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803fc44 */ LDRSH R1, [R1, R3] \n\
-/* 0803fc46 */ LDR R3, =D_089e89c4 \n\
+/* 0803fc46 */ LDR R3, =toss_boys_beat_anim_playback \n\
 /* 0803fc48 */ ADDS R3, R4, R3 @ Set R3 to R4 + R3 \n\
 /* 0803fc4a */ LDRB R3, [R3] \n\
 /* 0803fc4c */ LSLS R3, R3, 0x18 \n\

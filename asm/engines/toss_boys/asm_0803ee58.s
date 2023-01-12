@@ -20,7 +20,7 @@ thumb_func_start func_0803ee58 \n\
 /* 0803ee74 */ MOVS R0, 0xE0 @ Set R0 to 0xE0 \n\
 /* 0803ee76 */ LSLS R0, R0, 0x2 \n\
 /* 0803ee78 */ ADDS R1, R3, R0 @ Set R1 to R3 + R0 \n\
-/* 0803ee7a */ LDR R2, =D_089e8658 \n\
+/* 0803ee7a */ LDR R2, =toss_boys_button_masks \n\
 /* 0803ee7c */ LSLS R0, R4, 0x1 \n\
 /* 0803ee7e */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0803ee80 */ LDRH R2, [R0] \n\

@@ -76,274 +76,274 @@ const char text_debug_menu_riq_main_menu[] = "Ｒ－ＩＱ　（メニュー）";
 const char text_debug_menu_riq_title[] = "Ｒ－ＩＱ　（タイトル）";
 
 // Karate Man 2
-const char D_0805987c[] = "カラテカ　２";
+const char text_debug_menu_karate_man_2[] = "カラテカ　２";
 
 // Karate Man
-const char D_0805988c[] = "カラテカ";
+const char text_debug_menu_karate_man[] = "カラテカ";
 
 // The Snappy Trio
-const char D_08059898[] = "バリバリ３にんしゅう";
+const char text_debug_menu_snappy_trio[] = "バリバリ３にんしゅう";
 
 // The Clappy Trio
-const char D_080598b0[] = "パチパチ３にんしゅう";
+const char text_debug_menu_clappy_trio[] = "パチパチ３にんしゅう";
 
 // Polyrhythm 2
-const char D_080598c8[] = "ポリリズム　２";
+const char text_debug_menu_polyrhythm_2[] = "ポリリズム　２";
 
 // Polyrhythm
-const char D_080598d8[] = "ポリリズム";
+const char text_debug_menu_polyrhythm[] = "ポリリズム";
 
 // Night Walk 2
-const char D_080598e4[] = "ナイト　ウォーク　２";
+const char text_debug_menu_night_walk_2[] = "ナイト　ウォーク　２";
 
 // Night Walk
-const char D_080598fc[] = "ナイト　ウォーク";
+const char text_debug_menu_night_walk[] = "ナイト　ウォーク";
 
 // Rhythm Tweezers 2
-const char D_08059910[] = "リズムだつもう　２";
+const char text_debug_menu_rhythm_tweezers_2[] = "リズムだつもう　２";
 
 // Rhythm Tweezers
-const char D_08059924[] = "リズムだつもう";
+const char text_debug_menu_rhythm_tweezers[] = "リズムだつもう";
 
 // Sick Beats
-const char D_08059934[] = "バイキン　はかせ";
+const char text_debug_menu_sick_beats[] = "バイキン　はかせ";
 
 // Bouncy Road 2
-const char D_08059948[] = "ホッピングロード　２";
+const char text_debug_menu_bouncy_road_2[] = "ホッピングロード　２";
 
 // Bouncy Road
-const char D_08059960[] = "ホッピングロード";
+const char text_debug_menu_bouncy_road[] = "ホッピングロード";
 
 // Ninja Bodyguard 2
-const char D_08059974[] = "ニンジャ　２";
+const char text_debug_menu_ninja_bodyguard_2[] = "ニンジャ　２";
 
 // Ninja Bodyguard
-const char D_08059984[] = "ニンジャ";
+const char text_debug_menu_ninja_bodyguard[] = "ニンジャ";
 
 // Sneaky Spirits 2
-const char D_08059990[] = "しろいおばけ　２";
+const char text_debug_menu_sneaky_spirits_2[] = "しろいおばけ　２";
 
 // Sneaky Spirits
-const char D_080599a4[] = "しろいおばけ";
+const char text_debug_menu_sneaky_spirits[] = "しろいおばけ";
 
 // Spaceball 2
-const char D_080599b4[] = "エアーバッター２";
+const char text_debug_menu_spaceball_2[] = "エアーバッター２";
 
 // Spaceball
-const char D_080599c8[] = "エアーバッター";
+const char text_debug_menu_spaceball[] = "エアーバッター";
 
 // Samurai Slice
-const char D_080599d8[] = "いあいぎり";
+const char text_debug_menu_samurai_slice[] = "いあいぎり";
 
 // Tap Trial 2
-const char D_080599e4[] = "スーパータップ";
+const char text_debug_menu_tap_trial_2[] = "スーパータップ";
 
 // Tap Trial
-const char D_080599f4[] = "タップダンズ";
+const char text_debug_menu_tap_trial[] = "タップダンズ";
 
 // Horse Machine
-const char D_08059a04[] = "うま（スピード）";
+const char text_debug_menu_horse_machine[] = "うま（スピード）";
 
 // Marching Orders 2
-const char D_08059a18[] = "マーチャ　２";
+const char text_debug_menu_marching_orders_2[] = "マーチャ　２";
 
 // Marching Orders
-const char D_08059a28[] = "マーチャ";
+const char text_debug_menu_marching_orders[] = "マーチャ";
 
 // Wizard's Waltz
-const char D_08059a34[] = "まほうつかい";
+const char text_debug_menu_wizards_waltz[] = "まほうつかい";
 
 // Dance Lesson 1
-const char D_08059a44[] = "ダンスレッスン　１";
+const char text_debug_menu_dance_lesson_1[] = "ダンスレッスン　１";
 
 // Bunny Hop
-const char D_08059a58[] = "ウサギとび";
+const char text_debug_menu_bunny_hop[] = "ウサギとび";
 
 // Metronome
-const char D_08059a64[] = "メトロノーム";
+const char text_debug_menu_metronome[] = "メトロノーム";
 
 // Fireworks
-const char D_08059a74[] = "ハナビ";
+const char text_debug_menu_fireworks[] = "ハナビ";
 
 // Flash Memory Test
-const char D_08059a7c[] = "フラッシュメモリテスト";
+const char text_debug_menu_flash_memory_test[] = "フラッシュメモリテスト";
 
 // Rat Race
-const char D_08059a94[] = "こっそりラット";
+const char text_debug_menu_rat_race[] = "こっそりラット";
 
 // Power Calligraphy
-const char D_08059aa4[] = "リズム　おしゅうじ";
+const char text_debug_menu_power_calligraphy[] = "リズム　おしゅうじ";
 
 // Drum Girls LIVE
-const char D_08059ab8[] = "ドラムガールズ";
+const char text_debug_menu_drum_girls_live[] = "ドラムガールズ";
 
 // Toss Boys 2
-const char D_08059ac8[] = "トスボーイズ　２";
+const char text_debug_menu_toss_boys_2[] = "トスボーイズ　２";
 
 // Toss Boys
-const char D_08059adc[] = "トスボーイズ";
+const char text_debug_menu_toss_boys[] = "トスボーイズ";
 
 // Tram & Pauline
-const char D_08059aec[] = "トランとポリン";
+const char text_debug_menu_tram_and_pauline[] = "トランとポリン";
 
 // Opening (A Type)
-const char D_08059afc[] = "オープニング　（Ａ　Ｔｙｐｅ）";
+const char text_debug_menu_opening_a[] = "オープニング　（Ａ　Ｔｙｐｅ）";
 
 // Opening (B Type)
-const char D_08059b1c[] = "オープニング　（Ｂ　Ｔｙｐｅ）";
+const char text_debug_menu_opening_b[] = "オープニング　（Ｂ　Ｔｙｐｅ）";
 
 // RIQ Data Check
-const char D_08059b3c[] = "ＲＩＱデータチェック";
+const char text_debug_menu_riq_data_check[] = "ＲＩＱデータチェック";
 
 // Showtime
-const char D_08059b54[] = "ショータイム";
+const char text_debug_menu_showtime[] = "ショータイム";
 
 // Cosmic Dance
-const char D_08059b64[] = "コスモダンス";
+const char text_debug_menu_cosmic_dance[] = "コスモダンス";
 
 // Space Dance
-const char D_08059b74[] = "スペースダンス";
+const char text_debug_menu_space_dance[] = "スペースダンス";
 
 // Rap Women (by KAZU)
-const char D_08059b84[] = "ラップ　ウィメン（ｂｙ　ＫＡＺＵ）";
+const char text_debug_menu_rap_women_kazu[] = "ラップ　ウィメン（ｂｙ　ＫＡＺＵ）";
 
 // Rap Women (by YONE)
-const char D_08059ba8[] = "ラップ　ウィメン（ｂｙ　ＹＯＮＥ）";
+const char text_debug_menu_rap_women_yone[] = "ラップ　ウィメン（ｂｙ　ＹＯＮＥ）";
 
 // Rap Men
-const char D_08059bcc[] = "ラップメン";
+const char text_debug_menu_rap_men[] = "ラップメン";
 
 // Quiz Show
-const char D_08059bd8[] = "クイズ";
+const char text_debug_menu_quiz_show[] = "クイズ";
 
 // Reading Material
-const char D_08059be0[] = "テキスト";
+const char text_debug_menu_reading_material[] = "テキスト";
 
 // Rhythm Test (Total)
-const char D_08059bec[] = "チェックマシン　（トータル）";
+const char text_debug_menu_rhythm_test_total[] = "チェックマシン　（トータル）";
 
 // Rhythm Test (Trick)
-const char D_08059c0c[] = "チェックマシン　（トリッキー）";
+const char text_debug_menu_rhythm_test_trick[] = "チェックマシン　（トリッキー）";
 
 // Rhythm Test (Cue)
-const char D_08059c2c[] = "チェックマシン　（キューフ）";
+const char text_debug_menu_rhythm_test_cue[] = "チェックマシン　（キューフ）";
 
 // Check Machine (Click)
-const char D_08059c4c[] = "チェックマシン　（クリック）";
+const char text_debug_menu_rhythm_test_click[] = "チェックマシン　（クリック）";
 
 // Studio Drummer
-const char D_08059c6c[] = "スタジオドラマー";
+const char text_debug_menu_studio_drummer[] = "スタジオドラマー";
 
 // Lesson (High-Tech 2)
-const char D_08059c80[] = "レッスン（じっせん８）";
+const char text_debug_menu_drum_lesson_hi_tech_2[] = "レッスン（じっせん８）";
 
 // Lesson (High-Tech 1)
-const char D_08059c98[] = "レッスン（じっせん７）";
+const char text_debug_menu_drum_lesson_hi_tech_1[] = "レッスン（じっせん７）";
 
 // Lesson (Long 6)
-const char D_08059cb0[] = "レッスン（じっせん６）";
+const char text_debug_menu_drum_lesson_long_6[] = "レッスン（じっせん６）";
 
 // Lesson (Long 5)
-const char D_08059cc8[] = "レッスン（じっせん５）";
+const char text_debug_menu_drum_lesson_long_5[] = "レッスン（じっせん５）";
 
 // Lesson (Long 1)
-const char D_08059ce0[] = "レッスン（じっせん４）";
+const char text_debug_menu_drum_lesson_long_1[] = "レッスン（じっせん４）";
 
 // Lesson (Long 3)
-const char D_08059cf8[] = "レッスン（じっせん３）";
+const char text_debug_menu_drum_lesson_long_3[] = "レッスン（じっせん３）";
 
 // Lesson (Long 2)
-const char D_08059d10[] = "レッスン（じっせん２）";
+const char text_debug_menu_drum_lesson_long_2[] = "レッスン（じっせん２）";
 
 // Lesson (Long 4)
-const char D_08059d28[] = "レッスン（じっせん１）";
+const char text_debug_menu_drum_lesson_long_4[] = "レッスン（じっせん１）";
 
 // Lesson (Short 3)
-const char D_08059d40[] = "レッスン（スネアテクニック）";
+const char text_debug_menu_drum_lesson_short_3[] = "レッスン（スネアテクニック）";
 
 // Lesson (Short 2)
-const char D_08059d60[] = "レッスン（はやい８ビート）";
+const char text_debug_menu_drum_lesson_short_2[] = "レッスン（はやい８ビート）";
 
 // Lesson (Basic 2)
-const char D_08059d7c[] = "レッスン（バスとスネア）";
+const char text_debug_menu_drum_lesson_basic_2[] = "レッスン（バスとスネア）";
 
 // Lesson (Basic 1)
-const char D_08059d98[] = "レッスン（スネア）";
+const char text_debug_menu_drum_lesson_basic_1[] = "レッスン（スネア）";
 
 // Lesson (Short 9)
-const char D_08059dac[] = "レッスン（ボッサ）";
+const char text_debug_menu_drum_lesson_short_9[] = "レッスン（ボッサ）";
 
 // Lesson (Short 6)
-const char D_08059dc0[] = "レッスン（デスコビート）";
+const char text_debug_menu_drum_lesson_short_6[] = "レッスン（デスコビート）";
 
 // Lesson (Short 7)
-const char D_08059ddc[] = "レッスン（キメパターン２）";
+const char text_debug_menu_drum_lesson_short_7[] = "レッスン（キメパターン２）";
 
 // Lesson (Short 5)
-const char D_08059df8[] = "レッスン（キメパターン１）";
+const char text_debug_menu_drum_lesson_short_5[] = "レッスン（キメパターン１）";
 
 // Lesson (Short 8)
-const char D_08059e14[] = "レッスン（ハード２）";
+const char text_debug_menu_drum_lesson_short_8[] = "レッスン（ハード２）";
 
 // Lesson (Short 4)
-const char D_08059e2c[] = "レッスン（ハード１）";
+const char text_debug_menu_drum_lesson_short_4[] = "レッスン（ハード１）";
 
 // Lesson (Short 1)
-const char D_08059e44[] = "レッスン（イージー）";
+const char text_debug_menu_drum_lesson_short_1[] = "レッスン（イージー）";
 
 // Rhythm Toys (Rap Machine)
-const char D_08059e5c[] = "こえマシン（ラップ）";
+const char text_debug_menu_rap_machine[] = "こえマシン（ラップ）";
 
 // Rhythm Toys (Confession Machine)
-const char D_08059e74[] = "こえマシン（ラブ）";
+const char text_debug_menu_confession_machine[] = "こえマシン（ラブ）";
 
 // Rhythm Toys (Cat Machine)
-const char D_08059e88[] = "こえマシン（ネコ）";
+const char text_debug_menu_cat_machine[] = "こえマシン（ネコ）";
 
 // Bon Dance
-const char D_08059e9c[] = "ボンダンス";
+const char text_debug_menu_bon_dance[] = "ボンダンス";
 
 // Bon Odori
-const char D_08059ea8[] = "ぼんおどり";
+const char text_debug_menu_bon_odori[] = "ぼんおどり";
 
 // Remix 1
-const char D_08059eb4[] = "リミックス　１";
+const char text_debug_menu_remix1[] = "リミックス　１";
 
 // Remix 2
-const char D_08059ec4[] = "リミックス　２";
+const char text_debug_menu_remix2[] = "リミックス　２";
 
 // Remix 3
-const char D_08059ed4[] = "リミックス　３";
+const char text_debug_menu_remix3[] = "リミックス　３";
 
 // Remix 4
-const char D_08059ee4[] = "リミックス　４";
+const char text_debug_menu_remix4[] = "リミックス　４";
 
 // Remix 5
-const char D_08059ef4[] = "リミックス　５";
+const char text_debug_menu_remix5[] = "リミックス　５";
 
 // Remix 6
-const char D_08059f04[] = "リミックス　６";
+const char text_debug_menu_remix6[] = "リミックス　６";
 
 // Remix 7
-const char D_08059f14[] = "リミックス　７";
+const char text_debug_menu_remix7[] = "リミックス　７";
 
 // Remix 8
-const char D_08059f24[] = "リミックス　８";
+const char text_debug_menu_remix8[] = "リミックス　８";
 
 // Mr. Upbeat
-const char D_08059f34[] = "ウラおとこ";
+const char text_debug_menu_mr_upbeat[] = "ウラおとこ";
 
 // Mannequin Factory
-const char D_08059f40[] = "マネキンこうじょう";
+const char text_debug_menu_mannequin_factory[] = "マネキンこうじょう";
 
 // Quiz Show Endless
-const char D_08059f54[] = "クイズ（スペシャル）";
+const char text_debug_menu_quiz_show_endless[] = "クイズ（スペシャル）";
 
 // Sick Beats Endless
-const char D_08059f6c[] = "バイキン　はかせ　ＳＰ";
+const char text_debug_menu_sick_beats_endless[] = "バイキン　はかせ　ＳＰ";
 
 // LIVE
-const char D_08059f84[] = "ライブ";
+const char text_debug_menu_concert_hall[] = "ライブ";
 
 // Backslash
 const char D_08059f8c[] = "／";

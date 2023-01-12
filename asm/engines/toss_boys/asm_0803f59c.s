@@ -88,7 +88,7 @@ branch_0803f622: \n\
 /* 0803f63e */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803f640 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803f642 */ BL func_0803ee58 \n\
-/* 0803f646 */ LDR R1, =D_089e86dc \n\
+/* 0803f646 */ LDR R1, =toss_boys_ball_bounce_sfx \n\
 /* 0803f648 */ LDRB R0, [R7] \n\
 /* 0803f64a */ LSLS R0, R0, 0x2 \n\
 /* 0803f64c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
@@ -98,7 +98,7 @@ branch_0803f622: \n\
 /* 0803f654 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803f656 */ BL play_sound_w_pitch_volume \n\
 /* 0803f65a */ MOVS R0, 0x7 @ Set R0 to 0x7 \n\
-/* 0803f65c */ BL func_0803e990 \n\
+/* 0803f65c */ BL toss_boys_get_anim \n\
 /* 0803f660 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803f662 */ LDR R0, =D_03005380 \n\
 /* 0803f664 */ LDR R0, [R0] \n\
@@ -143,7 +143,7 @@ branch_0803f6a0: \n\
 /* 0803f6c8 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0803f6ca */ NEGS R1, R1 @ Set R1 to -R1 \n\
 /* 0803f6cc */ BL func_0803ee58 \n\
-/* 0803f6d0 */ LDR R1, =D_089e86dc \n\
+/* 0803f6d0 */ LDR R1, =toss_boys_ball_bounce_sfx \n\
 /* 0803f6d2 */ LDRB R0, [R7] \n\
 /* 0803f6d4 */ LSLS R0, R0, 0x2 \n\
 /* 0803f6d6 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
@@ -179,7 +179,7 @@ branch_0803f6f8: \n\
 /* 0803f726 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803f728 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803f72a */ BL func_0803ee58 \n\
-/* 0803f72e */ LDR R1, =D_089e86e8  \n\
+/* 0803f72e */ LDR R1, =toss_boys_ball_pop_sfx  \n\
 /* 0803f730 */ LDRB R0, [R7] \n\
 /* 0803f732 */ LSLS R0, R0, 0x2 \n\
 /* 0803f734 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
@@ -196,7 +196,7 @@ branch_0803f6f8: \n\
 /* 0803f74e */ LDR R0, =D_089e86a8 \n\
 /* 0803f750 */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 0803f752 */ MOVS R0, 0x11 @ Set R0 to 0x11 \n\
-/* 0803f754 */ BL func_0803e990 \n\
+/* 0803f754 */ BL toss_boys_get_anim \n\
 /* 0803f758 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803f75a */ LDR R0, [R5] \n\
 /* 0803f75c */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\

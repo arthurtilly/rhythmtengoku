@@ -19,19 +19,21 @@ struct struct_08001f94 {
     void *dest;
 };
 
-struct InitGfxTaskInputs {
-    const struct GraphicsTable *gfx;
-    u32 arg;
+struct LoadGfxTableTaskInputs {
+    const struct GraphicsTable *gfxTable;
+    u32 limit;
 };
 
-struct InitGfxTaskInfo {
-    u16 unk0_b0:1;
-    u16 unk0_b1:2;
-    u16 unk0_b3:1;
-    u16 unk0_b4:12;
-    u32 arg;
-    const struct GraphicsTable *gfx;
-    u8 *src;
-    void *dest;
-    u32 unk14;
+struct GfxTableLoader {
+    u16 active:1;
+    u16 compressionLevel:2;
+    u16 decodingRLE:1;
+    u16 decompressingHuffman:12;
+    u32 limit;
+    const struct GraphicsTable *gfxTable;
+    const void *src;
+    u16 *dest;
+    s32 size;
+    u32 rleSaveState[8];
+    u32 huffmanSaveState[9];
 };
