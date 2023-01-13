@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08042860 \n\
-/* 08042860 */ BX LR \n\
+thumb_func_start horse_machine_cue_despawn \n\
+/* 080427e8 */ BX LR \n\
 .balign 4, 0 \n\
 .syntax divided");

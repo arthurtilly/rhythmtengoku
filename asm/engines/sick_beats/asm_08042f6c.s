@@ -15,7 +15,7 @@ thumb_func_start func_08042f6c \n\
 /* 08042f7e */ ADDS R5, 0xC @ Add 0xC to R5 \n\
 /* 08042f80 */ LDR R0, =D_03005380 \n\
 /* 08042f82 */ LDR R0, [R0] \n\
-/* 08042f84 */ LDR R1, =D_08931a8c \n\
+/* 08042f84 */ LDR R1, =anim_fork_launcher \n\
 /* 08042f86 */ MOVS R2, 0x3C @ Set R2 to 0x3C \n\
 /* 08042f88 */ STR R2, [SP] \n\
 /* 08042f8a */ MOVS R7, 0x90 @ Set R7 to 0x90 \n\
@@ -33,7 +33,7 @@ thumb_func_start func_08042f6c \n\
 /* 08042fa2 */ MOVS R3, 0x68 @ Set R3 to 0x68 \n\
 /* 08042fa4 */ BL func_0804d160 \n\
 /* 08042fa8 */ STRH R0, [R6, 0xC] \n\
-/* 08042faa */ LDR R0, =D_08931b14 \n\
+/* 08042faa */ LDR R0, =anim_fork_hit_none2 \n\
 /* 08042fac */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 08042fae */ STR R7, [SP] \n\
 /* 08042fb0 */ MOVS R6, 0x80 @ Set R6 to 0x80 \n\

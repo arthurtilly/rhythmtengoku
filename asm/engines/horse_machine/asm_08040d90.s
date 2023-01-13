@@ -7,7 +7,7 @@ thumb_func_start func_08040d90 \n\
 /* 08040d92 */ BL get_current_mem_id \n\
 /* 08040d96 */ LSLS R0, R0, 0x10 \n\
 /* 08040d98 */ LSRS R0, R0, 0x10 \n\
-/* 08040d9a */ LDR R2, =D_089e8d9c \n\
+/* 08040d9a */ LDR R2, =horse_machine_backgrounds \n\
 /* 08040d9c */ LDR R1, =D_030055d0 \n\
 /* 08040d9e */ LDR R1, [R1] \n\
 /* 08040da0 */ LDR R3, =0x2ff \n\

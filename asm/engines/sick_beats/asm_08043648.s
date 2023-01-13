@@ -7,7 +7,7 @@ thumb_func_start func_08043648 \n\
 /* 0804364a */ SUB SP, 0x14 \n\
 /* 0804364c */ LDR R0, =D_03005380 \n\
 /* 0804364e */ LDR R0, [R0] \n\
-/* 08043650 */ LDR R1, =D_08931f4c \n\
+/* 08043650 */ LDR R1, =anim_sick_beats_game_over \n\
 /* 08043652 */ MOVS R2, 0x50 @ Set R2 to 0x50 \n\
 /* 08043654 */ STR R2, [SP] \n\
 /* 08043656 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\

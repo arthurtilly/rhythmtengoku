@@ -11,7 +11,7 @@ thumb_func_start func_08041444 \n\
 /* 0804144e */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 08041450 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 08041452 */ BNE branch_08041480 \n\
-/* 08041454 */ LDR R2, =D_089e8e60 \n\
+/* 08041454 */ LDR R2, =horse_machine_player_horse_sfx \n\
 /* 08041456 */ LDR R0, =D_030055d0 \n\
 /* 08041458 */ LDR R1, [R0] \n\
 /* 0804145a */ MOVS R3, 0xB3 @ Set R3 to 0xB3 \n\
@@ -31,7 +31,7 @@ thumb_func_start func_08041444 \n\
 .ltorg \n\
  \n\
 branch_08041480: \n\
-/* 08041480 */ LDR R3, =D_089e8ea0 \n\
+/* 08041480 */ LDR R3, =horse_machine_teacher_horse_sfx \n\
 /* 08041482 */ LDR R5, =D_030055d0 \n\
 /* 08041484 */ LDR R2, [R5] \n\
 /* 08041486 */ MOVS R1, 0xB3 @ Set R1 to 0xB3 \n\

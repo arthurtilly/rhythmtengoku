@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_08932044] <description>
+// [D_08932044] Sick Beats Palette
 const Palette sick_beats_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x009000),

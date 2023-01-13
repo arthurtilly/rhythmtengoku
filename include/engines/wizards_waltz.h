@@ -45,17 +45,17 @@ struct WizardsWaltzCue {
 #define WIZARDS_WALTZ_GIRL_STATE_SAD 2
 
 // OAM Animations:
-extern const struct Animation D_08932bec[]; // Animation: "wizard_fly"
-extern const struct Animation D_08932c14[]; // Animation: "wizard_magic"
-extern const struct Animation D_08932c8c[]; // Animation: "sparkle"
-extern const struct Animation D_08932cbc[]; // Animation: "sprout_eaten"
-extern const struct Animation D_08932d2c[]; // Animation: "sprout_grow"
-extern const struct Animation D_08932de4[]; // Animation: "sprout_appear"
-extern const struct Animation D_08932e3c[]; // Animation: "girl"
-extern const struct Animation D_08932e64[]; // Animation: "girl_happy"
-extern const struct Animation D_08932ea4[]; // Animation: "girl_sad"
-extern const struct Animation D_08932edc[]; // Animation: "shadow"
-extern const struct Animation D_08932f94[]; // Animation: "sprout_appear_tutorial"
+extern const struct Animation anim_wizard_fly[]; // Animation: "wizard_fly"
+extern const struct Animation anim_wizard_cast_spell[]; // Animation: "wizard_magic"
+extern const struct Animation anim_wizard_sparkle[]; // Animation: "sparkle"
+extern const struct Animation anim_wizards_waltz_sprout_eaten[]; // Animation: "sprout_eaten"
+extern const struct Animation anim_wizards_waltz_sprout_grow[]; // Animation: "sprout_grow"
+extern const struct Animation anim_wizards_waltz_sprout_appear[]; // Animation: "sprout_appear"
+extern const struct Animation anim_wizards_waltz_girl_idle[]; // Animation: "girl"
+extern const struct Animation anim_wizards_waltz_girl_happy[]; // Animation: "girl_happy"
+extern const struct Animation anim_wizards_waltz_girl_upset[]; // Animation: "girl_sad"
+extern const struct Animation anim_wizards_waltz_shadow[]; // Animation: "shadow"
+extern const struct Animation anim_wizards_waltz_sprout_appear_tutorial[]; // Animation: "sprout_appear_tutorial"
 
 // Palettes:
 

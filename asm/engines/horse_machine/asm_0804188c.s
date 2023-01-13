@@ -29,7 +29,7 @@ thumb_func_start func_0804188c \n\
 /* 080418bc */ LDR R2, [R4] \n\
 /* 080418be */ MOVS R4, 0x34 @ Set R4 to 0x34 \n\
 /* 080418c0 */ LDRSH R1, [R2, R4] \n\
-/* 080418c2 */ LDR R4, =D_089e8f00 \n\
+/* 080418c2 */ LDR R4, =horse_machine_jockey_anim \n\
 /* 080418c4 */ MOVS R5, 0xB3 @ Set R5 to 0xB3 \n\
 /* 080418c6 */ LSLS R5, R5, 0x2 \n\
 /* 080418c8 */ ADDS R2, R2, R5 @ Set R2 to R2 + R5 \n\
@@ -65,7 +65,7 @@ branch_080418ec: \n\
 /* 0804190e */ LDR R2, [R4] \n\
 /* 08041910 */ MOVS R4, 0x34 @ Set R4 to 0x34 \n\
 /* 08041912 */ LDRSH R1, [R2, R4] \n\
-/* 08041914 */ LDR R4, =D_089e8f00 \n\
+/* 08041914 */ LDR R4, =horse_machine_jockey_anim \n\
 /* 08041916 */ MOVS R5, 0xB3 @ Set R5 to 0xB3 \n\
 /* 08041918 */ LSLS R5, R5, 0x2 \n\
 /* 0804191a */ ADDS R2, R2, R5 @ Set R2 to R2 + R5 \n\

@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08040f6c \n\
+thumb_func_start horse_machine_engine_start \n\
 /* 08040f6c */ PUSH {R4-R7, LR} \n\
 /* 08040f6e */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 08040f70 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -13,7 +13,7 @@ thumb_func_start func_08040f6c \n\
 /* 08040f7a */ LDR R1, [R6] \n\
 /* 08040f7c */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08040f7e */ STRB R0, [R1] \n\
-/* 08040f80 */ BL func_08040f40 \n\
+/* 08040f80 */ BL horse_machine_init_gfx1 \n\
 /* 08040f84 */ BL scene_show_obj_layer \n\
 /* 08040f88 */ MOVS R5, 0x2 @ Set R5 to 0x2 \n\
 /* 08040f8a */ STR R5, [SP] \n\
@@ -181,7 +181,7 @@ branch_080410a6: \n\
 /* 080410dc */ STR R7, [SP, 0x8] \n\
 /* 080410de */ STR R7, [SP, 0xC] \n\
 /* 080410e0 */ STR R7, [SP, 0x10] \n\
-/* 080410e2 */ LDR R1, =D_089305f0 \n\
+/* 080410e2 */ LDR R1, =anim_horse_still \n\
 /* 080410e4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080410e6 */ BL func_0804d160 \n\
 /* 080410ea */ LDR R1, [R6] \n\
@@ -211,7 +211,7 @@ branch_080410fc: \n\
 /* 0804111e */ STR R5, [SP, 0x8] \n\
 /* 08041120 */ STR R5, [SP, 0xC] \n\
 /* 08041122 */ STR R5, [SP, 0x10] \n\
-/* 08041124 */ LDR R1, =D_089305f0 \n\
+/* 08041124 */ LDR R1, =anim_horse_still \n\
 /* 08041126 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08041128 */ BL func_0804d160 \n\
 /* 0804112c */ LDR R1, [R6] \n\
@@ -256,7 +256,7 @@ branch_08041142: \n\
 /* 08041178 */ STR R7, [SP, 0x8] \n\
 /* 0804117a */ STR R7, [SP, 0xC] \n\
 /* 0804117c */ STR R7, [SP, 0x10] \n\
-/* 0804117e */ LDR R1, =D_089303e8 \n\
+/* 0804117e */ LDR R1, =anim_horse_walk_jockey \n\
 /* 08041180 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08041182 */ BL func_0804d160 \n\
 /* 08041186 */ MOV R3, R8 @ Set R3 to R8 \n\
@@ -291,7 +291,7 @@ branch_080411a4: \n\
 /* 080411ce */ STR R5, [SP, 0x8] \n\
 /* 080411d0 */ STR R5, [SP, 0xC] \n\
 /* 080411d2 */ STR R5, [SP, 0x10] \n\
-/* 080411d4 */ LDR R1, =D_089303e8 \n\
+/* 080411d4 */ LDR R1, =anim_horse_walk_jockey \n\
 /* 080411d6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080411d8 */ BL func_0804d160 \n\
 /* 080411dc */ MOV R2, R8 @ Set R2 to R8 \n\
@@ -332,7 +332,7 @@ branch_0804120e: \n\
 /* 08041218 */ STR R4, [SP, 0x8] \n\
 /* 0804121a */ STR R4, [SP, 0xC] \n\
 /* 0804121c */ STR R4, [SP, 0x10] \n\
-/* 0804121e */ LDR R1, =D_08930550 \n\
+/* 0804121e */ LDR R1, =anim_horse_text_pak \n\
 /* 08041220 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08041222 */ ADDS R3, R6, 0x0 @ Set R3 to R6 + 0x0 \n\
 /* 08041224 */ BL func_0804d160 \n\
@@ -412,7 +412,7 @@ branch_08041266: \n\
 /* 080412b8 */ STR R6, [SP, 0x8] \n\
 /* 080412ba */ STR R6, [SP, 0xC] \n\
 /* 080412bc */ STR R6, [SP, 0x10] \n\
-/* 080412be */ LDR R1, =D_08930550 \n\
+/* 080412be */ LDR R1, =anim_horse_text_pak \n\
 /* 080412c0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080412c2 */ BL func_0804d160 \n\
 /* 080412c6 */ MOV R3, R8 @ Set R3 to R8 \n\
@@ -451,7 +451,7 @@ branch_08041266: \n\
 /* 0804130a */ LSRS R7, R0, 0x18 \n\
 /* 0804130c */ CMP R7, 0x3 @ Compare R7 and 0x3 \n\
 /* 0804130e */ BLS branch_08041266 \n\
-/* 08041310 */ LDR R0, =D_08930618 \n\
+/* 08041310 */ LDR R0, =anim_horse_tachometer_hand \n\
 /* 08041312 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 08041314 */ LSLS R1, R1, 0x4 \n\
 /* 08041316 */ MOV R8, R1 @ Set R8 to R1 \n\
@@ -478,7 +478,7 @@ branch_08041266: \n\
 /* 08041342 */ LSLS R3, R3, 0x2 \n\
 /* 08041344 */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 08041346 */ STR R0, [R1] \n\
-/* 08041348 */ LDR R0, =D_08930628 \n\
+/* 08041348 */ LDR R0, =anim_horse_speedometer_hand \n\
 /* 0804134a */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0804134c */ STR R1, [SP] \n\
 /* 0804134e */ MOV R2, R9 @ Set R2 to R9 \n\
@@ -499,7 +499,7 @@ branch_08041266: \n\
 /* 0804136e */ STR R0, [R1] \n\
 /* 08041370 */ LDR R0, =D_03005380 \n\
 /* 08041372 */ LDR R0, [R0] \n\
-/* 08041374 */ LDR R1, =D_08930638 \n\
+/* 08041374 */ LDR R1, =anim_horse_high_speed_light \n\
 /* 08041376 */ MOVS R2, 0x82 @ Set R2 to 0x82 \n\
 /* 08041378 */ STR R2, [SP] \n\
 /* 0804137a */ MOV R2, R8 @ Set R2 to R8 \n\

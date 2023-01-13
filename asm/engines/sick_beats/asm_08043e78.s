@@ -57,7 +57,7 @@ branch_08043ec8: \n\
 /* 08043ed8 */ BL func_08043124 \n\
  \n\
 branch_08043edc: \n\
-/* 08043edc */ LDR R0, =D_08931ad4 \n\
+/* 08043edc */ LDR R0, =anim_fork_hit_none1 \n\
 /* 08043ede */ LSLS R2, R6, 0x10 \n\
 /* 08043ee0 */ ASRS R2, R2, 0x10 \n\
 /* 08043ee2 */ LSLS R3, R4, 0x10 \n\

@@ -72,7 +72,7 @@ SECTIONS {
 		build/src/engines/tap_trial.c.o(.bss*);
 		build/src/engines/toss_boys.c.o(.bss*);
 		build/src/engines/tram_and_pauline.c.o(.bss*);
-		build/src/engines/mechanical_horse.c.o(.bss*);
+		build/src/engines/horse_machine.c.o(.bss*);
 		build/src/engines/sick_beats.c.o(.bss*);
 		build/src/engines/machines.c.o(.bss*);
 		build/src/engines/wizards_waltz.c.o(.bss*);
@@ -198,7 +198,7 @@ SECTIONS {
 		build/src/engines/tap_trial.c.o(.text);
 		build/src/engines/toss_boys.c.o(.text);
 		build/src/engines/tram_and_pauline.c.o(.text);
-		build/src/engines/mechanical_horse.c.o(.text);
+		build/src/engines/horse_machine.c.o(.text);
 		build/src/engines/sick_beats.c.o(.text);
 		build/src/engines/machines.c.o(.text);
 		build/src/engines/wizards_waltz.c.o(.text);
@@ -1608,6 +1608,7 @@ SECTIONS {
         build/data/engines/tap_trial_engine.c.o(.rodata*);
         build/data/engines/toss_boys_engine.c.o(.rodata*);
         build/data/engines/tram_and_pauline_engine.c.o(.rodata*);
+        build/data/engines/horse_machine_engine.c.o(.rodata*);
         build/bin/bindata_089e384c.bin.o(.rodata*);
         build/data/engines/prologues/sneaky_spirits_script.c.o(.rodata*);
         build/data/engines/prologues/spaceball_script.c.o(.rodata*);

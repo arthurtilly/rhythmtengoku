@@ -141,7 +141,7 @@ branch_08041a70: \n\
 /* 08041a72 */ LDR R0, [R0] \n\
 /* 08041a74 */ MOVS R4, 0x3C @ Set R4 to 0x3C \n\
 /* 08041a76 */ LDRSH R1, [R1, R4] \n\
-/* 08041a78 */ LDR R2, =D_08930550 \n\
+/* 08041a78 */ LDR R2, =anim_horse_text_pak \n\
 /* 08041a7a */ B branch_08041b26 \n\
 \n\
 .ltorg \n\
@@ -151,7 +151,7 @@ branch_08041a90: \n\
 /* 08041a92 */ LDR R0, [R0] \n\
 /* 08041a94 */ MOVS R2, 0x3C @ Set R2 to 0x3C \n\
 /* 08041a96 */ LDRSH R1, [R1, R2] \n\
-/* 08041a98 */ LDR R2, =D_08930568 \n\
+/* 08041a98 */ LDR R2, =anim_horse_text_ka \n\
 /* 08041a9a */ B branch_08041b26 \n\
 \n\
 .ltorg \n\
@@ -164,7 +164,7 @@ branch_08041aa4: \n\
 /* 08041aac */ ADDS R1, R1, R7 @ Set R1 to R1 + R7 \n\
 /* 08041aae */ MOVS R4, 0x3C @ Set R4 to 0x3C \n\
 /* 08041ab0 */ LDRSH R1, [R1, R4] \n\
-/* 08041ab2 */ LDR R2, =D_08930598 \n\
+/* 08041ab2 */ LDR R2, =anim_horse_text_tot \n\
 /* 08041ab4 */ B branch_08041b26 \n\
 \n\
 .ltorg \n\
@@ -182,7 +182,7 @@ branch_08041ac0: \n\
 /* 08041ad2 */ LDR R0, [R0] \n\
 /* 08041ad4 */ MOVS R2, 0x3C @ Set R2 to 0x3C \n\
 /* 08041ad6 */ LDRSH R1, [R1, R2] \n\
-/* 08041ad8 */ LDR R2, =D_089305d8 \n\
+/* 08041ad8 */ LDR R2, =anim_horse_text_pa \n\
 /* 08041ada */ B branch_08041b26 \n\
 \n\
 .ltorg \n\
@@ -194,7 +194,7 @@ branch_08041ae4: \n\
 /* 08041aea */ LDR R0, [R0] \n\
 /* 08041aec */ MOVS R4, 0x3C @ Set R4 to 0x3C \n\
 /* 08041aee */ LDRSH R1, [R1, R4] \n\
-/* 08041af0 */ LDR R2, =D_08930568 \n\
+/* 08041af0 */ LDR R2, =anim_horse_text_ka \n\
 /* 08041af2 */ B branch_08041b26 \n\
 \n\
 .ltorg \n\
@@ -204,7 +204,7 @@ branch_08041afc: \n\
 /* 08041afe */ LDR R0, [R0] \n\
 /* 08041b00 */ MOVS R2, 0x3C @ Set R2 to 0x3C \n\
 /* 08041b02 */ LDRSH R1, [R1, R2] \n\
-/* 08041b04 */ LDR R2, =D_08930580 \n\
+/* 08041b04 */ LDR R2, =anim_horse_text_rap \n\
 /* 08041b06 */ B branch_08041b26 \n\
 \n\
 .ltorg \n\
@@ -220,7 +220,7 @@ branch_08041b10: \n\
 /* 08041b1e */ LDR R0, [R0] \n\
 /* 08041b20 */ MOVS R4, 0x3C @ Set R4 to 0x3C \n\
 /* 08041b22 */ LDRSH R1, [R1, R4] \n\
-/* 08041b24 */ LDR R2, =D_08930600 \n\
+/* 08041b24 */ LDR R2, =anim_horse_text_do \n\
  \n\
 branch_08041b26: \n\
 /* 08041b26 */ STR R3, [SP] \n\
@@ -237,7 +237,7 @@ branch_08041b3c: \n\
 /* 08041b3e */ LDR R0, [R0] \n\
 /* 08041b40 */ MOVS R2, 0x3C @ Set R2 to 0x3C \n\
 /* 08041b42 */ LDRSH R1, [R1, R2] \n\
-/* 08041b44 */ LDR R2, =D_089305b0 \n\
+/* 08041b44 */ LDR R2, =anim_horse_text_dod \n\
 /* 08041b46 */ STR R3, [SP] \n\
 /* 08041b48 */ STR R3, [SP, 0x4] \n\
 /* 08041b4a */ STR R3, [SP, 0x8] \n\

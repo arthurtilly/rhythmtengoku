@@ -12,7 +12,7 @@ thumb_func_start func_08042864 \n\
 /* 08042870 */ BNE branch_0804290e \n\
 /* 08042872 */ LDR R0, =D_03005380 \n\
 /* 08042874 */ LDR R0, [R0] \n\
-/* 08042876 */ LDR R1, =D_08931fe4 \n\
+/* 08042876 */ LDR R1, =anim_sick_beats_endless_particle \n\
 /* 08042878 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 0804287a */ STR R2, [SP] \n\
 /* 0804287c */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\

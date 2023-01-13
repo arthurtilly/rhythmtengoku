@@ -3,15 +3,15 @@
 
 #include "sick_beats_anim_cells.inc.c"
 
-// [D_0893189c] <description>
-const struct Animation sick_beats_anim00[] = {
+// [D_0893189c] Virus
+const struct Animation anim_virus_appear[] = {
     /* 000 */ { sick_beats_cel003, 6 },
     /* 001 */ { sick_beats_cel004, 3 },
     /* End */ END_ANIMATION
 };
 
-// [D_089318b4] <description>
-const struct Animation sick_beats_anim01[] = {
+// [D_089318b4] Virus - Look Both Ways Before Crossing the Street
+const struct Animation anim_virus_ready[] = {
     /* 000 */ { sick_beats_cel010, 1 },
     /* 001 */ { sick_beats_cel011, 1 },
     /* 002 */ { sick_beats_cel012, 1 },
@@ -46,16 +46,16 @@ const struct Animation sick_beats_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089319b4] <description>
-const struct Animation sick_beats_anim02[] = {
+// [D_089319b4] Yellow Microbe - Beat
+const struct Animation anim_yellow_microbe_beat[] = {
     /* 000 */ { sick_beats_cel067, 3 },
     /* 001 */ { sick_beats_cel068, 4 },
     /* 002 */ { sick_beats_cel066, 22 },
     /* End */ END_ANIMATION
 };
 
-// [D_089319d4] <description>
-const struct Animation sick_beats_anim03[] = {
+// [D_089319d4] Yellow Microbe - Under Attack
+const struct Animation anim_yellow_microbe_hurt[] = {
     /* 000 */ { sick_beats_cel075, 3 },
     /* 001 */ { sick_beats_cel069, 2 },
     /* 002 */ { sick_beats_cel075, 2 },
@@ -63,8 +63,8 @@ const struct Animation sick_beats_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089319fc] <description>
-const struct Animation sick_beats_anim04[] = {
+// [D_089319fc] Yellow Microbe - Vanish
+const struct Animation anim_yellow_microbe_vanish[] = {
     /* 000 */ { sick_beats_cel070, 2 },
     /* 001 */ { sick_beats_cel071, 2 },
     /* 002 */ { sick_beats_cel072, 4 },
@@ -73,8 +73,8 @@ const struct Animation sick_beats_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931a2c] <description>
-const struct Animation sick_beats_anim05[] = {
+// [D_08931a2c] Virus - Laugh
+const struct Animation anim_virus_attack[] = {
     /* 000 */ { sick_beats_cel000, 7 },
     /* 001 */ { sick_beats_cel079, 4 },
     /* 002 */ { sick_beats_cel000, 6 },
@@ -84,8 +84,8 @@ const struct Animation sick_beats_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931a64] <description>
-const struct Animation sick_beats_anim06[] = {
+// [D_08931a64] Yellow Microbe - Reappear
+const struct Animation anim_yellow_microbe_return[] = {
     /* 000 */ { sick_beats_cel076, 11 },
     /* 001 */ { sick_beats_cel077, 11 },
     /* 002 */ { sick_beats_cel078, 3 },
@@ -93,15 +93,15 @@ const struct Animation sick_beats_anim06[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931a8c] <description>
-const struct Animation sick_beats_anim07[] = {
+// [D_08931a8c] D-Pad - Press
+const struct Animation anim_fork_launcher[] = {
     /* 000 */ { sick_beats_cel020, 2 },
     /* 001 */ { sick_beats_cel019, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_08931aa4] <description>
-const struct Animation sick_beats_anim08[] = {
+// [D_08931aa4] Fork - Hit Virus
+const struct Animation anim_fork_hit_virus[] = {
     /* 000 */ { sick_beats_cel021, 1 },
     /* 001 */ { sick_beats_cel022, 3 },
     /* 002 */ { sick_beats_cel023, 4 },
@@ -110,8 +110,8 @@ const struct Animation sick_beats_anim08[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931ad4] <description>
-const struct Animation sick_beats_anim09[] = {
+// [D_08931ad4] Fork - Hit Nothing
+const struct Animation anim_fork_hit_none1[] = {
     /* 000 */ { sick_beats_cel026, 1 },
     /* 001 */ { sick_beats_cel027, 1 },
     /* 002 */ { sick_beats_cel028, 2 },
@@ -122,8 +122,8 @@ const struct Animation sick_beats_anim09[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931b14] <description>
-const struct Animation sick_beats_anim10[] = {
+// [D_08931b14] Fork - Hit Nothing (less force..?)
+const struct Animation anim_fork_hit_none2[] = {
     /* 000 */ { sick_beats_cel027, 2 },
     /* 001 */ { sick_beats_cel028, 2 },
     /* 002 */ { sick_beats_cel029, 2 },
@@ -132,8 +132,8 @@ const struct Animation sick_beats_anim10[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931b44] <description>
-const struct Animation sick_beats_anim11[] = {
+// [D_08931b44] Virus - Dash Up (Full)
+const struct Animation anim_virus_dash_up_full[] = {
     /* 000 */ { sick_beats_cel032, 1 },
     /* 001 */ { sick_beats_cel033, 1 },
     /* 002 */ { sick_beats_cel034, 1 },
@@ -141,30 +141,30 @@ const struct Animation sick_beats_anim11[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931b6c] <description>
-const struct Animation sick_beats_anim12[] = {
+// [D_08931b6c] Virus - Dash Up (Half)
+const struct Animation anim_virus_dash_up_half[] = {
     /* 000 */ { sick_beats_cel032, 1 },
     /* 001 */ { sick_beats_cel035, 1 },
     /* 002 */ { sick_beats_cel038, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_08931b8c] <description>
-const struct Animation sick_beats_anim13[] = {
+// [D_08931b8c] Virus - Dash Left (Full)
+const struct Animation anim_virus_dash_left_full[] = {
     /* 000 */ { sick_beats_cel036, 1 },
     /* 001 */ { sick_beats_cel037, 1 },
     /* 002 */ { sick_beats_cel038, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_08931bac] <description>
-const struct Animation sick_beats_anim14[] = {
+// [D_08931bac] Virus - Dash Left (Half)
+const struct Animation anim_virus_dash_left_half[] = {
     /* 000 */ { sick_beats_cel036, 1 },
     /* End */ END_ANIMATION
 };
 
-// [D_08931bbc] <description>
-const struct Animation sick_beats_anim15[] = {
+// [D_08931bbc] Fork - Hit Virus Too Early
+const struct Animation anim_fork_hit_early[] = {
     /* 000 */ { sick_beats_cel021, 1 },
     /* 001 */ { sick_beats_cel022, 3 },
     /* 002 */ { sick_beats_cel039, 4 },
@@ -173,8 +173,8 @@ const struct Animation sick_beats_anim15[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931bec] <description>
-const struct Animation sick_beats_anim16[] = {
+// [D_08931bec] Fork - Hit Virus Too Late
+const struct Animation anim_fork_hit_late[] = {
     /* 000 */ { sick_beats_cel021, 1 },
     /* 001 */ { sick_beats_cel022, 3 },
     /* 002 */ { sick_beats_cel041, 4 },
@@ -183,8 +183,8 @@ const struct Animation sick_beats_anim16[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931c1c] <description>
-const struct Animation sick_beats_anim17[] = {
+// [D_08931c1c] Doctor - Beat
+const struct Animation anim_virus_doctor_beat[] = {
     /* 000 */ { sick_beats_cel045, 3 },
     /* 001 */ { sick_beats_cel046, 2 },
     /* 002 */ { sick_beats_cel043, 5 },
@@ -192,8 +192,8 @@ const struct Animation sick_beats_anim17[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931c44] <description>
-const struct Animation sick_beats_anim18[] = {
+// [D_08931c44] Doctor - Fail
+const struct Animation anim_virus_doctor_fail[] = {
     /* 000 */ { sick_beats_cel048, 2 },
     /* 001 */ { sick_beats_cel049, 2 },
     /* 002 */ { sick_beats_cel048, 2 },
@@ -209,8 +209,8 @@ const struct Animation sick_beats_anim18[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931cac] <description>
-const struct Animation sick_beats_anim19[] = {
+// [D_08931cac] Doctor - Hit Virus
+const struct Animation anim_virus_doctor_hit1[] = {
     /* 000 */ { sick_beats_cel054, 17 },
     /* 001 */ { sick_beats_cel055, 2 },
     /* 002 */ { sick_beats_cel058, 2 },
@@ -218,8 +218,8 @@ const struct Animation sick_beats_anim19[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931cd4] <description>
-const struct Animation sick_beats_anim20[] = {
+// [D_08931cd4] Doctor - Hit Consecutive Virus
+const struct Animation anim_virus_doctor_hit2[] = {
     /* 000 */ { sick_beats_cel062, 10 },
     /* 001 */ { sick_beats_cel063, 6 },
     /* 002 */ { sick_beats_cel064, 3 },
@@ -228,16 +228,16 @@ const struct Animation sick_beats_anim20[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931d04] <description>
-const struct Animation sick_beats_anim21[] = {
+// [D_08931d04] Radio
+const struct Animation anim_sick_beats_radio[] = {
     /* 000 */ { sick_beats_cel059, 3 },
     /* 001 */ { sick_beats_cel060, 2 },
     /* 002 */ { sick_beats_cel038, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_08931d24] <description>
-const struct Animation sick_beats_anim22[] = {
+// [D_08931d24] Doctor - Animation Test
+const struct Animation anim_virus_doctor_test[] = {
     /* 000 */ { sick_beats_cel048, 2 },
     /* 001 */ { sick_beats_cel049, 1 },
     /* 002 */ { sick_beats_cel048, 1 },
@@ -257,8 +257,8 @@ const struct Animation sick_beats_anim22[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931dac] <description>
-const struct Animation sick_beats_anim23[] = {
+// [D_08931dac] Doctor - Hit Virus (Fast)
+const struct Animation anim_virus_doctor_hit1_fast[] = {
     /* 000 */ { sick_beats_cel053, 6 },
     /* 001 */ { sick_beats_cel054, 17 },
     /* 002 */ { sick_beats_cel055, 1 },
@@ -267,16 +267,16 @@ const struct Animation sick_beats_anim23[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931ddc] <description>
-const struct Animation sick_beats_anim24[] = {
+// [D_08931ddc] Yellow Microbe - Beat (Fast)
+const struct Animation anim_yellow_microbe_beat_fast[] = {
     /* 000 */ { sick_beats_cel066, 22 },
     /* 001 */ { sick_beats_cel067, 3 },
     /* 002 */ { sick_beats_cel068, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08931dfc] <description>
-const struct Animation sick_beats_anim25[] = {
+// [D_08931dfc] Yellow Microbe - Vanish (Fast)
+const struct Animation anim_yellow_microbe_vanish_fast[] = {
     /* 000 */ { sick_beats_cel070, 2 },
     /* 001 */ { sick_beats_cel071, 2 },
     /* 002 */ { sick_beats_cel072, 4 },
@@ -285,8 +285,8 @@ const struct Animation sick_beats_anim25[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931e2c] <description>
-const struct Animation sick_beats_anim26[] = {
+// [D_08931e2c] Yellow Microbe - Reappear (Fast)
+const struct Animation anim_yellow_microbe_return_fast[] = {
     /* 000 */ { sick_beats_cel076, 11 },
     /* 001 */ { sick_beats_cel077, 11 },
     /* 002 */ { sick_beats_cel078, 3 },
@@ -294,8 +294,8 @@ const struct Animation sick_beats_anim26[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931e54] <description>
-const struct Animation sick_beats_anim27[] = {
+// [D_08931e54] Yellow Microbe - Under Attack (Fast)
+const struct Animation anim_yellow_microbe_hurt_fast[] = {
     /* 000 */ { sick_beats_cel075, 3 },
     /* 001 */ { sick_beats_cel069, 2 },
     /* 002 */ { sick_beats_cel075, 2 },
@@ -303,8 +303,8 @@ const struct Animation sick_beats_anim27[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931e7c] <description>
-const struct Animation sick_beats_anim28[] = {
+// [D_08931e7c] Virus - Laugh (Duplicate)
+const struct Animation anim_virus_attack_fast[] = {
     /* 000 */ { sick_beats_cel000, 7 },
     /* 001 */ { sick_beats_cel079, 4 },
     /* 002 */ { sick_beats_cel000, 6 },
@@ -314,33 +314,33 @@ const struct Animation sick_beats_anim28[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931eb4] <description>
-const struct Animation sick_beats_anim29[] = {
+// [D_08931eb4] Null
+const struct Animation anim_sick_beats_null1[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931ebc] <description>
-const struct Animation sick_beats_anim30[] = {
+// [D_08931ebc] Null
+const struct Animation anim_sick_beats_null2[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931ec4] <description>
-const struct Animation sick_beats_anim31[] = {
+// [D_08931ec4] Null
+const struct Animation anim_sick_beats_null3[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931ecc] <description>
-const struct Animation sick_beats_anim32[] = {
+// [D_08931ecc] Null
+const struct Animation anim_sick_beats_null4[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931ed4] <description>
-const struct Animation sick_beats_anim33[] = {
+// [D_08931ed4] Null
+const struct Animation anim_sick_beats_null5[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931edc] <description>
-const struct Animation sick_beats_anim34[] = {
+// [D_08931edc] Tough Virus Hit Effect
+const struct Animation anim_tough_virus_hit_effect[] = {
     /* 000 */ { sick_beats_cel080, 2 },
     /* 001 */ { sick_beats_cel081, 2 },
     /* 002 */ { sick_beats_cel082, 2 },
@@ -350,8 +350,8 @@ const struct Animation sick_beats_anim34[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931f14] <description>
-const struct Animation sick_beats_anim35[] = {
+// [D_08931f14] Fork - Hit Tough Virus
+const struct Animation anim_fork_hit_tough_virus[] = {
     /* 000 */ { sick_beats_cel085, 3 },
     /* 001 */ { sick_beats_cel086, 12 },
     /* 002 */ { sick_beats_cel088, 2 },
@@ -361,16 +361,16 @@ const struct Animation sick_beats_anim35[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931f4c] <description>
-const struct Animation sick_beats_anim36[] = {
+// [D_08931f4c] Game Over Text
+const struct Animation anim_sick_beats_game_over[] = {
     /* 000 */ { sick_beats_cel091, 4 },
     /* 001 */ { sick_beats_cel092, 4 },
     /* 002 */ { sick_beats_cel093, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08931f6c] <description>
-const struct Animation sick_beats_anim37[] = {
+// [D_08931f6c] Score Count Numbers
+const struct Animation anim_sick_beats_score_num[] = {
     /* 000 */ { sick_beats_cel094, 4 },
     /* 001 */ { sick_beats_cel095, 4 },
     /* 002 */ { sick_beats_cel096, 4 },
@@ -384,20 +384,20 @@ const struct Animation sick_beats_anim37[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08931fc4] <description>
-const struct Animation sick_beats_anim38[] = {
+// [D_08931fc4] Score Counter
+const struct Animation anim_sick_beats_score_counter[] = {
     /* 000 */ { sick_beats_cel104, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08931fd4] <description>
-const struct Animation sick_beats_anim39[] = {
+// [D_08931fd4] High Score Counter
+const struct Animation anim_sick_beats_high_score_counter[] = {
     /* 000 */ { sick_beats_cel105, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08931fe4] <description>
-const struct Animation sick_beats_anim40[] = {
+// [D_08931fe4] Endless Mode Particles
+const struct Animation anim_sick_beats_endless_particle[] = {
     /* 000 */ { sick_beats_cel106, 4 },
     /* 001 */ { sick_beats_cel107, 4 },
     /* 002 */ { sick_beats_cel108, 4 },

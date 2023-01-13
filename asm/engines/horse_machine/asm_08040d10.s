@@ -20,7 +20,7 @@ thumb_func_start func_08040d10 \n\
 /* 08040d2e */ LDR R3, =0x302 \n\
 /* 08040d30 */ ADDS R2, R4, R3 @ Set R2 to R4 + R3 \n\
 /* 08040d32 */ LDRH R3, [R2] \n\
-/* 08040d34 */ LDR R6, =D_089e8d9c \n\
+/* 08040d34 */ LDR R6, =horse_machine_backgrounds \n\
 /* 08040d36 */ LDR R5, =0x2ff \n\
 /* 08040d38 */ ADDS R4, R4, R5 @ Set R4 to R4 + R5 \n\
 /* 08040d3a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\

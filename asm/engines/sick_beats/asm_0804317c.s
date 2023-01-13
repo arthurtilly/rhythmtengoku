@@ -10,7 +10,7 @@ thumb_func_start func_0804317c \n\
 /* 08043184 */ ADDS R5, R4, 0x4 @ Set R5 to R4 + 0x4 \n\
 /* 08043186 */ LDR R0, =D_03005380 \n\
 /* 08043188 */ LDR R0, [R0] \n\
-/* 0804318a */ LDR R1, =D_089319b4 \n\
+/* 0804318a */ LDR R1, =anim_yellow_microbe_beat \n\
 /* 0804318c */ MOVS R2, 0x8A @ Set R2 to 0x8A \n\
 /* 0804318e */ STR R2, [SP] \n\
 /* 08043190 */ MOVS R2, 0x89 @ Set R2 to 0x89 \n\

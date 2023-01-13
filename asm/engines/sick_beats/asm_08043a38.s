@@ -52,11 +52,11 @@ branch_08043a8a: \n\
 /* 08043a94 */ STR R0, [SP, 0x30] \n\
  \n\
 branch_08043a96: \n\
-/* 08043a96 */ LDR R1, =D_08931f14 \n\
+/* 08043a96 */ LDR R1, =anim_fork_hit_tough_virus \n\
 /* 08043a98 */ STR R1, [SP, 0x1C] \n\
 /* 08043a9a */ LDR R4, =D_03005380 \n\
 /* 08043a9c */ LDR R0, [R4] \n\
-/* 08043a9e */ LDR R1, =D_08931edc \n\
+/* 08043a9e */ LDR R1, =anim_tough_virus_hit_effect \n\
 /* 08043aa0 */ LSLS R3, R5, 0x10 \n\
 /* 08043aa2 */ ASRS R3, R3, 0x10 \n\
 /* 08043aa4 */ LSLS R2, R7, 0x10 \n\
@@ -137,7 +137,7 @@ branch_08043b10: \n\
 /* 08043b46 */ STR R0, [SP, 0x2C] \n\
 /* 08043b48 */ LDR R0, =D_03005380 \n\
 /* 08043b4a */ LDR R0, [R0] \n\
-/* 08043b4c */ LDR R1, =D_08931b6c \n\
+/* 08043b4c */ LDR R1, =anim_virus_dash_up_half \n\
 /* 08043b4e */ STR R4, [SP] \n\
 /* 08043b50 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08043b52 */ STR R2, [SP, 0x4] \n\
@@ -188,7 +188,7 @@ branch_08043b7c: \n\
 /* 08043bb4 */ STR R0, [SP, 0x2C] \n\
 /* 08043bb6 */ LDR R0, =D_03005380 \n\
 /* 08043bb8 */ LDR R0, [R0] \n\
-/* 08043bba */ LDR R1, =D_08931bac \n\
+/* 08043bba */ LDR R1, =anim_virus_dash_left_half \n\
 /* 08043bbc */ STR R4, [SP] \n\
 /* 08043bbe */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08043bc0 */ STR R2, [SP, 0x4] \n\
@@ -240,7 +240,7 @@ branch_08043bec: \n\
 /* 08043c26 */ STR R0, [SP, 0x2C] \n\
 /* 08043c28 */ LDR R0, =D_03005380 \n\
 /* 08043c2a */ LDR R0, [R0] \n\
-/* 08043c2c */ LDR R1, =D_08931b6c \n\
+/* 08043c2c */ LDR R1, =anim_virus_dash_up_half \n\
 /* 08043c2e */ STR R4, [SP] \n\
 /* 08043c30 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08043c32 */ STR R2, [SP, 0x4] \n\
@@ -295,7 +295,7 @@ branch_08043c60: \n\
 /* 08043c9a */ STR R0, [SP, 0x2C] \n\
 /* 08043c9c */ LDR R0, =D_03005380 \n\
 /* 08043c9e */ LDR R0, [R0] \n\
-/* 08043ca0 */ LDR R1, =D_08931bac \n\
+/* 08043ca0 */ LDR R1, =anim_virus_dash_left_half \n\
 /* 08043ca2 */ STR R4, [SP] \n\
 /* 08043ca4 */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08043ca6 */ STR R2, [SP, 0x4] \n\

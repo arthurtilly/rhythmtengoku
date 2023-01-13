@@ -60,16 +60,16 @@ void func_08044a10(u32 ver) {
 
     // Create characters.
     gWizardsWaltzInfo->wizard.state = FALSE;
-    gWizardsWaltzInfo->wizard.sprite = create_affine_sprite(D_08932bec, 0, 120, gWizardsWaltzInfo->wizard.y, 0x4001, 0x80, 0, 1, 0, 0, 1);
-    gWizardsWaltzInfo->shadow.sprite = create_affine_sprite(D_08932edc, 0, 120, 80, 0x4082, 0x80, 0, 0, 0, 0, 1);
+    gWizardsWaltzInfo->wizard.sprite = create_affine_sprite(anim_wizard_fly, 0, 120, gWizardsWaltzInfo->wizard.y, 0x4001, 0x80, 0, 1, 0, 0, 1);
+    gWizardsWaltzInfo->shadow.sprite = create_affine_sprite(anim_wizards_waltz_shadow, 0, 120, 80, 0x4082, 0x80, 0, 0, 0, 0, 1);
     gWizardsWaltzInfo->girl.state = WIZARDS_WALTZ_GIRL_STATE_NEUTRAL;
-    gWizardsWaltzInfo->girl.sprite = create_affine_sprite(D_08932e3c, 0, 120, 80, 0x4040, 0x80, 0, 1, 0, 0, 1);
+    gWizardsWaltzInfo->girl.sprite = create_affine_sprite(anim_wizards_waltz_girl_idle, 0, 120, 80, 0x4040, 0x80, 0, 1, 0, 0, 1);
 
     // Create sparkles.
     for (i = 0; i < 10; i++) {
         struct AffineSprite *sprite;
         gWizardsWaltzInfo->sparkle[i].state = WIZARDS_WALTZ_SPARKLE_STATE_HIDDEN;
-        sprite = create_affine_sprite(D_08932c8c, 0, 0, 0, 0, 0x80, 0, 1, 0, 0, 0);
+        sprite = create_affine_sprite(anim_wizard_sparkle, 0, 0, 0, 0, 0x80, 0, 1, 0, 0, 0);
         gWizardsWaltzInfo->sparkle[i].sprite = sprite;
         affine_sprite_play_anim(sprite, 0);
     }
@@ -111,7 +111,7 @@ void func_08044c04(void) {
     if ((D_03004afc & 1) != 0) {
         gWizardsWaltzInfo->wizard.state = TRUE;
         // Play animation: "wizard_magic"
-        affine_sprite_change_anim(gWizardsWaltzInfo->wizard.sprite, D_08932c14, 0, 1, 0x7f, 0);
+        affine_sprite_change_anim(gWizardsWaltzInfo->wizard.sprite, anim_wizard_cast_spell, 0, 1, 0x7f, 0);
         // Play sound.
         play_sound(&s_witch_furu_seqData);
     }
@@ -121,7 +121,7 @@ void func_08044c04(void) {
         if (func_08010198(gWizardsWaltzInfo->wizard.sprite) > 6) {
             gWizardsWaltzInfo->wizard.state = FALSE;
             // Resume default animation: "wizard_fly"
-            affine_sprite_change_anim(gWizardsWaltzInfo->wizard.sprite, D_08932bec, 0, 1, 0, 0);
+            affine_sprite_change_anim(gWizardsWaltzInfo->wizard.sprite, anim_wizard_fly, 0, 1, 0, 0);
         }
     }
 
@@ -220,9 +220,9 @@ void func_08044e78(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
 
     // Use tutorial version of animation if tutorial_flag is set.
     if (gWizardsWaltzInfo->isTutorial) {
-        anim = D_08932f94; // "sprout_appear_tutorial"
+        anim = anim_wizards_waltz_sprout_appear_tutorial; // "sprout_appear_tutorial"
     } else {
-        anim = D_08932de4; // "sprout_appear"
+        anim = anim_wizards_waltz_sprout_appear; // "sprout_appear"
     }
 
     cue->sprite = create_affine_sprite(anim, 0, 120, 80, var4, 0x100, 0, 1, 0x7f, 0, doubleSize);
@@ -252,7 +252,7 @@ void func_08044fcc(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
     u32 isTutorial;
 
     // Play animation: "sprout_grow"
-    affine_sprite_change_anim(cue->sprite, D_08932d2c, 0, 1, 0x7f, 0);
+    affine_sprite_change_anim(cue->sprite, anim_wizards_waltz_sprout_grow, 0, 1, 0x7f, 0);
 
     // Cycle through frames of "girl_happy" if isTutorial flag is not set.
     isTutorial = gWizardsWaltzInfo->isTutorial;
@@ -265,7 +265,7 @@ void func_08044fcc(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
         }
 
         // Play animation: "girl_happy"
-        affine_sprite_change_anim(gWizardsWaltzInfo->girl.sprite, D_08932e64, gWizardsWaltzInfo->flowerCount, 0, isTutorial, isTutorial);
+        affine_sprite_change_anim(gWizardsWaltzInfo->girl.sprite, anim_wizards_waltz_girl_happy, gWizardsWaltzInfo->flowerCount, 0, isTutorial, isTutorial);
     }
 }
 
@@ -281,7 +281,7 @@ void func_0804503c(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
     }
 
     // Play animation: "sprout_eaten"
-    affine_sprite_change_anim(cue->sprite, D_08932cbc, 0, 1, 0x7f, 0);
+    affine_sprite_change_anim(cue->sprite, anim_wizards_waltz_sprout_eaten, 0, 1, 0x7f, 0);
     // Flip Horizontal if needed.
     affine_sprite_set_flip_h(cue->sprite, flip);
 
@@ -295,7 +295,7 @@ void func_0804503c(u32 arg0, struct WizardsWaltzCue *cue, u32 arg2) {
         }
 
         // Play animation: "girl_sad"
-        affine_sprite_change_anim(gWizardsWaltzInfo->girl.sprite, D_08932ea4, gWizardsWaltzInfo->flowerCount, 0, 0, 0);
+        affine_sprite_change_anim(gWizardsWaltzInfo->girl.sprite, anim_wizards_waltz_girl_upset, gWizardsWaltzInfo->flowerCount, 0, 0, 0);
     }
 
     // Unknown function - likely related to score.

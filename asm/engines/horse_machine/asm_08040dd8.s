@@ -42,7 +42,7 @@ thumb_func_start func_08040dd8 \n\
 /* 08040e22 */ LDR R4, [R4] \n\
 /* 08040e24 */ ADDS R5, R4, R5 @ Set R5 to R4 + R5 \n\
 /* 08040e26 */ LDRB R1, [R5] \n\
-/* 08040e28 */ LDR R3, =D_089e8d9c \n\
+/* 08040e28 */ LDR R3, =horse_machine_backgrounds \n\
 /* 08040e2a */ LDR R5, =0x2fe \n\
 /* 08040e2c */ ADDS R2, R4, R5 @ Set R2 to R4 + R5 \n\
 /* 08040e2e */ LDRB R2, [R2] \n\

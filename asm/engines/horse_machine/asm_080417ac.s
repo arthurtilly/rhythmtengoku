@@ -28,7 +28,7 @@ thumb_func_start func_080417ac \n\
 /* 080417d8 */ LDR R0, [R5] \n\
 /* 080417da */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 080417dc */ LDRSH R1, [R1, R2] \n\
-/* 080417de */ LDR R2, =D_089305f0 \n\
+/* 080417de */ LDR R2, =anim_horse_still \n\
 /* 080417e0 */ STR R4, [SP] \n\
 /* 080417e2 */ STR R4, [SP, 0x4] \n\
 /* 080417e4 */ STR R4, [SP, 0x8] \n\
@@ -38,7 +38,7 @@ thumb_func_start func_080417ac \n\
 /* 080417ee */ LDR R1, [R6] \n\
 /* 080417f0 */ MOVS R2, 0x34 @ Set R2 to 0x34 \n\
 /* 080417f2 */ LDRSH R1, [R1, R2] \n\
-/* 080417f4 */ LDR R2, =D_089303e8 \n\
+/* 080417f4 */ LDR R2, =anim_horse_walk_jockey \n\
 /* 080417f6 */ STR R4, [SP] \n\
 /* 080417f8 */ STR R4, [SP, 0x4] \n\
 /* 080417fa */ STR R4, [SP, 0x8] \n\
@@ -58,7 +58,7 @@ branch_08041802: \n\
 /* 08041816 */ LDRB R0, [R2] \n\
 /* 08041818 */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\
 /* 0804181a */ BHI branch_08041854 \n\
-/* 0804181c */ LDR R1, =D_089e8ee0 \n\
+/* 0804181c */ LDR R1, =horse_machine_lesson_bgm \n\
 /* 0804181e */ LSLS R0, R0, 0x2 \n\
 /* 08041820 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08041822 */ LDR R4, [R0] \n\
@@ -74,7 +74,7 @@ branch_08041802: \n\
 .ltorg \n\
  \n\
 branch_08041854: \n\
-/* 08041854 */ LDR R1, =D_089e8ee0 \n\
+/* 08041854 */ LDR R1, =horse_machine_lesson_bgm \n\
 /* 08041856 */ LDRB R0, [R2] \n\
 /* 08041858 */ LSLS R0, R0, 0x2 \n\
 /* 0804185a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

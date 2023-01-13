@@ -16,7 +16,7 @@ thumb_func_start func_08042020 \n\
 /* 08042034 */ LDR R1, [R5] \n\
 /* 08042036 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08042038 */ LDRSH R1, [R1, R2] \n\
-/* 0804203a */ LDR R2, =D_089305f0 \n\
+/* 0804203a */ LDR R2, =anim_horse_still \n\
 /* 0804203c */ STR R4, [SP] \n\
 /* 0804203e */ STR R4, [SP, 0x4] \n\
 /* 08042040 */ STR R4, [SP, 0x8] \n\
@@ -26,7 +26,7 @@ thumb_func_start func_08042020 \n\
 /* 0804204a */ LDR R1, [R5] \n\
 /* 0804204c */ MOVS R2, 0x34 @ Set R2 to 0x34 \n\
 /* 0804204e */ LDRSH R1, [R1, R2] \n\
-/* 08042050 */ LDR R2, =D_089303e8 \n\
+/* 08042050 */ LDR R2, =anim_horse_walk_jockey \n\
 /* 08042052 */ STR R4, [SP] \n\
 /* 08042054 */ STR R4, [SP, 0x4] \n\
 /* 08042056 */ STR R4, [SP, 0x8] \n\
