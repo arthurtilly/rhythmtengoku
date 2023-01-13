@@ -14,7 +14,7 @@ thumb_func_start func_0804299c \n\
 /* 080429ae */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 080429b0 */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 080429b2 */ BL func_080087d4 \n\
-/* 080429b6 */ LDR R4, =D_089e90d0 \n\
+/* 080429b6 */ LDR R4, =sick_beats_particle_sfx_pitch \n\
 /* 080429b8 */ LSLS R0, R0, 0x10 \n\
 /* 080429ba */ LSRS R0, R0, 0x10 \n\
 /* 080429bc */ BL agb_random \n\

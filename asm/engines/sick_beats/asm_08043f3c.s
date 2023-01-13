@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08043f3c \n\
+thumb_func_start sick_beats_common_beat_animation \n\
 /* 08043f3c */ PUSH {R4-R7, LR} \n\
 /* 08043f3e */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 08043f40 */ PUSH {R7} \n\
@@ -24,7 +24,7 @@ thumb_func_start func_08043f3c \n\
 /* 08043f60 */ ADDS R1, R4, R2 @ Set R1 to R4 + R2 \n\
 /* 08043f62 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08043f64 */ LDRSH R1, [R1, R3] \n\
-/* 08043f66 */ LDR R2, =D_089e92f4 \n\
+/* 08043f66 */ LDR R2, =sick_beats_doctor_anim \n\
 /* 08043f68 */ MOV R12, R2 @ Set R12 to R2 \n\
 /* 08043f6a */ MOVS R3, 0xF8 @ Set R3 to 0xF8 \n\
 /* 08043f6c */ LSLS R3, R3, 0x1 \n\

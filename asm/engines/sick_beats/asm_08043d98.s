@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08043d98 \n\
+thumb_func_start sick_beats_cue_hit \n\
 /* 08043d98 */ PUSH {LR} \n\
 /* 08043d9a */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 08043d9c */ LDR R1, =anim_fork_hit_virus \n\

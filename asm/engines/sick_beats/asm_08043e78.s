@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08043e78 \n\
+thumb_func_start sick_beats_input_event \n\
 /* 08043e78 */ PUSH {R4-R6, LR} \n\
 /* 08043e7a */ SUB SP, 0x1C \n\
 /* 08043e7c */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\

@@ -587,50 +587,6 @@ anim_not_love_san_speak_long = 0x0890e7c0;
 anim_not_love_san_speak_short = 0x0890e848;
 /* Confession Machine Palettes */
 confession_machine_pal = 0x0890e868;
-/* Sick Beats Animations */
-anim_virus_appear = 0x0893189c;
-anim_virus_ready = 0x089318b4;
-anim_yellow_microbe_beat = 0x089319b4;
-anim_yellow_microbe_hurt = 0x089319d4;
-anim_yellow_microbe_vanish = 0x089319fc;
-anim_virus_attack = 0x08931a2c;
-anim_yellow_microbe_return = 0x08931a64;
-anim_fork_launcher = 0x08931a8c;
-anim_fork_hit_virus = 0x08931aa4;
-anim_fork_hit_none1 = 0x08931ad4;
-anim_fork_hit_none2 = 0x08931b14;
-anim_virus_dash_up_full = 0x08931b44;
-anim_virus_dash_up_half = 0x08931b6c;
-anim_virus_dash_left_full = 0x08931b8c;
-anim_virus_dash_left_half = 0x08931bac;
-anim_fork_hit_early = 0x08931bbc;
-anim_fork_hit_late = 0x08931bec;
-anim_virus_doctor_beat = 0x08931c1c;
-anim_virus_doctor_fail = 0x08931c44;
-anim_virus_doctor_hit1 = 0x08931cac;
-anim_virus_doctor_hit2 = 0x08931cd4;
-anim_sick_beats_radio = 0x08931d04;
-anim_virus_doctor_test = 0x08931d24;
-anim_virus_doctor_hit1_fast = 0x08931dac;
-anim_yellow_microbe_beat_fast = 0x08931ddc;
-anim_yellow_microbe_vanish_fast = 0x08931dfc;
-anim_yellow_microbe_return_fast = 0x08931e2c;
-anim_yellow_microbe_hurt_fast = 0x08931e54;
-anim_virus_attack_fast = 0x08931e7c;
-anim_sick_beats_null1 = 0x08931eb4;
-anim_sick_beats_null2 = 0x08931ebc;
-anim_sick_beats_null3 = 0x08931ec4;
-anim_sick_beats_null4 = 0x08931ecc;
-anim_sick_beats_null5 = 0x08931ed4;
-anim_tough_virus_hit_effect = 0x08931edc;
-anim_fork_hit_tough_virus = 0x08931f14;
-anim_sick_beats_game_over = 0x08931f4c;
-anim_sick_beats_score_num = 0x08931f6c;
-anim_sick_beats_score_counter = 0x08931fc4;
-anim_sick_beats_high_score_counter = 0x08931fd4;
-anim_sick_beats_endless_particle = 0x08931fe4;
-/* Sick Beats Palettes */
-sick_beats_pal = 0x08932044;
 /* Health & Safety Warning Animations */
 D_08932444 = 0x08932444;
 /* Health & Safety Warning Palettes */
@@ -1494,19 +1450,6 @@ D_089de670 = 0x089de670;
 /* Game Engine - Tram & Pauline */
 /* Game Engine - Horse Machine */
 /* Game Engine - Sick Beats */
-D_089e90d0 = 0x089e90d0;
-D_089e90e0 = 0x089e90e0;
-D_089e90f4 = 0x089e90f4;
-D_089e9100 = 0x089e9100;
-D_089e9104 = 0x089e9104;
-D_089e9164 = 0x089e9164;
-D_089e927c = 0x089e927c;
-D_089e92bc = 0x089e92bc;
-D_089e92f0 = 0x089e92f0;
-D_089e92f4 = 0x089e92f4;
-D_089e9304 = 0x089e9304;
-D_089e9310 = 0x089e9310;
-D_089e9330 = 0x089e9330;
 /* Game Engine - Rhythm Toys */
 D_089e9350 = 0x089e9350;
 D_089e9438 = 0x089e9438;

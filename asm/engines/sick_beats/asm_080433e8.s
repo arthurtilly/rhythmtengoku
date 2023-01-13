@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080433e8 \n\
+thumb_func_start sick_beats_engine_start \n\
 /* 080433e8 */ PUSH {R4-R7, LR} \n\
 /* 080433ea */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 080433ec */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -13,7 +13,7 @@ thumb_func_start func_080433e8 \n\
 /* 080433f6 */ LDR R1, [R4] \n\
 /* 080433f8 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 080433fa */ STRB R0, [R1] \n\
-/* 080433fc */ BL func_080433bc \n\
+/* 080433fc */ BL sick_beats_init_gfx1 \n\
 /* 08043400 */ BL scene_show_obj_layer \n\
 /* 08043404 */ STR R5, [SP] \n\
 /* 08043406 */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\

@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080436e4 \n\
+thumb_func_start sick_beats_cue_spawn \n\
 /* 080436e4 */ PUSH {R4-R7, LR} \n\
 /* 080436e6 */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 080436e8 */ PUSH {R7} \n\
@@ -50,7 +50,7 @@ thumb_func_start func_080436e4 \n\
 /* 0804373c */ LSLS R1, R0, 0x2 \n\
 /* 0804373e */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 08043740 */ LSLS R1, R1, 0x2 \n\
-/* 08043742 */ LDR R0, =D_089e9164 \n\
+/* 08043742 */ LDR R0, =sick_beats_virus_actions \n\
 /* 08043744 */ ADDS R4, R1, R0 @ Set R4 to R1 + R0 \n\
 /* 08043746 */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
 /* 08043748 */ LDRSH R0, [R4, R3] \n\
