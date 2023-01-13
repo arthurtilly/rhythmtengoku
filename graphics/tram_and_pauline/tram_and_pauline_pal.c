@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0892fc58] <description>
+// [D_0892fc58] Tram & Pauline OBJ Palette
 const Palette tram_and_pauline_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x10E8A8),
@@ -131,7 +131,7 @@ const Palette tram_and_pauline_obj_pal[] = {
     }
 };
 
-// [D_0892fd38] <description>
+// [D_0892fd38] Tram & Pauline BG Palette
 const Palette tram_and_pauline_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x009000),

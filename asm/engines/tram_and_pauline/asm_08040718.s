@@ -245,7 +245,7 @@ branch_08040848: \n\
 /* 08040910 */ ADDS R2, 0x6 @ Add 0x6 to R2 \n\
 /* 08040912 */ ADDS R3, R3, R2 @ Set R3 to R3 + R2 \n\
 /* 08040914 */ LSLS R3, R3, 0x2 \n\
-/* 08040916 */ LDR R2, =D_089e8b2c \n\
+/* 08040916 */ LDR R2, =tram_pauline_anim_table \n\
 /* 08040918 */ ADDS R3, R3, R2 @ Set R3 to R3 + R2 \n\
 /* 0804091a */ LDR R2, [R3] \n\
 /* 0804091c */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
@@ -300,7 +300,7 @@ branch_0804092c: \n\
 /* 08040980 */ LDRB R4, [R4, 0x15] \n\
 /* 08040982 */ ADDS R2, R2, R4 @ Set R2 to R2 + R4 \n\
 /* 08040984 */ LSLS R2, R2, 0x2 \n\
-/* 08040986 */ LDR R3, =D_089e8b2c \n\
+/* 08040986 */ LDR R3, =tram_pauline_anim_table \n\
 /* 08040988 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\
 /* 0804098a */ LDR R2, [R2] \n\
 /* 0804098c */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\

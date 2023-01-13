@@ -2,14 +2,14 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803fca4 \n\
+thumb_func_start tram_pauline_init_gfx2 \n\
 /* 0803fca4 */ PUSH {LR} \n\
 /* 0803fca6 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803fca8 */ BL func_0800c604 \n\
 /* 0803fcac */ BL get_current_mem_id \n\
 /* 0803fcb0 */ LSLS R0, R0, 0x10 \n\
 /* 0803fcb2 */ LSRS R0, R0, 0x10 \n\
-/* 0803fcb4 */ LDR R2, =D_089e8b1c \n\
+/* 0803fcb4 */ LDR R2, =tram_pauline_gfx_tables \n\
 /* 0803fcb6 */ LDR R1, =D_030055d0 \n\
 /* 0803fcb8 */ LDR R1, [R1] \n\
 /* 0803fcba */ LDRB R1, [R1] \n\
@@ -19,7 +19,7 @@ thumb_func_start func_0803fca4 \n\
 /* 0803fcc2 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 0803fcc4 */ LSLS R2, R2, 0x6 \n\
 /* 0803fcc6 */ BL func_08002ee0 \n\
-/* 0803fcca */ LDR R1, =func_0803fc94 \n\
+/* 0803fcca */ LDR R1, =tram_pauline_init_gfx3 \n\
 /* 0803fccc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803fcce */ BL task_run_after \n\
 /* 0803fcd2 */ POP {R0} \n\

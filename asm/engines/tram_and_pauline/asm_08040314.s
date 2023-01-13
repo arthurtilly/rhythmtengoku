@@ -63,7 +63,7 @@ jump_08040378: \n\
 /* 0804038e */ ADDS R3, R2, R3 @ Set R3 to R2 + R3 \n\
 /* 08040390 */ MOVS R4, 0x4 @ Set R4 to 0x4 \n\
 /* 08040392 */ LDRSH R1, [R3, R4] \n\
-/* 08040394 */ LDR R5, =D_089e8b2c \n\
+/* 08040394 */ LDR R5, =tram_pauline_anim_table \n\
 /* 08040396 */ LDRB R4, [R2] \n\
 /* 08040398 */ LSLS R2, R4, 0x1 \n\
 /* 0804039a */ ADDS R2, R2, R4 @ Set R2 to R2 + R4 \n\
@@ -101,7 +101,7 @@ jump_080403c4: \n\
 /* 080403de */ ADDS R5, R2, R4 @ Set R5 to R2 + R4 \n\
 /* 080403e0 */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
 /* 080403e2 */ LDRSH R1, [R5, R3] \n\
-/* 080403e4 */ LDR R6, =D_089e8b2c \n\
+/* 080403e4 */ LDR R6, =tram_pauline_anim_table \n\
 /* 080403e6 */ LDRB R3, [R2] \n\
 /* 080403e8 */ LSLS R2, R3, 0x1 \n\
 /* 080403ea */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\

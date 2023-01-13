@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08040a84 \n\
+thumb_func_start tram_pauline_cue_hit \n\
 /* 08040a84 */ PUSH {R4, R5, LR} \n\
 /* 08040a86 */ SUB SP, 0xC \n\
 /* 08040a88 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
@@ -26,13 +26,13 @@ thumb_func_start func_08040a84 \n\
 /* 08040aae */ BNE branch_08040ac0 \n\
  \n\
 branch_08040ab0: \n\
-/* 08040ab0 */ LDR R2, =D_0892f6c8 \n\
+/* 08040ab0 */ LDR R2, =anim_circus_fox_transform_effect \n\
 /* 08040ab2 */ B branch_08040ac2 \n\
 \n\
 .ltorg \n\
  \n\
 branch_08040ac0: \n\
-/* 08040ac0 */ LDR R2, =D_0892cf2c \n\
+/* 08040ac0 */ LDR R2, =anim_casual_fox_transform_effect \n\
  \n\
 branch_08040ac2: \n\
 /* 08040ac2 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\

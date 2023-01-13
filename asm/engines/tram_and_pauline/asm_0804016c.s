@@ -82,7 +82,7 @@ jump_080401ea: \n\
 /* 08040204 */ ADDS R5, R2, R4 @ Set R5 to R2 + R4 \n\
 /* 08040206 */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
 /* 08040208 */ LDRSH R1, [R5, R3] \n\
-/* 0804020a */ LDR R6, =D_089e8b2c \n\
+/* 0804020a */ LDR R6, =tram_pauline_anim_table \n\
 /* 0804020c */ LDRB R3, [R2] \n\
 /* 0804020e */ LSLS R2, R3, 0x1 \n\
 /* 08040210 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\
@@ -128,7 +128,7 @@ branch_0804025e: \n\
 /* 08040264 */ ADDS R3, R2, R3 @ Set R3 to R2 + R3 \n\
 /* 08040266 */ MOVS R4, 0x4 @ Set R4 to 0x4 \n\
 /* 08040268 */ LDRSH R1, [R3, R4] \n\
-/* 0804026a */ LDR R5, =D_089e8b2c \n\
+/* 0804026a */ LDR R5, =tram_pauline_anim_table \n\
 /* 0804026c */ LDRB R4, [R2] \n\
 /* 0804026e */ LSLS R2, R4, 0x1 \n\
 /* 08040270 */ ADDS R2, R2, R4 @ Set R2 to R2 + R4 \n\
@@ -168,7 +168,7 @@ jump_0804029c: \n\
 /* 080402ba */ ADDS R5, R2, R4 @ Set R5 to R2 + R4 \n\
 /* 080402bc */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
 /* 080402be */ LDRSH R1, [R5, R3] \n\
-/* 080402c0 */ LDR R6, =D_089e8b2c \n\
+/* 080402c0 */ LDR R6, =tram_pauline_anim_table \n\
 /* 080402c2 */ LDRB R3, [R2] \n\
 /* 080402c4 */ LSLS R2, R3, 0x1 \n\
 /* 080402c6 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\

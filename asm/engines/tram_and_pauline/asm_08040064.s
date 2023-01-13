@@ -25,7 +25,7 @@ thumb_func_start func_08040064 \n\
 /* 0804008a */ ADDS R2, R4, R2 @ Set R2 to R4 + R2 \n\
 /* 0804008c */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
 /* 0804008e */ LDRSH R1, [R2, R3] \n\
-/* 08040090 */ LDR R5, =D_089e8b2c \n\
+/* 08040090 */ LDR R5, =tram_pauline_anim_table \n\
 /* 08040092 */ LDRB R3, [R2, 0x15] \n\
 /* 08040094 */ LDRB R4, [R4] \n\
 /* 08040096 */ LSLS R2, R4, 0x1 \n\

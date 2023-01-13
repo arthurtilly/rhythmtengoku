@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0803fd10 \n\
+thumb_func_start tram_pauline_engine_start \n\
 /* 0803fd10 */ PUSH {R4-R7, LR} \n\
 /* 0803fd12 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 0803fd14 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -13,7 +13,7 @@ thumb_func_start func_0803fd10 \n\
 /* 0803fd1e */ LDR R1, [R7] \n\
 /* 0803fd20 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0803fd22 */ STRB R0, [R1] \n\
-/* 0803fd24 */ BL func_0803fce4 \n\
+/* 0803fd24 */ BL tram_pauline_init_gfx1 \n\
 /* 0803fd28 */ BL scene_show_obj_layer \n\
 /* 0803fd2c */ LDR R0, [R7] \n\
 /* 0803fd2e */ LDRB R4, [R0] \n\
@@ -165,14 +165,14 @@ branch_0803fe44: \n\
 /* 0803fe56 */ BNE branch_0803fe68 \n\
  \n\
 branch_0803fe58: \n\
-/* 0803fe58 */ LDR R4, =D_0892f5a8 \n\
+/* 0803fe58 */ LDR R4, =anim_circus_fox_beat \n\
 /* 0803fe5a */ MOV R12, R4 @ Set R12 to R4 \n\
 /* 0803fe5c */ B branch_0803fe6c \n\
 \n\
 .ltorg \n\
  \n\
 branch_0803fe68: \n\
-/* 0803fe68 */ LDR R0, =D_0892cdfc \n\
+/* 0803fe68 */ LDR R0, =anim_casual_fox_beat \n\
 /* 0803fe6a */ MOV R12, R0 @ Set R12 to R0 \n\
  \n\
 branch_0803fe6c: \n\
@@ -226,13 +226,13 @@ branch_0803feba: \n\
 /* 0803feca */ BNE branch_0803fee0 \n\
  \n\
 branch_0803fecc: \n\
-/* 0803fecc */ LDR R5, =D_0892f6c8 \n\
+/* 0803fecc */ LDR R5, =anim_circus_fox_transform_effect \n\
 /* 0803fece */ B branch_0803fee2 \n\
 \n\
 .ltorg \n\
  \n\
 branch_0803fee0: \n\
-/* 0803fee0 */ LDR R5, =D_0892cf2c \n\
+/* 0803fee0 */ LDR R5, =anim_casual_fox_transform_effect \n\
  \n\
 branch_0803fee2: \n\
 /* 0803fee2 */ MOV R4, R9 @ Set R4 to R9 \n\
@@ -290,13 +290,13 @@ branch_0803ff3a: \n\
 /* 0803ff4a */ BNE branch_0803ff64 \n\
  \n\
 branch_0803ff4c: \n\
-/* 0803ff4c */ LDR R1, =D_0892f638 \n\
+/* 0803ff4c */ LDR R1, =anim_circus_tram_pauline_trampoline1 \n\
 /* 0803ff4e */ B branch_0803ff66 \n\
 \n\
 .ltorg \n\
  \n\
 branch_0803ff64: \n\
-/* 0803ff64 */ LDR R1, =D_0892ce8c \n\
+/* 0803ff64 */ LDR R1, =anim_casual_tram_pauline_trampoline \n\
  \n\
 branch_0803ff66: \n\
 /* 0803ff66 */ MOVS R0, 0x98 @ Set R0 to 0x98 \n\
@@ -323,13 +323,13 @@ branch_0803ff66: \n\
 /* 0803ff92 */ BNE branch_0803ffac \n\
  \n\
 branch_0803ff94: \n\
-/* 0803ff94 */ LDR R1, =D_0892f638 \n\
+/* 0803ff94 */ LDR R1, =anim_circus_tram_pauline_trampoline1 \n\
 /* 0803ff96 */ B branch_0803ffae \n\
 \n\
 .ltorg \n\
  \n\
 branch_0803ffac: \n\
-/* 0803ffac */ LDR R1, =D_0892ce8c \n\
+/* 0803ffac */ LDR R1, =anim_casual_tram_pauline_trampoline \n\
  \n\
 branch_0803ffae: \n\
 /* 0803ffae */ MOVS R0, 0x98 @ Set R0 to 0x98 \n\
@@ -363,13 +363,13 @@ branch_0803ffae: \n\
 /* 0803ffe8 */ BNE branch_08040004 \n\
  \n\
 branch_0803ffea: \n\
-/* 0803ffea */ LDR R1, =D_0892f628 \n\
+/* 0803ffea */ LDR R1, =anim_circus_tram_pauline_text_skip \n\
 /* 0803ffec */ B branch_08040006 \n\
 \n\
 .ltorg \n\
  \n\
 branch_08040004: \n\
-/* 08040004 */ LDR R1, =D_0892ce7c \n\
+/* 08040004 */ LDR R1, =anim_casual_tram_pauline_text_skip \n\
  \n\
 branch_08040006: \n\
 /* 08040006 */ MOVS R0, 0xA0 @ Set R0 to 0xA0 \n\

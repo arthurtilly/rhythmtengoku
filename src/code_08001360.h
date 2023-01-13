@@ -20,6 +20,8 @@ extern u16 D_0300537c;
 extern u32 D_030053b4;
 extern u32 D_03005374;
 
+/* AGB ... */
+
 extern void func_08001360(void);
 extern void func_08001380(void);
 extern void func_080013a8(void);
@@ -34,11 +36,20 @@ extern void func_0800152c(u16);
 extern void func_0800181c(u8);
 extern u32 func_08001828(void);
 extern u32 func_0800184c(void);
+
+/* AGB DMA3 */
+
 extern void dma3_set(const void *source, void *destination, u32 bytesToSet, u16 unit, u32 bytesPerInterrupt); // DMA3 Set
 extern void dma3_fill(u32 value, void *destination, u32 bytesToFill, u16 unit, u32 bytesPerInterrupt); // DMA3 Fill
+
+/* AGB RANDOM */
+
 extern void set_agb_random_var(u32); // Set Global Random Value
 extern u16 get_agb_random_var(void); // Get Global Random Value
 extern u16 agb_random(u16); // AGB Random
+
+/* AGB ... */
+
 // extern ? func_080019a4(?);
 // extern ? func_080019e4(?);
 extern void func_08001a24_stub(void);
@@ -62,15 +73,18 @@ extern s32 func_08001fe0(u16 id, u8 duration, u32 count, const u16 *initial, con
 extern s32 func_08002018(u16 id, u8 duration, u32 count, u32 initial, const void *final, void *target); // Gradual Set (for a singular initial and array final)
 extern s32 func_08002050(u16 id, u8 duration, u32 count, const void *initial, u32 final, void *target); // Gradual Set (for an array initial and singular final)
 // extern ? func_08002088(?);
+
+/* AGB ROTATION/SCALING PARAMETER GROUPS */
+
 // extern ? func_080020ec(?);
 // extern ? func_08002150(?);
-// extern ? func_08002194(?);
-// extern ? func_080021b8(?);
-// extern ? func_0800222c(?);
-extern void func_08002260(s16, u32); // ROTATION/SCALING PARAMETER GROUP - Update Horizontal & Vertical Flip (and probably more)
+// extern ? func_08002194(?); // AFFINE GROUP - Allocate New
+// extern ? func_080021b8(?); // AFFINE GROUP - Delete
+// extern ? func_0800222c(?); // AFFINE GROUP - Delete by Mem. ID
+extern void func_08002260(s16, u32); // AFFINE GROUP - Update Horizontal & Vertical Flip (and probably more)
 // extern ? func_08002280(?);
-extern void func_080022bc(s16); // ROTATION/SCALING PARAMETER GROUP - ?? (Reduced Angle Precision)
-extern void func_080022d8(s16); // ROTATION/SCALING PARAMETER GROUP - ?? (Fine Angle Precision)
+extern void func_080022bc(s16); // AFFINE GROUP - ?? (Reduced Angle Precision)
+extern void func_080022d8(s16); // AFFINE GROUP - ?? (Fine Angle Precision)
 // extern ? func_080022f4(?);
 // extern ? func_08002310(?);
 // extern ? func_0800232c(?);
@@ -83,7 +97,7 @@ extern void func_080022d8(s16); // ROTATION/SCALING PARAMETER GROUP - ?? (Fine A
 // extern ? func_080025d8(?);
 // extern ? func_080025fc(?);
 
-/* SOUND */
+/* AGB SOUND */
 
 extern u16 get_sound_num(struct SequenceData *); // Get Sound ID
 extern struct SoundPlayer *play_sound(const struct SequenceData *); // Play Sound
@@ -114,7 +128,7 @@ extern void set_soundplayer_key(struct SoundPlayer *player, s32 key); // Set Pla
 // extern ? func_080029d8(?);
 extern struct SoundPlayer *get_soundplayer_by_sound(const struct SequenceData *); // Return Player Currently Playing the Given Sound
 
-/* Graphics..? */
+/* AGB GRAPHICS TABLES */
 
 extern void *func_08002a54(void *dest); // Remove the highest bit from a pointer (since that shouldn't be set, not that this keeps the pointer in range though)
 extern void func_08002a6c(struct GfxTableLoader *info, const struct GraphicsTable *gfxTable, u32 limit); // Initialise GfxTableLoader

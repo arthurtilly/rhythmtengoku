@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08040b04 \n\
+thumb_func_start tram_pauline_cue_barely \n\
 /* 08040b04 */ PUSH {LR} \n\
 /* 08040b06 */ LDRB R0, [R1] \n\
 /* 08040b08 */ BL func_08040314 \n\

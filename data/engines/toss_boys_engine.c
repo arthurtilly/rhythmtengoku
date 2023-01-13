@@ -838,7 +838,7 @@ const struct CueDefinition D_089e8794 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e87d4] Cue 03 (?)
+// [D_089e87d4] Cue 04 (?)
 const struct CueDefinition D_089e87d4 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
@@ -862,7 +862,7 @@ const struct CueDefinition D_089e87d4 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e8814] Cue 04 (?)
+// [D_089e8814] Cue 05 (?)
 const struct CueDefinition D_089e8814 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON),
@@ -886,7 +886,7 @@ const struct CueDefinition D_089e8814 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e8854] Cue 05 (?)
+// [D_089e8854] Cue 06 (?)
 const struct CueDefinition D_089e8854 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
@@ -910,7 +910,7 @@ const struct CueDefinition D_089e8854 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e8894] Cue 06 (?)
+// [D_089e8894] Cue 08 (?)
 const struct CueDefinition D_089e8894 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
@@ -934,7 +934,7 @@ const struct CueDefinition D_089e8894 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e88d4] Cue 07 (?)
+// [D_089e88d4] Cue 09 (?)
 const struct CueDefinition D_089e88d4 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON),
@@ -958,7 +958,7 @@ const struct CueDefinition D_089e88d4 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e8914] Cue 08 (?)
+// [D_089e8914] Cue 0A (?)
 const struct CueDefinition D_089e8914 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),

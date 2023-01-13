@@ -51,7 +51,7 @@ branch_08040106: \n\
 /* 08040124 */ ADDS R3, R2, R3 @ Set R3 to R2 + R3 \n\
 /* 08040126 */ MOVS R4, 0x4 @ Set R4 to 0x4 \n\
 /* 08040128 */ LDRSH R1, [R3, R4] \n\
-/* 0804012a */ LDR R6, =D_089e8b2c \n\
+/* 0804012a */ LDR R6, =tram_pauline_anim_table \n\
 /* 0804012c */ LDRB R4, [R2] \n\
 /* 0804012e */ LSLS R2, R4, 0x1 \n\
 /* 08040130 */ ADDS R2, R2, R4 @ Set R2 to R2 + R4 \n\

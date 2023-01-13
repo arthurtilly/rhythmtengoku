@@ -1607,6 +1607,7 @@ SECTIONS {
         build/data/engines/space_dance_engine.c.o(.rodata*);
         build/data/engines/tap_trial_engine.c.o(.rodata*);
         build/data/engines/toss_boys_engine.c.o(.rodata*);
+        build/data/engines/tram_and_pauline_engine.c.o(.rodata*);
         build/bin/bindata_089e384c.bin.o(.rodata*);
         build/data/engines/prologues/sneaky_spirits_script.c.o(.rodata*);
         build/data/engines/prologues/spaceball_script.c.o(.rodata*);
