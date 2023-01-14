@@ -424,7 +424,7 @@ void init_drumtech(struct DrumTechController *data) {
 
     reset_drumtech_seq();
     D_03001568->volume = INT_TO_FIXED(1.0);
-    D_03001568->unk334 = NULL;
+    D_03001568->runNoteFunc = NULL;
     D_03001568->hiHatSprite = -1;
     D_03001568->unk33A = 9999;
     D_03001568->unk33C = INT_TO_FIXED(beats_to_ticks(0x18));
@@ -459,7 +459,7 @@ void update_drumtech_seq(void) {
 
         if (note->deltaTime > 0) {
             if (--note->deltaTime == 0) {
-                func_0802ab7c(note->drumID, note->volume, note->pitch);
+                play_drumtech_note(note->drumID, note->volume, note->pitch);
             }
         }
     }
@@ -475,10 +475,10 @@ void play_drumtech_seq(const struct DrumTechNote *sequence, s32 timingOffset, s3
 
     reset_drumtech_seq();
 
-    while ((sequence->drumID != 0xff) && (i < 100)) {
+    while ((sequence->drumID != DRUMTECH_NOTE_END_SEQ) && (i < 100)) {
         delay = beats_to_ticks(ticks) + timingOffset;
         if (delay <= 0 || ticks == 0) {
-            func_0802ab7c(sequence->drumID, sequence->volume, sequence->pitch);
+            play_drumtech_note(sequence->drumID, sequence->volume, sequence->pitch);
         } else {
             seqBuffer->drumID = sequence->drumID;
             seqBuffer->volume = sequence->volume;
@@ -515,7 +515,7 @@ void play_drumtech_seq_from_beatscript(s32 args) {
     s32 pitch;
 
     parse_drumtech_seq_beatscript_args(args, &drumID, &volume, &pitch);
-    func_0802ab7c(drumID, volume, pitch);
+    play_drumtech_note(drumID, volume, pitch);
 }
 
 
@@ -536,7 +536,7 @@ void play_drumtech_phrase(const struct DrumTechPhrase *phrase, u32 runOnPlayFunc
     if (phrase->sequence != NULL) {
         play_drumtech_seq(phrase->sequence, 0, 0);
     } else {
-        func_0802ab7c(phrase->drumID, phrase->volume, phrase->pitch);
+        play_drumtech_note(phrase->drumID, phrase->volume, phrase->pitch);
     }
     if (runOnPlayFunc) {
         if (phrase->onPlay != NULL) {
@@ -641,15 +641,15 @@ void update_drumtech_pedal_hihat(const struct DrumTechKit *drumKit, u16 inputs, 
     if (released & B_BUTTON) {
         if (openTicks < 0) {
             if (openTicks < -5) {
-                volume = 0;
+                volume = INT_TO_FIXED(0.0);
             } else {
-                volume = (openTicks * 0x10) + 0x60;
+                volume = (openTicks * INT_TO_FIXED(0.0625)) + INT_TO_FIXED(0.375);
             }
         } else {
-            volume = 0x60;
+            volume = INT_TO_FIXED(0.375);
         }
         if (D_03001568->pedalHiHatDrumID >= 0) {
-            func_0802ab7c(D_03001568->pedalHiHatDrumID, volume, 0);
+            play_drumtech_note(D_03001568->pedalHiHatDrumID, volume, 0);
         }
         if (D_03001568->rightLegSprite >= 0) {
                 func_0804d8f8(D_03005380, D_03001568->rightLegSprite, D_03001568->useKickPedalAnim, 0x7f, 1, 0x7f, 0);
@@ -679,8 +679,8 @@ void set_drumtech_pedal_hihat_gfx(s16 pedalHiHatSprite, s16 rightLegSprite, cons
 
 // Play DrumTech Hi-Hats
 void update_drumtech_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 pressed, u16 released) {
-    u32 hasOpenHiHat = drumKit->unk20 & 1;
-    u32 hasPedalHiHat = drumKit->unk20 & 2;
+    u32 hasOpenHiHat = drumKit->hiHatFlags & 1;
+    u32 hasPedalHiHat = drumKit->hiHatFlags & 2;
     s16 hiHatSprite = D_03001568->hiHatSprite;
 
     if (hasOpenHiHat) {
@@ -695,8 +695,8 @@ void update_drumtech_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 pr
         func_0804dae0(D_03005380, hiHatSprite, 1, 0x7f, 0);
     }
 
-    if (drumKit->unk24 != NULL) {
-        drumKit->unk24();
+    if (drumKit->hiHatEvent != NULL) {
+        drumKit->hiHatEvent();
     }
 }
 
@@ -707,7 +707,10 @@ void set_drumtech_volume(u32 volume) {
 }
 
 
-#include "asm/engines/night_walk/asm_0802b050.s"
+// Set DrumTech Special Note Function
+void set_drumtech_note_func(void *func) {
+    D_03001568->runNoteFunc = func;
+}
 
 
 // Stop DrumTech

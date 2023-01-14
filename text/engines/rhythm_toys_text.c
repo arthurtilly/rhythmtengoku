@@ -26,7 +26,7 @@ extern const struct SequenceData s_heat_v_seki_seqData;
 
 
 // Sound Effect Pool
-const struct SequenceData *const D_0805aaf0[] = {
+const struct SequenceData *const confession_machine_sfx_pool_right[] = {
     &s_heat_v_anataga_seqData,
     &s_heat_v_anatatara_seqData,
     &s_heat_v_kimiga_seqData,
@@ -34,7 +34,7 @@ const struct SequenceData *const D_0805aaf0[] = {
 };
 
 // Sound Effect Pool
-const struct SequenceData *const D_0805ab00[] = {
+const struct SequenceData *const confession_machine_sfx_pool_left[] = {
     &s_heat_v_jituhane_seqData,
     &s_heat_v_watasine_seqData,
     &s_heat_v_watasitara_seqData,
@@ -42,7 +42,7 @@ const struct SequenceData *const D_0805ab00[] = {
 };
 
 // Sound Effect Pool
-const struct SequenceData *const D_0805ab10[] = {
+const struct SequenceData *const confession_machine_sfx_pool_down[] = {
     &s_heat_v_okubyo_seqData,
     &s_heat_v_majime_seqData,
     &s_heat_v_kouitta_seqData,
@@ -50,7 +50,7 @@ const struct SequenceData *const D_0805ab10[] = {
 };
 
 // Sound Effect Pool
-const struct SequenceData *const D_0805ab20[] = {
+const struct SequenceData *const confession_machine_sfx_pool_up[] = {
     &s_heat_v_doji_seqData,
     &s_heat_v_sugoi_seqData,
     &s_heat_v_koumietemo_seqData,
@@ -58,7 +58,7 @@ const struct SequenceData *const D_0805ab20[] = {
 };
 
 // Sound Effect Pool
-const struct SequenceData *const D_0805ab30[] = {
+const struct SequenceData *const confession_machine_sfx_pool_b[] = {
     &s_heat_v_demo_seqData,
     &s_heat_v_yappari_seqData,
     &s_heat_v_dakedo_seqData,
@@ -66,7 +66,7 @@ const struct SequenceData *const D_0805ab30[] = {
 };
 
 // Sound Effect Pool
-const struct SequenceData *const D_0805ab40[] = {
+const struct SequenceData *const confession_machine_sfx_pool_a[] = {
     &s_heat_v_suki_seqData,
     &s_heat_v_kirai_seqData,
     &s_heat_v_seki_seqData,

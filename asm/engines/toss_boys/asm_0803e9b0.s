@@ -27,7 +27,7 @@ thumb_func_start func_0803e9b0 \n\
 /* 0803e9da */ LSLS R1, R1, 0x1 \n\
 /* 0803e9dc */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0803e9de */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803e9e0 */ BL func_0802ab7c \n\
+/* 0803e9e0 */ BL play_drumtech_note \n\
 /* 0803e9e4 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803e9e6 */ BL get_beatscript_tempo \n\
 /* 0803e9ea */ LSLS R0, R0, 0x8 \n\

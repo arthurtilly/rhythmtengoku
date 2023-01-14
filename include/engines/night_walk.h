@@ -39,8 +39,8 @@ struct DrumTechKit {
     const struct DrumTechPhrase *dpadRight;
     const struct DrumTechPhrase *lButton;
     const struct DrumTechPhrase *rButton;
-    s32 unk20;
-    void (*unk24)(void);
+    s32 hiHatFlags;
+    void (*hiHatEvent)(void);
 };
 
 struct DrumTechController {
@@ -48,7 +48,7 @@ struct DrumTechController {
     const struct DrumTechInstrument *drumBank;
     struct DrumTechNote drumSequence[100];
     u16 volume;
-    void (*unk334)(s32);
+    void (*runNoteFunc)(s32 args);
     s16 hiHatSprite;
     u16 unk33A;
     u32 unk33C;
@@ -135,7 +135,10 @@ enum NightWalkCuesEnum {
     NIGHT_WALK_CUE_STAR_WAND
 };
 
-#define END_OF_DRUM_TECH_SEQUENCE { 0xFF, 0, 0, 0 }
+#define DRUMTECH_NOTE_FUNC 0xFFFF
+#define DRUMTECH_NOTE_REST 0xFFFE
+#define DRUMTECH_NOTE_END_SEQ 0xFF
+#define END_OF_DRUM_TECH_SEQUENCE { DRUMTECH_NOTE_END_SEQ, 0, 0, 0 }
 
 
 // OAM Animations:
@@ -229,7 +232,7 @@ extern void play_drumtech_seq(const struct DrumTechNote *noteSeq, s32 timingOffs
 extern void update_drumtech(void); // Update DrumTech
 extern void parse_drumtech_seq_beatscript_args(s32 args, u32 *drumID, u32 *volume, s32 *pitch); // Parse Arguments for Engine Event 0x00 (Cowbell)
 extern void play_drumtech_seq_from_beatscript(s32 args); // Engine Event 0x00 (Cowbell)
-// extern ? func_0802ab7c(?); // (https://decomp.me/scratch/0YYov)
+extern struct SoundPlayer *play_drumtech_note(u32 drumID, u32 volume, s32 pitch); // (https://decomp.me/scratch/0YYov)
 extern void set_drumtech_bank(const struct DrumTechInstrument *drumBank); // Set DrumTech Bank
 extern void play_drumtech_phrase(const struct DrumTechPhrase *phrase, u32 runOnPlayFunc); // Play Drum (Phrase)
 extern void play_drumtech_kit(const struct DrumTechKit *drumKit, u32 inputs, u32 runOnPlayFunc); // Play Drum Kit
@@ -241,7 +244,7 @@ extern void set_drumtech_hihat_gfx(s16 hiHatSprite); // Set DrumTech Hi-Hat Grap
 extern void set_drumtech_pedal_hihat_gfx(s16 pedalHiHatSprite, s16 rightLegSprite, const struct Animation *useKick, const struct Animation *useHiHat); // Set DrumTech Pedal Hi-Hat Graphics
 extern void update_drumtech_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 pressed, u16 released); // Update DrumTech Hi-Hats
 extern void set_drumtech_volume(u32 volume); // Set DrumTech Volume
-// extern ? func_0802b050(?); // Set DrumTech unk334
+extern void set_drumtech_note_func(void *func); // Set DrumTech Special Note Function
 extern void stop_drumtech(void); // Stop DrumTech
 
 extern void night_walk_init_gfx3(void); // Graphics Init. 3

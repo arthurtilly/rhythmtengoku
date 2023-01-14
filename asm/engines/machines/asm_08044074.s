@@ -48,7 +48,7 @@ branch_080440d8: \n\
 /* 080440de */ LDR R1, [R4] \n\
 /* 080440e0 */ ADDS R2, R1, R5 @ Set R2 to R1 + R5 \n\
 /* 080440e2 */ STRH R0, [R2] \n\
-/* 080440e4 */ LDR R2, =D_089e9904 \n\
+/* 080440e4 */ LDR R2, =rap_machine_sfx_pool \n\
 /* 080440e6 */ MOVS R3, 0xE0 @ Set R3 to 0xE0 \n\
 /* 080440e8 */ LSLS R3, R3, 0x2 \n\
 /* 080440ea */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\

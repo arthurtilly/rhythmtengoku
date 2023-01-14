@@ -14,13 +14,13 @@ thumb_func_start func_08044014 \n\
 /* 08044024 */ LDRB R0, [R0] \n\
 /* 08044026 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08044028 */ BEQ branch_08044038 \n\
-/* 0804402a */ LDR R0, =D_089e97c8 \n\
+/* 0804402a */ LDR R0, =cat_machine_2_drum_seq_table \n\
 /* 0804402c */ B branch_0804403a \n\
 \n\
 .ltorg \n\
  \n\
 branch_08044038: \n\
-/* 08044038 */ LDR R0, =D_089e97b0 \n\
+/* 08044038 */ LDR R0, =cat_machine_1_drum_seq_table \n\
  \n\
 branch_0804403a: \n\
 /* 0804403a */ LSLS R1, R1, 0x2 \n\
@@ -30,7 +30,7 @@ branch_0804403a: \n\
 /* 08044042 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08044044 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08044046 */ BL play_drumtech_seq \n\
-/* 0804404a */ LDR R0, =D_089e97e0 \n\
+/* 0804404a */ LDR R0, =cat_machine_meow_sfx_table \n\
 /* 0804404c */ ADDS R0, R4, R0 @ Set R0 to R4 + R0 \n\
 /* 0804404e */ LDR R1, [R0] \n\
 /* 08044050 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

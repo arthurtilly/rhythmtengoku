@@ -17,7 +17,7 @@ thumb_func_start func_080441cc \n\
 /* 080441e2 */ BL fade_out_soundplayer \n\
  \n\
 branch_080441e6: \n\
-/* 080441e6 */ LDR R1, =D_089e9b04 \n\
+/* 080441e6 */ LDR R1, =confession_machine_sfx_table \n\
 /* 080441e8 */ LSLS R0, R4, 0x2 \n\
 /* 080441ea */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 080441ec */ LDR R0, [R0] \n\

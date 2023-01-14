@@ -1610,6 +1610,7 @@ SECTIONS {
         build/data/engines/tram_and_pauline_engine.c.o(.rodata*);
         build/data/engines/horse_machine_engine.c.o(.rodata*);
         build/data/engines/sick_beats_engine.c.o(.rodata*);
+        build/data/engines/machines_engine.c.o(.rodata*);
         build/bin/bindata_089e384c.bin.o(.rodata*);
         build/data/engines/prologues/sneaky_spirits_script.c.o(.rodata*);
         build/data/engines/prologues/spaceball_script.c.o(.rodata*);

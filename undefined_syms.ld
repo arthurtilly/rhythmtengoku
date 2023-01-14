@@ -546,47 +546,6 @@ D_0890dba8 = 0x0890dba8;
 D_0890dbb8 = 0x0890dbb8;
 /* Rhythm Toys Menu Palettes */
 D_0890dbc8 = 0x0890dbc8;
-/* Cat Machine Animations */
-anim_cat_machine_demo_icon = 0x0890ddf0;
-anim_cat_machine_listen = 0x0890de08;
-anim_cat_machine_meow = 0x0890de58;
-anim_cat_machine_button_a = 0x0890de70;
-anim_cat_machine_button_b = 0x0890de88;
-anim_cat_machine_button_up = 0x0890dea0;
-anim_cat_machine_button_down = 0x0890deb8;
-anim_cat_machine_button_left = 0x0890ded0;
-anim_cat_machine_button_right = 0x0890dee8;
-/* Cat Machine Palettes */
-cat_machine_pal = 0x0890df00;
-/* Rap Machine Animations */
-anim_rap_machine_demo_icon = 0x0890e1e0;
-anim_rap_machine_button_a = 0x0890e1f8;
-anim_rap_machine_button_b = 0x0890e218;
-anim_rap_machine_button_up = 0x0890e238;
-anim_rap_machine_button_down = 0x0890e258;
-anim_rap_machine_button_left = 0x0890e278;
-anim_rap_machine_button_right = 0x0890e298;
-anim_rap_machine_rapper_red = 0x0890e2b8;
-anim_rap_machine_rapper_yellow = 0x0890e2f0;
-anim_rap_machine_button_all = 0x0890e318;
-/* Rap Machine Palettes */
-rap_machine_pal = 0x0890e338;
-/* Confession Machine Animations */
-anim_love_machine_demo_icon = 0x0890e5b0;
-anim_love_san_speak_long = 0x0890e5c8;
-anim_love_san_speak_short = 0x0890e640;
-anim_love_machine_button_a = 0x0890e670;
-anim_love_machine_button_b = 0x0890e688;
-anim_love_machine_button_up = 0x0890e6a0;
-anim_love_machine_button_down = 0x0890e6b8;
-anim_love_machine_button_left = 0x0890e6d0;
-anim_love_machine_button_right = 0x0890e6e8;
-anim_love_san_speak_short2 = 0x0890e700;
-anim_love_san_speak_long2 = 0x0890e728;
-anim_not_love_san_speak_long = 0x0890e7c0;
-anim_not_love_san_speak_short = 0x0890e848;
-/* Confession Machine Palettes */
-confession_machine_pal = 0x0890e868;
 /* Health & Safety Warning Animations */
 D_08932444 = 0x08932444;
 /* Health & Safety Warning Palettes */
@@ -1451,55 +1410,6 @@ D_089de670 = 0x089de670;
 /* Game Engine - Horse Machine */
 /* Game Engine - Sick Beats */
 /* Game Engine - Rhythm Toys */
-D_089e9350 = 0x089e9350;
-D_089e9438 = 0x089e9438;
-D_089e9540 = 0x089e9540;
-D_089e9558 = 0x089e9558;
-D_089e9588 = 0x089e9588;
-D_089e95a0 = 0x089e95a0;
-D_089e95b8 = 0x089e95b8;
-D_089e9688 = 0x089e9688;
-D_089e9778 = 0x089e9778;
-D_089e9798 = 0x089e9798;
-D_089e97b0 = 0x089e97b0;
-D_089e97c8 = 0x089e97c8;
-D_089e97e0 = 0x089e97e0;
-D_089e97f8 = 0x089e97f8;
-D_089e97fc = 0x089e97fc;
-D_089e98a4 = 0x089e98a4;
-D_089e98bc = 0x089e98bc;
-D_089e98d4 = 0x089e98d4;
-D_089e98ec = 0x089e98ec;
-D_089e9904 = 0x089e9904;
-D_089e9914 = 0x089e9914;
-D_089e9918 = 0x089e9918;
-D_089e9b04 = 0x089e9b04;
-D_089e9b1c = 0x089e9b1c;
-D_089e9bf8 = 0x089e9bf8;
-D_089e9c18 = 0x089e9c18;
-D_089e9c38 = 0x089e9c38;
-D_089e9c58 = 0x089e9c58;
-D_089e9c78 = 0x089e9c78;
-D_089e9c98 = 0x089e9c98;
-D_089e9cb8 = 0x089e9cb8;
-D_089e9cd8 = 0x089e9cd8;
-D_089e9cf8 = 0x089e9cf8;
-D_089e9d18 = 0x089e9d18;
-D_089e9d3c = 0x089e9d3c;
-D_089e9d4c = 0x089e9d4c;
-D_089e9d50 = 0x089e9d50;
-D_089e9d98 = 0x089e9d98;
-D_089e9de0 = 0x089e9de0;
-D_089e9e28 = 0x089e9e28;
-D_089e9e38 = 0x089e9e38;
-D_089e9e40 = 0x089e9e40;
-D_089e9e50 = 0x089e9e50;
-D_089e9e58 = 0x089e9e58;
-D_089e9e68 = 0x089e9e68;
-D_089e9ea8 = 0x089e9ea8;
-D_089e9edc = 0x089e9edc;
-D_089e9eec = 0x089e9eec;
-D_089e9ef0 = 0x089e9ef0;
 /* Game Engine - Wizard's Waltz */
 D_089e9f10 = 0x089e9f10;
 D_089e9f14 = 0x089e9f14;

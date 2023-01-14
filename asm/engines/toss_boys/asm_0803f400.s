@@ -99,7 +99,7 @@ branch_0803f43e: \n\
 /* 0803f4c0 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 0803f4c2 */ LSLS R1, R1, 0x1 \n\
 /* 0803f4c4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803f4c6 */ BL func_0802ab7c \n\
+/* 0803f4c6 */ BL play_drumtech_note \n\
  \n\
 branch_0803f4ca: \n\
 /* 0803f4ca */ ADD SP, 0xC \n\
