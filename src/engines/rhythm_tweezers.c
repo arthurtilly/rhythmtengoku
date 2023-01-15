@@ -236,7 +236,7 @@ void rhythm_tweezers_update_tweezers(void) {
     }
 
     if (tweezers->heldHair != TWEEZERS_HELD_HAIR_NONE) {
-        temp = func_08010198(tweezers->sprite);
+        temp = affine_sprite_get_current_frame(tweezers->sprite);
         if (temp == affine_sprite_get_total_frames(tweezers->sprite) - 2) {
             rhythm_tweezers_spawn_falling_hair(tweezers->heldHair - 1);
             tweezers->heldHair = TWEEZERS_HELD_HAIR_NONE;

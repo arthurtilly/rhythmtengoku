@@ -1,6 +1,9 @@
 OUTPUT_ARCH(arm)
 
+/* Results Score Handler */
 D_03001338 = 0x03001338;
+
+/* Sound Library */
 D_03001570 = 0x03001570;
 D_03001578 = 0x03001578;
 D_03001580 = 0x03001580;
@@ -28,15 +31,17 @@ D_030017dc = 0x030017dc;
 D_03001814 = 0x03001814;
 D_0300184c = 0x0300184c;
 
+/* DirectSound Space */
 D_03001888 = 0x03001888;
 D_030024c8 = 0x030024c8;
 D_030028c8 = 0x030028c8;
 D_03002a48 = 0x03002a48;
+
+/* MIDI Reader Space */
 D_03002bc8 = 0x03002bc8;
 D_03002da8 = 0x03002da8;
 D_03002dd0 = 0x03002dd0;
 D_03002f78 = 0x03002f78;
-
 D_030030f8 = 0x030030f8;
 D_03003120 = 0x03003120;
 D_03003270 = 0x03003270;
@@ -73,26 +78,34 @@ D_03004180 = 0x03004180;
 D_03004220 = 0x03004220;
 D_03004248 = 0x03004248;
 
+/* SRAM Library */
 D_030042d8 = 0x030042d8;
 D_03004378 = 0x03004378;
-
 D_030043f8 = 0x030043f8;
+
+/* Sprite Library */
 D_03004428 = 0x03004428;
 D_0300442c = 0x0300442c;
 D_03004430 = 0x03004430;
 D_03004434 = 0x03004434;
+
+/* lib_0804e564 */
 D_03004438 = 0x03004438;
 D_0300443a = 0x0300443a;
 D_0300443c = 0x0300443c;
 D_03004440 = 0x03004440;
 
+/* Interrupt Handler */
 interrupt_handler_jtbl = 0x03004460;
 D_03004498 = 0x03004498;
 interrupt_handler = 0x030044a0;
 
+/* Main Game State */
 D_030046a0 = 0x030046a0;
 D_030046a4 = 0x030046a4;
 D_030046a8 = 0x030046a8;
+
+/* Internal Library */
 D_030046b0 = 0x030046b0;
 D_030046b4 = 0x030046b4;
 D_030046b8 = 0x030046b8;
@@ -121,12 +134,16 @@ D_030053b8 = 0x030053b8;
 D_030053c0 = 0x030053c0;
 D_03005588 = 0x03005588;
 D_0300558c = 0x0300558c;
+
+/* Rhythm Tengoku Global */
 D_03005590 = 0x03005590;
 D_030055a0 = 0x030055a0;
 D_030055d0 = 0x030055d0;
 D_030055d4 = 0x030055d4;
 D_030055d8 = 0x030055d8;
 gPauseMenu = 0x030055e0;
+
+/* Sound Library */
 D_030055f0 = 0x030055f0;
 D_030055f4 = 0x030055f4;
 D_03005600 = 0x03005600;
@@ -172,9 +189,13 @@ D_030064b8 = 0x030064b8;
 D_030064bc = 0x030064bc;
 D_030064c0 = 0x030064c0;
 D_030064c4 = 0x030064c4;
+
+/* SRAM Library */
 D_030064c8 = 0x030064c8;
 D_030064cc = 0x030064cc;
 D_030064d0 = 0x030064d0;
+
+/* Sprite Library */
 D_030064d4 = 0x030064d4;
 
 
@@ -550,27 +571,6 @@ D_0890dbc8 = 0x0890dbc8;
 D_08932444 = 0x08932444;
 /* Health & Safety Warning Palettes */
 D_0893253c = 0x0893253c;
-/* Wizard's Waltz Animations */
-anim_wizard_fly = 0x08932bec;
-anim_wizard_cast_spell = 0x08932c14;
-anim_wizard_spell_particle = 0x08932c64;
-anim_wizard_sparkle = 0x08932c8c;
-anim_wizard_sparkle_small = 0x08932cac;
-anim_wizards_waltz_sprout_eaten = 0x08932cbc;
-anim_wizards_waltz_sprout_grow = 0x08932d2c;
-anim_wizards_waltz_bad_particle = 0x08932d9c;
-anim_wizards_waltz_small_flowers = 0x08932dac;
-anim_wizards_waltz_sprout_appear = 0x08932de4;
-anim_wizards_waltz_girl_idle = 0x08932e3c;
-anim_wizards_waltz_girl_happy = 0x08932e64;
-anim_wizards_waltz_girl_upset = 0x08932ea4;
-anim_wizards_waltz_shadow = 0x08932edc;
-anim_wizards_waltz_spinning_flower = 0x08932eec;
-anim_wizards_waltz_anger_puff = 0x08932f1c;
-anim_wizards_waltz_sprout_grow_no_effect = 0x08932f44;
-anim_wizards_waltz_sprout_appear_tutorial = 0x08932f94;
-/* Wizard's Waltz Palettes */
-wizards_waltz_pal = 0x08933004;
 /* Unknown - 116 Animations */
 D_08935bc4 = 0x08935bc4;
 D_08935bdc = 0x08935bdc;
@@ -1374,52 +1374,6 @@ D_089de50a = 0x089de50a;
 D_089de568 = 0x089de568;
 D_089de5c8 = 0x089de5c8;
 D_089de670 = 0x089de670;
-
-/* Game Engine - Sneaky Spirits */
-/* Game Engine - Spaceball */
-/* Game Engine - The Bon Odori */
-/* Game Engine - Karate Man */
-/* Game Engine - Mannequin Factory */
-/* Game Engine - Staff Credit */
-/* Game Engine - Drum Intro */
-/* Game Engine - Drum LIVE */
-/* Game Engine - Drum Studio */
-/* Game Engine - Night Walk */
-/* Game Engine - Showtime */
-/* Game Engine - Bouncy Road */
-/* Game Engine - Rhythm Tweezers */
-/* Game Engine - Fireworks */
-/* Game Engine - The Clappy Trio */
-/* Game Engine - Samurai Slice */
-/* Game Engine - Power Calligraphy */
-/* Game Engine - Rhythm Test */
-/* Game Engine - Marching Orders */
-/* Game Engine - Mr. Upbeat */
-/* Game Engine - Metronome */
-/* Game Engine - Polyrhythm */
-/* Game Engine - LIVE Menu */
-/* Game Engine - Quiz Show */
-/* Game Engine - Bunny Hop */
-/* Game Engine - Rap Men */
-/* Game Engine - Rat Race */
-/* Game Engine - Ninja Bodyguard */
-/* Game Engine - Space Dance */
-/* Game Engine - Tap Trial */
-/* Game Engine - Toss Boys */
-/* Game Engine - Tram & Pauline */
-/* Game Engine - Horse Machine */
-/* Game Engine - Sick Beats */
-/* Game Engine - Rhythm Toys */
-/* Game Engine - Wizard's Waltz */
-D_089e9f10 = 0x089e9f10;
-D_089e9f14 = 0x089e9f14;
-D_089e9f5c = 0x089e9f5c;
-D_089e9f9c = 0x089e9f9c;
-D_089e9fdc = 0x089e9fdc;
-D_089ea01c = 0x089ea01c;
-D_089ea050 = 0x089ea050;
-D_089ea060 = 0x089ea060;
-D_089ea068 = 0x089ea068;
 
 /* Rhythm Game Scripts */
 D_089edf48 = 0x089edf48;

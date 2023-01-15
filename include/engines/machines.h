@@ -125,7 +125,7 @@ extern void rhythm_toy_cue_despawn(struct Cue *, struct RhythmToyCue *); // Cue 
 extern void rhythm_toy_cue_hit(struct Cue *, struct RhythmToyCue *, u32 pressed, u32 released); // Cue - Hit
 extern void rhythm_toy_cue_barely(struct Cue *, struct RhythmToyCue *, u32 pressed, u32 released); // Cue - Barely
 extern void rhythm_toy_cue_miss(struct Cue *, struct RhythmToyCue *); // Cue - Miss
-extern void rhythm_toy_input_event(u32 pressed, u32 released);
+extern void rhythm_toy_input_event(u32 pressed, u32 released); // Input Event
 extern void rhythm_toy_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
 extern void rhythm_toy_common_display_text(void); // Common Event 1 (Display Text, Unimplemented)
 extern void rhythm_toy_common_init_tutorial(void); // Common Event 2 (Init. Tutorial, Unimplemented)

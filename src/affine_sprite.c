@@ -443,8 +443,8 @@ void func_08010174(struct AffineSprite *affineData, u16 speed) {
     func_0804dcb8(D_03005380, affineData->sprite, speed);
 }
 
-// [func_08010198] AFFINE SPRITE - func_0804d6cc()
-s8 func_08010198(struct AffineSprite *affineData) {
+// [func_08010198] AFFINE SPRITE - Get Current Frame
+s8 affine_sprite_get_current_frame(struct AffineSprite *affineData) {
     if (affineData == NULL) return;
 
     return func_0804d6cc(D_03005380, affineData->sprite);
