@@ -1,10 +1,14 @@
+// WARNING: do not try to call most of these functions from C!
+// A lot of the thumb functions don't have the thumb bit set in
+// their addresses, so they need to be orred with 1 first!
+
 .section .text
 .syntax unified
 
 .include "include/gba.inc"
 
 /*
-    D_080482e0 and D_08048314 are arrays of the following type
+    D_080482e0 and D_08048314 are arrays of the following struct
     struct ARMFuncDef {
         u16 stopCode;
         u16 dedicatedMemory;
@@ -120,7 +124,8 @@ branch_08048392:
     subs r7, #1
     bne branch_08048392
     bx lr
-branch_080483a0:
+
+unaligned_thumb_func_start func_080483a0
     push {r1}
     lsls r0, r0, #2
     ldr r1, _080483b4 // needed in order to remove ltorg optimizations
@@ -129,8 +134,6 @@ branch_080483a0:
     bx r0
 .ltorg
 _080483b4: .word D_03005b50
-
-// marker of wip, everything down below is still not done
 
 unaligned_thumb_func_start func_080483b8
     orrs r0, r0
@@ -147,7 +150,7 @@ branch_080483be:
     push {r4}
     adds r5, r0, #0
     push {r1}
-    ldr r6, [pc, #888] @ (0x804874c)
+    ldr r6, _804874c
     ldr r6, [r6, #0]
     ldr r7, [r1, #4]
     ldr r0, [r1, #20]
@@ -157,7 +160,7 @@ branch_080483be:
     movs r0, #2
     ldrsb r3, [r1, r0]
     ldrb r0, [r1, #1]
-    ldr r4, [pc, #872] @ (0x8048750)
+    ldr r4, _8048750
     ldrh r4, [r4, #0]
     adds r0, r0, r4
     muls r2, r0
@@ -197,8 +200,8 @@ branch_080483be:
     bx r0
 
 arm_func_start func_08048434
-    str lr, [pc, #388] @ 0x80485c0
-    str r4, [pc, #388] @ 0x80485c4
+    str lr, _80485c0
+    str r4, _80485c4
 branch_0804843c:
     add r0, fp, ip, lsr #8
     cmp r0, r8
@@ -251,10 +254,10 @@ branch_0804843c:
     ands r0, ip, #0xff
     bne  branch_0804843c
     mov r0, #1
-    ldr lr, [pc, #176] @ 0x80485c0
+    ldr lr, _80485c0
     bx lr
 branch_08048510:
-    ldr r2, [pc, #172] @ 0x80485c4
+    ldr r2, _80485c4
     cmp r2, #0
     beq  branch_0804857c
     mov r3, #4
@@ -299,14 +302,14 @@ branch_0804857c:
     cmp fp, r8
     bcc  branch_0804857c
     mov r0, #0
-    ldr lr, [pc] @ 0x80485c0
+    ldr lr, _80485c0
     bx lr
-    .word 0
-    .word 0
+_80485c0: .word 0
+_80485c4: .word 0
 
 arm_func_start func_080485c8
-    str lr, [pc, #364] @ 0x804873c
-    str r4, [pc, #364] @ 0x8048740
+    str lr, _804873c
+    str r4, _8048740
 branch_080485d0:
     add r0, fp, ip, lsr #8
     cmp r0, r8
@@ -353,10 +356,10 @@ branch_080485d0:
     ands r0, ip, #0xff
     bne  branch_080485d0
     mov r0, #1
-    ldr lr, [pc, #176] @ 0x804873c
+    ldr lr, _804873c
     bx lr
 branch_0804868c:
-    ldr r2, [pc, #172] @ 0x8048740
+    ldr r2, _8048740
     cmp r2, #0
     beq  branch_080486f8
     mov r3, #4
@@ -383,7 +386,7 @@ branch_080486cc:
     ands r0, ip, #0xff
     bne  branch_080485d0
     mov r0, #1
-    ldr lr, [pc, #68] @ 0x804873c
+    ldr lr, _804873c
     bx lr
 branch_080486f8:
     ldr r0, [r6]
@@ -401,29 +404,25 @@ branch_080486f8:
     cmp fp, r8
     bcc  branch_080486f8
     mov r0, #0
-    ldr lr, [pc] @ 0x804873c
+    ldr lr, _804873c
     bx lr
-    .word 0
-    .word 0
+_804873c: .word 0
+_8048740: .word 0
 
 unaligned_thumb_func_start func_08048744
-    ldr r1, [pc, #12] @ (0x8048754)
+    ldr r1, _8048754
     adds r1, #1
     bx r1
     .short 0
 
-    str r0, [r6, #72] @ 0x48
-    lsls r0, r0, #12
-    str r4, [r5, #72] @ 0x48
-    lsls r0, r0, #12
-    strh r0, [r4, #28]
-    lsrs r4, r0, #32
+_804874c: .word D_030064b0
+_8048750: .word D_030064ac
+_8048754: .word func_080483a0
 
 unaligned_thumb_func_start func_08048758
     orrs r0, r0
     bne branch_0804875e
     bx lr
-
 branch_0804875e:
     push {r4, r5, r6, r7, lr}
     mov r4, r8
@@ -434,21 +433,21 @@ branch_0804875e:
     mov r4, ip
     push {r4}
     adds r4, r0, #0
-    ldr r5, [pc, #980] @ (0x8048b48)
+    ldr r5, _8048b48
     ldr r5, [r5, #0]
-    ldr r0, [pc, #980] @ (0x8048b4c)
+    ldr r0, _8048b4c
     ldr r0, [r0, #0]
     lsls r0, r0, #2
-    ldr r6, [pc, #980] @ (0x8048b50)
+    ldr r6, _8048b50
     ldr r6, [r6, #0]
-    ldr r7, [pc, #980] @ (0x8048b54)
+    ldr r7, _8048b54
     ldr r7, [r7, #0]
     adds r6, r6, r0
-    ldr r1, [pc, #976] @ (0x8048b58)
+    ldr r1, _8048b58
     ldr r1, [r1, #0]
     lsls r1, r1, #2
     adds r0, r0, r1
-    ldr r1, [pc, #972] @ (0x8048b5c)
+    ldr r1, _8048b5c
     ldr r1, [r1, #0]
     lsls r1, r1, #2
     cmp r0, r1
@@ -456,22 +455,22 @@ branch_0804875e:
     subs r0, r0, r1
 branch_08048798:
     adds r7, r7, r0
-    ldr r0, [pc, #964] @ (0x8048b60)
+    ldr r0, _8048b60
     ldr r0, [r0, #0]
-    ldr r2, [pc, #964] @ (0x8048b64)
+    ldr r2, _8048b64
     ldr r2, [r2, #0]
-    ldr r3, [pc, #964] @ (0x8048b68)
+    ldr r3, _8048b68
     ldr r3, [r3, #0]
     lsrs r0, r3
     mov r8, r0
-    ldr r0, [pc, #960] @ (0x8048b6c)
+    ldr r0, _8048b6c
     ldr r0, [r0, #0]
     lsls r0, r0, #2
     mov r9, r0
-    ldr r1, [pc, #956] @ (0x8048b70)
+    ldr r1, _8048b70
     ldr r1, [r1, #0]
     mov sl, r1
-    ldr r1, [pc, #952] @ (0x8048b74)
+    ldr r1, _8048b74
     ldr r1, [r1, #0]
     mov fp, r1
     eors r0, r0
@@ -488,21 +487,21 @@ branch_08048798:
     bx r0
 
 arm_func_start func_080487d8
-    str lr, [pc, #344] @ 0x8048938
-    str sl, [pc, #344] @ 0x804893c
-    str fp, [pc, #344] @ 0x8048940
+    str lr, _8048938
+    str sl, _804893c
+    str fp, _8048940
     add sl, r9, sl
     add fp, r9, fp
     mov r9, r2
     mov lr, r3
     mov r1, r4
-    ldr r0, [pc, #324] @ 0x8048944
+    ldr r0, _8048944
     ldr r2, [r0], #4
     ldr r3, [r0], #4
     ldr ip, [r0], #4
     ldr r4, [r0]
 branch_0804880c:
-    str r1, [pc, #308] @ 0x8048948
+    str r1, _8048948
     ldrsb r0, [r6], #1
     sub r2, r2, r2, asr r9
     add r2, r0, r2
@@ -564,29 +563,30 @@ branch_0804880c:
     mul r1, r8, r4
     stmia r5!, {r0, r1}
     cmp r6, sl
-    ldrcs r6, [pc, #48] @ 0x804893c
+    ldrcs r6, _804893c
     cmp r7, fp
-    ldrcs r7, [pc, #44] @ 0x8048940
-    ldr r1, [pc, #48] @ 0x8048948
+    ldrcs r7, _8048940
+    ldr r1, _8048948
     subs r1, r1, #1
     bne  branch_0804880c
-    ldr r0, [pc, #32] @ 0x8048944
+    ldr r0, _8048944
     str r2, [r0], #4
     str r3, [r0], #4
     str ip, [r0], #4
     str r4, [r0]
-    ldr lr, [pc] @ 0x8048938
+    ldr lr, _8048938
     bx lr
-    .word 0
-    .word 0
-    .word 0
-    .word 0x03005600
-    andeq r0, r0, r0
+
+_8048938: .word 0
+_804893c: .word 0
+_8048940: .word 0
+_8048944: .word D_03005600
+_8048948: .word 0
 
 arm_func_start func_0804894c
     mov r7, r2
     mov fp, r3
-    ldr r0, [pc, #160] @ 0x80489fc
+    ldr r0, _80489fc
     ldr r2, [r0], #4
     ldr r3, [r0], #4
     add sl, r9, sl
@@ -625,11 +625,12 @@ branch_08048964:
     subcs r6, r6, r9
     subs r4, r4, #1
     bne  branch_08048964
-    ldr r0, [pc, #8] @ 0x80489fc
+    ldr r0, _80489fc
     str r2, [r0], #4
     str r3, [r0], #4
     bx lr
-    .word 0x03005600
+
+_80489fc: .word D_03005600
 
 unaligned_thumb_func_start func_08048a00
     orrs r0, r0
@@ -746,60 +747,38 @@ arm_func_start func_08048af8
     bx lr
 
 unaligned_thumb_func_start func_08048b40
-    ldr r1, [pc, #84] @ (0x8048b98)
+    ldr r1, _8048b98
     adds r1, #1
     bx r1
+.short 0
 
-    movs r0, r0
-    str r0, [r6, #72] @ 0x48
-    lsls r0, r0, #12
-    ldrh r0, [r0, r5]
-    lsls r0, r0, #12
-    ldrsb r4, [r7, r0]
-    lsls r0, r0, #12
-    str r0, [r7, #72] @ 0x48
-    lsls r0, r0, #12
-    ldrsb r0, [r6, r0]
-    lsls r0, r0, #12
-    ldrh r4, [r4, r4]
-    lsls r0, r0, #12
-    str r4, [r4, #72] @ 0x48
-    lsls r0, r0, #12
-    ldrsb r4, [r6, r0]
-    lsls r0, r0, #12
-    ldrh r0, [r1, r5]
-    lsls r0, r0, #12
-    ldrh r4, [r4, r4]
-    lsls r0, r0, #12
-    ldrsb r4, [r7, r0]
-    lsls r0, r0, #12
-    str r0, [r7, #72] @ 0x48
-    lsls r0, r0, #12
-    str r0, [r6, #72] @ 0x48
-    lsls r0, r0, #12
-    ldrh r0, [r0, r5]
-    lsls r0, r0, #12
-    ldrsb r4, [r7, r0]
-    lsls r0, r0, #12
-    str r0, [r7, #72] @ 0x48
-    lsls r0, r0, #12
-    ldrh r4, [r4, r4]
-    lsls r0, r0, #12
-    ldrsb r4, [r7, r0]
-    lsls r0, r0, #12
-    ldrsb r0, [r4, r4]
-    lsls r0, r0, #12
-    lsls r7, r7, #15
-    movs r0, r0
-    strh r0, [r4, #28]
-    lsrs r4, r0, #32
+_8048b48: .word D_030064b0
+_8048b4c: .word D_03005b40
+_8048b50: .word D_0300563c
+_8048b54: .word D_030064b8
+_8048b58: .word D_03005630
+_8048b5c: .word D_03005b24
+_8048b60: .word D_030064a4
+_8048b64: .word D_03005634
+_8048b68: .word D_03005b48
+_8048b6c: .word D_03005b24
+_8048b70: .word D_0300563c
+_8048b74: .word D_030064b8
+_8048b78: .word D_030064b0
+_8048b7c: .word D_03005b40
+_8048b80: .word D_0300563c
+_8048b84: .word D_030064b8
+_8048b88: .word D_03005b24
+_8048b8c: .word D_0300563c
+_8048b90: .word D_03005720
+_8048b94: .word 0x3ff
+_8048b98: .word func_080483a0
 
 unaligned_thumb_func_start func_08048b9c
     orrs r0, r0
-    bne func_08048ba2
+    bne branch_08048ba2
     bx lr
-
-unaligned_thumb_func_start func_08048ba2
+branch_08048ba2:
     push {r4, r5, r6, r7, lr}
     mov r4, r8
     mov r5, r9
@@ -861,7 +840,6 @@ unaligned_thumb_func_start func_08048ba2
     pop {r4, r5, r6, r7}
     pop {r0}
     bx r0
-    movs r0, r0
 
 arm_func_start func_08048c20
     str lr, [pc, #280] @ 0x8048d40
@@ -950,7 +928,7 @@ unaligned_thumb_func_start func_08048d44
     adds r1, #1
     bx r1
 
-    movs r0, r0
+    .short 0
     str r0, [r6, #72] @ 0x48
     lsls r0, r0, #12
     str r4, [r5, #72] @ 0x48
@@ -1159,7 +1137,7 @@ unaligned_thumb_func_start func_08048fac
     adds r1, #1
     bx r1
 
-    movs r0, r0
+    .short 0
     str r0, [r6, #72] @ 0x48
     lsls r0, r0, #12
     str r4, [r5, #72] @ 0x48
@@ -1281,7 +1259,7 @@ unaligned_thumb_func_start func_08049134
     ldr r1, [pc, #8] @ (0x8049140)
     adds r1, #1
     bx r1
-    movs r0, r0
+    .short 0
     str r0, [r6, #72] @ 0x48
     lsls r0, r0, #12
     strh r0, [r4, #28]
