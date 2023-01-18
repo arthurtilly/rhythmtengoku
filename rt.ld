@@ -126,7 +126,7 @@ SECTIONS {
         build/src/lib_0804c870.c.o(.text);
         build/asm/lib_0804e418.s.o(.text);
         build/src/lib_0804e564.c.o(.text);
-        build/bin/bindata_0804e938.bin.o(.rodata*); /* More ARM assembly */
+        build/asm/lib_0804e938.s.o(.text);
         *libgcc.a:_call_via_rX.o(.text);
         *libgcc.a:_divsi3.o(.text);
         *libgcc.a:_dvmd_tls.o(.text);
