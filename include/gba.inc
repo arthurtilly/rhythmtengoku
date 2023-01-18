@@ -17,7 +17,6 @@
 .set func_08048fac, 0x08048fac
 .set func_08048fc0, 0x08048fc0
 
-.set func_0804e418, 0x0804e418
 .set func_0804e938, 0x0804e938
 
 .set BIOSROMBase,		0x00000000 @ To 0x00004000 (16kb)
