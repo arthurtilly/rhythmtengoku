@@ -135,10 +135,13 @@ branch_08048392:
     lsls r0, r0, #12
     ldrh r0, [r2, r5]
     lsls r0, r0, #12
+
+unaligned_thumb_func_start func_080483b8
     orrs r0, r0
-    bne  branch_080483be
+    bne func_080483be
     bx lr
-branch_080483be:
+
+unaligned_thumb_func_start func_080483be
     push {r4, r5, r6, r7, lr}
     mov r4, r8
     mov r5, r9
@@ -420,10 +423,13 @@ unaligned_thumb_func_start func_08048744
     lsls r0, r0, #12
     strh r0, [r4, #28]
     lsrs r4, r0, #32
+
+unaligned_thumb_func_start func_08048758
     orrs r0, r0
-    bne  branch_0804875e
+    bne func_0804875e
     bx lr
-branch_0804875e:
+
+unaligned_thumb_func_start func_0804875e
     push {r4, r5, r6, r7, lr}
     mov r4, r8
     mov r5, r9
@@ -630,11 +636,12 @@ branch_08048964:
     bx lr
     .word 0x03005600
 
-.thumb
+unaligned_thumb_func_start func_08048a00
     orrs r0, r0
-    bne  branch_08048a06
+    bne func_08048a06
     bx lr
-branch_08048a06:
+
+unaligned_thumb_func_start func_08048a06
     push {r4, r5, r6, r7, lr}
     mov r4, r8
     mov r5, r9
@@ -682,7 +689,7 @@ branch_08048a06:
     pop {r4, r5, r6, r7}
     pop {r0}
     bx r0
-    movs r0, r0
+    .short 0
 
 arm_func_start func_08048a68
     str r4, [pc, #128] @ 0x8048af0
@@ -743,11 +750,11 @@ arm_func_start func_08048af8
     bne  func_08048af8
     bx lr
 
-.thumb
-thumb_func_start func_08048b40
+unaligned_thumb_func_start func_08048b40
     ldr r1, [pc, #84] @ (0x8048b98)
     adds r1, #1
     bx r1
+
     movs r0, r0
     str r0, [r6, #72] @ 0x48
     lsls r0, r0, #12
@@ -791,10 +798,13 @@ thumb_func_start func_08048b40
     movs r0, r0
     strh r0, [r4, #28]
     lsrs r4, r0, #32
+
+unaligned_thumb_func_start func_08048b9c
     orrs r0, r0
-    bne  branch_08048ba2
+    bne func_08048ba2
     bx lr
-branch_08048ba2:
+
+unaligned_thumb_func_start func_08048ba2
     push {r4, r5, r6, r7, lr}
     mov r4, r8
     mov r5, r9
@@ -940,11 +950,11 @@ branch_08048d38:
     bx lr
     andeq r0, r0, r0
 
-.thumb
-thumb_func_start func_08048d44
+unaligned_thumb_func_start func_08048d44
     ldr r1, [pc, #12] @ (0x8048d54)
     adds r1, #1
     bx r1
+
     movs r0, r0
     str r0, [r6, #72] @ 0x48
     lsls r0, r0, #12
@@ -952,10 +962,13 @@ thumb_func_start func_08048d44
     lsls r0, r0, #12
     strh r0, [r4, #28]
     lsrs r4, r0, #32
+
+unaligned_thumb_func_start func_08048d58
     orrs r0, r0
-    bne  branch_08048d5e
+    bne func_08048d5e
     bx lr
-branch_08048d5e:
+
+unaligned_thumb_func_start func_08048d5e
     push {r4, r5, r6, r7, lr}
     mov r4, r8
     mov r5, r9
@@ -1146,11 +1159,11 @@ branch_08048f84:
     mov r0, #0
     bx lr
 
-.thumb
 unaligned_thumb_func_start func_08048fac
     ldr r1, [pc, #12] @ (0x8048fbc)
     adds r1, #1
     bx r1
+
     movs r0, r0
     str r0, [r6, #72] @ 0x48
     lsls r0, r0, #12
@@ -1158,6 +1171,8 @@ unaligned_thumb_func_start func_08048fac
     lsls r0, r0, #12
     strh r0, [r4, #28]
     lsrs r4, r0, #32
+
+unaligned_thumb_func_start func_08048fc0
     orrs r0, r0
     bne func_08048fc6
     bx lr
@@ -1267,7 +1282,6 @@ branch_08049094:
     pop {r8, r9, sl, fp, lr}
     bx lr
 
-.thumb
 unaligned_thumb_func_start func_08049134
     ldr r1, [pc, #8] @ (0x8049140)
     adds r1, #1

@@ -3,20 +3,6 @@
 
 .include "include/asm_macros.inc"
 
-.set func_0804833e, 0x0804833e
-.set func_08048350, 0x08048350
-.set func_08048384, 0x08048384
-.set func_080483b8, 0x080483b8
-.set func_08048744, 0x08048744
-.set func_08048758, 0x08048758
-.set func_08048a00, 0x08048a00
-.set func_08048b40, 0x08048b40
-.set func_08048b9c, 0x08048b9c
-.set func_08048d44, 0x08048d44
-.set func_08048d58, 0x08048d58
-.set func_08048fac, 0x08048fac
-.set func_08048fc0, 0x08048fc0
-
 .set func_0804e938, 0x0804e938
 
 .set BIOSROMBase,		0x00000000 @ To 0x00004000 (16kb)
