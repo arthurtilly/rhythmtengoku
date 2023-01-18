@@ -6,7 +6,7 @@
 #include "src/text_printer.h"
 #include "src/code_0800b778.h"
 #include "scenes/gameplay.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 

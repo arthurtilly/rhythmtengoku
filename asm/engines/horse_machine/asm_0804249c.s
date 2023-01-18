@@ -26,7 +26,7 @@ branch_080424bc: \n\
 /* 080424c0 */ LSLS R2, R2, 0x5 \n\
 /* 080424c2 */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 080424c4 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080424c6 */ BL func_080087d4 \n\
+/* 080424c6 */ BL clamp_int32 \n\
 /* 080424ca */ LDR R1, [R5] \n\
 /* 080424cc */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 080424ce */ STR R0, [R1] \n\

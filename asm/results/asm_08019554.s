@@ -86,7 +86,7 @@ branch_080195a2: \n\
 /* 080195ee */ BL _call_via_r0 \n\
 /* 080195f2 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080195f4 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 080195f6 */ BL func_080087d4 \n\
+/* 080195f6 */ BL clamp_int32 \n\
 /* 080195fa */ LDR R1, =D_089d7980 \n\
 /* 080195fc */ LDR R1, [R1] \n\
 /* 080195fe */ ADDS R1, 0x68 @ Add 0x68 to R1 \n\

@@ -13,7 +13,7 @@ thumb_func_start func_0803785c \n\
 /* 0803786a */ MOV R0, R10 @ Set R0 to R10 \n\
 /* 0803786c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803786e */ MOVS R2, 0x63 @ Set R2 to 0x63 \n\
-/* 08037870 */ BL func_080087d4 \n\
+/* 08037870 */ BL clamp_int32 \n\
 /* 08037874 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08037876 */ LDR R6, =D_03005380 \n\
 /* 08037878 */ LDR R4, [R6] \n\
@@ -46,7 +46,7 @@ thumb_func_start func_0803785c \n\
 /* 080378b6 */ LSLS R2, R2, 0x1 \n\
 /* 080378b8 */ MOV R0, R10 @ Set R0 to R10 \n\
 /* 080378ba */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080378bc */ BL func_080087d4 \n\
+/* 080378bc */ BL clamp_int32 \n\
 /* 080378c0 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080378c2 */ STRH R0, [R1, 0x10] \n\
 /* 080378c4 */ POP {R3-R5} \n\

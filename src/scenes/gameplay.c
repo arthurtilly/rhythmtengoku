@@ -7,7 +7,7 @@
 #include "src/code_08007468.h"
 #include "src/text_printer.h"
 #include "src/code_0800b778.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
@@ -420,7 +420,7 @@ u32 func_080175d8(void) {
 
 // [func_080175e8] Set Global Reverb
 void gameplay_set_reverb(u32 level) {
-    func_0804c340(func_080087d4(level + 35, 0, 127), 2, 2, 4);
+    func_0804c340(clamp_int32(level + 35, 0, 127), 2, 2, 4);
 }
 
 
@@ -826,10 +826,10 @@ s32 gameplay_calculate_input_timing(struct Cue *cue, u16 pressed, u16 released, 
         missLate = cueDef->missWindowLate;
     }
 
-    hitEarly = func_080087d4(hitEarly, gGameplayInfo->earlinessRangeMin, gGameplayInfo->earlinessRangeMax);
-    hitLate = func_080087d4(hitLate, gGameplayInfo->latenessRangeMin, gGameplayInfo->latenessRangeMax);
-    missEarly = func_080087d4(missEarly, gGameplayInfo->earlinessRangeMin, gGameplayInfo->earlinessRangeMax);
-    missLate = func_080087d4(missLate, gGameplayInfo->latenessRangeMin, gGameplayInfo->latenessRangeMax);
+    hitEarly = clamp_int32(hitEarly, gGameplayInfo->earlinessRangeMin, gGameplayInfo->earlinessRangeMax);
+    hitLate = clamp_int32(hitLate, gGameplayInfo->latenessRangeMin, gGameplayInfo->latenessRangeMax);
+    missEarly = clamp_int32(missEarly, gGameplayInfo->earlinessRangeMin, gGameplayInfo->earlinessRangeMax);
+    missLate = clamp_int32(missLate, gGameplayInfo->latenessRangeMin, gGameplayInfo->latenessRangeMax);
 
     if (gGameplayInfo->missPunishmentTimer != 0) {
         hitEarly = -1;

@@ -23,7 +23,7 @@ thumb_func_start func_0801aed0 \n\
 /* 0801aef2 */ MOVS R3, 0xB9 @ Set R3 to 0xB9 \n\
 /* 0801aef4 */ LSLS R3, R3, 0x2 \n\
 /* 0801aef6 */ ADDS R0, R2, R3 @ Set R0 to R2 + R3 \n\
-/* 0801aef8 */ BL func_08011b50 \n\
+/* 0801aef8 */ BL delete_saved_replay \n\
  \n\
 branch_0801aefc: \n\
 /* 0801aefc */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\

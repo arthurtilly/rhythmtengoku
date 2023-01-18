@@ -139,7 +139,7 @@ branch_08039594: \n\
 /* 080395ac */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080395ae */ LSLS R2, R2, 0x1 \n\
 /* 080395b0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080395b2 */ BL func_080087d4 \n\
+/* 080395b2 */ BL clamp_int32 \n\
 /* 080395b6 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080395b8 */ LSLS R1, R1, 0x10 \n\
 /* 080395ba */ ASRS R1, R1, 0x10 \n\

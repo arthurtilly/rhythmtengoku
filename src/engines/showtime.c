@@ -7,7 +7,7 @@ asm(".include \"include/gba.inc\""); // Temporary
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
 #include "scenes/gameplay.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 
 // For readability.
 #define gShowtimeInfo ((struct ShowtimeInfo *)D_030055d0)

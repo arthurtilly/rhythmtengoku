@@ -67,13 +67,12 @@ extern struct SaveBuffer {
             u32 unk2CC;
             u32 unk2D0;
         */
-        struct SaveDataAllocator {
-            u8 unk0;
-            u8 unk1[10];
-            u8 unkB;
-            u16 unkC[10];
-            u8 saveMemory[0];
-        } saveDataAllocator;
+        struct DrumReplaySaveAlloc {
+            u8 nextAvailableBlock;
+            u8 replayStartBlocks[10];
+            u16 replaySizes[10];
+            u8 saveMemory[0x38][0x100];
+        } drumReplaysAlloc;
     } data;
 } *D_030046a8;
 

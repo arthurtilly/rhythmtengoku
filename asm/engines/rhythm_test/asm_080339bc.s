@@ -31,7 +31,7 @@ branch_080339e4: \n\
 /* 080339e6 */ NEGS R1, R1 @ Set R1 to -R1 \n\
 /* 080339e8 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 080339ea */ MOVS R2, 0x30 @ Set R2 to 0x30 \n\
-/* 080339ec */ BL func_080087d4 \n\
+/* 080339ec */ BL clamp_int32 \n\
 /* 080339f0 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 080339f2 */ LDR R7, =D_03005380 \n\
 /* 080339f4 */ LDR R0, [R7] \n\

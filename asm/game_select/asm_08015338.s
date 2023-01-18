@@ -29,7 +29,7 @@ branch_08015352: \n\
 /* 0801535e */ SUBS R0, R5, 0x3 @ Set R0 to R5 - 0x3 \n\
 /* 08015360 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08015362 */ MOVS R2, 0x19 @ Set R2 to 0x19 \n\
-/* 08015364 */ BL func_080087d4 \n\
+/* 08015364 */ BL clamp_int32 \n\
 /* 08015368 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801536a */ LSLS R0, R1, 0x3 \n\
 /* 0801536c */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
@@ -46,7 +46,7 @@ branch_08015352: \n\
 /* 08015386 */ BL __udivsi3 \n\
 /* 0801538a */ MOVS R1, 0x1E @ Set R1 to 0x1E \n\
 /* 0801538c */ MOVS R2, 0x64 @ Set R2 to 0x64 \n\
-/* 0801538e */ BL func_080087d4 \n\
+/* 0801538e */ BL clamp_int32 \n\
 /* 08015392 */ MULS R0, R4 @ Multiply R0 by R4 \n\
 /* 08015394 */ LSRS R0, R0, 0x8 \n\
 /* 08015396 */ B branch_080153a2 \n\

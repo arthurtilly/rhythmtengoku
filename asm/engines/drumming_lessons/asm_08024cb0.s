@@ -49,7 +49,7 @@ branch_08024ce0: \n\
 /* 08024d06 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08024d08 */ NEGS R1, R1 @ Set R1 to -R1 \n\
 /* 08024d0a */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
-/* 08024d0c */ BL func_080087d4 \n\
+/* 08024d0c */ BL clamp_int32 \n\
 /* 08024d10 */ LDR R1, =D_03004b10 \n\
 /* 08024d12 */ STRH R0, [R1, 0x16] \n\
  \n\

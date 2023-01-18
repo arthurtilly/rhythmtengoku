@@ -39,7 +39,7 @@ thumb_func_start func_0801c6fc \n\
 /* 0801c742 */ LDR R2, [R5] \n\
 /* 0801c744 */ ADDS R2, R2, R4 @ Set R2 to R2 + R4 \n\
 /* 0801c746 */ LDR R2, [R2] \n\
-/* 0801c748 */ BL func_08011a90 \n\
+/* 0801c748 */ BL get_saved_replay_data \n\
 /* 0801c74c */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0801c74e */ LDR R1, =0x3ff \n\
 /* 0801c750 */ LDR R0, [R5] \n\

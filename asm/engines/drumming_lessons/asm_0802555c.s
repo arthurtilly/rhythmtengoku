@@ -12,7 +12,7 @@ thumb_func_start func_0802555c \n\
 /* 08025568 */ ASRS R0, R0, 0x8 \n\
 /* 0802556a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802556c */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 0802556e */ BL func_080087d4 \n\
+/* 0802556e */ BL clamp_int32 \n\
 /* 08025572 */ CMP R0, 0x4 @ Compare R0 and 0x4 \n\
 /* 08025574 */ BHI branch_080255ee \n\
 /* 08025576 */ LSLS R0, R0, 0x2 \n\

@@ -18,7 +18,7 @@ thumb_func_start metronome_cue_hit \n\
 /* 08035b80 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08035b82 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08035b84 */ MOVS R2, 0xA @ Set R2 to 0xA \n\
-/* 08035b86 */ BL func_080087d4 \n\
+/* 08035b86 */ BL clamp_int32 \n\
 /* 08035b8a */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08035b8c */ LDR R0, [R6] \n\
 /* 08035b8e */ LDR R1, [R5] \n\

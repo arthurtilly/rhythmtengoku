@@ -592,7 +592,7 @@ jump_08011104: \n\
 /* 08011152 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 08011154 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
 /* 08011156 */ MOVS R2, 0x7 @ Set R2 to 0x7 \n\
-/* 08011158 */ BL func_080087d4 \n\
+/* 08011158 */ BL clamp_int32 \n\
 /* 0801115c */ LDR R1, [R4] \n\
 /* 0801115e */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
 /* 08011160 */ STRB R0, [R1] \n\

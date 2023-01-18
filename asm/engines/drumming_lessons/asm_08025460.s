@@ -82,7 +82,7 @@ branch_080254da: \n\
 /* 080254ec */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080254ee */ LSLS R2, R2, 0x5 \n\
 /* 080254f0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080254f2 */ BL func_080087d4 \n\
+/* 080254f2 */ BL clamp_int32 \n\
 /* 080254f6 */ LDR R1, [R5] \n\
 /* 080254f8 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 080254fa */ STR R0, [R1] \n\

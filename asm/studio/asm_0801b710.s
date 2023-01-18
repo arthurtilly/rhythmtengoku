@@ -25,7 +25,7 @@ thumb_func_start func_0801b710 \n\
 /* 0801b738 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0801b73a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0801b73c */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\
-/* 0801b73e */ BL func_080087d4 \n\
+/* 0801b73e */ BL clamp_int32 \n\
 /* 0801b742 */ STR R6, [SP] \n\
 /* 0801b744 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0801b746 */ STR R1, [SP, 0x4] \n\

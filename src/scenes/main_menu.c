@@ -10,7 +10,7 @@
 #include "src/code_0800b3c8.h"
 #include "src/code_0800b778.h"
 #include "scenes/gameplay.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 
 extern const struct FontDefinition D_089de670;
 extern const struct Scene D_089ddbcc; // Debug Menu Script
@@ -124,7 +124,7 @@ void func_080125fc(u32 unused) {
         if (D_030053b8 & DPAD_DOWN) {
             D_030055d8 += 1;
         }
-        D_030055d8 = func_080087d4(D_030055d8, 0, 4);
+        D_030055d8 = clamp_int32(D_030055d8, 0, 4);
 
         if (prevButton != D_030055d8) {
             play_sound(&s_menu_cursor2_seqData);

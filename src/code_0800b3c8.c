@@ -1,5 +1,5 @@
 #include "global.h"
-#include "lib_0804c870.h"
+#include "lib_0804ca80.h"
 #include "code_0800b3c8.h"
 
 // Could use better split

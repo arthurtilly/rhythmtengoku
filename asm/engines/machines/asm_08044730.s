@@ -10,7 +10,7 @@ thumb_func_start func_08044730 \n\
 /* 0804473a */ SUBS R0, 0x2 @ Subtract 0x2 from R0 \n\
 /* 0804473c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0804473e */ MOVS R2, 0xA @ Set R2 to 0xA \n\
-/* 08044740 */ BL func_080087d4 \n\
+/* 08044740 */ BL clamp_int32 \n\
 /* 08044744 */ LDR R1, =D_030055d0 \n\
 /* 08044746 */ LDR R1, [R1] \n\
 /* 08044748 */ MOVS R2, 0xD6 @ Set R2 to 0xD6 \n\

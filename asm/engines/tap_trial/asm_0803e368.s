@@ -20,7 +20,7 @@ thumb_func_start func_0803e368 \n\
 /* 0803e384 */ ADDS R2, R2, R1 @ Set R2 to R2 + R1 \n\
 /* 0803e386 */ LDR R2, [R2] \n\
 /* 0803e388 */ NEGS R1, R2 @ Set R1 to -R2 \n\
-/* 0803e38a */ BL func_080087d4 \n\
+/* 0803e38a */ BL clamp_int32 \n\
 /* 0803e38e */ LDR R2, [R5] \n\
 /* 0803e390 */ ADDS R4, R2, R4 @ Set R4 to R2 + R4 \n\
 /* 0803e392 */ STR R0, [R4] \n\
@@ -50,7 +50,7 @@ thumb_func_start func_0803e368 \n\
 /* 0803e3c2 */ ADDS R2, R2, R7 @ Set R2 to R2 + R7 \n\
 /* 0803e3c4 */ LDR R2, [R2] \n\
 /* 0803e3c6 */ NEGS R1, R2 @ Set R1 to -R2 \n\
-/* 0803e3c8 */ BL func_080087d4 \n\
+/* 0803e3c8 */ BL clamp_int32 \n\
 /* 0803e3cc */ LDR R5, [R5] \n\
 /* 0803e3ce */ ADDS R4, R5, R4 @ Set R4 to R5 + R4 \n\
 /* 0803e3d0 */ STR R0, [R4] \n\

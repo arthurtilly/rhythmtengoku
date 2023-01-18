@@ -59,7 +59,7 @@ branch_08026b96: \n\
 /* 08026b9e */ LDR R1, =0xffffff00 \n\
 /* 08026ba0 */ MOVS R2, 0xA0 @ Set R2 to 0xA0 \n\
 /* 08026ba2 */ LSLS R2, R2, 0x3 \n\
-/* 08026ba4 */ BL func_080087d4 \n\
+/* 08026ba4 */ BL clamp_int32 \n\
 /* 08026ba8 */ LDR R1, [R5] \n\
 /* 08026baa */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 08026bac */ STR R0, [R1] \n\

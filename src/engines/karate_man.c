@@ -7,7 +7,7 @@
 #include "src/code_0800b3c8.h"
 #include "src/code_0800b778.h"
 #include "scenes/gameplay.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 
 // For readability.
 #define gKarateManInfo ((struct KarateManInfo *)D_030055d0)

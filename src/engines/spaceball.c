@@ -3,7 +3,7 @@
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
 #include "src/affine_sprite.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 
 extern s32 (*D_03004ae4)(s32);
 extern s32 (*fast_udivsi3)(s32, s32);

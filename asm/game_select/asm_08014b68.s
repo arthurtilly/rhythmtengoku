@@ -9,7 +9,7 @@ thumb_func_start func_08014b68 \n\
 /* 08014b6e */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08014b70 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08014b72 */ MOVS R2, 0x63 @ Set R2 to 0x63 \n\
-/* 08014b74 */ BL func_080087d4 \n\
+/* 08014b74 */ BL clamp_int32 \n\
 /* 08014b78 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08014b7a */ LDR R6, =D_03005380 \n\
 /* 08014b7c */ LDR R0, [R6] \n\

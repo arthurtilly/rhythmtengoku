@@ -5,7 +5,7 @@
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
 #include "scenes/gameplay.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 
 // For readability.
 #define gSneakySpiritsInfo ((struct SneakySpiritsInfo *)D_030055d0)
@@ -261,7 +261,7 @@ void sneaky_spirits_update_wind_sfx(void) {
 
     if (gSneakySpiritsInfo->rainChannel == NULL) return;
 
-    rainVolume = func_080087d4((INT_TO_FIXED(1.0) - D_030053c0.musicVolume) / 2, 0, 128) + INT_TO_FIXED(0.25);
+    rainVolume = clamp_int32((INT_TO_FIXED(1.0) - D_030053c0.musicVolume) / 2, 0, 128) + INT_TO_FIXED(0.25);
     set_soundplayer_volume(gSneakySpiritsInfo->rainChannel, rainVolume);
 }
 

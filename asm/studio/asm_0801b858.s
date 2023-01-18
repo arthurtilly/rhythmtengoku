@@ -94,7 +94,7 @@ branch_0801b900: \n\
 /* 0801b902 */ MOVS R1, 0xB9 @ Set R1 to 0xB9 \n\
 /* 0801b904 */ LSLS R1, R1, 0x2 \n\
 /* 0801b906 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
-/* 0801b908 */ BL func_08011bec \n\
+/* 0801b908 */ BL get_remaining_replay_data_space \n\
 /* 0801b90c */ LSRS R4, R0, 0x8 \n\
 /* 0801b90e */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0801b910 */ BEQ branch_0801b92e \n\
@@ -102,7 +102,7 @@ branch_0801b900: \n\
 /* 0801b914 */ MOVS R1, 0xB9 @ Set R1 to 0xB9 \n\
 /* 0801b916 */ LSLS R1, R1, 0x2 \n\
 /* 0801b918 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
-/* 0801b91a */ BL func_08011bf8 \n\
+/* 0801b91a */ BL get_available_replay_data_id \n\
 /* 0801b91e */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 0801b920 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801b922 */ BLT branch_0801b934 \n\

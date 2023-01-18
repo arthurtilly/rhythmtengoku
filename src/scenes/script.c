@@ -4,7 +4,7 @@
 #include "src/code_08003980.h"
 #include "src/task_pool.h"
 #include "src/memory_heap.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 

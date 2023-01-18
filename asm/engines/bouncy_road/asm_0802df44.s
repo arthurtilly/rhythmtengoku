@@ -6,7 +6,7 @@ thumb_func_start func_0802df44 \n\
 /* 0802df44 */ PUSH {R4, LR} \n\
 /* 0802df46 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0802df48 */ MOVS R2, 0xD @ Set R2 to 0xD \n\
-/* 0802df4a */ BL func_080087d4 \n\
+/* 0802df4a */ BL clamp_int32 \n\
 /* 0802df4e */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0802df50 */ LSLS R0, R1, 0x3 \n\
 /* 0802df52 */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
@@ -15,7 +15,7 @@ thumb_func_start func_0802df44 \n\
 /* 0802df58 */ LSLS R2, R2, 0x1 \n\
 /* 0802df5a */ SUBS R0, R2, R0 @ Set R0 to R2 - R0 \n\
 /* 0802df5c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0802df5e */ BL func_080087d4 \n\
+/* 0802df5e */ BL clamp_int32 \n\
 /* 0802df62 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0802df64 */ LDR R4, =D_030055d0 \n\
 /* 0802df66 */ LDR R0, [R4] \n\

@@ -122,7 +122,7 @@ branch_080425d6: \n\
 /* 0804263a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0804263c */ LDR R1, =0xfffffd58 \n\
 /* 0804263e */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
-/* 08042640 */ BL func_080087d4 \n\
+/* 08042640 */ BL clamp_int32 \n\
 /* 08042644 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08042646 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08042648 */ LDR R0, [R2] \n\
@@ -167,7 +167,7 @@ branch_0804267a: \n\
 /* 0804269a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0804269c */ LDR R1, =0xfffffd58 \n\
 /* 0804269e */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
-/* 080426a0 */ BL func_080087d4 \n\
+/* 080426a0 */ BL clamp_int32 \n\
 /* 080426a4 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 080426a6 */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 080426a8 */ LDR R0, [R1] \n\
@@ -198,7 +198,7 @@ branch_080426ca: \n\
 /* 080426d8 */ BL __divsi3 \n\
 /* 080426dc */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080426de */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\
-/* 080426e0 */ BL func_080087d4 \n\
+/* 080426e0 */ BL clamp_int32 \n\
 /* 080426e4 */ LDR R1, =0x7fff \n\
 /* 080426e6 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 080426e8 */ BL func_08040eb0 \n\

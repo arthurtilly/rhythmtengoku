@@ -139,7 +139,7 @@ branch_0801549a: \n\
 /* 080154a4 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080154a6 */ MOVS R2, 0xFA @ Set R2 to 0xFA \n\
 /* 080154a8 */ LSLS R2, R2, 0x2 \n\
-/* 080154aa */ BL func_080087d4 \n\
+/* 080154aa */ BL clamp_int32 \n\
 /* 080154ae */ STRH R0, [R4] \n\
  \n\
 branch_080154b0: \n\

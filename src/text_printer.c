@@ -2,7 +2,7 @@
 #include "text_printer.h"
 
 #include "src/memory_heap.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 #include "data/text_printer_data.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
@@ -233,7 +233,7 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
     maxWidthExceeded = FALSE;
 
     fGlyphData->formatSrc = stream;
-    totalWidth = func_080087d4(indentWidth, 0, maxWidth);
+    totalWidth = clamp_int32(indentWidth, 0, maxWidth);
 
     while (*stream != '\0') {
         if (*stream < '\x20') {
@@ -266,7 +266,7 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
                         totalWidth = (totalWidth * 10) + *stream - '0';
                         stream += 1;
                     }
-                    totalWidth = func_080087d4(totalWidth, 0, maxWidth);
+                    totalWidth = clamp_int32(totalWidth, 0, maxWidth);
                     stream += 1;
                     break;
                 case '\5': // Set Text Shadow
@@ -335,8 +335,8 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
 
             lastGlyph = &sGlyphBuffer[totalGlyphs] - 1;
             xStart = sGlyphBuffer[0].xOffset;
-            w1 = func_080087d4((maxWidth - lastGlyph->width - xStart), 0, maxWidth);
-            w2 = func_080087d4((lastGlyph->xOffset - xStart), 0, maxWidth);
+            w1 = clamp_int32((maxWidth - lastGlyph->width - xStart), 0, maxWidth);
+            w2 = clamp_int32((lastGlyph->xOffset - xStart), 0, maxWidth);
 
             for (i = 0; i < totalGlyphs; i++) {
                 sGlyphBuffer[i].xOffset = xStart + ((sGlyphBuffer[i].xOffset - xStart) * w1 / w2);

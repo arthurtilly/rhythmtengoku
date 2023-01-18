@@ -81,7 +81,7 @@ branch_08037c52: \n\
 /* 08037c8c */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 08037c8e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08037c90 */ MOVS R2, 0x63 @ Set R2 to 0x63 \n\
-/* 08037c92 */ BL func_080087d4 \n\
+/* 08037c92 */ BL clamp_int32 \n\
 /* 08037c96 */ LDR R1, [R4] \n\
 /* 08037c98 */ STRH R0, [R1, 0x18] \n\
 /* 08037c9a */ LDR R0, =s_f_quiz_hit_com_seqData \n\

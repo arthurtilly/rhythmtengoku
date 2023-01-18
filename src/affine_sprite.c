@@ -4,7 +4,7 @@
 #include "memory_heap.h"
 #include "code_08007468.h"
 #include "code_0800b778.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 
 
 // [func_0800f904] AFFINE SPRITE - Update

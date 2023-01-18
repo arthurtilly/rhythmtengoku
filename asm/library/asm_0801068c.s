@@ -39,7 +39,7 @@ branch_080106c6: \n\
 /* 080106c8 */ ASRS R0, R0, 0x18 \n\
 /* 080106ca */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080106cc */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 080106ce */ BL func_080087d4 \n\
+/* 080106ce */ BL clamp_int32 \n\
 /* 080106d2 */ LSLS R0, R0, 0x18 \n\
 /* 080106d4 */ LDR R3, [R5] \n\
 /* 080106d6 */ LSRS R1, R0, 0x18 \n\

@@ -13,7 +13,7 @@ thumb_func_start func_08042cec \n\
 /* 08042cfa */ LDR R2, =0x270f \n\
 /* 08042cfc */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 08042cfe */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08042d00 */ BL func_080087d4 \n\
+/* 08042d00 */ BL clamp_int32 \n\
 /* 08042d04 */ LDR R2, [R5] \n\
 /* 08042d06 */ LSLS R1, R4, 0x1 \n\
 /* 08042d08 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\

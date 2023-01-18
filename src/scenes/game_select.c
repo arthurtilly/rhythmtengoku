@@ -9,7 +9,7 @@
 #include "src/code_0800b778.h"
 #include "scenes/reading.h"
 #include "scenes/studio.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
@@ -274,7 +274,7 @@ void func_08012fcc(s32 x, s32 y) {
     func_0801332c(x, y, &x2, &y2);
     x2 += 47;
     y2 += 68;
-    func_0804d8f8(D_03005380, notice->perfectBorderSprite, D_089ce0a4[func_080087d4(D_030046a8->data.perfectAttemptsRemaining, 1, 3) - 1], 0, 1, 0, 0);
+    func_0804d8f8(D_03005380, notice->perfectBorderSprite, D_089ce0a4[clamp_int32(D_030046a8->data.perfectAttemptsRemaining, 1, 3) - 1], 0, 1, 0, 0);
     func_0804d5d4(D_03005380, notice->perfectBorderSprite, x2, y2);
     func_0804d770(D_03005380, notice->perfectBorderSprite, TRUE);
 }
@@ -894,7 +894,7 @@ u32 func_080153a8(void) {
             for (i = 0; i < 55; i++) {
                 prevScore = saveData->rhythmGameScores[i];
                 if (prevScore != (u16) -1) {
-                    saveData->rhythmGameScores[i] = func_080087d4(prevScore + scoreIncrement, 0, 1000);
+                    saveData->rhythmGameScores[i] = clamp_int32(prevScore + scoreIncrement, 0, 1000);
                 }
             }
         }

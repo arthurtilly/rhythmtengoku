@@ -76,7 +76,7 @@ branch_080414c4: \n\
 /* 080414ce */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080414d0 */ LSLS R2, R2, 0x1 \n\
 /* 080414d2 */ MOVS R1, 0x40 @ Set R1 to 0x40 \n\
-/* 080414d4 */ BL func_080087d4 \n\
+/* 080414d4 */ BL clamp_int32 \n\
 /* 080414d8 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
  \n\
 branch_080414da: \n\

@@ -618,10 +618,10 @@ extern void func_08027760();
 extern void func_0802777c();
 extern void func_080277a0();
 extern void func_080277b8();
-extern void func_08027ba0();
+extern void drum_lessons_set_dialogue();
 extern void func_08027888();
 extern void func_080278d0();
-extern void func_08027bbc();
+extern void drum_lessons_show_dialogue();
 extern void func_08029cec();
 extern void func_08027bd8();
 extern void func_08027c54();
@@ -631,12 +631,12 @@ extern void func_080281fc();
 
 // [D_089e2e34] Engine Events
 const EngineEvent drum_studio_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080293b0,
+    /* 0x00 */ (EngineEvent) drum_studio_init_script,
     /* 0x01 */ (EngineEvent) func_080295d4,
     /* 0x02 */ (EngineEvent) func_08029178,
     /* 0x03 */ (EngineEvent) drum_studio_event_start_monitor,
     /* 0x04 */ (EngineEvent) drum_studio_event_stop_monitor,
-    /* 0x05 */ (EngineEvent) func_0802992c,
+    /* 0x05 */ (EngineEvent) drum_studio_show_save_options,
     /* 0x06 */ (EngineEvent) func_08029b8c,
     /* 0x07 */ (EngineEvent) func_08027728,
     /* 0x08 */ (EngineEvent) func_08027744,
@@ -644,14 +644,14 @@ const EngineEvent drum_studio_engine_events[] = {
     /* 0x0A */ (EngineEvent) func_0802777c,
     /* 0x0B */ (EngineEvent) func_080277a0,
     /* 0x0C */ (EngineEvent) func_080277b8,
-    /* 0x0D */ (EngineEvent) func_08027ba0,
+    /* 0x0D */ (EngineEvent) drum_lessons_set_dialogue,
     /* 0x0E */ (EngineEvent) func_08027888,
     /* 0x0F */ (EngineEvent) func_080278d0,
-    /* 0x10 */ (EngineEvent) func_08027bbc,
+    /* 0x10 */ (EngineEvent) drum_lessons_show_dialogue,
     /* 0x11 */ (EngineEvent) func_08027f70,
     /* 0x12 */ (EngineEvent) drum_lessons_set_teacher_expression,
     /* 0x13 */ (EngineEvent) func_08029cec,
-    /* 0x14 */ (EngineEvent) func_08028004,
+    /* 0x14 */ (EngineEvent) drum_lessons_get_score,
     /* 0x15 */ (EngineEvent) func_08027bd8,
     /* 0x16 */ (EngineEvent) func_08027c54,
     /* 0x17 */ (EngineEvent) func_08027c90,

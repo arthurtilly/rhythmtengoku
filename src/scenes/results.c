@@ -11,7 +11,7 @@
 #include "src/code_0800b778.h"
 #include "src/code_080102d0.h"
 #include "scenes/game_select.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
@@ -535,7 +535,7 @@ u32 func_08019a80(void) {
     }
 
     for (i = 0; i < totalFailed; i++) {
-        strcpy(textDest, D_089d7b34[func_080087d4(i, 0, 2)]);
+        strcpy(textDest, D_089d7b34[clamp_int32(i, 0, 2)]);
         func_080081a8(textDest, comments[i]);
         anim = func_08019210(textDest, 2, 3);
         sprite = func_0804d160(D_03005380, anim, 0, 0, 0, 0x800, 0, 0, 0);
@@ -772,14 +772,14 @@ u32 func_0801a060(void) {
     u32 result, maxResult;
 
     maxPoints = D_089d7980->maximumPoints;
-    points = func_080087d4(D_089d7980->totalPoints, 0, D_089d7980->maximumPoints);
+    points = clamp_int32(D_089d7980->totalPoints, 0, D_089d7980->maximumPoints);
 
     if (points > 0) {
         maxPenalty = ((points * -15) << 1) / 100; // (awesome: they performed logical shift on a negative value)
         penalty = D_089d7980->totalIrrelevantInputs * -10;
-        points += func_080087d4(penalty, maxPenalty, 0);
+        points += clamp_int32(penalty, maxPenalty, 0);
     }
-    points = func_080087d4(points, 0, maxPoints);
+    points = clamp_int32(points, 0, maxPoints);
 
     result = points * points;
     maxResult = maxPoints * maxPoints;

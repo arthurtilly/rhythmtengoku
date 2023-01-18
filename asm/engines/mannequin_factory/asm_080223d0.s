@@ -92,7 +92,7 @@ branch_0802246a: \n\
 /* 08022478 */ SUBS R0, R0, R3 @ Set R0 to R0 - R3 \n\
 /* 0802247a */ LDR R2, =0x0000270f \n\
 /* 0802247c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0802247e */ BL func_080087d4 \n\
+/* 0802247e */ BL clamp_int32 \n\
 /* 08022482 */ STRH R0, [R6, 0x6] \n\
  \n\
 branch_08022484: \n\

@@ -26,7 +26,7 @@ thumb_func_start func_0803ef64 \n\
 /* 0803ef8c */ MOVS R1, 0x18 @ Set R1 to 0x18 \n\
 /* 0803ef8e */ NEGS R1, R1 @ Set R1 to -R1 \n\
 /* 0803ef90 */ MOVS R2, 0x18 @ Set R2 to 0x18 \n\
-/* 0803ef92 */ BL func_080087d4 \n\
+/* 0803ef92 */ BL clamp_int32 \n\
 /* 0803ef96 */ LDR R2, [R6] \n\
 /* 0803ef98 */ LDR R3, =0x36a \n\
 /* 0803ef9a */ ADDS R4, R2, R3 @ Set R4 to R2 + R3 \n\

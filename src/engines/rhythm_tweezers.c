@@ -4,7 +4,7 @@
 #include "src/code_08007468.h"
 #include "src/text_printer.h"
 #include "src/affine_sprite.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
@@ -311,7 +311,7 @@ void rhythm_tweezers_engine_event_stub(void) {
 
 // [func_0802edc8] Update Mask
 void rhythm_tweezers_update_mask(void) {
-    gRhythmTweezersInfo->maskPosition = func_080087d4(gRhythmTweezersInfo->maskPosition + gRhythmTweezersInfo->maskVelocity, -160, 0);
+    gRhythmTweezersInfo->maskPosition = clamp_int32(gRhythmTweezersInfo->maskPosition + gRhythmTweezersInfo->maskVelocity, -160, 0);
     D_03004b10.BG_OFS[BG_LAYER_0].y = gRhythmTweezersInfo->maskPosition;
 }
 

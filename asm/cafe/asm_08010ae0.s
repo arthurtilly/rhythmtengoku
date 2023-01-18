@@ -45,7 +45,7 @@ branch_08010b22: \n\
 /* 08010b28 */ ASRS R0, R0, 0x18 \n\
 /* 08010b2a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08010b2c */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 08010b2e */ BL func_080087d4 \n\
+/* 08010b2e */ BL clamp_int32 \n\
 /* 08010b32 */ LDR R1, [R5] \n\
 /* 08010b34 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08010b36 */ STRB R0, [R1, 0x1F] \n\

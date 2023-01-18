@@ -2,7 +2,7 @@
 #include "src/code_08007468.h"
 #include "src/code_08003980.h"
 #include "src/memory_heap.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 
 // Can be better split
 
@@ -450,8 +450,8 @@ char *func_080081a8(char *s1, const char *s2) {
 
 #include "asm/code_08007468/asm_080087b4.s"
 
-// [func_080087d4] MATH UTIL - Clamp Signed Integer
-s32 func_080087d4(s32 var, s32 min, s32 max) {
+// [clamp_int32] MATH UTIL - Clamp Signed Integer
+s32 clamp_int32(s32 var, s32 min, s32 max) {
     if (var < min) {
         return min;
     }

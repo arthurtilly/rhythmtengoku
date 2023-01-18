@@ -24,7 +24,7 @@ thumb_func_start func_08026c3c \n\
 /* 08026c66 */ BL __divsi3 \n\
 /* 08026c6a */ SUBS R1, R6, 0x5 @ Set R1 to R6 - 0x5 \n\
 /* 08026c6c */ ADDS R2, R6, 0x5 @ Set R2 to R6 + 0x5 \n\
-/* 08026c6e */ BL func_080087d4 \n\
+/* 08026c6e */ BL clamp_int32 \n\
 /* 08026c72 */ LSLS R0, R0, 0x10 \n\
 /* 08026c74 */ LSRS R0, R0, 0x10 \n\
 /* 08026c76 */ BL set_beatscript_tempo \n\
