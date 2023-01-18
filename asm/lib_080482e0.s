@@ -632,6 +632,8 @@ branch_08048964:
 
 _80489fc: .word D_03005600
 
+// last position cleaned up. this marker is here for future reference
+
 unaligned_thumb_func_start func_08048a00
     orrs r0, r0
     bne func_08048a06
