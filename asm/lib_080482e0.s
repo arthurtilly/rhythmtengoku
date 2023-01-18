@@ -86,7 +86,9 @@ branch_0804834a:
 branch_08048352:
     ldr r1, =func_08048364
     adds r1, #1
-    bx r1 
+    bx r1
+
+.balign 4, 0
 .ltorg
 
 unaligned_thumb_func_start func_08048364
@@ -132,6 +134,8 @@ unaligned_thumb_func_start func_080483a0
     ldr r0, [r0, r1]
     pop {r1}
     bx r0
+
+.balign 4, 0
 .ltorg
 _080483b4: .word D_03005b50
 
@@ -153,7 +157,7 @@ branch_080483be:
     ldr r6, _804874c
     ldr r6, [r6, #0]
     ldr r7, [r1, #4]
-    ldr r0, [r1, #20]
+    ldr r0, [r1, #0x14]
     mov r8, r0
     movs r0, #3
     ldrsb r2, [r1, r0]
@@ -169,14 +173,14 @@ branch_080483be:
     asrs r3, r3, #7
     mov r9, r2
     mov sl, r3
-    ldr r0, [r1, #12]
+    ldr r0, [r1, #0xc]
     mov fp, r0
-    ldr r0, [r1, #24]
-    lsls r0, r0, #10
+    ldr r0, [r1, #0x18]
+    lsls r0, r0, #0xa
     orrs r0, r5
     mov ip, r0
     mov r0, r8
-    ldr r4, [r1, #16]
+    ldr r4, [r1, #0x10]
     subs r4, r4, r0
     movs r0, #3
     bl func_08048744
@@ -187,7 +191,7 @@ branch_080483be:
     orrs r2, r0
     strb r2, [r1, #0]
     mov r0, fp
-    str r0, [r1, #12]
+    str r0, [r1, #0xc]
     pop {r4}
     mov ip, r4
     pop {r4, r5, r6, r7}
@@ -207,29 +211,7 @@ branch_0804843c:
     cmp r0, r8
     bcs branch_08048510
     ldm r6, {r0, r1, r2, r3}
-    add lr, r7, fp, lsr #14
-    ldrsb r4, [lr], #1
-    ldrsb r5, [lr]
-    sub r5, r5, r4
-    and lr, fp, #0x3fc0
-    mul r5, lr, r5
-    add r4, r4, r5, asr #14
-    mla r0, r4, r9, r0
-    mla r1, r4, sl, r1
-    add fp, fp, ip, lsr #10
-    add lr, r7, fp, lsr #14
-    ldrsb r4, [lr], #1
-    ldrsb r5, [lr]
-    sub r5, r5, r4
-    and lr, fp, #0x3fc0
-    mul r5, lr, r5
-    add r4, r4, r5, asr #14
-    mla r2, r4, r9, r2
-    mla r3, r4, sl, r3
-    add fp, fp, ip, lsr #10
-    stmia r6!, {r0, r1, r2, r3}
-    ldm r6, {r0, r1, r2, r3}
-    add lr, r7, fp, lsr #14
+    add lr, r7, fp, lsr #0xe
     ldrsb r4, [lr], #1
     ldrsb r5, [lr]
     sub r5, r5, r4
@@ -245,10 +227,32 @@ branch_0804843c:
     sub r5, r5, r4
     and lr, fp, #0x3fc0
     mul r5, lr, r5
-    add r4, r4, r5, asr #14
+    add r4, r4, r5, asr #0xe
     mla r2, r4, r9, r2
     mla r3, r4, sl, r3
-    add fp, fp, ip, lsr #10
+    add fp, fp, ip, lsr #0xa
+    stmia r6!, {r0, r1, r2, r3}
+    ldm r6, {r0, r1, r2, r3}
+    add lr, r7, fp, lsr #0xe
+    ldrsb r4, [lr], #1
+    ldrsb r5, [lr]
+    sub r5, r5, r4
+    and lr, fp, #0x3fc0
+    mul r5, lr, r5
+    add r4, r4, r5, asr #0xe
+    mla r0, r4, r9, r0
+    mla r1, r4, sl, r1
+    add fp, fp, ip, lsr #0xa
+    add lr, r7, fp, lsr #0xe
+    ldrsb r4, [lr], #1
+    ldrsb r5, [lr]
+    sub r5, r5, r4
+    and lr, fp, #0x3fc0
+    mul r5, lr, r5
+    add r4, r4, r5, asr #0xe
+    mla r2, r4, r9, r2
+    mla r3, r4, sl, r3
+    add fp, fp, ip, lsr #0xa
     stmia r6!, {r0, r1, r2, r3}
     sub ip, ip, #1
     ands r0, ip, #0xff
@@ -263,16 +267,16 @@ branch_08048510:
     mov r3, #4
 branch_08048520:
     ldm r6, {r0, r1}
-    add lr, r7, fp, lsr #14
+    add lr, r7, fp, lsr #0xe
     ldrsb r4, [lr], #1
     ldrsb r5, [lr]
     sub r5, r5, r4
     and lr, fp, #0x3fc0
     mul r5, lr, r5
-    add r4, r4, r5, asr #14
+    add r4, r4, r5, asr #0xe
     mla r0, r4, r9, r0
     mla r1, r4, sl, r1
-    add fp, fp, ip, lsr #10
+    add fp, fp, ip, lsr #0xa
     stmia r6!, {r0, r1}
 branch_08048550:
     cmp fp, r8
@@ -284,26 +288,28 @@ branch_08048550:
     ands r0, ip, #0xff
     bne  branch_0804843c
     mov r0, #1
-    ldr lr, [pc, #68] @ 0x80485c0
+    ldr lr, _80485c0
     bx lr
 branch_0804857c:
     ldm r6, {r0, r1}
-    add lr, r7, fp, lsr #14
+    add lr, r7, fp, lsr #0xe
     ldrsb r4, [lr], #1
     ldrsb r5, [lr]
     sub r5, r5, r4
     and lr, fp, #0x3fc0
     mul r5, lr, r5
-    add r4, r4, r5, asr #14
+    add r4, r4, r5, asr #0xe
     mla r0, r4, r9, r0
     mla r1, r4, sl, r1
-    add fp, fp, ip, lsr #10
+    add fp, fp, ip, lsr #0xa
     stmia r6!, {r0, r1}
     cmp fp, r8
     bcc  branch_0804857c
     mov r0, #0
     ldr lr, _80485c0
     bx lr
+
+.balign 4, 0
 _80485c0: .word 0
 _80485c4: .word 0
 
@@ -315,42 +321,42 @@ branch_080485d0:
     cmp r0, r8
     bcs  branch_0804868c
     ldm r6, {r0, r1, r2, r3}
-    add lr, r7, fp, lsr #14
+    add lr, r7, fp, lsr #0xe
     ldrsb r4, [lr], #1
     ldrsb r5, [lr]
     sub r5, r5, r4
     and lr, fp, #0x3fc0
     mul r5, lr, r5
-    add r4, r4, r5, asr #14
+    add r4, r4, r5, asr #0xe
     mla r0, r4, r9, r0
-    add fp, fp, ip, lsr #10
-    add lr, r7, fp, lsr #14
+    add fp, fp, ip, lsr #0xa
+    add lr, r7, fp, lsr #0xe
     ldrsb r4, [lr], #1
     ldrsb r5, [lr]
     sub r5, r5, r4
     and lr, fp, #0x3fc0
     mul r5, lr, r5
-    add r4, r4, r5, asr #14
+    add r4, r4, r5, asr #0xe
     mla r1, r4, r9, r1
-    add fp, fp, ip, lsr #10
-    add lr, r7, fp, lsr #14
+    add fp, fp, ip, lsr #0xa
+    add lr, r7, fp, lsr #0xe
     ldrsb r4, [lr], #1
     ldrsb r5, [lr]
     sub r5, r5, r4
     and lr, fp, #0x3fc0
     mul r5, lr, r5
-    add r4, r4, r5, asr #14
+    add r4, r4, r5, asr #0xe
     mla r2, r4, r9, r2
-    add fp, fp, ip, lsr #10
-    add lr, r7, fp, lsr #14
+    add fp, fp, ip, lsr #0xa
+    add lr, r7, fp, lsr #0xe
     ldrsb r4, [lr], #1
     ldrsb r5, [lr]
     sub r5, r5, r4
     and lr, fp, #0x3fc0
     mul r5, lr, r5
-    add r4, r4, r5, asr #14
+    add r4, r4, r5, asr #0xe
     mla r3, r4, r9, r3
-    add fp, fp, ip, lsr #10
+    add fp, fp, ip, lsr #0xa
     stmia r6!, {r0, r1, r2, r3}
     sub ip, ip, #1
     ands r0, ip, #0xff
@@ -365,16 +371,16 @@ branch_0804868c:
     mov r3, #4
 branch_0804869c:
     ldr r0, [r6]
-    add lr, r7, fp, lsr #14
+    add lr, r7, fp, lsr #0xe
     ldrsb r4, [lr], #1
     ldrsb r5, [lr]
     sub r5, r5, r4
     and lr, fp, #0x3fc0
     mul r5, lr, r5
-    add r4, r4, r5, asr #14
+    add r4, r4, r5, asr #0xe
     mla r0, r4, r9, r0
     mla r1, r4, sl, r1
-    add fp, fp, ip, lsr #10
+    add fp, fp, ip, lsr #0xa
     str r0, [r6], #4
 branch_080486cc:
     cmp fp, r8
@@ -390,22 +396,24 @@ branch_080486cc:
     bx lr
 branch_080486f8:
     ldr r0, [r6]
-    add lr, r7, fp, lsr #14
+    add lr, r7, fp, lsr #0xe
     ldrsb r4, [lr], #1
     ldrsb r5, [lr]
     sub r5, r5, r4
     and lr, fp, #0x3fc0
     mul r5, lr, r5
-    add r4, r4, r5, asr #14
+    add r4, r4, r5, asr #0xe
     mla r0, r4, r9, r0
     mla r1, r4, sl, r1
-    add fp, fp, ip, lsr #10
+    add fp, fp, ip, lsr #0xa
     str r0, [r6], #4
     cmp fp, r8
     bcc  branch_080486f8
     mov r0, #0
     ldr lr, _804873c
     bx lr
+
+.balign 4, 0
 _804873c: .word 0
 _8048740: .word 0
 
@@ -413,8 +421,8 @@ unaligned_thumb_func_start func_08048744
     ldr r1, _8048754
     adds r1, #1
     bx r1
-    .short 0
 
+.balign 4, 0
 _804874c: .word D_030064b0
 _8048750: .word D_030064ac
 _8048754: .word func_080483a0
@@ -577,6 +585,7 @@ branch_0804880c:
     ldr lr, _8048938
     bx lr
 
+.balign 4, 0
 _8048938: .word 0
 _804893c: .word 0
 _8048940: .word 0
@@ -630,16 +639,14 @@ branch_08048964:
     str r3, [r0], #4
     bx lr
 
+.balign 4, 0
 _80489fc: .word D_03005600
-
-// last position cleaned up. this marker is here for future reference
 
 unaligned_thumb_func_start func_08048a00
     orrs r0, r0
-    bne func_08048a06
+    bne branch_08048a06
     bx lr
-
-unaligned_thumb_func_start func_08048a06
+branch_08048a06:
     push {r4, r5, r6, r7, lr}
     mov r4, r8
     mov r5, r9
@@ -649,31 +656,31 @@ unaligned_thumb_func_start func_08048a06
     mov r4, ip
     push {r4}
     adds r6, r0, #0
-    ldr r7, [pc, #348] @ (0x8048b78)
+    ldr r7, _8048b78
     ldr r7, [r7, #0]
-    ldr r0, [pc, #348] @ (0x8048b7c)
+    ldr r0, _8048b7c
     ldr r0, [r0, #0]
     lsls r0, r0, #2
-    ldr r1, [pc, #348] @ (0x8048b80)
+    ldr r1, _8048b80
     ldr r1, [r1, #0]
     adds r4, r1, #0
-    ldr r2, [pc, #344] @ (0x8048b84)
+    ldr r2, _8048b84
     ldr r2, [r2, #0]
     adds r5, r2, #0
     adds r1, r1, r0
     adds r2, r2, r0
     mov r8, r1
     mov r9, r2
-    ldr r0, [pc, #336] @ (0x8048b88)
+    ldr r0, _8048b88
     ldr r0, [r0, #0]
     lsls r0, r0, #2
-    ldr r1, [pc, #332] @ (0x8048b8c)
+    ldr r1, _8048b8c
     ldr r1, [r1, #0]
     adds r0, r0, r1
     mov sl, r0
-    ldr r0, [pc, #328] @ (0x8048b90)
+    ldr r0, _8048b90
     mov fp, r0
-    ldr r0, [pc, #328] @ (0x8048b94)
+    ldr r0, _8048b94
     mov ip, r0
     movs r0, #1
     bl func_08048b40
@@ -687,11 +694,10 @@ unaligned_thumb_func_start func_08048a06
     pop {r4, r5, r6, r7}
     pop {r0}
     bx r0
-    .short 0
 
 arm_func_start func_08048a68
-    str r4, [pc, #128] @ 0x8048af0
-    str r5, [pc, #128] @ 0x8048af4
+    str r4, _8048af0
+    str r5, _8048af4
 branch_08048a70:
     ldm r7!, {r0, r1, r2, r3}
     and r0, ip, r0, lsr #7
@@ -713,20 +719,22 @@ branch_08048a70:
     ldrb r1, [fp, r1]
     ldrb r2, [fp, r2]
     ldrb r3, [fp, r3]
-    orr r4, r4, r0, lsl #16
-    orr r4, r4, r2, lsl #24
-    orr r5, r5, r1, lsl #16
-    orr r5, r5, r3, lsl #24
+    orr r4, r4, r0, lsl #0x10
+    orr r4, r4, r2, lsl #0x18
+    orr r5, r5, r1, lsl #0x10
+    orr r5, r5, r3, lsl #0x18
     str r4, [r8], #4
     str r5, [r9], #4
     cmp r8, sl
-    ldrcs r8, [pc, #12] @ 0x8048af0
-    ldrcs r9, [pc, #12] @ 0x8048af4
+    ldrcs r8, _8048af0
+    ldrcs r9, _8048af4
     subs r6, r6, #1
     bne  branch_08048a70
     bx lr
-    .word 0
-    .word 0
+
+.balign 4, 0
+_8048af0: .word 0
+_8048af4: .word 0
 
 arm_func_start func_08048af8
     ldm r7!, {r0, r1, r2, r3}
@@ -739,8 +747,8 @@ arm_func_start func_08048af8
     ldrb r2, [fp, r2]
     ldrb r3, [fp, r3]
     orr r0, r0, r1, lsl #8
-    orr r0, r0, r2, lsl #16
-    orr r0, r0, r3, lsl #24
+    orr r0, r0, r2, lsl #0x10
+    orr r0, r0, r3, lsl #0x18
     str r0, [r8], #4
     cmp r8, sl
     movcs r8, r4
@@ -752,8 +760,8 @@ unaligned_thumb_func_start func_08048b40
     ldr r1, _8048b98
     adds r1, #1
     bx r1
-.short 0
 
+.balign 4, 0
 _8048b48: .word D_030064b0
 _8048b4c: .word D_03005b40
 _8048b50: .word D_0300563c
@@ -791,16 +799,16 @@ branch_08048ba2:
     push {r4}
     adds r5, r0, #0
     lsls r5, r5, #2
-    ldr r6, [pc, #404] @ (0x8048d4c)
+    ldr r6, _8048d4c
     ldr r6, [r6, #0]
     ldr r0, [r1, #4]
-    ldr r7, [r1, #12]
-    lsrs r7, r7, #14
+    ldr r7, [r1, #0xc]
+    lsrs r7, r7, #0xe
     adds r7, r7, r0
-    ldr r3, [r1, #16]
-    lsrs r3, r3, #14
-    ldr r2, [r1, #20]
-    lsrs r2, r2, #14
+    ldr r3, [r1, #0x10]
+    lsrs r3, r3, #0xe
+    ldr r2, [r1, #0x14]
+    lsrs r2, r2, #0xe
     subs r3, r3, r2
     adds r2, r2, r0
     mov sl, r2
@@ -810,7 +818,7 @@ branch_08048ba2:
     movs r0, #2
     ldrsb r3, [r1, r0]
     ldrb r0, [r1, #1]
-    ldr r4, [pc, #368] @ (0x8048d50)
+    ldr r4, _8048d50
     ldrh r4, [r4, #0]
     adds r0, r0, r4
     muls r2, r0
@@ -830,8 +838,8 @@ branch_08048ba2:
     strb r2, [r1, #0]
     ldr r0, [r1, #4]
     subs r7, r7, r0
-    lsls r7, r7, #14
-    str r7, [r1, #12]
+    lsls r7, r7, #0xe
+    str r7, [r1, #0xc]
     pop {r4}
     mov ip, r4
     pop {r4, r5, r6, r7}
@@ -844,7 +852,7 @@ branch_08048ba2:
     bx r0
 
 arm_func_start func_08048c20
-    str lr, [pc, #280] @ 0x8048d40
+    str lr, _8048d40
 branch_08048c24:
     ands r0, r7, #3
     bne  branch_08048cfc
@@ -860,42 +868,42 @@ branch_08048c24:
 branch_08048c50:
     ldr ip, [r7], #4
     ldm r6, {r0, r1, r2, r3}
-    lsl lr, ip, #24
-    asr lr, lr, #24
+    lsl lr, ip, #0x18
+    asr lr, lr, #0x18
     mla r0, r8, lr, r0
     mla r1, r9, lr, r1
-    lsl lr, ip, #16
-    asr lr, lr, #24
+    lsl lr, ip, #0x10
+    asr lr, lr, #0x18
     mla r2, r8, lr, r2
     mla r3, r9, lr, r3
     stmia r6!, {r0, r1, r2, r3}
     ldm r6, {r0, r1, r2, r3}
     lsl lr, ip, #8
-    asr lr, lr, #24
+    asr lr, lr, #0x18
     mla r0, r8, lr, r0
     mla r1, r9, lr, r1
-    asr lr, ip, #24
+    asr lr, ip, #0x18
     mla r2, r8, lr, r2
     mla r3, r9, lr, r3
     stmia r6!, {r0, r1, r2, r3}
 branch_08048ca0:
     ldr ip, [r7], #4
     ldm r6, {r0, r1, r2, r3}
-    lsl lr, ip, #24
-    asr lr, lr, #24
+    lsl lr, ip, #0x18
+    asr lr, lr, #0x18
     mla r0, r8, lr, r0
     mla r1, r9, lr, r1
-    lsl lr, ip, #16
-    asr lr, lr, #24
+    lsl lr, ip, #0x10
+    asr lr, lr, #0x18
     mla r2, r8, lr, r2
     mla r3, r9, lr, r3
     stmia r6!, {r0, r1, r2, r3}
     ldm r6, {r0, r1, r2, r3}
     lsl lr, ip, #8
-    asr lr, lr, #24
+    asr lr, lr, #0x18
     mla r0, r8, lr, r0
     mla r1, r9, lr, r1
-    asr lr, ip, #24
+    asr lr, ip, #0x18
     mla r2, r8, lr, r2
     mla r3, r9, lr, r3
     stmia r6!, {r0, r1, r2, r3}
@@ -921,29 +929,27 @@ branch_08048d2c:
     bne  branch_08048c24
     mov r0, #1
 branch_08048d38:
-    ldr lr, [pc] @ 0x8048d40
+    ldr lr, _8048d40
     bx lr
-    andeq r0, r0, r0
+
+.balign 4, 0
+_8048d40: .word 0
 
 unaligned_thumb_func_start func_08048d44
-    ldr r1, [pc, #12] @ (0x8048d54)
+    ldr r1, _8048d54
     adds r1, #1
     bx r1
 
-    .short 0
-    str r0, [r6, #72] @ 0x48
-    lsls r0, r0, #12
-    str r4, [r5, #72] @ 0x48
-    lsls r0, r0, #12
-    strh r0, [r4, #28]
-    lsrs r4, r0, #32
+.balign 4, 0
+_8048d4c: .word D_030064b0
+_8048d50: .word D_030064ac
+_8048d54: .word func_080483a0
 
 unaligned_thumb_func_start func_08048d58
     orrs r0, r0
-    bne func_08048d5e
+    bne branch_08048d5e
     bx lr
-
-unaligned_thumb_func_start func_08048d5e
+branch_08048d5e:
     push {r4, r5, r6, r7, lr}
     mov r4, r8
     mov r5, r9
@@ -954,17 +960,17 @@ unaligned_thumb_func_start func_08048d5e
     push {r4}
     adds r5, r0, #0
     push {r1}
-    ldr r6, [pc, #576] @ (0x8048fb4)
+    ldr r6, _8048fb4
     ldr r6, [r6, #0]
     ldr r7, [r1, #4]
-    ldr r0, [r1, #20]
+    ldr r0, [r1, #0x14]
     mov r8, r0
     movs r0, #3
     ldrsb r2, [r1, r0]
     movs r0, #2
     ldrsb r3, [r1, r0]
     ldrb r0, [r1, #1]
-    ldr r4, [pc, #560] @ (0x8048fb8)
+    ldr r4, _8048fb8
     ldrh r4, [r4, #0]
     adds r0, r0, r4
     muls r2, r0
@@ -973,14 +979,14 @@ unaligned_thumb_func_start func_08048d5e
     asrs r3, r3, #7
     mov r9, r2
     mov sl, r3
-    ldr r0, [r1, #12]
+    ldr r0, [r1, #0xc]
     mov fp, r0
-    ldr r0, [r1, #24]
-    lsls r0, r0, #10
+    ldr r0, [r1, #0x18]
+    lsls r0, r0, #0xa
     orrs r0, r5
     mov ip, r0
     mov r0, r8
-    ldr r5, [r1, #16]
+    ldr r5, [r1, #0x10]
     subs r5, r5, r0
     movs r0, #4
     bl func_08048fac
@@ -991,7 +997,7 @@ unaligned_thumb_func_start func_08048d5e
     orrs r2, r0
     strb r2, [r1, #0]
     mov r0, fp
-    str r0, [r1, #12]
+    str r0, [r1, #0xc]
     pop {r4}
     mov ip, r4
     pop {r4, r5, r6, r7}
@@ -1008,45 +1014,45 @@ arm_func_start func_08048dd4
     cmp r0, r8
     bcs  branch_08048e54
     ldm r6, {r0, r1, r2, r3}
-    add r4, r7, fp, lsr #14
+    add r4, r7, fp, lsr #0xe
     ldrsb r4, [r4]
     mla r0, r4, r9, r0
     mla r1, r4, sl, r1
-    add fp, fp, ip, lsr #10
-    add r4, r7, fp, lsr #14
+    add fp, fp, ip, lsr #0xa
+    add r4, r7, fp, lsr #0xe
     ldrsb r4, [r4]
     mla r2, r4, r9, r2
     mla r3, r4, sl, r3
-    add fp, fp, ip, lsr #10
+    add fp, fp, ip, lsr #0xa
     stmia r6!, {r0, r1, r2, r3}
     ldm r6, {r0, r1, r2, r3}
-    add r4, r7, fp, lsr #14
+    add r4, r7, fp, lsr #0xe
     ldrsb r4, [r4]
     mla r0, r4, r9, r0
     mla r1, r4, sl, r1
-    add fp, fp, ip, lsr #10
-    add r4, r7, fp, lsr #14
+    add fp, fp, ip, lsr #0xa
+    add r4, r7, fp, lsr #0xe
     ldrsb r4, [r4]
     mla r2, r4, r9, r2
     mla r3, r4, sl, r3
-    add fp, fp, ip, lsr #10
+    add fp, fp, ip, lsr #0xa
     stmia r6!, {r0, r1, r2, r3}
     sub ip, ip, #1
     ands r0, ip, #0xff
-    bne  func_08048dd4
+    bne func_08048dd4
     mov r0, #1
     bx lr
 branch_08048e54:
     cmp r5, #0
-    beq  branch_08048ea4
+    beq branch_08048ea4
     mov r3, #4
 branch_08048e60:
     ldm r6, {r0, r1}
-    add r4, r7, fp, lsr #14
+    add r4, r7, fp, lsr #0xe
     ldrsb r4, [r4]
     mla r0, r4, r9, r0
     mla r1, r4, sl, r1
-    add fp, fp, ip, lsr #10
+    add fp, fp, ip, lsr #0xa
     stmia r6!, {r0, r1}
 branch_08048e7c:
     cmp fp, r8
@@ -1061,11 +1067,11 @@ branch_08048e7c:
     bx lr
 branch_08048ea4:
     ldm r6, {r0, r1}
-    add r4, r7, fp, lsr #14
+    add r4, r7, fp, lsr #0xe
     ldrsb r4, [r4]
     mla r0, r4, r9, r0
     mla r1, r4, sl, r1
-    add fp, fp, ip, lsr #10
+    add fp, fp, ip, lsr #0xa
     stmia r6!, {r0, r1}
     cmp fp, r8
     bcc  branch_08048ea4
@@ -1078,22 +1084,22 @@ branch_08048ed0:
     cmp r0, r8
     bcs  branch_08048f38
     ldm r6, {r0, r1, r2, r3}
-    add r4, r7, fp, lsr #14
+    add r4, r7, fp, lsr #0xe
     ldrsb r4, [r4]
     mla r0, r4, r9, r0
-    add fp, fp, ip, lsr #10
-    add r4, r7, fp, lsr #14
+    add fp, fp, ip, lsr #0xa
+    add r4, r7, fp, lsr #0xe
     ldrsb r4, [r4]
     mla r1, r4, r9, r2
-    add fp, fp, ip, lsr #10
-    add r4, r7, fp, lsr #14
+    add fp, fp, ip, lsr #0xa
+    add r4, r7, fp, lsr #0xe
     ldrsb r4, [r4]
     mla r2, r4, r9, r2
-    add fp, fp, ip, lsr #10
-    add r4, r7, fp, lsr #14
+    add fp, fp, ip, lsr #0xa
+    add r4, r7, fp, lsr #0xe
     ldrsb r4, [r4]
     mla r3, r4, r9, r2
-    add fp, fp, ip, lsr #10
+    add fp, fp, ip, lsr #0xa
     stmia r6!, {r0, r1, r2, r3}
     sub ip, ip, #1
     ands r0, ip, #0xff
@@ -1106,10 +1112,10 @@ branch_08048f38:
     mov r3, #4
 branch_08048f44:
     ldm r6, {r0}
-    add r4, r7, fp, lsr #14
+    add r4, r7, fp, lsr #0xe
     ldrsb r4, [r4]
     mla r0, r4, r9, r0
-    add fp, fp, ip, lsr #10
+    add fp, fp, ip, lsr #0xa
     stmia r6!, {r0}
 branch_08048f5c:
     cmp fp, r8
@@ -1124,10 +1130,10 @@ branch_08048f5c:
     bx lr
 branch_08048f84:
     ldm r6, {r0}
-    add r4, r7, fp, lsr #14
+    add r4, r7, fp, lsr #0xe
     ldrsb r4, [r4]
     mla r0, r4, r9, r0
-    add fp, fp, ip, lsr #10
+    add fp, fp, ip, lsr #0xa
     stmia r6!, {r0}
     cmp fp, r8
     bcc  branch_08048f84
@@ -1135,17 +1141,14 @@ branch_08048f84:
     bx lr
 
 unaligned_thumb_func_start func_08048fac
-    ldr r1, [pc, #12] @ (0x8048fbc)
+    ldr r1, _8048fbc
     adds r1, #1
     bx r1
 
-    .short 0
-    str r0, [r6, #72] @ 0x48
-    lsls r0, r0, #12
-    str r4, [r5, #72] @ 0x48
-    lsls r0, r0, #12
-    strh r0, [r4, #28]
-    lsrs r4, r0, #32
+.balign 4, 0
+_8048fb4: .word D_030064b0
+_8048fb8: .word D_030064ac
+_8048fbc: .word func_080483a0
 
 unaligned_thumb_func_start func_08048fc0
     orrs r0, r0
@@ -1158,7 +1161,7 @@ unaligned_thumb_func_start func_08048fc6
     adds r5, r0, #0
     ldr r2, [r1, #4]
     ldr r3, [r1, #8]
-    ldr r6, [pc, #360] @ (0x804913c)
+    ldr r6, _804913c
     ldr r6, [r6, #0]
     push {r1}
     movs r0, #5
@@ -1258,12 +1261,10 @@ branch_08049094:
     bx lr
 
 unaligned_thumb_func_start func_08049134
-    ldr r1, [pc, #8] @ (0x8049140)
+    ldr r1, _8049140
     adds r1, #1
     bx r1
-    .short 0
-    str r0, [r6, #72] @ 0x48
-    lsls r0, r0, #12
-    strh r0, [r4, #28]
-    lsrs r4, r0, #32
 
+.balign 4, 0
+_804913c: .word D_030064b0
+_8049140: .word func_080483a0
