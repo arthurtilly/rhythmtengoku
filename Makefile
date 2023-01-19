@@ -42,25 +42,27 @@ BUILD		   := build
 SOURCES		   := src
 SCENES         := $(SOURCES)/scenes
 ENGINES        := $(SOURCES)/engines
-PROLOGUES      := $(SOURCES)/engines/prologues
+PROLOGUES      := $(SOURCES)/prologues
+LEVELS         := $(SOURCES)/levels
 ASM            := asm
 INCLUDES	   := include
 TEXT           := text
 ENGINE_TEXT    := $(TEXT)/engines
+LEVEL_TEXT     := $(TEXT)/levels
 DATA		   := data
-SCRIPT_GEN     := $(DATA)/script_gen
 SCENE_DATA     := $(shell find $(DATA)/scenes -type d)
-ENGINE_DATA    := $(DATA)/engines
-PROLOGUE_DATA  := $(DATA)/engines/prologues
-ENGINE_SCRIPTS := $(DATA)/engines/scripts
+ENGINE_DATA    := $(shell find $(DATA)/engines -type d)
+PROLOGUE_DATA  := $(shell find $(DATA)/prologues -type d)
+LEVEL_DATA     := $(DATA)/levels
 BIN		       := bin
 AUDIO		   := audio
 MUSIC		   := $(AUDIO)/sequences
 SFX            := $(AUDIO)/samples
 GRAPHICS       := $(shell find graphics -type d)
-BUILD_DIRS     := $(BUILD) $(BUILD)/$(BIN) $(BUILD)/$(TEXT) $(BUILD)/$(ENGINE_TEXT) $(BUILD)/$(DATA) $(BUILD)/$(SCRIPT_GEN) \
-                  $(foreach dir,$(SCENE_DATA),$(BUILD)/$(dir)) $(BUILD)/$(ENGINE_DATA) $(BUILD)/$(PROLOGUE_DATA) $(BUILD)/$(ENGINE_SCRIPTS) \
-                  $(BUILD)/$(ASM) $(BUILD)/$(SOURCES) $(BUILD)/$(SCENES) $(BUILD)/$(ENGINES) $(BUILD)/$(PROLOGUES) \
+BUILD_DIRS     := $(BUILD) $(BUILD)/$(BIN) $(BUILD)/$(TEXT) $(BUILD)/$(ENGINE_TEXT) $(BUILD)/$(LEVEL_TEXT) \
+                  $(BUILD)/$(DATA) $(foreach dir,$(SCENE_DATA),$(BUILD)/$(dir)) $(foreach dir,$(ENGINE_DATA),$(BUILD)/$(dir)) \
+                  $(foreach dir,$(PROLOGUE_DATA),$(BUILD)/$(dir)) $(BUILD)/$(LEVEL_DATA) \
+                  $(BUILD)/$(ASM) $(BUILD)/$(SOURCES) $(BUILD)/$(SCENES) $(BUILD)/$(ENGINES) $(BUILD)/$(PROLOGUES) $(BUILD)/$(LEVELS) \
                   $(BUILD)/$(MUSIC) $(BUILD)/$(SFX) $(foreach dir,$(GRAPHICS),$(BUILD)/$(dir))
 LD_SCRIPT      := rt.ld
 UNDEFINED_SYMS := undefined_syms.ld
@@ -104,13 +106,13 @@ UNDEFINED_SYMS := undefined_syms.ld
 
 export OUTPUT	:=	$(BUILD)/$(TARGET)
 
-CFILES		:=	$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.c)) $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.c)) \
-				$(foreach dir,$(TEXT),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINE_TEXT),$(wildcard $(dir)/*.c)) \
-				$(foreach dir,$(DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCENE_DATA),$(wildcard $(dir)/*.c)) \
-				$(foreach dir,$(ENGINE_DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(PROLOGUE_DATA),$(wildcard $(dir)/*.c)) \
-				$(foreach dir,$(ENGINE_SCRIPTS),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCRIPT_GEN),$(wildcard $(dir)/*.c)) \
+CFILES		:=	$(foreach dir,$(AUDIO),$(wildcard $(dir)/*.c)) $(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.c)) \
+				$(foreach dir,$(TEXT),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINE_TEXT),$(wildcard $(dir)/*.c)) $(foreach dir,$(LEVEL_TEXT),$(wildcard $(dir)/*.c)) \
+				$(foreach dir,$(DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCENE_DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(ENGINE_DATA),$(wildcard $(dir)/*.c)) \
+				$(foreach dir,$(PROLOGUE_DATA),$(wildcard $(dir)/*.c)) $(foreach dir,$(LEVEL_DATA),$(wildcard $(dir)/*.c)) \
 				$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.c)) $(foreach dir,$(SCENES),$(wildcard $(dir)/*.c)) \
-				$(foreach dir,$(ENGINES),$(wildcard $(dir)/*.c)) $(foreach dir,$(PROLOGUES),$(wildcard $(dir)/*.c))
+				$(foreach dir,$(ENGINES),$(wildcard $(dir)/*.c)) $(foreach dir,$(PROLOGUES),$(wildcard $(dir)/*.c)) \
+				$(foreach dir,$(LEVELS),$(wildcard $(dir)/*.c))
 
 CPPFILES	:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(SCENES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(PROLOGUES),$(wildcard $(dir)/*.cpp))
 SFILES		:=	$(foreach dir,$(ASM),$(wildcard $(dir)/*.s)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.s))
