@@ -6,15 +6,15 @@
 arm_func_start func_08000a00
     push    {r4, r5, r6, r7, r8, r9, r10, r11, r12, lr}
     mov     r5, #0xff
-    ldr     r12, [pc, #268]  @ 0x8000b1c
-    ldr     r4, [pc, #268]  @ 0x8000b20
+    ldr     r12, _8000b1c
+    ldr     r4, _8000b20
     ldrb    r4, [r4]
     cmp     r4, #0
     beq     branch_08000a30
-    ldr     r1, [pc, #256]  @ 0x8000b24
+    ldr     r1, _8000b24
     ldm     r1, {r0, r6, r7, r8, r9, lr}
     mov     r11, r0
-    str     r11, [pc, #248]  @ 0x8000b28
+    str     r11, _8000b28
     bx      lr
 branch_08000a30:
     cmp     r0, #0
@@ -22,10 +22,10 @@ branch_08000a30:
     mov     r6, r0
     mov     r7, r1
     mov     r9, r2
-    lsr     r8, r3, #16
-    lsl     r11, r3, #16
-    lsr     r11, r11, #14
-    str     r11, [pc, #208]  @ 0x8000b28
+    lsr     r8, r3, #0x10
+    lsl     r11, r3, #0x10
+    lsr     r11, r11, #0xe
+    str     r11, _8000b28
 branch_08000a54:
     str     r6, [r12]
     str     r7, [r12, #4]
@@ -69,17 +69,17 @@ branch_08000ad8:
     blt     branch_08000aec
     bx      lr
 branch_08000aec:
-    ldr     r0, [pc, #52]   @ 0x8000b28
-    ldr     r1, [pc, #44]   @ 0x8000b24
+    ldr     r0, _8000b28
+    ldr     r1, _8000b24
     stm     r1, {r0, r6, r7, r8, r9, lr}
     mov     r1, #1
     b       branch_08000b04
 branch_08000b00:
     mov     r1, #0
 branch_08000b04:
-    ldr     r2, [pc, #20]   @ 0x8000b20
+    ldr     r2, _8000b20
     strb    r1, [r2]
-    ldr     r0, [pc, #20]   @ 0x8000b28
+    ldr     r0, _8000b28
     sub     r0, r0, r11
 branch_08000b14:
     pop     {r4, r5, r6, r7, r8, r9, r10, r11, r12, lr}
@@ -96,77 +96,77 @@ arm_func_start func_08000b2c
     mov     r1, #0
     lsl     r2, r1, #2
     add     r3, r2, r0, lsl #2
-    cmp     r3, r12, lsr #30
+    cmp     r3, r12, lsr #0x1e
     lsl     r0, r0, #1
     mov     r1, r2
     addcc   r0, r0, #1
     addcc   r1, r3, #1
     lsl     r2, r1, #2
     add     r3, r2, r0, lsl #2
-    cmp     r3, r12, lsr #28
+    cmp     r3, r12, lsr #0x1c
     lsl     r0, r0, #1
     mov     r1, r2
     addcc   r0, r0, #1
     addcc   r1, r3, #1
     lsl     r2, r1, #2
     add     r3, r2, r0, lsl #2
-    cmp     r3, r12, lsr #26
+    cmp     r3, r12, lsr #0x1a
     lsl     r0, r0, #1
     mov     r1, r2
     addcc   r0, r0, #1
     addcc   r1, r3, #1
     lsl     r2, r1, #2
     add     r3, r2, r0, lsl #2
-    cmp     r3, r12, lsr #24
+    cmp     r3, r12, lsr #0x18
     lsl     r0, r0, #1
     mov     r1, r2
     addcc   r0, r0, #1
     addcc   r1, r3, #1
     lsl     r2, r1, #2
     add     r3, r2, r0, lsl #2
-    cmp     r3, r12, lsr #22
+    cmp     r3, r12, lsr #0x16
     lsl     r0, r0, #1
     mov     r1, r2
     addcc   r0, r0, #1
     addcc   r1, r3, #1
     lsl     r2, r1, #2
     add     r3, r2, r0, lsl #2
-    cmp     r3, r12, lsr #20
+    cmp     r3, r12, lsr #0x14
     lsl     r0, r0, #1
     mov     r1, r2
     addcc   r0, r0, #1
     addcc   r1, r3, #1
     lsl     r2, r1, #2
     add     r3, r2, r0, lsl #2
-    cmp     r3, r12, lsr #18
+    cmp     r3, r12, lsr #0x12
     lsl     r0, r0, #1
     mov     r1, r2
     addcc   r0, r0, #1
     addcc   r1, r3, #1
     lsl     r2, r1, #2
     add     r3, r2, r0, lsl #2
-    cmp     r3, r12, lsr #16
+    cmp     r3, r12, lsr #0x10
     lsl     r0, r0, #1
     mov     r1, r2
     addcc   r0, r0, #1
     addcc   r1, r3, #1
     lsl     r2, r1, #2
     add     r3, r2, r0, lsl #2
-    cmp     r3, r12, lsr #14
+    cmp     r3, r12, lsr #0xe
     lsl     r0, r0, #1
     mov     r1, r2
     addcc   r0, r0, #1
     addcc   r1, r3, #1
     lsl     r2, r1, #2
     add     r3, r2, r0, lsl #2
-    cmp     r3, r12, lsr #12
+    cmp     r3, r12, lsr #0xc
     lsl     r0, r0, #1
     mov     r1, r2
     addcc   r0, r0, #1
     addcc   r1, r3, #1
     lsl     r2, r1, #2
     add     r3, r2, r0, lsl #2
-    cmp     r3, r12, lsr #10
+    cmp     r3, r12, lsr #0xa
     lsl     r0, r0, #1
     mov     r1, r2
     addcc   r0, r0, #1
@@ -352,13 +352,13 @@ branch_08000f14:
     bcs     branch_08000f4c
     ldrh    r0, [r1], #2
     strh    r0, [r2], #2
-    subs    r3, r3, #65536  @ 0x10000
+    subs    r3, r3, #0x10000
     blt     branch_0800110c
     sub     r8, r8, #8
 branch_08000f30:
     sub     r3, r3, #1
-    tst     r3, #31
-    orreq   r3, r3, #32
+    tst     r3, #0x1f
+    orreq   r3, r3, #0x20
     ldreq   r4, [r6], #4
     cmp     r8, #0
     bge     branch_08000f14
@@ -367,13 +367,13 @@ branch_08000f4c:
     rors    r5, r5, #1
     bcs     branch_08001034
     mov     r9, #4
-    mov     r10, #15
+    mov     r10, #0xf
     ldrh    r11, [r1], #2
 branch_08000f60:
     ldrh    r12, [r1], #2
-    and     r0, r9, r12, ror #30
+    and     r0, r9, r12, ror #0x1e
     and     lr, r10, r11, lsr r0
-    and     r0, r9, r12, ror #31
+    and     r0, r9, r12, ror #0x1f
     and     r0, r10, r11, lsr r0
     orr     lr, lr, r0, lsl #4
     and     r0, r9, ip
@@ -381,7 +381,7 @@ branch_08000f60:
     orr     lr, lr, r0, lsl #8
     and     r0, r9, r12, ror #1
     and     r0, r10, r11, lsr r0
-    orr     lr, lr, r0, lsl #12
+    orr     lr, lr, r0, lsl #0xc
     strh    lr, [r2], #2
     and     r0, r9, r12, ror #2
     and     lr, r10, r11, lsr r0
@@ -393,7 +393,7 @@ branch_08000f60:
     orr     lr, lr, r0, lsl #8
     and     r0, r9, r12, ror #5
     and     r0, r10, r11, lsr r0
-    orr     lr, lr, r0, lsl #12
+    orr     lr, lr, r0, lsl #0xc
     strh    lr, [r2], #2
     and     r0, r9, r12, ror #6
     and     lr, r10, r11, lsr r0
@@ -405,29 +405,29 @@ branch_08000f60:
     orr     lr, lr, r0, lsl #8
     and     r0, r9, r12, ror #9
     and     r0, r10, r11, lsr r0
-    orr     lr, lr, r0, lsl #12
+    orr     lr, lr, r0, lsl #0xc
     strh    lr, [r2], #2
-    and     r0, r9, r12, ror #10
+    and     r0, r9, r12, ror #0xa
     and     lr, r10, r11, lsr r0
-    and     r0, r9, r12, ror #11
+    and     r0, r9, r12, ror #0xb
     and     r0, r10, r11, lsr r0
     orr     lr, lr, r0, lsl #4
-    and     r0, r9, r12, ror #12
+    and     r0, r9, r12, ror #0xc
 branch_0800100c:
     and     r0, r10, r11, lsr r0
     orr     lr, lr, r0, lsl #8
-    and     r0, r9, r12, ror #13
+    and     r0, r9, r12, ror #0xd
     and     r0, r10, r11, lsr r0
-    orr     lr, lr, r0, lsl #12
+    orr     lr, lr, r0, lsl #0xc
     strh    lr, [r2], #2
-    sub     r8, r8, #12
-    subs    r11, r11, #256    @ 0x100
+    sub     r8, r8, #0xc
+    subs    r11, r11, #0x100
     bge     branch_08000f60
     b       branch_080010f0
 branch_08001034:
     stmfd   sp!, {r4}
-    mov     r9, #12
-    mov     r10, #15
+    mov     r9, #0xc
+    mov     r10, #0xf
     ldrh    r11, [r1], #2
     ldrh    r4, [r1], #2
     and     r0, r9, r4, lsr #6
@@ -438,14 +438,14 @@ branch_08001034:
     and     r0, r9, r4, lsr #10
     and     r0, r10, r11, lsr r0
     orr     lr, lr, r0, lsl #8
-    and     r0, r9, r4, lsr #12
+    and     r0, r9, r4, lsr #0xc
     and     r0, r10, r11, lsr r0
-    orr     lr, lr, r0, lsl #12
+    orr     lr, lr, r0, lsl #0xc
     strh    lr, [r2], #2
-    and     r4, r4, #255    @ 0xff
+    and     r4, r4, #0xff
 branch_0800107c:
     ldrh    r12, [r1], #2
-    and     r0, r9, r12, ror #30
+    and     r0, r9, r12, ror #0x1e
     and     lr, r10, r11, lsr r0
     and     r0, r9, ip
     and     r0, r10, r11, lsr r0
@@ -455,30 +455,30 @@ branch_0800107c:
     orr     lr, lr, r0, lsl #8
     and     r0, r9, r12, ror #4
     and     r0, r10, r11, lsr r0
-    orr     lr, lr, r0, lsl #12
+    orr     lr, lr, r0, lsl #0xc
     strh    lr, [r2], #2
     and     r0, r9, r12, ror #6
     and     lr, r10, r11, lsr r0
     and     r0, r9, r12, ror #8
     and     r0, r10, r11, lsr r0
     orr     lr, lr, r0, lsl #4
-    and     r0, r9, r12, ror #10
+    and     r0, r9, r12, ror #0xa
     and     r0, r10, r11, lsr r0
     orr     lr, lr, r0, lsl #8
-    and     r0, r9, r12, ror #12
+    and     r0, r9, r12, ror #0xc
     and     r0, r10, r11, lsr r0
     orr     lr, lr, r0, lsl #12
     strh    lr, [r2], #2
-    sub     r8, r8, #16
+    sub     r8, r8, #0x10
     subs    r4, r4, #1
     bge     branch_0800107c
     ldmfd   sp!, {r4}
 branch_080010f0:
-    subs    r3, r3, #65536  @ 0x10000
+    subs    r3, r3, #0x10000
     blt     branch_0800110c
-    sub     r3, r3, #256    @ 0x100
-    tst     r3, #7936       @ 0x1f00
-    orreq   r3, r3, #8192   @ 0x2000
+    sub     r3, r3, #0x100
+    tst     r3, #0x1f00
+    orreq   r3, r3, #0x2000
     ldreq   r5, [r7], #4
     b       branch_08000f30
 branch_0800110c:
@@ -499,13 +499,13 @@ arm_func_start mem_heap_alloc_block_rom
     mov     r4, #0
     mov     r3, r4
 branch_08001138:
-    add     r3, r3, r4, lsr #16
+    add     r3, r3, r4, lsr #0x10
     cmp     r3, r1
     bcs     branch_08001160
     ldr     r4, [r0, r3, lsl #2]
-    tst     r4, #32768      @ 0x8000
+    tst     r4, #0x8000
     bne     branch_08001138
-    cmp     r2, r4, lsr #16
+    cmp     r2, r4, lsr #0x10
     bhi     branch_08001138
     mov     r0, r3
     b       branch_08001164
@@ -521,35 +521,35 @@ arm_func_start func_0800116c
     ldr     r9, [r0]
     ldr     r10, [r0, #4]
     ldr     r11, [r0, #8]
-    ldr     r0, [r0, #12]
-    mov     r12, #17
+    ldr     r0, [r0, #0xc]
+    mov     r12, #0x11
     orr     r12, r12, r12, lsl #8
-    orr     r12, r12, r12, lsl #16
+    orr     r12, r12, r12, lsl #0x10
     cmp     r0, #2
-    addlt   r9, r9, #16
+    addlt   r9, r9, #0x10
     blt     branch_080011ac
     ldm     r9, {r5, r6, r7, r8}
     bl      branch_080011f4
     bl      branch_080011f4
     stm     r9, {r5, r6, r7, r8}
-    sub     r9, r9, #48     @ 0x30
+    sub     r9, r9, #0x30
 branch_080011ac:
     ldm     r9, {r5, r6, r7, r8}
     bl      branch_080011f4
     bl      branch_080011f4
     stm     r9, {r5, r6, r7, r8}
-    sub     r9, r9, #48     @ 0x30
-    add     r9, r9, #992    @ 0x3e0
+    sub     r9, r9, #0x30
+    add     r9, r9, #0x3e0
     ldm     r9, {r5, r6, r7, r8}
     bl      branch_080011f4
     bl      branch_080011f4
     stm     r9, {r5, r6, r7, r8}
-    sub     r9, r9, #48     @ 0x30
+    sub     r9, r9, #0x30
     ldm     r9, {r5, r6, r7, r8}
     bl      branch_080011f4
     bl      branch_080011f4
     stm     r9, {r5, r6, r7, r8}
-    sub     r9, r9, #48     @ 0x30
+    sub     r9, r9, #0x30
     pop     {r4, r5, r6, r7, r8, r9, r10, r11, r12, lr}
     bx      lr
 branch_080011f4:
@@ -563,14 +563,14 @@ branch_080011f4:
     orr     r7, r7, r3, lsl fp
     orr     r8, r8, r4, lsl fp
     stm     r9, {r5, r6, r7, r8}
-    add     r9, r9, #32
-    rsb     r11, r11, #32
+    add     r9, r9, #0x20
+    rsb     r11, r11, #0x20
     ldm     r9, {r5, r6, r7, r8}
     orr     r5, r5, r1, lsr fp
     orr     r6, r6, r2, lsr fp
     orr     r7, r7, r3, lsr fp
     orr     r8, r8, r4, lsr fp
-    rsb     r11, r11, #32
+    rsb     r11, r11, #0x20
     bx      lr
 glabel func_0800116c_end
 
@@ -579,8 +579,8 @@ arm_func_start func_08001240
     ldr     r3, [r0]
     ldr     r4, [r0, #4]
     ldr     r5, [r0, #8]
-    ldr     r6, [r0, #12]
-    ldr     r7, [r0, #16]
+    ldr     r6, [r0, #0xc]
+    ldr     r7, [r0, #0x10]
     mov     r10, #31
 branch_0800125c:
     ldrh    r8, [r3], #2
@@ -596,12 +596,12 @@ branch_0800125c:
     mul     r1, r7, r1
     add     r0, r0, r1, asr #8
     add     r2, r2, r0, lsl #5
-    and     r0, r10, r8, lsr #10
-    and     r1, r10, r9, lsr #10
+    and     r0, r10, r8, lsr #0xa
+    and     r1, r10, r9, lsr #0xa
     sub     r1, r1, r0
     mul     r1, r7, r1
     add     r0, r0, r1, asr #8
-    add     r2, r2, r0, lsl #10
+    add     r2, r2, r0, lsl #0xa
     strh    r2, [r5], #2
     subs    r6, r6, #1
     bne     branch_0800125c
@@ -614,11 +614,11 @@ arm_func_start func_080012bc
     ldr     r2, [r0]
     ldr     r4, [r0, #4]
     ldr     r5, [r0, #8]
-    ldr     r6, [r0, #12]
-    ldr     r7, [r0, #16]
-    mov     r10, #31
+    ldr     r6, [r0, #0xc]
+    ldr     r7, [r0, #0x10]
+    mov     r10, #0x1f
     and     r3, r10, r2, lsr #5
-    and     r8, r10, r2, lsr #10
+    and     r8, r10, r2, lsr #0xa
     and     r2, r10, r2
 branch_080012e4:
     ldrh    r9, [r4], #2
@@ -631,11 +631,11 @@ branch_080012e4:
     mul     r0, r7, r0
     add     r0, r3, r0, asr #8
     add     r1, r1, r0, lsl #5
-    and     r0, r10, r9, lsr #10
+    and     r0, r10, r9, lsr #0xa
     sub     r0, r0, r8
     mul     r0, r7, r0
     add     r0, r8, r0, asr #8
-    add     r1, r1, r0, lsl #10
+    add     r1, r1, r0, lsl #0xa
     strh    r1, [r5], #2
     subs    r6, r6, #1
     bne     branch_080012e4
