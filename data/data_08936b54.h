@@ -61,14 +61,14 @@ struct unk_struct_08006ca4;
 
 // Indefinite linear movement
 struct unk_struct_080074ec_init {
-    s16 id;
+    s16 sprite;
     s16 startX;
     s16 startY;
     s8_8 xVel;
     s8_8 yVel;
 };
 struct unk_struct_080074ec {
-    s16 id;
+    s16 sprite;
     s8_8 xVel;
     s8_8 yVel;
     s24_8 xPos;
@@ -136,7 +136,7 @@ struct unk_struct_08007788 {
 
 // Sinusoidal
 struct unk_struct_080078ec_init {
-    s16 id;
+    s16 sprite;
     u8 angle;
     s16 baseX;
     s16 baseY;
@@ -147,7 +147,7 @@ struct unk_struct_080078ec_init {
     u16 totalFrames;
 };
 struct unk_struct_080078ec {
-    s16 id;
+    s16 sprite;
     u16 baseXPos;
     u16 baseYPos;
     s16 baseOffset;
@@ -159,9 +159,9 @@ struct unk_struct_080078ec {
     u8 angle;
 };
 
-// Unknown
+// Sinusoidal Velocity along a Line
 struct unk_struct_080079bc_init {
-    s16 id;
+    s16 sprite;
     s16 startX;
     s16 startY;
     s16 destX;
@@ -171,7 +171,7 @@ struct unk_struct_080079bc_init {
     u16 totalFrames;
 };
 struct unk_struct_080079bc {
-    s16 id;
+    s16 sprite;
     u16 startXPos;
     u16 startYPos;
     s16 dx;
@@ -221,8 +221,13 @@ struct unk_struct_08007d88;
 struct unk_struct_08007e7c_init;
 struct unk_struct_08007e7c;
 
-struct unk_struct_08007f58_init;
-struct unk_struct_08007f58;
+// LCD Special Effect (Blend) Controls Interpolator
+struct BlendControlsInterpolator {
+    u16 blendControls;
+    u16 duration;
+    u16 runningTime;
+    u16 flip;
+};
 
 struct unk_struct_08008420_init;
 struct unk_struct_08008420;

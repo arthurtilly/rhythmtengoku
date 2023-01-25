@@ -138,7 +138,7 @@ branch_0800688e: \n\
 /* 080068b0 */ LDR R1, =func_0800679c \n\
 /* 080068b2 */ ADDS R2, R7, 0x0 @ Set R2 to R7 + 0x0 \n\
 /* 080068b4 */ ADDS R2, 0x1E @ Add 0x1E to R2 \n\
-/* 080068b6 */ BL task_run_after \n\
+/* 080068b6 */ BL run_func_after_task \n\
 /* 080068ba */ LDRH R0, [R7, 0x1E] \n\
 /* 080068bc */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 080068be */ STRH R0, [R7, 0x1E] \n\

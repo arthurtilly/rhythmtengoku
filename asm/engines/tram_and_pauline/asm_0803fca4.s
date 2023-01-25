@@ -21,7 +21,7 @@ thumb_func_start tram_pauline_init_gfx2 \n\
 /* 0803fcc6 */ BL func_08002ee0 \n\
 /* 0803fcca */ LDR R1, =tram_pauline_init_gfx3 \n\
 /* 0803fccc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803fcce */ BL task_run_after \n\
+/* 0803fcce */ BL run_func_after_task \n\
 /* 0803fcd2 */ POP {R0} \n\
 /* 0803fcd4 */ BX R0 \n\
 \n\

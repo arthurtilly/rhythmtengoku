@@ -25,9 +25,27 @@ enum SoundPlayersEnum {
     SFX_PLAYER_7,
     SFX_PLAYER_8,
     SFX_PLAYER_9,
+    DEFAULT_SOUND_PLAYER = 0xFF
 };
 
-#define DEFAULT_SOUND_PLAYER 0xff
+enum MidiTracksEnum {
+    MIDI_TRACK_0,
+    MIDI_TRACK_1,
+    MIDI_TRACK_2,
+    MIDI_TRACK_3,
+    MIDI_TRACK_4,
+    MIDI_TRACK_5,
+    MIDI_TRACK_6,
+    MIDI_TRACK_7,
+    MIDI_TRACK_8,
+    MIDI_TRACK_9,
+    MIDI_TRACK_10,
+    MIDI_TRACK_11,
+    MIDI_TRACK_12,
+    MIDI_TRACK_13,
+    MIDI_TRACK_14,
+    MIDI_TRACK_15
+};
 
 enum DirectSoundModesEnum {
     DIRECTSOUND_MODE_STEREO,

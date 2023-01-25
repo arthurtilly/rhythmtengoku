@@ -76,13 +76,13 @@ void set_beatscript_subscenes(const struct SubScene **subScenes) {
         D_030053c0.threads[i].current = subScenes[i]->script;
         D_030053c0.threads[i].timeUntilNext = 0;
         D_030053c0.threads[i].stackCounter = 0;
-        D_03005588 = &D_030053c0.unk160[i];
+        D_03005588 = &D_030053c0.localVariables[i];
         D_0300558c = D_030053c0.threads[i].sprites;
         if ((D_030053c0.memID == 1) && (i == 1)) {
             D_030053c0.threads[1].startDelay = 2;
         } else {
             if (subScenes[i]->initFunc != NULL) {
-                subScenes[i]->initFunc(&D_030053c0.unk160[i], subScenes[i]->initParam);
+                subScenes[i]->initFunc(&D_030053c0.localVariables[i], subScenes[i]->initParam);
             }
             D_030053c0.threads[i].startDelay = 0;
         }
@@ -101,11 +101,11 @@ void update_paused_beatscript_scene(void) {
 
         if (D_030053c0.threads[i].active) {
             if (D_030053c0.threads[i].startDelay == 0) {
-                D_03005588 = &D_030053c0.unk160[i];
+                D_03005588 = &D_030053c0.localVariables[i];
                 D_0300558c = D_030053c0.threads[i].sprites;
                 subScene = D_030053c0.threads[i].subScene;
                 if (subScene->unkFunc != NULL) {
-                    subScene->unkFunc(&D_030053c0.unk160[i], subScene->unkParam);
+                    subScene->unkFunc(&D_030053c0.localVariables[i], subScene->unkParam);
                 }
             }
         }
@@ -141,7 +141,7 @@ void update_active_beatscript_scene(void) {
         i2 = i + 1;
 
         if (thread->active) {
-            D_03005588 = &D_030053c0.unk160[i];
+            D_03005588 = &D_030053c0.localVariables[i];
             D_0300558c = D_030053c0.threads[i].sprites;
             while (thread->active && (thread->timeUntilNext < D_030053c0.deltaTime) && !D_030053c0.paused) {
                 func_0800cb28(i);
@@ -154,13 +154,13 @@ void update_active_beatscript_scene(void) {
                     if (thread->startDelay == 0) {
                         subSceneFunc = subScene->initFunc;
                         if (subSceneFunc != NULL) {
-                            subSceneFunc(&D_030053c0.unk160[i], subScene->initParam);
+                            subSceneFunc(&D_030053c0.localVariables[i], subScene->initParam);
                         }
                     }
                 } else {
                     subSceneFunc = subScene->loopFunc;
                     if (subSceneFunc != NULL) {
-                        subSceneFunc(&D_030053c0.unk160[i], subScene->loopParam);
+                        subSceneFunc(&D_030053c0.localVariables[i], subScene->loopParam);
                     }
                 }
             }
@@ -168,7 +168,7 @@ void update_active_beatscript_scene(void) {
             if (!thread->active) {
                 subSceneFunc = subScene->endFunc;
                 if (subSceneFunc != NULL) {
-                    subSceneFunc(&D_030053c0.unk160[i], subScene->endParam);
+                    subSceneFunc(&D_030053c0.localVariables[i], subScene->endParam);
                 }
                 if (!thread->unk0_b7) {
                     func_0804e0c4(D_03005380, i2);
@@ -294,10 +294,10 @@ void stop_beatscript_scene(void) {
         i2 = i + 1;
 
         if (thread->active) {
-            D_03005588 = &D_030053c0.unk160[i];
+            D_03005588 = &D_030053c0.localVariables[i];
             D_0300558c = D_030053c0.threads[i].sprites;
             if (subScene->endFunc != NULL) {
-                subScene->endFunc(&D_030053c0.unk160[i], subScene->endParam);
+                subScene->endFunc(&D_030053c0.localVariables[i], subScene->endParam);
             }
             func_0804e0c4(D_03005380, i2);
             func_0800222c(i2);

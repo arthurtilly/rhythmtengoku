@@ -13,7 +13,7 @@ thumb_func_start tap_trial_init_gfx1 \n\
 /* 0803dd6a */ BL func_080087b4 \n\
 /* 0803dd6e */ LDR R1, =tap_trial_init_gfx2 \n\
 /* 0803dd70 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803dd72 */ BL task_run_after \n\
+/* 0803dd72 */ BL run_func_after_task \n\
 /* 0803dd76 */ POP {R0} \n\
 /* 0803dd78 */ BX R0 \n\
 \n\

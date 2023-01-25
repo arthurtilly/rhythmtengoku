@@ -634,7 +634,7 @@ s32 func_08002ee0(u16 memID, const struct GraphicsTable *gfxTable, u32 limit) {
 
     inputs.gfxTable = gfxTable;
     inputs.limit = limit;
-    return task_start(memID, &D_089363fc, &inputs, NULL, 0);
+    return start_new_task(memID, &D_089363fc, &inputs, NULL, 0);
 }
 
 

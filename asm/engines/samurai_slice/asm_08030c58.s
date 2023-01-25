@@ -15,7 +15,7 @@ thumb_func_start samurai_slice_init_gfx2 \n\
 /* 08030c6e */ BL func_08002ee0 \n\
 /* 08030c72 */ LDR R1, =samurai_slice_init_gfx3 \n\
 /* 08030c74 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08030c76 */ BL task_run_after \n\
+/* 08030c76 */ BL run_func_after_task \n\
 /* 08030c7a */ POP {R0} \n\
 /* 08030c7c */ BX R0 \n\
 \n\

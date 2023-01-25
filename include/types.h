@@ -72,7 +72,7 @@ struct BeatScriptThread {
 // BeatScript Handler
 // Null = "Data Not Known to be Used YET"
 
-extern struct BeatScriptHandler {
+extern struct BeatScriptScene {
     u32 memID:4;
     u32 bypassLoops:1;
     u32 exitLoopNextUpdate:1;
@@ -96,9 +96,9 @@ extern struct BeatScriptHandler {
     s16 musicPitchSrc1;
     s16 musicPitchSrc2;
     s16 musicPitch;
-    u32 unk24;
+    u32 globalVariable; // [D_030053c0 + 0x24] Global (Main Scene) Variable
     struct BeatScriptThread threads[2];
-    u32 unk160[12];
+    u32 localVariables[12]; // [D_030053c0 + 0x160] Local (Sub-Scene) Variables
     u16 musicVolume; // [D_03005550] BeatScript: Music Volume
     u16 musicTrkVolume; // [D_03005552] BeatScript: Music Channel Selection Volume
     u16 musicTrkTargets; // [D_03005554] BeatScript: Music Channel Selection
@@ -117,5 +117,5 @@ extern struct BeatScriptHandler {
     u32 unk1C4;
 } D_030053c0;
 
-extern u32 *D_03005588;
-extern s16 *D_0300558c; // Scene Sprite List..? (not used by Rhythm Tengoku)
+extern u32 *D_03005588; // Local Scene Variable
+extern s16 *D_0300558c; // Global Scene Sprite Pool

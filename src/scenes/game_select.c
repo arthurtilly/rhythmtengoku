@@ -408,7 +408,7 @@ void func_08013570(void) {
 
     func_0800c604(0);
     task = func_080087b4(get_current_mem_id(), D_089cf9a8);
-    task_run_after(task, func_08013530, 0);
+    run_func_after_task(task, func_08013530, 0);
 }
 
 
@@ -418,7 +418,7 @@ void func_0801359c(void) {
 
     func_0800c604(0);
     task = func_08002ee0(get_current_mem_id(), D_089cf948, 0x3000);
-    task_run_after(task, func_08013570, 0);
+    run_func_after_task(task, func_08013570, 0);
 }
 
 

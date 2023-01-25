@@ -15,7 +15,7 @@ thumb_func_start concert_hall_init_gfx2 \n\
 /* 08036c12 */ BL func_08002ee0 \n\
 /* 08036c16 */ LDR R1, =concert_hall_init_gfx3 \n\
 /* 08036c18 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08036c1a */ BL task_run_after \n\
+/* 08036c1a */ BL run_func_after_task \n\
 /* 08036c1e */ POP {R0} \n\
 /* 08036c20 */ BX R0 \n\
 \n\

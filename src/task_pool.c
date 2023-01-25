@@ -99,7 +99,7 @@ void task_pool_update_constant(void) {
 
 
 // Create New Task
-s32 task_start(u16 memID, const struct TaskMethods *methods, void *inputs, TaskFinalFunc onFinish, u32 onFinishArg) {
+s32 start_new_task(u16 memID, const struct TaskMethods *methods, void *inputs, TaskFinalFunc onFinish, u32 onFinishArg) {
     struct Task *task;
     void *info;
     u32 i;
@@ -136,7 +136,7 @@ s32 task_start(u16 memID, const struct TaskMethods *methods, void *inputs, TaskF
 
 
 // Close Task by Pool ID (consider complete)
-void task_forced_stop(s32 poolID) {
+void force_stop_task(s32 poolID) {
     struct Task *task;
     u32 i;
 
@@ -154,7 +154,7 @@ void task_forced_stop(s32 poolID) {
 
 
 // Close Task by Pool ID (consider incomplete)
-void task_forced_cancel(s32 poolID) {
+void force_cancel_task(s32 poolID) {
     struct Task *task;
     u32 i;
 
@@ -172,7 +172,7 @@ void task_forced_cancel(s32 poolID) {
 
 
 // Get Task Static Data
-void *task_get_info(s32 poolID) {
+void *get_task_info(s32 poolID) {
     struct Task *task;
     u32 i;
 
@@ -204,7 +204,7 @@ void task_pool_cancel_all(void) {
 
 
 // Pause Task by Pool ID
-void task_pause(s32 poolID, u32 pause) {
+void pause_task(s32 poolID, u32 pause) {
     struct Task *task;
     u32 i;
 
@@ -226,7 +226,7 @@ void task_pool_pause(u32 pause) {
 
 
 // Get Task Paused State by Pool ID
-u32 task_get_state(s32 poolID) {
+u32 get_task_state(s32 poolID) {
     struct Task *task;
     u32 i;
 
@@ -247,7 +247,7 @@ u32 task_get_state(s32 poolID) {
 
 
 // Set Task onFinish Function by Pool ID
-void task_run_after(s32 poolID, TaskFinalFunc onFinish, s32 onFinishArg) {
+void run_func_after_task(s32 poolID, TaskFinalFunc onFinish, s32 onFinishArg) {
     struct Task *task;
     u32 i;
 
@@ -264,7 +264,7 @@ void task_run_after(s32 poolID, TaskFinalFunc onFinish, s32 onFinishArg) {
 
 
 // Set Task Delay Duration by Pool ID
-void task_delay(s32 poolID, u16 startDelay) {
+void delay_task(s32 poolID, u16 startDelay) {
     struct Task *task;
     u32 i;
 

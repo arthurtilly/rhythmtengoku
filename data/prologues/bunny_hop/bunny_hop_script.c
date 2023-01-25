@@ -1,5 +1,5 @@
 #include "prologues/bunny_hop.h"
-#include "beatscript_notation.h"
+#include "bs_ext.h"
 
 
   /* PROLOGUE (BUNNY HOP) - SCRIPT DATA */
@@ -72,35 +72,35 @@ const struct GameEngine D_089ecbb0 = {
 
 // [D_089ecbd0] Prologue (Bunny Hop) BeatScript - Main
 const struct BeatScript D_089ecbd0[] = {
-    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x8),
-    BSC4_LOAD_GAME_ENGINE(&D_089ecbb0, 0),
-    BSC_RUN_FUNC_1(stop_all_soundplayers, 0),
-    BSC_RUN_FUNC_1(func_08046f0c, 0),
-    BSC_PLAY_SOUND(&s_jingle_rat_seqData),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_RUN_FUNC_1(func_08046f30, 0),
-    BSC_RUN_FUNC_1(func_08046f0c, 1),
-    BSC_REST(0x06),
-    BSC_RUN_FUNC_1(func_08046f0c, 2),
-    BSC_REST(0x06),
-    BSC_RUN_FUNC_1(func_08046f0c, 3),
-    BSC_REST(0x06),
-    BSC_RUN_FUNC_1(func_08046f0c, 4),
-    BSC_REST(0x06),
-    BSC_RUN_FUNC_1(func_08046f0c, 5),
-    BSC_REST(0x06),
-    BSC_RUN_FUNC_1(func_08046f0c, 6),
-    BSC_REST(0x06),
-    BSC_REST(0x06),
-    BSC_REST(0x0C),
-    BSC_REST(0x06),
-    BSC_REST(0x06),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_REST(0x0C),
-    BSC_RUN_FUNC_1(func_08006d80, 0),
-    BSC_REST(0x18),
-    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x10),
-    BSC_RETURN
+    BS_RIQ_FADE_SCREEN_IN(0x08),
+    BS_RIQ_LOAD_GAME_ENGINE(&D_089ecbb0, 0),
+    BS_RUN1(stop_all_soundplayers, 0),
+    BS_RUN1(func_08046f0c, 0),
+    BS_PLAY_SOUND(&s_jingle_rat_seqData),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_RUN1(func_08046f30, 0),
+    BS_RUN1(func_08046f0c, 1),
+    BS_REST(0x06),
+    BS_RUN1(func_08046f0c, 2),
+    BS_REST(0x06),
+    BS_RUN1(func_08046f0c, 3),
+    BS_REST(0x06),
+    BS_RUN1(func_08046f0c, 4),
+    BS_REST(0x06),
+    BS_RUN1(func_08046f0c, 5),
+    BS_REST(0x06),
+    BS_RUN1(func_08046f0c, 6),
+    BS_REST(0x06),
+    BS_REST(0x06),
+    BS_REST(0x0C),
+    BS_REST(0x06),
+    BS_REST(0x06),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_REST(0x0C),
+    BS_RUN1(func_08006d80, 0),
+    BS_REST(0x18),
+    BS_RIQ_FADE_SCREEN_IN(0x10),
+    BS_RETURN
 };

@@ -1,5 +1,5 @@
 #include "prologues/remix2.h"
-#include "beatscript_notation.h"
+#include "bs_ext.h"
 
 
   /* PROLOGUE (REMIX 2) - SCRIPT DATA */
@@ -72,33 +72,33 @@ const struct GameEngine D_089ebec8 = {
 
 // [D_089ebee8] Prologue (Remix 2) BeatScript - Main
 const struct BeatScript D_089ebee8[] = {
-    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x8),
-    BSC4_LOAD_GAME_ENGINE(&D_089ebec8, 0),
-    BSC_RUN_FUNC_1(stop_all_soundplayers, 0),
-    BSC_REST(0x18),
-    BSC_PLAY_SOUND(&s_jingle_remix_seqData),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_RUN_FUNC_1(func_080467fc, 1),
-    BSC_REST(0x02),
-    BSC_RUN_FUNC_1(func_080467fc, 2),
-    BSC_REST(0x02),
-    BSC_RUN_FUNC_1(func_080467fc, 3),
-    BSC_REST(0x02),
-    BSC_RUN_FUNC_1(func_080467fc, 4),
-    BSC_REST(0x02),
-    BSC_RUN_FUNC_1(func_080467fc, 5),
-    BSC_REST(0x02),
-    BSC_RUN_FUNC_1(func_080467fc, 6),
-    BSC_REST(0x06),
-    BSC_REST(0x06),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_REST(0x0C),
-    BSC_PLAY_SOUND(&s_f_scratch_seqData),
-    BSC_REST(0x06),
-    BSC_RUN_FUNC_1(func_08006d80, 0),
-    BSC_REST(0x12),
-    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x10),
-    BSC_RETURN
+    BS_RIQ_FADE_SCREEN_IN(0x08),
+    BS_RIQ_LOAD_GAME_ENGINE(&D_089ebec8, 0),
+    BS_RUN1(stop_all_soundplayers, 0),
+    BS_REST(0x18),
+    BS_PLAY_SOUND(&s_jingle_remix_seqData),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_RUN1(func_080467fc, 1),
+    BS_REST(0x02),
+    BS_RUN1(func_080467fc, 2),
+    BS_REST(0x02),
+    BS_RUN1(func_080467fc, 3),
+    BS_REST(0x02),
+    BS_RUN1(func_080467fc, 4),
+    BS_REST(0x02),
+    BS_RUN1(func_080467fc, 5),
+    BS_REST(0x02),
+    BS_RUN1(func_080467fc, 6),
+    BS_REST(0x06),
+    BS_REST(0x06),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_REST(0x0C),
+    BS_PLAY_SOUND(&s_f_scratch_seqData),
+    BS_REST(0x06),
+    BS_RUN1(func_08006d80, 0),
+    BS_REST(0x12),
+    BS_RIQ_FADE_SCREEN_IN(0x10),
+    BS_RETURN
 };

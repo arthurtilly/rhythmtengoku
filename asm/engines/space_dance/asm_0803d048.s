@@ -21,7 +21,7 @@ thumb_func_start space_dance_init_gfx2 \n\
 /* 0803d06a */ BL func_08002ee0 \n\
 /* 0803d06e */ LDR R1, =space_dance_init_gfx3 \n\
 /* 0803d070 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803d072 */ BL task_run_after \n\
+/* 0803d072 */ BL run_func_after_task \n\
 /* 0803d076 */ POP {R0} \n\
 /* 0803d078 */ BX R0 \n\
 \n\

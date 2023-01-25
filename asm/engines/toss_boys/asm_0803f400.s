@@ -27,11 +27,11 @@ thumb_func_start func_0803f400 \n\
 /* 0803f42a */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0803f42c */ BLT branch_0803f43e \n\
 /* 0803f42e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0803f430 */ BL task_get_state \n\
+/* 0803f430 */ BL get_task_state \n\
 /* 0803f434 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803f436 */ BEQ branch_0803f43e \n\
 /* 0803f438 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0803f43a */ BL task_forced_cancel \n\
+/* 0803f43a */ BL force_cancel_task \n\
  \n\
 branch_0803f43e: \n\
 /* 0803f43e */ LDRH R0, [R7, 0x4] \n\

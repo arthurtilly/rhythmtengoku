@@ -10,7 +10,7 @@ thumb_func_start func_08034e40 \n\
 /* 08034e48 */ LDR R0, [R0, 0x3C] \n\
 /* 08034e4a */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08034e4c */ BLT branch_08034e52 \n\
-/* 08034e4e */ BL task_forced_cancel \n\
+/* 08034e4e */ BL force_cancel_task \n\
  \n\
 branch_08034e52: \n\
 /* 08034e52 */ BL get_current_mem_id \n\

@@ -101,7 +101,7 @@ branch_0802564e: \n\
 /* 080256ae */ BL func_08001fe0 \n\
 /* 080256b2 */ LDR R1, =func_08025538 \n\
 /* 080256b4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080256b6 */ BL task_run_after \n\
+/* 080256b6 */ BL run_func_after_task \n\
  \n\
 branch_080256ba: \n\
 /* 080256ba */ BL func_0802555c \n\

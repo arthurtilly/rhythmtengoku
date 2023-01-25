@@ -29,7 +29,7 @@ thumb_func_start func_0800e25c \n\
 /* 0800e28c */ STR R2, [SP] \n\
 /* 0800e28e */ ADD R2, SP, 0x4 \n\
 /* 0800e290 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800e292 */ BL task_start \n\
+/* 0800e292 */ BL start_new_task \n\
 /* 0800e296 */ ADD SP, 0x10 \n\
 /* 0800e298 */ POP {R3} \n\
 /* 0800e29a */ MOV R8, R3 @ Set R8 to R3 \n\

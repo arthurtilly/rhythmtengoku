@@ -1,5 +1,5 @@
 #include "prologues/bon_odori.h"
-#include "beatscript_notation.h"
+#include "bs_ext.h"
 
 
   /* PROLOGUE (THE BON ODORI) - SCRIPT DATA */
@@ -73,20 +73,20 @@ const struct GameEngine D_089ea434 = {
 
 // [D_089ea454] Prologue (The Bon Odori) BeatScript - Main
 const struct BeatScript D_089ea454[] = {
-    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x8),
-    BSC4_LOAD_GAME_ENGINE(&D_089ea434, 0),
-    BSC_RUN_FUNC_1(stop_all_soundplayers, 0),
-    BSC_REST(0x18),
-    BSC_PLAY_SOUND(&s_jingle_bon_seqData),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_RUN_FUNC_1(func_080453dc, 0),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_RUN_FUNC_1(func_08006d80, 0),
-    BSC_REST(0x18),
-    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x10),
-    BSC_RETURN
+    BS_RIQ_FADE_SCREEN_IN(0x08),
+    BS_RIQ_LOAD_GAME_ENGINE(&D_089ea434, 0),
+    BS_RUN1(stop_all_soundplayers, 0),
+    BS_REST(0x18),
+    BS_PLAY_SOUND(&s_jingle_bon_seqData),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_RUN1(func_080453dc, 0),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_RUN1(func_08006d80, 0),
+    BS_REST(0x18),
+    BS_RIQ_FADE_SCREEN_IN(0x10),
+    BS_RETURN
 };

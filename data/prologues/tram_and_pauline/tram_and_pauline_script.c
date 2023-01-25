@@ -1,5 +1,5 @@
 #include "prologues/tram_and_pauline.h"
-#include "beatscript_notation.h"
+#include "bs_ext.h"
 
 
   /* PROLOGUE (TRAM & PAULINE) - SCRIPT DATA */
@@ -72,21 +72,21 @@ const struct GameEngine D_089edc08 = {
 
 // [D_089edc28] Prologue (Tram & Pauline) BeatScript - Main
 const struct BeatScript D_089edc28[] = {
-    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x8),
-    BSC4_LOAD_GAME_ENGINE(&D_089edc08, 0),
-    BSC_RUN_FUNC_1(stop_all_soundplayers, 0),
-    BSC_PLAY_SOUND(&s_jingle_tap_seqData),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_REST(0x0C),
-    BSC_RUN_FUNC_1(func_08047bdc, 5),
-    BSC_REST(0x0C),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_RUN_FUNC_1(func_08006d80, 0),
-    BSC_REST(0x18),
-    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x10),
-    BSC_RETURN
+    BS_RIQ_FADE_SCREEN_IN(0x08),
+    BS_RIQ_LOAD_GAME_ENGINE(&D_089edc08, 0),
+    BS_RUN1(stop_all_soundplayers, 0),
+    BS_PLAY_SOUND(&s_jingle_tap_seqData),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_REST(0x0C),
+    BS_RUN1(func_08047bdc, 5),
+    BS_REST(0x0C),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_RUN1(func_08006d80, 0),
+    BS_REST(0x18),
+    BS_RIQ_FADE_SCREEN_IN(0x10),
+    BS_RETURN
 };

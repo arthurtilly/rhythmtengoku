@@ -15,7 +15,7 @@ thumb_func_start quiz_init_gfx2 \n\
 /* 0803741a */ BL func_08002ee0 \n\
 /* 0803741e */ LDR R1, =quiz_init_gfx3 \n\
 /* 08037420 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08037422 */ BL task_run_after \n\
+/* 08037422 */ BL run_func_after_task \n\
 /* 08037426 */ POP {R0} \n\
 /* 08037428 */ BX R0 \n\
 \n\

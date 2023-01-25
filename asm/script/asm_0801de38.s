@@ -9,11 +9,11 @@ thumb_func_start func_0801de38 \n\
 /* 0801de3e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801de40 */ BEQ branch_0801de64 \n\
 /* 0801de42 */ LDR R0, [R4, 0x20] \n\
-/* 0801de44 */ BL task_get_state \n\
+/* 0801de44 */ BL get_task_state \n\
 /* 0801de48 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801de4a */ BEQ branch_0801de52 \n\
 /* 0801de4c */ LDR R0, [R4, 0x20] \n\
-/* 0801de4e */ BL task_forced_stop \n\
+/* 0801de4e */ BL force_stop_task \n\
  \n\
 branch_0801de52: \n\
 /* 0801de52 */ LDR R0, [R4] \n\

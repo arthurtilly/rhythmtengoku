@@ -41,7 +41,7 @@ void polyrhythm_init_gfx2(void) {
 
     func_0800c604(0);
     task = func_08002ee0(get_current_mem_id(), polyrhythm_gfx_tables[gPolyrhythmInfo->version], 0x2000);
-    task_run_after(task, polyrhythm_init_gfx3, 0);
+    run_func_after_task(task, polyrhythm_init_gfx3, 0);
 }
 
 
@@ -51,7 +51,7 @@ void polyrhythm_init_gfx1(void) {
 
     func_0800c604(0);
     task = func_080087b4(get_current_mem_id(), polyrhythm_buffered_textures);
-    task_run_after(task, polyrhythm_init_gfx2, 0);
+    run_func_after_task(task, polyrhythm_init_gfx2, 0);
 }
 
 

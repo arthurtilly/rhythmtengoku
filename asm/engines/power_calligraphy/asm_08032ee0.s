@@ -15,7 +15,7 @@ thumb_func_start calligraphy_init_gfx2 \n\
 /* 08032ef6 */ BL func_08002ee0 \n\
 /* 08032efa */ LDR R1, =calligraphy_init_gfx3 \n\
 /* 08032efc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08032efe */ BL task_run_after \n\
+/* 08032efe */ BL run_func_after_task \n\
 /* 08032f02 */ POP {R0} \n\
 /* 08032f04 */ BX R0 \n\
 \n\

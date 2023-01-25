@@ -18,7 +18,7 @@ thumb_func_start func_080159f4 \n\
 /* 08015a0c */ STR R2, [SP] \n\
 /* 08015a0e */ ADD R2, SP, 0x4 \n\
 /* 08015a10 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08015a12 */ BL task_start \n\
+/* 08015a12 */ BL start_new_task \n\
 /* 08015a16 */ ADD SP, 0x14 \n\
 /* 08015a18 */ POP {R4} \n\
 /* 08015a1a */ POP {R1} \n\

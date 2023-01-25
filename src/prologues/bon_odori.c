@@ -26,7 +26,7 @@ void func_08045314(void) {
 
     func_0800c604(0);
     task = func_08002ee0(get_current_mem_id(), prologue_bon_odori_gfx_table, 0x2000);
-    task_run_after(task, func_08045304, 0);
+    run_func_after_task(task, func_08045304, 0);
 }
 
 
@@ -37,7 +37,7 @@ void func_08045344(void) {
     func_0800c604(0);
     func_08006d80();
     task = func_080087b4(get_current_mem_id(), prologue_bon_odori_buffered_textures);
-    task_run_after(task, func_08045314, 0);
+    run_func_after_task(task, func_08045314, 0);
 }
 
 

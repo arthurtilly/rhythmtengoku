@@ -22,7 +22,7 @@ thumb_func_start func_0801dfe8 \n\
 /* 0801e00c */ BL func_08002018 \n\
 /* 0801e010 */ LDR R1, =pause_beatscript_scene \n\
 /* 0801e012 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0801e014 */ BL task_run_after \n\
+/* 0801e014 */ BL run_func_after_task \n\
 /* 0801e018 */ ADD SP, 0x8 \n\
 /* 0801e01a */ POP {R0} \n\
 /* 0801e01c */ BX R0 \n\

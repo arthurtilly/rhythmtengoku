@@ -15,7 +15,7 @@ thumb_func_start horse_machine_init_gfx2 \n\
 /* 08040f26 */ BL func_08002ee0 \n\
 /* 08040f2a */ LDR R1, =horse_machine_init_gfx3 \n\
 /* 08040f2c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08040f2e */ BL task_run_after \n\
+/* 08040f2e */ BL run_func_after_task \n\
 /* 08040f32 */ POP {R0} \n\
 /* 08040f34 */ BX R0 \n\
 \n\

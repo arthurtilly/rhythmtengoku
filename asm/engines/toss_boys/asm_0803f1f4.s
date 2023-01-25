@@ -74,11 +74,11 @@ branch_0803f21a: \n\
 /* 0803f278 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0803f27a */ BLT branch_0803f28c \n\
 /* 0803f27c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0803f27e */ BL task_get_state \n\
+/* 0803f27e */ BL get_task_state \n\
 /* 0803f282 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803f284 */ BEQ branch_0803f28c \n\
 /* 0803f286 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0803f288 */ BL task_forced_cancel \n\
+/* 0803f288 */ BL force_cancel_task \n\
  \n\
 branch_0803f28c: \n\
 /* 0803f28c */ LDR R3, =D_030055d0 \n\

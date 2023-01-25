@@ -13,7 +13,7 @@ thumb_func_start rhythm_test_init_gfx1 \n\
 /* 08033c92 */ BL func_080087b4 \n\
 /* 08033c96 */ LDR R1, =rhythm_test_init_gfx2 \n\
 /* 08033c98 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08033c9a */ BL task_run_after \n\
+/* 08033c9a */ BL run_func_after_task \n\
 /* 08033c9e */ POP {R0} \n\
 /* 08033ca0 */ BX R0 \n\
 \n\

@@ -15,7 +15,7 @@ thumb_func_start metronome_init_gfx2 \n\
 /* 08035442 */ BL func_08002ee0 \n\
 /* 08035446 */ LDR R1, =metronome_init_gfx3 \n\
 /* 08035448 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803544a */ BL task_run_after \n\
+/* 0803544a */ BL run_func_after_task \n\
 /* 0803544e */ POP {R0} \n\
 /* 08035450 */ BX R0 \n\
 \n\

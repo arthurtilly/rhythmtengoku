@@ -88,7 +88,7 @@ void gameplay_init_gfx1(void) {
     u32 data;
 
     data = func_080087b4(0, D_089cfda0);
-    task_run_after(data, pause_beatscript_scene, FALSE);
+    run_func_after_task(data, pause_beatscript_scene, FALSE);
 }
 
 

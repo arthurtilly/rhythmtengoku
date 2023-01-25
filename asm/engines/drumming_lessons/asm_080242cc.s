@@ -13,7 +13,7 @@ thumb_func_start drum_intro_init_gfx1 \n\
 /* 080242de */ BL func_080087b4 \n\
 /* 080242e2 */ LDR R1, =drum_intro_init_gfx2 \n\
 /* 080242e4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080242e6 */ BL task_run_after \n\
+/* 080242e6 */ BL run_func_after_task \n\
 /* 080242ea */ POP {R0} \n\
 /* 080242ec */ BX R0 \n\
 \n\

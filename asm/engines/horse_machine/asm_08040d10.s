@@ -35,7 +35,7 @@ thumb_func_start func_08040d10 \n\
 /* 08040d4c */ BL func_08002018 \n\
 /* 08040d50 */ LDR R1, =func_08040cfc \n\
 /* 08040d52 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08040d54 */ BL task_run_after \n\
+/* 08040d54 */ BL run_func_after_task \n\
 /* 08040d58 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08040d5a */ LDR R0, [R1] \n\
 /* 08040d5c */ ADDS R5, R0, R5 @ Set R5 to R0 + R5 \n\

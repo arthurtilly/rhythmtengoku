@@ -13,7 +13,7 @@ thumb_func_start sick_beats_init_gfx1 \n\
 /* 080433ce */ BL func_080087b4 \n\
 /* 080433d2 */ LDR R1, =sick_beats_init_gfx2 \n\
 /* 080433d4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080433d6 */ BL task_run_after \n\
+/* 080433d6 */ BL run_func_after_task \n\
 /* 080433da */ POP {R0} \n\
 /* 080433dc */ BX R0 \n\
 \n\

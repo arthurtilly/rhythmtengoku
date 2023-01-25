@@ -1,5 +1,5 @@
 #include "prologues/wizards_waltz.h"
-#include "beatscript_notation.h"
+#include "bs_ext.h"
 
 
   /* PROLOGUE (WIZARD'S WALTZ) - SCRIPT DATA */
@@ -72,19 +72,19 @@ const struct GameEngine D_089ede74 = {
 
 // [D_089ede94] Prologue (Wizard's Waltz) BeatScript - Main
 const struct BeatScript D_089ede94[] = {
-    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x8),
-    BSC4_LOAD_GAME_ENGINE(&D_089ede74, 0),
-    BSC_RUN_FUNC_1(stop_all_soundplayers, 0),
-    BSC_PLAY_SOUND(&s_jingle_witch_seqData),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_RUN_FUNC_1(func_08006d80, 0),
-    BSC_REST(0x18),
-    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x10),
-    BSC_RETURN
+    BS_RIQ_FADE_SCREEN_IN(0x08),
+    BS_RIQ_LOAD_GAME_ENGINE(&D_089ede74, 0),
+    BS_RUN1(stop_all_soundplayers, 0),
+    BS_PLAY_SOUND(&s_jingle_witch_seqData),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_RUN1(func_08006d80, 0),
+    BS_REST(0x18),
+    BS_RIQ_FADE_SCREEN_IN(0x10),
+    BS_RETURN
 };

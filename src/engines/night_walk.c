@@ -740,7 +740,7 @@ void night_walk_init_gfx2(void) {
 
     func_0800c604(0);
     task = func_08002ee0(get_current_mem_id(), night_walk_gfx_table, 0x2000);
-    task_run_after(task, night_walk_init_gfx3, 0);
+    run_func_after_task(task, night_walk_init_gfx3, 0);
 }
 
 
@@ -750,7 +750,7 @@ void night_walk_init_gfx1(void) {
 
     func_0800c604(0);
     task = func_080087b4(get_current_mem_id(), night_walk_buffered_textures);
-    task_run_after(task, night_walk_init_gfx2, 0);
+    run_func_after_task(task, night_walk_init_gfx2, 0);
 }
 
 

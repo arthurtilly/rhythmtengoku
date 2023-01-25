@@ -126,7 +126,7 @@ void bon_odori_init_gfx2(void) {
 
     func_0800c604(0);
     task = func_08002ee0(get_current_mem_id(), bon_odori_gfx_tables[gBonOdoriInfo->version], 0x2000);
-    task_run_after(task, bon_odori_init_gfx3, 0);
+    run_func_after_task(task, bon_odori_init_gfx3, 0);
 }
 
 
@@ -136,7 +136,7 @@ void bon_odori_init_gfx1(void) {
 
     func_0800c604(0);
     task = func_080087b4(get_current_mem_id(), bon_odori_buffered_textures);
-    task_run_after(task, bon_odori_init_gfx2, 0);
+    run_func_after_task(task, bon_odori_init_gfx2, 0);
 }
 
 
@@ -298,7 +298,7 @@ void bon_odori_lyrics_start_highlight(u32 duration) {
     D_03004b10.BG_OFS[BG_LAYER_0].y = y;
 
     task = func_0800c4b0(1, beats_to_ticks(duration), &D_03004b10.BG_OFS[BG_LAYER_0].x, initX, targetX);
-    task_run_after(task, bon_odori_lyrics_finish_highlight, gBonOdoriInfo->currentLyric);
+    run_func_after_task(task, bon_odori_lyrics_finish_highlight, gBonOdoriInfo->currentLyric);
 }
 
 

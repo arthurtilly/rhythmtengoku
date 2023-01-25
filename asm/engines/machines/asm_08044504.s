@@ -13,7 +13,7 @@ thumb_func_start rhythm_toy_init_gfx1 \n\
 /* 08044516 */ BL func_080087b4 \n\
 /* 0804451a */ LDR R1, =rhythm_toy_init_gfx2 \n\
 /* 0804451c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0804451e */ BL task_run_after \n\
+/* 0804451e */ BL run_func_after_task \n\
 /* 08044522 */ POP {R0} \n\
 /* 08044524 */ BX R0 \n\
 \n\

@@ -42,7 +42,7 @@ void wizards_waltz_init_gfx2(void) {
 
     func_0800c604(0);
     data = func_08002ee0(get_current_mem_id(), gfx_table_wizards_waltz, 0x2000);
-    task_run_after(data, wizards_waltz_init_gfx3, 0);
+    run_func_after_task(data, wizards_waltz_init_gfx3, 0);
 }
 
 
@@ -52,7 +52,7 @@ void wizards_waltz_init_gfx1(void) {
 
     func_0800c604(0);
     data = func_080087b4(get_current_mem_id(), wizards_waltz_buffered_textures);
-    task_run_after(data, wizards_waltz_init_gfx2, 0);
+    run_func_after_task(data, wizards_waltz_init_gfx2, 0);
 }
 
 

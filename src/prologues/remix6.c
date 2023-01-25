@@ -26,7 +26,7 @@ void func_08046b24(void) {
 
     func_0800c604(0);
     data = func_08002ee0(get_current_mem_id(), prologue_remix6_gfx_table, 0x2000);
-    task_run_after(data, func_08046b14, 0);
+    run_func_after_task(data, func_08046b14, 0);
 }
 
 
@@ -37,7 +37,7 @@ void func_08046b54(void) {
     func_0800c604(0);
     func_08006d80();
     data = func_080087b4(get_current_mem_id(), prologue_remix6_buffered_textures);
-    task_run_after(data, func_08046b24, 0);
+    run_func_after_task(data, func_08046b24, 0);
 }
 
 

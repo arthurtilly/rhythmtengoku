@@ -1415,7 +1415,7 @@ jump_0800d62c: \n\
 /* 0800d66e */ STR R2, [SP] \n\
 /* 0800d670 */ ADD R2, SP, 0xC \n\
 /* 0800d672 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800d674 */ BL task_start \n\
+/* 0800d674 */ BL start_new_task \n\
 /* 0800d678 */ B branch_0800dd68 \n\
 \n\
 .ltorg \n\
@@ -1455,7 +1455,7 @@ jump_0800d688: \n\
 /* 0800d6ca */ STR R2, [SP] \n\
 /* 0800d6cc */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 0800d6ce */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800d6d0 */ BL task_start \n\
+/* 0800d6d0 */ BL start_new_task \n\
 /* 0800d6d4 */ B branch_0800dd68 \n\
 \n\
 .ltorg \n\
@@ -1495,7 +1495,7 @@ jump_0800d6e4: \n\
 /* 0800d726 */ STR R2, [SP] \n\
 /* 0800d728 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 0800d72a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800d72c */ BL task_start \n\
+/* 0800d72c */ BL start_new_task \n\
 /* 0800d730 */ B branch_0800dd68 \n\
 \n\
 .ltorg \n\
@@ -1532,7 +1532,7 @@ jump_0800d740: \n\
 /* 0800d77a */ STR R2, [SP] \n\
 /* 0800d77c */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 0800d77e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800d780 */ BL task_start \n\
+/* 0800d780 */ BL start_new_task \n\
 /* 0800d784 */ B branch_0800dd68 \n\
 \n\
 .ltorg \n\
@@ -2326,7 +2326,7 @@ jump_0800dd70: \n\
 /* 0800dd74 */ LDR R0, [R0] \n\
 /* 0800dd76 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 0800dd78 */ MOV R2, R8 @ Set R2 to R8 \n\
-/* 0800dd7a */ BL task_run_after \n\
+/* 0800dd7a */ BL run_func_after_task \n\
 /* 0800dd7e */ B branch_0800df9e \n\
 \n\
 jump_0800dd80: \n\
@@ -2557,14 +2557,14 @@ jump_0800df52: \n\
 /* 0800df52 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 0800df54 */ BEQ branch_0800df5e \n\
 /* 0800df56 */ LDR R0, [R6] \n\
-/* 0800df58 */ BL task_forced_stop \n\
+/* 0800df58 */ BL force_stop_task \n\
 /* 0800df5c */ B branch_0800df9e \n\
  \n\
 branch_0800df5e: \n\
 /* 0800df5e */ MOV R0, R9 @ Set R0 to R9 \n\
 /* 0800df60 */ ADDS R0, 0x98 @ Add 0x98 to R0 \n\
 /* 0800df62 */ LDR R0, [R0] \n\
-/* 0800df64 */ BL task_forced_stop \n\
+/* 0800df64 */ BL force_stop_task \n\
 /* 0800df68 */ B branch_0800df9e \n\
 \n\
 jump_0800df6a: \n\

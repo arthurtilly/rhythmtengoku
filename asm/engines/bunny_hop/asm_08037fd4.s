@@ -13,7 +13,7 @@ thumb_func_start bunny_hop_init_gfx1 \n\
 /* 08037fe6 */ BL func_080087b4 \n\
 /* 08037fea */ LDR R1, =bunny_hop_init_gfx2 \n\
 /* 08037fec */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08037fee */ BL task_run_after \n\
+/* 08037fee */ BL run_func_after_task \n\
 /* 08037ff2 */ POP {R0} \n\
 /* 08037ff4 */ BX R0 \n\
 \n\

@@ -15,7 +15,7 @@ thumb_func_start mannequin_init_gfx2 \n\
 /* 08022e12 */ BL func_08002ee0 \n\
 /* 08022e16 */ LDR R1, =mannequin_init_gfx3 \n\
 /* 08022e18 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08022e1a */ BL task_run_after \n\
+/* 08022e1a */ BL run_func_after_task \n\
 /* 08022e1e */ POP {R0} \n\
 /* 08022e20 */ BX R0 \n\
 \n\

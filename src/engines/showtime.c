@@ -27,7 +27,7 @@ void showtime_init_gfx2(void) {
 
     func_0800c604(0);
     task = func_08002ee0(get_current_mem_id(), showtime_gfx_tables[gShowtimeInfo->version], 0x2000);
-    task_run_after(task, showtime_init_gfx3, 0);
+    run_func_after_task(task, showtime_init_gfx3, 0);
 }
 
 
@@ -36,7 +36,7 @@ void showtime_init_gfx1(void) {
 
     func_0800c604(0);
     task = func_080087b4(get_current_mem_id(), showtime_buffered_textures);
-    task_run_after(task, showtime_init_gfx2, 0);
+    run_func_after_task(task, showtime_init_gfx2, 0);
 }
 
 

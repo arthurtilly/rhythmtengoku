@@ -160,7 +160,7 @@ void sneaky_spirits_init_gfx2(void) {
 
     func_0800c604(0);
     task = func_08002ee0(get_current_mem_id(), sneaky_spirits_gfx_tables[gSneakySpiritsInfo->version], 0x2000);
-    task_run_after(task, sneaky_spirits_init_gfx3, 0);
+    run_func_after_task(task, sneaky_spirits_init_gfx3, 0);
 }
 
 
@@ -170,7 +170,7 @@ void sneaky_spirits_init_gfx1(void) {
 
     func_0800c604(0);
     data = func_080087b4(get_current_mem_id(), sneaky_spirits_buffered_textures);
-    task_run_after(data, sneaky_spirits_init_gfx2, 0);
+    run_func_after_task(data, sneaky_spirits_init_gfx2, 0);
 }
 
 
@@ -365,7 +365,7 @@ void sneaky_spirits_cue_hit(struct Cue *cue, struct SneakySpiritsCue *info, u32 
     func_0804cebc(D_03005380, gSneakySpiritsInfo->ghostHit, agb_random(totalFrames));
     func_0804d770(D_03005380, gSneakySpiritsInfo->ghostHit, 1);
     task = func_0800e3e4(gSneakySpiritsInfo->ghostHit, 100, 76, targetX, targetY, duration);
-    task_run_after(task, sneaky_spirits_stop_slow_motion, 0);
+    run_func_after_task(task, sneaky_spirits_stop_slow_motion, 0);
 
     func_0804dae0(D_03005380, gSneakySpiritsInfo->door, 1, 0x7f, 0);
     func_0804cebc(D_03005380, gSneakySpiritsInfo->door, 1);

@@ -49,7 +49,7 @@ void func_08012438(void) {
 
     func_0800c604(0);
     task = func_080087b4(get_current_mem_id(), D_089cdc8c);
-    task_run_after(task, pause_beatscript_scene, FALSE);
+    run_func_after_task(task, pause_beatscript_scene, FALSE);
 }
 
 
@@ -59,7 +59,7 @@ void func_08012464(void) {
 
     func_0800c604(0);
     task = func_08002ee0(get_current_mem_id(), D_089cdc44, 0x3000);
-    task_run_after(task, func_08012438, 0);
+    run_func_after_task(task, func_08012438, 0);
 }
 
 

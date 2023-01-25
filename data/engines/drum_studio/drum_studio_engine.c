@@ -1,5 +1,5 @@
 #include "engines/drum_studio.h"
-#include "beatscript_notation.h"
+#include "bs_ext.h"
 
 
   /* DRUM LESSONS - GAME ENGINE DATA */
@@ -300,19 +300,19 @@ const struct GraphicsTable drum_lessons_gfx_table[] = {
 
 // [D_089e2ad4] ?
 const struct BeatScript D_089e2ad4[] = {
-    BSC_MUSIC_FADE_OUT(0x18, TRUE),
-    BSC_FADE_PALETTE_FROM_COLOUR(0x0, TRUE, 0x0C),
-    BSC_REST(0x18),
-    BSC_STOP
+    BS_FADE_MUSIC_OUT(BS_TO_TEMPO, 24),
+    BS_FADE_SCREEN_OUT(0x0C, BS_BLACK),
+    BS_REST(0x18),
+    BS_STOP
 };
 
 // [D_089e2b04] ?
 const struct BeatScript D_089e2b04[] = {
-    BSC4_GAME_ENGINE_EVENT(&D_089e2ea0, 0x01, 0),
-    BSC4_GAME_ENGINE_EVENT(&D_089e2ea0, 0x05, 0),
-    BSC3_SET_TEMPO(140),
-    BSC_REST(0x0C),
-    BSC_BRANCH(D_089e2ad4)
+    BS_RIQ_GAME_EVENT(&D_089e2ea0, 0x01, 0),
+    BS_RIQ_GAME_EVENT(&D_089e2ea0, 0x05, 0),
+    BS_EXT_SET_TEMPO(140),
+    BS_REST(0x0C),
+    BS_GOTO(D_089e2ad4)
 };
 
 // [D_089e2b58] ?

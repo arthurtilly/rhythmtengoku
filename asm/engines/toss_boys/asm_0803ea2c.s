@@ -21,7 +21,7 @@ thumb_func_start toss_boys_init_gfx2 \n\
 /* 0803ea4e */ BL func_08002ee0 \n\
 /* 0803ea52 */ LDR R1, =toss_boys_init_gfx3 \n\
 /* 0803ea54 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803ea56 */ BL task_run_after \n\
+/* 0803ea56 */ BL run_func_after_task \n\
 /* 0803ea5a */ POP {R0} \n\
 /* 0803ea5c */ BX R0 \n\
 \n\

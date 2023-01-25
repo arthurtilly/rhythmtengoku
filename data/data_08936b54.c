@@ -120,6 +120,7 @@ const struct TaskMethods D_08936c44 = {
     NULL,
 };
 
+// Interpolate LCD Special Effects (Blend Controls)
 const struct TaskMethods D_08936c54 = {
     (TaskStartFunc)func_08007f58,
     (TaskUpdateFunc)func_08007fdc,

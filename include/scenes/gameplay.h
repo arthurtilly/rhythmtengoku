@@ -118,7 +118,7 @@ extern void func_08016ffc(s32 unused); // [func_08016ffc] Scene Update Frozen
 extern void gameplay_update_scene(s32 unused); // [func_08017000] Scene Update
 extern u32  gameplay_inputs_are_enabled(void); // [func_0801714c] Check if Play Inputs are Enabled
 extern void gameplay_clear_palette_buffer(Palette buffer); // [func_08017168] Clear Secondary Palette Buffer (loaded to D_03004b10.unk858)
-// extern ? gameplay_set_current_engine(?); // [func_08017188] Load New Engine
+extern void gameplay_set_current_engine(const struct GameEngine *engine, u32 version); // [func_08017188] Load New Engine
 extern void *gameplay_get_engine_info(void); // [func_0801732c] Get Current Game Engine Info
 extern void gameplay_set_input_buttons(u16 press, u16 release); // [func_08017338] Set Input Button Filters
 extern s32  gameplay_run_common_event(s32 param, s32 id); // [func_08017348] Run Engine-Common Event

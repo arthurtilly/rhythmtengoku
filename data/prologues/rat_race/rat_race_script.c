@@ -1,5 +1,5 @@
 #include "prologues/rat_race.h"
-#include "beatscript_notation.h"
+#include "bs_ext.h"
 
 
   /* PROLOGUE (RAT RACE) - SCRIPT DATA */
@@ -72,33 +72,33 @@ const struct GameEngine D_089ed00c = {
 
 // [D_089ed02c] Prologue (Rat Race) BeatScript - Main
 const struct BeatScript D_089ed02c[] = {
-    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x8),
-    BSC4_LOAD_GAME_ENGINE(&D_089ed00c, 0),
-    BSC_RUN_FUNC_1(stop_all_soundplayers, 0),
-    BSC_PLAY_SOUND(&s_jingle_rat_seqData),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_RUN_FUNC_1(func_08047280, 0),
-    BSC_RUN_FUNC_1(func_0804725c, 1),
-    BSC_REST(0x06),
-    BSC_RUN_FUNC_1(func_0804725c, 2),
-    BSC_REST(0x06),
-    BSC_RUN_FUNC_1(func_0804725c, 3),
-    BSC_REST(0x06),
-    BSC_RUN_FUNC_1(func_0804725c, 4),
-    BSC_REST(0x06),
-    BSC_REST(0x06),
-    BSC_REST(0x06),
-    BSC_REST(0x06),
-    BSC_REST(0x0C),
-    BSC_RUN_FUNC_1(func_0804725c, 5),
-    BSC_REST(0x06),
-    BSC_REST(0x06),
-    BSC_REST(0x18),
-    BSC_REST(0x18),
-    BSC_REST(0x0C),
-    BSC_RUN_FUNC_1(func_08006d80, 0),
-    BSC_REST(0x18),
-    BSC_RUN_FUNC_1(gameplay_set_screen_fade_in_time, 0x10),
-    BSC_RETURN
+    BS_RIQ_FADE_SCREEN_IN(0x08),
+    BS_RIQ_LOAD_GAME_ENGINE(&D_089ed00c, 0),
+    BS_RUN1(stop_all_soundplayers, 0),
+    BS_PLAY_SOUND(&s_jingle_rat_seqData),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_RUN1(func_08047280, 0),
+    BS_RUN1(func_0804725c, 1),
+    BS_REST(0x06),
+    BS_RUN1(func_0804725c, 2),
+    BS_REST(0x06),
+    BS_RUN1(func_0804725c, 3),
+    BS_REST(0x06),
+    BS_RUN1(func_0804725c, 4),
+    BS_REST(0x06),
+    BS_REST(0x06),
+    BS_REST(0x06),
+    BS_REST(0x06),
+    BS_REST(0x0C),
+    BS_RUN1(func_0804725c, 5),
+    BS_REST(0x06),
+    BS_REST(0x06),
+    BS_REST(0x18),
+    BS_REST(0x18),
+    BS_REST(0x0C),
+    BS_RUN1(func_08006d80, 0),
+    BS_REST(0x18),
+    BS_RIQ_FADE_SCREEN_IN(0x10),
+    BS_RETURN
 };

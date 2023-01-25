@@ -34,7 +34,7 @@ thumb_func_start func_0800c4b0 \n\
 /* 0800c4ea */ STR R2, [SP] \n\
 /* 0800c4ec */ ADD R2, SP, 0x4 \n\
 /* 0800c4ee */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800c4f0 */ BL task_start \n\
+/* 0800c4f0 */ BL start_new_task \n\
 /* 0800c4f4 */ ADD SP, 0x14 \n\
 /* 0800c4f6 */ POP {R4-R7} \n\
 /* 0800c4f8 */ POP {R1} \n\

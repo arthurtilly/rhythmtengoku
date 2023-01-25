@@ -21,7 +21,7 @@ thumb_func_start rhythm_toy_init_gfx2 \n\
 /* 080444e6 */ BL func_08002ee0 \n\
 /* 080444ea */ LDR R1, =rhythm_toy_init_gfx3 \n\
 /* 080444ec */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080444ee */ BL task_run_after \n\
+/* 080444ee */ BL run_func_after_task \n\
 /* 080444f2 */ POP {R0} \n\
 /* 080444f4 */ BX R0 \n\
 \n\

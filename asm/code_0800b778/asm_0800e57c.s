@@ -91,7 +91,7 @@ branch_0800e604: \n\
 /* 0800e610 */ STR R2, [SP] \n\
 /* 0800e612 */ ADD R2, SP, 0x4 \n\
 /* 0800e614 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800e616 */ BL task_start \n\
+/* 0800e616 */ BL start_new_task \n\
 /* 0800e61a */ ADD SP, 0x14 \n\
 /* 0800e61c */ POP {R4-R7} \n\
 /* 0800e61e */ POP {R1} \n\

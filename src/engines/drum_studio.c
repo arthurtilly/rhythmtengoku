@@ -460,7 +460,7 @@ void drum_studio_start_monitor1(void) {
     gDrumLessonsInfo->bg3VelX = D_089e17a0[id].bg3VelX;
     gDrumLessonsInfo->bg3VelY = D_089e17a0[id].bg3VelY;
     task = func_08002ee0(get_current_mem_id(), D_089e17a0[id].gfxTable, 0x2000);
-    task_run_after(task, drum_studio_start_monitor2, (s32)D_089e17a0[id].palette);
+    run_func_after_task(task, drum_studio_start_monitor2, (s32)D_089e17a0[id].palette);
 }
 
 
@@ -489,7 +489,7 @@ void drum_studio_stop_monitor1(void) {
 
     palette = D_089e17a0[gDrumLessonsInfo->unk3F0].palette;
     task = func_08002050(get_current_mem_id(), 0x20, 4, palette, drum_lessons_bg_screen_pal[0][0], BG_PALETTE_BUFFER(0));
-    task_run_after(task, drum_studio_stop_monitor2, 0);
+    run_func_after_task(task, drum_studio_stop_monitor2, 0);
     gDrumLessonsInfo->unk3F0 = -1;
 }
 
@@ -611,7 +611,7 @@ void drum_studio_init_gfx2(void) {
         gfxTable = drum_lessons_gfx_table;
     }
     task = func_08002ee0(get_current_mem_id(), gfxTable, 0x2000);
-    task_run_after(task, drum_studio_init_gfx3, 0);
+    run_func_after_task(task, drum_studio_init_gfx3, 0);
 
 }
 
@@ -622,7 +622,7 @@ void drum_studio_init_gfx1(void) {
 
     func_0800c604(0);
     task = func_080087b4(get_current_mem_id(), drum_studio_buffered_textures);
-    task_run_after(task, drum_studio_init_gfx2, 0);
+    run_func_after_task(task, drum_studio_init_gfx2, 0);
 }
 
 
