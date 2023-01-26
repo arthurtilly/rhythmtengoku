@@ -236,14 +236,12 @@ SECTIONS {
 		build/src/prologues/sick_beats.c.o(.text);
 		build/src/prologues/wizards_waltz.c.o(.text);
 		build/src/levels/code_08047e50.c.o(.text);
-        build/bin/bindata_080482e0.bin.o(.rodata*); /* More ARM assembly */
         build/asm/lib_080482e0.s.o(.text);
         build/src/lib_08049144.c.o(.text);
         build/asm/libagbsyscall.s.o(.text);
         build/src/lib_0804c870.c.o(.text);
         build/src/lib_0804ca80.c.o(.text);
         build/asm/lib_0804e418.s.o(.text);
-        build/bin/bindata_0804e418.bin.o(.rodata*); /* More ARM assembly */
         build/src/lib_0804e564.c.o(.text);
         build/asm/lib_0804e938.s.o(.text);
         *libgcc.a:_call_via_rX.o(.text);
