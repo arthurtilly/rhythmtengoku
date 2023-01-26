@@ -1,6 +1,7 @@
 #pragma once
 
 #define DPAD_ALL (DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN)
+#define DPAD_ANY DPAD_ALL
 
 
 /* Math Util. */
@@ -16,7 +17,7 @@ extern const s16 D_08935fcc[];
 extern const s16 D_089361cc[];
 
 
-/* Scene Engine */
+/* BeatScript Scene Engine */
 
 
 // A Singular BeatScript Instruction

@@ -4,7 +4,7 @@
 #include "graphics.h"
 #include "sound.h"
 #include "cues.h"
-#include "data/wario_data.h"
+#include "data/beatscript_scene_data.h"
 #include "src/text_printer.h"
 
 /*
@@ -15,7 +15,6 @@
 
 #define END_OF_COMMON_EVENT_LIST (void *) -1
 
-struct GameEngine;
 typedef s32  (*EngineEvent)(s32);
 typedef void (*EngineInitFunc)(u32);
 typedef void (*EngineUpdateFunc)(void);

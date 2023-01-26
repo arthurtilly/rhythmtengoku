@@ -1,8 +1,8 @@
 #include "global.h"
-#include "wario_data.h"
+#include "beatscript_scene_data.h"
 
 
-/* BeatScript Handler Data */
+/* BeatScript Scene Data */
 
 
 // [D_089ccbc0] Blank Animation

@@ -5,7 +5,7 @@
 #include "src/code_08001360.h"
 #include "src/code_080068f8.h"
 #include "src/code_0800b778.h"
-#include "scenes/script.h"
+#include "scenes/riq_main_scene.h"
 #include "scenes/gameplay.h"
 #include "scenes/results.h"
 

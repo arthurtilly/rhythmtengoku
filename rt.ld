@@ -37,7 +37,7 @@ SECTIONS {
 		build/src/scenes/studio.c.o(.bss*);
 		build/src/scenes/title.c.o(.bss*);
 		build/src/scenes/medal_corner.c.o(.bss*);
-		build/src/scenes/script.c.o(.bss*);
+		build/src/scenes/riq_main_scene.c.o(.bss*);
 		build/src/scenes/warning.c.o(.bss*);
 		build/src/scenes/debug.c.o(.bss*);
 		build/src/engines/sneaky_spirits.c.o(.bss*);
@@ -163,7 +163,7 @@ SECTIONS {
 		build/src/scenes/studio.c.o(.text);
 		build/src/scenes/title.c.o(.text);
 		build/src/scenes/medal_corner.c.o(.text);
-        build/src/scenes/script.c.o(.text);
+        build/src/scenes/riq_main_scene.c.o(.text);
         build/src/scenes/warning.c.o(.text);
         build/src/scenes/debug.c.o(.text);
 		build/src/engines/sneaky_spirits.c.o(.text);
@@ -1589,7 +1589,7 @@ SECTIONS {
         build/bin/text_large_glyphs.bin.o(.rodata*);
         build/bin/text_large_glyph_sizes.bin.o(.rodata*);
         build/data/unknown_anim_data.c.o(.rodata*);
-        build/data/wario_data.c.o(.rodata*);
+        build/data/beatscript_scene_data.c.o(.rodata*);
         build/data/sound_tempo_table.c.o(.rodata*);
         build/bin/bindata_089cd1a4.bin.o(.rodata*);
         build/data/scenes/game_select/scene_entries.c.o(.rodata*);

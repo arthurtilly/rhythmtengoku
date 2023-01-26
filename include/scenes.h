@@ -3,7 +3,7 @@
 #include "global.h"
 #include "graphics.h"
 #include "sound.h"
-#include "data/wario_data.h"
+#include "data/beatscript_scene_data.h"
 
 /*
     General "Scene"/"SubScene" header file.

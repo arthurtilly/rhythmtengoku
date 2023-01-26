@@ -3,8 +3,6 @@
 #include "global.h"
 #include "engines.h"
 
-extern struct DrumTechController *D_03001568;
-
 // Engine Types:
 struct DrumTechInstrument {
     s8 soundPlayerID;

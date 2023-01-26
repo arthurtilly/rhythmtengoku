@@ -1,5 +1,5 @@
 #include "global.h"
-#include "scenes/script.h"
+#include "scenes/riq_main_scene.h"
 #include "src/code_08001360.h"
 #include "src/code_08003980.h"
 #include "src/task_pool.h"
@@ -9,12 +9,9 @@
 asm(".include \"include/gba.inc\"");//Temporary
 
 static u8 D_0300155c;
-static u8 D_0300155d; // unused
-static u8 D_0300155e; // unused
-static u8 D_0300155f; // unused
 
 
-/* SCRIPT HANDLING */
+/* GLOBAL RIQ SCENE */
 
 
 // [func_0801d860] Set D_0300155c
