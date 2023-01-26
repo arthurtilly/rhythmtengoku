@@ -10,7 +10,7 @@ thumb_func_start func_080051f0 \n\
 /* 080051f8 */ STR R2, [SP] \n\
 /* 080051fa */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 080051fc */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
-/* 080051fe */ BL func_0800186c \n\
+/* 080051fe */ BL dma3_set \n\
 /* 08005202 */ ADD SP, 0x4 \n\
 /* 08005204 */ POP {R0} \n\
 /* 08005206 */ BX R0 \n\

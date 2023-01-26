@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088b8e70] <description>
+// [D_088b8e70] Palette
 const Palette prologue_wizards_waltz_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xA8A8A8),
@@ -58,4 +58,3 @@ const Palette prologue_wizards_waltz_pal[] = {
         /* 15 */ TO_RGB555(0xF83030)
     }
 };
-

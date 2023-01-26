@@ -22,7 +22,7 @@ thumb_func_start func_08001d44 \n\
 /* 08001d64 */ STR R1, [SP] \n\
 /* 08001d66 */ ADDS R1, R3, 0x0 @ Set R1 to R3 + 0x0 \n\
 /* 08001d68 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08001d6a */ BL func_0800186c \n\
+/* 08001d6a */ BL dma3_set \n\
  \n\
 branch_08001d6e: \n\
 /* 08001d6e */ ADD SP, 0x4 \n\

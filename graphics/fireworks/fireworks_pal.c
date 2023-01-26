@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088e9454] <description>
+// [D_088e9454] OBJ Palette
 const Palette fireworks_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
@@ -203,7 +203,7 @@ const Palette fireworks_obj_pal[] = {
     }
 };
 
-// [D_088e95b4] <description>
+// [D_088e95b4] BG Palette
 const Palette fireworks_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),

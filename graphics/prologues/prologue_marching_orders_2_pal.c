@@ -1,8 +1,8 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088b0c38] <description>
-const Palette prologue_marching_orders_2_obj_pal[] = {
+// [D_088b0c38] OBJ Palette
+const Palette prologue_marching_2_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00A830),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -41,8 +41,8 @@ const Palette prologue_marching_orders_2_obj_pal[] = {
     }
 };
 
-// [D_088b0c78] <description>
-const Palette prologue_marching_orders_2_bg_pal[] = {
+// [D_088b0c78] BG Palette
+const Palette prologue_marching2_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00F808),
         /* 01 */ TO_RGB555(0x101010),
@@ -62,4 +62,3 @@ const Palette prologue_marching_orders_2_bg_pal[] = {
         /* 15 */ TO_RGB555(0xF8F8F8)
     }
 };
-

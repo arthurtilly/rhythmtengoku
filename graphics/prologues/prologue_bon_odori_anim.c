@@ -3,8 +3,8 @@
 
 #include "prologue_bon_odori_anim_cells.inc.c"
 
-// [D_088ad898] <description>
-const struct Animation prologue_bon_odori_anim00[] = {
+// [D_088ad898] Title
+const struct Animation anim_prologue_bon_odori_title[] = {
     /* 000 */ { prologue_bon_odori_cel000, 10 },
     /* 001 */ { prologue_bon_odori_cel001, 23 },
     /* 002 */ { prologue_bon_odori_cel002, 23 },
@@ -22,4 +22,3 @@ const struct Animation prologue_bon_odori_anim00[] = {
     /* 014 */ { prologue_bon_odori_cel009, 100 },
     /* End */ END_ANIMATION
 };
-

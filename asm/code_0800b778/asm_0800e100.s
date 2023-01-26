@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0800e100 \n\
+thumb_func_start scene_hide_obj_layer \n\
 /* 0800e100 */ LDR R2, =D_03004b10 \n\
 /* 0800e102 */ LDRH R1, [R2] \n\
 /* 0800e104 */ LDR R0, =0xefff \n\

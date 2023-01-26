@@ -19,7 +19,7 @@ thumb_func_start func_0800c604 \n\
 /* 0800c61e */ LSLS R0, R0, 0x1C \n\
 /* 0800c620 */ LSRS R0, R0, 0x1D \n\
 /* 0800c622 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
-/* 0800c624 */ BL func_0800c3c4 \n\
+/* 0800c624 */ BL set_current_mem_id \n\
 /* 0800c628 */ LDR R2, =D_03005588 \n\
 /* 0800c62a */ LSLS R0, R5, 0x2 \n\
 /* 0800c62c */ MOVS R3, 0xB0 @ Set R3 to 0xB0 \n\

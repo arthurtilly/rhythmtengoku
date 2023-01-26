@@ -29,7 +29,7 @@ thumb_func_start func_0800ebac \n\
 /* 0800ebda */ STRH R1, [R2] \n\
 /* 0800ebdc */ LSLS R0, R0, 0x10 \n\
 /* 0800ebde */ LSRS R0, R0, 0x10 \n\
-/* 0800ebe0 */ BL func_0800bdf8 \n\
+/* 0800ebe0 */ BL set_beatscript_tempo \n\
 /* 0800ebe4 */ LDRB R0, [R5, 0x1] \n\
 /* 0800ebe6 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 0800ebe8 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\

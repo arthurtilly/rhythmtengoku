@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088cba2c] <description>
+// [D_088cba2c] Showtime OBJ Palette
 const Palette showtime_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00B8F8),
@@ -131,7 +131,7 @@ const Palette showtime_obj_pal[] = {
     }
 };
 
-// [D_088cbb0c] <description>
+// [D_088cbb0c] Showtime BG Palette
 const Palette showtime_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00D050),
@@ -153,7 +153,7 @@ const Palette showtime_bg_pal[] = {
     }
 };
 
-// [D_088cbb2c] <description>
+// [D_088cbb2c] Showtime (Remix 3) BG Palette
 const Palette showtime_remix3_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00D050),

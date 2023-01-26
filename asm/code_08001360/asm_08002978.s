@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08002978 \n\
+thumb_func_start get_sound_from_player_id \n\
 /* 08002978 */ LDR R2, =D_08aa4460 \n\
 /* 0800297a */ LSLS R1, R0, 0x1 \n\
 /* 0800297c */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\

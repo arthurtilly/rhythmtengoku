@@ -26,7 +26,7 @@ thumb_func_start func_0800eb1c \n\
 /* 0800eb46 */ LSLS R6, R6, 0x1 \n\
 /* 0800eb48 */ ADDS R0, R4, R6 @ Set R0 to R4 + R6 \n\
 /* 0800eb4a */ LDRH R0, [R0] \n\
-/* 0800eb4c */ BL func_0800bdf8 \n\
+/* 0800eb4c */ BL set_beatscript_tempo \n\
 /* 0800eb50 */ B branch_0800eba4 \n\
 \n\
 .ltorg \n\
@@ -63,7 +63,7 @@ branch_0800eb58: \n\
 /* 0800eb92 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0800eb94 */ LSLS R0, R0, 0x10 \n\
 /* 0800eb96 */ LSRS R0, R0, 0x10 \n\
-/* 0800eb98 */ BL func_0800bdf8 \n\
+/* 0800eb98 */ BL set_beatscript_tempo \n\
 /* 0800eb9c */ LDRB R0, [R4, 0x1] \n\
 /* 0800eb9e */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 0800eba0 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\

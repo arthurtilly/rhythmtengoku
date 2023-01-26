@@ -3,8 +3,8 @@
 
 #include "bunny_hop_anim_cells.inc.c"
 
-// [D_088f8ce0] <description>
-const struct Animation bunny_hop_anim00[] = {
+// [D_088f8ce0] Bunny - Hop
+const struct Animation anim_bunny_hop_jump[] = {
     /* 000 */ { bunny_hop_cel003, 4 },
     /* 001 */ { bunny_hop_cel004, 2 },
     /* 002 */ { bunny_hop_cel005, 12 },
@@ -12,44 +12,44 @@ const struct Animation bunny_hop_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f8d08] <description>
-const struct Animation bunny_hop_anim01[] = {
+// [D_088f8d08] Bunny - Run
+const struct Animation anim_bunny_hop_run[] = {
     /* 000 */ { bunny_hop_cel000, 6 },
     /* 001 */ { bunny_hop_cel001, 6 },
     /* 002 */ { bunny_hop_cel002, 6 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8d28] <description>
-const struct Animation bunny_hop_anim02[] = {
+// [D_088f8d28] Turtle
+const struct Animation anim_bunny_hop_1beat_turtle[] = {
     /* 000 */ { bunny_hop_cel011, 12 },
     /* 001 */ { bunny_hop_cel012, 12 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8d40] <description>
-const struct Animation bunny_hop_anim03[] = {
+// [D_088f8d40] Whale (Wait 2 Beats)
+const struct Animation anim_bunny_hop_2beat_whale[] = {
     /* 000 */ { bunny_hop_cel013, 12 },
     /* 001 */ { bunny_hop_cel014, 12 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8d58] <description>
-const struct Animation bunny_hop_anim04[] = {
+// [D_088f8d58] Whale (Upright, Beat 2)
+const struct Animation anim_bunny_hop_1beat_whale[] = {
     /* 000 */ { bunny_hop_cel015, 16 },
     /* 001 */ { bunny_hop_cel016, 16 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8d70] <description>
-const struct Animation bunny_hop_anim05[] = {
+// [D_088f8d70] Whale Tail (Wait 4 Beats)
+const struct Animation anim_bunny_hop_4beat_whale[] = {
     /* 000 */ { bunny_hop_cel025, 12 },
     /* 001 */ { bunny_hop_cel026, 12 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8d88] <description>
-const struct Animation bunny_hop_anim06[] = {
+// [D_088f8d88] Whale Tail Bounce (Wait 4 Beats)
+const struct Animation anim_bunny_hop_4beat_whale_bounce[] = {
     /* 000 */ { bunny_hop_cel027, 32 },
     /* 001 */ { bunny_hop_cel026, 2 },
     /* 002 */ { bunny_hop_cel028, 2 },
@@ -63,15 +63,15 @@ const struct Animation bunny_hop_anim06[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f8de0] <description>
-const struct Animation bunny_hop_anim07[] = {
+// [D_088f8de0] Whale (Final)
+const struct Animation anim_bunny_hop_last_whale[] = {
     /* 000 */ { bunny_hop_cel031, 12 },
     /* 001 */ { bunny_hop_cel032, 12 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8df8] <description>
-const struct Animation bunny_hop_anim08[] = {
+// [D_088f8df8] Whale (Final) Spout Start
+const struct Animation anim_bunny_hop_water_spout_start[] = {
     /* 000 */ { bunny_hop_cel033, 3 },
     /* 001 */ { bunny_hop_cel034, 2 },
     /* 002 */ { bunny_hop_cel035, 1 },
@@ -81,15 +81,15 @@ const struct Animation bunny_hop_anim08[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f8e30] <description>
-const struct Animation bunny_hop_anim09[] = {
+// [D_088f8e30] Whale (Final) Spout Loop
+const struct Animation anim_bunny_hop_water_spout_loop[] = {
     /* 000 */ { bunny_hop_cel039, 4 },
     /* 001 */ { bunny_hop_cel040, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8e48] <description>
-const struct Animation bunny_hop_anim10[] = {
+// [D_088f8e48] Water Splash
+const struct Animation anim_bunny_hop_splash[] = {
     /* 000 */ { bunny_hop_cel041, 4 },
     /* 001 */ { bunny_hop_cel042, 4 },
     /* 002 */ { bunny_hop_cel043, 4 },
@@ -106,36 +106,36 @@ const struct Animation bunny_hop_anim10[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f8eb8] <description>
-const struct Animation bunny_hop_anim11[] = {
+// [D_088f8eb8] Water Particle
+const struct Animation anim_bunny_hop_splash_particle[] = {
     /* 000 */ { bunny_hop_cel054, 4 },
     /* 001 */ { bunny_hop_cel055, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8ed0] <description>
-const struct Animation bunny_hop_anim12[] = {
+// [D_088f8ed0] Clouds
+const struct Animation anim_bunny_hop_cloud[] = {
     /* 000 */ { bunny_hop_cel056, 127 },
     /* 001 */ { bunny_hop_cel057, 127 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8ee8] <description>
-const struct Animation bunny_hop_anim13[] = {
+// [D_088f8ee8] Button Icons
+const struct Animation anim_bunny_hop_button_icons[] = {
     /* 000 */ { bunny_hop_cel058, 6 },
     /* 001 */ { bunny_hop_cel059, 6 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8f00] <description>
-const struct Animation bunny_hop_anim14[] = {
+// [D_088f8f00] Bunny - Miss
+const struct Animation anim_bunny_hop_miss[] = {
     /* 000 */ { bunny_hop_cel009, 4 },
     /* 001 */ { bunny_hop_cel010, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8f18] <description>
-const struct Animation bunny_hop_anim15[] = {
+// [D_088f8f18] Whale Bounce (Wait 8 Beats)
+const struct Animation anim_bunny_hop_8beat_whale_bounce[] = {
     /* 000 */ { bunny_hop_cel017, 32 },
     /* 001 */ { bunny_hop_cel019, 2 },
     /* 002 */ { bunny_hop_cel020, 2 },
@@ -149,29 +149,29 @@ const struct Animation bunny_hop_anim15[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f8f70] <description>
-const struct Animation bunny_hop_anim16[] = {
+// [D_088f8f70] Moon
+const struct Animation anim_bunny_hop_moon[] = {
     /* 000 */ { bunny_hop_cel060, 64 },
     /* 001 */ { bunny_hop_cel061, 64 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8f88] <description>
-const struct Animation bunny_hop_anim17[] = {
+// [D_088f8f88] Whale (Wait 8 Beats)
+const struct Animation anim_bunny_hop_8beat_whale[] = {
     /* 000 */ { bunny_hop_cel017, 12 },
     /* 001 */ { bunny_hop_cel018, 12 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8fa0] <description>
-const struct Animation bunny_hop_anim18[] = {
+// [D_088f8fa0] Sparkle
+const struct Animation anim_bunny_hop_sparkle[] = {
     /* 000 */ { bunny_hop_cel063, 5 },
     /* 001 */ { bunny_hop_cel064, 5 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f8fb8] <description>
-const struct Animation bunny_hop_anim19[] = {
+// [D_088f8fb8] Bunny - Eyes Closed (Unused)
+const struct Animation anim_bunny_hop_unused[] = {
     /* 000 */ { bunny_hop_cel007, 3 },
     /* End */ END_ANIMATION
 };

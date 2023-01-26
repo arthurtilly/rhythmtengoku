@@ -3,8 +3,8 @@
 
 #include "bon_odori_anim_cells.inc.c"
 
-// [D_088aa84c] <description>
-const struct Animation bon_odori_anim00[] = {
+// [D_088aa84c] Donpan 1 - Beat
+const struct Animation anim_bon_odori_donpan1_beat[] = {
     /* 000 */ { bon_odori_cel008, 4 },
     /* 001 */ { bon_odori_cel010, 4 },
     /* 002 */ { bon_odori_cel011, 7 },
@@ -15,15 +15,15 @@ const struct Animation bon_odori_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aa88c] <description>
-const struct Animation bon_odori_anim01[] = {
+// [D_088aa88c] Blank
+const struct Animation anim_bon_odori_blank[] = {
     /* 000 */ { bon_odori_cel000, 20 },
     /* 001 */ { bon_odori_cel001, 20 },
     /* End */ END_ANIMATION
 };
 
-// [D_088aa8a4] <description>
-const struct Animation bon_odori_anim02[] = {
+// [D_088aa8a4] Donpan 1 - Clap (Side)
+const struct Animation anim_bon_odori_donpan1_clap1[] = {
     /* 000 */ { bon_odori_cel002, 2 },
     /* 001 */ { bon_odori_cel003, 2 },
     /* 002 */ { bon_odori_cel004, 2 },
@@ -35,8 +35,8 @@ const struct Animation bon_odori_anim02[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aa8ec] <description>
-const struct Animation bon_odori_anim03[] = {
+// [D_088aa8ec] Donpan 1 - Clap (Front)
+const struct Animation anim_bon_odori_donpan1_clap2[] = {
     /* 000 */ { bon_odori_cel013, 4 },
     /* 001 */ { bon_odori_cel014, 4 },
     /* 002 */ { bon_odori_cel015, 4 },
@@ -46,8 +46,8 @@ const struct Animation bon_odori_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aa924] <description>
-const struct Animation bon_odori_anim04[] = {
+// [D_088aa924] Donpan 2 - Beat
+const struct Animation anim_bon_odori_donpan2_beat[] = {
     /* 000 */ { bon_odori_cel025, 4 },
     /* 001 */ { bon_odori_cel027, 4 },
     /* 002 */ { bon_odori_cel028, 7 },
@@ -58,8 +58,8 @@ const struct Animation bon_odori_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aa964] <description>
-const struct Animation bon_odori_anim05[] = {
+// [D_088aa964] Donpan 2 - Clap (Side)
+const struct Animation anim_bon_odori_donpan2_clap1[] = {
     /* 000 */ { bon_odori_cel019, 2 },
     /* 001 */ { bon_odori_cel020, 2 },
     /* 002 */ { bon_odori_cel021, 2 },
@@ -71,8 +71,8 @@ const struct Animation bon_odori_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aa9ac] <description>
-const struct Animation bon_odori_anim06[] = {
+// [D_088aa9ac] Donpan 2 - Clap (Front)
+const struct Animation anim_bon_odori_donpan2_clap2[] = {
     /* 000 */ { bon_odori_cel030, 4 },
     /* 001 */ { bon_odori_cel031, 4 },
     /* 002 */ { bon_odori_cel032, 4 },
@@ -82,8 +82,8 @@ const struct Animation bon_odori_anim06[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aa9e4] <description>
-const struct Animation bon_odori_anim07[] = {
+// [D_088aa9e4] Player - Beat
+const struct Animation anim_bon_odori_player_beat[] = {
     /* 000 */ { bon_odori_cel041, 4 },
     /* 001 */ { bon_odori_cel043, 4 },
     /* 002 */ { bon_odori_cel044, 7 },
@@ -94,8 +94,8 @@ const struct Animation bon_odori_anim07[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aaa24] <description>
-const struct Animation bon_odori_anim08[] = {
+// [D_088aaa24] Player - Clap (Side)
+const struct Animation anim_bon_odori_player_clap1[] = {
     /* 000 */ { bon_odori_cel036, 2 },
     /* 001 */ { bon_odori_cel037, 2 },
     /* 002 */ { bon_odori_cel038, 2 },
@@ -107,8 +107,8 @@ const struct Animation bon_odori_anim08[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aaa6c] <description>
-const struct Animation bon_odori_anim09[] = {
+// [D_088aaa6c] Player - Clap (Front)
+const struct Animation anim_bon_odori_player_clap2[] = {
     /* 000 */ { bon_odori_cel046, 4 },
     /* 001 */ { bon_odori_cel047, 4 },
     /* 002 */ { bon_odori_cel048, 4 },
@@ -118,8 +118,8 @@ const struct Animation bon_odori_anim09[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aaaa4] <description>
-const struct Animation bon_odori_anim10[] = {
+// [D_088aaaa4] Donpan 3 - Beat
+const struct Animation anim_bon_odori_donpan3_beat[] = {
     /* 000 */ { bon_odori_cel058, 4 },
     /* 001 */ { bon_odori_cel060, 4 },
     /* 002 */ { bon_odori_cel061, 7 },
@@ -130,8 +130,8 @@ const struct Animation bon_odori_anim10[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aaae4] <description>
-const struct Animation bon_odori_anim11[] = {
+// [D_088aaae4] Donpan 3 - Clap (Side)
+const struct Animation anim_bon_odori_donpan3_clap1[] = {
     /* 000 */ { bon_odori_cel052, 2 },
     /* 001 */ { bon_odori_cel053, 2 },
     /* 002 */ { bon_odori_cel054, 2 },
@@ -143,8 +143,8 @@ const struct Animation bon_odori_anim11[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aab2c] <description>
-const struct Animation bon_odori_anim12[] = {
+// [D_088aab2c] Donpan 3 - Clap (Front)
+const struct Animation anim_bon_odori_donpan3_clap2[] = {
     /* 000 */ { bon_odori_cel063, 4 },
     /* 001 */ { bon_odori_cel064, 4 },
     /* 002 */ { bon_odori_cel065, 4 },
@@ -154,8 +154,8 @@ const struct Animation bon_odori_anim12[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aab64] <description>
-const struct Animation bon_odori_anim13[] = {
+// [D_088aab64] Donpan 1 - Test Animation
+const struct Animation anim_bon_odori_donpan_test[] = {
     /* 000 */ { bon_odori_cel013, 2 },
     /* 001 */ { bon_odori_cel014, 2 },
     /* 002 */ { bon_odori_cel015, 2 },
@@ -175,8 +175,8 @@ const struct Animation bon_odori_anim13[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aabec] <description>
-const struct Animation bon_odori_anim14[] = {
+// [D_088aabec] Donpan 1 - Bow
+const struct Animation anim_bon_odori_donpan1_bow[] = {
     /* 000 */ { bon_odori_cel069, 4 },
     /* 001 */ { bon_odori_cel070, 4 },
     /* 002 */ { bon_odori_cel071, 4 },
@@ -184,8 +184,8 @@ const struct Animation bon_odori_anim14[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aac14] <description>
-const struct Animation bon_odori_anim15[] = {
+// [D_088aac14] Donpan 2 - Bow
+const struct Animation anim_bon_odori_donpan2_bow[] = {
     /* 000 */ { bon_odori_cel073, 4 },
     /* 001 */ { bon_odori_cel074, 4 },
     /* 002 */ { bon_odori_cel075, 4 },
@@ -193,8 +193,8 @@ const struct Animation bon_odori_anim15[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aac3c] <description>
-const struct Animation bon_odori_anim16[] = {
+// [D_088aac3c] Player - Bow
+const struct Animation anim_bon_odori_player_bow[] = {
     /* 000 */ { bon_odori_cel077, 4 },
     /* 001 */ { bon_odori_cel078, 4 },
     /* 002 */ { bon_odori_cel079, 4 },
@@ -202,8 +202,8 @@ const struct Animation bon_odori_anim16[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aac64] <description>
-const struct Animation bon_odori_anim17[] = {
+// [D_088aac64] Donpan 3 - Bow
+const struct Animation anim_bon_odori_donpan3_bow[] = {
     /* 000 */ { bon_odori_cel081, 4 },
     /* 001 */ { bon_odori_cel082, 4 },
     /* 002 */ { bon_odori_cel083, 4 },
@@ -211,8 +211,8 @@ const struct Animation bon_odori_anim17[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aac8c] <description>
-const struct Animation bon_odori_anim18[] = {
+// [D_088aac8c] Donpan 2 - Unimpressed
+const struct Animation anim_bon_odori_donpan2_glare[] = {
     /* 000 */ { bon_odori_cel089, 4 },
     /* 001 */ { bon_odori_cel087, 4 },
     /* 002 */ { bon_odori_cel086, 7 },
@@ -223,8 +223,8 @@ const struct Animation bon_odori_anim18[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aaccc] <description>
-const struct Animation bon_odori_anim19[] = {
+// [D_088aaccc] Donpan 1 - Unimpressed
+const struct Animation anim_bon_odori_donpan1_glare[] = {
     /* 000 */ { bon_odori_cel094, 4 },
     /* 001 */ { bon_odori_cel092, 4 },
     /* 002 */ { bon_odori_cel091, 7 },
@@ -235,8 +235,8 @@ const struct Animation bon_odori_anim19[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aad0c] <description>
-const struct Animation bon_odori_anim20[] = {
+// [D_088aad0c] Donpan 3 - Unimpressed
+const struct Animation anim_bon_odori_donpan3_glare[] = {
     /* 000 */ { bon_odori_cel099, 4 },
     /* 001 */ { bon_odori_cel097, 4 },
     /* 002 */ { bon_odori_cel096, 7 },
@@ -247,23 +247,23 @@ const struct Animation bon_odori_anim20[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aad4c] <description>
-const struct Animation bon_odori_anim21[] = {
+// [D_088aad4c] Yagura-chan - Beat
+const struct Animation anim_bon_odori_yagura_beat[] = {
     /* 000 */ { bon_odori_cel102, 3 },
     /* 001 */ { bon_odori_cel101, 3 },
     /* 002 */ { bon_odori_cel100, 24 },
     /* End */ END_ANIMATION
 };
 
-// [D_088aad6c] <description>
-const struct Animation bon_odori_anim22[] = {
+// [D_088aad6c] Yagura-chan - Speak
+const struct Animation anim_bon_odori_yagura_speak[] = {
     /* 000 */ { bon_odori_cel103, 4 },
     /* 001 */ { bon_odori_cel104, 24 },
     /* End */ END_ANIMATION
 };
 
-// [D_088aad84] <description>
-const struct Animation bon_odori_anim23[] = {
+// [D_088aad84] Donpan 1 - Happy
+const struct Animation anim_bon_odori_donpan1_happy1[] = {
     /* 000 */ { bon_odori_cel105, 4 },
     /* 001 */ { bon_odori_cel107, 4 },
     /* 002 */ { bon_odori_cel108, 7 },
@@ -274,8 +274,8 @@ const struct Animation bon_odori_anim23[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aadc4] <description>
-const struct Animation bon_odori_anim24[] = {
+// [D_088aadc4] Donpan 2 - Happy
+const struct Animation anim_bon_odori_donpan2_happy1[] = {
     /* 000 */ { bon_odori_cel110, 4 },
     /* 001 */ { bon_odori_cel112, 4 },
     /* 002 */ { bon_odori_cel113, 7 },
@@ -286,8 +286,8 @@ const struct Animation bon_odori_anim24[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aae04] <description>
-const struct Animation bon_odori_anim25[] = {
+// [D_088aae04] Player - Happy
+const struct Animation anim_bon_odori_player_happy1[] = {
     /* 000 */ { bon_odori_cel115, 4 },
     /* 001 */ { bon_odori_cel117, 4 },
     /* 002 */ { bon_odori_cel118, 7 },
@@ -298,8 +298,8 @@ const struct Animation bon_odori_anim25[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aae44] <description>
-const struct Animation bon_odori_anim26[] = {
+// [D_088aae44] Donpan 3 - Happy
+const struct Animation anim_bon_odori_donpan3_happy1[] = {
     /* 000 */ { bon_odori_cel120, 4 },
     /* 001 */ { bon_odori_cel122, 4 },
     /* 002 */ { bon_odori_cel123, 7 },
@@ -310,8 +310,8 @@ const struct Animation bon_odori_anim26[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aae84] <description>
-const struct Animation bon_odori_anim27[] = {
+// [D_088aae84] Donpan 1 - Very Happy
+const struct Animation anim_bon_odori_donpan1_happy2[] = {
     /* 000 */ { bon_odori_cel125, 4 },
     /* 001 */ { bon_odori_cel126, 4 },
     /* 002 */ { bon_odori_cel127, 7 },
@@ -322,8 +322,8 @@ const struct Animation bon_odori_anim27[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aaec4] <description>
-const struct Animation bon_odori_anim28[] = {
+// [D_088aaec4] Donpan 2 - Very Happy
+const struct Animation anim_bon_odori_donpan2_happy2[] = {
     /* 000 */ { bon_odori_cel128, 4 },
     /* 001 */ { bon_odori_cel129, 4 },
     /* 002 */ { bon_odori_cel130, 7 },
@@ -334,8 +334,8 @@ const struct Animation bon_odori_anim28[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aaf04] <description>
-const struct Animation bon_odori_anim29[] = {
+// [D_088aaf04] Player - Very Happy
+const struct Animation anim_bon_odori_player_happy2[] = {
     /* 000 */ { bon_odori_cel131, 4 },
     /* 001 */ { bon_odori_cel132, 4 },
     /* 002 */ { bon_odori_cel133, 7 },
@@ -346,8 +346,8 @@ const struct Animation bon_odori_anim29[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aaf44] <description>
-const struct Animation bon_odori_anim30[] = {
+// [D_088aaf44] Donpan 3 - Very Happy
+const struct Animation anim_bon_odori_donpan3_happy2[] = {
     /* 000 */ { bon_odori_cel134, 4 },
     /* 001 */ { bon_odori_cel135, 4 },
     /* 002 */ { bon_odori_cel136, 7 },
@@ -358,8 +358,8 @@ const struct Animation bon_odori_anim30[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aaf84] <description>
-const struct Animation bon_odori_anim31[] = {
+// [D_088aaf84] Donpan 1 - Spin
+const struct Animation anim_bon_odori_donpan1_spin[] = {
     /* 000 */ { bon_odori_cel139, 1 },
     /* 001 */ { bon_odori_cel140, 2 },
     /* 002 */ { bon_odori_cel141, 3 },
@@ -374,8 +374,8 @@ const struct Animation bon_odori_anim31[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088aafe4] <description>
-const struct Animation bon_odori_anim32[] = {
+// [D_088aafe4] Donpan 2 - Spin
+const struct Animation anim_bon_odori_donpan2_spin[] = {
     /* 000 */ { bon_odori_cel148, 1 },
     /* 001 */ { bon_odori_cel149, 2 },
     /* 002 */ { bon_odori_cel150, 3 },
@@ -390,8 +390,8 @@ const struct Animation bon_odori_anim32[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ab044] <description>
-const struct Animation bon_odori_anim33[] = {
+// [D_088ab044] Donpan 3 - Spin
+const struct Animation anim_bon_odori_donpan3_spin[] = {
     /* 000 */ { bon_odori_cel157, 1 },
     /* 001 */ { bon_odori_cel158, 2 },
     /* 002 */ { bon_odori_cel159, 3 },
@@ -406,8 +406,8 @@ const struct Animation bon_odori_anim33[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ab0a4] <description>
-const struct Animation bon_odori_anim34[] = {
+// [D_088ab0a4] Donpan 4 - Spin
+const struct Animation anim_bon_odori_player_spin[] = {
     /* 000 */ { bon_odori_cel166, 1 },
     /* 001 */ { bon_odori_cel167, 2 },
     /* 002 */ { bon_odori_cel168, 3 },
@@ -422,8 +422,8 @@ const struct Animation bon_odori_anim34[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ab104] <description>
-const struct Animation bon_odori_anim35[] = {
+// [D_088ab104] Yagura-chan - Unhappy
+const struct Animation anim_bon_odori_yagura_frown[] = {
     /* 000 */ { bon_odori_cel173, 3 },
     /* 001 */ { bon_odori_cel174, 3 },
     /* 002 */ { bon_odori_cel175, 24 },

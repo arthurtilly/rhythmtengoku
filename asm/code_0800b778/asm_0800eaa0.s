@@ -23,7 +23,7 @@ branch_0800eab8: \n\
 /* 0800eac0 */ SUBS R1, 0x2 @ Subtract 0x2 from R1 \n\
 /* 0800eac2 */ ADDS R0, R5, R1 @ Set R0 to R5 + R1 \n\
 /* 0800eac4 */ LDRH R0, [R0] \n\
-/* 0800eac6 */ BL func_0800c3a4 \n\
+/* 0800eac6 */ BL beats_to_ticks \n\
 /* 0800eaca */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800eacc */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 0800eace */ LSLS R0, R0, 0x9 \n\

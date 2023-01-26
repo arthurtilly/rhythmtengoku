@@ -8,7 +8,7 @@ thumb_func_start func_08047e78 \n\
 /* 08047e7c */ LSLS R2, R2, 0x1 \n\
 /* 08047e7e */ MOVS R1, 0xA0 @ Set R1 to 0xA0 \n\
 /* 08047e80 */ LSLS R1, R1, 0x1 \n\
-/* 08047e82 */ BL func_08002698 \n\
+/* 08047e82 */ BL play_sound_w_pitch_volume \n\
 /* 08047e86 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08047e88 */ MOVS R0, 0x85 @ Set R0 to 0x85 \n\
 /* 08047e8a */ LSLS R0, R0, 0x8 \n\
@@ -18,7 +18,7 @@ thumb_func_start func_08047e78 \n\
 /* 08047e94 */ LSLS R1, R1, 0x10 \n\
 /* 08047e96 */ LSRS R1, R1, 0x10 \n\
 /* 08047e98 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08047e9a */ BL func_08002894 \n\
+/* 08047e9a */ BL set_soundplayer_speed \n\
 /* 08047e9e */ POP {R4} \n\
 /* 08047ea0 */ POP {R0} \n\
 /* 08047ea2 */ BX R0 \n\

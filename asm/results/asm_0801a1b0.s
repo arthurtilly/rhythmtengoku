@@ -17,7 +17,7 @@ thumb_func_start func_0801a1b0 \n\
 /* 0801a1c8 */ LDR R0, [R4, 0x10] \n\
 /* 0801a1ca */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801a1cc */ BEQ branch_0801a228 \n\
-/* 0801a1ce */ LDR R0, =D_089cea04 \n\
+/* 0801a1ce */ LDR R0, =(D_089ce344 + 0x6C0) \n\
 /* 0801a1d0 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 0801a1d2 */ BNE branch_0801a1e4 \n\
 /* 0801a1d4 */ BL func_08026b18 \n\
@@ -85,7 +85,7 @@ branch_0801a248: \n\
 /* 0801a248 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801a24a */ BL func_08007324 \n\
 /* 0801a24e */ BL func_080073f0 \n\
-/* 0801a252 */ BL func_0800c3b8 \n\
+/* 0801a252 */ BL get_current_mem_id \n\
 /* 0801a256 */ LSLS R0, R0, 0x10 \n\
 /* 0801a258 */ LSRS R0, R0, 0x10 \n\
 /* 0801a25a */ LDR R1, =D_089de670 \n\
@@ -105,10 +105,10 @@ branch_0801a248: \n\
 /* 0801a278 */ STR R0, [SP] \n\
 /* 0801a27a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801a27c */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 0801a27e */ BL func_080018e0 \n\
+/* 0801a27e */ BL dma3_fill \n\
 /* 0801a282 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 0801a284 */ BEQ branch_0801a2ca \n\
-/* 0801a286 */ BL func_0800c3b8 \n\
+/* 0801a286 */ BL get_current_mem_id \n\
 /* 0801a28a */ STR R5, [SP] \n\
 /* 0801a28c */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0801a28e */ STR R1, [SP, 0x4] \n\
@@ -119,7 +119,7 @@ branch_0801a248: \n\
 /* 0801a298 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0801a29a */ MOVS R2, 0x1E @ Set R2 to 0x1E \n\
 /* 0801a29c */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0801a29e */ BL func_0800a004 \n\
+/* 0801a29e */ BL text_printer_get_unformatted_line_anim \n\
 /* 0801a2a2 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801a2a4 */ LDR R5, =D_03005380 \n\
 /* 0801a2a6 */ LDR R0, [R5] \n\

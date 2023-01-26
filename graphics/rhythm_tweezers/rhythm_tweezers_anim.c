@@ -3,23 +3,23 @@
 
 #include "rhythm_tweezers_anim_cells.inc.c"
 
-// [D_088e86d8] <description>
-const struct Animation rhythm_tweezers_anim00[] = {
+// [D_088e86d8] Face (Onion)
+const struct Animation anim_veg_face_onion[] = {
     /* 000 */ { rhythm_tweezers_cel000, 4 },
     /* 001 */ { rhythm_tweezers_cel001, 3 },
     /* 002 */ { rhythm_tweezers_cel002, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e86f8] <description>
-const struct Animation rhythm_tweezers_anim01[] = {
+// [D_088e86f8] Face (Turnip)
+const struct Animation anim_veg_face_turnip[] = {
     /* 000 */ { rhythm_tweezers_cel003, 4 },
     /* 001 */ { rhythm_tweezers_cel004, 3 },
     /* 002 */ { rhythm_tweezers_cel005, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e8718] <description>
+// [D_088e8718] Hair Pluck Test
 const struct Animation rhythm_tweezers_anim02[] = {
     /* 000 */ { rhythm_tweezers_cel010, 100 },
     /* 001 */ { rhythm_tweezers_cel011, 2 },
@@ -33,8 +33,8 @@ const struct Animation rhythm_tweezers_anim02[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e8768] <description>
-const struct Animation rhythm_tweezers_anim03[] = {
+// [D_088e8768] Short Hair Appear
+const struct Animation anim_rhythm_tweezers_short_hair[] = {
     /* 000 */ { rhythm_tweezers_cel035, 1 },
     /* 001 */ { rhythm_tweezers_cel036, 1 },
     /* 002 */ { rhythm_tweezers_cel037, 1 },
@@ -45,8 +45,8 @@ const struct Animation rhythm_tweezers_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e87a8] <description>
-const struct Animation rhythm_tweezers_anim04[] = {
+// [D_088e87a8] Tweezers Pluck
+const struct Animation anim_tweezers_pluck_hit[] = {
     /* 000 */ { rhythm_tweezers_cel011, 2 },
     /* 001 */ { rhythm_tweezers_cel012, 1 },
     /* 002 */ { rhythm_tweezers_cel013, 1 },
@@ -59,7 +59,7 @@ const struct Animation rhythm_tweezers_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e87f8] <description>
+// [D_088e87f8] Hair Pluck Test
 const struct Animation rhythm_tweezers_anim05[] = {
     /* 000 */ { rhythm_tweezers_cel010, 100 },
     /* 001 */ { rhythm_tweezers_cel019, 2 },
@@ -73,8 +73,8 @@ const struct Animation rhythm_tweezers_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e8848] <description>
-const struct Animation rhythm_tweezers_anim06[] = {
+// [D_088e8848] Tweezers Pluck (Barely)
+const struct Animation anim_tweezers_pluck_barely[] = {
     /* 000 */ { rhythm_tweezers_cel019, 2 },
     /* 001 */ { rhythm_tweezers_cel020, 1 },
     /* 002 */ { rhythm_tweezers_cel021, 1 },
@@ -87,8 +87,8 @@ const struct Animation rhythm_tweezers_anim06[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e8898] <description>
-const struct Animation rhythm_tweezers_anim07[] = {
+// [D_088e8898] Tweezers Pluck (Miss)
+const struct Animation anim_tweezers_pluck_miss[] = {
     /* 000 */ { rhythm_tweezers_cel027, 2 },
     /* 001 */ { rhythm_tweezers_cel028, 1 },
     /* 002 */ { rhythm_tweezers_cel029, 1 },
@@ -100,27 +100,27 @@ const struct Animation rhythm_tweezers_anim07[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e88e0] <description>
-const struct Animation rhythm_tweezers_anim08[] = {
+// [D_088e88e0] Falling Hair
+const struct Animation anim_rhythm_tweezers_falling_hair[] = {
     /* 000 */ { rhythm_tweezers_cel018, 4 },
     /* 001 */ { rhythm_tweezers_cel026, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e88f8] <description>
-const struct Animation rhythm_tweezers_anim09[] = {
+// [D_088e88f8] Stubble
+const struct Animation anim_rhythm_tweezers_hair_stubble[] = {
     /* 000 */ { rhythm_tweezers_cel042, 2 },
     /* 001 */ { rhythm_tweezers_cel041, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e8910] <description>
-const struct Animation rhythm_tweezers_anim10[] = {
+// [D_088e8910] Tutorial Text (Unused)
+const struct Animation anim_rhythm_tweezers_tutorial_text[] = {
     /* 000 */ { rhythm_tweezers_cel033, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e8920] <description>
+// [D_088e8920] Long Hair Pull Test
 const struct Animation rhythm_tweezers_anim11[] = {
     /* 000 */ { rhythm_tweezers_cel043, 4 },
     /* 001 */ { rhythm_tweezers_cel044, 4 },
@@ -141,8 +141,8 @@ const struct Animation rhythm_tweezers_anim11[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e89a8] <description>
-const struct Animation rhythm_tweezers_anim12[] = {
+// [D_088e89a8] Long Hair Appear
+const struct Animation anim_rhythm_tweezers_long_hair[] = {
     /* 000 */ { rhythm_tweezers_cel035, 1 },
     /* 001 */ { rhythm_tweezers_cel036, 1 },
     /* 002 */ { rhythm_tweezers_cel037, 1 },
@@ -166,8 +166,8 @@ const struct Animation rhythm_tweezers_anim12[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e8a50] <description>
-const struct Animation rhythm_tweezers_anim13[] = {
+// [D_088e8a50] Tweezers Pull
+const struct Animation anim_tweezers_pull[] = {
     /* 000 */ { rhythm_tweezers_cel059, 40 },
     /* 001 */ { rhythm_tweezers_cel060, 2 },
     /* 002 */ { rhythm_tweezers_cel061, 2 },
@@ -203,8 +203,8 @@ const struct Animation rhythm_tweezers_anim13[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e8b58] <description>
-const struct Animation rhythm_tweezers_anim14[] = {
+// [D_088e8b58] Face (Potato)
+const struct Animation anim_veg_face_potato[] = {
     /* 000 */ { rhythm_tweezers_cel006, 4 },
     /* 001 */ { rhythm_tweezers_cel007, 3 },
     /* 002 */ { rhythm_tweezers_cel008, 2 },

@@ -1,52 +1,74 @@
 #pragma once
 
 #include "global.h"
-#include "sound.h"
-#include "graphics.h"
+#include "engines.h"
+
+// Engine Types:
+struct BunnyHopInfo {
+    /* add fields here */
+};
+
+struct BunnyHopCue {
+    /* add fields here */
+};
+
 
 // Engine Macros/Enums:
 
+
 // OAM Animations:
+
 
 // Palettes:
 
+
 // Sound Effects:
 
+
 // Engine Data:
+extern const char D_0805a8ac[];
+
 
 // Engine Definition Data:
+extern const struct CompressedGraphics *const bunny_hop_buffered_textures[];
+extern const struct GraphicsTable *const bunny_hop_gfx_tables[];
+extern const struct SequenceData *const bunny_hop_bgm_harmony_parts[];
+extern const struct SequenceData *const bunny_hop_bgm_drum_fills[];
+extern const Palette *const bunny_hop_palettes[];
+extern const struct Animation *const bunny_hop_platform_anim[];
+
 
 // Functions:
-// extern ? func_08037f84(?);
-// extern ? func_08037f94(?);
-// extern ? func_08037fd4(?);
-// extern ? func_08038000(?);
-// extern ? func_08038244(?);
-// extern ? func_08038248(?);
+extern void bunny_hop_init_gfx3(void); // Graphics Init. 3
+extern void bunny_hop_init_gfx2(void); // Graphics Init. 2
+extern void bunny_hop_init_gfx1(void); // Graphics Init. 1
+extern void bunny_hop_engine_start(u32 version); // Game Engine Start
+extern void bunny_hop_engine_event_stub(void); // Engine Event 00 (STUB)
+extern void func_08038248(); // Engine Event 03 (?)
 // extern ? func_080382ac(?);
-// extern ? func_080382b0(?);
-// extern ? func_080382f4(?);
-// extern ? func_08038314(?);
-// extern ? func_0803833c(?);
-// extern ? func_08038350(?);
+extern void func_080382b0(); // Engine Event 04 (?)
+extern void func_080382f4(); // Engine Event 05 (?)
+extern void func_08038314(); // Engine Event 06 (?)
+extern void func_0803833c(); // Engine Event 07 (?)
+extern void bunny_hop_engine_update(void); // Game Engine Update
 // extern ? func_08038384(?);
-// extern ? func_080383f0(?);
-// extern ? func_08038414(?);
-// extern ? func_08038418(?);
-// extern ? func_0803841c(?);
-// extern ? func_08038438(?);
+extern void func_080383f0(); // Engine Event 09 (?)
+extern void bunny_hop_engine_stop(void); // Game Engine Stop
+extern void bunny_hop_cue_spawn(struct Cue *, struct BunnyHopCue *, u32 param); // Cue - Spawn
+extern u32  bunny_hop_cue_update(struct Cue *, struct BunnyHopCue *, u32 runningTime, u32 duration); // Cue - Update
+extern void bunny_hop_cue_despawn(struct Cue *, struct BunnyHopCue *); // Cue - Despawn
 // extern ? func_0803843c(?);
 // extern ? func_080384b8(?);
 // extern ? func_08038598(?);
-// extern ? func_080385f4(?);
-// extern ? func_080386e0(?);
-// extern ? func_080387c4(?);
-// extern ? func_080388a8(?);
-// extern ? func_080388ac(?);
-// extern ? func_080388b0(?);
-// extern ? func_080388b4(?);
+extern void bunny_hop_cue_hit(struct Cue *, struct BunnyHopCue *, u32 pressed, u32 released); // Cue - Hit
+extern void bunny_hop_cue_barely(struct Cue *, struct BunnyHopCue *, u32 pressed, u32 released); // Cue - Barely
+extern void bunny_hop_cue_miss(struct Cue *, struct BunnyHopCue *); // Cue - Miss
+extern void bunny_hop_input_event(u32 pressed, u32 released); // Input Event
+extern void bunny_hop_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
+extern void bunny_hop_common_display_text(void); // Common Event 1 (Display Text, Unimplemented)
+extern void bunny_hop_common_init_tutorial(const struct Scene *); // Common Event 2 (Init. Tutorial)
 // extern ? func_080388d8(?);
-// extern ? func_0803899c(?);
+extern void func_0803899c(); // Engine Event 01 (?)
 // extern ? func_08038a84(?);
 // extern ? func_08038b98(?);
 // extern ? func_08038ce0(?);
@@ -57,12 +79,12 @@
 // extern ? func_08038fbc(?);
 // extern ? func_08039128(?);
 // extern ? func_08039164(?);
-// extern ? func_0803934c(?);
+extern void func_0803934c(); // Engine Event 02 (?)
 // extern ? func_08039388(?);
 // extern ? func_08039404(?);
 // extern ? func_08039440(?);
 // extern ? func_080394a4(?);
-// extern ? func_080395dc(?);
+extern void func_080395dc(); // Engine Event 08 (?)
 // extern ? func_0803960c(?);
 // extern ? func_08039698(?);
 // extern ? func_08039738(?);

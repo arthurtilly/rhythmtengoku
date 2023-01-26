@@ -1,38 +1,30 @@
 #pragma once
 
 #include "global.h"
+#include "src/task_pool.h"
 
-typedef void *(*unkMovementInitFuncType)(void *);
-typedef u32 (*unkMovementMainFuncType)(void *);
-
-struct UnkMovementStruct {
-    unkMovementInitFuncType unk0;
-    unkMovementMainFuncType unk4;
-    void *unk8;
-    void *unkC;
-};
-
-extern const struct UnkMovementStruct D_08936b54;
-extern const struct UnkMovementStruct D_08936b64;
-extern const struct UnkMovementStruct D_08936b74;
-extern const struct UnkMovementStruct D_08936b84;
-extern const struct UnkMovementStruct D_08936b94;
-extern const struct UnkMovementStruct D_08936ba4;
-extern const struct UnkMovementStruct D_08936bb4;
-extern const struct UnkMovementStruct D_08936bc4;
-extern const struct UnkMovementStruct D_08936bd4;
-extern const struct UnkMovementStruct D_08936be4;
-extern const struct UnkMovementStruct D_08936bf4;
-extern const struct UnkMovementStruct D_08936c04;
-extern const struct UnkMovementStruct D_08936c14;
-extern const struct UnkMovementStruct D_08936c24;
-extern const struct UnkMovementStruct D_08936c34;
-extern const struct UnkMovementStruct D_08936c44;
-extern const struct UnkMovementStruct D_08936c54;
+extern const char *const D_08936b50;
+extern const struct TaskMethods D_08936b54;
+extern const struct TaskMethods D_08936b64;
+extern const struct TaskMethods D_08936b74;
+extern const struct TaskMethods D_08936b84;
+extern const struct TaskMethods D_08936b94;
+extern const struct TaskMethods D_08936ba4;
+extern const struct TaskMethods D_08936bb4;
+extern const struct TaskMethods D_08936bc4;
+extern const struct TaskMethods D_08936bd4;
+extern const struct TaskMethods D_08936be4;
+extern const struct TaskMethods D_08936bf4;
+extern const struct TaskMethods D_08936c04;
+extern const struct TaskMethods D_08936c14;
+extern const struct TaskMethods D_08936c24;
+extern const struct TaskMethods D_08936c34;
+extern const struct TaskMethods D_08936c44;
+extern const struct TaskMethods D_08936c54;
 extern const char D_08936c64[];
-extern const struct UnkMovementStruct D_08936c7c;
-extern const struct UnkMovementStruct D_08936c8c;
-extern const struct UnkMovementStruct D_08936c9c;
+extern const struct TaskMethods D_08936c7c;
+extern const struct TaskMethods D_08936c8c;
+extern const struct TaskMethods D_08936c9c;
 
 struct unk_struct_08004da0_init;
 struct unk_struct_08004da0;
@@ -69,14 +61,14 @@ struct unk_struct_08006ca4;
 
 // Indefinite linear movement
 struct unk_struct_080074ec_init {
-    s16 id;
+    s16 sprite;
     s16 startX;
     s16 startY;
     s8_8 xVel;
     s8_8 yVel;
 };
 struct unk_struct_080074ec {
-    s16 id;
+    s16 sprite;
     s8_8 xVel;
     s8_8 yVel;
     s24_8 xPos;
@@ -144,7 +136,7 @@ struct unk_struct_08007788 {
 
 // Sinusoidal
 struct unk_struct_080078ec_init {
-    s16 id;
+    s16 sprite;
     u8 angle;
     s16 baseX;
     s16 baseY;
@@ -155,7 +147,7 @@ struct unk_struct_080078ec_init {
     u16 totalFrames;
 };
 struct unk_struct_080078ec {
-    s16 id;
+    s16 sprite;
     u16 baseXPos;
     u16 baseYPos;
     s16 baseOffset;
@@ -167,9 +159,9 @@ struct unk_struct_080078ec {
     u8 angle;
 };
 
-// Unknown
+// Sinusoidal Velocity along a Line
 struct unk_struct_080079bc_init {
-    s16 id;
+    s16 sprite;
     s16 startX;
     s16 startY;
     s16 destX;
@@ -179,7 +171,7 @@ struct unk_struct_080079bc_init {
     u16 totalFrames;
 };
 struct unk_struct_080079bc {
-    s16 id;
+    s16 sprite;
     u16 startXPos;
     u16 startYPos;
     s16 dx;
@@ -210,8 +202,15 @@ struct unk_struct_08007aa0 {
     u16 totalFrames;
 };
 
-struct unk_struct_08007bb8_init;
-struct unk_struct_08007bb8;
+// Timed Data Interpolation (Linear)
+struct LinearDataInterpolator {
+    u32 varSize:2;
+    u32 duration:15;
+    u32 runningTime:15;
+    void *variable;
+    s32 initial;
+    s32 target;
+};
 
 struct unk_struct_08007ca8_init;
 struct unk_struct_08007ca8;
@@ -222,8 +221,13 @@ struct unk_struct_08007d88;
 struct unk_struct_08007e7c_init;
 struct unk_struct_08007e7c;
 
-struct unk_struct_08007f58_init;
-struct unk_struct_08007f58;
+// LCD Special Effect (Blend) Controls Interpolator
+struct BlendControlsInterpolator {
+    u16 blendControls;
+    u16 duration;
+    u16 runningTime;
+    u16 flip;
+};
 
 struct unk_struct_08008420_init;
 struct unk_struct_08008420;

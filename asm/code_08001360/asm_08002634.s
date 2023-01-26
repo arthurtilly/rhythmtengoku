@@ -2,13 +2,13 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08002634 \n\
+thumb_func_start play_sound \n\
 /* 08002634 */ PUSH {R4, R5, LR} \n\
 /* 08002636 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08002638 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 0800263a */ BEQ branch_08002668 \n\
 /* 0800263c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0800263e */ BL func_08002630 \n\
+/* 0800263e */ BL get_sound_num \n\
 /* 08002642 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08002644 */ LSLS R4, R4, 0x10 \n\
 /* 08002646 */ LSRS R4, R4, 0x10 \n\

@@ -83,7 +83,7 @@ branch_0800e602: \n\
 /* 0800e602 */ STRH R0, [R1, 0xC] \n\
  \n\
 branch_0800e604: \n\
-/* 0800e604 */ BL func_0800c3b8 \n\
+/* 0800e604 */ BL get_current_mem_id \n\
 /* 0800e608 */ LSLS R0, R0, 0x10 \n\
 /* 0800e60a */ LSRS R0, R0, 0x10 \n\
 /* 0800e60c */ LDR R1, =D_08936bf4 \n\
@@ -91,7 +91,7 @@ branch_0800e604: \n\
 /* 0800e610 */ STR R2, [SP] \n\
 /* 0800e612 */ ADD R2, SP, 0x4 \n\
 /* 0800e614 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800e616 */ BL func_08005b20 \n\
+/* 0800e616 */ BL start_new_task \n\
 /* 0800e61a */ ADD SP, 0x14 \n\
 /* 0800e61c */ POP {R4-R7} \n\
 /* 0800e61e */ POP {R1} \n\

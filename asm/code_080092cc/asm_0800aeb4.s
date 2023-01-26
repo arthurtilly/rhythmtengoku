@@ -28,16 +28,16 @@ thumb_func_start func_0800aeb4 \n\
 /* 0800aee2 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 0800aee4 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 0800aee6 */ ADDS R3, R6, 0x0 @ Set R3 to R6 + 0x0 \n\
-/* 0800aee8 */ BL func_0800a204 \n\
+/* 0800aee8 */ BL text_printer_create_new \n\
 /* 0800aeec */ STR R0, [R7, 0x4] \n\
 /* 0800aeee */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 0800aef0 */ BL func_0800adc0 \n\
+/* 0800aef0 */ BL text_printer_set_mode \n\
 /* 0800aef4 */ LDR R0, [R7, 0x4] \n\
 /* 0800aef6 */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
 /* 0800aef8 */ ADDS R1, 0x1C @ Add 0x1C to R1 \n\
 /* 0800aefa */ ADDS R2, R7, 0x0 @ Set R2 to R7 + 0x0 \n\
 /* 0800aefc */ ADDS R2, 0x1E @ Add 0x1E to R2 \n\
-/* 0800aefe */ BL func_0800ad98 \n\
+/* 0800aefe */ BL text_printer_set_x_y_controller \n\
 /* 0800af02 */ LDR R0, [R7, 0x4] \n\
 /* 0800af04 */ LDR R2, [SP, 0x40] \n\
 /* 0800af06 */ LSLS R1, R2, 0x10 \n\
@@ -46,26 +46,26 @@ thumb_func_start func_0800aeb4 \n\
 /* 0800af0c */ LSLS R2, R1, 0x10 \n\
 /* 0800af0e */ ASRS R2, R2, 0x10 \n\
 /* 0800af10 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 0800af12 */ BL func_0800ac68 \n\
+/* 0800af12 */ BL text_printer_set_x_y \n\
 /* 0800af16 */ LDR R0, [R7, 0x4] \n\
 /* 0800af18 */ LDR R2, [SP, 0x48] \n\
 /* 0800af1a */ LSLS R1, R2, 0x10 \n\
 /* 0800af1c */ LSRS R4, R1, 0x10 \n\
 /* 0800af1e */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0800af20 */ BL func_0800aca0 \n\
+/* 0800af20 */ BL text_printer_set_layer \n\
 /* 0800af24 */ LDR R0, [R7, 0x4] \n\
 /* 0800af26 */ LDR R1, [SP, 0x38] \n\
-/* 0800af28 */ BL func_0800acb0 \n\
+/* 0800af28 */ BL text_printer_set_palette \n\
 /* 0800af2c */ LDR R0, [R7, 0x4] \n\
 /* 0800af2e */ LDR R1, [SP, 0x3C] \n\
-/* 0800af30 */ BL func_0800acbc \n\
+/* 0800af30 */ BL text_printer_set_colors \n\
 /* 0800af34 */ LDR R0, [R7, 0x4] \n\
 /* 0800af36 */ LDR R1, [SP, 0x4C] \n\
-/* 0800af38 */ BL func_0800ae00 \n\
+/* 0800af38 */ BL text_printer_set_line_spacing \n\
 /* 0800af3c */ LDR R0, [R7, 0x4] \n\
 /* 0800af3e */ LDR R1, =func_0800ae88 \n\
 /* 0800af40 */ ADDS R2, R7, 0x0 @ Set R2 to R7 + 0x0 \n\
-/* 0800af42 */ BL func_0800ad20 \n\
+/* 0800af42 */ BL text_printer_run_func_on_finish \n\
 /* 0800af46 */ MOV R0, R9 @ Set R0 to R9 \n\
 /* 0800af48 */ STRB R0, [R7, 0x8] \n\
 /* 0800af4a */ ADD R1, SP, 0x34 \n\

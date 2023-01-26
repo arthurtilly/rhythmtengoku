@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088b3dbc] <description>
+// [D_088b3dbc] Palette
 const Palette prologue_rat_race_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xC0C0C0),
@@ -148,4 +148,3 @@ const Palette prologue_rat_race_pal[] = {
         /* 15 */ TO_RGB555(0x000000)
     }
 };
-

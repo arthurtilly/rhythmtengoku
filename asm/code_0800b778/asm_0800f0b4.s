@@ -15,9 +15,9 @@ thumb_func_start func_0800f0b4 \n\
 /* 0800f0c6 */ LSLS R5, R5, 0x10 \n\
 /* 0800f0c8 */ LSRS R5, R5, 0x10 \n\
 /* 0800f0ca */ MOVS R0, 0x9C @ Set R0 to 0x9C \n\
-/* 0800f0cc */ BL func_0800c43c \n\
+/* 0800f0cc */ BL scene_mem_heap_alloc \n\
 /* 0800f0d0 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
-/* 0800f0d2 */ BL func_0800c3b8 \n\
+/* 0800f0d2 */ BL get_current_mem_id \n\
 /* 0800f0d6 */ STRH R0, [R7] \n\
 /* 0800f0d8 */ MOV R0, R9 @ Set R0 to R9 \n\
 /* 0800f0da */ STR R0, [R7, 0x4] \n\
@@ -31,7 +31,7 @@ thumb_func_start func_0800f0b4 \n\
 /* 0800f0ea */ STRH R4, [R0] \n\
 /* 0800f0ec */ LDRH R0, [R0] \n\
 /* 0800f0ee */ LSLS R0, R0, 0x4 \n\
-/* 0800f0f0 */ BL func_0800c43c \n\
+/* 0800f0f0 */ BL scene_mem_heap_alloc \n\
 /* 0800f0f4 */ STR R0, [R7, 0x8] \n\
 /* 0800f0f6 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0800f0f8 */ ADDS R0, 0x4F @ Add 0x4F to R0 \n\
@@ -43,7 +43,7 @@ thumb_func_start func_0800f0b4 \n\
 /* 0800f104 */ LSLS R0, R1, 0x1 \n\
 /* 0800f106 */ ADD R0, R8 @ Add R8 to R0 \n\
 /* 0800f108 */ LSLS R0, R0, 0x4 \n\
-/* 0800f10a */ BL func_0800c43c \n\
+/* 0800f10a */ BL scene_mem_heap_alloc \n\
 /* 0800f10e */ STR R0, [R7, 0x50] \n\
 /* 0800f110 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800f112 */ CMP R2, R8 @ Compare R2 and R8 \n\
@@ -69,7 +69,7 @@ branch_0800f12e: \n\
 /* 0800f132 */ ADDS R5, 0x4E @ Add 0x4E to R5 \n\
  \n\
 branch_0800f134: \n\
-/* 0800f134 */ BL func_0800c3b8 \n\
+/* 0800f134 */ BL get_current_mem_id \n\
 /* 0800f138 */ BL func_08002194 \n\
 /* 0800f13c */ LSLS R0, R0, 0x18 \n\
 /* 0800f13e */ LSRS R1, R0, 0x18 \n\
@@ -87,7 +87,7 @@ branch_0800f134: \n\
 branch_0800f154: \n\
 /* 0800f154 */ STRB R4, [R5] \n\
 /* 0800f156 */ LSLS R0, R4, 0x3 \n\
-/* 0800f158 */ BL func_0800c43c \n\
+/* 0800f158 */ BL scene_mem_heap_alloc \n\
 /* 0800f15c */ STR R0, [R7, 0x74] \n\
 /* 0800f15e */ LDR R1, =0x04000020 @ !Hardware REG_BG2PA \n\
 /* 0800f160 */ MOV R0, R9 @ Set R0 to R9 \n\

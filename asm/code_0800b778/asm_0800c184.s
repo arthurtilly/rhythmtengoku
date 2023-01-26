@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0800c184 \n\
+thumb_func_start scene_set_music_key \n\
 /* 0800c184 */ PUSH {LR} \n\
 /* 0800c186 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800c188 */ LDR R0, =D_030053c0 \n\
@@ -13,7 +13,7 @@ thumb_func_start func_0800c184 \n\
 /* 0800c192 */ LDR R0, [R0, 0x4] \n\
 /* 0800c194 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0800c196 */ BEQ branch_0800c19c \n\
-/* 0800c198 */ BL func_080029c4 \n\
+/* 0800c198 */ BL set_soundplayer_key \n\
  \n\
 branch_0800c19c: \n\
 /* 0800c19c */ POP {R0} \n\

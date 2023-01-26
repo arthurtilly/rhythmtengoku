@@ -27,7 +27,7 @@ thumb_func_start func_0800b32c \n\
  \n\
 branch_0800b358: \n\
 /* 0800b358 */ LDR R0, [R5, 0x4] \n\
-/* 0800b35a */ BL func_0800add8 \n\
+/* 0800b35a */ BL text_printer_get_line_sprite \n\
 /* 0800b35e */ LSLS R0, R0, 0x10 \n\
 /* 0800b360 */ ASRS R0, R0, 0x10 \n\
  \n\

@@ -77,7 +77,7 @@ branch_08001ae6: \n\
 /* 08001aec */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 08001aee */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08001af0 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08001af2 */ BL func_0800186c \n\
+/* 08001af2 */ BL dma3_set \n\
 /* 08001af6 */ ADD R0, SP, 0x4 \n\
 /* 08001af8 */ BL _call_via_r6 \n\
 /* 08001afc */ B branch_08001b3c \n\
@@ -108,7 +108,7 @@ branch_08001b04: \n\
 /* 08001b2c */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 08001b2e */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08001b30 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08001b32 */ BL func_0800186c \n\
+/* 08001b32 */ BL dma3_set \n\
 /* 08001b36 */ ADD R0, SP, 0x4 \n\
 /* 08001b38 */ BL _call_via_r6 \n\
  \n\

@@ -3,8 +3,8 @@
 
 #include "prologue_space_dance_anim_cells.inc.c"
 
-// [D_088b7338] <description>
-const struct Animation prologue_space_dance_anim00[] = {
+// [D_088b7338] Title
+const struct Animation anim_prologue_space_dance_title[] = {
     /* 000 */ { prologue_space_dance_cel000, 1 },
     /* 001 */ { prologue_space_dance_cel001, 1 },
     /* 002 */ { prologue_space_dance_cel002, 4 },
@@ -108,8 +108,8 @@ const struct Animation prologue_space_dance_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088b7660] <description>
-const struct Animation prologue_space_dance_anim01[] = {
+// [D_088b7660] Star
+const struct Animation anim_prologue_space_dance_star[] = {
     /* 000 */ { prologue_space_dance_cel080, 6 },
     /* 001 */ { prologue_space_dance_cel081, 6 },
     /* 002 */ { prologue_space_dance_cel082, 6 },
@@ -118,10 +118,9 @@ const struct Animation prologue_space_dance_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088b7690] <description>
-const struct Animation prologue_space_dance_anim02[] = {
+// [D_088b7690] Faces
+const struct Animation anim_prologue_space_dance_faces[] = {
     /* 000 */ { prologue_space_dance_cel084, 220 },
     /* 001 */ { prologue_space_dance_cel085, 90 },
     /* End */ END_ANIMATION
 };
-

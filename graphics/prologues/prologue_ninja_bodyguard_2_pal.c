@@ -1,8 +1,8 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088b438c] <description>
-const Palette prologue_ninja_bodyguard_2_pal[] = {
+// [D_088b438c] Palette
+const Palette prologue_ninja_2_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x68D0F8),
         /* 01 */ TO_RGB555(0x283030),
@@ -130,4 +130,3 @@ const Palette prologue_ninja_bodyguard_2_pal[] = {
         /* 15 */ TO_RGB555(0x000000)
     }
 };
-

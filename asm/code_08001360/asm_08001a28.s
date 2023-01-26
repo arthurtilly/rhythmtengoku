@@ -20,7 +20,7 @@ thumb_func_start func_08001a28 \n\
 /* 08001a44 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 08001a46 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 08001a48 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 08001a4a */ BL func_0800186c \n\
+/* 08001a4a */ BL dma3_set \n\
 /* 08001a4e */ ADD R0, SP, 0x4 \n\
 /* 08001a50 */ BL _call_via_r5 \n\
 /* 08001a54 */ ADD SP, 0x18 \n\

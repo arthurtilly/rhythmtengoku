@@ -3,16 +3,16 @@
 
 #include "fireworks_anim_cells.inc.c"
 
-// [D_088e8f14] <description>
-const struct Animation fireworks_anim00[] = {
+// [D_088e8f14] Firework Rocket (Shortest Trail)
+const struct Animation anim_fireworks_rocket4[] = {
     /* 000 */ { fireworks_cel000, 2 },
     /* 001 */ { fireworks_cel001, 2 },
     /* 002 */ { fireworks_cel002, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e8f34] <description>
-const struct Animation fireworks_anim01[] = {
+// [D_088e8f34] Firework Rocket (Burst)
+const struct Animation anim_fireworks_rocket_explode[] = {
     /* 000 */ { fireworks_cel003, 4 },
     /* 001 */ { fireworks_cel004, 4 },
     /* 002 */ { fireworks_cel005, 4 },
@@ -21,8 +21,8 @@ const struct Animation fireworks_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e8f64] <description>
-const struct Animation fireworks_anim02[] = {
+// [D_088e8f64] Red Particle
+const struct Animation anim_fireworks_particle_red[] = {
     /* 000 */ { fireworks_cel009, 32 },
     /* 001 */ { fireworks_cel010, 8 },
     /* 002 */ { fireworks_cel011, 6 },
@@ -35,8 +35,8 @@ const struct Animation fireworks_anim02[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e8fb4] <description>
-const struct Animation fireworks_anim03[] = {
+// [D_088e8fb4] Green Particle
+const struct Animation anim_fireworks_particle_green[] = {
     /* 000 */ { fireworks_cel018, 2 },
     /* 001 */ { fireworks_cel019, 2 },
     /* 002 */ { fireworks_cel020, 2 },
@@ -58,14 +58,14 @@ const struct Animation fireworks_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e904c] <description>
-const struct Animation fireworks_anim04[] = {
+// [D_088e904c] Circular Particle (Unused)
+const struct Animation anim_fireworks_particle_circle[] = {
     /* 000 */ { fireworks_cel008, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e905c] <description>
-const struct Animation fireworks_anim05[] = {
+// [D_088e905c] Blue Particle
+const struct Animation anim_fireworks_particle_blue[] = {
     /* 000 */ { fireworks_cel027, 4 },
     /* 001 */ { fireworks_cel028, 4 },
     /* 002 */ { fireworks_cel029, 4 },
@@ -78,15 +78,15 @@ const struct Animation fireworks_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e90ac] <description>
-const struct Animation fireworks_anim06[] = {
+// [D_088e90ac] Hawfinch Taiko Bomber
+const struct Animation anim_fireworks_bomb[] = {
     /* 000 */ { fireworks_cel036, 4 },
     /* 001 */ { fireworks_cel037, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e90c4] <description>
-const struct Animation fireworks_anim07[] = {
+// [D_088e90c4] Taiko Bomber Explosion
+const struct Animation anim_fireworks_bomb_explode[] = {
     /* 000 */ { fireworks_cel038, 1 },
     /* 001 */ { fireworks_cel039, 1 },
     /* 002 */ { fireworks_cel040, 1 },
@@ -100,8 +100,8 @@ const struct Animation fireworks_anim07[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e911c] <description>
-const struct Animation fireworks_anim08[] = {
+// [D_088e911c] Tricolour Particle (RBG)
+const struct Animation anim_fireworks_particle_tri_rbg[] = {
     /* 000 */ { fireworks_cel009, 6 },
     /* 001 */ { fireworks_cel027, 6 },
     /* 002 */ { fireworks_cel018, 6 },
@@ -132,8 +132,8 @@ const struct Animation fireworks_anim08[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e91fc] <description>
-const struct Animation fireworks_anim09[] = {
+// [D_088e91fc] Tricolour Particle (GRB)
+const struct Animation anim_fireworks_particle_tri_grb[] = {
     /* 000 */ { fireworks_cel018, 6 },
     /* 001 */ { fireworks_cel009, 6 },
     /* 002 */ { fireworks_cel027, 6 },
@@ -164,8 +164,8 @@ const struct Animation fireworks_anim09[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e92dc] <description>
-const struct Animation fireworks_anim10[] = {
+// [D_088e92dc] Tricolour Particle (RGB)
+const struct Animation anim_fireworks_particle_tri_rgb[] = {
     /* 000 */ { fireworks_cel009, 6 },
     /* 001 */ { fireworks_cel018, 6 },
     /* 002 */ { fireworks_cel027, 6 },
@@ -196,38 +196,38 @@ const struct Animation fireworks_anim10[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e93bc] <description>
-const struct Animation fireworks_anim11[] = {
+// [D_088e93bc] "Start to Skip" Tutorial Text (Unused)
+const struct Animation anim_fireworks_skip_tutorial_icon[] = {
     /* 000 */ { fireworks_cel048, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e93cc] <description>
-const struct Animation fireworks_anim12[] = {
+// [D_088e93cc] Firework Rocket (Short Trail)
+const struct Animation anim_fireworks_rocket3[] = {
     /* 000 */ { fireworks_cel049, 2 },
     /* 001 */ { fireworks_cel050, 2 },
     /* 002 */ { fireworks_cel051, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e93ec] <description>
-const struct Animation fireworks_anim13[] = {
+// [D_088e93ec] Firework Rocket (Long Trail)
+const struct Animation anim_fireworks_rocket2[] = {
     /* 000 */ { fireworks_cel052, 2 },
     /* 001 */ { fireworks_cel053, 2 },
     /* 002 */ { fireworks_cel054, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e940c] <description>
-const struct Animation fireworks_anim14[] = {
+// [D_088e940c] Firework Rocket (Longest Trail)
+const struct Animation anim_fireworks_rocket1[] = {
     /* 000 */ { fireworks_cel055, 2 },
     /* 001 */ { fireworks_cel056, 2 },
     /* 002 */ { fireworks_cel057, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e942c] <description>
-const struct Animation fireworks_anim15[] = {
+// [D_088e942c] Numbers 0-3 (Unused)
+const struct Animation anim_fireworks_count[] = {
     /* 000 */ { fireworks_cel058, 4 },
     /* 001 */ { fireworks_cel059, 4 },
     /* 002 */ { fireworks_cel060, 4 },

@@ -115,12 +115,12 @@
 #define REG_BG3PC      	*(volatile u16 *)(IORAMBase + 0x34)
 #define REG_BG3PD      	*(volatile u16 *)(IORAMBase + 0x36)
 
-#define REG_BG3X       	*(volatile u32 *)(IORAMBase + 0x38
-#define REG_BG3X_L     	*(volatile u16 *)(IORAMBase + 0x38
-#define REG_BG3X_H     	*(volatile u16 *)(IORAMBase + 0x3A
-#define REG_BG3Y       	*(volatile u32 *)(IORAMBase + 0x3C
-#define REG_BG3Y_L     	*(volatile u16 *)(IORAMBase + 0x3C
-#define REG_BG3Y_H     	*(volatile u16 *)(IORAMBase + 0x3E
+#define REG_BG3X       	*(volatile u32 *)(IORAMBase + 0x38)
+#define REG_BG3X_L     	*(volatile u16 *)(IORAMBase + 0x38)
+#define REG_BG3X_H     	*(volatile u16 *)(IORAMBase + 0x3A)
+#define REG_BG3Y       	*(volatile u32 *)(IORAMBase + 0x3C)
+#define REG_BG3Y_L     	*(volatile u16 *)(IORAMBase + 0x3C)
+#define REG_BG3Y_H     	*(volatile u16 *)(IORAMBase + 0x3E)
 
 
 

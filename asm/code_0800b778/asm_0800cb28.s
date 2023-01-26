@@ -1075,12 +1075,12 @@ jump_0800d3ba: \n\
 /* 0800d3bc */ BHI branch_0800d3ca \n\
 /* 0800d3be */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 0800d3c0 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0800d3c2 */ BL func_0800bf9c \n\
+/* 0800d3c2 */ BL scene_set_music_with_soundplayer \n\
 /* 0800d3c6 */ BL branch_0800df9e \n\
  \n\
 branch_0800d3ca: \n\
 /* 0800d3ca */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d3cc */ BL func_0800bf7c \n\
+/* 0800d3cc */ BL scene_set_music \n\
 /* 0800d3d0 */ BL branch_0800df9e \n\
 \n\
 jump_0800d3d4: \n\
@@ -1088,24 +1088,24 @@ jump_0800d3d4: \n\
 /* 0800d3d6 */ BHI branch_0800d3e4 \n\
 /* 0800d3d8 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 0800d3da */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 0800d3dc */ BL func_0800bfac \n\
+/* 0800d3dc */ BL scene_play_music_with_soundplayer \n\
 /* 0800d3e0 */ BL branch_0800df9e \n\
  \n\
 branch_0800d3e4: \n\
 /* 0800d3e4 */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d3e6 */ BL func_0800bf8c \n\
+/* 0800d3e6 */ BL scene_play_music \n\
 /* 0800d3ea */ BL branch_0800df9e \n\
 \n\
 jump_0800d3ee: \n\
 /* 0800d3ee */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d3f0 */ BL func_08002634 \n\
+/* 0800d3f0 */ BL play_sound \n\
 /* 0800d3f4 */ BL branch_0800df9e \n\
 \n\
 jump_0800d3f8: \n\
 /* 0800d3f8 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 0800d3fa */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
 /* 0800d3fc */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
-/* 0800d3fe */ BL func_08002698 \n\
+/* 0800d3fe */ BL play_sound_w_pitch_volume \n\
 /* 0800d402 */ BL branch_0800df9e \n\
 \n\
 jump_0800d406: \n\
@@ -1113,9 +1113,9 @@ jump_0800d406: \n\
 /* 0800d408 */ ANDS R1, R6 @ Set R1 to R1 & R6 \n\
 /* 0800d40a */ ASRS R2, R6, 0x10 \n\
 /* 0800d40c */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d40e */ BL func_08002698 \n\
+/* 0800d40e */ BL play_sound_w_pitch_volume \n\
 /* 0800d412 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 0800d414 */ BL func_0800c1a8 \n\
+/* 0800d414 */ BL get_beatscript_tempo \n\
 /* 0800d418 */ LSLS R0, R0, 0x8 \n\
 /* 0800d41a */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
 /* 0800d41c */ BL __udivsi3 \n\
@@ -1123,7 +1123,7 @@ jump_0800d406: \n\
 /* 0800d422 */ LSLS R1, R1, 0x10 \n\
 /* 0800d424 */ LSRS R1, R1, 0x10 \n\
 /* 0800d426 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0800d428 */ BL func_08002894 \n\
+/* 0800d428 */ BL set_soundplayer_speed \n\
 /* 0800d42c */ BL branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1132,7 +1132,7 @@ jump_0800d434: \n\
 /* 0800d434 */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0800d436 */ BEQ branch_0800d440 \n\
 /* 0800d438 */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d43a */ BL func_0800c3a4 \n\
+/* 0800d43a */ BL beats_to_ticks \n\
 /* 0800d43e */ B branch_0800d442 \n\
  \n\
 branch_0800d440: \n\
@@ -1146,7 +1146,7 @@ jump_0800d44a: \n\
 /* 0800d44a */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0800d44c */ BEQ branch_0800d456 \n\
 /* 0800d44e */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d450 */ BL func_0800c3a4 \n\
+/* 0800d450 */ BL beats_to_ticks \n\
 /* 0800d454 */ B branch_0800d458 \n\
  \n\
 branch_0800d456: \n\
@@ -1160,7 +1160,7 @@ jump_0800d460: \n\
 /* 0800d460 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0800d462 */ LSLS R0, R1, 0x10 \n\
 /* 0800d464 */ LSRS R0, R0, 0x10 \n\
-/* 0800d466 */ BL func_0800c3a4 \n\
+/* 0800d466 */ BL beats_to_ticks \n\
 /* 0800d46a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800d46c */ LSLS R1, R1, 0x10 \n\
 /* 0800d46e */ LSRS R1, R1, 0x10 \n\
@@ -1216,7 +1216,7 @@ jump_0800d4d0: \n\
 /* 0800d4d6 */ BL branch_0800df9e \n\
 \n\
 jump_0800d4da: \n\
-/* 0800d4da */ BL func_0800c3b8 \n\
+/* 0800d4da */ BL get_current_mem_id \n\
 /* 0800d4de */ LSLS R0, R0, 0x10 \n\
 /* 0800d4e0 */ LSRS R0, R0, 0x10 \n\
 /* 0800d4e2 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
@@ -1228,31 +1228,31 @@ jump_0800d4ee: \n\
 /* 0800d4ee */ MOV R6, R8 @ Set R6 to R8 \n\
 /* 0800d4f0 */ LSLS R0, R6, 0x10 \n\
 /* 0800d4f2 */ LSRS R0, R0, 0x10 \n\
-/* 0800d4f4 */ BL func_0800be88 \n\
+/* 0800d4f4 */ BL set_beatscript_speed \n\
 /* 0800d4f8 */ BL branch_0800df9e \n\
 \n\
 jump_0800d4fc: \n\
 /* 0800d4fc */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d4fe */ BL func_0800bf7c \n\
+/* 0800d4fe */ BL scene_set_music \n\
 /* 0800d502 */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d504 */ BL func_080102d0 \n\
+/* 0800d504 */ BL get_music_base_tempo \n\
 /* 0800d508 */ LSLS R0, R0, 0x10 \n\
 /* 0800d50a */ LSRS R0, R0, 0x10 \n\
-/* 0800d50c */ BL func_0800bdf8 \n\
+/* 0800d50c */ BL set_beatscript_tempo \n\
 /* 0800d510 */ BL branch_0800df9e \n\
 \n\
 jump_0800d514: \n\
 /* 0800d514 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0800d516 */ LSLS R0, R1, 0x10 \n\
 /* 0800d518 */ ASRS R0, R0, 0x10 \n\
-/* 0800d51a */ BL func_0800c0c4 \n\
+/* 0800d51a */ BL scene_set_music_pitch_env \n\
 /* 0800d51e */ BL branch_0800df9e \n\
 \n\
 jump_0800d522: \n\
 /* 0800d522 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0800d524 */ LSLS R0, R2, 0x10 \n\
 /* 0800d526 */ ASRS R0, R0, 0x10 \n\
-/* 0800d528 */ BL func_0800c088 \n\
+/* 0800d528 */ BL scene_set_music_pitch \n\
 /* 0800d52c */ BL branch_0800df9e \n\
 \n\
 jump_0800d530: \n\
@@ -1262,11 +1262,11 @@ jump_0800d530: \n\
 /* 0800d536 */ CMP R3, 0x0 @ Compare R3 and 0x0 \n\
 /* 0800d538 */ BGE branch_0800d542 \n\
 /* 0800d53a */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0800d53c */ BL func_0800c3a4 \n\
+/* 0800d53c */ BL beats_to_ticks \n\
 /* 0800d540 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
  \n\
 branch_0800d542: \n\
-/* 0800d542 */ BL func_0800c3b8 \n\
+/* 0800d542 */ BL get_current_mem_id \n\
 /* 0800d546 */ LSLS R0, R0, 0x10 \n\
 /* 0800d548 */ LSRS R0, R0, 0x10 \n\
 /* 0800d54a */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
@@ -1286,7 +1286,7 @@ jump_0800d55c: \n\
 /* 0800d566 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0800d568 */ BEQ branch_0800d572 \n\
 /* 0800d56a */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0800d56c */ BL func_0800c3a4 \n\
+/* 0800d56c */ BL beats_to_ticks \n\
 /* 0800d570 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
  \n\
 branch_0800d572: \n\
@@ -1302,7 +1302,7 @@ branch_0800d572: \n\
 /* 0800d584 */ LDR R0, =0xffff \n\
 /* 0800d586 */ CMP R6, R0 @ Check R6 - R0 \n\
 /* 0800d588 */ BHI branch_0800d5b0 \n\
-/* 0800d58a */ BL func_0800c3b8 \n\
+/* 0800d58a */ BL get_current_mem_id \n\
 /* 0800d58e */ LSLS R0, R0, 0x10 \n\
 /* 0800d590 */ LSRS R0, R0, 0x10 \n\
 /* 0800d592 */ LSLS R1, R5, 0x18 \n\
@@ -1320,7 +1320,7 @@ branch_0800d572: \n\
 branch_0800d5b0: \n\
 /* 0800d5b0 */ CMP R8, R0 @ Compare R8 and R0 \n\
 /* 0800d5b2 */ BHI branch_0800d5d4 \n\
-/* 0800d5b4 */ BL func_0800c3b8 \n\
+/* 0800d5b4 */ BL get_current_mem_id \n\
 /* 0800d5b8 */ LSLS R0, R0, 0x10 \n\
 /* 0800d5ba */ LSRS R0, R0, 0x10 \n\
 /* 0800d5bc */ LSLS R1, R5, 0x18 \n\
@@ -1335,7 +1335,7 @@ branch_0800d5b0: \n\
 /* 0800d5d0 */ BL branch_0800df9e \n\
  \n\
 branch_0800d5d4: \n\
-/* 0800d5d4 */ BL func_0800c3b8 \n\
+/* 0800d5d4 */ BL get_current_mem_id \n\
 /* 0800d5d8 */ LSLS R0, R0, 0x10 \n\
 /* 0800d5da */ LSRS R0, R0, 0x10 \n\
 /* 0800d5dc */ LSLS R1, R5, 0x18 \n\
@@ -1357,12 +1357,12 @@ jump_0800d5f4: \n\
 /* 0800d5fc */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0800d5fe */ BEQ branch_0800d608 \n\
 /* 0800d600 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0800d602 */ BL func_0800e030 \n\
+/* 0800d602 */ BL scene_show_bg_layer \n\
 /* 0800d606 */ B branch_0800d60e \n\
  \n\
 branch_0800d608: \n\
 /* 0800d608 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0800d60a */ BL func_0800e044 \n\
+/* 0800d60a */ BL scene_hide_bg_layer \n\
  \n\
 branch_0800d60e: \n\
 /* 0800d60e */ LDR R2, =D_03004b10 \n\
@@ -1391,7 +1391,7 @@ jump_0800d62c: \n\
 /* 0800d63a */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 0800d63c */ STRB R0, [R3] \n\
 /* 0800d63e */ LSRS R0, R7, 0x2 \n\
-/* 0800d640 */ BL func_0800c3a4 \n\
+/* 0800d640 */ BL beats_to_ticks \n\
 /* 0800d644 */ LDR R1, =0x7fff \n\
 /* 0800d646 */ ANDS R1, R0 @ Set R1 to R1 & R0 \n\
 /* 0800d648 */ LSLS R1, R1, 0x2 \n\
@@ -1407,7 +1407,7 @@ jump_0800d62c: \n\
 /* 0800d65c */ STR R0, [SP, 0x14] \n\
 /* 0800d65e */ ASRS R0, R5, 0x10 \n\
 /* 0800d660 */ STR R0, [SP, 0x18] \n\
-/* 0800d662 */ BL func_0800c3b8 \n\
+/* 0800d662 */ BL get_current_mem_id \n\
 /* 0800d666 */ LSLS R0, R0, 0x10 \n\
 /* 0800d668 */ LSRS R0, R0, 0x10 \n\
 /* 0800d66a */ LDR R1, =D_08936c14 \n\
@@ -1415,7 +1415,7 @@ jump_0800d62c: \n\
 /* 0800d66e */ STR R2, [SP] \n\
 /* 0800d670 */ ADD R2, SP, 0xC \n\
 /* 0800d672 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800d674 */ BL func_08005b20 \n\
+/* 0800d674 */ BL start_new_task \n\
 /* 0800d678 */ B branch_0800dd68 \n\
 \n\
 .ltorg \n\
@@ -1431,7 +1431,7 @@ jump_0800d688: \n\
 /* 0800d696 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 0800d698 */ STRB R0, [R4] \n\
 /* 0800d69a */ LSRS R0, R7, 0x2 \n\
-/* 0800d69c */ BL func_0800c3a4 \n\
+/* 0800d69c */ BL beats_to_ticks \n\
 /* 0800d6a0 */ LDR R1, =0x7fff \n\
 /* 0800d6a2 */ ANDS R1, R0 @ Set R1 to R1 & R0 \n\
 /* 0800d6a4 */ LSLS R1, R1, 0x2 \n\
@@ -1447,7 +1447,7 @@ jump_0800d688: \n\
 /* 0800d6b8 */ STR R0, [R4, 0x8] \n\
 /* 0800d6ba */ ASRS R0, R6, 0x10 \n\
 /* 0800d6bc */ STR R0, [R4, 0xC] \n\
-/* 0800d6be */ BL func_0800c3b8 \n\
+/* 0800d6be */ BL get_current_mem_id \n\
 /* 0800d6c2 */ LSLS R0, R0, 0x10 \n\
 /* 0800d6c4 */ LSRS R0, R0, 0x10 \n\
 /* 0800d6c6 */ LDR R1, =D_08936c24 \n\
@@ -1455,7 +1455,7 @@ jump_0800d688: \n\
 /* 0800d6ca */ STR R2, [SP] \n\
 /* 0800d6cc */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 0800d6ce */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800d6d0 */ BL func_08005b20 \n\
+/* 0800d6d0 */ BL start_new_task \n\
 /* 0800d6d4 */ B branch_0800dd68 \n\
 \n\
 .ltorg \n\
@@ -1471,7 +1471,7 @@ jump_0800d6e4: \n\
 /* 0800d6f2 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 0800d6f4 */ STRB R0, [R4] \n\
 /* 0800d6f6 */ LSRS R0, R7, 0x2 \n\
-/* 0800d6f8 */ BL func_0800c3a4 \n\
+/* 0800d6f8 */ BL beats_to_ticks \n\
 /* 0800d6fc */ LDR R1, =0x7fff \n\
 /* 0800d6fe */ ANDS R1, R0 @ Set R1 to R1 & R0 \n\
 /* 0800d700 */ LSLS R1, R1, 0x2 \n\
@@ -1487,7 +1487,7 @@ jump_0800d6e4: \n\
 /* 0800d714 */ STR R0, [R4, 0x8] \n\
 /* 0800d716 */ ASRS R0, R1, 0x10 \n\
 /* 0800d718 */ STR R0, [R4, 0xC] \n\
-/* 0800d71a */ BL func_0800c3b8 \n\
+/* 0800d71a */ BL get_current_mem_id \n\
 /* 0800d71e */ LSLS R0, R0, 0x10 \n\
 /* 0800d720 */ LSRS R0, R0, 0x10 \n\
 /* 0800d722 */ LDR R1, =D_08936c34 \n\
@@ -1495,7 +1495,7 @@ jump_0800d6e4: \n\
 /* 0800d726 */ STR R2, [SP] \n\
 /* 0800d728 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 0800d72a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800d72c */ BL func_08005b20 \n\
+/* 0800d72c */ BL start_new_task \n\
 /* 0800d730 */ B branch_0800dd68 \n\
 \n\
 .ltorg \n\
@@ -1524,7 +1524,7 @@ jump_0800d740: \n\
 /* 0800d768 */ ASRS R0, R2, 0x10 \n\
 /* 0800d76a */ LSLS R0, R0, 0x8 \n\
 /* 0800d76c */ STR R0, [R4, 0x4] \n\
-/* 0800d76e */ BL func_0800c3b8 \n\
+/* 0800d76e */ BL get_current_mem_id \n\
 /* 0800d772 */ LSLS R0, R0, 0x10 \n\
 /* 0800d774 */ LSRS R0, R0, 0x10 \n\
 /* 0800d776 */ LDR R1, =D_08936c44 \n\
@@ -1532,7 +1532,7 @@ jump_0800d740: \n\
 /* 0800d77a */ STR R2, [SP] \n\
 /* 0800d77c */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 0800d77e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800d780 */ BL func_08005b20 \n\
+/* 0800d780 */ BL start_new_task \n\
 /* 0800d784 */ B branch_0800dd68 \n\
 \n\
 .ltorg \n\
@@ -1571,7 +1571,7 @@ jump_0800d7cc: \n\
 /* 0800d7cc */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0800d7ce */ BEQ branch_0800d7e8 \n\
 /* 0800d7d0 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0800d7d2 */ BL func_0800c3a4 \n\
+/* 0800d7d2 */ BL beats_to_ticks \n\
 /* 0800d7d6 */ LSLS R0, R0, 0x10 \n\
 /* 0800d7d8 */ LSRS R0, R0, 0x10 \n\
 /* 0800d7da */ MOV R4, R8 @ Set R4 to R8 \n\
@@ -1582,7 +1582,7 @@ jump_0800d7cc: \n\
  \n\
 branch_0800d7e8: \n\
 /* 0800d7e8 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0800d7ea */ BL func_0800c3a4 \n\
+/* 0800d7ea */ BL beats_to_ticks \n\
 /* 0800d7ee */ LSLS R0, R0, 0x10 \n\
 /* 0800d7f0 */ LSRS R0, R0, 0x10 \n\
 /* 0800d7f2 */ MOV R5, R8 @ Set R5 to R8 \n\
@@ -1596,7 +1596,7 @@ jump_0800d800: \n\
 /* 0800d802 */ B branch_0800d80c \n\
 \n\
 jump_0800d804: \n\
-/* 0800d804 */ BL func_0800c1a8 \n\
+/* 0800d804 */ BL get_beatscript_tempo \n\
 /* 0800d808 */ MULS R0, R6 @ Multiply R0 by R6 \n\
 /* 0800d80a */ LSRS R0, R0, 0x8 \n\
  \n\
@@ -1613,10 +1613,10 @@ jump_0800d816: \n\
 \n\
 jump_0800d820: \n\
 /* 0800d820 */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d822 */ BL func_0800c3a4 \n\
+/* 0800d822 */ BL beats_to_ticks \n\
 /* 0800d826 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800d828 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0800d82a */ BL func_0800c138 \n\
+/* 0800d82a */ BL scene_interpolate_music_volume \n\
 /* 0800d82e */ B branch_0800df9e \n\
 \n\
 jump_0800d830: \n\
@@ -1624,7 +1624,7 @@ jump_0800d830: \n\
 /* 0800d832 */ LSRS R0, R0, 0x10 \n\
 /* 0800d834 */ LSLS R1, R6, 0x10 \n\
 /* 0800d836 */ LSRS R1, R1, 0x10 \n\
-/* 0800d838 */ BL func_0800c0f8 \n\
+/* 0800d838 */ BL scene_set_music_track_volume \n\
 /* 0800d83c */ B branch_0800df9e \n\
 \n\
 jump_0800d83e: \n\
@@ -1635,12 +1635,12 @@ jump_0800d83e: \n\
 /* 0800d846 */ LSLS R2, R2, 0x1 \n\
 /* 0800d848 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0800d84a */ LDRH R1, [R1] \n\
-/* 0800d84c */ BL func_0800c0f8 \n\
+/* 0800d84c */ BL scene_set_music_track_volume \n\
 /* 0800d850 */ MOV R0, R8 @ Set R0 to R8 \n\
-/* 0800d852 */ BL func_0800c3a4 \n\
+/* 0800d852 */ BL beats_to_ticks \n\
 /* 0800d856 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800d858 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0800d85a */ BL func_0800c168 \n\
+/* 0800d85a */ BL scene_interpolate_music_track_volume \n\
 /* 0800d85e */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -2133,7 +2133,7 @@ jump_0800dbd0: \n\
 /* 0800dbfc */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0800dbfe */ LSLS R0, R2, 0x10 \n\
 /* 0800dc00 */ LSRS R0, R0, 0x10 \n\
-/* 0800dc02 */ BL func_0800c3a4 \n\
+/* 0800dc02 */ BL beats_to_ticks \n\
 /* 0800dc06 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0800dc08 */ LSLS R3, R3, 0x10 \n\
 /* 0800dc0a */ LSRS R3, R3, 0x10 \n\
@@ -2162,7 +2162,7 @@ jump_0800dc18: \n\
 /* 0800dc38 */ MOV R6, R8 @ Set R6 to R8 \n\
 /* 0800dc3a */ LSLS R0, R6, 0x10 \n\
 /* 0800dc3c */ LSRS R0, R0, 0x10 \n\
-/* 0800dc3e */ BL func_0800c3a4 \n\
+/* 0800dc3e */ BL beats_to_ticks \n\
 /* 0800dc42 */ LSLS R0, R0, 0x10 \n\
 /* 0800dc44 */ LSRS R0, R0, 0x10 \n\
 /* 0800dc46 */ LSLS R4, R4, 0x10 \n\
@@ -2197,7 +2197,7 @@ jump_0800dc60: \n\
 /* 0800dc80 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0800dc82 */ LSLS R0, R1, 0x10 \n\
 /* 0800dc84 */ LSRS R0, R0, 0x10 \n\
-/* 0800dc86 */ BL func_0800c3a4 \n\
+/* 0800dc86 */ BL beats_to_ticks \n\
 /* 0800dc8a */ LSLS R0, R0, 0x10 \n\
 /* 0800dc8c */ LSRS R0, R0, 0x10 \n\
 /* 0800dc8e */ LSLS R4, R4, 0x10 \n\
@@ -2255,7 +2255,7 @@ jump_0800dcde: \n\
 /* 0800dcee */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0800dcf0 */ LSLS R0, R2, 0x10 \n\
 /* 0800dcf2 */ LSRS R0, R0, 0x10 \n\
-/* 0800dcf4 */ BL func_0800c3a4 \n\
+/* 0800dcf4 */ BL beats_to_ticks \n\
 /* 0800dcf8 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0800dcfa */ LSLS R3, R3, 0x10 \n\
 /* 0800dcfc */ LSRS R3, R3, 0x10 \n\
@@ -2270,7 +2270,7 @@ jump_0800dd0a: \n\
 /* 0800dd0c */ LSLS R0, R3, 0x10 \n\
 /* 0800dd0e */ LSRS R0, R0, 0x10 \n\
 /* 0800dd10 */ STR R2, [SP, 0x50] \n\
-/* 0800dd12 */ BL func_0800c3a4 \n\
+/* 0800dd12 */ BL beats_to_ticks \n\
 /* 0800dd16 */ LSLS R0, R0, 0x10 \n\
 /* 0800dd18 */ LSRS R0, R0, 0x10 \n\
 /* 0800dd1a */ LSLS R1, R7, 0x1 \n\
@@ -2294,7 +2294,7 @@ jump_0800dd3a: \n\
 /* 0800dd3c */ LSLS R0, R1, 0x10 \n\
 /* 0800dd3e */ LSRS R0, R0, 0x10 \n\
 /* 0800dd40 */ STR R2, [SP, 0x50] \n\
-/* 0800dd42 */ BL func_0800c3a4 \n\
+/* 0800dd42 */ BL beats_to_ticks \n\
 /* 0800dd46 */ LSLS R0, R0, 0x10 \n\
 /* 0800dd48 */ LSRS R0, R0, 0x10 \n\
 /* 0800dd4a */ LSLS R1, R7, 0x1 \n\
@@ -2326,7 +2326,7 @@ jump_0800dd70: \n\
 /* 0800dd74 */ LDR R0, [R0] \n\
 /* 0800dd76 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 0800dd78 */ MOV R2, R8 @ Set R2 to R8 \n\
-/* 0800dd7a */ BL func_08005d38 \n\
+/* 0800dd7a */ BL run_func_after_task \n\
 /* 0800dd7e */ B branch_0800df9e \n\
 \n\
 jump_0800dd80: \n\
@@ -2403,7 +2403,7 @@ jump_0800ddfc: \n\
 .ltorg \n\
 \n\
 jump_0800de18: \n\
-/* 0800de18 */ BL func_0800c3b8 \n\
+/* 0800de18 */ BL get_current_mem_id \n\
 /* 0800de1c */ LSLS R0, R0, 0x10 \n\
 /* 0800de1e */ LSRS R0, R0, 0x10 \n\
 /* 0800de20 */ LDR R1, =D_03005380 \n\
@@ -2527,7 +2527,7 @@ jump_0800defc: \n\
 jump_0800df1c: \n\
 /* 0800df1c */ LDR R0, =D_03005380 \n\
 /* 0800df1e */ LDR R4, [R0] \n\
-/* 0800df20 */ BL func_0800c3b8 \n\
+/* 0800df20 */ BL get_current_mem_id \n\
 /* 0800df24 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800df26 */ LSLS R1, R1, 0x10 \n\
 /* 0800df28 */ LSRS R1, R1, 0x10 \n\
@@ -2539,11 +2539,11 @@ jump_0800df1c: \n\
 .ltorg \n\
 \n\
 jump_0800df38: \n\
-/* 0800df38 */ BL func_0800c3b8 \n\
+/* 0800df38 */ BL get_current_mem_id \n\
 /* 0800df3c */ LSLS R0, R0, 0x10 \n\
 /* 0800df3e */ LSRS R0, R0, 0x10 \n\
 /* 0800df40 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 0800df42 */ BL func_08005e18 \n\
+/* 0800df42 */ BL task_pool_pause_id \n\
 /* 0800df46 */ B branch_0800df9e \n\
 \n\
 jump_0800df48: \n\
@@ -2557,14 +2557,14 @@ jump_0800df52: \n\
 /* 0800df52 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 0800df54 */ BEQ branch_0800df5e \n\
 /* 0800df56 */ LDR R0, [R6] \n\
-/* 0800df58 */ BL func_08005bc4 \n\
+/* 0800df58 */ BL force_stop_task \n\
 /* 0800df5c */ B branch_0800df9e \n\
  \n\
 branch_0800df5e: \n\
 /* 0800df5e */ MOV R0, R9 @ Set R0 to R9 \n\
 /* 0800df60 */ ADDS R0, 0x98 @ Add 0x98 to R0 \n\
 /* 0800df62 */ LDR R0, [R0] \n\
-/* 0800df64 */ BL func_08005bc4 \n\
+/* 0800df64 */ BL force_stop_task \n\
 /* 0800df68 */ B branch_0800df9e \n\
 \n\
 jump_0800df6a: \n\
@@ -2575,7 +2575,7 @@ jump_0800df6a: \n\
 /* 0800df72 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0800df74 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0800df76 */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
-/* 0800df78 */ BL func_0800186c \n\
+/* 0800df78 */ BL dma3_set \n\
 /* 0800df7c */ B branch_0800df9e \n\
 \n\
 jump_0800df7e: \n\

@@ -3,15 +3,15 @@
 
 #include "confession_machine_anim_cells.inc.c"
 
-// [D_0890e5b0] <description>
-const struct Animation confession_machine_anim00[] = {
+// [D_0890e5b0] "Demo Start" Icon
+const struct Animation anim_love_machine_demo_icon[] = {
     /* 000 */ { confession_machine_cel000, 16 },
     /* 001 */ { confession_machine_cel001, 16 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890e5c8] <description>
-const struct Animation confession_machine_anim01[] = {
+// [D_0890e5c8] Love-san - D-Pad Pressed
+const struct Animation anim_love_san_speak_long[] = {
     /* 000 */ { confession_machine_cel024, 2 },
     /* 001 */ { confession_machine_cel025, 2 },
     /* 002 */ { confession_machine_cel026, 6 },
@@ -29,8 +29,8 @@ const struct Animation confession_machine_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890e640] <description>
-const struct Animation confession_machine_anim02[] = {
+// [D_0890e640] Love-san - A/B Button Pressed
+const struct Animation anim_love_san_speak_short[] = {
     /* 000 */ { confession_machine_cel033, 12 },
     /* 001 */ { confession_machine_cel034, 1 },
     /* 002 */ { confession_machine_cel035, 2 },
@@ -39,50 +39,50 @@ const struct Animation confession_machine_anim02[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890e670] <description>
-const struct Animation confession_machine_anim03[] = {
+// [D_0890e670] A Button
+const struct Animation anim_love_machine_button_a[] = {
     /* 000 */ { confession_machine_cel009, 6 },
     /* 001 */ { confession_machine_cel008, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890e688] <description>
-const struct Animation confession_machine_anim04[] = {
+// [D_0890e688] B Button
+const struct Animation anim_love_machine_button_b[] = {
     /* 000 */ { confession_machine_cel011, 6 },
     /* 001 */ { confession_machine_cel010, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890e6a0] <description>
-const struct Animation confession_machine_anim05[] = {
+// [D_0890e6a0] D-Pad - Up
+const struct Animation anim_love_machine_button_up[] = {
     /* 000 */ { confession_machine_cel013, 6 },
     /* 001 */ { confession_machine_cel012, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890e6b8] <description>
-const struct Animation confession_machine_anim06[] = {
+// [D_0890e6b8] D-Pad - Down
+const struct Animation anim_love_machine_button_down[] = {
     /* 000 */ { confession_machine_cel015, 6 },
     /* 001 */ { confession_machine_cel014, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890e6d0] <description>
-const struct Animation confession_machine_anim07[] = {
+// [D_0890e6d0] D-Pad - Left
+const struct Animation anim_love_machine_button_left[] = {
     /* 000 */ { confession_machine_cel017, 6 },
     /* 001 */ { confession_machine_cel016, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890e6e8] <description>
-const struct Animation confession_machine_anim08[] = {
+// [D_0890e6e8] D-Pad - Right
+const struct Animation anim_love_machine_button_right[] = {
     /* 000 */ { confession_machine_cel019, 6 },
     /* 001 */ { confession_machine_cel018, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890e700] <description>
-const struct Animation confession_machine_anim09[] = {
+// [D_0890e700] Love-san - A/B Button Pressed (Slow, Unused)
+const struct Animation anim_love_san_speak_short2[] = {
     /* 000 */ { confession_machine_cel033, 14 },
     /* 001 */ { confession_machine_cel034, 1 },
     /* 002 */ { confession_machine_cel035, 3 },
@@ -90,8 +90,8 @@ const struct Animation confession_machine_anim09[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890e728] <description>
-const struct Animation confession_machine_anim10[] = {
+// [D_0890e728] Love-san - D-Pad Pressed (Slow, Unused)
+const struct Animation anim_love_san_speak_long2[] = {
     /* 000 */ { confession_machine_cel020, 4 },
     /* 001 */ { confession_machine_cel021, 4 },
     /* 002 */ { confession_machine_cel022, 4 },
@@ -113,8 +113,8 @@ const struct Animation confession_machine_anim10[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890e7c0] <description>
-const struct Animation confession_machine_anim11[] = {
+// [D_0890e7c0] Unused Figure - D-Pad Pressed
+const struct Animation anim_not_love_san_speak_long[] = {
     /* 000 */ { confession_machine_cel003, 6 },
     /* 001 */ { confession_machine_cel004, 12 },
     /* 002 */ { confession_machine_cel005, 12 },
@@ -134,8 +134,8 @@ const struct Animation confession_machine_anim11[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890e848] <description>
-const struct Animation confession_machine_anim12[] = {
+// [D_0890e848] Unused Figure - A/B Button Pressed
+const struct Animation anim_not_love_san_speak_short[] = {
     /* 000 */ { confession_machine_cel006, 4 },
     /* 001 */ { confession_machine_cel007, 4 },
     /* 002 */ { confession_machine_cel002, 20 },

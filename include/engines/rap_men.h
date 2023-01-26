@@ -1,64 +1,111 @@
 #pragma once
 
 #include "global.h"
-#include "sound.h"
-#include "graphics.h"
+#include "engines.h"
+
+// Engine Types:
+struct RapMenInfo {
+    u8 version;
+    struct TextObject1 *unk4;
+    s16 rapperSprite;
+    s16 playerSprite;
+    s16 textSprite;
+    u16 rapperAnimTimer;
+    u16 playerAnimTimer;
+    u16 unusedAnimTimer;
+    u8 isTutorial;
+};
+
+struct RapMenCue {
+    u32 sound;
+};
+
 
 // Engine Macros/Enums:
-enum RapMenAnimationsEnum {
-    RAP_MEN_ANIM_00,
-    RAP_MEN_ANIM_01,
-    RAP_MEN_ANIM_02,
-    RAP_MEN_ANIM_03,
-    RAP_MEN_ANIM_04,
-    RAP_MEN_ANIM_05,
-    RAP_MEN_ANIM_06,
-    RAP_MEN_ANIM_07,
-    RAP_MEN_ANIM_08,
-    RAP_MEN_ANIM_09,
-    RAP_MEN_ANIM_10
+enum RapMenVersionsEnum {
+    ENGINE_VER_RAP_MEN,
+    ENGINE_VER_RAP_WOMEN
 };
+
+enum RapMenCueSoundsEnum {
+    RAP_CUE_SFX_SHORT,
+    RAP_CUE_SFX_LONG
+};
+
+enum RapMenAnimationsEnum {
+    RAP_MEN_ANIM_DESUKA,
+    RAP_MEN_ANIM_BARELY,
+    RAP_MEN_ANIM_HIT,
+    RAP_MEN_ANIM_PREPARE,
+    RAP_MEN_ANIM_KAMONE,
+    RAP_MEN_ANIM_SAIKO,
+    RAP_MEN_ANIM_RECOIL,
+    RAP_MEN_ANIM_SMOKE,
+    RAP_MEN_ANIM_MISS,
+    RAP_MEN_ANIM_PLAYER,
+    RAP_MEN_ANIM_RAPPER
+};
+
+enum RappingAnimationsEnum {
+    RAPPING_ANIM_DESUKA,
+    RAPPING_ANIM_KAMONE,
+    RAPPING_ANIM_SAIKO,
+    RAPPING_ANIM_RECOIL,
+    RAPPING_ANIM_HONTO
+};
+
 
 // OAM Animations:
 
+
 // Palettes:
 
+
 // Sound Effects:
+extern const struct SequenceData s_rap_un_seqData;
+extern const struct SequenceData s_rap_uun_seqData;
+extern const struct SequenceData s_f_rapW_v_Un_seqData;
+extern const struct SequenceData s_f_rapW_v_Uun_seqData;
+extern const struct SequenceData s_intro_two_seqData;
+extern const struct SequenceData s_f_rapW_v_CheckIt_seqData;
 extern const struct SequenceData s_RC_seqData;
 extern const struct SequenceData s_tom_M_seqData;
 extern const struct SequenceData s_SD1_seqData;
 extern const struct SequenceData s_CC4_seqData;
 
+
 // Engine Data:
-extern char D_0805a8b0[];   // Empty Default Text
+extern const char D_0805a8b0[]; // Empty Default Text
+
 
 // Engine Definition Data:
-extern const struct Animation **D_089e63f8[];  // Animation Index (index of pairs of animation pointers; 0 = Rap Men; 1 = Rap Women)
-extern u32 D_089e6424;      // GFX-related Null
-extern u32 *D_089e6518[];   // GFX Struct Index
-extern u8  D_089e6520;
-extern u8  D_089e6525;
-extern const struct SequenceData *D_089e652c[2][2];
-extern u32 D_089e65f0[];
+extern const struct Animation *const *const rap_men_anim_table[]; // Animation Index (index of pairs of animation pointers; 0 = Rap Men; 1 = Rap Women)
+extern const struct CompressedGraphics *const rap_men_buffered_textures[]; // Buffered Textures List
+extern const struct GraphicsTable *const rap_men_gfx_tables[]; // Graphics Table Index
+extern const u8 rapping_anim_map[];
+extern const u8 rapping_anim_durations[];
+extern const struct SequenceData *const rap_men_cue_hit_sfx[2][2];
+extern const struct SequenceData *const rap_men_cue_miss_sfx[2];
+
 
 // Functions:
-extern const struct Animation *func_080398b4(u32);
-extern void func_080398d4(void);    // [func_080398d4] GFX_INIT Func_02
-extern void func_080398e4(void);    // [func_080398e4] GFX_INIT Func_01
-extern void func_08039924(void);    // [func_08039924] GFX_INIT Func_00
-extern void func_08039950(u32);     // [func_08039950] MAIN - Init
-extern void func_08039a40(void);    // [func_08039a40] ENGINE Func_02 - STUB
-extern void func_08039a44(u32);     // [func_08039a44] ENGINE Func_00 - ?
-extern void func_08039a98(u32);     // [func_08039a98] ENGINE Func_01 - ?
-extern void func_08039aa4(void);    // [func_08039aa4] MAIN - Update
-extern void func_08039ad4(void);    // [func_08039ad4] MAIN - Close (STUB)
-extern void func_08039ad8(u32, struct struct_080179f4_sub *, u32);  // [func_08039ad8] CUE - Spawn
-extern u32  func_08039b2c(u32, u32, u32);                           // [func_08039b2c] CUE - Update
-extern void func_08039b48(void);                                    // [func_08039b48] CUE - Despawn
-extern void func_08039b4c(u32, struct struct_080179f4_sub *);       // [func_08039b4c] CUE - Hit
-extern void func_08039c00(void);                                    // [func_08039c00] CUE - Barely
-extern void func_08039c60(void);                                    // [func_08039c60] CUE - Miss
-extern void func_08039cb8(void);    // [func_08039cb8] MAIN - Input Event
-extern void func_08039d10(void);    // [func_08039d10] COMMON Func_00 - Beat Animation
-extern void func_08039d7c(char *);  // [func_08039d7c] COMMON Func_01 - Display Text
-extern void func_08039df8(void);    // [func_08039df8] COMMON Func_02 - STUB
+extern const struct Animation *rap_men_get_anim(u32); // Get Animation
+extern void rap_men_init_gfx3(void); // Graphics Init. 3
+extern void rap_men_init_gfx2(void); // Graphics Init. 2
+extern void rap_men_init_gfx1(void); // Graphics Init. 1
+extern void rap_men_engine_start(u32 version); // Game Engine Start
+extern void rap_men_engine_event_stub(void); // Engine Event 02 (STUB)
+extern void rap_men_set_rapper_anim(u32 anim); // Engine Event 00 (Set Rapper Animation)
+extern void rap_men_enable_tutorial(u32 isTutorial); // Engine Event 01 (Enable Tutorial)
+extern void rap_men_engine_update(void); // Game Engine Update
+extern void rap_men_engine_stop(void); // Game Engine Stop
+extern void rap_men_cue_spawn(struct Cue *, struct RapMenCue *, u32 sound); // Cue - Spawn
+extern u32  rap_men_cue_update(struct Cue *, struct RapMenCue *, u32 runningTime, u32 duration); // Cue - Update
+extern void rap_men_cue_despawn(struct Cue *, struct RapMenCue *); // Cue - Despawn
+extern void rap_men_cue_hit(struct Cue *, struct RapMenCue *, u32 pressed, u32 released); // Cue - Hit
+extern void rap_men_cue_barely(struct Cue *, struct RapMenCue *, u32 pressed, u32 released); // Cue - Barely
+extern void rap_men_cue_miss(struct Cue *, struct RapMenCue *); // Cue - Miss
+extern void rap_men_input_event(u32 pressed, u32 released); // Input Event
+extern void rap_men_common_beat_animation(void); // Common Event 0 (Beat Animation)
+extern void rap_men_common_display_text(char *); // Common Event 1 (Display Text)
+extern void rap_men_common_init_tutorial(void); // Common Event 2 (Init. Tutorial, Unimplemented)

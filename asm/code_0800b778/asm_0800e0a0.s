@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0800e0a0 \n\
+thumb_func_start scene_set_bg_layer_display \n\
 /* 0800e0a0 */ PUSH {R4-R7, LR} \n\
 /* 0800e0a2 */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 0800e0a4 */ PUSH {R7} \n\
@@ -17,22 +17,22 @@ thumb_func_start func_0800e0a0 \n\
 /* 0800e0b6 */ ASRS R1, R1, 0x10 \n\
 /* 0800e0b8 */ LSLS R2, R2, 0x10 \n\
 /* 0800e0ba */ ASRS R2, R2, 0x10 \n\
-/* 0800e0bc */ BL func_0800e058 \n\
+/* 0800e0bc */ BL scene_set_bg_layer_pos \n\
 /* 0800e0c0 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0800e0c2 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0800e0c4 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 0800e0c6 */ ADDS R3, R6, 0x0 @ Set R3 to R6 + 0x0 \n\
-/* 0800e0c8 */ BL func_0800e068 \n\
+/* 0800e0c8 */ BL scene_set_bg_layer_controls \n\
 /* 0800e0cc */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 0800e0ce */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0800e0d0 */ BEQ branch_0800e0da \n\
 /* 0800e0d2 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
-/* 0800e0d4 */ BL func_0800e030 \n\
+/* 0800e0d4 */ BL scene_show_bg_layer \n\
 /* 0800e0d8 */ B branch_0800e0e0 \n\
  \n\
 branch_0800e0da: \n\
 /* 0800e0da */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
-/* 0800e0dc */ BL func_0800e044 \n\
+/* 0800e0dc */ BL scene_hide_bg_layer \n\
  \n\
 branch_0800e0e0: \n\
 /* 0800e0e0 */ POP {R3} \n\

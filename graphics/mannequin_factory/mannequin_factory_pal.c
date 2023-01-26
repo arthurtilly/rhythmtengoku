@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088ba64c] <description>
+// [D_088ba64c] Palette
 const Palette mannequin_factory_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F080),

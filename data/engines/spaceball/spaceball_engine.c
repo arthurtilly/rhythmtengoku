@@ -1,0 +1,231 @@
+#include "engines/spaceball.h"
+
+
+  /* SPACEBALL - GAME ENGINE DATA */
+
+
+extern const struct CompressedGraphics D_08bd5524;
+extern const struct CompressedGraphics D_08bd5878;
+extern const struct CompressedGraphics D_08bd4e70;
+extern const Palette spaceball_pal[];
+extern const struct SequenceData s_f_dummy_vol0_seqData;
+extern const struct SequenceData s_witch_donats_seqData;
+extern const struct SequenceData s_batter_mit_seqData;
+extern const struct SequenceData s_batter_hit_seqData;
+extern const struct SequenceData s_f_batter_ball_high_seqData;
+
+
+  //  //  //  GRAPHICS DATA  //  //  //
+
+
+// [D_089de93c] Buffered Textures List
+const struct CompressedGraphics *const spaceball_buffered_textures[] = {
+    END_OF_BUFFERED_TEXTURES_LIST
+};
+
+
+// [D_089de940] Graphics Table
+const struct GraphicsTable spaceball_gfx_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &D_08bd5524,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08bd5878,
+        /* Dest. */ BG_MAP_BASE(0xF000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &D_08bd4e70,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ spaceball_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ spaceball_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
+
+// [D_089de988] Batter Animations (Close)
+const struct Animation *const spaceball_anim_table_batter_close[] = {
+    anim_spaceball_batter_green,
+    anim_spaceball_batter_red,
+    anim_spaceball_batter_pink
+};
+
+
+// [D_089de994] Batter Animations (Far)
+const struct Animation *const spaceball_anim_table_batter_far[] = {
+    anim_spaceball_batter_green_far,
+    anim_spaceball_batter_red_far,
+    anim_spaceball_batter_pink_far
+};
+
+
+// [D_089de9a0] Ball Animations
+const struct Animation *const spaceball_anim_table_ball[] = {
+    anim_spaceball_baseball,
+    anim_spaceball_rice_ball,
+    anim_spaceball_star_ball
+};
+
+
+  //  //  //  CUE DATA  //  //  //
+
+
+// [D_089de9ac] Cue 00 (0.5 Beats)
+const struct CueDefinition spaceball_cue_low_fast = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
+    /* Total Duration  */ 0x0C,
+    /* Hit Window      */ -0x03, 0x03,
+    /* Barely Window   */ -0x05, 0x05,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct SpaceballCue),
+    /* Func. Spawn     */ spaceball_cue_spawn,
+    /* Spawn Parameter */ 0xC,
+    /* Func. Update    */ spaceball_cue_update,
+    /* Func. Despawn   */ spaceball_cue_despawn,
+    /* Func. Hit       */ spaceball_cue_hit,
+    /* Func. Barely    */ spaceball_cue_barely,
+    /* Func. Miss      */ spaceball_cue_miss,
+    /* SFX Spawn       */ &s_f_dummy_vol0_seqData,
+    /* SFX Hit         */ &s_f_dummy_vol0_seqData,
+    /* SFX Barely      */ &s_witch_donats_seqData,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089de9ec] Cue 01 (1 Beat)
+const struct CueDefinition spaceball_cue_low = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
+    /* Total Duration  */ 0x18,
+    /* Hit Window      */ -0x03, 0x03,
+    /* Barely Window   */ -0x05, 0x05,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct SpaceballCue),
+    /* Func. Spawn     */ spaceball_cue_spawn,
+    /* Spawn Parameter */ 0x18,
+    /* Func. Update    */ spaceball_cue_update,
+    /* Func. Despawn   */ spaceball_cue_despawn,
+    /* Func. Hit       */ spaceball_cue_hit,
+    /* Func. Barely    */ spaceball_cue_barely,
+    /* Func. Miss      */ spaceball_cue_miss,
+    /* SFX Spawn       */ &s_batter_mit_seqData,
+    /* SFX Hit         */ &s_batter_hit_seqData,
+    /* SFX Barely      */ &s_witch_donats_seqData,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089dea2c] Cue 02 (2 Beats)
+const struct CueDefinition spaceball_cue_high = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
+    /* Total Duration  */ 0x30,
+    /* Hit Window      */ -0x03, 0x03,
+    /* Barely Window   */ -0x05, 0x05,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct SpaceballCue),
+    /* Func. Spawn     */ spaceball_cue_spawn,
+    /* Spawn Parameter */ 0x30,
+    /* Func. Update    */ spaceball_cue_update,
+    /* Func. Despawn   */ spaceball_cue_despawn,
+    /* Func. Hit       */ spaceball_cue_hit,
+    /* Func. Barely    */ spaceball_cue_barely,
+    /* Func. Miss      */ spaceball_cue_miss,
+    /* SFX Spawn       */ &s_f_batter_ball_high_seqData,
+    /* SFX Hit         */ &s_batter_hit_seqData,
+    /* SFX Barely      */ &s_witch_donats_seqData,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089dea6c] Cue 03 (1.5 Beats)
+const struct CueDefinition spaceball_cue_high_fast = {
+    /* Unknown Param.  */ 0,
+    /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
+    /* Total Duration  */ 0x24,
+    /* Hit Window      */ -0x03, 0x03,
+    /* Barely Window   */ -0x05, 0x05,
+    /* Tempo-Dependent */ FALSE,
+    /* Force-Delete    */ FALSE,
+    /* Size in Memory  */ sizeof(struct SpaceballCue),
+    /* Func. Spawn     */ spaceball_cue_spawn,
+    /* Spawn Parameter */ 0x24,
+    /* Func. Update    */ spaceball_cue_update,
+    /* Func. Despawn   */ spaceball_cue_despawn,
+    /* Func. Hit       */ spaceball_cue_hit,
+    /* Func. Barely    */ spaceball_cue_barely,
+    /* Func. Miss      */ spaceball_cue_miss,
+    /* SFX Spawn       */ &s_f_batter_ball_high_seqData,
+    /* SFX Hit         */ &s_batter_hit_seqData,
+    /* SFX Barely      */ &s_witch_donats_seqData,
+    /* SFX Miss        */ NULL,
+    /* Miss Condition  */ NULL
+};
+
+// [D_089deaac] Cue Definition Index
+const struct CueDefinition *const spaceball_cue_index[] = {
+    /* 0x00 */ &spaceball_cue_low_fast,
+    /* 0x01 */ &spaceball_cue_low,
+    /* 0x02 */ &spaceball_cue_high,
+    /* 0x03 */ &spaceball_cue_high_fast,
+    /* 0x04 */ NULL,
+    /* 0x05 */ NULL,
+    /* 0x06 */ NULL,
+    /* 0x07 */ NULL,
+    /* 0x08 */ NULL,
+    /* 0x09 */ NULL,
+    /* 0x0A */ NULL,
+    /* 0x0B */ NULL,
+    END_OF_CUE_INDEX
+};
+
+
+  //  //  //  GAME ENGINE DATA  //  //  //
+
+
+// [D_089deae0] Common Events
+const EngineEvent spaceball_common_events[] = {
+    /* BEAT_ANIMATION */ (EngineEvent) spaceball_common_beat_animation,
+    /* DISPLAY_TEXT   */ (EngineEvent) spaceball_common_display_text,
+    /* INIT_TUTORIAL  */ // None
+    END_OF_COMMON_EVENT_LIST
+};
+
+// [D_089deaec] Engine Events
+const EngineEvent spaceball_engine_events[] = {
+    /* 0x00 */ (EngineEvent) spaceball_prepare_pitcher,
+    /* 0x01 */ (EngineEvent) spaceball_loop_exit_condition,
+    /* 0x02 */ (EngineEvent) spaceball_set_camera_zoom,
+    /* 0x03 */ (EngineEvent) spaceball_set_batter_type,
+    /* 0x04 */ (EngineEvent) spaceball_open_ufo,
+    /* 0x05 */ (EngineEvent) spaceball_set_ball_type,
+    /* 0x06 */ (EngineEvent) spaceball_engine_event_stub
+};
+
+// [D_089deb08] Spaceball Game Engine
+const struct GameEngine D_089deb08 = {
+    /* Size in Memory */ sizeof(struct SpaceballInfo),
+    /* Start Engine   */ spaceball_engine_start,
+    /* Update Engine  */ spaceball_engine_update,
+    /* Stop Engine    */ spaceball_engine_stop,
+    /* Cue Index      */ spaceball_cue_index,
+    /* Common Events  */ spaceball_common_events,
+    /* Engine Events  */ spaceball_engine_events,
+    /* Input Event    */ spaceball_input_event
+};

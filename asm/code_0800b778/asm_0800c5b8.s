@@ -24,7 +24,7 @@ thumb_func_start func_0800c5b8 \n\
 /* 0800c5dc */ STR R0, [SP, 0x4] \n\
 /* 0800c5de */ STR R7, [SP, 0x8] \n\
 /* 0800c5e0 */ STR R1, [SP, 0x10] \n\
-/* 0800c5e2 */ BL func_0800c3b8 \n\
+/* 0800c5e2 */ BL get_current_mem_id \n\
 /* 0800c5e6 */ LSLS R0, R0, 0x10 \n\
 /* 0800c5e8 */ LSRS R0, R0, 0x10 \n\
 /* 0800c5ea */ LDR R1, =D_08936c44 \n\
@@ -32,7 +32,7 @@ thumb_func_start func_0800c5b8 \n\
 /* 0800c5ee */ STR R2, [SP] \n\
 /* 0800c5f0 */ ADD R2, SP, 0x4 \n\
 /* 0800c5f2 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800c5f4 */ BL func_08005b20 \n\
+/* 0800c5f4 */ BL start_new_task \n\
 /* 0800c5f8 */ ADD SP, 0x14 \n\
 /* 0800c5fa */ POP {R4-R7} \n\
 /* 0800c5fc */ POP {R1} \n\

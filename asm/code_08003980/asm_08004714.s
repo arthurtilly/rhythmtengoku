@@ -17,7 +17,7 @@ branch_08004722: \n\
 /* 08004726 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08004728 */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 0800472a */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 0800472c */ BL func_0800186c \n\
+/* 0800472c */ BL dma3_set \n\
 /* 08004730 */ ADDS R5, 0x40 @ Add 0x40 to R5 \n\
 /* 08004732 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08004734 */ LSLS R0, R0, 0x3 \n\

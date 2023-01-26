@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088a12b0] Sneaky Spirits 1 [BG & OBJ], Remix 2 [BG & OBJ]
-const Palette sneaky_spirits_v0_pal[] = {
+const Palette sneaky_spirits_1_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x5860C0),
         /* 01 */ TO_RGB555(0x000000),
@@ -294,7 +294,7 @@ const Palette sneaky_spirits_v0_pal[] = {
 };
 
 // [D_088a14b0] Sneaky Spirits 2 [BG & OBJ]
-const Palette sneaky_spirits_v2_pal[] = {
+const Palette sneaky_spirits_2_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xD89800),
         /* 01 */ TO_RGB555(0x000000),

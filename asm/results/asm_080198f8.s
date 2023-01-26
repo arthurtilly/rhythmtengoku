@@ -98,7 +98,7 @@ branch_08019996: \n\
 /* 080199b0 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 080199b2 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080199b4 */ MOVS R2, 0x1E @ Set R2 to 0x1E \n\
-/* 080199b6 */ BL func_080087d4 \n\
+/* 080199b6 */ BL clamp_int32 \n\
 /* 080199ba */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 080199bc */ ADDS R3, 0x46 @ Add 0x46 to R3 \n\
 /* 080199be */ LDRH R1, [R4, 0xA] \n\
@@ -109,7 +109,7 @@ branch_08019996: \n\
 /* 080199c8 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 080199ca */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080199cc */ MOVS R2, 0x64 @ Set R2 to 0x64 \n\
-/* 080199ce */ BL func_080087d4 \n\
+/* 080199ce */ BL clamp_int32 \n\
 /* 080199d2 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 080199d4 */ CMP R3, 0x0 @ Compare R3 and 0x0 \n\
 /* 080199d6 */ BNE branch_08019a0e \n\
@@ -133,10 +133,10 @@ branch_080199e4: \n\
 /* 080199f6 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 080199f8 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 080199fa */ MOVS R2, 0xA @ Set R2 to 0xA \n\
-/* 080199fc */ BL func_080087d4 \n\
+/* 080199fc */ BL clamp_int32 \n\
 /* 08019a00 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08019a02 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 08019a04 */ BL func_08001980 \n\
+/* 08019a04 */ BL agb_random \n\
 /* 08019a08 */ LSLS R0, R0, 0x10 \n\
 /* 08019a0a */ LSRS R0, R0, 0x10 \n\
 /* 08019a0c */ ADDS R3, R4, R0 @ Set R3 to R4 + R0 \n\

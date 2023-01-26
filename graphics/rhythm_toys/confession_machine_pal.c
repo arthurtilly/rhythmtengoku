@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0890e868] <description>
+// [D_0890e868] Confession Machine Palette
 const Palette confession_machine_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x504848),

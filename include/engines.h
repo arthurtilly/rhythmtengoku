@@ -1,10 +1,47 @@
 #pragma once
 
 #include "global.h"
+#include "graphics.h"
 #include "sound.h"
+#include "cues.h"
+#include "data/beatscript_scene_data.h"
+#include "src/text_printer.h"
 
 /*
     General "Game Engine" header file.
     Should probably contain all of the functions and/or headers that are referenced in the game engine C files,
     along with any other sort of common data.
 */
+
+#define END_OF_COMMON_EVENT_LIST (void *) -1
+
+typedef s32  (*EngineEvent)(s32);
+typedef void (*EngineInitFunc)(u32);
+typedef void (*EngineUpdateFunc)(void);
+typedef void (*EngineCloseFunc)();
+typedef void (*EngineInputFunc)(u32 pressed, u32 released);
+
+struct GameEngine {
+    u32 gameInfoSize; // Size of Respective GameInfo Struct (in bytes)
+    EngineInitFunc initFunc;
+    EngineUpdateFunc updateFunc;
+    EngineCloseFunc closeFunc;
+    const struct CueDefinition *const *cueDefinitions;
+    const EngineEvent *commonFunctions;
+    const EngineEvent *engineFunctions;
+    EngineInputFunc inputFunc;
+};
+
+/* The following are for documentation purposes only:
+ *
+ * typedef void (CommonEvent0)(s32 param);
+ * typedef void (CommonEvent1)(s32 param);
+ * typedef void (CommonEvent2)(const struct Scene *skipDest);
+ *
+ * Common Event 0: Play Beat Animation
+ * Common Event 1: Display Text
+ * Common Event 2: Initialise Tutorial
+ */
+
+// Game Engine Info
+extern void *D_030055d0;

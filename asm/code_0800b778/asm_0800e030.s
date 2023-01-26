@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0800e030 \n\
+thumb_func_start scene_show_bg_layer \n\
 /* 0800e030 */ LDR R2, =D_03004b10 \n\
 /* 0800e032 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 0800e034 */ LSLS R1, R1, 0x1 \n\

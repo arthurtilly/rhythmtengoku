@@ -24,7 +24,7 @@ thumb_func_start func_0800ecac \n\
 /* 0800ecd0 */ STR R4, [R1] \n\
 /* 0800ecd2 */ LSLS R0, R0, 0x10 \n\
 /* 0800ecd4 */ ASRS R0, R0, 0x10 \n\
-/* 0800ecd6 */ BL func_0800c088 \n\
+/* 0800ecd6 */ BL scene_set_music_pitch \n\
 /* 0800ecda */ LDRB R0, [R5, 0x2] \n\
 /* 0800ecdc */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0800ecde */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\

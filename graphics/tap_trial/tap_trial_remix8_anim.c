@@ -3,8 +3,8 @@
 
 #include "tap_trial_remix8_anim_cells.inc.c"
 
-// [D_08919840] <description>
-const struct Animation tap_trial_remix8_anim00[] = {
+// [D_08919840] Girl - Tap Left
+const struct Animation anim_tap_remix8_girl_1step[] = {
     /* 000 */ { tap_trial_remix8_cel065, 2 },
     /* 001 */ { tap_trial_remix8_cel066, 2 },
     /* 002 */ { tap_trial_remix8_cel067, 3 },
@@ -17,8 +17,8 @@ const struct Animation tap_trial_remix8_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919890] <description>
-const struct Animation tap_trial_remix8_anim01[] = {
+// [D_08919890] Girl - Tap Right
+const struct Animation anim_tap_remix8_girl_2step[] = {
     /* 000 */ { tap_trial_remix8_cel076, 2 },
     /* 001 */ { tap_trial_remix8_cel077, 2 },
     /* 002 */ { tap_trial_remix8_cel078, 3 },
@@ -31,16 +31,16 @@ const struct Animation tap_trial_remix8_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089198e0] <description>
-const struct Animation tap_trial_remix8_anim02[] = {
+// [D_089198e0] Girl - Beat
+const struct Animation anim_tap_remix8_girl_beat[] = {
     /* 000 */ { tap_trial_remix8_cel075, 3 },
     /* 001 */ { tap_trial_remix8_cel074, 3 },
     /* 002 */ { tap_trial_remix8_cel073, 24 },
     /* End */ END_ANIMATION
 };
 
-// [D_08919900] <description>
-const struct Animation tap_trial_remix8_anim03[] = {
+// [D_08919900] Monkey - Tap Left
+const struct Animation anim_tap_remix8_monkey_1step[] = {
     /* 000 */ { tap_trial_remix8_cel000, 2 },
     /* 001 */ { tap_trial_remix8_cel003, 2 },
     /* 002 */ { tap_trial_remix8_cel005, 2 },
@@ -52,8 +52,8 @@ const struct Animation tap_trial_remix8_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919948] <description>
-const struct Animation tap_trial_remix8_anim04[] = {
+// [D_08919948] Monkey - Tap Right
+const struct Animation anim_tap_remix8_monkey_2step[] = {
     /* 000 */ { tap_trial_remix8_cel016, 2 },
     /* 001 */ { tap_trial_remix8_cel017, 2 },
     /* 002 */ { tap_trial_remix8_cel019, 2 },
@@ -65,8 +65,8 @@ const struct Animation tap_trial_remix8_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919990] <description>
-const struct Animation tap_trial_remix8_anim05[] = {
+// [D_08919990] Monkey - Tap Left (Arms Raised)
+const struct Animation anim_tap_remix8_monkey_3step_l[] = {
     /* 000 */ { tap_trial_remix8_cel046, 2 },
     /* 001 */ { tap_trial_remix8_cel047, 2 },
     /* 002 */ { tap_trial_remix8_cel048, 2 },
@@ -76,8 +76,8 @@ const struct Animation tap_trial_remix8_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089199c8] <description>
-const struct Animation tap_trial_remix8_anim06[] = {
+// [D_089199c8] Monkey - Tap Right (Arms Raised)
+const struct Animation anim_tap_remix8_monkey_3step_r[] = {
     /* 000 */ { tap_trial_remix8_cel053, 2 },
     /* 001 */ { tap_trial_remix8_cel054, 2 },
     /* 002 */ { tap_trial_remix8_cel055, 2 },
@@ -87,8 +87,8 @@ const struct Animation tap_trial_remix8_anim06[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919a00] <description>
-const struct Animation tap_trial_remix8_anim07[] = {
+// [D_08919a00] Monkey - Call Single Tap
+const struct Animation anim_tap_remix8_monkey_1cue[] = {
     /* 000 */ { tap_trial_remix8_cel002, 2 },
     /* 001 */ { tap_trial_remix8_cel004, 2 },
     /* 002 */ { tap_trial_remix8_cel006, 2 },
@@ -97,8 +97,8 @@ const struct Animation tap_trial_remix8_anim07[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919a30] <description>
-const struct Animation tap_trial_remix8_anim08[] = {
+// [D_08919a30] Monkey - Call Double Tap
+const struct Animation anim_tap_remix8_monkey_2cue[] = {
     /* 000 */ { tap_trial_remix8_cel015, 2 },
     /* 001 */ { tap_trial_remix8_cel018, 2 },
     /* 002 */ { tap_trial_remix8_cel020, 2 },
@@ -109,8 +109,8 @@ const struct Animation tap_trial_remix8_anim08[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919a70] <description>
-const struct Animation tap_trial_remix8_anim09[] = {
+// [D_08919a70] Monkey - Step Test
+const struct Animation anim_tap_remix8_monkey_shimmy[] = {
     /* 000 */ { tap_trial_remix8_cel008, 20 },
     /* 001 */ { tap_trial_remix8_cel010, 2 },
     /* 002 */ { tap_trial_remix8_cel011, 2 },
@@ -120,8 +120,8 @@ const struct Animation tap_trial_remix8_anim09[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919aa8] <description>
-const struct Animation tap_trial_remix8_anim10[] = {
+// [D_08919aa8] Monkey - Call Triple Tap
+const struct Animation anim_tap_remix8_monkey_3cue[] = {
     /* 000 */ { tap_trial_remix8_cel024, 20 },
     /* 001 */ { tap_trial_remix8_cel025, 4 },
     /* 002 */ { tap_trial_remix8_cel026, 4 },
@@ -131,8 +131,8 @@ const struct Animation tap_trial_remix8_anim10[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919ae0] <description>
-const struct Animation tap_trial_remix8_anim11[] = {
+// [D_08919ae0] Monkey - Crouch
+const struct Animation anim_tap_remix8_monkey_crouch[] = {
     /* 000 */ { tap_trial_remix8_cel011, 20 },
     /* 001 */ { tap_trial_remix8_cel030, 2 },
     /* 002 */ { tap_trial_remix8_cel031, 2 },
@@ -143,14 +143,14 @@ const struct Animation tap_trial_remix8_anim11[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919b20] <description>
-const struct Animation tap_trial_remix8_anim12[] = {
+// [D_08919b20] Monkey - Jump
+const struct Animation anim_tap_remix8_monkey_jump[] = {
     /* 000 */ { tap_trial_remix8_cel039, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_08919b30] <description>
-const struct Animation tap_trial_remix8_anim13[] = {
+// [D_08919b30] Monkey - Final Jump Tap
+const struct Animation anim_tap_remix8_monkey_pose_step[] = {
     /* 000 */ { tap_trial_remix8_cel060, 2 },
     /* 001 */ { tap_trial_remix8_cel095, 2 },
     /* 002 */ { tap_trial_remix8_cel096, 2 },
@@ -159,16 +159,16 @@ const struct Animation tap_trial_remix8_anim13[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919b60] <description>
-const struct Animation tap_trial_remix8_anim14[] = {
+// [D_08919b60] Monkey - Beat
+const struct Animation anim_tap_remix8_monkey_beat[] = {
     /* 000 */ { tap_trial_remix8_cel013, 3 },
     /* 001 */ { tap_trial_remix8_cel012, 3 },
     /* 002 */ { tap_trial_remix8_cel011, 24 },
     /* End */ END_ANIMATION
 };
 
-// [D_08919b80] <description>
-const struct Animation tap_trial_remix8_anim15[] = {
+// [D_08919b80] Dragon - Bedazzled
+const struct Animation anim_tap_remix8_dragon_bedazzled[] = {
     /* 000 */ { tap_trial_remix8_cel085, 8 },
     /* 001 */ { tap_trial_remix8_cel084, 8 },
     /* 002 */ { tap_trial_remix8_cel085, 8 },
@@ -176,14 +176,14 @@ const struct Animation tap_trial_remix8_anim15[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919ba8] <description>
-const struct Animation tap_trial_remix8_anim16[] = {
+// [D_08919ba8] Dragon - Neutral
+const struct Animation anim_tap_remix8_dragon_neutral[] = {
     /* 000 */ { tap_trial_remix8_cel086, 20 },
     /* End */ END_ANIMATION
 };
 
-// [D_08919bb8] <description>
-const struct Animation tap_trial_remix8_anim17[] = {
+// [D_08919bb8] Dragon - Disappointed
+const struct Animation anim_tap_remix8_dragon_sad[] = {
     /* 000 */ { tap_trial_remix8_cel087, 4 },
     /* 001 */ { tap_trial_remix8_cel088, 4 },
     /* 002 */ { tap_trial_remix8_cel089, 4 },
@@ -194,8 +194,8 @@ const struct Animation tap_trial_remix8_anim17[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919bf8] <description>
-const struct Animation tap_trial_remix8_anim18[] = {
+// [D_08919bf8] Monkey - Fall to Crouch
+const struct Animation anim_tap_remix8_monkey_fall[] = {
     /* 000 */ { tap_trial_remix8_cel038, 2 },
     /* 001 */ { tap_trial_remix8_cel037, 2 },
     /* 002 */ { tap_trial_remix8_cel036, 2 },
@@ -204,28 +204,28 @@ const struct Animation tap_trial_remix8_anim18[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919c28] <description>
-const struct Animation tap_trial_remix8_anim19[] = {
+// [D_08919c28] Monkey - Crouching Jump Tap
+const struct Animation anim_tap_remix8_monkey_crouch_step[] = {
     /* 000 */ { tap_trial_remix8_cel094, 2 },
     /* 001 */ { tap_trial_remix8_cel035, 2 },
     /* 002 */ { tap_trial_remix8_cel034, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_08919c48] <description>
-const struct Animation tap_trial_remix8_anim20[] = {
+// [D_08919c48] Shadow
+const struct Animation anim_tap_remix8_shadow[] = {
     /* 000 */ { tap_trial_remix8_cel102, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08919c58] <description>
-const struct Animation tap_trial_remix8_anim21[] = {
+// [D_08919c58] "Start to Skip" Tutorial Text
+const struct Animation anim_tap_remix8_text_skip_tutorial[] = {
     /* 000 */ { tap_trial_remix8_cel105, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08919c68] <description>
-const struct Animation tap_trial_remix8_anim22[] = {
+// [D_08919c68] Girl - Cue Triple Tap
+const struct Animation anim_tap_remix8_girl_3cue[] = {
     /* 000 */ { tap_trial_remix8_cel106, 20 },
     /* 001 */ { tap_trial_remix8_cel107, 4 },
     /* 002 */ { tap_trial_remix8_cel108, 4 },
@@ -235,8 +235,8 @@ const struct Animation tap_trial_remix8_anim22[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919ca0] <description>
-const struct Animation tap_trial_remix8_anim23[] = {
+// [D_08919ca0] Girl - Tap Left (Arms Raised)
+const struct Animation anim_tap_remix8_girl_3step_l[] = {
     /* 000 */ { tap_trial_remix8_cel112, 2 },
     /* 001 */ { tap_trial_remix8_cel113, 2 },
     /* 002 */ { tap_trial_remix8_cel114, 2 },
@@ -246,8 +246,8 @@ const struct Animation tap_trial_remix8_anim23[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919cd8] <description>
-const struct Animation tap_trial_remix8_anim24[] = {
+// [D_08919cd8] Girl - Tap Right (Arms Raised)
+const struct Animation anim_tap_remix8_girl_3step_r[] = {
     /* 000 */ { tap_trial_remix8_cel117, 2 },
     /* 001 */ { tap_trial_remix8_cel118, 2 },
     /* 002 */ { tap_trial_remix8_cel119, 2 },
@@ -257,8 +257,8 @@ const struct Animation tap_trial_remix8_anim24[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919d10] <description>
-const struct Animation tap_trial_remix8_anim25[] = {
+// [D_08919d10] Girl - Cue Left Tap
+const struct Animation anim_tap_remix8_girl_1cue[] = {
     /* 000 */ { tap_trial_remix8_cel122, 2 },
     /* 001 */ { tap_trial_remix8_cel066, 2 },
     /* 002 */ { tap_trial_remix8_cel067, 2 },
@@ -267,8 +267,8 @@ const struct Animation tap_trial_remix8_anim25[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919d40] <description>
-const struct Animation tap_trial_remix8_anim26[] = {
+// [D_08919d40] Girl - Cue Right Tap
+const struct Animation anim_tap_remix8_girl_2cue[] = {
     /* 000 */ { tap_trial_remix8_cel123, 2 },
     /* 001 */ { tap_trial_remix8_cel077, 2 },
     /* 002 */ { tap_trial_remix8_cel078, 2 },
@@ -277,8 +277,8 @@ const struct Animation tap_trial_remix8_anim26[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919d70] <description>
-const struct Animation tap_trial_remix8_anim27[] = {
+// [D_08919d70] Girl - Crouch
+const struct Animation anim_tap_remix8_girl_crouch[] = {
     /* 000 */ { tap_trial_remix8_cel073, 20 },
     /* 001 */ { tap_trial_remix8_cel124, 2 },
     /* 002 */ { tap_trial_remix8_cel125, 2 },
@@ -289,14 +289,14 @@ const struct Animation tap_trial_remix8_anim27[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919db0] <description>
-const struct Animation tap_trial_remix8_anim28[] = {
+// [D_08919db0] Girl - Jump
+const struct Animation anim_tap_remix8_girl_jump[] = {
     /* 000 */ { tap_trial_remix8_cel130, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_08919dc0] <description>
-const struct Animation tap_trial_remix8_anim29[] = {
+// [D_08919dc0] Girl - Final Jump Tap
+const struct Animation anim_tap_remix8_girl_pose_step[] = {
     /* 000 */ { tap_trial_remix8_cel131, 2 },
     /* 001 */ { tap_trial_remix8_cel132, 2 },
     /* 002 */ { tap_trial_remix8_cel133, 2 },
@@ -305,8 +305,8 @@ const struct Animation tap_trial_remix8_anim29[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919df0] <description>
-const struct Animation tap_trial_remix8_anim30[] = {
+// [D_08919df0] Girl - Fall to Crouch
+const struct Animation anim_tap_remix8_girl_fall[] = {
     /* 000 */ { tap_trial_remix8_cel136, 2 },
     /* 001 */ { tap_trial_remix8_cel124, 2 },
     /* 002 */ { tap_trial_remix8_cel125, 2 },
@@ -315,16 +315,16 @@ const struct Animation tap_trial_remix8_anim30[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919e20] <description>
-const struct Animation tap_trial_remix8_anim31[] = {
+// [D_08919e20] Girl - Crouching Jump Tap
+const struct Animation anim_tap_remix8_girl_crouch_step[] = {
     /* 000 */ { tap_trial_remix8_cel137, 2 },
     /* 001 */ { tap_trial_remix8_cel129, 2 },
     /* 002 */ { tap_trial_remix8_cel138, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_08919e40] <description>
-const struct Animation tap_trial_remix8_anim32[] = {
+// [D_08919e40] Girl - Miss Crouching Jump Tap
+const struct Animation anim_tap_remix8_girl_miss_crouch[] = {
     /* 000 */ { tap_trial_remix8_cel138, 2 },
     /* 001 */ { tap_trial_remix8_cel139, 2 },
     /* 002 */ { tap_trial_remix8_cel140, 3 },
@@ -333,8 +333,8 @@ const struct Animation tap_trial_remix8_anim32[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08919e70] <description>
-const struct Animation tap_trial_remix8_anim33[] = {
+// [D_08919e70] Girl - Miss Final Jump Tap
+const struct Animation anim_tap_remix8_girl_miss_pose[] = {
     /* 000 */ { tap_trial_remix8_cel143, 2 },
     /* 001 */ { tap_trial_remix8_cel144, 2 },
     /* 002 */ { tap_trial_remix8_cel145, 3 },

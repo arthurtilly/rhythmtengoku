@@ -1,6 +1,8 @@
 #include "global.h"
-#include "code_08007468.h"
-#include "lib_0804c870.h"
+#include "src/code_08007468.h"
+#include "src/code_08003980.h"
+#include "src/memory_heap.h"
+#include "src/lib_0804ca80.h"
 
 // Can be better split
 
@@ -10,8 +12,8 @@ static s32 D_03000eb0[136]; // unknown type
 static s32 D_030010d0[9]; // unknown type
 
 
-void func_08007468(s16 arg0, s8 arg1) {
-    func_0804dc10(D_03005380, arg0, arg1, func_08002520(arg1));
+void func_08007468(s16 sprite, s8 affineParamID) {
+    func_0804dc10(D_03005380, sprite, affineParamID, func_08002520(affineParamID));
 }
 
 
@@ -26,30 +28,30 @@ void func_080074c4(s8 arg0, s16 arg1, s16 arg2, s16 arg3) {
 
 // Indefinite linear movement
 // D_08936ba4 function 1
-struct unk_struct_080074ec *func_080074ec(struct unk_struct_080074ec_init *arg0) {
-    struct unk_struct_080074ec *temp;
+struct unk_struct_080074ec *func_080074ec(struct unk_struct_080074ec_init *inputs) {
+    struct unk_struct_080074ec *task;
 
-    if (arg0->id < 0) {
-        return (void *)-1;
+    if (inputs->sprite < 0) {
+        return TASK_FAILED_TO_START;
     }
 
-    temp = mem_heap_alloc(sizeof(struct unk_struct_080074ec));
-    temp->id = arg0->id;
-    temp->xPos = INT_TO_FIXED(arg0->startX);
-    temp->yPos = INT_TO_FIXED(arg0->startY);
-    temp->xVel = arg0->xVel;
-    temp->yVel = arg0->yVel;
+    task = mem_heap_alloc(sizeof(struct unk_struct_080074ec));
+    task->sprite = inputs->sprite;
+    task->xPos = INT_TO_FIXED(inputs->startX);
+    task->yPos = INT_TO_FIXED(inputs->startY);
+    task->xVel = inputs->xVel;
+    task->yVel = inputs->yVel;
 
-    func_0804d5d4(D_03005380, arg0->id, arg0->startX, arg0->startY);
-    return temp;
+    func_0804d5d4(D_03005380, inputs->sprite, inputs->startX, inputs->startY);
+    return task;
 }
 
 // D_08936ba4 function 2
-u32 func_08007544(struct unk_struct_080074ec *arg0) {
-    arg0->xPos += arg0->xVel;
-    arg0->yPos += arg0->yVel;
+u32 func_08007544(struct unk_struct_080074ec *task) {
+    task->xPos += task->xVel;
+    task->yPos += task->yVel;
 
-    func_0804d5d4(D_03005380, arg0->id, FIXED_TO_INT(arg0->xPos), FIXED_TO_INT(arg0->yPos));
+    func_0804d5d4(D_03005380, task->sprite, FIXED_TO_INT(task->xPos), FIXED_TO_INT(task->yPos));
     return FALSE;
 }
 
@@ -59,7 +61,7 @@ struct unk_struct_0800757c *func_0800757c(struct unk_struct_0800757c_init *arg0)
     struct unk_struct_0800757c *temp;
 
     if (arg0->id < 0) {
-        return (void *)-1;
+        return TASK_FAILED_TO_START;
     }
 
     temp = mem_heap_alloc(sizeof(struct unk_struct_0800757c));
@@ -108,7 +110,7 @@ struct unk_struct_0800765c *func_0800765c(struct unk_struct_0800765c_init *arg0)
     struct unk_struct_0800765c *temp;
 
     if (arg0->id < 0) {
-        return (void *)-1;
+        return TASK_FAILED_TO_START;
     }
 
     temp = mem_heap_alloc(sizeof(struct unk_struct_0800765c));
@@ -166,7 +168,7 @@ struct unk_struct_08007788 *func_08007788(struct unk_struct_08007788_init *arg0)
     struct unk_struct_08007788 *temp;
 
     if (arg0->id < 0) {
-        return (void *)-1;
+        return TASK_FAILED_TO_START;
     }
 
     temp = mem_heap_alloc(sizeof(struct unk_struct_08007788));
@@ -199,76 +201,76 @@ u32 func_080077e8(struct unk_struct_08007788 *arg0) {
 
 // Sinusoidal movement
 // D_08936be4 function 2
-u32 func_08007854(struct unk_struct_080078ec *arg0) {
-    u8 wavePos = lerp(arg0->waveStart, arg0->waveEnd, arg0->framesPassed, arg0->totalFrames);
+u32 func_08007854(struct unk_struct_080078ec *task) {
+    u8 wavePos = lerp(task->waveStart, task->waveEnd, task->framesPassed, task->totalFrames);
 
-    s32 offset = arg0->baseOffset + FIXED_TO_INT(arg0->amplitude * sins2(wavePos));
+    s32 offset = task->baseOffset + FIXED_TO_INT(task->amplitude * sins2(wavePos));
     
-    u16 xPos = FIXED_TO_INT(offset * coss2(arg0->angle)) + arg0->baseXPos;
-    u16 yPos = FIXED_TO_INT(offset * sins2(arg0->angle)) + arg0->baseYPos;
+    u16 xPos = FIXED_TO_INT(offset * coss2(task->angle)) + task->baseXPos;
+    u16 yPos = FIXED_TO_INT(offset * sins2(task->angle)) + task->baseYPos;
 
-    func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
+    func_0804d5d4(D_03005380, task->sprite, xPos, yPos);
 
-    return (++arg0->framesPassed > arg0->totalFrames);
+    return (++task->framesPassed > task->totalFrames);
 }
 
 // D_08936be4 function 1
-struct unk_struct_080078ec *func_080078ec(struct unk_struct_080078ec_init *arg0) {
-    struct unk_struct_080078ec *temp;
+struct unk_struct_080078ec *func_080078ec(struct unk_struct_080078ec_init *inputs) {
+    struct unk_struct_080078ec *task;
 
-    if (arg0->id < 0) {
-        return (void *)-1;
+    if (inputs->sprite < 0) {
+        return TASK_FAILED_TO_START;
     }
 
-    temp = mem_heap_alloc(sizeof(struct unk_struct_080078ec));
-    temp->id = arg0->id;
-    temp->baseXPos = arg0->baseX;
-    temp->baseYPos = arg0->baseY;
-    temp->baseOffset = arg0->baseOffset;
-    temp->amplitude = arg0->amplitude;
-    temp->waveStart = arg0->waveStart;
-    temp->waveEnd = arg0->waveEnd;
-    temp->framesPassed = 0;
-    temp->totalFrames = arg0->totalFrames;
-    temp->angle = arg0->angle;
+    task = mem_heap_alloc(sizeof(struct unk_struct_080078ec));
+    task->sprite = inputs->sprite;
+    task->baseXPos = inputs->baseX;
+    task->baseYPos = inputs->baseY;
+    task->baseOffset = inputs->baseOffset;
+    task->amplitude = inputs->amplitude;
+    task->waveStart = inputs->waveStart;
+    task->waveEnd = inputs->waveEnd;
+    task->framesPassed = 0;
+    task->totalFrames = inputs->totalFrames;
+    task->angle = inputs->angle;
 
-    func_08007854(temp);
-    return temp;
+    func_08007854(task);
+    return task;
 }
 
 // D_08936bf4 function 2
-u32 func_0800793c(struct unk_struct_080079bc *arg0) {
-    s32 temp_r5 = lerp(arg0->unkA, arg0->unkC, arg0->framesPassed, arg0->totalFrames);
+u32 func_0800793c(struct unk_struct_080079bc *task) {
+    s32 temp_r5 = lerp(task->unkA, task->unkC, task->framesPassed, task->totalFrames);
 
-    u16 xPos = arg0->startXPos + FIXED_TO_INT(arg0->dx * func_080019a4(temp_r5));
-    u16 yPos = arg0->startYPos + FIXED_TO_INT(arg0->dy * func_080019a4(temp_r5));
+    u16 xPos = task->startXPos + FIXED_TO_INT(task->dx * func_080019a4(temp_r5));
+    u16 yPos = task->startYPos + FIXED_TO_INT(task->dy * func_080019a4(temp_r5));
 
-    func_0804d5d4(D_03005380, arg0->id, xPos, yPos);
+    func_0804d5d4(D_03005380, task->sprite, xPos, yPos);
 
-    return (++arg0->framesPassed > arg0->totalFrames);
+    return (++task->framesPassed > task->totalFrames);
 }
 
 // D_08936bf4 function 1
-struct unk_struct_080079bc *func_080079bc(struct unk_struct_080079bc_init *arg0) {
-    struct unk_struct_080079bc *temp;
+struct unk_struct_080079bc *func_080079bc(struct unk_struct_080079bc_init *inputs) {
+    struct unk_struct_080079bc *task;
 
-    if (arg0->id < 0) {
-        return (void *)-1;
+    if (inputs->sprite < 0) {
+        return TASK_FAILED_TO_START;
     }
 
-    temp = mem_heap_alloc(sizeof(struct unk_struct_080079bc));
-    temp->id = arg0->id;
-    temp->startXPos = arg0->startX;
-    temp->startYPos = arg0->startY;
-    temp->dx = arg0->destX - arg0->startX;
-    temp->dy = arg0->destY - arg0->startY;
-    temp->unkA = arg0->unkA * 16;
-    temp->unkC = arg0->unkC * 16;
-    temp->framesPassed = 0;
-    temp->totalFrames = arg0->totalFrames;
+    task = mem_heap_alloc(sizeof(struct unk_struct_080079bc));
+    task->sprite = inputs->sprite;
+    task->startXPos = inputs->startX;
+    task->startYPos = inputs->startY;
+    task->dx = inputs->destX - inputs->startX;
+    task->dy = inputs->destY - inputs->startY;
+    task->unkA = inputs->unkA * 16;
+    task->unkC = inputs->unkC * 16;
+    task->framesPassed = 0;
+    task->totalFrames = inputs->totalFrames;
 
-    func_0800793c(temp);
-    return temp;
+    func_0800793c(task);
+    return task;
 }
 
 // Linear movement with a vertical negative sine wave offset
@@ -294,7 +296,7 @@ struct unk_struct_08007aa0 *func_08007aa0(struct unk_struct_08007aa0_init *arg0)
     struct unk_struct_08007aa0 *temp;
 
     if (arg0->id < 0) {
-        return (void *)-1;
+        return TASK_FAILED_TO_START;
     }
 
     temp = mem_heap_alloc(sizeof(struct unk_struct_08007aa0));
@@ -365,31 +367,103 @@ s32 fast_divsi3(s32 dividend, s32 divisor) {
 // D_08936c44 function 2
 #include "asm/code_08007468/asm_08007ef8.s"
 
-// D_08936c54 function 1
-#include "asm/code_08007468/asm_08007f58.s"
 
-// D_08936c54 function 2
-#include "asm/code_08007468/asm_08007fdc.s"
+// Initialise LCD Special Effects Interpolator
+struct BlendControlsInterpolator *func_08007f58(struct BlendControlsInterpolator *inputs) {
+    struct BlendControlsInterpolator *task;
+    u32 tgtLevel, srcLevel;
 
-#include "asm/code_08007468/asm_08008054.s"
+    task = mem_heap_alloc(sizeof(struct BlendControlsInterpolator));
+    task->blendControls = inputs->blendControls;
+    task->duration = inputs->duration;
+    task->runningTime = 0;
+    task->flip = inputs->flip;
+
+    tgtLevel = 0x10 * (inputs->flip != 0);
+    srcLevel = 0x10 - tgtLevel;
+    switch (task->blendControls & BLDMOD_BLEND_MODE_MASK) {
+        case (BLEND_MODE_OFF * 0x40):
+        case (BLEND_MODE_ALPHA * 0x40):
+            D_03004b10.COLEV = (srcLevel | (tgtLevel << 8));
+            break;
+
+        case (BLEND_MODE_LIGHTEN * 0x40):
+        case (BLEND_MODE_DARKEN * 0x40):
+            D_03004b10.COLEY = tgtLevel;
+            break;
+    }
+
+    D_03004b10.BLDMOD = task->blendControls;
+    return task;
+}
+
+
+// Update LCD Special Effects Interpolator
+u32 func_08007fdc(struct BlendControlsInterpolator *task) {
+    u32 tgtLevel, srcLevel;
+
+    task->runningTime++;
+    tgtLevel = Div(task->runningTime * 0x10, task->duration);
+
+    if (task->flip) {
+        srcLevel = tgtLevel;
+        tgtLevel = 0x10 - tgtLevel;
+    } else {
+        srcLevel = 0x10 - tgtLevel;
+    }
+
+    switch (task->blendControls & BLDMOD_BLEND_MODE_MASK) {
+        case (BLEND_MODE_OFF * 0x40):
+        case (BLEND_MODE_ALPHA * 0x40):
+            D_03004b10.COLEV = (srcLevel | (tgtLevel << 8));
+            break;
+
+        case (BLEND_MODE_LIGHTEN * 0x40):
+        case (BLEND_MODE_DARKEN * 0x40):
+            D_03004b10.COLEY = tgtLevel;
+            break;
+    }
+
+    if (task->runningTime < task->duration) {
+        return FALSE;
+    } else {
+        return TRUE;
+    }
+}
+
+
+// Interpolate LCD Special Effects
+s32 func_08008054(u16 memID, u32 blendControls, u32 duration, u32 flip) {
+    struct BlendControlsInterpolator inputs;
+
+    inputs.blendControls = blendControls;
+    inputs.duration = duration;
+    inputs.flip = flip;
+
+    return start_new_task(memID, &D_08936c54, &inputs, NULL, 0);
+}
+
 
 #include "asm/code_08007468/asm_08008090.s"
 
 #include "asm/code_08007468/asm_08008184.s"
 
-u8 *func_080081a8(u8 *arg1, u8 *arg2) {
-    u8 *temp = arg1;
-    while (*arg1 != 0) {
-        arg1++;
+
+// Append String
+char *func_080081a8(char *s1, const char *s2) {
+    u8 *s = s1;
+    while (*s1 != 0) {
+        s1++;
     }
-    while (*arg2 != 0) {
-        *arg1 = *arg2;
-        arg2++;
-        arg1++;
+    while (*s2 != 0) {
+        *s1 = *s2;
+        s2++;
+        s1++;
     }
-    *arg1 = 0;
-    return temp;
+    *s1 = 0;
+    return s;
 }
+
 
 #include "asm/code_08007468/asm_080081d4.s"
 
@@ -445,8 +519,8 @@ u8 *func_080081a8(u8 *arg1, u8 *arg2) {
 
 #include "asm/code_08007468/asm_080087b4.s"
 
-// [func_080087d4] MATH UTIL - Clamp Signed Integer
-s32 func_080087d4(s32 var, s32 min, s32 max) {
+// [clamp_int32] MATH UTIL - Clamp Signed Integer
+s32 clamp_int32(s32 var, s32 min, s32 max) {
     if (var < min) {
         return min;
     }

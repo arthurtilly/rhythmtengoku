@@ -3,20 +3,20 @@
 
 #include "prologue_power_calligraphy_anim_cells.inc.c"
 
-// [D_088b0690] <description>
-const struct Animation prologue_power_calligraphy_anim00[] = {
+// [D_088b0690] Title
+const struct Animation anim_prologue_calligraphy_title[] = {
     /* 000 */ { prologue_power_calligraphy_cel001, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088b06a0] <description>
-const struct Animation prologue_power_calligraphy_anim01[] = {
+// [D_088b06a0] ? (Unused)
+const struct Animation anim_prologue_calligraphy_unused[] = {
     /* 000 */ { prologue_power_calligraphy_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088b06b0] <description>
-const struct Animation prologue_power_calligraphy_anim02[] = {
+// [D_088b06b0] Calligrapher
+const struct Animation anim_prologue_calligraphy_artist[] = {
     /* 000 */ { prologue_power_calligraphy_cel003, 3 },
     /* 001 */ { prologue_power_calligraphy_cel004, 3 },
     /* 002 */ { prologue_power_calligraphy_cel005, 3 },
@@ -32,4 +32,3 @@ const struct Animation prologue_power_calligraphy_anim02[] = {
     /* 012 */ { prologue_power_calligraphy_cel015, 60 },
     /* End */ END_ANIMATION
 };
-

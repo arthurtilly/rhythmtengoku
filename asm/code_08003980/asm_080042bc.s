@@ -64,13 +64,13 @@ branch_0800431a: \n\
 /* 0800431c */ SUBS R0, R1, R5 @ Set R0 to R1 - R5 \n\
 /* 0800431e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08004320 */ MOVS R2, 0xEF @ Set R2 to 0xEF \n\
-/* 08004322 */ BL func_080087d4 \n\
+/* 08004322 */ BL clamp_int32 \n\
 /* 08004326 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08004328 */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 0800432a */ ADDS R0, R1, R5 @ Set R0 to R1 + R5 \n\
 /* 0800432c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0800432e */ MOVS R2, 0xEF @ Set R2 to 0xEF \n\
-/* 08004330 */ BL func_080087d4 \n\
+/* 08004330 */ BL clamp_int32 \n\
 /* 08004334 */ LSLS R4, R4, 0x8 \n\
 /* 08004336 */ ORRS R4, R0 @ Set R4 to R4 | R0 \n\
 /* 08004338 */ MOV R1, R9 @ Set R1 to R9 \n\
@@ -99,13 +99,13 @@ branch_0800435c: \n\
 /* 0800435e */ SUBS R0, R1, R7 @ Set R0 to R1 - R7 \n\
 /* 08004360 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08004362 */ MOVS R2, 0xEF @ Set R2 to 0xEF \n\
-/* 08004364 */ BL func_080087d4 \n\
+/* 08004364 */ BL clamp_int32 \n\
 /* 08004368 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0800436a */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 0800436c */ ADDS R0, R1, R7 @ Set R0 to R1 + R7 \n\
 /* 0800436e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08004370 */ MOVS R2, 0xEF @ Set R2 to 0xEF \n\
-/* 08004372 */ BL func_080087d4 \n\
+/* 08004372 */ BL clamp_int32 \n\
 /* 08004376 */ LSLS R4, R4, 0x8 \n\
 /* 08004378 */ ORRS R4, R0 @ Set R4 to R4 | R0 \n\
 /* 0800437a */ MOV R1, R9 @ Set R1 to R9 \n\

@@ -3,8 +3,8 @@
 
 #include "marching_orders_anim_cells.inc.c"
 
-// [D_088f124c] <description>
-const struct Animation marching_orders_anim00[] = {
+// [D_088f124c] Marcher Test
+const struct Animation anim_marching1_test[] = {
     /* 000 */ { marching_orders_cel005, 3 },
     /* 001 */ { marching_orders_cel006, 3 },
     /* 002 */ { marching_orders_cel007, 3 },
@@ -43,8 +43,8 @@ const struct Animation marching_orders_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f136c] <description>
-const struct Animation marching_orders_anim01[] = {
+// [D_088f136c] Marcher - Turn Left
+const struct Animation anim_marching1_turn_l[] = {
     /* 000 */ { marching_orders_cel014, 10 },
     /* 001 */ { marching_orders_cel015, 4 },
     /* 002 */ { marching_orders_cel016, 4 },
@@ -52,8 +52,8 @@ const struct Animation marching_orders_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f1394] <description>
-const struct Animation marching_orders_anim02[] = {
+// [D_088f1394] Marcher - Turn Right
+const struct Animation anim_marching1_turn_r[] = {
     /* 000 */ { marching_orders_cel018, 10 },
     /* 001 */ { marching_orders_cel019, 4 },
     /* 002 */ { marching_orders_cel020, 4 },
@@ -61,8 +61,8 @@ const struct Animation marching_orders_anim02[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f13bc] <description>
-const struct Animation marching_orders_anim03[] = {
+// [D_088f13bc] Marcher - Point Left
+const struct Animation anim_marching1_point_l[] = {
     /* 000 */ { marching_orders_cel023, 10 },
     /* 001 */ { marching_orders_cel022, 4 },
     /* 002 */ { marching_orders_cel021, 3 },
@@ -70,8 +70,8 @@ const struct Animation marching_orders_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f13e4] <description>
-const struct Animation marching_orders_anim04[] = {
+// [D_088f13e4] Marcher - Point Right
+const struct Animation anim_marching1_point_r[] = {
     /* 000 */ { marching_orders_cel026, 10 },
     /* 001 */ { marching_orders_cel025, 4 },
     /* 002 */ { marching_orders_cel024, 3 },
@@ -79,8 +79,8 @@ const struct Animation marching_orders_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f140c] <description>
-const struct Animation marching_orders_anim05[] = {
+// [D_088f140c] Commander - Angry
+const struct Animation anim_marching1_commander_angry[] = {
     /* 000 */ { marching_orders_cel003, 20 },
     /* 001 */ { marching_orders_cel002, 6 },
     /* 002 */ { marching_orders_cel001, 6 },
@@ -88,32 +88,32 @@ const struct Animation marching_orders_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f1434] <description>
-const struct Animation marching_orders_anim06[] = {
+// [D_088f1434] Marcher - Stop Beat
+const struct Animation anim_marching1_stop_beat[] = {
     /* 000 */ { marching_orders_cel039, 4 },
     /* 001 */ { marching_orders_cel040, 4 },
     /* 002 */ { marching_orders_cel041, 50 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f1454] <description>
-const struct Animation marching_orders_anim07[] = {
+// [D_088f1454] Marcher - Clap
+const struct Animation anim_marching1_clap[] = {
     /* 000 */ { marching_orders_cel036, 4 },
     /* 001 */ { marching_orders_cel038, 3 },
     /* 002 */ { marching_orders_cel037, 30 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f1474] <description>
-const struct Animation marching_orders_anim08[] = {
+// [D_088f1474] Marcher - Beat
+const struct Animation anim_marching1_beat[] = {
     /* 000 */ { marching_orders_cel041, 4 },
     /* 001 */ { marching_orders_cel040, 4 },
     /* 002 */ { marching_orders_cel039, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f1494] <description>
-const struct Animation marching_orders_anim09[] = {
+// [D_088f1494] Marcher - Step Right (Body)
+const struct Animation anim_marching1_step_r[] = {
     /* 000 */ { marching_orders_cel042, 2 },
     /* 001 */ { marching_orders_cel043, 2 },
     /* 002 */ { marching_orders_cel044, 2 },
@@ -122,8 +122,8 @@ const struct Animation marching_orders_anim09[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f14c4] <description>
-const struct Animation marching_orders_anim10[] = {
+// [D_088f14c4] Marcher - Step Left (Body)
+const struct Animation anim_marching1_step_l[] = {
     /* 000 */ { marching_orders_cel042, 2 },
     /* 001 */ { marching_orders_cel047, 2 },
     /* 002 */ { marching_orders_cel048, 2 },
@@ -132,8 +132,8 @@ const struct Animation marching_orders_anim10[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f14f4] <description>
-const struct Animation marching_orders_anim11[] = {
+// [D_088f14f4] Marcher - Turn Right (Head)
+const struct Animation anim_marching1_head_turn_r[] = {
     /* 000 */ { marching_orders_cel033, 10 },
     /* 001 */ { marching_orders_cel034, 4 },
     /* 002 */ { marching_orders_cel035, 4 },
@@ -141,8 +141,8 @@ const struct Animation marching_orders_anim11[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f151c] <description>
-const struct Animation marching_orders_anim12[] = {
+// [D_088f151c] Marcher - Turn Left (Head)
+const struct Animation anim_marching1_head_turn_l[] = {
     /* 000 */ { marching_orders_cel030, 10 },
     /* 001 */ { marching_orders_cel031, 4 },
     /* 002 */ { marching_orders_cel032, 4 },
@@ -150,8 +150,8 @@ const struct Animation marching_orders_anim12[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f1544] <description>
-const struct Animation marching_orders_anim13[] = {
+// [D_088f1544] Tutorial Icons
+const struct Animation anim_marching1_tutorial_icons[] = {
     /* 000 */ { marching_orders_cel051, 40 },
     /* 001 */ { marching_orders_cel053, 40 },
     /* 002 */ { marching_orders_cel054, 40 },
@@ -160,14 +160,14 @@ const struct Animation marching_orders_anim13[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f1574] <description>
-const struct Animation marching_orders_anim14[] = {
+// [D_088f1574] "Start to Skip" Tutorial Icon (Unused)
+const struct Animation anim_marching1_tutorial_skip_icon[] = {
     /* 000 */ { marching_orders_cel052, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f1584] <description>
-const struct Animation marching_orders_anim15[] = {
+// [D_088f1584] Commander Frustration Cloud
+const struct Animation anim_marching1_angry_puff[] = {
     /* 000 */ { marching_orders_cel057, 4 },
     /* 001 */ { marching_orders_cel058, 5 },
     /* 002 */ { marching_orders_cel059, 4 },
@@ -177,8 +177,8 @@ const struct Animation marching_orders_anim15[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f15bc] <description>
-const struct Animation marching_orders_anim16[] = {
+// [D_088f15bc] Commander - Annoyed
+const struct Animation anim_marching1_commander_annoyed[] = {
     /* 000 */ { marching_orders_cel063, 30 },
     /* 001 */ { marching_orders_cel064, 6 },
     /* 002 */ { marching_orders_cel000, 6 },

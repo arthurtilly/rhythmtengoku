@@ -13,7 +13,7 @@ thumb_func_start func_0800e970 \n\
 /* 0800e97e */ LSLS R1, R1, 0x1 \n\
 /* 0800e980 */ ADDS R0, R5, R1 @ Set R0 to R5 + R1 \n\
 /* 0800e982 */ LDRH R0, [R0] \n\
-/* 0800e984 */ BL func_0800c3a4 \n\
+/* 0800e984 */ BL beats_to_ticks \n\
 /* 0800e988 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800e98a */ MOVS R2, 0xB6 @ Set R2 to 0xB6 \n\
 /* 0800e98c */ LSLS R2, R2, 0x1 \n\
@@ -43,7 +43,7 @@ thumb_func_start func_0800e970 \n\
 /* 0800e9c0 */ MULS R0, R4 @ Multiply R0 by R4 \n\
 /* 0800e9c2 */ LSLS R0, R0, 0x8 \n\
 /* 0800e9c4 */ ASRS R0, R0, 0x10 \n\
-/* 0800e9c6 */ BL func_0800c0c4 \n\
+/* 0800e9c6 */ BL scene_set_music_pitch_env \n\
  \n\
 branch_0800e9ca: \n\
 /* 0800e9ca */ POP {R4, R5} \n\

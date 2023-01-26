@@ -3,8 +3,8 @@
 
 #include "prologue_night_walk_anim_cells.inc.c"
 
-// [D_088ae048] <description>
-const struct Animation prologue_night_walk_anim00[] = {
+// [D_088ae048] Play-Yan
+const struct Animation anim_prologue_night_walk_play_yan[] = {
     /* 000 */ { prologue_night_walk_cel005, 4 },
     /* 001 */ { prologue_night_walk_cel006, 4 },
     /* 002 */ { prologue_night_walk_cel007, 4 },
@@ -42,8 +42,8 @@ const struct Animation prologue_night_walk_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ae160] <description>
-const struct Animation prologue_night_walk_anim01[] = {
+// [D_088ae160] Balloons
+const struct Animation anim_prologue_night_walk_balloons[] = {
     /* 000 */ { prologue_night_walk_cel038, 6 },
     /* 001 */ { prologue_night_walk_cel039, 6 },
     /* 002 */ { prologue_night_walk_cel040, 6 },
@@ -87,8 +87,8 @@ const struct Animation prologue_night_walk_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088ae2a8] <description>
-const struct Animation prologue_night_walk_anim02[] = {
+// [D_088ae2a8] Title
+const struct Animation anim_prologue_night_walk_title[] = {
     /* 000 */ { prologue_night_walk_cel000, 207 },
     /* 001 */ { prologue_night_walk_cel044, 2 },
     /* 002 */ { prologue_night_walk_cel045, 2 },
@@ -100,4 +100,3 @@ const struct Animation prologue_night_walk_anim02[] = {
     /* 008 */ { prologue_night_walk_cel051, 31 },
     /* End */ END_ANIMATION
 };
-

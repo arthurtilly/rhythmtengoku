@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_08924590] <description>
+// [D_08924590] Toss Boys OBJ Palette
 const Palette toss_boys_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x38C8D0),
@@ -293,7 +293,7 @@ const Palette toss_boys_obj_pal[] = {
     }
 };
 
-// [D_08924790] <description>
+// [D_08924790] Toss Boys BG Palette
 const Palette toss_boys_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x48E8F8),

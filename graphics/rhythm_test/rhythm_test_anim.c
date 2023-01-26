@@ -3,14 +3,14 @@
 
 #include "rhythm_test_anim_cells.inc.c"
 
-// [D_088eff88] <description>
-const struct Animation rhythm_test_anim00[] = {
+// [D_088eff88] Line Chart - Test
+const struct Animation anim_rhythm_test_chart_test[] = {
     /* 000 */ { rhythm_test_cel001, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088eff98] <description>
-const struct Animation rhythm_test_anim01[] = {
+// [D_088eff98] Monitor - Music Note
+const struct Animation anim_rhythm_test_monitor_note[] = {
     /* 000 */ { rhythm_test_cel002, 2 },
     /* 001 */ { rhythm_test_cel003, 2 },
     /* 002 */ { rhythm_test_cel004, 3 },
@@ -18,37 +18,37 @@ const struct Animation rhythm_test_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088effc0] <description>
-const struct Animation rhythm_test_anim02[] = {
+// [D_088effc0] Monitor - Testing...
+const struct Animation anim_rhythm_test_monitor_text1[] = {
     /* 000 */ { rhythm_test_cel005, 100 },
     /* 001 */ { rhythm_test_cel009, 100 },
     /* 002 */ { rhythm_test_cel006, 100 },
     /* End */ END_ANIMATION
 };
 
-// [D_088effe0] <description>
-const struct Animation rhythm_test_anim03[] = {
+// [D_088effe0] Button
+const struct Animation anim_rhythm_test_button[] = {
     /* 000 */ { rhythm_test_cel012, 2 },
     /* 001 */ { rhythm_test_cel011, 2 },
     /* 002 */ { rhythm_test_cel010, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f0000] <description>
-const struct Animation rhythm_test_anim04[] = {
+// [D_088f0000] Monitor Text 2
+const struct Animation anim_rhythm_test_monitor_text2[] = {
     /* 000 */ { rhythm_test_cel007, 6 },
     /* 001 */ { rhythm_test_cel008, 24 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f0018] <description>
-const struct Animation rhythm_test_anim05[] = {
+// [D_088f0018] Line Chart - Marker
+const struct Animation anim_rhythm_test_chart_marker[] = {
     /* 000 */ { rhythm_test_cel017, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f0028] <description>
-const struct Animation rhythm_test_anim06[] = {
+// [D_088f0028] Line Chart - Line
+const struct Animation anim_rhythm_test_chart_line[] = {
     /* 000 */ { rhythm_test_cel018, 4 },
     /* 001 */ { rhythm_test_cel019, 4 },
     /* 002 */ { rhythm_test_cel020, 4 },
@@ -78,8 +78,8 @@ const struct Animation rhythm_test_anim06[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f0100] <description>
-const struct Animation rhythm_test_anim07[] = {
+// [D_088f0100] Monitor - Counting Background
+const struct Animation anim_rhythm_test_monitor_count_bg[] = {
     /* 000 */ { rhythm_test_cel044, 3 },
     /* 001 */ { rhythm_test_cel045, 3 },
     /* 002 */ { rhythm_test_cel046, 6 },
@@ -87,8 +87,8 @@ const struct Animation rhythm_test_anim07[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f0128] <description>
-const struct Animation rhythm_test_anim08[] = {
+// [D_088f0128] Monitor - Count Numbers
+const struct Animation anim_rhythm_test_monitor_count_num[] = {
     /* 000 */ { rhythm_test_cel048, 4 },
     /* 001 */ { rhythm_test_cel049, 4 },
     /* 002 */ { rhythm_test_cel050, 4 },
@@ -113,8 +113,8 @@ const struct Animation rhythm_test_anim08[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f01d8] <description>
-const struct Animation rhythm_test_anim09[] = {
+// [D_088f01d8] Cowbell (Unused)
+const struct Animation anim_rhythm_test_cowbell[] = {
     /* 000 */ { rhythm_test_cel013, 2 },
     /* 001 */ { rhythm_test_cel014, 2 },
     /* 002 */ { rhythm_test_cel015, 3 },

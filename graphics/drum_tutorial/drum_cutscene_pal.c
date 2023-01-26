@@ -1,8 +1,8 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088c430c] <description>
-const Palette drum_cutscene_pal[] = {
+// [D_088c430c] Drum Intro (Drum Samurai Scene) Palette (BG & OBJ)
+const Palette drum_intro_talk_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),
         /* 01 */ TO_RGB555(0x302020),

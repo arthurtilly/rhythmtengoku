@@ -60,7 +60,7 @@ branch_080080dc: \n\
 /* 080080f4 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 080080f6 */ ADD R2, SP, 0x4 \n\
 /* 080080f8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 080080fa */ BL func_08005b20 \n\
+/* 080080fa */ BL start_new_task \n\
 /* 080080fe */ STR R6, [SP, 0x8] \n\
 /* 08008100 */ LDR R0, [SP, 0x34] \n\
 /* 08008102 */ STR R0, [SP, 0xC] \n\
@@ -71,7 +71,7 @@ branch_080080dc: \n\
 /* 0800810c */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0800810e */ ADD R2, SP, 0x4 \n\
 /* 08008110 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08008112 */ BL func_08005b20 \n\
+/* 08008112 */ BL start_new_task \n\
 /* 08008116 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 08008118 */ STR R0, [SP, 0x8] \n\
 /* 0800811a */ LDR R0, [SP, 0x38] \n\
@@ -83,7 +83,7 @@ branch_080080dc: \n\
 /* 08008126 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 08008128 */ ADD R2, SP, 0x4 \n\
 /* 0800812a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800812c */ BL func_08005b20 \n\
+/* 0800812c */ BL start_new_task \n\
 /* 08008130 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08008132 */ STR R1, [SP, 0x8] \n\
 /* 08008134 */ LDR R0, [SP, 0x3C] \n\
@@ -95,7 +95,7 @@ branch_080080dc: \n\
 /* 08008140 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 08008142 */ ADD R2, SP, 0x4 \n\
 /* 08008144 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08008146 */ BL func_08005b20 \n\
+/* 08008146 */ BL start_new_task \n\
 /* 0800814a */ LDR R2, =D_03004b10 \n\
 /* 0800814c */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 0800814e */ LSLS R0, R0, 0x6 \n\

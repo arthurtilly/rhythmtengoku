@@ -27,7 +27,7 @@ thumb_func_start func_0800ec34 \n\
 /* 0800ec60 */ ADDS R0, R4, R6 @ Set R0 to R4 + R6 \n\
 /* 0800ec62 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0800ec64 */ LDRSH R0, [R0, R1] \n\
-/* 0800ec66 */ BL func_0800c088 \n\
+/* 0800ec66 */ BL scene_set_music_pitch \n\
 /* 0800ec6a */ B branch_0800eca6 \n\
 \n\
 .ltorg \n\
@@ -53,7 +53,7 @@ branch_0800ec70: \n\
 /* 0800ec94 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0800ec96 */ LSLS R0, R0, 0x10 \n\
 /* 0800ec98 */ ASRS R0, R0, 0x10 \n\
-/* 0800ec9a */ BL func_0800c088 \n\
+/* 0800ec9a */ BL scene_set_music_pitch \n\
 /* 0800ec9e */ LDRB R0, [R4, 0x2] \n\
 /* 0800eca0 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0800eca2 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\

@@ -12,7 +12,7 @@ thumb_func_start func_080026fc \n\
  \n\
 branch_08002708: \n\
 /* 08002708 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0800270a */ BL func_08002630 \n\
+/* 0800270a */ BL get_sound_num \n\
 /* 0800270e */ LSLS R0, R0, 0x10 \n\
 /* 08002710 */ LSRS R3, R0, 0x10 \n\
 /* 08002712 */ LDR R2, =D_08aa4460 \n\

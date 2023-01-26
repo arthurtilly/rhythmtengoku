@@ -10,11 +10,11 @@ thumb_func_start func_0800ebf8 \n\
 /* 0800ec00 */ BNE branch_0800ec0c \n\
 /* 0800ec02 */ LSLS R0, R5, 0x10 \n\
 /* 0800ec04 */ LSRS R0, R0, 0x10 \n\
-/* 0800ec06 */ BL func_0800bdf8 \n\
+/* 0800ec06 */ BL set_beatscript_tempo \n\
 /* 0800ec0a */ B branch_0800ec18 \n\
  \n\
 branch_0800ec0c: \n\
-/* 0800ec0c */ BL func_0800c1a8 \n\
+/* 0800ec0c */ BL get_beatscript_tempo \n\
 /* 0800ec10 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0800ec12 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 0800ec14 */ BL func_0800ebac \n\

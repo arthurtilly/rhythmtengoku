@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_08912bfc] <description>
+// [D_08912bfc] Space Dance OBJ Palette
 const Palette space_dance_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x0020B0),
@@ -131,7 +131,7 @@ const Palette space_dance_obj_pal[] = {
     }
 };
 
-// [D_08912cdc] <description>
+// [D_08912cdc] Space Dance BG Palette
 const Palette space_dance_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
@@ -153,7 +153,7 @@ const Palette space_dance_bg_pal[] = {
     }
 };
 
-// [D_08912cfc] <description>
+// [D_08912cfc] Space Dance (Remix 3) BG Palette
 const Palette space_dance_remix3_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x0000D0),

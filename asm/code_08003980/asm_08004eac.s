@@ -74,7 +74,7 @@ branch_08004f18: \n\
  \n\
 branch_08004f2a: \n\
 /* 08004f2a */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08004f2c */ BL func_08001980 \n\
+/* 08004f2c */ BL agb_random \n\
 /* 08004f30 */ LDRH R2, [R4, 0x2] \n\
 /* 08004f32 */ LSLS R1, R2, 0x17 \n\
 /* 08004f34 */ LSRS R1, R1, 0x17 \n\
@@ -87,7 +87,7 @@ branch_08004f2a: \n\
 /* 08004f42 */ ORRS R2, R1 @ Set R2 to R2 | R1 \n\
 /* 08004f44 */ STRH R2, [R4, 0x2] \n\
 /* 08004f46 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08004f48 */ BL func_08001980 \n\
+/* 08004f48 */ BL agb_random \n\
 /* 08004f4c */ LDRB R1, [R4] \n\
 /* 08004f4e */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08004f50 */ STRB R0, [R4] \n\
@@ -110,12 +110,12 @@ branch_08004f64: \n\
  \n\
 branch_08004f72: \n\
 /* 08004f72 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08004f74 */ BL func_08001980 \n\
+/* 08004f74 */ BL agb_random \n\
 /* 08004f78 */ LSLS R0, R0, 0x10 \n\
 /* 08004f7a */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08004f7c */ BEQ branch_08004fa8 \n\
 /* 08004f7e */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08004f80 */ BL func_08001980 \n\
+/* 08004f80 */ BL agb_random \n\
 /* 08004f84 */ LDRH R2, [R4, 0x2] \n\
 /* 08004f86 */ LSLS R1, R2, 0x17 \n\
 /* 08004f88 */ LSRS R1, R1, 0x17 \n\
@@ -144,7 +144,7 @@ branch_08004fa8: \n\
 /* 08004fb8 */ ORRS R1, R0 @ Set R1 to R1 | R0 \n\
 /* 08004fba */ STRH R1, [R4, 0x2] \n\
 /* 08004fbc */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08004fbe */ BL func_08001980 \n\
+/* 08004fbe */ BL agb_random \n\
 /* 08004fc2 */ LDRB R1, [R4] \n\
 /* 08004fc4 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
  \n\

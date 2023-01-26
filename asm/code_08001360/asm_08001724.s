@@ -60,7 +60,7 @@ jump_080017ac: \n\
 /* 080017b6 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080017b8 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 080017ba */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 080017bc */ BL func_080018e0 \n\
+/* 080017bc */ BL dma3_fill \n\
 /* 080017c0 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 080017c2 */ ANDS R0, R7 @ Set R0 to R0 & R7 \n\
 /* 080017c4 */ STRH R0, [R5] \n\

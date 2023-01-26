@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088b79b4] <description>
+// [D_088b79b4] OBJ Palette
 const Palette prologue_tap_trial_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00C000),
@@ -23,7 +23,7 @@ const Palette prologue_tap_trial_obj_pal[] = {
     }
 };
 
-// [D_088b79d4] <description>
+// [D_088b79d4] BG Palette
 const Palette prologue_tap_trial_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00D048),
@@ -80,4 +80,3 @@ const Palette prologue_tap_trial_bg_pal[] = {
         /* 15 */ TO_RGB555(0xF8F8F8)
     }
 };
-

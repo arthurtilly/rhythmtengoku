@@ -23,7 +23,7 @@ thumb_func_start func_08002050 \n\
 /* 08002072 */ STR R5, [SP] \n\
 /* 08002074 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 08002076 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08002078 */ BL func_08005b20 \n\
+/* 08002078 */ BL start_new_task \n\
 /* 0800207c */ ADD SP, 0x14 \n\
 /* 0800207e */ POP {R4-R7} \n\
 /* 08002080 */ POP {R1} \n\

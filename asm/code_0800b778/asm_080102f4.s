@@ -71,7 +71,7 @@ branch_0801035e: \n\
 /* 08010370 */ MOVS R1, 0xB5 @ Set R1 to 0xB5 \n\
 /* 08010372 */ LSLS R1, R1, 0x2 \n\
 /* 08010374 */ ADDS R0, R4, R1 @ Set R0 to R4 + R1 \n\
-/* 08010376 */ BL func_08011a18 \n\
+/* 08010376 */ BL reset_all_replay_save_data \n\
 /* 0801037a */ LDR R2, =0x235 \n\
 /* 0801037c */ ADDS R1, R4, R2 @ Set R1 to R4 + R2 \n\
 /* 0801037e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

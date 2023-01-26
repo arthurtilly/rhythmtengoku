@@ -25,13 +25,13 @@ branch_0800c244: \n\
 /* 0800c246 */ BEQ branch_0800c278 \n\
 /* 0800c248 */ LSLS R0, R2, 0x10 \n\
 /* 0800c24a */ LSRS R0, R0, 0x10 \n\
-/* 0800c24c */ BL func_08001980 \n\
+/* 0800c24c */ BL agb_random \n\
 /* 0800c250 */ LSLS R0, R0, 0x10 \n\
 /* 0800c252 */ LSRS R0, R0, 0xE \n\
 /* 0800c254 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0800c256 */ LDR R4, [R0] \n\
 /* 0800c258 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0800c25a */ BL func_0800bf7c \n\
+/* 0800c25a */ BL scene_set_music \n\
 /* 0800c25e */ LDR R2, =D_08aa4460 \n\
 /* 0800c260 */ LDRB R1, [R4, 0x4] \n\
 /* 0800c262 */ LSLS R1, R1, 0x1B \n\

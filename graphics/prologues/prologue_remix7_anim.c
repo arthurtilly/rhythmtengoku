@@ -3,8 +3,8 @@
 
 #include "prologue_remix7_anim_cells.inc.c"
 
-// [D_088b2f44] <description>
-const struct Animation prologue_remix7_anim00[] = {
+// [D_088b2f44] Title
+const struct Animation anim_prologue_remix7_title[] = {
     /* 000 */ { prologue_remix7_cel000, 40 },
     /* 001 */ { prologue_remix7_cel001, 6 },
     /* 002 */ { prologue_remix7_cel002, 6 },
@@ -14,4 +14,3 @@ const struct Animation prologue_remix7_anim00[] = {
     /* 006 */ { prologue_remix7_cel006, 100 },
     /* End */ END_ANIMATION
 };
-

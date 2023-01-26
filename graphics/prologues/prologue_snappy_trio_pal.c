@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088afe04] <description>
+// [D_088afe04] Palette
 const Palette prologue_snappy_trio_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF858B8),
@@ -40,4 +40,3 @@ const Palette prologue_snappy_trio_pal[] = {
         /* 15 */ TO_RGB555(0x000000)
     }
 };
-

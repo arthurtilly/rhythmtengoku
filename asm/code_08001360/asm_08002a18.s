@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08002a18 \n\
+thumb_func_start get_soundplayer_by_sound \n\
 /* 08002a18 */ PUSH {R4-R6, LR} \n\
 /* 08002a1a */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08002a1c */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\

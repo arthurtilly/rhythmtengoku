@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0890e338] <description>
+// [D_0890e338] RAP Machine Palette
 const Palette rap_machine_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x084850),

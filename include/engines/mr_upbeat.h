@@ -1,52 +1,73 @@
 #pragma once
 
 #include "global.h"
-#include "sound.h"
-#include "graphics.h"
+#include "engines.h"
+
+// Engine Types:
+struct MrUpbeatInfo {
+    /* add fields here */
+};
+
+struct MrUpbeatCue {
+    /* add fields here */
+};
+
 
 // Engine Macros/Enums:
 
+
 // OAM Animations:
+
 
 // Palettes:
 
+
 // Sound Effects:
 
+
 // Engine Data:
+extern const char D_0805a674[];
+extern const char D_0805a684[];
+
 
 // Engine Definition Data:
+extern const struct Animation *const mr_upbeat_trip_anim[];
+extern const struct Animation *const mr_upbeat_game_over_anim[][4];
+extern const struct CompressedGraphics *const mr_upbeat_buffered_textures[];
+extern const struct GraphicsTable mr_upbeat_gfx_table[];
+
 
 // Functions:
 // extern ? func_08034b14(?);
 // extern ? func_08034bf4(?);
-// extern ? func_08034d6c(?);
-// extern ? func_08034db0(?);
+extern void func_08034d6c(); // Engine Event 03 (?)
+extern void func_08034db0(); // Engine Event 04 (?)
 // extern ? func_08034dd0(?);
 // extern ? func_08034e40(?);
-// extern ? func_08034e84(?);
+extern void func_08034e84(); // Engine Event 02 (?)
 // extern ? func_08034eb4(?);
-// extern ? func_08034f18(?);
+extern void func_08034f18(); // Engine Event 00 (?)
 // extern ? func_08034f64(?);
 // extern ? func_08034ff4(?);
 // extern ? func_08035094(?);
 // extern ? func_08035168(?);
-// extern ? func_0803516c(?);
-// extern ? func_080351e8(?);
-// extern ? func_080351f8(?);
-// extern ? func_08035228(?);
-// extern ? func_08035254(?);
-// extern ? func_08035310(?);
-// extern ? func_08035314(?);
-// extern ? func_08035320(?);
-// extern ? func_08035330(?);
-// extern ? func_08035334(?);
-// extern ? func_08035338(?);
-// extern ? func_08035354(?);
+extern void func_0803516c(); // Engine Event 05 (?)
+extern void mr_upbeat_init_gfx3(void); // Graphics Init. 3
+extern void mr_upbeat_init_gfx2(void); // Graphics Init. 2
+extern void mr_upbeat_init_gfx1(void); // Graphics Init. 1
+extern void mr_upbeat_engine_start(u32 version); // Game Engine Start
+extern void mr_upbeat_engine_event_stub(void); // Engine Event 06 (STUB)
+extern void func_08035314(); // Engine Event 01 (?)
+extern void mr_upbeat_engine_update(void); // Game Engine Update
+extern void mr_upbeat_engine_stop(void); // Game Engine Stop
+extern void mr_upbeat_cue_spawn(struct Cue *, struct MrUpbeatCue *, u32 unused); // Cue - Spawn
+extern u32  mr_upbeat_cue_update(struct Cue *, struct MrUpbeatCue *, u32 runningTime, u32 duration); // Cue - Update
+extern void mr_upbeat_cue_despawn(struct Cue *, struct MrUpbeatCue *); // Cue - Despawn
 // extern ? func_08035358(?);
-// extern ? func_0803538c(?);
-// extern ? func_080353bc(?);
-// extern ? func_080353ec(?);
-// extern ? func_08035404(?);
-// extern ? func_08035410(?);
-// extern ? func_08035414(?);
-// extern ? func_08035418(?);
+extern void mr_upbeat_cue_hit(struct Cue *, struct MrUpbeatCue *, u32 pressed, u32 released); // Cue - Hit
+extern void mr_upbeat_cue_barely(struct Cue *, struct MrUpbeatCue *, u32 pressed, u32 released); // Cue - Barely
+extern void mr_upbeat_cue_miss(struct Cue *, struct MrUpbeatCue *); // Cue - Miss
+extern void mr_upbeat_input_event(u32 pressed, u32 released); // Input Event
+extern void mr_upbeat_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
+extern void mr_upbeat_common_display_text(void); // Common Event 1 (Display Text, Unimplemented)
+extern void mr_upbeat_common_init_tutorial(void); // Common Event 2 (Init. Tutorial, Unimplemented)

@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088adae0] <description>
+// [D_088adae0] OBJ Palette
 const Palette prologue_karate_man_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xC8E8F8),
@@ -41,7 +41,7 @@ const Palette prologue_karate_man_obj_pal[] = {
     }
 };
 
-// [D_088adb20] <description>
+// [D_088adb20] BG Palette
 const Palette prologue_karate_man_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xC8E8F8),
@@ -80,4 +80,3 @@ const Palette prologue_karate_man_bg_pal[] = {
         /* 15 */ TO_RGB555(0xF8F8F8)
     }
 };
-

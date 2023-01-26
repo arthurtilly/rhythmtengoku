@@ -25,12 +25,12 @@ branch_0800c2ec: \n\
 /* 0800c2ee */ BEQ branch_0800c306 \n\
 /* 0800c2f0 */ LSLS R0, R2, 0x10 \n\
 /* 0800c2f2 */ LSRS R0, R0, 0x10 \n\
-/* 0800c2f4 */ BL func_08001980 \n\
+/* 0800c2f4 */ BL agb_random \n\
 /* 0800c2f8 */ LSLS R0, R0, 0x10 \n\
 /* 0800c2fa */ LSRS R0, R0, 0xE \n\
 /* 0800c2fc */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0800c2fe */ LDR R0, [R0] \n\
-/* 0800c300 */ BL func_08002634 \n\
+/* 0800c300 */ BL play_sound \n\
 /* 0800c304 */ B branch_0800c308 \n\
  \n\
 branch_0800c306: \n\

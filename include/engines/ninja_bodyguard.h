@@ -1,72 +1,127 @@
 #pragma once
 
 #include "global.h"
-#include "sound.h"
-#include "graphics.h"
+#include "engines.h"
+
+// Engine Types:
+struct NinjaBodyguardInfo {
+    /* add fields here */
+};
+
+struct NinjaBodyguardCue {
+    /* add fields here */
+};
+
+struct SpriteVector3 {
+    s16 x;
+    s16 y;
+    s16 z;
+};
+
 
 // Engine Macros/Enums:
+enum NinjaBodyguardVersionsEnum {
+    ENGINE_VER_NINJA_BODYGUARD,
+    ENGINE_VER_NINJA_BODYGUARD_2
+};
+
+enum NinjaBodyguardAnimationsEnum {
+    NINJA_ANIM_LORD_BLINK,
+    NINJA_ANIM_LORD_SCARED1,
+    NINJA_ANIM_LORD_SCARED2,
+    NINJA_ANIM_LORD_WALK,
+    NINJA_ANIM_HEART_EYES,
+    NINJA_ANIM_ARCHER_DRAW,
+    NINJA_ANIM_ARROW_TO_WALL,
+    NINJA_ANIM_ARROW_IN_WALL1,
+    NINJA_ANIM_ARROW_IN_WALL2,
+    NINJA_ANIM_ARROW_IN_WALL3,
+    NINJA_ANIM_ARROW_DEFLECT_L,
+    NINJA_ANIM_ARROW_DEFLECT_R,
+    NINJA_ANIM_ARCHER_FIRE,
+    NINJA_ANIM_ARROW_PIECES,
+    NINJA_ANIM_ARROW_TO_NINJA,
+    NINJA_ANIM_SWING_R,
+    NINJA_ANIM_SWING_L,
+    NINJA_ANIM_SLICE_R,
+    NINJA_ANIM_SLICE_L,
+    NINJA_ANIM_APPEAR,
+    NINJA_ANIM_RAISE_SWORD,
+    NINJA_ANIM_BUTTON_INDICATOR,
+    NINJA_ANIM_CUTSCENE_ARROW
+};
+
 
 // OAM Animations:
 
+
 // Palettes:
+
 
 // Sound Effects:
 
+
 // Engine Data:
 
+
 // Engine Definition Data:
+extern const struct Animation *const *const ninja_anim_table[];
+extern const struct SpriteVector3 D_089e69cc[];
+extern const struct CompressedGraphics *const ninja_buffered_textures[];
+extern const struct GraphicsTable *const ninja_gfx_tables[];
+
 
 // Functions:
-// extern ? func_0803bd88(?);
+extern const struct Animation *ninja_get_anim(u32 anim); // Get Animation
 // extern ? func_0803bda8(?);
-// extern ? func_0803be04(?);
+extern void func_0803be04(); // Engine Event 10 (?)
 // extern ? func_0803be44(?);
-// extern ? func_0803be88(?);
+extern void func_0803be88(); // Engine Event 11 (?)
 // extern ? func_0803bec4(?);
 // extern ? func_0803bf14(?);
-// extern ? func_0803bf74(?);
-// extern ? func_0803c034(?);
-// extern ? func_0803c08c(?);
+extern void func_0803bf74(); // Engine Event 07 (?)
+extern void func_0803c034(); // Engine Event 08 (?)
+extern void func_0803c08c(); // Engine Event 09 (?)
 // extern ? func_0803c190(?);
 // extern ? func_0803c20c(?);
 // extern ? func_0803c260(?);
 // extern ? func_0803c28c(?);
-// extern ? func_0803c2b8(?);
+extern void func_0803c2b8(); // Engine Event 0B (?)
 // extern ? func_0803c2f4(?);
 // extern ? func_0803c3c4(?);
-// extern ? func_0803c400(?);
+extern void func_0803c400(); // Engine Event 0C (?)
 // extern ? func_0803c43c(?);
 // extern ? func_0803c52c(?);
 // extern ? func_0803c5c0(?);
-// extern ? func_0803c5cc(?);
-// extern ? func_0803c5f8(?);
-// extern ? func_0803c638(?);
-// extern ? func_0803c6fc(?);
+extern void func_0803c5cc(); // Engine Event 03 (?)
+extern void func_0803c5f8(); // Engine Event 04 (?)
+extern void func_0803c638(); // Engine Event 05 (?)
+extern void func_0803c6fc(); // Engine Event 0D (?)
 // extern ? func_0803c710(?);
 // extern ? func_0803c834(?);
 // extern ? func_0803c8c4(?);
-// extern ? func_0803c960(?);
+extern void func_0803c960(); // Engine Event 06 (?)
 // extern ? func_0803c964(?);
 // extern ? func_0803c9f4(?);
-// extern ? func_0803c9f8(?);
-// extern ? func_0803ca8c(?);
-// extern ? func_0803cad0(?);
-// extern ? func_0803cb0c(?);
-// extern ? func_0803cb60(?);
-// extern ? func_0803cb7c(?);
-// extern ? func_0803cbbc(?);
-// extern ? func_0803cbe8(?);
-// extern ? func_0803ccb0(?);
-// extern ? func_0803ccb4(?);
-// extern ? func_0803cce0(?);
-// extern ? func_0803ccf4(?);
-// extern ? func_0803cd04(?);
-// extern ? func_0803cd08(?);
-// extern ? func_0803cd1c(?);
-// extern ? func_0803cd38(?);
-// extern ? func_0803cd3c(?);
-// extern ? func_0803ce24(?);
-// extern ? func_0803cf00(?);
-// extern ? func_0803cf60(?);
-// extern ? func_0803d010(?);
-// extern ? func_0803d014(?);
+extern void func_0803c9f8(); // Engine Event 00 (?)
+extern void func_0803ca8c(); // Engine Event 01 (?)
+extern void func_0803cad0(); // Engine Event 02 (?)
+extern void func_0803cb0c(); // Engine Event 0A (?)
+extern void ninja_init_gfx3(void); // Graphics Init. 3
+extern void ninja_init_gfx2(void); // Graphics Init. 2
+extern void ninja_init_gfx1(void); // Graphics Init. 1
+extern void ninja_engine_start(u32 version); // Game Engine Start
+extern void ninja_engine_event_stub(void); // Engine Event 12 (STUB)
+extern void func_0803ccb4(); // Engine Event 0E (?)
+extern void func_0803cce0(); // Engine Event 0F (?)
+extern void ninja_engine_update(void); // Game Engine Update
+extern void ninja_engine_stop(void); // Game Engine Stop
+extern void ninja_cue_spawn(struct Cue *, struct NinjaBodyguardCue *, u32 unused); // Cue - Spawn
+extern u32  ninja_cue_update(struct Cue *, struct NinjaBodyguardCue *, u32 runningTime, u32 duration); // Cue - Update
+extern void ninja_cue_despawn(struct Cue *, struct NinjaBodyguardCue *); // Cue - Despawn
+extern void ninja_cue_hit(struct Cue *, struct NinjaBodyguardCue *, u32 pressed, u32 released); // Cue - Hit
+extern void ninja_cue_barely(struct Cue *, struct NinjaBodyguardCue *, u32 pressed, u32 released); // Cue - Barely
+extern void ninja_cue_miss(struct Cue *, struct NinjaBodyguardCue *); // Cue - Miss
+extern void ninja_input_event(u32 pressed, u32 released); // Input Event
+extern void ninja_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
+extern void ninja_common_display_text(void); // Common Event 1 (Display Text, Unimplemented)

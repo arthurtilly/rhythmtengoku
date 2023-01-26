@@ -3,15 +3,15 @@
 
 #include "cat_machine_anim_cells.inc.c"
 
-// [D_0890ddf0] <description>
-const struct Animation cat_machine_anim00[] = {
+// [D_0890ddf0] "Demo Start" Icon
+const struct Animation anim_cat_machine_demo_icon[] = {
     /* 000 */ { cat_machine_cel000, 16 },
     /* 001 */ { cat_machine_cel001, 16 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890de08] <description>
-const struct Animation cat_machine_anim01[] = {
+// [D_0890de08] Cat Face - A/B Button Pressed
+const struct Animation anim_cat_machine_listen[] = {
     /* 000 */ { cat_machine_cel003, 12 },
     /* 001 */ { cat_machine_cel004, 12 },
     /* 002 */ { cat_machine_cel003, 12 },
@@ -24,50 +24,50 @@ const struct Animation cat_machine_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890de58] <description>
-const struct Animation cat_machine_anim02[] = {
+// [D_0890de58] Cat Face - D-Pad Pressed
+const struct Animation anim_cat_machine_meow[] = {
     /* 000 */ { cat_machine_cel005, 12 },
     /* 001 */ { cat_machine_cel002, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890de70] <description>
-const struct Animation cat_machine_anim03[] = {
+// [D_0890de70] A Button
+const struct Animation anim_cat_machine_button_a[] = {
     /* 000 */ { cat_machine_cel007, 6 },
     /* 001 */ { cat_machine_cel006, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890de88] <description>
-const struct Animation cat_machine_anim04[] = {
+// [D_0890de88] B Button
+const struct Animation anim_cat_machine_button_b[] = {
     /* 000 */ { cat_machine_cel009, 6 },
     /* 001 */ { cat_machine_cel008, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890dea0] <description>
-const struct Animation cat_machine_anim05[] = {
+// [D_0890dea0] D-Pad Up
+const struct Animation anim_cat_machine_button_up[] = {
     /* 000 */ { cat_machine_cel011, 6 },
     /* 001 */ { cat_machine_cel010, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890deb8] <description>
-const struct Animation cat_machine_anim06[] = {
+// [D_0890deb8] D-Pad Down
+const struct Animation anim_cat_machine_button_down[] = {
     /* 000 */ { cat_machine_cel013, 6 },
     /* 001 */ { cat_machine_cel012, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890ded0] <description>
-const struct Animation cat_machine_anim07[] = {
+// [D_0890ded0] D-Pad Left
+const struct Animation anim_cat_machine_button_left[] = {
     /* 000 */ { cat_machine_cel015, 6 },
     /* 001 */ { cat_machine_cel014, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890dee8] <description>
-const struct Animation cat_machine_anim08[] = {
+// [D_0890dee8] D-Pad Right
+const struct Animation anim_cat_machine_button_right[] = {
     /* 000 */ { cat_machine_cel017, 6 },
     /* 001 */ { cat_machine_cel016, 40 },
     /* End */ END_ANIMATION

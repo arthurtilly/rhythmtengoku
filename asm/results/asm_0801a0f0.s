@@ -14,15 +14,15 @@ thumb_func_start func_0801a0f0 \n\
 /* 0801a102 */ LDR R0, =D_030046a4 \n\
 /* 0801a104 */ LDR R0, [R0] \n\
 /* 0801a106 */ LDR R0, [R0, 0x10] \n\
-/* 0801a108 */ BL func_08002634 \n\
-/* 0801a10c */ BL func_0800c3b8 \n\
+/* 0801a108 */ BL play_sound \n\
+/* 0801a10c */ BL get_current_mem_id \n\
 /* 0801a110 */ LSLS R0, R0, 0x10 \n\
 /* 0801a112 */ LSRS R0, R0, 0x10 \n\
 /* 0801a114 */ LDR R1, =D_089d7b54 \n\
 /* 0801a116 */ BL func_080087b4 \n\
-/* 0801a11a */ LDR R1, =func_0800bd04 \n\
+/* 0801a11a */ LDR R1, =pause_beatscript_scene \n\
 /* 0801a11c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0801a11e */ BL func_08005d38 \n\
+/* 0801a11e */ BL run_func_after_task \n\
 /* 0801a122 */ POP {R0} \n\
 /* 0801a124 */ BX R0 \n\
 \n\

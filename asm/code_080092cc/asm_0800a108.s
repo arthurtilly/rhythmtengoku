@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0800a108 \n\
+thumb_func_start text_printer_get_glyph_id \n\
 /* 0800a108 */ PUSH {R4, R5, LR} \n\
 /* 0800a10a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800a10c */ LDR R2, [R1] \n\

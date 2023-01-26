@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_08913ec8] <description>
+// [D_08913ec8] OBJ Palette
 const Palette marching_orders_remix7_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x587880),
@@ -59,7 +59,7 @@ const Palette marching_orders_remix7_obj_pal[] = {
     }
 };
 
-// [D_08913f28] <description>
+// [D_08913f28] BG Palette
 const Palette marching_orders_remix7_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x585800),

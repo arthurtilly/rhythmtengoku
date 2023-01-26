@@ -3,14 +3,14 @@
 
 #include "metronome_anim_cells.inc.c"
 
-// [D_088f3b58] <description>
-const struct Animation metronome_anim00[] = {
+// [D_088f3b58] Metronome Pendulum
+const struct Animation anim_metronome_pendulum[] = {
     /* 000 */ { metronome_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f3b68] <description>
-const struct Animation metronome_anim01[] = {
+// [D_088f3b68] Bird Marker
+const struct Animation anim_metronome_bird_marker[] = {
     /* 000 */ { metronome_cel001, 4 },
     /* 001 */ { metronome_cel002, 3 },
     /* 002 */ { metronome_cel003, 3 },
@@ -19,36 +19,36 @@ const struct Animation metronome_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3b98] <description>
-const struct Animation metronome_anim02[] = {
+// [D_088f3b98] Bird
+const struct Animation anim_metronome_bird[] = {
     /* 000 */ { metronome_cel007, 5 },
     /* 001 */ { metronome_cel008, 3 },
     /* 002 */ { metronome_cel006, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f3bb8] <description>
-const struct Animation metronome_anim03[] = {
+// [D_088f3bb8] Face - Left
+const struct Animation anim_metronome_face_l[] = {
     /* 000 */ { metronome_cel009, 40 },
     /* 001 */ { metronome_cel011, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f3bd0] <description>
-const struct Animation metronome_anim04[] = {
+// [D_088f3bd0] Face - Right
+const struct Animation anim_metronome_face_r[] = {
     /* 000 */ { metronome_cel010, 40 },
     /* 001 */ { metronome_cel012, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f3be8] <description>
-const struct Animation metronome_anim05[] = {
+// [D_088f3be8] Score Counter
+const struct Animation anim_metronome_score_counter[] = {
     /* 000 */ { metronome_cel013, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f3bf8] <description>
-const struct Animation metronome_anim06[] = {
+// [D_088f3bf8] Score Count Numbers.
+const struct Animation anim_metronome_score_num[] = {
     /* 000 */ { metronome_cel014, 4 },
     /* 001 */ { metronome_cel015, 4 },
     /* 002 */ { metronome_cel016, 4 },
@@ -63,8 +63,8 @@ const struct Animation metronome_anim06[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3c58] <description>
-const struct Animation metronome_anim07[] = {
+// [D_088f3c58] Accuracy Meter
+const struct Animation anim_metronome_timing_meter[] = {
     /* 000 */ { metronome_cel036, 20 },
     /* 001 */ { metronome_cel037, 20 },
     /* 002 */ { metronome_cel038, 20 },
@@ -79,8 +79,8 @@ const struct Animation metronome_anim07[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3cb8] <description>
-const struct Animation metronome_anim08[] = {
+// [D_088f3cb8] Mr. Upbeat - Beat (Unused)
+const struct Animation anim_mr_upbeat_beat[] = {
     /* 000 */ { metronome_cel047, 2 },
     /* 001 */ { metronome_cel048, 2 },
     /* 002 */ { metronome_cel049, 2 },
@@ -88,8 +88,8 @@ const struct Animation metronome_anim08[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3ce0] <description>
-const struct Animation metronome_anim09[] = {
+// [D_088f3ce0] Mr. Upbeat Shadows
+const struct Animation anim_mr_upbeat_shadow[] = {
     /* 000 */ { metronome_cel058, 40 },
     /* 001 */ { metronome_cel059, 46 },
     /* 002 */ { metronome_cel060, 46 },
@@ -97,8 +97,8 @@ const struct Animation metronome_anim09[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3d08] <description>
-const struct Animation metronome_anim10[] = {
+// [D_088f3d08] Mr. Upbeat - Right Step
+const struct Animation anim_mr_upbeat_r_step[] = {
     /* 000 */ { metronome_cel057, 2 },
     /* 001 */ { metronome_cel056, 1 },
     /* 002 */ { metronome_cel055, 3 },
@@ -106,14 +106,14 @@ const struct Animation metronome_anim10[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3d30] <description>
-const struct Animation metronome_anim11[] = {
+// [D_088f3d30] Mr. Upbeat Shadow - Right
+const struct Animation anim_mr_upbeat_r_shadow[] = {
     /* 000 */ { metronome_cel060, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f3d40] <description>
-const struct Animation metronome_anim12[] = {
+// [D_088f3d40] Mr. Upbeat Test
+const struct Animation anim_mr_upbeat_r_test[] = {
     /* 000 */ { metronome_cel057, 2 },
     /* 001 */ { metronome_cel056, 1 },
     /* 002 */ { metronome_cel055, 3 },
@@ -135,8 +135,8 @@ const struct Animation metronome_anim12[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3dd8] <description>
-const struct Animation metronome_anim13[] = {
+// [D_088f3dd8] Mr. Upbeat - Right Fall (Metronome Moving Right)
+const struct Animation anim_mr_upbeat_r_trip_r[] = {
     /* 000 */ { metronome_cel066, 2 },
     /* 001 */ { metronome_cel065, 1 },
     /* 002 */ { metronome_cel064, 1 },
@@ -145,8 +145,8 @@ const struct Animation metronome_anim13[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3e08] <description>
-const struct Animation metronome_anim14[] = {
+// [D_088f3e08] Mr. Upbeat - Right Fall (Metronome Moving Left)
+const struct Animation anim_mr_upbeat_r_trip_l[] = {
     /* 000 */ { metronome_cel072, 2 },
     /* 001 */ { metronome_cel073, 2 },
     /* 002 */ { metronome_cel074, 3 },
@@ -155,16 +155,16 @@ const struct Animation metronome_anim14[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3e38] <description>
-const struct Animation metronome_anim15[] = {
+// [D_088f3e38] Mr. Upbeat - Count Beep
+const struct Animation anim_mr_upbeat_beep[] = {
     /* 000 */ { metronome_cel082, 4 },
     /* 001 */ { metronome_cel083, 4 },
     /* 002 */ { metronome_cel084, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_088f3e58] <description>
-const struct Animation metronome_anim16[] = {
+// [D_088f3e58] Mr. Upbeat - Left Step
+const struct Animation anim_mr_upbeat_l_step[] = {
     /* 000 */ { metronome_cel053, 2 },
     /* 001 */ { metronome_cel052, 1 },
     /* 002 */ { metronome_cel051, 3 },
@@ -172,8 +172,8 @@ const struct Animation metronome_anim16[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3e80] <description>
-const struct Animation metronome_anim17[] = {
+// [D_088f3e80] Mr. Upbeat - Left Fall (Metronome Moving Left)
+const struct Animation anim_mr_upbeat_l_trip_l[] = {
     /* 000 */ { metronome_cel071, 2 },
     /* 001 */ { metronome_cel070, 1 },
     /* 002 */ { metronome_cel069, 1 },
@@ -182,8 +182,8 @@ const struct Animation metronome_anim17[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3eb0] <description>
-const struct Animation metronome_anim18[] = {
+// [D_088f3eb0] Mr. Upbeat - Left Fall (Metronome Moving Right)
+const struct Animation anim_mr_upbeat_l_trip_r[] = {
     /* 000 */ { metronome_cel077, 2 },
     /* 001 */ { metronome_cel078, 2 },
     /* 002 */ { metronome_cel079, 1 },
@@ -192,8 +192,8 @@ const struct Animation metronome_anim18[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3ee0] <description>
-const struct Animation metronome_anim19[] = {
+// [D_088f3ee0] High Score Numbers
+const struct Animation anim_mr_upbeat_high_score_num[] = {
     /* 000 */ { metronome_cel024, 4 },
     /* 001 */ { metronome_cel025, 4 },
     /* 002 */ { metronome_cel026, 4 },
@@ -208,8 +208,8 @@ const struct Animation metronome_anim19[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3f40] <description>
-const struct Animation metronome_anim20[] = {
+// [D_088f3f40] Mr. Upbeat - Left Cheer (Metronome Moved Right)
+const struct Animation anim_mr_upbeat_l_cheer_r[] = {
     /* 000 */ { metronome_cel085, 4 },
     /* 001 */ { metronome_cel086, 4 },
     /* 002 */ { metronome_cel087, 4 },
@@ -217,8 +217,8 @@ const struct Animation metronome_anim20[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3f68] <description>
-const struct Animation metronome_anim21[] = {
+// [D_088f3f68] Mr. Upbeat - Left Sad (Metronome Moved Right)
+const struct Animation anim_mr_upbeat_l_mope_r[] = {
     /* 000 */ { metronome_cel089, 4 },
     /* 001 */ { metronome_cel090, 4 },
     /* 002 */ { metronome_cel091, 4 },
@@ -227,8 +227,8 @@ const struct Animation metronome_anim21[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3f98] <description>
-const struct Animation metronome_anim22[] = {
+// [D_088f3f98] Mr. Upbeat - Right Cheer (Metronome Moved Left)
+const struct Animation anim_mr_upbeat_r_cheer_l[] = {
     /* 000 */ { metronome_cel094, 4 },
     /* 001 */ { metronome_cel095, 4 },
     /* 002 */ { metronome_cel096, 4 },
@@ -236,8 +236,8 @@ const struct Animation metronome_anim22[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3fc0] <description>
-const struct Animation metronome_anim23[] = {
+// [D_088f3fc0] Mr. Upbeat - Right Sad (Metronome Moved Left)
+const struct Animation anim_mr_upbeat_r_mope_l[] = {
     /* 000 */ { metronome_cel098, 4 },
     /* 001 */ { metronome_cel099, 4 },
     /* 002 */ { metronome_cel100, 4 },
@@ -246,8 +246,8 @@ const struct Animation metronome_anim23[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f3ff0] <description>
-const struct Animation metronome_anim24[] = {
+// [D_088f3ff0] Mr. Upbeat - Right Cheer (Metronome Moved Right)
+const struct Animation anim_mr_upbeat_r_cheer_r[] = {
     /* 000 */ { metronome_cel103, 4 },
     /* 001 */ { metronome_cel104, 4 },
     /* 002 */ { metronome_cel105, 4 },
@@ -255,8 +255,8 @@ const struct Animation metronome_anim24[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f4018] <description>
-const struct Animation metronome_anim25[] = {
+// [D_088f4018] Mr. Upbeat - Left Cheer (Metronome Moved Left)
+const struct Animation anim_mr_upbeat_l_cheer_l[] = {
     /* 000 */ { metronome_cel107, 4 },
     /* 001 */ { metronome_cel108, 4 },
     /* 002 */ { metronome_cel109, 4 },
@@ -264,8 +264,8 @@ const struct Animation metronome_anim25[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f4040] <description>
-const struct Animation metronome_anim26[] = {
+// [D_088f4040] Mr. Upbeat - Right Sad (Metronome Moved Right)
+const struct Animation anim_mr_upbeat_r_mope_r[] = {
     /* 000 */ { metronome_cel111, 4 },
     /* 001 */ { metronome_cel112, 4 },
     /* 002 */ { metronome_cel113, 4 },
@@ -274,8 +274,8 @@ const struct Animation metronome_anim26[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088f4070] <description>
-const struct Animation metronome_anim27[] = {
+// [D_088f4070] Mr. Upbeat - Left Sad (Metronome Moved Left)
+const struct Animation anim_mr_upbeat_l_mope_l[] = {
     /* 000 */ { metronome_cel116, 4 },
     /* 001 */ { metronome_cel117, 4 },
     /* 002 */ { metronome_cel118, 4 },

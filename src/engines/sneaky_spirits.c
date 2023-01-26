@@ -4,428 +4,431 @@
 #include "src/code_08003980.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
-#include "src/code_08016e18.h"
-#include "src/lib_0804c870.h"
+#include "scenes/gameplay.h"
+#include "src/lib_0804ca80.h"
 
 // For readability.
-#define gSneakySpiritsInfo D_030055d0->gameInfo.sneakySpirits
+#define gSneakySpiritsInfo ((struct SneakySpiritsInfo *)D_030055d0)
 
 
 /* SNEAKY SPIRITS */
 
 
-// [func_0801ee98] ENGINE Func_00 - Appear At Position
-void func_0801ee98(u32 position) {
+// Engine Event 00 (Show Ghost)
+void sneaky_spirits_show_ghost(u32 position) {
     s16 ghostSprite;
     s32 x, y;
 
-    x = func_08008f04(8, 88, position, gSneakySpiritsInfo.maxSteps - 1);
-    y = func_08008f04(80, 76, position, gSneakySpiritsInfo.maxSteps - 1);
-    y += (0x100 - gSneakySpiritsInfo.ghostHeight) >> 3;
-    ghostSprite = gSneakySpiritsInfo.ghostWalk;
+    x = func_08008f04(8, 88, position, gSneakySpiritsInfo->maxSteps - 1);
+    y = func_08008f04(80, 76, position, gSneakySpiritsInfo->maxSteps - 1);
+    y += (0x100 - gSneakySpiritsInfo->ghostHeight) >> 3;
+    ghostSprite = gSneakySpiritsInfo->ghostWalk;
 
     func_0804d5d4(D_03005380, ghostSprite, x, y);
     func_0804d770(D_03005380, ghostSprite, 1);
     func_0804cebc(D_03005380, ghostSprite, 0);
-    func_0804dcb8(D_03005380, ghostSprite, (func_0800c1a8() << 8) / 100);
-    func_0804d614(D_03005380, gSneakySpiritsInfo.ghostMask, x);
-    func_08002698(&s_ghost_walk_seqData, (gSneakySpiritsInfo.ghostHeight * 15) >> 5, 0);
+    func_0804dcb8(D_03005380, ghostSprite, INT_TO_FIXED(get_beatscript_tempo()) / 100u);
+    func_0804d614(D_03005380, gSneakySpiritsInfo->ghostMask, x);
+    play_sound_w_pitch_volume(&s_ghost_walk_seqData, (gSneakySpiritsInfo->ghostHeight * 15) >> 5, 0);
 }
 
 
-// [func_0801ef70] Initialise Rain
-void func_0801ef70(void) {
+// Initialise Rain
+void sneaky_spirits_init_rain(void) {
     u32 i;
 
     for (i = 0; i < 30; i++) {
-        gSneakySpiritsInfo.rainDrops[i] = func_0804d160(D_03005380, sneaky_spirits_anim12, 0, 120, 80, 0x800, 0, 0, 0x8000);
+        gSneakySpiritsInfo->rainDrops[i] = func_0804d160(D_03005380, anim_sneaky_spirits_rain, 0, 120, 80, 0x800, 0, 0, 0x8000);
     }
     for (i = 0; i < 20; i++) {
-        gSneakySpiritsInfo.rainSplashes[i] = func_0804d160(D_03005380, sneaky_spirits_anim13, 0, 64, 64, 0x8400, 0, 0, 0x8002);
+        gSneakySpiritsInfo->rainSplashes[i] = func_0804d160(D_03005380, anim_sneaky_spirits_splash, 0, 64, 64, 0x8400, 0, 0, 0x8002);
     }
 
-    gSneakySpiritsInfo.rainDropNext = 0;
-    gSneakySpiritsInfo.rainSplashNext = 0;
-    gSneakySpiritsInfo.rainSlow = FALSE;
-    gSneakySpiritsInfo.freezeRain = FALSE;
-    gSneakySpiritsInfo.tree = func_0804d160(D_03005380, sneaky_spirits_anim08, 0, 223, 76, 0x4f00, 1, 0, 0);
+    gSneakySpiritsInfo->rainDropNext = 0;
+    gSneakySpiritsInfo->rainSplashNext = 0;
+    gSneakySpiritsInfo->rainSlow = FALSE;
+    gSneakySpiritsInfo->freezeRain = FALSE;
+    gSneakySpiritsInfo->tree = func_0804d160(D_03005380, anim_sneaky_spirits_tree, 0, 223, 76, 0x4f00, 1, 0, 0);
 }
 
 
-// [func_0801f040] Update Rain
-void func_0801f040(void) {
+// Update Rain
+void sneaky_spirits_update_fast_rain(void) {
     u32 i;
     s16 sprite;
 
     for (i = 0; i < 4; i++) {
-        sprite = gSneakySpiritsInfo.rainDrops[gSneakySpiritsInfo.rainDropNext];
-        func_0804d8f8(D_03005380, sprite, sneaky_spirits_anim12, 0, 1, 0, 2);
-        func_0804d5d4(D_03005380, sprite, func_08001980(240), func_08001980(64) + 48);
+        sprite = gSneakySpiritsInfo->rainDrops[gSneakySpiritsInfo->rainDropNext];
+        func_0804d8f8(D_03005380, sprite, anim_sneaky_spirits_rain, 0, 1, 0, 2);
+        func_0804d5d4(D_03005380, sprite, agb_random(240), agb_random(64) + 48);
         func_0804d770(D_03005380, sprite, 1);
 
-        gSneakySpiritsInfo.rainDropNext += 1;
-        if (gSneakySpiritsInfo.rainDropNext >= 30) {
-            gSneakySpiritsInfo.rainDropNext = 0;
+        gSneakySpiritsInfo->rainDropNext += 1;
+        if (gSneakySpiritsInfo->rainDropNext >= 30) {
+            gSneakySpiritsInfo->rainDropNext = 0;
         }
     }
 
     for (i = 0; i < 4; i++) {
-        sprite = gSneakySpiritsInfo.rainSplashes[gSneakySpiritsInfo.rainSplashNext];
+        sprite = gSneakySpiritsInfo->rainSplashes[gSneakySpiritsInfo->rainSplashNext];
         func_0804cebc(D_03005380, sprite, 0);
-        func_0804d5d4(D_03005380, sprite, func_08001980(240), func_08001980(50) + 110);
+        func_0804d5d4(D_03005380, sprite, agb_random(240), agb_random(50) + 110);
         func_0804d770(D_03005380, sprite, 1);
 
-        gSneakySpiritsInfo.rainSplashNext += 1;
-        if (gSneakySpiritsInfo.rainSplashNext >= 20) {
-            gSneakySpiritsInfo.rainSplashNext = 0;
+        gSneakySpiritsInfo->rainSplashNext += 1;
+        if (gSneakySpiritsInfo->rainSplashNext >= 20) {
+            gSneakySpiritsInfo->rainSplashNext = 0;
         }
     }
 }
 
 
-// [func_0801f17c] Update Rain If Not In Slow-Motion
-void func_0801f17c(void) {
-    if (!gSneakySpiritsInfo.rainSlow) func_0801f040();
+// Update Rain If Not In Slow-Motion
+void sneaky_spirits_update_rain(void) {
+    if (!gSneakySpiritsInfo->rainSlow) sneaky_spirits_update_fast_rain();
 }
 
 
-// [func_0801f194] Set Rain Speed
-void func_0801f194(u32 slowMotion) {
-    u32 i, temp;
+// Set Rain Speed
+void sneaky_spirits_set_rain_speed(u32 slowMotion) {
+    u32 i;
+    u32 animSpeed;
     s16 sprite;
 
-    if (gSneakySpiritsInfo.rainSlow == slowMotion) return;
-    gSneakySpiritsInfo.rainSlow = slowMotion;
+    if (gSneakySpiritsInfo->rainSlow == slowMotion) return;
+    gSneakySpiritsInfo->rainSlow = slowMotion;
 
     if (slowMotion) {
         for (i = 0; i < 30; i++) {
-            sprite = gSneakySpiritsInfo.rainDrops[i];
-            temp = (!gSneakySpiritsInfo.freezeRain) ? 0x100 / (func_08001980(3) + 1) : 0;
+            sprite = gSneakySpiritsInfo->rainDrops[i];
+            animSpeed = (!gSneakySpiritsInfo->freezeRain) ? INT_TO_FIXED(1.0) / (agb_random(3) + 1) : 0;
 
-            func_0804d8f8(D_03005380, sprite, sneaky_spirits_anim14, 0, 1, 0x7f, 0);
-            func_0804d5d4(D_03005380, sprite, func_08001980(240), func_08001980(160));
-            func_0804dcb8(D_03005380, sprite, temp);
+            func_0804d8f8(D_03005380, sprite, anim_sneaky_spirits_rain_slow, 0, 1, 0x7f, 0);
+            func_0804d5d4(D_03005380, sprite, agb_random(240), agb_random(160));
+            func_0804dcb8(D_03005380, sprite, animSpeed);
             func_0804d770(D_03005380, sprite, 1);
         }
 
         for (i = 0; i < 20; i++) {
-            sprite = gSneakySpiritsInfo.rainSplashes[i];
+            sprite = gSneakySpiritsInfo->rainSplashes[i];
             func_0804da20(D_03005380, sprite, 1);
         }
 
-        func_0804da20(D_03005380, gSneakySpiritsInfo.tree, 1);
+        func_0804da20(D_03005380, gSneakySpiritsInfo->tree, 1);
     }
 
     else {
         for (i = 0; i < 30; i++) {
-            sprite = gSneakySpiritsInfo.rainDrops[i];
+            sprite = gSneakySpiritsInfo->rainDrops[i];
 
             func_0804d770(D_03005380, sprite, 0);
-            func_0804dcb8(D_03005380, sprite, 0x100);
+            func_0804dcb8(D_03005380, sprite, INT_TO_FIXED(1.0));
         }
 
         for (i = 0; i < 20; i++) {
-            sprite = gSneakySpiritsInfo.rainSplashes[i];
+            sprite = gSneakySpiritsInfo->rainSplashes[i];
             func_0804da20(D_03005380, sprite, 0);
         }
 
-        func_0804da20(D_03005380, gSneakySpiritsInfo.tree, 0);
+        func_0804da20(D_03005380, gSneakySpiritsInfo->tree, 0);
     }
 }
 
 
-// [func_0801f30c] ENGINE Func_06 - Set Rain Speed (Tutorial)
-void func_0801f30c(u32 slowMotion) {
-    func_0801f194(slowMotion);
+// Engine Event 06 (Set Rain Speed)
+void sneaky_spirits_event_set_rain_speed(u32 slowMotion) {
+    sneaky_spirits_set_rain_speed(slowMotion);
 }
 
 
-// [func_0801f318] ENGINE Func_07 - Freeze Slow-Motion Rain (Tutorial)
-void func_0801f318(u32 freezeRain) {
-    gSneakySpiritsInfo.freezeRain = freezeRain;
+// Engine Event 07 (Freeze Slow-Motion Rain)
+void sneaky_spirits_freeze_slow_rain(u32 freezeRain) {
+    gSneakySpiritsInfo->freezeRain = freezeRain;
 }
 
 
-// [func_0801f328] GFX_INIT Func_02
-void func_0801f328(void) {
+// Graphics Init. 3
+void sneaky_spirits_init_gfx3(void) {
     func_0800c604(0);
-    func_08017578();
+    gameplay_start_screen_fade_in();
 }
 
 
-// [func_0801f338] GFX_INIT Func_01
-void func_0801f338(void) {
+// Graphics Init. 2
+void sneaky_spirits_init_gfx2(void) {
+    u32 task;
+
+    func_0800c604(0);
+    task = func_08002ee0(get_current_mem_id(), sneaky_spirits_gfx_tables[gSneakySpiritsInfo->version], 0x2000);
+    run_func_after_task(task, sneaky_spirits_init_gfx3, 0);
+}
+
+
+// Graphics Init. 1
+void sneaky_spirits_init_gfx1(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_08002ee0(func_0800c3b8(), D_089de7a4[gSneakySpiritsInfo.version], 0x2000);
-    func_08005d38(data, func_0801f328, 0);
+    data = func_080087b4(get_current_mem_id(), sneaky_spirits_buffered_textures);
+    run_func_after_task(data, sneaky_spirits_init_gfx2, 0);
 }
 
 
-// [func_0801f378] GFX_INIT Func_00
-void func_0801f378(void) {
-    u32 data;
-
-    func_0800c604(0);
-    data = func_080087b4(func_0800c3b8(), &D_089de6e0);
-    func_08005d38(data, func_0801f338, 0);
-}
-
-
-// [func_0801f3a4] MAIN - Init
-void func_0801f3a4(u32 ver) {
+// Game Engine Start
+void sneaky_spirits_engine_start(u32 version) {
     struct Animation *textAnim;
 
-    gSneakySpiritsInfo.version = ver;
-    func_0801f378();
-    func_0800e0ec();
-    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
-    func_0800e0a0(2, 1, 0, 0, 0, 30, 2);
+    gSneakySpiritsInfo->version = version;
+    sneaky_spirits_init_gfx1();
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
+    scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, 2);
 
-    gSneakySpiritsInfo.unk0 = func_0800c660(0x380, 1);
-    textAnim = func_08004b98(gSneakySpiritsInfo.unk0, D_08059f90, 0, 0);
-    gSneakySpiritsInfo.text = func_0804d160(D_03005380, textAnim, 0, 120, 32, 0, 0, 0, 0);
-    func_0801ef70();
+    gSneakySpiritsInfo->unk0 = func_0800c660(0x380, 1);
+    textAnim = func_08004b98(gSneakySpiritsInfo->unk0, D_08059f90, 0, 0);
+    gSneakySpiritsInfo->text = func_0804d160(D_03005380, textAnim, 0, 120, 32, 0, 0, 0, 0);
+    sneaky_spirits_init_rain();
 
-    gSneakySpiritsInfo.bow = func_0804d160(D_03005380, sneaky_spirits_anim00, 0, 210, 128, 0x4800, 0, 0, 0x8000);
-    gSneakySpiritsInfo.arrowReady = FALSE;
+    gSneakySpiritsInfo->bow = func_0804d160(D_03005380, anim_sneaky_spirits_bow, 0, 210, 128, 0x4800, 0, 0, 0x8000);
+    gSneakySpiritsInfo->arrowReady = FALSE;
 
-    gSneakySpiritsInfo.door = func_0804d160(D_03005380, sneaky_spirits_anim03, 0, 72, 48, 0x8800, 0, 0, 0);
-    gSneakySpiritsInfo.backWall = func_0804d160(D_03005380, sneaky_spirits_anim02, 0, 24, 45, 0x879c, 0, 0, 0);
+    gSneakySpiritsInfo->door = func_0804d160(D_03005380, anim_sneaky_spirits_door, 0, 72, 48, 0x8800, 0, 0, 0);
+    gSneakySpiritsInfo->backWall = func_0804d160(D_03005380, anim_sneaky_spirits_back_wall, 0, 24, 45, 0x879c, 0, 0, 0);
 
-    gSneakySpiritsInfo.ghostWalk = func_0804d160(D_03005380, sneaky_spirits_anim10, 0, 16, 80, 0x8792, 1, 0, 2);
-    func_0804d5d4(D_03005380, gSneakySpiritsInfo.ghostWalk, -100, -100);
-    gSneakySpiritsInfo.ghostMask = func_0804d160(D_03005380, sneaky_spirits_anim16, 0, 88, 140, 0x8791, 1, 0, 0);
-    gSneakySpiritsInfo.ghostHit = func_0804d160(D_03005380, sneaky_spirits_anim01, 0, 100, 76, 0x87a6, 0, 0, 0x8000);
-    gSneakySpiritsInfo.maxSteps = 7;
-    gSneakySpiritsInfo.tutorialGhost = func_0804d160(D_03005380, sneaky_spirits_anim19, 0, 120, 92, 0x8792, 1, 0x7f, 0x8000);
-    gSneakySpiritsInfo.ghostHeight = 0x100;
+    gSneakySpiritsInfo->ghostWalk = func_0804d160(D_03005380, anim_sneaky_spirit_walk, 0, 16, 80, 0x8792, 1, 0, 2);
+    func_0804d5d4(D_03005380, gSneakySpiritsInfo->ghostWalk, -100, -100);
+    gSneakySpiritsInfo->ghostMask = func_0804d160(D_03005380, anim_sneaky_spirits_wall_mask, 0, 88, 140, 0x8791, 1, 0, 0);
+    gSneakySpiritsInfo->ghostHit = func_0804d160(D_03005380, anim_sneaky_spirit_hit, 0, 100, 76, 0x87a6, 0, 0, 0x8000);
+    gSneakySpiritsInfo->maxSteps = 7;
+    gSneakySpiritsInfo->tutorialGhost = func_0804d160(D_03005380, anim_sneaky_spirit_tutorial, 0, 120, 92, 0x8792, 1, 0x7f, 0x8000);
+    gSneakySpiritsInfo->ghostHeight = 0x100;
 
-    gSneakySpiritsInfo.rainChannel = NULL;
+    gSneakySpiritsInfo->rainChannel = NULL;
 
-    func_08017338(0, 0);
-    gSneakySpiritsInfo.slowMotionHit = TRUE;
-    if (ver == SNEAKY_SPIRITS_VERSION_REMIX) {
-        gSneakySpiritsInfo.slowMotionHit = FALSE;
+    gameplay_set_input_buttons(0, 0);
+    gSneakySpiritsInfo->slowMotionHit = TRUE;
+    if (version == SNEAKY_SPIRITS_VERSION_REMIX) {
+        gSneakySpiritsInfo->slowMotionHit = FALSE;
     }
 }
 
 
-// [func_0801f5bc] ENGINE Func_10 - Unknown (STUB, Unused)
-void func_0801f5bc(void) {
+// Engine Event 0A (Stub)
+void sneaky_spirits_engine_event_stub(void) {
 }
 
 
-// [func_0801f5c0] ENGINE Func_01 - Next Vertical Position
-void func_0801f5c0(u32 height) {
-    gSneakySpiritsInfo.ghostHeight = height;
-    func_0800c4b0(1, func_0800c3a4(0xc), &D_030053c0.unk190, D_030053c0.unk190, height);
+// Engine Event 01 (Set Next Vertical Position)
+void sneaky_spirits_set_ghost_height(u32 height) {
+    gSneakySpiritsInfo->ghostHeight = height;
+    func_0800c4b0(1, beats_to_ticks(0xc), &D_030053c0.musicVolume, D_030053c0.musicVolume, height);
 }
 
 
-// [func_0801f5f4] ENGINE Func_02 - Bow Appear
-void func_0801f5f4(void) {
-    func_0800e25c(gSneakySpiritsInfo.bow, 290, 128, 210, 128, 230);
-    func_0804d770(D_03005380, gSneakySpiritsInfo.bow, 1);
+// Engine Event 02 (Spawn Bow)
+void sneaky_spirits_spawn_bow(void) {
+    func_0800e25c(gSneakySpiritsInfo->bow, 290, 128, 210, 128, 230);
+    func_0804d770(D_03005380, gSneakySpiritsInfo->bow, 1);
 }
 
 
-// [func_0801f638] ENGINE Func_03 - Draw Bow
-void func_0801f638(void) {
-    if (!gSneakySpiritsInfo.arrowReady) {
-        gSneakySpiritsInfo.arrowReady = TRUE;
-        func_08017338(1, 0);
-        func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, sneaky_spirits_anim00, 0, 1, 0x7f, 0);
+// Engine Event 03 (Draw Bow)
+void sneaky_spirits_draw_bow(void) {
+    if (!gSneakySpiritsInfo->arrowReady) {
+        gSneakySpiritsInfo->arrowReady = TRUE;
+        gameplay_set_input_buttons(A_BUTTON, 0);
+        func_0804d8f8(D_03005380, gSneakySpiritsInfo->bow, anim_sneaky_spirits_bow, 0, 1, 0x7f, 0);
     }
 }
 
 
-// [func_0801f684] ENGINE Func_04 - Play Wind/Rain SFX
-void func_0801f684(u32 play) {
-    if (!play && (gSneakySpiritsInfo.rainChannel != NULL)) {
-        func_08002920(gSneakySpiritsInfo.rainChannel, 0);
-        func_08002828(gSneakySpiritsInfo.rainChannel);
-        gSneakySpiritsInfo.rainChannel = NULL;
+// Engine Event 04 (Play Wind/Rain SFX)
+void sneaky_spirits_enable_wind_sfx(u32 play) {
+    if (!play && (gSneakySpiritsInfo->rainChannel != NULL)) {
+        set_soundplayer_volume(gSneakySpiritsInfo->rainChannel, 0);
+        stop_soundplayer(gSneakySpiritsInfo->rainChannel);
+        gSneakySpiritsInfo->rainChannel = NULL;
     }
     else if (play) {
-        gSneakySpiritsInfo.rainChannel = func_08002634(&s_ghost_rain_seqData);
+        gSneakySpiritsInfo->rainChannel = play_sound(&s_ghost_rain_seqData);
     }
 }
 
 
-// [func_0801f6d0] Cross-Fade Music and Wind/Rain SFX
-void func_0801f6d0(void) {
+// Cross-Fade Music and Wind/Rain SFX
+void sneaky_spirits_update_wind_sfx(void) {
     u32 rainVolume;
 
-    if (gSneakySpiritsInfo.rainChannel == NULL) return;
+    if (gSneakySpiritsInfo->rainChannel == NULL) return;
 
-    rainVolume = func_080087d4((0x100 - D_030053c0.unk190) / 2, 0, 128) + 0x40;
-    func_08002920(gSneakySpiritsInfo.rainChannel, rainVolume);
+    rainVolume = clamp_int32((INT_TO_FIXED(1.0) - D_030053c0.musicVolume) / 2, 0, 128) + INT_TO_FIXED(0.25);
+    set_soundplayer_volume(gSneakySpiritsInfo->rainChannel, rainVolume);
 }
 
 
-// [func_0801f71c] ENGINE Func_05 - Display Text (Tutorial)
-void func_0801f71c(char *string) {
-    func_08007b04(gSneakySpiritsInfo.unk0, gSneakySpiritsInfo.text);
-    func_0804d8f8(D_03005380, gSneakySpiritsInfo.text, func_08004b98(gSneakySpiritsInfo.unk0, string, 1, 0xc), 0, 1, 0, 0);
+// Engine Event 05 (Display Text)
+void sneaky_spirits_display_text(char *string) {
+    func_08007b04(gSneakySpiritsInfo->unk0, gSneakySpiritsInfo->text);
+    func_0804d8f8(D_03005380, gSneakySpiritsInfo->text, func_08004b98(gSneakySpiritsInfo->unk0, string, 1, 0xc), 0, 1, 0, 0);
 }
 
 
-// [func_0801f76c] ENGINE Func_08 - Display Dashing Sneaky Spirit (Tutorial)
-void func_0801f76c(u32 playAnim) {
-    func_0804d770(D_03005380, gSneakySpiritsInfo.tutorialGhost, playAnim);
+// Engine Event 08 (Display Tutorial Sneaky Spirit)
+void sneaky_spirits_display_tutorial_ghost(u32 playAnim) {
+    func_0804d770(D_03005380, gSneakySpiritsInfo->tutorialGhost, playAnim);
 }
 
 
-// [func_0801f794] ENGINE Func_09 - Animate Dashing Sneaky Spirit (Tutorial)
-void func_0801f794(u32 frame) {
-    func_0804cebc(D_03005380, gSneakySpiritsInfo.tutorialGhost, frame);
+// Engine Event 09 (Animate Tutorial Sneaky Spirit)
+void sneaky_spirits_animate_tutorial_ghost(u32 frame) {
+    func_0804cebc(D_03005380, gSneakySpiritsInfo->tutorialGhost, frame);
 }
 
 
-// [func_0801f7bc] MAIN - Update
-void func_0801f7bc(void) {
-    func_0801f17c(); // Update Rain
-    func_0801f6d0(); // Update Wind/Rain SFX
+// Game Engine Update
+void sneaky_spirits_engine_update(void) {
+    sneaky_spirits_update_rain(); // Update Rain
+    sneaky_spirits_update_wind_sfx(); // Update Wind/Rain SFX
 }
 
 
-// [func_0801f7cc] MAIN - Close
-void func_0801f7cc(void) {
-    func_0800be88(0x100);
-    func_0800c0c4(0);
-    func_0800c0f8(0, 0);
+// Game Engine Close
+void sneaky_spirits_engine_stop(void) {
+    set_beatscript_speed(INT_TO_FIXED(1.0));
+    scene_set_music_pitch_env(0);
+    scene_set_music_track_volume(0, 0);
 }
 
 
-// [func_0801f7e8] CUE - Spawn
-void func_0801f7e8(u32 arg0, struct SneakySpiritsCue *cue, u32 disableTaunt) {
-    cue->disableTaunt = disableTaunt;
+// Cue - Spawn
+void sneaky_spirits_cue_spawn(struct Cue *cue, struct SneakySpiritsCue *info, u32 disableTaunt) {
+    info->disableTaunt = disableTaunt;
 }
 
 
-// [func_0801f7f0] CUE - Update
-u32 func_0801f7f0(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
-    if (arg2 > func_0800c3a4(0x30)) return TRUE;
-
-    return FALSE;
+// Cue - Update
+u32 sneaky_spirits_cue_update(struct Cue *cue, struct SneakySpiritsCue *info, u32 runningTime, u32 duration) {
+    if (runningTime > beats_to_ticks(0x30)) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
 }
 
 
-// [func_0801f80c] CUE - Despawn (STUB)
-void func_0801f80c(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
+// Cue - Despawn
+void sneaky_spirits_cue_despawn(struct Cue *cue, struct SneakySpiritsCue *info) {
 }
 
 
-// [func_0801f810] Revert Slow-Motion Effects
-void func_0801f810(void) {
+// Revert Slow-Motion Effects
+void sneaky_spirits_stop_slow_motion(void) {
     func_0800c604(0);
 
-    if (gSneakySpiritsInfo.slowMotionHit) {
-        func_0800be88(0x100);   // Reset Game Speed
-        func_0800c0c4(0);       // Reset Music Pitch
-        func_0800c0f8(0, 0);    // Reset Music Channel Volume
+    if (gSneakySpiritsInfo->slowMotionHit) {
+        set_beatscript_speed(0x100);   // Reset Game Speed
+        scene_set_music_pitch_env(0);       // Reset Music Pitch
+        scene_set_music_track_volume(0, 0);    // Reset Music Channel Volume
     }
 
-    func_0804d770(D_03005380, gSneakySpiritsInfo.ghostHit, 0);
-    func_0804dae0(D_03005380, gSneakySpiritsInfo.door, -1, 0, 0);
-    func_0804cebc(D_03005380, gSneakySpiritsInfo.door, 3);
-    func_0801f194(0);
-    func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, sneaky_spirits_anim15, 0, 1, 0x7f, 0);
-    func_0804dcb8(D_03005380, gSneakySpiritsInfo.ghostWalk, (func_0800c1a8() << 8) / 100);
+    func_0804d770(D_03005380, gSneakySpiritsInfo->ghostHit, 0);
+    func_0804dae0(D_03005380, gSneakySpiritsInfo->door, -1, 0, 0);
+    func_0804cebc(D_03005380, gSneakySpiritsInfo->door, 3);
+    sneaky_spirits_set_rain_speed(FALSE);
+    func_0804d8f8(D_03005380, gSneakySpiritsInfo->bow, anim_sneaky_spirits_bow_shoot, 0, 1, 0x7f, 0);
+    func_0804dcb8(D_03005380, gSneakySpiritsInfo->ghostWalk, INT_TO_FIXED(get_beatscript_tempo()) / 100u);
 }
 
 
-// [func_0801f8d0] CUE - Hit
-void func_0801f8d0(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
+// Cue - Hit
+void sneaky_spirits_cue_hit(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, u32 released) {
     u32 duration;
-    s8  xVel;
-    s8  yVel;
-    u32 temp;
+    s8 targetX, targetY;
+    u32 totalFrames;
+    s32 task;
 
-    if (gSneakySpiritsInfo.slowMotionHit) {
-        func_0800be88(0x40);        // Set Game Speed (0x40 = 0.25; Default = 0x100)
-        func_0800c0c4(-0xc00);      // Set Music Pitch (-0xc00 = -12 semitones; Default = 0)
-        func_0800c0f8((1 << 9), 0); // Set Music Channel 9 Volume to 0
+    if (gSneakySpiritsInfo->slowMotionHit) {
+        set_beatscript_speed(0x40);        // Set Game Speed (0x40 = 0.25; Default = 0x100)
+        scene_set_music_pitch_env(-0xc00);      // Set Music Pitch (-0xc00 = -12 semitones; Default = 0)
+        scene_set_music_track_volume((1 << 9), 0); // Set Music Channel 9 Volume to 0
 
-        duration = func_0800c3a4(0x16) - func_08018054();
-        xVel = 68;
-        yVel = 60;
+        duration = beats_to_ticks(0x16) - gameplay_get_last_hit_offset();
+        targetX = 68;
+        targetY = 60;
     } else {
-        duration = func_0800c3a4(0x30) - func_08018054();
-        xVel = 84;
-        yVel = 68;
+        duration = beats_to_ticks(0x30) - gameplay_get_last_hit_offset();
+        targetX = 84;
+        targetY = 68;
     }
 
-    temp = (u16) func_0804ddb0(D_03005380, gSneakySpiritsInfo.ghostHit, 2);
-    func_0804cebc(D_03005380, gSneakySpiritsInfo.ghostHit, func_08001980(temp));
-    func_0804d770(D_03005380, gSneakySpiritsInfo.ghostHit, 1);
-    temp = func_0800e3e4(gSneakySpiritsInfo.ghostHit, 100, 76, xVel, yVel, (u16) duration);
-    func_08005d38(temp, func_0801f810, 0);
+    totalFrames = (u16) func_0804ddb0(D_03005380, gSneakySpiritsInfo->ghostHit, 2);
+    func_0804cebc(D_03005380, gSneakySpiritsInfo->ghostHit, agb_random(totalFrames));
+    func_0804d770(D_03005380, gSneakySpiritsInfo->ghostHit, 1);
+    task = func_0800e3e4(gSneakySpiritsInfo->ghostHit, 100, 76, targetX, targetY, duration);
+    run_func_after_task(task, sneaky_spirits_stop_slow_motion, 0);
 
-    func_0804dae0(D_03005380, gSneakySpiritsInfo.door, 1, 0x7f, 0);
-    func_0804cebc(D_03005380, gSneakySpiritsInfo.door, 1);
+    func_0804dae0(D_03005380, gSneakySpiritsInfo->door, 1, 0x7f, 0);
+    func_0804cebc(D_03005380, gSneakySpiritsInfo->door, 1);
 
-    func_0801f194(1);
+    sneaky_spirits_set_rain_speed(TRUE);
 
-    gSneakySpiritsInfo.arrowReady = FALSE;
-    func_08017338(0, 0);
-    func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, sneaky_spirits_anim15, 3, 0, 0, 0);
+    gSneakySpiritsInfo->arrowReady = FALSE;
+    gameplay_set_input_buttons(0, 0);
+    func_0804d8f8(D_03005380, gSneakySpiritsInfo->bow, anim_sneaky_spirits_bow_shoot, 3, 0, 0, 0);
 
-    func_08002634(&s_f_aim_just_hit_seqData);
-    func_08002634(&s_f_aim_just_hit_voice_seqData);
+    play_sound(&s_f_aim_just_hit_seqData);
+    play_sound(&s_f_aim_just_hit_voice_seqData);
 
-    func_0804d160(D_03005380, sneaky_spirits_anim18, 0, 128, 90, 0x8792, 1, 0, 3);
+    func_0804d160(D_03005380, anim_sneaky_spirit_hit_effect, 0, 128, 90, 0x8792, 1, 0, 3);
 }
 
 
-// [func_0801fa4c] CUE - Barely
-void func_0801fa4c(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
-    gSneakySpiritsInfo.arrowReady = FALSE;
-    func_08017338(0, 0);
-    func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, sneaky_spirits_anim15, 0, 1, 0x7f, 0);
+// Cue - Barely
+void sneaky_spirits_cue_barely(struct Cue *cue, struct SneakySpiritsCue *info, u32 pressed, u32 released) {
+    gSneakySpiritsInfo->arrowReady = FALSE;
+    gameplay_set_input_buttons(0, 0);
+    func_0804d8f8(D_03005380, gSneakySpiritsInfo->bow, anim_sneaky_spirits_bow_shoot, 0, 1, 0x7f, 0);
 
-    func_0804d160(D_03005380, sneaky_spirits_anim06, 0, 70, 58, 0x8792, 1, 0x7f, 3);
-    if (func_08018054() < 0) {
-        func_0804d160(D_03005380, sneaky_spirits_anim07, 0, 122, 94, 0x8792, 1, 0, 3);
+    func_0804d160(D_03005380, anim_sneaky_spirits_arrow_miss, 0, 70, 58, 0x8792, 1, 0x7f, 3);
+    if (gameplay_get_last_hit_offset() < 0) {
+        func_0804d160(D_03005380, anim_sneaky_spirit_scared_early, 0, 122, 94, 0x8792, 1, 0, 3);
     } else {
-        func_0804d160(D_03005380, sneaky_spirits_anim17, 0, 122, 94, 0x8792, 1, 0, 3);
+        func_0804d160(D_03005380, anim_sneaky_spirit_scared_late, 0, 122, 94, 0x8792, 1, 0, 3);
     }
-    func_08002634(&s_ghost_miss_hit_seqData);
+    play_sound(&s_ghost_miss_hit_seqData);
 }
 
 
-// [func_0801fb14] CUE - Miss
-void func_0801fb14(u32 arg0, struct SneakySpiritsCue *cue, u32 arg2) {
-    func_0804d160(D_03005380, sneaky_spirits_anim11, 0, 120, 92, 0x8792, 1, 0, 3);
+// Cue - Miss
+void sneaky_spirits_cue_miss(struct Cue *cue, struct SneakySpiritsCue *info) {
+    func_0804d160(D_03005380, anim_sneaky_spirit_dash, 0, 120, 92, 0x8792, 1, 0, 3);
 
-    if (!cue->disableTaunt) {
-        func_0804d160(D_03005380, sneaky_spirits_anim05, 0, 160, 105, 0x8792, 1, 0, 3);
-        func_0800856c((u16) func_0800c3b8(), func_08002634, &s_ghost_warai_seqData, func_0800c3a4(0xc));
+    if (!info->disableTaunt) {
+        func_0804d160(D_03005380, anim_sneaky_spirit_taunt, 0, 160, 105, 0x8792, 1, 0, 3);
+        func_0800856c(get_current_mem_id(), play_sound, (u32)&s_ghost_warai_seqData, beats_to_ticks(0x0C));
     }
 
-    func_08002634(&s_ghost_dash_seqData);
+    play_sound(&s_ghost_dash_seqData);
 }
 
 
-// [func_0801fbb0] MAIN - Input Event
-void func_0801fbb0(void) {
-    if (!gSneakySpiritsInfo.arrowReady) return;
+// Input Event
+void sneaky_spirits_input_event(u32 pressed, u32 released) {
+    if (!gSneakySpiritsInfo->arrowReady) return;
 
-    gSneakySpiritsInfo.arrowReady = FALSE;
-    func_08017338(0, 0);
-    func_0804d8f8(D_03005380, gSneakySpiritsInfo.bow, sneaky_spirits_anim15, 0, 1, 0x7f, 0);
-    func_0804d160(D_03005380, sneaky_spirits_anim06, 0, 70, 58, 0x8792, 1, 0x7f, 3);
-    func_08002634(&s_ghost_gosha_seqData);
+    gSneakySpiritsInfo->arrowReady = FALSE;
+    gameplay_set_input_buttons(0, 0);
+    func_0804d8f8(D_03005380, gSneakySpiritsInfo->bow, anim_sneaky_spirits_bow_shoot, 0, 1, 0x7f, 0);
+    func_0804d160(D_03005380, anim_sneaky_spirits_arrow_miss, 0, 70, 58, 0x8792, 1, 0x7f, 3);
+    play_sound(&s_ghost_gosha_seqData);
 }
 
 
-// [func_0801fc3c] COMMON Func_00 - STUB
-void func_0801fc3c(void) {
+// Common Event 0 (Beat Animation, Unimplemented)
+void sneaky_spirits_common_beat_animation(void) {
 }
 
 
-// [func_0801fc40] COMMON Func_01 - STUB
-void func_0801fc40(void) {
+// Common Event 1 (Display Text, Unimplemented)
+void sneaky_spirits_common_display_text(void) {
 }

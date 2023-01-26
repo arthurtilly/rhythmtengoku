@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0800c138 \n\
+thumb_func_start scene_interpolate_music_volume \n\
 /* 0800c138 */ PUSH {LR} \n\
 /* 0800c13a */ SUB SP, 0x4 \n\
 /* 0800c13c */ LDR R2, =(D_030053c0 + 0x190) \n\

@@ -3,8 +3,8 @@
 
 #include "prologue_clappy_trio_anim_cells.inc.c"
 
-// [D_088afb9c] <description>
-const struct Animation prologue_clappy_trio_anim00[] = {
+// [D_088afb9c] Title
+const struct Animation anim_prologue_clappy_trio_title[] = {
     /* 000 */ { prologue_clappy_trio_cel000, 40 },
     /* 001 */ { prologue_clappy_trio_cel001, 6 },
     /* 002 */ { prologue_clappy_trio_cel002, 6 },
@@ -14,4 +14,3 @@ const struct Animation prologue_clappy_trio_anim00[] = {
     /* 006 */ { prologue_clappy_trio_cel006, 100 },
     /* End */ END_ANIMATION
 };
-

@@ -106,7 +106,7 @@ branch_08003246: \n\
 /* 08003250 */ LDR R3, [SP, 0x30] \n\
 /* 08003252 */ LSLS R2, R3, 0x1 \n\
 /* 08003254 */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
-/* 08003256 */ BL func_0800186c \n\
+/* 08003256 */ BL dma3_set \n\
 /* 0800325a */ ADDS R6, 0x40 @ Add 0x40 to R6 \n\
 /* 0800325c */ LDRB R0, [R7, 0x14] \n\
 /* 0800325e */ LSLS R0, R0, 0x1 \n\

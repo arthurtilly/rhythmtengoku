@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088ad004] <description>
+// [D_088ad004] Palette
 const Palette karate_man_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x18F8E0),

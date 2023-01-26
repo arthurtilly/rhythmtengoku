@@ -26,7 +26,7 @@ thumb_func_start func_0800c560 \n\
 /* 0800c588 */ STR R2, [SP, 0x8] \n\
 /* 0800c58a */ STR R3, [SP, 0xC] \n\
 /* 0800c58c */ STR R7, [SP, 0x10] \n\
-/* 0800c58e */ BL func_0800c3b8 \n\
+/* 0800c58e */ BL get_current_mem_id \n\
 /* 0800c592 */ LSLS R0, R0, 0x10 \n\
 /* 0800c594 */ LSRS R0, R0, 0x10 \n\
 /* 0800c596 */ LDR R1, =D_08936c34 \n\
@@ -34,7 +34,7 @@ thumb_func_start func_0800c560 \n\
 /* 0800c59a */ STR R2, [SP] \n\
 /* 0800c59c */ ADD R2, SP, 0x4 \n\
 /* 0800c59e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0800c5a0 */ BL func_08005b20 \n\
+/* 0800c5a0 */ BL start_new_task \n\
 /* 0800c5a4 */ ADD SP, 0x14 \n\
 /* 0800c5a6 */ POP {R4-R7} \n\
 /* 0800c5a8 */ POP {R1} \n\

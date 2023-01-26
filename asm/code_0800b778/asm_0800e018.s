@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0800e018 \n\
+thumb_func_start scene_set_video_mode \n\
 /* 0800e018 */ LDR R3, =D_03004b10 \n\
 /* 0800e01a */ LDRH R2, [R3] \n\
 /* 0800e01c */ LDR R1, =0xfff8 \n\

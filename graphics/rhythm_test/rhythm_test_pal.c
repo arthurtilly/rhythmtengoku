@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088f0200] <description>
+// [D_088f0200] Palette
 const Palette rhythm_test_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x507898),

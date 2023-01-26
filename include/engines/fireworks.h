@@ -1,8 +1,56 @@
 #pragma once
 
 #include "global.h"
-#include "sound.h"
-#include "graphics.h"
+#include "engines.h"
+
+// Engine Types:
+struct FireworksInfo {
+    u8  version;        // Version Number
+    struct TextObject1 *unk4;  // Font?
+    s16 textSprite;     // Tutorial Text (Sprite)
+    struct FireworksParticle {
+        s16 sprite;     // Sprite
+        u8  active;     // Currently in-use.
+        s32 x;          // X Position
+        s32 y;          // Y Position
+        s32 velX;       // X Velocity
+        s32 velY;       // Y Velocity
+        u8  initAngle;  // Trajectory Angle
+        s32 initVel;    // Trajectory Velocity
+        u8  colour;     // Colour ID { 0..3 }
+    } particles[72];        // Firework Particle Entities
+    s16 skipTutorialSprite; // Unused "Start to Skip" Text (Sprite)
+    u8  screenBrightness;   // Screen Brightness (for Taiko Bomber screen flash)
+    u8  patternTableNext;   // Current Position in Fireworks 1 Pattern Table
+    u8  patternMode;        // Pattern-Handling Mode { 0..3 }
+    u8  patternDefault;     // Pattern ID to use if Pattern Mode is not within { 0..3 }
+};
+
+struct FireworksCue {
+    s16 sprite;     // Sprite
+    s32 x;          // X Position
+    s32 y;          // Y Position
+    s32 velX;       // X Velocity
+    s32 velY;       // Y Velocity
+    s32 targetX;    // Target X Position
+    s32 targetY;    // Target Y Position
+    u8  pattern;    // Pattern ID
+    u8  state;      // Current State (range varies between cues)
+    u8  type;       // Cue Type { 0..2 }
+    u8  exploded;   // Has Exploded
+};
+
+struct FireworksPatternColours {
+    s32 inner;
+    s32 middle;
+    s32 outer;
+};
+
+struct FireworksParticleTrajectory {
+    s32 initAngle; // Uses precision of sins2 table.
+    s32 initVelocity;
+};
+
 
 // Engine Macros/Enums:
 enum FireworksPatternsEnum {
@@ -27,23 +75,27 @@ enum FireworksPatternsEnum {
     FIREWORKS_PATTERN_SP_TSUNKU,    // Centre;  Special - ♂ (unused)
     FIREWORKS_PATTERN_TAIKO_BOMBER, // Hawfinch Taiko Bomber
 };
+
 enum FireworksParticlesEnum {
     FIREWORKS_PARTICLE_RED,
     FIREWORKS_PARTICLE_GREEN,
     FIREWORKS_PARTICLE_BLUE,
     FIREWORKS_PARTICLE_MULTI
 };
+
 enum FireworksPatternModesEnum {
     FIREWORKS_PATTERN_MODE_0,
     FIREWORKS_PATTERN_MODE_1,
     FIREWORKS_PATTERN_MODE_TAIKO_BOMBER,
     FIREWORKS_PATTERN_MODE_USE_TABLE
 };
+
 enum FireworksCueTypesEnum {
     FIREWORKS_CUE_TYPE_SPIRIT_SPARKLER,
     FIREWORKS_CUE_TYPE_NORMAL_FIREWORK,
     FIREWORKS_CUE_TYPE_HAWFINCH_TAIKO_BOMBER
 };
+
 enum FireworksSoundsEnum {
     FIREWORKS_SFX_COME_ON,
     FIREWORKS_SFX_ONE,
@@ -52,32 +104,24 @@ enum FireworksSoundsEnum {
     FIREWORKS_SFX_NUEI
 };
 
-// Types:
-struct FireworksPatternColours {
-    s32 inner;
-    s32 middle;
-    s32 outer;
-};
-struct FireworksParticleTrajectory {
-    s32 initAngle; // Uses precision of sins2 table.
-    s32 initVelocity;
-};
 
 // OAM Animations:
-extern const struct Animation D_088e8f14[]; // Animation: ?
-extern const struct Animation D_088e8f34[]; // Animation: ?
-extern const struct Animation D_088e8f64[]; // Animation: Particle
-extern const struct Animation D_088e8fb4[]; // Animation: ?
-extern const struct Animation D_088e905c[]; // Animation: ?
-extern const struct Animation D_088e90ac[]; // Animation: "taiko_bomber_launch"
-extern const struct Animation D_088e90c4[]; // Animation: ?
-extern const struct Animation D_088e92dc[]; // Animation: ?
-extern const struct Animation D_088e93bc[]; // Animation: "Start to Skip" Text (unused)
-extern const struct Animation D_088e93cc[]; // Animation: ?
-extern const struct Animation D_088e93ec[]; // Animation: "spirit_sparkler_launch"
-extern const struct Animation D_088e940c[]; // Animation: "normal_firework_launch"
+extern const struct Animation anim_fireworks_rocket4[];
+extern const struct Animation anim_fireworks_rocket_explode[];
+extern const struct Animation anim_fireworks_particle_red[];
+extern const struct Animation anim_fireworks_particle_green[];
+extern const struct Animation anim_fireworks_particle_blue[];
+extern const struct Animation anim_fireworks_bomb[];
+extern const struct Animation anim_fireworks_bomb_explode[];
+extern const struct Animation anim_fireworks_particle_tri_rgb[];
+extern const struct Animation anim_fireworks_skip_tutorial_icon[];
+extern const struct Animation anim_fireworks_rocket3[];
+extern const struct Animation anim_fireworks_rocket2[];
+extern const struct Animation anim_fireworks_rocket1[];
+
 
 // Palettes:
+
 
 // Sound Effects:
 extern const struct SequenceData s_intro_comeon_seqData;
@@ -89,38 +133,46 @@ extern const struct SequenceData s_hanabi_hyu_seqData;
 extern const struct SequenceData s_f_hanabi_v_tamaya_seqData;
 extern const struct SequenceData s_hanabi_ah_seqData;
 extern const struct SequenceData s_f_hanabi_kansei_seqData;
+extern const struct SequenceData s_hanabi_utiage_seqData;
+extern const struct SequenceData s_hanabi_utiage_v_seqData;
+extern const struct SequenceData s_witch_donats_seqData;
+extern const struct SequenceData s_hanabi_don_seqData;
+extern const struct SequenceData s_hanabi_pon_seqData;
+
 
 // Engine Data:
 extern const char D_0805a3d0[];
-extern const struct FireworksPatternColours D_0805a3d4[];
-extern const s32 D_0805a41c[];
-extern const struct FireworksParticleTrajectory D_0805a42c[];
-extern const s32 D_0805a524[];
+extern const struct FireworksPatternColours fireworks_particle_combinations[];
+extern const s32 fireworks_particle_durations[];
+extern const struct FireworksParticleTrajectory fireworks_mars_pattern[];
+extern const s32 fireworks_1_pattern_sequence[];
+
 
 // Engine Definition Data:
-extern u16 D_089e43e8[];  // Cue Expiration Times?
-extern u32 D_089e4214;    // GFX-related Null
-extern u32 *D_089e43d4[]; // GFX Init Struct
+extern const struct CompressedGraphics *const fireworks_buffered_textures[]; // Buffered Textures List
+extern const struct GraphicsTable *const fireworks_gfx_tables[]; // Graphics Table Index
+extern const u16 fireworks_cue_durations[]; // Cue Expiration Times
+
 
 // Functions:
-extern void func_0802f3a4(void);    // [func_0802f3a4] GFX_INIT Func_02
-extern void func_0802f3b4(void);    // [func_0802f3b4] GFX_INIT Func_01
-extern void func_0802f3f4(void);    // [func_0802f3f4] GFX_INIT Func_00
-extern void func_0802f420(u32);     // [func_0802f420] MAIN - Init
-extern void func_0802f5b8(u32);     // [func_0802f5b8] ENGINE Func_00 - Set Pattern Mode
-extern void func_0802f5f0(u32);     // [func_0802f5f0] ENGINE Func_01 - Play Sound
-extern void func_0802f650(u32);     // [func_0802f650] ENGINE Func_02 - Set Pattern
-extern void func_0802f664(void);         // [func_0802f664] Update Particles
-extern void func_0802f74c(u8, s32, s32); // [func_0802f74c] Create Explosion
-extern void func_0802fc38(void);    // [func_0802fc38] MAIN - Update
-extern void func_0802fc6c(void);    // [func_0802fc6c] MAIN - Close (STUB)
-extern void func_0802fc70(u32, struct FireworksCue *, u32, u32); // [func_0802fc70] CUE - Spawn
-extern u32  func_0802ff70(u32, struct FireworksCue *, u32, u32); // [func_0802ff70] CUE - Update
-extern void func_08030114(u32, struct FireworksCue *, u32, u32); // [func_08030114] CUE - Despawn
-extern void func_0803012c(u32, struct FireworksCue *, u32, u32); // [func_0803012c] CUE - Hit
-extern void func_080301d0(u32, struct FireworksCue *, u32, u32); // [func_080301d0] CUE - Barely
-extern void func_08030288(u32, struct FireworksCue *, u32, u32); // [func_08030288] CUE - Miss
-extern void func_08030294(void);    // [func_08030294] MAIN - Input Event (STUB)
-extern void func_08030298(void);    // [func_08030298] COMMON Func_00 - STUB
-extern void func_0803029c(char *);  // [func_0803029c] COMMON Func_01 - Display Text
-extern void func_0803031c(u32);     // [func_0803031c] COMMON Func_02 - Set Tutorial Mode?
+extern void fireworks_init_gfx3(void); // Graphics Init. 3
+extern void fireworks_init_gfx2(void); // Graphics Init. 2
+extern void fireworks_init_gfx1(void); // Graphics Init. 1
+extern void fireworks_engine_start(u32 version); // Game Engine Start
+extern void fireworks_set_pattern_mode(u32); // Engine Event 00 (Set Pattern Mode)
+extern void fireworks_play_sound(u32); // Engine Event 01 (Play Sound)
+extern void fireworks_set_pattern(u32); // Engine Event 02 (Set Pattern)
+extern void fireworks_update_explosion(void); // Update Particles
+extern void fireworks_create_explosion(u8, s32, s32); // Create Explosion
+extern void fireworks_engine_update(void); // Game Engine Update
+extern void fireworks_engine_stop(void); // Game Engine Stop
+extern void fireworks_cue_spawn(struct Cue *, struct FireworksCue *, u32 type); // Cue - Spawn
+extern u32  fireworks_cue_update(struct Cue *, struct FireworksCue *, u32 runningTime, u32 duration); // Cue - Update
+extern void fireworks_cue_despawn(struct Cue *, struct FireworksCue *); // Cue - Despawn
+extern void fireworks_cue_hit(struct Cue *, struct FireworksCue *, u32 pressed, u32 released); // Cue - Hit
+extern void fireworks_cue_barely(struct Cue *, struct FireworksCue *, u32 pressed, u32 released); // Cue - Barely
+extern void fireworks_cue_miss(struct Cue *, struct FireworksCue *); // Cue - Miss
+extern void fireworks_input_event(u32 pressed, u32 released); // Input Event
+extern void fireworks_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
+extern void fireworks_common_display_text(char *); // Common Event 1 (Display Text)
+extern void fireworks_common_init_tutorial(const struct Scene *); // Common Event 2 (Init. Tutorial)

@@ -4,158 +4,194 @@
 #include "src/code_08003980.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
-#include "src/lib_0804c870.h"
+#include "src/lib_0804ca80.h"
 
-// For readability. !TODO - CHANGE/REMOVE
-#define gRapMenInfo D_030055d0->gameInfo.rapMen
+// For readability.
+#define gRapMenInfo ((struct RapMenInfo *)D_030055d0)
 
 
 /* RAP MEN */
 
 
-const struct Animation *func_080398b4(u32 anim) {
-    return D_089e63f8[anim][gRapMenInfo.unk0];
+// Get Animation
+const struct Animation *rap_men_get_anim(u32 anim) {
+    return rap_men_anim_table[anim][gRapMenInfo->version];
 }
 
-void func_080398d4(void) {
+
+// Graphics Init. 3
+void rap_men_init_gfx3(void) {
 	func_0800c604(0);
-	func_08017578();
+	gameplay_start_screen_fade_in();
 }
 
-void func_080398e4(void) {
-	u32 temp;
 
-	func_0800c604(0);
-	temp = func_08002ee0(func_0800c3b8(), D_089e6518[gRapMenInfo.unk0], 0x2000);
-	func_08005d38(temp, func_080398d4, 0);
-}
-
-void func_08039924(void) {
-	u32 temp;
+// Graphics Init. 2
+void rap_men_init_gfx2(void) {
+	s32 task;
 
 	func_0800c604(0);
-	temp = func_080087b4(func_0800c3b8(), &D_089e6424);
-	func_08005d38(temp, func_080398e4, 0);
+	task = func_08002ee0(get_current_mem_id(), rap_men_gfx_tables[gRapMenInfo->version], 0x2000);
+	run_func_after_task(task, rap_men_init_gfx3, 0);
 }
 
-void func_08039950(u32 arg0) {
-    u32 *temp;
 
-    gRapMenInfo.unk0 = arg0;
-    func_08039924();
-    func_0800e0ec();
-    func_0800e0a0(1, 1, 0, 0, 0, 29, 1);
-    temp = func_0800c660(0x340, 2);
-    gRapMenInfo.unk4 = temp;
-    gRapMenInfo.unkC = func_0804d160(D_03005380, func_08004c0c(temp, D_0805a8b0, 1, 14), 0, 0x78, 0x94, 0, 0, 0, 0);
-    gRapMenInfo.unk8 = func_0804d160(D_03005380, func_080398b4(RAP_MEN_ANIM_10), 0, 0x46, 0x82, 0x4800, 1, 0x7f, 0);
-    gRapMenInfo.unkA = func_0804d160(D_03005380, func_080398b4(RAP_MEN_ANIM_09), 0, 0xa0, 0x82, 0x4800, 1, 0x7f, 0);
-    gRapMenInfo.unkE = 0;
-    gRapMenInfo.unk10 = 0;
-    gRapMenInfo.unk12 = 0;
-    gRapMenInfo.unk14 = 0;
-    func_08017338(1, 0); 
+// Graphics Init. 1
+void rap_men_init_gfx1(void) {
+	s32 task;
+
+	func_0800c604(0);
+	task = func_080087b4(get_current_mem_id(), rap_men_buffered_textures);
+	run_func_after_task(task, rap_men_init_gfx2, 0);
 }
 
-void func_08039a40(void) {
+
+// Game Engine Start
+void rap_men_engine_start(u32 version) {
+    gRapMenInfo->version = version;
+    rap_men_init_gfx1();
+    scene_show_obj_layer();
+    scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
+    gRapMenInfo->unk4 = func_0800c660(0x340, 2);
+    gRapMenInfo->textSprite = func_0804d160(D_03005380, func_08004c0c(gRapMenInfo->unk4, D_0805a8b0, 1, 14), 0, 120, 148, 0, 0, 0, 0);
+    gRapMenInfo->rapperSprite = func_0804d160(D_03005380, rap_men_get_anim(RAP_MEN_ANIM_RAPPER), 0, 70, 130, 0x4800, 1, 0x7f, 0);
+    gRapMenInfo->playerSprite = func_0804d160(D_03005380, rap_men_get_anim(RAP_MEN_ANIM_PLAYER), 0, 160, 130, 0x4800, 1, 0x7f, 0);
+    gRapMenInfo->rapperAnimTimer = 0;
+    gRapMenInfo->playerAnimTimer = 0;
+    gRapMenInfo->unusedAnimTimer = 0;
+    gRapMenInfo->isTutorial = 0;
+    gameplay_set_input_buttons(A_BUTTON, 0);
 }
 
-void func_08039a44(u32 arg0) {
-    func_0804d8f8(D_03005380, gRapMenInfo.unk8, func_080398b4((&D_089e6520)[arg0]), 0, 1, 0x7f, 0);
-    gRapMenInfo.unkE = func_0800c3a4((&D_089e6525)[arg0]);
+
+// Engine Event 02 (STUB)
+void rap_men_engine_event_stub(void) {
 }
 
-void func_08039a98(u32 arg0) {
-    gRapMenInfo.unk14 = arg0;
+
+// Engine Event 00 (Set Rapper Animation)
+void rap_men_set_rapper_anim(u32 anim) {
+    func_0804d8f8(D_03005380, gRapMenInfo->rapperSprite, rap_men_get_anim(rapping_anim_map[anim]), 0, 1, 0x7f, 0);
+    gRapMenInfo->rapperAnimTimer = beats_to_ticks(rapping_anim_durations[anim]);
 }
 
-void func_08039aa4(void) {
-    if (gRapMenInfo.unkE) {
-        gRapMenInfo.unkE--;
+
+// Engine Event 01 (Enable Tutorial)
+void rap_men_enable_tutorial(u32 isTutorial) {
+    gRapMenInfo->isTutorial = isTutorial;
+}
+
+
+// Game Engine Update
+void rap_men_engine_update(void) {
+    if (gRapMenInfo->rapperAnimTimer > 0) {
+        gRapMenInfo->rapperAnimTimer--;
     }
-    if (gRapMenInfo.unk10) {
-        gRapMenInfo.unk10--;
+    if (gRapMenInfo->playerAnimTimer > 0) {
+        gRapMenInfo->playerAnimTimer--;
     }
-    if (gRapMenInfo.unk12) {
-        gRapMenInfo.unk12--;
+    if (gRapMenInfo->unusedAnimTimer > 0) {
+        gRapMenInfo->unusedAnimTimer--;
     }
 }
 
-void func_08039ad4(void) {
+
+// Game Engine Stop
+void rap_men_engine_stop(void) {
 }
 
-void func_08039ad8(u32 arg0, struct struct_080179f4_sub *arg1, u32 arg2) {
-    func_0804d8f8(D_03005380, gRapMenInfo.unkA, func_080398b4(RAP_MEN_ANIM_03), 0, 1, 0x7f, 0);
-    gRapMenInfo.unk10 = func_0800c3a4(0x24);
-    gRapMenInfo.unk12 = func_0800c3a4(0x24);
-    arg1->unk0.u32 = arg2;
+
+// Cue - Spawn
+void rap_men_cue_spawn(struct Cue *cue, struct RapMenCue *info, u32 sound) {
+    func_0804d8f8(D_03005380, gRapMenInfo->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_PREPARE), 0, 1, 0x7f, 0);
+    gRapMenInfo->playerAnimTimer = beats_to_ticks(0x24);
+    gRapMenInfo->unusedAnimTimer = beats_to_ticks(0x24);
+    info->sound = sound;
 }
 
-u32 func_08039b2c(u32 arg0, u32 arg1, u32 arg2) {
-    if (arg2 > func_0800c3a4(0x30)) {
+
+// Cue - Update
+u32 rap_men_cue_update(struct Cue *cue, struct RapMenCue *info, u32 runningTime, u32 duration) {
+    if (runningTime > beats_to_ticks(0x30)) {
         return TRUE;
     } else {
         return FALSE;
     }
 }
 
-void func_08039b48(void) {
+
+// Cue - Despawn
+void rap_men_cue_despawn(struct Cue *cue, struct RapMenCue *info) {
 }
 
-void func_08039b4c(u32 arg0, struct struct_080179f4_sub *arg1) {
-    func_0804d8f8(D_03005380, gRapMenInfo.unkA, func_080398b4(RAP_MEN_ANIM_02), 0, 1, 0x7f, 0);
-    gRapMenInfo.unk10 = func_0800c3a4(0x24);
-    func_0804d160(D_03005380, func_080398b4(RAP_MEN_ANIM_07), 0, 0xa0, 0x82, 0x47f6, 1, 0, 3);
-    func_08039a44(3);
-    func_08002634(D_089e652c[gRapMenInfo.unk0][arg1->unk0.u32]);
-    func_08002634(&s_SD1_seqData);
-    func_08002634(&s_CC4_seqData);
+
+// Cue - Hit
+void rap_men_cue_hit(struct Cue *cue, struct RapMenCue *info, u32 pressed, u32 released) {
+    func_0804d8f8(D_03005380, gRapMenInfo->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_HIT), 0, 1, 0x7f, 0);
+    gRapMenInfo->playerAnimTimer = beats_to_ticks(0x24);
+    func_0804d160(D_03005380, rap_men_get_anim(RAP_MEN_ANIM_SMOKE), 0, 160, 130, 0x47f6, 1, 0, 3);
+    rap_men_set_rapper_anim(RAP_MEN_ANIM_PREPARE);
+    play_sound(rap_men_cue_hit_sfx[gRapMenInfo->version][info->sound]);
+    play_sound(&s_SD1_seqData);
+    play_sound(&s_CC4_seqData);
 }
 
-void func_08039c00(void) {
-    func_0804d8f8(D_03005380, gRapMenInfo.unkA, func_080398b4(RAP_MEN_ANIM_01), 0, 1, 0x7f, 0);
-    gRapMenInfo.unk10 = func_0800c3a4(0x24);
-    func_08002634(D_089e652c[gRapMenInfo.unk0][0]);
-    func_08002634(&s_tom_M_seqData);
+
+// Cue - Barely
+void rap_men_cue_barely(struct Cue *cue, struct RapMenCue *info, u32 pressed, u32 released) {
+    func_0804d8f8(D_03005380, gRapMenInfo->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_BARELY), 0, 1, 0x7f, 0);
+    gRapMenInfo->playerAnimTimer = beats_to_ticks(0x24);
+    play_sound(rap_men_cue_hit_sfx[gRapMenInfo->version][RAP_CUE_SFX_SHORT]);
+    play_sound(&s_tom_M_seqData);
 }
 
-void func_08039c60(void) {
-    if (!gRapMenInfo.unk14) {
-        func_0804d8f8(D_03005380, gRapMenInfo.unkA, func_080398b4(RAP_MEN_ANIM_08), 0, 1, 0x7f, 0);
-        gRapMenInfo.unk10 = func_0800c3a4(0x3c);
-        func_08002634(&s_RC_seqData);
+
+// Cue - Miss
+void rap_men_cue_miss(struct Cue *cue, struct RapMenCue *info) {
+    if (!gRapMenInfo->isTutorial) {
+        func_0804d8f8(D_03005380, gRapMenInfo->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_MISS), 0, 1, 0x7f, 0);
+        gRapMenInfo->playerAnimTimer = beats_to_ticks(0x3C);
+        play_sound(&s_RC_seqData);
     }
-    func_0800bc40();
+    beatscript_enable_loops();
 }
 
-void func_08039cb8(void) {
-    func_0804d8f8(D_03005380, gRapMenInfo.unkA, func_080398b4(RAP_MEN_ANIM_09), 0, 1, 0x7f, 0);
-    gRapMenInfo.unk10 = func_0800c3a4(0x24);
-    func_08002634(D_089e65f0[gRapMenInfo.unk0]);
-    func_0800bc40();
+
+// Input Event
+void rap_men_input_event(u32 pressed, u32 released) {
+    func_0804d8f8(D_03005380, gRapMenInfo->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_PLAYER), 0, 1, 0x7f, 0);
+    gRapMenInfo->playerAnimTimer = beats_to_ticks(0x24);
+    play_sound(rap_men_cue_miss_sfx[gRapMenInfo->version]);
+    beatscript_enable_loops();
 }
 
-void func_08039d10(void) {
-    if (!gRapMenInfo.unkE) {
-        func_0804d8f8(D_03005380, gRapMenInfo.unk8, func_080398b4(RAP_MEN_ANIM_10), 0, 1, 0x7f, 0);
+
+// Common Event 0 (Beat Animation)
+void rap_men_common_beat_animation(void) {
+    if (gRapMenInfo->rapperAnimTimer == 0) {
+        func_0804d8f8(D_03005380, gRapMenInfo->rapperSprite, rap_men_get_anim(RAP_MEN_ANIM_RAPPER), 0, 1, 0x7f, 0);
     }
-    if (!gRapMenInfo.unk10) {
-        func_0804d8f8(D_03005380, gRapMenInfo.unkA, func_080398b4(RAP_MEN_ANIM_09), 0, 1, 0x7f, 0);
+    if (gRapMenInfo->playerAnimTimer == 0) {
+        func_0804d8f8(D_03005380, gRapMenInfo->playerSprite, rap_men_get_anim(RAP_MEN_ANIM_PLAYER), 0, 1, 0x7f, 0);
     }
 }
 
-void func_08039d7c(char *text) {
+
+// Common Event 1 (Display Text)
+void rap_men_common_display_text(char *text) {
     struct Animation *anim;
 
     if (text == NULL) {
-        func_0804d770(D_03005380, gRapMenInfo.unkC, 0);
-        return;
+        func_0804d770(D_03005380, gRapMenInfo->textSprite, FALSE);
+    } else {
+        anim = func_08004b98(gRapMenInfo->unk4, text, 1, 8);
+        func_08007b04(gRapMenInfo->unk4, gRapMenInfo->textSprite);
+        func_0804d8f8(D_03005380, gRapMenInfo->textSprite, anim, 0, 0, 0, 0);
+        func_0804d770(D_03005380, gRapMenInfo->textSprite, TRUE);
     }
-    anim = func_08004b98(gRapMenInfo.unk4, text, 1, 8);
-    func_08007b04(gRapMenInfo.unk4, gRapMenInfo.unkC);
-    func_0804d8f8(D_03005380, gRapMenInfo.unkC, anim, 0, 0, 0, 0);
-    func_0804d770(D_03005380, gRapMenInfo.unkC, 1);
 }
 
-void func_08039df8(void) {
+
+// Common Event 2 (Init. Tutorial)
+void rap_men_common_init_tutorial(void) {
 }

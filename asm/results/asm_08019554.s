@@ -53,7 +53,7 @@ branch_080195a2: \n\
 /* 080195a6 */ LDR R5, [R0, 0x4] \n\
 /* 080195a8 */ LSLS R0, R3, 0x10 \n\
 /* 080195aa */ LSRS R0, R0, 0x10 \n\
-/* 080195ac */ BL func_08001980 \n\
+/* 080195ac */ BL agb_random \n\
 /* 080195b0 */ ADDS R4, R4, R6 @ Set R4 to R4 + R6 \n\
 /* 080195b2 */ LSLS R4, R4, 0x2 \n\
 /* 080195b4 */ ADD R4, R8 @ Add R8 to R4 \n\
@@ -86,7 +86,7 @@ branch_080195a2: \n\
 /* 080195ee */ BL _call_via_r0 \n\
 /* 080195f2 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080195f4 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
-/* 080195f6 */ BL func_080087d4 \n\
+/* 080195f6 */ BL clamp_int32 \n\
 /* 080195fa */ LDR R1, =D_089d7980 \n\
 /* 080195fc */ LDR R1, [R1] \n\
 /* 080195fe */ ADDS R1, 0x68 @ Add 0x68 to R1 \n\

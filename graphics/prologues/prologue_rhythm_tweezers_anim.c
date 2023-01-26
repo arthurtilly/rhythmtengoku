@@ -3,8 +3,8 @@
 
 #include "prologue_rhythm_tweezers_anim_cells.inc.c"
 
-// [D_088af6b4] <description>
-const struct Animation prologue_rhythm_tweezers_anim00[] = {
+// [D_088af6b4] Title
+const struct Animation anim_prologue_rhythm_tweezers_title[] = {
     /* 000 */ { prologue_rhythm_tweezers_cel004, 60 },
     /* 001 */ { prologue_rhythm_tweezers_cel003, 10 },
     /* 002 */ { prologue_rhythm_tweezers_cel002, 10 },
@@ -12,4 +12,3 @@ const struct Animation prologue_rhythm_tweezers_anim00[] = {
     /* 004 */ { prologue_rhythm_tweezers_cel000, 60 },
     /* End */ END_ANIMATION
 };
-

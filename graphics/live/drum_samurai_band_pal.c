@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088a399c] <description>
+// [D_088a399c] Drum Samurai Band LIVE OBJ Palette
 const Palette drum_samurai_band_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x48E8F8),
@@ -131,7 +131,7 @@ const Palette drum_samurai_band_obj_pal[] = {
     }
 };
 
-// [D_088a3a7c] <description>
+// [D_088a3a7c] Drum Samurai Band LIVE BG Palette
 const Palette drum_samurai_band_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8D800),

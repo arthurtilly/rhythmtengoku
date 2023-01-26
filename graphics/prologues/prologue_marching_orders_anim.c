@@ -3,8 +3,8 @@
 
 #include "prologue_marching_orders_anim_cells.inc.c"
 
-// [D_088b09b4] <description>
-const struct Animation prologue_marching_orders_anim00[] = {
+// [D_088b09b4] Title
+const struct Animation anim_prologue_marching_title[] = {
     /* 000 */ { prologue_marching_orders_cel000, 40 },
     /* 001 */ { prologue_marching_orders_cel001, 20 },
     /* 002 */ { prologue_marching_orders_cel002, 20 },
@@ -15,4 +15,3 @@ const struct Animation prologue_marching_orders_anim00[] = {
     /* 007 */ { prologue_marching_orders_cel007, 100 },
     /* End */ END_ANIMATION
 };
-

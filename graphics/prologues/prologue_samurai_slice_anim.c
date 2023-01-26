@@ -3,8 +3,8 @@
 
 #include "prologue_samurai_slice_anim_cells.inc.c"
 
-// [D_088affe0] <description>
-const struct Animation prologue_samurai_slice_anim00[] = {
+// [D_088affe0] Title
+const struct Animation anim_prologue_samurai_slice_title[] = {
     /* 000 */ { prologue_samurai_slice_cel001, 10 },
     /* 001 */ { prologue_samurai_slice_cel002, 9 },
     /* 002 */ { prologue_samurai_slice_cel003, 8 },
@@ -13,4 +13,3 @@ const struct Animation prologue_samurai_slice_anim00[] = {
     /* 005 */ { prologue_samurai_slice_cel006, 5 },
     /* End */ END_ANIMATION
 };
-

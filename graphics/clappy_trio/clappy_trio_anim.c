@@ -3,8 +3,8 @@
 
 #include "clappy_trio_anim_cells.inc.c"
 
-// [D_088e9d80] <description>
-const struct Animation clappy_trio_anim00[] = {
+// [D_088e9d80] Lion Test
+const struct Animation anim_clappy_trio_test[] = {
     /* 000 */ { clappy_trio_cel000, 3 },
     /* 001 */ { clappy_trio_cel001, 3 },
     /* 002 */ { clappy_trio_cel002, 20 },
@@ -21,56 +21,56 @@ const struct Animation clappy_trio_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e9df0] <description>
-const struct Animation clappy_trio_anim01[] = {
+// [D_088e9df0] Lion (Smirk) Duplicate 1
+const struct Animation anim_clappy_trio_smirk_dupe1[] = {
     /* 000 */ { clappy_trio_cel009, 3 },
     /* 001 */ { clappy_trio_cel010, 3 },
     /* 002 */ { clappy_trio_cel011, 20 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e9e10] <description>
-const struct Animation clappy_trio_anim02[] = {
+// [D_088e9e10] Lion (Smirk) Duplicate 2
+const struct Animation anim_clappy_trio_smirk_dupe2[] = {
     /* 000 */ { clappy_trio_cel009, 3 },
     /* 001 */ { clappy_trio_cel010, 3 },
     /* 002 */ { clappy_trio_cel011, 20 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e9e30] <description>
-const struct Animation clappy_trio_anim03[] = {
+// [D_088e9e30] Lion - Beat
+const struct Animation anim_clappy_trio_beat[] = {
     /* 000 */ { clappy_trio_cel000, 3 },
     /* 001 */ { clappy_trio_cel001, 3 },
     /* 002 */ { clappy_trio_cel002, 20 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e9e50] <description>
-const struct Animation clappy_trio_anim04[] = {
+// [D_088e9e50] Lion - Smile
+const struct Animation anim_clappy_trio_smile[] = {
     /* 000 */ { clappy_trio_cel003, 3 },
     /* 001 */ { clappy_trio_cel004, 3 },
     /* 002 */ { clappy_trio_cel005, 20 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e9e70] <description>
-const struct Animation clappy_trio_anim05[] = {
+// [D_088e9e70] Lion - Glare
+const struct Animation anim_clappy_trio_glare[] = {
     /* 000 */ { clappy_trio_cel006, 3 },
     /* 001 */ { clappy_trio_cel007, 3 },
     /* 002 */ { clappy_trio_cel008, 20 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e9e90] <description>
-const struct Animation clappy_trio_anim06[] = {
+// [D_088e9e90] Lion - Smirk
+const struct Animation anim_clappy_trio_smirk[] = {
     /* 000 */ { clappy_trio_cel009, 3 },
     /* 001 */ { clappy_trio_cel010, 3 },
     /* 002 */ { clappy_trio_cel011, 20 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e9eb0] <description>
-const struct Animation clappy_trio_anim07[] = {
+// [D_088e9eb0] Lion - Clap
+const struct Animation anim_clappy_trio_clap[] = {
     /* 000 */ { clappy_trio_cel012, 1 },
     /* 001 */ { clappy_trio_cel013, 2 },
     /* 002 */ { clappy_trio_cel015, 3 },
@@ -79,21 +79,21 @@ const struct Animation clappy_trio_anim07[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_088e9ee0] <description>
-const struct Animation clappy_trio_anim08[] = {
+// [D_088e9ee0] "You" Text
+const struct Animation anim_clappy_trio_player_icon[] = {
     /* 000 */ { clappy_trio_cel018, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e9ef0] <description>
-const struct Animation clappy_trio_anim09[] = {
+// [D_088e9ef0] "Trio Timing" Sign
+const struct Animation anim_clappy_trio_sign[] = {
     /* 000 */ { clappy_trio_cel019, 4 },
     /* 001 */ { clappy_trio_cel020, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_088e9f08] <description>
-const struct Animation clappy_trio_anim10[] = {
+// [D_088e9f08] Text Box
+const struct Animation anim_clappy_trio_text_box[] = {
     /* 000 */ { clappy_trio_cel021, 4 },
     /* End */ END_ANIMATION
 };

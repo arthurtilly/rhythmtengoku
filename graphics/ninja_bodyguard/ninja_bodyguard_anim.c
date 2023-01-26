@@ -3,8 +3,8 @@
 
 #include "ninja_bodyguard_anim_cells.inc.c"
 
-// [D_0890f764] <description>
-const struct Animation ninja_bodyguard_anim00[] = {
+// [D_0890f764] Ninja - Cut Right + Spin
+const struct Animation anim_ninja_slice_spin_r[] = {
     /* 000 */ { ninja_bodyguard_cel019, 20 },
     /* 001 */ { ninja_bodyguard_cel024, 4 },
     /* 002 */ { ninja_bodyguard_cel025, 8 },
@@ -16,8 +16,8 @@ const struct Animation ninja_bodyguard_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890f7ac] <description>
-const struct Animation ninja_bodyguard_anim01[] = {
+// [D_0890f7ac] Ninja - Cut Left + Spin
+const struct Animation anim_ninja_slice_spin_l[] = {
     /* 000 */ { ninja_bodyguard_cel025, 20 },
     /* 001 */ { ninja_bodyguard_cel030, 4 },
     /* 002 */ { ninja_bodyguard_cel031, 8 },
@@ -29,16 +29,16 @@ const struct Animation ninja_bodyguard_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890f7f4] <description>
-const struct Animation ninja_bodyguard_anim02[] = {
+// [D_0890f7f4] Ninja - Bow to Feudal Lord
+const struct Animation anim_ninja_bow_to_lord[] = {
     /* 000 */ { ninja_bodyguard_cel037, 8 },
     /* 001 */ { ninja_bodyguard_cel038, 8 },
     /* 002 */ { ninja_bodyguard_cel039, 8 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890f814] <description>
-const struct Animation ninja_bodyguard_anim03[] = {
+// [D_0890f814] Archer - Draw Bow
+const struct Animation anim_archer_draw_bow[] = {
     /* 000 */ { ninja_bodyguard_cel056, 1 },
     /* 001 */ { ninja_bodyguard_cel057, 1 },
     /* 002 */ { ninja_bodyguard_cel058, 1 },
@@ -52,8 +52,8 @@ const struct Animation ninja_bodyguard_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890f86c] <description>
-const struct Animation ninja_bodyguard_anim04[] = {
+// [D_0890f86c] Arrow - Drawn
+const struct Animation anim_archer_arrow_draw[] = {
     /* 000 */ { ninja_bodyguard_cel088, 36 },
     /* 001 */ { ninja_bodyguard_cel074, 1 },
     /* 002 */ { ninja_bodyguard_cel075, 1 },
@@ -72,8 +72,8 @@ const struct Animation ninja_bodyguard_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890f8ec] <description>
-const struct Animation ninja_bodyguard_anim05[] = {
+// [D_0890f8ec] Feudal Lord - Blink
+const struct Animation anim_feudal_lord_blink[] = {
     /* 000 */ { ninja_bodyguard_cel011, 8 },
     /* 001 */ { ninja_bodyguard_cel012, 8 },
     /* 002 */ { ninja_bodyguard_cel012, 30 },
@@ -82,22 +82,22 @@ const struct Animation ninja_bodyguard_anim05[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890f91c] <description>
-const struct Animation ninja_bodyguard_anim06[] = {
+// [D_0890f91c] Feudal Lord - Scared
+const struct Animation anim_feudal_lord_scared[] = {
     /* 000 */ { ninja_bodyguard_cel016, 4 },
     /* 001 */ { ninja_bodyguard_cel017, 50 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890f934] <description>
-const struct Animation ninja_bodyguard_anim07[] = {
+// [D_0890f934] Feudal Lord - Scared, Shaking
+const struct Animation anim_feudal_lord_shaking[] = {
     /* 000 */ { ninja_bodyguard_cel016, 2 },
     /* 001 */ { ninja_bodyguard_cel018, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890f94c] <description>
-const struct Animation ninja_bodyguard_anim08[] = {
+// [D_0890f94c] Heart Eyes
+const struct Animation anim_ninja1_heart_eyes[] = {
     /* 000 */ { ninja_bodyguard_cel007, 8 },
     /* 001 */ { ninja_bodyguard_cel008, 8 },
     /* 002 */ { ninja_bodyguard_cel009, 30 },
@@ -105,8 +105,8 @@ const struct Animation ninja_bodyguard_anim08[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890f974] <description>
-const struct Animation ninja_bodyguard_anim09[] = {
+// [D_0890f974] Cherry Blossom Petal
+const struct Animation anim_ninja1_cherry_petal[] = {
     /* 000 */ { ninja_bodyguard_cel004, 6 },
     /* 001 */ { ninja_bodyguard_cel005, 6 },
     /* 002 */ { ninja_bodyguard_cel006, 6 },
@@ -114,8 +114,8 @@ const struct Animation ninja_bodyguard_anim09[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890f99c] <description>
-const struct Animation ninja_bodyguard_anim10[] = {
+// [D_0890f99c] Arrow - Hit Wall
+const struct Animation anim_ninja1_arrow_to_wall[] = {
     /* 000 */ { ninja_bodyguard_cel040, 1 },
     /* 001 */ { ninja_bodyguard_cel041, 1 },
     /* 002 */ { ninja_bodyguard_cel042, 1 },
@@ -130,26 +130,26 @@ const struct Animation ninja_bodyguard_anim10[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890f9fc] <description>
-const struct Animation ninja_bodyguard_anim11[] = {
+// [D_0890f9fc] Arrow - In Wall
+const struct Animation anim_ninja1_arrow_in_wall1[] = {
     /* 000 */ { ninja_bodyguard_cel042, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890fa0c] <description>
-const struct Animation ninja_bodyguard_anim12[] = {
+// [D_0890fa0c] Arrow - In Wall (Duplicate)
+const struct Animation anim_ninja1_arrow_in_wall2[] = {
     /* 000 */ { ninja_bodyguard_cel042, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890fa1c] <description>
-const struct Animation ninja_bodyguard_anim13[] = {
+// [D_0890fa1c] Arrow - In Wall (Another Duplicate)
+const struct Animation anim_ninja1_arrow_in_wall3[] = {
     /* 000 */ { ninja_bodyguard_cel042, 2 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890fa2c] <description>
-const struct Animation ninja_bodyguard_anim14[] = {
+// [D_0890fa2c] Arrow - Deflected Left
+const struct Animation anim_ninja1_arrow_deflect_l[] = {
     /* 000 */ { ninja_bodyguard_cel040, 1 },
     /* 001 */ { ninja_bodyguard_cel048, 1 },
     /* 002 */ { ninja_bodyguard_cel049, 1 },
@@ -164,8 +164,8 @@ const struct Animation ninja_bodyguard_anim14[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890fa8c] <description>
-const struct Animation ninja_bodyguard_anim15[] = {
+// [D_0890fa8c] Arrow - Deflected Right
+const struct Animation anim_ninja1_arrow_deflect_r[] = {
     /* 000 */ { ninja_bodyguard_cel040, 1 },
     /* 001 */ { ninja_bodyguard_cel052, 1 },
     /* 002 */ { ninja_bodyguard_cel053, 1 },
@@ -180,8 +180,8 @@ const struct Animation ninja_bodyguard_anim15[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890faec] <description>
-const struct Animation ninja_bodyguard_anim16[] = {
+// [D_0890faec] Archer - Release Bow
+const struct Animation anim_archer_release_bow[] = {
     /* 000 */ { ninja_bodyguard_cel070, 1 },
     /* 001 */ { ninja_bodyguard_cel072, 1 },
     /* 002 */ { ninja_bodyguard_cel071, 1 },
@@ -192,36 +192,36 @@ const struct Animation ninja_bodyguard_anim16[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890fb2c] <description>
-const struct Animation ninja_bodyguard_anim17[] = {
+// [D_0890fb2c] Ninja - Swing Right
+const struct Animation anim_ninja_swing_r[] = {
     /* 000 */ { ninja_bodyguard_cel023, 2 },
     /* 001 */ { ninja_bodyguard_cel025, 80 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890fb44] <description>
-const struct Animation ninja_bodyguard_anim18[] = {
+// [D_0890fb44] Ninja - Swing Left
+const struct Animation anim_ninja_swing_l[] = {
     /* 000 */ { ninja_bodyguard_cel029, 2 },
     /* 001 */ { ninja_bodyguard_cel031, 80 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890fb5c] <description>
-const struct Animation ninja_bodyguard_anim19[] = {
+// [D_0890fb5c] Ninja - Cut Right
+const struct Animation anim_ninja_slice_r[] = {
     /* 000 */ { ninja_bodyguard_cel024, 2 },
     /* 001 */ { ninja_bodyguard_cel025, 80 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890fb74] <description>
-const struct Animation ninja_bodyguard_anim20[] = {
+// [D_0890fb74] Ninja - Cut Left
+const struct Animation anim_ninja_slice_l[] = {
     /* 000 */ { ninja_bodyguard_cel030, 2 },
     /* 001 */ { ninja_bodyguard_cel031, 80 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890fb8c] <description>
-const struct Animation ninja_bodyguard_anim21[] = {
+// [D_0890fb8c] Ninja - Spin Right
+const struct Animation anim_ninja_spin_r[] = {
     /* 000 */ { ninja_bodyguard_cel026, 4 },
     /* 001 */ { ninja_bodyguard_cel027, 4 },
     /* 002 */ { ninja_bodyguard_cel028, 4 },
@@ -230,8 +230,8 @@ const struct Animation ninja_bodyguard_anim21[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890fbbc] <description>
-const struct Animation ninja_bodyguard_anim22[] = {
+// [D_0890fbbc] Ninja - Spin Left
+const struct Animation anim_ninja_spin_l[] = {
     /* 000 */ { ninja_bodyguard_cel033, 4 },
     /* 001 */ { ninja_bodyguard_cel034, 4 },
     /* 002 */ { ninja_bodyguard_cel035, 4 },
@@ -240,8 +240,8 @@ const struct Animation ninja_bodyguard_anim22[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890fbec] <description>
-const struct Animation ninja_bodyguard_anim23[] = {
+// [D_0890fbec] Feudal Lord - Walk
+const struct Animation anim_feudal_lord_walk[] = {
     /* 000 */ { ninja_bodyguard_cel013, 10 },
     /* 001 */ { ninja_bodyguard_cel014, 10 },
     /* 002 */ { ninja_bodyguard_cel013, 10 },
@@ -249,8 +249,8 @@ const struct Animation ninja_bodyguard_anim23[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890fc14] <description>
-const struct Animation ninja_bodyguard_anim24[] = {
+// [D_0890fc14] Ninja - Appear
+const struct Animation anim_ninja_appear[] = {
     /* 000 */ { ninja_bodyguard_cel089, 1 },
     /* 001 */ { ninja_bodyguard_cel090, 1 },
     /* 002 */ { ninja_bodyguard_cel091, 1 },
@@ -259,8 +259,8 @@ const struct Animation ninja_bodyguard_anim24[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890fc44] <description>
-const struct Animation ninja_bodyguard_anim25[] = {
+// [D_0890fc44] Ninja - Raise Sword
+const struct Animation anim_ninja_raise_sword[] = {
     /* 000 */ { ninja_bodyguard_cel019, 3 },
     /* 001 */ { ninja_bodyguard_cel020, 3 },
     /* 002 */ { ninja_bodyguard_cel021, 3 },
@@ -268,30 +268,30 @@ const struct Animation ninja_bodyguard_anim25[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890fc6c] <description>
-const struct Animation ninja_bodyguard_anim26[] = {
+// [D_0890fc6c] Button Indicators
+const struct Animation anim_ninja1_button_indicators[] = {
     /* 000 */ { ninja_bodyguard_cel092, 4 },
     /* 001 */ { ninja_bodyguard_cel093, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890fc84] <description>
-const struct Animation ninja_bodyguard_anim27[] = {
+// [D_0890fc84] Arrow Shrapnel (Tail, Head)
+const struct Animation anim_ninja1_arrow_pieces[] = {
     /* 000 */ { ninja_bodyguard_cel094, 4 },
     /* 001 */ { ninja_bodyguard_cel095, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890fc9c] <description>
-const struct Animation ninja_bodyguard_anim28[] = {
+// [D_0890fc9c] Arrow - Fired at Ninja
+const struct Animation anim_ninja1_arrow_to_ninja[] = {
     /* 000 */ { ninja_bodyguard_cel040, 1 },
     /* 001 */ { ninja_bodyguard_cel047, 1 },
     /* 002 */ { ninja_bodyguard_cel000, 1 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890fcbc] <description>
-const struct Animation ninja_bodyguard_anim29[] = {
+// [D_0890fcbc] Intro Cutscene Arrow
+const struct Animation anim_ninja1_cutscene_arrow[] = {
     /* 000 */ { ninja_bodyguard_cel096, 4 },
     /* End */ END_ANIMATION
 };
