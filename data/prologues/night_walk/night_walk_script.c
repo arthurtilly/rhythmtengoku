@@ -57,7 +57,7 @@ const EngineEvent prologue_night_walk_engine_events[] = {
 // [D_089ea9d8] Prologue (Night Walk) Game Engine
 const struct GameEngine D_089ea9d8 = {
     /* Size in Memory */ sizeof(struct PrologueNightWalkInfo),
-    /* Init. Engine   */ func_08045824,
+    /* Start Engine   */ func_08045824,
     /* Update Engine  */ func_080458e4,
     /* Stop Engine    */ func_080458e8,
     /* Cue Index      */ NULL,

@@ -254,7 +254,7 @@ const EngineEvent sneaky_spirits_engine_events[] = {
 // [D_089de91c] Sneaky Spirits Game Engine
 const struct GameEngine D_089de91c = {
     /* Size in Memory */ sizeof(struct SneakySpiritsInfo),
-    /* Init. Engine   */ sneaky_spirits_engine_start,
+    /* Start Engine   */ sneaky_spirits_engine_start,
     /* Update Engine  */ sneaky_spirits_engine_update,
     /* Stop Engine    */ sneaky_spirits_engine_stop,
     /* Cue Index      */ sneaky_spirits_cue_index,

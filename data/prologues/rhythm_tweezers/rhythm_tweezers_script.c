@@ -58,7 +58,7 @@ const EngineEvent prologue_rhythm_tweezers_engine_events[] = {
 // [D_089eada4] Prologue (Rhythm Tweezers) Game Engine
 const struct GameEngine D_089eada4 = {
     /* Size in Memory */ sizeof(struct PrologueRhythmTweezersInfo),
-    /* Init. Engine   */ func_08045c5c,
+    /* Start Engine   */ func_08045c5c,
     /* Update Engine  */ func_08045cbc,
     /* Stop Engine    */ func_08045cc0,
     /* Cue Index      */ NULL,

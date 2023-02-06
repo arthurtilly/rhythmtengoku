@@ -57,7 +57,7 @@ const EngineEvent prologue_wizards_waltz_engine_events[] = {
 // [D_089ede74] Prologue (Wizard's Waltz) Game Engine
 const struct GameEngine D_089ede74 = {
     /* Size in Memory */ sizeof(struct PrologueWizardsWaltzInfo),
-    /* Init. Engine   */ func_08047dbc,
+    /* Start Engine   */ func_08047dbc,
     /* Update Engine  */ func_08047e1c,
     /* Stop Engine    */ func_08047e20,
     /* Cue Index      */ NULL,

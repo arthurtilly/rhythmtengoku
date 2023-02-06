@@ -58,7 +58,7 @@ const EngineEvent prologue_karate_engine_events[] = {
 // [D_089ea6a0] Prologue (Karate Man) Game Engine
 const struct GameEngine D_089ea6a0 = {
     /* Size in Memory */ sizeof(struct PrologueKarateManInfo),
-    /* Init. Engine   */ func_0804557c,
+    /* Start Engine   */ func_0804557c,
     /* Update Engine  */ func_080455fc,
     /* Stop Engine    */ func_08045600,
     /* Cue Index      */ NULL,

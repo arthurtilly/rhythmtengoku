@@ -11,7 +11,7 @@ thumb_func_start func_080303a4 \n\
 /* 080303ae */ SUB SP, 0x18 \n\
 /* 080303b0 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 080303b2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 080303b4 */ BL func_08030384 \n\
+/* 080303b4 */ BL clappy_trio_get_anim \n\
 /* 080303b8 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080303ba */ LDR R4, =D_03005380 \n\
 /* 080303bc */ LDR R0, [R4] \n\
@@ -64,7 +64,7 @@ branch_0803040a: \n\
 /* 0803041a */ MOVS R3, 0x88 @ Set R3 to 0x88 \n\
 /* 0803041c */ BL func_0804d5d4 \n\
 /* 08030420 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08030422 */ BL func_08030384 \n\
+/* 08030422 */ BL clappy_trio_get_anim \n\
 /* 08030426 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08030428 */ LDR R2, =D_03005380 \n\
 /* 0803042a */ LDR R0, [R2] \n\
@@ -87,7 +87,7 @@ branch_0803040a: \n\
 /* 0803044c */ BL func_0804d160 \n\
 /* 08030450 */ STRH R0, [R7, 0x2] \n\
 /* 08030452 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08030454 */ BL func_08030384 \n\
+/* 08030454 */ BL clappy_trio_get_anim \n\
 /* 08030458 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803045a */ LDR R3, =D_03005380 \n\
 /* 0803045c */ LDR R0, [R3] \n\
@@ -106,7 +106,7 @@ branch_0803040a: \n\
 /* 08030476 */ BL func_0804d160 \n\
 /* 0803047a */ STRH R0, [R7, 0x4] \n\
 /* 0803047c */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0803047e */ BL func_08030384 \n\
+/* 0803047e */ BL clappy_trio_get_anim \n\
 /* 08030482 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08030484 */ LDR R3, =D_03005380 \n\
 /* 08030486 */ LDR R0, [R3] \n\
@@ -130,7 +130,7 @@ branch_0803040a: \n\
 /* 080304ac */ MOV R0, R10 @ Set R0 to R10 \n\
 /* 080304ae */ STRB R0, [R7, 0x9] \n\
 /* 080304b0 */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
-/* 080304b2 */ BL func_08030384 \n\
+/* 080304b2 */ BL clappy_trio_get_anim \n\
 /* 080304b6 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080304b8 */ LDR R2, =D_03005380 \n\
 /* 080304ba */ LDR R0, [R2] \n\
@@ -146,7 +146,7 @@ branch_0803040a: \n\
 /* 080304ce */ ADDS R3, R6, 0x0 @ Set R3 to R6 + 0x0 \n\
 /* 080304d0 */ BL func_0804d160 \n\
 /* 080304d4 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
-/* 080304d6 */ BL func_08030384 \n\
+/* 080304d6 */ BL clappy_trio_get_anim \n\
 /* 080304da */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080304dc */ LDR R2, =D_03005380 \n\
 /* 080304de */ LDR R0, [R2] \n\

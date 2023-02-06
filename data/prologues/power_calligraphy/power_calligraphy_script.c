@@ -57,7 +57,7 @@ const EngineEvent prologue_power_calligraphy_engine_events[] = {
 // [D_089eb580] Prologue (Power Calligraphy) Game Engine
 const struct GameEngine D_089eb580 = {
     /* Size in Memory */ sizeof(struct ProloguePowerCalligraphyInfo),
-    /* Init. Engine   */ func_08046168,
+    /* Start Engine   */ func_08046168,
     /* Update Engine  */ func_080461c8,
     /* Stop Engine    */ func_080461cc,
     /* Cue Index      */ NULL,

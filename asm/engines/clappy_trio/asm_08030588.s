@@ -71,7 +71,7 @@ thumb_func_start clappy_trio_engine_start \n\
 /* 08030622 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08030624 */ BL text_printer_set_colors \n\
 /* 08030628 */ MOVS R0, 0x7 @ Set R0 to 0x7 \n\
-/* 0803062a */ BL func_08030384 \n\
+/* 0803062a */ BL clappy_trio_get_anim \n\
 /* 0803062e */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08030630 */ LDR R5, =D_03005380 \n\
 /* 08030632 */ LDR R0, [R5] \n\

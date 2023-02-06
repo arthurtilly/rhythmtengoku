@@ -29,7 +29,7 @@ branch_08030a88: \n\
 /* 08030a88 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
  \n\
 branch_08030a8a: \n\
-/* 08030a8a */ BL func_08030384 \n\
+/* 08030a8a */ BL clappy_trio_get_anim \n\
 /* 08030a8e */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08030a90 */ LDRB R0, [R6, 0x9] \n\
 /* 08030a92 */ SUBS R0, 0x1 @ Subtract 0x1 from R0 \n\
@@ -87,7 +87,7 @@ branch_08030aa4: \n\
 /* 08030afc */ BL func_0804ddb0 \n\
 /* 08030b00 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08030b02 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 08030b04 */ BL func_08030384 \n\
+/* 08030b04 */ BL clappy_trio_get_anim \n\
 /* 08030b08 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 08030b0a */ BNE branch_08030b34 \n\
 /* 08030b0c */ MOV R1, R9 @ Set R1 to R9 \n\
@@ -111,11 +111,11 @@ branch_08030aa4: \n\
  \n\
 branch_08030b34: \n\
 /* 08030b34 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
-/* 08030b36 */ BL func_08030384 \n\
+/* 08030b36 */ BL clappy_trio_get_anim \n\
 /* 08030b3a */ CMP R7, R0 @ Check R7 - R0 \n\
 /* 08030b3c */ BNE branch_08030b46 \n\
 /* 08030b3e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08030b40 */ BL func_08030384 \n\
+/* 08030b40 */ BL clappy_trio_get_anim \n\
 /* 08030b44 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
  \n\
 branch_08030b46: \n\

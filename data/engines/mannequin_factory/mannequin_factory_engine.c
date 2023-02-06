@@ -275,13 +275,13 @@ const EngineEvent mannequin_engine_events[] = {
     /* 0x04 */ (EngineEvent) func_08023150,
     /* 0x05 */ (EngineEvent) func_08023164,
     /* 0x06 */ (EngineEvent) func_08022ba0,
-    /* 0x07 */ (EngineEvent) func_08022efc
+    /* 0x07 */ (EngineEvent) mannequin_engine_event_stub
 };
 
 // [D_089df5f8] Mannequin Factory Game Engine
 const struct GameEngine D_089df5f8 = {
     /* Size in Memory */ 0x434,
-    /* Init. Engine   */ mannequin_engine_start,
+    /* Start Engine   */ mannequin_engine_start,
     /* Update Engine  */ mannequin_engine_update,
     /* Stop Engine    */ mannequin_engine_stop,
     /* Cue Index      */ mannequin_cue_index,

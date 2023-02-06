@@ -58,7 +58,7 @@ const EngineEvent prologue_bon_dance_engine_events[] = {
 // [D_089ea564] Prologue (Bon Dance) Game Engine
 const struct GameEngine D_089ea564 = {
     /* Size in Memory */ sizeof(struct PrologueBonDanceInfo),
-    /* Init. Engine   */ func_08045478,
+    /* Start Engine   */ func_08045478,
     /* Update Engine  */ func_080454d8,
     /* Stop Engine    */ func_080454dc,
     /* Cue Index      */ NULL,
@@ -91,3 +91,5 @@ const struct BeatScript D_089ea584[] = {
     BS_RIQ_FADE_SCREEN_IN(0x10),
     BS_RETURN
 };
+
+asm(".include \"include/bs_riq.inc\"");

@@ -783,7 +783,7 @@ void night_walk_engine_start(u32 ver) {
     gNightWalkInfo->endScript = NULL;
     gNightWalkInfo->markingCriteria = 0;
     gNightWalkInfo->inSwing = FALSE;
-    gNightWalkInfo->cueDelayTime = 0;
+    gNightWalkInfo->cueEarlinessOffset = 0;
 }
 
 
@@ -840,13 +840,13 @@ void night_walk_engine_stop(void) {
 s32 night_walk_cue_get_x(struct NightWalkCue *info) {
     s32 start = 320;
 
-    return start - (INT_TO_FIXED(info->runningTime + info->delayTime) / info->duration);
+    return start - (INT_TO_FIXED(info->runningTime + info->earlinessTime) / info->duration);
 }
 
 
-// Engine Event 0x06 (Set Next Cue Delay Time)
-void night_walk_set_cue_delay(u32 duration) {
-    gNightWalkInfo->cueDelayTime = duration;
+// Engine Event 0x06 (Set Next Cue Earliness Time Offset)
+void night_walk_set_cue_earliness(u32 duration) {
+    gNightWalkInfo->cueEarlinessOffset = duration;
 }
 
 
@@ -858,10 +858,10 @@ void night_walk_cue_spawn(struct Cue *cue, struct NightWalkCue *info, u32 type) 
 
     info->type = type;
     info->hasOpened = FALSE;
-    info->delayBeats = gNightWalkInfo->cueDelayTime;
-    info->delayTime = beats_to_ticks(gNightWalkInfo->cueDelayTime);
+    info->earlinessBeats = gNightWalkInfo->cueEarlinessOffset;
+    info->earlinessTime = beats_to_ticks(gNightWalkInfo->cueEarlinessOffset);
     info->hasFish = -1;
-    gameplay_set_cue_duration(cue, beats_to_ticks(0xC0 - gNightWalkInfo->cueDelayTime)); // set cue duration
+    gameplay_set_cue_duration(cue, beats_to_ticks(0xC0 - gNightWalkInfo->cueEarlinessOffset)); // set cue duration
     info->hasFish = FALSE;
 
     switch (gNightWalkInfo->nextBridgeType) {
@@ -919,7 +919,7 @@ u32 night_walk_cue_update(struct Cue *cue, struct NightWalkCue *info, u32 runnin
     noteBoxDelay = (gNightWalkInfo->inSwing) ? 0x10 : 0x0C;
 
     if (!gNightWalkInfo->stoppedScrolling && !info->endOfBridge && !info->hasOpened) {
-        if (runningTime > (beats_to_ticks(0xC0 + noteBoxDelay) - info->delayTime)) {
+        if (runningTime > (beats_to_ticks(0xC0 + noteBoxDelay) - info->earlinessTime)) {
             info->hasOpened = TRUE;
             func_0804d8f8(D_03005380, info->boxSprite, anim_night_walk_note_bridge, 1, 1, 4, 0);
 
@@ -931,7 +931,7 @@ u32 night_walk_cue_update(struct Cue *cue, struct NightWalkCue *info, u32 runnin
         }
     }
 
-    if (runningTime > beats_to_ticks(0x120 - info->delayBeats)) {
+    if (runningTime > beats_to_ticks(0x120 - info->earlinessBeats)) {
         if (info->playYanFellHere) {
             night_walk_play_yan_fall();
         }

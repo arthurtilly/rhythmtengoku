@@ -63,7 +63,7 @@ const EngineEvent prologue_samurai_slice_engine_events[] = {
 // [D_089eb3d8] Prologue (Samurai Slice) Game Engine
 const struct GameEngine D_089eb3d8 = {
     /* Size in Memory */ sizeof(struct PrologueSamuraiSliceInfo),
-    /* Init. Engine   */ func_08046054,
+    /* Start Engine   */ func_08046054,
     /* Update Engine  */ func_080460cc,
     /* Stop Engine    */ func_080460d0,
     /* Cue Index      */ NULL,

@@ -57,7 +57,7 @@ const EngineEvent prologue_sick_beats_engine_events[] = {
 // [D_089edd44] Prologue (Sick Beats) Game Engine
 const struct GameEngine D_089edd44 = {
     /* Size in Memory */ sizeof(struct PrologueSickBeatsInfo),
-    /* Init. Engine   */ func_08047c78,
+    /* Start Engine   */ func_08047c78,
     /* Update Engine  */ func_08047d04,
     /* Stop Engine    */ func_08047d08,
     /* Cue Index      */ NULL,

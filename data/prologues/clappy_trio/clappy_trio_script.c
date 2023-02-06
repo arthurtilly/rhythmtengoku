@@ -58,7 +58,7 @@ const EngineEvent prologue_clappy_trio_engine_events[] = {
 // [D_089eb064] Prologue (The Clappy Trio) Game Engine
 const struct GameEngine D_089eb064 = {
     /* Size in Memory */ sizeof(struct PrologueClappyTrioInfo),
-    /* Init. Engine   */ func_08045e5c,
+    /* Start Engine   */ func_08045e5c,
     /* Update Engine  */ func_08045ebc,
     /* Stop Engine    */ func_08045ec0,
     /* Cue Index      */ NULL,

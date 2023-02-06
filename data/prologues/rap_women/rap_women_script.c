@@ -57,7 +57,7 @@ const EngineEvent prologue_rap_women_engine_events[] = {
 // [D_089eced0] Prologue (Rap Women) Game Engine
 const struct GameEngine D_089eced0 = {
     /* Size in Memory */ sizeof(struct PrologueRapWomenInfo),
-    /* Init. Engine   */ func_080470d0,
+    /* Start Engine   */ func_080470d0,
     /* Update Engine  */ func_08047130,
     /* Stop Engine    */ func_08047134,
     /* Cue Index      */ NULL,

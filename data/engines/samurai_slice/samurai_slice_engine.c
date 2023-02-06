@@ -162,7 +162,7 @@ const EngineEvent samurai_slice_common_events[] = {
 
 // [D_089e48e0] Engine Events
 const EngineEvent samurai_slice_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08030f00,
+    /* 0x00 */ (EngineEvent) samurai_slice_engine_event_stub,
     /* 0x01 */ (EngineEvent) func_08030f04,
     /* 0x02 */ (EngineEvent) func_08031bc0,
     /* 0x03 */ (EngineEvent) func_08032430,

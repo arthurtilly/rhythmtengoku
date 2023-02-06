@@ -766,8 +766,8 @@ const u8 D_089e8704[][4] = {
   //  //  //  CUE DATA  //  //  //
 
 
-// [D_089e8714] Cue 00 (?)
-const struct CueDefinition D_089e8714 = {
+// [D_089e8714] Cue 00 (Aka-chan - Toss)
+const struct CueDefinition toss_boys_cue_toss_r = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -790,8 +790,8 @@ const struct CueDefinition D_089e8714 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e8754] Cue 01 (?)
-const struct CueDefinition D_089e8754 = {
+// [D_089e8754] Cue 01 (Ao-kun - Toss)
+const struct CueDefinition toss_boys_cue_toss_b = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON),
     /* Total Duration  */ 0x18,
@@ -814,8 +814,8 @@ const struct CueDefinition D_089e8754 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e8794] Cue 02 (?)
-const struct CueDefinition D_089e8794 = {
+// [D_089e8794] Cue 02 (Kii-yan - Toss)
+const struct CueDefinition toss_boys_cue_toss_y = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -838,8 +838,8 @@ const struct CueDefinition D_089e8794 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e87d4] Cue 04 (?)
-const struct CueDefinition D_089e87d4 = {
+// [D_089e87d4] Cue 04 (Aka-chan - Catch)
+const struct CueDefinition toss_boys_cue_catch_r = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -862,8 +862,8 @@ const struct CueDefinition D_089e87d4 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e8814] Cue 05 (?)
-const struct CueDefinition D_089e8814 = {
+// [D_089e8814] Cue 05 (Ao-kun - Catch)
+const struct CueDefinition toss_boys_cue_catch_b = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON),
     /* Total Duration  */ 0x18,
@@ -886,8 +886,8 @@ const struct CueDefinition D_089e8814 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e8854] Cue 06 (?)
-const struct CueDefinition D_089e8854 = {
+// [D_089e8854] Cue 06 (Kii-yan - Catch)
+const struct CueDefinition toss_boys_cue_catch_y = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -910,8 +910,8 @@ const struct CueDefinition D_089e8854 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e8894] Cue 08 (?)
-const struct CueDefinition D_089e8894 = {
+// [D_089e8894] Cue 08 (Aka-chan - Pop)
+const struct CueDefinition toss_boys_cue_pop_r = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -934,8 +934,8 @@ const struct CueDefinition D_089e8894 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e88d4] Cue 09 (?)
-const struct CueDefinition D_089e88d4 = {
+// [D_089e88d4] Cue 09 (Ao-kun - Pop)
+const struct CueDefinition toss_boys_cue_pop_b = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON),
     /* Total Duration  */ 0x18,
@@ -958,8 +958,8 @@ const struct CueDefinition D_089e88d4 = {
     /* Miss Condition  */ NULL
 };
 
-// [D_089e8914] Cue 0A (?)
-const struct CueDefinition D_089e8914 = {
+// [D_089e8914] Cue 0A (Kii-yan - Pop)
+const struct CueDefinition toss_boys_cue_pop_y = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -984,17 +984,17 @@ const struct CueDefinition D_089e8914 = {
 
 // [D_089e8954] Cue Definition Index
 const struct CueDefinition *const toss_boys_cue_index[] = {
-    /* 0x00 */ &D_089e8714,
-    /* 0x01 */ &D_089e8754,
-    /* 0x02 */ &D_089e8794,
+    /* 0x00 */ &toss_boys_cue_toss_r,
+    /* 0x01 */ &toss_boys_cue_toss_b,
+    /* 0x02 */ &toss_boys_cue_toss_y,
     /* 0x03 */ NULL,
-    /* 0x04 */ &D_089e87d4,
-    /* 0x05 */ &D_089e8814,
-    /* 0x06 */ &D_089e8854,
+    /* 0x04 */ &toss_boys_cue_catch_r,
+    /* 0x05 */ &toss_boys_cue_catch_b,
+    /* 0x06 */ &toss_boys_cue_catch_y,
     /* 0x07 */ NULL,
-    /* 0x08 */ &D_089e8894,
-    /* 0x09 */ &D_089e88d4,
-    /* 0x0A */ &D_089e8914,
+    /* 0x08 */ &toss_boys_cue_pop_r,
+    /* 0x09 */ &toss_boys_cue_pop_b,
+    /* 0x0A */ &toss_boys_cue_pop_y,
     /* 0x0B */ NULL,
     END_OF_CUE_INDEX
 };

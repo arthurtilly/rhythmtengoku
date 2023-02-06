@@ -58,7 +58,7 @@ const EngineEvent prologue_spaceball_engine_events[] = {
 // [D_089ea2bc] Prologue (Spaceball) Game Engine
 const struct GameEngine D_089ea2bc = {
     /* Size in Memory */ sizeof(struct PrologueSpaceballInfo),
-    /* Init. Engine   */ func_08045278,
+    /* Start Engine   */ func_08045278,
     /* Update Engine  */ func_080452d8,
     /* Stop Engine    */ func_080452dc,
     /* Cue Index      */ NULL,

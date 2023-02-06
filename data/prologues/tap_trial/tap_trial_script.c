@@ -58,7 +58,7 @@ const EngineEvent prologue_tap_trial_engine_events[] = {
 // [D_089ed598] Prologue (Tap Trial) Game Engine
 const struct GameEngine D_089ed598 = {
     /* Size in Memory */ sizeof(struct PrologueTapTrialInfo),
-    /* Init. Engine   */ func_080476e8,
+    /* Start Engine   */ func_080476e8,
     /* Update Engine  */ func_08047768,
     /* Stop Engine    */ func_0804776c,
     /* Cue Index      */ NULL,

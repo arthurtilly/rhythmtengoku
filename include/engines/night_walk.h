@@ -97,7 +97,7 @@ struct NightWalkInfo {
     const struct BeatScript *endScript;
     u8 markingCriteria;
     u8 inSwing;
-    u16 cueDelayTime;
+    u16 cueEarlinessOffset;
     u16 drumVolume;
 };
 
@@ -112,8 +112,8 @@ struct NightWalkCue {
     s16 boxSprite;
     s16 runningTime;
     s16 duration;
-    s16 delayBeats;
-    s16 delayTime;
+    s16 earlinessBeats;
+    s16 earlinessTime;
     u8 hasFish;
     s16 fishSprite;
 };
@@ -259,7 +259,7 @@ extern void night_walk_engine_update(void); // Game Engine Update
 extern void night_walk_engine_stop(void); // Game Engine Close
 
 extern s32 night_walk_cue_get_x(struct NightWalkCue *info); // Calculate Cue X Position
-extern void night_walk_set_cue_delay(u32 duration); // Engine Event 0x06 (Set Cue Delay Time)
+extern void night_walk_set_cue_earliness(u32 duration); // Engine Event 0x06 (Set Cue Earliness Time Offset)
 extern void night_walk_cue_spawn(struct Cue *cue, struct NightWalkCue *info, u32 type); // Cue - Spawn
 extern u32 night_walk_cue_update(struct Cue *cue, struct NightWalkCue *info, u32 runningTime, u32 duration); // Cue - Update
 extern void night_walk_cue_despawn(struct Cue *cue, struct NightWalkCue *info); // Cue - Despawn

@@ -96,7 +96,7 @@ const EngineEvent staff_credit_engine_events[] = {
     /* 0x01 */ (EngineEvent) func_080237ec,
     /* 0x02 */ (EngineEvent) func_080237f8,
     /* 0x03 */ (EngineEvent) func_08023898,
-    /* 0x04 */ (EngineEvent) func_08023690
+    /* 0x04 */ (EngineEvent) staff_credit_engine_event_stub
 };
 
 // [D_089df6cc] Staff Credit Game Engine

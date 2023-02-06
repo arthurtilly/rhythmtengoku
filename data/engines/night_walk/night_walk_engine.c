@@ -722,7 +722,7 @@ const EngineEvent night_walk_engine_events[] = {
     /* 0x03 */ (EngineEvent) night_walk_set_ending_script,
     /* 0x04 */ (EngineEvent) night_walk_set_bridge_type,
     /* 0x05 */ (EngineEvent) night_walk_set_marking_criteria,
-    /* 0x06 */ (EngineEvent) night_walk_set_cue_delay,
+    /* 0x06 */ (EngineEvent) night_walk_set_cue_earliness,
     /* 0x07 */ (EngineEvent) night_walk_set_swing,
     /* 0x08 */ (EngineEvent) night_walk_set_drum_volume,
     /* 0x09 */ (EngineEvent) night_walk_event_expand_stars,

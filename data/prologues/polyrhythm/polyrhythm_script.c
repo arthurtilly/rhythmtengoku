@@ -57,7 +57,7 @@ const EngineEvent prologue_polyrhythm_engine_events[] = {
 // [D_089eba0c] Prologue (Polyrhythm) Game Engine
 const struct GameEngine D_089eba0c = {
     /* Size in Memory */ sizeof(struct ProloguePolyrhythmInfo),
-    /* Init. Engine   */ func_0804649c,
+    /* Start Engine   */ func_0804649c,
     /* Update Engine  */ func_080464fc,
     /* Stop Engine    */ func_08046500,
     /* Cue Index      */ NULL,

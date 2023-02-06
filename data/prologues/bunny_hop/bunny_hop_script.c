@@ -57,7 +57,7 @@ const EngineEvent prologue_bunny_hop_engine_events[] = {
 // [D_089ecbb0] Prologue (Bunny Hop) Game Engine
 const struct GameEngine D_089ecbb0 = {
     /* Size in Memory */ sizeof(struct PrologueBunnyHopInfo),
-    /* Init. Engine   */ func_08046e78,
+    /* Start Engine   */ func_08046e78,
     /* Update Engine  */ func_08046f04,
     /* Stop Engine    */ func_08046f08,
     /* Cue Index      */ NULL,

@@ -57,7 +57,7 @@ const EngineEvent prologue_tram_pauline_engine_events[] = {
 // [D_089edc08] Prologue (Tram & Pauline) Game Engine
 const struct GameEngine D_089edc08 = {
     /* Size in Memory */ sizeof(struct PrologueTramPaulineInfo),
-    /* Init. Engine   */ func_08047b40,
+    /* Start Engine   */ func_08047b40,
     /* Update Engine  */ func_08047bd4,
     /* Stop Engine    */ func_08047bd8,
     /* Cue Index      */ NULL,

@@ -57,7 +57,7 @@ const EngineEvent prologue_quiz_show_engine_events[] = {
 // [D_089ebbcc] Prologue (Quiz Show) Game Engine
 const struct GameEngine D_089ebbcc = {
     /* Size in Memory */ sizeof(struct PrologueQuizShowInfo),
-    /* Init. Engine   */ func_08046598,
+    /* Start Engine   */ func_08046598,
     /* Update Engine  */ func_080465fc,
     /* Stop Engine    */ func_08046600,
     /* Cue Index      */ NULL,

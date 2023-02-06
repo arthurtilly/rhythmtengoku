@@ -40,24 +40,24 @@ extern const struct GraphicsTable mr_upbeat_gfx_table[];
 // Functions:
 // extern ? func_08034b14(?);
 // extern ? func_08034bf4(?);
-extern void func_08034d6c(); // Engine Event 03 (?)
-extern void func_08034db0(); // Engine Event 04 (?)
+extern void func_08034d6c(); // Engine Event 0x03 (?)
+extern void func_08034db0(); // Engine Event 0x04 (?)
 // extern ? func_08034dd0(?);
 // extern ? func_08034e40(?);
-extern void func_08034e84(); // Engine Event 02 (?)
+extern void func_08034e84(); // Engine Event 0x02 (?)
 // extern ? func_08034eb4(?);
-extern void func_08034f18(); // Engine Event 00 (?)
+extern void func_08034f18(); // Engine Event 0x00 (?)
 // extern ? func_08034f64(?);
 // extern ? func_08034ff4(?);
 // extern ? func_08035094(?);
 // extern ? func_08035168(?);
-extern void func_0803516c(); // Engine Event 05 (?)
+extern void func_0803516c(); // Engine Event 0x05 (?)
 extern void mr_upbeat_init_gfx3(void); // Graphics Init. 3
 extern void mr_upbeat_init_gfx2(void); // Graphics Init. 2
 extern void mr_upbeat_init_gfx1(void); // Graphics Init. 1
 extern void mr_upbeat_engine_start(u32 version); // Game Engine Start
-extern void mr_upbeat_engine_event_stub(void); // Engine Event 06 (STUB)
-extern void func_08035314(); // Engine Event 01 (?)
+extern void mr_upbeat_engine_event_stub(void); // Engine Event 0x06 (STUB)
+extern void func_08035314(); // Engine Event 0x01 (?)
 extern void mr_upbeat_engine_update(void); // Game Engine Update
 extern void mr_upbeat_engine_stop(void); // Game Engine Stop
 extern void mr_upbeat_cue_spawn(struct Cue *, struct MrUpbeatCue *, u32 unused); // Cue - Spawn

@@ -70,7 +70,7 @@ extern void samurai_slice_init_gfx2(void); // Graphics Init. 2
 extern void samurai_slice_init_gfx1(void); // Graphics Init. 1
 extern void samurai_slice_engine_start(u32 version); // Game Engine Start
 // extern ? func_08030e84(?);
-extern void func_08030f00(void); // Engine Event 00 (STUB)
+extern void samurai_slice_engine_event_stub(void); // Engine Event 00 (STUB)
 extern void func_08030f04(); // Engine Event 01 (?)
 extern void func_08030f34(); // Engine Event 06 (?)
 extern void samurai_slice_engine_update(void); // Game Engine Update

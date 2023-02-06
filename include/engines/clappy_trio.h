@@ -50,7 +50,7 @@ extern const struct GraphicsTable *const clappy_trio_gfx_tables[];
 
 
 // Functions:
-// extern ? func_08030384(?);
+extern const struct Animation *clappy_trio_get_anim(u32 anim); // Get Animation
 // extern ? func_080303a4(?);
 // extern ? func_0803050c(?);
 // extern ? func_0803051c(?);
@@ -58,8 +58,8 @@ extern const struct GraphicsTable *const clappy_trio_gfx_tables[];
 extern void clappy_trio_engine_start(u32 version); // Game Engine Start
 extern void func_0803068c(void); // Engine Event 00 (Crouch)
 extern void func_0803074c(void); // Engine Event 01 (Crouch - Smirk)
-extern void func_0803080c(u32 lion); // Engine Event 02 (Clap)
-extern void func_0803088c(); // Engine Event 04 (?)
+extern void func_0803080c(u32 lion); // Engine Event 02 (Manual Clap)
+extern void func_0803088c(); // Engine Event 04 (Set Manual Clap Volume)
 extern void func_08030898(u32 enable); // Engine Event 03 (Enable Grayscale Effect)
 extern void clappy_trio_engine_update(void); // Game Engine Update
 extern void clappy_trio_engine_stop(void); // Game Engine Stop
@@ -72,5 +72,5 @@ extern void clappy_trio_cue_miss(struct Cue *, struct ClappyTrioCue *);
 extern void clappy_trio_input_event(u32 pressed, u32 released); // Input Event
 extern void clappy_trio_common_beat_animation(void); // Common Event 0 (Beat Animation)
 extern void clappy_trio_common_display_text(const char *); // Common Event 1 (Display Text)
-extern void func_08030bf0(); // Engine Event 05 (?)
+extern void func_08030bf0(); // Engine Event 05 (Hide Text Box)
 extern void clappy_trio_common_init_tutorial(const struct Scene *); // Common Event 2 (Init. Tutorial)

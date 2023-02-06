@@ -15,7 +15,7 @@ thumb_func_start func_0803074c \n\
 /* 0803075e */ ADDS R0, R4, 0x4 @ Set R0 to R4 + 0x4 \n\
 /* 08030760 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08030762 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 08030764 */ BL func_08030384 \n\
+/* 08030764 */ BL clappy_trio_get_anim \n\
 /* 08030768 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803076a */ LDR R1, =D_03005380 \n\
 /* 0803076c */ MOV R8, R1 @ Set R8 to R1 \n\
@@ -33,7 +33,7 @@ thumb_func_start func_0803074c \n\
 /* 08030784 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08030786 */ BL func_0804d8f8 \n\
 /* 0803078a */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 0803078c */ BL func_08030384 \n\
+/* 0803078c */ BL clappy_trio_get_anim \n\
 /* 08030790 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08030792 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08030794 */ LDR R0, [R1] \n\
@@ -46,7 +46,7 @@ thumb_func_start func_0803074c \n\
 /* 080307a2 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080307a4 */ BL func_0804d8f8 \n\
 /* 080307a8 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 080307aa */ BL func_08030384 \n\
+/* 080307aa */ BL clappy_trio_get_anim \n\
 /* 080307ae */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080307b0 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080307b2 */ LDR R0, [R1] \n\
@@ -59,7 +59,7 @@ thumb_func_start func_0803074c \n\
 /* 080307c0 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080307c2 */ BL func_0804d8f8 \n\
 /* 080307c6 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 080307c8 */ BL func_08030384 \n\
+/* 080307c8 */ BL clappy_trio_get_anim \n\
 /* 080307cc */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080307ce */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080307d0 */ LDR R0, [R1] \n\

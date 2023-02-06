@@ -45,19 +45,19 @@ extern const struct CompressedGraphics *const bouncy_road_buffered_textures[];
 // extern ? func_0802dd08(?);
 extern void func_0802dd84(u32 interval); // Engine Event 00 (Deploy Ball)
 // extern ? func_0802de60(?);
-extern void func_0802deb0(); // Engine Event 01 (?)
+extern void func_0802deb0(); // Engine Event 01 (Bounce Ball)
 // extern ? func_0802debc(?);
 // extern ? func_0802df08(?);
 // extern ? func_0802df44(?);
-extern void func_0802df98(); // Engine Event 03 (?)
+extern void func_0802df98(); // Engine Event 03 (Play Distance Bounce SFX)
 // extern ? func_0802dfa4(?);
 // extern ? func_0802dfc8(?);
 // extern ? func_0802e024(?);
 // extern ? func_0802e078(?);
 // extern ? func_0802e208(?);
-extern void func_0802e234(); // Engine Event 02 (?)
-extern void func_0802e248(u32 colour); // Engine Event 04 (Set Ball Colour)
-extern void func_0802e25c(); // Engine Event 05 (?)
+extern void func_0802e234(); // Engine Event 02 (Enable Goal SFX For This Ball)
+extern void func_0802e248(u32 colour); // Engine Event 04 (Set Ball Palette)
+extern void func_0802e25c(); // Engine Event 05 (Set Global Bounce Height)
 // extern ? func_0802e270(?);
 // extern ? func_0802e2f0(?);
 // extern ? func_0802e3a4(?);

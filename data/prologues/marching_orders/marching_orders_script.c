@@ -58,7 +58,7 @@ const EngineEvent prologue_marching_orders_engine_events[] = {
 // [D_089eb6bc] Prologue (Marching Orders) Game Engine
 const struct GameEngine D_089eb6bc = {
     /* Size in Memory */ sizeof(struct PrologueMarchingOrdersInfo),
-    /* Init. Engine   */ func_080462a4,
+    /* Start Engine   */ func_080462a4,
     /* Update Engine  */ func_08046304,
     /* Stop Engine    */ func_08046308,
     /* Cue Index      */ NULL,

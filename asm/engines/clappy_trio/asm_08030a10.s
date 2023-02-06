@@ -9,7 +9,7 @@ thumb_func_start clappy_trio_input_event \n\
 /* 08030a16 */ LDR R4, [R0] \n\
 /* 08030a18 */ ADDS R4, 0x4 @ Add 0x4 to R4 \n\
 /* 08030a1a */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
-/* 08030a1c */ BL func_08030384 \n\
+/* 08030a1c */ BL clappy_trio_get_anim \n\
 /* 08030a20 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08030a22 */ LDR R0, =D_03005380 \n\
 /* 08030a24 */ LDR R0, [R0] \n\

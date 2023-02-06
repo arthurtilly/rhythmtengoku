@@ -57,7 +57,7 @@ const EngineEvent prologue_rat_race_engine_events[] = {
 // [D_089ed00c] Prologue (Rat Race) Game Engine
 const struct GameEngine D_089ed00c = {
     /* Size in Memory */ sizeof(struct PrologueRatRaceInfo),
-    /* Init. Engine   */ func_080471d4,
+    /* Start Engine   */ func_080471d4,
     /* Update Engine  */ func_08047254,
     /* Stop Engine    */ func_08047258,
     /* Cue Index      */ NULL,

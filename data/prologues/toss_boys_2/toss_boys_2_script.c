@@ -58,7 +58,7 @@ const EngineEvent prologue_toss_boys_2_engine_events[] = {
 // [D_089eda3c] Prologue (Toss Boys 2) Game Engine
 const struct GameEngine D_089eda3c = {
     /* Size in Memory */ sizeof(struct PrologueTossBoys2Info),
-    /* Init. Engine   */ func_08047a44,
+    /* Start Engine   */ func_08047a44,
     /* Update Engine  */ func_08047aa4,
     /* Stop Engine    */ func_08047aa8,
     /* Cue Index      */ NULL,

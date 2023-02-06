@@ -43,14 +43,14 @@ extern const struct SequenceData *const D_089df404[];
 // extern ? func_080225bc(?);
 // extern ? func_08022614(?);
 // extern ? func_080226a0(?);
-extern void func_080226d4(); // Engine Event 0 (?)
+extern void func_080226d4(); // Engine Event 0x00 (?)
 // extern ? func_08022894(?);
 // extern ? func_080228d8(?);
-extern void func_080229bc(); // Engine Event 1 (?)
+extern void func_080229bc(); // Engine Event 0x01 (?)
 // extern ? func_080229f0(?);
 // extern ? func_08022a7c(?);
 // extern ? func_08022b0c(?);
-extern void func_08022ba0(); // Engine Event 6 (?)
+extern void func_08022ba0(); // Engine Event 0x06 (?)
 // extern ? func_08022bb4(?);
 // extern ? func_08022ca0(?);
 // extern ? func_08022ce8(?);
@@ -58,17 +58,17 @@ extern void mannequin_init_gfx3(void); // Graphics Init. 3
 extern void mannequin_init_gfx2(void); // Graphics Init. 2
 extern void mannequin_init_gfx1(void); // Graphics Init. 1
 extern void mannequin_engine_start(u32); // Game Engine Start
-extern void func_08022efc(); // Engine Event 7 (?)
-extern void func_08022f00(); // Engine Event 2 (?)
-extern void func_08022f1c(); // Engine Event 3 (?)
+extern void mannequin_engine_event_stub(); // Engine Event 0x07 (STUB)
+extern void func_08022f00(); // Engine Event 0x02 (?)
+extern void func_08022f1c(); // Engine Event 0x03 (?)
 // extern ? func_08022f4c(?);
 // extern ? func_08022fb8(?);
 extern void mannequin_engine_update(void); // Game Engine Update
 // extern ? func_0802308c(?);
 // extern ? func_080230cc(?);
 // extern ? func_0802310c(?);
-extern void func_08023150(); // Engine Event 4 (?)
-extern void func_08023164(); // Engine Event 5 (?)
+extern void func_08023150(); // Engine Event 0x04 (?)
+extern void func_08023164(); // Engine Event 0x05 (?)
 // extern ? func_080231c8(?);
 // extern ? func_0802327c(?);
 // extern ? func_080233b4(?);
