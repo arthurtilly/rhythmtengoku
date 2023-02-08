@@ -115,7 +115,8 @@ CFILES		:=	$(foreach dir,$(AUDIO),$(wildcard $(dir)/*.c)) $(foreach dir,$(GRAPHI
 				$(foreach dir,$(LEVELS),$(wildcard $(dir)/*.c))
 
 CPPFILES	:=	$(foreach dir,$(SOURCES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(SCENES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(ENGINES),$(wildcard $(dir)/*.cpp)) $(foreach dir,$(PROLOGUES),$(wildcard $(dir)/*.cpp))
-SFILES		:=	$(foreach dir,$(ASM),$(wildcard $(dir)/*.s)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.s))
+SFILES		:=	$(foreach dir,$(ASM),$(wildcard $(dir)/*.s)) $(foreach dir,$(DATA),$(wildcard $(dir)/*.s)) \
+				$(foreach dir,$(TEXT),$(wildcard $(dir)/*.s)) $(foreach dir,$(ENGINE_TEXT),$(wildcard $(dir)/*.s)) $(foreach dir,$(LEVEL_TEXT),$(wildcard $(dir)/*.s))
 BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) $(foreach dir,$(MUSIC),$(wildcard $(dir)/*.mid)) $(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.bin))
 WAVFILES    :=  $(foreach dir,$(SFX),$(wildcard $(dir)/*.wav))
 JSONFILES   :=  $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.json))

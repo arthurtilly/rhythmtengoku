@@ -38,7 +38,7 @@
 @ Load Game: Spaceball
 .macro load_spaceball
     load_spaceball_labels
-    load_game =SPACEBALL, 0
+    load_game SPACEBALL, 0
 .endm
 
 
@@ -47,7 +47,7 @@
 
 @ Run Game Event
 .macro spaceball_event event, args
-    game_event =SPACEBALL, \event, \args
+    game_event SPACEBALL, \event, \args
 .endm
 
 

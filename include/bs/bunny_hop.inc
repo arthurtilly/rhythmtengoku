@@ -34,25 +34,25 @@
 @ Load Game: Bunny Hop
 .macro load_bunny_hop
     load_bunny_hop_labels
-    load_game =BOUNCY_ROAD, 0
+    load_game BOUNCY_ROAD, 0
 .endm
 
 @ Load Game: Bunny Hop (ver1)
 .macro load_bunny_hop_ver1
     load_bunny_hop_labels
-    load_game =BOUNCY_ROAD, 1
+    load_game BOUNCY_ROAD, 1
 .endm
 
 @ Load Game: Bunny Hop (ver2, rather broken)
 .macro load_bunny_hop_ver2
     load_bunny_hop_labels
-    load_game =BOUNCY_ROAD, 2
+    load_game BOUNCY_ROAD, 2
 .endm
 
 @ Load Game: Bunny Hop (Remix 3)
 .macro load_bunny_hop_remix3
     load_bunny_hop_labels
-    load_game =BOUNCY_ROAD, 3
+    load_game BOUNCY_ROAD, 3
 .endm
 
 
@@ -61,7 +61,7 @@
 
 @ Run Game Event
 .macro bunny_hop_event event, args
-    game_event =BUNNY_HOP, \event, \args
+    game_event BUNNY_HOP, \event, \args
 .endm
 
 

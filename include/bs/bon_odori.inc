@@ -43,13 +43,13 @@
 @ Load Game: Bon Odori
 .macro load_bon_odori
     load_bon_odori_labels
-    load_game =BON_ODORI, 0
+    load_game BON_ODORI, 0
 .endm
 
 @ Load Game: Bon Dance
 .macro load_bon_dance
     load_bon_odori_labels
-    load_game =BON_ODORI, 1
+    load_game BON_ODORI, 1
 .endm
 
 
@@ -58,7 +58,7 @@
 
 @ Run Game Event
 .macro bon_odori_event event, args
-    game_event =BON_ODORI, \event, \args
+    game_event BON_ODORI, \event, \args
 .endm
 
 

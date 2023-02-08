@@ -34,19 +34,19 @@
 @ Load Game: Polyrhythm
 .macro load_polyrhythm
     load_polyrhythm_labels
-    load_game =POLYRHYTHM, 0
+    load_game POLYRHYTHM, 0
 .endm
 
 @ Load Game: Polyrhythm (Remix 4)
 .macro load_polyrhythm_remix
     load_polyrhythm_labels
-    load_game =POLYRHYTHM, 1
+    load_game POLYRHYTHM, 1
 .endm
 
 @ Load Game: Polyrhythm 2
 .macro load_polyrhythm_2
     load_polyrhythm_labels
-    load_game =POLYRHYTHM, 2
+    load_game POLYRHYTHM, 2
 .endm
 
 
@@ -55,7 +55,7 @@
 
 @ Run Game Event
 .macro polyrhythm_event event, args
-    game_event =POLYRHYTHM, \event, \args
+    game_event POLYRHYTHM, \event, \args
 .endm
 
 

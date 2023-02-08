@@ -55,31 +55,31 @@
 @ Load Game: Fireworks
 .macro load_fireworks
     load_fireworks_labels
-    load_game =FIREWORKS, 0
+    load_game FIREWORKS, 0
 .endm
 
 @ Load Game: Fireworks (Remix 5, BG 1)
 .macro load_fireworks_remix5_bg1
     load_fireworks_labels
-    load_game =FIREWORKS, 1
+    load_game FIREWORKS, 1
 .endm
 
 @ Load Game: Fireworks (Remix 5, BG 2)
 .macro load_fireworks_remix5_bg2
     load_fireworks_labels
-    load_game =FIREWORKS, 2
+    load_game FIREWORKS, 2
 .endm
 
 @ Load Game: Fireworks (Remix 5, BG 3)
 .macro load_fireworks_remix5_bg3
     load_fireworks_labels
-    load_game =FIREWORKS, 3
+    load_game FIREWORKS, 3
 .endm
 
 @ Load Game: Fireworks (Remix 5, BG 4)
 .macro load_fireworks_remix5_bg4
     load_fireworks_labels
-    load_game =FIREWORKS, 4
+    load_game FIREWORKS, 4
 .endm
 
 
@@ -88,7 +88,7 @@
 
 @ Run Game Event
 .macro fireworks_event event, args
-    game_event =FIREWORKS, \event, \args
+    game_event FIREWORKS, \event, \args
 .endm
 
 

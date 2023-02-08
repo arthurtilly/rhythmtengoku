@@ -33,13 +33,13 @@
 @ Load Game: Ninja Bodyguard
 .macro load_ninja_bodyguard
     load_ninja_labels
-    load_game =NINJA_BODYGUARD, 0
+    load_game NINJA_BODYGUARD, 0
 .endm
 
 @ Load Game: Ninja Bodyguard 2 (+ Remix 5)
 .macro load_ninja_reincarnate
     load_ninja_labels
-    load_game =NINJA_BODYGUARD, 1
+    load_game NINJA_BODYGUARD, 1
 .endm
 
 
@@ -48,7 +48,7 @@
 
 @ Run Game Event
 .macro ninja_event event, args
-    game_event =NINJA_BODYGUARD, \event, \args
+    game_event NINJA_BODYGUARD, \event, \args
 .endm
 
 

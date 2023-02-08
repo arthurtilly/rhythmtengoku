@@ -30,31 +30,31 @@
 @ Load Game: Tap Trial
 .macro load_tap_trial
     load_tap_trial_labels
-    load_game =TAP_TRIAL, 0
+    load_game TAP_TRIAL, 0
 .endm
 
 @ Load Game: Tap Trial (Remix 7, Remix 8)
 .macro load_tap_trial_remix8
     load_tap_trial_labels
-    load_game =TAP_TRIAL, 1
+    load_game TAP_TRIAL, 1
 .endm
 
 @ Load Game: Tap Trial (Remix 7)
 .macro load_tap_trial_remix7
     load_tap_trial_labels
-    load_game =TAP_TRIAL, 2
+    load_game TAP_TRIAL, 2
 .endm
 
 @ Load Game: Tap Trial 2
 .macro load_tap_trial_2
     load_tap_trial_labels
-    load_game =TAP_TRIAL, 3
+    load_game TAP_TRIAL, 3
 .endm
 
 @ Load Game: Tap Trial (Remix 5)
 .macro load_tap_trial_remix5
     load_tap_trial_labels
-    load_game =TAP_TRIAL, 4
+    load_game TAP_TRIAL, 4
 .endm
 
 
@@ -63,7 +63,7 @@
 
 @ Run Game Event
 .macro tap_trial_event event, args
-    game_event =TAP_TRIAL, \event, \args
+    game_event TAP_TRIAL, \event, \args
 .endm
 
 

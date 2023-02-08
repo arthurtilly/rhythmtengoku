@@ -15,25 +15,25 @@
 @ Load Game: Cat Machine
 .macro load_cat_machine
     load_rhythm_toy_labels
-    load_game =RHYTHM_TOY, 0
+    load_game RHYTHM_TOY, 0
 .endm
 
 @ Load Game: Cat Machine (ver1)
 .macro load_cat_machine_ver1
     load_rhythm_toy_labels
-    load_game =RHYTHM_TOY, 1
+    load_game RHYTHM_TOY, 1
 .endm
 
 @ Load Game: Confession Machine
 .macro load_confession_machine
     load_rhythm_toy_labels
-    load_game =RHYTHM_TOY, 2
+    load_game RHYTHM_TOY, 2
 .endm
 
 @ Load Game: Rap Machine
 .macro load_rap_machine
     load_rhythm_toy_labels
-    load_game =RHYTHM_TOY, 3
+    load_game RHYTHM_TOY, 3
 .endm
 
 
@@ -42,7 +42,7 @@
 
 @ Run Game Event
 .macro rhythm_toy_event event, args
-    game_event =RHYTHM_TOY, \event, \args
+    game_event RHYTHM_TOY, \event, \args
 .endm
 
 

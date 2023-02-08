@@ -18,25 +18,25 @@
 @ Load Game: Tram & Pauline (Tutorial)
 .macro load_tram_and_pauline_tutorial
     load_tram_and_pauline_labels
-    load_game =TRAM_AND_PAULINE, 0
+    load_game TRAM_AND_PAULINE, 0
 .endm
 
 @ Load Game: Tram & Pauline
 .macro load_tram_and_pauline
     load_tram_and_pauline_labels
-    load_game =TRAM_AND_PAULINE, 1
+    load_game TRAM_AND_PAULINE, 1
 .endm
 
 @ Load Game: Tram & Pauline (Remix 3)
 .macro load_tram_and_pauline_remix3
     load_tram_and_pauline_labels
-    load_game =TRAM_AND_PAULINE, 2
+    load_game TRAM_AND_PAULINE, 2
 .endm
 
 @ Load Game: Tram & Pauline (No Curtain)
 .macro load_tram_and_pauline_no_curtain
     load_tram_and_pauline_labels
-    load_game =TRAM_AND_PAULINE, 3
+    load_game TRAM_AND_PAULINE, 3
 .endm
 
 
@@ -45,7 +45,7 @@
 
 @ Run Game Event
 .macro tram_and_pauline_event event, args
-    game_event =TRAM_AND_PAULINE, \event, \args
+    game_event TRAM_AND_PAULINE, \event, \args
 .endm
 
 

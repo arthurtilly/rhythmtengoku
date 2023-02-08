@@ -18,7 +18,7 @@
 @ Load Game: Wizard's Waltz
 .macro load_wizards_waltz
     load_wizards_waltz_labels
-    load_game =WIZARDS_WALTZ, 0
+    load_game WIZARDS_WALTZ, 0
 .endm
 
 
@@ -27,7 +27,7 @@
 
 @ Run Game Event
 .macro wizards_waltz_event event, args
-    game_event =WIZARDS_WALTZ, \event, \args
+    game_event WIZARDS_WALTZ, \event, \args
 .endm
 
 

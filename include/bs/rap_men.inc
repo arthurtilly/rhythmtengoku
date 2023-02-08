@@ -25,13 +25,13 @@
 @ Load Game: Rap Men
 .macro load_rap_men
     load_rap_men_labels
-    load_game =RAP_MEN, 0
+    load_game RAP_MEN, 0
 .endm
 
 @ Load Game: Rap Women
 .macro load_rap_women
     load_rap_men_labels
-    load_game =RAP_MEN, 1
+    load_game RAP_MEN, 1
 .endm
 
 
@@ -40,7 +40,7 @@
 
 @ Run Game Event
 .macro rap_men_event event, args
-    game_event =RAP_MEN, \event, \args
+    game_event RAP_MEN, \event, \args
 .endm
 
 

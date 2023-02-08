@@ -27,13 +27,13 @@
 @ Load Game: Mannequin Factory
 .macro load_mannequin_factory
     load_mannequin_labels
-    load_game =MANNEQUIN_FACTORY, 0
+    load_game MANNEQUIN_FACTORY, 0
 .endm
 
 @ Load Game: Mannequin Factory (Tutorial)
 .macro load_mannequin_factory_tutorial
     load_mannequin_labels
-    load_game =MANNEQUIN_FACTORY, 1
+    load_game MANNEQUIN_FACTORY, 1
 .endm
 
 
@@ -42,7 +42,7 @@
 
 @ Run Game Event
 .macro mannequin_event event, args
-    game_event =MANNEQUIN_FACTORY, \event, \args
+    game_event MANNEQUIN_FACTORY, \event, \args
 .endm
 
 

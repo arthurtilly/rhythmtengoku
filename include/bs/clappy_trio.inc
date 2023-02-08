@@ -23,13 +23,13 @@
 @ Load Game: The Clappy Trio
 .macro load_clappy_trio
     load_clappy_trio_labels
-    load_game =CLAPPY_TRIO, 0
+    load_game CLAPPY_TRIO, 0
 .endm
 
 @ Load Game: The Snappy Trio
 .macro load_snappy_trio
     load_clappy_trio_labels
-    load_game =CLAPPY_TRIO, 1
+    load_game CLAPPY_TRIO, 1
 .endm
 
 
@@ -38,7 +38,7 @@
 
 @ Run Game Event
 .macro clappy_trio_event event, args
-    game_event =CLAPPY_TRIO, \event, \args
+    game_event CLAPPY_TRIO, \event, \args
 .endm
 
 

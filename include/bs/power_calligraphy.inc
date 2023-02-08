@@ -38,7 +38,7 @@
 @ Load Game: Power Calligraphy
 .macro load_power_calligraphy
     load_calligraphy_labels
-    load_game =POWER_CALLIGRAPHY, 0
+    load_game POWER_CALLIGRAPHY, 0
 .endm
 
 
@@ -47,7 +47,7 @@
 
 @ Run Game Event
 .macro calligraphy_event event, args
-    game_event =POWER_CALLIGRAPHY, \event, \args
+    game_event POWER_CALLIGRAPHY, \event, \args
 .endm
 
 

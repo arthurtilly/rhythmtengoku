@@ -39,19 +39,19 @@
 @ Load Game: Space Dance
 .macro load_space_dance
     load_space_dance_labels
-    load_game =SPACE_DANCE, 0
+    load_game SPACE_DANCE, 0
 .endm
 
 @ Load Game: Cosmic Dance
 .macro load_cosmic_dance
     load_space_dance_labels
-    load_game =SPACE_DANCE, 1
+    load_game SPACE_DANCE, 1
 .endm
 
 @ Load Game: Space Dance (Remix 3)
 .macro load_space_dance_remix3
     load_space_dance_labels
-    load_game =SPACE_DANCE, 2
+    load_game SPACE_DANCE, 2
 .endm
 
 
@@ -60,7 +60,7 @@
 
 @ Run Game Event
 .macro space_dance_event event, args
-    game_event =SPACE_DANCE, \event, \args
+    game_event SPACE_DANCE, \event, \args
 .endm
 
 

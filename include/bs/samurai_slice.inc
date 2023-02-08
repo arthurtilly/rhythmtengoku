@@ -25,13 +25,13 @@
 @ Load Game: Samurai Slice
 .macro load_samurai_slice
     load_samurai_slice_labels
-    load_game =SAMURAI_SLICE, 0
+    load_game SAMURAI_SLICE, 0
 .endm
 
 @ Load Game: Samurai Slice (Remix 2, Remix 6)
 .macro load_samurai_slice_remix
     load_samurai_slice_labels
-    load_game =SAMURAI_SLICE, 1
+    load_game SAMURAI_SLICE, 1
 .endm
 
 
@@ -40,7 +40,7 @@
 
 @ Run Game Event
 .macro samurai_slice_event event, args
-    game_event =SAMURAI_SLICE, \event, \args
+    game_event SAMURAI_SLICE, \event, \args
 .endm
 
 

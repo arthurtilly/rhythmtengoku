@@ -28,25 +28,25 @@
 @ Load Game: Karate Man
 .macro load_karate_man
     load_karate_labels
-    load_game =KARATE_MAN, 0
+    load_game KARATE_MAN, 0
 .endm
 
 @ Load Game: Karate Man (Unused Faces)
 .macro load_karate_man_unused
     load_karate_labels
-    load_game =KARATE_MAN, 1
+    load_game KARATE_MAN, 1
 .endm
 
 @ Load Game: Karate Man (Start with Serious Mode Active)
 .macro load_karate_man_serious
     load_karate_labels
-    load_game =KARATE_MAN, 2
+    load_game KARATE_MAN, 2
 .endm
 
 @ Load Game: Karate Man 2
 .macro load_karate_man_2
     load_karate_labels
-    load_game =KARATE_MAN, 3
+    load_game KARATE_MAN, 3
 .endm
 
 
@@ -55,7 +55,7 @@
 
 @ Run Game Event
 .macro karate_event event, args
-    game_event =KARATE_MAN, \event, \args
+    game_event KARATE_MAN, \event, \args
 .endm
 
 

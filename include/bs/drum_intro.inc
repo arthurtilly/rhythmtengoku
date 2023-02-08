@@ -37,25 +37,25 @@
 @ Load Game: Unused Drumming Intro (Talking)
 .macro load_drum_intro_talk
     load_drum_intro_labels
-    load_game =DRUM_INTRO, 0
+    load_game DRUM_INTRO, 0
 .endm
 
 @ Load Game: Unused Drumming Intro (Playing)
 .macro load_drum_intro_play
     load_drum_intro_labels
-    load_game =DRUM_INTRO, 1
+    load_game DRUM_INTRO, 1
 .endm
 
 @ Load Game: Tanuki & Monkey
 .macro load_tanuki_and_monkey
     load_drum_intro_labels
-    load_game =DRUM_INTRO, 2
+    load_game DRUM_INTRO, 2
 .endm
 
 @ Load Game: Samurai Drummer Cutscene
 .macro load_drum_samurai_cutscene
     load_drum_intro_labels
-    load_game =DRUM_INTRO, 3
+    load_game DRUM_INTRO, 3
 .endm
 
 
@@ -64,7 +64,7 @@
 
 @ Run Game Event
 .macro drum_intro_event event, args
-    game_event =DRUM_INTRO, \event, \args
+    game_event DRUM_INTRO, \event, \args
 .endm
 
 

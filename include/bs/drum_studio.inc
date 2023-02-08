@@ -56,31 +56,31 @@
 @ Load Game: Drum Studio (ver0)
 .macro load_drum_studio_ver0
     load_drum_studio_labels
-    load_game =DRUM_STUDIO, 0
+    load_game DRUM_STUDIO, 0
 .endm
 
 @ Load Game: Drum Studio (Drumming)
 .macro load_drum_studio_play
     load_drum_studio_labels
-    load_game =DRUM_STUDIO, 1
+    load_game DRUM_STUDIO, 1
 .endm
 
 @ Load Game: Drum Studio (ver2)
 .macro load_drum_studio_ver2
     load_drum_studio_labels
-    load_game =DRUM_STUDIO, 2
+    load_game DRUM_STUDIO, 2
 .endm
 
 @ Load Game: Drum Studio (Listening)
 .macro load_drum_studio_listen
     load_drum_studio_labels
-    load_game =DRUM_STUDIO, 3
+    load_game DRUM_STUDIO, 3
 .endm
 
 @ Load Game: Drum Lessons
 .macro load_drum_lessons
     load_drum_studio_labels
-    load_game =DRUM_STUDIO, 4
+    load_game DRUM_STUDIO, 4
 .endm
 
 
@@ -89,7 +89,7 @@
 
 @ Run Game Event
 .macro drum_studio_event event, args
-    game_event =DRUM_STUDIO, \event, \args
+    game_event DRUM_STUDIO, \event, \args
 .endm
 
 

@@ -20,13 +20,13 @@
 @ Load Game: Showtime
 .macro load_showtime
     load_showtime_labels
-    load_game =SHOWTIME, 0
+    load_game SHOWTIME, 0
 .endm
 
 @ Load Game: Showtime (Remix 3)
 .macro load_showtime_remix3
     load_showtime_labels
-    load_game =SHOWTIME, 1
+    load_game SHOWTIME, 1
 .endm
 
 
@@ -35,7 +35,7 @@
 
 @ Run Game Event
 .macro showtime_event event, args
-    game_event =SHOWTIME, \event, \args
+    game_event SHOWTIME, \event, \args
 .endm
 
 
