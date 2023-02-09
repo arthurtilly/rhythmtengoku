@@ -1,8 +1,7 @@
 #include "prologues/sneaky_spirits.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (SNEAKY SPIRITS) - SCRIPT DATA */
+  /* PROLOGUE (SNEAKY SPIRITS) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08be1c50;
@@ -64,43 +63,4 @@ const struct GameEngine D_089ea0d8 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_sneaky_spirits_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ea0f8] Prologue (Sneaky Spirits) BeatScript - Main
-const struct BeatScript D_089ea0f8[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089ea0d8, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_RUN1(func_080451e4, 6),
-    BS_PLAY_SOUND(&s_jingle_ghost_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_080451e4, 0),
-    BS_REST(0x06),
-    BS_RUN1(func_080451e4, 1),
-    BS_REST(0x06),
-    BS_RUN1(func_080451e4, 2),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x0C),
-    BS_RUN1(func_080451e4, 3),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_RUN1(func_080451e4, 4),
-    BS_REST(0x0C),
-    BS_RUN1(func_080451e4, 5),
-    BS_REST(0x0C),
-    BS_REST(0x18),
-    BS_REST(0x0C),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

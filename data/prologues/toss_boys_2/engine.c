@@ -1,8 +1,7 @@
 #include "prologues/toss_boys_2.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (TOSS BOYS 2) - SCRIPT DATA */
+  /* PROLOGUE (TOSS BOYS 2) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08c2fc5c;
@@ -65,41 +64,4 @@ const struct GameEngine D_089eda3c = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_toss_boys_2_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089eda5c] Prologue (Toss Boys 2) BeatScript - Main
-const struct BeatScript D_089eda5c[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089eda3c, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_PLAY_SOUND(&s_jingle_toss_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08047aac, 1),
-    BS_REST(0x06),
-    BS_RUN1(func_08047aac, 2),
-    BS_REST(0x06),
-    BS_RUN1(func_08047aac, 3),
-    BS_REST(0x06),
-    BS_RUN1(func_08047aac, 4),
-    BS_REST(0x06),
-    BS_RUN1(func_08047aac, 5),
-    BS_REST(0x06),
-    BS_RUN1(func_08047aac, 6),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x0C),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x0C),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

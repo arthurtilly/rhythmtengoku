@@ -1,8 +1,7 @@
 #include "prologues/rhythm_tweezers.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (RHYTHM TWEEZERS) - SCRIPT DATA */
+  /* PROLOGUE (RHYTHM TWEEZERS) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08beefac;
@@ -65,28 +64,4 @@ const struct GameEngine D_089eada4 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_rhythm_tweezers_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089eadc4] Prologue (Rhythm Tweezers) BeatScript - Main
-const struct BeatScript D_089eadc4[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089eada4, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_PLAY_SOUND(&s_jingle_datumo_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08045cc4, 5),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

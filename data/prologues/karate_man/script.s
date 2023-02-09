@@ -1,0 +1,46 @@
+.section .rodata
+.syntax unified
+
+.include "include/gba.inc"
+.include "include/bs_riq.inc"
+
+
+@ Prologue (Karate Man) - Script
+glabel D_089ea6c0
+    set_game_fade_in_time 8
+    load_game D_089ea6a0, 0
+    run stop_all_soundplayers, 0
+    rest 24
+    play_sfx s_jingle_karate_seqData
+    run func_08045604, 1
+    rest 6
+    run func_08045604, 2
+    rest 6
+    run func_08045604, 3
+    rest 6
+    run func_08045604, 4
+    rest 6
+    rest 6
+    rest 6
+    rest 6
+    rest 12
+    play_sfx s_f_boxing_title_hit_seqData
+    run func_08045628, 0
+    rest 3
+    rest 3
+    rest 3
+    rest 3
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    rest 24
+    rest 12
+    play_sfx s_intro_uh_seqData
+    rest 6
+    run func_08006d80, 0
+    rest 18
+    set_game_fade_in_time 16
+    return
+
+.end

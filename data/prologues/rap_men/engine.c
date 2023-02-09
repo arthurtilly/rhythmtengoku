@@ -1,5 +1,4 @@
 #include "prologues/rap_men.h"
-#include "bs_ext.h"
 
 
   /* PROLOGUE (RAP MEN) - SCRIPT DATA */
@@ -64,29 +63,4 @@ const struct GameEngine D_089ecd94 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_rap_men_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ecdb4] Prologue (Rap Men) BeatScript - Main
-const struct BeatScript D_089ecdb4[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089ecd94, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_PLAY_SOUND(&s_jingle_rap_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08047034, 0),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

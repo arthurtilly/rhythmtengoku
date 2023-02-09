@@ -1,8 +1,7 @@
 #include "prologues/tap_trial_2.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (TAP TRIAL 2) - SCRIPT DATA */
+  /* PROLOGUE (TAP TRIAL 2) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08c2990c;
@@ -65,33 +64,4 @@ const struct GameEngine D_089ed704 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_tap_trial_2_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ed724] Prologue (Tap Trial 2) BeatScript - Main
-const struct BeatScript D_089ed724[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089ed704, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_REST(0x18),
-    BS_PLAY_SOUND(&s_jingle_tap_seqData),
-    BS_REST(0x18),
-    BS_RUN1(func_080478b8, 1),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x18),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x0C),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

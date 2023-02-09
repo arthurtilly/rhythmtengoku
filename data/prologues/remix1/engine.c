@@ -1,8 +1,7 @@
 #include "prologues/remix1.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (REMIX 1) - SCRIPT DATA */
+  /* PROLOGUE (REMIX 1) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08c06384;
@@ -65,41 +64,4 @@ const struct GameEngine D_089ebcfc = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_remix1_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ebd1c] Prologue (Remix 1) BeatScript - Main
-const struct BeatScript D_089ebd1c[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089ebcfc, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_REST(0x18),
-    BS_PLAY_SOUND(&s_jingle_remix_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08046700, 1),
-    BS_REST(0x02),
-    BS_RUN1(func_08046700, 2),
-    BS_REST(0x02),
-    BS_RUN1(func_08046700, 3),
-    BS_REST(0x02),
-    BS_RUN1(func_08046700, 4),
-    BS_REST(0x02),
-    BS_RUN1(func_08046700, 5),
-    BS_REST(0x02),
-    BS_RUN1(func_08046700, 6),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x0C),
-    BS_PLAY_SOUND(&s_f_scratch_seqData),
-    BS_REST(0x06),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x12),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

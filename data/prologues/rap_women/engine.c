@@ -1,8 +1,7 @@
 #include "prologues/rap_women.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (RAP WOMEN) - SCRIPT DATA */
+  /* PROLOGUE (RAP WOMEN) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08c20f8c;
@@ -64,29 +63,4 @@ const struct GameEngine D_089eced0 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_rap_women_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ecef0] Prologue (Rap Women) BeatScript - Main
-const struct BeatScript D_089ecef0[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089eced0, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_PLAY_SOUND(&s_jingle_rap_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08047138, 0),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

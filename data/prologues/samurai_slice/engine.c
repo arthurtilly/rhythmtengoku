@@ -1,8 +1,7 @@
 #include "prologues/samurai_slice.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (SAMURAI SLICE) - SCRIPT DATA */
+  /* PROLOGUE (SAMURAI SLICE) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08bf7aa4;
@@ -70,38 +69,4 @@ const struct GameEngine D_089eb3d8 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_samurai_slice_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089eb3f8] Prologue (Samurai Slice) BeatScript - Main
-const struct BeatScript D_089eb3f8[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089eb3d8, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_PLAY_SOUND(&s_jingle_iai_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_PLAY_SOUND_SP(&s_f_iai_title_seqData, 0xC0, INT_TO_FIXED(0.0)),
-    BS_RUN1(scene_hide_bg_layer, 1),
-    BS_RUN1(scene_show_bg_layer, 2),
-    BS_REST(0x18),
-    BS_RUN1(func_080460d4, 1),
-    BS_REST(0x06),
-    BS_RUN1(func_080460d4, 2),
-    BS_REST(0x06),
-    BS_RUN1(func_080460d4, 3),
-    BS_REST(0x06),
-    BS_RUN1(func_080460d4, 4),
-    BS_REST(0x06),
-    BS_RUN1(func_080460d4, 5),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

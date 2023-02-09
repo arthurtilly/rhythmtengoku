@@ -1,8 +1,7 @@
 #include "prologues/bouncy_road.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (BOUNCY ROAD) - SCRIPT DATA */
+  /* PROLOGUE (BOUNCY ROAD) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08bee468;
@@ -64,29 +63,4 @@ const struct GameEngine D_089eac68 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_bouncy_road_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089eac88] Prologue (Bouncy Road) BeatScript - Main
-const struct BeatScript D_089eac88[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089eac68, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_PLAY_SOUND(&s_jingle_poli_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08045b94, 0),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08045b94, 1),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

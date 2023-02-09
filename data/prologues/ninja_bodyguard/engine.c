@@ -1,8 +1,7 @@
 #include "prologues/ninja_bodyguard.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (NINJA BODYGUARD) - SCRIPT DATA */
+  /* PROLOGUE (NINJA BODYGUARD) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08c23a3c;
@@ -64,29 +63,4 @@ const struct GameEngine D_089ed1d8 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_ninja_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ed1f8] Prologue (Ninja Bodyguard) BeatScript - Main
-const struct BeatScript D_089ed1f8[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089ed1d8, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_PLAY_SOUND(&s_jingle_iai_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_080473a4, 1),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_080473a4, 0),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

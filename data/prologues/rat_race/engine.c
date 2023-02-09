@@ -1,8 +1,7 @@
 #include "prologues/rat_race.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (RAT RACE) - SCRIPT DATA */
+  /* PROLOGUE (RAT RACE) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08c22764;
@@ -64,41 +63,4 @@ const struct GameEngine D_089ed00c = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_rat_race_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ed02c] Prologue (Rat Race) BeatScript - Main
-const struct BeatScript D_089ed02c[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089ed00c, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_PLAY_SOUND(&s_jingle_rat_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08047280, 0),
-    BS_RUN1(func_0804725c, 1),
-    BS_REST(0x06),
-    BS_RUN1(func_0804725c, 2),
-    BS_REST(0x06),
-    BS_RUN1(func_0804725c, 3),
-    BS_REST(0x06),
-    BS_RUN1(func_0804725c, 4),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x0C),
-    BS_RUN1(func_0804725c, 5),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x0C),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

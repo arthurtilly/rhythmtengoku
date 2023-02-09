@@ -1,8 +1,7 @@
 #include "prologues/marching_orders.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (MARCHING ORDERS) - SCRIPT DATA */
+  /* PROLOGUE (MARCHING ORDERS) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08bfbe68;
@@ -65,38 +64,4 @@ const struct GameEngine D_089eb6bc = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_marching_orders_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089eb6dc] Prologue (Marching Orders) BeatScript - Main
-const struct BeatScript D_089eb6dc[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089eb6bc, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_REST(0x18),
-    BS_PLAY_SOUND(&s_jingle_march_seqData),
-    BS_RUN1(func_0804630c, 1),
-    BS_REST(0x0C),
-    BS_RUN1(func_0804630c, 2),
-    BS_REST(0x0C),
-    BS_RUN1(func_0804630c, 3),
-    BS_REST(0x0C),
-    BS_RUN1(func_0804630c, 4),
-    BS_REST(0x0C),
-    BS_RUN1(func_0804630c, 5),
-    BS_REST(0x0C),
-    BS_RUN1(func_0804630c, 6),
-    BS_REST(0x0C),
-    BS_RUN1(func_0804630c, 7),
-    BS_REST(0x0C),
-    BS_REST(0x0C),
-    BS_REST(0x18),
-    BS_REST(0x0C),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x0C),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

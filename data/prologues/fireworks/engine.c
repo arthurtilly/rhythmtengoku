@@ -1,8 +1,7 @@
 #include "prologues/fireworks.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (FIREWORKS) - SCRIPT DATA */
+  /* PROLOGUE (FIREWORKS) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08bf0eb8;
@@ -64,36 +63,4 @@ const struct GameEngine D_089eaed4 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_fireworks_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089eaef4] Prologue (Fireworks) BeatScript - Main
-const struct BeatScript D_089eaef4[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089eaed4, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_RUN1(func_08045dc8, 1),
-    BS_REST(0x18),
-    BS_PLAY_SOUND(&s_jingle_bon_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x0C),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x0C),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

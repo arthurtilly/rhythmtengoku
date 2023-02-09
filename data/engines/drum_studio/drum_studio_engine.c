@@ -1,5 +1,4 @@
 #include "engines/drum_studio.h"
-#include "bs_ext.h"
 
 
   /* DRUM LESSONS - GAME ENGINE DATA */

@@ -1,8 +1,7 @@
 #include "prologues/bon_odori.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (THE BON ODORI) - SCRIPT DATA */
+  /* PROLOGUE (THE BON ODORI) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08be694c;
@@ -65,28 +64,4 @@ const struct GameEngine D_089ea434 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_bon_odori_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ea454] Prologue (The Bon Odori) BeatScript - Main
-const struct BeatScript D_089ea454[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089ea434, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_REST(0x18),
-    BS_PLAY_SOUND(&s_jingle_bon_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_080453dc, 0),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

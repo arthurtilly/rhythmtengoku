@@ -1,8 +1,7 @@
 #include "prologues/sick_beats.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (SICK BEATS) - SCRIPT DATA */
+  /* PROLOGUE (SICK BEATS) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08c33214;
@@ -64,28 +63,4 @@ const struct GameEngine D_089edd44 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_sick_beats_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089edd64] Prologue (Sick Beats) BeatScript - Main
-const struct BeatScript D_089edd64[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089edd44, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_PLAY_SOUND(&s_jingle_ghost_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08047d0c, 0),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

@@ -1,8 +1,7 @@
 #include "prologues/tram_and_pauline.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (TRAM & PAULINE) - SCRIPT DATA */
+  /* PROLOGUE (TRAM & PAULINE) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08c3106c;
@@ -64,29 +63,4 @@ const struct GameEngine D_089edc08 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_tram_pauline_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089edc28] Prologue (Tram & Pauline) BeatScript - Main
-const struct BeatScript D_089edc28[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089edc08, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_PLAY_SOUND(&s_jingle_tap_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x0C),
-    BS_RUN1(func_08047bdc, 5),
-    BS_REST(0x0C),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

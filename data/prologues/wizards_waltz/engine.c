@@ -1,8 +1,7 @@
 #include "prologues/wizards_waltz.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (WIZARD'S WALTZ) - SCRIPT DATA */
+  /* PROLOGUE (WIZARD'S WALTZ) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08c339dc;
@@ -64,27 +63,4 @@ const struct GameEngine D_089ede74 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_wizards_waltz_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ede94] Prologue (Wizard's Waltz) BeatScript - Main
-const struct BeatScript D_089ede94[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089ede74, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_PLAY_SOUND(&s_jingle_witch_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

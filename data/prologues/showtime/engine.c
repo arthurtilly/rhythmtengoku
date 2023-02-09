@@ -1,8 +1,7 @@
 #include "prologues/showtime.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (SHOWTIME) - SCRIPT DATA */
+  /* PROLOGUE (SHOWTIME) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08bed0ec;
@@ -64,29 +63,4 @@ const struct GameEngine D_089eab2c = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_showtime_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089eab4c] Prologue (Showtime) BeatScript - Main
-const struct BeatScript D_089eab4c[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089eab2c, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_REST(0x18),
-    BS_PLAY_SOUND(&s_jingle_quiz_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08045a50, 5),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

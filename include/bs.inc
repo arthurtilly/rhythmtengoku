@@ -1,5 +1,3 @@
-.include "include/gba.inc"
-
 @ Booleans
 .set FALSE, 0
 .set TRUE,  1

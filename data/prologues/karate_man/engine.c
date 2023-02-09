@@ -1,8 +1,7 @@
 #include "prologues/karate_man.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (KARATE MAN) - SCRIPT DATA */
+  /* PROLOGUE (KARATE MAN) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08bea934;
@@ -65,47 +64,4 @@ const struct GameEngine D_089ea6a0 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_karate_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ea6c0] Prologue (Karate Man) BeatScript - Main
-const struct BeatScript D_089ea6c0[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089ea6a0, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_REST(0x18),
-    BS_PLAY_SOUND(&s_jingle_karate_seqData),
-    BS_RUN1(func_08045604, 1),
-    BS_REST(0x06),
-    BS_RUN1(func_08045604, 2),
-    BS_REST(0x06),
-    BS_RUN1(func_08045604, 3),
-    BS_REST(0x06),
-    BS_RUN1(func_08045604, 4),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x0C),
-    BS_PLAY_SOUND(&s_f_boxing_title_hit_seqData),
-    BS_RUN1(func_08045628, 0),
-    BS_REST(0x03),
-    BS_REST(0x03),
-    BS_REST(0x03),
-    BS_REST(0x03),
-    BS_REST(0x0C),
-    BS_REST(0x0C),
-    BS_REST(0x0C),
-    BS_REST(0x0C),
-    BS_REST(0x18),
-    BS_REST(0x0C),
-    BS_PLAY_SOUND(&s_intro_uh_seqData),
-    BS_REST(0x06),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x12),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

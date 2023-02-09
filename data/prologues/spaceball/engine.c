@@ -1,8 +1,7 @@
 #include "prologues/spaceball.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (SPACEBALL) - SCRIPT DATA */
+  /* PROLOGUE (SPACEBALL) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08be2fd8;
@@ -65,34 +64,4 @@ const struct GameEngine D_089ea2bc = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_spaceball_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ea2dc] Prologue (Spaceball) BeatScript - Main
-const struct BeatScript D_089ea2dc[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089ea2bc, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_PLAY_SOUND(&s_jingle_baseball_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_080452e0, 1),
-    BS_REST(0x02),
-    BS_RUN1(func_080452e0, 2),
-    BS_REST(0x02),
-    BS_RUN1(func_080452e0, 3),
-    BS_REST(0x02),
-    BS_RUN1(func_080452e0, 4),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x0C),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

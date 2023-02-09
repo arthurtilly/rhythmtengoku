@@ -1,8 +1,7 @@
 #include "prologues/clappy_trio.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (THE CLAPPY TRIO) - SCRIPT DATA */
+  /* PROLOGUE (THE CLAPPY TRIO) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08bf2f64;
@@ -65,39 +64,4 @@ const struct GameEngine D_089eb064 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_clappy_trio_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089eb084] Prologue (The Clappy Trio) BeatScript - Main
-const struct BeatScript D_089eb084[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089eb064, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_REST(0x18),
-    BS_PLAY_SOUND(&s_jingle_handclap_seqData),
-    BS_RUN1(func_08045ec4, 1),
-    BS_REST(0x02),
-    BS_RUN1(func_08045ec4, 2),
-    BS_REST(0x02),
-    BS_RUN1(func_08045ec4, 3),
-    BS_REST(0x02),
-    BS_RUN1(func_08045ec4, 4),
-    BS_REST(0x02),
-    BS_RUN1(func_08045ec4, 5),
-    BS_REST(0x02),
-    BS_RUN1(func_08045ec4, 6),
-    BS_REST(0x06),
-    BS_REST(0x06),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x0C),
-    BS_REST(0x0C),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x0C),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

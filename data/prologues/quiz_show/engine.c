@@ -1,8 +1,7 @@
 #include "prologues/quiz_show.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (QUIZ SHOW) - SCRIPT DATA */
+  /* PROLOGUE (QUIZ SHOW) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08c04434;
@@ -64,28 +63,4 @@ const struct GameEngine D_089ebbcc = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_quiz_show_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ebbec] Prologue (Quiz Show) BeatScript - Main
-const struct BeatScript D_089ebbec[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089ebbcc, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_REST(0x18),
-    BS_PLAY_SOUND(&s_jingle_quiz_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };

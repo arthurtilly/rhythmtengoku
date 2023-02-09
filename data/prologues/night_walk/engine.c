@@ -1,8 +1,7 @@
 #include "prologues/night_walk.h"
-#include "bs_ext.h"
 
 
-  /* PROLOGUE (NIGHT WALK) - SCRIPT DATA */
+  /* PROLOGUE (NIGHT WALK) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08bebaa4;
@@ -64,31 +63,4 @@ const struct GameEngine D_089ea9d8 = {
     /* Common Events  */ NULL,
     /* Engine Events  */ prologue_night_walk_engine_events,
     /* Input Event    */ NULL
-};
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ea9f8] Prologue (Night Walk) BeatScript - Main
-const struct BeatScript D_089ea9f8[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089ea9d8, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_RUN1(func_080458ec, 0),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_080458ec, 1),
-    BS_REST(0x18),
-    BS_PLAY_SOUND(&s_jingle_handclap_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
 };
