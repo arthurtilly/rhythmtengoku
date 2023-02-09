@@ -294,30 +294,14 @@ const struct GraphicsTable drum_lessons_gfx_table[] = {
 };
 
 
+  //  //  //  SCRIPT DATA  //  //  //
+
+
+asm(".include \"data/engines/drum_studio/ending_scripts.inc\"");
+
+
   //  //  //  CUE DATA  //  //  //
 
-
-asm(
-".include \"include/gba.inc\" \n"
-".include \"include/bs_riq.inc\" \n"
-".include \"include/bs/drum_studio.inc\" \n"
-"load_drum_studio_labels \n"
-
-"@ Fade Out \n"
-"glabel D_089e2ad4 \n"
-    "fade_music_out TO_TEMPO, 24 \n"
-    "fade_screen_out 12, BLACK \n"
-    "rest 24 \n"
-    "stop \n"
-
-"@ Show Replay Options, then Fade Out \n"
-"glabel D_089e2b04 \n"
-    "dms_event01 0 \n"
-    "dms_show_save_options 0 \n"
-    "set_tempo 140 \n"
-    "rest 12 \n"
-    "goto D_089e2ad4 \n"
-);
 
 // [D_089e2b58] ?
 const struct Vector2 D_089e2b58[] = {
