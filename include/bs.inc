@@ -277,7 +277,7 @@
 
 @ [0x29] Play Sound Effect
 .macro play_sfx sound
-    bs_command 0x28, 0, 0, \sound
+    bs_command 0x29, 0, 0, \sound
 .endm
 
 

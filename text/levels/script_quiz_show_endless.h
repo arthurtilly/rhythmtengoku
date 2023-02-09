@@ -1,6 +1,5 @@
 #include "global.h"
 #include "text.h"
-#include "bs_ext.h"
 #include "engines/quiz_show.h"
 
 // Quiz Show (Endless)

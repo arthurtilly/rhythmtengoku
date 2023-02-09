@@ -116,7 +116,7 @@
 
 @ [RIQ] Set Current Game Engine
 .macro load_game engine, version
-    run2 gameplay_set_current_engine, \engine, \version
+    run2 gameplay_set_current_engine, \version, \engine
 .endm
 
 

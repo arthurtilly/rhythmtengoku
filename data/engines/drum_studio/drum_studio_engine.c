@@ -298,22 +298,27 @@ const struct GraphicsTable drum_lessons_gfx_table[] = {
   //  //  //  CUE DATA  //  //  //
 
 
-// [D_089e2ad4] ?
-const struct BeatScript D_089e2ad4[] = {
-    BS_FADE_MUSIC_OUT(BS_TO_TEMPO, 24),
-    BS_FADE_SCREEN_OUT(0x0C, BS_BLACK),
-    BS_REST(0x18),
-    BS_STOP
-};
+asm(
+".include \"include/gba.inc\" \n"
+".include \"include/bs_riq.inc\" \n"
+".include \"include/bs/drum_studio.inc\" \n"
+"load_drum_studio_labels \n"
 
-// [D_089e2b04] ?
-const struct BeatScript D_089e2b04[] = {
-    BS_RIQ_GAME_EVENT(&D_089e2ea0, 0x01, 0),
-    BS_RIQ_GAME_EVENT(&D_089e2ea0, 0x05, 0),
-    BS_EXT_SET_TEMPO(140),
-    BS_REST(0x0C),
-    BS_GOTO(D_089e2ad4)
-};
+"@ Fade Out \n"
+"glabel D_089e2ad4 \n"
+    "fade_music_out TO_TEMPO, 24 \n"
+    "fade_screen_out 12, BLACK \n"
+    "rest 24 \n"
+    "stop \n"
+
+"@ Show Replay Options, then Fade Out \n"
+"glabel D_089e2b04 \n"
+    "dms_event01 0 \n"
+    "dms_show_save_options 0 \n"
+    "set_tempo 140 \n"
+    "rest 12 \n"
+    "goto D_089e2ad4 \n"
+);
 
 // [D_089e2b58] ?
 const struct Vector2 D_089e2b58[] = {

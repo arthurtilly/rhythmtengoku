@@ -2,7 +2,7 @@
 #include "bs_ext.h"
 
 
-  /* PROLOGUE (BON DANCE) - SCRIPT DATA */
+  /* PROLOGUE (BON DANCE) - ENGINE DATA */
 
 
 extern const struct CompressedGraphics D_08be854c;
@@ -66,30 +66,3 @@ const struct GameEngine D_089ea564 = {
     /* Engine Events  */ prologue_bon_dance_engine_events,
     /* Input Event    */ NULL
 };
-
-
-  //  //  //  SCRIPT  //  //  //
-
-
-// [D_089ea584] Prologue (Bon Dance) BeatScript - Main
-const struct BeatScript D_089ea584[] = {
-    BS_RIQ_FADE_SCREEN_IN(0x08),
-    BS_RIQ_LOAD_GAME_ENGINE(&D_089ea564, 0),
-    BS_RUN1(stop_all_soundplayers, 0),
-    BS_REST(0x18),
-    BS_PLAY_SOUND(&s_jingle_bon_seqData),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_080454e0, 0x5),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_REST(0x18),
-    BS_RUN1(func_08006d80, 0),
-    BS_REST(0x18),
-    BS_RIQ_FADE_SCREEN_IN(0x10),
-    BS_RETURN
-};
-
-asm(".include \"include/bs_riq.inc\"");
