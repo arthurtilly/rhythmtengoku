@@ -226,7 +226,6 @@ D_088e41e8 = 0x088e41e8;
 D_088e46e8 = 0x088e46e8;
 D_088e75e8 = 0x088e75e8;
 D_088e7c68 = 0x088e7c68;
-
 /* Main Menu - Options Animations */
 D_088f5aec = 0x088f5aec;
 D_088f5afc = 0x088f5afc;
@@ -241,93 +240,6 @@ D_088f5bcc = 0x088f5bcc;
 D_088f5bdc = 0x088f5bdc;
 /* Main Menu - Options Palettes */
 D_088f5bfc = 0x088f5bfc;
-/* Epilogue Palettes */
-/* Sneaky Spirits */
-D_088fe8cc = 0x088fe8cc;
-/* Spaceball */
-D_088feacc = 0x088feacc;
-/* Bon Dance */
-D_088feccc = 0x088feccc;
-/* The Bon Odori */
-D_088fecec = 0x088fecec;
-/* Karate Man */
-D_088fed8c = 0x088fed8c;
-/* Cosmic Dance */
-D_088fedcc = 0x088fedcc;
-/* LIVE Menu */
-D_088fedec = 0x088fedec;
-/* Night Walk */
-D_088fee0c = 0x088fee0c;
-/* Showtime */
-D_088ff00c = 0x088ff00c;
-/* Bouncy Road */
-D_088ff02c = 0x088ff02c;
-/* Rhythm Tweezers */
-D_088ff04c = 0x088ff04c;
-/* Fireworks */
-D_088ff0ac = 0x088ff0ac;
-/* The Clappy Trio */
-D_088ff2ac = 0x088ff2ac;
-/* The Snappy Trio */
-D_088ff2ec = 0x088ff2ec;
-/* Samurai Slice */
-D_088ff30c = 0x088ff30c;
-/* Power Calligraphy */
-D_088ff3ac = 0x088ff3ac;
-/* Marching Orders */
-D_088ff40c = 0x088ff40c;
-/* Marching Orders 2 */
-D_088ff42c = 0x088ff42c;
-/* Polyrhythm */
-D_088ff44c = 0x088ff44c;
-/* Quiz Show */
-D_088ff56c = 0x088ff56c;
-/* Bunny Hop */
-D_088ff5cc = 0x088ff5cc;
-/* Rap Men */
-D_088ff7cc = 0x088ff7cc;
-/* Rap Women */
-D_088ff7ec = 0x088ff7ec;
-/* Rat Race */
-D_088ff80c = 0x088ff80c;
-/* Remix 1 */
-D_088ffa0c = 0x088ffa0c;
-/* Remix 2 */
-D_088ffa2c = 0x088ffa2c;
-/* Remix 3 */
-D_088ffa8c = 0x088ffa8c;
-/* Remix 4 */
-D_088ffaac = 0x088ffaac;
-/* Remix 5 */
-D_088ffb0c = 0x088ffb0c;
-/* Remix 6 */
-D_088ffb2c = 0x088ffb2c;
-/* Remix 7 */
-D_088ffb8c = 0x088ffb8c;
-/* Remix 8 */
-D_088ffbec = 0x088ffbec;
-/* Ninja Bodyguard */
-D_088ffc4c = 0x088ffc4c;
-/* Ninja Bodyguard 2 */
-D_088ffc6c = 0x088ffc6c;
-/* Space Dance */
-D_088ffc8c = 0x088ffc8c;
-/* Tap Trial */
-D_088ffcac = 0x088ffcac;
-/* Tap Trial 2 */
-D_088ffcec = 0x088ffcec;
-/* Toss Boys */
-D_088ffd0c = 0x088ffd0c;
-/* Toss Boys 2 */
-D_088fff0c = 0x088fff0c;
-/* Tram & Pauline */
-D_088fff2c = 0x088fff2c;
-/* Sick Beats */
-D_088fff4c = 0x088fff4c;
-/* Magician */
-D_088fff6c = 0x088fff6c;
-/* Placeholder (Unused) */
-D_088fffec = 0x088fffec;
 /* Arrival Animations */
 D_089000cc = 0x089000cc;
 D_089000f4 = 0x089000f4;
@@ -392,7 +304,7 @@ D_08901ac0 = 0x08901ac0;
 D_08902ec0 = 0x08902ec0;
 D_08903020 = 0x08903020;
 D_08903120 = 0x08903120;
-/* Game Select Graphics */ /* Uncompressed */
+/* Game Select Overlay Graphics */ /* Uncompressed */
 D_089031c0 = 0x089031c0;
 D_08903640 = 0x08903640;
 D_089039a0 = 0x089039a0;
@@ -401,7 +313,7 @@ D_08903be0 = 0x08903be0;
 D_08904180 = 0x08904180;
 D_089055c0 = 0x089055c0;
 D_089056e0 = 0x089056e0;
-/* Game Icons Graphics */ /* Uncompressed */
+/* Game Select Icon Graphics */ /* Uncompressed */
 D_089057e0 = 0x089057e0;
 D_08905900 = 0x08905900;
 D_08905a20 = 0x08905a20;
@@ -571,24 +483,6 @@ D_0890dbc8 = 0x0890dbc8;
 D_08932444 = 0x08932444;
 /* Health & Safety Warning Palettes */
 D_0893253c = 0x0893253c;
-/* Unknown - 116 Animations */
-D_08935bc4 = 0x08935bc4;
-D_08935bdc = 0x08935bdc;
-D_08935bf4 = 0x08935bf4;
-D_08935c0c = 0x08935c0c;
-D_08935c24 = 0x08935c24;
-D_08935c3c = 0x08935c3c;
-D_08935c54 = 0x08935c54;
-D_08935c6c = 0x08935c6c;
-D_08935c84 = 0x08935c84;
-D_08935c9c = 0x08935c9c;
-D_08935cac = 0x08935cac;
-D_08935cbc = 0x08935cbc;
-D_08935ccc = 0x08935ccc;
-D_08935cdc = 0x08935cdc;
-D_08935d24 = 0x08935d24;
-/* Unknown - 116 Palettes */
-D_08935d6c = 0x08935d6c;
 
 /* Karate Man BG Face Map */
 D_08936650 = 0x08936650;
