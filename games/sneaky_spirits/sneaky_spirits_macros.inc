@@ -58,56 +58,56 @@
 
 
 @ [Event 0x00] Show Ghost (at given horizontal position)
-.macro ss_show_ghost pos
+.macro sneaky_spirits_show_ghost pos
     sneaky_spirits_event 0x00, \pos
 .endm
 
 @ [Event 0x01] Set Ghost Appearance Height (default = 0x100)
-.macro ss_set_ghost_height multiplier
+.macro sneaky_spirits_set_ghost_height multiplier
     sneaky_spirits_event 0x01, \multiplier
 .endm
 
 @ [Event 0x02] Spawn Bow
-.macro ss_spawn_bow noArgs
+.macro sneaky_spirits_spawn_bow noArgs
     sneaky_spirits_event 0x02, \noArgs
 .endm
 
 @ [Event 0x03] Draw Bow
-.macro ss_draw_bow noArgs
+.macro sneaky_spirits_draw_bow noArgs
     sneaky_spirits_event 0x03, \noArgs
 .endm
 
 @ [Event 0x04] Enable Wind/Rain Ambience
-.macro ss_enable_wind_sfx enable
+.macro sneaky_spirits_enable_wind_sfx enable
     sneaky_spirits_event 0x04, \enable
 .endm
 
 @ [Event 0x05] Print Text
-.macro ss_print_text string
+.macro sneaky_spirits_print_text string
     sneaky_spirits_event 0x05, \string
 .endm
 
 @ [Event 0x06] Set Rain Speed (Normal/Slow-Motion)
-.macro ss_set_rain_speed speed
+.macro sneaky_spirits_set_rain_speed speed
     sneaky_spirits_event 0x06, \speed
 .endm
 
 @ [Event 0x07] Freeze Slow-Motion Rain
-.macro ss_freeze_slow_rain enable
+.macro sneaky_spirits_freeze_slow_rain enable
     sneaky_spirits_event 0x07, \enable
 .endm
 
 @ [Event 0x08] Display Tutorial Ghost Sprite
-.macro ss_show_tutorial_ghost show
+.macro sneaky_spirits_show_tutorial_ghost show
     sneaky_spirits_event 0x08, \show
 .endm
 
 @ [Event 0x09] Set Animation Frame for Tutorial Ghost Sprite
-.macro ss_set_tutorial_ghost_frame frame
+.macro sneaky_spirits_set_tutorial_ghost_frame frame
     sneaky_spirits_event 0x09, \frame
 .endm
 
 @ [Event 0x0A] Nothing
-.macro ss_stub_event noArgs
+.macro sneaky_spirits_stub_event noArgs
     sneaky_spirits_event 0x0A, \noArgs
 .endm

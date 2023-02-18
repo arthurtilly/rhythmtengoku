@@ -60,31 +60,31 @@
 
 
 @ [Event 0x00] Spawn Block
-.macro poly_spawn_block blockID, lane, blockType
+.macro polyrhythm_spawn_block blockID, lane, blockType
     polyrhythm_event 0x00, (((\blockID & 0xF)) | ((\lane & 1) << 4) | ((\blockType) << 5))
 .endm
 
 @ [Event 0x01] Despawn All Blocks on Lane
-.macro poly_despawn_blocks lane
+.macro polyrhythm_despawn_blocks lane
     polyrhythm_event 0x01, \lane
 .endm
 
 @ [Event 0x02] Retract All Pistons on Lane
-.macro poly_retract_pistons lane
+.macro polyrhythm_retract_pistons lane
     polyrhythm_event 0x02, \lane
 .endm
 
 @ [Event 0x03] Spawn Rod on Lane
-.macro poly_spawn_rod lane
+.macro polyrhythm_spawn_rod lane
     polyrhythm_event 0x03, \lane
 .endm
 
 @ [Event 0x04] Play Applause SFX on Successful Pattern
-.macro poly_play_applause_sfx noArgs
+.macro polyrhythm_play_applause_sfx noArgs
     polyrhythm_event 0x04, \noArgs
 .endm
 
 @ [Event 0x05] Nothing
-.macro poly_stub_event noArgs
+.macro polyrhythm_stub_event noArgs
     polyrhythm_event 0x05, \noArgs
 .endm

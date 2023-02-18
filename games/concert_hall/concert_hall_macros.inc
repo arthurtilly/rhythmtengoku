@@ -30,11 +30,11 @@
 
 
 @ [Event 0x00] Freeze Scene
-.macro ch_freeze_scene args
+.macro concert_hall_freeze_scene args
     concert_hall_event 0x00, \args
 .endm
 
 @ [Event 0x01] Nothing
-.macro ch_stub_event noArgs
+.macro concert_hall_stub_event noArgs
     concert_hall_event 0x01, \noArgs
 .endm

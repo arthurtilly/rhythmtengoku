@@ -22,7 +22,7 @@ glabel D_08068320
 
 @ Pattern
 glabel D_08068328
-    qz_event06 192
+    quiz_show_event06 192
     rest 192
     return
 
@@ -31,83 +31,83 @@ glabel D_08068328
 glabel D_08068358
     rest 24
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
 
     switch_random INT8, 3
         case 0
-            qz_event02 0
+            quiz_show_event02 0
             rest 8
-            qz_event02 0
+            quiz_show_event02 0
             rest 8
-            qz_event02 0
+            quiz_show_event02 0
             rest 8
             break
 
         case 1
-            qz_event02 0
+            quiz_show_event02 0
             rest 6
             rest 6
             rest 6
-            qz_event02 1
+            quiz_show_event02 1
             rest 6
             break
 
         case 2
-            qz_event02 0
+            quiz_show_event02 0
             rest 6
-            qz_event02 1
+            quiz_show_event02 1
             rest 6
             rest 6
-            qz_event02 1
+            quiz_show_event02 1
             rest 6
             break
     end_switch
 
     switch_random INT8, 3
         case 0
-            qz_event02 0
+            quiz_show_event02 0
             rest 12
             rest 6
-            qz_event02 0
+            quiz_show_event02 0
             rest 12
             rest 6
-            qz_event02 0
+            quiz_show_event02 0
             rest 12
             rest 6
             break
 
         case 1
-            qz_event02 0
+            quiz_show_event02 0
             rest 6
             rest 6
-            qz_event02 0
+            quiz_show_event02 0
             rest 6
             rest 6
             break
 
         case 2
-            qz_event02 0
+            quiz_show_event02 0
             rest 12
-            qz_event02 0
+            quiz_show_event02 0
             rest 6
-            qz_event02 1
+            quiz_show_event02 1
             rest 6
-            qz_event02 0
+            quiz_show_event02 0
             rest 12
             break
     end_switch
 
-    qz_event0C 0x108
+    quiz_show_event0C 0x108
     return
 
 
@@ -115,29 +115,29 @@ glabel D_08068358
 glabel D_080687f0
     rest 24
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 8
-    qz_event02 0
+    quiz_show_event02 0
     rest 8
-    qz_event02 0
+    quiz_show_event02 0
     rest 8
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
     return
 
@@ -153,24 +153,24 @@ glabel D_080689b8
 glabel D_080689c0
     rest 24
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 8
-    qz_event02 0
+    quiz_show_event02 0
     rest 8
-    qz_event02 0
+    quiz_show_event02 0
     rest 8
-    qz_event02 0
+    quiz_show_event02 0
     rest 24
     return
 
@@ -193,22 +193,22 @@ glabel D_08068b3c
 glabel D_08068b44
     rest 24
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 24
     return
 
@@ -224,18 +224,18 @@ glabel D_08068c94
 glabel D_08068c9c
     rest 24
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 24
     rest 24
     return
@@ -252,16 +252,16 @@ glabel D_08068db0
 glabel D_08068db8
     rest 24
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 24
     rest 24
     return
@@ -278,13 +278,13 @@ glabel D_08068ea8
 glabel D_08068eb0
     rest 24
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 24
     rest 24
     return
@@ -301,11 +301,11 @@ glabel D_08068f70
 glabel D_08068f78
     rest 24
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 24
     rest 24
     return
@@ -325,79 +325,79 @@ glabel D_0806901c
 
     switch_random INT8, 2
         case 0
-            qz_event02 0
+            quiz_show_event02 0
             rest 24
             break
 
         case 1
-            qz_event02 0
+            quiz_show_event02 0
             rest 12
-            qz_event02 0
+            quiz_show_event02 0
             rest 12
             break
     end_switch
 
     switch_random INT8, 3
         case 0
-            qz_event02 0
+            quiz_show_event02 0
             rest 6
-            qz_event02 1
+            quiz_show_event02 1
             rest 6
-            qz_event02 0
+            quiz_show_event02 0
             rest 12
             break
 
         case 1
-            qz_event02 0
+            quiz_show_event02 0
             rest 12
-            qz_event02 0
+            quiz_show_event02 0
             rest 6
-            qz_event02 1
+            quiz_show_event02 1
             rest 6
             break
 
         case 2
-            qz_event02 0
+            quiz_show_event02 0
             rest 6
-            qz_event02 1
+            quiz_show_event02 1
             rest 6
-            qz_event02 0
+            quiz_show_event02 0
             rest 6
-            qz_event02 1
+            quiz_show_event02 1
             rest 6
             break
     end_switch
 
     switch_random INT8, 3
         case 0
-            qz_event02 0
+            quiz_show_event02 0
             rest 12
-            qz_event02 0
+            quiz_show_event02 0
             rest 12
             break
 
         case 1
-            qz_event02 0
+            quiz_show_event02 0
             rest 12
-            qz_event02 0
+            quiz_show_event02 0
             rest 6
-            qz_event02 1
+            quiz_show_event02 1
             rest 6
             break
 
         case 2
-            qz_event02 0
+            quiz_show_event02 0
             rest 6
-            qz_event02 1
+            quiz_show_event02 1
             rest 6
-            qz_event02 0
+            quiz_show_event02 0
             rest 6
-            qz_event02 1
+            quiz_show_event02 1
             rest 6
             break
     end_switch
 
-    qz_event0C 0x108
+    quiz_show_event0C 0x108
     return
 
 
@@ -405,24 +405,24 @@ glabel D_0806901c
 glabel D_0806949c
     rest 24
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 24
     return
 
@@ -438,22 +438,22 @@ glabel D_08069610
 glabel D_08069618
     rest 24
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 24
     return
 
@@ -469,18 +469,18 @@ glabel D_08069768
 glabel D_08069770
     rest 24
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 6
-    qz_event02 1
+    quiz_show_event02 1
     rest 6
-    qz_event02 0
+    quiz_show_event02 0
     rest 24
     rest 24
     return
@@ -497,14 +497,14 @@ glabel D_08069884
 glabel D_0806988c
     rest 24
     rest 24
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 12
-    qz_event02 0
+    quiz_show_event02 0
     rest 24
     rest 24
     return

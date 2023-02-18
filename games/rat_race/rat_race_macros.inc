@@ -49,96 +49,96 @@
 
 
 @ [Event 0x00] Nothing
-.macro rat_stub_event noArgs
+.macro rat_race_stub_event noArgs
     rat_race_event 0x00, \noArgs
 .endm
 
 @ [Event 0x01] ?
-.macro rat_event01 args
+.macro rat_race_event01 args
     rat_race_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro rat_event02 args
+.macro rat_race_event02 args
     rat_race_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro rat_event03 args
+.macro rat_race_event03 args
     rat_race_event 0x03, \args
 .endm
 
 @ [Event 0x04] ?
-.macro rat_event04 args
+.macro rat_race_event04 args
     rat_race_event 0x04, \args
 .endm
 
 @ [Event 0x05] ?
-.macro rat_event05 args
+.macro rat_race_event05 args
     rat_race_event 0x05, \args
 .endm
 
 @ [Event 0x06] ?
-.macro rat_event06 args
+.macro rat_race_event06 args
     rat_race_event 0x06, \args
 .endm
 
 @ [Event 0x07] ?
-.macro rat_event07 args
+.macro rat_race_event07 args
     rat_race_event 0x07, \args
 .endm
 
 @ [Event 0x08] ?
-.macro rat_event08 args
+.macro rat_race_event08 args
     rat_race_event 0x08, \args
 .endm
 
 @ [Event 0x09] ?
-.macro rat_event09 args
+.macro rat_race_event09 args
     rat_race_event 0x09, \args
 .endm
 
 @ [Event 0x0A] ?
-.macro rat_event0A args
+.macro rat_race_event0A args
     rat_race_event 0x0A, \args
 .endm
 
 @ [Event 0x0B] ?
-.macro rat_event0B args
+.macro rat_race_event0B args
     rat_race_event 0x0B, \args
 .endm
 
 @ [Event 0x0C] ?
-.macro rat_event0C args
+.macro rat_race_event0C args
     rat_race_event 0x0C, \args
 .endm
 
 @ [Event 0x0D] ?
-.macro rat_event0D args
+.macro rat_race_event0D args
     rat_race_event 0x0D, \args
 .endm
 
 @ [Event 0x0E] ?
-.macro rat_event0E args
+.macro rat_race_event0E args
     rat_race_event 0x0E, \args
 .endm
 
 @ [Event 0x0F] ?
-.macro rat_event0F args
+.macro rat_race_event0F args
     rat_race_event 0x0F, \args
 .endm
 
 @ [Event 0x10] ?
-.macro rat_event10 args
+.macro rat_race_event10 args
     rat_race_event 0x10, \args
 .endm
 
 @ [Event 0x11] ?
-.macro rat_event11 args
+.macro rat_race_event11 args
     rat_race_event 0x11, \args
 .endm
 
 @ [Event 0x12] ?
-.macro rat_event12 args
+.macro rat_race_event12 args
     rat_race_event 0x12, \args
 .endm

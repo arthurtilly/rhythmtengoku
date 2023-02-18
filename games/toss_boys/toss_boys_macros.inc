@@ -69,51 +69,51 @@
 
 
 @ [Event 0x00] ?
-.macro tb_event00 args
+.macro toss_boys_event00 args
     toss_boys_event 0x00, \args
 .endm
 
 @ [Event 0x01] ?
-.macro tb_event01 args
+.macro toss_boys_event01 args
     toss_boys_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro tb_event02 args
+.macro toss_boys_event02 args
     toss_boys_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro tb_event03 args
+.macro toss_boys_event03 args
     toss_boys_event 0x03, \args
 .endm
 
 @ [Event 0x04] ?
-.macro tb_event04 args
+.macro toss_boys_event04 args
     toss_boys_event 0x04, \args
 .endm
 
 @ [Event 0x05] ?
-.macro tb_event05 args
+.macro toss_boys_event05 args
     toss_boys_event 0x05, \args
 .endm
 
 @ [Event 0x06] ?
-.macro tb_event06 args
+.macro toss_boys_event06 args
     toss_boys_event 0x06, \args
 .endm
 
 @ [Event 0x07] ?
-.macro tb_event07 args
+.macro toss_boys_event07 args
     toss_boys_event 0x07, \args
 .endm
 
 @ [Event 0x08] ?
-.macro tb_event08 args
+.macro toss_boys_event08 args
     toss_boys_event 0x08, \args
 .endm
 
 @ [Event 0x09] Nothing
-.macro tb_stub_event noArgs
+.macro toss_boys_stub_event noArgs
     toss_boys_event 0x09, \noArgs
 .endm

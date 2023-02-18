@@ -45,51 +45,51 @@
 
 
 @ [Event 0x00] Nothing
-.macro iai_stub_event noArgs
+.macro samurai_slice_stub_event noArgs
     samurai_slice_event 0x00, \noArgs
 .endm
 
 @ [Event 0x01] ?
-.macro iai_event01 args
+.macro samurai_slice_event01 args
     samurai_slice_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro iai_event02 args
+.macro samurai_slice_event02 args
     samurai_slice_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro iai_event03 args
+.macro samurai_slice_event03 args
     samurai_slice_event 0x03, \args
 .endm
 
 @ [Event 0x04] ?
-.macro iai_event04 args
+.macro samurai_slice_event04 args
     samurai_slice_event 0x04, \args
 .endm
 
 @ [Event 0x05] ?
-.macro iai_event05 args
+.macro samurai_slice_event05 args
     samurai_slice_event 0x05, \args
 .endm
 
 @ [Event 0x06] ?
-.macro iai_event06 args
+.macro samurai_slice_event06 args
     samurai_slice_event 0x06, \args
 .endm
 
 @ [Event 0x07] ?
-.macro iai_event07 args
+.macro samurai_slice_event07 args
     samurai_slice_event 0x07, \args
 .endm
 
 @ [Event 0x08] ?
-.macro iai_event08 args
+.macro samurai_slice_event08 args
     samurai_slice_event 0x08, \args
 .endm
 
 @ [Event 0x09] ?
-.macro iai_event09 args
+.macro samurai_slice_event09 args
     samurai_slice_event 0x09, \args
 .endm

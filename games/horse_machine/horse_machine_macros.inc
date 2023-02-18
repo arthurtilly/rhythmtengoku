@@ -39,41 +39,41 @@
 
 
 @ [Event 0x00] ?
-.macro horse_event00 args
+.macro horse_machine_event00 args
     horse_machine_event 0x00, \args
 .endm
 
 @ [Event 0x01] ?
-.macro horse_event01 args
+.macro horse_machine_event01 args
     horse_machine_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro horse_event02 args
+.macro horse_machine_event02 args
     horse_machine_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro horse_event03 args
+.macro horse_machine_event03 args
     horse_machine_event 0x03, \args
 .endm
 
 @ [Event 0x04] ?
-.macro horse_event04 args
+.macro horse_machine_event04 args
     horse_machine_event 0x04, \args
 .endm
 
 @ [Event 0x05] ?
-.macro horse_event05 args
+.macro horse_machine_event05 args
     horse_machine_event 0x05, \args
 .endm
 
 @ [Event 0x06] ?
-.macro horse_event06 args
+.macro horse_machine_event06 args
     horse_machine_event 0x06, \args
 .endm
 
 @ [Event 0x07] ?
-.macro horse_event07 args
+.macro horse_machine_event07 args
     horse_machine_event 0x07, \args
 .endm

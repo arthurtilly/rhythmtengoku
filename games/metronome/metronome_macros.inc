@@ -33,26 +33,26 @@
 
 
 @ [Event 0x00] ?
-.macro metro_event00 args
+.macro metronome_event00 args
     metronome_event 0x00, \args
 .endm
 
 @ [Event 0x01] ?
-.macro metro_event01 args
+.macro metronome_event01 args
     metronome_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro metro_event02 args
+.macro metronome_event02 args
     metronome_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro metro_event03 args
+.macro metronome_event03 args
     metronome_event 0x03, \args
 .endm
 
 @ [Event 0x04] Nothing
-.macro metro_stub_event noArgs
+.macro metronome_stub_event noArgs
     metronome_event 0x04, \noArgs
 .endm

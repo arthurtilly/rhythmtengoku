@@ -50,16 +50,16 @@
 
 
 @ [Event 0x00] ?
-.macro tp_event00 args
+.macro tram_and_pauline_event00 args
     tram_and_pauline_event 0x00, \args
 .endm
 
 @ [Event 0x01] ?
-.macro tp_event01 args
+.macro tram_and_pauline_event01 args
     tram_and_pauline_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro tp_event02 args
+.macro tram_and_pauline_event02 args
     tram_and_pauline_event 0x02, \args
 .endm

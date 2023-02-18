@@ -45,16 +45,16 @@
 
 
 @ [Event 0x00] Rap
-.macro rap_animate_rapper animID
+.macro rap_men_animate_rapper animID
     rap_men_event 0x00, \animID
 .endm
 
 @ [Event 0x01] Enable Tutorial
-.macro rap_enable_tutorial enable
+.macro rap_men_enable_tutorial enable
     rap_men_event 0x01, \enable
 .endm
 
 @ [Event 0x02] Nothing
-.macro rap_stub_event noArgs
+.macro rap_men_stub_event noArgs
     rap_men_event 0x02, \noArgs
 .endm

@@ -37,41 +37,41 @@
 
 
 @ [Event 0x00] ?
-.macro rh_test_event00 args
+.macro rhythm_test_event00 args
     rhythm_test_event 0x00, \args
 .endm
 
 @ [Event 0x01] ?
-.macro rh_test_event01 args
+.macro rhythm_test_event01 args
     rhythm_test_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro rh_test_event02 args
+.macro rhythm_test_event02 args
     rhythm_test_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro rh_test_event03 args
+.macro rhythm_test_event03 args
     rhythm_test_event 0x03, \args
 .endm
 
 @ [Event 0x04] ?
-.macro rh_test_event04 args
+.macro rhythm_test_event04 args
     rhythm_test_event 0x04, \args
 .endm
 
 @ [Event 0x05] ?
-.macro rh_test_event05 args
+.macro rhythm_test_event05 args
     rhythm_test_event 0x05, \args
 .endm
 
 @ [Event 0x06] ?
-.macro rh_test_event06 args
+.macro rhythm_test_event06 args
     rhythm_test_event 0x06, \args
 .endm
 
 @ [Event 0x07] Nothing
-.macro rh_test_stub_event noArgs
+.macro rhythm_test_stub_event noArgs
     rhythm_test_event 0x07, \noArgs
 .endm

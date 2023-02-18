@@ -64,42 +64,42 @@
 
 
 @ Run Game Event
-.macro marching_event event, args
+.macro marching_orders_event event, args
     game_event marching_orders_engine, \event, \args
 .endm
 
 
 @ [Event 0x00] ?
-.macro mch_event00 args
+.macro marching_orders_event00 args
     marching_event 0x00, \args
 .endm
 
 @ [Event 0x01] ?
-.macro mch_event01 args
-    marching_event 0x01, \args
+.macro marching_orders_event01 args
+    marching_orders_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro mch_event02 args
-    marching_event 0x02, \args
+.macro marching_orders_event02 args
+    marching_orders_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro mch_event03 args
-    marching_event 0x03, \args
+.macro marching_orders_event03 args
+    marching_orders_event 0x03, \args
 .endm
 
 @ [Event 0x04] ?
-.macro mch_event04 args
-    marching_event 0x04, \args
+.macro marching_orders_event04 args
+    marching_orders_event 0x04, \args
 .endm
 
 @ [Event 0x05] Play Voice SFX
-.macro mch_play_voice_sfx id
-    marching_event 0x05, \id
+.macro marching_orders_play_voice_sfx id
+    marching_orders_event 0x05, \id
 .endm
 
 @ [Event 0x06] Nothing
-.macro mch_stub_event noArgs
-    marching_event 0x06, \noArgs
+.macro marching_orders_stub_event noArgs
+    marching_orders_event 0x06, \noArgs
 .endm

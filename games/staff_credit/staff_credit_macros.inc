@@ -33,26 +33,26 @@
 
 
 @ [Event 0x00] ?
-.macro staff_event00 args
+.macro staff_credit_event00 args
     staff_credit_event 0x00, \args
 .endm
 
 @ [Event 0x01] ?
-.macro staff_event01 args
+.macro staff_credit_event01 args
     staff_credit_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro staff_event02 args
+.macro staff_credit_event02 args
     staff_credit_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro staff_event03 args
+.macro staff_credit_event03 args
     staff_credit_event 0x03, \args
 .endm
 
 @ [Event 0x04] Nothing
-.macro staff_stub_event noArgs
+.macro staff_credit_stub_event noArgs
     staff_credit_event 0x04, \noArgs
 .endm

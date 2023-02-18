@@ -47,6 +47,6 @@
 
 
 @ [Event 0x00] Nothing
-.macro toy_stub_event noArgs
+.macro rhythm_toys_stub_event noArgs
     rhythm_toys_event 0x00, \noArgs
 .endm

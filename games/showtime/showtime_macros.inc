@@ -40,11 +40,11 @@
 
 
 @ [Event 0x00] ?
-.macro st_event00 args
+.macro showtime_event00 args
     showtime_event 0x00, \args
 .endm
 
 @ [Event 0x01] Nothing
-.macro st_stub_event noArgs
+.macro showtime_stub_event noArgs
     showtime_event 0x01, \noArgs
 .endm

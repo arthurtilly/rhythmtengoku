@@ -47,36 +47,36 @@
 
 
 @ [Event 0x00] ?
-.macro upb_event00 args
+.macro mr_upbeat_event00 args
     mr_upbeat_event 0x00, \args
 .endm
 
 @ [Event 0x01] ?
-.macro upb_event01 args
+.macro mr_upbeat_event01 args
     mr_upbeat_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro upb_event02 args
+.macro mr_upbeat_event02 args
     mr_upbeat_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro upb_event03 args
+.macro mr_upbeat_event03 args
     mr_upbeat_event 0x03, \args
 .endm
 
 @ [Event 0x04] ?
-.macro upb_event04 args
+.macro mr_upbeat_event04 args
     mr_upbeat_event 0x04, \args
 .endm
 
 @ [Event 0x05] ?
-.macro upb_event05 args
+.macro mr_upbeat_event05 args
     mr_upbeat_event 0x05, \args
 .endm
 
 @ [Event 0x06] Nothing
-.macro upb_stub_event noArgs
+.macro mr_upbeat_stub_event noArgs
     mr_upbeat_event 0x06, \noArgs
 .endm

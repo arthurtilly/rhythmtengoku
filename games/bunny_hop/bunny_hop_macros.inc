@@ -66,51 +66,51 @@
 
 
 @ [Event 0x0] Nothing
-.macro bh_stub_event noArgs
+.macro bunny_hop_stub_event noArgs
     bunny_hop_event 0x00, \noArgs
 .endm
 
 @ [Event 0x01] ?
-.macro bh_event01 args
+.macro bunny_hop_event01 args
     bunny_hop_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro bh_event02 args
+.macro bunny_hop_event02 args
     bunny_hop_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro bh_event03 args
+.macro bunny_hop_event03 args
     bunny_hop_event 0x03, \args
 .endm
 
 @ [Event 0x04] ?
-.macro bh_event04 args
+.macro bunny_hop_event04 args
     bunny_hop_event 0x04, \args
 .endm
 
 @ [Event 0x05] ?
-.macro bh_event05 args
+.macro bunny_hop_event05 args
     bunny_hop_event 0x05, \args
 .endm
 
 @ [Event 0x06] ?
-.macro bh_event06 args
+.macro bunny_hop_event06 args
     bunny_hop_event 0x06, \args
 .endm
 
 @ [Event 0x07] ?
-.macro bh_event07 args
+.macro bunny_hop_event07 args
     bunny_hop_event 0x07, \args
 .endm
 
 @ [Event 0x08] ?
-.macro bh_event08 args
+.macro bunny_hop_event08 args
     bunny_hop_event 0x08, \args
 .endm
 
 @ [Event 0x09] ?
-.macro bh_event09 args
+.macro bunny_hop_event09 args
     bunny_hop_event 0x09, \args
 .endm

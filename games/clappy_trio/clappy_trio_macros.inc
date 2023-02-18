@@ -43,31 +43,31 @@
 
 
 @ [Event 0x00] Crouch
-.macro ct_crouch noArgs
+.macro clappy_trio_crouch noArgs
     clappy_trio_event 0x00, \noArgs
 .endm
 
 @ [Event 0x01] Crouch (Smirk)
-.macro ct_crouch_smirk noArgs
+.macro clappy_trio_crouch_smirk noArgs
     clappy_trio_event 0x01, \noArgs
 .endm
 
 @ [Event 0x02] Clap
-.macro ct_clap lionID
+.macro clappy_trio_do_clap lionID
     clappy_trio_event 0x02, \lionID
 .endm
 
 @ [Event 0x03] Run Grayscale Effect on Next Hit
-.macro ct_grayscale_on_next_hit noArgs
+.macro clappy_trio_prepare_grayscale_effect noArgs
     clappy_trio_event 0x03, \noArgs
 .endm
 
 @ [Event 0x04] Set NPC Clap Volume
-.macro ct_set_npc_clap_volume volume
+.macro clappy_trio_set_npc_clap_volume volume
     clappy_trio_event 0x04, \volume
 .endm
 
 @ [Event 0x05] Hide Textbox
-.macro ct_hide_textbox noArgs
+.macro clappy_trio_hide_textbox noArgs
     clappy_trio_event 0x05, \noArgs
 .endm

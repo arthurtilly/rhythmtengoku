@@ -56,91 +56,91 @@
 
 
 @ [Event 0x00] ?
-.macro qz_event00 args
+.macro quiz_show_event00 args
     quiz_show_event 0x00, \args
 .endm
 
 @ [Event 0x01] ?
-.macro qz_event01 args
+.macro quiz_show_event01 args
     quiz_show_event 0x01, \args
 .endm
 
 @ [Event 0x02] Host Press Button?
-.macro qz_event02 args
+.macro quiz_show_event02 args
     quiz_show_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro qz_event03 args
+.macro quiz_show_event03 args
     quiz_show_event 0x03, \args
 .endm
 
 @ [Event 0x04] ?
-.macro qz_event04 args
+.macro quiz_show_event04 args
     quiz_show_event 0x04, \args
 .endm
 
 @ [Event 0x05] ?
-.macro qz_event05 args
+.macro quiz_show_event05 args
     quiz_show_event 0x05, \args
 .endm
 
 @ [Event 0x06] ?
-.macro qz_event06 args
+.macro quiz_show_event06 args
     quiz_show_event 0x06, \args
 .endm
 
 @ [Event 0x07] ?
-.macro qz_event07 args
+.macro quiz_show_event07 args
     quiz_show_event 0x07, \args
 .endm
 
 @ [Event 0x08] ?
-.macro qz_event08 args
+.macro quiz_show_event08 args
     quiz_show_event 0x08, \args
 .endm
 
 @ [Event 0x09] ?
-.macro qz_event09 args
+.macro quiz_show_event09 args
     quiz_show_event 0x09, \args
 .endm
 
 @ [Event 0x0A] ?
-.macro qz_event0A args
+.macro quiz_show_event0A args
     quiz_show_event 0x0A, \args
 .endm
 
 @ [Event 0x0B] ?
-.macro qz_event0B args
+.macro quiz_show_event0B args
     quiz_show_event 0x0B, \args
 .endm
 
 @ [Event 0x0C] ?
-.macro qz_event0C args
+.macro quiz_show_event0C args
     quiz_show_event 0x0C, \args
 .endm
 
 @ [Event 0x0D] ?
-.macro qz_event0D args
+.macro quiz_show_event0D args
     quiz_show_event 0x0D, \args
 .endm
 
 @ [Event 0x0E] ?
-.macro qz_event0E args
+.macro quiz_show_event0E args
     quiz_show_event 0x0E, \args
 .endm
 
 @ [Event 0x0F] ?
-.macro qz_event0F args
+.macro quiz_show_event0F args
     quiz_show_event 0x0F, \args
 .endm
 
 @ [Event 0x10] ?
-.macro qz_event10 args
+.macro quiz_show_event10 args
     quiz_show_event 0x10, \args
 .endm
 
 @ [Event 0x11] Nothing
-.macro qz_stub_event noArgs
+.macro quiz_show_stub_event noArgs
     quiz_show_event 0x11, \noArgs
 .endm

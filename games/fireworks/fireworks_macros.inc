@@ -93,16 +93,16 @@
 
 
 @ [Event 0x00] Set Pattern Sourcing Mode
-.macro fw_set_pattern_mode mode
+.macro fireworks_set_pattern_mode mode
     fireworks_event 0x00, \mode
 .endm
 
 @ [Event 0x01] Play Count-In SFX (includes "Nuei!" but not "Tamaya~")
-.macro fw_play_sfx id
+.macro fireworks_play_sfx id
     fireworks_event 0x01, \id
 .endm
 
 @ [Event 0x02] Set Default Firework Pattern
-.macro fw_set_default_pattern pattern
+.macro fireworks_set_default_pattern pattern
     fireworks_event 0x02, \pattern
 .endm

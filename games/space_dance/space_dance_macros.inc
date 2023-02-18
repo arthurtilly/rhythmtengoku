@@ -65,46 +65,46 @@
 
 
 @ [Event 0x00] ?
-.macro sd_event00 args
+.macro space_dance_event00 args
     space_dance_event 0x00, \args
 .endm
 
 @ [Event 0x01] ?
-.macro sd_event01 args
+.macro space_dance_event01 args
     space_dance_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro sd_event02 args
+.macro space_dance_event02 args
     space_dance_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro sd_event03 args
+.macro space_dance_event03 args
     space_dance_event 0x03, \args
 .endm
 
 @ [Event 0x04] ?
-.macro sd_event04 args
+.macro space_dance_event04 args
     space_dance_event 0x04, \args
 .endm
 
 @ [Event 0x05] ?
-.macro sd_event05 args
+.macro space_dance_event05 args
     space_dance_event 0x05, \args
 .endm
 
 @ [Event 0x06] ?
-.macro sd_event06 args
+.macro space_dance_event06 args
     space_dance_event 0x06, \args
 .endm
 
 @ [Event 0x07] ?
-.macro sd_event07 args
+.macro space_dance_event07 args
     space_dance_event 0x07, \args
 .endm
 
 @ [Event 0x08] Nothing
-.macro sd_stub_event noArgs
+.macro space_dance_stub_event noArgs
     space_dance_event 0x08, \noArgs
 .endm

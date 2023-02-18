@@ -44,41 +44,41 @@
 
 
 @ [Event 0x00] ?
-.macro skb_event00 args
+.macro sick_beats_event00 args
     sick_beats_event 0x00, \args
 .endm
 
 @ [Event 0x01] ?
-.macro skb_event01 args
+.macro sick_beats_event01 args
     sick_beats_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro skb_event02 args
+.macro sick_beats_event02 args
     sick_beats_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro skb_event03 args
+.macro sick_beats_event03 args
     sick_beats_event 0x03, \args
 .endm
 
 @ [Event 0x04] ?
-.macro skb_event04 args
+.macro sick_beats_event04 args
     sick_beats_event 0x04, \args
 .endm
 
 @ [Event 0x05] ?
-.macro skb_event05 args
+.macro sick_beats_event05 args
     sick_beats_event 0x05, \args
 .endm
 
 @ [Event 0x06] ?
-.macro skb_event06 args
+.macro sick_beats_event06 args
     sick_beats_event 0x06, \args
 .endm
 
 @ [Event 0x07] Nothing
-.macro skb_stub_event noArgs
+.macro sick_beats_stub_event noArgs
     sick_beats_event 0x07, \noArgs
 .endm

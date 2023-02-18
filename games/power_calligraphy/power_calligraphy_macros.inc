@@ -46,77 +46,77 @@
 
 
 @ Run Game Event
-.macro calligraphy_event event, args
+.macro power_calligraphy_event event, args
     game_event power_calligraphy_engine, \event, \args
 .endm
 
 
 @ [Event 0x00] ?
-.macro pc_event00 args
-    calligraphy_event 0x00, \args
+.macro power_calligraphy_event00 args
+    power_calligraphy_event 0x00, \args
 .endm
 
 @ [Event 0x01] ?
-.macro pc_event01 args
-    calligraphy_event 0x01, \args
+.macro power_calligraphy_event01 args
+    power_calligraphy_event 0x01, \args
 .endm
 
 @ [Event 0x02] ?
-.macro pc_event02 args
-    calligraphy_event 0x02, \args
+.macro power_calligraphy_event02 args
+    power_calligraphy_event 0x02, \args
 .endm
 
 @ [Event 0x03] ?
-.macro pc_event03 args
-    calligraphy_event 0x03, \args
+.macro power_calligraphy_event03 args
+    power_calligraphy_event 0x03, \args
 .endm
 
 @ [Event 0x04] ?
-.macro pc_event04 args
-    calligraphy_event 0x04, \args
+.macro power_calligraphy_event04 args
+    power_calligraphy_event 0x04, \args
 .endm
 
 @ [Event 0x05] ?
-.macro pc_event05 args
-    calligraphy_event 0x05, \args
+.macro power_calligraphy_event05 args
+    power_calligraphy_event 0x05, \args
 .endm
 
 @ [Event 0x06] ?
-.macro pc_event06 args
-    calligraphy_event 0x06, \args
+.macro power_calligraphy_event06 args
+    power_calligraphy_event 0x06, \args
 .endm
 
 @ [Event 0x07] ?
-.macro pc_event07 args
-    calligraphy_event 0x07, \args
+.macro power_calligraphy_event07 args
+    power_calligraphy_event 0x07, \args
 .endm
 
 @ [Event 0x08] ?
-.macro pc_event08 args
-    calligraphy_event 0x08, \args
+.macro power_calligraphy_event08 args
+    power_calligraphy_event 0x08, \args
 .endm
 
 @ [Event 0x09] ?
-.macro pc_event09 args
-    calligraphy_event 0x09, \args
+.macro power_calligraphy_event09 args
+    power_calligraphy_event 0x09, \args
 .endm
 
 @ [Event 0x0A] ?
-.macro pc_event0A args
-    calligraphy_event 0x0A, \args
+.macro power_calligraphy_event0A args
+    power_calligraphy_event 0x0A, \args
 .endm
 
 @ [Event 0x0B] ?
-.macro pc_event0B args
-    calligraphy_event 0x0B, \args
+.macro power_calligraphy_event0B args
+    power_calligraphy_event 0x0B, \args
 .endm
 
 @ [Event 0x0C] ?
-.macro pc_event0C args
-    calligraphy_event 0x0C, \args
+.macro power_calligraphy_event0C args
+    power_calligraphy_event 0x0C, \args
 .endm
 
 @ [Event 0x0D] Nothing
-.macro pc_stub_event noArgs
-    calligraphy_event 0x0D, \noArgs
+.macro power_calligraphy_stub_event noArgs
+    power_calligraphy_event 0x0D, \noArgs
 .endm

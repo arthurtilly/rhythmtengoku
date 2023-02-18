@@ -63,91 +63,91 @@
 
 
 @ [Event 0x00] Set Current Target Lyric Line
-.macro bon_set_lyrics_line line
+.macro bon_odori_lyrics_set_line line
     bon_odori_event 0x00, \line
 .endm
 
 @ [Event 0x01] Print Lyrics (Center)
-.macro bon_print_lyrics_c text
+.macro bon_odori_lyrics_print_center text
     bon_odori_event 0x01, \text
 .endm
 
 @ [Event 0x02] Print Lyrics (Left)
-.macro bon_print_lyrics_l text
+.macro bon_odori_lyrics_print_left text
     bon_odori_event 0x02, \text
 .endm
 
 @ [Event 0x03] Print Lyrics (Right)
-.macro bon_print_lyrics_r text
+.macro bon_odori_lyrics_print_right text
     bon_odori_event 0x03, \text
 .endm
 
 @ [Event 0x04] Offset Lyrics Vertical Position
-.macro bon_set_lyrics_y_offset yOfs
+.macro bon_odori_lyrics_set_y_offset yOfs
     bon_odori_event 0x04, \yOfs
 .endm
 
 @ [Event 0x05] Start Highlighting Lyrics
-.macro bon_start_lyrics_highlight time
+.macro bon_odori_lyrics_start_highlight time
     bon_odori_event 0x05, \time
 .endm
 
 @ [Event 0x06] Lighten Screen (Gradual)
-.macro bon_lighten_screen fadeTime
+.macro bon_odori_lighten_screen fadeTime
     bon_odori_event 0x06, \fadeTime
 .endm
 
 @ [Event 0x07] Darken Screen (Gradual)
-.macro bon_darken_screen fadeTime
+.macro bon_odori_darken_screen fadeTime
     bon_odori_event 0x07, \fadeTime
 .endm
 
 @ [Event 0x08] Blank Screen (Instant)
-.macro bon_set_screen_black noArgs
+.macro bon_odori_set_screen_black noArgs
     bon_odori_event 0x08, \noArgs
 .endm
 
 @ [Event 0x09] Lighten Screen (Instant)
-.macro bon_set_screen_light noArgs
+.macro bon_odori_set_screen_light noArgs
     bon_odori_event 0x09, \noArgs
 .endm
 
 @ [Event 0x0A] Darken Screen (Instant)
-.macro bon_set_screen_dark noArgs
+.macro bon_odori_set_screen_dark noArgs
     bon_odori_event 0x0A, \noArgs
 .endm
 
 @ [Event 0x0B] Play Animation for NPC Donpans
-.macro bon_animate_npc anim
+.macro bon_odori_animate_npc anim
     bon_odori_event 0x0B, \anim
 .endm
 
 @ [Event 0x0C] Play Animation for Player Donpan
-.macro bon_animate_player anim
+.macro bon_odori_animate_player anim
     bon_odori_event 0x0C, \anim
 .endm
 
 @ [Event 0x0D] Play Animation for All Donpans
-.macro bon_animate_donpans anim
+.macro bon_odori_animate_donpans anim
     bon_odori_event 0x0D, \anim
 .endm
 
 @ [Event 0x0E] Force Current Animation Duration for NPC Donpans
-.macro bon_set_npc_anim_time time
+.macro bon_odori_set_npc_anim_time time
     bon_odori_event 0x0E, \time
 .endm
 
 @ [Event 0x0F] Start Testing Player Inputs
-.macro bon_start_input_check noArgs
+.macro bon_odori_start_input_check noArgs
     bon_odori_event 0x0F, \noArgs
 .endm
 
 @ [Event 0x10] Stop Testing Player Inputs (and give reaction)
-.macro bon_stop_input_check noArgs
+.macro bon_odori_stop_input_check noArgs
     bon_odori_event 0x10, \noArgs
 .endm
 
 @ [Event 0x11] Nothing
-.macro bon_stub_event noArgs
+.macro bon_odori_stub_event noArgs
     bon_odori_event 0x11, \noArgs
 .endm
