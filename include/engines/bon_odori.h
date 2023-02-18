@@ -106,14 +106,14 @@ extern const struct SequenceData s_HC_seqData;
 
 
 // Engine Definition Data:
-extern const struct Animation *const *const bon_odori_anim_table[34]; // Pointers to animation arrays, with each one consisting of two animations.
-extern const u8 *const bon_odori_donpan_anim_id_table[]; // Contains Donpan animation indexes. (Sub-arrays are the same animation but for different donpans)
-extern const u16 bon_odori_anim_durations[8]; // Seemingly numbers of ticks for animations.
-extern const struct CompressedGraphics *const bon_odori_buffered_textures[]; // Buffered Textures List
-extern const struct GraphicsTable *const bon_odori_gfx_tables[]; // Graphics Table Index
-extern const u16 *const bon_odori_bg_palettes[]; // Pointers to BG Palettes
-extern const u16 *const bon_odori_obj_palettes[]; // Pointers to OBJ Palettes
-extern const u16 bon_odori_text_x_offsets[]; // Lyrics Horizontal Positions (by Text Alignment)
+extern const struct Animation **bon_odori_anim_table[34]; // Pointers to animation arrays, with each one consisting of two animations.
+extern u8 *bon_odori_donpan_anim_id_table[]; // Contains Donpan animation indexes. (Sub-arrays are the same animation but for different donpans)
+extern u16 bon_odori_anim_durations[8]; // Seemingly numbers of ticks for animations.
+extern const struct CompressedGraphics *bon_odori_buffered_textures[]; // Buffered Textures List
+extern struct GraphicsTable *bon_odori_gfx_tables[]; // Graphics Table Index
+extern const u16 *bon_odori_bg_palettes[]; // Pointers to BG Palettes
+extern const u16 *bon_odori_obj_palettes[]; // Pointers to OBJ Palettes
+extern u16 bon_odori_text_x_offsets[]; // Lyrics Horizontal Positions (by Text Alignment)
 
 
 // Functions:

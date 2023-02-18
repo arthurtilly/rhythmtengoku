@@ -83,13 +83,13 @@ extern const struct SequenceData s_CC5_seqData;
 extern const struct SequenceData s_HG_seqData;
 
 // [D_089e2ef8] Unknown Sound Effect List
-const struct SequenceData *const D_089e2ef8[] = {
+const struct SequenceData *D_089e2ef8[] = {
     &s_open_HH_seqData,
     NULL
 };
 
 // [D_089e2f00] DrumTech Instrument Bank
-const struct DrumTechInstrument drumtech_drum_bank[] = {
+struct DrumTechInstrument drumtech_drum_bank[] = {
     /* DRUM 000 */ {
         /* SoundPlayer  */ SFX_PLAYER_0,
         /* Duration     */ 0,

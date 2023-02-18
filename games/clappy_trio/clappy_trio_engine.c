@@ -38,7 +38,7 @@ extern const Palette snappy_trio_obj_pal[];
 
 
 // [D_089e4520] All Animations
-const struct Animation *const clappy_trio_anim[][2] = {
+const struct Animation *clappy_trio_anim[][2] = {
     /* BEAT  */ { anim_clappy_trio_beat, anim_snappy_trio_beat },
     /* SMILE */ { anim_clappy_trio_smile, anim_snappy_trio_smile },
     /* GLARE */ { anim_clappy_trio_glare, anim_snappy_trio_glare },
@@ -50,7 +50,7 @@ const struct Animation *const clappy_trio_anim[][2] = {
 };
 
 // [D_089e4560] Animation Table
-const struct Animation *const *const clappy_trio_anim_table[] = {
+const struct Animation **clappy_trio_anim_table[] = {
     clappy_trio_anim[0],
     clappy_trio_anim[1],
     clappy_trio_anim[2],
@@ -62,12 +62,12 @@ const struct Animation *const *const clappy_trio_anim_table[] = {
 };
 
 // [D_089e4580] Buffered Textures List
-const struct CompressedGraphics *const clappy_trio_buffered_textures[] = {
+const struct CompressedGraphics *clappy_trio_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e4584] Graphics Table (The Clappy Trio)
-const struct GraphicsTable clappy_trio_gfx_table[] = {
+struct GraphicsTable clappy_trio_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c61e18,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -97,7 +97,7 @@ const struct GraphicsTable clappy_trio_gfx_table[] = {
 };
 
 // [D_089e45cc] Graphics Table (The Snappy Trio)
-const struct GraphicsTable snappy_trio_gfx_table[] = {
+struct GraphicsTable snappy_trio_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c635bc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -127,7 +127,7 @@ const struct GraphicsTable snappy_trio_gfx_table[] = {
 };
 
 // [D_089e4614] Graphics Table Index
-const struct GraphicsTable *const clappy_trio_gfx_tables[] = {
+struct GraphicsTable *clappy_trio_gfx_tables[] = {
     /* 0x00 */ clappy_trio_gfx_table,
     /* 0x01 */ snappy_trio_gfx_table
 };
@@ -137,7 +137,7 @@ const struct GraphicsTable *const clappy_trio_gfx_tables[] = {
 
 
 // [D_089e461c] Cue 00 (1 Beat)
-const struct CueDefinition clappy_trio_cue_full_beat = {
+struct CueDefinition clappy_trio_cue_full_beat = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -161,7 +161,7 @@ const struct CueDefinition clappy_trio_cue_full_beat = {
 };
 
 // [D_089e465c] Cue 01 (0.5 Beats)
-const struct CueDefinition clappy_trio_cue_half_beat = {
+struct CueDefinition clappy_trio_cue_half_beat = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x0C,
@@ -185,7 +185,7 @@ const struct CueDefinition clappy_trio_cue_half_beat = {
 };
 
 // [D_089e469c] Cue 04 (1 Beat, Smile After)
-const struct CueDefinition clappy_trio_cue_full_beat_smile_after = {
+struct CueDefinition clappy_trio_cue_full_beat_smile_after = {
     /* Unknown Param.  */ 1,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -209,7 +209,7 @@ const struct CueDefinition clappy_trio_cue_full_beat_smile_after = {
 };
 
 // [D_089e46dc] Cue 05 (0.5 Beats, Smile After)
-const struct CueDefinition clappy_trio_cue_half_beat_smile_after = {
+struct CueDefinition clappy_trio_cue_half_beat_smile_after = {
     /* Unknown Param.  */ 1,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x0C,
@@ -233,7 +233,7 @@ const struct CueDefinition clappy_trio_cue_half_beat_smile_after = {
 };
 
 // [D_089e471c] Cue Definition Index
-const struct CueDefinition *const clappy_trio_cue_index[] = {
+struct CueDefinition *clappy_trio_cue_index[] = {
     /* 0x00 */ &clappy_trio_cue_full_beat,
     /* 0x01 */ &clappy_trio_cue_half_beat,
     /* 0x02 */ NULL,
@@ -254,7 +254,7 @@ const struct CueDefinition *const clappy_trio_cue_index[] = {
 
 
 // [D_089e4750] Common Events
-const EngineEvent clappy_trio_common_events[] = {
+EngineEvent clappy_trio_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) clappy_trio_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) clappy_trio_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) clappy_trio_common_init_tutorial,
@@ -262,7 +262,7 @@ const EngineEvent clappy_trio_common_events[] = {
 };
 
 // [D_089e4760] Engine Events
-const EngineEvent clappy_trio_engine_events[] = {
+EngineEvent clappy_trio_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_0803068c,
     /* 0x01 */ (EngineEvent) func_0803074c,
     /* 0x02 */ (EngineEvent) func_0803080c,
@@ -272,7 +272,7 @@ const EngineEvent clappy_trio_engine_events[] = {
 };
 
 // [D_089e4778] The Clappy Trio Game Engine
-const struct GameEngine clappy_trio_engine = {
+struct GameEngine clappy_trio_engine = {
     /* Size in Memory */ 0x1c,
     /* Start Engine   */ clappy_trio_engine_start,
     /* Update Engine  */ clappy_trio_engine_update,

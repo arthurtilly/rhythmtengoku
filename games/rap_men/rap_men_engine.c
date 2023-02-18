@@ -44,7 +44,7 @@ extern const Palette rap_women_obj_pal[];
 
 
 // [D_089e63a0] All Animations
-const struct Animation *const rap_men_anim[][2] = {
+const struct Animation *rap_men_anim[][2] = {
     /* 0x00 */ { anim_rap_men_red_desuka, anim_rap_women_red_desuka },
     /* 0x01 */ { anim_rap_men_yellow_barely, anim_rap_women_blue_barely },
     /* 0x02 */ { anim_rap_men_yellow_hit, anim_rap_women_blue_hit },
@@ -59,7 +59,7 @@ const struct Animation *const rap_men_anim[][2] = {
 };
 
 // [D_089e63f8] Animation Table
-const struct Animation *const *const rap_men_anim_table[] = {
+const struct Animation **rap_men_anim_table[] = {
     /* 0x00 */ rap_men_anim[0],
     /* 0x01 */ rap_men_anim[1],
     /* 0x02 */ rap_men_anim[2],
@@ -74,12 +74,12 @@ const struct Animation *const *const rap_men_anim_table[] = {
 };
 
 // [D_089e6424] Buffered Textures List
-const struct CompressedGraphics *const rap_men_buffered_textures[] = {
+const struct CompressedGraphics *rap_men_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e6428] Graphics Table (Rap Men)
-const struct GraphicsTable rap_men_gfx_table[] = {
+struct GraphicsTable rap_men_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c82980,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -129,7 +129,7 @@ const struct GraphicsTable rap_men_gfx_table[] = {
 };
 
 // [D_089e64a0] Graphics Table (Rap Women)
-const struct GraphicsTable rap_women_gfx_table[] = {
+struct GraphicsTable rap_women_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c84f54,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -179,13 +179,13 @@ const struct GraphicsTable rap_women_gfx_table[] = {
 };
 
 // [D_089e6518] Graphics Table Index
-const struct GraphicsTable *const rap_men_gfx_tables[] = {
+struct GraphicsTable *rap_men_gfx_tables[] = {
     /* 0x00 */ rap_men_gfx_table,
     /* 0x01 */ rap_women_gfx_table
 };
 
 // [D_089e6520] Rapping Animations
-const u8 rapping_anim_map[] = {
+u8 rapping_anim_map[] = {
     /* DESUKA */ RAP_MEN_ANIM_DESUKA,
     /* KAMONE */ RAP_MEN_ANIM_KAMONE,
     /* SAIKO  */ RAP_MEN_ANIM_SAIKO,
@@ -194,7 +194,7 @@ const u8 rapping_anim_map[] = {
 };
 
 // [D_089e6525] Rapping Animation Durations
-const u8 rapping_anim_durations[] = {
+u8 rapping_anim_durations[] = {
     /* DESUKA */ 0x24,
     /* KAMONE */ 0x24,
     /* SAIKO  */ 0x24,
@@ -207,13 +207,13 @@ const u8 rapping_anim_durations[] = {
 
 
 // [D_089e652c] Cue Hit Sounds
-const struct SequenceData *const rap_men_cue_hit_sfx[][2] = {
+const struct SequenceData *rap_men_cue_hit_sfx[][2] = {
     /* RAP_MEN   */ { &s_rap_un_seqData, &s_rap_uun_seqData },
     /* RAP_WOMEN */ { &s_f_rapW_v_Un_seqData, &s_f_rapW_v_Uun_seqData }
 };
 
 // [D_089e653c] Cue 00 (Un)
-const struct CueDefinition rap_men_cue_short = {
+struct CueDefinition rap_men_cue_short = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -237,7 +237,7 @@ const struct CueDefinition rap_men_cue_short = {
 };
 
 // [D_089e657c] Cue 01 (Uun)
-const struct CueDefinition rap_men_cue_long = {
+struct CueDefinition rap_men_cue_long = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -261,7 +261,7 @@ const struct CueDefinition rap_men_cue_long = {
 };
 
 // [D_089e65bc] Cue Definition Index
-const struct CueDefinition *const rap_men_cue_index[] = {
+struct CueDefinition *rap_men_cue_index[] = {
     /* 0x00 */ &rap_men_cue_short,
     /* 0x01 */ &rap_men_cue_long,
     /* 0x02 */ NULL,
@@ -278,7 +278,7 @@ const struct CueDefinition *const rap_men_cue_index[] = {
 };
 
 // [D_089e65f0] Cue Miss Sounds
-const struct SequenceData *const rap_men_cue_miss_sfx[] = {
+const struct SequenceData *rap_men_cue_miss_sfx[] = {
     /* RAP_MEN   */ &s_intro_two_seqData,
     /* RAP_WOMEN */ &s_f_rapW_v_CheckIt_seqData,
 };
@@ -288,7 +288,7 @@ const struct SequenceData *const rap_men_cue_miss_sfx[] = {
 
 
 // [D_089e65f8] Common Events
-const EngineEvent rap_men_common_events[] = {
+EngineEvent rap_men_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) rap_men_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) rap_men_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) rap_men_common_init_tutorial,
@@ -296,14 +296,14 @@ const EngineEvent rap_men_common_events[] = {
 };
 
 // [D_089e6608] Engine Events
-const EngineEvent rap_men_engine_events[] = {
+EngineEvent rap_men_engine_events[] = {
     /* 0x00 */ (EngineEvent) rap_men_set_rapper_anim,
     /* 0x01 */ (EngineEvent) rap_men_enable_tutorial,
     /* 0x02 */ (EngineEvent) rap_men_engine_event_stub
 };
 
 // [D_089e6614] Rap Men Game Engine
-const struct GameEngine rap_men_engine = {
+struct GameEngine rap_men_engine = {
     /* Size in Memory */ sizeof(struct RapMenInfo),
     /* Start Engine   */ rap_men_engine_start,
     /* Update Engine  */ rap_men_engine_update,

@@ -66,20 +66,20 @@ extern const char D_0805a06c[];
 
 
 // Engine Definition Data:
-extern const struct DrumTechNote *const tanuki_and_monkey_bgm_seq_table[];
-extern const u16 D_089dfe94[];
-extern const struct DrumTechKit *const drum_intro_kits[];
-extern const struct CompressedGraphics *const drum_intro_buffered_textures[];
-extern const struct GraphicsTable *const drum_intro_gfx_tables[];
-extern const struct Vector2 D_089e0164[];
-extern const struct Animation *const D_089e0170[][4];
-extern const u16 D_089e01b0[];
-extern const s8 D_089e01b8[][3];
-extern const u8 D_089e01c4[];
-extern const struct DrumKitCueData *const D_089e0398[];
-extern const struct DrumKitCueData D_089e03a4;
-extern const struct DrumKitCueData D_089e03c0;
-extern const struct DrumKitCueData D_089e03dc;
+extern struct DrumTechNote *tanuki_and_monkey_bgm_seq_table[];
+extern u16 D_089dfe94[];
+extern struct DrumTechKit *drum_intro_kits[];
+extern const struct CompressedGraphics *drum_intro_buffered_textures[];
+extern struct GraphicsTable *drum_intro_gfx_tables[];
+extern struct Vector2 D_089e0164[];
+extern const struct Animation *D_089e0170[][4];
+extern u16 D_089e01b0[];
+extern s8 D_089e01b8[][3];
+extern u8 D_089e01c4[];
+extern struct DrumKitCueData *D_089e0398[];
+extern struct DrumKitCueData D_089e03a4;
+extern struct DrumKitCueData D_089e03c0;
+extern struct DrumKitCueData D_089e03dc;
 
 
 // Functions:

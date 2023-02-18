@@ -19,26 +19,26 @@ extern const Palette rhythm_tweezers_2_pal[];
 
 
 // [D_089e3d98] Vegetable Face Animations
-const struct Animation *const rhythm_tweezers_veg_face_anim[] = {
+const struct Animation *rhythm_tweezers_veg_face_anim[] = {
     /* 0x00 */ anim_veg_face_onion,
     /* 0x01 */ anim_veg_face_turnip,
     /* 0x02 */ anim_veg_face_potato
 };
 
 // [D_089e3da4] Vegetable BG Maps
-const struct CompressedGraphics *const rhythm_tweezers_veg_bg_maps[] = {
+const struct CompressedGraphics *rhythm_tweezers_veg_bg_maps[] = {
     &D_08c5bd6c,
     &D_08c5bf7c,
     &D_08c5c134
 };
 
 // [D_089e3db0] Buffered Textures List
-const struct CompressedGraphics *const rhythm_tweezers_buffered_textures[] = {
+const struct CompressedGraphics *rhythm_tweezers_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e3db4] Graphics Table (Rhythm Tweezers - Onion)
-const struct GraphicsTable rhythm_tweezers_1_onion_gfx_table[] = {
+struct GraphicsTable rhythm_tweezers_1_onion_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5af04,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -78,7 +78,7 @@ const struct GraphicsTable rhythm_tweezers_1_onion_gfx_table[] = {
 };
 
 // [D_089e3e14] Graphics Table (Rhythm Tweezers - Turnip)
-const struct GraphicsTable rhythm_tweezers_1_turnip_gfx_table[] = {
+struct GraphicsTable rhythm_tweezers_1_turnip_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5af04,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -118,7 +118,7 @@ const struct GraphicsTable rhythm_tweezers_1_turnip_gfx_table[] = {
 };
 
 // [D_089e3e74] Graphics Table (Rhythm Tweezers - Potato)
-const struct GraphicsTable rhythm_tweezers_1_potato_gfx_table[] = {
+struct GraphicsTable rhythm_tweezers_1_potato_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5af04,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -158,7 +158,7 @@ const struct GraphicsTable rhythm_tweezers_1_potato_gfx_table[] = {
 };
 
 // [D_089e3ed4] Graphics Table (Rhythm Tweezers 2 - Onion)
-const struct GraphicsTable rhythm_tweezers_2_onion_gfx_table[] = {
+struct GraphicsTable rhythm_tweezers_2_onion_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5af04,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -198,7 +198,7 @@ const struct GraphicsTable rhythm_tweezers_2_onion_gfx_table[] = {
 };
 
 // [D_089e3f34] Graphics Table (Rhythm Tweezers 2 - Turnip)
-const struct GraphicsTable rhythm_tweezers_2_turnip_gfx_table[] = {
+struct GraphicsTable rhythm_tweezers_2_turnip_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5af04,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -238,7 +238,7 @@ const struct GraphicsTable rhythm_tweezers_2_turnip_gfx_table[] = {
 };
 
 // [D_089e3f94] Graphics Table (Rhythm Tweezers 2 - Potato)
-const struct GraphicsTable rhythm_tweezers_2_potato_gfx_table[] = {
+struct GraphicsTable rhythm_tweezers_2_potato_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5af04,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -278,7 +278,7 @@ const struct GraphicsTable rhythm_tweezers_2_potato_gfx_table[] = {
 };
 
 // [D_089e3ff4] Graphics Table Index
-const struct GraphicsTable *const rhythm_tweezers_gfx_tables[] = {
+struct GraphicsTable *rhythm_tweezers_gfx_tables[] = {
     /* 0x00 */ rhythm_tweezers_1_onion_gfx_table,
     /* 0x01 */ rhythm_tweezers_1_turnip_gfx_table,
     /* 0x02 */ rhythm_tweezers_1_potato_gfx_table,
@@ -292,7 +292,7 @@ const struct GraphicsTable *const rhythm_tweezers_gfx_tables[] = {
 
 
 // [D_089e400c] Cue 00 (Short Hair, 4 Beats)
-const struct CueDefinition rhythm_tweezers_cue_short_4beat = {
+struct CueDefinition rhythm_tweezers_cue_short_4beat = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x60,
@@ -316,7 +316,7 @@ const struct CueDefinition rhythm_tweezers_cue_short_4beat = {
 };
 
 // [D_089e404c] Cue 01 (Long Hair, 4 Beats)
-const struct CueDefinition rhythm_tweezers_cue_long_4beat = {
+struct CueDefinition rhythm_tweezers_cue_long_4beat = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x60,
@@ -340,7 +340,7 @@ const struct CueDefinition rhythm_tweezers_cue_long_4beat = {
 };
 
 // [D_089e408c] Cue 02 (Short Hair, 4 Beats, Lenient)
-const struct CueDefinition rhythm_tweezers_cue_fast_4beat = {
+struct CueDefinition rhythm_tweezers_cue_fast_4beat = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x60,
@@ -364,7 +364,7 @@ const struct CueDefinition rhythm_tweezers_cue_fast_4beat = {
 };
 
 // [D_089e40cc] Cue 04 (Short Hair, 8 Beats)
-const struct CueDefinition rhythm_tweezers_cue_short_8beat = {
+struct CueDefinition rhythm_tweezers_cue_short_8beat = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0xC0,
@@ -388,7 +388,7 @@ const struct CueDefinition rhythm_tweezers_cue_short_8beat = {
 };
 
 // [D_089e410c] Cue 05 (Long Hair, 8 Beats)
-const struct CueDefinition rhythm_tweezers_cue_long_8beat = {
+struct CueDefinition rhythm_tweezers_cue_long_8beat = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0xC0,
@@ -412,7 +412,7 @@ const struct CueDefinition rhythm_tweezers_cue_long_8beat = {
 };
 
 // [D_089e414c] Cue 06 (Short Hair, 8 Beats, Lenient)
-const struct CueDefinition rhythm_tweezers_cue_fast_8beat = {
+struct CueDefinition rhythm_tweezers_cue_fast_8beat = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0xC0,
@@ -436,7 +436,7 @@ const struct CueDefinition rhythm_tweezers_cue_fast_8beat = {
 };
 
 // [D_089e418c] Cue Definition Index
-const struct CueDefinition *const rhythm_tweezers_cue_index[] = {
+struct CueDefinition *rhythm_tweezers_cue_index[] = {
     /* 0x00 */ &rhythm_tweezers_cue_short_4beat,
     /* 0x01 */ &rhythm_tweezers_cue_long_4beat,
     /* 0x02 */ &rhythm_tweezers_cue_fast_4beat,
@@ -457,7 +457,7 @@ const struct CueDefinition *const rhythm_tweezers_cue_index[] = {
 
 
 // [D_089e41c0] Common Events
-const EngineEvent rhythm_tweezers_common_events[] = {
+EngineEvent rhythm_tweezers_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) rhythm_tweezers_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) rhythm_tweezers_common_display_text,
     /* INIT_TUTORIAL  */ // None
@@ -465,7 +465,7 @@ const EngineEvent rhythm_tweezers_common_events[] = {
 };
 
 // [D_089e41cc] Engine Events
-const EngineEvent rhythm_tweezers_engine_events[] = {
+EngineEvent rhythm_tweezers_engine_events[] = {
     /* 0x00 */ (EngineEvent) rhythm_tweezers_spawn_tweezers,
     /* 0x01 */ (EngineEvent) rhythm_tweezers_start_hair_cycle,
     /* 0x02 */ (EngineEvent) rhythm_tweezers_scroll_to_next_veg,
@@ -479,7 +479,7 @@ const EngineEvent rhythm_tweezers_engine_events[] = {
 };
 
 // [D_089e41f4] Rhythm Tweezers Game Engine
-const struct GameEngine rhythm_tweezers_engine = {
+struct GameEngine rhythm_tweezers_engine = {
     /* Size in Memory */ sizeof(struct RhythmTweezersInfo),
     /* Start Engine   */ rhythm_tweezers_engine_start,
     /* Update Engine  */ rhythm_tweezers_engine_update,

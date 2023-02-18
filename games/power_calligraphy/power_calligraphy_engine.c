@@ -48,36 +48,36 @@ extern const Palette power_calligraphy_pal[];
 
 
 // [D_089e4958] Little People Start Positions
-const struct Vector2 calligraphy_people_start_pos[] = {
+struct Vector2 calligraphy_people_start_pos[] = {
     /* M */ {  32, -160 },
     /* W */ { 216,  192 }
 };
 
 // [D_089e4960] Little People Dancing Animations
-const struct Animation *const calligraphy_people_dance_anim[][2] = {
+const struct Animation *calligraphy_people_dance_anim[][2] = {
     /* M */ { anim_calligraphy_people_m_dance_l, anim_calligraphy_people_m_dance_r },
     /* W */ { anim_calligraphy_people_w_dance_r, anim_calligraphy_people_w_dance_l }
 };
 
 // [D_089e4970] Little People Stumbling Animations
-const struct Animation *const calligraphy_people_fall_anim[][2] = {
+const struct Animation *calligraphy_people_fall_anim[][2] = {
     /* M */ { anim_calligraphy_people_m_fall_r, anim_calligraphy_people_m_fall_l },
     /* W */ { anim_calligraphy_people_w_fall_r, anim_calligraphy_people_w_fall_l }
 };
 
 // [D_089e4980] Little People Bowing Animations
-const struct Animation *const calligraphy_people_bow_anim[][2] = {
+const struct Animation *calligraphy_people_bow_anim[][2] = {
     /* M */ { anim_calligraphy_people_m_bow_r, anim_calligraphy_people_m_bow_l },
     /* W */ { anim_calligraphy_people_w_bow_r, anim_calligraphy_people_w_bow_l }
 };
 
 // [D_089e4990] Buffered Textures List
-const struct CompressedGraphics *const calligraphy_buffered_textures[] = {
+const struct CompressedGraphics *calligraphy_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e4994] Graphics Table (Power Calligraphy)
-const struct GraphicsTable calligraphy_gfx_table[] = {
+struct GraphicsTable calligraphy_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c68d64,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -112,7 +112,7 @@ const struct GraphicsTable calligraphy_gfx_table[] = {
 };
 
 // [D_089e49e8] Kana Animations
-const struct Animation *const calligraphy_pattern_anim[] = {
+const struct Animation *calligraphy_pattern_anim[] = {
     /* 0x00 */ anim_calligraphy_onore,
     /* 0x01 */ anim_calligraphy_chikara,
     /* 0x02 */ anim_calligraphy_sun,
@@ -124,7 +124,7 @@ const struct Animation *const calligraphy_pattern_anim[] = {
 };
 
 // [D_089e4a08] Player Brush Stroke Animations
-const struct Animation *const calligraphy_pattern_input_anim[] = {
+const struct Animation *calligraphy_pattern_input_anim[] = {
     /* ONORE 1   */ anim_calligraphy_onore_input1,
     /* CHIKARA 1 */ anim_calligraphy_chikara_input1,
     /* CHIKARA 2 */ anim_calligraphy_chikara_input2,
@@ -139,7 +139,7 @@ const struct Animation *const calligraphy_pattern_input_anim[] = {
 };
 
 // [D_089e4a34] Paper Motions (?)
-const struct Vector2 calligraphy_paper_motions[] = {
+struct Vector2 calligraphy_paper_motions[] = {
     /* ONORE 1   */ {  0, -8 },
     /* CHIKARA 1 */ { -6, -6 },
     /* CHIKARA 2 */ { -4,  8 },
@@ -154,7 +154,7 @@ const struct Vector2 calligraphy_paper_motions[] = {
 };
 
 // [D_089e4a60] Brush Motions
-const struct CalligraphyBrushMotion calligraphy_brush_motions[][3] = {
+struct CalligraphyBrushMotion calligraphy_brush_motions[][3] = {
     /* ONORE 1 */ {
         /* Hit   */ {  31, -30, 0 },
         /* Early */ {  65, -14, 0 },
@@ -217,7 +217,7 @@ const struct CalligraphyBrushMotion calligraphy_brush_motions[][3] = {
 
 
 // [D_089e4ae4] Input Sounds (Hit)
-const struct SequenceData *const calligraphy_input_hit_sfx[] = {
+const struct SequenceData *calligraphy_input_hit_sfx[] = {
     /* ONORE 1   */ &s_sword_orya_seqData,
     /* CHIKARA 1 */ &s_sword_orya_seqData,
     /* CHIKARA 2 */ &s_sword_orya_seqData,
@@ -232,7 +232,7 @@ const struct SequenceData *const calligraphy_input_hit_sfx[] = {
 };
 
 // [D_089e4b10] Input Sounds (Barely)
-const struct SequenceData *const calligraphy_input_barely_sfx[] = {
+const struct SequenceData *calligraphy_input_barely_sfx[] = {
     /* ONORE 1   */ &s_f_shuji_v_nuaa_seqData,
     /* CHIKARA 1 */ &s_f_shuji_v_nuaa_seqData,
     /* CHIKARA 2 */ &s_f_shuji_v_unuu_seqData,
@@ -247,7 +247,7 @@ const struct SequenceData *const calligraphy_input_barely_sfx[] = {
 };
 
 // [D_089e4b3c] Cue 00 (Stroke)
-const struct CueDefinition calligraphy_cue_default = {
+struct CueDefinition calligraphy_cue_default = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -271,7 +271,7 @@ const struct CueDefinition calligraphy_cue_default = {
 };
 
 // [D_089e4b7c] Cue Definition Index
-const struct CueDefinition *const calligraphy_cue_index[] = {
+struct CueDefinition *calligraphy_cue_index[] = {
     /* 0x00 */ &calligraphy_cue_default,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
@@ -292,7 +292,7 @@ const struct CueDefinition *const calligraphy_cue_index[] = {
 
 
 // [D_089e4bb0] Common Events
-const EngineEvent calligraphy_common_events[] = {
+EngineEvent calligraphy_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) calligraphy_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) calligraphy_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) calligraphy_common_init_tutorial,
@@ -300,7 +300,7 @@ const EngineEvent calligraphy_common_events[] = {
 };
 
 // [D_089e4bc0] Engine Events
-const EngineEvent calligraphy_engine_events[] = {
+EngineEvent calligraphy_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_0803312c,
     /* 0x01 */ (EngineEvent) func_0803316c,
     /* 0x02 */ (EngineEvent) func_080331c0,
@@ -318,7 +318,7 @@ const EngineEvent calligraphy_engine_events[] = {
 };
 
 // [D_089e4bf8] Power Calligraphy Game Engine
-const struct GameEngine power_calligraphy_engine = {
+struct GameEngine power_calligraphy_engine = {
     /* Size in Memory */ 0x218,
     /* Start Engine   */ calligraphy_engine_start,
     /* Update Engine  */ calligraphy_engine_update,

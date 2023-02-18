@@ -75,11 +75,11 @@ extern const char D_0805a670[];
 
 
 // Engine Definition Data:
-extern const struct Animation *const *const marching_anim_table[];
-extern const struct CompressedGraphics *const marching_buffered_textures[];
-extern const struct GraphicsTable *const marching_gfx_tables[];
-extern const struct Vector2 D_089e5368[][4];
-extern const struct MarchingSfxData marching_sfx_table[][12];
+extern const struct Animation **marching_anim_table[];
+extern const struct CompressedGraphics *marching_buffered_textures[];
+extern struct GraphicsTable *marching_gfx_tables[];
+extern struct Vector2 D_089e5368[][4];
+extern struct MarchingSfxData marching_sfx_table[][12];
 
 
 // Functions:

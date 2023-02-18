@@ -17,7 +17,7 @@ extern const Palette rhythm_test_pal[];
 
 
 // [D_089e4c18] DrumTech Sequence
-const struct DrumTechNote drum_seq_rhythm_test_trick00[] = {
+struct DrumTechNote drum_seq_rhythm_test_trick00[] = {
     {
         /* Drum ID */ 8,
         /* Volume  */ 0x100,
@@ -106,7 +106,7 @@ const struct DrumTechNote drum_seq_rhythm_test_trick00[] = {
 };
 
 // [D_089e4c90] DrumTech Sequence
-const struct DrumTechNote drum_seq_rhythm_test_trick01[] = {
+struct DrumTechNote drum_seq_rhythm_test_trick01[] = {
     {
         /* Drum ID */ 2,
         /* Volume  */ 0x100,
@@ -135,7 +135,7 @@ const struct DrumTechNote drum_seq_rhythm_test_trick01[] = {
 };
 
 // [D_089e4cb8] DrumTech Sequence
-const struct DrumTechNote drum_seq_rhythm_test_trick02[] = {
+struct DrumTechNote drum_seq_rhythm_test_trick02[] = {
     {
         /* Drum ID */ 2,
         /* Volume  */ 0x100,
@@ -170,7 +170,7 @@ const struct DrumTechNote drum_seq_rhythm_test_trick02[] = {
 };
 
 // [D_089e4ce8] DrumTech Sequence
-const struct DrumTechNote drum_seq_rhythm_test_trick03[] = {
+struct DrumTechNote drum_seq_rhythm_test_trick03[] = {
     {
         /* Drum ID */ 2,
         /* Volume  */ 0x100,
@@ -205,7 +205,7 @@ const struct DrumTechNote drum_seq_rhythm_test_trick03[] = {
 };
 
 // [D_089e4d18] DrumTech Sequence
-const struct DrumTechNote drum_seq_rhythm_test_trick04[] = {
+struct DrumTechNote drum_seq_rhythm_test_trick04[] = {
     {
         /* Drum ID */ 2,
         /* Volume  */ 0x100,
@@ -240,7 +240,7 @@ const struct DrumTechNote drum_seq_rhythm_test_trick04[] = {
 };
 
 // [D_089e4d48] DrumTech Sequence
-const struct DrumTechNote drum_seq_rhythm_test_trick05[] = {
+struct DrumTechNote drum_seq_rhythm_test_trick05[] = {
     {
         /* Drum ID */ 2,
         /* Volume  */ 0,
@@ -275,7 +275,7 @@ const struct DrumTechNote drum_seq_rhythm_test_trick05[] = {
 };
 
 // [D_089e4d78] DrumTech Sequence
-const struct DrumTechNote drum_seq_rhythm_test_trick06[] = {
+struct DrumTechNote drum_seq_rhythm_test_trick06[] = {
     {
         /* Drum ID */ 8,
         /* Volume  */ 0x100,
@@ -358,7 +358,7 @@ const struct DrumTechNote drum_seq_rhythm_test_trick06[] = {
 };
 
 // [D_089e4de8] DrumTech Sequence
-const struct DrumTechNote drum_seq_rhythm_test_trick07[] = {
+struct DrumTechNote drum_seq_rhythm_test_trick07[] = {
     {
         /* Drum ID */ 20,
         /* Volume  */ 0x100,
@@ -441,7 +441,7 @@ const struct DrumTechNote drum_seq_rhythm_test_trick07[] = {
 };
 
 // [D_089e4e58] DrumTech Sequence
-const struct DrumTechNote drum_seq_rhythm_test_trick08[] = {
+struct DrumTechNote drum_seq_rhythm_test_trick08[] = {
     {
         /* Drum ID */ 20,
         /* Volume  */ 0x100,
@@ -524,7 +524,7 @@ const struct DrumTechNote drum_seq_rhythm_test_trick08[] = {
 };
 
 // [D_089e4ec8] DrumTech Sequence
-const struct DrumTechNote drum_seq_rhythm_test_trick09[] = {
+struct DrumTechNote drum_seq_rhythm_test_trick09[] = {
     {
         /* Drum ID */ 34,
         /* Volume  */ 0x80,
@@ -619,7 +619,7 @@ const struct DrumTechNote drum_seq_rhythm_test_trick09[] = {
 };
 
 // [D_089e4f48] DrumTech Sequences
-const struct DrumTechNote *const rhythm_test_trick_drum_seq[] = {
+struct DrumTechNote *rhythm_test_trick_drum_seq[] = {
     /* 0x00 */ drum_seq_rhythm_test_trick00,
     /* 0x01 */ drum_seq_rhythm_test_trick01,
     /* 0x02 */ drum_seq_rhythm_test_trick02,
@@ -637,12 +637,12 @@ const struct DrumTechNote *const rhythm_test_trick_drum_seq[] = {
 
 
 // [D_089e4f70] Buffered Textures List
-const struct CompressedGraphics *const rhythm_test_buffered_textures[] = {
+const struct CompressedGraphics *rhythm_test_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e4f74] Graphics Table
-const struct GraphicsTable rhythm_test_gfx_table[] = {
+struct GraphicsTable rhythm_test_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c6a638,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -686,7 +686,7 @@ const struct GraphicsTable rhythm_test_gfx_table[] = {
 
 
 // [D_089e4fd4] Cue 00 (?)
-const struct CueDefinition rhythm_test_cue_00 = {
+struct CueDefinition rhythm_test_cue_00 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x0C,
@@ -711,7 +711,7 @@ const struct CueDefinition rhythm_test_cue_00 = {
 
 
 // [D_089e5014] Cue 01 (?)
-const struct CueDefinition rhythm_test_cue_01 = {
+struct CueDefinition rhythm_test_cue_01 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -735,7 +735,7 @@ const struct CueDefinition rhythm_test_cue_01 = {
 };
 
 // [D_089e5054] Cue Definition Index
-const struct CueDefinition *const rhythm_test_cue_index[] = {
+struct CueDefinition *rhythm_test_cue_index[] = {
     /* 0x00 */ &rhythm_test_cue_00,
     /* 0x01 */ &rhythm_test_cue_01,
     /* 0x02 */ NULL,
@@ -756,7 +756,7 @@ const struct CueDefinition *const rhythm_test_cue_index[] = {
 
 
 // [D_089e5088] Common Events
-const EngineEvent rhythm_test_common_events[] = {
+EngineEvent rhythm_test_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) rhythm_test_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) rhythm_test_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) rhythm_test_common_init_tutorial,
@@ -764,7 +764,7 @@ const EngineEvent rhythm_test_common_events[] = {
 };
 
 // [D_089e5098] Engine Events
-const EngineEvent rhythm_test_engine_events[] = {
+EngineEvent rhythm_test_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08033e00,
     /* 0x01 */ (EngineEvent) func_08033b24,
     /* 0x02 */ (EngineEvent) func_08033b34,
@@ -776,7 +776,7 @@ const EngineEvent rhythm_test_engine_events[] = {
 };
 
 // [D_089e50b8] Rhythm Test Game Engine
-const struct GameEngine rhythm_test_engine = {
+struct GameEngine rhythm_test_engine = {
     /* Size in Memory */ 0x3e8,
     /* Start Engine   */ rhythm_test_engine_start,
     /* Update Engine  */ rhythm_test_engine_update,

@@ -12,12 +12,12 @@ extern const Palette metronome_pal[];
 
 
 // [D_089e585c] Buffered Textures List
-const struct CompressedGraphics *const metronome_buffered_textures[] = {
+const struct CompressedGraphics *metronome_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e5860] Graphics Table
-const struct GraphicsTable metronome_gfx_table[] = {
+struct GraphicsTable metronome_gfx_table[] = {
     /* OBJ Tileset */ {
         /* Src.  */ &D_08c702d0,
         /* Dest. */ OBJ_TILESET_BASE(0),
@@ -37,7 +37,7 @@ const struct GraphicsTable metronome_gfx_table[] = {
 };
 
 // [D_089e5890] <sprite> LERP Data
-const struct MetronomeUnknownMovementData D_089e5890[] = {
+struct MetronomeUnknownMovementData D_089e5890[] = {
     /* 0x00 */ {
         /* Initial */ 320, 108,
         /* Target  */ 200, 108
@@ -49,7 +49,7 @@ const struct MetronomeUnknownMovementData D_089e5890[] = {
 };
 
 // [D_089e58a0] <sprite> LERP Data
-const struct MetronomeUnknownMovementData D_089e58a0[] = {
+struct MetronomeUnknownMovementData D_089e58a0[] = {
     /* 0x00 */ {
         /* Initial */ 200, 208,
         /* Target  */ 200, 108
@@ -65,7 +65,7 @@ const struct MetronomeUnknownMovementData D_089e58a0[] = {
 
 
 // [D_089e58b0] Cue 00 (Default)
-const struct CueDefinition metronome_cue_default = {
+struct CueDefinition metronome_cue_default = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x0C,
@@ -89,7 +89,7 @@ const struct CueDefinition metronome_cue_default = {
 };
 
 // [D_089e58f0] Cue Definition Index
-const struct CueDefinition *const metronome_cue_index[] = {
+struct CueDefinition *metronome_cue_index[] = {
     /* 0x00 */ &metronome_cue_default,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
@@ -110,7 +110,7 @@ const struct CueDefinition *const metronome_cue_index[] = {
 
 
 // [D_089e5924] Common Events
-const EngineEvent metronome_common_events[] = {
+EngineEvent metronome_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) metronome_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) metronome_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) metronome_common_init_tutorial,
@@ -118,7 +118,7 @@ const EngineEvent metronome_common_events[] = {
 };
 
 // [D_089e5934] Engine Events
-const EngineEvent metronome_engine_events[] = {
+EngineEvent metronome_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08035780,
     /* 0x01 */ (EngineEvent) func_080357c4,
     /* 0x02 */ (EngineEvent) func_080358b0,
@@ -127,7 +127,7 @@ const EngineEvent metronome_engine_events[] = {
 };
 
 // [D_089e5948] Metronome Game Engine
-const struct GameEngine metronome_engine = {
+struct GameEngine metronome_engine = {
     /* Size in Memory */ 0x30,
     /* Start Engine   */ metronome_engine_start,
     /* Update Engine  */ metronome_engine_update,

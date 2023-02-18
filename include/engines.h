@@ -26,7 +26,7 @@ struct GameEngine {
     EngineInitFunc initFunc;
     EngineUpdateFunc updateFunc;
     EngineCloseFunc closeFunc;
-    const struct CueDefinition *const *cueDefinitions;
+    struct CueDefinition **cueDefinitions;
     const EngineEvent *commonFunctions;
     const EngineEvent *engineFunctions;
     EngineInputFunc inputFunc;

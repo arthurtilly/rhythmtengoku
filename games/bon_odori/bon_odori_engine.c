@@ -94,7 +94,7 @@ extern const Palette bon_dance_obj_pal[]; // OBJ Palette (Bon Dance)
 
 
 // [D_089deb28] All Animations
-const struct Animation *const bon_odori_anim[][2] = {
+const struct Animation *bon_odori_anim[][2] = {
     { anim_bon_odori_donpan1_beat, anim_bon_dance_donpan1_beat },
     { anim_bon_odori_donpan2_beat, anim_bon_dance_donpan2_beat },
     { anim_bon_odori_donpan3_beat, anim_bon_dance_donpan3_beat },
@@ -132,7 +132,7 @@ const struct Animation *const bon_odori_anim[][2] = {
 };
 
 // [D_089dec38] Animation Table
-const struct Animation *const *const bon_odori_anim_table[] = {
+const struct Animation **bon_odori_anim_table[] = {
     bon_odori_anim[0],
     bon_odori_anim[1],
     bon_odori_anim[2],
@@ -170,7 +170,7 @@ const struct Animation *const *const bon_odori_anim_table[] = {
 };
 
 // [D_089decc0] All Donpan Animation Indexes
-const u8 bon_odori_donpan_anim_map[][4] = {
+u8 bon_odori_donpan_anim_map[][4] = {
     /* Beat   */ {  0,  1,  2,  3 },
     /* Clap2  */ {  8,  9, 10, 11 },
     /* Clap1  */ {  4,  5,  6,  7 },
@@ -182,7 +182,7 @@ const u8 bon_odori_donpan_anim_map[][4] = {
 };
 
 // [D_089dece0] Donpan Animation ID Table
-const u8 *const bon_odori_donpan_anim_id_table[] = {
+u8 *bon_odori_donpan_anim_id_table[] = {
     /* Beat   */ bon_odori_donpan_anim_map[0],
     /* Clap2  */ bon_odori_donpan_anim_map[1],
     /* Clap1  */ bon_odori_donpan_anim_map[2],
@@ -194,7 +194,7 @@ const u8 *const bon_odori_donpan_anim_id_table[] = {
 };
 
 // [D_089ded00] Donpan Animation Durations (delay before any Beat Animation can play)
-const u16 bon_odori_anim_durations[] = {
+u16 bon_odori_anim_durations[] = {
     /* Beat   */ 0x00,
     /* Clap2  */ 0x2C,
     /* Clap1  */ 0x14,
@@ -206,12 +206,12 @@ const u16 bon_odori_anim_durations[] = {
 };
 
 // [D_089ded10] Buffered Textures List
-const struct CompressedGraphics *const bon_odori_buffered_textures[] = {
+const struct CompressedGraphics *bon_odori_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ded14] Bon Odori Font Palettes
-const FontPalette bon_odori_font_pal[] = {
+FontPalette bon_odori_font_pal[] = {
     /* LYRICS PALETTE */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xC00000),
@@ -233,7 +233,7 @@ const FontPalette bon_odori_font_pal[] = {
 };
 
 // [D_089ded2c] Bon Odori Font Palettes (Highlighted)
-const FontPalette bon_odori_font_pal_highlight[] = {
+FontPalette bon_odori_font_pal_highlight[] = {
     /* LYRICS PALETTE */ {
         /* 00 */ TO_RGB555(0x0000C0),
         /* 01 */ TO_RGB555(0xC000F8),
@@ -255,7 +255,7 @@ const FontPalette bon_odori_font_pal_highlight[] = {
 };
 
 // [D_089ded44] Graphics Table (Bon Odori)
-const struct GraphicsTable bon_odori_gfx_table[] = {
+struct GraphicsTable bon_odori_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bdc118,
         /* Dest. */ BG_TILESET_BASE(0x8000),
@@ -335,7 +335,7 @@ const struct GraphicsTable bon_odori_gfx_table[] = {
 };
 
 // [D_089dee04] Graphics Table (Bon Dance)
-const struct GraphicsTable bon_dance_gfx_table[] = {
+struct GraphicsTable bon_dance_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bdc118,
         /* Dest. */ BG_TILESET_BASE(0x8000),
@@ -415,25 +415,25 @@ const struct GraphicsTable bon_dance_gfx_table[] = {
 };
 
 // [D_089deec4] Graphics Table Index
-const struct GraphicsTable *const bon_odori_gfx_tables[] = {
+struct GraphicsTable *bon_odori_gfx_tables[] = {
     /* 0x00 */ bon_odori_gfx_table,
     /* 0x01 */ bon_dance_gfx_table
 };
 
 // [D_089deecc] BG Palettes
-const u16 *const bon_odori_bg_palettes[] = {
+const u16 *bon_odori_bg_palettes[] = {
     /* 0x00 */ bon_odori_bg_pal[0],
     /* 0x01 */ bon_dance_bg_pal[0]
 };
 
 // [D_089deed4] OBJ Palettes
-const u16 *const bon_odori_obj_palettes[] = {
+const u16 *bon_odori_obj_palettes[] = {
     /* 0x00 */ bon_odori_obj_pal[0],
     /* 0x01 */ bon_dance_obj_pal[0]
 };
 
 // [D_089deedc] Text Horizontal Positions
-const u16 bon_odori_text_x_offsets[] = {
+u16 bon_odori_text_x_offsets[] = {
     /* CENTRE */ SCREEN_CENTER_X,
     /* LEFT   */ SCREEN_CENTER_X - 104,
     /* RIGHT  */ SCREEN_CENTER_X + 104
@@ -444,7 +444,7 @@ const u16 bon_odori_text_x_offsets[] = {
 
 
 // [D_089deee4] Cue 00 (Clap Forwards)
-const struct CueDefinition bon_odori_cue_clap_front = {
+struct CueDefinition bon_odori_cue_clap_front = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -468,7 +468,7 @@ const struct CueDefinition bon_odori_cue_clap_front = {
 };
 
 // [D_089def24] Cue 01 (Clap to the Side)
-const struct CueDefinition bon_odori_cue_clap_side = {
+struct CueDefinition bon_odori_cue_clap_side = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -492,7 +492,7 @@ const struct CueDefinition bon_odori_cue_clap_side = {
 };
 
 // [D_089def64] Cue Definition Index
-const struct CueDefinition *const bon_odori_cue_index[] = {
+struct CueDefinition *bon_odori_cue_index[] = {
     /* 0x00 */ &bon_odori_cue_clap_front,
     /* 0x01 */ &bon_odori_cue_clap_side,
     /* 0x02 */ NULL,
@@ -513,7 +513,7 @@ const struct CueDefinition *const bon_odori_cue_index[] = {
 
 
 // [D_089def98] Common Events
-const EngineEvent bon_odori_common_events[] = {
+EngineEvent bon_odori_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) bon_odori_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) bon_odori_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) bon_odori_common_init_tutorial,
@@ -521,7 +521,7 @@ const EngineEvent bon_odori_common_events[] = {
 };
 
 // [D_089defa8] Engine Events
-const EngineEvent bon_odori_engine_events[] = {
+EngineEvent bon_odori_engine_events[] = {
     /* 0x00 */ (EngineEvent) bon_odori_lyrics_set_current_line,
     /* 0x01 */ (EngineEvent) bon_odori_lyrics_display_centre,
     /* 0x02 */ (EngineEvent) bon_odori_lyrics_display_left,
@@ -543,7 +543,7 @@ const EngineEvent bon_odori_engine_events[] = {
 };
 
 // [D_089deff0] Bon Odori Game Engine
-const struct GameEngine bon_odori_engine = {
+struct GameEngine bon_odori_engine = {
     /* Size in Memory */ sizeof(struct BonOdoriInfo),
     /* Start Engine   */ bon_odori_engine_start,
     /* Update Engine  */ bon_odori_engine_update,

@@ -102,15 +102,15 @@ extern const struct SequenceData s_f_poly_appear_upside_seqData;
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *const polyrhythm_buffered_textures[];
-extern const struct GraphicsTable *const polyrhythm_gfx_tables[];
-extern const s16 polyrhythm_lane_start_x[2]; // Lane Start X Positions
-extern const s16 polyrhythm_lane_start_y[2]; // Lane Start Y Positions
-extern const s16 polyrhythm_block_heights[3]; // Block Heights
-extern const struct Animation *const polyrhythm_block_appear_anim[]; // Block - Appear
-extern const struct Animation *const polyrhythm_block_open_anim[]; // Block - Open
-extern const struct SequenceData *const polyrhythm_block_appear_sfx[]; // Block - Appear
-extern const struct SequenceData *const polyrhythm_block_open_sfx[]; // Block - Open
+extern const struct CompressedGraphics *polyrhythm_buffered_textures[];
+extern struct GraphicsTable *polyrhythm_gfx_tables[];
+extern s16 polyrhythm_lane_start_x[2]; // Lane Start X Positions
+extern s16 polyrhythm_lane_start_y[2]; // Lane Start Y Positions
+extern s16 polyrhythm_block_heights[3]; // Block Heights
+extern const struct Animation *polyrhythm_block_appear_anim[]; // Block - Appear
+extern const struct Animation *polyrhythm_block_open_anim[]; // Block - Open
+extern const struct SequenceData *polyrhythm_block_appear_sfx[]; // Block - Appear
+extern const struct SequenceData *polyrhythm_block_open_sfx[]; // Block - Open
 
 
 // Functions:

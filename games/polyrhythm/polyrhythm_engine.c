@@ -16,12 +16,12 @@ extern const Palette polyrhythm_2_pal[];
 
 
 // [D_089e5968] Buffered Textures List
-const struct CompressedGraphics *const polyrhythm_buffered_textures[] = {
+const struct CompressedGraphics *polyrhythm_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e596c] Graphics Table (Polyrhythm, Remix 4)
-const struct GraphicsTable polyrhythm_1_gfx_table[] = {
+struct GraphicsTable polyrhythm_1_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c781ac,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -51,7 +51,7 @@ const struct GraphicsTable polyrhythm_1_gfx_table[] = {
 };
 
 // [D_089e59b4] Graphics Table (Polyrhythm 2)
-const struct GraphicsTable polyrhythm_2_gfx_table[] = {
+struct GraphicsTable polyrhythm_2_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c781ac,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -81,7 +81,7 @@ const struct GraphicsTable polyrhythm_2_gfx_table[] = {
 };
 
 // [D_089e59fc] Graphics Table Index
-const struct GraphicsTable *const polyrhythm_gfx_tables[] = {
+struct GraphicsTable *polyrhythm_gfx_tables[] = {
     /* 0x00 */ polyrhythm_1_gfx_table,
     /* 0x01 */ polyrhythm_1_gfx_table,
     /* 0x02 */ polyrhythm_2_gfx_table
@@ -92,7 +92,7 @@ const struct GraphicsTable *const polyrhythm_gfx_tables[] = {
 
 
 // [D_089e5a08] Cue 00 (0.5 Beats, Upside)
-const struct CueDefinition polyrhythm_cue_upside = {
+struct CueDefinition polyrhythm_cue_upside = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x0C,
@@ -116,7 +116,7 @@ const struct CueDefinition polyrhythm_cue_upside = {
 };
 
 // [D_089e5a48] Cue 01 (0.5 Beats, Downside)
-const struct CueDefinition polyrhythm_cue_downside = {
+struct CueDefinition polyrhythm_cue_downside = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x0C,
@@ -140,7 +140,7 @@ const struct CueDefinition polyrhythm_cue_downside = {
 };
 
 // [D_089e5a88] Cue 04 (4 Beats, Upside)
-const struct CueDefinition polyrhythm_cue_4beat_upside = {
+struct CueDefinition polyrhythm_cue_4beat_upside = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x60,
@@ -164,7 +164,7 @@ const struct CueDefinition polyrhythm_cue_4beat_upside = {
 };
 
 // [D_089e5ac8] Cue 05 (4 Beats, Downside)
-const struct CueDefinition polyrhythm_cue_4beat_downside = {
+struct CueDefinition polyrhythm_cue_4beat_downside = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x60,
@@ -188,7 +188,7 @@ const struct CueDefinition polyrhythm_cue_4beat_downside = {
 };
 
 // [D_089e5b08] Cue 08 (8 Beats, Upside)
-const struct CueDefinition polyrhythm_cue_8beat_upside = {
+struct CueDefinition polyrhythm_cue_8beat_upside = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0xC0,
@@ -212,7 +212,7 @@ const struct CueDefinition polyrhythm_cue_8beat_upside = {
 };
 
 // [D_089e5b48] Cue 09 (8 Beats, Downside)
-const struct CueDefinition polyrhythm_cue_8beat_downside = {
+struct CueDefinition polyrhythm_cue_8beat_downside = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0xC0,
@@ -236,7 +236,7 @@ const struct CueDefinition polyrhythm_cue_8beat_downside = {
 };
 
 // [D_089e5b88] Cue Definition Index
-const struct CueDefinition *const polyrhythm_cue_index[] = {
+struct CueDefinition *polyrhythm_cue_index[] = {
     /* 0x00 */ &polyrhythm_cue_upside,
     /* 0x01 */ &polyrhythm_cue_downside,
     /* 0x02 */ NULL,
@@ -257,7 +257,7 @@ const struct CueDefinition *const polyrhythm_cue_index[] = {
 
 
 // [D_089e5bbc] Common Events
-const EngineEvent polyrhythm_common_events[] = {
+EngineEvent polyrhythm_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) polyrhythm_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) polyrhythm_common_display_text,
     /* INIT_TUTORIAL  */ // None
@@ -265,7 +265,7 @@ const EngineEvent polyrhythm_common_events[] = {
 };
 
 // [D_089e5bc8] Engine Events
-const EngineEvent polyrhythm_engine_events[] = {
+EngineEvent polyrhythm_engine_events[] = {
     /* 0x00 */ (EngineEvent) polyrhythm_spawn_piston,
     /* 0x01 */ (EngineEvent) polyrhythm_despawn_piston,
     /* 0x02 */ (EngineEvent) polyrhythm_retract_pistons,
@@ -275,7 +275,7 @@ const EngineEvent polyrhythm_engine_events[] = {
 };
 
 // [D_089e5be0] Polyrhythm Game Engine
-const struct GameEngine polyrhythm_engine = {
+struct GameEngine polyrhythm_engine = {
     /* Size in Memory */ sizeof(struct PolyrhythmInfo),
     /* Start Engine   */ polyrhythm_engine_start,
     /* Update Engine  */ polyrhythm_engine_update,
@@ -291,47 +291,47 @@ const struct GameEngine polyrhythm_engine = {
 
 
 // [D_089e5c00] Lane Start X Positions
-const s16 polyrhythm_lane_start_x[] = {
+s16 polyrhythm_lane_start_x[] = {
     /* UPSIDE   */ 48,
     /* DOWNSIDE */ 96
 };
 
 // [D_089e5c04] Lane Start Y Positions
-const s16 polyrhythm_lane_start_y[] = {
+s16 polyrhythm_lane_start_y[] = {
     /* UPSIDE   */ 104,
     /* DOWNSIDE */ 128
 };
 
 // [D_089e5c08] Block Heights
-const s16 polyrhythm_block_heights[] = {
+s16 polyrhythm_block_heights[] = {
     /* HIDDEN */ 0,
     /* BLOCK  */ 16,
     /* OPEN   */ 20
 };
 
 // [D_089e5c10] Block Appear Animations
-const struct Animation *const polyrhythm_block_appear_anim[] = {
+const struct Animation *polyrhythm_block_appear_anim[] = {
     /* PLATFORM */ anim_polyrhythm_block,
     /* UPSIDE   */ anim_polyrhythm_spawn_upside,
     /* DOWNSIDE */ anim_polyrhythm_spawn_downside
 };
 
 // [D_089e5c1c] Block Open Animations
-const struct Animation *const polyrhythm_block_open_anim[] = {
+const struct Animation *polyrhythm_block_open_anim[] = {
     /* PLATFORM */ anim_polyrhythm_block,
     /* UPSIDE   */ anim_polyrhythm_push_upside,
     /* DOWNSIDE */ anim_polyrhythm_push_downside
 };
 
 // [D_089e5c28] Block Appear SFX
-const struct SequenceData *const polyrhythm_block_appear_sfx[] = {
+const struct SequenceData *polyrhythm_block_appear_sfx[] = {
     /* PLATFORM */ NULL,
     /* UPSIDE   */ &s_f_poly_appear_upside_seqData,
     /* DOWNSIDE */ &s_f_poly_open_downside_seqData
 };
 
 // [D_089e5c34] Block Open SFX
-const struct SequenceData *const polyrhythm_block_open_sfx[] = {
+const struct SequenceData *polyrhythm_block_open_sfx[] = {
     /* PLATFORM */ NULL,
     /* UPSIDE   */ &s_f_poly_open_upside_seqData,
     /* DOWNSIDE */ &s_f_poly_open_downside_seqData

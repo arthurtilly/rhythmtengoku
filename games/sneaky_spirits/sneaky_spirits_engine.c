@@ -16,12 +16,12 @@ extern const Palette sneaky_spirits_2_pal[];
 
 
 // [D_089de6e0] Buffered Textures List
-const struct CompressedGraphics *const sneaky_spirits_buffered_textures[] = {
+const struct CompressedGraphics *sneaky_spirits_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089de6e4] Graphics Table (Sneaky Spirits)
-const struct GraphicsTable sneaky_spirits_1_gfx_table[] = {
+struct GraphicsTable sneaky_spirits_1_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bd2a00,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -61,7 +61,7 @@ const struct GraphicsTable sneaky_spirits_1_gfx_table[] = {
 };
 
 // [D_089de744] Graphics Table (Sneaky Spirits 2)
-const struct GraphicsTable sneaky_spirits_2_gfx_table[] = {
+struct GraphicsTable sneaky_spirits_2_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bd2a00,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -101,7 +101,7 @@ const struct GraphicsTable sneaky_spirits_2_gfx_table[] = {
 };
 
 // [D_089de7a4] Graphics Table Index
-const struct GraphicsTable *const sneaky_spirits_gfx_tables[] = {
+struct GraphicsTable *sneaky_spirits_gfx_tables[] = {
     /* 0x00 */ sneaky_spirits_1_gfx_table,
     /* 0x01 */ sneaky_spirits_1_gfx_table,
     /* 0x02 */ sneaky_spirits_2_gfx_table
@@ -112,7 +112,7 @@ const struct GraphicsTable *const sneaky_spirits_gfx_tables[] = {
 
 
 // [D_089de7b0] Cue 00 (Normal)
-const struct CueDefinition sneaky_spirits_cue_0 = {
+struct CueDefinition sneaky_spirits_cue_0 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -136,7 +136,7 @@ const struct CueDefinition sneaky_spirits_cue_0 = {
 };
 
 // [D_089de7f0] Cue 01 (More Lenient)
-const struct CueDefinition sneaky_spirits_cue_1 = {
+struct CueDefinition sneaky_spirits_cue_1 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -160,7 +160,7 @@ const struct CueDefinition sneaky_spirits_cue_1 = {
 };
 
 // [D_089de830] Cue 02 (Most Lenient)
-const struct CueDefinition sneaky_spirits_cue_2 = {
+struct CueDefinition sneaky_spirits_cue_2 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -184,7 +184,7 @@ const struct CueDefinition sneaky_spirits_cue_2 = {
 };
 
 // [D_089de870] Cue 03 (Tutorial - No Taunt)
-const struct CueDefinition sneaky_spirits_cue_tutorial = {
+struct CueDefinition sneaky_spirits_cue_tutorial = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -208,7 +208,7 @@ const struct CueDefinition sneaky_spirits_cue_tutorial = {
 };
 
 // [D_089de8b0] Cue Definition Index
-const struct CueDefinition *const sneaky_spirits_cue_index[] = {
+struct CueDefinition *sneaky_spirits_cue_index[] = {
     /* 0x00 */ &sneaky_spirits_cue_0,
     /* 0x01 */ &sneaky_spirits_cue_1,
     /* 0x02 */ &sneaky_spirits_cue_2,
@@ -229,7 +229,7 @@ const struct CueDefinition *const sneaky_spirits_cue_index[] = {
 
 
 // [D_089de8e4] Common Events
-const EngineEvent sneaky_spirits_common_events[] = {
+EngineEvent sneaky_spirits_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) sneaky_spirits_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) sneaky_spirits_common_display_text,
     /* INIT_TUTORIAL  */ // None
@@ -237,7 +237,7 @@ const EngineEvent sneaky_spirits_common_events[] = {
 };
 
 // [D_089de8f0] Engine Events
-const EngineEvent sneaky_spirits_engine_events[] = {
+EngineEvent sneaky_spirits_engine_events[] = {
     /* 0x00 */ (EngineEvent) sneaky_spirits_show_ghost,
     /* 0x01 */ (EngineEvent) sneaky_spirits_set_ghost_height,
     /* 0x02 */ (EngineEvent) sneaky_spirits_spawn_bow,
@@ -252,7 +252,7 @@ const EngineEvent sneaky_spirits_engine_events[] = {
 };
 
 // [D_089de91c] Sneaky Spirits Game Engine
-const struct GameEngine sneaky_spirits_engine = {
+struct GameEngine sneaky_spirits_engine = {
     /* Size in Memory */ sizeof(struct SneakySpiritsInfo),
     /* Start Engine   */ sneaky_spirits_engine_start,
     /* Update Engine  */ sneaky_spirits_engine_update,

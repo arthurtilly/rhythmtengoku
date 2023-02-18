@@ -83,7 +83,7 @@ extern const struct Animation anim_horse_text_dod[];
 
 
 // [D_089e8d9c] Backgrounds
-const struct HorseMachineBG horse_machine_backgrounds[] = {
+struct HorseMachineBG horse_machine_backgrounds[] = {
     /* 0x00 */ {
         /* Palette   */ horse_machine_bg_01_pal,
         /* GFX Table */ D_0805a9d8
@@ -111,12 +111,12 @@ const struct HorseMachineBG horse_machine_backgrounds[] = {
 };
 
 // [D_089e8dcc] Buffered Textures List
-const struct CompressedGraphics *const horse_machine_buffered_textures[] = {
+const struct CompressedGraphics *horse_machine_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e8dd0] Graphics Table
-const struct GraphicsTable gfx_table_horse_machine[] = {
+struct GraphicsTable gfx_table_horse_machine[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08d16210,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -180,7 +180,7 @@ const struct GraphicsTable gfx_table_horse_machine[] = {
 
 
 // [D_089e8e60] Horse Clops (Player)
-const struct SequenceData *const horse_machine_player_horse_sfx[][4] = {
+const struct SequenceData *horse_machine_player_horse_sfx[][4] = {
     /* WALK */ {
         /* 0x00 */ &s_uma_walk1_seqData,
         /* 0x01 */ &s_uma_walk2_seqData,
@@ -208,7 +208,7 @@ const struct SequenceData *const horse_machine_player_horse_sfx[][4] = {
 };
 
 // [D_089e8ea0] Horse Clops (Teacher)
-const struct SequenceData *const horse_machine_teacher_horse_sfx[][4] = {
+const struct SequenceData *horse_machine_teacher_horse_sfx[][4] = {
     /* WALK */ {
         /* 0x00 */ &s_uma_walk1_t_seqData,
         /* 0x01 */ &s_uma_walk2_t_seqData,
@@ -236,7 +236,7 @@ const struct SequenceData *const horse_machine_teacher_horse_sfx[][4] = {
 };
 
 // [D_089e8ee0] Lesson BGM
-const struct SequenceData *const horse_machine_lesson_bgm[] = {
+const struct SequenceData *horse_machine_lesson_bgm[] = {
     /* WALK   */ &s_uma_bgm1_seqData,
     /* TROT   */ &s_uma_bgm2_seqData,
     /* CANTER */ &s_uma_bgm3_seqData,
@@ -244,7 +244,7 @@ const struct SequenceData *const horse_machine_lesson_bgm[] = {
 };
 
 // [D_089e8ef0] Horse Animations
-const struct Animation *const horse_machine_anim[] = {
+const struct Animation *horse_machine_anim[] = {
     /* WALK   */ anim_horse_walk,
     /* TROT   */ anim_horse_trot,
     /* CANTER */ anim_horse_canter,
@@ -252,7 +252,7 @@ const struct Animation *const horse_machine_anim[] = {
 };
 
 // [D_089e8f00] Jockey Animations
-const struct Animation *const horse_machine_jockey_anim[] = {
+const struct Animation *horse_machine_jockey_anim[] = {
     /* WALK   */ anim_horse_walk_jockey,
     /* TROT   */ anim_horse_trot_jockey,
     /* CANTER */ anim_horse_canter_jockey,
@@ -260,7 +260,7 @@ const struct Animation *const horse_machine_jockey_anim[] = {
 };
 
 // [D_089e8f10] Lesson Text Animations
-const struct Animation *const horse_machine_lesson_text_anim[][4] = {
+const struct Animation *horse_machine_lesson_text_anim[][4] = {
     /* WALK */ {
         /* 0x00 */ anim_horse_text_pak,
         /* 0x01 */ anim_horse_text_ka,
@@ -292,7 +292,7 @@ const struct Animation *const horse_machine_lesson_text_anim[][4] = {
 
 
 // [D_089e8f50] Cue 00 (Walk)
-const struct CueDefinition horse_machine_cue_walk = {
+struct CueDefinition horse_machine_cue_walk = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | B_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x0C,
@@ -316,7 +316,7 @@ const struct CueDefinition horse_machine_cue_walk = {
 };
 
 // [D_089e8f90] Cue 01 (Trot)
-const struct CueDefinition horse_machine_cue_trot = {
+struct CueDefinition horse_machine_cue_trot = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | B_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x0C,
@@ -340,7 +340,7 @@ const struct CueDefinition horse_machine_cue_trot = {
 };
 
 // [D_089e8fd0] Cue 02 (Canter)
-const struct CueDefinition horse_machine_cue_canter = {
+struct CueDefinition horse_machine_cue_canter = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | B_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x0C,
@@ -364,7 +364,7 @@ const struct CueDefinition horse_machine_cue_canter = {
 };
 
 // [D_089e9010] Cue 03 (Gallop)
-const struct CueDefinition horse_machine_cue_gallop = {
+struct CueDefinition horse_machine_cue_gallop = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | B_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x0C,
@@ -388,7 +388,7 @@ const struct CueDefinition horse_machine_cue_gallop = {
 };
 
 // [D_089e9050] Cue Definition Index
-const struct CueDefinition *const horse_machine_cue_index[] = {
+struct CueDefinition *horse_machine_cue_index[] = {
     /* 0x00 */ &horse_machine_cue_walk,
     /* 0x01 */ &horse_machine_cue_trot,
     /* 0x02 */ &horse_machine_cue_canter,
@@ -409,7 +409,7 @@ const struct CueDefinition *const horse_machine_cue_index[] = {
 
 
 // [D_089e9084] Common Events
-const EngineEvent horse_machine_common_events[] = {
+EngineEvent horse_machine_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) horse_machine_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) horse_machine_common_display_text,
     /* INIT_TUTORIAL  */ // None
@@ -417,7 +417,7 @@ const EngineEvent horse_machine_common_events[] = {
 };
 
 // [D_089e9090] Engine Events
-const EngineEvent horse_machine_engine_events[] = {
+EngineEvent horse_machine_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08041444,
     /* 0x01 */ (EngineEvent) func_080415c0,
     /* 0x02 */ (EngineEvent) func_080416cc,
@@ -429,7 +429,7 @@ const EngineEvent horse_machine_engine_events[] = {
 };
 
 // [D_089e90b0] Horse Machine Game Engine
-const struct GameEngine horse_machine_engine = {
+struct GameEngine horse_machine_engine = {
     /* Size in Memory */ 0x310,
     /* Start Engine   */ horse_machine_engine_start,
     /* Update Engine  */ horse_machine_engine_update,

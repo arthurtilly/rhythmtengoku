@@ -44,14 +44,14 @@ enum SickBeatsVersionsEnum {
 
 
 // Engine Definition Data:
-extern const s16 sick_beats_particle_sfx_pitch[];
-extern const struct Animation *const sick_beats_microbe_event_anim[];
-extern const u16 sick_beats_microbe_event_durations[];
-extern const struct CompressedGraphics *const sick_beats_buffered_textures[];
-extern const struct GraphicsTable gfx_table_sick_beats[];
-extern const struct VirusAction sick_beats_virus_actions[];
-extern const u8 D_089e92f0[];
-extern const struct Animation *const sick_beats_doctor_anim[];
+extern s16 sick_beats_particle_sfx_pitch[];
+extern const struct Animation *sick_beats_microbe_event_anim[];
+extern u16 sick_beats_microbe_event_durations[];
+extern const struct CompressedGraphics *sick_beats_buffered_textures[];
+extern struct GraphicsTable gfx_table_sick_beats[];
+extern struct VirusAction sick_beats_virus_actions[];
+extern u8 D_089e92f0[];
+extern const struct Animation *sick_beats_doctor_anim[];
 
 
 // Functions:

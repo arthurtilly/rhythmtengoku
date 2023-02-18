@@ -49,15 +49,15 @@ enum QuizShowHostArmsEnum {
 
 
 // Engine Definition Data:
-extern const struct Animation *const quiz_arm_r_anim[];
-extern const struct Animation *const quiz_arm_l_anim[];
-extern const struct Animation *const quiz_face_neutral_anim[];
-extern const struct Animation *const quiz_face_success_anim[];
-extern const struct Animation *const quiz_face_failure_anim[];
-extern const struct Animation *const quiz_host_button_press_anim[];
-extern const struct Animation *const quiz_ex_host_face_anim[];
-extern const struct Animation *const quiz_ex_player_face_anim[];
-extern const struct GameEngine quiz_show_engine;
+extern const struct Animation *quiz_arm_r_anim[];
+extern const struct Animation *quiz_arm_l_anim[];
+extern const struct Animation *quiz_face_neutral_anim[];
+extern const struct Animation *quiz_face_success_anim[];
+extern const struct Animation *quiz_face_failure_anim[];
+extern const struct Animation *quiz_host_button_press_anim[];
+extern const struct Animation *quiz_ex_host_face_anim[];
+extern const struct Animation *quiz_ex_player_face_anim[];
+extern struct GameEngine quiz_show_engine;
 
 
 // Functions:

@@ -36,9 +36,9 @@ extern const struct Animation anim_bouncy_road_path[];
 
 
 // Engine Definition Data:
-extern const struct Animation *const bouncy_road_player_bouncer_anim[];
-extern const struct GraphicsTable *const bouncy_road_gfx_tables[];
-extern const struct CompressedGraphics *const bouncy_road_buffered_textures[];
+extern const struct Animation *bouncy_road_player_bouncer_anim[];
+extern struct GraphicsTable *bouncy_road_gfx_tables[];
+extern const struct CompressedGraphics *bouncy_road_buffered_textures[];
 
 
 // Functions:

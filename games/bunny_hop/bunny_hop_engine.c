@@ -39,12 +39,12 @@ extern const struct SequenceData s_f_dummy_vol0_seqData;
 
 
 // [D_089e5ee0] Buffered Textures List
-const struct CompressedGraphics *const bunny_hop_buffered_textures[] = {
+const struct CompressedGraphics *bunny_hop_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e5ee4] Graphics Table (Bunny Hop)
-const struct GraphicsTable bunny_hop_gfx_table[] = {
+struct GraphicsTable bunny_hop_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c7fda8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -89,7 +89,7 @@ const struct GraphicsTable bunny_hop_gfx_table[] = {
 };
 
 // [D_089e5f50] Graphics Table (Remix 3)
-const struct GraphicsTable bunny_hop_remix_3_gfx_table[] = {
+struct GraphicsTable bunny_hop_remix_3_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c7fda8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -134,7 +134,7 @@ const struct GraphicsTable bunny_hop_remix_3_gfx_table[] = {
 };
 
 // [D_089e5fbc] Graphics Table Index
-const struct GraphicsTable *const bunny_hop_gfx_tables[] = {
+struct GraphicsTable *bunny_hop_gfx_tables[] = {
     /* 0x00 */ bunny_hop_gfx_table,
     /* 0x01 */ bunny_hop_gfx_table,
     /* 0x02 */ bunny_hop_gfx_table,
@@ -146,7 +146,7 @@ const struct GraphicsTable *const bunny_hop_gfx_tables[] = {
 
 
 // [D_089e5fcc] BGM Harmony
-const struct SequenceData *const bunny_hop_bgm_harmony_parts[] = {
+const struct SequenceData *bunny_hop_bgm_harmony_parts[] = {
     /* 0x00 */ &s_rabbit_c7_seqData,
     /* 0x01 */ &s_rabbit_c7_brass_seqData,
     /* 0x02 */ &s_rabbit_f7_seqData,
@@ -171,7 +171,7 @@ const struct SequenceData *const bunny_hop_bgm_harmony_parts[] = {
 };
 
 // [D_089e6020] BGM Drum Fills
-const struct SequenceData *const bunny_hop_bgm_drum_fills[] = {
+const struct SequenceData *bunny_hop_bgm_drum_fills[] = {
     /* 0x00 */ &s_rabbit_fill_1_seqData,
     /* 0x01 */ &s_rabbit_fill_2_seqData,
     /* 0x02 */ &s_rabbit_fill_3_seqData,
@@ -179,7 +179,7 @@ const struct SequenceData *const bunny_hop_bgm_drum_fills[] = {
 };
 
 // [D_089e6030] Remix 3 Transition Palettes
-const Palette *const bunny_hop_palettes[] = {
+const Palette *bunny_hop_palettes[] = {
     /* 0x00 */ bunny_hop_pal,
     /* 0x01 */ bunny_hop_remix_3_pal,
 };
@@ -189,7 +189,7 @@ const Palette *const bunny_hop_palettes[] = {
 
 
 // [D_089e6038] Cue 00 (?)
-const struct CueDefinition bunny_hop_cue_00 = {
+struct CueDefinition bunny_hop_cue_00 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -213,7 +213,7 @@ const struct CueDefinition bunny_hop_cue_00 = {
 };
 
 // [D_089e6078] Cue 01 (?)
-const struct CueDefinition bunny_hop_cue_01 = {
+struct CueDefinition bunny_hop_cue_01 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -237,7 +237,7 @@ const struct CueDefinition bunny_hop_cue_01 = {
 };
 
 // [D_089e60b8] Cue 02 (?)
-const struct CueDefinition bunny_hop_cue_02 = {
+struct CueDefinition bunny_hop_cue_02 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -261,7 +261,7 @@ const struct CueDefinition bunny_hop_cue_02 = {
 };
 
 // [D_089e60f8] Cue 03 (?)
-const struct CueDefinition bunny_hop_cue_03 = {
+struct CueDefinition bunny_hop_cue_03 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -285,7 +285,7 @@ const struct CueDefinition bunny_hop_cue_03 = {
 };
 
 // [D_089e6138] Cue 04 (?)
-const struct CueDefinition bunny_hop_cue_04 = {
+struct CueDefinition bunny_hop_cue_04 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -309,7 +309,7 @@ const struct CueDefinition bunny_hop_cue_04 = {
 };
 
 // [D_089e6178] Cue 05 (?)
-const struct CueDefinition bunny_hop_cue_05 = {
+struct CueDefinition bunny_hop_cue_05 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -333,7 +333,7 @@ const struct CueDefinition bunny_hop_cue_05 = {
 };
 
 // [D_089e61b8] Cue 06 (?)
-const struct CueDefinition bunny_hop_cue_06 = {
+struct CueDefinition bunny_hop_cue_06 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -357,7 +357,7 @@ const struct CueDefinition bunny_hop_cue_06 = {
 };
 
 // [D_089e61f8] Cue 07 (?)
-const struct CueDefinition bunny_hop_cue_07 = {
+struct CueDefinition bunny_hop_cue_07 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -381,7 +381,7 @@ const struct CueDefinition bunny_hop_cue_07 = {
 };
 
 // [D_089e6238] Cue 08 (?)
-const struct CueDefinition bunny_hop_cue_08 = {
+struct CueDefinition bunny_hop_cue_08 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -405,7 +405,7 @@ const struct CueDefinition bunny_hop_cue_08 = {
 };
 
 // [D_089e6278] Cue 09 (?)
-const struct CueDefinition bunny_hop_cue_09 = {
+struct CueDefinition bunny_hop_cue_09 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x0C,
@@ -429,7 +429,7 @@ const struct CueDefinition bunny_hop_cue_09 = {
 };
 
 // [D_089e62b8] Cue 0A (?)
-const struct CueDefinition bunny_hop_cue_10 = {
+struct CueDefinition bunny_hop_cue_10 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -453,7 +453,7 @@ const struct CueDefinition bunny_hop_cue_10 = {
 };
 
 // [D_089e62f8] Cue Definition Index
-const struct CueDefinition *const bunny_hop_cue_index[] = {
+struct CueDefinition *bunny_hop_cue_index[] = {
     /* 0x00 */ &bunny_hop_cue_00,
     /* 0x01 */ &bunny_hop_cue_01,
     /* 0x02 */ &bunny_hop_cue_02,
@@ -474,7 +474,7 @@ const struct CueDefinition *const bunny_hop_cue_index[] = {
 
 
 // [D_089e632c] Common Events
-const EngineEvent bunny_hop_common_events[] = {
+EngineEvent bunny_hop_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) bunny_hop_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) bunny_hop_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) bunny_hop_common_init_tutorial,
@@ -482,7 +482,7 @@ const EngineEvent bunny_hop_common_events[] = {
 };
 
 // [D_089e633c] Engine Events
-const EngineEvent bunny_hop_engine_events[] = {
+EngineEvent bunny_hop_engine_events[] = {
     /* 0x00 */ (EngineEvent) bunny_hop_engine_event_stub,
     /* 0x01 */ (EngineEvent) func_0803899c,
     /* 0x02 */ (EngineEvent) func_0803934c,
@@ -496,7 +496,7 @@ const EngineEvent bunny_hop_engine_events[] = {
 };
 
 // [D_089e6364] Bunny Hop Game Engine
-const struct GameEngine bunny_hop_engine = {
+struct GameEngine bunny_hop_engine = {
     /* Size in Memory */ 0x31c,
     /* Start Engine   */ bunny_hop_engine_start,
     /* Update Engine  */ bunny_hop_engine_update,
@@ -512,7 +512,7 @@ const struct GameEngine bunny_hop_engine = {
 
 
 // [D_089e6384] Sea-Life Animations
-const struct Animation *const bunny_hop_platform_anim[] = {
+const struct Animation *bunny_hop_platform_anim[] = {
     /* 0x00 */ anim_bunny_hop_1beat_turtle,
     /* 0x01 */ anim_bunny_hop_1beat_turtle,
     /* 0x02 */ anim_bunny_hop_1beat_whale,

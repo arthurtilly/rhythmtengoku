@@ -32,9 +32,9 @@ struct CreditsTextStartPos {
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *const staff_credit_buffered_textures[];
-extern const struct GraphicsTable staff_credit_gfx_table[];
-extern const struct CreditsTextStartPos D_089df628[];
+extern const struct CompressedGraphics *staff_credit_buffered_textures[];
+extern struct GraphicsTable staff_credit_gfx_table[];
+extern struct CreditsTextStartPos D_089df628[];
 
 
 // Functions:

@@ -139,7 +139,7 @@ $(OUTPUT).gba	:	$(OUTPUT).elf
 
 $(OUTPUT).elf	:	$(OFILES)
 	$(V)echo "Building ROM..."
-	$(V)$(LD) $(OFILES) tools/agbcc/lib/libgcc.a tools/agbcc/lib/libc.a -T $(LD_SCRIPT) -T $(UNDEFINED_SYMS) -Wl,-Map $(@:.elf=.map) -nostartfiles -o $@
+	$(V)$(LD) $(OFILES) tools/agbcc/lib/libgcc.a tools/agbcc/lib/libc.a -T $(LD_SCRIPT) -T $(UNDEFINED_SYMS) -Wl,--no-warn-rwx-segments,-Map $(@:.elf=.map) -nostartfiles -o $@
 
 
 # Binary data

@@ -19,13 +19,13 @@ extern const struct SequenceData s_f_batter_ball_high_seqData;
 
 
 // [D_089de93c] Buffered Textures List
-const struct CompressedGraphics *const spaceball_buffered_textures[] = {
+const struct CompressedGraphics *spaceball_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 
 // [D_089de940] Graphics Table
-const struct GraphicsTable spaceball_gfx_table[] = {
+struct GraphicsTable spaceball_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bd5524,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -56,7 +56,7 @@ const struct GraphicsTable spaceball_gfx_table[] = {
 
 
 // [D_089de988] Batter Animations (Close)
-const struct Animation *const spaceball_anim_table_batter_close[] = {
+const struct Animation *spaceball_anim_table_batter_close[] = {
     anim_spaceball_batter_green,
     anim_spaceball_batter_red,
     anim_spaceball_batter_pink
@@ -64,7 +64,7 @@ const struct Animation *const spaceball_anim_table_batter_close[] = {
 
 
 // [D_089de994] Batter Animations (Far)
-const struct Animation *const spaceball_anim_table_batter_far[] = {
+const struct Animation *spaceball_anim_table_batter_far[] = {
     anim_spaceball_batter_green_far,
     anim_spaceball_batter_red_far,
     anim_spaceball_batter_pink_far
@@ -72,7 +72,7 @@ const struct Animation *const spaceball_anim_table_batter_far[] = {
 
 
 // [D_089de9a0] Ball Animations
-const struct Animation *const spaceball_anim_table_ball[] = {
+const struct Animation *spaceball_anim_table_ball[] = {
     anim_spaceball_baseball,
     anim_spaceball_rice_ball,
     anim_spaceball_star_ball
@@ -83,7 +83,7 @@ const struct Animation *const spaceball_anim_table_ball[] = {
 
 
 // [D_089de9ac] Cue 00 (0.5 Beats)
-const struct CueDefinition spaceball_cue_low_fast = {
+struct CueDefinition spaceball_cue_low_fast = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x0C,
@@ -107,7 +107,7 @@ const struct CueDefinition spaceball_cue_low_fast = {
 };
 
 // [D_089de9ec] Cue 01 (1 Beat)
-const struct CueDefinition spaceball_cue_low = {
+struct CueDefinition spaceball_cue_low = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -131,7 +131,7 @@ const struct CueDefinition spaceball_cue_low = {
 };
 
 // [D_089dea2c] Cue 02 (2 Beats)
-const struct CueDefinition spaceball_cue_high = {
+struct CueDefinition spaceball_cue_high = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -155,7 +155,7 @@ const struct CueDefinition spaceball_cue_high = {
 };
 
 // [D_089dea6c] Cue 03 (1.5 Beats)
-const struct CueDefinition spaceball_cue_high_fast = {
+struct CueDefinition spaceball_cue_high_fast = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x24,
@@ -179,7 +179,7 @@ const struct CueDefinition spaceball_cue_high_fast = {
 };
 
 // [D_089deaac] Cue Definition Index
-const struct CueDefinition *const spaceball_cue_index[] = {
+struct CueDefinition *spaceball_cue_index[] = {
     /* 0x00 */ &spaceball_cue_low_fast,
     /* 0x01 */ &spaceball_cue_low,
     /* 0x02 */ &spaceball_cue_high,
@@ -200,7 +200,7 @@ const struct CueDefinition *const spaceball_cue_index[] = {
 
 
 // [D_089deae0] Common Events
-const EngineEvent spaceball_common_events[] = {
+EngineEvent spaceball_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) spaceball_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) spaceball_common_display_text,
     /* INIT_TUTORIAL  */ // None
@@ -208,7 +208,7 @@ const EngineEvent spaceball_common_events[] = {
 };
 
 // [D_089deaec] Engine Events
-const EngineEvent spaceball_engine_events[] = {
+EngineEvent spaceball_engine_events[] = {
     /* 0x00 */ (EngineEvent) spaceball_prepare_pitcher,
     /* 0x01 */ (EngineEvent) spaceball_loop_exit_condition,
     /* 0x02 */ (EngineEvent) spaceball_set_camera_zoom,
@@ -219,7 +219,7 @@ const EngineEvent spaceball_engine_events[] = {
 };
 
 // [D_089deb08] Spaceball Game Engine
-const struct GameEngine spaceball_engine = {
+struct GameEngine spaceball_engine = {
     /* Size in Memory */ sizeof(struct SpaceballInfo),
     /* Start Engine   */ spaceball_engine_start,
     /* Update Engine  */ spaceball_engine_update,

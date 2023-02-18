@@ -27,11 +27,11 @@ struct MannequinFactoryCue {
 
 
 // Engine Definition Data:
-extern const struct Animation *const mannequin_finish_anim[];
-extern const u16 mannequin_input_buttons[];
-extern const struct CompressedGraphics *const mannequin_buffered_textures[];
-extern const struct GraphicsTable mannequin_gfx_table[];
-extern const struct SequenceData *const D_089df404[];
+extern const struct Animation *mannequin_finish_anim[];
+extern u16 mannequin_input_buttons[];
+extern const struct CompressedGraphics *mannequin_buffered_textures[];
+extern struct GraphicsTable mannequin_gfx_table[];
+extern const struct SequenceData *D_089df404[];
 
 
 // Functions:

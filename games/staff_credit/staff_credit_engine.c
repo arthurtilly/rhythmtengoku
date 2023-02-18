@@ -8,17 +8,17 @@
 
 
 // [D_089df618] Buffered Textures List
-const struct CompressedGraphics *const staff_credit_buffered_textures[] = {
+const struct CompressedGraphics *staff_credit_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089df61c] Graphics Table
-const struct GraphicsTable staff_credit_gfx_table[] = {
+struct GraphicsTable staff_credit_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
 // [D_089df628] Text Position/Alignment Data
-const struct CreditsTextStartPos D_089df628[] = {
+struct CreditsTextStartPos D_089df628[] = {
     /* Left-Aligned */ {
         /* Anchor */ TEXT_ANIM_ANCHOR_BOTTOM_LEFT,
         /* X Pos. */ 100
@@ -38,7 +38,7 @@ const struct CreditsTextStartPos D_089df628[] = {
 
 
 // [D_089df634] Cue 00
-const struct CueDefinition staff_credit_cue_00 = {
+struct CueDefinition staff_credit_cue_00 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -62,7 +62,7 @@ const struct CueDefinition staff_credit_cue_00 = {
 };
 
 // [D_089df674] Cue Index
-const struct CueDefinition *const staff_credit_cue_index[] = {
+struct CueDefinition *staff_credit_cue_index[] = {
     /* 0x00 */ &staff_credit_cue_00,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
@@ -83,7 +83,7 @@ const struct CueDefinition *const staff_credit_cue_index[] = {
 
 
 // [D_089df6a8] Common Events
-const EngineEvent staff_credit_common_events[] = {
+EngineEvent staff_credit_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) staff_credit_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) staff_credit_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) staff_credit_common_init_tutorial,
@@ -91,7 +91,7 @@ const EngineEvent staff_credit_common_events[] = {
 };
 
 // [D_089df6b8] Engine Events
-const EngineEvent staff_credit_engine_events[] = {
+EngineEvent staff_credit_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_0802372c,
     /* 0x01 */ (EngineEvent) func_080237ec,
     /* 0x02 */ (EngineEvent) func_080237f8,
@@ -100,7 +100,7 @@ const EngineEvent staff_credit_engine_events[] = {
 };
 
 // [D_089df6cc] Staff Credit Game Engine
-const struct GameEngine staff_credit_engine = {
+struct GameEngine staff_credit_engine = {
     /* Size in Memory */ 0x80,
     /* Start Engine   */ staff_credit_engine_start,
     /* Update Engine  */ staff_credit_engine_update,

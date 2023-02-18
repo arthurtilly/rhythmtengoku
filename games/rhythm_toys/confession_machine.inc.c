@@ -1,13 +1,13 @@
-extern const struct SequenceData *const confession_machine_sfx_pool_a[];
-extern const struct SequenceData *const confession_machine_sfx_pool_b[];
-extern const struct SequenceData *const confession_machine_sfx_pool_up[];
-extern const struct SequenceData *const confession_machine_sfx_pool_down[];
-extern const struct SequenceData *const confession_machine_sfx_pool_left[];
-extern const struct SequenceData *const confession_machine_sfx_pool_right[];
+extern const struct SequenceData *confession_machine_sfx_pool_a[];
+extern const struct SequenceData *confession_machine_sfx_pool_b[];
+extern const struct SequenceData *confession_machine_sfx_pool_up[];
+extern const struct SequenceData *confession_machine_sfx_pool_down[];
+extern const struct SequenceData *confession_machine_sfx_pool_left[];
+extern const struct SequenceData *confession_machine_sfx_pool_right[];
 
 
 // [D_089e9b04] Confession Machine SFX Pool Table
-const struct SequenceData *const *const confession_machine_sfx_table[] = {
+const struct SequenceData **confession_machine_sfx_table[] = {
     /* A */ confession_machine_sfx_pool_a,
     /* B */ confession_machine_sfx_pool_b,
     /* U */ confession_machine_sfx_pool_up,
@@ -17,10 +17,10 @@ const struct SequenceData *const *const confession_machine_sfx_table[] = {
 };
 
 // [D_089e9b1c] Confession Machine Demo BPM
-const u16 confession_machine_demo_bpm = 130;
+u16 confession_machine_demo_bpm = 130;
 
 // [D_089e9b20] Confession Machine Demo Script (Unused)
-const struct RhythmToysDemo confession_machine_demo_seq[] = {
+struct RhythmToysDemo confession_machine_demo_seq[] = {
     /* 0x00 */ { RHYTHM_TOYS_DEMO_PRESS_A, 0x5F },
     /* 0x01 */ { RHYTHM_TOYS_DEMO_PRESS_A, 0x5F },
     /* 0x02 */ { RHYTHM_TOYS_DEMO_PRESS_B, 0x8E },

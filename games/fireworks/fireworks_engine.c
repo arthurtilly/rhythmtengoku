@@ -22,12 +22,12 @@ extern const Palette fireworks_bg_pal[];
 
 
 // [D_089e4214] Buffered Textures List
-const struct CompressedGraphics *const fireworks_buffered_textures[] = {
+const struct CompressedGraphics *fireworks_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e4218] Graphics Table (Fireworks)
-const struct GraphicsTable fireworks_gfx_table[] = {
+struct GraphicsTable fireworks_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5da78,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -72,7 +72,7 @@ const struct GraphicsTable fireworks_gfx_table[] = {
 };
 
 // [D_089e4284] Graphics Table (Remix 5 [1])
-const struct GraphicsTable fireworks_remix_5_gfx_table_1[] = {
+struct GraphicsTable fireworks_remix_5_gfx_table_1[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5e20c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -107,7 +107,7 @@ const struct GraphicsTable fireworks_remix_5_gfx_table_1[] = {
 };
 
 // [D_089e42d8] Graphics Table (Remix 5 [2])
-const struct GraphicsTable fireworks_remix_5_gfx_table_2[] = {
+struct GraphicsTable fireworks_remix_5_gfx_table_2[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5ebcc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -142,7 +142,7 @@ const struct GraphicsTable fireworks_remix_5_gfx_table_2[] = {
 };
 
 // [D_089e432c] Graphics Table (Remix 5 [3])
-const struct GraphicsTable fireworks_remix_5_gfx_table_3[] = {
+struct GraphicsTable fireworks_remix_5_gfx_table_3[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5f27c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -177,7 +177,7 @@ const struct GraphicsTable fireworks_remix_5_gfx_table_3[] = {
 };
 
 // [D_089e4380] Graphics Table (Remix 5 [4])
-const struct GraphicsTable fireworks_remix_5_gfx_table_4[] = {
+struct GraphicsTable fireworks_remix_5_gfx_table_4[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5fa80,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -212,7 +212,7 @@ const struct GraphicsTable fireworks_remix_5_gfx_table_4[] = {
 };
 
 // [D_089e43d4] Graphics Table Index
-const struct GraphicsTable *const fireworks_gfx_tables[] = {
+struct GraphicsTable *fireworks_gfx_tables[] = {
     /* 0x00 */ fireworks_gfx_table,
     /* 0x01 */ fireworks_remix_5_gfx_table_1,
     /* 0x02 */ fireworks_remix_5_gfx_table_2,
@@ -225,14 +225,14 @@ const struct GraphicsTable *const fireworks_gfx_tables[] = {
 
 
 // [D_089e43e8] Firework Durations
-const u16 fireworks_cue_durations[] = {
+u16 fireworks_cue_durations[] = {
     /* SPIRIT SPARKLER */ 0x30,
     /* NORMAL FIREWORK */ 0x60,
     /* TAIKO BOMBER    */ 0x48
 };
 
 // [D_089e43f0] Cue 00 (Spirit Sparkler)
-const struct CueDefinition fireworks_cue_spirit_sparkler = {
+struct CueDefinition fireworks_cue_spirit_sparkler = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -256,7 +256,7 @@ const struct CueDefinition fireworks_cue_spirit_sparkler = {
 };
 
 // [D_089e4430] Cue 01 (Normal Firework)
-const struct CueDefinition fireworks_cue_normal = {
+struct CueDefinition fireworks_cue_normal = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x48,
@@ -280,7 +280,7 @@ const struct CueDefinition fireworks_cue_normal = {
 };
 
 // [D_089e4470] Cue 04 (Hawfinch Taiko Bomber)
-const struct CueDefinition fireworks_cue_taiko_bomber = {
+struct CueDefinition fireworks_cue_taiko_bomber = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -304,7 +304,7 @@ const struct CueDefinition fireworks_cue_taiko_bomber = {
 };
 
 // [D_089e44b0] Cue Definition Index
-const struct CueDefinition *const fireworks_cue_index[] = {
+struct CueDefinition *fireworks_cue_index[] = {
     /* 0x00 */ &fireworks_cue_spirit_sparkler,
     /* 0x01 */ &fireworks_cue_normal,
     /* 0x02 */ NULL,
@@ -325,7 +325,7 @@ const struct CueDefinition *const fireworks_cue_index[] = {
 
 
 // [D_089e44e4] Common Events
-const EngineEvent fireworks_common_events[] = {
+EngineEvent fireworks_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) fireworks_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) fireworks_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) fireworks_common_init_tutorial,
@@ -333,14 +333,14 @@ const EngineEvent fireworks_common_events[] = {
 };
 
 // [D_089e44f4] Engine Events
-const EngineEvent fireworks_engine_events[] = {
+EngineEvent fireworks_engine_events[] = {
     /* 0x00 */ (EngineEvent) fireworks_set_pattern_mode,
     /* 0x01 */ (EngineEvent) fireworks_play_sound,
     /* 0x02 */ (EngineEvent) fireworks_set_pattern
 };
 
 // [D_089e4500] Fireworks Game Engine
-const struct GameEngine fireworks_engine = {
+struct GameEngine fireworks_engine = {
     /* Size in Memory */ sizeof(struct FireworksInfo),
     /* Start Engine   */ fireworks_engine_start,
     /* Update Engine  */ fireworks_engine_update,

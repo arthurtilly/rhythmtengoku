@@ -18,7 +18,7 @@ extern const struct CompressedGraphics D_08c50e04;
 
 
 // [D_089e0ce0] Drum Samurai Expressions
-const struct DrumTeacherExpression drum_teacher_expressions_anim[] = {
+struct DrumTeacherExpression drum_teacher_expressions_anim[] = {
     /* 0x00 */ {
         /* Head   */ NULL,
         /* R. Arm */ NULL,
@@ -53,7 +53,7 @@ const struct DrumTeacherExpression drum_teacher_expressions_anim[] = {
 #include "drum_lessons_kits.inc.c"
 
 // [D_089e16b0] ?
-const DrumPlayFunc D_089e16b0[] = {
+DrumPlayFunc D_089e16b0[] = {
     /* 0x00 */ NULL,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
@@ -73,7 +73,7 @@ const DrumPlayFunc D_089e16b0[] = {
 };
 
 // [D_089e16f0] Samurai Drummer's Kits
-const struct DrumTechKit *const drum_teacher_kits[] = {
+struct DrumTechKit *drum_teacher_kits[] = {
     /* 0x00 */ &D_089e1160,
     /* 0x01 */ &D_089e0df0,
     /* 0x02 */ &D_089e0ecc,
@@ -96,7 +96,7 @@ const struct DrumTechKit *const drum_teacher_kits[] = {
 
 
 // [D_089e172c] Accuracy Meter Lights
-const struct Animation *const drum_lessons_accuracy_light_anim[] = {
+const struct Animation *drum_lessons_accuracy_light_anim[] = {
     /* 0x00 */ anim_drum_lessons_accuracy_light1,
     /* 0x01 */ anim_drum_lessons_accuracy_light2,
     /* 0x02 */ anim_drum_lessons_accuracy_light3,
@@ -107,7 +107,7 @@ const struct Animation *const drum_lessons_accuracy_light_anim[] = {
 };
 
 // [D_089e1748] Accuracy Meter Light Positions
-const struct Vector2 drum_lessons_accuracy_light_positions[] = {
+struct Vector2 drum_lessons_accuracy_light_positions[] = {
     /* 0x00 */ {  89, 19 },
     /* 0x01 */ { 100, 19 },
     /* 0x02 */ { 111, 18 },
@@ -122,7 +122,7 @@ const struct Vector2 drum_lessons_accuracy_light_positions[] = {
 
 
 // [D_089e1764] Rank Animations
-const struct Animation *const drum_lessons_rank_anim[] = {
+const struct Animation *drum_lessons_rank_anim[] = {
     /* RANK_0 */ anim_drum_lessons_rank_c,
     /* RANK_C */ anim_drum_lessons_rank_c,
     /* RANK_B */ anim_drum_lessons_rank_b,
@@ -131,7 +131,7 @@ const struct Animation *const drum_lessons_rank_anim[] = {
 };
 
 // [D_089e1778] Rank Text
-const char *const drum_lessons_rank_text[] = {
+const char *drum_lessons_rank_text[] = {
     /* RANK_0 */ D_0805a0bc,
     /* RANK_C */ D_0805a0ac,
     /* RANK_B */ D_0805a098,
@@ -140,7 +140,7 @@ const char *const drum_lessons_rank_text[] = {
 };
 
 // [D_089e178c] Rank SFX
-const struct SequenceData *const drum_lessons_rank_sfx[] = {
+const struct SequenceData *drum_lessons_rank_sfx[] = {
     /* RANK_0 */ NULL,
     /* RANK_C */ &s_f_lesson_c_seqData,
     /* RANK_B */ &s_f_lesson_b_seqData,
@@ -161,7 +161,7 @@ const struct SequenceData *const drum_lessons_rank_sfx[] = {
 #include "drum_studio_kits.inc.c"
 
 // [D_089e2988] ?
-const DrumPlayFunc D_089e2988[] = {
+DrumPlayFunc D_089e2988[] = {
     /* 0x00 */ NULL,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
@@ -181,7 +181,7 @@ const DrumPlayFunc D_089e2988[] = {
 };
 
 // [D_089e29c8] Drum Kits
-const struct DrumTechKit *const drum_studio_kits[] = {
+struct DrumTechKit *drum_studio_kits[] = {
     /* 0x00 */ &D_089e201c,
     /* 0x01 */ &D_089e1cac,
     /* 0x02 */ &D_089e1d88,
@@ -204,12 +204,12 @@ const struct DrumTechKit *const drum_studio_kits[] = {
 
 
 // [D_089e2a04] Buffered Textures List
-const struct CompressedGraphics *const drum_studio_buffered_textures[] = {
+const struct CompressedGraphics *drum_studio_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e2a08] Graphics Table (Studio Drumming)
-const struct GraphicsTable drum_studio_gfx_table[] = {
+struct GraphicsTable drum_studio_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c4fc44,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -239,7 +239,7 @@ const struct GraphicsTable drum_studio_gfx_table[] = {
 };
 
 // [D_089e2a50] Graphics Table (Drum Lessons)
-const struct GraphicsTable drum_lessons_gfx_table[] = {
+struct GraphicsTable drum_lessons_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c4fc44,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -304,7 +304,7 @@ asm(".include \"games/drum_lessons/ending_scripts.inc\"");
 
 
 // [D_089e2b58] ?
-const struct Vector2 D_089e2b58[] = {
+struct Vector2 D_089e2b58[] = {
     /* 0x00 */ { 1, 2 },
     /* 0x01 */ { 0, 1 },
     /* 0x02 */ { 0, 0 },
@@ -316,7 +316,7 @@ const struct Vector2 D_089e2b58[] = {
 };
 
 // [D_089e2b78] ?
-const struct Vector2 D_089e2b78[] = {
+struct Vector2 D_089e2b78[] = {
     /* 0x00 */ { 0, 2 },
     /* 0x01 */ { 0, 1 },
     /* 0x02 */ { 0, 0 },
@@ -328,7 +328,7 @@ const struct Vector2 D_089e2b78[] = {
 };
 
 // [D_089e2b98] ?
-const struct SpritePlaybackData D_089e2b98[] = {
+struct SpritePlaybackData D_089e2b98[] = {
     /* 0x00 */ {
         /* anim */ anim_drum_student_head,
         /* unk4 */ 0x7f,
@@ -344,7 +344,7 @@ const struct SpritePlaybackData D_089e2b98[] = {
 };
 
 // [D_089e2ba8] Button Inputs for Cues
-const u16 D_089e2ba8[] = {
+u16 D_089e2ba8[] = {
     /* 0x00 */ DPAD_DOWN,
     /* 0x01 */ B_BUTTON,
     /* 0x02 */ DPAD_LEFT,
@@ -357,7 +357,7 @@ const u16 D_089e2ba8[] = {
 };
 
 // [D_089e2bbc] Cue 00 (Bass Drum - Left Pedal)
-const struct CueDefinition drum_studio_cue_kick_l = {
+struct CueDefinition drum_studio_cue_kick_l = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -381,7 +381,7 @@ const struct CueDefinition drum_studio_cue_kick_l = {
 };
 
 // [D_089e2bfc] Cue 01 (Bass Drum - Right Pedal)
-const struct CueDefinition drum_studio_cue_kick_r = {
+struct CueDefinition drum_studio_cue_kick_r = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -405,7 +405,7 @@ const struct CueDefinition drum_studio_cue_kick_r = {
 };
 
 // [D_089e2c3c] Cue 02 (Snare Drum - Left Hand)
-const struct CueDefinition drum_studio_cue_snare_l = {
+struct CueDefinition drum_studio_cue_snare_l = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_LEFT),
     /* Total Duration  */ 0x18,
@@ -429,7 +429,7 @@ const struct CueDefinition drum_studio_cue_snare_l = {
 };
 
 // [D_089e2c7c] Cue 03 (Snare Drum - Right Hand)
-const struct CueDefinition drum_studio_cue_snare_r = {
+struct CueDefinition drum_studio_cue_snare_r = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_LEFT),
     /* Total Duration  */ 0x18,
@@ -453,7 +453,7 @@ const struct CueDefinition drum_studio_cue_snare_r = {
 };
 
 // [D_089e2cbc] Cue 04 (Hi-Hat / Roll)
-const struct CueDefinition drum_studio_cue_04 = {
+struct CueDefinition drum_studio_cue_04 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_UP),
     /* Total Duration  */ 0x18,
@@ -477,7 +477,7 @@ const struct CueDefinition drum_studio_cue_04 = {
 };
 
 // [D_089e2cfc] Cue 05 (Tom Drum)
-const struct CueDefinition drum_studio_cue_tom = {
+struct CueDefinition drum_studio_cue_tom = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT),
     /* Total Duration  */ 0x18,
@@ -501,7 +501,7 @@ const struct CueDefinition drum_studio_cue_tom = {
 };
 
 // [D_089e2d3c] Cue 06 (Splash Cymbal)
-const struct CueDefinition drum_studio_cue_splash = {
+struct CueDefinition drum_studio_cue_splash = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(RIGHT_SHOULDER_BUTTON | LEFT_SHOULDER_BUTTON),
     /* Total Duration  */ 0x18,
@@ -525,7 +525,7 @@ const struct CueDefinition drum_studio_cue_splash = {
 };
 
 // [D_089e2d7c] Cue 07 (Crash Cymbal)
-const struct CueDefinition drum_studio_cue_crash = {
+struct CueDefinition drum_studio_cue_crash = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(RIGHT_SHOULDER_BUTTON | LEFT_SHOULDER_BUTTON),
     /* Total Duration  */ 0x18,
@@ -549,7 +549,7 @@ const struct CueDefinition drum_studio_cue_crash = {
 };
 
 // [D_089e2dbc] Cue 08 (Hi-Hat / Roll)
-const struct CueDefinition drum_studio_cue_08 = {
+struct CueDefinition drum_studio_cue_08 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_UP),
     /* Total Duration  */ 0x18,
@@ -573,7 +573,7 @@ const struct CueDefinition drum_studio_cue_08 = {
 };
 
 // [D_089e2dfc] Cue Definition Index
-const struct CueDefinition *const drum_studio_cue_index[] = {
+struct CueDefinition *drum_studio_cue_index[] = {
     /* 0x00 */ &drum_studio_cue_kick_l,
     /* 0x01 */ &drum_studio_cue_kick_r,
     /* 0x02 */ &drum_studio_cue_snare_l,
@@ -591,7 +591,7 @@ const struct CueDefinition *const drum_studio_cue_index[] = {
 
 
 // [D_089e2e24] Common Events
-const EngineEvent drum_studio_common_events[] = {
+EngineEvent drum_studio_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) drum_studio_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) drum_studio_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) drum_studio_common_init_tutorial,
@@ -618,7 +618,7 @@ extern void func_080281e8();
 extern void func_080281fc();
 
 // [D_089e2e34] Engine Events
-const EngineEvent drum_studio_engine_events[] = {
+EngineEvent drum_studio_engine_events[] = {
     /* 0x00 */ (EngineEvent) drum_studio_init_script,
     /* 0x01 */ (EngineEvent) func_080295d4,
     /* 0x02 */ (EngineEvent) func_08029178,
@@ -649,7 +649,7 @@ const EngineEvent drum_studio_engine_events[] = {
 };
 
 // [D_089e2ea0] Drum Lessons Game Engine
-const struct GameEngine drum_studio_engine = {
+struct GameEngine drum_studio_engine = {
     /* Size in Memory */ 0x580,
     /* Start Engine   */ drum_studio_engine_start,
     /* Update Engine  */ drum_studio_engine_update,
@@ -665,7 +665,7 @@ const struct GameEngine drum_studio_engine = {
 
 
 // [D_089e2ec0] ?
-const s32 D_089e2ec0[] = {
+s32 D_089e2ec0[] = {
     /* 0x00 */ -0x80,
     /* 0x01 */ -0x80,
     /* 0x02 */ -0x100,

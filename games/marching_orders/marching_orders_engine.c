@@ -98,7 +98,7 @@ extern const struct SequenceData s_f_marcher2_v_hidari_seqData;
 
 
 // [D_089e50d8] All Animations
-const struct Animation *const marching_anim[][4] = {
+const struct Animation *marching_anim[][4] = {
     /* 0x00 */ { anim_marching1_turn_l, anim_space_rabbit_turn_l, anim_marching1_turn_l, anim_marching2_turn_l },
     /* 0x01 */ { anim_marching1_turn_r, anim_space_rabbit_turn_r, anim_marching1_turn_r, anim_marching2_turn_r },
     /* 0x02 */ { anim_marching1_point_l, anim_space_rabbit_point_l, anim_marching1_point_l, anim_marching2_point_l },
@@ -117,7 +117,7 @@ const struct Animation *const marching_anim[][4] = {
 };
 
 // [D_089e51c8] Animation Table
-const struct Animation *const *const marching_anim_table[] = {
+const struct Animation **marching_anim_table[] = {
     /* 0x00 */ marching_anim[0],
     /* 0x01 */ marching_anim[1],
     /* 0x02 */ marching_anim[2],
@@ -136,12 +136,12 @@ const struct Animation *const *const marching_anim_table[] = {
 };
 
 // [D_089e5204] Buffered Textures List
-const struct CompressedGraphics *const marching_buffered_textures[] = {
+const struct CompressedGraphics *marching_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e5208] Graphics Table (Marching Orders)
-const struct GraphicsTable marching_orders_1_gfx_table[] = {
+struct GraphicsTable marching_orders_1_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c6c89c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -191,7 +191,7 @@ const struct GraphicsTable marching_orders_1_gfx_table[] = {
 };
 
 // [D_089e5280] Graphics Table (Remix 7, Remix 8)
-const struct GraphicsTable marching_orders_remix_7_gfx_table[] = {
+struct GraphicsTable marching_orders_remix_7_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ce5db0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -236,7 +236,7 @@ const struct GraphicsTable marching_orders_remix_7_gfx_table[] = {
 };
 
 // [D_089e52ec] Graphics Table (Marching Orders 2)
-const struct GraphicsTable marching_orders_2_gfx_table[] = {
+struct GraphicsTable marching_orders_2_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c6eae0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -281,7 +281,7 @@ const struct GraphicsTable marching_orders_2_gfx_table[] = {
 };
 
 // [D_089e5358] Graphics Table Index
-const struct GraphicsTable *const marching_gfx_tables[] = {
+struct GraphicsTable *marching_gfx_tables[] = {
     /* 0x00 */ marching_orders_1_gfx_table,
     /* 0x01 */ marching_orders_remix_7_gfx_table,
     /* 0x02 */ marching_orders_1_gfx_table,
@@ -289,7 +289,7 @@ const struct GraphicsTable *const marching_gfx_tables[] = {
 };
 
 // [D_089e5368] Position of <sprite> per Animation Frame
-const struct Vector2 D_089e5368[][4] = {
+struct Vector2 D_089e5368[][4] = {
     /* 0x00 */ {
         /* ver0 */ {  0,  3 },
         /* ver1 */ {  0,  1 },
@@ -327,7 +327,7 @@ const struct Vector2 D_089e5368[][4] = {
 
 
 // [D_089e53b8] Cue 00 (Step)
-const struct CueDefinition marching_cue_step = {
+struct CueDefinition marching_cue_step = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -351,7 +351,7 @@ const struct CueDefinition marching_cue_step = {
 };
 
 // [D_089e53f8] Cue 01 (Turn Left)
-const struct CueDefinition marching_cue_turn_left = {
+struct CueDefinition marching_cue_turn_left = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_LEFT),
     /* Total Duration  */ 0x18,
@@ -375,7 +375,7 @@ const struct CueDefinition marching_cue_turn_left = {
 };
 
 // [D_089e5438] Cue 02 (Turn Right)
-const struct CueDefinition marching_cue_turn_right = {
+struct CueDefinition marching_cue_turn_right = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT),
     /* Total Duration  */ 0x18,
@@ -399,7 +399,7 @@ const struct CueDefinition marching_cue_turn_right = {
 };
 
 // [D_089e5478] Cue 03 (Halt)
-const struct CueDefinition marching_cue_halt = {
+struct CueDefinition marching_cue_halt = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON),
     /* Total Duration  */ 0x18,
@@ -423,7 +423,7 @@ const struct CueDefinition marching_cue_halt = {
 };
 
 // [D_089e54b8] Cue Definition Index
-const struct CueDefinition *const marching_cue_index[] = {
+struct CueDefinition *marching_cue_index[] = {
     /* 0x00 */ &marching_cue_step,
     /* 0x01 */ &marching_cue_turn_left,
     /* 0x02 */ &marching_cue_turn_right,
@@ -444,7 +444,7 @@ const struct CueDefinition *const marching_cue_index[] = {
 
 
 // [D_089e54ec] Common Events
-const EngineEvent marching_common_events[] = {
+EngineEvent marching_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) marching_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) marching_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) marching_common_init_tutorial,
@@ -452,7 +452,7 @@ const EngineEvent marching_common_events[] = {
 };
 
 // [D_089e54fc] Engine Events
-const EngineEvent marching_engine_events[] = {
+EngineEvent marching_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08034544,
     /* 0x01 */ (EngineEvent) func_080346e0,
     /* 0x02 */ (EngineEvent) func_080347c0,
@@ -463,7 +463,7 @@ const EngineEvent marching_engine_events[] = {
 };
 
 // [D_089e5518] Marching Orders Game Engine
-const struct GameEngine marching_orders_engine = {
+struct GameEngine marching_orders_engine = {
     /* Size in Memory */ 0x48,
     /* Start Engine   */ marching_engine_start,
     /* Update Engine  */ marching_engine_update,
@@ -479,7 +479,7 @@ const struct GameEngine marching_orders_engine = {
 
 
 // [D_089e5538] Sound Effects Table
-const struct MarchingSfxData marching_sfx_table[][12] = {
+struct MarchingSfxData marching_sfx_table[][12] = {
     /* ver0 */ {
         /* SHOUT_START */ {
             /* Sound  */ &s_guntai_v_es_seqData,

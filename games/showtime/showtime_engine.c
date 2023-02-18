@@ -20,12 +20,12 @@ extern const Palette showtime_remix_3_bg_pal[];
 
 
 // [D_089e384c] Buffered Textures List
-const struct CompressedGraphics *const showtime_buffered_textures[] = {
+const struct CompressedGraphics *showtime_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e3850] Graphics Table (Showtime)
-const struct GraphicsTable showtime_gfx_table[] = {
+struct GraphicsTable showtime_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c551e8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -65,7 +65,7 @@ const struct GraphicsTable showtime_gfx_table[] = {
 };
 
 // [D_089e38b0] Graphics Table (Remix 3)
-const struct GraphicsTable showtime_remix_3_gfx_table[] = {
+struct GraphicsTable showtime_remix_3_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c56bd8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -105,7 +105,7 @@ const struct GraphicsTable showtime_remix_3_gfx_table[] = {
 };
 
 // [D_089e3910] Graphics Table Index
-const struct GraphicsTable *const showtime_gfx_tables[] = {
+struct GraphicsTable *showtime_gfx_tables[] = {
     /* 0x00 */ showtime_gfx_table,
     /* 0x01 */ showtime_remix_3_gfx_table
 };
@@ -115,7 +115,7 @@ const struct GraphicsTable *const showtime_gfx_tables[] = {
 
 
 // [D_089e3918] Cue 00 (Gray Penguin)
-const struct CueDefinition showtime_cue_gray = {
+struct CueDefinition showtime_cue_gray = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x48,
@@ -139,7 +139,7 @@ const struct CueDefinition showtime_cue_gray = {
 };
 
 // [D_089e3958] Cue 01 (Black Penguin)
-const struct CueDefinition showtime_cue_black = {
+struct CueDefinition showtime_cue_black = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x78,
@@ -163,7 +163,7 @@ const struct CueDefinition showtime_cue_black = {
 };
 
 // [D_089e3998] Cue 02 (White Penguin - Fast)
-const struct CueDefinition showtime_cue_white_fast = {
+struct CueDefinition showtime_cue_white_fast = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -187,7 +187,7 @@ const struct CueDefinition showtime_cue_white_fast = {
 };
 
 // [D_089e39d8] Cue 03 (White Penguin - Fast, Swing)
-const struct CueDefinition showtime_cue_white_fast_swing = {
+struct CueDefinition showtime_cue_white_fast_swing = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -211,7 +211,7 @@ const struct CueDefinition showtime_cue_white_fast_swing = {
 };
 
 // [D_089e3a18] Cue 04 (White Penguin)
-const struct CueDefinition showtime_cue_white = {
+struct CueDefinition showtime_cue_white = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -235,7 +235,7 @@ const struct CueDefinition showtime_cue_white = {
 };
 
 // [D_089e3a58] Cue Index
-const struct CueDefinition *const showtime_cue_index[] = {
+struct CueDefinition *showtime_cue_index[] = {
     /* 0x00 */ &showtime_cue_gray,
     /* 0x01 */ &showtime_cue_black,
     /* 0x02 */ &showtime_cue_white_fast,
@@ -256,7 +256,7 @@ const struct CueDefinition *const showtime_cue_index[] = {
 
 
 // [D_089e3a8c] Common Events
-const EngineEvent showtime_common_events[] = {
+EngineEvent showtime_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) showtime_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) showtime_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) showtime_common_init_tutorial,
@@ -264,13 +264,13 @@ const EngineEvent showtime_common_events[] = {
 };
 
 // [D_089e3a9c] Engine Events
-const EngineEvent showtime_engine_events[] = {
+EngineEvent showtime_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_0802be10,
     /* 0x01 */ (EngineEvent) showtime_engine_event_stub
 };
 
 // [D_089e3aa4] Showtime Game Engine
-const struct GameEngine showtime_engine = {
+struct GameEngine showtime_engine = {
     /* Size in Memory */ sizeof(struct ShowtimeInfo),
     /* Start Engine   */ showtime_engine_start,
     /* Update Engine  */ showtime_engine_update,
@@ -286,7 +286,7 @@ const struct GameEngine showtime_engine = {
 
 
 // [D_089e3ac4] Penguin Beat Animations
-const struct Animation *const showtime_penguin_beat_anim[] = {
+const struct Animation *showtime_penguin_beat_anim[] = {
     /* 0x00 */ anim_showtime_penguin_beat,
     /* 0x01 */ anim_showtime_big_penguin_beat,
     /* 0x02 */ anim_showtime_penguin_beat,
@@ -295,7 +295,7 @@ const struct Animation *const showtime_penguin_beat_anim[] = {
 };
 
 // [D_089e3ad8] Penguin Jump Prepare Animations
-const struct Animation *const showtime_penguin_jump_prepare_anim[] = {
+const struct Animation *showtime_penguin_jump_prepare_anim[] = {
     /* 0x00 */ anim_showtime_penguin_jump_prepare,
     /* 0x01 */ anim_showtime_big_penguin_jump_prepare,
     /* 0x02 */ anim_showtime_penguin_jump_prepare,
@@ -304,7 +304,7 @@ const struct Animation *const showtime_penguin_jump_prepare_anim[] = {
 };
 
 // [D_089e3aec] Penguin Jump Animations
-const struct Animation *const showtime_penguin_jump_anim[] = {
+const struct Animation *showtime_penguin_jump_anim[] = {
     /* 0x00 */ anim_showtime_penguin_jump,
     /* 0x01 */ anim_showtime_big_penguin_jump,
     /* 0x02 */ anim_showtime_penguin_jump,
@@ -313,7 +313,7 @@ const struct Animation *const showtime_penguin_jump_anim[] = {
 };
 
 // [D_089e3b00] Penguin Slide Animations
-const struct Animation *const showtime_penguin_slide_anim[] = {
+const struct Animation *showtime_penguin_slide_anim[] = {
     /* 0x00 */ anim_showtime_penguin_slide,
     /* 0x01 */ anim_showtime_big_penguin_slide,
     /* 0x02 */ anim_showtime_penguin_slide,
@@ -322,7 +322,7 @@ const struct Animation *const showtime_penguin_slide_anim[] = {
 };
 
 // [D_089e3b14] Step Durations?
-const u32 D_089e3b14[][5] = {
+u32 D_089e3b14[][5] = {
     { 0x00, 0x00, 0x00, 0x00, 0x00 },
     { 0x18, 0x18, 0x18, 0x18, 0x10 },
     { 0x08, 0x08, 0x08, 0x08, 0x08 },

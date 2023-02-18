@@ -203,7 +203,7 @@ extern const Palette tap_trial_remix_5_obj_pal[];
 
 
 // [D_089e704c] All Animations
-const struct Animation *const tap_trial_anim[][5] = {
+const struct Animation *tap_trial_anim[][5] = {
     /* 0x00 */ {
         /* 0x00 */ anim_tap_trial_girl_1cue,
         /* 0x01 */ anim_tap_remix_8_girl_1cue,
@@ -431,7 +431,7 @@ const struct Animation *const tap_trial_anim[][5] = {
 };
 
 // [D_089e72cc] Animation Table
-const struct Animation *const *const tap_trial_anim_table[] = {
+const struct Animation **tap_trial_anim_table[] = {
     /* 0x00 */ tap_trial_anim[0],
     /* 0x01 */ tap_trial_anim[1],
     /* 0x02 */ tap_trial_anim[2],
@@ -467,7 +467,7 @@ const struct Animation *const *const tap_trial_anim_table[] = {
 };
 
 // [D_089e734c] Tap Dance Move
-const struct TapTrialAction tap_trial_girl_actions[] = {
+struct TapTrialAction tap_trial_girl_actions[] = {
     /* 0x00 */ {
         /* Animation ID */ TAP_TRIAL_ANIM_GIRL_1CUE,
         /* Playback 1   */ 0,
@@ -675,7 +675,7 @@ const struct TapTrialAction tap_trial_girl_actions[] = {
 };
 
 // [D_089e74a0] Tap Dance Move
-const struct TapTrialAction tap_trial_remix_8_girl_actions[] = {
+struct TapTrialAction tap_trial_remix_8_girl_actions[] = {
     /* 0x00 */ {
         /* Animation ID */ TAP_TRIAL_ANIM_GIRL_1CUE,
         /* Playback 1   */ 0,
@@ -883,7 +883,7 @@ const struct TapTrialAction tap_trial_remix_8_girl_actions[] = {
 };
 
 // [D_089e75f4] Tap Dance Move
-const struct TapTrialAction tap_trial_remix_7_girl_actions[] = {
+struct TapTrialAction tap_trial_remix_7_girl_actions[] = {
     /* 0x00 */ {
         /* Animation ID */ TAP_TRIAL_ANIM_GIRL_1CUE,
         /* Playback 1   */ 0,
@@ -1091,7 +1091,7 @@ const struct TapTrialAction tap_trial_remix_7_girl_actions[] = {
 };
 
 // [D_089e7748] Tap Dance Move
-const struct TapTrialAction tap_trial_2_girl_actions[] = {
+struct TapTrialAction tap_trial_2_girl_actions[] = {
     /* 0x00 */ {
         /* Animation ID */ TAP_TRIAL_ANIM_GIRL_1CUE,
         /* Playback 1   */ 0,
@@ -1299,7 +1299,7 @@ const struct TapTrialAction tap_trial_2_girl_actions[] = {
 };
 
 // [D_089e789c] Tap Dance Actions - Girl
-const struct TapTrialAction *const tap_trial_girl_action_table[] = {
+struct TapTrialAction *tap_trial_girl_action_table[] = {
     /* 0x00 */ tap_trial_girl_actions,
     /* 0x01 */ tap_trial_remix_8_girl_actions,
     /* 0x02 */ tap_trial_remix_7_girl_actions,
@@ -1308,7 +1308,7 @@ const struct TapTrialAction *const tap_trial_girl_action_table[] = {
 };
 
 // [D_089e78b0] Tap Dance Move
-const struct TapTrialAction tap_trial_monkey_actions[] = {
+struct TapTrialAction tap_trial_monkey_actions[] = {
     /* 0x00 */ {
         /* Animation ID */ TAP_TRIAL_ANIM_MONKEY_1CUE,
         /* Playback 1   */ 0,
@@ -1516,7 +1516,7 @@ const struct TapTrialAction tap_trial_monkey_actions[] = {
 };
 
 // [D_089e7a04] Tap Dance Move
-const struct TapTrialAction tap_trial_remix_8_monkey_actions[] = {
+struct TapTrialAction tap_trial_remix_8_monkey_actions[] = {
     /* 0x00 */ {
         /* Animation ID */ TAP_TRIAL_ANIM_MONKEY_1CUE,
         /* Playback 1   */ 0,
@@ -1724,7 +1724,7 @@ const struct TapTrialAction tap_trial_remix_8_monkey_actions[] = {
 };
 
 // [D_089e7b58] Tap Dance Move
-const struct TapTrialAction tap_trial_remix_7_monkey_actions[] = {
+struct TapTrialAction tap_trial_remix_7_monkey_actions[] = {
     /* 0x00 */ {
         /* Animation ID */ TAP_TRIAL_ANIM_MONKEY_1CUE,
         /* Playback 1   */ 0,
@@ -1932,7 +1932,7 @@ const struct TapTrialAction tap_trial_remix_7_monkey_actions[] = {
 };
 
 // [D_089e7cac] Tap Dance Move
-const struct TapTrialAction tap_trial_2_monkey_actions[] = {
+struct TapTrialAction tap_trial_2_monkey_actions[] = {
     /* 0x00 */ {
         /* Animation ID */ TAP_TRIAL_ANIM_MONKEY_1CUE,
         /* Playback 1   */ 0,
@@ -2140,7 +2140,7 @@ const struct TapTrialAction tap_trial_2_monkey_actions[] = {
 };
 
 // [D_089e7e00] Tap Dance Actions - Monkey
-const struct TapTrialAction *const tap_trial_monkey_action_table[] = {
+struct TapTrialAction *tap_trial_monkey_action_table[] = {
     /* 0x00 */ tap_trial_monkey_actions,
     /* 0x01 */ tap_trial_remix_8_monkey_actions,
     /* 0x02 */ tap_trial_remix_7_monkey_actions,
@@ -2153,12 +2153,12 @@ const struct TapTrialAction *const tap_trial_monkey_action_table[] = {
 
 
 // [D_089e7e14] Buffered Textures List
-const struct CompressedGraphics *const tap_trial_buffered_textures[] = {
+const struct CompressedGraphics *tap_trial_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e7e18] Graphics Table (Tap Trial)
-const struct GraphicsTable gfx_table_tap_trial[] = {
+struct GraphicsTable gfx_table_tap_trial[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ce9bc8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2203,7 +2203,7 @@ const struct GraphicsTable gfx_table_tap_trial[] = {
 };
 
 // [D_089e7e84] Graphics Table (Remix 7, Remix 8)
-const struct GraphicsTable gfx_table_tap_trial_remix_8[] = {
+struct GraphicsTable gfx_table_tap_trial_remix_8[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cecba0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2248,7 +2248,7 @@ const struct GraphicsTable gfx_table_tap_trial_remix_8[] = {
 };
 
 // [D_089e7ef0] Graphics Table (Remix 7)
-const struct GraphicsTable gfx_table_tap_trial_remix_7[] = {
+struct GraphicsTable gfx_table_tap_trial_remix_7[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cf01e0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2293,7 +2293,7 @@ const struct GraphicsTable gfx_table_tap_trial_remix_7[] = {
 };
 
 // [D_089e7f5c] Graphics Table (Tap Trial 2)
-const struct GraphicsTable gfx_table_tap_trial_2[] = {
+struct GraphicsTable gfx_table_tap_trial_2[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cf6048,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2348,7 +2348,7 @@ const struct GraphicsTable gfx_table_tap_trial_2[] = {
 };
 
 // [D_089e7fe0] Graphics Table (Remix 5)
-const struct GraphicsTable gfx_table_tap_trial_remix_5[] = {
+struct GraphicsTable gfx_table_tap_trial_remix_5[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cf0ed0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2388,7 +2388,7 @@ const struct GraphicsTable gfx_table_tap_trial_remix_5[] = {
 };
 
 // [D_089e8040] Graphics Table Index
-const struct GraphicsTable *const tap_trial_gfx_tables[] = {
+struct GraphicsTable *tap_trial_gfx_tables[] = {
     /* 0x00 */ gfx_table_tap_trial,
     /* 0x01 */ gfx_table_tap_trial_remix_8,
     /* 0x02 */ gfx_table_tap_trial_remix_7,
@@ -2397,7 +2397,7 @@ const struct GraphicsTable *const tap_trial_gfx_tables[] = {
 };
 
 // [D_089e8054] ?
-const char *const D_089e8054[] = {
+const char *D_089e8054[] = {
     D_0805a900,
     D_0805a8f0,
     D_0805a8e0,
@@ -2406,7 +2406,7 @@ const char *const D_089e8054[] = {
 };
 
 // [D_089e8068] ?
-const s8 D_089e8068[] = {
+s8 D_089e8068[] = {
     /* 0x00 */ 0,
     /* 0x01 */ -1,
     /* 0x02 */ -1,
@@ -2422,7 +2422,7 @@ const s8 D_089e8068[] = {
 
 
 // [D_089e8070] Cue 00 (Default)
-const struct CueDefinition tap_trial_cue_default = {
+struct CueDefinition tap_trial_cue_default = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -2446,7 +2446,7 @@ const struct CueDefinition tap_trial_cue_default = {
 };
 
 // [D_089e80b0] Cue Definition Index
-const struct CueDefinition *const tap_trial_cue_index[] = {
+struct CueDefinition *tap_trial_cue_index[] = {
     /* 0x00 */ &tap_trial_cue_default,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
@@ -2467,7 +2467,7 @@ const struct CueDefinition *const tap_trial_cue_index[] = {
 
 
 // [D_089e80e4] Common Events
-const EngineEvent tap_trial_common_events[] = {
+EngineEvent tap_trial_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) tap_trial_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) tap_trial_common_display_text,
     /* INIT_TUTORIAL  */ // None
@@ -2475,7 +2475,7 @@ const EngineEvent tap_trial_common_events[] = {
 };
 
 // [D_089e80f0] Engine Events
-const EngineEvent tap_trial_engine_events[] = {
+EngineEvent tap_trial_engine_events[] = {
     /* 0x00 */ (EngineEvent) tap_trial_play_monkey_action,
     /* 0x01 */ (EngineEvent) func_0803e0bc,
     /* 0x02 */ (EngineEvent) func_0803e0f8,
@@ -2495,7 +2495,7 @@ const EngineEvent tap_trial_engine_events[] = {
 };
 
 // [D_089e8130] Tap Trial Game Engine
-const struct GameEngine tap_trial_engine = {
+struct GameEngine tap_trial_engine = {
     /* Size in Memory */ 0x398,
     /* Start Engine   */ tap_trial_engine_start,
     /* Update Engine  */ tap_trial_engine_update,

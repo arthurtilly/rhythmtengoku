@@ -101,13 +101,13 @@ extern const char D_0805a900[];
 
 
 // Engine Definition Data:
-extern const struct Animation *const *const tap_trial_anim_table[];
-extern const struct TapTrialAction *const tap_trial_girl_action_table[];
-extern const struct TapTrialAction *const tap_trial_monkey_action_table[];
-extern const struct CompressedGraphics *const tap_trial_buffered_textures[];
-extern const struct GraphicsTable *const tap_trial_gfx_tables[];
-extern const char *const D_089e8054[];
-extern const s8 D_089e8068[];
+extern const struct Animation **tap_trial_anim_table[];
+extern struct TapTrialAction *tap_trial_girl_action_table[];
+extern struct TapTrialAction *tap_trial_monkey_action_table[];
+extern const struct CompressedGraphics *tap_trial_buffered_textures[];
+extern struct GraphicsTable *tap_trial_gfx_tables[];
+extern const char *D_089e8054[];
+extern s8 D_089e8068[];
 
 
 // Functions:

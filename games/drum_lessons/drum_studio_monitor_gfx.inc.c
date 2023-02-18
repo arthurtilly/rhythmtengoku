@@ -60,7 +60,7 @@ extern const Palette studio_bg_monitor_42_pal[];
 extern const Palette studio_bg_monitor_43_pal[];
 
 // [D_089e17a0] ?
-const struct DrumStudioMonitorData D_089e17a0[] = {
+struct DrumStudioMonitorData D_089e17a0[] = {
     /* 0x00 */ {
         /* Palette   */ studio_bg_monitor_00_pal,
         /* GFX Table */ D_0805a370,

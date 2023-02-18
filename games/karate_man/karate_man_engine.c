@@ -29,10 +29,10 @@ extern const struct SequenceData s_witch_donats_seqData;
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
-extern const struct CueDefinition *const karate_cue_index[];
+extern struct CueDefinition *karate_cue_index[];
 
 // [D_089df010] Common Events
-const EngineEvent karate_common_events[] = {
+EngineEvent karate_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) karate_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) karate_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) karate_common_init_tutorial,
@@ -40,7 +40,7 @@ const EngineEvent karate_common_events[] = {
 };
 
 // [D_089df020] Engine Events
-const EngineEvent karate_engine_events[] = {
+EngineEvent karate_engine_events[] = {
     /* 0x00 */ (EngineEvent) karate_reset_bg_face,
     /* 0x01 */ (EngineEvent) karate_start_serious_mode_next_hit,
     /* 0x02 */ (EngineEvent) karate_stop_serious_mode_next_hit,
@@ -53,7 +53,7 @@ const EngineEvent karate_engine_events[] = {
 };
 
 // [D_089df044] Karate Man Game Engine
-const struct GameEngine karate_man_engine = {
+struct GameEngine karate_man_engine = {
     /* Size in Memory */ sizeof(struct KarateManInfo),
     /* Start Engine   */ karate_engine_start,
     /* Update Engine  */ karate_engine_update,
@@ -69,7 +69,7 @@ const struct GameEngine karate_man_engine = {
 
 
 // [D_089df064] Buffered Textures List
-const struct CompressedGraphics *const karate_buffered_textures[] = {
+const struct CompressedGraphics *karate_buffered_textures[] = {
     &D_08bdd500,
     &D_08bddc8c,
     &D_08bde0d4,
@@ -77,7 +77,7 @@ const struct CompressedGraphics *const karate_buffered_textures[] = {
 };
 
 // [D_089df074] Graphics Table (Faces)
-const struct GraphicsTable karate_man_faces_gfx_table[] = {
+struct GraphicsTable karate_man_faces_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bdd500,
         /* Dest. */ BG_TILESET_BASE(0x8000),
@@ -122,7 +122,7 @@ const struct GraphicsTable karate_man_faces_gfx_table[] = {
 };
 
 // [D_089df0e0] Graphics Table (Remix)
-const struct GraphicsTable karate_man_remix_gfx_table[] = {
+struct GraphicsTable karate_man_remix_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bdcfc8,
         /* Dest. */ BG_TILESET_BASE(0x8000),
@@ -162,7 +162,7 @@ const struct GraphicsTable karate_man_remix_gfx_table[] = {
 };
 
 // [D_089df140] Graphics Table (Karate Man 2)
-const struct GraphicsTable karate_man_2_gfx_table[] = {
+struct GraphicsTable karate_man_2_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bdd500,
         /* Dest. */ BG_TILESET_BASE(0x8000),
@@ -207,7 +207,7 @@ const struct GraphicsTable karate_man_2_gfx_table[] = {
 };
 
 // [D_089df1ac] Graphics Table Index
-const struct GraphicsTable *const karate_gfx_tables[] = {
+struct GraphicsTable *karate_gfx_tables[] = {
     /* 0x00 */ karate_man_remix_gfx_table,
     /* 0x01 */ karate_man_faces_gfx_table,
     /* 0x02 */ karate_man_remix_gfx_table,
@@ -215,7 +215,7 @@ const struct GraphicsTable *const karate_gfx_tables[] = {
 };
 
 // [D_089df1bc] BG Face Textures
-const struct CompressedGraphics *const karate_bg_face_textures[] = {
+const struct CompressedGraphics *karate_bg_face_textures[] = {
     &D_08bdd500,
     &D_08bddc8c,
     &D_08bde0d4
@@ -226,7 +226,7 @@ const struct CompressedGraphics *const karate_bg_face_textures[] = {
 
 
 // [D_089df1c8] Cue 00 (Pot)
-const struct CueDefinition karate_cue_pot = {
+struct CueDefinition karate_cue_pot = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -250,7 +250,7 @@ const struct CueDefinition karate_cue_pot = {
 };
 
 // [D_089df208] Cue 02 (Pot, Low Leniency)
-const struct CueDefinition karate_cue_pot_strict = {
+struct CueDefinition karate_cue_pot_strict = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -274,7 +274,7 @@ const struct CueDefinition karate_cue_pot_strict = {
 };
 
 // [D_089df248] Cue 04 (Rock)
-const struct CueDefinition karate_cue_rock = {
+struct CueDefinition karate_cue_rock = {
     /* Unknown Param.  */ 1,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -298,7 +298,7 @@ const struct CueDefinition karate_cue_rock = {
 };
 
 // [D_089df288] Cue 01 (Soccer Ball)
-const struct CueDefinition karate_cue_soccer_ball = {
+struct CueDefinition karate_cue_soccer_ball = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -322,7 +322,7 @@ const struct CueDefinition karate_cue_soccer_ball = {
 };
 
 // [D_089df2c8] Cue 05 (Bomb)
-const struct CueDefinition karate_cue_bomb = {
+struct CueDefinition karate_cue_bomb = {
     /* Unknown Param.  */ 1,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -346,7 +346,7 @@ const struct CueDefinition karate_cue_bomb = {
 };
 
 // [D_089df308] Cue 06 (Light Bulb)
-const struct CueDefinition karate_cue_light_bulb = {
+struct CueDefinition karate_cue_light_bulb = {
     /* Unknown Param.  */ 2,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -370,7 +370,7 @@ const struct CueDefinition karate_cue_light_bulb = {
 };
 
 // [D_089df348] Cue Definition Index
-const struct CueDefinition *const karate_cue_index[] = {
+struct CueDefinition *karate_cue_index[] = {
     /* 0x00 */ &karate_cue_pot,
     /* 0x01 */ &karate_cue_soccer_ball,
     /* 0x02 */ &karate_cue_pot_strict,
@@ -391,11 +391,11 @@ const struct CueDefinition *const karate_cue_index[] = {
 
 
 // [D_089df37c] Flow Meter Palette IDs (Low Flow)
-const u8 karate_flow_palette_low[] = {
+u8 karate_flow_palette_low[] = {
     5, -1
 };
 
 // [D_089df37e] Flow Meter Palette IDs (High Flow)
-const u8 karate_flow_palette_high[] = {
+u8 karate_flow_palette_high[] = {
     6, 7, -1
 };

@@ -19,12 +19,12 @@ extern const Palette rat_race_pal[];
 
 
 // [D_089e6634] Buffered Textures List
-const struct CompressedGraphics *const rat_race_buffered_textures[] = {
+const struct CompressedGraphics *rat_race_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e6638] Graphics Table
-const struct GraphicsTable rat_race_gfx_table[] = {
+struct GraphicsTable rat_race_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c87fb0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -79,7 +79,7 @@ const struct GraphicsTable rat_race_gfx_table[] = {
 };
 
 // [D_089e66bc] ?
-const u32 D_089e66bc[] = {
+u32 D_089e66bc[] = {
     /* 0x00 */ 0x100,
     /* 0x01 */ 0x80,
 };
@@ -89,7 +89,7 @@ const u32 D_089e66bc[] = {
 
 
 // [D_089e66c4] Cue 00 (Stop, 4 Beats)
-const struct CueDefinition rat_race_cue_stop_4beat = {
+struct CueDefinition rat_race_cue_stop_4beat = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x60,
@@ -113,7 +113,7 @@ const struct CueDefinition rat_race_cue_stop_4beat = {
 };
 
 // [D_089e6704] Cue 01 (Stop, 2 Beats)
-const struct CueDefinition rat_race_cue_stop_2beat = {
+struct CueDefinition rat_race_cue_stop_2beat = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x30,
@@ -137,7 +137,7 @@ const struct CueDefinition rat_race_cue_stop_2beat = {
 };
 
 // [D_089e6744] Cue 03 (Dash)
-const struct CueDefinition rat_race_cue_dash = {
+struct CueDefinition rat_race_cue_dash = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ RELEASE_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -161,7 +161,7 @@ const struct CueDefinition rat_race_cue_dash = {
 };
 
 // [D_089e6784] Cue Definition Index
-const struct CueDefinition *const rat_race_cue_index[] = {
+struct CueDefinition *rat_race_cue_index[] = {
     /* 0x00 */ &rat_race_cue_stop_4beat,
     /* 0x01 */ &rat_race_cue_stop_2beat,
     /* 0x02 */ NULL,
@@ -182,7 +182,7 @@ const struct CueDefinition *const rat_race_cue_index[] = {
 
 
 // [D_089e67b8] Common Events
-const EngineEvent rat_race_common_events[] = {
+EngineEvent rat_race_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) rat_race_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) rat_race_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) rat_race_common_init_tutorial,
@@ -190,7 +190,7 @@ const EngineEvent rat_race_common_events[] = {
 };
 
 // [D_089e67c8] Engine Events
-const EngineEvent rat_race_engine_events[] = {
+EngineEvent rat_race_engine_events[] = {
     /* 0x00 */ (EngineEvent) rat_race_engine_event_stub,
     /* 0x01 */ (EngineEvent) func_0803b034,
     /* 0x02 */ (EngineEvent) func_0803a158,
@@ -213,7 +213,7 @@ const EngineEvent rat_race_engine_events[] = {
 };
 
 // [D_089e6814] Rat Race Game Engine
-const struct GameEngine rat_race_engine = {
+struct GameEngine rat_race_engine = {
     /* Size in Memory */ 0x120,
     /* Start Engine   */ rat_race_engine_start,
     /* Update Engine  */ rat_race_engine_update,
@@ -229,14 +229,14 @@ const struct GameEngine rat_race_engine = {
 
 
 // [D_089e6834] ?
-const u8 D_089e6834[] = {
+u8 D_089e6834[] = {
     /* 0x00 */ 4, 4, 4, 4, 4, 4, 4, 4,
     /* 0x08 */ 4, 4, 4, 4, 4, 4, 4, 4,
     /* 0x10 */ 4, 4, 4, 4, 5, 6, 7, 8
 };
 
 // [D_089e684c] ?
-const u8 D_089e684c[] = {
+u8 D_089e684c[] = {
     /* 0x00 */ 0, 0, 0, 0, 0, 0, 0, 0,
     /* 0x08 */ 0, 0, 0, 0, 0, 0, 0, 0,
     /* 0x10 */ 1, 2, 3, 4, 5, 6, 7, 8,
@@ -246,7 +246,7 @@ const u8 D_089e684c[] = {
 };
 
 // [D_089e687c] Initial Rat Data(?)
-const struct Rat rat_race_init_rat_data[] = {
+struct Rat rat_race_init_rat_data[] = {
     /* 0x00 */ {
         /* Rat   */ 0,
         /* Sweat */ 0,
@@ -274,7 +274,7 @@ const struct Rat rat_race_init_rat_data[] = {
 };
 
 // [D_089e68ac] ?
-const s32 D_089e68ac[] = {
+s32 D_089e68ac[] = {
     /* 0x00 */ INT_TO_FIXED(0.0),
     /* 0x01 */ INT_TO_FIXED(40.0),
     /* 0x02 */ INT_TO_FIXED(-40.0),

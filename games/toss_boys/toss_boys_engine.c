@@ -176,7 +176,7 @@ extern const Palette toss_boys_remix_5_obj_pal[];
 
 
 // [D_089e8150] All Animations
-const struct Animation *const toss_boys_anim[][3] = {
+const struct Animation *toss_boys_anim[][3] = {
     /* 0x00 */ { anim_toss_boys_beat_r, anim_toss_remix_5_beat_r, anim_toss_boys_2_beat_r },
     /* 0x01 */ { anim_toss_boys_beat_b, anim_toss_remix_5_beat_b, anim_toss_boys_2_beat_b },
     /* 0x02 */ { anim_toss_boys_beat_y, anim_toss_remix_5_beat_y, anim_toss_boys_2_beat_y },
@@ -216,7 +216,7 @@ const struct Animation *const toss_boys_anim[][3] = {
 };
 
 // [D_089e8300] Animation Table
-const struct Animation *const *const toss_boys_anim_table[] = {
+const struct Animation **toss_boys_anim_table[] = {
     /* 0x00 */ toss_boys_anim[0],
     /* 0x01 */ toss_boys_anim[1],
     /* 0x02 */ toss_boys_anim[2],
@@ -260,7 +260,7 @@ const struct Animation *const *const toss_boys_anim_table[] = {
 
 
 // [D_089e8390] DrumTech Instrument Bank
-const struct DrumTechInstrument toss_boys_drumtech_bank[] = {
+struct DrumTechInstrument toss_boys_drumtech_bank[] = {
     /* Drum 000 */ {
         /* SoundPlayer  */ -1,
         /* Duration     */ 0,
@@ -506,12 +506,12 @@ const struct DrumTechInstrument toss_boys_drumtech_bank[] = {
 
 
 // [D_089e8528] Buffered Textures List
-const struct CompressedGraphics *const toss_boys_buffered_textures[] = {
+const struct CompressedGraphics *toss_boys_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e852c] Graphics Table (Toss Boys)
-const struct GraphicsTable gfx_table_toss_boys[] = {
+struct GraphicsTable gfx_table_toss_boys[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cf961c,
         /* Dest. */ BG_TILESET_BASE(0x8000),
@@ -551,7 +551,7 @@ const struct GraphicsTable gfx_table_toss_boys[] = {
 };
 
 // [D_089e858c] Graphics Table (Remix 5)
-const struct GraphicsTable gfx_table_toss_boys_remix_5[] = {
+struct GraphicsTable gfx_table_toss_boys_remix_5[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cf961c,
         /* Dest. */ BG_TILESET_BASE(0x8000),
@@ -591,7 +591,7 @@ const struct GraphicsTable gfx_table_toss_boys_remix_5[] = {
 };
 
 // [D_089e85ec] Graphics Table (Toss Boys 2)
-const struct GraphicsTable gfx_table_toss_boys_2[] = {
+struct GraphicsTable gfx_table_toss_boys_2[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cff0bc,
         /* Dest. */ BG_TILESET_BASE(0x8000),
@@ -631,7 +631,7 @@ const struct GraphicsTable gfx_table_toss_boys_2[] = {
 };
 
 // [D_089e864c] Graphics Table Index
-const struct GraphicsTable *const toss_boys_gfx_tables[] = {
+struct GraphicsTable *toss_boys_gfx_tables[] = {
     /* 0x00 */ gfx_table_toss_boys,
     /* 0x01 */ gfx_table_toss_boys_remix_5,
     /* 0x02 */ gfx_table_toss_boys_2
@@ -642,14 +642,14 @@ const struct GraphicsTable *const toss_boys_gfx_tables[] = {
 
 
 // [D_089e8658] Button Masks
-const u16 toss_boys_button_masks[] = {
+u16 toss_boys_button_masks[] = {
     /* R */ A_BUTTON,
     /* B */ B_BUTTON,
     /* Y */ DPAD_ALL
 };
 
 // [D_089e8660] Animations
-const struct Animation *const D_089e8660[][3] = {
+const struct Animation *D_089e8660[][3] = {
     /* PASS */ {
         /* R */ NULL,
         /* B */ NULL,
@@ -673,7 +673,7 @@ const struct Animation *const D_089e8660[][3] = {
 };
 
 // [D_089e8690] Playback Param. 1 (for above)
-const s8 D_089e8690[][3] = {
+s8 D_089e8690[][3] = {
     /* PASS */ {
         /* R */ 0,
         /* B */ 0,
@@ -697,14 +697,14 @@ const s8 D_089e8690[][3] = {
 };
 
 // [D_089e869c] ?
-const struct Vector2 D_089e869c[] = {
+struct Vector2 D_089e869c[] = {
     /* R */ { 185,  91 },
     /* B */ { 161, 116 },
     /* Y */ {  58, 100 }
 };
 
 // [D_089e86a8] ?
-const struct Vector2 D_089e86a8[] = {
+struct Vector2 D_089e86a8[] = {
     /* 0x00 */ { 185, 67 },
     /* 0x01 */ { 161, 84 },
     /* 0x02 */ {  58, 68 },
@@ -712,14 +712,14 @@ const struct Vector2 D_089e86a8[] = {
 };
 
 // [D_089e86b8] Start Indicator Arrow Animation IDs
-const u8 toss_boys_arrow_anim_ids[] = {
+u8 toss_boys_arrow_anim_ids[] = {
     /* R */ TOSS_BOYS_ANIM_ARROW_RED,
     /* B */ TOSS_BOYS_ANIM_ARROW_BLUE,
     /* Y */ TOSS_BOYS_ANIM_ARROW_YELLOW
 };
 
 // [D_089e86bc] ?
-const s16 D_089e86bc[][4] = {
+s16 D_089e86bc[][4] = {
     /* 0x00 */ { 0x04, -0x08, -0x20, -0x10 },
     /* 0x01 */ { 0x08,  0x04, -0x20, -0x10 },
     /* 0x02 */ { 0x20,  0x20,  0x04,  0x10 },
@@ -727,35 +727,35 @@ const s16 D_089e86bc[][4] = {
 };
 
 // [D_089e86dc] Ball Toss SFX
-const struct SequenceData *const toss_boys_ball_bounce_sfx[] = {
+const struct SequenceData *toss_boys_ball_bounce_sfx[] = {
     /* R */ &s_toss_ball_red_seqData,
     /* B */ &s_toss_ball_blue_seqData,
     /* Y */ &s_toss_ball_yelw_seqData
 };
 
 // [D_089e86e8] Ball Pop SFX
-const struct SequenceData *const toss_boys_ball_pop_sfx[] = {
+const struct SequenceData *toss_boys_ball_pop_sfx[] = {
     /* R */ &s_toss_ball_haretu_seqData,
     /* B */ &s_toss_ball_haretu_seqData,
     /* Y */ &s_toss_ball_haretu_seqData
 };
 
 // [D_089e86f4] Miss Animation IDs
-const s8 toss_boys_miss_anim_ids[] = {
+s8 toss_boys_miss_anim_ids[] = {
     /* R */ TOSS_BOYS_ANIM_MISS_RED,
     /* B */ TOSS_BOYS_ANIM_MISS_BLUE,
     /* Y */ TOSS_BOYS_ANIM_MISS_YELLOW
 };
 
 // [D_089e86f8] Ball Miss SFX
-const struct SequenceData *const toss_boys_ball_miss_sfx[] = {
+const struct SequenceData *toss_boys_ball_miss_sfx[] = {
     /* R */ &s_f_toss_miss1_seqData,
     /* B */ &s_f_toss_miss2_seqData,
     /* Y */ &s_f_toss_miss3_seqData
 };
 
 // [D_089e8704] ?
-const u8 D_089e8704[][4] = {
+u8 D_089e8704[][4] = {
     /* 0x00 */ { 0x10, 0x10, 0x18, 0x10 },
     /* 0x01 */ { 0x10, 0x10, 0x18, 0x10 },
     /* 0x02 */ { 0x18, 0x18, 0x10, 0x10 },
@@ -767,7 +767,7 @@ const u8 D_089e8704[][4] = {
 
 
 // [D_089e8714] Cue 00 (Aka-chan - Toss)
-const struct CueDefinition toss_boys_cue_toss_r = {
+struct CueDefinition toss_boys_cue_toss_r = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -791,7 +791,7 @@ const struct CueDefinition toss_boys_cue_toss_r = {
 };
 
 // [D_089e8754] Cue 01 (Ao-kun - Toss)
-const struct CueDefinition toss_boys_cue_toss_b = {
+struct CueDefinition toss_boys_cue_toss_b = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON),
     /* Total Duration  */ 0x18,
@@ -815,7 +815,7 @@ const struct CueDefinition toss_boys_cue_toss_b = {
 };
 
 // [D_089e8794] Cue 02 (Kii-yan - Toss)
-const struct CueDefinition toss_boys_cue_toss_y = {
+struct CueDefinition toss_boys_cue_toss_y = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -839,7 +839,7 @@ const struct CueDefinition toss_boys_cue_toss_y = {
 };
 
 // [D_089e87d4] Cue 04 (Aka-chan - Catch)
-const struct CueDefinition toss_boys_cue_catch_r = {
+struct CueDefinition toss_boys_cue_catch_r = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -863,7 +863,7 @@ const struct CueDefinition toss_boys_cue_catch_r = {
 };
 
 // [D_089e8814] Cue 05 (Ao-kun - Catch)
-const struct CueDefinition toss_boys_cue_catch_b = {
+struct CueDefinition toss_boys_cue_catch_b = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON),
     /* Total Duration  */ 0x18,
@@ -887,7 +887,7 @@ const struct CueDefinition toss_boys_cue_catch_b = {
 };
 
 // [D_089e8854] Cue 06 (Kii-yan - Catch)
-const struct CueDefinition toss_boys_cue_catch_y = {
+struct CueDefinition toss_boys_cue_catch_y = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -911,7 +911,7 @@ const struct CueDefinition toss_boys_cue_catch_y = {
 };
 
 // [D_089e8894] Cue 08 (Aka-chan - Pop)
-const struct CueDefinition toss_boys_cue_pop_r = {
+struct CueDefinition toss_boys_cue_pop_r = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -935,7 +935,7 @@ const struct CueDefinition toss_boys_cue_pop_r = {
 };
 
 // [D_089e88d4] Cue 09 (Ao-kun - Pop)
-const struct CueDefinition toss_boys_cue_pop_b = {
+struct CueDefinition toss_boys_cue_pop_b = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON),
     /* Total Duration  */ 0x18,
@@ -959,7 +959,7 @@ const struct CueDefinition toss_boys_cue_pop_b = {
 };
 
 // [D_089e8914] Cue 0A (Kii-yan - Pop)
-const struct CueDefinition toss_boys_cue_pop_y = {
+struct CueDefinition toss_boys_cue_pop_y = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -983,7 +983,7 @@ const struct CueDefinition toss_boys_cue_pop_y = {
 };
 
 // [D_089e8954] Cue Definition Index
-const struct CueDefinition *const toss_boys_cue_index[] = {
+struct CueDefinition *toss_boys_cue_index[] = {
     /* 0x00 */ &toss_boys_cue_toss_r,
     /* 0x01 */ &toss_boys_cue_toss_b,
     /* 0x02 */ &toss_boys_cue_toss_y,
@@ -1000,7 +1000,7 @@ const struct CueDefinition *const toss_boys_cue_index[] = {
 };
 
 // [D_089e8988] Hit Animation IDs
-const s8 toss_boys_hit_anim_ids[][3] = {
+s8 toss_boys_hit_anim_ids[][3] = {
     /* PASS */ {
         /* R */ TOSS_BOYS_ANIM_PASS_RED,
         /* B */ TOSS_BOYS_ANIM_PASS_BLUE,
@@ -1024,7 +1024,7 @@ const s8 toss_boys_hit_anim_ids[][3] = {
 };
 
 // [D_089e8994] Barely Animation IDs
-const s8 toss_boys_barely_anim_ids[][3] = {
+s8 toss_boys_barely_anim_ids[][3] = {
     /* PASS */ {
         /* R */ TOSS_BOYS_ANIM_BARELY_RED,
         /* B */ TOSS_BOYS_ANIM_BARELY_BLUE,
@@ -1048,7 +1048,7 @@ const s8 toss_boys_barely_anim_ids[][3] = {
 };
 
 // [D_089e89a0] "Prepare to Pop" Animation IDs
-const s8 toss_boys_ready_anim_ids[][3] = {
+s8 toss_boys_ready_anim_ids[][3] = {
     /* PASS */ {
         /* R */ -1,
         /* B */ -1,
@@ -1072,7 +1072,7 @@ const s8 toss_boys_ready_anim_ids[][3] = {
 };
 
 // [D_089e89ac] Playback Param. 1 (for above)
-const s8 toss_boys_ready_anim_playback[][3] = {
+s8 toss_boys_ready_anim_playback[][3] = {
     /* PASS */ {
         /* R */ 0,
         /* B */ 0,
@@ -1096,7 +1096,7 @@ const s8 toss_boys_ready_anim_playback[][3] = {
 };
 
 // [D_089e89b8] Beat Animation IDs
-const s8 toss_boys_beat_anim_ids[][3] = {
+s8 toss_boys_beat_anim_ids[][3] = {
     /* PASS */ {
         /* R */ TOSS_BOYS_ANIM_BEAT_RED,
         /* B */ TOSS_BOYS_ANIM_BEAT_BLUE,
@@ -1120,7 +1120,7 @@ const s8 toss_boys_beat_anim_ids[][3] = {
 };
 
 // [D_089e89c4] Playback Param. 1 (for above)
-const s8 toss_boys_beat_anim_playback[][3] = {
+s8 toss_boys_beat_anim_playback[][3] = {
     /* PASS */ {
         /* R */ 0,
         /* B */ 0,
@@ -1148,7 +1148,7 @@ const s8 toss_boys_beat_anim_playback[][3] = {
 
 
 // [D_089e89d0] Common Events
-const EngineEvent toss_boys_common_events[] = {
+EngineEvent toss_boys_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) toss_boys_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) toss_boys_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) toss_boys_common_init_tutorial,
@@ -1156,7 +1156,7 @@ const EngineEvent toss_boys_common_events[] = {
 };
 
 // [D_089e89e0] Engine Events
-const EngineEvent toss_boys_engine_events[] = {
+EngineEvent toss_boys_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_0803f1bc,
     /* 0x01 */ (EngineEvent) func_0803f390,
     /* 0x02 */ (EngineEvent) func_0803f3b0,
@@ -1170,7 +1170,7 @@ const EngineEvent toss_boys_engine_events[] = {
 };
 
 // [D_089e8a08] Toss Boys Game Engine
-const struct GameEngine toss_boys_engine = {
+struct GameEngine toss_boys_engine = {
     /* Size in Memory */ 0x3a4,
     /* Start Engine   */ toss_boys_engine_start,
     /* Update Engine  */ toss_boys_engine_update,

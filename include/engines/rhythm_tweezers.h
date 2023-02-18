@@ -115,9 +115,9 @@ extern const struct SequenceData s_witch_furu_seqData;
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *const rhythm_tweezers_veg_bg_maps[]; // Array of BG Map pointers for vegetable textures
-extern const struct CompressedGraphics *const rhythm_tweezers_buffered_textures[]; // Buffered Textures List
-extern const struct GraphicsTable *const rhythm_tweezers_gfx_tables[]; // Graphics Table
+extern const struct CompressedGraphics *rhythm_tweezers_veg_bg_maps[]; // Array of BG Map pointers for vegetable textures
+extern const struct CompressedGraphics *rhythm_tweezers_buffered_textures[]; // Buffered Textures List
+extern struct GraphicsTable *rhythm_tweezers_gfx_tables[]; // Graphics Table
 
 
 // Functions:

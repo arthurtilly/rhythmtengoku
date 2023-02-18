@@ -67,8 +67,8 @@ extern const struct SequenceData s_witch_donats_seqData;
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *const wizards_waltz_buffered_textures[];
-extern const struct GraphicsTable gfx_table_wizards_waltz[];
+extern const struct CompressedGraphics *wizards_waltz_buffered_textures[];
+extern struct GraphicsTable gfx_table_wizards_waltz[];
 
 
 // Functions:

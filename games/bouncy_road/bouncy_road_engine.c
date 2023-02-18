@@ -19,18 +19,18 @@ extern const Palette bouncy_road_remix_5_obj_pal[];
 
 
 // [D_089e3c04] Player Bouncer Animation Table (Unused)
-const struct Animation *const bouncy_road_player_bouncer_anim[] = {
+const struct Animation *bouncy_road_player_bouncer_anim[] = {
     /* 0x00 */ anim_bouncy_road_player_a,
     /* 0x01 */ anim_bouncy_road_player_dpad
 };
 
 // [D_089e3c0c] Buffered Textures List
-const struct CompressedGraphics *const bouncy_road_buffered_textures[] = {
+const struct CompressedGraphics *bouncy_road_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e3c10] Graphics Table (Bouncy Road)
-const struct GraphicsTable bouncy_road_1_gfx_table[] = {
+struct GraphicsTable bouncy_road_1_gfx_table[] = {
     /* OBJ Tileset */ {
         /* Src.  */ &D_08c57a14,
         /* Dest. */ OBJ_TILESET_BASE(0),
@@ -50,7 +50,7 @@ const struct GraphicsTable bouncy_road_1_gfx_table[] = {
 };
 
 // [D_089e3c40] Graphics Table (Remix 5)
-const struct GraphicsTable bouncy_road_remix_5_gfx_table[] = {
+struct GraphicsTable bouncy_road_remix_5_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c583bc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -90,7 +90,7 @@ const struct GraphicsTable bouncy_road_remix_5_gfx_table[] = {
 };
 
 // [D_089e3ca0] Graphics Table (Bouncy Road 2)
-const struct GraphicsTable bouncy_road_2_gfx_table[] = {
+struct GraphicsTable bouncy_road_2_gfx_table[] = {
     /* OBJ Tileset */ {
         /* Src.  */ &D_08c57a14,
         /* Dest. */ OBJ_TILESET_BASE(0),
@@ -110,7 +110,7 @@ const struct GraphicsTable bouncy_road_2_gfx_table[] = {
 };
 
 // [D_089e3cd0] Graphics Table Index
-const struct GraphicsTable *const bouncy_road_gfx_tables[] = {
+struct GraphicsTable *bouncy_road_gfx_tables[] = {
     /* 0x00 */ bouncy_road_1_gfx_table,
     /* 0x01 */ bouncy_road_remix_5_gfx_table,
     /* 0x02 */ bouncy_road_2_gfx_table
@@ -121,7 +121,7 @@ const struct GraphicsTable *const bouncy_road_gfx_tables[] = {
 
 
 // [D_089e3cdc] Cue 00 (Default)
-const struct CueDefinition bouncy_road_cue_default = {
+struct CueDefinition bouncy_road_cue_default = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -145,7 +145,7 @@ const struct CueDefinition bouncy_road_cue_default = {
 };
 
 // [D_089e3d1c] Cue Definition Index
-const struct CueDefinition *const bouncy_road_cue_index[] = {
+struct CueDefinition *bouncy_road_cue_index[] = {
     /* 0x00 */ &bouncy_road_cue_default,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
@@ -166,7 +166,7 @@ const struct CueDefinition *const bouncy_road_cue_index[] = {
 
 
 // [D_089e3d50] Common Events
-const EngineEvent bouncy_road_common_events[] = {
+EngineEvent bouncy_road_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) bouncy_road_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) bouncy_road_common_display_text,
     /* INIT_TUTORIAL  */ // None
@@ -174,7 +174,7 @@ const EngineEvent bouncy_road_common_events[] = {
 };
 
 // [D_089e3d5c] Engine Events
-const EngineEvent bouncy_road_engine_events[] = {
+EngineEvent bouncy_road_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_0802dd84,
     /* 0x01 */ (EngineEvent) func_0802deb0,
     /* 0x02 */ (EngineEvent) func_0802e234,
@@ -185,7 +185,7 @@ const EngineEvent bouncy_road_engine_events[] = {
 };
 
 // [D_089e3d78] Bouncy Road Game Engine
-const struct GameEngine bouncy_road_engine = {
+struct GameEngine bouncy_road_engine = {
     /* Size in Memory */ 0x1dc,
     /* Start Engine   */ bouncy_road_engine_start,
     /* Update Engine  */ bouncy_road_engine_update,

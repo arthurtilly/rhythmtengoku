@@ -89,14 +89,14 @@ extern const char D_0805a8b8[];
 
 
 // Engine Definition Data:
-extern const struct Animation *const *const space_dance_anim_table[];
-extern const struct CompressedGraphics *const space_dance_buffered_textures[];
-extern const struct GraphicsTable *const space_dance_gfx_tables[];
-extern const u8 space_dancer_anim_map[];
-extern const u8 space_gramps_anim_map[];
-extern const struct SequenceData *const space_dancer_sounds[];
-extern const u8 space_dance_cue_anim_map[];
-extern const s16 D_089e6ebc[];
+extern const struct Animation **space_dance_anim_table[];
+extern const struct CompressedGraphics *space_dance_buffered_textures[];
+extern struct GraphicsTable *space_dance_gfx_tables[];
+extern u8 space_dancer_anim_map[];
+extern u8 space_gramps_anim_map[];
+extern const struct SequenceData *space_dancer_sounds[];
+extern u8 space_dance_cue_anim_map[];
+extern s16 D_089e6ebc[];
 
 
 // Functions:

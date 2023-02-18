@@ -81,13 +81,13 @@ extern const char D_0805a3cc[];
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *const showtime_buffered_textures[]; // Buffered Textures List
-extern const struct GraphicsTable *const showtime_gfx_tables[]; // Graphics Table Index
-extern const struct Animation *const showtime_penguin_beat_anim[];
-extern const struct Animation *const showtime_penguin_jump_prepare_anim[];
-extern const struct Animation *const showtime_penguin_jump_anim[];
-extern const struct Animation *const showtime_penguin_slide_anim[];
-extern const u32 D_089e3b14[][5];
+extern const struct CompressedGraphics *showtime_buffered_textures[]; // Buffered Textures List
+extern struct GraphicsTable *showtime_gfx_tables[]; // Graphics Table Index
+extern const struct Animation *showtime_penguin_beat_anim[];
+extern const struct Animation *showtime_penguin_jump_prepare_anim[];
+extern const struct Animation *showtime_penguin_jump_anim[];
+extern const struct Animation *showtime_penguin_slide_anim[];
+extern u32 D_089e3b14[][5];
 
 
 // Functions:

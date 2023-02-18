@@ -38,9 +38,9 @@ extern const struct Animation anim_concert_hall_poster[];
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *const concert_hall_buffered_textures[];
-extern const struct GraphicsTable concert_hall_gfx_table[];
-extern const char *const concert_hall_poster_desc[];
+extern const struct CompressedGraphics *concert_hall_buffered_textures[];
+extern struct GraphicsTable concert_hall_gfx_table[];
+extern const char *concert_hall_poster_desc[];
 
 
 // Functions:

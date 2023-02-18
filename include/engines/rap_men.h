@@ -79,13 +79,13 @@ extern const char D_0805a8b0[]; // Empty Default Text
 
 
 // Engine Definition Data:
-extern const struct Animation *const *const rap_men_anim_table[]; // Animation Index (index of pairs of animation pointers; 0 = Rap Men; 1 = Rap Women)
-extern const struct CompressedGraphics *const rap_men_buffered_textures[]; // Buffered Textures List
-extern const struct GraphicsTable *const rap_men_gfx_tables[]; // Graphics Table Index
-extern const u8 rapping_anim_map[];
-extern const u8 rapping_anim_durations[];
-extern const struct SequenceData *const rap_men_cue_hit_sfx[2][2];
-extern const struct SequenceData *const rap_men_cue_miss_sfx[2];
+extern const struct Animation **rap_men_anim_table[]; // Animation Index (index of pairs of animation pointers; 0 = Rap Men; 1 = Rap Women)
+extern const struct CompressedGraphics *rap_men_buffered_textures[]; // Buffered Textures List
+extern struct GraphicsTable *rap_men_gfx_tables[]; // Graphics Table Index
+extern u8 rapping_anim_map[];
+extern u8 rapping_anim_durations[];
+extern const struct SequenceData *rap_men_cue_hit_sfx[2][2];
+extern const struct SequenceData *rap_men_cue_miss_sfx[2];
 
 
 // Functions:

@@ -82,19 +82,19 @@ enum RhythmToysDemoButtonsEnum {
 
 
 // Engine Definition Data:
-extern const struct DrumTechNote *const cat_machine_1_drum_seq_table[];
-extern const struct DrumTechNote *const cat_machine_2_drum_seq_table[];
-extern const struct SequenceData *const cat_machine_meow_sfx_table[];
-extern const struct SequenceData *const *const rap_machine_sfx_pool[];
-extern const struct SequenceData *const *const confession_machine_sfx_table[];
-extern const struct RhythmToysSpriteData *const rhythm_toys_sprite_table[];
-extern const struct RhythmToysDemo *const rhythm_toys_demo_table[];
-extern const struct CompressedGraphics *const rhythm_toys_buffered_textures[];
-extern const struct GraphicsTable *const rhythm_toys_gfx_tables[];
-extern const u8 rhythm_toys_button_anim_ids[];
-extern const u16 *const rhythm_toys_demo_bpm_table[];
-extern const u8 rhythm_toys_machine_anim_ids[];
-extern const RhythmToysPlayFunc rhythm_toys_play_func_table[];
+extern struct DrumTechNote *cat_machine_1_drum_seq_table[];
+extern struct DrumTechNote *cat_machine_2_drum_seq_table[];
+extern const struct SequenceData *cat_machine_meow_sfx_table[];
+extern const struct SequenceData **rap_machine_sfx_pool[];
+extern const struct SequenceData **confession_machine_sfx_table[];
+extern struct RhythmToysSpriteData *rhythm_toys_sprite_table[];
+extern struct RhythmToysDemo *rhythm_toys_demo_table[];
+extern const struct CompressedGraphics *rhythm_toys_buffered_textures[];
+extern struct GraphicsTable *rhythm_toys_gfx_tables[];
+extern u8 rhythm_toys_button_anim_ids[];
+extern u16 *rhythm_toys_demo_bpm_table[];
+extern u8 rhythm_toys_machine_anim_ids[];
+extern RhythmToysPlayFunc rhythm_toys_play_func_table[];
 
 
 // Functions:

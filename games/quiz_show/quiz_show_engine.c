@@ -43,12 +43,12 @@ extern const struct SequenceData s_witch_donats_seqData;
 
 
 // [D_089e5d2c] Buffered Textures List
-const struct CompressedGraphics *const quiz_buffered_textures[] = {
+const struct CompressedGraphics *quiz_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e5d30] Graphics Table
-const struct GraphicsTable quiz_gfx_table[] = {
+struct GraphicsTable quiz_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c7d2ac,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -93,31 +93,31 @@ const struct GraphicsTable quiz_gfx_table[] = {
 };
 
 // [D_089e5d9c] Right Arm Animations
-const struct Animation *const quiz_arm_r_anim[] = {
+const struct Animation *quiz_arm_r_anim[] = {
     /* HOST   */ anim_quiz_host_arm_r,
     /* PLAYER */ anim_quiz_player_arm_r
 };
 
 // [D_089e5da4] Left Arm Animations
-const struct Animation *const quiz_arm_l_anim[] = {
+const struct Animation *quiz_arm_l_anim[] = {
     /* HOST   */ anim_quiz_host_arm_l,
     /* PLAYER */ anim_quiz_player_arm_l
 };
 
 // [D_089e5dac] Neutral Expression Animations
-const struct Animation *const quiz_face_neutral_anim[] = {
+const struct Animation *quiz_face_neutral_anim[] = {
     /* HOST   */ anim_quiz_host_head,
     /* PLAYER */ anim_quiz_player_head
 };
 
 // [D_089e5db4] Success Expression Animations
-const struct Animation *const quiz_face_success_anim[] = {
+const struct Animation *quiz_face_success_anim[] = {
     /* HOST   */ anim_quiz_host_head_success,
     /* PLAYER */ anim_quiz_player_head_success
 };
 
 // [D_089e5dbc] Failure Expression Animations
-const struct Animation *const quiz_face_failure_anim[] = {
+const struct Animation *quiz_face_failure_anim[] = {
     /* HOST   */ anim_quiz_host_head_failure,
     /* PLAYER */ anim_quiz_player_head_failure
 };
@@ -127,13 +127,13 @@ const struct Animation *const quiz_face_failure_anim[] = {
 
 
 // [D_089e5dc4] Quiz Host Button Press Animations
-const struct Animation *const quiz_host_button_press_anim[] = {
+const struct Animation *quiz_host_button_press_anim[] = {
     /* RIGHT */ anim_quiz_host_press_button_r,
     /* LEFT  */ anim_quiz_host_press_button_l
 };
 
 // [D_089e5dcc] Quiz Endless Host Expression Animations
-const struct Animation *const quiz_ex_host_face_anim[] = {
+const struct Animation *quiz_ex_host_face_anim[] = {
     /* 0x00 */ anim_quiz_host_head,
     /* 0x01 */ anim_quiz_host_head_endless1,
     /* 0x02 */ anim_quiz_host_head_endless2,
@@ -142,7 +142,7 @@ const struct Animation *const quiz_ex_host_face_anim[] = {
 };
 
 // [D_089e5de0] Cue 00 (Default)
-const struct CueDefinition quiz_cue_default = {
+struct CueDefinition quiz_cue_default = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -166,7 +166,7 @@ const struct CueDefinition quiz_cue_default = {
 };
 
 // [D_089e5e20] Cue Definition Index
-const struct CueDefinition *const quiz_cue_index[] = {
+struct CueDefinition *quiz_cue_index[] = {
     /* 0x00 */ &quiz_cue_default,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
@@ -183,7 +183,7 @@ const struct CueDefinition *const quiz_cue_index[] = {
 };
 
 // [D_089e5e54] Quiz Endless Player Expression Animations
-const struct Animation *const quiz_ex_player_face_anim[] = {
+const struct Animation *quiz_ex_player_face_anim[] = {
     /* 0x00 */ anim_quiz_player_head,
     /* 0x01 */ anim_quiz_player_head,
     /* 0x02 */ anim_quiz_player_head_endless2,
@@ -196,7 +196,7 @@ const struct Animation *const quiz_ex_player_face_anim[] = {
 
 
 // [D_089e5e68] Common Events
-const EngineEvent quiz_common_events[] = {
+EngineEvent quiz_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) quiz_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) quiz_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) quiz_common_init_tutorial,
@@ -204,7 +204,7 @@ const EngineEvent quiz_common_events[] = {
 };
 
 // [D_089e5e78] Engine Events
-const EngineEvent quiz_engine_events[] = {
+EngineEvent quiz_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08037be0,
     /* 0x01 */ (EngineEvent) func_08037a64,
     /* 0x02 */ (EngineEvent) func_08037bf4,
@@ -226,7 +226,7 @@ const EngineEvent quiz_engine_events[] = {
 };
 
 // [D_089e5ec0] Quiz Show Game Engine
-const struct GameEngine quiz_show_engine = {
+struct GameEngine quiz_show_engine = {
     /* Size in Memory */ 0x58,
     /* Start Engine   */ quiz_engine_start,
     /* Update Engine  */ quiz_engine_update,

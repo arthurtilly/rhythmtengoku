@@ -155,7 +155,7 @@ extern const struct CompressedGraphics D_08bd6c44;
 
 
 // [D_089e03f8] All Animations
-const struct Animation *const drum_live_anim[][3] = {
+const struct Animation *drum_live_anim[][3] = {
     /* 0x00 */ { anim_drum_girl_head, anim_drum_boy_head, anim_band_drummer_head },
     /* 0x01 */ { anim_drum_girl_body, anim_drum_boy_body, anim_band_drummer_body },
     /* 0x02 */ { anim_drum_girl_head_turn_l, anim_drum_boy_head_turn_l, anim_band_drummer_head_turn_l },
@@ -201,7 +201,7 @@ const struct Animation *const drum_live_anim[][3] = {
 };
 
 // [D_089e05f0] Animation Table
-const struct Animation *const *const drum_live_anim_table[] = {
+const struct Animation **drum_live_anim_table[] = {
     /* 0x00 */ drum_live_anim[0],
     /* 0x01 */ drum_live_anim[1],
     /* 0x02 */ drum_live_anim[2],
@@ -251,21 +251,21 @@ const struct Animation *const *const drum_live_anim_table[] = {
 
 
 // [D_089e0698] OBJ Palettes
-const Palette *const drum_live_obj_palettes[] = {
+const Palette *drum_live_obj_palettes[] = {
     /* 0x00 */ drum_girls_obj_pal,
     /* 0x01 */ drum_boys_obj_pal,
     /* 0x02 */ drum_samurai_band_obj_pal
 };
 
 // [D_089e06a4] BG Palettes
-const Palette *const drum_live_bg_palettes[] = {
+const Palette *drum_live_bg_palettes[] = {
     /* 0x00 */ drum_girls_bg_pal,
     /* 0x01 */ drum_boys_bg_pal,
     /* 0x02 */ drum_samurai_band_bg_pal
 };
 
 // [D_089e06b0] Bit Masks/Fields
-const u16 D_089e06b0[] = {
+u16 D_089e06b0[] = {
     /* 0x00 */ 0x0000,
     /* 0x01 */ 0x7C00,
     /* 0x02 */ 0x001F,
@@ -277,7 +277,7 @@ const u16 D_089e06b0[] = {
 };
 
 // [D_089e06c0] ?
-const u8 D_089e06c0[] = {
+u8 D_089e06c0[] = {
     /* 0x00 */ 1,
     /* 0x01 */ 2,
     /* 0x02 */ 4,
@@ -285,20 +285,20 @@ const u8 D_089e06c0[] = {
 };
 
 // [D_089e06c4] ?
-const u16 D_089e06c4[] = {
+u16 D_089e06c4[] = {
     0x1400, 0x3000, 0x7ED4, 0x68C4,
     0x7FDC, 0x68C4, 0x06C4, 0x189E
 };
 
 // [D_089e06d4] ?
-const u16 D_089e06d4[] = {
+u16 D_089e06d4[] = {
     0x0500, 0x3000, 0x80E4, 0x68C4,
     0x7FDC, 0x68C4, 0x7ED4, 0x68C4,
     0x06C4, 0x189E
 };
 
 // [D_089e06e8] ?
-const u16 D_089e06e8[] = {
+u16 D_089e06e8[] = {
     0x0500, 0x3000, 0x81F4, 0x68C4,
     0x80E4, 0x68C4, 0x7FDC, 0x68C4,
     0x7ED4, 0x68C4, 0x06C4, 0x189E,
@@ -307,7 +307,7 @@ const u16 D_089e06e8[] = {
 };
 
 // [D_089e0710] ?
-const u16 D_089e0710[] = {
+u16 D_089e0710[] = {
     0x0500, 0x3000, 0x86F4, 0x68C4,
     0x85A4, 0x68C4, 0x8458, 0x68C4,
     0x2800, 0x3000, 0x8328, 0x68C4,
@@ -317,7 +317,7 @@ const u16 D_089e0710[] = {
 };
 
 // [D_089e073c] ?
-const u16 D_089e073c[] = {
+u16 D_089e073c[] = {
     0x0500, 0x3000, 0x8CFC, 0x68C4,
     0x8B84, 0x68C4, 0x89FC, 0x68C4,
     0x2800, 0x3000, 0x8874, 0x68C4,
@@ -325,7 +325,7 @@ const u16 D_089e073c[] = {
 };
 
 // [D_089e0758] Crowd BG Map Data
-const u16 *const D_089e0758[] = {
+u16 *D_089e0758[] = {
     /* 0x00 */ D_089e06c4,
     /* 0x01 */ D_089e06d4,
     /* 0x02 */ D_089e06e8,
@@ -340,7 +340,7 @@ const u16 *const D_089e0758[] = {
 #include "drum_live_kits.inc.c"
 
 // [D_089e0978] Drum LIVE Kits
-const struct DrumTechKit *const drum_live_kits[] = {
+struct DrumTechKit *drum_live_kits[] = {
     /* 0x00 */ &D_089e0854,
     /* 0x01 */ &D_089e0950
 };
@@ -350,12 +350,12 @@ const struct DrumTechKit *const drum_live_kits[] = {
 
 
 // [D_089e0980] Buffered Textures List
-const struct CompressedGraphics *const drum_live_buffered_textures[] = {
+const struct CompressedGraphics *drum_live_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e0984] Graphics Table (Drum Girls LIVE)
-const struct GraphicsTable gfx_table_drum_girls_live[] = {
+struct GraphicsTable gfx_table_drum_girls_live[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c47038,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -395,7 +395,7 @@ const struct GraphicsTable gfx_table_drum_girls_live[] = {
 };
 
 // [D_089e09e4] Graphics Table (Drum Boys LIVE)
-const struct GraphicsTable gfx_table_drum_boys_live[] = {
+struct GraphicsTable gfx_table_drum_boys_live[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c4356c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -435,7 +435,7 @@ const struct GraphicsTable gfx_table_drum_boys_live[] = {
 };
 
 // [D_089e0a44] Graphics Table (Drum Samurai's Band LIVE)
-const struct GraphicsTable gfx_table_drum_samurai_band_live[] = {
+struct GraphicsTable gfx_table_drum_samurai_band_live[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bd7c30,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -475,14 +475,14 @@ const struct GraphicsTable gfx_table_drum_samurai_band_live[] = {
 };
 
 // [D_089e0aa4] Graphics Table Index
-const struct GraphicsTable *const drum_live_gfx_tables[] = {
+struct GraphicsTable *drum_live_gfx_tables[] = {
     /* 0x00 */ gfx_table_drum_girls_live,
     /* 0x01 */ gfx_table_drum_boys_live,
     /* 0x02 */ gfx_table_drum_samurai_band_live
 };
 
 // [D_089e0ab0] ?
-const struct Vector2 D_089e0ab0[] = {
+struct Vector2 D_089e0ab0[] = {
     /* 0x00 */ {   0,   0 },
     /* 0x01 */ {   0,   0 },
     /* 0x02 */ {   0,   0 },
@@ -495,55 +495,55 @@ const struct Vector2 D_089e0ab0[] = {
 };
 
 // [D_089e0ad4] Guitarist Animation IDs - Head
-const u8 drum_live_guitarist_anim_map_head[] = {
+u8 drum_live_guitarist_anim_map_head[] = {
     /* 0x00 */ LIVE_ANIM_GUITARIST_HEAD,
     /* 0x01 */ LIVE_ANIM_BASSIST_HEAD,
 };
 
 // [D_089e0ad6] Guitarist Animation IDs - Body
-const u8 drum_live_guitarist_anim_map_body[] = {
+u8 drum_live_guitarist_anim_map_body[] = {
     /* 0x00 */ LIVE_ANIM_GUITARIST_BODY,
     /* 0x01 */ LIVE_ANIM_BASSIST_BODY,
 };
 
 // [D_089e0ad8] Guitarist Animation IDs - Legs
-const u8 drum_live_guitarist_anim_map_legs[] = {
+u8 drum_live_guitarist_anim_map_legs[] = {
     /* 0x00 */ LIVE_ANIM_GUITARIST_LEGS,
     /* 0x01 */ LIVE_ANIM_BASSIST_LEGS,
 };
 
 // [D_089e0ada] Guitarist Animation IDs - Left Arm
-const u8 drum_live_guitarist_anim_map_arm_l[] = {
+u8 drum_live_guitarist_anim_map_arm_l[] = {
     /* 0x00 */ LIVE_ANIM_GUITARIST_ARM_L,
     /* 0x01 */ LIVE_ANIM_BASSIST_ARM_L,
 };
 
 // [D_089e0adc] Guitarist Animation IDs - Right Arm
-const u8 drum_live_guitarist_anim_map_arm_r[] = {
+u8 drum_live_guitarist_anim_map_arm_r[] = {
     /* 0x00 */ LIVE_ANIM_GUITARIST_ARM_R,
     /* 0x01 */ LIVE_ANIM_BASSIST_ARM_R,
 };
 
 // [D_089e0ade] Guitarist Animation IDs - Crouch
-const u8 drum_live_guitarist_anim_map_crouch[] = {
+u8 drum_live_guitarist_anim_map_crouch[] = {
     /* 0x00 */ LIVE_ANIM_GUITARIST_CROUCH,
     /* 0x01 */ LIVE_ANIM_BASSIST_CROUCH,
 };
 
 // [D_089e0ae0] Guitarist Animation IDs - Jump & Strum
-const u8 drum_live_guitarist_anim_map_jump_strum[] = {
+u8 drum_live_guitarist_anim_map_jump_strum[] = {
     /* 0x00 */ LIVE_ANIM_GUITARIST_JUMP_STRUM,
     /* 0x01 */ LIVE_ANIM_BASSIST_JUMP_STRUM,
 };
 
 // [D_089e0ae2] Guitarist Animation IDs - Jump
-const u8 drum_live_guitarist_anim_map_jump[] = {
+u8 drum_live_guitarist_anim_map_jump[] = {
     /* 0x00 */ LIVE_ANIM_GUITARIST_JUMP,
     /* 0x01 */ LIVE_ANIM_BASSIST_JUMP
 };
 
 // [D_089e0ae4] Drum Kit ID Map
-const u8 drum_live_kit_map[] = {
+u8 drum_live_kit_map[] = {
     /* 0x00 */ 0,
     /* 0x01 */ 0,
     /* 0x02 */ 1,
@@ -555,7 +555,7 @@ const u8 drum_live_kit_map[] = {
 
 
 // [D_089e0ae8] Cue 00 (?)
-const struct CueDefinition drum_live_cue_00 = {
+struct CueDefinition drum_live_cue_00 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | B_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -579,7 +579,7 @@ const struct CueDefinition drum_live_cue_00 = {
 };
 
 // [D_089e0b28] Cue 01 (?)
-const struct CueDefinition drum_live_cue_01 = {
+struct CueDefinition drum_live_cue_01 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | B_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -603,7 +603,7 @@ const struct CueDefinition drum_live_cue_01 = {
 };
 
 // [D_089e0b68] Cue 02 (?)
-const struct CueDefinition drum_live_cue_02 = {
+struct CueDefinition drum_live_cue_02 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | B_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -627,7 +627,7 @@ const struct CueDefinition drum_live_cue_02 = {
 };
 
 // [D_089e0ba8] Cue 03 (?)
-const struct CueDefinition drum_live_cue_03 = {
+struct CueDefinition drum_live_cue_03 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | B_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -651,7 +651,7 @@ const struct CueDefinition drum_live_cue_03 = {
 };
 
 // [D_089e0be8] Cue 04 (?)
-const struct CueDefinition drum_live_cue_04 = {
+struct CueDefinition drum_live_cue_04 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | B_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -675,7 +675,7 @@ const struct CueDefinition drum_live_cue_04 = {
 };
 
 // [D_089e0c28] Cue 05 (?)
-const struct CueDefinition drum_live_cue_05 = {
+struct CueDefinition drum_live_cue_05 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | B_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -699,7 +699,7 @@ const struct CueDefinition drum_live_cue_05 = {
 };
 
 // [D_089e0c68] Cue Definition Index
-const struct CueDefinition *const drum_live_cue_index[] = {
+struct CueDefinition *drum_live_cue_index[] = {
     /* 0x00 */ &drum_live_cue_00,
     /* 0x01 */ &drum_live_cue_01,
     /* 0x02 */ &drum_live_cue_02,
@@ -714,7 +714,7 @@ const struct CueDefinition *const drum_live_cue_index[] = {
 
 
 // [D_089e0c84] Common Events
-const EngineEvent drum_live_common_events[] = {
+EngineEvent drum_live_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) drum_live_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) drum_live_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) drum_live_common_init_tutorial,
@@ -722,7 +722,7 @@ const EngineEvent drum_live_common_events[] = {
 };
 
 // [D_089e0c94] Engine Events
-const EngineEvent drum_live_engine_events[] = {
+EngineEvent drum_live_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080268cc,
     /* 0x01 */ (EngineEvent) func_08026968,
     /* 0x02 */ (EngineEvent) func_08025a98,
@@ -737,7 +737,7 @@ const EngineEvent drum_live_engine_events[] = {
 };
 
 // [D_089e0cc0] Drum LIVE Game Engine
-const struct GameEngine drum_live_engine = {
+struct GameEngine drum_live_engine = {
     /* Size in Memory */ 0x1820,
     /* Start Engine   */ drum_live_engine_start,
     /* Update Engine  */ drum_live_engine_update,

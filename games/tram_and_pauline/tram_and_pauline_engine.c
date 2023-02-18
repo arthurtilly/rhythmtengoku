@@ -63,12 +63,12 @@ extern const Palette tram_and_pauline_tutorial_pal[];
 
 
 // [D_089e8a28] Buffered Textures List
-const struct CompressedGraphics *const tram_pauline_buffered_textures[] = {
+const struct CompressedGraphics *tram_pauline_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e8a2c] Graphics Table (Tutorial)
-const struct GraphicsTable gfx_table_tram_pauline_tutorial[] = {
+struct GraphicsTable gfx_table_tram_pauline_tutorial[] = {
     /* OBJ Tileset */ {
         /* Src.  */ &D_08d02100,
         /* Dest. */ OBJ_TILESET_BASE(0),
@@ -93,7 +93,7 @@ const struct GraphicsTable gfx_table_tram_pauline_tutorial[] = {
 };
 
 // [D_089e8a68] Graphics Table (Tram & Pauline)
-const struct GraphicsTable gfx_table_tram_pauline[] = {
+struct GraphicsTable gfx_table_tram_pauline[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08d058c4,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -133,7 +133,7 @@ const struct GraphicsTable gfx_table_tram_pauline[] = {
 };
 
 // [D_089e8ac8] Graphics Table (Remix 3)
-const struct GraphicsTable gfx_table_tram_pauline_remix_3[] = {
+struct GraphicsTable gfx_table_tram_pauline_remix_3[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08d02864,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -168,7 +168,7 @@ const struct GraphicsTable gfx_table_tram_pauline_remix_3[] = {
 };
 
 // [D_089e8b1c] Graphics Table Index
-const struct GraphicsTable *const tram_pauline_gfx_tables[] = {
+struct GraphicsTable *tram_pauline_gfx_tables[] = {
     /* 0x00 */ gfx_table_tram_pauline_tutorial,
     /* 0x01 */ gfx_table_tram_pauline,
     /* 0x02 */ gfx_table_tram_pauline_remix_3,
@@ -176,7 +176,7 @@ const struct GraphicsTable *const tram_pauline_gfx_tables[] = {
 };
 
 // [D_089e8b2c] All Animations (Format: [version][action][character] (may be wrong!))
-const struct Animation *const tram_pauline_anim_table[][4][6] = {
+const struct Animation *tram_pauline_anim_table[][4][6] = {
     /* 0x00 */ {
         /* 0x00 */ {
             /* 0x00 */ anim_casual_fox_beat,
@@ -320,7 +320,7 @@ const struct Animation *const tram_pauline_anim_table[][4][6] = {
 
 
 // [D_089e8cac] Cue 00 (Tram)
-const struct CueDefinition tram_pauline_cue_tram = {
+struct CueDefinition tram_pauline_cue_tram = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -344,7 +344,7 @@ const struct CueDefinition tram_pauline_cue_tram = {
 };
 
 // [D_089e8cec] Cue 01 (Pauline)
-const struct CueDefinition tram_pauline_cue_pauline = {
+struct CueDefinition tram_pauline_cue_pauline = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -368,7 +368,7 @@ const struct CueDefinition tram_pauline_cue_pauline = {
 };
 
 // [D_089e8d2c] Cue Definition Index
-const struct CueDefinition *const tram_pauline_cue_index[] = {
+struct CueDefinition *tram_pauline_cue_index[] = {
     /* 0x00 */ &tram_pauline_cue_tram,
     /* 0x01 */ &tram_pauline_cue_pauline,
     /* 0x02 */ NULL,
@@ -389,7 +389,7 @@ const struct CueDefinition *const tram_pauline_cue_index[] = {
 
 
 // [D_089e8d60] Common Events
-const EngineEvent tram_pauline_common_events[] = {
+EngineEvent tram_pauline_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) tram_pauline_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) tram_pauline_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) tram_pauline_common_init_tutorial,
@@ -397,14 +397,14 @@ const EngineEvent tram_pauline_common_events[] = {
 };
 
 // [D_089e8d70] Engine Events
-const EngineEvent tram_pauline_engine_events[] = {
+EngineEvent tram_pauline_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08040064,
     /* 0x01 */ (EngineEvent) func_080400d0,
     /* 0x02 */ (EngineEvent) func_08040434
 };
 
 // [D_089e8d7c] Tram & Pauline Game Engine
-const struct GameEngine tram_and_pauline_engine = {
+struct GameEngine tram_and_pauline_engine = {
     /* Size in Memory */ 0x48,
     /* Start Engine   */ tram_pauline_engine_start,
     /* Update Engine  */ tram_pauline_engine_update,

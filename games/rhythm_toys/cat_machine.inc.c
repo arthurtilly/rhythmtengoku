@@ -7,7 +7,7 @@ extern const struct SequenceData s_f_neko5_seqData;
 
 
 // [D_089e9350] DrumTech Sequence
-const struct DrumTechNote drum_seq_cat_machine_1_b[] = {
+struct DrumTechNote drum_seq_cat_machine_1_b[] = {
     {
         /* Drum ID */ DRUMTECH_NOTE_FUNC,
         /* Arg LSB */ 0,
@@ -180,7 +180,7 @@ const struct DrumTechNote drum_seq_cat_machine_1_b[] = {
 };
 
 // [D_089e9438] DrumTech Sequence
-const struct DrumTechNote drum_seq_cat_machine_1_a[] = {
+struct DrumTechNote drum_seq_cat_machine_1_a[] = {
     {
         /* Drum ID */ DRUMTECH_NOTE_FUNC,
         /* Arg LSB */ 0,
@@ -377,7 +377,7 @@ const struct DrumTechNote drum_seq_cat_machine_1_a[] = {
 };
 
 // [D_089e9540] DrumTech Sequence
-const struct DrumTechNote drum_seq_cat_machine_1_up[] = {
+struct DrumTechNote drum_seq_cat_machine_1_up[] = {
     {
         /* Drum ID */ 60,
         /* Volume  */ INT_TO_FIXED(1.0),
@@ -394,7 +394,7 @@ const struct DrumTechNote drum_seq_cat_machine_1_up[] = {
 };
 
 // [D_089e9558] DrumTech Sequence
-const struct DrumTechNote drum_seq_cat_machine_1_down[] = {
+struct DrumTechNote drum_seq_cat_machine_1_down[] = {
     {
         /* Drum ID */ DRUMTECH_NOTE_FUNC,
         /* Arg LSB */ 0,
@@ -429,7 +429,7 @@ const struct DrumTechNote drum_seq_cat_machine_1_down[] = {
 };
 
 // [D_089e9588] DrumTech Sequence
-const struct DrumTechNote drum_seq_cat_machine_1_left[] = {
+struct DrumTechNote drum_seq_cat_machine_1_left[] = {
     {
         /* Drum ID */ 60,
         /* Volume  */ INT_TO_FIXED(1.0),
@@ -446,7 +446,7 @@ const struct DrumTechNote drum_seq_cat_machine_1_left[] = {
 };
 
 // [D_089e95a0] DrumTech Sequence
-const struct DrumTechNote drum_seq_cat_machine_1_right[] = {
+struct DrumTechNote drum_seq_cat_machine_1_right[] = {
     {
         /* Drum ID */ 60,
         /* Volume  */ INT_TO_FIXED(1.0),
@@ -463,7 +463,7 @@ const struct DrumTechNote drum_seq_cat_machine_1_right[] = {
 };
 
 // [D_089e95b8] DrumTech Sequence
-const struct DrumTechNote drum_seq_cat_machine_2_b[] = {
+struct DrumTechNote drum_seq_cat_machine_2_b[] = {
     {
         /* Drum ID */ 60,
         /* Volume  */ INT_TO_FIXED(1.0),
@@ -618,7 +618,7 @@ const struct DrumTechNote drum_seq_cat_machine_2_b[] = {
 };
 
 // [D_089e9688] DrumTech Sequence
-const struct DrumTechNote drum_seq_cat_machine_2_a[] = {
+struct DrumTechNote drum_seq_cat_machine_2_a[] = {
     {
         /* Drum ID */ 60,
         /* Volume  */ INT_TO_FIXED(1.0),
@@ -797,7 +797,7 @@ const struct DrumTechNote drum_seq_cat_machine_2_a[] = {
 };
 
 // [D_089e9778] DrumTech Sequence
-const struct DrumTechNote drum_seq_cat_machine_2_down[] = {
+struct DrumTechNote drum_seq_cat_machine_2_down[] = {
     {
         /* Drum ID */ 60,
         /* Volume  */ INT_TO_FIXED(1.0),
@@ -820,7 +820,7 @@ const struct DrumTechNote drum_seq_cat_machine_2_down[] = {
 };
 
 // [D_089e9798] DrumTech Sequence
-const struct DrumTechNote drum_seq_cat_machine_2_left[] = {
+struct DrumTechNote drum_seq_cat_machine_2_left[] = {
     {
         /* Drum ID */ 60,
         /* Volume  */ INT_TO_FIXED(1.0),
@@ -837,7 +837,7 @@ const struct DrumTechNote drum_seq_cat_machine_2_left[] = {
 };
 
 // [D_089e97b0] Cat Machine 1 DrumTech Sequences
-const struct DrumTechNote *const cat_machine_1_drum_seq_table[] = {
+struct DrumTechNote *cat_machine_1_drum_seq_table[] = {
     /* A */ drum_seq_cat_machine_1_a,
     /* B */ drum_seq_cat_machine_1_b,
     /* U */ drum_seq_cat_machine_1_up,
@@ -847,7 +847,7 @@ const struct DrumTechNote *const cat_machine_1_drum_seq_table[] = {
 };
 
 // [D_089e97c8] Cat Machine 2 DrumTech Sequences
-const struct DrumTechNote *const cat_machine_2_drum_seq_table[] = {
+struct DrumTechNote *cat_machine_2_drum_seq_table[] = {
     /* A */ drum_seq_cat_machine_2_a,
     /* B */ drum_seq_cat_machine_2_b,
     /* U */ drum_seq_cat_machine_1_up,
@@ -857,7 +857,7 @@ const struct DrumTechNote *const cat_machine_2_drum_seq_table[] = {
 };
 
 // [D_089e97e0] Cat Machine SFX
-const struct SequenceData *const cat_machine_meow_sfx_table[] = {
+const struct SequenceData *cat_machine_meow_sfx_table[] = {
     /* A */ &s_f_neko1_seqData,
     /* B */ &s_f_neko2_seqData,
     /* U */ &s_f_neko3_seqData,
@@ -867,10 +867,10 @@ const struct SequenceData *const cat_machine_meow_sfx_table[] = {
 };
 
 // [D_089e97f8] Cat Machine Demo BPM
-const u16 cat_machine_demo_bpm = 120;
+u16 cat_machine_demo_bpm = 120;
 
 // [D_089e97fc] Cat Machine Demo Script
-const struct RhythmToysDemo cat_machine_demo_seq[] = {
+struct RhythmToysDemo cat_machine_demo_seq[] = {
     /* 0x00 */ { RHYTHM_TOYS_DEMO_PRESS_B, 0x60 },
     /* 0x01 */ { RHYTHM_TOYS_DEMO_PRESS_B, 0x60 },
     /* 0x02 */ { RHYTHM_TOYS_DEMO_PRESS_B, 0x60 },

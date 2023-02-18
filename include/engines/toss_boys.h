@@ -81,26 +81,26 @@ enum TossBoyActionsEnum {
 
 
 // Engine Definition Data:
-extern const struct Animation *const *const toss_boys_anim_table[];
-extern const struct DrumTechInstrument toss_boys_drumtech_bank[];
-extern const u16 toss_boys_button_masks[];
-extern const struct Animation *const D_089e8660[][3];
-extern const s8 D_089e8690[][3];
-extern const struct Vector2 D_089e869c[];
-extern const struct Vector2 D_089e86a8[];
-extern const u8 toss_boys_arrow_anim_ids[];
-extern const s16 D_089e86bc[][4];
-extern const struct SequenceData *const toss_boys_ball_bounce_sfx[];
-extern const struct SequenceData *const toss_boys_ball_pop_sfx[];
-extern const s8 toss_boys_miss_anim_ids[];
-extern const struct SequenceData *const toss_boys_ball_miss_sfx[];
-extern const u8 D_089e8704[][4];
-extern const s8 toss_boys_hit_anim_ids[][3];
-extern const s8 toss_boys_barely_anim_ids[][3];
-extern const s8 toss_boys_ready_anim_ids[][3];
-extern const s8 toss_boys_ready_anim_playback[][3];
-extern const s8 toss_boys_beat_anim_ids[][3];
-extern const s8 toss_boys_beat_anim_playback[][3];
+extern const struct Animation **toss_boys_anim_table[];
+extern struct DrumTechInstrument toss_boys_drumtech_bank[];
+extern u16 toss_boys_button_masks[];
+extern const struct Animation *D_089e8660[][3];
+extern s8 D_089e8690[][3];
+extern struct Vector2 D_089e869c[];
+extern struct Vector2 D_089e86a8[];
+extern u8 toss_boys_arrow_anim_ids[];
+extern s16 D_089e86bc[][4];
+extern const struct SequenceData *toss_boys_ball_bounce_sfx[];
+extern const struct SequenceData *toss_boys_ball_pop_sfx[];
+extern s8 toss_boys_miss_anim_ids[];
+extern const struct SequenceData *toss_boys_ball_miss_sfx[];
+extern u8 D_089e8704[][4];
+extern s8 toss_boys_hit_anim_ids[][3];
+extern s8 toss_boys_barely_anim_ids[][3];
+extern s8 toss_boys_ready_anim_ids[][3];
+extern s8 toss_boys_ready_anim_playback[][3];
+extern s8 toss_boys_beat_anim_ids[][3];
+extern s8 toss_boys_beat_anim_playback[][3];
 
 
 // Functions:

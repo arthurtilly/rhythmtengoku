@@ -30,7 +30,7 @@ extern const Palette sick_beats_pal[];
 
 
 // [D_089e90d0] Endless Particle SFX Pitch Offsets
-const s16 sick_beats_particle_sfx_pitch[] = {
+s16 sick_beats_particle_sfx_pitch[] = {
     /* 0x00 */ INT_TO_FIXED(0.0),
     /* 0x01 */ INT_TO_FIXED(4.0),
     /* 0x02 */ INT_TO_FIXED(-5.0),
@@ -46,7 +46,7 @@ const s16 sick_beats_particle_sfx_pitch[] = {
 
 
 // [D_089e90e0] Yellow Microbe Event Animations
-const struct Animation *const sick_beats_microbe_event_anim[] = {
+const struct Animation *sick_beats_microbe_event_anim[] = {
     /* 0x00 */ anim_yellow_microbe_beat,
     /* 0x01 */ anim_yellow_microbe_hurt,
     /* 0x02 */ anim_yellow_microbe_vanish,
@@ -55,7 +55,7 @@ const struct Animation *const sick_beats_microbe_event_anim[] = {
 };
 
 // [D_089e90f4] Yellow Microbe Event Animation Durations
-const u16 sick_beats_microbe_event_durations[] = {
+u16 sick_beats_microbe_event_durations[] = {
     /* 0x00 */ 0x00,
     /* 0x01 */ 0x20,
     /* 0x02 */ 0x18,
@@ -64,12 +64,12 @@ const u16 sick_beats_microbe_event_durations[] = {
 };
 
 // [D_089e9100] Buffered Textures List
-const struct CompressedGraphics *const sick_beats_buffered_textures[] = {
+const struct CompressedGraphics *sick_beats_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e9104] Graphics Table
-const struct GraphicsTable gfx_table_sick_beats[] = {
+struct GraphicsTable gfx_table_sick_beats[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08d19fb4,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -113,7 +113,7 @@ const struct GraphicsTable gfx_table_sick_beats[] = {
 
 
 // [D_089e9164] Virus Actions
-const struct VirusAction sick_beats_virus_actions[] = {
+struct VirusAction sick_beats_virus_actions[] = {
     /* 0x00 */ {
         /* Animation */ anim_virus_appear,
         /* X,Y Pos.  */ 256, 104,
@@ -247,7 +247,7 @@ const struct VirusAction sick_beats_virus_actions[] = {
 
 
 // [D_089e927c] Cue 00 (Default)
-const struct CueDefinition sick_beats_cue_default = {
+struct CueDefinition sick_beats_cue_default = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(0),
     /* Total Duration  */ 0x18,
@@ -271,7 +271,7 @@ const struct CueDefinition sick_beats_cue_default = {
 };
 
 // [D_089e92bc] Cue Definition Index
-const struct CueDefinition *const sick_beats_cue_index[] = {
+struct CueDefinition *sick_beats_cue_index[] = {
     /* 0x00 */ &sick_beats_cue_default,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
@@ -288,7 +288,7 @@ const struct CueDefinition *const sick_beats_cue_index[] = {
 };
 
 // [D_089e92f0] ?
-const u8 D_089e92f0[] = {
+u8 D_089e92f0[] = {
     /* 0x00 */ 1,
     /* 0x01 */ 1,
     /* 0x02 */ 2,
@@ -296,7 +296,7 @@ const u8 D_089e92f0[] = {
 };
 
 // [D_089e92f4] Doctor Animations
-const struct Animation *const sick_beats_doctor_anim[] = {
+const struct Animation *sick_beats_doctor_anim[] = {
     /* 0x00 */ anim_virus_doctor_beat,
     /* 0x01 */ anim_virus_doctor_hit1,
     /* 0x02 */ anim_virus_doctor_hit2,
@@ -308,7 +308,7 @@ const struct Animation *const sick_beats_doctor_anim[] = {
 
 
 // [D_089e9304] Common Events
-const EngineEvent sick_beats_common_events[] = {
+EngineEvent sick_beats_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) sick_beats_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) sick_beats_common_display_text,
     /* INIT_TUTORIAL  */ // None
@@ -316,7 +316,7 @@ const EngineEvent sick_beats_common_events[] = {
 };
 
 // [D_089e9310] Engine Events
-const EngineEvent sick_beats_engine_events[] = {
+EngineEvent sick_beats_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08042ea8,
     /* 0x01 */ (EngineEvent) func_08042ecc,
     /* 0x02 */ (EngineEvent) func_08042f44,
@@ -328,7 +328,7 @@ const EngineEvent sick_beats_engine_events[] = {
 };
 
 // [D_089e9330] Sick Beats Game Engine
-const struct GameEngine sick_beats_engine = {
+struct GameEngine sick_beats_engine = {
     /* Size in Memory */ 0x274,
     /* Start Engine   */ sick_beats_engine_start,
     /* Update Engine  */ sick_beats_engine_update,

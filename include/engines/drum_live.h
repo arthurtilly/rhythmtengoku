@@ -80,25 +80,25 @@ enum DrumLiveAnimationsEnum {
 
 
 // Engine Definition Data:
-extern const struct Animation *const *const drum_live_anim_table[];
-extern const Palette *const drum_live_obj_palettes[];
-extern const Palette *const drum_live_bg_palettes[];
-extern const u16 D_089e06b0[];
-extern const u8 D_089e06c0[];
-extern const u16 *const D_089e0758[];
-extern const struct DrumTechKit *const drum_live_kits[];
-extern const struct CompressedGraphics *const drum_live_buffered_textures[];
-extern const struct GraphicsTable *const drum_live_gfx_tables[];
-extern const struct Vector2 D_089e0ab0[];
-extern const u8 drum_live_guitarist_anim_map_head[];
-extern const u8 drum_live_guitarist_anim_map_body[];
-extern const u8 drum_live_guitarist_anim_map_legs[];
-extern const u8 drum_live_guitarist_anim_map_arm_l[];
-extern const u8 drum_live_guitarist_anim_map_arm_r[];
-extern const u8 drum_live_guitarist_anim_map_crouch[];
-extern const u8 drum_live_guitarist_anim_map_jump_strum[];
-extern const u8 drum_live_guitarist_anim_map_jump[];
-extern const u8 drum_live_kit_map[];
+extern const struct Animation **drum_live_anim_table[];
+extern const Palette *drum_live_obj_palettes[];
+extern const Palette *drum_live_bg_palettes[];
+extern u16 D_089e06b0[];
+extern u8 D_089e06c0[];
+extern u16 *D_089e0758[];
+extern struct DrumTechKit *drum_live_kits[];
+extern const struct CompressedGraphics *drum_live_buffered_textures[];
+extern struct GraphicsTable *drum_live_gfx_tables[];
+extern struct Vector2 D_089e0ab0[];
+extern u8 drum_live_guitarist_anim_map_head[];
+extern u8 drum_live_guitarist_anim_map_body[];
+extern u8 drum_live_guitarist_anim_map_legs[];
+extern u8 drum_live_guitarist_anim_map_arm_l[];
+extern u8 drum_live_guitarist_anim_map_arm_r[];
+extern u8 drum_live_guitarist_anim_map_crouch[];
+extern u8 drum_live_guitarist_anim_map_jump_strum[];
+extern u8 drum_live_guitarist_anim_map_jump[];
+extern u8 drum_live_kit_map[];
 
 
 // Functions:

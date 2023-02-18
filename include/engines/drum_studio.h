@@ -257,27 +257,27 @@ extern const char D_0805a3a0[];
 
 
 // Engine Definition Data:
-extern const struct DrumTeacherExpression drum_teacher_expressions_anim[];
-extern const DrumPlayFunc D_089e16b0[];
-extern const struct DrumTechKit *const drum_teacher_kits[]; // Drum Samurai's Kit?
-extern const struct Animation *const drum_lessons_accuracy_light_anim[]; // Accuracy Meter Lights 1-7
-extern const struct Vector2 drum_lessons_accuracy_light_positions[]; // Accuracy Meter Light Positions
-extern const struct Animation *const drum_lessons_rank_anim[];
-extern const char *const drum_lessons_rank_text[];
-extern const struct SequenceData *const drum_lessons_rank_sfx[];
-extern const struct DrumStudioMonitorData D_089e17a0[];
-extern const DrumPlayFunc D_089e2988[];
-extern const struct DrumTechKit *const drum_studio_kits[];
-extern const struct CompressedGraphics *const drum_studio_buffered_textures[];
-extern const struct GraphicsTable drum_studio_gfx_table[];
-extern const struct GraphicsTable drum_lessons_gfx_table[];
-extern const struct BeatScript D_089e2ad4[];
-extern const struct BeatScript D_089e2b04[];
-extern const struct Vector2 D_089e2b58[];
-extern const struct Vector2 D_089e2b78[];
-extern const struct SpritePlaybackData D_089e2b98[];
-extern const u16 D_089e2ba8[];
-extern const struct GameEngine drum_studio_engine;
+extern struct DrumTeacherExpression drum_teacher_expressions_anim[];
+extern DrumPlayFunc D_089e16b0[];
+extern struct DrumTechKit *drum_teacher_kits[]; // Drum Samurai's Kit?
+extern const struct Animation *drum_lessons_accuracy_light_anim[]; // Accuracy Meter Lights 1-7
+extern struct Vector2 drum_lessons_accuracy_light_positions[]; // Accuracy Meter Light Positions
+extern const struct Animation *drum_lessons_rank_anim[];
+extern const char *drum_lessons_rank_text[];
+extern const struct SequenceData *drum_lessons_rank_sfx[];
+extern struct DrumStudioMonitorData D_089e17a0[];
+extern DrumPlayFunc D_089e2988[];
+extern struct DrumTechKit *drum_studio_kits[];
+extern const struct CompressedGraphics *drum_studio_buffered_textures[];
+extern struct GraphicsTable drum_studio_gfx_table[];
+extern struct GraphicsTable drum_lessons_gfx_table[];
+extern struct BeatScript D_089e2ad4[];
+extern struct BeatScript D_089e2b04[];
+extern struct Vector2 D_089e2b58[];
+extern struct Vector2 D_089e2b78[];
+extern struct SpritePlaybackData D_089e2b98[];
+extern u16 D_089e2ba8[];
+extern struct GameEngine drum_studio_engine;
 
 
 // Functions - Drum Lessons:

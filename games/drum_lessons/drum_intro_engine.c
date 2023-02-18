@@ -29,7 +29,7 @@ extern const Palette tanuki_and_monkey_obj_pal[];
 #include "drum_intro_bgm.inc.c"
 
 // [D_089dfe54] BGM DrumTech Sequences
-const struct DrumTechNote *const tanuki_and_monkey_bgm_seq_table[] = {
+struct DrumTechNote *tanuki_and_monkey_bgm_seq_table[] = {
     /* 0x00 */ D_089df6ec,
     /* 0x01 */ D_089df81c,
     /* 0x02 */ D_089df8dc,
@@ -53,7 +53,7 @@ const struct DrumTechNote *const tanuki_and_monkey_bgm_seq_table[] = {
 
 
 // [D_089dfe94] Input Buttons
-const u16 D_089dfe94[] = {
+u16 D_089dfe94[] = {
     /* 0x00 */ (A_BUTTON | DPAD_RIGHT),
     /* 0x01 */ (A_BUTTON | DPAD_RIGHT),
     /* 0x02 */ DPAD_DOWN,
@@ -61,7 +61,7 @@ const u16 D_089dfe94[] = {
 };
 
 // [D_089dfe9c] Cue 05 (Auto-Input)
-const struct CueDefinition drum_intro_cue_auto = {
+struct CueDefinition drum_intro_cue_auto = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(0),
     /* Total Duration  */ 0x60,
@@ -87,7 +87,7 @@ const struct CueDefinition drum_intro_cue_auto = {
 #include "drum_intro_kits.inc.c"
 
 // [D_089e0014] Drum Intro Kits
-const struct DrumTechKit *const drum_intro_kits[] = {
+struct DrumTechKit *drum_intro_kits[] = {
     /* 0x00 */ &drum_intro_kit1,
     /* 0x01 */ &drum_intro_kit1,
     /* 0x02 */ &drum_intro_kit2,
@@ -99,12 +99,12 @@ const struct DrumTechKit *const drum_intro_kits[] = {
 
 
 // [D_089e0024] Buffered Textures List
-const struct CompressedGraphics *const drum_intro_buffered_textures[] = {
+const struct CompressedGraphics *drum_intro_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e0028] Graphics Table (Unused Intro - Teacher Drumming)
-const struct GraphicsTable gfx_table_drum_intro_talk[] = {
+struct GraphicsTable gfx_table_drum_intro_talk[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c4cf00,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -134,7 +134,7 @@ const struct GraphicsTable gfx_table_drum_intro_talk[] = {
 };
 
 // [D_089e0070] Graphics Table (Unused Intro - Player Drumming)
-const struct GraphicsTable gfx_table_drum_intro_play[] = {
+struct GraphicsTable gfx_table_drum_intro_play[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c4af00,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -164,7 +164,7 @@ const struct GraphicsTable gfx_table_drum_intro_play[] = {
 };
 
 // [D_089e00b8] Graphics Table (Tanuki & Monkey)
-const struct GraphicsTable gfx_table_tanuki_and_monkey[] = {
+struct GraphicsTable gfx_table_tanuki_and_monkey[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ce6ebc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -209,7 +209,7 @@ const struct GraphicsTable gfx_table_tanuki_and_monkey[] = {
 };
 
 // [D_089e0124] Graphics Table (Drum Samurai Cutscene)
-const struct GraphicsTable gfx_table_drum_samurai_cutscene[] = {
+struct GraphicsTable gfx_table_drum_samurai_cutscene[] = {
     /* OBJ Tileset */ {
         /* Src.  */ &D_08c4cca8,
         /* Dest. */ OBJ_TILESET_BASE(0),
@@ -229,7 +229,7 @@ const struct GraphicsTable gfx_table_drum_samurai_cutscene[] = {
 };
 
 // [D_089e0154] Graphics Table Index
-const struct GraphicsTable *const drum_intro_gfx_tables[] = {
+struct GraphicsTable *drum_intro_gfx_tables[] = {
     /* 0x00 */ gfx_table_drum_intro_talk,
     /* 0x01 */ gfx_table_drum_intro_play,
     /* 0x02 */ gfx_table_tanuki_and_monkey,
@@ -237,14 +237,14 @@ const struct GraphicsTable *const drum_intro_gfx_tables[] = {
 };
 
 // [D_089e0164] Sprite Offsets?
-const struct Vector2 D_089e0164[] = {
+struct Vector2 D_089e0164[] = {
     /* 0x00 */ { 0, -2 },
     /* 0x01 */ { 0, -1 },
     /* 0x02 */ { 0, -1 },
 };
 
 // [D_089e0170] Drummer Face Animations
-const struct Animation *const D_089e0170[][4] = {
+const struct Animation *D_089e0170[][4] = {
     /* 0x00 */ {
         /* 0x00 */ anim_drum_samurai_head,
         /* 0x01 */ anim_drum_player_head,
@@ -272,7 +272,7 @@ const struct Animation *const D_089e0170[][4] = {
 };
 
 // [D_089e01b0] ? Sprite Z Levels
-const u16 D_089e01b0[] = {
+u16 D_089e01b0[] = {
     /* 0x00 */ 0x4805,
     /* 0x01 */ 0x47e2,
     /* 0x02 */ 0x47e2,
@@ -280,7 +280,7 @@ const u16 D_089e01b0[] = {
 };
 
 // [D_089e01b8] ? Animation Playback Data
-const s8 D_089e01b8[][3] = {
+s8 D_089e01b8[][3] = {
     /* 0x00 */ {
         /* unk0 */ 0x7f,
         /* unk1 */ 1,
@@ -304,7 +304,7 @@ const s8 D_089e01b8[][3] = {
 };
 
 // [D_089e01c4] ?
-const u8 D_089e01c4[] = {
+u8 D_089e01c4[] = {
     /* 0x00 */ 0,
     /* 0x01 */ 1,
     /* 0x02 */ 1,
@@ -316,7 +316,7 @@ const u8 D_089e01c4[] = {
 
 
 // [D_089e01c8] Cue 00 (Bass Drum)
-const struct CueDefinition drum_intro_cue_bass = {
+struct CueDefinition drum_intro_cue_bass = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON | DPAD_LEFT),
     /* Total Duration  */ 0x18,
@@ -340,7 +340,7 @@ const struct CueDefinition drum_intro_cue_bass = {
 };
 
 // [D_089e0208] Cue 01 (Snare Drum)
-const struct CueDefinition drum_intro_cue_snare = {
+struct CueDefinition drum_intro_cue_snare = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT),
     /* Total Duration  */ 0x18,
@@ -364,7 +364,7 @@ const struct CueDefinition drum_intro_cue_snare = {
 };
 
 // [D_089e0248] Cue 02 (Cymbals)
-const struct CueDefinition drum_intro_cue_cymbal = {
+struct CueDefinition drum_intro_cue_cymbal = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(RIGHT_SHOULDER_BUTTON | LEFT_SHOULDER_BUTTON),
     /* Total Duration  */ 0x18,
@@ -388,7 +388,7 @@ const struct CueDefinition drum_intro_cue_cymbal = {
 };
 
 // [D_089e0288] Cue 03 (Tom Drum)
-const struct CueDefinition drum_intro_cue_tom = {
+struct CueDefinition drum_intro_cue_tom = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -412,7 +412,7 @@ const struct CueDefinition drum_intro_cue_tom = {
 };
 
 // [D_089e02c8] Cue 04 (Hi-Hat / Roll)
-const struct CueDefinition drum_intro_cue_hihat = {
+struct CueDefinition drum_intro_cue_hihat = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_UP),
     /* Total Duration  */ 0x18,
@@ -436,7 +436,7 @@ const struct CueDefinition drum_intro_cue_hihat = {
 };
 
 // [D_089e0308] Cue Definition Index
-const struct CueDefinition *const drum_intro_cue_index[] = {
+struct CueDefinition *drum_intro_cue_index[] = {
     /* 0x00 */ &drum_intro_cue_bass,
     /* 0x01 */ &drum_intro_cue_snare,
     /* 0x02 */ &drum_intro_cue_cymbal,
@@ -451,7 +451,7 @@ const struct CueDefinition *const drum_intro_cue_index[] = {
 
 
 // [D_089e0324] Common Events
-const EngineEvent drum_intro_common_events[] = {
+EngineEvent drum_intro_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) drum_intro_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) drum_intro_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) gameplay_set_tutorial,
@@ -459,7 +459,7 @@ const EngineEvent drum_intro_common_events[] = {
 };
 
 // [D_089e0334] Engine Events
-const EngineEvent drum_intro_engine_events[] = {
+EngineEvent drum_intro_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_0802497c,
     /* 0x01 */ (EngineEvent) func_080249c0,
     /* 0x02 */ (EngineEvent) func_08024a4c,
@@ -480,7 +480,7 @@ const EngineEvent drum_intro_engine_events[] = {
 };
 
 // [D_089e0378] Drum Intro Game Engine
-const struct GameEngine drum_intro_engine = {
+struct GameEngine drum_intro_engine = {
     /* Size in Memory */ 0x3b4,
     /* Start Engine   */ drum_intro_engine_start,
     /* Update Engine  */ drum_intro_engine_update,
@@ -496,14 +496,14 @@ const struct GameEngine drum_intro_engine = {
 
 
 // [D_089e0398] ?
-const struct DrumKitCueData *const D_089e0398[] = {
+struct DrumKitCueData *D_089e0398[] = {
     NULL,
     &D_089e03a4,
     &D_089e03c0
 };
 
 // [D_089e03a4] ?
-const struct DrumKitCueData D_089e03a4 = {
+struct DrumKitCueData D_089e03a4 = {
     /* Func. 00 */ func_08024fb4,
     /* Func. 04 */ func_08024fbc,
     /* Func. 08 */ func_08024fc4,
@@ -514,7 +514,7 @@ const struct DrumKitCueData D_089e03a4 = {
 };
 
 // [D_089e03c0] ?
-const struct DrumKitCueData D_089e03c0 = {
+struct DrumKitCueData D_089e03c0 = {
     /* Func. 00 */ func_080251d0,
     /* Func. 04 */ func_080251d8,
     /* Func. 08 */ func_080251e8,
@@ -525,7 +525,7 @@ const struct DrumKitCueData D_089e03c0 = {
 };
 
 // [D_089e03dc] ?
-const struct DrumKitCueData D_089e03dc = {
+struct DrumKitCueData D_089e03dc = {
     /* Func. 00 */ func_08025204,
     /* Func. 04 */ func_0802520c,
     /* Func. 08 */ func_08025214,

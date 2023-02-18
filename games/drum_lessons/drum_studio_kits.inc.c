@@ -4,7 +4,7 @@
 
 
 // [D_089e1bd8] DrumTech Sequence
-const struct DrumTechNote D_089e1bd8[] = {
+struct DrumTechNote D_089e1bd8[] = {
     {
         /* Drum ID */ 24,
         /* Volume  */ 0x30,
@@ -27,7 +27,7 @@ const struct DrumTechNote D_089e1bd8[] = {
 };
 
 // [D_089e1bf8] ?
-const struct DrumTechPhrase D_089e1bf8 = {
+struct DrumTechPhrase D_089e1bf8 = {
     /* Drum ID  */ 4,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -37,7 +37,7 @@ const struct DrumTechPhrase D_089e1bf8 = {
 };
 
 // [D_089e1c0c] ?
-const struct DrumTechPhrase D_089e1c0c = {
+struct DrumTechPhrase D_089e1c0c = {
     /* Drum ID  */ 4,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -47,7 +47,7 @@ const struct DrumTechPhrase D_089e1c0c = {
 };
 
 // [D_089e1c20] ?
-const struct DrumTechPhrase D_089e1c20 = {
+struct DrumTechPhrase D_089e1c20 = {
     /* Drum ID  */ 17,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -57,7 +57,7 @@ const struct DrumTechPhrase D_089e1c20 = {
 };
 
 // [D_089e1c34] ?
-const struct DrumTechPhrase D_089e1c34 = {
+struct DrumTechPhrase D_089e1c34 = {
     /* Drum ID  */ 17,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -67,7 +67,7 @@ const struct DrumTechPhrase D_089e1c34 = {
 };
 
 // [D_089e1c48] ?
-const struct DrumTechPhrase D_089e1c48 = {
+struct DrumTechPhrase D_089e1c48 = {
     /* Drum ID  */ 26,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -77,7 +77,7 @@ const struct DrumTechPhrase D_089e1c48 = {
 };
 
 // [D_089e1c5c] ?
-const struct DrumTechPhrase D_089e1c5c = {
+struct DrumTechPhrase D_089e1c5c = {
     /* Drum ID  */ 36,
     /* Volume   */ 0x60,
     /* Pitch    */ 0,
@@ -87,7 +87,7 @@ const struct DrumTechPhrase D_089e1c5c = {
 };
 
 // [D_089e1c70] ?
-const struct DrumTechPhrase D_089e1c70 = {
+struct DrumTechPhrase D_089e1c70 = {
     /* Drum ID  */ 32,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -97,7 +97,7 @@ const struct DrumTechPhrase D_089e1c70 = {
 };
 
 // [D_089e1c84] ?
-const struct DrumTechPhrase D_089e1c84 = {
+struct DrumTechPhrase D_089e1c84 = {
     /* Drum ID  */ 34,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -107,7 +107,7 @@ const struct DrumTechPhrase D_089e1c84 = {
 };
 
 // [D_089e1c98] ?
-const struct DrumTechPhrase D_089e1c98 = {
+struct DrumTechPhrase D_089e1c98 = {
     /* Drum ID  */ 38,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -117,7 +117,7 @@ const struct DrumTechPhrase D_089e1c98 = {
 };
 
 // [D_089e1cac] Drum Kit
-const struct DrumTechKit D_089e1cac = {
+struct DrumTechKit D_089e1cac = {
     /* A_BUTTON   */ &D_089e1c34,
     /* B_BUTTON   */ &D_089e1c0c,
     /* DPAD_UP    */ &D_089e1c5c,
@@ -135,7 +135,7 @@ const struct DrumTechKit D_089e1cac = {
 
 
 // [D_089e1cd4] ?
-const struct DrumTechPhrase D_089e1cd4 = {
+struct DrumTechPhrase D_089e1cd4 = {
     /* Drum ID  */ 7,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -145,7 +145,7 @@ const struct DrumTechPhrase D_089e1cd4 = {
 };
 
 // [D_089e1ce8] ?
-const struct DrumTechPhrase D_089e1ce8 = {
+struct DrumTechPhrase D_089e1ce8 = {
     /* Drum ID  */ 7,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -155,7 +155,7 @@ const struct DrumTechPhrase D_089e1ce8 = {
 };
 
 // [D_089e1cfc] ?
-const struct DrumTechPhrase D_089e1cfc = {
+struct DrumTechPhrase D_089e1cfc = {
     /* Drum ID  */ 16,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -165,7 +165,7 @@ const struct DrumTechPhrase D_089e1cfc = {
 };
 
 // [D_089e1d10] ?
-const struct DrumTechPhrase D_089e1d10 = {
+struct DrumTechPhrase D_089e1d10 = {
     /* Drum ID  */ 16,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -175,7 +175,7 @@ const struct DrumTechPhrase D_089e1d10 = {
 };
 
 // [D_089e1d24] ?
-const struct DrumTechPhrase D_089e1d24 = {
+struct DrumTechPhrase D_089e1d24 = {
     /* Drum ID  */ 26,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -185,7 +185,7 @@ const struct DrumTechPhrase D_089e1d24 = {
 };
 
 // [D_089e1d38] ?
-const struct DrumTechPhrase D_089e1d38 = {
+struct DrumTechPhrase D_089e1d38 = {
     /* Drum ID  */ 36,
     /* Volume   */ 0x60,
     /* Pitch    */ 0,
@@ -195,7 +195,7 @@ const struct DrumTechPhrase D_089e1d38 = {
 };
 
 // [D_089e1d4c] ?
-const struct DrumTechPhrase D_089e1d4c = {
+struct DrumTechPhrase D_089e1d4c = {
     /* Drum ID  */ 32,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -205,7 +205,7 @@ const struct DrumTechPhrase D_089e1d4c = {
 };
 
 // [D_089e1d60] ?
-const struct DrumTechPhrase D_089e1d60 = {
+struct DrumTechPhrase D_089e1d60 = {
     /* Drum ID  */ 34,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -215,7 +215,7 @@ const struct DrumTechPhrase D_089e1d60 = {
 };
 
 // [D_089e1d74] ?
-const struct DrumTechPhrase D_089e1d74 = {
+struct DrumTechPhrase D_089e1d74 = {
     /* Drum ID  */ 38,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -225,7 +225,7 @@ const struct DrumTechPhrase D_089e1d74 = {
 };
 
 // [D_089e1d88] Drum Kit
-const struct DrumTechKit D_089e1d88 = {
+struct DrumTechKit D_089e1d88 = {
     /* A_BUTTON   */ &D_089e1d10,
     /* B_BUTTON   */ &D_089e1ce8,
     /* DPAD_UP    */ &D_089e1d74,
@@ -243,7 +243,7 @@ const struct DrumTechKit D_089e1d88 = {
 
 
 // [D_089e1db0] ?
-const struct DrumTechPhrase D_089e1db0 = {
+struct DrumTechPhrase D_089e1db0 = {
     /* Drum ID  */ 3,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -253,7 +253,7 @@ const struct DrumTechPhrase D_089e1db0 = {
 };
 
 // [D_089e1dc4] ?
-const struct DrumTechPhrase D_089e1dc4 = {
+struct DrumTechPhrase D_089e1dc4 = {
     /* Drum ID  */ 3,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -263,7 +263,7 @@ const struct DrumTechPhrase D_089e1dc4 = {
 };
 
 // [D_089e1dd8] ?
-const struct DrumTechPhrase D_089e1dd8 = {
+struct DrumTechPhrase D_089e1dd8 = {
     /* Drum ID  */ 15,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -273,7 +273,7 @@ const struct DrumTechPhrase D_089e1dd8 = {
 };
 
 // [D_089e1dec] ?
-const struct DrumTechPhrase D_089e1dec = {
+struct DrumTechPhrase D_089e1dec = {
     /* Drum ID  */ 15,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -283,7 +283,7 @@ const struct DrumTechPhrase D_089e1dec = {
 };
 
 // [D_089e1e00] ?
-const struct DrumTechPhrase D_089e1e00 = {
+struct DrumTechPhrase D_089e1e00 = {
     /* Drum ID  */ 26,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -293,7 +293,7 @@ const struct DrumTechPhrase D_089e1e00 = {
 };
 
 // [D_089e1e14] ?
-const struct DrumTechPhrase D_089e1e14 = {
+struct DrumTechPhrase D_089e1e14 = {
     /* Drum ID  */ 36,
     /* Volume   */ 0x60,
     /* Pitch    */ 0,
@@ -303,7 +303,7 @@ const struct DrumTechPhrase D_089e1e14 = {
 };
 
 // [D_089e1e28] ?
-const struct DrumTechPhrase D_089e1e28 = {
+struct DrumTechPhrase D_089e1e28 = {
     /* Drum ID  */ 32,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -313,7 +313,7 @@ const struct DrumTechPhrase D_089e1e28 = {
 };
 
 // [D_089e1e3c] ?
-const struct DrumTechPhrase D_089e1e3c = {
+struct DrumTechPhrase D_089e1e3c = {
     /* Drum ID  */ 34,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -323,7 +323,7 @@ const struct DrumTechPhrase D_089e1e3c = {
 };
 
 // [D_089e1e50] ?
-const struct DrumTechPhrase D_089e1e50 = {
+struct DrumTechPhrase D_089e1e50 = {
     /* Drum ID  */ 38,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -333,7 +333,7 @@ const struct DrumTechPhrase D_089e1e50 = {
 };
 
 // [D_089e1e64] Drum Kit
-const struct DrumTechKit D_089e1e64 = {
+struct DrumTechKit D_089e1e64 = {
     /* A_BUTTON   */ &D_089e1dec,
     /* B_BUTTON   */ &D_089e1dc4,
     /* DPAD_UP    */ &D_089e1e50,
@@ -351,7 +351,7 @@ const struct DrumTechKit D_089e1e64 = {
 
 
 // [D_089e1e8c] ?
-const struct DrumTechPhrase D_089e1e8c = {
+struct DrumTechPhrase D_089e1e8c = {
     /* Drum ID  */ 8,
     /* Volume   */ 0xf0,
     /* Pitch    */ 0,
@@ -361,7 +361,7 @@ const struct DrumTechPhrase D_089e1e8c = {
 };
 
 // [D_089e1ea0] ?
-const struct DrumTechPhrase D_089e1ea0 = {
+struct DrumTechPhrase D_089e1ea0 = {
     /* Drum ID  */ 8,
     /* Volume   */ 0xf0,
     /* Pitch    */ 0,
@@ -371,7 +371,7 @@ const struct DrumTechPhrase D_089e1ea0 = {
 };
 
 // [D_089e1eb4] ?
-const struct DrumTechPhrase D_089e1eb4 = {
+struct DrumTechPhrase D_089e1eb4 = {
     /* Drum ID  */ 20,
     /* Volume   */ 0x140,
     /* Pitch    */ 0,
@@ -381,7 +381,7 @@ const struct DrumTechPhrase D_089e1eb4 = {
 };
 
 // [D_089e1ec8] ?
-const struct DrumTechPhrase D_089e1ec8 = {
+struct DrumTechPhrase D_089e1ec8 = {
     /* Drum ID  */ 20,
     /* Volume   */ 0x140,
     /* Pitch    */ 0,
@@ -391,7 +391,7 @@ const struct DrumTechPhrase D_089e1ec8 = {
 };
 
 // [D_089e1edc] ?
-const struct DrumTechPhrase D_089e1edc = {
+struct DrumTechPhrase D_089e1edc = {
     /* Drum ID  */ 25,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -401,7 +401,7 @@ const struct DrumTechPhrase D_089e1edc = {
 };
 
 // [D_089e1ef0] ?
-const struct DrumTechPhrase D_089e1ef0 = {
+struct DrumTechPhrase D_089e1ef0 = {
     /* Drum ID  */ 36,
     /* Volume   */ 0x60,
     /* Pitch    */ 0,
@@ -411,7 +411,7 @@ const struct DrumTechPhrase D_089e1ef0 = {
 };
 
 // [D_089e1f04] ?
-const struct DrumTechPhrase D_089e1f04 = {
+struct DrumTechPhrase D_089e1f04 = {
     /* Drum ID  */ 32,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -421,7 +421,7 @@ const struct DrumTechPhrase D_089e1f04 = {
 };
 
 // [D_089e1f18] ?
-const struct DrumTechPhrase D_089e1f18 = {
+struct DrumTechPhrase D_089e1f18 = {
     /* Drum ID  */ 34,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -431,7 +431,7 @@ const struct DrumTechPhrase D_089e1f18 = {
 };
 
 // [D_089e1f2c] ?
-const struct DrumTechPhrase D_089e1f2c = {
+struct DrumTechPhrase D_089e1f2c = {
     /* Drum ID  */ 38,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -441,7 +441,7 @@ const struct DrumTechPhrase D_089e1f2c = {
 };
 
 // [D_089e1f40] Drum Kit
-const struct DrumTechKit D_089e1f40 = {
+struct DrumTechKit D_089e1f40 = {
     /* A_BUTTON   */ &D_089e1ec8,
     /* B_BUTTON   */ &D_089e1ea0,
     /* DPAD_UP    */ &D_089e1ef0,
@@ -459,7 +459,7 @@ const struct DrumTechKit D_089e1f40 = {
 
 
 // [D_089e1f68] ?
-const struct DrumTechPhrase D_089e1f68 = {
+struct DrumTechPhrase D_089e1f68 = {
     /* Drum ID  */ 9,
     /* Volume   */ 0x90,
     /* Pitch    */ 0,
@@ -469,7 +469,7 @@ const struct DrumTechPhrase D_089e1f68 = {
 };
 
 // [D_089e1f7c] ?
-const struct DrumTechPhrase D_089e1f7c = {
+struct DrumTechPhrase D_089e1f7c = {
     /* Drum ID  */ 9,
     /* Volume   */ 0x90,
     /* Pitch    */ 0,
@@ -479,7 +479,7 @@ const struct DrumTechPhrase D_089e1f7c = {
 };
 
 // [D_089e1f90] ?
-const struct DrumTechPhrase D_089e1f90 = {
+struct DrumTechPhrase D_089e1f90 = {
     /* Drum ID  */ 21,
     /* Volume   */ 0x140,
     /* Pitch    */ 0,
@@ -489,7 +489,7 @@ const struct DrumTechPhrase D_089e1f90 = {
 };
 
 // [D_089e1fa4] ?
-const struct DrumTechPhrase D_089e1fa4 = {
+struct DrumTechPhrase D_089e1fa4 = {
     /* Drum ID  */ 21,
     /* Volume   */ 0x140,
     /* Pitch    */ 0,
@@ -499,7 +499,7 @@ const struct DrumTechPhrase D_089e1fa4 = {
 };
 
 // [D_089e1fb8] ?
-const struct DrumTechPhrase D_089e1fb8 = {
+struct DrumTechPhrase D_089e1fb8 = {
     /* Drum ID  */ 26,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -509,7 +509,7 @@ const struct DrumTechPhrase D_089e1fb8 = {
 };
 
 // [D_089e1fcc] ?
-const struct DrumTechPhrase D_089e1fcc = {
+struct DrumTechPhrase D_089e1fcc = {
     /* Drum ID  */ 36,
     /* Volume   */ 0x60,
     /* Pitch    */ 0,
@@ -519,7 +519,7 @@ const struct DrumTechPhrase D_089e1fcc = {
 };
 
 // [D_089e1fe0] ?
-const struct DrumTechPhrase D_089e1fe0 = {
+struct DrumTechPhrase D_089e1fe0 = {
     /* Drum ID  */ 32,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -529,7 +529,7 @@ const struct DrumTechPhrase D_089e1fe0 = {
 };
 
 // [D_089e1ff4] ?
-const struct DrumTechPhrase D_089e1ff4 = {
+struct DrumTechPhrase D_089e1ff4 = {
     /* Drum ID  */ 34,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -539,7 +539,7 @@ const struct DrumTechPhrase D_089e1ff4 = {
 };
 
 // [D_089e2008] ?
-const struct DrumTechPhrase D_089e2008 = {
+struct DrumTechPhrase D_089e2008 = {
     /* Drum ID  */ 38,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -549,7 +549,7 @@ const struct DrumTechPhrase D_089e2008 = {
 };
 
 // [D_089e201c] Drum Kit
-const struct DrumTechKit D_089e201c = {
+struct DrumTechKit D_089e201c = {
     /* A_BUTTON   */ &D_089e1fa4,
     /* B_BUTTON   */ &D_089e1f7c,
     /* DPAD_UP    */ &D_089e2008,
@@ -567,7 +567,7 @@ const struct DrumTechKit D_089e201c = {
 
 
 // [D_089e2044] ?
-const struct DrumTechPhrase D_089e2044 = {
+struct DrumTechPhrase D_089e2044 = {
     /* Drum ID  */ 10,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -577,7 +577,7 @@ const struct DrumTechPhrase D_089e2044 = {
 };
 
 // [D_089e2058] ?
-const struct DrumTechPhrase D_089e2058 = {
+struct DrumTechPhrase D_089e2058 = {
     /* Drum ID  */ 10,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -587,7 +587,7 @@ const struct DrumTechPhrase D_089e2058 = {
 };
 
 // [D_089e206c] ?
-const struct DrumTechPhrase D_089e206c = {
+struct DrumTechPhrase D_089e206c = {
     /* Drum ID  */ 22,
     /* Volume   */ 0x140,
     /* Pitch    */ 0,
@@ -597,7 +597,7 @@ const struct DrumTechPhrase D_089e206c = {
 };
 
 // [D_089e2080] ?
-const struct DrumTechPhrase D_089e2080 = {
+struct DrumTechPhrase D_089e2080 = {
     /* Drum ID  */ 22,
     /* Volume   */ 0x140,
     /* Pitch    */ 0,
@@ -607,7 +607,7 @@ const struct DrumTechPhrase D_089e2080 = {
 };
 
 // [D_089e2094] ?
-const struct DrumTechPhrase D_089e2094 = {
+struct DrumTechPhrase D_089e2094 = {
     /* Drum ID  */ 26,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -617,7 +617,7 @@ const struct DrumTechPhrase D_089e2094 = {
 };
 
 // [D_089e20a8] ?
-const struct DrumTechPhrase D_089e20a8 = {
+struct DrumTechPhrase D_089e20a8 = {
     /* Drum ID  */ 36,
     /* Volume   */ 0x60,
     /* Pitch    */ 0,
@@ -627,7 +627,7 @@ const struct DrumTechPhrase D_089e20a8 = {
 };
 
 // [D_089e20bc] ?
-const struct DrumTechPhrase D_089e20bc = {
+struct DrumTechPhrase D_089e20bc = {
     /* Drum ID  */ 32,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -637,7 +637,7 @@ const struct DrumTechPhrase D_089e20bc = {
 };
 
 // [D_089e20d0] ?
-const struct DrumTechPhrase D_089e20d0 = {
+struct DrumTechPhrase D_089e20d0 = {
     /* Drum ID  */ 34,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -647,7 +647,7 @@ const struct DrumTechPhrase D_089e20d0 = {
 };
 
 // [D_089e20e4] ?
-const struct DrumTechPhrase D_089e20e4 = {
+struct DrumTechPhrase D_089e20e4 = {
     /* Drum ID  */ 38,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -657,7 +657,7 @@ const struct DrumTechPhrase D_089e20e4 = {
 };
 
 // [D_089e20f8] Drum Kit
-const struct DrumTechKit D_089e20f8 = {
+struct DrumTechKit D_089e20f8 = {
     /* A_BUTTON   */ &D_089e2080,
     /* B_BUTTON   */ &D_089e2058,
     /* DPAD_UP    */ &D_089e20e4,
@@ -675,7 +675,7 @@ const struct DrumTechKit D_089e20f8 = {
 
 
 // [D_089e2120] ?
-const struct DrumTechPhrase D_089e2120 = {
+struct DrumTechPhrase D_089e2120 = {
     /* Drum ID  */ 11,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -685,7 +685,7 @@ const struct DrumTechPhrase D_089e2120 = {
 };
 
 // [D_089e2134] ?
-const struct DrumTechPhrase D_089e2134 = {
+struct DrumTechPhrase D_089e2134 = {
     /* Drum ID  */ 11,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -695,7 +695,7 @@ const struct DrumTechPhrase D_089e2134 = {
 };
 
 // [D_089e2148] ?
-const struct DrumTechPhrase D_089e2148 = {
+struct DrumTechPhrase D_089e2148 = {
     /* Drum ID  */ 23,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -705,7 +705,7 @@ const struct DrumTechPhrase D_089e2148 = {
 };
 
 // [D_089e215c] ?
-const struct DrumTechPhrase D_089e215c = {
+struct DrumTechPhrase D_089e215c = {
     /* Drum ID  */ 23,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -715,7 +715,7 @@ const struct DrumTechPhrase D_089e215c = {
 };
 
 // [D_089e2170] ?
-const struct DrumTechPhrase D_089e2170 = {
+struct DrumTechPhrase D_089e2170 = {
     /* Drum ID  */ 25,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -725,7 +725,7 @@ const struct DrumTechPhrase D_089e2170 = {
 };
 
 // [D_089e2184] ?
-const struct DrumTechPhrase D_089e2184 = {
+struct DrumTechPhrase D_089e2184 = {
     /* Drum ID  */ 36,
     /* Volume   */ 0x60,
     /* Pitch    */ 0,
@@ -735,7 +735,7 @@ const struct DrumTechPhrase D_089e2184 = {
 };
 
 // [D_089e2198] ?
-const struct DrumTechPhrase D_089e2198 = {
+struct DrumTechPhrase D_089e2198 = {
     /* Drum ID  */ 32,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -745,7 +745,7 @@ const struct DrumTechPhrase D_089e2198 = {
 };
 
 // [D_089e21ac] ?
-const struct DrumTechPhrase D_089e21ac = {
+struct DrumTechPhrase D_089e21ac = {
     /* Drum ID  */ 34,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -755,7 +755,7 @@ const struct DrumTechPhrase D_089e21ac = {
 };
 
 // [D_089e21c0] ?
-const struct DrumTechPhrase D_089e21c0 = {
+struct DrumTechPhrase D_089e21c0 = {
     /* Drum ID  */ 38,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -765,7 +765,7 @@ const struct DrumTechPhrase D_089e21c0 = {
 };
 
 // [D_089e21d4] Drum Kit
-const struct DrumTechKit D_089e21d4 = {
+struct DrumTechKit D_089e21d4 = {
     /* A_BUTTON   */ &D_089e215c,
     /* B_BUTTON   */ &D_089e2134,
     /* DPAD_UP    */ &D_089e21c0,
@@ -783,7 +783,7 @@ const struct DrumTechKit D_089e21d4 = {
 
 
 // [D_089e21fc] ?
-const struct DrumTechPhrase D_089e21fc = {
+struct DrumTechPhrase D_089e21fc = {
     /* Drum ID  */ 4,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -793,7 +793,7 @@ const struct DrumTechPhrase D_089e21fc = {
 };
 
 // [D_089e2210] ?
-const struct DrumTechPhrase D_089e2210 = {
+struct DrumTechPhrase D_089e2210 = {
     /* Drum ID  */ 4,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -803,7 +803,7 @@ const struct DrumTechPhrase D_089e2210 = {
 };
 
 // [D_089e2224] ?
-const struct DrumTechPhrase D_089e2224 = {
+struct DrumTechPhrase D_089e2224 = {
     /* Drum ID  */ 17,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -813,7 +813,7 @@ const struct DrumTechPhrase D_089e2224 = {
 };
 
 // [D_089e2238] ?
-const struct DrumTechPhrase D_089e2238 = {
+struct DrumTechPhrase D_089e2238 = {
     /* Drum ID  */ 17,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -823,7 +823,7 @@ const struct DrumTechPhrase D_089e2238 = {
 };
 
 // [D_089e224c] ?
-const struct DrumTechPhrase D_089e224c = {
+struct DrumTechPhrase D_089e224c = {
     /* Drum ID  */ 26,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -833,7 +833,7 @@ const struct DrumTechPhrase D_089e224c = {
 };
 
 // [D_089e2260] ?
-const struct DrumTechPhrase D_089e2260 = {
+struct DrumTechPhrase D_089e2260 = {
     /* Drum ID  */ 37,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -843,7 +843,7 @@ const struct DrumTechPhrase D_089e2260 = {
 };
 
 // [D_089e2274] ?
-const struct DrumTechPhrase D_089e2274 = {
+struct DrumTechPhrase D_089e2274 = {
     /* Drum ID  */ 32,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -853,7 +853,7 @@ const struct DrumTechPhrase D_089e2274 = {
 };
 
 // [D_089e2288] ?
-const struct DrumTechPhrase D_089e2288 = {
+struct DrumTechPhrase D_089e2288 = {
     /* Drum ID  */ 34,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -863,7 +863,7 @@ const struct DrumTechPhrase D_089e2288 = {
 };
 
 // [D_089e229c] ?
-const struct DrumTechPhrase D_089e229c = {
+struct DrumTechPhrase D_089e229c = {
     /* Drum ID  */ 38,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -873,7 +873,7 @@ const struct DrumTechPhrase D_089e229c = {
 };
 
 // [D_089e22b0] Drum Kit
-const struct DrumTechKit D_089e22b0 = {
+struct DrumTechKit D_089e22b0 = {
     /* A_BUTTON   */ &D_089e2238,
     /* B_BUTTON   */ &D_089e2210,
     /* DPAD_UP    */ &D_089e2260,
@@ -891,7 +891,7 @@ const struct DrumTechKit D_089e22b0 = {
 
 
 // [D_089e22d8] ?
-const struct DrumTechPhrase D_089e22d8 = {
+struct DrumTechPhrase D_089e22d8 = {
     /* Drum ID  */ 7,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -901,7 +901,7 @@ const struct DrumTechPhrase D_089e22d8 = {
 };
 
 // [D_089e22ec] ?
-const struct DrumTechPhrase D_089e22ec = {
+struct DrumTechPhrase D_089e22ec = {
     /* Drum ID  */ 7,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -911,7 +911,7 @@ const struct DrumTechPhrase D_089e22ec = {
 };
 
 // [D_089e2300] ?
-const struct DrumTechPhrase D_089e2300 = {
+struct DrumTechPhrase D_089e2300 = {
     /* Drum ID  */ 16,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -921,7 +921,7 @@ const struct DrumTechPhrase D_089e2300 = {
 };
 
 // [D_089e2314] ?
-const struct DrumTechPhrase D_089e2314 = {
+struct DrumTechPhrase D_089e2314 = {
     /* Drum ID  */ 16,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -931,7 +931,7 @@ const struct DrumTechPhrase D_089e2314 = {
 };
 
 // [D_089e2328] ?
-const struct DrumTechPhrase D_089e2328 = {
+struct DrumTechPhrase D_089e2328 = {
     /* Drum ID  */ 26,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -941,7 +941,7 @@ const struct DrumTechPhrase D_089e2328 = {
 };
 
 // [D_089e233c] ?
-const struct DrumTechPhrase D_089e233c = {
+struct DrumTechPhrase D_089e233c = {
     /* Drum ID  */ 36,
     /* Volume   */ 0x60,
     /* Pitch    */ 0,
@@ -951,7 +951,7 @@ const struct DrumTechPhrase D_089e233c = {
 };
 
 // [D_089e2350] ?
-const struct DrumTechPhrase D_089e2350 = {
+struct DrumTechPhrase D_089e2350 = {
     /* Drum ID  */ 32,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -961,7 +961,7 @@ const struct DrumTechPhrase D_089e2350 = {
 };
 
 // [D_089e2364] ?
-const struct DrumTechPhrase D_089e2364 = {
+struct DrumTechPhrase D_089e2364 = {
     /* Drum ID  */ 34,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -971,7 +971,7 @@ const struct DrumTechPhrase D_089e2364 = {
 };
 
 // [D_089e2378] ?
-const struct DrumTechPhrase D_089e2378 = {
+struct DrumTechPhrase D_089e2378 = {
     /* Drum ID  */ 38,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -981,7 +981,7 @@ const struct DrumTechPhrase D_089e2378 = {
 };
 
 // [D_089e238c] Drum Kit
-const struct DrumTechKit D_089e238c = {
+struct DrumTechKit D_089e238c = {
     /* A_BUTTON   */ &D_089e2314,
     /* B_BUTTON   */ &D_089e22ec,
     /* DPAD_UP    */ &D_089e2378,
@@ -999,7 +999,7 @@ const struct DrumTechKit D_089e238c = {
 
 
 // [D_089e23b4] ?
-const struct DrumTechPhrase D_089e23b4 = {
+struct DrumTechPhrase D_089e23b4 = {
     /* Drum ID  */ 8,
     /* Volume   */ 0xf0,
     /* Pitch    */ 0,
@@ -1009,7 +1009,7 @@ const struct DrumTechPhrase D_089e23b4 = {
 };
 
 // [D_089e23c8] ?
-const struct DrumTechPhrase D_089e23c8 = {
+struct DrumTechPhrase D_089e23c8 = {
     /* Drum ID  */ 8,
     /* Volume   */ 0xf0,
     /* Pitch    */ 0,
@@ -1019,7 +1019,7 @@ const struct DrumTechPhrase D_089e23c8 = {
 };
 
 // [D_089e23dc] ?
-const struct DrumTechPhrase D_089e23dc = {
+struct DrumTechPhrase D_089e23dc = {
     /* Drum ID  */ 20,
     /* Volume   */ 0x140,
     /* Pitch    */ 0,
@@ -1029,7 +1029,7 @@ const struct DrumTechPhrase D_089e23dc = {
 };
 
 // [D_089e23f0] ?
-const struct DrumTechPhrase D_089e23f0 = {
+struct DrumTechPhrase D_089e23f0 = {
     /* Drum ID  */ 20,
     /* Volume   */ 0x140,
     /* Pitch    */ 0,
@@ -1039,7 +1039,7 @@ const struct DrumTechPhrase D_089e23f0 = {
 };
 
 // [D_089e2404] ?
-const struct DrumTechPhrase D_089e2404 = {
+struct DrumTechPhrase D_089e2404 = {
     /* Drum ID  */ 25,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1049,7 +1049,7 @@ const struct DrumTechPhrase D_089e2404 = {
 };
 
 // [D_089e2418] ?
-const struct DrumTechPhrase D_089e2418 = {
+struct DrumTechPhrase D_089e2418 = {
     /* Drum ID  */ 36,
     /* Volume   */ 0x60,
     /* Pitch    */ 0,
@@ -1059,7 +1059,7 @@ const struct DrumTechPhrase D_089e2418 = {
 };
 
 // [D_089e242c] ?
-const struct DrumTechPhrase D_089e242c = {
+struct DrumTechPhrase D_089e242c = {
     /* Drum ID  */ 32,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -1069,7 +1069,7 @@ const struct DrumTechPhrase D_089e242c = {
 };
 
 // [D_089e2440] ?
-const struct DrumTechPhrase D_089e2440 = {
+struct DrumTechPhrase D_089e2440 = {
     /* Drum ID  */ 34,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -1079,7 +1079,7 @@ const struct DrumTechPhrase D_089e2440 = {
 };
 
 // [D_089e2454] ?
-const struct DrumTechPhrase D_089e2454 = {
+struct DrumTechPhrase D_089e2454 = {
     /* Drum ID  */ 38,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -1089,7 +1089,7 @@ const struct DrumTechPhrase D_089e2454 = {
 };
 
 // [D_089e2468] Drum Kit
-const struct DrumTechKit D_089e2468 = {
+struct DrumTechKit D_089e2468 = {
     /* A_BUTTON   */ &D_089e23f0,
     /* B_BUTTON   */ &D_089e23c8,
     /* DPAD_UP    */ &D_089e2418,
@@ -1107,7 +1107,7 @@ const struct DrumTechKit D_089e2468 = {
 
 
 // [D_089e2490] ?
-const struct DrumTechPhrase D_089e2490 = {
+struct DrumTechPhrase D_089e2490 = {
     /* Drum ID  */ 8,
     /* Volume   */ 0xf0,
     /* Pitch    */ 0,
@@ -1117,7 +1117,7 @@ const struct DrumTechPhrase D_089e2490 = {
 };
 
 // [D_089e24a4] ?
-const struct DrumTechPhrase D_089e24a4 = {
+struct DrumTechPhrase D_089e24a4 = {
     /* Drum ID  */ 8,
     /* Volume   */ 0xf0,
     /* Pitch    */ 0,
@@ -1127,7 +1127,7 @@ const struct DrumTechPhrase D_089e24a4 = {
 };
 
 // [D_089e24b8] ?
-const struct DrumTechPhrase D_089e24b8 = {
+struct DrumTechPhrase D_089e24b8 = {
     /* Drum ID  */ 20,
     /* Volume   */ 0x140,
     /* Pitch    */ 0,
@@ -1137,7 +1137,7 @@ const struct DrumTechPhrase D_089e24b8 = {
 };
 
 // [D_089e24cc] ?
-const struct DrumTechPhrase D_089e24cc = {
+struct DrumTechPhrase D_089e24cc = {
     /* Drum ID  */ 20,
     /* Volume   */ 0x140,
     /* Pitch    */ 0,
@@ -1147,7 +1147,7 @@ const struct DrumTechPhrase D_089e24cc = {
 };
 
 // [D_089e24e0] ?
-const struct DrumTechPhrase D_089e24e0 = {
+struct DrumTechPhrase D_089e24e0 = {
     /* Drum ID  */ 25,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1157,7 +1157,7 @@ const struct DrumTechPhrase D_089e24e0 = {
 };
 
 // [D_089e24f4] ?
-const struct DrumTechPhrase D_089e24f4 = {
+struct DrumTechPhrase D_089e24f4 = {
     /* Drum ID  */ 36,
     /* Volume   */ 0x60,
     /* Pitch    */ 0,
@@ -1167,7 +1167,7 @@ const struct DrumTechPhrase D_089e24f4 = {
 };
 
 // [D_089e2508] ?
-const struct DrumTechPhrase D_089e2508 = {
+struct DrumTechPhrase D_089e2508 = {
     /* Drum ID  */ 32,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -1177,7 +1177,7 @@ const struct DrumTechPhrase D_089e2508 = {
 };
 
 // [D_089e251c] ?
-const struct DrumTechPhrase D_089e251c = {
+struct DrumTechPhrase D_089e251c = {
     /* Drum ID  */ 34,
     /* Volume   */ 0x80,
     /* Pitch    */ 0,
@@ -1187,7 +1187,7 @@ const struct DrumTechPhrase D_089e251c = {
 };
 
 // [D_089e2530] ?
-const struct DrumTechPhrase D_089e2530 = {
+struct DrumTechPhrase D_089e2530 = {
     /* Drum ID  */ 38,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -1197,7 +1197,7 @@ const struct DrumTechPhrase D_089e2530 = {
 };
 
 // [D_089e2544] Drum Kit
-const struct DrumTechKit D_089e2544 = {
+struct DrumTechKit D_089e2544 = {
     /* A_BUTTON   */ &D_089e24cc,
     /* B_BUTTON   */ NULL,
     /* DPAD_UP    */ &D_089e2530,
@@ -1215,7 +1215,7 @@ const struct DrumTechKit D_089e2544 = {
 
 
 // [D_089e256c] ?
-const struct DrumTechPhrase D_089e256c = {
+struct DrumTechPhrase D_089e256c = {
     /* Drum ID  */ 62,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1225,7 +1225,7 @@ const struct DrumTechPhrase D_089e256c = {
 };
 
 // [D_089e2580] ?
-const struct DrumTechPhrase D_089e2580 = {
+struct DrumTechPhrase D_089e2580 = {
     /* Drum ID  */ 62,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1235,7 +1235,7 @@ const struct DrumTechPhrase D_089e2580 = {
 };
 
 // [D_089e2594] ?
-const struct DrumTechPhrase D_089e2594 = {
+struct DrumTechPhrase D_089e2594 = {
     /* Drum ID  */ 63,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1245,7 +1245,7 @@ const struct DrumTechPhrase D_089e2594 = {
 };
 
 // [D_089e25a8] ?
-const struct DrumTechPhrase D_089e25a8 = {
+struct DrumTechPhrase D_089e25a8 = {
     /* Drum ID  */ 63,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1255,7 +1255,7 @@ const struct DrumTechPhrase D_089e25a8 = {
 };
 
 // [D_089e25bc] ?
-const struct DrumTechPhrase D_089e25bc = {
+struct DrumTechPhrase D_089e25bc = {
     /* Drum ID  */ 64,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1265,7 +1265,7 @@ const struct DrumTechPhrase D_089e25bc = {
 };
 
 // [D_089e25d0] ?
-const struct DrumTechPhrase D_089e25d0 = {
+struct DrumTechPhrase D_089e25d0 = {
     /* Drum ID  */ 65,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1275,7 +1275,7 @@ const struct DrumTechPhrase D_089e25d0 = {
 };
 
 // [D_089e25e4] ?
-const struct DrumTechPhrase D_089e25e4 = {
+struct DrumTechPhrase D_089e25e4 = {
     /* Drum ID  */ 66,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1285,7 +1285,7 @@ const struct DrumTechPhrase D_089e25e4 = {
 };
 
 // [D_089e25f8] ?
-const struct DrumTechPhrase D_089e25f8 = {
+struct DrumTechPhrase D_089e25f8 = {
     /* Drum ID  */ 67,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1295,7 +1295,7 @@ const struct DrumTechPhrase D_089e25f8 = {
 };
 
 // [D_089e260c] Drum Kit
-const struct DrumTechKit D_089e260c = {
+struct DrumTechKit D_089e260c = {
     /* A_BUTTON   */ &D_089e25a8,
     /* B_BUTTON   */ &D_089e2580,
     /* DPAD_UP    */ &D_089e25d0,
@@ -1313,7 +1313,7 @@ const struct DrumTechKit D_089e260c = {
 
 
 // [D_089e2634] ?
-const struct DrumTechPhrase D_089e2634 = {
+struct DrumTechPhrase D_089e2634 = {
     /* Drum ID  */ 68,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1323,7 +1323,7 @@ const struct DrumTechPhrase D_089e2634 = {
 };
 
 // [D_089e2648] ?
-const struct DrumTechPhrase D_089e2648 = {
+struct DrumTechPhrase D_089e2648 = {
     /* Drum ID  */ 69,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1333,7 +1333,7 @@ const struct DrumTechPhrase D_089e2648 = {
 };
 
 // [D_089e265c] ?
-const struct DrumTechPhrase D_089e265c = {
+struct DrumTechPhrase D_089e265c = {
     /* Drum ID  */ 70,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1343,7 +1343,7 @@ const struct DrumTechPhrase D_089e265c = {
 };
 
 // [D_089e2670] ?
-const struct DrumTechPhrase D_089e2670 = {
+struct DrumTechPhrase D_089e2670 = {
     /* Drum ID  */ 71,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1353,7 +1353,7 @@ const struct DrumTechPhrase D_089e2670 = {
 };
 
 // [D_089e2684] ?
-const struct DrumTechPhrase D_089e2684 = {
+struct DrumTechPhrase D_089e2684 = {
     /* Drum ID  */ 72,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1363,7 +1363,7 @@ const struct DrumTechPhrase D_089e2684 = {
 };
 
 // [D_089e2698] ?
-const struct DrumTechPhrase D_089e2698 = {
+struct DrumTechPhrase D_089e2698 = {
     /* Drum ID  */ 73,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1373,7 +1373,7 @@ const struct DrumTechPhrase D_089e2698 = {
 };
 
 // [D_089e26ac] ?
-const struct DrumTechPhrase D_089e26ac = {
+struct DrumTechPhrase D_089e26ac = {
     /* Drum ID  */ 74,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1383,7 +1383,7 @@ const struct DrumTechPhrase D_089e26ac = {
 };
 
 // [D_089e26c0] ?
-const struct DrumTechPhrase D_089e26c0 = {
+struct DrumTechPhrase D_089e26c0 = {
     /* Drum ID  */ 75,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1393,7 +1393,7 @@ const struct DrumTechPhrase D_089e26c0 = {
 };
 
 // [D_089e26d4] Drum Kit
-const struct DrumTechKit D_089e26d4 = {
+struct DrumTechKit D_089e26d4 = {
     /* A_BUTTON   */ &D_089e2670,
     /* B_BUTTON   */ &D_089e2648,
     /* DPAD_UP    */ &D_089e2698,
@@ -1411,7 +1411,7 @@ const struct DrumTechKit D_089e26d4 = {
 
 
 // [D_089e26fc] DrumTech Sequence
-const struct DrumTechNote D_089e26fc[] = {
+struct DrumTechNote D_089e26fc[] = {
     {
         /* Drum ID */ 79,
         /* Volume  */ 0x80,
@@ -1434,7 +1434,7 @@ const struct DrumTechNote D_089e26fc[] = {
 };
 
 // [D_089e271c] ?
-const struct DrumTechPhrase D_089e271c = {
+struct DrumTechPhrase D_089e271c = {
     /* Drum ID  */ 76,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1444,7 +1444,7 @@ const struct DrumTechPhrase D_089e271c = {
 };
 
 // [D_089e2730] ?
-const struct DrumTechPhrase D_089e2730 = {
+struct DrumTechPhrase D_089e2730 = {
     /* Drum ID  */ 76,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1454,7 +1454,7 @@ const struct DrumTechPhrase D_089e2730 = {
 };
 
 // [D_089e2744] ?
-const struct DrumTechPhrase D_089e2744 = {
+struct DrumTechPhrase D_089e2744 = {
     /* Drum ID  */ 77,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -1464,7 +1464,7 @@ const struct DrumTechPhrase D_089e2744 = {
 };
 
 // [D_089e2758] ?
-const struct DrumTechPhrase D_089e2758 = {
+struct DrumTechPhrase D_089e2758 = {
     /* Drum ID  */ 77,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -1474,7 +1474,7 @@ const struct DrumTechPhrase D_089e2758 = {
 };
 
 // [D_089e276c] ?
-const struct DrumTechPhrase D_089e276c = {
+struct DrumTechPhrase D_089e276c = {
     /* Drum ID  */ 78,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1484,7 +1484,7 @@ const struct DrumTechPhrase D_089e276c = {
 };
 
 // [D_089e2780] ?
-const struct DrumTechPhrase D_089e2780 = {
+struct DrumTechPhrase D_089e2780 = {
     /* Drum ID  */ 79,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1494,7 +1494,7 @@ const struct DrumTechPhrase D_089e2780 = {
 };
 
 // [D_089e2794] ?
-const struct DrumTechPhrase D_089e2794 = {
+struct DrumTechPhrase D_089e2794 = {
     /* Drum ID  */ 80,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1504,7 +1504,7 @@ const struct DrumTechPhrase D_089e2794 = {
 };
 
 // [D_089e27a8] ?
-const struct DrumTechPhrase D_089e27a8 = {
+struct DrumTechPhrase D_089e27a8 = {
     /* Drum ID  */ 81,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1514,7 +1514,7 @@ const struct DrumTechPhrase D_089e27a8 = {
 };
 
 // [D_089e27bc] ?
-const struct DrumTechPhrase D_089e27bc = {
+struct DrumTechPhrase D_089e27bc = {
     /* Drum ID  */ 38,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1524,7 +1524,7 @@ const struct DrumTechPhrase D_089e27bc = {
 };
 
 // [D_089e27d0] Drum Kit
-const struct DrumTechKit D_089e27d0 = {
+struct DrumTechKit D_089e27d0 = {
     /* A_BUTTON   */ &D_089e2758,
     /* B_BUTTON   */ &D_089e2730,
     /* DPAD_UP    */ &D_089e27bc,
@@ -1542,7 +1542,7 @@ const struct DrumTechKit D_089e27d0 = {
 
 
 // [D_089e27f8] ?
-const struct DrumTechPhrase D_089e27f8 = {
+struct DrumTechPhrase D_089e27f8 = {
     /* Drum ID  */ 82,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1552,7 +1552,7 @@ const struct DrumTechPhrase D_089e27f8 = {
 };
 
 // [D_089e280c] ?
-const struct DrumTechPhrase D_089e280c = {
+struct DrumTechPhrase D_089e280c = {
     /* Drum ID  */ 83,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1562,7 +1562,7 @@ const struct DrumTechPhrase D_089e280c = {
 };
 
 // [D_089e2820] ?
-const struct DrumTechPhrase D_089e2820 = {
+struct DrumTechPhrase D_089e2820 = {
     /* Drum ID  */ 84,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1572,7 +1572,7 @@ const struct DrumTechPhrase D_089e2820 = {
 };
 
 // [D_089e2834] ?
-const struct DrumTechPhrase D_089e2834 = {
+struct DrumTechPhrase D_089e2834 = {
     /* Drum ID  */ 85,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1582,7 +1582,7 @@ const struct DrumTechPhrase D_089e2834 = {
 };
 
 // [D_089e2848] ?
-const struct DrumTechPhrase D_089e2848 = {
+struct DrumTechPhrase D_089e2848 = {
     /* Drum ID  */ 86,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1592,7 +1592,7 @@ const struct DrumTechPhrase D_089e2848 = {
 };
 
 // [D_089e285c] ?
-const struct DrumTechPhrase D_089e285c = {
+struct DrumTechPhrase D_089e285c = {
     /* Drum ID  */ 87,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1602,7 +1602,7 @@ const struct DrumTechPhrase D_089e285c = {
 };
 
 // [D_089e2870] ?
-const struct DrumTechPhrase D_089e2870 = {
+struct DrumTechPhrase D_089e2870 = {
     /* Drum ID  */ 88,
     /* Volume   */ 0xa0,
     /* Pitch    */ 0,
@@ -1612,7 +1612,7 @@ const struct DrumTechPhrase D_089e2870 = {
 };
 
 // [D_089e2884] ?
-const struct DrumTechPhrase D_089e2884 = {
+struct DrumTechPhrase D_089e2884 = {
     /* Drum ID  */ 89,
     /* Volume   */ 0x100,
     /* Pitch    */ 0,
@@ -1626,7 +1626,7 @@ const struct DrumTechPhrase D_089e2884 = {
 
 
 // [D_089e2898] Drum Kit
-const struct DrumTechKit D_089e2898 = {
+struct DrumTechKit D_089e2898 = {
     /* A_BUTTON   */ &D_089e2834,
     /* B_BUTTON   */ &D_089e280c,
     /* DPAD_UP    */ &D_089e285c,
@@ -1640,7 +1640,7 @@ const struct DrumTechKit D_089e2898 = {
 };
 
 // [D_089e28c0] ?
-const struct DrumTechPhrase D_089e28c0 = {
+struct DrumTechPhrase D_089e28c0 = {
     /* Drum ID  */ 90,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -1650,7 +1650,7 @@ const struct DrumTechPhrase D_089e28c0 = {
 };
 
 // [D_089e28d4] ?
-const struct DrumTechPhrase D_089e28d4 = {
+struct DrumTechPhrase D_089e28d4 = {
     /* Drum ID  */ 90,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -1660,7 +1660,7 @@ const struct DrumTechPhrase D_089e28d4 = {
 };
 
 // [D_089e28e8] ?
-const struct DrumTechPhrase D_089e28e8 = {
+struct DrumTechPhrase D_089e28e8 = {
     /* Drum ID  */ 91,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -1670,7 +1670,7 @@ const struct DrumTechPhrase D_089e28e8 = {
 };
 
 // [D_089e28fc] ?
-const struct DrumTechPhrase D_089e28fc = {
+struct DrumTechPhrase D_089e28fc = {
     /* Drum ID  */ 91,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -1680,7 +1680,7 @@ const struct DrumTechPhrase D_089e28fc = {
 };
 
 // [D_089e2910] ?
-const struct DrumTechPhrase D_089e2910 = {
+struct DrumTechPhrase D_089e2910 = {
     /* Drum ID  */ 92,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -1690,7 +1690,7 @@ const struct DrumTechPhrase D_089e2910 = {
 };
 
 // [D_089e2924] ?
-const struct DrumTechPhrase D_089e2924 = {
+struct DrumTechPhrase D_089e2924 = {
     /* Drum ID  */ 93,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -1700,7 +1700,7 @@ const struct DrumTechPhrase D_089e2924 = {
 };
 
 // [D_089e2938] ?
-const struct DrumTechPhrase D_089e2938 = {
+struct DrumTechPhrase D_089e2938 = {
     /* Drum ID  */ 94,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -1710,7 +1710,7 @@ const struct DrumTechPhrase D_089e2938 = {
 };
 
 // [D_089e294c] ?
-const struct DrumTechPhrase D_089e294c = {
+struct DrumTechPhrase D_089e294c = {
     /* Drum ID  */ 95,
     /* Volume   */ 0xc0,
     /* Pitch    */ 0,
@@ -1720,7 +1720,7 @@ const struct DrumTechPhrase D_089e294c = {
 };
 
 // [D_089e2960] Drum Kit
-const struct DrumTechKit D_089e2960 = {
+struct DrumTechKit D_089e2960 = {
     /* A_BUTTON   */ &D_089e28fc,
     /* B_BUTTON   */ &D_089e28d4,
     /* DPAD_UP    */ &D_089e2924,

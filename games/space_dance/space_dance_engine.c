@@ -91,7 +91,7 @@ extern const struct SequenceData s_space_miss_seqData;
 
 
 // [D_089e6ba4] All Animations
-const struct Animation *const space_dance_anim[][3] = {
+const struct Animation *space_dance_anim[][3] = {
     /* 0x00 */ { anim_space_dancer_right, anim_cosmic_dancer_right, anim_space_dancer_right },
     /* 0x01 */ { anim_space_dancer_punch, anim_cosmic_dancer_punch, anim_space_dancer_punch },
     /* 0x02 */ { anim_space_dancer_down, anim_cosmic_dancer_down, anim_space_dancer_down },
@@ -124,7 +124,7 @@ const struct Animation *const space_dance_anim[][3] = {
 };
 
 // [D_089e6d00] Animation Table
-const struct Animation *const *const space_dance_anim_table[] = {
+const struct Animation **space_dance_anim_table[] = {
     /* 0x00 */ space_dance_anim[0],
     /* 0x01 */ space_dance_anim[1],
     /* 0x02 */ space_dance_anim[2],
@@ -157,12 +157,12 @@ const struct Animation *const *const space_dance_anim_table[] = {
 };
 
 // [D_089e6d74] Buffered Textures List
-const struct CompressedGraphics *const space_dance_buffered_textures[] = {
+const struct CompressedGraphics *space_dance_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e6d78] Graphics Table (Space Dance)
-const struct GraphicsTable space_dance_gfx_table[] = {
+struct GraphicsTable space_dance_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ce2cb0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -197,7 +197,7 @@ const struct GraphicsTable space_dance_gfx_table[] = {
 };
 
 // [D_089e6dcc] Graphics Table (Cosmic Dance)
-const struct GraphicsTable cosmic_dance_gfx_table[] = {
+struct GraphicsTable cosmic_dance_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c38fcc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -237,7 +237,7 @@ const struct GraphicsTable cosmic_dance_gfx_table[] = {
 };
 
 // [D_089e6e2c] Graphics Table (Remix 3)
-const struct GraphicsTable space_dance_remix_3_gfx_table[] = {
+struct GraphicsTable space_dance_remix_3_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ce3978,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -272,7 +272,7 @@ const struct GraphicsTable space_dance_remix_3_gfx_table[] = {
 };
 
 // [D_089e6e80] Graphics Table Index
-const struct GraphicsTable *const space_dance_gfx_tables[] = {
+struct GraphicsTable *space_dance_gfx_tables[] = {
     /* 0x00 */ space_dance_gfx_table,
     /* 0x01 */ cosmic_dance_gfx_table,
     /* 0x02 */ space_dance_remix_3_gfx_table
@@ -283,7 +283,7 @@ const struct GraphicsTable *const space_dance_gfx_tables[] = {
 
 
 // [D_089e6e8c] Animation IDs for Space Dancer Actions
-const u8 space_dancer_anim_map[] = {
+u8 space_dancer_anim_map[] = {
     /* 0x00 */ SPACE_DANCE_ANIM_DANCER_RIGHT,
     /* 0x01 */ SPACE_DANCE_ANIM_DANCER_PUNCH,
     /* 0x02 */ SPACE_DANCE_ANIM_DANCER_DOWN,
@@ -294,7 +294,7 @@ const u8 space_dancer_anim_map[] = {
 };
 
 // [D_089e6e93] Animation IDs for Space Gramps Actions
-const u8 space_gramps_anim_map[] = {
+u8 space_gramps_anim_map[] = {
     /* 0x00 */ SPACE_DANCE_ANIM_GRAMPS_RIGHT,
     /* 0x01 */ SPACE_DANCE_ANIM_GRAMPS_PUNCH,
     /* 0x02 */ SPACE_DANCE_ANIM_GRAMPS_DOWN,
@@ -307,7 +307,7 @@ const u8 space_gramps_anim_map[] = {
 };
 
 // [D_089e6e9c] Sound Effects for Dancer Actions
-const struct SequenceData *const space_dancer_sounds[] = {
+const struct SequenceData *space_dancer_sounds[] = {
     /* 0x00 */ NULL,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
@@ -318,21 +318,21 @@ const struct SequenceData *const space_dancer_sounds[] = {
 };
 
 // [D_089e6eb8] Animation IDs for Inputs
-const u8 space_dance_cue_anim_map[] = {
+u8 space_dance_cue_anim_map[] = {
     /* 0x00 */ SPACE_DANCE_ANIM_DANCER_RIGHT,
     /* 0x01 */ SPACE_DANCE_ANIM_DANCER_DOWN,
     /* 0x02 */ SPACE_DANCE_ANIM_DANCER_PUNCH
 };
 
 // [D_089e6ebc] ? (y values for a sprite)
-const s16 D_089e6ebc[] = {
+s16 D_089e6ebc[] = {
     /* 0x00 */ 67,
     /* 0x01 */ 96,
     /* 0x02 */ 67
 };
 
 // [D_089e6ec4] Cue 00 (Turn Right)
-const struct CueDefinition space_dance_cue_turn_right = {
+struct CueDefinition space_dance_cue_turn_right = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT),
     /* Total Duration  */ 0x18,
@@ -356,7 +356,7 @@ const struct CueDefinition space_dance_cue_turn_right = {
 };
 
 // [D_089e6f04] Cue 01 (Let's Sit Down)
-const struct CueDefinition space_dance_cue_sit_down = {
+struct CueDefinition space_dance_cue_sit_down = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -380,7 +380,7 @@ const struct CueDefinition space_dance_cue_sit_down = {
 };
 
 // [D_089e6f44] Cue 02 (Pa-Pa-Pa-Punch)
-const struct CueDefinition space_dance_cue_punch = {
+struct CueDefinition space_dance_cue_punch = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x0C,
@@ -404,7 +404,7 @@ const struct CueDefinition space_dance_cue_punch = {
 };
 
 // [D_089e6f84] Cue 03 (Pa-Pa-Pa-Punch - Swing)
-const struct CueDefinition space_dance_cue_punch_swing = {
+struct CueDefinition space_dance_cue_punch_swing = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x08,
@@ -428,7 +428,7 @@ const struct CueDefinition space_dance_cue_punch_swing = {
 };
 
 // [D_089e6fc4] Cue Definition Index
-const struct CueDefinition *const space_dance_cue_index[] = {
+struct CueDefinition *space_dance_cue_index[] = {
     /* 0x00 */ &space_dance_cue_turn_right,
     /* 0x01 */ &space_dance_cue_sit_down,
     /* 0x02 */ &space_dance_cue_punch,
@@ -449,7 +449,7 @@ const struct CueDefinition *const space_dance_cue_index[] = {
 
 
 // [D_089e6ff8] Common Events
-const EngineEvent space_dance_common_events[] = {
+EngineEvent space_dance_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) space_dance_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) space_dance_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) space_dance_common_init_tutorial,
@@ -457,7 +457,7 @@ const EngineEvent space_dance_common_events[] = {
 };
 
 // [D_089e7008] Engine Events
-const EngineEvent space_dance_engine_events[] = {
+EngineEvent space_dance_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_0803d2c0,
     /* 0x01 */ (EngineEvent) func_0803d460,
     /* 0x02 */ (EngineEvent) func_0803d4bc,
@@ -470,7 +470,7 @@ const EngineEvent space_dance_engine_events[] = {
 };
 
 // [D_089e702c] Space Dance Game Engine
-const struct GameEngine space_dance_engine = {
+struct GameEngine space_dance_engine = {
     /* Size in Memory */ 0x38,
     /* Start Engine   */ space_dance_engine_start,
     /* Update Engine  */ space_dance_engine_update,

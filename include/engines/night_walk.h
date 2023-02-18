@@ -173,27 +173,27 @@ extern const struct SequenceData s_f_drumtech_fall_seqData;
 
 
 // Engine Definition Data:
-extern const struct Animation *const night_walk_star_anim[]; // Stars
-extern const struct Animation *const night_walk_star_expand_anim[]; // Star Flashes
-extern const struct SequenceData *const D_089e2ef8[];
-extern const struct DrumTechInstrument drumtech_drum_bank[];
-extern const struct CompressedGraphics *const night_walk_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable night_walk_gfx_table[]; // Graphics Table
-extern const struct DrumTechNote drum_seq_night_walk_kick_barely[];
-extern const struct DrumTechNote *const night_walk_drum_seq_kick[];
-extern const struct DrumTechNote drum_seq_night_walk_snare_barely[];
-extern const struct DrumTechNote *const night_walk_drum_seq_snare[];
-extern const struct DrumTechNote *const night_walk_drum_seq_snare_swing[];
-extern const struct DrumTechNote *const night_walk_drum_seq_kick_swing[];
-extern const struct DrumTechNote *const night_walk_drum_seq_cymbal[];
-extern const struct DrumTechNote *const night_walk_drum_seq_roll[];
-extern const struct DrumTechNote drum_seq_night_walk_default[];
-extern const struct DrumTechNote *const night_walk_drum_seq_offbeat[];
-extern const struct DrumTechNote *const night_walk_drum_seq_offbeat_swing[];
-extern const struct Animation *const night_walk_bridge_anim[]; // Bridge Hit Anim
-extern const struct Animation *const night_walk_box_anim[]; // Box Hit Anim
-extern const struct Animation *const night_walk_barely_anim[][2]; // Barely Anim
-extern const struct DrumTechNote drum_seq_night_walk_short_hop[];
+extern const struct Animation *night_walk_star_anim[]; // Stars
+extern const struct Animation *night_walk_star_expand_anim[]; // Star Flashes
+extern const struct SequenceData *D_089e2ef8[];
+extern struct DrumTechInstrument drumtech_drum_bank[];
+extern const struct CompressedGraphics *night_walk_buffered_textures[]; // Buffered Textures
+extern struct GraphicsTable night_walk_gfx_table[]; // Graphics Table
+extern struct DrumTechNote drum_seq_night_walk_kick_barely[];
+extern struct DrumTechNote *night_walk_drum_seq_kick[];
+extern struct DrumTechNote drum_seq_night_walk_snare_barely[];
+extern struct DrumTechNote *night_walk_drum_seq_snare[];
+extern struct DrumTechNote *night_walk_drum_seq_snare_swing[];
+extern struct DrumTechNote *night_walk_drum_seq_kick_swing[];
+extern struct DrumTechNote *night_walk_drum_seq_cymbal[];
+extern struct DrumTechNote *night_walk_drum_seq_roll[];
+extern struct DrumTechNote drum_seq_night_walk_default[];
+extern struct DrumTechNote *night_walk_drum_seq_offbeat[];
+extern struct DrumTechNote *night_walk_drum_seq_offbeat_swing[];
+extern const struct Animation *night_walk_bridge_anim[]; // Bridge Hit Anim
+extern const struct Animation *night_walk_box_anim[]; // Box Hit Anim
+extern const struct Animation *night_walk_barely_anim[][2]; // Barely Anim
+extern struct DrumTechNote drum_seq_night_walk_short_hop[];
 
 
 // Functions:

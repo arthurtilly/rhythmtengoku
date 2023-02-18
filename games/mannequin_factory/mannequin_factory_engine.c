@@ -22,7 +22,7 @@ extern const struct SequenceData s_tom_L_seqData;
 
 
 // [D_089df384] Mannequin Completion Animations
-const struct Animation *const mannequin_finish_anim[] = {
+const struct Animation *mannequin_finish_anim[] = {
     /* 0x00 */ anim_mannequin_complete_l,
     /* 0x01 */ anim_mannequin_complete_c,
     /* 0x02 */ anim_mannequin_complete_r,
@@ -34,7 +34,7 @@ const struct Animation *const mannequin_finish_anim[] = {
 };
 
 // [D_089df3a4] Input Buttons
-const u16 mannequin_input_buttons[] = {
+u16 mannequin_input_buttons[] = {
     A_BUTTON,
     B_BUTTON,
     DPAD_RIGHT,
@@ -42,12 +42,12 @@ const u16 mannequin_input_buttons[] = {
 };
 
 // [D_089df3ac] Buffered Textures List
-const struct CompressedGraphics *const mannequin_buffered_textures[] = {
+const struct CompressedGraphics *mannequin_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089df3b0] Graphics Table
-const struct GraphicsTable mannequin_gfx_table[] = {
+struct GraphicsTable mannequin_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c34478,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -86,7 +86,7 @@ const struct GraphicsTable mannequin_gfx_table[] = {
 
 
 // [D_089df404] ?
-const struct SequenceData *const D_089df404[] = {
+const struct SequenceData *D_089df404[] = {
     /* 0x00 */ &s_SD7_seqData,
     /* 0x01 */ &s_f_conveyer_hit_seqData,
     /* 0x02 */ &s_tom_M_seqData,
@@ -94,7 +94,7 @@ const struct SequenceData *const D_089df404[] = {
 };
 
 // [D_089df414] Cue 00
-const struct CueDefinition mannequin_cue_00 = {
+struct CueDefinition mannequin_cue_00 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x0C,
@@ -118,7 +118,7 @@ const struct CueDefinition mannequin_cue_00 = {
 };
 
 // [D_089df454] Cue 01
-const struct CueDefinition mannequin_cue_01 = {
+struct CueDefinition mannequin_cue_01 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(B_BUTTON),
     /* Total Duration  */ 0x0C,
@@ -142,7 +142,7 @@ const struct CueDefinition mannequin_cue_01 = {
 };
 
 // [D_089df494] Cue 02
-const struct CueDefinition mannequin_cue_02 = {
+struct CueDefinition mannequin_cue_02 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_RIGHT),
     /* Total Duration  */ 0x0C,
@@ -166,7 +166,7 @@ const struct CueDefinition mannequin_cue_02 = {
 };
 
 // [D_089df4d4] Cue 03
-const struct CueDefinition mannequin_cue_03 = {
+struct CueDefinition mannequin_cue_03 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_LEFT),
     /* Total Duration  */ 0x0C,
@@ -190,7 +190,7 @@ const struct CueDefinition mannequin_cue_03 = {
 };
 
 // [D_089df514] Cue 04
-const struct CueDefinition mannequin_cue_04 = {
+struct CueDefinition mannequin_cue_04 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(DPAD_LEFT),
     /* Total Duration  */ 0x0C,
@@ -214,7 +214,7 @@ const struct CueDefinition mannequin_cue_04 = {
 };
 
 // [D_089df554] Cue 05
-const struct CueDefinition mannequin_cue_05 = {
+struct CueDefinition mannequin_cue_05 = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ 0,
     /* Total Duration  */ 0x0C,
@@ -238,7 +238,7 @@ const struct CueDefinition mannequin_cue_05 = {
 };
 
 // [D_089df594] Cue Definition Index
-const struct CueDefinition *const mannequin_cue_index[] = {
+struct CueDefinition *mannequin_cue_index[] = {
     /* 0x00 */ &mannequin_cue_00,
     /* 0x01 */ &mannequin_cue_01,
     /* 0x02 */ &mannequin_cue_02,
@@ -259,7 +259,7 @@ const struct CueDefinition *const mannequin_cue_index[] = {
 
 
 // [D_089df5c8] Common Events
-const EngineEvent mannequin_common_events[] = {
+EngineEvent mannequin_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) mannequin_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) mannequin_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) mannequin_common_init_tutorial,
@@ -267,7 +267,7 @@ const EngineEvent mannequin_common_events[] = {
 };
 
 // [D_089df5d8] Engine Events
-const EngineEvent mannequin_engine_events[] = {
+EngineEvent mannequin_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080226d4,
     /* 0x01 */ (EngineEvent) func_080229bc,
     /* 0x02 */ (EngineEvent) func_08022f00,
@@ -279,7 +279,7 @@ const EngineEvent mannequin_engine_events[] = {
 };
 
 // [D_089df5f8] Mannequin Factory Game Engine
-const struct GameEngine mannequin_factory_engine = {
+struct GameEngine mannequin_factory_engine = {
     /* Size in Memory */ 0x434,
     /* Start Engine   */ mannequin_engine_start,
     /* Update Engine  */ mannequin_engine_update,

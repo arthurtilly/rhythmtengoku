@@ -142,11 +142,11 @@ extern const struct SequenceData s_f_boxing_v_nua_seqData;
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *const karate_buffered_textures[]; // Buffered Textures List
-extern const struct GraphicsTable *const karate_gfx_tables[]; // Graphics Table
-extern const struct CompressedGraphics *const karate_bg_face_textures[]; // BG Face Graphics
-extern const u8 karate_flow_palette_low[];    // BG Palette Index (Low Flow)
-extern const u8 karate_flow_palette_high[];    // BG Palette Index (High Flow)
+extern const struct CompressedGraphics *karate_buffered_textures[]; // Buffered Textures List
+extern struct GraphicsTable *karate_gfx_tables[]; // Graphics Table
+extern const struct CompressedGraphics *karate_bg_face_textures[]; // BG Face Graphics
+extern u8 karate_flow_palette_low[];    // BG Palette Index (Low Flow)
+extern u8 karate_flow_palette_high[];    // BG Palette Index (High Flow)
 
 
 // Functions:

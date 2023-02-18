@@ -93,11 +93,11 @@ extern const struct SequenceData s_f_batter_ball_land_seqData;
 // Engine Data:
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *const spaceball_buffered_textures[]; // Buffered Textures List
-extern const struct GraphicsTable spaceball_gfx_table[]; // Graphics Table
-extern const struct Animation *const spaceball_anim_table_batter_close[3]; // Batter Animations (Close)
-extern const struct Animation *const spaceball_anim_table_batter_far[3]; // Batter Animations (Far)
-extern const struct Animation *const spaceball_anim_table_ball[3]; // Spaceball Animations
+extern const struct CompressedGraphics *spaceball_buffered_textures[]; // Buffered Textures List
+extern struct GraphicsTable spaceball_gfx_table[]; // Graphics Table
+extern const struct Animation *spaceball_anim_table_batter_close[3]; // Batter Animations (Close)
+extern const struct Animation *spaceball_anim_table_batter_far[3]; // Batter Animations (Far)
+extern const struct Animation *spaceball_anim_table_ball[3]; // Spaceball Animations
 
 // Functions:
 extern void spaceball_reset_star(u32);              // Initialise/Reset BG Star Position

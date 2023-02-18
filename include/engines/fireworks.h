@@ -72,7 +72,7 @@ enum FireworksPatternsEnum {
     FIREWORKS_PATTERN_SP_CIRCLE,    // Centre;  Special - Circle
     FIREWORKS_PATTERN_SP_SPIRAL,    // Centre;  Special - Spiral
     FIREWORKS_PATTERN_SP_SMILE,     // Centre;  Special - Smile
-    FIREWORKS_PATTERN_SP_TSUNKU,    // Centre;  Special - â™‚ (unused)
+    FIREWORKS_PATTERN_SP_TSUNKU,    // Centre;  Special - â™? (unused)
     FIREWORKS_PATTERN_TAIKO_BOMBER, // Hawfinch Taiko Bomber
 };
 
@@ -149,9 +149,9 @@ extern const s32 fireworks_1_pattern_sequence[];
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *const fireworks_buffered_textures[]; // Buffered Textures List
-extern const struct GraphicsTable *const fireworks_gfx_tables[]; // Graphics Table Index
-extern const u16 fireworks_cue_durations[]; // Cue Expiration Times
+extern const struct CompressedGraphics *fireworks_buffered_textures[]; // Buffered Textures List
+extern struct GraphicsTable *fireworks_gfx_tables[]; // Graphics Table Index
+extern u16 fireworks_cue_durations[]; // Cue Expiration Times
 
 
 // Functions:

@@ -1,5 +1,5 @@
 // [D_089df6ec] DrumTech Sequence
-const struct DrumTechNote D_089df6ec[] = {
+struct DrumTechNote D_089df6ec[] = {
     {
         /* Drum ID */ 3,
         /* Volume  */ 0x100,
@@ -226,7 +226,7 @@ const struct DrumTechNote D_089df6ec[] = {
 };
 
 // [D_089df81c] DrumTech Sequence
-const struct DrumTechNote D_089df81c[] = {
+struct DrumTechNote D_089df81c[] = {
     {
         /* Drum ID */ 29,
         /* Volume  */ 0xc0,
@@ -369,7 +369,7 @@ const struct DrumTechNote D_089df81c[] = {
 };
 
 // [D_089df8dc] DrumTech Sequence
-const struct DrumTechNote D_089df8dc[] = {
+struct DrumTechNote D_089df8dc[] = {
     {
         /* Drum ID */ 3,
         /* Volume  */ 0x100,
@@ -506,7 +506,7 @@ const struct DrumTechNote D_089df8dc[] = {
 };
 
 // [D_089df994] DrumTech Sequence
-const struct DrumTechNote D_089df994[] = {
+struct DrumTechNote D_089df994[] = {
     {
         /* Drum ID */ 3,
         /* Volume  */ 0x100,
@@ -655,7 +655,7 @@ const struct DrumTechNote D_089df994[] = {
 };
 
 // [D_089dfa5c] DrumTech Sequence
-const struct DrumTechNote D_089dfa5c[] = {
+struct DrumTechNote D_089dfa5c[] = {
     {
         /* Drum ID */ 30,
         /* Volume  */ 0x50,
@@ -732,7 +732,7 @@ const struct DrumTechNote D_089dfa5c[] = {
 };
 
 // [D_089dfac4] DrumTech Sequence
-const struct DrumTechNote D_089dfac4[] = {
+struct DrumTechNote D_089dfac4[] = {
     {
         /* Drum ID */ 3,
         /* Volume  */ 0x100,
@@ -785,7 +785,7 @@ const struct DrumTechNote D_089dfac4[] = {
 };
 
 // [D_089dfb0c] DrumTech Sequence
-const struct DrumTechNote D_089dfb0c[] = {
+struct DrumTechNote D_089dfb0c[] = {
     {
         /* Drum ID */ 0,
         /* Volume  */ 0,
@@ -826,7 +826,7 @@ const struct DrumTechNote D_089dfb0c[] = {
 };
 
 // [D_089dfb44] DrumTech Sequence
-const struct DrumTechNote D_089dfb44[] = {
+struct DrumTechNote D_089dfb44[] = {
     {
         /* Drum ID */ 29,
         /* Volume  */ 0x40,
@@ -987,7 +987,7 @@ const struct DrumTechNote D_089dfb44[] = {
 };
 
 // [D_089dfc1c] DrumTech Sequence
-const struct DrumTechNote D_089dfc1c[] = {
+struct DrumTechNote D_089dfc1c[] = {
     {
         /* Drum ID */ 36,
         /* Volume  */ 0x80,
@@ -1154,7 +1154,7 @@ const struct DrumTechNote D_089dfc1c[] = {
 };
 
 // [D_089dfcfc] DrumTech Sequence
-const struct DrumTechNote D_089dfcfc[] = {
+struct DrumTechNote D_089dfcfc[] = {
     {
         /* Drum ID */ 29,
         /* Volume  */ 0x40,
@@ -1273,7 +1273,7 @@ const struct DrumTechNote D_089dfcfc[] = {
 };
 
 // [D_089dfd9c] DrumTech Sequence
-const struct DrumTechNote D_089dfd9c[] = {
+struct DrumTechNote D_089dfd9c[] = {
     {
         /* Drum ID */ 29,
         /* Volume  */ 0x40,
@@ -1392,7 +1392,7 @@ const struct DrumTechNote D_089dfd9c[] = {
 };
 
 // [D_089dfe3c] DrumTech Sequence
-const struct DrumTechNote D_089dfe3c[] = {
+struct DrumTechNote D_089dfe3c[] = {
     {
         /* Drum ID */ 29,
         /* Volume  */ 0x40,

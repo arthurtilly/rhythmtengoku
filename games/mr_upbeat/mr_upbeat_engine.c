@@ -25,7 +25,7 @@ extern const Palette metronome_pal[];
 
 
 // [D_089e56b8] Trip Over Animations
-const struct Animation *const mr_upbeat_trip_anim[] = {
+const struct Animation *mr_upbeat_trip_anim[] = {
     /* 0x00 */ anim_mr_upbeat_r_trip_r,
     /* 0x01 */ anim_mr_upbeat_r_trip_l,
     /* 0x02 */ anim_mr_upbeat_l_trip_l,
@@ -33,7 +33,7 @@ const struct Animation *const mr_upbeat_trip_anim[] = {
 };
 
 // [D_089e56c8] Game Over Animations
-const struct Animation *const mr_upbeat_game_over_anim[][4] = {
+const struct Animation *mr_upbeat_game_over_anim[][4] = {
     /* LOW SCORE */ {
         /* 0x00 */ anim_mr_upbeat_r_mope_r,
         /* 0x01 */ anim_mr_upbeat_r_mope_l,
@@ -49,12 +49,12 @@ const struct Animation *const mr_upbeat_game_over_anim[][4] = {
 };
 
 // [D_089e56e8] Buffered Textures List
-const struct CompressedGraphics *const mr_upbeat_buffered_textures[] = {
+const struct CompressedGraphics *mr_upbeat_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e56ec] Graphics Table
-const struct GraphicsTable mr_upbeat_gfx_table[] = {
+struct GraphicsTable mr_upbeat_gfx_table[] = {
     /* OBJ Tileset */ {
         /* Src.  */ &D_08c702d0,
         /* Dest. */ OBJ_TILESET_BASE(0),
@@ -78,7 +78,7 @@ const struct GraphicsTable mr_upbeat_gfx_table[] = {
 
 
 // [D_089e571c] Cue 00 (0.5 Beats, Timing Window is Static)
-const struct CueDefinition mr_upbeat_cue_half_beat = {
+struct CueDefinition mr_upbeat_cue_half_beat = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x0C,
@@ -102,7 +102,7 @@ const struct CueDefinition mr_upbeat_cue_half_beat = {
 };
 
 // [D_089e575c] Cue 01 (1 Beat, Timing Window Follows Tempo)
-const struct CueDefinition mr_upbeat_cue_full_beat_to_tempo = {
+struct CueDefinition mr_upbeat_cue_full_beat_to_tempo = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -126,7 +126,7 @@ const struct CueDefinition mr_upbeat_cue_full_beat_to_tempo = {
 };
 
 // [D_089e579c] Cue 08 (0.5 Beats, Timing Window Follows Tempo)
-const struct CueDefinition mr_upbeat_cue_half_beat_to_tempo = {
+struct CueDefinition mr_upbeat_cue_half_beat_to_tempo = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x0C,
@@ -150,7 +150,7 @@ const struct CueDefinition mr_upbeat_cue_half_beat_to_tempo = {
 };
 
 // [D_089e57dc] Cue Definition Index
-const struct CueDefinition *const mr_upbeat_cue_index[] = {
+struct CueDefinition *mr_upbeat_cue_index[] = {
     /* 0x00 */ &mr_upbeat_cue_half_beat,
     /* 0x01 */ &mr_upbeat_cue_full_beat_to_tempo,
     /* 0x02 */ NULL,
@@ -171,7 +171,7 @@ const struct CueDefinition *const mr_upbeat_cue_index[] = {
 
 
 // [D_089e5810] Common Events
-const EngineEvent mr_upbeat_common_events[] = {
+EngineEvent mr_upbeat_common_events[] = {
     /* BEAT_ANIMATION */ (EngineEvent) mr_upbeat_common_beat_animation,
     /* DISPLAY_TEXT   */ (EngineEvent) mr_upbeat_common_display_text,
     /* INIT_TUTORIAL  */ (EngineEvent) mr_upbeat_common_init_tutorial,
@@ -179,7 +179,7 @@ const EngineEvent mr_upbeat_common_events[] = {
 };
 
 // [D_089e5820] Engine Events
-const EngineEvent mr_upbeat_engine_events[] = {
+EngineEvent mr_upbeat_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08034f18,
     /* 0x01 */ (EngineEvent) func_08035314,
     /* 0x02 */ (EngineEvent) func_08034e84,
@@ -190,7 +190,7 @@ const EngineEvent mr_upbeat_engine_events[] = {
 };
 
 // [D_089e583c] Mr. Upbeat Game Engine
-const struct GameEngine mr_upbeat_engine = {
+struct GameEngine mr_upbeat_engine = {
     /* Size in Memory */ 0x54,
     /* Start Engine   */ mr_upbeat_engine_start,
     /* Update Engine  */ mr_upbeat_engine_update,

@@ -54,15 +54,15 @@ extern const s32 D_0805aab0[][4];
 
 
 // Engine Definition Data:
-extern const struct HorseMachineBG horse_machine_backgrounds[];
-extern const struct CompressedGraphics *const horse_machine_buffered_textures[];
-extern const struct GraphicsTable gfx_table_horse_machine[];
-extern const struct SequenceData *const horse_machine_player_horse_sfx[][4];
-extern const struct SequenceData *const horse_machine_teacher_horse_sfx[][4];
-extern const struct SequenceData *const horse_machine_lesson_bgm[];
-extern const struct Animation *const horse_machine_anim[];
-extern const struct Animation *const horse_machine_jockey_anim[];
-extern const struct Animation *const horse_machine_lesson_text_anim[][4];
+extern struct HorseMachineBG horse_machine_backgrounds[];
+extern const struct CompressedGraphics *horse_machine_buffered_textures[];
+extern struct GraphicsTable gfx_table_horse_machine[];
+extern const struct SequenceData *horse_machine_player_horse_sfx[][4];
+extern const struct SequenceData *horse_machine_teacher_horse_sfx[][4];
+extern const struct SequenceData *horse_machine_lesson_bgm[];
+extern const struct Animation *horse_machine_anim[];
+extern const struct Animation *horse_machine_jockey_anim[];
+extern const struct Animation *horse_machine_lesson_text_anim[][4];
 
 
 // Functions:
