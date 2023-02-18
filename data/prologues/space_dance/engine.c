@@ -14,12 +14,12 @@ extern const Palette space_dance_prologue_pal[];
 
 
 // [D_089ed400] Buffered Textures List
-const struct CompressedGraphics *const space_dance_prologue_buffered_textures[] = {
+const struct CompressedGraphics *space_dance_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ed404] Graphics Table
-const struct GraphicsTable space_dance_prologue_gfx_table[] = {
+struct GraphicsTable space_dance_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c2575c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable space_dance_prologue_gfx_table[] = {
 };
 
 // [D_089ed44c] Engine Events
-const EngineEvent space_dance_prologue_engine_events[] = {
+EngineEvent space_dance_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08047624
 };
 
 // [D_089ed450] Prologue (Space Dance) Game Engine
-const struct GameEngine space_dance_prologue_engine = {
+struct GameEngine space_dance_prologue_engine = {
     /* Size in Memory */ sizeof(struct SpaceDancePrologueInfo),
     /* Start Engine   */ space_dance_prologue_engine_start,
     /* Update Engine  */ space_dance_prologue_engine_update,

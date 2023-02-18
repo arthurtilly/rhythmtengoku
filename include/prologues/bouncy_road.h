@@ -15,8 +15,8 @@ struct BouncyRoadPrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const bouncy_road_prologue_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable bouncy_road_prologue_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *bouncy_road_prologue_buffered_textures[]; // Buffered Textures
+extern struct GraphicsTable bouncy_road_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_bouncy_road_prologue_title[]; // Animation: Text (Bouncy Road)
 extern const struct Animation anim_bouncy_road_prologue_path[]; // Animation: Bouncers
 

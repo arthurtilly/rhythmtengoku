@@ -14,12 +14,12 @@ extern const Palette rap_men_prologue_pal[];
 
 
 // [D_089ecd44] Buffered Textures List
-const struct CompressedGraphics *const rap_men_prologue_buffered_textures[] = {
+const struct CompressedGraphics *rap_men_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ecd48] Graphics Table
-const struct GraphicsTable rap_men_prologue_gfx_table[] = {
+struct GraphicsTable rap_men_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c2052c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable rap_men_prologue_gfx_table[] = {
 };
 
 // [D_089ecd90] Engine Events
-const EngineEvent rap_men_prologue_engine_events[] = {
+EngineEvent rap_men_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08047028
 };
 
 // [D_089ecd94] Prologue (Rap Men) Game Engine
-const struct GameEngine rap_men_prologue_engine = {
+struct GameEngine rap_men_prologue_engine = {
     /* Size in Memory */ sizeof(struct RapMenPrologueInfo),
     /* Start Engine   */ rap_men_prologue_engine_start,
     /* Update Engine  */ rap_men_prologue_engine_update,

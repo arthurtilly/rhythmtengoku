@@ -14,8 +14,8 @@ struct Remix7PrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const remix_7_prologue_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable remix_7_prologue_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *remix_7_prologue_buffered_textures[]; // Buffered Textures
+extern struct GraphicsTable remix_7_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_remix_7_prologue_title[]; // Animation: Text (Remix 7)
 
 // Functions:

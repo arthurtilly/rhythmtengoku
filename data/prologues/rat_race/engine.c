@@ -14,12 +14,12 @@ extern const Palette rat_race_prologue_pal[];
 
 
 // [D_089ecfbc] Buffered Textures List
-const struct CompressedGraphics *const rat_race_prologue_buffered_textures[] = {
+const struct CompressedGraphics *rat_race_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ecfc0] Graphics Table
-const struct GraphicsTable rat_race_prologue_gfx_table[] = {
+struct GraphicsTable rat_race_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c22764,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable rat_race_prologue_gfx_table[] = {
 };
 
 // [D_089ed008] Engine Events
-const EngineEvent rat_race_prologue_engine_events[] = {
+EngineEvent rat_race_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08047250
 };
 
 // [D_089ed00c] Prologue (Rat Race) Game Engine
-const struct GameEngine rat_race_prologue_engine = {
+struct GameEngine rat_race_prologue_engine = {
     /* Size in Memory */ sizeof(struct RatRacePrologueInfo),
     /* Start Engine   */ rat_race_prologue_engine_start,
     /* Update Engine  */ rat_race_prologue_engine_update,

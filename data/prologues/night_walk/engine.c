@@ -14,12 +14,12 @@ extern const Palette night_walk_prologue_pal[];
 
 
 // [D_089ea988] Buffered Textures List
-const struct CompressedGraphics *const night_walk_prologue_buffered_textures[] = {
+const struct CompressedGraphics *night_walk_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ea98c] Graphics Table
-const struct GraphicsTable night_walk_prologue_gfx_table[] = {
+struct GraphicsTable night_walk_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bebaa4,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable night_walk_prologue_gfx_table[] = {
 };
 
 // [D_089ea9d4] Engine Events
-const EngineEvent night_walk_prologue_engine_events[] = {
+EngineEvent night_walk_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080458e0
 };
 
 // [D_089ea9d8] Prologue (Night Walk) Game Engine
-const struct GameEngine night_walk_prologue_engine = {
+struct GameEngine night_walk_prologue_engine = {
     /* Size in Memory */ sizeof(struct NightWalkPrologueInfo),
     /* Start Engine   */ night_walk_prologue_engine_start,
     /* Update Engine  */ night_walk_prologue_engine_update,

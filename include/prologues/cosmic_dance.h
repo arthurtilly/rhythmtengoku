@@ -14,8 +14,8 @@ struct CosmicDancePrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const cosmic_dance_prologue_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable cosmic_dance_prologue_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *cosmic_dance_prologue_buffered_textures[]; // Buffered Textures
+extern struct GraphicsTable cosmic_dance_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_cosmic_dance_prologue_title[]; // Animation: Text (Cosmic Dance)
 extern const struct Animation anim_cosmic_dance_prologue_dancer[]; // Animation: Cosmic Dancers
 

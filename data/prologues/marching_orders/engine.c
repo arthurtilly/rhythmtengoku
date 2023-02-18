@@ -15,12 +15,12 @@ extern const Palette marching_orders_prologue_obj_pal[];
 
 
 // [D_089eb66c] Buffered Textures List
-const struct CompressedGraphics *const marching_orders_prologue_buffered_textures[] = {
+const struct CompressedGraphics *marching_orders_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eb670] Graphics Table
-const struct GraphicsTable marching_orders_prologue_gfx_table[] = {
+struct GraphicsTable marching_orders_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bfbe68,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -50,12 +50,12 @@ const struct GraphicsTable marching_orders_prologue_gfx_table[] = {
 };
 
 // [D_089eb6b8] Engine Events
-const EngineEvent marching_orders_prologue_engine_events[] = {
+EngineEvent marching_orders_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08046300
 };
 
 // [D_089eb6bc] Prologue (Marching Orders) Game Engine
-const struct GameEngine marching_orders_prologue_engine = {
+struct GameEngine marching_orders_prologue_engine = {
     /* Size in Memory */ sizeof(struct MarchingOrdersPrologueInfo),
     /* Start Engine   */ marching_orders_prologue_engine_start,
     /* Update Engine  */ marching_orders_prologue_engine_update,

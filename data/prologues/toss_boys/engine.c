@@ -15,12 +15,12 @@ extern const Palette toss_boys_prologue_obj_pal[];
 
 
 // [D_089ed820] Buffered Textures List
-const struct CompressedGraphics *const toss_boys_prologue_buffered_textures[] = {
+const struct CompressedGraphics *toss_boys_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ed824] Graphics Table
-const struct GraphicsTable toss_boys_prologue_gfx_table[] = {
+struct GraphicsTable toss_boys_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c2d448,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -50,12 +50,12 @@ const struct GraphicsTable toss_boys_prologue_gfx_table[] = {
 };
 
 // [D_089ed86c] Engine Events
-const EngineEvent toss_boys_prologue_engine_events[] = {
+EngineEvent toss_boys_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080479a4
 };
 
 // [D_089ed870] Prologue (Toss Boys) Game Engine
-const struct GameEngine toss_boys_prologue_engine = {
+struct GameEngine toss_boys_prologue_engine = {
     /* Size in Memory */ sizeof(struct TossBoysPrologueInfo),
     /* Start Engine   */ toss_boys_prologue_engine_start,
     /* Update Engine  */ toss_boys_prologue_engine_update,

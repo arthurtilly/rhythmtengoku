@@ -16,8 +16,8 @@ struct NightWalkPrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const night_walk_prologue_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable night_walk_prologue_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *night_walk_prologue_buffered_textures[]; // Buffered Textures
+extern struct GraphicsTable night_walk_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_night_walk_prologue_title[]; // Animation: Text (Night Walk)
 extern const struct Animation anim_night_walk_prologue_play_yan[]; // Animation: Play-yan
 extern const struct Animation anim_night_walk_prologue_balloons[]; // Animation: Balloons

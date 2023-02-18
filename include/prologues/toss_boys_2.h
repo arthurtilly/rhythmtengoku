@@ -14,8 +14,8 @@ struct TossBoys2PrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const toss_boys_2_prologue_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable toss_boys_2_prologue_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *toss_boys_2_prologue_buffered_textures[]; // Buffered Textures
+extern struct GraphicsTable toss_boys_2_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_toss_boys_2_prologue_title[]; // Animation: Text (Toss Boys 2)
 
 // Functions:

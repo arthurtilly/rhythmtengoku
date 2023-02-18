@@ -15,8 +15,8 @@ struct KarateManPrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const karate_man_prologue_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable karate_man_prologue_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *karate_man_prologue_buffered_textures[]; // Buffered Textures
+extern struct GraphicsTable karate_man_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_karate_man_prologue_title[]; // Animation: Text (Karate Man)
 extern const struct Animation anim_karate_man_prologue_kick[]; // Animation: Kick
 

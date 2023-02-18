@@ -14,12 +14,12 @@ extern const Palette quiz_show_prologue_pal[];
 
 
 // [D_089ebb7c] Buffered Textures List
-const struct CompressedGraphics *const quiz_show_prologue_buffered_textures[] = {
+const struct CompressedGraphics *quiz_show_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ebb80] Graphics Table
-const struct GraphicsTable quiz_show_prologue_gfx_table[] = {
+struct GraphicsTable quiz_show_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c04434,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable quiz_show_prologue_gfx_table[] = {
 };
 
 // [D_089ebbc8] Engine Events
-const EngineEvent quiz_show_prologue_engine_events[] = {
+EngineEvent quiz_show_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080465f8
 };
 
 // [D_089ebbcc] Prologue (Quiz Show) Game Engine
-const struct GameEngine quiz_show_prologue_engine = {
+struct GameEngine quiz_show_prologue_engine = {
     /* Size in Memory */ sizeof(struct QuizShowPrologueInfo),
     /* Start Engine   */ quiz_show_prologue_engine_start,
     /* Update Engine  */ quiz_show_prologue_engine_update,

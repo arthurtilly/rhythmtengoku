@@ -14,8 +14,8 @@ struct SnappyTrioPrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const snappy_trio_prologue_buffered_textures[]; // Buffered Textures List
-extern const struct GraphicsTable snappy_trio_prologue_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *snappy_trio_prologue_buffered_textures[]; // Buffered Textures List
+extern struct GraphicsTable snappy_trio_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_snappy_trio_prologue_title[]; // Animation: Text (The Snappy Trio)
 
 // Functions:

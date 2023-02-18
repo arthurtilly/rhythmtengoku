@@ -15,12 +15,12 @@ extern const Palette spaceball_prologue_obj_pal[];
 
 
 // [D_089ea26c] Buffered Textures List
-const struct CompressedGraphics *const spaceball_prologue_buffered_textures[] = {
+const struct CompressedGraphics *spaceball_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ea270] Graphics Table
-const struct GraphicsTable spaceball_prologue_gfx_table[] = {
+struct GraphicsTable spaceball_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08be2fd8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -50,12 +50,12 @@ const struct GraphicsTable spaceball_prologue_gfx_table[] = {
 };
 
 // [D_089ea2b8] Engine Events
-const EngineEvent spaceball_prologue_engine_events[] = {
+EngineEvent spaceball_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080452d4
 };
 
 // [D_089ea2bc] Prologue (Spaceball) Game Engine
-const struct GameEngine spaceball_prologue_engine = {
+struct GameEngine spaceball_prologue_engine = {
     /* Size in Memory */ sizeof(struct SpaceballPrologueInfo),
     /* Start Engine   */ spaceball_prologue_engine_start,
     /* Update Engine  */ spaceball_prologue_engine_update,

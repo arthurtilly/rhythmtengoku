@@ -14,12 +14,12 @@ extern const Palette ninja_reincarnate_prologue_pal[];
 
 
 // [D_089ed2c4] Buffered Textures List
-const struct CompressedGraphics *const ninja_reincarnate_prologue_buffered_textures[] = {
+const struct CompressedGraphics *ninja_reincarnate_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ed2c8] Graphics Table
-const struct GraphicsTable ninja_reincarnate_prologue_gfx_table[] = {
+struct GraphicsTable ninja_reincarnate_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c24604,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable ninja_reincarnate_prologue_gfx_table[] = {
 };
 
 // [D_089ed310] Engine Events
-const EngineEvent ninja_reincarnate_prologue_engine_events[] = {
+EngineEvent ninja_reincarnate_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080474a0
 };
 
 // [D_089ed314] Prologue (Ninja Reincarnate) Game Engine
-const struct GameEngine ninja_reincarnate_engine = {
+struct GameEngine ninja_reincarnate_engine = {
     /* Size in Memory */ sizeof(struct NinjaReincarnatePrologueInfo),
     /* Start Engine   */ ninja_reincarnate_prologue_engine_start,
     /* Update Engine  */ ninja_reincarnate_prologue_engine_update,

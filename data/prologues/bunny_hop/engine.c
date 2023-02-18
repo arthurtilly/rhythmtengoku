@@ -14,12 +14,12 @@ extern const Palette bunny_hop_prologue_pal[];
 
 
 // [D_089ecb60] Buffered Textures List
-const struct CompressedGraphics *const bunny_hop_prologue_buffered_textures[] = {
+const struct CompressedGraphics *bunny_hop_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ecb64] Graphics Table
-const struct GraphicsTable bunny_hop_prologue_gfx_table[] = {
+struct GraphicsTable bunny_hop_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c1f24c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable bunny_hop_prologue_gfx_table[] = {
 };
 
 // [D_089ecbac] Engine Events
-const EngineEvent bunny_hop_prologue_engine_events[] = {
+EngineEvent bunny_hop_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08046f00
 };
 
 // [D_089ecbb0] Prologue (Bunny Hop) Game Engine
-const struct GameEngine bunny_hop_prologue_engine = {
+struct GameEngine bunny_hop_prologue_engine = {
     /* Size in Memory */ sizeof(struct BunnyHopPrologueInfo),
     /* Start Engine   */ bunny_hop_prologue_engine_start,
     /* Update Engine  */ bunny_hop_prologue_engine_update,

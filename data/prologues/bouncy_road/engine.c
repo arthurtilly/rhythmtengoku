@@ -14,12 +14,12 @@ extern const Palette bouncy_road_prologue_pal[];
 
 
 // [D_089eac18] Buffered Textures List
-const struct CompressedGraphics *const bouncy_road_prologue_buffered_textures[] = {
+const struct CompressedGraphics *bouncy_road_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eac1c] Graphics Table
-const struct GraphicsTable bouncy_road_prologue_gfx_table[] = {
+struct GraphicsTable bouncy_road_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bee468,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable bouncy_road_prologue_gfx_table[] = {
 };
 
 // [D_089eac64] Engine Events
-const EngineEvent bouncy_road_prologue_engine_events[] = {
+EngineEvent bouncy_road_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08045b88
 };
 
 // [D_089eac68] Prologue (Bouncy Road) Game Engine
-const struct GameEngine bouncy_road_prologue_engine = {
+struct GameEngine bouncy_road_prologue_engine = {
     /* Size in Memory */ sizeof(struct BouncyRoadPrologueInfo),
     /* Start Engine   */ bouncy_road_prologue_engine_start,
     /* Update Engine  */ bouncy_road_prologue_engine_update,

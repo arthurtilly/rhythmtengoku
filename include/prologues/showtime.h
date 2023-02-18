@@ -15,8 +15,8 @@ struct ShowtimePrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const showtime_prologue_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable showtime_prologue_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *showtime_prologue_buffered_textures[]; // Buffered Textures
+extern struct GraphicsTable showtime_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_showtime_prologue_title[]; // Animation: Text (Showtime)
 extern const struct Animation anim_showtime_prologue_penguin[]; // Animation: Penguin
 

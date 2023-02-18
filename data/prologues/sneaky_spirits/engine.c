@@ -14,12 +14,12 @@ extern const Palette sneaky_spirits_prologue_pal[];
 
 
 // [D_089ea088] Buffered Textures List
-const struct CompressedGraphics *const sneaky_spirits_prologue_buffered_textures[] = {
+const struct CompressedGraphics *sneaky_spirits_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ea08c] Graphics Table
-const struct GraphicsTable sneaky_spirits_prologue_gfx_table[] = {
+struct GraphicsTable sneaky_spirits_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08be1c50,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable sneaky_spirits_prologue_gfx_table[] = {
 };
 
 // [D_089ea0d4] Engine Events
-const EngineEvent sneaky_spirits_prologue_engine_events[] = {
+EngineEvent sneaky_spirits_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080451d8
 };
 
 // [D_089ea0d8] Prologue (Sneaky Spirits) Game Engine
-const struct GameEngine sneaky_spirits_prologue_engine = {
+struct GameEngine sneaky_spirits_prologue_engine = {
     /* Size in Memory */ sizeof(struct SneakySpiritsPrologueInfo),
     /* Start Engine   */ sneaky_spirits_prologue_engine_start,
     /* Update Engine  */ sneaky_spirits_prologue_engine_update,

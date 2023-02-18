@@ -14,12 +14,12 @@ extern const Palette prologue_calligraphy_pal[];
 
 
 // [D_089eb530] Buffered Textures List
-const struct CompressedGraphics *const power_calligraphy_prologue_buffered_textures[] = {
+const struct CompressedGraphics *power_calligraphy_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eb534] Graphics Table
-const struct GraphicsTable power_calligraphy_prologue_gfx_table[] = {
+struct GraphicsTable power_calligraphy_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bf984c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable power_calligraphy_prologue_gfx_table[] = {
 };
 
 // [D_089eb57c] Engine Events
-const EngineEvent power_calligraphy_prologue_engine_events[] = {
+EngineEvent power_calligraphy_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080461c4
 };
 
 // [D_089eb580] Prologue (Power Calligraphy) Game Engine
-const struct GameEngine power_calligraphy_prologue_engine = {
+struct GameEngine power_calligraphy_prologue_engine = {
     /* Size in Memory */ sizeof(struct PowerCalligraphyPrologueInfo),
     /* Start Engine   */ power_calligraphy_prologue_engine_start,
     /* Update Engine  */ power_calligraphy_prologue_engine_update,

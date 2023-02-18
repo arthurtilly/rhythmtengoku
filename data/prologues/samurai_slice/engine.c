@@ -15,12 +15,12 @@ extern const Palette samurai_slice_prologue_pal[];
 
 
 // [D_089eb37c] Buffered Textures List
-const struct CompressedGraphics *const samurai_slice_prologue_buffered_textures[] = {
+const struct CompressedGraphics *samurai_slice_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eb380] Graphics Table
-const struct GraphicsTable samurai_slice_prologue_gfx_table[] = {
+struct GraphicsTable samurai_slice_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bf7aa4,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -55,12 +55,12 @@ const struct GraphicsTable samurai_slice_prologue_gfx_table[] = {
 };
 
 // [D_089eb3d4] Engine Events
-const EngineEvent samurai_slice_prologue_engine_events[] = {
+EngineEvent samurai_slice_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080460c8
 };
 
 // [D_089eb3d8] Prologue (Samurai Slice) Game Engine
-const struct GameEngine samurai_slice_prologue_engine = {
+struct GameEngine samurai_slice_prologue_engine = {
     /* Size in Memory */ sizeof(struct SamuraiSlicePrologueInfo),
     /* Start Engine   */ samurai_slice_prologue_engine_start,
     /* Update Engine  */ samurai_slice_prologue_engine_update,

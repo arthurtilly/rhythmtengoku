@@ -14,8 +14,8 @@ struct SpaceballPrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const spaceball_prologue_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable spaceball_prologue_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *spaceball_prologue_buffered_textures[]; // Buffered Textures
+extern struct GraphicsTable spaceball_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_spaceball_prologue_title[]; // Animation: Text (Spaceball)
 
 // Functions:

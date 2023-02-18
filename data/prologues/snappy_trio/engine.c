@@ -14,12 +14,12 @@ extern const Palette snappy_trio_prologue_pal[];
 
 
 // [D_089eb1c8] Buffered Textures List
-const struct CompressedGraphics *const snappy_trio_prologue_buffered_textures[] = {
+const struct CompressedGraphics *snappy_trio_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eb1cc] Graphics Table
-const struct GraphicsTable snappy_trio_prologue_gfx_table[] = {
+struct GraphicsTable snappy_trio_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bf5ce8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable snappy_trio_prologue_gfx_table[] = {
 };
 
 // [D_089eb214] Engine Events
-const EngineEvent snappy_trio_prologue_engine_events[] = {
+EngineEvent snappy_trio_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08045fb4
 };
 
 // [D_089eb218] Prologue (The Snappy Trio) Game Engine
-const struct GameEngine snappy_trio_prologue_engine = {
+struct GameEngine snappy_trio_prologue_engine = {
     /* Size in Memory */ sizeof(struct SnappyTrioPrologueInfo),
     /* Start Engine   */ snappy_trio_prologue_engine_start,
     /* Update Engine  */ snappy_trio_prologue_engine_update,

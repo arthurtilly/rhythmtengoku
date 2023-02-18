@@ -15,8 +15,8 @@ struct SickBeatsPrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const sick_beats_prologue_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable sick_beats_prologue_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *sick_beats_prologue_buffered_textures[]; // Buffered Textures
+extern struct GraphicsTable sick_beats_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_sick_beats_prologue_title[]; // Animation: Text (Sick Beats)
 extern const struct Animation anim_sick_beats_prologue_virus[]; // Animation: Virus
 

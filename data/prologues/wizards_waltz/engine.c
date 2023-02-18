@@ -14,12 +14,12 @@ extern const Palette wizards_waltz_prologue_pal[];
 
 
 // [D_089ede24] Buffered Textures List
-const struct CompressedGraphics *const wizards_waltz_prologue_buffered_textures[] = {
+const struct CompressedGraphics *wizards_waltz_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ede28] Graphics Table
-const struct GraphicsTable wizards_waltz_prologue_gfx_table[] = {
+struct GraphicsTable wizards_waltz_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c339dc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable wizards_waltz_prologue_gfx_table[] = {
 };
 
 // [D_089ede70] Engine Events
-const EngineEvent wizards_waltz_prologue_engine_events[] = {
+EngineEvent wizards_waltz_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08047e18
 };
 
 // [D_089ede74] Prologue (Wizard's Waltz) Game Engine
-const struct GameEngine wizards_waltz_prologue_engine = {
+struct GameEngine wizards_waltz_prologue_engine = {
     /* Size in Memory */ sizeof(struct WizardsWaltzPrologueInfo),
     /* Start Engine   */ wizards_waltz_prologue_engine_start,
     /* Update Engine  */ wizards_waltz_prologue_engine_update,

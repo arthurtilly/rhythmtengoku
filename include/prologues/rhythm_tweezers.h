@@ -14,8 +14,8 @@ struct RhythmTweezersPrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const rhythm_tweezers_prologue_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable rhythm_tweezers_prologue_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *rhythm_tweezers_prologue_buffered_textures[]; // Buffered Textures
+extern struct GraphicsTable rhythm_tweezers_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_rhythm_tweezers_prologue_title[]; // Animation: Text (Rhythm Tweezers)
 
 // Functions:

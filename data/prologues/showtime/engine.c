@@ -14,12 +14,12 @@ extern const Palette showtime_prologue_pal[];
 
 
 // [D_089eaadc] Buffered Textures List
-const struct CompressedGraphics *const showtime_prologue_buffered_textures[] = {
+const struct CompressedGraphics *showtime_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eaae0] Graphics Table
-const struct GraphicsTable showtime_prologue_gfx_table[] = {
+struct GraphicsTable showtime_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bed0ec,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable showtime_prologue_gfx_table[] = {
 };
 
 // [D_089eab28] Engine Events
-const EngineEvent showtime_prologue_engine_events[] = {
+EngineEvent showtime_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08045a44
 };
 
 // [D_089eab2c] Prologue (Showtime) Game Engine
-const struct GameEngine showtime_prologue_engine = {
+struct GameEngine showtime_prologue_engine = {
     /* Size in Memory */ sizeof(struct ShowtimePrologueInfo),
     /* Start Engine   */ showtime_prologue_engine_start,
     /* Update Engine  */ showtime_prologue_engine_update,

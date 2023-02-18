@@ -14,12 +14,12 @@ extern const Palette ninja_bodyguard_prologue_pal[];
 
 
 // [D_089ed188] Buffered Textures List
-const struct CompressedGraphics *const ninja_bodyguard_prologue_buffered_textures[] = {
+const struct CompressedGraphics *ninja_bodyguard_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ed18c] Graphics Table
-const struct GraphicsTable ninja_bodyguard_prologue_gfx_table[] = {
+struct GraphicsTable ninja_bodyguard_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c23a3c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable ninja_bodyguard_prologue_gfx_table[] = {
 };
 
 // [D_089ed1d4] Engine Events
-const EngineEvent ninja_bodyguard_prologue_engine_events[] = {
+EngineEvent ninja_bodyguard_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08047398
 };
 
 // [D_089ed1d8] Prologue (Ninja Bodyguard) Game Engine
-const struct GameEngine ninja_bodyguard_prologue_engine = {
+struct GameEngine ninja_bodyguard_prologue_engine = {
     /* Size in Memory */ sizeof(struct NinjaBodyguardPrologueInfo),
     /* Start Engine   */ ninja_bodyguard_prologue_engine_start,
     /* Update Engine  */ ninja_bodyguard_prologue_engine_update,

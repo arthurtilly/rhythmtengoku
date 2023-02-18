@@ -15,12 +15,12 @@ extern const Palette rhythm_tweezers_prologue_obj_pal[];
 
 
 // [D_089ead54] Buffered Textures List
-const struct CompressedGraphics *const rhythm_tweezers_prologue_buffered_textures[] = {
+const struct CompressedGraphics *rhythm_tweezers_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ead58] Graphics Table
-const struct GraphicsTable rhythm_tweezers_prologue_gfx_table[] = {
+struct GraphicsTable rhythm_tweezers_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08beefac,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -50,12 +50,12 @@ const struct GraphicsTable rhythm_tweezers_prologue_gfx_table[] = {
 };
 
 // [D_089eada0] Engine Events
-const EngineEvent rhythm_tweezers_prologue_engine_events[] = {
+EngineEvent rhythm_tweezers_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08045cb8
 };
 
 // [D_089eada4] Prologue (Rhythm Tweezers) Game Engine
-const struct GameEngine rhythm_tweezers_prologue_engine = {
+struct GameEngine rhythm_tweezers_prologue_engine = {
     /* Size in Memory */ sizeof(struct RhythmTweezersPrologueInfo),
     /* Start Engine   */ rhythm_tweezers_prologue_engine_start,
     /* Update Engine  */ rhythm_tweezers_prologue_engine_update,

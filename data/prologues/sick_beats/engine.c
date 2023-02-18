@@ -14,12 +14,12 @@ extern const Palette sick_beats_prologue_pal[];
 
 
 // [D_089edcf4] Buffered Textures List
-const struct CompressedGraphics *const sick_beats_prologue_buffered_textures[] = {
+const struct CompressedGraphics *sick_beats_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089edcf8] Graphics Table
-const struct GraphicsTable sick_beats_prologue_gfx_table[] = {
+struct GraphicsTable sick_beats_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c33214,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable sick_beats_prologue_gfx_table[] = {
 };
 
 // [D_089edd40] Engine Events
-const EngineEvent sick_beats_prologue_engine_events[] = {
+EngineEvent sick_beats_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08047d00
 };
 
 // [D_089edd44] Prologue (Sick Beats) Game Engine
-const struct GameEngine sick_beats_prologue_engine = {
+struct GameEngine sick_beats_prologue_engine = {
     /* Size in Memory */ sizeof(struct SickBeatsPrologueInfo),
     /* Start Engine   */ sick_beats_prologue_engine_start,
     /* Update Engine  */ sick_beats_prologue_engine_update,

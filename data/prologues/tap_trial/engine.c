@@ -15,12 +15,12 @@ extern const Palette tap_trial_prologue_obj_pal[];
 
 
 // [D_089ed548] Buffered Textures List
-const struct CompressedGraphics *const tap_trial_prologue_buffered_textures[] = {
+const struct CompressedGraphics *tap_trial_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ed54c] Graphics Table
-const struct GraphicsTable tap_trial_prologue_gfx_table[] = {
+struct GraphicsTable tap_trial_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c279e0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -50,12 +50,12 @@ const struct GraphicsTable tap_trial_prologue_gfx_table[] = {
 };
 
 // [D_089ed594] Engine Events
-const EngineEvent tap_trial_prologue_engine_events[] = {
+EngineEvent tap_trial_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08047764
 };
 
 // [D_089ed598] Prologue (Tap Trial) Game Engine
-const struct GameEngine tap_trial_prologue_engine = {
+struct GameEngine tap_trial_prologue_engine = {
     /* Size in Memory */ sizeof(struct TapTrialPrologueInfo),
     /* Start Engine   */ tap_trial_prologue_engine_start,
     /* Update Engine  */ tap_trial_prologue_engine_update,

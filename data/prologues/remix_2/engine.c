@@ -14,12 +14,12 @@ extern const Palette remix_2_prologue_pal[];
 
 
 // [D_089ebe78] Buffered Textures List
-const struct CompressedGraphics *const remix_2_prologue_buffered_textures[] = {
+const struct CompressedGraphics *remix_2_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ebe7c] Graphics Table
-const struct GraphicsTable remix_2_prologue_gfx_table[] = {
+struct GraphicsTable remix_2_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c086e0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,12 +49,12 @@ const struct GraphicsTable remix_2_prologue_gfx_table[] = {
 };
 
 // [D_089ebec4] Engine Events
-const EngineEvent remix_2_prologue_engine_events[] = {
+EngineEvent remix_2_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080467f0
 };
 
 // [D_089ebec8] Prologue (Remix 2) Game Engine
-const struct GameEngine remix_2_prologue_engine = {
+struct GameEngine remix_2_prologue_engine = {
     /* Size in Memory */ sizeof(struct Remix2PrologueInfo),
     /* Start Engine   */ remix_2_prologue_engine_start,
     /* Update Engine  */ remix_2_prologue_engine_update,
