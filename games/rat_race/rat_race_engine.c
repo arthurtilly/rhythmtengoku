@@ -227,6 +227,7 @@ struct GameEngine rat_race_engine = {
 
   //  //  //  MISCELLANEOUS DATA  //  //  //
 
+const char D_0805a8b4[] = "";
 
 // [D_089e6834] ?
 u8 D_089e6834[] = {

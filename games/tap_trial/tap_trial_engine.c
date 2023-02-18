@@ -2396,13 +2396,15 @@ struct GraphicsTable *tap_trial_gfx_tables[] = {
     /* 0x04 */ gfx_table_tap_trial_remix_5
 };
 
+const char D_0805a8bc[] = "";
+
 // [D_089e8054] ?
 const char *D_089e8054[] = {
-    D_0805a900,
-    D_0805a8f0,
-    D_0805a8e0,
-    D_0805a8d0,
-    D_0805a8c0
+    "うまいっス！！",
+    "カッコイイ！！",
+    "テクニシャン！",
+    "イカスッす！！",
+    "ホレたー！！",
 };
 
 // [D_089e8068] ?

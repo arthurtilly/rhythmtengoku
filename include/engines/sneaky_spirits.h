@@ -88,7 +88,7 @@ extern const struct SequenceData s_ghost_warai_seqData;          // Sound: Ghost
 
 
 // Engine Data:
-extern char D_08059f90[];   // Empty Default Text
+extern const char D_08059f90[];   // Empty Default Text
 
 
 // Engine Definition Data:

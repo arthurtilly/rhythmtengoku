@@ -321,6 +321,8 @@ const struct Animation *showtime_penguin_slide_anim[] = {
     /* 0x04 */ anim_showtime_penguin_slide
 };
 
+const char D_0805a3cc[] = "";
+
 // [D_089e3b14] Step Durations?
 u32 D_089e3b14[][5] = {
     { 0x00, 0x00, 0x00, 0x00, 0x00 },

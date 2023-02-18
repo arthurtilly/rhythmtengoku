@@ -202,6 +202,8 @@ u8 rapping_anim_durations[] = {
     /* HONTO  */ 0x6C
 };
 
+const char D_0805a8b0[] = "";
+
 
   //  //  //  CUE DATA  //  //  //
 

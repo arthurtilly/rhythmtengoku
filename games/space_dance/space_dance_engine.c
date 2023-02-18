@@ -331,6 +331,8 @@ s16 D_089e6ebc[] = {
     /* 0x02 */ 67
 };
 
+const char D_0805a8b8[] = "";
+
 // [D_089e6ec4] Cue 00 (Turn Right)
 struct CueDefinition space_dance_cue_turn_right = {
     /* Unknown Param.  */ 0,

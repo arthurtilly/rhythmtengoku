@@ -224,6 +224,7 @@ struct CueDefinition *sneaky_spirits_cue_index[] = {
     END_OF_CUE_INDEX
 };
 
+const char D_08059f90[] = "";
 
   //  //  //  GAME ENGINE DATA  //  //  //
 

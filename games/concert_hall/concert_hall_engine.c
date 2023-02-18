@@ -41,9 +41,30 @@ struct GraphicsTable concert_hall_gfx_table[] = {
 
 // [D_089e5c74] Poster Descriptions
 const char *concert_hall_poster_desc[] = {
-    /* DRUM GIRLS */ text_concert_hall_poster_girls,
-    /* DRUM BOYS  */ text_concert_hall_poster_boys,
-    /* DRUM BAND  */ text_concert_hall_poster_band
+    /* DRUM GIRLS */
+    "\x03\x31" "\x01\x6d" "\x05\x30" "\x01\x34" "Drum Girls LIVE!\n"
+    "\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　ナイトウォーク\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　スペースダンス\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　恋のハニースイ～トエンジェル\n"
+    "\n",
+    
+    /* DRUM BOYS  */
+    "\x03\x31" "\x01\x6d" "\x05\x30" "\x01\x34" "Drum Boys LIVE!\n"
+    "\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "　　　　♪　パチパチ三人衆\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "　　　　♪　タップダンズ\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "　　　　♪　WISH 君を待てなくて\n"
+    "\n",
+
+    /* DRUM BAND  */
+    "\x03\x31" "\x01\x6d" "\x05\x30" "\x01\x34" "Drum Samurai's\n"
+    "\x03\x31" "\x01\x6d" "\x05\x30" "\x01\x34" "\x01\x52" "Band LIVE! \n"
+    "\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "\x01\x4c" "　　　　　　　　　　♪　コスモダンス\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "　　　　　　　　　　♪　バリバリ三人衆\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "　　　　　　　　　　♪　スーパータップ\n"
+    "\n"
 };
 
 

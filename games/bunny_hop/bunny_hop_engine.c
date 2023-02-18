@@ -510,6 +510,8 @@ struct GameEngine bunny_hop_engine = {
 
   //  //  //  MISCELLANEOUS DATA  //  //  //
 
+const char D_0805a8ac[] = "";
+
 
 // [D_089e6384] Sea-Life Animations
 const struct Animation *bunny_hop_platform_anim[] = {

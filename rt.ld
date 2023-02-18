@@ -270,23 +270,24 @@ SECTIONS {
         build/text/medal_corner_text.c.o(.rodata*);
         build/text/debug_text.c.o(.rodata*);
 
-        build/games/sneaky_spirits/sneaky_spirits_misc.c.o(.rodata*);
-        build/games/drum_studio/drum_lessons_misc.c.o(.rodata*);
-        build/games/showtime/showtime_misc.c.o(.rodata*);
-        build/games/fireworks/fireworks_misc.c.o(.rodata*);
-        build/games/samurai_slice/samurai_slice_misc.c.o(.rodata*);
-        build/games/marching_orders/marching_orders_misc.c.o(.rodata*);
-        build/games/mr_upbeat/mr_upbeat_misc.c.o(.rodata*);
-        build/games/metronome/metronome_misc.c.o(.rodata*);
-        build/games/concert_hall/concert_hall_misc.c.o(.rodata*);
-        build/games/bunny_hop/bunny_hop_misc.c.o(.rodata*);
-        build/games/rap_men/rap_men_misc.c.o(.rodata*);
-        build/games/rat_race/rat_race_misc.c.o(.rodata*);
-        build/games/space_dance/space_dance_misc.c.o(.rodata*);
-        build/games/tap_trial/tap_trial_misc.c.o(.rodata*);
-        build/games/tram_and_pauline/tram_and_pauline_misc.c.o(.rodata*);
-        build/games/horse_machine/horse_machine_misc.c.o(.rodata*);
-        build/games/rhythm_toys/confession_machine_misc.c.o(.rodata*);
+        # Rodata section of engines. Some of these are likely rodata sections of src/ files
+        build/games/sneaky_spirits/sneaky_spirits_engine.c.o(.rodata*);
+        build/games/drum_studio/drum_studio_engine.c.o(.rodata*);
+        build/games/showtime/showtime_engine.c.o(.rodata*);
+        build/games/fireworks/fireworks_engine.c.o(.rodata*);
+        build/games/samurai_slice/samurai_slice_engine.c.o(.rodata*);
+        build/games/marching_orders/marching_orders_engine.c.o(.rodata*);
+        build/games/mr_upbeat/mr_upbeat_engine.c.o(.rodata*);
+        build/games/metronome/metronome_engine.c.o(.rodata*);
+        build/games/concert_hall/concert_hall_engine.c.o(.rodata*);
+        build/games/bunny_hop/bunny_hop_engine.c.o(.rodata*);
+        build/games/rap_men/rap_men_engine.c.o(.rodata*);
+        build/games/rat_race/rat_race_engine.c.o(.rodata*);
+        build/games/space_dance/space_dance_engine.c.o(.rodata*);
+        build/games/tap_trial/tap_trial_engine.c.o(.rodata*);
+        build/games/tram_and_pauline/tram_and_pauline_engine.c.o(.rodata*);
+        build/games/horse_machine/horse_machine_engine.c.o(.rodata*);
+        build/games/rhythm_toys/rhythm_toys_engine.c.o(.rodata*);
 
         build/games/karate_man/karate_man_text.c.o(.rodata*);
         build/games/clappy_trio/clappy_trio_text.c.o(.rodata*);
