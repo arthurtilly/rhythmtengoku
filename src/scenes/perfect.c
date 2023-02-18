@@ -1,5 +1,5 @@
 #include "global.h"
-#include "scenes/perfect.h"
+#include "perfect.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 

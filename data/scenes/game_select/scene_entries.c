@@ -1,6 +1,6 @@
 #include "global.h"
 #include "scene_entries.h"
-#include "scenes/game_select.h"
+#include "src/scenes/game_select.h"
 #include "text/game_select_text.h"
 
 const struct GameSelectSceneEntry D_089ce344[] = {

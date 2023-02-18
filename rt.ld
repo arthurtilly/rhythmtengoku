@@ -117,7 +117,7 @@ SECTIONS {
 		build/src/prologues/tram_and_pauline.c.o(.bss*);
 		build/src/prologues/sick_beats.c.o(.bss*);
 		build/src/prologues/wizards_waltz.c.o(.bss*);
-		build/src/levels/code_08047e50.c.o(.bss*);
+		build/src/code_08047e50.c.o(.bss*);
 	}
 	
 	. = 0x08000000;
@@ -235,7 +235,7 @@ SECTIONS {
 		build/src/prologues/tram_and_pauline.c.o(.text);
 		build/src/prologues/sick_beats.c.o(.text);
 		build/src/prologues/wizards_waltz.c.o(.text);
-		build/src/levels/code_08047e50.c.o(.text);
+		build/src/code_08047e50.c.o(.text);
         build/asm/lib_080482e0.s.o(.text);
         build/src/lib_08049144.c.o(.text);
         build/asm/libagbsyscall.s.o(.text);
@@ -286,7 +286,7 @@ SECTIONS {
         build/games/tap_trial/tap_trial_misc.c.o(.rodata*);
         build/games/tram_and_pauline/tram_and_pauline_misc.c.o(.rodata*);
         build/games/horse_machine/horse_machine_misc.c.o(.rodata*);
-        build/games/confession_machine/confession_machine_misc.c.o(.rodata*);
+        build/games/rhythm_toys/confession_machine_misc.c.o(.rodata*);
 
         build/games/karate_man/karate_man_text.c.o(.rodata*);
         build/games/clappy_trio/clappy_trio_text.c.o(.rodata*);

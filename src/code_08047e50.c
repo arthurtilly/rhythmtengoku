@@ -1,5 +1,5 @@
 #include "global.h"
-#include "levels/code_08047e50.h"
+#include "code_08047e50.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 

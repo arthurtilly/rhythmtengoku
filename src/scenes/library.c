@@ -1,5 +1,5 @@
 #include "global.h"
-#include "scenes/library.h"
+#include "library.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 

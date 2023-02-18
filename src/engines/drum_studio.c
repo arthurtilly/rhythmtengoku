@@ -1,8 +1,8 @@
 // Might need some more splitting
 
 #include "engines/drum_studio.h"
-#include "scenes/gameplay.h"
-#include "scenes/data.h"
+#include "src/scenes/gameplay.h"
+#include "src/scenes/data.h"
 #include "src/memory.h"
 #include "src/code_08001360.h"
 #include "src/task_pool.h"

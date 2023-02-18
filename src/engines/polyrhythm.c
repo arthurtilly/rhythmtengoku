@@ -4,7 +4,7 @@
 #include "src/task_pool.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
-#include "scenes/gameplay.h"
+#include "src/scenes/gameplay.h"
 #include "src/lib_0804ca80.h"
 
 asm(".include \"include/gba.inc\""); // Temporary

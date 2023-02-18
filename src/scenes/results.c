@@ -1,5 +1,5 @@
 #include "global.h"
-#include "scenes/results.h"
+#include "results.h"
 #include "cues.h"
 #include "src/main.h"
 #include "src/memory.h"
@@ -10,7 +10,7 @@
 #include "src/text_printer.h"
 #include "src/code_0800b778.h"
 #include "src/code_080102d0.h"
-#include "scenes/game_select.h"
+#include "game_select.h"
 #include "src/lib_0804ca80.h"
 
 asm(".include \"include/gba.inc\"");//Temporary

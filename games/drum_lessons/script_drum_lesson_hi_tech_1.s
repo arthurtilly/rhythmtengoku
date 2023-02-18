@@ -3,7 +3,7 @@
 
 .include "include/gba.inc"
 .include "include/bs_riq.inc"
-.include "include/bs/drum_studio.inc"
+.include "games/drum_lessons/drum_studio_macros.inc"
 
 load_drum_studio_labels
 

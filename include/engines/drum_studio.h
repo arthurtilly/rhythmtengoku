@@ -3,7 +3,7 @@
 #include "global.h"
 #include "engines.h"
 #include "engines/night_walk.h"
-#include "scenes/studio.h"
+#include "src/scenes/studio.h"
 
 // Engine Types:
 struct StudioDrummer {
