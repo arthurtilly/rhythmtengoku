@@ -8,7 +8,7 @@
 @ Prologue (Marching Orders) - Script
 glabel D_089eb6dc
     set_game_fade_in_time 8
-    load_game D_089eb6bc, 0
+    load_game marching_orders_prologue_engine, 0
     run stop_all_soundplayers, 0
     rest 24
     play_sfx s_jingle_march_seqData

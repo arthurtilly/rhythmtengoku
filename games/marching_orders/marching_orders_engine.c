@@ -66,8 +66,8 @@ extern const struct CompressedGraphics D_08c6e8d4;
 
 extern const Palette marching_orders_bg_pal[];
 extern const Palette marching_orders_obj_pal[];
-extern const Palette marching_orders_remix7_bg_pal[];
-extern const Palette marching_orders_remix7_obj_pal[];
+extern const Palette marching_orders_remix_7_bg_pal[];
+extern const Palette marching_orders_remix_7_obj_pal[];
 extern const Palette marching_orders_2_bg_pal[];
 extern const Palette marching_orders_2_obj_pal[];
 
@@ -191,7 +191,7 @@ const struct GraphicsTable marching_orders_1_gfx_table[] = {
 };
 
 // [D_089e5280] Graphics Table (Remix 7, Remix 8)
-const struct GraphicsTable marching_orders_remix7_gfx_table[] = {
+const struct GraphicsTable marching_orders_remix_7_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ce5db0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -213,12 +213,12 @@ const struct GraphicsTable marching_orders_remix7_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ marching_orders_remix7_bg_pal,
+        /* Src.  */ marching_orders_remix_7_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ marching_orders_remix7_obj_pal,
+        /* Src.  */ marching_orders_remix_7_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -283,7 +283,7 @@ const struct GraphicsTable marching_orders_2_gfx_table[] = {
 // [D_089e5358] Graphics Table Index
 const struct GraphicsTable *const marching_gfx_tables[] = {
     /* 0x00 */ marching_orders_1_gfx_table,
-    /* 0x01 */ marching_orders_remix7_gfx_table,
+    /* 0x01 */ marching_orders_remix_7_gfx_table,
     /* 0x02 */ marching_orders_1_gfx_table,
     /* 0x03 */ marching_orders_2_gfx_table
 };

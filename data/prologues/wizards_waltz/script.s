@@ -8,7 +8,7 @@
 @ Prologue (Wizard's Waltz) - Script
 glabel D_089ede94
     set_game_fade_in_time 8
-    load_game D_089ede74, 0
+    load_game wizards_waltz_prologue_engine, 0
     run stop_all_soundplayers, 0
     play_sfx s_jingle_witch_seqData
     rest 24

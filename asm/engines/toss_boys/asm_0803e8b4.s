@@ -23,7 +23,7 @@ thumb_func_start func_0803e8b4 \n\
 /* 0803e8d6 */ LDR R0, [R0] \n\
 /* 0803e8d8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803e8da */ LDRSH R1, [R2, R3] \n\
-/* 0803e8dc */ LDR R2, =anim_toss_remix5_soshi_strum_pop \n\
+/* 0803e8dc */ LDR R2, =anim_toss_remix_5_soshi_strum_pop \n\
 /* 0803e8de */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0803e8e0 */ STR R3, [SP] \n\
 /* 0803e8e2 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\

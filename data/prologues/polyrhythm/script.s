@@ -8,7 +8,7 @@
 @ Prologue (Polyrhythm) - Script
 glabel D_089eba2c
     set_game_fade_in_time 8
-    load_game D_089eba0c, 0
+    load_game polyrhythm_prologue_engine, 0
     run stop_all_soundplayers, 0
     rest 24
     play_sfx s_jingle_poli_seqData

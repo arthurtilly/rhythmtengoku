@@ -59,25 +59,25 @@
 .endm
 
 @ Load Game: Fireworks (Remix 5, BG 1)
-.macro load_fireworks_remix5_bg1
+.macro load_fireworks_remix_5_bg1
     load_fireworks_labels
     load_game fireworks_engine, 1
 .endm
 
 @ Load Game: Fireworks (Remix 5, BG 2)
-.macro load_fireworks_remix5_bg2
+.macro load_fireworks_remix_5_bg2
     load_fireworks_labels
     load_game fireworks_engine, 2
 .endm
 
 @ Load Game: Fireworks (Remix 5, BG 3)
-.macro load_fireworks_remix5_bg3
+.macro load_fireworks_remix_5_bg3
     load_fireworks_labels
     load_game fireworks_engine, 3
 .endm
 
 @ Load Game: Fireworks (Remix 5, BG 4)
-.macro load_fireworks_remix5_bg4
+.macro load_fireworks_remix_5_bg4
     load_fireworks_labels
     load_game fireworks_engine, 4
 .endm

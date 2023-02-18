@@ -5,165 +5,165 @@
 
 
 extern const struct Animation anim_tap_trial_girl_1cue[];
-extern const struct Animation anim_tap_remix8_girl_1cue[];
-extern const struct Animation anim_tap_remix7_girl_1cue[];
+extern const struct Animation anim_tap_remix_8_girl_1cue[];
+extern const struct Animation anim_tap_remix_7_girl_1cue[];
 extern const struct Animation anim_tap_trial_2_girl_1cue[];
-extern const struct Animation anim_tap_remix5_girl_1cue[];
+extern const struct Animation anim_tap_remix_5_girl_1cue[];
 extern const struct Animation anim_tap_trial_girl_2cue[];
-extern const struct Animation anim_tap_remix8_girl_2cue[];
-extern const struct Animation anim_tap_remix7_girl_2cue[];
+extern const struct Animation anim_tap_remix_8_girl_2cue[];
+extern const struct Animation anim_tap_remix_7_girl_2cue[];
 extern const struct Animation anim_tap_trial_2_girl_2cue[];
-extern const struct Animation anim_tap_remix5_girl_2cue[];
+extern const struct Animation anim_tap_remix_5_girl_2cue[];
 extern const struct Animation anim_tap_trial_girl_1step[];
-extern const struct Animation anim_tap_remix8_girl_1step[];
-extern const struct Animation anim_tap_remix7_girl_1step[];
+extern const struct Animation anim_tap_remix_8_girl_1step[];
+extern const struct Animation anim_tap_remix_7_girl_1step[];
 extern const struct Animation anim_tap_trial_2_girl_1step[];
-extern const struct Animation anim_tap_remix5_girl_1step[];
+extern const struct Animation anim_tap_remix_5_girl_1step[];
 extern const struct Animation anim_tap_trial_girl_2step[];
-extern const struct Animation anim_tap_remix8_girl_2step[];
-extern const struct Animation anim_tap_remix7_girl_2step[];
+extern const struct Animation anim_tap_remix_8_girl_2step[];
+extern const struct Animation anim_tap_remix_7_girl_2step[];
 extern const struct Animation anim_tap_trial_2_girl_2step[];
-extern const struct Animation anim_tap_remix5_girl_2step[];
+extern const struct Animation anim_tap_remix_5_girl_2step[];
 extern const struct Animation anim_tap_trial_girl_3step_l[];
-extern const struct Animation anim_tap_remix8_girl_3step_l[];
-extern const struct Animation anim_tap_remix7_girl_3step_l[];
+extern const struct Animation anim_tap_remix_8_girl_3step_l[];
+extern const struct Animation anim_tap_remix_7_girl_3step_l[];
 extern const struct Animation anim_tap_trial_2_girl_3step_l[];
-extern const struct Animation anim_tap_remix5_girl_3step_l[];
+extern const struct Animation anim_tap_remix_5_girl_3step_l[];
 extern const struct Animation anim_tap_trial_girl_3step_r[];
-extern const struct Animation anim_tap_remix8_girl_3step_r[];
-extern const struct Animation anim_tap_remix7_girl_3step_r[];
+extern const struct Animation anim_tap_remix_8_girl_3step_r[];
+extern const struct Animation anim_tap_remix_7_girl_3step_r[];
 extern const struct Animation anim_tap_trial_2_girl_3step_r[];
-extern const struct Animation anim_tap_remix5_girl_3step_r[];
+extern const struct Animation anim_tap_remix_5_girl_3step_r[];
 extern const struct Animation anim_tap_trial_girl_3cue[];
-extern const struct Animation anim_tap_remix8_girl_3cue[];
-extern const struct Animation anim_tap_remix7_girl_3cue[];
+extern const struct Animation anim_tap_remix_8_girl_3cue[];
+extern const struct Animation anim_tap_remix_7_girl_3cue[];
 extern const struct Animation anim_tap_trial_2_girl_3cue[];
-extern const struct Animation anim_tap_remix5_girl_3cue[];
+extern const struct Animation anim_tap_remix_5_girl_3cue[];
 extern const struct Animation anim_tap_trial_girl_crouch[];
-extern const struct Animation anim_tap_remix8_girl_crouch[];
-extern const struct Animation anim_tap_remix7_girl_crouch[];
+extern const struct Animation anim_tap_remix_8_girl_crouch[];
+extern const struct Animation anim_tap_remix_7_girl_crouch[];
 extern const struct Animation anim_tap_trial_2_girl_crouch[];
-extern const struct Animation anim_tap_remix5_girl_crouch[];
+extern const struct Animation anim_tap_remix_5_girl_crouch[];
 extern const struct Animation anim_tap_trial_girl_jump[];
-extern const struct Animation anim_tap_remix8_girl_jump[];
-extern const struct Animation anim_tap_remix7_girl_jump[];
+extern const struct Animation anim_tap_remix_8_girl_jump[];
+extern const struct Animation anim_tap_remix_7_girl_jump[];
 extern const struct Animation anim_tap_trial_2_girl_jump[];
-extern const struct Animation anim_tap_remix5_girl_jump[];
+extern const struct Animation anim_tap_remix_5_girl_jump[];
 extern const struct Animation anim_tap_trial_girl_pose_step[];
-extern const struct Animation anim_tap_remix8_girl_pose_step[];
-extern const struct Animation anim_tap_remix7_girl_pose_step[];
+extern const struct Animation anim_tap_remix_8_girl_pose_step[];
+extern const struct Animation anim_tap_remix_7_girl_pose_step[];
 extern const struct Animation anim_tap_trial_2_girl_pose_step[];
-extern const struct Animation anim_tap_remix5_girl_pose_step[];
+extern const struct Animation anim_tap_remix_5_girl_pose_step[];
 extern const struct Animation anim_tap_trial_girl_fall[];
-extern const struct Animation anim_tap_remix8_girl_fall[];
-extern const struct Animation anim_tap_remix7_girl_fall[];
+extern const struct Animation anim_tap_remix_8_girl_fall[];
+extern const struct Animation anim_tap_remix_7_girl_fall[];
 extern const struct Animation anim_tap_trial_2_girl_fall[];
-extern const struct Animation anim_tap_remix5_girl_fall[];
+extern const struct Animation anim_tap_remix_5_girl_fall[];
 extern const struct Animation anim_tap_trial_girl_crouch_step[];
-extern const struct Animation anim_tap_remix8_girl_crouch_step[];
-extern const struct Animation anim_tap_remix7_girl_crouch_step[];
+extern const struct Animation anim_tap_remix_8_girl_crouch_step[];
+extern const struct Animation anim_tap_remix_7_girl_crouch_step[];
 extern const struct Animation anim_tap_trial_2_girl_crouch_step[];
-extern const struct Animation anim_tap_remix5_girl_crouch_step[];
+extern const struct Animation anim_tap_remix_5_girl_crouch_step[];
 extern const struct Animation anim_tap_trial_girl_beat[];
-extern const struct Animation anim_tap_remix8_girl_beat[];
-extern const struct Animation anim_tap_remix7_girl_beat[];
+extern const struct Animation anim_tap_remix_8_girl_beat[];
+extern const struct Animation anim_tap_remix_7_girl_beat[];
 extern const struct Animation anim_tap_trial_2_girl_beat[];
-extern const struct Animation anim_tap_remix5_girl_beat[];
+extern const struct Animation anim_tap_remix_5_girl_beat[];
 extern const struct Animation anim_tap_trial_girl_miss_crouch[];
-extern const struct Animation anim_tap_remix8_girl_miss_crouch[];
-extern const struct Animation anim_tap_remix7_girl_miss_crouch[];
+extern const struct Animation anim_tap_remix_8_girl_miss_crouch[];
+extern const struct Animation anim_tap_remix_7_girl_miss_crouch[];
 extern const struct Animation anim_tap_trial_2_girl_miss_crouch[];
-extern const struct Animation anim_tap_remix5_girl_miss_crouch[];
+extern const struct Animation anim_tap_remix_5_girl_miss_crouch[];
 extern const struct Animation anim_tap_trial_girl_miss_pose[];
-extern const struct Animation anim_tap_remix8_girl_miss_pose[];
-extern const struct Animation anim_tap_remix7_girl_miss_pose[];
+extern const struct Animation anim_tap_remix_8_girl_miss_pose[];
+extern const struct Animation anim_tap_remix_7_girl_miss_pose[];
 extern const struct Animation anim_tap_trial_2_girl_miss_pose[];
-extern const struct Animation anim_tap_remix5_girl_miss_pose[];
+extern const struct Animation anim_tap_remix_5_girl_miss_pose[];
 extern const struct Animation anim_tap_trial_monkey_1cue[];
-extern const struct Animation anim_tap_remix8_monkey_1cue[];
-extern const struct Animation anim_tap_remix7_pig_1cue[];
+extern const struct Animation anim_tap_remix_8_monkey_1cue[];
+extern const struct Animation anim_tap_remix_7_pig_1cue[];
 extern const struct Animation anim_tap_trial_2_monkey_1cue[];
-extern const struct Animation anim_tap_remix5_monkey_1cue[];
+extern const struct Animation anim_tap_remix_5_monkey_1cue[];
 extern const struct Animation anim_tap_trial_monkey_2cue[];
-extern const struct Animation anim_tap_remix8_monkey_2cue[];
-extern const struct Animation anim_tap_remix7_pig_2cue[];
+extern const struct Animation anim_tap_remix_8_monkey_2cue[];
+extern const struct Animation anim_tap_remix_7_pig_2cue[];
 extern const struct Animation anim_tap_trial_2_monkey_2cue[];
-extern const struct Animation anim_tap_remix5_monkey_2cue[];
+extern const struct Animation anim_tap_remix_5_monkey_2cue[];
 extern const struct Animation anim_tap_trial_monkey_1step[];
-extern const struct Animation anim_tap_remix8_monkey_1step[];
-extern const struct Animation anim_tap_remix7_pig_1step[];
+extern const struct Animation anim_tap_remix_8_monkey_1step[];
+extern const struct Animation anim_tap_remix_7_pig_1step[];
 extern const struct Animation anim_tap_trial_2_monkey_1step[];
-extern const struct Animation anim_tap_remix5_monkey_1step[];
+extern const struct Animation anim_tap_remix_5_monkey_1step[];
 extern const struct Animation anim_tap_trial_monkey_2step[];
-extern const struct Animation anim_tap_remix8_monkey_2step[];
-extern const struct Animation anim_tap_remix7_pig_2step[];
+extern const struct Animation anim_tap_remix_8_monkey_2step[];
+extern const struct Animation anim_tap_remix_7_pig_2step[];
 extern const struct Animation anim_tap_trial_2_monkey_2step[];
-extern const struct Animation anim_tap_remix5_monkey_2step[];
+extern const struct Animation anim_tap_remix_5_monkey_2step[];
 extern const struct Animation anim_tap_trial_monkey_3step_l[];
-extern const struct Animation anim_tap_remix8_monkey_3step_l[];
-extern const struct Animation anim_tap_remix7_pig_3step_l[];
+extern const struct Animation anim_tap_remix_8_monkey_3step_l[];
+extern const struct Animation anim_tap_remix_7_pig_3step_l[];
 extern const struct Animation anim_tap_trial_2_monkey_3step_l[];
-extern const struct Animation anim_tap_remix5_monkey_3step_l[];
+extern const struct Animation anim_tap_remix_5_monkey_3step_l[];
 extern const struct Animation anim_tap_trial_monkey_3step_r[];
-extern const struct Animation anim_tap_remix8_monkey_3step_r[];
-extern const struct Animation anim_tap_remix7_pig_3step_r[];
+extern const struct Animation anim_tap_remix_8_monkey_3step_r[];
+extern const struct Animation anim_tap_remix_7_pig_3step_r[];
 extern const struct Animation anim_tap_trial_2_monkey_3step_r[];
-extern const struct Animation anim_tap_remix5_monkey_3step_r[];
+extern const struct Animation anim_tap_remix_5_monkey_3step_r[];
 extern const struct Animation anim_tap_trial_monkey_3cue[];
-extern const struct Animation anim_tap_remix8_monkey_3cue[];
-extern const struct Animation anim_tap_remix7_pig_3cue[];
+extern const struct Animation anim_tap_remix_8_monkey_3cue[];
+extern const struct Animation anim_tap_remix_7_pig_3cue[];
 extern const struct Animation anim_tap_trial_2_monkey_3cue[];
-extern const struct Animation anim_tap_remix5_monkey_3cue[];
+extern const struct Animation anim_tap_remix_5_monkey_3cue[];
 extern const struct Animation anim_tap_trial_monkey_crouch[];
-extern const struct Animation anim_tap_remix8_monkey_crouch[];
-extern const struct Animation anim_tap_remix7_pig_crouch[];
+extern const struct Animation anim_tap_remix_8_monkey_crouch[];
+extern const struct Animation anim_tap_remix_7_pig_crouch[];
 extern const struct Animation anim_tap_trial_2_monkey_crouch[];
-extern const struct Animation anim_tap_remix5_monkey_crouch[];
+extern const struct Animation anim_tap_remix_5_monkey_crouch[];
 extern const struct Animation anim_tap_trial_monkey_jump[];
-extern const struct Animation anim_tap_remix8_monkey_jump[];
-extern const struct Animation anim_tap_remix7_pig_jump[];
+extern const struct Animation anim_tap_remix_8_monkey_jump[];
+extern const struct Animation anim_tap_remix_7_pig_jump[];
 extern const struct Animation anim_tap_trial_2_monkey_jump[];
-extern const struct Animation anim_tap_remix5_monkey_jump[];
+extern const struct Animation anim_tap_remix_5_monkey_jump[];
 extern const struct Animation anim_tap_trial_monkey_pose_step[];
-extern const struct Animation anim_tap_remix8_monkey_pose_step[];
-extern const struct Animation anim_tap_remix7_pig_pose_step[];
+extern const struct Animation anim_tap_remix_8_monkey_pose_step[];
+extern const struct Animation anim_tap_remix_7_pig_pose_step[];
 extern const struct Animation anim_tap_trial_2_monkey_pose_step[];
-extern const struct Animation anim_tap_remix5_monkey_pose_step[];
+extern const struct Animation anim_tap_remix_5_monkey_pose_step[];
 extern const struct Animation anim_tap_trial_monkey_fall[];
-extern const struct Animation anim_tap_remix8_monkey_fall[];
-extern const struct Animation anim_tap_remix7_pig_fall[];
+extern const struct Animation anim_tap_remix_8_monkey_fall[];
+extern const struct Animation anim_tap_remix_7_pig_fall[];
 extern const struct Animation anim_tap_trial_2_monkey_fall[];
-extern const struct Animation anim_tap_remix5_monkey_fall[];
+extern const struct Animation anim_tap_remix_5_monkey_fall[];
 extern const struct Animation anim_tap_trial_monkey_crouch_step[];
-extern const struct Animation anim_tap_remix8_monkey_crouch_step[];
-extern const struct Animation anim_tap_remix7_pig_crouch_step[];
+extern const struct Animation anim_tap_remix_8_monkey_crouch_step[];
+extern const struct Animation anim_tap_remix_7_pig_crouch_step[];
 extern const struct Animation anim_tap_trial_2_monkey_crouch_step[];
-extern const struct Animation anim_tap_remix5_monkey_crouch_step[];
+extern const struct Animation anim_tap_remix_5_monkey_crouch_step[];
 extern const struct Animation anim_tap_trial_monkey_beat[];
-extern const struct Animation anim_tap_remix8_monkey_beat[];
-extern const struct Animation anim_tap_remix7_pig_beat[];
+extern const struct Animation anim_tap_remix_8_monkey_beat[];
+extern const struct Animation anim_tap_remix_7_pig_beat[];
 extern const struct Animation anim_tap_trial_2_monkey_beat[];
-extern const struct Animation anim_tap_remix5_monkey_beat[];
+extern const struct Animation anim_tap_remix_5_monkey_beat[];
 extern const struct Animation anim_tap_trial_shadow[];
-extern const struct Animation anim_tap_remix8_shadow[];
-extern const struct Animation anim_tap_remix7_shadow[];
+extern const struct Animation anim_tap_remix_8_shadow[];
+extern const struct Animation anim_tap_remix_7_shadow[];
 extern const struct Animation anim_tap_trial_2_shadow[];
-extern const struct Animation anim_tap_remix5_shadow[];
+extern const struct Animation anim_tap_remix_5_shadow[];
 extern const struct Animation anim_tap_trial_giraffe_neutral[];
-extern const struct Animation anim_tap_remix8_dragon_neutral[];
-extern const struct Animation anim_tap_remix7_giraffe_neutral[];
+extern const struct Animation anim_tap_remix_8_dragon_neutral[];
+extern const struct Animation anim_tap_remix_7_giraffe_neutral[];
 extern const struct Animation anim_tap_trial_2_camel_neutral[];
-extern const struct Animation anim_tap_remix5_giraffe_neutral[];
+extern const struct Animation anim_tap_remix_5_giraffe_neutral[];
 extern const struct Animation anim_tap_trial_giraffe_bedazzled[];
-extern const struct Animation anim_tap_remix8_dragon_bedazzled[];
-extern const struct Animation anim_tap_remix7_giraffe_bedazzled[];
+extern const struct Animation anim_tap_remix_8_dragon_bedazzled[];
+extern const struct Animation anim_tap_remix_7_giraffe_bedazzled[];
 extern const struct Animation anim_tap_trial_2_camel_bedazzled[];
-extern const struct Animation anim_tap_remix5_giraffe_bedazzled[];
+extern const struct Animation anim_tap_remix_5_giraffe_bedazzled[];
 extern const struct Animation anim_tap_trial_giraffe_sad[];
-extern const struct Animation anim_tap_remix8_dragon_sad[];
-extern const struct Animation anim_tap_remix7_giraffe_sad[];
+extern const struct Animation anim_tap_remix_8_dragon_sad[];
+extern const struct Animation anim_tap_remix_7_giraffe_sad[];
 extern const struct Animation anim_tap_trial_2_camel_sad[];
-extern const struct Animation anim_tap_remix5_giraffe_sad[];
+extern const struct Animation anim_tap_remix_5_giraffe_sad[];
 
 extern const struct CompressedGraphics D_08ce9bc8;
 extern const struct CompressedGraphics D_08cea0a0;
@@ -189,14 +189,14 @@ extern const struct CompressedGraphics D_08cf3088;
 
 extern const Palette tap_trial_bg_pal[];
 extern const Palette tap_trial_obj_pal[];
-extern const Palette tap_trial_remix8_bg_pal[];
-extern const Palette tap_trial_remix8_obj_pal[];
-extern const Palette tap_trial_remix7_bg_pal[];
-extern const Palette tap_trial_remix7_obj_pal[];
+extern const Palette tap_trial_remix_8_bg_pal[];
+extern const Palette tap_trial_remix_8_obj_pal[];
+extern const Palette tap_trial_remix_7_bg_pal[];
+extern const Palette tap_trial_remix_7_obj_pal[];
 extern const Palette tap_trial_2_bg_pal[];
 extern const Palette tap_trial_2_obj_pal[];
-extern const Palette tap_trial_remix5_bg_pal[];
-extern const Palette tap_trial_remix5_obj_pal[];
+extern const Palette tap_trial_remix_5_bg_pal[];
+extern const Palette tap_trial_remix_5_obj_pal[];
 
 
   //  //  //  ANIMATION DATA  //  //  //
@@ -206,227 +206,227 @@ extern const Palette tap_trial_remix5_obj_pal[];
 const struct Animation *const tap_trial_anim[][5] = {
     /* 0x00 */ {
         /* 0x00 */ anim_tap_trial_girl_1cue,
-        /* 0x01 */ anim_tap_remix8_girl_1cue,
-        /* 0x02 */ anim_tap_remix7_girl_1cue,
+        /* 0x01 */ anim_tap_remix_8_girl_1cue,
+        /* 0x02 */ anim_tap_remix_7_girl_1cue,
         /* 0x03 */ anim_tap_trial_2_girl_1cue,
-        /* 0x04 */ anim_tap_remix5_girl_1cue
+        /* 0x04 */ anim_tap_remix_5_girl_1cue
     },
     /* 0x01 */ {
         /* 0x00 */ anim_tap_trial_girl_2cue,
-        /* 0x01 */ anim_tap_remix8_girl_2cue,
-        /* 0x02 */ anim_tap_remix7_girl_2cue,
+        /* 0x01 */ anim_tap_remix_8_girl_2cue,
+        /* 0x02 */ anim_tap_remix_7_girl_2cue,
         /* 0x03 */ anim_tap_trial_2_girl_2cue,
-        /* 0x04 */ anim_tap_remix5_girl_2cue
+        /* 0x04 */ anim_tap_remix_5_girl_2cue
     },
     /* 0x02 */ {
         /* 0x00 */ anim_tap_trial_girl_1step,
-        /* 0x01 */ anim_tap_remix8_girl_1step,
-        /* 0x02 */ anim_tap_remix7_girl_1step,
+        /* 0x01 */ anim_tap_remix_8_girl_1step,
+        /* 0x02 */ anim_tap_remix_7_girl_1step,
         /* 0x03 */ anim_tap_trial_2_girl_1step,
-        /* 0x04 */ anim_tap_remix5_girl_1step
+        /* 0x04 */ anim_tap_remix_5_girl_1step
     },
     /* 0x03 */ {
         /* 0x00 */ anim_tap_trial_girl_2step,
-        /* 0x01 */ anim_tap_remix8_girl_2step,
-        /* 0x02 */ anim_tap_remix7_girl_2step,
+        /* 0x01 */ anim_tap_remix_8_girl_2step,
+        /* 0x02 */ anim_tap_remix_7_girl_2step,
         /* 0x03 */ anim_tap_trial_2_girl_2step,
-        /* 0x04 */ anim_tap_remix5_girl_2step
+        /* 0x04 */ anim_tap_remix_5_girl_2step
     },
     /* 0x04 */ {
         /* 0x00 */ anim_tap_trial_girl_3step_l,
-        /* 0x01 */ anim_tap_remix8_girl_3step_l,
-        /* 0x02 */ anim_tap_remix7_girl_3step_l,
+        /* 0x01 */ anim_tap_remix_8_girl_3step_l,
+        /* 0x02 */ anim_tap_remix_7_girl_3step_l,
         /* 0x03 */ anim_tap_trial_2_girl_3step_l,
-        /* 0x04 */ anim_tap_remix5_girl_3step_l
+        /* 0x04 */ anim_tap_remix_5_girl_3step_l
     },
     /* 0x05 */ {
         /* 0x00 */ anim_tap_trial_girl_3step_r,
-        /* 0x01 */ anim_tap_remix8_girl_3step_r,
-        /* 0x02 */ anim_tap_remix7_girl_3step_r,
+        /* 0x01 */ anim_tap_remix_8_girl_3step_r,
+        /* 0x02 */ anim_tap_remix_7_girl_3step_r,
         /* 0x03 */ anim_tap_trial_2_girl_3step_r,
-        /* 0x04 */ anim_tap_remix5_girl_3step_r
+        /* 0x04 */ anim_tap_remix_5_girl_3step_r
     },
     /* 0x06 */ {
         /* 0x00 */ anim_tap_trial_girl_3cue,
-        /* 0x01 */ anim_tap_remix8_girl_3cue,
-        /* 0x02 */ anim_tap_remix7_girl_3cue,
+        /* 0x01 */ anim_tap_remix_8_girl_3cue,
+        /* 0x02 */ anim_tap_remix_7_girl_3cue,
         /* 0x03 */ anim_tap_trial_2_girl_3cue,
-        /* 0x04 */ anim_tap_remix5_girl_3cue
+        /* 0x04 */ anim_tap_remix_5_girl_3cue
     },
     /* 0x07 */ {
         /* 0x00 */ anim_tap_trial_girl_crouch,
-        /* 0x01 */ anim_tap_remix8_girl_crouch,
-        /* 0x02 */ anim_tap_remix7_girl_crouch,
+        /* 0x01 */ anim_tap_remix_8_girl_crouch,
+        /* 0x02 */ anim_tap_remix_7_girl_crouch,
         /* 0x03 */ anim_tap_trial_2_girl_crouch,
-        /* 0x04 */ anim_tap_remix5_girl_crouch
+        /* 0x04 */ anim_tap_remix_5_girl_crouch
     },
     /* 0x08 */ {
         /* 0x00 */ anim_tap_trial_girl_jump,
-        /* 0x01 */ anim_tap_remix8_girl_jump,
-        /* 0x02 */ anim_tap_remix7_girl_jump,
+        /* 0x01 */ anim_tap_remix_8_girl_jump,
+        /* 0x02 */ anim_tap_remix_7_girl_jump,
         /* 0x03 */ anim_tap_trial_2_girl_jump,
-        /* 0x04 */ anim_tap_remix5_girl_jump
+        /* 0x04 */ anim_tap_remix_5_girl_jump
     },
     /* 0x09 */ {
         /* 0x00 */ anim_tap_trial_girl_pose_step,
-        /* 0x01 */ anim_tap_remix8_girl_pose_step,
-        /* 0x02 */ anim_tap_remix7_girl_pose_step,
+        /* 0x01 */ anim_tap_remix_8_girl_pose_step,
+        /* 0x02 */ anim_tap_remix_7_girl_pose_step,
         /* 0x03 */ anim_tap_trial_2_girl_pose_step,
-        /* 0x04 */ anim_tap_remix5_girl_pose_step
+        /* 0x04 */ anim_tap_remix_5_girl_pose_step
     },
     /* 0x0A */ {
         /* 0x00 */ anim_tap_trial_girl_fall,
-        /* 0x01 */ anim_tap_remix8_girl_fall,
-        /* 0x02 */ anim_tap_remix7_girl_fall,
+        /* 0x01 */ anim_tap_remix_8_girl_fall,
+        /* 0x02 */ anim_tap_remix_7_girl_fall,
         /* 0x03 */ anim_tap_trial_2_girl_fall,
-        /* 0x04 */ anim_tap_remix5_girl_fall
+        /* 0x04 */ anim_tap_remix_5_girl_fall
     },
     /* 0x0B */ {
         /* 0x00 */ anim_tap_trial_girl_crouch_step,
-        /* 0x01 */ anim_tap_remix8_girl_crouch_step,
-        /* 0x02 */ anim_tap_remix7_girl_crouch_step,
+        /* 0x01 */ anim_tap_remix_8_girl_crouch_step,
+        /* 0x02 */ anim_tap_remix_7_girl_crouch_step,
         /* 0x03 */ anim_tap_trial_2_girl_crouch_step,
-        /* 0x04 */ anim_tap_remix5_girl_crouch_step
+        /* 0x04 */ anim_tap_remix_5_girl_crouch_step
     },
     /* 0x0C */ {
         /* 0x00 */ anim_tap_trial_girl_beat,
-        /* 0x01 */ anim_tap_remix8_girl_beat,
-        /* 0x02 */ anim_tap_remix7_girl_beat,
+        /* 0x01 */ anim_tap_remix_8_girl_beat,
+        /* 0x02 */ anim_tap_remix_7_girl_beat,
         /* 0x03 */ anim_tap_trial_2_girl_beat,
-        /* 0x04 */ anim_tap_remix5_girl_beat
+        /* 0x04 */ anim_tap_remix_5_girl_beat
     },
     /* 0x0D */ {
         /* 0x00 */ anim_tap_trial_girl_miss_crouch,
-        /* 0x01 */ anim_tap_remix8_girl_miss_crouch,
-        /* 0x02 */ anim_tap_remix7_girl_miss_crouch,
+        /* 0x01 */ anim_tap_remix_8_girl_miss_crouch,
+        /* 0x02 */ anim_tap_remix_7_girl_miss_crouch,
         /* 0x03 */ anim_tap_trial_2_girl_miss_crouch,
-        /* 0x04 */ anim_tap_remix5_girl_miss_crouch
+        /* 0x04 */ anim_tap_remix_5_girl_miss_crouch
     },
     /* 0x0E */ {
         /* 0x00 */ anim_tap_trial_girl_miss_pose,
-        /* 0x01 */ anim_tap_remix8_girl_miss_pose,
-        /* 0x02 */ anim_tap_remix7_girl_miss_pose,
+        /* 0x01 */ anim_tap_remix_8_girl_miss_pose,
+        /* 0x02 */ anim_tap_remix_7_girl_miss_pose,
         /* 0x03 */ anim_tap_trial_2_girl_miss_pose,
-        /* 0x04 */ anim_tap_remix5_girl_miss_pose
+        /* 0x04 */ anim_tap_remix_5_girl_miss_pose
     },
     /* 0x0F */ {
         /* 0x00 */ anim_tap_trial_monkey_1cue,
-        /* 0x01 */ anim_tap_remix8_monkey_1cue,
-        /* 0x02 */ anim_tap_remix7_pig_1cue,
+        /* 0x01 */ anim_tap_remix_8_monkey_1cue,
+        /* 0x02 */ anim_tap_remix_7_pig_1cue,
         /* 0x03 */ anim_tap_trial_2_monkey_1cue,
-        /* 0x04 */ anim_tap_remix5_monkey_1cue
+        /* 0x04 */ anim_tap_remix_5_monkey_1cue
     },
     /* 0x10 */ {
         /* 0x00 */ anim_tap_trial_monkey_2cue,
-        /* 0x01 */ anim_tap_remix8_monkey_2cue,
-        /* 0x02 */ anim_tap_remix7_pig_2cue,
+        /* 0x01 */ anim_tap_remix_8_monkey_2cue,
+        /* 0x02 */ anim_tap_remix_7_pig_2cue,
         /* 0x03 */ anim_tap_trial_2_monkey_2cue,
-        /* 0x04 */ anim_tap_remix5_monkey_2cue
+        /* 0x04 */ anim_tap_remix_5_monkey_2cue
     },
     /* 0x11 */ {
         /* 0x00 */ anim_tap_trial_monkey_1step,
-        /* 0x01 */ anim_tap_remix8_monkey_1step,
-        /* 0x02 */ anim_tap_remix7_pig_1step,
+        /* 0x01 */ anim_tap_remix_8_monkey_1step,
+        /* 0x02 */ anim_tap_remix_7_pig_1step,
         /* 0x03 */ anim_tap_trial_2_monkey_1step,
-        /* 0x04 */ anim_tap_remix5_monkey_1step
+        /* 0x04 */ anim_tap_remix_5_monkey_1step
     },
     /* 0x12 */ {
         /* 0x00 */ anim_tap_trial_monkey_2step,
-        /* 0x01 */ anim_tap_remix8_monkey_2step,
-        /* 0x02 */ anim_tap_remix7_pig_2step,
+        /* 0x01 */ anim_tap_remix_8_monkey_2step,
+        /* 0x02 */ anim_tap_remix_7_pig_2step,
         /* 0x03 */ anim_tap_trial_2_monkey_2step,
-        /* 0x04 */ anim_tap_remix5_monkey_2step
+        /* 0x04 */ anim_tap_remix_5_monkey_2step
     },
     /* 0x13 */ {
         /* 0x00 */ anim_tap_trial_monkey_3step_l,
-        /* 0x01 */ anim_tap_remix8_monkey_3step_l,
-        /* 0x02 */ anim_tap_remix7_pig_3step_l,
+        /* 0x01 */ anim_tap_remix_8_monkey_3step_l,
+        /* 0x02 */ anim_tap_remix_7_pig_3step_l,
         /* 0x03 */ anim_tap_trial_2_monkey_3step_l,
-        /* 0x04 */ anim_tap_remix5_monkey_3step_l
+        /* 0x04 */ anim_tap_remix_5_monkey_3step_l
     },
     /* 0x14 */ {
         /* 0x00 */ anim_tap_trial_monkey_3step_r,
-        /* 0x01 */ anim_tap_remix8_monkey_3step_r,
-        /* 0x02 */ anim_tap_remix7_pig_3step_r,
+        /* 0x01 */ anim_tap_remix_8_monkey_3step_r,
+        /* 0x02 */ anim_tap_remix_7_pig_3step_r,
         /* 0x03 */ anim_tap_trial_2_monkey_3step_r,
-        /* 0x04 */ anim_tap_remix5_monkey_3step_r
+        /* 0x04 */ anim_tap_remix_5_monkey_3step_r
     },
     /* 0x15 */ {
         /* 0x00 */ anim_tap_trial_monkey_3cue,
-        /* 0x01 */ anim_tap_remix8_monkey_3cue,
-        /* 0x02 */ anim_tap_remix7_pig_3cue,
+        /* 0x01 */ anim_tap_remix_8_monkey_3cue,
+        /* 0x02 */ anim_tap_remix_7_pig_3cue,
         /* 0x03 */ anim_tap_trial_2_monkey_3cue,
-        /* 0x04 */ anim_tap_remix5_monkey_3cue
+        /* 0x04 */ anim_tap_remix_5_monkey_3cue
     },
     /* 0x16 */ {
         /* 0x00 */ anim_tap_trial_monkey_crouch,
-        /* 0x01 */ anim_tap_remix8_monkey_crouch,
-        /* 0x02 */ anim_tap_remix7_pig_crouch,
+        /* 0x01 */ anim_tap_remix_8_monkey_crouch,
+        /* 0x02 */ anim_tap_remix_7_pig_crouch,
         /* 0x03 */ anim_tap_trial_2_monkey_crouch,
-        /* 0x04 */ anim_tap_remix5_monkey_crouch
+        /* 0x04 */ anim_tap_remix_5_monkey_crouch
     },
     /* 0x17 */ {
         /* 0x00 */ anim_tap_trial_monkey_jump,
-        /* 0x01 */ anim_tap_remix8_monkey_jump,
-        /* 0x02 */ anim_tap_remix7_pig_jump,
+        /* 0x01 */ anim_tap_remix_8_monkey_jump,
+        /* 0x02 */ anim_tap_remix_7_pig_jump,
         /* 0x03 */ anim_tap_trial_2_monkey_jump,
-        /* 0x04 */ anim_tap_remix5_monkey_jump
+        /* 0x04 */ anim_tap_remix_5_monkey_jump
     },
     /* 0x18 */ {
         /* 0x00 */ anim_tap_trial_monkey_pose_step,
-        /* 0x01 */ anim_tap_remix8_monkey_pose_step,
-        /* 0x02 */ anim_tap_remix7_pig_pose_step,
+        /* 0x01 */ anim_tap_remix_8_monkey_pose_step,
+        /* 0x02 */ anim_tap_remix_7_pig_pose_step,
         /* 0x03 */ anim_tap_trial_2_monkey_pose_step,
-        /* 0x04 */ anim_tap_remix5_monkey_pose_step
+        /* 0x04 */ anim_tap_remix_5_monkey_pose_step
     },
     /* 0x19 */ {
         /* 0x00 */ anim_tap_trial_monkey_fall,
-        /* 0x01 */ anim_tap_remix8_monkey_fall,
-        /* 0x02 */ anim_tap_remix7_pig_fall,
+        /* 0x01 */ anim_tap_remix_8_monkey_fall,
+        /* 0x02 */ anim_tap_remix_7_pig_fall,
         /* 0x03 */ anim_tap_trial_2_monkey_fall,
-        /* 0x04 */ anim_tap_remix5_monkey_fall
+        /* 0x04 */ anim_tap_remix_5_monkey_fall
     },
     /* 0x1A */ {
         /* 0x00 */ anim_tap_trial_monkey_crouch_step,
-        /* 0x01 */ anim_tap_remix8_monkey_crouch_step,
-        /* 0x02 */ anim_tap_remix7_pig_crouch_step,
+        /* 0x01 */ anim_tap_remix_8_monkey_crouch_step,
+        /* 0x02 */ anim_tap_remix_7_pig_crouch_step,
         /* 0x03 */ anim_tap_trial_2_monkey_crouch_step,
-        /* 0x04 */ anim_tap_remix5_monkey_crouch_step
+        /* 0x04 */ anim_tap_remix_5_monkey_crouch_step
     },
     /* 0x1B */ {
         /* 0x00 */ anim_tap_trial_monkey_beat,
-        /* 0x01 */ anim_tap_remix8_monkey_beat,
-        /* 0x02 */ anim_tap_remix7_pig_beat,
+        /* 0x01 */ anim_tap_remix_8_monkey_beat,
+        /* 0x02 */ anim_tap_remix_7_pig_beat,
         /* 0x03 */ anim_tap_trial_2_monkey_beat,
-        /* 0x04 */ anim_tap_remix5_monkey_beat
+        /* 0x04 */ anim_tap_remix_5_monkey_beat
     },
     /* 0x1C */ {
         /* 0x00 */ anim_tap_trial_shadow,
-        /* 0x01 */ anim_tap_remix8_shadow,
-        /* 0x02 */ anim_tap_remix7_shadow,
+        /* 0x01 */ anim_tap_remix_8_shadow,
+        /* 0x02 */ anim_tap_remix_7_shadow,
         /* 0x03 */ anim_tap_trial_2_shadow,
-        /* 0x04 */ anim_tap_remix5_shadow
+        /* 0x04 */ anim_tap_remix_5_shadow
     },
     /* 0x1D */ {
         /* 0x00 */ anim_tap_trial_giraffe_neutral,
-        /* 0x01 */ anim_tap_remix8_dragon_neutral,
-        /* 0x02 */ anim_tap_remix7_giraffe_neutral,
+        /* 0x01 */ anim_tap_remix_8_dragon_neutral,
+        /* 0x02 */ anim_tap_remix_7_giraffe_neutral,
         /* 0x03 */ anim_tap_trial_2_camel_neutral,
-        /* 0x04 */ anim_tap_remix5_giraffe_neutral
+        /* 0x04 */ anim_tap_remix_5_giraffe_neutral
     },
     /* 0x1E */ {
         /* 0x00 */ anim_tap_trial_giraffe_bedazzled,
-        /* 0x01 */ anim_tap_remix8_dragon_bedazzled,
-        /* 0x02 */ anim_tap_remix7_giraffe_bedazzled,
+        /* 0x01 */ anim_tap_remix_8_dragon_bedazzled,
+        /* 0x02 */ anim_tap_remix_7_giraffe_bedazzled,
         /* 0x03 */ anim_tap_trial_2_camel_bedazzled,
-        /* 0x04 */ anim_tap_remix5_giraffe_bedazzled
+        /* 0x04 */ anim_tap_remix_5_giraffe_bedazzled
     },
     /* 0x1F */ {
         /* 0x00 */ anim_tap_trial_giraffe_sad,
-        /* 0x01 */ anim_tap_remix8_dragon_sad,
-        /* 0x02 */ anim_tap_remix7_giraffe_sad,
+        /* 0x01 */ anim_tap_remix_8_dragon_sad,
+        /* 0x02 */ anim_tap_remix_7_giraffe_sad,
         /* 0x03 */ anim_tap_trial_2_camel_sad,
-        /* 0x04 */ anim_tap_remix5_giraffe_sad
+        /* 0x04 */ anim_tap_remix_5_giraffe_sad
     }
 };
 
@@ -675,7 +675,7 @@ const struct TapTrialAction tap_trial_girl_actions[] = {
 };
 
 // [D_089e74a0] Tap Dance Move
-const struct TapTrialAction tap_trial_remix8_girl_actions[] = {
+const struct TapTrialAction tap_trial_remix_8_girl_actions[] = {
     /* 0x00 */ {
         /* Animation ID */ TAP_TRIAL_ANIM_GIRL_1CUE,
         /* Playback 1   */ 0,
@@ -883,7 +883,7 @@ const struct TapTrialAction tap_trial_remix8_girl_actions[] = {
 };
 
 // [D_089e75f4] Tap Dance Move
-const struct TapTrialAction tap_trial_remix7_girl_actions[] = {
+const struct TapTrialAction tap_trial_remix_7_girl_actions[] = {
     /* 0x00 */ {
         /* Animation ID */ TAP_TRIAL_ANIM_GIRL_1CUE,
         /* Playback 1   */ 0,
@@ -1301,8 +1301,8 @@ const struct TapTrialAction tap_trial_2_girl_actions[] = {
 // [D_089e789c] Tap Dance Actions - Girl
 const struct TapTrialAction *const tap_trial_girl_action_table[] = {
     /* 0x00 */ tap_trial_girl_actions,
-    /* 0x01 */ tap_trial_remix8_girl_actions,
-    /* 0x02 */ tap_trial_remix7_girl_actions,
+    /* 0x01 */ tap_trial_remix_8_girl_actions,
+    /* 0x02 */ tap_trial_remix_7_girl_actions,
     /* 0x03 */ tap_trial_2_girl_actions,
     /* 0x04 */ tap_trial_girl_actions
 };
@@ -1516,7 +1516,7 @@ const struct TapTrialAction tap_trial_monkey_actions[] = {
 };
 
 // [D_089e7a04] Tap Dance Move
-const struct TapTrialAction tap_trial_remix8_monkey_actions[] = {
+const struct TapTrialAction tap_trial_remix_8_monkey_actions[] = {
     /* 0x00 */ {
         /* Animation ID */ TAP_TRIAL_ANIM_MONKEY_1CUE,
         /* Playback 1   */ 0,
@@ -1724,7 +1724,7 @@ const struct TapTrialAction tap_trial_remix8_monkey_actions[] = {
 };
 
 // [D_089e7b58] Tap Dance Move
-const struct TapTrialAction tap_trial_remix7_monkey_actions[] = {
+const struct TapTrialAction tap_trial_remix_7_monkey_actions[] = {
     /* 0x00 */ {
         /* Animation ID */ TAP_TRIAL_ANIM_MONKEY_1CUE,
         /* Playback 1   */ 0,
@@ -2142,8 +2142,8 @@ const struct TapTrialAction tap_trial_2_monkey_actions[] = {
 // [D_089e7e00] Tap Dance Actions - Monkey
 const struct TapTrialAction *const tap_trial_monkey_action_table[] = {
     /* 0x00 */ tap_trial_monkey_actions,
-    /* 0x01 */ tap_trial_remix8_monkey_actions,
-    /* 0x02 */ tap_trial_remix7_monkey_actions,
+    /* 0x01 */ tap_trial_remix_8_monkey_actions,
+    /* 0x02 */ tap_trial_remix_7_monkey_actions,
     /* 0x03 */ tap_trial_2_monkey_actions,
     /* 0x04 */ tap_trial_monkey_actions
 };
@@ -2203,7 +2203,7 @@ const struct GraphicsTable gfx_table_tap_trial[] = {
 };
 
 // [D_089e7e84] Graphics Table (Remix 7, Remix 8)
-const struct GraphicsTable gfx_table_tap_trial_remix8[] = {
+const struct GraphicsTable gfx_table_tap_trial_remix_8[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cecba0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2225,12 +2225,12 @@ const struct GraphicsTable gfx_table_tap_trial_remix8[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ tap_trial_remix8_bg_pal,
+        /* Src.  */ tap_trial_remix_8_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ tap_trial_remix8_obj_pal,
+        /* Src.  */ tap_trial_remix_8_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2248,7 +2248,7 @@ const struct GraphicsTable gfx_table_tap_trial_remix8[] = {
 };
 
 // [D_089e7ef0] Graphics Table (Remix 7)
-const struct GraphicsTable gfx_table_tap_trial_remix7[] = {
+const struct GraphicsTable gfx_table_tap_trial_remix_7[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cf01e0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2270,12 +2270,12 @@ const struct GraphicsTable gfx_table_tap_trial_remix7[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ tap_trial_remix7_bg_pal,
+        /* Src.  */ tap_trial_remix_7_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ tap_trial_remix7_obj_pal,
+        /* Src.  */ tap_trial_remix_7_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2348,7 +2348,7 @@ const struct GraphicsTable gfx_table_tap_trial_2[] = {
 };
 
 // [D_089e7fe0] Graphics Table (Remix 5)
-const struct GraphicsTable gfx_table_tap_trial_remix5[] = {
+const struct GraphicsTable gfx_table_tap_trial_remix_5[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cf0ed0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2365,12 +2365,12 @@ const struct GraphicsTable gfx_table_tap_trial_remix5[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ tap_trial_remix5_bg_pal,
+        /* Src.  */ tap_trial_remix_5_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ tap_trial_remix5_obj_pal,
+        /* Src.  */ tap_trial_remix_5_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2390,10 +2390,10 @@ const struct GraphicsTable gfx_table_tap_trial_remix5[] = {
 // [D_089e8040] Graphics Table Index
 const struct GraphicsTable *const tap_trial_gfx_tables[] = {
     /* 0x00 */ gfx_table_tap_trial,
-    /* 0x01 */ gfx_table_tap_trial_remix8,
-    /* 0x02 */ gfx_table_tap_trial_remix7,
+    /* 0x01 */ gfx_table_tap_trial_remix_8,
+    /* 0x02 */ gfx_table_tap_trial_remix_7,
     /* 0x03 */ gfx_table_tap_trial_2,
-    /* 0x04 */ gfx_table_tap_trial_remix5
+    /* 0x04 */ gfx_table_tap_trial_remix_5
 };
 
 // [D_089e8054] ?

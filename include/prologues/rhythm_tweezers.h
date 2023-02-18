@@ -8,15 +8,15 @@
 
 
 // Types:
-struct PrologueRhythmTweezersInfo {
+struct RhythmTweezersPrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_rhythm_tweezers_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_rhythm_tweezers_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_rhythm_tweezers_title[]; // Animation: Text (Rhythm Tweezers)
+extern const struct CompressedGraphics *const rhythm_tweezers_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable rhythm_tweezers_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_rhythm_tweezers_prologue_title[]; // Animation: Text (Rhythm Tweezers)
 extern const struct SequenceData s_jingle_datumo_seqData;
 
 // Functions:

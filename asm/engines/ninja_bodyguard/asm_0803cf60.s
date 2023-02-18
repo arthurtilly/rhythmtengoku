@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start ninja_input_event \n\
+thumb_func_start ninja_bodyguard_input_event \n\
 /* 0803cf60 */ PUSH {R4-R7, LR} \n\
 /* 0803cf62 */ SUB SP, 0xC \n\
 /* 0803cf64 */ LDR R7, =D_030055d0 \n\

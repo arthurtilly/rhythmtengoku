@@ -132,7 +132,7 @@ const Palette tram_and_pauline_tutorial_pal[] = {
 };
 
 // [D_0892d504] Tram & Pauline (Remix 3) BG Palette
-const Palette tram_and_pauline_remix3_bg_pal[] = {
+const Palette tram_and_pauline_remix_3_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x00B000),

@@ -8,7 +8,7 @@
 
 
 // Types:
-struct PrologueNightWalkInfo {
+struct NightWalkPrologueInfo {
     u8  ver;            // Value:  Version
     s16 textSprite;     // Sprite: Text
     s16 playYanSprite;  // Sprite: Play-yan
@@ -16,11 +16,11 @@ struct PrologueNightWalkInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_night_walk_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_night_walk_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_night_walk_title[]; // Animation: Text (Night Walk)
-extern const struct Animation anim_prologue_night_walk_play_yan[]; // Animation: Play-yan
-extern const struct Animation anim_prologue_night_walk_balloons[]; // Animation: Balloons
+extern const struct CompressedGraphics *const night_walk_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable night_walk_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_night_walk_prologue_title[]; // Animation: Text (Night Walk)
+extern const struct Animation anim_night_walk_prologue_play_yan[]; // Animation: Play-yan
+extern const struct Animation anim_night_walk_prologue_balloons[]; // Animation: Balloons
 extern const struct SequenceData s_jingle_handclap_seqData;
 
 // Functions:

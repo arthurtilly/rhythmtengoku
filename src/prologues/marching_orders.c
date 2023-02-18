@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct PrologueMarchingOrdersInfo *)D_030055d0)
+#define gPrologueInfo ((struct MarchingOrdersPrologueInfo *)D_030055d0)
 
 
   //  //  //  PROLOGUE: MARCHING ORDERS  //  //  //
@@ -25,7 +25,7 @@ void func_08046244(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), prologue_marching_orders_gfx_table, 0x2000);
+    task = func_08002ee0(get_current_mem_id(), marching_orders_prologue_gfx_table, 0x2000);
     run_func_after_task(task, func_08046234, 0);
 }
 
@@ -36,7 +36,7 @@ void func_08046274(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(get_current_mem_id(), prologue_marching_orders_buffered_textures);
+    task = func_080087b4(get_current_mem_id(), marching_orders_prologue_buffered_textures);
     run_func_after_task(task, func_08046244, 0);
 }
 

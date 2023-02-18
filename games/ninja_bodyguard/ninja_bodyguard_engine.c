@@ -62,17 +62,17 @@ extern const struct CompressedGraphics D_08d1fab0;
 extern const struct CompressedGraphics D_08d1fb70;
 extern const struct CompressedGraphics D_08d1f700;
 
-extern const Palette ninja_bg_pal[];
-extern const Palette ninja_obj_pal[];
-extern const Palette ninja2_bg_pal[];
-extern const Palette ninja2_obj_pal[];
+extern const Palette ninja_bodyguard_bg_pal[];
+extern const Palette ninja_bodyguard_obj_pal[];
+extern const Palette ninja_reincarnate_bg_pal[];
+extern const Palette ninja_reincarnate_obj_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e68b8] All Animations
-const struct Animation *const ninja_anim[][2] = {
+const struct Animation *const ninja_bodyguard_anim[][2] = {
     /* 0x00 */ { anim_feudal_lord_blink, anim_girlfriend_blink },
     /* 0x01 */ { anim_feudal_lord_scared, anim_girlfriend_scared },
     /* 0x02 */ { anim_feudal_lord_shaking, anim_girlfriend_shaking },
@@ -99,30 +99,30 @@ const struct Animation *const ninja_anim[][2] = {
 };
 
 // [D_089e6970] Animation Table
-const struct Animation *const *const ninja_anim_table[] = {
-    /* 0x00 */ ninja_anim[0],
-    /* 0x01 */ ninja_anim[1],
-    /* 0x02 */ ninja_anim[2],
-    /* 0x03 */ ninja_anim[3],
-    /* 0x04 */ ninja_anim[4],
-    /* 0x05 */ ninja_anim[5],
-    /* 0x06 */ ninja_anim[6],
-    /* 0x07 */ ninja_anim[7],
-    /* 0x08 */ ninja_anim[8],
-    /* 0x09 */ ninja_anim[9],
-    /* 0x0A */ ninja_anim[10],
-    /* 0x0B */ ninja_anim[11],
-    /* 0x0C */ ninja_anim[12],
-    /* 0x0D */ ninja_anim[13],
-    /* 0x0E */ ninja_anim[14],
-    /* 0x0F */ ninja_anim[15],
-    /* 0x10 */ ninja_anim[16],
-    /* 0x11 */ ninja_anim[17],
-    /* 0x12 */ ninja_anim[18],
-    /* 0x13 */ ninja_anim[19],
-    /* 0x14 */ ninja_anim[20],
-    /* 0x15 */ ninja_anim[21],
-    /* 0x16 */ ninja_anim[22]
+const struct Animation *const *const ninja_bodyguard_anim_table[] = {
+    /* 0x00 */ ninja_bodyguard_anim[0],
+    /* 0x01 */ ninja_bodyguard_anim[1],
+    /* 0x02 */ ninja_bodyguard_anim[2],
+    /* 0x03 */ ninja_bodyguard_anim[3],
+    /* 0x04 */ ninja_bodyguard_anim[4],
+    /* 0x05 */ ninja_bodyguard_anim[5],
+    /* 0x06 */ ninja_bodyguard_anim[6],
+    /* 0x07 */ ninja_bodyguard_anim[7],
+    /* 0x08 */ ninja_bodyguard_anim[8],
+    /* 0x09 */ ninja_bodyguard_anim[9],
+    /* 0x0A */ ninja_bodyguard_anim[10],
+    /* 0x0B */ ninja_bodyguard_anim[11],
+    /* 0x0C */ ninja_bodyguard_anim[12],
+    /* 0x0D */ ninja_bodyguard_anim[13],
+    /* 0x0E */ ninja_bodyguard_anim[14],
+    /* 0x0F */ ninja_bodyguard_anim[15],
+    /* 0x10 */ ninja_bodyguard_anim[16],
+    /* 0x11 */ ninja_bodyguard_anim[17],
+    /* 0x12 */ ninja_bodyguard_anim[18],
+    /* 0x13 */ ninja_bodyguard_anim[19],
+    /* 0x14 */ ninja_bodyguard_anim[20],
+    /* 0x15 */ ninja_bodyguard_anim[21],
+    /* 0x16 */ ninja_bodyguard_anim[22]
 };
 
 // [D_089e69cc] ?
@@ -134,12 +134,12 @@ const struct SpriteVector3 D_089e69cc[] = {
 };
 
 // [D_089e69ec] Buffered Textures List
-const struct CompressedGraphics *const ninja_buffered_textures[] = {
+const struct CompressedGraphics *const ninja_bodyguard_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e69f0] Graphics Table (Ninja Bodyguard)
-const struct GraphicsTable ninja1_gfx_table[] = {
+const struct GraphicsTable ninja_bodyguard_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cde4e0,
         /* Dest. */ BG_TILESET_BASE(0x8000),
@@ -171,20 +171,20 @@ const struct GraphicsTable ninja1_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ ninja_bg_pal,
+        /* Src.  */ ninja_bodyguard_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ ninja_obj_pal,
+        /* Src.  */ ninja_bodyguard_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     END_OF_GRAPHICS_TABLE
 };
 
-// [D_089e6a5c] Graphics Table (Ninja Bodyguard 2)
-const struct GraphicsTable ninja2_gfx_table[] = {
+// [D_089e6a5c] Graphics Table (Ninja Reincarnate)
+const struct GraphicsTable ninja_reincarnate_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08d1e358,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -206,12 +206,12 @@ const struct GraphicsTable ninja2_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ ninja2_bg_pal,
+        /* Src.  */ ninja_reincarnate_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ ninja2_obj_pal,
+        /* Src.  */ ninja_reincarnate_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -219,9 +219,9 @@ const struct GraphicsTable ninja2_gfx_table[] = {
 };
 
 // [D_089e6ab0] Graphics Table Index
-const struct GraphicsTable *const ninja_gfx_tables[] = {
-    /* 0x00 */ ninja1_gfx_table,
-    /* 0x01 */ ninja2_gfx_table
+const struct GraphicsTable *const ninja_bodyguard_gfx_tables[] = {
+    /* 0x00 */ ninja_bodyguard_gfx_table,
+    /* 0x01 */ ninja_reincarnate_gfx_table
 };
 
 
@@ -229,7 +229,7 @@ const struct GraphicsTable *const ninja_gfx_tables[] = {
 
 
 // [D_089e6ab8] Cue 00 (Default)
-const struct CueDefinition ninja_cue_default = {
+const struct CueDefinition ninja_bodyguard_cue_default = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON | DPAD_RIGHT | DPAD_LEFT | DPAD_UP | DPAD_DOWN),
     /* Total Duration  */ 0x18,
@@ -238,13 +238,13 @@ const struct CueDefinition ninja_cue_default = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ 0x4,
-    /* Func. Spawn     */ ninja_cue_spawn,
+    /* Func. Spawn     */ ninja_bodyguard_cue_spawn,
     /* Spawn Parameter */ 0,
-    /* Func. Update    */ ninja_cue_update,
-    /* Func. Despawn   */ ninja_cue_despawn,
-    /* Func. Hit       */ ninja_cue_hit,
-    /* Func. Barely    */ ninja_cue_barely,
-    /* Func. Miss      */ ninja_cue_miss,
+    /* Func. Update    */ ninja_bodyguard_cue_update,
+    /* Func. Despawn   */ ninja_bodyguard_cue_despawn,
+    /* Func. Hit       */ ninja_bodyguard_cue_hit,
+    /* Func. Barely    */ ninja_bodyguard_cue_barely,
+    /* Func. Miss      */ ninja_bodyguard_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -253,8 +253,8 @@ const struct CueDefinition ninja_cue_default = {
 };
 
 // [D_089e6af8] Cue Definition Index
-const struct CueDefinition *const ninja_cue_index[] = {
-    /* 0x00 */ &ninja_cue_default,
+const struct CueDefinition *const ninja_bodyguard_cue_index[] = {
+    /* 0x00 */ &ninja_bodyguard_cue_default,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
     /* 0x03 */ NULL,
@@ -274,15 +274,15 @@ const struct CueDefinition *const ninja_cue_index[] = {
 
 
 // [D_089e6b2c] Common Events
-const EngineEvent ninja_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) ninja_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) ninja_common_display_text,
+const EngineEvent ninja_bodyguard_common_events[] = {
+    /* BEAT_ANIMATION */ (EngineEvent) ninja_bodyguard_common_beat_animation,
+    /* DISPLAY_TEXT   */ (EngineEvent) ninja_bodyguard_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e6b38] Engine Events
-const EngineEvent ninja_engine_events[] = {
+const EngineEvent ninja_bodyguard_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_0803c9f8,
     /* 0x01 */ (EngineEvent) func_0803ca8c,
     /* 0x02 */ (EngineEvent) func_0803cad0,
@@ -301,17 +301,17 @@ const EngineEvent ninja_engine_events[] = {
     /* 0x0F */ (EngineEvent) func_0803cce0,
     /* 0x10 */ (EngineEvent) func_0803be04,
     /* 0x11 */ (EngineEvent) func_0803be88,
-    /* 0x12 */ (EngineEvent) ninja_engine_event_stub
+    /* 0x12 */ (EngineEvent) ninja_bodyguard_engine_event_stub
 };
 
 // [D_089e6b84] Ninja Bodyguard Game Engine
 const struct GameEngine ninja_bodyguard_engine = {
     /* Size in Memory */ 0x300,
-    /* Start Engine   */ ninja_engine_start,
-    /* Update Engine  */ ninja_engine_update,
-    /* Stop Engine    */ ninja_engine_stop,
-    /* Cue Index      */ ninja_cue_index,
-    /* Common Events  */ ninja_common_events,
-    /* Engine Events  */ ninja_engine_events,
-    /* Input Event    */ ninja_input_event
+    /* Start Engine   */ ninja_bodyguard_engine_start,
+    /* Update Engine  */ ninja_bodyguard_engine_update,
+    /* Stop Engine    */ ninja_bodyguard_engine_stop,
+    /* Cue Index      */ ninja_bodyguard_cue_index,
+    /* Common Events  */ ninja_bodyguard_common_events,
+    /* Engine Events  */ ninja_bodyguard_engine_events,
+    /* Input Event    */ ninja_bodyguard_input_event
 };

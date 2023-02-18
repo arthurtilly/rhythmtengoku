@@ -55,7 +55,7 @@ extern const struct CompressedGraphics D_08d02100;
 
 extern const Palette tram_and_pauline_bg_pal[];
 extern const Palette tram_and_pauline_obj_pal[];
-extern const Palette tram_and_pauline_remix3_bg_pal[];
+extern const Palette tram_and_pauline_remix_3_bg_pal[];
 extern const Palette tram_and_pauline_tutorial_pal[];
 
 
@@ -133,7 +133,7 @@ const struct GraphicsTable gfx_table_tram_pauline[] = {
 };
 
 // [D_089e8ac8] Graphics Table (Remix 3)
-const struct GraphicsTable gfx_table_tram_pauline_remix3[] = {
+const struct GraphicsTable gfx_table_tram_pauline_remix_3[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08d02864,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -150,7 +150,7 @@ const struct GraphicsTable gfx_table_tram_pauline_remix3[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ tram_and_pauline_remix3_bg_pal,
+        /* Src.  */ tram_and_pauline_remix_3_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -171,7 +171,7 @@ const struct GraphicsTable gfx_table_tram_pauline_remix3[] = {
 const struct GraphicsTable *const tram_pauline_gfx_tables[] = {
     /* 0x00 */ gfx_table_tram_pauline_tutorial,
     /* 0x01 */ gfx_table_tram_pauline,
-    /* 0x02 */ gfx_table_tram_pauline_remix3,
+    /* 0x02 */ gfx_table_tram_pauline_remix_3,
     /* 0x03 */ gfx_table_tram_pauline
 };
 

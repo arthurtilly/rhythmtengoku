@@ -7,7 +7,7 @@
 extern const struct CompressedGraphics D_08c3106c;
 extern const struct CompressedGraphics D_08c3153c;
 extern const struct CompressedGraphics D_08c30910;
-extern const Palette prologue_tram_and_pauline_pal[];
+extern const Palette tram_and_pauline_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -36,12 +36,12 @@ const struct GraphicsTable prologue_tram_pauline_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ prologue_tram_and_pauline_pal,
+        /* Src.  */ tram_and_pauline_prologue_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ prologue_tram_and_pauline_pal,
+        /* Src.  */ tram_and_pauline_prologue_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -54,8 +54,8 @@ const EngineEvent prologue_tram_pauline_engine_events[] = {
 };
 
 // [D_089edc08] Prologue (Tram & Pauline) Game Engine
-const struct GameEngine D_089edc08 = {
-    /* Size in Memory */ sizeof(struct PrologueTramPaulineInfo),
+const struct GameEngine tram_and_pauline_prologue_engine = {
+    /* Size in Memory */ sizeof(struct TramAndPaulinePrologueInfo),
     /* Start Engine   */ func_08047b40,
     /* Update Engine  */ func_08047bd4,
     /* Stop Engine    */ func_08047bd8,

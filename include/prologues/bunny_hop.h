@@ -8,17 +8,17 @@
 
 
 // Types:
-struct PrologueBunnyHopInfo {
+struct BunnyHopPrologueInfo {
     u8  ver;            // Value:  Version
     s16 textSprite;     // Sprite: Text
     s16 rabbitsSprite;  // Sprite: Rabbits
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_bunny_hop_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_bunny_hop_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_bunny_hop_title[]; // Animation: Text (Bunny Hop)
-extern const struct Animation anim_prologue_bunny_hop_rabbits[]; // Animation: Rabbits
+extern const struct CompressedGraphics *const bunny_hop_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable bunny_hop_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_bunny_hop_prologue_title[]; // Animation: Text (Bunny Hop)
+extern const struct Animation anim_bunny_hop_prologue_rabbits[]; // Animation: Rabbits
 extern const struct SequenceData s_jingle_rat_seqData;
 
 // Functions:

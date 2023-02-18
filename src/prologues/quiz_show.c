@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct PrologueQuizShowInfo *)D_030055d0)
+#define gPrologueInfo ((struct QuizShowPrologueInfo *)D_030055d0)
 
 
   //  //  //  PROLOGUE: QUIZ SHOW  //  //  //
@@ -25,7 +25,7 @@ void func_08046538(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), prologue_quiz_show_gfx_table, 0x2000);
+    task = func_08002ee0(get_current_mem_id(), quiz_show_prologue_gfx_table, 0x2000);
     run_func_after_task(task, func_08046528, 0);
 }
 
@@ -36,7 +36,7 @@ void func_08046568(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(get_current_mem_id(), prologue_quiz_show_buffered_textures);
+    task = func_080087b4(get_current_mem_id(), quiz_show_prologue_buffered_textures);
     run_func_after_task(task, func_08046538, 0);
 }
 

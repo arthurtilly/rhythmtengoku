@@ -8,15 +8,15 @@
 
 
 // Types:
-struct PrologueBonOdoriInfo {
+struct BonOdoriPrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_bon_odori_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_bon_odori_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_bon_dance_title[]; // Animation: Text (The Bon Odori)
+extern const struct CompressedGraphics *const bon_odori_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable bon_odori_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_bon_dance_prologue_title[]; // Animation: Text (The Bon Odori)
 extern const struct SequenceData s_jingle_bon_seqData;
 
 // Functions:

@@ -7,20 +7,20 @@
 extern const struct CompressedGraphics D_08c2990c;
 extern const struct CompressedGraphics D_08c29ce8;
 extern const struct CompressedGraphics D_08c28814;
-extern const Palette prologue_tap_trial_2_bg_pal[];
-extern const Palette prologue_tap_trial_2_obj_pal[];
+extern const Palette tap_trial_2_prologue_bg_pal[];
+extern const Palette tap_trial_2_prologue_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ed6b4] Buffered Textures List
-const struct CompressedGraphics *const prologue_tap_trial_2_buffered_textures[] = {
+const struct CompressedGraphics *const tap_trial_2_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ed6b8] Graphics Table
-const struct GraphicsTable prologue_tap_trial_2_gfx_table[] = {
+const struct GraphicsTable tap_trial_2_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c2990c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -37,12 +37,12 @@ const struct GraphicsTable prologue_tap_trial_2_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ prologue_tap_trial_2_bg_pal,
+        /* Src.  */ tap_trial_2_prologue_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ prologue_tap_trial_2_obj_pal,
+        /* Src.  */ tap_trial_2_prologue_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -50,18 +50,18 @@ const struct GraphicsTable prologue_tap_trial_2_gfx_table[] = {
 };
 
 // [D_089ed700] Engine Events
-const EngineEvent prologue_tap_trial_2_engine_events[] = {
+const EngineEvent tap_trial_2_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08047888
 };
 
 // [D_089ed704] Prologue (Tap Trial 2) Game Engine
-const struct GameEngine D_089ed704 = {
-    /* Size in Memory */ sizeof(struct PrologueTapTrial2Info),
+const struct GameEngine tap_trial_2_prologue_engine = {
+    /* Size in Memory */ sizeof(struct TapTrial2PrologueInfo),
     /* Start Engine   */ func_08047824,
     /* Update Engine  */ func_0804788c,
     /* Stop Engine    */ func_08047890,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
-    /* Engine Events  */ prologue_tap_trial_2_engine_events,
+    /* Engine Events  */ tap_trial_2_prologue_engine_events,
     /* Input Event    */ NULL
 };

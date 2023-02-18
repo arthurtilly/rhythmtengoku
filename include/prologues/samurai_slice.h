@@ -8,15 +8,15 @@
 
 
 // Types:
-struct PrologueSamuraiSliceInfo {
+struct SamuraiSlicePrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_samurai_slice_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_samurai_slice_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_samurai_slice_title[]; // Animation: Text (Samurai Slice)
+extern const struct CompressedGraphics *const samurai_slice_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable samurai_slice_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_samurai_slice_prologue_title[]; // Animation: Text (Samurai Slice)
 extern const struct SequenceData s_jingle_iai_seqData;
 extern const struct SequenceData s_f_iai_title_seqData;
 

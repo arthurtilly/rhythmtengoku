@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct PrologueTapTrial2Info *)D_030055d0)
+#define gPrologueInfo ((struct TapTrial2PrologueInfo *)D_030055d0)
 
 
   //  //  //  PROLOGUE: TAP TRIAL 2  //  //  //
@@ -25,7 +25,7 @@ void func_080477c4(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), prologue_tap_trial_2_gfx_table, 0x2000);
+    task = func_08002ee0(get_current_mem_id(), tap_trial_2_prologue_gfx_table, 0x2000);
     run_func_after_task(task, func_080477b4, 0);
 }
 
@@ -36,7 +36,7 @@ void func_080477f4(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(get_current_mem_id(), prologue_tap_trial_2_buffered_textures);
+    task = func_080087b4(get_current_mem_id(), tap_trial_2_prologue_buffered_textures);
     run_func_after_task(task, func_080477c4, 0);
 }
 
@@ -49,7 +49,7 @@ void func_08047824(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_tap_trial_2_title, 0, 105, 100, 0, 1, 0x7f, 0x8000);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_tap_trial_2_prologue_title, 0, 105, 100, 0, 1, 0x7f, 0x8000);
 }
 
 

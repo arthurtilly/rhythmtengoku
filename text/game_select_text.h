@@ -38,46 +38,46 @@ extern const char text_rhythm_toys_name[];
 extern const char text_cafe_desc[];
 extern const char text_cafe_name[];
 
-extern const char text_remix8_superb[];
-extern const char text_remix8_ok[];
-extern const char text_remix8_try_again[];
-extern const char text_remix8_name[];
+extern const char text_remix_8_superb[];
+extern const char text_remix_8_ok[];
+extern const char text_remix_8_try_again[];
+extern const char text_remix_8_name[];
 
-extern const char text_remix7_superb[];
-extern const char text_remix7_ok[];
-extern const char text_remix7_try_again[];
-extern const char text_remix7_name[];
+extern const char text_remix_7_superb[];
+extern const char text_remix_7_ok[];
+extern const char text_remix_7_try_again[];
+extern const char text_remix_7_name[];
 
-extern const char text_remix6_superb[];
-extern const char text_remix6_ok[];
-extern const char text_remix6_try_again[];
-extern const char text_remix6_name[];
+extern const char text_remix_6_superb[];
+extern const char text_remix_6_ok[];
+extern const char text_remix_6_try_again[];
+extern const char text_remix_6_name[];
 
-extern const char text_remix5_superb[];
-extern const char text_remix5_ok[];
-extern const char text_remix5_try_again[];
-extern const char text_remix5_name[];
+extern const char text_remix_5_superb[];
+extern const char text_remix_5_ok[];
+extern const char text_remix_5_try_again[];
+extern const char text_remix_5_name[];
 
-extern const char text_remix4_superb[];
-extern const char text_remix4_ok[];
-extern const char text_remix4_try_again[];
-extern const char text_remix4_name[];
+extern const char text_remix_4_superb[];
+extern const char text_remix_4_ok[];
+extern const char text_remix_4_try_again[];
+extern const char text_remix_4_name[];
 
-extern const char text_remix3_superb[];
-extern const char text_remix3_ok[];
-extern const char text_remix3_try_again[];
-extern const char text_remix3_name[];
+extern const char text_remix_3_superb[];
+extern const char text_remix_3_ok[];
+extern const char text_remix_3_try_again[];
+extern const char text_remix_3_name[];
 
-extern const char text_remix2_superb[];
-extern const char text_remix2_ok[];
-extern const char text_remix2_try_again[];
-extern const char text_remix2_name[];
+extern const char text_remix_2_superb[];
+extern const char text_remix_2_ok[];
+extern const char text_remix_2_try_again[];
+extern const char text_remix_2_name[];
 
-extern const char text_remix1_superb[];
-extern const char text_remix1_ok[];
-extern const char text_remix1_try_again[];
-extern const char text_remix1_desc[];
-extern const char text_remix1_name[];
+extern const char text_remix_1_superb[];
+extern const char text_remix_1_ok[];
+extern const char text_remix_1_try_again[];
+extern const char text_remix_desc[];
+extern const char text_remix_1_name[];
 
 extern const char text_bon_dance_superb[];
 extern const char text_bon_dance_ok[];
@@ -229,11 +229,11 @@ extern const char text_sneaky_spirits_try_again[];
 extern const char text_sneaky_spirits_desc[];
 extern const char text_sneaky_spirits_name[];
 
-extern const char text_ninja_bodyguard_2_superb[];
-extern const char text_ninja_bodyguard_2_ok[];
-extern const char text_ninja_bodyguard_2_try_again[];
-extern const char text_ninja_bodyguard_2_desc[];
-extern const char text_ninja_bodyguard_2_name[];
+extern const char text_ninja_reincarnate_superb[];
+extern const char text_ninja_reincarnate_ok[];
+extern const char text_ninja_reincarnate_try_again[];
+extern const char text_ninja_reincarnate_desc[];
+extern const char text_ninja_reincarnate_name[];
 
 extern const char text_ninja_bodyguard_superb[];
 extern const char text_ninja_bodyguard_ok[];

@@ -154,7 +154,7 @@ const Palette showtime_bg_pal[] = {
 };
 
 // [D_088cbb2c] Showtime (Remix 3) BG Palette
-const Palette showtime_remix3_bg_pal[] = {
+const Palette showtime_remix_3_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00D050),
         /* 01 */ TO_RGB555(0x000000),

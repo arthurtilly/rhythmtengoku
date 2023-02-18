@@ -154,7 +154,7 @@ const Palette space_dance_bg_pal[] = {
 };
 
 // [D_08912cfc] Space Dance (Remix 3) BG Palette
-const Palette space_dance_remix3_bg_pal[] = {
+const Palette space_dance_remix_3_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x0000D0),
         /* 01 */ TO_RGB555(0x000000),

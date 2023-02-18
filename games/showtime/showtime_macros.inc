@@ -24,7 +24,7 @@
 .endm
 
 @ Load Game: Showtime (Remix 3)
-.macro load_showtime_remix3
+.macro load_showtime_remix_3
     load_showtime_labels
     load_game showtime_engine, 1
 .endm

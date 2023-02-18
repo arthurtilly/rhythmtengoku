@@ -7,19 +7,19 @@
 extern const struct CompressedGraphics D_08c20f8c;
 extern const struct CompressedGraphics D_08c21254;
 extern const struct CompressedGraphics D_08c209cc;
-extern const Palette prologue_rap_women_pal[];
+extern const Palette rap_women_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ece80] Buffered Textures List
-const struct CompressedGraphics *const prologue_rap_women_buffered_textures[] = {
+const struct CompressedGraphics *const rap_women_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ece84] Graphics Table
-const struct GraphicsTable prologue_rap_women_gfx_table[] = {
+const struct GraphicsTable rap_women_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c20f8c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -36,12 +36,12 @@ const struct GraphicsTable prologue_rap_women_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ prologue_rap_women_pal,
+        /* Src.  */ rap_women_prologue_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ prologue_rap_women_pal,
+        /* Src.  */ rap_women_prologue_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -49,18 +49,18 @@ const struct GraphicsTable prologue_rap_women_gfx_table[] = {
 };
 
 // [D_089ececc] Engine Events
-const EngineEvent prologue_rap_women_engine_events[] = {
+const EngineEvent rap_women_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_0804712c
 };
 
 // [D_089eced0] Prologue (Rap Women) Game Engine
-const struct GameEngine D_089eced0 = {
-    /* Size in Memory */ sizeof(struct PrologueRapWomenInfo),
+const struct GameEngine rap_women_prologue_engine = {
+    /* Size in Memory */ sizeof(struct RapWomenPrologueInfo),
     /* Start Engine   */ func_080470d0,
     /* Update Engine  */ func_08047130,
     /* Stop Engine    */ func_08047134,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
-    /* Engine Events  */ prologue_rap_women_engine_events,
+    /* Engine Events  */ rap_women_prologue_engine_events,
     /* Input Event    */ NULL
 };

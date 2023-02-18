@@ -8,7 +8,7 @@
 @ Prologue (Rap Men) - Script
 glabel D_089ecdb4
     set_game_fade_in_time 8
-    load_game D_089ecd94, 0
+    load_game rap_men_prologue_engine, 0
     run stop_all_soundplayers, 0
     play_sfx s_jingle_rap_seqData
     rest 24

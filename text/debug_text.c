@@ -115,7 +115,7 @@ const char text_debug_menu_bouncy_road_2[] = "ホッピングロード　２";
 const char text_debug_menu_bouncy_road[] = "ホッピングロード";
 
 // Ninja Bodyguard 2
-const char text_debug_menu_ninja_bodyguard_2[] = "ニンジャ　２";
+const char text_debug_menu_ninja_reincarnate[] = "ニンジャ　２";
 
 // Ninja Bodyguard
 const char text_debug_menu_ninja_bodyguard[] = "ニンジャ";
@@ -307,28 +307,28 @@ const char text_debug_menu_bon_dance[] = "ボンダンス";
 const char text_debug_menu_bon_odori[] = "ぼんおどり";
 
 // Remix 1
-const char text_debug_menu_remix1[] = "リミックス　１";
+const char text_debug_menu_remix_1[] = "リミックス　１";
 
 // Remix 2
-const char text_debug_menu_remix2[] = "リミックス　２";
+const char text_debug_menu_remix_2[] = "リミックス　２";
 
 // Remix 3
-const char text_debug_menu_remix3[] = "リミックス　３";
+const char text_debug_menu_remix_3[] = "リミックス　３";
 
 // Remix 4
-const char text_debug_menu_remix4[] = "リミックス　４";
+const char text_debug_menu_remix_4[] = "リミックス　４";
 
 // Remix 5
-const char text_debug_menu_remix5[] = "リミックス　５";
+const char text_debug_menu_remix_5[] = "リミックス　５";
 
 // Remix 6
-const char text_debug_menu_remix6[] = "リミックス　６";
+const char text_debug_menu_remix_6[] = "リミックス　６";
 
 // Remix 7
-const char text_debug_menu_remix7[] = "リミックス　７";
+const char text_debug_menu_remix_7[] = "リミックス　７";
 
 // Remix 8
-const char text_debug_menu_remix8[] = "リミックス　８";
+const char text_debug_menu_remix_8[] = "リミックス　８";
 
 // Mr. Upbeat
 const char text_debug_menu_mr_upbeat[] = "ウラおとこ";

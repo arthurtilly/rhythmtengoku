@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct PrologueKarateManInfo *)D_030055d0)
+#define gPrologueInfo ((struct KarateManPrologueInfo *)D_030055d0)
 
 
   //  //  //  PROLOGUE: KARATE MAN  //  //  //

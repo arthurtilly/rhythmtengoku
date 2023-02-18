@@ -8,7 +8,7 @@
 @ Prologue (Tap Trial 2) - Script
 glabel D_089ed724
     set_game_fade_in_time 8
-    load_game D_089ed704, 0
+    load_game tap_trial_2_prologue_engine, 0
     run stop_all_soundplayers, 0
     rest 24
     play_sfx s_jingle_tap_seqData

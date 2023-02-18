@@ -2,14 +2,14 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start ninja_engine_start \n\
+thumb_func_start ninja_bodyguard_engine_start \n\
 /* 0803cbe8 */ PUSH {R4-R6, LR} \n\
 /* 0803cbea */ SUB SP, 0x14 \n\
 /* 0803cbec */ LDR R6, =D_030055d0 \n\
 /* 0803cbee */ LDR R1, [R6] \n\
 /* 0803cbf0 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0803cbf2 */ STRB R0, [R1] \n\
-/* 0803cbf4 */ BL ninja_init_gfx1 \n\
+/* 0803cbf4 */ BL ninja_bodyguard_init_gfx1 \n\
 /* 0803cbf8 */ BL scene_show_obj_layer \n\
 /* 0803cbfc */ STR R4, [SP] \n\
 /* 0803cbfe */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\

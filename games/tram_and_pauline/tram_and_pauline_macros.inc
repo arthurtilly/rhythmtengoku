@@ -28,7 +28,7 @@
 .endm
 
 @ Load Game: Tram & Pauline (Remix 3)
-.macro load_tram_and_pauline_remix3
+.macro load_tram_and_pauline_remix_3
     load_tram_and_pauline_labels
     load_game tram_and_pauline_engine, 2
 .endm

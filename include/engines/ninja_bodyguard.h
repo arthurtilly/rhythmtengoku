@@ -22,7 +22,7 @@ struct SpriteVector3 {
 // Engine Macros/Enums:
 enum NinjaBodyguardVersionsEnum {
     ENGINE_VER_NINJA_BODYGUARD,
-    ENGINE_VER_NINJA_BODYGUARD_2
+    ENGINE_VER_NINJA_REINCARNATE
 };
 
 enum NinjaBodyguardAnimationsEnum {
@@ -65,10 +65,10 @@ enum NinjaBodyguardAnimationsEnum {
 
 
 // Engine Definition Data:
-extern const struct Animation *const *const ninja_anim_table[];
+extern const struct Animation *const *const ninja_bodyguard_anim_table[];
 extern const struct SpriteVector3 D_089e69cc[];
-extern const struct CompressedGraphics *const ninja_buffered_textures[];
-extern const struct GraphicsTable *const ninja_gfx_tables[];
+extern const struct CompressedGraphics *const ninja_bodyguard_buffered_textures[];
+extern const struct GraphicsTable *const ninja_bodyguard_gfx_tables[];
 
 
 // Functions:
@@ -107,21 +107,21 @@ extern void func_0803c9f8(); // Engine Event 00 (?)
 extern void func_0803ca8c(); // Engine Event 01 (?)
 extern void func_0803cad0(); // Engine Event 02 (?)
 extern void func_0803cb0c(); // Engine Event 0A (?)
-extern void ninja_init_gfx3(void); // Graphics Init. 3
-extern void ninja_init_gfx2(void); // Graphics Init. 2
-extern void ninja_init_gfx1(void); // Graphics Init. 1
-extern void ninja_engine_start(u32 version); // Game Engine Start
-extern void ninja_engine_event_stub(void); // Engine Event 12 (STUB)
+extern void ninja_bodyguard_init_gfx3(void); // Graphics Init. 3
+extern void ninja_bodyguard_init_gfx2(void); // Graphics Init. 2
+extern void ninja_bodyguard_init_gfx1(void); // Graphics Init. 1
+extern void ninja_bodyguard_engine_start(u32 version); // Game Engine Start
+extern void ninja_bodyguard_engine_event_stub(void); // Engine Event 12 (STUB)
 extern void func_0803ccb4(); // Engine Event 0E (?)
 extern void func_0803cce0(); // Engine Event 0F (?)
-extern void ninja_engine_update(void); // Game Engine Update
-extern void ninja_engine_stop(void); // Game Engine Stop
-extern void ninja_cue_spawn(struct Cue *, struct NinjaBodyguardCue *, u32 unused); // Cue - Spawn
-extern u32  ninja_cue_update(struct Cue *, struct NinjaBodyguardCue *, u32 runningTime, u32 duration); // Cue - Update
-extern void ninja_cue_despawn(struct Cue *, struct NinjaBodyguardCue *); // Cue - Despawn
-extern void ninja_cue_hit(struct Cue *, struct NinjaBodyguardCue *, u32 pressed, u32 released); // Cue - Hit
-extern void ninja_cue_barely(struct Cue *, struct NinjaBodyguardCue *, u32 pressed, u32 released); // Cue - Barely
-extern void ninja_cue_miss(struct Cue *, struct NinjaBodyguardCue *); // Cue - Miss
-extern void ninja_input_event(u32 pressed, u32 released); // Input Event
-extern void ninja_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
-extern void ninja_common_display_text(void); // Common Event 1 (Display Text, Unimplemented)
+extern void ninja_bodyguard_engine_update(void); // Game Engine Update
+extern void ninja_bodyguard_engine_stop(void); // Game Engine Stop
+extern void ninja_bodyguard_cue_spawn(struct Cue *, struct NinjaBodyguardCue *, u32 unused); // Cue - Spawn
+extern u32  ninja_bodyguard_cue_update(struct Cue *, struct NinjaBodyguardCue *, u32 runningTime, u32 duration); // Cue - Update
+extern void ninja_bodyguard_cue_despawn(struct Cue *, struct NinjaBodyguardCue *); // Cue - Despawn
+extern void ninja_bodyguard_cue_hit(struct Cue *, struct NinjaBodyguardCue *, u32 pressed, u32 released); // Cue - Hit
+extern void ninja_bodyguard_cue_barely(struct Cue *, struct NinjaBodyguardCue *, u32 pressed, u32 released); // Cue - Barely
+extern void ninja_bodyguard_cue_miss(struct Cue *, struct NinjaBodyguardCue *); // Cue - Miss
+extern void ninja_bodyguard_input_event(u32 pressed, u32 released); // Input Event
+extern void ninja_bodyguard_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
+extern void ninja_bodyguard_common_display_text(void); // Common Event 1 (Display Text, Unimplemented)

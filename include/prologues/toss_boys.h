@@ -8,15 +8,15 @@
 
 
 // Types:
-struct PrologueTossBoysInfo {
+struct TossBoysPrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_toss_boys_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_toss_boys_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_toss_boys_title[]; // Animation: Text (Toss Boys)
+extern const struct CompressedGraphics *const toss_boys_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable toss_boys_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_toss_boys_prologue_title[]; // Animation: Text (Toss Boys)
 extern const struct SequenceData s_jingle_toss_seqData;
 
 // Functions:

@@ -47,7 +47,7 @@
 .endm
 
 @ Load Game: Toss Boys (Remix 5)
-.macro load_toss_boys_remix5
+.macro load_toss_boys_remix_5
     load_toss_boys_labels
     load_game toss_boys_engine, 1
 .endm

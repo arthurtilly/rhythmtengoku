@@ -7,19 +7,19 @@
 extern const struct CompressedGraphics D_08bf0eb8;
 extern const struct CompressedGraphics D_08bf12dc;
 extern const struct CompressedGraphics D_08bef660;
-extern const Palette prologue_fireworks_pal[];
+extern const Palette fireworks_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089eae84] Buffered Textures List
-const struct CompressedGraphics *const prologue_fireworks_buffered_textures[] = {
+const struct CompressedGraphics *const fireworks_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eae88] Graphics Table
-const struct GraphicsTable prologue_fireworks_gfx_table[] = {
+const struct GraphicsTable fireworks_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bf0eb8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -36,12 +36,12 @@ const struct GraphicsTable prologue_fireworks_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ prologue_fireworks_pal,
+        /* Src.  */ fireworks_prologue_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ prologue_fireworks_pal,
+        /* Src.  */ fireworks_prologue_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -49,18 +49,18 @@ const struct GraphicsTable prologue_fireworks_gfx_table[] = {
 };
 
 // [D_089eaed0] Engine Events
-const EngineEvent prologue_fireworks_engine_events[] = {
+const EngineEvent fireworks_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08045dbc
 };
 
 // [D_089eaed4] Prologue (Fireworks) Game Engine
-const struct GameEngine D_089eaed4 = {
-    /* Size in Memory */ sizeof(struct PrologueFireworksInfo),
+const struct GameEngine fireworks_prologue_engine = {
+    /* Size in Memory */ sizeof(struct FireworksPrologueInfo),
     /* Start Engine   */ func_08045d60,
     /* Update Engine  */ func_08045dc0,
     /* Stop Engine    */ func_08045dc4,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
-    /* Engine Events  */ prologue_fireworks_engine_events,
+    /* Engine Events  */ fireworks_prologue_engine_events,
     /* Input Event    */ NULL
 };

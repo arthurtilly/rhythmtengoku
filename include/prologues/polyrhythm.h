@@ -8,15 +8,15 @@
 
 
 // Types:
-struct ProloguePolyrhythmInfo {
+struct PolyrhythmPrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_polyrhythm_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_polyrhythm_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_polyrhythm_title[]; // Animation: Text (Polyrhythm)
+extern const struct CompressedGraphics *const polyrhythm_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable polyrhythm_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_polyrhythm_prologue_title[]; // Animation: Text (Polyrhythm)
 extern const struct SequenceData s_jingle_poli_seqData;
 
 // Functions:

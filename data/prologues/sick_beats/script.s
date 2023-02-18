@@ -8,7 +8,7 @@
 @ Prologue (Sick Beats) - Script
 glabel D_089edd64
     set_game_fade_in_time 8
-    load_game D_089edd44, 0
+    load_game sick_beats_prologue_engine, 0
     run stop_all_soundplayers, 0
     play_sfx s_jingle_ghost_seqData
     rest 24

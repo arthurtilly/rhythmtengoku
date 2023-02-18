@@ -13,7 +13,7 @@ extern const struct CompressedGraphics D_08c57650;
 extern const struct CompressedGraphics D_08c577d8;
 extern const Palette showtime_bg_pal[];
 extern const Palette showtime_obj_pal[];
-extern const Palette showtime_remix3_bg_pal[];
+extern const Palette showtime_remix_3_bg_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
@@ -65,7 +65,7 @@ const struct GraphicsTable showtime_gfx_table[] = {
 };
 
 // [D_089e38b0] Graphics Table (Remix 3)
-const struct GraphicsTable showtime_remix3_gfx_table[] = {
+const struct GraphicsTable showtime_remix_3_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c56bd8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -87,7 +87,7 @@ const struct GraphicsTable showtime_remix3_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ showtime_remix3_bg_pal,
+        /* Src.  */ showtime_remix_3_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -107,7 +107,7 @@ const struct GraphicsTable showtime_remix3_gfx_table[] = {
 // [D_089e3910] Graphics Table Index
 const struct GraphicsTable *const showtime_gfx_tables[] = {
     /* 0x00 */ showtime_gfx_table,
-    /* 0x01 */ showtime_remix3_gfx_table
+    /* 0x01 */ showtime_remix_3_gfx_table
 };
 
 

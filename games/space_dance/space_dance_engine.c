@@ -77,7 +77,7 @@ extern const Palette cosmic_dance_bg_pal[];
 extern const Palette cosmic_dance_obj_pal[];
 extern const Palette space_dance_bg_pal[];
 extern const Palette space_dance_obj_pal[];
-extern const Palette space_dance_remix3_bg_pal[];
+extern const Palette space_dance_remix_3_bg_pal[];
 
 extern const struct SequenceData s_f_space_dancer_swing_seqData;
 extern const struct SequenceData s_f_space_dancer_pa_seqData;
@@ -237,7 +237,7 @@ const struct GraphicsTable cosmic_dance_gfx_table[] = {
 };
 
 // [D_089e6e2c] Graphics Table (Remix 3)
-const struct GraphicsTable space_dance_remix3_gfx_table[] = {
+const struct GraphicsTable space_dance_remix_3_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ce3978,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -254,7 +254,7 @@ const struct GraphicsTable space_dance_remix3_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ space_dance_remix3_bg_pal,
+        /* Src.  */ space_dance_remix_3_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -275,7 +275,7 @@ const struct GraphicsTable space_dance_remix3_gfx_table[] = {
 const struct GraphicsTable *const space_dance_gfx_tables[] = {
     /* 0x00 */ space_dance_gfx_table,
     /* 0x01 */ cosmic_dance_gfx_table,
-    /* 0x02 */ space_dance_remix3_gfx_table
+    /* 0x02 */ space_dance_remix_3_gfx_table
 };
 
 

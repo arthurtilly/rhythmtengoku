@@ -8,7 +8,7 @@
 @ Prologue (Quiz Show) - Script
 glabel D_089ebbec
     set_game_fade_in_time 8
-    load_game D_089ebbcc, 0
+    load_game quiz_show_prologue_engine, 0
     run stop_all_soundplayers, 0
     rest 24
     play_sfx s_jingle_quiz_seqData

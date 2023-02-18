@@ -5,112 +5,112 @@
 
 
 extern const struct Animation anim_toss_boys_beat_r[];
-extern const struct Animation anim_toss_remix5_beat_r[];
+extern const struct Animation anim_toss_remix_5_beat_r[];
 extern const struct Animation anim_toss_boys_2_beat_r[];
 extern const struct Animation anim_toss_boys_beat_b[];
-extern const struct Animation anim_toss_remix5_beat_b[];
+extern const struct Animation anim_toss_remix_5_beat_b[];
 extern const struct Animation anim_toss_boys_2_beat_b[];
 extern const struct Animation anim_toss_boys_beat_y[];
-extern const struct Animation anim_toss_remix5_beat_y[];
+extern const struct Animation anim_toss_remix_5_beat_y[];
 extern const struct Animation anim_toss_boys_2_beat_y[];
 extern const struct Animation anim_toss_boys_pass_r[];
-extern const struct Animation anim_toss_remix5_pass_r[];
+extern const struct Animation anim_toss_remix_5_pass_r[];
 extern const struct Animation anim_toss_boys_2_pass_r[];
 extern const struct Animation anim_toss_boys_pass_b[];
-extern const struct Animation anim_toss_remix5_pass_b[];
+extern const struct Animation anim_toss_remix_5_pass_b[];
 extern const struct Animation anim_toss_boys_2_pass_b[];
 extern const struct Animation anim_toss_boys_pass_y[];
-extern const struct Animation anim_toss_remix5_pass_y[];
+extern const struct Animation anim_toss_remix_5_pass_y[];
 extern const struct Animation anim_toss_boys_2_pass_y[];
 extern const struct Animation anim_toss_boys_dispenser_close[];
-extern const struct Animation anim_toss_remix5_dispenser_close[];
+extern const struct Animation anim_toss_remix_5_dispenser_close[];
 extern const struct Animation anim_toss_boys_2_dispenser_close[];
 extern const struct Animation anim_toss_boys_ball1[];
-extern const struct Animation anim_toss_remix5_ball1[];
+extern const struct Animation anim_toss_remix_5_ball1[];
 extern const struct Animation anim_toss_boys_2_ball1[];
 extern const struct Animation anim_toss_boys_ball3[];
-extern const struct Animation anim_toss_remix5_ball3[];
+extern const struct Animation anim_toss_remix_5_ball3[];
 extern const struct Animation anim_toss_boys_2_ball3[];
 extern const struct Animation anim_toss_boys_ball2[];
-extern const struct Animation anim_toss_remix5_ball2[];
+extern const struct Animation anim_toss_remix_5_ball2[];
 extern const struct Animation anim_toss_boys_2_ball2[];
 extern const struct Animation anim_toss_boys_ball_wobble[];
-extern const struct Animation anim_toss_remix5_ball_wobble[];
+extern const struct Animation anim_toss_remix_5_ball_wobble[];
 extern const struct Animation anim_toss_boys_2_ball_wobble[];
 extern const struct Animation anim_toss_boys_miss_r[];
-extern const struct Animation anim_toss_remix5_miss_r[];
+extern const struct Animation anim_toss_remix_5_miss_r[];
 extern const struct Animation anim_toss_boys_2_miss_r[];
 extern const struct Animation anim_toss_boys_miss_b[];
-extern const struct Animation anim_toss_remix5_miss_b[];
+extern const struct Animation anim_toss_remix_5_miss_b[];
 extern const struct Animation anim_toss_boys_2_miss_b[];
 extern const struct Animation anim_toss_boys_miss_y[];
-extern const struct Animation anim_toss_remix5_miss_y[];
+extern const struct Animation anim_toss_remix_5_miss_y[];
 extern const struct Animation anim_toss_boys_2_miss_y[];
 extern const struct Animation anim_toss_boys_super_pass_r[];
-extern const struct Animation anim_toss_remix5_super_pass_r[];
+extern const struct Animation anim_toss_remix_5_super_pass_r[];
 extern const struct Animation anim_toss_boys_2_super_pass_r[];
 extern const struct Animation anim_toss_boys_super_pass_b[];
-extern const struct Animation anim_toss_remix5_super_pass_b[];
+extern const struct Animation anim_toss_remix_5_super_pass_b[];
 extern const struct Animation anim_toss_boys_2_super_pass_b[];
 extern const struct Animation anim_toss_boys_super_pass_y[];
-extern const struct Animation anim_toss_remix5_super_pass_y[];
+extern const struct Animation anim_toss_remix_5_super_pass_y[];
 extern const struct Animation anim_toss_boys_2_super_pass_y[];
 extern const struct Animation anim_toss_boys_pop_effect[];
-extern const struct Animation anim_toss_remix5_pop_effect[];
+extern const struct Animation anim_toss_remix_5_pop_effect[];
 extern const struct Animation anim_toss_boys_2_pop_effect[];
 extern const struct Animation anim_toss_boys_super_beat_r[];
-extern const struct Animation anim_toss_remix5_super_beat_r[];
+extern const struct Animation anim_toss_remix_5_super_beat_r[];
 extern const struct Animation anim_toss_boys_2_super_beat_r[];
 extern const struct Animation anim_toss_boys_super_beat_b[];
-extern const struct Animation anim_toss_remix5_super_beat_b[];
+extern const struct Animation anim_toss_remix_5_super_beat_b[];
 extern const struct Animation anim_toss_boys_2_super_beat_b[];
 extern const struct Animation anim_toss_boys_super_beat_y[];
-extern const struct Animation anim_toss_remix5_super_beat_y[];
+extern const struct Animation anim_toss_remix_5_super_beat_y[];
 extern const struct Animation anim_toss_boys_2_super_beat_y[];
 extern const struct Animation anim_toss_boys_catch_r[];
-extern const struct Animation anim_toss_remix5_catch_r[];
+extern const struct Animation anim_toss_remix_5_catch_r[];
 extern const struct Animation anim_toss_boys_2_catch_r[];
 extern const struct Animation anim_toss_boys_catch_b[];
-extern const struct Animation anim_toss_remix5_catch_b[];
+extern const struct Animation anim_toss_remix_5_catch_b[];
 extern const struct Animation anim_toss_boys_2_catch_b[];
 extern const struct Animation anim_toss_boys_catch_y[];
-extern const struct Animation anim_toss_remix5_catch_y[];
+extern const struct Animation anim_toss_remix_5_catch_y[];
 extern const struct Animation anim_toss_boys_2_catch_y[];
 extern const struct Animation anim_toss_boys_ready_r[];
-extern const struct Animation anim_toss_remix5_ready_r[];
+extern const struct Animation anim_toss_remix_5_ready_r[];
 extern const struct Animation anim_toss_boys_2_ready_r[];
 extern const struct Animation anim_toss_boys_ready_b[];
-extern const struct Animation anim_toss_remix5_ready_b[];
+extern const struct Animation anim_toss_remix_5_ready_b[];
 extern const struct Animation anim_toss_boys_2_ready_b[];
 extern const struct Animation anim_toss_boys_ready_y[];
-extern const struct Animation anim_toss_remix5_ready_y[];
+extern const struct Animation anim_toss_remix_5_ready_y[];
 extern const struct Animation anim_toss_boys_2_ready_y[];
 extern const struct Animation anim_toss_boys_pop_r[];
-extern const struct Animation anim_toss_remix5_pop_r[];
+extern const struct Animation anim_toss_remix_5_pop_r[];
 extern const struct Animation anim_toss_boys_2_pop_r[];
 extern const struct Animation anim_toss_boys_pop_b[];
-extern const struct Animation anim_toss_remix5_pop_b[];
+extern const struct Animation anim_toss_remix_5_pop_b[];
 extern const struct Animation anim_toss_boys_2_pop_b[];
 extern const struct Animation anim_toss_boys_pop_y[];
-extern const struct Animation anim_toss_remix5_pop_y[];
+extern const struct Animation anim_toss_remix_5_pop_y[];
 extern const struct Animation anim_toss_boys_2_pop_y[];
 extern const struct Animation anim_toss_boys_barely_r[];
-extern const struct Animation anim_toss_remix5_barely_r[];
+extern const struct Animation anim_toss_remix_5_barely_r[];
 extern const struct Animation anim_toss_boys_2_barely_r[];
 extern const struct Animation anim_toss_boys_barely_b[];
-extern const struct Animation anim_toss_remix5_barely_b[];
+extern const struct Animation anim_toss_remix_5_barely_b[];
 extern const struct Animation anim_toss_boys_2_barely_b[];
 extern const struct Animation anim_toss_boys_barely_y[];
-extern const struct Animation anim_toss_remix5_barely_y[];
+extern const struct Animation anim_toss_remix_5_barely_y[];
 extern const struct Animation anim_toss_boys_2_barely_y[];
 extern const struct Animation anim_toss_boys_arrow_r[];
-extern const struct Animation anim_toss_remix5_arrow_r[];
+extern const struct Animation anim_toss_remix_5_arrow_r[];
 extern const struct Animation anim_toss_boys_2_arrow_r[];
 extern const struct Animation anim_toss_boys_arrow_b[];
-extern const struct Animation anim_toss_remix5_arrow_b[];
+extern const struct Animation anim_toss_remix_5_arrow_b[];
 extern const struct Animation anim_toss_boys_2_arrow_b[];
 extern const struct Animation anim_toss_boys_arrow_y[];
-extern const struct Animation anim_toss_remix5_arrow_y[];
+extern const struct Animation anim_toss_remix_5_arrow_y[];
 extern const struct Animation anim_toss_boys_2_arrow_y[];
 
 extern const struct SequenceData s_toss_red_blue1_seqData;
@@ -168,8 +168,8 @@ extern const Palette toss_boys_bg_pal[];
 extern const Palette toss_boys_obj_pal[];
 extern const Palette toss_boys_2_bg_pal[];
 extern const Palette toss_boys_2_obj_pal[];
-extern const Palette toss_boys_remix5_bg_pal[];
-extern const Palette toss_boys_remix5_obj_pal[];
+extern const Palette toss_boys_remix_5_bg_pal[];
+extern const Palette toss_boys_remix_5_obj_pal[];
 
 
   //  //  //  ANIMATION DATA  //  //  //
@@ -177,42 +177,42 @@ extern const Palette toss_boys_remix5_obj_pal[];
 
 // [D_089e8150] All Animations
 const struct Animation *const toss_boys_anim[][3] = {
-    /* 0x00 */ { anim_toss_boys_beat_r, anim_toss_remix5_beat_r, anim_toss_boys_2_beat_r },
-    /* 0x01 */ { anim_toss_boys_beat_b, anim_toss_remix5_beat_b, anim_toss_boys_2_beat_b },
-    /* 0x02 */ { anim_toss_boys_beat_y, anim_toss_remix5_beat_y, anim_toss_boys_2_beat_y },
-    /* 0x03 */ { anim_toss_boys_pass_r, anim_toss_remix5_pass_r, anim_toss_boys_2_pass_r },
-    /* 0x04 */ { anim_toss_boys_pass_b, anim_toss_remix5_pass_b, anim_toss_boys_2_pass_b },
-    /* 0x05 */ { anim_toss_boys_pass_y, anim_toss_remix5_pass_y, anim_toss_boys_2_pass_y },
-    /* 0x06 */ { anim_toss_boys_dispenser_close, anim_toss_remix5_dispenser_close, anim_toss_boys_2_dispenser_close },
-    /* 0x07 */ { anim_toss_boys_ball1, anim_toss_remix5_ball1, anim_toss_boys_2_ball1 },
-    /* 0x08 */ { anim_toss_boys_ball3, anim_toss_remix5_ball3, anim_toss_boys_2_ball3 },
-    /* 0x09 */ { anim_toss_boys_ball2, anim_toss_remix5_ball2, anim_toss_boys_2_ball2 },
-    /* 0x0A */ { anim_toss_boys_ball_wobble, anim_toss_remix5_ball_wobble, anim_toss_boys_2_ball_wobble },
-    /* 0x0B */ { anim_toss_boys_miss_r, anim_toss_remix5_miss_r, anim_toss_boys_2_miss_r },
-    /* 0x0C */ { anim_toss_boys_miss_b, anim_toss_remix5_miss_b, anim_toss_boys_2_miss_b },
-    /* 0x0D */ { anim_toss_boys_miss_y, anim_toss_remix5_miss_y, anim_toss_boys_2_miss_y },
-    /* 0x0E */ { anim_toss_boys_super_pass_r, anim_toss_remix5_super_pass_r, anim_toss_boys_2_super_pass_r },
-    /* 0x0F */ { anim_toss_boys_super_pass_b, anim_toss_remix5_super_pass_b, anim_toss_boys_2_super_pass_b },
-    /* 0x10 */ { anim_toss_boys_super_pass_y, anim_toss_remix5_super_pass_y, anim_toss_boys_2_super_pass_y },
-    /* 0x11 */ { anim_toss_boys_pop_effect, anim_toss_remix5_pop_effect, anim_toss_boys_2_pop_effect },
-    /* 0x12 */ { anim_toss_boys_super_beat_r, anim_toss_remix5_super_beat_r, anim_toss_boys_2_super_beat_r },
-    /* 0x13 */ { anim_toss_boys_super_beat_b, anim_toss_remix5_super_beat_b, anim_toss_boys_2_super_beat_b },
-    /* 0x14 */ { anim_toss_boys_super_beat_y, anim_toss_remix5_super_beat_y, anim_toss_boys_2_super_beat_y },
-    /* 0x15 */ { anim_toss_boys_catch_r, anim_toss_remix5_catch_r, anim_toss_boys_2_catch_r },
-    /* 0x16 */ { anim_toss_boys_catch_b, anim_toss_remix5_catch_b, anim_toss_boys_2_catch_b },
-    /* 0x17 */ { anim_toss_boys_catch_y, anim_toss_remix5_catch_y, anim_toss_boys_2_catch_y },
-    /* 0x18 */ { anim_toss_boys_ready_r, anim_toss_remix5_ready_r, anim_toss_boys_2_ready_r },
-    /* 0x19 */ { anim_toss_boys_ready_b, anim_toss_remix5_ready_b, anim_toss_boys_2_ready_b },
-    /* 0x1A */ { anim_toss_boys_ready_y, anim_toss_remix5_ready_y, anim_toss_boys_2_ready_y },
-    /* 0x1B */ { anim_toss_boys_pop_r, anim_toss_remix5_pop_r, anim_toss_boys_2_pop_r },
-    /* 0x1C */ { anim_toss_boys_pop_b, anim_toss_remix5_pop_b, anim_toss_boys_2_pop_b },
-    /* 0x1D */ { anim_toss_boys_pop_y, anim_toss_remix5_pop_y, anim_toss_boys_2_pop_y },
-    /* 0x1E */ { anim_toss_boys_barely_r, anim_toss_remix5_barely_r, anim_toss_boys_2_barely_r },
-    /* 0x1F */ { anim_toss_boys_barely_b, anim_toss_remix5_barely_b, anim_toss_boys_2_barely_b },
-    /* 0x20 */ { anim_toss_boys_barely_y, anim_toss_remix5_barely_y, anim_toss_boys_2_barely_y },
-    /* 0x21 */ { anim_toss_boys_arrow_r, anim_toss_remix5_arrow_r, anim_toss_boys_2_arrow_r },
-    /* 0x22 */ { anim_toss_boys_arrow_b, anim_toss_remix5_arrow_b, anim_toss_boys_2_arrow_b },
-    /* 0x23 */ { anim_toss_boys_arrow_y, anim_toss_remix5_arrow_y, anim_toss_boys_2_arrow_y }
+    /* 0x00 */ { anim_toss_boys_beat_r, anim_toss_remix_5_beat_r, anim_toss_boys_2_beat_r },
+    /* 0x01 */ { anim_toss_boys_beat_b, anim_toss_remix_5_beat_b, anim_toss_boys_2_beat_b },
+    /* 0x02 */ { anim_toss_boys_beat_y, anim_toss_remix_5_beat_y, anim_toss_boys_2_beat_y },
+    /* 0x03 */ { anim_toss_boys_pass_r, anim_toss_remix_5_pass_r, anim_toss_boys_2_pass_r },
+    /* 0x04 */ { anim_toss_boys_pass_b, anim_toss_remix_5_pass_b, anim_toss_boys_2_pass_b },
+    /* 0x05 */ { anim_toss_boys_pass_y, anim_toss_remix_5_pass_y, anim_toss_boys_2_pass_y },
+    /* 0x06 */ { anim_toss_boys_dispenser_close, anim_toss_remix_5_dispenser_close, anim_toss_boys_2_dispenser_close },
+    /* 0x07 */ { anim_toss_boys_ball1, anim_toss_remix_5_ball1, anim_toss_boys_2_ball1 },
+    /* 0x08 */ { anim_toss_boys_ball3, anim_toss_remix_5_ball3, anim_toss_boys_2_ball3 },
+    /* 0x09 */ { anim_toss_boys_ball2, anim_toss_remix_5_ball2, anim_toss_boys_2_ball2 },
+    /* 0x0A */ { anim_toss_boys_ball_wobble, anim_toss_remix_5_ball_wobble, anim_toss_boys_2_ball_wobble },
+    /* 0x0B */ { anim_toss_boys_miss_r, anim_toss_remix_5_miss_r, anim_toss_boys_2_miss_r },
+    /* 0x0C */ { anim_toss_boys_miss_b, anim_toss_remix_5_miss_b, anim_toss_boys_2_miss_b },
+    /* 0x0D */ { anim_toss_boys_miss_y, anim_toss_remix_5_miss_y, anim_toss_boys_2_miss_y },
+    /* 0x0E */ { anim_toss_boys_super_pass_r, anim_toss_remix_5_super_pass_r, anim_toss_boys_2_super_pass_r },
+    /* 0x0F */ { anim_toss_boys_super_pass_b, anim_toss_remix_5_super_pass_b, anim_toss_boys_2_super_pass_b },
+    /* 0x10 */ { anim_toss_boys_super_pass_y, anim_toss_remix_5_super_pass_y, anim_toss_boys_2_super_pass_y },
+    /* 0x11 */ { anim_toss_boys_pop_effect, anim_toss_remix_5_pop_effect, anim_toss_boys_2_pop_effect },
+    /* 0x12 */ { anim_toss_boys_super_beat_r, anim_toss_remix_5_super_beat_r, anim_toss_boys_2_super_beat_r },
+    /* 0x13 */ { anim_toss_boys_super_beat_b, anim_toss_remix_5_super_beat_b, anim_toss_boys_2_super_beat_b },
+    /* 0x14 */ { anim_toss_boys_super_beat_y, anim_toss_remix_5_super_beat_y, anim_toss_boys_2_super_beat_y },
+    /* 0x15 */ { anim_toss_boys_catch_r, anim_toss_remix_5_catch_r, anim_toss_boys_2_catch_r },
+    /* 0x16 */ { anim_toss_boys_catch_b, anim_toss_remix_5_catch_b, anim_toss_boys_2_catch_b },
+    /* 0x17 */ { anim_toss_boys_catch_y, anim_toss_remix_5_catch_y, anim_toss_boys_2_catch_y },
+    /* 0x18 */ { anim_toss_boys_ready_r, anim_toss_remix_5_ready_r, anim_toss_boys_2_ready_r },
+    /* 0x19 */ { anim_toss_boys_ready_b, anim_toss_remix_5_ready_b, anim_toss_boys_2_ready_b },
+    /* 0x1A */ { anim_toss_boys_ready_y, anim_toss_remix_5_ready_y, anim_toss_boys_2_ready_y },
+    /* 0x1B */ { anim_toss_boys_pop_r, anim_toss_remix_5_pop_r, anim_toss_boys_2_pop_r },
+    /* 0x1C */ { anim_toss_boys_pop_b, anim_toss_remix_5_pop_b, anim_toss_boys_2_pop_b },
+    /* 0x1D */ { anim_toss_boys_pop_y, anim_toss_remix_5_pop_y, anim_toss_boys_2_pop_y },
+    /* 0x1E */ { anim_toss_boys_barely_r, anim_toss_remix_5_barely_r, anim_toss_boys_2_barely_r },
+    /* 0x1F */ { anim_toss_boys_barely_b, anim_toss_remix_5_barely_b, anim_toss_boys_2_barely_b },
+    /* 0x20 */ { anim_toss_boys_barely_y, anim_toss_remix_5_barely_y, anim_toss_boys_2_barely_y },
+    /* 0x21 */ { anim_toss_boys_arrow_r, anim_toss_remix_5_arrow_r, anim_toss_boys_2_arrow_r },
+    /* 0x22 */ { anim_toss_boys_arrow_b, anim_toss_remix_5_arrow_b, anim_toss_boys_2_arrow_b },
+    /* 0x23 */ { anim_toss_boys_arrow_y, anim_toss_remix_5_arrow_y, anim_toss_boys_2_arrow_y }
 };
 
 // [D_089e8300] Animation Table
@@ -551,7 +551,7 @@ const struct GraphicsTable gfx_table_toss_boys[] = {
 };
 
 // [D_089e858c] Graphics Table (Remix 5)
-const struct GraphicsTable gfx_table_toss_boys_remix5[] = {
+const struct GraphicsTable gfx_table_toss_boys_remix_5[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cf961c,
         /* Dest. */ BG_TILESET_BASE(0x8000),
@@ -578,12 +578,12 @@ const struct GraphicsTable gfx_table_toss_boys_remix5[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ toss_boys_remix5_bg_pal,
+        /* Src.  */ toss_boys_remix_5_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ toss_boys_remix5_obj_pal,
+        /* Src.  */ toss_boys_remix_5_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -633,7 +633,7 @@ const struct GraphicsTable gfx_table_toss_boys_2[] = {
 // [D_089e864c] Graphics Table Index
 const struct GraphicsTable *const toss_boys_gfx_tables[] = {
     /* 0x00 */ gfx_table_toss_boys,
-    /* 0x01 */ gfx_table_toss_boys_remix5,
+    /* 0x01 */ gfx_table_toss_boys_remix_5,
     /* 0x02 */ gfx_table_toss_boys_2
 };
 

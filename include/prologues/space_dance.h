@@ -8,7 +8,7 @@
 
 
 // Types:
-struct PrologueSpaceDanceInfo {
+struct SpaceDancePrologueInfo {
     u8  ver;         // Value:  Version
     s16 textSprite;  // Sprite: Text
     s16 facesSprite; // Sprite: Faces
@@ -16,11 +16,11 @@ struct PrologueSpaceDanceInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_space_dance_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_space_dance_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_space_dance_title[]; // Animation: Text (Space Dance)
-extern const struct Animation anim_prologue_space_dance_faces[]; // Animation: Faces
-extern const struct Animation anim_prologue_space_dance_star[]; // Animation: Star
+extern const struct CompressedGraphics *const space_dance_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable space_dance_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_space_dance_prologue_title[]; // Animation: Text (Space Dance)
+extern const struct Animation anim_space_dance_prologue_faces[]; // Animation: Faces
+extern const struct Animation anim_space_dance_prologue_star[]; // Animation: Star
 extern const struct SequenceData s_jingle_handclap_seqData;
 
 // Functions:

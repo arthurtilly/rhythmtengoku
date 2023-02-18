@@ -8,15 +8,15 @@
 
 
 // Types:
-struct PrologueFireworksInfo {
+struct FireworksPrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_fireworks_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_fireworks_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_fireworks_title[]; // Animation: Text (Fireworks)
+extern const struct CompressedGraphics *const fireworks_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable fireworks_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_fireworks_prologue_title[]; // Animation: Text (Fireworks)
 extern const struct SequenceData s_jingle_bon_seqData;
 
 // Functions:

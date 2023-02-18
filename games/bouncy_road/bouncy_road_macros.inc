@@ -25,7 +25,7 @@
 .endm
 
 @ Load Game: Bouncy Road (Remix 5)
-.macro load_bouncy_road_remix5
+.macro load_bouncy_road_remix_5
     load_bouncy_road_labels
     load_game bouncy_road_engine, 1
 .endm

@@ -11,8 +11,8 @@ extern const struct CompressedGraphics D_08c58738;
 extern const struct CompressedGraphics D_08c58940;
 extern const Palette bouncy_road_pal[];
 extern const Palette bouncy_road_2_pal[];
-extern const Palette bouncy_road_remix5_bg_pal[];
-extern const Palette bouncy_road_remix5_obj_pal[];
+extern const Palette bouncy_road_remix_5_bg_pal[];
+extern const Palette bouncy_road_remix_5_obj_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
@@ -50,7 +50,7 @@ const struct GraphicsTable bouncy_road_1_gfx_table[] = {
 };
 
 // [D_089e3c40] Graphics Table (Remix 5)
-const struct GraphicsTable bouncy_road_remix5_gfx_table[] = {
+const struct GraphicsTable bouncy_road_remix_5_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c583bc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -77,12 +77,12 @@ const struct GraphicsTable bouncy_road_remix5_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ bouncy_road_remix5_bg_pal,
+        /* Src.  */ bouncy_road_remix_5_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ bouncy_road_remix5_obj_pal,
+        /* Src.  */ bouncy_road_remix_5_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -112,7 +112,7 @@ const struct GraphicsTable bouncy_road_2_gfx_table[] = {
 // [D_089e3cd0] Graphics Table Index
 const struct GraphicsTable *const bouncy_road_gfx_tables[] = {
     /* 0x00 */ bouncy_road_1_gfx_table,
-    /* 0x01 */ bouncy_road_remix5_gfx_table,
+    /* 0x01 */ bouncy_road_remix_5_gfx_table,
     /* 0x02 */ bouncy_road_2_gfx_table
 };
 

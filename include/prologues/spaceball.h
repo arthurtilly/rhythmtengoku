@@ -8,15 +8,15 @@
 
 
 // Types:
-struct PrologueSpaceballInfo {
+struct SpaceballPrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_spaceball_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_spaceball_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_spaceball_title[]; // Animation: Text (Spaceball)
+extern const struct CompressedGraphics *const spaceball_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable spaceball_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_spaceball_prologue_title[]; // Animation: Text (Spaceball)
 extern const struct SequenceData s_jingle_baseball_seqData;
 
 // Functions:

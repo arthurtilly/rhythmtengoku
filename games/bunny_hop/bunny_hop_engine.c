@@ -18,7 +18,7 @@ extern const struct CompressedGraphics D_08c7fefc;
 extern const struct CompressedGraphics D_08c7fbb8;
 
 extern const Palette bunny_hop_pal[];
-extern const Palette bunny_hop_remix3_pal[];
+extern const Palette bunny_hop_remix_3_pal[];
 
 extern const struct SequenceData s_rabbit_c7_seqData;
 extern const struct SequenceData s_rabbit_c7_brass_seqData;
@@ -89,7 +89,7 @@ const struct GraphicsTable bunny_hop_gfx_table[] = {
 };
 
 // [D_089e5f50] Graphics Table (Remix 3)
-const struct GraphicsTable bunny_hop_remix3_gfx_table[] = {
+const struct GraphicsTable bunny_hop_remix_3_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c7fda8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -116,12 +116,12 @@ const struct GraphicsTable bunny_hop_remix3_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ bunny_hop_remix3_pal,
+        /* Src.  */ bunny_hop_remix_3_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ bunny_hop_remix3_pal,
+        /* Src.  */ bunny_hop_remix_3_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -138,7 +138,7 @@ const struct GraphicsTable *const bunny_hop_gfx_tables[] = {
     /* 0x00 */ bunny_hop_gfx_table,
     /* 0x01 */ bunny_hop_gfx_table,
     /* 0x02 */ bunny_hop_gfx_table,
-    /* 0x03 */ bunny_hop_remix3_gfx_table
+    /* 0x03 */ bunny_hop_remix_3_gfx_table
 };
 
 
@@ -181,7 +181,7 @@ const struct SequenceData *const bunny_hop_bgm_drum_fills[] = {
 // [D_089e6030] Remix 3 Transition Palettes
 const Palette *const bunny_hop_palettes[] = {
     /* 0x00 */ bunny_hop_pal,
-    /* 0x01 */ bunny_hop_remix3_pal,
+    /* 0x01 */ bunny_hop_remix_3_pal,
 };
 
 

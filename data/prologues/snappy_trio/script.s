@@ -8,7 +8,7 @@
 @ Prologue (The Snappy Trio) - Script
 glabel D_089eb238
     set_game_fade_in_time 8
-    load_game D_089eb218, 0
+    load_game snappy_trio_prologue_engine, 0
     run stop_all_soundplayers, 0
     rest 24
     play_sfx s_jingle_handclap_seqData

@@ -8,7 +8,7 @@
 @ Prologue (Toss Boys) - Script
 glabel D_089ed890
     set_game_fade_in_time 8
-    load_game D_089ed870, 0
+    load_game toss_boys_prologue_engine, 0
     run stop_all_soundplayers, 0
     play_sfx s_jingle_toss_seqData
     rest 24

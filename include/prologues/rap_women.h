@@ -8,15 +8,15 @@
 
 
 // Types:
-struct PrologueRapWomenInfo {
+struct RapWomenPrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_rap_women_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_rap_women_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_rap_women_title[]; // Animation: Text (Rap Women)
+extern const struct CompressedGraphics *const rap_women_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable rap_women_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_rap_women_prologue_title[]; // Animation: Text (Rap Women)
 extern const struct SequenceData s_jingle_rap_seqData;
 
 // Functions:

@@ -7,8 +7,8 @@
 extern const struct CompressedGraphics D_08bea934;
 extern const struct CompressedGraphics D_08beab8c;
 extern const struct CompressedGraphics D_08be9f5c;
-extern const Palette prologue_karate_man_bg_pal[];
-extern const Palette prologue_karate_man_obj_pal[];
+extern const Palette karate_man_prologue_bg_pal[];
+extern const Palette karate_man_prologue_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -37,12 +37,12 @@ const struct GraphicsTable prologue_karate_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ prologue_karate_man_bg_pal,
+        /* Src.  */ karate_man_prologue_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ prologue_karate_man_obj_pal,
+        /* Src.  */ karate_man_prologue_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -55,8 +55,8 @@ const EngineEvent prologue_karate_engine_events[] = {
 };
 
 // [D_089ea6a0] Prologue (Karate Man) Game Engine
-const struct GameEngine D_089ea6a0 = {
-    /* Size in Memory */ sizeof(struct PrologueKarateManInfo),
+const struct GameEngine karate_man_prologue_engine = {
+    /* Size in Memory */ sizeof(struct KarateManPrologueInfo),
     /* Start Engine   */ func_0804557c,
     /* Update Engine  */ func_080455fc,
     /* Stop Engine    */ func_08045600,

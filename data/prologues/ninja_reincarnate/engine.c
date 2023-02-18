@@ -1,0 +1,66 @@
+#include "prologues/ninja_reincarnate.h"
+
+
+  /* PROLOGUE (NINJA REINCARNATE) - ENGINE DATA */
+
+
+extern const struct CompressedGraphics D_08c24604;
+extern const struct CompressedGraphics D_08c24804;
+extern const struct CompressedGraphics D_08c24200;
+extern const Palette ninja_reincarnate_prologue_pal[];
+
+
+  //  //  //  GAME ENGINE DATA  //  //  //
+
+
+// [D_089ed2c4] Buffered Textures List
+const struct CompressedGraphics *const ninja_reincarnate_prologue_buffered_textures[] = {
+    END_OF_BUFFERED_TEXTURES_LIST
+};
+
+// [D_089ed2c8] Graphics Table
+const struct GraphicsTable ninja_reincarnate_prologue_gfx_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &D_08c24604,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08c24804,
+        /* Dest. */ BG_MAP_BASE(0xE800),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &D_08c24200,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ ninja_reincarnate_prologue_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ ninja_reincarnate_prologue_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
+// [D_089ed310] Engine Events
+const EngineEvent ninja_reincarnate_prologue_engine_events[] = {
+    /* 0x00 */ (EngineEvent) func_080474a0
+};
+
+// [D_089ed314] Prologue (Ninja Reincarnate) Game Engine
+const struct GameEngine ninja_reincarnate_engine = {
+    /* Size in Memory */ sizeof(struct NinjaReincarnatePrologueInfo),
+    /* Start Engine   */ func_08047444,
+    /* Update Engine  */ func_080474a4,
+    /* Stop Engine    */ func_080474a8,
+    /* Cue Index      */ NULL,
+    /* Common Events  */ NULL,
+    /* Engine Events  */ ninja_reincarnate_prologue_engine_events,
+    /* Input Event    */ NULL
+};

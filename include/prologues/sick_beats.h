@@ -8,17 +8,17 @@
 
 
 // Types:
-struct PrologueSickBeatsInfo {
+struct SickBeatsPrologueInfo {
     u8  ver;         // Value:  Version
     s16 textSprite;  // Sprite: Text
     s16 virusSprite; // Sprite: Virus
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_sick_beats_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_sick_beats_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_sick_beats_title[]; // Animation: Text (Sick Beats)
-extern const struct Animation anim_prologue_sick_beats_virus[]; // Animation: Virus
+extern const struct CompressedGraphics *const sick_beats_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable sick_beats_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_sick_beats_prologue_title[]; // Animation: Text (Sick Beats)
+extern const struct Animation anim_sick_beats_prologue_virus[]; // Animation: Virus
 extern const struct SequenceData s_jingle_ghost_seqData;
 
 // Functions:

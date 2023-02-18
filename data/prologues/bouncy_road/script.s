@@ -8,7 +8,7 @@
 @ Prologue (Bouncy Road) - Script
 glabel D_089eac88
     set_game_fade_in_time 8
-    load_game D_089eac68, 0
+    load_game bouncy_road_prologue_engine, 0
     run stop_all_soundplayers, 0
     play_sfx s_jingle_poli_seqData
     rest 24

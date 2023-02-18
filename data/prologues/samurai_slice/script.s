@@ -8,7 +8,7 @@
 @ Prologue (Samurai Slice) - Script
 glabel D_089eb3f8
     set_game_fade_in_time 8
-    load_game D_089eb3d8, 0
+    load_game samurai_slice_prologue_engine, 0
     run stop_all_soundplayers, 0
     play_sfx s_jingle_iai_seqData
     rest 24

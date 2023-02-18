@@ -49,7 +49,7 @@
 .endm
 
 @ Load Game: Space Dance (Remix 3)
-.macro load_space_dance_remix3
+.macro load_space_dance_remix_3
     load_space_dance_labels
     load_game space_dance_engine, 2
 .endm

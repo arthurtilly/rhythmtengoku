@@ -8,17 +8,17 @@
 
 
 // Types:
-struct PrologueBouncyRoadInfo {
+struct BouncyRoadPrologueInfo {
     u8  ver;            // Value:  Version
     s16 textSprite;     // Sprite: Text
     s16 bouncersSprite; // Sprite: Bouncers
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_bouncy_road_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_bouncy_road_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_bouncy_road_title[]; // Animation: Text (Bouncy Road)
-extern const struct Animation anim_prologue_bouncy_road_path[]; // Animation: Bouncers
+extern const struct CompressedGraphics *const bouncy_road_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable bouncy_road_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_bouncy_road_prologue_title[]; // Animation: Text (Bouncy Road)
+extern const struct Animation anim_bouncy_road_prologue_path[]; // Animation: Bouncers
 extern const struct SequenceData s_jingle_poli_seqData;
 
 // Functions:

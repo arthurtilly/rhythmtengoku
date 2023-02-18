@@ -8,7 +8,7 @@
 @ Prologue (The Bon Odori) - Script
 glabel D_089ea454
     set_game_fade_in_time 8
-    load_game D_089ea434, 0
+    load_game bon_odori_prologue_engine, 0
     run stop_all_soundplayers, 0
     rest 24
     play_sfx s_jingle_bon_seqData

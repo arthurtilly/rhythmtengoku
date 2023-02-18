@@ -8,7 +8,7 @@
 @ Prologue (Night Walk) - Script
 glabel D_089ea9f8
     set_game_fade_in_time 8
-    load_game D_089ea9d8, 0
+    load_game night_walk_prologue_engine, 0
     run stop_all_soundplayers, 0
     run func_080458ec, 0
     rest 24

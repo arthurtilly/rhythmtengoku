@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct PrologueSpaceDanceInfo *)D_030055d0)
+#define gPrologueInfo ((struct SpaceDancePrologueInfo *)D_030055d0)
 
 
   //  //  //  PROLOGUE: SPACE DANCE  //  //  //
@@ -25,7 +25,7 @@ void func_080474ec(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), prologue_space_dance_gfx_table, 0x2000);
+    task = func_08002ee0(get_current_mem_id(), space_dance_prologue_gfx_table, 0x2000);
     run_func_after_task(task, func_080474dc, 0);
 }
 
@@ -36,7 +36,7 @@ void func_0804751c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(get_current_mem_id(), prologue_space_dance_buffered_textures);
+    task = func_080087b4(get_current_mem_id(), space_dance_prologue_buffered_textures);
     run_func_after_task(task, func_080474ec, 0);
 }
 
@@ -49,10 +49,10 @@ void func_0804754c(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_space_dance_title, 0, 80, 32, 0, 1, 0x7f, 0x8000);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_space_dance_prologue_title, 0, 80, 32, 0, 1, 0x7f, 0x8000);
     func_0804dcb8(D_03005380, gPrologueInfo->textSprite, 0x280);
-    gPrologueInfo->facesSprite = func_0804d160(D_03005380, anim_prologue_space_dance_faces, 1, 120, 120, 0, 0, 0x7f, 0x8000);
-    gPrologueInfo->starSprite = func_0804d160(D_03005380, anim_prologue_space_dance_star, 0, 64, 64, 0, 1, 0x7f, 0x8002);
+    gPrologueInfo->facesSprite = func_0804d160(D_03005380, anim_space_dance_prologue_faces, 1, 120, 120, 0, 0, 0x7f, 0x8000);
+    gPrologueInfo->starSprite = func_0804d160(D_03005380, anim_space_dance_prologue_star, 0, 64, 64, 0, 1, 0x7f, 0x8002);
 }
 
 

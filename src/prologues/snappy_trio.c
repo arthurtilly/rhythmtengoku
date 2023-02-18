@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct PrologueSnappyTrioInfo *)D_030055d0)
+#define gPrologueInfo ((struct SnappyTrioPrologueInfo *)D_030055d0)
 
 
   //  //  //  PROLOGUE: THE SNAPPY TRIO  //  //  //
@@ -25,7 +25,7 @@ void func_08045ef8(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), prologue_snappy_trio_gfx_table, 0x2000);
+    task = func_08002ee0(get_current_mem_id(), snappy_trio_prologue_gfx_table, 0x2000);
     run_func_after_task(task, func_08045ee8, 0);
 }
 
@@ -36,7 +36,7 @@ void func_08045f28(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(get_current_mem_id(), prologue_snappy_trio_buffered_textures);
+    task = func_080087b4(get_current_mem_id(), snappy_trio_prologue_buffered_textures);
     run_func_after_task(task, func_08045ef8, 0);
 }
 
@@ -49,7 +49,7 @@ void func_08045f58(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_snappy_trio_title, 0, 120, 100, 0, 0, 0x7f, 0);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_snappy_trio_prologue_title, 0, 120, 100, 0, 0, 0x7f, 0);
 }
 
 

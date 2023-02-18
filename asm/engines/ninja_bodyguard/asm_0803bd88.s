@@ -3,7 +3,7 @@ asm(".syntax unified \n\
 .balign 4, 0 \n\
 \n\
 thumb_func_start ninja_get_anim \n\
-/* 0803bd88 */ LDR R1, =ninja_anim_table \n\
+/* 0803bd88 */ LDR R1, =ninja_bodyguard_anim_table \n\
 /* 0803bd8a */ LSLS R0, R0, 0x2 \n\
 /* 0803bd8c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0803bd8e */ LDR R1, =D_030055d0 \n\

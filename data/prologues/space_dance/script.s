@@ -8,7 +8,7 @@
 @ Prologue (Space Dance) - Script
 glabel D_089ed470
     set_game_fade_in_time 8
-    load_game D_089ed450, 0
+    load_game space_dance_prologue_engine, 0
     run stop_all_soundplayers, 0
     rest 24
     run func_08047630, 0

@@ -8,15 +8,15 @@
 
 
 // Types:
-struct PrologueClappyTrioInfo {
+struct ClappyTrioPrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_clappy_trio_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_clappy_trio_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_clappy_trio_title[]; // Animation: Text (The Clappy Trio)
+extern const struct CompressedGraphics *const clappy_trio_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable clappy_trio_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_clappy_trio_prologue_title[]; // Animation: Text (The Clappy Trio)
 extern const struct SequenceData s_jingle_handclap_seqData;
 
 // Functions:

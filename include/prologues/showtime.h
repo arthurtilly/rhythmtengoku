@@ -8,17 +8,17 @@
 
 
 // Types:
-struct PrologueShowtimeInfo {
+struct ShowtimePrologueInfo {
     u8  ver;            // Value:  Version
     s16 textSprite;     // Sprite: Text
     s16 penguinSprite;  // Sprite: Penguin
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_showtime_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_showtime_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_showtime_title[]; // Animation: Text (Showtime)
-extern const struct Animation anim_prologue_showtime_penguin[]; // Animation: Penguin
+extern const struct CompressedGraphics *const showtime_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable showtime_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_showtime_prologue_title[]; // Animation: Text (Showtime)
+extern const struct Animation anim_showtime_prologue_penguin[]; // Animation: Penguin
 extern const struct SequenceData s_jingle_quiz_seqData;
 
 // Functions:

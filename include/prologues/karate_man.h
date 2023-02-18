@@ -8,7 +8,7 @@
 
 
 // Types:
-struct PrologueKarateManInfo {
+struct KarateManPrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
     s16 kickSprite; // Sprite: Kick

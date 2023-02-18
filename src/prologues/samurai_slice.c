@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct PrologueSamuraiSliceInfo *)D_030055d0)
+#define gPrologueInfo ((struct SamuraiSlicePrologueInfo *)D_030055d0)
 
 
   //  //  //  PROLOGUE: SAMURAI SLICE  //  //  //
@@ -25,7 +25,7 @@ void func_08045ff4(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), prologue_samurai_slice_gfx_table, 0x2000);
+    task = func_08002ee0(get_current_mem_id(), samurai_slice_prologue_gfx_table, 0x2000);
     run_func_after_task(task, func_08045fe4, 0);
 }
 
@@ -36,7 +36,7 @@ void func_08046024(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(get_current_mem_id(), prologue_samurai_slice_buffered_textures);
+    task = func_080087b4(get_current_mem_id(), samurai_slice_prologue_buffered_textures);
     run_func_after_task(task, func_08045ff4, 0);
 }
 
@@ -50,7 +50,7 @@ void func_08046054(u32 ver) {
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
     scene_set_bg_layer_display(BG_LAYER_2, FALSE, 0, 0, 0, 30, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_samurai_slice_title, 0, 135, 20, 0, 0, 0x7f, 0);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_samurai_slice_prologue_title, 0, 135, 20, 0, 0, 0x7f, 0);
 }
 
 

@@ -8,14 +8,14 @@
 
 
 // Types:
-struct ProloguePowerCalligraphyInfo {
+struct PowerCalligraphyPrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_power_calligraphy_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_power_calligraphy_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *const power_calligraphy_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable power_calligraphy_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_prologue_calligraphy_title[]; // Animation: Text (Power Calligraphy)
 extern const struct Animation anim_prologue_calligraphy_artist[]; // Animation: HAI
 extern const struct SequenceData s_sword_hi_seqData; // Sound: HAI

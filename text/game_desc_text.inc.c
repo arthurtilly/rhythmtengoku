@@ -86,117 +86,117 @@ const char text_cafe_name[] = "喫茶カウンセル";
 
 
 // Today's trip was... an exhilarating drive!!
-const char text_remix8_superb[] = "今回のドライブ ： とっても爽快！！";
+const char text_remix_8_superb[] = "今回のドライブ ： とっても爽快！！";
 
 // Today's trip was... long and stressful.
-const char text_remix8_ok[] = "今回のドライブ ： まだまだかかるなぁ";
+const char text_remix_8_ok[] = "今回のドライブ ： まだまだかかるなぁ";
 
 // Today's trip was... pretty much a total wreck.
-const char text_remix8_try_again[] = "今回のドライブ ： んもぅ…";
+const char text_remix_8_try_again[] = "今回のドライブ ： んもぅ…";
 
 // Remix 8
-const char text_remix8_name[] = "リミックス ８";
+const char text_remix_8_name[] = "リミックス ８";
 
 
 // Your dinosaur was... having too much fun!!
-const char text_remix7_superb[] = "今回のきょうりゅう ： 楽しすぎ～！！";
+const char text_remix_7_superb[] = "今回のきょうりゅう ： 楽しすぎ～！！";
 
 // Your dinosaur was... feeling pretty lazy.
-const char text_remix7_ok[] = "今回のきょうりゅう ： ほのぼの";
+const char text_remix_7_ok[] = "今回のきょうりゅう ： ほのぼの";
 
 // Your dinosaur was... not very friendly.
-const char text_remix7_try_again[] = "今回のきょうりゅう ： いじわる";
+const char text_remix_7_try_again[] = "今回のきょうりゅう ： いじわる";
 
 // Remix 7
-const char text_remix7_name[] = "リミックス ７";
+const char text_remix_7_name[] = "リミックス ７";
 
 
 // Your fishtank contains... something unbelievable!!
-const char text_remix6_superb[] = "今回の内容 ： アンビリーバボーなカンジ！！";
+const char text_remix_6_superb[] = "今回の内容 ： アンビリーバボーなカンジ！！";
 
 // Your fishtank contains... something unexpected!
-const char text_remix6_ok[] = "今回の内容 ： 意外なカンジ";
+const char text_remix_6_ok[] = "今回の内容 ： 意外なカンジ";
 
 // Your fishtank contains... something lonely.
-const char text_remix6_try_again[] = "今回の内容 ： ややさみしいカンジ";
+const char text_remix_6_try_again[] = "今回の内容 ： ややさみしいカンジ";
 
 // Remix 6
-const char text_remix6_name[] = "リミックス ６";
+const char text_remix_6_name[] = "リミックス ６";
 
 
 // The couple's future... happily ever after!
-const char text_remix5_superb[] = "今回のふたり ： 幸せになりました♪";
+const char text_remix_5_superb[] = "今回のふたり ： 幸せになりました♪";
 
 // The couple's future... an awkward wedding.
-const char text_remix5_ok[] = "今回のふたり ： このさき、チョット不安かも…";
+const char text_remix_5_ok[] = "今回のふたり ： このさき、チョット不安かも…";
 
 // The couple's future... forever apart!
-const char text_remix5_try_again[] = "今回のふたり ： ジャマされてしまった！";
+const char text_remix_5_try_again[] = "今回のふたり ： ジャマされてしまった！";
 
 // Remix 5
-const char text_remix5_name[] = "リミックス ５";
+const char text_remix_5_name[] = "リミックス ５";
 
 
 // Your weather forecast... a happy, clear day!!
-const char text_remix4_superb[] = "今回の天気 ： ハッピーな晴れ！！";
+const char text_remix_4_superb[] = "今回の天気 ： ハッピーな晴れ！！";
 
 // Your weather forecast... cloudy and gray.
-const char text_remix4_ok[] = "今回の天気 ： くもり";
+const char text_remix_4_ok[] = "今回の天気 ： くもり";
 
 // Your weather forecast... rain, rain and rain.
-const char text_remix4_try_again[] = "今回の天気 ： 雨";
+const char text_remix_4_try_again[] = "今回の天気 ： 雨";
 
 // Remix 4
-const char text_remix4_name[] = "リミックス ４";
+const char text_remix_4_name[] = "リミックス ４";
 
 
 // Your love fortune... it's Lovey-Dovey!!
-const char text_remix3_superb[] = "今回のラブ ： ラブラブでーす！！";
+const char text_remix_3_superb[] = "今回のラブ ： ラブラブでーす！！";
 
 // Your love fortune... you'll be best friends♪
-const char text_remix3_ok[] = "今回のラブ ： とってもフレンドリーな感じ♪";
+const char text_remix_3_ok[] = "今回のラブ ： とってもフレンドリーな感じ♪";
 
 // Your love fortune... your heart might break soon...
-const char text_remix3_try_again[] = "今回のラブ ： ブロークンハートかも…";
+const char text_remix_3_try_again[] = "今回のラブ ： ブロークンハートかも…";
 
 // Remix 3
-const char text_remix3_name[] = "リミックス ３";
+const char text_remix_3_name[] = "リミックス ３";
 
 
 // Your hype level was... a baseball tournament!!
-const char text_remix2_superb[] = "今回の熱気 ： すごい大会レベル！！";
+const char text_remix_2_superb[] = "今回の熱気 ： すごい大会レベル！！";
 
 // Your hype level was... a short round of catch.
-const char text_remix2_ok[] = "今回の熱気 ： 楽しくキャッチボールレベル";
+const char text_remix_2_ok[] = "今回の熱気 ： 楽しくキャッチボールレベル";
 
 // Your hype level was... practicing alone.
-const char text_remix2_try_again[] = "今回の熱気 ： ひとりで練習レベル";
+const char text_remix_2_try_again[] = "今回の熱気 ： ひとりで練習レベル";
 
 // Remix 2
-const char text_remix2_name[] = "リミックス ２";
+const char text_remix_2_name[] = "リミックス ２";
 
 
 // Your performance was like... a filling dinner!!
-const char text_remix1_superb[] = "今回のデキ ： なんと、 ディナークラス！！";
+const char text_remix_1_superb[] = "今回のデキ ： なんと、 ディナークラス！！";
 
 // Your performance was like... a breakfast.
-const char text_remix1_ok[] = "今回のデキ ： 朝食クラス";
+const char text_remix_1_ok[] = "今回のデキ ： 朝食クラス";
 
 // Your performance was like... a cat's snack.
-const char text_remix1_try_again[] = "今回のデキ ： 猫のおやつクラス";
+const char text_remix_1_try_again[] = "今回のデキ ： 猫のおやつクラス";
 
 // Want to test your
 // merit? Your skill so
 // far speaks for
 // itself, you know! (NP)
-const char text_remix1_desc[] =
+const char text_remix_desc[] =
     "キミの実力を\n"
     "試してみてみる？\n"
     "これまでの経験が\n"
     "モノを言うヨ～！";
 
 // Remix 1
-const char text_remix1_name[] = "リミックス １";
+const char text_remix_1_name[] = "リミックス １";
 
 
 // Bon dancing is awfully fun!
@@ -759,26 +759,26 @@ const char text_sneaky_spirits_name[] = "しろいおばけ";
 
 
 // Thou art strong. Live happily!
-const char text_ninja_bodyguard_2_superb[] = "オヌシは強い。お幸せに…！";
+const char text_ninja_reincarnate_superb[] = "オヌシは強い。お幸せに…！";
 
 // You have courage. Work harder!
-const char text_ninja_bodyguard_2_ok[] = "うむ、スジは良いな。がんばれ！";
+const char text_ninja_reincarnate_ok[] = "うむ、スジは良いな。がんばれ！";
 
 // Don't lose! People depend on you!
-const char text_ninja_bodyguard_2_try_again[] = "まけるな！ おまえが頼りなのだー！！";
+const char text_ninja_reincarnate_try_again[] = "まけるな！ おまえが頼りなのだー！！";
 
 // Watch out! I'm a
 // warrior just like
 // my ancestors!
 // (No practice.)
-const char text_ninja_bodyguard_2_desc[] =
+const char text_ninja_reincarnate_desc[] =
     "オレのじいちゃんの\n"
     "じいちゃんの\n"
     "じいちゃんは\n"
     "忍者なんだぜ。";
 
 // Ninja Reincarnate
-const char text_ninja_bodyguard_2_name[] = "忍者の子孫";
+const char text_ninja_reincarnate_name[] = "忍者の子孫";
 
 
 // He told me “great job!";

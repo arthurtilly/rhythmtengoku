@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct PrologueWizardsWaltzInfo *)D_030055d0)
+#define gPrologueInfo ((struct WizardsWaltzPrologueInfo *)D_030055d0)
 
 
   //  //  //  PROLOGUE: WIZARD'S WALTZ  //  //  //
@@ -25,7 +25,7 @@ void func_08047d5c(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), prologue_wizards_waltz_gfx_table, 0x2000);
+    task = func_08002ee0(get_current_mem_id(), wizards_waltz_prologue_gfx_table, 0x2000);
     run_func_after_task(task, func_08047d4c, 0);
 }
 
@@ -36,7 +36,7 @@ void func_08047d8c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(get_current_mem_id(), prologue_wizards_waltz_buffered_textures);
+    task = func_080087b4(get_current_mem_id(), wizards_waltz_prologue_buffered_textures);
     run_func_after_task(task, func_08047d5c, 0);
 }
 
@@ -49,7 +49,7 @@ void func_08047dbc(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_wizards_waltz_title, 0, 64, 30, 0, 1, 0, 0);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_wizards_waltz_prologue_title, 0, 64, 30, 0, 1, 0, 0);
 }
 
 

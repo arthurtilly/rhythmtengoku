@@ -8,14 +8,14 @@
 
 
 // Types:
-struct PrologueMarchingOrdersInfo {
+struct MarchingOrdersPrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_marching_orders_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_marching_orders_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *const marching_orders_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable marching_orders_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_prologue_marching_title[]; // Animation: Text (Marching Orders)
 extern const struct SequenceData s_jingle_march_seqData;
 

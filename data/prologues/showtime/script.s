@@ -8,7 +8,7 @@
 @ Prologue (Showtime) - Script
 glabel D_089eab4c
     set_game_fade_in_time 8
-    load_game D_089eab2c, 0
+    load_game showtime_prologue_engine, 0
     run stop_all_soundplayers, 0
     rest 24
     play_sfx s_jingle_quiz_seqData

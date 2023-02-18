@@ -50,7 +50,7 @@
 .endm
 
 @ Load Game: Bunny Hop (Remix 3)
-.macro load_bunny_hop_remix3
+.macro load_bunny_hop_remix_3
     load_bunny_hop_labels
     load_game bunny_hop_engine, 3
 .endm

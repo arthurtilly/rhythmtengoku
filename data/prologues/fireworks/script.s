@@ -8,7 +8,7 @@
 @ Prologue (Fireworks) - Script
 glabel D_089eaef4
     set_game_fade_in_time 8
-    load_game D_089eaed4, 0
+    load_game fireworks_prologue_engine, 0
     run stop_all_soundplayers, 0
     run func_08045dc8, 1
     rest 24

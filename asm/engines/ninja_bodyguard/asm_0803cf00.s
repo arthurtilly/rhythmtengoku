@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start ninja_cue_miss \n\
+thumb_func_start ninja_bodyguard_cue_miss \n\
 /* 0803cf00 */ PUSH {R4, LR} \n\
 /* 0803cf02 */ SUB SP, 0xC \n\
 /* 0803cf04 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\

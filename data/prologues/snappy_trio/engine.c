@@ -7,19 +7,19 @@
 extern const struct CompressedGraphics D_08bf5ce8;
 extern const struct CompressedGraphics D_08bf60c8;
 extern const struct CompressedGraphics D_08bf374c;
-extern const Palette prologue_snappy_trio_pal[];
+extern const Palette snappy_trio_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089eb1c8] Buffered Textures List
-const struct CompressedGraphics *const prologue_snappy_trio_buffered_textures[] = {
+const struct CompressedGraphics *const snappy_trio_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089eb1cc] Graphics Table
-const struct GraphicsTable prologue_snappy_trio_gfx_table[] = {
+const struct GraphicsTable snappy_trio_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bf5ce8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -36,12 +36,12 @@ const struct GraphicsTable prologue_snappy_trio_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ prologue_snappy_trio_pal,
+        /* Src.  */ snappy_trio_prologue_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ prologue_snappy_trio_pal,
+        /* Src.  */ snappy_trio_prologue_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -49,18 +49,18 @@ const struct GraphicsTable prologue_snappy_trio_gfx_table[] = {
 };
 
 // [D_089eb214] Engine Events
-const EngineEvent prologue_snappy_trio_engine_events[] = {
+const EngineEvent snappy_trio_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08045fb4
 };
 
 // [D_089eb218] Prologue (The Snappy Trio) Game Engine
-const struct GameEngine D_089eb218 = {
-    /* Size in Memory */ sizeof(struct PrologueSnappyTrioInfo),
+const struct GameEngine snappy_trio_prologue_engine = {
+    /* Size in Memory */ sizeof(struct SnappyTrioPrologueInfo),
     /* Start Engine   */ func_08045f58,
     /* Update Engine  */ func_08045fb8,
     /* Stop Engine    */ func_08045fbc,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
-    /* Engine Events  */ prologue_snappy_trio_engine_events,
+    /* Engine Events  */ snappy_trio_prologue_engine_events,
     /* Input Event    */ NULL
 };

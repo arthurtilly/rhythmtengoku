@@ -8,15 +8,15 @@
 
 
 // Types:
-struct PrologueSneakySpiritsInfo {
+struct SneakySpiritsPrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_sneaky_spirits_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_sneaky_spirits_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_sneaky_spirits_title[]; // Animation: Text (Sneaky Spirits)
+extern const struct CompressedGraphics *const sneaky_spirits_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable sneaky_spirits_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_sneaky_spirits_prologue_title[]; // Animation: Text (Sneaky Spirits)
 extern const struct SequenceData s_jingle_ghost_seqData;
 
 // Functions:

@@ -8,15 +8,15 @@
 
 
 // Types:
-struct PrologueTapTrialInfo {
+struct TapTrialPrologueInfo {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_tap_trial_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_tap_trial_gfx_table[]; // Graphics Table
-extern const struct Animation anim_prologue_tap_trial_title[]; // Animation: Text (Tap Trial)
+extern const struct CompressedGraphics *const tap_trial_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable tap_trial_prologue_gfx_table[]; // Graphics Table
+extern const struct Animation anim_tap_trial_prologue_title[]; // Animation: Text (Tap Trial)
 extern const struct SequenceData s_jingle_tap_seqData;
 
 // Functions:

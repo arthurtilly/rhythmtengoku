@@ -72,7 +72,7 @@ const struct GraphicsTable fireworks_gfx_table[] = {
 };
 
 // [D_089e4284] Graphics Table (Remix 5 [1])
-const struct GraphicsTable fireworks_remix5_gfx_table_1[] = {
+const struct GraphicsTable fireworks_remix_5_gfx_table_1[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5e20c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -107,7 +107,7 @@ const struct GraphicsTable fireworks_remix5_gfx_table_1[] = {
 };
 
 // [D_089e42d8] Graphics Table (Remix 5 [2])
-const struct GraphicsTable fireworks_remix5_gfx_table_2[] = {
+const struct GraphicsTable fireworks_remix_5_gfx_table_2[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5ebcc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -142,7 +142,7 @@ const struct GraphicsTable fireworks_remix5_gfx_table_2[] = {
 };
 
 // [D_089e432c] Graphics Table (Remix 5 [3])
-const struct GraphicsTable fireworks_remix5_gfx_table_3[] = {
+const struct GraphicsTable fireworks_remix_5_gfx_table_3[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5f27c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -177,7 +177,7 @@ const struct GraphicsTable fireworks_remix5_gfx_table_3[] = {
 };
 
 // [D_089e4380] Graphics Table (Remix 5 [4])
-const struct GraphicsTable fireworks_remix5_gfx_table_4[] = {
+const struct GraphicsTable fireworks_remix_5_gfx_table_4[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c5fa80,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -214,10 +214,10 @@ const struct GraphicsTable fireworks_remix5_gfx_table_4[] = {
 // [D_089e43d4] Graphics Table Index
 const struct GraphicsTable *const fireworks_gfx_tables[] = {
     /* 0x00 */ fireworks_gfx_table,
-    /* 0x01 */ fireworks_remix5_gfx_table_1,
-    /* 0x02 */ fireworks_remix5_gfx_table_2,
-    /* 0x03 */ fireworks_remix5_gfx_table_3,
-    /* 0x04 */ fireworks_remix5_gfx_table_4
+    /* 0x01 */ fireworks_remix_5_gfx_table_1,
+    /* 0x02 */ fireworks_remix_5_gfx_table_2,
+    /* 0x03 */ fireworks_remix_5_gfx_table_3,
+    /* 0x04 */ fireworks_remix_5_gfx_table_4
 };
 
 

@@ -605,10 +605,10 @@ extern const struct CompressedGraphics D_08cb38ac;
 extern const struct CompressedGraphics D_08cb3c48;
 extern const struct CompressedGraphics D_08cb3b10;
 extern const struct CompressedGraphics D_08cb39d0;
-extern const Palette epilogue_ninja_bodyguard_2_bg_pal[];
+extern const Palette epilogue_ninja_reincarnate_bg_pal[];
 
 // [D_08051144] Epilogue - Ninja Bodyguard 2 (Superb)
-const struct GraphicsTable gfx_table_epilogue_ninja_bodyguard_2_superb[] = {
+const struct GraphicsTable gfx_table_epilogue_ninja_reincarnate_superb[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cb38ac,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -620,7 +620,7 @@ const struct GraphicsTable gfx_table_epilogue_ninja_bodyguard_2_superb[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_ninja_bodyguard_2_bg_pal,
+        /* Src.  */ epilogue_ninja_reincarnate_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -628,7 +628,7 @@ const struct GraphicsTable gfx_table_epilogue_ninja_bodyguard_2_superb[] = {
 };
 
 // [D_08051174] Epilogue - Ninja Bodyguard 2 (OK)
-const struct GraphicsTable gfx_table_epilogue_ninja_bodyguard_2_ok[] = {
+const struct GraphicsTable gfx_table_epilogue_ninja_reincarnate_ok[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cb38ac,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -640,7 +640,7 @@ const struct GraphicsTable gfx_table_epilogue_ninja_bodyguard_2_ok[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_ninja_bodyguard_2_bg_pal,
+        /* Src.  */ epilogue_ninja_reincarnate_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -648,7 +648,7 @@ const struct GraphicsTable gfx_table_epilogue_ninja_bodyguard_2_ok[] = {
 };
 
 // [D_080511a4] Epilogue - Ninja Bodyguard 2 (Try Again)
-const struct GraphicsTable gfx_table_epilogue_ninja_bodyguard_2_try_again[] = {
+const struct GraphicsTable gfx_table_epilogue_ninja_reincarnate_try_again[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cb38ac,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -660,7 +660,7 @@ const struct GraphicsTable gfx_table_epilogue_ninja_bodyguard_2_try_again[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_ninja_bodyguard_2_bg_pal,
+        /* Src.  */ epilogue_ninja_reincarnate_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2213,10 +2213,10 @@ extern const struct CompressedGraphics D_08ca66dc;
 extern const struct CompressedGraphics D_08ca69c8;
 extern const struct CompressedGraphics D_08ca6868;
 extern const struct CompressedGraphics D_08ca676c;
-extern const Palette epilogue_remix1_bg_pal[];
+extern const Palette epilogue_remix_1_bg_pal[];
 
 // [D_08051ec4] Epilogue - Remix 1 (Superb)
-const struct GraphicsTable gfx_table_epilogue_remix1_superb[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_1_superb[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ca66dc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2228,7 +2228,7 @@ const struct GraphicsTable gfx_table_epilogue_remix1_superb[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix1_bg_pal,
+        /* Src.  */ epilogue_remix_1_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2236,7 +2236,7 @@ const struct GraphicsTable gfx_table_epilogue_remix1_superb[] = {
 };
 
 // [D_08051ef4] Epilogue - Remix 1 (OK)
-const struct GraphicsTable gfx_table_epilogue_remix1_ok[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_1_ok[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ca66dc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2248,7 +2248,7 @@ const struct GraphicsTable gfx_table_epilogue_remix1_ok[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix1_bg_pal,
+        /* Src.  */ epilogue_remix_1_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2256,7 +2256,7 @@ const struct GraphicsTable gfx_table_epilogue_remix1_ok[] = {
 };
 
 // [D_08051f24] Epilogue - Remix 1 (Try Again)
-const struct GraphicsTable gfx_table_epilogue_remix1_try_again[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_1_try_again[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ca66dc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2268,7 +2268,7 @@ const struct GraphicsTable gfx_table_epilogue_remix1_try_again[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix1_bg_pal,
+        /* Src.  */ epilogue_remix_1_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2280,10 +2280,10 @@ extern const struct CompressedGraphics D_08ca7cbc;
 extern const struct CompressedGraphics D_08ca82dc;
 extern const struct CompressedGraphics D_08ca80c0;
 extern const struct CompressedGraphics D_08ca7ecc;
-extern const Palette epilogue_remix2_bg_pal[];
+extern const Palette epilogue_remix_2_bg_pal[];
 
 // [D_08051f54] Epilogue - Remix 2 (Superb)
-const struct GraphicsTable gfx_table_epilogue_remix2_superb[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_2_superb[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ca7cbc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2295,7 +2295,7 @@ const struct GraphicsTable gfx_table_epilogue_remix2_superb[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix2_bg_pal,
+        /* Src.  */ epilogue_remix_2_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2303,7 +2303,7 @@ const struct GraphicsTable gfx_table_epilogue_remix2_superb[] = {
 };
 
 // [D_08051f84] Epilogue - Remix 2 (OK)
-const struct GraphicsTable gfx_table_epilogue_remix2_ok[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_2_ok[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ca7cbc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2315,7 +2315,7 @@ const struct GraphicsTable gfx_table_epilogue_remix2_ok[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix2_bg_pal,
+        /* Src.  */ epilogue_remix_2_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2323,7 +2323,7 @@ const struct GraphicsTable gfx_table_epilogue_remix2_ok[] = {
 };
 
 // [D_08051fb4] Epilogue - Remix 2 (Try Again)
-const struct GraphicsTable gfx_table_epilogue_remix2_try_again[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_2_try_again[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ca7cbc,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2335,7 +2335,7 @@ const struct GraphicsTable gfx_table_epilogue_remix2_try_again[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix2_bg_pal,
+        /* Src.  */ epilogue_remix_2_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2347,10 +2347,10 @@ extern const struct CompressedGraphics D_08ca94f0;
 extern const struct CompressedGraphics D_08ca9afc;
 extern const struct CompressedGraphics D_08ca98f8;
 extern const struct CompressedGraphics D_08ca96e4;
-extern const Palette epilogue_remix3_bg_pal[];
+extern const Palette epilogue_remix_3_bg_pal[];
 
 // [D_08051fe4] Epilogue - Remix 3 (Superb)
-const struct GraphicsTable gfx_table_epilogue_remix3_superb[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_3_superb[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ca94f0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2362,7 +2362,7 @@ const struct GraphicsTable gfx_table_epilogue_remix3_superb[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix3_bg_pal,
+        /* Src.  */ epilogue_remix_3_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2370,7 +2370,7 @@ const struct GraphicsTable gfx_table_epilogue_remix3_superb[] = {
 };
 
 // [D_08052014] Epilogue - Remix 3 (OK)
-const struct GraphicsTable gfx_table_epilogue_remix3_ok[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_3_ok[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ca94f0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2382,7 +2382,7 @@ const struct GraphicsTable gfx_table_epilogue_remix3_ok[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix3_bg_pal,
+        /* Src.  */ epilogue_remix_3_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2390,7 +2390,7 @@ const struct GraphicsTable gfx_table_epilogue_remix3_ok[] = {
 };
 
 // [D_08052044] Epilogue - Remix 3 (Try Again)
-const struct GraphicsTable gfx_table_epilogue_remix3_try_again[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_3_try_again[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08ca94f0,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2402,7 +2402,7 @@ const struct GraphicsTable gfx_table_epilogue_remix3_try_again[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix3_bg_pal,
+        /* Src.  */ epilogue_remix_3_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2414,10 +2414,10 @@ extern const struct CompressedGraphics D_08caaf8c;
 extern const struct CompressedGraphics D_08cab5bc;
 extern const struct CompressedGraphics D_08cab3ac;
 extern const struct CompressedGraphics D_08cab1a8;
-extern const Palette epilogue_remix4_bg_pal[];
+extern const Palette epilogue_remix_4_bg_pal[];
 
 // [D_08052074] Epilogue - Remix 4 (Superb)
-const struct GraphicsTable gfx_table_epilogue_remix4_superb[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_4_superb[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08caaf8c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2429,7 +2429,7 @@ const struct GraphicsTable gfx_table_epilogue_remix4_superb[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix4_bg_pal,
+        /* Src.  */ epilogue_remix_4_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2437,7 +2437,7 @@ const struct GraphicsTable gfx_table_epilogue_remix4_superb[] = {
 };
 
 // [D_080520a4] Epilogue - Remix 4 (OK)
-const struct GraphicsTable gfx_table_epilogue_remix4_ok[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_4_ok[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08caaf8c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2449,7 +2449,7 @@ const struct GraphicsTable gfx_table_epilogue_remix4_ok[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix4_bg_pal,
+        /* Src.  */ epilogue_remix_4_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2457,7 +2457,7 @@ const struct GraphicsTable gfx_table_epilogue_remix4_ok[] = {
 };
 
 // [D_080520d4] Epilogue - Remix 4 (Try Again)
-const struct GraphicsTable gfx_table_epilogue_remix4_try_again[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_4_try_again[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08caaf8c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2469,7 +2469,7 @@ const struct GraphicsTable gfx_table_epilogue_remix4_try_again[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix4_bg_pal,
+        /* Src.  */ epilogue_remix_4_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2481,10 +2481,10 @@ extern const struct CompressedGraphics D_08cac550;
 extern const struct CompressedGraphics D_08cac908;
 extern const struct CompressedGraphics D_08cac7e0;
 extern const struct CompressedGraphics D_08cac6ac;
-extern const Palette epilogue_remix5_bg_pal[];
+extern const Palette epilogue_remix_5_bg_pal[];
 
 // [D_08052104] Epilogue - Remix 5 (Superb)
-const struct GraphicsTable gfx_table_epilogue_remix5_superb[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_5_superb[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cac550,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2496,7 +2496,7 @@ const struct GraphicsTable gfx_table_epilogue_remix5_superb[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix5_bg_pal,
+        /* Src.  */ epilogue_remix_5_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2504,7 +2504,7 @@ const struct GraphicsTable gfx_table_epilogue_remix5_superb[] = {
 };
 
 // [D_08052134] Epilogue - Remix 5 (OK)
-const struct GraphicsTable gfx_table_epilogue_remix5_ok[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_5_ok[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cac550,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2516,7 +2516,7 @@ const struct GraphicsTable gfx_table_epilogue_remix5_ok[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix5_bg_pal,
+        /* Src.  */ epilogue_remix_5_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2524,7 +2524,7 @@ const struct GraphicsTable gfx_table_epilogue_remix5_ok[] = {
 };
 
 // [D_08052164] Epilogue - Remix 5 (Try Again)
-const struct GraphicsTable gfx_table_epilogue_remix5_try_again[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_5_try_again[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cac550,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2536,7 +2536,7 @@ const struct GraphicsTable gfx_table_epilogue_remix5_try_again[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix5_bg_pal,
+        /* Src.  */ epilogue_remix_5_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2548,10 +2548,10 @@ extern const struct CompressedGraphics D_08cad9f4;
 extern const struct CompressedGraphics D_08cadff0;
 extern const struct CompressedGraphics D_08caddf8;
 extern const struct CompressedGraphics D_08cadbe0;
-extern const Palette epilogue_remix6_bg_pal[];
+extern const Palette epilogue_remix_6_bg_pal[];
 
 // [D_08052194] Epilogue - Remix 6 (Superb)
-const struct GraphicsTable gfx_table_epilogue_remix6_superb[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_6_superb[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cad9f4,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2563,7 +2563,7 @@ const struct GraphicsTable gfx_table_epilogue_remix6_superb[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix6_bg_pal,
+        /* Src.  */ epilogue_remix_6_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2571,7 +2571,7 @@ const struct GraphicsTable gfx_table_epilogue_remix6_superb[] = {
 };
 
 // [D_080521c4] Epilogue - Remix 6 (OK)
-const struct GraphicsTable gfx_table_epilogue_remix6_ok[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_6_ok[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cad9f4,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2583,7 +2583,7 @@ const struct GraphicsTable gfx_table_epilogue_remix6_ok[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix6_bg_pal,
+        /* Src.  */ epilogue_remix_6_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2591,7 +2591,7 @@ const struct GraphicsTable gfx_table_epilogue_remix6_ok[] = {
 };
 
 // [D_080521f4] Epilogue - Remix 6 (Try Again)
-const struct GraphicsTable gfx_table_epilogue_remix6_try_again[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_6_try_again[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cad9f4,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2603,7 +2603,7 @@ const struct GraphicsTable gfx_table_epilogue_remix6_try_again[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix6_bg_pal,
+        /* Src.  */ epilogue_remix_6_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2615,10 +2615,10 @@ extern const struct CompressedGraphics D_08caf878;
 extern const struct CompressedGraphics D_08cafce8;
 extern const struct CompressedGraphics D_08cafb68;
 extern const struct CompressedGraphics D_08caf9f4;
-extern const Palette epilogue_remix7_bg_pal[];
+extern const Palette epilogue_remix_7_bg_pal[];
 
 // [D_08052224] Epilogue - Remix 7 (Superb)
-const struct GraphicsTable gfx_table_epilogue_remix7_superb[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_7_superb[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08caf878,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2630,7 +2630,7 @@ const struct GraphicsTable gfx_table_epilogue_remix7_superb[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix7_bg_pal,
+        /* Src.  */ epilogue_remix_7_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2638,7 +2638,7 @@ const struct GraphicsTable gfx_table_epilogue_remix7_superb[] = {
 };
 
 // [D_08052254] Epilogue - Remix 7 (OK)
-const struct GraphicsTable gfx_table_epilogue_remix7_ok[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_7_ok[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08caf878,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2650,7 +2650,7 @@ const struct GraphicsTable gfx_table_epilogue_remix7_ok[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix7_bg_pal,
+        /* Src.  */ epilogue_remix_7_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2658,7 +2658,7 @@ const struct GraphicsTable gfx_table_epilogue_remix7_ok[] = {
 };
 
 // [D_08052284] Epilogue - Remix 7 (Try Again)
-const struct GraphicsTable gfx_table_epilogue_remix7_try_again[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_7_try_again[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08caf878,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2670,7 +2670,7 @@ const struct GraphicsTable gfx_table_epilogue_remix7_try_again[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix7_bg_pal,
+        /* Src.  */ epilogue_remix_7_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2682,10 +2682,10 @@ extern const struct CompressedGraphics D_08cb14f8;
 extern const struct CompressedGraphics D_08cb1b08;
 extern const struct CompressedGraphics D_08cb18ec;
 extern const struct CompressedGraphics D_08cb16f0;
-extern const Palette epilogue_remix8_bg_pal[];
+extern const Palette epilogue_remix_8_bg_pal[];
 
 // [D_080522b4] Epilogue - Remix 8 (Superb)
-const struct GraphicsTable gfx_table_epilogue_remix8_superb[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_8_superb[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cb14f8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2697,7 +2697,7 @@ const struct GraphicsTable gfx_table_epilogue_remix8_superb[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix8_bg_pal,
+        /* Src.  */ epilogue_remix_8_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2705,7 +2705,7 @@ const struct GraphicsTable gfx_table_epilogue_remix8_superb[] = {
 };
 
 // [D_080522e4] Epilogue - Remix 8 (OK)
-const struct GraphicsTable gfx_table_epilogue_remix8_ok[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_8_ok[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cb14f8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2717,7 +2717,7 @@ const struct GraphicsTable gfx_table_epilogue_remix8_ok[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix8_bg_pal,
+        /* Src.  */ epilogue_remix_8_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -2725,7 +2725,7 @@ const struct GraphicsTable gfx_table_epilogue_remix8_ok[] = {
 };
 
 // [D_08052314] Epilogue - Remix 8 (Try Again)
-const struct GraphicsTable gfx_table_epilogue_remix8_try_again[] = {
+const struct GraphicsTable gfx_table_epilogue_remix_8_try_again[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cb14f8,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -2737,7 +2737,7 @@ const struct GraphicsTable gfx_table_epilogue_remix8_try_again[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_remix8_bg_pal,
+        /* Src.  */ epilogue_remix_8_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

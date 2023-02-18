@@ -7,7 +7,7 @@
 @ Prologue (Toss Boys 2) - Script
 glabel D_089eda5c
     set_game_fade_in_time 8
-    load_game D_089eda3c, 0
+    load_game toss_boys_2_prologue_engine, 0
     run stop_all_soundplayers, 0
     play_sfx s_jingle_toss_seqData
     rest 24

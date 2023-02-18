@@ -186,7 +186,7 @@ const Palette bouncy_road_pal[] = {
 };
 
 // [D_088cbf88] <description>
-const Palette bouncy_road_remix5_obj_pal[] = {
+const Palette bouncy_road_remix_5_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),
@@ -554,7 +554,7 @@ const Palette bouncy_road_2_pal[] = {
 };
 
 // [D_088cc208] <description>
-const Palette bouncy_road_remix5_bg_pal[] = {
+const Palette bouncy_road_remix_5_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),

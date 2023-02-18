@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start ninja_init_gfx3 \n\
+thumb_func_start ninja_bodyguard_init_gfx3 \n\
 /* 0803cb60 */ PUSH {LR} \n\
 /* 0803cb62 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803cb64 */ BL func_0800c604 \n\

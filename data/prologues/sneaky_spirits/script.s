@@ -8,7 +8,7 @@
 @ Prologue (Sneaky Spirits) - Script
 glabel D_089ea0f8
     set_game_fade_in_time 8
-    load_game D_089ea0d8, 0
+    load_game sneaky_spirits_prologue_engine, 0
     run stop_all_soundplayers, 0
     run func_080451e4, 6
     play_sfx s_jingle_ghost_seqData

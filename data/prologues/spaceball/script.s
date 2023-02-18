@@ -8,7 +8,7 @@
 @ Prologue (Spaceball) - Script
 glabel D_089ea2dc
     set_game_fade_in_time 8
-    load_game D_089ea2bc, 0
+    load_game spaceball_prologue_engine, 0
     run stop_all_soundplayers, 0
     play_sfx s_jingle_baseball_seqData
     rest 24

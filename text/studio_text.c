@@ -46,13 +46,13 @@ const char text_studio_song_main_menu[] = "メニュー";
 const char text_studio_song_title[] = "タイトル";
 
 // Song Title - Remix 6
-const char text_studio_song_remix6[] = "リミックス６";
+const char text_studio_song_remix_6[] = "リミックス６";
 
 // Song Title - Remix 8
-const char text_studio_song_remix8[] = "リミックス８";
+const char text_studio_song_remix_8[] = "リミックス８";
 
 // Song Title - Remix 7
-const char text_studio_song_remix7[] = "リミックス７";
+const char text_studio_song_remix_7[] = "リミックス７";
 
 // Song Title - Fireworks
 const char text_studio_song_fireworks[] = "花火";
@@ -124,16 +124,16 @@ const char text_studio_song_bon_odori[] = "ザ☆ぼんおどり";
 const char text_studio_song_night_walk[] = "ナイトウォーク";
 
 // Song Title - WISH Can't Wait...
-const char text_studio_song_remix5_short[] = "WISH 君を待て…";
+const char text_studio_song_remix_5_short[] = "WISH 君を待て…";
 
 // Song Title - WISH Can't Wait For You
-const char text_studio_song_remix5[] = "WISH 君を待てなくて";
+const char text_studio_song_remix_5[] = "WISH 君を待てなくて";
 
 // Song Title - Love's Honey Swe...
-const char text_studio_song_remix3_short[] = "恋のハニースイ～…";
+const char text_studio_song_remix_3_short[] = "恋のハニースイ～…";
 
 // Song Title - Love's Honey Sweet Angel
-const char text_studio_song_remix3[] = "恋のハニースイ～トエンジェル";
+const char text_studio_song_remix_3[] = "恋のハニースイ～トエンジェル";
 
 // Song Title - Space Dance
 const char text_studio_song_space_dance[] = "スペースダンス";
