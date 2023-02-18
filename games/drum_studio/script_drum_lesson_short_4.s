@@ -3,16 +3,16 @@
 
 .include "include/gba.inc"
 .include "include/bs_riq.inc"
-.include "games/drum_lessons/drum_studio_macros.inc"
+.include "games/drum_studio/drum_studio_macros.inc"
 
 load_drum_studio_labels
 
 
-/* Script Data - Drum Lesson (Short 5) */
+/* Script Data - Drum Lesson (Short 4) */
 
 
 @ Dialogue
-glabel D_0805fea0
+glabel D_0805f560
 .ascii "よくきいてマネしてね。\n"
 .ascii "好きなタイミングでどうぞ。\n"
 .ascii "演奏を止めると、\n"
@@ -21,9 +21,10 @@ glabel D_0805fea0
 
 
 @ Pattern
-glabel D_0805fef8
+glabel D_0805f5b8
     spawn_cue CUE_SNARE_L
     rest 24
+    spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_KICK_R
     rest 12
@@ -32,45 +33,66 @@ glabel D_0805fef8
     return
 
 
-@ Pattern
-glabel D_0805ff58
+@ Pattern Start
+glabel D_0805f624
     spawn_cue CUE_KICK_R
     rest 21
     return
 
 
 @ Dialogue
-glabel D_0805ff7c
+glabel D_0805f648
 .ascii "\n"
 .ascii "１カ所、音がふえるヨ！\n"
-.ascii "わかるかな？\n"
-.asciz "ヒント：Rボタン"
+.asciz "わかるかな？\n"
 .balign 4, 0
 
 
-@ Pattern
-glabel D_0805ffb4
+@ Pattern Start
+glabel D_0805f670
     spawn_cue CUE_KICK_R
-    spawn_cue CUE_CRASH
-    rest 21
+    rest 18
+    spawn_cue CUE_KICK_R
+    rest 3
+    return
+
+@ Dialogue
+glabel D_0805f6ac
+.ascii "さらに１つ、\n"
+.ascii "音がふえるヨ！\n"
+.ascii "わかるかな？\n"
+.asciz "ヒント：\x8f\x5c字ボタン上"
+.balign 4, 0
+
+
+@ Pattern Start
+glabel D_0805f6ec
+    spawn_cue CUE_KICK_R
+    rest 12
+    spawn_cue CUE_HIHAT
+    rest 6
+    spawn_cue CUE_KICK_R
+    rest 3
     return
 
 
 @ Dialogue
-glabel D_0805ffe4
+glabel D_0805f740
 .ascii "\n"
-.ascii "さらに１カ所、\n"
+.ascii "またまた１カ所、\n"
 .ascii "音がふえるヨ！\n"
 .asciz "わかるかな？\n"
 .balign 4, 0
 
 
 @ Pattern
-glabel D_08060014
+glabel D_0805f770
     spawn_cue CUE_SNARE_L
     rest 24
-    spawn_cue CUE_SNARE_R
-    rest 12
+    spawn_cue CUE_KICK_R
+    rest 6
+    spawn_cue CUE_SNARE_L
+    rest 6
     spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_SNARE_L
@@ -79,57 +101,33 @@ glabel D_08060014
 
 
 @ Dialogue
-glabel D_08060080
-.ascii "またまた１カ所、\n"
-.ascii "音がふえるヨ！\n"
+glabel D_0805f7f4
+.ascii "そしてまたなんと！\n"
+.ascii "１カ所、音がふえるヨ！\n"
 .ascii "わかるかな？\n"
 .asciz "ヒント：\x8f\x5c字ボタン右"
 .balign 4, 0
 
 
 @ Pattern
-glabel D_080600c4
+glabel D_0805f840
     spawn_cue CUE_SNARE_L
     rest 24
-    spawn_cue CUE_SNARE_R
-    rest 6
-    spawn_cue CUE_TOM
-    rest 6
     spawn_cue CUE_KICK_R
-    rest 12
-    spawn_cue CUE_SNARE_L
-    rest 24
-    return
-
-
-@ Dialogue
-glabel D_08060148
-.ascii "\n"
-.ascii "そしてまたなんと！\n"
-.ascii "１カ所、音がふえるヨ！\n"
-.asciz "わかるかな？\n"
-.balign 4, 0
-
-
-@ Pattern
-glabel D_08060184
-    spawn_cue CUE_SNARE_L
-    rest 24
-    spawn_cue CUE_SNARE_R
     rest 6
-    spawn_cue CUE_TOM
+    spawn_cue CUE_SNARE_L
     rest 6
     spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_SNARE_L
     rest 12
-    spawn_cue CUE_SNARE_L
+    spawn_cue CUE_TOM
     rest 12
     return
 
 
 @ Dialogue
-glabel D_08060220
+glabel D_0805f8dc
 .ascii "\n"
 .ascii "これまたなんと！！\n"
 .ascii "１カ所、音がふえるヨ！\n"
@@ -138,21 +136,46 @@ glabel D_08060220
 
 
 @ Pattern
-glabel D_0806025c
+glabel D_0805f918
     spawn_cue CUE_SNARE_L
-    rest 24
-    spawn_cue CUE_SNARE_R
+    rest 12
+    spawn_cue CUE_SNARE_L
+    rest 12
+    spawn_cue CUE_KICK_R
     rest 6
-    spawn_cue CUE_TOM
+    spawn_cue CUE_SNARE_L
     rest 6
     spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_SNARE_L
     rest 12
-    spawn_cue CUE_SNARE_R
-    rest 6
-    spawn_cue CUE_SNARE_L
-    rest 6
+    spawn_cue CUE_TOM
+    rest 12
     return
+
+
+@ Dialogue
+glabel D_0805f9cc
+.ascii "\x8f\x5c字ボタンの上で\n"
+.ascii "たたいたパーツは\n"
+.ascii "ハイハットっていう\n"
+.asciz "シンバルです。"
+.balign 4, 0
+
+
+@ Dialogue
+glabel D_0805fa10
+.ascii "ドラムセットによって\n"
+.ascii "\x8f\x5c字ボタンの上は\n"
+.ascii "ハイハットだったり\n"
+.asciz "ロールだったりします。"
+.balign 4, 0
+
+
+@ Dialogue
+glabel D_0805fa60
+.ascii "\n"
+.asciz "では、つぎ行きまーす！"
+.balign 4, 0
 
 .end

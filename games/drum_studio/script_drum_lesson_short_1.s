@@ -3,16 +3,16 @@
 
 .include "include/gba.inc"
 .include "include/bs_riq.inc"
-.include "games/drum_lessons/drum_studio_macros.inc"
+.include "games/drum_studio/drum_studio_macros.inc"
 
 load_drum_studio_labels
 
 
-/* Script Data - Drum Lesson (Short 8) */
+/* Script Data - Drum Lesson (Short 1) */
 
 
 @ Dialogue
-glabel D_0805fa78
+glabel D_0805f114
 .ascii "よくきいてマネしてね。\n"
 .ascii "好きなタイミングでどうぞ。\n"
 .ascii "演奏を止めると、\n"
@@ -21,52 +21,46 @@ glabel D_0805fa78
 
 
 @ Pattern
-glabel D_0805fad0
+glabel D_0805f16c
     spawn_cue CUE_SNARE_L
     rest 24
     spawn_cue CUE_KICK_R
-    rest 12
-    spawn_cue CUE_KICK_R
-    rest 12
+    rest 24
     spawn_cue CUE_SNARE_L
     rest 24
     return
 
 
-@ Pattern
-glabel D_0805fb3c
+@ Pattern Start
+glabel D_0805f1c0
     spawn_cue CUE_KICK_R
     rest 21
     return
 
 
 @ Dialogue
-glabel D_0805fb60
+glabel D_0805f1e4
 .ascii "\n"
 .ascii "１カ所、音がふえるヨ！\n"
-.ascii "わかるかな？\n"
-.asciz "ヒント：両手"
+.asciz "わかるかな？\n"
 .balign 4, 0
 
 
 @ Pattern
-glabel D_0805fb94
+glabel D_0805f20c
     spawn_cue CUE_SNARE_L
     rest 24
     spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_KICK_R
-    rest 11
-    spawn_cue CUE_SNARE_R
-    rest 1
-    rest 1
+    rest 12
     spawn_cue CUE_SNARE_L
-    rest 23
+    rest 24
     return
 
 
 @ Dialogue
-glabel D_0805fc24
+glabel D_0805f278
 .ascii "\n"
 .ascii "さらに１カ所、\n"
 .ascii "音がふえるヨ！\n"
@@ -75,16 +69,22 @@ glabel D_0805fc24
 
 
 @ Pattern
-glabel D_0805fc54
+glabel D_0805f2a8
+    spawn_cue CUE_SNARE_L
+    rest 12
+    spawn_cue CUE_SNARE_L
+    rest 12
     spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_KICK_R
-    rest 9
+    rest 12
+    spawn_cue CUE_SNARE_L
+    rest 24
     return
 
 
 @ Dialogue
-glabel D_0805fc90
+glabel D_0805f32c
 .ascii "\n"
 .ascii "またまた１カ所、\n"
 .ascii "音がふえるヨ！\n"
@@ -93,18 +93,24 @@ glabel D_0805fc90
 
 
 @ Pattern
-glabel D_0805fcc0
+glabel D_0805f35c
+    spawn_cue CUE_SNARE_L
+    rest 12
+    spawn_cue CUE_SNARE_L
+    rest 12
     spawn_cue CUE_KICK_R
     rest 12
-    spawn_cue CUE_KICK_L
-    rest 6
     spawn_cue CUE_KICK_R
-    rest 3
+    rest 12
+    spawn_cue CUE_SNARE_L
+    rest 12
+    spawn_cue CUE_SNARE_L
+    rest 12
     return
 
 
 @ Dialogue
-glabel D_0805fd14
+glabel D_0805f3f8
 .ascii "\n"
 .ascii "そしてまたなんと！\n"
 .ascii "１カ所、音がふえるヨ！\n"
@@ -112,21 +118,17 @@ glabel D_0805fd14
 .balign 4, 0
 
 
-@ Pattern
-glabel D_0805fd50
+@ Pattern Start
+glabel D_0805f434
     spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_KICK_R
-    rest 4
-    spawn_cue CUE_KICK_L
-    rest 4
-    spawn_cue CUE_KICK_R
-    rest 1
+    rest 9
     return
 
 
 @ Dialogue
-glabel D_0805fdbc
+glabel D_0805f470
 .ascii "\n"
 .ascii "これまたなんと！！\n"
 .ascii "１カ所、音がふえるヨ！\n"
@@ -135,20 +137,21 @@ glabel D_0805fdbc
 
 
 @ Pattern
-glabel D_0805fdf8
+glabel D_0805f4ac
     spawn_cue CUE_SNARE_L
-    rest 6
-    spawn_cue CUE_KICK_R
-    rest 18
+    rest 12
+    spawn_cue CUE_SNARE_L
+    rest 12
     spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_KICK_R
-    rest 11
+    rest 12
     spawn_cue CUE_SNARE_R
-    rest 1
-    rest 1
+    rest 6
     spawn_cue CUE_SNARE_L
-    rest 23
+    rest 6
+    spawn_cue CUE_SNARE_R
+    rest 12
     return
 
 .end

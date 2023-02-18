@@ -3,16 +3,16 @@
 
 .include "include/gba.inc"
 .include "include/bs_riq.inc"
-.include "games/drum_lessons/drum_studio_macros.inc"
+.include "games/drum_studio/drum_studio_macros.inc"
 
 load_drum_studio_labels
 
 
-/* Script Data - Drum Lesson (Long 4) */
+/* Script Data - Drum Lesson (Long 2) */
 
 
 @ Dialogue
-glabel D_08062634
+glabel D_08062d98
 .ascii "よくきいてマネしてね。\n"
 .ascii "好きなタイミングでどうぞ。\n"
 .ascii "演奏を止めると、\n"
@@ -21,37 +21,35 @@ glabel D_08062634
 
 
 @ Pattern
-glabel D_0806268c
-    spawn_cue CUE_SNARE_L
-    rest 12
-    spawn_cue CUE_KICK_R
-    rest 12
-    spawn_cue CUE_KICK_R
-    rest 24
+glabel D_08062df0
     spawn_cue CUE_SNARE_L
     rest 24
+    rest 12
+    spawn_cue CUE_KICK_R
+    rest 12
+    spawn_cue CUE_SNARE_L
+    rest 24
     spawn_cue CUE_KICK_R
     rest 24
     spawn_cue CUE_SNARE_L
-    rest 12
-    spawn_cue CUE_KICK_R
-    rest 12
-    spawn_cue CUE_KICK_R
     rest 24
+    rest 12
+    spawn_cue CUE_KICK_R
+    rest 12
     spawn_cue CUE_SNARE_L
     rest 24
     return
 
 
 @ Pattern Start
-glabel D_08062770
+glabel D_08062ebc
     spawn_cue CUE_KICK_R
     rest 21
     return
 
 
 @ Dialogue
-glabel D_08062794
+glabel D_08062ee0
 .ascii "\n"
 .ascii "シンバルとスネアで\n"
 .ascii "キメてみよう！\n"
@@ -60,32 +58,30 @@ glabel D_08062794
 
 
 @ Pattern
-glabel D_080627c4
+glabel D_08062f10
     spawn_cue CUE_SNARE_L
+    rest 24
     rest 12
     spawn_cue CUE_KICK_R
     rest 12
+    spawn_cue CUE_SNARE_L
+    rest 24
     spawn_cue CUE_KICK_R
     rest 24
     spawn_cue CUE_SNARE_L
     rest 24
-    spawn_cue CUE_KICK_R
-    rest 24
-    spawn_cue CUE_SNARE_L
-    rest 12
-    spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_SNARE_L
     rest 12
     spawn_cue CUE_SNARE_L
-    rest 24
+    rest 12
     return
 
 
 @ Pattern Start
-glabel D_080628c0
+glabel D_08062ff4
     spawn_cue CUE_KICK_R
     spawn_cue CUE_CRASH
     rest 21
@@ -93,122 +89,80 @@ glabel D_080628c0
 
 
 @ Dialogue
-glabel D_080628f0
-.ascii "たったの１つ、音がふえるヨ。\n"
-.ascii "でも　わりと　フクザツな\n"
-.ascii "カンジに　なるんだ！\n"
-.asciz "ついてこれるかな？"
+glabel D_08063024
+.ascii "\n"
+.ascii "バスドラムを\n"
+.ascii "チョットかえてみるネ。\n"
+.asciz "できるかな？\n"
 .balign 4, 0
 
 
 @ Pattern
-glabel D_08062950
+glabel D_08063058
     spawn_cue CUE_SNARE_L
     rest 12
-    spawn_cue CUE_KICK_R
-    rest 12
-    spawn_cue CUE_KICK_R
-    rest 24
-    spawn_cue CUE_SNARE_L
-    rest 24
-    spawn_cue CUE_KICK_R
-    rest 24
-    spawn_cue CUE_SNARE_L
-    rest 12
-    spawn_cue CUE_KICK_R
-    rest 6
-    spawn_cue CUE_SNARE_L
     rest 6
     spawn_cue CUE_KICK_R
+    rest 6
     rest 12
-    spawn_cue CUE_SNARE_L
+    spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_SNARE_L
     rest 24
+    spawn_cue CUE_KICK_R
+    rest 24
+    spawn_cue CUE_SNARE_L
+    rest 12
+    rest 6
+    spawn_cue CUE_KICK_R
+    rest 6
+    rest 12
+    spawn_cue CUE_KICK_R
+    rest 12
+    spawn_cue CUE_SNARE_L
+    rest 12
+    spawn_cue CUE_SNARE_L
+    rest 12
     return
 
 
 @ Dialogue
-glabel D_08062a64
-.ascii "\n"
-.ascii "おわりのところを\n"
-.ascii "カッコよくしてみるネ！\n"
-.asciz "がんばってみて！\n"
+glabel D_08063184
+.ascii "バスドラムを\n"
+.ascii "もうチョットだけ\n"
+.ascii "かえてみるネ。\n"
+.asciz "がんばって！！\n"
 .balign 4, 0
 
 
 @ Pattern
-glabel D_08062aa0
+glabel D_080631c4
     spawn_cue CUE_SNARE_L
     rest 12
+    rest 6
     spawn_cue CUE_KICK_R
+    rest 6
     rest 12
     spawn_cue CUE_KICK_R
+    rest 12
+    spawn_cue CUE_SNARE_L
     rest 24
-    spawn_cue CUE_SNARE_L
-    rest 24
-    spawn_cue CUE_KICK_R
-    rest 24
-    spawn_cue CUE_SNARE_L
-    rest 12
-    spawn_cue CUE_KICK_R
-    rest 6
-    spawn_cue CUE_SNARE_L
-    rest 6
-    spawn_cue CUE_KICK_R
-    rest 12
-    spawn_cue CUE_SNARE_L
-    rest 12
-    spawn_cue CUE_SNARE_L
-    rest 12
-    spawn_cue CUE_SNARE_R
-    rest 6
-    spawn_cue CUE_SNARE_L
-    rest 6
-    return
-
-
-@ Dialogue
-glabel D_08062be4
-.ascii "\n"
-.ascii "アクセントをつけるヨ。\n"
-.ascii "けっこうシブいかも～！\n"
-.asciz "やるしかない！！"
-.balign 4, 0
-
-
-@ Pattern
-glabel D_08062c24
-    spawn_cue CUE_SNARE_L
-    rest 12
-    spawn_cue CUE_KICK_R
-    rest 12
-    spawn_cue CUE_KICK_R
-    rest 24
-    spawn_cue CUE_SNARE_L
-    rest 6
-    spawn_cue CUE_KICK_R
-    spawn_cue CUE_CRASH
-    rest 6
-    rest 12
     spawn_cue CUE_KICK_R
     rest 24
     spawn_cue CUE_SNARE_L
     rest 12
-    spawn_cue CUE_KICK_R
-    rest 6
-    spawn_cue CUE_SNARE_L
     rest 6
     spawn_cue CUE_KICK_R
-    rest 12
-    spawn_cue CUE_SNARE_L
-    rest 12
-    spawn_cue CUE_SNARE_L
-    rest 12
-    spawn_cue CUE_SNARE_R
     rest 6
-    spawn_cue CUE_SNARE_L
     rest 6
+    spawn_cue CUE_KICK_R
+    rest 6
+    spawn_cue CUE_KICK_R
+    rest 12
+    spawn_cue CUE_SNARE_L
+    rest 12
+    spawn_cue CUE_SNARE_L
+    rest 12
     return
 
 .end

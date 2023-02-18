@@ -297,7 +297,7 @@ struct GraphicsTable drum_lessons_gfx_table[] = {
   //  //  //  SCRIPT DATA  //  //  //
 
 
-asm(".include \"games/drum_lessons/ending_scripts.inc\"");
+asm(".include \"games/drum_studio/ending_scripts.inc\"");
 
 
   //  //  //  CUE DATA  //  //  //
