@@ -368,7 +368,7 @@ void func_0800bebc(u32 arg) {
 
 
 // Play Music
-u32 scene_change_music(const struct SequenceData *music, u32 override, s32 soundPlayer) {
+u32 scene_change_music(struct SequenceData *music, u32 override, s32 soundPlayer) {
     if ((D_030053c0.musicPlayer != NULL) && override) {
         stop_soundplayer(D_030053c0.musicPlayer);
     }
@@ -390,31 +390,31 @@ u32 scene_change_music(const struct SequenceData *music, u32 override, s32 sound
 
 
 // Play Music (Override Existing)
-void scene_set_music(const struct SequenceData *music) {
+void scene_set_music(struct SequenceData *music) {
     scene_change_music(music, TRUE, -1);
 }
 
 
 // Play Music (No Override)
-void scene_play_music(const struct SequenceData *music) {
+void scene_play_music(struct SequenceData *music) {
     scene_change_music(music, FALSE, -1);
 }
 
 
 // Play Music in Given SoundPlayer (Override)
-void scene_set_music_with_soundplayer(const struct SequenceData *music, s32 soundPlayer) {
+void scene_set_music_with_soundplayer(struct SequenceData *music, s32 soundPlayer) {
     scene_change_music(music, TRUE, soundPlayer);
 }
 
 
 // Play Music in Given SoundPlayer (No Override)
-void scene_play_music_with_soundplayer(const struct SequenceData *music, s32 soundPlayer) {
+void scene_play_music_with_soundplayer(struct SequenceData *music, s32 soundPlayer) {
     scene_change_music(music, FALSE, soundPlayer);
 }
 
 
 // Play Music (override, use predefined SoundPlayer ID)
-void scene_play_music_ignore_lfo(const struct SequenceData *music) {
+void scene_play_music_ignore_lfo(struct SequenceData *music) {
     struct SoundPlayer *player;
 
     player = get_soundplayer_by_sound(music);

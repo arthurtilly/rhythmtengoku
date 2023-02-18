@@ -94,7 +94,7 @@ extern const struct CompressedGraphics *space_dance_buffered_textures[];
 extern struct GraphicsTable *space_dance_gfx_tables[];
 extern u8 space_dancer_anim_map[];
 extern u8 space_gramps_anim_map[];
-extern const struct SequenceData *space_dancer_sounds[];
+extern struct SequenceData *space_dancer_sounds[];
 extern u8 space_dance_cue_anim_map[];
 extern s16 D_089e6ebc[];
 

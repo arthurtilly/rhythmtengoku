@@ -42,12 +42,6 @@ enum PowerCalligraphyInputsEnum {
 
 
 // Sound Effects:
-extern const struct SequenceData s_sword_orya_seqData;
-extern const struct SequenceData s_sword_hi_seqData;
-extern const struct SequenceData s_f_shuji_v_nuaa_seqData;
-extern const struct SequenceData s_f_shuji_v_unuu_seqData;
-extern const struct SequenceData s_f_shuji_v_ouch_seqData;
-extern const struct SequenceData s_f_shuji_v_nuahaha_seqData;
 
 
 // Engine Data:

@@ -32,10 +32,6 @@ struct RatRaceCue {
 
 
 // Sound Effects:
-extern const struct SequenceData s_rat_stop_seqData;
-extern const struct SequenceData s_f_rat_slip_seqData;
-extern const struct SequenceData s_rat_dash_seqData;
-extern const struct SequenceData s_f_rat_error_seqData;
 
 
 // Engine Data:

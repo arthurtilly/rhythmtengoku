@@ -8,11 +8,6 @@ extern const struct CompressedGraphics D_08bd5524;
 extern const struct CompressedGraphics D_08bd5878;
 extern const struct CompressedGraphics D_08bd4e70;
 extern const Palette spaceball_pal[];
-extern const struct SequenceData s_f_dummy_vol0_seqData;
-extern const struct SequenceData s_witch_donats_seqData;
-extern const struct SequenceData s_batter_mit_seqData;
-extern const struct SequenceData s_batter_hit_seqData;
-extern const struct SequenceData s_f_batter_ball_high_seqData;
 
 
   //  //  //  GRAPHICS DATA  //  //  //

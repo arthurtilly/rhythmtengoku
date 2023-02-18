@@ -79,13 +79,6 @@ extern const Palette space_dance_bg_pal[];
 extern const Palette space_dance_obj_pal[];
 extern const Palette space_dance_remix_3_bg_pal[];
 
-extern const struct SequenceData s_f_space_dancer_swing_seqData;
-extern const struct SequenceData s_f_space_dancer_pa_seqData;
-extern const struct SequenceData s_f_space_dancer_sit_seqData;
-extern const struct SequenceData s_f_space_hit_seqData;
-extern const struct SequenceData s_tebyoushi_pati_seqData;
-extern const struct SequenceData s_space_miss_seqData;
-
 
   //  //  //  GRAPHICS DATA  //  //  //
 
@@ -307,7 +300,7 @@ u8 space_gramps_anim_map[] = {
 };
 
 // [D_089e6e9c] Sound Effects for Dancer Actions
-const struct SequenceData *space_dancer_sounds[] = {
+struct SequenceData *space_dancer_sounds[] = {
     /* 0x00 */ NULL,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,

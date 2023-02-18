@@ -24,7 +24,7 @@ struct PauseMenuDefinition {
     u16 pauseButton;
     PauseMenuInitFunc onPause;
     PauseMenuUpdateFunc update;
-    const struct SequenceData *quitSfx;
+    struct SequenceData *quitSfx;
 };
 
 struct PauseMenu {

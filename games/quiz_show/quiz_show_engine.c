@@ -34,10 +34,6 @@ extern const struct CompressedGraphics D_08c7c8e0;
 extern const Palette quiz_bg_pal[];
 extern const Palette quiz_obj_pal[];
 
-extern const struct SequenceData s_f_dummy_vol0_seqData;
-extern const struct SequenceData s_f_dummy_vol0_seqData;
-extern const struct SequenceData s_witch_donats_seqData;
-
 
   //  //  //  GRAPHICS DATA  //  //  //
 

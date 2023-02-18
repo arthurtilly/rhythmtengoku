@@ -105,7 +105,7 @@ struct InstrumentSubbankMultiKey {
 	void *subbank;
 };
 
-typedef const struct InstrumentHeader *InstrumentBank[];
+typedef struct InstrumentHeader *InstrumentBank[];
 
 union Instrument;
 
@@ -117,7 +117,7 @@ struct SequenceData {
     u32 unk4f4:8;
     u32 unk4f5:2;
     u32 unk8;
-    const char *seqName;
+    char *seqName;
     u32 iramChnlIndex;
 };
 
@@ -197,7 +197,7 @@ struct SoundPlayer {
     u32 volumeFadeType:3; // Type of currently-active Volume Fade { 0 = None; 1 = Fade-In; 2 = Fade-Out & Close; 3 = Fade-Out & Pause }
     struct MidiBus *midiBus;             // MIDI: Bus with effects for all MIDI Channels.
     struct MidiTrackStream *midiReader;  // MIDI: Multiple structures which each keep track of a MIDI Track being processed.
-    const struct SequenceData *songInfo; // SequenceData: Currently-loaded Sound Sequence.
+    struct SequenceData *songInfo; // SequenceData: Currently-loaded Sound Sequence.
     u32 deltaTime;              // MIDI: Ticks Per Frame, using internal assumption of 60fps [default = 1]
     const char *loopStartSym;   // MIDI: Label char denoting "Loop Start". [always D_08A865D4, '[']
     const char *loopEndSym;     // MIDI: Label char denoting "Loop End". [always D_08A865D8, ']']

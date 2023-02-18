@@ -13,7 +13,7 @@ struct MarchingOrdersCue {
 };
 
 struct MarchingSfxData {
-    const struct SequenceData *sound;
+    struct SequenceData *sound;
     u16 volume;
     s16 pitch;
 };

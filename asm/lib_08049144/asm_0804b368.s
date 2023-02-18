@@ -40,7 +40,7 @@ branch_0804b39e: \n\
 /* 0804b3ac */ LDR R2, [R4, 0x18] \n\
 /* 0804b3ae */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0804b3b0 */ BL func_08049fa0 \n\
-/* 0804b3b4 */ LDR R1, =instrumentBanks \n\
+/* 0804b3b4 */ LDR R1, =instrument_banks \n\
 /* 0804b3b6 */ LDRH R0, [R5, 0x4] \n\
 /* 0804b3b8 */ LSLS R0, R0, 0x11 \n\
 /* 0804b3ba */ LSRS R0, R0, 0x16 \n\

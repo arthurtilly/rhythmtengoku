@@ -101,14 +101,6 @@ extern const struct Animation anim_tweezers_pull[];    // Animation: "hair_long_
 
 
 // Sound Effects:
-extern const struct SequenceData s_f_hair_next_seqData;         // SFX: Cash Register
-extern const struct SequenceData s_f_hair_nuki_long_seqData;    // SFX: ???
-extern const struct SequenceData s_f_hair_tuneru_seqData;       // SFX: ???
-extern const struct SequenceData s_hanabi_pon_seqData;          // SFX: Hair Appear (Short)
-extern const struct SequenceData s_f_hair_appear_long_seqData;  // SFX: Hair Appear (Long)
-extern const struct SequenceData s_datumo_nuki_seqData;
-extern const struct SequenceData s_f_hair_kegire_seqData;
-extern const struct SequenceData s_witch_furu_seqData;
 
 
 // Engine Data:

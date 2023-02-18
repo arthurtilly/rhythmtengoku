@@ -18,7 +18,6 @@ extern const struct CompressedGraphics *const cosmic_dance_prologue_buffered_tex
 extern const struct GraphicsTable cosmic_dance_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_cosmic_dance_prologue_title[]; // Animation: Text (Cosmic Dance)
 extern const struct Animation anim_cosmic_dance_prologue_dancer[]; // Animation: Cosmic Dancers
-extern const struct SequenceData s_jingle_handclap_seqData;
 
 // Functions:
 extern void func_08045664(void);    // [func_08045664] GFX_INIT Func_02

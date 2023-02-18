@@ -1714,7 +1714,7 @@ SECTIONS {
 
         build/bin/bindata_089edf48.bin.o(.rodata*);
 
-        build/audio/audio_data.c.o(.rodata*);
+        build/audio/audio_data.c.o(.data*);
         build/bin/bindata_08a9e8e0.bin.o(.rodata*);
         build/bin/bindata_08aa06f8.bin.o(.rodata*);
 		build/audio/sample_table.json.c.o(.rodata*);

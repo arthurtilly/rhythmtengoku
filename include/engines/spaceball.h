@@ -88,7 +88,6 @@ extern const struct Animation anim_spaceball_flower_hide[]; // Animation: "?"
 // Palettes:
 
 // Sound Effects:
-extern const struct SequenceData s_f_batter_ball_land_seqData;
 
 // Engine Data:
 

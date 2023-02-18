@@ -29,9 +29,6 @@ enum TramPaulineVersionsEnum {
 
 
 // Sound Effects:
-extern const struct SequenceData s_hanabi_pon_seqData;
-extern const struct SequenceData s_witch_cake_seqData;
-extern const struct SequenceData s_witch_donats_seqData;
 
 
 // Engine Data:

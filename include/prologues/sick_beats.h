@@ -19,7 +19,6 @@ extern const struct CompressedGraphics *const sick_beats_prologue_buffered_textu
 extern const struct GraphicsTable sick_beats_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_sick_beats_prologue_title[]; // Animation: Text (Sick Beats)
 extern const struct Animation anim_sick_beats_prologue_virus[]; // Animation: Virus
-extern const struct SequenceData s_jingle_ghost_seqData;
 
 // Functions:
 extern void func_08047c08(void);    // [func_08047c08] GFX_INIT Func_02

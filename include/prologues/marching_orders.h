@@ -17,7 +17,6 @@ struct MarchingOrdersPrologueInfo {
 extern const struct CompressedGraphics *const marching_orders_prologue_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable marching_orders_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_marching_orders_prologue_title[]; // Animation: Text (Marching Orders)
-extern const struct SequenceData s_jingle_march_seqData;
 
 // Functions:
 extern void func_08046234(void);    // [func_08046234] GFX_INIT Func_02

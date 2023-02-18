@@ -44,10 +44,6 @@ extern const struct Animation anim_large_demon_walk[];
 
 
 // Sound Effects:
-extern const struct SequenceData s_kuma_sakana_seqData;
-extern const struct SequenceData s_f_iai_cut_seqData;
-extern const struct SequenceData s_iai_miss_seqData;
-extern const struct SequenceData s_f_iai_cut2_seqData;
 
 
 // Engine Data:

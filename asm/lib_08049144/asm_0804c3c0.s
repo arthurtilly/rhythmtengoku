@@ -19,7 +19,7 @@ thumb_func_start func_0804c3c0 \n\
 /* 0804c3da */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0804c3dc */ LDR R2, [SP, 0x1C] \n\
 /* 0804c3de */ BL func_08049fa0 \n\
-/* 0804c3e2 */ LDR R1, =instrumentBanks \n\
+/* 0804c3e2 */ LDR R1, =instrument_banks \n\
 /* 0804c3e4 */ LDR R0, =D_08aa431d \n\
 /* 0804c3e6 */ LDRB R0, [R0] \n\
 /* 0804c3e8 */ LSLS R0, R0, 0x2 \n\

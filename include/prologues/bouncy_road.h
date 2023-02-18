@@ -19,7 +19,6 @@ extern const struct CompressedGraphics *const bouncy_road_prologue_buffered_text
 extern const struct GraphicsTable bouncy_road_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_bouncy_road_prologue_title[]; // Animation: Text (Bouncy Road)
 extern const struct Animation anim_bouncy_road_prologue_path[]; // Animation: Bouncers
-extern const struct SequenceData s_jingle_poli_seqData;
 
 // Functions:
 extern void func_08045a90(void);    // [func_08045a90] GFX_INIT Func_02

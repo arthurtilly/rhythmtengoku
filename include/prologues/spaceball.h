@@ -17,7 +17,6 @@ struct SpaceballPrologueInfo {
 extern const struct CompressedGraphics *const spaceball_prologue_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable spaceball_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_spaceball_prologue_title[]; // Animation: Text (Spaceball)
-extern const struct SequenceData s_jingle_baseball_seqData;
 
 // Functions:
 extern void func_08045208(void);    // [func_08045208] GFX_INIT Func_02

@@ -17,7 +17,6 @@ struct FireworksPrologueInfo {
 extern const struct CompressedGraphics *const fireworks_prologue_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable fireworks_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_fireworks_prologue_title[]; // Animation: Text (Fireworks)
-extern const struct SequenceData s_jingle_bon_seqData;
 
 // Functions:
 extern void func_08045cf0(void);    // [func_08045cf0] GFX_INIT Func_02

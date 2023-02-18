@@ -19,41 +19,6 @@ extern const Palette horse_machine_bg_04_pal[];
 extern const Palette horse_machine_bg_05_pal[];
 extern const Palette horse_machine_bg_06_pal[];
 
-extern const struct SequenceData s_uma_walk1_seqData;
-extern const struct SequenceData s_uma_walk2_seqData;
-extern const struct SequenceData s_uma_walk3_seqData;
-extern const struct SequenceData s_uma_walk4_seqData;
-extern const struct SequenceData s_uma_trot1_seqData;
-extern const struct SequenceData s_uma_trot2_seqData;
-extern const struct SequenceData s_uma_canter1_seqData;
-extern const struct SequenceData s_uma_canter2_seqData;
-extern const struct SequenceData s_uma_canter3_seqData;
-extern const struct SequenceData s_uma_hihin_seqData;
-extern const struct SequenceData s_uma_galop1_seqData;
-extern const struct SequenceData s_uma_galop2_seqData;
-extern const struct SequenceData s_uma_galop3_seqData;
-extern const struct SequenceData s_uma_galop4_seqData;
-
-extern const struct SequenceData s_uma_walk1_t_seqData;
-extern const struct SequenceData s_uma_walk2_t_seqData;
-extern const struct SequenceData s_uma_walk3_t_seqData;
-extern const struct SequenceData s_uma_walk4_t_seqData;
-extern const struct SequenceData s_uma_trot1_t_seqData;
-extern const struct SequenceData s_uma_trot2_t_seqData;
-extern const struct SequenceData s_uma_canter1_t_seqData;
-extern const struct SequenceData s_uma_canter2_t_seqData;
-extern const struct SequenceData s_uma_canter3_t_seqData;
-extern const struct SequenceData s_uma_hihin_seqData;
-extern const struct SequenceData s_uma_galop1_t_seqData;
-extern const struct SequenceData s_uma_galop2_t_seqData;
-extern const struct SequenceData s_uma_galop3_t_seqData;
-extern const struct SequenceData s_uma_galop4_t_seqData;
-
-extern const struct SequenceData s_uma_bgm1_seqData;
-extern const struct SequenceData s_uma_bgm2_seqData;
-extern const struct SequenceData s_uma_bgm3_seqData;
-extern const struct SequenceData s_uma_bgm4_seqData;
-
 extern const struct Animation anim_horse_walk[];
 extern const struct Animation anim_horse_trot[];
 extern const struct Animation anim_horse_canter[];
@@ -322,7 +287,7 @@ struct GraphicsTable gfx_table_horse_machine[] = {
 
 
 // [D_089e8e60] Horse Clops (Player)
-const struct SequenceData *horse_machine_player_horse_sfx[][4] = {
+struct SequenceData *horse_machine_player_horse_sfx[][4] = {
     /* WALK */ {
         /* 0x00 */ &s_uma_walk1_seqData,
         /* 0x01 */ &s_uma_walk2_seqData,
@@ -350,7 +315,7 @@ const struct SequenceData *horse_machine_player_horse_sfx[][4] = {
 };
 
 // [D_089e8ea0] Horse Clops (Teacher)
-const struct SequenceData *horse_machine_teacher_horse_sfx[][4] = {
+struct SequenceData *horse_machine_teacher_horse_sfx[][4] = {
     /* WALK */ {
         /* 0x00 */ &s_uma_walk1_t_seqData,
         /* 0x01 */ &s_uma_walk2_t_seqData,
@@ -378,7 +343,7 @@ const struct SequenceData *horse_machine_teacher_horse_sfx[][4] = {
 };
 
 // [D_089e8ee0] Lesson BGM
-const struct SequenceData *horse_machine_lesson_bgm[] = {
+struct SequenceData *horse_machine_lesson_bgm[] = {
     /* WALK   */ &s_uma_bgm1_seqData,
     /* TROT   */ &s_uma_bgm2_seqData,
     /* CANTER */ &s_uma_bgm3_seqData,

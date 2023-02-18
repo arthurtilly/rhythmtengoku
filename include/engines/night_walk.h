@@ -9,7 +9,7 @@ struct DrumTechInstrument {
     u8 duration;
     u16 volume;
     s16 pitch;
-    const struct SequenceData *sound;
+    struct SequenceData *sound;
 };
 
 struct DrumTechNote {
@@ -163,10 +163,6 @@ extern const struct Animation anim_play_yan_violent_electrocution[]; // [D_088ca
 
 
 // Sound Effects:
-extern const struct SequenceData s_4beat_jiban_seqData;
-extern const struct SequenceData s_f_drumtech_damage_seqData;
-extern const struct SequenceData s_f_drumtech_miss_seqData;
-extern const struct SequenceData s_f_drumtech_fall_seqData;
 
 
 // Engine Data:
@@ -175,7 +171,7 @@ extern const struct SequenceData s_f_drumtech_fall_seqData;
 // Engine Definition Data:
 extern const struct Animation *night_walk_star_anim[]; // Stars
 extern const struct Animation *night_walk_star_expand_anim[]; // Star Flashes
-extern const struct SequenceData *D_089e2ef8[];
+extern struct SequenceData *D_089e2ef8[];
 extern struct DrumTechInstrument drumtech_drum_bank[];
 extern const struct CompressedGraphics *night_walk_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable night_walk_gfx_table[]; // Graphics Table

@@ -113,41 +113,6 @@ extern const struct Animation anim_toss_boys_arrow_y[];
 extern const struct Animation anim_toss_remix_5_arrow_y[];
 extern const struct Animation anim_toss_boys_2_arrow_y[];
 
-extern const struct SequenceData s_toss_red_blue1_seqData;
-extern const struct SequenceData s_toss_red_blue2_seqData;
-extern const struct SequenceData s_toss_red_blue3_seqData;
-extern const struct SequenceData s_toss_red_yelw1_seqData;
-extern const struct SequenceData s_toss_red_yelw2_seqData;
-extern const struct SequenceData s_toss_red_yelw3_seqData;
-extern const struct SequenceData s_toss_red_red_seqData;
-extern const struct SequenceData s_toss_blue_red1_seqData;
-extern const struct SequenceData s_toss_blue_red2_seqData;
-extern const struct SequenceData s_toss_blue_red3_seqData;
-extern const struct SequenceData s_toss_blue_yelw1_seqData;
-extern const struct SequenceData s_toss_blue_yelw2_seqData;
-extern const struct SequenceData s_toss_blue_yelw3_seqData;
-extern const struct SequenceData s_toss_blue_blue_seqData;
-extern const struct SequenceData s_toss_yelw_red1_seqData;
-extern const struct SequenceData s_toss_yelw_red2_seqData;
-extern const struct SequenceData s_toss_yelw_red3_seqData;
-extern const struct SequenceData s_toss_yelw_blue1_seqData;
-extern const struct SequenceData s_toss_yelw_blue2_seqData;
-extern const struct SequenceData s_toss_yelw_blue3_seqData;
-extern const struct SequenceData s_toss_yelw_yelw_seqData;
-extern const struct SequenceData s_toss_red_before_seqData;
-extern const struct SequenceData s_toss_blue_before_seqData;
-extern const struct SequenceData s_toss_yelw_before_seqData;
-extern const struct SequenceData s_toss_red_break_seqData;
-extern const struct SequenceData s_toss_blue_break_seqData;
-extern const struct SequenceData s_toss_yelw_break_seqData;
-extern const struct SequenceData s_toss_ball_red_seqData;
-extern const struct SequenceData s_toss_ball_blue_seqData;
-extern const struct SequenceData s_toss_ball_yelw_seqData;
-extern const struct SequenceData s_toss_ball_haretu_seqData;
-extern const struct SequenceData s_f_toss_miss1_seqData;
-extern const struct SequenceData s_f_toss_miss2_seqData;
-extern const struct SequenceData s_f_toss_miss3_seqData;
-
 extern const struct CompressedGraphics D_08cf961c;
 extern const struct CompressedGraphics D_08cfa60c;
 extern const struct CompressedGraphics D_08cf8918;
@@ -727,14 +692,14 @@ s16 D_089e86bc[][4] = {
 };
 
 // [D_089e86dc] Ball Toss SFX
-const struct SequenceData *toss_boys_ball_bounce_sfx[] = {
+struct SequenceData *toss_boys_ball_bounce_sfx[] = {
     /* R */ &s_toss_ball_red_seqData,
     /* B */ &s_toss_ball_blue_seqData,
     /* Y */ &s_toss_ball_yelw_seqData
 };
 
 // [D_089e86e8] Ball Pop SFX
-const struct SequenceData *toss_boys_ball_pop_sfx[] = {
+struct SequenceData *toss_boys_ball_pop_sfx[] = {
     /* R */ &s_toss_ball_haretu_seqData,
     /* B */ &s_toss_ball_haretu_seqData,
     /* Y */ &s_toss_ball_haretu_seqData
@@ -748,7 +713,7 @@ s8 toss_boys_miss_anim_ids[] = {
 };
 
 // [D_089e86f8] Ball Miss SFX
-const struct SequenceData *toss_boys_ball_miss_sfx[] = {
+struct SequenceData *toss_boys_ball_miss_sfx[] = {
     /* R */ &s_f_toss_miss1_seqData,
     /* B */ &s_f_toss_miss2_seqData,
     /* Y */ &s_f_toss_miss3_seqData

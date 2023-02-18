@@ -17,7 +17,6 @@ struct TossBoys2PrologueInfo {
 extern const struct CompressedGraphics *const toss_boys_2_prologue_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable toss_boys_2_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_toss_boys_2_prologue_title[]; // Animation: Text (Toss Boys 2)
-extern const struct SequenceData s_jingle_toss_seqData;
 
 // Functions:
 extern void func_080479d4(void);    // [func_080479d4] GFX_INIT Func_02

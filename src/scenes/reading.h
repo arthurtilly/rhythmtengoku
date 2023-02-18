@@ -12,7 +12,7 @@ struct ReadingMaterial {
     const char *title;
     const char *text;
     const u32 *graphics;
-    const struct SequenceData *music;
+    struct SequenceData *music;
 };
 
 

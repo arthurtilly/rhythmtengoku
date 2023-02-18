@@ -17,8 +17,6 @@ struct Remix4PrologueInfo {
 extern const struct CompressedGraphics *const remix_4_prologue_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable remix_4_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_remix_4_prologue_title[]; // Animation: Text (Remix 4)
-extern const struct SequenceData s_jingle_remix_seqData;
-extern const struct SequenceData s_f_scratch_seqData;
 
 // Functions:
 extern void func_0804691c(void);    // [func_0804691c] GFX_INIT Func_02

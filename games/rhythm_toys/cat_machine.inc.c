@@ -1,11 +1,3 @@
-extern const struct SequenceData s_f_neko1_seqData;
-extern const struct SequenceData s_f_neko2_seqData;
-extern const struct SequenceData s_f_neko3_seqData;
-extern const struct SequenceData s_f_neko4_seqData;
-extern const struct SequenceData s_f_neko6_seqData;
-extern const struct SequenceData s_f_neko5_seqData;
-
-
 // [D_089e9350] DrumTech Sequence
 struct DrumTechNote drum_seq_cat_machine_1_b[] = {
     {
@@ -857,7 +849,7 @@ struct DrumTechNote *cat_machine_2_drum_seq_table[] = {
 };
 
 // [D_089e97e0] Cat Machine SFX
-const struct SequenceData *cat_machine_meow_sfx_table[] = {
+struct SequenceData *cat_machine_meow_sfx_table[] = {
     /* A */ &s_f_neko1_seqData,
     /* B */ &s_f_neko2_seqData,
     /* U */ &s_f_neko3_seqData,

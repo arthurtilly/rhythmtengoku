@@ -21,7 +21,7 @@ extern const struct GraphicsTable night_walk_prologue_gfx_table[]; // Graphics T
 extern const struct Animation anim_night_walk_prologue_title[]; // Animation: Text (Night Walk)
 extern const struct Animation anim_night_walk_prologue_play_yan[]; // Animation: Play-yan
 extern const struct Animation anim_night_walk_prologue_balloons[]; // Animation: Balloons
-extern const struct SequenceData s_jingle_handclap_seqData;
+
 
 // Functions:
 extern void func_080457b4(void);    // [func_080457b4] GFX_INIT Func_02

@@ -217,7 +217,7 @@ struct CalligraphyBrushMotion calligraphy_brush_motions[][3] = {
 
 
 // [D_089e4ae4] Input Sounds (Hit)
-const struct SequenceData *calligraphy_input_hit_sfx[] = {
+struct SequenceData *calligraphy_input_hit_sfx[] = {
     /* ONORE 1   */ &s_sword_orya_seqData,
     /* CHIKARA 1 */ &s_sword_orya_seqData,
     /* CHIKARA 2 */ &s_sword_orya_seqData,
@@ -232,7 +232,7 @@ const struct SequenceData *calligraphy_input_hit_sfx[] = {
 };
 
 // [D_089e4b10] Input Sounds (Barely)
-const struct SequenceData *calligraphy_input_barely_sfx[] = {
+struct SequenceData *calligraphy_input_barely_sfx[] = {
     /* ONORE 1   */ &s_f_shuji_v_nuaa_seqData,
     /* CHIKARA 1 */ &s_f_shuji_v_nuaa_seqData,
     /* CHIKARA 2 */ &s_f_shuji_v_unuu_seqData,

@@ -19,7 +19,6 @@ extern const struct CompressedGraphics *const rat_race_prologue_buffered_texture
 extern const struct GraphicsTable rat_race_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_rat_race_prologue_title[]; // Animation: Text (Rat Race)
 extern const struct Animation anim_rat_race_prologue_rat[]; // Animation: Rat
-extern const struct SequenceData s_jingle_rat_seqData;
 
 // Functions:
 extern void func_08047164(void);    // [func_08047164] GFX_INIT Func_02

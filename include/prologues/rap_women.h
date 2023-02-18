@@ -17,7 +17,6 @@ struct RapWomenPrologueInfo {
 extern const struct CompressedGraphics *const rap_women_prologue_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable rap_women_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_rap_women_prologue_title[]; // Animation: Text (Rap Women)
-extern const struct SequenceData s_jingle_rap_seqData;
 
 // Functions:
 extern void func_08047060(void);    // [func_08047060] GFX_INIT Func_02

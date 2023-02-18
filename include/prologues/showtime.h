@@ -19,7 +19,6 @@ extern const struct CompressedGraphics *const showtime_prologue_buffered_texture
 extern const struct GraphicsTable showtime_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_showtime_prologue_title[]; // Animation: Text (Showtime)
 extern const struct Animation anim_showtime_prologue_penguin[]; // Animation: Penguin
-extern const struct SequenceData s_jingle_quiz_seqData;
 
 // Functions:
 extern void func_08045944(void);    // [func_08045944] GFX_INIT Func_02

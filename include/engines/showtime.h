@@ -72,8 +72,6 @@ extern const struct Animation anim_showtime_big_penguin_slide[];
 
 
 // Sound Effects:
-extern const struct SequenceData s_block_hit_seqData;
-extern const struct SequenceData s_f_esa_jump_seqData;
 
 
 // Engine Data:

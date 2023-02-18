@@ -62,16 +62,6 @@ enum RappingAnimationsEnum {
 
 
 // Sound Effects:
-extern const struct SequenceData s_rap_un_seqData;
-extern const struct SequenceData s_rap_uun_seqData;
-extern const struct SequenceData s_f_rapW_v_Un_seqData;
-extern const struct SequenceData s_f_rapW_v_Uun_seqData;
-extern const struct SequenceData s_intro_two_seqData;
-extern const struct SequenceData s_f_rapW_v_CheckIt_seqData;
-extern const struct SequenceData s_RC_seqData;
-extern const struct SequenceData s_tom_M_seqData;
-extern const struct SequenceData s_SD1_seqData;
-extern const struct SequenceData s_CC4_seqData;
 
 
 // Engine Data:
@@ -84,8 +74,8 @@ extern const struct CompressedGraphics *rap_men_buffered_textures[]; // Buffered
 extern struct GraphicsTable *rap_men_gfx_tables[]; // Graphics Table Index
 extern u8 rapping_anim_map[];
 extern u8 rapping_anim_durations[];
-extern const struct SequenceData *rap_men_cue_hit_sfx[2][2];
-extern const struct SequenceData *rap_men_cue_miss_sfx[2];
+extern struct SequenceData *rap_men_cue_hit_sfx[2][2];
+extern struct SequenceData *rap_men_cue_miss_sfx[2];
 
 
 // Functions:

@@ -182,7 +182,7 @@ void func_08018cc8(void) {
 
 // [func_08018d68] LEVEL Play Music (Script Function)
 void func_08018d68(void) {
-    const struct SequenceData *music = D_089d7694[gResultsInfo->finalResultLevel];
+    struct SequenceData *music = D_089d7694[gResultsInfo->finalResultLevel];
 
     scene_set_music(music);
     set_beatscript_tempo(get_music_base_tempo(music));

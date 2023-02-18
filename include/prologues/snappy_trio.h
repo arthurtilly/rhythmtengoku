@@ -17,7 +17,6 @@ struct SnappyTrioPrologueInfo {
 extern const struct CompressedGraphics *const snappy_trio_prologue_buffered_textures[]; // Buffered Textures List
 extern const struct GraphicsTable snappy_trio_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_snappy_trio_prologue_title[]; // Animation: Text (The Snappy Trio)
-extern const struct SequenceData s_jingle_handclap_seqData;
 
 // Functions:
 extern void func_08045ee8(void);    // [func_08045ee8] GFX_INIT Func_02

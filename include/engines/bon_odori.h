@@ -98,8 +98,6 @@ enum BonOdoriDonpanAnimationsEnum {
 
 
 // Sound Effects:
-extern const struct SequenceData s_tebyoushi_pati_seqData;
-extern const struct SequenceData s_HC_seqData;
 
 
 // Engine Data:

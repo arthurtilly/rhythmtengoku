@@ -12,10 +12,6 @@ extern const struct CompressedGraphics D_08c35f18;
 extern const struct CompressedGraphics D_08c360b0;
 extern const struct CompressedGraphics D_08c35c9c;
 extern const Palette mannequin_factory_pal[];
-extern const struct SequenceData s_SD7_seqData;
-extern const struct SequenceData s_f_conveyer_hit_seqData;
-extern const struct SequenceData s_tom_M_seqData;
-extern const struct SequenceData s_tom_L_seqData;
 
 
   //  //  //  GRAPHICS DATA  //  //  //
@@ -86,7 +82,7 @@ struct GraphicsTable mannequin_gfx_table[] = {
 
 
 // [D_089df404] ?
-const struct SequenceData *D_089df404[] = {
+struct SequenceData *D_089df404[] = {
     /* 0x00 */ &s_SD7_seqData,
     /* 0x01 */ &s_f_conveyer_hit_seqData,
     /* 0x02 */ &s_tom_M_seqData,

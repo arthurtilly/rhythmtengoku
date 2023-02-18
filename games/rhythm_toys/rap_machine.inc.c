@@ -1,22 +1,5 @@
-extern const struct SequenceData s_rap_un_seqData;
-extern const struct SequenceData s_rap_uun_seqData;
-extern const struct SequenceData s_rap_yeah_seqData;
-extern const struct SequenceData s_rap_oyatuha_saiko_seqData;
-extern const struct SequenceData s_rap_15ji_desuka_seqData;
-extern const struct SequenceData s_rap_oisi_kamone_seqData;
-extern const struct SequenceData s_rap_kibunha_saiko_seqData;
-extern const struct SequenceData s_rap_oyatu_desuka_seqData;
-extern const struct SequenceData s_rap_herusi_kamone_seqData;
-extern const struct SequenceData s_rap_orette_saiko_seqData;
-extern const struct SequenceData s_rap_wakari_desuka_seqData;
-extern const struct SequenceData s_rap_tanosi_kamone_seqData;
-extern const struct SequenceData s_rap_kimitte_saiko_seqData;
-extern const struct SequenceData s_rap_15ji_desuka_seqData;
-extern const struct SequenceData s_rap_soremoso_kamone_seqData;
-
-
 // [D_089e98a4] Rap Machine SFX Table 1
-const struct SequenceData *rap_machine_sfx_table1[] = {
+struct SequenceData *rap_machine_sfx_table1[] = {
     /* A */ &s_rap_un_seqData,
     /* B */ &s_rap_uun_seqData,
     /* U */ &s_rap_oyatuha_saiko_seqData,
@@ -26,7 +9,7 @@ const struct SequenceData *rap_machine_sfx_table1[] = {
 };
 
 // [D_089e98bc] Rap Machine SFX Table 2
-const struct SequenceData *rap_machine_sfx_table2[] = {
+struct SequenceData *rap_machine_sfx_table2[] = {
     /* A */ &s_rap_un_seqData,
     /* B */ &s_rap_uun_seqData,
     /* U */ &s_rap_kibunha_saiko_seqData,
@@ -36,7 +19,7 @@ const struct SequenceData *rap_machine_sfx_table2[] = {
 };
 
 // [D_089e98d4] Rap Machine SFX Table 3
-const struct SequenceData *rap_machine_sfx_table3[] = {
+struct SequenceData *rap_machine_sfx_table3[] = {
     /* A */ &s_rap_un_seqData,
     /* B */ &s_rap_uun_seqData,
     /* U */ &s_rap_orette_saiko_seqData,
@@ -46,7 +29,7 @@ const struct SequenceData *rap_machine_sfx_table3[] = {
 };
 
 // [D_089e98ec] Rap Machine SFX Table 4
-const struct SequenceData *rap_machine_sfx_table4[] = {
+struct SequenceData *rap_machine_sfx_table4[] = {
     /* A */ &s_rap_un_seqData,
     /* B */ &s_rap_uun_seqData,
     /* U */ &s_rap_kimitte_saiko_seqData,
@@ -56,7 +39,7 @@ const struct SequenceData *rap_machine_sfx_table4[] = {
 };
 
 // [D_089e9904] Rap Machine SFX Table Pool
-const struct SequenceData **rap_machine_sfx_pool[] = {
+struct SequenceData **rap_machine_sfx_pool[] = {
     /* 0x00 */ rap_machine_sfx_table1,
     /* 0x01 */ rap_machine_sfx_table2,
     /* 0x02 */ rap_machine_sfx_table3,

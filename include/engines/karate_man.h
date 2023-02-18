@@ -127,15 +127,6 @@ extern const Palette karate_man_pal[]; // Palette
 
 
 // Sound Effects:
-extern const struct SequenceData s_f_boxing_score_reset_seqData;
-extern const struct SequenceData s_f_boxing_score_up_seqData;
-extern const struct SequenceData s_f_boxing_score_down_seqData;
-extern const struct SequenceData s_f_boxing_punch_seqData;
-extern const struct SequenceData s_f_boxing_land_seqData;
-extern const struct SequenceData s_f_boxing_hard_seqData;
-extern const struct SequenceData s_f_boxing_normal_seqData;
-extern const struct SequenceData s_f_boxing_kansei_seqData;
-extern const struct SequenceData s_f_boxing_v_nua_seqData;
 
 
 // Engine Data:

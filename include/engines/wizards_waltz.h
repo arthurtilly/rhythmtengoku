@@ -57,10 +57,6 @@ extern const struct Animation anim_wizards_waltz_sprout_appear_tutorial[];
 
 
 // Sound Effects:
-extern const struct SequenceData s_witch_furu_seqData;
-extern const struct SequenceData s_witch_candy_seqData;
-extern const struct SequenceData s_witch_cake_seqData;
-extern const struct SequenceData s_witch_donats_seqData;
 
 
 // Engine Data:

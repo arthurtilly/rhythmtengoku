@@ -17,8 +17,6 @@ struct SamuraiSlicePrologueInfo {
 extern const struct CompressedGraphics *const samurai_slice_prologue_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable samurai_slice_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_samurai_slice_prologue_title[]; // Animation: Text (Samurai Slice)
-extern const struct SequenceData s_jingle_iai_seqData;
-extern const struct SequenceData s_f_iai_title_seqData;
 
 // Functions:
 extern void func_08045fe4(void);    // [func_08045fe4] GFX_INIT Func_02

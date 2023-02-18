@@ -31,8 +31,6 @@ extern const struct Animation D_0890a3c4[]; // Blank
 
 
 // Sound Effects:
-extern const struct SequenceData s_menu_cursor2_seqData;
-extern const struct SequenceData s_menu_kettei1_seqData;
 
 
 // Scene Data:

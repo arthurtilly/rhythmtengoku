@@ -17,7 +17,6 @@ struct PolyrhythmPrologueInfo {
 extern const struct CompressedGraphics *const polyrhythm_prologue_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable polyrhythm_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_polyrhythm_prologue_title[]; // Animation: Text (Polyrhythm)
-extern const struct SequenceData s_jingle_poli_seqData;
 
 // Functions:
 extern void func_0804642c(void);    // [func_0804642c] GFX_INIT Func_02

@@ -77,14 +77,6 @@ extern const struct Animation anim_sneaky_spirit_tutorial[]; // Animation: "ghos
 
 
 // Sound Effects:
-extern const struct SequenceData s_ghost_rain_seqData;           // Sound: Wind/Rain
-extern const struct SequenceData s_ghost_gosha_seqData;          // Sound: Arrow Missed
-extern const struct SequenceData s_ghost_walk_seqData;           // Sound: Ghost Moving
-extern const struct SequenceData s_f_aim_just_hit_seqData;       // Sound: Ghost Hit
-extern const struct SequenceData s_f_aim_just_hit_voice_seqData; // Sound: Ghost Hit Voice
-extern const struct SequenceData s_ghost_miss_hit_seqData;       // Sound: Ghost Barely
-extern const struct SequenceData s_ghost_dash_seqData;           // Sound: Ghost Miss
-extern const struct SequenceData s_ghost_warai_seqData;          // Sound: Ghost Miss Voice
 
 
 // Engine Data:

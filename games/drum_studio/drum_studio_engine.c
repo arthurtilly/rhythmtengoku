@@ -140,7 +140,7 @@ const char *drum_lessons_rank_text[] = {
 };
 
 // [D_089e178c] Rank SFX
-const struct SequenceData *drum_lessons_rank_sfx[] = {
+struct SequenceData *drum_lessons_rank_sfx[] = {
     /* RANK_0 */ NULL,
     /* RANK_C */ &s_f_lesson_c_seqData,
     /* RANK_B */ &s_f_lesson_b_seqData,

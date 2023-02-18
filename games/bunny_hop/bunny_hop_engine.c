@@ -20,20 +20,6 @@ extern const struct CompressedGraphics D_08c7fbb8;
 extern const Palette bunny_hop_pal[];
 extern const Palette bunny_hop_remix_3_pal[];
 
-extern const struct SequenceData s_rabbit_c7_seqData;
-extern const struct SequenceData s_rabbit_c7_brass_seqData;
-extern const struct SequenceData s_rabbit_f7_seqData;
-extern const struct SequenceData s_rabbit_g7f7_1_seqData;
-extern const struct SequenceData s_rabbit_c7g7_seqData;
-extern const struct SequenceData s_rabbit_g7f7_2_seqData;
-extern const struct SequenceData s_rabbit_fill_1_seqData;
-extern const struct SequenceData s_rabbit_fill_2_seqData;
-extern const struct SequenceData s_rabbit_fill_3_seqData;
-extern const struct SequenceData s_rabbit_fill_4_seqData;
-extern const struct SequenceData s_witch_donats_seqData;
-extern const struct SequenceData s_f_rabbit_miss_seqData;
-extern const struct SequenceData s_f_dummy_vol0_seqData;
-
 
   //  //  //  GRAPHICS DATA  //  //  //
 
@@ -146,7 +132,7 @@ struct GraphicsTable *bunny_hop_gfx_tables[] = {
 
 
 // [D_089e5fcc] BGM Harmony
-const struct SequenceData *bunny_hop_bgm_harmony_parts[] = {
+struct SequenceData *bunny_hop_bgm_harmony_parts[] = {
     /* 0x00 */ &s_rabbit_c7_seqData,
     /* 0x01 */ &s_rabbit_c7_brass_seqData,
     /* 0x02 */ &s_rabbit_f7_seqData,
@@ -171,7 +157,7 @@ const struct SequenceData *bunny_hop_bgm_harmony_parts[] = {
 };
 
 // [D_089e6020] BGM Drum Fills
-const struct SequenceData *bunny_hop_bgm_drum_fills[] = {
+struct SequenceData *bunny_hop_bgm_drum_fills[] = {
     /* 0x00 */ &s_rabbit_fill_1_seqData,
     /* 0x01 */ &s_rabbit_fill_2_seqData,
     /* 0x02 */ &s_rabbit_fill_3_seqData,

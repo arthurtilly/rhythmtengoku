@@ -100,10 +100,10 @@ extern void func_080022d8(s16); // AFFINE GROUP - ?? (Fine Angle Precision)
 /* AGB SOUND */
 
 extern u16 get_sound_num(struct SequenceData *); // Get Sound ID
-extern struct SoundPlayer *play_sound(const struct SequenceData *); // Play Sound
-extern struct SoundPlayer *play_sound_in_player(u32 player, const struct SequenceData *); // Play Sound in Specified Player
-extern struct SoundPlayer *play_sound_w_pitch_volume(const struct SequenceData *, u32 volume, s32 pitch); // Play Sound at Given Volume & Pitch
-extern struct SoundPlayer *play_sound_in_player_w_pitch_volume(u32 player, const struct SequenceData *, u32 volume, s32 pitch); // Play Sound in Specified Player, at Given Volume & Pitch
+extern struct SoundPlayer *play_sound(struct SequenceData *); // Play Sound
+extern struct SoundPlayer *play_sound_in_player(u32 player, struct SequenceData *); // Play Sound in Specified Player
+extern struct SoundPlayer *play_sound_w_pitch_volume(struct SequenceData *, u32 volume, s32 pitch); // Play Sound at Given Volume & Pitch
+extern struct SoundPlayer *play_sound_in_player_w_pitch_volume(u32 player, struct SequenceData *, u32 volume, s32 pitch); // Play Sound in Specified Player, at Given Volume & Pitch
 // extern ? func_080026fc(?); // Play Sound Unless It Is Already Playing
 // extern ? stop_sound(?); // Mute All Players Playing the Given Sound
 // extern ? func_08002794(?);
@@ -126,7 +126,7 @@ extern struct SoundPlayer *get_soundplayer_from_id(u32 id); // Get Player from I
 extern u32 soundplayer_is_playing(struct SoundPlayer *player); // Check if Player is Currently Playing Sound
 extern void set_soundplayer_key(struct SoundPlayer *player, s32 key); // Set Player Key Offset
 // extern ? func_080029d8(?);
-extern struct SoundPlayer *get_soundplayer_by_sound(const struct SequenceData *); // Return Player Currently Playing the Given Sound
+extern struct SoundPlayer *get_soundplayer_by_sound(struct SequenceData *); // Return Player Currently Playing the Given Sound
 
 /* AGB GRAPHICS TABLES */
 

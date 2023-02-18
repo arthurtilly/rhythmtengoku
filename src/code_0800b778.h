@@ -25,12 +25,12 @@ extern void set_beatscript_speed(u16 speed); // Set Script Speed (Q8.8)
 extern void func_0800be9c(void); // Stub
 extern void func_0800bea0(u32 arg); // Set unk0_b7
 extern void func_0800bebc(u32 arg); // Set unk1C
-extern u32  scene_change_music(const struct SequenceData *, u32 override, s32 soundPlayer); // Play Music
-extern void scene_set_music(const struct SequenceData *); // Play Music (Override)
-extern void scene_play_music(const struct SequenceData *); // Play Music (No Override)
-extern void scene_set_music_with_soundplayer(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (Override)
-extern void scene_play_music_with_soundplayer(const struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (No Override)
-extern void scene_play_music_ignore_lfo(const struct SequenceData *); // Play Music (override, use predefined SoundPlayer ID)
+extern u32  scene_change_music(struct SequenceData *, u32 override, s32 soundPlayer); // Play Music
+extern void scene_set_music(struct SequenceData *); // Play Music (Override)
+extern void scene_play_music(struct SequenceData *); // Play Music (No Override)
+extern void scene_set_music_with_soundplayer(struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (Override)
+extern void scene_play_music_with_soundplayer(struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (No Override)
+extern void scene_play_music_ignore_lfo(struct SequenceData *); // Play Music (override, use predefined SoundPlayer ID)
 extern void scene_stop_music(void); // Stop Music
 extern void scene_fade_in_music(u16 duration); // Fade-In Music
 extern void scene_fade_out_music(u16 duration); // Fade-Out Music

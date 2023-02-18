@@ -97,15 +97,13 @@ extern const struct Animation D_0890b724[]; // "‚Å‚à" ("but")
 
 
 // Sound Effects:
-extern const struct SequenceData s_menu_se20_seqData;
-extern const struct SequenceData s_f_result_mes_add_seqData;
 
 
 // Scene Definition Data:
 extern const struct GraphicsTable D_089d7654[]; // LEVEL - Graphics Table
 extern const struct CompressedGraphics *const D_089d7684[]; // LEVEL - Buffered Textures List
-extern const struct SequenceData *const D_089d7688[3]; // LEVEL - Result SFX Pool
-extern const struct SequenceData *const D_089d7694[3]; // LEVEL - Result BGM Pool
+extern struct SequenceData *const D_089d7688[3]; // LEVEL - Result SFX Pool
+extern struct SequenceData *const D_089d7694[3]; // LEVEL - Result BGM Pool
 extern struct ScoreHandler *D_089d7980; // ( = D_03001338)
 extern const char *const D_089d7b34[3]; // LEVEL - Comment Pool (Try Again)
 extern const char *const D_089d7b40[4]; // LEVEL - Comment Pool (OK)

@@ -123,23 +123,6 @@ extern const struct Animation anim_fireworks_rocket1[];
 // Palettes:
 
 
-// Sound Effects:
-extern const struct SequenceData s_intro_comeon_seqData;
-extern const struct SequenceData s_intro_one_seqData;
-extern const struct SequenceData s_intro_two_seqData;
-extern const struct SequenceData s_intro_three_seqData;
-extern const struct SequenceData s_f_hanabi_v_nuei_seqData;
-extern const struct SequenceData s_hanabi_hyu_seqData;
-extern const struct SequenceData s_f_hanabi_v_tamaya_seqData;
-extern const struct SequenceData s_hanabi_ah_seqData;
-extern const struct SequenceData s_f_hanabi_kansei_seqData;
-extern const struct SequenceData s_hanabi_utiage_seqData;
-extern const struct SequenceData s_hanabi_utiage_v_seqData;
-extern const struct SequenceData s_witch_donats_seqData;
-extern const struct SequenceData s_hanabi_don_seqData;
-extern const struct SequenceData s_hanabi_pon_seqData;
-
-
 // Engine Data:
 extern const char D_0805a3d0[];
 extern const struct FireworksPatternColours fireworks_particle_combinations[];

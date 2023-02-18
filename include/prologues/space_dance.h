@@ -21,7 +21,6 @@ extern const struct GraphicsTable space_dance_prologue_gfx_table[]; // Graphics 
 extern const struct Animation anim_space_dance_prologue_title[]; // Animation: Text (Space Dance)
 extern const struct Animation anim_space_dance_prologue_faces[]; // Animation: Faces
 extern const struct Animation anim_space_dance_prologue_star[]; // Animation: Star
-extern const struct SequenceData s_jingle_handclap_seqData;
 
 // Functions:
 extern void func_080474dc(void);    // [func_080474dc] GFX_INIT Func_02

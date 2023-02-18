@@ -19,9 +19,6 @@ extern const struct CompressedGraphics *const karate_man_prologue_buffered_textu
 extern const struct GraphicsTable karate_man_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_karate_man_prologue_title[]; // Animation: Text (Karate Man)
 extern const struct Animation anim_karate_man_prologue_kick[]; // Animation: Kick
-extern const struct SequenceData s_jingle_karate_seqData;
-extern const struct SequenceData s_f_boxing_title_hit_seqData;
-extern const struct SequenceData s_intro_uh_seqData;
 
 // Functions:
 extern void func_0804550c(void);    // [func_0804550c] GFX_INIT Func_02

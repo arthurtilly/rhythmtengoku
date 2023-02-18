@@ -20,7 +20,7 @@ struct TapTrialAction {
     s8 playbackArg3;
     u16 playbackArg4;
     u8 duration;
-    const struct SequenceData *sfx;
+    struct SequenceData *sfx;
     u16 sfxVolume;
     s16 sfxPitch;
 };
@@ -78,17 +78,6 @@ enum TapTrialAnimationsEnum {
 
 
 // Sound Effects:
-extern const struct SequenceData s_f_dummy_vol0_seqData;
-extern const struct SequenceData s_tap_kick_lady_seqData;
-extern const struct SequenceData s_tap_monky1_seqData;
-extern const struct SequenceData s_tap_monky2_seqData;
-extern const struct SequenceData s_tap_kick_monky_seqData;
-extern const struct SequenceData s_tap_monky3_1_seqData;
-extern const struct SequenceData s_f_tap_jump_ready_seqData;
-extern const struct SequenceData s_tap_monky4_seqData;
-extern const struct SequenceData s_tap_monky3_2_seqData;
-extern const struct SequenceData s_f_tap_pig1_seqData;
-extern const struct SequenceData s_f_tap_pig2_seqData;
 
 
 // Engine Data:

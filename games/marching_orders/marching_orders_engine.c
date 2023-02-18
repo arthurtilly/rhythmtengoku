@@ -71,28 +71,6 @@ extern const Palette marching_orders_remix_7_obj_pal[];
 extern const Palette marching_orders_2_bg_pal[];
 extern const Palette marching_orders_2_obj_pal[];
 
-extern const struct SequenceData s_guntai_v_es_seqData;
-extern const struct SequenceData s_guntai_v_yoh_seqData;
-extern const struct SequenceData s_guntai_v_ka_seqData;
-extern const struct SequenceData s_guntai_v_zentai1_seqData;
-extern const struct SequenceData s_guntai_v_susume_seqData;
-extern const struct SequenceData s_guntai_v_tomare_seqData;
-extern const struct SequenceData s_guntai_v_migi_muke1_seqData;
-extern const struct SequenceData s_guntai_v_migi_muke2_seqData;
-extern const struct SequenceData s_guntai_v_migi_seqData;
-extern const struct SequenceData s_guntai_v_hidari_muke1_seqData;
-extern const struct SequenceData s_guntai_v_hidari_muke2_seqData;
-extern const struct SequenceData s_guntai_v_hidari_seqData;
-extern const struct SequenceData s_f_marcher2_v_zentai_seqData;
-extern const struct SequenceData s_f_marcher2_v_susume_seqData;
-extern const struct SequenceData s_f_marcher2_v_tomare_seqData;
-extern const struct SequenceData s_f_marcher2_v_migimukeL_seqData;
-extern const struct SequenceData s_f_marcher2_v_migimukeS_seqData;
-extern const struct SequenceData s_f_marcher2_v_migi_seqData;
-extern const struct SequenceData s_f_marcher2_v_hidarimukeL_seqData;
-extern const struct SequenceData s_f_marcher2_v_hidarimukeS_seqData;
-extern const struct SequenceData s_f_marcher2_v_hidari_seqData;
-
 
   //  //  //  GRAPHICS DATA  //  //  //
 

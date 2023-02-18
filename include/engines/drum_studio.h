@@ -132,7 +132,7 @@ struct DrumStudioMonitorData {
 struct DrumLessonPattern {
     const struct BeatScript *beat1;
     const struct BeatScript *beat2;
-    const struct SequenceData *audienceSfx;
+    struct SequenceData *audienceSfx;
     const char *dialogue;
 };
 
@@ -232,15 +232,6 @@ extern const Palette drum_lessons_bg_pal[];
 
 
 // Sound Effects:
-extern const struct SequenceData s_menu_cancel2_seqData;
-extern const struct SequenceData s_f_send_mes_seqData;
-extern const struct SequenceData s_f_lesson_c_seqData;
-extern const struct SequenceData s_f_lesson_b_seqData;
-extern const struct SequenceData s_f_lesson_a_seqData;
-extern const struct SequenceData s_f_lesson_s_seqData;
-extern const struct SequenceData s_menu_cursor1_seqData;
-extern const struct SequenceData s_menu_kettei2_seqData;
-extern const struct SequenceData s_menu_cancel3_seqData;
 
 
 // Engine Data:
@@ -264,7 +255,7 @@ extern const struct Animation *drum_lessons_accuracy_light_anim[]; // Accuracy M
 extern struct Vector2 drum_lessons_accuracy_light_positions[]; // Accuracy Meter Light Positions
 extern const struct Animation *drum_lessons_rank_anim[];
 extern const char *drum_lessons_rank_text[];
-extern const struct SequenceData *drum_lessons_rank_sfx[];
+extern struct SequenceData *drum_lessons_rank_sfx[];
 extern struct DrumStudioMonitorData D_089e17a0[];
 extern DrumPlayFunc D_089e2988[];
 extern struct DrumTechKit *drum_studio_kits[];

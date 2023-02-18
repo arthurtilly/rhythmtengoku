@@ -32,8 +32,8 @@ extern const char D_0805a8ac[];
 // Engine Definition Data:
 extern const struct CompressedGraphics *bunny_hop_buffered_textures[];
 extern struct GraphicsTable *bunny_hop_gfx_tables[];
-extern const struct SequenceData *bunny_hop_bgm_harmony_parts[];
-extern const struct SequenceData *bunny_hop_bgm_drum_fills[];
+extern struct SequenceData *bunny_hop_bgm_harmony_parts[];
+extern struct SequenceData *bunny_hop_bgm_drum_fills[];
 extern const Palette *bunny_hop_palettes[];
 extern const struct Animation *bunny_hop_platform_anim[];
 

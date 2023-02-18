@@ -17,7 +17,6 @@ struct QuizShowPrologueInfo {
 extern const struct CompressedGraphics *const quiz_show_prologue_buffered_textures[]; // Buffered Textures
 extern const struct GraphicsTable quiz_show_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_quiz_show_prologue_title[]; // Animation: Text (Quiz Show)
-extern const struct SequenceData s_jingle_quiz_seqData;
 
 // Functions:
 extern void func_08046528(void);    // [func_08046528] GFX_INIT Func_02

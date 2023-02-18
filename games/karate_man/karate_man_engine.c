@@ -16,15 +16,6 @@ extern const struct CompressedGraphics D_08be0480; // OBJ Textures
 extern const Palette karate_man_pal[]; // Karate Man 1 Palette
 extern const Palette karate_man_2_pal[]; // Karate Man 2 Palette
 
-extern const struct SequenceData s_f_boxing_fly_nml_seqData;
-extern const struct SequenceData s_f_boxing_just_hati_seqData;
-extern const struct SequenceData s_f_boxing_just_hati_seqData;
-extern const struct SequenceData s_f_boxing_just_rock_seqData;
-extern const struct SequenceData s_f_boxing_just_ball_seqData;
-extern const struct SequenceData s_f_boxing_just_bomb_seqData;
-extern const struct SequenceData s_f_boxing_just_light_seqData;
-extern const struct SequenceData s_witch_donats_seqData;
-
 
   //  //  //  GAME ENGINE DATA  //  //  //
 

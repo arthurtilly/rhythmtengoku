@@ -49,10 +49,10 @@ struct CueDefinition {
     CueHitEvent hitFunc;         // Hit Function
     CueHitEvent barelyFunc;      // Barely Function
     CueMissEvent missFunc;       // Miss Function
-	const struct SequenceData *spawnSfx;
-	const struct SequenceData *hitSfx;
-	const struct SequenceData *barelySfx;
-	const struct SequenceData *missSfx;
+	struct SequenceData *spawnSfx;
+	struct SequenceData *hitSfx;
+	struct SequenceData *barelySfx;
+	struct SequenceData *missSfx;
 	CueMissCondition missCondition;
 };
 
@@ -67,10 +67,10 @@ struct Cue {
 	u16 runningTime; // Cue ticks
 	u16 duration;
 	u32 null50;
-	const struct SequenceData *spawnSfx;
-	const struct SequenceData *hitSfx;
-	const struct SequenceData *barelySfx;
-	const struct SequenceData *missSfx;
+	struct SequenceData *spawnSfx;
+	struct SequenceData *hitSfx;
+	struct SequenceData *barelySfx;
+	struct SequenceData *missSfx;
 	void *gameCueInfo;
 	u8 markingCriteria;
 };

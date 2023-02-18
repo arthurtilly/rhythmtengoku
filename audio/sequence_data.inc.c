@@ -1,5 +1,5 @@
 extern const u32 Lesson1_mid;
-const struct SequenceData Lesson1_seqData = {
+struct SequenceData Lesson1_seqData = {
     /* ROM Address */        &Lesson1_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -12,7 +12,7 @@ const struct SequenceData Lesson1_seqData = {
 };
 
 extern const u32 Lesson2_mid;
-const struct SequenceData Lesson2_seqData = {
+struct SequenceData Lesson2_seqData = {
     /* ROM Address */        &Lesson2_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -25,7 +25,7 @@ const struct SequenceData Lesson2_seqData = {
 };
 
 extern const u32 Lesson3_mid;
-const struct SequenceData Lesson3_seqData = {
+struct SequenceData Lesson3_seqData = {
     /* ROM Address */        &Lesson3_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -38,7 +38,7 @@ const struct SequenceData Lesson3_seqData = {
 };
 
 extern const u32 L1_pat01_mid;
-const struct SequenceData L1_pat01_seqData = {
+struct SequenceData L1_pat01_seqData = {
     /* ROM Address */        &L1_pat01_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -51,7 +51,7 @@ const struct SequenceData L1_pat01_seqData = {
 };
 
 extern const u32 L1_pat02_mid;
-const struct SequenceData L1_pat02_seqData = {
+struct SequenceData L1_pat02_seqData = {
     /* ROM Address */        &L1_pat02_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -64,7 +64,7 @@ const struct SequenceData L1_pat02_seqData = {
 };
 
 extern const u32 L1_pat03_mid;
-const struct SequenceData L1_pat03_seqData = {
+struct SequenceData L1_pat03_seqData = {
     /* ROM Address */        &L1_pat03_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -77,7 +77,7 @@ const struct SequenceData L1_pat03_seqData = {
 };
 
 extern const u32 L1_pat04_mid;
-const struct SequenceData L1_pat04_seqData = {
+struct SequenceData L1_pat04_seqData = {
     /* ROM Address */        &L1_pat04_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -90,7 +90,7 @@ const struct SequenceData L1_pat04_seqData = {
 };
 
 extern const u32 L1_pat05_mid;
-const struct SequenceData L1_pat05_seqData = {
+struct SequenceData L1_pat05_seqData = {
     /* ROM Address */        &L1_pat05_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -103,7 +103,7 @@ const struct SequenceData L1_pat05_seqData = {
 };
 
 extern const u32 L1_pat06_mid;
-const struct SequenceData L1_pat06_seqData = {
+struct SequenceData L1_pat06_seqData = {
     /* ROM Address */        &L1_pat06_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -116,7 +116,7 @@ const struct SequenceData L1_pat06_seqData = {
 };
 
 extern const u32 L1_pat07_mid;
-const struct SequenceData L1_pat07_seqData = {
+struct SequenceData L1_pat07_seqData = {
     /* ROM Address */        &L1_pat07_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -129,7 +129,7 @@ const struct SequenceData L1_pat07_seqData = {
 };
 
 extern const u32 L1_pat08_mid;
-const struct SequenceData L1_pat08_seqData = {
+struct SequenceData L1_pat08_seqData = {
     /* ROM Address */        &L1_pat08_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -142,7 +142,7 @@ const struct SequenceData L1_pat08_seqData = {
 };
 
 extern const u32 L1_pat09_mid;
-const struct SequenceData L1_pat09_seqData = {
+struct SequenceData L1_pat09_seqData = {
     /* ROM Address */        &L1_pat09_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -155,7 +155,7 @@ const struct SequenceData L1_pat09_seqData = {
 };
 
 extern const u32 L1_pat10_mid;
-const struct SequenceData L1_pat10_seqData = {
+struct SequenceData L1_pat10_seqData = {
     /* ROM Address */        &L1_pat10_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -168,7 +168,7 @@ const struct SequenceData L1_pat10_seqData = {
 };
 
 extern const u32 L1_pat11_mid;
-const struct SequenceData L1_pat11_seqData = {
+struct SequenceData L1_pat11_seqData = {
     /* ROM Address */        &L1_pat11_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -181,7 +181,7 @@ const struct SequenceData L1_pat11_seqData = {
 };
 
 extern const u32 L1_pat12_mid;
-const struct SequenceData L1_pat12_seqData = {
+struct SequenceData L1_pat12_seqData = {
     /* ROM Address */        &L1_pat12_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -194,7 +194,7 @@ const struct SequenceData L1_pat12_seqData = {
 };
 
 extern const u32 L1_pat13_mid;
-const struct SequenceData L1_pat13_seqData = {
+struct SequenceData L1_pat13_seqData = {
     /* ROM Address */        &L1_pat13_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -207,7 +207,7 @@ const struct SequenceData L1_pat13_seqData = {
 };
 
 extern const u32 L1_pat14_mid;
-const struct SequenceData L1_pat14_seqData = {
+struct SequenceData L1_pat14_seqData = {
     /* ROM Address */        &L1_pat14_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -220,7 +220,7 @@ const struct SequenceData L1_pat14_seqData = {
 };
 
 extern const u32 L1_pat15_mid;
-const struct SequenceData L1_pat15_seqData = {
+struct SequenceData L1_pat15_seqData = {
     /* ROM Address */        &L1_pat15_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -233,7 +233,7 @@ const struct SequenceData L1_pat15_seqData = {
 };
 
 extern const u32 L1_pat16_mid;
-const struct SequenceData L1_pat16_seqData = {
+struct SequenceData L1_pat16_seqData = {
     /* ROM Address */        &L1_pat16_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -246,7 +246,7 @@ const struct SequenceData L1_pat16_seqData = {
 };
 
 extern const u32 L2_pat00_mid;
-const struct SequenceData L2_pat00_seqData = {
+struct SequenceData L2_pat00_seqData = {
     /* ROM Address */        &L2_pat00_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -259,7 +259,7 @@ const struct SequenceData L2_pat00_seqData = {
 };
 
 extern const u32 L2_pat01_mid;
-const struct SequenceData L2_pat01_seqData = {
+struct SequenceData L2_pat01_seqData = {
     /* ROM Address */        &L2_pat01_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -272,7 +272,7 @@ const struct SequenceData L2_pat01_seqData = {
 };
 
 extern const u32 L2_pat02_mid;
-const struct SequenceData L2_pat02_seqData = {
+struct SequenceData L2_pat02_seqData = {
     /* ROM Address */        &L2_pat02_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -285,7 +285,7 @@ const struct SequenceData L2_pat02_seqData = {
 };
 
 extern const u32 L2_pat03_mid;
-const struct SequenceData L2_pat03_seqData = {
+struct SequenceData L2_pat03_seqData = {
     /* ROM Address */        &L2_pat03_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -298,7 +298,7 @@ const struct SequenceData L2_pat03_seqData = {
 };
 
 extern const u32 L2_pat04_mid;
-const struct SequenceData L2_pat04_seqData = {
+struct SequenceData L2_pat04_seqData = {
     /* ROM Address */        &L2_pat04_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -311,7 +311,7 @@ const struct SequenceData L2_pat04_seqData = {
 };
 
 extern const u32 L2_pat05_mid;
-const struct SequenceData L2_pat05_seqData = {
+struct SequenceData L2_pat05_seqData = {
     /* ROM Address */        &L2_pat05_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -324,7 +324,7 @@ const struct SequenceData L2_pat05_seqData = {
 };
 
 extern const u32 L2_pat06_mid;
-const struct SequenceData L2_pat06_seqData = {
+struct SequenceData L2_pat06_seqData = {
     /* ROM Address */        &L2_pat06_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -337,7 +337,7 @@ const struct SequenceData L2_pat06_seqData = {
 };
 
 extern const u32 L2_pat07_mid;
-const struct SequenceData L2_pat07_seqData = {
+struct SequenceData L2_pat07_seqData = {
     /* ROM Address */        &L2_pat07_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -350,7 +350,7 @@ const struct SequenceData L2_pat07_seqData = {
 };
 
 extern const u32 L2_pat08_mid;
-const struct SequenceData L2_pat08_seqData = {
+struct SequenceData L2_pat08_seqData = {
     /* ROM Address */        &L2_pat08_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -363,7 +363,7 @@ const struct SequenceData L2_pat08_seqData = {
 };
 
 extern const u32 L2_pat09_mid;
-const struct SequenceData L2_pat09_seqData = {
+struct SequenceData L2_pat09_seqData = {
     /* ROM Address */        &L2_pat09_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -376,7 +376,7 @@ const struct SequenceData L2_pat09_seqData = {
 };
 
 extern const u32 L2_pat10_mid;
-const struct SequenceData L2_pat10_seqData = {
+struct SequenceData L2_pat10_seqData = {
     /* ROM Address */        &L2_pat10_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -389,7 +389,7 @@ const struct SequenceData L2_pat10_seqData = {
 };
 
 extern const u32 L2_pat11_mid;
-const struct SequenceData L2_pat11_seqData = {
+struct SequenceData L2_pat11_seqData = {
     /* ROM Address */        &L2_pat11_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -402,7 +402,7 @@ const struct SequenceData L2_pat11_seqData = {
 };
 
 extern const u32 L2_pat12_mid;
-const struct SequenceData L2_pat12_seqData = {
+struct SequenceData L2_pat12_seqData = {
     /* ROM Address */        &L2_pat12_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -415,7 +415,7 @@ const struct SequenceData L2_pat12_seqData = {
 };
 
 extern const u32 L2_pat13_mid;
-const struct SequenceData L2_pat13_seqData = {
+struct SequenceData L2_pat13_seqData = {
     /* ROM Address */        &L2_pat13_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -428,7 +428,7 @@ const struct SequenceData L2_pat13_seqData = {
 };
 
 extern const u32 L2_pat14_mid;
-const struct SequenceData L2_pat14_seqData = {
+struct SequenceData L2_pat14_seqData = {
     /* ROM Address */        &L2_pat14_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -441,7 +441,7 @@ const struct SequenceData L2_pat14_seqData = {
 };
 
 extern const u32 L2_pat15_mid;
-const struct SequenceData L2_pat15_seqData = {
+struct SequenceData L2_pat15_seqData = {
     /* ROM Address */        &L2_pat15_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -454,7 +454,7 @@ const struct SequenceData L2_pat15_seqData = {
 };
 
 extern const u32 L2_pat16_mid;
-const struct SequenceData L2_pat16_seqData = {
+struct SequenceData L2_pat16_seqData = {
     /* ROM Address */        &L2_pat16_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -467,7 +467,7 @@ const struct SequenceData L2_pat16_seqData = {
 };
 
 extern const u32 L3_intro_mid;
-const struct SequenceData L3_intro_seqData = {
+struct SequenceData L3_intro_seqData = {
     /* ROM Address */        &L3_intro_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -480,7 +480,7 @@ const struct SequenceData L3_intro_seqData = {
 };
 
 extern const u32 L3_C32_mid;
-const struct SequenceData L3_C32_seqData = {
+struct SequenceData L3_C32_seqData = {
     /* ROM Address */        &L3_C32_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -493,7 +493,7 @@ const struct SequenceData L3_C32_seqData = {
 };
 
 extern const u32 L3_C32_no_swing_mid;
-const struct SequenceData L3_C32_no_swing_seqData = {
+struct SequenceData L3_C32_no_swing_seqData = {
     /* ROM Address */        &L3_C32_no_swing_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -506,7 +506,7 @@ const struct SequenceData L3_C32_no_swing_seqData = {
 };
 
 extern const u32 L3_C33_mid;
-const struct SequenceData L3_C33_seqData = {
+struct SequenceData L3_C33_seqData = {
     /* ROM Address */        &L3_C33_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -519,7 +519,7 @@ const struct SequenceData L3_C33_seqData = {
 };
 
 extern const u32 L3_C34_mid;
-const struct SequenceData L3_C34_seqData = {
+struct SequenceData L3_C34_seqData = {
     /* ROM Address */        &L3_C34_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -532,7 +532,7 @@ const struct SequenceData L3_C34_seqData = {
 };
 
 extern const u32 L3_C35_mid;
-const struct SequenceData L3_C35_seqData = {
+struct SequenceData L3_C35_seqData = {
     /* ROM Address */        &L3_C35_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -545,7 +545,7 @@ const struct SequenceData L3_C35_seqData = {
 };
 
 extern const u32 L3_C36_mid;
-const struct SequenceData L3_C36_seqData = {
+struct SequenceData L3_C36_seqData = {
     /* ROM Address */        &L3_C36_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -558,7 +558,7 @@ const struct SequenceData L3_C36_seqData = {
 };
 
 extern const u32 L3_C37_mid;
-const struct SequenceData L3_C37_seqData = {
+struct SequenceData L3_C37_seqData = {
     /* ROM Address */        &L3_C37_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -571,7 +571,7 @@ const struct SequenceData L3_C37_seqData = {
 };
 
 extern const u32 L3_C38_mid;
-const struct SequenceData L3_C38_seqData = {
+struct SequenceData L3_C38_seqData = {
     /* ROM Address */        &L3_C38_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -584,7 +584,7 @@ const struct SequenceData L3_C38_seqData = {
 };
 
 extern const u32 L3_C39_mid;
-const struct SequenceData L3_C39_seqData = {
+struct SequenceData L3_C39_seqData = {
     /* ROM Address */        &L3_C39_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -597,7 +597,7 @@ const struct SequenceData L3_C39_seqData = {
 };
 
 extern const u32 L3_C40_mid;
-const struct SequenceData L3_C40_seqData = {
+struct SequenceData L3_C40_seqData = {
     /* ROM Address */        &L3_C40_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -610,7 +610,7 @@ const struct SequenceData L3_C40_seqData = {
 };
 
 extern const u32 L3_C41_end_mid;
-const struct SequenceData L3_C41_end_seqData = {
+struct SequenceData L3_C41_end_seqData = {
     /* ROM Address */        &L3_C41_end_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -623,7 +623,7 @@ const struct SequenceData L3_C41_end_seqData = {
 };
 
 extern const u32 s_aimu_bgm_mid;
-const struct SequenceData s_aimu_bgm_seqData = {
+struct SequenceData s_aimu_bgm_seqData = {
     /* ROM Address */        &s_aimu_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_18,
@@ -636,7 +636,7 @@ const struct SequenceData s_aimu_bgm_seqData = {
 };
 
 extern const u32 s_menu_bgm_mid;
-const struct SequenceData s_menu_bgm_seqData = {
+struct SequenceData s_menu_bgm_seqData = {
     /* ROM Address */        &s_menu_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_19,
@@ -649,7 +649,7 @@ const struct SequenceData s_menu_bgm_seqData = {
 };
 
 extern const u32 s_shibafu1_bgm_mid;
-const struct SequenceData s_shibafu1_bgm_seqData = {
+struct SequenceData s_shibafu1_bgm_seqData = {
     /* ROM Address */        &s_shibafu1_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_20,
@@ -662,7 +662,7 @@ const struct SequenceData s_shibafu1_bgm_seqData = {
 };
 
 extern const u32 s_shibafu2_bgm_mid;
-const struct SequenceData s_shibafu2_bgm_seqData = {
+struct SequenceData s_shibafu2_bgm_seqData = {
     /* ROM Address */        &s_shibafu2_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_21,
@@ -675,7 +675,7 @@ const struct SequenceData s_shibafu2_bgm_seqData = {
 };
 
 extern const u32 s_tebyoushi_bgm_mid;
-const struct SequenceData s_tebyoushi_bgm_seqData = {
+struct SequenceData s_tebyoushi_bgm_seqData = {
     /* ROM Address */        &s_tebyoushi_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_22,
@@ -688,7 +688,7 @@ const struct SequenceData s_tebyoushi_bgm_seqData = {
 };
 
 extern const u32 s_tebyoushi_dexy_bgm_mid;
-const struct SequenceData s_tebyoushi_dexy_bgm_seqData = {
+struct SequenceData s_tebyoushi_dexy_bgm_seqData = {
     /* ROM Address */        &s_tebyoushi_dexy_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_32,
@@ -701,7 +701,7 @@ const struct SequenceData s_tebyoushi_dexy_bgm_seqData = {
 };
 
 extern const u32 s_tapdance_bgm_mid;
-const struct SequenceData s_tapdance_bgm_seqData = {
+struct SequenceData s_tapdance_bgm_seqData = {
     /* ROM Address */        &s_tapdance_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_23,
@@ -714,7 +714,7 @@ const struct SequenceData s_tapdance_bgm_seqData = {
 };
 
 extern const u32 s_tapdance_ska_bgm_mid;
-const struct SequenceData s_tapdance_ska_bgm_seqData = {
+struct SequenceData s_tapdance_ska_bgm_seqData = {
     /* ROM Address */        &s_tapdance_ska_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_33,
@@ -727,7 +727,7 @@ const struct SequenceData s_tapdance_ska_bgm_seqData = {
 };
 
 extern const u32 s_trex_bgm_mid;
-const struct SequenceData s_trex_bgm_seqData = {
+struct SequenceData s_trex_bgm_seqData = {
     /* ROM Address */        &s_trex_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_24,
@@ -740,7 +740,7 @@ const struct SequenceData s_trex_bgm_seqData = {
 };
 
 extern const u32 s_trexnew_bgm1_mid;
-const struct SequenceData s_trexnew_bgm1_seqData = {
+struct SequenceData s_trexnew_bgm1_seqData = {
     /* ROM Address */        &s_trexnew_bgm1_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_35,
@@ -753,7 +753,7 @@ const struct SequenceData s_trexnew_bgm1_seqData = {
 };
 
 extern const u32 s_trexnew_bgm2_mid;
-const struct SequenceData s_trexnew_bgm2_seqData = {
+struct SequenceData s_trexnew_bgm2_seqData = {
     /* ROM Address */        &s_trexnew_bgm2_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_35,
@@ -766,7 +766,7 @@ const struct SequenceData s_trexnew_bgm2_seqData = {
 };
 
 extern const u32 s_poly_bgm_mid;
-const struct SequenceData s_poly_bgm_seqData = {
+struct SequenceData s_poly_bgm_seqData = {
     /* ROM Address */        &s_poly_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_25,
@@ -779,7 +779,7 @@ const struct SequenceData s_poly_bgm_seqData = {
 };
 
 extern const u32 s_shuji_bgm1_mid;
-const struct SequenceData s_shuji_bgm1_seqData = {
+struct SequenceData s_shuji_bgm1_seqData = {
     /* ROM Address */        &s_shuji_bgm1_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_26,
@@ -792,7 +792,7 @@ const struct SequenceData s_shuji_bgm1_seqData = {
 };
 
 extern const u32 s_shuji_bgm2_mid;
-const struct SequenceData s_shuji_bgm2_seqData = {
+struct SequenceData s_shuji_bgm2_seqData = {
     /* ROM Address */        &s_shuji_bgm2_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_26,
@@ -805,7 +805,7 @@ const struct SequenceData s_shuji_bgm2_seqData = {
 };
 
 extern const u32 s_shuji_bgm3_mid;
-const struct SequenceData s_shuji_bgm3_seqData = {
+struct SequenceData s_shuji_bgm3_seqData = {
     /* ROM Address */        &s_shuji_bgm3_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_26,
@@ -818,7 +818,7 @@ const struct SequenceData s_shuji_bgm3_seqData = {
 };
 
 extern const u32 s_shuji_bgm_end_mid;
-const struct SequenceData s_shuji_bgm_end_seqData = {
+struct SequenceData s_shuji_bgm_end_seqData = {
     /* ROM Address */        &s_shuji_bgm_end_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_26,
@@ -831,7 +831,7 @@ const struct SequenceData s_shuji_bgm_end_seqData = {
 };
 
 extern const u32 s_puipui_bgm_mid;
-const struct SequenceData s_puipui_bgm_seqData = {
+struct SequenceData s_puipui_bgm_seqData = {
     /* ROM Address */        &s_puipui_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_27,
@@ -844,7 +844,7 @@ const struct SequenceData s_puipui_bgm_seqData = {
 };
 
 extern const u32 s_puipui_intro_bgm_mid;
-const struct SequenceData s_puipui_intro_bgm_seqData = {
+struct SequenceData s_puipui_intro_bgm_seqData = {
     /* ROM Address */        &s_puipui_intro_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_27,
@@ -857,7 +857,7 @@ const struct SequenceData s_puipui_intro_bgm_seqData = {
 };
 
 extern const u32 s_naniwa_bgm_mid;
-const struct SequenceData s_naniwa_bgm_seqData = {
+struct SequenceData s_naniwa_bgm_seqData = {
     /* ROM Address */        &s_naniwa_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_28,
@@ -870,7 +870,7 @@ const struct SequenceData s_naniwa_bgm_seqData = {
 };
 
 extern const u32 s_emanikanto_bgm_mid;
-const struct SequenceData s_emanikanto_bgm_seqData = {
+struct SequenceData s_emanikanto_bgm_seqData = {
     /* ROM Address */        &s_emanikanto_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_29,
@@ -883,7 +883,7 @@ const struct SequenceData s_emanikanto_bgm_seqData = {
 };
 
 extern const u32 s_emanikanto_bgm_loop_mid;
-const struct SequenceData s_emanikanto_bgm_loop_seqData = {
+struct SequenceData s_emanikanto_bgm_loop_seqData = {
     /* ROM Address */        &s_emanikanto_bgm_loop_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_29,
@@ -896,7 +896,7 @@ const struct SequenceData s_emanikanto_bgm_loop_seqData = {
 };
 
 extern const u32 s_manza_bgm_mid;
-const struct SequenceData s_manza_bgm_seqData = {
+struct SequenceData s_manza_bgm_seqData = {
     /* ROM Address */        &s_manza_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_30,
@@ -909,7 +909,7 @@ const struct SequenceData s_manza_bgm_seqData = {
 };
 
 extern const u32 s_hitmegeton1_bgm_mid;
-const struct SequenceData s_hitmegeton1_bgm_seqData = {
+struct SequenceData s_hitmegeton1_bgm_seqData = {
     /* ROM Address */        &s_hitmegeton1_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_31,
@@ -922,7 +922,7 @@ const struct SequenceData s_hitmegeton1_bgm_seqData = {
 };
 
 extern const u32 s_hitmegeton2_bgm_mid;
-const struct SequenceData s_hitmegeton2_bgm_seqData = {
+struct SequenceData s_hitmegeton2_bgm_seqData = {
     /* ROM Address */        &s_hitmegeton2_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_31,
@@ -935,7 +935,7 @@ const struct SequenceData s_hitmegeton2_bgm_seqData = {
 };
 
 extern const u32 s_bon_odori_bgm_mid;
-const struct SequenceData s_bon_odori_bgm_seqData = {
+struct SequenceData s_bon_odori_bgm_seqData = {
     /* ROM Address */        &s_bon_odori_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_38,
@@ -948,7 +948,7 @@ const struct SequenceData s_bon_odori_bgm_seqData = {
 };
 
 extern const u32 s_bon_dance_bgm_mid;
-const struct SequenceData s_bon_dance_bgm_seqData = {
+struct SequenceData s_bon_dance_bgm_seqData = {
     /* ROM Address */        &s_bon_dance_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_39,
@@ -961,7 +961,7 @@ const struct SequenceData s_bon_dance_bgm_seqData = {
 };
 
 extern const u32 s_4beat_bgm_mid;
-const struct SequenceData s_4beat_bgm_seqData = {
+struct SequenceData s_4beat_bgm_seqData = {
     /* ROM Address */        &s_4beat_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_36,
@@ -974,7 +974,7 @@ const struct SequenceData s_4beat_bgm_seqData = {
 };
 
 extern const u32 s_toss_bgm_mid;
-const struct SequenceData s_toss_bgm_seqData = {
+struct SequenceData s_toss_bgm_seqData = {
     /* ROM Address */        &s_toss_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_40,
@@ -987,7 +987,7 @@ const struct SequenceData s_toss_bgm_seqData = {
 };
 
 extern const u32 s_toss_bgm_end_mid;
-const struct SequenceData s_toss_bgm_end_seqData = {
+struct SequenceData s_toss_bgm_end_seqData = {
     /* ROM Address */        &s_toss_bgm_end_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_40,
@@ -1000,7 +1000,7 @@ const struct SequenceData s_toss_bgm_end_seqData = {
 };
 
 extern const u32 s_toss_bgm_loop_mid;
-const struct SequenceData s_toss_bgm_loop_seqData = {
+struct SequenceData s_toss_bgm_loop_seqData = {
     /* ROM Address */        &s_toss_bgm_loop_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_40,
@@ -1013,7 +1013,7 @@ const struct SequenceData s_toss_bgm_loop_seqData = {
 };
 
 extern const u32 s_title_bgm_mid;
-const struct SequenceData s_title_bgm_seqData = {
+struct SequenceData s_title_bgm_seqData = {
     /* ROM Address */        &s_title_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_41,
@@ -1026,7 +1026,7 @@ const struct SequenceData s_title_bgm_seqData = {
 };
 
 extern const u32 s_koihoney_bgm_mid;
-const struct SequenceData s_koihoney_bgm_seqData = {
+struct SequenceData s_koihoney_bgm_seqData = {
     /* ROM Address */        &s_koihoney_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_42,
@@ -1039,7 +1039,7 @@ const struct SequenceData s_koihoney_bgm_seqData = {
 };
 
 extern const u32 s_wish_bgm_mid;
-const struct SequenceData s_wish_bgm_seqData = {
+struct SequenceData s_wish_bgm_seqData = {
     /* ROM Address */        &s_wish_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_43,
@@ -1052,7 +1052,7 @@ const struct SequenceData s_wish_bgm_seqData = {
 };
 
 extern const u32 L8_pat_intro_mid;
-const struct SequenceData L8_pat_intro_seqData = {
+struct SequenceData L8_pat_intro_seqData = {
     /* ROM Address */        &L8_pat_intro_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1065,7 +1065,7 @@ const struct SequenceData L8_pat_intro_seqData = {
 };
 
 extern const u32 L8_pat01_mid;
-const struct SequenceData L8_pat01_seqData = {
+struct SequenceData L8_pat01_seqData = {
     /* ROM Address */        &L8_pat01_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1078,7 +1078,7 @@ const struct SequenceData L8_pat01_seqData = {
 };
 
 extern const u32 L8_pat02_mid;
-const struct SequenceData L8_pat02_seqData = {
+struct SequenceData L8_pat02_seqData = {
     /* ROM Address */        &L8_pat02_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1091,7 +1091,7 @@ const struct SequenceData L8_pat02_seqData = {
 };
 
 extern const u32 L8_pat03_mid;
-const struct SequenceData L8_pat03_seqData = {
+struct SequenceData L8_pat03_seqData = {
     /* ROM Address */        &L8_pat03_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1104,7 +1104,7 @@ const struct SequenceData L8_pat03_seqData = {
 };
 
 extern const u32 L8_pat04_mid;
-const struct SequenceData L8_pat04_seqData = {
+struct SequenceData L8_pat04_seqData = {
     /* ROM Address */        &L8_pat04_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1117,7 +1117,7 @@ const struct SequenceData L8_pat04_seqData = {
 };
 
 extern const u32 L8_pat05_mid;
-const struct SequenceData L8_pat05_seqData = {
+struct SequenceData L8_pat05_seqData = {
     /* ROM Address */        &L8_pat05_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1130,7 +1130,7 @@ const struct SequenceData L8_pat05_seqData = {
 };
 
 extern const u32 L8_pat06_mid;
-const struct SequenceData L8_pat06_seqData = {
+struct SequenceData L8_pat06_seqData = {
     /* ROM Address */        &L8_pat06_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1143,7 +1143,7 @@ const struct SequenceData L8_pat06_seqData = {
 };
 
 extern const u32 L8_pat07_mid;
-const struct SequenceData L8_pat07_seqData = {
+struct SequenceData L8_pat07_seqData = {
     /* ROM Address */        &L8_pat07_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1156,7 +1156,7 @@ const struct SequenceData L8_pat07_seqData = {
 };
 
 extern const u32 L8_pat08_mid;
-const struct SequenceData L8_pat08_seqData = {
+struct SequenceData L8_pat08_seqData = {
     /* ROM Address */        &L8_pat08_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1169,7 +1169,7 @@ const struct SequenceData L8_pat08_seqData = {
 };
 
 extern const u32 L8_pat09_mid;
-const struct SequenceData L8_pat09_seqData = {
+struct SequenceData L8_pat09_seqData = {
     /* ROM Address */        &L8_pat09_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1182,7 +1182,7 @@ const struct SequenceData L8_pat09_seqData = {
 };
 
 extern const u32 L8_pat10_mid;
-const struct SequenceData L8_pat10_seqData = {
+struct SequenceData L8_pat10_seqData = {
     /* ROM Address */        &L8_pat10_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1195,7 +1195,7 @@ const struct SequenceData L8_pat10_seqData = {
 };
 
 extern const u32 L8_pat11_mid;
-const struct SequenceData L8_pat11_seqData = {
+struct SequenceData L8_pat11_seqData = {
     /* ROM Address */        &L8_pat11_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1208,7 +1208,7 @@ const struct SequenceData L8_pat11_seqData = {
 };
 
 extern const u32 L8_pat12_mid;
-const struct SequenceData L8_pat12_seqData = {
+struct SequenceData L8_pat12_seqData = {
     /* ROM Address */        &L8_pat12_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1221,7 +1221,7 @@ const struct SequenceData L8_pat12_seqData = {
 };
 
 extern const u32 L8_pat_end_mid;
-const struct SequenceData L8_pat_end_seqData = {
+struct SequenceData L8_pat_end_seqData = {
     /* ROM Address */        &L8_pat_end_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1234,7 +1234,7 @@ const struct SequenceData L8_pat_end_seqData = {
 };
 
 extern const u32 L8_pat_honki_mid;
-const struct SequenceData L8_pat_honki_seqData = {
+struct SequenceData L8_pat_honki_seqData = {
     /* ROM Address */        &L8_pat_honki_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_45,
@@ -1247,7 +1247,7 @@ const struct SequenceData L8_pat_honki_seqData = {
 };
 
 extern const u32 s_menu_kettei0_mid;
-const struct SequenceData s_menu_kettei0_seqData = {
+struct SequenceData s_menu_kettei0_seqData = {
     /* ROM Address */        &s_menu_kettei0_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_6,
@@ -1260,7 +1260,7 @@ const struct SequenceData s_menu_kettei0_seqData = {
 };
 
 extern const u32 s_menu_kettei1_mid;
-const struct SequenceData s_menu_kettei1_seqData = {
+struct SequenceData s_menu_kettei1_seqData = {
     /* ROM Address */        &s_menu_kettei1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_22,
@@ -1273,7 +1273,7 @@ const struct SequenceData s_menu_kettei1_seqData = {
 };
 
 extern const u32 s_menu_kettei2_mid;
-const struct SequenceData s_menu_kettei2_seqData = {
+struct SequenceData s_menu_kettei2_seqData = {
     /* ROM Address */        &s_menu_kettei2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_13,
@@ -1286,7 +1286,7 @@ const struct SequenceData s_menu_kettei2_seqData = {
 };
 
 extern const u32 s_menu_kettei3_mid;
-const struct SequenceData s_menu_kettei3_seqData = {
+struct SequenceData s_menu_kettei3_seqData = {
     /* ROM Address */        &s_menu_kettei3_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_22,
@@ -1299,7 +1299,7 @@ const struct SequenceData s_menu_kettei3_seqData = {
 };
 
 extern const u32 s_menu_cancel1_mid;
-const struct SequenceData s_menu_cancel1_seqData = {
+struct SequenceData s_menu_cancel1_seqData = {
     /* ROM Address */        &s_menu_cancel1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_6,
@@ -1312,7 +1312,7 @@ const struct SequenceData s_menu_cancel1_seqData = {
 };
 
 extern const u32 s_menu_cancel2_mid;
-const struct SequenceData s_menu_cancel2_seqData = {
+struct SequenceData s_menu_cancel2_seqData = {
     /* ROM Address */        &s_menu_cancel2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_5,
@@ -1325,7 +1325,7 @@ const struct SequenceData s_menu_cancel2_seqData = {
 };
 
 extern const u32 s_menu_cancel3_mid;
-const struct SequenceData s_menu_cancel3_seqData = {
+struct SequenceData s_menu_cancel3_seqData = {
     /* ROM Address */        &s_menu_cancel3_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_6,
@@ -1338,7 +1338,7 @@ const struct SequenceData s_menu_cancel3_seqData = {
 };
 
 extern const u32 s_menu_cursor1_mid;
-const struct SequenceData s_menu_cursor1_seqData = {
+struct SequenceData s_menu_cursor1_seqData = {
     /* ROM Address */        &s_menu_cursor1_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_13,
@@ -1351,7 +1351,7 @@ const struct SequenceData s_menu_cursor1_seqData = {
 };
 
 extern const u32 s_menu_cursor2_mid;
-const struct SequenceData s_menu_cursor2_seqData = {
+struct SequenceData s_menu_cursor2_seqData = {
     /* ROM Address */        &s_menu_cursor2_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_6,
@@ -1364,7 +1364,7 @@ const struct SequenceData s_menu_cursor2_seqData = {
 };
 
 extern const u32 s_menu_error_mid;
-const struct SequenceData s_menu_error_seqData = {
+struct SequenceData s_menu_error_seqData = {
     /* ROM Address */        &s_menu_error_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_13,
@@ -1377,7 +1377,7 @@ const struct SequenceData s_menu_error_seqData = {
 };
 
 extern const u32 s_kansei_mid;
-const struct SequenceData s_kansei_seqData = {
+struct SequenceData s_kansei_seqData = {
     /* ROM Address */        &s_kansei_mid,
     /* unk4f1 */             0x9,
     /* Sound Bank */         INST_BANK_11,
@@ -1390,7 +1390,7 @@ const struct SequenceData s_kansei_seqData = {
 };
 
 extern const u32 s_kansei_solo_mid;
-const struct SequenceData s_kansei_solo_seqData = {
+struct SequenceData s_kansei_solo_seqData = {
     /* ROM Address */        &s_kansei_solo_mid,
     /* unk4f1 */             0x9,
     /* Sound Bank */         INST_BANK_11,
@@ -1403,7 +1403,7 @@ const struct SequenceData s_kansei_solo_seqData = {
 };
 
 extern const u32 s_warai_mid;
-const struct SequenceData s_warai_seqData = {
+struct SequenceData s_warai_seqData = {
     /* ROM Address */        &s_warai_mid,
     /* unk4f1 */             0x9,
     /* Sound Bank */         INST_BANK_11,
@@ -1416,7 +1416,7 @@ const struct SequenceData s_warai_seqData = {
 };
 
 extern const u32 s_warai_little_mid;
-const struct SequenceData s_warai_little_seqData = {
+struct SequenceData s_warai_little_seqData = {
     /* ROM Address */        &s_warai_little_mid,
     /* unk4f1 */             0x9,
     /* Sound Bank */         INST_BANK_11,
@@ -1429,7 +1429,7 @@ const struct SequenceData s_warai_little_seqData = {
 };
 
 extern const u32 s_warai_solo_mid;
-const struct SequenceData s_warai_solo_seqData = {
+struct SequenceData s_warai_solo_seqData = {
     /* ROM Address */        &s_warai_solo_mid,
     /* unk4f1 */             0x9,
     /* Sound Bank */         INST_BANK_11,
@@ -1442,7 +1442,7 @@ const struct SequenceData s_warai_solo_seqData = {
 };
 
 extern const u32 s_hakushu_solo_mid;
-const struct SequenceData s_hakushu_solo_seqData = {
+struct SequenceData s_hakushu_solo_seqData = {
     /* ROM Address */        &s_hakushu_solo_mid,
     /* unk4f1 */             0xa,
     /* Sound Bank */         INST_BANK_11,
@@ -1455,7 +1455,7 @@ const struct SequenceData s_hakushu_solo_seqData = {
 };
 
 extern const u32 s_BD1_mid;
-const struct SequenceData s_BD1_seqData = {
+struct SequenceData s_BD1_seqData = {
     /* ROM Address */        &s_BD1_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_18,
@@ -1468,7 +1468,7 @@ const struct SequenceData s_BD1_seqData = {
 };
 
 extern const u32 s_BD2_mid;
-const struct SequenceData s_BD2_seqData = {
+struct SequenceData s_BD2_seqData = {
     /* ROM Address */        &s_BD2_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_18,
@@ -1481,7 +1481,7 @@ const struct SequenceData s_BD2_seqData = {
 };
 
 extern const u32 s_BD3_mid;
-const struct SequenceData s_BD3_seqData = {
+struct SequenceData s_BD3_seqData = {
     /* ROM Address */        &s_BD3_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_18,
@@ -1494,7 +1494,7 @@ const struct SequenceData s_BD3_seqData = {
 };
 
 extern const u32 s_BD4_mid;
-const struct SequenceData s_BD4_seqData = {
+struct SequenceData s_BD4_seqData = {
     /* ROM Address */        &s_BD4_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_18,
@@ -1507,7 +1507,7 @@ const struct SequenceData s_BD4_seqData = {
 };
 
 extern const u32 s_BD5_mid;
-const struct SequenceData s_BD5_seqData = {
+struct SequenceData s_BD5_seqData = {
     /* ROM Address */        &s_BD5_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_18,
@@ -1520,7 +1520,7 @@ const struct SequenceData s_BD5_seqData = {
 };
 
 extern const u32 s_BD6_mid;
-const struct SequenceData s_BD6_seqData = {
+struct SequenceData s_BD6_seqData = {
     /* ROM Address */        &s_BD6_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_18,
@@ -1533,7 +1533,7 @@ const struct SequenceData s_BD6_seqData = {
 };
 
 extern const u32 s_BD7_mid;
-const struct SequenceData s_BD7_seqData = {
+struct SequenceData s_BD7_seqData = {
     /* ROM Address */        &s_BD7_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_18,
@@ -1546,7 +1546,7 @@ const struct SequenceData s_BD7_seqData = {
 };
 
 extern const u32 s_BD8_mid;
-const struct SequenceData s_BD8_seqData = {
+struct SequenceData s_BD8_seqData = {
     /* ROM Address */        &s_BD8_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_18,
@@ -1559,7 +1559,7 @@ const struct SequenceData s_BD8_seqData = {
 };
 
 extern const u32 s_BD9_mid;
-const struct SequenceData s_BD9_seqData = {
+struct SequenceData s_BD9_seqData = {
     /* ROM Address */        &s_BD9_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_18,
@@ -1572,7 +1572,7 @@ const struct SequenceData s_BD9_seqData = {
 };
 
 extern const u32 s_SD1_mid;
-const struct SequenceData s_SD1_seqData = {
+struct SequenceData s_SD1_seqData = {
     /* ROM Address */        &s_SD1_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_18,
@@ -1585,7 +1585,7 @@ const struct SequenceData s_SD1_seqData = {
 };
 
 extern const u32 s_SD2_mid;
-const struct SequenceData s_SD2_seqData = {
+struct SequenceData s_SD2_seqData = {
     /* ROM Address */        &s_SD2_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_18,
@@ -1598,7 +1598,7 @@ const struct SequenceData s_SD2_seqData = {
 };
 
 extern const u32 s_SD3_mid;
-const struct SequenceData s_SD3_seqData = {
+struct SequenceData s_SD3_seqData = {
     /* ROM Address */        &s_SD3_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_18,
@@ -1611,7 +1611,7 @@ const struct SequenceData s_SD3_seqData = {
 };
 
 extern const u32 s_SD4_mid;
-const struct SequenceData s_SD4_seqData = {
+struct SequenceData s_SD4_seqData = {
     /* ROM Address */        &s_SD4_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_18,
@@ -1624,7 +1624,7 @@ const struct SequenceData s_SD4_seqData = {
 };
 
 extern const u32 s_SD5_mid;
-const struct SequenceData s_SD5_seqData = {
+struct SequenceData s_SD5_seqData = {
     /* ROM Address */        &s_SD5_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_18,
@@ -1637,7 +1637,7 @@ const struct SequenceData s_SD5_seqData = {
 };
 
 extern const u32 s_SD6_mid;
-const struct SequenceData s_SD6_seqData = {
+struct SequenceData s_SD6_seqData = {
     /* ROM Address */        &s_SD6_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_18,
@@ -1650,7 +1650,7 @@ const struct SequenceData s_SD6_seqData = {
 };
 
 extern const u32 s_SD7_mid;
-const struct SequenceData s_SD7_seqData = {
+struct SequenceData s_SD7_seqData = {
     /* ROM Address */        &s_SD7_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_18,
@@ -1663,7 +1663,7 @@ const struct SequenceData s_SD7_seqData = {
 };
 
 extern const u32 s_SD8_mid;
-const struct SequenceData s_SD8_seqData = {
+struct SequenceData s_SD8_seqData = {
     /* ROM Address */        &s_SD8_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_18,
@@ -1676,7 +1676,7 @@ const struct SequenceData s_SD8_seqData = {
 };
 
 extern const u32 s_SD9_mid;
-const struct SequenceData s_SD9_seqData = {
+struct SequenceData s_SD9_seqData = {
     /* ROM Address */        &s_SD9_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_18,
@@ -1689,7 +1689,7 @@ const struct SequenceData s_SD9_seqData = {
 };
 
 extern const u32 s_tom_H_mid;
-const struct SequenceData s_tom_H_seqData = {
+struct SequenceData s_tom_H_seqData = {
     /* ROM Address */        &s_tom_H_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -1702,7 +1702,7 @@ const struct SequenceData s_tom_H_seqData = {
 };
 
 extern const u32 s_tom_M_mid;
-const struct SequenceData s_tom_M_seqData = {
+struct SequenceData s_tom_M_seqData = {
     /* ROM Address */        &s_tom_M_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -1715,7 +1715,7 @@ const struct SequenceData s_tom_M_seqData = {
 };
 
 extern const u32 s_tom_L_mid;
-const struct SequenceData s_tom_L_seqData = {
+struct SequenceData s_tom_L_seqData = {
     /* ROM Address */        &s_tom_L_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -1728,7 +1728,7 @@ const struct SequenceData s_tom_L_seqData = {
 };
 
 extern const u32 s_close_HH_mid;
-const struct SequenceData s_close_HH_seqData = {
+struct SequenceData s_close_HH_seqData = {
     /* ROM Address */        &s_close_HH_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_13,
@@ -1741,7 +1741,7 @@ const struct SequenceData s_close_HH_seqData = {
 };
 
 extern const u32 s_open_HH_mid;
-const struct SequenceData s_open_HH_seqData = {
+struct SequenceData s_open_HH_seqData = {
     /* ROM Address */        &s_open_HH_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_13,
@@ -1754,7 +1754,7 @@ const struct SequenceData s_open_HH_seqData = {
 };
 
 extern const u32 s_CC1_mid;
-const struct SequenceData s_CC1_seqData = {
+struct SequenceData s_CC1_seqData = {
     /* ROM Address */        &s_CC1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_18,
@@ -1767,7 +1767,7 @@ const struct SequenceData s_CC1_seqData = {
 };
 
 extern const u32 s_CC2_mid;
-const struct SequenceData s_CC2_seqData = {
+struct SequenceData s_CC2_seqData = {
     /* ROM Address */        &s_CC2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_18,
@@ -1780,7 +1780,7 @@ const struct SequenceData s_CC2_seqData = {
 };
 
 extern const u32 s_CC3_mid;
-const struct SequenceData s_CC3_seqData = {
+struct SequenceData s_CC3_seqData = {
     /* ROM Address */        &s_CC3_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_18,
@@ -1793,7 +1793,7 @@ const struct SequenceData s_CC3_seqData = {
 };
 
 extern const u32 s_CC4_mid;
-const struct SequenceData s_CC4_seqData = {
+struct SequenceData s_CC4_seqData = {
     /* ROM Address */        &s_CC4_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_18,
@@ -1806,7 +1806,7 @@ const struct SequenceData s_CC4_seqData = {
 };
 
 extern const u32 s_RC_mid;
-const struct SequenceData s_RC_seqData = {
+struct SequenceData s_RC_seqData = {
     /* ROM Address */        &s_RC_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_18,
@@ -1819,7 +1819,7 @@ const struct SequenceData s_RC_seqData = {
 };
 
 extern const u32 s_HC_mid;
-const struct SequenceData s_HC_seqData = {
+struct SequenceData s_HC_seqData = {
     /* ROM Address */        &s_HC_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_1,
@@ -1832,7 +1832,7 @@ const struct SequenceData s_HC_seqData = {
 };
 
 extern const u32 s_CC5_mid;
-const struct SequenceData s_CC5_seqData = {
+struct SequenceData s_CC5_seqData = {
     /* ROM Address */        &s_CC5_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_1,
@@ -1845,7 +1845,7 @@ const struct SequenceData s_CC5_seqData = {
 };
 
 extern const u32 s_CC6_mid;
-const struct SequenceData s_CC6_seqData = {
+struct SequenceData s_CC6_seqData = {
     /* ROM Address */        &s_CC6_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_18,
@@ -1858,7 +1858,7 @@ const struct SequenceData s_CC6_seqData = {
 };
 
 extern const u32 s_KN_mid;
-const struct SequenceData s_KN_seqData = {
+struct SequenceData s_KN_seqData = {
     /* ROM Address */        &s_KN_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_18,
@@ -1871,7 +1871,7 @@ const struct SequenceData s_KN_seqData = {
 };
 
 extern const u32 s_HG_mid;
-const struct SequenceData s_HG_seqData = {
+struct SequenceData s_HG_seqData = {
     /* ROM Address */        &s_HG_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_18,
@@ -1884,7 +1884,7 @@ const struct SequenceData s_HG_seqData = {
 };
 
 extern const u32 s_tran_jump_mid;
-const struct SequenceData s_tran_jump_seqData = {
+struct SequenceData s_tran_jump_seqData = {
     /* ROM Address */        &s_tran_jump_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_10,
@@ -1897,7 +1897,7 @@ const struct SequenceData s_tran_jump_seqData = {
 };
 
 extern const u32 s_tran_henge_mid;
-const struct SequenceData s_tran_henge_seqData = {
+struct SequenceData s_tran_henge_seqData = {
     /* ROM Address */        &s_tran_henge_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_10,
@@ -1910,7 +1910,7 @@ const struct SequenceData s_tran_henge_seqData = {
 };
 
 extern const u32 s_tran_seino_mid;
-const struct SequenceData s_tran_seino_seqData = {
+struct SequenceData s_tran_seino_seqData = {
     /* ROM Address */        &s_tran_seino_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_10,
@@ -1923,7 +1923,7 @@ const struct SequenceData s_tran_seino_seqData = {
 };
 
 extern const u32 s_tran_hensin_mid;
-const struct SequenceData s_tran_hensin_seqData = {
+struct SequenceData s_tran_hensin_seqData = {
     /* ROM Address */        &s_tran_hensin_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_10,
@@ -1936,7 +1936,7 @@ const struct SequenceData s_tran_hensin_seqData = {
 };
 
 extern const u32 s_tran_jump_se_mid;
-const struct SequenceData s_tran_jump_se_seqData = {
+struct SequenceData s_tran_jump_se_seqData = {
     /* ROM Address */        &s_tran_jump_se_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_13,
@@ -1949,7 +1949,7 @@ const struct SequenceData s_tran_jump_se_seqData = {
 };
 
 extern const u32 s_toss_red_blue1_mid;
-const struct SequenceData s_toss_red_blue1_seqData = {
+struct SequenceData s_toss_red_blue1_seqData = {
     /* ROM Address */        &s_toss_red_blue1_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_9,
@@ -1962,7 +1962,7 @@ const struct SequenceData s_toss_red_blue1_seqData = {
 };
 
 extern const u32 s_toss_red_blue2_mid;
-const struct SequenceData s_toss_red_blue2_seqData = {
+struct SequenceData s_toss_red_blue2_seqData = {
     /* ROM Address */        &s_toss_red_blue2_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_9,
@@ -1975,7 +1975,7 @@ const struct SequenceData s_toss_red_blue2_seqData = {
 };
 
 extern const u32 s_toss_red_blue3_mid;
-const struct SequenceData s_toss_red_blue3_seqData = {
+struct SequenceData s_toss_red_blue3_seqData = {
     /* ROM Address */        &s_toss_red_blue3_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_9,
@@ -1988,7 +1988,7 @@ const struct SequenceData s_toss_red_blue3_seqData = {
 };
 
 extern const u32 s_toss_red_yelw1_mid;
-const struct SequenceData s_toss_red_yelw1_seqData = {
+struct SequenceData s_toss_red_yelw1_seqData = {
     /* ROM Address */        &s_toss_red_yelw1_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_9,
@@ -2001,7 +2001,7 @@ const struct SequenceData s_toss_red_yelw1_seqData = {
 };
 
 extern const u32 s_toss_red_yelw2_mid;
-const struct SequenceData s_toss_red_yelw2_seqData = {
+struct SequenceData s_toss_red_yelw2_seqData = {
     /* ROM Address */        &s_toss_red_yelw2_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_9,
@@ -2014,7 +2014,7 @@ const struct SequenceData s_toss_red_yelw2_seqData = {
 };
 
 extern const u32 s_toss_red_yelw3_mid;
-const struct SequenceData s_toss_red_yelw3_seqData = {
+struct SequenceData s_toss_red_yelw3_seqData = {
     /* ROM Address */        &s_toss_red_yelw3_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_9,
@@ -2027,7 +2027,7 @@ const struct SequenceData s_toss_red_yelw3_seqData = {
 };
 
 extern const u32 s_toss_red_red_mid;
-const struct SequenceData s_toss_red_red_seqData = {
+struct SequenceData s_toss_red_red_seqData = {
     /* ROM Address */        &s_toss_red_red_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_9,
@@ -2040,7 +2040,7 @@ const struct SequenceData s_toss_red_red_seqData = {
 };
 
 extern const u32 s_toss_red_before_mid;
-const struct SequenceData s_toss_red_before_seqData = {
+struct SequenceData s_toss_red_before_seqData = {
     /* ROM Address */        &s_toss_red_before_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_9,
@@ -2053,7 +2053,7 @@ const struct SequenceData s_toss_red_before_seqData = {
 };
 
 extern const u32 s_toss_red_break_mid;
-const struct SequenceData s_toss_red_break_seqData = {
+struct SequenceData s_toss_red_break_seqData = {
     /* ROM Address */        &s_toss_red_break_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_9,
@@ -2066,7 +2066,7 @@ const struct SequenceData s_toss_red_break_seqData = {
 };
 
 extern const u32 s_toss_blue_red1_mid;
-const struct SequenceData s_toss_blue_red1_seqData = {
+struct SequenceData s_toss_blue_red1_seqData = {
     /* ROM Address */        &s_toss_blue_red1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_9,
@@ -2079,7 +2079,7 @@ const struct SequenceData s_toss_blue_red1_seqData = {
 };
 
 extern const u32 s_toss_blue_red2_mid;
-const struct SequenceData s_toss_blue_red2_seqData = {
+struct SequenceData s_toss_blue_red2_seqData = {
     /* ROM Address */        &s_toss_blue_red2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_9,
@@ -2092,7 +2092,7 @@ const struct SequenceData s_toss_blue_red2_seqData = {
 };
 
 extern const u32 s_toss_blue_red3_mid;
-const struct SequenceData s_toss_blue_red3_seqData = {
+struct SequenceData s_toss_blue_red3_seqData = {
     /* ROM Address */        &s_toss_blue_red3_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_9,
@@ -2105,7 +2105,7 @@ const struct SequenceData s_toss_blue_red3_seqData = {
 };
 
 extern const u32 s_toss_blue_yelw1_mid;
-const struct SequenceData s_toss_blue_yelw1_seqData = {
+struct SequenceData s_toss_blue_yelw1_seqData = {
     /* ROM Address */        &s_toss_blue_yelw1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_9,
@@ -2118,7 +2118,7 @@ const struct SequenceData s_toss_blue_yelw1_seqData = {
 };
 
 extern const u32 s_toss_blue_yelw2_mid;
-const struct SequenceData s_toss_blue_yelw2_seqData = {
+struct SequenceData s_toss_blue_yelw2_seqData = {
     /* ROM Address */        &s_toss_blue_yelw2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_9,
@@ -2131,7 +2131,7 @@ const struct SequenceData s_toss_blue_yelw2_seqData = {
 };
 
 extern const u32 s_toss_blue_yelw3_mid;
-const struct SequenceData s_toss_blue_yelw3_seqData = {
+struct SequenceData s_toss_blue_yelw3_seqData = {
     /* ROM Address */        &s_toss_blue_yelw3_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_9,
@@ -2144,7 +2144,7 @@ const struct SequenceData s_toss_blue_yelw3_seqData = {
 };
 
 extern const u32 s_toss_blue_blue_mid;
-const struct SequenceData s_toss_blue_blue_seqData = {
+struct SequenceData s_toss_blue_blue_seqData = {
     /* ROM Address */        &s_toss_blue_blue_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_9,
@@ -2157,7 +2157,7 @@ const struct SequenceData s_toss_blue_blue_seqData = {
 };
 
 extern const u32 s_toss_blue_before_mid;
-const struct SequenceData s_toss_blue_before_seqData = {
+struct SequenceData s_toss_blue_before_seqData = {
     /* ROM Address */        &s_toss_blue_before_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_9,
@@ -2170,7 +2170,7 @@ const struct SequenceData s_toss_blue_before_seqData = {
 };
 
 extern const u32 s_toss_blue_break_mid;
-const struct SequenceData s_toss_blue_break_seqData = {
+struct SequenceData s_toss_blue_break_seqData = {
     /* ROM Address */        &s_toss_blue_break_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_9,
@@ -2183,7 +2183,7 @@ const struct SequenceData s_toss_blue_break_seqData = {
 };
 
 extern const u32 s_toss_yelw_red1_mid;
-const struct SequenceData s_toss_yelw_red1_seqData = {
+struct SequenceData s_toss_yelw_red1_seqData = {
     /* ROM Address */        &s_toss_yelw_red1_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_9,
@@ -2196,7 +2196,7 @@ const struct SequenceData s_toss_yelw_red1_seqData = {
 };
 
 extern const u32 s_toss_yelw_red2_mid;
-const struct SequenceData s_toss_yelw_red2_seqData = {
+struct SequenceData s_toss_yelw_red2_seqData = {
     /* ROM Address */        &s_toss_yelw_red2_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_9,
@@ -2209,7 +2209,7 @@ const struct SequenceData s_toss_yelw_red2_seqData = {
 };
 
 extern const u32 s_toss_yelw_red3_mid;
-const struct SequenceData s_toss_yelw_red3_seqData = {
+struct SequenceData s_toss_yelw_red3_seqData = {
     /* ROM Address */        &s_toss_yelw_red3_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_9,
@@ -2222,7 +2222,7 @@ const struct SequenceData s_toss_yelw_red3_seqData = {
 };
 
 extern const u32 s_toss_yelw_blue1_mid;
-const struct SequenceData s_toss_yelw_blue1_seqData = {
+struct SequenceData s_toss_yelw_blue1_seqData = {
     /* ROM Address */        &s_toss_yelw_blue1_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_9,
@@ -2235,7 +2235,7 @@ const struct SequenceData s_toss_yelw_blue1_seqData = {
 };
 
 extern const u32 s_toss_yelw_blue2_mid;
-const struct SequenceData s_toss_yelw_blue2_seqData = {
+struct SequenceData s_toss_yelw_blue2_seqData = {
     /* ROM Address */        &s_toss_yelw_blue2_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_9,
@@ -2248,7 +2248,7 @@ const struct SequenceData s_toss_yelw_blue2_seqData = {
 };
 
 extern const u32 s_toss_yelw_blue3_mid;
-const struct SequenceData s_toss_yelw_blue3_seqData = {
+struct SequenceData s_toss_yelw_blue3_seqData = {
     /* ROM Address */        &s_toss_yelw_blue3_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_9,
@@ -2261,7 +2261,7 @@ const struct SequenceData s_toss_yelw_blue3_seqData = {
 };
 
 extern const u32 s_toss_yelw_yelw_mid;
-const struct SequenceData s_toss_yelw_yelw_seqData = {
+struct SequenceData s_toss_yelw_yelw_seqData = {
     /* ROM Address */        &s_toss_yelw_yelw_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_9,
@@ -2274,7 +2274,7 @@ const struct SequenceData s_toss_yelw_yelw_seqData = {
 };
 
 extern const u32 s_toss_yelw_before_mid;
-const struct SequenceData s_toss_yelw_before_seqData = {
+struct SequenceData s_toss_yelw_before_seqData = {
     /* ROM Address */        &s_toss_yelw_before_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_9,
@@ -2287,7 +2287,7 @@ const struct SequenceData s_toss_yelw_before_seqData = {
 };
 
 extern const u32 s_toss_yelw_break_mid;
-const struct SequenceData s_toss_yelw_break_seqData = {
+struct SequenceData s_toss_yelw_break_seqData = {
     /* ROM Address */        &s_toss_yelw_break_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_9,
@@ -2300,7 +2300,7 @@ const struct SequenceData s_toss_yelw_break_seqData = {
 };
 
 extern const u32 s_toss_ball_red_mid;
-const struct SequenceData s_toss_ball_red_seqData = {
+struct SequenceData s_toss_ball_red_seqData = {
     /* ROM Address */        &s_toss_ball_red_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -2313,7 +2313,7 @@ const struct SequenceData s_toss_ball_red_seqData = {
 };
 
 extern const u32 s_toss_ball_blue_mid;
-const struct SequenceData s_toss_ball_blue_seqData = {
+struct SequenceData s_toss_ball_blue_seqData = {
     /* ROM Address */        &s_toss_ball_blue_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -2326,7 +2326,7 @@ const struct SequenceData s_toss_ball_blue_seqData = {
 };
 
 extern const u32 s_toss_ball_yelw_mid;
-const struct SequenceData s_toss_ball_yelw_seqData = {
+struct SequenceData s_toss_ball_yelw_seqData = {
     /* ROM Address */        &s_toss_ball_yelw_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -2339,7 +2339,7 @@ const struct SequenceData s_toss_ball_yelw_seqData = {
 };
 
 extern const u32 s_toss_ball_haretu_mid;
-const struct SequenceData s_toss_ball_haretu_seqData = {
+struct SequenceData s_toss_ball_haretu_seqData = {
     /* ROM Address */        &s_toss_ball_haretu_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_9,
@@ -2352,7 +2352,7 @@ const struct SequenceData s_toss_ball_haretu_seqData = {
 };
 
 extern const u32 s_shuji_ho_mid;
-const struct SequenceData s_shuji_ho_seqData = {
+struct SequenceData s_shuji_ho_seqData = {
     /* ROM Address */        &s_shuji_ho_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_26,
@@ -2365,7 +2365,7 @@ const struct SequenceData s_shuji_ho_seqData = {
 };
 
 extern const u32 s_shuji_tame_mid;
-const struct SequenceData s_shuji_tame_seqData = {
+struct SequenceData s_shuji_tame_seqData = {
     /* ROM Address */        &s_shuji_tame_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_26,
@@ -2378,7 +2378,7 @@ const struct SequenceData s_shuji_tame_seqData = {
 };
 
 extern const u32 s_iai_yarare_mid;
-const struct SequenceData s_iai_yarare_seqData = {
+struct SequenceData s_iai_yarare_seqData = {
     /* ROM Address */        &s_iai_yarare_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_2,
@@ -2391,7 +2391,7 @@ const struct SequenceData s_iai_yarare_seqData = {
 };
 
 extern const u32 s_iai_miss_mid;
-const struct SequenceData s_iai_miss_seqData = {
+struct SequenceData s_iai_miss_seqData = {
     /* ROM Address */        &s_iai_miss_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_49,
@@ -2404,7 +2404,7 @@ const struct SequenceData s_iai_miss_seqData = {
 };
 
 extern const u32 s_mario1_mid;
-const struct SequenceData s_mario1_seqData = {
+struct SequenceData s_mario1_seqData = {
     /* ROM Address */        &s_mario1_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -2417,7 +2417,7 @@ const struct SequenceData s_mario1_seqData = {
 };
 
 extern const u32 s_mario2_mid;
-const struct SequenceData s_mario2_seqData = {
+struct SequenceData s_mario2_seqData = {
     /* ROM Address */        &s_mario2_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -2430,7 +2430,7 @@ const struct SequenceData s_mario2_seqData = {
 };
 
 extern const u32 s_mario1_2_mid;
-const struct SequenceData s_mario1_2_seqData = {
+struct SequenceData s_mario1_2_seqData = {
     /* ROM Address */        &s_mario1_2_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -2443,7 +2443,7 @@ const struct SequenceData s_mario1_2_seqData = {
 };
 
 extern const u32 s_mario2_4_mid;
-const struct SequenceData s_mario2_4_seqData = {
+struct SequenceData s_mario2_4_seqData = {
     /* ROM Address */        &s_mario2_4_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -2456,7 +2456,7 @@ const struct SequenceData s_mario2_4_seqData = {
 };
 
 extern const u32 s_mario_melo1_mid;
-const struct SequenceData s_mario_melo1_seqData = {
+struct SequenceData s_mario_melo1_seqData = {
     /* ROM Address */        &s_mario_melo1_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_11,
@@ -2469,7 +2469,7 @@ const struct SequenceData s_mario_melo1_seqData = {
 };
 
 extern const u32 s_mario_melo2_mid;
-const struct SequenceData s_mario_melo2_seqData = {
+struct SequenceData s_mario_melo2_seqData = {
     /* ROM Address */        &s_mario_melo2_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_11,
@@ -2482,7 +2482,7 @@ const struct SequenceData s_mario_melo2_seqData = {
 };
 
 extern const u32 s_sword_orya_mid;
-const struct SequenceData s_sword_orya_seqData = {
+struct SequenceData s_sword_orya_seqData = {
     /* ROM Address */        &s_sword_orya_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_2,
@@ -2495,7 +2495,7 @@ const struct SequenceData s_sword_orya_seqData = {
 };
 
 extern const u32 s_furi_mid;
-const struct SequenceData s_furi_seqData = {
+struct SequenceData s_furi_seqData = {
     /* ROM Address */        &s_furi_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_2,
@@ -2508,7 +2508,7 @@ const struct SequenceData s_furi_seqData = {
 };
 
 extern const u32 s_sword_hi_mid;
-const struct SequenceData s_sword_hi_seqData = {
+struct SequenceData s_sword_hi_seqData = {
     /* ROM Address */        &s_sword_hi_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_2,
@@ -2521,7 +2521,7 @@ const struct SequenceData s_sword_hi_seqData = {
 };
 
 extern const u32 s_sword_ho_mid;
-const struct SequenceData s_sword_ho_seqData = {
+struct SequenceData s_sword_ho_seqData = {
     /* ROM Address */        &s_sword_ho_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_2,
@@ -2534,7 +2534,7 @@ const struct SequenceData s_sword_ho_seqData = {
 };
 
 extern const u32 s_iai_result_mid;
-const struct SequenceData s_iai_result_seqData = {
+struct SequenceData s_iai_result_seqData = {
     /* ROM Address */        &s_iai_result_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_2,
@@ -2547,7 +2547,7 @@ const struct SequenceData s_iai_result_seqData = {
 };
 
 extern const u32 s_iai_bgm1_mid;
-const struct SequenceData s_iai_bgm1_seqData = {
+struct SequenceData s_iai_bgm1_seqData = {
     /* ROM Address */        &s_iai_bgm1_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -2560,7 +2560,7 @@ const struct SequenceData s_iai_bgm1_seqData = {
 };
 
 extern const u32 s_iai_bgm2_mid;
-const struct SequenceData s_iai_bgm2_seqData = {
+struct SequenceData s_iai_bgm2_seqData = {
     /* ROM Address */        &s_iai_bgm2_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -2573,7 +2573,7 @@ const struct SequenceData s_iai_bgm2_seqData = {
 };
 
 extern const u32 s_iai_bgm3_mid;
-const struct SequenceData s_iai_bgm3_seqData = {
+struct SequenceData s_iai_bgm3_seqData = {
     /* ROM Address */        &s_iai_bgm3_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -2586,7 +2586,7 @@ const struct SequenceData s_iai_bgm3_seqData = {
 };
 
 extern const u32 s_iai_frase1a_mid;
-const struct SequenceData s_iai_frase1a_seqData = {
+struct SequenceData s_iai_frase1a_seqData = {
     /* ROM Address */        &s_iai_frase1a_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_2,
@@ -2599,7 +2599,7 @@ const struct SequenceData s_iai_frase1a_seqData = {
 };
 
 extern const u32 s_iai_frase2a_mid;
-const struct SequenceData s_iai_frase2a_seqData = {
+struct SequenceData s_iai_frase2a_seqData = {
     /* ROM Address */        &s_iai_frase2a_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_2,
@@ -2612,7 +2612,7 @@ const struct SequenceData s_iai_frase2a_seqData = {
 };
 
 extern const u32 s_iai_frase3a_mid;
-const struct SequenceData s_iai_frase3a_seqData = {
+struct SequenceData s_iai_frase3a_seqData = {
     /* ROM Address */        &s_iai_frase3a_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_2,
@@ -2625,7 +2625,7 @@ const struct SequenceData s_iai_frase3a_seqData = {
 };
 
 extern const u32 s_iai_frase1b_mid;
-const struct SequenceData s_iai_frase1b_seqData = {
+struct SequenceData s_iai_frase1b_seqData = {
     /* ROM Address */        &s_iai_frase1b_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_2,
@@ -2638,7 +2638,7 @@ const struct SequenceData s_iai_frase1b_seqData = {
 };
 
 extern const u32 s_iai_frase2b_mid;
-const struct SequenceData s_iai_frase2b_seqData = {
+struct SequenceData s_iai_frase2b_seqData = {
     /* ROM Address */        &s_iai_frase2b_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_2,
@@ -2651,7 +2651,7 @@ const struct SequenceData s_iai_frase2b_seqData = {
 };
 
 extern const u32 s_iai_frase3b_mid;
-const struct SequenceData s_iai_frase3b_seqData = {
+struct SequenceData s_iai_frase3b_seqData = {
     /* ROM Address */        &s_iai_frase3b_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_2,
@@ -2664,7 +2664,7 @@ const struct SequenceData s_iai_frase3b_seqData = {
 };
 
 extern const u32 s_ninja_wind_mid;
-const struct SequenceData s_ninja_wind_seqData = {
+struct SequenceData s_ninja_wind_seqData = {
     /* ROM Address */        &s_ninja_wind_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_11,
@@ -2677,7 +2677,7 @@ const struct SequenceData s_ninja_wind_seqData = {
 };
 
 extern const u32 s_ninja_chakuti_mid;
-const struct SequenceData s_ninja_chakuti_seqData = {
+struct SequenceData s_ninja_chakuti_seqData = {
     /* ROM Address */        &s_ninja_chakuti_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_2,
@@ -2690,7 +2690,7 @@ const struct SequenceData s_ninja_chakuti_seqData = {
 };
 
 extern const u32 s_ninja_kamae_mid;
-const struct SequenceData s_ninja_kamae_seqData = {
+struct SequenceData s_ninja_kamae_seqData = {
     /* ROM Address */        &s_ninja_kamae_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_11,
@@ -2703,7 +2703,7 @@ const struct SequenceData s_ninja_kamae_seqData = {
 };
 
 extern const u32 s_ninja_furu_mid;
-const struct SequenceData s_ninja_furu_seqData = {
+struct SequenceData s_ninja_furu_seqData = {
     /* ROM Address */        &s_ninja_furu_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_2,
@@ -2716,7 +2716,7 @@ const struct SequenceData s_ninja_furu_seqData = {
 };
 
 extern const u32 s_ninja_kin_mid;
-const struct SequenceData s_ninja_kin_seqData = {
+struct SequenceData s_ninja_kin_seqData = {
     /* ROM Address */        &s_ninja_kin_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_11,
@@ -2729,7 +2729,7 @@ const struct SequenceData s_ninja_kin_seqData = {
 };
 
 extern const u32 s_ninja_hit_mid;
-const struct SequenceData s_ninja_hit_seqData = {
+struct SequenceData s_ninja_hit_seqData = {
     /* ROM Address */        &s_ninja_hit_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_2,
@@ -2742,7 +2742,7 @@ const struct SequenceData s_ninja_hit_seqData = {
 };
 
 extern const u32 s_ninja_yumi_mid;
-const struct SequenceData s_ninja_yumi_seqData = {
+struct SequenceData s_ninja_yumi_seqData = {
     /* ROM Address */        &s_ninja_yumi_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_2,
@@ -2755,7 +2755,7 @@ const struct SequenceData s_ninja_yumi_seqData = {
 };
 
 extern const u32 s_ninja_kabe_mid;
-const struct SequenceData s_ninja_kabe_seqData = {
+struct SequenceData s_ninja_kabe_seqData = {
     /* ROM Address */        &s_ninja_kabe_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_49,
@@ -2768,7 +2768,7 @@ const struct SequenceData s_ninja_kabe_seqData = {
 };
 
 extern const u32 s_ninja_bgm1_mid;
-const struct SequenceData s_ninja_bgm1_seqData = {
+struct SequenceData s_ninja_bgm1_seqData = {
     /* ROM Address */        &s_ninja_bgm1_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -2781,7 +2781,7 @@ const struct SequenceData s_ninja_bgm1_seqData = {
 };
 
 extern const u32 s_ninja_bgm2_mid;
-const struct SequenceData s_ninja_bgm2_seqData = {
+struct SequenceData s_ninja_bgm2_seqData = {
     /* ROM Address */        &s_ninja_bgm2_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -2794,7 +2794,7 @@ const struct SequenceData s_ninja_bgm2_seqData = {
 };
 
 extern const u32 s_rat_bgm1_mid;
-const struct SequenceData s_rat_bgm1_seqData = {
+struct SequenceData s_rat_bgm1_seqData = {
     /* ROM Address */        &s_rat_bgm1_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_6,
@@ -2807,7 +2807,7 @@ const struct SequenceData s_rat_bgm1_seqData = {
 };
 
 extern const u32 s_rat_bgm2_mid;
-const struct SequenceData s_rat_bgm2_seqData = {
+struct SequenceData s_rat_bgm2_seqData = {
     /* ROM Address */        &s_rat_bgm2_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_6,
@@ -2820,7 +2820,7 @@ const struct SequenceData s_rat_bgm2_seqData = {
 };
 
 extern const u32 s_rat_cat_mid;
-const struct SequenceData s_rat_cat_seqData = {
+struct SequenceData s_rat_cat_seqData = {
     /* ROM Address */        &s_rat_cat_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_6,
@@ -2833,7 +2833,7 @@ const struct SequenceData s_rat_cat_seqData = {
 };
 
 extern const u32 s_rat_crush_R_mid;
-const struct SequenceData s_rat_crush_R_seqData = {
+struct SequenceData s_rat_crush_R_seqData = {
     /* ROM Address */        &s_rat_crush_R_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_6,
@@ -2846,7 +2846,7 @@ const struct SequenceData s_rat_crush_R_seqData = {
 };
 
 extern const u32 s_rat_crush_L_mid;
-const struct SequenceData s_rat_crush_L_seqData = {
+struct SequenceData s_rat_crush_L_seqData = {
     /* ROM Address */        &s_rat_crush_L_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_6,
@@ -2859,7 +2859,7 @@ const struct SequenceData s_rat_crush_L_seqData = {
 };
 
 extern const u32 s_rat_signal_mid;
-const struct SequenceData s_rat_signal_seqData = {
+struct SequenceData s_rat_signal_seqData = {
     /* ROM Address */        &s_rat_signal_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_6,
@@ -2872,7 +2872,7 @@ const struct SequenceData s_rat_signal_seqData = {
 };
 
 extern const u32 s_rat_dash_mid;
-const struct SequenceData s_rat_dash_seqData = {
+struct SequenceData s_rat_dash_seqData = {
     /* ROM Address */        &s_rat_dash_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_6,
@@ -2885,7 +2885,7 @@ const struct SequenceData s_rat_dash_seqData = {
 };
 
 extern const u32 s_rat_stop_mid;
-const struct SequenceData s_rat_stop_seqData = {
+struct SequenceData s_rat_stop_seqData = {
     /* ROM Address */        &s_rat_stop_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_6,
@@ -2898,7 +2898,7 @@ const struct SequenceData s_rat_stop_seqData = {
 };
 
 extern const u32 s_tebyoushi_pati_mid;
-const struct SequenceData s_tebyoushi_pati_seqData = {
+struct SequenceData s_tebyoushi_pati_seqData = {
     /* ROM Address */        &s_tebyoushi_pati_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_7,
@@ -2911,7 +2911,7 @@ const struct SequenceData s_tebyoushi_pati_seqData = {
 };
 
 extern const u32 s_bon_dondon1_mid;
-const struct SequenceData s_bon_dondon1_seqData = {
+struct SequenceData s_bon_dondon1_seqData = {
     /* ROM Address */        &s_bon_dondon1_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_38,
@@ -2924,7 +2924,7 @@ const struct SequenceData s_bon_dondon1_seqData = {
 };
 
 extern const u32 s_bon_dondon1_1_mid;
-const struct SequenceData s_bon_dondon1_1_seqData = {
+struct SequenceData s_bon_dondon1_1_seqData = {
     /* ROM Address */        &s_bon_dondon1_1_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_38,
@@ -2937,7 +2937,7 @@ const struct SequenceData s_bon_dondon1_1_seqData = {
 };
 
 extern const u32 s_bon_dondon1_2_mid;
-const struct SequenceData s_bon_dondon1_2_seqData = {
+struct SequenceData s_bon_dondon1_2_seqData = {
     /* ROM Address */        &s_bon_dondon1_2_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_38,
@@ -2950,7 +2950,7 @@ const struct SequenceData s_bon_dondon1_2_seqData = {
 };
 
 extern const u32 s_bon_dondon2_mid;
-const struct SequenceData s_bon_dondon2_seqData = {
+struct SequenceData s_bon_dondon2_seqData = {
     /* ROM Address */        &s_bon_dondon2_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_38,
@@ -2963,7 +2963,7 @@ const struct SequenceData s_bon_dondon2_seqData = {
 };
 
 extern const u32 s_hanabi_hyu_mid;
-const struct SequenceData s_hanabi_hyu_seqData = {
+struct SequenceData s_hanabi_hyu_seqData = {
     /* ROM Address */        &s_hanabi_hyu_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_7,
@@ -2976,7 +2976,7 @@ const struct SequenceData s_hanabi_hyu_seqData = {
 };
 
 extern const u32 s_hanabi_don_mid;
-const struct SequenceData s_hanabi_don_seqData = {
+struct SequenceData s_hanabi_don_seqData = {
     /* ROM Address */        &s_hanabi_don_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_7,
@@ -2989,7 +2989,7 @@ const struct SequenceData s_hanabi_don_seqData = {
 };
 
 extern const u32 s_hanabi_pon_mid;
-const struct SequenceData s_hanabi_pon_seqData = {
+struct SequenceData s_hanabi_pon_seqData = {
     /* ROM Address */        &s_hanabi_pon_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_7,
@@ -3002,7 +3002,7 @@ const struct SequenceData s_hanabi_pon_seqData = {
 };
 
 extern const u32 s_hanabi_utiage_mid;
-const struct SequenceData s_hanabi_utiage_seqData = {
+struct SequenceData s_hanabi_utiage_seqData = {
     /* ROM Address */        &s_hanabi_utiage_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_7,
@@ -3015,7 +3015,7 @@ const struct SequenceData s_hanabi_utiage_seqData = {
 };
 
 extern const u32 s_hanabi_utiage_v_mid;
-const struct SequenceData s_hanabi_utiage_v_seqData = {
+struct SequenceData s_hanabi_utiage_v_seqData = {
     /* ROM Address */        &s_hanabi_utiage_v_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_7,
@@ -3028,7 +3028,7 @@ const struct SequenceData s_hanabi_utiage_v_seqData = {
 };
 
 extern const u32 s_hanabi_bgm_mid;
-const struct SequenceData s_hanabi_bgm_seqData = {
+struct SequenceData s_hanabi_bgm_seqData = {
     /* ROM Address */        &s_hanabi_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -3041,7 +3041,7 @@ const struct SequenceData s_hanabi_bgm_seqData = {
 };
 
 extern const u32 s_hanabi_1_mid;
-const struct SequenceData s_hanabi_1_seqData = {
+struct SequenceData s_hanabi_1_seqData = {
     /* ROM Address */        &s_hanabi_1_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_7,
@@ -3054,7 +3054,7 @@ const struct SequenceData s_hanabi_1_seqData = {
 };
 
 extern const u32 s_hanabi_2_mid;
-const struct SequenceData s_hanabi_2_seqData = {
+struct SequenceData s_hanabi_2_seqData = {
     /* ROM Address */        &s_hanabi_2_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_7,
@@ -3067,7 +3067,7 @@ const struct SequenceData s_hanabi_2_seqData = {
 };
 
 extern const u32 s_hanabi_3_mid;
-const struct SequenceData s_hanabi_3_seqData = {
+struct SequenceData s_hanabi_3_seqData = {
     /* ROM Address */        &s_hanabi_3_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_7,
@@ -3080,7 +3080,7 @@ const struct SequenceData s_hanabi_3_seqData = {
 };
 
 extern const u32 s_hanabi_hai_mid;
-const struct SequenceData s_hanabi_hai_seqData = {
+struct SequenceData s_hanabi_hai_seqData = {
     /* ROM Address */        &s_hanabi_hai_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_7,
@@ -3093,7 +3093,7 @@ const struct SequenceData s_hanabi_hai_seqData = {
 };
 
 extern const u32 s_hanabi_ah_mid;
-const struct SequenceData s_hanabi_ah_seqData = {
+struct SequenceData s_hanabi_ah_seqData = {
     /* ROM Address */        &s_hanabi_ah_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_7,
@@ -3106,7 +3106,7 @@ const struct SequenceData s_hanabi_ah_seqData = {
 };
 
 extern const u32 s_hanabi_wish1_mid;
-const struct SequenceData s_hanabi_wish1_seqData = {
+struct SequenceData s_hanabi_wish1_seqData = {
     /* ROM Address */        &s_hanabi_wish1_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_7,
@@ -3119,7 +3119,7 @@ const struct SequenceData s_hanabi_wish1_seqData = {
 };
 
 extern const u32 s_hanabi_wish2_mid;
-const struct SequenceData s_hanabi_wish2_seqData = {
+struct SequenceData s_hanabi_wish2_seqData = {
     /* ROM Address */        &s_hanabi_wish2_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_7,
@@ -3132,7 +3132,7 @@ const struct SequenceData s_hanabi_wish2_seqData = {
 };
 
 extern const u32 s_hanabi_wish3_mid;
-const struct SequenceData s_hanabi_wish3_seqData = {
+struct SequenceData s_hanabi_wish3_seqData = {
     /* ROM Address */        &s_hanabi_wish3_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_7,
@@ -3145,7 +3145,7 @@ const struct SequenceData s_hanabi_wish3_seqData = {
 };
 
 extern const u32 s_hanabi_wish4_mid;
-const struct SequenceData s_hanabi_wish4_seqData = {
+struct SequenceData s_hanabi_wish4_seqData = {
     /* ROM Address */        &s_hanabi_wish4_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_7,
@@ -3158,7 +3158,7 @@ const struct SequenceData s_hanabi_wish4_seqData = {
 };
 
 extern const u32 s_intro_stick_mid;
-const struct SequenceData s_intro_stick_seqData = {
+struct SequenceData s_intro_stick_seqData = {
     /* ROM Address */        &s_intro_stick_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_8,
@@ -3171,7 +3171,7 @@ const struct SequenceData s_intro_stick_seqData = {
 };
 
 extern const u32 s_intro_a_mid;
-const struct SequenceData s_intro_a_seqData = {
+struct SequenceData s_intro_a_seqData = {
     /* ROM Address */        &s_intro_a_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_8,
@@ -3184,7 +3184,7 @@ const struct SequenceData s_intro_a_seqData = {
 };
 
 extern const u32 s_intro_one_mid;
-const struct SequenceData s_intro_one_seqData = {
+struct SequenceData s_intro_one_seqData = {
     /* ROM Address */        &s_intro_one_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_8,
@@ -3197,7 +3197,7 @@ const struct SequenceData s_intro_one_seqData = {
 };
 
 extern const u32 s_intro_two_mid;
-const struct SequenceData s_intro_two_seqData = {
+struct SequenceData s_intro_two_seqData = {
     /* ROM Address */        &s_intro_two_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_8,
@@ -3210,7 +3210,7 @@ const struct SequenceData s_intro_two_seqData = {
 };
 
 extern const u32 s_intro_three_mid;
-const struct SequenceData s_intro_three_seqData = {
+struct SequenceData s_intro_three_seqData = {
     /* ROM Address */        &s_intro_three_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_8,
@@ -3223,7 +3223,7 @@ const struct SequenceData s_intro_three_seqData = {
 };
 
 extern const u32 s_intro_four_mid;
-const struct SequenceData s_intro_four_seqData = {
+struct SequenceData s_intro_four_seqData = {
     /* ROM Address */        &s_intro_four_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_8,
@@ -3236,7 +3236,7 @@ const struct SequenceData s_intro_four_seqData = {
 };
 
 extern const u32 s_intro_uh_mid;
-const struct SequenceData s_intro_uh_seqData = {
+struct SequenceData s_intro_uh_seqData = {
     /* ROM Address */        &s_intro_uh_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_8,
@@ -3249,7 +3249,7 @@ const struct SequenceData s_intro_uh_seqData = {
 };
 
 extern const u32 s_intro_comeon_mid;
-const struct SequenceData s_intro_comeon_seqData = {
+struct SequenceData s_intro_comeon_seqData = {
     /* ROM Address */        &s_intro_comeon_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_8,
@@ -3262,7 +3262,7 @@ const struct SequenceData s_intro_comeon_seqData = {
 };
 
 extern const u32 s_intro_pat1_mid;
-const struct SequenceData s_intro_pat1_seqData = {
+struct SequenceData s_intro_pat1_seqData = {
     /* ROM Address */        &s_intro_pat1_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_6,
@@ -3275,7 +3275,7 @@ const struct SequenceData s_intro_pat1_seqData = {
 };
 
 extern const u32 s_intro_pat2_mid;
-const struct SequenceData s_intro_pat2_seqData = {
+struct SequenceData s_intro_pat2_seqData = {
     /* ROM Address */        &s_intro_pat2_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_6,
@@ -3288,7 +3288,7 @@ const struct SequenceData s_intro_pat2_seqData = {
 };
 
 extern const u32 s_intro_pat3_mid;
-const struct SequenceData s_intro_pat3_seqData = {
+struct SequenceData s_intro_pat3_seqData = {
     /* ROM Address */        &s_intro_pat3_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_6,
@@ -3301,7 +3301,7 @@ const struct SequenceData s_intro_pat3_seqData = {
 };
 
 extern const u32 s_ghost_walk_mid;
-const struct SequenceData s_ghost_walk_seqData = {
+struct SequenceData s_ghost_walk_seqData = {
     /* ROM Address */        &s_ghost_walk_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -3314,7 +3314,7 @@ const struct SequenceData s_ghost_walk_seqData = {
 };
 
 extern const u32 s_ghost_just_hit_mid;
-const struct SequenceData s_ghost_just_hit_seqData = {
+struct SequenceData s_ghost_just_hit_seqData = {
     /* ROM Address */        &s_ghost_just_hit_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_18,
@@ -3327,7 +3327,7 @@ const struct SequenceData s_ghost_just_hit_seqData = {
 };
 
 extern const u32 s_ghost_miss_hit_mid;
-const struct SequenceData s_ghost_miss_hit_seqData = {
+struct SequenceData s_ghost_miss_hit_seqData = {
     /* ROM Address */        &s_ghost_miss_hit_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_18,
@@ -3340,7 +3340,7 @@ const struct SequenceData s_ghost_miss_hit_seqData = {
 };
 
 extern const u32 s_ghost_dash_mid;
-const struct SequenceData s_ghost_dash_seqData = {
+struct SequenceData s_ghost_dash_seqData = {
     /* ROM Address */        &s_ghost_dash_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -3353,7 +3353,7 @@ const struct SequenceData s_ghost_dash_seqData = {
 };
 
 extern const u32 s_ghost_warai_mid;
-const struct SequenceData s_ghost_warai_seqData = {
+struct SequenceData s_ghost_warai_seqData = {
     /* ROM Address */        &s_ghost_warai_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_18,
@@ -3366,7 +3366,7 @@ const struct SequenceData s_ghost_warai_seqData = {
 };
 
 extern const u32 s_ghost_gosha_mid;
-const struct SequenceData s_ghost_gosha_seqData = {
+struct SequenceData s_ghost_gosha_seqData = {
     /* ROM Address */        &s_ghost_gosha_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_18,
@@ -3379,7 +3379,7 @@ const struct SequenceData s_ghost_gosha_seqData = {
 };
 
 extern const u32 s_ghost_rain_mid;
-const struct SequenceData s_ghost_rain_seqData = {
+struct SequenceData s_ghost_rain_seqData = {
     /* ROM Address */        &s_ghost_rain_mid,
     /* unk4f1 */             0x2,
     /* Sound Bank */         INST_BANK_18,
@@ -3392,7 +3392,7 @@ const struct SequenceData s_ghost_rain_seqData = {
 };
 
 extern const u32 s_space_ikeo_turn_mid;
-const struct SequenceData s_space_ikeo_turn_seqData = {
+struct SequenceData s_space_ikeo_turn_seqData = {
     /* ROM Address */        &s_space_ikeo_turn_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_12,
@@ -3405,7 +3405,7 @@ const struct SequenceData s_space_ikeo_turn_seqData = {
 };
 
 extern const u32 s_space_ikeo_right_mid;
-const struct SequenceData s_space_ikeo_right_seqData = {
+struct SequenceData s_space_ikeo_right_seqData = {
     /* ROM Address */        &s_space_ikeo_right_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_12,
@@ -3418,7 +3418,7 @@ const struct SequenceData s_space_ikeo_right_seqData = {
 };
 
 extern const u32 s_space_ikeo_lets_mid;
-const struct SequenceData s_space_ikeo_lets_seqData = {
+struct SequenceData s_space_ikeo_lets_seqData = {
     /* ROM Address */        &s_space_ikeo_lets_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_12,
@@ -3431,7 +3431,7 @@ const struct SequenceData s_space_ikeo_lets_seqData = {
 };
 
 extern const u32 s_space_ikeo_sit_mid;
-const struct SequenceData s_space_ikeo_sit_seqData = {
+struct SequenceData s_space_ikeo_sit_seqData = {
     /* ROM Address */        &s_space_ikeo_sit_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_12,
@@ -3444,7 +3444,7 @@ const struct SequenceData s_space_ikeo_sit_seqData = {
 };
 
 extern const u32 s_space_ikeo_down_mid;
-const struct SequenceData s_space_ikeo_down_seqData = {
+struct SequenceData s_space_ikeo_down_seqData = {
     /* ROM Address */        &s_space_ikeo_down_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_12,
@@ -3457,7 +3457,7 @@ const struct SequenceData s_space_ikeo_down_seqData = {
 };
 
 extern const u32 s_space_ikeo_pa_mid;
-const struct SequenceData s_space_ikeo_pa_seqData = {
+struct SequenceData s_space_ikeo_pa_seqData = {
     /* ROM Address */        &s_space_ikeo_pa_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_12,
@@ -3470,7 +3470,7 @@ const struct SequenceData s_space_ikeo_pa_seqData = {
 };
 
 extern const u32 s_space_ikeo_punch_mid;
-const struct SequenceData s_space_ikeo_punch_seqData = {
+struct SequenceData s_space_ikeo_punch_seqData = {
     /* ROM Address */        &s_space_ikeo_punch_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_12,
@@ -3483,7 +3483,7 @@ const struct SequenceData s_space_ikeo_punch_seqData = {
 };
 
 extern const u32 s_space_kou_turn_mid;
-const struct SequenceData s_space_kou_turn_seqData = {
+struct SequenceData s_space_kou_turn_seqData = {
     /* ROM Address */        &s_space_kou_turn_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_12,
@@ -3496,7 +3496,7 @@ const struct SequenceData s_space_kou_turn_seqData = {
 };
 
 extern const u32 s_space_kou_right_mid;
-const struct SequenceData s_space_kou_right_seqData = {
+struct SequenceData s_space_kou_right_seqData = {
     /* ROM Address */        &s_space_kou_right_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_12,
@@ -3509,7 +3509,7 @@ const struct SequenceData s_space_kou_right_seqData = {
 };
 
 extern const u32 s_space_kou_lets_mid;
-const struct SequenceData s_space_kou_lets_seqData = {
+struct SequenceData s_space_kou_lets_seqData = {
     /* ROM Address */        &s_space_kou_lets_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_12,
@@ -3522,7 +3522,7 @@ const struct SequenceData s_space_kou_lets_seqData = {
 };
 
 extern const u32 s_space_kou_sit_mid;
-const struct SequenceData s_space_kou_sit_seqData = {
+struct SequenceData s_space_kou_sit_seqData = {
     /* ROM Address */        &s_space_kou_sit_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_12,
@@ -3535,7 +3535,7 @@ const struct SequenceData s_space_kou_sit_seqData = {
 };
 
 extern const u32 s_space_kou_down_mid;
-const struct SequenceData s_space_kou_down_seqData = {
+struct SequenceData s_space_kou_down_seqData = {
     /* ROM Address */        &s_space_kou_down_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_12,
@@ -3548,7 +3548,7 @@ const struct SequenceData s_space_kou_down_seqData = {
 };
 
 extern const u32 s_space_kou_pa_mid;
-const struct SequenceData s_space_kou_pa_seqData = {
+struct SequenceData s_space_kou_pa_seqData = {
     /* ROM Address */        &s_space_kou_pa_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_12,
@@ -3561,7 +3561,7 @@ const struct SequenceData s_space_kou_pa_seqData = {
 };
 
 extern const u32 s_space_kou_punch_mid;
-const struct SequenceData s_space_kou_punch_seqData = {
+struct SequenceData s_space_kou_punch_seqData = {
     /* ROM Address */        &s_space_kou_punch_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_12,
@@ -3574,7 +3574,7 @@ const struct SequenceData s_space_kou_punch_seqData = {
 };
 
 extern const u32 s_space_miss_mid;
-const struct SequenceData s_space_miss_seqData = {
+struct SequenceData s_space_miss_seqData = {
     /* ROM Address */        &s_space_miss_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_18,
@@ -3587,7 +3587,7 @@ const struct SequenceData s_space_miss_seqData = {
 };
 
 extern const u32 s_space_ikeo_turn_swing_mid;
-const struct SequenceData s_space_ikeo_turn_swing_seqData = {
+struct SequenceData s_space_ikeo_turn_swing_seqData = {
     /* ROM Address */        &s_space_ikeo_turn_swing_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_12,
@@ -3600,7 +3600,7 @@ const struct SequenceData s_space_ikeo_turn_swing_seqData = {
 };
 
 extern const u32 s_space_kou_turn_swing_mid;
-const struct SequenceData s_space_kou_turn_swing_seqData = {
+struct SequenceData s_space_kou_turn_swing_seqData = {
     /* ROM Address */        &s_space_kou_turn_swing_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_12,
@@ -3613,7 +3613,7 @@ const struct SequenceData s_space_kou_turn_swing_seqData = {
 };
 
 extern const u32 s_guntai1_mid;
-const struct SequenceData s_guntai1_seqData = {
+struct SequenceData s_guntai1_seqData = {
     /* ROM Address */        &s_guntai1_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_4,
@@ -3626,7 +3626,7 @@ const struct SequenceData s_guntai1_seqData = {
 };
 
 extern const u32 s_guntai2_mid;
-const struct SequenceData s_guntai2_seqData = {
+struct SequenceData s_guntai2_seqData = {
     /* ROM Address */        &s_guntai2_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_4,
@@ -3639,7 +3639,7 @@ const struct SequenceData s_guntai2_seqData = {
 };
 
 extern const u32 s_guntai_foot1_mid;
-const struct SequenceData s_guntai_foot1_seqData = {
+struct SequenceData s_guntai_foot1_seqData = {
     /* ROM Address */        &s_guntai_foot1_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_4,
@@ -3652,7 +3652,7 @@ const struct SequenceData s_guntai_foot1_seqData = {
 };
 
 extern const u32 s_guntai_foot2_mid;
-const struct SequenceData s_guntai_foot2_seqData = {
+struct SequenceData s_guntai_foot2_seqData = {
     /* ROM Address */        &s_guntai_foot2_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_4,
@@ -3665,7 +3665,7 @@ const struct SequenceData s_guntai_foot2_seqData = {
 };
 
 extern const u32 s_guntai_v_zentai1_mid;
-const struct SequenceData s_guntai_v_zentai1_seqData = {
+struct SequenceData s_guntai_v_zentai1_seqData = {
     /* ROM Address */        &s_guntai_v_zentai1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_4,
@@ -3678,7 +3678,7 @@ const struct SequenceData s_guntai_v_zentai1_seqData = {
 };
 
 extern const u32 s_guntai_v_zentai2_mid;
-const struct SequenceData s_guntai_v_zentai2_seqData = {
+struct SequenceData s_guntai_v_zentai2_seqData = {
     /* ROM Address */        &s_guntai_v_zentai2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_4,
@@ -3691,7 +3691,7 @@ const struct SequenceData s_guntai_v_zentai2_seqData = {
 };
 
 extern const u32 s_guntai_v_susume_mid;
-const struct SequenceData s_guntai_v_susume_seqData = {
+struct SequenceData s_guntai_v_susume_seqData = {
     /* ROM Address */        &s_guntai_v_susume_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_4,
@@ -3704,7 +3704,7 @@ const struct SequenceData s_guntai_v_susume_seqData = {
 };
 
 extern const u32 s_guntai_v_tomare_mid;
-const struct SequenceData s_guntai_v_tomare_seqData = {
+struct SequenceData s_guntai_v_tomare_seqData = {
     /* ROM Address */        &s_guntai_v_tomare_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_4,
@@ -3717,7 +3717,7 @@ const struct SequenceData s_guntai_v_tomare_seqData = {
 };
 
 extern const u32 s_guntai_v_migi_muke1_mid;
-const struct SequenceData s_guntai_v_migi_muke1_seqData = {
+struct SequenceData s_guntai_v_migi_muke1_seqData = {
     /* ROM Address */        &s_guntai_v_migi_muke1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_4,
@@ -3730,7 +3730,7 @@ const struct SequenceData s_guntai_v_migi_muke1_seqData = {
 };
 
 extern const u32 s_guntai_v_migi_muke2_mid;
-const struct SequenceData s_guntai_v_migi_muke2_seqData = {
+struct SequenceData s_guntai_v_migi_muke2_seqData = {
     /* ROM Address */        &s_guntai_v_migi_muke2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_4,
@@ -3743,7 +3743,7 @@ const struct SequenceData s_guntai_v_migi_muke2_seqData = {
 };
 
 extern const u32 s_guntai_v_hidari_muke1_mid;
-const struct SequenceData s_guntai_v_hidari_muke1_seqData = {
+struct SequenceData s_guntai_v_hidari_muke1_seqData = {
     /* ROM Address */        &s_guntai_v_hidari_muke1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_4,
@@ -3756,7 +3756,7 @@ const struct SequenceData s_guntai_v_hidari_muke1_seqData = {
 };
 
 extern const u32 s_guntai_v_hidari_muke2_mid;
-const struct SequenceData s_guntai_v_hidari_muke2_seqData = {
+struct SequenceData s_guntai_v_hidari_muke2_seqData = {
     /* ROM Address */        &s_guntai_v_hidari_muke2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_4,
@@ -3769,7 +3769,7 @@ const struct SequenceData s_guntai_v_hidari_muke2_seqData = {
 };
 
 extern const u32 s_guntai_v_migi_mid;
-const struct SequenceData s_guntai_v_migi_seqData = {
+struct SequenceData s_guntai_v_migi_seqData = {
     /* ROM Address */        &s_guntai_v_migi_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_4,
@@ -3782,7 +3782,7 @@ const struct SequenceData s_guntai_v_migi_seqData = {
 };
 
 extern const u32 s_guntai_v_hidari_mid;
-const struct SequenceData s_guntai_v_hidari_seqData = {
+struct SequenceData s_guntai_v_hidari_seqData = {
     /* ROM Address */        &s_guntai_v_hidari_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_4,
@@ -3795,7 +3795,7 @@ const struct SequenceData s_guntai_v_hidari_seqData = {
 };
 
 extern const u32 s_guntai_v_yoh_mid;
-const struct SequenceData s_guntai_v_yoh_seqData = {
+struct SequenceData s_guntai_v_yoh_seqData = {
     /* ROM Address */        &s_guntai_v_yoh_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_4,
@@ -3808,7 +3808,7 @@ const struct SequenceData s_guntai_v_yoh_seqData = {
 };
 
 extern const u32 s_guntai_v_es_mid;
-const struct SequenceData s_guntai_v_es_seqData = {
+struct SequenceData s_guntai_v_es_seqData = {
     /* ROM Address */        &s_guntai_v_es_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_4,
@@ -3821,7 +3821,7 @@ const struct SequenceData s_guntai_v_es_seqData = {
 };
 
 extern const u32 s_guntai_v_ka_mid;
-const struct SequenceData s_guntai_v_ka_seqData = {
+struct SequenceData s_guntai_v_ka_seqData = {
     /* ROM Address */        &s_guntai_v_ka_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_4,
@@ -3834,7 +3834,7 @@ const struct SequenceData s_guntai_v_ka_seqData = {
 };
 
 extern const u32 s_guntai_ikari_mid;
-const struct SequenceData s_guntai_ikari_seqData = {
+struct SequenceData s_guntai_ikari_seqData = {
     /* ROM Address */        &s_guntai_ikari_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_2,
@@ -3847,7 +3847,7 @@ const struct SequenceData s_guntai_ikari_seqData = {
 };
 
 extern const u32 s_block_gotin_mid;
-const struct SequenceData s_block_gotin_seqData = {
+struct SequenceData s_block_gotin_seqData = {
     /* ROM Address */        &s_block_gotin_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_5,
@@ -3860,7 +3860,7 @@ const struct SequenceData s_block_gotin_seqData = {
 };
 
 extern const u32 s_block_hit_mid;
-const struct SequenceData s_block_hit_seqData = {
+struct SequenceData s_block_hit_seqData = {
     /* ROM Address */        &s_block_hit_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_5,
@@ -3873,7 +3873,7 @@ const struct SequenceData s_block_hit_seqData = {
 };
 
 extern const u32 s_block_walk_mid;
-const struct SequenceData s_block_walk_seqData = {
+struct SequenceData s_block_walk_seqData = {
     /* ROM Address */        &s_block_walk_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_10,
@@ -3886,7 +3886,7 @@ const struct SequenceData s_block_walk_seqData = {
 };
 
 extern const u32 s_kawasemi_bgm_mid;
-const struct SequenceData s_kawasemi_bgm_seqData = {
+struct SequenceData s_kawasemi_bgm_seqData = {
     /* ROM Address */        &s_kawasemi_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_11,
@@ -3899,7 +3899,7 @@ const struct SequenceData s_kawasemi_bgm_seqData = {
 };
 
 extern const u32 s_kawasemi_frase_mid;
-const struct SequenceData s_kawasemi_frase_seqData = {
+struct SequenceData s_kawasemi_frase_seqData = {
     /* ROM Address */        &s_kawasemi_frase_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_11,
@@ -3912,7 +3912,7 @@ const struct SequenceData s_kawasemi_frase_seqData = {
 };
 
 extern const u32 s_heat_v_jituhane_mid;
-const struct SequenceData s_heat_v_jituhane_seqData = {
+struct SequenceData s_heat_v_jituhane_seqData = {
     /* ROM Address */        &s_heat_v_jituhane_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -3925,7 +3925,7 @@ const struct SequenceData s_heat_v_jituhane_seqData = {
 };
 
 extern const u32 s_heat_v_watasine_mid;
-const struct SequenceData s_heat_v_watasine_seqData = {
+struct SequenceData s_heat_v_watasine_seqData = {
     /* ROM Address */        &s_heat_v_watasine_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -3938,7 +3938,7 @@ const struct SequenceData s_heat_v_watasine_seqData = {
 };
 
 extern const u32 s_heat_v_watasitara_mid;
-const struct SequenceData s_heat_v_watasitara_seqData = {
+struct SequenceData s_heat_v_watasitara_seqData = {
     /* ROM Address */        &s_heat_v_watasitara_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -3951,7 +3951,7 @@ const struct SequenceData s_heat_v_watasitara_seqData = {
 };
 
 extern const u32 s_heat_v_anataga_mid;
-const struct SequenceData s_heat_v_anataga_seqData = {
+struct SequenceData s_heat_v_anataga_seqData = {
     /* ROM Address */        &s_heat_v_anataga_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -3964,7 +3964,7 @@ const struct SequenceData s_heat_v_anataga_seqData = {
 };
 
 extern const u32 s_heat_v_anatatara_mid;
-const struct SequenceData s_heat_v_anatatara_seqData = {
+struct SequenceData s_heat_v_anatatara_seqData = {
     /* ROM Address */        &s_heat_v_anatatara_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -3977,7 +3977,7 @@ const struct SequenceData s_heat_v_anatatara_seqData = {
 };
 
 extern const u32 s_heat_v_kimiga_mid;
-const struct SequenceData s_heat_v_kimiga_seqData = {
+struct SequenceData s_heat_v_kimiga_seqData = {
     /* ROM Address */        &s_heat_v_kimiga_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -3990,7 +3990,7 @@ const struct SequenceData s_heat_v_kimiga_seqData = {
 };
 
 extern const u32 s_heat_v_doji_mid;
-const struct SequenceData s_heat_v_doji_seqData = {
+struct SequenceData s_heat_v_doji_seqData = {
     /* ROM Address */        &s_heat_v_doji_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -4003,7 +4003,7 @@ const struct SequenceData s_heat_v_doji_seqData = {
 };
 
 extern const u32 s_heat_v_sugoi_mid;
-const struct SequenceData s_heat_v_sugoi_seqData = {
+struct SequenceData s_heat_v_sugoi_seqData = {
     /* ROM Address */        &s_heat_v_sugoi_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -4016,7 +4016,7 @@ const struct SequenceData s_heat_v_sugoi_seqData = {
 };
 
 extern const u32 s_heat_v_koumietemo_mid;
-const struct SequenceData s_heat_v_koumietemo_seqData = {
+struct SequenceData s_heat_v_koumietemo_seqData = {
     /* ROM Address */        &s_heat_v_koumietemo_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -4029,7 +4029,7 @@ const struct SequenceData s_heat_v_koumietemo_seqData = {
 };
 
 extern const u32 s_heat_v_okubyo_mid;
-const struct SequenceData s_heat_v_okubyo_seqData = {
+struct SequenceData s_heat_v_okubyo_seqData = {
     /* ROM Address */        &s_heat_v_okubyo_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -4042,7 +4042,7 @@ const struct SequenceData s_heat_v_okubyo_seqData = {
 };
 
 extern const u32 s_heat_v_majime_mid;
-const struct SequenceData s_heat_v_majime_seqData = {
+struct SequenceData s_heat_v_majime_seqData = {
     /* ROM Address */        &s_heat_v_majime_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -4055,7 +4055,7 @@ const struct SequenceData s_heat_v_majime_seqData = {
 };
 
 extern const u32 s_heat_v_kouitta_mid;
-const struct SequenceData s_heat_v_kouitta_seqData = {
+struct SequenceData s_heat_v_kouitta_seqData = {
     /* ROM Address */        &s_heat_v_kouitta_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -4068,7 +4068,7 @@ const struct SequenceData s_heat_v_kouitta_seqData = {
 };
 
 extern const u32 s_heat_v_demo_mid;
-const struct SequenceData s_heat_v_demo_seqData = {
+struct SequenceData s_heat_v_demo_seqData = {
     /* ROM Address */        &s_heat_v_demo_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -4081,7 +4081,7 @@ const struct SequenceData s_heat_v_demo_seqData = {
 };
 
 extern const u32 s_heat_v_yappari_mid;
-const struct SequenceData s_heat_v_yappari_seqData = {
+struct SequenceData s_heat_v_yappari_seqData = {
     /* ROM Address */        &s_heat_v_yappari_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -4094,7 +4094,7 @@ const struct SequenceData s_heat_v_yappari_seqData = {
 };
 
 extern const u32 s_heat_v_dakedo_mid;
-const struct SequenceData s_heat_v_dakedo_seqData = {
+struct SequenceData s_heat_v_dakedo_seqData = {
     /* ROM Address */        &s_heat_v_dakedo_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_46,
@@ -4107,7 +4107,7 @@ const struct SequenceData s_heat_v_dakedo_seqData = {
 };
 
 extern const u32 s_heat_v_suki_mid;
-const struct SequenceData s_heat_v_suki_seqData = {
+struct SequenceData s_heat_v_suki_seqData = {
     /* ROM Address */        &s_heat_v_suki_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_46,
@@ -4120,7 +4120,7 @@ const struct SequenceData s_heat_v_suki_seqData = {
 };
 
 extern const u32 s_heat_v_kirai_mid;
-const struct SequenceData s_heat_v_kirai_seqData = {
+struct SequenceData s_heat_v_kirai_seqData = {
     /* ROM Address */        &s_heat_v_kirai_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_46,
@@ -4133,7 +4133,7 @@ const struct SequenceData s_heat_v_kirai_seqData = {
 };
 
 extern const u32 s_heat_v_seki_mid;
-const struct SequenceData s_heat_v_seki_seqData = {
+struct SequenceData s_heat_v_seki_seqData = {
     /* ROM Address */        &s_heat_v_seki_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_46,
@@ -4146,7 +4146,7 @@ const struct SequenceData s_heat_v_seki_seqData = {
 };
 
 extern const u32 s_heat_machine_bgm_mid;
-const struct SequenceData s_heat_machine_bgm_seqData = {
+struct SequenceData s_heat_machine_bgm_seqData = {
     /* ROM Address */        &s_heat_machine_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_46,
@@ -4159,7 +4159,7 @@ const struct SequenceData s_heat_machine_bgm_seqData = {
 };
 
 extern const u32 s_metro_tin_mid;
-const struct SequenceData s_metro_tin_seqData = {
+struct SequenceData s_metro_tin_seqData = {
     /* ROM Address */        &s_metro_tin_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_11,
@@ -4172,7 +4172,7 @@ const struct SequenceData s_metro_tin_seqData = {
 };
 
 extern const u32 s_metro_count1_mid;
-const struct SequenceData s_metro_count1_seqData = {
+struct SequenceData s_metro_count1_seqData = {
     /* ROM Address */        &s_metro_count1_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_14,
@@ -4185,7 +4185,7 @@ const struct SequenceData s_metro_count1_seqData = {
 };
 
 extern const u32 s_metro_count2_mid;
-const struct SequenceData s_metro_count2_seqData = {
+struct SequenceData s_metro_count2_seqData = {
     /* ROM Address */        &s_metro_count2_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_14,
@@ -4198,7 +4198,7 @@ const struct SequenceData s_metro_count2_seqData = {
 };
 
 extern const u32 s_metro_hato_mid;
-const struct SequenceData s_metro_hato_seqData = {
+struct SequenceData s_metro_hato_seqData = {
     /* ROM Address */        &s_metro_hato_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_11,
@@ -4211,7 +4211,7 @@ const struct SequenceData s_metro_hato_seqData = {
 };
 
 extern const u32 s_metro_hit_mid;
-const struct SequenceData s_metro_hit_seqData = {
+struct SequenceData s_metro_hit_seqData = {
     /* ROM Address */        &s_metro_hit_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_11,
@@ -4224,7 +4224,7 @@ const struct SequenceData s_metro_hit_seqData = {
 };
 
 extern const u32 s_batter_hit_mid;
-const struct SequenceData s_batter_hit_seqData = {
+struct SequenceData s_batter_hit_seqData = {
     /* ROM Address */        &s_batter_hit_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_12,
@@ -4237,7 +4237,7 @@ const struct SequenceData s_batter_hit_seqData = {
 };
 
 extern const u32 s_batter_mit_mid;
-const struct SequenceData s_batter_mit_seqData = {
+struct SequenceData s_batter_mit_seqData = {
     /* ROM Address */        &s_batter_mit_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_12,
@@ -4250,7 +4250,7 @@ const struct SequenceData s_batter_mit_seqData = {
 };
 
 extern const u32 s_keytoy_count1_mid;
-const struct SequenceData s_keytoy_count1_seqData = {
+struct SequenceData s_keytoy_count1_seqData = {
     /* ROM Address */        &s_keytoy_count1_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_14,
@@ -4263,7 +4263,7 @@ const struct SequenceData s_keytoy_count1_seqData = {
 };
 
 extern const u32 s_keytoy_count2_mid;
-const struct SequenceData s_keytoy_count2_seqData = {
+struct SequenceData s_keytoy_count2_seqData = {
     /* ROM Address */        &s_keytoy_count2_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_14,
@@ -4276,7 +4276,7 @@ const struct SequenceData s_keytoy_count2_seqData = {
 };
 
 extern const u32 s_mitubati_mid;
-const struct SequenceData s_mitubati_seqData = {
+struct SequenceData s_mitubati_seqData = {
     /* ROM Address */        &s_mitubati_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -4289,7 +4289,7 @@ const struct SequenceData s_mitubati_seqData = {
 };
 
 extern const u32 s_witch_candy_mid;
-const struct SequenceData s_witch_candy_seqData = {
+struct SequenceData s_witch_candy_seqData = {
     /* ROM Address */        &s_witch_candy_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_2,
@@ -4302,7 +4302,7 @@ const struct SequenceData s_witch_candy_seqData = {
 };
 
 extern const u32 s_witch_furu_mid;
-const struct SequenceData s_witch_furu_seqData = {
+struct SequenceData s_witch_furu_seqData = {
     /* ROM Address */        &s_witch_furu_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_2,
@@ -4315,7 +4315,7 @@ const struct SequenceData s_witch_furu_seqData = {
 };
 
 extern const u32 s_witch_cake_mid;
-const struct SequenceData s_witch_cake_seqData = {
+struct SequenceData s_witch_cake_seqData = {
     /* ROM Address */        &s_witch_cake_mid,
     /* unk4f1 */             0xb,
     /* Sound Bank */         INST_BANK_2,
@@ -4328,7 +4328,7 @@ const struct SequenceData s_witch_cake_seqData = {
 };
 
 extern const u32 s_witch_donats_mid;
-const struct SequenceData s_witch_donats_seqData = {
+struct SequenceData s_witch_donats_seqData = {
     /* ROM Address */        &s_witch_donats_mid,
     /* unk4f1 */             0xc,
     /* Sound Bank */         INST_BANK_2,
@@ -4341,7 +4341,7 @@ const struct SequenceData s_witch_donats_seqData = {
 };
 
 extern const u32 s_rabbit_jet_mid;
-const struct SequenceData s_rabbit_jet_seqData = {
+struct SequenceData s_rabbit_jet_seqData = {
     /* ROM Address */        &s_rabbit_jet_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_6,
@@ -4354,7 +4354,7 @@ const struct SequenceData s_rabbit_jet_seqData = {
 };
 
 extern const u32 s_rabbit_break2_mid;
-const struct SequenceData s_rabbit_break2_seqData = {
+struct SequenceData s_rabbit_break2_seqData = {
     /* ROM Address */        &s_rabbit_break2_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_6,
@@ -4367,7 +4367,7 @@ const struct SequenceData s_rabbit_break2_seqData = {
 };
 
 extern const u32 s_rabbit_c7_brass_mid;
-const struct SequenceData s_rabbit_c7_brass_seqData = {
+struct SequenceData s_rabbit_c7_brass_seqData = {
     /* ROM Address */        &s_rabbit_c7_brass_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_6,
@@ -4380,7 +4380,7 @@ const struct SequenceData s_rabbit_c7_brass_seqData = {
 };
 
 extern const u32 s_rabbit_break_mid;
-const struct SequenceData s_rabbit_break_seqData = {
+struct SequenceData s_rabbit_break_seqData = {
     /* ROM Address */        &s_rabbit_break_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_6,
@@ -4393,7 +4393,7 @@ const struct SequenceData s_rabbit_break_seqData = {
 };
 
 extern const u32 s_rabbit_HC_mid;
-const struct SequenceData s_rabbit_HC_seqData = {
+struct SequenceData s_rabbit_HC_seqData = {
     /* ROM Address */        &s_rabbit_HC_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_6,
@@ -4406,7 +4406,7 @@ const struct SequenceData s_rabbit_HC_seqData = {
 };
 
 extern const u32 s_rabbit_bgm_mid;
-const struct SequenceData s_rabbit_bgm_seqData = {
+struct SequenceData s_rabbit_bgm_seqData = {
     /* ROM Address */        &s_rabbit_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_6,
@@ -4419,7 +4419,7 @@ const struct SequenceData s_rabbit_bgm_seqData = {
 };
 
 extern const u32 s_rabbit_c7_mid;
-const struct SequenceData s_rabbit_c7_seqData = {
+struct SequenceData s_rabbit_c7_seqData = {
     /* ROM Address */        &s_rabbit_c7_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_6,
@@ -4432,7 +4432,7 @@ const struct SequenceData s_rabbit_c7_seqData = {
 };
 
 extern const u32 s_rabbit_f7_mid;
-const struct SequenceData s_rabbit_f7_seqData = {
+struct SequenceData s_rabbit_f7_seqData = {
     /* ROM Address */        &s_rabbit_f7_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_6,
@@ -4445,7 +4445,7 @@ const struct SequenceData s_rabbit_f7_seqData = {
 };
 
 extern const u32 s_rabbit_g7f7_1_mid;
-const struct SequenceData s_rabbit_g7f7_1_seqData = {
+struct SequenceData s_rabbit_g7f7_1_seqData = {
     /* ROM Address */        &s_rabbit_g7f7_1_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_6,
@@ -4458,7 +4458,7 @@ const struct SequenceData s_rabbit_g7f7_1_seqData = {
 };
 
 extern const u32 s_rabbit_g7f7_2_mid;
-const struct SequenceData s_rabbit_g7f7_2_seqData = {
+struct SequenceData s_rabbit_g7f7_2_seqData = {
     /* ROM Address */        &s_rabbit_g7f7_2_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_6,
@@ -4471,7 +4471,7 @@ const struct SequenceData s_rabbit_g7f7_2_seqData = {
 };
 
 extern const u32 s_rabbit_c7g7_mid;
-const struct SequenceData s_rabbit_c7g7_seqData = {
+struct SequenceData s_rabbit_c7g7_seqData = {
     /* ROM Address */        &s_rabbit_c7g7_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_6,
@@ -4484,7 +4484,7 @@ const struct SequenceData s_rabbit_c7g7_seqData = {
 };
 
 extern const u32 s_rabbit_fill_1_mid;
-const struct SequenceData s_rabbit_fill_1_seqData = {
+struct SequenceData s_rabbit_fill_1_seqData = {
     /* ROM Address */        &s_rabbit_fill_1_mid,
     /* unk4f1 */             0x2,
     /* Sound Bank */         INST_BANK_6,
@@ -4497,7 +4497,7 @@ const struct SequenceData s_rabbit_fill_1_seqData = {
 };
 
 extern const u32 s_rabbit_fill_2_mid;
-const struct SequenceData s_rabbit_fill_2_seqData = {
+struct SequenceData s_rabbit_fill_2_seqData = {
     /* ROM Address */        &s_rabbit_fill_2_mid,
     /* unk4f1 */             0x2,
     /* Sound Bank */         INST_BANK_6,
@@ -4510,7 +4510,7 @@ const struct SequenceData s_rabbit_fill_2_seqData = {
 };
 
 extern const u32 s_rabbit_fill_3_mid;
-const struct SequenceData s_rabbit_fill_3_seqData = {
+struct SequenceData s_rabbit_fill_3_seqData = {
     /* ROM Address */        &s_rabbit_fill_3_mid,
     /* unk4f1 */             0x2,
     /* Sound Bank */         INST_BANK_6,
@@ -4523,7 +4523,7 @@ const struct SequenceData s_rabbit_fill_3_seqData = {
 };
 
 extern const u32 s_rabbit_fill_4_mid;
-const struct SequenceData s_rabbit_fill_4_seqData = {
+struct SequenceData s_rabbit_fill_4_seqData = {
     /* ROM Address */        &s_rabbit_fill_4_mid,
     /* unk4f1 */             0x2,
     /* Sound Bank */         INST_BANK_6,
@@ -4536,7 +4536,7 @@ const struct SequenceData s_rabbit_fill_4_seqData = {
 };
 
 extern const u32 s_rabbit_atama_mid;
-const struct SequenceData s_rabbit_atama_seqData = {
+struct SequenceData s_rabbit_atama_seqData = {
     /* ROM Address */        &s_rabbit_atama_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_6,
@@ -4549,7 +4549,7 @@ const struct SequenceData s_rabbit_atama_seqData = {
 };
 
 extern const u32 s_rabbit_moon_mid;
-const struct SequenceData s_rabbit_moon_seqData = {
+struct SequenceData s_rabbit_moon_seqData = {
     /* ROM Address */        &s_rabbit_moon_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_10,
@@ -4562,7 +4562,7 @@ const struct SequenceData s_rabbit_moon_seqData = {
 };
 
 extern const u32 s_tap_monky1_mid;
-const struct SequenceData s_tap_monky1_seqData = {
+struct SequenceData s_tap_monky1_seqData = {
     /* ROM Address */        &s_tap_monky1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_5,
@@ -4575,7 +4575,7 @@ const struct SequenceData s_tap_monky1_seqData = {
 };
 
 extern const u32 s_tap_monky2_mid;
-const struct SequenceData s_tap_monky2_seqData = {
+struct SequenceData s_tap_monky2_seqData = {
     /* ROM Address */        &s_tap_monky2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_5,
@@ -4588,7 +4588,7 @@ const struct SequenceData s_tap_monky2_seqData = {
 };
 
 extern const u32 s_tap_monky3_1_mid;
-const struct SequenceData s_tap_monky3_1_seqData = {
+struct SequenceData s_tap_monky3_1_seqData = {
     /* ROM Address */        &s_tap_monky3_1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_5,
@@ -4601,7 +4601,7 @@ const struct SequenceData s_tap_monky3_1_seqData = {
 };
 
 extern const u32 s_tap_monky3_2_mid;
-const struct SequenceData s_tap_monky3_2_seqData = {
+struct SequenceData s_tap_monky3_2_seqData = {
     /* ROM Address */        &s_tap_monky3_2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_5,
@@ -4614,7 +4614,7 @@ const struct SequenceData s_tap_monky3_2_seqData = {
 };
 
 extern const u32 s_tap_monky4_mid;
-const struct SequenceData s_tap_monky4_seqData = {
+struct SequenceData s_tap_monky4_seqData = {
     /* ROM Address */        &s_tap_monky4_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_5,
@@ -4627,7 +4627,7 @@ const struct SequenceData s_tap_monky4_seqData = {
 };
 
 extern const u32 s_tap_kick_monky_mid;
-const struct SequenceData s_tap_kick_monky_seqData = {
+struct SequenceData s_tap_kick_monky_seqData = {
     /* ROM Address */        &s_tap_kick_monky_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_2,
@@ -4640,7 +4640,7 @@ const struct SequenceData s_tap_kick_monky_seqData = {
 };
 
 extern const u32 s_tap_kick_lady_mid;
-const struct SequenceData s_tap_kick_lady_seqData = {
+struct SequenceData s_tap_kick_lady_seqData = {
     /* ROM Address */        &s_tap_kick_lady_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_2,
@@ -4653,7 +4653,7 @@ const struct SequenceData s_tap_kick_lady_seqData = {
 };
 
 extern const u32 s_uma_walk1_mid;
-const struct SequenceData s_uma_walk1_seqData = {
+struct SequenceData s_uma_walk1_seqData = {
     /* ROM Address */        &s_uma_walk1_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_3,
@@ -4666,7 +4666,7 @@ const struct SequenceData s_uma_walk1_seqData = {
 };
 
 extern const u32 s_uma_walk2_mid;
-const struct SequenceData s_uma_walk2_seqData = {
+struct SequenceData s_uma_walk2_seqData = {
     /* ROM Address */        &s_uma_walk2_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_3,
@@ -4679,7 +4679,7 @@ const struct SequenceData s_uma_walk2_seqData = {
 };
 
 extern const u32 s_uma_walk3_mid;
-const struct SequenceData s_uma_walk3_seqData = {
+struct SequenceData s_uma_walk3_seqData = {
     /* ROM Address */        &s_uma_walk3_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_3,
@@ -4692,7 +4692,7 @@ const struct SequenceData s_uma_walk3_seqData = {
 };
 
 extern const u32 s_uma_walk4_mid;
-const struct SequenceData s_uma_walk4_seqData = {
+struct SequenceData s_uma_walk4_seqData = {
     /* ROM Address */        &s_uma_walk4_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_3,
@@ -4705,7 +4705,7 @@ const struct SequenceData s_uma_walk4_seqData = {
 };
 
 extern const u32 s_uma_trot1_mid;
-const struct SequenceData s_uma_trot1_seqData = {
+struct SequenceData s_uma_trot1_seqData = {
     /* ROM Address */        &s_uma_trot1_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_3,
@@ -4718,7 +4718,7 @@ const struct SequenceData s_uma_trot1_seqData = {
 };
 
 extern const u32 s_uma_trot2_mid;
-const struct SequenceData s_uma_trot2_seqData = {
+struct SequenceData s_uma_trot2_seqData = {
     /* ROM Address */        &s_uma_trot2_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_3,
@@ -4731,7 +4731,7 @@ const struct SequenceData s_uma_trot2_seqData = {
 };
 
 extern const u32 s_uma_canter1_mid;
-const struct SequenceData s_uma_canter1_seqData = {
+struct SequenceData s_uma_canter1_seqData = {
     /* ROM Address */        &s_uma_canter1_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_3,
@@ -4744,7 +4744,7 @@ const struct SequenceData s_uma_canter1_seqData = {
 };
 
 extern const u32 s_uma_canter2_mid;
-const struct SequenceData s_uma_canter2_seqData = {
+struct SequenceData s_uma_canter2_seqData = {
     /* ROM Address */        &s_uma_canter2_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_3,
@@ -4757,7 +4757,7 @@ const struct SequenceData s_uma_canter2_seqData = {
 };
 
 extern const u32 s_uma_canter3_mid;
-const struct SequenceData s_uma_canter3_seqData = {
+struct SequenceData s_uma_canter3_seqData = {
     /* ROM Address */        &s_uma_canter3_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_3,
@@ -4770,7 +4770,7 @@ const struct SequenceData s_uma_canter3_seqData = {
 };
 
 extern const u32 s_uma_galop1_mid;
-const struct SequenceData s_uma_galop1_seqData = {
+struct SequenceData s_uma_galop1_seqData = {
     /* ROM Address */        &s_uma_galop1_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_3,
@@ -4783,7 +4783,7 @@ const struct SequenceData s_uma_galop1_seqData = {
 };
 
 extern const u32 s_uma_galop2_mid;
-const struct SequenceData s_uma_galop2_seqData = {
+struct SequenceData s_uma_galop2_seqData = {
     /* ROM Address */        &s_uma_galop2_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_3,
@@ -4796,7 +4796,7 @@ const struct SequenceData s_uma_galop2_seqData = {
 };
 
 extern const u32 s_uma_galop3_mid;
-const struct SequenceData s_uma_galop3_seqData = {
+struct SequenceData s_uma_galop3_seqData = {
     /* ROM Address */        &s_uma_galop3_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_3,
@@ -4809,7 +4809,7 @@ const struct SequenceData s_uma_galop3_seqData = {
 };
 
 extern const u32 s_uma_galop4_mid;
-const struct SequenceData s_uma_galop4_seqData = {
+struct SequenceData s_uma_galop4_seqData = {
     /* ROM Address */        &s_uma_galop4_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_3,
@@ -4822,7 +4822,7 @@ const struct SequenceData s_uma_galop4_seqData = {
 };
 
 extern const u32 s_uma_hihin_mid;
-const struct SequenceData s_uma_hihin_seqData = {
+struct SequenceData s_uma_hihin_seqData = {
     /* ROM Address */        &s_uma_hihin_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_3,
@@ -4835,7 +4835,7 @@ const struct SequenceData s_uma_hihin_seqData = {
 };
 
 extern const u32 s_uma_bulu_mid;
-const struct SequenceData s_uma_bulu_seqData = {
+struct SequenceData s_uma_bulu_seqData = {
     /* ROM Address */        &s_uma_bulu_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_3,
@@ -4848,7 +4848,7 @@ const struct SequenceData s_uma_bulu_seqData = {
 };
 
 extern const u32 s_uma_hi_muti_mid;
-const struct SequenceData s_uma_hi_muti_seqData = {
+struct SequenceData s_uma_hi_muti_seqData = {
     /* ROM Address */        &s_uma_hi_muti_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_3,
@@ -4861,7 +4861,7 @@ const struct SequenceData s_uma_hi_muti_seqData = {
 };
 
 extern const u32 s_uma_ng_mid;
-const struct SequenceData s_uma_ng_seqData = {
+struct SequenceData s_uma_ng_seqData = {
     /* ROM Address */        &s_uma_ng_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_3,
@@ -4874,7 +4874,7 @@ const struct SequenceData s_uma_ng_seqData = {
 };
 
 extern const u32 s_uma_walk1_t_mid;
-const struct SequenceData s_uma_walk1_t_seqData = {
+struct SequenceData s_uma_walk1_t_seqData = {
     /* ROM Address */        &s_uma_walk1_t_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_3,
@@ -4887,7 +4887,7 @@ const struct SequenceData s_uma_walk1_t_seqData = {
 };
 
 extern const u32 s_uma_walk2_t_mid;
-const struct SequenceData s_uma_walk2_t_seqData = {
+struct SequenceData s_uma_walk2_t_seqData = {
     /* ROM Address */        &s_uma_walk2_t_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_3,
@@ -4900,7 +4900,7 @@ const struct SequenceData s_uma_walk2_t_seqData = {
 };
 
 extern const u32 s_uma_walk3_t_mid;
-const struct SequenceData s_uma_walk3_t_seqData = {
+struct SequenceData s_uma_walk3_t_seqData = {
     /* ROM Address */        &s_uma_walk3_t_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_3,
@@ -4913,7 +4913,7 @@ const struct SequenceData s_uma_walk3_t_seqData = {
 };
 
 extern const u32 s_uma_walk4_t_mid;
-const struct SequenceData s_uma_walk4_t_seqData = {
+struct SequenceData s_uma_walk4_t_seqData = {
     /* ROM Address */        &s_uma_walk4_t_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_3,
@@ -4926,7 +4926,7 @@ const struct SequenceData s_uma_walk4_t_seqData = {
 };
 
 extern const u32 s_uma_trot1_t_mid;
-const struct SequenceData s_uma_trot1_t_seqData = {
+struct SequenceData s_uma_trot1_t_seqData = {
     /* ROM Address */        &s_uma_trot1_t_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_3,
@@ -4939,7 +4939,7 @@ const struct SequenceData s_uma_trot1_t_seqData = {
 };
 
 extern const u32 s_uma_trot2_t_mid;
-const struct SequenceData s_uma_trot2_t_seqData = {
+struct SequenceData s_uma_trot2_t_seqData = {
     /* ROM Address */        &s_uma_trot2_t_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_3,
@@ -4952,7 +4952,7 @@ const struct SequenceData s_uma_trot2_t_seqData = {
 };
 
 extern const u32 s_uma_canter1_t_mid;
-const struct SequenceData s_uma_canter1_t_seqData = {
+struct SequenceData s_uma_canter1_t_seqData = {
     /* ROM Address */        &s_uma_canter1_t_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_3,
@@ -4965,7 +4965,7 @@ const struct SequenceData s_uma_canter1_t_seqData = {
 };
 
 extern const u32 s_uma_canter2_t_mid;
-const struct SequenceData s_uma_canter2_t_seqData = {
+struct SequenceData s_uma_canter2_t_seqData = {
     /* ROM Address */        &s_uma_canter2_t_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_3,
@@ -4978,7 +4978,7 @@ const struct SequenceData s_uma_canter2_t_seqData = {
 };
 
 extern const u32 s_uma_canter3_t_mid;
-const struct SequenceData s_uma_canter3_t_seqData = {
+struct SequenceData s_uma_canter3_t_seqData = {
     /* ROM Address */        &s_uma_canter3_t_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_3,
@@ -4991,7 +4991,7 @@ const struct SequenceData s_uma_canter3_t_seqData = {
 };
 
 extern const u32 s_uma_galop1_t_mid;
-const struct SequenceData s_uma_galop1_t_seqData = {
+struct SequenceData s_uma_galop1_t_seqData = {
     /* ROM Address */        &s_uma_galop1_t_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_3,
@@ -5004,7 +5004,7 @@ const struct SequenceData s_uma_galop1_t_seqData = {
 };
 
 extern const u32 s_uma_galop2_t_mid;
-const struct SequenceData s_uma_galop2_t_seqData = {
+struct SequenceData s_uma_galop2_t_seqData = {
     /* ROM Address */        &s_uma_galop2_t_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_3,
@@ -5017,7 +5017,7 @@ const struct SequenceData s_uma_galop2_t_seqData = {
 };
 
 extern const u32 s_uma_galop3_t_mid;
-const struct SequenceData s_uma_galop3_t_seqData = {
+struct SequenceData s_uma_galop3_t_seqData = {
     /* ROM Address */        &s_uma_galop3_t_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_3,
@@ -5030,7 +5030,7 @@ const struct SequenceData s_uma_galop3_t_seqData = {
 };
 
 extern const u32 s_uma_galop4_t_mid;
-const struct SequenceData s_uma_galop4_t_seqData = {
+struct SequenceData s_uma_galop4_t_seqData = {
     /* ROM Address */        &s_uma_galop4_t_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_3,
@@ -5043,7 +5043,7 @@ const struct SequenceData s_uma_galop4_t_seqData = {
 };
 
 extern const u32 s_uma_bgm1_mid;
-const struct SequenceData s_uma_bgm1_seqData = {
+struct SequenceData s_uma_bgm1_seqData = {
     /* ROM Address */        &s_uma_bgm1_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_3,
@@ -5056,7 +5056,7 @@ const struct SequenceData s_uma_bgm1_seqData = {
 };
 
 extern const u32 s_uma_bgm2_mid;
-const struct SequenceData s_uma_bgm2_seqData = {
+struct SequenceData s_uma_bgm2_seqData = {
     /* ROM Address */        &s_uma_bgm2_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_3,
@@ -5069,7 +5069,7 @@ const struct SequenceData s_uma_bgm2_seqData = {
 };
 
 extern const u32 s_uma_bgm3_mid;
-const struct SequenceData s_uma_bgm3_seqData = {
+struct SequenceData s_uma_bgm3_seqData = {
     /* ROM Address */        &s_uma_bgm3_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_3,
@@ -5082,7 +5082,7 @@ const struct SequenceData s_uma_bgm3_seqData = {
 };
 
 extern const u32 s_uma_bgm4_mid;
-const struct SequenceData s_uma_bgm4_seqData = {
+struct SequenceData s_uma_bgm4_seqData = {
     /* ROM Address */        &s_uma_bgm4_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_3,
@@ -5095,7 +5095,7 @@ const struct SequenceData s_uma_bgm4_seqData = {
 };
 
 extern const u32 s_karate_bgm_mid;
-const struct SequenceData s_karate_bgm_seqData = {
+struct SequenceData s_karate_bgm_seqData = {
     /* ROM Address */        &s_karate_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_1,
@@ -5108,7 +5108,7 @@ const struct SequenceData s_karate_bgm_seqData = {
 };
 
 extern const u32 s_karate_fan_mid;
-const struct SequenceData s_karate_fan_seqData = {
+struct SequenceData s_karate_fan_seqData = {
     /* ROM Address */        &s_karate_fan_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_1,
@@ -5121,7 +5121,7 @@ const struct SequenceData s_karate_fan_seqData = {
 };
 
 extern const u32 s_datumo_nuki_mid;
-const struct SequenceData s_datumo_nuki_seqData = {
+struct SequenceData s_datumo_nuki_seqData = {
     /* ROM Address */        &s_datumo_nuki_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_2,
@@ -5134,7 +5134,7 @@ const struct SequenceData s_datumo_nuki_seqData = {
 };
 
 extern const u32 s_datumo_kegire_mid;
-const struct SequenceData s_datumo_kegire_seqData = {
+struct SequenceData s_datumo_kegire_seqData = {
     /* ROM Address */        &s_datumo_kegire_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_2,
@@ -5147,7 +5147,7 @@ const struct SequenceData s_datumo_kegire_seqData = {
 };
 
 extern const u32 s_datumo_bgm_mid;
-const struct SequenceData s_datumo_bgm_seqData = {
+struct SequenceData s_datumo_bgm_seqData = {
     /* ROM Address */        &s_datumo_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_10,
@@ -5160,7 +5160,7 @@ const struct SequenceData s_datumo_bgm_seqData = {
 };
 
 extern const u32 s_rap_bgm_renshu_mid;
-const struct SequenceData s_rap_bgm_renshu_seqData = {
+struct SequenceData s_rap_bgm_renshu_seqData = {
     /* ROM Address */        &s_rap_bgm_renshu_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_15,
@@ -5173,7 +5173,7 @@ const struct SequenceData s_rap_bgm_renshu_seqData = {
 };
 
 extern const u32 s_rap_bgm_mid;
-const struct SequenceData s_rap_bgm_seqData = {
+struct SequenceData s_rap_bgm_seqData = {
     /* ROM Address */        &s_rap_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_15,
@@ -5186,7 +5186,7 @@ const struct SequenceData s_rap_bgm_seqData = {
 };
 
 extern const u32 s_rap_jazz_bgm_mid;
-const struct SequenceData s_rap_jazz_bgm_seqData = {
+struct SequenceData s_rap_jazz_bgm_seqData = {
     /* ROM Address */        &s_rap_jazz_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_15,
@@ -5199,7 +5199,7 @@ const struct SequenceData s_rap_jazz_bgm_seqData = {
 };
 
 extern const u32 s_rap_15ji_desuka_mid;
-const struct SequenceData s_rap_15ji_desuka_seqData = {
+struct SequenceData s_rap_15ji_desuka_seqData = {
     /* ROM Address */        &s_rap_15ji_desuka_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5212,7 +5212,7 @@ const struct SequenceData s_rap_15ji_desuka_seqData = {
 };
 
 extern const u32 s_rap_oyatu_desuka_mid;
-const struct SequenceData s_rap_oyatu_desuka_seqData = {
+struct SequenceData s_rap_oyatu_desuka_seqData = {
     /* ROM Address */        &s_rap_oyatu_desuka_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5225,7 +5225,7 @@ const struct SequenceData s_rap_oyatu_desuka_seqData = {
 };
 
 extern const u32 s_rap_honto_desuka_mid;
-const struct SequenceData s_rap_honto_desuka_seqData = {
+struct SequenceData s_rap_honto_desuka_seqData = {
     /* ROM Address */        &s_rap_honto_desuka_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5238,7 +5238,7 @@ const struct SequenceData s_rap_honto_desuka_seqData = {
 };
 
 extern const u32 s_rap_wakari_desuka_mid;
-const struct SequenceData s_rap_wakari_desuka_seqData = {
+struct SequenceData s_rap_wakari_desuka_seqData = {
     /* ROM Address */        &s_rap_wakari_desuka_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5251,7 +5251,7 @@ const struct SequenceData s_rap_wakari_desuka_seqData = {
 };
 
 extern const u32 s_rap_oisi_kamone_mid;
-const struct SequenceData s_rap_oisi_kamone_seqData = {
+struct SequenceData s_rap_oisi_kamone_seqData = {
     /* ROM Address */        &s_rap_oisi_kamone_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5264,7 +5264,7 @@ const struct SequenceData s_rap_oisi_kamone_seqData = {
 };
 
 extern const u32 s_rap_herusi_kamone_mid;
-const struct SequenceData s_rap_herusi_kamone_seqData = {
+struct SequenceData s_rap_herusi_kamone_seqData = {
     /* ROM Address */        &s_rap_herusi_kamone_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5277,7 +5277,7 @@ const struct SequenceData s_rap_herusi_kamone_seqData = {
 };
 
 extern const u32 s_rap_orenosei_kamone_mid;
-const struct SequenceData s_rap_orenosei_kamone_seqData = {
+struct SequenceData s_rap_orenosei_kamone_seqData = {
     /* ROM Address */        &s_rap_orenosei_kamone_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5290,7 +5290,7 @@ const struct SequenceData s_rap_orenosei_kamone_seqData = {
 };
 
 extern const u32 s_rap_soremoso_kamone_mid;
-const struct SequenceData s_rap_soremoso_kamone_seqData = {
+struct SequenceData s_rap_soremoso_kamone_seqData = {
     /* ROM Address */        &s_rap_soremoso_kamone_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5303,7 +5303,7 @@ const struct SequenceData s_rap_soremoso_kamone_seqData = {
 };
 
 extern const u32 s_rap_tanosi_kamone_mid;
-const struct SequenceData s_rap_tanosi_kamone_seqData = {
+struct SequenceData s_rap_tanosi_kamone_seqData = {
     /* ROM Address */        &s_rap_tanosi_kamone_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5316,7 +5316,7 @@ const struct SequenceData s_rap_tanosi_kamone_seqData = {
 };
 
 extern const u32 s_rap_oyatuha_saiko_mid;
-const struct SequenceData s_rap_oyatuha_saiko_seqData = {
+struct SequenceData s_rap_oyatuha_saiko_seqData = {
     /* ROM Address */        &s_rap_oyatuha_saiko_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5329,7 +5329,7 @@ const struct SequenceData s_rap_oyatuha_saiko_seqData = {
 };
 
 extern const u32 s_rap_kibunha_saiko_mid;
-const struct SequenceData s_rap_kibunha_saiko_seqData = {
+struct SequenceData s_rap_kibunha_saiko_seqData = {
     /* ROM Address */        &s_rap_kibunha_saiko_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5342,7 +5342,7 @@ const struct SequenceData s_rap_kibunha_saiko_seqData = {
 };
 
 extern const u32 s_rap_orette_saiko_mid;
-const struct SequenceData s_rap_orette_saiko_seqData = {
+struct SequenceData s_rap_orette_saiko_seqData = {
     /* ROM Address */        &s_rap_orette_saiko_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5355,7 +5355,7 @@ const struct SequenceData s_rap_orette_saiko_seqData = {
 };
 
 extern const u32 s_rap_kimitte_saiko_mid;
-const struct SequenceData s_rap_kimitte_saiko_seqData = {
+struct SequenceData s_rap_kimitte_saiko_seqData = {
     /* ROM Address */        &s_rap_kimitte_saiko_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5368,7 +5368,7 @@ const struct SequenceData s_rap_kimitte_saiko_seqData = {
 };
 
 extern const u32 s_rap_oyatuga_naiyo_mid;
-const struct SequenceData s_rap_oyatuga_naiyo_seqData = {
+struct SequenceData s_rap_oyatuga_naiyo_seqData = {
     /* ROM Address */        &s_rap_oyatuga_naiyo_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5381,7 +5381,7 @@ const struct SequenceData s_rap_oyatuga_naiyo_seqData = {
 };
 
 extern const u32 s_rap_oresira_naiyo_mid;
-const struct SequenceData s_rap_oresira_naiyo_seqData = {
+struct SequenceData s_rap_oresira_naiyo_seqData = {
     /* ROM Address */        &s_rap_oresira_naiyo_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_15,
@@ -5394,7 +5394,7 @@ const struct SequenceData s_rap_oresira_naiyo_seqData = {
 };
 
 extern const u32 s_rap_un_mid;
-const struct SequenceData s_rap_un_seqData = {
+struct SequenceData s_rap_un_seqData = {
     /* ROM Address */        &s_rap_un_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_15,
@@ -5407,7 +5407,7 @@ const struct SequenceData s_rap_un_seqData = {
 };
 
 extern const u32 s_rap_uun_mid;
-const struct SequenceData s_rap_uun_seqData = {
+struct SequenceData s_rap_uun_seqData = {
     /* ROM Address */        &s_rap_uun_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_15,
@@ -5420,7 +5420,7 @@ const struct SequenceData s_rap_uun_seqData = {
 };
 
 extern const u32 s_rap_yeah_mid;
-const struct SequenceData s_rap_yeah_seqData = {
+struct SequenceData s_rap_yeah_seqData = {
     /* ROM Address */        &s_rap_yeah_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_15,
@@ -5433,7 +5433,7 @@ const struct SequenceData s_rap_yeah_seqData = {
 };
 
 extern const u32 s_sindan_manzai_mid;
-const struct SequenceData s_sindan_manzai_seqData = {
+struct SequenceData s_sindan_manzai_seqData = {
     /* ROM Address */        &s_sindan_manzai_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_46,
@@ -5446,7 +5446,7 @@ const struct SequenceData s_sindan_manzai_seqData = {
 };
 
 extern const u32 s_sindan_mail_mid;
-const struct SequenceData s_sindan_mail_seqData = {
+struct SequenceData s_sindan_mail_seqData = {
     /* ROM Address */        &s_sindan_mail_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_46,
@@ -5459,7 +5459,7 @@ const struct SequenceData s_sindan_mail_seqData = {
 };
 
 extern const u32 s_esa_pengin1_1_mid;
-const struct SequenceData s_esa_pengin1_1_seqData = {
+struct SequenceData s_esa_pengin1_1_seqData = {
     /* ROM Address */        &s_esa_pengin1_1_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -5472,7 +5472,7 @@ const struct SequenceData s_esa_pengin1_1_seqData = {
 };
 
 extern const u32 s_esa_pengin1_2_mid;
-const struct SequenceData s_esa_pengin1_2_seqData = {
+struct SequenceData s_esa_pengin1_2_seqData = {
     /* ROM Address */        &s_esa_pengin1_2_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -5485,7 +5485,7 @@ const struct SequenceData s_esa_pengin1_2_seqData = {
 };
 
 extern const u32 s_esa_pengin1_3_mid;
-const struct SequenceData s_esa_pengin1_3_seqData = {
+struct SequenceData s_esa_pengin1_3_seqData = {
     /* ROM Address */        &s_esa_pengin1_3_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -5498,7 +5498,7 @@ const struct SequenceData s_esa_pengin1_3_seqData = {
 };
 
 extern const u32 s_esa_pengin2_1_mid;
-const struct SequenceData s_esa_pengin2_1_seqData = {
+struct SequenceData s_esa_pengin2_1_seqData = {
     /* ROM Address */        &s_esa_pengin2_1_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -5511,7 +5511,7 @@ const struct SequenceData s_esa_pengin2_1_seqData = {
 };
 
 extern const u32 s_esa_pengin2_2_mid;
-const struct SequenceData s_esa_pengin2_2_seqData = {
+struct SequenceData s_esa_pengin2_2_seqData = {
     /* ROM Address */        &s_esa_pengin2_2_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -5524,7 +5524,7 @@ const struct SequenceData s_esa_pengin2_2_seqData = {
 };
 
 extern const u32 s_esa_pengin2_3_mid;
-const struct SequenceData s_esa_pengin2_3_seqData = {
+struct SequenceData s_esa_pengin2_3_seqData = {
     /* ROM Address */        &s_esa_pengin2_3_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -5537,7 +5537,7 @@ const struct SequenceData s_esa_pengin2_3_seqData = {
 };
 
 extern const u32 s_esa_pengin3_1_mid;
-const struct SequenceData s_esa_pengin3_1_seqData = {
+struct SequenceData s_esa_pengin3_1_seqData = {
     /* ROM Address */        &s_esa_pengin3_1_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -5550,7 +5550,7 @@ const struct SequenceData s_esa_pengin3_1_seqData = {
 };
 
 extern const u32 s_esa_pengin3_2_mid;
-const struct SequenceData s_esa_pengin3_2_seqData = {
+struct SequenceData s_esa_pengin3_2_seqData = {
     /* ROM Address */        &s_esa_pengin3_2_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -5563,7 +5563,7 @@ const struct SequenceData s_esa_pengin3_2_seqData = {
 };
 
 extern const u32 s_esa_pengin3_3_mid;
-const struct SequenceData s_esa_pengin3_3_seqData = {
+struct SequenceData s_esa_pengin3_3_seqData = {
     /* ROM Address */        &s_esa_pengin3_3_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -5576,7 +5576,7 @@ const struct SequenceData s_esa_pengin3_3_seqData = {
 };
 
 extern const u32 s_esa_catch_mid;
-const struct SequenceData s_esa_catch_seqData = {
+struct SequenceData s_esa_catch_seqData = {
     /* ROM Address */        &s_esa_catch_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_7,
@@ -5589,7 +5589,7 @@ const struct SequenceData s_esa_catch_seqData = {
 };
 
 extern const u32 s_quiz_bgm_mid;
-const struct SequenceData s_quiz_bgm_seqData = {
+struct SequenceData s_quiz_bgm_seqData = {
     /* ROM Address */        &s_quiz_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_23,
@@ -5602,7 +5602,7 @@ const struct SequenceData s_quiz_bgm_seqData = {
 };
 
 extern const u32 s_quiz_fan_good_mid;
-const struct SequenceData s_quiz_fan_good_seqData = {
+struct SequenceData s_quiz_fan_good_seqData = {
     /* ROM Address */        &s_quiz_fan_good_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_20,
@@ -5615,7 +5615,7 @@ const struct SequenceData s_quiz_fan_good_seqData = {
 };
 
 extern const u32 s_quiz_fan_bad_mid;
-const struct SequenceData s_quiz_fan_bad_seqData = {
+struct SequenceData s_quiz_fan_bad_seqData = {
     /* ROM Address */        &s_quiz_fan_bad_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_25,
@@ -5628,7 +5628,7 @@ const struct SequenceData s_quiz_fan_bad_seqData = {
 };
 
 extern const u32 s_virus_fork_mid;
-const struct SequenceData s_virus_fork_seqData = {
+struct SequenceData s_virus_fork_seqData = {
     /* ROM Address */        &s_virus_fork_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_2,
@@ -5641,7 +5641,7 @@ const struct SequenceData s_virus_fork_seqData = {
 };
 
 extern const u32 s_virus_dash_mid;
-const struct SequenceData s_virus_dash_seqData = {
+struct SequenceData s_virus_dash_seqData = {
     /* ROM Address */        &s_virus_dash_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -5654,7 +5654,7 @@ const struct SequenceData s_virus_dash_seqData = {
 };
 
 extern const u32 s_virus_miss_mid;
-const struct SequenceData s_virus_miss_seqData = {
+struct SequenceData s_virus_miss_seqData = {
     /* ROM Address */        &s_virus_miss_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_12,
@@ -5667,7 +5667,7 @@ const struct SequenceData s_virus_miss_seqData = {
 };
 
 extern const u32 s_virus_hit_mid;
-const struct SequenceData s_virus_hit_seqData = {
+struct SequenceData s_virus_hit_seqData = {
     /* ROM Address */        &s_virus_hit_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_10,
@@ -5680,7 +5680,7 @@ const struct SequenceData s_virus_hit_seqData = {
 };
 
 extern const u32 s_virus_osii_mid;
-const struct SequenceData s_virus_osii_seqData = {
+struct SequenceData s_virus_osii_seqData = {
     /* ROM Address */        &s_virus_osii_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_10,
@@ -5693,7 +5693,7 @@ const struct SequenceData s_virus_osii_seqData = {
 };
 
 extern const u32 s_check_result_bgm_mid;
-const struct SequenceData s_check_result_bgm_seqData = {
+struct SequenceData s_check_result_bgm_seqData = {
     /* ROM Address */        &s_check_result_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_1,
@@ -5706,7 +5706,7 @@ const struct SequenceData s_check_result_bgm_seqData = {
 };
 
 extern const u32 s_lesson_sel_bgm_mid;
-const struct SequenceData s_lesson_sel_bgm_seqData = {
+struct SequenceData s_lesson_sel_bgm_seqData = {
     /* ROM Address */        &s_lesson_sel_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_46,
@@ -5719,7 +5719,7 @@ const struct SequenceData s_lesson_sel_bgm_seqData = {
 };
 
 extern const u32 s_toys_bgm_mid;
-const struct SequenceData s_toys_bgm_seqData = {
+struct SequenceData s_toys_bgm_seqData = {
     /* ROM Address */        &s_toys_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_46,
@@ -5732,7 +5732,7 @@ const struct SequenceData s_toys_bgm_seqData = {
 };
 
 extern const u32 s_rap_machine_bgm_mid;
-const struct SequenceData s_rap_machine_bgm_seqData = {
+struct SequenceData s_rap_machine_bgm_seqData = {
     /* ROM Address */        &s_rap_machine_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_6,
@@ -5745,7 +5745,7 @@ const struct SequenceData s_rap_machine_bgm_seqData = {
 };
 
 extern const u32 s_mini_game_bgm_mid;
-const struct SequenceData s_mini_game_bgm_seqData = {
+struct SequenceData s_mini_game_bgm_seqData = {
     /* ROM Address */        &s_mini_game_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_14,
@@ -5758,7 +5758,7 @@ const struct SequenceData s_mini_game_bgm_seqData = {
 };
 
 extern const u32 s_remix_all_bgm_mid;
-const struct SequenceData s_remix_all_bgm_seqData = {
+struct SequenceData s_remix_all_bgm_seqData = {
     /* ROM Address */        &s_remix_all_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_44,
@@ -5771,7 +5771,7 @@ const struct SequenceData s_remix_all_bgm_seqData = {
 };
 
 extern const u32 s_sindan_sea_mid;
-const struct SequenceData s_sindan_sea_seqData = {
+struct SequenceData s_sindan_sea_seqData = {
     /* ROM Address */        &s_sindan_sea_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_29,
@@ -5784,7 +5784,7 @@ const struct SequenceData s_sindan_sea_seqData = {
 };
 
 extern const u32 s_drum_lesson_bgm_mid;
-const struct SequenceData s_drum_lesson_bgm_seqData = {
+struct SequenceData s_drum_lesson_bgm_seqData = {
     /* ROM Address */        &s_drum_lesson_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_44,
@@ -5797,7 +5797,7 @@ const struct SequenceData s_drum_lesson_bgm_seqData = {
 };
 
 extern const u32 s_counseling_bgm_mid;
-const struct SequenceData s_counseling_bgm_seqData = {
+struct SequenceData s_counseling_bgm_seqData = {
     /* ROM Address */        &s_counseling_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_35,
@@ -5810,7 +5810,7 @@ const struct SequenceData s_counseling_bgm_seqData = {
 };
 
 extern const u32 s_gameover_fan_mid;
-const struct SequenceData s_gameover_fan_seqData = {
+struct SequenceData s_gameover_fan_seqData = {
     /* ROM Address */        &s_gameover_fan_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_23,
@@ -5823,7 +5823,7 @@ const struct SequenceData s_gameover_fan_seqData = {
 };
 
 extern const u32 s_studio_bgm_mid;
-const struct SequenceData s_studio_bgm_seqData = {
+struct SequenceData s_studio_bgm_seqData = {
     /* ROM Address */        &s_studio_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_11,
@@ -5836,7 +5836,7 @@ const struct SequenceData s_studio_bgm_seqData = {
 };
 
 extern const u32 s_nyuka_fan_mid;
-const struct SequenceData s_nyuka_fan_seqData = {
+struct SequenceData s_nyuka_fan_seqData = {
     /* ROM Address */        &s_nyuka_fan_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_6,
@@ -5849,7 +5849,7 @@ const struct SequenceData s_nyuka_fan_seqData = {
 };
 
 extern const u32 s_siryo_bgm_mid;
-const struct SequenceData s_siryo_bgm_seqData = {
+struct SequenceData s_siryo_bgm_seqData = {
     /* ROM Address */        &s_siryo_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_10,
@@ -5862,7 +5862,7 @@ const struct SequenceData s_siryo_bgm_seqData = {
 };
 
 extern const u32 s_dr_sam_bgm_mid;
-const struct SequenceData s_dr_sam_bgm_seqData = {
+struct SequenceData s_dr_sam_bgm_seqData = {
     /* ROM Address */        &s_dr_sam_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_10,
@@ -5875,7 +5875,7 @@ const struct SequenceData s_dr_sam_bgm_seqData = {
 };
 
 extern const u32 s_renshu_bgm1_mid;
-const struct SequenceData s_renshu_bgm1_seqData = {
+struct SequenceData s_renshu_bgm1_seqData = {
     /* ROM Address */        &s_renshu_bgm1_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_27,
@@ -5888,7 +5888,7 @@ const struct SequenceData s_renshu_bgm1_seqData = {
 };
 
 extern const u32 s_renshu_bgm2_mid;
-const struct SequenceData s_renshu_bgm2_seqData = {
+struct SequenceData s_renshu_bgm2_seqData = {
     /* ROM Address */        &s_renshu_bgm2_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_27,
@@ -5901,7 +5901,7 @@ const struct SequenceData s_renshu_bgm2_seqData = {
 };
 
 extern const u32 s_renshu_bgm3_mid;
-const struct SequenceData s_renshu_bgm3_seqData = {
+struct SequenceData s_renshu_bgm3_seqData = {
     /* ROM Address */        &s_renshu_bgm3_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_27,
@@ -5914,7 +5914,7 @@ const struct SequenceData s_renshu_bgm3_seqData = {
 };
 
 extern const u32 s_kekka_bgm_good_mid;
-const struct SequenceData s_kekka_bgm_good_seqData = {
+struct SequenceData s_kekka_bgm_good_seqData = {
     /* ROM Address */        &s_kekka_bgm_good_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_10,
@@ -5927,7 +5927,7 @@ const struct SequenceData s_kekka_bgm_good_seqData = {
 };
 
 extern const u32 s_kekka_bgm_common_mid;
-const struct SequenceData s_kekka_bgm_common_seqData = {
+struct SequenceData s_kekka_bgm_common_seqData = {
     /* ROM Address */        &s_kekka_bgm_common_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_32,
@@ -5940,7 +5940,7 @@ const struct SequenceData s_kekka_bgm_common_seqData = {
 };
 
 extern const u32 s_kekka_bgm_bad_mid;
-const struct SequenceData s_kekka_bgm_bad_seqData = {
+struct SequenceData s_kekka_bgm_bad_seqData = {
     /* ROM Address */        &s_kekka_bgm_bad_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_4,
@@ -5953,7 +5953,7 @@ const struct SequenceData s_kekka_bgm_bad_seqData = {
 };
 
 extern const u32 s_epilogue_fan1_mid;
-const struct SequenceData s_epilogue_fan1_seqData = {
+struct SequenceData s_epilogue_fan1_seqData = {
     /* ROM Address */        &s_epilogue_fan1_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_27,
@@ -5966,7 +5966,7 @@ const struct SequenceData s_epilogue_fan1_seqData = {
 };
 
 extern const u32 s_epilogue_fan2_mid;
-const struct SequenceData s_epilogue_fan2_seqData = {
+struct SequenceData s_epilogue_fan2_seqData = {
     /* ROM Address */        &s_epilogue_fan2_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_27,
@@ -5979,7 +5979,7 @@ const struct SequenceData s_epilogue_fan2_seqData = {
 };
 
 extern const u32 s_perfect_fan_mid;
-const struct SequenceData s_perfect_fan_seqData = {
+struct SequenceData s_perfect_fan_seqData = {
     /* ROM Address */        &s_perfect_fan_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_6,
@@ -5992,7 +5992,7 @@ const struct SequenceData s_perfect_fan_seqData = {
 };
 
 extern const u32 s_poly_rakka_mid;
-const struct SequenceData s_poly_rakka_seqData = {
+struct SequenceData s_poly_rakka_seqData = {
     /* ROM Address */        &s_poly_rakka_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_49,
@@ -6005,7 +6005,7 @@ const struct SequenceData s_poly_rakka_seqData = {
 };
 
 extern const u32 s_poly_shototu_mid;
-const struct SequenceData s_poly_shototu_seqData = {
+struct SequenceData s_poly_shototu_seqData = {
     /* ROM Address */        &s_poly_shototu_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_49,
@@ -6018,7 +6018,7 @@ const struct SequenceData s_poly_shototu_seqData = {
 };
 
 extern const u32 s_block2_block_mid;
-const struct SequenceData s_block2_block_seqData = {
+struct SequenceData s_block2_block_seqData = {
     /* ROM Address */        &s_block2_block_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_2,
@@ -6031,7 +6031,7 @@ const struct SequenceData s_block2_block_seqData = {
 };
 
 extern const u32 s_block2_fast_mid;
-const struct SequenceData s_block2_fast_seqData = {
+struct SequenceData s_block2_fast_seqData = {
     /* ROM Address */        &s_block2_fast_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_2,
@@ -6044,7 +6044,7 @@ const struct SequenceData s_block2_fast_seqData = {
 };
 
 extern const u32 s_uki_water1_mid;
-const struct SequenceData s_uki_water1_seqData = {
+struct SequenceData s_uki_water1_seqData = {
     /* ROM Address */        &s_uki_water1_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_10,
@@ -6057,7 +6057,7 @@ const struct SequenceData s_uki_water1_seqData = {
 };
 
 extern const u32 s_uki_water2_mid;
-const struct SequenceData s_uki_water2_seqData = {
+struct SequenceData s_uki_water2_seqData = {
     /* ROM Address */        &s_uki_water2_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_10,
@@ -6070,7 +6070,7 @@ const struct SequenceData s_uki_water2_seqData = {
 };
 
 extern const u32 s_uki_water3_mid;
-const struct SequenceData s_uki_water3_seqData = {
+struct SequenceData s_uki_water3_seqData = {
     /* ROM Address */        &s_uki_water3_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_17,
@@ -6083,7 +6083,7 @@ const struct SequenceData s_uki_water3_seqData = {
 };
 
 extern const u32 s_kuma_hit_mid;
-const struct SequenceData s_kuma_hit_seqData = {
+struct SequenceData s_kuma_hit_seqData = {
     /* ROM Address */        &s_kuma_hit_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_18,
@@ -6096,7 +6096,7 @@ const struct SequenceData s_kuma_hit_seqData = {
 };
 
 extern const u32 s_kuma_miss_mid;
-const struct SequenceData s_kuma_miss_seqData = {
+struct SequenceData s_kuma_miss_seqData = {
     /* ROM Address */        &s_kuma_miss_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_2,
@@ -6109,7 +6109,7 @@ const struct SequenceData s_kuma_miss_seqData = {
 };
 
 extern const u32 s_kuma_sakana_mid;
-const struct SequenceData s_kuma_sakana_seqData = {
+struct SequenceData s_kuma_sakana_seqData = {
     /* ROM Address */        &s_kuma_sakana_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_6,
@@ -6122,7 +6122,7 @@ const struct SequenceData s_kuma_sakana_seqData = {
 };
 
 extern const u32 s_yuri_naki_mid;
-const struct SequenceData s_yuri_naki_seqData = {
+struct SequenceData s_yuri_naki_seqData = {
     /* ROM Address */        &s_yuri_naki_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_2,
@@ -6135,7 +6135,7 @@ const struct SequenceData s_yuri_naki_seqData = {
 };
 
 extern const u32 s_yuri_yurasi_mid;
-const struct SequenceData s_yuri_yurasi_seqData = {
+struct SequenceData s_yuri_yurasi_seqData = {
     /* ROM Address */        &s_yuri_yurasi_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_5,
@@ -6148,7 +6148,7 @@ const struct SequenceData s_yuri_yurasi_seqData = {
 };
 
 extern const u32 s_4beat_open_mid;
-const struct SequenceData s_4beat_open_seqData = {
+struct SequenceData s_4beat_open_seqData = {
     /* ROM Address */        &s_4beat_open_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_49,
@@ -6161,7 +6161,7 @@ const struct SequenceData s_4beat_open_seqData = {
 };
 
 extern const u32 s_4beat_jiban_mid;
-const struct SequenceData s_4beat_jiban_seqData = {
+struct SequenceData s_4beat_jiban_seqData = {
     /* ROM Address */        &s_4beat_jiban_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6174,7 +6174,7 @@ const struct SequenceData s_4beat_jiban_seqData = {
 };
 
 extern const u32 s_rythm_bat_miss_mid;
-const struct SequenceData s_rythm_bat_miss_seqData = {
+struct SequenceData s_rythm_bat_miss_seqData = {
     /* ROM Address */        &s_rythm_bat_miss_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_14,
@@ -6187,7 +6187,7 @@ const struct SequenceData s_rythm_bat_miss_seqData = {
 };
 
 extern const u32 s_dontan_count_mid;
-const struct SequenceData s_dontan_count_seqData = {
+struct SequenceData s_dontan_count_seqData = {
     /* ROM Address */        &s_dontan_count_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_10,
@@ -6200,7 +6200,7 @@ const struct SequenceData s_dontan_count_seqData = {
 };
 
 extern const u32 s_dontan_water_mid;
-const struct SequenceData s_dontan_water_seqData = {
+struct SequenceData s_dontan_water_seqData = {
     /* ROM Address */        &s_dontan_water_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_10,
@@ -6213,7 +6213,7 @@ const struct SequenceData s_dontan_water_seqData = {
 };
 
 extern const u32 s_change_a_mid;
-const struct SequenceData s_change_a_seqData = {
+struct SequenceData s_change_a_seqData = {
     /* ROM Address */        &s_change_a_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_14,
@@ -6226,7 +6226,7 @@ const struct SequenceData s_change_a_seqData = {
 };
 
 extern const u32 s_change_b_mid;
-const struct SequenceData s_change_b_seqData = {
+struct SequenceData s_change_b_seqData = {
     /* ROM Address */        &s_change_b_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_14,
@@ -6239,7 +6239,7 @@ const struct SequenceData s_change_b_seqData = {
 };
 
 extern const u32 s_change_ball_mid;
-const struct SequenceData s_change_ball_seqData = {
+struct SequenceData s_change_ball_seqData = {
     /* ROM Address */        &s_change_ball_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_49,
@@ -6252,7 +6252,7 @@ const struct SequenceData s_change_ball_seqData = {
 };
 
 extern const u32 s_change_hit_a_mid;
-const struct SequenceData s_change_hit_a_seqData = {
+struct SequenceData s_change_hit_a_seqData = {
     /* ROM Address */        &s_change_hit_a_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_49,
@@ -6265,7 +6265,7 @@ const struct SequenceData s_change_hit_a_seqData = {
 };
 
 extern const u32 s_change_hit_b_mid;
-const struct SequenceData s_change_hit_b_seqData = {
+struct SequenceData s_change_hit_b_seqData = {
     /* ROM Address */        &s_change_hit_b_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_49,
@@ -6278,7 +6278,7 @@ const struct SequenceData s_change_hit_b_seqData = {
 };
 
 extern const u32 s_change_goal_mid;
-const struct SequenceData s_change_goal_seqData = {
+struct SequenceData s_change_goal_seqData = {
     /* ROM Address */        &s_change_goal_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_10,
@@ -6291,7 +6291,7 @@ const struct SequenceData s_change_goal_seqData = {
 };
 
 extern const u32 s_check_machine_mid;
-const struct SequenceData s_check_machine_seqData = {
+struct SequenceData s_check_machine_seqData = {
     /* ROM Address */        &s_check_machine_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_14,
@@ -6304,7 +6304,7 @@ const struct SequenceData s_check_machine_seqData = {
 };
 
 extern const u32 s_check_trick1_mid;
-const struct SequenceData s_check_trick1_seqData = {
+struct SequenceData s_check_trick1_seqData = {
     /* ROM Address */        &s_check_trick1_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_18,
@@ -6317,7 +6317,7 @@ const struct SequenceData s_check_trick1_seqData = {
 };
 
 extern const u32 s_check_trick2_mid;
-const struct SequenceData s_check_trick2_seqData = {
+struct SequenceData s_check_trick2_seqData = {
     /* ROM Address */        &s_check_trick2_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_18,
@@ -6330,7 +6330,7 @@ const struct SequenceData s_check_trick2_seqData = {
 };
 
 extern const u32 s_check_trick3_mid;
-const struct SequenceData s_check_trick3_seqData = {
+struct SequenceData s_check_trick3_seqData = {
     /* ROM Address */        &s_check_trick3_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_18,
@@ -6343,7 +6343,7 @@ const struct SequenceData s_check_trick3_seqData = {
 };
 
 extern const u32 s_menu_se1_mid;
-const struct SequenceData s_menu_se1_seqData = {
+struct SequenceData s_menu_se1_seqData = {
     /* ROM Address */        &s_menu_se1_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6356,7 +6356,7 @@ const struct SequenceData s_menu_se1_seqData = {
 };
 
 extern const u32 s_menu_se2_mid;
-const struct SequenceData s_menu_se2_seqData = {
+struct SequenceData s_menu_se2_seqData = {
     /* ROM Address */        &s_menu_se2_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6369,7 +6369,7 @@ const struct SequenceData s_menu_se2_seqData = {
 };
 
 extern const u32 s_menu_se3_mid;
-const struct SequenceData s_menu_se3_seqData = {
+struct SequenceData s_menu_se3_seqData = {
     /* ROM Address */        &s_menu_se3_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6382,7 +6382,7 @@ const struct SequenceData s_menu_se3_seqData = {
 };
 
 extern const u32 s_menu_se5_mid;
-const struct SequenceData s_menu_se5_seqData = {
+struct SequenceData s_menu_se5_seqData = {
     /* ROM Address */        &s_menu_se5_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6395,7 +6395,7 @@ const struct SequenceData s_menu_se5_seqData = {
 };
 
 extern const u32 s_menu_se6_mid;
-const struct SequenceData s_menu_se6_seqData = {
+struct SequenceData s_menu_se6_seqData = {
     /* ROM Address */        &s_menu_se6_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6408,7 +6408,7 @@ const struct SequenceData s_menu_se6_seqData = {
 };
 
 extern const u32 s_menu_se7_mid;
-const struct SequenceData s_menu_se7_seqData = {
+struct SequenceData s_menu_se7_seqData = {
     /* ROM Address */        &s_menu_se7_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_19,
@@ -6421,7 +6421,7 @@ const struct SequenceData s_menu_se7_seqData = {
 };
 
 extern const u32 s_menu_se8_mid;
-const struct SequenceData s_menu_se8_seqData = {
+struct SequenceData s_menu_se8_seqData = {
     /* ROM Address */        &s_menu_se8_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6434,7 +6434,7 @@ const struct SequenceData s_menu_se8_seqData = {
 };
 
 extern const u32 s_menu_se9_mid;
-const struct SequenceData s_menu_se9_seqData = {
+struct SequenceData s_menu_se9_seqData = {
     /* ROM Address */        &s_menu_se9_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6447,7 +6447,7 @@ const struct SequenceData s_menu_se9_seqData = {
 };
 
 extern const u32 s_menu_se10_mid;
-const struct SequenceData s_menu_se10_seqData = {
+struct SequenceData s_menu_se10_seqData = {
     /* ROM Address */        &s_menu_se10_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_49,
@@ -6460,7 +6460,7 @@ const struct SequenceData s_menu_se10_seqData = {
 };
 
 extern const u32 s_menu_se11_mid;
-const struct SequenceData s_menu_se11_seqData = {
+struct SequenceData s_menu_se11_seqData = {
     /* ROM Address */        &s_menu_se11_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6473,7 +6473,7 @@ const struct SequenceData s_menu_se11_seqData = {
 };
 
 extern const u32 s_menu_se12_mid;
-const struct SequenceData s_menu_se12_seqData = {
+struct SequenceData s_menu_se12_seqData = {
     /* ROM Address */        &s_menu_se12_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6486,7 +6486,7 @@ const struct SequenceData s_menu_se12_seqData = {
 };
 
 extern const u32 s_menu_se13_mid;
-const struct SequenceData s_menu_se13_seqData = {
+struct SequenceData s_menu_se13_seqData = {
     /* ROM Address */        &s_menu_se13_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6499,7 +6499,7 @@ const struct SequenceData s_menu_se13_seqData = {
 };
 
 extern const u32 s_menu_se14_mid;
-const struct SequenceData s_menu_se14_seqData = {
+struct SequenceData s_menu_se14_seqData = {
     /* ROM Address */        &s_menu_se14_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6512,7 +6512,7 @@ const struct SequenceData s_menu_se14_seqData = {
 };
 
 extern const u32 s_menu_se15_mid;
-const struct SequenceData s_menu_se15_seqData = {
+struct SequenceData s_menu_se15_seqData = {
     /* ROM Address */        &s_menu_se15_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_49,
@@ -6525,7 +6525,7 @@ const struct SequenceData s_menu_se15_seqData = {
 };
 
 extern const u32 s_menu_se16_mid;
-const struct SequenceData s_menu_se16_seqData = {
+struct SequenceData s_menu_se16_seqData = {
     /* ROM Address */        &s_menu_se16_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6538,7 +6538,7 @@ const struct SequenceData s_menu_se16_seqData = {
 };
 
 extern const u32 s_menu_se17_mid;
-const struct SequenceData s_menu_se17_seqData = {
+struct SequenceData s_menu_se17_seqData = {
     /* ROM Address */        &s_menu_se17_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_6,
@@ -6551,7 +6551,7 @@ const struct SequenceData s_menu_se17_seqData = {
 };
 
 extern const u32 s_menu_woodblock_mid;
-const struct SequenceData s_menu_woodblock_seqData = {
+struct SequenceData s_menu_woodblock_seqData = {
     /* ROM Address */        &s_menu_woodblock_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_10,
@@ -6564,7 +6564,7 @@ const struct SequenceData s_menu_woodblock_seqData = {
 };
 
 extern const u32 s_menu_se19_mid;
-const struct SequenceData s_menu_se19_seqData = {
+struct SequenceData s_menu_se19_seqData = {
     /* ROM Address */        &s_menu_se19_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6577,7 +6577,7 @@ const struct SequenceData s_menu_se19_seqData = {
 };
 
 extern const u32 s_menu_se20_mid;
-const struct SequenceData s_menu_se20_seqData = {
+struct SequenceData s_menu_se20_seqData = {
     /* ROM Address */        &s_menu_se20_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_10,
@@ -6590,7 +6590,7 @@ const struct SequenceData s_menu_se20_seqData = {
 };
 
 extern const u32 s_menu_se22_mid;
-const struct SequenceData s_menu_se22_seqData = {
+struct SequenceData s_menu_se22_seqData = {
     /* ROM Address */        &s_menu_se22_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6603,7 +6603,7 @@ const struct SequenceData s_menu_se22_seqData = {
 };
 
 extern const u32 s_menu_se23_mid;
-const struct SequenceData s_menu_se23_seqData = {
+struct SequenceData s_menu_se23_seqData = {
     /* ROM Address */        &s_menu_se23_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6616,7 +6616,7 @@ const struct SequenceData s_menu_se23_seqData = {
 };
 
 extern const u32 s_menu_se24_mid;
-const struct SequenceData s_menu_se24_seqData = {
+struct SequenceData s_menu_se24_seqData = {
     /* ROM Address */        &s_menu_se24_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6629,7 +6629,7 @@ const struct SequenceData s_menu_se24_seqData = {
 };
 
 extern const u32 s_menu_se25_mid;
-const struct SequenceData s_menu_se25_seqData = {
+struct SequenceData s_menu_se25_seqData = {
     /* ROM Address */        &s_menu_se25_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_14,
@@ -6642,7 +6642,7 @@ const struct SequenceData s_menu_se25_seqData = {
 };
 
 extern const u32 s_jingle_rat_mid;
-const struct SequenceData s_jingle_rat_seqData = {
+struct SequenceData s_jingle_rat_seqData = {
     /* ROM Address */        &s_jingle_rat_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_6,
@@ -6655,7 +6655,7 @@ const struct SequenceData s_jingle_rat_seqData = {
 };
 
 extern const u32 s_jingle_march_mid;
-const struct SequenceData s_jingle_march_seqData = {
+struct SequenceData s_jingle_march_seqData = {
     /* ROM Address */        &s_jingle_march_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_4,
@@ -6668,7 +6668,7 @@ const struct SequenceData s_jingle_march_seqData = {
 };
 
 extern const u32 s_jingle_iai_mid;
-const struct SequenceData s_jingle_iai_seqData = {
+struct SequenceData s_jingle_iai_seqData = {
     /* ROM Address */        &s_jingle_iai_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -6681,7 +6681,7 @@ const struct SequenceData s_jingle_iai_seqData = {
 };
 
 extern const u32 s_jingle_ghost_mid;
-const struct SequenceData s_jingle_ghost_seqData = {
+struct SequenceData s_jingle_ghost_seqData = {
     /* ROM Address */        &s_jingle_ghost_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_18,
@@ -6694,7 +6694,7 @@ const struct SequenceData s_jingle_ghost_seqData = {
 };
 
 extern const u32 s_jingle_poli_mid;
-const struct SequenceData s_jingle_poli_seqData = {
+struct SequenceData s_jingle_poli_seqData = {
     /* ROM Address */        &s_jingle_poli_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -6707,7 +6707,7 @@ const struct SequenceData s_jingle_poli_seqData = {
 };
 
 extern const u32 s_jingle_handclap_mid;
-const struct SequenceData s_jingle_handclap_seqData = {
+struct SequenceData s_jingle_handclap_seqData = {
     /* ROM Address */        &s_jingle_handclap_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_22,
@@ -6720,7 +6720,7 @@ const struct SequenceData s_jingle_handclap_seqData = {
 };
 
 extern const u32 s_jingle_tap_mid;
-const struct SequenceData s_jingle_tap_seqData = {
+struct SequenceData s_jingle_tap_seqData = {
     /* ROM Address */        &s_jingle_tap_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_23,
@@ -6733,7 +6733,7 @@ const struct SequenceData s_jingle_tap_seqData = {
 };
 
 extern const u32 s_jingle_baseball_mid;
-const struct SequenceData s_jingle_baseball_seqData = {
+struct SequenceData s_jingle_baseball_seqData = {
     /* ROM Address */        &s_jingle_baseball_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_16,
@@ -6746,7 +6746,7 @@ const struct SequenceData s_jingle_baseball_seqData = {
 };
 
 extern const u32 s_jingle_toss_mid;
-const struct SequenceData s_jingle_toss_seqData = {
+struct SequenceData s_jingle_toss_seqData = {
     /* ROM Address */        &s_jingle_toss_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_32,
@@ -6759,7 +6759,7 @@ const struct SequenceData s_jingle_toss_seqData = {
 };
 
 extern const u32 s_jingle_karate_mid;
-const struct SequenceData s_jingle_karate_seqData = {
+struct SequenceData s_jingle_karate_seqData = {
     /* ROM Address */        &s_jingle_karate_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_24,
@@ -6772,7 +6772,7 @@ const struct SequenceData s_jingle_karate_seqData = {
 };
 
 extern const u32 s_jingle_witch_mid;
-const struct SequenceData s_jingle_witch_seqData = {
+struct SequenceData s_jingle_witch_seqData = {
     /* ROM Address */        &s_jingle_witch_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -6785,7 +6785,7 @@ const struct SequenceData s_jingle_witch_seqData = {
 };
 
 extern const u32 s_jingle_datumo_mid;
-const struct SequenceData s_jingle_datumo_seqData = {
+struct SequenceData s_jingle_datumo_seqData = {
     /* ROM Address */        &s_jingle_datumo_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_10,
@@ -6798,7 +6798,7 @@ const struct SequenceData s_jingle_datumo_seqData = {
 };
 
 extern const u32 s_jingle_quiz_mid;
-const struct SequenceData s_jingle_quiz_seqData = {
+struct SequenceData s_jingle_quiz_seqData = {
     /* ROM Address */        &s_jingle_quiz_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_23,
@@ -6811,7 +6811,7 @@ const struct SequenceData s_jingle_quiz_seqData = {
 };
 
 extern const u32 s_jingle_bon_mid;
-const struct SequenceData s_jingle_bon_seqData = {
+struct SequenceData s_jingle_bon_seqData = {
     /* ROM Address */        &s_jingle_bon_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_38,
@@ -6824,7 +6824,7 @@ const struct SequenceData s_jingle_bon_seqData = {
 };
 
 extern const u32 s_jingle_rap_mid;
-const struct SequenceData s_jingle_rap_seqData = {
+struct SequenceData s_jingle_rap_seqData = {
     /* ROM Address */        &s_jingle_rap_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_15,
@@ -6837,7 +6837,7 @@ const struct SequenceData s_jingle_rap_seqData = {
 };
 
 extern const u32 s_jingle_remix_mid;
-const struct SequenceData s_jingle_remix_seqData = {
+struct SequenceData s_jingle_remix_seqData = {
     /* ROM Address */        &s_jingle_remix_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_13,
@@ -6850,7 +6850,7 @@ const struct SequenceData s_jingle_remix_seqData = {
 };
 
 extern const u32 s_fanfare_drum1_mid;
-const struct SequenceData s_fanfare_drum1_seqData = {
+struct SequenceData s_fanfare_drum1_seqData = {
     /* ROM Address */        &s_fanfare_drum1_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_20,
@@ -6863,7 +6863,7 @@ const struct SequenceData s_fanfare_drum1_seqData = {
 };
 
 extern const u32 s_fanfare_drum2_mid;
-const struct SequenceData s_fanfare_drum2_seqData = {
+struct SequenceData s_fanfare_drum2_seqData = {
     /* ROM Address */        &s_fanfare_drum2_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_6,
@@ -6876,7 +6876,7 @@ const struct SequenceData s_fanfare_drum2_seqData = {
 };
 
 extern const u32 s_fanfare_drum3_mid;
-const struct SequenceData s_fanfare_drum3_seqData = {
+struct SequenceData s_fanfare_drum3_seqData = {
     /* ROM Address */        &s_fanfare_drum3_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_6,
@@ -6889,7 +6889,7 @@ const struct SequenceData s_fanfare_drum3_seqData = {
 };
 
 extern const u32 s_jingle_hi_level_mid;
-const struct SequenceData s_jingle_hi_level_seqData = {
+struct SequenceData s_jingle_hi_level_seqData = {
     /* ROM Address */        &s_jingle_hi_level_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_10,
@@ -6902,7 +6902,7 @@ const struct SequenceData s_jingle_hi_level_seqData = {
 };
 
 extern const u32 s_ending_bgm_mid;
-const struct SequenceData s_ending_bgm_seqData = {
+struct SequenceData s_ending_bgm_seqData = {
     /* ROM Address */        &s_ending_bgm_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_37,
@@ -6915,7 +6915,7 @@ const struct SequenceData s_ending_bgm_seqData = {
 };
 
 extern const u32 s_iai_bgm_studio_mid;
-const struct SequenceData s_iai_bgm_studio_seqData = {
+struct SequenceData s_iai_bgm_studio_seqData = {
     /* ROM Address */        &s_iai_bgm_studio_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_2,
@@ -6928,7 +6928,7 @@ const struct SequenceData s_iai_bgm_studio_seqData = {
 };
 
 extern const u32 s_rabbit_bgm_studio_mid;
-const struct SequenceData s_rabbit_bgm_studio_seqData = {
+struct SequenceData s_rabbit_bgm_studio_seqData = {
     /* ROM Address */        &s_rabbit_bgm_studio_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_6,
@@ -6941,7 +6941,7 @@ const struct SequenceData s_rabbit_bgm_studio_seqData = {
 };
 
 extern const u32 s_rat_bgm_studio_mid;
-const struct SequenceData s_rat_bgm_studio_seqData = {
+struct SequenceData s_rat_bgm_studio_seqData = {
     /* ROM Address */        &s_rat_bgm_studio_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_6,
@@ -6954,7 +6954,7 @@ const struct SequenceData s_rat_bgm_studio_seqData = {
 };
 
 extern const u32 s_f_dummy_mid;
-const struct SequenceData s_f_dummy_seqData = {
+struct SequenceData s_f_dummy_seqData = {
     /* ROM Address */        &s_f_dummy_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -6967,7 +6967,7 @@ const struct SequenceData s_f_dummy_seqData = {
 };
 
 extern const u32 s_f_dummy_vol0_mid;
-const struct SequenceData s_f_dummy_vol0_seqData = {
+struct SequenceData s_f_dummy_vol0_seqData = {
     /* ROM Address */        &s_f_dummy_vol0_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -6980,7 +6980,7 @@ const struct SequenceData s_f_dummy_vol0_seqData = {
 };
 
 extern const u32 s_f_result_bad_mid;
-const struct SequenceData s_f_result_bad_seqData = {
+struct SequenceData s_f_result_bad_seqData = {
     /* ROM Address */        &s_f_result_bad_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_61,
@@ -6993,7 +6993,7 @@ const struct SequenceData s_f_result_bad_seqData = {
 };
 
 extern const u32 s_f_result_normal_mid;
-const struct SequenceData s_f_result_normal_seqData = {
+struct SequenceData s_f_result_normal_seqData = {
     /* ROM Address */        &s_f_result_normal_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_61,
@@ -7006,7 +7006,7 @@ const struct SequenceData s_f_result_normal_seqData = {
 };
 
 extern const u32 s_f_result_mes_step1_mid;
-const struct SequenceData s_f_result_mes_step1_seqData = {
+struct SequenceData s_f_result_mes_step1_seqData = {
     /* ROM Address */        &s_f_result_mes_step1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_61,
@@ -7019,7 +7019,7 @@ const struct SequenceData s_f_result_mes_step1_seqData = {
 };
 
 extern const u32 s_f_result_mes_step2_mid;
-const struct SequenceData s_f_result_mes_step2_seqData = {
+struct SequenceData s_f_result_mes_step2_seqData = {
     /* ROM Address */        &s_f_result_mes_step2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_61,
@@ -7032,7 +7032,7 @@ const struct SequenceData s_f_result_mes_step2_seqData = {
 };
 
 extern const u32 s_f_nyuuka_mid;
-const struct SequenceData s_f_nyuuka_seqData = {
+struct SequenceData s_f_nyuuka_seqData = {
     /* ROM Address */        &s_f_nyuuka_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_61,
@@ -7045,7 +7045,7 @@ const struct SequenceData s_f_nyuuka_seqData = {
 };
 
 extern const u32 s_f_campaign_notice_mid;
-const struct SequenceData s_f_campaign_notice_seqData = {
+struct SequenceData s_f_campaign_notice_seqData = {
     /* ROM Address */        &s_f_campaign_notice_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_61,
@@ -7058,7 +7058,7 @@ const struct SequenceData s_f_campaign_notice_seqData = {
 };
 
 extern const u32 s_f_open_game_mid;
-const struct SequenceData s_f_open_game_seqData = {
+struct SequenceData s_f_open_game_seqData = {
     /* ROM Address */        &s_f_open_game_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_61,
@@ -7071,7 +7071,7 @@ const struct SequenceData s_f_open_game_seqData = {
 };
 
 extern const u32 s_f_clear_game_mid;
-const struct SequenceData s_f_clear_game_seqData = {
+struct SequenceData s_f_clear_game_seqData = {
     /* ROM Address */        &s_f_clear_game_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_61,
@@ -7084,7 +7084,7 @@ const struct SequenceData s_f_clear_game_seqData = {
 };
 
 extern const u32 s_f_get_medal_mid;
-const struct SequenceData s_f_get_medal_seqData = {
+struct SequenceData s_f_get_medal_seqData = {
     /* ROM Address */        &s_f_get_medal_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_61,
@@ -7097,7 +7097,7 @@ const struct SequenceData s_f_get_medal_seqData = {
 };
 
 extern const u32 s_f_point_roll_mid;
-const struct SequenceData s_f_point_roll_seqData = {
+struct SequenceData s_f_point_roll_seqData = {
     /* ROM Address */        &s_f_point_roll_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_61,
@@ -7110,7 +7110,7 @@ const struct SequenceData s_f_point_roll_seqData = {
 };
 
 extern const u32 s_f_point_stop_mid;
-const struct SequenceData s_f_point_stop_seqData = {
+struct SequenceData s_f_point_stop_seqData = {
     /* ROM Address */        &s_f_point_stop_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_61,
@@ -7123,7 +7123,7 @@ const struct SequenceData s_f_point_stop_seqData = {
 };
 
 extern const u32 s_f_appear_game_mid;
-const struct SequenceData s_f_appear_game_seqData = {
+struct SequenceData s_f_appear_game_seqData = {
     /* ROM Address */        &s_f_appear_game_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_61,
@@ -7136,7 +7136,7 @@ const struct SequenceData s_f_appear_game_seqData = {
 };
 
 extern const u32 s_f_fail_perfect_mid;
-const struct SequenceData s_f_fail_perfect_seqData = {
+struct SequenceData s_f_fail_perfect_seqData = {
     /* ROM Address */        &s_f_fail_perfect_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_61,
@@ -7149,7 +7149,7 @@ const struct SequenceData s_f_fail_perfect_seqData = {
 };
 
 extern const u32 s_f_result_mes_add_mid;
-const struct SequenceData s_f_result_mes_add_seqData = {
+struct SequenceData s_f_result_mes_add_seqData = {
     /* ROM Address */        &s_f_result_mes_add_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_61,
@@ -7162,7 +7162,7 @@ const struct SequenceData s_f_result_mes_add_seqData = {
 };
 
 extern const u32 s_f_send_mes_mid;
-const struct SequenceData s_f_send_mes_seqData = {
+struct SequenceData s_f_send_mes_seqData = {
     /* ROM Address */        &s_f_send_mes_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_61,
@@ -7175,7 +7175,7 @@ const struct SequenceData s_f_send_mes_seqData = {
 };
 
 extern const u32 s_f_pause_on_mid;
-const struct SequenceData s_f_pause_on_seqData = {
+struct SequenceData s_f_pause_on_seqData = {
     /* ROM Address */        &s_f_pause_on_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_61,
@@ -7188,7 +7188,7 @@ const struct SequenceData s_f_pause_on_seqData = {
 };
 
 extern const u32 s_f_pause_cursor_mid;
-const struct SequenceData s_f_pause_cursor_seqData = {
+struct SequenceData s_f_pause_cursor_seqData = {
     /* ROM Address */        &s_f_pause_cursor_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_61,
@@ -7201,7 +7201,7 @@ const struct SequenceData s_f_pause_cursor_seqData = {
 };
 
 extern const u32 s_f_pause_continue_mid;
-const struct SequenceData s_f_pause_continue_seqData = {
+struct SequenceData s_f_pause_continue_seqData = {
     /* ROM Address */        &s_f_pause_continue_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_61,
@@ -7214,7 +7214,7 @@ const struct SequenceData s_f_pause_continue_seqData = {
 };
 
 extern const u32 s_f_pause_quit_mid;
-const struct SequenceData s_f_pause_quit_seqData = {
+struct SequenceData s_f_pause_quit_seqData = {
     /* ROM Address */        &s_f_pause_quit_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_61,
@@ -7227,7 +7227,7 @@ const struct SequenceData s_f_pause_quit_seqData = {
 };
 
 extern const u32 s_f_scratch_mid;
-const struct SequenceData s_f_scratch_seqData = {
+struct SequenceData s_f_scratch_seqData = {
     /* ROM Address */        &s_f_scratch_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_61,
@@ -7240,7 +7240,7 @@ const struct SequenceData s_f_scratch_seqData = {
 };
 
 extern const u32 s_f_env_train_mid;
-const struct SequenceData s_f_env_train_seqData = {
+struct SequenceData s_f_env_train_seqData = {
     /* ROM Address */        &s_f_env_train_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_61,
@@ -7253,7 +7253,7 @@ const struct SequenceData s_f_env_train_seqData = {
 };
 
 extern const u32 s_f_env_cherry_mid;
-const struct SequenceData s_f_env_cherry_seqData = {
+struct SequenceData s_f_env_cherry_seqData = {
     /* ROM Address */        &s_f_env_cherry_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_61,
@@ -7266,7 +7266,7 @@ const struct SequenceData s_f_env_cherry_seqData = {
 };
 
 extern const u32 s_f_env_haiku_mid;
-const struct SequenceData s_f_env_haiku_seqData = {
+struct SequenceData s_f_env_haiku_seqData = {
     /* ROM Address */        &s_f_env_haiku_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_61,
@@ -7279,7 +7279,7 @@ const struct SequenceData s_f_env_haiku_seqData = {
 };
 
 extern const u32 s_f_env_class_room_mid;
-const struct SequenceData s_f_env_class_room_seqData = {
+struct SequenceData s_f_env_class_room_seqData = {
     /* ROM Address */        &s_f_env_class_room_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_61,
@@ -7292,7 +7292,7 @@ const struct SequenceData s_f_env_class_room_seqData = {
 };
 
 extern const u32 s_f_env_paper_mid;
-const struct SequenceData s_f_env_paper_seqData = {
+struct SequenceData s_f_env_paper_seqData = {
     /* ROM Address */        &s_f_env_paper_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_61,
@@ -7305,7 +7305,7 @@ const struct SequenceData s_f_env_paper_seqData = {
 };
 
 extern const u32 s_f_env_paper_rev_mid;
-const struct SequenceData s_f_env_paper_rev_seqData = {
+struct SequenceData s_f_env_paper_rev_seqData = {
     /* ROM Address */        &s_f_env_paper_rev_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_61,
@@ -7318,7 +7318,7 @@ const struct SequenceData s_f_env_paper_rev_seqData = {
 };
 
 extern const u32 s_f_cafe_send_mes_mid;
-const struct SequenceData s_f_cafe_send_mes_seqData = {
+struct SequenceData s_f_cafe_send_mes_seqData = {
     /* ROM Address */        &s_f_cafe_send_mes_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_61,
@@ -7331,7 +7331,7 @@ const struct SequenceData s_f_cafe_send_mes_seqData = {
 };
 
 extern const u32 s_f_drum_BD_1_mid;
-const struct SequenceData s_f_drum_BD_1_seqData = {
+struct SequenceData s_f_drum_BD_1_seqData = {
     /* ROM Address */        &s_f_drum_BD_1_mid,
     /* unk4f1 */             0x2,
     /* Sound Bank */         INST_BANK_54,
@@ -7344,7 +7344,7 @@ const struct SequenceData s_f_drum_BD_1_seqData = {
 };
 
 extern const u32 s_f_drum_SD_1_mid;
-const struct SequenceData s_f_drum_SD_1_seqData = {
+struct SequenceData s_f_drum_SD_1_seqData = {
     /* ROM Address */        &s_f_drum_SD_1_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_54,
@@ -7357,7 +7357,7 @@ const struct SequenceData s_f_drum_SD_1_seqData = {
 };
 
 extern const u32 s_f_drum_SD_Rim_Open_mid;
-const struct SequenceData s_f_drum_SD_Rim_Open_seqData = {
+struct SequenceData s_f_drum_SD_Rim_Open_seqData = {
     /* ROM Address */        &s_f_drum_SD_Rim_Open_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_54,
@@ -7370,7 +7370,7 @@ const struct SequenceData s_f_drum_SD_Rim_Open_seqData = {
 };
 
 extern const u32 s_f_drum_Sym_Crash_mid;
-const struct SequenceData s_f_drum_Sym_Crash_seqData = {
+struct SequenceData s_f_drum_Sym_Crash_seqData = {
     /* ROM Address */        &s_f_drum_Sym_Crash_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_54,
@@ -7383,7 +7383,7 @@ const struct SequenceData s_f_drum_Sym_Crash_seqData = {
 };
 
 extern const u32 s_f_test_drum_BD_A_mid;
-const struct SequenceData s_f_test_drum_BD_A_seqData = {
+struct SequenceData s_f_test_drum_BD_A_seqData = {
     /* ROM Address */        &s_f_test_drum_BD_A_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_55,
@@ -7396,7 +7396,7 @@ const struct SequenceData s_f_test_drum_BD_A_seqData = {
 };
 
 extern const u32 s_f_test_drum_BD_B_mid;
-const struct SequenceData s_f_test_drum_BD_B_seqData = {
+struct SequenceData s_f_test_drum_BD_B_seqData = {
     /* ROM Address */        &s_f_test_drum_BD_B_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_55,
@@ -7409,7 +7409,7 @@ const struct SequenceData s_f_test_drum_BD_B_seqData = {
 };
 
 extern const u32 s_f_test_drum_SD_A_mid;
-const struct SequenceData s_f_test_drum_SD_A_seqData = {
+struct SequenceData s_f_test_drum_SD_A_seqData = {
     /* ROM Address */        &s_f_test_drum_SD_A_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_55,
@@ -7422,7 +7422,7 @@ const struct SequenceData s_f_test_drum_SD_A_seqData = {
 };
 
 extern const u32 s_f_test_drum_SD_B_mid;
-const struct SequenceData s_f_test_drum_SD_B_seqData = {
+struct SequenceData s_f_test_drum_SD_B_seqData = {
     /* ROM Address */        &s_f_test_drum_SD_B_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_55,
@@ -7435,7 +7435,7 @@ const struct SequenceData s_f_test_drum_SD_B_seqData = {
 };
 
 extern const u32 s_f_toss_miss1_mid;
-const struct SequenceData s_f_toss_miss1_seqData = {
+struct SequenceData s_f_toss_miss1_seqData = {
     /* ROM Address */        &s_f_toss_miss1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -7448,7 +7448,7 @@ const struct SequenceData s_f_toss_miss1_seqData = {
 };
 
 extern const u32 s_f_toss_miss2_mid;
-const struct SequenceData s_f_toss_miss2_seqData = {
+struct SequenceData s_f_toss_miss2_seqData = {
     /* ROM Address */        &s_f_toss_miss2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -7461,7 +7461,7 @@ const struct SequenceData s_f_toss_miss2_seqData = {
 };
 
 extern const u32 s_f_toss_miss3_mid;
-const struct SequenceData s_f_toss_miss3_seqData = {
+struct SequenceData s_f_toss_miss3_seqData = {
     /* ROM Address */        &s_f_toss_miss3_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -7474,7 +7474,7 @@ const struct SequenceData s_f_toss_miss3_seqData = {
 };
 
 extern const u32 s_f_toss_ball_mid;
-const struct SequenceData s_f_toss_ball_seqData = {
+struct SequenceData s_f_toss_ball_seqData = {
     /* ROM Address */        &s_f_toss_ball_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_56,
@@ -7487,7 +7487,7 @@ const struct SequenceData s_f_toss_ball_seqData = {
 };
 
 extern const u32 s_f_toss_swing_mid;
-const struct SequenceData s_f_toss_swing_seqData = {
+struct SequenceData s_f_toss_swing_seqData = {
     /* ROM Address */        &s_f_toss_swing_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -7500,7 +7500,7 @@ const struct SequenceData s_f_toss_swing_seqData = {
 };
 
 extern const u32 s_f_shuji_v_nuaa_mid;
-const struct SequenceData s_f_shuji_v_nuaa_seqData = {
+struct SequenceData s_f_shuji_v_nuaa_seqData = {
     /* ROM Address */        &s_f_shuji_v_nuaa_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_57,
@@ -7513,7 +7513,7 @@ const struct SequenceData s_f_shuji_v_nuaa_seqData = {
 };
 
 extern const u32 s_f_shuji_v_unuu_mid;
-const struct SequenceData s_f_shuji_v_unuu_seqData = {
+struct SequenceData s_f_shuji_v_unuu_seqData = {
     /* ROM Address */        &s_f_shuji_v_unuu_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_57,
@@ -7526,7 +7526,7 @@ const struct SequenceData s_f_shuji_v_unuu_seqData = {
 };
 
 extern const u32 s_f_shuji_v_ouch_mid;
-const struct SequenceData s_f_shuji_v_ouch_seqData = {
+struct SequenceData s_f_shuji_v_ouch_seqData = {
     /* ROM Address */        &s_f_shuji_v_ouch_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_57,
@@ -7539,7 +7539,7 @@ const struct SequenceData s_f_shuji_v_ouch_seqData = {
 };
 
 extern const u32 s_f_shuji_swing1_mid;
-const struct SequenceData s_f_shuji_swing1_seqData = {
+struct SequenceData s_f_shuji_swing1_seqData = {
     /* ROM Address */        &s_f_shuji_swing1_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_57,
@@ -7552,7 +7552,7 @@ const struct SequenceData s_f_shuji_swing1_seqData = {
 };
 
 extern const u32 s_f_shuji_swing2_mid;
-const struct SequenceData s_f_shuji_swing2_seqData = {
+struct SequenceData s_f_shuji_swing2_seqData = {
     /* ROM Address */        &s_f_shuji_swing2_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_57,
@@ -7565,7 +7565,7 @@ const struct SequenceData s_f_shuji_swing2_seqData = {
 };
 
 extern const u32 s_f_shuji_start_mid;
-const struct SequenceData s_f_shuji_start_seqData = {
+struct SequenceData s_f_shuji_start_seqData = {
     /* ROM Address */        &s_f_shuji_start_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -7578,7 +7578,7 @@ const struct SequenceData s_f_shuji_start_seqData = {
 };
 
 extern const u32 s_f_shuji_v_ha1_mid;
-const struct SequenceData s_f_shuji_v_ha1_seqData = {
+struct SequenceData s_f_shuji_v_ha1_seqData = {
     /* ROM Address */        &s_f_shuji_v_ha1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -7591,7 +7591,7 @@ const struct SequenceData s_f_shuji_v_ha1_seqData = {
 };
 
 extern const u32 s_f_shuji_v_ha2_mid;
-const struct SequenceData s_f_shuji_v_ha2_seqData = {
+struct SequenceData s_f_shuji_v_ha2_seqData = {
     /* ROM Address */        &s_f_shuji_v_ha2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -7604,7 +7604,7 @@ const struct SequenceData s_f_shuji_v_ha2_seqData = {
 };
 
 extern const u32 s_f_shuji_v_ha3_mid;
-const struct SequenceData s_f_shuji_v_ha3_seqData = {
+struct SequenceData s_f_shuji_v_ha3_seqData = {
     /* ROM Address */        &s_f_shuji_v_ha3_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -7617,7 +7617,7 @@ const struct SequenceData s_f_shuji_v_ha3_seqData = {
 };
 
 extern const u32 s_f_shuji_v_funuue_mid;
-const struct SequenceData s_f_shuji_v_funuue_seqData = {
+struct SequenceData s_f_shuji_v_funuue_seqData = {
     /* ROM Address */        &s_f_shuji_v_funuue_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_57,
@@ -7630,7 +7630,7 @@ const struct SequenceData s_f_shuji_v_funuue_seqData = {
 };
 
 extern const u32 s_f_shuji_v_nuahaha_mid;
-const struct SequenceData s_f_shuji_v_nuahaha_seqData = {
+struct SequenceData s_f_shuji_v_nuahaha_seqData = {
     /* ROM Address */        &s_f_shuji_v_nuahaha_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_57,
@@ -7643,7 +7643,7 @@ const struct SequenceData s_f_shuji_v_nuahaha_seqData = {
 };
 
 extern const u32 s_f_rat_goal_mid;
-const struct SequenceData s_f_rat_goal_seqData = {
+struct SequenceData s_f_rat_goal_seqData = {
     /* ROM Address */        &s_f_rat_goal_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_58,
@@ -7656,7 +7656,7 @@ const struct SequenceData s_f_rat_goal_seqData = {
 };
 
 extern const u32 s_f_rat_error_mid;
-const struct SequenceData s_f_rat_error_seqData = {
+struct SequenceData s_f_rat_error_seqData = {
     /* ROM Address */        &s_f_rat_error_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_58,
@@ -7669,7 +7669,7 @@ const struct SequenceData s_f_rat_error_seqData = {
 };
 
 extern const u32 s_f_rat_slip_mid;
-const struct SequenceData s_f_rat_slip_seqData = {
+struct SequenceData s_f_rat_slip_seqData = {
     /* ROM Address */        &s_f_rat_slip_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_58,
@@ -7682,7 +7682,7 @@ const struct SequenceData s_f_rat_slip_seqData = {
 };
 
 extern const u32 s_f_hanabi_v_tamaya_mid;
-const struct SequenceData s_f_hanabi_v_tamaya_seqData = {
+struct SequenceData s_f_hanabi_v_tamaya_seqData = {
     /* ROM Address */        &s_f_hanabi_v_tamaya_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_59,
@@ -7695,7 +7695,7 @@ const struct SequenceData s_f_hanabi_v_tamaya_seqData = {
 };
 
 extern const u32 s_f_hanabi_v_nuei_mid;
-const struct SequenceData s_f_hanabi_v_nuei_seqData = {
+struct SequenceData s_f_hanabi_v_nuei_seqData = {
     /* ROM Address */        &s_f_hanabi_v_nuei_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_59,
@@ -7708,7 +7708,7 @@ const struct SequenceData s_f_hanabi_v_nuei_seqData = {
 };
 
 extern const u32 s_f_hanabi_kansei_mid;
-const struct SequenceData s_f_hanabi_kansei_seqData = {
+struct SequenceData s_f_hanabi_kansei_seqData = {
     /* ROM Address */        &s_f_hanabi_kansei_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_59,
@@ -7721,7 +7721,7 @@ const struct SequenceData s_f_hanabi_kansei_seqData = {
 };
 
 extern const u32 s_f_iai_cut_mid;
-const struct SequenceData s_f_iai_cut_seqData = {
+struct SequenceData s_f_iai_cut_seqData = {
     /* ROM Address */        &s_f_iai_cut_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_60,
@@ -7734,7 +7734,7 @@ const struct SequenceData s_f_iai_cut_seqData = {
 };
 
 extern const u32 s_f_iai_cut2_mid;
-const struct SequenceData s_f_iai_cut2_seqData = {
+struct SequenceData s_f_iai_cut2_seqData = {
     /* ROM Address */        &s_f_iai_cut2_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_60,
@@ -7747,7 +7747,7 @@ const struct SequenceData s_f_iai_cut2_seqData = {
 };
 
 extern const u32 s_f_iai_title_mid;
-const struct SequenceData s_f_iai_title_seqData = {
+struct SequenceData s_f_iai_title_seqData = {
     /* ROM Address */        &s_f_iai_title_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_60,
@@ -7760,7 +7760,7 @@ const struct SequenceData s_f_iai_title_seqData = {
 };
 
 extern const u32 s_f_virus_in_mid;
-const struct SequenceData s_f_virus_in_seqData = {
+struct SequenceData s_f_virus_in_seqData = {
     /* ROM Address */        &s_f_virus_in_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_60,
@@ -7773,7 +7773,7 @@ const struct SequenceData s_f_virus_in_seqData = {
 };
 
 extern const u32 s_f_virus_uhihi_mid;
-const struct SequenceData s_f_virus_uhihi_seqData = {
+struct SequenceData s_f_virus_uhihi_seqData = {
     /* ROM Address */        &s_f_virus_uhihi_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_60,
@@ -7786,7 +7786,7 @@ const struct SequenceData s_f_virus_uhihi_seqData = {
 };
 
 extern const u32 s_f_virus_hit_mid;
-const struct SequenceData s_f_virus_hit_seqData = {
+struct SequenceData s_f_virus_hit_seqData = {
     /* ROM Address */        &s_f_virus_hit_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_60,
@@ -7799,7 +7799,7 @@ const struct SequenceData s_f_virus_hit_seqData = {
 };
 
 extern const u32 s_f_virus_osii_mid;
-const struct SequenceData s_f_virus_osii_seqData = {
+struct SequenceData s_f_virus_osii_seqData = {
     /* ROM Address */        &s_f_virus_osii_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_60,
@@ -7812,7 +7812,7 @@ const struct SequenceData s_f_virus_osii_seqData = {
 };
 
 extern const u32 s_f_virus_face_fadeout_mid;
-const struct SequenceData s_f_virus_face_fadeout_seqData = {
+struct SequenceData s_f_virus_face_fadeout_seqData = {
     /* ROM Address */        &s_f_virus_face_fadeout_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_60,
@@ -7825,7 +7825,7 @@ const struct SequenceData s_f_virus_face_fadeout_seqData = {
 };
 
 extern const u32 s_f_virus_note_land_mid;
-const struct SequenceData s_f_virus_note_land_seqData = {
+struct SequenceData s_f_virus_note_land_seqData = {
     /* ROM Address */        &s_f_virus_note_land_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_60,
@@ -7838,7 +7838,7 @@ const struct SequenceData s_f_virus_note_land_seqData = {
 };
 
 extern const u32 s_f_hair_kegire_mid;
-const struct SequenceData s_f_hair_kegire_seqData = {
+struct SequenceData s_f_hair_kegire_seqData = {
     /* ROM Address */        &s_f_hair_kegire_mid,
     /* unk4f1 */             0x9,
     /* Sound Bank */         INST_BANK_56,
@@ -7851,7 +7851,7 @@ const struct SequenceData s_f_hair_kegire_seqData = {
 };
 
 extern const u32 s_f_hair_next_mid;
-const struct SequenceData s_f_hair_next_seqData = {
+struct SequenceData s_f_hair_next_seqData = {
     /* ROM Address */        &s_f_hair_next_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_56,
@@ -7864,7 +7864,7 @@ const struct SequenceData s_f_hair_next_seqData = {
 };
 
 extern const u32 s_f_hair_nuki_long_mid;
-const struct SequenceData s_f_hair_nuki_long_seqData = {
+struct SequenceData s_f_hair_nuki_long_seqData = {
     /* ROM Address */        &s_f_hair_nuki_long_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -7877,7 +7877,7 @@ const struct SequenceData s_f_hair_nuki_long_seqData = {
 };
 
 extern const u32 s_f_hair_tuneru_mid;
-const struct SequenceData s_f_hair_tuneru_seqData = {
+struct SequenceData s_f_hair_tuneru_seqData = {
     /* ROM Address */        &s_f_hair_tuneru_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -7890,7 +7890,7 @@ const struct SequenceData s_f_hair_tuneru_seqData = {
 };
 
 extern const u32 s_f_hair_appear_long_mid;
-const struct SequenceData s_f_hair_appear_long_seqData = {
+struct SequenceData s_f_hair_appear_long_seqData = {
     /* ROM Address */        &s_f_hair_appear_long_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_56,
@@ -7903,7 +7903,7 @@ const struct SequenceData s_f_hair_appear_long_seqData = {
 };
 
 extern const u32 s_f_poly_blast_mid;
-const struct SequenceData s_f_poly_blast_seqData = {
+struct SequenceData s_f_poly_blast_seqData = {
     /* ROM Address */        &s_f_poly_blast_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_56,
@@ -7916,7 +7916,7 @@ const struct SequenceData s_f_poly_blast_seqData = {
 };
 
 extern const u32 s_f_poly_withdraw_mid;
-const struct SequenceData s_f_poly_withdraw_seqData = {
+struct SequenceData s_f_poly_withdraw_seqData = {
     /* ROM Address */        &s_f_poly_withdraw_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -7929,7 +7929,7 @@ const struct SequenceData s_f_poly_withdraw_seqData = {
 };
 
 extern const u32 s_f_poly_close_mid;
-const struct SequenceData s_f_poly_close_seqData = {
+struct SequenceData s_f_poly_close_seqData = {
     /* ROM Address */        &s_f_poly_close_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -7942,7 +7942,7 @@ const struct SequenceData s_f_poly_close_seqData = {
 };
 
 extern const u32 s_f_poly_appear_upside_mid;
-const struct SequenceData s_f_poly_appear_upside_seqData = {
+struct SequenceData s_f_poly_appear_upside_seqData = {
     /* ROM Address */        &s_f_poly_appear_upside_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_56,
@@ -7955,7 +7955,7 @@ const struct SequenceData s_f_poly_appear_upside_seqData = {
 };
 
 extern const u32 s_f_poly_appear_downside_mid;
-const struct SequenceData s_f_poly_appear_downside_seqData = {
+struct SequenceData s_f_poly_appear_downside_seqData = {
     /* ROM Address */        &s_f_poly_appear_downside_mid,
     /* unk4f1 */             0x2,
     /* Sound Bank */         INST_BANK_56,
@@ -7968,7 +7968,7 @@ const struct SequenceData s_f_poly_appear_downside_seqData = {
 };
 
 extern const u32 s_f_poly_open_upside_mid;
-const struct SequenceData s_f_poly_open_upside_seqData = {
+struct SequenceData s_f_poly_open_upside_seqData = {
     /* ROM Address */        &s_f_poly_open_upside_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -7981,7 +7981,7 @@ const struct SequenceData s_f_poly_open_upside_seqData = {
 };
 
 extern const u32 s_f_poly_open_downside_mid;
-const struct SequenceData s_f_poly_open_downside_seqData = {
+struct SequenceData s_f_poly_open_downside_seqData = {
     /* ROM Address */        &s_f_poly_open_downside_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -7994,7 +7994,7 @@ const struct SequenceData s_f_poly_open_downside_seqData = {
 };
 
 extern const u32 s_f_boxing_punch_mid;
-const struct SequenceData s_f_boxing_punch_seqData = {
+struct SequenceData s_f_boxing_punch_seqData = {
     /* ROM Address */        &s_f_boxing_punch_mid,
     /* unk4f1 */             0x2,
     /* Sound Bank */         INST_BANK_56,
@@ -8007,7 +8007,7 @@ const struct SequenceData s_f_boxing_punch_seqData = {
 };
 
 extern const u32 s_f_boxing_just_hati_mid;
-const struct SequenceData s_f_boxing_just_hati_seqData = {
+struct SequenceData s_f_boxing_just_hati_seqData = {
     /* ROM Address */        &s_f_boxing_just_hati_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8020,7 +8020,7 @@ const struct SequenceData s_f_boxing_just_hati_seqData = {
 };
 
 extern const u32 s_f_boxing_just_hati_nc_mid;
-const struct SequenceData s_f_boxing_just_hati_nc_seqData = {
+struct SequenceData s_f_boxing_just_hati_nc_seqData = {
     /* ROM Address */        &s_f_boxing_just_hati_nc_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8033,7 +8033,7 @@ const struct SequenceData s_f_boxing_just_hati_nc_seqData = {
 };
 
 extern const u32 s_f_boxing_just_light_mid;
-const struct SequenceData s_f_boxing_just_light_seqData = {
+struct SequenceData s_f_boxing_just_light_seqData = {
     /* ROM Address */        &s_f_boxing_just_light_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8046,7 +8046,7 @@ const struct SequenceData s_f_boxing_just_light_seqData = {
 };
 
 extern const u32 s_f_boxing_just_light_nc_mid;
-const struct SequenceData s_f_boxing_just_light_nc_seqData = {
+struct SequenceData s_f_boxing_just_light_nc_seqData = {
     /* ROM Address */        &s_f_boxing_just_light_nc_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8059,7 +8059,7 @@ const struct SequenceData s_f_boxing_just_light_nc_seqData = {
 };
 
 extern const u32 s_f_boxing_just_ball_mid;
-const struct SequenceData s_f_boxing_just_ball_seqData = {
+struct SequenceData s_f_boxing_just_ball_seqData = {
     /* ROM Address */        &s_f_boxing_just_ball_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8072,7 +8072,7 @@ const struct SequenceData s_f_boxing_just_ball_seqData = {
 };
 
 extern const u32 s_f_boxing_just_ball_nc_mid;
-const struct SequenceData s_f_boxing_just_ball_nc_seqData = {
+struct SequenceData s_f_boxing_just_ball_nc_seqData = {
     /* ROM Address */        &s_f_boxing_just_ball_nc_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8085,7 +8085,7 @@ const struct SequenceData s_f_boxing_just_ball_nc_seqData = {
 };
 
 extern const u32 s_f_boxing_just_rock_mid;
-const struct SequenceData s_f_boxing_just_rock_seqData = {
+struct SequenceData s_f_boxing_just_rock_seqData = {
     /* ROM Address */        &s_f_boxing_just_rock_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8098,7 +8098,7 @@ const struct SequenceData s_f_boxing_just_rock_seqData = {
 };
 
 extern const u32 s_f_boxing_just_rock_nc_mid;
-const struct SequenceData s_f_boxing_just_rock_nc_seqData = {
+struct SequenceData s_f_boxing_just_rock_nc_seqData = {
     /* ROM Address */        &s_f_boxing_just_rock_nc_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8111,7 +8111,7 @@ const struct SequenceData s_f_boxing_just_rock_nc_seqData = {
 };
 
 extern const u32 s_f_boxing_just_bomb_mid;
-const struct SequenceData s_f_boxing_just_bomb_seqData = {
+struct SequenceData s_f_boxing_just_bomb_seqData = {
     /* ROM Address */        &s_f_boxing_just_bomb_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8124,7 +8124,7 @@ const struct SequenceData s_f_boxing_just_bomb_seqData = {
 };
 
 extern const u32 s_f_boxing_normal_mid;
-const struct SequenceData s_f_boxing_normal_seqData = {
+struct SequenceData s_f_boxing_normal_seqData = {
     /* ROM Address */        &s_f_boxing_normal_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8137,7 +8137,7 @@ const struct SequenceData s_f_boxing_normal_seqData = {
 };
 
 extern const u32 s_f_boxing_land_mid;
-const struct SequenceData s_f_boxing_land_seqData = {
+struct SequenceData s_f_boxing_land_seqData = {
     /* ROM Address */        &s_f_boxing_land_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -8150,7 +8150,7 @@ const struct SequenceData s_f_boxing_land_seqData = {
 };
 
 extern const u32 s_f_boxing_fly_nml_mid;
-const struct SequenceData s_f_boxing_fly_nml_seqData = {
+struct SequenceData s_f_boxing_fly_nml_seqData = {
     /* ROM Address */        &s_f_boxing_fly_nml_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_56,
@@ -8163,7 +8163,7 @@ const struct SequenceData s_f_boxing_fly_nml_seqData = {
 };
 
 extern const u32 s_f_boxing_v_nua_mid;
-const struct SequenceData s_f_boxing_v_nua_seqData = {
+struct SequenceData s_f_boxing_v_nua_seqData = {
     /* ROM Address */        &s_f_boxing_v_nua_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_56,
@@ -8176,7 +8176,7 @@ const struct SequenceData s_f_boxing_v_nua_seqData = {
 };
 
 extern const u32 s_f_boxing_hard_mid;
-const struct SequenceData s_f_boxing_hard_seqData = {
+struct SequenceData s_f_boxing_hard_seqData = {
     /* ROM Address */        &s_f_boxing_hard_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8189,7 +8189,7 @@ const struct SequenceData s_f_boxing_hard_seqData = {
 };
 
 extern const u32 s_f_boxing_score_reset_mid;
-const struct SequenceData s_f_boxing_score_reset_seqData = {
+struct SequenceData s_f_boxing_score_reset_seqData = {
     /* ROM Address */        &s_f_boxing_score_reset_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8202,7 +8202,7 @@ const struct SequenceData s_f_boxing_score_reset_seqData = {
 };
 
 extern const u32 s_f_boxing_score_up_mid;
-const struct SequenceData s_f_boxing_score_up_seqData = {
+struct SequenceData s_f_boxing_score_up_seqData = {
     /* ROM Address */        &s_f_boxing_score_up_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8215,7 +8215,7 @@ const struct SequenceData s_f_boxing_score_up_seqData = {
 };
 
 extern const u32 s_f_boxing_score_down_mid;
-const struct SequenceData s_f_boxing_score_down_seqData = {
+struct SequenceData s_f_boxing_score_down_seqData = {
     /* ROM Address */        &s_f_boxing_score_down_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8228,7 +8228,7 @@ const struct SequenceData s_f_boxing_score_down_seqData = {
 };
 
 extern const u32 s_f_boxing_kansei_mid;
-const struct SequenceData s_f_boxing_kansei_seqData = {
+struct SequenceData s_f_boxing_kansei_seqData = {
     /* ROM Address */        &s_f_boxing_kansei_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_56,
@@ -8241,7 +8241,7 @@ const struct SequenceData s_f_boxing_kansei_seqData = {
 };
 
 extern const u32 s_f_boxing_v_fresh_mid;
-const struct SequenceData s_f_boxing_v_fresh_seqData = {
+struct SequenceData s_f_boxing_v_fresh_seqData = {
     /* ROM Address */        &s_f_boxing_v_fresh_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8254,7 +8254,7 @@ const struct SequenceData s_f_boxing_v_fresh_seqData = {
 };
 
 extern const u32 s_f_boxing_title_hit_mid;
-const struct SequenceData s_f_boxing_title_hit_seqData = {
+struct SequenceData s_f_boxing_title_hit_seqData = {
     /* ROM Address */        &s_f_boxing_title_hit_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_56,
@@ -8267,7 +8267,7 @@ const struct SequenceData s_f_boxing_title_hit_seqData = {
 };
 
 extern const u32 s_f_boxing_honki_mid;
-const struct SequenceData s_f_boxing_honki_seqData = {
+struct SequenceData s_f_boxing_honki_seqData = {
     /* ROM Address */        &s_f_boxing_honki_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_56,
@@ -8280,7 +8280,7 @@ const struct SequenceData s_f_boxing_honki_seqData = {
 };
 
 extern const u32 s_f_boxing_fly_ext_mid;
-const struct SequenceData s_f_boxing_fly_ext_seqData = {
+struct SequenceData s_f_boxing_fly_ext_seqData = {
     /* ROM Address */        &s_f_boxing_fly_ext_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_56,
@@ -8293,7 +8293,7 @@ const struct SequenceData s_f_boxing_fly_ext_seqData = {
 };
 
 extern const u32 s_f_quiz_hit_ply_mid;
-const struct SequenceData s_f_quiz_hit_ply_seqData = {
+struct SequenceData s_f_quiz_hit_ply_seqData = {
     /* ROM Address */        &s_f_quiz_hit_ply_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -8306,7 +8306,7 @@ const struct SequenceData s_f_quiz_hit_ply_seqData = {
 };
 
 extern const u32 s_f_quiz_hit_com_mid;
-const struct SequenceData s_f_quiz_hit_com_seqData = {
+struct SequenceData s_f_quiz_hit_com_seqData = {
     /* ROM Address */        &s_f_quiz_hit_com_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -8319,7 +8319,7 @@ const struct SequenceData s_f_quiz_hit_com_seqData = {
 };
 
 extern const u32 s_f_quiz_blast_ply_mid;
-const struct SequenceData s_f_quiz_blast_ply_seqData = {
+struct SequenceData s_f_quiz_blast_ply_seqData = {
     /* ROM Address */        &s_f_quiz_blast_ply_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_56,
@@ -8332,7 +8332,7 @@ const struct SequenceData s_f_quiz_blast_ply_seqData = {
 };
 
 extern const u32 s_f_quiz_blast_com_mid;
-const struct SequenceData s_f_quiz_blast_com_seqData = {
+struct SequenceData s_f_quiz_blast_com_seqData = {
     /* ROM Address */        &s_f_quiz_blast_com_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_56,
@@ -8345,7 +8345,7 @@ const struct SequenceData s_f_quiz_blast_com_seqData = {
 };
 
 extern const u32 s_f_quiz_blast_plate_mid;
-const struct SequenceData s_f_quiz_blast_plate_seqData = {
+struct SequenceData s_f_quiz_blast_plate_seqData = {
     /* ROM Address */        &s_f_quiz_blast_plate_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_56,
@@ -8358,7 +8358,7 @@ const struct SequenceData s_f_quiz_blast_plate_seqData = {
 };
 
 extern const u32 s_f_quiz_miss_mid;
-const struct SequenceData s_f_quiz_miss_seqData = {
+struct SequenceData s_f_quiz_miss_seqData = {
     /* ROM Address */        &s_f_quiz_miss_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_56,
@@ -8371,7 +8371,7 @@ const struct SequenceData s_f_quiz_miss_seqData = {
 };
 
 extern const u32 s_f_quiz_stop_mid;
-const struct SequenceData s_f_quiz_stop_seqData = {
+struct SequenceData s_f_quiz_stop_seqData = {
     /* ROM Address */        &s_f_quiz_stop_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_56,
@@ -8384,7 +8384,7 @@ const struct SequenceData s_f_quiz_stop_seqData = {
 };
 
 extern const u32 s_f_quiz_answer_mid;
-const struct SequenceData s_f_quiz_answer_seqData = {
+struct SequenceData s_f_quiz_answer_seqData = {
     /* ROM Address */        &s_f_quiz_answer_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_56,
@@ -8397,7 +8397,7 @@ const struct SequenceData s_f_quiz_answer_seqData = {
 };
 
 extern const u32 s_f_quiz_ok_mid;
-const struct SequenceData s_f_quiz_ok_seqData = {
+struct SequenceData s_f_quiz_ok_seqData = {
     /* ROM Address */        &s_f_quiz_ok_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_56,
@@ -8410,7 +8410,7 @@ const struct SequenceData s_f_quiz_ok_seqData = {
 };
 
 extern const u32 s_f_ninja_kabe_mid;
-const struct SequenceData s_f_ninja_kabe_seqData = {
+struct SequenceData s_f_ninja_kabe_seqData = {
     /* ROM Address */        &s_f_ninja_kabe_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8423,7 +8423,7 @@ const struct SequenceData s_f_ninja_kabe_seqData = {
 };
 
 extern const u32 s_f_ninja_demo_mid;
-const struct SequenceData s_f_ninja_demo_seqData = {
+struct SequenceData s_f_ninja_demo_seqData = {
     /* ROM Address */        &s_f_ninja_demo_mid,
     /* unk4f1 */             0x0,
     /* Sound Bank */         INST_BANK_56,
@@ -8436,7 +8436,7 @@ const struct SequenceData s_f_ninja_demo_seqData = {
 };
 
 extern const u32 s_f_ninja_v_nanu_mid;
-const struct SequenceData s_f_ninja_v_nanu_seqData = {
+struct SequenceData s_f_ninja_v_nanu_seqData = {
     /* ROM Address */        &s_f_ninja_v_nanu_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -8449,7 +8449,7 @@ const struct SequenceData s_f_ninja_v_nanu_seqData = {
 };
 
 extern const u32 s_f_rapW_v_YoOyatuDesuka_mid;
-const struct SequenceData s_f_rapW_v_YoOyatuDesuka_seqData = {
+struct SequenceData s_f_rapW_v_YoOyatuDesuka_seqData = {
     /* ROM Address */        &s_f_rapW_v_YoOyatuDesuka_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8462,7 +8462,7 @@ const struct SequenceData s_f_rapW_v_YoOyatuDesuka_seqData = {
 };
 
 extern const u32 s_f_rapW_v_Yo10JiDesuka_mid;
-const struct SequenceData s_f_rapW_v_Yo10JiDesuka_seqData = {
+struct SequenceData s_f_rapW_v_Yo10JiDesuka_seqData = {
     /* ROM Address */        &s_f_rapW_v_Yo10JiDesuka_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8475,7 +8475,7 @@ const struct SequenceData s_f_rapW_v_Yo10JiDesuka_seqData = {
 };
 
 extern const u32 s_f_rapW_v_Naishodesuka_mid;
-const struct SequenceData s_f_rapW_v_Naishodesuka_seqData = {
+struct SequenceData s_f_rapW_v_Naishodesuka_seqData = {
     /* ROM Address */        &s_f_rapW_v_Naishodesuka_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8488,7 +8488,7 @@ const struct SequenceData s_f_rapW_v_Naishodesuka_seqData = {
 };
 
 extern const u32 s_f_rapW_v_KarenoOyatudane_mid;
-const struct SequenceData s_f_rapW_v_KarenoOyatudane_seqData = {
+struct SequenceData s_f_rapW_v_KarenoOyatudane_seqData = {
     /* ROM Address */        &s_f_rapW_v_KarenoOyatudane_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8501,7 +8501,7 @@ const struct SequenceData s_f_rapW_v_KarenoOyatudane_seqData = {
 };
 
 extern const u32 s_f_rapW_v_TabeteIikamone_mid;
-const struct SequenceData s_f_rapW_v_TabeteIikamone_seqData = {
+struct SequenceData s_f_rapW_v_TabeteIikamone_seqData = {
     /* ROM Address */        &s_f_rapW_v_TabeteIikamone_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8514,7 +8514,7 @@ const struct SequenceData s_f_rapW_v_TabeteIikamone_seqData = {
 };
 
 extern const u32 s_f_rapW_v_AketeIikamone_mid;
-const struct SequenceData s_f_rapW_v_AketeIikamone_seqData = {
+struct SequenceData s_f_rapW_v_AketeIikamone_seqData = {
     /* ROM Address */        &s_f_rapW_v_AketeIikamone_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8527,7 +8527,7 @@ const struct SequenceData s_f_rapW_v_AketeIikamone_seqData = {
 };
 
 extern const u32 s_f_rapW_v_OyatuwaSaiko_mid;
-const struct SequenceData s_f_rapW_v_OyatuwaSaiko_seqData = {
+struct SequenceData s_f_rapW_v_OyatuwaSaiko_seqData = {
     /* ROM Address */        &s_f_rapW_v_OyatuwaSaiko_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8540,7 +8540,7 @@ const struct SequenceData s_f_rapW_v_OyatuwaSaiko_seqData = {
 };
 
 extern const u32 s_f_rapW_v_KibunnwaSaiko_mid;
-const struct SequenceData s_f_rapW_v_KibunnwaSaiko_seqData = {
+struct SequenceData s_f_rapW_v_KibunnwaSaiko_seqData = {
     /* ROM Address */        &s_f_rapW_v_KibunnwaSaiko_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8553,7 +8553,7 @@ const struct SequenceData s_f_rapW_v_KibunnwaSaiko_seqData = {
 };
 
 extern const u32 s_f_rapW_v_AmakuteSaiko_mid;
-const struct SequenceData s_f_rapW_v_AmakuteSaiko_seqData = {
+struct SequenceData s_f_rapW_v_AmakuteSaiko_seqData = {
     /* ROM Address */        &s_f_rapW_v_AmakuteSaiko_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8566,7 +8566,7 @@ const struct SequenceData s_f_rapW_v_AmakuteSaiko_seqData = {
 };
 
 extern const u32 s_f_rapW_v_BetubaraSaiko_mid;
-const struct SequenceData s_f_rapW_v_BetubaraSaiko_seqData = {
+struct SequenceData s_f_rapW_v_BetubaraSaiko_seqData = {
     /* ROM Address */        &s_f_rapW_v_BetubaraSaiko_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8579,7 +8579,7 @@ const struct SequenceData s_f_rapW_v_BetubaraSaiko_seqData = {
 };
 
 extern const u32 s_f_rapW_v_KareniwaNaisho_mid;
-const struct SequenceData s_f_rapW_v_KareniwaNaisho_seqData = {
+struct SequenceData s_f_rapW_v_KareniwaNaisho_seqData = {
     /* ROM Address */        &s_f_rapW_v_KareniwaNaisho_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8592,7 +8592,7 @@ const struct SequenceData s_f_rapW_v_KareniwaNaisho_seqData = {
 };
 
 extern const u32 s_f_rapW_v_DarenimoNaisho_mid;
-const struct SequenceData s_f_rapW_v_DarenimoNaisho_seqData = {
+struct SequenceData s_f_rapW_v_DarenimoNaisho_seqData = {
     /* ROM Address */        &s_f_rapW_v_DarenimoNaisho_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8605,7 +8605,7 @@ const struct SequenceData s_f_rapW_v_DarenimoNaisho_seqData = {
 };
 
 extern const u32 s_f_rapW_v_Yeah_mid;
-const struct SequenceData s_f_rapW_v_Yeah_seqData = {
+struct SequenceData s_f_rapW_v_Yeah_seqData = {
     /* ROM Address */        &s_f_rapW_v_Yeah_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8618,7 +8618,7 @@ const struct SequenceData s_f_rapW_v_Yeah_seqData = {
 };
 
 extern const u32 s_f_rapW_v_Un_mid;
-const struct SequenceData s_f_rapW_v_Un_seqData = {
+struct SequenceData s_f_rapW_v_Un_seqData = {
     /* ROM Address */        &s_f_rapW_v_Un_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_56,
@@ -8631,7 +8631,7 @@ const struct SequenceData s_f_rapW_v_Un_seqData = {
 };
 
 extern const u32 s_f_rapW_v_Uun_mid;
-const struct SequenceData s_f_rapW_v_Uun_seqData = {
+struct SequenceData s_f_rapW_v_Uun_seqData = {
     /* ROM Address */        &s_f_rapW_v_Uun_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_56,
@@ -8644,7 +8644,7 @@ const struct SequenceData s_f_rapW_v_Uun_seqData = {
 };
 
 extern const u32 s_f_rapW_v_CheckIt_mid;
-const struct SequenceData s_f_rapW_v_CheckIt_seqData = {
+struct SequenceData s_f_rapW_v_CheckIt_seqData = {
     /* ROM Address */        &s_f_rapW_v_CheckIt_mid,
     /* unk4f1 */             0x1,
     /* Sound Bank */         INST_BANK_56,
@@ -8657,7 +8657,7 @@ const struct SequenceData s_f_rapW_v_CheckIt_seqData = {
 };
 
 extern const u32 s_f_rapW_v_OyatuwaSaiko_d_mid;
-const struct SequenceData s_f_rapW_v_OyatuwaSaiko_d_seqData = {
+struct SequenceData s_f_rapW_v_OyatuwaSaiko_d_seqData = {
     /* ROM Address */        &s_f_rapW_v_OyatuwaSaiko_d_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8670,7 +8670,7 @@ const struct SequenceData s_f_rapW_v_OyatuwaSaiko_d_seqData = {
 };
 
 extern const u32 s_f_rapW_v_KibunnwaSaiko_d_mid;
-const struct SequenceData s_f_rapW_v_KibunnwaSaiko_d_seqData = {
+struct SequenceData s_f_rapW_v_KibunnwaSaiko_d_seqData = {
     /* ROM Address */        &s_f_rapW_v_KibunnwaSaiko_d_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8683,7 +8683,7 @@ const struct SequenceData s_f_rapW_v_KibunnwaSaiko_d_seqData = {
 };
 
 extern const u32 s_f_rapW_v_AmakuteSaiko_d_mid;
-const struct SequenceData s_f_rapW_v_AmakuteSaiko_d_seqData = {
+struct SequenceData s_f_rapW_v_AmakuteSaiko_d_seqData = {
     /* ROM Address */        &s_f_rapW_v_AmakuteSaiko_d_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8696,7 +8696,7 @@ const struct SequenceData s_f_rapW_v_AmakuteSaiko_d_seqData = {
 };
 
 extern const u32 s_f_rapW_v_BetubaraSaiko_d_mid;
-const struct SequenceData s_f_rapW_v_BetubaraSaiko_d_seqData = {
+struct SequenceData s_f_rapW_v_BetubaraSaiko_d_seqData = {
     /* ROM Address */        &s_f_rapW_v_BetubaraSaiko_d_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8709,7 +8709,7 @@ const struct SequenceData s_f_rapW_v_BetubaraSaiko_d_seqData = {
 };
 
 extern const u32 s_f_batter_ball_land_mid;
-const struct SequenceData s_f_batter_ball_land_seqData = {
+struct SequenceData s_f_batter_ball_land_seqData = {
     /* ROM Address */        &s_f_batter_ball_land_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_56,
@@ -8722,7 +8722,7 @@ const struct SequenceData s_f_batter_ball_land_seqData = {
 };
 
 extern const u32 s_f_batter_ball_high_mid;
-const struct SequenceData s_f_batter_ball_high_seqData = {
+struct SequenceData s_f_batter_ball_high_seqData = {
     /* ROM Address */        &s_f_batter_ball_high_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -8735,7 +8735,7 @@ const struct SequenceData s_f_batter_ball_high_seqData = {
 };
 
 extern const u32 s_f_handclap_pi_G4_mid;
-const struct SequenceData s_f_handclap_pi_G4_seqData = {
+struct SequenceData s_f_handclap_pi_G4_seqData = {
     /* ROM Address */        &s_f_handclap_pi_G4_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -8748,7 +8748,7 @@ const struct SequenceData s_f_handclap_pi_G4_seqData = {
 };
 
 extern const u32 s_f_handclap_pi_E5_mid;
-const struct SequenceData s_f_handclap_pi_E5_seqData = {
+struct SequenceData s_f_handclap_pi_E5_seqData = {
     /* ROM Address */        &s_f_handclap_pi_E5_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -8761,7 +8761,7 @@ const struct SequenceData s_f_handclap_pi_E5_seqData = {
 };
 
 extern const u32 s_f_handclap_ready_mid;
-const struct SequenceData s_f_handclap_ready_seqData = {
+struct SequenceData s_f_handclap_ready_seqData = {
     /* ROM Address */        &s_f_handclap_ready_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_56,
@@ -8774,7 +8774,7 @@ const struct SequenceData s_f_handclap_ready_seqData = {
 };
 
 extern const u32 s_f_aim_just_hit_mid;
-const struct SequenceData s_f_aim_just_hit_seqData = {
+struct SequenceData s_f_aim_just_hit_seqData = {
     /* ROM Address */        &s_f_aim_just_hit_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -8787,7 +8787,7 @@ const struct SequenceData s_f_aim_just_hit_seqData = {
 };
 
 extern const u32 s_f_aim_just_hit_voice_mid;
-const struct SequenceData s_f_aim_just_hit_voice_seqData = {
+struct SequenceData s_f_aim_just_hit_voice_seqData = {
     /* ROM Address */        &s_f_aim_just_hit_voice_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_56,
@@ -8800,7 +8800,7 @@ const struct SequenceData s_f_aim_just_hit_voice_seqData = {
 };
 
 extern const u32 s_f_space_hit_mid;
-const struct SequenceData s_f_space_hit_seqData = {
+struct SequenceData s_f_space_hit_seqData = {
     /* ROM Address */        &s_f_space_hit_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_56,
@@ -8813,7 +8813,7 @@ const struct SequenceData s_f_space_hit_seqData = {
 };
 
 extern const u32 s_f_space_dancer_mid;
-const struct SequenceData s_f_space_dancer_seqData = {
+struct SequenceData s_f_space_dancer_seqData = {
     /* ROM Address */        &s_f_space_dancer_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8826,7 +8826,7 @@ const struct SequenceData s_f_space_dancer_seqData = {
 };
 
 extern const u32 s_f_space_dancer_swing_mid;
-const struct SequenceData s_f_space_dancer_swing_seqData = {
+struct SequenceData s_f_space_dancer_swing_seqData = {
     /* ROM Address */        &s_f_space_dancer_swing_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8839,7 +8839,7 @@ const struct SequenceData s_f_space_dancer_swing_seqData = {
 };
 
 extern const u32 s_f_space_dancer_sit_mid;
-const struct SequenceData s_f_space_dancer_sit_seqData = {
+struct SequenceData s_f_space_dancer_sit_seqData = {
     /* ROM Address */        &s_f_space_dancer_sit_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8852,7 +8852,7 @@ const struct SequenceData s_f_space_dancer_sit_seqData = {
 };
 
 extern const u32 s_f_space_dancer_pa_mid;
-const struct SequenceData s_f_space_dancer_pa_seqData = {
+struct SequenceData s_f_space_dancer_pa_seqData = {
     /* ROM Address */        &s_f_space_dancer_pa_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_56,
@@ -8865,7 +8865,7 @@ const struct SequenceData s_f_space_dancer_pa_seqData = {
 };
 
 extern const u32 s_f_esa_jump_mid;
-const struct SequenceData s_f_esa_jump_seqData = {
+struct SequenceData s_f_esa_jump_seqData = {
     /* ROM Address */        &s_f_esa_jump_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -8878,7 +8878,7 @@ const struct SequenceData s_f_esa_jump_seqData = {
 };
 
 extern const u32 s_f_esa_splash_penguin_mid;
-const struct SequenceData s_f_esa_splash_penguin_seqData = {
+struct SequenceData s_f_esa_splash_penguin_seqData = {
     /* ROM Address */        &s_f_esa_splash_penguin_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8891,7 +8891,7 @@ const struct SequenceData s_f_esa_splash_penguin_seqData = {
 };
 
 extern const u32 s_f_esa_splash_ball_mid;
-const struct SequenceData s_f_esa_splash_ball_seqData = {
+struct SequenceData s_f_esa_splash_ball_seqData = {
     /* ROM Address */        &s_f_esa_splash_ball_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8904,7 +8904,7 @@ const struct SequenceData s_f_esa_splash_ball_seqData = {
 };
 
 extern const u32 s_f_rabbit_ready_mid;
-const struct SequenceData s_f_rabbit_ready_seqData = {
+struct SequenceData s_f_rabbit_ready_seqData = {
     /* ROM Address */        &s_f_rabbit_ready_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_56,
@@ -8917,7 +8917,7 @@ const struct SequenceData s_f_rabbit_ready_seqData = {
 };
 
 extern const u32 s_f_rabbit_miss_mid;
-const struct SequenceData s_f_rabbit_miss_seqData = {
+struct SequenceData s_f_rabbit_miss_seqData = {
     /* ROM Address */        &s_f_rabbit_miss_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_56,
@@ -8930,7 +8930,7 @@ const struct SequenceData s_f_rabbit_miss_seqData = {
 };
 
 extern const u32 s_f_even_splash_mid;
-const struct SequenceData s_f_even_splash_seqData = {
+struct SequenceData s_f_even_splash_seqData = {
     /* ROM Address */        &s_f_even_splash_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_56,
@@ -8943,7 +8943,7 @@ const struct SequenceData s_f_even_splash_seqData = {
 };
 
 extern const u32 s_f_even_road_mid;
-const struct SequenceData s_f_even_road_seqData = {
+struct SequenceData s_f_even_road_seqData = {
     /* ROM Address */        &s_f_even_road_mid,
     /* unk4f1 */             0x2,
     /* Sound Bank */         INST_BANK_56,
@@ -8956,7 +8956,7 @@ const struct SequenceData s_f_even_road_seqData = {
 };
 
 extern const u32 s_f_drumdr_miss_mid;
-const struct SequenceData s_f_drumdr_miss_seqData = {
+struct SequenceData s_f_drumdr_miss_seqData = {
     /* ROM Address */        &s_f_drumdr_miss_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -8969,7 +8969,7 @@ const struct SequenceData s_f_drumdr_miss_seqData = {
 };
 
 extern const u32 s_f_drumdr_ok_mid;
-const struct SequenceData s_f_drumdr_ok_seqData = {
+struct SequenceData s_f_drumdr_ok_seqData = {
     /* ROM Address */        &s_f_drumdr_ok_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -8982,7 +8982,7 @@ const struct SequenceData s_f_drumdr_ok_seqData = {
 };
 
 extern const u32 s_f_machine_click_mid;
-const struct SequenceData s_f_machine_click_seqData = {
+struct SequenceData s_f_machine_click_seqData = {
     /* ROM Address */        &s_f_machine_click_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_57,
@@ -8995,7 +8995,7 @@ const struct SequenceData s_f_machine_click_seqData = {
 };
 
 extern const u32 s_f_tap_miss1_mid;
-const struct SequenceData s_f_tap_miss1_seqData = {
+struct SequenceData s_f_tap_miss1_seqData = {
     /* ROM Address */        &s_f_tap_miss1_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_57,
@@ -9008,7 +9008,7 @@ const struct SequenceData s_f_tap_miss1_seqData = {
 };
 
 extern const u32 s_f_tap_miss2_mid;
-const struct SequenceData s_f_tap_miss2_seqData = {
+struct SequenceData s_f_tap_miss2_seqData = {
     /* ROM Address */        &s_f_tap_miss2_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_57,
@@ -9021,7 +9021,7 @@ const struct SequenceData s_f_tap_miss2_seqData = {
 };
 
 extern const u32 s_f_tap_jump_ready_mid;
-const struct SequenceData s_f_tap_jump_ready_seqData = {
+struct SequenceData s_f_tap_jump_ready_seqData = {
     /* ROM Address */        &s_f_tap_jump_ready_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_57,
@@ -9034,7 +9034,7 @@ const struct SequenceData s_f_tap_jump_ready_seqData = {
 };
 
 extern const u32 s_f_tap_tap_mid;
-const struct SequenceData s_f_tap_tap_seqData = {
+struct SequenceData s_f_tap_tap_seqData = {
     /* ROM Address */        &s_f_tap_tap_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_57,
@@ -9047,7 +9047,7 @@ const struct SequenceData s_f_tap_tap_seqData = {
 };
 
 extern const u32 s_f_tap_pig1_mid;
-const struct SequenceData s_f_tap_pig1_seqData = {
+struct SequenceData s_f_tap_pig1_seqData = {
     /* ROM Address */        &s_f_tap_pig1_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -9060,7 +9060,7 @@ const struct SequenceData s_f_tap_pig1_seqData = {
 };
 
 extern const u32 s_f_tap_pig2_mid;
-const struct SequenceData s_f_tap_pig2_seqData = {
+struct SequenceData s_f_tap_pig2_seqData = {
     /* ROM Address */        &s_f_tap_pig2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -9073,7 +9073,7 @@ const struct SequenceData s_f_tap_pig2_seqData = {
 };
 
 extern const u32 s_f_conveyer_hit_mid;
-const struct SequenceData s_f_conveyer_hit_seqData = {
+struct SequenceData s_f_conveyer_hit_seqData = {
     /* ROM Address */        &s_f_conveyer_hit_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_57,
@@ -9086,7 +9086,7 @@ const struct SequenceData s_f_conveyer_hit_seqData = {
 };
 
 extern const u32 s_f_lesson_s_mid;
-const struct SequenceData s_f_lesson_s_seqData = {
+struct SequenceData s_f_lesson_s_seqData = {
     /* ROM Address */        &s_f_lesson_s_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_61,
@@ -9099,7 +9099,7 @@ const struct SequenceData s_f_lesson_s_seqData = {
 };
 
 extern const u32 s_f_lesson_a_mid;
-const struct SequenceData s_f_lesson_a_seqData = {
+struct SequenceData s_f_lesson_a_seqData = {
     /* ROM Address */        &s_f_lesson_a_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_61,
@@ -9112,7 +9112,7 @@ const struct SequenceData s_f_lesson_a_seqData = {
 };
 
 extern const u32 s_f_lesson_b_mid;
-const struct SequenceData s_f_lesson_b_seqData = {
+struct SequenceData s_f_lesson_b_seqData = {
     /* ROM Address */        &s_f_lesson_b_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_61,
@@ -9125,7 +9125,7 @@ const struct SequenceData s_f_lesson_b_seqData = {
 };
 
 extern const u32 s_f_lesson_c_mid;
-const struct SequenceData s_f_lesson_c_seqData = {
+struct SequenceData s_f_lesson_c_seqData = {
     /* ROM Address */        &s_f_lesson_c_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_61,
@@ -9138,7 +9138,7 @@ const struct SequenceData s_f_lesson_c_seqData = {
 };
 
 extern const u32 s_f_base_1note_mid;
-const struct SequenceData s_f_base_1note_seqData = {
+struct SequenceData s_f_base_1note_seqData = {
     /* ROM Address */        &s_f_base_1note_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_61,
@@ -9151,7 +9151,7 @@ const struct SequenceData s_f_base_1note_seqData = {
 };
 
 extern const u32 s_f_drumtech_miss_mid;
-const struct SequenceData s_f_drumtech_miss_seqData = {
+struct SequenceData s_f_drumtech_miss_seqData = {
     /* ROM Address */        &s_f_drumtech_miss_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_61,
@@ -9164,7 +9164,7 @@ const struct SequenceData s_f_drumtech_miss_seqData = {
 };
 
 extern const u32 s_f_drumtech_fall_mid;
-const struct SequenceData s_f_drumtech_fall_seqData = {
+struct SequenceData s_f_drumtech_fall_seqData = {
     /* ROM Address */        &s_f_drumtech_fall_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_61,
@@ -9177,7 +9177,7 @@ const struct SequenceData s_f_drumtech_fall_seqData = {
 };
 
 extern const u32 s_f_drumtech_damage_mid;
-const struct SequenceData s_f_drumtech_damage_seqData = {
+struct SequenceData s_f_drumtech_damage_seqData = {
     /* ROM Address */        &s_f_drumtech_damage_mid,
     /* unk4f1 */             0x9,
     /* Sound Bank */         INST_BANK_61,
@@ -9190,7 +9190,7 @@ const struct SequenceData s_f_drumtech_damage_seqData = {
 };
 
 extern const u32 s_f_neko1_mid;
-const struct SequenceData s_f_neko1_seqData = {
+struct SequenceData s_f_neko1_seqData = {
     /* ROM Address */        &s_f_neko1_mid,
     /* unk4f1 */             0x3,
     /* Sound Bank */         INST_BANK_61,
@@ -9203,7 +9203,7 @@ const struct SequenceData s_f_neko1_seqData = {
 };
 
 extern const u32 s_f_neko2_mid;
-const struct SequenceData s_f_neko2_seqData = {
+struct SequenceData s_f_neko2_seqData = {
     /* ROM Address */        &s_f_neko2_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_61,
@@ -9216,7 +9216,7 @@ const struct SequenceData s_f_neko2_seqData = {
 };
 
 extern const u32 s_f_neko3_mid;
-const struct SequenceData s_f_neko3_seqData = {
+struct SequenceData s_f_neko3_seqData = {
     /* ROM Address */        &s_f_neko3_mid,
     /* unk4f1 */             0x5,
     /* Sound Bank */         INST_BANK_61,
@@ -9229,7 +9229,7 @@ const struct SequenceData s_f_neko3_seqData = {
 };
 
 extern const u32 s_f_neko4_mid;
-const struct SequenceData s_f_neko4_seqData = {
+struct SequenceData s_f_neko4_seqData = {
     /* ROM Address */        &s_f_neko4_mid,
     /* unk4f1 */             0x6,
     /* Sound Bank */         INST_BANK_61,
@@ -9242,7 +9242,7 @@ const struct SequenceData s_f_neko4_seqData = {
 };
 
 extern const u32 s_f_neko5_mid;
-const struct SequenceData s_f_neko5_seqData = {
+struct SequenceData s_f_neko5_seqData = {
     /* ROM Address */        &s_f_neko5_mid,
     /* unk4f1 */             0x7,
     /* Sound Bank */         INST_BANK_61,
@@ -9255,7 +9255,7 @@ const struct SequenceData s_f_neko5_seqData = {
 };
 
 extern const u32 s_f_neko6_mid;
-const struct SequenceData s_f_neko6_seqData = {
+struct SequenceData s_f_neko6_seqData = {
     /* ROM Address */        &s_f_neko6_mid,
     /* unk4f1 */             0x8,
     /* Sound Bank */         INST_BANK_61,
@@ -9268,7 +9268,7 @@ const struct SequenceData s_f_neko6_seqData = {
 };
 
 extern const u32 s_f_marcher2_v_zentai_mid;
-const struct SequenceData s_f_marcher2_v_zentai_seqData = {
+struct SequenceData s_f_marcher2_v_zentai_seqData = {
     /* ROM Address */        &s_f_marcher2_v_zentai_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -9281,7 +9281,7 @@ const struct SequenceData s_f_marcher2_v_zentai_seqData = {
 };
 
 extern const u32 s_f_marcher2_v_susume_mid;
-const struct SequenceData s_f_marcher2_v_susume_seqData = {
+struct SequenceData s_f_marcher2_v_susume_seqData = {
     /* ROM Address */        &s_f_marcher2_v_susume_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -9294,7 +9294,7 @@ const struct SequenceData s_f_marcher2_v_susume_seqData = {
 };
 
 extern const u32 s_f_marcher2_v_tomare_mid;
-const struct SequenceData s_f_marcher2_v_tomare_seqData = {
+struct SequenceData s_f_marcher2_v_tomare_seqData = {
     /* ROM Address */        &s_f_marcher2_v_tomare_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -9307,7 +9307,7 @@ const struct SequenceData s_f_marcher2_v_tomare_seqData = {
 };
 
 extern const u32 s_f_marcher2_v_migimukeL_mid;
-const struct SequenceData s_f_marcher2_v_migimukeL_seqData = {
+struct SequenceData s_f_marcher2_v_migimukeL_seqData = {
     /* ROM Address */        &s_f_marcher2_v_migimukeL_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -9320,7 +9320,7 @@ const struct SequenceData s_f_marcher2_v_migimukeL_seqData = {
 };
 
 extern const u32 s_f_marcher2_v_migimukeS_mid;
-const struct SequenceData s_f_marcher2_v_migimukeS_seqData = {
+struct SequenceData s_f_marcher2_v_migimukeS_seqData = {
     /* ROM Address */        &s_f_marcher2_v_migimukeS_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -9333,7 +9333,7 @@ const struct SequenceData s_f_marcher2_v_migimukeS_seqData = {
 };
 
 extern const u32 s_f_marcher2_v_migi_mid;
-const struct SequenceData s_f_marcher2_v_migi_seqData = {
+struct SequenceData s_f_marcher2_v_migi_seqData = {
     /* ROM Address */        &s_f_marcher2_v_migi_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -9346,7 +9346,7 @@ const struct SequenceData s_f_marcher2_v_migi_seqData = {
 };
 
 extern const u32 s_f_marcher2_v_hidarimukeL_mid;
-const struct SequenceData s_f_marcher2_v_hidarimukeL_seqData = {
+struct SequenceData s_f_marcher2_v_hidarimukeL_seqData = {
     /* ROM Address */        &s_f_marcher2_v_hidarimukeL_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -9359,7 +9359,7 @@ const struct SequenceData s_f_marcher2_v_hidarimukeL_seqData = {
 };
 
 extern const u32 s_f_marcher2_v_hidarimukeS_mid;
-const struct SequenceData s_f_marcher2_v_hidarimukeS_seqData = {
+struct SequenceData s_f_marcher2_v_hidarimukeS_seqData = {
     /* ROM Address */        &s_f_marcher2_v_hidarimukeS_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,
@@ -9372,7 +9372,7 @@ const struct SequenceData s_f_marcher2_v_hidarimukeS_seqData = {
 };
 
 extern const u32 s_f_marcher2_v_hidari_mid;
-const struct SequenceData s_f_marcher2_v_hidari_seqData = {
+struct SequenceData s_f_marcher2_v_hidari_seqData = {
     /* ROM Address */        &s_f_marcher2_v_hidari_mid,
     /* unk4f1 */             0x4,
     /* Sound Bank */         INST_BANK_57,

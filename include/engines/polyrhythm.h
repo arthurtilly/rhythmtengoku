@@ -91,11 +91,6 @@ extern const struct Animation anim_polyrhythm_arrow_dpad[]; // Up Arrow (D-Pad)
 
 
 // Sound Effects:
-extern const struct SequenceData s_f_poly_blast_seqData;
-extern const struct SequenceData s_poly_shototu_seqData;
-extern const struct SequenceData s_f_poly_open_upside_seqData;
-extern const struct SequenceData s_f_poly_open_downside_seqData;
-extern const struct SequenceData s_f_poly_appear_upside_seqData;
 
 
 // Engine Data:
@@ -109,8 +104,8 @@ extern s16 polyrhythm_lane_start_y[2]; // Lane Start Y Positions
 extern s16 polyrhythm_block_heights[3]; // Block Heights
 extern const struct Animation *polyrhythm_block_appear_anim[]; // Block - Appear
 extern const struct Animation *polyrhythm_block_open_anim[]; // Block - Open
-extern const struct SequenceData *polyrhythm_block_appear_sfx[]; // Block - Appear
-extern const struct SequenceData *polyrhythm_block_open_sfx[]; // Block - Open
+extern struct SequenceData *polyrhythm_block_appear_sfx[]; // Block - Appear
+extern struct SequenceData *polyrhythm_block_open_sfx[]; // Block - Open
 
 
 // Functions:

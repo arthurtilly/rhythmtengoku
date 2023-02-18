@@ -285,8 +285,6 @@ extern const struct Animation anim_game_select_perfect_rank[]; // perfect cleare
 
 
 // Sound Effects:
-extern const struct SequenceData s_menu_bgm_seqData; // BGM Game Select 1
-extern const struct SequenceData s_shibafu2_bgm_seqData; // BGM Game Select 2
 
 
 // Scene Definition Data:

@@ -324,14 +324,14 @@ const struct Animation *polyrhythm_block_open_anim[] = {
 };
 
 // [D_089e5c28] Block Appear SFX
-const struct SequenceData *polyrhythm_block_appear_sfx[] = {
+struct SequenceData *polyrhythm_block_appear_sfx[] = {
     /* PLATFORM */ NULL,
     /* UPSIDE   */ &s_f_poly_appear_upside_seqData,
     /* DOWNSIDE */ &s_f_poly_open_downside_seqData
 };
 
 // [D_089e5c34] Block Open SFX
-const struct SequenceData *polyrhythm_block_open_sfx[] = {
+struct SequenceData *polyrhythm_block_open_sfx[] = {
     /* PLATFORM */ NULL,
     /* UPSIDE   */ &s_f_poly_open_upside_seqData,
     /* DOWNSIDE */ &s_f_poly_open_downside_seqData

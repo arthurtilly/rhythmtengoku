@@ -25,10 +25,10 @@ struct GameplaySceneInfo {
     u8 allowCueInputOverlap; // If multiple cues for the same input overlap, register the input for all cues (otherwise only consider the most relevant cue).
     s32 engineFuncParam; // Parameter used when calling Engine-specific Functions
     u8 unk64;
-	const struct SequenceData *nextCueSpawnSfx;
-	const struct SequenceData *nextCueHitSfx;
-	const struct SequenceData *nextCueBarelySfx;
-	const struct SequenceData *nextCueMissSfx;
+	struct SequenceData *nextCueSpawnSfx;
+	struct SequenceData *nextCueHitSfx;
+	struct SequenceData *nextCueBarelySfx;
+	struct SequenceData *nextCueMissSfx;
 	u8 ignoreThisCueResult;
     s8 lastCueInputOffset; // Most Recent Input Timing Offset (how early/late the most recent input was)
 	u8 currentMarkingCriteria; // Current Marking Criteria
@@ -88,11 +88,6 @@ extern const struct Animation anim_gameplay_perfect_hit[]; // Perfect Input
 
 
 // Sound Effects:
-extern const struct SequenceData s_f_send_mes_seqData;
-extern const struct SequenceData s_f_fail_perfect_seqData;
-extern const struct SequenceData s_f_pause_on_seqData;
-extern const struct SequenceData s_f_pause_cursor_seqData;
-extern const struct SequenceData s_f_pause_continue_seqData;
 
 
 // Scene Definition Data:
@@ -105,10 +100,10 @@ extern const struct Animation *const D_089cfdf0[2]; // A Button Prompt Animation
 // Functions - Audio:
 extern void gameplay_set_sound_tempo(u32 tempo); // [func_08016e04] Define Sound Effect Base Tempo
 extern struct SoundPlayer *gameplay_align_soundplayer_to_tempo(struct SoundPlayer *player); // [func_08016e18] Match SoundPlayer to Current Tempo
-extern struct SoundPlayer *gameplay_play_sound(const struct SequenceData *sfx); // [func_08016e54] Play Sound
-extern struct SoundPlayer *gameplay_play_sound_in_player(u32 player, const struct SequenceData *sfx); // [func_08016e64] Play Sound
-extern struct SoundPlayer *gameplay_play_sound_w_pitch_volume(const struct SequenceData *sfx, u32 volume, u32 pitch); // [func_08016e74] Play Sound
-extern struct SoundPlayer *gameplay_play_sound_in_player_w_pitch_volume(u32 player, const struct SequenceData *sfx, u32 volume, s32 pitch); // [func_08016e84] Play Sound
+extern struct SoundPlayer *gameplay_play_sound(struct SequenceData *sfx); // [func_08016e54] Play Sound
+extern struct SoundPlayer *gameplay_play_sound_in_player(u32 player, struct SequenceData *sfx); // [func_08016e64] Play Sound
+extern struct SoundPlayer *gameplay_play_sound_w_pitch_volume(struct SequenceData *sfx, u32 volume, u32 pitch); // [func_08016e74] Play Sound
+extern struct SoundPlayer *gameplay_play_sound_in_player_w_pitch_volume(u32 player, struct SequenceData *sfx, u32 volume, s32 pitch); // [func_08016e84] Play Sound
 
 // Functions - Scene:
 extern void gameplay_init_scene_static_var(void); // [func_08016e94] Initialise Static Variables
@@ -126,10 +121,10 @@ extern void gameplay_set_engine_event_param(s32 param); // [func_08017380] Set P
 extern s32  gameplay_run_engine_event(const struct GameEngine *engine, s32 id); // [func_0801738c] Run Engine-Specific Event
 extern void gameplay_enable_inputs(u32 enable); // [func_080173c4] Enable Play Inputs
 extern void gameplay_assess_irrelevant_inputs(u32 assess); // [func_080173d0] Assess Non-Cue Inputs
-extern void gameplay_set_next_cue_spawn_sfx(const struct SequenceData *sfx); // [func_080173dc] Set Next Cue Spawn SFX
-extern void gameplay_set_next_cue_hit_sfx(const struct SequenceData *sfx); // [func_080173e8] Set Next Cue Hit SFX
-extern void gameplay_set_next_cue_barely_sfx(const struct SequenceData *sfx); // [func_080173f4] Set Next Cue Barely SFX
-extern void gameplay_set_next_cue_miss_sfx(const struct SequenceData *sfx); // [func_08017400] Set Next Cue Miss SFX
+extern void gameplay_set_next_cue_spawn_sfx(struct SequenceData *sfx); // [func_080173dc] Set Next Cue Spawn SFX
+extern void gameplay_set_next_cue_hit_sfx(struct SequenceData *sfx); // [func_080173e8] Set Next Cue Hit SFX
+extern void gameplay_set_next_cue_barely_sfx(struct SequenceData *sfx); // [func_080173f4] Set Next Cue Barely SFX
+extern void gameplay_set_next_cue_miss_sfx(struct SequenceData *sfx); // [func_08017400] Set Next Cue Miss SFX
 extern void gameplay_force_stop_music_midi_track(s32 midiTrack); // [func_0801740c] Force-Stop Music MIDI Track
 extern void gameplay_enable_tutorial(u32 isTutorial); // [func_08017448] Set isTutorial
 extern void gameplay_set_skip_destination(const struct Scene *scene); // [func_08017458] Set skipDestination
@@ -178,14 +173,14 @@ extern void gameplay_update_inputs(u32 pressed, u32 released); // [func_08017ec8
 extern s32  gameplay_get_last_hit_offset(void); // [func_08018054] Get Timing Offset of Most Recent Hit/Barely
 extern void gameplay_ignore_this_cue_result(void); // [func_08018068] Prevent Scene from Updating Results for This Cue
 extern void gameplay_enable_cue_input_overlap(u32 allow); // [func_08018078] Allow Cue Input Overlap
-extern void gameplay_set_cue_spawn_sfx(struct Cue *cue, const struct SequenceData *sfx); // [func_08018088] Set Cue Spawn SFX
-extern void gameplay_set_cue_hit_sfx(struct Cue *cue, const struct SequenceData *sfx); // [func_0801808c] Set Cue Hit SFX
-extern void gameplay_set_cue_barely_sfx(struct Cue *cue, const struct SequenceData *sfx); // [func_08018090] Set Cue Barely SFX
-extern void gameplay_set_cue_miss_sfx(struct Cue *cue, const struct SequenceData *sfx); // [func_08018094] Set Cue Miss SFX
-extern const struct SequenceData *gameplay_get_cue_spawn_sfx(struct Cue *cue); // [func_08018098] Get Cue Spawn SFX
-extern const struct SequenceData *gameplay_get_cue_hit_sfx(struct Cue *cue); // [func_0801809c] Get Cue Hit SFX
-extern const struct SequenceData *gameplay_get_cue_barely_sfx(struct Cue *cue); // [func_080180a0] Get Cue Barely SFX
-extern const struct SequenceData *gameplay_get_cue_miss_sfx(struct Cue *cue); // [func_080180a4] Get Cue Miss SFX
+extern void gameplay_set_cue_spawn_sfx(struct Cue *cue, struct SequenceData *sfx); // [func_08018088] Set Cue Spawn SFX
+extern void gameplay_set_cue_hit_sfx(struct Cue *cue, struct SequenceData *sfx); // [func_0801808c] Set Cue Hit SFX
+extern void gameplay_set_cue_barely_sfx(struct Cue *cue, struct SequenceData *sfx); // [func_08018090] Set Cue Barely SFX
+extern void gameplay_set_cue_miss_sfx(struct Cue *cue, struct SequenceData *sfx); // [func_08018094] Set Cue Miss SFX
+extern struct SequenceData *gameplay_get_cue_spawn_sfx(struct Cue *cue); // [func_08018098] Get Cue Spawn SFX
+extern struct SequenceData *gameplay_get_cue_hit_sfx(struct Cue *cue); // [func_0801809c] Get Cue Hit SFX
+extern struct SequenceData *gameplay_get_cue_barely_sfx(struct Cue *cue); // [func_080180a0] Get Cue Barely SFX
+extern struct SequenceData *gameplay_get_cue_miss_sfx(struct Cue *cue); // [func_080180a4] Get Cue Miss SFX
 extern u32  gameplay_get_cue_unk0(struct Cue *cue); // [func_080180a8] Get Cue Data unk0
 extern u32  gameplay_get_cue_input_buttons(struct Cue *cue); // [func_080180ac] Get Cue Input Buttons
 extern void gameplay_set_cue_input_buttons(struct Cue *cue, u32 buttons); // [func_080180b0] Set Cue Input Buttons

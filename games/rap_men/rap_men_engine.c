@@ -209,7 +209,7 @@ const char D_0805a8b0[] = "";
 
 
 // [D_089e652c] Cue Hit Sounds
-const struct SequenceData *rap_men_cue_hit_sfx[][2] = {
+struct SequenceData *rap_men_cue_hit_sfx[][2] = {
     /* RAP_MEN   */ { &s_rap_un_seqData, &s_rap_uun_seqData },
     /* RAP_WOMEN */ { &s_f_rapW_v_Un_seqData, &s_f_rapW_v_Uun_seqData }
 };
@@ -280,7 +280,7 @@ struct CueDefinition *rap_men_cue_index[] = {
 };
 
 // [D_089e65f0] Cue Miss Sounds
-const struct SequenceData *rap_men_cue_miss_sfx[] = {
+struct SequenceData *rap_men_cue_miss_sfx[] = {
     /* RAP_MEN   */ &s_intro_two_seqData,
     /* RAP_WOMEN */ &s_f_rapW_v_CheckIt_seqData,
 };

@@ -589,7 +589,7 @@ void play_drumtech_kit_no_anim(const struct DrumTechKit *drumKit, u32 inputs) {
 
 // Update DrumTech Open/Close Hi-Hat
 void update_drumtech_open_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 released) {
-    const struct SequenceData *const *sounds = D_089e2ef8;
+    struct SequenceData *const *sounds = D_089e2ef8;
     s16 hiHatSprite = D_03001568->hiHatSprite;
 
     if (inputs & DPAD_UP) {

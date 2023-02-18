@@ -19,7 +19,6 @@ extern const struct CompressedGraphics *const bunny_hop_prologue_buffered_textur
 extern const struct GraphicsTable bunny_hop_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_bunny_hop_prologue_title[]; // Animation: Text (Bunny Hop)
 extern const struct Animation anim_bunny_hop_prologue_rabbits[]; // Animation: Rabbits
-extern const struct SequenceData s_jingle_rat_seqData;
 
 // Functions:
 extern void func_08046e08(void);    // [func_08046e08] GFX_INIT Func_02
