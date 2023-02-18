@@ -42,7 +42,7 @@ void func_08045f28(void) {
 
 
 // [func_08045f58] MAIN - Init
-void func_08045f58(u32 ver) {
+void snappy_trio_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08045f28();
@@ -59,12 +59,12 @@ void func_08045fb4(void) {
 
 
 // [func_08045fb8] MAIN - Update
-void func_08045fb8(void) {
+void snappy_trio_prologue_engine_update(void) {
 }
 
 
 // [func_08045fbc] MAIN - Close
-void func_08045fbc(void) {
+void snappy_trio_prologue_engine_stop(void) {
 }
 
 

@@ -57,9 +57,9 @@ const EngineEvent bon_dance_prologue_engine_events[] = {
 // [D_089ea564] Prologue (Bon Dance) Game Engine
 const struct GameEngine bon_dance_prologue_engine = {
     /* Size in Memory */ sizeof(struct BonDancePrologueInfo),
-    /* Start Engine   */ func_08045478,
-    /* Update Engine  */ func_080454d8,
-    /* Stop Engine    */ func_080454dc,
+    /* Start Engine   */ bon_dance_prologue_engine_start,
+    /* Update Engine  */ bon_dance_prologue_engine_update,
+    /* Stop Engine    */ bon_dance_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ bon_dance_prologue_engine_events,

@@ -42,7 +42,7 @@ void func_080456a4(void) {
 
 
 // [func_080456d4] MAIN - Init
-void func_080456d4(u32 ver) {
+void cosmic_dance_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_080456a4();
@@ -59,12 +59,12 @@ void func_08045730(void) {
 
 
 // [func_08045734] MAIN - Update
-void func_08045734(void) {
+void cosmic_dance_prologue_engine_update(void) {
 }
 
 
 // [func_08045738] MAIN - Close
-void func_08045738(void) {
+void cosmic_dance_prologue_engine_stop(void) {
 }
 
 

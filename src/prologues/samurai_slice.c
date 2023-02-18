@@ -42,7 +42,7 @@ void func_08046024(void) {
 
 
 // [func_08046054] MAIN - Init
-void func_08046054(u32 ver) {
+void samurai_slice_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08046024();
@@ -60,12 +60,12 @@ void func_080460c8(void) {
 
 
 // [func_080460cc] MAIN - Update
-void func_080460cc(void) {
+void samurai_slice_prologue_engine_update(void) {
 }
 
 
 // [func_080460d0] MAIN - Close
-void func_080460d0(void) {
+void samurai_slice_prologue_engine_stop(void) {
 }
 
 

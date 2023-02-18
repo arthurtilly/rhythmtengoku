@@ -42,7 +42,7 @@ void func_08047a14(void) {
 
 
 // [func_08047a44] MAIN - Init
-void func_08047a44(u32 ver) {
+void toss_boys_2_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08047a14();
@@ -59,12 +59,12 @@ void func_08047aa0(void) {
 
 
 // [func_08047aa4] MAIN - Update
-void func_08047aa4(void) {
+void toss_boys_2_prologue_engine_update(void) {
 }
 
 
 // [func_08047aa8] MAIN - Close
-void func_08047aa8(void) {
+void toss_boys_2_prologue_engine_stop(void) {
 }
 
 

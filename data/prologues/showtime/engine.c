@@ -56,9 +56,9 @@ const EngineEvent showtime_prologue_engine_events[] = {
 // [D_089eab2c] Prologue (Showtime) Game Engine
 const struct GameEngine showtime_prologue_engine = {
     /* Size in Memory */ sizeof(struct ShowtimePrologueInfo),
-    /* Start Engine   */ func_080459b4,
-    /* Update Engine  */ func_08045a48,
-    /* Stop Engine    */ func_08045a4c,
+    /* Start Engine   */ showtime_prologue_engine_start,
+    /* Update Engine  */ showtime_prologue_engine_update,
+    /* Stop Engine    */ showtime_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ showtime_prologue_engine_events,

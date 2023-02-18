@@ -42,7 +42,7 @@ void func_08047d8c(void) {
 
 
 // [func_08047dbc] MAIN - Init
-void func_08047dbc(u32 ver) {
+void wizards_waltz_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08047d8c();
@@ -59,12 +59,12 @@ void func_08047e18(void) {
 
 
 // [func_08047e1c] MAIN - Update
-void func_08047e1c(void) {
+void wizards_waltz_prologue_engine_update(void) {
 }
 
 
 // [func_08047e20] MAIN - Close
-void func_08047e20(void) {
+void wizards_waltz_prologue_engine_stop(void) {
 }
 
 

@@ -15,12 +15,12 @@ extern const Palette karate_man_prologue_obj_pal[];
 
 
 // [D_089ea650] Buffered Textures List
-const struct CompressedGraphics *const prologue_karate_buffered_textures[] = {
+const struct CompressedGraphics *const karate_man_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089ea654] Graphics Table
-const struct GraphicsTable prologue_karate_gfx_table[] = {
+const struct GraphicsTable karate_man_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08bea934,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -50,18 +50,18 @@ const struct GraphicsTable prologue_karate_gfx_table[] = {
 };
 
 // [D_089ea69c] Engine Events
-const EngineEvent prologue_karate_engine_events[] = {
+const EngineEvent karate_man_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_080455f8
 };
 
 // [D_089ea6a0] Prologue (Karate Man) Game Engine
 const struct GameEngine karate_man_prologue_engine = {
     /* Size in Memory */ sizeof(struct KarateManPrologueInfo),
-    /* Start Engine   */ func_0804557c,
-    /* Update Engine  */ func_080455fc,
-    /* Stop Engine    */ func_08045600,
+    /* Start Engine   */ karate_man_prologue_engine_start,
+    /* Update Engine  */ karate_man_prologue_engine_update,
+    /* Stop Engine    */ karate_man_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
-    /* Engine Events  */ prologue_karate_engine_events,
+    /* Engine Events  */ karate_man_prologue_engine_events,
     /* Input Event    */ NULL
 };

@@ -42,7 +42,7 @@ void func_08045ad0(void) {
 
 
 // [func_08045b00] MAIN - Init
-void func_08045b00(u32 ver) {
+void bouncy_road_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08045ad0();
@@ -60,12 +60,12 @@ void func_08045b88(void) {
 
 
 // [func_08045b8c] MAIN - Update
-void func_08045b8c(void) {
+void bouncy_road_prologue_engine_update(void) {
 }
 
 
 // [func_08045b90] MAIN - Close
-void func_08045b90(void) {
+void bouncy_road_prologue_engine_stop(void) {
 }
 
 

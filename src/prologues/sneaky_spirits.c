@@ -42,7 +42,7 @@ void func_0804514c(void) {
 
 
 // [func_0804517c] MAIN - Init
-void func_0804517c(u32 ver) {
+void sneaky_spirits_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_0804514c();
@@ -59,12 +59,12 @@ void func_080451d8(void) {
 
 
 // [func_080451dc] MAIN - Update
-void func_080451dc(void) {
+void sneaky_spirits_prologue_engine_update(void) {
 }
 
 
 // [func_080451e0] MAIN - Close
-void func_080451e0(void) {
+void sneaky_spirits_prologue_engine_stop(void) {
 }
 
 

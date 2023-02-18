@@ -42,7 +42,7 @@ void func_08045c2c(void) {
 
 
 // [func_08045c5c] MAIN - Init
-void func_08045c5c(u32 ver) {
+void rhythm_tweezers_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08045c2c();
@@ -59,12 +59,12 @@ void func_08045cb8(void) {
 
 
 // [func_08045cbc] MAIN - Update
-void func_08045cbc(void) {
+void rhythm_tweezers_prologue_engine_update(void) {
 }
 
 
 // [func_08045cc0] MAIN - Close
-void func_08045cc0(void) {
+void rhythm_tweezers_prologue_engine_stop(void) {
 }
 
 

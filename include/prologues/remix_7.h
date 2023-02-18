@@ -24,8 +24,8 @@ extern const struct SequenceData s_f_scratch_seqData;
 extern void func_08046c10(void);    // [func_08046c10] GFX_INIT Func_02
 extern void func_08046c20(void);    // [func_08046c20] GFX_INIT Func_01
 extern void func_08046c50(void);    // [func_08046c50] GFX_INIT Func_00
-extern void func_08046c80(u32);     // [func_08046c80] MAIN - Init
+extern void remix_7_prologue_engine_start(u32);     // [func_08046c80] MAIN - Init
 extern void func_08046cdc(void);    // [func_08046cdc] ENGINE Func_00   (STUB)
-extern void func_08046ce0(void);    // [func_08046ce0] MAIN - Update    (STUB)
-extern void func_08046ce4(void);    // [func_08046ce4] MAIN - Close     (STUB)
+extern void remix_7_prologue_engine_update(void);    // [func_08046ce0] MAIN - Update    (STUB)
+extern void remix_7_prologue_engine_stop(void);    // [func_08046ce4] MAIN - Close     (STUB)
 extern void func_08046ce8(u32);     // [func_08046ce8] Event 0 - Set Animation Frame (Text)

@@ -7,7 +7,7 @@
 extern const struct CompressedGraphics D_08c04434;
 extern const struct CompressedGraphics D_08c04940;
 extern const struct CompressedGraphics D_08c02a34;
-extern const Palette prologue_quiz_pal[];
+extern const Palette quiz_show_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -36,12 +36,12 @@ const struct GraphicsTable quiz_show_prologue_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ prologue_quiz_pal,
+        /* Src.  */ quiz_show_prologue_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ prologue_quiz_pal,
+        /* Src.  */ quiz_show_prologue_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -56,9 +56,9 @@ const EngineEvent quiz_show_prologue_engine_events[] = {
 // [D_089ebbcc] Prologue (Quiz Show) Game Engine
 const struct GameEngine quiz_show_prologue_engine = {
     /* Size in Memory */ sizeof(struct QuizShowPrologueInfo),
-    /* Start Engine   */ func_08046598,
-    /* Update Engine  */ func_080465fc,
-    /* Stop Engine    */ func_08046600,
+    /* Start Engine   */ quiz_show_prologue_engine_start,
+    /* Update Engine  */ quiz_show_prologue_engine_update,
+    /* Stop Engine    */ quiz_show_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ quiz_show_prologue_engine_events,

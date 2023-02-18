@@ -42,7 +42,7 @@ void func_0804646c(void) {
 
 
 // [func_0804649c] MAIN - Init
-void func_0804649c(u32 ver) {
+void polyrhythm_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_0804646c();
@@ -59,12 +59,12 @@ void func_080464f8(void) {
 
 
 // [func_080464fc] MAIN - Update
-void func_080464fc(void) {
+void polyrhythm_prologue_engine_update(void) {
 }
 
 
 // [func_08046500] MAIN - Close
-void func_08046500(void) {
+void polyrhythm_prologue_engine_stop(void) {
 }
 
 

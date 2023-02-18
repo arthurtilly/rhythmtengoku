@@ -4,7 +4,7 @@
 #include "karate_man_prologue_anim_cells.inc.c"
 
 // [D_088ada78] Title
-const struct Animation anim_prologue_karate_title[] = {
+const struct Animation anim_karate_man_prologue_title[] = {
     /* 000 */ { karate_man_prologue_cel000, 20 },
     /* 001 */ { karate_man_prologue_cel001, 10 },
     /* 002 */ { karate_man_prologue_cel002, 10 },
@@ -14,7 +14,7 @@ const struct Animation anim_prologue_karate_title[] = {
 };
 
 // [D_088adaa8] Kick
-const struct Animation anim_prologue_karate_kick[] = {
+const struct Animation anim_karate_man_prologue_kick[] = {
     /* 000 */ { karate_man_prologue_cel007, 60 },
     /* 001 */ { karate_man_prologue_cel005, 2 },
     /* 002 */ { karate_man_prologue_cel006, 2 },

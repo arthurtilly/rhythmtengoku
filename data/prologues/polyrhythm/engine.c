@@ -56,9 +56,9 @@ const EngineEvent polyrhythm_prologue_engine_events[] = {
 // [D_089eba0c] Prologue (Polyrhythm) Game Engine
 const struct GameEngine polyrhythm_prologue_engine = {
     /* Size in Memory */ sizeof(struct PolyrhythmPrologueInfo),
-    /* Start Engine   */ func_0804649c,
-    /* Update Engine  */ func_080464fc,
-    /* Stop Engine    */ func_08046500,
+    /* Start Engine   */ polyrhythm_prologue_engine_start,
+    /* Update Engine  */ polyrhythm_prologue_engine_update,
+    /* Stop Engine    */ polyrhythm_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ polyrhythm_prologue_engine_events,

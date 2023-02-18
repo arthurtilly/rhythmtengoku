@@ -7,8 +7,8 @@
 extern const struct CompressedGraphics D_08bfbe68;
 extern const struct CompressedGraphics D_08bfc1f8;
 extern const struct CompressedGraphics D_08bfa204;
-extern const Palette prologue_marching_bg_pal[];
-extern const Palette prologue_marching_obj_pal[];
+extern const Palette marching_orders_prologue_bg_pal[];
+extern const Palette marching_orders_prologue_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -37,12 +37,12 @@ const struct GraphicsTable marching_orders_prologue_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ prologue_marching_bg_pal,
+        /* Src.  */ marching_orders_prologue_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ prologue_marching_obj_pal,
+        /* Src.  */ marching_orders_prologue_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -57,9 +57,9 @@ const EngineEvent marching_orders_prologue_engine_events[] = {
 // [D_089eb6bc] Prologue (Marching Orders) Game Engine
 const struct GameEngine marching_orders_prologue_engine = {
     /* Size in Memory */ sizeof(struct MarchingOrdersPrologueInfo),
-    /* Start Engine   */ func_080462a4,
-    /* Update Engine  */ func_08046304,
-    /* Stop Engine    */ func_08046308,
+    /* Start Engine   */ marching_orders_prologue_engine_start,
+    /* Update Engine  */ marching_orders_prologue_engine_update,
+    /* Stop Engine    */ marching_orders_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ marching_orders_prologue_engine_events,

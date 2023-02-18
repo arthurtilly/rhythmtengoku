@@ -14,12 +14,12 @@ extern const Palette tram_and_pauline_prologue_pal[];
 
 
 // [D_089edbb8] Buffered Textures List
-const struct CompressedGraphics *const prologue_tram_pauline_buffered_textures[] = {
+const struct CompressedGraphics *const tram_and_pauline_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089edbbc] Graphics Table
-const struct GraphicsTable prologue_tram_pauline_gfx_table[] = {
+const struct GraphicsTable tram_and_pauline_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c3106c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -49,18 +49,18 @@ const struct GraphicsTable prologue_tram_pauline_gfx_table[] = {
 };
 
 // [D_089edc04] Engine Events
-const EngineEvent prologue_tram_pauline_engine_events[] = {
+const EngineEvent tram_and_pauline_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08047bd0
 };
 
 // [D_089edc08] Prologue (Tram & Pauline) Game Engine
 const struct GameEngine tram_and_pauline_prologue_engine = {
     /* Size in Memory */ sizeof(struct TramAndPaulinePrologueInfo),
-    /* Start Engine   */ func_08047b40,
-    /* Update Engine  */ func_08047bd4,
-    /* Stop Engine    */ func_08047bd8,
+    /* Start Engine   */ tram_and_pauline_prologue_engine_start,
+    /* Update Engine  */ tram_and_pauline_prologue_engine_update,
+    /* Stop Engine    */ tram_and_pauline_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
-    /* Engine Events  */ prologue_tram_pauline_engine_events,
+    /* Engine Events  */ tram_and_pauline_prologue_engine_events,
     /* Input Event    */ NULL
 };

@@ -57,9 +57,9 @@ const EngineEvent rhythm_tweezers_prologue_engine_events[] = {
 // [D_089eada4] Prologue (Rhythm Tweezers) Game Engine
 const struct GameEngine rhythm_tweezers_prologue_engine = {
     /* Size in Memory */ sizeof(struct RhythmTweezersPrologueInfo),
-    /* Start Engine   */ func_08045c5c,
-    /* Update Engine  */ func_08045cbc,
-    /* Stop Engine    */ func_08045cc0,
+    /* Start Engine   */ rhythm_tweezers_prologue_engine_start,
+    /* Update Engine  */ rhythm_tweezers_prologue_engine_update,
+    /* Stop Engine    */ rhythm_tweezers_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ rhythm_tweezers_prologue_engine_events,

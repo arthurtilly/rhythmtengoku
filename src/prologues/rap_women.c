@@ -42,7 +42,7 @@ void func_080470a0(void) {
 
 
 // [func_080470d0] MAIN - Init
-void func_080470d0(u32 ver) {
+void rap_women_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_080470a0();
@@ -59,12 +59,12 @@ void func_0804712c(void) {
 
 
 // [func_08047130] MAIN - Update
-void func_08047130(void) {
+void rap_women_prologue_engine_update(void) {
 }
 
 
 // [func_08047134] MAIN - Close
-void func_08047134(void) {
+void rap_women_prologue_engine_stop(void) {
 }
 
 

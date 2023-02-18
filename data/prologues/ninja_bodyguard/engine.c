@@ -56,9 +56,9 @@ const EngineEvent ninja_bodyguard_prologue_engine_events[] = {
 // [D_089ed1d8] Prologue (Ninja Bodyguard) Game Engine
 const struct GameEngine ninja_bodyguard_prologue_engine = {
     /* Size in Memory */ sizeof(struct NinjaBodyguardPrologueInfo),
-    /* Start Engine   */ func_0804732c,
-    /* Update Engine  */ func_0804739c,
-    /* Stop Engine    */ func_080473a0,
+    /* Start Engine   */ ninja_bodyguard_prologue_engine_start,
+    /* Update Engine  */ ninja_bodyguard_prologue_engine_update,
+    /* Stop Engine    */ ninja_bodyguard_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ ninja_bodyguard_prologue_engine_events,

@@ -56,9 +56,9 @@ const EngineEvent snappy_trio_prologue_engine_events[] = {
 // [D_089eb218] Prologue (The Snappy Trio) Game Engine
 const struct GameEngine snappy_trio_prologue_engine = {
     /* Size in Memory */ sizeof(struct SnappyTrioPrologueInfo),
-    /* Start Engine   */ func_08045f58,
-    /* Update Engine  */ func_08045fb8,
-    /* Stop Engine    */ func_08045fbc,
+    /* Start Engine   */ snappy_trio_prologue_engine_start,
+    /* Update Engine  */ snappy_trio_prologue_engine_update,
+    /* Stop Engine    */ snappy_trio_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ snappy_trio_prologue_engine_events,

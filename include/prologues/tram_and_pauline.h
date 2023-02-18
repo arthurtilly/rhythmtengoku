@@ -14,8 +14,8 @@ struct TramAndPaulinePrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *const prologue_tram_pauline_buffered_textures[]; // Buffered Textures
-extern const struct GraphicsTable prologue_tram_pauline_gfx_table[]; // Graphics Table
+extern const struct CompressedGraphics *const tram_and_pauline_prologue_buffered_textures[]; // Buffered Textures
+extern const struct GraphicsTable tram_and_pauline_prologue_gfx_table[]; // Graphics Table
 extern const struct Animation anim_tram_and_pauline_prologue_title[]; // Animation: Text (Tram & Pauline)
 extern const struct Animation anim_tram_and_pauline_prologue_characters[]; // Animation: Tram & Pauline
 extern const struct SequenceData s_jingle_tap_seqData;
@@ -24,8 +24,8 @@ extern const struct SequenceData s_jingle_tap_seqData;
 extern void func_08047ad0(void);    // [func_08047ad0] GFX_INIT Func_02
 extern void func_08047ae0(void);    // [func_08047ae0] GFX_INIT Func_01
 extern void func_08047b10(void);    // [func_08047b10] GFX_INIT Func_00
-extern void func_08047b40(u32);     // [func_08047b40] MAIN - Init
+extern void tram_and_pauline_prologue_engine_start(u32);     // [func_08047b40] MAIN - Init
 extern void func_08047bd0(void);    // [func_08047bd0] ENGINE Func_00   (STUB)
-extern void func_08047bd4(void);    // [func_08047bd4] MAIN - Update    (STUB)
-extern void func_08047bd8(void);    // [func_08047bd8] MAIN - Close     (STUB)
+extern void tram_and_pauline_prologue_engine_update(void);    // [func_08047bd4] MAIN - Update    (STUB)
+extern void tram_and_pauline_prologue_engine_stop(void);    // [func_08047bd8] MAIN - Close     (STUB)
 extern void func_08047bdc(void);    // [func_08047bdc] Event 0 - Play Animation (Text)

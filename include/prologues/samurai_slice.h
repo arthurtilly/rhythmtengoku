@@ -24,8 +24,8 @@ extern const struct SequenceData s_f_iai_title_seqData;
 extern void func_08045fe4(void);    // [func_08045fe4] GFX_INIT Func_02
 extern void func_08045ff4(void);    // [func_08045ff4] GFX_INIT Func_01
 extern void func_08046024(void);    // [func_08046024] GFX_INIT Func_00
-extern void func_08046054(u32);     // [func_08046054] MAIN - Init
+extern void samurai_slice_prologue_engine_start(u32);     // [func_08046054] MAIN - Init
 extern void func_080460c8(void);    // [func_080460c8] ENGINE Func_00   (STUB)
-extern void func_080460cc(void);    // [func_080460cc] MAIN - Update    (STUB)
-extern void func_080460d0(void);    // [func_080460d0] MAIN - Close     (STUB)
+extern void samurai_slice_prologue_engine_update(void);    // [func_080460cc] MAIN - Update    (STUB)
+extern void samurai_slice_prologue_engine_stop(void);    // [func_080460d0] MAIN - Close     (STUB)
 extern void func_080460d4(u32);     // [func_080460d4] Event 0 - Set Animation Frame (Text)

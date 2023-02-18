@@ -42,7 +42,7 @@ void func_08045344(void) {
 
 
 // [func_08045374] MAIN - Init
-void func_08045374(u32 ver) {
+void bon_odori_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08045344();
@@ -59,12 +59,12 @@ void func_080453d0(void) {
 
 
 // [func_080453d4] MAIN - Update
-void func_080453d4(void) {
+void bon_odori_prologue_engine_update(void) {
 }
 
 
 // [func_080453d8] MAIN - Close
-void func_080453d8(void) {
+void bon_odori_prologue_engine_stop(void) {
 }
 
 

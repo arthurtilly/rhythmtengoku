@@ -56,9 +56,9 @@ const EngineEvent sneaky_spirits_prologue_engine_events[] = {
 // [D_089ea0d8] Prologue (Sneaky Spirits) Game Engine
 const struct GameEngine sneaky_spirits_prologue_engine = {
     /* Size in Memory */ sizeof(struct SneakySpiritsPrologueInfo),
-    /* Start Engine   */ func_0804517c,
-    /* Update Engine  */ func_080451dc,
-    /* Stop Engine    */ func_080451e0,
+    /* Start Engine   */ sneaky_spirits_prologue_engine_start,
+    /* Update Engine  */ sneaky_spirits_prologue_engine_update,
+    /* Stop Engine    */ sneaky_spirits_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ sneaky_spirits_prologue_engine_events,

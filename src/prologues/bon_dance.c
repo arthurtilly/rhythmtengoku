@@ -42,7 +42,7 @@ void func_08045448(void) {
 
 
 // [func_08045478] MAIN - Init
-void func_08045478(u32 ver) {
+void bon_dance_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08045448();
@@ -59,12 +59,12 @@ void func_080454d4(void) {
 
 
 // [func_080454d8] MAIN - Update
-void func_080454d8(void) {
+void bon_dance_prologue_engine_update(void) {
 }
 
 
 // [func_080454dc] MAIN - Close
-void func_080454dc(void) {
+void bon_dance_prologue_engine_stop(void) {
 }
 
 

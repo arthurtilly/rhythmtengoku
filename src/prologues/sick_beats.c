@@ -42,7 +42,7 @@ void func_08047c48(void) {
 
 
 // [func_08047c78] MAIN - Init
-void func_08047c78(u32 ver) {
+void sick_beats_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08047c48();
@@ -60,12 +60,12 @@ void func_08047d00(void) {
 
 
 // [func_08047d04] MAIN - Update
-void func_08047d04(void) {
+void sick_beats_prologue_engine_update(void) {
 }
 
 
 // [func_08047d08] MAIN - Close
-void func_08047d08(void) {
+void sick_beats_prologue_engine_stop(void) {
 }
 
 

@@ -42,7 +42,7 @@ void func_08045d30(void) {
 
 
 // [func_08045d60] MAIN - Init
-void func_08045d60(u32 ver) {
+void fireworks_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08045d30();
@@ -59,12 +59,12 @@ void func_08045dbc(void) {
 
 
 // [func_08045dc0] MAIN - Update
-void func_08045dc0(void) {
+void fireworks_prologue_engine_update(void) {
 }
 
 
 // [func_08045dc4] MAIN - Close
-void func_08045dc4(void) {
+void fireworks_prologue_engine_stop(void) {
 }
 
 

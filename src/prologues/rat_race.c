@@ -42,7 +42,7 @@ void func_080471a4(void) {
 
 
 // [func_080471d4] MAIN - Init
-void func_080471d4(u32 ver) {
+void rat_race_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_080471a4();
@@ -60,12 +60,12 @@ void func_08047250(void) {
 
 
 // [func_08047254] MAIN - Update
-void func_08047254(void) {
+void rat_race_prologue_engine_update(void) {
 }
 
 
 // [func_08047258] MAIN - Close
-void func_08047258(void) {
+void rat_race_prologue_engine_stop(void) {
 }
 
 

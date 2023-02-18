@@ -42,7 +42,7 @@ void func_08046a58(void) {
 
 
 // [func_08046a88] MAIN - Init
-void func_08046a88(u32 ver) {
+void remix_5_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08046a58();
@@ -59,12 +59,12 @@ void func_08046ae4(void) {
 
 
 // [func_08046ae8] MAIN - Update
-void func_08046ae8(void) {
+void remix_5_prologue_engine_update(void) {
 }
 
 
 // [func_08046aec] MAIN - Close
-void func_08046aec(void) {
+void remix_5_prologue_engine_stop(void) {
 }
 
 

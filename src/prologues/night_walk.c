@@ -42,7 +42,7 @@ void func_080457f4(void) {
 
 
 // [func_08045824] MAIN - Init
-void func_08045824(u32 ver) {
+void night_walk_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_080457f4();
@@ -61,12 +61,12 @@ void func_080458e0(void) {
 
 
 // [func_080458e4] MAIN - Update
-void func_080458e4(void) {
+void night_walk_prologue_engine_update(void) {
 }
 
 
 // [func_080458e8] MAIN - Close
-void func_080458e8(void) {
+void night_walk_prologue_engine_stop(void) {
 }
 
 

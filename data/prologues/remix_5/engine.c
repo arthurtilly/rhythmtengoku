@@ -56,9 +56,9 @@ const EngineEvent remix_5_prologue_engine_events[] = {
 // [D_089ec438] Prologue (Remix 5) Game Engine
 const struct GameEngine remix_5_prologue_engine = {
     /* Size in Memory */ sizeof(struct Remix5PrologueInfo),
-    /* Start Engine   */ func_08046a88,
-    /* Update Engine  */ func_08046ae8,
-    /* Stop Engine    */ func_08046aec,
+    /* Start Engine   */ remix_5_prologue_engine_start,
+    /* Update Engine  */ remix_5_prologue_engine_update,
+    /* Stop Engine    */ remix_5_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ remix_5_prologue_engine_events,

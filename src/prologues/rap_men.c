@@ -42,7 +42,7 @@ void func_08046f9c(void) {
 
 
 // [func_08046fcc] MAIN - Init
-void func_08046fcc(u32 ver) {
+void rap_men_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08046f9c();
@@ -59,12 +59,12 @@ void func_08047028(void) {
 
 
 // [func_0804702c] MAIN - Update
-void func_0804702c(void) {
+void rap_men_prologue_engine_update(void) {
 }
 
 
 // [func_08047030] MAIN - Close
-void func_08047030(void) {
+void rap_men_prologue_engine_stop(void) {
 }
 
 

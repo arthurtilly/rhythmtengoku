@@ -42,7 +42,7 @@ void func_08046138(void) {
 
 
 // [func_08046168] MAIN - Init
-void func_08046168(u32 ver) {
+void power_calligraphy_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08046138();
@@ -59,12 +59,12 @@ void func_080461c4(void) {
 
 
 // [func_080461c8] MAIN - Update
-void func_080461c8(void) {
+void power_calligraphy_prologue_engine_update(void) {
 }
 
 
 // [func_080461cc] MAIN - Close
-void func_080461cc(void) {
+void power_calligraphy_prologue_engine_stop(void) {
 }
 
 

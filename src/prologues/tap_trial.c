@@ -42,7 +42,7 @@ void func_080476b8(void) {
 
 
 // [func_080476e8] MAIN - Init
-void func_080476e8(u32 ver) {
+void tap_trial_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_080476b8();
@@ -60,12 +60,12 @@ void func_08047764(void) {
 
 
 // [func_08047768] MAIN - Update
-void func_08047768(void) {
+void tap_trial_prologue_engine_update(void) {
 }
 
 
 // [func_0804776c] MAIN - Close
-void func_0804776c(void) {
+void tap_trial_prologue_engine_stop(void) {
 }
 
 

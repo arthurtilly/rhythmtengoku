@@ -42,7 +42,7 @@ void func_08046e48(void) {
 
 
 // [func_08046e78] MAIN - Init
-void func_08046e78(u32 ver) {
+void bunny_hop_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08046e48();
@@ -60,12 +60,12 @@ void func_08046f00(void) {
 
 
 // [func_08046f04] MAIN - Update
-void func_08046f04(void) {
+void bunny_hop_prologue_engine_update(void) {
 }
 
 
 // [func_08046f08] MAIN - Close
-void func_08046f08(void) {
+void bunny_hop_prologue_engine_stop(void) {
 }
 
 

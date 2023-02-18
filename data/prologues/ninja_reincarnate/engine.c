@@ -56,9 +56,9 @@ const EngineEvent ninja_reincarnate_prologue_engine_events[] = {
 // [D_089ed314] Prologue (Ninja Reincarnate) Game Engine
 const struct GameEngine ninja_reincarnate_engine = {
     /* Size in Memory */ sizeof(struct NinjaReincarnatePrologueInfo),
-    /* Start Engine   */ func_08047444,
-    /* Update Engine  */ func_080474a4,
-    /* Stop Engine    */ func_080474a8,
+    /* Start Engine   */ ninja_reincarnate_prologue_engine_start,
+    /* Update Engine  */ ninja_reincarnate_prologue_engine_update,
+    /* Stop Engine    */ ninja_reincarnate_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ ninja_reincarnate_prologue_engine_events,

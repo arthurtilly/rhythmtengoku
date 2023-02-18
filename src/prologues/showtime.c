@@ -42,7 +42,7 @@ void func_08045984(void) {
 
 
 // [func_080459b4] MAIN - Init
-void func_080459b4(u32 ver) {
+void showtime_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08045984();
@@ -60,12 +60,12 @@ void func_08045a44(void) {
 
 
 // [func_08045a48] MAIN - Update
-void func_08045a48(void) {
+void showtime_prologue_engine_update(void) {
 }
 
 
 // [func_08045a4c] MAIN - Close
-void func_08045a4c(void) {
+void showtime_prologue_engine_stop(void) {
 }
 
 

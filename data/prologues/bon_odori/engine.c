@@ -57,9 +57,9 @@ const EngineEvent bon_odori_prologue_engine_events[] = {
 // [D_089ea434] Prologue (The Bon Odori) Game Engine
 const struct GameEngine bon_odori_prologue_engine = {
     /* Size in Memory */ sizeof(struct BonOdoriPrologueInfo),
-    /* Start Engine   */ func_08045374,
-    /* Update Engine  */ func_080453d4,
-    /* Stop Engine    */ func_080453d8,
+    /* Start Engine   */ bon_odori_prologue_engine_start,
+    /* Update Engine  */ bon_odori_prologue_engine_update,
+    /* Stop Engine    */ bon_odori_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ bon_odori_prologue_engine_events,

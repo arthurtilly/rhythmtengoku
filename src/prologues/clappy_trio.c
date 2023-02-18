@@ -42,7 +42,7 @@ void func_08045e2c(void) {
 
 
 // [func_08045e5c] MAIN - Init
-void func_08045e5c(u32 ver) {
+void clappy_trio_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08045e2c();
@@ -59,12 +59,12 @@ void func_08045eb8(void) {
 
 
 // [func_08045ebc] MAIN - Update
-void func_08045ebc(void) {
+void clappy_trio_prologue_engine_update(void) {
 }
 
 
 // [func_08045ec0] MAIN - Close
-void func_08045ec0(void) {
+void clappy_trio_prologue_engine_stop(void) {
 }
 
 

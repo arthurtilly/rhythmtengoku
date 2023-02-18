@@ -42,7 +42,7 @@ void func_08047414(void) {
 
 
 // [func_08047444] MAIN - Init
-void func_08047444(u32 ver) {
+void ninja_reincarnate_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08047414();
@@ -59,12 +59,12 @@ void func_080474a0(void) {
 
 
 // [func_080474a4] MAIN - Update
-void func_080474a4(void) {
+void ninja_reincarnate_prologue_engine_update(void) {
 }
 
 
 // [func_080474a8] MAIN - Close
-void func_080474a8(void) {
+void ninja_reincarnate_prologue_engine_stop(void) {
 }
 
 

@@ -57,9 +57,9 @@ const EngineEvent cosmic_dance_prologue_engine_events[] = {
 // [D_089ea8b4] Prologue (Cosmic Dance) Game Engine
 const struct GameEngine cosmic_dance_prologue_engine = {
     /* Size in Memory */ sizeof(struct CosmicDancePrologueInfo),
-    /* Start Engine   */ func_080456d4,
-    /* Update Engine  */ func_08045734,
-    /* Stop Engine    */ func_08045738,
+    /* Start Engine   */ cosmic_dance_prologue_engine_start,
+    /* Update Engine  */ cosmic_dance_prologue_engine_update,
+    /* Stop Engine    */ cosmic_dance_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ cosmic_dance_prologue_engine_events,

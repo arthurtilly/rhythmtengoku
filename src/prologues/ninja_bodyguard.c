@@ -42,7 +42,7 @@ void func_080472fc(void) {
 
 
 // [func_0804732c] MAIN - Init
-void func_0804732c(u32 ver) {
+void ninja_bodyguard_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_080472fc();
@@ -60,12 +60,12 @@ void func_08047398(void) {
 
 
 // [func_0804739c] MAIN - Update
-void func_0804739c(void) {
+void ninja_bodyguard_prologue_engine_update(void) {
 }
 
 
 // [func_080473a0] MAIN - Close
-void func_080473a0(void) {
+void ninja_bodyguard_prologue_engine_stop(void) {
 }
 
 

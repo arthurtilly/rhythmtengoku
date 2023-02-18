@@ -56,9 +56,9 @@ const EngineEvent space_dance_prologue_engine_events[] = {
 // [D_089ed450] Prologue (Space Dance) Game Engine
 const struct GameEngine space_dance_prologue_engine = {
     /* Size in Memory */ sizeof(struct SpaceDancePrologueInfo),
-    /* Start Engine   */ func_0804754c,
-    /* Update Engine  */ func_08047628,
-    /* Stop Engine    */ func_0804762c,
+    /* Start Engine   */ space_dance_prologue_engine_start,
+    /* Update Engine  */ space_dance_prologue_engine_update,
+    /* Stop Engine    */ space_dance_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ space_dance_prologue_engine_events,

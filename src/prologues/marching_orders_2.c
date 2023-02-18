@@ -42,14 +42,14 @@ void func_08046370(void) {
 
 
 // [func_080463a0] MAIN - Init
-void func_080463a0(u32 ver) {
+void marching_orders_2_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08046370();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_prologue_marching_2_title, 0, 112, 140, 0, 0, 0x7f, 0);
+    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_marching_orders_2_prologue_title, 0, 112, 140, 0, 0, 0x7f, 0);
 }
 
 
@@ -59,12 +59,12 @@ void func_080463fc(void) {
 
 
 // [func_08046400] MAIN - Update
-void func_08046400(void) {
+void marching_orders_2_prologue_engine_update(void) {
 }
 
 
 // [func_08046404] MAIN - Close
-void func_08046404(void) {
+void marching_orders_2_prologue_engine_stop(void) {
 }
 
 

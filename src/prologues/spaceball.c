@@ -42,7 +42,7 @@ void func_08045248(void) {
 
 
 // [func_08045278] MAIN - Init
-void func_08045278(u32 ver) {
+void spaceball_prologue_engine_start(u32 ver) {
     gPrologueInfo->ver = ver;
 
     func_08045248();
@@ -59,12 +59,12 @@ void func_080452d4(void) {
 
 
 // [func_080452d8] MAIN - Update
-void func_080452d8(void) {
+void spaceball_prologue_engine_update(void) {
 }
 
 
 // [func_080452dc] MAIN - Close
-void func_080452dc(void) {
+void spaceball_prologue_engine_stop(void) {
 }
 
 

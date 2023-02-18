@@ -56,9 +56,9 @@ const EngineEvent fireworks_prologue_engine_events[] = {
 // [D_089eaed4] Prologue (Fireworks) Game Engine
 const struct GameEngine fireworks_prologue_engine = {
     /* Size in Memory */ sizeof(struct FireworksPrologueInfo),
-    /* Start Engine   */ func_08045d60,
-    /* Update Engine  */ func_08045dc0,
-    /* Stop Engine    */ func_08045dc4,
+    /* Start Engine   */ fireworks_prologue_engine_start,
+    /* Update Engine  */ fireworks_prologue_engine_update,
+    /* Stop Engine    */ fireworks_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
     /* Engine Events  */ fireworks_prologue_engine_events,

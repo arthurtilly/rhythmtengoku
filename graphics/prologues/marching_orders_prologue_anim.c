@@ -4,7 +4,7 @@
 #include "marching_orders_prologue_anim_cells.inc.c"
 
 // [D_088b09b4] Title
-const struct Animation anim_prologue_marching_title[] = {
+const struct Animation anim_marching_orders_prologue_title[] = {
     /* 000 */ { marching_orders_prologue_cel000, 40 },
     /* 001 */ { marching_orders_prologue_cel001, 20 },
     /* 002 */ { marching_orders_prologue_cel002, 20 },
