@@ -649,7 +649,7 @@ const EngineEvent drum_studio_engine_events[] = {
 };
 
 // [D_089e2ea0] Drum Lessons Game Engine
-const struct GameEngine D_089e2ea0 = {
+const struct GameEngine drum_studio_engine = {
     /* Size in Memory */ 0x580,
     /* Start Engine   */ drum_studio_engine_start,
     /* Update Engine  */ drum_studio_engine_update,

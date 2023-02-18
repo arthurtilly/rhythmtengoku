@@ -57,7 +57,7 @@ extern const struct Animation *const quiz_face_failure_anim[];
 extern const struct Animation *const quiz_host_button_press_anim[];
 extern const struct Animation *const quiz_ex_host_face_anim[];
 extern const struct Animation *const quiz_ex_player_face_anim[];
-extern const struct GameEngine D_089e5ec0;
+extern const struct GameEngine quiz_show_engine;
 
 
 // Functions:

@@ -1,9 +1,9 @@
-#include "engines/machines.h"
+#include "engines/rhythm_toys.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gRhythmToyInfo ((struct RhythmToyInfo *)D_030055d0)
+#define gRhythmToysInfo ((struct RhythmToysInfo *)D_030055d0)
 
 
 /* RHYTHM TOYS */

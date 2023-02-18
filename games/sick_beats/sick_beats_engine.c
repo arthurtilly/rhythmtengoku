@@ -328,7 +328,7 @@ const EngineEvent sick_beats_engine_events[] = {
 };
 
 // [D_089e9330] Sick Beats Game Engine
-const struct GameEngine D_089e9330 = {
+const struct GameEngine sick_beats_engine = {
     /* Size in Memory */ 0x274,
     /* Start Engine   */ sick_beats_engine_start,
     /* Update Engine  */ sick_beats_engine_update,

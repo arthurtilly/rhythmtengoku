@@ -35,13 +35,13 @@
 @ Load Game: Night Walk
 .macro load_night_walk
     load_night_walk_labels
-    load_game NIGHT_WALK, 0
+    load_game night_walk_engine, 0
 .endm
 
 @ Load Game: Night Walk (unused, getting a Barely will reset the current star stage progress)
 .macro load_night_walk_ver1
     load_night_walk_labels
-    load_game NIGHT_WALK, 1
+    load_game night_walk_engine, 1
 .endm
 
 
@@ -50,7 +50,7 @@
 
 @ Run Game Event
 .macro night_walk_event event, args
-    game_event NIGHT_WALK, \event, \args
+    game_event night_walk_engine, \event, \args
 .endm
 
 

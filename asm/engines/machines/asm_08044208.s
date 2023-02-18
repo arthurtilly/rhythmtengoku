@@ -3,7 +3,7 @@ asm(".syntax unified \n\
 .balign 4, 0 \n\
 \n\
 thumb_func_start func_08044208 \n\
-/* 08044208 */ LDR R1, =rhythm_toy_sprite_table \n\
+/* 08044208 */ LDR R1, =rhythm_toys_sprite_table \n\
 /* 0804420a */ LSLS R0, R0, 0x2 \n\
 /* 0804420c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0804420e */ LDR R1, =D_030055d0 \n\

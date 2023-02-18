@@ -279,7 +279,7 @@ const EngineEvent mannequin_engine_events[] = {
 };
 
 // [D_089df5f8] Mannequin Factory Game Engine
-const struct GameEngine D_089df5f8 = {
+const struct GameEngine mannequin_factory_engine = {
     /* Size in Memory */ 0x434,
     /* Start Engine   */ mannequin_engine_start,
     /* Update Engine  */ mannequin_engine_update,

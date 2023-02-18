@@ -272,7 +272,7 @@ const EngineEvent clappy_trio_engine_events[] = {
 };
 
 // [D_089e4778] The Clappy Trio Game Engine
-const struct GameEngine D_089e4778 = {
+const struct GameEngine clappy_trio_engine = {
     /* Size in Memory */ 0x1c,
     /* Start Engine   */ clappy_trio_engine_start,
     /* Update Engine  */ clappy_trio_engine_update,

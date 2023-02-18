@@ -277,7 +277,7 @@ extern const struct Vector2 D_089e2b58[];
 extern const struct Vector2 D_089e2b78[];
 extern const struct SpritePlaybackData D_089e2b98[];
 extern const u16 D_089e2ba8[];
-extern const struct GameEngine D_089e2ea0;
+extern const struct GameEngine drum_studio_engine;
 
 
 // Functions - Drum Lessons:

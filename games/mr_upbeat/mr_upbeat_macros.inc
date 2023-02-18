@@ -33,7 +33,7 @@
 @ Load Game: Mr. Upbeat
 .macro load_mr_upbeat
     load_mr_upbeat_labels
-    load_game MR_UPBEAT, 0
+    load_game mr_upbeat_engine, 0
 .endm
 
 
@@ -42,7 +42,7 @@
 
 @ Run Game Event
 .macro mr_upbeat_event event, args
-    game_event MR_UPBEAT, \event, \args
+    game_event mr_upbeat_engine, \event, \args
 .endm
 
 

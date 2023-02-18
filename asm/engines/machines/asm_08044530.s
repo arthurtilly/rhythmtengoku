@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start rhythm_toy_engine_start \n\
+thumb_func_start rhythm_toys_engine_start \n\
 /* 08044530 */ PUSH {R4-R7, LR} \n\
 /* 08044532 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 08044534 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -16,13 +16,13 @@ thumb_func_start rhythm_toy_engine_start \n\
 /* 08044544 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08044546 */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 08044548 */ STRB R5, [R0] \n\
-/* 0804454a */ LDR R1, =rhythm_toy_demo_bpm_table \n\
+/* 0804454a */ LDR R1, =rhythm_toys_demo_bpm_table \n\
 /* 0804454c */ LSLS R0, R5, 0x2 \n\
 /* 0804454e */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08044550 */ LDR R0, [R0] \n\
 /* 08044552 */ LDRH R0, [R0] \n\
 /* 08044554 */ BL set_beatscript_tempo \n\
-/* 08044558 */ BL rhythm_toy_init_gfx1 \n\
+/* 08044558 */ BL rhythm_toys_init_gfx1 \n\
 /* 0804455c */ BL scene_show_obj_layer \n\
 /* 08044560 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08044562 */ STR R2, [SP] \n\
@@ -138,7 +138,7 @@ branch_08044644: \n\
 /* 0804465a */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
  \n\
 branch_0804465c: \n\
-/* 0804465c */ LDR R4, =rhythm_toy_button_anim_ids \n\
+/* 0804465c */ LDR R4, =rhythm_toys_button_anim_ids \n\
 /* 0804465e */ ADDS R4, R7, R4 @ Set R4 to R7 + R4 \n\
 /* 08044660 */ LDRB R0, [R4] \n\
 /* 08044662 */ BL func_08044208 \n\

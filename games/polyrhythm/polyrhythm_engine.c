@@ -275,7 +275,7 @@ const EngineEvent polyrhythm_engine_events[] = {
 };
 
 // [D_089e5be0] Polyrhythm Game Engine
-const struct GameEngine D_089e5be0 = {
+const struct GameEngine polyrhythm_engine = {
     /* Size in Memory */ sizeof(struct PolyrhythmInfo),
     /* Start Engine   */ polyrhythm_engine_start,
     /* Update Engine  */ polyrhythm_engine_update,

@@ -52,7 +52,7 @@ branch_0804434a: \n\
 /* 0804437e */ MOVS R0, 0xD9 @ Set R0 to 0xD9 \n\
 /* 08044380 */ LSLS R0, R0, 0x2 \n\
 /* 08044382 */ ADDS R2, R3, R0 @ Set R2 to R3 + R0 \n\
-/* 08044384 */ LDR R1, =rhythm_toy_demo_table \n\
+/* 08044384 */ LDR R1, =rhythm_toys_demo_table \n\
 /* 08044386 */ MOV R4, R9 @ Set R4 to R9 \n\
 /* 08044388 */ LSLS R0, R4, 0x2 \n\
 /* 0804438a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

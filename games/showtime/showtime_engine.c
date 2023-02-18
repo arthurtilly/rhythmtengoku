@@ -270,7 +270,7 @@ const EngineEvent showtime_engine_events[] = {
 };
 
 // [D_089e3aa4] Showtime Game Engine
-const struct GameEngine D_089e3aa4 = {
+const struct GameEngine showtime_engine = {
     /* Size in Memory */ sizeof(struct ShowtimeInfo),
     /* Start Engine   */ showtime_engine_start,
     /* Update Engine  */ showtime_engine_update,

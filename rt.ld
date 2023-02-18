@@ -74,7 +74,7 @@ SECTIONS {
 		build/src/engines/tram_and_pauline.c.o(.bss*);
 		build/src/engines/horse_machine.c.o(.bss*);
 		build/src/engines/sick_beats.c.o(.bss*);
-		build/src/engines/machines.c.o(.bss*);
+		build/src/engines/rhythm_toys.c.o(.bss*);
 		build/src/engines/wizards_waltz.c.o(.bss*);
 		build/src/prologues/sneaky_spirits.c.o(.bss*);
 		build/src/prologues/spaceball.c.o(.bss*);
@@ -192,7 +192,7 @@ SECTIONS {
 		build/src/engines/tram_and_pauline.c.o(.text);
 		build/src/engines/horse_machine.c.o(.text);
 		build/src/engines/sick_beats.c.o(.text);
-		build/src/engines/machines.c.o(.text);
+		build/src/engines/rhythm_toys.c.o(.text);
 		build/src/engines/wizards_waltz.c.o(.text);
 		build/src/prologues/sneaky_spirits.c.o(.text);
 		build/src/prologues/spaceball.c.o(.text);
@@ -1625,7 +1625,7 @@ SECTIONS {
         build/games/tram_and_pauline/tram_and_pauline_engine.c.o(.rodata*);
         build/games/horse_machine/horse_machine_engine.c.o(.rodata*);
         build/games/sick_beats/sick_beats_engine.c.o(.rodata*);
-        build/games/machines/machines_engine.c.o(.rodata*);
+        build/games/rhythm_toys/rhythm_toys_engine.c.o(.rodata*);
         build/games/wizards_waltz/wizards_waltz_engine.c.o(.rodata*);
 
         build/data/prologues/sneaky_spirits/engine.c.o(.rodata*);

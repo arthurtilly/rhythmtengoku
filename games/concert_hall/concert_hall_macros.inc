@@ -16,7 +16,7 @@
 @ Load Game: LIVE Menu
 .macro load_concert_hall
     load_concert_hall_labels
-    load_game CONCERT_HALL, 0
+    load_game concert_hall_engine, 0
 .endm
 
 
@@ -25,7 +25,7 @@
 
 @ Run Game Event
 .macro concert_hall_event event, args
-    game_event CONCERT_HALL, \event, \args
+    game_event concert_hall_engine, \event, \args
 .endm
 
 

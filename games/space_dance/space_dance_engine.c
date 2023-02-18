@@ -470,7 +470,7 @@ const EngineEvent space_dance_engine_events[] = {
 };
 
 // [D_089e702c] Space Dance Game Engine
-const struct GameEngine D_089e702c = {
+const struct GameEngine space_dance_engine = {
     /* Size in Memory */ 0x38,
     /* Start Engine   */ space_dance_engine_start,
     /* Update Engine  */ space_dance_engine_update,

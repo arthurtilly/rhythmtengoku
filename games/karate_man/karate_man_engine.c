@@ -53,7 +53,7 @@ const EngineEvent karate_engine_events[] = {
 };
 
 // [D_089df044] Karate Man Game Engine
-const struct GameEngine D_089df044 = {
+const struct GameEngine karate_man_engine = {
     /* Size in Memory */ sizeof(struct KarateManInfo),
     /* Start Engine   */ karate_engine_start,
     /* Update Engine  */ karate_engine_update,

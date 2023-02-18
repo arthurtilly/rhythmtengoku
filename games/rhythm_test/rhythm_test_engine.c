@@ -776,7 +776,7 @@ const EngineEvent rhythm_test_engine_events[] = {
 };
 
 // [D_089e50b8] Rhythm Test Game Engine
-const struct GameEngine D_089e50b8 = {
+const struct GameEngine rhythm_test_engine = {
     /* Size in Memory */ 0x3e8,
     /* Start Engine   */ rhythm_test_engine_start,
     /* Update Engine  */ rhythm_test_engine_update,

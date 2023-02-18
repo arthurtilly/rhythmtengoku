@@ -305,7 +305,7 @@ const EngineEvent ninja_engine_events[] = {
 };
 
 // [D_089e6b84] Ninja Bodyguard Game Engine
-const struct GameEngine D_089e6b84 = {
+const struct GameEngine ninja_bodyguard_engine = {
     /* Size in Memory */ 0x300,
     /* Start Engine   */ ninja_engine_start,
     /* Update Engine  */ ninja_engine_update,

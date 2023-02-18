@@ -43,19 +43,19 @@
 @ Load Game: Toss Boys
 .macro load_toss_boys
     load_toss_boys_labels
-    load_game TOSS_BOYS, 0
+    load_game toss_boys_engine, 0
 .endm
 
 @ Load Game: Toss Boys (Remix 5)
 .macro load_toss_boys_remix5
     load_toss_boys_labels
-    load_game TOSS_BOYS, 1
+    load_game toss_boys_engine, 1
 .endm
 
 @ Load Game: Toss Boys 2
 .macro load_toss_boys_2
     load_toss_boys_labels
-    load_game TOSS_BOYS, 2
+    load_game toss_boys_engine, 2
 .endm
 
 
@@ -64,7 +64,7 @@
 
 @ Run Game Event
 .macro toss_boys_event event, args
-    game_event TOSS_BOYS, \event, \args
+    game_event toss_boys_engine, \event, \args
 .endm
 
 

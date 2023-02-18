@@ -11,7 +11,7 @@ thumb_func_start func_08044268 \n\
 /* 08044272 */ LDR R7, =D_030055d0 \n\
 /* 08044274 */ LDR R2, [R7] \n\
 /* 08044276 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08044278 */ LDR R0, =rhythm_toy_demo_table \n\
+/* 08044278 */ LDR R0, =rhythm_toys_demo_table \n\
 /* 0804427a */ LDRB R1, [R2] \n\
 /* 0804427c */ LSLS R1, R1, 0x2 \n\
 /* 0804427e */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\

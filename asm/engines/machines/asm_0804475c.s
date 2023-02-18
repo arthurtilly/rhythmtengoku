@@ -27,7 +27,7 @@ branch_0804477c: \n\
  \n\
 branch_08044784: \n\
 /* 08044784 */ LDRH R5, [R0] \n\
-/* 08044786 */ LDR R0, =rhythm_toy_machine_anim_ids \n\
+/* 08044786 */ LDR R0, =rhythm_toys_machine_anim_ids \n\
 /* 08044788 */ ADDS R0, R6, R0 @ Set R0 to R6 + R0 \n\
 /* 0804478a */ LDRB R0, [R0] \n\
 /* 0804478c */ BL func_08044208 \n\
@@ -55,7 +55,7 @@ branch_08044784: \n\
 /* 080447bc */ LDRSH R1, [R1, R2] \n\
 /* 080447be */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080447c0 */ BL func_0804cebc \n\
-/* 080447c4 */ LDR R1, =rhythm_toy_play_func_table \n\
+/* 080447c4 */ LDR R1, =rhythm_toys_play_func_table \n\
 /* 080447c6 */ LDR R0, [R4] \n\
 /* 080447c8 */ LDRB R0, [R0] \n\
 /* 080447ca */ LSLS R0, R0, 0x2 \n\

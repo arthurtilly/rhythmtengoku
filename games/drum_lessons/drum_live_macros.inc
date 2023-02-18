@@ -30,19 +30,19 @@
 @ Load Game: Drum Girls LIVE
 .macro load_drum_girls_live
     load_drum_live_labels
-    load_game DRUM_LIVE, 0
+    load_game drum_live_engine, 0
 .endm
 
 @ Load Game: Drum Boys LIVE
 .macro load_drum_boys_live
     load_drum_live_labels
-    load_game DRUM_LIVE, 1
+    load_game drum_live_engine, 1
 .endm
 
 @ Load Game: Drum Samurai's Band LIVE
 .macro load_drum_samurai_band_live
     load_drum_live_labels
-    load_game DRUM_LIVE, 2
+    load_game drum_live_engine, 2
 .endm
 
 
@@ -51,7 +51,7 @@
 
 @ Run Game Event
 .macro drum_live_event event, args
-    game_event DRUM_LIVE, \event, \args
+    game_event drum_live_engine, \event, \args
 .endm
 
 

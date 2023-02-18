@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_08048264 \n\
 /* 08048264 */ PUSH {R4, R5, LR} \n\
 /* 08048266 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
-/* 08048268 */ LDR R4, =D_089e2ea0 \n\
+/* 08048268 */ LDR R4, =drum_studio_engine \n\
 /* 0804826a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0804826c */ MOVS R1, 0xE @ Set R1 to 0xE \n\
 /* 0804826e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\

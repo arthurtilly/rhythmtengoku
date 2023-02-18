@@ -24,13 +24,13 @@
 @ Load Game: Sick Beats
 .macro load_sick_beats
     load_sick_beats_labels
-    load_game SICK_BEATS, 0
+    load_game sick_beats_engine, 0
 .endm
 
 @ Load Game: Sick Beats Endless
 .macro load_sick_beats_endless
     load_sick_beats_labels
-    load_game SICK_BEATS, 1
+    load_game sick_beats_engine, 1
 .endm
 
 
@@ -39,7 +39,7 @@
 
 @ Run Game Event
 .macro sick_beats_event event, args
-    game_event SICK_BEATS, \event, \args
+    game_event sick_beats_engine, \event, \args
 .endm
 
 

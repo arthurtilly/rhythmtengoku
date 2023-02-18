@@ -6,16 +6,16 @@
 /* Medal Corner Menus */
 
 
-// Rhythm Toy - Beat Box
+// Rhythm Toys - Beat Box
 const char text_toys_menu_rap_machine[] = "ラップ マシーン";
 
-// Rhythm Toy - Love Machine
+// Rhythm Toys - Love Machine
 const char text_toys_menu_confession_machine[] = "告白 マシーン";
 
-// Rhythm Toy - Mechanical Horse
+// Rhythm Toys - Mechanical Horse
 const char text_toys_menu_horse_machine[] = "うま マシーン";
 
-// Rhythm Toy - Meow Mixer
+// Rhythm Toys - Meow Mixer
 const char text_toys_menu_cat_machine[] = "ネコ マシーン";
 
 // Endless Game - Head Spinner

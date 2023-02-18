@@ -190,7 +190,7 @@ const EngineEvent mr_upbeat_engine_events[] = {
 };
 
 // [D_089e583c] Mr. Upbeat Game Engine
-const struct GameEngine D_089e583c = {
+const struct GameEngine mr_upbeat_engine = {
     /* Size in Memory */ 0x54,
     /* Start Engine   */ mr_upbeat_engine_start,
     /* Update Engine  */ mr_upbeat_engine_update,

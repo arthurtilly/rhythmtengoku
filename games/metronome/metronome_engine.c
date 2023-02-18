@@ -127,7 +127,7 @@ const EngineEvent metronome_engine_events[] = {
 };
 
 // [D_089e5948] Metronome Game Engine
-const struct GameEngine D_089e5948 = {
+const struct GameEngine metronome_engine = {
     /* Size in Memory */ 0x30,
     /* Start Engine   */ metronome_engine_start,
     /* Update Engine  */ metronome_engine_update,

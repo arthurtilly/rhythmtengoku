@@ -23,7 +23,7 @@
 @ Load Game: Rhythm Test
 .macro load_rhythm_test
     load_rhythm_test_labels
-    load_game RHYTHM_TEST, 0
+    load_game rhythm_test_engine, 0
 .endm
 
 
@@ -32,7 +32,7 @@
 
 @ Run Game Event
 .macro rhythm_test_event event, args
-    game_event RHYTHM_TEST, \event, \args
+    game_event rhythm_test_engine, \event, \args
 .endm
 
 

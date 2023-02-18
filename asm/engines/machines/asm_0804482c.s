@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start rhythm_toy_engine_update \n\
+thumb_func_start rhythm_toys_engine_update \n\
 /* 0804482c */ PUSH {R4, R5, LR} \n\
 /* 0804482e */ LDR R4, =D_030055d0 \n\
 /* 08044830 */ LDR R0, [R4] \n\

@@ -36,13 +36,13 @@
 @ Load Game: Quiz Show
 .macro load_quiz_show
     load_quiz_show_labels
-    load_game QUIZ_SHOW, 0
+    load_game quiz_show_engine, 0
 .endm
 
 @ Load Game: Quiz Show (Endless)
 .macro load_quiz_show_endless
     load_quiz_show_labels
-    load_game QUIZ_SHOW, 1
+    load_game quiz_show_engine, 1
 .endm
 
 
@@ -51,7 +51,7 @@
 
 @ Run Game Event
 .macro quiz_show_event event, args
-    game_event QUIZ_SHOW, \event, \args
+    game_event quiz_show_engine, \event, \args
 .endm
 
 

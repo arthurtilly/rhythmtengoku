@@ -35,7 +35,7 @@
 @ Load Game: Rat Race
 .macro load_rat_race
     load_rat_race_labels
-    load_game RAT_RACE, 0
+    load_game rat_race_engine, 0
 .endm
 
 
@@ -44,7 +44,7 @@
 
 @ Run Game Event
 .macro rat_race_event event, args
-    game_event RAT_RACE, \event, \args
+    game_event rat_race_engine, \event, \args
 .endm
 
 

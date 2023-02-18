@@ -25,7 +25,7 @@
 @ Load Game: Horse Machine
 .macro load_horse_machine
     load_horse_machine_labels
-    load_game HORSE_MACHINE, 0
+    load_game horse_machine_engine, 0
 .endm
 
 
@@ -34,7 +34,7 @@
 
 @ Run Game Event
 .macro horse_machine_event event, args
-    game_event HORSE_MACHINE, \event, \args
+    game_event horse_machine_engine, \event, \args
 .endm
 
 

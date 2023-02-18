@@ -110,7 +110,7 @@ const EngineEvent concert_hall_engine_events[] = {
 };
 
 // [D_089e5d0c] LIVE Menu Game Engine
-const struct GameEngine D_089e5d0c = {
+const struct GameEngine concert_hall_engine = {
     /* Size in Memory */ 0x1c,
     /* Start Engine   */ concert_hall_engine_start,
     /* Update Engine  */ concert_hall_engine_update,

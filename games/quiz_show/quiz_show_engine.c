@@ -226,7 +226,7 @@ const EngineEvent quiz_engine_events[] = {
 };
 
 // [D_089e5ec0] Quiz Show Game Engine
-const struct GameEngine D_089e5ec0 = {
+const struct GameEngine quiz_show_engine = {
     /* Size in Memory */ 0x58,
     /* Start Engine   */ quiz_engine_start,
     /* Update Engine  */ quiz_engine_update,

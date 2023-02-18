@@ -1,6 +1,6 @@
 #pragma once
 
-// Medal Corner - Rhythm Toy Titles
+// Medal Corner - Rhythm Toys Titles
 extern const char text_toys_menu_rap_machine[];
 extern const char text_toys_menu_confession_machine[];
 extern const char text_toys_menu_horse_machine[];

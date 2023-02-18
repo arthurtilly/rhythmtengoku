@@ -34,37 +34,37 @@
 @ Load Game: Rhythm Tweezers (First Vegetable: Onion)
 .macro load_rhythm_tweezers_onion
     load_rhythm_tweezers_labels
-    load_game RHYTHM_TWEEZERS, 0
+    load_game rhythm_tweezers_engine, 0
 .endm
 
 @ Load Game: Rhythm Tweezers (First Vegetable: Turnip)
 .macro load_rhythm_tweezers_turnip
     load_rhythm_tweezers_labels
-    load_game RHYTHM_TWEEZERS, 1
+    load_game rhythm_tweezers_engine, 1
 .endm
 
 @ Load Game: Rhythm Tweezers (First Vegetable: Potato)
 .macro load_rhythm_tweezers_potato
     load_rhythm_tweezers_labels
-    load_game RHYTHM_TWEEZERS, 2
+    load_game rhythm_tweezers_engine, 2
 .endm
 
 @ Load Game: Rhythm Tweezers 2 (First Vegetable: Onion)
 .macro load_rhythm_tweezers_2_onion
     load_rhythm_tweezers_labels
-    load_game RHYTHM_TWEEZERS, 3
+    load_game rhythm_tweezers_engine, 3
 .endm
 
 @ Load Game: Rhythm Tweezers 2 (First Vegetable: Turnip)
 .macro load_rhythm_tweezers_2_turnip
     load_rhythm_tweezers_labels
-    load_game RHYTHM_TWEEZERS, 4
+    load_game rhythm_tweezers_engine, 4
 .endm
 
 @ Load Game: Rhythm Tweezers 2 (First Vegetable: Potato)
 .macro load_rhythm_tweezers_2_potato
     load_rhythm_tweezers_labels
-    load_game RHYTHM_TWEEZERS, 5
+    load_game rhythm_tweezers_engine, 5
 .endm
 
 
@@ -73,7 +73,7 @@
 
 @ Run Game Event
 .macro rhythm_tweezers_event event, args
-    game_event RHYTHM_TWEEZERS, \event, \args
+    game_event rhythm_tweezers_engine, \event, \args
 .endm
 
 

@@ -340,7 +340,7 @@ const EngineEvent fireworks_engine_events[] = {
 };
 
 // [D_089e4500] Fireworks Game Engine
-const struct GameEngine D_089e4500 = {
+const struct GameEngine fireworks_engine = {
     /* Size in Memory */ sizeof(struct FireworksInfo),
     /* Start Engine   */ fireworks_engine_start,
     /* Update Engine  */ fireworks_engine_update,

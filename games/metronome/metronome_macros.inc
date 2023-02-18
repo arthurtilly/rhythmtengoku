@@ -19,7 +19,7 @@
 @ Load Game: Metronome
 .macro load_metronome
     load_metronome_labels
-    load_game METRONOME, 0
+    load_game metronome_engine, 0
 .endm
 
 
@@ -28,7 +28,7 @@
 
 @ Run Game Event
 .macro metronome_event event, args
-    game_event METRONOME, \event, \args
+    game_event metronome_engine, \event, \args
 .endm
 
 

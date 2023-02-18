@@ -404,7 +404,7 @@ const EngineEvent tram_pauline_engine_events[] = {
 };
 
 // [D_089e8d7c] Tram & Pauline Game Engine
-const struct GameEngine D_089e8d7c = {
+const struct GameEngine tram_and_pauline_engine = {
     /* Size in Memory */ 0x48,
     /* Start Engine   */ tram_pauline_engine_start,
     /* Update Engine  */ tram_pauline_engine_update,

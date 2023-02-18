@@ -737,7 +737,7 @@ const EngineEvent drum_live_engine_events[] = {
 };
 
 // [D_089e0cc0] Drum LIVE Game Engine
-const struct GameEngine D_089e0cc0 = {
+const struct GameEngine drum_live_engine = {
     /* Size in Memory */ 0x1820,
     /* Start Engine   */ drum_live_engine_start,
     /* Update Engine  */ drum_live_engine_update,

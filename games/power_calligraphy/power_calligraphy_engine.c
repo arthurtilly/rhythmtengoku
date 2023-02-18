@@ -318,7 +318,7 @@ const EngineEvent calligraphy_engine_events[] = {
 };
 
 // [D_089e4bf8] Power Calligraphy Game Engine
-const struct GameEngine D_089e4bf8 = {
+const struct GameEngine power_calligraphy_engine = {
     /* Size in Memory */ 0x218,
     /* Start Engine   */ calligraphy_engine_start,
     /* Update Engine  */ calligraphy_engine_update,

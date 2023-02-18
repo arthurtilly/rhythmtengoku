@@ -429,7 +429,7 @@ const EngineEvent horse_machine_engine_events[] = {
 };
 
 // [D_089e90b0] Horse Machine Game Engine
-const struct GameEngine D_089e90b0 = {
+const struct GameEngine horse_machine_engine = {
     /* Size in Memory */ 0x310,
     /* Start Engine   */ horse_machine_engine_start,
     /* Update Engine  */ horse_machine_engine_update,

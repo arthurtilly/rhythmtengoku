@@ -161,7 +161,7 @@ const EngineEvent wizards_waltz_engine_events[] = {
 };
 
 // [D_089ea068] Wizard's Waltz Game Engine
-const struct GameEngine D_089ea068 = {
+const struct GameEngine wizards_waltz = {
     /* Size in Memory */ 0x1b4,
     /* Start Engine   */ wizards_waltz_engine_start,
     /* Update Engine  */ wizards_waltz_engine_update,

@@ -219,7 +219,7 @@ const EngineEvent spaceball_engine_events[] = {
 };
 
 // [D_089deb08] Spaceball Game Engine
-const struct GameEngine D_089deb08 = {
+const struct GameEngine spaceball_engine = {
     /* Size in Memory */ sizeof(struct SpaceballInfo),
     /* Start Engine   */ spaceball_engine_start,
     /* Update Engine  */ spaceball_engine_update,

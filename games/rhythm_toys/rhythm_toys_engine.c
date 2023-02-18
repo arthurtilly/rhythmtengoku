@@ -1,7 +1,7 @@
-#include "engines/machines.h"
+#include "engines/rhythm_toys.h"
 
 
-  /* RHYTHM TOY - GAME ENGINE DATA */
+  /* RHYTHM TOYS - GAME ENGINE DATA */
 
 
 extern const struct Animation anim_cat_machine_button_a[];
@@ -97,7 +97,7 @@ extern const Palette rap_machine_pal[];
 
 
 // [D_089e9bf8] A Button GFX
-const struct RhythmToySpriteData rhythm_toy_sprite_button_a[] = {
+const struct RhythmToysSpriteData rhythm_toys_sprite_button_a[] = {
     /* CAT_MACHINE_1 */ {
         /* Anim */ anim_cat_machine_button_a,
         /* Vec2 */ &D_08cda134
@@ -117,7 +117,7 @@ const struct RhythmToySpriteData rhythm_toy_sprite_button_a[] = {
 };
 
 // [D_089e9c18] B Button GFX
-const struct RhythmToySpriteData rhythm_toy_sprite_button_b[] = {
+const struct RhythmToysSpriteData rhythm_toys_sprite_button_b[] = {
     /* CAT_MACHINE_1 */ {
         /* Anim */ anim_cat_machine_button_b,
         /* Vec2 */ &D_08cda138
@@ -137,7 +137,7 @@ const struct RhythmToySpriteData rhythm_toy_sprite_button_b[] = {
 };
 
 // [D_089e9c38] D-Pad Up GFX
-const struct RhythmToySpriteData rhythm_toy_sprite_button_u[] = {
+const struct RhythmToysSpriteData rhythm_toys_sprite_button_u[] = {
     /* CAT_MACHINE_1 */ {
         /* Anim */ anim_cat_machine_button_up,
         /* Vec2 */ &D_08cda13c
@@ -157,7 +157,7 @@ const struct RhythmToySpriteData rhythm_toy_sprite_button_u[] = {
 };
 
 // [D_089e9c58] D-Pad Down GFX
-const struct RhythmToySpriteData rhythm_toy_sprite_button_d[] = {
+const struct RhythmToysSpriteData rhythm_toys_sprite_button_d[] = {
     /* CAT_MACHINE_1 */ {
         /* Anim */ anim_cat_machine_button_down,
         /* Vec2 */ &D_08cda140
@@ -177,7 +177,7 @@ const struct RhythmToySpriteData rhythm_toy_sprite_button_d[] = {
 };
 
 // [D_089e9c78] D-Pad Left GFX
-const struct RhythmToySpriteData rhythm_toy_sprite_button_l[] = {
+const struct RhythmToysSpriteData rhythm_toys_sprite_button_l[] = {
     /* CAT_MACHINE_1 */ {
         /* Anim */ anim_cat_machine_button_left,
         /* Vec2 */ &D_08cda144
@@ -197,7 +197,7 @@ const struct RhythmToySpriteData rhythm_toy_sprite_button_l[] = {
 };
 
 // [D_089e9c98] D-Pad Right GFX
-const struct RhythmToySpriteData rhythm_toy_sprite_button_r[] = {
+const struct RhythmToysSpriteData rhythm_toys_sprite_button_r[] = {
     /* CAT_MACHINE_1 */ {
         /* Anim */ anim_cat_machine_button_right,
         /* Vec2 */ &D_08cda148
@@ -217,7 +217,7 @@ const struct RhythmToySpriteData rhythm_toy_sprite_button_r[] = {
 };
 
 // [D_089e9cb8] Demo Icon GFX
-const struct RhythmToySpriteData rhythm_toy_sprite_demo_icon[] = {
+const struct RhythmToysSpriteData rhythm_toys_sprite_demo_icon[] = {
     /* CAT_MACHINE_1 */ {
         /* Anim */ anim_cat_machine_demo_icon,
         /* Vec2 */ &D_08cda128
@@ -237,7 +237,7 @@ const struct RhythmToySpriteData rhythm_toy_sprite_demo_icon[] = {
 };
 
 // [D_089e9cd8] "Machine Respond to A/B Button" GFX
-const struct RhythmToySpriteData rhythm_toy_sprite_machine_r[] = {
+const struct RhythmToysSpriteData rhythm_toys_sprite_machine_r[] = {
     /* CAT_MACHINE_1 */ {
         /* Anim */ anim_cat_machine_listen,
         /* Vec2 */ &D_08cda12c
@@ -257,7 +257,7 @@ const struct RhythmToySpriteData rhythm_toy_sprite_machine_r[] = {
 };
 
 // [D_089e9cf8] "Machine Respond to D-Pad" GFX
-const struct RhythmToySpriteData rhythm_toy_sprite_machine_l[] = {
+const struct RhythmToysSpriteData rhythm_toys_sprite_machine_l[] = {
     /* CAT_MACHINE_1 */ {
         /* Anim */ anim_cat_machine_meow,
         /* Vec2 */ &D_08cda130
@@ -276,21 +276,21 @@ const struct RhythmToySpriteData rhythm_toy_sprite_machine_l[] = {
     }
 };
 
-// [D_089e9d18] Rhythm Toy Sprite Data Table
-const struct RhythmToySpriteData *const rhythm_toy_sprite_table[] = {
-    /* A_BUTTON   */ rhythm_toy_sprite_button_a,
-    /* B_BUTTON   */ rhythm_toy_sprite_button_b,
-    /* DPAD_UP    */ rhythm_toy_sprite_button_u,
-    /* DPAD_DOWN  */ rhythm_toy_sprite_button_d,
-    /* DPAD_LEFT  */ rhythm_toy_sprite_button_l,
-    /* DPAD_RIGHT */ rhythm_toy_sprite_button_r,
-    /* DEMO_ICON  */ rhythm_toy_sprite_demo_icon,
-    /* MACHINE_R  */ rhythm_toy_sprite_machine_r,
-    /* MACHINE_L  */ rhythm_toy_sprite_machine_l
+// [D_089e9d18] Rhythm Toys Sprite Data Table
+const struct RhythmToysSpriteData *const rhythm_toys_sprite_table[] = {
+    /* A_BUTTON   */ rhythm_toys_sprite_button_a,
+    /* B_BUTTON   */ rhythm_toys_sprite_button_b,
+    /* DPAD_UP    */ rhythm_toys_sprite_button_u,
+    /* DPAD_DOWN  */ rhythm_toys_sprite_button_d,
+    /* DPAD_LEFT  */ rhythm_toys_sprite_button_l,
+    /* DPAD_RIGHT */ rhythm_toys_sprite_button_r,
+    /* DEMO_ICON  */ rhythm_toys_sprite_demo_icon,
+    /* MACHINE_R  */ rhythm_toys_sprite_machine_r,
+    /* MACHINE_L  */ rhythm_toys_sprite_machine_l
 };
 
 // [D_089e9d3c] Rhythm Toy Demo Scripts
-const struct RhythmToyDemo *const rhythm_toy_demo_table[] = {
+const struct RhythmToysDemo *const rhythm_toys_demo_table[] = {
     /* CAT1 */ cat_machine_demo_seq,
     /* CAT2 */ cat_machine_demo_seq,
     /* LOVE */ NULL,
@@ -298,7 +298,7 @@ const struct RhythmToyDemo *const rhythm_toy_demo_table[] = {
 };
 
 // [D_089e9d4c] Buffered Textures List
-const struct CompressedGraphics *const rhythm_toy_buffered_textures[] = {
+const struct CompressedGraphics *const rhythm_toys_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -393,7 +393,7 @@ const struct GraphicsTable gfx_table_rap_machine[] = {
 };
 
 // [D_089e9e28] Graphics Table Index
-const struct GraphicsTable *const rhythm_toy_gfx_tables[] = {
+const struct GraphicsTable *const rhythm_toys_gfx_tables[] = {
     /* CAT1 */ gfx_table_cat_machine,
     /* CAT2 */ gfx_table_cat_machine,
     /* LOVE */ gfx_table_confession_machine,
@@ -405,17 +405,17 @@ const struct GraphicsTable *const rhythm_toy_gfx_tables[] = {
 
 
 // [D_089e9e38] Button Sprite Data IDs per Button Press
-const u8 rhythm_toy_button_anim_ids[] = {
-    /* A */ RHYTHM_TOY_SPRITE_A_BUTTON,
-    /* B */ RHYTHM_TOY_SPRITE_B_BUTTON,
-    /* U */ RHYTHM_TOY_SPRITE_DPAD_UP,
-    /* D */ RHYTHM_TOY_SPRITE_DPAD_DOWN,
-    /* L */ RHYTHM_TOY_SPRITE_DPAD_LEFT,
-    /* R */ RHYTHM_TOY_SPRITE_DPAD_RIGHT
+const u8 rhythm_toys_button_anim_ids[] = {
+    /* A */ RHYTHM_TOYS_SPRITE_A_BUTTON,
+    /* B */ RHYTHM_TOYS_SPRITE_B_BUTTON,
+    /* U */ RHYTHM_TOYS_SPRITE_DPAD_UP,
+    /* D */ RHYTHM_TOYS_SPRITE_DPAD_DOWN,
+    /* L */ RHYTHM_TOYS_SPRITE_DPAD_LEFT,
+    /* R */ RHYTHM_TOYS_SPRITE_DPAD_RIGHT
 };
 
 // [D_089e9e40] Demo BPM Table
-const u16 *const rhythm_toy_demo_bpm_table[] = {
+const u16 *const rhythm_toys_demo_bpm_table[] = {
     /* CAT1 */ &cat_machine_demo_bpm,
     /* CAT2 */ &cat_machine_demo_bpm,
     /* LOVE */ &confession_machine_demo_bpm,
@@ -423,17 +423,17 @@ const u16 *const rhythm_toy_demo_bpm_table[] = {
 };
 
 // [D_089e9e50] Machine Sprite Data IDs per Button Press
-const u8 rhythm_toy_machine_anim_ids[] = {
-    /* A */ RHYTHM_TOY_SPRITE_MACHINE_R,
-    /* B */ RHYTHM_TOY_SPRITE_MACHINE_R,
-    /* U */ RHYTHM_TOY_SPRITE_MACHINE_L,
-    /* D */ RHYTHM_TOY_SPRITE_MACHINE_L,
-    /* L */ RHYTHM_TOY_SPRITE_MACHINE_L,
-    /* R */ RHYTHM_TOY_SPRITE_MACHINE_L
+const u8 rhythm_toys_machine_anim_ids[] = {
+    /* A */ RHYTHM_TOYS_SPRITE_MACHINE_R,
+    /* B */ RHYTHM_TOYS_SPRITE_MACHINE_R,
+    /* U */ RHYTHM_TOYS_SPRITE_MACHINE_L,
+    /* D */ RHYTHM_TOYS_SPRITE_MACHINE_L,
+    /* L */ RHYTHM_TOYS_SPRITE_MACHINE_L,
+    /* R */ RHYTHM_TOYS_SPRITE_MACHINE_L
 };
 
-// [D_089e9e58] Rhythm Toy Play Functions
-const RhythmToyPlayFunc rhythm_toy_play_func_table[] = {
+// [D_089e9e58] Rhythm Toys Play Functions
+const RhythmToysPlayFunc rhythm_toys_play_func_table[] = {
     /* CAT1 */ func_08044014,
     /* CAT2 */ func_08044014,
     /* LOVE */ func_080441cc,
@@ -445,7 +445,7 @@ const RhythmToyPlayFunc rhythm_toy_play_func_table[] = {
 
 
 // [D_089e9e68] Cue 00 (Default)
-const struct CueDefinition rhythm_toy_cue_default = {
+const struct CueDefinition rhythm_toys_cue_default = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -454,13 +454,13 @@ const struct CueDefinition rhythm_toy_cue_default = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ 0x4,
-    /* Func. Spawn     */ rhythm_toy_cue_spawn,
+    /* Func. Spawn     */ rhythm_toys_cue_spawn,
     /* Spawn Parameter */ 0,
-    /* Func. Update    */ rhythm_toy_cue_update,
-    /* Func. Despawn   */ rhythm_toy_cue_despawn,
-    /* Func. Hit       */ rhythm_toy_cue_hit,
-    /* Func. Barely    */ rhythm_toy_cue_barely,
-    /* Func. Miss      */ rhythm_toy_cue_miss,
+    /* Func. Update    */ rhythm_toys_cue_update,
+    /* Func. Despawn   */ rhythm_toys_cue_despawn,
+    /* Func. Hit       */ rhythm_toys_cue_hit,
+    /* Func. Barely    */ rhythm_toys_cue_barely,
+    /* Func. Miss      */ rhythm_toys_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -469,8 +469,8 @@ const struct CueDefinition rhythm_toy_cue_default = {
 };
 
 // [D_089e9ea8] Cue Definition Index
-const struct CueDefinition *const rhythm_toy_cue_index[] = {
-    /* 0x00 */ &rhythm_toy_cue_default,
+const struct CueDefinition *const rhythm_toys_cue_index[] = {
+    /* 0x00 */ &rhythm_toys_cue_default,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
     /* 0x03 */ NULL,
@@ -490,26 +490,26 @@ const struct CueDefinition *const rhythm_toy_cue_index[] = {
 
 
 // [D_089e9edc] Common Events
-const EngineEvent rhythm_toy_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) rhythm_toy_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) rhythm_toy_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) rhythm_toy_common_init_tutorial,
+const EngineEvent rhythm_toys_common_events[] = {
+    /* BEAT_ANIMATION */ (EngineEvent) rhythm_toys_common_beat_animation,
+    /* DISPLAY_TEXT   */ (EngineEvent) rhythm_toys_common_display_text,
+    /* INIT_TUTORIAL  */ (EngineEvent) rhythm_toys_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e9eec] Engine Events
-const EngineEvent rhythm_toy_engine_events[] = {
-    /* 0x00 */ (EngineEvent) rhythm_toy_engine_event_stub
+const EngineEvent rhythm_toys_engine_events[] = {
+    /* 0x00 */ (EngineEvent) rhythm_toys_engine_event_stub
 };
 
-// [D_089e9ef0] Rhythm Toy Game Engine
-const struct GameEngine D_089e9ef0 = {
+// [D_089e9ef0] Rhythm Toys Game Engine
+const struct GameEngine rhythm_toys_engine = {
     /* Size in Memory */ 0x384,
-    /* Start Engine   */ rhythm_toy_engine_start,
-    /* Update Engine  */ rhythm_toy_engine_update,
-    /* Stop Engine    */ rhythm_toy_engine_stop,
-    /* Cue Index      */ rhythm_toy_cue_index,
-    /* Common Events  */ rhythm_toy_common_events,
-    /* Engine Events  */ rhythm_toy_engine_events,
-    /* Input Event    */ rhythm_toy_input_event
+    /* Start Engine   */ rhythm_toys_engine_start,
+    /* Update Engine  */ rhythm_toys_engine_update,
+    /* Stop Engine    */ rhythm_toys_engine_stop,
+    /* Cue Index      */ rhythm_toys_cue_index,
+    /* Common Events  */ rhythm_toys_common_events,
+    /* Engine Events  */ rhythm_toys_engine_events,
+    /* Input Event    */ rhythm_toys_input_event
 };

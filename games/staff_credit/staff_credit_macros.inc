@@ -19,7 +19,7 @@
 @ Load Game: Staff Credit
 .macro load_staff_credit
     load_staff_credit_labels
-    load_game STAFF_CREDIT, 0
+    load_game staff_credit_engine, 0
 .endm
 
 
@@ -28,7 +28,7 @@
 
 @ Run Game Event
 .macro staff_credit_event event, args
-    game_event STAFF_CREDIT, \event, \args
+    game_event staff_credit_engine, \event, \args
 .endm
 
 

@@ -303,7 +303,7 @@ const EngineEvent rap_men_engine_events[] = {
 };
 
 // [D_089e6614] Rap Men Game Engine
-const struct GameEngine D_089e6614 = {
+const struct GameEngine rap_men_engine = {
     /* Size in Memory */ sizeof(struct RapMenInfo),
     /* Start Engine   */ rap_men_engine_start,
     /* Update Engine  */ rap_men_engine_update,

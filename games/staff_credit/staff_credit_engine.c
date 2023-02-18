@@ -100,7 +100,7 @@ const EngineEvent staff_credit_engine_events[] = {
 };
 
 // [D_089df6cc] Staff Credit Game Engine
-const struct GameEngine D_089df6cc = {
+const struct GameEngine staff_credit_engine = {
     /* Size in Memory */ 0x80,
     /* Start Engine   */ staff_credit_engine_start,
     /* Update Engine  */ staff_credit_engine_update,

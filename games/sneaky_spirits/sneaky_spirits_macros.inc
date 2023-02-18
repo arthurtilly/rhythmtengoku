@@ -32,19 +32,19 @@
 @ Load Game: Sneaky Spirits
 .macro load_sneaky_spirits
     load_sneaky_spirits_labels
-    load_game SNEAKY_SPIRITS, 0
+    load_game sneaky_spirits_engine, 0
 .endm
 
 @ Load Game: Sneaky Spirits (Remix 2)
 .macro load_sneaky_spirits_remix2
     load_sneaky_spirits_labels
-    load_game SNEAKY_SPIRITS, 1
+    load_game sneaky_spirits_engine, 1
 .endm
 
 @ Load Game: Sneaky Spirits 2
 .macro load_sneaky_spirits_2
     load_sneaky_spirits_labels
-    load_game SNEAKY_SPIRITS, 2
+    load_game sneaky_spirits_engine, 2
 .endm
 
 
@@ -53,7 +53,7 @@
 
 @ Run Game Event
 .macro sneaky_spirits_event event, args
-    game_event SNEAKY_SPIRITS, \event, \args
+    game_event sneaky_spirits_engine, \event, \args
 .endm
 
 

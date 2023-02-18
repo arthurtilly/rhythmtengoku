@@ -213,7 +213,7 @@ const EngineEvent rat_race_engine_events[] = {
 };
 
 // [D_089e6814] Rat Race Game Engine
-const struct GameEngine D_089e6814 = {
+const struct GameEngine rat_race_engine = {
     /* Size in Memory */ 0x120,
     /* Start Engine   */ rat_race_engine_start,
     /* Update Engine  */ rat_race_engine_update,

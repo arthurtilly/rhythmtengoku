@@ -479,7 +479,7 @@ const EngineEvent rhythm_tweezers_engine_events[] = {
 };
 
 // [D_089e41f4] Rhythm Tweezers Game Engine
-const struct GameEngine D_089e41f4 = {
+const struct GameEngine rhythm_tweezers_engine = {
     /* Size in Memory */ sizeof(struct RhythmTweezersInfo),
     /* Start Engine   */ rhythm_tweezers_engine_start,
     /* Update Engine  */ rhythm_tweezers_engine_update,

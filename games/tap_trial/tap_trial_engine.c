@@ -2495,7 +2495,7 @@ const EngineEvent tap_trial_engine_events[] = {
 };
 
 // [D_089e8130] Tap Trial Game Engine
-const struct GameEngine D_089e8130 = {
+const struct GameEngine tap_trial_engine = {
     /* Size in Memory */ 0x398,
     /* Start Engine   */ tap_trial_engine_start,
     /* Update Engine  */ tap_trial_engine_update,

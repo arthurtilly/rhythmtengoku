@@ -480,7 +480,7 @@ const EngineEvent drum_intro_engine_events[] = {
 };
 
 // [D_089e0378] Drum Intro Game Engine
-const struct GameEngine D_089e0378 = {
+const struct GameEngine drum_intro_engine = {
     /* Size in Memory */ 0x3b4,
     /* Start Engine   */ drum_intro_engine_start,
     /* Update Engine  */ drum_intro_engine_update,

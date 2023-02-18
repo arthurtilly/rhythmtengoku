@@ -21,19 +21,19 @@
 @ Load Game: Bouncy Road
 .macro load_bouncy_road
     load_bouncy_road_labels
-    load_game BOUNCY_ROAD, 0
+    load_game bouncy_road_engine, 0
 .endm
 
 @ Load Game: Bouncy Road (Remix 5)
 .macro load_bouncy_road_remix5
     load_bouncy_road_labels
-    load_game BOUNCY_ROAD, 1
+    load_game bouncy_road_engine, 1
 .endm
 
 @ Load Game: Bouncy Road 2
 .macro load_bouncy_road_2
     load_bouncy_road_labels
-    load_game BOUNCY_ROAD, 2
+    load_game bouncy_road_engine, 2
 .endm
 
 
@@ -42,7 +42,7 @@
 
 @ Run Game Event
 .macro bouncy_road_event event, args
-    game_event BOUNCY_ROAD, \event, \args
+    game_event bouncy_road_engine, \event, \args
 .endm
 
 
