@@ -43,7 +43,6 @@ INCLUDES	   := include
 TEXT           := text
 DATA		   := data
 SCENE_DATA     := $(shell find $(DATA)/scenes -type d)
-ENGINE_DATA    := $(shell find $(DATA)/engines -type d)
 PROLOGUE_DATA  := $(shell find $(DATA)/prologues -type d)
 GAME_DATA	   := $(shell find games -type d)
 LEVEL_DATA     := $(DATA)/levels
@@ -55,9 +54,9 @@ GRAPHICS       := $(shell find graphics -type d)
 
 C_DIRS		   := $(SOURCES) $(SOURCES)/scenes $(SOURCES)/engines $(SOURCES)/prologues $(SOURCES)/levels \
                   $(AUDIO) $(GRAPHICS) $(TEXT) \
-				  $(DATA) $(SCENE_DATA) $(ENGINE_DATA) $(PROLOGUE_DATA) $(LEVEL_DATA) $(GAME_DATA)
+				  $(DATA) $(SCENE_DATA) $(PROLOGUE_DATA) $(LEVEL_DATA) $(GAME_DATA)
 
-ASM_DIRS       := $(ASM) $(DATA) $(SCENE_DATA) $(ENGINE_DATA) $(PROLOGUE_DATA) $(LEVEL_DATA) $(TEXT) $(GAME_DATA)
+ASM_DIRS       := $(ASM) $(DATA) $(SCENE_DATA) $(PROLOGUE_DATA) $(LEVEL_DATA) $(TEXT) $(GAME_DATA)
 
 ALL_DIRS       := $(BIN) $(ASM_DIRS) $(C_DIRS) $(MUSIC) $(SFX)
 ALL_DIRS       := $(sort $(ALL_DIRS)) # remove duplicates
