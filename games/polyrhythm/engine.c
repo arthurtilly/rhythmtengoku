@@ -1,17 +1,6 @@
 #include "engines/polyrhythm.h"
 
 
-  /* POLYRHYTHM - GAME ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c781ac;
-extern struct CompressedGraphics D_08c78a04;
-extern struct CompressedGraphics D_08c781ac;
-extern struct CompressedGraphics D_08c78a04;
-extern Palette polyrhythm_pal[];
-extern Palette polyrhythm_2_pal[];
-
-
   //  //  //  GRAPHICS DATA  //  //  //
 
 

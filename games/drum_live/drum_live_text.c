@@ -1,25 +1,18 @@
 #include "global.h"
 #include "text.h"
 
-extern const char D_0805d398[];
-extern const char D_0805d3b0[];
-extern const char D_0805d3c4[];
-extern const char D_0805d3e4[];
-extern const char D_0805d404[];
-extern const char D_0805d420[];
-
 
 /* Game Text - LIVE */
 
 
-const char D_0805d398[] = "なんか　ヨタヨタかも。";
+char D_0805d398[] = "なんか　ヨタヨタかも。";
 
-const char D_0805d3b0[] = "カッコイイかも！";
+char D_0805d3b0[] = "カッコイイかも！";
 
-const char D_0805d3c4[] = "なんだか　キメが　ヘンかも。";
+char D_0805d3c4[] = "なんだか　キメが　ヘンかも。";
 
-const char D_0805d3e4[] = "なんとなく　キマってるかも！";
+char D_0805d3e4[] = "なんとなく　キマってるかも！";
 
-const char D_0805d404[] = "コケそうな　カンジかも。";
+char D_0805d404[] = "コケそうな　カンジかも。";
 
-const char D_0805d420[] = "勢いが　あるみたい！";
+char D_0805d420[] = "勢いが　あるみたい！";

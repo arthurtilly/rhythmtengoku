@@ -1,15 +1,6 @@
 #include "prologues/quiz_show.h"
 
 
-  /* PROLOGUE (QUIZ SHOW) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c04434;
-extern struct CompressedGraphics D_08c04940;
-extern struct CompressedGraphics D_08c02a34;
-extern Palette quiz_show_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

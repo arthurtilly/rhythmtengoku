@@ -1,15 +1,6 @@
 #include "prologues/polyrhythm.h"
 
 
-  /* PROLOGUE (POLYRHYTHM) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c0212c;
-extern struct CompressedGraphics D_08c02628;
-extern struct CompressedGraphics D_08c00010;
-extern Palette polyrhythm_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

@@ -1,108 +1,69 @@
 #include "global.h"
 #include "text.h"
 
-extern const char D_0805e42c[];
-extern const char D_0805e444[];
-extern const char D_0805e458[];
-extern const char D_0805e490[];
-extern const char D_0805e4c0[];
-extern const char D_0805e4e0[];
-extern const char D_0805e4f8[];
-extern const char *const D_0805e520[];
-extern const char D_0805e530[];
-extern const char D_0805e544[];
-extern const char D_0805e55c[];
-extern const char D_0805e584[];
-extern const char D_0805e58c[];
-extern const char D_0805e590[];
-extern const char D_0805e5ac[];
-extern const char D_0805e5d0[];
-extern const char *const D_0805e574[];
-extern const char D_0805e5f8[];
-extern const char D_0805e64c[];
-extern const char D_0805e684[];
-extern const char D_0805e6b0[];
-extern const char *const D_0805e6c4[];
-extern const char D_0805e6d4[];
-extern const char D_0805e6f0[];
-extern const char D_0805e70c[];
-extern const char *const D_0805e730[];
-extern const char D_0805e744[];
-extern const char D_0805e778[];
-extern const char *const D_0805e790[];
-extern const char D_0805e7a0[];
-extern const char *const D_0805e7b0[];
-extern const char D_0805e7c0[];
-extern const char D_0805e7ec[];
-extern const char D_0805e818[];
-extern const char *const D_0805e844[];
-extern const char D_0805e858[];
-extern const char D_0805e8c0[];
-extern const char D_0805e8f8[];
-
 
 /* Game Text - Drumming Intro (Unused) 3 */
 
 
-const char D_0805e42c[] =
+char D_0805e42c[] =
     "どうも！\n"
     "ドラム侍です。";
 
-const char D_0805e444[] = "お元気でしたか？";
+char D_0805e444[] = "お元気でしたか？";
 
-const char D_0805e458[] = "今回は、　短い曲に合わせて実際に演奏してみましょう。";
+char D_0805e458[] = "今回は、　短い曲に合わせて実際に演奏してみましょう。";
 
-const char D_0805e490[] = "私の演奏をよくきいて、　マネしてくださいネ。";
+char D_0805e490[] = "私の演奏をよくきいて、　マネしてくださいネ。";
 
-const char D_0805e4c0[] = "さっそくですが、　いきます。";
+char D_0805e4c0[] = "さっそくですが、　いきます。";
 
-const char D_0805e4e0[] =
+char D_0805e4e0[] =
     "ちがう！\n"
     "よくきいてネ。";
 
-const char D_0805e4f8[] =
+char D_0805e4f8[] =
     "ちがうんです！\n"
     "よく、　よ" SHIFT_JIS_WAVE_DASH "くきいてネ。";
 
-const char *const D_0805e520[] = {
+char *D_0805e520[] = {
     D_0805e4c0,
     D_0805e4e0,
     D_0805e4f8,
     NULL
 };
 
-const char D_0805e530[] =
+char D_0805e530[] =
     "\n"
     "あなたの番です。";
 
-const char D_0805e544[] =
+char D_0805e544[] =
     "\n"
     "さあ、　いまいちど！";
 
-const char D_0805e55c[] =
+char D_0805e55c[] =
     "\n"
     "さあ、　こんどこそ！";
 
-const char *const D_0805e574[] = {
+char *D_0805e574[] = {
     D_0805e530,
     D_0805e544,
     D_0805e55c,
     NULL
 };
 
-const char D_0805e584[] =
+char D_0805e584[] =
     "\n"
     "OK!";
 
-const char D_0805e58c[] = "";
+char D_0805e58c[] = "";
 
-const char D_0805e590[] = "おぉ、　すぐできましたね！";
+char D_0805e590[] = "おぉ、　すぐできましたね！";
 
-const char D_0805e5ac[] = "なかなか　のみこみが早いですね！";
+char D_0805e5ac[] = "なかなか　のみこみが早いですね！";
 
-const char D_0805e5d0[] = "いいかんじです。";
+char D_0805e5d0[] = "いいかんじです。";
 
-const char *const D_0805e5e4[] = {
+char *D_0805e5e4[] = {
     D_0805e58c,
     D_0805e590,
     D_0805e5ac,
@@ -110,32 +71,32 @@ const char *const D_0805e5e4[] = {
     NULL
 };
 
-const char D_0805e5f8[] =
+char D_0805e5f8[] =
     "次は、　曲のスタートでシンバルをたたいてみましょう。\n"
     "シンバルは、　Rボタンです。";
 
-const char D_0805e64c[] = "つまり、　最初だけBボタンとRボタンを同時に押すんです。";
+char D_0805e64c[] = "つまり、　最初だけBボタンとRボタンを同時に押すんです。";
 
-const char D_0805e684[] = "曲のスタートの練習を思い出してくださいネ。";
+char D_0805e684[] = "曲のスタートの練習を思い出してくださいネ。";
 
-const char D_0805e6b0[] = "じゃ、　いきます。";
+char D_0805e6b0[] = "じゃ、　いきます。";
 
-const char *const D_0805e6c4[] = {
+char *D_0805e6c4[] = {
     D_0805e6b0,
     D_0805e4e0,
     D_0805e4f8,
     NULL
 };
 
-const char D_0805e6d4[] =
+char D_0805e6d4[] =
     "すばらしい！\n"
     "その調子です。";
 
-const char D_0805e6f0[] = "けっこう　簡単でしたか？";
+char D_0805e6f0[] = "けっこう　簡単でしたか？";
 
-const char D_0805e70c[] = "ちょっと、　苦労しちゃいましたね。";
+char D_0805e70c[] = "ちょっと、　苦労しちゃいましたね。";
 
-const char *const D_0805e730[] = {
+char *D_0805e730[] = {
     D_0805e58c,
     D_0805e6d4,
     D_0805e6f0,
@@ -143,41 +104,41 @@ const char *const D_0805e730[] = {
     NULL
 };
 
-const char D_0805e744[] = "では、　曲の終わりをかっこよくキメてみましょう。";
+char D_0805e744[] = "では、　曲の終わりをかっこよくキメてみましょう。";
 
-const char D_0805e778[] = "お手本、　いきます。";
+char D_0805e778[] = "お手本、　いきます。";
 
-const char *const D_0805e790[] = {
+char *D_0805e790[] = {
     D_0805e778,
     D_0805e4e0,
     D_0805e4f8,
     NULL
 };
 
-const char D_0805e7a0[] =
+char D_0805e7a0[] =
     "\n"
     "がんばって！";
 
-const char *const D_0805e7b0[] = {
+char *D_0805e7b0[] = {
     D_0805e7a0,
     D_0805e544,
     D_0805e55c,
     NULL
 };
 
-const char D_0805e7c0[] =
+char D_0805e7c0[] =
     "１回で 出来ちゃいましたネ！\n"
     "すごいです！";
 
-const char D_0805e7ec[] =
+char D_0805e7ec[] =
     "たったの２回で　できました！\n"
     "やりますネ！";
 
-const char D_0805e818[] =
+char D_0805e818[] =
     "なんとか　出来ましたネ！\n"
     "イイ感じですヨ！";
 
-const char *const D_0805e844[] = {
+char *D_0805e844[] = {
     D_0805e58c,
     D_0805e7c0,
     D_0805e7ec,
@@ -185,10 +146,10 @@ const char *const D_0805e844[] = {
     NULL
 };
 
-const char D_0805e858[] = "こんなかんじで、　曲のスタート、　中間、　キメを" SHIFT_JIS_KANJI_HYOU "現できれば楽しく演奏できるのではないかと思います。";
+char D_0805e858[] = "こんなかんじで、　曲のスタート、　中間、　キメを" SHIFT_JIS_KANJI_HYOU "現できれば楽しく演奏できるのではないかと思います。";
 
-const char D_0805e8c0[] = "あのコーナーで練習して、　ぜひ楽しくなってください。";
+char D_0805e8c0[] = "あのコーナーで練習して、　ぜひ楽しくなってください。";
 
-const char D_0805e8f8[] =
+char D_0805e8f8[] =
     "では、　また。\n"
     "さようなら。";

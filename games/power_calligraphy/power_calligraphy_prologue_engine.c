@@ -1,15 +1,6 @@
 #include "prologues/power_calligraphy.h"
 
 
-  /* PROLOGUE (POWER CALLIGRAPHY) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08bf984c;
-extern struct CompressedGraphics D_08bf9b14;
-extern struct CompressedGraphics D_08bf8a30;
-extern Palette prologue_calligraphy_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

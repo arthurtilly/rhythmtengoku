@@ -1,55 +1,38 @@
 #include "global.h"
 #include "text.h"
 
-extern const char D_08068170[];
-extern const char D_0806817c[];
-extern const char D_08068188[];
-extern const char D_08068194[];
-extern const char D_080681a0[];
-extern const char D_080681ac[];
-extern const char D_080681bc[];
-extern const char D_080681c8[];
-extern const char D_080681d8[];
-extern const char D_080681e8[];
-extern const char D_080681f0[];
-extern const char D_080681fc[];
-extern const char D_0806820c[];
-extern const char D_0806821c[];
-extern const char D_0806822c[];
-extern const char D_08068238[];
-
 
 /* Game Text - Mr. Upbeat */
 
 
-const char D_08068170[] = "またごう！";
+char D_08068170[] = "またごう！";
 
-const char D_0806817c[] = "そうです。";
+char D_0806817c[] = "そうです。";
 
-const char D_08068188[] = "そうそう！";
+char D_08068188[] = "そうそう！";
 
-const char D_08068194[] = "いいね" SHIFT_JIS_WAVE_DASH "！";
+char D_08068194[] = "いいね" SHIFT_JIS_WAVE_DASH "！";
 
-const char D_080681a0[] = "よいヨ！";
+char D_080681a0[] = "よいヨ！";
 
-const char D_080681ac[] = "しびれちゃう！";
+char D_080681ac[] = "しびれちゃう！";
 
-const char D_080681bc[] = "ぎゃふん！";
+char D_080681bc[] = "ぎゃふん！";
 
-const char D_080681c8[] = "スゴイッスー！";
+char D_080681c8[] = "スゴイッスー！";
 
-const char D_080681d8[] = "うっそーん！？";
+char D_080681d8[] = "うっそーん！？";
 
-const char D_080681e8[] = "超人！";
+char D_080681e8[] = "超人！";
 
-const char D_080681f0[] = "やばーい！";
+char D_080681f0[] = "やばーい！";
 
-const char D_080681fc[] = "もれるー！！";
+char D_080681fc[] = "もれるー！！";
 
-const char D_0806820c[] = "まいった！！";
+char D_0806820c[] = "まいった！！";
 
-const char D_0806821c[] = "ウヒョー！！";
+char D_0806821c[] = "ウヒョー！！";
 
-const char D_0806822c[] = "大丈夫！？";
+char D_0806822c[] = "大丈夫！？";
 
-const char D_08068238[] = "なんてこった！！";
+char D_08068238[] = "なんてこった！！";

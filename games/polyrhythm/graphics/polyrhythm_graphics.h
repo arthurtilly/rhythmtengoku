@@ -22,6 +22,13 @@ extern struct Animation anim_polyrhythm_signs[];
 extern struct Animation anim_polyrhythm_arrow_a[];
 extern struct Animation anim_polyrhythm_arrow_dpad[];
 
+/* POLYRHYTHM - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08c781ac;
+extern struct CompressedGraphics D_08c78a04;
+extern struct CompressedGraphics D_08c781ac;
+extern struct CompressedGraphics D_08c78a04;
+
 /* POLYRHYTHM - PALETTES */
 
 extern Palette polyrhythm_pal[];

@@ -140,19 +140,6 @@ struct Animation *samurai_beat_anim[] = {
 // Blank Text
 const char D_0805a5d0[] = "";
 
-extern struct Animation anim_demon_hurt[];
-extern struct Animation anim_small_demon_hit[];
-extern struct Animation anim_med_demon_hit[];
-extern struct Animation anim_small_demon_hit[];
-extern struct Animation anim_propeller_demon_hit[];
-extern struct Animation anim_winged_demon_hit[];
-extern struct Animation anim_large_demon_hit1[];
-extern struct Animation anim_large_demon_hit2[];
-extern struct Animation anim_small_demon_barely[];
-extern struct Animation anim_med_demon_barely[];
-extern struct Animation anim_propeller_demon_barely[];
-extern struct Animation anim_winged_demon_barely[];
-extern struct Animation anim_large_demon_barely[];
 
 // ?
 const struct SamuraiSlice_0805a5d4 D_0805a5d4[] = {

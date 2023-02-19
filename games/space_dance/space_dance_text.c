@@ -1,55 +1,38 @@
 #include "global.h"
 #include "text.h"
 
-extern const char D_0805e2ac[];
-extern const char D_0805e2c8[];
-extern const char D_0805e2e4[];
-extern const char D_0805e300[];
-extern const char D_0805e320[];
-extern const char D_0805e344[];
-extern const char D_0805e364[];
-extern const char D_0805e37c[];
-extern const char D_0805e38c[];
-extern const char D_0805e3a8[];
-extern const char D_0805e3d8[];
-extern const char D_0805e3ec[];
-extern const char D_0805e3fc[];
-extern const char D_0805e404[];
-extern const char D_0805e40c[];
-extern const char D_0805e414[];
-
 
 /* Game Text - Space Dance */
 
 
-const char D_0805e2ac[] = "なんだか　乱れてるなぁ。";
+char D_0805e2ac[] = "なんだか　乱れてるなぁ。";
 
-const char D_0805e2c8[] = "息が　あってるじゃないか！";
+char D_0805e2c8[] = "息が　あってるじゃないか！";
 
-const char D_0805e2e4[] = "ちょっと　あわててたなぁ。";
+char D_0805e2e4[] = "ちょっと　あわててたなぁ。";
 
-const char D_0805e300[] = "よい判断をしてるじゃないか！";
+char D_0805e300[] = "よい判断をしてるじゃないか！";
 
-const char D_0805e320[] = "サビの手前が　ガタガタだったなぁ。";
+char D_0805e320[] = "サビの手前が　ガタガタだったなぁ。";
 
-const char D_0805e344[] = "サビの手前が　キマってたヨ！";
+char D_0805e344[] = "サビの手前が　キマってたヨ！";
 
-const char D_0805e364[] = "スペースおじさんの意見";
+char D_0805e364[] = "スペースおじさんの意見";
 
-const char D_0805e37c[] = "レッツゴー！";
+char D_0805e37c[] = "レッツゴー！";
 
-const char D_0805e38c[] = "みんなで　ダンスするぞ。";
+char D_0805e38c[] = "みんなで　ダンスするぞ。";
 
-const char D_0805e3a8[] = "まず、　３つの　アクションを　おぼえるのだ。";
+char D_0805e3a8[] = "まず、　３つの　アクションを　おぼえるのだ。";
 
-const char D_0805e3d8[] = "では、　１つめ。";
+char D_0805e3d8[] = "では、　１つめ。";
 
-const char D_0805e3ec[] = "マネするのだ！";
+char D_0805e3ec[] = "マネするのだ！";
 
-const char D_0805e3fc[] = "ＯＫ！";
+char D_0805e3fc[] = "ＯＫ！";
 
-const char D_0805e404[] = "つぎ";
+char D_0805e404[] = "つぎ";
 
-const char D_0805e40c[] = "ラスト";
+char D_0805e40c[] = "ラスト";
 
-const char D_0805e414[] = "では、　ほんばんだ！";
+char D_0805e414[] = "では、　ほんばんだ！";

@@ -1,15 +1,6 @@
 #include "prologues/ninja_reincarnate.h"
 
 
-  /* PROLOGUE (NINJA REINCARNATE) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c24604;
-extern struct CompressedGraphics D_08c24804;
-extern struct CompressedGraphics D_08c24200;
-extern Palette ninja_reincarnate_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

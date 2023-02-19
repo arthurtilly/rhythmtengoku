@@ -101,6 +101,54 @@ extern struct CompressedGraphics D_08c50f54;
 extern struct CompressedGraphics D_08c510d4;
 extern struct CompressedGraphics D_08c50e04;
 
+// BG Monitor
+extern struct CompressedGraphics D_08c71ed4;
+extern struct CompressedGraphics D_08c762e8;
+extern struct CompressedGraphics D_08c76300;
+extern struct CompressedGraphics D_08c71340;
+extern struct CompressedGraphics D_08c745e0;
+extern struct CompressedGraphics D_08c74754;
+extern struct CompressedGraphics D_08c7069c;
+extern struct CompressedGraphics D_08c737a4;
+extern struct CompressedGraphics D_08c73978;
+extern struct CompressedGraphics D_08c71908;
+extern struct CompressedGraphics D_08c74ef8;
+extern struct CompressedGraphics D_08c75100;
+extern struct CompressedGraphics D_08c71c8c;
+extern struct CompressedGraphics D_08c756bc;
+extern struct CompressedGraphics D_08c758bc;
+extern struct CompressedGraphics D_08c70b4c;
+extern struct CompressedGraphics D_08c73ea4;
+extern struct CompressedGraphics D_08c7408c;
+extern struct CompressedGraphics D_08c71b6c;
+extern struct CompressedGraphics D_08c7534c;
+extern struct CompressedGraphics D_08c75478;
+extern struct CompressedGraphics D_08c71658;
+extern struct CompressedGraphics D_08c749d4;
+extern struct CompressedGraphics D_08c74bb0;
+extern struct CompressedGraphics D_08c710e8;
+extern struct CompressedGraphics D_08c74210;
+extern struct CompressedGraphics D_08c74404;
+extern struct CompressedGraphics D_08c71e64;
+extern struct CompressedGraphics D_08c759cc;
+extern struct CompressedGraphics D_08c75ad0;
+extern struct CompressedGraphics D_08c709a8;
+extern struct CompressedGraphics D_08c73b6c;
+extern struct CompressedGraphics D_08c73cf8;
+extern struct CompressedGraphics D_08c70580;
+extern struct CompressedGraphics D_08c73544;
+extern struct CompressedGraphics D_08c73618;
+extern struct CompressedGraphics D_08c70490;
+extern struct CompressedGraphics D_08c72518;
+extern struct CompressedGraphics D_08c72634;
+extern struct CompressedGraphics D_08c704e8;
+extern struct CompressedGraphics D_08c72e4c;
+extern struct CompressedGraphics D_08c7346c;
+extern struct CompressedGraphics D_08c703a8;
+extern struct CompressedGraphics D_08c720a0;
+extern struct CompressedGraphics D_08c72400;
+
+
 /* DRUM LESSONS - PALETTES */
 
 extern Palette drum_lessons_obj_pal[];
