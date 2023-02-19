@@ -1556,8 +1556,8 @@ SECTIONS {
         build/games/tram_and_pauline/graphics/tram_and_pauline_tutorial_pal.c.o(.data);
         build/games/tram_and_pauline/graphics/tram_and_pauline_anim.c.o(.data);
         build/games/tram_and_pauline/graphics/tram_and_pauline_pal.c.o(.data);
-        build/games/rhythm_toys/graphics/horse_machine_anim.c.o(.data);
-        build/games/rhythm_toys/graphics/horse_machine_pal.c.o(.data);
+        build/games/horse_machine/graphics/horse_machine_anim.c.o(.data);
+        build/games/horse_machine/graphics/horse_machine_pal.c.o(.data);
         build/games/sick_beats/graphics/sick_beats_anim.c.o(.data);
         build/games/sick_beats/graphics/sick_beats_pal.c.o(.data);
         build/graphics/warning/warning_anim.c.o(.data);
@@ -1583,8 +1583,8 @@ SECTIONS {
         build/bin/text_medium_glyph_sizes.bin.o(.rodata*);
         build/bin/text_large_glyphs.bin.o(.rodata*);
         build/bin/text_large_glyph_sizes.bin.o(.rodata*);
-        build/data/unknown_anim_data.c.o(.rodata);
-        build/data/beatscript_scene_data.c.o(.rodata);
+        build/data/unknown_anim_data.c.o(.data);
+        build/data/beatscript_scene_data.c.o(.data);
         build/data/sound_tempo_table.c.o(.rodata);
 
         build/bin/bindata_089cd1a4.bin.o(.rodata*);

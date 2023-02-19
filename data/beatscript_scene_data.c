@@ -6,13 +6,13 @@
 
 
 // [D_089ccbc0] Blank Animation
-const struct Animation D_089ccbc0[] = {
+struct Animation D_089ccbc0[] = {
     /* End */ END_ANIMATION
 };
 
 
 // [D_089ccbc8] Wario Outline Font Palettes
-const FontPalette D_089ccbc8[] = {
+FontPalette D_089ccbc8[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),
         /* 01 */ TO_RGB555(0x000000),
@@ -161,7 +161,7 @@ const FontPalette D_089ccbc8[] = {
 
 
 // [D_089ccc80] Arbitrarily-Split Data
-const u16 D_089ccc80[] = {
+u16 D_089ccc80[] = {
     /* 00 */ TO_RGB555(0x000000),
     /* 01 */ TO_RGB555(0x000000),
     /* 02 */ TO_RGB555(0xA81088),
@@ -172,4 +172,4 @@ const u16 D_089ccc80[] = {
 
 
 // [D_089ccc94] Wide-Spaced Characters
-const char D_089ccc94[] = "‚‚‚‚ƒ‚„‚…‚†‚‡‚ˆ‚‰‚Š‚‹‚Œ‚‚‚‚‚‘‚’‚“‚”‚•‚–‚—‚˜‚™‚š";
+char D_089ccc94[] = "‚‚‚‚ƒ‚„‚…‚†‚‡‚ˆ‚‰‚Š‚‹‚Œ‚‚‚‚‚‘‚’‚“‚”‚•‚–‚—‚˜‚™‚š";

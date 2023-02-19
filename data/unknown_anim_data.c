@@ -17,7 +17,7 @@ extern struct Animation unknown_anim09[];
 extern struct Animation unknown_anim12[];
 
 // [D_089ccb90] Seemingly unused table of also unused animations.
-struct Animation *const D_089ccb90[] = {
+struct Animation *D_089ccb90[] = {
     NULL,
     unknown_anim09,
     unknown_anim08,
