@@ -3,7 +3,7 @@
 
 .include "include/gba.inc"
 .include "include/bs_riq.inc"
-.include "games/quiz_show/quiz_show_macros.inc"
+.include "games/quiz_show/macros.inc"
 
 load_quiz_show_labels
 
