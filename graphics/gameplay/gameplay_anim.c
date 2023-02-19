@@ -4,7 +4,7 @@
 #include "gameplay_anim_cells.inc.c"
 
 // [D_0890ab28] Pause Menu Title
-const struct Animation anim_gameplay_pause_title[] = {
+struct Animation anim_gameplay_pause_title[] = {
     /* 000 */ { game_overlay_cel001, 3 },
     /* 001 */ { game_overlay_cel002, 3 },
     /* 002 */ { game_overlay_cel003, 3 },
@@ -20,7 +20,7 @@ const struct Animation anim_gameplay_pause_title[] = {
 };
 
 // [D_0890ab88] Pause Menu Options ("Continue" Selected)
-const struct Animation anim_gameplay_pause_option1[] = {
+struct Animation anim_gameplay_pause_option1[] = {
     /* 000 */ { game_overlay_cel011, 3 },
     /* 001 */ { game_overlay_cel012, 9 },
     /* 002 */ { game_overlay_cel011, 3 },
@@ -29,7 +29,7 @@ const struct Animation anim_gameplay_pause_option1[] = {
 };
 
 // [D_0890abb0] Pause Menu Options ("Quit" Selected)
-const struct Animation anim_gameplay_pause_option2[] = {
+struct Animation anim_gameplay_pause_option2[] = {
     /* 000 */ { game_overlay_cel014, 3 },
     /* 001 */ { game_overlay_cel015, 9 },
     /* 002 */ { game_overlay_cel014, 3 },
@@ -38,7 +38,7 @@ const struct Animation anim_gameplay_pause_option2[] = {
 };
 
 // [D_0890abd8] Skip Tutorial ("Select to Skip")
-const struct Animation anim_gameplay_skip_icon[] = {
+struct Animation anim_gameplay_skip_icon[] = {
     /* 000 */ { game_overlay_cel017, 40 },
     /* 001 */ { game_overlay_cel018, 40 },
     /* 002 */ { game_overlay_cel019, 40 },
@@ -47,7 +47,7 @@ const struct Animation anim_gameplay_skip_icon[] = {
 };
 
 // [D_0890ac00] A Button Prompt (Black)
-const struct Animation anim_gameplay_text_button_black[] = {
+struct Animation anim_gameplay_text_button_black[] = {
     /* 000 */ { game_overlay_cel022, 3 },
     /* 001 */ { game_overlay_cel023, 3 },
     /* 002 */ { game_overlay_cel021, 40 },
@@ -55,7 +55,7 @@ const struct Animation anim_gameplay_text_button_black[] = {
 };
 
 // [D_0890ac20] A Button Prompt (White)
-const struct Animation anim_gameplay_text_button_white[] = {
+struct Animation anim_gameplay_text_button_white[] = {
     /* 000 */ { game_overlay_cel025, 3 },
     /* 001 */ { game_overlay_cel026, 3 },
     /* 002 */ { game_overlay_cel024, 40 },
@@ -63,7 +63,7 @@ const struct Animation anim_gameplay_text_button_white[] = {
 };
 
 // [D_0890ac40] Go For A Perfect!
-const struct Animation anim_gameplay_perfect_icon[] = {
+struct Animation anim_gameplay_perfect_icon[] = {
     /* 000 */ { game_overlay_cel029, 40 },
     /* 001 */ { game_overlay_cel028, 20 },
     /* 002 */ { game_overlay_cel029, 40 },
@@ -79,7 +79,7 @@ const struct Animation anim_gameplay_perfect_icon[] = {
 };
 
 // [D_0890aca0] Fail Perfect
-const struct Animation anim_gameplay_perfect_miss[] = {
+struct Animation anim_gameplay_perfect_miss[] = {
     /* 000 */ { game_overlay_cel036, 2 },
     /* 001 */ { game_overlay_cel037, 20 },
     /* 002 */ { game_overlay_cel038, 3 },
@@ -107,7 +107,7 @@ const struct Animation anim_gameplay_perfect_miss[] = {
 };
 
 // [D_0890ad60] Perfect Input
-const struct Animation anim_gameplay_perfect_hit[] = {
+struct Animation anim_gameplay_perfect_hit[] = {
     /* 000 */ { game_overlay_cel030, 1 },
     /* 001 */ { game_overlay_cel031, 2 },
     /* 002 */ { game_overlay_cel032, 2 },

@@ -4,7 +4,7 @@
 #include "drum_tutorial_anim_cells.inc.c"
 
 // [D_088c29f0] Left Hand - Snare Drum
-const struct Animation anim_drum_player_use_snare_l[] = {
+struct Animation anim_drum_player_use_snare_l[] = {
     /* 000 */ { drum_tutorial_cel016, 1 },
     /* 001 */ { drum_tutorial_cel017, 1 },
     /* 002 */ { drum_tutorial_cel018, 1 },
@@ -19,7 +19,7 @@ const struct Animation anim_drum_player_use_snare_l[] = {
 };
 
 // [D_088c2a48] Right Hand - Snare Drum
-const struct Animation anim_drum_player_use_snare_r[] = {
+struct Animation anim_drum_player_use_snare_r[] = {
     /* 000 */ { drum_tutorial_cel026, 1 },
     /* 001 */ { drum_tutorial_cel027, 1 },
     /* 002 */ { drum_tutorial_cel028, 1 },
@@ -34,7 +34,7 @@ const struct Animation anim_drum_player_use_snare_r[] = {
 };
 
 // [D_088c2aa0] Right Hand - Crash Cymbal
-const struct Animation anim_drum_player_use_crash[] = {
+struct Animation anim_drum_player_use_crash[] = {
     /* 000 */ { drum_tutorial_cel036, 1 },
     /* 001 */ { drum_tutorial_cel037, 1 },
     /* 002 */ { drum_tutorial_cel038, 1 },
@@ -50,7 +50,7 @@ const struct Animation anim_drum_player_use_crash[] = {
 };
 
 // [D_088c2b00] Left Hand - Splash Cymbal
-const struct Animation anim_drum_player_use_splash[] = {
+struct Animation anim_drum_player_use_splash[] = {
     /* 000 */ { drum_tutorial_cel047, 2 },
     /* 001 */ { drum_tutorial_cel048, 1 },
     /* 002 */ { drum_tutorial_cel049, 1 },
@@ -66,7 +66,7 @@ const struct Animation anim_drum_player_use_splash[] = {
 };
 
 // [D_088c2b60] Left Hand - Tom Drum
-const struct Animation anim_drum_player_use_tom[] = {
+struct Animation anim_drum_player_use_tom[] = {
     /* 000 */ { drum_tutorial_cel058, 2 },
     /* 001 */ { drum_tutorial_cel059, 1 },
     /* 002 */ { drum_tutorial_cel060, 1 },
@@ -82,7 +82,7 @@ const struct Animation anim_drum_player_use_tom[] = {
 };
 
 // [D_088c2bc0] Left Hand - Hi-Hat
-const struct Animation anim_drum_player_use_hihat[] = {
+struct Animation anim_drum_player_use_hihat[] = {
     /* 000 */ { drum_tutorial_cel069, 1 },
     /* 001 */ { drum_tutorial_cel070, 1 },
     /* 002 */ { drum_tutorial_cel071, 1 },
@@ -98,7 +98,7 @@ const struct Animation anim_drum_player_use_hihat[] = {
 };
 
 // [D_088c2c20] Head
-const struct Animation anim_drum_player_head[] = {
+struct Animation anim_drum_player_head[] = {
     /* 000 */ { drum_tutorial_cel001, 3 },
     /* 001 */ { drum_tutorial_cel002, 3 },
     /* 002 */ { drum_tutorial_cel003, 30 },
@@ -106,7 +106,7 @@ const struct Animation anim_drum_player_head[] = {
 };
 
 // [D_088c2c40] Torso
-const struct Animation anim_drum_player_body[] = {
+struct Animation anim_drum_player_body[] = {
     /* 000 */ { drum_tutorial_cel004, 3 },
     /* 001 */ { drum_tutorial_cel005, 2 },
     /* 002 */ { drum_tutorial_cel006, 3 },
@@ -114,7 +114,7 @@ const struct Animation anim_drum_player_body[] = {
 };
 
 // [D_088c2c60] Waist
-const struct Animation anim_drum_player_waist[] = {
+struct Animation anim_drum_player_waist[] = {
     /* 000 */ { drum_tutorial_cel011, 3 },
     /* 001 */ { drum_tutorial_cel012, 2 },
     /* 002 */ { drum_tutorial_cel013, 30 },
@@ -122,7 +122,7 @@ const struct Animation anim_drum_player_waist[] = {
 };
 
 // [D_088c2c80] Left Leg - Kick Pedal
-const struct Animation anim_drum_player_use_pedal_l[] = {
+struct Animation anim_drum_player_use_pedal_l[] = {
     /* 000 */ { drum_tutorial_cel007, 3 },
     /* 001 */ { drum_tutorial_cel008, 2 },
     /* 002 */ { drum_tutorial_cel008, 30 },
@@ -130,7 +130,7 @@ const struct Animation anim_drum_player_use_pedal_l[] = {
 };
 
 // [D_088c2ca0] Right Leg - Kick Pedal
-const struct Animation anim_drum_player_use_pedal_r[] = {
+struct Animation anim_drum_player_use_pedal_r[] = {
     /* 000 */ { drum_tutorial_cel009, 3 },
     /* 001 */ { drum_tutorial_cel010, 2 },
     /* 002 */ { drum_tutorial_cel010, 30 },
@@ -138,7 +138,7 @@ const struct Animation anim_drum_player_use_pedal_r[] = {
 };
 
 // [D_088c2cc0] Crash Cymbal
-const struct Animation anim_drum_player_kit_crash[] = {
+struct Animation anim_drum_player_kit_crash[] = {
     /* 000 */ { drum_tutorial_cel080, 2 },
     /* 001 */ { drum_tutorial_cel081, 2 },
     /* 002 */ { drum_tutorial_cel082, 2 },
@@ -156,7 +156,7 @@ const struct Animation anim_drum_player_kit_crash[] = {
 };
 
 // [D_088c2d30] Splash Cymbal
-const struct Animation anim_drum_player_kit_splash[] = {
+struct Animation anim_drum_player_kit_splash[] = {
     /* 000 */ { drum_tutorial_cel086, 2 },
     /* 001 */ { drum_tutorial_cel087, 2 },
     /* 002 */ { drum_tutorial_cel088, 2 },
@@ -174,7 +174,7 @@ const struct Animation anim_drum_player_kit_splash[] = {
 };
 
 // [D_088c2da0] Right Bass Drum
-const struct Animation anim_drum_player_kit_bass_r[] = {
+struct Animation anim_drum_player_kit_bass_r[] = {
     /* 000 */ { drum_tutorial_cel092, 3 },
     /* 001 */ { drum_tutorial_cel093, 2 },
     /* 002 */ { drum_tutorial_cel094, 30 },
@@ -182,7 +182,7 @@ const struct Animation anim_drum_player_kit_bass_r[] = {
 };
 
 // [D_088c2dc0] Left Bass Drum
-const struct Animation anim_drum_player_kit_bass_l[] = {
+struct Animation anim_drum_player_kit_bass_l[] = {
     /* 000 */ { drum_tutorial_cel095, 3 },
     /* 001 */ { drum_tutorial_cel096, 2 },
     /* 002 */ { drum_tutorial_cel097, 30 },
@@ -190,7 +190,7 @@ const struct Animation anim_drum_player_kit_bass_l[] = {
 };
 
 // [D_088c2de0] Hi-Hat
-const struct Animation anim_drum_player_kit_hihat[] = {
+struct Animation anim_drum_player_kit_hihat[] = {
     /* 000 */ { drum_tutorial_cel098, 3 },
     /* 001 */ { drum_tutorial_cel099, 2 },
     /* 002 */ { drum_tutorial_cel100, 2 },
@@ -198,7 +198,7 @@ const struct Animation anim_drum_player_kit_hihat[] = {
 };
 
 // [D_088c2e00] Snare Drum
-const struct Animation anim_drum_player_kit_snare[] = {
+struct Animation anim_drum_player_kit_snare[] = {
     /* 000 */ { drum_tutorial_cel101, 3 },
     /* 001 */ { drum_tutorial_cel102, 2 },
     /* 002 */ { drum_tutorial_cel103, 30 },
@@ -206,7 +206,7 @@ const struct Animation anim_drum_player_kit_snare[] = {
 };
 
 // [D_088c2e20] Tom Drum
-const struct Animation anim_drum_player_kit_tom[] = {
+struct Animation anim_drum_player_kit_tom[] = {
     /* 000 */ { drum_tutorial_cel104, 3 },
     /* 001 */ { drum_tutorial_cel105, 2 },
     /* 002 */ { drum_tutorial_cel106, 30 },
@@ -214,13 +214,13 @@ const struct Animation anim_drum_player_kit_tom[] = {
 };
 
 // [D_088c2e40] Seat
-const struct Animation anim_drum_player_kit_seat[] = {
+struct Animation anim_drum_player_kit_seat[] = {
     /* 000 */ { drum_tutorial_cel107, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088c2e50] Left Hand - Drum Roll
-const struct Animation anim_drum_player_snare_roll[] = {
+struct Animation anim_drum_player_snare_roll[] = {
     /* 000 */ { drum_tutorial_cel014, 2 },
     /* 001 */ { drum_tutorial_cel015, 2 },
     /* 002 */ { drum_tutorial_cel014, 2 },
@@ -234,7 +234,7 @@ const struct Animation anim_drum_player_snare_roll[] = {
 };
 
 // [D_088c2ea0] Head (Forward, Blinking)
-const struct Animation anim_drum_player_face_blink[] = {
+struct Animation anim_drum_player_face_blink[] = {
     /* 000 */ { drum_tutorial_cel116, 60 },
     /* 001 */ { drum_tutorial_cel117, 8 },
     /* 002 */ { drum_tutorial_cel116, 80 },
@@ -245,7 +245,7 @@ const struct Animation anim_drum_player_face_blink[] = {
 };
 
 // [D_088c2ed8] Head (Forward, Talking)
-const struct Animation anim_drum_player_face_talk[] = {
+struct Animation anim_drum_player_face_talk[] = {
     /* 000 */ { drum_tutorial_cel116, 20 },
     /* 001 */ { drum_tutorial_cel118, 10 },
     /* 002 */ { drum_tutorial_cel116, 10 },
@@ -260,24 +260,24 @@ const struct Animation anim_drum_player_face_talk[] = {
 };
 
 // [D_088c2f30] Blank
-const struct Animation anim_drum_player_blank1[] = {
+struct Animation anim_drum_player_blank1[] = {
     /* End */ END_ANIMATION
 };
 
 // [D_088c2f38] Blank
-const struct Animation anim_drum_player_blank2[] = {
+struct Animation anim_drum_player_blank2[] = {
     /* End */ END_ANIMATION
 };
 
 // [D_088c2f40] ?
-const struct Animation anim_drum_player_unk24[] = {
+struct Animation anim_drum_player_unk24[] = {
     /* 000 */ { drum_tutorial_cel120, 7 },
     /* 001 */ { drum_tutorial_cel119, 50 },
     /* End */ END_ANIMATION
 };
 
 // [D_088c2f58] ?
-const struct Animation anim_drum_player_unk25[] = {
+struct Animation anim_drum_player_unk25[] = {
     /* 000 */ { drum_tutorial_cel121, 7 },
     /* 001 */ { drum_tutorial_cel119, 7 },
     /* 002 */ { drum_tutorial_cel121, 10 },
@@ -292,13 +292,13 @@ const struct Animation anim_drum_player_unk25[] = {
 };
 
 // [D_088c2fb0] "Start to Skip" Tutorial Text (Unused)
-const struct Animation anim_drum_player_text_skip_tutorial[] = {
+struct Animation anim_drum_player_text_skip_tutorial[] = {
     /* 000 */ { drum_tutorial_cel122, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088c2fc0] Text Advance Icon
-const struct Animation anim_drum_player_text_adv_icon[] = {
+struct Animation anim_drum_player_text_adv_icon[] = {
     /* 000 */ { drum_tutorial_cel123, 3 },
     /* 001 */ { drum_tutorial_cel124, 3 },
     /* 002 */ { drum_tutorial_cel125, 30 },

@@ -4,41 +4,41 @@
   /* THE CLAPPY TRIO - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_clappy_trio_beat[];
-extern const struct Animation anim_snappy_trio_beat[];
-extern const struct Animation anim_clappy_trio_smile[];
-extern const struct Animation anim_snappy_trio_smile[];
-extern const struct Animation anim_clappy_trio_glare[];
-extern const struct Animation anim_snappy_trio_glare[];
-extern const struct Animation anim_clappy_trio_smirk[];
-extern const struct Animation anim_snappy_trio_smirk[];
-extern const struct Animation anim_clappy_trio_clap[];
-extern const struct Animation anim_snappy_trio_clap[];
-extern const struct Animation anim_clappy_trio_player_icon[];
-extern const struct Animation anim_snappy_trio_player_icon[];
-extern const struct Animation anim_clappy_trio_sign[];
-extern const struct Animation anim_snappy_trio_sign[];
-extern const struct Animation anim_clappy_trio_text_box[];
-extern const struct Animation anim_snappy_trio_text_box[];
+extern struct Animation anim_clappy_trio_beat[];
+extern struct Animation anim_snappy_trio_beat[];
+extern struct Animation anim_clappy_trio_smile[];
+extern struct Animation anim_snappy_trio_smile[];
+extern struct Animation anim_clappy_trio_glare[];
+extern struct Animation anim_snappy_trio_glare[];
+extern struct Animation anim_clappy_trio_smirk[];
+extern struct Animation anim_snappy_trio_smirk[];
+extern struct Animation anim_clappy_trio_clap[];
+extern struct Animation anim_snappy_trio_clap[];
+extern struct Animation anim_clappy_trio_player_icon[];
+extern struct Animation anim_snappy_trio_player_icon[];
+extern struct Animation anim_clappy_trio_sign[];
+extern struct Animation anim_snappy_trio_sign[];
+extern struct Animation anim_clappy_trio_text_box[];
+extern struct Animation anim_snappy_trio_text_box[];
 
-extern const struct CompressedGraphics D_08c61e18; // BG Tiles - The Clappy Trio
-extern const struct CompressedGraphics D_08c6214c; // BG Map - The Clappy Trio
-extern const struct CompressedGraphics D_08c61654; // OBJ Tiles - The Clappy Trio
-extern const struct CompressedGraphics D_08c635bc; // BG Tiles - The Snappy Trio
-extern const struct CompressedGraphics D_08c638e0; // BG Map - The Snappy Trio
-extern const struct CompressedGraphics D_08c62d18; // OBJ Tiles - The Snappy Trio
+extern struct CompressedGraphics D_08c61e18; // BG Tiles - The Clappy Trio
+extern struct CompressedGraphics D_08c6214c; // BG Map - The Clappy Trio
+extern struct CompressedGraphics D_08c61654; // OBJ Tiles - The Clappy Trio
+extern struct CompressedGraphics D_08c635bc; // BG Tiles - The Snappy Trio
+extern struct CompressedGraphics D_08c638e0; // BG Map - The Snappy Trio
+extern struct CompressedGraphics D_08c62d18; // OBJ Tiles - The Snappy Trio
 
-extern const Palette clappy_trio_bg_pal[];
-extern const Palette clappy_trio_obj_pal[];
-extern const Palette snappy_trio_bg_pal[];
-extern const Palette snappy_trio_obj_pal[];
+extern Palette clappy_trio_bg_pal[];
+extern Palette clappy_trio_obj_pal[];
+extern Palette snappy_trio_bg_pal[];
+extern Palette snappy_trio_obj_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e4520] All Animations
-const struct Animation *clappy_trio_anim[][2] = {
+struct Animation *clappy_trio_anim[][2] = {
     /* BEAT  */ { anim_clappy_trio_beat, anim_snappy_trio_beat },
     /* SMILE */ { anim_clappy_trio_smile, anim_snappy_trio_smile },
     /* GLARE */ { anim_clappy_trio_glare, anim_snappy_trio_glare },
@@ -50,7 +50,7 @@ const struct Animation *clappy_trio_anim[][2] = {
 };
 
 // [D_089e4560] Animation Table
-const struct Animation **clappy_trio_anim_table[] = {
+struct Animation **clappy_trio_anim_table[] = {
     clappy_trio_anim[0],
     clappy_trio_anim[1],
     clappy_trio_anim[2],
@@ -62,7 +62,7 @@ const struct Animation **clappy_trio_anim_table[] = {
 };
 
 // [D_089e4580] Buffered Textures List
-const struct CompressedGraphics *clappy_trio_buffered_textures[] = {
+struct CompressedGraphics *clappy_trio_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

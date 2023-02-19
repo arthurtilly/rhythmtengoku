@@ -4,158 +4,158 @@
   /* DRUM LIVE - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_drum_girl_head[];
-extern const struct Animation anim_drum_boy_head[];
-extern const struct Animation anim_band_drummer_head[];
-extern const struct Animation anim_drum_girl_body[];
-extern const struct Animation anim_drum_boy_body[];
-extern const struct Animation anim_band_drummer_body[];
-extern const struct Animation anim_drum_girl_head_turn_l[];
-extern const struct Animation anim_drum_boy_head_turn_l[];
-extern const struct Animation anim_band_drummer_head_turn_l[];
-extern const struct Animation anim_drum_girl_head_turn_r[];
-extern const struct Animation anim_drum_boy_head_turn_r[];
-extern const struct Animation anim_band_drummer_head_turn_r[];
-extern const struct Animation anim_drum_girl_use_splash[];
-extern const struct Animation anim_drum_boy_use_splash[];
-extern const struct Animation anim_band_drummer_use_splash[];
-extern const struct Animation anim_drum_girl_use_snare_l[];
-extern const struct Animation anim_drum_boy_use_snare_l[];
-extern const struct Animation anim_band_drummer_use_snare_l[];
-extern const struct Animation anim_drum_girl_use_crash[];
-extern const struct Animation anim_drum_boy_use_crash[];
-extern const struct Animation anim_band_drummer_use_crash[];
-extern const struct Animation anim_drum_girl_use_snare_r[];
-extern const struct Animation anim_drum_boy_use_snare_r[];
-extern const struct Animation anim_band_drummer_use_snare_r[];
-extern const struct Animation anim_drum_girl_use_hihat[];
-extern const struct Animation anim_drum_boy_use_hihat[];
-extern const struct Animation anim_band_drummer_use_hihat[];
-extern const struct Animation anim_drum_girl_use_tom[];
-extern const struct Animation anim_drum_boy_use_tom[];
-extern const struct Animation anim_band_drummer_use_tom[];
-extern const struct Animation anim_drum_girl_kit_splash[];
-extern const struct Animation anim_drum_boy_kit_splash[];
-extern const struct Animation anim_band_drum_kit_splash[];
-extern const struct Animation anim_drum_girl_kit_crash[];
-extern const struct Animation anim_drum_boy_kit_crash[];
-extern const struct Animation anim_band_drum_kit_crash[];
-extern const struct Animation anim_drum_girl_kit_bass_l[];
-extern const struct Animation anim_drum_boy_kit_bass_l[];
-extern const struct Animation anim_band_drum_kit_bass_l[];
-extern const struct Animation anim_drum_girl_kit_bass_r[];
-extern const struct Animation anim_drum_boy_kit_bass_r[];
-extern const struct Animation anim_band_drum_kit_bass_r[];
-extern const struct Animation anim_drum_girl_kit_snare[];
-extern const struct Animation anim_drum_boy_kit_snare[];
-extern const struct Animation anim_band_drum_kit_snare[];
-extern const struct Animation anim_drum_girl_kit_hihat[];
-extern const struct Animation anim_drum_boy_kit_hihat[];
-extern const struct Animation anim_band_drum_kit_hihat[];
-extern const struct Animation anim_drum_girl_kit_tom[];
-extern const struct Animation anim_drum_boy_kit_tom[];
-extern const struct Animation anim_band_drum_kit_tom[];
-extern const struct Animation anim_bass_girl_head[];
-extern const struct Animation anim_bass_boy_head[];
-extern const struct Animation anim_band_bassist_head[];
-extern const struct Animation anim_bass_girl_body[];
-extern const struct Animation anim_bass_boy_body[];
-extern const struct Animation anim_band_saxophonists_play[];
-extern const struct Animation anim_bass_girl_legs[];
-extern const struct Animation anim_bass_boy_legs[];
-extern const struct Animation anim_band_bassist_legs[];
-extern const struct Animation anim_bass_girl_arm_l[];
-extern const struct Animation anim_bass_boy_arm_l[];
-extern const struct Animation anim_band_bassist_arm_l[];
-extern const struct Animation anim_bass_girl_arm_r[];
-extern const struct Animation anim_bass_boy_arm_r[];
-extern const struct Animation anim_band_bassist_arm_r[];
-extern const struct Animation anim_bass_girl_crouch[];
-extern const struct Animation anim_bass_boy_crouch[];
-extern const struct Animation anim_band_bassist_crouch[];
-extern const struct Animation anim_bass_girl_jump[];
-extern const struct Animation anim_bass_boy_jump[];
-extern const struct Animation anim_band_bassist_jump[];
-extern const struct Animation anim_bass_girl_head_turn_l[];
-extern const struct Animation anim_bass_boy_head_turn_l[];
-extern const struct Animation anim_band_bassist_head_turn_l[];
-extern const struct Animation anim_bass_girl_head_turn_r[];
-extern const struct Animation anim_bass_boy_head_turn_r[];
-extern const struct Animation anim_band_bassist_head_turn_r[];
-extern const struct Animation anim_bass_girl_jump_strum[];
-extern const struct Animation anim_bass_boy_jump_strum[];
-extern const struct Animation anim_band_bassist_jump_strum[];
-extern const struct Animation anim_guitar_girl_head[];
-extern const struct Animation anim_guitar_boy_head[];
-extern const struct Animation anim_band_guitarist_head[];
-extern const struct Animation anim_guitar_girl_body[];
-extern const struct Animation anim_guitar_boy_body[];
-extern const struct Animation anim_band_trumpeters_play[];
-extern const struct Animation anim_guitar_girl_legs[];
-extern const struct Animation anim_guitar_boy_legs[];
-extern const struct Animation anim_band_guitarist_legs[];
-extern const struct Animation anim_guitar_girl_arm_l[];
-extern const struct Animation anim_guitar_boy_arm_l[];
-extern const struct Animation anim_band_guitarist_arm_l[];
-extern const struct Animation anim_guitar_girl_arm_r[];
-extern const struct Animation anim_guitar_boy_arm_r[];
-extern const struct Animation anim_band_guitarist_arm_r[];
-extern const struct Animation anim_guitar_girl_crouch[];
-extern const struct Animation anim_guitar_boy_crouch[];
-extern const struct Animation anim_band_guitarist_crouch[];
-extern const struct Animation anim_guitar_girl_jump[];
-extern const struct Animation anim_guitar_boy_jump[];
-extern const struct Animation anim_band_guitarist_jump[];
-extern const struct Animation anim_guitar_girl_jump_strum[];
-extern const struct Animation anim_guitar_boy_jump_strum[];
-extern const struct Animation anim_band_guitarist_jump_strum[];
-extern const struct Animation anim_guitar_girl_head_turn_r[];
-extern const struct Animation anim_guitar_boy_head_turn_r[];
-extern const struct Animation anim_band_guitarist_head_turn_r[];
-extern const struct Animation anim_guitar_girl_head_turn_l[];
-extern const struct Animation anim_guitar_boy_head_turn_l[];
-extern const struct Animation anim_band_guitarist_head_turn_l[];
-extern const struct Animation anim_drum_girls_rec_mode_icon[];
-extern const struct Animation anim_drum_boys_rec_mode_icon[];
-extern const struct Animation anim_drum_band_rec_mode_icon[];
-extern const struct Animation anim_drum_girls_adjust_mode_icon[];
-extern const struct Animation anim_drum_boys_adjust_mode_icon[];
-extern const struct Animation anim_drum_band_adjust_mode_icon[];
-extern const struct Animation anim_drum_girls_busy_icon[];
-extern const struct Animation anim_drum_boys_busy_icon[];
-extern const struct Animation anim_drum_band_busy_icon[];
-extern const struct Animation anim_drum_girls_microphone[];
-extern const struct Animation anim_drum_boys_microphone[];
-extern const struct Animation anim_drum_band_microphone[];
-extern const struct Animation anim_drum_girls_light_flash[];
-extern const struct Animation anim_drum_boys_light_flash[];
-extern const struct Animation anim_drum_band_light_flash[];
+extern struct Animation anim_drum_girl_head[];
+extern struct Animation anim_drum_boy_head[];
+extern struct Animation anim_band_drummer_head[];
+extern struct Animation anim_drum_girl_body[];
+extern struct Animation anim_drum_boy_body[];
+extern struct Animation anim_band_drummer_body[];
+extern struct Animation anim_drum_girl_head_turn_l[];
+extern struct Animation anim_drum_boy_head_turn_l[];
+extern struct Animation anim_band_drummer_head_turn_l[];
+extern struct Animation anim_drum_girl_head_turn_r[];
+extern struct Animation anim_drum_boy_head_turn_r[];
+extern struct Animation anim_band_drummer_head_turn_r[];
+extern struct Animation anim_drum_girl_use_splash[];
+extern struct Animation anim_drum_boy_use_splash[];
+extern struct Animation anim_band_drummer_use_splash[];
+extern struct Animation anim_drum_girl_use_snare_l[];
+extern struct Animation anim_drum_boy_use_snare_l[];
+extern struct Animation anim_band_drummer_use_snare_l[];
+extern struct Animation anim_drum_girl_use_crash[];
+extern struct Animation anim_drum_boy_use_crash[];
+extern struct Animation anim_band_drummer_use_crash[];
+extern struct Animation anim_drum_girl_use_snare_r[];
+extern struct Animation anim_drum_boy_use_snare_r[];
+extern struct Animation anim_band_drummer_use_snare_r[];
+extern struct Animation anim_drum_girl_use_hihat[];
+extern struct Animation anim_drum_boy_use_hihat[];
+extern struct Animation anim_band_drummer_use_hihat[];
+extern struct Animation anim_drum_girl_use_tom[];
+extern struct Animation anim_drum_boy_use_tom[];
+extern struct Animation anim_band_drummer_use_tom[];
+extern struct Animation anim_drum_girl_kit_splash[];
+extern struct Animation anim_drum_boy_kit_splash[];
+extern struct Animation anim_band_drum_kit_splash[];
+extern struct Animation anim_drum_girl_kit_crash[];
+extern struct Animation anim_drum_boy_kit_crash[];
+extern struct Animation anim_band_drum_kit_crash[];
+extern struct Animation anim_drum_girl_kit_bass_l[];
+extern struct Animation anim_drum_boy_kit_bass_l[];
+extern struct Animation anim_band_drum_kit_bass_l[];
+extern struct Animation anim_drum_girl_kit_bass_r[];
+extern struct Animation anim_drum_boy_kit_bass_r[];
+extern struct Animation anim_band_drum_kit_bass_r[];
+extern struct Animation anim_drum_girl_kit_snare[];
+extern struct Animation anim_drum_boy_kit_snare[];
+extern struct Animation anim_band_drum_kit_snare[];
+extern struct Animation anim_drum_girl_kit_hihat[];
+extern struct Animation anim_drum_boy_kit_hihat[];
+extern struct Animation anim_band_drum_kit_hihat[];
+extern struct Animation anim_drum_girl_kit_tom[];
+extern struct Animation anim_drum_boy_kit_tom[];
+extern struct Animation anim_band_drum_kit_tom[];
+extern struct Animation anim_bass_girl_head[];
+extern struct Animation anim_bass_boy_head[];
+extern struct Animation anim_band_bassist_head[];
+extern struct Animation anim_bass_girl_body[];
+extern struct Animation anim_bass_boy_body[];
+extern struct Animation anim_band_saxophonists_play[];
+extern struct Animation anim_bass_girl_legs[];
+extern struct Animation anim_bass_boy_legs[];
+extern struct Animation anim_band_bassist_legs[];
+extern struct Animation anim_bass_girl_arm_l[];
+extern struct Animation anim_bass_boy_arm_l[];
+extern struct Animation anim_band_bassist_arm_l[];
+extern struct Animation anim_bass_girl_arm_r[];
+extern struct Animation anim_bass_boy_arm_r[];
+extern struct Animation anim_band_bassist_arm_r[];
+extern struct Animation anim_bass_girl_crouch[];
+extern struct Animation anim_bass_boy_crouch[];
+extern struct Animation anim_band_bassist_crouch[];
+extern struct Animation anim_bass_girl_jump[];
+extern struct Animation anim_bass_boy_jump[];
+extern struct Animation anim_band_bassist_jump[];
+extern struct Animation anim_bass_girl_head_turn_l[];
+extern struct Animation anim_bass_boy_head_turn_l[];
+extern struct Animation anim_band_bassist_head_turn_l[];
+extern struct Animation anim_bass_girl_head_turn_r[];
+extern struct Animation anim_bass_boy_head_turn_r[];
+extern struct Animation anim_band_bassist_head_turn_r[];
+extern struct Animation anim_bass_girl_jump_strum[];
+extern struct Animation anim_bass_boy_jump_strum[];
+extern struct Animation anim_band_bassist_jump_strum[];
+extern struct Animation anim_guitar_girl_head[];
+extern struct Animation anim_guitar_boy_head[];
+extern struct Animation anim_band_guitarist_head[];
+extern struct Animation anim_guitar_girl_body[];
+extern struct Animation anim_guitar_boy_body[];
+extern struct Animation anim_band_trumpeters_play[];
+extern struct Animation anim_guitar_girl_legs[];
+extern struct Animation anim_guitar_boy_legs[];
+extern struct Animation anim_band_guitarist_legs[];
+extern struct Animation anim_guitar_girl_arm_l[];
+extern struct Animation anim_guitar_boy_arm_l[];
+extern struct Animation anim_band_guitarist_arm_l[];
+extern struct Animation anim_guitar_girl_arm_r[];
+extern struct Animation anim_guitar_boy_arm_r[];
+extern struct Animation anim_band_guitarist_arm_r[];
+extern struct Animation anim_guitar_girl_crouch[];
+extern struct Animation anim_guitar_boy_crouch[];
+extern struct Animation anim_band_guitarist_crouch[];
+extern struct Animation anim_guitar_girl_jump[];
+extern struct Animation anim_guitar_boy_jump[];
+extern struct Animation anim_band_guitarist_jump[];
+extern struct Animation anim_guitar_girl_jump_strum[];
+extern struct Animation anim_guitar_boy_jump_strum[];
+extern struct Animation anim_band_guitarist_jump_strum[];
+extern struct Animation anim_guitar_girl_head_turn_r[];
+extern struct Animation anim_guitar_boy_head_turn_r[];
+extern struct Animation anim_band_guitarist_head_turn_r[];
+extern struct Animation anim_guitar_girl_head_turn_l[];
+extern struct Animation anim_guitar_boy_head_turn_l[];
+extern struct Animation anim_band_guitarist_head_turn_l[];
+extern struct Animation anim_drum_girls_rec_mode_icon[];
+extern struct Animation anim_drum_boys_rec_mode_icon[];
+extern struct Animation anim_drum_band_rec_mode_icon[];
+extern struct Animation anim_drum_girls_adjust_mode_icon[];
+extern struct Animation anim_drum_boys_adjust_mode_icon[];
+extern struct Animation anim_drum_band_adjust_mode_icon[];
+extern struct Animation anim_drum_girls_busy_icon[];
+extern struct Animation anim_drum_boys_busy_icon[];
+extern struct Animation anim_drum_band_busy_icon[];
+extern struct Animation anim_drum_girls_microphone[];
+extern struct Animation anim_drum_boys_microphone[];
+extern struct Animation anim_drum_band_microphone[];
+extern struct Animation anim_drum_girls_light_flash[];
+extern struct Animation anim_drum_boys_light_flash[];
+extern struct Animation anim_drum_band_light_flash[];
 
-extern const Palette drum_girls_obj_pal[];
-extern const Palette drum_girls_bg_pal[];
-extern const Palette drum_boys_obj_pal[];
-extern const Palette drum_boys_bg_pal[];
-extern const Palette drum_samurai_band_obj_pal[];
-extern const Palette drum_samurai_band_bg_pal[];
+extern Palette drum_girls_obj_pal[];
+extern Palette drum_girls_bg_pal[];
+extern Palette drum_boys_obj_pal[];
+extern Palette drum_boys_bg_pal[];
+extern Palette drum_samurai_band_obj_pal[];
+extern Palette drum_samurai_band_bg_pal[];
 
-extern const struct CompressedGraphics D_08c47038;
-extern const struct CompressedGraphics D_08c47dc4;
-extern const struct CompressedGraphics D_08c45f10;
-extern const struct CompressedGraphics D_08c47930;
-extern const struct CompressedGraphics D_08c47ed4;
-extern const struct CompressedGraphics D_08c4356c;
-extern const struct CompressedGraphics D_08c439d0;
-extern const struct CompressedGraphics D_08c4241c;
-extern const struct CompressedGraphics D_08bd7c30;
-extern const struct CompressedGraphics D_08bd8060;
-extern const struct CompressedGraphics D_08bd6c44;
+extern struct CompressedGraphics D_08c47038;
+extern struct CompressedGraphics D_08c47dc4;
+extern struct CompressedGraphics D_08c45f10;
+extern struct CompressedGraphics D_08c47930;
+extern struct CompressedGraphics D_08c47ed4;
+extern struct CompressedGraphics D_08c4356c;
+extern struct CompressedGraphics D_08c439d0;
+extern struct CompressedGraphics D_08c4241c;
+extern struct CompressedGraphics D_08bd7c30;
+extern struct CompressedGraphics D_08bd8060;
+extern struct CompressedGraphics D_08bd6c44;
 
 
   //  //  //  ANIMATION DATA  //  //  //
 
 
 // [D_089e03f8] All Animations
-const struct Animation *drum_live_anim[][3] = {
+struct Animation *drum_live_anim[][3] = {
     /* 0x00 */ { anim_drum_girl_head, anim_drum_boy_head, anim_band_drummer_head },
     /* 0x01 */ { anim_drum_girl_body, anim_drum_boy_body, anim_band_drummer_body },
     /* 0x02 */ { anim_drum_girl_head_turn_l, anim_drum_boy_head_turn_l, anim_band_drummer_head_turn_l },
@@ -201,7 +201,7 @@ const struct Animation *drum_live_anim[][3] = {
 };
 
 // [D_089e05f0] Animation Table
-const struct Animation **drum_live_anim_table[] = {
+struct Animation **drum_live_anim_table[] = {
     /* 0x00 */ drum_live_anim[0],
     /* 0x01 */ drum_live_anim[1],
     /* 0x02 */ drum_live_anim[2],
@@ -251,14 +251,14 @@ const struct Animation **drum_live_anim_table[] = {
 
 
 // [D_089e0698] OBJ Palettes
-const Palette *drum_live_obj_palettes[] = {
+Palette *drum_live_obj_palettes[] = {
     /* 0x00 */ drum_girls_obj_pal,
     /* 0x01 */ drum_boys_obj_pal,
     /* 0x02 */ drum_samurai_band_obj_pal
 };
 
 // [D_089e06a4] BG Palettes
-const Palette *drum_live_bg_palettes[] = {
+Palette *drum_live_bg_palettes[] = {
     /* 0x00 */ drum_girls_bg_pal,
     /* 0x01 */ drum_boys_bg_pal,
     /* 0x02 */ drum_samurai_band_bg_pal
@@ -350,7 +350,7 @@ struct DrumTechKit *drum_live_kits[] = {
 
 
 // [D_089e0980] Buffered Textures List
-const struct CompressedGraphics *drum_live_buffered_textures[] = {
+struct CompressedGraphics *drum_live_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

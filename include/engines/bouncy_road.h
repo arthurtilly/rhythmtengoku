@@ -20,10 +20,10 @@ enum BouncyRoadVersionsEnum {
 
 
 // OAM Animations:
-extern const struct Animation anim_bouncy_road_player_a[];
-extern const struct Animation anim_bouncy_road_player_dpad[];
-extern const struct Animation anim_bouncy_road_ball[];
-extern const struct Animation anim_bouncy_road_path[];
+extern struct Animation anim_bouncy_road_player_a[];
+extern struct Animation anim_bouncy_road_player_dpad[];
+extern struct Animation anim_bouncy_road_ball[];
+extern struct Animation anim_bouncy_road_path[];
 
 
 // Palettes:
@@ -36,9 +36,9 @@ extern const struct Animation anim_bouncy_road_path[];
 
 
 // Engine Definition Data:
-extern const struct Animation *bouncy_road_player_bouncer_anim[];
+extern struct Animation *bouncy_road_player_bouncer_anim[];
 extern struct GraphicsTable *bouncy_road_gfx_tables[];
-extern const struct CompressedGraphics *bouncy_road_buffered_textures[];
+extern struct CompressedGraphics *bouncy_road_buffered_textures[];
 
 
 // Functions:

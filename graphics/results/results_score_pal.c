@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0890bc58] <description>
-const Palette results_score_pal[] = {
+Palette results_score_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),
         /* 01 */ TO_RGB555(0x000000),

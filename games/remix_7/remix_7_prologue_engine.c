@@ -4,17 +4,17 @@
   /* PROLOGUE (REMIX 7) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c1983c;
-extern const struct CompressedGraphics D_08c19d54;
-extern const struct CompressedGraphics D_08c173c0;
-extern const Palette remix_7_prologue_pal[];
+extern struct CompressedGraphics D_08c1983c;
+extern struct CompressedGraphics D_08c19d54;
+extern struct CompressedGraphics D_08c173c0;
+extern Palette remix_7_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ec7b0] Buffered Textures List
-const struct CompressedGraphics *remix_7_prologue_buffered_textures[] = {
+struct CompressedGraphics *remix_7_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

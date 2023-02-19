@@ -4,7 +4,7 @@
 #include "bon_dance_anim_cells.inc.c"
 
 // [D_088a7140] Donpan 1 - Beat
-const struct Animation anim_bon_dance_donpan1_beat[] = {
+struct Animation anim_bon_dance_donpan1_beat[] = {
     /* 000 */ { bon_dance_cel008, 4 },
     /* 001 */ { bon_dance_cel010, 4 },
     /* 002 */ { bon_dance_cel011, 7 },
@@ -16,14 +16,14 @@ const struct Animation anim_bon_dance_donpan1_beat[] = {
 };
 
 // [D_088a7180] Blank
-const struct Animation anim_bon_dance_blank[] = {
+struct Animation anim_bon_dance_blank[] = {
     /* 000 */ { bon_dance_cel000, 20 },
     /* 001 */ { bon_dance_cel001, 20 },
     /* End */ END_ANIMATION
 };
 
 // [D_088a7198] Donpan 1 - Clap (Side)
-const struct Animation anim_bon_dance_donpan1_clap1[] = {
+struct Animation anim_bon_dance_donpan1_clap1[] = {
     /* 000 */ { bon_dance_cel002, 2 },
     /* 001 */ { bon_dance_cel003, 2 },
     /* 002 */ { bon_dance_cel004, 2 },
@@ -36,7 +36,7 @@ const struct Animation anim_bon_dance_donpan1_clap1[] = {
 };
 
 // [D_088a71e0] Donpan 1 - Clap (Front)
-const struct Animation anim_bon_dance_donpan1_clap2[] = {
+struct Animation anim_bon_dance_donpan1_clap2[] = {
     /* 000 */ { bon_dance_cel013, 4 },
     /* 001 */ { bon_dance_cel014, 4 },
     /* 002 */ { bon_dance_cel015, 4 },
@@ -47,7 +47,7 @@ const struct Animation anim_bon_dance_donpan1_clap2[] = {
 };
 
 // [D_088a7218] Donpan 2 - Beat
-const struct Animation anim_bon_dance_donpan2_beat[] = {
+struct Animation anim_bon_dance_donpan2_beat[] = {
     /* 000 */ { bon_dance_cel025, 4 },
     /* 001 */ { bon_dance_cel027, 4 },
     /* 002 */ { bon_dance_cel028, 7 },
@@ -59,7 +59,7 @@ const struct Animation anim_bon_dance_donpan2_beat[] = {
 };
 
 // [D_088a7258] Donpan 2 - Clap (Side)
-const struct Animation anim_bon_dance_donpan2_clap1[] = {
+struct Animation anim_bon_dance_donpan2_clap1[] = {
     /* 000 */ { bon_dance_cel019, 2 },
     /* 001 */ { bon_dance_cel020, 2 },
     /* 002 */ { bon_dance_cel021, 2 },
@@ -72,7 +72,7 @@ const struct Animation anim_bon_dance_donpan2_clap1[] = {
 };
 
 // [D_088a72a0] Donpan 2 - Clap (Front)
-const struct Animation anim_bon_dance_donpan2_clap2[] = {
+struct Animation anim_bon_dance_donpan2_clap2[] = {
     /* 000 */ { bon_dance_cel030, 4 },
     /* 001 */ { bon_dance_cel031, 4 },
     /* 002 */ { bon_dance_cel032, 4 },
@@ -83,7 +83,7 @@ const struct Animation anim_bon_dance_donpan2_clap2[] = {
 };
 
 // [D_088a72d8] Player - Beat
-const struct Animation anim_bon_dance_player_beat[] = {
+struct Animation anim_bon_dance_player_beat[] = {
     /* 000 */ { bon_dance_cel041, 4 },
     /* 001 */ { bon_dance_cel043, 4 },
     /* 002 */ { bon_dance_cel044, 7 },
@@ -95,7 +95,7 @@ const struct Animation anim_bon_dance_player_beat[] = {
 };
 
 // [D_088a7318] Player - Clap (Side)
-const struct Animation anim_bon_dance_player_clap1[] = {
+struct Animation anim_bon_dance_player_clap1[] = {
     /* 000 */ { bon_dance_cel036, 2 },
     /* 001 */ { bon_dance_cel037, 2 },
     /* 002 */ { bon_dance_cel038, 2 },
@@ -108,7 +108,7 @@ const struct Animation anim_bon_dance_player_clap1[] = {
 };
 
 // [D_088a7360] Player - Clap (Front)
-const struct Animation anim_bon_dance_player_clap2[] = {
+struct Animation anim_bon_dance_player_clap2[] = {
     /* 000 */ { bon_dance_cel046, 4 },
     /* 001 */ { bon_dance_cel047, 4 },
     /* 002 */ { bon_dance_cel048, 4 },
@@ -119,7 +119,7 @@ const struct Animation anim_bon_dance_player_clap2[] = {
 };
 
 // [D_088a7398] Donpan 3 - Beat
-const struct Animation anim_bon_dance_donpan3_beat[] = {
+struct Animation anim_bon_dance_donpan3_beat[] = {
     /* 000 */ { bon_dance_cel058, 4 },
     /* 001 */ { bon_dance_cel060, 4 },
     /* 002 */ { bon_dance_cel061, 7 },
@@ -131,7 +131,7 @@ const struct Animation anim_bon_dance_donpan3_beat[] = {
 };
 
 // [D_088a73d8] Donpan 3 - Clap (Side)
-const struct Animation anim_bon_dance_donpan3_clap1[] = {
+struct Animation anim_bon_dance_donpan3_clap1[] = {
     /* 000 */ { bon_dance_cel052, 2 },
     /* 001 */ { bon_dance_cel053, 2 },
     /* 002 */ { bon_dance_cel054, 2 },
@@ -144,7 +144,7 @@ const struct Animation anim_bon_dance_donpan3_clap1[] = {
 };
 
 // [D_088a7420] Donpan 3 - Clap (Front)
-const struct Animation anim_bon_dance_donpan3_clap2[] = {
+struct Animation anim_bon_dance_donpan3_clap2[] = {
     /* 000 */ { bon_dance_cel063, 4 },
     /* 001 */ { bon_dance_cel064, 4 },
     /* 002 */ { bon_dance_cel065, 4 },
@@ -155,7 +155,7 @@ const struct Animation anim_bon_dance_donpan3_clap2[] = {
 };
 
 // [D_088a7458] Donpan 1 - Test Animation
-const struct Animation anim_bon_dance_donpan_test[] = {
+struct Animation anim_bon_dance_donpan_test[] = {
     /* 000 */ { bon_dance_cel013, 2 },
     /* 001 */ { bon_dance_cel014, 2 },
     /* 002 */ { bon_dance_cel015, 2 },
@@ -176,7 +176,7 @@ const struct Animation anim_bon_dance_donpan_test[] = {
 };
 
 // [D_088a74e0] Donpan 1 - Bow
-const struct Animation anim_bon_dance_donpan1_bow[] = {
+struct Animation anim_bon_dance_donpan1_bow[] = {
     /* 000 */ { bon_dance_cel069, 4 },
     /* 001 */ { bon_dance_cel070, 4 },
     /* 002 */ { bon_dance_cel071, 4 },
@@ -185,7 +185,7 @@ const struct Animation anim_bon_dance_donpan1_bow[] = {
 };
 
 // [D_088a7508] Donpan 2 - Bow
-const struct Animation anim_bon_dance_donpan2_bow[] = {
+struct Animation anim_bon_dance_donpan2_bow[] = {
     /* 000 */ { bon_dance_cel073, 4 },
     /* 001 */ { bon_dance_cel074, 4 },
     /* 002 */ { bon_dance_cel075, 4 },
@@ -194,7 +194,7 @@ const struct Animation anim_bon_dance_donpan2_bow[] = {
 };
 
 // [D_088a7530] Player - Bow
-const struct Animation anim_bon_dance_player_bow[] = {
+struct Animation anim_bon_dance_player_bow[] = {
     /* 000 */ { bon_dance_cel077, 4 },
     /* 001 */ { bon_dance_cel078, 4 },
     /* 002 */ { bon_dance_cel079, 4 },
@@ -203,7 +203,7 @@ const struct Animation anim_bon_dance_player_bow[] = {
 };
 
 // [D_088a7558] Donpan 3 - Bow
-const struct Animation anim_bon_dance_donpan3_bow[] = {
+struct Animation anim_bon_dance_donpan3_bow[] = {
     /* 000 */ { bon_dance_cel081, 4 },
     /* 001 */ { bon_dance_cel082, 4 },
     /* 002 */ { bon_dance_cel083, 4 },
@@ -212,7 +212,7 @@ const struct Animation anim_bon_dance_donpan3_bow[] = {
 };
 
 // [D_088a7580] Donpan 2 - Unimpressed
-const struct Animation anim_bon_dance_donpan2_glare[] = {
+struct Animation anim_bon_dance_donpan2_glare[] = {
     /* 000 */ { bon_dance_cel089, 4 },
     /* 001 */ { bon_dance_cel087, 4 },
     /* 002 */ { bon_dance_cel086, 7 },
@@ -224,7 +224,7 @@ const struct Animation anim_bon_dance_donpan2_glare[] = {
 };
 
 // [D_088a75c0] Donpan 1 - Unimpressed
-const struct Animation anim_bon_dance_donpan1_glare[] = {
+struct Animation anim_bon_dance_donpan1_glare[] = {
     /* 000 */ { bon_dance_cel094, 4 },
     /* 001 */ { bon_dance_cel092, 4 },
     /* 002 */ { bon_dance_cel091, 7 },
@@ -236,7 +236,7 @@ const struct Animation anim_bon_dance_donpan1_glare[] = {
 };
 
 // [D_088a7600] Donpan 3 - Unimpressed
-const struct Animation anim_bon_dance_donpan3_glare[] = {
+struct Animation anim_bon_dance_donpan3_glare[] = {
     /* 000 */ { bon_dance_cel099, 4 },
     /* 001 */ { bon_dance_cel097, 4 },
     /* 002 */ { bon_dance_cel096, 7 },
@@ -248,7 +248,7 @@ const struct Animation anim_bon_dance_donpan3_glare[] = {
 };
 
 // [D_088a7640] Yagura-chan - Beat
-const struct Animation anim_bon_dance_yagura_beat[] = {
+struct Animation anim_bon_dance_yagura_beat[] = {
     /* 000 */ { bon_dance_cel102, 3 },
     /* 001 */ { bon_dance_cel101, 3 },
     /* 002 */ { bon_dance_cel100, 24 },
@@ -256,14 +256,14 @@ const struct Animation anim_bon_dance_yagura_beat[] = {
 };
 
 // [D_088a7660] Yagura-chan - Speak
-const struct Animation anim_bon_dance_yagura_speak[] = {
+struct Animation anim_bon_dance_yagura_speak[] = {
     /* 000 */ { bon_dance_cel103, 4 },
     /* 001 */ { bon_dance_cel104, 24 },
     /* End */ END_ANIMATION
 };
 
 // [D_088a7678] Donpan 1 - Happy
-const struct Animation anim_bon_dance_donpan1_happy1[] = {
+struct Animation anim_bon_dance_donpan1_happy1[] = {
     /* 000 */ { bon_dance_cel105, 4 },
     /* 001 */ { bon_dance_cel107, 4 },
     /* 002 */ { bon_dance_cel108, 7 },
@@ -275,7 +275,7 @@ const struct Animation anim_bon_dance_donpan1_happy1[] = {
 };
 
 // [D_088a76b8] Donpan 2 - Happy
-const struct Animation anim_bon_dance_donpan2_happy1[] = {
+struct Animation anim_bon_dance_donpan2_happy1[] = {
     /* 000 */ { bon_dance_cel110, 4 },
     /* 001 */ { bon_dance_cel112, 4 },
     /* 002 */ { bon_dance_cel113, 7 },
@@ -287,7 +287,7 @@ const struct Animation anim_bon_dance_donpan2_happy1[] = {
 };
 
 // [D_088a76f8] Player - Happy
-const struct Animation anim_bon_dance_player_happy1[] = {
+struct Animation anim_bon_dance_player_happy1[] = {
     /* 000 */ { bon_dance_cel115, 4 },
     /* 001 */ { bon_dance_cel117, 4 },
     /* 002 */ { bon_dance_cel118, 7 },
@@ -299,7 +299,7 @@ const struct Animation anim_bon_dance_player_happy1[] = {
 };
 
 // [D_088a7738] Donpan 3 - Happy
-const struct Animation anim_bon_dance_donpan3_happy1[] = {
+struct Animation anim_bon_dance_donpan3_happy1[] = {
     /* 000 */ { bon_dance_cel120, 4 },
     /* 001 */ { bon_dance_cel122, 4 },
     /* 002 */ { bon_dance_cel123, 7 },
@@ -311,7 +311,7 @@ const struct Animation anim_bon_dance_donpan3_happy1[] = {
 };
 
 // [D_088a7778] Donpan 1 - Very Happy
-const struct Animation anim_bon_dance_donpan1_happy2[] = {
+struct Animation anim_bon_dance_donpan1_happy2[] = {
     /* 000 */ { bon_dance_cel125, 4 },
     /* 001 */ { bon_dance_cel126, 4 },
     /* 002 */ { bon_dance_cel127, 7 },
@@ -323,7 +323,7 @@ const struct Animation anim_bon_dance_donpan1_happy2[] = {
 };
 
 // [D_088a77b8] Donpan 2 - Very Happy
-const struct Animation anim_bon_dance_donpan2_happy2[] = {
+struct Animation anim_bon_dance_donpan2_happy2[] = {
     /* 000 */ { bon_dance_cel128, 4 },
     /* 001 */ { bon_dance_cel129, 4 },
     /* 002 */ { bon_dance_cel130, 7 },
@@ -335,7 +335,7 @@ const struct Animation anim_bon_dance_donpan2_happy2[] = {
 };
 
 // [D_088a77f8] Player - Very Happy
-const struct Animation anim_bon_dance_player_happy2[] = {
+struct Animation anim_bon_dance_player_happy2[] = {
     /* 000 */ { bon_dance_cel131, 4 },
     /* 001 */ { bon_dance_cel132, 4 },
     /* 002 */ { bon_dance_cel133, 7 },
@@ -347,7 +347,7 @@ const struct Animation anim_bon_dance_player_happy2[] = {
 };
 
 // [D_088a7838] Donpan 3 - Very Happy
-const struct Animation anim_bon_dance_donpan3_happy2[] = {
+struct Animation anim_bon_dance_donpan3_happy2[] = {
     /* 000 */ { bon_dance_cel134, 4 },
     /* 001 */ { bon_dance_cel135, 4 },
     /* 002 */ { bon_dance_cel136, 7 },
@@ -359,7 +359,7 @@ const struct Animation anim_bon_dance_donpan3_happy2[] = {
 };
 
 // [D_088a7878] Donpan 1 - Spin
-const struct Animation anim_bon_dance_donpan1_spin[] = {
+struct Animation anim_bon_dance_donpan1_spin[] = {
     /* 000 */ { bon_dance_cel139, 1 },
     /* 001 */ { bon_dance_cel140, 2 },
     /* 002 */ { bon_dance_cel141, 3 },
@@ -375,7 +375,7 @@ const struct Animation anim_bon_dance_donpan1_spin[] = {
 };
 
 // [D_088a78d8] Donpan 2 - Spin
-const struct Animation anim_bon_dance_donpan2_spin[] = {
+struct Animation anim_bon_dance_donpan2_spin[] = {
     /* 000 */ { bon_dance_cel148, 1 },
     /* 001 */ { bon_dance_cel149, 2 },
     /* 002 */ { bon_dance_cel150, 3 },
@@ -391,7 +391,7 @@ const struct Animation anim_bon_dance_donpan2_spin[] = {
 };
 
 // [D_088a7938] Donpan 3 - Spin
-const struct Animation anim_bon_dance_donpan3_spin[] = {
+struct Animation anim_bon_dance_donpan3_spin[] = {
     /* 000 */ { bon_dance_cel157, 1 },
     /* 001 */ { bon_dance_cel158, 2 },
     /* 002 */ { bon_dance_cel159, 3 },
@@ -407,7 +407,7 @@ const struct Animation anim_bon_dance_donpan3_spin[] = {
 };
 
 // [D_088a7998] Donpan 4 - Spin
-const struct Animation anim_bon_dance_player_spin[] = {
+struct Animation anim_bon_dance_player_spin[] = {
     /* 000 */ { bon_dance_cel166, 1 },
     /* 001 */ { bon_dance_cel167, 2 },
     /* 002 */ { bon_dance_cel168, 3 },
@@ -423,7 +423,7 @@ const struct Animation anim_bon_dance_player_spin[] = {
 };
 
 // [D_088a79f8] Yagura-chan - Unhappy
-const struct Animation anim_bon_dance_yagura_frown[] = {
+struct Animation anim_bon_dance_yagura_frown[] = {
     /* 000 */ { bon_dance_cel173, 3 },
     /* 001 */ { bon_dance_cel174, 3 },
     /* 002 */ { bon_dance_cel175, 24 },

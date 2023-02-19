@@ -14,9 +14,9 @@ struct NinjaReincarnatePrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *ninja_reincarnate_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedGraphics *ninja_reincarnate_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable ninja_reincarnate_prologue_gfx_table[]; // Graphics Table
-extern const struct Animation anim_ninja_reincarnate_prologue_title[]; // Animation: Text (Ninja Reincarnate)
+extern struct Animation anim_ninja_reincarnate_prologue_title[]; // Animation: Text (Ninja Reincarnate)
 
 // Functions:
 extern void func_080473d4(void);    // [func_080473d4] GFX_INIT Func_02

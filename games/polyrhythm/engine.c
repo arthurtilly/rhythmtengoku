@@ -4,19 +4,19 @@
   /* POLYRHYTHM - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c781ac;
-extern const struct CompressedGraphics D_08c78a04;
-extern const struct CompressedGraphics D_08c781ac;
-extern const struct CompressedGraphics D_08c78a04;
-extern const Palette polyrhythm_pal[];
-extern const Palette polyrhythm_2_pal[];
+extern struct CompressedGraphics D_08c781ac;
+extern struct CompressedGraphics D_08c78a04;
+extern struct CompressedGraphics D_08c781ac;
+extern struct CompressedGraphics D_08c78a04;
+extern Palette polyrhythm_pal[];
+extern Palette polyrhythm_2_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e5968] Buffered Textures List
-const struct CompressedGraphics *polyrhythm_buffered_textures[] = {
+struct CompressedGraphics *polyrhythm_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -310,14 +310,14 @@ s16 polyrhythm_block_heights[] = {
 };
 
 // [D_089e5c10] Block Appear Animations
-const struct Animation *polyrhythm_block_appear_anim[] = {
+struct Animation *polyrhythm_block_appear_anim[] = {
     /* PLATFORM */ anim_polyrhythm_block,
     /* UPSIDE   */ anim_polyrhythm_spawn_upside,
     /* DOWNSIDE */ anim_polyrhythm_spawn_downside
 };
 
 // [D_089e5c1c] Block Open Animations
-const struct Animation *polyrhythm_block_open_anim[] = {
+struct Animation *polyrhythm_block_open_anim[] = {
     /* PLATFORM */ anim_polyrhythm_block,
     /* UPSIDE   */ anim_polyrhythm_push_upside,
     /* DOWNSIDE */ anim_polyrhythm_push_downside

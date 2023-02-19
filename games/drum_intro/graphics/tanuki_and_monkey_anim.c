@@ -4,7 +4,7 @@
 #include "tanuki_and_monkey_anim_cells.inc.c"
 
 // [D_08914818] Tanuki - Right Arm
-const struct Animation anim_drum_tanuki_use_tom_r[] = {
+struct Animation anim_drum_tanuki_use_tom_r[] = {
     /* 000 */ { tanuki_and_monkey_cel008, 1 },
     /* 001 */ { tanuki_and_monkey_cel009, 1 },
     /* 002 */ { tanuki_and_monkey_cel010, 1 },
@@ -19,7 +19,7 @@ const struct Animation anim_drum_tanuki_use_tom_r[] = {
 };
 
 // [D_08914870] Tanuki - Left Arm
-const struct Animation anim_drum_tanuki_use_tom_l[] = {
+struct Animation anim_drum_tanuki_use_tom_l[] = {
     /* 000 */ { tanuki_and_monkey_cel021, 1 },
     /* 001 */ { tanuki_and_monkey_cel022, 1 },
     /* 002 */ { tanuki_and_monkey_cel023, 1 },
@@ -34,7 +34,7 @@ const struct Animation anim_drum_tanuki_use_tom_l[] = {
 };
 
 // [D_089148c8] Monkey - Right Arm
-const struct Animation anim_drum_monkey_use_snare_r[] = {
+struct Animation anim_drum_monkey_use_snare_r[] = {
     /* 000 */ { tanuki_and_monkey_cel045, 1 },
     /* 001 */ { tanuki_and_monkey_cel044, 1 },
     /* 002 */ { tanuki_and_monkey_cel043, 1 },
@@ -49,7 +49,7 @@ const struct Animation anim_drum_monkey_use_snare_r[] = {
 };
 
 // [D_08914920] Monkey - Left Arm
-const struct Animation anim_drum_monkey_use_snare_l[] = {
+struct Animation anim_drum_monkey_use_snare_l[] = {
     /* 000 */ { tanuki_and_monkey_cel046, 1 },
     /* 001 */ { tanuki_and_monkey_cel047, 1 },
     /* 002 */ { tanuki_and_monkey_cel048, 1 },
@@ -64,7 +64,7 @@ const struct Animation anim_drum_monkey_use_snare_l[] = {
 };
 
 // [D_08914978] Tanuki - Beat
-const struct Animation anim_drum_tanuki_beat[] = {
+struct Animation anim_drum_tanuki_beat[] = {
     /* 000 */ { tanuki_and_monkey_cel002, 4 },
     /* 001 */ { tanuki_and_monkey_cel000, 2 },
     /* 002 */ { tanuki_and_monkey_cel001, 30 },
@@ -72,7 +72,7 @@ const struct Animation anim_drum_tanuki_beat[] = {
 };
 
 // [D_08914998] Monkey - Beat
-const struct Animation anim_drum_monkey_beat[] = {
+struct Animation anim_drum_monkey_beat[] = {
     /* 000 */ { tanuki_and_monkey_cel020, 0 },
     /* 001 */ { tanuki_and_monkey_cel019, 4 },
     /* 002 */ { tanuki_and_monkey_cel018, 2 },
@@ -81,7 +81,7 @@ const struct Animation anim_drum_monkey_beat[] = {
 };
 
 // [D_089149c0] Anger Smoke Cloud
-const struct Animation anim_drum_monkey_anger_puff[] = {
+struct Animation anim_drum_monkey_anger_puff[] = {
     /* 000 */ { tanuki_and_monkey_cel062, 4 },
     /* 001 */ { tanuki_and_monkey_cel063, 5 },
     /* 002 */ { tanuki_and_monkey_cel064, 4 },
@@ -92,7 +92,7 @@ const struct Animation anim_drum_monkey_anger_puff[] = {
 };
 
 // [D_089149f8] Snare Drum
-const struct Animation anim_drum_monkey_kit_snare1[] = {
+struct Animation anim_drum_monkey_kit_snare1[] = {
     /* 000 */ { tanuki_and_monkey_cel031, 3 },
     /* 001 */ { tanuki_and_monkey_cel032, 2 },
     /* 002 */ { tanuki_and_monkey_cel031, 30 },
@@ -100,7 +100,7 @@ const struct Animation anim_drum_monkey_kit_snare1[] = {
 };
 
 // [D_08914a18] Tom Drum
-const struct Animation anim_drum_tanuki_kit_tom1[] = {
+struct Animation anim_drum_tanuki_kit_tom1[] = {
     /* 000 */ { tanuki_and_monkey_cel056, 3 },
     /* 001 */ { tanuki_and_monkey_cel057, 2 },
     /* 002 */ { tanuki_and_monkey_cel058, 30 },
@@ -108,7 +108,7 @@ const struct Animation anim_drum_tanuki_kit_tom1[] = {
 };
 
 // [D_08914a38] Snare Drum (Alt. Palette)
-const struct Animation anim_drum_monkey_kit_snare2[] = {
+struct Animation anim_drum_monkey_kit_snare2[] = {
     /* 000 */ { tanuki_and_monkey_cel033, 3 },
     /* 001 */ { tanuki_and_monkey_cel034, 2 },
     /* 002 */ { tanuki_and_monkey_cel033, 30 },
@@ -116,7 +116,7 @@ const struct Animation anim_drum_monkey_kit_snare2[] = {
 };
 
 // [D_08914a58] Tom Drum (Alt. Palette)
-const struct Animation anim_drum_tanuki_kit_tom2[] = {
+struct Animation anim_drum_tanuki_kit_tom2[] = {
     /* 000 */ { tanuki_and_monkey_cel059, 3 },
     /* 001 */ { tanuki_and_monkey_cel060, 2 },
     /* 002 */ { tanuki_and_monkey_cel061, 30 },
@@ -124,7 +124,7 @@ const struct Animation anim_drum_tanuki_kit_tom2[] = {
 };
 
 // [D_08914a78] Tanuki - Sigh
-const struct Animation anim_drum_tanuki_sigh[] = {
+struct Animation anim_drum_tanuki_sigh[] = {
     /* 000 */ { tanuki_and_monkey_cel001, 8 },
     /* 001 */ { tanuki_and_monkey_cel003, 8 },
     /* 002 */ { tanuki_and_monkey_cel004, 8 },

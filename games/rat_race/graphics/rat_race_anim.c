@@ -4,7 +4,7 @@
 #include "rat_race_anim_cells.inc.c"
 
 // [D_088fdf9c] Rat - Run
-const struct Animation anim_rat_run[] = {
+struct Animation anim_rat_run[] = {
     /* 000 */ { rat_race_cel000, 2 },
     /* 001 */ { rat_race_cel001, 2 },
     /* 002 */ { rat_race_cel002, 2 },
@@ -13,20 +13,20 @@ const struct Animation anim_rat_run[] = {
 };
 
 // [D_088fdfc4] Rat - Stop
-const struct Animation anim_rat_stop[] = {
+struct Animation anim_rat_stop[] = {
     /* 000 */ { rat_race_cel039, 4 },
     /* 001 */ { rat_race_cel020, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088fdfdc] Rat - Duck
-const struct Animation anim_rat_duck[] = {
+struct Animation anim_rat_duck[] = {
     /* 000 */ { rat_race_cel006, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088fdfec] Rat - Bump Into Rat
-const struct Animation anim_rat_collide_run[] = {
+struct Animation anim_rat_collide_run[] = {
     /* 000 */ { rat_race_cel007, 4 },
     /* 001 */ { rat_race_cel008, 4 },
     /* 002 */ { rat_race_cel009, 2 },
@@ -44,7 +44,7 @@ const struct Animation anim_rat_collide_run[] = {
 };
 
 // [D_088fe05c] Rat - Bumped By Rat
-const struct Animation anim_rat_collide_stop[] = {
+struct Animation anim_rat_collide_stop[] = {
     /* 000 */ { rat_race_cel039, 2 },
     /* 001 */ { rat_race_cel021, 2 },
     /* 002 */ { rat_race_cel022, 2 },
@@ -64,14 +64,14 @@ const struct Animation anim_rat_collide_stop[] = {
 };
 
 // [D_088fe0dc] Rat - Prepare Dash
-const struct Animation anim_rat_prepare_dash[] = {
+struct Animation anim_rat_prepare_dash[] = {
     /* 000 */ { rat_race_cel040, 2 },
     /* 001 */ { rat_race_cel041, 30 },
     /* End */ END_ANIMATION
 };
 
 // [D_088fe0f4] Rat - Cheer (In Place)
-const struct Animation anim_rat_cheer[] = {
+struct Animation anim_rat_cheer[] = {
     /* 000 */ { rat_race_cel068, 2 },
     /* 001 */ { rat_race_cel069, 2 },
     /* 002 */ { rat_race_cel070, 2 },
@@ -92,7 +92,7 @@ const struct Animation anim_rat_cheer[] = {
 };
 
 // [D_088fe17c] Rat - Angry (Bumped from Ahead, Running)
-const struct Animation anim_rat_angry_run_l[] = {
+struct Animation anim_rat_angry_run_l[] = {
     /* 000 */ { rat_race_cel060, 2 },
     /* 001 */ { rat_race_cel061, 2 },
     /* 002 */ { rat_race_cel062, 2 },
@@ -105,7 +105,7 @@ const struct Animation anim_rat_angry_run_l[] = {
 };
 
 // [D_088fe1c4] Rat - Angry (Bumped from Behind, Running)
-const struct Animation anim_rat_angry_run_r[] = {
+struct Animation anim_rat_angry_run_r[] = {
     /* 000 */ { rat_race_cel064, 2 },
     /* 001 */ { rat_race_cel065, 2 },
     /* 002 */ { rat_race_cel066, 2 },
@@ -118,7 +118,7 @@ const struct Animation anim_rat_angry_run_r[] = {
 };
 
 // [D_088fe20c] Rat - Angry (Bumped from Behind, Sitting)
-const struct Animation anim_rat_angry_stop_r[] = {
+struct Animation anim_rat_angry_stop_r[] = {
     /* 000 */ { rat_race_cel072, 2 },
     /* 001 */ { rat_race_cel073, 2 },
     /* 002 */ { rat_race_cel074, 2 },
@@ -131,7 +131,7 @@ const struct Animation anim_rat_angry_stop_r[] = {
 };
 
 // [D_088fe254] Rat - Cheer (Full Animation)
-const struct Animation anim_rat_cheer_full[] = {
+struct Animation anim_rat_cheer_full[] = {
     /* 000 */ { rat_race_cel089, 2 },
     /* 001 */ { rat_race_cel090, 2 },
     /* 002 */ { rat_race_cel091, 2 },
@@ -163,7 +163,7 @@ const struct Animation anim_rat_cheer_full[] = {
 };
 
 // [D_088fe334] Sweat Particles Spanning Whole Group (Unused)
-const struct Animation anim_rat_fear_particles_all[] = {
+struct Animation anim_rat_fear_particles_all[] = {
     /* 000 */ { rat_race_cel036, 4 },
     /* 001 */ { rat_race_cel079, 4 },
     /* 002 */ { rat_race_cel080, 4 },
@@ -177,7 +177,7 @@ const struct Animation anim_rat_fear_particles_all[] = {
 };
 
 // [D_088fe384] Sweat Particles (Barely)
-const struct Animation anim_rat_fear_particles_barely[] = {
+struct Animation anim_rat_fear_particles_barely[] = {
     /* 000 */ { rat_race_cel107, 3 },
     /* 001 */ { rat_race_cel108, 3 },
     /* 002 */ { rat_race_cel109, 3 },
@@ -185,7 +185,7 @@ const struct Animation anim_rat_fear_particles_barely[] = {
 };
 
 // [D_088fe3a4] Sweat Particles (Not Hidden)
-const struct Animation anim_rat_fear_particles_miss[] = {
+struct Animation anim_rat_fear_particles_miss[] = {
     /* 000 */ { rat_race_cel110, 4 },
     /* 001 */ { rat_race_cel111, 4 },
     /* 002 */ { rat_race_cel112, 4 },
@@ -195,7 +195,7 @@ const struct Animation anim_rat_fear_particles_miss[] = {
 };
 
 // [D_088fe3d4] Cat - Pupils
-const struct Animation anim_cat_pupils[] = {
+struct Animation anim_cat_pupils[] = {
     /* 000 */ { rat_race_cel115, 10 },
     /* 001 */ { rat_race_cel116, 1 },
     /* 002 */ { rat_race_cel117, 1 },
@@ -209,7 +209,7 @@ const struct Animation anim_cat_pupils[] = {
 };
 
 // [D_088fe424] Cat - Eyelids
-const struct Animation anim_cat_eyelids[] = {
+struct Animation anim_cat_eyelids[] = {
     /* 000 */ { rat_race_cel127, 2 },
     /* 001 */ { rat_race_cel126, 2 },
     /* 002 */ { rat_race_cel125, 2 },
@@ -221,7 +221,7 @@ const struct Animation anim_cat_eyelids[] = {
 };
 
 // [D_088fe464] Cat - Paw
-const struct Animation anim_cat_paw[] = {
+struct Animation anim_cat_paw[] = {
     /* 000 */ { rat_race_cel128, 2 },
     /* 001 */ { rat_race_cel129, 2 },
     /* 002 */ { rat_race_cel130, 2 },
@@ -230,14 +230,14 @@ const struct Animation anim_cat_paw[] = {
 };
 
 // [D_088fe48c] Crockery - Various
-const struct Animation anim_rat_race_crockery[] = {
+struct Animation anim_rat_race_crockery[] = {
     /* 000 */ { rat_race_cel032, 4 },
     /* 001 */ { rat_race_cel035, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088fe4a4] Crockery - Stacked Plates (3, 2, 1)
-const struct Animation anim_rat_race_plates[] = {
+struct Animation anim_rat_race_plates[] = {
     /* 000 */ { rat_race_cel032, 2 },
     /* 001 */ { rat_race_cel033, 4 },
     /* 002 */ { rat_race_cel034, 4 },
@@ -245,7 +245,7 @@ const struct Animation anim_rat_race_plates[] = {
 };
 
 // [D_088fe4c4] Speech Bubble (Front Rat)
-const struct Animation anim_rat_text_bubble_r[] = {
+struct Animation anim_rat_text_bubble_r[] = {
     /* 000 */ { rat_race_cel044, 2 },
     /* 001 */ { rat_race_cel045, 1 },
     /* 002 */ { rat_race_cel046, 1 },
@@ -258,7 +258,7 @@ const struct Animation anim_rat_text_bubble_r[] = {
 };
 
 // [D_088fe50c] Speech Bubble (Back Rat)
-const struct Animation anim_rat_text_bubble_l[] = {
+struct Animation anim_rat_text_bubble_l[] = {
     /* 000 */ { rat_race_cel052, 2 },
     /* 001 */ { rat_race_cel053, 1 },
     /* 002 */ { rat_race_cel054, 1 },
@@ -271,27 +271,27 @@ const struct Animation anim_rat_text_bubble_l[] = {
 };
 
 // [D_088fe554] Small Speech Bubble (Front Rat)
-const struct Animation anim_rat_emote_bubble_r[] = {
+struct Animation anim_rat_emote_bubble_r[] = {
     /* 000 */ { rat_race_cel044, 2 },
     /* 001 */ { rat_race_cel045, 1 },
     /* End */ END_ANIMATION
 };
 
 // [D_088fe56c] Small Speech Bubble (Back Rat)
-const struct Animation anim_rat_emote_bubble_l[] = {
+struct Animation anim_rat_emote_bubble_l[] = {
     /* 000 */ { rat_race_cel052, 2 },
     /* 001 */ { rat_race_cel053, 1 },
     /* End */ END_ANIMATION
 };
 
 // [D_088fe584] Blank (Used)
-const struct Animation anim_rat_race_blank[] = {
+struct Animation anim_rat_race_blank[] = {
     /* 000 */ { rat_race_cel087, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088fe594] Dash Particle
-const struct Animation anim_rat_dash_particle[] = {
+struct Animation anim_rat_dash_particle[] = {
     /* 000 */ { rat_race_cel104, 4 },
     /* 001 */ { rat_race_cel105, 4 },
     /* 002 */ { rat_race_cel106, 4 },
@@ -299,7 +299,7 @@ const struct Animation anim_rat_dash_particle[] = {
 };
 
 // [D_088fe5b4] Traffic Light
-const struct Animation anim_rat_traffic_light[] = {
+struct Animation anim_rat_traffic_light[] = {
     /* 000 */ { rat_race_cel132, 32 },
     /* 001 */ { rat_race_cel133, 32 },
     /* 002 */ { rat_race_cel134, 32 },
@@ -309,13 +309,13 @@ const struct Animation anim_rat_traffic_light[] = {
 };
 
 // [D_088fe5e4] "You" Text
-const struct Animation anim_rat_race_player_label[] = {
+struct Animation anim_rat_race_player_label[] = {
     /* 000 */ { rat_race_cel137, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088fe5f4] Barely (Sit)
-const struct Animation anim_rat_stop_barely[] = {
+struct Animation anim_rat_stop_barely[] = {
     /* 000 */ { rat_race_cel146, 2 },
     /* 001 */ { rat_race_cel145, 8 },
     /* 002 */ { rat_race_cel146, 2 },
@@ -326,7 +326,7 @@ const struct Animation anim_rat_stop_barely[] = {
 };
 
 // [D_088fe62c] Miss (Duck)
-const struct Animation anim_rat_stop_miss[] = {
+struct Animation anim_rat_stop_miss[] = {
     /* 000 */ { rat_race_cel146, 2 },
     /* 001 */ { rat_race_cel145, 8 },
     /* 002 */ { rat_race_cel146, 2 },
@@ -336,7 +336,7 @@ const struct Animation anim_rat_stop_miss[] = {
 };
 
 // [D_088fe65c] Stumble (Unused)
-const struct Animation anim_rat_stumble[] = {
+struct Animation anim_rat_stumble[] = {
     /* 000 */ { rat_race_cel139, 4 },
     /* 001 */ { rat_race_cel140, 4 },
     /* 002 */ { rat_race_cel141, 4 },

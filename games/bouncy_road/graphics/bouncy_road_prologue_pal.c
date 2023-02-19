@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088af5f0] Palette
-const Palette bouncy_road_prologue_pal[] = {
+Palette bouncy_road_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x707070),
         /* 01 */ TO_RGB555(0x000000),

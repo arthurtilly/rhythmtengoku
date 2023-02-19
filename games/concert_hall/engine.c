@@ -4,8 +4,8 @@
   /* LIVE MENU - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c79bb0;
-extern const Palette concert_hall_pal[];
+extern struct CompressedGraphics D_08c79bb0;
+extern Palette concert_hall_pal[];
 extern const char text_concert_hall_poster_band[];
 extern const char text_concert_hall_poster_boys[];
 extern const char text_concert_hall_poster_girls[];
@@ -15,7 +15,7 @@ extern const char text_concert_hall_poster_girls[];
 
 
 // [D_089e5c40] Buffered Textures List
-const struct CompressedGraphics *concert_hall_buffered_textures[] = {
+struct CompressedGraphics *concert_hall_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

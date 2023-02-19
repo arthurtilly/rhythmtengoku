@@ -4,13 +4,13 @@
 #include "karate_man_anim_cells.inc.c"
 
 // [D_088acc2c] Karate Joe - Standing
-const struct Animation anim_karate_joe_stand[] = {
+struct Animation anim_karate_joe_stand[] = {
     /* 000 */ { karate_man_cel000, 24 },
     /* End */ END_ANIMATION
 };
 
 // [D_088acc3c] Object { Pot, Rock, Soccer Ball, Bomb, Light Bulb }
-const struct Animation anim_karate_object[] = {
+struct Animation anim_karate_object[] = {
     /* 000 */ { karate_man_cel035, 40 },
     /* 001 */ { karate_man_cel039, 40 },
     /* 002 */ { karate_man_cel037, 40 },
@@ -20,20 +20,20 @@ const struct Animation anim_karate_object[] = {
 };
 
 // [D_088acc6c] Object Shadow
-const struct Animation anim_karate_object_shadow[] = {
+struct Animation anim_karate_object_shadow[] = {
     /* 000 */ { karate_man_cel040, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088acc7c] Object Shards
-const struct Animation anim_karate_object_shards[] = {
+struct Animation anim_karate_object_shards[] = {
     /* 000 */ { karate_man_cel041, 40 },
     /* 001 */ { karate_man_cel042, 40 },
     /* End */ END_ANIMATION
 };
 
 // [D_088acc94] Karate Joe - Punch (High Flow)
-const struct Animation anim_karate_joe_punch_high[] = {
+struct Animation anim_karate_joe_punch_high[] = {
     /* 000 */ { karate_man_cel020, 1 },
     /* 001 */ { karate_man_cel019, 3 },
     /* 002 */ { karate_man_cel021, 2 },
@@ -46,7 +46,7 @@ const struct Animation anim_karate_joe_punch_high[] = {
 };
 
 // [D_088accdc] Karate Joe - Beat
-const struct Animation anim_karate_joe_beat[] = {
+struct Animation anim_karate_joe_beat[] = {
     /* 000 */ { karate_man_cel002, 3 },
     /* 001 */ { karate_man_cel001, 3 },
     /* 002 */ { karate_man_cel000, 24 },
@@ -54,19 +54,19 @@ const struct Animation anim_karate_joe_beat[] = {
 };
 
 // [D_088accfc] Hit Effect
-const struct Animation anim_karate_hit_effect[] = {
+struct Animation anim_karate_hit_effect[] = {
     /* 000 */ { karate_man_cel043, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_088acd0c] Karate Joe - Very Sad
-const struct Animation anim_karate_joe_sad[] = {
+struct Animation anim_karate_joe_sad[] = {
     /* 000 */ { karate_man_cel027, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088acd1c] Flow Gauge
-const struct Animation anim_karate_flow_meter[] = {
+struct Animation anim_karate_flow_meter[] = {
     /* 000 */ { karate_man_cel044, 40 },
     /* 001 */ { karate_man_cel045, 40 },
     /* 002 */ { karate_man_cel046, 40 },
@@ -77,7 +77,7 @@ const struct Animation anim_karate_flow_meter[] = {
 };
 
 // [D_088acd54] Karate Joe - Punch (Low Flow)
-const struct Animation anim_karate_joe_punch_low[] = {
+struct Animation anim_karate_joe_punch_low[] = {
     /* 000 */ { karate_man_cel015, 4 },
     /* 001 */ { karate_man_cel016, 2 },
     /* 002 */ { karate_man_cel017, 2 },
@@ -89,7 +89,7 @@ const struct Animation anim_karate_joe_punch_low[] = {
 };
 
 // [D_088acd94] Karate Joe - Barely
-const struct Animation anim_karate_joe_barely[] = {
+struct Animation anim_karate_joe_barely[] = {
     /* 000 */ { karate_man_cel005, 3 },
     /* 001 */ { karate_man_cel004, 3 },
     /* 002 */ { karate_man_cel003, 24 },
@@ -97,7 +97,7 @@ const struct Animation anim_karate_joe_barely[] = {
 };
 
 // [D_088acdb4] Karate Joe - Miss
-const struct Animation anim_karate_joe_miss[] = {
+struct Animation anim_karate_joe_miss[] = {
     /* 000 */ { karate_man_cel008, 3 },
     /* 001 */ { karate_man_cel007, 3 },
     /* 002 */ { karate_man_cel006, 24 },
@@ -105,7 +105,7 @@ const struct Animation anim_karate_joe_miss[] = {
 };
 
 // [D_088acdd4] Karate Joe - Smirk
-const struct Animation anim_karate_joe_smirk[] = {
+struct Animation anim_karate_joe_smirk[] = {
     /* 000 */ { karate_man_cel011, 3 },
     /* 001 */ { karate_man_cel010, 3 },
     /* 002 */ { karate_man_cel009, 24 },
@@ -113,7 +113,7 @@ const struct Animation anim_karate_joe_smirk[] = {
 };
 
 // [D_088acdf4] Karate Joe - Happy
-const struct Animation anim_karate_joe_happy[] = {
+struct Animation anim_karate_joe_happy[] = {
     /* 000 */ { karate_man_cel014, 3 },
     /* 001 */ { karate_man_cel013, 3 },
     /* 002 */ { karate_man_cel012, 24 },
@@ -121,7 +121,7 @@ const struct Animation anim_karate_joe_happy[] = {
 };
 
 // [D_088ace14] Karate Joe - Hurt Hand
-const struct Animation anim_karate_joe_punch_ouch[] = {
+struct Animation anim_karate_joe_punch_ouch[] = {
     /* 000 */ { karate_man_cel024, 3 },
     /* 001 */ { karate_man_cel025, 2 },
     /* 002 */ { karate_man_cel026, 2 },
@@ -139,7 +139,7 @@ const struct Animation anim_karate_joe_punch_ouch[] = {
 };
 
 // [D_088ace84] Placeholder Flow Gauge
-const struct Animation anim_karate_flow_meter_test1[] = {
+struct Animation anim_karate_flow_meter_test1[] = {
     /* 000 */ { karate_man_cel050, 4 },
     /* 001 */ { karate_man_cel051, 4 },
     /* 002 */ { karate_man_cel052, 4 },
@@ -155,7 +155,7 @@ const struct Animation anim_karate_flow_meter_test1[] = {
 };
 
 // [D_088acee4] Unused Light Bulbs
-const struct Animation anim_karate_flow_meter_test2[] = {
+struct Animation anim_karate_flow_meter_test2[] = {
     /* 000 */ { karate_man_cel061, 4 },
     /* 001 */ { karate_man_cel062, 4 },
     /* 002 */ { karate_man_cel063, 4 },
@@ -163,7 +163,7 @@ const struct Animation anim_karate_flow_meter_test2[] = {
 };
 
 // [D_088acf04] Warning Text
-const struct Animation anim_karate_cue_warning[] = {
+struct Animation anim_karate_cue_warning[] = {
     /* 000 */ { karate_man_cel065, 40 },
     /* 001 */ { karate_man_cel066, 40 },
     /* 002 */ { karate_man_cel067, 40 },
@@ -172,20 +172,20 @@ const struct Animation anim_karate_cue_warning[] = {
 };
 
 // [D_088acf2c] A Button Prompt
-const struct Animation anim_karate_tutorial_text_button[] = {
+struct Animation anim_karate_tutorial_text_button[] = {
     /* 000 */ { karate_man_cel069, 10 },
     /* 001 */ { karate_man_cel068, 30 },
     /* End */ END_ANIMATION
 };
 
 // [D_088acf44] "Start to Skip" Text
-const struct Animation anim_karate_tutorial_skip[] = {
+struct Animation anim_karate_tutorial_skip[] = {
     /* 000 */ { karate_man_cel070, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088acf54] Tutorial Counter
-const struct Animation anim_karate_tutorial_counter[] = {
+struct Animation anim_karate_tutorial_counter[] = {
     /* 000 */ { karate_man_cel074, 40 },
     /* 001 */ { karate_man_cel071, 40 },
     /* 002 */ { karate_man_cel072, 40 },
@@ -194,7 +194,7 @@ const struct Animation anim_karate_tutorial_counter[] = {
 };
 
 // [D_088acf7c] Karate Joe - Smug (High Flow)
-const struct Animation anim_karate_joe_smug_high[] = {
+struct Animation anim_karate_joe_smug_high[] = {
     /* 000 */ { karate_man_cel020, 1 },
     /* 001 */ { karate_man_cel019, 3 },
     /* 002 */ { karate_man_cel021, 2 },
@@ -207,7 +207,7 @@ const struct Animation anim_karate_joe_smug_high[] = {
 };
 
 // [D_088acfc4] Karate Joe - Smug (Low Flow)
-const struct Animation anim_karate_joe_smug_low[] = {
+struct Animation anim_karate_joe_smug_low[] = {
     /* 000 */ { karate_man_cel031, 4 },
     /* 001 */ { karate_man_cel032, 2 },
     /* 002 */ { karate_man_cel033, 2 },

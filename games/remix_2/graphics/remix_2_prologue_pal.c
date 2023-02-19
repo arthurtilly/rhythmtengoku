@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088b1cdc] Palette
-const Palette remix_2_prologue_pal[] = {
+Palette remix_2_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00B828),
         /* 01 */ TO_RGB555(0x502828),

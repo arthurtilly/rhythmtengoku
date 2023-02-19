@@ -4,17 +4,17 @@
   /* PROLOGUE (SICK BEATS) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c33214;
-extern const struct CompressedGraphics D_08c3355c;
-extern const struct CompressedGraphics D_08c31e6c;
-extern const Palette sick_beats_prologue_pal[];
+extern struct CompressedGraphics D_08c33214;
+extern struct CompressedGraphics D_08c3355c;
+extern struct CompressedGraphics D_08c31e6c;
+extern Palette sick_beats_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089edcf4] Buffered Textures List
-const struct CompressedGraphics *sick_beats_prologue_buffered_textures[] = {
+struct CompressedGraphics *sick_beats_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

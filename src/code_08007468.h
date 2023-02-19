@@ -75,7 +75,7 @@ extern u32 func_0800856c(u16 memID, void *func, s32 arg, u32 delayTicks); // Run
 // extern ? func_08008720(?);
 extern struct unk_struct_0800873c *func_0800873c(struct unk_struct_0800873c_init *inputs); // bg_texture_loader_start_new_task
 extern u32 func_08008758(struct unk_struct_0800873c *arg0); // bg_texture_loader_task_update
-extern u32 func_080087b4(u16, const struct CompressedGraphics *const *); // new_bg_texture_loader_task
+extern u32 func_080087b4(u16, struct CompressedGraphics *const *); // new_bg_texture_loader_task
 extern s32 clamp_int32(s32 var, s32 min, s32 max); // Signed Clamp
 // extern ? func_080087e8(?);
 // extern ? func_08008910(?);

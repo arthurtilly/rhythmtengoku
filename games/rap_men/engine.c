@@ -4,47 +4,47 @@
   /* RAP MEN - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_rap_men_red_desuka[];
-extern const struct Animation anim_rap_women_red_desuka[];
-extern const struct Animation anim_rap_men_yellow_barely[];
-extern const struct Animation anim_rap_women_blue_barely[];
-extern const struct Animation anim_rap_men_yellow_hit[];
-extern const struct Animation anim_rap_women_blue_hit[];
-extern const struct Animation anim_rap_men_yellow_start[];
-extern const struct Animation anim_rap_women_blue_start[];
-extern const struct Animation anim_rap_men_red_kamone[];
-extern const struct Animation anim_rap_women_red_kamone[];
-extern const struct Animation anim_rap_men_red_saiko[];
-extern const struct Animation anim_rap_women_red_saiko[];
-extern const struct Animation anim_rap_men_red_recoil[];
-extern const struct Animation anim_rap_women_red_recoil[];
-extern const struct Animation anim_rap_men_smoke_effect[];
-extern const struct Animation anim_rap_women_smoke_effect[];
-extern const struct Animation anim_rap_men_yellow_miss[];
-extern const struct Animation anim_rap_women_blue_miss[];
-extern const struct Animation anim_rap_men_yellow_beat[];
-extern const struct Animation anim_rap_women_blue_beat[];
-extern const struct Animation anim_rap_men_red_beat[];
-extern const struct Animation anim_rap_women_red_beat[];
+extern struct Animation anim_rap_men_red_desuka[];
+extern struct Animation anim_rap_women_red_desuka[];
+extern struct Animation anim_rap_men_yellow_barely[];
+extern struct Animation anim_rap_women_blue_barely[];
+extern struct Animation anim_rap_men_yellow_hit[];
+extern struct Animation anim_rap_women_blue_hit[];
+extern struct Animation anim_rap_men_yellow_start[];
+extern struct Animation anim_rap_women_blue_start[];
+extern struct Animation anim_rap_men_red_kamone[];
+extern struct Animation anim_rap_women_red_kamone[];
+extern struct Animation anim_rap_men_red_saiko[];
+extern struct Animation anim_rap_women_red_saiko[];
+extern struct Animation anim_rap_men_red_recoil[];
+extern struct Animation anim_rap_women_red_recoil[];
+extern struct Animation anim_rap_men_smoke_effect[];
+extern struct Animation anim_rap_women_smoke_effect[];
+extern struct Animation anim_rap_men_yellow_miss[];
+extern struct Animation anim_rap_women_blue_miss[];
+extern struct Animation anim_rap_men_yellow_beat[];
+extern struct Animation anim_rap_women_blue_beat[];
+extern struct Animation anim_rap_men_red_beat[];
+extern struct Animation anim_rap_women_red_beat[];
 
-extern const struct CompressedGraphics D_08c82980;
-extern const struct CompressedGraphics D_08c82cf4;
-extern const struct CompressedGraphics D_08c82710;
-extern const struct CompressedGraphics D_08c84f54;
-extern const struct CompressedGraphics D_08c852c8;
-extern const struct CompressedGraphics D_08c84ce4;
+extern struct CompressedGraphics D_08c82980;
+extern struct CompressedGraphics D_08c82cf4;
+extern struct CompressedGraphics D_08c82710;
+extern struct CompressedGraphics D_08c84f54;
+extern struct CompressedGraphics D_08c852c8;
+extern struct CompressedGraphics D_08c84ce4;
 
-extern const Palette rap_men_bg_pal[];
-extern const Palette rap_men_obj_pal[];
-extern const Palette rap_women_bg_pal[];
-extern const Palette rap_women_obj_pal[];
+extern Palette rap_men_bg_pal[];
+extern Palette rap_men_obj_pal[];
+extern Palette rap_women_bg_pal[];
+extern Palette rap_women_obj_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e63a0] All Animations
-const struct Animation *rap_men_anim[][2] = {
+struct Animation *rap_men_anim[][2] = {
     /* 0x00 */ { anim_rap_men_red_desuka, anim_rap_women_red_desuka },
     /* 0x01 */ { anim_rap_men_yellow_barely, anim_rap_women_blue_barely },
     /* 0x02 */ { anim_rap_men_yellow_hit, anim_rap_women_blue_hit },
@@ -59,7 +59,7 @@ const struct Animation *rap_men_anim[][2] = {
 };
 
 // [D_089e63f8] Animation Table
-const struct Animation **rap_men_anim_table[] = {
+struct Animation **rap_men_anim_table[] = {
     /* 0x00 */ rap_men_anim[0],
     /* 0x01 */ rap_men_anim[1],
     /* 0x02 */ rap_men_anim[2],
@@ -74,7 +74,7 @@ const struct Animation **rap_men_anim_table[] = {
 };
 
 // [D_089e6424] Buffered Textures List
-const struct CompressedGraphics *rap_men_buffered_textures[] = {
+struct CompressedGraphics *rap_men_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

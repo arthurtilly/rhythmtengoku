@@ -4,7 +4,7 @@
 #include "marching_orders_anim_cells.inc.c"
 
 // [D_088f124c] Marcher Test
-const struct Animation anim_marching1_test[] = {
+struct Animation anim_marching1_test[] = {
     /* 000 */ { marching_orders_cel005, 3 },
     /* 001 */ { marching_orders_cel006, 3 },
     /* 002 */ { marching_orders_cel007, 3 },
@@ -44,7 +44,7 @@ const struct Animation anim_marching1_test[] = {
 };
 
 // [D_088f136c] Marcher - Turn Left
-const struct Animation anim_marching1_turn_l[] = {
+struct Animation anim_marching1_turn_l[] = {
     /* 000 */ { marching_orders_cel014, 10 },
     /* 001 */ { marching_orders_cel015, 4 },
     /* 002 */ { marching_orders_cel016, 4 },
@@ -53,7 +53,7 @@ const struct Animation anim_marching1_turn_l[] = {
 };
 
 // [D_088f1394] Marcher - Turn Right
-const struct Animation anim_marching1_turn_r[] = {
+struct Animation anim_marching1_turn_r[] = {
     /* 000 */ { marching_orders_cel018, 10 },
     /* 001 */ { marching_orders_cel019, 4 },
     /* 002 */ { marching_orders_cel020, 4 },
@@ -62,7 +62,7 @@ const struct Animation anim_marching1_turn_r[] = {
 };
 
 // [D_088f13bc] Marcher - Point Left
-const struct Animation anim_marching1_point_l[] = {
+struct Animation anim_marching1_point_l[] = {
     /* 000 */ { marching_orders_cel023, 10 },
     /* 001 */ { marching_orders_cel022, 4 },
     /* 002 */ { marching_orders_cel021, 3 },
@@ -71,7 +71,7 @@ const struct Animation anim_marching1_point_l[] = {
 };
 
 // [D_088f13e4] Marcher - Point Right
-const struct Animation anim_marching1_point_r[] = {
+struct Animation anim_marching1_point_r[] = {
     /* 000 */ { marching_orders_cel026, 10 },
     /* 001 */ { marching_orders_cel025, 4 },
     /* 002 */ { marching_orders_cel024, 3 },
@@ -80,7 +80,7 @@ const struct Animation anim_marching1_point_r[] = {
 };
 
 // [D_088f140c] Commander - Angry
-const struct Animation anim_marching1_commander_angry[] = {
+struct Animation anim_marching1_commander_angry[] = {
     /* 000 */ { marching_orders_cel003, 20 },
     /* 001 */ { marching_orders_cel002, 6 },
     /* 002 */ { marching_orders_cel001, 6 },
@@ -89,7 +89,7 @@ const struct Animation anim_marching1_commander_angry[] = {
 };
 
 // [D_088f1434] Marcher - Stop Beat
-const struct Animation anim_marching1_stop_beat[] = {
+struct Animation anim_marching1_stop_beat[] = {
     /* 000 */ { marching_orders_cel039, 4 },
     /* 001 */ { marching_orders_cel040, 4 },
     /* 002 */ { marching_orders_cel041, 50 },
@@ -97,7 +97,7 @@ const struct Animation anim_marching1_stop_beat[] = {
 };
 
 // [D_088f1454] Marcher - Clap
-const struct Animation anim_marching1_clap[] = {
+struct Animation anim_marching1_clap[] = {
     /* 000 */ { marching_orders_cel036, 4 },
     /* 001 */ { marching_orders_cel038, 3 },
     /* 002 */ { marching_orders_cel037, 30 },
@@ -105,7 +105,7 @@ const struct Animation anim_marching1_clap[] = {
 };
 
 // [D_088f1474] Marcher - Beat
-const struct Animation anim_marching1_beat[] = {
+struct Animation anim_marching1_beat[] = {
     /* 000 */ { marching_orders_cel041, 4 },
     /* 001 */ { marching_orders_cel040, 4 },
     /* 002 */ { marching_orders_cel039, 40 },
@@ -113,7 +113,7 @@ const struct Animation anim_marching1_beat[] = {
 };
 
 // [D_088f1494] Marcher - Step Right (Body)
-const struct Animation anim_marching1_step_r[] = {
+struct Animation anim_marching1_step_r[] = {
     /* 000 */ { marching_orders_cel042, 2 },
     /* 001 */ { marching_orders_cel043, 2 },
     /* 002 */ { marching_orders_cel044, 2 },
@@ -123,7 +123,7 @@ const struct Animation anim_marching1_step_r[] = {
 };
 
 // [D_088f14c4] Marcher - Step Left (Body)
-const struct Animation anim_marching1_step_l[] = {
+struct Animation anim_marching1_step_l[] = {
     /* 000 */ { marching_orders_cel042, 2 },
     /* 001 */ { marching_orders_cel047, 2 },
     /* 002 */ { marching_orders_cel048, 2 },
@@ -133,7 +133,7 @@ const struct Animation anim_marching1_step_l[] = {
 };
 
 // [D_088f14f4] Marcher - Turn Right (Head)
-const struct Animation anim_marching1_head_turn_r[] = {
+struct Animation anim_marching1_head_turn_r[] = {
     /* 000 */ { marching_orders_cel033, 10 },
     /* 001 */ { marching_orders_cel034, 4 },
     /* 002 */ { marching_orders_cel035, 4 },
@@ -142,7 +142,7 @@ const struct Animation anim_marching1_head_turn_r[] = {
 };
 
 // [D_088f151c] Marcher - Turn Left (Head)
-const struct Animation anim_marching1_head_turn_l[] = {
+struct Animation anim_marching1_head_turn_l[] = {
     /* 000 */ { marching_orders_cel030, 10 },
     /* 001 */ { marching_orders_cel031, 4 },
     /* 002 */ { marching_orders_cel032, 4 },
@@ -151,7 +151,7 @@ const struct Animation anim_marching1_head_turn_l[] = {
 };
 
 // [D_088f1544] Tutorial Icons
-const struct Animation anim_marching1_tutorial_icons[] = {
+struct Animation anim_marching1_tutorial_icons[] = {
     /* 000 */ { marching_orders_cel051, 40 },
     /* 001 */ { marching_orders_cel053, 40 },
     /* 002 */ { marching_orders_cel054, 40 },
@@ -161,13 +161,13 @@ const struct Animation anim_marching1_tutorial_icons[] = {
 };
 
 // [D_088f1574] "Start to Skip" Tutorial Icon (Unused)
-const struct Animation anim_marching1_tutorial_skip_icon[] = {
+struct Animation anim_marching1_tutorial_skip_icon[] = {
     /* 000 */ { marching_orders_cel052, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088f1584] Commander Frustration Cloud
-const struct Animation anim_marching1_angry_puff[] = {
+struct Animation anim_marching1_angry_puff[] = {
     /* 000 */ { marching_orders_cel057, 4 },
     /* 001 */ { marching_orders_cel058, 5 },
     /* 002 */ { marching_orders_cel059, 4 },
@@ -178,7 +178,7 @@ const struct Animation anim_marching1_angry_puff[] = {
 };
 
 // [D_088f15bc] Commander - Annoyed
-const struct Animation anim_marching1_commander_annoyed[] = {
+struct Animation anim_marching1_commander_annoyed[] = {
     /* 000 */ { marching_orders_cel063, 30 },
     /* 001 */ { marching_orders_cel064, 6 },
     /* 002 */ { marching_orders_cel000, 6 },

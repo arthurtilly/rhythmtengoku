@@ -4,7 +4,7 @@
 #include "placeholder_prologue_anim_cells.inc.c"
 
 // [D_088b908c] Title
-const struct Animation anim_placeholder_prologue_title[] = {
+struct Animation anim_placeholder_prologue_title[] = {
     /* 000 */ { placeholder_prologue_cel000, 40 },
     /* 001 */ { placeholder_prologue_cel001, 10 },
     /* 002 */ { placeholder_prologue_cel002, 10 },

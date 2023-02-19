@@ -405,7 +405,7 @@ void karate_stop_serious_mode(void) {
 void karate_cue_hit(struct Cue *cue, struct KarateManCue *data) {
     struct KarateManInfo *karateManStruct = gKarateManInfo;
     struct KarateJoe *joe = &karateManStruct->joe;
-    const struct Animation *anim;
+    struct Animation *anim;
     u32 bgFace;
     u32 isBgFaceVer;
     u32 isHigh;

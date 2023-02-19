@@ -1,7 +1,7 @@
 // do not rename these
 
 // [D_088ae318]
-const AnimationCel showtime_prologue_cel000[] = {
+AnimationCel showtime_prologue_cel000[] = {
     /* Len */ 3,
     /* 000 */ 0x40f0, 0x81d0, 0x1011,
     /* 001 */ 0x40f0, 0x81f0, 0x1019,
@@ -9,7 +9,7 @@ const AnimationCel showtime_prologue_cel000[] = {
 };
 
 // [D_088ae32c]
-const AnimationCel showtime_prologue_cel001[] = {
+AnimationCel showtime_prologue_cel001[] = {
     /* Len */ 4,
     /* 000 */ 0x80e0, 0x8000, 0x000c,
     /* 001 */ 0x80e0, 0x4010, 0x000e,
@@ -18,7 +18,7 @@ const AnimationCel showtime_prologue_cel001[] = {
 };
 
 // [D_088ae346]
-const AnimationCel showtime_prologue_cel002[] = {
+AnimationCel showtime_prologue_cel002[] = {
     /* Len */ 4,
     /* 000 */ 0x80e0, 0x8000, 0x0004,
     /* 001 */ 0x40d8, 0x0000, 0x001d,
@@ -27,7 +27,7 @@ const AnimationCel showtime_prologue_cel002[] = {
 };
 
 // [D_088ae360]
-const AnimationCel showtime_prologue_cel003[] = {
+AnimationCel showtime_prologue_cel003[] = {
     /* Len */ 4,
     /* 000 */ 0x80e0, 0x8000, 0x0002,
     /* 001 */ 0x40d8, 0x0000, 0x001d,
@@ -36,7 +36,7 @@ const AnimationCel showtime_prologue_cel003[] = {
 };
 
 // [D_088ae37a]
-const AnimationCel showtime_prologue_cel004[] = {
+AnimationCel showtime_prologue_cel004[] = {
     /* Len */ 4,
     /* 000 */ 0x80e0, 0x8000, 0x0000,
     /* 001 */ 0x40d8, 0x0000, 0x001d,
@@ -45,7 +45,7 @@ const AnimationCel showtime_prologue_cel004[] = {
 };
 
 // [D_088ae394]
-const AnimationCel showtime_prologue_cel005[] = {
+AnimationCel showtime_prologue_cel005[] = {
     /* Len */ 4,
     /* 000 */ 0x80e0, 0x8000, 0x000a,
     /* 001 */ 0x40d8, 0x0000, 0x001d,
@@ -54,7 +54,7 @@ const AnimationCel showtime_prologue_cel005[] = {
 };
 
 // [D_088ae3ae]
-const AnimationCel showtime_prologue_cel006[] = {
+AnimationCel showtime_prologue_cel006[] = {
     /* Len */ 4,
     /* 000 */ 0x80e0, 0x8000, 0x0008,
     /* 001 */ 0x80e0, 0x4010, 0x0010,
@@ -63,7 +63,7 @@ const AnimationCel showtime_prologue_cel006[] = {
 };
 
 // [D_088ae3c8]
-const AnimationCel showtime_prologue_cel007[] = {
+AnimationCel showtime_prologue_cel007[] = {
     /* Len */ 4,
     /* 000 */ 0x80e0, 0x8000, 0x0006,
     /* 001 */ 0x80e0, 0x4010, 0x000f,

@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088f2c0c] OBJ Palette
-const Palette marching_orders_2_obj_pal[] = {
+Palette marching_orders_2_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x587880),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -60,7 +60,7 @@ const Palette marching_orders_2_obj_pal[] = {
 };
 
 // [D_088f2c6c] BG Palette
-const Palette marching_orders_2_bg_pal[] = {
+Palette marching_orders_2_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x585800),
         /* 01 */ TO_RGB555(0x000000),

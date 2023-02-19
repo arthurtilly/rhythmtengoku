@@ -75,7 +75,7 @@ void update_affine_sprite(struct AffineSprite *affineData) {
     // arg10 = R/S [Double-Size Flag]
 
 // [func_0800fa6c] Create Affine Sprite (Sprite w/ Rotation/Scaling Parameters)
-struct AffineSprite *create_affine_sprite(const struct Animation *anim, s8 arg1, s16 x, s16 y, u16 z, s16 scale,
+struct AffineSprite *create_affine_sprite(struct Animation *anim, s8 arg1, s16 x, s16 y, u16 z, s16 scale,
                                             s16 rotation, s8 arg7, s8 arg8, u16 arg9, u32 doubleSize) {
     struct AffineSprite *affineData;
     s16 sprite;
@@ -120,7 +120,7 @@ struct AffineSprite *create_affine_sprite(const struct Animation *anim, s8 arg1,
 }
 
 // [func_0800fba0] AFFINE SPRITE - Create Affine Sprite with Default Rotation/Scaling Parameters
-struct AffineSprite *create_default_affine_sprite(const struct Animation *anim, s8 arg1, s16 x, s16 y, u16 layer, s8 arg5, s8 arg6, u16 arg7) {
+struct AffineSprite *create_default_affine_sprite(struct Animation *anim, s8 arg1, s16 x, s16 y, u16 layer, s8 arg5, s8 arg6, u16 arg7) {
     struct AffineSprite *affineData;
     s16 sprite;
 
@@ -388,7 +388,7 @@ void affine_sprite_play_anim(struct AffineSprite *affineData, u32 start) {
 }
 
 // [func_08010064] AFFINE SPRITE - Set Animation
-void affine_sprite_change_anim(struct AffineSprite *affineData, const struct Animation *anim, u32 arg2, u32 arg3, u32 arg4, u32 arg5) {
+void affine_sprite_change_anim(struct AffineSprite *affineData, struct Animation *anim, u32 arg2, u32 arg3, u32 arg4, u32 arg5) {
     if (affineData == NULL) return;
 
     func_0804d8f8(D_03005380, affineData->sprite, anim, arg2, arg3, arg4, arg5);

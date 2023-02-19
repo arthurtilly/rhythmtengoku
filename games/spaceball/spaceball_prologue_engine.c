@@ -4,18 +4,18 @@
   /* PROLOGUE (SPACEBALL) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08be2fd8;
-extern const struct CompressedGraphics D_08be3398;
-extern const struct CompressedGraphics D_08be2298;
-extern const Palette spaceball_prologue_bg_pal[];
-extern const Palette spaceball_prologue_obj_pal[];
+extern struct CompressedGraphics D_08be2fd8;
+extern struct CompressedGraphics D_08be3398;
+extern struct CompressedGraphics D_08be2298;
+extern Palette spaceball_prologue_bg_pal[];
+extern Palette spaceball_prologue_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ea26c] Buffered Textures List
-const struct CompressedGraphics *spaceball_prologue_buffered_textures[] = {
+struct CompressedGraphics *spaceball_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

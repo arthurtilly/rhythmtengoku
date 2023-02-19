@@ -24,7 +24,7 @@ extern s8 D_030055d8; // Currently-Selected Button
 
 
 // OAM Animations:
-extern const struct Animation D_0890a3c4[]; // Blank
+extern struct Animation D_0890a3c4[]; // Blank
 
 
 // Palettes:
@@ -39,9 +39,9 @@ extern const struct Animation D_0890a3c4[]; // Blank
 // Scene Definition Data:
 extern const void *const D_089cdc40[]; // some unused sprite/text sort of thing
 extern const struct GraphicsTable D_089cdc44[]; // Graphics Table
-extern const struct CompressedGraphics *const D_089cdc8c[]; // Buffered Textures List
-extern const struct Animation *const D_089cdc90[5]; // Button Animations (Highlighted)
-extern const struct Animation *const D_089cdca4[5]; // Button Animations
+extern struct CompressedGraphics *const D_089cdc8c[]; // Buffered Textures List
+extern struct Animation *const D_089cdc90[5]; // Button Animations (Highlighted)
+extern struct Animation *const D_089cdca4[5]; // Button Animations
 
 extern void func_0801242c(void); // Init. Static Variables
 extern void func_08012438(void); // Graphics Init. 3

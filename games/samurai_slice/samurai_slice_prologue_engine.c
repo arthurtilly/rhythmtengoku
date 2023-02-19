@@ -4,18 +4,18 @@
   /* PROLOGUE (SAMURAI SLICE) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08bf7aa4;
-extern const struct CompressedGraphics D_08bf7f04;
-extern const struct CompressedGraphics D_08bf7d5c;
-extern const struct CompressedGraphics D_08bf6678;
-extern const Palette samurai_slice_prologue_pal[];
+extern struct CompressedGraphics D_08bf7aa4;
+extern struct CompressedGraphics D_08bf7f04;
+extern struct CompressedGraphics D_08bf7d5c;
+extern struct CompressedGraphics D_08bf6678;
+extern Palette samurai_slice_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089eb37c] Buffered Textures List
-const struct CompressedGraphics *samurai_slice_prologue_buffered_textures[] = {
+struct CompressedGraphics *samurai_slice_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

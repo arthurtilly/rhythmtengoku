@@ -4,17 +4,17 @@
   /* KARATE MAN - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08bdd500; // BG Textures (Face)
-extern const struct CompressedGraphics D_08bddc8c; // BG Textures (Face)
-extern const struct CompressedGraphics D_08bde0d4; // BG Textures (Face)
+extern struct CompressedGraphics D_08bdd500; // BG Textures (Face)
+extern struct CompressedGraphics D_08bddc8c; // BG Textures (Face)
+extern struct CompressedGraphics D_08bde0d4; // BG Textures (Face)
 extern const u16 D_08936650[]; // BG Map (Face)
-extern const struct CompressedGraphics D_08bdcfc8; // BG Textures (Serious Mode)
-extern const struct CompressedGraphics D_08be0ce8; // BG Map (Serious Mode)
-extern const struct CompressedGraphics D_08bdc938; // BG Textures
-extern const struct CompressedGraphics D_08be08e0; // BG Map
-extern const struct CompressedGraphics D_08be0480; // OBJ Textures
-extern const Palette karate_man_pal[]; // Karate Man 1 Palette
-extern const Palette karate_man_2_pal[]; // Karate Man 2 Palette
+extern struct CompressedGraphics D_08bdcfc8; // BG Textures (Serious Mode)
+extern struct CompressedGraphics D_08be0ce8; // BG Map (Serious Mode)
+extern struct CompressedGraphics D_08bdc938; // BG Textures
+extern struct CompressedGraphics D_08be08e0; // BG Map
+extern struct CompressedGraphics D_08be0480; // OBJ Textures
+extern Palette karate_man_pal[]; // Karate Man 1 Palette
+extern Palette karate_man_2_pal[]; // Karate Man 2 Palette
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
@@ -60,7 +60,7 @@ struct GameEngine karate_man_engine = {
 
 
 // [D_089df064] Buffered Textures List
-const struct CompressedGraphics *karate_buffered_textures[] = {
+struct CompressedGraphics *karate_buffered_textures[] = {
     &D_08bdd500,
     &D_08bddc8c,
     &D_08bde0d4,
@@ -206,7 +206,7 @@ struct GraphicsTable *karate_gfx_tables[] = {
 };
 
 // [D_089df1bc] BG Face Textures
-const struct CompressedGraphics *karate_bg_face_textures[] = {
+struct CompressedGraphics *karate_bg_face_textures[] = {
     &D_08bdd500,
     &D_08bddc8c,
     &D_08bde0d4

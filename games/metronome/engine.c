@@ -4,15 +4,15 @@
   /* METRONOME - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c702d0;
-extern const Palette metronome_pal[];
+extern struct CompressedGraphics D_08c702d0;
+extern Palette metronome_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e585c] Buffered Textures List
-const struct CompressedGraphics *metronome_buffered_textures[] = {
+struct CompressedGraphics *metronome_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

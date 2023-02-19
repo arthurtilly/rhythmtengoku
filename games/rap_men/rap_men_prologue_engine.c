@@ -4,17 +4,17 @@
   /* PROLOGUE (RAP MEN) - SCRIPT DATA */
 
 
-extern const struct CompressedGraphics D_08c2052c;
-extern const struct CompressedGraphics D_08c207cc;
-extern const struct CompressedGraphics D_08c1f4b4;
-extern const Palette rap_men_prologue_pal[];
+extern struct CompressedGraphics D_08c2052c;
+extern struct CompressedGraphics D_08c207cc;
+extern struct CompressedGraphics D_08c1f4b4;
+extern Palette rap_men_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ecd44] Buffered Textures List
-const struct CompressedGraphics *rap_men_prologue_buffered_textures[] = {
+struct CompressedGraphics *rap_men_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

@@ -4,28 +4,28 @@
   /* BOUNCY ROAD - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c57a14;
-extern const struct CompressedGraphics D_08c583bc;
-extern const struct CompressedGraphics D_08c585a4;
-extern const struct CompressedGraphics D_08c58738;
-extern const struct CompressedGraphics D_08c58940;
-extern const Palette bouncy_road_pal[];
-extern const Palette bouncy_road_2_pal[];
-extern const Palette bouncy_road_remix_5_bg_pal[];
-extern const Palette bouncy_road_remix_5_obj_pal[];
+extern struct CompressedGraphics D_08c57a14;
+extern struct CompressedGraphics D_08c583bc;
+extern struct CompressedGraphics D_08c585a4;
+extern struct CompressedGraphics D_08c58738;
+extern struct CompressedGraphics D_08c58940;
+extern Palette bouncy_road_pal[];
+extern Palette bouncy_road_2_pal[];
+extern Palette bouncy_road_remix_5_bg_pal[];
+extern Palette bouncy_road_remix_5_obj_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e3c04] Player Bouncer Animation Table (Unused)
-const struct Animation *bouncy_road_player_bouncer_anim[] = {
+struct Animation *bouncy_road_player_bouncer_anim[] = {
     /* 0x00 */ anim_bouncy_road_player_a,
     /* 0x01 */ anim_bouncy_road_player_dpad
 };
 
 // [D_089e3c0c] Buffered Textures List
-const struct CompressedGraphics *bouncy_road_buffered_textures[] = {
+struct CompressedGraphics *bouncy_road_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

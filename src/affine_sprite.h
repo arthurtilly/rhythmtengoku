@@ -23,8 +23,8 @@ struct AffineSprite {
 
 
 extern void update_affine_sprite(struct AffineSprite *);           // [func_0800f904] AFFINE SPRITE - Update
-extern struct AffineSprite *create_affine_sprite(const struct Animation *, s8, s16, s16, u16, s16, s16, s8, s8, u16, u32); // [func_0800fa6c] AFFINE SPRITE - Create New
-extern struct AffineSprite *create_default_affine_sprite(const struct Animation *, s8, s16, s16, u16, s8, s8, u16); // [func_0800fba0] AFFINE SPRITE - Create New (with Default Parameters)
+extern struct AffineSprite *create_affine_sprite(struct Animation *, s8, s16, s16, u16, s16, s16, s8, s8, u16, u32); // [func_0800fa6c] AFFINE SPRITE - Create New
+extern struct AffineSprite *create_default_affine_sprite(struct Animation *, s8, s16, s16, u16, s8, s8, u16); // [func_0800fba0] AFFINE SPRITE - Create New (with Default Parameters)
 extern void delete_affine_sprite(struct AffineSprite *);           // [func_0800fc70] AFFINE SPRITE - Delete
 extern void affine_sprite_set_param_id(struct AffineSprite *, u32);      // [func_0800fca0] AFFINE SPRITE - Set/Remove Index
 extern void affine_sprite_use_precise_angles(struct AffineSprite *, u32);      // [func_0800fd14] AFFINE SPRITE - Set "High Angle Precision" Flag
@@ -51,7 +51,7 @@ extern void affine_sprite_set_anim_frame(struct AffineSprite *, u32);      // [f
 extern void func_0800ffe4(struct AffineSprite *, u8);       // [func_0800ffe4] AFFINE SPRITE - func_0804ced0()
 extern void affine_sprite_set_playback(struct AffineSprite *, u32, u32, u32); // [func_08010008] AFFINE SPRITE - Animate?
 extern void affine_sprite_play_anim(struct AffineSprite *, u32);      // [func_08010040] AFFINE SPRITE - Start Animation
-extern void affine_sprite_change_anim(struct AffineSprite *, const struct Animation *, u32, u32, u32, u32); // [func_08010064] AFFINE SPRITE - Set Animation
+extern void affine_sprite_change_anim(struct AffineSprite *, struct Animation *, u32, u32, u32, u32); // [func_08010064] AFFINE SPRITE - Set Animation
 extern void affine_sprite_set_palette(struct AffineSprite *, u32);      // [func_080100a8] AFFINE SPRITE - Set Palette
 extern void func_080100cc(struct AffineSprite *, u32);      // [func_080100cc] AFFINE SPRITE - func_0804d890()
 extern u32  affine_sprite_get_base_sprite_x(struct AffineSprite *);           // [func_080100f0] AFFINE SPRITE - func_0804ddb0(..., 4)

@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_08914ab0] Tanuki & Monkey OBJ Palette
-const Palette tanuki_and_monkey_obj_pal[] = {
+Palette tanuki_and_monkey_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x2878B0),
         /* 01 */ TO_RGB555(0x302020),
@@ -96,7 +96,7 @@ const Palette tanuki_and_monkey_obj_pal[] = {
 };
 
 // [D_08914b50] Tanuki & Monkey BG Palette
-const Palette tanuki_and_monkey_bg_pal[] = {
+Palette tanuki_and_monkey_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00B020),
         /* 01 */ TO_RGB555(0x302020),

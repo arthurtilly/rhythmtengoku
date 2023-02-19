@@ -4,17 +4,17 @@
   /* PROLOGUE (NINJA REINCARNATE) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c24604;
-extern const struct CompressedGraphics D_08c24804;
-extern const struct CompressedGraphics D_08c24200;
-extern const Palette ninja_reincarnate_prologue_pal[];
+extern struct CompressedGraphics D_08c24604;
+extern struct CompressedGraphics D_08c24804;
+extern struct CompressedGraphics D_08c24200;
+extern Palette ninja_reincarnate_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ed2c4] Buffered Textures List
-const struct CompressedGraphics *ninja_reincarnate_prologue_buffered_textures[] = {
+struct CompressedGraphics *ninja_reincarnate_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

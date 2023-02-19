@@ -4,42 +4,42 @@
   /* QUIZ SHOW - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_quiz_host_press_button_r[];
-extern const struct Animation anim_quiz_host_press_button_l[];
-extern const struct Animation anim_quiz_host_arm_r[];
-extern const struct Animation anim_quiz_player_arm_r[];
-extern const struct Animation anim_quiz_host_arm_l[];
-extern const struct Animation anim_quiz_player_arm_l[];
-extern const struct Animation anim_quiz_host_head[];
-extern const struct Animation anim_quiz_player_head[];
-extern const struct Animation anim_quiz_host_head_success[];
-extern const struct Animation anim_quiz_player_head_success[];
-extern const struct Animation anim_quiz_host_head_failure[];
-extern const struct Animation anim_quiz_player_head_failure[];
-extern const struct Animation anim_quiz_host_head_endless1[];
-extern const struct Animation anim_quiz_host_head_endless2[];
-extern const struct Animation anim_quiz_host_head_endless3[];
-extern const struct Animation anim_quiz_host_head_endless4[];
-extern const struct Animation anim_quiz_player_head_endless2[];
-extern const struct Animation anim_quiz_player_head_endless3[];
-extern const struct Animation anim_quiz_player_head_endless4[];
+extern struct Animation anim_quiz_host_press_button_r[];
+extern struct Animation anim_quiz_host_press_button_l[];
+extern struct Animation anim_quiz_host_arm_r[];
+extern struct Animation anim_quiz_player_arm_r[];
+extern struct Animation anim_quiz_host_arm_l[];
+extern struct Animation anim_quiz_player_arm_l[];
+extern struct Animation anim_quiz_host_head[];
+extern struct Animation anim_quiz_player_head[];
+extern struct Animation anim_quiz_host_head_success[];
+extern struct Animation anim_quiz_player_head_success[];
+extern struct Animation anim_quiz_host_head_failure[];
+extern struct Animation anim_quiz_player_head_failure[];
+extern struct Animation anim_quiz_host_head_endless1[];
+extern struct Animation anim_quiz_host_head_endless2[];
+extern struct Animation anim_quiz_host_head_endless3[];
+extern struct Animation anim_quiz_host_head_endless4[];
+extern struct Animation anim_quiz_player_head_endless2[];
+extern struct Animation anim_quiz_player_head_endless3[];
+extern struct Animation anim_quiz_player_head_endless4[];
 
-extern const struct CompressedGraphics D_08c7d2ac;
-extern const struct CompressedGraphics D_08c7db1c;
-extern const struct CompressedGraphics D_08c7da68;
-extern const struct CompressedGraphics D_08c7d524;
-extern const struct CompressedGraphics D_08c7d9d0;
-extern const struct CompressedGraphics D_08c7c8e0;
+extern struct CompressedGraphics D_08c7d2ac;
+extern struct CompressedGraphics D_08c7db1c;
+extern struct CompressedGraphics D_08c7da68;
+extern struct CompressedGraphics D_08c7d524;
+extern struct CompressedGraphics D_08c7d9d0;
+extern struct CompressedGraphics D_08c7c8e0;
 
-extern const Palette quiz_bg_pal[];
-extern const Palette quiz_obj_pal[];
+extern Palette quiz_bg_pal[];
+extern Palette quiz_obj_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e5d2c] Buffered Textures List
-const struct CompressedGraphics *quiz_buffered_textures[] = {
+struct CompressedGraphics *quiz_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -89,31 +89,31 @@ struct GraphicsTable quiz_gfx_table[] = {
 };
 
 // [D_089e5d9c] Right Arm Animations
-const struct Animation *quiz_arm_r_anim[] = {
+struct Animation *quiz_arm_r_anim[] = {
     /* HOST   */ anim_quiz_host_arm_r,
     /* PLAYER */ anim_quiz_player_arm_r
 };
 
 // [D_089e5da4] Left Arm Animations
-const struct Animation *quiz_arm_l_anim[] = {
+struct Animation *quiz_arm_l_anim[] = {
     /* HOST   */ anim_quiz_host_arm_l,
     /* PLAYER */ anim_quiz_player_arm_l
 };
 
 // [D_089e5dac] Neutral Expression Animations
-const struct Animation *quiz_face_neutral_anim[] = {
+struct Animation *quiz_face_neutral_anim[] = {
     /* HOST   */ anim_quiz_host_head,
     /* PLAYER */ anim_quiz_player_head
 };
 
 // [D_089e5db4] Success Expression Animations
-const struct Animation *quiz_face_success_anim[] = {
+struct Animation *quiz_face_success_anim[] = {
     /* HOST   */ anim_quiz_host_head_success,
     /* PLAYER */ anim_quiz_player_head_success
 };
 
 // [D_089e5dbc] Failure Expression Animations
-const struct Animation *quiz_face_failure_anim[] = {
+struct Animation *quiz_face_failure_anim[] = {
     /* HOST   */ anim_quiz_host_head_failure,
     /* PLAYER */ anim_quiz_player_head_failure
 };
@@ -123,13 +123,13 @@ const struct Animation *quiz_face_failure_anim[] = {
 
 
 // [D_089e5dc4] Quiz Host Button Press Animations
-const struct Animation *quiz_host_button_press_anim[] = {
+struct Animation *quiz_host_button_press_anim[] = {
     /* RIGHT */ anim_quiz_host_press_button_r,
     /* LEFT  */ anim_quiz_host_press_button_l
 };
 
 // [D_089e5dcc] Quiz Endless Host Expression Animations
-const struct Animation *quiz_ex_host_face_anim[] = {
+struct Animation *quiz_ex_host_face_anim[] = {
     /* 0x00 */ anim_quiz_host_head,
     /* 0x01 */ anim_quiz_host_head_endless1,
     /* 0x02 */ anim_quiz_host_head_endless2,
@@ -179,7 +179,7 @@ struct CueDefinition *quiz_cue_index[] = {
 };
 
 // [D_089e5e54] Quiz Endless Player Expression Animations
-const struct Animation *quiz_ex_player_face_anim[] = {
+struct Animation *quiz_ex_player_face_anim[] = {
     /* 0x00 */ anim_quiz_player_head,
     /* 0x01 */ anim_quiz_player_head,
     /* 0x02 */ anim_quiz_player_head_endless2,

@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088f4140] <description>
-const Palette studio_bg_monitor_00_pal[] = {
+Palette studio_bg_monitor_00_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x0000F8),
@@ -78,7 +78,7 @@ const Palette studio_bg_monitor_00_pal[] = {
 };
 
 // [D_088f41c0] <description>
-const Palette studio_bg_monitor_01_pal[] = {
+Palette studio_bg_monitor_01_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x80B0F8),
         /* 01 */ TO_RGB555(0x0000F8),
@@ -154,7 +154,7 @@ const Palette studio_bg_monitor_01_pal[] = {
 };
 
 // [D_088f4240] <description>
-const Palette studio_bg_monitor_02_pal[] = {
+Palette studio_bg_monitor_02_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),
         /* 01 */ TO_RGB555(0x000000),
@@ -230,7 +230,7 @@ const Palette studio_bg_monitor_02_pal[] = {
 };
 
 // [D_088f42c0] <description>
-const Palette studio_bg_monitor_03_pal[] = {
+Palette studio_bg_monitor_03_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF89000),
         /* 01 */ TO_RGB555(0xF8D000),
@@ -306,7 +306,7 @@ const Palette studio_bg_monitor_03_pal[] = {
 };
 
 // [D_088f4340] <description>
-const Palette studio_bg_monitor_04_pal[] = {
+Palette studio_bg_monitor_04_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xC0C0C0),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -382,7 +382,7 @@ const Palette studio_bg_monitor_04_pal[] = {
 };
 
 // [D_088f43c0] <description>
-const Palette studio_bg_monitor_05_pal[] = {
+Palette studio_bg_monitor_05_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000890),
         /* 01 */ TO_RGB555(0xF0F800),
@@ -458,7 +458,7 @@ const Palette studio_bg_monitor_05_pal[] = {
 };
 
 // [D_088f4440] <description>
-const Palette studio_bg_monitor_06_pal[] = {
+Palette studio_bg_monitor_06_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),
         /* 01 */ TO_RGB555(0xC00008),
@@ -534,7 +534,7 @@ const Palette studio_bg_monitor_06_pal[] = {
 };
 
 // [D_088f44c0] <description>
-const Palette studio_bg_monitor_07_pal[] = {
+Palette studio_bg_monitor_07_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF80000),
         /* 01 */ TO_RGB555(0x000000),
@@ -610,7 +610,7 @@ const Palette studio_bg_monitor_07_pal[] = {
 };
 
 // [D_088f4540] <description>
-const Palette studio_bg_monitor_08_pal[] = {
+Palette studio_bg_monitor_08_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF86800),
         /* 01 */ TO_RGB555(0xF8D000),
@@ -686,7 +686,7 @@ const Palette studio_bg_monitor_08_pal[] = {
 };
 
 // [D_088f45c0] <description>
-const Palette studio_bg_monitor_09_pal[] = {
+Palette studio_bg_monitor_09_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xD0D0D0),
         /* 01 */ TO_RGB555(0xF870F8),
@@ -762,7 +762,7 @@ const Palette studio_bg_monitor_09_pal[] = {
 };
 
 // [D_088f4640] <description>
-const Palette studio_bg_monitor_10_pal[] = {
+Palette studio_bg_monitor_10_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF078F8),
         /* 01 */ TO_RGB555(0xF8F0A0),
@@ -838,7 +838,7 @@ const Palette studio_bg_monitor_10_pal[] = {
 };
 
 // [D_088f46c0] <description>
-const Palette studio_bg_monitor_11_pal[] = {
+Palette studio_bg_monitor_11_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F0A0),
         /* 01 */ TO_RGB555(0xA8F808),
@@ -914,7 +914,7 @@ const Palette studio_bg_monitor_11_pal[] = {
 };
 
 // [D_088f4740] <description>
-const Palette studio_bg_monitor_12_pal[] = {
+Palette studio_bg_monitor_12_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x0028F8),
         /* 01 */ TO_RGB555(0x60F0F8),
@@ -990,7 +990,7 @@ const Palette studio_bg_monitor_12_pal[] = {
 };
 
 // [D_088f47c0] <description>
-const Palette studio_bg_monitor_13_pal[] = {
+Palette studio_bg_monitor_13_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x585858),
         /* 01 */ TO_RGB555(0xE8E8E8),
@@ -1066,7 +1066,7 @@ const Palette studio_bg_monitor_13_pal[] = {
 };
 
 // [D_088f4840] <description>
-const Palette studio_bg_monitor_14_pal[] = {
+Palette studio_bg_monitor_14_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x901000),
         /* 01 */ TO_RGB555(0xF82000),
@@ -1142,7 +1142,7 @@ const Palette studio_bg_monitor_14_pal[] = {
 };
 
 // [D_088f48c0] <description>
-const Palette studio_bg_monitor_15_pal[] = {
+Palette studio_bg_monitor_15_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF84088),
         /* 01 */ TO_RGB555(0xF8A8C8),
@@ -1218,7 +1218,7 @@ const Palette studio_bg_monitor_15_pal[] = {
 };
 
 // [D_088f4940] <description>
-const Palette studio_bg_monitor_16_pal[] = {
+Palette studio_bg_monitor_16_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00F810),
         /* 01 */ TO_RGB555(0xD0F8D0),
@@ -1294,7 +1294,7 @@ const Palette studio_bg_monitor_16_pal[] = {
 };
 
 // [D_088f49c0] <description>
-const Palette studio_bg_monitor_17_pal[] = {
+Palette studio_bg_monitor_17_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x5858F8),
         /* 01 */ TO_RGB555(0xE0E0F8),
@@ -1370,7 +1370,7 @@ const Palette studio_bg_monitor_17_pal[] = {
 };
 
 // [D_088f4a40] <description>
-const Palette studio_bg_monitor_18_pal[] = {
+Palette studio_bg_monitor_18_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x880078),
         /* 01 */ TO_RGB555(0xF800E0),
@@ -1446,7 +1446,7 @@ const Palette studio_bg_monitor_18_pal[] = {
 };
 
 // [D_088f4ac0] <description>
-const Palette studio_bg_monitor_19_pal[] = {
+Palette studio_bg_monitor_19_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xA86000),
         /* 01 */ TO_RGB555(0xF89000),
@@ -1522,7 +1522,7 @@ const Palette studio_bg_monitor_19_pal[] = {
 };
 
 // [D_088f4b40] <description>
-const Palette studio_bg_monitor_20_pal[] = {
+Palette studio_bg_monitor_20_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x0088B0),
         /* 01 */ TO_RGB555(0x00C0F8),
@@ -1598,7 +1598,7 @@ const Palette studio_bg_monitor_20_pal[] = {
 };
 
 // [D_088f4bc0] <description>
-const Palette studio_bg_monitor_21_pal[] = {
+Palette studio_bg_monitor_21_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),
         /* 01 */ TO_RGB555(0x10D8F8),
@@ -1674,7 +1674,7 @@ const Palette studio_bg_monitor_21_pal[] = {
 };
 
 // [D_088f4c40] <description>
-const Palette studio_bg_monitor_22_pal[] = {
+Palette studio_bg_monitor_22_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),
         /* 01 */ TO_RGB555(0xF84800),
@@ -1750,7 +1750,7 @@ const Palette studio_bg_monitor_22_pal[] = {
 };
 
 // [D_088f4cc0] <description>
-const Palette studio_bg_monitor_23_pal[] = {
+Palette studio_bg_monitor_23_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),
         /* 01 */ TO_RGB555(0xF818C8),
@@ -1826,7 +1826,7 @@ const Palette studio_bg_monitor_23_pal[] = {
 };
 
 // [D_088f4d40] <description>
-const Palette studio_bg_monitor_24_pal[] = {
+Palette studio_bg_monitor_24_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x0000F8),
@@ -1902,7 +1902,7 @@ const Palette studio_bg_monitor_24_pal[] = {
 };
 
 // [D_088f4dc0] <description>
-const Palette studio_bg_monitor_25_pal[] = {
+Palette studio_bg_monitor_25_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF800B0),
@@ -1978,7 +1978,7 @@ const Palette studio_bg_monitor_25_pal[] = {
 };
 
 // [D_088f4e40] <description>
-const Palette studio_bg_monitor_26_pal[] = {
+Palette studio_bg_monitor_26_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8E800),
@@ -2054,7 +2054,7 @@ const Palette studio_bg_monitor_26_pal[] = {
 };
 
 // [D_088f4ec0] <description>
-const Palette studio_bg_monitor_27_pal[] = {
+Palette studio_bg_monitor_27_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x2000F8),
@@ -2130,7 +2130,7 @@ const Palette studio_bg_monitor_27_pal[] = {
 };
 
 // [D_088f4f40] <description>
-const Palette studio_bg_monitor_28_pal[] = {
+Palette studio_bg_monitor_28_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x08F878),
@@ -2206,7 +2206,7 @@ const Palette studio_bg_monitor_28_pal[] = {
 };
 
 // [D_088f4fc0] <description>
-const Palette studio_bg_monitor_29_pal[] = {
+Palette studio_bg_monitor_29_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF848D8),
@@ -2282,7 +2282,7 @@ const Palette studio_bg_monitor_29_pal[] = {
 };
 
 // [D_088f5040] <description>
-const Palette studio_bg_monitor_30_pal[] = {
+Palette studio_bg_monitor_30_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF89000),
         /* 01 */ TO_RGB555(0xF89000),
@@ -2358,7 +2358,7 @@ const Palette studio_bg_monitor_30_pal[] = {
 };
 
 // [D_088f50c0] <description>
-const Palette studio_bg_monitor_31_pal[] = {
+Palette studio_bg_monitor_31_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xD8A0F8),
         /* 01 */ TO_RGB555(0xD8A0F8),
@@ -2434,7 +2434,7 @@ const Palette studio_bg_monitor_31_pal[] = {
 };
 
 // [D_088f5140] <description>
-const Palette studio_bg_monitor_32_pal[] = {
+Palette studio_bg_monitor_32_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xB0F878),
         /* 01 */ TO_RGB555(0xB0F878),
@@ -2510,7 +2510,7 @@ const Palette studio_bg_monitor_32_pal[] = {
 };
 
 // [D_088f51c0] <description>
-const Palette studio_bg_monitor_33_pal[] = {
+Palette studio_bg_monitor_33_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00F850),
         /* 01 */ TO_RGB555(0x00F850),
@@ -2586,7 +2586,7 @@ const Palette studio_bg_monitor_33_pal[] = {
 };
 
 // [D_088f5240] <description>
-const Palette studio_bg_monitor_34_pal[] = {
+Palette studio_bg_monitor_34_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F060),
         /* 01 */ TO_RGB555(0xF8F060),
@@ -2662,7 +2662,7 @@ const Palette studio_bg_monitor_34_pal[] = {
 };
 
 // [D_088f52c0] <description>
-const Palette studio_bg_monitor_35_pal[] = {
+Palette studio_bg_monitor_35_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x20F890),
         /* 01 */ TO_RGB555(0x20F890),
@@ -2738,7 +2738,7 @@ const Palette studio_bg_monitor_35_pal[] = {
 };
 
 // [D_088f5340] <description>
-const Palette studio_bg_monitor_36_pal[] = {
+Palette studio_bg_monitor_36_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF0F800),
         /* 01 */ TO_RGB555(0xF0F800),
@@ -2814,7 +2814,7 @@ const Palette studio_bg_monitor_36_pal[] = {
 };
 
 // [D_088f53c0] <description>
-const Palette studio_bg_monitor_37_pal[] = {
+Palette studio_bg_monitor_37_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00F8E0),
         /* 01 */ TO_RGB555(0x00F8E0),
@@ -2890,7 +2890,7 @@ const Palette studio_bg_monitor_37_pal[] = {
 };
 
 // [D_088f5440] <description>
-const Palette studio_bg_monitor_38_pal[] = {
+Palette studio_bg_monitor_38_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x48F800),
         /* 01 */ TO_RGB555(0x48F800),
@@ -2966,7 +2966,7 @@ const Palette studio_bg_monitor_38_pal[] = {
 };
 
 // [D_088f54c0] <description>
-const Palette studio_bg_monitor_39_pal[] = {
+Palette studio_bg_monitor_39_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF84800),
         /* 01 */ TO_RGB555(0xF8D000),
@@ -3042,7 +3042,7 @@ const Palette studio_bg_monitor_39_pal[] = {
 };
 
 // [D_088f5540] <description>
-const Palette studio_bg_monitor_40_pal[] = {
+Palette studio_bg_monitor_40_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00F8F0),
         /* 01 */ TO_RGB555(0x00A098),
@@ -3118,7 +3118,7 @@ const Palette studio_bg_monitor_40_pal[] = {
 };
 
 // [D_088f55c0] <description>
-const Palette studio_bg_monitor_41_pal[] = {
+Palette studio_bg_monitor_41_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF0F0F0),
         /* 01 */ TO_RGB555(0x707070),
@@ -3194,7 +3194,7 @@ const Palette studio_bg_monitor_41_pal[] = {
 };
 
 // [D_088f5640] <description>
-const Palette studio_bg_monitor_42_pal[] = {
+Palette studio_bg_monitor_42_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xE0F890),
         /* 01 */ TO_RGB555(0x68F848),
@@ -3270,7 +3270,7 @@ const Palette studio_bg_monitor_42_pal[] = {
 };
 
 // [D_088f56c0] <description>
-const Palette studio_bg_monitor_43_pal[] = {
+Palette studio_bg_monitor_43_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x7808F0),
@@ -3346,7 +3346,7 @@ const Palette studio_bg_monitor_43_pal[] = {
 };
 
 // [D_088f5740] <description>
-const Palette studio_bg_monitor_44_pal[] = {
+Palette studio_bg_monitor_44_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),
         /* 01 */ TO_RGB555(0x787878),

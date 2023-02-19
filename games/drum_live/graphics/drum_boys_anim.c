@@ -4,7 +4,7 @@
 #include "drum_boys_anim_cells.inc.c"
 
 // [D_088becd8] Drummer - Head
-const struct Animation anim_drum_boy_head[] = {
+struct Animation anim_drum_boy_head[] = {
     /* 000 */ { drum_boys_cel002, 3 },
     /* 001 */ { drum_boys_cel001, 3 },
     /* 002 */ { drum_boys_cel000, 24 },
@@ -12,7 +12,7 @@ const struct Animation anim_drum_boy_head[] = {
 };
 
 // [D_088becf8] Drummer - Body
-const struct Animation anim_drum_boy_body[] = {
+struct Animation anim_drum_boy_body[] = {
     /* 000 */ { drum_boys_cel003, 3 },
     /* 001 */ { drum_boys_cel004, 3 },
     /* 002 */ { drum_boys_cel005, 24 },
@@ -20,12 +20,12 @@ const struct Animation anim_drum_boy_body[] = {
 };
 
 // [D_088bed18] Blank
-const struct Animation anim_drum_boys_blank[] = {
+struct Animation anim_drum_boys_blank[] = {
     /* End */ END_ANIMATION
 };
 
 // [D_088bed20] Drummer - Left Hand - Splash Cymbal
-const struct Animation anim_drum_boy_use_splash[] = {
+struct Animation anim_drum_boy_use_splash[] = {
     /* 000 */ { drum_boys_cel015, 2 },
     /* 001 */ { drum_boys_cel016, 2 },
     /* 002 */ { drum_boys_cel017, 2 },
@@ -40,7 +40,7 @@ const struct Animation anim_drum_boy_use_splash[] = {
 };
 
 // [D_088bed78] Drummer - Left Hand - Snare Drum
-const struct Animation anim_drum_boy_use_snare_l[] = {
+struct Animation anim_drum_boy_use_snare_l[] = {
     /* 000 */ { drum_boys_cel025, 2 },
     /* 001 */ { drum_boys_cel026, 2 },
     /* 002 */ { drum_boys_cel027, 2 },
@@ -55,7 +55,7 @@ const struct Animation anim_drum_boy_use_snare_l[] = {
 };
 
 // [D_088bedd0] Drummer - Right Hand - Crash Cymbal
-const struct Animation anim_drum_boy_use_crash[] = {
+struct Animation anim_drum_boy_use_crash[] = {
     /* 000 */ { drum_boys_cel035, 2 },
     /* 001 */ { drum_boys_cel036, 2 },
     /* 002 */ { drum_boys_cel037, 2 },
@@ -70,7 +70,7 @@ const struct Animation anim_drum_boy_use_crash[] = {
 };
 
 // [D_088bee28] Drummer - Right Hand - Snare Drum
-const struct Animation anim_drum_boy_use_snare_r[] = {
+struct Animation anim_drum_boy_use_snare_r[] = {
     /* 000 */ { drum_boys_cel046, 2 },
     /* 001 */ { drum_boys_cel047, 2 },
     /* 002 */ { drum_boys_cel048, 2 },
@@ -85,7 +85,7 @@ const struct Animation anim_drum_boy_use_snare_r[] = {
 };
 
 // [D_088bee80] Drummer - Left Hand - Hi-Hat
-const struct Animation anim_drum_boy_use_hihat[] = {
+struct Animation anim_drum_boy_use_hihat[] = {
     /* 000 */ { drum_boys_cel056, 2 },
     /* 001 */ { drum_boys_cel057, 2 },
     /* 002 */ { drum_boys_cel058, 2 },
@@ -101,7 +101,7 @@ const struct Animation anim_drum_boy_use_hihat[] = {
 };
 
 // [D_088beee0] Drummer - Left Hand - Tom Drum
-const struct Animation anim_drum_boy_use_tom[] = {
+struct Animation anim_drum_boy_use_tom[] = {
     /* 000 */ { drum_boys_cel067, 2 },
     /* 001 */ { drum_boys_cel068, 2 },
     /* 002 */ { drum_boys_cel069, 2 },
@@ -116,7 +116,7 @@ const struct Animation anim_drum_boy_use_tom[] = {
 };
 
 // [D_088bef38] Splash Cymbal
-const struct Animation anim_drum_boy_kit_splash[] = {
+struct Animation anim_drum_boy_kit_splash[] = {
     /* 000 */ { drum_boys_cel083, 2 },
     /* 001 */ { drum_boys_cel077, 2 },
     /* 002 */ { drum_boys_cel080, 2 },
@@ -134,7 +134,7 @@ const struct Animation anim_drum_boy_kit_splash[] = {
 };
 
 // [D_088befa8] Crash Cymbal
-const struct Animation anim_drum_boy_kit_crash[] = {
+struct Animation anim_drum_boy_kit_crash[] = {
     /* 000 */ { drum_boys_cel090, 2 },
     /* 001 */ { drum_boys_cel084, 2 },
     /* 002 */ { drum_boys_cel087, 2 },
@@ -152,7 +152,7 @@ const struct Animation anim_drum_boy_kit_crash[] = {
 };
 
 // [D_088bf018] Left Bass Drum
-const struct Animation anim_drum_boy_kit_bass_l[] = {
+struct Animation anim_drum_boy_kit_bass_l[] = {
     /* 000 */ { drum_boys_cel093, 2 },
     /* 001 */ { drum_boys_cel092, 2 },
     /* 002 */ { drum_boys_cel091, 30 },
@@ -160,7 +160,7 @@ const struct Animation anim_drum_boy_kit_bass_l[] = {
 };
 
 // [D_088bf038] Right Bass Drum
-const struct Animation anim_drum_boy_kit_bass_r[] = {
+struct Animation anim_drum_boy_kit_bass_r[] = {
     /* 000 */ { drum_boys_cel096, 2 },
     /* 001 */ { drum_boys_cel095, 2 },
     /* 002 */ { drum_boys_cel094, 30 },
@@ -168,7 +168,7 @@ const struct Animation anim_drum_boy_kit_bass_r[] = {
 };
 
 // [D_088bf058] Snare Drum
-const struct Animation anim_drum_boy_kit_snare[] = {
+struct Animation anim_drum_boy_kit_snare[] = {
     /* 000 */ { drum_boys_cel097, 3 },
     /* 001 */ { drum_boys_cel098, 2 },
     /* 002 */ { drum_boys_cel099, 30 },
@@ -176,7 +176,7 @@ const struct Animation anim_drum_boy_kit_snare[] = {
 };
 
 // [D_088bf078] Hi-Hat
-const struct Animation anim_drum_boy_kit_hihat[] = {
+struct Animation anim_drum_boy_kit_hihat[] = {
     /* 000 */ { drum_boys_cel102, 3 },
     /* 001 */ { drum_boys_cel101, 3 },
     /* 002 */ { drum_boys_cel100, 3 },
@@ -184,7 +184,7 @@ const struct Animation anim_drum_boy_kit_hihat[] = {
 };
 
 // [D_088bf098] Tom Drum
-const struct Animation anim_drum_boy_kit_tom[] = {
+struct Animation anim_drum_boy_kit_tom[] = {
     /* 000 */ { drum_boys_cel103, 2 },
     /* 001 */ { drum_boys_cel104, 2 },
     /* 002 */ { drum_boys_cel105, 2 },
@@ -193,13 +193,13 @@ const struct Animation anim_drum_boy_kit_tom[] = {
 };
 
 // [D_088bf0c0] Drum Kit Layout Test
-const struct Animation anim_drum_boy_kit_layout_test[] = {
+struct Animation anim_drum_boy_kit_layout_test[] = {
     /* 000 */ { drum_boys_cel107, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bf0d0] Left Guitarist - Head
-const struct Animation anim_bass_boy_head[] = {
+struct Animation anim_bass_boy_head[] = {
     /* 000 */ { drum_boys_cel108, 3 },
     /* 001 */ { drum_boys_cel109, 3 },
     /* 002 */ { drum_boys_cel110, 24 },
@@ -207,7 +207,7 @@ const struct Animation anim_bass_boy_head[] = {
 };
 
 // [D_088bf0f0] Left Guitarist - Torso
-const struct Animation anim_bass_boy_body[] = {
+struct Animation anim_bass_boy_body[] = {
     /* 000 */ { drum_boys_cel111, 3 },
     /* 001 */ { drum_boys_cel112, 3 },
     /* 002 */ { drum_boys_cel113, 24 },
@@ -215,7 +215,7 @@ const struct Animation anim_bass_boy_body[] = {
 };
 
 // [D_088bf110] Left Guitarist - Legs
-const struct Animation anim_bass_boy_legs[] = {
+struct Animation anim_bass_boy_legs[] = {
     /* 000 */ { drum_boys_cel114, 3 },
     /* 001 */ { drum_boys_cel115, 3 },
     /* 002 */ { drum_boys_cel116, 24 },
@@ -223,7 +223,7 @@ const struct Animation anim_bass_boy_legs[] = {
 };
 
 // [D_088bf130] Left Guitarist - Left Arm & Guitar
-const struct Animation anim_bass_boy_arm_l[] = {
+struct Animation anim_bass_boy_arm_l[] = {
     /* 000 */ { drum_boys_cel006, 3 },
     /* 001 */ { drum_boys_cel007, 3 },
     /* 002 */ { drum_boys_cel008, 3 },
@@ -235,7 +235,7 @@ const struct Animation anim_bass_boy_arm_l[] = {
 };
 
 // [D_088bf170] Left Guitarist - Right Arm & Guitar
-const struct Animation anim_bass_boy_arm_r[] = {
+struct Animation anim_bass_boy_arm_r[] = {
     /* 000 */ { drum_boys_cel010, 4 },
     /* 001 */ { drum_boys_cel011, 4 },
     /* 002 */ { drum_boys_cel012, 4 },
@@ -245,7 +245,7 @@ const struct Animation anim_bass_boy_arm_r[] = {
 };
 
 // [D_088bf1a0] Right Guitarist - Head
-const struct Animation anim_guitar_boy_head[] = {
+struct Animation anim_guitar_boy_head[] = {
     /* 000 */ { drum_boys_cel117, 3 },
     /* 001 */ { drum_boys_cel118, 3 },
     /* 002 */ { drum_boys_cel119, 24 },
@@ -253,7 +253,7 @@ const struct Animation anim_guitar_boy_head[] = {
 };
 
 // [D_088bf1c0] Right Guitarist - Torso
-const struct Animation anim_guitar_boy_body[] = {
+struct Animation anim_guitar_boy_body[] = {
     /* 000 */ { drum_boys_cel120, 3 },
     /* 001 */ { drum_boys_cel121, 3 },
     /* 002 */ { drum_boys_cel122, 24 },
@@ -261,7 +261,7 @@ const struct Animation anim_guitar_boy_body[] = {
 };
 
 // [D_088bf1e0] Right Guitarist - Legs
-const struct Animation anim_guitar_boy_legs[] = {
+struct Animation anim_guitar_boy_legs[] = {
     /* 000 */ { drum_boys_cel123, 3 },
     /* 001 */ { drum_boys_cel124, 3 },
     /* 002 */ { drum_boys_cel125, 24 },
@@ -269,7 +269,7 @@ const struct Animation anim_guitar_boy_legs[] = {
 };
 
 // [D_088bf200] Right Guitarist - Left Arm & Guitar
-const struct Animation anim_guitar_boy_arm_l[] = {
+struct Animation anim_guitar_boy_arm_l[] = {
     /* 000 */ { drum_boys_cel126, 3 },
     /* 001 */ { drum_boys_cel127, 3 },
     /* 002 */ { drum_boys_cel128, 3 },
@@ -281,7 +281,7 @@ const struct Animation anim_guitar_boy_arm_l[] = {
 };
 
 // [D_088bf240] Right Guitarist - Right Arm & Guitar
-const struct Animation anim_guitar_boy_arm_r[] = {
+struct Animation anim_guitar_boy_arm_r[] = {
     /* 000 */ { drum_boys_cel130, 5 },
     /* 001 */ { drum_boys_cel131, 5 },
     /* 002 */ { drum_boys_cel132, 5 },
@@ -290,7 +290,7 @@ const struct Animation anim_guitar_boy_arm_r[] = {
 };
 
 // [D_088bf268] Left Guitarist - Crouch
-const struct Animation anim_bass_boy_crouch[] = {
+struct Animation anim_bass_boy_crouch[] = {
     /* 000 */ { drum_boys_cel135, 3 },
     /* 001 */ { drum_boys_cel136, 3 },
     /* 002 */ { drum_boys_cel137, 3 },
@@ -299,13 +299,13 @@ const struct Animation anim_bass_boy_crouch[] = {
 };
 
 // [D_088bf290] Left Guitarist - Jump
-const struct Animation anim_bass_boy_jump[] = {
+struct Animation anim_bass_boy_jump[] = {
     /* 000 */ { drum_boys_cel139, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bf2a0] Right Guitarist - Crouch
-const struct Animation anim_guitar_boy_crouch[] = {
+struct Animation anim_guitar_boy_crouch[] = {
     /* 000 */ { drum_boys_cel141, 3 },
     /* 001 */ { drum_boys_cel142, 3 },
     /* 002 */ { drum_boys_cel143, 3 },
@@ -314,13 +314,13 @@ const struct Animation anim_guitar_boy_crouch[] = {
 };
 
 // [D_088bf2c8] Right Guitarist - Jump
-const struct Animation anim_guitar_boy_jump[] = {
+struct Animation anim_guitar_boy_jump[] = {
     /* 000 */ { drum_boys_cel145, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bf2d8] Right Guitarist - Jump & Strum
-const struct Animation anim_guitar_boy_jump_strum[] = {
+struct Animation anim_guitar_boy_jump_strum[] = {
     /* 000 */ { drum_boys_cel146, 2 },
     /* 001 */ { drum_boys_cel147, 6 },
     /* 002 */ { drum_boys_cel148, 5 },
@@ -335,7 +335,7 @@ const struct Animation anim_guitar_boy_jump_strum[] = {
 };
 
 // [D_088bf330] Right Guitarist - Head Turn Right to Front
-const struct Animation anim_guitar_boy_head_turn_r[] = {
+struct Animation anim_guitar_boy_head_turn_r[] = {
     /* 000 */ { drum_boys_cel156, 10 },
     /* 001 */ { drum_boys_cel157, 4 },
     /* 002 */ { drum_boys_cel158, 4 },
@@ -344,7 +344,7 @@ const struct Animation anim_guitar_boy_head_turn_r[] = {
 };
 
 // [D_088bf358] Right Guitarist - Head Turn Left to Front
-const struct Animation anim_guitar_boy_head_turn_l[] = {
+struct Animation anim_guitar_boy_head_turn_l[] = {
     /* 000 */ { drum_boys_cel160, 10 },
     /* 001 */ { drum_boys_cel161, 4 },
     /* 002 */ { drum_boys_cel162, 4 },
@@ -353,7 +353,7 @@ const struct Animation anim_guitar_boy_head_turn_l[] = {
 };
 
 // [D_088bf380] Left Guitarist - Head Turn Left to Front
-const struct Animation anim_bass_boy_head_turn_l[] = {
+struct Animation anim_bass_boy_head_turn_l[] = {
     /* 000 */ { drum_boys_cel163, 10 },
     /* 001 */ { drum_boys_cel164, 4 },
     /* 002 */ { drum_boys_cel165, 4 },
@@ -362,7 +362,7 @@ const struct Animation anim_bass_boy_head_turn_l[] = {
 };
 
 // [D_088bf3a8] Left Guitarist - Head Turn Right to Front
-const struct Animation anim_bass_boy_head_turn_r[] = {
+struct Animation anim_bass_boy_head_turn_r[] = {
     /* 000 */ { drum_boys_cel168, 10 },
     /* 001 */ { drum_boys_cel167, 4 },
     /* 002 */ { drum_boys_cel166, 4 },
@@ -371,7 +371,7 @@ const struct Animation anim_bass_boy_head_turn_r[] = {
 };
 
 // [D_088bf3d0] Drummer - Head Turn Left to Front
-const struct Animation anim_drum_boy_head_turn_l[] = {
+struct Animation anim_drum_boy_head_turn_l[] = {
     /* 000 */ { drum_boys_cel169, 10 },
     /* 001 */ { drum_boys_cel170, 4 },
     /* 002 */ { drum_boys_cel171, 4 },
@@ -380,7 +380,7 @@ const struct Animation anim_drum_boy_head_turn_l[] = {
 };
 
 // [D_088bf3f8] Drummer - Head Turn Right to Front
-const struct Animation anim_drum_boy_head_turn_r[] = {
+struct Animation anim_drum_boy_head_turn_r[] = {
     /* 000 */ { drum_boys_cel172, 10 },
     /* 001 */ { drum_boys_cel173, 4 },
     /* 002 */ { drum_boys_cel174, 4 },
@@ -389,7 +389,7 @@ const struct Animation anim_drum_boy_head_turn_r[] = {
 };
 
 // [D_088bf420] Left Guitarist - Jump & Strum
-const struct Animation anim_bass_boy_jump_strum[] = {
+struct Animation anim_bass_boy_jump_strum[] = {
     /* 000 */ { drum_boys_cel184, 2 },
     /* 001 */ { drum_boys_cel183, 6 },
     /* 002 */ { drum_boys_cel182, 5 },
@@ -404,33 +404,33 @@ const struct Animation anim_bass_boy_jump_strum[] = {
 };
 
 // [D_088bf478] REC/PLAY
-const struct Animation anim_drum_boys_rec_mode_icon[] = {
+struct Animation anim_drum_boys_rec_mode_icon[] = {
     /* 000 */ { drum_boys_cel185, 40 },
     /* 001 */ { drum_boys_cel186, 40 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bf490] Adjust Off/On
-const struct Animation anim_drum_boys_adjust_mode_icon[] = {
+struct Animation anim_drum_boys_adjust_mode_icon[] = {
     /* 000 */ { drum_boys_cel187, 40 },
     /* 001 */ { drum_boys_cel188, 40 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bf4a8] Busy
-const struct Animation anim_drum_boys_busy_icon[] = {
+struct Animation anim_drum_boys_busy_icon[] = {
     /* 000 */ { drum_boys_cel189, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bf4b8] Microphone
-const struct Animation anim_drum_boys_microphone[] = {
+struct Animation anim_drum_boys_microphone[] = {
     /* 000 */ { drum_boys_cel190, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bf4c8] Stage Light Flash
-const struct Animation anim_drum_boys_light_flash[] = {
+struct Animation anim_drum_boys_light_flash[] = {
     /* 000 */ { drum_boys_cel191, 2 },
     /* 001 */ { drum_boys_cel192, 1 },
     /* 002 */ { drum_boys_cel193, 1 },

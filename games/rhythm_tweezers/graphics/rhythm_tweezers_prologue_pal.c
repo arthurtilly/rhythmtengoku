@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088af6e4] OBJ Palette
-const Palette rhythm_tweezers_prologue_obj_pal[] = {
+Palette rhythm_tweezers_prologue_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x3020F8),
         /* 01 */ TO_RGB555(0x000000),
@@ -96,7 +96,7 @@ const Palette rhythm_tweezers_prologue_obj_pal[] = {
 };
 
 // [D_088af784] BG Palette
-const Palette rhythm_tweezers_prologue_bg_pal[] = {
+Palette rhythm_tweezers_prologue_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF86808),
         /* 01 */ TO_RGB555(0x68E0F8),

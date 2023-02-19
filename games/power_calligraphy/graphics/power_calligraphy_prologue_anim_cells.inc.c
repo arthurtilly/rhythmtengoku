@@ -1,13 +1,13 @@
 // do not rename these
 
 // [D_088b0058]
-const AnimationCel power_calligraphy_prologue_cel000[] = {
+AnimationCel power_calligraphy_prologue_cel000[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x0100
 };
 
 // [D_088b0060]
-const AnimationCel power_calligraphy_prologue_cel001[] = {
+AnimationCel power_calligraphy_prologue_cel001[] = {
     /* Len */ 3,
     /* 000 */ 0x40e0, 0xc1b8, 0x0100,
     /* 001 */ 0x40e0, 0xc1f8, 0x0108,
@@ -15,7 +15,7 @@ const AnimationCel power_calligraphy_prologue_cel001[] = {
 };
 
 // [D_088b0074]
-const AnimationCel power_calligraphy_prologue_cel002[] = {
+AnimationCel power_calligraphy_prologue_cel002[] = {
     /* Len */ 4,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,
@@ -24,7 +24,7 @@ const AnimationCel power_calligraphy_prologue_cel002[] = {
 };
 
 // [D_088b008e]
-const AnimationCel power_calligraphy_prologue_cel003[] = {
+AnimationCel power_calligraphy_prologue_cel003[] = {
     /* Len */ 24,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,
@@ -53,7 +53,7 @@ const AnimationCel power_calligraphy_prologue_cel003[] = {
 };
 
 // [D_088b0120]
-const AnimationCel power_calligraphy_prologue_cel004[] = {
+AnimationCel power_calligraphy_prologue_cel004[] = {
     /* Len */ 24,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,
@@ -82,7 +82,7 @@ const AnimationCel power_calligraphy_prologue_cel004[] = {
 };
 
 // [D_088b01b2]
-const AnimationCel power_calligraphy_prologue_cel005[] = {
+AnimationCel power_calligraphy_prologue_cel005[] = {
     /* Len */ 24,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,
@@ -111,7 +111,7 @@ const AnimationCel power_calligraphy_prologue_cel005[] = {
 };
 
 // [D_088b0244]
-const AnimationCel power_calligraphy_prologue_cel006[] = {
+AnimationCel power_calligraphy_prologue_cel006[] = {
     /* Len */ 24,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,
@@ -140,7 +140,7 @@ const AnimationCel power_calligraphy_prologue_cel006[] = {
 };
 
 // [D_088b02d6]
-const AnimationCel power_calligraphy_prologue_cel007[] = {
+AnimationCel power_calligraphy_prologue_cel007[] = {
     /* Len */ 24,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,
@@ -169,7 +169,7 @@ const AnimationCel power_calligraphy_prologue_cel007[] = {
 };
 
 // [D_088b0368]
-const AnimationCel power_calligraphy_prologue_cel008[] = {
+AnimationCel power_calligraphy_prologue_cel008[] = {
     /* Len */ 24,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,
@@ -198,7 +198,7 @@ const AnimationCel power_calligraphy_prologue_cel008[] = {
 };
 
 // [D_088b03fa]
-const AnimationCel power_calligraphy_prologue_cel009[] = {
+AnimationCel power_calligraphy_prologue_cel009[] = {
     /* Len */ 24,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,
@@ -227,7 +227,7 @@ const AnimationCel power_calligraphy_prologue_cel009[] = {
 };
 
 // [D_088b048c]
-const AnimationCel power_calligraphy_prologue_cel010[] = {
+AnimationCel power_calligraphy_prologue_cel010[] = {
     /* Len */ 24,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,
@@ -256,7 +256,7 @@ const AnimationCel power_calligraphy_prologue_cel010[] = {
 };
 
 // [D_088b051e]
-const AnimationCel power_calligraphy_prologue_cel011[] = {
+AnimationCel power_calligraphy_prologue_cel011[] = {
     /* Len */ 20,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,
@@ -281,7 +281,7 @@ const AnimationCel power_calligraphy_prologue_cel011[] = {
 };
 
 // [D_088b0598]
-const AnimationCel power_calligraphy_prologue_cel012[] = {
+AnimationCel power_calligraphy_prologue_cel012[] = {
     /* Len */ 16,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,
@@ -302,7 +302,7 @@ const AnimationCel power_calligraphy_prologue_cel012[] = {
 };
 
 // [D_088b05fa]
-const AnimationCel power_calligraphy_prologue_cel013[] = {
+AnimationCel power_calligraphy_prologue_cel013[] = {
     /* Len */ 12,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,
@@ -319,7 +319,7 @@ const AnimationCel power_calligraphy_prologue_cel013[] = {
 };
 
 // [D_088b0644]
-const AnimationCel power_calligraphy_prologue_cel014[] = {
+AnimationCel power_calligraphy_prologue_cel014[] = {
     /* Len */ 8,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,
@@ -332,7 +332,7 @@ const AnimationCel power_calligraphy_prologue_cel014[] = {
 };
 
 // [D_088b0676]
-const AnimationCel power_calligraphy_prologue_cel015[] = {
+AnimationCel power_calligraphy_prologue_cel015[] = {
     /* Len */ 4,
     /* 000 */ 0x0000, 0xc188, 0x1018,
     /* 001 */ 0x00c0, 0xc1a0, 0x1010,

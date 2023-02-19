@@ -4,14 +4,14 @@
 #include "data_room_menu_anim_cells.inc.c"
 
 // [D_089018f8] <description>
-const struct Animation data_room_menu_anim00[] = {
+struct Animation data_room_menu_anim00[] = {
     /* 000 */ { data_room_menu_cel001, 40 },
     /* 001 */ { data_room_menu_cel000, 20 },
     /* End */ END_ANIMATION
 };
 
 // [D_08901910] <description>
-const struct Animation data_room_menu_anim01[] = {
+struct Animation data_room_menu_anim01[] = {
     /* 000 */ { data_room_menu_cel004, 4 },
     /* 001 */ { data_room_menu_cel003, 4 },
     /* 002 */ { data_room_menu_cel002, 14 },
@@ -19,14 +19,14 @@ const struct Animation data_room_menu_anim01[] = {
 };
 
 // [D_08901930] <description>
-const struct Animation data_room_menu_anim02[] = {
+struct Animation data_room_menu_anim02[] = {
     /* 000 */ { data_room_menu_cel005, 4 },
     /* 001 */ { data_room_menu_cel006, 8 },
     /* End */ END_ANIMATION
 };
 
 // [D_08901948] <description>
-const struct Animation data_room_menu_anim03[] = {
+struct Animation data_room_menu_anim03[] = {
     /* 000 */ { data_room_menu_cel006, 20 },
     /* 001 */ { data_room_menu_cel007, 4 },
     /* 002 */ { data_room_menu_cel008, 4 },
@@ -37,7 +37,7 @@ const struct Animation data_room_menu_anim03[] = {
 };
 
 // [D_08901980] <description>
-const struct Animation data_room_menu_anim04[] = {
+struct Animation data_room_menu_anim04[] = {
     /* 000 */ { data_room_menu_cel011, 30 },
     /* 001 */ { data_room_menu_cel012, 4 },
     /* 002 */ { data_room_menu_cel013, 30 },
@@ -46,7 +46,7 @@ const struct Animation data_room_menu_anim04[] = {
 };
 
 // [D_089019a8] <description>
-const struct Animation data_room_menu_anim05[] = {
+struct Animation data_room_menu_anim05[] = {
     /* 000 */ { data_room_menu_cel007, 6 },
     /* 001 */ { data_room_menu_cel008, 6 },
     /* 002 */ { data_room_menu_cel009, 6 },

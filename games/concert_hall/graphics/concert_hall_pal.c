@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088f6830] LIVE Menu Palette
-const Palette concert_hall_pal[] = {
+Palette concert_hall_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),

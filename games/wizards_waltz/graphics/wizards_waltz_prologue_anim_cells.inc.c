@@ -1,13 +1,13 @@
 // do not rename these
 
 // [D_088b8dd4]
-const AnimationCel wizards_waltz_prologue_cel000[] = {
+AnimationCel wizards_waltz_prologue_cel000[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x400c
 };
 
 // [D_088b8ddc]
-const AnimationCel wizards_waltz_prologue_cel001[] = {
+AnimationCel wizards_waltz_prologue_cel001[] = {
     /* Len */ 6,
     /* 000 */ 0x00f0, 0x41c7, 0x4002,
     /* 001 */ 0x00f4, 0x41db, 0x4008,
@@ -18,7 +18,7 @@ const AnimationCel wizards_waltz_prologue_cel001[] = {
 };
 
 // [D_088b8e02]
-const AnimationCel wizards_waltz_prologue_cel002[] = {
+AnimationCel wizards_waltz_prologue_cel002[] = {
     /* Len */ 6,
     /* 000 */ 0x00f1, 0x41c7, 0x4002,
     /* 001 */ 0x00f3, 0x41db, 0x4008,
@@ -29,7 +29,7 @@ const AnimationCel wizards_waltz_prologue_cel002[] = {
 };
 
 // [D_088b8e28]
-const AnimationCel wizards_waltz_prologue_cel003[] = {
+AnimationCel wizards_waltz_prologue_cel003[] = {
     /* Len */ 6,
     /* 000 */ 0x00f2, 0x41c7, 0x4002,
     /* 001 */ 0x00f2, 0x41db, 0x4008,

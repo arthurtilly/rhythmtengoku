@@ -1,19 +1,19 @@
 // do not rename these
 
 // [D_088a7cd8]
-const AnimationCel bon_odori_cel000[] = {
+AnimationCel bon_odori_cel000[] = {
     /* Len */ 1,
     /* 000 */ 0x00f8, 0x0000, 0x020c
 };
 
 // [D_088a7ce0]
-const AnimationCel bon_odori_cel001[] = {
+AnimationCel bon_odori_cel001[] = {
     /* Len */ 1,
     /* 000 */ 0x00f8, 0x0000, 0x020c
 };
 
 // [D_088a7ce8]
-const AnimationCel bon_odori_cel002[] = {
+AnimationCel bon_odori_cel002[] = {
     /* Len */ 13,
     /* 000 */ 0x00e1, 0x81f3, 0x0014,
     /* 001 */ 0x00e6, 0x0003, 0x0209,
@@ -31,7 +31,7 @@ const AnimationCel bon_odori_cel002[] = {
 };
 
 // [D_088a7d38]
-const AnimationCel bon_odori_cel003[] = {
+AnimationCel bon_odori_cel003[] = {
     /* Len */ 12,
     /* 000 */ 0x00e0, 0x81f3, 0x0014,
     /* 001 */ 0x00e4, 0x0003, 0x0209,
@@ -48,7 +48,7 @@ const AnimationCel bon_odori_cel003[] = {
 };
 
 // [D_088a7d82]
-const AnimationCel bon_odori_cel004[] = {
+AnimationCel bon_odori_cel004[] = {
     /* Len */ 12,
     /* 000 */ 0x00e0, 0x81f3, 0x0014,
     /* 001 */ 0x00e3, 0x0003, 0x0209,
@@ -65,7 +65,7 @@ const AnimationCel bon_odori_cel004[] = {
 };
 
 // [D_088a7dcc]
-const AnimationCel bon_odori_cel005[] = {
+AnimationCel bon_odori_cel005[] = {
     /* Len */ 12,
     /* 000 */ 0x00e2, 0x81f0, 0x0080,
     /* 001 */ 0x00e2, 0x4003, 0x01d0,
@@ -82,7 +82,7 @@ const AnimationCel bon_odori_cel005[] = {
 };
 
 // [D_088a7e16]
-const AnimationCel bon_odori_cel006[] = {
+AnimationCel bon_odori_cel006[] = {
     /* Len */ 12,
     /* 000 */ 0x00e5, 0x81ef, 0x001c,
     /* 001 */ 0x00e7, 0x4002, 0x01ce,
@@ -99,7 +99,7 @@ const AnimationCel bon_odori_cel006[] = {
 };
 
 // [D_088a7e60]
-const AnimationCel bon_odori_cel007[] = {
+AnimationCel bon_odori_cel007[] = {
     /* Len */ 12,
     /* 000 */ 0x00e3, 0x81f1, 0x0010,
     /* 001 */ 0x00e8, 0x4002, 0x01d2,
@@ -116,7 +116,7 @@ const AnimationCel bon_odori_cel007[] = {
 };
 
 // [D_088a7eaa]
-const AnimationCel bon_odori_cel008[] = {
+AnimationCel bon_odori_cel008[] = {
     /* Len */ 10,
     /* 000 */ 0x00e3, 0x0003, 0x020d,
     /* 001 */ 0x00d8, 0x01f8, 0x0208,
@@ -131,7 +131,7 @@ const AnimationCel bon_odori_cel008[] = {
 };
 
 // [D_088a7ee8]
-const AnimationCel bon_odori_cel009[] = {
+AnimationCel bon_odori_cel009[] = {
     /* Len */ 10,
     /* 000 */ 0x00e3, 0x0003, 0x020d,
     /* 001 */ 0x00d8, 0x01f8, 0x0208,
@@ -146,7 +146,7 @@ const AnimationCel bon_odori_cel009[] = {
 };
 
 // [D_088a7f26]
-const AnimationCel bon_odori_cel010[] = {
+AnimationCel bon_odori_cel010[] = {
     /* Len */ 10,
     /* 000 */ 0x00e1, 0x0003, 0x020d,
     /* 001 */ 0x00d6, 0x01f8, 0x0208,
@@ -161,7 +161,7 @@ const AnimationCel bon_odori_cel010[] = {
 };
 
 // [D_088a7f64]
-const AnimationCel bon_odori_cel011[] = {
+AnimationCel bon_odori_cel011[] = {
     /* Len */ 10,
     /* 000 */ 0x00d4, 0x01f8, 0x0208,
     /* 001 */ 0x00d4, 0x41f8, 0x01c8,
@@ -176,7 +176,7 @@ const AnimationCel bon_odori_cel011[] = {
 };
 
 // [D_088a7fa2]
-const AnimationCel bon_odori_cel012[] = {
+AnimationCel bon_odori_cel012[] = {
     /* Len */ 10,
     /* 000 */ 0x00d4, 0x01f8, 0x0208,
     /* 001 */ 0x00d4, 0x41f8, 0x01c8,
@@ -191,7 +191,7 @@ const AnimationCel bon_odori_cel012[] = {
 };
 
 // [D_088a7fe0]
-const AnimationCel bon_odori_cel013[] = {
+AnimationCel bon_odori_cel013[] = {
     /* Len */ 14,
     /* 000 */ 0x00e4, 0x51f0, 0x01d6,
     /* 001 */ 0x00e4, 0x4000, 0x01d6,
@@ -210,7 +210,7 @@ const AnimationCel bon_odori_cel013[] = {
 };
 
 // [D_088a8036]
-const AnimationCel bon_odori_cel014[] = {
+AnimationCel bon_odori_cel014[] = {
     /* Len */ 12,
     /* 000 */ 0x00e3, 0x0003, 0x020d,
     /* 001 */ 0x80e3, 0x81f3, 0x010e,
@@ -227,7 +227,7 @@ const AnimationCel bon_odori_cel014[] = {
 };
 
 // [D_088a8080]
-const AnimationCel bon_odori_cel015[] = {
+AnimationCel bon_odori_cel015[] = {
     /* Len */ 12,
     /* 000 */ 0x00e5, 0x51f2, 0x01cc,
     /* 001 */ 0x00e5, 0x41fe, 0x01cc,
@@ -244,7 +244,7 @@ const AnimationCel bon_odori_cel015[] = {
 };
 
 // [D_088a80ca]
-const AnimationCel bon_odori_cel016[] = {
+AnimationCel bon_odori_cel016[] = {
     /* Len */ 12,
     /* 000 */ 0x00e3, 0x0003, 0x020d,
     /* 001 */ 0x00e7, 0x51ec, 0x01cc,
@@ -261,7 +261,7 @@ const AnimationCel bon_odori_cel016[] = {
 };
 
 // [D_088a8114]
-const AnimationCel bon_odori_cel017[] = {
+AnimationCel bon_odori_cel017[] = {
     /* Len */ 12,
     /* 000 */ 0x00e3, 0x0003, 0x020d,
     /* 001 */ 0x00e9, 0x51e9, 0x01cc,
@@ -278,7 +278,7 @@ const AnimationCel bon_odori_cel017[] = {
 };
 
 // [D_088a815e]
-const AnimationCel bon_odori_cel018[] = {
+AnimationCel bon_odori_cel018[] = {
     /* Len */ 12,
     /* 000 */ 0x00e3, 0x0003, 0x020d,
     /* 001 */ 0x00e9, 0x51e9, 0x01d4,
@@ -295,7 +295,7 @@ const AnimationCel bon_odori_cel018[] = {
 };
 
 // [D_088a81a8]
-const AnimationCel bon_odori_cel019[] = {
+AnimationCel bon_odori_cel019[] = {
     /* Len */ 12,
     /* 000 */ 0x00e1, 0x81f3, 0x1014,
     /* 001 */ 0x00d6, 0x400e, 0x11dc,
@@ -312,7 +312,7 @@ const AnimationCel bon_odori_cel019[] = {
 };
 
 // [D_088a81f2]
-const AnimationCel bon_odori_cel020[] = {
+AnimationCel bon_odori_cel020[] = {
     /* Len */ 11,
     /* 000 */ 0x00e0, 0x81f3, 0x1014,
     /* 001 */ 0x00d0, 0x4003, 0x1190,
@@ -328,7 +328,7 @@ const AnimationCel bon_odori_cel020[] = {
 };
 
 // [D_088a8236]
-const AnimationCel bon_odori_cel021[] = {
+AnimationCel bon_odori_cel021[] = {
     /* Len */ 11,
     /* 000 */ 0x00e0, 0x81f3, 0x1014,
     /* 001 */ 0x00cf, 0x4003, 0x1190,
@@ -344,7 +344,7 @@ const AnimationCel bon_odori_cel021[] = {
 };
 
 // [D_088a827a]
-const AnimationCel bon_odori_cel022[] = {
+AnimationCel bon_odori_cel022[] = {
     /* Len */ 11,
     /* 000 */ 0x00e2, 0x81f0, 0x1080,
     /* 001 */ 0x00cf, 0x4003, 0x1190,
@@ -360,7 +360,7 @@ const AnimationCel bon_odori_cel022[] = {
 };
 
 // [D_088a82be]
-const AnimationCel bon_odori_cel023[] = {
+AnimationCel bon_odori_cel023[] = {
     /* Len */ 11,
     /* 000 */ 0x00e5, 0x81ef, 0x101c,
     /* 001 */ 0x00d0, 0x4003, 0x1190,
@@ -376,7 +376,7 @@ const AnimationCel bon_odori_cel023[] = {
 };
 
 // [D_088a8302]
-const AnimationCel bon_odori_cel024[] = {
+AnimationCel bon_odori_cel024[] = {
     /* Len */ 11,
     /* 000 */ 0x00e3, 0x81f1, 0x1010,
     /* 001 */ 0x00d0, 0x4003, 0x1190,
@@ -392,7 +392,7 @@ const AnimationCel bon_odori_cel024[] = {
 };
 
 // [D_088a8346]
-const AnimationCel bon_odori_cel025[] = {
+AnimationCel bon_odori_cel025[] = {
     /* Len */ 9,
     /* 000 */ 0x00cf, 0x4003, 0x1190,
     /* 001 */ 0x00d8, 0x41f8, 0x11ca,
@@ -406,7 +406,7 @@ const AnimationCel bon_odori_cel025[] = {
 };
 
 // [D_088a837e]
-const AnimationCel bon_odori_cel026[] = {
+AnimationCel bon_odori_cel026[] = {
     /* Len */ 9,
     /* 000 */ 0x00cf, 0x4003, 0x1190,
     /* 001 */ 0x00d8, 0x41f8, 0x11ca,
@@ -420,7 +420,7 @@ const AnimationCel bon_odori_cel026[] = {
 };
 
 // [D_088a83b6]
-const AnimationCel bon_odori_cel027[] = {
+AnimationCel bon_odori_cel027[] = {
     /* Len */ 9,
     /* 000 */ 0x00cd, 0x4003, 0x1190,
     /* 001 */ 0x00d6, 0x41f8, 0x11ca,
@@ -434,7 +434,7 @@ const AnimationCel bon_odori_cel027[] = {
 };
 
 // [D_088a83ee]
-const AnimationCel bon_odori_cel028[] = {
+AnimationCel bon_odori_cel028[] = {
     /* Len */ 9,
     /* 000 */ 0x00cb, 0x4003, 0x1190,
     /* 001 */ 0x00d4, 0x41f8, 0x11ca,
@@ -448,7 +448,7 @@ const AnimationCel bon_odori_cel028[] = {
 };
 
 // [D_088a8426]
-const AnimationCel bon_odori_cel029[] = {
+AnimationCel bon_odori_cel029[] = {
     /* Len */ 9,
     /* 000 */ 0x00cb, 0x4003, 0x1190,
     /* 001 */ 0x00d4, 0x41f8, 0x11ca,
@@ -462,7 +462,7 @@ const AnimationCel bon_odori_cel029[] = {
 };
 
 // [D_088a845e]
-const AnimationCel bon_odori_cel030[] = {
+AnimationCel bon_odori_cel030[] = {
     /* Len */ 13,
     /* 000 */ 0x00d1, 0x4003, 0x1190,
     /* 001 */ 0x00da, 0x41f8, 0x11ca,
@@ -480,7 +480,7 @@ const AnimationCel bon_odori_cel030[] = {
 };
 
 // [D_088a84ae]
-const AnimationCel bon_odori_cel031[] = {
+AnimationCel bon_odori_cel031[] = {
     /* Len */ 11,
     /* 000 */ 0x00cf, 0x4003, 0x1190,
     /* 001 */ 0x00d8, 0x41f8, 0x11ca,
@@ -496,7 +496,7 @@ const AnimationCel bon_odori_cel031[] = {
 };
 
 // [D_088a84f2]
-const AnimationCel bon_odori_cel032[] = {
+AnimationCel bon_odori_cel032[] = {
     /* Len */ 11,
     /* 000 */ 0x00cf, 0x4003, 0x1190,
     /* 001 */ 0x00d8, 0x41f8, 0x11ca,
@@ -512,7 +512,7 @@ const AnimationCel bon_odori_cel032[] = {
 };
 
 // [D_088a8536]
-const AnimationCel bon_odori_cel033[] = {
+AnimationCel bon_odori_cel033[] = {
     /* Len */ 11,
     /* 000 */ 0x00cf, 0x4003, 0x1190,
     /* 001 */ 0x00d8, 0x41f8, 0x11ca,
@@ -528,7 +528,7 @@ const AnimationCel bon_odori_cel033[] = {
 };
 
 // [D_088a857a]
-const AnimationCel bon_odori_cel034[] = {
+AnimationCel bon_odori_cel034[] = {
     /* Len */ 11,
     /* 000 */ 0x00cf, 0x4003, 0x1190,
     /* 001 */ 0x00d8, 0x41f8, 0x11ca,
@@ -544,7 +544,7 @@ const AnimationCel bon_odori_cel034[] = {
 };
 
 // [D_088a85be]
-const AnimationCel bon_odori_cel035[] = {
+AnimationCel bon_odori_cel035[] = {
     /* Len */ 11,
     /* 000 */ 0x00cf, 0x4003, 0x1190,
     /* 001 */ 0x00d8, 0x41f8, 0x11ca,
@@ -560,7 +560,7 @@ const AnimationCel bon_odori_cel035[] = {
 };
 
 // [D_088a8602]
-const AnimationCel bon_odori_cel036[] = {
+AnimationCel bon_odori_cel036[] = {
     /* Len */ 11,
     /* 000 */ 0x00d6, 0x400e, 0x61dc,
     /* 001 */ 0x00d4, 0x81e8, 0x6000,
@@ -576,7 +576,7 @@ const AnimationCel bon_odori_cel036[] = {
 };
 
 // [D_088a8646]
-const AnimationCel bon_odori_cel037[] = {
+AnimationCel bon_odori_cel037[] = {
     /* Len */ 10,
     /* 000 */ 0x00d2, 0x81e8, 0x6000,
     /* 001 */ 0x00d2, 0x91f8, 0x6000,
@@ -591,7 +591,7 @@ const AnimationCel bon_odori_cel037[] = {
 };
 
 // [D_088a8684]
-const AnimationCel bon_odori_cel038[] = {
+AnimationCel bon_odori_cel038[] = {
     /* Len */ 10,
     /* 000 */ 0x00d1, 0x81e8, 0x6000,
     /* 001 */ 0x00d1, 0x91f8, 0x6000,
@@ -606,7 +606,7 @@ const AnimationCel bon_odori_cel038[] = {
 };
 
 // [D_088a86c2]
-const AnimationCel bon_odori_cel039[] = {
+AnimationCel bon_odori_cel039[] = {
     /* Len */ 10,
     /* 000 */ 0x00d2, 0x81e8, 0x6000,
     /* 001 */ 0x00d2, 0x91f8, 0x6000,
@@ -621,7 +621,7 @@ const AnimationCel bon_odori_cel039[] = {
 };
 
 // [D_088a8700]
-const AnimationCel bon_odori_cel040[] = {
+AnimationCel bon_odori_cel040[] = {
     /* Len */ 10,
     /* 000 */ 0x00d2, 0x81e8, 0x6000,
     /* 001 */ 0x00d2, 0x91f8, 0x6000,
@@ -636,7 +636,7 @@ const AnimationCel bon_odori_cel040[] = {
 };
 
 // [D_088a873e]
-const AnimationCel bon_odori_cel041[] = {
+AnimationCel bon_odori_cel041[] = {
     /* Len */ 8,
     /* 000 */ 0x00d1, 0x81e8, 0x6000,
     /* 001 */ 0x00d1, 0x91f8, 0x6000,
@@ -649,7 +649,7 @@ const AnimationCel bon_odori_cel041[] = {
 };
 
 // [D_088a8770]
-const AnimationCel bon_odori_cel042[] = {
+AnimationCel bon_odori_cel042[] = {
     /* Len */ 8,
     /* 000 */ 0x00d1, 0x81e8, 0x6000,
     /* 001 */ 0x00d1, 0x91f8, 0x6000,
@@ -662,7 +662,7 @@ const AnimationCel bon_odori_cel042[] = {
 };
 
 // [D_088a87a2]
-const AnimationCel bon_odori_cel043[] = {
+AnimationCel bon_odori_cel043[] = {
     /* Len */ 8,
     /* 000 */ 0x00cf, 0x81e8, 0x6000,
     /* 001 */ 0x00cf, 0x91f8, 0x6000,
@@ -675,7 +675,7 @@ const AnimationCel bon_odori_cel043[] = {
 };
 
 // [D_088a87d4]
-const AnimationCel bon_odori_cel044[] = {
+AnimationCel bon_odori_cel044[] = {
     /* Len */ 8,
     /* 000 */ 0x00cd, 0x81e8, 0x6000,
     /* 001 */ 0x00cd, 0x91f8, 0x6000,
@@ -688,7 +688,7 @@ const AnimationCel bon_odori_cel044[] = {
 };
 
 // [D_088a8806]
-const AnimationCel bon_odori_cel045[] = {
+AnimationCel bon_odori_cel045[] = {
     /* Len */ 8,
     /* 000 */ 0x00cd, 0x81e8, 0x6000,
     /* 001 */ 0x00cd, 0x91f8, 0x6000,
@@ -701,7 +701,7 @@ const AnimationCel bon_odori_cel045[] = {
 };
 
 // [D_088a8838]
-const AnimationCel bon_odori_cel046[] = {
+AnimationCel bon_odori_cel046[] = {
     /* Len */ 12,
     /* 000 */ 0x00e4, 0x51f0, 0x61d6,
     /* 001 */ 0x00e4, 0x4000, 0x61d6,
@@ -718,7 +718,7 @@ const AnimationCel bon_odori_cel046[] = {
 };
 
 // [D_088a8882]
-const AnimationCel bon_odori_cel047[] = {
+AnimationCel bon_odori_cel047[] = {
     /* Len */ 10,
     /* 000 */ 0x00d1, 0x81e8, 0x6000,
     /* 001 */ 0x00d1, 0x91f8, 0x6000,
@@ -733,7 +733,7 @@ const AnimationCel bon_odori_cel047[] = {
 };
 
 // [D_088a88c0]
-const AnimationCel bon_odori_cel048[] = {
+AnimationCel bon_odori_cel048[] = {
     /* Len */ 10,
     /* 000 */ 0x00d1, 0x81e8, 0x6000,
     /* 001 */ 0x00d1, 0x91f8, 0x6000,
@@ -748,7 +748,7 @@ const AnimationCel bon_odori_cel048[] = {
 };
 
 // [D_088a88fe]
-const AnimationCel bon_odori_cel049[] = {
+AnimationCel bon_odori_cel049[] = {
     /* Len */ 10,
     /* 000 */ 0x00d1, 0x81e8, 0x6000,
     /* 001 */ 0x00d1, 0x91f8, 0x6000,
@@ -763,7 +763,7 @@ const AnimationCel bon_odori_cel049[] = {
 };
 
 // [D_088a893c]
-const AnimationCel bon_odori_cel050[] = {
+AnimationCel bon_odori_cel050[] = {
     /* Len */ 10,
     /* 000 */ 0x00d1, 0x81e8, 0x6000,
     /* 001 */ 0x00d1, 0x91f8, 0x6000,
@@ -778,7 +778,7 @@ const AnimationCel bon_odori_cel050[] = {
 };
 
 // [D_088a897a]
-const AnimationCel bon_odori_cel051[] = {
+AnimationCel bon_odori_cel051[] = {
     /* Len */ 10,
     /* 000 */ 0x00d1, 0x81e8, 0x6000,
     /* 001 */ 0x00d1, 0x91f8, 0x6000,
@@ -793,7 +793,7 @@ const AnimationCel bon_odori_cel051[] = {
 };
 
 // [D_088a89b8]
-const AnimationCel bon_odori_cel052[] = {
+AnimationCel bon_odori_cel052[] = {
     /* Len */ 14,
     /* 000 */ 0x00e1, 0x81f3, 0x3014,
     /* 001 */ 0x00d4, 0x41f1, 0x3194,
@@ -812,7 +812,7 @@ const AnimationCel bon_odori_cel052[] = {
 };
 
 // [D_088a8a0e]
-const AnimationCel bon_odori_cel053[] = {
+AnimationCel bon_odori_cel053[] = {
     /* Len */ 13,
     /* 000 */ 0x00e0, 0x81f3, 0x3014,
     /* 001 */ 0x00d2, 0x41f1, 0x3194,
@@ -830,7 +830,7 @@ const AnimationCel bon_odori_cel053[] = {
 };
 
 // [D_088a8a5e]
-const AnimationCel bon_odori_cel054[] = {
+AnimationCel bon_odori_cel054[] = {
     /* Len */ 13,
     /* 000 */ 0x00e0, 0x81f3, 0x3014,
     /* 001 */ 0x00d1, 0x41f1, 0x3194,
@@ -848,7 +848,7 @@ const AnimationCel bon_odori_cel054[] = {
 };
 
 // [D_088a8aae]
-const AnimationCel bon_odori_cel055[] = {
+AnimationCel bon_odori_cel055[] = {
     /* Len */ 13,
     /* 000 */ 0x00e2, 0x81f0, 0x3080,
     /* 001 */ 0x00d1, 0x41f1, 0x3194,
@@ -866,7 +866,7 @@ const AnimationCel bon_odori_cel055[] = {
 };
 
 // [D_088a8afe]
-const AnimationCel bon_odori_cel056[] = {
+AnimationCel bon_odori_cel056[] = {
     /* Len */ 13,
     /* 000 */ 0x00e5, 0x81ef, 0x301c,
     /* 001 */ 0x00d2, 0x41f1, 0x3194,
@@ -884,7 +884,7 @@ const AnimationCel bon_odori_cel056[] = {
 };
 
 // [D_088a8b4e]
-const AnimationCel bon_odori_cel057[] = {
+AnimationCel bon_odori_cel057[] = {
     /* Len */ 13,
     /* 000 */ 0x00e3, 0x81f1, 0x3010,
     /* 001 */ 0x00d2, 0x41f1, 0x3194,
@@ -902,7 +902,7 @@ const AnimationCel bon_odori_cel057[] = {
 };
 
 // [D_088a8b9e]
-const AnimationCel bon_odori_cel058[] = {
+AnimationCel bon_odori_cel058[] = {
     /* Len */ 11,
     /* 000 */ 0x00d1, 0x41f1, 0x3194,
     /* 001 */ 0x00d8, 0x41f8, 0x3196,
@@ -918,7 +918,7 @@ const AnimationCel bon_odori_cel058[] = {
 };
 
 // [D_088a8be2]
-const AnimationCel bon_odori_cel059[] = {
+AnimationCel bon_odori_cel059[] = {
     /* Len */ 11,
     /* 000 */ 0x00d1, 0x41f1, 0x3194,
     /* 001 */ 0x00d8, 0x41f8, 0x3196,
@@ -934,7 +934,7 @@ const AnimationCel bon_odori_cel059[] = {
 };
 
 // [D_088a8c26]
-const AnimationCel bon_odori_cel060[] = {
+AnimationCel bon_odori_cel060[] = {
     /* Len */ 11,
     /* 000 */ 0x00cf, 0x41f1, 0x3194,
     /* 001 */ 0x00d6, 0x41f8, 0x3196,
@@ -950,7 +950,7 @@ const AnimationCel bon_odori_cel060[] = {
 };
 
 // [D_088a8c6a]
-const AnimationCel bon_odori_cel061[] = {
+AnimationCel bon_odori_cel061[] = {
     /* Len */ 11,
     /* 000 */ 0x00cd, 0x41f1, 0x3194,
     /* 001 */ 0x00d4, 0x41f8, 0x3196,
@@ -966,7 +966,7 @@ const AnimationCel bon_odori_cel061[] = {
 };
 
 // [D_088a8cae]
-const AnimationCel bon_odori_cel062[] = {
+AnimationCel bon_odori_cel062[] = {
     /* Len */ 11,
     /* 000 */ 0x00cd, 0x41f1, 0x3194,
     /* 001 */ 0x00d4, 0x41f8, 0x3196,
@@ -982,7 +982,7 @@ const AnimationCel bon_odori_cel062[] = {
 };
 
 // [D_088a8cf2]
-const AnimationCel bon_odori_cel063[] = {
+AnimationCel bon_odori_cel063[] = {
     /* Len */ 15,
     /* 000 */ 0x00d3, 0x41f1, 0x3194,
     /* 001 */ 0x00da, 0x41f8, 0x3196,
@@ -1002,7 +1002,7 @@ const AnimationCel bon_odori_cel063[] = {
 };
 
 // [D_088a8d4e]
-const AnimationCel bon_odori_cel064[] = {
+AnimationCel bon_odori_cel064[] = {
     /* Len */ 13,
     /* 000 */ 0x00d1, 0x41f1, 0x3194,
     /* 001 */ 0x00d8, 0x41f8, 0x3196,
@@ -1020,7 +1020,7 @@ const AnimationCel bon_odori_cel064[] = {
 };
 
 // [D_088a8d9e]
-const AnimationCel bon_odori_cel065[] = {
+AnimationCel bon_odori_cel065[] = {
     /* Len */ 13,
     /* 000 */ 0x00d1, 0x41f1, 0x3194,
     /* 001 */ 0x00d8, 0x41f8, 0x3196,
@@ -1038,7 +1038,7 @@ const AnimationCel bon_odori_cel065[] = {
 };
 
 // [D_088a8dee]
-const AnimationCel bon_odori_cel066[] = {
+AnimationCel bon_odori_cel066[] = {
     /* Len */ 13,
     /* 000 */ 0x00d1, 0x41f1, 0x3194,
     /* 001 */ 0x00d8, 0x41f8, 0x3196,
@@ -1056,7 +1056,7 @@ const AnimationCel bon_odori_cel066[] = {
 };
 
 // [D_088a8e3e]
-const AnimationCel bon_odori_cel067[] = {
+AnimationCel bon_odori_cel067[] = {
     /* Len */ 13,
     /* 000 */ 0x00d1, 0x41f1, 0x3194,
     /* 001 */ 0x00d8, 0x41f8, 0x3196,
@@ -1074,7 +1074,7 @@ const AnimationCel bon_odori_cel067[] = {
 };
 
 // [D_088a8e8e]
-const AnimationCel bon_odori_cel068[] = {
+AnimationCel bon_odori_cel068[] = {
     /* Len */ 13,
     /* 000 */ 0x00d1, 0x41f1, 0x3194,
     /* 001 */ 0x00d8, 0x41f8, 0x3196,
@@ -1092,7 +1092,7 @@ const AnimationCel bon_odori_cel068[] = {
 };
 
 // [D_088a8ede]
-const AnimationCel bon_odori_cel069[] = {
+AnimationCel bon_odori_cel069[] = {
     /* Len */ 12,
     /* 000 */ 0x00ea, 0x51f8, 0x01d0,
     /* 001 */ 0x00ea, 0x41f7, 0x01d0,
@@ -1109,7 +1109,7 @@ const AnimationCel bon_odori_cel069[] = {
 };
 
 // [D_088a8f28]
-const AnimationCel bon_odori_cel070[] = {
+AnimationCel bon_odori_cel070[] = {
     /* Len */ 12,
     /* 000 */ 0x00f0, 0x400b, 0x0204,
     /* 001 */ 0x00de, 0x01f8, 0x0208,
@@ -1126,7 +1126,7 @@ const AnimationCel bon_odori_cel070[] = {
 };
 
 // [D_088a8f72]
-const AnimationCel bon_odori_cel071[] = {
+AnimationCel bon_odori_cel071[] = {
     /* Len */ 12,
     /* 000 */ 0x00df, 0x01f8, 0x0208,
     /* 001 */ 0x00df, 0x41f8, 0x01c8,
@@ -1143,7 +1143,7 @@ const AnimationCel bon_odori_cel071[] = {
 };
 
 // [D_088a8fbc]
-const AnimationCel bon_odori_cel072[] = {
+AnimationCel bon_odori_cel072[] = {
     /* Len */ 12,
     /* 000 */ 0x00e0, 0x01f8, 0x0208,
     /* 001 */ 0x00e0, 0x41f8, 0x01c8,
@@ -1160,7 +1160,7 @@ const AnimationCel bon_odori_cel072[] = {
 };
 
 // [D_088a9006]
-const AnimationCel bon_odori_cel073[] = {
+AnimationCel bon_odori_cel073[] = {
     /* Len */ 11,
     /* 000 */ 0x00d4, 0x4003, 0x1190,
     /* 001 */ 0x00dd, 0x41f8, 0x11ca,
@@ -1176,7 +1176,7 @@ const AnimationCel bon_odori_cel073[] = {
 };
 
 // [D_088a904a]
-const AnimationCel bon_odori_cel074[] = {
+AnimationCel bon_odori_cel074[] = {
     /* Len */ 11,
     /* 000 */ 0x00de, 0x41f8, 0x11ca,
     /* 001 */ 0x00d5, 0x4003, 0x1190,
@@ -1192,7 +1192,7 @@ const AnimationCel bon_odori_cel074[] = {
 };
 
 // [D_088a908e]
-const AnimationCel bon_odori_cel075[] = {
+AnimationCel bon_odori_cel075[] = {
     /* Len */ 11,
     /* 000 */ 0x00df, 0x41f8, 0x11ca,
     /* 001 */ 0x00d6, 0x4003, 0x1190,
@@ -1208,7 +1208,7 @@ const AnimationCel bon_odori_cel075[] = {
 };
 
 // [D_088a90d2]
-const AnimationCel bon_odori_cel076[] = {
+AnimationCel bon_odori_cel076[] = {
     /* Len */ 11,
     /* 000 */ 0x00d7, 0x4003, 0x1190,
     /* 001 */ 0x00e0, 0x41f8, 0x11ca,
@@ -1224,7 +1224,7 @@ const AnimationCel bon_odori_cel076[] = {
 };
 
 // [D_088a9116]
-const AnimationCel bon_odori_cel077[] = {
+AnimationCel bon_odori_cel077[] = {
     /* Len */ 10,
     /* 000 */ 0x00d6, 0x81e8, 0x6000,
     /* 001 */ 0x00d6, 0x91f8, 0x6000,
@@ -1239,7 +1239,7 @@ const AnimationCel bon_odori_cel077[] = {
 };
 
 // [D_088a9154]
-const AnimationCel bon_odori_cel078[] = {
+AnimationCel bon_odori_cel078[] = {
     /* Len */ 10,
     /* 000 */ 0x00d7, 0x81e8, 0x6000,
     /* 001 */ 0x00d7, 0x91f8, 0x6000,
@@ -1254,7 +1254,7 @@ const AnimationCel bon_odori_cel078[] = {
 };
 
 // [D_088a9192]
-const AnimationCel bon_odori_cel079[] = {
+AnimationCel bon_odori_cel079[] = {
     /* Len */ 10,
     /* 000 */ 0x00d8, 0x81e8, 0x6000,
     /* 001 */ 0x00d8, 0x91f8, 0x6000,
@@ -1269,7 +1269,7 @@ const AnimationCel bon_odori_cel079[] = {
 };
 
 // [D_088a91d0]
-const AnimationCel bon_odori_cel080[] = {
+AnimationCel bon_odori_cel080[] = {
     /* Len */ 10,
     /* 000 */ 0x00d9, 0x81e8, 0x6000,
     /* 001 */ 0x00d9, 0x91f8, 0x6000,
@@ -1284,7 +1284,7 @@ const AnimationCel bon_odori_cel080[] = {
 };
 
 // [D_088a920e]
-const AnimationCel bon_odori_cel081[] = {
+AnimationCel bon_odori_cel081[] = {
     /* Len */ 13,
     /* 000 */ 0x00d6, 0x41f1, 0x3194,
     /* 001 */ 0x00dd, 0x41f8, 0x3196,
@@ -1302,7 +1302,7 @@ const AnimationCel bon_odori_cel081[] = {
 };
 
 // [D_088a925e]
-const AnimationCel bon_odori_cel082[] = {
+AnimationCel bon_odori_cel082[] = {
     /* Len */ 13,
     /* 000 */ 0x00d7, 0x41f1, 0x3194,
     /* 001 */ 0x00de, 0x41f8, 0x3196,
@@ -1320,7 +1320,7 @@ const AnimationCel bon_odori_cel082[] = {
 };
 
 // [D_088a92ae]
-const AnimationCel bon_odori_cel083[] = {
+AnimationCel bon_odori_cel083[] = {
     /* Len */ 13,
     /* 000 */ 0x00d8, 0x41f1, 0x3194,
     /* 001 */ 0x00df, 0x41f8, 0x3196,
@@ -1338,7 +1338,7 @@ const AnimationCel bon_odori_cel083[] = {
 };
 
 // [D_088a92fe]
-const AnimationCel bon_odori_cel084[] = {
+AnimationCel bon_odori_cel084[] = {
     /* Len */ 13,
     /* 000 */ 0x00d9, 0x41f1, 0x3194,
     /* 001 */ 0x00e0, 0x41f8, 0x3196,
@@ -1356,7 +1356,7 @@ const AnimationCel bon_odori_cel084[] = {
 };
 
 // [D_088a934e]
-const AnimationCel bon_odori_cel085[] = {
+AnimationCel bon_odori_cel085[] = {
     /* Len */ 9,
     /* 000 */ 0x00cb, 0x4003, 0x1190,
     /* 001 */ 0x00d4, 0x41f8, 0x11de,
@@ -1370,7 +1370,7 @@ const AnimationCel bon_odori_cel085[] = {
 };
 
 // [D_088a9386]
-const AnimationCel bon_odori_cel086[] = {
+AnimationCel bon_odori_cel086[] = {
     /* Len */ 9,
     /* 000 */ 0x00cb, 0x4003, 0x1190,
     /* 001 */ 0x00d4, 0x41f8, 0x11de,
@@ -1384,7 +1384,7 @@ const AnimationCel bon_odori_cel086[] = {
 };
 
 // [D_088a93be]
-const AnimationCel bon_odori_cel087[] = {
+AnimationCel bon_odori_cel087[] = {
     /* Len */ 9,
     /* 000 */ 0x00cd, 0x4003, 0x1190,
     /* 001 */ 0x00d6, 0x41f8, 0x11de,
@@ -1398,7 +1398,7 @@ const AnimationCel bon_odori_cel087[] = {
 };
 
 // [D_088a93f6]
-const AnimationCel bon_odori_cel088[] = {
+AnimationCel bon_odori_cel088[] = {
     /* Len */ 9,
     /* 000 */ 0x00cf, 0x4003, 0x1190,
     /* 001 */ 0x00d8, 0x41f8, 0x11de,
@@ -1412,7 +1412,7 @@ const AnimationCel bon_odori_cel088[] = {
 };
 
 // [D_088a942e]
-const AnimationCel bon_odori_cel089[] = {
+AnimationCel bon_odori_cel089[] = {
     /* Len */ 9,
     /* 000 */ 0x00cf, 0x4003, 0x1190,
     /* 001 */ 0x00d8, 0x41f8, 0x11de,
@@ -1426,7 +1426,7 @@ const AnimationCel bon_odori_cel089[] = {
 };
 
 // [D_088a9466]
-const AnimationCel bon_odori_cel090[] = {
+AnimationCel bon_odori_cel090[] = {
     /* Len */ 10,
     /* 000 */ 0x00d4, 0x01f8, 0x0208,
     /* 001 */ 0x00df, 0x0002, 0x020d,
@@ -1441,7 +1441,7 @@ const AnimationCel bon_odori_cel090[] = {
 };
 
 // [D_088a94a4]
-const AnimationCel bon_odori_cel091[] = {
+AnimationCel bon_odori_cel091[] = {
     /* Len */ 10,
     /* 000 */ 0x00d4, 0x01f8, 0x0208,
     /* 001 */ 0x00df, 0x0002, 0x020d,
@@ -1456,7 +1456,7 @@ const AnimationCel bon_odori_cel091[] = {
 };
 
 // [D_088a94e2]
-const AnimationCel bon_odori_cel092[] = {
+AnimationCel bon_odori_cel092[] = {
     /* Len */ 10,
     /* 000 */ 0x00e1, 0x0002, 0x020d,
     /* 001 */ 0x00d6, 0x01f8, 0x0208,
@@ -1471,7 +1471,7 @@ const AnimationCel bon_odori_cel092[] = {
 };
 
 // [D_088a9520]
-const AnimationCel bon_odori_cel093[] = {
+AnimationCel bon_odori_cel093[] = {
     /* Len */ 10,
     /* 000 */ 0x00e3, 0x0002, 0x020d,
     /* 001 */ 0x00d8, 0x01f8, 0x0208,
@@ -1486,7 +1486,7 @@ const AnimationCel bon_odori_cel093[] = {
 };
 
 // [D_088a955e]
-const AnimationCel bon_odori_cel094[] = {
+AnimationCel bon_odori_cel094[] = {
     /* Len */ 10,
     /* 000 */ 0x00e3, 0x0002, 0x020d,
     /* 001 */ 0x00d8, 0x01f8, 0x0208,
@@ -1501,7 +1501,7 @@ const AnimationCel bon_odori_cel094[] = {
 };
 
 // [D_088a959c]
-const AnimationCel bon_odori_cel095[] = {
+AnimationCel bon_odori_cel095[] = {
     /* Len */ 11,
     /* 000 */ 0x00cd, 0x41f1, 0x3194,
     /* 001 */ 0x00d4, 0x41f8, 0x3200,
@@ -1517,7 +1517,7 @@ const AnimationCel bon_odori_cel095[] = {
 };
 
 // [D_088a95e0]
-const AnimationCel bon_odori_cel096[] = {
+AnimationCel bon_odori_cel096[] = {
     /* Len */ 11,
     /* 000 */ 0x00cd, 0x41f1, 0x3194,
     /* 001 */ 0x00d4, 0x41f8, 0x3200,
@@ -1533,7 +1533,7 @@ const AnimationCel bon_odori_cel096[] = {
 };
 
 // [D_088a9624]
-const AnimationCel bon_odori_cel097[] = {
+AnimationCel bon_odori_cel097[] = {
     /* Len */ 11,
     /* 000 */ 0x00cf, 0x41f1, 0x3194,
     /* 001 */ 0x00d6, 0x41f8, 0x3200,
@@ -1549,7 +1549,7 @@ const AnimationCel bon_odori_cel097[] = {
 };
 
 // [D_088a9668]
-const AnimationCel bon_odori_cel098[] = {
+AnimationCel bon_odori_cel098[] = {
     /* Len */ 11,
     /* 000 */ 0x00d1, 0x41f1, 0x3194,
     /* 001 */ 0x00d8, 0x41f8, 0x3200,
@@ -1565,7 +1565,7 @@ const AnimationCel bon_odori_cel098[] = {
 };
 
 // [D_088a96ac]
-const AnimationCel bon_odori_cel099[] = {
+AnimationCel bon_odori_cel099[] = {
     /* Len */ 11,
     /* 000 */ 0x00d1, 0x41f1, 0x3194,
     /* 001 */ 0x00d8, 0x41f8, 0x3200,
@@ -1581,7 +1581,7 @@ const AnimationCel bon_odori_cel099[] = {
 };
 
 // [D_088a96f0]
-const AnimationCel bon_odori_cel100[] = {
+AnimationCel bon_odori_cel100[] = {
     /* Len */ 9,
     /* 000 */ 0x00d7, 0x4003, 0x0190,
     /* 001 */ 0x00d7, 0x51ed, 0x0190,
@@ -1595,7 +1595,7 @@ const AnimationCel bon_odori_cel100[] = {
 };
 
 // [D_088a9728]
-const AnimationCel bon_odori_cel101[] = {
+AnimationCel bon_odori_cel101[] = {
     /* Len */ 9,
     /* 000 */ 0x00d8, 0x4003, 0x0190,
     /* 001 */ 0x00d8, 0x51ed, 0x0190,
@@ -1609,7 +1609,7 @@ const AnimationCel bon_odori_cel101[] = {
 };
 
 // [D_088a9760]
-const AnimationCel bon_odori_cel102[] = {
+AnimationCel bon_odori_cel102[] = {
     /* Len */ 9,
     /* 000 */ 0x00d9, 0x4003, 0x0190,
     /* 001 */ 0x00d9, 0x51ed, 0x0190,
@@ -1623,7 +1623,7 @@ const AnimationCel bon_odori_cel102[] = {
 };
 
 // [D_088a9798]
-const AnimationCel bon_odori_cel103[] = {
+AnimationCel bon_odori_cel103[] = {
     /* Len */ 10,
     /* 000 */ 0x00d6, 0x4003, 0x0190,
     /* 001 */ 0x00d6, 0x51ed, 0x0190,
@@ -1638,7 +1638,7 @@ const AnimationCel bon_odori_cel103[] = {
 };
 
 // [D_088a97d6]
-const AnimationCel bon_odori_cel104[] = {
+AnimationCel bon_odori_cel104[] = {
     /* Len */ 10,
     /* 000 */ 0x00d7, 0x4003, 0x0190,
     /* 001 */ 0x00d7, 0x51ed, 0x0190,
@@ -1653,7 +1653,7 @@ const AnimationCel bon_odori_cel104[] = {
 };
 
 // [D_088a9814]
-const AnimationCel bon_odori_cel105[] = {
+AnimationCel bon_odori_cel105[] = {
     /* Len */ 10,
     /* 000 */ 0x00e3, 0x0003, 0x020d,
     /* 001 */ 0x00d8, 0x01f8, 0x0208,
@@ -1668,7 +1668,7 @@ const AnimationCel bon_odori_cel105[] = {
 };
 
 // [D_088a9852]
-const AnimationCel bon_odori_cel106[] = {
+AnimationCel bon_odori_cel106[] = {
     /* Len */ 10,
     /* 000 */ 0x00e3, 0x0003, 0x020d,
     /* 001 */ 0x00d8, 0x01f8, 0x0208,
@@ -1683,7 +1683,7 @@ const AnimationCel bon_odori_cel106[] = {
 };
 
 // [D_088a9890]
-const AnimationCel bon_odori_cel107[] = {
+AnimationCel bon_odori_cel107[] = {
     /* Len */ 10,
     /* 000 */ 0x00e0, 0x0003, 0x020d,
     /* 001 */ 0x00d6, 0x01f8, 0x0208,
@@ -1698,7 +1698,7 @@ const AnimationCel bon_odori_cel107[] = {
 };
 
 // [D_088a98ce]
-const AnimationCel bon_odori_cel108[] = {
+AnimationCel bon_odori_cel108[] = {
     /* Len */ 10,
     /* 000 */ 0x00de, 0x0003, 0x020d,
     /* 001 */ 0x00d4, 0x41f8, 0x0192,
@@ -1713,7 +1713,7 @@ const AnimationCel bon_odori_cel108[] = {
 };
 
 // [D_088a990c]
-const AnimationCel bon_odori_cel109[] = {
+AnimationCel bon_odori_cel109[] = {
     /* Len */ 10,
     /* 000 */ 0x00de, 0x0003, 0x020d,
     /* 001 */ 0x00d4, 0x41f8, 0x0192,
@@ -1728,7 +1728,7 @@ const AnimationCel bon_odori_cel109[] = {
 };
 
 // [D_088a994a]
-const AnimationCel bon_odori_cel110[] = {
+AnimationCel bon_odori_cel110[] = {
     /* Len */ 9,
     /* 000 */ 0x00cf, 0x4003, 0x1190,
     /* 001 */ 0x00d8, 0x41f8, 0x0192,
@@ -1742,7 +1742,7 @@ const AnimationCel bon_odori_cel110[] = {
 };
 
 // [D_088a9982]
-const AnimationCel bon_odori_cel111[] = {
+AnimationCel bon_odori_cel111[] = {
     /* Len */ 9,
     /* 000 */ 0x00d8, 0x41f8, 0x0192,
     /* 001 */ 0x00cf, 0x4003, 0x1190,
@@ -1756,7 +1756,7 @@ const AnimationCel bon_odori_cel111[] = {
 };
 
 // [D_088a99ba]
-const AnimationCel bon_odori_cel112[] = {
+AnimationCel bon_odori_cel112[] = {
     /* Len */ 9,
     /* 000 */ 0x00d6, 0x41f8, 0x0192,
     /* 001 */ 0x00cd, 0x4003, 0x1190,
@@ -1770,7 +1770,7 @@ const AnimationCel bon_odori_cel112[] = {
 };
 
 // [D_088a99f2]
-const AnimationCel bon_odori_cel113[] = {
+AnimationCel bon_odori_cel113[] = {
     /* Len */ 9,
     /* 000 */ 0x00d4, 0x41f8, 0x0192,
     /* 001 */ 0x00cb, 0x4003, 0x1190,
@@ -1784,7 +1784,7 @@ const AnimationCel bon_odori_cel113[] = {
 };
 
 // [D_088a9a2a]
-const AnimationCel bon_odori_cel114[] = {
+AnimationCel bon_odori_cel114[] = {
     /* Len */ 9,
     /* 000 */ 0x00d4, 0x41f8, 0x0192,
     /* 001 */ 0x00cb, 0x4003, 0x1190,
@@ -1798,7 +1798,7 @@ const AnimationCel bon_odori_cel114[] = {
 };
 
 // [D_088a9a62]
-const AnimationCel bon_odori_cel115[] = {
+AnimationCel bon_odori_cel115[] = {
     /* Len */ 9,
     /* 000 */ 0x00d8, 0x41f8, 0x0192,
     /* 001 */ 0x00d1, 0x81e8, 0x6000,
@@ -1812,7 +1812,7 @@ const AnimationCel bon_odori_cel115[] = {
 };
 
 // [D_088a9a9a]
-const AnimationCel bon_odori_cel116[] = {
+AnimationCel bon_odori_cel116[] = {
     /* Len */ 9,
     /* 000 */ 0x00d8, 0x41f8, 0x0192,
     /* 001 */ 0x00d1, 0x81e8, 0x6000,
@@ -1826,7 +1826,7 @@ const AnimationCel bon_odori_cel116[] = {
 };
 
 // [D_088a9ad2]
-const AnimationCel bon_odori_cel117[] = {
+AnimationCel bon_odori_cel117[] = {
     /* Len */ 9,
     /* 000 */ 0x00d6, 0x41f8, 0x0192,
     /* 001 */ 0x00cf, 0x81e8, 0x6000,
@@ -1840,7 +1840,7 @@ const AnimationCel bon_odori_cel117[] = {
 };
 
 // [D_088a9b0a]
-const AnimationCel bon_odori_cel118[] = {
+AnimationCel bon_odori_cel118[] = {
     /* Len */ 9,
     /* 000 */ 0x00d4, 0x41f8, 0x0192,
     /* 001 */ 0x00cd, 0x81e8, 0x6000,
@@ -1854,7 +1854,7 @@ const AnimationCel bon_odori_cel118[] = {
 };
 
 // [D_088a9b42]
-const AnimationCel bon_odori_cel119[] = {
+AnimationCel bon_odori_cel119[] = {
     /* Len */ 9,
     /* 000 */ 0x00d4, 0x41f8, 0x0192,
     /* 001 */ 0x00cd, 0x81e8, 0x6000,
@@ -1868,7 +1868,7 @@ const AnimationCel bon_odori_cel119[] = {
 };
 
 // [D_088a9b7a]
-const AnimationCel bon_odori_cel120[] = {
+AnimationCel bon_odori_cel120[] = {
     /* Len */ 12,
     /* 000 */ 0x00d8, 0x41f8, 0x0192,
     /* 001 */ 0x00d1, 0x41f1, 0x3194,
@@ -1885,7 +1885,7 @@ const AnimationCel bon_odori_cel120[] = {
 };
 
 // [D_088a9bc4]
-const AnimationCel bon_odori_cel121[] = {
+AnimationCel bon_odori_cel121[] = {
     /* Len */ 12,
     /* 000 */ 0x00d8, 0x41f8, 0x0192,
     /* 001 */ 0x00d1, 0x41f1, 0x3194,
@@ -1902,7 +1902,7 @@ const AnimationCel bon_odori_cel121[] = {
 };
 
 // [D_088a9c0e]
-const AnimationCel bon_odori_cel122[] = {
+AnimationCel bon_odori_cel122[] = {
     /* Len */ 12,
     /* 000 */ 0x00d6, 0x41f8, 0x0192,
     /* 001 */ 0x00cf, 0x41f1, 0x3194,
@@ -1919,7 +1919,7 @@ const AnimationCel bon_odori_cel122[] = {
 };
 
 // [D_088a9c58]
-const AnimationCel bon_odori_cel123[] = {
+AnimationCel bon_odori_cel123[] = {
     /* Len */ 12,
     /* 000 */ 0x00d4, 0x41f8, 0x0192,
     /* 001 */ 0x00cd, 0x41f1, 0x3194,
@@ -1936,7 +1936,7 @@ const AnimationCel bon_odori_cel123[] = {
 };
 
 // [D_088a9ca2]
-const AnimationCel bon_odori_cel124[] = {
+AnimationCel bon_odori_cel124[] = {
     /* Len */ 12,
     /* 000 */ 0x00d4, 0x41f8, 0x0192,
     /* 001 */ 0x00cd, 0x41f1, 0x3194,
@@ -1953,7 +1953,7 @@ const AnimationCel bon_odori_cel124[] = {
 };
 
 // [D_088a9cec]
-const AnimationCel bon_odori_cel125[] = {
+AnimationCel bon_odori_cel125[] = {
     /* Len */ 11,
     /* 000 */ 0x80e3, 0x91fe, 0x0102,
     /* 001 */ 0x80e3, 0x81f2, 0x0102,
@@ -1969,7 +1969,7 @@ const AnimationCel bon_odori_cel125[] = {
 };
 
 // [D_088a9d30]
-const AnimationCel bon_odori_cel126[] = {
+AnimationCel bon_odori_cel126[] = {
     /* Len */ 11,
     /* 000 */ 0x80e1, 0x91fe, 0x0102,
     /* 001 */ 0x80e1, 0x81f2, 0x0102,
@@ -1985,7 +1985,7 @@ const AnimationCel bon_odori_cel126[] = {
 };
 
 // [D_088a9d74]
-const AnimationCel bon_odori_cel127[] = {
+AnimationCel bon_odori_cel127[] = {
     /* Len */ 11,
     /* 000 */ 0x00d4, 0x41f8, 0x0192,
     /* 001 */ 0x80df, 0x91fe, 0x0102,
@@ -2001,7 +2001,7 @@ const AnimationCel bon_odori_cel127[] = {
 };
 
 // [D_088a9db8]
-const AnimationCel bon_odori_cel128[] = {
+AnimationCel bon_odori_cel128[] = {
     /* Len */ 9,
     /* 000 */ 0x80e3, 0x91fe, 0x1102,
     /* 001 */ 0x80e3, 0x81f2, 0x1102,
@@ -2015,7 +2015,7 @@ const AnimationCel bon_odori_cel128[] = {
 };
 
 // [D_088a9df0]
-const AnimationCel bon_odori_cel129[] = {
+AnimationCel bon_odori_cel129[] = {
     /* Len */ 9,
     /* 000 */ 0x80e1, 0x91fe, 0x1102,
     /* 001 */ 0x80e1, 0x81f2, 0x1102,
@@ -2029,7 +2029,7 @@ const AnimationCel bon_odori_cel129[] = {
 };
 
 // [D_088a9e28]
-const AnimationCel bon_odori_cel130[] = {
+AnimationCel bon_odori_cel130[] = {
     /* Len */ 9,
     /* 000 */ 0x80df, 0x91fe, 0x1102,
     /* 001 */ 0x80df, 0x81f2, 0x1102,
@@ -2043,7 +2043,7 @@ const AnimationCel bon_odori_cel130[] = {
 };
 
 // [D_088a9e60]
-const AnimationCel bon_odori_cel131[] = {
+AnimationCel bon_odori_cel131[] = {
     /* Len */ 9,
     /* 000 */ 0x80e3, 0x91fe, 0x6102,
     /* 001 */ 0x80e3, 0x81f2, 0x6102,
@@ -2057,7 +2057,7 @@ const AnimationCel bon_odori_cel131[] = {
 };
 
 // [D_088a9e98]
-const AnimationCel bon_odori_cel132[] = {
+AnimationCel bon_odori_cel132[] = {
     /* Len */ 9,
     /* 000 */ 0x80e1, 0x91fe, 0x6102,
     /* 001 */ 0x80e1, 0x81f2, 0x6102,
@@ -2071,7 +2071,7 @@ const AnimationCel bon_odori_cel132[] = {
 };
 
 // [D_088a9ed0]
-const AnimationCel bon_odori_cel133[] = {
+AnimationCel bon_odori_cel133[] = {
     /* Len */ 9,
     /* 000 */ 0x80df, 0x91fe, 0x6102,
     /* 001 */ 0x80df, 0x81f2, 0x6102,
@@ -2085,7 +2085,7 @@ const AnimationCel bon_odori_cel133[] = {
 };
 
 // [D_088a9f08]
-const AnimationCel bon_odori_cel134[] = {
+AnimationCel bon_odori_cel134[] = {
     /* Len */ 12,
     /* 000 */ 0x80e3, 0x91fe, 0x3102,
     /* 001 */ 0x80e3, 0x81f2, 0x3102,
@@ -2102,7 +2102,7 @@ const AnimationCel bon_odori_cel134[] = {
 };
 
 // [D_088a9f52]
-const AnimationCel bon_odori_cel135[] = {
+AnimationCel bon_odori_cel135[] = {
     /* Len */ 12,
     /* 000 */ 0x80e1, 0x91fe, 0x3102,
     /* 001 */ 0x80e1, 0x81f2, 0x3102,
@@ -2119,7 +2119,7 @@ const AnimationCel bon_odori_cel135[] = {
 };
 
 // [D_088a9f9c]
-const AnimationCel bon_odori_cel136[] = {
+AnimationCel bon_odori_cel136[] = {
     /* Len */ 12,
     /* 000 */ 0x80df, 0x91fe, 0x3102,
     /* 001 */ 0x80df, 0x81f2, 0x3102,
@@ -2136,7 +2136,7 @@ const AnimationCel bon_odori_cel136[] = {
 };
 
 // [D_088a9fe6]
-const AnimationCel bon_odori_cel137[] = {
+AnimationCel bon_odori_cel137[] = {
     /* Len */ 9,
     /* 000 */ 0x00e2, 0x0003, 0x020d,
     /* 001 */ 0x80e1, 0x81f4, 0x0118,
@@ -2150,7 +2150,7 @@ const AnimationCel bon_odori_cel137[] = {
 };
 
 // [D_088aa01e]
-const AnimationCel bon_odori_cel138[] = {
+AnimationCel bon_odori_cel138[] = {
     /* Len */ 9,
     /* 000 */ 0x00e1, 0x0003, 0x020d,
     /* 001 */ 0x80df, 0x81f4, 0x0118,
@@ -2164,7 +2164,7 @@ const AnimationCel bon_odori_cel138[] = {
 };
 
 // [D_088aa056]
-const AnimationCel bon_odori_cel139[] = {
+AnimationCel bon_odori_cel139[] = {
     /* Len */ 9,
     /* 000 */ 0x00e1, 0x0001, 0x020d,
     /* 001 */ 0x80df, 0x81f4, 0x0118,
@@ -2178,7 +2178,7 @@ const AnimationCel bon_odori_cel139[] = {
 };
 
 // [D_088aa08e]
-const AnimationCel bon_odori_cel140[] = {
+AnimationCel bon_odori_cel140[] = {
     /* Len */ 8,
     /* 000 */ 0x80e1, 0x91fa, 0x0102,
     /* 001 */ 0x00df, 0x11fa, 0x020d,
@@ -2191,7 +2191,7 @@ const AnimationCel bon_odori_cel140[] = {
 };
 
 // [D_088aa0c0]
-const AnimationCel bon_odori_cel141[] = {
+AnimationCel bon_odori_cel141[] = {
     /* Len */ 8,
     /* 000 */ 0x80e1, 0x91f8, 0x0102,
     /* 001 */ 0x00df, 0x11f5, 0x020d,
@@ -2204,7 +2204,7 @@ const AnimationCel bon_odori_cel141[] = {
 };
 
 // [D_088aa0f2]
-const AnimationCel bon_odori_cel142[] = {
+AnimationCel bon_odori_cel142[] = {
     /* Len */ 8,
     /* 000 */ 0x80de, 0x81f8, 0x010a,
     /* 001 */ 0x00ca, 0x81f0, 0x0084,
@@ -2217,7 +2217,7 @@ const AnimationCel bon_odori_cel142[] = {
 };
 
 // [D_088aa124]
-const AnimationCel bon_odori_cel143[] = {
+AnimationCel bon_odori_cel143[] = {
     /* Len */ 7,
     /* 000 */ 0x80e1, 0x81f8, 0x0102,
     /* 001 */ 0x00ca, 0x91f1, 0x0008,
@@ -2229,7 +2229,7 @@ const AnimationCel bon_odori_cel143[] = {
 };
 
 // [D_088aa150]
-const AnimationCel bon_odori_cel144[] = {
+AnimationCel bon_odori_cel144[] = {
     /* Len */ 8,
     /* 000 */ 0x80e1, 0x81f7, 0x0102,
     /* 001 */ 0x00ca, 0x91f1, 0x000c,
@@ -2242,7 +2242,7 @@ const AnimationCel bon_odori_cel144[] = {
 };
 
 // [D_088aa182]
-const AnimationCel bon_odori_cel145[] = {
+AnimationCel bon_odori_cel145[] = {
     /* Len */ 9,
     /* 000 */ 0x00e2, 0x0003, 0x020d,
     /* 001 */ 0x80e0, 0x91fd, 0x0118,
@@ -2256,7 +2256,7 @@ const AnimationCel bon_odori_cel145[] = {
 };
 
 // [D_088aa1ba]
-const AnimationCel bon_odori_cel146[] = {
+AnimationCel bon_odori_cel146[] = {
     /* Len */ 9,
     /* 000 */ 0x00ce, 0x4003, 0x1190,
     /* 001 */ 0x00d7, 0x41f8, 0x11ca,
@@ -2270,7 +2270,7 @@ const AnimationCel bon_odori_cel146[] = {
 };
 
 // [D_088aa1f2]
-const AnimationCel bon_odori_cel147[] = {
+AnimationCel bon_odori_cel147[] = {
     /* Len */ 9,
     /* 000 */ 0x00cd, 0x4003, 0x1190,
     /* 001 */ 0x00d6, 0x41f8, 0x11ca,
@@ -2284,7 +2284,7 @@ const AnimationCel bon_odori_cel147[] = {
 };
 
 // [D_088aa22a]
-const AnimationCel bon_odori_cel148[] = {
+AnimationCel bon_odori_cel148[] = {
     /* Len */ 9,
     /* 000 */ 0x00cd, 0x4001, 0x1190,
     /* 001 */ 0x00db, 0x01f9, 0x1210,
@@ -2298,7 +2298,7 @@ const AnimationCel bon_odori_cel148[] = {
 };
 
 // [D_088aa262]
-const AnimationCel bon_odori_cel149[] = {
+AnimationCel bon_odori_cel149[] = {
     /* Len */ 8,
     /* 000 */ 0x00cd, 0x41fd, 0x1190,
     /* 001 */ 0x80e1, 0x91fa, 0x1102,
@@ -2311,7 +2311,7 @@ const AnimationCel bon_odori_cel149[] = {
 };
 
 // [D_088aa294]
-const AnimationCel bon_odori_cel150[] = {
+AnimationCel bon_odori_cel150[] = {
     /* Len */ 8,
     /* 000 */ 0x00cd, 0x51ef, 0x1190,
     /* 001 */ 0x80e1, 0x91f8, 0x1102,
@@ -2324,7 +2324,7 @@ const AnimationCel bon_odori_cel150[] = {
 };
 
 // [D_088aa2c6]
-const AnimationCel bon_odori_cel151[] = {
+AnimationCel bon_odori_cel151[] = {
     /* Len */ 8,
     /* 000 */ 0x80de, 0x81f8, 0x110a,
     /* 001 */ 0x00ca, 0x81f0, 0x1084,
@@ -2337,7 +2337,7 @@ const AnimationCel bon_odori_cel151[] = {
 };
 
 // [D_088aa2f8]
-const AnimationCel bon_odori_cel152[] = {
+AnimationCel bon_odori_cel152[] = {
     /* Len */ 8,
     /* 000 */ 0x80e1, 0x81f8, 0x1102,
     /* 001 */ 0x00ca, 0x91f1, 0x1008,
@@ -2350,7 +2350,7 @@ const AnimationCel bon_odori_cel152[] = {
 };
 
 // [D_088aa32a]
-const AnimationCel bon_odori_cel153[] = {
+AnimationCel bon_odori_cel153[] = {
     /* Len */ 8,
     /* 000 */ 0x80e1, 0x81f7, 0x1102,
     /* 001 */ 0x00ca, 0x91f1, 0x100c,
@@ -2363,7 +2363,7 @@ const AnimationCel bon_odori_cel153[] = {
 };
 
 // [D_088aa35c]
-const AnimationCel bon_odori_cel154[] = {
+AnimationCel bon_odori_cel154[] = {
     /* Len */ 9,
     /* 000 */ 0x00db, 0x11ff, 0x1210,
     /* 001 */ 0x80e0, 0x91fd, 0x1118,
@@ -2377,7 +2377,7 @@ const AnimationCel bon_odori_cel154[] = {
 };
 
 // [D_088aa394]
-const AnimationCel bon_odori_cel155[] = {
+AnimationCel bon_odori_cel155[] = {
     /* Len */ 11,
     /* 000 */ 0x00d0, 0x41f0, 0x3194,
     /* 001 */ 0x00d7, 0x41f8, 0x3196,
@@ -2393,7 +2393,7 @@ const AnimationCel bon_odori_cel155[] = {
 };
 
 // [D_088aa3d8]
-const AnimationCel bon_odori_cel156[] = {
+AnimationCel bon_odori_cel156[] = {
     /* Len */ 11,
     /* 000 */ 0x00cf, 0x41f0, 0x3194,
     /* 001 */ 0x00d6, 0x41f8, 0x3196,
@@ -2409,7 +2409,7 @@ const AnimationCel bon_odori_cel156[] = {
 };
 
 // [D_088aa41c]
-const AnimationCel bon_odori_cel157[] = {
+AnimationCel bon_odori_cel157[] = {
     /* Len */ 11,
     /* 000 */ 0x00cf, 0x41ef, 0x31c6,
     /* 001 */ 0x00db, 0x01f9, 0x020e,
@@ -2425,7 +2425,7 @@ const AnimationCel bon_odori_cel157[] = {
 };
 
 // [D_088aa460]
-const AnimationCel bon_odori_cel158[] = {
+AnimationCel bon_odori_cel158[] = {
     /* Len */ 9,
     /* 000 */ 0x80e1, 0x91fa, 0x3102,
     /* 001 */ 0x00ca, 0x81ef, 0x300c,
@@ -2439,7 +2439,7 @@ const AnimationCel bon_odori_cel158[] = {
 };
 
 // [D_088aa498]
-const AnimationCel bon_odori_cel159[] = {
+AnimationCel bon_odori_cel159[] = {
     /* Len */ 9,
     /* 000 */ 0x00e2, 0x1001, 0x320b,
     /* 001 */ 0x80e1, 0x91f8, 0x3102,
@@ -2453,7 +2453,7 @@ const AnimationCel bon_odori_cel159[] = {
 };
 
 // [D_088aa4d0]
-const AnimationCel bon_odori_cel160[] = {
+AnimationCel bon_odori_cel160[] = {
     /* Len */ 9,
     /* 000 */ 0x00e2, 0x01f6, 0x320b,
     /* 001 */ 0x00e2, 0x1002, 0x320b,
@@ -2467,7 +2467,7 @@ const AnimationCel bon_odori_cel160[] = {
 };
 
 // [D_088aa508]
-const AnimationCel bon_odori_cel161[] = {
+AnimationCel bon_odori_cel161[] = {
     /* Len */ 10,
     /* 000 */ 0x00e1, 0x1000, 0x320b,
     /* 001 */ 0x80e1, 0x81f8, 0x3102,
@@ -2482,7 +2482,7 @@ const AnimationCel bon_odori_cel161[] = {
 };
 
 // [D_088aa546]
-const AnimationCel bon_odori_cel162[] = {
+AnimationCel bon_odori_cel162[] = {
     /* Len */ 9,
     /* 000 */ 0x00cf, 0x41fb, 0x31c6,
     /* 001 */ 0x80e1, 0x81f7, 0x3102,
@@ -2496,7 +2496,7 @@ const AnimationCel bon_odori_cel162[] = {
 };
 
 // [D_088aa57e]
-const AnimationCel bon_odori_cel163[] = {
+AnimationCel bon_odori_cel163[] = {
     /* Len */ 11,
     /* 000 */ 0x00cf, 0x41f4, 0x31c6,
     /* 001 */ 0x00db, 0x11ff, 0x020e,
@@ -2512,7 +2512,7 @@ const AnimationCel bon_odori_cel163[] = {
 };
 
 // [D_088aa5c2]
-const AnimationCel bon_odori_cel164[] = {
+AnimationCel bon_odori_cel164[] = {
     /* Len */ 8,
     /* 000 */ 0x00d0, 0x81e8, 0x6000,
     /* 001 */ 0x00d0, 0x91f8, 0x6000,
@@ -2525,7 +2525,7 @@ const AnimationCel bon_odori_cel164[] = {
 };
 
 // [D_088aa5f4]
-const AnimationCel bon_odori_cel165[] = {
+AnimationCel bon_odori_cel165[] = {
     /* Len */ 8,
     /* 000 */ 0x80df, 0x81f4, 0x6118,
     /* 001 */ 0x80de, 0x81f8, 0x6106,
@@ -2538,7 +2538,7 @@ const AnimationCel bon_odori_cel165[] = {
 };
 
 // [D_088aa626]
-const AnimationCel bon_odori_cel166[] = {
+AnimationCel bon_odori_cel166[] = {
     /* Len */ 9,
     /* 000 */ 0x40cd, 0x91fc, 0x6184,
     /* 001 */ 0x00ca, 0x81ef, 0x6098,
@@ -2552,7 +2552,7 @@ const AnimationCel bon_odori_cel166[] = {
 };
 
 // [D_088aa65e]
-const AnimationCel bon_odori_cel167[] = {
+AnimationCel bon_odori_cel167[] = {
     /* Len */ 8,
     /* 000 */ 0x40cd, 0x91f8, 0x6184,
     /* 001 */ 0x00ca, 0x81ef, 0x609c,
@@ -2565,7 +2565,7 @@ const AnimationCel bon_odori_cel167[] = {
 };
 
 // [D_088aa690]
-const AnimationCel bon_odori_cel168[] = {
+AnimationCel bon_odori_cel168[] = {
     /* Len */ 9,
     /* 000 */ 0x40cd, 0x81e3, 0x6184,
     /* 001 */ 0x80e1, 0x91f8, 0x6102,
@@ -2579,7 +2579,7 @@ const AnimationCel bon_odori_cel168[] = {
 };
 
 // [D_088aa6c8]
-const AnimationCel bon_odori_cel169[] = {
+AnimationCel bon_odori_cel169[] = {
     /* Len */ 9,
     /* 000 */ 0x40cd, 0x81e1, 0x6184,
     /* 001 */ 0x40cd, 0x91ff, 0x6184,
@@ -2593,7 +2593,7 @@ const AnimationCel bon_odori_cel169[] = {
 };
 
 // [D_088aa700]
-const AnimationCel bon_odori_cel170[] = {
+AnimationCel bon_odori_cel170[] = {
     /* Len */ 9,
     /* 000 */ 0x40cd, 0x91fd, 0x6184,
     /* 001 */ 0x80e1, 0x81f8, 0x6102,
@@ -2607,7 +2607,7 @@ const AnimationCel bon_odori_cel170[] = {
 };
 
 // [D_088aa738]
-const AnimationCel bon_odori_cel171[] = {
+AnimationCel bon_odori_cel171[] = {
     /* Len */ 8,
     /* 000 */ 0x40cd, 0x81e8, 0x6184,
     /* 001 */ 0x00ca, 0x91f1, 0x609c,
@@ -2620,7 +2620,7 @@ const AnimationCel bon_odori_cel171[] = {
 };
 
 // [D_088aa76a]
-const AnimationCel bon_odori_cel172[] = {
+AnimationCel bon_odori_cel172[] = {
     /* Len */ 9,
     /* 000 */ 0x40cd, 0x81e4, 0x6184,
     /* 001 */ 0x00ca, 0x91f1, 0x6098,
@@ -2634,7 +2634,7 @@ const AnimationCel bon_odori_cel172[] = {
 };
 
 // [D_088aa7a2]
-const AnimationCel bon_odori_cel173[] = {
+AnimationCel bon_odori_cel173[] = {
     /* Len */ 9,
     /* 000 */ 0x00d9, 0x4003, 0x0190,
     /* 001 */ 0x00d9, 0x51ed, 0x0190,
@@ -2648,7 +2648,7 @@ const AnimationCel bon_odori_cel173[] = {
 };
 
 // [D_088aa7da]
-const AnimationCel bon_odori_cel174[] = {
+AnimationCel bon_odori_cel174[] = {
     /* Len */ 9,
     /* 000 */ 0x00d8, 0x4003, 0x0190,
     /* 001 */ 0x00d8, 0x51ed, 0x0190,
@@ -2662,7 +2662,7 @@ const AnimationCel bon_odori_cel174[] = {
 };
 
 // [D_088aa812]
-const AnimationCel bon_odori_cel175[] = {
+AnimationCel bon_odori_cel175[] = {
     /* Len */ 9,
     /* 000 */ 0x00d7, 0x4003, 0x0190,
     /* 001 */ 0x00d7, 0x51ed, 0x0190,

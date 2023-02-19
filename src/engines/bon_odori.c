@@ -24,14 +24,14 @@ enum BonOdoriLyricsAlignmentEnum {
 
 
 // [func_080206a0] Get OBJ Animation
-const struct Animation *bon_odori_get_anim(u32 anim) {
+struct Animation *bon_odori_get_anim(u32 anim) {
     return bon_odori_anim_table[anim][gBonOdoriInfo->version];
 }
 
 
 // [func_080206c0] Init. Donpans
 void bon_odori_init_donpans(void) {
-    const struct Animation *anim;
+    struct Animation *anim;
     s32 x, y;
     u16 z;
     u32 i;
@@ -54,14 +54,14 @@ void bon_odori_init_donpans(void) {
 
 
 // [func_0802075c] Get Donpan Animation
-const struct Animation *bon_odori_get_donpan_anim(u32 animation, u32 donpan) {
+struct Animation *bon_odori_get_donpan_anim(u32 animation, u32 donpan) {
     return bon_odori_get_anim(bon_odori_donpan_anim_id_table[animation][donpan]);
 }
 
 
 // [func_08020778] Set Donpan Animation
 void bon_odori_set_donpan_anim(u32 animation, u32 donpan) {
-    const struct Animation *anim = bon_odori_get_donpan_anim(animation, donpan);
+    struct Animation *anim = bon_odori_get_donpan_anim(animation, donpan);
     func_0804d8f8(D_03005380, gBonOdoriInfo->donpanSprites[donpan], anim, 0, 1, 0x7f, 0);
     gBonOdoriInfo->donpanAnimTimers[donpan] = beats_to_ticks(bon_odori_anim_durations[animation]);
 }
@@ -438,7 +438,7 @@ void bon_odori_input_event(u32 pressed, u32 released) {
 
 // [func_08021084] COMMON Func_00 - Beat Animation
 void bon_odori_common_beat_animation(u32 arg) {
-    const struct Animation *anim;
+    struct Animation *anim;
     u32 i;
 
     for (i = 0; i < 4; i++) {

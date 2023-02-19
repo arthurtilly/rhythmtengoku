@@ -1,13 +1,13 @@
 // do not rename these
 
 // [D_088b1950]
-const AnimationCel remix_2_prologue_cel000[] = {
+AnimationCel remix_2_prologue_cel000[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x009f
 };
 
 // [D_088b1958]
-const AnimationCel remix_2_prologue_cel001[] = {
+AnimationCel remix_2_prologue_cel001[] = {
     /* Len */ 7,
     /* 000 */ 0x0098, 0x81a1, 0x0010,
     /* 001 */ 0x40b8, 0x41a1, 0x00cd,
@@ -19,7 +19,7 @@ const AnimationCel remix_2_prologue_cel001[] = {
 };
 
 // [D_088b1984]
-const AnimationCel remix_2_prologue_cel002[] = {
+AnimationCel remix_2_prologue_cel002[] = {
     /* Len */ 14,
     /* 000 */ 0x0098, 0x81a1, 0x0010,
     /* 001 */ 0x40b8, 0x41a1, 0x00cd,
@@ -38,7 +38,7 @@ const AnimationCel remix_2_prologue_cel002[] = {
 };
 
 // [D_088b19da]
-const AnimationCel remix_2_prologue_cel003[] = {
+AnimationCel remix_2_prologue_cel003[] = {
     /* Len */ 19,
     /* 000 */ 0x0098, 0x81a1, 0x0010,
     /* 001 */ 0x40b8, 0x41a1, 0x00cd,
@@ -62,7 +62,7 @@ const AnimationCel remix_2_prologue_cel003[] = {
 };
 
 // [D_088b1a4e]
-const AnimationCel remix_2_prologue_cel004[] = {
+AnimationCel remix_2_prologue_cel004[] = {
     /* Len */ 25,
     /* 000 */ 0x0098, 0x81a1, 0x0010,
     /* 001 */ 0x40b8, 0x41a1, 0x00cd,
@@ -92,7 +92,7 @@ const AnimationCel remix_2_prologue_cel004[] = {
 };
 
 // [D_088b1ae6]
-const AnimationCel remix_2_prologue_cel005[] = {
+AnimationCel remix_2_prologue_cel005[] = {
     /* Len */ 32,
     /* 000 */ 0x0098, 0x81a1, 0x0010,
     /* 001 */ 0x40b8, 0x41a1, 0x00cd,
@@ -129,7 +129,7 @@ const AnimationCel remix_2_prologue_cel005[] = {
 };
 
 // [D_088b1ba8]
-const AnimationCel remix_2_prologue_cel006[] = {
+AnimationCel remix_2_prologue_cel006[] = {
     /* Len */ 40,
     /* 000 */ 0x0098, 0x81a1, 0x0010,
     /* 001 */ 0x40b8, 0x41a1, 0x00cd,

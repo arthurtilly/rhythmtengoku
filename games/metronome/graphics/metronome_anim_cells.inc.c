@@ -1,7 +1,7 @@
 // do not rename these
 
 // [D_088f2c8c]
-const AnimationCel metronome_cel000[] = {
+AnimationCel metronome_cel000[] = {
     /* Len */ 11,
     /* 000 */ 0x00f8, 0x41f8, 0x0144,
     /* 001 */ 0x0007, 0x41f8, 0x014c,
@@ -17,7 +17,7 @@ const AnimationCel metronome_cel000[] = {
 };
 
 // [D_088f2cd0]
-const AnimationCel metronome_cel001[] = {
+AnimationCel metronome_cel001[] = {
     /* Len */ 5,
     /* 000 */ 0x00f8, 0x41f8, 0x015e,
     /* 001 */ 0x00f0, 0x41f0, 0x0152,
@@ -27,51 +27,51 @@ const AnimationCel metronome_cel001[] = {
 };
 
 // [D_088f2cf0]
-const AnimationCel metronome_cel002[] = {
+AnimationCel metronome_cel002[] = {
     /* Len */ 1,
     /* 000 */ 0x00f8, 0x41f8, 0x0158
 };
 
 // [D_088f2cf8]
-const AnimationCel metronome_cel003[] = {
+AnimationCel metronome_cel003[] = {
     /* Len */ 1,
     /* 000 */ 0x00f8, 0x41f8, 0x0154
 };
 
 // [D_088f2d00]
-const AnimationCel metronome_cel004[] = {
+AnimationCel metronome_cel004[] = {
     /* Len */ 1,
     /* 000 */ 0x00f8, 0x41f8, 0x0156
 };
 
 // [D_088f2d08]
-const AnimationCel metronome_cel005[] = {
+AnimationCel metronome_cel005[] = {
     /* Len */ 1,
     /* 000 */ 0x00f8, 0x41f8, 0x0182
 };
 
 // [D_088f2d10]
-const AnimationCel metronome_cel006[] = {
+AnimationCel metronome_cel006[] = {
     /* Len */ 1,
     /* 000 */ 0x00e8, 0x41f8, 0x0180
 };
 
 // [D_088f2d18]
-const AnimationCel metronome_cel007[] = {
+AnimationCel metronome_cel007[] = {
     /* Len */ 2,
     /* 000 */ 0x00e8, 0x41f8, 0x0186,
     /* 001 */ 0x40e2, 0x01eb, 0x022a
 };
 
 // [D_088f2d26]
-const AnimationCel metronome_cel008[] = {
+AnimationCel metronome_cel008[] = {
     /* Len */ 2,
     /* 000 */ 0x00e8, 0x41f8, 0x0184,
     /* 001 */ 0x40e2, 0x01eb, 0x022a
 };
 
 // [D_088f2d34]
-const AnimationCel metronome_cel009[] = {
+AnimationCel metronome_cel009[] = {
     /* Len */ 15,
     /* 000 */ 0x40de, 0xc1e0, 0x0000,
     /* 001 */ 0x80de, 0x8020, 0x0014,
@@ -91,7 +91,7 @@ const AnimationCel metronome_cel009[] = {
 };
 
 // [D_088f2d90]
-const AnimationCel metronome_cel010[] = {
+AnimationCel metronome_cel010[] = {
     /* Len */ 15,
     /* 000 */ 0x40de, 0xd1e0, 0x0000,
     /* 001 */ 0x80de, 0x91d0, 0x0014,
@@ -111,7 +111,7 @@ const AnimationCel metronome_cel010[] = {
 };
 
 // [D_088f2dec]
-const AnimationCel metronome_cel011[] = {
+AnimationCel metronome_cel011[] = {
     /* Len */ 19,
     /* 000 */ 0x40fe, 0xc1e0, 0x0000,
     /* 001 */ 0x80fe, 0x8020, 0x0014,
@@ -135,7 +135,7 @@ const AnimationCel metronome_cel011[] = {
 };
 
 // [D_088f2e60]
-const AnimationCel metronome_cel012[] = {
+AnimationCel metronome_cel012[] = {
     /* Len */ 19,
     /* 000 */ 0x00e8, 0x4020, 0x0146,
     /* 001 */ 0x80e8, 0x0030, 0x019d,
@@ -159,140 +159,140 @@ const AnimationCel metronome_cel012[] = {
 };
 
 // [D_088f2ed4]
-const AnimationCel metronome_cel013[] = {
+AnimationCel metronome_cel013[] = {
     /* Len */ 2,
     /* 000 */ 0x00f0, 0x81f0, 0x0010,
     /* 001 */ 0x400f, 0x41ec, 0x0208
 };
 
 // [D_088f2ee2]
-const AnimationCel metronome_cel014[] = {
+AnimationCel metronome_cel014[] = {
     /* Len */ 1,
     /* 000 */ 0x80f8, 0x01fc, 0x01cf
 };
 
 // [D_088f2eea]
-const AnimationCel metronome_cel015[] = {
+AnimationCel metronome_cel015[] = {
     /* Len */ 1,
     /* 000 */ 0x80f8, 0x01fc, 0x01c7
 };
 
 // [D_088f2ef2]
-const AnimationCel metronome_cel016[] = {
+AnimationCel metronome_cel016[] = {
     /* Len */ 1,
     /* 000 */ 0x80f8, 0x01fc, 0x01c5
 };
 
 // [D_088f2efa]
-const AnimationCel metronome_cel017[] = {
+AnimationCel metronome_cel017[] = {
     /* Len */ 1,
     /* 000 */ 0x80f8, 0x01fc, 0x01c6
 };
 
 // [D_088f2f02]
-const AnimationCel metronome_cel018[] = {
+AnimationCel metronome_cel018[] = {
     /* Len */ 1,
     /* 000 */ 0x80f8, 0x01fc, 0x01cb
 };
 
 // [D_088f2f0a]
-const AnimationCel metronome_cel019[] = {
+AnimationCel metronome_cel019[] = {
     /* Len */ 1,
     /* 000 */ 0x80f8, 0x01fc, 0x01ca
 };
 
 // [D_088f2f12]
-const AnimationCel metronome_cel020[] = {
+AnimationCel metronome_cel020[] = {
     /* Len */ 1,
     /* 000 */ 0x80f8, 0x01fc, 0x01cc
 };
 
 // [D_088f2f1a]
-const AnimationCel metronome_cel021[] = {
+AnimationCel metronome_cel021[] = {
     /* Len */ 1,
     /* 000 */ 0x80f8, 0x01fc, 0x01ce
 };
 
 // [D_088f2f22]
-const AnimationCel metronome_cel022[] = {
+AnimationCel metronome_cel022[] = {
     /* Len */ 1,
     /* 000 */ 0x80f8, 0x01fc, 0x01cd
 };
 
 // [D_088f2f2a]
-const AnimationCel metronome_cel023[] = {
+AnimationCel metronome_cel023[] = {
     /* Len */ 1,
     /* 000 */ 0x80f8, 0x01fc, 0x01c9
 };
 
 // [D_088f2f32]
-const AnimationCel metronome_cel024[] = {
+AnimationCel metronome_cel024[] = {
     /* Len */ 1,
     /* 000 */ 0x000f, 0x000f, 0x023d
 };
 
 // [D_088f2f3a]
-const AnimationCel metronome_cel025[] = {
+AnimationCel metronome_cel025[] = {
     /* Len */ 1,
     /* 000 */ 0x000f, 0x000f, 0x023a
 };
 
 // [D_088f2f42]
-const AnimationCel metronome_cel026[] = {
+AnimationCel metronome_cel026[] = {
     /* Len */ 1,
     /* 000 */ 0x000f, 0x000f, 0x023b
 };
 
 // [D_088f2f4a]
-const AnimationCel metronome_cel027[] = {
+AnimationCel metronome_cel027[] = {
     /* Len */ 1,
     /* 000 */ 0x000f, 0x000f, 0x0232
 };
 
 // [D_088f2f52]
-const AnimationCel metronome_cel028[] = {
+AnimationCel metronome_cel028[] = {
     /* Len */ 1,
     /* 000 */ 0x000f, 0x000f, 0x0234
 };
 
 // [D_088f2f5a]
-const AnimationCel metronome_cel029[] = {
+AnimationCel metronome_cel029[] = {
     /* Len */ 1,
     /* 000 */ 0x000f, 0x000f, 0x0235
 };
 
 // [D_088f2f62]
-const AnimationCel metronome_cel030[] = {
+AnimationCel metronome_cel030[] = {
     /* Len */ 1,
     /* 000 */ 0x000f, 0x000f, 0x0236
 };
 
 // [D_088f2f6a]
-const AnimationCel metronome_cel031[] = {
+AnimationCel metronome_cel031[] = {
     /* Len */ 1,
     /* 000 */ 0x000f, 0x000f, 0x0237
 };
 
 // [D_088f2f72]
-const AnimationCel metronome_cel032[] = {
+AnimationCel metronome_cel032[] = {
     /* Len */ 1,
     /* 000 */ 0x000f, 0x000f, 0x0233
 };
 
 // [D_088f2f7a]
-const AnimationCel metronome_cel033[] = {
+AnimationCel metronome_cel033[] = {
     /* Len */ 1,
     /* 000 */ 0x000f, 0x000f, 0x0244
 };
 
 // [D_088f2f82]
-const AnimationCel metronome_cel034[] = {
+AnimationCel metronome_cel034[] = {
     /* Len */ 1,
     /* 000 */ 0x80f8, 0x01fc, 0x11c8
 };
 
 // [D_088f2f8a]
-const AnimationCel metronome_cel035[] = {
+AnimationCel metronome_cel035[] = {
     /* Len */ 6,
     /* 000 */ 0x00f8, 0x4005, 0x018c,
     /* 001 */ 0x80f8, 0x0015, 0x019c,
@@ -303,7 +303,7 @@ const AnimationCel metronome_cel035[] = {
 };
 
 // [D_088f2fb0]
-const AnimationCel metronome_cel036[] = {
+AnimationCel metronome_cel036[] = {
     /* Len */ 6,
     /* 000 */ 0x00f8, 0x51eb, 0x018c,
     /* 001 */ 0x80f8, 0x11e3, 0x019c,
@@ -314,7 +314,7 @@ const AnimationCel metronome_cel036[] = {
 };
 
 // [D_088f2fd6]
-const AnimationCel metronome_cel037[] = {
+AnimationCel metronome_cel037[] = {
     /* Len */ 6,
     /* 000 */ 0x00f8, 0x51eb, 0x018c,
     /* 001 */ 0x80f8, 0x11e3, 0x019c,
@@ -325,7 +325,7 @@ const AnimationCel metronome_cel037[] = {
 };
 
 // [D_088f2ffc]
-const AnimationCel metronome_cel038[] = {
+AnimationCel metronome_cel038[] = {
     /* Len */ 6,
     /* 000 */ 0x00f8, 0x51eb, 0x018c,
     /* 001 */ 0x80f8, 0x11e3, 0x019c,
@@ -336,7 +336,7 @@ const AnimationCel metronome_cel038[] = {
 };
 
 // [D_088f3022]
-const AnimationCel metronome_cel039[] = {
+AnimationCel metronome_cel039[] = {
     /* Len */ 6,
     /* 000 */ 0x00f8, 0x51eb, 0x018c,
     /* 001 */ 0x80f8, 0x11e3, 0x019c,
@@ -347,7 +347,7 @@ const AnimationCel metronome_cel039[] = {
 };
 
 // [D_088f3048]
-const AnimationCel metronome_cel040[] = {
+AnimationCel metronome_cel040[] = {
     /* Len */ 6,
     /* 000 */ 0x00f8, 0x51eb, 0x018c,
     /* 001 */ 0x80f8, 0x11e3, 0x019c,
@@ -358,7 +358,7 @@ const AnimationCel metronome_cel040[] = {
 };
 
 // [D_088f306e]
-const AnimationCel metronome_cel041[] = {
+AnimationCel metronome_cel041[] = {
     /* Len */ 6,
     /* 000 */ 0x00f8, 0x4005, 0x018c,
     /* 001 */ 0x80f8, 0x0015, 0x019c,
@@ -369,7 +369,7 @@ const AnimationCel metronome_cel041[] = {
 };
 
 // [D_088f3094]
-const AnimationCel metronome_cel042[] = {
+AnimationCel metronome_cel042[] = {
     /* Len */ 6,
     /* 000 */ 0x00f8, 0x4005, 0x018c,
     /* 001 */ 0x80f8, 0x0015, 0x019c,
@@ -380,7 +380,7 @@ const AnimationCel metronome_cel042[] = {
 };
 
 // [D_088f30ba]
-const AnimationCel metronome_cel043[] = {
+AnimationCel metronome_cel043[] = {
     /* Len */ 6,
     /* 000 */ 0x00f8, 0x4005, 0x018c,
     /* 001 */ 0x80f8, 0x0015, 0x019c,
@@ -391,7 +391,7 @@ const AnimationCel metronome_cel043[] = {
 };
 
 // [D_088f30e0]
-const AnimationCel metronome_cel044[] = {
+AnimationCel metronome_cel044[] = {
     /* Len */ 6,
     /* 000 */ 0x00f8, 0x4005, 0x018c,
     /* 001 */ 0x80f8, 0x0015, 0x019c,
@@ -402,7 +402,7 @@ const AnimationCel metronome_cel044[] = {
 };
 
 // [D_088f3106]
-const AnimationCel metronome_cel045[] = {
+AnimationCel metronome_cel045[] = {
     /* Len */ 6,
     /* 000 */ 0x00f8, 0x4005, 0x018c,
     /* 001 */ 0x80f8, 0x0015, 0x019c,
@@ -413,7 +413,7 @@ const AnimationCel metronome_cel045[] = {
 };
 
 // [D_088f312c]
-const AnimationCel metronome_cel046[] = {
+AnimationCel metronome_cel046[] = {
     /* Len */ 7,
     /* 000 */ 0x00dd, 0x41f8, 0x010e,
     /* 001 */ 0x00e8, 0x41f4, 0x019a,
@@ -425,7 +425,7 @@ const AnimationCel metronome_cel046[] = {
 };
 
 // [D_088f3158]
-const AnimationCel metronome_cel047[] = {
+AnimationCel metronome_cel047[] = {
     /* Len */ 7,
     /* 000 */ 0x00e0, 0x41f8, 0x010e,
     /* 001 */ 0x00e8, 0x41f4, 0x0198,
@@ -437,7 +437,7 @@ const AnimationCel metronome_cel047[] = {
 };
 
 // [D_088f3184]
-const AnimationCel metronome_cel048[] = {
+AnimationCel metronome_cel048[] = {
     /* Len */ 7,
     /* 000 */ 0x00df, 0x41f8, 0x010e,
     /* 001 */ 0x00e8, 0x41f4, 0x0198,
@@ -449,7 +449,7 @@ const AnimationCel metronome_cel048[] = {
 };
 
 // [D_088f31b0]
-const AnimationCel metronome_cel049[] = {
+AnimationCel metronome_cel049[] = {
     /* Len */ 7,
     /* 000 */ 0x00de, 0x41f8, 0x010e,
     /* 001 */ 0x00e8, 0x41f4, 0x0198,
@@ -461,7 +461,7 @@ const AnimationCel metronome_cel049[] = {
 };
 
 // [D_088f31dc]
-const AnimationCel metronome_cel050[] = {
+AnimationCel metronome_cel050[] = {
     /* Len */ 6,
     /* 000 */ 0x00e0, 0x41ed, 0x010e,
     /* 001 */ 0x80e0, 0x41f4, 0x001c,
@@ -472,7 +472,7 @@ const AnimationCel metronome_cel050[] = {
 };
 
 // [D_088f3202]
-const AnimationCel metronome_cel051[] = {
+AnimationCel metronome_cel051[] = {
     /* Len */ 6,
     /* 000 */ 0x00e1, 0x41ed, 0x010e,
     /* 001 */ 0x80e0, 0x41f4, 0x001e,
@@ -483,7 +483,7 @@ const AnimationCel metronome_cel051[] = {
 };
 
 // [D_088f3228]
-const AnimationCel metronome_cel052[] = {
+AnimationCel metronome_cel052[] = {
     /* Len */ 7,
     /* 000 */ 0x00e2, 0x41ed, 0x010e,
     /* 001 */ 0x80e0, 0x41f4, 0x001b,
@@ -495,7 +495,7 @@ const AnimationCel metronome_cel052[] = {
 };
 
 // [D_088f3254]
-const AnimationCel metronome_cel053[] = {
+AnimationCel metronome_cel053[] = {
     /* Len */ 10,
     /* 000 */ 0x00e2, 0x41ed, 0x010e,
     /* 001 */ 0x80e0, 0x41f4, 0x001b,
@@ -510,7 +510,7 @@ const AnimationCel metronome_cel053[] = {
 };
 
 // [D_088f3292]
-const AnimationCel metronome_cel054[] = {
+AnimationCel metronome_cel054[] = {
     /* Len */ 6,
     /* 000 */ 0x00e0, 0x5003, 0x010e,
     /* 001 */ 0x80e0, 0x5004, 0x001c,
@@ -521,7 +521,7 @@ const AnimationCel metronome_cel054[] = {
 };
 
 // [D_088f32b8]
-const AnimationCel metronome_cel055[] = {
+AnimationCel metronome_cel055[] = {
     /* Len */ 6,
     /* 000 */ 0x00e1, 0x5003, 0x010e,
     /* 001 */ 0x80e0, 0x5004, 0x001e,
@@ -532,7 +532,7 @@ const AnimationCel metronome_cel055[] = {
 };
 
 // [D_088f32de]
-const AnimationCel metronome_cel056[] = {
+AnimationCel metronome_cel056[] = {
     /* Len */ 7,
     /* 000 */ 0x00e2, 0x5003, 0x010e,
     /* 001 */ 0x80e0, 0x5004, 0x001b,
@@ -544,7 +544,7 @@ const AnimationCel metronome_cel056[] = {
 };
 
 // [D_088f330a]
-const AnimationCel metronome_cel057[] = {
+AnimationCel metronome_cel057[] = {
     /* Len */ 10,
     /* 000 */ 0x00e2, 0x5003, 0x010e,
     /* 001 */ 0x80e0, 0x5004, 0x001b,
@@ -559,34 +559,34 @@ const AnimationCel metronome_cel057[] = {
 };
 
 // [D_088f3348]
-const AnimationCel metronome_cel058[] = {
+AnimationCel metronome_cel058[] = {
     /* Len */ 2,
     /* 000 */ 0x40e8, 0x81ec, 0x00d4,
     /* 001 */ 0x40f8, 0x41ec, 0x0200
 };
 
 // [D_088f3356]
-const AnimationCel metronome_cel059[] = {
+AnimationCel metronome_cel059[] = {
     /* Len */ 2,
     /* 000 */ 0x40e8, 0x81ec, 0x00dc,
     /* 001 */ 0x40f8, 0x41ec, 0x0204
 };
 
 // [D_088f3364]
-const AnimationCel metronome_cel060[] = {
+AnimationCel metronome_cel060[] = {
     /* Len */ 2,
     /* 000 */ 0x40e8, 0x81ec, 0x00d8,
     /* 001 */ 0x40f8, 0x41ec, 0x020c
 };
 
 // [D_088f3372]
-const AnimationCel metronome_cel061[] = {
+AnimationCel metronome_cel061[] = {
     /* Len */ 1,
     /* 000 */ 0x40fb, 0x41f5, 0x0210
 };
 
 // [D_088f337a]
-const AnimationCel metronome_cel062[] = {
+AnimationCel metronome_cel062[] = {
     /* Len */ 6,
     /* 000 */ 0x00eb, 0x41fd, 0x010e,
     /* 001 */ 0x40f8, 0x41f4, 0x01fa,
@@ -597,7 +597,7 @@ const AnimationCel metronome_cel062[] = {
 };
 
 // [D_088f33a0]
-const AnimationCel metronome_cel063[] = {
+AnimationCel metronome_cel063[] = {
     /* Len */ 5,
     /* 000 */ 0x00ed, 0x41fc, 0x010c,
     /* 001 */ 0x40f0, 0x81f3, 0x009c,
@@ -607,7 +607,7 @@ const AnimationCel metronome_cel063[] = {
 };
 
 // [D_088f33c0]
-const AnimationCel metronome_cel064[] = {
+AnimationCel metronome_cel064[] = {
     /* Len */ 5,
     /* 000 */ 0x00ee, 0x41fb, 0x010c,
     /* 001 */ 0x40f0, 0x81f2, 0x0098,
@@ -617,7 +617,7 @@ const AnimationCel metronome_cel064[] = {
 };
 
 // [D_088f33e0]
-const AnimationCel metronome_cel065[] = {
+AnimationCel metronome_cel065[] = {
     /* Len */ 5,
     /* 000 */ 0x00ef, 0x41fa, 0x010c,
     /* 001 */ 0x40f0, 0x81f1, 0x0098,
@@ -627,7 +627,7 @@ const AnimationCel metronome_cel065[] = {
 };
 
 // [D_088f3400]
-const AnimationCel metronome_cel066[] = {
+AnimationCel metronome_cel066[] = {
     /* Len */ 6,
     /* 000 */ 0x00f0, 0x41f9, 0x010c,
     /* 001 */ 0x40f0, 0x81f0, 0x0098,
@@ -638,7 +638,7 @@ const AnimationCel metronome_cel066[] = {
 };
 
 // [D_088f3426]
-const AnimationCel metronome_cel067[] = {
+AnimationCel metronome_cel067[] = {
     /* Len */ 6,
     /* 000 */ 0x00eb, 0x51f3, 0x010e,
     /* 001 */ 0x40f8, 0x51ec, 0x01fa,
@@ -649,7 +649,7 @@ const AnimationCel metronome_cel067[] = {
 };
 
 // [D_088f344c]
-const AnimationCel metronome_cel068[] = {
+AnimationCel metronome_cel068[] = {
     /* Len */ 5,
     /* 000 */ 0x00ed, 0x51f4, 0x010c,
     /* 001 */ 0x40f0, 0x91ed, 0x009c,
@@ -659,7 +659,7 @@ const AnimationCel metronome_cel068[] = {
 };
 
 // [D_088f346c]
-const AnimationCel metronome_cel069[] = {
+AnimationCel metronome_cel069[] = {
     /* Len */ 5,
     /* 000 */ 0x00ee, 0x51f5, 0x010c,
     /* 001 */ 0x40f0, 0x91ee, 0x0098,
@@ -669,7 +669,7 @@ const AnimationCel metronome_cel069[] = {
 };
 
 // [D_088f348c]
-const AnimationCel metronome_cel070[] = {
+AnimationCel metronome_cel070[] = {
     /* Len */ 5,
     /* 000 */ 0x00ef, 0x51f6, 0x010c,
     /* 001 */ 0x40f0, 0x91ef, 0x0098,
@@ -679,7 +679,7 @@ const AnimationCel metronome_cel070[] = {
 };
 
 // [D_088f34ac]
-const AnimationCel metronome_cel071[] = {
+AnimationCel metronome_cel071[] = {
     /* Len */ 6,
     /* 000 */ 0x00f0, 0x51f7, 0x010c,
     /* 001 */ 0x40f0, 0x91f0, 0x0098,
@@ -690,7 +690,7 @@ const AnimationCel metronome_cel071[] = {
 };
 
 // [D_088f34d2]
-const AnimationCel metronome_cel072[] = {
+AnimationCel metronome_cel072[] = {
     /* Len */ 7,
     /* 000 */ 0x00f1, 0x51f8, 0x010c,
     /* 001 */ 0x40f0, 0x91ea, 0x00c8,
@@ -702,7 +702,7 @@ const AnimationCel metronome_cel072[] = {
 };
 
 // [D_088f34fe]
-const AnimationCel metronome_cel073[] = {
+AnimationCel metronome_cel073[] = {
     /* Len */ 4,
     /* 000 */ 0x00f0, 0x51f7, 0x010c,
     /* 001 */ 0x40f0, 0x91ea, 0x00c0,
@@ -711,7 +711,7 @@ const AnimationCel metronome_cel073[] = {
 };
 
 // [D_088f3518]
-const AnimationCel metronome_cel074[] = {
+AnimationCel metronome_cel074[] = {
     /* Len */ 4,
     /* 000 */ 0x00ef, 0x51f6, 0x010c,
     /* 001 */ 0x40f0, 0x91ea, 0x00c4,
@@ -720,7 +720,7 @@ const AnimationCel metronome_cel074[] = {
 };
 
 // [D_088f3532]
-const AnimationCel metronome_cel075[] = {
+AnimationCel metronome_cel075[] = {
     /* Len */ 4,
     /* 000 */ 0x00ee, 0x51f5, 0x010c,
     /* 001 */ 0x40f0, 0x91e9, 0x00d0,
@@ -729,7 +729,7 @@ const AnimationCel metronome_cel075[] = {
 };
 
 // [D_088f354c]
-const AnimationCel metronome_cel076[] = {
+AnimationCel metronome_cel076[] = {
     /* Len */ 4,
     /* 000 */ 0x40f0, 0x91e9, 0x00cc,
     /* 001 */ 0x00ed, 0x51f5, 0x010e,
@@ -738,7 +738,7 @@ const AnimationCel metronome_cel076[] = {
 };
 
 // [D_088f3566]
-const AnimationCel metronome_cel077[] = {
+AnimationCel metronome_cel077[] = {
     /* Len */ 7,
     /* 000 */ 0x00f1, 0x41f8, 0x010c,
     /* 001 */ 0x40f0, 0x81f6, 0x00c8,
@@ -750,7 +750,7 @@ const AnimationCel metronome_cel077[] = {
 };
 
 // [D_088f3592]
-const AnimationCel metronome_cel078[] = {
+AnimationCel metronome_cel078[] = {
     /* Len */ 4,
     /* 000 */ 0x00f0, 0x41f9, 0x010c,
     /* 001 */ 0x40f0, 0x81f6, 0x00c0,
@@ -759,7 +759,7 @@ const AnimationCel metronome_cel078[] = {
 };
 
 // [D_088f35ac]
-const AnimationCel metronome_cel079[] = {
+AnimationCel metronome_cel079[] = {
     /* Len */ 4,
     /* 000 */ 0x00ef, 0x41fa, 0x010c,
     /* 001 */ 0x40f0, 0x81f6, 0x00c4,
@@ -768,7 +768,7 @@ const AnimationCel metronome_cel079[] = {
 };
 
 // [D_088f35c6]
-const AnimationCel metronome_cel080[] = {
+AnimationCel metronome_cel080[] = {
     /* Len */ 4,
     /* 000 */ 0x00ee, 0x41fb, 0x010c,
     /* 001 */ 0x40f0, 0x81f7, 0x00d0,
@@ -777,7 +777,7 @@ const AnimationCel metronome_cel080[] = {
 };
 
 // [D_088f35e0]
-const AnimationCel metronome_cel081[] = {
+AnimationCel metronome_cel081[] = {
     /* Len */ 4,
     /* 000 */ 0x40f0, 0x81f7, 0x00cc,
     /* 001 */ 0x00ed, 0x41fb, 0x010e,
@@ -786,28 +786,28 @@ const AnimationCel metronome_cel081[] = {
 };
 
 // [D_088f35fa]
-const AnimationCel metronome_cel082[] = {
+AnimationCel metronome_cel082[] = {
     /* Len */ 2,
     /* 000 */ 0x40f0, 0x01fa, 0x01fe,
     /* 001 */ 0x00fc, 0x01fc, 0x0241
 };
 
 // [D_088f3608]
-const AnimationCel metronome_cel083[] = {
+AnimationCel metronome_cel083[] = {
     /* Len */ 2,
     /* 000 */ 0x40f0, 0x01fa, 0x01fe,
     /* 001 */ 0x00fc, 0x01fc, 0x0243
 };
 
 // [D_088f3616]
-const AnimationCel metronome_cel084[] = {
+AnimationCel metronome_cel084[] = {
     /* Len */ 2,
     /* 000 */ 0x40f0, 0x01fa, 0x01fe,
     /* 001 */ 0x00fc, 0x01fc, 0x023f
 };
 
 // [D_088f3624]
-const AnimationCel metronome_cel085[] = {
+AnimationCel metronome_cel085[] = {
     /* Len */ 4,
     /* 000 */ 0x00ed, 0x41fb, 0x014e,
     /* 001 */ 0x80e4, 0x11ff, 0x201f,
@@ -816,7 +816,7 @@ const AnimationCel metronome_cel085[] = {
 };
 
 // [D_088f363e]
-const AnimationCel metronome_cel086[] = {
+AnimationCel metronome_cel086[] = {
     /* Len */ 5,
     /* 000 */ 0x00ef, 0x41fb, 0x014e,
     /* 001 */ 0x80e6, 0x11ff, 0x201f,
@@ -826,7 +826,7 @@ const AnimationCel metronome_cel086[] = {
 };
 
 // [D_088f365e]
-const AnimationCel metronome_cel087[] = {
+AnimationCel metronome_cel087[] = {
     /* Len */ 5,
     /* 000 */ 0x00ed, 0x41fb, 0x014e,
     /* 001 */ 0x80e4, 0x11ff, 0x201f,
@@ -836,7 +836,7 @@ const AnimationCel metronome_cel087[] = {
 };
 
 // [D_088f367e]
-const AnimationCel metronome_cel088[] = {
+AnimationCel metronome_cel088[] = {
     /* Len */ 5,
     /* 000 */ 0x00ee, 0x41fb, 0x014e,
     /* 001 */ 0x80e5, 0x11ff, 0x201f,
@@ -846,7 +846,7 @@ const AnimationCel metronome_cel088[] = {
 };
 
 // [D_088f369e]
-const AnimationCel metronome_cel089[] = {
+AnimationCel metronome_cel089[] = {
     /* Len */ 4,
     /* 000 */ 0x00ee, 0x41fb, 0x0140,
     /* 001 */ 0x80e5, 0x11ff, 0x201f,
@@ -855,7 +855,7 @@ const AnimationCel metronome_cel089[] = {
 };
 
 // [D_088f36b8]
-const AnimationCel metronome_cel090[] = {
+AnimationCel metronome_cel090[] = {
     /* Len */ 4,
     /* 000 */ 0x00ea, 0x41f4, 0x0148,
     /* 001 */ 0x00ee, 0x41f9, 0x0116,
@@ -864,7 +864,7 @@ const AnimationCel metronome_cel090[] = {
 };
 
 // [D_088f36d2]
-const AnimationCel metronome_cel091[] = {
+AnimationCel metronome_cel091[] = {
     /* Len */ 4,
     /* 000 */ 0x40f3, 0x01ef, 0x01de,
     /* 001 */ 0x00ef, 0x41f7, 0x0150,
@@ -873,7 +873,7 @@ const AnimationCel metronome_cel091[] = {
 };
 
 // [D_088f36ec]
-const AnimationCel metronome_cel092[] = {
+AnimationCel metronome_cel092[] = {
     /* Len */ 4,
     /* 000 */ 0x40f4, 0x01ef, 0x01de,
     /* 001 */ 0x00f0, 0x41f7, 0x0150,
@@ -882,7 +882,7 @@ const AnimationCel metronome_cel092[] = {
 };
 
 // [D_088f3706]
-const AnimationCel metronome_cel093[] = {
+AnimationCel metronome_cel093[] = {
     /* Len */ 6,
     /* 000 */ 0x00f5, 0x01ef, 0x0238,
     /* 001 */ 0x40f5, 0x01ef, 0x01de,
@@ -893,7 +893,7 @@ const AnimationCel metronome_cel093[] = {
 };
 
 // [D_088f372c]
-const AnimationCel metronome_cel094[] = {
+AnimationCel metronome_cel094[] = {
     /* Len */ 4,
     /* 000 */ 0x40da, 0x01f7, 0x01fe,
     /* 001 */ 0x00ed, 0x51f5, 0x014e,
@@ -902,7 +902,7 @@ const AnimationCel metronome_cel094[] = {
 };
 
 // [D_088f3746]
-const AnimationCel metronome_cel095[] = {
+AnimationCel metronome_cel095[] = {
     /* Len */ 5,
     /* 000 */ 0x00ef, 0x51f5, 0x014e,
     /* 001 */ 0x80e6, 0x01f9, 0x201f,
@@ -912,7 +912,7 @@ const AnimationCel metronome_cel095[] = {
 };
 
 // [D_088f3766]
-const AnimationCel metronome_cel096[] = {
+AnimationCel metronome_cel096[] = {
     /* Len */ 5,
     /* 000 */ 0x00ed, 0x51f5, 0x014e,
     /* 001 */ 0x80e4, 0x01f9, 0x201f,
@@ -922,7 +922,7 @@ const AnimationCel metronome_cel096[] = {
 };
 
 // [D_088f3786]
-const AnimationCel metronome_cel097[] = {
+AnimationCel metronome_cel097[] = {
     /* Len */ 5,
     /* 000 */ 0x00ee, 0x51f5, 0x014e,
     /* 001 */ 0x80e5, 0x01f9, 0x201f,
@@ -932,7 +932,7 @@ const AnimationCel metronome_cel097[] = {
 };
 
 // [D_088f37a6]
-const AnimationCel metronome_cel098[] = {
+AnimationCel metronome_cel098[] = {
     /* Len */ 4,
     /* 000 */ 0x00ee, 0x51f5, 0x0140,
     /* 001 */ 0x80e5, 0x01f9, 0x201f,
@@ -941,7 +941,7 @@ const AnimationCel metronome_cel098[] = {
 };
 
 // [D_088f37c0]
-const AnimationCel metronome_cel099[] = {
+AnimationCel metronome_cel099[] = {
     /* Len */ 4,
     /* 000 */ 0x00ea, 0x51fc, 0x0148,
     /* 001 */ 0x00ee, 0x51f7, 0x0116,
@@ -950,7 +950,7 @@ const AnimationCel metronome_cel099[] = {
 };
 
 // [D_088f37da]
-const AnimationCel metronome_cel100[] = {
+AnimationCel metronome_cel100[] = {
     /* Len */ 4,
     /* 000 */ 0x40f3, 0x1001, 0x01de,
     /* 001 */ 0x00ef, 0x51f9, 0x0150,
@@ -959,7 +959,7 @@ const AnimationCel metronome_cel100[] = {
 };
 
 // [D_088f37f4]
-const AnimationCel metronome_cel101[] = {
+AnimationCel metronome_cel101[] = {
     /* Len */ 4,
     /* 000 */ 0x40f4, 0x1001, 0x01de,
     /* 001 */ 0x00f0, 0x51f9, 0x0150,
@@ -968,7 +968,7 @@ const AnimationCel metronome_cel101[] = {
 };
 
 // [D_088f380e]
-const AnimationCel metronome_cel102[] = {
+AnimationCel metronome_cel102[] = {
     /* Len */ 6,
     /* 000 */ 0x00f5, 0x1009, 0x0238,
     /* 001 */ 0x40f5, 0x1001, 0x01de,
@@ -979,7 +979,7 @@ const AnimationCel metronome_cel102[] = {
 };
 
 // [D_088f3834]
-const AnimationCel metronome_cel103[] = {
+AnimationCel metronome_cel103[] = {
     /* Len */ 7,
     /* 000 */ 0x00eb, 0x41fd, 0x014e,
     /* 001 */ 0x80e2, 0x0001, 0x201f,
@@ -991,7 +991,7 @@ const AnimationCel metronome_cel103[] = {
 };
 
 // [D_088f3860]
-const AnimationCel metronome_cel104[] = {
+AnimationCel metronome_cel104[] = {
     /* Len */ 7,
     /* 000 */ 0x00ec, 0x41fd, 0x014e,
     /* 001 */ 0x80e3, 0x0001, 0x201f,
@@ -1003,7 +1003,7 @@ const AnimationCel metronome_cel104[] = {
 };
 
 // [D_088f388c]
-const AnimationCel metronome_cel105[] = {
+AnimationCel metronome_cel105[] = {
     /* Len */ 7,
     /* 000 */ 0x00eb, 0x41fd, 0x014e,
     /* 001 */ 0x80e2, 0x0001, 0x201f,
@@ -1015,7 +1015,7 @@ const AnimationCel metronome_cel105[] = {
 };
 
 // [D_088f38b8]
-const AnimationCel metronome_cel106[] = {
+AnimationCel metronome_cel106[] = {
     /* Len */ 7,
     /* 000 */ 0x00ec, 0x41fd, 0x014e,
     /* 001 */ 0x80e3, 0x0001, 0x201f,
@@ -1027,7 +1027,7 @@ const AnimationCel metronome_cel106[] = {
 };
 
 // [D_088f38e4]
-const AnimationCel metronome_cel107[] = {
+AnimationCel metronome_cel107[] = {
     /* Len */ 7,
     /* 000 */ 0x80e2, 0x11f7, 0x201f,
     /* 001 */ 0x40d8, 0x01f5, 0x01fe,
@@ -1039,7 +1039,7 @@ const AnimationCel metronome_cel107[] = {
 };
 
 // [D_088f3910]
-const AnimationCel metronome_cel108[] = {
+AnimationCel metronome_cel108[] = {
     /* Len */ 7,
     /* 000 */ 0x00ec, 0x51f3, 0x014e,
     /* 001 */ 0x80e3, 0x11f7, 0x201f,
@@ -1051,7 +1051,7 @@ const AnimationCel metronome_cel108[] = {
 };
 
 // [D_088f393c]
-const AnimationCel metronome_cel109[] = {
+AnimationCel metronome_cel109[] = {
     /* Len */ 7,
     /* 000 */ 0x00eb, 0x51f3, 0x014e,
     /* 001 */ 0x80e2, 0x11f7, 0x201f,
@@ -1063,7 +1063,7 @@ const AnimationCel metronome_cel109[] = {
 };
 
 // [D_088f3968]
-const AnimationCel metronome_cel110[] = {
+AnimationCel metronome_cel110[] = {
     /* Len */ 7,
     /* 000 */ 0x00ec, 0x51f3, 0x014e,
     /* 001 */ 0x80e3, 0x11f7, 0x201f,
@@ -1075,7 +1075,7 @@ const AnimationCel metronome_cel110[] = {
 };
 
 // [D_088f3994]
-const AnimationCel metronome_cel111[] = {
+AnimationCel metronome_cel111[] = {
     /* Len */ 7,
     /* 000 */ 0x00eb, 0x41fd, 0x0140,
     /* 001 */ 0x80e2, 0x0001, 0x201f,
@@ -1087,7 +1087,7 @@ const AnimationCel metronome_cel111[] = {
 };
 
 // [D_088f39c0]
-const AnimationCel metronome_cel112[] = {
+AnimationCel metronome_cel112[] = {
     /* Len */ 7,
     /* 000 */ 0x00eb, 0x41fd, 0x0116,
     /* 001 */ 0x40d9, 0x01ff, 0x01fe,
@@ -1099,7 +1099,7 @@ const AnimationCel metronome_cel112[] = {
 };
 
 // [D_088f39ec]
-const AnimationCel metronome_cel113[] = {
+AnimationCel metronome_cel113[] = {
     /* Len */ 7,
     /* 000 */ 0x00ec, 0x41fd, 0x0150,
     /* 001 */ 0x40da, 0x01ff, 0x01fe,
@@ -1111,7 +1111,7 @@ const AnimationCel metronome_cel113[] = {
 };
 
 // [D_088f3a18]
-const AnimationCel metronome_cel114[] = {
+AnimationCel metronome_cel114[] = {
     /* Len */ 7,
     /* 000 */ 0x00ed, 0x41fd, 0x0150,
     /* 001 */ 0x40db, 0x01ff, 0x01fe,
@@ -1123,7 +1123,7 @@ const AnimationCel metronome_cel114[] = {
 };
 
 // [D_088f3a44]
-const AnimationCel metronome_cel115[] = {
+AnimationCel metronome_cel115[] = {
     /* Len */ 8,
     /* 000 */ 0x00f2, 0x01f4, 0x0238,
     /* 001 */ 0x00ee, 0x41fd, 0x0150,
@@ -1136,7 +1136,7 @@ const AnimationCel metronome_cel115[] = {
 };
 
 // [D_088f3a76]
-const AnimationCel metronome_cel116[] = {
+AnimationCel metronome_cel116[] = {
     /* Len */ 7,
     /* 000 */ 0x00eb, 0x51f3, 0x0140,
     /* 001 */ 0x80e2, 0x11f7, 0x201f,
@@ -1148,7 +1148,7 @@ const AnimationCel metronome_cel116[] = {
 };
 
 // [D_088f3aa2]
-const AnimationCel metronome_cel117[] = {
+AnimationCel metronome_cel117[] = {
     /* Len */ 7,
     /* 000 */ 0x00eb, 0x51f3, 0x0116,
     /* 001 */ 0x40f0, 0x91ec, 0x0084,
@@ -1160,7 +1160,7 @@ const AnimationCel metronome_cel117[] = {
 };
 
 // [D_088f3ace]
-const AnimationCel metronome_cel118[] = {
+AnimationCel metronome_cel118[] = {
     /* Len */ 7,
     /* 000 */ 0x00ec, 0x51f3, 0x0150,
     /* 001 */ 0x40f0, 0x91ec, 0x0084,
@@ -1172,7 +1172,7 @@ const AnimationCel metronome_cel118[] = {
 };
 
 // [D_088f3afa]
-const AnimationCel metronome_cel119[] = {
+AnimationCel metronome_cel119[] = {
     /* Len */ 7,
     /* 000 */ 0x00ed, 0x51f3, 0x0150,
     /* 001 */ 0x40f0, 0x91ec, 0x0084,
@@ -1184,7 +1184,7 @@ const AnimationCel metronome_cel119[] = {
 };
 
 // [D_088f3b26]
-const AnimationCel metronome_cel120[] = {
+AnimationCel metronome_cel120[] = {
     /* Len */ 8,
     /* 000 */ 0x00f2, 0x1004, 0x0238,
     /* 001 */ 0x00ee, 0x51f3, 0x0150,

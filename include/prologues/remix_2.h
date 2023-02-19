@@ -14,9 +14,9 @@ struct Remix2PrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *remix_2_prologue_buffered_textures[]; // Buffered Textures List
+extern struct CompressedGraphics *remix_2_prologue_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable remix_2_prologue_gfx_table[]; // Graphics Table
-extern const struct Animation anim_remix_2_prologue_title[]; // Animation: Text (Remix 2)
+extern struct Animation anim_remix_2_prologue_title[]; // Animation: Text (Remix 2)
 
 // Functions:
 extern void func_08046724(void);    // [func_08046724] GFX_INIT Func_02

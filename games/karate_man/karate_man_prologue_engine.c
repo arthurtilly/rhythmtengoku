@@ -4,18 +4,18 @@
   /* PROLOGUE (KARATE MAN) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08bea934;
-extern const struct CompressedGraphics D_08beab8c;
-extern const struct CompressedGraphics D_08be9f5c;
-extern const Palette karate_man_prologue_bg_pal[];
-extern const Palette karate_man_prologue_obj_pal[];
+extern struct CompressedGraphics D_08bea934;
+extern struct CompressedGraphics D_08beab8c;
+extern struct CompressedGraphics D_08be9f5c;
+extern Palette karate_man_prologue_bg_pal[];
+extern Palette karate_man_prologue_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ea650] Buffered Textures List
-const struct CompressedGraphics *karate_man_prologue_buffered_textures[] = {
+struct CompressedGraphics *karate_man_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

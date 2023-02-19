@@ -90,17 +90,17 @@ extern const char D_0805a900[];
 
 
 // Engine Definition Data:
-extern const struct Animation **tap_trial_anim_table[];
+extern struct Animation **tap_trial_anim_table[];
 extern struct TapTrialAction *tap_trial_girl_action_table[];
 extern struct TapTrialAction *tap_trial_monkey_action_table[];
-extern const struct CompressedGraphics *tap_trial_buffered_textures[];
+extern struct CompressedGraphics *tap_trial_buffered_textures[];
 extern struct GraphicsTable *tap_trial_gfx_tables[];
 extern const char *D_089e8054[];
 extern s8 D_089e8068[];
 
 
 // Functions:
-extern const struct Animation *tap_trial_get_anim(u32 anim); // Get Animation
+extern struct Animation *tap_trial_get_anim(u32 anim); // Get Animation
 extern void tap_trial_play_girl_action(u32 action); // Play Girl Action
 extern void tap_trial_play_monkey_action(u32 action); // Engine Event 0x00 (Play Monkey Action)
 extern void tap_trial_init_gfx3(void); // Graphics Init. 3

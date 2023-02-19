@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088b88ac] Palette
-const Palette tram_and_pauline_prologue_pal[] = {
+Palette tram_and_pauline_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF830F0),
         /* 01 */ TO_RGB555(0x18B000),

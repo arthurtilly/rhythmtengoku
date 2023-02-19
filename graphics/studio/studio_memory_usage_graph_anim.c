@@ -4,7 +4,7 @@
 #include "studio_memory_usage_graph_anim_cells.inc.c"
 
 // [D_08900bcc] <description>
-const struct Animation studio_memory_usage_graph_anim00[] = {
+struct Animation studio_memory_usage_graph_anim00[] = {
     /* 000 */ { studio_memory_usage_graph_cel001, 4 },
     /* 001 */ { studio_memory_usage_graph_cel002, 4 },
     /* 002 */ { studio_memory_usage_graph_cel003, 4 },
@@ -66,7 +66,7 @@ const struct Animation studio_memory_usage_graph_anim00[] = {
 };
 
 // [D_08900d9c] <description>
-const struct Animation studio_memory_usage_graph_anim01[] = {
+struct Animation studio_memory_usage_graph_anim01[] = {
     /* 000 */ { studio_memory_usage_graph_cel000, 4 },
     /* End */ END_ANIMATION
 };

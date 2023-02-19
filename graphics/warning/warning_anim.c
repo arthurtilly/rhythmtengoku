@@ -4,7 +4,7 @@
 #include "warning_anim_cells.inc.c"
 
 // [D_08932444] <description>
-const struct Animation warning_anim00[] = {
+struct Animation warning_anim00[] = {
     /* 000 */ { warning_cel000, 20 },
     /* 001 */ { warning_cel001, 1 },
     /* 002 */ { warning_cel002, 1 },

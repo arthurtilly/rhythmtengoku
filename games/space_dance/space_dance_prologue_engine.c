@@ -4,17 +4,17 @@
   /* PROLOGUE (SPACE DANCE) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c2575c;
-extern const struct CompressedGraphics D_08c25aa8;
-extern const struct CompressedGraphics D_08c24f60;
-extern const Palette space_dance_prologue_pal[];
+extern struct CompressedGraphics D_08c2575c;
+extern struct CompressedGraphics D_08c25aa8;
+extern struct CompressedGraphics D_08c24f60;
+extern Palette space_dance_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ed400] Buffered Textures List
-const struct CompressedGraphics *space_dance_prologue_buffered_textures[] = {
+struct CompressedGraphics *space_dance_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

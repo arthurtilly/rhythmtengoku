@@ -1,13 +1,13 @@
 // do not rename these
 
 // [D_088b0a3c]
-const AnimationCel marching_orders_2_prologue_cel000[] = {
+AnimationCel marching_orders_2_prologue_cel000[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x005f
 };
 
 // [D_088b0a44]
-const AnimationCel marching_orders_2_prologue_cel001[] = {
+AnimationCel marching_orders_2_prologue_cel001[] = {
     /* Len */ 3,
     /* 000 */ 0x00f8, 0x01d0, 0x005f,
     /* 001 */ 0x40d8, 0x81b0, 0x0055,
@@ -15,7 +15,7 @@ const AnimationCel marching_orders_2_prologue_cel001[] = {
 };
 
 // [D_088b0a58]
-const AnimationCel marching_orders_2_prologue_cel002[] = {
+AnimationCel marching_orders_2_prologue_cel002[] = {
     /* Len */ 5,
     /* 000 */ 0x00d8, 0x81b0, 0x0000,
     /* 001 */ 0x80d8, 0x41d0, 0x0013,
@@ -25,7 +25,7 @@ const AnimationCel marching_orders_2_prologue_cel002[] = {
 };
 
 // [D_088b0a78]
-const AnimationCel marching_orders_2_prologue_cel003[] = {
+AnimationCel marching_orders_2_prologue_cel003[] = {
     /* Len */ 9,
     /* 000 */ 0x00d8, 0x81b0, 0x0000,
     /* 001 */ 0x80d8, 0x41d0, 0x0013,
@@ -39,7 +39,7 @@ const AnimationCel marching_orders_2_prologue_cel003[] = {
 };
 
 // [D_088b0ab0]
-const AnimationCel marching_orders_2_prologue_cel004[] = {
+AnimationCel marching_orders_2_prologue_cel004[] = {
     /* Len */ 11,
     /* 000 */ 0x00d8, 0x81b0, 0x0000,
     /* 001 */ 0x80d8, 0x41d0, 0x0013,
@@ -55,7 +55,7 @@ const AnimationCel marching_orders_2_prologue_cel004[] = {
 };
 
 // [D_088b0af4]
-const AnimationCel marching_orders_2_prologue_cel005[] = {
+AnimationCel marching_orders_2_prologue_cel005[] = {
     /* Len */ 11,
     /* 000 */ 0x00d8, 0x8008, 0x0004,
     /* 001 */ 0x80d8, 0x4028, 0x0014,
@@ -71,7 +71,7 @@ const AnimationCel marching_orders_2_prologue_cel005[] = {
 };
 
 // [D_088b0b38]
-const AnimationCel marching_orders_2_prologue_cel006[] = {
+AnimationCel marching_orders_2_prologue_cel006[] = {
     /* Len */ 13,
     /* 000 */ 0x00d8, 0x81b0, 0x0000,
     /* 001 */ 0x80d8, 0x41d0, 0x0013,
@@ -89,7 +89,7 @@ const AnimationCel marching_orders_2_prologue_cel006[] = {
 };
 
 // [D_088b0b88]
-const AnimationCel marching_orders_2_prologue_cel007[] = {
+AnimationCel marching_orders_2_prologue_cel007[] = {
     /* Len */ 17,
     /* 000 */ 0x00d8, 0x81b0, 0x0000,
     /* 001 */ 0x80d8, 0x41d0, 0x0013,

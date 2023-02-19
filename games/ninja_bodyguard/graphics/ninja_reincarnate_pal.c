@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_08935678] Ninja Reincarnate BG Palette
-const Palette ninja_reincarnate_bg_pal[] = {
+Palette ninja_reincarnate_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00E0F8),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -60,7 +60,7 @@ const Palette ninja_reincarnate_bg_pal[] = {
 };
 
 // [D_089356d8] Ninja Reincarnate OBJ Palette
-const Palette ninja_reincarnate_obj_pal[] = {
+Palette ninja_reincarnate_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00F870),
         /* 01 */ TO_RGB555(0xF8F8F8),

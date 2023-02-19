@@ -4,17 +4,17 @@
   /* PROLOGUE (RAT RACE) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c22764;
-extern const struct CompressedGraphics D_08c229b4;
-extern const struct CompressedGraphics D_08c21f88;
-extern const Palette rat_race_prologue_pal[];
+extern struct CompressedGraphics D_08c22764;
+extern struct CompressedGraphics D_08c229b4;
+extern struct CompressedGraphics D_08c21f88;
+extern Palette rat_race_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ecfbc] Buffered Textures List
-const struct CompressedGraphics *rat_race_prologue_buffered_textures[] = {
+struct CompressedGraphics *rat_race_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

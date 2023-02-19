@@ -53,8 +53,8 @@ struct DrumTechController {
     s16 pedalHiHatSprite;
     s16 pedalHiHatDrumID;
     s16 rightLegSprite;
-    const struct Animation *useKickPedalAnim;
-    const struct Animation *useHiHatPedalAnim;
+    struct Animation *useKickPedalAnim;
+    struct Animation *useHiHatPedalAnim;
 };
 
 struct NightWalkInfo {
@@ -140,23 +140,23 @@ enum NightWalkCuesEnum {
 
 
 // OAM Animations:
-extern const struct Animation anim_play_yan_jump[]; // [D_088c9a98] Play-Yan Jump
-extern const struct Animation anim_play_yan_walk[]; // [D_088c9ab8] Play-Yan Walk
-extern const struct Animation anim_night_walk_fish[]; // [D_088c9b08] Electric Fish Idle
-extern const struct Animation anim_play_yan_short_hop[]; // [D_088c9b98] Play-Yan Small Hop
-extern const struct Animation anim_night_walk_note_bridge[]; // [D_088c9d10] Note Box & Platform
-extern const struct Animation anim_play_yan_fall[]; // [D_088c9d58] Play-Yan Fall
-extern const struct Animation anim_night_walk_balloon[]; // [D_088c9d88] Balloon
-extern const struct Animation anim_night_walk_balloon_pop[]; // [D_088c9dc0] Balloon Pop
-extern const struct Animation anim_night_walk_bridge_disappear[]; // [D_088c9dd0] Box & Platform Disappear
-extern const struct Animation anim_night_walk_box_disappear[]; // [D_088c9de0] Box Disappear
-extern const struct Animation anim_night_walk_star_tiny[]; // [D_088c9ec8] Very Small Star
-extern const struct Animation anim_night_walk_star_disappear[]; // [D_088c9f58] End Flash
-extern const struct Animation anim_play_yan_star_wand[]; // [D_088c9f90] Play-Yan Star Wand
-extern const struct Animation anim_night_walk_wand_box[]; // [D_088ca0d8] Star Wand Box
-extern const struct Animation anim_night_walk_ng_wand_box[]; // [D_088ca120] NG Star Wand Box
-extern const struct Animation anim_night_walk_fish_zap[]; // [D_088ca140] Electric Fish Zap
-extern const struct Animation anim_play_yan_violent_electrocution[]; // [D_088ca158] Play-Yan Violent Electrocution
+extern struct Animation anim_play_yan_jump[]; // [D_088c9a98] Play-Yan Jump
+extern struct Animation anim_play_yan_walk[]; // [D_088c9ab8] Play-Yan Walk
+extern struct Animation anim_night_walk_fish[]; // [D_088c9b08] Electric Fish Idle
+extern struct Animation anim_play_yan_short_hop[]; // [D_088c9b98] Play-Yan Small Hop
+extern struct Animation anim_night_walk_note_bridge[]; // [D_088c9d10] Note Box & Platform
+extern struct Animation anim_play_yan_fall[]; // [D_088c9d58] Play-Yan Fall
+extern struct Animation anim_night_walk_balloon[]; // [D_088c9d88] Balloon
+extern struct Animation anim_night_walk_balloon_pop[]; // [D_088c9dc0] Balloon Pop
+extern struct Animation anim_night_walk_bridge_disappear[]; // [D_088c9dd0] Box & Platform Disappear
+extern struct Animation anim_night_walk_box_disappear[]; // [D_088c9de0] Box Disappear
+extern struct Animation anim_night_walk_star_tiny[]; // [D_088c9ec8] Very Small Star
+extern struct Animation anim_night_walk_star_disappear[]; // [D_088c9f58] End Flash
+extern struct Animation anim_play_yan_star_wand[]; // [D_088c9f90] Play-Yan Star Wand
+extern struct Animation anim_night_walk_wand_box[]; // [D_088ca0d8] Star Wand Box
+extern struct Animation anim_night_walk_ng_wand_box[]; // [D_088ca120] NG Star Wand Box
+extern struct Animation anim_night_walk_fish_zap[]; // [D_088ca140] Electric Fish Zap
+extern struct Animation anim_play_yan_violent_electrocution[]; // [D_088ca158] Play-Yan Violent Electrocution
 
 
 // Palettes:
@@ -169,11 +169,11 @@ extern const struct Animation anim_play_yan_violent_electrocution[]; // [D_088ca
 
 
 // Engine Definition Data:
-extern const struct Animation *night_walk_star_anim[]; // Stars
-extern const struct Animation *night_walk_star_expand_anim[]; // Star Flashes
+extern struct Animation *night_walk_star_anim[]; // Stars
+extern struct Animation *night_walk_star_expand_anim[]; // Star Flashes
 extern struct SequenceData *D_089e2ef8[];
 extern struct DrumTechInstrument drumtech_drum_bank[];
-extern const struct CompressedGraphics *night_walk_buffered_textures[]; // Buffered Textures
+extern struct CompressedGraphics *night_walk_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable night_walk_gfx_table[]; // Graphics Table
 extern struct DrumTechNote drum_seq_night_walk_kick_barely[];
 extern struct DrumTechNote *night_walk_drum_seq_kick[];
@@ -186,9 +186,9 @@ extern struct DrumTechNote *night_walk_drum_seq_roll[];
 extern struct DrumTechNote drum_seq_night_walk_default[];
 extern struct DrumTechNote *night_walk_drum_seq_offbeat[];
 extern struct DrumTechNote *night_walk_drum_seq_offbeat_swing[];
-extern const struct Animation *night_walk_bridge_anim[]; // Bridge Hit Anim
-extern const struct Animation *night_walk_box_anim[]; // Box Hit Anim
-extern const struct Animation *night_walk_barely_anim[][2]; // Barely Anim
+extern struct Animation *night_walk_bridge_anim[]; // Bridge Hit Anim
+extern struct Animation *night_walk_box_anim[]; // Box Hit Anim
+extern struct Animation *night_walk_barely_anim[][2]; // Barely Anim
 extern struct DrumTechNote drum_seq_night_walk_short_hop[];
 
 
@@ -208,7 +208,7 @@ extern void night_walk_update_play_yan(void); // Update Play-Yan
 
 // extern ? night_walk_init_stars(?); // Init. Stars
 extern s32 night_walk_scroll_stars(void); // Update Stars
-extern void night_walk_finish_star_expansion(s32 arg0, s16 sprite, const struct Animation *anim); // End of Star Size-Up
+extern void night_walk_finish_star_expansion(s32 arg0, s16 sprite, struct Animation *anim); // End of Star Size-Up
 extern void night_walk_expand_star(void); // Increase Star Progress
 extern void night_walk_expand_stars(u32 total); // Increase Stars Progress
 extern void night_walk_event_expand_stars(u32 total); // Engine Event 0x09 (Increase Stars Progress) [total = { 1..3 }]
@@ -235,7 +235,7 @@ extern void play_drumtech_kit_no_anim(const struct DrumTechKit *drumKit, u32 inp
 extern void update_drumtech_open_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 released); // Update DrumTech Open/Close Hi-Hat
 extern void update_drumtech_pedal_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 pressed, u16 released); // Update DrumTech Pedal Hi-Hat
 extern void set_drumtech_hihat_gfx(s16 hiHatSprite); // Set DrumTech Hi-Hat Graphics
-extern void set_drumtech_pedal_hihat_gfx(s16 pedalHiHatSprite, s16 rightLegSprite, const struct Animation *useKick, const struct Animation *useHiHat); // Set DrumTech Pedal Hi-Hat Graphics
+extern void set_drumtech_pedal_hihat_gfx(s16 pedalHiHatSprite, s16 rightLegSprite, struct Animation *useKick, struct Animation *useHiHat); // Set DrumTech Pedal Hi-Hat Graphics
 extern void update_drumtech_hihat(const struct DrumTechKit *drumKit, u16 inputs, u16 pressed, u16 released); // Update DrumTech Hi-Hats
 extern void set_drumtech_volume(u32 volume); // Set DrumTech Volume
 extern void set_drumtech_note_func(void *func); // Set DrumTech Special Note Function

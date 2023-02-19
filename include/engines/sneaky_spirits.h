@@ -53,24 +53,24 @@ enum SneakySpiritsVersionsEnum {
 
 
 // OAM Animations:
-extern const struct Animation anim_sneaky_spirits_bow[]; // Animation: "bow_draw"
-extern const struct Animation anim_sneaky_spirit_hit[]; // Animation: "ghost_hit"
-extern const struct Animation anim_sneaky_spirits_back_wall[]; // Animation: "door_back_wall"
-extern const struct Animation anim_sneaky_spirits_door[]; // Animation: "door_open"
-extern const struct Animation anim_sneaky_spirit_taunt[]; // Animation: "ghost_miss_taunt"
-extern const struct Animation anim_sneaky_spirits_arrow_miss[]; // Animation: "arrow_miss"
-extern const struct Animation anim_sneaky_spirit_scared_early[]; // Animation: "ghost_barely_scared"
-extern const struct Animation anim_sneaky_spirits_tree[]; // Animation: "tree"
-extern const struct Animation anim_sneaky_spirit_walk[]; // Animation: "ghost_walk"
-extern const struct Animation anim_sneaky_spirit_dash[]; // Animation: "ghost_miss_dash"
-extern const struct Animation anim_sneaky_spirits_rain[]; // Animation: "rain_fall"
-extern const struct Animation anim_sneaky_spirits_splash[]; // Animation: "rain_splash"
-extern const struct Animation anim_sneaky_spirits_rain_slow[]; // Animation: "rain_fall_slow"
-extern const struct Animation anim_sneaky_spirits_bow_shoot[]; // Animation: "bow_shoot"
-extern const struct Animation anim_sneaky_spirits_wall_mask[]; // Animation: "ghost_mask" (might be masking)
-extern const struct Animation anim_sneaky_spirit_scared_late[]; // Animation: "ghost_barely_run"
-extern const struct Animation anim_sneaky_spirit_hit_effect[]; // Animation: "arrow_hit"
-extern const struct Animation anim_sneaky_spirit_tutorial[]; // Animation: "ghost_dash_tutorial"
+extern struct Animation anim_sneaky_spirits_bow[]; // Animation: "bow_draw"
+extern struct Animation anim_sneaky_spirit_hit[]; // Animation: "ghost_hit"
+extern struct Animation anim_sneaky_spirits_back_wall[]; // Animation: "door_back_wall"
+extern struct Animation anim_sneaky_spirits_door[]; // Animation: "door_open"
+extern struct Animation anim_sneaky_spirit_taunt[]; // Animation: "ghost_miss_taunt"
+extern struct Animation anim_sneaky_spirits_arrow_miss[]; // Animation: "arrow_miss"
+extern struct Animation anim_sneaky_spirit_scared_early[]; // Animation: "ghost_barely_scared"
+extern struct Animation anim_sneaky_spirits_tree[]; // Animation: "tree"
+extern struct Animation anim_sneaky_spirit_walk[]; // Animation: "ghost_walk"
+extern struct Animation anim_sneaky_spirit_dash[]; // Animation: "ghost_miss_dash"
+extern struct Animation anim_sneaky_spirits_rain[]; // Animation: "rain_fall"
+extern struct Animation anim_sneaky_spirits_splash[]; // Animation: "rain_splash"
+extern struct Animation anim_sneaky_spirits_rain_slow[]; // Animation: "rain_fall_slow"
+extern struct Animation anim_sneaky_spirits_bow_shoot[]; // Animation: "bow_shoot"
+extern struct Animation anim_sneaky_spirits_wall_mask[]; // Animation: "ghost_mask" (might be masking)
+extern struct Animation anim_sneaky_spirit_scared_late[]; // Animation: "ghost_barely_run"
+extern struct Animation anim_sneaky_spirit_hit_effect[]; // Animation: "arrow_hit"
+extern struct Animation anim_sneaky_spirit_tutorial[]; // Animation: "ghost_dash_tutorial"
 
 
 // Palettes:
@@ -84,7 +84,7 @@ extern const char D_08059f90[];   // Empty Default Text
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *sneaky_spirits_buffered_textures[]; // Buffered Textures List
+extern struct CompressedGraphics *sneaky_spirits_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable *sneaky_spirits_gfx_tables[]; // Graphics Table
 
 

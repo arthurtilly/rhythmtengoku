@@ -80,14 +80,14 @@ enum DrumLiveAnimationsEnum {
 
 
 // Engine Definition Data:
-extern const struct Animation **drum_live_anim_table[];
-extern const Palette *drum_live_obj_palettes[];
-extern const Palette *drum_live_bg_palettes[];
+extern struct Animation **drum_live_anim_table[];
+extern Palette *drum_live_obj_palettes[];
+extern Palette *drum_live_bg_palettes[];
 extern u16 D_089e06b0[];
 extern u8 D_089e06c0[];
 extern u16 *D_089e0758[];
 extern struct DrumTechKit *drum_live_kits[];
-extern const struct CompressedGraphics *drum_live_buffered_textures[];
+extern struct CompressedGraphics *drum_live_buffered_textures[];
 extern struct GraphicsTable *drum_live_gfx_tables[];
 extern struct Vector2 D_089e0ab0[];
 extern u8 drum_live_guitarist_anim_map_head[];
@@ -102,7 +102,7 @@ extern u8 drum_live_kit_map[];
 
 
 // Functions:
-extern const struct Animation *drum_live_get_anim(u32 anim); // Get Animation
+extern struct Animation *drum_live_get_anim(u32 anim); // Get Animation
 // extern ? func_08025248(?);
 // extern ? func_08025460(?);
 // extern ? func_08025538(?);

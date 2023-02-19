@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088afe04] Palette
-const Palette snappy_trio_prologue_pal[] = {
+Palette snappy_trio_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF858B8),
         /* 01 */ TO_RGB555(0xF85008),

@@ -27,7 +27,7 @@ enum BGLayersEnum {
 typedef u16 AnimationCel;
 
 struct Animation {
-    const AnimationCel *cel;
+    AnimationCel *cel;
     u8 duration;
 };
 
@@ -148,7 +148,7 @@ extern struct GraphicsBuffer {
 extern struct SpriteHandler *D_03005380; // gSpriteHandler
 
 struct SpritePlaybackData {
-    const struct Animation *anim;
+    struct Animation *anim;
     s8 unk4;
     u8 unk5;
     u8 unk6;

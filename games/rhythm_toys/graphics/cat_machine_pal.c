@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0890df00] Cat Machine Palette
-const Palette cat_machine_pal[] = {
+Palette cat_machine_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x504848),
         /* 01 */ TO_RGB555(0x000000),

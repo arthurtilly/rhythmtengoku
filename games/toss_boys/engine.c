@@ -4,144 +4,144 @@
   /* TOSS BOYS - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_toss_boys_beat_r[];
-extern const struct Animation anim_toss_remix_5_beat_r[];
-extern const struct Animation anim_toss_boys_2_beat_r[];
-extern const struct Animation anim_toss_boys_beat_b[];
-extern const struct Animation anim_toss_remix_5_beat_b[];
-extern const struct Animation anim_toss_boys_2_beat_b[];
-extern const struct Animation anim_toss_boys_beat_y[];
-extern const struct Animation anim_toss_remix_5_beat_y[];
-extern const struct Animation anim_toss_boys_2_beat_y[];
-extern const struct Animation anim_toss_boys_pass_r[];
-extern const struct Animation anim_toss_remix_5_pass_r[];
-extern const struct Animation anim_toss_boys_2_pass_r[];
-extern const struct Animation anim_toss_boys_pass_b[];
-extern const struct Animation anim_toss_remix_5_pass_b[];
-extern const struct Animation anim_toss_boys_2_pass_b[];
-extern const struct Animation anim_toss_boys_pass_y[];
-extern const struct Animation anim_toss_remix_5_pass_y[];
-extern const struct Animation anim_toss_boys_2_pass_y[];
-extern const struct Animation anim_toss_boys_dispenser_close[];
-extern const struct Animation anim_toss_remix_5_dispenser_close[];
-extern const struct Animation anim_toss_boys_2_dispenser_close[];
-extern const struct Animation anim_toss_boys_ball1[];
-extern const struct Animation anim_toss_remix_5_ball1[];
-extern const struct Animation anim_toss_boys_2_ball1[];
-extern const struct Animation anim_toss_boys_ball3[];
-extern const struct Animation anim_toss_remix_5_ball3[];
-extern const struct Animation anim_toss_boys_2_ball3[];
-extern const struct Animation anim_toss_boys_ball2[];
-extern const struct Animation anim_toss_remix_5_ball2[];
-extern const struct Animation anim_toss_boys_2_ball2[];
-extern const struct Animation anim_toss_boys_ball_wobble[];
-extern const struct Animation anim_toss_remix_5_ball_wobble[];
-extern const struct Animation anim_toss_boys_2_ball_wobble[];
-extern const struct Animation anim_toss_boys_miss_r[];
-extern const struct Animation anim_toss_remix_5_miss_r[];
-extern const struct Animation anim_toss_boys_2_miss_r[];
-extern const struct Animation anim_toss_boys_miss_b[];
-extern const struct Animation anim_toss_remix_5_miss_b[];
-extern const struct Animation anim_toss_boys_2_miss_b[];
-extern const struct Animation anim_toss_boys_miss_y[];
-extern const struct Animation anim_toss_remix_5_miss_y[];
-extern const struct Animation anim_toss_boys_2_miss_y[];
-extern const struct Animation anim_toss_boys_super_pass_r[];
-extern const struct Animation anim_toss_remix_5_super_pass_r[];
-extern const struct Animation anim_toss_boys_2_super_pass_r[];
-extern const struct Animation anim_toss_boys_super_pass_b[];
-extern const struct Animation anim_toss_remix_5_super_pass_b[];
-extern const struct Animation anim_toss_boys_2_super_pass_b[];
-extern const struct Animation anim_toss_boys_super_pass_y[];
-extern const struct Animation anim_toss_remix_5_super_pass_y[];
-extern const struct Animation anim_toss_boys_2_super_pass_y[];
-extern const struct Animation anim_toss_boys_pop_effect[];
-extern const struct Animation anim_toss_remix_5_pop_effect[];
-extern const struct Animation anim_toss_boys_2_pop_effect[];
-extern const struct Animation anim_toss_boys_super_beat_r[];
-extern const struct Animation anim_toss_remix_5_super_beat_r[];
-extern const struct Animation anim_toss_boys_2_super_beat_r[];
-extern const struct Animation anim_toss_boys_super_beat_b[];
-extern const struct Animation anim_toss_remix_5_super_beat_b[];
-extern const struct Animation anim_toss_boys_2_super_beat_b[];
-extern const struct Animation anim_toss_boys_super_beat_y[];
-extern const struct Animation anim_toss_remix_5_super_beat_y[];
-extern const struct Animation anim_toss_boys_2_super_beat_y[];
-extern const struct Animation anim_toss_boys_catch_r[];
-extern const struct Animation anim_toss_remix_5_catch_r[];
-extern const struct Animation anim_toss_boys_2_catch_r[];
-extern const struct Animation anim_toss_boys_catch_b[];
-extern const struct Animation anim_toss_remix_5_catch_b[];
-extern const struct Animation anim_toss_boys_2_catch_b[];
-extern const struct Animation anim_toss_boys_catch_y[];
-extern const struct Animation anim_toss_remix_5_catch_y[];
-extern const struct Animation anim_toss_boys_2_catch_y[];
-extern const struct Animation anim_toss_boys_ready_r[];
-extern const struct Animation anim_toss_remix_5_ready_r[];
-extern const struct Animation anim_toss_boys_2_ready_r[];
-extern const struct Animation anim_toss_boys_ready_b[];
-extern const struct Animation anim_toss_remix_5_ready_b[];
-extern const struct Animation anim_toss_boys_2_ready_b[];
-extern const struct Animation anim_toss_boys_ready_y[];
-extern const struct Animation anim_toss_remix_5_ready_y[];
-extern const struct Animation anim_toss_boys_2_ready_y[];
-extern const struct Animation anim_toss_boys_pop_r[];
-extern const struct Animation anim_toss_remix_5_pop_r[];
-extern const struct Animation anim_toss_boys_2_pop_r[];
-extern const struct Animation anim_toss_boys_pop_b[];
-extern const struct Animation anim_toss_remix_5_pop_b[];
-extern const struct Animation anim_toss_boys_2_pop_b[];
-extern const struct Animation anim_toss_boys_pop_y[];
-extern const struct Animation anim_toss_remix_5_pop_y[];
-extern const struct Animation anim_toss_boys_2_pop_y[];
-extern const struct Animation anim_toss_boys_barely_r[];
-extern const struct Animation anim_toss_remix_5_barely_r[];
-extern const struct Animation anim_toss_boys_2_barely_r[];
-extern const struct Animation anim_toss_boys_barely_b[];
-extern const struct Animation anim_toss_remix_5_barely_b[];
-extern const struct Animation anim_toss_boys_2_barely_b[];
-extern const struct Animation anim_toss_boys_barely_y[];
-extern const struct Animation anim_toss_remix_5_barely_y[];
-extern const struct Animation anim_toss_boys_2_barely_y[];
-extern const struct Animation anim_toss_boys_arrow_r[];
-extern const struct Animation anim_toss_remix_5_arrow_r[];
-extern const struct Animation anim_toss_boys_2_arrow_r[];
-extern const struct Animation anim_toss_boys_arrow_b[];
-extern const struct Animation anim_toss_remix_5_arrow_b[];
-extern const struct Animation anim_toss_boys_2_arrow_b[];
-extern const struct Animation anim_toss_boys_arrow_y[];
-extern const struct Animation anim_toss_remix_5_arrow_y[];
-extern const struct Animation anim_toss_boys_2_arrow_y[];
+extern struct Animation anim_toss_boys_beat_r[];
+extern struct Animation anim_toss_remix_5_beat_r[];
+extern struct Animation anim_toss_boys_2_beat_r[];
+extern struct Animation anim_toss_boys_beat_b[];
+extern struct Animation anim_toss_remix_5_beat_b[];
+extern struct Animation anim_toss_boys_2_beat_b[];
+extern struct Animation anim_toss_boys_beat_y[];
+extern struct Animation anim_toss_remix_5_beat_y[];
+extern struct Animation anim_toss_boys_2_beat_y[];
+extern struct Animation anim_toss_boys_pass_r[];
+extern struct Animation anim_toss_remix_5_pass_r[];
+extern struct Animation anim_toss_boys_2_pass_r[];
+extern struct Animation anim_toss_boys_pass_b[];
+extern struct Animation anim_toss_remix_5_pass_b[];
+extern struct Animation anim_toss_boys_2_pass_b[];
+extern struct Animation anim_toss_boys_pass_y[];
+extern struct Animation anim_toss_remix_5_pass_y[];
+extern struct Animation anim_toss_boys_2_pass_y[];
+extern struct Animation anim_toss_boys_dispenser_close[];
+extern struct Animation anim_toss_remix_5_dispenser_close[];
+extern struct Animation anim_toss_boys_2_dispenser_close[];
+extern struct Animation anim_toss_boys_ball1[];
+extern struct Animation anim_toss_remix_5_ball1[];
+extern struct Animation anim_toss_boys_2_ball1[];
+extern struct Animation anim_toss_boys_ball3[];
+extern struct Animation anim_toss_remix_5_ball3[];
+extern struct Animation anim_toss_boys_2_ball3[];
+extern struct Animation anim_toss_boys_ball2[];
+extern struct Animation anim_toss_remix_5_ball2[];
+extern struct Animation anim_toss_boys_2_ball2[];
+extern struct Animation anim_toss_boys_ball_wobble[];
+extern struct Animation anim_toss_remix_5_ball_wobble[];
+extern struct Animation anim_toss_boys_2_ball_wobble[];
+extern struct Animation anim_toss_boys_miss_r[];
+extern struct Animation anim_toss_remix_5_miss_r[];
+extern struct Animation anim_toss_boys_2_miss_r[];
+extern struct Animation anim_toss_boys_miss_b[];
+extern struct Animation anim_toss_remix_5_miss_b[];
+extern struct Animation anim_toss_boys_2_miss_b[];
+extern struct Animation anim_toss_boys_miss_y[];
+extern struct Animation anim_toss_remix_5_miss_y[];
+extern struct Animation anim_toss_boys_2_miss_y[];
+extern struct Animation anim_toss_boys_super_pass_r[];
+extern struct Animation anim_toss_remix_5_super_pass_r[];
+extern struct Animation anim_toss_boys_2_super_pass_r[];
+extern struct Animation anim_toss_boys_super_pass_b[];
+extern struct Animation anim_toss_remix_5_super_pass_b[];
+extern struct Animation anim_toss_boys_2_super_pass_b[];
+extern struct Animation anim_toss_boys_super_pass_y[];
+extern struct Animation anim_toss_remix_5_super_pass_y[];
+extern struct Animation anim_toss_boys_2_super_pass_y[];
+extern struct Animation anim_toss_boys_pop_effect[];
+extern struct Animation anim_toss_remix_5_pop_effect[];
+extern struct Animation anim_toss_boys_2_pop_effect[];
+extern struct Animation anim_toss_boys_super_beat_r[];
+extern struct Animation anim_toss_remix_5_super_beat_r[];
+extern struct Animation anim_toss_boys_2_super_beat_r[];
+extern struct Animation anim_toss_boys_super_beat_b[];
+extern struct Animation anim_toss_remix_5_super_beat_b[];
+extern struct Animation anim_toss_boys_2_super_beat_b[];
+extern struct Animation anim_toss_boys_super_beat_y[];
+extern struct Animation anim_toss_remix_5_super_beat_y[];
+extern struct Animation anim_toss_boys_2_super_beat_y[];
+extern struct Animation anim_toss_boys_catch_r[];
+extern struct Animation anim_toss_remix_5_catch_r[];
+extern struct Animation anim_toss_boys_2_catch_r[];
+extern struct Animation anim_toss_boys_catch_b[];
+extern struct Animation anim_toss_remix_5_catch_b[];
+extern struct Animation anim_toss_boys_2_catch_b[];
+extern struct Animation anim_toss_boys_catch_y[];
+extern struct Animation anim_toss_remix_5_catch_y[];
+extern struct Animation anim_toss_boys_2_catch_y[];
+extern struct Animation anim_toss_boys_ready_r[];
+extern struct Animation anim_toss_remix_5_ready_r[];
+extern struct Animation anim_toss_boys_2_ready_r[];
+extern struct Animation anim_toss_boys_ready_b[];
+extern struct Animation anim_toss_remix_5_ready_b[];
+extern struct Animation anim_toss_boys_2_ready_b[];
+extern struct Animation anim_toss_boys_ready_y[];
+extern struct Animation anim_toss_remix_5_ready_y[];
+extern struct Animation anim_toss_boys_2_ready_y[];
+extern struct Animation anim_toss_boys_pop_r[];
+extern struct Animation anim_toss_remix_5_pop_r[];
+extern struct Animation anim_toss_boys_2_pop_r[];
+extern struct Animation anim_toss_boys_pop_b[];
+extern struct Animation anim_toss_remix_5_pop_b[];
+extern struct Animation anim_toss_boys_2_pop_b[];
+extern struct Animation anim_toss_boys_pop_y[];
+extern struct Animation anim_toss_remix_5_pop_y[];
+extern struct Animation anim_toss_boys_2_pop_y[];
+extern struct Animation anim_toss_boys_barely_r[];
+extern struct Animation anim_toss_remix_5_barely_r[];
+extern struct Animation anim_toss_boys_2_barely_r[];
+extern struct Animation anim_toss_boys_barely_b[];
+extern struct Animation anim_toss_remix_5_barely_b[];
+extern struct Animation anim_toss_boys_2_barely_b[];
+extern struct Animation anim_toss_boys_barely_y[];
+extern struct Animation anim_toss_remix_5_barely_y[];
+extern struct Animation anim_toss_boys_2_barely_y[];
+extern struct Animation anim_toss_boys_arrow_r[];
+extern struct Animation anim_toss_remix_5_arrow_r[];
+extern struct Animation anim_toss_boys_2_arrow_r[];
+extern struct Animation anim_toss_boys_arrow_b[];
+extern struct Animation anim_toss_remix_5_arrow_b[];
+extern struct Animation anim_toss_boys_2_arrow_b[];
+extern struct Animation anim_toss_boys_arrow_y[];
+extern struct Animation anim_toss_remix_5_arrow_y[];
+extern struct Animation anim_toss_boys_2_arrow_y[];
 
-extern const struct CompressedGraphics D_08cf961c;
-extern const struct CompressedGraphics D_08cfa60c;
-extern const struct CompressedGraphics D_08cf8918;
-extern const struct CompressedGraphics D_08cf97d0;
-extern const struct CompressedGraphics D_08cf86dc;
-extern const struct CompressedGraphics D_08cff0bc;
-extern const struct CompressedGraphics D_08d00158;
-extern const struct CompressedGraphics D_08cfe3b8;
-extern const struct CompressedGraphics D_08cff31c;
-extern const struct CompressedGraphics D_08cfdcc4;
-extern const struct CompressedGraphics D_08cf961c;
-extern const struct CompressedGraphics D_08cfa60c;
-extern const struct CompressedGraphics D_08cfa810;
-extern const struct CompressedGraphics D_08cfcb9c;
-extern const struct CompressedGraphics D_08cfc9e8;
+extern struct CompressedGraphics D_08cf961c;
+extern struct CompressedGraphics D_08cfa60c;
+extern struct CompressedGraphics D_08cf8918;
+extern struct CompressedGraphics D_08cf97d0;
+extern struct CompressedGraphics D_08cf86dc;
+extern struct CompressedGraphics D_08cff0bc;
+extern struct CompressedGraphics D_08d00158;
+extern struct CompressedGraphics D_08cfe3b8;
+extern struct CompressedGraphics D_08cff31c;
+extern struct CompressedGraphics D_08cfdcc4;
+extern struct CompressedGraphics D_08cf961c;
+extern struct CompressedGraphics D_08cfa60c;
+extern struct CompressedGraphics D_08cfa810;
+extern struct CompressedGraphics D_08cfcb9c;
+extern struct CompressedGraphics D_08cfc9e8;
 
-extern const Palette toss_boys_bg_pal[];
-extern const Palette toss_boys_obj_pal[];
-extern const Palette toss_boys_2_bg_pal[];
-extern const Palette toss_boys_2_obj_pal[];
-extern const Palette toss_boys_remix_5_bg_pal[];
-extern const Palette toss_boys_remix_5_obj_pal[];
+extern Palette toss_boys_bg_pal[];
+extern Palette toss_boys_obj_pal[];
+extern Palette toss_boys_2_bg_pal[];
+extern Palette toss_boys_2_obj_pal[];
+extern Palette toss_boys_remix_5_bg_pal[];
+extern Palette toss_boys_remix_5_obj_pal[];
 
 
   //  //  //  ANIMATION DATA  //  //  //
 
 
 // [D_089e8150] All Animations
-const struct Animation *toss_boys_anim[][3] = {
+struct Animation *toss_boys_anim[][3] = {
     /* 0x00 */ { anim_toss_boys_beat_r, anim_toss_remix_5_beat_r, anim_toss_boys_2_beat_r },
     /* 0x01 */ { anim_toss_boys_beat_b, anim_toss_remix_5_beat_b, anim_toss_boys_2_beat_b },
     /* 0x02 */ { anim_toss_boys_beat_y, anim_toss_remix_5_beat_y, anim_toss_boys_2_beat_y },
@@ -181,7 +181,7 @@ const struct Animation *toss_boys_anim[][3] = {
 };
 
 // [D_089e8300] Animation Table
-const struct Animation **toss_boys_anim_table[] = {
+struct Animation **toss_boys_anim_table[] = {
     /* 0x00 */ toss_boys_anim[0],
     /* 0x01 */ toss_boys_anim[1],
     /* 0x02 */ toss_boys_anim[2],
@@ -471,7 +471,7 @@ struct DrumTechInstrument toss_boys_drumtech_bank[] = {
 
 
 // [D_089e8528] Buffered Textures List
-const struct CompressedGraphics *toss_boys_buffered_textures[] = {
+struct CompressedGraphics *toss_boys_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -614,7 +614,7 @@ u16 toss_boys_button_masks[] = {
 };
 
 // [D_089e8660] Animations
-const struct Animation *D_089e8660[][3] = {
+struct Animation *D_089e8660[][3] = {
     /* PASS */ {
         /* R */ NULL,
         /* B */ NULL,

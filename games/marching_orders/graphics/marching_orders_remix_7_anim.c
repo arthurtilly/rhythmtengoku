@@ -4,7 +4,7 @@
 #include "marching_orders_remix_7_anim_cells.inc.c"
 
 // [D_08913930] Space-Rabbit March Test
-const struct Animation anim_space_rabbit_test[] = {
+struct Animation anim_space_rabbit_test[] = {
     /* 000 */ { marching_orders_remix_7_cel005, 3 },
     /* 001 */ { marching_orders_remix_7_cel006, 3 },
     /* 002 */ { marching_orders_remix_7_cel007, 3 },
@@ -44,7 +44,7 @@ const struct Animation anim_space_rabbit_test[] = {
 };
 
 // [D_08913a50] Space-Rabbit - Turn Left
-const struct Animation anim_space_rabbit_turn_l[] = {
+struct Animation anim_space_rabbit_turn_l[] = {
     /* 000 */ { marching_orders_remix_7_cel014, 10 },
     /* 001 */ { marching_orders_remix_7_cel015, 4 },
     /* 002 */ { marching_orders_remix_7_cel016, 4 },
@@ -53,7 +53,7 @@ const struct Animation anim_space_rabbit_turn_l[] = {
 };
 
 // [D_08913a78] Space-Rabbit - Turn Right
-const struct Animation anim_space_rabbit_turn_r[] = {
+struct Animation anim_space_rabbit_turn_r[] = {
     /* 000 */ { marching_orders_remix_7_cel018, 10 },
     /* 001 */ { marching_orders_remix_7_cel019, 4 },
     /* 002 */ { marching_orders_remix_7_cel020, 4 },
@@ -62,7 +62,7 @@ const struct Animation anim_space_rabbit_turn_r[] = {
 };
 
 // [D_08913aa0] Space-Rabbit - Point Left
-const struct Animation anim_space_rabbit_point_l[] = {
+struct Animation anim_space_rabbit_point_l[] = {
     /* 000 */ { marching_orders_remix_7_cel023, 10 },
     /* 001 */ { marching_orders_remix_7_cel022, 4 },
     /* 002 */ { marching_orders_remix_7_cel021, 3 },
@@ -71,7 +71,7 @@ const struct Animation anim_space_rabbit_point_l[] = {
 };
 
 // [D_08913ac8] Space-Rabbit - Point Right
-const struct Animation anim_space_rabbit_point_r[] = {
+struct Animation anim_space_rabbit_point_r[] = {
     /* 000 */ { marching_orders_remix_7_cel026, 10 },
     /* 001 */ { marching_orders_remix_7_cel025, 4 },
     /* 002 */ { marching_orders_remix_7_cel024, 3 },
@@ -80,7 +80,7 @@ const struct Animation anim_space_rabbit_point_r[] = {
 };
 
 // [D_08913af0] Commander - Angry
-const struct Animation anim_space_rabbit_commander_angry[] = {
+struct Animation anim_space_rabbit_commander_angry[] = {
     /* 000 */ { marching_orders_remix_7_cel003, 20 },
     /* 001 */ { marching_orders_remix_7_cel002, 6 },
     /* 002 */ { marching_orders_remix_7_cel001, 6 },
@@ -89,7 +89,7 @@ const struct Animation anim_space_rabbit_commander_angry[] = {
 };
 
 // [D_08913b18] Space-Rabbit - Stop Beat
-const struct Animation anim_space_rabbit_stop_beat[] = {
+struct Animation anim_space_rabbit_stop_beat[] = {
     /* 000 */ { marching_orders_remix_7_cel039, 4 },
     /* 001 */ { marching_orders_remix_7_cel040, 4 },
     /* 002 */ { marching_orders_remix_7_cel041, 50 },
@@ -97,7 +97,7 @@ const struct Animation anim_space_rabbit_stop_beat[] = {
 };
 
 // [D_08913b38] Space-Rabbit - Clap
-const struct Animation anim_space_rabbit_clap[] = {
+struct Animation anim_space_rabbit_clap[] = {
     /* 000 */ { marching_orders_remix_7_cel036, 4 },
     /* 001 */ { marching_orders_remix_7_cel038, 3 },
     /* 002 */ { marching_orders_remix_7_cel037, 30 },
@@ -105,7 +105,7 @@ const struct Animation anim_space_rabbit_clap[] = {
 };
 
 // [D_08913b58] Space-Rabbit - Beat
-const struct Animation anim_space_rabbit_beat[] = {
+struct Animation anim_space_rabbit_beat[] = {
     /* 000 */ { marching_orders_remix_7_cel041, 4 },
     /* 001 */ { marching_orders_remix_7_cel040, 4 },
     /* 002 */ { marching_orders_remix_7_cel039, 40 },
@@ -113,7 +113,7 @@ const struct Animation anim_space_rabbit_beat[] = {
 };
 
 // [D_08913b78] Space-Rabbit - Step Right
-const struct Animation anim_space_rabbit_step_r[] = {
+struct Animation anim_space_rabbit_step_r[] = {
     /* 000 */ { marching_orders_remix_7_cel073, 2 },
     /* 001 */ { marching_orders_remix_7_cel082, 2 },
     /* 002 */ { marching_orders_remix_7_cel083, 2 },
@@ -127,7 +127,7 @@ const struct Animation anim_space_rabbit_step_r[] = {
 };
 
 // [D_08913bc8] Space-Rabbit - Step Left
-const struct Animation anim_space_rabbit_step_l[] = {
+struct Animation anim_space_rabbit_step_l[] = {
     /* 000 */ { marching_orders_remix_7_cel073, 2 },
     /* 001 */ { marching_orders_remix_7_cel074, 2 },
     /* 002 */ { marching_orders_remix_7_cel075, 2 },
@@ -141,7 +141,7 @@ const struct Animation anim_space_rabbit_step_l[] = {
 };
 
 // [D_08913c18] Space-Rabbit - Turn Right (Head)
-const struct Animation anim_space_rabbit_head_turn_r[] = {
+struct Animation anim_space_rabbit_head_turn_r[] = {
     /* 000 */ { marching_orders_remix_7_cel033, 10 },
     /* 001 */ { marching_orders_remix_7_cel034, 4 },
     /* 002 */ { marching_orders_remix_7_cel035, 4 },
@@ -150,7 +150,7 @@ const struct Animation anim_space_rabbit_head_turn_r[] = {
 };
 
 // [D_08913c40] Space-Rabbit - Turn Left (Head)
-const struct Animation anim_space_rabbit_head_turn_l[] = {
+struct Animation anim_space_rabbit_head_turn_l[] = {
     /* 000 */ { marching_orders_remix_7_cel030, 10 },
     /* 001 */ { marching_orders_remix_7_cel031, 4 },
     /* 002 */ { marching_orders_remix_7_cel032, 4 },
@@ -159,7 +159,7 @@ const struct Animation anim_space_rabbit_head_turn_l[] = {
 };
 
 // [D_08913c68] Tutorial Icons
-const struct Animation anim_space_rabbit_tutorial_icons[] = {
+struct Animation anim_space_rabbit_tutorial_icons[] = {
     /* 000 */ { marching_orders_remix_7_cel051, 40 },
     /* 001 */ { marching_orders_remix_7_cel053, 40 },
     /* 002 */ { marching_orders_remix_7_cel054, 40 },
@@ -167,13 +167,13 @@ const struct Animation anim_space_rabbit_tutorial_icons[] = {
 };
 
 // [D_08913c88] "Start to Skip" Tutorial Icon (Unused)
-const struct Animation anim_space_rabbit_tutorial_skip_icon[] = {
+struct Animation anim_space_rabbit_tutorial_skip_icon[] = {
     /* 000 */ { marching_orders_remix_7_cel052, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08913c98] Commander Frustration Cloud
-const struct Animation anim_space_rabbit_angry_puff[] = {
+struct Animation anim_space_rabbit_angry_puff[] = {
     /* 000 */ { marching_orders_remix_7_cel055, 4 },
     /* 001 */ { marching_orders_remix_7_cel056, 5 },
     /* 002 */ { marching_orders_remix_7_cel057, 4 },
@@ -184,7 +184,7 @@ const struct Animation anim_space_rabbit_angry_puff[] = {
 };
 
 // [D_08913cd0] Space-Rabbit - Dance (Body) (from WarioWare)
-const struct Animation anim_space_rabbit_dance_body[] = {
+struct Animation anim_space_rabbit_dance_body[] = {
     /* 000 */ { marching_orders_remix_7_cel061, 8 },
     /* 001 */ { marching_orders_remix_7_cel062, 4 },
     /* 002 */ { marching_orders_remix_7_cel063, 4 },
@@ -197,7 +197,7 @@ const struct Animation anim_space_rabbit_dance_body[] = {
 };
 
 // [D_08913d18] Space-Rabbit - Dance (Head) (from WarioWare)
-const struct Animation anim_space_rabbit_dance_head[] = {
+struct Animation anim_space_rabbit_dance_head[] = {
     /* 000 */ { marching_orders_remix_7_cel066, 4 },
     /* 001 */ { marching_orders_remix_7_cel067, 4 },
     /* 002 */ { marching_orders_remix_7_cel068, 4 },
@@ -209,7 +209,7 @@ const struct Animation anim_space_rabbit_dance_head[] = {
 };
 
 // [D_08913d58] Space-Rabbit - Step Test 1 (Return)
-const struct Animation anim_space_rabbit_step_test1[] = {
+struct Animation anim_space_rabbit_step_test1[] = {
     /* 000 */ { marching_orders_remix_7_cel089, 2 },
     /* 001 */ { marching_orders_remix_7_cel088, 2 },
     /* 002 */ { marching_orders_remix_7_cel087, 2 },
@@ -232,7 +232,7 @@ const struct Animation anim_space_rabbit_step_test1[] = {
 };
 
 // [D_08913df0] Space-Rabbit - Step Test 2 (Start)
-const struct Animation anim_space_rabbit_step_test2[] = {
+struct Animation anim_space_rabbit_step_test2[] = {
     /* 000 */ { marching_orders_remix_7_cel073, 2 },
     /* 001 */ { marching_orders_remix_7_cel074, 2 },
     /* 002 */ { marching_orders_remix_7_cel075, 2 },
@@ -255,19 +255,19 @@ const struct Animation anim_space_rabbit_step_test2[] = {
 };
 
 // [D_08913e88] Blank
-const struct Animation anim_space_rabbit_blank1[] = {
+struct Animation anim_space_rabbit_blank1[] = {
     /* 000 */ { marching_orders_remix_7_cel093, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08913e98] Blank
-const struct Animation anim_space_rabbit_blank2[] = {
+struct Animation anim_space_rabbit_blank2[] = {
     /* 000 */ { marching_orders_remix_7_cel093, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08913ea8] Commander - Annoyed
-const struct Animation anim_space_rabbit_commander_annoyed[] = {
+struct Animation anim_space_rabbit_commander_annoyed[] = {
     /* 000 */ { marching_orders_remix_7_cel095, 30 },
     /* 001 */ { marching_orders_remix_7_cel094, 6 },
     /* 002 */ { marching_orders_remix_7_cel000, 6 },

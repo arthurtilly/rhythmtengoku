@@ -1,19 +1,19 @@
 // do not rename these
 
 // [D_088ad33c]
-const AnimationCel spaceball_prologue_cel000[] = {
+AnimationCel spaceball_prologue_cel000[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x003b
 };
 
 // [D_088ad344]
-const AnimationCel spaceball_prologue_cel001[] = {
+AnimationCel spaceball_prologue_cel001[] = {
     /* Len */ 1,
     /* 000 */ 0x00e0, 0x8195, 0x0008
 };
 
 // [D_088ad34c]
-const AnimationCel spaceball_prologue_cel002[] = {
+AnimationCel spaceball_prologue_cel002[] = {
     /* Len */ 4,
     /* 000 */ 0x00e0, 0x8195, 0x0008,
     /* 001 */ 0x00e0, 0x81b5, 0x0004,
@@ -22,7 +22,7 @@ const AnimationCel spaceball_prologue_cel002[] = {
 };
 
 // [D_088ad366]
-const AnimationCel spaceball_prologue_cel003[] = {
+AnimationCel spaceball_prologue_cel003[] = {
     /* Len */ 10,
     /* 000 */ 0x00e0, 0x8195, 0x0008,
     /* 001 */ 0x00e0, 0x81b5, 0x0004,
@@ -37,7 +37,7 @@ const AnimationCel spaceball_prologue_cel003[] = {
 };
 
 // [D_088ad3a4]
-const AnimationCel spaceball_prologue_cel004[] = {
+AnimationCel spaceball_prologue_cel004[] = {
     /* Len */ 13,
     /* 000 */ 0x00e0, 0x8195, 0x0008,
     /* 001 */ 0x00e0, 0x81b5, 0x0004,

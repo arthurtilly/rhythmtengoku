@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_08927fbc] Toss Boys (Remix 5) BG Palette
-const Palette toss_boys_remix_5_bg_pal[] = {
+Palette toss_boys_remix_5_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x48E8F8),
         /* 01 */ TO_RGB555(0x50D898),
@@ -294,7 +294,7 @@ const Palette toss_boys_remix_5_bg_pal[] = {
 };
 
 // [D_089281bc] Toss Boys (Remix 5) OBJ Palette
-const Palette toss_boys_remix_5_obj_pal[] = {
+Palette toss_boys_remix_5_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x38C8D0),
         /* 01 */ TO_RGB555(0x000000),

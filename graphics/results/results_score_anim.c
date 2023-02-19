@@ -4,7 +4,7 @@
 #include "results_score_anim_cells.inc.c"
 
 // [D_0890bb68] <description>
-const struct Animation results_score_anim00[] = {
+struct Animation results_score_anim00[] = {
     /* 000 */ { results_score_cel000, 40 },
     /* 001 */ { results_score_cel001, 40 },
     /* 002 */ { results_score_cel002, 40 },
@@ -19,31 +19,31 @@ const struct Animation results_score_anim00[] = {
 };
 
 // [D_0890bbc0] <description>
-const struct Animation results_score_anim01[] = {
+struct Animation results_score_anim01[] = {
     /* 000 */ { results_score_cel001, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890bbd0] <description>
-const struct Animation results_score_anim02[] = {
+struct Animation results_score_anim02[] = {
     /* 000 */ { results_score_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890bbe0] <description>
-const struct Animation results_score_anim03[] = {
+struct Animation results_score_anim03[] = {
     /* 000 */ { results_score_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890bbf0] <description>
-const struct Animation results_score_anim04[] = {
+struct Animation results_score_anim04[] = {
     /* 000 */ { results_score_cel010, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890bc00] <description>
-const struct Animation results_score_anim05[] = {
+struct Animation results_score_anim05[] = {
     /* 000 */ { results_score_cel011, 40 },
     /* 001 */ { results_score_cel012, 40 },
     /* 002 */ { results_score_cel013, 40 },

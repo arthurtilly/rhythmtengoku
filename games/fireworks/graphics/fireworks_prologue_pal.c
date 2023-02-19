@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088af814] Palette
-const Palette fireworks_prologue_pal[] = {
+Palette fireworks_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x009000),
         /* 01 */ TO_RGB555(0x201008),

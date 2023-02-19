@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088bd170] Staff Credit BG Palettes
-const Palette staff_credit_bg_pal[] = {
+Palette staff_credit_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),

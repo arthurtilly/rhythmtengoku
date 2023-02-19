@@ -4,25 +4,25 @@
   /* FIREWORKS - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c5da78; // OBJ Tiles (+ BG Tiles for Fireworks 1)
-extern const struct CompressedGraphics D_08c5fd10;
-extern const struct CompressedGraphics D_08c5e20c;
-extern const struct CompressedGraphics D_08c60044;
-extern const struct CompressedGraphics D_08c5ebcc;
-extern const struct CompressedGraphics D_08c60410;
-extern const struct CompressedGraphics D_08c5f27c;
-extern const struct CompressedGraphics D_08c606ec;
-extern const struct CompressedGraphics D_08c5fa80;
-extern const struct CompressedGraphics D_08c609a4;
-extern const Palette fireworks_obj_pal[];
-extern const Palette fireworks_bg_pal[];
+extern struct CompressedGraphics D_08c5da78; // OBJ Tiles (+ BG Tiles for Fireworks 1)
+extern struct CompressedGraphics D_08c5fd10;
+extern struct CompressedGraphics D_08c5e20c;
+extern struct CompressedGraphics D_08c60044;
+extern struct CompressedGraphics D_08c5ebcc;
+extern struct CompressedGraphics D_08c60410;
+extern struct CompressedGraphics D_08c5f27c;
+extern struct CompressedGraphics D_08c606ec;
+extern struct CompressedGraphics D_08c5fa80;
+extern struct CompressedGraphics D_08c609a4;
+extern Palette fireworks_obj_pal[];
+extern Palette fireworks_bg_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e4214] Buffered Textures List
-const struct CompressedGraphics *fireworks_buffered_textures[] = {
+struct CompressedGraphics *fireworks_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

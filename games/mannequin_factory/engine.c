@@ -4,21 +4,21 @@
   /* MANNEQUIN FACTORY - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_mannequin_complete_l[];
-extern const struct Animation anim_mannequin_complete_c[];
-extern const struct Animation anim_mannequin_complete_r[];
-extern const struct CompressedGraphics D_08c34478;
-extern const struct CompressedGraphics D_08c35f18;
-extern const struct CompressedGraphics D_08c360b0;
-extern const struct CompressedGraphics D_08c35c9c;
-extern const Palette mannequin_factory_pal[];
+extern struct Animation anim_mannequin_complete_l[];
+extern struct Animation anim_mannequin_complete_c[];
+extern struct Animation anim_mannequin_complete_r[];
+extern struct CompressedGraphics D_08c34478;
+extern struct CompressedGraphics D_08c35f18;
+extern struct CompressedGraphics D_08c360b0;
+extern struct CompressedGraphics D_08c35c9c;
+extern Palette mannequin_factory_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089df384] Mannequin Completion Animations
-const struct Animation *mannequin_finish_anim[] = {
+struct Animation *mannequin_finish_anim[] = {
     /* 0x00 */ anim_mannequin_complete_l,
     /* 0x01 */ anim_mannequin_complete_c,
     /* 0x02 */ anim_mannequin_complete_r,
@@ -38,7 +38,7 @@ u16 mannequin_input_buttons[] = {
 };
 
 // [D_089df3ac] Buffered Textures List
-const struct CompressedGraphics *mannequin_buffered_textures[] = {
+struct CompressedGraphics *mannequin_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

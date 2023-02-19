@@ -4,17 +4,17 @@
   /* PROLOGUE (FIREWORKS) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08bf0eb8;
-extern const struct CompressedGraphics D_08bf12dc;
-extern const struct CompressedGraphics D_08bef660;
-extern const Palette fireworks_prologue_pal[];
+extern struct CompressedGraphics D_08bf0eb8;
+extern struct CompressedGraphics D_08bf12dc;
+extern struct CompressedGraphics D_08bef660;
+extern Palette fireworks_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089eae84] Buffered Textures List
-const struct CompressedGraphics *fireworks_prologue_buffered_textures[] = {
+struct CompressedGraphics *fireworks_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

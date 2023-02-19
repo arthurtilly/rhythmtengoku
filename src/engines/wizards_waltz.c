@@ -212,7 +212,7 @@ void wizards_waltz_cue_spawn(struct Cue *cue, struct WizardsWaltzCue *info, u32 
     s32 xPos;
     s32 scale;
     struct AffineSprite *sprite;
-    const struct Animation *anim;
+    struct Animation *anim;
     u32 z;
     u32 doubleSize;
 

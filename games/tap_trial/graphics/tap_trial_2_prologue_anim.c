@@ -4,13 +4,13 @@
 #include "tap_trial_2_prologue_anim_cells.inc.c"
 
 // [D_088b7c78] ? (Unused)
-const struct Animation anim_tap_trial_2_prologue_unused[] = {
+struct Animation anim_tap_trial_2_prologue_unused[] = {
     /* 000 */ { tap_trial_2_prologue_cel000, 40 },
     /* End */ END_ANIMATION
 };
 
 // [D_088b7c88] Title
-const struct Animation anim_tap_trial_2_prologue_title[] = {
+struct Animation anim_tap_trial_2_prologue_title[] = {
     /* 000 */ { tap_trial_2_prologue_cel001, 1 },
     /* 001 */ { tap_trial_2_prologue_cel002, 2 },
     /* 002 */ { tap_trial_2_prologue_cel003, 3 },

@@ -4,28 +4,28 @@
   /* BUNNY HOP - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_bunny_hop_1beat_turtle[];
-extern const struct Animation anim_bunny_hop_1beat_whale[];
-extern const struct Animation anim_bunny_hop_2beat_whale[];
-extern const struct Animation anim_bunny_hop_4beat_whale[];
-extern const struct Animation anim_bunny_hop_8beat_whale[];
-extern const struct Animation anim_bunny_hop_last_whale[];
+extern struct Animation anim_bunny_hop_1beat_turtle[];
+extern struct Animation anim_bunny_hop_1beat_whale[];
+extern struct Animation anim_bunny_hop_2beat_whale[];
+extern struct Animation anim_bunny_hop_4beat_whale[];
+extern struct Animation anim_bunny_hop_8beat_whale[];
+extern struct Animation anim_bunny_hop_last_whale[];
 
-extern const struct CompressedGraphics D_08c7fda8;
-extern const struct CompressedGraphics D_08c7fe58;
-extern const struct CompressedGraphics D_08c80250;
-extern const struct CompressedGraphics D_08c7fefc;
-extern const struct CompressedGraphics D_08c7fbb8;
+extern struct CompressedGraphics D_08c7fda8;
+extern struct CompressedGraphics D_08c7fe58;
+extern struct CompressedGraphics D_08c80250;
+extern struct CompressedGraphics D_08c7fefc;
+extern struct CompressedGraphics D_08c7fbb8;
 
-extern const Palette bunny_hop_pal[];
-extern const Palette bunny_hop_remix_3_pal[];
+extern Palette bunny_hop_pal[];
+extern Palette bunny_hop_remix_3_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e5ee0] Buffered Textures List
-const struct CompressedGraphics *bunny_hop_buffered_textures[] = {
+struct CompressedGraphics *bunny_hop_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -165,7 +165,7 @@ struct SequenceData *bunny_hop_bgm_drum_fills[] = {
 };
 
 // [D_089e6030] Remix 3 Transition Palettes
-const Palette *bunny_hop_palettes[] = {
+Palette *bunny_hop_palettes[] = {
     /* 0x00 */ bunny_hop_pal,
     /* 0x01 */ bunny_hop_remix_3_pal,
 };
@@ -500,7 +500,7 @@ const char D_0805a8ac[] = "";
 
 
 // [D_089e6384] Sea-Life Animations
-const struct Animation *bunny_hop_platform_anim[] = {
+struct Animation *bunny_hop_platform_anim[] = {
     /* 0x00 */ anim_bunny_hop_1beat_turtle,
     /* 0x01 */ anim_bunny_hop_1beat_turtle,
     /* 0x02 */ anim_bunny_hop_1beat_whale,

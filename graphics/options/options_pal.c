@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088f5bfc] <description>
-const Palette options_pal[] = {
+Palette options_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x7888A8),
         /* 01 */ TO_RGB555(0x000030),

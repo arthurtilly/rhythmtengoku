@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0890ae54] <description>
-const Palette data_room_reading_obj_pal[] = {
+Palette data_room_reading_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -42,7 +42,7 @@ const Palette data_room_reading_obj_pal[] = {
 };
 
 // [D_0890ae94] <description>
-const Palette data_room_reading_bg_00_pal[] = {
+Palette data_room_reading_bg_00_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -100,7 +100,7 @@ const Palette data_room_reading_bg_00_pal[] = {
 };
 
 // [D_0890aef4] <description>
-const Palette data_room_reading_bg_01_pal[] = {
+Palette data_room_reading_bg_01_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -194,7 +194,7 @@ const Palette data_room_reading_bg_01_pal[] = {
 };
 
 // [D_0890af94] <description>
-const Palette data_room_reading_bg_02_pal[] = {
+Palette data_room_reading_bg_02_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -432,7 +432,7 @@ const Palette data_room_reading_bg_02_pal[] = {
 };
 
 // [D_0890b134] <description>
-const Palette data_room_reading_bg_03_pal[] = {
+Palette data_room_reading_bg_03_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -490,7 +490,7 @@ const Palette data_room_reading_bg_03_pal[] = {
 };
 
 // [D_0890b194] <description>
-const Palette data_room_reading_bg_04_pal[] = {
+Palette data_room_reading_bg_04_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -548,7 +548,7 @@ const Palette data_room_reading_bg_04_pal[] = {
 };
 
 // [D_0890b1f4] <description>
-const Palette data_room_reading_bg_05_pal[] = {
+Palette data_room_reading_bg_05_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -642,7 +642,7 @@ const Palette data_room_reading_bg_05_pal[] = {
 };
 
 // [D_0890b294] <description>
-const Palette data_room_reading_bg_06_pal[] = {
+Palette data_room_reading_bg_06_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),

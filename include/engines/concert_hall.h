@@ -22,10 +22,10 @@ enum ConcertHallPostersEnum {
 
 
 // OAM Animations:
-extern const struct Animation anim_concert_hall_arrow_up[];
-extern const struct Animation anim_concert_hall_arrow_down[];
-extern const struct Animation anim_concert_hall_start_icon[];
-extern const struct Animation anim_concert_hall_poster[];
+extern struct Animation anim_concert_hall_arrow_up[];
+extern struct Animation anim_concert_hall_arrow_down[];
+extern struct Animation anim_concert_hall_start_icon[];
+extern struct Animation anim_concert_hall_poster[];
 
 
 // Palettes:
@@ -38,7 +38,7 @@ extern const struct Animation anim_concert_hall_poster[];
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *concert_hall_buffered_textures[];
+extern struct CompressedGraphics *concert_hall_buffered_textures[];
 extern struct GraphicsTable concert_hall_gfx_table[];
 extern const char *concert_hall_poster_desc[];
 

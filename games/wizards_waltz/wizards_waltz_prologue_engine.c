@@ -4,17 +4,17 @@
   /* PROLOGUE (WIZARD'S WALTZ) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c339dc;
-extern const struct CompressedGraphics D_08c33c14;
-extern const struct CompressedGraphics D_08c33640;
-extern const Palette wizards_waltz_prologue_pal[];
+extern struct CompressedGraphics D_08c339dc;
+extern struct CompressedGraphics D_08c33c14;
+extern struct CompressedGraphics D_08c33640;
+extern Palette wizards_waltz_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ede24] Buffered Textures List
-const struct CompressedGraphics *wizards_waltz_prologue_buffered_textures[] = {
+struct CompressedGraphics *wizards_waltz_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

@@ -4,19 +4,19 @@
   /* SAMURAI SLICE - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c66b54;
-extern const struct CompressedGraphics D_08c66fbc;
-extern const struct CompressedGraphics D_08c66d24;
-extern const struct CompressedGraphics D_08c67314;
-extern const struct CompressedGraphics D_08c658dc;
-extern const Palette samurai_slice_pal[];
+extern struct CompressedGraphics D_08c66b54;
+extern struct CompressedGraphics D_08c66fbc;
+extern struct CompressedGraphics D_08c66d24;
+extern struct CompressedGraphics D_08c67314;
+extern struct CompressedGraphics D_08c658dc;
+extern Palette samurai_slice_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e4798] Buffered Textures List
-const struct CompressedGraphics *samurai_slice_buffered_textures[] = {
+struct CompressedGraphics *samurai_slice_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -135,14 +135,14 @@ struct CueDefinition *samurai_slice_cue_index[] = {
 };
 
 // [D_089e48bc] Samurai Slicing Animations
-const struct Animation *samurai_slicing_anim[] = {
+struct Animation *samurai_slicing_anim[] = {
     /* 0x00 */ anim_samurai_slice_1,
     /* 0x01 */ anim_samurai_slice_2,
     /* 0x02 */ anim_samurai_slice_3
 };
 
 // [D_089e48c8] Samurai Beat Animations
-const struct Animation *samurai_beat_anim[] = {
+struct Animation *samurai_beat_anim[] = {
     /* 0x00 */ anim_samurai_beat_1,
     /* 0x01 */ anim_samurai_beat_2,
     /* 0x02 */ anim_samurai_beat_3
@@ -151,19 +151,19 @@ const struct Animation *samurai_beat_anim[] = {
 // Blank Text
 const char D_0805a5d0[] = "";
 
-extern const struct Animation anim_demon_hurt[];
-extern const struct Animation anim_small_demon_hit[];
-extern const struct Animation anim_med_demon_hit[];
-extern const struct Animation anim_small_demon_hit[];
-extern const struct Animation anim_propeller_demon_hit[];
-extern const struct Animation anim_winged_demon_hit[];
-extern const struct Animation anim_large_demon_hit1[];
-extern const struct Animation anim_large_demon_hit2[];
-extern const struct Animation anim_small_demon_barely[];
-extern const struct Animation anim_med_demon_barely[];
-extern const struct Animation anim_propeller_demon_barely[];
-extern const struct Animation anim_winged_demon_barely[];
-extern const struct Animation anim_large_demon_barely[];
+extern struct Animation anim_demon_hurt[];
+extern struct Animation anim_small_demon_hit[];
+extern struct Animation anim_med_demon_hit[];
+extern struct Animation anim_small_demon_hit[];
+extern struct Animation anim_propeller_demon_hit[];
+extern struct Animation anim_winged_demon_hit[];
+extern struct Animation anim_large_demon_hit1[];
+extern struct Animation anim_large_demon_hit2[];
+extern struct Animation anim_small_demon_barely[];
+extern struct Animation anim_med_demon_barely[];
+extern struct Animation anim_propeller_demon_barely[];
+extern struct Animation anim_winged_demon_barely[];
+extern struct Animation anim_large_demon_barely[];
 
 // ?
 const struct SamuraiSlice_0805a5d4 D_0805a5d4[] = {
@@ -225,7 +225,7 @@ struct GameEngine samurai_slice_engine = {
 
 
 // [D_089e4928] Demon Moving Animations
-const struct Animation *D_089e4928[] = {
+struct Animation *D_089e4928[] = {
     /* 0x00 */ anim_small_demon_hop,
     /* 0x01 */ anim_med_demon_hop,
     /* 0x02 */ anim_winged_demon_fly,
@@ -235,7 +235,7 @@ const struct Animation *D_089e4928[] = {
 };
 
 // [D_089e4940] Demon Moving Animations
-const struct Animation *D_089e4940[] = {
+struct Animation *D_089e4940[] = {
     /* 0x00 */ anim_med_demon_hop,
     /* 0x01 */ anim_small_demon_hop,
     /* 0x02 */ anim_winged_demon_fly,

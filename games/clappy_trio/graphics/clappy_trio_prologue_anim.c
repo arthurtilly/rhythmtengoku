@@ -4,7 +4,7 @@
 #include "clappy_trio_prologue_anim_cells.inc.c"
 
 // [D_088afb9c] Title
-const struct Animation anim_clappy_trio_prologue_title[] = {
+struct Animation anim_clappy_trio_prologue_title[] = {
     /* 000 */ { clappy_trio_prologue_cel000, 40 },
     /* 001 */ { clappy_trio_prologue_cel001, 6 },
     /* 002 */ { clappy_trio_prologue_cel002, 6 },

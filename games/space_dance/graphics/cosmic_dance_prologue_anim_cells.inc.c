@@ -1,7 +1,7 @@
 // do not rename these
 
 // [D_088adb60]
-const AnimationCel cosmic_dance_prologue_cel000[] = {
+AnimationCel cosmic_dance_prologue_cel000[] = {
     /* Len */ 7,
     /* 000 */ 0x00f0, 0x41c0, 0x000e,
     /* 001 */ 0x00f0, 0x41d0, 0x000c,
@@ -13,7 +13,7 @@ const AnimationCel cosmic_dance_prologue_cel000[] = {
 };
 
 // [D_088adb8c]
-const AnimationCel cosmic_dance_prologue_cel001[] = {
+AnimationCel cosmic_dance_prologue_cel001[] = {
     /* Len */ 1,
     /* 000 */ 0x00e0, 0xc1e0, 0x0000
 };

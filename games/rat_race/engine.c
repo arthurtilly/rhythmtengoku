@@ -4,22 +4,22 @@
   /* RAT RACE - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c87fb0;
-extern const struct CompressedGraphics D_08c880b8;
-extern const struct CompressedGraphics D_08c88148;
-extern const struct CompressedGraphics D_08c88168;
-extern const struct CompressedGraphics D_08c88420;
-extern const struct CompressedGraphics D_08c88530;
-extern const struct CompressedGraphics D_08c86e74;
+extern struct CompressedGraphics D_08c87fb0;
+extern struct CompressedGraphics D_08c880b8;
+extern struct CompressedGraphics D_08c88148;
+extern struct CompressedGraphics D_08c88168;
+extern struct CompressedGraphics D_08c88420;
+extern struct CompressedGraphics D_08c88530;
+extern struct CompressedGraphics D_08c86e74;
 
-extern const Palette rat_race_pal[];
+extern Palette rat_race_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e6634] Buffered Textures List
-const struct CompressedGraphics *rat_race_buffered_textures[] = {
+struct CompressedGraphics *rat_race_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

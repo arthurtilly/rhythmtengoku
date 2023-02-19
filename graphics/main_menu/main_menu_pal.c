@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0890a4f4] <description>
-const Palette main_menu_pal[] = {
+Palette main_menu_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x7888A8),
         /* 01 */ TO_RGB555(0xF8D098),

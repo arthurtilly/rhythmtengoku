@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0893253c] <description>
-const Palette warning_pal[] = {
+Palette warning_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),

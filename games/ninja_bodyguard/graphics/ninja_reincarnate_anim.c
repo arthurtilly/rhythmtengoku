@@ -4,7 +4,7 @@
 #include "ninja_reincarnate_anim_cells.inc.c"
 
 // [D_08935070] Tanaka - Cut Right + Spin
-const struct Animation anim_tanaka_slice_spin_r[] = {
+struct Animation anim_tanaka_slice_spin_r[] = {
     /* 000 */ { ninja_reincarnate_cel019, 20 },
     /* 001 */ { ninja_reincarnate_cel024, 4 },
     /* 002 */ { ninja_reincarnate_cel025, 8 },
@@ -17,7 +17,7 @@ const struct Animation anim_tanaka_slice_spin_r[] = {
 };
 
 // [D_089350b8] Tanaka - Cut Left + Spin
-const struct Animation anim_tanaka_slice_spin_l[] = {
+struct Animation anim_tanaka_slice_spin_l[] = {
     /* 000 */ { ninja_reincarnate_cel025, 20 },
     /* 001 */ { ninja_reincarnate_cel030, 4 },
     /* 002 */ { ninja_reincarnate_cel031, 8 },
@@ -30,7 +30,7 @@ const struct Animation anim_tanaka_slice_spin_l[] = {
 };
 
 // [D_08935100] Tanaka - Bow to Woman
-const struct Animation anim_tanaka_bow_to_girlfriend[] = {
+struct Animation anim_tanaka_bow_to_girlfriend[] = {
     /* 000 */ { ninja_reincarnate_cel037, 8 },
     /* 001 */ { ninja_reincarnate_cel038, 8 },
     /* 002 */ { ninja_reincarnate_cel039, 8 },
@@ -38,7 +38,7 @@ const struct Animation anim_tanaka_bow_to_girlfriend[] = {
 };
 
 // [D_08935120] Bad Guy - Draw Slingshot
-const struct Animation anim_bad_guy_draw_slingshot[] = {
+struct Animation anim_bad_guy_draw_slingshot[] = {
     /* 000 */ { ninja_reincarnate_cel069, 1 },
     /* 001 */ { ninja_reincarnate_cel070, 1 },
     /* 002 */ { ninja_reincarnate_cel071, 1 },
@@ -53,7 +53,7 @@ const struct Animation anim_bad_guy_draw_slingshot[] = {
 };
 
 // [D_08935178] Rock - Drawn
-const struct Animation anim_bad_guy_rock_draw[] = {
+struct Animation anim_bad_guy_rock_draw[] = {
     /* 000 */ { ninja_reincarnate_cel101, 36 },
     /* 001 */ { ninja_reincarnate_cel087, 1 },
     /* 002 */ { ninja_reincarnate_cel088, 1 },
@@ -73,7 +73,7 @@ const struct Animation anim_bad_guy_rock_draw[] = {
 };
 
 // [D_089351f8] Woman - Blink
-const struct Animation anim_girlfriend_blink[] = {
+struct Animation anim_girlfriend_blink[] = {
     /* 000 */ { ninja_reincarnate_cel011, 8 },
     /* 001 */ { ninja_reincarnate_cel012, 8 },
     /* 002 */ { ninja_reincarnate_cel012, 30 },
@@ -83,21 +83,21 @@ const struct Animation anim_girlfriend_blink[] = {
 };
 
 // [D_08935228] Woman - Scared
-const struct Animation anim_girlfriend_scared[] = {
+struct Animation anim_girlfriend_scared[] = {
     /* 000 */ { ninja_reincarnate_cel016, 4 },
     /* 001 */ { ninja_reincarnate_cel017, 50 },
     /* End */ END_ANIMATION
 };
 
 // [D_08935240] Woman - Shaking
-const struct Animation anim_girlfriend_shaking[] = {
+struct Animation anim_girlfriend_shaking[] = {
     /* 000 */ { ninja_reincarnate_cel016, 2 },
     /* 001 */ { ninja_reincarnate_cel018, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_08935258] Heart Eyes
-const struct Animation anim_ninja2_heart_eyes[] = {
+struct Animation anim_ninja2_heart_eyes[] = {
     /* 000 */ { ninja_reincarnate_cel007, 8 },
     /* 001 */ { ninja_reincarnate_cel008, 8 },
     /* 002 */ { ninja_reincarnate_cel009, 30 },
@@ -106,7 +106,7 @@ const struct Animation anim_ninja2_heart_eyes[] = {
 };
 
 // [D_08935280] Cherry Blossom Petal
-const struct Animation anim_ninja2_cherry_petal[] = {
+struct Animation anim_ninja2_cherry_petal[] = {
     /* 000 */ { ninja_reincarnate_cel004, 6 },
     /* 001 */ { ninja_reincarnate_cel005, 6 },
     /* 002 */ { ninja_reincarnate_cel006, 6 },
@@ -115,7 +115,7 @@ const struct Animation anim_ninja2_cherry_petal[] = {
 };
 
 // [D_089352a8] Rock - Hit Wall
-const struct Animation anim_ninja2_rock_to_wall[] = {
+struct Animation anim_ninja2_rock_to_wall[] = {
     /* 000 */ { ninja_reincarnate_cel040, 1 },
     /* 001 */ { ninja_reincarnate_cel041, 2 },
     /* 002 */ { ninja_reincarnate_cel042, 2 },
@@ -138,25 +138,25 @@ const struct Animation anim_ninja2_rock_to_wall[] = {
 };
 
 // [D_08935340] Rock - In Wall
-const struct Animation anim_ninja2_rock_in_wall1[] = {
+struct Animation anim_ninja2_rock_in_wall1[] = {
     /* 000 */ { ninja_reincarnate_cel131, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_08935350] Rock - In Wall (Duplicate)
-const struct Animation anim_ninja2_rock_in_wall2[] = {
+struct Animation anim_ninja2_rock_in_wall2[] = {
     /* 000 */ { ninja_reincarnate_cel131, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_08935360] Rock - In Wall (Another Duplicate)
-const struct Animation anim_ninja2_rock_in_wall3[] = {
+struct Animation anim_ninja2_rock_in_wall3[] = {
     /* 000 */ { ninja_reincarnate_cel131, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_08935370] Rock - Deflected Left
-const struct Animation anim_ninja2_rock_deflect_l[] = {
+struct Animation anim_ninja2_rock_deflect_l[] = {
     /* 000 */ { ninja_reincarnate_cel040, 1 },
     /* 001 */ { ninja_reincarnate_cel049, 1 },
     /* 002 */ { ninja_reincarnate_cel050, 2 },
@@ -178,7 +178,7 @@ const struct Animation anim_ninja2_rock_deflect_l[] = {
 };
 
 // [D_08935400] Rock - Deflected Right
-const struct Animation anim_ninja2_rock_deflect_r[] = {
+struct Animation anim_ninja2_rock_deflect_r[] = {
     /* 000 */ { ninja_reincarnate_cel040, 1 },
     /* 001 */ { ninja_reincarnate_cel053, 2 },
     /* 002 */ { ninja_reincarnate_cel054, 2 },
@@ -201,7 +201,7 @@ const struct Animation anim_ninja2_rock_deflect_r[] = {
 };
 
 // [D_08935498] Bad Guy - Release Slingshot
-const struct Animation anim_bad_guy_release_slingshot[] = {
+struct Animation anim_bad_guy_release_slingshot[] = {
     /* 000 */ { ninja_reincarnate_cel083, 1 },
     /* 001 */ { ninja_reincarnate_cel085, 1 },
     /* 002 */ { ninja_reincarnate_cel084, 1 },
@@ -213,35 +213,35 @@ const struct Animation anim_bad_guy_release_slingshot[] = {
 };
 
 // [D_089354d8] Tanaka - Swing Right
-const struct Animation anim_tanaka_swing_r[] = {
+struct Animation anim_tanaka_swing_r[] = {
     /* 000 */ { ninja_reincarnate_cel023, 2 },
     /* 001 */ { ninja_reincarnate_cel025, 80 },
     /* End */ END_ANIMATION
 };
 
 // [D_089354f0] Tanaka - Swing Left
-const struct Animation anim_tanaka_swing_l[] = {
+struct Animation anim_tanaka_swing_l[] = {
     /* 000 */ { ninja_reincarnate_cel029, 2 },
     /* 001 */ { ninja_reincarnate_cel031, 80 },
     /* End */ END_ANIMATION
 };
 
 // [D_08935508] Tanaka - Cut Right
-const struct Animation anim_tanaka_slice_r[] = {
+struct Animation anim_tanaka_slice_r[] = {
     /* 000 */ { ninja_reincarnate_cel024, 2 },
     /* 001 */ { ninja_reincarnate_cel025, 80 },
     /* End */ END_ANIMATION
 };
 
 // [D_08935520] Tanaka - Cut Left
-const struct Animation anim_tanaka_slice_l[] = {
+struct Animation anim_tanaka_slice_l[] = {
     /* 000 */ { ninja_reincarnate_cel030, 2 },
     /* 001 */ { ninja_reincarnate_cel031, 80 },
     /* End */ END_ANIMATION
 };
 
 // [D_08935538] Tanaka - Spin Right
-const struct Animation anim_tanaka_spin_r[] = {
+struct Animation anim_tanaka_spin_r[] = {
     /* 000 */ { ninja_reincarnate_cel026, 4 },
     /* 001 */ { ninja_reincarnate_cel027, 4 },
     /* 002 */ { ninja_reincarnate_cel028, 4 },
@@ -251,7 +251,7 @@ const struct Animation anim_tanaka_spin_r[] = {
 };
 
 // [D_08935568] Tanaka - Spin Left
-const struct Animation anim_tanaka_spin_l[] = {
+struct Animation anim_tanaka_spin_l[] = {
     /* 000 */ { ninja_reincarnate_cel033, 4 },
     /* 001 */ { ninja_reincarnate_cel034, 4 },
     /* 002 */ { ninja_reincarnate_cel035, 4 },
@@ -261,7 +261,7 @@ const struct Animation anim_tanaka_spin_l[] = {
 };
 
 // [D_08935598] Woman - Walk
-const struct Animation anim_girlfriend_walk[] = {
+struct Animation anim_girlfriend_walk[] = {
     /* 000 */ { ninja_reincarnate_cel013, 10 },
     /* 001 */ { ninja_reincarnate_cel014, 10 },
     /* 002 */ { ninja_reincarnate_cel013, 10 },
@@ -270,7 +270,7 @@ const struct Animation anim_girlfriend_walk[] = {
 };
 
 // [D_089355c0] Tanaka - Appear
-const struct Animation anim_tanaka_appear[] = {
+struct Animation anim_tanaka_appear[] = {
     /* 000 */ { ninja_reincarnate_cel102, 1 },
     /* 001 */ { ninja_reincarnate_cel103, 1 },
     /* 002 */ { ninja_reincarnate_cel104, 1 },
@@ -280,7 +280,7 @@ const struct Animation anim_tanaka_appear[] = {
 };
 
 // [D_089355f0] Tanaka - Raise Stick
-const struct Animation anim_tanaka_raise_stick[] = {
+struct Animation anim_tanaka_raise_stick[] = {
     /* 000 */ { ninja_reincarnate_cel019, 3 },
     /* 001 */ { ninja_reincarnate_cel020, 3 },
     /* 002 */ { ninja_reincarnate_cel021, 3 },
@@ -289,21 +289,21 @@ const struct Animation anim_tanaka_raise_stick[] = {
 };
 
 // [D_08935618] Button Indicators
-const struct Animation anim_ninja2_button_indicators[] = {
+struct Animation anim_ninja2_button_indicators[] = {
     /* 000 */ { ninja_reincarnate_cel105, 4 },
     /* 001 */ { ninja_reincarnate_cel106, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08935630] Rock Shrapnel
-const struct Animation anim_ninja2_rock_pieces[] = {
+struct Animation anim_ninja2_rock_pieces[] = {
     /* 000 */ { ninja_reincarnate_cel107, 4 },
     /* 001 */ { ninja_reincarnate_cel108, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08935648] Rock - Fired at Tanaka
-const struct Animation anim_ninja2_rock_to_tanaka[] = {
+struct Animation anim_ninja2_rock_to_tanaka[] = {
     /* 000 */ { ninja_reincarnate_cel040, 1 },
     /* 001 */ { ninja_reincarnate_cel048, 1 },
     /* 002 */ { ninja_reincarnate_cel000, 1 },
@@ -311,7 +311,7 @@ const struct Animation anim_ninja2_rock_to_tanaka[] = {
 };
 
 // [D_08935668] Intro Cutscene Rock
-const struct Animation anim_ninja2_cutscene_rock[] = {
+struct Animation anim_ninja2_cutscene_rock[] = {
     /* 000 */ { ninja_reincarnate_cel109, 4 },
     /* End */ END_ANIMATION
 };

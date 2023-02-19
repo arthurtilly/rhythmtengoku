@@ -4,7 +4,7 @@
 #include "toss_boys_remix_5_anim_cells.inc.c"
 
 // [D_089277fc] Aka-chan - Beat
-const struct Animation anim_toss_remix_5_beat_r[] = {
+struct Animation anim_toss_remix_5_beat_r[] = {
     /* 000 */ { toss_boys_remix_5_cel000, 4 },
     /* 001 */ { toss_boys_remix_5_cel001, 4 },
     /* 002 */ { toss_boys_remix_5_cel002, 24 },
@@ -12,7 +12,7 @@ const struct Animation anim_toss_remix_5_beat_r[] = {
 };
 
 // [D_0892781c] Ao-kun - Beat
-const struct Animation anim_toss_remix_5_beat_b[] = {
+struct Animation anim_toss_remix_5_beat_b[] = {
     /* 000 */ { toss_boys_remix_5_cel003, 4 },
     /* 001 */ { toss_boys_remix_5_cel004, 4 },
     /* 002 */ { toss_boys_remix_5_cel005, 24 },
@@ -20,7 +20,7 @@ const struct Animation anim_toss_remix_5_beat_b[] = {
 };
 
 // [D_0892783c] Kii-yan - Beat
-const struct Animation anim_toss_remix_5_beat_y[] = {
+struct Animation anim_toss_remix_5_beat_y[] = {
     /* 000 */ { toss_boys_remix_5_cel006, 4 },
     /* 001 */ { toss_boys_remix_5_cel007, 4 },
     /* 002 */ { toss_boys_remix_5_cel008, 24 },
@@ -28,7 +28,7 @@ const struct Animation anim_toss_remix_5_beat_y[] = {
 };
 
 // [D_0892785c] Aka-chan - Toss
-const struct Animation anim_toss_remix_5_pass_r[] = {
+struct Animation anim_toss_remix_5_pass_r[] = {
     /* 000 */ { toss_boys_remix_5_cel015, 2 },
     /* 001 */ { toss_boys_remix_5_cel014, 2 },
     /* 002 */ { toss_boys_remix_5_cel013, 2 },
@@ -40,7 +40,7 @@ const struct Animation anim_toss_remix_5_pass_r[] = {
 };
 
 // [D_0892789c] Ao-kun - Toss
-const struct Animation anim_toss_remix_5_pass_b[] = {
+struct Animation anim_toss_remix_5_pass_b[] = {
     /* 000 */ { toss_boys_remix_5_cel028, 2 },
     /* 001 */ { toss_boys_remix_5_cel027, 2 },
     /* 002 */ { toss_boys_remix_5_cel026, 2 },
@@ -52,7 +52,7 @@ const struct Animation anim_toss_remix_5_pass_b[] = {
 };
 
 // [D_089278dc] Kii-yan - Toss
-const struct Animation anim_toss_remix_5_pass_y[] = {
+struct Animation anim_toss_remix_5_pass_y[] = {
     /* 000 */ { toss_boys_remix_5_cel041, 2 },
     /* 001 */ { toss_boys_remix_5_cel040, 2 },
     /* 002 */ { toss_boys_remix_5_cel039, 2 },
@@ -64,7 +64,7 @@ const struct Animation anim_toss_remix_5_pass_y[] = {
 };
 
 // [D_0892791c] Ball Dispenser - Close
-const struct Animation anim_toss_remix_5_dispenser_close[] = {
+struct Animation anim_toss_remix_5_dispenser_close[] = {
     /* 000 */ { toss_boys_remix_5_cel066, 40 },
     /* 001 */ { toss_boys_remix_5_cel065, 4 },
     /* 002 */ { toss_boys_remix_5_cel064, 4 },
@@ -76,13 +76,13 @@ const struct Animation anim_toss_remix_5_dispenser_close[] = {
 };
 
 // [D_0892795c] Ball
-const struct Animation anim_toss_remix_5_ball1[] = {
+struct Animation anim_toss_remix_5_ball1[] = {
     /* 000 */ { toss_boys_remix_5_cel067, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0892796c] Ball (most frames are a silhouette)
-const struct Animation anim_toss_remix_5_ball2[] = {
+struct Animation anim_toss_remix_5_ball2[] = {
     /* 000 */ { toss_boys_remix_5_cel067, 8 },
     /* 001 */ { toss_boys_remix_5_cel070, 8 },
     /* 002 */ { toss_boys_remix_5_cel071, 8 },
@@ -92,7 +92,7 @@ const struct Animation anim_toss_remix_5_ball2[] = {
 };
 
 // [D_0892799c] Ball (White Glow)
-const struct Animation anim_toss_remix_5_ball_wobble[] = {
+struct Animation anim_toss_remix_5_ball_wobble[] = {
     /* 000 */ { toss_boys_remix_5_cel074, 3 },
     /* 001 */ { toss_boys_remix_5_cel075, 3 },
     /* 002 */ { toss_boys_remix_5_cel076, 3 },
@@ -101,7 +101,7 @@ const struct Animation anim_toss_remix_5_ball_wobble[] = {
 };
 
 // [D_089279c4] Aka-chan - Miss
-const struct Animation anim_toss_remix_5_miss_r[] = {
+struct Animation anim_toss_remix_5_miss_r[] = {
     /* 000 */ { toss_boys_remix_5_cel048, 3 },
     /* 001 */ { toss_boys_remix_5_cel049, 3 },
     /* 002 */ { toss_boys_remix_5_cel050, 3 },
@@ -110,7 +110,7 @@ const struct Animation anim_toss_remix_5_miss_r[] = {
 };
 
 // [D_089279ec] Ao-kun - Miss
-const struct Animation anim_toss_remix_5_miss_b[] = {
+struct Animation anim_toss_remix_5_miss_b[] = {
     /* 000 */ { toss_boys_remix_5_cel052, 3 },
     /* 001 */ { toss_boys_remix_5_cel053, 3 },
     /* 002 */ { toss_boys_remix_5_cel054, 3 },
@@ -119,7 +119,7 @@ const struct Animation anim_toss_remix_5_miss_b[] = {
 };
 
 // [D_08927a14] Kii-yan - Miss
-const struct Animation anim_toss_remix_5_miss_y[] = {
+struct Animation anim_toss_remix_5_miss_y[] = {
     /* 000 */ { toss_boys_remix_5_cel056, 3 },
     /* 001 */ { toss_boys_remix_5_cel057, 3 },
     /* 002 */ { toss_boys_remix_5_cel058, 3 },
@@ -128,13 +128,13 @@ const struct Animation anim_toss_remix_5_miss_y[] = {
 };
 
 // [D_08927a3c] Ball (again)
-const struct Animation anim_toss_remix_5_ball3[] = {
+struct Animation anim_toss_remix_5_ball3[] = {
     /* 000 */ { toss_boys_remix_5_cel077, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08927a4c] Aka-chan - Toss (Crouching)
-const struct Animation anim_toss_remix_5_super_pass_r[] = {
+struct Animation anim_toss_remix_5_super_pass_r[] = {
     /* 000 */ { toss_boys_remix_5_cel078, 2 },
     /* 001 */ { toss_boys_remix_5_cel079, 2 },
     /* 002 */ { toss_boys_remix_5_cel080, 2 },
@@ -146,7 +146,7 @@ const struct Animation anim_toss_remix_5_super_pass_r[] = {
 };
 
 // [D_08927a8c] Ao-kun - Toss (Crouching)
-const struct Animation anim_toss_remix_5_super_pass_b[] = {
+struct Animation anim_toss_remix_5_super_pass_b[] = {
     /* 000 */ { toss_boys_remix_5_cel087, 2 },
     /* 001 */ { toss_boys_remix_5_cel088, 2 },
     /* 002 */ { toss_boys_remix_5_cel089, 2 },
@@ -158,7 +158,7 @@ const struct Animation anim_toss_remix_5_super_pass_b[] = {
 };
 
 // [D_08927acc] Kii-yan - Toss (Crouching)
-const struct Animation anim_toss_remix_5_super_pass_y[] = {
+struct Animation anim_toss_remix_5_super_pass_y[] = {
     /* 000 */ { toss_boys_remix_5_cel096, 2 },
     /* 001 */ { toss_boys_remix_5_cel097, 2 },
     /* 002 */ { toss_boys_remix_5_cel098, 2 },
@@ -170,7 +170,7 @@ const struct Animation anim_toss_remix_5_super_pass_y[] = {
 };
 
 // [D_08927b0c] Impact Effect
-const struct Animation anim_toss_remix_5_pop_effect[] = {
+struct Animation anim_toss_remix_5_pop_effect[] = {
     /* 000 */ { toss_boys_remix_5_cel105, 2 },
     /* 001 */ { toss_boys_remix_5_cel106, 2 },
     /* 002 */ { toss_boys_remix_5_cel107, 2 },
@@ -181,7 +181,7 @@ const struct Animation anim_toss_remix_5_pop_effect[] = {
 };
 
 // [D_08927b44] Aka-chan - Beat (Crouching)
-const struct Animation anim_toss_remix_5_super_beat_r[] = {
+struct Animation anim_toss_remix_5_super_beat_r[] = {
     /* 000 */ { toss_boys_remix_5_cel086, 3 },
     /* 001 */ { toss_boys_remix_5_cel085, 3 },
     /* 002 */ { toss_boys_remix_5_cel084, 40 },
@@ -189,7 +189,7 @@ const struct Animation anim_toss_remix_5_super_beat_r[] = {
 };
 
 // [D_08927b64] Ao-kun - Beat (Crouching)
-const struct Animation anim_toss_remix_5_super_beat_b[] = {
+struct Animation anim_toss_remix_5_super_beat_b[] = {
     /* 000 */ { toss_boys_remix_5_cel095, 3 },
     /* 001 */ { toss_boys_remix_5_cel094, 3 },
     /* 002 */ { toss_boys_remix_5_cel093, 40 },
@@ -197,7 +197,7 @@ const struct Animation anim_toss_remix_5_super_beat_b[] = {
 };
 
 // [D_08927b84] Kii-yan - Beat (Crouching)
-const struct Animation anim_toss_remix_5_super_beat_y[] = {
+struct Animation anim_toss_remix_5_super_beat_y[] = {
     /* 000 */ { toss_boys_remix_5_cel104, 3 },
     /* 001 */ { toss_boys_remix_5_cel103, 3 },
     /* 002 */ { toss_boys_remix_5_cel102, 30 },
@@ -205,14 +205,14 @@ const struct Animation anim_toss_remix_5_super_beat_y[] = {
 };
 
 // [D_08927ba4] Ball (Flashing)
-const struct Animation anim_toss_remix_5_ball_flash[] = {
+struct Animation anim_toss_remix_5_ball_flash[] = {
     /* 000 */ { toss_boys_remix_5_cel068, 4 },
     /* 001 */ { toss_boys_remix_5_cel069, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_08927bbc] Aka-chan - Catch Ball
-const struct Animation anim_toss_remix_5_catch_r[] = {
+struct Animation anim_toss_remix_5_catch_r[] = {
     /* 000 */ { toss_boys_remix_5_cel021, 2 },
     /* 001 */ { toss_boys_remix_5_cel020, 2 },
     /* 002 */ { toss_boys_remix_5_cel019, 2 },
@@ -223,7 +223,7 @@ const struct Animation anim_toss_remix_5_catch_r[] = {
 };
 
 // [D_08927bf4] Ao-kun - Catch Ball
-const struct Animation anim_toss_remix_5_catch_b[] = {
+struct Animation anim_toss_remix_5_catch_b[] = {
     /* 000 */ { toss_boys_remix_5_cel034, 2 },
     /* 001 */ { toss_boys_remix_5_cel033, 2 },
     /* 002 */ { toss_boys_remix_5_cel032, 2 },
@@ -234,7 +234,7 @@ const struct Animation anim_toss_remix_5_catch_b[] = {
 };
 
 // [D_08927c2c] Kii-yan - Catch Ball
-const struct Animation anim_toss_remix_5_catch_y[] = {
+struct Animation anim_toss_remix_5_catch_y[] = {
     /* 000 */ { toss_boys_remix_5_cel047, 2 },
     /* 001 */ { toss_boys_remix_5_cel046, 2 },
     /* 002 */ { toss_boys_remix_5_cel045, 2 },
@@ -245,7 +245,7 @@ const struct Animation anim_toss_remix_5_catch_y[] = {
 };
 
 // [D_08927c64] Kii-yan - Prepare to Pop Ball
-const struct Animation anim_toss_remix_5_ready_y[] = {
+struct Animation anim_toss_remix_5_ready_y[] = {
     /* 000 */ { toss_boys_remix_5_cel111, 2 },
     /* 001 */ { toss_boys_remix_5_cel112, 3 },
     /* 002 */ { toss_boys_remix_5_cel113, 30 },
@@ -253,7 +253,7 @@ const struct Animation anim_toss_remix_5_ready_y[] = {
 };
 
 // [D_08927c84] Aka-chan - Prepare to Pop Ball
-const struct Animation anim_toss_remix_5_ready_r[] = {
+struct Animation anim_toss_remix_5_ready_r[] = {
     /* 000 */ { toss_boys_remix_5_cel117, 2 },
     /* 001 */ { toss_boys_remix_5_cel118, 3 },
     /* 002 */ { toss_boys_remix_5_cel119, 30 },
@@ -261,7 +261,7 @@ const struct Animation anim_toss_remix_5_ready_r[] = {
 };
 
 // [D_08927ca4] Ao-kun - Prepare to Pop Ball
-const struct Animation anim_toss_remix_5_ready_b[] = {
+struct Animation anim_toss_remix_5_ready_b[] = {
     /* 000 */ { toss_boys_remix_5_cel123, 2 },
     /* 001 */ { toss_boys_remix_5_cel124, 3 },
     /* 002 */ { toss_boys_remix_5_cel125, 30 },
@@ -269,7 +269,7 @@ const struct Animation anim_toss_remix_5_ready_b[] = {
 };
 
 // [D_08927cc4] Kii-yan - Pop Ball
-const struct Animation anim_toss_remix_5_pop_y[] = {
+struct Animation anim_toss_remix_5_pop_y[] = {
     /* 000 */ { toss_boys_remix_5_cel114, 2 },
     /* 001 */ { toss_boys_remix_5_cel115, 2 },
     /* 002 */ { toss_boys_remix_5_cel116, 40 },
@@ -277,7 +277,7 @@ const struct Animation anim_toss_remix_5_pop_y[] = {
 };
 
 // [D_08927ce4] Aka-chan - Pop Ball
-const struct Animation anim_toss_remix_5_pop_r[] = {
+struct Animation anim_toss_remix_5_pop_r[] = {
     /* 000 */ { toss_boys_remix_5_cel120, 2 },
     /* 001 */ { toss_boys_remix_5_cel121, 2 },
     /* 002 */ { toss_boys_remix_5_cel122, 40 },
@@ -285,7 +285,7 @@ const struct Animation anim_toss_remix_5_pop_r[] = {
 };
 
 // [D_08927d04] Ao-kun - Pop Ball
-const struct Animation anim_toss_remix_5_pop_b[] = {
+struct Animation anim_toss_remix_5_pop_b[] = {
     /* 000 */ { toss_boys_remix_5_cel126, 2 },
     /* 001 */ { toss_boys_remix_5_cel127, 2 },
     /* 002 */ { toss_boys_remix_5_cel128, 40 },
@@ -293,13 +293,13 @@ const struct Animation anim_toss_remix_5_pop_b[] = {
 };
 
 // [D_08927d24] "Start to Skip" Tutorial Text
-const struct Animation anim_toss_remix_5_text_skip_tutorial[] = {
+struct Animation anim_toss_remix_5_text_skip_tutorial[] = {
     /* 000 */ { toss_boys_remix_5_cel129, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08927d34] Aka-chan - Barely
-const struct Animation anim_toss_remix_5_barely_r[] = {
+struct Animation anim_toss_remix_5_barely_r[] = {
     /* 000 */ { toss_boys_remix_5_cel130, 2 },
     /* 001 */ { toss_boys_remix_5_cel131, 2 },
     /* 002 */ { toss_boys_remix_5_cel132, 2 },
@@ -311,7 +311,7 @@ const struct Animation anim_toss_remix_5_barely_r[] = {
 };
 
 // [D_08927d74] Ao-kun - Barely
-const struct Animation anim_toss_remix_5_barely_b[] = {
+struct Animation anim_toss_remix_5_barely_b[] = {
     /* 000 */ { toss_boys_remix_5_cel137, 2 },
     /* 001 */ { toss_boys_remix_5_cel138, 2 },
     /* 002 */ { toss_boys_remix_5_cel139, 2 },
@@ -323,7 +323,7 @@ const struct Animation anim_toss_remix_5_barely_b[] = {
 };
 
 // [D_08927db4] Kii-yan - Barely
-const struct Animation anim_toss_remix_5_barely_y[] = {
+struct Animation anim_toss_remix_5_barely_y[] = {
     /* 000 */ { toss_boys_remix_5_cel144, 2 },
     /* 001 */ { toss_boys_remix_5_cel145, 2 },
     /* 002 */ { toss_boys_remix_5_cel146, 2 },
@@ -335,7 +335,7 @@ const struct Animation anim_toss_remix_5_barely_y[] = {
 };
 
 // [D_08927df4] Soshi - Left Arm & Guitar
-const struct Animation anim_toss_remix_5_soshi_arm_l[] = {
+struct Animation anim_toss_remix_5_soshi_arm_l[] = {
     /* 000 */ { toss_boys_remix_5_cel163, 3 },
     /* 001 */ { toss_boys_remix_5_cel162, 3 },
     /* 002 */ { toss_boys_remix_5_cel161, 3 },
@@ -347,7 +347,7 @@ const struct Animation anim_toss_remix_5_soshi_arm_l[] = {
 };
 
 // [D_08927e34] Soshi - Right Arm & Guitar
-const struct Animation anim_toss_remix_5_soshi_arm_r[] = {
+struct Animation anim_toss_remix_5_soshi_arm_r[] = {
     /* 000 */ { toss_boys_remix_5_cel164, 5 },
     /* 001 */ { toss_boys_remix_5_cel165, 5 },
     /* 002 */ { toss_boys_remix_5_cel166, 5 },
@@ -356,7 +356,7 @@ const struct Animation anim_toss_remix_5_soshi_arm_r[] = {
 };
 
 // [D_08927e5c] Soshi - Body
-const struct Animation anim_toss_remix_5_soshi_body[] = {
+struct Animation anim_toss_remix_5_soshi_body[] = {
     /* 000 */ { toss_boys_remix_5_cel168, 3 },
     /* 001 */ { toss_boys_remix_5_cel169, 3 },
     /* 002 */ { toss_boys_remix_5_cel170, 24 },
@@ -364,7 +364,7 @@ const struct Animation anim_toss_remix_5_soshi_body[] = {
 };
 
 // [D_08927e7c] Soshi - Head (Beat)
-const struct Animation anim_toss_remix_5_soshi_head[] = {
+struct Animation anim_toss_remix_5_soshi_head[] = {
     /* 000 */ { toss_boys_remix_5_cel173, 3 },
     /* 001 */ { toss_boys_remix_5_cel172, 3 },
     /* 002 */ { toss_boys_remix_5_cel171, 24 },
@@ -372,7 +372,7 @@ const struct Animation anim_toss_remix_5_soshi_head[] = {
 };
 
 // [D_08927e9c] Soshi - Head (Blink)
-const struct Animation anim_toss_remix_5_soshi_head_blink[] = {
+struct Animation anim_toss_remix_5_soshi_head_blink[] = {
     /* 000 */ { toss_boys_remix_5_cel174, 8 },
     /* 001 */ { toss_boys_remix_5_cel171, 8 },
     /* 002 */ { toss_boys_remix_5_cel171, 30 },
@@ -382,7 +382,7 @@ const struct Animation anim_toss_remix_5_soshi_head_blink[] = {
 };
 
 // [D_08927ecc] Soshi - Strum (Ball Launched)
-const struct Animation anim_toss_remix_5_soshi_strum_launch[] = {
+struct Animation anim_toss_remix_5_soshi_strum_launch[] = {
     /* 000 */ { toss_boys_remix_5_cel185, 2 },
     /* 001 */ { toss_boys_remix_5_cel184, 2 },
     /* 002 */ { toss_boys_remix_5_cel183, 3 },
@@ -398,7 +398,7 @@ const struct Animation anim_toss_remix_5_soshi_strum_launch[] = {
 };
 
 // [D_08927f2c] Soshi - Strum (Ball Popped)
-const struct Animation anim_toss_remix_5_soshi_strum_pop[] = {
+struct Animation anim_toss_remix_5_soshi_strum_pop[] = {
     /* 000 */ { toss_boys_remix_5_cel152, 3 },
     /* 001 */ { toss_boys_remix_5_cel153, 3 },
     /* 002 */ { toss_boys_remix_5_cel154, 3 },
@@ -414,19 +414,19 @@ const struct Animation anim_toss_remix_5_soshi_strum_pop[] = {
 };
 
 // [D_08927f8c] Start Indicator Arrow - Aka-chan
-const struct Animation anim_toss_remix_5_arrow_r[] = {
+struct Animation anim_toss_remix_5_arrow_r[] = {
     /* 000 */ { toss_boys_remix_5_cel186, 30 },
     /* End */ END_ANIMATION
 };
 
 // [D_08927f9c] Start Indicator Arrow - Ao-kun
-const struct Animation anim_toss_remix_5_arrow_b[] = {
+struct Animation anim_toss_remix_5_arrow_b[] = {
     /* 000 */ { toss_boys_remix_5_cel187, 30 },
     /* End */ END_ANIMATION
 };
 
 // [D_08927fac] Start Indicator Arrow - Kii-yan
-const struct Animation anim_toss_remix_5_arrow_y[] = {
+struct Animation anim_toss_remix_5_arrow_y[] = {
     /* 000 */ { toss_boys_remix_5_cel188, 30 },
     /* End */ END_ANIMATION
 };

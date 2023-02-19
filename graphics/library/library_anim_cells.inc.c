@@ -1,7 +1,7 @@
 // do not rename these
 
 // [D_0890000c]
-const AnimationCel library_cel000[] = {
+AnimationCel library_cel000[] = {
     /* Len */ 5,
     /* 000 */ 0x40f8, 0x81c8, 0x1000,
     /* 001 */ 0x80f8, 0x01e8, 0x100c,
@@ -11,7 +11,7 @@ const AnimationCel library_cel000[] = {
 };
 
 // [D_0890002c]
-const AnimationCel library_cel001[] = {
+AnimationCel library_cel001[] = {
     /* Len */ 5,
     /* 000 */ 0x40f8, 0x81c8, 0x1000,
     /* 001 */ 0x80f8, 0x01e8, 0x100c,
@@ -21,7 +21,7 @@ const AnimationCel library_cel001[] = {
 };
 
 // [D_0890004c]
-const AnimationCel library_cel002[] = {
+AnimationCel library_cel002[] = {
     /* Len */ 5,
     /* 000 */ 0x40f8, 0x81c8, 0x1000,
     /* 001 */ 0x80f8, 0x01e8, 0x100c,
@@ -31,7 +31,7 @@ const AnimationCel library_cel002[] = {
 };
 
 // [D_0890006c]
-const AnimationCel library_cel003[] = {
+AnimationCel library_cel003[] = {
     /* Len */ 5,
     /* 000 */ 0x40f8, 0x81c8, 0x1000,
     /* 001 */ 0x80f8, 0x01e8, 0x100c,
@@ -41,7 +41,7 @@ const AnimationCel library_cel003[] = {
 };
 
 // [D_0890008c]
-const AnimationCel library_cel004[] = {
+AnimationCel library_cel004[] = {
     /* Len */ 5,
     /* 000 */ 0x40f8, 0x81c8, 0x1000,
     /* 001 */ 0x80f8, 0x01e8, 0x100c,
@@ -51,7 +51,7 @@ const AnimationCel library_cel004[] = {
 };
 
 // [D_089000ac]
-const AnimationCel library_cel005[] = {
+AnimationCel library_cel005[] = {
     /* Len */ 5,
     /* 000 */ 0x40f8, 0x81c8, 0x1000,
     /* 001 */ 0x80f8, 0x01e8, 0x100c,

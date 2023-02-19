@@ -1,7 +1,7 @@
 // do not rename these
 
 // [D_08913f48]
-const AnimationCel tanuki_and_monkey_cel000[] = {
+AnimationCel tanuki_and_monkey_cel000[] = {
     /* Len */ 9,
     /* 000 */ 0x00d2, 0x41f0, 0x1006,
     /* 001 */ 0x40e2, 0x01f0, 0x108e,
@@ -15,7 +15,7 @@ const AnimationCel tanuki_and_monkey_cel000[] = {
 };
 
 // [D_08913f80]
-const AnimationCel tanuki_and_monkey_cel001[] = {
+AnimationCel tanuki_and_monkey_cel001[] = {
     /* Len */ 9,
     /* 000 */ 0x00d0, 0x41f0, 0x1006,
     /* 001 */ 0x40e0, 0x01f0, 0x108e,
@@ -29,7 +29,7 @@ const AnimationCel tanuki_and_monkey_cel001[] = {
 };
 
 // [D_08913fb8]
-const AnimationCel tanuki_and_monkey_cel002[] = {
+AnimationCel tanuki_and_monkey_cel002[] = {
     /* Len */ 11,
     /* 000 */ 0x80d6, 0x01f8, 0x1089,
     /* 001 */ 0x80d6, 0x1000, 0x1089,
@@ -45,7 +45,7 @@ const AnimationCel tanuki_and_monkey_cel002[] = {
 };
 
 // [D_08913ffc]
-const AnimationCel tanuki_and_monkey_cel003[] = {
+AnimationCel tanuki_and_monkey_cel003[] = {
     /* Len */ 11,
     /* 000 */ 0x80d6, 0x1000, 0x1004,
     /* 001 */ 0x80d6, 0x01f8, 0x1004,
@@ -61,7 +61,7 @@ const AnimationCel tanuki_and_monkey_cel003[] = {
 };
 
 // [D_08914040]
-const AnimationCel tanuki_and_monkey_cel004[] = {
+AnimationCel tanuki_and_monkey_cel004[] = {
     /* Len */ 12,
     /* 000 */ 0x00d9, 0x0005, 0x1098,
     /* 001 */ 0x80d7, 0x1000, 0x1004,
@@ -78,7 +78,7 @@ const AnimationCel tanuki_and_monkey_cel004[] = {
 };
 
 // [D_0891408a]
-const AnimationCel tanuki_and_monkey_cel005[] = {
+AnimationCel tanuki_and_monkey_cel005[] = {
     /* Len */ 12,
     /* 000 */ 0x00db, 0x0005, 0x1098,
     /* 001 */ 0x80d8, 0x01f8, 0x1088,
@@ -95,7 +95,7 @@ const AnimationCel tanuki_and_monkey_cel005[] = {
 };
 
 // [D_089140d4]
-const AnimationCel tanuki_and_monkey_cel006[] = {
+AnimationCel tanuki_and_monkey_cel006[] = {
     /* Len */ 12,
     /* 000 */ 0x00de, 0x0005, 0x1098,
     /* 001 */ 0x80d9, 0x01f8, 0x1088,
@@ -112,7 +112,7 @@ const AnimationCel tanuki_and_monkey_cel006[] = {
 };
 
 // [D_0891411e]
-const AnimationCel tanuki_and_monkey_cel007[] = {
+AnimationCel tanuki_and_monkey_cel007[] = {
     /* Len */ 11,
     /* 000 */ 0x80d9, 0x01f8, 0x1088,
     /* 001 */ 0x80d9, 0x1000, 0x1088,
@@ -128,7 +128,7 @@ const AnimationCel tanuki_and_monkey_cel007[] = {
 };
 
 // [D_08914162]
-const AnimationCel tanuki_and_monkey_cel008[] = {
+AnimationCel tanuki_and_monkey_cel008[] = {
     /* Len */ 7,
     /* 000 */ 0x00eb, 0x0002, 0x10b0,
     /* 001 */ 0x40e8, 0x01f6, 0x108c,
@@ -140,7 +140,7 @@ const AnimationCel tanuki_and_monkey_cel008[] = {
 };
 
 // [D_0891418e]
-const AnimationCel tanuki_and_monkey_cel009[] = {
+AnimationCel tanuki_and_monkey_cel009[] = {
     /* Len */ 3,
     /* 000 */ 0x00e3, 0x0000, 0x10b0,
     /* 001 */ 0x00dd, 0x41f6, 0x100c,
@@ -148,7 +148,7 @@ const AnimationCel tanuki_and_monkey_cel009[] = {
 };
 
 // [D_089141a2]
-const AnimationCel tanuki_and_monkey_cel010[] = {
+AnimationCel tanuki_and_monkey_cel010[] = {
     /* Len */ 3,
     /* 000 */ 0x00dc, 0x0000, 0x10b0,
     /* 001 */ 0x00d6, 0x41f6, 0x100c,
@@ -156,7 +156,7 @@ const AnimationCel tanuki_and_monkey_cel010[] = {
 };
 
 // [D_089141b6]
-const AnimationCel tanuki_and_monkey_cel011[] = {
+AnimationCel tanuki_and_monkey_cel011[] = {
     /* Len */ 3,
     /* 000 */ 0x00d4, 0x0001, 0x10b0,
     /* 001 */ 0x00ce, 0x41f6, 0x100c,
@@ -164,7 +164,7 @@ const AnimationCel tanuki_and_monkey_cel011[] = {
 };
 
 // [D_089141ca]
-const AnimationCel tanuki_and_monkey_cel012[] = {
+AnimationCel tanuki_and_monkey_cel012[] = {
     /* Len */ 4,
     /* 000 */ 0x00d2, 0x0004, 0x10b0,
     /* 001 */ 0x80c5, 0x0003, 0x1084,
@@ -173,7 +173,7 @@ const AnimationCel tanuki_and_monkey_cel012[] = {
 };
 
 // [D_089141e4]
-const AnimationCel tanuki_and_monkey_cel013[] = {
+AnimationCel tanuki_and_monkey_cel013[] = {
     /* Len */ 3,
     /* 000 */ 0x00d4, 0x0008, 0x10b0,
     /* 001 */ 0x80c7, 0x0008, 0x1084,
@@ -181,7 +181,7 @@ const AnimationCel tanuki_and_monkey_cel013[] = {
 };
 
 // [D_089141f8]
-const AnimationCel tanuki_and_monkey_cel014[] = {
+AnimationCel tanuki_and_monkey_cel014[] = {
     /* Len */ 3,
     /* 000 */ 0x00d7, 0x000b, 0x10b0,
     /* 001 */ 0x80cc, 0x000b, 0x1080,
@@ -189,7 +189,7 @@ const AnimationCel tanuki_and_monkey_cel014[] = {
 };
 
 // [D_0891420c]
-const AnimationCel tanuki_and_monkey_cel015[] = {
+AnimationCel tanuki_and_monkey_cel015[] = {
     /* Len */ 4,
     /* 000 */ 0x00db, 0x000c, 0x10b0,
     /* 001 */ 0x80d0, 0x000c, 0x1080,
@@ -198,7 +198,7 @@ const AnimationCel tanuki_and_monkey_cel015[] = {
 };
 
 // [D_08914226]
-const AnimationCel tanuki_and_monkey_cel016[] = {
+AnimationCel tanuki_and_monkey_cel016[] = {
     /* Len */ 4,
     /* 000 */ 0x00e3, 0x000c, 0x10b0,
     /* 001 */ 0x80d8, 0x000c, 0x1080,
@@ -207,7 +207,7 @@ const AnimationCel tanuki_and_monkey_cel016[] = {
 };
 
 // [D_08914240]
-const AnimationCel tanuki_and_monkey_cel017[] = {
+AnimationCel tanuki_and_monkey_cel017[] = {
     /* Len */ 3,
     /* 000 */ 0x00ea, 0x000c, 0x10b0,
     /* 001 */ 0x80df, 0x000c, 0x1080,
@@ -215,7 +215,7 @@ const AnimationCel tanuki_and_monkey_cel017[] = {
 };
 
 // [D_08914254]
-const AnimationCel tanuki_and_monkey_cel018[] = {
+AnimationCel tanuki_and_monkey_cel018[] = {
     /* Len */ 8,
     /* 000 */ 0x00d6, 0x4000, 0x2044,
     /* 001 */ 0x40e6, 0x0000, 0x209c,
@@ -228,7 +228,7 @@ const AnimationCel tanuki_and_monkey_cel018[] = {
 };
 
 // [D_08914286]
-const AnimationCel tanuki_and_monkey_cel019[] = {
+AnimationCel tanuki_and_monkey_cel019[] = {
     /* Len */ 10,
     /* 000 */ 0x00d4, 0x4000, 0x2044,
     /* 001 */ 0x40e4, 0x0000, 0x209c,
@@ -243,7 +243,7 @@ const AnimationCel tanuki_and_monkey_cel019[] = {
 };
 
 // [D_089142c4]
-const AnimationCel tanuki_and_monkey_cel020[] = {
+AnimationCel tanuki_and_monkey_cel020[] = {
     /* Len */ 10,
     /* 000 */ 0x00d2, 0x41f0, 0x2046,
     /* 001 */ 0x40e2, 0x01f0, 0x2098,
@@ -258,7 +258,7 @@ const AnimationCel tanuki_and_monkey_cel020[] = {
 };
 
 // [D_08914302]
-const AnimationCel tanuki_and_monkey_cel021[] = {
+AnimationCel tanuki_and_monkey_cel021[] = {
     /* Len */ 7,
     /* 000 */ 0x00eb, 0x11f6, 0x10b0,
     /* 001 */ 0x40e8, 0x11fa, 0x108c,
@@ -270,7 +270,7 @@ const AnimationCel tanuki_and_monkey_cel021[] = {
 };
 
 // [D_0891432e]
-const AnimationCel tanuki_and_monkey_cel022[] = {
+AnimationCel tanuki_and_monkey_cel022[] = {
     /* Len */ 3,
     /* 000 */ 0x00e3, 0x11f8, 0x10b0,
     /* 001 */ 0x00dd, 0x51fa, 0x100c,
@@ -278,7 +278,7 @@ const AnimationCel tanuki_and_monkey_cel022[] = {
 };
 
 // [D_08914342]
-const AnimationCel tanuki_and_monkey_cel023[] = {
+AnimationCel tanuki_and_monkey_cel023[] = {
     /* Len */ 3,
     /* 000 */ 0x00dc, 0x11f8, 0x10b0,
     /* 001 */ 0x00d6, 0x51fa, 0x100c,
@@ -286,7 +286,7 @@ const AnimationCel tanuki_and_monkey_cel023[] = {
 };
 
 // [D_08914356]
-const AnimationCel tanuki_and_monkey_cel024[] = {
+AnimationCel tanuki_and_monkey_cel024[] = {
     /* Len */ 3,
     /* 000 */ 0x00d4, 0x11f7, 0x10b0,
     /* 001 */ 0x00ce, 0x51fa, 0x100c,
@@ -294,7 +294,7 @@ const AnimationCel tanuki_and_monkey_cel024[] = {
 };
 
 // [D_0891436a]
-const AnimationCel tanuki_and_monkey_cel025[] = {
+AnimationCel tanuki_and_monkey_cel025[] = {
     /* Len */ 4,
     /* 000 */ 0x00d2, 0x11f4, 0x10b0,
     /* 001 */ 0x80c5, 0x11f5, 0x1084,
@@ -303,7 +303,7 @@ const AnimationCel tanuki_and_monkey_cel025[] = {
 };
 
 // [D_08914384]
-const AnimationCel tanuki_and_monkey_cel026[] = {
+AnimationCel tanuki_and_monkey_cel026[] = {
     /* Len */ 3,
     /* 000 */ 0x00d4, 0x11f0, 0x10b0,
     /* 001 */ 0x80c7, 0x11f0, 0x1084,
@@ -311,7 +311,7 @@ const AnimationCel tanuki_and_monkey_cel026[] = {
 };
 
 // [D_08914398]
-const AnimationCel tanuki_and_monkey_cel027[] = {
+AnimationCel tanuki_and_monkey_cel027[] = {
     /* Len */ 3,
     /* 000 */ 0x00d7, 0x11ec, 0x10b0,
     /* 001 */ 0x80cc, 0x11ec, 0x1080,
@@ -319,7 +319,7 @@ const AnimationCel tanuki_and_monkey_cel027[] = {
 };
 
 // [D_089143ac]
-const AnimationCel tanuki_and_monkey_cel028[] = {
+AnimationCel tanuki_and_monkey_cel028[] = {
     /* Len */ 4,
     /* 000 */ 0x00db, 0x11ec, 0x10b0,
     /* 001 */ 0x80d0, 0x11ec, 0x1080,
@@ -328,7 +328,7 @@ const AnimationCel tanuki_and_monkey_cel028[] = {
 };
 
 // [D_089143c6]
-const AnimationCel tanuki_and_monkey_cel029[] = {
+AnimationCel tanuki_and_monkey_cel029[] = {
     /* Len */ 4,
     /* 000 */ 0x00e3, 0x11ec, 0x10b0,
     /* 001 */ 0x80d8, 0x11ec, 0x1080,
@@ -337,7 +337,7 @@ const AnimationCel tanuki_and_monkey_cel029[] = {
 };
 
 // [D_089143e0]
-const AnimationCel tanuki_and_monkey_cel030[] = {
+AnimationCel tanuki_and_monkey_cel030[] = {
     /* Len */ 3,
     /* 000 */ 0x00ea, 0x11ec, 0x10b0,
     /* 001 */ 0x80df, 0x11ec, 0x1080,
@@ -345,7 +345,7 @@ const AnimationCel tanuki_and_monkey_cel030[] = {
 };
 
 // [D_089143f4]
-const AnimationCel tanuki_and_monkey_cel031[] = {
+AnimationCel tanuki_and_monkey_cel031[] = {
     /* Len */ 6,
     /* 000 */ 0x80f1, 0x01fd, 0x4085,
     /* 001 */ 0x00f9, 0x0005, 0x40b2,
@@ -356,7 +356,7 @@ const AnimationCel tanuki_and_monkey_cel031[] = {
 };
 
 // [D_0891441a]
-const AnimationCel tanuki_and_monkey_cel032[] = {
+AnimationCel tanuki_and_monkey_cel032[] = {
     /* Len */ 6,
     /* 000 */ 0x80f1, 0x01fd, 0x4085,
     /* 001 */ 0x00f9, 0x0005, 0x40b2,
@@ -367,7 +367,7 @@ const AnimationCel tanuki_and_monkey_cel032[] = {
 };
 
 // [D_08914440]
-const AnimationCel tanuki_and_monkey_cel033[] = {
+AnimationCel tanuki_and_monkey_cel033[] = {
     /* Len */ 6,
     /* 000 */ 0x80f1, 0x01fd, 0x3085,
     /* 001 */ 0x00f9, 0x0005, 0x30b2,
@@ -378,7 +378,7 @@ const AnimationCel tanuki_and_monkey_cel033[] = {
 };
 
 // [D_08914466]
-const AnimationCel tanuki_and_monkey_cel034[] = {
+AnimationCel tanuki_and_monkey_cel034[] = {
     /* Len */ 6,
     /* 000 */ 0x80f1, 0x01fd, 0x3085,
     /* 001 */ 0x00f9, 0x0005, 0x30b2,
@@ -389,7 +389,7 @@ const AnimationCel tanuki_and_monkey_cel034[] = {
 };
 
 // [D_0891448c]
-const AnimationCel tanuki_and_monkey_cel035[] = {
+AnimationCel tanuki_and_monkey_cel035[] = {
     /* Len */ 6,
     /* 000 */ 0x00d6, 0x51f8, 0x1004,
     /* 001 */ 0x00d6, 0x41f8, 0x1004,
@@ -400,7 +400,7 @@ const AnimationCel tanuki_and_monkey_cel035[] = {
 };
 
 // [D_089144b2]
-const AnimationCel tanuki_and_monkey_cel036[] = {
+AnimationCel tanuki_and_monkey_cel036[] = {
     /* Len */ 3,
     /* 000 */ 0x00f0, 0x1008, 0x20ad,
     /* 001 */ 0x80e5, 0x0008, 0x1080,
@@ -408,7 +408,7 @@ const AnimationCel tanuki_and_monkey_cel036[] = {
 };
 
 // [D_089144c6]
-const AnimationCel tanuki_and_monkey_cel037[] = {
+AnimationCel tanuki_and_monkey_cel037[] = {
     /* Len */ 3,
     /* 000 */ 0x00ea, 0x1008, 0x20ad,
     /* 001 */ 0x80df, 0x0008, 0x1080,
@@ -416,7 +416,7 @@ const AnimationCel tanuki_and_monkey_cel037[] = {
 };
 
 // [D_089144da]
-const AnimationCel tanuki_and_monkey_cel038[] = {
+AnimationCel tanuki_and_monkey_cel038[] = {
     /* Len */ 3,
     /* 000 */ 0x00e0, 0x1008, 0x20ad,
     /* 001 */ 0x80d5, 0x0008, 0x1080,
@@ -424,7 +424,7 @@ const AnimationCel tanuki_and_monkey_cel038[] = {
 };
 
 // [D_089144ee]
-const AnimationCel tanuki_and_monkey_cel039[] = {
+AnimationCel tanuki_and_monkey_cel039[] = {
     /* Len */ 3,
     /* 000 */ 0x00de, 0x1007, 0x20ad,
     /* 001 */ 0x80d3, 0x0007, 0x1080,
@@ -432,7 +432,7 @@ const AnimationCel tanuki_and_monkey_cel039[] = {
 };
 
 // [D_08914502]
-const AnimationCel tanuki_and_monkey_cel040[] = {
+AnimationCel tanuki_and_monkey_cel040[] = {
     /* Len */ 3,
     /* 000 */ 0x00db, 0x1006, 0x20ad,
     /* 001 */ 0x00dd, 0x4000, 0x2012,
@@ -440,7 +440,7 @@ const AnimationCel tanuki_and_monkey_cel040[] = {
 };
 
 // [D_08914516]
-const AnimationCel tanuki_and_monkey_cel041[] = {
+AnimationCel tanuki_and_monkey_cel041[] = {
     /* Len */ 3,
     /* 000 */ 0x00d9, 0x1006, 0x20ad,
     /* 001 */ 0x80cb, 0x0006, 0x1084,
@@ -448,7 +448,7 @@ const AnimationCel tanuki_and_monkey_cel041[] = {
 };
 
 // [D_0891452a]
-const AnimationCel tanuki_and_monkey_cel042[] = {
+AnimationCel tanuki_and_monkey_cel042[] = {
     /* Len */ 3,
     /* 000 */ 0x00db, 0x1006, 0x20ad,
     /* 001 */ 0x00d4, 0x41f9, 0x100c,
@@ -456,7 +456,7 @@ const AnimationCel tanuki_and_monkey_cel042[] = {
 };
 
 // [D_0891453e]
-const AnimationCel tanuki_and_monkey_cel043[] = {
+AnimationCel tanuki_and_monkey_cel043[] = {
     /* Len */ 3,
     /* 000 */ 0x00df, 0x1006, 0x20ad,
     /* 001 */ 0x00d8, 0x41f9, 0x100c,
@@ -464,7 +464,7 @@ const AnimationCel tanuki_and_monkey_cel043[] = {
 };
 
 // [D_08914552]
-const AnimationCel tanuki_and_monkey_cel044[] = {
+AnimationCel tanuki_and_monkey_cel044[] = {
     /* Len */ 3,
     /* 000 */ 0x00e5, 0x1006, 0x20ad,
     /* 001 */ 0x00de, 0x41f9, 0x100c,
@@ -472,7 +472,7 @@ const AnimationCel tanuki_and_monkey_cel044[] = {
 };
 
 // [D_08914566]
-const AnimationCel tanuki_and_monkey_cel045[] = {
+AnimationCel tanuki_and_monkey_cel045[] = {
     /* Len */ 7,
     /* 000 */ 0x00ea, 0x1006, 0x20ad,
     /* 001 */ 0x40e7, 0x01fc, 0x108c,
@@ -484,7 +484,7 @@ const AnimationCel tanuki_and_monkey_cel045[] = {
 };
 
 // [D_08914592]
-const AnimationCel tanuki_and_monkey_cel046[] = {
+AnimationCel tanuki_and_monkey_cel046[] = {
     /* Len */ 7,
     /* 000 */ 0x00ea, 0x01f2, 0x20ad,
     /* 001 */ 0x40e7, 0x11f4, 0x108c,
@@ -496,7 +496,7 @@ const AnimationCel tanuki_and_monkey_cel046[] = {
 };
 
 // [D_089145be]
-const AnimationCel tanuki_and_monkey_cel047[] = {
+AnimationCel tanuki_and_monkey_cel047[] = {
     /* Len */ 3,
     /* 000 */ 0x00e5, 0x01f2, 0x20ad,
     /* 001 */ 0x00de, 0x51f7, 0x100c,
@@ -504,7 +504,7 @@ const AnimationCel tanuki_and_monkey_cel047[] = {
 };
 
 // [D_089145d2]
-const AnimationCel tanuki_and_monkey_cel048[] = {
+AnimationCel tanuki_and_monkey_cel048[] = {
     /* Len */ 3,
     /* 000 */ 0x00df, 0x01f2, 0x20ad,
     /* 001 */ 0x00d8, 0x51f7, 0x100c,
@@ -512,7 +512,7 @@ const AnimationCel tanuki_and_monkey_cel048[] = {
 };
 
 // [D_089145e6]
-const AnimationCel tanuki_and_monkey_cel049[] = {
+AnimationCel tanuki_and_monkey_cel049[] = {
     /* Len */ 3,
     /* 000 */ 0x00db, 0x01f2, 0x20ad,
     /* 001 */ 0x00d4, 0x51f7, 0x100c,
@@ -520,7 +520,7 @@ const AnimationCel tanuki_and_monkey_cel049[] = {
 };
 
 // [D_089145fa]
-const AnimationCel tanuki_and_monkey_cel050[] = {
+AnimationCel tanuki_and_monkey_cel050[] = {
     /* Len */ 3,
     /* 000 */ 0x00d9, 0x01f2, 0x20ad,
     /* 001 */ 0x80cb, 0x11f2, 0x1084,
@@ -528,7 +528,7 @@ const AnimationCel tanuki_and_monkey_cel050[] = {
 };
 
 // [D_0891460e]
-const AnimationCel tanuki_and_monkey_cel051[] = {
+AnimationCel tanuki_and_monkey_cel051[] = {
     /* Len */ 3,
     /* 000 */ 0x00db, 0x01f2, 0x20ad,
     /* 001 */ 0x00dd, 0x51f0, 0x2012,
@@ -536,7 +536,7 @@ const AnimationCel tanuki_and_monkey_cel051[] = {
 };
 
 // [D_08914622]
-const AnimationCel tanuki_and_monkey_cel052[] = {
+AnimationCel tanuki_and_monkey_cel052[] = {
     /* Len */ 3,
     /* 000 */ 0x00de, 0x01f1, 0x20ad,
     /* 001 */ 0x80d3, 0x11f1, 0x1080,
@@ -544,7 +544,7 @@ const AnimationCel tanuki_and_monkey_cel052[] = {
 };
 
 // [D_08914636]
-const AnimationCel tanuki_and_monkey_cel053[] = {
+AnimationCel tanuki_and_monkey_cel053[] = {
     /* Len */ 3,
     /* 000 */ 0x00e0, 0x01f0, 0x20ad,
     /* 001 */ 0x80d5, 0x11f0, 0x1080,
@@ -552,7 +552,7 @@ const AnimationCel tanuki_and_monkey_cel053[] = {
 };
 
 // [D_0891464a]
-const AnimationCel tanuki_and_monkey_cel054[] = {
+AnimationCel tanuki_and_monkey_cel054[] = {
     /* Len */ 3,
     /* 000 */ 0x00ea, 0x01f0, 0x20ad,
     /* 001 */ 0x80df, 0x11f0, 0x1080,
@@ -560,7 +560,7 @@ const AnimationCel tanuki_and_monkey_cel054[] = {
 };
 
 // [D_0891465e]
-const AnimationCel tanuki_and_monkey_cel055[] = {
+AnimationCel tanuki_and_monkey_cel055[] = {
     /* Len */ 3,
     /* 000 */ 0x00f0, 0x01f0, 0x20ad,
     /* 001 */ 0x80e5, 0x11f0, 0x1080,
@@ -568,7 +568,7 @@ const AnimationCel tanuki_and_monkey_cel055[] = {
 };
 
 // [D_08914672]
-const AnimationCel tanuki_and_monkey_cel056[] = {
+AnimationCel tanuki_and_monkey_cel056[] = {
     /* Len */ 10,
     /* 000 */ 0x00f5, 0x01f5, 0x40aa,
     /* 001 */ 0x00f8, 0x01f5, 0x40ab,
@@ -583,7 +583,7 @@ const AnimationCel tanuki_and_monkey_cel056[] = {
 };
 
 // [D_089146b0]
-const AnimationCel tanuki_and_monkey_cel057[] = {
+AnimationCel tanuki_and_monkey_cel057[] = {
     /* Len */ 10,
     /* 000 */ 0x00f4, 0x01f5, 0x40aa,
     /* 001 */ 0x00f8, 0x01f5, 0x40ab,
@@ -598,7 +598,7 @@ const AnimationCel tanuki_and_monkey_cel057[] = {
 };
 
 // [D_089146ee]
-const AnimationCel tanuki_and_monkey_cel058[] = {
+AnimationCel tanuki_and_monkey_cel058[] = {
     /* Len */ 10,
     /* 000 */ 0x00f4, 0x01f5, 0x40aa,
     /* 001 */ 0x00f8, 0x01f5, 0x40ab,
@@ -613,7 +613,7 @@ const AnimationCel tanuki_and_monkey_cel058[] = {
 };
 
 // [D_0891472c]
-const AnimationCel tanuki_and_monkey_cel059[] = {
+AnimationCel tanuki_and_monkey_cel059[] = {
     /* Len */ 10,
     /* 000 */ 0x00f5, 0x01f5, 0x30aa,
     /* 001 */ 0x00f8, 0x01f5, 0x30ab,
@@ -628,7 +628,7 @@ const AnimationCel tanuki_and_monkey_cel059[] = {
 };
 
 // [D_0891476a]
-const AnimationCel tanuki_and_monkey_cel060[] = {
+AnimationCel tanuki_and_monkey_cel060[] = {
     /* Len */ 10,
     /* 000 */ 0x00f4, 0x01f5, 0x30aa,
     /* 001 */ 0x00f8, 0x01f5, 0x30ab,
@@ -643,7 +643,7 @@ const AnimationCel tanuki_and_monkey_cel060[] = {
 };
 
 // [D_089147a8]
-const AnimationCel tanuki_and_monkey_cel061[] = {
+AnimationCel tanuki_and_monkey_cel061[] = {
     /* Len */ 10,
     /* 000 */ 0x00f4, 0x01f5, 0x30aa,
     /* 001 */ 0x00f8, 0x01f5, 0x30ab,
@@ -658,37 +658,37 @@ const AnimationCel tanuki_and_monkey_cel061[] = {
 };
 
 // [D_089147e6]
-const AnimationCel tanuki_and_monkey_cel062[] = {
+AnimationCel tanuki_and_monkey_cel062[] = {
     /* Len */ 1,
     /* 000 */ 0x00f8, 0x41f8, 0x005a
 };
 
 // [D_089147ee]
-const AnimationCel tanuki_and_monkey_cel063[] = {
+AnimationCel tanuki_and_monkey_cel063[] = {
     /* Len */ 1,
     /* 000 */ 0x00f0, 0x41f8, 0x0058
 };
 
 // [D_089147f6]
-const AnimationCel tanuki_and_monkey_cel064[] = {
+AnimationCel tanuki_and_monkey_cel064[] = {
     /* Len */ 1,
     /* 000 */ 0x00ee, 0x41f8, 0x0056
 };
 
 // [D_089147fe]
-const AnimationCel tanuki_and_monkey_cel065[] = {
+AnimationCel tanuki_and_monkey_cel065[] = {
     /* Len */ 1,
     /* 000 */ 0x00eb, 0x41f8, 0x0054
 };
 
 // [D_08914806]
-const AnimationCel tanuki_and_monkey_cel066[] = {
+AnimationCel tanuki_and_monkey_cel066[] = {
     /* Len */ 1,
     /* 000 */ 0x00e9, 0x41f8, 0x0016
 };
 
 // [D_0891480e]
-const AnimationCel tanuki_and_monkey_cel067[] = {
+AnimationCel tanuki_and_monkey_cel067[] = {
     /* Len */ 1,
     /* 000 */ 0x00ea, 0x41f8, 0x0018
 };

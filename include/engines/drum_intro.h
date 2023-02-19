@@ -36,12 +36,12 @@ enum DrumIntroVersionsEnum {
 
 
 // Sprite Animations:
-extern const struct Animation anim_drum_samurai_head[];
-extern const struct Animation anim_drum_player_head[];
-extern const struct Animation anim_drum_samurai_face_blink[];
-extern const struct Animation anim_drum_player_face_blink[];
-extern const struct Animation anim_drum_samurai_face_talk[];
-extern const struct Animation anim_drum_player_face_talk[];
+extern struct Animation anim_drum_samurai_head[];
+extern struct Animation anim_drum_player_head[];
+extern struct Animation anim_drum_samurai_face_blink[];
+extern struct Animation anim_drum_player_face_blink[];
+extern struct Animation anim_drum_samurai_face_talk[];
+extern struct Animation anim_drum_player_face_talk[];
 
 
 // Palettes:
@@ -69,10 +69,10 @@ extern const char D_0805a06c[];
 extern struct DrumTechNote *tanuki_and_monkey_bgm_seq_table[];
 extern u16 D_089dfe94[];
 extern struct DrumTechKit *drum_intro_kits[];
-extern const struct CompressedGraphics *drum_intro_buffered_textures[];
+extern struct CompressedGraphics *drum_intro_buffered_textures[];
 extern struct GraphicsTable *drum_intro_gfx_tables[];
 extern struct Vector2 D_089e0164[];
-extern const struct Animation *D_089e0170[][4];
+extern struct Animation *D_089e0170[][4];
 extern u16 D_089e01b0[];
 extern s8 D_089e01b8[][3];
 extern u8 D_089e01c4[];

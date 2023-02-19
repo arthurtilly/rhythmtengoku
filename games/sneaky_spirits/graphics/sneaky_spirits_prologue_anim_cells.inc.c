@@ -1,26 +1,26 @@
 // do not rename these
 
 // [D_088ad204]
-const AnimationCel sneaky_spirits_prologue_cel000[] = {
+AnimationCel sneaky_spirits_prologue_cel000[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x000f
 };
 
 // [D_088ad20c]
-const AnimationCel sneaky_spirits_prologue_cel001[] = {
+AnimationCel sneaky_spirits_prologue_cel001[] = {
     /* Len */ 1,
     /* 000 */ 0x00f0, 0x41b8, 0x1006
 };
 
 // [D_088ad214]
-const AnimationCel sneaky_spirits_prologue_cel002[] = {
+AnimationCel sneaky_spirits_prologue_cel002[] = {
     /* Len */ 2,
     /* 000 */ 0x00f0, 0x41b8, 0x1006,
     /* 001 */ 0x00f0, 0x41c6, 0x1008
 };
 
 // [D_088ad222]
-const AnimationCel sneaky_spirits_prologue_cel003[] = {
+AnimationCel sneaky_spirits_prologue_cel003[] = {
     /* Len */ 3,
     /* 000 */ 0x00f0, 0x41b8, 0x1006,
     /* 001 */ 0x00f0, 0x41c6, 0x1008,
@@ -28,7 +28,7 @@ const AnimationCel sneaky_spirits_prologue_cel003[] = {
 };
 
 // [D_088ad236]
-const AnimationCel sneaky_spirits_prologue_cel004[] = {
+AnimationCel sneaky_spirits_prologue_cel004[] = {
     /* Len */ 5,
     /* 000 */ 0x00f0, 0x41b8, 0x1006,
     /* 001 */ 0x00f0, 0x41c6, 0x1008,
@@ -38,7 +38,7 @@ const AnimationCel sneaky_spirits_prologue_cel004[] = {
 };
 
 // [D_088ad256]
-const AnimationCel sneaky_spirits_prologue_cel005[] = {
+AnimationCel sneaky_spirits_prologue_cel005[] = {
     /* Len */ 7,
     /* 000 */ 0x00f0, 0x41b8, 0x1006,
     /* 001 */ 0x00f0, 0x41c6, 0x1008,
@@ -50,7 +50,7 @@ const AnimationCel sneaky_spirits_prologue_cel005[] = {
 };
 
 // [D_088ad282]
-const AnimationCel sneaky_spirits_prologue_cel006[] = {
+AnimationCel sneaky_spirits_prologue_cel006[] = {
     /* Len */ 9,
     /* 000 */ 0x00f0, 0x41b8, 0x1006,
     /* 001 */ 0x00f0, 0x41c6, 0x1008,

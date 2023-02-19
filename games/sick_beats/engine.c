@@ -4,26 +4,26 @@
   /* SICK BEATS - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_yellow_microbe_beat[];
-extern const struct Animation anim_yellow_microbe_hurt[];
-extern const struct Animation anim_yellow_microbe_vanish[];
-extern const struct Animation anim_virus_attack[];
-extern const struct Animation anim_yellow_microbe_return[];
-extern const struct Animation anim_virus_appear[];
-extern const struct Animation anim_virus_ready[];
-extern const struct Animation anim_virus_dash_up_full[];
-extern const struct Animation anim_virus_dash_left_full[];
-extern const struct Animation anim_virus_doctor_beat[];
-extern const struct Animation anim_virus_doctor_hit1[];
-extern const struct Animation anim_virus_doctor_hit2[];
-extern const struct Animation anim_virus_doctor_fail[];
+extern struct Animation anim_yellow_microbe_beat[];
+extern struct Animation anim_yellow_microbe_hurt[];
+extern struct Animation anim_yellow_microbe_vanish[];
+extern struct Animation anim_virus_attack[];
+extern struct Animation anim_yellow_microbe_return[];
+extern struct Animation anim_virus_appear[];
+extern struct Animation anim_virus_ready[];
+extern struct Animation anim_virus_dash_up_full[];
+extern struct Animation anim_virus_dash_left_full[];
+extern struct Animation anim_virus_doctor_beat[];
+extern struct Animation anim_virus_doctor_hit1[];
+extern struct Animation anim_virus_doctor_hit2[];
+extern struct Animation anim_virus_doctor_fail[];
 
-extern const struct CompressedGraphics D_08d19fb4;
-extern const struct CompressedGraphics D_08d1a320;
-extern const struct CompressedGraphics D_08d1a280;
-extern const struct CompressedGraphics D_08d198bc;
+extern struct CompressedGraphics D_08d19fb4;
+extern struct CompressedGraphics D_08d1a320;
+extern struct CompressedGraphics D_08d1a280;
+extern struct CompressedGraphics D_08d198bc;
 
-extern const Palette sick_beats_pal[];
+extern Palette sick_beats_pal[];
 
 
   //  //  //  MISCELLANEOUS DATA  //  //  //
@@ -46,7 +46,7 @@ s16 sick_beats_particle_sfx_pitch[] = {
 
 
 // [D_089e90e0] Yellow Microbe Event Animations
-const struct Animation *sick_beats_microbe_event_anim[] = {
+struct Animation *sick_beats_microbe_event_anim[] = {
     /* 0x00 */ anim_yellow_microbe_beat,
     /* 0x01 */ anim_yellow_microbe_hurt,
     /* 0x02 */ anim_yellow_microbe_vanish,
@@ -64,7 +64,7 @@ u16 sick_beats_microbe_event_durations[] = {
 };
 
 // [D_089e9100] Buffered Textures List
-const struct CompressedGraphics *sick_beats_buffered_textures[] = {
+struct CompressedGraphics *sick_beats_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -296,7 +296,7 @@ u8 D_089e92f0[] = {
 };
 
 // [D_089e92f4] Doctor Animations
-const struct Animation *sick_beats_doctor_anim[] = {
+struct Animation *sick_beats_doctor_anim[] = {
     /* 0x00 */ anim_virus_doctor_beat,
     /* 0x01 */ anim_virus_doctor_hit1,
     /* 0x02 */ anim_virus_doctor_hit2,

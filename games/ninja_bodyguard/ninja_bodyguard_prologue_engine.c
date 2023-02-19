@@ -4,17 +4,17 @@
   /* PROLOGUE (NINJA BODYGUARD) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c23a3c;
-extern const struct CompressedGraphics D_08c23cd0;
-extern const struct CompressedGraphics D_08c22ee4;
-extern const Palette ninja_bodyguard_prologue_pal[];
+extern struct CompressedGraphics D_08c23a3c;
+extern struct CompressedGraphics D_08c23cd0;
+extern struct CompressedGraphics D_08c22ee4;
+extern Palette ninja_bodyguard_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ed188] Buffered Textures List
-const struct CompressedGraphics *ninja_bodyguard_prologue_buffered_textures[] = {
+struct CompressedGraphics *ninja_bodyguard_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

@@ -1,13 +1,13 @@
 // do not rename these
 
 // [D_088ad484]
-const AnimationCel bon_dance_prologue_cel000[] = {
+AnimationCel bon_dance_prologue_cel000[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x00dd
 };
 
 // [D_088ad48c]
-const AnimationCel bon_dance_prologue_cel001[] = {
+AnimationCel bon_dance_prologue_cel001[] = {
     /* Len */ 5,
     /* 000 */ 0x40c7, 0xc1b5, 0x000c,
     /* 001 */ 0x80c7, 0x41f5, 0x0097,
@@ -17,7 +17,7 @@ const AnimationCel bon_dance_prologue_cel001[] = {
 };
 
 // [D_088ad4ac]
-const AnimationCel bon_dance_prologue_cel002[] = {
+AnimationCel bon_dance_prologue_cel002[] = {
     /* Len */ 12,
     /* 000 */ 0x40c7, 0xc1b5, 0x000c,
     /* 001 */ 0x80c7, 0x41f5, 0x0097,
@@ -34,7 +34,7 @@ const AnimationCel bon_dance_prologue_cel002[] = {
 };
 
 // [D_088ad4f6]
-const AnimationCel bon_dance_prologue_cel003[] = {
+AnimationCel bon_dance_prologue_cel003[] = {
     /* Len */ 9,
     /* 000 */ 0x40c5, 0xc1b1, 0x008c,
     /* 001 */ 0x80c5, 0x81f1, 0x0094,

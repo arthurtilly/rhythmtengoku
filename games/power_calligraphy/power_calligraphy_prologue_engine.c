@@ -4,17 +4,17 @@
   /* PROLOGUE (POWER CALLIGRAPHY) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08bf984c;
-extern const struct CompressedGraphics D_08bf9b14;
-extern const struct CompressedGraphics D_08bf8a30;
-extern const Palette prologue_calligraphy_pal[];
+extern struct CompressedGraphics D_08bf984c;
+extern struct CompressedGraphics D_08bf9b14;
+extern struct CompressedGraphics D_08bf8a30;
+extern Palette prologue_calligraphy_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089eb530] Buffered Textures List
-const struct CompressedGraphics *power_calligraphy_prologue_buffered_textures[] = {
+struct CompressedGraphics *power_calligraphy_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

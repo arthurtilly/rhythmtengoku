@@ -4,28 +4,28 @@
   /* MR. UPBEAT - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_mr_upbeat_r_trip_r[];
-extern const struct Animation anim_mr_upbeat_r_trip_l[];
-extern const struct Animation anim_mr_upbeat_l_trip_l[];
-extern const struct Animation anim_mr_upbeat_l_trip_r[];
-extern const struct Animation anim_mr_upbeat_r_mope_r[];
-extern const struct Animation anim_mr_upbeat_r_mope_l[];
-extern const struct Animation anim_mr_upbeat_l_mope_l[];
-extern const struct Animation anim_mr_upbeat_l_mope_r[];
-extern const struct Animation anim_mr_upbeat_r_cheer_r[];
-extern const struct Animation anim_mr_upbeat_r_cheer_l[];
-extern const struct Animation anim_mr_upbeat_l_cheer_l[];
-extern const struct Animation anim_mr_upbeat_l_cheer_r[];
+extern struct Animation anim_mr_upbeat_r_trip_r[];
+extern struct Animation anim_mr_upbeat_r_trip_l[];
+extern struct Animation anim_mr_upbeat_l_trip_l[];
+extern struct Animation anim_mr_upbeat_l_trip_r[];
+extern struct Animation anim_mr_upbeat_r_mope_r[];
+extern struct Animation anim_mr_upbeat_r_mope_l[];
+extern struct Animation anim_mr_upbeat_l_mope_l[];
+extern struct Animation anim_mr_upbeat_l_mope_r[];
+extern struct Animation anim_mr_upbeat_r_cheer_r[];
+extern struct Animation anim_mr_upbeat_r_cheer_l[];
+extern struct Animation anim_mr_upbeat_l_cheer_l[];
+extern struct Animation anim_mr_upbeat_l_cheer_r[];
 
-extern const struct CompressedGraphics D_08c702d0;
-extern const Palette metronome_pal[];
+extern struct CompressedGraphics D_08c702d0;
+extern Palette metronome_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e56b8] Trip Over Animations
-const struct Animation *mr_upbeat_trip_anim[] = {
+struct Animation *mr_upbeat_trip_anim[] = {
     /* 0x00 */ anim_mr_upbeat_r_trip_r,
     /* 0x01 */ anim_mr_upbeat_r_trip_l,
     /* 0x02 */ anim_mr_upbeat_l_trip_l,
@@ -33,7 +33,7 @@ const struct Animation *mr_upbeat_trip_anim[] = {
 };
 
 // [D_089e56c8] Game Over Animations
-const struct Animation *mr_upbeat_game_over_anim[][4] = {
+struct Animation *mr_upbeat_game_over_anim[][4] = {
     /* LOW SCORE */ {
         /* 0x00 */ anim_mr_upbeat_r_mope_r,
         /* 0x01 */ anim_mr_upbeat_r_mope_l,
@@ -49,7 +49,7 @@ const struct Animation *mr_upbeat_game_over_anim[][4] = {
 };
 
 // [D_089e56e8] Buffered Textures List
-const struct CompressedGraphics *mr_upbeat_buffered_textures[] = {
+struct CompressedGraphics *mr_upbeat_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

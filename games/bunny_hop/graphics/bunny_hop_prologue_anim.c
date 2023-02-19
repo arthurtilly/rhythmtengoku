@@ -4,7 +4,7 @@
 #include "bunny_hop_prologue_anim_cells.inc.c"
 
 // [D_088b35a4] Rabbits
-const struct Animation anim_bunny_hop_prologue_rabbits[] = {
+struct Animation anim_bunny_hop_prologue_rabbits[] = {
     /* 000 */ { bunny_hop_prologue_cel000, 10 },
     /* 001 */ { bunny_hop_prologue_cel002, 10 },
     /* 002 */ { bunny_hop_prologue_cel003, 10 },
@@ -15,7 +15,7 @@ const struct Animation anim_bunny_hop_prologue_rabbits[] = {
 };
 
 // [D_088b35dc] Title
-const struct Animation anim_bunny_hop_prologue_title[] = {
+struct Animation anim_bunny_hop_prologue_title[] = {
     /* 000 */ { bunny_hop_prologue_cel000, 10 },
     /* 001 */ { bunny_hop_prologue_cel000, 10 },
     /* 002 */ { bunny_hop_prologue_cel007, 10 },

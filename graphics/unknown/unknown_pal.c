@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_08935d6c] <description>
-const Palette unknown_pal[] = {
+Palette unknown_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x607860),
         /* 01 */ TO_RGB555(0x000000),

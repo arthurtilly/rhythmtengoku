@@ -4,7 +4,7 @@
 #include "wizards_waltz_anim_cells.inc.c"
 
 // [D_08932bec] Wizard - Fly
-const struct Animation anim_wizard_fly[] = {
+struct Animation anim_wizard_fly[] = {
     /* 000 */ { wizards_waltz_cel019, 2 },
     /* 001 */ { wizards_waltz_cel020, 2 },
     /* 002 */ { wizards_waltz_cel021, 2 },
@@ -13,7 +13,7 @@ const struct Animation anim_wizard_fly[] = {
 };
 
 // [D_08932c14] Wizard - Cast Magic
-const struct Animation anim_wizard_cast_spell[] = {
+struct Animation anim_wizard_cast_spell[] = {
     /* 000 */ { wizards_waltz_cel009, 6 },
     /* 001 */ { wizards_waltz_cel008, 2 },
     /* 002 */ { wizards_waltz_cel007, 2 },
@@ -27,7 +27,7 @@ const struct Animation anim_wizard_cast_spell[] = {
 };
 
 // [D_08932c64] Descending Magic Particle
-const struct Animation anim_wizard_spell_particle[] = {
+struct Animation anim_wizard_spell_particle[] = {
     /* 000 */ { wizards_waltz_cel011, 4 },
     /* 001 */ { wizards_waltz_cel012, 4 },
     /* 002 */ { wizards_waltz_cel013, 4 },
@@ -36,7 +36,7 @@ const struct Animation anim_wizard_spell_particle[] = {
 };
 
 // [D_08932c8c] Wizard Sparkle
-const struct Animation anim_wizard_sparkle[] = {
+struct Animation anim_wizard_sparkle[] = {
     /* 000 */ { wizards_waltz_cel015, 4 },
     /* 001 */ { wizards_waltz_cel016, 4 },
     /* 002 */ { wizards_waltz_cel017, 4 },
@@ -44,13 +44,13 @@ const struct Animation anim_wizard_sparkle[] = {
 };
 
 // [D_08932cac] Wizard Sparkle (Small)
-const struct Animation anim_wizard_sparkle_small[] = {
+struct Animation anim_wizard_sparkle_small[] = {
     /* 000 */ { wizards_waltz_cel018, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08932cbc] Evil Flower - Appear & Eat Sprout
-const struct Animation anim_wizards_waltz_sprout_eaten[] = {
+struct Animation anim_wizards_waltz_sprout_eaten[] = {
     /* 000 */ { wizards_waltz_cel064, 2 },
     /* 001 */ { wizards_waltz_cel065, 2 },
     /* 002 */ { wizards_waltz_cel065, 2 },
@@ -68,7 +68,7 @@ const struct Animation anim_wizards_waltz_sprout_eaten[] = {
 };
 
 // [D_08932d2c] Flower - Grow
-const struct Animation anim_wizards_waltz_sprout_grow[] = {
+struct Animation anim_wizards_waltz_sprout_grow[] = {
     /* 000 */ { wizards_waltz_cel059, 2 },
     /* 001 */ { wizards_waltz_cel060, 4 },
     /* 002 */ { wizards_waltz_cel059, 2 },
@@ -86,13 +86,13 @@ const struct Animation anim_wizards_waltz_sprout_grow[] = {
 };
 
 // [D_08932d9c] Evil Flower Particle
-const struct Animation anim_wizards_waltz_bad_particle[] = {
+struct Animation anim_wizards_waltz_bad_particle[] = {
     /* 000 */ { wizards_waltz_cel031, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08932dac] Little Flowers
-const struct Animation anim_wizards_waltz_small_flowers[] = {
+struct Animation anim_wizards_waltz_small_flowers[] = {
     /* 000 */ { wizards_waltz_cel036, 4 },
     /* 001 */ { wizards_waltz_cel037, 4 },
     /* 002 */ { wizards_waltz_cel038, 4 },
@@ -103,7 +103,7 @@ const struct Animation anim_wizards_waltz_small_flowers[] = {
 };
 
 // [D_08932de4] Sprout - Appear
-const struct Animation anim_wizards_waltz_sprout_appear[] = {
+struct Animation anim_wizards_waltz_sprout_appear[] = {
     /* 000 */ { wizards_waltz_cel000, 4 },
     /* 001 */ { wizards_waltz_cel023, 2 },
     /* 002 */ { wizards_waltz_cel024, 2 },
@@ -118,7 +118,7 @@ const struct Animation anim_wizards_waltz_sprout_appear[] = {
 };
 
 // [D_08932e3c] Girl - Idle
-const struct Animation anim_wizards_waltz_girl_idle[] = {
+struct Animation anim_wizards_waltz_girl_idle[] = {
     /* 000 */ { wizards_waltz_cel042, 5 },
     /* 001 */ { wizards_waltz_cel043, 5 },
     /* 002 */ { wizards_waltz_cel044, 5 },
@@ -127,7 +127,7 @@ const struct Animation anim_wizards_waltz_girl_idle[] = {
 };
 
 // [D_08932e64] Girl - Happy
-const struct Animation anim_wizards_waltz_girl_happy[] = {
+struct Animation anim_wizards_waltz_girl_happy[] = {
     /* 000 */ { wizards_waltz_cel046, 4 },
     /* 001 */ { wizards_waltz_cel048, 4 },
     /* 002 */ { wizards_waltz_cel049, 4 },
@@ -139,7 +139,7 @@ const struct Animation anim_wizards_waltz_girl_happy[] = {
 };
 
 // [D_08932ea4] Girl - Upset
-const struct Animation anim_wizards_waltz_girl_upset[] = {
+struct Animation anim_wizards_waltz_girl_upset[] = {
     /* 000 */ { wizards_waltz_cel045, 4 },
     /* 001 */ { wizards_waltz_cel054, 4 },
     /* 002 */ { wizards_waltz_cel055, 4 },
@@ -150,13 +150,13 @@ const struct Animation anim_wizards_waltz_girl_upset[] = {
 };
 
 // [D_08932edc] Shadow
-const struct Animation anim_wizards_waltz_shadow[] = {
+struct Animation anim_wizards_waltz_shadow[] = {
     /* 000 */ { wizards_waltz_cel047, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08932eec] Flower - Spin
-const struct Animation anim_wizards_waltz_spinning_flower[] = {
+struct Animation anim_wizards_waltz_spinning_flower[] = {
     /* 000 */ { wizards_waltz_cel072, 3 },
     /* 001 */ { wizards_waltz_cel073, 3 },
     /* 002 */ { wizards_waltz_cel074, 3 },
@@ -166,7 +166,7 @@ const struct Animation anim_wizards_waltz_spinning_flower[] = {
 };
 
 // [D_08932f1c] Angry Smoke Puff
-const struct Animation anim_wizards_waltz_anger_puff[] = {
+struct Animation anim_wizards_waltz_anger_puff[] = {
     /* 000 */ { wizards_waltz_cel077, 4 },
     /* 001 */ { wizards_waltz_cel078, 4 },
     /* 002 */ { wizards_waltz_cel079, 4 },
@@ -175,7 +175,7 @@ const struct Animation anim_wizards_waltz_anger_puff[] = {
 };
 
 // [D_08932f44] Flower - Grow (No Effect)
-const struct Animation anim_wizards_waltz_sprout_grow_no_effect[] = {
+struct Animation anim_wizards_waltz_sprout_grow_no_effect[] = {
     /* 000 */ { wizards_waltz_cel035, 3 },
     /* 001 */ { wizards_waltz_cel034, 3 },
     /* 002 */ { wizards_waltz_cel033, 3 },
@@ -189,7 +189,7 @@ const struct Animation anim_wizards_waltz_sprout_grow_no_effect[] = {
 };
 
 // [D_08932f94] Sprout - Appear (Tutorial)
-const struct Animation anim_wizards_waltz_sprout_appear_tutorial[] = {
+struct Animation anim_wizards_waltz_sprout_appear_tutorial[] = {
     /* 000 */ { wizards_waltz_cel000, 4 },
     /* 001 */ { wizards_waltz_cel023, 2 },
     /* 002 */ { wizards_waltz_cel024, 2 },

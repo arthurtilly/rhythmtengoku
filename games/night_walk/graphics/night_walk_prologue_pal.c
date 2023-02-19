@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088ae2f8] Palette
-const Palette night_walk_prologue_pal[] = {
+Palette night_walk_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x580028),
         /* 01 */ TO_RGB555(0x000000),

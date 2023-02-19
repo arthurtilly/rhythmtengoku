@@ -1,7 +1,7 @@
 // do not rename these
 
 // [D_088cbb6c]
-const AnimationCel bouncy_road_cel000[] = {
+AnimationCel bouncy_road_cel000[] = {
     /* Len */ 6,
     /* 000 */ 0x00fb, 0x41f8, 0x8005,
     /* 001 */ 0x4005, 0x01f8, 0x8009,
@@ -12,7 +12,7 @@ const AnimationCel bouncy_road_cel000[] = {
 };
 
 // [D_088cbb92]
-const AnimationCel bouncy_road_cel001[] = {
+AnimationCel bouncy_road_cel001[] = {
     /* Len */ 6,
     /* 000 */ 0x00fe, 0x41f8, 0x8005,
     /* 001 */ 0x4009, 0x01f8, 0x8009,
@@ -23,7 +23,7 @@ const AnimationCel bouncy_road_cel001[] = {
 };
 
 // [D_088cbbb8]
-const AnimationCel bouncy_road_cel002[] = {
+AnimationCel bouncy_road_cel002[] = {
     /* Len */ 6,
     /* 000 */ 0x00ff, 0x41f8, 0x8005,
     /* 001 */ 0x400d, 0x01f8, 0x8009,
@@ -34,7 +34,7 @@ const AnimationCel bouncy_road_cel002[] = {
 };
 
 // [D_088cbbde]
-const AnimationCel bouncy_road_cel003[] = {
+AnimationCel bouncy_road_cel003[] = {
     /* Len */ 6,
     /* 000 */ 0x0000, 0x41f8, 0x8005,
     /* 001 */ 0x4011, 0x01f8, 0x8009,
@@ -45,7 +45,7 @@ const AnimationCel bouncy_road_cel003[] = {
 };
 
 // [D_088cbc04]
-const AnimationCel bouncy_road_cel004[] = {
+AnimationCel bouncy_road_cel004[] = {
     /* Len */ 6,
     /* 000 */ 0x0000, 0x41f8, 0x8005,
     /* 001 */ 0x4013, 0x01f8, 0x8009,
@@ -56,7 +56,7 @@ const AnimationCel bouncy_road_cel004[] = {
 };
 
 // [D_088cbc2a]
-const AnimationCel bouncy_road_cel005[] = {
+AnimationCel bouncy_road_cel005[] = {
     /* Len */ 6,
     /* 000 */ 0x0000, 0x41f8, 0x8005,
     /* 001 */ 0x4014, 0x01f8, 0x8009,
@@ -67,7 +67,7 @@ const AnimationCel bouncy_road_cel005[] = {
 };
 
 // [D_088cbc50]
-const AnimationCel bouncy_road_cel006[] = {
+AnimationCel bouncy_road_cel006[] = {
     /* Len */ 6,
     /* 000 */ 0x00fb, 0x41f8, 0x9005,
     /* 001 */ 0x4005, 0x01f8, 0x9009,
@@ -78,7 +78,7 @@ const AnimationCel bouncy_road_cel006[] = {
 };
 
 // [D_088cbc76]
-const AnimationCel bouncy_road_cel007[] = {
+AnimationCel bouncy_road_cel007[] = {
     /* Len */ 6,
     /* 000 */ 0x00fe, 0x41f8, 0x9005,
     /* 001 */ 0x4009, 0x01f8, 0x9009,
@@ -89,7 +89,7 @@ const AnimationCel bouncy_road_cel007[] = {
 };
 
 // [D_088cbc9c]
-const AnimationCel bouncy_road_cel008[] = {
+AnimationCel bouncy_road_cel008[] = {
     /* Len */ 6,
     /* 000 */ 0x00ff, 0x41f8, 0x9005,
     /* 001 */ 0x400d, 0x01f8, 0x9009,
@@ -100,7 +100,7 @@ const AnimationCel bouncy_road_cel008[] = {
 };
 
 // [D_088cbcc2]
-const AnimationCel bouncy_road_cel009[] = {
+AnimationCel bouncy_road_cel009[] = {
     /* Len */ 6,
     /* 000 */ 0x0000, 0x41f8, 0x9005,
     /* 001 */ 0x4011, 0x01f8, 0x9009,
@@ -111,7 +111,7 @@ const AnimationCel bouncy_road_cel009[] = {
 };
 
 // [D_088cbce8]
-const AnimationCel bouncy_road_cel010[] = {
+AnimationCel bouncy_road_cel010[] = {
     /* Len */ 6,
     /* 000 */ 0x0000, 0x41f8, 0x9005,
     /* 001 */ 0x4013, 0x01f8, 0x9009,
@@ -122,7 +122,7 @@ const AnimationCel bouncy_road_cel010[] = {
 };
 
 // [D_088cbd0e]
-const AnimationCel bouncy_road_cel011[] = {
+AnimationCel bouncy_road_cel011[] = {
     /* Len */ 6,
     /* 000 */ 0x0000, 0x41f8, 0x9005,
     /* 001 */ 0x4014, 0x01f8, 0x9009,
@@ -133,48 +133,48 @@ const AnimationCel bouncy_road_cel011[] = {
 };
 
 // [D_088cbd34]
-const AnimationCel bouncy_road_cel012[] = {
+AnimationCel bouncy_road_cel012[] = {
     /* Len */ 1,
     /* 000 */ 0x00f8, 0x41f8, 0x0007
 };
 
 // [D_088cbd3c]
-const AnimationCel bouncy_road_cel013[] = {
+AnimationCel bouncy_road_cel013[] = {
     /* Len */ 2,
     /* 000 */ 0x00fb, 0x41f8, 0x0005,
     /* 001 */ 0x4005, 0x01f8, 0x0009
 };
 
 // [D_088cbd4a]
-const AnimationCel bouncy_road_cel014[] = {
+AnimationCel bouncy_road_cel014[] = {
     /* Len */ 2,
     /* 000 */ 0x00fe, 0x41f8, 0x0005,
     /* 001 */ 0x4009, 0x01f8, 0x0009
 };
 
 // [D_088cbd58]
-const AnimationCel bouncy_road_cel015[] = {
+AnimationCel bouncy_road_cel015[] = {
     /* Len */ 2,
     /* 000 */ 0x00ff, 0x41f8, 0x0005,
     /* 001 */ 0x400d, 0x01f8, 0x0009
 };
 
 // [D_088cbd66]
-const AnimationCel bouncy_road_cel016[] = {
+AnimationCel bouncy_road_cel016[] = {
     /* Len */ 2,
     /* 000 */ 0x0000, 0x41f8, 0x0005,
     /* 001 */ 0x4011, 0x01f8, 0x0009
 };
 
 // [D_088cbd74]
-const AnimationCel bouncy_road_cel017[] = {
+AnimationCel bouncy_road_cel017[] = {
     /* Len */ 2,
     /* 000 */ 0x0000, 0x41f8, 0x0005,
     /* 001 */ 0x4013, 0x01f8, 0x0009
 };
 
 // [D_088cbd82]
-const AnimationCel bouncy_road_cel018[] = {
+AnimationCel bouncy_road_cel018[] = {
     /* Len */ 2,
     /* 000 */ 0x0000, 0x41f8, 0x0005,
     /* 001 */ 0x4014, 0x01f8, 0x0009

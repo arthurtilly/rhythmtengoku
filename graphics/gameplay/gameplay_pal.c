@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0890ada0] <description>
-const Palette gameplay_obj_pal[] = {
+Palette gameplay_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x7888A8),
         /* 01 */ TO_RGB555(0x000000),

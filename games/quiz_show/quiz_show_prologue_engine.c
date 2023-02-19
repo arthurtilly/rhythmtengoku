@@ -4,17 +4,17 @@
   /* PROLOGUE (QUIZ SHOW) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c04434;
-extern const struct CompressedGraphics D_08c04940;
-extern const struct CompressedGraphics D_08c02a34;
-extern const Palette quiz_show_prologue_pal[];
+extern struct CompressedGraphics D_08c04434;
+extern struct CompressedGraphics D_08c04940;
+extern struct CompressedGraphics D_08c02a34;
+extern Palette quiz_show_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ebb7c] Buffered Textures List
-const struct CompressedGraphics *quiz_show_prologue_buffered_textures[] = {
+struct CompressedGraphics *quiz_show_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

@@ -4,18 +4,18 @@
   /* PROLOGUE (RHYTHM TWEEZERS) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08beefac;
-extern const struct CompressedGraphics D_08bef2ac;
-extern const struct CompressedGraphics D_08bee62c;
-extern const Palette rhythm_tweezers_prologue_bg_pal[];
-extern const Palette rhythm_tweezers_prologue_obj_pal[];
+extern struct CompressedGraphics D_08beefac;
+extern struct CompressedGraphics D_08bef2ac;
+extern struct CompressedGraphics D_08bee62c;
+extern Palette rhythm_tweezers_prologue_bg_pal[];
+extern Palette rhythm_tweezers_prologue_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ead54] Buffered Textures List
-const struct CompressedGraphics *rhythm_tweezers_prologue_buffered_textures[] = {
+struct CompressedGraphics *rhythm_tweezers_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

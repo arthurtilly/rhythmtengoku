@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_08901424] <description>
-const Palette drum_lessons_menu_pal[] = {
+Palette drum_lessons_menu_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x18E0C0),
         /* 01 */ TO_RGB555(0x000000),

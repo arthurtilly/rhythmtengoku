@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088b40b4] Palette
-const Palette ninja_bodyguard_prologue_pal[] = {
+Palette ninja_bodyguard_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x0048C8),
         /* 01 */ TO_RGB555(0xC08888),

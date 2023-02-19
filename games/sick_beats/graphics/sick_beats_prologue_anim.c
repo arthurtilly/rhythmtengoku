@@ -4,7 +4,7 @@
 #include "sick_beats_prologue_anim_cells.inc.c"
 
 // [D_088b8cbc] Virus
-const struct Animation anim_sick_beats_prologue_virus[] = {
+struct Animation anim_sick_beats_prologue_virus[] = {
     /* 000 */ { sick_beats_prologue_cel000, 20 },
     /* 001 */ { sick_beats_prologue_cel001, 4 },
     /* 002 */ { sick_beats_prologue_cel002, 4 },
@@ -16,7 +16,7 @@ const struct Animation anim_sick_beats_prologue_virus[] = {
 };
 
 // [D_088b8cfc] Title
-const struct Animation anim_sick_beats_prologue_title[] = {
+struct Animation anim_sick_beats_prologue_title[] = {
     /* 000 */ { sick_beats_prologue_cel000, 60 },
     /* 001 */ { sick_beats_prologue_cel016, 4 },
     /* 002 */ { sick_beats_prologue_cel017, 4 },
@@ -32,7 +32,7 @@ const struct Animation anim_sick_beats_prologue_title[] = {
 };
 
 // [D_088b8d5c] ? (Unused)
-const struct Animation anim_sick_beats_prologue_unused[] = {
+struct Animation anim_sick_beats_prologue_unused[] = {
     /* 000 */ { sick_beats_prologue_cel000, 60 },
     /* 001 */ { sick_beats_prologue_cel007, 12 },
     /* 002 */ { sick_beats_prologue_cel008, 4 },

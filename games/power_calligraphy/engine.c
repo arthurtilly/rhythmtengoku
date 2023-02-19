@@ -4,44 +4,44 @@
   /* POWER CALLIGRAPHY - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_calligraphy_people_m_dance_l[];
-extern const struct Animation anim_calligraphy_people_m_dance_r[];
-extern const struct Animation anim_calligraphy_people_w_dance_r[];
-extern const struct Animation anim_calligraphy_people_w_dance_l[];
-extern const struct Animation anim_calligraphy_people_m_fall_r[];
-extern const struct Animation anim_calligraphy_people_m_fall_l[];
-extern const struct Animation anim_calligraphy_people_w_fall_r[];
-extern const struct Animation anim_calligraphy_people_w_fall_l[];
-extern const struct Animation anim_calligraphy_people_m_bow_r[];
-extern const struct Animation anim_calligraphy_people_m_bow_l[];
-extern const struct Animation anim_calligraphy_people_w_bow_r[];
-extern const struct Animation anim_calligraphy_people_w_bow_l[];
-extern const struct Animation anim_calligraphy_onore[];
-extern const struct Animation anim_calligraphy_chikara[];
-extern const struct Animation anim_calligraphy_sun[];
-extern const struct Animation anim_calligraphy_kokoro[];
-extern const struct Animation anim_calligraphy_re[];
-extern const struct Animation anim_calligraphy_comma[];
-extern const struct Animation anim_calligraphy_face[];
-extern const struct Animation anim_calligraphy_end_kanji[];
-extern const struct Animation anim_calligraphy_onore_input1[];
-extern const struct Animation anim_calligraphy_chikara_input1[];
-extern const struct Animation anim_calligraphy_chikara_input2[];
-extern const struct Animation anim_calligraphy_sun_input1[];
-extern const struct Animation anim_calligraphy_sun_input2[];
-extern const struct Animation anim_calligraphy_kokoro_input1[];
-extern const struct Animation anim_calligraphy_kokoro_input2[];
-extern const struct Animation anim_calligraphy_kokoro_input3[];
-extern const struct Animation anim_calligraphy_re_input1[];
-extern const struct Animation anim_calligraphy_comma_input1[];
-extern const struct Animation anim_calligraphy_face_input1[];
+extern struct Animation anim_calligraphy_people_m_dance_l[];
+extern struct Animation anim_calligraphy_people_m_dance_r[];
+extern struct Animation anim_calligraphy_people_w_dance_r[];
+extern struct Animation anim_calligraphy_people_w_dance_l[];
+extern struct Animation anim_calligraphy_people_m_fall_r[];
+extern struct Animation anim_calligraphy_people_m_fall_l[];
+extern struct Animation anim_calligraphy_people_w_fall_r[];
+extern struct Animation anim_calligraphy_people_w_fall_l[];
+extern struct Animation anim_calligraphy_people_m_bow_r[];
+extern struct Animation anim_calligraphy_people_m_bow_l[];
+extern struct Animation anim_calligraphy_people_w_bow_r[];
+extern struct Animation anim_calligraphy_people_w_bow_l[];
+extern struct Animation anim_calligraphy_onore[];
+extern struct Animation anim_calligraphy_chikara[];
+extern struct Animation anim_calligraphy_sun[];
+extern struct Animation anim_calligraphy_kokoro[];
+extern struct Animation anim_calligraphy_re[];
+extern struct Animation anim_calligraphy_comma[];
+extern struct Animation anim_calligraphy_face[];
+extern struct Animation anim_calligraphy_end_kanji[];
+extern struct Animation anim_calligraphy_onore_input1[];
+extern struct Animation anim_calligraphy_chikara_input1[];
+extern struct Animation anim_calligraphy_chikara_input2[];
+extern struct Animation anim_calligraphy_sun_input1[];
+extern struct Animation anim_calligraphy_sun_input2[];
+extern struct Animation anim_calligraphy_kokoro_input1[];
+extern struct Animation anim_calligraphy_kokoro_input2[];
+extern struct Animation anim_calligraphy_kokoro_input3[];
+extern struct Animation anim_calligraphy_re_input1[];
+extern struct Animation anim_calligraphy_comma_input1[];
+extern struct Animation anim_calligraphy_face_input1[];
 
-extern const struct CompressedGraphics D_08c68d64;
-extern const struct CompressedGraphics D_08c69844;
-extern const struct CompressedGraphics D_08c68d1c;
-extern const struct CompressedGraphics D_08c69698;
+extern struct CompressedGraphics D_08c68d64;
+extern struct CompressedGraphics D_08c69844;
+extern struct CompressedGraphics D_08c68d1c;
+extern struct CompressedGraphics D_08c69698;
 
-extern const Palette power_calligraphy_pal[];
+extern Palette power_calligraphy_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
@@ -54,25 +54,25 @@ struct Vector2 calligraphy_people_start_pos[] = {
 };
 
 // [D_089e4960] Little People Dancing Animations
-const struct Animation *calligraphy_people_dance_anim[][2] = {
+struct Animation *calligraphy_people_dance_anim[][2] = {
     /* M */ { anim_calligraphy_people_m_dance_l, anim_calligraphy_people_m_dance_r },
     /* W */ { anim_calligraphy_people_w_dance_r, anim_calligraphy_people_w_dance_l }
 };
 
 // [D_089e4970] Little People Stumbling Animations
-const struct Animation *calligraphy_people_fall_anim[][2] = {
+struct Animation *calligraphy_people_fall_anim[][2] = {
     /* M */ { anim_calligraphy_people_m_fall_r, anim_calligraphy_people_m_fall_l },
     /* W */ { anim_calligraphy_people_w_fall_r, anim_calligraphy_people_w_fall_l }
 };
 
 // [D_089e4980] Little People Bowing Animations
-const struct Animation *calligraphy_people_bow_anim[][2] = {
+struct Animation *calligraphy_people_bow_anim[][2] = {
     /* M */ { anim_calligraphy_people_m_bow_r, anim_calligraphy_people_m_bow_l },
     /* W */ { anim_calligraphy_people_w_bow_r, anim_calligraphy_people_w_bow_l }
 };
 
 // [D_089e4990] Buffered Textures List
-const struct CompressedGraphics *calligraphy_buffered_textures[] = {
+struct CompressedGraphics *calligraphy_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -112,7 +112,7 @@ struct GraphicsTable calligraphy_gfx_table[] = {
 };
 
 // [D_089e49e8] Kana Animations
-const struct Animation *calligraphy_pattern_anim[] = {
+struct Animation *calligraphy_pattern_anim[] = {
     /* 0x00 */ anim_calligraphy_onore,
     /* 0x01 */ anim_calligraphy_chikara,
     /* 0x02 */ anim_calligraphy_sun,
@@ -124,7 +124,7 @@ const struct Animation *calligraphy_pattern_anim[] = {
 };
 
 // [D_089e4a08] Player Brush Stroke Animations
-const struct Animation *calligraphy_pattern_input_anim[] = {
+struct Animation *calligraphy_pattern_input_anim[] = {
     /* ONORE 1   */ anim_calligraphy_onore_input1,
     /* CHIKARA 1 */ anim_calligraphy_chikara_input1,
     /* CHIKARA 2 */ anim_calligraphy_chikara_input2,

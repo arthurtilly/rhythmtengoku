@@ -4,7 +4,7 @@
 #include "night_walk_prologue_anim_cells.inc.c"
 
 // [D_088ae048] Play-Yan
-const struct Animation anim_night_walk_prologue_play_yan[] = {
+struct Animation anim_night_walk_prologue_play_yan[] = {
     /* 000 */ { night_walk_prologue_cel005, 4 },
     /* 001 */ { night_walk_prologue_cel006, 4 },
     /* 002 */ { night_walk_prologue_cel007, 4 },
@@ -43,7 +43,7 @@ const struct Animation anim_night_walk_prologue_play_yan[] = {
 };
 
 // [D_088ae160] Balloons
-const struct Animation anim_night_walk_prologue_balloons[] = {
+struct Animation anim_night_walk_prologue_balloons[] = {
     /* 000 */ { night_walk_prologue_cel038, 6 },
     /* 001 */ { night_walk_prologue_cel039, 6 },
     /* 002 */ { night_walk_prologue_cel040, 6 },
@@ -88,7 +88,7 @@ const struct Animation anim_night_walk_prologue_balloons[] = {
 };
 
 // [D_088ae2a8] Title
-const struct Animation anim_night_walk_prologue_title[] = {
+struct Animation anim_night_walk_prologue_title[] = {
     /* 000 */ { night_walk_prologue_cel000, 207 },
     /* 001 */ { night_walk_prologue_cel044, 2 },
     /* 002 */ { night_walk_prologue_cel045, 2 },

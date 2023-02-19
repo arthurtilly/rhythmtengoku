@@ -4,17 +4,17 @@
   /* PROLOGUE (TRAM & PAULINE) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c3106c;
-extern const struct CompressedGraphics D_08c3153c;
-extern const struct CompressedGraphics D_08c30910;
-extern const Palette tram_and_pauline_prologue_pal[];
+extern struct CompressedGraphics D_08c3106c;
+extern struct CompressedGraphics D_08c3153c;
+extern struct CompressedGraphics D_08c30910;
+extern Palette tram_and_pauline_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089edbb8] Buffered Textures List
-const struct CompressedGraphics *tram_and_pauline_prologue_buffered_textures[] = {
+struct CompressedGraphics *tram_and_pauline_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

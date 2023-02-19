@@ -4,17 +4,17 @@
   /* PROLOGUE (RAP WOMEN) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c20f8c;
-extern const struct CompressedGraphics D_08c21254;
-extern const struct CompressedGraphics D_08c209cc;
-extern const Palette rap_women_prologue_pal[];
+extern struct CompressedGraphics D_08c20f8c;
+extern struct CompressedGraphics D_08c21254;
+extern struct CompressedGraphics D_08c209cc;
+extern Palette rap_women_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ece80] Buffered Textures List
-const struct CompressedGraphics *rap_women_prologue_buffered_textures[] = {
+struct CompressedGraphics *rap_women_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

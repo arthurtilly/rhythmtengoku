@@ -4,17 +4,17 @@
   /* SPACEBALL - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08bd5524;
-extern const struct CompressedGraphics D_08bd5878;
-extern const struct CompressedGraphics D_08bd4e70;
-extern const Palette spaceball_pal[];
+extern struct CompressedGraphics D_08bd5524;
+extern struct CompressedGraphics D_08bd5878;
+extern struct CompressedGraphics D_08bd4e70;
+extern Palette spaceball_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089de93c] Buffered Textures List
-const struct CompressedGraphics *spaceball_buffered_textures[] = {
+struct CompressedGraphics *spaceball_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -51,7 +51,7 @@ struct GraphicsTable spaceball_gfx_table[] = {
 
 
 // [D_089de988] Batter Animations (Close)
-const struct Animation *spaceball_anim_table_batter_close[] = {
+struct Animation *spaceball_anim_table_batter_close[] = {
     anim_spaceball_batter_green,
     anim_spaceball_batter_red,
     anim_spaceball_batter_pink
@@ -59,7 +59,7 @@ const struct Animation *spaceball_anim_table_batter_close[] = {
 
 
 // [D_089de994] Batter Animations (Far)
-const struct Animation *spaceball_anim_table_batter_far[] = {
+struct Animation *spaceball_anim_table_batter_far[] = {
     anim_spaceball_batter_green_far,
     anim_spaceball_batter_red_far,
     anim_spaceball_batter_pink_far
@@ -67,7 +67,7 @@ const struct Animation *spaceball_anim_table_batter_far[] = {
 
 
 // [D_089de9a0] Ball Animations
-const struct Animation *spaceball_anim_table_ball[] = {
+struct Animation *spaceball_anim_table_ball[] = {
     anim_spaceball_baseball,
     anim_spaceball_rice_ball,
     anim_spaceball_star_ball

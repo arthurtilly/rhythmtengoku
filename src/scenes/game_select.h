@@ -253,35 +253,35 @@ extern const char D_08050c24[]; // "‚ðƒvƒŒƒ[ƒ“ƒg!!"
 
 
 // OAM Animations:
-extern const struct Animation anim_game_select_bg_square_large[]; // large rotating square
-extern const struct Animation anim_game_select_bg_square_small[]; // small rotating square
-extern const struct Animation anim_game_select_border_target[]; // selected game border
-extern const struct Animation anim_game_select_new_game[]; // game gradient border
-extern const struct Animation anim_game_select_clear_game[]; // flickering white square
-extern const struct Animation anim_game_select_get_superb[]; // level complete shine
-extern const struct Animation anim_game_select_stage1[]; // "STAGE 1"
-extern const struct Animation anim_game_select_stage_box[]; // blank stage text box
-extern const struct Animation anim_game_select_flow_num[]; // flow count numbers
-extern const struct Animation anim_game_select_flow_text[]; // "Your Flow"
-extern const struct Animation anim_game_select_flow_arrow[]; // flow direction
-extern const struct Animation anim_game_select_border_perfect3[]; // perfect campaign border (6 flowers)
-extern const struct Animation anim_game_select_text_button[]; // A Button prompt
-extern const struct Animation anim_game_select_medal_count_unused[]; // unused medal count
-extern const struct Animation anim_game_select_medal_num[]; // medal count numbers
-extern const struct Animation anim_game_select_medal_num0[]; // medal count number 0
-extern const struct Animation anim_game_select_medal_text[]; // medal count text
-extern const struct Animation anim_game_select_stage2[]; // "STAGE 2"
-extern const struct Animation anim_game_select_stage3[]; // "STAGE 3"
-extern const struct Animation anim_game_select_stage4[]; // "STAGE 4"
-extern const struct Animation anim_game_select_stage5[]; // "STAGE 5"
-extern const struct Animation anim_game_select_stage0[]; // "MEDAL CORNER"
-extern const struct Animation anim_game_select_stage6[]; // "REVIVAL"
-extern const struct Animation anim_game_select_stage7[]; // "TECHNICIAN"
-extern const struct Animation anim_game_select_stage8[]; // "LAST TECHNICIAN"
-extern const struct Animation anim_game_select_border_perfect2[]; // perfect campaign border (3 flowers)
-extern const struct Animation anim_game_select_border_perfect1[]; // perfect campaign border (no flowers)
-extern const struct Animation anim_game_select_cursor[]; // cursor
-extern const struct Animation anim_game_select_perfect_rank[]; // perfect cleared heart symbol
+extern struct Animation anim_game_select_bg_square_large[]; // large rotating square
+extern struct Animation anim_game_select_bg_square_small[]; // small rotating square
+extern struct Animation anim_game_select_border_target[]; // selected game border
+extern struct Animation anim_game_select_new_game[]; // game gradient border
+extern struct Animation anim_game_select_clear_game[]; // flickering white square
+extern struct Animation anim_game_select_get_superb[]; // level complete shine
+extern struct Animation anim_game_select_stage1[]; // "STAGE 1"
+extern struct Animation anim_game_select_stage_box[]; // blank stage text box
+extern struct Animation anim_game_select_flow_num[]; // flow count numbers
+extern struct Animation anim_game_select_flow_text[]; // "Your Flow"
+extern struct Animation anim_game_select_flow_arrow[]; // flow direction
+extern struct Animation anim_game_select_border_perfect3[]; // perfect campaign border (6 flowers)
+extern struct Animation anim_game_select_text_button[]; // A Button prompt
+extern struct Animation anim_game_select_medal_count_unused[]; // unused medal count
+extern struct Animation anim_game_select_medal_num[]; // medal count numbers
+extern struct Animation anim_game_select_medal_num0[]; // medal count number 0
+extern struct Animation anim_game_select_medal_text[]; // medal count text
+extern struct Animation anim_game_select_stage2[]; // "STAGE 2"
+extern struct Animation anim_game_select_stage3[]; // "STAGE 3"
+extern struct Animation anim_game_select_stage4[]; // "STAGE 4"
+extern struct Animation anim_game_select_stage5[]; // "STAGE 5"
+extern struct Animation anim_game_select_stage0[]; // "MEDAL CORNER"
+extern struct Animation anim_game_select_stage6[]; // "REVIVAL"
+extern struct Animation anim_game_select_stage7[]; // "TECHNICIAN"
+extern struct Animation anim_game_select_stage8[]; // "LAST TECHNICIAN"
+extern struct Animation anim_game_select_border_perfect2[]; // perfect campaign border (3 flowers)
+extern struct Animation anim_game_select_border_perfect1[]; // perfect campaign border (no flowers)
+extern struct Animation anim_game_select_cursor[]; // cursor
+extern struct Animation anim_game_select_perfect_rank[]; // perfect cleared heart symbol
 
 
 // Sound Effects:
@@ -289,12 +289,12 @@ extern const struct Animation anim_game_select_perfect_rank[]; // perfect cleare
 
 // Scene Definition Data:
 extern const struct PerfectCampaignData D_089cdf24[48]; // ??? (related to perfect campaign)
-extern const struct Animation *const D_089ce0a4[3]; // Perfect Campaign Border Animations { 0 = No Flowers; 1 = 3 Flowers; 2 = 6 Flowers }
+extern struct Animation *const D_089ce0a4[3]; // Perfect Campaign Border Animations { 0 = No Flowers; 1 = 3 Flowers; 2 = 6 Flowers }
 extern const struct GameSelectSceneEntry D_089ce344[55];
 extern const struct GameSelectGridEntry D_089ceafc[GAME_SELECT_GRID_HEIGHT * GAME_SELECT_GRID_WIDTH];
 extern const struct GraphicsTable D_089cf948[]; // Graphics Table
-extern const struct CompressedGraphics *const D_089cf9a8[]; // Buffered Textures List
-extern const struct Animation *const D_089cf9ac[14]; // Stage Title Text Animations
+extern struct CompressedGraphics *const D_089cf9a8[]; // Buffered Textures List
+extern struct Animation *const D_089cf9ac[14]; // Stage Title Text Animations
 
 
 /* FUNCTIONS */

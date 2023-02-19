@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_08933004] Wizard's Waltz Palette
-const Palette wizards_waltz_pal[] = {
+Palette wizards_waltz_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xA8A8A8),
         /* 01 */ TO_RGB555(0x785818),

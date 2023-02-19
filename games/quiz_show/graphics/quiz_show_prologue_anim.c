@@ -4,7 +4,7 @@
 #include "quiz_show_prologue_anim_cells.inc.c"
 
 // [D_088b13c4] Title
-const struct Animation anim_quiz_show_prologue_title[] = {
+struct Animation anim_quiz_show_prologue_title[] = {
     /* 000 */ { quiz_show_prologue_cel000, 10 },
     /* 001 */ { quiz_show_prologue_cel001, 10 },
     /* 002 */ { quiz_show_prologue_cel002, 10 },

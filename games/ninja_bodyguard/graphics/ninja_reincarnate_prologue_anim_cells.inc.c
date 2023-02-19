@@ -1,7 +1,7 @@
 // do not rename these
 
 // [D_088b4194]
-const AnimationCel ninja_reincarnate_prologue_cel000[] = {
+AnimationCel ninja_reincarnate_prologue_cel000[] = {
     /* Len */ 11,
     /* 000 */ 0x8090, 0xc1e8, 0x1000,
     /* 001 */ 0x8090, 0x8008, 0x100a,
@@ -17,7 +17,7 @@ const AnimationCel ninja_reincarnate_prologue_cel000[] = {
 };
 
 // [D_088b41d8]
-const AnimationCel ninja_reincarnate_prologue_cel001[] = {
+AnimationCel ninja_reincarnate_prologue_cel001[] = {
     /* Len */ 11,
     /* 000 */ 0x8090, 0xc1e8, 0x2000,
     /* 001 */ 0x8090, 0x8008, 0x200a,
@@ -33,7 +33,7 @@ const AnimationCel ninja_reincarnate_prologue_cel001[] = {
 };
 
 // [D_088b421c]
-const AnimationCel ninja_reincarnate_prologue_cel002[] = {
+AnimationCel ninja_reincarnate_prologue_cel002[] = {
     /* Len */ 11,
     /* 000 */ 0x8090, 0xc1e8, 0x3000,
     /* 001 */ 0x8090, 0x8008, 0x300a,
@@ -49,7 +49,7 @@ const AnimationCel ninja_reincarnate_prologue_cel002[] = {
 };
 
 // [D_088b4260]
-const AnimationCel ninja_reincarnate_prologue_cel003[] = {
+AnimationCel ninja_reincarnate_prologue_cel003[] = {
     /* Len */ 11,
     /* 000 */ 0x8090, 0xc1e8, 0x4000,
     /* 001 */ 0x8090, 0x8008, 0x400a,
@@ -65,7 +65,7 @@ const AnimationCel ninja_reincarnate_prologue_cel003[] = {
 };
 
 // [D_088b42a4]
-const AnimationCel ninja_reincarnate_prologue_cel004[] = {
+AnimationCel ninja_reincarnate_prologue_cel004[] = {
     /* Len */ 11,
     /* 000 */ 0x8090, 0xc1e8, 0x5000,
     /* 001 */ 0x8090, 0x8008, 0x500a,
@@ -81,7 +81,7 @@ const AnimationCel ninja_reincarnate_prologue_cel004[] = {
 };
 
 // [D_088b42e8]
-const AnimationCel ninja_reincarnate_prologue_cel005[] = {
+AnimationCel ninja_reincarnate_prologue_cel005[] = {
     /* Len */ 11,
     /* 000 */ 0x8090, 0xc1e8, 0x6000,
     /* 001 */ 0x8090, 0x8008, 0x600a,

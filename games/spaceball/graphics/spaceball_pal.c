@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088a1dd0] Spaceball [BG & OBJ]
-const Palette spaceball_pal[] = {
+Palette spaceball_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000070),
         /* 01 */ TO_RGB555(0x000000),

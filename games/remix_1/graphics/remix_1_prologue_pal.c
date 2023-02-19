@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088b1810] OBJ Palette
-const Palette remix_1_prologue_obj_pal[] = {
+Palette remix_1_prologue_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00B828),
         /* 01 */ TO_RGB555(0x502828),
@@ -24,7 +24,7 @@ const Palette remix_1_prologue_obj_pal[] = {
 };
 
 // [D_088b1830] BG Palette
-const Palette remix_1_prologue_bg_pal[] = {
+Palette remix_1_prologue_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00B828),
         /* 01 */ TO_RGB555(0x502828),

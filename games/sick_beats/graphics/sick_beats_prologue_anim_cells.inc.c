@@ -1,40 +1,40 @@
 // do not rename these
 
 // [D_088b898c]
-const AnimationCel sick_beats_prologue_cel000[] = {
+AnimationCel sick_beats_prologue_cel000[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x009e
 };
 
 // [D_088b8994]
-const AnimationCel sick_beats_prologue_cel001[] = {
+AnimationCel sick_beats_prologue_cel001[] = {
     /* Len */ 1,
     /* 000 */ 0x4016, 0x4000, 0x008e
 };
 
 // [D_088b899c]
-const AnimationCel sick_beats_prologue_cel002[] = {
+AnimationCel sick_beats_prologue_cel002[] = {
     /* Len */ 2,
     /* 000 */ 0x4010, 0x8000, 0x0017,
     /* 001 */ 0x8010, 0x0020, 0x008c
 };
 
 // [D_088b89aa]
-const AnimationCel sick_beats_prologue_cel003[] = {
+AnimationCel sick_beats_prologue_cel003[] = {
     /* Len */ 2,
     /* 000 */ 0x4011, 0x8000, 0x0013,
     /* 001 */ 0x8011, 0x0020, 0x008b
 };
 
 // [D_088b89b8]
-const AnimationCel sick_beats_prologue_cel004[] = {
+AnimationCel sick_beats_prologue_cel004[] = {
     /* Len */ 2,
     /* 000 */ 0x0008, 0x8000, 0x0000,
     /* 001 */ 0x8008, 0x4020, 0x000c
 };
 
 // [D_088b89c6]
-const AnimationCel sick_beats_prologue_cel005[] = {
+AnimationCel sick_beats_prologue_cel005[] = {
     /* Len */ 3,
     /* 000 */ 0x0000, 0x8000, 0x0004,
     /* 001 */ 0x8000, 0x4020, 0x000e,
@@ -42,7 +42,7 @@ const AnimationCel sick_beats_prologue_cel005[] = {
 };
 
 // [D_088b89da]
-const AnimationCel sick_beats_prologue_cel006[] = {
+AnimationCel sick_beats_prologue_cel006[] = {
     /* Len */ 4,
     /* 000 */ 0x0000, 0x8000, 0x0008,
     /* 001 */ 0x8000, 0x4020, 0x000d,
@@ -51,13 +51,13 @@ const AnimationCel sick_beats_prologue_cel006[] = {
 };
 
 // [D_088b89f4]
-const AnimationCel sick_beats_prologue_cel007[] = {
+AnimationCel sick_beats_prologue_cel007[] = {
     /* Len */ 1,
     /* 000 */ 0x4000, 0x8000, 0x000f
 };
 
 // [D_088b89fc]
-const AnimationCel sick_beats_prologue_cel008[] = {
+AnimationCel sick_beats_prologue_cel008[] = {
     /* Len */ 3,
     /* 000 */ 0x4000, 0x8000, 0x000f,
     /* 001 */ 0x00fa, 0x4026, 0x0082,
@@ -65,7 +65,7 @@ const AnimationCel sick_beats_prologue_cel008[] = {
 };
 
 // [D_088b8a10]
-const AnimationCel sick_beats_prologue_cel009[] = {
+AnimationCel sick_beats_prologue_cel009[] = {
     /* Len */ 4,
     /* 000 */ 0x4000, 0x8000, 0x000f,
     /* 001 */ 0x00fa, 0x4026, 0x0082,
@@ -74,7 +74,7 @@ const AnimationCel sick_beats_prologue_cel009[] = {
 };
 
 // [D_088b8a2a]
-const AnimationCel sick_beats_prologue_cel010[] = {
+AnimationCel sick_beats_prologue_cel010[] = {
     /* Len */ 6,
     /* 000 */ 0x4000, 0x8000, 0x000f,
     /* 001 */ 0x00fa, 0x4026, 0x0082,
@@ -85,7 +85,7 @@ const AnimationCel sick_beats_prologue_cel010[] = {
 };
 
 // [D_088b8a50]
-const AnimationCel sick_beats_prologue_cel011[] = {
+AnimationCel sick_beats_prologue_cel011[] = {
     /* Len */ 8,
     /* 000 */ 0x4000, 0x8000, 0x000f,
     /* 001 */ 0x00fa, 0x4026, 0x0082,
@@ -98,7 +98,7 @@ const AnimationCel sick_beats_prologue_cel011[] = {
 };
 
 // [D_088b8a82]
-const AnimationCel sick_beats_prologue_cel012[] = {
+AnimationCel sick_beats_prologue_cel012[] = {
     /* Len */ 9,
     /* 000 */ 0x4000, 0x8000, 0x000f,
     /* 001 */ 0x00fa, 0x4026, 0x0082,
@@ -112,7 +112,7 @@ const AnimationCel sick_beats_prologue_cel012[] = {
 };
 
 // [D_088b8aba]
-const AnimationCel sick_beats_prologue_cel013[] = {
+AnimationCel sick_beats_prologue_cel013[] = {
     /* Len */ 9,
     /* 000 */ 0x4000, 0x8000, 0x000f,
     /* 001 */ 0x00fa, 0x4026, 0x0082,
@@ -126,7 +126,7 @@ const AnimationCel sick_beats_prologue_cel013[] = {
 };
 
 // [D_088b8af2]
-const AnimationCel sick_beats_prologue_cel014[] = {
+AnimationCel sick_beats_prologue_cel014[] = {
     /* Len */ 10,
     /* 000 */ 0x4000, 0x8000, 0x000f,
     /* 001 */ 0x00fa, 0x4026, 0x0082,
@@ -141,7 +141,7 @@ const AnimationCel sick_beats_prologue_cel014[] = {
 };
 
 // [D_088b8b30]
-const AnimationCel sick_beats_prologue_cel015[] = {
+AnimationCel sick_beats_prologue_cel015[] = {
     /* Len */ 12,
     /* 000 */ 0x4000, 0x8000, 0x000f,
     /* 001 */ 0x00fa, 0x4026, 0x0082,
@@ -158,20 +158,20 @@ const AnimationCel sick_beats_prologue_cel015[] = {
 };
 
 // [D_088b8b7a]
-const AnimationCel sick_beats_prologue_cel016[] = {
+AnimationCel sick_beats_prologue_cel016[] = {
     /* Len */ 1,
     /* 000 */ 0x0003, 0x4000, 0x0051
 };
 
 // [D_088b8b82]
-const AnimationCel sick_beats_prologue_cel017[] = {
+AnimationCel sick_beats_prologue_cel017[] = {
     /* Len */ 2,
     /* 000 */ 0x00fd, 0x4000, 0x0051,
     /* 001 */ 0x0003, 0x4010, 0x004f
 };
 
 // [D_088b8b90]
-const AnimationCel sick_beats_prologue_cel018[] = {
+AnimationCel sick_beats_prologue_cel018[] = {
     /* Len */ 3,
     /* 000 */ 0x0000, 0x4000, 0x0051,
     /* 001 */ 0x00ff, 0x4010, 0x004f,
@@ -179,7 +179,7 @@ const AnimationCel sick_beats_prologue_cel018[] = {
 };
 
 // [D_088b8ba4]
-const AnimationCel sick_beats_prologue_cel019[] = {
+AnimationCel sick_beats_prologue_cel019[] = {
     /* Len */ 4,
     /* 000 */ 0x0000, 0x4000, 0x0051,
     /* 001 */ 0x0000, 0x4010, 0x004f,
@@ -188,7 +188,7 @@ const AnimationCel sick_beats_prologue_cel019[] = {
 };
 
 // [D_088b8bbe]
-const AnimationCel sick_beats_prologue_cel020[] = {
+AnimationCel sick_beats_prologue_cel020[] = {
     /* Len */ 4,
     /* 000 */ 0x0000, 0x4000, 0x0051,
     /* 001 */ 0x0000, 0x4010, 0x004f,
@@ -197,7 +197,7 @@ const AnimationCel sick_beats_prologue_cel020[] = {
 };
 
 // [D_088b8bd8]
-const AnimationCel sick_beats_prologue_cel021[] = {
+AnimationCel sick_beats_prologue_cel021[] = {
     /* Len */ 5,
     /* 000 */ 0x0000, 0x4000, 0x0051,
     /* 001 */ 0x0000, 0x4010, 0x004f,
@@ -207,7 +207,7 @@ const AnimationCel sick_beats_prologue_cel021[] = {
 };
 
 // [D_088b8bf8]
-const AnimationCel sick_beats_prologue_cel022[] = {
+AnimationCel sick_beats_prologue_cel022[] = {
     /* Len */ 7,
     /* 000 */ 0x0000, 0x4000, 0x0051,
     /* 001 */ 0x0000, 0x4010, 0x004f,
@@ -219,7 +219,7 @@ const AnimationCel sick_beats_prologue_cel022[] = {
 };
 
 // [D_088b8c24]
-const AnimationCel sick_beats_prologue_cel023[] = {
+AnimationCel sick_beats_prologue_cel023[] = {
     /* Len */ 8,
     /* 000 */ 0x0000, 0x4000, 0x0051,
     /* 001 */ 0x0000, 0x4010, 0x004f,
@@ -232,7 +232,7 @@ const AnimationCel sick_beats_prologue_cel023[] = {
 };
 
 // [D_088b8c56]
-const AnimationCel sick_beats_prologue_cel024[] = {
+AnimationCel sick_beats_prologue_cel024[] = {
     /* Len */ 8,
     /* 000 */ 0x0000, 0x4000, 0x0051,
     /* 001 */ 0x0000, 0x4010, 0x004f,
@@ -245,7 +245,7 @@ const AnimationCel sick_beats_prologue_cel024[] = {
 };
 
 // [D_088b8c88]
-const AnimationCel sick_beats_prologue_cel025[] = {
+AnimationCel sick_beats_prologue_cel025[] = {
     /* Len */ 8,
     /* 000 */ 0x0000, 0x4000, 0x0051,
     /* 001 */ 0x0000, 0x4010, 0x004f,

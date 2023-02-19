@@ -82,7 +82,7 @@ void spaceball_update_entity(struct AffineSprite *sprite, s32 x, s32 y, s32 z) {
 
 
 // Update Batter Position
-void spaceball_update_batter(struct AffineSprite *sprite, s32 x, s32 y, s32 z, const struct Animation *animClose, const struct Animation *animFar) {
+void spaceball_update_batter(struct AffineSprite *sprite, s32 x, s32 y, s32 z, struct Animation *animClose, struct Animation *animFar) {
     s32 scale;
 
     z -= gSpaceballInfo->zoom;

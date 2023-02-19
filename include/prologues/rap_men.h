@@ -14,9 +14,9 @@ struct RapMenPrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *rap_men_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedGraphics *rap_men_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable rap_men_prologue_gfx_table[]; // Graphics Table
-extern const struct Animation anim_rap_men_prologue_title[]; // Animation: Text (Rap Men)
+extern struct Animation anim_rap_men_prologue_title[]; // Animation: Text (Rap Men)
 
 // Functions:
 extern void func_08046f5c(void);    // [func_08046f5c] GFX_INIT Func_02

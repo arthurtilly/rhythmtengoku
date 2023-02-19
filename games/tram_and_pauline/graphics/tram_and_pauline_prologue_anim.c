@@ -4,13 +4,13 @@
 #include "tram_and_pauline_prologue_anim_cells.inc.c"
 
 // [D_088b8834] Tram & Pauline
-const struct Animation anim_tram_and_pauline_prologue_characters[] = {
+struct Animation anim_tram_and_pauline_prologue_characters[] = {
     /* 000 */ { tram_and_pauline_prologue_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088b8844] Title
-const struct Animation anim_tram_and_pauline_prologue_title[] = {
+struct Animation anim_tram_and_pauline_prologue_title[] = {
     /* 000 */ { tram_and_pauline_prologue_cel001, 4 },
     /* 001 */ { tram_and_pauline_prologue_cel002, 4 },
     /* 002 */ { tram_and_pauline_prologue_cel003, 4 },

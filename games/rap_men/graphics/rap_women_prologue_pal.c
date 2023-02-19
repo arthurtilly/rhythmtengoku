@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088b3b1c] Palette
-const Palette rap_women_prologue_pal[] = {
+Palette rap_women_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF89830),
         /* 01 */ TO_RGB555(0x000000),

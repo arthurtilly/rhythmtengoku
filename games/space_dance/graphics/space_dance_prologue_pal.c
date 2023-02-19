@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088b76a8] Palette
-const Palette space_dance_prologue_pal[] = {
+Palette space_dance_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF86008),
         /* 01 */ TO_RGB555(0x00F008),

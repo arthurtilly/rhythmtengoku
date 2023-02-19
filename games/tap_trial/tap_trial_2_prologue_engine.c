@@ -4,18 +4,18 @@
   /* PROLOGUE (TAP TRIAL 2) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c2990c;
-extern const struct CompressedGraphics D_08c29ce8;
-extern const struct CompressedGraphics D_08c28814;
-extern const Palette tap_trial_2_prologue_bg_pal[];
-extern const Palette tap_trial_2_prologue_obj_pal[];
+extern struct CompressedGraphics D_08c2990c;
+extern struct CompressedGraphics D_08c29ce8;
+extern struct CompressedGraphics D_08c28814;
+extern Palette tap_trial_2_prologue_bg_pal[];
+extern Palette tap_trial_2_prologue_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ed6b4] Buffered Textures List
-const struct CompressedGraphics *tap_trial_2_prologue_buffered_textures[] = {
+struct CompressedGraphics *tap_trial_2_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

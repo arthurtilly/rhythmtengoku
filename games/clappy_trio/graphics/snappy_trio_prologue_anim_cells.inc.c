@@ -1,20 +1,20 @@
 // do not rename these
 
 // [D_088afc3c]
-const AnimationCel snappy_trio_prologue_cel000[] = {
+AnimationCel snappy_trio_prologue_cel000[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x1098
 };
 
 // [D_088afc44]
-const AnimationCel snappy_trio_prologue_cel001[] = {
+AnimationCel snappy_trio_prologue_cel001[] = {
     /* Len */ 2,
     /* 000 */ 0x00cc, 0x8190, 0x100c,
     /* 001 */ 0x00e4, 0x8190, 0x1084
 };
 
 // [D_088afc52]
-const AnimationCel snappy_trio_prologue_cel002[] = {
+AnimationCel snappy_trio_prologue_cel002[] = {
     /* Len */ 5,
     /* 000 */ 0x00cc, 0x8190, 0x100c,
     /* 001 */ 0x00e4, 0x8190, 0x1084,
@@ -24,7 +24,7 @@ const AnimationCel snappy_trio_prologue_cel002[] = {
 };
 
 // [D_088afc72]
-const AnimationCel snappy_trio_prologue_cel003[] = {
+AnimationCel snappy_trio_prologue_cel003[] = {
     /* Len */ 7,
     /* 000 */ 0x00cc, 0x8190, 0x100c,
     /* 001 */ 0x00e4, 0x8190, 0x1084,
@@ -36,7 +36,7 @@ const AnimationCel snappy_trio_prologue_cel003[] = {
 };
 
 // [D_088afc9e]
-const AnimationCel snappy_trio_prologue_cel004[] = {
+AnimationCel snappy_trio_prologue_cel004[] = {
     /* Len */ 10,
     /* 000 */ 0x00cc, 0x8190, 0x100c,
     /* 001 */ 0x00e4, 0x8190, 0x1084,
@@ -51,7 +51,7 @@ const AnimationCel snappy_trio_prologue_cel004[] = {
 };
 
 // [D_088afcdc]
-const AnimationCel snappy_trio_prologue_cel005[] = {
+AnimationCel snappy_trio_prologue_cel005[] = {
     /* Len */ 19,
     /* 000 */ 0x00cc, 0x8190, 0x100c,
     /* 001 */ 0x00e4, 0x8190, 0x1084,
@@ -75,7 +75,7 @@ const AnimationCel snappy_trio_prologue_cel005[] = {
 };
 
 // [D_088afd50]
-const AnimationCel snappy_trio_prologue_cel006[] = {
+AnimationCel snappy_trio_prologue_cel006[] = {
     /* Len */ 19,
     /* 000 */ 0x00c8, 0x8190, 0x100c,
     /* 001 */ 0x00e8, 0x8190, 0x1084,

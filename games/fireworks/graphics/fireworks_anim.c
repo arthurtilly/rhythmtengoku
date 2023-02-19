@@ -4,7 +4,7 @@
 #include "fireworks_anim_cells.inc.c"
 
 // [D_088e8f14] Firework Rocket (Shortest Trail)
-const struct Animation anim_fireworks_rocket4[] = {
+struct Animation anim_fireworks_rocket4[] = {
     /* 000 */ { fireworks_cel000, 2 },
     /* 001 */ { fireworks_cel001, 2 },
     /* 002 */ { fireworks_cel002, 2 },
@@ -12,7 +12,7 @@ const struct Animation anim_fireworks_rocket4[] = {
 };
 
 // [D_088e8f34] Firework Rocket (Burst)
-const struct Animation anim_fireworks_rocket_explode[] = {
+struct Animation anim_fireworks_rocket_explode[] = {
     /* 000 */ { fireworks_cel003, 4 },
     /* 001 */ { fireworks_cel004, 4 },
     /* 002 */ { fireworks_cel005, 4 },
@@ -22,7 +22,7 @@ const struct Animation anim_fireworks_rocket_explode[] = {
 };
 
 // [D_088e8f64] Red Particle
-const struct Animation anim_fireworks_particle_red[] = {
+struct Animation anim_fireworks_particle_red[] = {
     /* 000 */ { fireworks_cel009, 32 },
     /* 001 */ { fireworks_cel010, 8 },
     /* 002 */ { fireworks_cel011, 6 },
@@ -36,7 +36,7 @@ const struct Animation anim_fireworks_particle_red[] = {
 };
 
 // [D_088e8fb4] Green Particle
-const struct Animation anim_fireworks_particle_green[] = {
+struct Animation anim_fireworks_particle_green[] = {
     /* 000 */ { fireworks_cel018, 2 },
     /* 001 */ { fireworks_cel019, 2 },
     /* 002 */ { fireworks_cel020, 2 },
@@ -59,13 +59,13 @@ const struct Animation anim_fireworks_particle_green[] = {
 };
 
 // [D_088e904c] Circular Particle (Unused)
-const struct Animation anim_fireworks_particle_circle[] = {
+struct Animation anim_fireworks_particle_circle[] = {
     /* 000 */ { fireworks_cel008, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088e905c] Blue Particle
-const struct Animation anim_fireworks_particle_blue[] = {
+struct Animation anim_fireworks_particle_blue[] = {
     /* 000 */ { fireworks_cel027, 4 },
     /* 001 */ { fireworks_cel028, 4 },
     /* 002 */ { fireworks_cel029, 4 },
@@ -79,14 +79,14 @@ const struct Animation anim_fireworks_particle_blue[] = {
 };
 
 // [D_088e90ac] Hawfinch Taiko Bomber
-const struct Animation anim_fireworks_bomb[] = {
+struct Animation anim_fireworks_bomb[] = {
     /* 000 */ { fireworks_cel036, 4 },
     /* 001 */ { fireworks_cel037, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088e90c4] Taiko Bomber Explosion
-const struct Animation anim_fireworks_bomb_explode[] = {
+struct Animation anim_fireworks_bomb_explode[] = {
     /* 000 */ { fireworks_cel038, 1 },
     /* 001 */ { fireworks_cel039, 1 },
     /* 002 */ { fireworks_cel040, 1 },
@@ -101,7 +101,7 @@ const struct Animation anim_fireworks_bomb_explode[] = {
 };
 
 // [D_088e911c] Tricolour Particle (RBG)
-const struct Animation anim_fireworks_particle_tri_rbg[] = {
+struct Animation anim_fireworks_particle_tri_rbg[] = {
     /* 000 */ { fireworks_cel009, 6 },
     /* 001 */ { fireworks_cel027, 6 },
     /* 002 */ { fireworks_cel018, 6 },
@@ -133,7 +133,7 @@ const struct Animation anim_fireworks_particle_tri_rbg[] = {
 };
 
 // [D_088e91fc] Tricolour Particle (GRB)
-const struct Animation anim_fireworks_particle_tri_grb[] = {
+struct Animation anim_fireworks_particle_tri_grb[] = {
     /* 000 */ { fireworks_cel018, 6 },
     /* 001 */ { fireworks_cel009, 6 },
     /* 002 */ { fireworks_cel027, 6 },
@@ -165,7 +165,7 @@ const struct Animation anim_fireworks_particle_tri_grb[] = {
 };
 
 // [D_088e92dc] Tricolour Particle (RGB)
-const struct Animation anim_fireworks_particle_tri_rgb[] = {
+struct Animation anim_fireworks_particle_tri_rgb[] = {
     /* 000 */ { fireworks_cel009, 6 },
     /* 001 */ { fireworks_cel018, 6 },
     /* 002 */ { fireworks_cel027, 6 },
@@ -197,13 +197,13 @@ const struct Animation anim_fireworks_particle_tri_rgb[] = {
 };
 
 // [D_088e93bc] "Start to Skip" Tutorial Text (Unused)
-const struct Animation anim_fireworks_skip_tutorial_icon[] = {
+struct Animation anim_fireworks_skip_tutorial_icon[] = {
     /* 000 */ { fireworks_cel048, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088e93cc] Firework Rocket (Short Trail)
-const struct Animation anim_fireworks_rocket3[] = {
+struct Animation anim_fireworks_rocket3[] = {
     /* 000 */ { fireworks_cel049, 2 },
     /* 001 */ { fireworks_cel050, 2 },
     /* 002 */ { fireworks_cel051, 2 },
@@ -211,7 +211,7 @@ const struct Animation anim_fireworks_rocket3[] = {
 };
 
 // [D_088e93ec] Firework Rocket (Long Trail)
-const struct Animation anim_fireworks_rocket2[] = {
+struct Animation anim_fireworks_rocket2[] = {
     /* 000 */ { fireworks_cel052, 2 },
     /* 001 */ { fireworks_cel053, 2 },
     /* 002 */ { fireworks_cel054, 2 },
@@ -219,7 +219,7 @@ const struct Animation anim_fireworks_rocket2[] = {
 };
 
 // [D_088e940c] Firework Rocket (Longest Trail)
-const struct Animation anim_fireworks_rocket1[] = {
+struct Animation anim_fireworks_rocket1[] = {
     /* 000 */ { fireworks_cel055, 2 },
     /* 001 */ { fireworks_cel056, 2 },
     /* 002 */ { fireworks_cel057, 2 },
@@ -227,7 +227,7 @@ const struct Animation anim_fireworks_rocket1[] = {
 };
 
 // [D_088e942c] Numbers 0-3 (Unused)
-const struct Animation anim_fireworks_count[] = {
+struct Animation anim_fireworks_count[] = {
     /* 000 */ { fireworks_cel058, 4 },
     /* 001 */ { fireworks_cel059, 4 },
     /* 002 */ { fireworks_cel060, 4 },

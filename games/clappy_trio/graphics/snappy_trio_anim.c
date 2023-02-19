@@ -4,7 +4,7 @@
 #include "snappy_trio_anim_cells.inc.c"
 
 // [D_088ea4c4] Lion Test
-const struct Animation anim_snappy_trio_test[] = {
+struct Animation anim_snappy_trio_test[] = {
     /* 000 */ { snappy_trio_cel000, 3 },
     /* 001 */ { snappy_trio_cel001, 3 },
     /* 002 */ { snappy_trio_cel002, 20 },
@@ -22,7 +22,7 @@ const struct Animation anim_snappy_trio_test[] = {
 };
 
 // [D_088ea534] Lion (Smirk) Duplicate 1
-const struct Animation anim_snappy_trio_smirk_dupe1[] = {
+struct Animation anim_snappy_trio_smirk_dupe1[] = {
     /* 000 */ { snappy_trio_cel009, 3 },
     /* 001 */ { snappy_trio_cel010, 3 },
     /* 002 */ { snappy_trio_cel011, 20 },
@@ -30,7 +30,7 @@ const struct Animation anim_snappy_trio_smirk_dupe1[] = {
 };
 
 // [D_088ea554] Lion (Smirk) Duplicate 2
-const struct Animation anim_snappy_trio_smirk_dupe2[] = {
+struct Animation anim_snappy_trio_smirk_dupe2[] = {
     /* 000 */ { snappy_trio_cel009, 3 },
     /* 001 */ { snappy_trio_cel010, 3 },
     /* 002 */ { snappy_trio_cel011, 20 },
@@ -38,7 +38,7 @@ const struct Animation anim_snappy_trio_smirk_dupe2[] = {
 };
 
 // [D_088ea574] Lion - Beat
-const struct Animation anim_snappy_trio_beat[] = {
+struct Animation anim_snappy_trio_beat[] = {
     /* 000 */ { snappy_trio_cel000, 3 },
     /* 001 */ { snappy_trio_cel001, 3 },
     /* 002 */ { snappy_trio_cel002, 20 },
@@ -46,7 +46,7 @@ const struct Animation anim_snappy_trio_beat[] = {
 };
 
 // [D_088ea594] Lion - Smile
-const struct Animation anim_snappy_trio_smile[] = {
+struct Animation anim_snappy_trio_smile[] = {
     /* 000 */ { snappy_trio_cel003, 3 },
     /* 001 */ { snappy_trio_cel004, 3 },
     /* 002 */ { snappy_trio_cel005, 20 },
@@ -54,7 +54,7 @@ const struct Animation anim_snappy_trio_smile[] = {
 };
 
 // [D_088ea5b4] Lion - Glare
-const struct Animation anim_snappy_trio_glare[] = {
+struct Animation anim_snappy_trio_glare[] = {
     /* 000 */ { snappy_trio_cel006, 3 },
     /* 001 */ { snappy_trio_cel007, 3 },
     /* 002 */ { snappy_trio_cel008, 20 },
@@ -62,7 +62,7 @@ const struct Animation anim_snappy_trio_glare[] = {
 };
 
 // [D_088ea5d4] Lion - Smirk
-const struct Animation anim_snappy_trio_smirk[] = {
+struct Animation anim_snappy_trio_smirk[] = {
     /* 000 */ { snappy_trio_cel009, 3 },
     /* 001 */ { snappy_trio_cel010, 3 },
     /* 002 */ { snappy_trio_cel011, 20 },
@@ -70,7 +70,7 @@ const struct Animation anim_snappy_trio_smirk[] = {
 };
 
 // [D_088ea5f4] Lion - Clap
-const struct Animation anim_snappy_trio_clap[] = {
+struct Animation anim_snappy_trio_clap[] = {
     /* 000 */ { snappy_trio_cel012, 1 },
     /* 001 */ { snappy_trio_cel013, 2 },
     /* 002 */ { snappy_trio_cel015, 3 },
@@ -80,20 +80,20 @@ const struct Animation anim_snappy_trio_clap[] = {
 };
 
 // [D_088ea624] "You" Text
-const struct Animation anim_snappy_trio_player_icon[] = {
+struct Animation anim_snappy_trio_player_icon[] = {
     /* 000 */ { snappy_trio_cel018, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088ea634] "Trio Timing" Sign
-const struct Animation anim_snappy_trio_sign[] = {
+struct Animation anim_snappy_trio_sign[] = {
     /* 000 */ { snappy_trio_cel019, 4 },
     /* 001 */ { snappy_trio_cel020, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088ea64c] Text Box
-const struct Animation anim_snappy_trio_text_box[] = {
+struct Animation anim_snappy_trio_text_box[] = {
     /* 000 */ { snappy_trio_cel021, 4 },
     /* End */ END_ANIMATION
 };

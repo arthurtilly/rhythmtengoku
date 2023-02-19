@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_08932044] Sick Beats Palette
-const Palette sick_beats_pal[] = {
+Palette sick_beats_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x009000),
         /* 01 */ TO_RGB555(0x580000),

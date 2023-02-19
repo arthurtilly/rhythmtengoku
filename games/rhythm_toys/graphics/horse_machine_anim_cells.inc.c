@@ -1,12 +1,12 @@
 // do not rename these
 
 // [D_0892ff38]
-const AnimationCel horse_machine_cel000[] = {
+AnimationCel horse_machine_cel000[] = {
     /* Len */ 0,
 };
 
 // [D_0892ff3a]
-const AnimationCel horse_machine_cel001[] = {
+AnimationCel horse_machine_cel001[] = {
     /* Len */ 12,
     /* 000 */ 0x00e0, 0x000a, 0x231f,
     /* 001 */ 0x00de, 0x4001, 0x21de,
@@ -23,7 +23,7 @@ const AnimationCel horse_machine_cel001[] = {
 };
 
 // [D_0892ff84]
-const AnimationCel horse_machine_cel002[] = {
+AnimationCel horse_machine_cel002[] = {
     /* Len */ 8,
     /* 000 */ 0x00e0, 0x000a, 0x231f,
     /* 001 */ 0x00de, 0x4001, 0x21de,
@@ -36,7 +36,7 @@ const AnimationCel horse_machine_cel002[] = {
 };
 
 // [D_0892ffb6]
-const AnimationCel horse_machine_cel003[] = {
+AnimationCel horse_machine_cel003[] = {
     /* Len */ 8,
     /* 000 */ 0x00de, 0x000b, 0x231f,
     /* 001 */ 0x00dc, 0x4002, 0x21de,
@@ -49,7 +49,7 @@ const AnimationCel horse_machine_cel003[] = {
 };
 
 // [D_0892ffe8]
-const AnimationCel horse_machine_cel004[] = {
+AnimationCel horse_machine_cel004[] = {
     /* Len */ 8,
     /* 000 */ 0x00e0, 0x000a, 0x231f,
     /* 001 */ 0x00de, 0x4001, 0x21de,
@@ -62,7 +62,7 @@ const AnimationCel horse_machine_cel004[] = {
 };
 
 // [D_0893001a]
-const AnimationCel horse_machine_cel005[] = {
+AnimationCel horse_machine_cel005[] = {
     /* Len */ 8,
     /* 000 */ 0x00de, 0x000b, 0x231f,
     /* 001 */ 0x00dc, 0x4003, 0x21de,
@@ -75,7 +75,7 @@ const AnimationCel horse_machine_cel005[] = {
 };
 
 // [D_0893004c]
-const AnimationCel horse_machine_cel006[] = {
+AnimationCel horse_machine_cel006[] = {
     /* Len */ 8,
     /* 000 */ 0x00e0, 0x0009, 0x231f,
     /* 001 */ 0x00de, 0x4000, 0x21de,
@@ -88,7 +88,7 @@ const AnimationCel horse_machine_cel006[] = {
 };
 
 // [D_0893007e]
-const AnimationCel horse_machine_cel007[] = {
+AnimationCel horse_machine_cel007[] = {
     /* Len */ 8,
     /* 000 */ 0x00de, 0x000a, 0x231f,
     /* 001 */ 0x00dc, 0x4001, 0x21de,
@@ -101,7 +101,7 @@ const AnimationCel horse_machine_cel007[] = {
 };
 
 // [D_089300b0]
-const AnimationCel horse_machine_cel008[] = {
+AnimationCel horse_machine_cel008[] = {
     /* Len */ 8,
     /* 000 */ 0x00e0, 0x0008, 0x231f,
     /* 001 */ 0x00de, 0x4000, 0x21de,
@@ -114,7 +114,7 @@ const AnimationCel horse_machine_cel008[] = {
 };
 
 // [D_089300e2]
-const AnimationCel horse_machine_cel009[] = {
+AnimationCel horse_machine_cel009[] = {
     /* Len */ 8,
     /* 000 */ 0x00de, 0x000a, 0x231f,
     /* 001 */ 0x00dc, 0x4001, 0x21de,
@@ -127,21 +127,21 @@ const AnimationCel horse_machine_cel009[] = {
 };
 
 // [D_08930114]
-const AnimationCel horse_machine_cel010[] = {
+AnimationCel horse_machine_cel010[] = {
     /* Len */ 2,
     /* 000 */ 0x80d1, 0x81f5, 0x2188,
     /* 001 */ 0x00e0, 0x4005, 0x22d0
 };
 
 // [D_08930122]
-const AnimationCel horse_machine_cel011[] = {
+AnimationCel horse_machine_cel011[] = {
     /* Len */ 2,
     /* 000 */ 0x80d2, 0x81f5, 0x2188,
     /* 001 */ 0x00de, 0x4005, 0x219e
 };
 
 // [D_08930130]
-const AnimationCel horse_machine_cel012[] = {
+AnimationCel horse_machine_cel012[] = {
     /* Len */ 7,
     /* 000 */ 0x00de, 0x0009, 0x231f,
     /* 001 */ 0x00dc, 0x4000, 0x21de,
@@ -153,7 +153,7 @@ const AnimationCel horse_machine_cel012[] = {
 };
 
 // [D_0893015c]
-const AnimationCel horse_machine_cel013[] = {
+AnimationCel horse_machine_cel013[] = {
     /* Len */ 7,
     /* 000 */ 0x00dc, 0x0008, 0x231f,
     /* 001 */ 0x00da, 0x4000, 0x21de,
@@ -165,7 +165,7 @@ const AnimationCel horse_machine_cel013[] = {
 };
 
 // [D_08930188]
-const AnimationCel horse_machine_cel014[] = {
+AnimationCel horse_machine_cel014[] = {
     /* Len */ 7,
     /* 000 */ 0x00d9, 0x0007, 0x231f,
     /* 001 */ 0x00d8, 0x41ff, 0x21de,
@@ -177,7 +177,7 @@ const AnimationCel horse_machine_cel014[] = {
 };
 
 // [D_089301b4]
-const AnimationCel horse_machine_cel015[] = {
+AnimationCel horse_machine_cel015[] = {
     /* Len */ 7,
     /* 000 */ 0x00dd, 0x000a, 0x231f,
     /* 001 */ 0x00db, 0x4001, 0x21de,
@@ -189,42 +189,42 @@ const AnimationCel horse_machine_cel015[] = {
 };
 
 // [D_089301e0]
-const AnimationCel horse_machine_cel016[] = {
+AnimationCel horse_machine_cel016[] = {
     /* Len */ 2,
     /* 000 */ 0x40d8, 0x81f4, 0x2258,
     /* 001 */ 0x40e8, 0x41f4, 0x2312
 };
 
 // [D_089301ee]
-const AnimationCel horse_machine_cel017[] = {
+AnimationCel horse_machine_cel017[] = {
     /* Len */ 2,
     /* 000 */ 0x40d8, 0x81f4, 0x22cc,
     /* 001 */ 0x40e8, 0x01f4, 0x2318
 };
 
 // [D_089301fc]
-const AnimationCel horse_machine_cel018[] = {
+AnimationCel horse_machine_cel018[] = {
     /* Len */ 2,
     /* 000 */ 0x40d8, 0x81f4, 0x2280,
     /* 001 */ 0x40e8, 0x01f4, 0x2316
 };
 
 // [D_0893020a]
-const AnimationCel horse_machine_cel019[] = {
+AnimationCel horse_machine_cel019[] = {
     /* Len */ 2,
     /* 000 */ 0x40d8, 0x81f4, 0x2284,
     /* 001 */ 0x40e8, 0x01f4, 0x231a
 };
 
 // [D_08930218]
-const AnimationCel horse_machine_cel020[] = {
+AnimationCel horse_machine_cel020[] = {
     /* Len */ 2,
     /* 000 */ 0x40d8, 0x81f4, 0x2258,
     /* 001 */ 0x40e8, 0x41f4, 0x2312
 };
 
 // [D_08930226]
-const AnimationCel horse_machine_cel021[] = {
+AnimationCel horse_machine_cel021[] = {
     /* Len */ 7,
     /* 000 */ 0x00dc, 0x0008, 0x231f,
     /* 001 */ 0x00da, 0x41ff, 0x21de,
@@ -236,7 +236,7 @@ const AnimationCel horse_machine_cel021[] = {
 };
 
 // [D_08930252]
-const AnimationCel horse_machine_cel022[] = {
+AnimationCel horse_machine_cel022[] = {
     /* Len */ 7,
     /* 000 */ 0x00dd, 0x0009, 0x231f,
     /* 001 */ 0x00db, 0x4000, 0x21de,
@@ -248,7 +248,7 @@ const AnimationCel horse_machine_cel022[] = {
 };
 
 // [D_0893027e]
-const AnimationCel horse_machine_cel023[] = {
+AnimationCel horse_machine_cel023[] = {
     /* Len */ 7,
     /* 000 */ 0x00e1, 0x000d, 0x231f,
     /* 001 */ 0x00de, 0x4002, 0x21de,
@@ -260,7 +260,7 @@ const AnimationCel horse_machine_cel023[] = {
 };
 
 // [D_089302aa]
-const AnimationCel horse_machine_cel024[] = {
+AnimationCel horse_machine_cel024[] = {
     /* Len */ 7,
     /* 000 */ 0x00dc, 0x0009, 0x231f,
     /* 001 */ 0x00da, 0x4000, 0x21de,
@@ -272,7 +272,7 @@ const AnimationCel horse_machine_cel024[] = {
 };
 
 // [D_089302d6]
-const AnimationCel horse_machine_cel025[] = {
+AnimationCel horse_machine_cel025[] = {
     /* Len */ 7,
     /* 000 */ 0x00d7, 0x0007, 0x231f,
     /* 001 */ 0x00d6, 0x41fe, 0x21de,
@@ -284,112 +284,112 @@ const AnimationCel horse_machine_cel025[] = {
 };
 
 // [D_08930302]
-const AnimationCel horse_machine_cel026[] = {
+AnimationCel horse_machine_cel026[] = {
     /* Len */ 2,
     /* 000 */ 0x00fc, 0x01fa, 0x7335,
     /* 001 */ 0x00fd, 0x0001, 0x731c
 };
 
 // [D_08930310]
-const AnimationCel horse_machine_cel027[] = {
+AnimationCel horse_machine_cel027[] = {
     /* Len */ 2,
     /* 000 */ 0x00f8, 0x41f4, 0x2306,
     /* 001 */ 0x00fa, 0x41ff, 0x22dc
 };
 
 // [D_0893031e]
-const AnimationCel horse_machine_cel028[] = {
+AnimationCel horse_machine_cel028[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x7336
 };
 
 // [D_08930326]
-const AnimationCel horse_machine_cel029[] = {
+AnimationCel horse_machine_cel029[] = {
     /* Len */ 1,
     /* 000 */ 0x00f8, 0x41f8, 0x22d8
 };
 
 // [D_0893032e]
-const AnimationCel horse_machine_cel030[] = {
+AnimationCel horse_machine_cel030[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x7335
 };
 
 // [D_08930336]
-const AnimationCel horse_machine_cel031[] = {
+AnimationCel horse_machine_cel031[] = {
     /* Len */ 1,
     /* 000 */ 0x00f8, 0x41f8, 0x2306
 };
 
 // [D_0893033e]
-const AnimationCel horse_machine_cel032[] = {
+AnimationCel horse_machine_cel032[] = {
     /* Len */ 2,
     /* 000 */ 0x00fc, 0x01fa, 0x7337,
     /* 001 */ 0x00fd, 0x0001, 0x731c
 };
 
 // [D_0893034c]
-const AnimationCel horse_machine_cel033[] = {
+AnimationCel horse_machine_cel033[] = {
     /* Len */ 2,
     /* 000 */ 0x00f8, 0x41f6, 0x2304,
     /* 001 */ 0x00fa, 0x4000, 0x22dc
 };
 
 // [D_0893035a]
-const AnimationCel horse_machine_cel034[] = {
+AnimationCel horse_machine_cel034[] = {
     /* Len */ 2,
     /* 000 */ 0x00fc, 0x01fc, 0x731e,
     /* 001 */ 0x00fe, 0x0002, 0x731c
 };
 
 // [D_08930368]
-const AnimationCel horse_machine_cel035[] = {
+AnimationCel horse_machine_cel035[] = {
     /* Len */ 2,
     /* 000 */ 0x00f8, 0x41f6, 0x230e,
     /* 001 */ 0x00fb, 0x41ff, 0x22dc
 };
 
 // [D_08930376]
-const AnimationCel horse_machine_cel036[] = {
+AnimationCel horse_machine_cel036[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x7334
 };
 
 // [D_0893037e]
-const AnimationCel horse_machine_cel037[] = {
+AnimationCel horse_machine_cel037[] = {
     /* Len */ 1,
     /* 000 */ 0x00f8, 0x41f8, 0x2308
 };
 
 // [D_08930386]
-const AnimationCel horse_machine_cel038[] = {
+AnimationCel horse_machine_cel038[] = {
     /* Len */ 2,
     /* 000 */ 0x00fc, 0x01fb, 0x7334,
     /* 001 */ 0x00fe, 0x0002, 0x731c
 };
 
 // [D_08930394]
-const AnimationCel horse_machine_cel039[] = {
+AnimationCel horse_machine_cel039[] = {
     /* Len */ 2,
     /* 000 */ 0x00f8, 0x41f6, 0x2308,
     /* 001 */ 0x00fb, 0x4001, 0x22dc
 };
 
 // [D_089303a2]
-const AnimationCel horse_machine_cel040[] = {
+AnimationCel horse_machine_cel040[] = {
     /* Len */ 2,
     /* 000 */ 0x00f4, 0x41f8, 0x32d6,
     /* 001 */ 0x00e5, 0x41f8, 0x32d2
 };
 
 // [D_089303b0]
-const AnimationCel horse_machine_cel041[] = {
+AnimationCel horse_machine_cel041[] = {
     /* Len */ 1,
     /* 000 */ 0x000e, 0x01ee, 0x3332
 };
 
 // [D_089303b8]
-const AnimationCel horse_machine_cel042[] = {
+AnimationCel horse_machine_cel042[] = {
     /* Len */ 1,
     /* 000 */ 0x000e, 0x01ee, 0x3333
 };

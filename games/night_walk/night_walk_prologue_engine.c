@@ -4,17 +4,17 @@
   /* PROLOGUE (NIGHT WALK) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08bebaa4;
-extern const struct CompressedGraphics D_08bebbd4;
-extern const struct CompressedGraphics D_08beba58;
-extern const Palette night_walk_prologue_pal[];
+extern struct CompressedGraphics D_08bebaa4;
+extern struct CompressedGraphics D_08bebbd4;
+extern struct CompressedGraphics D_08beba58;
+extern Palette night_walk_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ea988] Buffered Textures List
-const struct CompressedGraphics *night_walk_prologue_buffered_textures[] = {
+struct CompressedGraphics *night_walk_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

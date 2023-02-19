@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088f633c] Polyrhythm 1
-const Palette polyrhythm_pal[] = {
+Palette polyrhythm_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x3050E0),
         /* 01 */ TO_RGB555(0x000000),
@@ -294,7 +294,7 @@ const Palette polyrhythm_pal[] = {
 };
 
 // [D_088f653c] Polyrhythm 2
-const Palette polyrhythm_2_pal[] = {
+Palette polyrhythm_2_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x3050E0),
         /* 01 */ TO_RGB555(0x000000),

@@ -4,33 +4,33 @@
   /* RHYTHM TOYS - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_cat_machine_button_a[];
-extern const struct Animation anim_love_machine_button_a[];
-extern const struct Animation anim_rap_machine_button_a[];
-extern const struct Animation anim_cat_machine_button_b[];
-extern const struct Animation anim_love_machine_button_b[];
-extern const struct Animation anim_rap_machine_button_b[];
-extern const struct Animation anim_cat_machine_button_up[];
-extern const struct Animation anim_love_machine_button_up[];
-extern const struct Animation anim_rap_machine_button_up[];
-extern const struct Animation anim_cat_machine_button_down[];
-extern const struct Animation anim_love_machine_button_down[];
-extern const struct Animation anim_rap_machine_button_down[];
-extern const struct Animation anim_cat_machine_button_left[];
-extern const struct Animation anim_love_machine_button_left[];
-extern const struct Animation anim_rap_machine_button_left[];
-extern const struct Animation anim_cat_machine_button_right[];
-extern const struct Animation anim_love_machine_button_right[];
-extern const struct Animation anim_rap_machine_button_right[];
-extern const struct Animation anim_cat_machine_demo_icon[];
-extern const struct Animation anim_love_machine_demo_icon[];
-extern const struct Animation anim_rap_machine_demo_icon[];
-extern const struct Animation anim_cat_machine_listen[];
-extern const struct Animation anim_love_san_speak_short[];
-extern const struct Animation anim_rap_machine_rapper_yellow[];
-extern const struct Animation anim_cat_machine_meow[];
-extern const struct Animation anim_love_san_speak_long[];
-extern const struct Animation anim_rap_machine_rapper_red[];
+extern struct Animation anim_cat_machine_button_a[];
+extern struct Animation anim_love_machine_button_a[];
+extern struct Animation anim_rap_machine_button_a[];
+extern struct Animation anim_cat_machine_button_b[];
+extern struct Animation anim_love_machine_button_b[];
+extern struct Animation anim_rap_machine_button_b[];
+extern struct Animation anim_cat_machine_button_up[];
+extern struct Animation anim_love_machine_button_up[];
+extern struct Animation anim_rap_machine_button_up[];
+extern struct Animation anim_cat_machine_button_down[];
+extern struct Animation anim_love_machine_button_down[];
+extern struct Animation anim_rap_machine_button_down[];
+extern struct Animation anim_cat_machine_button_left[];
+extern struct Animation anim_love_machine_button_left[];
+extern struct Animation anim_rap_machine_button_left[];
+extern struct Animation anim_cat_machine_button_right[];
+extern struct Animation anim_love_machine_button_right[];
+extern struct Animation anim_rap_machine_button_right[];
+extern struct Animation anim_cat_machine_demo_icon[];
+extern struct Animation anim_love_machine_demo_icon[];
+extern struct Animation anim_rap_machine_demo_icon[];
+extern struct Animation anim_cat_machine_listen[];
+extern struct Animation anim_love_san_speak_short[];
+extern struct Animation anim_rap_machine_rapper_yellow[];
+extern struct Animation anim_cat_machine_meow[];
+extern struct Animation anim_love_san_speak_long[];
+extern struct Animation anim_rap_machine_rapper_red[];
 
 extern const struct Vector2 D_08cda128;
 extern const struct Vector2 D_08cda12c;
@@ -60,19 +60,19 @@ extern const struct Vector2 D_08cdd0fc;
 extern const struct Vector2 D_08cdd100;
 extern const struct Vector2 D_08cdd104;
 
-extern const struct CompressedGraphics D_08cda118;
-extern const struct CompressedGraphics D_08cda400;
-extern const struct CompressedGraphics D_08cd9a44;
-extern const struct CompressedGraphics D_08cdd0d4;
-extern const struct CompressedGraphics D_08cdd5b8;
-extern const struct CompressedGraphics D_08cdc884;
-extern const struct CompressedGraphics D_08cdbacc;
-extern const struct CompressedGraphics D_08cdbe6c;
-extern const struct CompressedGraphics D_08cdae78;
+extern struct CompressedGraphics D_08cda118;
+extern struct CompressedGraphics D_08cda400;
+extern struct CompressedGraphics D_08cd9a44;
+extern struct CompressedGraphics D_08cdd0d4;
+extern struct CompressedGraphics D_08cdd5b8;
+extern struct CompressedGraphics D_08cdc884;
+extern struct CompressedGraphics D_08cdbacc;
+extern struct CompressedGraphics D_08cdbe6c;
+extern struct CompressedGraphics D_08cdae78;
 
-extern const Palette cat_machine_pal[];
-extern const Palette confession_machine_pal[];
-extern const Palette rap_machine_pal[];
+extern Palette cat_machine_pal[];
+extern Palette confession_machine_pal[];
+extern Palette rap_machine_pal[];
 
 
   //  //  //  CAT MACHINE DATA  //  //  //
@@ -298,7 +298,7 @@ struct RhythmToysDemo *rhythm_toys_demo_table[] = {
 };
 
 // [D_089e9d4c] Buffered Textures List
-const struct CompressedGraphics *rhythm_toys_buffered_textures[] = {
+struct CompressedGraphics *rhythm_toys_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

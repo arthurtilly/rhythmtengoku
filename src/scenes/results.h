@@ -87,13 +87,13 @@ extern const char D_08054f30[]; // "Ç≥ÇÁÇ…ÅA" ("also,")
 
 
 // OAM Animations:
-extern const struct Animation D_0890b6ac[]; // Placeholder Header ("nori-kan check")
-extern const struct Animation D_0890b6bc[]; // Result Icon { 0 = OK; 1 = Try Again; 2 = Superb }
-extern const struct Animation D_0890b6dc[]; // Positive Reinforcement Text Bubble
-extern const struct Animation D_0890b6ec[]; // Header Text Box
-extern const struct Animation D_0890b6fc[]; // Header Text Box Mask
-extern const struct Animation D_0890b70c[]; // "Medal Get!"
-extern const struct Animation D_0890b724[]; // "Ç≈Ç‡" ("but")
+extern struct Animation D_0890b6ac[]; // Placeholder Header ("nori-kan check")
+extern struct Animation D_0890b6bc[]; // Result Icon { 0 = OK; 1 = Try Again; 2 = Superb }
+extern struct Animation D_0890b6dc[]; // Positive Reinforcement Text Bubble
+extern struct Animation D_0890b6ec[]; // Header Text Box
+extern struct Animation D_0890b6fc[]; // Header Text Box Mask
+extern struct Animation D_0890b70c[]; // "Medal Get!"
+extern struct Animation D_0890b724[]; // "Ç≈Ç‡" ("but")
 
 
 // Sound Effects:
@@ -101,7 +101,7 @@ extern const struct Animation D_0890b724[]; // "Ç≈Ç‡" ("but")
 
 // Scene Definition Data:
 extern const struct GraphicsTable D_089d7654[]; // LEVEL - Graphics Table
-extern const struct CompressedGraphics *const D_089d7684[]; // LEVEL - Buffered Textures List
+extern struct CompressedGraphics *const D_089d7684[]; // LEVEL - Buffered Textures List
 extern struct SequenceData *const D_089d7688[3]; // LEVEL - Result SFX Pool
 extern struct SequenceData *const D_089d7694[3]; // LEVEL - Result BGM Pool
 extern struct ScoreHandler *D_089d7980; // ( = D_03001338)

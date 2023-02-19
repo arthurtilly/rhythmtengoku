@@ -69,22 +69,22 @@ enum PolyrhythmLanesEnum {
 
 
 // OAM Animations:
-extern const struct Animation anim_polyrhythm_test_upside[]; // Layout/Spacing Demonstration (Upside)
-extern const struct Animation anim_polyrhythm_test_downside[]; // Layout/Spacing Demonstration (Downside)
-extern const struct Animation anim_polyrhythm_rod[]; // Rolling Rod
-extern const struct Animation anim_polyrhythm_arrow_large[]; // Large Up Arrow (Unused)
-extern const struct Animation anim_polyrhythm_upside_piston[]; // Upside Piston
-extern const struct Animation anim_polyrhythm_downside_piston[]; // Downside Piston
-extern const struct Animation anim_polyrhythm_world_start[]; // Starting Blocks Structure
-extern const struct Animation anim_polyrhythm_block[]; // Spawn Block
-extern const struct Animation anim_polyrhythm_spawn_upside[]; // Spawn Upside Piston
-extern const struct Animation anim_polyrhythm_spawn_downside[]; // Spawn Downside Piston
-extern const struct Animation anim_polyrhythm_push_upside[]; // Push Upside Piston
-extern const struct Animation anim_polyrhythm_push_downside[]; // Push Downside Piston
-extern const struct Animation anim_polyrhythm_rod_explode[]; // Rod Explosion
-extern const struct Animation anim_polyrhythm_signs[]; // Button Signs
-extern const struct Animation anim_polyrhythm_arrow_a[]; // Up Arrow (A Button)
-extern const struct Animation anim_polyrhythm_arrow_dpad[]; // Up Arrow (D-Pad)
+extern struct Animation anim_polyrhythm_test_upside[]; // Layout/Spacing Demonstration (Upside)
+extern struct Animation anim_polyrhythm_test_downside[]; // Layout/Spacing Demonstration (Downside)
+extern struct Animation anim_polyrhythm_rod[]; // Rolling Rod
+extern struct Animation anim_polyrhythm_arrow_large[]; // Large Up Arrow (Unused)
+extern struct Animation anim_polyrhythm_upside_piston[]; // Upside Piston
+extern struct Animation anim_polyrhythm_downside_piston[]; // Downside Piston
+extern struct Animation anim_polyrhythm_world_start[]; // Starting Blocks Structure
+extern struct Animation anim_polyrhythm_block[]; // Spawn Block
+extern struct Animation anim_polyrhythm_spawn_upside[]; // Spawn Upside Piston
+extern struct Animation anim_polyrhythm_spawn_downside[]; // Spawn Downside Piston
+extern struct Animation anim_polyrhythm_push_upside[]; // Push Upside Piston
+extern struct Animation anim_polyrhythm_push_downside[]; // Push Downside Piston
+extern struct Animation anim_polyrhythm_rod_explode[]; // Rod Explosion
+extern struct Animation anim_polyrhythm_signs[]; // Button Signs
+extern struct Animation anim_polyrhythm_arrow_a[]; // Up Arrow (A Button)
+extern struct Animation anim_polyrhythm_arrow_dpad[]; // Up Arrow (D-Pad)
 
 
 // Palettes:
@@ -97,13 +97,13 @@ extern const struct Animation anim_polyrhythm_arrow_dpad[]; // Up Arrow (D-Pad)
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *polyrhythm_buffered_textures[];
+extern struct CompressedGraphics *polyrhythm_buffered_textures[];
 extern struct GraphicsTable *polyrhythm_gfx_tables[];
 extern s16 polyrhythm_lane_start_x[2]; // Lane Start X Positions
 extern s16 polyrhythm_lane_start_y[2]; // Lane Start Y Positions
 extern s16 polyrhythm_block_heights[3]; // Block Heights
-extern const struct Animation *polyrhythm_block_appear_anim[]; // Block - Appear
-extern const struct Animation *polyrhythm_block_open_anim[]; // Block - Open
+extern struct Animation *polyrhythm_block_appear_anim[]; // Block - Appear
+extern struct Animation *polyrhythm_block_open_anim[]; // Block - Open
 extern struct SequenceData *polyrhythm_block_appear_sfx[]; // Block - Appear
 extern struct SequenceData *polyrhythm_block_open_sfx[]; // Block - Open
 

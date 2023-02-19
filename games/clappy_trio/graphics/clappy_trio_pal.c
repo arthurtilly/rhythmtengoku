@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088e9f18] <description>
-const Palette clappy_trio_obj_pal[] = {
+Palette clappy_trio_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x18B0F8),
         /* 01 */ TO_RGB555(0x000000),
@@ -60,7 +60,7 @@ const Palette clappy_trio_obj_pal[] = {
 };
 
 // [D_088e9f78] <description>
-const Palette clappy_trio_bg_pal[] = {
+Palette clappy_trio_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xA8B0F0),

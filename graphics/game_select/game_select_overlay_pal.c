@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_08903120] Overlay Palette
-const Palette game_select_bg_overlay_pal[] = {
+Palette game_select_bg_overlay_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x384050),
         /* 01 */ TO_RGB555(0x000000),

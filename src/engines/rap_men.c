@@ -14,7 +14,7 @@
 
 
 // Get Animation
-const struct Animation *rap_men_get_anim(u32 anim) {
+struct Animation *rap_men_get_anim(u32 anim) {
     return rap_men_anim_table[anim][gRapMenInfo->version];
 }
 

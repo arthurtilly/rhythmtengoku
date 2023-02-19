@@ -10,7 +10,7 @@ asm(".include \"include/gba.inc\""); // Temporary
 // For readability.
 #define gRhythmTweezersInfo ((struct RhythmTweezersInfo *)D_030055d0)
 
-extern const struct Animation *rhythm_tweezers_veg_face_anim[]; // Array of animation pointers for vegetable faces
+extern struct Animation *rhythm_tweezers_veg_face_anim[]; // Array of animation pointers for vegetable faces
 
 
 /* RHYTHM TWEEZERS */
@@ -362,7 +362,7 @@ void rhythm_tweezers_update_hair_cycle(void) {
 // [func_0802ee7c] Cue - Spawn
 void rhythm_tweezers_cue_spawn(struct Cue *cue, struct RhythmTweezersCue *info, u32 isLongHair) {
     struct RhythmTweezersInfo *gameInfo;
-    const struct Animation *anim;
+    struct Animation *anim;
     u32 rotation;
 
     gameInfo = gRhythmTweezersInfo;

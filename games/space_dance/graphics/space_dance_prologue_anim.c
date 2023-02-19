@@ -4,7 +4,7 @@
 #include "space_dance_prologue_anim_cells.inc.c"
 
 // [D_088b7338] Title
-const struct Animation anim_space_dance_prologue_title[] = {
+struct Animation anim_space_dance_prologue_title[] = {
     /* 000 */ { space_dance_prologue_cel000, 1 },
     /* 001 */ { space_dance_prologue_cel001, 1 },
     /* 002 */ { space_dance_prologue_cel002, 4 },
@@ -109,7 +109,7 @@ const struct Animation anim_space_dance_prologue_title[] = {
 };
 
 // [D_088b7660] Star
-const struct Animation anim_space_dance_prologue_star[] = {
+struct Animation anim_space_dance_prologue_star[] = {
     /* 000 */ { space_dance_prologue_cel080, 6 },
     /* 001 */ { space_dance_prologue_cel081, 6 },
     /* 002 */ { space_dance_prologue_cel082, 6 },
@@ -119,7 +119,7 @@ const struct Animation anim_space_dance_prologue_star[] = {
 };
 
 // [D_088b7690] Faces
-const struct Animation anim_space_dance_prologue_faces[] = {
+struct Animation anim_space_dance_prologue_faces[] = {
     /* 000 */ { space_dance_prologue_cel084, 220 },
     /* 001 */ { space_dance_prologue_cel085, 90 },
     /* End */ END_ANIMATION

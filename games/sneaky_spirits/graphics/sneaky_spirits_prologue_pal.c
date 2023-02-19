@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088ad2fc] Palette
-const Palette sneaky_spirits_prologue_pal[] = {
+Palette sneaky_spirits_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x18B8B0),
         /* 01 */ TO_RGB555(0x080008),

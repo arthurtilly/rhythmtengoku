@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0891eea0] Tap Trial (Remix 5) BG Palette
-const Palette tap_trial_remix_5_bg_pal[] = {
+Palette tap_trial_remix_5_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x10E8A8),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -24,7 +24,7 @@ const Palette tap_trial_remix_5_bg_pal[] = {
 };
 
 // [D_0891eec0] Tap Trial (Remix 5) OBJ Palette
-const Palette tap_trial_remix_5_obj_pal[] = {
+Palette tap_trial_remix_5_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x10E8A8),
         /* 01 */ TO_RGB555(0xF8F8F8),

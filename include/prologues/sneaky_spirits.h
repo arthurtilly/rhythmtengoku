@@ -14,9 +14,9 @@ struct SneakySpiritsPrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *sneaky_spirits_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedGraphics *sneaky_spirits_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable sneaky_spirits_prologue_gfx_table[]; // Graphics Table
-extern const struct Animation anim_sneaky_spirits_prologue_title[]; // Animation: Text (Sneaky Spirits)
+extern struct Animation anim_sneaky_spirits_prologue_title[]; // Animation: Text (Sneaky Spirits)
 
 // Functions:
 extern void func_0804510c(void);    // [func_0804510c] GFX_INIT Func_02

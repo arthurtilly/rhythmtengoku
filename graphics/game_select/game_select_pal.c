@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_08902ec0] OBJ Palette
-const Palette game_select_obj_pal[] = {
+Palette game_select_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x404850),
         /* 01 */ TO_RGB555(0xF8D098),
@@ -204,7 +204,7 @@ const Palette game_select_obj_pal[] = {
 };
 
 // [D_08903020] BG Palette
-const Palette game_select_bg_pal[] = {
+Palette game_select_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x384050),
         /* 01 */ TO_RGB555(0x384050),

@@ -4,87 +4,87 @@
   /* SPACE DANCE - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_space_dancer_right[];
-extern const struct Animation anim_cosmic_dancer_right[];
-extern const struct Animation anim_space_dancer_punch[];
-extern const struct Animation anim_cosmic_dancer_punch[];
-extern const struct Animation anim_space_dancer_down[];
-extern const struct Animation anim_cosmic_dancer_down[];
-extern const struct Animation anim_space_gramps_beat[];
-extern const struct Animation anim_cosmic_girl_beat[];
-extern const struct Animation anim_space_gramps_instruct_down[];
-extern const struct Animation anim_cosmic_girl_instruct_down[];
-extern const struct Animation anim_space_gramps_instruct_punch[];
-extern const struct Animation anim_cosmic_girl_instruct_punch[];
-extern const struct Animation anim_space_gramps_instruct_right[];
-extern const struct Animation anim_cosmic_girl_instruct_right[];
-extern const struct Animation anim_space_dancer_beat[];
-extern const struct Animation anim_cosmic_dancer_beat[];
-extern const struct Animation anim_space_dancer_hurt[];
-extern const struct Animation anim_cosmic_dancer_hurt[];
-extern const struct Animation anim_space_dancer_right_cue[];
-extern const struct Animation anim_cosmic_dancer_right_cue[];
-extern const struct Animation anim_space_dancer_down_cue[];
-extern const struct Animation anim_cosmic_dancer_down_cue[];
-extern const struct Animation anim_space_dancer_punch_cue1[];
-extern const struct Animation anim_cosmic_dancer_punch_cue1[];
-extern const struct Animation anim_space_dancer_punch_cue2[];
-extern const struct Animation anim_cosmic_dancer_punch_cue2[];
-extern const struct Animation anim_space_dancer_hurt_effect[];
-extern const struct Animation anim_cosmic_dancer_hurt_effect[];
-extern const struct Animation anim_space_dance_blank1[];
-extern const struct Animation anim_cosmic_dance_blank1[];
-extern const struct Animation anim_space_dance_tutorial_icons[];
-extern const struct Animation anim_cosmic_dance_tutorial_icons[];
-extern const struct Animation anim_space_dance_sparkle[];
-extern const struct Animation anim_cosmic_dance_sparkle[];
-extern const struct Animation anim_space_dance_blank2[];
-extern const struct Animation anim_cosmic_dance_blank2[];
-extern const struct Animation anim_space_gramps_right[];
-extern const struct Animation anim_cosmic_girl_right[];
-extern const struct Animation anim_space_gramps_right_cue[];
-extern const struct Animation anim_cosmic_girl_right_cue[];
-extern const struct Animation anim_space_gramps_down[];
-extern const struct Animation anim_cosmic_girl_down[];
-extern const struct Animation anim_space_gramps_down_cue[];
-extern const struct Animation anim_cosmic_girl_down_cue[];
-extern const struct Animation anim_space_gramps_punch[];
-extern const struct Animation anim_cosmic_girl_punch[];
-extern const struct Animation anim_space_gramps_punch_cue1[];
-extern const struct Animation anim_cosmic_girl_punch_cue1[];
-extern const struct Animation anim_space_gramps_punch_cue2[];
-extern const struct Animation anim_cosmic_girl_punch_cue2[];
-extern const struct Animation anim_space_gramps_speak[];
-extern const struct Animation anim_cosmic_girl_placeholder7[];
-extern const struct Animation anim_space_gramps_blink[];
-extern const struct Animation anim_cosmic_girl_placeholder8[];
-extern const struct Animation anim_space_gramps_frown[];
-extern const struct Animation anim_cosmic_girl_frown[];
-extern const struct Animation anim_space_gramps_raise_brow[];
-extern const struct Animation anim_cosmic_girl_glare[];
+extern struct Animation anim_space_dancer_right[];
+extern struct Animation anim_cosmic_dancer_right[];
+extern struct Animation anim_space_dancer_punch[];
+extern struct Animation anim_cosmic_dancer_punch[];
+extern struct Animation anim_space_dancer_down[];
+extern struct Animation anim_cosmic_dancer_down[];
+extern struct Animation anim_space_gramps_beat[];
+extern struct Animation anim_cosmic_girl_beat[];
+extern struct Animation anim_space_gramps_instruct_down[];
+extern struct Animation anim_cosmic_girl_instruct_down[];
+extern struct Animation anim_space_gramps_instruct_punch[];
+extern struct Animation anim_cosmic_girl_instruct_punch[];
+extern struct Animation anim_space_gramps_instruct_right[];
+extern struct Animation anim_cosmic_girl_instruct_right[];
+extern struct Animation anim_space_dancer_beat[];
+extern struct Animation anim_cosmic_dancer_beat[];
+extern struct Animation anim_space_dancer_hurt[];
+extern struct Animation anim_cosmic_dancer_hurt[];
+extern struct Animation anim_space_dancer_right_cue[];
+extern struct Animation anim_cosmic_dancer_right_cue[];
+extern struct Animation anim_space_dancer_down_cue[];
+extern struct Animation anim_cosmic_dancer_down_cue[];
+extern struct Animation anim_space_dancer_punch_cue1[];
+extern struct Animation anim_cosmic_dancer_punch_cue1[];
+extern struct Animation anim_space_dancer_punch_cue2[];
+extern struct Animation anim_cosmic_dancer_punch_cue2[];
+extern struct Animation anim_space_dancer_hurt_effect[];
+extern struct Animation anim_cosmic_dancer_hurt_effect[];
+extern struct Animation anim_space_dance_blank1[];
+extern struct Animation anim_cosmic_dance_blank1[];
+extern struct Animation anim_space_dance_tutorial_icons[];
+extern struct Animation anim_cosmic_dance_tutorial_icons[];
+extern struct Animation anim_space_dance_sparkle[];
+extern struct Animation anim_cosmic_dance_sparkle[];
+extern struct Animation anim_space_dance_blank2[];
+extern struct Animation anim_cosmic_dance_blank2[];
+extern struct Animation anim_space_gramps_right[];
+extern struct Animation anim_cosmic_girl_right[];
+extern struct Animation anim_space_gramps_right_cue[];
+extern struct Animation anim_cosmic_girl_right_cue[];
+extern struct Animation anim_space_gramps_down[];
+extern struct Animation anim_cosmic_girl_down[];
+extern struct Animation anim_space_gramps_down_cue[];
+extern struct Animation anim_cosmic_girl_down_cue[];
+extern struct Animation anim_space_gramps_punch[];
+extern struct Animation anim_cosmic_girl_punch[];
+extern struct Animation anim_space_gramps_punch_cue1[];
+extern struct Animation anim_cosmic_girl_punch_cue1[];
+extern struct Animation anim_space_gramps_punch_cue2[];
+extern struct Animation anim_cosmic_girl_punch_cue2[];
+extern struct Animation anim_space_gramps_speak[];
+extern struct Animation anim_cosmic_girl_placeholder7[];
+extern struct Animation anim_space_gramps_blink[];
+extern struct Animation anim_cosmic_girl_placeholder8[];
+extern struct Animation anim_space_gramps_frown[];
+extern struct Animation anim_cosmic_girl_frown[];
+extern struct Animation anim_space_gramps_raise_brow[];
+extern struct Animation anim_cosmic_girl_glare[];
 
-extern const struct CompressedGraphics D_08ce2cb0;
-extern const struct CompressedGraphics D_08ce3ccc;
-extern const struct CompressedGraphics D_08ce296c;
-extern const struct CompressedGraphics D_08c38fcc;
-extern const struct CompressedGraphics D_08c39888;
-extern const struct CompressedGraphics D_08c3a0a0;
-extern const struct CompressedGraphics D_08c38f60;
-extern const struct CompressedGraphics D_08ce3978;
-extern const struct CompressedGraphics D_08ce426c;
-extern const struct CompressedGraphics D_08ce296c;
-extern const Palette cosmic_dance_bg_pal[];
-extern const Palette cosmic_dance_obj_pal[];
-extern const Palette space_dance_bg_pal[];
-extern const Palette space_dance_obj_pal[];
-extern const Palette space_dance_remix_3_bg_pal[];
+extern struct CompressedGraphics D_08ce2cb0;
+extern struct CompressedGraphics D_08ce3ccc;
+extern struct CompressedGraphics D_08ce296c;
+extern struct CompressedGraphics D_08c38fcc;
+extern struct CompressedGraphics D_08c39888;
+extern struct CompressedGraphics D_08c3a0a0;
+extern struct CompressedGraphics D_08c38f60;
+extern struct CompressedGraphics D_08ce3978;
+extern struct CompressedGraphics D_08ce426c;
+extern struct CompressedGraphics D_08ce296c;
+extern Palette cosmic_dance_bg_pal[];
+extern Palette cosmic_dance_obj_pal[];
+extern Palette space_dance_bg_pal[];
+extern Palette space_dance_obj_pal[];
+extern Palette space_dance_remix_3_bg_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e6ba4] All Animations
-const struct Animation *space_dance_anim[][3] = {
+struct Animation *space_dance_anim[][3] = {
     /* 0x00 */ { anim_space_dancer_right, anim_cosmic_dancer_right, anim_space_dancer_right },
     /* 0x01 */ { anim_space_dancer_punch, anim_cosmic_dancer_punch, anim_space_dancer_punch },
     /* 0x02 */ { anim_space_dancer_down, anim_cosmic_dancer_down, anim_space_dancer_down },
@@ -117,7 +117,7 @@ const struct Animation *space_dance_anim[][3] = {
 };
 
 // [D_089e6d00] Animation Table
-const struct Animation **space_dance_anim_table[] = {
+struct Animation **space_dance_anim_table[] = {
     /* 0x00 */ space_dance_anim[0],
     /* 0x01 */ space_dance_anim[1],
     /* 0x02 */ space_dance_anim[2],
@@ -150,7 +150,7 @@ const struct Animation **space_dance_anim_table[] = {
 };
 
 // [D_089e6d74] Buffered Textures List
-const struct CompressedGraphics *space_dance_buffered_textures[] = {
+struct CompressedGraphics *space_dance_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

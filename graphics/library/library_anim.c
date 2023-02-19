@@ -4,7 +4,7 @@
 #include "library_anim_cells.inc.c"
 
 // [D_089000cc] <description>
-const struct Animation library_anim00[] = {
+struct Animation library_anim00[] = {
     /* 000 */ { library_cel000, 5 },
     /* 001 */ { library_cel001, 8 },
     /* 002 */ { library_cel000, 5 },
@@ -13,7 +13,7 @@ const struct Animation library_anim00[] = {
 };
 
 // [D_089000f4] <description>
-const struct Animation library_anim01[] = {
+struct Animation library_anim01[] = {
     /* 000 */ { library_cel003, 5 },
     /* 001 */ { library_cel004, 8 },
     /* 002 */ { library_cel003, 5 },

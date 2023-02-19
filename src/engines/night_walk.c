@@ -297,7 +297,7 @@ s32 night_walk_scroll_stars(void) {
 
 
 // End of Star Size-Up
-void night_walk_finish_star_expansion(s32 arg0, s16 sprite, const struct Animation *anim) {
+void night_walk_finish_star_expansion(s32 arg0, s16 sprite, struct Animation *anim) {
     s32 frame;
 
     func_0804d8f8(D_03005380, sprite, anim, 0, 1, 0, 0);
@@ -669,7 +669,7 @@ void set_drumtech_hihat_gfx(s16 hiHatSprite) {
 
 
 // Set DrumTech Pedal Hi-Hat Graphics
-void set_drumtech_pedal_hihat_gfx(s16 pedalHiHatSprite, s16 rightLegSprite, const struct Animation *useKick, const struct Animation *useHiHat) {
+void set_drumtech_pedal_hihat_gfx(s16 pedalHiHatSprite, s16 rightLegSprite, struct Animation *useKick, struct Animation *useHiHat) {
     D_03001568->pedalHiHatSprite = pedalHiHatSprite;
     D_03001568->rightLegSprite = rightLegSprite;
     D_03001568->useKickPedalAnim = useKick;

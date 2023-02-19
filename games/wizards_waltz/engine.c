@@ -4,18 +4,18 @@
   /* WIZARD'S WALTZ - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08d1d750;
-extern const struct CompressedGraphics D_08d1d8d8;
-extern const struct CompressedGraphics D_08d1d3c4;
+extern struct CompressedGraphics D_08d1d750;
+extern struct CompressedGraphics D_08d1d8d8;
+extern struct CompressedGraphics D_08d1d3c4;
 
-extern const Palette wizards_waltz_pal[];
+extern Palette wizards_waltz_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e9f10] Buffered Textures List
-const struct CompressedGraphics *wizards_waltz_buffered_textures[] = {
+struct CompressedGraphics *wizards_waltz_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

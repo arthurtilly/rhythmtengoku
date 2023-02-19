@@ -4,17 +4,17 @@
   /* PROLOGUE (SHOWTIME) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08bed0ec;
-extern const struct CompressedGraphics D_08bed4e4;
-extern const struct CompressedGraphics D_08bec134;
-extern const Palette showtime_prologue_pal[];
+extern struct CompressedGraphics D_08bed0ec;
+extern struct CompressedGraphics D_08bed4e4;
+extern struct CompressedGraphics D_08bec134;
+extern Palette showtime_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089eaadc] Buffered Textures List
-const struct CompressedGraphics *showtime_prologue_buffered_textures[] = {
+struct CompressedGraphics *showtime_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

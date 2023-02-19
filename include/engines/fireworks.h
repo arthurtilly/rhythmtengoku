@@ -106,18 +106,18 @@ enum FireworksSoundsEnum {
 
 
 // OAM Animations:
-extern const struct Animation anim_fireworks_rocket4[];
-extern const struct Animation anim_fireworks_rocket_explode[];
-extern const struct Animation anim_fireworks_particle_red[];
-extern const struct Animation anim_fireworks_particle_green[];
-extern const struct Animation anim_fireworks_particle_blue[];
-extern const struct Animation anim_fireworks_bomb[];
-extern const struct Animation anim_fireworks_bomb_explode[];
-extern const struct Animation anim_fireworks_particle_tri_rgb[];
-extern const struct Animation anim_fireworks_skip_tutorial_icon[];
-extern const struct Animation anim_fireworks_rocket3[];
-extern const struct Animation anim_fireworks_rocket2[];
-extern const struct Animation anim_fireworks_rocket1[];
+extern struct Animation anim_fireworks_rocket4[];
+extern struct Animation anim_fireworks_rocket_explode[];
+extern struct Animation anim_fireworks_particle_red[];
+extern struct Animation anim_fireworks_particle_green[];
+extern struct Animation anim_fireworks_particle_blue[];
+extern struct Animation anim_fireworks_bomb[];
+extern struct Animation anim_fireworks_bomb_explode[];
+extern struct Animation anim_fireworks_particle_tri_rgb[];
+extern struct Animation anim_fireworks_skip_tutorial_icon[];
+extern struct Animation anim_fireworks_rocket3[];
+extern struct Animation anim_fireworks_rocket2[];
+extern struct Animation anim_fireworks_rocket1[];
 
 
 // Palettes:
@@ -132,7 +132,7 @@ extern const s32 fireworks_1_pattern_sequence[];
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *fireworks_buffered_textures[]; // Buffered Textures List
+extern struct CompressedGraphics *fireworks_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable *fireworks_gfx_tables[]; // Graphics Table Index
 extern u16 fireworks_cue_durations[]; // Cue Expiration Times
 

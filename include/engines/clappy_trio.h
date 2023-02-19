@@ -44,13 +44,13 @@ enum ClappyTrioAnimationsEnum {
 
 
 // Engine Definition Data:
-extern const struct Animation **clappy_trio_anim_table[];
-extern const struct CompressedGraphics *clappy_trio_buffered_textures[];
+extern struct Animation **clappy_trio_anim_table[];
+extern struct CompressedGraphics *clappy_trio_buffered_textures[];
 extern struct GraphicsTable *clappy_trio_gfx_tables[];
 
 
 // Functions:
-extern const struct Animation *clappy_trio_get_anim(u32 anim); // Get Animation
+extern struct Animation *clappy_trio_get_anim(u32 anim); // Get Animation
 // extern ? func_080303a4(?);
 // extern ? func_0803050c(?);
 // extern ? func_0803051c(?);

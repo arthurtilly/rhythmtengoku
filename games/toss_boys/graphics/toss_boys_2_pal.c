@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0892ab3c] Toss Boys 2 OBJ Palette
-const Palette toss_boys_2_obj_pal[] = {
+Palette toss_boys_2_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x38C8D0),
         /* 01 */ TO_RGB555(0xE0E8F8),
@@ -294,7 +294,7 @@ const Palette toss_boys_2_obj_pal[] = {
 };
 
 // [D_0892ad3c] Toss Boys 2 BG Palette
-const Palette toss_boys_2_bg_pal[] = {
+Palette toss_boys_2_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x48E8F8),
         /* 01 */ TO_RGB555(0x3880F8),

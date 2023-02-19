@@ -76,15 +76,15 @@ struct GameplaySceneInfo {
 
 
 // OAM Animations:
-extern const struct Animation anim_gameplay_pause_title[]; // Pause Menu Title
-extern const struct Animation anim_gameplay_pause_option1[]; // Pause Menu Options (Continue)
-extern const struct Animation anim_gameplay_pause_option2[]; // Pause Menu Options (Quit)
-extern const struct Animation anim_gameplay_skip_icon[]; // Skip Tutorial ("Select to Skip")
-extern const struct Animation anim_gameplay_text_button_black[]; // Black A Button Prompt
-extern const struct Animation anim_gameplay_text_button_white[]; // White A Button Prompt
-extern const struct Animation anim_gameplay_perfect_icon[]; // Go For A Perfect!
-extern const struct Animation anim_gameplay_perfect_miss[]; // Fail Perfect
-extern const struct Animation anim_gameplay_perfect_hit[]; // Perfect Input
+extern struct Animation anim_gameplay_pause_title[]; // Pause Menu Title
+extern struct Animation anim_gameplay_pause_option1[]; // Pause Menu Options (Continue)
+extern struct Animation anim_gameplay_pause_option2[]; // Pause Menu Options (Quit)
+extern struct Animation anim_gameplay_skip_icon[]; // Skip Tutorial ("Select to Skip")
+extern struct Animation anim_gameplay_text_button_black[]; // Black A Button Prompt
+extern struct Animation anim_gameplay_text_button_white[]; // White A Button Prompt
+extern struct Animation anim_gameplay_perfect_icon[]; // Go For A Perfect!
+extern struct Animation anim_gameplay_perfect_miss[]; // Fail Perfect
+extern struct Animation anim_gameplay_perfect_hit[]; // Perfect Input
 
 
 // Sound Effects:
@@ -92,9 +92,9 @@ extern const struct Animation anim_gameplay_perfect_hit[]; // Perfect Input
 
 // Scene Definition Data:
 extern const struct GraphicsTable D_089cfd7c[]; // Graphics Table (Common Gameplay Graphics/Palettes, e.g. Pause Menu)
-extern const struct CompressedGraphics *const D_089cfda0[]; // Buffered Textures List
+extern struct CompressedGraphics *const D_089cfda0[]; // Buffered Textures List
 extern const struct PauseMenuDefinition D_089cfde0; // Pause Handler Definition
-extern const struct Animation *const D_089cfdf0[2]; // A Button Prompt Animations { 0 = Black; 1 = White }
+extern struct Animation *const D_089cfdf0[2]; // A Button Prompt Animations { 0 = Black; 1 = White }
 
 
 // Functions - Audio:

@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088fe8cc] BG Palette
-const Palette epilogue_sneaky_spirits_bg_pal[] = {
+Palette epilogue_sneaky_spirits_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xB0B0F8),
         /* 01 */ TO_RGB555(0x000000),
@@ -294,7 +294,7 @@ const Palette epilogue_sneaky_spirits_bg_pal[] = {
 };
 
 // [D_088feacc] BG Palette
-const Palette epilogue_spaceball_bg_pal[] = {
+Palette epilogue_spaceball_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xB8B8F8),
         /* 01 */ TO_RGB555(0x000000),
@@ -586,7 +586,7 @@ const Palette epilogue_spaceball_bg_pal[] = {
 };
 
 // [D_088feccc] BG Palette
-const Palette epilogue_bon_dance_bg_pal[] = {
+Palette epilogue_bon_dance_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x7058F8),
@@ -608,7 +608,7 @@ const Palette epilogue_bon_dance_bg_pal[] = {
 };
 
 // [D_088fecec] BG Palette
-const Palette epilogue_bon_odori_bg_pal[] = {
+Palette epilogue_bon_odori_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x383838),
@@ -702,7 +702,7 @@ const Palette epilogue_bon_odori_bg_pal[] = {
 };
 
 // [D_088fed8c] BG Palette
-const Palette epilogue_karate_man_bg_pal[] = {
+Palette epilogue_karate_man_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),
@@ -742,7 +742,7 @@ const Palette epilogue_karate_man_bg_pal[] = {
 };
 
 // [D_088fedcc] BG Palette
-const Palette epilogue_cosmic_dance_bg_pal[] = {
+Palette epilogue_cosmic_dance_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8D8B8),
@@ -764,7 +764,7 @@ const Palette epilogue_cosmic_dance_bg_pal[] = {
 };
 
 // [D_088fedec] BG Palette
-const Palette epilogue_concert_hall_bg_pal[] = {
+Palette epilogue_concert_hall_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00E028),
         /* 01 */ TO_RGB555(0x000000),
@@ -786,7 +786,7 @@ const Palette epilogue_concert_hall_bg_pal[] = {
 };
 
 // [D_088fee0c] BG Palette
-const Palette epilogue_night_walk_bg_pal[] = {
+Palette epilogue_night_walk_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000040),
@@ -1078,7 +1078,7 @@ const Palette epilogue_night_walk_bg_pal[] = {
 };
 
 // [D_088ff00c] BG Palette
-const Palette epilogue_showtime_bg_pal[] = {
+Palette epilogue_showtime_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xD87010),
@@ -1100,7 +1100,7 @@ const Palette epilogue_showtime_bg_pal[] = {
 };
 
 // [D_088ff02c] BG Palette
-const Palette epilogue_bouncy_road_bg_pal[] = {
+Palette epilogue_bouncy_road_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),
@@ -1122,7 +1122,7 @@ const Palette epilogue_bouncy_road_bg_pal[] = {
 };
 
 // [D_088ff04c] BG Palette
-const Palette epilogue_rhythm_tweezers_bg_pal[] = {
+Palette epilogue_rhythm_tweezers_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x203020),
@@ -1180,7 +1180,7 @@ const Palette epilogue_rhythm_tweezers_bg_pal[] = {
 };
 
 // [D_088ff0ac] BG Palette
-const Palette epilogue_fireworks_bg_pal[] = {
+Palette epilogue_fireworks_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x0090A8),
         /* 01 */ TO_RGB555(0x000000),
@@ -1472,7 +1472,7 @@ const Palette epilogue_fireworks_bg_pal[] = {
 };
 
 // [D_088ff2ac] BG Palette
-const Palette epilogue_clappy_trio_bg_pal[] = {
+Palette epilogue_clappy_trio_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),
@@ -1512,7 +1512,7 @@ const Palette epilogue_clappy_trio_bg_pal[] = {
 };
 
 // [D_088ff2ec] BG Palette
-const Palette epilogue_snappy_trio_bg_pal[] = {
+Palette epilogue_snappy_trio_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),
@@ -1534,7 +1534,7 @@ const Palette epilogue_snappy_trio_bg_pal[] = {
 };
 
 // [D_088ff30c] BG Palette
-const Palette epilogue_samurai_slice_bg_pal[] = {
+Palette epilogue_samurai_slice_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x005068),
         /* 01 */ TO_RGB555(0x000000),
@@ -1628,7 +1628,7 @@ const Palette epilogue_samurai_slice_bg_pal[] = {
 };
 
 // [D_088ff3ac] BG Palette
-const Palette epilogue_power_calligraphy_bg_pal[] = {
+Palette epilogue_power_calligraphy_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -1686,7 +1686,7 @@ const Palette epilogue_power_calligraphy_bg_pal[] = {
 };
 
 // [D_088ff40c] BG Palette
-const Palette epilogue_marching_orders_bg_pal[] = {
+Palette epilogue_marching_orders_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x00F0E8),
@@ -1708,7 +1708,7 @@ const Palette epilogue_marching_orders_bg_pal[] = {
 };
 
 // [D_088ff42c] BG Palette
-const Palette epilogue_marching_orders_2_bg_pal[] = {
+Palette epilogue_marching_orders_2_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -1730,7 +1730,7 @@ const Palette epilogue_marching_orders_2_bg_pal[] = {
 };
 
 // [D_088ff44c] BG Palette
-const Palette epilogue_polyrhythm_bg_pal[] = {
+Palette epilogue_polyrhythm_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),
@@ -1896,7 +1896,7 @@ const Palette epilogue_polyrhythm_bg_pal[] = {
 };
 
 // [D_088ff56c] BG Palette
-const Palette epilogue_quiz_show_bg_pal[] = {
+Palette epilogue_quiz_show_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x205888),
@@ -1954,7 +1954,7 @@ const Palette epilogue_quiz_show_bg_pal[] = {
 };
 
 // [D_088ff5cc] BG Palette
-const Palette epilogue_bunny_hop_bg_pal[] = {
+Palette epilogue_bunny_hop_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00C8F8),
         /* 01 */ TO_RGB555(0x000000),
@@ -2246,7 +2246,7 @@ const Palette epilogue_bunny_hop_bg_pal[] = {
 };
 
 // [D_088ff7cc] BG Palette
-const Palette epilogue_rap_men_bg_pal[] = {
+Palette epilogue_rap_men_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF868F0),
@@ -2268,7 +2268,7 @@ const Palette epilogue_rap_men_bg_pal[] = {
 };
 
 // [D_088ff7ec] BG Palette
-const Palette epilogue_rap_women_bg_pal[] = {
+Palette epilogue_rap_women_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF898D0),
@@ -2290,7 +2290,7 @@ const Palette epilogue_rap_women_bg_pal[] = {
 };
 
 // [D_088ff80c] BG Palette
-const Palette epilogue_rat_race_bg_pal[] = {
+Palette epilogue_rat_race_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x0090A8),
         /* 01 */ TO_RGB555(0x000000),
@@ -2582,7 +2582,7 @@ const Palette epilogue_rat_race_bg_pal[] = {
 };
 
 // [D_088ffa0c] BG Palette
-const Palette epilogue_remix_1_bg_pal[] = {
+Palette epilogue_remix_1_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x080808),
@@ -2604,7 +2604,7 @@ const Palette epilogue_remix_1_bg_pal[] = {
 };
 
 // [D_088ffa2c] BG Palette
-const Palette epilogue_remix_2_bg_pal[] = {
+Palette epilogue_remix_2_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000078),
         /* 01 */ TO_RGB555(0x584008),
@@ -2662,7 +2662,7 @@ const Palette epilogue_remix_2_bg_pal[] = {
 };
 
 // [D_088ffa8c] BG Palette
-const Palette epilogue_remix_3_bg_pal[] = {
+Palette epilogue_remix_3_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -2684,7 +2684,7 @@ const Palette epilogue_remix_3_bg_pal[] = {
 };
 
 // [D_088ffaac] BG Palette
-const Palette epilogue_remix_4_bg_pal[] = {
+Palette epilogue_remix_4_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xA0A0A0),
         /* 01 */ TO_RGB555(0x000000),
@@ -2742,7 +2742,7 @@ const Palette epilogue_remix_4_bg_pal[] = {
 };
 
 // [D_088ffb0c] BG Palette
-const Palette epilogue_remix_5_bg_pal[] = {
+Palette epilogue_remix_5_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -2764,7 +2764,7 @@ const Palette epilogue_remix_5_bg_pal[] = {
 };
 
 // [D_088ffb2c] BG Palette
-const Palette epilogue_remix_6_bg_pal[] = {
+Palette epilogue_remix_6_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xD0F8D0),
         /* 01 */ TO_RGB555(0x000000),
@@ -2822,7 +2822,7 @@ const Palette epilogue_remix_6_bg_pal[] = {
 };
 
 // [D_088ffb8c] BG Palette
-const Palette epilogue_remix_7_bg_pal[] = {
+Palette epilogue_remix_7_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x200050),
         /* 01 */ TO_RGB555(0x000000),
@@ -2880,7 +2880,7 @@ const Palette epilogue_remix_7_bg_pal[] = {
 };
 
 // [D_088ffbec] BG Palette
-const Palette epilogue_remix_8_bg_pal[] = {
+Palette epilogue_remix_8_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x6838C0),
         /* 01 */ TO_RGB555(0x000000),
@@ -2938,7 +2938,7 @@ const Palette epilogue_remix_8_bg_pal[] = {
 };
 
 // [D_088ffc4c] BG Palette
-const Palette epilogue_ninja_bodyguard_bg_pal[] = {
+Palette epilogue_ninja_bodyguard_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -2960,7 +2960,7 @@ const Palette epilogue_ninja_bodyguard_bg_pal[] = {
 };
 
 // [D_088ffc6c] BG Palette
-const Palette epilogue_ninja_reincarnate_bg_pal[] = {
+Palette epilogue_ninja_reincarnate_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -2982,7 +2982,7 @@ const Palette epilogue_ninja_reincarnate_bg_pal[] = {
 };
 
 // [D_088ffc8c] BG Palette
-const Palette epilogue_space_dance_bg_pal[] = {
+Palette epilogue_space_dance_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xD0C858),
@@ -3004,7 +3004,7 @@ const Palette epilogue_space_dance_bg_pal[] = {
 };
 
 // [D_088ffcac] BG Palette
-const Palette epilogue_tap_trial_bg_pal[] = {
+Palette epilogue_tap_trial_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -3044,7 +3044,7 @@ const Palette epilogue_tap_trial_bg_pal[] = {
 };
 
 // [D_088ffcec] BG Palette
-const Palette epilogue_tap_trial_2_bg_pal[] = {
+Palette epilogue_tap_trial_2_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -3066,7 +3066,7 @@ const Palette epilogue_tap_trial_2_bg_pal[] = {
 };
 
 // [D_088ffd0c] BG Palette
-const Palette epilogue_toss_boys_bg_pal[] = {
+Palette epilogue_toss_boys_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x08D060),
         /* 01 */ TO_RGB555(0x000000),
@@ -3358,7 +3358,7 @@ const Palette epilogue_toss_boys_bg_pal[] = {
 };
 
 // [D_088fff0c] BG Palette
-const Palette epilogue_toss_boys_2_bg_pal[] = {
+Palette epilogue_toss_boys_2_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),
@@ -3380,7 +3380,7 @@ const Palette epilogue_toss_boys_2_bg_pal[] = {
 };
 
 // [D_088fff2c] BG Palette
-const Palette epilogue_tram_and_pauline_bg_pal[] = {
+Palette epilogue_tram_and_pauline_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -3402,7 +3402,7 @@ const Palette epilogue_tram_and_pauline_bg_pal[] = {
 };
 
 // [D_088fff4c] BG Palette
-const Palette epilogue_sick_beats_bg_pal[] = {
+Palette epilogue_sick_beats_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x281018),
@@ -3424,7 +3424,7 @@ const Palette epilogue_sick_beats_bg_pal[] = {
 };
 
 // [D_088fff6c] BG Palette
-const Palette epilogue_wizards_waltz_bg_pal[] = {
+Palette epilogue_wizards_waltz_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xB80068),
@@ -3500,7 +3500,7 @@ const Palette epilogue_wizards_waltz_bg_pal[] = {
 };
 
 // [D_088fffec] BG Palette
-const Palette epilogue_placeholder_bg_pal[] = {
+Palette epilogue_placeholder_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),

@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0890a694] <description>
-const Palette perfect_certificate_pal[] = {
+Palette perfect_certificate_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF800B8),
         /* 01 */ TO_RGB555(0x000000),

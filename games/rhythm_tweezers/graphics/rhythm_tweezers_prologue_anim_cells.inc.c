@@ -1,7 +1,7 @@
 // do not rename these
 
 // [D_088af650]
-const AnimationCel rhythm_tweezers_prologue_cel000[] = {
+AnimationCel rhythm_tweezers_prologue_cel000[] = {
     /* Len */ 3,
     /* 000 */ 0x40e0, 0xc1c8, 0x0000,
     /* 001 */ 0x00e0, 0x8008, 0x0008,
@@ -9,7 +9,7 @@ const AnimationCel rhythm_tweezers_prologue_cel000[] = {
 };
 
 // [D_088af664]
-const AnimationCel rhythm_tweezers_prologue_cel001[] = {
+AnimationCel rhythm_tweezers_prologue_cel001[] = {
     /* Len */ 3,
     /* 000 */ 0x40e0, 0xc1c8, 0x1000,
     /* 001 */ 0x00e0, 0x8008, 0x1008,
@@ -17,7 +17,7 @@ const AnimationCel rhythm_tweezers_prologue_cel001[] = {
 };
 
 // [D_088af678]
-const AnimationCel rhythm_tweezers_prologue_cel002[] = {
+AnimationCel rhythm_tweezers_prologue_cel002[] = {
     /* Len */ 3,
     /* 000 */ 0x40e0, 0xc1c8, 0x2000,
     /* 001 */ 0x00e0, 0x8008, 0x2008,
@@ -25,7 +25,7 @@ const AnimationCel rhythm_tweezers_prologue_cel002[] = {
 };
 
 // [D_088af68c]
-const AnimationCel rhythm_tweezers_prologue_cel003[] = {
+AnimationCel rhythm_tweezers_prologue_cel003[] = {
     /* Len */ 3,
     /* 000 */ 0x40e0, 0xc1c8, 0x3000,
     /* 001 */ 0x00e0, 0x8008, 0x3008,
@@ -33,7 +33,7 @@ const AnimationCel rhythm_tweezers_prologue_cel003[] = {
 };
 
 // [D_088af6a0]
-const AnimationCel rhythm_tweezers_prologue_cel004[] = {
+AnimationCel rhythm_tweezers_prologue_cel004[] = {
     /* Len */ 3,
     /* 000 */ 0x40e0, 0xc1c8, 0x4000,
     /* 001 */ 0x00e0, 0x8008, 0x4008,

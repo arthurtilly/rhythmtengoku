@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088bf510] Drum Boys LIVE OBJ Palette
-const Palette drum_boys_obj_pal[] = {
+Palette drum_boys_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x48E8F8),
         /* 01 */ TO_RGB555(0x20A820),
@@ -132,7 +132,7 @@ const Palette drum_boys_obj_pal[] = {
 };
 
 // [D_088bf5f0] Drum Boys LIVE OBJ Palette
-const Palette drum_boys_bg_pal[] = {
+Palette drum_boys_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x48E8F8),
         /* 01 */ TO_RGB555(0x000000),

@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_08900484] <description>
-const Palette endless_games_menu_pal[] = {
+Palette endless_games_menu_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF078C0),
         /* 01 */ TO_RGB555(0x000000),

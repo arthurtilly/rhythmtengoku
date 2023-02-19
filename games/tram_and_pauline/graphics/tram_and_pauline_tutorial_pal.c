@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0892d424] Tram & Pauline (Tutorial & Remix 3) OBJ Palette (+ Tutorial BG Palette)
-const Palette tram_and_pauline_tutorial_pal[] = {
+Palette tram_and_pauline_tutorial_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x10E8A8),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -132,7 +132,7 @@ const Palette tram_and_pauline_tutorial_pal[] = {
 };
 
 // [D_0892d504] Tram & Pauline (Remix 3) BG Palette
-const Palette tram_and_pauline_remix_3_bg_pal[] = {
+Palette tram_and_pauline_remix_3_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x00B000),

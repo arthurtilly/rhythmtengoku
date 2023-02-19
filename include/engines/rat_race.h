@@ -39,7 +39,7 @@ extern const char D_0805a8b4[];
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *rat_race_buffered_textures[];
+extern struct CompressedGraphics *rat_race_buffered_textures[];
 extern struct GraphicsTable rat_race_gfx_table[];
 extern u32 D_089e66bc[];
 extern u8 D_089e6834[];

@@ -6,7 +6,7 @@
 // Note: Many animations/sprites seem to be initially taken from Tap Trial.
 
 // [D_0892cd74] Fox - Cue Triple Tap
-const struct Animation anim_casual_fox_3cue[] = {
+struct Animation anim_casual_fox_3cue[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel004, 20 },
     /* 001 */ { tram_and_pauline_tutorial_cel005, 4 },
     /* 002 */ { tram_and_pauline_tutorial_cel006, 4 },
@@ -17,7 +17,7 @@ const struct Animation anim_casual_fox_3cue[] = {
 };
 
 // [D_0892cdac] Fox - Crouch
-const struct Animation anim_casual_fox_crouch[] = {
+struct Animation anim_casual_fox_crouch[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel001, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel010, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel011, 2 },
@@ -29,13 +29,13 @@ const struct Animation anim_casual_fox_crouch[] = {
 };
 
 // [D_0892cdec] Fox - Jump
-const struct Animation anim_casual_fox_jump[] = {
+struct Animation anim_casual_fox_jump[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel019, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_0892cdfc] Fox - Beat
-const struct Animation anim_casual_fox_beat[] = {
+struct Animation anim_casual_fox_beat[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel003, 3 },
     /* 001 */ { tram_and_pauline_tutorial_cel002, 3 },
     /* 002 */ { tram_and_pauline_tutorial_cel001, 24 },
@@ -43,7 +43,7 @@ const struct Animation anim_casual_fox_beat[] = {
 };
 
 // [D_0892ce1c] Fox - Fall to Crouch
-const struct Animation anim_casual_fox_fall[] = {
+struct Animation anim_casual_fox_fall[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel018, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel017, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel016, 2 },
@@ -53,7 +53,7 @@ const struct Animation anim_casual_fox_fall[] = {
 };
 
 // [D_0892ce4c] Fox - Crouching Jump Tap
-const struct Animation anim_casual_fox_crouch_step[] = {
+struct Animation anim_casual_fox_crouch_step[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel024, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel015, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel014, 2 },
@@ -61,19 +61,19 @@ const struct Animation anim_casual_fox_crouch_step[] = {
 };
 
 // [D_0892ce6c] Shadow
-const struct Animation anim_casual_tram_pauline_shadow[] = {
+struct Animation anim_casual_tram_pauline_shadow[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel026, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0892ce7c] "Start to Skip" Tutorial Text
-const struct Animation anim_casual_tram_pauline_text_skip[] = {
+struct Animation anim_casual_tram_pauline_text_skip[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel029, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0892ce8c] Trampoline
-const struct Animation anim_casual_tram_pauline_trampoline[] = {
+struct Animation anim_casual_tram_pauline_trampoline[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel030, 4 },
     /* 001 */ { tram_and_pauline_tutorial_cel031, 4 },
     /* 002 */ { tram_and_pauline_tutorial_cel032, 4 },
@@ -85,7 +85,7 @@ const struct Animation anim_casual_tram_pauline_trampoline[] = {
 };
 
 // [D_0892cecc] Transform to Fox
-const struct Animation anim_casual_fox_transform[] = {
+struct Animation anim_casual_fox_transform[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel047, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel046, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel045, 2 },
@@ -101,7 +101,7 @@ const struct Animation anim_casual_fox_transform[] = {
 };
 
 // [D_0892cf2c] Transform Effect
-const struct Animation anim_casual_fox_transform_effect[] = {
+struct Animation anim_casual_fox_transform_effect[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel057, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel056, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel055, 2 },
@@ -116,7 +116,7 @@ const struct Animation anim_casual_fox_transform_effect[] = {
 };
 
 // [D_0892cf84] Tram - Beat
-const struct Animation anim_casual_tram_beat[] = {
+struct Animation anim_casual_tram_beat[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel058, 4 },
     /* 001 */ { tram_and_pauline_tutorial_cel059, 4 },
     /* 002 */ { tram_and_pauline_tutorial_cel058, 30 },
@@ -124,7 +124,7 @@ const struct Animation anim_casual_tram_beat[] = {
 };
 
 // [D_0892cfa4] Pauline - Beat
-const struct Animation anim_casual_pauline_beat[] = {
+struct Animation anim_casual_pauline_beat[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel060, 4 },
     /* 001 */ { tram_and_pauline_tutorial_cel061, 4 },
     /* 002 */ { tram_and_pauline_tutorial_cel060, 30 },
@@ -132,7 +132,7 @@ const struct Animation anim_casual_pauline_beat[] = {
 };
 
 // [D_0892cfc4] Tram - Crouch
-const struct Animation anim_casual_tram_crouch[] = {
+struct Animation anim_casual_tram_crouch[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel058, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel062, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel063, 2 },
@@ -144,7 +144,7 @@ const struct Animation anim_casual_tram_crouch[] = {
 };
 
 // [D_0892d004] Tram - Cue Triple Tap
-const struct Animation anim_casual_tram_3cue[] = {
+struct Animation anim_casual_tram_3cue[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel069, 20 },
     /* 001 */ { tram_and_pauline_tutorial_cel069, 4 },
     /* 002 */ { tram_and_pauline_tutorial_cel070, 4 },
@@ -155,13 +155,13 @@ const struct Animation anim_casual_tram_3cue[] = {
 };
 
 // [D_0892d03c] Tram - Jump
-const struct Animation anim_casual_tram_jump[] = {
+struct Animation anim_casual_tram_jump[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel068, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_0892d04c] Transform to Tram
-const struct Animation anim_casual_tram_transform[] = {
+struct Animation anim_casual_tram_transform[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel074, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel074, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel075, 2 },
@@ -177,7 +177,7 @@ const struct Animation anim_casual_tram_transform[] = {
 };
 
 // [D_0892d0ac] Tram - Crouching Jump Tap
-const struct Animation anim_casual_tram_crouch_step[] = {
+struct Animation anim_casual_tram_crouch_step[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel079, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel080, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel081, 2 },
@@ -185,7 +185,7 @@ const struct Animation anim_casual_tram_crouch_step[] = {
 };
 
 // [D_0892d0cc] Pauline - Crouch
-const struct Animation anim_casual_pauline_crouch[] = {
+struct Animation anim_casual_pauline_crouch[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel060, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel082, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel083, 2 },
@@ -197,7 +197,7 @@ const struct Animation anim_casual_pauline_crouch[] = {
 };
 
 // [D_0892d10c] Pauline - Cue Triple Tap
-const struct Animation anim_casual_pauline_3cue[] = {
+struct Animation anim_casual_pauline_3cue[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel088, 20 },
     /* 001 */ { tram_and_pauline_tutorial_cel088, 4 },
     /* 002 */ { tram_and_pauline_tutorial_cel089, 4 },
@@ -208,13 +208,13 @@ const struct Animation anim_casual_pauline_3cue[] = {
 };
 
 // [D_0892d144] Pauline - Jump
-const struct Animation anim_casual_pauline_jump[] = {
+struct Animation anim_casual_pauline_jump[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel093, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_0892d154] Transform to Pauline
-const struct Animation anim_casual_pauline_transform[] = {
+struct Animation anim_casual_pauline_transform[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel074, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel074, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel094, 2 },
@@ -230,7 +230,7 @@ const struct Animation anim_casual_pauline_transform[] = {
 };
 
 // [D_0892d1b4] Pauline - Crouching Jump Tap
-const struct Animation anim_casual_pauline_crouch_step[] = {
+struct Animation anim_casual_pauline_crouch_step[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel098, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel099, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel100, 2 },
@@ -238,7 +238,7 @@ const struct Animation anim_casual_pauline_crouch_step[] = {
 };
 
 // [D_0892d1d4] Half-Tram - Beat
-const struct Animation anim_casual_half_tram_beat[] = {
+struct Animation anim_casual_half_tram_beat[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel101, 4 },
     /* 001 */ { tram_and_pauline_tutorial_cel102, 4 },
     /* 002 */ { tram_and_pauline_tutorial_cel101, 30 },
@@ -246,7 +246,7 @@ const struct Animation anim_casual_half_tram_beat[] = {
 };
 
 // [D_0892d1f4] Half-Pauline - Beat
-const struct Animation anim_casual_half_pauline_beat[] = {
+struct Animation anim_casual_half_pauline_beat[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel103, 4 },
     /* 001 */ { tram_and_pauline_tutorial_cel104, 4 },
     /* 002 */ { tram_and_pauline_tutorial_cel103, 30 },
@@ -254,7 +254,7 @@ const struct Animation anim_casual_half_pauline_beat[] = {
 };
 
 // [D_0892d214] Half-Tram - Crouch
-const struct Animation anim_casual_half_tram_crouch[] = {
+struct Animation anim_casual_half_tram_crouch[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel101, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel105, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel106, 2 },
@@ -266,7 +266,7 @@ const struct Animation anim_casual_half_tram_crouch[] = {
 };
 
 // [D_0892d254] Half-Tram - Cue Triple Tap
-const struct Animation anim_casual_half_tram_3cue[] = {
+struct Animation anim_casual_half_tram_3cue[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel112, 20 },
     /* 001 */ { tram_and_pauline_tutorial_cel113, 4 },
     /* 002 */ { tram_and_pauline_tutorial_cel114, 4 },
@@ -277,13 +277,13 @@ const struct Animation anim_casual_half_tram_3cue[] = {
 };
 
 // [D_0892d28c] Half-Tram - Jump
-const struct Animation anim_casual_half_tram_jump[] = {
+struct Animation anim_casual_half_tram_jump[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel111, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_0892d29c] Transform to Half-Tram
-const struct Animation anim_casual_half_tram_transform[] = {
+struct Animation anim_casual_half_tram_transform[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel074, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel074, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel118, 2 },
@@ -299,7 +299,7 @@ const struct Animation anim_casual_half_tram_transform[] = {
 };
 
 // [D_0892d2fc] Half-Tram - Crouching Jump Tap
-const struct Animation anim_casual_half_tram_crouch_step[] = {
+struct Animation anim_casual_half_tram_crouch_step[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel122, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel123, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel124, 2 },
@@ -307,7 +307,7 @@ const struct Animation anim_casual_half_tram_crouch_step[] = {
 };
 
 // [D_0892d31c] Half-Pauline - Crouch
-const struct Animation anim_casual_half_pauline_crouch[] = {
+struct Animation anim_casual_half_pauline_crouch[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel103, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel125, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel126, 2 },
@@ -319,7 +319,7 @@ const struct Animation anim_casual_half_pauline_crouch[] = {
 };
 
 // [D_0892d35c] Half-Pauline - Cue Triple Tap
-const struct Animation anim_casual_half_pauline_3cue[] = {
+struct Animation anim_casual_half_pauline_3cue[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel131, 20 },
     /* 001 */ { tram_and_pauline_tutorial_cel132, 4 },
     /* 002 */ { tram_and_pauline_tutorial_cel133, 4 },
@@ -330,13 +330,13 @@ const struct Animation anim_casual_half_pauline_3cue[] = {
 };
 
 // [D_0892d394] Half-Pauline - Jump
-const struct Animation anim_casual_half_pauline_jump[] = {
+struct Animation anim_casual_half_pauline_jump[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel137, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_0892d3a4] Transform to Half-Pauline
-const struct Animation anim_casual_half_pauline_transform[] = {
+struct Animation anim_casual_half_pauline_transform[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel074, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel074, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel138, 2 },
@@ -352,7 +352,7 @@ const struct Animation anim_casual_half_pauline_transform[] = {
 };
 
 // [D_0892d404] Half-Pauline - Crouching Jump Tap
-const struct Animation anim_casual_half_pauline_crouch_step[] = {
+struct Animation anim_casual_half_pauline_crouch_step[] = {
     /* 000 */ { tram_and_pauline_tutorial_cel142, 2 },
     /* 001 */ { tram_and_pauline_tutorial_cel143, 2 },
     /* 002 */ { tram_and_pauline_tutorial_cel144, 2 },

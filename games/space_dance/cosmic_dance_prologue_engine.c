@@ -4,18 +4,18 @@
   /* PROLOGUE (COSMIC DANCE) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08beb2f8;
-extern const struct CompressedGraphics D_08beb48c;
-extern const struct CompressedGraphics D_08beaf78;
-extern const Palette cosmic_dance_prologue_bg_pal[];
-extern const Palette cosmic_dance_prologue_obj_pal[];
+extern struct CompressedGraphics D_08beb2f8;
+extern struct CompressedGraphics D_08beb48c;
+extern struct CompressedGraphics D_08beaf78;
+extern Palette cosmic_dance_prologue_bg_pal[];
+extern Palette cosmic_dance_prologue_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ea864] Buffered Textures List
-const struct CompressedGraphics *cosmic_dance_prologue_buffered_textures[] = {
+struct CompressedGraphics *cosmic_dance_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

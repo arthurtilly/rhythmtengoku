@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088c8620] <description>
-const Palette drum_lessons_obj_pal[] = {
+Palette drum_lessons_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x08D040),
         /* 01 */ TO_RGB555(0x000000),
@@ -222,7 +222,7 @@ const Palette drum_lessons_obj_pal[] = {
 };
 
 // [D_088c87a0] <description>
-const Palette drum_lessons_bg_pal[] = {
+Palette drum_lessons_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF89000),
         /* 01 */ TO_RGB555(0xF89000),
@@ -406,7 +406,7 @@ const Palette drum_lessons_bg_pal[] = {
 };
 
 // [D_088c88e0] <description>
-const Palette drum_lessons_bg_screen_pal[] = {
+Palette drum_lessons_bg_screen_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xE8E8E8),
         /* 01 */ TO_RGB555(0xE8E8E8),

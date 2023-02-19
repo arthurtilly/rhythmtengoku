@@ -4,36 +4,36 @@
   /* RHYTHM TWEEZERS - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c5af04; // BG Tiles - Vegetables
-extern const struct CompressedGraphics D_08c5bd6c; // BG Map - Onion
-extern const struct CompressedGraphics D_08c5bf7c; // BG Map - Turnip
-extern const struct CompressedGraphics D_08c5c134; // BG Map - Potato
-extern const struct CompressedGraphics D_08c5915c; // OBJ Tiles
-extern const struct CompressedGraphics D_08c5badc; // BG Tiles - Mask
-extern const struct CompressedGraphics D_08c5c3a0; // BG Map - Mask
-extern const Palette rhythm_tweezers_pal[];
-extern const Palette rhythm_tweezers_2_pal[];
+extern struct CompressedGraphics D_08c5af04; // BG Tiles - Vegetables
+extern struct CompressedGraphics D_08c5bd6c; // BG Map - Onion
+extern struct CompressedGraphics D_08c5bf7c; // BG Map - Turnip
+extern struct CompressedGraphics D_08c5c134; // BG Map - Potato
+extern struct CompressedGraphics D_08c5915c; // OBJ Tiles
+extern struct CompressedGraphics D_08c5badc; // BG Tiles - Mask
+extern struct CompressedGraphics D_08c5c3a0; // BG Map - Mask
+extern Palette rhythm_tweezers_pal[];
+extern Palette rhythm_tweezers_2_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e3d98] Vegetable Face Animations
-const struct Animation *rhythm_tweezers_veg_face_anim[] = {
+struct Animation *rhythm_tweezers_veg_face_anim[] = {
     /* 0x00 */ anim_veg_face_onion,
     /* 0x01 */ anim_veg_face_turnip,
     /* 0x02 */ anim_veg_face_potato
 };
 
 // [D_089e3da4] Vegetable BG Maps
-const struct CompressedGraphics *rhythm_tweezers_veg_bg_maps[] = {
+struct CompressedGraphics *rhythm_tweezers_veg_bg_maps[] = {
     &D_08c5bd6c,
     &D_08c5bf7c,
     &D_08c5c134
 };
 
 // [D_089e3db0] Buffered Textures List
-const struct CompressedGraphics *rhythm_tweezers_buffered_textures[] = {
+struct CompressedGraphics *rhythm_tweezers_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

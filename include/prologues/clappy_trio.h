@@ -14,9 +14,9 @@ struct ClappyTrioPrologueInfo {
 };
 
 // Assets:
-extern const struct CompressedGraphics *clappy_trio_prologue_buffered_textures[]; // Buffered Textures
+extern struct CompressedGraphics *clappy_trio_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable clappy_trio_prologue_gfx_table[]; // Graphics Table
-extern const struct Animation anim_clappy_trio_prologue_title[]; // Animation: Text (The Clappy Trio)
+extern struct Animation anim_clappy_trio_prologue_title[]; // Animation: Text (The Clappy Trio)
 
 // Functions:
 extern void func_08045dec(void);    // [func_08045dec] GFX_INIT Func_02

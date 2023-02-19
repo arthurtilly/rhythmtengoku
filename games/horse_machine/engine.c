@@ -3,53 +3,53 @@
 
   /* HORSE MACHINE - GAME ENGINE DATA */
 
-extern const struct CompressedGraphics D_08d16210;
-extern const struct CompressedGraphics D_08d17a60;
-extern const struct CompressedGraphics D_08d17c24;
-extern const struct CompressedGraphics D_08d17d24;
-extern const struct CompressedGraphics D_08d08208;
-extern const struct CompressedGraphics D_08d0af74;
-extern const struct CompressedGraphics D_08d16648;
+extern struct CompressedGraphics D_08d16210;
+extern struct CompressedGraphics D_08d17a60;
+extern struct CompressedGraphics D_08d17c24;
+extern struct CompressedGraphics D_08d17d24;
+extern struct CompressedGraphics D_08d08208;
+extern struct CompressedGraphics D_08d0af74;
+extern struct CompressedGraphics D_08d16648;
 
-extern const Palette horse_machine_pal[];
-extern const Palette horse_machine_bg_01_pal[];
-extern const Palette horse_machine_bg_02_pal[];
-extern const Palette horse_machine_bg_03_pal[];
-extern const Palette horse_machine_bg_04_pal[];
-extern const Palette horse_machine_bg_05_pal[];
-extern const Palette horse_machine_bg_06_pal[];
+extern Palette horse_machine_pal[];
+extern Palette horse_machine_bg_01_pal[];
+extern Palette horse_machine_bg_02_pal[];
+extern Palette horse_machine_bg_03_pal[];
+extern Palette horse_machine_bg_04_pal[];
+extern Palette horse_machine_bg_05_pal[];
+extern Palette horse_machine_bg_06_pal[];
 
-extern const struct Animation anim_horse_walk[];
-extern const struct Animation anim_horse_trot[];
-extern const struct Animation anim_horse_canter[];
-extern const struct Animation anim_horse_gallop[];
-extern const struct Animation anim_horse_walk_jockey[];
-extern const struct Animation anim_horse_trot_jockey[];
-extern const struct Animation anim_horse_canter_jockey[];
-extern const struct Animation anim_horse_gallop_jockey[];
-extern const struct Animation anim_horse_text_pak[];
-extern const struct Animation anim_horse_text_ka[];
-extern const struct Animation anim_horse_text_tot[];
-extern const struct Animation anim_horse_text_pa[];
-extern const struct Animation anim_horse_text_rap[];
-extern const struct Animation anim_horse_text_do[];
-extern const struct Animation anim_horse_text_dod[];
+extern struct Animation anim_horse_walk[];
+extern struct Animation anim_horse_trot[];
+extern struct Animation anim_horse_canter[];
+extern struct Animation anim_horse_gallop[];
+extern struct Animation anim_horse_walk_jockey[];
+extern struct Animation anim_horse_trot_jockey[];
+extern struct Animation anim_horse_canter_jockey[];
+extern struct Animation anim_horse_gallop_jockey[];
+extern struct Animation anim_horse_text_pak[];
+extern struct Animation anim_horse_text_ka[];
+extern struct Animation anim_horse_text_tot[];
+extern struct Animation anim_horse_text_pa[];
+extern struct Animation anim_horse_text_rap[];
+extern struct Animation anim_horse_text_do[];
+extern struct Animation anim_horse_text_dod[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
-extern const struct CompressedGraphics D_08d11ef4;
-extern const struct CompressedGraphics D_08d17708;
-extern const struct CompressedGraphics D_08d10b60;
-extern const struct CompressedGraphics D_08d1737c;
-extern const struct CompressedGraphics D_08d0ef74;
-extern const struct CompressedGraphics D_08d17048;
-extern const struct CompressedGraphics D_08d0c580;
-extern const struct CompressedGraphics D_08d16c34;
-extern const struct CompressedGraphics D_08d0bfc8;
-extern const struct CompressedGraphics D_08d16998;
-extern const struct CompressedGraphics D_08d0af74;
-extern const struct CompressedGraphics D_08d16648;
+extern struct CompressedGraphics D_08d11ef4;
+extern struct CompressedGraphics D_08d17708;
+extern struct CompressedGraphics D_08d10b60;
+extern struct CompressedGraphics D_08d1737c;
+extern struct CompressedGraphics D_08d0ef74;
+extern struct CompressedGraphics D_08d17048;
+extern struct CompressedGraphics D_08d0c580;
+extern struct CompressedGraphics D_08d16c34;
+extern struct CompressedGraphics D_08d0bfc8;
+extern struct CompressedGraphics D_08d16998;
+extern struct CompressedGraphics D_08d0af74;
+extern struct CompressedGraphics D_08d16648;
 
 
 /* Horse Machine */
@@ -218,7 +218,7 @@ const s32 D_0805aab0[][4] = {
 };
 
 // [D_089e8dcc] Buffered Textures List
-const struct CompressedGraphics *horse_machine_buffered_textures[] = {
+struct CompressedGraphics *horse_machine_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -351,7 +351,7 @@ struct SequenceData *horse_machine_lesson_bgm[] = {
 };
 
 // [D_089e8ef0] Horse Animations
-const struct Animation *horse_machine_anim[] = {
+struct Animation *horse_machine_anim[] = {
     /* WALK   */ anim_horse_walk,
     /* TROT   */ anim_horse_trot,
     /* CANTER */ anim_horse_canter,
@@ -359,7 +359,7 @@ const struct Animation *horse_machine_anim[] = {
 };
 
 // [D_089e8f00] Jockey Animations
-const struct Animation *horse_machine_jockey_anim[] = {
+struct Animation *horse_machine_jockey_anim[] = {
     /* WALK   */ anim_horse_walk_jockey,
     /* TROT   */ anim_horse_trot_jockey,
     /* CANTER */ anim_horse_canter_jockey,
@@ -367,7 +367,7 @@ const struct Animation *horse_machine_jockey_anim[] = {
 };
 
 // [D_089e8f10] Lesson Text Animations
-const struct Animation *horse_machine_lesson_text_anim[][4] = {
+struct Animation *horse_machine_lesson_text_anim[][4] = {
     /* WALK */ {
         /* 0x00 */ anim_horse_text_pak,
         /* 0x01 */ anim_horse_text_ka,

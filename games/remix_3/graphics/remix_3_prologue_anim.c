@@ -4,7 +4,7 @@
 #include "remix_3_prologue_anim_cells.inc.c"
 
 // [D_088b2044] Title
-const struct Animation anim_remix_3_prologue_title[] = {
+struct Animation anim_remix_3_prologue_title[] = {
     /* 000 */ { remix_3_prologue_cel000, 40 },
     /* 001 */ { remix_3_prologue_cel001, 6 },
     /* 002 */ { remix_3_prologue_cel002, 6 },

@@ -4,7 +4,7 @@
 #include "cosmic_dance_anim_cells.inc.c"
 
 // [D_088bc970] Dancer - Turn Right (Input)
-const struct Animation anim_cosmic_dancer_right[] = {
+struct Animation anim_cosmic_dancer_right[] = {
     /* 000 */ { cosmic_dance_cel010, 10 },
     /* 001 */ { cosmic_dance_cel009, 3 },
     /* 002 */ { cosmic_dance_cel008, 3 },
@@ -17,7 +17,7 @@ const struct Animation anim_cosmic_dancer_right[] = {
 };
 
 // [D_088bc9b8] Dancer - Pa-Pa-Pa-Punch (Input)
-const struct Animation anim_cosmic_dancer_punch[] = {
+struct Animation anim_cosmic_dancer_punch[] = {
     /* 000 */ { cosmic_dance_cel011, 10 },
     /* 001 */ { cosmic_dance_cel012, 3 },
     /* 002 */ { cosmic_dance_cel013, 3 },
@@ -30,7 +30,7 @@ const struct Animation anim_cosmic_dancer_punch[] = {
 };
 
 // [D_088bca00] Dancer - Let's Sit Down (Input)
-const struct Animation anim_cosmic_dancer_down[] = {
+struct Animation anim_cosmic_dancer_down[] = {
     /* 000 */ { cosmic_dance_cel020, 10 },
     /* 001 */ { cosmic_dance_cel021, 3 },
     /* 002 */ { cosmic_dance_cel022, 3 },
@@ -43,7 +43,7 @@ const struct Animation anim_cosmic_dancer_down[] = {
 };
 
 // [D_088bca48] Dancer - Let's Sit Down (Input, Reversed)
-const struct Animation anim_cosmic_dancer_down_rev[] = {
+struct Animation anim_cosmic_dancer_down_rev[] = {
     /* 000 */ { cosmic_dance_cel003, 20 },
     /* 001 */ { cosmic_dance_cel024, 4 },
     /* 002 */ { cosmic_dance_cel023, 4 },
@@ -53,13 +53,13 @@ const struct Animation anim_cosmic_dancer_down_rev[] = {
 };
 
 // [D_088bca78] Cosmic Girl - Stand
-const struct Animation anim_cosmic_girl_placeholder1[] = {
+struct Animation anim_cosmic_girl_placeholder1[] = {
     /* 000 */ { cosmic_dance_cel027, 20 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bca88] Speech Bubble - Down
-const struct Animation anim_cosmic_girl_instruct_down[] = {
+struct Animation anim_cosmic_girl_instruct_down[] = {
     /* 000 */ { cosmic_dance_cel031, 20 },
     /* 001 */ { cosmic_dance_cel033, 16 },
     /* 002 */ { cosmic_dance_cel000, 20 },
@@ -67,7 +67,7 @@ const struct Animation anim_cosmic_girl_instruct_down[] = {
 };
 
 // [D_088bcaa8] Speech Bubble - Punch
-const struct Animation anim_cosmic_girl_instruct_punch[] = {
+struct Animation anim_cosmic_girl_instruct_punch[] = {
     /* 000 */ { cosmic_dance_cel032, 20 },
     /* 001 */ { cosmic_dance_cel034, 16 },
     /* 002 */ { cosmic_dance_cel000, 20 },
@@ -75,7 +75,7 @@ const struct Animation anim_cosmic_girl_instruct_punch[] = {
 };
 
 // [D_088bcac8] Speech Bubble - Right
-const struct Animation anim_cosmic_girl_instruct_right[] = {
+struct Animation anim_cosmic_girl_instruct_right[] = {
     /* 000 */ { cosmic_dance_cel032, 20 },
     /* 001 */ { cosmic_dance_cel035, 16 },
     /* 002 */ { cosmic_dance_cel000, 20 },
@@ -83,25 +83,25 @@ const struct Animation anim_cosmic_girl_instruct_right[] = {
 };
 
 // [D_088bcae8] Dancer Spacing Test - Right (Blank)
-const struct Animation anim_cosmic_dancer_test_right[] = {
+struct Animation anim_cosmic_dancer_test_right[] = {
     /* 000 */ { cosmic_dance_cel036, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bcaf8] Dancer Spacing Test - Punch (Blank)
-const struct Animation anim_cosmic_dancer_test_punch[] = {
+struct Animation anim_cosmic_dancer_test_punch[] = {
     /* 000 */ { cosmic_dance_cel037, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bcb08] Dancer Spacing Test - Down (Blank)
-const struct Animation anim_cosmic_dancer_test_down[] = {
+struct Animation anim_cosmic_dancer_test_down[] = {
     /* 000 */ { cosmic_dance_cel038, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bcb18] Dancer Spacing Test - All (Blank)
-const struct Animation anim_cosmic_dancer_test_all[] = {
+struct Animation anim_cosmic_dancer_test_all[] = {
     /* 000 */ { cosmic_dance_cel036, 40 },
     /* 001 */ { cosmic_dance_cel037, 40 },
     /* 002 */ { cosmic_dance_cel038, 40 },
@@ -109,7 +109,7 @@ const struct Animation anim_cosmic_dancer_test_all[] = {
 };
 
 // [D_088bcb38] Dancer - Beat
-const struct Animation anim_cosmic_dancer_beat[] = {
+struct Animation anim_cosmic_dancer_beat[] = {
     /* 000 */ { cosmic_dance_cel001, 3 },
     /* 001 */ { cosmic_dance_cel002, 3 },
     /* 002 */ { cosmic_dance_cel003, 30 },
@@ -117,7 +117,7 @@ const struct Animation anim_cosmic_dancer_beat[] = {
 };
 
 // [D_088bcb58] Dancer - Hurt
-const struct Animation anim_cosmic_dancer_hurt[] = {
+struct Animation anim_cosmic_dancer_hurt[] = {
     /* 000 */ { cosmic_dance_cel003, 3 },
     /* 001 */ { cosmic_dance_cel040, 3 },
     /* 002 */ { cosmic_dance_cel041, 3 },
@@ -127,7 +127,7 @@ const struct Animation anim_cosmic_dancer_hurt[] = {
 };
 
 // [D_088bcb88] Dancer - Turn Right (Cue)
-const struct Animation anim_cosmic_dancer_right_cue[] = {
+struct Animation anim_cosmic_dancer_right_cue[] = {
     /* 000 */ { cosmic_dance_cel044, 3 },
     /* 001 */ { cosmic_dance_cel045, 3 },
     /* 002 */ { cosmic_dance_cel046, 3 },
@@ -136,7 +136,7 @@ const struct Animation anim_cosmic_dancer_right_cue[] = {
 };
 
 // [D_088bcbb0] Dancer - Pa-Pa-Pa-Punch (Cue, Unused Version)
-const struct Animation anim_cosmic_dancer_punch_cue[] = {
+struct Animation anim_cosmic_dancer_punch_cue[] = {
     /* 000 */ { cosmic_dance_cel048, 2 },
     /* 001 */ { cosmic_dance_cel049, 2 },
     /* 002 */ { cosmic_dance_cel050, 2 },
@@ -162,7 +162,7 @@ const struct Animation anim_cosmic_dancer_punch_cue[] = {
 };
 
 // [D_088bcc60] Dancer - Let's Sit Down (Cue)
-const struct Animation anim_cosmic_dancer_down_cue[] = {
+struct Animation anim_cosmic_dancer_down_cue[] = {
     /* 000 */ { cosmic_dance_cel057, 3 },
     /* 001 */ { cosmic_dance_cel058, 3 },
     /* 002 */ { cosmic_dance_cel059, 3 },
@@ -172,7 +172,7 @@ const struct Animation anim_cosmic_dancer_down_cue[] = {
 };
 
 // [D_088bcc90] Dancer - Pa-Pa-Pa-Punch (Cue, Part 1)
-const struct Animation anim_cosmic_dancer_punch_cue1[] = {
+struct Animation anim_cosmic_dancer_punch_cue1[] = {
     /* 000 */ { cosmic_dance_cel050, 3 },
     /* 001 */ { cosmic_dance_cel049, 2 },
     /* 002 */ { cosmic_dance_cel048, 30 },
@@ -180,7 +180,7 @@ const struct Animation anim_cosmic_dancer_punch_cue1[] = {
 };
 
 // [D_088bccb0] Dancer - Pa-Pa-Pa-Punch (Cue, Part 2)
-const struct Animation anim_cosmic_dancer_punch_cue2[] = {
+struct Animation anim_cosmic_dancer_punch_cue2[] = {
     /* 000 */ { cosmic_dance_cel054, 3 },
     /* 001 */ { cosmic_dance_cel053, 2 },
     /* 002 */ { cosmic_dance_cel048, 30 },
@@ -188,7 +188,7 @@ const struct Animation anim_cosmic_dancer_punch_cue2[] = {
 };
 
 // [D_088bccd0] Dancer Impact Effect
-const struct Animation anim_cosmic_dancer_hurt_effect[] = {
+struct Animation anim_cosmic_dancer_hurt_effect[] = {
     /* 000 */ { cosmic_dance_cel062, 2 },
     /* 001 */ { cosmic_dance_cel063, 2 },
     /* 002 */ { cosmic_dance_cel064, 2 },
@@ -197,13 +197,13 @@ const struct Animation anim_cosmic_dancer_hurt_effect[] = {
 };
 
 // [D_088bccf8] Blank
-const struct Animation anim_cosmic_dance_blank1[] = {
+struct Animation anim_cosmic_dance_blank1[] = {
     /* 000 */ { cosmic_dance_cel065, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bcd08] Tutorial Icons
-const struct Animation anim_cosmic_dance_tutorial_icons[] = {
+struct Animation anim_cosmic_dance_tutorial_icons[] = {
     /* 000 */ { cosmic_dance_cel000, 50 },
     /* 001 */ { cosmic_dance_cel066, 50 },
     /* 002 */ { cosmic_dance_cel067, 50 },
@@ -213,7 +213,7 @@ const struct Animation anim_cosmic_dance_tutorial_icons[] = {
 };
 
 // [D_088bcd38] Sparkle
-const struct Animation anim_cosmic_dance_sparkle[] = {
+struct Animation anim_cosmic_dance_sparkle[] = {
     /* 000 */ { cosmic_dance_cel070, 6 },
     /* 001 */ { cosmic_dance_cel071, 6 },
     /* 002 */ { cosmic_dance_cel072, 6 },
@@ -223,7 +223,7 @@ const struct Animation anim_cosmic_dance_sparkle[] = {
 };
 
 // [D_088bcd68] Blank
-const struct Animation anim_cosmic_dance_blank2[] = {
+struct Animation anim_cosmic_dance_blank2[] = {
     /* 000 */ { cosmic_dance_cel075, 20 },
     /* 001 */ { cosmic_dance_cel077, 4 },
     /* 002 */ { cosmic_dance_cel078, 3 },
@@ -232,49 +232,49 @@ const struct Animation anim_cosmic_dance_blank2[] = {
 };
 
 // [D_088bcd90] Cosmic Girl - Stand (Duplicate)
-const struct Animation anim_cosmic_girl_placeholder2[] = {
+struct Animation anim_cosmic_girl_placeholder2[] = {
     /* 000 */ { cosmic_dance_cel027, 20 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bcda0] Cosmic Girl - Stand (Duplicate)
-const struct Animation anim_cosmic_girl_placeholder3[] = {
+struct Animation anim_cosmic_girl_placeholder3[] = {
     /* 000 */ { cosmic_dance_cel027, 20 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bcdb0] Cosmic Girl - Stand (Duplicate)
-const struct Animation anim_cosmic_girl_placeholder4[] = {
+struct Animation anim_cosmic_girl_placeholder4[] = {
     /* 000 */ { cosmic_dance_cel027, 20 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bcdc0] Cosmic Girl - Stand (Duplicate)
-const struct Animation anim_cosmic_girl_placeholder5[] = {
+struct Animation anim_cosmic_girl_placeholder5[] = {
     /* 000 */ { cosmic_dance_cel027, 20 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bcdd0] Cosmic Girl - Stand (Duplicate)
-const struct Animation anim_cosmic_girl_placeholder6[] = {
+struct Animation anim_cosmic_girl_placeholder6[] = {
     /* 000 */ { cosmic_dance_cel027, 20 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bcde0] Cosmic Girl - Stand (Duplicate)
-const struct Animation anim_cosmic_girl_placeholder7[] = {
+struct Animation anim_cosmic_girl_placeholder7[] = {
     /* 000 */ { cosmic_dance_cel027, 20 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bcdf0] Cosmic Girl - Stand (Duplicate)
-const struct Animation anim_cosmic_girl_placeholder8[] = {
+struct Animation anim_cosmic_girl_placeholder8[] = {
     /* 000 */ { cosmic_dance_cel027, 20 },
     /* End */ END_ANIMATION
 };
 
 // [D_088bce00] Cosmic Girl - Beat
-const struct Animation anim_cosmic_girl_beat[] = {
+struct Animation anim_cosmic_girl_beat[] = {
     /* 000 */ { cosmic_dance_cel080, 3 },
     /* 001 */ { cosmic_dance_cel081, 3 },
     /* 002 */ { cosmic_dance_cel082, 30 },
@@ -282,7 +282,7 @@ const struct Animation anim_cosmic_girl_beat[] = {
 };
 
 // [D_088bce20] Cosmic Girl - Turn Right (Input)
-const struct Animation anim_cosmic_girl_right[] = {
+struct Animation anim_cosmic_girl_right[] = {
     /* 000 */ { cosmic_dance_cel083, 10 },
     /* 001 */ { cosmic_dance_cel084, 3 },
     /* 002 */ { cosmic_dance_cel085, 3 },
@@ -295,7 +295,7 @@ const struct Animation anim_cosmic_girl_right[] = {
 };
 
 // [D_088bce68] Cosmic Girl - Turn Right (Cue)
-const struct Animation anim_cosmic_girl_right_cue[] = {
+struct Animation anim_cosmic_girl_right_cue[] = {
     /* 000 */ { cosmic_dance_cel090, 3 },
     /* 001 */ { cosmic_dance_cel091, 3 },
     /* 002 */ { cosmic_dance_cel092, 3 },
@@ -304,7 +304,7 @@ const struct Animation anim_cosmic_girl_right_cue[] = {
 };
 
 // [D_088bce90] Cosmic Girl - Pa-Pa-Pa-Punch (Input)
-const struct Animation anim_cosmic_girl_punch[] = {
+struct Animation anim_cosmic_girl_punch[] = {
     /* 000 */ { cosmic_dance_cel093, 10 },
     /* 001 */ { cosmic_dance_cel094, 3 },
     /* 002 */ { cosmic_dance_cel095, 3 },
@@ -317,7 +317,7 @@ const struct Animation anim_cosmic_girl_punch[] = {
 };
 
 // [D_088bced8] Cosmic Girl - Pa-Pa-Pa-Punch (Cue, Part 1)
-const struct Animation anim_cosmic_girl_punch_cue1[] = {
+struct Animation anim_cosmic_girl_punch_cue1[] = {
     /* 000 */ { cosmic_dance_cel103, 3 },
     /* 001 */ { cosmic_dance_cel102, 2 },
     /* 002 */ { cosmic_dance_cel106, 30 },
@@ -325,7 +325,7 @@ const struct Animation anim_cosmic_girl_punch_cue1[] = {
 };
 
 // [D_088bcef8] Cosmic Girl - Pa-Pa-Pa-Punch (Cue, Part 2)
-const struct Animation anim_cosmic_girl_punch_cue2[] = {
+struct Animation anim_cosmic_girl_punch_cue2[] = {
     /* 000 */ { cosmic_dance_cel104, 3 },
     /* 001 */ { cosmic_dance_cel105, 2 },
     /* 002 */ { cosmic_dance_cel106, 30 },
@@ -333,7 +333,7 @@ const struct Animation anim_cosmic_girl_punch_cue2[] = {
 };
 
 // [D_088bcf18] Cosmic Girl - Let's Sit Down (Input)
-const struct Animation anim_cosmic_girl_down[] = {
+struct Animation anim_cosmic_girl_down[] = {
     /* 000 */ { cosmic_dance_cel107, 10 },
     /* 001 */ { cosmic_dance_cel108, 3 },
     /* 002 */ { cosmic_dance_cel109, 3 },
@@ -346,7 +346,7 @@ const struct Animation anim_cosmic_girl_down[] = {
 };
 
 // [D_088bcf60] Cosmic Girl - Let's Sit Down (Cue)
-const struct Animation anim_cosmic_girl_down_cue[] = {
+struct Animation anim_cosmic_girl_down_cue[] = {
     /* 000 */ { cosmic_dance_cel114, 3 },
     /* 001 */ { cosmic_dance_cel115, 3 },
     /* 002 */ { cosmic_dance_cel116, 3 },
@@ -356,7 +356,7 @@ const struct Animation anim_cosmic_girl_down_cue[] = {
 };
 
 // [D_088bcf90] Cosmic Girl - Beat (Miss)
-const struct Animation anim_cosmic_girl_frown[] = {
+struct Animation anim_cosmic_girl_frown[] = {
     /* 000 */ { cosmic_dance_cel119, 3 },
     /* 001 */ { cosmic_dance_cel120, 3 },
     /* 002 */ { cosmic_dance_cel121, 30 },
@@ -364,7 +364,7 @@ const struct Animation anim_cosmic_girl_frown[] = {
 };
 
 // [D_088bcfb0] Cosmic Girl - Beat (Barely)
-const struct Animation anim_cosmic_girl_glare[] = {
+struct Animation anim_cosmic_girl_glare[] = {
     /* 000 */ { cosmic_dance_cel122, 3 },
     /* 001 */ { cosmic_dance_cel123, 3 },
     /* 002 */ { cosmic_dance_cel124, 30 },

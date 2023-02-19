@@ -4,7 +4,7 @@
 #include "tap_trial_2_anim_cells.inc.c"
 
 // [D_089216c0] Girl - Tap Left
-const struct Animation anim_tap_trial_2_girl_1step[] = {
+struct Animation anim_tap_trial_2_girl_1step[] = {
     /* 000 */ { tap_trial_2_cel065, 2 },
     /* 001 */ { tap_trial_2_cel066, 2 },
     /* 002 */ { tap_trial_2_cel067, 3 },
@@ -18,7 +18,7 @@ const struct Animation anim_tap_trial_2_girl_1step[] = {
 };
 
 // [D_08921710] Girl - Tap Right
-const struct Animation anim_tap_trial_2_girl_2step[] = {
+struct Animation anim_tap_trial_2_girl_2step[] = {
     /* 000 */ { tap_trial_2_cel076, 2 },
     /* 001 */ { tap_trial_2_cel077, 2 },
     /* 002 */ { tap_trial_2_cel078, 3 },
@@ -32,7 +32,7 @@ const struct Animation anim_tap_trial_2_girl_2step[] = {
 };
 
 // [D_08921760] Girl - Beat
-const struct Animation anim_tap_trial_2_girl_beat[] = {
+struct Animation anim_tap_trial_2_girl_beat[] = {
     /* 000 */ { tap_trial_2_cel075, 3 },
     /* 001 */ { tap_trial_2_cel074, 3 },
     /* 002 */ { tap_trial_2_cel073, 24 },
@@ -40,7 +40,7 @@ const struct Animation anim_tap_trial_2_girl_beat[] = {
 };
 
 // [D_08921780] Monkey - Tap Left
-const struct Animation anim_tap_trial_2_monkey_1step[] = {
+struct Animation anim_tap_trial_2_monkey_1step[] = {
     /* 000 */ { tap_trial_2_cel000, 2 },
     /* 001 */ { tap_trial_2_cel003, 2 },
     /* 002 */ { tap_trial_2_cel005, 2 },
@@ -53,7 +53,7 @@ const struct Animation anim_tap_trial_2_monkey_1step[] = {
 };
 
 // [D_089217c8] Monkey - Tap Right
-const struct Animation anim_tap_trial_2_monkey_2step[] = {
+struct Animation anim_tap_trial_2_monkey_2step[] = {
     /* 000 */ { tap_trial_2_cel016, 2 },
     /* 001 */ { tap_trial_2_cel017, 2 },
     /* 002 */ { tap_trial_2_cel019, 2 },
@@ -66,7 +66,7 @@ const struct Animation anim_tap_trial_2_monkey_2step[] = {
 };
 
 // [D_08921810] Monkey - Tap Left (Arms Raised)
-const struct Animation anim_tap_trial_2_monkey_3step_l[] = {
+struct Animation anim_tap_trial_2_monkey_3step_l[] = {
     /* 000 */ { tap_trial_2_cel046, 2 },
     /* 001 */ { tap_trial_2_cel047, 2 },
     /* 002 */ { tap_trial_2_cel048, 2 },
@@ -77,7 +77,7 @@ const struct Animation anim_tap_trial_2_monkey_3step_l[] = {
 };
 
 // [D_08921848] Monkey - Tap Right (Arms Raised)
-const struct Animation anim_tap_trial_2_monkey_3step_r[] = {
+struct Animation anim_tap_trial_2_monkey_3step_r[] = {
     /* 000 */ { tap_trial_2_cel053, 2 },
     /* 001 */ { tap_trial_2_cel054, 2 },
     /* 002 */ { tap_trial_2_cel055, 2 },
@@ -88,7 +88,7 @@ const struct Animation anim_tap_trial_2_monkey_3step_r[] = {
 };
 
 // [D_08921880] Monkey - Call Single Tap
-const struct Animation anim_tap_trial_2_monkey_1cue[] = {
+struct Animation anim_tap_trial_2_monkey_1cue[] = {
     /* 000 */ { tap_trial_2_cel002, 2 },
     /* 001 */ { tap_trial_2_cel004, 2 },
     /* 002 */ { tap_trial_2_cel006, 2 },
@@ -98,7 +98,7 @@ const struct Animation anim_tap_trial_2_monkey_1cue[] = {
 };
 
 // [D_089218b0] Monkey - Call Double Tap
-const struct Animation anim_tap_trial_2_monkey_2cue[] = {
+struct Animation anim_tap_trial_2_monkey_2cue[] = {
     /* 000 */ { tap_trial_2_cel015, 2 },
     /* 001 */ { tap_trial_2_cel018, 2 },
     /* 002 */ { tap_trial_2_cel020, 2 },
@@ -110,7 +110,7 @@ const struct Animation anim_tap_trial_2_monkey_2cue[] = {
 };
 
 // [D_089218f0] Monkey - Step Test
-const struct Animation anim_tap_trial_2_monkey_shimmy[] = {
+struct Animation anim_tap_trial_2_monkey_shimmy[] = {
     /* 000 */ { tap_trial_2_cel008, 20 },
     /* 001 */ { tap_trial_2_cel010, 2 },
     /* 002 */ { tap_trial_2_cel011, 2 },
@@ -121,7 +121,7 @@ const struct Animation anim_tap_trial_2_monkey_shimmy[] = {
 };
 
 // [D_08921928] Monkey - Call Triple Tap
-const struct Animation anim_tap_trial_2_monkey_3cue[] = {
+struct Animation anim_tap_trial_2_monkey_3cue[] = {
     /* 000 */ { tap_trial_2_cel024, 20 },
     /* 001 */ { tap_trial_2_cel025, 4 },
     /* 002 */ { tap_trial_2_cel026, 4 },
@@ -132,7 +132,7 @@ const struct Animation anim_tap_trial_2_monkey_3cue[] = {
 };
 
 // [D_08921960] Monkey - Crouch
-const struct Animation anim_tap_trial_2_monkey_crouch[] = {
+struct Animation anim_tap_trial_2_monkey_crouch[] = {
     /* 000 */ { tap_trial_2_cel011, 20 },
     /* 001 */ { tap_trial_2_cel030, 2 },
     /* 002 */ { tap_trial_2_cel031, 2 },
@@ -144,13 +144,13 @@ const struct Animation anim_tap_trial_2_monkey_crouch[] = {
 };
 
 // [D_089219a0] Monkey - Jump
-const struct Animation anim_tap_trial_2_monkey_jump[] = {
+struct Animation anim_tap_trial_2_monkey_jump[] = {
     /* 000 */ { tap_trial_2_cel039, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_089219b0] Monkey - Final Jump Tap
-const struct Animation anim_tap_trial_2_monkey_pose_step[] = {
+struct Animation anim_tap_trial_2_monkey_pose_step[] = {
     /* 000 */ { tap_trial_2_cel060, 2 },
     /* 001 */ { tap_trial_2_cel095, 2 },
     /* 002 */ { tap_trial_2_cel096, 2 },
@@ -167,7 +167,7 @@ const struct Animation anim_tap_trial_2_monkey_pose_step[] = {
 };
 
 // [D_08921a18] Monkey - Beat
-const struct Animation anim_tap_trial_2_monkey_beat[] = {
+struct Animation anim_tap_trial_2_monkey_beat[] = {
     /* 000 */ { tap_trial_2_cel013, 3 },
     /* 001 */ { tap_trial_2_cel012, 3 },
     /* 002 */ { tap_trial_2_cel011, 24 },
@@ -175,7 +175,7 @@ const struct Animation anim_tap_trial_2_monkey_beat[] = {
 };
 
 // [D_08921a38] Camel - Bedazzled
-const struct Animation anim_tap_trial_2_camel_bedazzled[] = {
+struct Animation anim_tap_trial_2_camel_bedazzled[] = {
     /* 000 */ { tap_trial_2_cel085, 8 },
     /* 001 */ { tap_trial_2_cel084, 8 },
     /* 002 */ { tap_trial_2_cel085, 8 },
@@ -184,13 +184,13 @@ const struct Animation anim_tap_trial_2_camel_bedazzled[] = {
 };
 
 // [D_08921a60] Camel - Neutral
-const struct Animation anim_tap_trial_2_camel_neutral[] = {
+struct Animation anim_tap_trial_2_camel_neutral[] = {
     /* 000 */ { tap_trial_2_cel086, 20 },
     /* End */ END_ANIMATION
 };
 
 // [D_08921a70] Camel - Disappointed
-const struct Animation anim_tap_trial_2_camel_sad[] = {
+struct Animation anim_tap_trial_2_camel_sad[] = {
     /* 000 */ { tap_trial_2_cel087, 4 },
     /* 001 */ { tap_trial_2_cel088, 4 },
     /* 002 */ { tap_trial_2_cel089, 4 },
@@ -202,7 +202,7 @@ const struct Animation anim_tap_trial_2_camel_sad[] = {
 };
 
 // [D_08921ab0] Monkey - Fall to Crouch
-const struct Animation anim_tap_trial_2_monkey_fall[] = {
+struct Animation anim_tap_trial_2_monkey_fall[] = {
     /* 000 */ { tap_trial_2_cel038, 2 },
     /* 001 */ { tap_trial_2_cel037, 2 },
     /* 002 */ { tap_trial_2_cel036, 2 },
@@ -212,7 +212,7 @@ const struct Animation anim_tap_trial_2_monkey_fall[] = {
 };
 
 // [D_08921ae0] Monkey - Crouching Jump Tap
-const struct Animation anim_tap_trial_2_monkey_crouch_step[] = {
+struct Animation anim_tap_trial_2_monkey_crouch_step[] = {
     /* 000 */ { tap_trial_2_cel094, 2 },
     /* 001 */ { tap_trial_2_cel035, 2 },
     /* 002 */ { tap_trial_2_cel034, 2 },
@@ -220,19 +220,19 @@ const struct Animation anim_tap_trial_2_monkey_crouch_step[] = {
 };
 
 // [D_08921b00] Shadow
-const struct Animation anim_tap_trial_2_shadow[] = {
+struct Animation anim_tap_trial_2_shadow[] = {
     /* 000 */ { tap_trial_2_cel109, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08921b10] ("Start to Skip" Tutorial Text)
-const struct Animation anim_tap_trial_2_text_skip_tutorial[] = {
+struct Animation anim_tap_trial_2_text_skip_tutorial[] = {
     /* 000 */ { tap_trial_2_cel112, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_08921b20] Girl - Cue Triple Tap
-const struct Animation anim_tap_trial_2_girl_3cue[] = {
+struct Animation anim_tap_trial_2_girl_3cue[] = {
     /* 000 */ { tap_trial_2_cel113, 20 },
     /* 001 */ { tap_trial_2_cel114, 4 },
     /* 002 */ { tap_trial_2_cel115, 4 },
@@ -243,7 +243,7 @@ const struct Animation anim_tap_trial_2_girl_3cue[] = {
 };
 
 // [D_08921b58] Girl - Tap Left (Arms Raised)
-const struct Animation anim_tap_trial_2_girl_3step_l[] = {
+struct Animation anim_tap_trial_2_girl_3step_l[] = {
     /* 000 */ { tap_trial_2_cel119, 2 },
     /* 001 */ { tap_trial_2_cel120, 2 },
     /* 002 */ { tap_trial_2_cel121, 2 },
@@ -254,7 +254,7 @@ const struct Animation anim_tap_trial_2_girl_3step_l[] = {
 };
 
 // [D_08921b90] Girl - Tap Right (Arms Raised)
-const struct Animation anim_tap_trial_2_girl_3step_r[] = {
+struct Animation anim_tap_trial_2_girl_3step_r[] = {
     /* 000 */ { tap_trial_2_cel124, 2 },
     /* 001 */ { tap_trial_2_cel125, 2 },
     /* 002 */ { tap_trial_2_cel126, 2 },
@@ -265,7 +265,7 @@ const struct Animation anim_tap_trial_2_girl_3step_r[] = {
 };
 
 // [D_08921bc8] Girl - Cue Left Tap
-const struct Animation anim_tap_trial_2_girl_1cue[] = {
+struct Animation anim_tap_trial_2_girl_1cue[] = {
     /* 000 */ { tap_trial_2_cel129, 2 },
     /* 001 */ { tap_trial_2_cel066, 2 },
     /* 002 */ { tap_trial_2_cel067, 2 },
@@ -275,7 +275,7 @@ const struct Animation anim_tap_trial_2_girl_1cue[] = {
 };
 
 // [D_08921bf8] Girl - Cue Right Tap
-const struct Animation anim_tap_trial_2_girl_2cue[] = {
+struct Animation anim_tap_trial_2_girl_2cue[] = {
     /* 000 */ { tap_trial_2_cel130, 2 },
     /* 001 */ { tap_trial_2_cel077, 2 },
     /* 002 */ { tap_trial_2_cel078, 2 },
@@ -285,7 +285,7 @@ const struct Animation anim_tap_trial_2_girl_2cue[] = {
 };
 
 // [D_08921c28] Girl - Crouch
-const struct Animation anim_tap_trial_2_girl_crouch[] = {
+struct Animation anim_tap_trial_2_girl_crouch[] = {
     /* 000 */ { tap_trial_2_cel073, 20 },
     /* 001 */ { tap_trial_2_cel131, 2 },
     /* 002 */ { tap_trial_2_cel132, 2 },
@@ -297,13 +297,13 @@ const struct Animation anim_tap_trial_2_girl_crouch[] = {
 };
 
 // [D_08921c68] Girl - Jump
-const struct Animation anim_tap_trial_2_girl_jump[] = {
+struct Animation anim_tap_trial_2_girl_jump[] = {
     /* 000 */ { tap_trial_2_cel137, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_08921c78] Girl - Final Jump Tap
-const struct Animation anim_tap_trial_2_girl_pose_step[] = {
+struct Animation anim_tap_trial_2_girl_pose_step[] = {
     /* 000 */ { tap_trial_2_cel138, 2 },
     /* 001 */ { tap_trial_2_cel139, 2 },
     /* 002 */ { tap_trial_2_cel140, 2 },
@@ -320,7 +320,7 @@ const struct Animation anim_tap_trial_2_girl_pose_step[] = {
 };
 
 // [D_08921ce0] Girl - Fall to Crouch
-const struct Animation anim_tap_trial_2_girl_fall[] = {
+struct Animation anim_tap_trial_2_girl_fall[] = {
     /* 000 */ { tap_trial_2_cel150, 2 },
     /* 001 */ { tap_trial_2_cel131, 2 },
     /* 002 */ { tap_trial_2_cel132, 2 },
@@ -330,7 +330,7 @@ const struct Animation anim_tap_trial_2_girl_fall[] = {
 };
 
 // [D_08921d10] Girl - Crouching Jump Tap
-const struct Animation anim_tap_trial_2_girl_crouch_step[] = {
+struct Animation anim_tap_trial_2_girl_crouch_step[] = {
     /* 000 */ { tap_trial_2_cel151, 2 },
     /* 001 */ { tap_trial_2_cel136, 2 },
     /* 002 */ { tap_trial_2_cel152, 2 },
@@ -338,7 +338,7 @@ const struct Animation anim_tap_trial_2_girl_crouch_step[] = {
 };
 
 // [D_08921d30] Girl - Miss Crouching Jump Tap
-const struct Animation anim_tap_trial_2_girl_miss_crouch[] = {
+struct Animation anim_tap_trial_2_girl_miss_crouch[] = {
     /* 000 */ { tap_trial_2_cel152, 2 },
     /* 001 */ { tap_trial_2_cel153, 2 },
     /* 002 */ { tap_trial_2_cel154, 3 },
@@ -348,7 +348,7 @@ const struct Animation anim_tap_trial_2_girl_miss_crouch[] = {
 };
 
 // [D_08921d60] Girl - Miss Final Jump Tap
-const struct Animation anim_tap_trial_2_girl_miss_pose[] = {
+struct Animation anim_tap_trial_2_girl_miss_pose[] = {
     /* 000 */ { tap_trial_2_cel157, 2 },
     /* 001 */ { tap_trial_2_cel158, 2 },
     /* 002 */ { tap_trial_2_cel159, 3 },

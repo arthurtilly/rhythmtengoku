@@ -4,7 +4,7 @@
 #include "rat_race_prologue_anim_cells.inc.c"
 
 // [D_088b3d1c] Rat
-const struct Animation anim_rat_race_prologue_rat[] = {
+struct Animation anim_rat_race_prologue_rat[] = {
     /* 000 */ { rat_race_prologue_cel000, 10 },
     /* 001 */ { rat_race_prologue_cel001, 30 },
     /* 002 */ { rat_race_prologue_cel002, 3 },
@@ -15,7 +15,7 @@ const struct Animation anim_rat_race_prologue_rat[] = {
 };
 
 // [D_088b3d54] Title
-const struct Animation anim_rat_race_prologue_title[] = {
+struct Animation anim_rat_race_prologue_title[] = {
     /* 000 */ { rat_race_prologue_cel009, 10 },
     /* 001 */ { rat_race_prologue_cel015, 10 },
     /* 002 */ { rat_race_prologue_cel014, 10 },

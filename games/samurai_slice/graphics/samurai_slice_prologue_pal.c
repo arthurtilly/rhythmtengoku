@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088b0018] Palette
-const Palette samurai_slice_prologue_pal[] = {
+Palette samurai_slice_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x009800),
         /* 01 */ TO_RGB555(0x000000),

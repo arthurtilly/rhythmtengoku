@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088ad424] OBJ Palette
-const Palette spaceball_prologue_obj_pal[] = {
+Palette spaceball_prologue_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x30A0F8),
         /* 01 */ TO_RGB555(0x000000),
@@ -42,7 +42,7 @@ const Palette spaceball_prologue_obj_pal[] = {
 };
 
 // [D_088ad464] BG Palette
-const Palette spaceball_prologue_bg_pal[] = {
+Palette spaceball_prologue_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xB80090),
         /* 01 */ TO_RGB555(0x000000),

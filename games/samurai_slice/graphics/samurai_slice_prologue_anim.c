@@ -4,7 +4,7 @@
 #include "samurai_slice_prologue_anim_cells.inc.c"
 
 // [D_088affe0] Title
-const struct Animation anim_samurai_slice_prologue_title[] = {
+struct Animation anim_samurai_slice_prologue_title[] = {
     /* 000 */ { samurai_slice_prologue_cel001, 10 },
     /* 001 */ { samurai_slice_prologue_cel002, 9 },
     /* 002 */ { samurai_slice_prologue_cel003, 8 },

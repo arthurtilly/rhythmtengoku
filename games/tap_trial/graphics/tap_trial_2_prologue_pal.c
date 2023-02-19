@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088b7d08] OBJ Palette
-const Palette tap_trial_2_prologue_obj_pal[] = {
+Palette tap_trial_2_prologue_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00C000),
         /* 01 */ TO_RGB555(0x000000),
@@ -24,7 +24,7 @@ const Palette tap_trial_2_prologue_obj_pal[] = {
 };
 
 // [D_088b7d28] BG Palette
-const Palette tap_trial_2_prologue_bg_pal[] = {
+Palette tap_trial_2_prologue_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00D048),
         /* 01 */ TO_RGB555(0x401000),

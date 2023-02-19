@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0890dbc8] <description>
-const Palette rhythm_toys_menu_pal[] = {
+Palette rhythm_toys_menu_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xB89800),
         /* 01 */ TO_RGB555(0x000000),

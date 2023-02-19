@@ -75,15 +75,15 @@ extern const char D_0805a670[];
 
 
 // Engine Definition Data:
-extern const struct Animation **marching_anim_table[];
-extern const struct CompressedGraphics *marching_buffered_textures[];
+extern struct Animation **marching_anim_table[];
+extern struct CompressedGraphics *marching_buffered_textures[];
 extern struct GraphicsTable *marching_gfx_tables[];
 extern struct Vector2 D_089e5368[][4];
 extern struct MarchingSfxData marching_sfx_table[][12];
 
 
 // Functions:
-extern const struct Animation *func_08034100(u32 anim); // Get Animation
+extern struct Animation *func_08034100(u32 anim); // Get Animation
 extern void marching_init_gfx3(void); // Graphics Init. 3
 extern void marching_init_gfx2(void); // Graphics Init. 2
 extern void marching_init_gfx1(void); // Graphics Init. 1

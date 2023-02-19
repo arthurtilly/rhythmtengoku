@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088b438c] Palette
-const Palette ninja_reincarnate_prologue_pal[] = {
+Palette ninja_reincarnate_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x68D0F8),
         /* 01 */ TO_RGB555(0x283030),

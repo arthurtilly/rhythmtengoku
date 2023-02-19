@@ -40,17 +40,17 @@ struct WizardsWaltzCue {
 
 
 // OAM Animations:
-extern const struct Animation anim_wizard_fly[];
-extern const struct Animation anim_wizard_cast_spell[];
-extern const struct Animation anim_wizard_sparkle[];
-extern const struct Animation anim_wizards_waltz_sprout_eaten[];
-extern const struct Animation anim_wizards_waltz_sprout_grow[];
-extern const struct Animation anim_wizards_waltz_sprout_appear[];
-extern const struct Animation anim_wizards_waltz_girl_idle[];
-extern const struct Animation anim_wizards_waltz_girl_happy[];
-extern const struct Animation anim_wizards_waltz_girl_upset[];
-extern const struct Animation anim_wizards_waltz_shadow[];
-extern const struct Animation anim_wizards_waltz_sprout_appear_tutorial[];
+extern struct Animation anim_wizard_fly[];
+extern struct Animation anim_wizard_cast_spell[];
+extern struct Animation anim_wizard_sparkle[];
+extern struct Animation anim_wizards_waltz_sprout_eaten[];
+extern struct Animation anim_wizards_waltz_sprout_grow[];
+extern struct Animation anim_wizards_waltz_sprout_appear[];
+extern struct Animation anim_wizards_waltz_girl_idle[];
+extern struct Animation anim_wizards_waltz_girl_happy[];
+extern struct Animation anim_wizards_waltz_girl_upset[];
+extern struct Animation anim_wizards_waltz_shadow[];
+extern struct Animation anim_wizards_waltz_sprout_appear_tutorial[];
 
 
 // Palettes:
@@ -63,7 +63,7 @@ extern const struct Animation anim_wizards_waltz_sprout_appear_tutorial[];
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *wizards_waltz_buffered_textures[];
+extern struct CompressedGraphics *wizards_waltz_buffered_textures[];
 extern struct GraphicsTable gfx_table_wizards_waltz[];
 
 

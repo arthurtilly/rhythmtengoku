@@ -4,13 +4,13 @@
 #include "showtime_prologue_anim_cells.inc.c"
 
 // [D_088ae3e4] Title
-const struct Animation anim_showtime_prologue_title[] = {
+struct Animation anim_showtime_prologue_title[] = {
     /* 000 */ { showtime_prologue_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088ae3f4] Penguin
-const struct Animation anim_showtime_prologue_penguin[] = {
+struct Animation anim_showtime_prologue_penguin[] = {
     /* 000 */ { showtime_prologue_cel001, 4 },
     /* 001 */ { showtime_prologue_cel002, 4 },
     /* 002 */ { showtime_prologue_cel003, 4 },

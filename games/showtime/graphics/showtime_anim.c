@@ -4,7 +4,7 @@
 #include "showtime_anim_cells.inc.c"
 
 // [D_088cb47c] Penguin
-const struct Animation anim_showtime_penguin_beat[] = {
+struct Animation anim_showtime_penguin_beat[] = {
     /* 000 */ { showtime_cel000, 4 },
     /* 001 */ { showtime_cel003, 4 },
     /* 002 */ { showtime_cel002, 4 },
@@ -13,7 +13,7 @@ const struct Animation anim_showtime_penguin_beat[] = {
 };
 
 // [D_088cb4a4] Block
-const struct Animation anim_showtime_block[] = {
+struct Animation anim_showtime_block[] = {
     /* 000 */ { showtime_cel010, 4 },
     /* 001 */ { showtime_cel009, 4 },
     /* 002 */ { showtime_cel008, 4 },
@@ -22,7 +22,7 @@ const struct Animation anim_showtime_block[] = {
 };
 
 // [D_088cb4cc] Blank (similar animation timing to the Block above)
-const struct Animation anim_showtime_blank1[] = {
+struct Animation anim_showtime_blank1[] = {
     /* 000 */ { showtime_cel019, 4 },
     /* 001 */ { showtime_cel017, 4 },
     /* 002 */ { showtime_cel016, 4 },
@@ -31,13 +31,13 @@ const struct Animation anim_showtime_blank1[] = {
 };
 
 // [D_088cb4f4] Ball
-const struct Animation anim_showtime_ball[] = {
+struct Animation anim_showtime_ball[] = {
     /* 000 */ { showtime_cel021, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088cb504] Water
-const struct Animation anim_showtime_water[] = {
+struct Animation anim_showtime_water[] = {
     /* 000 */ { showtime_cel027, 10 },
     /* 001 */ { showtime_cel026, 10 },
     /* 002 */ { showtime_cel025, 10 },
@@ -52,7 +52,7 @@ const struct Animation anim_showtime_water[] = {
 };
 
 // [D_088cb55c] Ball Splash
-const struct Animation anim_showtime_splash_ball[] = {
+struct Animation anim_showtime_splash_ball[] = {
     /* 000 */ { showtime_cel028, 3 },
     /* 001 */ { showtime_cel029, 3 },
     /* 002 */ { showtime_cel030, 3 },
@@ -67,7 +67,7 @@ const struct Animation anim_showtime_splash_ball[] = {
 };
 
 // [D_088cb5b4] Penguin Splash
-const struct Animation anim_showtime_splash_penguin[] = {
+struct Animation anim_showtime_splash_penguin[] = {
     /* 000 */ { showtime_cel037, 3 },
     /* 001 */ { showtime_cel038, 3 },
     /* 002 */ { showtime_cel039, 3 },
@@ -80,7 +80,7 @@ const struct Animation anim_showtime_splash_penguin[] = {
 };
 
 // [D_088cb5fc] Penguin - Leap
-const struct Animation anim_showtime_penguin_jump[] = {
+struct Animation anim_showtime_penguin_jump[] = {
     /* 000 */ { showtime_cel056, 4 },
     /* 001 */ { showtime_cel057, 4 },
     /* 002 */ { showtime_cel058, 4 },
@@ -91,7 +91,7 @@ const struct Animation anim_showtime_penguin_jump[] = {
 };
 
 // [D_088cb634] Penguin - Prepare
-const struct Animation anim_showtime_penguin_jump_prepare[] = {
+struct Animation anim_showtime_penguin_jump_prepare[] = {
     /* 000 */ { showtime_cel045, 20 },
     /* 001 */ { showtime_cel046, 2 },
     /* 002 */ { showtime_cel047, 2 },
@@ -101,7 +101,7 @@ const struct Animation anim_showtime_penguin_jump_prepare[] = {
 };
 
 // [D_088cb664] Penguin - Slide
-const struct Animation anim_showtime_penguin_slide[] = {
+struct Animation anim_showtime_penguin_slide[] = {
     /* 000 */ { showtime_cel050, 2 },
     /* 001 */ { showtime_cel051, 2 },
     /* 002 */ { showtime_cel052, 2 },
@@ -116,7 +116,7 @@ const struct Animation anim_showtime_penguin_slide[] = {
 };
 
 // [D_088cb6bc] Blank
-const struct Animation anim_showtime_blank2[] = {
+struct Animation anim_showtime_blank2[] = {
     /* 000 */ { showtime_cel015, 3 },
     /* 001 */ { showtime_cel018, 3 },
     /* 002 */ { showtime_cel020, 20 },
@@ -124,7 +124,7 @@ const struct Animation anim_showtime_blank2[] = {
 };
 
 // [D_088cb6dc] Big Penguin
-const struct Animation anim_showtime_big_penguin_beat[] = {
+struct Animation anim_showtime_big_penguin_beat[] = {
     /* 000 */ { showtime_cel064, 4 },
     /* 001 */ { showtime_cel061, 4 },
     /* 002 */ { showtime_cel062, 4 },
@@ -133,7 +133,7 @@ const struct Animation anim_showtime_big_penguin_beat[] = {
 };
 
 // [D_088cb704] Monkey - Swing Hammer
-const struct Animation anim_showtime_monkey_swing[] = {
+struct Animation anim_showtime_monkey_swing[] = {
     /* 000 */ { showtime_cel065, 1 },
     /* 001 */ { showtime_cel066, 2 },
     /* 002 */ { showtime_cel067, 2 },
@@ -147,7 +147,7 @@ const struct Animation anim_showtime_monkey_swing[] = {
 };
 
 // [D_088cb754] Monkey - Beat (Hammer Held Down)
-const struct Animation anim_showtime_monkey_beat1[] = {
+struct Animation anim_showtime_monkey_beat1[] = {
     /* 000 */ { showtime_cel074, 3 },
     /* 001 */ { showtime_cel075, 3 },
     /* 002 */ { showtime_cel076, 20 },
@@ -155,7 +155,7 @@ const struct Animation anim_showtime_monkey_beat1[] = {
 };
 
 // [D_088cb774] Launch Mechanism
-const struct Animation anim_showtime_launcher[] = {
+struct Animation anim_showtime_launcher[] = {
     /* 000 */ { showtime_cel077, 1 },
     /* 001 */ { showtime_cel078, 2 },
     /* 002 */ { showtime_cel079, 2 },
@@ -169,7 +169,7 @@ const struct Animation anim_showtime_launcher[] = {
 };
 
 // [D_088cb7c4] Big Penguin - Leap
-const struct Animation anim_showtime_big_penguin_jump[] = {
+struct Animation anim_showtime_big_penguin_jump[] = {
     /* 000 */ { showtime_cel081, 4 },
     /* 001 */ { showtime_cel082, 4 },
     /* 002 */ { showtime_cel083, 4 },
@@ -180,7 +180,7 @@ const struct Animation anim_showtime_big_penguin_jump[] = {
 };
 
 // [D_088cb7fc] Big Penguin - Prepare
-const struct Animation anim_showtime_big_penguin_jump_prepare[] = {
+struct Animation anim_showtime_big_penguin_jump_prepare[] = {
     /* 000 */ { showtime_cel087, 20 },
     /* 001 */ { showtime_cel088, 2 },
     /* 002 */ { showtime_cel089, 2 },
@@ -190,7 +190,7 @@ const struct Animation anim_showtime_big_penguin_jump_prepare[] = {
 };
 
 // [D_088cb82c] Monkey - Beat (Hammer Held Down -> Hammer Held Up)
-const struct Animation anim_showtime_monkey_raise_hammer[] = {
+struct Animation anim_showtime_monkey_raise_hammer[] = {
     /* 000 */ { showtime_cel074, 2 },
     /* 001 */ { showtime_cel075, 2 },
     /* 002 */ { showtime_cel076, 2 },
@@ -204,7 +204,7 @@ const struct Animation anim_showtime_monkey_raise_hammer[] = {
 };
 
 // [D_088cb87c] Monkey - Beat (Hammer Held Up)
-const struct Animation anim_showtime_monkey_beat2[] = {
+struct Animation anim_showtime_monkey_beat2[] = {
     /* 000 */ { showtime_cel097, 3 },
     /* 001 */ { showtime_cel098, 3 },
     /* 002 */ { showtime_cel099, 20 },
@@ -212,7 +212,7 @@ const struct Animation anim_showtime_monkey_beat2[] = {
 };
 
 // [D_088cb89c] Bubble
-const struct Animation anim_showtime_bubble[] = {
+struct Animation anim_showtime_bubble[] = {
     /* 000 */ { showtime_cel103, 4 },
     /* 001 */ { showtime_cel104, 4 },
     /* 002 */ { showtime_cel105, 4 },
@@ -220,7 +220,7 @@ const struct Animation anim_showtime_bubble[] = {
 };
 
 // [D_088cb8bc] Penguin - Catch Parachute Ball
-const struct Animation anim_showtime_penguin_catch_para[] = {
+struct Animation anim_showtime_penguin_catch_para[] = {
     /* 000 */ { showtime_cel114, 4 },
     /* 001 */ { showtime_cel115, 4 },
     /* 002 */ { showtime_cel116, 6 },
@@ -229,7 +229,7 @@ const struct Animation anim_showtime_penguin_catch_para[] = {
 };
 
 // [D_088cb8e4] Penguin - Float with Parachute Ball
-const struct Animation anim_showtime_penguin_float_para[] = {
+struct Animation anim_showtime_penguin_float_para[] = {
     /* 000 */ { showtime_cel117, 6 },
     /* 001 */ { showtime_cel118, 6 },
     /* 002 */ { showtime_cel119, 6 },
@@ -237,7 +237,7 @@ const struct Animation anim_showtime_penguin_float_para[] = {
 };
 
 // [D_088cb904] Penguin - Catch Ball (parachute opens later in animation, but this aspect is unused?)
-const struct Animation anim_showtime_penguin_catch[] = {
+struct Animation anim_showtime_penguin_catch[] = {
     /* 000 */ { showtime_cel108, 40 },
     /* 001 */ { showtime_cel109, 1 },
     /* 002 */ { showtime_cel110, 1 },
@@ -248,7 +248,7 @@ const struct Animation anim_showtime_penguin_catch[] = {
 };
 
 // [D_088cb93c] Big Penguin - Slide
-const struct Animation anim_showtime_big_penguin_slide[] = {
+struct Animation anim_showtime_big_penguin_slide[] = {
     /* 000 */ { showtime_cel120, 2 },
     /* 001 */ { showtime_cel121, 2 },
     /* 002 */ { showtime_cel122, 2 },
@@ -263,7 +263,7 @@ const struct Animation anim_showtime_big_penguin_slide[] = {
 };
 
 // [D_088cb994] Block (Remix 3 Version)
-const struct Animation anim_showtime_block_pink[] = {
+struct Animation anim_showtime_block_pink[] = {
     /* 000 */ { showtime_cel014, 4 },
     /* 001 */ { showtime_cel013, 4 },
     /* 002 */ { showtime_cel012, 4 },
@@ -272,7 +272,7 @@ const struct Animation anim_showtime_block_pink[] = {
 };
 
 // [D_088cb9bc] Monkey - Beat (Sad, Hammer Held Down)
-const struct Animation anim_showtime_monkey_sad_beat1[] = {
+struct Animation anim_showtime_monkey_sad_beat1[] = {
     /* 000 */ { showtime_cel126, 3 },
     /* 001 */ { showtime_cel127, 3 },
     /* 002 */ { showtime_cel128, 20 },
@@ -280,7 +280,7 @@ const struct Animation anim_showtime_monkey_sad_beat1[] = {
 };
 
 // [D_088cb9dc] Monkey - Beat (Sad, Hammer Held Up)
-const struct Animation anim_showtime_monkey_sad_beat2[] = {
+struct Animation anim_showtime_monkey_sad_beat2[] = {
     /* 000 */ { showtime_cel129, 3 },
     /* 001 */ { showtime_cel130, 3 },
     /* 002 */ { showtime_cel131, 20 },
@@ -288,7 +288,7 @@ const struct Animation anim_showtime_monkey_sad_beat2[] = {
 };
 
 // [D_088cb9fc] Monkey - Swing Hammer (Sad)
-const struct Animation anim_showtime_monkey_sad_swing[] = {
+struct Animation anim_showtime_monkey_sad_swing[] = {
     /* 000 */ { showtime_cel132, 1 },
     /* 001 */ { showtime_cel133, 2 },
     /* 002 */ { showtime_cel134, 2 },

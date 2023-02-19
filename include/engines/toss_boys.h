@@ -81,10 +81,10 @@ enum TossBoyActionsEnum {
 
 
 // Engine Definition Data:
-extern const struct Animation **toss_boys_anim_table[];
+extern struct Animation **toss_boys_anim_table[];
 extern struct DrumTechInstrument toss_boys_drumtech_bank[];
 extern u16 toss_boys_button_masks[];
-extern const struct Animation *D_089e8660[][3];
+extern struct Animation *D_089e8660[][3];
 extern s8 D_089e8690[][3];
 extern struct Vector2 D_089e869c[];
 extern struct Vector2 D_089e86a8[];
@@ -109,7 +109,7 @@ extern void func_0803e884(); // Engine Event 0x08 (?)
 // extern ? func_0803e8b4(?);
 // extern ? func_0803e908(?);
 // extern ? func_0803e960(?);
-extern const struct Animation *toss_boys_get_anim(u32 anim); // Get Animation
+extern struct Animation *toss_boys_get_anim(u32 anim); // Get Animation
 extern void func_0803e9b0(); // Engine Event 0x03 (?)
 extern void func_0803ea08(); // Engine Event 0x04 (?)
 extern void toss_boys_init_gfx3(void); // Graphics Init. 3

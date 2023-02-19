@@ -4,19 +4,19 @@
   /* SNEAKY SPIRITS - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08bd2a00; // BG Textures
-extern const struct CompressedGraphics D_08bd2b58; // BG Map
-extern const struct CompressedGraphics D_08bd2cf8; // BG Map
-extern const struct CompressedGraphics D_08bd245c; // OBJ Textures
-extern const Palette sneaky_spirits_1_pal[];
-extern const Palette sneaky_spirits_2_pal[];
+extern struct CompressedGraphics D_08bd2a00; // BG Textures
+extern struct CompressedGraphics D_08bd2b58; // BG Map
+extern struct CompressedGraphics D_08bd2cf8; // BG Map
+extern struct CompressedGraphics D_08bd245c; // OBJ Textures
+extern Palette sneaky_spirits_1_pal[];
+extern Palette sneaky_spirits_2_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089de6e0] Buffered Textures List
-const struct CompressedGraphics *sneaky_spirits_buffered_textures[] = {
+struct CompressedGraphics *sneaky_spirits_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

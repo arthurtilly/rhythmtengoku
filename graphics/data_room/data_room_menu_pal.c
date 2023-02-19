@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_08901ac0] <description>
-const Palette data_room_menu_pal[] = {
+Palette data_room_menu_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),

@@ -4,7 +4,7 @@
 #include "rap_men_prologue_anim_cells.inc.c"
 
 // [D_088b37d8] Title
-const struct Animation anim_rap_men_prologue_title[] = {
+struct Animation anim_rap_men_prologue_title[] = {
     /* 000 */ { rap_men_prologue_cel000, 100 },
     /* 001 */ { rap_men_prologue_cel001, 6 },
     /* 002 */ { rap_men_prologue_cel002, 6 },

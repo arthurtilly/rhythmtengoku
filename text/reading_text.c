@@ -12,9 +12,9 @@
 /* Reading */
 
 
-extern const struct CompressedGraphics D_08cd29ac;
-extern const struct CompressedGraphics D_08cd2cec;
-extern const Palette D_0890b330[];
+extern struct CompressedGraphics D_08cd29ac;
+extern struct CompressedGraphics D_08cd2cec;
+extern Palette D_0890b330[];
 
 // [D_08058f00] Reading - Graphics Table ?
 const struct GraphicsTable D_08058f00[] = {

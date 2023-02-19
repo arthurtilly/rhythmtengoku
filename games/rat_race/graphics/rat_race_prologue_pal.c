@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088b3dbc] Palette
-const Palette rat_race_prologue_pal[] = {
+Palette rat_race_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xC0C0C0),
         /* 01 */ TO_RGB555(0x303030),

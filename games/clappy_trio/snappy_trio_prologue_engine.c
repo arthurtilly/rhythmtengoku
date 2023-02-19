@@ -4,17 +4,17 @@
   /* PROLOGUE (THE SNAPPY TRIO) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08bf5ce8;
-extern const struct CompressedGraphics D_08bf60c8;
-extern const struct CompressedGraphics D_08bf374c;
-extern const Palette snappy_trio_prologue_pal[];
+extern struct CompressedGraphics D_08bf5ce8;
+extern struct CompressedGraphics D_08bf60c8;
+extern struct CompressedGraphics D_08bf374c;
+extern Palette snappy_trio_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089eb1c8] Buffered Textures List
-const struct CompressedGraphics *snappy_trio_prologue_buffered_textures[] = {
+struct CompressedGraphics *snappy_trio_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

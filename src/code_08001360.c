@@ -466,7 +466,7 @@ void func_08002a6c(struct GfxTableLoader *info, const struct GraphicsTable *gfxT
 // Update GfxTableLoader
 void func_08002b10(struct GfxTableLoader *info) {
     const struct GraphicsTable *gfxTable;
-    const struct CompressedGraphics *comp;
+    struct CompressedGraphics *comp;
     const struct Huffman *huffman;
     s32 processLimit;
     u32 size;

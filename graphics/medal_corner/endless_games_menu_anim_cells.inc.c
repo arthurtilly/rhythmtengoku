@@ -1,7 +1,7 @@
 // do not rename these
 
 // [D_089003dc]
-const AnimationCel endless_games_menu_cel000[] = {
+AnimationCel endless_games_menu_cel000[] = {
     /* Len */ 5,
     /* 000 */ 0x4002, 0x81de, 0x0099,
     /* 001 */ 0x4002, 0x81fe, 0x00d9,
@@ -11,7 +11,7 @@ const AnimationCel endless_games_menu_cel000[] = {
 };
 
 // [D_089003fc]
-const AnimationCel endless_games_menu_cel001[] = {
+AnimationCel endless_games_menu_cel001[] = {
     /* Len */ 5,
     /* 000 */ 0x00e4, 0xc1dd, 0x2000,
     /* 001 */ 0x0005, 0x0015, 0x209f,
@@ -21,13 +21,13 @@ const AnimationCel endless_games_menu_cel001[] = {
 };
 
 // [D_0890041c]
-const AnimationCel endless_games_menu_cel002[] = {
+AnimationCel endless_games_menu_cel002[] = {
     /* Len */ 1,
     /* 000 */ 0x00ea, 0xc1df, 0x0008
 };
 
 // [D_08900424]
-const AnimationCel endless_games_menu_cel003[] = {
+AnimationCel endless_games_menu_cel003[] = {
     /* Len */ 5,
     /* 000 */ 0x40e0, 0xc1e4, 0x5018,
     /* 001 */ 0x40d8, 0x01ec, 0x509d,

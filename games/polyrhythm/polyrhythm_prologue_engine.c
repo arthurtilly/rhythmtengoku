@@ -4,17 +4,17 @@
   /* PROLOGUE (POLYRHYTHM) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c0212c;
-extern const struct CompressedGraphics D_08c02628;
-extern const struct CompressedGraphics D_08c00010;
-extern const Palette polyrhythm_prologue_pal[];
+extern struct CompressedGraphics D_08c0212c;
+extern struct CompressedGraphics D_08c02628;
+extern struct CompressedGraphics D_08c00010;
+extern Palette polyrhythm_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089eb9bc] Buffered Textures List
-const struct CompressedGraphics *polyrhythm_prologue_buffered_textures[] = {
+struct CompressedGraphics *polyrhythm_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

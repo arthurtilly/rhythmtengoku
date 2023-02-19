@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0890011c] <description>
-const Palette library_pal[] = {
+Palette library_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x409080),
         /* 01 */ TO_RGB555(0x000000),

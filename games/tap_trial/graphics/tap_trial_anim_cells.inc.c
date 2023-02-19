@@ -1,7 +1,7 @@
 // do not rename these
 
 // [D_08914b70]
-const AnimationCel tap_trial_cel000[] = {
+AnimationCel tap_trial_cel000[] = {
     /* Len */ 11,
     /* 000 */ 0x00db, 0x41f0, 0x0204,
     /* 001 */ 0x40eb, 0x01f0, 0x02fc,
@@ -17,7 +17,7 @@ const AnimationCel tap_trial_cel000[] = {
 };
 
 // [D_08914bb4]
-const AnimationCel tap_trial_cel001[] = {
+AnimationCel tap_trial_cel001[] = {
     /* Len */ 7,
     /* 000 */ 0x00db, 0x41f0, 0x0204,
     /* 001 */ 0x40eb, 0x01f0, 0x02fc,
@@ -29,7 +29,7 @@ const AnimationCel tap_trial_cel001[] = {
 };
 
 // [D_08914be0]
-const AnimationCel tap_trial_cel002[] = {
+AnimationCel tap_trial_cel002[] = {
     /* Len */ 7,
     /* 000 */ 0x00db, 0x41f0, 0x0218,
     /* 001 */ 0x40eb, 0x01f0, 0x02fa,
@@ -41,7 +41,7 @@ const AnimationCel tap_trial_cel002[] = {
 };
 
 // [D_08914c0c]
-const AnimationCel tap_trial_cel003[] = {
+AnimationCel tap_trial_cel003[] = {
     /* Len */ 6,
     /* 000 */ 0x00d9, 0x41f1, 0x0204,
     /* 001 */ 0x40e9, 0x01f1, 0x02fc,
@@ -52,7 +52,7 @@ const AnimationCel tap_trial_cel003[] = {
 };
 
 // [D_08914c32]
-const AnimationCel tap_trial_cel004[] = {
+AnimationCel tap_trial_cel004[] = {
     /* Len */ 6,
     /* 000 */ 0x00d9, 0x41f1, 0x0218,
     /* 001 */ 0x40e9, 0x01f1, 0x02fa,
@@ -63,7 +63,7 @@ const AnimationCel tap_trial_cel004[] = {
 };
 
 // [D_08914c58]
-const AnimationCel tap_trial_cel005[] = {
+AnimationCel tap_trial_cel005[] = {
     /* Len */ 6,
     /* 000 */ 0x00d8, 0x41f1, 0x0204,
     /* 001 */ 0x40e8, 0x01f1, 0x02fc,
@@ -74,7 +74,7 @@ const AnimationCel tap_trial_cel005[] = {
 };
 
 // [D_08914c7e]
-const AnimationCel tap_trial_cel006[] = {
+AnimationCel tap_trial_cel006[] = {
     /* Len */ 6,
     /* 000 */ 0x00d8, 0x41f1, 0x0218,
     /* 001 */ 0x40e8, 0x01f1, 0x02fa,
@@ -85,7 +85,7 @@ const AnimationCel tap_trial_cel006[] = {
 };
 
 // [D_08914ca4]
-const AnimationCel tap_trial_cel007[] = {
+AnimationCel tap_trial_cel007[] = {
     /* Len */ 5,
     /* 000 */ 0x00d4, 0x41f2, 0x0204,
     /* 001 */ 0x40e4, 0x01f2, 0x02fc,
@@ -95,7 +95,7 @@ const AnimationCel tap_trial_cel007[] = {
 };
 
 // [D_08914cc4]
-const AnimationCel tap_trial_cel008[] = {
+AnimationCel tap_trial_cel008[] = {
     /* Len */ 5,
     /* 000 */ 0x40e3, 0x01f2, 0x02fc,
     /* 001 */ 0x40e3, 0x1002, 0x02fc,
@@ -105,7 +105,7 @@ const AnimationCel tap_trial_cel008[] = {
 };
 
 // [D_08914ce4]
-const AnimationCel tap_trial_cel009[] = {
+AnimationCel tap_trial_cel009[] = {
     /* Len */ 5,
     /* 000 */ 0x00d6, 0x41f1, 0x0204,
     /* 001 */ 0x40e6, 0x01f1, 0x02fc,
@@ -115,7 +115,7 @@ const AnimationCel tap_trial_cel009[] = {
 };
 
 // [D_08914d04]
-const AnimationCel tap_trial_cel010[] = {
+AnimationCel tap_trial_cel010[] = {
     /* Len */ 6,
     /* 000 */ 0x00d8, 0x41f1, 0x0204,
     /* 001 */ 0x40e8, 0x01f1, 0x02fc,
@@ -126,7 +126,7 @@ const AnimationCel tap_trial_cel010[] = {
 };
 
 // [D_08914d2a]
-const AnimationCel tap_trial_cel011[] = {
+AnimationCel tap_trial_cel011[] = {
     /* Len */ 12,
     /* 000 */ 0x00d7, 0x41f0, 0x0204,
     /* 001 */ 0x40e7, 0x01f0, 0x02fc,
@@ -143,7 +143,7 @@ const AnimationCel tap_trial_cel011[] = {
 };
 
 // [D_08914d74]
-const AnimationCel tap_trial_cel012[] = {
+AnimationCel tap_trial_cel012[] = {
     /* Len */ 12,
     /* 000 */ 0x00d8, 0x41f0, 0x0204,
     /* 001 */ 0x40e8, 0x01f0, 0x02fc,
@@ -160,7 +160,7 @@ const AnimationCel tap_trial_cel012[] = {
 };
 
 // [D_08914dbe]
-const AnimationCel tap_trial_cel013[] = {
+AnimationCel tap_trial_cel013[] = {
     /* Len */ 12,
     /* 000 */ 0x00da, 0x41f0, 0x0204,
     /* 001 */ 0x40ea, 0x01f0, 0x02fc,
@@ -177,7 +177,7 @@ const AnimationCel tap_trial_cel013[] = {
 };
 
 // [D_08914e08]
-const AnimationCel tap_trial_cel014[] = {
+AnimationCel tap_trial_cel014[] = {
     /* Len */ 7,
     /* 000 */ 0x00db, 0x41ef, 0x0204,
     /* 001 */ 0x00db, 0x51ff, 0x0204,
@@ -189,7 +189,7 @@ const AnimationCel tap_trial_cel014[] = {
 };
 
 // [D_08914e34]
-const AnimationCel tap_trial_cel015[] = {
+AnimationCel tap_trial_cel015[] = {
     /* Len */ 7,
     /* 000 */ 0x00db, 0x41ef, 0x0218,
     /* 001 */ 0x40eb, 0x01ef, 0x02fa,
@@ -201,7 +201,7 @@ const AnimationCel tap_trial_cel015[] = {
 };
 
 // [D_08914e60]
-const AnimationCel tap_trial_cel016[] = {
+AnimationCel tap_trial_cel016[] = {
     /* Len */ 10,
     /* 000 */ 0x00db, 0x41ef, 0x0204,
     /* 001 */ 0x00db, 0x51ff, 0x0204,
@@ -216,7 +216,7 @@ const AnimationCel tap_trial_cel016[] = {
 };
 
 // [D_08914e9e]
-const AnimationCel tap_trial_cel017[] = {
+AnimationCel tap_trial_cel017[] = {
     /* Len */ 6,
     /* 000 */ 0x00d9, 0x51ff, 0x0204,
     /* 001 */ 0x40e9, 0x11ff, 0x02fc,
@@ -227,7 +227,7 @@ const AnimationCel tap_trial_cel017[] = {
 };
 
 // [D_08914ec4]
-const AnimationCel tap_trial_cel018[] = {
+AnimationCel tap_trial_cel018[] = {
     /* Len */ 6,
     /* 000 */ 0x00d9, 0x41ef, 0x0218,
     /* 001 */ 0x40e9, 0x01ef, 0x02fa,
@@ -238,7 +238,7 @@ const AnimationCel tap_trial_cel018[] = {
 };
 
 // [D_08914eea]
-const AnimationCel tap_trial_cel019[] = {
+AnimationCel tap_trial_cel019[] = {
     /* Len */ 6,
     /* 000 */ 0x00d8, 0x41ef, 0x0204,
     /* 001 */ 0x40e8, 0x01ef, 0x02fc,
@@ -249,7 +249,7 @@ const AnimationCel tap_trial_cel019[] = {
 };
 
 // [D_08914f10]
-const AnimationCel tap_trial_cel020[] = {
+AnimationCel tap_trial_cel020[] = {
     /* Len */ 6,
     /* 000 */ 0x00d8, 0x41ef, 0x0218,
     /* 001 */ 0x40e8, 0x01ef, 0x02fa,
@@ -260,7 +260,7 @@ const AnimationCel tap_trial_cel020[] = {
 };
 
 // [D_08914f36]
-const AnimationCel tap_trial_cel021[] = {
+AnimationCel tap_trial_cel021[] = {
     /* Len */ 5,
     /* 000 */ 0x00d4, 0x51fd, 0x0204,
     /* 001 */ 0x40e4, 0x11fd, 0x02fc,
@@ -270,7 +270,7 @@ const AnimationCel tap_trial_cel021[] = {
 };
 
 // [D_08914f56]
-const AnimationCel tap_trial_cel022[] = {
+AnimationCel tap_trial_cel022[] = {
     /* Len */ 5,
     /* 000 */ 0x40e3, 0x01ed, 0x02fc,
     /* 001 */ 0x40e3, 0x11fd, 0x02fc,
@@ -280,7 +280,7 @@ const AnimationCel tap_trial_cel022[] = {
 };
 
 // [D_08914f76]
-const AnimationCel tap_trial_cel023[] = {
+AnimationCel tap_trial_cel023[] = {
     /* Len */ 5,
     /* 000 */ 0x00d4, 0x41ed, 0x0218,
     /* 001 */ 0x40e4, 0x01ed, 0x02fa,
@@ -290,7 +290,7 @@ const AnimationCel tap_trial_cel023[] = {
 };
 
 // [D_08914f96]
-const AnimationCel tap_trial_cel024[] = {
+AnimationCel tap_trial_cel024[] = {
     /* Len */ 12,
     /* 000 */ 0x00d8, 0x41f0, 0x0218,
     /* 001 */ 0x40e8, 0x01f0, 0x02fa,
@@ -307,7 +307,7 @@ const AnimationCel tap_trial_cel024[] = {
 };
 
 // [D_08914fe0]
-const AnimationCel tap_trial_cel025[] = {
+AnimationCel tap_trial_cel025[] = {
     /* Len */ 12,
     /* 000 */ 0x00d8, 0x41f0, 0x0206,
     /* 001 */ 0x40e8, 0x01f0, 0x0310,
@@ -324,7 +324,7 @@ const AnimationCel tap_trial_cel025[] = {
 };
 
 // [D_0891502a]
-const AnimationCel tap_trial_cel026[] = {
+AnimationCel tap_trial_cel026[] = {
     /* Len */ 12,
     /* 000 */ 0x00d9, 0x41f0, 0x0206,
     /* 001 */ 0x40e9, 0x01f0, 0x0310,
@@ -341,7 +341,7 @@ const AnimationCel tap_trial_cel026[] = {
 };
 
 // [D_08915074]
-const AnimationCel tap_trial_cel027[] = {
+AnimationCel tap_trial_cel027[] = {
     /* Len */ 12,
     /* 000 */ 0x00da, 0x41f0, 0x0206,
     /* 001 */ 0x40ea, 0x01f0, 0x0310,
@@ -358,7 +358,7 @@ const AnimationCel tap_trial_cel027[] = {
 };
 
 // [D_089150be]
-const AnimationCel tap_trial_cel028[] = {
+AnimationCel tap_trial_cel028[] = {
     /* Len */ 12,
     /* 000 */ 0x00db, 0x41f0, 0x0206,
     /* 001 */ 0x40eb, 0x01f0, 0x0310,
@@ -375,7 +375,7 @@ const AnimationCel tap_trial_cel028[] = {
 };
 
 // [D_08915108]
-const AnimationCel tap_trial_cel029[] = {
+AnimationCel tap_trial_cel029[] = {
     /* Len */ 12,
     /* 000 */ 0x00dc, 0x41f0, 0x0206,
     /* 001 */ 0x40ec, 0x01f0, 0x0310,
@@ -392,7 +392,7 @@ const AnimationCel tap_trial_cel029[] = {
 };
 
 // [D_08915152]
-const AnimationCel tap_trial_cel030[] = {
+AnimationCel tap_trial_cel030[] = {
     /* Len */ 8,
     /* 000 */ 0x00dd, 0x41f0, 0x0204,
     /* 001 */ 0x40ed, 0x01f0, 0x02fc,
@@ -405,7 +405,7 @@ const AnimationCel tap_trial_cel030[] = {
 };
 
 // [D_08915184]
-const AnimationCel tap_trial_cel031[] = {
+AnimationCel tap_trial_cel031[] = {
     /* Len */ 8,
     /* 000 */ 0x00e1, 0x41f0, 0x0204,
     /* 001 */ 0x40f1, 0x01f0, 0x02fc,
@@ -418,7 +418,7 @@ const AnimationCel tap_trial_cel031[] = {
 };
 
 // [D_089151b6]
-const AnimationCel tap_trial_cel032[] = {
+AnimationCel tap_trial_cel032[] = {
     /* Len */ 8,
     /* 000 */ 0x00e2, 0x41f0, 0x0204,
     /* 001 */ 0x40f2, 0x01f0, 0x02fc,
@@ -431,7 +431,7 @@ const AnimationCel tap_trial_cel032[] = {
 };
 
 // [D_089151e8]
-const AnimationCel tap_trial_cel033[] = {
+AnimationCel tap_trial_cel033[] = {
     /* Len */ 8,
     /* 000 */ 0x00e3, 0x41f0, 0x0204,
     /* 001 */ 0x40f3, 0x01f0, 0x02fc,
@@ -444,7 +444,7 @@ const AnimationCel tap_trial_cel033[] = {
 };
 
 // [D_0891521a]
-const AnimationCel tap_trial_cel034[] = {
+AnimationCel tap_trial_cel034[] = {
     /* Len */ 8,
     /* 000 */ 0x00e4, 0x41f0, 0x0204,
     /* 001 */ 0x40f4, 0x01f0, 0x02fc,
@@ -457,7 +457,7 @@ const AnimationCel tap_trial_cel034[] = {
 };
 
 // [D_0891524c]
-const AnimationCel tap_trial_cel035[] = {
+AnimationCel tap_trial_cel035[] = {
     /* Len */ 8,
     /* 000 */ 0x00e5, 0x41f0, 0x0204,
     /* 001 */ 0x40f5, 0x01f0, 0x02fc,
@@ -470,7 +470,7 @@ const AnimationCel tap_trial_cel035[] = {
 };
 
 // [D_0891527e]
-const AnimationCel tap_trial_cel036[] = {
+AnimationCel tap_trial_cel036[] = {
     /* Len */ 8,
     /* 000 */ 0x00de, 0x41f0, 0x0204,
     /* 001 */ 0x40ee, 0x01f0, 0x02fc,
@@ -483,7 +483,7 @@ const AnimationCel tap_trial_cel036[] = {
 };
 
 // [D_089152b0]
-const AnimationCel tap_trial_cel037[] = {
+AnimationCel tap_trial_cel037[] = {
     /* Len */ 8,
     /* 000 */ 0x00da, 0x41f0, 0x0204,
     /* 001 */ 0x40ea, 0x01f0, 0x02fc,
@@ -496,7 +496,7 @@ const AnimationCel tap_trial_cel037[] = {
 };
 
 // [D_089152e2]
-const AnimationCel tap_trial_cel038[] = {
+AnimationCel tap_trial_cel038[] = {
     /* Len */ 10,
     /* 000 */ 0x00d8, 0x41f0, 0x029a,
     /* 001 */ 0x00d8, 0x5000, 0x029a,
@@ -511,7 +511,7 @@ const AnimationCel tap_trial_cel038[] = {
 };
 
 // [D_08915320]
-const AnimationCel tap_trial_cel039[] = {
+AnimationCel tap_trial_cel039[] = {
     /* Len */ 12,
     /* 000 */ 0x80c3, 0x5008, 0x0186,
     /* 001 */ 0x80c3, 0x41f0, 0x0186,
@@ -528,7 +528,7 @@ const AnimationCel tap_trial_cel039[] = {
 };
 
 // [D_0891536a]
-const AnimationCel tap_trial_cel040[] = {
+AnimationCel tap_trial_cel040[] = {
     /* Len */ 12,
     /* 000 */ 0x80af, 0x5008, 0x0186,
     /* 001 */ 0x80af, 0x41f0, 0x0186,
@@ -545,7 +545,7 @@ const AnimationCel tap_trial_cel040[] = {
 };
 
 // [D_089153b4]
-const AnimationCel tap_trial_cel041[] = {
+AnimationCel tap_trial_cel041[] = {
     /* Len */ 12,
     /* 000 */ 0x80ae, 0x5008, 0x0186,
     /* 001 */ 0x80ae, 0x41f0, 0x0186,
@@ -562,7 +562,7 @@ const AnimationCel tap_trial_cel041[] = {
 };
 
 // [D_089153fe]
-const AnimationCel tap_trial_cel042[] = {
+AnimationCel tap_trial_cel042[] = {
     /* Len */ 12,
     /* 000 */ 0x80ad, 0x5008, 0x0186,
     /* 001 */ 0x80ad, 0x41f0, 0x0186,
@@ -579,7 +579,7 @@ const AnimationCel tap_trial_cel042[] = {
 };
 
 // [D_08915448]
-const AnimationCel tap_trial_cel043[] = {
+AnimationCel tap_trial_cel043[] = {
     /* Len */ 12,
     /* 000 */ 0x80ac, 0x5008, 0x0186,
     /* 001 */ 0x80ac, 0x41f0, 0x0186,
@@ -596,7 +596,7 @@ const AnimationCel tap_trial_cel043[] = {
 };
 
 // [D_08915492]
-const AnimationCel tap_trial_cel044[] = {
+AnimationCel tap_trial_cel044[] = {
     /* Len */ 5,
     /* 000 */ 0x00d3, 0x41f2, 0x0204,
     /* 001 */ 0x40e3, 0x01f2, 0x02fc,
@@ -606,7 +606,7 @@ const AnimationCel tap_trial_cel044[] = {
 };
 
 // [D_089154b2]
-const AnimationCel tap_trial_cel045[] = {
+AnimationCel tap_trial_cel045[] = {
     /* Len */ 5,
     /* 000 */ 0x00d3, 0x41ed, 0x0204,
     /* 001 */ 0x40e3, 0x01ed, 0x02fc,
@@ -616,7 +616,7 @@ const AnimationCel tap_trial_cel045[] = {
 };
 
 // [D_089154d2]
-const AnimationCel tap_trial_cel046[] = {
+AnimationCel tap_trial_cel046[] = {
     /* Len */ 15,
     /* 000 */ 0x00db, 0x41ef, 0x0206,
     /* 001 */ 0x40eb, 0x01ef, 0x0310,
@@ -636,7 +636,7 @@ const AnimationCel tap_trial_cel046[] = {
 };
 
 // [D_0891552e]
-const AnimationCel tap_trial_cel047[] = {
+AnimationCel tap_trial_cel047[] = {
     /* Len */ 12,
     /* 000 */ 0x00d9, 0x41f0, 0x0206,
     /* 001 */ 0x40e9, 0x01f0, 0x0310,
@@ -653,7 +653,7 @@ const AnimationCel tap_trial_cel047[] = {
 };
 
 // [D_08915578]
-const AnimationCel tap_trial_cel048[] = {
+AnimationCel tap_trial_cel048[] = {
     /* Len */ 12,
     /* 000 */ 0x00d8, 0x41f0, 0x0206,
     /* 001 */ 0x40e8, 0x01f0, 0x0310,
@@ -670,7 +670,7 @@ const AnimationCel tap_trial_cel048[] = {
 };
 
 // [D_089155c2]
-const AnimationCel tap_trial_cel049[] = {
+AnimationCel tap_trial_cel049[] = {
     /* Len */ 9,
     /* 000 */ 0x00d4, 0x41f2, 0x0206,
     /* 001 */ 0x40e4, 0x01f2, 0x0310,
@@ -684,7 +684,7 @@ const AnimationCel tap_trial_cel049[] = {
 };
 
 // [D_089155fa]
-const AnimationCel tap_trial_cel050[] = {
+AnimationCel tap_trial_cel050[] = {
     /* Len */ 9,
     /* 000 */ 0x00d3, 0x41f2, 0x0206,
     /* 001 */ 0x40e3, 0x01f2, 0x0310,
@@ -698,7 +698,7 @@ const AnimationCel tap_trial_cel050[] = {
 };
 
 // [D_08915632]
-const AnimationCel tap_trial_cel051[] = {
+AnimationCel tap_trial_cel051[] = {
     /* Len */ 9,
     /* 000 */ 0x00d6, 0x41f1, 0x0206,
     /* 001 */ 0x40e6, 0x01f1, 0x0310,
@@ -712,7 +712,7 @@ const AnimationCel tap_trial_cel051[] = {
 };
 
 // [D_0891566a]
-const AnimationCel tap_trial_cel052[] = {
+AnimationCel tap_trial_cel052[] = {
     /* Len */ 10,
     /* 000 */ 0x00d8, 0x41f1, 0x0206,
     /* 001 */ 0x40e8, 0x01f1, 0x0310,
@@ -727,7 +727,7 @@ const AnimationCel tap_trial_cel052[] = {
 };
 
 // [D_089156a8]
-const AnimationCel tap_trial_cel053[] = {
+AnimationCel tap_trial_cel053[] = {
     /* Len */ 15,
     /* 000 */ 0x00db, 0x5001, 0x0206,
     /* 001 */ 0x40eb, 0x1001, 0x0310,
@@ -747,7 +747,7 @@ const AnimationCel tap_trial_cel053[] = {
 };
 
 // [D_08915704]
-const AnimationCel tap_trial_cel054[] = {
+AnimationCel tap_trial_cel054[] = {
     /* Len */ 12,
     /* 000 */ 0x00d9, 0x5000, 0x0206,
     /* 001 */ 0x40e9, 0x1000, 0x0310,
@@ -764,7 +764,7 @@ const AnimationCel tap_trial_cel054[] = {
 };
 
 // [D_0891574e]
-const AnimationCel tap_trial_cel055[] = {
+AnimationCel tap_trial_cel055[] = {
     /* Len */ 12,
     /* 000 */ 0x00d8, 0x5000, 0x0206,
     /* 001 */ 0x40e8, 0x1000, 0x0310,
@@ -781,7 +781,7 @@ const AnimationCel tap_trial_cel055[] = {
 };
 
 // [D_08915798]
-const AnimationCel tap_trial_cel056[] = {
+AnimationCel tap_trial_cel056[] = {
     /* Len */ 9,
     /* 000 */ 0x00d4, 0x51fe, 0x0206,
     /* 001 */ 0x40e4, 0x11fe, 0x0310,
@@ -795,7 +795,7 @@ const AnimationCel tap_trial_cel056[] = {
 };
 
 // [D_089157d0]
-const AnimationCel tap_trial_cel057[] = {
+AnimationCel tap_trial_cel057[] = {
     /* Len */ 9,
     /* 000 */ 0x00d3, 0x51fe, 0x0206,
     /* 001 */ 0x40e3, 0x11fe, 0x0310,
@@ -809,7 +809,7 @@ const AnimationCel tap_trial_cel057[] = {
 };
 
 // [D_08915808]
-const AnimationCel tap_trial_cel058[] = {
+AnimationCel tap_trial_cel058[] = {
     /* Len */ 9,
     /* 000 */ 0x00d6, 0x51ff, 0x0206,
     /* 001 */ 0x40e6, 0x11ff, 0x0310,
@@ -823,7 +823,7 @@ const AnimationCel tap_trial_cel058[] = {
 };
 
 // [D_08915840]
-const AnimationCel tap_trial_cel059[] = {
+AnimationCel tap_trial_cel059[] = {
     /* Len */ 10,
     /* 000 */ 0x00d8, 0x51ff, 0x0206,
     /* 001 */ 0x40e8, 0x11ff, 0x0310,
@@ -838,7 +838,7 @@ const AnimationCel tap_trial_cel059[] = {
 };
 
 // [D_0891587e]
-const AnimationCel tap_trial_cel060[] = {
+AnimationCel tap_trial_cel060[] = {
     /* Len */ 15,
     /* 000 */ 0x40f0, 0x81f0, 0x0191,
     /* 001 */ 0x80e0, 0x0008, 0x02ca,
@@ -858,7 +858,7 @@ const AnimationCel tap_trial_cel060[] = {
 };
 
 // [D_089158da]
-const AnimationCel tap_trial_cel061[] = {
+AnimationCel tap_trial_cel061[] = {
     /* Len */ 9,
     /* 000 */ 0x80d8, 0x0008, 0x0198,
     /* 001 */ 0x80d8, 0x01f0, 0x0195,
@@ -872,7 +872,7 @@ const AnimationCel tap_trial_cel061[] = {
 };
 
 // [D_08915912]
-const AnimationCel tap_trial_cel062[] = {
+AnimationCel tap_trial_cel062[] = {
     /* Len */ 10,
     /* 000 */ 0x40f0, 0x81f0, 0x0191,
     /* 001 */ 0x80e0, 0x11f0, 0x02ca,
@@ -887,7 +887,7 @@ const AnimationCel tap_trial_cel062[] = {
 };
 
 // [D_08915950]
-const AnimationCel tap_trial_cel063[] = {
+AnimationCel tap_trial_cel063[] = {
     /* Len */ 9,
     /* 000 */ 0x80d8, 0x11f0, 0x0198,
     /* 001 */ 0x80d8, 0x1008, 0x0195,
@@ -901,7 +901,7 @@ const AnimationCel tap_trial_cel063[] = {
 };
 
 // [D_08915988]
-const AnimationCel tap_trial_cel064[] = {
+AnimationCel tap_trial_cel064[] = {
     /* Len */ 10,
     /* 000 */ 0x40f0, 0x81f0, 0x0191,
     /* 001 */ 0x80e0, 0x0008, 0x02ca,
@@ -916,7 +916,7 @@ const AnimationCel tap_trial_cel064[] = {
 };
 
 // [D_089159c6]
-const AnimationCel tap_trial_cel065[] = {
+AnimationCel tap_trial_cel065[] = {
     /* Len */ 17,
     /* 000 */ 0x00c9, 0x41f0, 0x0246,
     /* 001 */ 0x00d0, 0x41f4, 0x0244,
@@ -938,7 +938,7 @@ const AnimationCel tap_trial_cel065[] = {
 };
 
 // [D_08915a2e]
-const AnimationCel tap_trial_cel066[] = {
+AnimationCel tap_trial_cel066[] = {
     /* Len */ 10,
     /* 000 */ 0x00c8, 0x41f2, 0x0254,
     /* 001 */ 0x00bd, 0x41ea, 0x020c,
@@ -953,7 +953,7 @@ const AnimationCel tap_trial_cel066[] = {
 };
 
 // [D_08915a6c]
-const AnimationCel tap_trial_cel067[] = {
+AnimationCel tap_trial_cel067[] = {
     /* Len */ 10,
     /* 000 */ 0x00c8, 0x41f8, 0x0250,
     /* 001 */ 0x00ba, 0x41ed, 0x020c,
@@ -968,7 +968,7 @@ const AnimationCel tap_trial_cel067[] = {
 };
 
 // [D_08915aaa]
-const AnimationCel tap_trial_cel068[] = {
+AnimationCel tap_trial_cel068[] = {
     /* Len */ 11,
     /* 000 */ 0x00c8, 0x4000, 0x01dd,
     /* 001 */ 0x40d8, 0x01f9, 0x030c,
@@ -984,7 +984,7 @@ const AnimationCel tap_trial_cel068[] = {
 };
 
 // [D_08915aee]
-const AnimationCel tap_trial_cel069[] = {
+AnimationCel tap_trial_cel069[] = {
     /* Len */ 12,
     /* 000 */ 0x00c5, 0x41ff, 0x019d,
     /* 001 */ 0x40d5, 0x01ff, 0x02f8,
@@ -1001,7 +1001,7 @@ const AnimationCel tap_trial_cel069[] = {
 };
 
 // [D_08915b38]
-const AnimationCel tap_trial_cel070[] = {
+AnimationCel tap_trial_cel070[] = {
     /* Len */ 10,
     /* 000 */ 0x80c3, 0x81ff, 0x011c,
     /* 001 */ 0x80c3, 0x81f8, 0x0108,
@@ -1016,7 +1016,7 @@ const AnimationCel tap_trial_cel070[] = {
 };
 
 // [D_08915b76]
-const AnimationCel tap_trial_cel071[] = {
+AnimationCel tap_trial_cel071[] = {
     /* Len */ 10,
     /* 000 */ 0x80c6, 0x91ec, 0x010a,
     /* 001 */ 0x80c6, 0x8004, 0x010a,
@@ -1031,7 +1031,7 @@ const AnimationCel tap_trial_cel071[] = {
 };
 
 // [D_08915bb4]
-const AnimationCel tap_trial_cel072[] = {
+AnimationCel tap_trial_cel072[] = {
     /* Len */ 10,
     /* 000 */ 0x80c7, 0x8004, 0x010a,
     /* 001 */ 0x00f0, 0x4000, 0x0212,
@@ -1046,7 +1046,7 @@ const AnimationCel tap_trial_cel072[] = {
 };
 
 // [D_08915bf2]
-const AnimationCel tap_trial_cel073[] = {
+AnimationCel tap_trial_cel073[] = {
     /* Len */ 10,
     /* 000 */ 0x80c9, 0x8000, 0x0112,
     /* 001 */ 0x80c8, 0x81f8, 0x0108,
@@ -1061,7 +1061,7 @@ const AnimationCel tap_trial_cel073[] = {
 };
 
 // [D_08915c30]
-const AnimationCel tap_trial_cel074[] = {
+AnimationCel tap_trial_cel074[] = {
     /* Len */ 10,
     /* 000 */ 0x00b9, 0x41f0, 0x020c,
     /* 001 */ 0x00b9, 0x5000, 0x020c,
@@ -1076,7 +1076,7 @@ const AnimationCel tap_trial_cel074[] = {
 };
 
 // [D_08915c6e]
-const AnimationCel tap_trial_cel075[] = {
+AnimationCel tap_trial_cel075[] = {
     /* Len */ 10,
     /* 000 */ 0x00ba, 0x41f0, 0x020c,
     /* 001 */ 0x00ba, 0x5000, 0x020c,
@@ -1091,7 +1091,7 @@ const AnimationCel tap_trial_cel075[] = {
 };
 
 // [D_08915cac]
-const AnimationCel tap_trial_cel076[] = {
+AnimationCel tap_trial_cel076[] = {
     /* Len */ 17,
     /* 000 */ 0x00c9, 0x5000, 0x0246,
     /* 001 */ 0x00d0, 0x51fc, 0x0244,
@@ -1113,7 +1113,7 @@ const AnimationCel tap_trial_cel076[] = {
 };
 
 // [D_08915d14]
-const AnimationCel tap_trial_cel077[] = {
+AnimationCel tap_trial_cel077[] = {
     /* Len */ 10,
     /* 000 */ 0x00c8, 0x51fe, 0x0254,
     /* 001 */ 0x00bd, 0x5006, 0x020c,
@@ -1128,7 +1128,7 @@ const AnimationCel tap_trial_cel077[] = {
 };
 
 // [D_08915d52]
-const AnimationCel tap_trial_cel078[] = {
+AnimationCel tap_trial_cel078[] = {
     /* Len */ 10,
     /* 000 */ 0x00c8, 0x51f8, 0x0250,
     /* 001 */ 0x00ba, 0x5003, 0x020c,
@@ -1143,7 +1143,7 @@ const AnimationCel tap_trial_cel078[] = {
 };
 
 // [D_08915d90]
-const AnimationCel tap_trial_cel079[] = {
+AnimationCel tap_trial_cel079[] = {
     /* Len */ 11,
     /* 000 */ 0x00c8, 0x51f0, 0x01dd,
     /* 001 */ 0x40d8, 0x11f7, 0x030c,
@@ -1159,7 +1159,7 @@ const AnimationCel tap_trial_cel079[] = {
 };
 
 // [D_08915dd4]
-const AnimationCel tap_trial_cel080[] = {
+AnimationCel tap_trial_cel080[] = {
     /* Len */ 12,
     /* 000 */ 0x00c5, 0x51f1, 0x019d,
     /* 001 */ 0x40d5, 0x11f1, 0x02f8,
@@ -1176,7 +1176,7 @@ const AnimationCel tap_trial_cel080[] = {
 };
 
 // [D_08915e1e]
-const AnimationCel tap_trial_cel081[] = {
+AnimationCel tap_trial_cel081[] = {
     /* Len */ 10,
     /* 000 */ 0x80c3, 0x91f1, 0x011c,
     /* 001 */ 0x80c3, 0x91f8, 0x0108,
@@ -1191,7 +1191,7 @@ const AnimationCel tap_trial_cel081[] = {
 };
 
 // [D_08915e5c]
-const AnimationCel tap_trial_cel082[] = {
+AnimationCel tap_trial_cel082[] = {
     /* Len */ 10,
     /* 000 */ 0x80c6, 0x8004, 0x010a,
     /* 001 */ 0x80c6, 0x91ec, 0x010a,
@@ -1206,7 +1206,7 @@ const AnimationCel tap_trial_cel082[] = {
 };
 
 // [D_08915e9a]
-const AnimationCel tap_trial_cel083[] = {
+AnimationCel tap_trial_cel083[] = {
     /* Len */ 10,
     /* 000 */ 0x80c7, 0x8004, 0x010a,
     /* 001 */ 0x80c7, 0x91ec, 0x010a,
@@ -1221,7 +1221,7 @@ const AnimationCel tap_trial_cel083[] = {
 };
 
 // [D_08915ed8]
-const AnimationCel tap_trial_cel084[] = {
+AnimationCel tap_trial_cel084[] = {
     /* Len */ 11,
     /* 000 */ 0x80a8, 0x4010, 0x018c,
     /* 001 */ 0x80c8, 0x0010, 0x02c6,
@@ -1237,7 +1237,7 @@ const AnimationCel tap_trial_cel084[] = {
 };
 
 // [D_08915f1c]
-const AnimationCel tap_trial_cel085[] = {
+AnimationCel tap_trial_cel085[] = {
     /* Len */ 14,
     /* 000 */ 0x80b8, 0x0010, 0x02cd,
     /* 001 */ 0x80b8, 0x0018, 0x02cc,
@@ -1256,7 +1256,7 @@ const AnimationCel tap_trial_cel085[] = {
 };
 
 // [D_08915f72]
-const AnimationCel tap_trial_cel086[] = {
+AnimationCel tap_trial_cel086[] = {
     /* Len */ 11,
     /* 000 */ 0x80b8, 0x4010, 0x018e,
     /* 001 */ 0x80a8, 0x0010, 0x018c,
@@ -1272,7 +1272,7 @@ const AnimationCel tap_trial_cel086[] = {
 };
 
 // [D_08915fb6]
-const AnimationCel tap_trial_cel087[] = {
+AnimationCel tap_trial_cel087[] = {
     /* Len */ 11,
     /* 000 */ 0x80b8, 0x4010, 0x0188,
     /* 001 */ 0x80b8, 0x4018, 0x0187,
@@ -1288,7 +1288,7 @@ const AnimationCel tap_trial_cel087[] = {
 };
 
 // [D_08915ffa]
-const AnimationCel tap_trial_cel088[] = {
+AnimationCel tap_trial_cel088[] = {
     /* Len */ 11,
     /* 000 */ 0x80b9, 0x4010, 0x0188,
     /* 001 */ 0x80b9, 0x4018, 0x0187,
@@ -1304,7 +1304,7 @@ const AnimationCel tap_trial_cel088[] = {
 };
 
 // [D_0891603e]
-const AnimationCel tap_trial_cel089[] = {
+AnimationCel tap_trial_cel089[] = {
     /* Len */ 15,
     /* 000 */ 0x00d0, 0x501c, 0x0286,
     /* 001 */ 0x40e0, 0x101c, 0x0322,
@@ -1324,7 +1324,7 @@ const AnimationCel tap_trial_cel089[] = {
 };
 
 // [D_0891609a]
-const AnimationCel tap_trial_cel090[] = {
+AnimationCel tap_trial_cel090[] = {
     /* Len */ 15,
     /* 000 */ 0x00d4, 0x501c, 0x0286,
     /* 001 */ 0x40e4, 0x101c, 0x0322,
@@ -1344,7 +1344,7 @@ const AnimationCel tap_trial_cel090[] = {
 };
 
 // [D_089160f6]
-const AnimationCel tap_trial_cel091[] = {
+AnimationCel tap_trial_cel091[] = {
     /* Len */ 13,
     /* 000 */ 0x80bc, 0x4010, 0x0188,
     /* 001 */ 0x80bc, 0x4018, 0x0187,
@@ -1362,7 +1362,7 @@ const AnimationCel tap_trial_cel091[] = {
 };
 
 // [D_08916146]
-const AnimationCel tap_trial_cel092[] = {
+AnimationCel tap_trial_cel092[] = {
     /* Len */ 13,
     /* 000 */ 0x00e4, 0x400c, 0x0284,
     /* 001 */ 0x00e4, 0x501c, 0x0284,
@@ -1380,7 +1380,7 @@ const AnimationCel tap_trial_cel092[] = {
 };
 
 // [D_08916196]
-const AnimationCel tap_trial_cel093[] = {
+AnimationCel tap_trial_cel093[] = {
     /* Len */ 11,
     /* 000 */ 0x80bd, 0x4010, 0x0188,
     /* 001 */ 0x80bd, 0x4018, 0x0187,
@@ -1396,7 +1396,7 @@ const AnimationCel tap_trial_cel093[] = {
 };
 
 // [D_089161da]
-const AnimationCel tap_trial_cel094[] = {
+AnimationCel tap_trial_cel094[] = {
     /* Len */ 13,
     /* 000 */ 0x00e5, 0x41f0, 0x0204,
     /* 001 */ 0x40f5, 0x01f0, 0x02fc,
@@ -1414,7 +1414,7 @@ const AnimationCel tap_trial_cel094[] = {
 };
 
 // [D_0891622a]
-const AnimationCel tap_trial_cel095[] = {
+AnimationCel tap_trial_cel095[] = {
     /* Len */ 8,
     /* 000 */ 0x80e0, 0x0008, 0x0037,
     /* 001 */ 0x80d8, 0x01f0, 0x0014,
@@ -1427,7 +1427,7 @@ const AnimationCel tap_trial_cel095[] = {
 };
 
 // [D_0891625c]
-const AnimationCel tap_trial_cel096[] = {
+AnimationCel tap_trial_cel096[] = {
     /* Len */ 7,
     /* 000 */ 0x80e0, 0x0008, 0x0013,
     /* 001 */ 0x80e0, 0x01f0, 0x0010,
@@ -1439,7 +1439,7 @@ const AnimationCel tap_trial_cel096[] = {
 };
 
 // [D_08916288]
-const AnimationCel tap_trial_cel097[] = {
+AnimationCel tap_trial_cel097[] = {
     /* Len */ 5,
     /* 000 */ 0x00d5, 0x5000, 0x028e,
     /* 001 */ 0x00d5, 0x41f0, 0x028e,
@@ -1449,7 +1449,7 @@ const AnimationCel tap_trial_cel097[] = {
 };
 
 // [D_089162a8]
-const AnimationCel tap_trial_cel098[] = {
+AnimationCel tap_trial_cel098[] = {
     /* Len */ 5,
     /* 000 */ 0x00e2, 0x01f8, 0x0311,
     /* 001 */ 0x00e2, 0x1000, 0x0311,
@@ -1459,7 +1459,7 @@ const AnimationCel tap_trial_cel098[] = {
 };
 
 // [D_089162c8]
-const AnimationCel tap_trial_cel099[] = {
+AnimationCel tap_trial_cel099[] = {
     /* Len */ 5,
     /* 000 */ 0x00d6, 0x51ff, 0x0204,
     /* 001 */ 0x40e6, 0x11ff, 0x02fc,
@@ -1469,7 +1469,7 @@ const AnimationCel tap_trial_cel099[] = {
 };
 
 // [D_089162e8]
-const AnimationCel tap_trial_cel100[] = {
+AnimationCel tap_trial_cel100[] = {
     /* Len */ 6,
     /* 000 */ 0x00d8, 0x51ff, 0x0204,
     /* 001 */ 0x40e8, 0x11ff, 0x02fc,
@@ -1480,7 +1480,7 @@ const AnimationCel tap_trial_cel100[] = {
 };
 
 // [D_0891630e]
-const AnimationCel tap_trial_cel101[] = {
+AnimationCel tap_trial_cel101[] = {
     /* Len */ 3,
     /* 000 */ 0x00f8, 0x41e9, 0x0280,
     /* 001 */ 0x80f8, 0x01f9, 0x02c3,
@@ -1488,14 +1488,14 @@ const AnimationCel tap_trial_cel101[] = {
 };
 
 // [D_08916322]
-const AnimationCel tap_trial_cel102[] = {
+AnimationCel tap_trial_cel102[] = {
     /* Len */ 2,
     /* 000 */ 0x00f8, 0x41f0, 0x0290,
     /* 001 */ 0x00f8, 0x5000, 0x0290
 };
 
 // [D_08916330]
-const AnimationCel tap_trial_cel103[] = {
+AnimationCel tap_trial_cel103[] = {
     /* Len */ 3,
     /* 000 */ 0x00f8, 0x5007, 0x0280,
     /* 001 */ 0x80f8, 0x11ff, 0x02c3,
@@ -1503,21 +1503,21 @@ const AnimationCel tap_trial_cel103[] = {
 };
 
 // [D_08916344]
-const AnimationCel tap_trial_cel104[] = {
+AnimationCel tap_trial_cel104[] = {
     /* Len */ 2,
     /* 000 */ 0x00f8, 0x41f0, 0x0282,
     /* 001 */ 0x00f8, 0x5000, 0x0282
 };
 
 // [D_08916352]
-const AnimationCel tap_trial_cel105[] = {
+AnimationCel tap_trial_cel105[] = {
     /* Len */ 2,
     /* 000 */ 0x40f8, 0x41d0, 0x02ce,
     /* 001 */ 0x40f8, 0x01f0, 0x031e
 };
 
 // [D_08916360]
-const AnimationCel tap_trial_cel106[] = {
+AnimationCel tap_trial_cel106[] = {
     /* Len */ 8,
     /* 000 */ 0x00ba, 0x41f0, 0x0252,
     /* 001 */ 0x00ba, 0x5000, 0x0252,
@@ -1530,7 +1530,7 @@ const AnimationCel tap_trial_cel106[] = {
 };
 
 // [D_08916392]
-const AnimationCel tap_trial_cel107[] = {
+AnimationCel tap_trial_cel107[] = {
     /* Len */ 8,
     /* 000 */ 0x00ba, 0x51f0, 0x0210,
     /* 001 */ 0x00ba, 0x4000, 0x0210,
@@ -1543,7 +1543,7 @@ const AnimationCel tap_trial_cel107[] = {
 };
 
 // [D_089163c4]
-const AnimationCel tap_trial_cel108[] = {
+AnimationCel tap_trial_cel108[] = {
     /* Len */ 8,
     /* 000 */ 0x00bb, 0x51f0, 0x0210,
     /* 001 */ 0x00bb, 0x4000, 0x0210,
@@ -1556,7 +1556,7 @@ const AnimationCel tap_trial_cel108[] = {
 };
 
 // [D_089163f6]
-const AnimationCel tap_trial_cel109[] = {
+AnimationCel tap_trial_cel109[] = {
     /* Len */ 8,
     /* 000 */ 0x00bc, 0x51f0, 0x0210,
     /* 001 */ 0x00bc, 0x4000, 0x0210,
@@ -1569,7 +1569,7 @@ const AnimationCel tap_trial_cel109[] = {
 };
 
 // [D_08916428]
-const AnimationCel tap_trial_cel110[] = {
+AnimationCel tap_trial_cel110[] = {
     /* Len */ 8,
     /* 000 */ 0x00bd, 0x51f0, 0x0210,
     /* 001 */ 0x00bd, 0x4000, 0x0210,
@@ -1582,7 +1582,7 @@ const AnimationCel tap_trial_cel110[] = {
 };
 
 // [D_0891645a]
-const AnimationCel tap_trial_cel111[] = {
+AnimationCel tap_trial_cel111[] = {
     /* Len */ 8,
     /* 000 */ 0x00be, 0x51f0, 0x0210,
     /* 001 */ 0x00be, 0x4000, 0x0210,
@@ -1595,7 +1595,7 @@ const AnimationCel tap_trial_cel111[] = {
 };
 
 // [D_0891648c]
-const AnimationCel tap_trial_cel112[] = {
+AnimationCel tap_trial_cel112[] = {
     /* Len */ 14,
     /* 000 */ 0x00be, 0x51f0, 0x0210,
     /* 001 */ 0x00be, 0x4000, 0x0210,
@@ -1614,7 +1614,7 @@ const AnimationCel tap_trial_cel112[] = {
 };
 
 // [D_089164e2]
-const AnimationCel tap_trial_cel113[] = {
+AnimationCel tap_trial_cel113[] = {
     /* Len */ 9,
     /* 000 */ 0x00bc, 0x51f1, 0x0210,
     /* 001 */ 0x00bc, 0x4001, 0x0210,
@@ -1628,7 +1628,7 @@ const AnimationCel tap_trial_cel113[] = {
 };
 
 // [D_0891651a]
-const AnimationCel tap_trial_cel114[] = {
+AnimationCel tap_trial_cel114[] = {
     /* Len */ 9,
     /* 000 */ 0x00bb, 0x51f3, 0x0210,
     /* 001 */ 0x00bb, 0x4003, 0x0210,
@@ -1642,7 +1642,7 @@ const AnimationCel tap_trial_cel114[] = {
 };
 
 // [D_08916552]
-const AnimationCel tap_trial_cel115[] = {
+AnimationCel tap_trial_cel115[] = {
     /* Len */ 9,
     /* 000 */ 0x00bb, 0x51f4, 0x0210,
     /* 001 */ 0x00bb, 0x4004, 0x0210,
@@ -1656,7 +1656,7 @@ const AnimationCel tap_trial_cel115[] = {
 };
 
 // [D_0891658a]
-const AnimationCel tap_trial_cel116[] = {
+AnimationCel tap_trial_cel116[] = {
     /* Len */ 12,
     /* 000 */ 0x00bc, 0x51f5, 0x0210,
     /* 001 */ 0x00bc, 0x4005, 0x0210,
@@ -1673,7 +1673,7 @@ const AnimationCel tap_trial_cel116[] = {
 };
 
 // [D_089165d4]
-const AnimationCel tap_trial_cel117[] = {
+AnimationCel tap_trial_cel117[] = {
     /* Len */ 14,
     /* 000 */ 0x00be, 0x51f0, 0x0210,
     /* 001 */ 0x00be, 0x4000, 0x0210,
@@ -1692,7 +1692,7 @@ const AnimationCel tap_trial_cel117[] = {
 };
 
 // [D_0891662a]
-const AnimationCel tap_trial_cel118[] = {
+AnimationCel tap_trial_cel118[] = {
     /* Len */ 9,
     /* 000 */ 0x00bc, 0x41ff, 0x0210,
     /* 001 */ 0x00bc, 0x51ef, 0x0210,
@@ -1706,7 +1706,7 @@ const AnimationCel tap_trial_cel118[] = {
 };
 
 // [D_08916662]
-const AnimationCel tap_trial_cel119[] = {
+AnimationCel tap_trial_cel119[] = {
     /* Len */ 9,
     /* 000 */ 0x00bb, 0x41fd, 0x0210,
     /* 001 */ 0x00bb, 0x51ed, 0x0210,
@@ -1720,7 +1720,7 @@ const AnimationCel tap_trial_cel119[] = {
 };
 
 // [D_0891669a]
-const AnimationCel tap_trial_cel120[] = {
+AnimationCel tap_trial_cel120[] = {
     /* Len */ 9,
     /* 000 */ 0x00bb, 0x41fc, 0x0210,
     /* 001 */ 0x00bb, 0x51ec, 0x0210,
@@ -1734,7 +1734,7 @@ const AnimationCel tap_trial_cel120[] = {
 };
 
 // [D_089166d2]
-const AnimationCel tap_trial_cel121[] = {
+AnimationCel tap_trial_cel121[] = {
     /* Len */ 12,
     /* 000 */ 0x00bc, 0x41fb, 0x0210,
     /* 001 */ 0x00bc, 0x51eb, 0x0210,
@@ -1751,7 +1751,7 @@ const AnimationCel tap_trial_cel121[] = {
 };
 
 // [D_0891671c]
-const AnimationCel tap_trial_cel122[] = {
+AnimationCel tap_trial_cel122[] = {
     /* Len */ 14,
     /* 000 */ 0x00c9, 0x41f0, 0x0246,
     /* 001 */ 0x00d0, 0x41f4, 0x0244,
@@ -1770,7 +1770,7 @@ const AnimationCel tap_trial_cel122[] = {
 };
 
 // [D_08916772]
-const AnimationCel tap_trial_cel123[] = {
+AnimationCel tap_trial_cel123[] = {
     /* Len */ 14,
     /* 000 */ 0x00c9, 0x5000, 0x0246,
     /* 001 */ 0x00d0, 0x51fc, 0x0244,
@@ -1789,7 +1789,7 @@ const AnimationCel tap_trial_cel123[] = {
 };
 
 // [D_089167c8]
-const AnimationCel tap_trial_cel124[] = {
+AnimationCel tap_trial_cel124[] = {
     /* Len */ 14,
     /* 000 */ 0x00bd, 0x41f0, 0x020c,
     /* 001 */ 0x00bd, 0x5000, 0x020c,
@@ -1808,7 +1808,7 @@ const AnimationCel tap_trial_cel124[] = {
 };
 
 // [D_0891681e]
-const AnimationCel tap_trial_cel125[] = {
+AnimationCel tap_trial_cel125[] = {
     /* Len */ 12,
     /* 000 */ 0x00c6, 0x41f0, 0x020c,
     /* 001 */ 0x00c6, 0x5000, 0x020c,
@@ -1825,7 +1825,7 @@ const AnimationCel tap_trial_cel125[] = {
 };
 
 // [D_08916868]
-const AnimationCel tap_trial_cel126[] = {
+AnimationCel tap_trial_cel126[] = {
     /* Len */ 12,
     /* 000 */ 0x00cc, 0x41f0, 0x020c,
     /* 001 */ 0x00cc, 0x5000, 0x020c,
@@ -1842,7 +1842,7 @@ const AnimationCel tap_trial_cel126[] = {
 };
 
 // [D_089168b2]
-const AnimationCel tap_trial_cel127[] = {
+AnimationCel tap_trial_cel127[] = {
     /* Len */ 12,
     /* 000 */ 0x00d1, 0x41f0, 0x020c,
     /* 001 */ 0x00d1, 0x5000, 0x020c,
@@ -1859,7 +1859,7 @@ const AnimationCel tap_trial_cel127[] = {
 };
 
 // [D_089168fc]
-const AnimationCel tap_trial_cel128[] = {
+AnimationCel tap_trial_cel128[] = {
     /* Len */ 12,
     /* 000 */ 0x00d5, 0x41f0, 0x020c,
     /* 001 */ 0x00d5, 0x5000, 0x020c,
@@ -1876,7 +1876,7 @@ const AnimationCel tap_trial_cel128[] = {
 };
 
 // [D_08916946]
-const AnimationCel tap_trial_cel129[] = {
+AnimationCel tap_trial_cel129[] = {
     /* Len */ 12,
     /* 000 */ 0x00d7, 0x41f0, 0x020c,
     /* 001 */ 0x00d7, 0x5000, 0x020c,
@@ -1893,7 +1893,7 @@ const AnimationCel tap_trial_cel129[] = {
 };
 
 // [D_08916990]
-const AnimationCel tap_trial_cel130[] = {
+AnimationCel tap_trial_cel130[] = {
     /* Len */ 10,
     /* 000 */ 0x80b0, 0xb1f0, 0x0112,
     /* 001 */ 0x80b0, 0xa000, 0x0112,
@@ -1908,7 +1908,7 @@ const AnimationCel tap_trial_cel130[] = {
 };
 
 // [D_089169ce]
-const AnimationCel tap_trial_cel131[] = {
+AnimationCel tap_trial_cel131[] = {
     /* Len */ 15,
     /* 000 */ 0x00ca, 0x51f7, 0x0254,
     /* 001 */ 0x00ca, 0x41f9, 0x0254,
@@ -1928,7 +1928,7 @@ const AnimationCel tap_trial_cel131[] = {
 };
 
 // [D_08916a2a]
-const AnimationCel tap_trial_cel132[] = {
+AnimationCel tap_trial_cel132[] = {
     /* Len */ 10,
     /* 000 */ 0x80bd, 0x01f8, 0x02c4,
     /* 001 */ 0x80bd, 0x01f0, 0x0252,
@@ -1943,7 +1943,7 @@ const AnimationCel tap_trial_cel132[] = {
 };
 
 // [D_08916a68]
-const AnimationCel tap_trial_cel133[] = {
+AnimationCel tap_trial_cel133[] = {
     /* Len */ 12,
     /* 000 */ 0x80bc, 0x01f8, 0x02c4,
     /* 001 */ 0x80bc, 0x01f0, 0x0252,
@@ -1960,7 +1960,7 @@ const AnimationCel tap_trial_cel133[] = {
 };
 
 // [D_08916ab2]
-const AnimationCel tap_trial_cel134[] = {
+AnimationCel tap_trial_cel134[] = {
     /* Len */ 12,
     /* 000 */ 0x80bb, 0x01f8, 0x02c4,
     /* 001 */ 0x80bb, 0x01f0, 0x0252,
@@ -1977,7 +1977,7 @@ const AnimationCel tap_trial_cel134[] = {
 };
 
 // [D_08916afc]
-const AnimationCel tap_trial_cel135[] = {
+AnimationCel tap_trial_cel135[] = {
     /* Len */ 12,
     /* 000 */ 0x00b8, 0x41f0, 0x020c,
     /* 001 */ 0x00b8, 0x5000, 0x020c,
@@ -1994,7 +1994,7 @@ const AnimationCel tap_trial_cel135[] = {
 };
 
 // [D_08916b46]
-const AnimationCel tap_trial_cel136[] = {
+AnimationCel tap_trial_cel136[] = {
     /* Len */ 12,
     /* 000 */ 0x00ba, 0x41f0, 0x0252,
     /* 001 */ 0x00ba, 0x5000, 0x0252,
@@ -2011,7 +2011,7 @@ const AnimationCel tap_trial_cel136[] = {
 };
 
 // [D_08916b90]
-const AnimationCel tap_trial_cel137[] = {
+AnimationCel tap_trial_cel137[] = {
     /* Len */ 17,
     /* 000 */ 0x00d7, 0x41f0, 0x020c,
     /* 001 */ 0x00d7, 0x5000, 0x020c,
@@ -2033,7 +2033,7 @@ const AnimationCel tap_trial_cel137[] = {
 };
 
 // [D_08916bf8]
-const AnimationCel tap_trial_cel138[] = {
+AnimationCel tap_trial_cel138[] = {
     /* Len */ 12,
     /* 000 */ 0x00d6, 0x41f0, 0x020c,
     /* 001 */ 0x00d6, 0x5000, 0x020c,
@@ -2050,7 +2050,7 @@ const AnimationCel tap_trial_cel138[] = {
 };
 
 // [D_08916c42]
-const AnimationCel tap_trial_cel139[] = {
+AnimationCel tap_trial_cel139[] = {
     /* Len */ 12,
     /* 000 */ 0x00d7, 0x41f1, 0x020c,
     /* 001 */ 0x00d7, 0x5001, 0x020c,
@@ -2067,7 +2067,7 @@ const AnimationCel tap_trial_cel139[] = {
 };
 
 // [D_08916c8c]
-const AnimationCel tap_trial_cel140[] = {
+AnimationCel tap_trial_cel140[] = {
     /* Len */ 13,
     /* 000 */ 0x00d9, 0x41fc, 0x02c0,
     /* 001 */ 0x00e1, 0x51f1, 0x019d,
@@ -2085,7 +2085,7 @@ const AnimationCel tap_trial_cel140[] = {
 };
 
 // [D_08916cdc]
-const AnimationCel tap_trial_cel141[] = {
+AnimationCel tap_trial_cel141[] = {
     /* Len */ 17,
     /* 000 */ 0x00eb, 0x4008, 0x024a,
     /* 001 */ 0x00e3, 0x41f8, 0x0248,
@@ -2107,7 +2107,7 @@ const AnimationCel tap_trial_cel141[] = {
 };
 
 // [D_08916d44]
-const AnimationCel tap_trial_cel142[] = {
+AnimationCel tap_trial_cel142[] = {
     /* Len */ 17,
     /* 000 */ 0x00ec, 0x400a, 0x024a,
     /* 001 */ 0x00e4, 0x41fa, 0x0248,
@@ -2129,7 +2129,7 @@ const AnimationCel tap_trial_cel142[] = {
 };
 
 // [D_08916dac]
-const AnimationCel tap_trial_cel143[] = {
+AnimationCel tap_trial_cel143[] = {
     /* Len */ 10,
     /* 000 */ 0x00ca, 0x51f7, 0x0254,
     /* 001 */ 0x00ca, 0x41f9, 0x0254,
@@ -2144,7 +2144,7 @@ const AnimationCel tap_trial_cel143[] = {
 };
 
 // [D_08916dea]
-const AnimationCel tap_trial_cel144[] = {
+AnimationCel tap_trial_cel144[] = {
     /* Len */ 8,
     /* 000 */ 0x00bf, 0x41f2, 0x020c,
     /* 001 */ 0x00bf, 0x5002, 0x020c,
@@ -2157,7 +2157,7 @@ const AnimationCel tap_trial_cel144[] = {
 };
 
 // [D_08916e1c]
-const AnimationCel tap_trial_cel145[] = {
+AnimationCel tap_trial_cel145[] = {
     /* Len */ 9,
     /* 000 */ 0x00c1, 0x41fc, 0x02c0,
     /* 001 */ 0x00c9, 0x51f1, 0x019d,
@@ -2171,7 +2171,7 @@ const AnimationCel tap_trial_cel145[] = {
 };
 
 // [D_08916e54]
-const AnimationCel tap_trial_cel146[] = {
+AnimationCel tap_trial_cel146[] = {
     /* Len */ 12,
     /* 000 */ 0x00da, 0x4010, 0x024a,
     /* 001 */ 0x00d2, 0x4000, 0x0248,
@@ -2188,7 +2188,7 @@ const AnimationCel tap_trial_cel146[] = {
 };
 
 // [D_08916e9e]
-const AnimationCel tap_trial_cel147[] = {
+AnimationCel tap_trial_cel147[] = {
     /* Len */ 13,
     /* 000 */ 0x00db, 0x4010, 0x024a,
     /* 001 */ 0x00d3, 0x4000, 0x0248,

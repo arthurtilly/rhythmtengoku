@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088e8b78] <description>
-const Palette rhythm_tweezers_pal[] = {
+Palette rhythm_tweezers_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8D800),
         /* 01 */ TO_RGB555(0xF8D098),
@@ -114,7 +114,7 @@ const Palette rhythm_tweezers_pal[] = {
 };
 
 // [D_088e8c38] <description>
-const Palette rhythm_tweezers_2_pal[] = {
+Palette rhythm_tweezers_2_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8D800),
         /* 01 */ TO_RGB555(0xF8D098),

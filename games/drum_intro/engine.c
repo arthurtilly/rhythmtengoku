@@ -5,22 +5,22 @@
   /* DRUM INTRO - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c4cf00;
-extern const struct CompressedGraphics D_08c4d040;
-extern const struct CompressedGraphics D_08c4cca8;
-extern const struct CompressedGraphics D_08c4af00;
-extern const struct CompressedGraphics D_08c4b164;
-extern const struct CompressedGraphics D_08c4a970;
-extern const struct CompressedGraphics D_08ce6ebc;
-extern const struct CompressedGraphics D_08ce707c;
-extern const struct CompressedGraphics D_08ce7188;
-extern const struct CompressedGraphics D_08c4a970;
-extern const struct CompressedGraphics D_08ce6cbc;
+extern struct CompressedGraphics D_08c4cf00;
+extern struct CompressedGraphics D_08c4d040;
+extern struct CompressedGraphics D_08c4cca8;
+extern struct CompressedGraphics D_08c4af00;
+extern struct CompressedGraphics D_08c4b164;
+extern struct CompressedGraphics D_08c4a970;
+extern struct CompressedGraphics D_08ce6ebc;
+extern struct CompressedGraphics D_08ce707c;
+extern struct CompressedGraphics D_08ce7188;
+extern struct CompressedGraphics D_08c4a970;
+extern struct CompressedGraphics D_08ce6cbc;
 
-extern const Palette drum_intro_talk_pal[];
-extern const Palette drum_intro_play_pal[];
-extern const Palette tanuki_and_monkey_bg_pal[];
-extern const Palette tanuki_and_monkey_obj_pal[];
+extern Palette drum_intro_talk_pal[];
+extern Palette drum_intro_play_pal[];
+extern Palette tanuki_and_monkey_bg_pal[];
+extern Palette tanuki_and_monkey_obj_pal[];
 
 
   //  //  //  DRUM SEQUENCE DATA  //  //  //
@@ -99,7 +99,7 @@ struct DrumTechKit *drum_intro_kits[] = {
 
 
 // [D_089e0024] Buffered Textures List
-const struct CompressedGraphics *drum_intro_buffered_textures[] = {
+struct CompressedGraphics *drum_intro_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -244,7 +244,7 @@ struct Vector2 D_089e0164[] = {
 };
 
 // [D_089e0170] Drummer Face Animations
-const struct Animation *D_089e0170[][4] = {
+struct Animation *D_089e0170[][4] = {
     /* 0x00 */ {
         /* 0x00 */ anim_drum_samurai_head,
         /* 0x01 */ anim_drum_player_head,

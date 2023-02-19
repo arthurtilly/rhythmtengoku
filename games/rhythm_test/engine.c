@@ -5,12 +5,12 @@
   /* RHYTHM TEST - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c6a638;
-extern const struct CompressedGraphics D_08c6a830;
-extern const struct CompressedGraphics D_08c6a9c4;
-extern const struct CompressedGraphics D_08c6ab24;
-extern const struct CompressedGraphics D_08c6a350;
-extern const Palette rhythm_test_pal[];
+extern struct CompressedGraphics D_08c6a638;
+extern struct CompressedGraphics D_08c6a830;
+extern struct CompressedGraphics D_08c6a9c4;
+extern struct CompressedGraphics D_08c6ab24;
+extern struct CompressedGraphics D_08c6a350;
+extern Palette rhythm_test_pal[];
 
 
   //  //  //  MISCELLANEOUS DATA  //  //  //
@@ -637,7 +637,7 @@ struct DrumTechNote *rhythm_test_trick_drum_seq[] = {
 
 
 // [D_089e4f70] Buffered Textures List
-const struct CompressedGraphics *rhythm_test_buffered_textures[] = {
+struct CompressedGraphics *rhythm_test_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

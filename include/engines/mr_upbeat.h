@@ -31,9 +31,9 @@ extern const char D_0805a684[];
 
 
 // Engine Definition Data:
-extern const struct Animation *mr_upbeat_trip_anim[];
-extern const struct Animation *mr_upbeat_game_over_anim[][4];
-extern const struct CompressedGraphics *mr_upbeat_buffered_textures[];
+extern struct Animation *mr_upbeat_trip_anim[];
+extern struct Animation *mr_upbeat_game_over_anim[][4];
+extern struct CompressedGraphics *mr_upbeat_buffered_textures[];
 extern struct GraphicsTable mr_upbeat_gfx_table[];
 
 

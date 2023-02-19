@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_08900dac] <description>
-const Palette studio_memory_usage_graph_pal[] = {
+Palette studio_memory_usage_graph_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x104028),
         /* 01 */ TO_RGB555(0x000000),

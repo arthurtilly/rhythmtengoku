@@ -83,18 +83,18 @@ enum RhythmTweezersVegetableTypesEnum {
 
 
 // OAM Animations:
-extern const struct Animation anim_veg_face_onion[];
-extern const struct Animation anim_veg_face_turnip[];
-extern const struct Animation anim_veg_face_potato[];
-extern const struct Animation anim_rhythm_tweezers_short_hair[];    // Animation: hair_appear_short
-extern const struct Animation anim_tweezers_pluck_hit[];    // Animation: "tweezer_pluck"
-extern const struct Animation anim_tweezers_pluck_barely[];    // Animation: "tweezer_pluck_barely"
-extern const struct Animation anim_tweezers_pluck_miss[];    // Animation: "tweezer_pluck_miss"
-extern const struct Animation anim_rhythm_tweezers_falling_hair[];    // Animation: "hair_fall"
-extern const struct Animation anim_rhythm_tweezers_hair_stubble[];    // Animation: "hair_stubble"
-extern const struct Animation anim_rhythm_tweezers_tutorial_text[];    // Animation: "tutorial_text" (unused)
-extern const struct Animation anim_rhythm_tweezers_long_hair[];    // Animation: hair_appear_long
-extern const struct Animation anim_tweezers_pull[];    // Animation: "hair_long_pull"
+extern struct Animation anim_veg_face_onion[];
+extern struct Animation anim_veg_face_turnip[];
+extern struct Animation anim_veg_face_potato[];
+extern struct Animation anim_rhythm_tweezers_short_hair[];    // Animation: hair_appear_short
+extern struct Animation anim_tweezers_pluck_hit[];    // Animation: "tweezer_pluck"
+extern struct Animation anim_tweezers_pluck_barely[];    // Animation: "tweezer_pluck_barely"
+extern struct Animation anim_tweezers_pluck_miss[];    // Animation: "tweezer_pluck_miss"
+extern struct Animation anim_rhythm_tweezers_falling_hair[];    // Animation: "hair_fall"
+extern struct Animation anim_rhythm_tweezers_hair_stubble[];    // Animation: "hair_stubble"
+extern struct Animation anim_rhythm_tweezers_tutorial_text[];    // Animation: "tutorial_text" (unused)
+extern struct Animation anim_rhythm_tweezers_long_hair[];    // Animation: hair_appear_long
+extern struct Animation anim_tweezers_pull[];    // Animation: "hair_long_pull"
 
 
 // Palettes:
@@ -107,8 +107,8 @@ extern const struct Animation anim_tweezers_pull[];    // Animation: "hair_long_
 
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *rhythm_tweezers_veg_bg_maps[]; // Array of BG Map pointers for vegetable textures
-extern const struct CompressedGraphics *rhythm_tweezers_buffered_textures[]; // Buffered Textures List
+extern struct CompressedGraphics *rhythm_tweezers_veg_bg_maps[]; // Array of BG Map pointers for vegetable textures
+extern struct CompressedGraphics *rhythm_tweezers_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable *rhythm_tweezers_gfx_tables[]; // Graphics Table
 
 

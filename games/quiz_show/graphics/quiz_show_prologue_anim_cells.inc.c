@@ -1,7 +1,7 @@
 // do not rename these
 
 // [D_088b0ecc]
-const AnimationCel quiz_show_prologue_cel000[] = {
+AnimationCel quiz_show_prologue_cel000[] = {
     /* Len */ 26,
     /* 000 */ 0x40e8, 0x0014, 0x0042,
     /* 001 */ 0x00e8, 0x01e8, 0x0044,
@@ -32,7 +32,7 @@ const AnimationCel quiz_show_prologue_cel000[] = {
 };
 
 // [D_088b0f6a]
-const AnimationCel quiz_show_prologue_cel001[] = {
+AnimationCel quiz_show_prologue_cel001[] = {
     /* Len */ 27,
     /* 000 */ 0x40e8, 0x0014, 0x103d,
     /* 001 */ 0x00f0, 0x41ec, 0x1004,
@@ -64,7 +64,7 @@ const AnimationCel quiz_show_prologue_cel001[] = {
 };
 
 // [D_088b100e]
-const AnimationCel quiz_show_prologue_cel002[] = {
+AnimationCel quiz_show_prologue_cel002[] = {
     /* Len */ 26,
     /* 000 */ 0x40e8, 0x0014, 0x2040,
     /* 001 */ 0x00e8, 0x01f8, 0x0044,
@@ -95,7 +95,7 @@ const AnimationCel quiz_show_prologue_cel002[] = {
 };
 
 // [D_088b10ac]
-const AnimationCel quiz_show_prologue_cel003[] = {
+AnimationCel quiz_show_prologue_cel003[] = {
     /* Len */ 26,
     /* 000 */ 0x40e8, 0x000c, 0x001d,
     /* 001 */ 0x00e8, 0x01f8, 0x1044,
@@ -126,7 +126,7 @@ const AnimationCel quiz_show_prologue_cel003[] = {
 };
 
 // [D_088b114a]
-const AnimationCel quiz_show_prologue_cel004[] = {
+AnimationCel quiz_show_prologue_cel004[] = {
     /* Len */ 26,
     /* 000 */ 0x40e8, 0x0014, 0x003d,
     /* 001 */ 0x00e8, 0x01e8, 0x0044,
@@ -157,7 +157,7 @@ const AnimationCel quiz_show_prologue_cel004[] = {
 };
 
 // [D_088b11e8]
-const AnimationCel quiz_show_prologue_cel005[] = {
+AnimationCel quiz_show_prologue_cel005[] = {
     /* Len */ 26,
     /* 000 */ 0x40e8, 0x0014, 0x003d,
     /* 001 */ 0x00e8, 0x01e8, 0x1044,
@@ -188,7 +188,7 @@ const AnimationCel quiz_show_prologue_cel005[] = {
 };
 
 // [D_088b1286]
-const AnimationCel quiz_show_prologue_cel006[] = {
+AnimationCel quiz_show_prologue_cel006[] = {
     /* Len */ 26,
     /* 000 */ 0x40e8, 0x0014, 0x003d,
     /* 001 */ 0x00e8, 0x01f8, 0x0044,
@@ -219,7 +219,7 @@ const AnimationCel quiz_show_prologue_cel006[] = {
 };
 
 // [D_088b1324]
-const AnimationCel quiz_show_prologue_cel007[] = {
+AnimationCel quiz_show_prologue_cel007[] = {
     /* Len */ 26,
     /* 000 */ 0x40e8, 0x0014, 0x003d,
     /* 001 */ 0x00e8, 0x01f8, 0x1044,

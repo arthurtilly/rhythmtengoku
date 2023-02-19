@@ -1,13 +1,13 @@
 // do not rename these
 
 // [D_088ae484]
-const AnimationCel bouncy_road_prologue_cel000[] = {
+AnimationCel bouncy_road_prologue_cel000[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x00df
 };
 
 // [D_088ae48c]
-const AnimationCel bouncy_road_prologue_cel001[] = {
+AnimationCel bouncy_road_prologue_cel001[] = {
     /* Len */ 6,
     /* 000 */ 0x00e0, 0x81ec, 0x0004,
     /* 001 */ 0x80e0, 0x400c, 0x001e,
@@ -18,7 +18,7 @@ const AnimationCel bouncy_road_prologue_cel001[] = {
 };
 
 // [D_088ae4b2]
-const AnimationCel bouncy_road_prologue_cel002[] = {
+AnimationCel bouncy_road_prologue_cel002[] = {
     /* Len */ 6,
     /* 000 */ 0x00e2, 0x81ec, 0x0004,
     /* 001 */ 0x80e2, 0x400c, 0x001e,
@@ -29,7 +29,7 @@ const AnimationCel bouncy_road_prologue_cel002[] = {
 };
 
 // [D_088ae4d8]
-const AnimationCel bouncy_road_prologue_cel003[] = {
+AnimationCel bouncy_road_prologue_cel003[] = {
     /* Len */ 6,
     /* 000 */ 0x00e4, 0x81ec, 0x0004,
     /* 001 */ 0x80e4, 0x400c, 0x001e,
@@ -40,7 +40,7 @@ const AnimationCel bouncy_road_prologue_cel003[] = {
 };
 
 // [D_088ae4fe]
-const AnimationCel bouncy_road_prologue_cel004[] = {
+AnimationCel bouncy_road_prologue_cel004[] = {
     /* Len */ 6,
     /* 000 */ 0x00e6, 0x81ec, 0x0004,
     /* 001 */ 0x80e6, 0x400c, 0x001e,
@@ -51,7 +51,7 @@ const AnimationCel bouncy_road_prologue_cel004[] = {
 };
 
 // [D_088ae524]
-const AnimationCel bouncy_road_prologue_cel005[] = {
+AnimationCel bouncy_road_prologue_cel005[] = {
     /* Len */ 6,
     /* 000 */ 0x00e6, 0x81ec, 0x0004,
     /* 001 */ 0x80e6, 0x400c, 0x001e,
@@ -62,7 +62,7 @@ const AnimationCel bouncy_road_prologue_cel005[] = {
 };
 
 // [D_088ae54a]
-const AnimationCel bouncy_road_prologue_cel006[] = {
+AnimationCel bouncy_road_prologue_cel006[] = {
     /* Len */ 6,
     /* 000 */ 0x00e6, 0x81ec, 0x0004,
     /* 001 */ 0x80e6, 0x400c, 0x001e,
@@ -73,7 +73,7 @@ const AnimationCel bouncy_road_prologue_cel006[] = {
 };
 
 // [D_088ae570]
-const AnimationCel bouncy_road_prologue_cel007[] = {
+AnimationCel bouncy_road_prologue_cel007[] = {
     /* Len */ 30,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -108,7 +108,7 @@ const AnimationCel bouncy_road_prologue_cel007[] = {
 };
 
 // [D_088ae626]
-const AnimationCel bouncy_road_prologue_cel008[] = {
+AnimationCel bouncy_road_prologue_cel008[] = {
     /* Len */ 30,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -143,7 +143,7 @@ const AnimationCel bouncy_road_prologue_cel008[] = {
 };
 
 // [D_088ae6dc]
-const AnimationCel bouncy_road_prologue_cel009[] = {
+AnimationCel bouncy_road_prologue_cel009[] = {
     /* Len */ 30,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -178,7 +178,7 @@ const AnimationCel bouncy_road_prologue_cel009[] = {
 };
 
 // [D_088ae792]
-const AnimationCel bouncy_road_prologue_cel010[] = {
+AnimationCel bouncy_road_prologue_cel010[] = {
     /* Len */ 30,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -213,7 +213,7 @@ const AnimationCel bouncy_road_prologue_cel010[] = {
 };
 
 // [D_088ae848]
-const AnimationCel bouncy_road_prologue_cel011[] = {
+AnimationCel bouncy_road_prologue_cel011[] = {
     /* Len */ 30,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -248,7 +248,7 @@ const AnimationCel bouncy_road_prologue_cel011[] = {
 };
 
 // [D_088ae8fe]
-const AnimationCel bouncy_road_prologue_cel012[] = {
+AnimationCel bouncy_road_prologue_cel012[] = {
     /* Len */ 30,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -283,13 +283,13 @@ const AnimationCel bouncy_road_prologue_cel012[] = {
 };
 
 // [D_088ae9b4]
-const AnimationCel bouncy_road_prologue_cel013[] = {
+AnimationCel bouncy_road_prologue_cel013[] = {
     /* Len */ 1,
     /* 000 */ 0x00f8, 0x01f8, 0x00df
 };
 
 // [D_088ae9bc]
-const AnimationCel bouncy_road_prologue_cel014[] = {
+AnimationCel bouncy_road_prologue_cel014[] = {
     /* Len */ 30,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -324,7 +324,7 @@ const AnimationCel bouncy_road_prologue_cel014[] = {
 };
 
 // [D_088aea72]
-const AnimationCel bouncy_road_prologue_cel015[] = {
+AnimationCel bouncy_road_prologue_cel015[] = {
     /* Len */ 31,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -360,7 +360,7 @@ const AnimationCel bouncy_road_prologue_cel015[] = {
 };
 
 // [D_088aeb2e]
-const AnimationCel bouncy_road_prologue_cel016[] = {
+AnimationCel bouncy_road_prologue_cel016[] = {
     /* Len */ 31,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -396,7 +396,7 @@ const AnimationCel bouncy_road_prologue_cel016[] = {
 };
 
 // [D_088aebea]
-const AnimationCel bouncy_road_prologue_cel017[] = {
+AnimationCel bouncy_road_prologue_cel017[] = {
     /* Len */ 31,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -432,7 +432,7 @@ const AnimationCel bouncy_road_prologue_cel017[] = {
 };
 
 // [D_088aeca6]
-const AnimationCel bouncy_road_prologue_cel018[] = {
+AnimationCel bouncy_road_prologue_cel018[] = {
     /* Len */ 31,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -468,7 +468,7 @@ const AnimationCel bouncy_road_prologue_cel018[] = {
 };
 
 // [D_088aed62]
-const AnimationCel bouncy_road_prologue_cel019[] = {
+AnimationCel bouncy_road_prologue_cel019[] = {
     /* Len */ 31,
     /* 000 */ 0x00d8, 0x81ab, 0x1004,
     /* 001 */ 0x80d8, 0x41cb, 0x101e,
@@ -504,7 +504,7 @@ const AnimationCel bouncy_road_prologue_cel019[] = {
 };
 
 // [D_088aee1e]
-const AnimationCel bouncy_road_prologue_cel020[] = {
+AnimationCel bouncy_road_prologue_cel020[] = {
     /* Len */ 31,
     /* 000 */ 0x00dc, 0x81ab, 0x1004,
     /* 001 */ 0x80dc, 0x41cb, 0x101e,
@@ -540,7 +540,7 @@ const AnimationCel bouncy_road_prologue_cel020[] = {
 };
 
 // [D_088aeeda]
-const AnimationCel bouncy_road_prologue_cel021[] = {
+AnimationCel bouncy_road_prologue_cel021[] = {
     /* Len */ 30,
     /* 000 */ 0x00de, 0x81ab, 0x1004,
     /* 001 */ 0x80de, 0x41cb, 0x101e,
@@ -575,7 +575,7 @@ const AnimationCel bouncy_road_prologue_cel021[] = {
 };
 
 // [D_088aef90]
-const AnimationCel bouncy_road_prologue_cel022[] = {
+AnimationCel bouncy_road_prologue_cel022[] = {
     /* Len */ 30,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -610,7 +610,7 @@ const AnimationCel bouncy_road_prologue_cel022[] = {
 };
 
 // [D_088af046]
-const AnimationCel bouncy_road_prologue_cel023[] = {
+AnimationCel bouncy_road_prologue_cel023[] = {
     /* Len */ 30,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -645,7 +645,7 @@ const AnimationCel bouncy_road_prologue_cel023[] = {
 };
 
 // [D_088af0fc]
-const AnimationCel bouncy_road_prologue_cel024[] = {
+AnimationCel bouncy_road_prologue_cel024[] = {
     /* Len */ 30,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -680,7 +680,7 @@ const AnimationCel bouncy_road_prologue_cel024[] = {
 };
 
 // [D_088af1b2]
-const AnimationCel bouncy_road_prologue_cel025[] = {
+AnimationCel bouncy_road_prologue_cel025[] = {
     /* Len */ 30,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -715,7 +715,7 @@ const AnimationCel bouncy_road_prologue_cel025[] = {
 };
 
 // [D_088af268]
-const AnimationCel bouncy_road_prologue_cel026[] = {
+AnimationCel bouncy_road_prologue_cel026[] = {
     /* Len */ 30,
     /* 000 */ 0x00e4, 0x81ab, 0x1004,
     /* 001 */ 0x80e4, 0x41cb, 0x101e,
@@ -750,7 +750,7 @@ const AnimationCel bouncy_road_prologue_cel026[] = {
 };
 
 // [D_088af31e]
-const AnimationCel bouncy_road_prologue_cel027[] = {
+AnimationCel bouncy_road_prologue_cel027[] = {
     /* Len */ 4,
     /* 000 */ 0x40b0, 0x419f, 0x0140,
     /* 001 */ 0x40b0, 0x41bf, 0x0144,
@@ -759,7 +759,7 @@ const AnimationCel bouncy_road_prologue_cel027[] = {
 };
 
 // [D_088af338]
-const AnimationCel bouncy_road_prologue_cel028[] = {
+AnimationCel bouncy_road_prologue_cel028[] = {
     /* Len */ 4,
     /* 000 */ 0x40af, 0x819f, 0x010c,
     /* 001 */ 0x40af, 0x81bf, 0x0108,
@@ -768,7 +768,7 @@ const AnimationCel bouncy_road_prologue_cel028[] = {
 };
 
 // [D_088af352]
-const AnimationCel bouncy_road_prologue_cel029[] = {
+AnimationCel bouncy_road_prologue_cel029[] = {
     /* Len */ 5,
     /* 000 */ 0x40ac, 0x819f, 0x00d9,
     /* 001 */ 0x40ac, 0x81bf, 0x00d5,
@@ -778,7 +778,7 @@ const AnimationCel bouncy_road_prologue_cel029[] = {
 };
 
 // [D_088af372]
-const AnimationCel bouncy_road_prologue_cel030[] = {
+AnimationCel bouncy_road_prologue_cel030[] = {
     /* Len */ 9,
     /* 000 */ 0x40a8, 0x819f, 0x0089,
     /* 001 */ 0x40a8, 0x81bf, 0x0095,
@@ -792,7 +792,7 @@ const AnimationCel bouncy_road_prologue_cel030[] = {
 };
 
 // [D_088af3aa]
-const AnimationCel bouncy_road_prologue_cel031[] = {
+AnimationCel bouncy_road_prologue_cel031[] = {
     /* Len */ 12,
     /* 000 */ 0x40a8, 0x819f, 0x0089,
     /* 001 */ 0x40a8, 0x81bf, 0x0095,
@@ -809,7 +809,7 @@ const AnimationCel bouncy_road_prologue_cel031[] = {
 };
 
 // [D_088af3f4]
-const AnimationCel bouncy_road_prologue_cel032[] = {
+AnimationCel bouncy_road_prologue_cel032[] = {
     /* Len */ 12,
     /* 000 */ 0x40af, 0x801f, 0x0099,
     /* 001 */ 0x40a8, 0x819f, 0x0089,
@@ -826,7 +826,7 @@ const AnimationCel bouncy_road_prologue_cel032[] = {
 };
 
 // [D_088af43e]
-const AnimationCel bouncy_road_prologue_cel033[] = {
+AnimationCel bouncy_road_prologue_cel033[] = {
     /* Len */ 12,
     /* 000 */ 0x40ac, 0x801f, 0x00c5,
     /* 001 */ 0x40a8, 0x819f, 0x0089,
@@ -843,7 +843,7 @@ const AnimationCel bouncy_road_prologue_cel033[] = {
 };
 
 // [D_088af488]
-const AnimationCel bouncy_road_prologue_cel034[] = {
+AnimationCel bouncy_road_prologue_cel034[] = {
     /* Len */ 14,
     /* 000 */ 0x40a8, 0x801f, 0x00cd,
     /* 001 */ 0x40b8, 0x401f, 0x0154,

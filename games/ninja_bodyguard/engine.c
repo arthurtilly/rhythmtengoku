@@ -4,75 +4,75 @@
   /* NINJA BODYGUARD - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_feudal_lord_blink[];
-extern const struct Animation anim_girlfriend_blink[];
-extern const struct Animation anim_feudal_lord_scared[];
-extern const struct Animation anim_girlfriend_scared[];
-extern const struct Animation anim_feudal_lord_shaking[];
-extern const struct Animation anim_girlfriend_shaking[];
-extern const struct Animation anim_feudal_lord_walk[];
-extern const struct Animation anim_girlfriend_walk[];
-extern const struct Animation anim_ninja1_heart_eyes[];
-extern const struct Animation anim_ninja2_heart_eyes[];
-extern const struct Animation anim_archer_draw_bow[];
-extern const struct Animation anim_bad_guy_draw_slingshot[];
-extern const struct Animation anim_ninja1_arrow_to_wall[];
-extern const struct Animation anim_ninja2_rock_to_wall[];
-extern const struct Animation anim_ninja1_arrow_in_wall1[];
-extern const struct Animation anim_ninja2_rock_in_wall1[];
-extern const struct Animation anim_ninja1_arrow_in_wall2[];
-extern const struct Animation anim_ninja2_rock_in_wall2[];
-extern const struct Animation anim_ninja1_arrow_in_wall3[];
-extern const struct Animation anim_ninja2_rock_in_wall3[];
-extern const struct Animation anim_ninja1_arrow_deflect_l[];
-extern const struct Animation anim_ninja2_rock_deflect_l[];
-extern const struct Animation anim_ninja1_arrow_deflect_r[];
-extern const struct Animation anim_ninja2_rock_deflect_r[];
-extern const struct Animation anim_archer_release_bow[];
-extern const struct Animation anim_bad_guy_release_slingshot[];
-extern const struct Animation anim_ninja1_arrow_pieces[];
-extern const struct Animation anim_ninja2_rock_pieces[];
-extern const struct Animation anim_ninja1_arrow_to_ninja[];
-extern const struct Animation anim_ninja2_rock_to_tanaka[];
-extern const struct Animation anim_ninja_swing_r[];
-extern const struct Animation anim_tanaka_swing_r[];
-extern const struct Animation anim_ninja_swing_l[];
-extern const struct Animation anim_tanaka_swing_l[];
-extern const struct Animation anim_ninja_slice_r[];
-extern const struct Animation anim_tanaka_slice_r[];
-extern const struct Animation anim_ninja_slice_l[];
-extern const struct Animation anim_tanaka_slice_l[];
-extern const struct Animation anim_ninja_appear[];
-extern const struct Animation anim_tanaka_appear[];
-extern const struct Animation anim_ninja_raise_sword[];
-extern const struct Animation anim_tanaka_raise_stick[];
-extern const struct Animation anim_ninja1_button_indicators[];
-extern const struct Animation anim_ninja2_button_indicators[];
-extern const struct Animation anim_ninja1_cutscene_arrow[];
-extern const struct Animation anim_ninja2_cutscene_rock[];
+extern struct Animation anim_feudal_lord_blink[];
+extern struct Animation anim_girlfriend_blink[];
+extern struct Animation anim_feudal_lord_scared[];
+extern struct Animation anim_girlfriend_scared[];
+extern struct Animation anim_feudal_lord_shaking[];
+extern struct Animation anim_girlfriend_shaking[];
+extern struct Animation anim_feudal_lord_walk[];
+extern struct Animation anim_girlfriend_walk[];
+extern struct Animation anim_ninja1_heart_eyes[];
+extern struct Animation anim_ninja2_heart_eyes[];
+extern struct Animation anim_archer_draw_bow[];
+extern struct Animation anim_bad_guy_draw_slingshot[];
+extern struct Animation anim_ninja1_arrow_to_wall[];
+extern struct Animation anim_ninja2_rock_to_wall[];
+extern struct Animation anim_ninja1_arrow_in_wall1[];
+extern struct Animation anim_ninja2_rock_in_wall1[];
+extern struct Animation anim_ninja1_arrow_in_wall2[];
+extern struct Animation anim_ninja2_rock_in_wall2[];
+extern struct Animation anim_ninja1_arrow_in_wall3[];
+extern struct Animation anim_ninja2_rock_in_wall3[];
+extern struct Animation anim_ninja1_arrow_deflect_l[];
+extern struct Animation anim_ninja2_rock_deflect_l[];
+extern struct Animation anim_ninja1_arrow_deflect_r[];
+extern struct Animation anim_ninja2_rock_deflect_r[];
+extern struct Animation anim_archer_release_bow[];
+extern struct Animation anim_bad_guy_release_slingshot[];
+extern struct Animation anim_ninja1_arrow_pieces[];
+extern struct Animation anim_ninja2_rock_pieces[];
+extern struct Animation anim_ninja1_arrow_to_ninja[];
+extern struct Animation anim_ninja2_rock_to_tanaka[];
+extern struct Animation anim_ninja_swing_r[];
+extern struct Animation anim_tanaka_swing_r[];
+extern struct Animation anim_ninja_swing_l[];
+extern struct Animation anim_tanaka_swing_l[];
+extern struct Animation anim_ninja_slice_r[];
+extern struct Animation anim_tanaka_slice_r[];
+extern struct Animation anim_ninja_slice_l[];
+extern struct Animation anim_tanaka_slice_l[];
+extern struct Animation anim_ninja_appear[];
+extern struct Animation anim_tanaka_appear[];
+extern struct Animation anim_ninja_raise_sword[];
+extern struct Animation anim_tanaka_raise_stick[];
+extern struct Animation anim_ninja1_button_indicators[];
+extern struct Animation anim_ninja2_button_indicators[];
+extern struct Animation anim_ninja1_cutscene_arrow[];
+extern struct Animation anim_ninja2_cutscene_rock[];
 
-extern const struct CompressedGraphics D_08cde4e0;
-extern const struct CompressedGraphics D_08ce015c;
-extern const struct CompressedGraphics D_08cdd9d4;
-extern const struct CompressedGraphics D_08cdfc38;
-extern const struct CompressedGraphics D_08cdfd48;
-extern const struct CompressedGraphics D_08cdfaa4;
-extern const struct CompressedGraphics D_08d1e358;
-extern const struct CompressedGraphics D_08d1fab0;
-extern const struct CompressedGraphics D_08d1fb70;
-extern const struct CompressedGraphics D_08d1f700;
+extern struct CompressedGraphics D_08cde4e0;
+extern struct CompressedGraphics D_08ce015c;
+extern struct CompressedGraphics D_08cdd9d4;
+extern struct CompressedGraphics D_08cdfc38;
+extern struct CompressedGraphics D_08cdfd48;
+extern struct CompressedGraphics D_08cdfaa4;
+extern struct CompressedGraphics D_08d1e358;
+extern struct CompressedGraphics D_08d1fab0;
+extern struct CompressedGraphics D_08d1fb70;
+extern struct CompressedGraphics D_08d1f700;
 
-extern const Palette ninja_bodyguard_bg_pal[];
-extern const Palette ninja_bodyguard_obj_pal[];
-extern const Palette ninja_reincarnate_bg_pal[];
-extern const Palette ninja_reincarnate_obj_pal[];
+extern Palette ninja_bodyguard_bg_pal[];
+extern Palette ninja_bodyguard_obj_pal[];
+extern Palette ninja_reincarnate_bg_pal[];
+extern Palette ninja_reincarnate_obj_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e68b8] All Animations
-const struct Animation *ninja_bodyguard_anim[][2] = {
+struct Animation *ninja_bodyguard_anim[][2] = {
     /* 0x00 */ { anim_feudal_lord_blink, anim_girlfriend_blink },
     /* 0x01 */ { anim_feudal_lord_scared, anim_girlfriend_scared },
     /* 0x02 */ { anim_feudal_lord_shaking, anim_girlfriend_shaking },
@@ -99,7 +99,7 @@ const struct Animation *ninja_bodyguard_anim[][2] = {
 };
 
 // [D_089e6970] Animation Table
-const struct Animation **ninja_bodyguard_anim_table[] = {
+struct Animation **ninja_bodyguard_anim_table[] = {
     /* 0x00 */ ninja_bodyguard_anim[0],
     /* 0x01 */ ninja_bodyguard_anim[1],
     /* 0x02 */ ninja_bodyguard_anim[2],
@@ -134,7 +134,7 @@ struct SpriteVector3 D_089e69cc[] = {
 };
 
 // [D_089e69ec] Buffered Textures List
-const struct CompressedGraphics *ninja_bodyguard_buffered_textures[] = {
+struct CompressedGraphics *ninja_bodyguard_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

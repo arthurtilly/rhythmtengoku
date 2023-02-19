@@ -4,97 +4,97 @@
   /* THE BON ODORI - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_bon_odori_donpan1_beat[];
-extern const struct Animation anim_bon_dance_donpan1_beat[];
-extern const struct Animation anim_bon_odori_donpan2_beat[];
-extern const struct Animation anim_bon_dance_donpan2_beat[];
-extern const struct Animation anim_bon_odori_donpan3_beat[];
-extern const struct Animation anim_bon_dance_donpan3_beat[];
-extern const struct Animation anim_bon_odori_player_beat[];
-extern const struct Animation anim_bon_dance_player_beat[];
-extern const struct Animation anim_bon_odori_donpan1_clap1[];
-extern const struct Animation anim_bon_dance_donpan1_clap1[];
-extern const struct Animation anim_bon_odori_donpan2_clap1[];
-extern const struct Animation anim_bon_dance_donpan2_clap1[];
-extern const struct Animation anim_bon_odori_donpan3_clap1[];
-extern const struct Animation anim_bon_dance_donpan3_clap1[];
-extern const struct Animation anim_bon_odori_player_clap1[];
-extern const struct Animation anim_bon_dance_player_clap1[];
-extern const struct Animation anim_bon_odori_donpan1_clap2[];
-extern const struct Animation anim_bon_dance_donpan1_clap2[];
-extern const struct Animation anim_bon_odori_donpan2_clap2[];
-extern const struct Animation anim_bon_dance_donpan2_clap2[];
-extern const struct Animation anim_bon_odori_donpan3_clap2[];
-extern const struct Animation anim_bon_dance_donpan3_clap2[];
-extern const struct Animation anim_bon_odori_player_clap2[];
-extern const struct Animation anim_bon_dance_player_clap2[];
-extern const struct Animation anim_bon_odori_donpan1_bow[];
-extern const struct Animation anim_bon_dance_donpan1_bow[];
-extern const struct Animation anim_bon_odori_donpan2_bow[];
-extern const struct Animation anim_bon_dance_donpan2_bow[];
-extern const struct Animation anim_bon_odori_donpan3_bow[];
-extern const struct Animation anim_bon_dance_donpan3_bow[];
-extern const struct Animation anim_bon_odori_player_bow[];
-extern const struct Animation anim_bon_dance_player_bow[];
-extern const struct Animation anim_bon_odori_donpan1_glare[];
-extern const struct Animation anim_bon_dance_donpan1_glare[];
-extern const struct Animation anim_bon_odori_donpan2_glare[];
-extern const struct Animation anim_bon_dance_donpan2_glare[];
-extern const struct Animation anim_bon_odori_donpan3_glare[];
-extern const struct Animation anim_bon_dance_donpan3_glare[];
-extern const struct Animation anim_bon_odori_donpan1_happy1[];
-extern const struct Animation anim_bon_dance_donpan1_happy1[];
-extern const struct Animation anim_bon_odori_donpan2_happy1[];
-extern const struct Animation anim_bon_dance_donpan2_happy1[];
-extern const struct Animation anim_bon_odori_donpan3_happy1[];
-extern const struct Animation anim_bon_dance_donpan3_happy1[];
-extern const struct Animation anim_bon_odori_player_happy1[];
-extern const struct Animation anim_bon_dance_player_happy1[];
-extern const struct Animation anim_bon_odori_donpan1_happy2[];
-extern const struct Animation anim_bon_dance_donpan1_happy2[];
-extern const struct Animation anim_bon_odori_donpan2_happy2[];
-extern const struct Animation anim_bon_dance_donpan2_happy2[];
-extern const struct Animation anim_bon_odori_donpan3_happy2[];
-extern const struct Animation anim_bon_dance_donpan3_happy2[];
-extern const struct Animation anim_bon_odori_player_happy2[];
-extern const struct Animation anim_bon_dance_player_happy2[];
-extern const struct Animation anim_bon_odori_donpan1_spin[];
-extern const struct Animation anim_bon_dance_donpan1_spin[];
-extern const struct Animation anim_bon_odori_donpan2_spin[];
-extern const struct Animation anim_bon_dance_donpan2_spin[];
-extern const struct Animation anim_bon_odori_donpan3_spin[];
-extern const struct Animation anim_bon_dance_donpan3_spin[];
-extern const struct Animation anim_bon_odori_player_spin[];
-extern const struct Animation anim_bon_dance_player_spin[];
-extern const struct Animation anim_bon_odori_yagura_beat[];
-extern const struct Animation anim_bon_dance_yagura_beat[];
-extern const struct Animation anim_bon_odori_yagura_speak[];
-extern const struct Animation anim_bon_dance_yagura_speak[];
-extern const struct Animation anim_bon_odori_yagura_frown[];
-extern const struct Animation anim_bon_dance_yagura_frown[];
+extern struct Animation anim_bon_odori_donpan1_beat[];
+extern struct Animation anim_bon_dance_donpan1_beat[];
+extern struct Animation anim_bon_odori_donpan2_beat[];
+extern struct Animation anim_bon_dance_donpan2_beat[];
+extern struct Animation anim_bon_odori_donpan3_beat[];
+extern struct Animation anim_bon_dance_donpan3_beat[];
+extern struct Animation anim_bon_odori_player_beat[];
+extern struct Animation anim_bon_dance_player_beat[];
+extern struct Animation anim_bon_odori_donpan1_clap1[];
+extern struct Animation anim_bon_dance_donpan1_clap1[];
+extern struct Animation anim_bon_odori_donpan2_clap1[];
+extern struct Animation anim_bon_dance_donpan2_clap1[];
+extern struct Animation anim_bon_odori_donpan3_clap1[];
+extern struct Animation anim_bon_dance_donpan3_clap1[];
+extern struct Animation anim_bon_odori_player_clap1[];
+extern struct Animation anim_bon_dance_player_clap1[];
+extern struct Animation anim_bon_odori_donpan1_clap2[];
+extern struct Animation anim_bon_dance_donpan1_clap2[];
+extern struct Animation anim_bon_odori_donpan2_clap2[];
+extern struct Animation anim_bon_dance_donpan2_clap2[];
+extern struct Animation anim_bon_odori_donpan3_clap2[];
+extern struct Animation anim_bon_dance_donpan3_clap2[];
+extern struct Animation anim_bon_odori_player_clap2[];
+extern struct Animation anim_bon_dance_player_clap2[];
+extern struct Animation anim_bon_odori_donpan1_bow[];
+extern struct Animation anim_bon_dance_donpan1_bow[];
+extern struct Animation anim_bon_odori_donpan2_bow[];
+extern struct Animation anim_bon_dance_donpan2_bow[];
+extern struct Animation anim_bon_odori_donpan3_bow[];
+extern struct Animation anim_bon_dance_donpan3_bow[];
+extern struct Animation anim_bon_odori_player_bow[];
+extern struct Animation anim_bon_dance_player_bow[];
+extern struct Animation anim_bon_odori_donpan1_glare[];
+extern struct Animation anim_bon_dance_donpan1_glare[];
+extern struct Animation anim_bon_odori_donpan2_glare[];
+extern struct Animation anim_bon_dance_donpan2_glare[];
+extern struct Animation anim_bon_odori_donpan3_glare[];
+extern struct Animation anim_bon_dance_donpan3_glare[];
+extern struct Animation anim_bon_odori_donpan1_happy1[];
+extern struct Animation anim_bon_dance_donpan1_happy1[];
+extern struct Animation anim_bon_odori_donpan2_happy1[];
+extern struct Animation anim_bon_dance_donpan2_happy1[];
+extern struct Animation anim_bon_odori_donpan3_happy1[];
+extern struct Animation anim_bon_dance_donpan3_happy1[];
+extern struct Animation anim_bon_odori_player_happy1[];
+extern struct Animation anim_bon_dance_player_happy1[];
+extern struct Animation anim_bon_odori_donpan1_happy2[];
+extern struct Animation anim_bon_dance_donpan1_happy2[];
+extern struct Animation anim_bon_odori_donpan2_happy2[];
+extern struct Animation anim_bon_dance_donpan2_happy2[];
+extern struct Animation anim_bon_odori_donpan3_happy2[];
+extern struct Animation anim_bon_dance_donpan3_happy2[];
+extern struct Animation anim_bon_odori_player_happy2[];
+extern struct Animation anim_bon_dance_player_happy2[];
+extern struct Animation anim_bon_odori_donpan1_spin[];
+extern struct Animation anim_bon_dance_donpan1_spin[];
+extern struct Animation anim_bon_odori_donpan2_spin[];
+extern struct Animation anim_bon_dance_donpan2_spin[];
+extern struct Animation anim_bon_odori_donpan3_spin[];
+extern struct Animation anim_bon_dance_donpan3_spin[];
+extern struct Animation anim_bon_odori_player_spin[];
+extern struct Animation anim_bon_dance_player_spin[];
+extern struct Animation anim_bon_odori_yagura_beat[];
+extern struct Animation anim_bon_dance_yagura_beat[];
+extern struct Animation anim_bon_odori_yagura_speak[];
+extern struct Animation anim_bon_dance_yagura_speak[];
+extern struct Animation anim_bon_odori_yagura_frown[];
+extern struct Animation anim_bon_dance_yagura_frown[];
 
-extern const struct CompressedGraphics D_08bdc118; // BG Textures (Text Window?)
-extern const struct CompressedGraphics D_08bdc520; // BG Map (Text Window?)
-extern const struct CompressedGraphics D_08bdc0e8; // BG Textures (The Bon Odori)
-extern const struct CompressedGraphics D_08bdc4f0; // BG Map (The Bon Odori)
-extern const struct CompressedGraphics D_08bdc3ac; // BG Map (The Bon Odori)
-extern const struct CompressedGraphics D_08bdbca0; // OBJ Textures (The Bon Odori)
-extern const struct CompressedGraphics D_08bd9f1c; // BG Textures (Bon Dance)
-extern const struct CompressedGraphics D_08bda444; // BG Map (Bon Dance)
-extern const struct CompressedGraphics D_08bda300; // BG Map (Bon Dance)
-extern const struct CompressedGraphics D_08bd962c; // OBJ Textures (Bon Dance)
+extern struct CompressedGraphics D_08bdc118; // BG Textures (Text Window?)
+extern struct CompressedGraphics D_08bdc520; // BG Map (Text Window?)
+extern struct CompressedGraphics D_08bdc0e8; // BG Textures (The Bon Odori)
+extern struct CompressedGraphics D_08bdc4f0; // BG Map (The Bon Odori)
+extern struct CompressedGraphics D_08bdc3ac; // BG Map (The Bon Odori)
+extern struct CompressedGraphics D_08bdbca0; // OBJ Textures (The Bon Odori)
+extern struct CompressedGraphics D_08bd9f1c; // BG Textures (Bon Dance)
+extern struct CompressedGraphics D_08bda444; // BG Map (Bon Dance)
+extern struct CompressedGraphics D_08bda300; // BG Map (Bon Dance)
+extern struct CompressedGraphics D_08bd962c; // OBJ Textures (Bon Dance)
 
-extern const Palette bon_odori_bg_pal[]; // BG Palette (The Bon Odori)
-extern const Palette bon_odori_obj_pal[]; // OBJ Palette (The Bon Odori)
-extern const Palette bon_dance_bg_pal[]; // BG Palette (Bon Dance)
-extern const Palette bon_dance_obj_pal[]; // OBJ Palette (Bon Dance)
+extern Palette bon_odori_bg_pal[]; // BG Palette (The Bon Odori)
+extern Palette bon_odori_obj_pal[]; // OBJ Palette (The Bon Odori)
+extern Palette bon_dance_bg_pal[]; // BG Palette (Bon Dance)
+extern Palette bon_dance_obj_pal[]; // OBJ Palette (Bon Dance)
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089deb28] All Animations
-const struct Animation *bon_odori_anim[][2] = {
+struct Animation *bon_odori_anim[][2] = {
     { anim_bon_odori_donpan1_beat, anim_bon_dance_donpan1_beat },
     { anim_bon_odori_donpan2_beat, anim_bon_dance_donpan2_beat },
     { anim_bon_odori_donpan3_beat, anim_bon_dance_donpan3_beat },
@@ -132,7 +132,7 @@ const struct Animation *bon_odori_anim[][2] = {
 };
 
 // [D_089dec38] Animation Table
-const struct Animation **bon_odori_anim_table[] = {
+struct Animation **bon_odori_anim_table[] = {
     bon_odori_anim[0],
     bon_odori_anim[1],
     bon_odori_anim[2],
@@ -206,7 +206,7 @@ u16 bon_odori_anim_durations[] = {
 };
 
 // [D_089ded10] Buffered Textures List
-const struct CompressedGraphics *bon_odori_buffered_textures[] = {
+struct CompressedGraphics *bon_odori_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

@@ -4,7 +4,7 @@
 #include "bon_odori_prologue_anim_cells.inc.c"
 
 // [D_088ad898] Title
-const struct Animation anim_bon_odori_prologue_title[] = {
+struct Animation anim_bon_odori_prologue_title[] = {
     /* 000 */ { bon_odori_prologue_cel000, 10 },
     /* 001 */ { bon_odori_prologue_cel001, 23 },
     /* 002 */ { bon_odori_prologue_cel002, 23 },

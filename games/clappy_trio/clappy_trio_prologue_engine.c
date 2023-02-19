@@ -4,18 +4,18 @@
   /* PROLOGUE (THE CLAPPY TRIO) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08bf2f64;
-extern const struct CompressedGraphics D_08bf33cc;
-extern const struct CompressedGraphics D_08bf16b4;
-extern const Palette clappy_trio_prologue_bg_pal[];
-extern const Palette clappy_trio_prologue_obj_pal[];
+extern struct CompressedGraphics D_08bf2f64;
+extern struct CompressedGraphics D_08bf33cc;
+extern struct CompressedGraphics D_08bf16b4;
+extern Palette clappy_trio_prologue_bg_pal[];
+extern Palette clappy_trio_prologue_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089eb014] Buffered Textures List
-const struct CompressedGraphics *clappy_trio_prologue_buffered_textures[] = {
+struct CompressedGraphics *clappy_trio_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

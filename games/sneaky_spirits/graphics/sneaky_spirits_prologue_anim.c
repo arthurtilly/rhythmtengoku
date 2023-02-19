@@ -4,7 +4,7 @@
 #include "sneaky_spirits_prologue_anim_cells.inc.c"
 
 // [D_088ad2bc] Title
-const struct Animation anim_sneaky_spirits_prologue_title[] = {
+struct Animation anim_sneaky_spirits_prologue_title[] = {
     /* 000 */ { sneaky_spirits_prologue_cel001, 20 },
     /* 001 */ { sneaky_spirits_prologue_cel002, 20 },
     /* 002 */ { sneaky_spirits_prologue_cel003, 40 },

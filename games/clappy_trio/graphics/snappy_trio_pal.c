@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088ea65c] <description>
-const Palette snappy_trio_obj_pal[] = {
+Palette snappy_trio_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF800F0),
         /* 01 */ TO_RGB555(0x000000),
@@ -294,7 +294,7 @@ const Palette snappy_trio_obj_pal[] = {
 };
 
 // [D_088ea85c] <description>
-const Palette snappy_trio_bg_pal[] = {
+Palette snappy_trio_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x780000),
         /* 01 */ TO_RGB555(0x000000),

@@ -4,17 +4,17 @@
   /* PROLOGUE (BOUNCY ROAD) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08bee468;
-extern const struct CompressedGraphics D_08bee52c;
-extern const struct CompressedGraphics D_08bee430;
-extern const Palette bouncy_road_prologue_pal[];
+extern struct CompressedGraphics D_08bee468;
+extern struct CompressedGraphics D_08bee52c;
+extern struct CompressedGraphics D_08bee430;
+extern Palette bouncy_road_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089eac18] Buffered Textures List
-const struct CompressedGraphics *bouncy_road_prologue_buffered_textures[] = {
+struct CompressedGraphics *bouncy_road_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

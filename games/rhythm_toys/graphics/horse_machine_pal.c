@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_08930650] Horse Machine Palette
-const Palette horse_machine_pal[] = {
+Palette horse_machine_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),
@@ -294,7 +294,7 @@ const Palette horse_machine_pal[] = {
 };
 
 // [D_08930850] Horse Machine BG Palette 1
-const Palette horse_machine_bg_01_pal[] = {
+Palette horse_machine_bg_01_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF80000),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -478,7 +478,7 @@ const Palette horse_machine_bg_01_pal[] = {
 };
 
 // [D_08930990] Horse Machine BG Palette 2
-const Palette horse_machine_bg_02_pal[] = {
+Palette horse_machine_bg_02_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x68C838),
         /* 01 */ TO_RGB555(0xE06800),
@@ -662,7 +662,7 @@ const Palette horse_machine_bg_02_pal[] = {
 };
 
 // [D_08930ad0] Horse Machine BG Palette 3
-const Palette horse_machine_bg_03_pal[] = {
+Palette horse_machine_bg_03_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF80000),
         /* 01 */ TO_RGB555(0xE8F0F8),
@@ -846,7 +846,7 @@ const Palette horse_machine_bg_03_pal[] = {
 };
 
 // [D_08930c10] Horse Machine BG Palette 4
-const Palette horse_machine_bg_04_pal[] = {
+Palette horse_machine_bg_04_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xE0F8F0),
@@ -1030,7 +1030,7 @@ const Palette horse_machine_bg_04_pal[] = {
 };
 
 // [D_08930d50] Horse Machine BG Palette 5
-const Palette horse_machine_bg_05_pal[] = {
+Palette horse_machine_bg_05_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x68C838),
         /* 01 */ TO_RGB555(0x000000),
@@ -1214,7 +1214,7 @@ const Palette horse_machine_bg_05_pal[] = {
 };
 
 // [D_08930e90] Horse Machine BG Palette 6
-const Palette horse_machine_bg_06_pal[] = {
+Palette horse_machine_bg_06_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xE018D0),
         /* 01 */ TO_RGB555(0x503030),

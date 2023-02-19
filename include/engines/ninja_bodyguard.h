@@ -65,14 +65,14 @@ enum NinjaBodyguardAnimationsEnum {
 
 
 // Engine Definition Data:
-extern const struct Animation **ninja_bodyguard_anim_table[];
+extern struct Animation **ninja_bodyguard_anim_table[];
 extern struct SpriteVector3 D_089e69cc[];
-extern const struct CompressedGraphics *ninja_bodyguard_buffered_textures[];
+extern struct CompressedGraphics *ninja_bodyguard_buffered_textures[];
 extern struct GraphicsTable *ninja_bodyguard_gfx_tables[];
 
 
 // Functions:
-extern const struct Animation *ninja_get_anim(u32 anim); // Get Animation
+extern struct Animation *ninja_get_anim(u32 anim); // Get Animation
 // extern ? func_0803bda8(?);
 extern void func_0803be04(); // Engine Event 10 (?)
 // extern ? func_0803be44(?);

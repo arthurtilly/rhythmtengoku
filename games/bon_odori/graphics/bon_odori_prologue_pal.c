@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088ad918] OBJ Palette
-const Palette bon_odori_prologue_obj_pal[] = {
+Palette bon_odori_prologue_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x4870F8),
         /* 01 */ TO_RGB555(0x383838),
@@ -24,7 +24,7 @@ const Palette bon_odori_prologue_obj_pal[] = {
 };
 
 // [D_088ad938] BG Palette
-const Palette bon_odori_prologue_bg_pal[] = {
+Palette bon_odori_prologue_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x48E8F8),
         /* 01 */ TO_RGB555(0x000000),

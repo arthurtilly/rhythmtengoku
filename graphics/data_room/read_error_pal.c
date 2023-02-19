@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0890b330] <description>
-const Palette read_error_bg_00_pal[] = {
+Palette read_error_bg_00_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -60,7 +60,7 @@ const Palette read_error_bg_00_pal[] = {
 };
 
 // [D_0890b390] <description>
-const Palette read_error_bg_01_pal[] = {
+Palette read_error_bg_01_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),

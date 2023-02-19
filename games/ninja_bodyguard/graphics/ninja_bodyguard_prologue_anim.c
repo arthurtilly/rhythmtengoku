@@ -4,7 +4,7 @@
 #include "ninja_bodyguard_prologue_anim_cells.inc.c"
 
 // [D_088b4054] Title
-const struct Animation anim_ninja_bodyguard_prologue_title[] = {
+struct Animation anim_ninja_bodyguard_prologue_title[] = {
     /* 000 */ { ninja_bodyguard_prologue_cel005, 4 },
     /* 001 */ { ninja_bodyguard_prologue_cel004, 8 },
     /* 002 */ { ninja_bodyguard_prologue_cel003, 8 },

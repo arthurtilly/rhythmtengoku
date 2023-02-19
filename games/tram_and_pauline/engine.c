@@ -4,66 +4,66 @@
   /* TRAM & PAULINE - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_casual_fox_beat[];
-extern const struct Animation anim_casual_tram_beat[];
-extern const struct Animation anim_casual_pauline_beat[];
-extern const struct Animation anim_casual_half_tram_beat[];
-extern const struct Animation anim_casual_half_pauline_beat[];
-extern const struct Animation anim_casual_fox_crouch[];
-extern const struct Animation anim_casual_tram_crouch[];
-extern const struct Animation anim_casual_pauline_crouch[];
-extern const struct Animation anim_casual_half_tram_crouch[];
-extern const struct Animation anim_casual_half_pauline_crouch[];
-extern const struct Animation anim_casual_fox_jump[];
-extern const struct Animation anim_casual_tram_jump[];
-extern const struct Animation anim_casual_pauline_jump[];
-extern const struct Animation anim_casual_half_tram_jump[];
-extern const struct Animation anim_casual_half_pauline_jump[];
-extern const struct Animation anim_casual_fox_transform[];
-extern const struct Animation anim_casual_tram_transform[];
-extern const struct Animation anim_casual_pauline_transform[];
-extern const struct Animation anim_casual_half_tram_transform[];
-extern const struct Animation anim_casual_half_pauline_transform[];
-extern const struct Animation anim_circus_fox_beat[];
-extern const struct Animation anim_circus_tram_beat[];
-extern const struct Animation anim_circus_pauline_beat[];
-extern const struct Animation anim_circus_half_tram_beat[];
-extern const struct Animation anim_circus_half_pauline_beat[];
-extern const struct Animation anim_circus_fox_crouch[];
-extern const struct Animation anim_circus_tram_crouch[];
-extern const struct Animation anim_circus_pauline_crouch[];
-extern const struct Animation anim_circus_half_tram_crouch[];
-extern const struct Animation anim_circus_half_pauline_crouch[];
-extern const struct Animation anim_circus_fox_jump[];
-extern const struct Animation anim_circus_tram_jump[];
-extern const struct Animation anim_circus_pauline_jump[];
-extern const struct Animation anim_circus_half_tram_jump[];
-extern const struct Animation anim_circus_half_pauline_jump[];
-extern const struct Animation anim_circus_fox_transform[];
-extern const struct Animation anim_circus_tram_transform[];
-extern const struct Animation anim_circus_pauline_transform[];
-extern const struct Animation anim_circus_half_tram_transform[];
-extern const struct Animation anim_circus_half_pauline_transform[];
+extern struct Animation anim_casual_fox_beat[];
+extern struct Animation anim_casual_tram_beat[];
+extern struct Animation anim_casual_pauline_beat[];
+extern struct Animation anim_casual_half_tram_beat[];
+extern struct Animation anim_casual_half_pauline_beat[];
+extern struct Animation anim_casual_fox_crouch[];
+extern struct Animation anim_casual_tram_crouch[];
+extern struct Animation anim_casual_pauline_crouch[];
+extern struct Animation anim_casual_half_tram_crouch[];
+extern struct Animation anim_casual_half_pauline_crouch[];
+extern struct Animation anim_casual_fox_jump[];
+extern struct Animation anim_casual_tram_jump[];
+extern struct Animation anim_casual_pauline_jump[];
+extern struct Animation anim_casual_half_tram_jump[];
+extern struct Animation anim_casual_half_pauline_jump[];
+extern struct Animation anim_casual_fox_transform[];
+extern struct Animation anim_casual_tram_transform[];
+extern struct Animation anim_casual_pauline_transform[];
+extern struct Animation anim_casual_half_tram_transform[];
+extern struct Animation anim_casual_half_pauline_transform[];
+extern struct Animation anim_circus_fox_beat[];
+extern struct Animation anim_circus_tram_beat[];
+extern struct Animation anim_circus_pauline_beat[];
+extern struct Animation anim_circus_half_tram_beat[];
+extern struct Animation anim_circus_half_pauline_beat[];
+extern struct Animation anim_circus_fox_crouch[];
+extern struct Animation anim_circus_tram_crouch[];
+extern struct Animation anim_circus_pauline_crouch[];
+extern struct Animation anim_circus_half_tram_crouch[];
+extern struct Animation anim_circus_half_pauline_crouch[];
+extern struct Animation anim_circus_fox_jump[];
+extern struct Animation anim_circus_tram_jump[];
+extern struct Animation anim_circus_pauline_jump[];
+extern struct Animation anim_circus_half_tram_jump[];
+extern struct Animation anim_circus_half_pauline_jump[];
+extern struct Animation anim_circus_fox_transform[];
+extern struct Animation anim_circus_tram_transform[];
+extern struct Animation anim_circus_pauline_transform[];
+extern struct Animation anim_circus_half_tram_transform[];
+extern struct Animation anim_circus_half_pauline_transform[];
 
-extern const struct CompressedGraphics D_08d058c4;
-extern const struct CompressedGraphics D_08d05e78;
-extern const struct CompressedGraphics D_08d062c0;
-extern const struct CompressedGraphics D_08d052d0;
-extern const struct CompressedGraphics D_08d02864;
-extern const struct CompressedGraphics D_08d02f20;
-extern const struct CompressedGraphics D_08d02100;
+extern struct CompressedGraphics D_08d058c4;
+extern struct CompressedGraphics D_08d05e78;
+extern struct CompressedGraphics D_08d062c0;
+extern struct CompressedGraphics D_08d052d0;
+extern struct CompressedGraphics D_08d02864;
+extern struct CompressedGraphics D_08d02f20;
+extern struct CompressedGraphics D_08d02100;
 
-extern const Palette tram_and_pauline_bg_pal[];
-extern const Palette tram_and_pauline_obj_pal[];
-extern const Palette tram_and_pauline_remix_3_bg_pal[];
-extern const Palette tram_and_pauline_tutorial_pal[];
+extern Palette tram_and_pauline_bg_pal[];
+extern Palette tram_and_pauline_obj_pal[];
+extern Palette tram_and_pauline_remix_3_bg_pal[];
+extern Palette tram_and_pauline_tutorial_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e8a28] Buffered Textures List
-const struct CompressedGraphics *tram_pauline_buffered_textures[] = {
+struct CompressedGraphics *tram_pauline_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -176,7 +176,7 @@ struct GraphicsTable *tram_pauline_gfx_tables[] = {
 };
 
 // [D_089e8b2c] All Animations (Format: [version][action][character] (may be wrong!))
-const struct Animation *tram_pauline_anim_table[][4][6] = {
+struct Animation *tram_pauline_anim_table[][4][6] = {
     /* 0x00 */ {
         /* 0x00 */ {
             /* 0x00 */ anim_casual_fox_beat,

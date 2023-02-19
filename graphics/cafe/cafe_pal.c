@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0890023c] <description>
-const Palette cafe_obj_pal[] = {
+Palette cafe_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x504848),
         /* 01 */ TO_RGB555(0x000000),
@@ -168,7 +168,7 @@ const Palette cafe_obj_pal[] = {
 };
 
 // [D_0890035c] <description>
-const Palette cafe_bg_pal[] = {
+Palette cafe_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x102050),
         /* 01 */ TO_RGB555(0x000000),

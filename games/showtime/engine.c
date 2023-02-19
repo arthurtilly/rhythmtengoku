@@ -4,23 +4,23 @@
   /* SHOWTIME - GAME ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c551e8;
-extern const struct CompressedGraphics D_08c57038;
-extern const struct CompressedGraphics D_08c571c0;
-extern const struct CompressedGraphics D_08c54f7c;
-extern const struct CompressedGraphics D_08c56bd8;
-extern const struct CompressedGraphics D_08c57650;
-extern const struct CompressedGraphics D_08c577d8;
-extern const Palette showtime_bg_pal[];
-extern const Palette showtime_obj_pal[];
-extern const Palette showtime_remix_3_bg_pal[];
+extern struct CompressedGraphics D_08c551e8;
+extern struct CompressedGraphics D_08c57038;
+extern struct CompressedGraphics D_08c571c0;
+extern struct CompressedGraphics D_08c54f7c;
+extern struct CompressedGraphics D_08c56bd8;
+extern struct CompressedGraphics D_08c57650;
+extern struct CompressedGraphics D_08c577d8;
+extern Palette showtime_bg_pal[];
+extern Palette showtime_obj_pal[];
+extern Palette showtime_remix_3_bg_pal[];
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e384c] Buffered Textures List
-const struct CompressedGraphics *showtime_buffered_textures[] = {
+struct CompressedGraphics *showtime_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -286,7 +286,7 @@ struct GameEngine showtime_engine = {
 
 
 // [D_089e3ac4] Penguin Beat Animations
-const struct Animation *showtime_penguin_beat_anim[] = {
+struct Animation *showtime_penguin_beat_anim[] = {
     /* 0x00 */ anim_showtime_penguin_beat,
     /* 0x01 */ anim_showtime_big_penguin_beat,
     /* 0x02 */ anim_showtime_penguin_beat,
@@ -295,7 +295,7 @@ const struct Animation *showtime_penguin_beat_anim[] = {
 };
 
 // [D_089e3ad8] Penguin Jump Prepare Animations
-const struct Animation *showtime_penguin_jump_prepare_anim[] = {
+struct Animation *showtime_penguin_jump_prepare_anim[] = {
     /* 0x00 */ anim_showtime_penguin_jump_prepare,
     /* 0x01 */ anim_showtime_big_penguin_jump_prepare,
     /* 0x02 */ anim_showtime_penguin_jump_prepare,
@@ -304,7 +304,7 @@ const struct Animation *showtime_penguin_jump_prepare_anim[] = {
 };
 
 // [D_089e3aec] Penguin Jump Animations
-const struct Animation *showtime_penguin_jump_anim[] = {
+struct Animation *showtime_penguin_jump_anim[] = {
     /* 0x00 */ anim_showtime_penguin_jump,
     /* 0x01 */ anim_showtime_big_penguin_jump,
     /* 0x02 */ anim_showtime_penguin_jump,
@@ -313,7 +313,7 @@ const struct Animation *showtime_penguin_jump_anim[] = {
 };
 
 // [D_089e3b00] Penguin Slide Animations
-const struct Animation *showtime_penguin_slide_anim[] = {
+struct Animation *showtime_penguin_slide_anim[] = {
     /* 0x00 */ anim_showtime_penguin_slide,
     /* 0x01 */ anim_showtime_big_penguin_slide,
     /* 0x02 */ anim_showtime_penguin_slide,

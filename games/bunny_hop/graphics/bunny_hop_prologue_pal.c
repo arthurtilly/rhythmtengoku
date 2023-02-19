@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088b361c] Palette
-const Palette bunny_hop_prologue_pal[] = {
+Palette bunny_hop_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x980000),
         /* 01 */ TO_RGB555(0x00B8F0),

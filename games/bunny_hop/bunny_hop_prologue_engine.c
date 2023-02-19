@@ -4,17 +4,17 @@
   /* PROLOGUE (BUNNY HOP) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c1f24c;
-extern const struct CompressedGraphics D_08c1f308;
-extern const struct CompressedGraphics D_08c1f214;
-extern const Palette bunny_hop_prologue_pal[];
+extern struct CompressedGraphics D_08c1f24c;
+extern struct CompressedGraphics D_08c1f308;
+extern struct CompressedGraphics D_08c1f214;
+extern Palette bunny_hop_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ecb60] Buffered Textures List
-const struct CompressedGraphics *bunny_hop_prologue_buffered_textures[] = {
+struct CompressedGraphics *bunny_hop_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

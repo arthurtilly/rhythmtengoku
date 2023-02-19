@@ -4,18 +4,18 @@
   /* PROLOGUE (TOSS BOYS) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08c2d448;
-extern const struct CompressedGraphics D_08c2d960;
-extern const struct CompressedGraphics D_08c2a208;
-extern const Palette toss_boys_prologue_bg_pal[];
-extern const Palette toss_boys_prologue_obj_pal[];
+extern struct CompressedGraphics D_08c2d448;
+extern struct CompressedGraphics D_08c2d960;
+extern struct CompressedGraphics D_08c2a208;
+extern Palette toss_boys_prologue_bg_pal[];
+extern Palette toss_boys_prologue_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ed820] Buffered Textures List
-const struct CompressedGraphics *toss_boys_prologue_buffered_textures[] = {
+struct CompressedGraphics *toss_boys_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

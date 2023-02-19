@@ -20,8 +20,8 @@ struct SpaceballInfo {
         s32 y;
         s32 z;
         u32 swingTimer;
-        const struct Animation *animClose;
-        const struct Animation *animFar;
+        struct Animation *animClose;
+        struct Animation *animFar;
     } batter;
     struct SpaceballEntity pitcher;
     struct SpaceballEntity umpire;
@@ -62,28 +62,28 @@ enum SpaceballCueStatesEnum {
 };
 
 // OAM Animations:
-extern const struct Animation anim_spaceball_batter_green[]; // Animation: "batter_green"
-extern const struct Animation anim_spaceball_batter_red[]; // Animation: "?"
-extern const struct Animation anim_spaceball_pitcher[]; // Animation: "pitcher_shoot"
-extern const struct Animation anim_spaceball_apple[]; // Animation: "?"
-extern const struct Animation anim_spaceball_baseball[]; // Animation: "?"
-extern const struct Animation anim_spaceball_baseball_far[]; // Animation: "?"
-extern const struct Animation anim_spaceball_rice_ball[]; // Animation: "?"
-extern const struct Animation anim_spaceball_rice_ball_far[]; // Animation: "?"
-extern const struct Animation anim_spaceball_star_ball[]; // Animation: "?"
-extern const struct Animation anim_spaceball_apple_far[]; // Animation: "?"
-extern const struct Animation anim_spaceball_poof[]; // Animation: "miss_poof"
-extern const struct Animation anim_spaceball_bg_star[]; // Animation: "bg_star"
-extern const struct Animation anim_spaceball_ufo_open[]; // Animation: "umpire_show"
-extern const struct Animation anim_spaceball_ufo_sway[]; // Animation: "umpire_sway"
-extern const struct Animation anim_spaceball_batter_pink[]; // Animation: "?"
-extern const struct Animation anim_spaceball_flower_turn[]; // Animation: "?"
-extern const struct Animation anim_spaceball_flower_test[]; // Animation: "?"
-extern const struct Animation anim_spaceball_batter_green_far[]; // Animation: "?"
-extern const struct Animation anim_spaceball_batter_red_far[]; // Animation: "?"
-extern const struct Animation anim_spaceball_batter_pink_far[]; // Animation: "?"
-extern const struct Animation anim_spaceball_flower_kiss[]; // Animation: "?"
-extern const struct Animation anim_spaceball_flower_hide[]; // Animation: "?"
+extern struct Animation anim_spaceball_batter_green[]; // Animation: "batter_green"
+extern struct Animation anim_spaceball_batter_red[]; // Animation: "?"
+extern struct Animation anim_spaceball_pitcher[]; // Animation: "pitcher_shoot"
+extern struct Animation anim_spaceball_apple[]; // Animation: "?"
+extern struct Animation anim_spaceball_baseball[]; // Animation: "?"
+extern struct Animation anim_spaceball_baseball_far[]; // Animation: "?"
+extern struct Animation anim_spaceball_rice_ball[]; // Animation: "?"
+extern struct Animation anim_spaceball_rice_ball_far[]; // Animation: "?"
+extern struct Animation anim_spaceball_star_ball[]; // Animation: "?"
+extern struct Animation anim_spaceball_apple_far[]; // Animation: "?"
+extern struct Animation anim_spaceball_poof[]; // Animation: "miss_poof"
+extern struct Animation anim_spaceball_bg_star[]; // Animation: "bg_star"
+extern struct Animation anim_spaceball_ufo_open[]; // Animation: "umpire_show"
+extern struct Animation anim_spaceball_ufo_sway[]; // Animation: "umpire_sway"
+extern struct Animation anim_spaceball_batter_pink[]; // Animation: "?"
+extern struct Animation anim_spaceball_flower_turn[]; // Animation: "?"
+extern struct Animation anim_spaceball_flower_test[]; // Animation: "?"
+extern struct Animation anim_spaceball_batter_green_far[]; // Animation: "?"
+extern struct Animation anim_spaceball_batter_red_far[]; // Animation: "?"
+extern struct Animation anim_spaceball_batter_pink_far[]; // Animation: "?"
+extern struct Animation anim_spaceball_flower_kiss[]; // Animation: "?"
+extern struct Animation anim_spaceball_flower_hide[]; // Animation: "?"
 
 // Palettes:
 
@@ -92,18 +92,18 @@ extern const struct Animation anim_spaceball_flower_hide[]; // Animation: "?"
 // Engine Data:
 
 // Engine Definition Data:
-extern const struct CompressedGraphics *spaceball_buffered_textures[]; // Buffered Textures List
+extern struct CompressedGraphics *spaceball_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable spaceball_gfx_table[]; // Graphics Table
-extern const struct Animation *spaceball_anim_table_batter_close[3]; // Batter Animations (Close)
-extern const struct Animation *spaceball_anim_table_batter_far[3]; // Batter Animations (Far)
-extern const struct Animation *spaceball_anim_table_ball[3]; // Spaceball Animations
+extern struct Animation *spaceball_anim_table_batter_close[3]; // Batter Animations (Close)
+extern struct Animation *spaceball_anim_table_batter_far[3]; // Batter Animations (Far)
+extern struct Animation *spaceball_anim_table_ball[3]; // Spaceball Animations
 
 // Functions:
 extern void spaceball_reset_star(u32);              // Initialise/Reset BG Star Position
 extern void spaceball_update_stars_x_y(void);       // Update BG Star Positions (X, Y)
 extern void spaceball_update_stars_z(void);         // Update BG Star Positions (Z)
 extern void spaceball_update_entity(struct AffineSprite *, s32, s32, s32); // Update Entity Position
-extern void spaceball_update_batter(struct AffineSprite *, s32, s32, s32, const struct Animation *, const struct Animation *); // Update Batter Position
+extern void spaceball_update_batter(struct AffineSprite *, s32, s32, s32, struct Animation *, struct Animation *); // Update Batter Position
 extern void spaceball_update_graphics(void);        // Update Entities, Stars & Camera
 extern void spaceball_init_gfx3(void);              // GFX_INIT Func_02
 extern void spaceball_init_gfx2(void);              // GFX_INIT Func_01

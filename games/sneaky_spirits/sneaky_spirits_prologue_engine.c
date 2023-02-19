@@ -4,17 +4,17 @@
   /* PROLOGUE (SNEAKY SPIRITS) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08be1c50;
-extern const struct CompressedGraphics D_08be1dfc;
-extern const struct CompressedGraphics D_08be0ff8;
-extern const Palette sneaky_spirits_prologue_pal[];
+extern struct CompressedGraphics D_08be1c50;
+extern struct CompressedGraphics D_08be1dfc;
+extern struct CompressedGraphics D_08be0ff8;
+extern Palette sneaky_spirits_prologue_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089ea088] Buffered Textures List
-const struct CompressedGraphics *sneaky_spirits_prologue_buffered_textures[] = {
+struct CompressedGraphics *sneaky_spirits_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

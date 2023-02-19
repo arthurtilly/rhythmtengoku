@@ -4,18 +4,18 @@
   /* PROLOGUE (MARCHING ORDERS) - ENGINE DATA */
 
 
-extern const struct CompressedGraphics D_08bfbe68;
-extern const struct CompressedGraphics D_08bfc1f8;
-extern const struct CompressedGraphics D_08bfa204;
-extern const Palette marching_orders_prologue_bg_pal[];
-extern const Palette marching_orders_prologue_obj_pal[];
+extern struct CompressedGraphics D_08bfbe68;
+extern struct CompressedGraphics D_08bfc1f8;
+extern struct CompressedGraphics D_08bfa204;
+extern Palette marching_orders_prologue_bg_pal[];
+extern Palette marching_orders_prologue_obj_pal[];
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
 // [D_089eb66c] Buffered Textures List
-const struct CompressedGraphics *marching_orders_prologue_buffered_textures[] = {
+struct CompressedGraphics *marching_orders_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 

@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088adbb4] OBJ Palette
-const Palette cosmic_dance_prologue_obj_pal[] = {
+Palette cosmic_dance_prologue_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF86008),
         /* 01 */ TO_RGB555(0x00F008),
@@ -24,7 +24,7 @@ const Palette cosmic_dance_prologue_obj_pal[] = {
 };
 
 // [D_088adbd4] BG Palette
-const Palette cosmic_dance_prologue_bg_pal[] = {
+Palette cosmic_dance_prologue_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000838),

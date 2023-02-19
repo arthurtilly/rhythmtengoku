@@ -4,7 +4,7 @@
 #include "ninja_reincarnate_prologue_anim_cells.inc.c"
 
 // [D_088b432c] Title
-const struct Animation anim_ninja_reincarnate_prologue_title[] = {
+struct Animation anim_ninja_reincarnate_prologue_title[] = {
     /* 000 */ { ninja_reincarnate_prologue_cel005, 4 },
     /* 001 */ { ninja_reincarnate_prologue_cel004, 8 },
     /* 002 */ { ninja_reincarnate_prologue_cel003, 8 },

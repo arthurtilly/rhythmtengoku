@@ -4,39 +4,39 @@
   /* NIGHT WALK - GAME ENGINE DATA */
 
 
-extern const struct Animation anim_night_walk_star_tiny[]; // [D_088c9ec8] Very Small Star
-extern const struct Animation anim_night_walk_star_small[]; // [D_088c9df0] Small Star
-extern const struct Animation anim_night_walk_star_med[]; // [D_088c9e38] Medium Star
-extern const struct Animation anim_night_walk_star_big[]; // [D_088c9e80] Large Star
-extern const struct Animation anim_night_walk_star_huge[]; // [D_088c9f10] Very Large Star
-extern const struct Animation anim_night_walk_star_tiny_to_small[]; // [D_088ca078] Small Star Flash
-extern const struct Animation anim_night_walk_star_small_to_med[]; // [D_088ca090] Medium Star Flash
-extern const struct Animation anim_night_walk_star_med_to_big[]; // [D_088ca0a8] Large Star Flash
-extern const struct Animation anim_night_walk_star_big_to_huge[]; // [D_088ca0c0] Very Large Star Flash
-extern const struct Animation anim_night_walk_heart_bridge[];
-extern const struct Animation anim_night_walk_lollipop_bridge[];
-extern const struct Animation anim_night_walk_umbrella_bridge[];
-extern const struct Animation anim_night_walk_heart_box[];
-extern const struct Animation anim_night_walk_lollipop_box[];
-extern const struct Animation anim_night_walk_umbrella_box[];
-extern const struct Animation anim_night_walk_ng_heart_bridge[];
-extern const struct Animation anim_night_walk_ng_lollipop_bridge[];
-extern const struct Animation anim_night_walk_ng_umbrella_bridge[];
-extern const struct Animation anim_night_walk_ng_heart_box[];
-extern const struct Animation anim_night_walk_ng_lollipop_box[];
-extern const struct Animation anim_night_walk_ng_umbrella_box[];
-extern const struct Animation anim_night_walk_ng_wand_box[];
+extern struct Animation anim_night_walk_star_tiny[]; // [D_088c9ec8] Very Small Star
+extern struct Animation anim_night_walk_star_small[]; // [D_088c9df0] Small Star
+extern struct Animation anim_night_walk_star_med[]; // [D_088c9e38] Medium Star
+extern struct Animation anim_night_walk_star_big[]; // [D_088c9e80] Large Star
+extern struct Animation anim_night_walk_star_huge[]; // [D_088c9f10] Very Large Star
+extern struct Animation anim_night_walk_star_tiny_to_small[]; // [D_088ca078] Small Star Flash
+extern struct Animation anim_night_walk_star_small_to_med[]; // [D_088ca090] Medium Star Flash
+extern struct Animation anim_night_walk_star_med_to_big[]; // [D_088ca0a8] Large Star Flash
+extern struct Animation anim_night_walk_star_big_to_huge[]; // [D_088ca0c0] Very Large Star Flash
+extern struct Animation anim_night_walk_heart_bridge[];
+extern struct Animation anim_night_walk_lollipop_bridge[];
+extern struct Animation anim_night_walk_umbrella_bridge[];
+extern struct Animation anim_night_walk_heart_box[];
+extern struct Animation anim_night_walk_lollipop_box[];
+extern struct Animation anim_night_walk_umbrella_box[];
+extern struct Animation anim_night_walk_ng_heart_bridge[];
+extern struct Animation anim_night_walk_ng_lollipop_bridge[];
+extern struct Animation anim_night_walk_ng_umbrella_bridge[];
+extern struct Animation anim_night_walk_ng_heart_box[];
+extern struct Animation anim_night_walk_ng_lollipop_box[];
+extern struct Animation anim_night_walk_ng_umbrella_box[];
+extern struct Animation anim_night_walk_ng_wand_box[];
 
-extern const struct CompressedGraphics D_08c52420;
-extern const struct CompressedGraphics D_08c524fc;
-extern const Palette night_walk_pal[];
+extern struct CompressedGraphics D_08c52420;
+extern struct CompressedGraphics D_08c524fc;
+extern Palette night_walk_pal[];
 
 
   //  //  //  MISCELLANEOUS DATA  //  //  //
 
 
 // [D_089e2ed4] Star Animations
-const struct Animation *night_walk_star_anim[] = {
+struct Animation *night_walk_star_anim[] = {
     anim_night_walk_star_tiny,
     anim_night_walk_star_small,
     anim_night_walk_star_med,
@@ -45,7 +45,7 @@ const struct Animation *night_walk_star_anim[] = {
 };
 
 // [D_089e2ee8] Star Expand Animations
-const struct Animation *night_walk_star_expand_anim[] = {
+struct Animation *night_walk_star_expand_anim[] = {
     anim_night_walk_star_tiny_to_small,
     anim_night_walk_star_small_to_med,
     anim_night_walk_star_med_to_big,
@@ -59,7 +59,7 @@ const struct Animation *night_walk_star_expand_anim[] = {
 
 
 // [D_089e3380] Buffered Textures List
-const struct CompressedGraphics *night_walk_buffered_textures[] = {
+struct CompressedGraphics *night_walk_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
@@ -523,7 +523,7 @@ struct DrumTechNote *night_walk_drum_seq_offbeat_swing[] = {
 };
 
 // [D_089e3620] Bridge Hit Animations
-const struct Animation *night_walk_bridge_anim[] = {
+struct Animation *night_walk_bridge_anim[] = {
     /* KICK   */ anim_night_walk_heart_bridge,
     /* SNARE  */ anim_night_walk_lollipop_bridge,
     /* CYMBAL */ anim_night_walk_umbrella_bridge,
@@ -532,7 +532,7 @@ const struct Animation *night_walk_bridge_anim[] = {
 };
 
 // [D_089e3634] Box Hit Animations
-const struct Animation *night_walk_box_anim[] = {
+struct Animation *night_walk_box_anim[] = {
     /* KICK   */ anim_night_walk_heart_box,
     /* SNARE  */ anim_night_walk_lollipop_box,
     /* CYMBAL */ anim_night_walk_umbrella_box,
@@ -541,7 +541,7 @@ const struct Animation *night_walk_box_anim[] = {
 };
 
 // [D_089e3648] Bridge/Box Barely Animations
-const struct Animation *night_walk_barely_anim[][2] = {
+struct Animation *night_walk_barely_anim[][2] = {
     /* KICK   */ { anim_night_walk_ng_heart_bridge, anim_night_walk_ng_heart_box },
     /* SNARE  */ { anim_night_walk_ng_lollipop_bridge, anim_night_walk_ng_lollipop_box },
     /* CYMBAL */ { anim_night_walk_ng_umbrella_bridge, anim_night_walk_ng_umbrella_box },

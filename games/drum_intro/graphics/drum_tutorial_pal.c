@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088c2fe0] Drum Intro (Player Scene) Palette (BG & OBJ)
-const Palette drum_intro_play_pal[] = {
+Palette drum_intro_play_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),
         /* 01 */ TO_RGB555(0x302020),

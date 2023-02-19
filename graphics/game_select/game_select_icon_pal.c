@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_089056e0] Game Icons Palette
-const Palette game_select_bg_icon_pal[] = {
+Palette game_select_bg_icon_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x384050),
         /* 01 */ TO_RGB555(0x000000),

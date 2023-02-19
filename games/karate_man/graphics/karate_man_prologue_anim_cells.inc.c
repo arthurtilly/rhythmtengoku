@@ -1,13 +1,13 @@
 // do not rename these
 
 // [D_088ad958]
-const AnimationCel karate_man_prologue_cel000[] = {
+AnimationCel karate_man_prologue_cel000[] = {
     /* Len */ 1,
     /* 000 */ 0x00fb, 0x01fc, 0x0010
 };
 
 // [D_088ad960]
-const AnimationCel karate_man_prologue_cel001[] = {
+AnimationCel karate_man_prologue_cel001[] = {
     /* Len */ 3,
     /* 000 */ 0x00b0, 0xc192, 0x0010,
     /* 001 */ 0x40f0, 0x8192, 0x0196,
@@ -15,7 +15,7 @@ const AnimationCel karate_man_prologue_cel001[] = {
 };
 
 // [D_088ad974]
-const AnimationCel karate_man_prologue_cel002[] = {
+AnimationCel karate_man_prologue_cel002[] = {
     /* Len */ 6,
     /* 000 */ 0x00b0, 0xc192, 0x0010,
     /* 001 */ 0x40f0, 0x8192, 0x0196,
@@ -26,7 +26,7 @@ const AnimationCel karate_man_prologue_cel002[] = {
 };
 
 // [D_088ad99a]
-const AnimationCel karate_man_prologue_cel003[] = {
+AnimationCel karate_man_prologue_cel003[] = {
     /* Len */ 9,
     /* 000 */ 0x00b0, 0xc192, 0x0010,
     /* 001 */ 0x40f0, 0x8192, 0x0196,
@@ -40,7 +40,7 @@ const AnimationCel karate_man_prologue_cel003[] = {
 };
 
 // [D_088ad9d2]
-const AnimationCel karate_man_prologue_cel004[] = {
+AnimationCel karate_man_prologue_cel004[] = {
     /* Len */ 14,
     /* 000 */ 0x00b0, 0xc192, 0x0010,
     /* 001 */ 0x40f0, 0x8192, 0x0196,
@@ -59,14 +59,14 @@ const AnimationCel karate_man_prologue_cel004[] = {
 };
 
 // [D_088ada28]
-const AnimationCel karate_man_prologue_cel005[] = {
+AnimationCel karate_man_prologue_cel005[] = {
     /* Len */ 2,
     /* 000 */ 0x00e2, 0x8000, 0x1110,
     /* 001 */ 0x80e2, 0x8020, 0x1184
 };
 
 // [D_088ada36]
-const AnimationCel karate_man_prologue_cel006[] = {
+AnimationCel karate_man_prologue_cel006[] = {
     /* Len */ 3,
     /* 000 */ 0x00e4, 0x8000, 0x110c,
     /* 001 */ 0x80e4, 0x8020, 0x111c,
@@ -74,7 +74,7 @@ const AnimationCel karate_man_prologue_cel006[] = {
 };
 
 // [D_088ada4a]
-const AnimationCel karate_man_prologue_cel007[] = {
+AnimationCel karate_man_prologue_cel007[] = {
     /* Len */ 4,
     /* 000 */ 0x00f1, 0x81ff, 0x1118,
     /* 001 */ 0x80f1, 0x801f, 0x111e,
@@ -83,7 +83,7 @@ const AnimationCel karate_man_prologue_cel007[] = {
 };
 
 // [D_088ada64]
-const AnimationCel karate_man_prologue_cel008[] = {
+AnimationCel karate_man_prologue_cel008[] = {
     /* Len */ 3,
     /* 000 */ 0x00e4, 0x8000, 0x110c,
     /* 001 */ 0x80e4, 0x8020, 0x111c,

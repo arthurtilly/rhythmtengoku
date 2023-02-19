@@ -4,43 +4,43 @@
 #include "title_anim_cells.inc.c"
 
 // [D_0890d3a0] <description>
-const struct Animation title_anim00[] = {
+struct Animation title_anim00[] = {
     /* 000 */ { title_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d3b0] <description>
-const struct Animation title_anim01[] = {
+struct Animation title_anim01[] = {
     /* 000 */ { title_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d3c0] <description>
-const struct Animation title_anim02[] = {
+struct Animation title_anim02[] = {
     /* 000 */ { title_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d3d0] <description>
-const struct Animation title_anim03[] = {
+struct Animation title_anim03[] = {
     /* 000 */ { title_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d3e0] <description>
-const struct Animation title_anim04[] = {
+struct Animation title_anim04[] = {
     /* 000 */ { title_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d3f0] <description>
-const struct Animation title_anim05[] = {
+struct Animation title_anim05[] = {
     /* 000 */ { title_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d400] <description>
-const struct Animation title_anim06[] = {
+struct Animation title_anim06[] = {
     /* 000 */ { title_cel010, 2 },
     /* 001 */ { title_cel011, 3 },
     /* 002 */ { title_cel012, 28 },
@@ -48,12 +48,12 @@ const struct Animation title_anim06[] = {
 };
 
 // [D_0890d420] <description>
-const struct Animation title_anim07[] = {
+struct Animation title_anim07[] = {
     /* End */ END_ANIMATION
 };
 
 // [D_0890d428] <description>
-const struct Animation title_anim08[] = {
+struct Animation title_anim08[] = {
     /* 000 */ { title_cel002, 4 },
     /* 001 */ { title_cel003, 4 },
     /* 002 */ { title_cel004, 4 },
@@ -62,7 +62,7 @@ const struct Animation title_anim08[] = {
 };
 
 // [D_0890d450] <description>
-const struct Animation title_anim09[] = {
+struct Animation title_anim09[] = {
     /* 000 */ { title_cel000, 120 },
     /* 001 */ { title_cel006, 3 },
     /* 002 */ { title_cel007, 120 },
@@ -76,55 +76,55 @@ const struct Animation title_anim09[] = {
 };
 
 // [D_0890d4a0] <description>
-const struct Animation title_anim10[] = {
+struct Animation title_anim10[] = {
     /* 000 */ { title_cel015, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d4b0] <description>
-const struct Animation title_anim11[] = {
+struct Animation title_anim11[] = {
     /* 000 */ { title_cel016, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d4c0] <description>
-const struct Animation title_anim12[] = {
+struct Animation title_anim12[] = {
     /* 000 */ { title_cel017, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d4d0] <description>
-const struct Animation title_anim13[] = {
+struct Animation title_anim13[] = {
     /* 000 */ { title_cel018, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d4e0] <description>
-const struct Animation title_anim14[] = {
+struct Animation title_anim14[] = {
     /* 000 */ { title_cel019, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d4f0] <description>
-const struct Animation title_anim15[] = {
+struct Animation title_anim15[] = {
     /* 000 */ { title_cel013, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d500] <description>
-const struct Animation title_anim16[] = {
+struct Animation title_anim16[] = {
     /* 000 */ { title_cel014, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d510] <description>
-const struct Animation title_anim17[] = {
+struct Animation title_anim17[] = {
     /* 000 */ { title_cel020, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d520] <description>
-const struct Animation title_anim18[] = {
+struct Animation title_anim18[] = {
     /* 000 */ { title_cel021, 4 },
     /* 001 */ { title_cel022, 4 },
     /* 002 */ { title_cel023, 4 },

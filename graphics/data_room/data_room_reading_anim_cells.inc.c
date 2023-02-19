@@ -1,7 +1,7 @@
 // do not rename these
 
 // [D_0890ade0]
-const AnimationCel data_room_reading_cel000[] = {
+AnimationCel data_room_reading_cel000[] = {
     /* Len */ 8,
     /* 000 */ 0x4000, 0x81e0, 0x0000,
     /* 001 */ 0x4000, 0x8000, 0x0000,
@@ -14,13 +14,13 @@ const AnimationCel data_room_reading_cel000[] = {
 };
 
 // [D_0890ae12]
-const AnimationCel data_room_reading_cel001[] = {
+AnimationCel data_room_reading_cel001[] = {
     /* Len */ 1,
     /* 000 */ 0x40ff, 0x4000, 0x0008
 };
 
 // [D_0890ae1a]
-const AnimationCel data_room_reading_cel002[] = {
+AnimationCel data_room_reading_cel002[] = {
     /* Len */ 1,
     /* 000 */ 0x4006, 0x4000, 0x0004
 };
