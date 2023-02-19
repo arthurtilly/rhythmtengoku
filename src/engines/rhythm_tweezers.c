@@ -10,8 +10,6 @@ asm(".include \"include/gba.inc\""); // Temporary
 // For readability.
 #define gRhythmTweezersInfo ((struct RhythmTweezersInfo *)D_030055d0)
 
-extern struct Animation *rhythm_tweezers_veg_face_anim[]; // Array of animation pointers for vegetable faces
-
 
 /* RHYTHM TWEEZERS */
 

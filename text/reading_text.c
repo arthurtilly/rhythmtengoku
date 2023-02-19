@@ -7,14 +7,8 @@
 
 
 #include "reading_material.inc.c"
+#include "graphics/data_room/data_room_graphics.h"
 
-
-/* Reading */
-
-
-extern struct CompressedGraphics D_08cd29ac;
-extern struct CompressedGraphics D_08cd2cec;
-extern Palette D_0890b330[];
 
 // [D_08058f00] Reading - Graphics Table ?
 const struct GraphicsTable D_08058f00[] = {
@@ -29,7 +23,7 @@ const struct GraphicsTable D_08058f00[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ D_0890b330,
+        /* Src.  */ read_error_bg_00_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x200
     },

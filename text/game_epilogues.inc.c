@@ -1,9 +1,3 @@
-extern struct CompressedGraphics D_08c8ede0;
-extern struct CompressedGraphics D_08c8f214;
-extern struct CompressedGraphics D_08c8f094;
-extern struct CompressedGraphics D_08c8ef24;
-extern Palette epilogue_karate_man_bg_pal[];
-
 // [D_08050c34] Epilogue - Karate Man (Superb)
 const struct GraphicsTable gfx_table_epilogue_karate_man_superb[] = {
     /* BG Tileset */ {
@@ -64,12 +58,6 @@ const struct GraphicsTable gfx_table_epilogue_karate_man_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08c98078;
-extern struct CompressedGraphics D_08c98448;
-extern struct CompressedGraphics D_08c982d0;
-extern struct CompressedGraphics D_08c98188;
-extern Palette epilogue_clappy_trio_bg_pal[];
 
 // [D_08050cc4] Epilogue - The Clappy Trio (Superb)
 const struct GraphicsTable gfx_table_epilogue_clappy_trio_superb[] = {
@@ -132,12 +120,6 @@ const struct GraphicsTable gfx_table_epilogue_clappy_trio_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08c992d8;
-extern struct CompressedGraphics D_08c996f4;
-extern struct CompressedGraphics D_08c99580;
-extern struct CompressedGraphics D_08c99420;
-extern Palette epilogue_snappy_trio_bg_pal[];
-
 // [D_08050d54] Epilogue - The Snappy Trio (Superb)
 const struct GraphicsTable gfx_table_epilogue_snappy_trio_superb[] = {
     /* BG Tileset */ {
@@ -198,12 +180,6 @@ const struct GraphicsTable gfx_table_epilogue_snappy_trio_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08c9f1e0;
-extern struct CompressedGraphics D_08c9f4e4;
-extern struct CompressedGraphics D_08c9f394;
-extern struct CompressedGraphics D_08c9f2a0;
-extern Palette epilogue_polyrhythm_bg_pal[];
 
 // [D_08050de4] Epilogue - Polyrhythm (Superb)
 const struct GraphicsTable gfx_table_epilogue_polyrhythm_superb[] = {
@@ -266,12 +242,6 @@ const struct GraphicsTable gfx_table_epilogue_polyrhythm_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08c91cd0;
-extern struct CompressedGraphics D_08c92084;
-extern struct CompressedGraphics D_08c91f04;
-extern struct CompressedGraphics D_08c91e20;
-extern Palette epilogue_night_walk_bg_pal[];
-
 // [D_08050e74] Epilogue - Night Walk (Superb)
 const struct GraphicsTable gfx_table_epilogue_night_walk_superb[] = {
     /* BG Tileset */ {
@@ -332,12 +302,6 @@ const struct GraphicsTable gfx_table_epilogue_night_walk_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08c9582c;
-extern struct CompressedGraphics D_08c95c8c;
-extern struct CompressedGraphics D_08c95b24;
-extern struct CompressedGraphics D_08c959ac;
-extern Palette epilogue_rhythm_tweezers_bg_pal[];
 
 // [D_08050f04] Epilogue - Rhythm Tweezers (Superb)
 const struct GraphicsTable gfx_table_epilogue_rhythm_tweezers_superb[] = {
@@ -400,12 +364,6 @@ const struct GraphicsTable gfx_table_epilogue_rhythm_tweezers_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08cbcbd8;
-extern struct CompressedGraphics D_08cbcf98;
-extern struct CompressedGraphics D_08cbce60;
-extern struct CompressedGraphics D_08cbcd28;
-extern Palette epilogue_sick_beats_bg_pal[];
-
 // [D_08050f94] Epilogue - Sick Beats (Superb)
 const struct GraphicsTable gfx_table_epilogue_sick_beats_superb[] = {
     /* BG Tileset */ {
@@ -466,12 +424,6 @@ const struct GraphicsTable gfx_table_epilogue_sick_beats_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08c93cfc;
-extern struct CompressedGraphics D_08c94064;
-extern struct CompressedGraphics D_08c93f48;
-extern struct CompressedGraphics D_08c93e18;
-extern Palette epilogue_bouncy_road_bg_pal[];
 
 // [D_08051024] Epilogue - Bouncy Road (Superb)
 const struct GraphicsTable gfx_table_epilogue_bouncy_road_superb[] = {
@@ -534,12 +486,6 @@ const struct GraphicsTable gfx_table_epilogue_bouncy_road_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08cb28a4;
-extern struct CompressedGraphics D_08cb2ccc;
-extern struct CompressedGraphics D_08cb2b54;
-extern struct CompressedGraphics D_08cb2a08;
-extern Palette epilogue_ninja_bodyguard_bg_pal[];
-
 // [D_080510b4] Epilogue - Ninja Bodyguard (Superb)
 const struct GraphicsTable gfx_table_epilogue_ninja_bodyguard_superb[] = {
     /* BG Tileset */ {
@@ -601,13 +547,7 @@ const struct GraphicsTable gfx_table_epilogue_ninja_bodyguard_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08cb38ac;
-extern struct CompressedGraphics D_08cb3c48;
-extern struct CompressedGraphics D_08cb3b10;
-extern struct CompressedGraphics D_08cb39d0;
-extern Palette epilogue_ninja_reincarnate_bg_pal[];
-
-// [D_08051144] Epilogue - Ninja Bodyguard 2 (Superb)
+// [D_08051144] Epilogue - Ninja Reincarnate (Superb)
 const struct GraphicsTable gfx_table_epilogue_ninja_reincarnate_superb[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cb38ac,
@@ -627,7 +567,7 @@ const struct GraphicsTable gfx_table_epilogue_ninja_reincarnate_superb[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-// [D_08051174] Epilogue - Ninja Bodyguard 2 (OK)
+// [D_08051174] Epilogue - Ninja Reincarnate (OK)
 const struct GraphicsTable gfx_table_epilogue_ninja_reincarnate_ok[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cb38ac,
@@ -647,7 +587,7 @@ const struct GraphicsTable gfx_table_epilogue_ninja_reincarnate_ok[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-// [D_080511a4] Epilogue - Ninja Bodyguard 2 (Try Again)
+// [D_080511a4] Epilogue - Ninja Reincarnate (Try Again)
 const struct GraphicsTable gfx_table_epilogue_ninja_reincarnate_try_again[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cb38ac,
@@ -667,12 +607,6 @@ const struct GraphicsTable gfx_table_epilogue_ninja_reincarnate_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08c89a70;
-extern struct CompressedGraphics D_08c89dd4;
-extern struct CompressedGraphics D_08c89cb0;
-extern struct CompressedGraphics D_08c89ba4;
-extern Palette epilogue_sneaky_spirits_bg_pal[];
 
 // [D_080511d4] Epilogue - Sneaky Spirits (Superb)
 const struct GraphicsTable gfx_table_epilogue_sneaky_spirits_superb[] = {
@@ -735,12 +669,6 @@ const struct GraphicsTable gfx_table_epilogue_sneaky_spirits_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08c9a4d4;
-extern struct CompressedGraphics D_08c9a890;
-extern struct CompressedGraphics D_08c9a71c;
-extern struct CompressedGraphics D_08c9a610;
-extern Palette epilogue_samurai_slice_bg_pal[];
-
 // [D_08051264] Epilogue - Samurai Slice (Superb)
 const struct GraphicsTable gfx_table_epilogue_samurai_slice_superb[] = {
     /* BG Tileset */ {
@@ -801,12 +729,6 @@ const struct GraphicsTable gfx_table_epilogue_samurai_slice_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08c8ac68;
-extern struct CompressedGraphics D_08c8b14c;
-extern struct CompressedGraphics D_08c8afd0;
-extern struct CompressedGraphics D_08c8ae7c;
-extern Palette epilogue_spaceball_bg_pal[];
 
 // [D_080512f4] Epilogue - Spaceball (Superb)
 const struct GraphicsTable gfx_table_epilogue_spaceball_superb[] = {
@@ -869,12 +791,6 @@ const struct GraphicsTable gfx_table_epilogue_spaceball_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08cb5fdc;
-extern struct CompressedGraphics D_08cb6394;
-extern struct CompressedGraphics D_08cb6244;
-extern struct CompressedGraphics D_08cb60f0;
-extern Palette epilogue_tap_trial_bg_pal[];
-
 // [D_08051384] Epilogue - Tap Trial (Superb)
 const struct GraphicsTable gfx_table_epilogue_tap_trial_superb[] = {
     /* BG Tileset */ {
@@ -935,12 +851,6 @@ const struct GraphicsTable gfx_table_epilogue_tap_trial_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08cb7644;
-extern struct CompressedGraphics D_08cb7ab8;
-extern struct CompressedGraphics D_08cb793c;
-extern struct CompressedGraphics D_08cb77bc;
-extern Palette epilogue_tap_trial_2_bg_pal[];
 
 // [D_08051414] Epilogue - Tap Trial 2 (Superb)
 const struct GraphicsTable gfx_table_epilogue_tap_trial_2_superb[] = {
@@ -1003,12 +913,6 @@ const struct GraphicsTable gfx_table_epilogue_tap_trial_2_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08c9d2e8;
-extern struct CompressedGraphics D_08c9d740;
-extern struct CompressedGraphics D_08c9d5c0;
-extern struct CompressedGraphics D_08c9d450;
-extern Palette epilogue_marching_orders_bg_pal[];
-
 // [D_080514a4] Epilogue - Marching Orders (Superb)
 const struct GraphicsTable gfx_table_epilogue_marching_orders_superb[] = {
     /* BG Tileset */ {
@@ -1069,12 +973,6 @@ const struct GraphicsTable gfx_table_epilogue_marching_orders_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08c9e338;
-extern struct CompressedGraphics D_08c9e744;
-extern struct CompressedGraphics D_08c9e5c4;
-extern struct CompressedGraphics D_08c9e484;
-extern Palette epilogue_marching_orders_2_bg_pal[];
 
 // [D_08051534] Epilogue - Marching Orders 2 (Superb)
 const struct GraphicsTable gfx_table_epilogue_marching_orders_2_superb[] = {
@@ -1137,12 +1035,6 @@ const struct GraphicsTable gfx_table_epilogue_marching_orders_2_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08cbdd28;
-extern struct CompressedGraphics D_08cbe0f8;
-extern struct CompressedGraphics D_08cbdf84;
-extern struct CompressedGraphics D_08cbde58;
-extern Palette epilogue_wizards_waltz_bg_pal[];
-
 // [D_080515c4] Epilogue - Wizard's Waltz (Superb)
 const struct GraphicsTable gfx_table_epilogue_wizards_waltz_superb[] = {
     /* BG Tileset */ {
@@ -1203,12 +1095,6 @@ const struct GraphicsTable gfx_table_epilogue_wizards_waltz_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08ca23c0;
-extern struct CompressedGraphics D_08ca29f0;
-extern struct CompressedGraphics D_08ca27d0;
-extern struct CompressedGraphics D_08ca25b4;
-extern Palette epilogue_bunny_hop_bg_pal[];
 
 // [D_08051654] Epilogue - Bunny Hop (Superb)
 const struct GraphicsTable gfx_table_epilogue_bunny_hop_superb[] = {
@@ -1271,12 +1157,6 @@ const struct GraphicsTable gfx_table_epilogue_bunny_hop_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08c96e80;
-extern struct CompressedGraphics D_08c972dc;
-extern struct CompressedGraphics D_08c9715c;
-extern struct CompressedGraphics D_08c96ff4;
-extern Palette epilogue_fireworks_bg_pal[];
-
 // [D_080516e4] Epilogue - Fireworks (Superb)
 const struct GraphicsTable gfx_table_epilogue_fireworks_superb[] = {
     /* BG Tileset */ {
@@ -1337,12 +1217,6 @@ const struct GraphicsTable gfx_table_epilogue_fireworks_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08c9b9fc;
-extern struct CompressedGraphics D_08c9be48;
-extern struct CompressedGraphics D_08c9bcd0;
-extern struct CompressedGraphics D_08c9bb60;
-extern Palette epilogue_power_calligraphy_bg_pal[];
 
 // [D_08051774] Epilogue - Power Calligraphy (Superb)
 const struct GraphicsTable gfx_table_epilogue_power_calligraphy_superb[] = {
@@ -1405,12 +1279,6 @@ const struct GraphicsTable gfx_table_epilogue_power_calligraphy_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08cb8de4;
-extern struct CompressedGraphics D_08cb9264;
-extern struct CompressedGraphics D_08cb90e4;
-extern struct CompressedGraphics D_08cb8f64;
-extern Palette epilogue_toss_boys_bg_pal[];
-
 // [D_08051804] Epilogue - Toss Boys (Superb)
 const struct GraphicsTable gfx_table_epilogue_toss_boys_superb[] = {
     /* BG Tileset */ {
@@ -1471,12 +1339,6 @@ const struct GraphicsTable gfx_table_epilogue_toss_boys_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08cb9fd8;
-extern struct CompressedGraphics D_08cba3ec;
-extern struct CompressedGraphics D_08cba28c;
-extern struct CompressedGraphics D_08cba154;
-extern Palette epilogue_toss_boys_2_bg_pal[];
 
 // [D_08051894] Epilogue - Toss Boys 2 (Superb)
 const struct GraphicsTable gfx_table_epilogue_toss_boys_2_superb[] = {
@@ -1539,12 +1401,6 @@ const struct GraphicsTable gfx_table_epilogue_toss_boys_2_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08ca5684;
-extern struct CompressedGraphics D_08ca59d0;
-extern struct CompressedGraphics D_08ca5884;
-extern struct CompressedGraphics D_08ca5784;
-extern Palette epilogue_rat_race_bg_pal[];
-
 // [D_08051924] Epilogue - Rat Race (Superb)
 const struct GraphicsTable gfx_table_epilogue_rat_race_superb[] = {
     /* BG Tileset */ {
@@ -1605,12 +1461,6 @@ const struct GraphicsTable gfx_table_epilogue_rat_race_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08cbb530;
-extern struct CompressedGraphics D_08cbb938;
-extern struct CompressedGraphics D_08cbb7bc;
-extern struct CompressedGraphics D_08cbb67c;
-extern Palette epilogue_tram_and_pauline_bg_pal[];
 
 // [D_080519b4] Epilogue - Tram & Pauline (Superb)
 const struct GraphicsTable gfx_table_epilogue_tram_and_pauline_superb[] = {
@@ -1673,12 +1523,6 @@ const struct GraphicsTable gfx_table_epilogue_tram_and_pauline_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08c92fc0;
-extern struct CompressedGraphics D_08c93340;
-extern struct CompressedGraphics D_08c931c0;
-extern struct CompressedGraphics D_08c930c4;
-extern Palette epilogue_showtime_bg_pal[];
-
 // [D_08051a44] Epilogue - Showtime (Superb)
 const struct GraphicsTable gfx_table_epilogue_showtime_superb[] = {
     /* BG Tileset */ {
@@ -1739,12 +1583,6 @@ const struct GraphicsTable gfx_table_epilogue_showtime_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08cb4fbc;
-extern struct CompressedGraphics D_08cb542c;
-extern struct CompressedGraphics D_08cb52ac;
-extern struct CompressedGraphics D_08cb513c;
-extern Palette epilogue_space_dance_bg_pal[];
 
 // [D_08051ad4] Epilogue - Space Dance (Superb)
 const struct GraphicsTable gfx_table_epilogue_space_dance_superb[] = {
@@ -1807,12 +1645,6 @@ const struct GraphicsTable gfx_table_epilogue_space_dance_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08c904a0;
-extern struct CompressedGraphics D_08c90910;
-extern struct CompressedGraphics D_08c907a0;
-extern struct CompressedGraphics D_08c90620;
-extern Palette epilogue_cosmic_dance_bg_pal[];
-
 // [D_08051b64] Epilogue - Cosmic Dance (Superb)
 const struct GraphicsTable gfx_table_epilogue_cosmic_dance_superb[] = {
     /* BG Tileset */ {
@@ -1873,12 +1705,6 @@ const struct GraphicsTable gfx_table_epilogue_cosmic_dance_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08ca37cc;
-extern struct CompressedGraphics D_08ca3b88;
-extern struct CompressedGraphics D_08ca3a08;
-extern struct CompressedGraphics D_08ca38fc;
-extern Palette epilogue_rap_men_bg_pal[];
 
 // [D_08051bf4] Epilogue - Rap Men (Superb)
 const struct GraphicsTable gfx_table_epilogue_rap_men_superb[] = {
@@ -1941,12 +1767,6 @@ const struct GraphicsTable gfx_table_epilogue_rap_men_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08ca48dc;
-extern struct CompressedGraphics D_08ca4c84;
-extern struct CompressedGraphics D_08ca4b08;
-extern struct CompressedGraphics D_08ca4a00;
-extern Palette epilogue_rap_women_bg_pal[];
-
 // [D_08051c84] Epilogue - Rap Women (Superb)
 const struct GraphicsTable gfx_table_epilogue_rap_women_superb[] = {
     /* BG Tileset */ {
@@ -2007,12 +1827,6 @@ const struct GraphicsTable gfx_table_epilogue_rap_women_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08ca0ee0;
-extern struct CompressedGraphics D_08ca1324;
-extern struct CompressedGraphics D_08ca11a8;
-extern struct CompressedGraphics D_08ca103c;
-extern Palette epilogue_quiz_show_bg_pal[];
 
 // [D_08051d14] Epilogue - Quiz Show (Superb)
 const struct GraphicsTable gfx_table_epilogue_quiz_show_superb[] = {
@@ -2075,12 +1889,6 @@ const struct GraphicsTable gfx_table_epilogue_quiz_show_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08c8d650;
-extern struct CompressedGraphics D_08c8da08;
-extern struct CompressedGraphics D_08c8d8a8;
-extern struct CompressedGraphics D_08c8d7d0;
-extern Palette epilogue_bon_odori_bg_pal[];
-
 // [D_08051da4] Epilogue - The Bon Odori (Superb)
 const struct GraphicsTable gfx_table_epilogue_bon_odori_superb[] = {
     /* BG Tileset */ {
@@ -2141,12 +1949,6 @@ const struct GraphicsTable gfx_table_epilogue_bon_odori_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08c8c564;
-extern struct CompressedGraphics D_08c8c95c;
-extern struct CompressedGraphics D_08c8c7e4;
-extern struct CompressedGraphics D_08c8c694;
-extern Palette epilogue_bon_dance_bg_pal[];
 
 // [D_08051e34] Epilogue - Bon Dance (Superb)
 const struct GraphicsTable gfx_table_epilogue_bon_dance_superb[] = {
@@ -2209,12 +2011,6 @@ const struct GraphicsTable gfx_table_epilogue_bon_dance_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08ca66dc;
-extern struct CompressedGraphics D_08ca69c8;
-extern struct CompressedGraphics D_08ca6868;
-extern struct CompressedGraphics D_08ca676c;
-extern Palette epilogue_remix_1_bg_pal[];
-
 // [D_08051ec4] Epilogue - Remix 1 (Superb)
 const struct GraphicsTable gfx_table_epilogue_remix_1_superb[] = {
     /* BG Tileset */ {
@@ -2275,12 +2071,6 @@ const struct GraphicsTable gfx_table_epilogue_remix_1_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08ca7cbc;
-extern struct CompressedGraphics D_08ca82dc;
-extern struct CompressedGraphics D_08ca80c0;
-extern struct CompressedGraphics D_08ca7ecc;
-extern Palette epilogue_remix_2_bg_pal[];
 
 // [D_08051f54] Epilogue - Remix 2 (Superb)
 const struct GraphicsTable gfx_table_epilogue_remix_2_superb[] = {
@@ -2343,12 +2133,6 @@ const struct GraphicsTable gfx_table_epilogue_remix_2_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08ca94f0;
-extern struct CompressedGraphics D_08ca9afc;
-extern struct CompressedGraphics D_08ca98f8;
-extern struct CompressedGraphics D_08ca96e4;
-extern Palette epilogue_remix_3_bg_pal[];
-
 // [D_08051fe4] Epilogue - Remix 3 (Superb)
 const struct GraphicsTable gfx_table_epilogue_remix_3_superb[] = {
     /* BG Tileset */ {
@@ -2409,12 +2193,6 @@ const struct GraphicsTable gfx_table_epilogue_remix_3_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08caaf8c;
-extern struct CompressedGraphics D_08cab5bc;
-extern struct CompressedGraphics D_08cab3ac;
-extern struct CompressedGraphics D_08cab1a8;
-extern Palette epilogue_remix_4_bg_pal[];
 
 // [D_08052074] Epilogue - Remix 4 (Superb)
 const struct GraphicsTable gfx_table_epilogue_remix_4_superb[] = {
@@ -2477,12 +2255,6 @@ const struct GraphicsTable gfx_table_epilogue_remix_4_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08cac550;
-extern struct CompressedGraphics D_08cac908;
-extern struct CompressedGraphics D_08cac7e0;
-extern struct CompressedGraphics D_08cac6ac;
-extern Palette epilogue_remix_5_bg_pal[];
-
 // [D_08052104] Epilogue - Remix 5 (Superb)
 const struct GraphicsTable gfx_table_epilogue_remix_5_superb[] = {
     /* BG Tileset */ {
@@ -2543,12 +2315,6 @@ const struct GraphicsTable gfx_table_epilogue_remix_5_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08cad9f4;
-extern struct CompressedGraphics D_08cadff0;
-extern struct CompressedGraphics D_08caddf8;
-extern struct CompressedGraphics D_08cadbe0;
-extern Palette epilogue_remix_6_bg_pal[];
 
 // [D_08052194] Epilogue - Remix 6 (Superb)
 const struct GraphicsTable gfx_table_epilogue_remix_6_superb[] = {
@@ -2611,12 +2377,6 @@ const struct GraphicsTable gfx_table_epilogue_remix_6_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08caf878;
-extern struct CompressedGraphics D_08cafce8;
-extern struct CompressedGraphics D_08cafb68;
-extern struct CompressedGraphics D_08caf9f4;
-extern Palette epilogue_remix_7_bg_pal[];
-
 // [D_08052224] Epilogue - Remix 7 (Superb)
 const struct GraphicsTable gfx_table_epilogue_remix_7_superb[] = {
     /* BG Tileset */ {
@@ -2677,12 +2437,6 @@ const struct GraphicsTable gfx_table_epilogue_remix_7_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08cb14f8;
-extern struct CompressedGraphics D_08cb1b08;
-extern struct CompressedGraphics D_08cb18ec;
-extern struct CompressedGraphics D_08cb16f0;
-extern Palette epilogue_remix_8_bg_pal[];
 
 // [D_080522b4] Epilogue - Remix 8 (Superb)
 const struct GraphicsTable gfx_table_epilogue_remix_8_superb[] = {
@@ -2745,12 +2499,6 @@ const struct GraphicsTable gfx_table_epilogue_remix_8_try_again[] = {
 };
 
 
-extern struct CompressedGraphics D_08cbe458;
-extern struct CompressedGraphics D_08cbe730;
-extern struct CompressedGraphics D_08cbe634;
-extern struct CompressedGraphics D_08cbe54c;
-extern Palette epilogue_placeholder_bg_pal[];
-
 // [D_08052344] Epilogue - Placeholder (Superb)
 const struct GraphicsTable gfx_table_epilogue_placeholder_superb[] = {
     /* BG Tileset */ {
@@ -2811,12 +2559,6 @@ const struct GraphicsTable gfx_table_epilogue_placeholder_try_again[] = {
     END_OF_GRAPHICS_TABLE
 };
 
-
-extern struct CompressedGraphics D_08c9113c;
-extern struct CompressedGraphics D_08c913b4;
-extern struct CompressedGraphics D_08c912dc;
-extern struct CompressedGraphics D_08c91208;
-extern Palette epilogue_concert_hall_bg_pal[];
 
 // [D_080523d4] Epilogue - LIVE (Superb)
 const struct GraphicsTable gfx_table_epilogue_concert_hall_superb[] = {

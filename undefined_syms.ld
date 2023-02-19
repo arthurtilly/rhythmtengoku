@@ -403,9 +403,6 @@ D_0890b294 = 0x0890b294;
 /* Unknown - 087 Animations */
 D_0890b310 = 0x0890b310;
 D_0890b320 = 0x0890b320;
-/* Rhythm Data Room - Reading Palettes */
-D_0890b330 = 0x0890b330;
-D_0890b390 = 0x0890b390;
 /* Results - Level Animations */
 D_0890b6ac = 0x0890b6ac;
 D_0890b6bc = 0x0890b6bc;
