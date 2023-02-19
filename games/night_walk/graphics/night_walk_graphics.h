@@ -50,6 +50,11 @@ extern struct Animation anim_night_walk_ng_wand_box[];
 extern struct Animation anim_night_walk_fish_zap[];
 extern struct Animation anim_play_yan_violent_electrocution[];
 
+/* NIGHT WALK - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08c52420;
+extern struct CompressedGraphics D_08c524fc;
+
 /* NIGHT WALK - PALETTES */
 
 extern Palette night_walk_pal[];

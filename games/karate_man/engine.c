@@ -1,24 +1,9 @@
 #include "engines/karate_man.h"
 
 
-  /* KARATE MAN - GAME ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08bdd500; // BG Textures (Face)
-extern struct CompressedGraphics D_08bddc8c; // BG Textures (Face)
-extern struct CompressedGraphics D_08bde0d4; // BG Textures (Face)
-extern const u16 D_08936650[]; // BG Map (Face)
-extern struct CompressedGraphics D_08bdcfc8; // BG Textures (Serious Mode)
-extern struct CompressedGraphics D_08be0ce8; // BG Map (Serious Mode)
-extern struct CompressedGraphics D_08bdc938; // BG Textures
-extern struct CompressedGraphics D_08be08e0; // BG Map
-extern struct CompressedGraphics D_08be0480; // OBJ Textures
-extern Palette karate_man_pal[]; // Karate Man 1 Palette
-extern Palette karate_man_2_pal[]; // Karate Man 2 Palette
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
+extern u16 D_08936650[]; // BG Map (Face)
 
 extern struct CueDefinition *karate_cue_index[];
 

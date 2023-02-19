@@ -1,15 +1,6 @@
 #include "prologues/sick_beats.h"
 
 
-  /* PROLOGUE (SICK BEATS) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c33214;
-extern struct CompressedGraphics D_08c3355c;
-extern struct CompressedGraphics D_08c31e6c;
-extern Palette sick_beats_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

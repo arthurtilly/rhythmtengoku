@@ -1,26 +1,6 @@
 #include "engines/mr_upbeat.h"
 
 
-  /* MR. UPBEAT - GAME ENGINE DATA */
-
-
-extern struct Animation anim_mr_upbeat_r_trip_r[];
-extern struct Animation anim_mr_upbeat_r_trip_l[];
-extern struct Animation anim_mr_upbeat_l_trip_l[];
-extern struct Animation anim_mr_upbeat_l_trip_r[];
-extern struct Animation anim_mr_upbeat_r_mope_r[];
-extern struct Animation anim_mr_upbeat_r_mope_l[];
-extern struct Animation anim_mr_upbeat_l_mope_l[];
-extern struct Animation anim_mr_upbeat_l_mope_r[];
-extern struct Animation anim_mr_upbeat_r_cheer_r[];
-extern struct Animation anim_mr_upbeat_r_cheer_l[];
-extern struct Animation anim_mr_upbeat_l_cheer_l[];
-extern struct Animation anim_mr_upbeat_l_cheer_r[];
-
-extern struct CompressedGraphics D_08c702d0;
-extern Palette metronome_pal[];
-
-
   //  //  //  GRAPHICS DATA  //  //  //
 
 

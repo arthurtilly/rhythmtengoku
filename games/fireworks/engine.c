@@ -1,23 +1,6 @@
 #include "engines/fireworks.h"
 
 
-  /* FIREWORKS - GAME ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c5da78; // OBJ Tiles (+ BG Tiles for Fireworks 1)
-extern struct CompressedGraphics D_08c5fd10;
-extern struct CompressedGraphics D_08c5e20c;
-extern struct CompressedGraphics D_08c60044;
-extern struct CompressedGraphics D_08c5ebcc;
-extern struct CompressedGraphics D_08c60410;
-extern struct CompressedGraphics D_08c5f27c;
-extern struct CompressedGraphics D_08c606ec;
-extern struct CompressedGraphics D_08c5fa80;
-extern struct CompressedGraphics D_08c609a4;
-extern Palette fireworks_obj_pal[];
-extern Palette fireworks_bg_pal[];
-
-
   //  //  //  GRAPHICS DATA  //  //  //
 
 

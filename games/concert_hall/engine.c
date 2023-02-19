@@ -1,16 +1,6 @@
 #include "engines/concert_hall.h"
 
 
-  /* LIVE MENU - GAME ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c79bb0;
-extern Palette concert_hall_pal[];
-extern const char text_concert_hall_poster_band[];
-extern const char text_concert_hall_poster_boys[];
-extern const char text_concert_hall_poster_girls[];
-
-
   //  //  //  GRAPHICS DATA  //  //  //
 
 

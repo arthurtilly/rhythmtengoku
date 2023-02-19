@@ -1,15 +1,6 @@
 #include "prologues/snappy_trio.h"
 
 
-  /* PROLOGUE (THE SNAPPY TRIO) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08bf5ce8;
-extern struct CompressedGraphics D_08bf60c8;
-extern struct CompressedGraphics D_08bf374c;
-extern Palette snappy_trio_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

@@ -2,17 +2,6 @@
 #include "engines/night_walk.h"
 
 
-  /* RHYTHM TEST - GAME ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c6a638;
-extern struct CompressedGraphics D_08c6a830;
-extern struct CompressedGraphics D_08c6a9c4;
-extern struct CompressedGraphics D_08c6ab24;
-extern struct CompressedGraphics D_08c6a350;
-extern Palette rhythm_test_pal[];
-
-
   //  //  //  MISCELLANEOUS DATA  //  //  //
 
 

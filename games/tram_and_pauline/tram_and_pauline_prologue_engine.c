@@ -1,15 +1,6 @@
 #include "prologues/tram_and_pauline.h"
 
 
-  /* PROLOGUE (TRAM & PAULINE) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c3106c;
-extern struct CompressedGraphics D_08c3153c;
-extern struct CompressedGraphics D_08c30910;
-extern Palette tram_and_pauline_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

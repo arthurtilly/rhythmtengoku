@@ -30,6 +30,26 @@ extern struct Animation anim_horse_tachometer_hand[];
 extern struct Animation anim_horse_speedometer_hand[];
 extern struct Animation anim_horse_high_speed_light[];
 
+/* HORSE MACHINE - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08d16210;
+extern struct CompressedGraphics D_08d17a60;
+extern struct CompressedGraphics D_08d17c24;
+extern struct CompressedGraphics D_08d17d24;
+extern struct CompressedGraphics D_08d08208;
+extern struct CompressedGraphics D_08d11ef4;
+extern struct CompressedGraphics D_08d17708;
+extern struct CompressedGraphics D_08d10b60;
+extern struct CompressedGraphics D_08d1737c;
+extern struct CompressedGraphics D_08d0ef74;
+extern struct CompressedGraphics D_08d17048;
+extern struct CompressedGraphics D_08d0c580;
+extern struct CompressedGraphics D_08d16c34;
+extern struct CompressedGraphics D_08d0bfc8;
+extern struct CompressedGraphics D_08d16998;
+extern struct CompressedGraphics D_08d0af74;
+extern struct CompressedGraphics D_08d16648;
+
 /* HORSE MACHINE - PALETTES */
 
 extern Palette horse_machine_pal[];

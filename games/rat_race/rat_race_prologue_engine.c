@@ -1,15 +1,6 @@
 #include "prologues/rat_race.h"
 
 
-  /* PROLOGUE (RAT RACE) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c22764;
-extern struct CompressedGraphics D_08c229b4;
-extern struct CompressedGraphics D_08c21f88;
-extern Palette rat_race_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

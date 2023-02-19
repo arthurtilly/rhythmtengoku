@@ -1,15 +1,6 @@
 #include "prologues/fireworks.h"
 
 
-  /* PROLOGUE (FIREWORKS) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08bf0eb8;
-extern struct CompressedGraphics D_08bf12dc;
-extern struct CompressedGraphics D_08bef660;
-extern Palette fireworks_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

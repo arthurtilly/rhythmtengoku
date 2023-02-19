@@ -1,16 +1,6 @@
 #include "prologues/tap_trial.h"
 
 
-  /* PROLOGUE (TAP TRIAL) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c279e0;
-extern struct CompressedGraphics D_08c27e24;
-extern struct CompressedGraphics D_08c26340;
-extern Palette tap_trial_prologue_bg_pal[];
-extern Palette tap_trial_prologue_obj_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

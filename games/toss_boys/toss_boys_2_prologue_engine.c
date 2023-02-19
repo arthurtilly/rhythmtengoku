@@ -1,16 +1,6 @@
 #include "prologues/toss_boys_2.h"
 
 
-  /* PROLOGUE (TOSS BOYS 2) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c2fc5c;
-extern struct CompressedGraphics D_08c30048;
-extern struct CompressedGraphics D_08c2de80;
-extern Palette toss_boys_2_prologue_bg_pal[];
-extern Palette toss_boys_2_prologue_obj_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

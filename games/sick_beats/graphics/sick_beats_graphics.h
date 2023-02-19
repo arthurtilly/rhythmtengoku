@@ -47,6 +47,13 @@ extern struct Animation anim_sick_beats_score_counter[];
 extern struct Animation anim_sick_beats_high_score_counter[];
 extern struct Animation anim_sick_beats_endless_particle[];
 
+/* SICK BEATS - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08d19fb4;
+extern struct CompressedGraphics D_08d1a320;
+extern struct CompressedGraphics D_08d1a280;
+extern struct CompressedGraphics D_08d198bc;
+
 /* SICK BEATS - PALETTES */
 
 extern Palette sick_beats_pal[];

@@ -1,19 +1,6 @@
 #include "engines/mannequin_factory.h"
 
 
-  /* MANNEQUIN FACTORY - GAME ENGINE DATA */
-
-
-extern struct Animation anim_mannequin_complete_l[];
-extern struct Animation anim_mannequin_complete_c[];
-extern struct Animation anim_mannequin_complete_r[];
-extern struct CompressedGraphics D_08c34478;
-extern struct CompressedGraphics D_08c35f18;
-extern struct CompressedGraphics D_08c360b0;
-extern struct CompressedGraphics D_08c35c9c;
-extern Palette mannequin_factory_pal[];
-
-
   //  //  //  GRAPHICS DATA  //  //  //
 
 

@@ -1,31 +1,6 @@
 #include "engines/sick_beats.h"
 
 
-  /* SICK BEATS - GAME ENGINE DATA */
-
-
-extern struct Animation anim_yellow_microbe_beat[];
-extern struct Animation anim_yellow_microbe_hurt[];
-extern struct Animation anim_yellow_microbe_vanish[];
-extern struct Animation anim_virus_attack[];
-extern struct Animation anim_yellow_microbe_return[];
-extern struct Animation anim_virus_appear[];
-extern struct Animation anim_virus_ready[];
-extern struct Animation anim_virus_dash_up_full[];
-extern struct Animation anim_virus_dash_left_full[];
-extern struct Animation anim_virus_doctor_beat[];
-extern struct Animation anim_virus_doctor_hit1[];
-extern struct Animation anim_virus_doctor_hit2[];
-extern struct Animation anim_virus_doctor_fail[];
-
-extern struct CompressedGraphics D_08d19fb4;
-extern struct CompressedGraphics D_08d1a320;
-extern struct CompressedGraphics D_08d1a280;
-extern struct CompressedGraphics D_08d198bc;
-
-extern Palette sick_beats_pal[];
-
-
   //  //  //  MISCELLANEOUS DATA  //  //  //
 
 

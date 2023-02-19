@@ -1,17 +1,6 @@
 #include "engines/samurai_slice.h"
 
 
-  /* SAMURAI SLICE - GAME ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c66b54;
-extern struct CompressedGraphics D_08c66fbc;
-extern struct CompressedGraphics D_08c66d24;
-extern struct CompressedGraphics D_08c67314;
-extern struct CompressedGraphics D_08c658dc;
-extern Palette samurai_slice_pal[];
-
-
   //  //  //  GRAPHICS DATA  //  //  //
 
 

@@ -1,16 +1,6 @@
 #include "engines/wizards_waltz.h"
 
 
-  /* WIZARD'S WALTZ - GAME ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08d1d750;
-extern struct CompressedGraphics D_08d1d8d8;
-extern struct CompressedGraphics D_08d1d3c4;
-
-extern Palette wizards_waltz_pal[];
-
-
   //  //  //  GRAPHICS DATA  //  //  //
 
 

@@ -1,13 +1,6 @@
 #include "engines/metronome.h"
 
 
-  /* METRONOME - GAME ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c702d0;
-extern Palette metronome_pal[];
-
-
   //  //  //  GRAPHICS DATA  //  //  //
 
 

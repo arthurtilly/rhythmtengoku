@@ -90,6 +90,17 @@ extern struct Animation anim_drum_lessons_accuracy_light7[];
 extern struct Animation anim_drum_lessons_unk00[];
 extern struct Animation anim_drum_lessons_unk01[];
 
+/* DRUM LESSONS - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08c4fc44;
+extern struct CompressedGraphics D_08c51344;
+extern struct CompressedGraphics D_08c4efe4;
+extern struct CompressedGraphics D_08c515bc;
+extern struct CompressedGraphics D_08c4f5ac;
+extern struct CompressedGraphics D_08c50f54;
+extern struct CompressedGraphics D_08c510d4;
+extern struct CompressedGraphics D_08c50e04;
+
 /* DRUM LESSONS - PALETTES */
 
 extern Palette drum_lessons_obj_pal[];

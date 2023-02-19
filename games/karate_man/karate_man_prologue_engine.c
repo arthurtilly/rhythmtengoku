@@ -1,16 +1,6 @@
 #include "prologues/karate_man.h"
 
 
-  /* PROLOGUE (KARATE MAN) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08bea934;
-extern struct CompressedGraphics D_08beab8c;
-extern struct CompressedGraphics D_08be9f5c;
-extern Palette karate_man_prologue_bg_pal[];
-extern Palette karate_man_prologue_obj_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

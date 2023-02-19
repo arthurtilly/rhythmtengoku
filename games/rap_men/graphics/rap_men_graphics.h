@@ -17,6 +17,15 @@ extern struct Animation anim_rap_men_yellow_miss[];
 extern struct Animation anim_rap_men_yellow_beat[];
 extern struct Animation anim_rap_men_red_beat[];
 
+/* RAP MEN - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08c82980;
+extern struct CompressedGraphics D_08c82cf4;
+extern struct CompressedGraphics D_08c82710;
+extern struct CompressedGraphics D_08c84f54;
+extern struct CompressedGraphics D_08c852c8;
+extern struct CompressedGraphics D_08c84ce4;
+
 /* RAP MEN - PALETTES */
 
 extern Palette rap_men_obj_pal[];

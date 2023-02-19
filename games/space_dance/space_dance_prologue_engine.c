@@ -1,15 +1,6 @@
 #include "prologues/space_dance.h"
 
 
-  /* PROLOGUE (SPACE DANCE) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c2575c;
-extern struct CompressedGraphics D_08c25aa8;
-extern struct CompressedGraphics D_08c24f60;
-extern Palette space_dance_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

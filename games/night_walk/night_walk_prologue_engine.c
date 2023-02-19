@@ -1,15 +1,6 @@
 #include "prologues/night_walk.h"
 
 
-  /* PROLOGUE (NIGHT WALK) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08bebaa4;
-extern struct CompressedGraphics D_08bebbd4;
-extern struct CompressedGraphics D_08beba58;
-extern Palette night_walk_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

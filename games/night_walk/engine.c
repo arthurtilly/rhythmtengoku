@@ -1,37 +1,6 @@
 #include "engines/night_walk.h"
 
 
-  /* NIGHT WALK - GAME ENGINE DATA */
-
-
-extern struct Animation anim_night_walk_star_tiny[]; // [D_088c9ec8] Very Small Star
-extern struct Animation anim_night_walk_star_small[]; // [D_088c9df0] Small Star
-extern struct Animation anim_night_walk_star_med[]; // [D_088c9e38] Medium Star
-extern struct Animation anim_night_walk_star_big[]; // [D_088c9e80] Large Star
-extern struct Animation anim_night_walk_star_huge[]; // [D_088c9f10] Very Large Star
-extern struct Animation anim_night_walk_star_tiny_to_small[]; // [D_088ca078] Small Star Flash
-extern struct Animation anim_night_walk_star_small_to_med[]; // [D_088ca090] Medium Star Flash
-extern struct Animation anim_night_walk_star_med_to_big[]; // [D_088ca0a8] Large Star Flash
-extern struct Animation anim_night_walk_star_big_to_huge[]; // [D_088ca0c0] Very Large Star Flash
-extern struct Animation anim_night_walk_heart_bridge[];
-extern struct Animation anim_night_walk_lollipop_bridge[];
-extern struct Animation anim_night_walk_umbrella_bridge[];
-extern struct Animation anim_night_walk_heart_box[];
-extern struct Animation anim_night_walk_lollipop_box[];
-extern struct Animation anim_night_walk_umbrella_box[];
-extern struct Animation anim_night_walk_ng_heart_bridge[];
-extern struct Animation anim_night_walk_ng_lollipop_bridge[];
-extern struct Animation anim_night_walk_ng_umbrella_bridge[];
-extern struct Animation anim_night_walk_ng_heart_box[];
-extern struct Animation anim_night_walk_ng_lollipop_box[];
-extern struct Animation anim_night_walk_ng_umbrella_box[];
-extern struct Animation anim_night_walk_ng_wand_box[];
-
-extern struct CompressedGraphics D_08c52420;
-extern struct CompressedGraphics D_08c524fc;
-extern Palette night_walk_pal[];
-
-
   //  //  //  MISCELLANEOUS DATA  //  //  //
 
 

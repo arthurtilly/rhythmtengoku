@@ -23,6 +23,22 @@ extern struct Animation anim_marching1_tutorial_skip_icon[];
 extern struct Animation anim_marching1_angry_puff[];
 extern struct Animation anim_marching1_commander_annoyed[];
 
+/* MARCHING ORDERS - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08c6c89c;
+extern struct CompressedGraphics D_08c6cc98;
+extern struct CompressedGraphics D_08c6cde0;
+extern struct CompressedGraphics D_08c6cd78;
+extern struct CompressedGraphics D_08c6c658;
+extern struct CompressedGraphics D_08ce5db0;
+extern struct CompressedGraphics D_08ce615c;
+extern struct CompressedGraphics D_08ce6278;
+extern struct CompressedGraphics D_08ce5b3c;
+extern struct CompressedGraphics D_08c6eae0;
+extern struct CompressedGraphics D_08c6eedc;
+extern struct CompressedGraphics D_08c6efbc;
+extern struct CompressedGraphics D_08c6e8d4;
+
 /* MARCHING ORDERS - PALETTES */
 
 extern Palette marching_orders_obj_pal[];

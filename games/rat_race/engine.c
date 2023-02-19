@@ -1,20 +1,6 @@
 #include "engines/rat_race.h"
 
 
-  /* RAT RACE - GAME ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c87fb0;
-extern struct CompressedGraphics D_08c880b8;
-extern struct CompressedGraphics D_08c88148;
-extern struct CompressedGraphics D_08c88168;
-extern struct CompressedGraphics D_08c88420;
-extern struct CompressedGraphics D_08c88530;
-extern struct CompressedGraphics D_08c86e74;
-
-extern Palette rat_race_pal[];
-
-
   //  //  //  GRAPHICS DATA  //  //  //
 
 

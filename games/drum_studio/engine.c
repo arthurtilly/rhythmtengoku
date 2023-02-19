@@ -1,19 +1,6 @@
 #include "engines/drum_studio.h"
 
 
-  /* DRUM LESSONS - GAME ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c4fc44;
-extern struct CompressedGraphics D_08c51344;
-extern struct CompressedGraphics D_08c4efe4;
-extern struct CompressedGraphics D_08c515bc;
-extern struct CompressedGraphics D_08c4f5ac;
-extern struct CompressedGraphics D_08c50f54;
-extern struct CompressedGraphics D_08c510d4;
-extern struct CompressedGraphics D_08c50e04;
-
-
   //  //  //  DRUM SAMURAI DATA  //  //  //
 
 

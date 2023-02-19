@@ -1,15 +1,6 @@
 #include "engines/spaceball.h"
 
 
-  /* SPACEBALL - GAME ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08bd5524;
-extern struct CompressedGraphics D_08bd5878;
-extern struct CompressedGraphics D_08bd4e70;
-extern Palette spaceball_pal[];
-
-
   //  //  //  GRAPHICS DATA  //  //  //
 
 

@@ -26,6 +26,13 @@ extern struct Animation anim_sneaky_spirit_scared_late[];
 extern struct Animation anim_sneaky_spirit_hit_effect[];
 extern struct Animation anim_sneaky_spirit_tutorial[];
 
+/* SNEAKY SPIRITS - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08bd2a00; // BG Textures
+extern struct CompressedGraphics D_08bd2b58; // BG Map
+extern struct CompressedGraphics D_08bd2cf8; // BG Map
+extern struct CompressedGraphics D_08bd245c; // OBJ Textures
+
 /* SNEAKY SPIRITS - PALETTES */
 
 extern Palette sneaky_spirits_1_pal[];

@@ -24,6 +24,12 @@ extern struct Animation anim_wizards_waltz_anger_puff[];
 extern struct Animation anim_wizards_waltz_sprout_grow_no_effect[];
 extern struct Animation anim_wizards_waltz_sprout_appear_tutorial[];
 
+/* WIZARD'S WALTZ - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08d1d750;
+extern struct CompressedGraphics D_08d1d8d8;
+extern struct CompressedGraphics D_08d1d3c4;
+
 /* WIZARD'S WALTZ - PALETTES */
 
 extern Palette wizards_waltz_pal[];

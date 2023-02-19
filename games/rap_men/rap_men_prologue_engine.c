@@ -1,15 +1,6 @@
 #include "prologues/rap_men.h"
 
 
-  /* PROLOGUE (RAP MEN) - SCRIPT DATA */
-
-
-extern struct CompressedGraphics D_08c2052c;
-extern struct CompressedGraphics D_08c207cc;
-extern struct CompressedGraphics D_08c1f4b4;
-extern Palette rap_men_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

@@ -1,16 +1,6 @@
 #include "prologues/clappy_trio.h"
 
 
-  /* PROLOGUE (THE CLAPPY TRIO) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08bf2f64;
-extern struct CompressedGraphics D_08bf33cc;
-extern struct CompressedGraphics D_08bf16b4;
-extern Palette clappy_trio_prologue_bg_pal[];
-extern Palette clappy_trio_prologue_obj_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

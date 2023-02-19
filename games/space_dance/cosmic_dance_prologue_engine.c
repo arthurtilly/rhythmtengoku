@@ -1,16 +1,6 @@
 #include "prologues/cosmic_dance.h"
 
 
-  /* PROLOGUE (COSMIC DANCE) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08beb2f8;
-extern struct CompressedGraphics D_08beb48c;
-extern struct CompressedGraphics D_08beaf78;
-extern Palette cosmic_dance_prologue_bg_pal[];
-extern Palette cosmic_dance_prologue_obj_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

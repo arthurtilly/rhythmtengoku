@@ -2,27 +2,6 @@
 #include "src/scenes/gameplay.h"
 
 
-  /* DRUM INTRO - GAME ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c4cf00;
-extern struct CompressedGraphics D_08c4d040;
-extern struct CompressedGraphics D_08c4cca8;
-extern struct CompressedGraphics D_08c4af00;
-extern struct CompressedGraphics D_08c4b164;
-extern struct CompressedGraphics D_08c4a970;
-extern struct CompressedGraphics D_08ce6ebc;
-extern struct CompressedGraphics D_08ce707c;
-extern struct CompressedGraphics D_08ce7188;
-extern struct CompressedGraphics D_08c4a970;
-extern struct CompressedGraphics D_08ce6cbc;
-
-extern Palette drum_intro_talk_pal[];
-extern Palette drum_intro_play_pal[];
-extern Palette tanuki_and_monkey_bg_pal[];
-extern Palette tanuki_and_monkey_obj_pal[];
-
-
   //  //  //  DRUM SEQUENCE DATA  //  //  //
 
 

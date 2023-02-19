@@ -1,15 +1,6 @@
 #include "prologues/showtime.h"
 
 
-  /* PROLOGUE (SHOWTIME) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08bed0ec;
-extern struct CompressedGraphics D_08bed4e4;
-extern struct CompressedGraphics D_08bec134;
-extern Palette showtime_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

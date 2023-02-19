@@ -1,15 +1,6 @@
 #include "prologues/remix_2.h"
 
 
-  /* PROLOGUE (REMIX 2) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c086e0;
-extern struct CompressedGraphics D_08c08bf8;
-extern struct CompressedGraphics D_08c06f74;
-extern Palette remix_2_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

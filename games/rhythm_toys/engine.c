@@ -2,77 +2,35 @@
 
 
   /* RHYTHM TOYS - GAME ENGINE DATA */
+  
 
-
-extern struct Animation anim_cat_machine_button_a[];
-extern struct Animation anim_love_machine_button_a[];
-extern struct Animation anim_rap_machine_button_a[];
-extern struct Animation anim_cat_machine_button_b[];
-extern struct Animation anim_love_machine_button_b[];
-extern struct Animation anim_rap_machine_button_b[];
-extern struct Animation anim_cat_machine_button_up[];
-extern struct Animation anim_love_machine_button_up[];
-extern struct Animation anim_rap_machine_button_up[];
-extern struct Animation anim_cat_machine_button_down[];
-extern struct Animation anim_love_machine_button_down[];
-extern struct Animation anim_rap_machine_button_down[];
-extern struct Animation anim_cat_machine_button_left[];
-extern struct Animation anim_love_machine_button_left[];
-extern struct Animation anim_rap_machine_button_left[];
-extern struct Animation anim_cat_machine_button_right[];
-extern struct Animation anim_love_machine_button_right[];
-extern struct Animation anim_rap_machine_button_right[];
-extern struct Animation anim_cat_machine_demo_icon[];
-extern struct Animation anim_love_machine_demo_icon[];
-extern struct Animation anim_rap_machine_demo_icon[];
-extern struct Animation anim_cat_machine_listen[];
-extern struct Animation anim_love_san_speak_short[];
-extern struct Animation anim_rap_machine_rapper_yellow[];
-extern struct Animation anim_cat_machine_meow[];
-extern struct Animation anim_love_san_speak_long[];
-extern struct Animation anim_rap_machine_rapper_red[];
-
-extern const struct Vector2 D_08cda128;
-extern const struct Vector2 D_08cda12c;
-extern const struct Vector2 D_08cda130;
-extern const struct Vector2 D_08cda134;
-extern const struct Vector2 D_08cda138;
-extern const struct Vector2 D_08cda13c;
-extern const struct Vector2 D_08cda140;
-extern const struct Vector2 D_08cda144;
-extern const struct Vector2 D_08cda148;
-extern const struct Vector2 D_08cdbadc;
-extern const struct Vector2 D_08cdbae0;
-extern const struct Vector2 D_08cdbae4;
-extern const struct Vector2 D_08cdbae8;
-extern const struct Vector2 D_08cdbaec;
-extern const struct Vector2 D_08cdbaf0;
-extern const struct Vector2 D_08cdbaf4;
-extern const struct Vector2 D_08cdbaf8;
-extern const struct Vector2 D_08cdbafc;
-extern const struct Vector2 D_08cdd0e4;
-extern const struct Vector2 D_08cdd0e8;
-extern const struct Vector2 D_08cdd0ec;
-extern const struct Vector2 D_08cdd0f0;
-extern const struct Vector2 D_08cdd0f4;
-extern const struct Vector2 D_08cdd0f8;
-extern const struct Vector2 D_08cdd0fc;
-extern const struct Vector2 D_08cdd100;
-extern const struct Vector2 D_08cdd104;
-
-extern struct CompressedGraphics D_08cda118;
-extern struct CompressedGraphics D_08cda400;
-extern struct CompressedGraphics D_08cd9a44;
-extern struct CompressedGraphics D_08cdd0d4;
-extern struct CompressedGraphics D_08cdd5b8;
-extern struct CompressedGraphics D_08cdc884;
-extern struct CompressedGraphics D_08cdbacc;
-extern struct CompressedGraphics D_08cdbe6c;
-extern struct CompressedGraphics D_08cdae78;
-
-extern Palette cat_machine_pal[];
-extern Palette confession_machine_pal[];
-extern Palette rap_machine_pal[];
+extern struct Vector2 D_08cda128;
+extern struct Vector2 D_08cda12c;
+extern struct Vector2 D_08cda130;
+extern struct Vector2 D_08cda134;
+extern struct Vector2 D_08cda138;
+extern struct Vector2 D_08cda13c;
+extern struct Vector2 D_08cda140;
+extern struct Vector2 D_08cda144;
+extern struct Vector2 D_08cda148;
+extern struct Vector2 D_08cdbadc;
+extern struct Vector2 D_08cdbae0;
+extern struct Vector2 D_08cdbae4;
+extern struct Vector2 D_08cdbae8;
+extern struct Vector2 D_08cdbaec;
+extern struct Vector2 D_08cdbaf0;
+extern struct Vector2 D_08cdbaf4;
+extern struct Vector2 D_08cdbaf8;
+extern struct Vector2 D_08cdbafc;
+extern struct Vector2 D_08cdd0e4;
+extern struct Vector2 D_08cdd0e8;
+extern struct Vector2 D_08cdd0ec;
+extern struct Vector2 D_08cdd0f0;
+extern struct Vector2 D_08cdd0f4;
+extern struct Vector2 D_08cdd0f8;
+extern struct Vector2 D_08cdd0fc;
+extern struct Vector2 D_08cdd100;
+extern struct Vector2 D_08cdd104;
 
 
   //  //  //  CAT MACHINE DATA  //  //  //

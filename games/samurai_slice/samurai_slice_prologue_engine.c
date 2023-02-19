@@ -1,16 +1,6 @@
 #include "prologues/samurai_slice.h"
 
 
-  /* PROLOGUE (SAMURAI SLICE) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08bf7aa4;
-extern struct CompressedGraphics D_08bf7f04;
-extern struct CompressedGraphics D_08bf7d5c;
-extern struct CompressedGraphics D_08bf6678;
-extern Palette samurai_slice_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

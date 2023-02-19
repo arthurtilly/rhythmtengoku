@@ -1,64 +1,6 @@
 #include "engines/tram_and_pauline.h"
 
 
-  /* TRAM & PAULINE - GAME ENGINE DATA */
-
-
-extern struct Animation anim_casual_fox_beat[];
-extern struct Animation anim_casual_tram_beat[];
-extern struct Animation anim_casual_pauline_beat[];
-extern struct Animation anim_casual_half_tram_beat[];
-extern struct Animation anim_casual_half_pauline_beat[];
-extern struct Animation anim_casual_fox_crouch[];
-extern struct Animation anim_casual_tram_crouch[];
-extern struct Animation anim_casual_pauline_crouch[];
-extern struct Animation anim_casual_half_tram_crouch[];
-extern struct Animation anim_casual_half_pauline_crouch[];
-extern struct Animation anim_casual_fox_jump[];
-extern struct Animation anim_casual_tram_jump[];
-extern struct Animation anim_casual_pauline_jump[];
-extern struct Animation anim_casual_half_tram_jump[];
-extern struct Animation anim_casual_half_pauline_jump[];
-extern struct Animation anim_casual_fox_transform[];
-extern struct Animation anim_casual_tram_transform[];
-extern struct Animation anim_casual_pauline_transform[];
-extern struct Animation anim_casual_half_tram_transform[];
-extern struct Animation anim_casual_half_pauline_transform[];
-extern struct Animation anim_circus_fox_beat[];
-extern struct Animation anim_circus_tram_beat[];
-extern struct Animation anim_circus_pauline_beat[];
-extern struct Animation anim_circus_half_tram_beat[];
-extern struct Animation anim_circus_half_pauline_beat[];
-extern struct Animation anim_circus_fox_crouch[];
-extern struct Animation anim_circus_tram_crouch[];
-extern struct Animation anim_circus_pauline_crouch[];
-extern struct Animation anim_circus_half_tram_crouch[];
-extern struct Animation anim_circus_half_pauline_crouch[];
-extern struct Animation anim_circus_fox_jump[];
-extern struct Animation anim_circus_tram_jump[];
-extern struct Animation anim_circus_pauline_jump[];
-extern struct Animation anim_circus_half_tram_jump[];
-extern struct Animation anim_circus_half_pauline_jump[];
-extern struct Animation anim_circus_fox_transform[];
-extern struct Animation anim_circus_tram_transform[];
-extern struct Animation anim_circus_pauline_transform[];
-extern struct Animation anim_circus_half_tram_transform[];
-extern struct Animation anim_circus_half_pauline_transform[];
-
-extern struct CompressedGraphics D_08d058c4;
-extern struct CompressedGraphics D_08d05e78;
-extern struct CompressedGraphics D_08d062c0;
-extern struct CompressedGraphics D_08d052d0;
-extern struct CompressedGraphics D_08d02864;
-extern struct CompressedGraphics D_08d02f20;
-extern struct CompressedGraphics D_08d02100;
-
-extern Palette tram_and_pauline_bg_pal[];
-extern Palette tram_and_pauline_obj_pal[];
-extern Palette tram_and_pauline_remix_3_bg_pal[];
-extern Palette tram_and_pauline_tutorial_pal[];
-
-
   //  //  //  GRAPHICS DATA  //  //  //
 
 

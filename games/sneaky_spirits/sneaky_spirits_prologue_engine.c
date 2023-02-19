@@ -1,15 +1,6 @@
 #include "prologues/sneaky_spirits.h"
 
 
-  /* PROLOGUE (SNEAKY SPIRITS) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08be1c50;
-extern struct CompressedGraphics D_08be1dfc;
-extern struct CompressedGraphics D_08be0ff8;
-extern Palette sneaky_spirits_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

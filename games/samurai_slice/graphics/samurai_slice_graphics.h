@@ -38,6 +38,14 @@ extern struct Animation anim_demon_chain_walk[];
 extern struct Animation anim_samurai_finish1[];
 extern struct Animation anim_samurai_finish2[];
 
+/* SAMURAI SLICE - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08c66b54;
+extern struct CompressedGraphics D_08c66fbc;
+extern struct CompressedGraphics D_08c66d24;
+extern struct CompressedGraphics D_08c67314;
+extern struct CompressedGraphics D_08c658dc;
+
 /* SAMURAI SLICE - PALETTES */
 
 extern Palette samurai_slice_pal[];

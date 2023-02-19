@@ -1,15 +1,6 @@
 #include "prologues/wizards_waltz.h"
 
 
-  /* PROLOGUE (WIZARD'S WALTZ) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c339dc;
-extern struct CompressedGraphics D_08c33c14;
-extern struct CompressedGraphics D_08c33640;
-extern Palette wizards_waltz_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

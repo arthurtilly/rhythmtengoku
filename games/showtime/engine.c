@@ -1,21 +1,6 @@
 #include "engines/showtime.h"
 
 
-  /* SHOWTIME - GAME ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c551e8;
-extern struct CompressedGraphics D_08c57038;
-extern struct CompressedGraphics D_08c571c0;
-extern struct CompressedGraphics D_08c54f7c;
-extern struct CompressedGraphics D_08c56bd8;
-extern struct CompressedGraphics D_08c57650;
-extern struct CompressedGraphics D_08c577d8;
-extern Palette showtime_bg_pal[];
-extern Palette showtime_obj_pal[];
-extern Palette showtime_remix_3_bg_pal[];
-
-
   //  //  //  GRAPHICS DATA  //  //  //
 
 

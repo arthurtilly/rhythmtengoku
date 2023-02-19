@@ -1,15 +1,6 @@
 #include "prologues/rap_women.h"
 
 
-  /* PROLOGUE (RAP WOMEN) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c20f8c;
-extern struct CompressedGraphics D_08c21254;
-extern struct CompressedGraphics D_08c209cc;
-extern Palette rap_women_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

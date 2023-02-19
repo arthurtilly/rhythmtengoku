@@ -160,3 +160,17 @@ extern struct Animation anim_band_trumpeters_play[];
 
 extern Palette drum_samurai_band_obj_pal[];
 extern Palette drum_samurai_band_bg_pal[];
+
+/* DRUM LIVE - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08c47038;
+extern struct CompressedGraphics D_08c47dc4;
+extern struct CompressedGraphics D_08c45f10;
+extern struct CompressedGraphics D_08c47930;
+extern struct CompressedGraphics D_08c47ed4;
+extern struct CompressedGraphics D_08c4356c;
+extern struct CompressedGraphics D_08c439d0;
+extern struct CompressedGraphics D_08c4241c;
+extern struct CompressedGraphics D_08bd7c30;
+extern struct CompressedGraphics D_08bd8060;
+extern struct CompressedGraphics D_08bd6c44;

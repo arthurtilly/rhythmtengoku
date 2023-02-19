@@ -1,16 +1,6 @@
 #include "prologues/marching_orders.h"
 
 
-  /* PROLOGUE (MARCHING ORDERS) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08bfbe68;
-extern struct CompressedGraphics D_08bfc1f8;
-extern struct CompressedGraphics D_08bfa204;
-extern Palette marching_orders_prologue_bg_pal[];
-extern Palette marching_orders_prologue_obj_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
