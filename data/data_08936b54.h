@@ -3,28 +3,28 @@
 #include "global.h"
 #include "src/task_pool.h"
 
-extern const char *const D_08936b50;
-extern const struct TaskMethods D_08936b54;
-extern const struct TaskMethods D_08936b64;
-extern const struct TaskMethods D_08936b74;
-extern const struct TaskMethods D_08936b84;
-extern const struct TaskMethods D_08936b94;
-extern const struct TaskMethods D_08936ba4;
-extern const struct TaskMethods D_08936bb4;
-extern const struct TaskMethods D_08936bc4;
-extern const struct TaskMethods D_08936bd4;
-extern const struct TaskMethods D_08936be4;
-extern const struct TaskMethods D_08936bf4;
-extern const struct TaskMethods D_08936c04;
-extern const struct TaskMethods D_08936c14;
-extern const struct TaskMethods D_08936c24;
-extern const struct TaskMethods D_08936c34;
-extern const struct TaskMethods D_08936c44;
-extern const struct TaskMethods D_08936c54;
-extern const char D_08936c64[];
-extern const struct TaskMethods D_08936c7c;
-extern const struct TaskMethods D_08936c8c;
-extern const struct TaskMethods D_08936c9c;
+extern const char *D_08936b50;
+extern struct TaskMethods D_08936b54;
+extern struct TaskMethods D_08936b64;
+extern struct TaskMethods D_08936b74;
+extern struct TaskMethods D_08936b84;
+extern struct TaskMethods D_08936b94;
+extern struct TaskMethods D_08936ba4;
+extern struct TaskMethods D_08936bb4;
+extern struct TaskMethods D_08936bc4;
+extern struct TaskMethods D_08936bd4;
+extern struct TaskMethods D_08936be4;
+extern struct TaskMethods D_08936bf4;
+extern struct TaskMethods D_08936c04;
+extern struct TaskMethods D_08936c14;
+extern struct TaskMethods D_08936c24;
+extern struct TaskMethods D_08936c34;
+extern struct TaskMethods D_08936c44;
+extern struct TaskMethods D_08936c54;
+extern char D_08936c64[];
+extern struct TaskMethods D_08936c7c;
+extern struct TaskMethods D_08936c8c;
+extern struct TaskMethods D_08936c9c;
 
 struct unk_struct_08004da0_init;
 struct unk_struct_08004da0;

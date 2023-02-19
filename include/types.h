@@ -12,9 +12,9 @@ struct Vector2 {
     s16 y;
 };
 
-extern const s16 gSineTable[];
-extern const s16 D_08935fcc[];
-extern const s16 D_089361cc[];
+extern s8_8 gSineTable[];
+extern s8_8 D_08935fcc[];
+extern s8_8 D_089361cc[];
 
 
 /* Beatscript Scene Engine */

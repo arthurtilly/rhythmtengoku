@@ -1571,12 +1571,12 @@ SECTIONS {
 
         build/data/__clz_tab.c.o(.rodata);
         build/data/agb_main_data.c.o(.data);
-        build/data/math_tables.c.o(.rodata);
-        build/data/data_089363cc.c.o(.rodata);
+        build/data/math_tables.c.o(.data);
+        build/data/data_089363cc.c.o(.data);
 		build/bin/bindata_08936650.bin.o(.rodata*);
-        build/data/data_08936b54.c.o(.rodata);
-        build/data/sine_table.c.o(.rodata);
-        build/data/text_printer_data.c.o(.rodata);
+        build/data/data_08936b54.c.o(.data);
+        build/data/sine_table.c.o(.data);
+        build/data/text_printer_data.c.o(.data);
         build/bin/text_small_glyphs.bin.o(.rodata*);
         build/bin/text_small_glyph_sizes.bin.o(.rodata*);
         build/bin/text_medium_glyphs.bin.o(.rodata*);
@@ -1585,7 +1585,7 @@ SECTIONS {
         build/bin/text_large_glyph_sizes.bin.o(.rodata*);
         build/data/unknown_anim_data.c.o(.data);
         build/data/beatscript_scene_data.c.o(.data);
-        build/data/sound_tempo_table.c.o(.rodata);
+        build/data/sound_tempo_table.c.o(.data);
 
         build/bin/bindata_089cd1a4.bin.o(.rodata*);
         build/data/scenes/game_select/scene_entries.c.o(.rodata);

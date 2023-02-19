@@ -1,35 +1,35 @@
 #include "data/data_089363cc.h"
 #include "src/code_08001360.h"
 
-const struct TaskMethods D_089363cc = {
+struct TaskMethods D_089363cc = {
     (TaskStartFunc)func_08001f34,
     (TaskUpdateFunc)func_08001fc4,
     NULL,
     NULL,
 };
 
-const struct TaskMethods D_089363dc = {
+struct TaskMethods D_089363dc = {
     (TaskStartFunc)func_08001f64,
     (TaskUpdateFunc)func_08001fc4,
     NULL,
     NULL,
 };
 
-const struct TaskMethods D_089363ec = {
+struct TaskMethods D_089363ec = {
     (TaskStartFunc)func_08001f94,
     (TaskUpdateFunc)func_08001fc4,
     NULL,
     NULL,
 };
 
-const struct TaskMethods D_089363fc = {
+struct TaskMethods D_089363fc = {
     (TaskStartFunc)func_08002eb0,
     NULL,
     (TaskUpdateFunc)func_08002ecc,
     NULL,
 };
 
-const u8 D_0893640c[] = {
+u8 D_0893640c[] = {
     0,  0,  1,  1,  2,  3,  3,  4,  5,  5,  6,  7,  7,  8,  8,  9,
     10, 10, 11, 11, 12, 13, 13, 14, 14, 15, 15, 16, 17, 17, 18, 18,
     19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 23, 24, 24, 25, 25, 26,
@@ -37,7 +37,7 @@ const u8 D_0893640c[] = {
     32
 };
 
-const u16 D_0893644e[] = {
+u16 D_0893644e[] = {
     0,   1,   2,   3,   5,   6,   7,   8,   10,  11,  12,  13,  15,  16,  17,  19,
     20,  21,  22,  24,  25,  26,  27,  29,  30,  31,  32,  34,  35,  36,  38,  39,
     40,  41,  43,  44,  45,  46,  48,  49,  50,  51,  53,  54,  55,  56,  57,  59,

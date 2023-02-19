@@ -603,7 +603,7 @@ void drum_studio_init_gfx3(void) {
 
 // Graphics Init. 2
 void drum_studio_init_gfx2(void) {
-    const struct GraphicsTable *gfxTable = drum_studio_gfx_table;
+    struct GraphicsTable *gfxTable = drum_studio_gfx_table;
     s32 task;
 
     func_0800c604(0);

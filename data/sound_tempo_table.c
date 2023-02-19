@@ -3,7 +3,7 @@
 #include "src/code_080102d0.h"
 
 // [D_089ccccc] Sound Tempo Table (used for game synchronisation)
-const struct TempoTable gSoundTempoTable[] = {
+struct TempoTable sound_tempo_table[] = {
     { &s_aimu_bgm_seqData, 119 },
     { &s_bon_odori_bgm_seqData, 121 },
     { &s_bon_dance_bgm_seqData, 121 },
