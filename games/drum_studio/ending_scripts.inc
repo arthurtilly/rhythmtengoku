@@ -1,5 +1,5 @@
 .include "include/gba.inc"
-.include "include/bs_riq.inc"
+.include "include/beatscript_ext.inc"
 .include "games/drum_studio/macros.inc"
 
 load_drum_studio_labels

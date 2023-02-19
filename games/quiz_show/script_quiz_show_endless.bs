@@ -2,7 +2,7 @@
 .syntax unified
 
 .include "include/gba.inc"
-.include "include/bs_riq.inc"
+.include "include/beatscript_ext.inc"
 .include "games/quiz_show/macros.inc"
 
 load_quiz_show_labels
