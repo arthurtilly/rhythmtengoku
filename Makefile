@@ -19,7 +19,6 @@ CPPFLAGS := -I tools/agbcc -I tools/agbcc/include -I . -iquote include -nostdinc
 
 include $(DEVKITARM)/base_rules
 
-#include $(DEVKITARM)/gba_rules
 CROSS := arm-none-eabi-
 OBJCOPY := $(CROSS)objcopy
 LD := $(CROSS)gcc
@@ -48,23 +47,23 @@ endef
 
 TARGET		   := rhythmtengoku
 BUILD		   := build
-SOURCES		   := src
+SOURCES		   := src $(shell find src -type d)
 ASM            := asm
 INCLUDES	   := include
 TEXT           := text
+BIN		       := bin
 DATA		   := data
 SCENE_DATA     := $(shell find $(DATA)/scenes -type d)
-GAME_DATA	   := $(shell find games -type d -not -name "graphics")
 LEVEL_DATA     := $(DATA)/levels
-BIN		       := bin
+GAMES          := games
+GAME_DATA	   := $(shell find $(GAMES) -type d)
+GRAPHICS       := $(shell find graphics -type d) $(shell find $(GAMES) -type d -name "graphics")
 AUDIO		   := audio
 MUSIC		   := $(AUDIO)/sequences
 SFX            := $(AUDIO)/samples
-GRAPHICS       := $(shell find graphics -type d) $(shell find games -type d -name "graphics")
 
-C_DIRS		   := $(SOURCES) $(SOURCES)/scenes $(SOURCES)/engines $(SOURCES)/prologues \
-                  $(AUDIO) $(GRAPHICS) $(TEXT) \
-				  $(DATA) $(SCENE_DATA) $(LEVEL_DATA) $(GAME_DATA)
+C_DIRS		   := $(SOURCES) $(AUDIO) $(GRAPHICS) $(TEXT) $(DATA) $(SCENE_DATA) $(LEVEL_DATA) $(GAME_DATA)
+C_DIRS         := $(sort $(C_DIRS)) # remove duplicates
 
 ASM_DIRS       := $(ASM) $(DATA) $(SCENE_DATA) $(LEVEL_DATA) $(TEXT)
 BS_DIRS        := $(GAME_DATA)
@@ -88,38 +87,37 @@ JSONFILES   :=  $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.json))
 
 CFILES := $(filter-out %.inc.c, $(CFILES))
 
-export OFILES_JSON := $(addprefix $(BUILD)/,$(JSONFILES:.json=.json.c.o))
+OFILES_JSON := $(addprefix $(BUILD)/,$(JSONFILES:.json=.json.c.o))
+OFILES_BIN := $(addprefix $(BUILD)/,$(addsuffix .o,$(BINFILES))) $(addprefix $(BUILD)/,$(WAVFILES:.wav=.pcm.o))
+OFILES_SOURCES := $(addprefix $(BUILD)/,$(addsuffix .o,$(SFILES))) $(addprefix $(BUILD)/,$(addsuffix .o,$(CFILES)))
 
-export OFILES_BIN := $(addprefix $(BUILD)/,$(addsuffix .o,$(BINFILES))) $(addprefix $(BUILD)/,$(WAVFILES:.wav=.pcm.o))
+OFILES := $(OFILES_BIN) $(OFILES_SOURCES) $(OFILES_JSON)
 
-export OFILES_SOURCES := $(addprefix $(BUILD)/,$(addsuffix .o,$(SFILES))) $(addprefix $(BUILD)/,$(addsuffix .o,$(CFILES)))
-
-export OFILES := $(OFILES_BIN) $(OFILES_SOURCES) $(OFILES_JSON)
-
-export INCLUDE	:=	-I $(foreach dir,$(INCLUDES),$(wildcard $(dir)/*.h)) \
-					-I $(foreach dir,$(LIBDIRS),-I $(dir)/include) \
-					-I $(CURDIR)/$(BUILD)
-
-#export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib)
-
-.PHONY: default clean rebuild
-.SECONDARY:
+INCLUDE	:=	-I $(foreach dir,$(INCLUDES),$(wildcard $(dir)/*.h)) \
+			-I $(foreach dir,$(LIBDIRS),-I $(dir)/include) \
+			-I $(CURDIR)/$(BUILD)
 
 #---------------------------------------------------------------------------------
+.PHONY: default clean distclean rebuild
+.SECONDARY:
+#---------------------------------------------------------------------------------
+
 default: $(OUTPUT).gba
 	$(V)diff baserom.gba $(OUTPUT).gba && (echo "$(TARGET).gba: OK") || (echo "The build succeeded, but did not match the official ROM.")
 
 #---------------------------------------------------------------------------------
+
 clean:
 	$(V)echo clean ...
 	$(V)rm -fr $(filter-out build/audio, $(wildcard build/*))
 	$(V)rm -fr $(filter-out build/audio/samples build/audio/sequences, $(wildcard build/audio/*))
     
-fullclean:
+distclean:
 	$(V)echo full clean ...
 	$(V)rm -fr $(BUILD)
 
 #---------------------------------------------------------------------------------
+
 rebuild: clean default
 
 #---------------------------------------------------------------------------------
