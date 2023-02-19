@@ -1,3 +1,5 @@
+#include "graphics/epilogues/epilogues_graphics.h"
+
 // [D_08050c34] Epilogue - Karate Man (Superb)
 const struct GraphicsTable gfx_table_epilogue_karate_man_superb[] = {
     /* BG Tileset */ {
