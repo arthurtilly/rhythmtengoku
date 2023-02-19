@@ -5,16 +5,16 @@
 /* Game Text - The Snappy Trio */
 
 
-char D_08067bc4[] = "イマイチだったねぇ…";
+const char D_08067bc4[] = "イマイチだったねぇ…";
 
-char D_08067bdc[] = "だいぶ　よかったヨ！";
+const char D_08067bdc[] = "だいぶ　よかったヨ！";
 
-char D_08067bf4[] = "ゆったりするところが　なんだかなァ…";
+const char D_08067bf4[] = "ゆったりするところが　なんだかなァ…";
 
-char D_08067c1c[] = "ゆったりするところが　よかったヨ！";
+const char D_08067c1c[] = "ゆったりするところが　よかったヨ！";
 
-char D_08067c40[] = "";
+const char D_08067c40[] = "";
 
-char D_08067c44[] = "あんなトコ　よく　キメたネ" SHIFT_JIS_WAVE_DASH "！　すごいヨー！！";
+const char D_08067c44[] = "あんなトコ　よく　キメたネ" SHIFT_JIS_WAVE_DASH "！　すごいヨー！！";
 
-char D_08067c74[] = "なかまの声";
+const char D_08067c74[] = "なかまの声";

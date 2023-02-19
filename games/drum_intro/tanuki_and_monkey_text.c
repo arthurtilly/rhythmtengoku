@@ -5,67 +5,67 @@
 /* Game Text - Tanuki & Monkey */
 
 
-char D_0805dcb8[] =
+const char D_0805dcb8[] =
     "ブブー！！\n"
     "ゲームオーバーです！\n"
     "ボクたちの勝ちでーす！";
 
-char D_0805dcf0[] = "また挑戦してネ！";
+const char D_0805dcf0[] = "また挑戦してネ！";
 
-char D_0805dd04[] =
+const char D_0805dd04[] =
     "まいりました！\n"
     "あなたの勝ちです！！";
 
-char D_0805dd28[] = "また、　あそんでネ！";
+const char D_0805dd28[] = "また、　あそんでネ！";
 
-char D_0805dd40[] =
+const char D_0805dd40[] =
     "\n"
     "\n"
     "こんにちわ！";
 
-char D_0805dd50[] =
+const char D_0805dd50[] =
     "サルとポン太です。\n"
     "ドラム侍さんのご紹介で\n"
     "あそびに来ました。";
 
-char D_0805dd90[] =
+const char D_0805dd90[] =
     "今回は　ボクたちが\n"
     "レッスンしますネ！";
 
-char D_0805ddb8[] =
+const char D_0805ddb8[] =
     "さっそくですが、\n"
     "Ａボタンの練習です。";
 
-char D_0805dde0[] =
+const char D_0805dde0[] =
     "よく　きいて\n"
     "マネしてネ！";
 
-char D_0805ddfc[] =
+const char D_0805ddfc[] =
     "ポン太くんも入ります。\n"
     "ポン太くんの音は\n"
     "\x8f\x5c" "字キーの下で鳴ります。";
 
-char D_0805de40[] =
+const char D_0805de40[] =
     "次は、　速いやつです。\n"
     "Ａボタンと" SHIFT_JIS_KANJI_JUU "字キーの右を\n"
     "交互に押すとラクだヨ。";
 
-char D_0805de88[] = "練習は　次で最後です。";
+const char D_0805de88[] = "練習は　次で最後です。";
 
-char D_0805dea0[] =
+const char D_0805dea0[] =
     "むずかしいかな？\n"
     "がんばってネ！";
 
-char D_0805dec0[] =
+const char D_0805dec0[] =
     "それでは、　ボクたちと\n"
     "リズムバトルを\n"
     "してみましょう！";
 
-char D_0805def8[] =
+const char D_0805def8[] =
     "各パターンにつき\n"
     "３回　チャンスが\n"
     "あります。";
 
-char D_0805df28[] =
+const char D_0805df28[] =
     "さて、　どこまで\n"
     "ついてこれるかな？";
