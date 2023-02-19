@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/bouncy_road/graphics/bouncy_road_graphics.h"
+
 // Engine Types:
 struct BouncyRoadInfo {
 };
@@ -17,22 +19,6 @@ enum BouncyRoadVersionsEnum {
     BOUNCY_ROAD_VER_REMIX5,
     BOUNCY_ROAD_VER_2
 };
-
-
-// OAM Animations:
-extern struct Animation anim_bouncy_road_player_a[];
-extern struct Animation anim_bouncy_road_player_dpad[];
-extern struct Animation anim_bouncy_road_ball[];
-extern struct Animation anim_bouncy_road_path[];
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

@@ -3,6 +3,7 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/bouncy_road/graphics/bouncy_road_prologue_graphics.h"
 
   //  //  //  PROLOGUE: BOUNCY ROAD  //  //  //
 
@@ -17,8 +18,6 @@ struct BouncyRoadPrologueInfo {
 // Assets:
 extern struct CompressedGraphics *bouncy_road_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable bouncy_road_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_bouncy_road_prologue_title[]; // Animation: Text (Bouncy Road)
-extern struct Animation anim_bouncy_road_prologue_path[]; // Animation: Bouncers
 
 // Functions:
 extern void func_08045a90(void);    // [func_08045a90] GFX_INIT Func_02

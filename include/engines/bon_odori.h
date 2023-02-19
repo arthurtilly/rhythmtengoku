@@ -3,6 +3,7 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/bon_odori/graphics/bon_odori_graphics.h"
 
 // Engine Types:
 struct BonOdoriText {
@@ -89,18 +90,6 @@ enum BonOdoriDonpanAnimationsEnum {
     DONPAN_ANIM_VERY_HAPPY,
     DONPAN_ANIM_SPIN
 };
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

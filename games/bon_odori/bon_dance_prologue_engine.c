@@ -1,16 +1,6 @@
 #include "prologues/bon_dance.h"
 
 
-  /* PROLOGUE (BON DANCE) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08be854c;
-extern struct CompressedGraphics D_08be8828;
-extern struct CompressedGraphics D_08be75b8;
-extern Palette bon_odori_prologue_bg_pal[];
-extern Palette bon_odori_prologue_obj_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

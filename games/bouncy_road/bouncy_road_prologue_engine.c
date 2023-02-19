@@ -1,15 +1,6 @@
 #include "prologues/bouncy_road.h"
 
 
-  /* PROLOGUE (BOUNCY ROAD) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08bee468;
-extern struct CompressedGraphics D_08bee52c;
-extern struct CompressedGraphics D_08bee430;
-extern Palette bouncy_road_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

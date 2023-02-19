@@ -1,16 +1,6 @@
 #include "prologues/bon_odori.h"
 
 
-  /* PROLOGUE (THE BON ODORI) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08be694c;
-extern struct CompressedGraphics D_08be6d70;
-extern struct CompressedGraphics D_08be3e20;
-extern Palette bon_dance_prologue_bg_pal[];
-extern Palette bon_dance_prologue_obj_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
