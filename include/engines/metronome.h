@@ -68,4 +68,4 @@ extern void metronome_cue_miss(struct Cue *, struct MetronomeCue *); // Cue - Mi
 extern void metronome_input_event(u32 pressed, u32 released); // Input Event
 extern void metronome_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
 extern void metronome_common_display_text(u32); // Common Event 1 (Display Text)
-extern void metronome_common_init_tutorial(const struct Scene *); // Common Event 2 (Init. Tutorial)
+extern void metronome_common_init_tutorial(struct Scene *); // Common Event 2 (Init. Tutorial)

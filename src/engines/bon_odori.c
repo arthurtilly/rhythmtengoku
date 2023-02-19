@@ -473,5 +473,5 @@ void bon_odori_common_display_text(u32 arg) {
 
 
 // [func_0802118c] COMMON Func_02 - STUB
-void bon_odori_common_init_tutorial(const struct Scene *skipDest) {
+void bon_odori_common_init_tutorial(struct Scene *skipDest) {
 }

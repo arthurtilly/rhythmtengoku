@@ -152,7 +152,7 @@ extern void karate_start_serious_mode_next_hit(void);
 extern void karate_stop_serious_mode_next_hit(void);
 extern void karate_tutorial_display_text(char *);
 extern void karate_tutorial_wait_for_input(void);
-extern void karate_common_init_tutorial(const struct Scene *);
+extern void karate_common_init_tutorial(struct Scene *);
 extern void karate_tutorial_loop_start(u32);
 extern void karate_tutorial_loop_end(void);
 extern void karate_use_the_face(u8);

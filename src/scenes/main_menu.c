@@ -13,14 +13,14 @@
 #include "src/lib_0804ca80.h"
 
 extern const struct FontDefinition D_089de670;
-extern const struct Scene D_089ddbcc; // Debug Menu Script
-extern const struct Scene D_089cdf08; // Game Select Script
-extern const struct Scene D_089d7964; // Results (Score) Script
-extern const struct Scene D_089cde20; // Main Menu Script
-extern const struct Scene D_089d471c; // Rhythm Test Script
-extern const struct Scene D_089cdc24; // Rhythm Data Room Script
-extern const struct Scene D_089d85b4; // Studio Menu Script
-extern const struct Scene D_089cfc1c; // Options Menu Script
+extern struct Scene D_089ddbcc; // Debug Menu Script
+extern struct Scene D_089cdf08; // Game Select Script
+extern struct Scene D_089d7964; // Results (Score) Script
+extern struct Scene D_089cde20; // Main Menu Script
+extern struct Scene D_089d471c; // Rhythm Test Script
+extern struct Scene D_089cdc24; // Rhythm Data Room Script
+extern struct Scene D_089d85b4; // Studio Menu Script
+extern struct Scene D_089cfc1c; // Options Menu Script
 
 // For readability.
 #define gMainMenuInfo ((struct MainMenuSceneInfo *)D_030046a4)
@@ -73,7 +73,7 @@ void func_08012494(void) {
 
 // Scene Start
 void func_080124d0(u32 unused) {
-    const struct Scene *tempScene;
+    struct Scene *tempScene;
     u32 i;
 
     tempScene = func_0800061c();

@@ -66,4 +66,4 @@ extern void tram_pauline_cue_miss(struct Cue *, struct TramPaulineCue *); // Cue
 extern void tram_pauline_input_event(u32 pressed, u32 released); // Input Event
 extern void tram_pauline_common_beat_animation(void); // Common Event 0 (Beat Animation)
 extern void tram_pauline_common_display_text(const char *); // Common Event 1 (Display Text)
-extern void tram_pauline_common_init_tutorial(const struct Scene *); // Common Event 2 (Init. Tutorial)
+extern void tram_pauline_common_init_tutorial(struct Scene *); // Common Event 2 (Init. Tutorial)

@@ -23,10 +23,10 @@ static u8 D_0300131f; // unused
 static s8 D_03001320; // ?
 static s32 D_03001324; // ?
 
-extern const struct Scene D_089d77e4; // Results (Level-Type)
-extern const struct Scene D_089d7c18; // Results (Epilogue..?)
-extern const struct Scene D_089d7964; // Results (Score-Type)
-extern const struct Scene D_089cdf08; // Game Select
+extern struct Scene D_089d77e4; // Results (Level-Type)
+extern struct Scene D_089d7c18; // Results (Epilogue..?)
+extern struct Scene D_089d7964; // Results (Score-Type)
+extern struct Scene D_089cdf08; // Game Select
 
 
 /* GAME SELECT */

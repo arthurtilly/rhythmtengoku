@@ -34,7 +34,7 @@ struct GameplaySceneInfo {
 	u8 currentMarkingCriteria; // Current Marking Criteria
 	u8 isTutorial;
 	u8 skippingTutorial; // Currently changing scenes.
-	const struct Scene *skipDestination; // Skip Tutorial destination scene
+	struct Scene *skipDestination; // Skip Tutorial destination scene
 	u16 fadeInTicks; // Remaining ticks for screen fade-in?
     u16 nextCueDuration;
     u16 unk88;
@@ -127,9 +127,9 @@ extern void gameplay_set_next_cue_barely_sfx(struct SequenceData *sfx); // [func
 extern void gameplay_set_next_cue_miss_sfx(struct SequenceData *sfx); // [func_08017400] Set Next Cue Miss SFX
 extern void gameplay_force_stop_music_midi_track(s32 midiTrack); // [func_0801740c] Force-Stop Music MIDI Track
 extern void gameplay_enable_tutorial(u32 isTutorial); // [func_08017448] Set isTutorial
-extern void gameplay_set_skip_destination(const struct Scene *scene); // [func_08017458] Set skipDestination
+extern void gameplay_set_skip_destination(struct Scene *scene); // [func_08017458] Set skipDestination
 extern void gameplay_set_skip_button(u32 buttons); // [func_08017468] Set Skip Tutorial Button
-extern void gameplay_set_tutorial(const struct Scene *scene); // [func_0801747c] Set Skip Destination (i.e. if Select is pressed in a tutorial)
+extern void gameplay_set_tutorial(struct Scene *scene); // [func_0801747c] Set Skip Destination (i.e. if Select is pressed in a tutorial)
 extern void gameplay_display_skip_icon(u32 corner); // [func_080174e8] Display Skip Tutorial Icon
 extern void gameplay_skip_tutorial(void); // [func_08017514] Skip Tutorial
 extern void gameplay_set_screen_fade_in_time(u32 duration); // [func_08017568] Set Screen Fade-In
@@ -194,7 +194,7 @@ extern void gameplay_get_previous_cue_info(struct Cue *cue, struct Cue **prev, v
 
 // Functions - Video:
 // extern ? gameplay_init_overlay(?); // [func_08018154] Initialise Common Graphics (Perfect Campaign, etc.)
-extern void gameplay_pause_menu_set_quit_destination(const struct Scene *scene); // [func_080182ac] Set D_03001328
+extern void gameplay_pause_menu_set_quit_destination(struct Scene *scene); // [func_080182ac] Set D_03001328
 extern void gameplay_pause_menu_darken_screen(void); // [func_080182b8] Screen Darken (Pause)
 extern void gameplay_pause_menu_lighten_screen(void); // [func_08018318] Screen Lighten (Unpause)
 extern void gameplay_start_pause_menu(void); // [func_08018344] Open Pause Menu

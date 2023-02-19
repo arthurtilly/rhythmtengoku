@@ -134,7 +134,7 @@ struct PerfectCampaignData {
 };
 
 struct GameSelectSceneEntry {
-    const struct Scene *scene;
+    struct Scene *scene;
     const char *name;
     const char *description;
     u16 unkC;

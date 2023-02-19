@@ -28,7 +28,7 @@ enum SaveReplayOptionsEnum {
     REPLAY_SAVE_OPTION_NO
 };
 
-extern const struct Scene D_089d85b4; // Studio Scene
+extern struct Scene D_089d85b4; // Studio Scene
 
 
 /* DRUM LESSONS */

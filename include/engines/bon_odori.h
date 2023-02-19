@@ -155,4 +155,4 @@ extern void bon_odori_cue_miss(struct Cue *, struct BonOdoriCue *);             
 extern void bon_odori_input_event(u32, u32);                        // [func_08021034] MAIN - Input Event
 extern void bon_odori_common_beat_animation(u32);                   // [func_08021084] COMMON Func_00 - Beat Animation
 extern void bon_odori_common_display_text(u32);                     // [func_08021188] COMMON Func_01 - STUB
-extern void bon_odori_common_init_tutorial(const struct Scene *);   // [func_0802118c] COMMON Func_02 - STUB
+extern void bon_odori_common_init_tutorial(struct Scene *);   // [func_0802118c] COMMON Func_02 - STUB

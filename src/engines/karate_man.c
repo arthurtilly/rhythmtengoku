@@ -148,7 +148,7 @@ void karate_tutorial_wait_for_input(void) {
 
 
 // COMMON Func_03 - Set Tutorial Destination Scene
-void karate_common_init_tutorial(const struct Scene *scene) {
+void karate_common_init_tutorial(struct Scene *scene) {
     if (scene != NULL) {
         gameplay_enable_tutorial(TRUE);
         gameplay_set_skip_destination(scene);

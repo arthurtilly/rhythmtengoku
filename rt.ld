@@ -1570,7 +1570,7 @@ SECTIONS {
         build/graphics/unknown/unknown_pal.c.o(.data);
 
         build/data/__clz_tab.c.o(.rodata);
-        build/data/agb_main_data.c.o(.rodata);
+        build/data/agb_main_data.c.o(.data);
         build/data/math_tables.c.o(.rodata);
         build/data/data_089363cc.c.o(.rodata);
 		build/bin/bindata_08936650.bin.o(.rodata*);

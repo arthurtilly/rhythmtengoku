@@ -73,4 +73,4 @@ extern void clappy_trio_input_event(u32 pressed, u32 released); // Input Event
 extern void clappy_trio_common_beat_animation(void); // Common Event 0 (Beat Animation)
 extern void clappy_trio_common_display_text(const char *); // Common Event 1 (Display Text)
 extern void func_08030bf0(); // Engine Event 05 (Hide Text Box)
-extern void clappy_trio_common_init_tutorial(const struct Scene *); // Common Event 2 (Init. Tutorial)
+extern void clappy_trio_common_init_tutorial(struct Scene *); // Common Event 2 (Init. Tutorial)

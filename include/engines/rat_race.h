@@ -86,7 +86,7 @@ extern void rat_race_cue_miss(struct Cue *, struct RatRaceCue *); // Cue - Miss
 extern void rat_race_input_event(u32 pressed, u32 released); // Input Event
 extern void rat_race_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
 extern void rat_race_common_display_text(void); // Common Event 1 (Display Text, Unimplemented)
-extern void rat_race_common_init_tutorial(const struct Scene *); // Common Event 2 (Init. Tutorial)
+extern void rat_race_common_init_tutorial(struct Scene *); // Common Event 2 (Init. Tutorial)
 // extern ? func_0803a678(?);
 extern void func_0803a798(); // Engine Event 05 (?)
 // extern ? func_0803a8e4(?);

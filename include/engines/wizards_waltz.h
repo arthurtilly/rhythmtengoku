@@ -86,4 +86,4 @@ extern void wizards_waltz_cue_miss(struct Cue *, struct WizardsWaltzCue *); // C
 extern void wizards_waltz_input_event(u32 pressed, u32 released); // Input Event
 extern void wizards_waltz_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
 extern void wizards_waltz_common_display_text(void); // Common Event 1 (Display Text, Unimplemented)
-extern void wizards_waltz_common_init_tutorial(const struct Scene *); // Common Event 2 (Init. Tutorial)
+extern void wizards_waltz_common_init_tutorial(struct Scene *); // Common Event 2 (Init. Tutorial)

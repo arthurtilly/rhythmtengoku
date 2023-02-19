@@ -158,4 +158,4 @@ extern void fireworks_cue_miss(struct Cue *, struct FireworksCue *); // Cue - Mi
 extern void fireworks_input_event(u32 pressed, u32 released); // Input Event
 extern void fireworks_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
 extern void fireworks_common_display_text(char *); // Common Event 1 (Display Text)
-extern void fireworks_common_init_tutorial(const struct Scene *); // Common Event 2 (Init. Tutorial)
+extern void fireworks_common_init_tutorial(struct Scene *); // Common Event 2 (Init. Tutorial)

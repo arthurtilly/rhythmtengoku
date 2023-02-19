@@ -165,4 +165,4 @@ extern void drum_live_cue_miss(struct Cue *, struct DrumLiveCue *); // DRUM LIVE
 extern void drum_live_input_event(u32 pressed, u32 released); // DRUM LIVE - Input Event
 extern void drum_live_common_beat_animation(void); // DRUM LIVE - Common Event 0 (Beat Animation)
 extern void drum_live_common_display_text(void); // DRUM LIVE - Common Event 1 (Display Text, Unimplemented)
-extern void drum_live_common_init_tutorial(const struct Scene *); // DRUM LIVE - Common Event 2 (Init. Tutorial)
+extern void drum_live_common_init_tutorial(struct Scene *); // DRUM LIVE - Common Event 2 (Init. Tutorial)

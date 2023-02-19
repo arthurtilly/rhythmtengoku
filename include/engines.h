@@ -36,7 +36,7 @@ struct GameEngine {
  *
  * typedef void (CommonEvent0)(s32 param);
  * typedef void (CommonEvent1)(s32 param);
- * typedef void (CommonEvent2)(const struct Scene *skipDest);
+ * typedef void (CommonEvent2)(struct Scene *skipDest);
  *
  * Common Event 0: Play Beat Animation
  * Common Event 1: Display Text

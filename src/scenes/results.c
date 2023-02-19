@@ -704,7 +704,7 @@ void func_08019d9c(void) {
 void func_08019ee0(void) {
     struct InputScoreTracker *tracker = D_089d7980->cueInputTrackers;
     const struct MarkingCriteria **markingData = D_089d7980->markingData;
-    const struct Scene *scene;
+    struct Scene *scene;
     struct Animation *textAnim;
     s16 textSprite;
     u32 totalCriteriaFailed, averageCriteriaSucceeded;

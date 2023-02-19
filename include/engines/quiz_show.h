@@ -101,4 +101,4 @@ extern void quiz_cue_miss(struct Cue *, struct QuizShowCue *); // Cue - Miss
 extern void quiz_input_event(u32 pressed, u32 released); // Input Event
 extern void quiz_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
 extern void quiz_common_display_text(void); // Common Event 1 (Display Text, Unimplemented)
-extern void quiz_common_init_tutorial(const struct Scene *); // Common Event 2 (Init. Tutorial)
+extern void quiz_common_init_tutorial(struct Scene *); // Common Event 2 (Init. Tutorial)

@@ -662,7 +662,7 @@ void fireworks_common_display_text(char *text) {
 
 
 // Common Event 2 (Init. Tutorial)
-void fireworks_common_init_tutorial(const struct Scene *skipDestination) {
+void fireworks_common_init_tutorial(struct Scene *skipDestination) {
     if (skipDestination != NULL) {
         gameplay_enable_tutorial(TRUE);
         gameplay_set_skip_destination(skipDestination);
