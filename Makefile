@@ -54,20 +54,19 @@ INCLUDES	   := include
 TEXT           := text
 DATA		   := data
 SCENE_DATA     := $(shell find $(DATA)/scenes -type d)
-PROLOGUE_DATA  := $(shell find $(DATA)/prologues -type d)
-GAME_DATA	   := $(shell find games -type d)
+GAME_DATA	   := $(shell find games -type d -not -name "graphics")
 LEVEL_DATA     := $(DATA)/levels
 BIN		       := bin
 AUDIO		   := audio
 MUSIC		   := $(AUDIO)/sequences
 SFX            := $(AUDIO)/samples
-GRAPHICS       := $(shell find graphics -type d)
+GRAPHICS       := $(shell find graphics -type d) $(shell find games -type d -name "graphics")
 
 C_DIRS		   := $(SOURCES) $(SOURCES)/scenes $(SOURCES)/engines $(SOURCES)/prologues \
                   $(AUDIO) $(GRAPHICS) $(TEXT) \
-				  $(DATA) $(SCENE_DATA) $(PROLOGUE_DATA) $(LEVEL_DATA) $(GAME_DATA)
+				  $(DATA) $(SCENE_DATA) $(LEVEL_DATA) $(GAME_DATA)
 
-ASM_DIRS       := $(ASM) $(DATA) $(SCENE_DATA) $(PROLOGUE_DATA) $(LEVEL_DATA) $(TEXT)
+ASM_DIRS       := $(ASM) $(DATA) $(SCENE_DATA) $(LEVEL_DATA) $(TEXT)
 BS_DIRS        := $(GAME_DATA)
 
 ALL_DIRS       := $(BIN) $(ASM_DIRS) $(C_DIRS) $(MUSIC) $(SFX)
