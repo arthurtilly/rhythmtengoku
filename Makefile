@@ -67,7 +67,8 @@ C_DIRS		   := $(SOURCES) $(SOURCES)/scenes $(SOURCES)/engines $(SOURCES)/prologu
                   $(AUDIO) $(GRAPHICS) $(TEXT) \
 				  $(DATA) $(SCENE_DATA) $(PROLOGUE_DATA) $(LEVEL_DATA) $(GAME_DATA)
 
-ASM_DIRS       := $(ASM) $(DATA) $(SCENE_DATA) $(PROLOGUE_DATA) $(LEVEL_DATA) $(TEXT) $(GAME_DATA)
+ASM_DIRS       := $(ASM) $(DATA) $(SCENE_DATA) $(PROLOGUE_DATA) $(LEVEL_DATA) $(TEXT)
+BS_DIRS        := $(GAME_DATA)
 
 ALL_DIRS       := $(BIN) $(ASM_DIRS) $(C_DIRS) $(MUSIC) $(SFX)
 ALL_DIRS       := $(sort $(ALL_DIRS)) # remove duplicates
@@ -81,7 +82,7 @@ UNDEFINED_SYMS := undefined_syms.ld
 export OUTPUT	:=	$(BUILD)/$(TARGET)
 
 CFILES		:=	$(foreach dir,$(C_DIRS),$(wildcard $(dir)/*.c))
-SFILES		:=	$(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
+SFILES		:=	$(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s)) $(foreach dir,$(BS_DIRS),$(wildcard $(dir)/*.bs))
 BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) $(foreach dir,$(MUSIC),$(wildcard $(dir)/*.mid)) $(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.bin))
 WAVFILES    :=  $(foreach dir,$(SFX),$(wildcard $(dir)/*.wav))
 JSONFILES   :=  $(foreach dir,$(AUDIO),$(wildcard $(dir)/*.json))
@@ -181,6 +182,11 @@ $(BUILD)/%.c.o : %.c | $(BUILD_DIRS)
 # ASM files
 $(BUILD)/%.s.o : %.s | $(BUILD_DIRS)
 	$(call print,Assembling:,$<,$@)
+	$(V)$(AS) -MD $(BUILD)/$*.d -march=armv4t -o $@ $<
+
+# Beatscript
+$(BUILD)/%.bs.o : %.bs | $(BUILD_DIRS)
+	$(call print,Assembling Beatscript:,$<,$@)
 	$(V)$(AS) -MD $(BUILD)/$*.d -march=armv4t -o $@ $<
 
 -include $(addprefix $(BUILD)/,$(CFILES:.c=.d))
