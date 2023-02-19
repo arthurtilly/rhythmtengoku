@@ -3380,7 +3380,7 @@ Palette epilogue_toss_boys_2_bg_pal[] = {
 };
 
 // [D_088fff2c] BG Palette
-Palette epilogue_tram_and_pauline_bg_pal[] = {
+Palette epilogue_tram_pauline_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0xF8F8F8),

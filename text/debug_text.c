@@ -184,7 +184,7 @@ const char text_debug_menu_toss_boys_2[] = "トスボーイズ　２";
 const char text_debug_menu_toss_boys[] = "トスボーイズ";
 
 // Tram & Pauline
-const char text_debug_menu_tram_and_pauline[] = "トランとポリン";
+const char text_debug_menu_tram_pauline[] = "トランとポリン";
 
 // Opening (A Type)
 const char text_debug_menu_opening_a[] = "オープニング　（Ａ　Ｔｙｐｅ）";

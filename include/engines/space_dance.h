@@ -19,7 +19,7 @@ struct SpaceDanceCue {
 enum SpaceDanceVersionsEnum {
     ENGINE_VER_SPACE_DANCE,
     ENGINE_VER_COSMIC_DANCE,
-    ENGINE_VER_SPACE_DANCE_REMIX3
+    ENGINE_VER_SPACE_DANCE_REMIX_3
 };
 
 enum SpaceDanceAnimationsEnum {

@@ -23,7 +23,7 @@ extern const char text_studio_song_bouncy_road[];
 extern const char text_studio_song_polyrhythm[];
 extern const char text_studio_song_power_calligraphy[];
 extern const char text_studio_song_quiz_show[];
-extern const char text_studio_song_tram_and_pauline[];
+extern const char text_studio_song_tram_pauline[];
 extern const char text_studio_song_bunny_hop[];
 extern const char text_studio_song_showtime[];
 extern const char text_studio_song_sick_beats[];

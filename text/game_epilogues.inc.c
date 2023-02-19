@@ -1465,7 +1465,7 @@ const struct GraphicsTable gfx_table_epilogue_rat_race_try_again[] = {
 
 
 // [D_080519b4] Epilogue - Tram & Pauline (Superb)
-const struct GraphicsTable gfx_table_epilogue_tram_and_pauline_superb[] = {
+const struct GraphicsTable gfx_table_epilogue_tram_pauline_superb[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cbb530,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -1477,7 +1477,7 @@ const struct GraphicsTable gfx_table_epilogue_tram_and_pauline_superb[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_tram_and_pauline_bg_pal,
+        /* Src.  */ epilogue_tram_pauline_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -1485,7 +1485,7 @@ const struct GraphicsTable gfx_table_epilogue_tram_and_pauline_superb[] = {
 };
 
 // [D_080519e4] Epilogue - Tram & Pauline (OK)
-const struct GraphicsTable gfx_table_epilogue_tram_and_pauline_ok[] = {
+const struct GraphicsTable gfx_table_epilogue_tram_pauline_ok[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cbb530,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -1497,7 +1497,7 @@ const struct GraphicsTable gfx_table_epilogue_tram_and_pauline_ok[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_tram_and_pauline_bg_pal,
+        /* Src.  */ epilogue_tram_pauline_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -1505,7 +1505,7 @@ const struct GraphicsTable gfx_table_epilogue_tram_and_pauline_ok[] = {
 };
 
 // [D_08051a14] Epilogue - Tram & Pauline (Try Again)
-const struct GraphicsTable gfx_table_epilogue_tram_and_pauline_try_again[] = {
+const struct GraphicsTable gfx_table_epilogue_tram_pauline_try_again[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cbb530,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -1517,7 +1517,7 @@ const struct GraphicsTable gfx_table_epilogue_tram_and_pauline_try_again[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ epilogue_tram_and_pauline_bg_pal,
+        /* Src.  */ epilogue_tram_pauline_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },

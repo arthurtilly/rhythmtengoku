@@ -3,7 +3,7 @@
 #include "global.h"
 #include "engines.h"
 
-#include "games/tram_and_pauline/graphics/tram_and_pauline_graphics.h"
+#include "games/tram_and_pauline/graphics/tram_pauline_graphics.h"
 
 // Engine Types:
 struct TramPaulineInfo {
@@ -19,7 +19,7 @@ struct TramPaulineCue {
 enum TramPaulineVersionsEnum {
     ENGINE_VER_TRAM_PAULINE_TUTORIAL,
     ENGINE_VER_TRAM_PAULINE,
-    ENGINE_VER_TRAM_PAULINE_REMIX3,
+    ENGINE_VER_TRAM_PAULINE_REMIX_3,
     ENGINE_VER_TRAM_PAULINE_NO_CURTAIN
 };
 

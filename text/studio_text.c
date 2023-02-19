@@ -73,7 +73,7 @@ const char text_studio_song_power_calligraphy[] = "リズムお習字";
 const char text_studio_song_quiz_show[] = "クイズ";
 
 // Song Title - Tram & Pauline
-const char text_studio_song_tram_and_pauline[] = "トランとポリン";
+const char text_studio_song_tram_pauline[] = "トランとポリン";
 
 // Song Title - Bunny Hop
 const char text_studio_song_bunny_hop[] = "ウサギとび";

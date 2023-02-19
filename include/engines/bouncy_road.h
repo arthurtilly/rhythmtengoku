@@ -16,7 +16,7 @@ struct BouncyRoadCue {
 // Engine Macros/Enums:
 enum BouncyRoadVersionsEnum {
     BOUNCY_ROAD_VER_0,
-    BOUNCY_ROAD_VER_REMIX5,
+    BOUNCY_ROAD_VER_REMIX_5,
     BOUNCY_ROAD_VER_2
 };
 

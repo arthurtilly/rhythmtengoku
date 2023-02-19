@@ -315,7 +315,7 @@ SECTIONS {
         build/games/drum_intro/drum_intro1_text.c.o(.rodata);
         build/games/toss_boys/toss_boys_text.c.o(.rodata);
         build/games/drum_intro/drum_intro2_text.c.o(.rodata);
-        build/games/tram_and_pauline/tram_and_pauline_text.c.o(.rodata);
+        build/games/tram_and_pauline/tram_pauline_text.c.o(.rodata);
         build/games/drum_intro/tanuki_and_monkey_text.c.o(.rodata);
         build/games/drum_intro/drum_intro_final_text.c.o(.rodata);
         build/games/showtime/showtime_text.c.o(.rodata);
@@ -1413,8 +1413,8 @@ SECTIONS {
         build/games/toss_boys/graphics/toss_boys_prologue_pal.c.o(.data);
         build/games/toss_boys/graphics/toss_boys_2_prologue_anim.c.o(.data);
         build/games/toss_boys/graphics/toss_boys_2_prologue_pal.c.o(.data);
-        build/games/tram_and_pauline/graphics/tram_and_pauline_prologue_anim.c.o(.data);
-        build/games/tram_and_pauline/graphics/tram_and_pauline_prologue_pal.c.o(.data);
+        build/games/tram_and_pauline/graphics/tram_pauline_prologue_anim.c.o(.data);
+        build/games/tram_and_pauline/graphics/tram_pauline_prologue_pal.c.o(.data);
         build/games/sick_beats/graphics/sick_beats_prologue_anim.c.o(.data);
         build/games/sick_beats/graphics/sick_beats_prologue_pal.c.o(.data);
         build/games/wizards_waltz/graphics/wizards_waltz_prologue_anim.c.o(.data);
@@ -1552,10 +1552,10 @@ SECTIONS {
         build/games/toss_boys/graphics/toss_boys_remix_5_pal.c.o(.data);
         build/games/toss_boys/graphics/toss_boys_2_anim.c.o(.data);
         build/games/toss_boys/graphics/toss_boys_2_pal.c.o(.data);
-        build/games/tram_and_pauline/graphics/tram_and_pauline_tutorial_anim.c.o(.data);
-        build/games/tram_and_pauline/graphics/tram_and_pauline_tutorial_pal.c.o(.data);
-        build/games/tram_and_pauline/graphics/tram_and_pauline_anim.c.o(.data);
-        build/games/tram_and_pauline/graphics/tram_and_pauline_pal.c.o(.data);
+        build/games/tram_and_pauline/graphics/tram_pauline_tutorial_anim.c.o(.data);
+        build/games/tram_and_pauline/graphics/tram_pauline_tutorial_pal.c.o(.data);
+        build/games/tram_and_pauline/graphics/tram_pauline_anim.c.o(.data);
+        build/games/tram_and_pauline/graphics/tram_pauline_pal.c.o(.data);
         build/games/horse_machine/graphics/horse_machine_anim.c.o(.data);
         build/games/horse_machine/graphics/horse_machine_pal.c.o(.data);
         build/games/sick_beats/graphics/sick_beats_anim.c.o(.data);
@@ -1705,8 +1705,8 @@ SECTIONS {
         build/games/toss_boys/toss_boys_prologue_script.bs.o(.rodata);
 		build/games/toss_boys/toss_boys_2_prologue_engine.c.o(.data);
         build/games/toss_boys/toss_boys_2_prologue_script.bs.o(.rodata);
-		build/games/tram_and_pauline/tram_and_pauline_prologue_engine.c.o(.data);
-        build/games/tram_and_pauline/tram_and_pauline_prologue_script.bs.o(.rodata);
+		build/games/tram_and_pauline/tram_pauline_prologue_engine.c.o(.data);
+        build/games/tram_and_pauline/tram_pauline_prologue_script.bs.o(.rodata);
 		build/games/sick_beats/sick_beats_prologue_engine.c.o(.data);
         build/games/sick_beats/sick_beats_prologue_script.bs.o(.rodata);
 		build/games/wizards_waltz/wizards_waltz_prologue_engine.c.o(.data);

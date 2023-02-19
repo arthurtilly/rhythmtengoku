@@ -57,8 +57,8 @@ extern struct CompressedGraphics D_08d02100;
 
 /* TRAM AND PAULINE - PALETTES */
 
-extern Palette tram_and_pauline_obj_pal[];
-extern Palette tram_and_pauline_bg_pal[];
+extern Palette tram_pauline_obj_pal[];
+extern Palette tram_pauline_bg_pal[];
 
 /* TRAM AND PAULINE (TUTORIAL) - ANIMATIONS */
 
@@ -100,5 +100,5 @@ extern struct Animation anim_casual_half_pauline_crouch_step[];
 
 /* TRAM AND PAULINE (TUTORIAL) - PALETTES */
 
-extern Palette tram_and_pauline_tutorial_pal[];
-extern Palette tram_and_pauline_remix_3_bg_pal[];
+extern Palette tram_pauline_tutorial_pal[];
+extern Palette tram_pauline_remix_3_bg_pal[];

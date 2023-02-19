@@ -52,7 +52,7 @@ struct ShowtimeCue {
 // Engine Macros/Enums:
 enum ShowtimeVersionsEnum {
     SHOWTIME_VER_0,
-    SHOWTIME_VER_REMIX3
+    SHOWTIME_VER_REMIX_3
 };
 
 

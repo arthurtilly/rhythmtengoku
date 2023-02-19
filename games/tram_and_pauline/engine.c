@@ -17,12 +17,12 @@ struct GraphicsTable gfx_table_tram_pauline_tutorial[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ tram_and_pauline_tutorial_pal,
+        /* Src.  */ tram_pauline_tutorial_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ tram_and_pauline_tutorial_pal,
+        /* Src.  */ tram_pauline_tutorial_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -57,12 +57,12 @@ struct GraphicsTable gfx_table_tram_pauline[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ tram_and_pauline_bg_pal,
+        /* Src.  */ tram_pauline_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ tram_and_pauline_obj_pal,
+        /* Src.  */ tram_pauline_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -92,12 +92,12 @@ struct GraphicsTable gfx_table_tram_pauline_remix_3[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ tram_and_pauline_remix_3_bg_pal,
+        /* Src.  */ tram_pauline_remix_3_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ tram_and_pauline_tutorial_pal,
+        /* Src.  */ tram_pauline_tutorial_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -353,7 +353,7 @@ EngineEvent tram_pauline_engine_events[] = {
 };
 
 // [D_089e8d7c] Tram & Pauline Game Engine
-struct GameEngine tram_and_pauline_engine = {
+struct GameEngine tram_pauline_engine = {
     /* Size in Memory */ 0x48,
     /* Start Engine   */ tram_pauline_engine_start,
     /* Update Engine  */ tram_pauline_engine_update,

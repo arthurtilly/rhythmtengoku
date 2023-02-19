@@ -5,12 +5,12 @@
 
 
 // [D_089edbb8] Buffered Textures List
-struct CompressedGraphics *tram_and_pauline_prologue_buffered_textures[] = {
+struct CompressedGraphics *tram_pauline_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089edbbc] Graphics Table
-struct GraphicsTable tram_and_pauline_prologue_gfx_table[] = {
+struct GraphicsTable tram_pauline_prologue_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c3106c,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -27,12 +27,12 @@ struct GraphicsTable tram_and_pauline_prologue_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ tram_and_pauline_prologue_pal,
+        /* Src.  */ tram_pauline_prologue_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ tram_and_pauline_prologue_pal,
+        /* Src.  */ tram_pauline_prologue_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -40,18 +40,18 @@ struct GraphicsTable tram_and_pauline_prologue_gfx_table[] = {
 };
 
 // [D_089edc04] Engine Events
-EngineEvent tram_and_pauline_prologue_engine_events[] = {
+EngineEvent tram_pauline_prologue_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08047bd0
 };
 
 // [D_089edc08] Prologue (Tram & Pauline) Game Engine
-struct GameEngine tram_and_pauline_prologue_engine = {
-    /* Size in Memory */ sizeof(struct TramAndPaulinePrologueInfo),
-    /* Start Engine   */ tram_and_pauline_prologue_engine_start,
-    /* Update Engine  */ tram_and_pauline_prologue_engine_update,
-    /* Stop Engine    */ tram_and_pauline_prologue_engine_stop,
+struct GameEngine tram_pauline_prologue_engine = {
+    /* Size in Memory */ sizeof(struct TramPaulinePrologueInfo),
+    /* Start Engine   */ tram_pauline_prologue_engine_start,
+    /* Update Engine  */ tram_pauline_prologue_engine_update,
+    /* Stop Engine    */ tram_pauline_prologue_engine_stop,
     /* Cue Index      */ NULL,
     /* Common Events  */ NULL,
-    /* Engine Events  */ tram_and_pauline_prologue_engine_events,
+    /* Engine Events  */ tram_pauline_prologue_engine_events,
     /* Input Event    */ NULL
 };

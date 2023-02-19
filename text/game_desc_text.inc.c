@@ -382,25 +382,25 @@ const char text_showtime_name[] = "ショータイム";
 
 
 // Tram and Pauline, we're the perfect team!!
-const char text_tram_and_pauline_superb[] = "コンビネーション バッチシ！！";
+const char text_tram_pauline_superb[] = "コンビネーション バッチシ！！";
 
 // We could only get halfway there...
-const char text_tram_and_pauline_ok[] = "ちゅうとハンパでした…";
+const char text_tram_pauline_ok[] = "ちゅうとハンパでした…";
 
 // Maybe we need to try a different act!
-const char text_tram_and_pauline_try_again[] = "大しっぱいだ～！！";
+const char text_tram_pauline_try_again[] = "大しっぱいだ～！！";
 
 // Tram and Pauline are
 // acrobatic foxes!
 // Quick, their show
 // is about to start!
-const char text_tram_and_pauline_desc[] =
+const char text_tram_pauline_desc[] =
     "こぎつねトラン、\n"
     "そしてポリンの\n"
     "アクロバティックショーがはじまるヨ！";
 
 // Tram & Pauline
-const char text_tram_and_pauline_name[] = "トランとポリン";
+const char text_tram_pauline_name[] = "トランとポリン";
 
 
 // Want to hear about Daddy's big heist?

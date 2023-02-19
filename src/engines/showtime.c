@@ -209,7 +209,7 @@ void func_0802c23c() {
     for (i = 0; i < 2; i++) {
         gShowtimeInfo->unk8[i].unk4 = 0;
 
-        if (gShowtimeInfo->version != SHOWTIME_VER_REMIX3) {
+        if (gShowtimeInfo->version != SHOWTIME_VER_REMIX_3) {
             gShowtimeInfo->unk8[i].sprite = func_0804d160(D_03005380, anim_showtime_block, 0, 64, 64, 0x4800, 1, 0, 4);
         } else {
             gShowtimeInfo->unk8[i].sprite = func_0804d160(D_03005380, anim_showtime_block_pink, 0, 64, 64, 0x4800, 1, 0, 4);

@@ -31,10 +31,10 @@ struct TapTrialAction {
 // Engine Macros/Enums:
 enum TapTrialVersionsEnum {
     ENGINE_VER_TAP_TRIAL,
-    ENGINE_VER_TAP_REMIX8,
-    ENGINE_VER_TAP_REMIX7,
+    ENGINE_VER_TAP_REMIX_8,
+    ENGINE_VER_TAP_REMIX_7,
     ENGINE_VER_TAP_TRIAL_2,
-    ENGINE_VER_TAP_REMIX5
+    ENGINE_VER_TAP_REMIX_5
 };
 
 enum TapTrialAnimationsEnum {

@@ -60,7 +60,7 @@ extern const char text_debug_menu_power_calligraphy[];
 extern const char text_debug_menu_drum_girls_live[];
 extern const char text_debug_menu_toss_boys_2[];
 extern const char text_debug_menu_toss_boys[];
-extern const char text_debug_menu_tram_and_pauline[];
+extern const char text_debug_menu_tram_pauline[];
 extern const char text_debug_menu_opening_a[];
 extern const char text_debug_menu_opening_b[];
 extern const char text_debug_menu_riq_data_check[];

@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0892fc58] Tram & Pauline OBJ Palette
-Palette tram_and_pauline_obj_pal[] = {
+Palette tram_pauline_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x10E8A8),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -132,7 +132,7 @@ Palette tram_and_pauline_obj_pal[] = {
 };
 
 // [D_0892fd38] Tram & Pauline BG Palette
-Palette tram_and_pauline_bg_pal[] = {
+Palette tram_pauline_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x009000),
         /* 01 */ TO_RGB555(0x18B000),

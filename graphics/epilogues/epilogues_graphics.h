@@ -243,7 +243,7 @@ extern struct CompressedGraphics D_08cbb530;
 extern struct CompressedGraphics D_08cbb938;
 extern struct CompressedGraphics D_08cbb7bc;
 extern struct CompressedGraphics D_08cbb67c;
-extern Palette epilogue_tram_and_pauline_bg_pal[];
+extern Palette epilogue_tram_pauline_bg_pal[];
 
 extern struct CompressedGraphics D_08cbcbd8;
 extern struct CompressedGraphics D_08cbcf98;

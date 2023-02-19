@@ -391,14 +391,14 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     // Tram & Pauline
     {
         /* scene */        &D_089d35fc,
-        /* name */         text_tram_and_pauline_name,
-        /* description */  text_tram_and_pauline_desc,
+        /* name */         text_tram_pauline_name,
+        /* description */  text_tram_pauline_desc,
         /* unkC */         32,
         /* unkE */         0,
         /* epilogueGfx */  D_089ce230,
-        /* tryAgainText */ text_tram_and_pauline_try_again,
-        /* okText */       text_tram_and_pauline_ok,
-        /* superbText */   text_tram_and_pauline_superb,
+        /* tryAgainText */ text_tram_pauline_try_again,
+        /* okText */       text_tram_pauline_ok,
+        /* superbText */   text_tram_pauline_superb,
     },
     // Showtime
     {

@@ -127,11 +127,11 @@ extern const char text_showtime_try_again[];
 extern const char text_showtime_desc[];
 extern const char text_showtime_name[];
 
-extern const char text_tram_and_pauline_superb[];
-extern const char text_tram_and_pauline_ok[];
-extern const char text_tram_and_pauline_try_again[];
-extern const char text_tram_and_pauline_desc[];
-extern const char text_tram_and_pauline_name[];
+extern const char text_tram_pauline_superb[];
+extern const char text_tram_pauline_ok[];
+extern const char text_tram_pauline_try_again[];
+extern const char text_tram_pauline_desc[];
+extern const char text_tram_pauline_name[];
 
 extern const char text_rat_race_superb[];
 extern const char text_rat_race_ok[];

@@ -19,7 +19,7 @@ struct TossBoysCue {
 // Engine Macros/Enums:
 enum TossBoysVersionsEnum {
     ENGINE_VER_TOSS_BOYS,
-    ENGINE_VER_TOSS_REMIX5,
+    ENGINE_VER_TOSS_REMIX_5,
     ENGINE_VER_TOSS_BOYS_2
 };
 
