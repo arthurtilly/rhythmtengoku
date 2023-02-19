@@ -17,11 +17,11 @@ extern const s16 D_08935fcc[];
 extern const s16 D_089361cc[];
 
 
-/* BeatScript Scene Engine */
+/* Beatscript Scene Engine */
 
 
-// A Singular BeatScript Instruction
-struct BeatScript {
+// A Singular Beatscript Instruction
+struct Beatscript {
     u32 command:8;
     u32 param1:24;
     u32 param2;
@@ -49,31 +49,31 @@ struct SubScene {
 	void *loopParam;
 	void (*endFunc)(void *, void *);
 	void *endParam;
-    const struct BeatScript *script;
+    const struct Beatscript *script;
 };
 
-// BeatScript Thread (Size = 0x9C)
-struct BeatScriptThread {
+// Beatscript Thread (Size = 0x9C)
+struct BeatscriptThread {
     u8 active:1;  // Execution flag (?)
     u8 stackCounter:4;  // Stack Counter
     u8 startDelay:2;
     u8 unk0_b7:1;
     const struct SubScene *subScene; // Scene Definition Struct (note: not the Script one that's currently called "Scene")
-    const struct BeatScript *current;  // Current Position
+    const struct Beatscript *current;  // Current Position
     s32 timeUntilNext; // Time until next instruction (in Q24.8 Beats)
-    const struct BeatScript *jumpStack[8];  // Stack
+    const struct Beatscript *jumpStack[8];  // Stack
     u8 unk30[0x20];
-    const struct BeatScript *loopStart; // Loop Start
+    const struct Beatscript *loopStart; // Loop Start
     u16 unk54;
     s16 sprites[0x20];
     u16 unk96;
     s32 currentTaskID;
 };
 
-// BeatScript Handler
+// Beatscript Handler
 // Null = "Data Not Known to be Used YET"
 
-extern struct BeatScriptScene {
+extern struct BeatscriptScene {
     u32 memID:4;
     u32 bypassLoops:1;
     u32 exitLoopNextUpdate:1;
@@ -98,12 +98,12 @@ extern struct BeatScriptScene {
     s16 musicPitchSrc2;
     s16 musicPitch;
     u32 globalVariable; // [D_030053c0 + 0x24] Global (Main Scene) Variable
-    struct BeatScriptThread threads[2];
+    struct BeatscriptThread threads[2];
     u32 localVariables[12]; // [D_030053c0 + 0x160] Local (Sub-Scene) Variables
-    u16 musicVolume; // [D_03005550] BeatScript: Music Volume
-    u16 musicTrkVolume; // [D_03005552] BeatScript: Music Channel Selection Volume
-    u16 musicTrkTargets; // [D_03005554] BeatScript: Music Channel Selection
-    s8  musicKey; // [D_03005556] BeatScript: Music Key
+    u16 musicVolume; // [D_03005550] Beatscript: Music Volume
+    u16 musicTrkVolume; // [D_03005552] Beatscript: Music Channel Selection Volume
+    u16 musicTrkTargets; // [D_03005554] Beatscript: Music Channel Selection
+    s8  musicKey; // [D_03005556] Beatscript: Music Key
     u32 null198;
     u32 null19C;
     u32 null1A0;

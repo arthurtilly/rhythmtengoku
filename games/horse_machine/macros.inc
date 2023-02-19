@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Horse Machine ------------------------ */
+/* ------------------------ Beatscript Labels: Horse Machine ------------------------ */
 
 
 @ Load Data

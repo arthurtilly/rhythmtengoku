@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/tap_trial/graphics/tap_trial_graphics.h"
+
 // Engine Types:
 struct TapTrialInfo {
     /* add fields here */
@@ -71,22 +73,8 @@ enum TapTrialAnimationsEnum {
 };
 
 
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
 // Engine Data:
 extern const char D_0805a8bc[];
-extern const char D_0805a8c0[];
-extern const char D_0805a8d0[];
-extern const char D_0805a8e0[];
-extern const char D_0805a8f0[];
-extern const char D_0805a900[];
 
 
 // Engine Definition Data:

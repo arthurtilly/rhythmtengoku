@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Night Walk ------------------------ */
+/* ------------------------ Beatscript Labels: Night Walk ------------------------ */
 
 
 @ Load Data

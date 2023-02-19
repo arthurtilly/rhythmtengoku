@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Rhythm Toy ------------------------ */
+/* ------------------------ Beatscript Labels: Rhythm Toy ------------------------ */
 
 
 @ Load Data

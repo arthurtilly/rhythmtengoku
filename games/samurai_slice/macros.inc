@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Samurai Slice ------------------------ */
+/* ------------------------ Beatscript Labels: Samurai Slice ------------------------ */
 
 
 @ Load Data

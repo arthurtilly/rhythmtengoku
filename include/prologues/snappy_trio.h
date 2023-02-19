@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/clappy_trio/graphics/clappy_trio_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: THE SNAPPY TRIO  //  //  //
 
@@ -16,7 +18,6 @@ struct SnappyTrioPrologueInfo {
 // Assets:
 extern struct CompressedGraphics *snappy_trio_prologue_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable snappy_trio_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_snappy_trio_prologue_title[]; // Animation: Text (The Snappy Trio)
 
 // Functions:
 extern void func_08045ee8(void);    // [func_08045ee8] GFX_INIT Func_02

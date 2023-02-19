@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Ninja Bodyguard ------------------------ */
+/* ------------------------ Beatscript Labels: Ninja Bodyguard ------------------------ */
 
 
 @ Load Data

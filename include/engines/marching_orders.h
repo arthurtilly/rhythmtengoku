@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/marching_orders/graphics/marching_orders_graphics.h"
+
 // Engine Types:
 struct MarchingOrdersInfo {
     /* add fields here */
@@ -59,15 +61,6 @@ enum MarchingOrdersSoundEffectsEnum {
     MARCHING_SFX_CMD_LEFT_FACE_F,
     MARCHING_SFX_CMD_TURN_LEFT
 };
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
 
 
 // Engine Data:

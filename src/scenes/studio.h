@@ -11,7 +11,7 @@ struct StudioSceneInfo {
 struct StudioEntry {
     const char *fullTitle;
     const char *shortTitle;
-    const struct BeatScript *script;
+    const struct Beatscript *script;
 };
 
 

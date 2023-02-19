@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/rap_men/graphics/rap_men_graphics.h"
+
 // Engine Types:
 struct RapMenInfo {
     u8 version;
@@ -53,15 +55,6 @@ enum RappingAnimationsEnum {
     RAPPING_ANIM_RECOIL,
     RAPPING_ANIM_HONTO
 };
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
 
 
 // Engine Data:

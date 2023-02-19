@@ -3,6 +3,7 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/showtime/graphics/showtime_graphics.h"
 
 struct ShowtimeInfo {
     struct TextObject1 *unk0;
@@ -53,25 +54,6 @@ enum ShowtimeVersionsEnum {
     SHOWTIME_VER_0,
     SHOWTIME_VER_REMIX3
 };
-
-
-// OAM Animations:
-extern struct Animation anim_showtime_block_pink[];
-extern struct Animation anim_showtime_block[];
-extern struct Animation anim_showtime_penguin_beat[];
-extern struct Animation anim_showtime_big_penguin_beat[];
-extern struct Animation anim_showtime_penguin_jump_prepare[];
-extern struct Animation anim_showtime_big_penguin_jump_prepare[];
-extern struct Animation anim_showtime_penguin_jump[];
-extern struct Animation anim_showtime_big_penguin_jump[];
-extern struct Animation anim_showtime_penguin_slide[];
-extern struct Animation anim_showtime_big_penguin_slide[];
-
-
-// Palettes:
-
-
-// Sound Effects:
 
 
 // Engine Data:

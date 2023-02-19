@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Rhythm Tweezers ------------------------ */
+/* ------------------------ Beatscript Labels: Rhythm Tweezers ------------------------ */
 
 
 @ Load Data

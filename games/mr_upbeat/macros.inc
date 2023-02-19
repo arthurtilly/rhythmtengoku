@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Mr. Upbeat ------------------------ */
+/* ------------------------ Beatscript Labels: Mr. Upbeat ------------------------ */
 
 
 @ Load Data

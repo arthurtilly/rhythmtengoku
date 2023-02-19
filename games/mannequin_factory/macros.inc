@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Mannequin Factory ------------------------ */
+/* ------------------------ Beatscript Labels: Mannequin Factory ------------------------ */
 
 
 @ Load Data

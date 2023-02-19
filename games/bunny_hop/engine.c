@@ -1,26 +1,6 @@
 #include "engines/bunny_hop.h"
 
 
-  /* BUNNY HOP - GAME ENGINE DATA */
-
-
-extern struct Animation anim_bunny_hop_1beat_turtle[];
-extern struct Animation anim_bunny_hop_1beat_whale[];
-extern struct Animation anim_bunny_hop_2beat_whale[];
-extern struct Animation anim_bunny_hop_4beat_whale[];
-extern struct Animation anim_bunny_hop_8beat_whale[];
-extern struct Animation anim_bunny_hop_last_whale[];
-
-extern struct CompressedGraphics D_08c7fda8;
-extern struct CompressedGraphics D_08c7fe58;
-extern struct CompressedGraphics D_08c80250;
-extern struct CompressedGraphics D_08c7fefc;
-extern struct CompressedGraphics D_08c7fbb8;
-
-extern Palette bunny_hop_pal[];
-extern Palette bunny_hop_remix_3_pal[];
-
-
   //  //  //  GRAPHICS DATA  //  //  //
 
 

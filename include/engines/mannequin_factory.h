@@ -3,27 +3,14 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/mannequin_factory/graphics/mannequin_factory_graphics.h"
+
 // Engine Types:
 struct MannequinFactoryInfo {
 };
 
 struct MannequinFactoryCue {
 };
-
-
-// Engine Macros/Enums:
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

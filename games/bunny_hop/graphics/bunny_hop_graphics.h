@@ -26,6 +26,14 @@ extern struct Animation anim_bunny_hop_8beat_whale[];
 extern struct Animation anim_bunny_hop_sparkle[];
 extern struct Animation anim_bunny_hop_unused[];
 
+/* BUNNY HOP - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08c7fda8;
+extern struct CompressedGraphics D_08c7fe58;
+extern struct CompressedGraphics D_08c80250;
+extern struct CompressedGraphics D_08c7fefc;
+extern struct CompressedGraphics D_08c7fbb8;
+
 /* BUNNY HOP - PALETTES */
 
 extern Palette bunny_hop_pal[];

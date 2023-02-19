@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/quiz_show/graphics/quiz_show_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: QUIZ SHOW  //  //  //
 
@@ -16,7 +18,6 @@ struct QuizShowPrologueInfo {
 // Assets:
 extern struct CompressedGraphics *quiz_show_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable quiz_show_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_quiz_show_prologue_title[]; // Animation: Text (Quiz Show)
 
 // Functions:
 extern void func_08046528(void);    // [func_08046528] GFX_INIT Func_02

@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Showtime ------------------------ */
+/* ------------------------ Beatscript Labels: Showtime ------------------------ */
 
 
 @ Load Data

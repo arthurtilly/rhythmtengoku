@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/bunny_hop/graphics/bunny_hop_graphics.h"
+
 // Engine Types:
 struct BunnyHopInfo {
     /* add fields here */
@@ -11,18 +13,6 @@ struct BunnyHopInfo {
 struct BunnyHopCue {
     /* add fields here */
 };
-
-
-// Engine Macros/Enums:
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
 
 
 // Engine Data:

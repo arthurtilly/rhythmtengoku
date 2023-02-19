@@ -793,7 +793,7 @@ void night_walk_engine_event_stub(void) {
 
 
 // Engine Event 0x03 (Set Ending Script)
-void night_walk_set_ending_script(const struct BeatScript *endScript) {
+void night_walk_set_ending_script(const struct Beatscript *endScript) {
     gNightWalkInfo->endScript = endScript;
 }
 

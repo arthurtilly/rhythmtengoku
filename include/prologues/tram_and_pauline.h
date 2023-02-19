@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/tram_and_pauline/graphics/tram_and_pauline_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: TRAM & PAULINE  //  //  //
 
@@ -16,8 +18,6 @@ struct TramAndPaulinePrologueInfo {
 // Assets:
 extern struct CompressedGraphics *tram_and_pauline_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable tram_and_pauline_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_tram_and_pauline_prologue_title[]; // Animation: Text (Tram & Pauline)
-extern struct Animation anim_tram_and_pauline_prologue_characters[]; // Animation: Tram & Pauline
 
 // Functions:
 extern void func_08047ad0(void);    // [func_08047ad0] GFX_INIT Func_02

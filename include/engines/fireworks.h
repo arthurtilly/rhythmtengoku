@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/fireworks/graphics/fireworks_graphics.h"
+
 // Engine Types:
 struct FireworksInfo {
     u8  version;        // Version Number
@@ -103,24 +105,6 @@ enum FireworksSoundsEnum {
     FIREWORKS_SFX_THREE,
     FIREWORKS_SFX_NUEI
 };
-
-
-// OAM Animations:
-extern struct Animation anim_fireworks_rocket4[];
-extern struct Animation anim_fireworks_rocket_explode[];
-extern struct Animation anim_fireworks_particle_red[];
-extern struct Animation anim_fireworks_particle_green[];
-extern struct Animation anim_fireworks_particle_blue[];
-extern struct Animation anim_fireworks_bomb[];
-extern struct Animation anim_fireworks_bomb_explode[];
-extern struct Animation anim_fireworks_particle_tri_rgb[];
-extern struct Animation anim_fireworks_skip_tutorial_icon[];
-extern struct Animation anim_fireworks_rocket3[];
-extern struct Animation anim_fireworks_rocket2[];
-extern struct Animation anim_fireworks_rocket1[];
-
-
-// Palettes:
 
 
 // Engine Data:

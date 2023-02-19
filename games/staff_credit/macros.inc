@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Staff Credit ------------------------ */
+/* ------------------------ Beatscript Labels: Staff Credit ------------------------ */
 
 
 @ Load Data

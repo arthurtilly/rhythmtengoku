@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Karate Man ------------------------ */
+/* ------------------------ Beatscript Labels: Karate Man ------------------------ */
 
 
 @ Load Data

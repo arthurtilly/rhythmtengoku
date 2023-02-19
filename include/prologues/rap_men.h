@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/rap_men/graphics/rap_men_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: RAP MEN  //  //  //
 
@@ -16,7 +18,6 @@ struct RapMenPrologueInfo {
 // Assets:
 extern struct CompressedGraphics *rap_men_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable rap_men_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_rap_men_prologue_title[]; // Animation: Text (Rap Men)
 
 // Functions:
 extern void func_08046f5c(void);    // [func_08046f5c] GFX_INIT Func_02

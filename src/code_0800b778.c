@@ -17,7 +17,7 @@ static s32 D_03001310[2]; // unknown type
 /* Main Game Handler */
 
 
-// BeatScript Engine Init.
+// Beatscript Engine Init.
 void start_beatscript_scene(u32 memID) {
     u32 i;
 
@@ -55,7 +55,7 @@ void start_beatscript_scene(u32 memID) {
 
 // Set SubScenes
 void set_beatscript_subscenes(const struct SubScene **subScenes) {
-    struct BeatScriptThread *thread;
+    struct BeatscriptThread *thread;
     u32 i;
 
     D_030053c0.paused = FALSE;
@@ -113,9 +113,9 @@ void update_paused_beatscript_scene(void) {
 }
 
 
-// BeatScript Engine Update
+// Beatscript Engine Update
 void update_active_beatscript_scene(void) {
-    struct BeatScriptThread *thread;
+    struct BeatscriptThread *thread;
     const struct SubScene *subScene;
     void (*subSceneFunc)();
     u32 isId1;
@@ -197,7 +197,7 @@ void update_active_beatscript_scene(void) {
 }
 
 
-// Check if No BeatScript Threads Are Active
+// Check if No Beatscript Threads Are Active
 s32 beatscript_scene_is_inactive(void) {
     u32 i;
 
@@ -274,15 +274,15 @@ void pause_beatscript_scene(u32 pause) {
 }
 
 
-// Check if BeatScript Handler Is Paused
+// Check if Beatscript Handler Is Paused
 u32 beatscript_scene_is_paused(void) {
     return D_030053c0.paused;
 }
 
 
-// BeatScript Engine Force Quit
+// Beatscript Engine Force Quit
 void stop_beatscript_scene(void) {
-    struct BeatScriptThread *thread;
+    struct BeatscriptThread *thread;
     const struct SubScene *subScene;
     u32 i, i2;
 

@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/staff_credit/graphics/staff_credit_graphics.h"
+
 // Engine Types:
 struct StaffCreditInfo {
 };
@@ -14,21 +16,6 @@ struct CreditsTextStartPos {
     u8 anchor;
     u16 xPos;
 };
-
-
-// Engine Macros/Enums:
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

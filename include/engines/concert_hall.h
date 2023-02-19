@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/concert_hall/graphics/concert_hall_graphics.h"
+
 // Engine Types:
 struct ConcertHallInfo {
     /* add fields here */
@@ -19,22 +21,6 @@ enum ConcertHallPostersEnum {
     POSTER_DRUM_BOYS_LIVE,
     POSTER_DRUM_SAMURAI_BAND_LIVE
 };
-
-
-// OAM Animations:
-extern struct Animation anim_concert_hall_arrow_up[];
-extern struct Animation anim_concert_hall_arrow_down[];
-extern struct Animation anim_concert_hall_start_icon[];
-extern struct Animation anim_concert_hall_poster[];
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

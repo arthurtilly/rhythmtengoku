@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/sneaky_spirits/graphics/sneaky_spirits_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: SNEAKY SPIRITS  //  //  //
 
@@ -16,7 +18,6 @@ struct SneakySpiritsPrologueInfo {
 // Assets:
 extern struct CompressedGraphics *sneaky_spirits_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable sneaky_spirits_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_sneaky_spirits_prologue_title[]; // Animation: Text (Sneaky Spirits)
 
 // Functions:
 extern void func_0804510c(void);    // [func_0804510c] GFX_INIT Func_02

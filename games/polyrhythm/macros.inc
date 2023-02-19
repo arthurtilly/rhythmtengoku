@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Polyrhythm ------------------------ */
+/* ------------------------ Beatscript Labels: Polyrhythm ------------------------ */
 
 
 @ Load Data

@@ -41,8 +41,8 @@ extern struct PauseMenu gPauseMenu;
 extern void func_0801d860(u32); // [func_0801d860] Set D_0300155c
 extern void func_0801d86c(const struct SubScene *); // [func_0801d86c] Script Init.
 extern u32  func_0801d8d8(void); // [func_0801d8d8] Script Main
-extern void func_0801d95c(const struct BeatScript *); // [func_0801d95c] Change Script
-extern void func_0801d968(const struct BeatScript *); // [func_0801d968] Change Script (w/ Timer Reset)
+extern void func_0801d95c(const struct Beatscript *); // [func_0801d95c] Change Script
+extern void func_0801d968(const struct Beatscript *); // [func_0801d968] Change Script (w/ Timer Reset)
 extern void func_0801d978(void); // [func_0801d978] Reset BranchStack Position
 extern void func_0801d98c(void); // [func_0801d98c] Script Close
 extern u32  func_0801d9cc(void);

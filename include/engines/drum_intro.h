@@ -4,6 +4,8 @@
 #include "engines.h"
 #include "engines/night_walk.h"
 
+#include "games/drum_intro/graphics/drum_intro_graphics.h"
+
 // Engine Types:
 struct DrumIntroInfo {
     /* add fields here */
@@ -33,21 +35,6 @@ enum DrumIntroVersionsEnum {
     ENGINE_VER_DRUM_INTRO_TANUKI_MONKEY,
     ENGINE_VER_DRUM_INTRO_CUTSCENE
 };
-
-
-// Sprite Animations:
-extern struct Animation anim_drum_samurai_head[];
-extern struct Animation anim_drum_player_head[];
-extern struct Animation anim_drum_samurai_face_blink[];
-extern struct Animation anim_drum_player_face_blink[];
-extern struct Animation anim_drum_samurai_face_talk[];
-extern struct Animation anim_drum_player_face_talk[];
-
-
-// Palettes:
-
-
-// Sound Effects:
 
 
 // Engine Data:

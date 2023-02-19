@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/rhythm_tweezers/graphics/rhythm_tweezers_graphics.h"
+
 // Engine Types:
 struct RhythmTweezersInfo {
     u8 version; // Value:   Version { 0..2 = Rhythm Tweezers; 3..5 = Rhythm Tweezers 2 }
@@ -80,30 +82,6 @@ enum RhythmTweezersVegetableTypesEnum {
 
 #define RT_VEGETABLE_BG_MAP_L *(u32 *)(VRAMBase + 0xF000) // VRAM BG Map for vegetable textures (left).
 #define RT_VEGETABLE_BG_MAP_R *(u32 *)(VRAMBase + 0xF800) // VRAM BG Map for vegetable textures (right).
-
-
-// OAM Animations:
-extern struct Animation anim_veg_face_onion[];
-extern struct Animation anim_veg_face_turnip[];
-extern struct Animation anim_veg_face_potato[];
-extern struct Animation anim_rhythm_tweezers_short_hair[];    // Animation: hair_appear_short
-extern struct Animation anim_tweezers_pluck_hit[];    // Animation: "tweezer_pluck"
-extern struct Animation anim_tweezers_pluck_barely[];    // Animation: "tweezer_pluck_barely"
-extern struct Animation anim_tweezers_pluck_miss[];    // Animation: "tweezer_pluck_miss"
-extern struct Animation anim_rhythm_tweezers_falling_hair[];    // Animation: "hair_fall"
-extern struct Animation anim_rhythm_tweezers_hair_stubble[];    // Animation: "hair_stubble"
-extern struct Animation anim_rhythm_tweezers_tutorial_text[];    // Animation: "tutorial_text" (unused)
-extern struct Animation anim_rhythm_tweezers_long_hair[];    // Animation: hair_appear_long
-extern struct Animation anim_tweezers_pull[];    // Animation: "hair_long_pull"
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

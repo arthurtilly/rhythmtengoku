@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/remix_6/graphics/remix_6_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: REMIX 6  //  //  //
 
@@ -16,7 +18,6 @@ struct Remix6PrologueInfo {
 // Assets:
 extern struct CompressedGraphics *remix_6_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable remix_6_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_remix_6_prologue_title[]; // Animation: Text (Remix 6)
 
 // Functions:
 extern void func_08046b14(void);    // [func_08046b14] GFX_INIT Func_02

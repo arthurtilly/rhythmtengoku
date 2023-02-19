@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/night_walk/graphics/night_walk_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: NIGHT WALK  //  //  //
 
@@ -18,9 +20,6 @@ struct NightWalkPrologueInfo {
 // Assets:
 extern struct CompressedGraphics *night_walk_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable night_walk_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_night_walk_prologue_title[]; // Animation: Text (Night Walk)
-extern struct Animation anim_night_walk_prologue_play_yan[]; // Animation: Play-yan
-extern struct Animation anim_night_walk_prologue_balloons[]; // Animation: Balloons
 
 
 // Functions:

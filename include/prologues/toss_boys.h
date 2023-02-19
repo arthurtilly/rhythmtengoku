@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/toss_boys/graphics/toss_boys_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: TOSS BOYS  //  //  //
 
@@ -16,7 +18,6 @@ struct TossBoysPrologueInfo {
 // Assets:
 extern struct CompressedGraphics *toss_boys_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable toss_boys_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_toss_boys_prologue_title[]; // Animation: Text (Toss Boys)
 
 // Functions:
 extern void func_080478d8(void);    // [func_080478d8] GFX_INIT Func_02

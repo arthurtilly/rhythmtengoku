@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Sneaky Spirits ------------------------ */
+/* ------------------------ Beatscript Labels: Sneaky Spirits ------------------------ */
 
 
 @ Load Data

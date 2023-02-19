@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/showtime/graphics/showtime_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: SHOWTIME  //  //  //
 
@@ -17,8 +19,6 @@ struct ShowtimePrologueInfo {
 // Assets:
 extern struct CompressedGraphics *showtime_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable showtime_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_showtime_prologue_title[]; // Animation: Text (Showtime)
-extern struct Animation anim_showtime_prologue_penguin[]; // Animation: Penguin
 
 // Functions:
 extern void func_08045944(void);    // [func_08045944] GFX_INIT Func_02

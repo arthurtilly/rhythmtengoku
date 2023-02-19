@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/rhythm_test/graphics/rhythm_test_graphics.h"
+
 // Engine Types:
 struct RhythmTestInfo {
     /* add fields here */
@@ -11,21 +13,6 @@ struct RhythmTestInfo {
 struct RhythmTestCue {
     /* add fields here */
 };
-
-
-// Engine Macros/Enums:
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/ninja_bodyguard/graphics/ninja_bodyguard_graphics.h"
+
 // Engine Types:
 struct NinjaBodyguardInfo {
     /* add fields here */
@@ -50,18 +52,6 @@ enum NinjaBodyguardAnimationsEnum {
     NINJA_ANIM_BUTTON_INDICATOR,
     NINJA_ANIM_CUTSCENE_ARROW
 };
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

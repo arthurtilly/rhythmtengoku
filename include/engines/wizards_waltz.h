@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/wizards_waltz/graphics/wizards_waltz_graphics.h"
+
 // Engine Types:
 struct WizardsWaltzEntity {
     struct AffineSprite *sprite;
@@ -34,32 +36,6 @@ struct WizardsWaltzCue {
     u16 null4;
     s16 position;
 };
-
-
-// Engine Macros/Enums:
-
-
-// OAM Animations:
-extern struct Animation anim_wizard_fly[];
-extern struct Animation anim_wizard_cast_spell[];
-extern struct Animation anim_wizard_sparkle[];
-extern struct Animation anim_wizards_waltz_sprout_eaten[];
-extern struct Animation anim_wizards_waltz_sprout_grow[];
-extern struct Animation anim_wizards_waltz_sprout_appear[];
-extern struct Animation anim_wizards_waltz_girl_idle[];
-extern struct Animation anim_wizards_waltz_girl_happy[];
-extern struct Animation anim_wizards_waltz_girl_upset[];
-extern struct Animation anim_wizards_waltz_shadow[];
-extern struct Animation anim_wizards_waltz_sprout_appear_tutorial[];
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

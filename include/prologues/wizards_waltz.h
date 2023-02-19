@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/wizards_waltz/graphics/wizards_waltz_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: WIZARD'S WALTZ  //  //  //
 
@@ -16,7 +18,6 @@ struct WizardsWaltzPrologueInfo {
 // Assets:
 extern struct CompressedGraphics *wizards_waltz_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable wizards_waltz_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_wizards_waltz_prologue_title[]; // Animation: Text (Wizard's Waltz)
 
 // Functions:
 extern void func_08047d4c(void);    // [func_08047d4c] GFX_INIT Func_02

@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/clappy_trio/graphics/clappy_trio_graphics.h"
+
 // Engine Types:
 struct ClappyTrioInfo {
     /* add fields here */
@@ -29,18 +31,6 @@ enum ClappyTrioAnimationsEnum {
     CLAPPY_TRIO_ANIM_SIGN,
     CLAPPY_TRIO_ANIM_TEXT_BOX
 };
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

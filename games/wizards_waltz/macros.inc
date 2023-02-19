@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Wizard's Waltz ------------------------ */
+/* ------------------------ Beatscript Labels: Wizard's Waltz ------------------------ */
 
 
 @ Load Data

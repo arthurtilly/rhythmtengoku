@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Fireworks ------------------------ */
+/* ------------------------ Beatscript Labels: Fireworks ------------------------ */
 
 
 @ Load Data

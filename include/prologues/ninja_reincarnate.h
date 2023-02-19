@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/ninja_bodyguard/graphics/ninja_bodyguard_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: NINJA REINCARNATE  //  //  //
 
@@ -16,7 +18,6 @@ struct NinjaReincarnatePrologueInfo {
 // Assets:
 extern struct CompressedGraphics *ninja_reincarnate_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable ninja_reincarnate_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_ninja_reincarnate_prologue_title[]; // Animation: Text (Ninja Reincarnate)
 
 // Functions:
 extern void func_080473d4(void);    // [func_080473d4] GFX_INIT Func_02

@@ -816,7 +816,7 @@ void drum_studio_update_song_title(void) {
 
 
 // Engine Event 00 (Init. Studio Script & Recording)
-const struct BeatScript *drum_studio_init_script(void) {
+const struct Beatscript *drum_studio_init_script(void) {
     struct DrumReplayData *replayData;
     u32 r7;
     u32 availableSpace;

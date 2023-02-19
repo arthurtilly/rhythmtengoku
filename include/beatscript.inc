@@ -54,8 +54,8 @@
 /* ------------------------ Command Macros ------------------------ */
 
 
-@ Undefined BeatScript Command
-.macro bs_command id, arg1, arg2, arg3
+@ Undefined Beatscript Command
+.macro beatscript_cmd id, arg1, arg2, arg3
     .word (((\id) & 0xff) | ((\arg1) << 8))
     .word (\arg2)
     .word (\arg3)
@@ -64,145 +64,145 @@
 
 @ [0x00] Rest
 .macro rest time
-    bs_command 0x00, 0, 0, \time
+    beatscript_cmd 0x00, 0, 0, \time
 .endm
 
 
 @ [0x01] Stop
 .macro stop
-    bs_command 0x01, 0, 0, 0
+    beatscript_cmd 0x01, 0, 0, 0
 .endm
 
 
 @ [0x02] (Scene) Run Function
 .macro scene_run function, arg
-    bs_command 0x02, 0, \function, \arg
+    beatscript_cmd 0x02, 0, \function, \arg
 .endm
 
 
 @ [0x03] Run Function (1 Argument)
 .macro run function, arg
-    bs_command 0x03, 0, \function, \arg
+    beatscript_cmd 0x03, 0, \function, \arg
 .endm
 
 
 @ [0x04] Run Function (2 Arguments)
 .macro run2 function, arg1, arg2
-    bs_command 0x04, \arg1, \function, \arg2
+    beatscript_cmd 0x04, \arg1, \function, \arg2
 .endm
 
 
 @ [0x05] Set Variable
 .macro set_int type, address, value
-    bs_command 0x05, \type, \address, \value
+    beatscript_cmd 0x05, \type, \address, \value
 .endm
 
 
 @ [0x06] Add to Variable
 .macro add_int type, address, value
-    bs_command 0x06, \type, \address, \value
+    beatscript_cmd 0x06, \type, \address, \value
 .endm
 
 
 @ [0x07] Set Bit
 .macro set_bit type, address, bit
-    bs_command 0x07, \type, \address, \bit
+    beatscript_cmd 0x07, \type, \address, \bit
 .endm
 
 
 @ [0x08] Clear Bit
 .macro clear_bit type, address, bit
-    bs_command 0x08, \type, \address, \bit
+    beatscript_cmd 0x08, \type, \address, \bit
 .endm
 
 
 @ [0x09] (Scene) Set Variable
 .macro scene_set_int type, offset, value
-    bs_command 0x09, \type, \offset, \value
+    beatscript_cmd 0x09, \type, \offset, \value
 .endm
 
 
 @ [0x0A] (Scene) Add to Variable
 .macro scene_add_int type, offset, value
-    bs_command 0x0A, \type, \offset, \value
+    beatscript_cmd 0x0A, \type, \offset, \value
 .endm
 
 
 @ [0x0B] (Scene) Set Bit
 .macro scene_set_bit type, offset, bit
-    bs_command 0x0B, \type, \offset, \bit
+    beatscript_cmd 0x0B, \type, \offset, \bit
 .endm
 
 
 @ [0x0C] (Scene) Clear Bit
 .macro scene_clear_bit type, offset, bit
-    bs_command 0x0C, \type, \offset, \bit
+    beatscript_cmd 0x0C, \type, \offset, \bit
 .endm
 
 
 @ [0x0D] Branch with Link
 .macro call script
-    bs_command 0x0D, 0, \script, 0
+    beatscript_cmd 0x0D, 0, \script, 0
 .endm
 
 
 @ [0x0E] Return
 .macro return
-    bs_command 0x0E, 0, 0, 0
+    beatscript_cmd 0x0E, 0, 0, 0
 .endm
 
 
 @ [0x0F] Branch without Link
 .macro goto script
-    bs_command 0x0F, 0, \script, 0
+    beatscript_cmd 0x0F, 0, \script, 0
 .endm
 
 
 @ [0x10] Start Loop
 .macro loop_start
-    bs_command 0x10, 0, 0, 0
+    beatscript_cmd 0x10, 0, 0, 0
 .endm
 
 
 @ [0x11] End Loop
 .macro loop_end
-    bs_command 0x11, 0, 0, 0
+    beatscript_cmd 0x11, 0, 0, 0
 .endm
 
 
 @ [0x12] If Equal
 .macro if_eq type, address, value
-    bs_command 0x12, \type, \address, \value
+    beatscript_cmd 0x12, \type, \address, \value
 .endm
 
 
 @ [0x13] If Not Equal
 .macro if_neq type, address, value
-    bs_command 0x13, \type, \address, \value
+    beatscript_cmd 0x13, \type, \address, \value
 .endm
 
 
 @ [0x14] Else
 .macro else
-    bs_command 0x14, 0, 0, 0
+    beatscript_cmd 0x14, 0, 0, 0
 .endm
 
 
 @ [0x15] End If Statement
 .macro end_if
-    bs_command 0x15, 0, 0, 0
+    beatscript_cmd 0x15, 0, 0, 0
 .endm
 
 
 @ [0x16] If Bit Set
 .macro if_set address, bit
-    bs_command 0x16, 0, \address, \bit
+    beatscript_cmd 0x16, 0, \address, \bit
 .endm
 
 
 @ [0x17] If Bit Clear
 .macro if_clear address, bit
-    bs_command 0x17, 0, \address, \bit
+    beatscript_cmd 0x17, 0, \address, \bit
 .endm
 
 
@@ -212,25 +212,25 @@
 
 @ [0x1A] Switch Statement
 .macro switch type, address
-    bs_command 0x1A, \type, 0, \address
+    beatscript_cmd 0x1A, \type, 0, \address
 .endm
 
 
 @ [0x1B] End Switch Statement
 .macro end_switch
-    bs_command 0x1B, 0, 0, 0
+    beatscript_cmd 0x1B, 0, 0, 0
 .endm
 
 
 @ [0x1C] Switch Case
 .macro case value
-    bs_command 0x1C, 0, 0, \value
+    beatscript_cmd 0x1C, 0, 0, \value
 .endm
 
 
 @ [0x1D] End Switch Case
 .macro break
-    bs_command 0x1D, 0, 0, 0
+    beatscript_cmd 0x1D, 0, 0, 0
 .endm
 
 
@@ -241,19 +241,19 @@
 
 @ [0x21] (Scene) If Equal
 .macro scene_if_eq type, offset, value
-    bs_command 0x21, \type, \offset, \value
+    beatscript_cmd 0x21, \type, \offset, \value
 .endm
 
 
 @ [0x22] (Scene) If Not Equal
 .macro scene_if_neq type, offset, value
-    bs_command 0x22, \type, \offset, \value
+    beatscript_cmd 0x22, \type, \offset, \value
 .endm
 
 
 @ [0x23] Scene Switch Statement
 .macro scene_switch type, offset
-    bs_command 0x23, \type, 0, \offset
+    beatscript_cmd 0x23, \type, 0, \offset
 .endm
 
 
@@ -265,7 +265,7 @@
 
 @ [0x28] Play Music
 .macro play_music_in player, music
-    bs_command 0x28, 0, \player, \music
+    beatscript_cmd 0x28, 0, \player, \music
 .endm
 
 .macro play_music music
@@ -275,7 +275,7 @@
 
 @ [0x29] Play Sound Effect
 .macro play_sfx sound
-    bs_command 0x29, 0, 0, \sound
+    beatscript_cmd 0x29, 0, 0, \sound
 .endm
 
 
@@ -294,13 +294,13 @@
 
 @ [0x35] Music Fade-In
 .macro fade_music_in toTempo, time
-    bs_command 0x35, \toTempo, 0, \time
+    beatscript_cmd 0x35, \toTempo, 0, \time
 .endm
 
 
 @ [0x36] Music Fade-Out
 .macro fade_music_out toTempo, time
-    bs_command 0x36, \toTempo, 0, \time
+    beatscript_cmd 0x36, \toTempo, 0, \time
 .endm
 
 
@@ -309,19 +309,19 @@
 
 @ [0x38] Sound Effect Fade-Out
 .macro fade_sfx_out sound, time
-    bs_command 0x38, 0, \sound, \time
+    beatscript_cmd 0x38, 0, \sound, \time
 .endm
 
 
 @ [0x39] Load Graphics Table (Immediate)
 .macro load_graphics address
-    bs_command 0x39, 0, \address, 0
+    beatscript_cmd 0x39, 0, \address, 0
 .endm
 
 
 @ [0x3A] Play Music (without overriding existing music if possible)
 .macro add_music_in player, music
-    bs_command 0x3A, 0, \player, \music
+    beatscript_cmd 0x3A, 0, \player, \music
 .endm
 
 .macro add_music music
@@ -334,25 +334,25 @@
 
 @ [0x3C] Set Speed
 .macro set_speed speed
-    bs_command 0x3C, 0, 0, \speed
+    beatscript_cmd 0x3C, 0, 0, \speed
 .endm
 
 
 @ [0x3D] Set Music Pitch (also updates an unknown flag)
 .macro set_music_pitch_s pitch
-    bs_command 0x3D, 0, 0, \pitch
+    beatscript_cmd 0x3D, 0, 0, \pitch
 .endm
 
 
 @ [0x3E] Set Music Pitch (avoids resetting an unknown flag)
 .macro set_music_pitch pitch
-    bs_command 0x3E, 0, 0, \pitch
+    beatscript_cmd 0x3E, 0, 0, \pitch
 .endm
 
 
 @ [0x3F] Change LCD Special Effect Controls (Blend)
 .macro mod_lcd_blend reverse, controls, toTempo, time
-    bs_command 0x3F, \reverse, \controls, ((\toTempo << 31) | (\time & 0x7FFFFFFF))
+    beatscript_cmd 0x3F, \reverse, \controls, ((\toTempo << 31) | (\time & 0x7FFFFFFF))
 .endm
 
 .macro mod_lcd_blend_to controls, toTempo, time
@@ -375,25 +375,25 @@
 
 @ [0x47] Load Graphics Table (with bytes-per-update process limit)
 .macro task_load_graphics address, limit
-    bs_command 0x47, 0, \address, \limit
+    beatscript_cmd 0x47, 0, \address, \limit
 .endm
 
 
 @ [0x48] Set Backdrop
 .macro set_backdrop arg1, arg2, arg3
-    bs_command 0x48, \arg1, \arg2, \arg3
+    beatscript_cmd 0x48, \arg1, \arg2, \arg3
 .endm
 
 
 @ [0x49] Set Video Mode
 .macro set_video_mode mode
-    bs_command 0x49, 0, \mode, 0
+    beatscript_cmd 0x49, 0, \mode, 0
 .endm
 
 
 @ [0x4A] Fade Palette from Solid Colour
 .macro fade_screen reverse, time, color
-    bs_command 0x4A, \reverse, \time, \color
+    beatscript_cmd 0x4A, \reverse, \time, \color
 .endm
 
 .macro fade_screen_in time, color
@@ -410,7 +410,7 @@
 
 @ [0x4C] Gradually Change Tempo
 .macro mod_tempo tempo, time
-    bs_command 0x4C, 0, \tempo, \time
+    beatscript_cmd 0x4C, 0, \tempo, \time
 .endm
 
 
@@ -419,19 +419,19 @@
 
 @ [0x4E] Gradually Change Music Pitch
 .macro mod_music_pitch pitch, time
-    bs_command 0x4E, 0, \pitch, \time
+    beatscript_cmd 0x4E, 0, \pitch, \time
 .endm
 
 
 @ [0x4F] Default Case
 .macro default
-    bs_command 0x4F, 0, 0, 0
+    beatscript_cmd 0x4F, 0, 0, 0
 .endm
 
 
 @ [0x50] Gradually Change Music Volume
 .macro mod_music_volume volume, time
-    bs_command 0x50, 0, \volume, \time
+    beatscript_cmd 0x50, 0, \volume, \time
 .endm
 
 
@@ -524,13 +524,13 @@
 
 @ [0xA6] DMA3 Set
 .macro dma_set tileCount, src, dest
-    bs_command 0xA6, \tileCount, \src, \dest
+    beatscript_cmd 0xA6, \tileCount, \src, \dest
 .endm
 
 
 @ [0xA7] Set Speed to Music (this also plays the given music)
 .macro set_speed_to_music music
-    bs_command 0xA7, 0, 0, \music
+    beatscript_cmd 0xA7, 0, 0, \music
 .endm
 
 
@@ -542,41 +542,41 @@
 
 @ [0xAC] Set Music Track Volume
 .macro set_music_track_volume tracks, volume
-    bs_command 0xAC, \tracks, \volume, 0
+    beatscript_cmd 0xAC, \tracks, \volume, 0
 .endm
 
 
 @ [0xAD] Gradually Change Music Track Volume
 .macro mod_music_track_volume tracks, volume, time
-    bs_command 0xAD, \tracks, \volume, \time
+    beatscript_cmd 0xAD, \tracks, \volume, \time
 .endm
 
 
 @ [0xAE] Play Sound Effect (at given volume & pitch)
 .macro play_sfx_sp sound, volume, pitch
-    bs_command 0xAE, \volume, \pitch, \sound
+    beatscript_cmd 0xAE, \volume, \pitch, \sound
 .endm
 
 
 @ [0xAF] Gradually Add to Speed Multiplier
 .macro increase_speed multiplier, time
-    bs_command 0xAF, 0, \multiplier, \time
+    beatscript_cmd 0xAF, 0, \multiplier, \time
 .endm
 
 
 @ [0xB0] Branch to Global Scene Variable
 .macro call_result
-    bs_command 0xB0, 0, 0, 0
+    beatscript_cmd 0xB0, 0, 0, 0
 .endm
 
 
 @ [0xB1] Reset Rest Timer
 .macro rest_reset
-    bs_command 0xB1, 0, 0, 0
+    beatscript_cmd 0xB1, 0, 0, 0
 .endm
 
 
 @ [0xB2] Play Sound Effect (at given volume & pitch)
 .macro play_sfx_synced sound, baseBPM, volume, pitch
-    bs_command 0xB2, \baseBPM, ((\volume & 0xFFFF) | (\pitch << 16)), \sound
+    beatscript_cmd 0xB2, \baseBPM, ((\volume & 0xFFFF) | (\pitch << 16)), \sound
 .endm

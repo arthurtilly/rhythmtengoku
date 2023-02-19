@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/sneaky_spirits/graphics/sneaky_spirits_graphics.h"
+
 // Engine Types:
 struct SneakySpiritsInfo {
     struct TextObject1 *unk0;  // Pointer: Font? (Related to Tutorial Text)
@@ -50,33 +52,6 @@ enum SneakySpiritsVersionsEnum {
     SNEAKY_SPIRITS_VERSION_REMIX,
     SNEAKY_SPIRITS_VERSION_2
 };
-
-
-// OAM Animations:
-extern struct Animation anim_sneaky_spirits_bow[]; // Animation: "bow_draw"
-extern struct Animation anim_sneaky_spirit_hit[]; // Animation: "ghost_hit"
-extern struct Animation anim_sneaky_spirits_back_wall[]; // Animation: "door_back_wall"
-extern struct Animation anim_sneaky_spirits_door[]; // Animation: "door_open"
-extern struct Animation anim_sneaky_spirit_taunt[]; // Animation: "ghost_miss_taunt"
-extern struct Animation anim_sneaky_spirits_arrow_miss[]; // Animation: "arrow_miss"
-extern struct Animation anim_sneaky_spirit_scared_early[]; // Animation: "ghost_barely_scared"
-extern struct Animation anim_sneaky_spirits_tree[]; // Animation: "tree"
-extern struct Animation anim_sneaky_spirit_walk[]; // Animation: "ghost_walk"
-extern struct Animation anim_sneaky_spirit_dash[]; // Animation: "ghost_miss_dash"
-extern struct Animation anim_sneaky_spirits_rain[]; // Animation: "rain_fall"
-extern struct Animation anim_sneaky_spirits_splash[]; // Animation: "rain_splash"
-extern struct Animation anim_sneaky_spirits_rain_slow[]; // Animation: "rain_fall_slow"
-extern struct Animation anim_sneaky_spirits_bow_shoot[]; // Animation: "bow_shoot"
-extern struct Animation anim_sneaky_spirits_wall_mask[]; // Animation: "ghost_mask" (might be masking)
-extern struct Animation anim_sneaky_spirit_scared_late[]; // Animation: "ghost_barely_run"
-extern struct Animation anim_sneaky_spirit_hit_effect[]; // Animation: "arrow_hit"
-extern struct Animation anim_sneaky_spirit_tutorial[]; // Animation: "ghost_dash_tutorial"
-
-
-// Palettes:
-
-
-// Sound Effects:
 
 
 // Engine Data:

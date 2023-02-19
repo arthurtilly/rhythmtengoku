@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Drum Studio ------------------------ */
+/* ------------------------ Beatscript Labels: Drum Studio ------------------------ */
 
 
 @ Load Data

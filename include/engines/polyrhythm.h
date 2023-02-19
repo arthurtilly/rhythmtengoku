@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/polyrhythm/graphics/polyrhythm_graphics.h"
+
 // Engine Types:
 struct PolyrhythmInfo {
     u8 version;
@@ -66,34 +68,6 @@ enum PolyrhythmLanesEnum {
     POLYRHYTHM_LANE_UPSIDE,
     POLYRHYTHM_LANE_DOWNSIDE
 };
-
-
-// OAM Animations:
-extern struct Animation anim_polyrhythm_test_upside[]; // Layout/Spacing Demonstration (Upside)
-extern struct Animation anim_polyrhythm_test_downside[]; // Layout/Spacing Demonstration (Downside)
-extern struct Animation anim_polyrhythm_rod[]; // Rolling Rod
-extern struct Animation anim_polyrhythm_arrow_large[]; // Large Up Arrow (Unused)
-extern struct Animation anim_polyrhythm_upside_piston[]; // Upside Piston
-extern struct Animation anim_polyrhythm_downside_piston[]; // Downside Piston
-extern struct Animation anim_polyrhythm_world_start[]; // Starting Blocks Structure
-extern struct Animation anim_polyrhythm_block[]; // Spawn Block
-extern struct Animation anim_polyrhythm_spawn_upside[]; // Spawn Upside Piston
-extern struct Animation anim_polyrhythm_spawn_downside[]; // Spawn Downside Piston
-extern struct Animation anim_polyrhythm_push_upside[]; // Push Upside Piston
-extern struct Animation anim_polyrhythm_push_downside[]; // Push Downside Piston
-extern struct Animation anim_polyrhythm_rod_explode[]; // Rod Explosion
-extern struct Animation anim_polyrhythm_signs[]; // Button Signs
-extern struct Animation anim_polyrhythm_arrow_a[]; // Up Arrow (A Button)
-extern struct Animation anim_polyrhythm_arrow_dpad[]; // Up Arrow (D-Pad)
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

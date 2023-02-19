@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/tram_and_pauline/graphics/tram_and_pauline_graphics.h"
+
 // Engine Types:
 struct TramPaulineInfo {
     /* add fields here */
@@ -20,15 +22,6 @@ enum TramPaulineVersionsEnum {
     ENGINE_VER_TRAM_PAULINE_REMIX3,
     ENGINE_VER_TRAM_PAULINE_NO_CURTAIN
 };
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
 
 
 // Engine Data:

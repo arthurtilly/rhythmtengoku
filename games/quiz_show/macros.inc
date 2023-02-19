@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Quiz Show ------------------------ */
+/* ------------------------ Beatscript Labels: Quiz Show ------------------------ */
 
 
 @ Load Data

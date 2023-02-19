@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/power_calligraphy/graphics/power_calligraphy_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: POWER CALLIGRAPHY  //  //  //
 
@@ -16,8 +18,6 @@ struct PowerCalligraphyPrologueInfo {
 // Assets:
 extern struct CompressedGraphics *power_calligraphy_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable power_calligraphy_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_prologue_calligraphy_title[]; // Animation: Text (Power Calligraphy)
-extern struct Animation anim_prologue_calligraphy_artist[]; // Animation: HAI
 
 // Functions:
 extern void func_080460f8(void);    // [func_080460f8] GFX_INIT Func_02

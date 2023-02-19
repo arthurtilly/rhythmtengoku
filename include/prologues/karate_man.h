@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/karate_man/graphics/karate_man_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: KARATE MAN  //  //  //
 
@@ -17,8 +19,6 @@ struct KarateManPrologueInfo {
 // Assets:
 extern struct CompressedGraphics *karate_man_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable karate_man_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_karate_man_prologue_title[]; // Animation: Text (Karate Man)
-extern struct Animation anim_karate_man_prologue_kick[]; // Animation: Kick
 
 // Functions:
 extern void func_0804550c(void);    // [func_0804550c] GFX_INIT Func_02

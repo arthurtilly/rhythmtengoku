@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Power Calligraphy ------------------------ */
+/* ------------------------ Beatscript Labels: Power Calligraphy ------------------------ */
 
 
 @ Load Data

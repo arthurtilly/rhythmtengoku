@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/rat_race/graphics/rat_race_graphics.h"
+
 // Engine Types:
 struct Rat {
     s16 ratSprite;
@@ -20,18 +22,6 @@ struct RatRaceInfo {
 struct RatRaceCue {
     /* add fields here */
 };
-
-
-// Engine Macros/Enums:
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
 
 
 // Engine Data:

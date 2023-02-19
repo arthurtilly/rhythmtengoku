@@ -3,6 +3,9 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/spaceball/graphics/spaceball_prologue_graphics.h"
+
+
 
   //  //  //  PROLOGUE: SPACEBALL  //  //  //
 
@@ -16,7 +19,6 @@ struct SpaceballPrologueInfo {
 // Assets:
 extern struct CompressedGraphics *spaceball_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable spaceball_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_spaceball_prologue_title[]; // Animation: Text (Spaceball)
 
 // Functions:
 extern void func_08045208(void);    // [func_08045208] GFX_INIT Func_02

@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/sick_beats/graphics/sick_beats_graphics.h"
+
 // Engine Types:
 struct SickBeatsInfo {
     /* add fields here */
@@ -29,18 +31,6 @@ enum SickBeatsVersionsEnum {
     ENGINE_VER_SICK_BEATS,
     ENGINE_VER_SICK_BEATS_ENDLESS
 };
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

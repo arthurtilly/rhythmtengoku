@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Rhythm Test ------------------------ */
+/* ------------------------ Beatscript Labels: Rhythm Test ------------------------ */
 
 
 @ Load Data

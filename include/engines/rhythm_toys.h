@@ -4,6 +4,8 @@
 #include "engines.h"
 #include "engines/night_walk.h"
 
+#include "games/rhythm_toys/graphics/rhythm_toys_graphics.h"
+
 // Engine Types:
 struct RhythmToysInfo {
     /* add fields here */
@@ -20,7 +22,7 @@ struct RhythmToysDemo {
 
 struct RhythmToysSpriteData {
     struct Animation *anim;
-    const struct Vector2 *vec2;
+    struct Vector2 *vec2;
 };
 
 typedef void (*RhythmToysPlayFunc)(u32 button);
@@ -67,18 +69,6 @@ enum RhythmToysDemoButtonsEnum {
 };
 
 #define END_OF_RHYTHM_TOYS_DEMO { RHYTHM_TOYS_DEMO_STOP, 0x00 }
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

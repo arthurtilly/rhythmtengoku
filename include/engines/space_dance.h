@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/space_dance/graphics/space_dance_graphics.h"
+
 // Engine Types:
 struct SpaceDanceInfo {
     /* add fields here */
@@ -73,15 +75,6 @@ enum SpaceGrampsAnimationsEnum {
     SPACE_GRAMPS_ANIM_SPEAK,
     SPACE_GRAMPS_ANIM_BLINK
 };
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
 
 
 // Engine Data:

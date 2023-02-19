@@ -1,15 +1,6 @@
 #include "prologues/bunny_hop.h"
 
 
-  /* PROLOGUE (BUNNY HOP) - ENGINE DATA */
-
-
-extern struct CompressedGraphics D_08c1f24c;
-extern struct CompressedGraphics D_08c1f308;
-extern struct CompressedGraphics D_08c1f214;
-extern Palette bunny_hop_prologue_pal[];
-
-
   //  //  //  GAME ENGINE DATA  //  //  //
 
 

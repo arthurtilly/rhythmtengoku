@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Toss Boys ------------------------ */
+/* ------------------------ Beatscript Labels: Toss Boys ------------------------ */
 
 
 @ Load Data

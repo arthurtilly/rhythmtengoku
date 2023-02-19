@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Tap Trial ------------------------ */
+/* ------------------------ Beatscript Labels: Tap Trial ------------------------ */
 
 
 @ Load Data

@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: The Clappy Trio ------------------------ */
+/* ------------------------ Beatscript Labels: The Clappy Trio ------------------------ */
 
 
 @ Load Data

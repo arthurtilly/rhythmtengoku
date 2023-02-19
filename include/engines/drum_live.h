@@ -4,6 +4,8 @@
 #include "engines.h"
 #include "engines/night_walk.h"
 
+#include "games/drum_live/graphics/drum_live_graphics.h"
+
 // Engine Types:
 struct DrumLiveInfo {
     /* add fields here */
@@ -65,18 +67,6 @@ enum DrumLiveAnimationsEnum {
     LIVE_ANIM_MICROPHONE,
     LIVE_ANIM_LIGHT_FLASH
 };
-
-
-// Sprite Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

@@ -4,6 +4,8 @@
 #include "engines.h"
 #include "engines/night_walk.h"
 
+#include "games/toss_boys/graphics/toss_boys_graphics.h"
+
 // Engine Types:
 struct TossBoysInfo {
     /* add fields here */
@@ -66,18 +68,6 @@ enum TossBoyActionsEnum {
     TOSS_BOY_ACTION_CATCH,
     TOSS_BOY_ACTION_POP
 };
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

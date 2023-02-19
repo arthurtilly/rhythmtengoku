@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Rat Race ------------------------ */
+/* ------------------------ Beatscript Labels: Rat Race ------------------------ */
 
 
 @ Load Data

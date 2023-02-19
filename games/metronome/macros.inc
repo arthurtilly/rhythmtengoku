@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Metronome ------------------------ */
+/* ------------------------ Beatscript Labels: Metronome ------------------------ */
 
 
 @ Load Data

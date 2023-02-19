@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Sick Beats ------------------------ */
+/* ------------------------ Beatscript Labels: Sick Beats ------------------------ */
 
 
 @ Load Data

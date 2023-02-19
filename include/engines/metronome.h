@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/metronome/graphics/metronome_graphics.h"
+
 // Engine Types:
 struct MetronomeInfo {
     /* add fields here */
@@ -18,18 +20,6 @@ struct MetronomeUnknownMovementData {
     s16 targetX;
     s16 targetY;
 };
-
-
-// Engine Macros/Enums:
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
 
 
 // Engine Data:

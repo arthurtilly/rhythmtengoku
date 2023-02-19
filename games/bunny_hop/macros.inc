@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Bunny Hop ------------------------ */
+/* ------------------------ Beatscript Labels: Bunny Hop ------------------------ */
 
 
 @ Load Data

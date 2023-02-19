@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Spaceball ------------------------ */
+/* ------------------------ Beatscript Labels: Spaceball ------------------------ */
 
 
 @ Load Data

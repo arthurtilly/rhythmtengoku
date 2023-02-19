@@ -3,6 +3,9 @@
 #include "global.h"
 #include "engines.h"
 
+// shared?
+#include "games/metronome/graphics/metronome_graphics.h"
+
 // Engine Types:
 struct MrUpbeatInfo {
     /* add fields here */
@@ -11,18 +14,6 @@ struct MrUpbeatInfo {
 struct MrUpbeatCue {
     /* add fields here */
 };
-
-
-// Engine Macros/Enums:
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
 
 
 // Engine Data:

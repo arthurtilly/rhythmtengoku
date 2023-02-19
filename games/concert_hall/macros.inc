@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: LIVE Menu ------------------------ */
+/* ------------------------ Beatscript Labels: LIVE Menu ------------------------ */
 
 
 @ Load Data

@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/power_calligraphy/graphics/power_calligraphy_graphics.h"
+
 // Engine Types:
 struct PowerCalligraphyInfo {
     /* add fields here */
@@ -33,21 +35,6 @@ enum PowerCalligraphyInputsEnum {
     CALLIGRAPHY_INPUT_COMMA1,
     CALLIGRAPHY_INPUT_FACE1,
 };
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
-
-
-// Engine Definition Data:
 
 
 // Functions:

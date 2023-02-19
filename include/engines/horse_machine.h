@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/horse_machine/graphics/horse_machine_graphics.h"
+
 // Engine Types:
 struct HorseMachineInfo {
     /* add fields here */
@@ -25,15 +27,6 @@ enum HorseLessonsEnum {
     HORSE_LESSON_3_CANTER,
     HORSE_LESSON_4_GALLOP
 };
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
 
 
 // Engine Data:

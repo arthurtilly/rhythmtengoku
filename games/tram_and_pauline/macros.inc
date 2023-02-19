@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Tram & Pauline ------------------------ */
+/* ------------------------ Beatscript Labels: Tram & Pauline ------------------------ */
 
 
 @ Load Data

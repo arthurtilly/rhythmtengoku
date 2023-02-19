@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/sick_beats/graphics/sick_beats_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: SICK BEATS  //  //  //
 
@@ -17,8 +19,6 @@ struct SickBeatsPrologueInfo {
 // Assets:
 extern struct CompressedGraphics *sick_beats_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable sick_beats_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_sick_beats_prologue_title[]; // Animation: Text (Sick Beats)
-extern struct Animation anim_sick_beats_prologue_virus[]; // Animation: Virus
 
 // Functions:
 extern void func_08047c08(void);    // [func_08047c08] GFX_INIT Func_02

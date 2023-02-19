@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/night_walk/graphics/night_walk_graphics.h"
+
 // Engine Types:
 struct DrumTechInstrument {
     s8 soundPlayerID;
@@ -94,7 +96,7 @@ struct NightWalkInfo {
     s16 starsVOffset;
     u32 nextStar;
     u32 currentStarSize;
-    const struct BeatScript *endScript;
+    const struct Beatscript *endScript;
     u8 markingCriteria;
     u8 inSwing;
     u16 cueEarlinessOffset;
@@ -137,35 +139,6 @@ enum NightWalkCuesEnum {
 #define DRUMTECH_NOTE_REST 0xFFFE
 #define DRUMTECH_NOTE_END_SEQ 0xFF
 #define END_OF_DRUM_TECH_SEQUENCE { DRUMTECH_NOTE_END_SEQ, 0, 0, 0 }
-
-
-// OAM Animations:
-extern struct Animation anim_play_yan_jump[]; // [D_088c9a98] Play-Yan Jump
-extern struct Animation anim_play_yan_walk[]; // [D_088c9ab8] Play-Yan Walk
-extern struct Animation anim_night_walk_fish[]; // [D_088c9b08] Electric Fish Idle
-extern struct Animation anim_play_yan_short_hop[]; // [D_088c9b98] Play-Yan Small Hop
-extern struct Animation anim_night_walk_note_bridge[]; // [D_088c9d10] Note Box & Platform
-extern struct Animation anim_play_yan_fall[]; // [D_088c9d58] Play-Yan Fall
-extern struct Animation anim_night_walk_balloon[]; // [D_088c9d88] Balloon
-extern struct Animation anim_night_walk_balloon_pop[]; // [D_088c9dc0] Balloon Pop
-extern struct Animation anim_night_walk_bridge_disappear[]; // [D_088c9dd0] Box & Platform Disappear
-extern struct Animation anim_night_walk_box_disappear[]; // [D_088c9de0] Box Disappear
-extern struct Animation anim_night_walk_star_tiny[]; // [D_088c9ec8] Very Small Star
-extern struct Animation anim_night_walk_star_disappear[]; // [D_088c9f58] End Flash
-extern struct Animation anim_play_yan_star_wand[]; // [D_088c9f90] Play-Yan Star Wand
-extern struct Animation anim_night_walk_wand_box[]; // [D_088ca0d8] Star Wand Box
-extern struct Animation anim_night_walk_ng_wand_box[]; // [D_088ca120] NG Star Wand Box
-extern struct Animation anim_night_walk_fish_zap[]; // [D_088ca140] Electric Fish Zap
-extern struct Animation anim_play_yan_violent_electrocution[]; // [D_088ca158] Play-Yan Violent Electrocution
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:
@@ -246,7 +219,7 @@ extern void night_walk_init_gfx2(void); // Graphics Init. 2
 extern void night_walk_init_gfx1(void); // Graphics Init. 1
 extern void night_walk_engine_start(u32 ver); // Game Engine Start
 extern void night_walk_engine_event_stub(void); // Engine Event 0x0A (STUB)
-extern void night_walk_set_ending_script(const struct BeatScript *script); // Engine Event 0x03 (Set Ending Script)
+extern void night_walk_set_ending_script(const struct Beatscript *script); // Engine Event 0x03 (Set Ending Script)
 extern void night_walk_set_bridge_type(u32 type); // Engine Event 0x04 (Set Next Bridge Type)
 extern void night_walk_set_marking_criteria(u32 criteria); // Engine Event 0x05 (Set Current Marking Criteria)
 extern void night_walk_set_swing(u32 inSwing); // Engine Event 0x07 (Set Swing)

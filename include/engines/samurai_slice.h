@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/samurai_slice/graphics/samurai_slice_graphics.h"
+
 // Engine Types:
 struct SamuraiSliceInfo {
     /* add fields here */
@@ -24,26 +26,6 @@ enum SamuraiSliceVersionsEnum {
     SAMURAI_SLICE_VER_0,
     SAMURAI_SLICE_VER_REMIX
 };
-
-
-// OAM Animations:
-extern struct Animation anim_samurai_beat_1[];
-extern struct Animation anim_samurai_beat_2[];
-extern struct Animation anim_samurai_beat_3[];
-extern struct Animation anim_samurai_slice_1[];
-extern struct Animation anim_samurai_slice_2[];
-extern struct Animation anim_samurai_slice_3[];
-extern struct Animation anim_small_demon_hop[];
-extern struct Animation anim_med_demon_hop[];
-extern struct Animation anim_winged_demon_fly[];
-extern struct Animation anim_propeller_demon_hover[];
-extern struct Animation anim_large_demon_walk[];
-
-
-// Palettes:
-
-
-// Sound Effects:
 
 
 // Engine Data:

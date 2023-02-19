@@ -2,7 +2,7 @@
 #include "beatscript_scene_data.h"
 
 
-/* BeatScript Scene Data */
+/* Beatscript Scene Data */
 
 
 // [D_089ccbc0] Blank Animation

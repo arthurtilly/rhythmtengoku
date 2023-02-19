@@ -98,13 +98,13 @@ u32 func_0801d8d8(void) {
 
 
 // [func_0801d95c] Change Script
-void func_0801d95c(const struct BeatScript *script) {
+void func_0801d95c(const struct Beatscript *script) {
 	D_030053c0.threads[0].current = script;
 }
 
 
 // [func_0801d968] Change Script (w/ Timer Reset)
-void func_0801d968(const struct BeatScript *script) {
+void func_0801d968(const struct Beatscript *script) {
 	D_030053c0.threads[0].current = script;
 	D_030053c0.threads[0].timeUntilNext = 0;
 }

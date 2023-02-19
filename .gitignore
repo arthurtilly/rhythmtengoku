@@ -6,5 +6,6 @@
 build/*
 tools/agbcc/*
 *.gba
+*.sav
 *.dump
 .vscode/*

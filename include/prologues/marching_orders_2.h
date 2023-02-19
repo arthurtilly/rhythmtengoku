@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/marching_orders/graphics/marching_orders_prologue_graphics.h"
+
 
   //  //  //  PROLOGUE: MARCHING ORDERS 2  //  //  //
 
@@ -16,7 +18,6 @@ struct MarchingOrders2PrologueInfo {
 // Assets:
 extern struct CompressedGraphics *marching_orders_2_prologue_buffered_textures[]; // Buffered Textures
 extern struct GraphicsTable marching_orders_2_prologue_gfx_table[]; // Graphics Table
-extern struct Animation anim_marching_orders_2_prologue_title[]; // Animation: Text (Marching Orders 2)
 
 // Functions:
 extern void func_08046330(void);    // [func_08046330] GFX_INIT Func_02

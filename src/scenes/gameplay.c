@@ -23,7 +23,7 @@ enum PauseMenuOptionsEnum {
 
 
 extern struct Scene D_089cfd60; // Perfect Certificate Scene
-extern const struct BeatScript D_089cfda4[]; // Generic Fade-Out Sequence
+extern const struct Beatscript D_089cfda4[]; // Generic Fade-Out Sequence
 extern struct Scene D_089d77e4; // Results Scene (Level-type)
 extern struct Scene D_089d7c18; // Results Scene (Epilogue)
 extern struct Scene D_089ddbcc; // Debug Menu Scene

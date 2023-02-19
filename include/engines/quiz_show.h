@@ -3,6 +3,8 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/quiz_show/graphics/quiz_show_graphics.h"
+
 // Engine Types:
 struct QuizShowInfo {
     /* add fields here */
@@ -13,8 +15,8 @@ struct QuizShowCue {
 };
 
 struct QuizShowScriptTable {
-    const struct BeatScript *scriptA;
-    const struct BeatScript *scriptB;
+    const struct Beatscript *scriptA;
+    const struct Beatscript *scriptB;
     const struct QuizShowScriptTable *const *scriptTable;
 };
 
@@ -34,18 +36,6 @@ enum QuizShowHostArmsEnum {
     QUIZ_HOST_ARM_RIGHT,
     QUIZ_HOST_ARM_LEFT
 };
-
-
-// OAM Animations:
-
-
-// Palettes:
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

@@ -4,6 +4,7 @@
 #include "engines.h"
 #include "src/main.h"
 
+#include "games/karate_man/graphics/karate_man_graphics.h"
 
 // Engine Types:
 struct KarateManInfo {
@@ -98,38 +99,6 @@ enum KarateCuesEnum {
     KARATE_CUE_0A_NULL,
     KARATE_CUE_0B_NULL,
 };
-
-
-// OAM Animations:
-extern struct Animation anim_karate_joe_stand[]; // Animation: "joe_stand"
-extern struct Animation anim_karate_object[]; // Animation: "objects"
-extern struct Animation anim_karate_object_shadow[]; // Animation: "objects_shadow"
-extern struct Animation anim_karate_joe_punch_high[]; // Animation: "joe_punch_high"
-extern struct Animation anim_karate_joe_beat[]; // Animation: "joe_beat"
-extern struct Animation anim_karate_hit_effect[]; // Animation: "hit_effect"
-extern struct Animation anim_karate_flow_meter[]; // Animation: "flow_bar"
-extern struct Animation anim_karate_joe_punch_low[]; // Animation: "joe_punch_low"
-extern struct Animation anim_karate_joe_barely[]; // Animation: "joe_beat_barely"
-extern struct Animation anim_karate_joe_miss[]; // Animation: "joe_miss"
-extern struct Animation anim_karate_joe_smirk[]; // Animation: "joe_beat_smirk"
-extern struct Animation anim_karate_joe_happy[]; // Animation: "joe_beat_happy"
-extern struct Animation anim_karate_joe_punch_ouch[]; // Animation: "joe_punch_hard"
-extern struct Animation anim_karate_cue_warning[]; // Animation: "cue_text"
-extern struct Animation anim_karate_tutorial_text_button[]; // Animation: "tutorial_button"
-extern struct Animation anim_karate_tutorial_skip[]; // Animation: "tutorial_skip"
-extern struct Animation anim_karate_tutorial_counter[]; // Animation: "tutorial_text"
-extern struct Animation anim_karate_joe_smug_high[]; // Animation: "joe_punch_high_face" (Remix 8 face)
-extern struct Animation anim_karate_joe_smug_low[]; // Animation: "joe_punch_low_face" (Remix 8 face)
-
-
-// Palettes:
-extern Palette karate_man_pal[]; // Palette
-
-
-// Sound Effects:
-
-
-// Engine Data:
 
 
 // Engine Definition Data:

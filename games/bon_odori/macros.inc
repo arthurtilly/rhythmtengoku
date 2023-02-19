@@ -1,5 +1,5 @@
 
-/* ------------------------ BeatScript Labels: Bon Odori ------------------------ */
+/* ------------------------ Beatscript Labels: Bon Odori ------------------------ */
 
 
 @ Load Data

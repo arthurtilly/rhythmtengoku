@@ -3,6 +3,7 @@
 #include "global.h"
 #include "engines.h"
 
+#include "games/spaceball/graphics/spaceball_graphics.h"
 
 struct SpaceballEntity {
     struct AffineSprite *sprite;
@@ -61,35 +62,6 @@ enum SpaceballCueStatesEnum {
     SPACEBALL_CUE_STATE_BARELY
 };
 
-// OAM Animations:
-extern struct Animation anim_spaceball_batter_green[]; // Animation: "batter_green"
-extern struct Animation anim_spaceball_batter_red[]; // Animation: "?"
-extern struct Animation anim_spaceball_pitcher[]; // Animation: "pitcher_shoot"
-extern struct Animation anim_spaceball_apple[]; // Animation: "?"
-extern struct Animation anim_spaceball_baseball[]; // Animation: "?"
-extern struct Animation anim_spaceball_baseball_far[]; // Animation: "?"
-extern struct Animation anim_spaceball_rice_ball[]; // Animation: "?"
-extern struct Animation anim_spaceball_rice_ball_far[]; // Animation: "?"
-extern struct Animation anim_spaceball_star_ball[]; // Animation: "?"
-extern struct Animation anim_spaceball_apple_far[]; // Animation: "?"
-extern struct Animation anim_spaceball_poof[]; // Animation: "miss_poof"
-extern struct Animation anim_spaceball_bg_star[]; // Animation: "bg_star"
-extern struct Animation anim_spaceball_ufo_open[]; // Animation: "umpire_show"
-extern struct Animation anim_spaceball_ufo_sway[]; // Animation: "umpire_sway"
-extern struct Animation anim_spaceball_batter_pink[]; // Animation: "?"
-extern struct Animation anim_spaceball_flower_turn[]; // Animation: "?"
-extern struct Animation anim_spaceball_flower_test[]; // Animation: "?"
-extern struct Animation anim_spaceball_batter_green_far[]; // Animation: "?"
-extern struct Animation anim_spaceball_batter_red_far[]; // Animation: "?"
-extern struct Animation anim_spaceball_batter_pink_far[]; // Animation: "?"
-extern struct Animation anim_spaceball_flower_kiss[]; // Animation: "?"
-extern struct Animation anim_spaceball_flower_hide[]; // Animation: "?"
-
-// Palettes:
-
-// Sound Effects:
-
-// Engine Data:
 
 // Engine Definition Data:
 extern struct CompressedGraphics *spaceball_buffered_textures[]; // Buffered Textures List
