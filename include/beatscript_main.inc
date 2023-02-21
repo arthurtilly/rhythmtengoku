@@ -52,6 +52,19 @@
 .set BLACK, 0x0000
 .set WHITE, 0x7FFF
 
+@ Macros for making Beatscript look nicer
+.macro script label
+    glabel \label
+.endm
+
+.macro struct label
+    glabel \label
+.endm
+
+.macro endstruct
+    .balign 4, 0
+.endm
+
 
 /* ------------------------ Command Macros ------------------------ */
 

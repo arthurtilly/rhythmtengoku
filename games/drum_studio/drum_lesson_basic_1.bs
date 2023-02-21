@@ -10,7 +10,7 @@ load_drum_studio_labels
 
 
 @ Dialogue
-glabel D_080613e4
+script D_080613e4
 .ascii "よくきいてマネしてね。\n"
 .ascii "好きなタイミングでどうぞ。\n"
 .ascii "演奏を止めると、\n"
@@ -19,7 +19,7 @@ glabel D_080613e4
 
 
 @ Pattern
-glabel D_0806143c
+script D_0806143c
     spawn_cue CUE_SNARE_R
     rest 24
     spawn_cue CUE_SNARE_R
@@ -32,14 +32,14 @@ return
 
 
 @ Pattern Start
-glabel D_080614a8
+script D_080614a8
     spawn_cue CUE_SNARE_R
     rest 21
 return
 
 
 @ Dialogue
-glabel D_080614cc
+script D_080614cc
 .ascii "\n"
 .ascii "１カ所、音がふえるヨ！\n"
 .asciz "わかるかな？\n"
@@ -47,7 +47,7 @@ glabel D_080614cc
 
 
 @ Pattern
-glabel D_080614f4
+script D_080614f4
     spawn_cue CUE_SNARE_R
     rest 24
     spawn_cue CUE_SNARE_R
@@ -62,7 +62,7 @@ return
 
 
 @ Dialogue
-glabel D_08061578
+script D_08061578
 .ascii "\n"
 .ascii "さらに１カ所、\n"
 .ascii "音がふえるヨ！\n"
@@ -71,7 +71,7 @@ glabel D_08061578
 
 
 @ Pattern Start
-glabel D_080615a8
+script D_080615a8
     spawn_cue CUE_SNARE_R
     rest 12
     spawn_cue CUE_SNARE_L
@@ -80,7 +80,7 @@ return
 
 
 @ Dialogue
-glabel D_080615e4
+script D_080615e4
 .ascii "\n"
 .ascii "またまた１カ所、\n"
 .ascii "音がふえるヨ！\n"
@@ -89,7 +89,7 @@ glabel D_080615e4
 
 
 @ Pattern
-glabel D_08061614
+script D_08061614
     spawn_cue CUE_SNARE_R
     rest 24
     spawn_cue CUE_SNARE_R
@@ -106,7 +106,7 @@ return
 
 
 @ Pattern Start
-glabel D_080616b0
+script D_080616b0
     spawn_cue CUE_SNARE_R
     rest 6
     spawn_cue CUE_SNARE_L
@@ -117,7 +117,7 @@ return
 
 
 @ Dialogue
-glabel D_08061704
+script D_08061704
 .ascii "\n"
 .ascii "今回は、スネアドラムという\n"
 .asciz "タイコをたたいてみましょう。\n"
@@ -125,7 +125,7 @@ glabel D_08061704
 
 
 @ Dialogue
-glabel D_08061740
+script D_08061740
 .ascii "\n"
 .ascii "Aボタンと\x8f\x5c字ボタンの左、\n"
 .ascii "どちらでもスネアドラムを\n"
@@ -134,7 +134,7 @@ glabel D_08061740
 
 
 @ Dialogue
-glabel D_0806178c
+script D_0806178c
 .ascii "\n"
 .ascii "では　さっそくですが\n"
 .asciz "レッスンをはじめまーす！\n"
@@ -142,7 +142,7 @@ glabel D_0806178c
 
 
 @ Dialogue
-glabel D_080617bc
+script D_080617bc
 .ascii "\n"
 .ascii "上で光っているランプは、\n"
 .asciz "タイミングランプです。"
@@ -150,7 +150,7 @@ glabel D_080617bc
 
 
 @ Dialogue
-glabel D_080617f0
+script D_080617f0
 .ascii "\n"
 .ascii "まん中のミドリがジャスト！\n"
 .ascii "それより左はハシリ気味、\n"
@@ -159,7 +159,7 @@ glabel D_080617f0
 
 
 @ Dialogue
-glabel D_0806183c
+script D_0806183c
 .ascii "\n"
 .ascii "うまく　できないときは、\n"
 .ascii "上のランプを見てズレを\n"
@@ -168,14 +168,14 @@ glabel D_0806183c
 
 
 @ Dialogue
-glabel D_08061884
+script D_08061884
 .ascii "\n"
 .asciz "では、つぎ行きまーす！"
 .balign 4, 0
 
 
 @ Dialogue
-glabel D_0806189c
+script D_0806189c
 .ascii "\n"
 .ascii "演奏が速くて困ったら\n"
 .ascii "スタートボタンを\n"
@@ -184,7 +184,7 @@ glabel D_0806189c
 
 
 @ Dialogue
-glabel D_080618d8
+script D_080618d8
 .ascii "\n"
 .ascii "演奏が、ゆっくりに\n"
 .ascii "なるんだヨ！\n"
@@ -193,7 +193,7 @@ glabel D_080618d8
 
 
 @ Dialogue
-glabel D_08061910
+script D_08061910
 .ascii "\n"
 .ascii "もとのテンポに戻るには\n"
 .ascii "再度スタートボタンを\n"
@@ -202,7 +202,7 @@ glabel D_08061910
 
 
 @ Dialogue
-glabel D_08061950
+script D_08061950
 .ascii "\n"
 .ascii "ちなみにスロー演奏中は\n"
 .asciz "レッスンが進まないヨ。"
@@ -210,7 +210,7 @@ glabel D_08061950
 
 
 @ Dialogue
-glabel D_08061980
+script D_08061980
 .ascii "\n"
 .asciz "では、次いってみよう！"
 .balign 4, 0

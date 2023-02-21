@@ -5,7 +5,7 @@
 .section .script.entry
 @ Ninja Reincarnate - Script Entry Point
 
-glabel script_ninja_reincarnate_entry
+script script_ninja_reincarnate_entry
     set_tempo 124
     rest 24
     call script_ninja_reincarnate_prologue
@@ -22,11 +22,29 @@ glabel script_ninja_reincarnate_entry
     rest 24
 stop
 
+@ Ninja Reincarnate - Scene Definitions
+@ These should not be edited!
+
+struct subscene_ninja_reincarnate   @ struct SubScene
+    /* Init Func */   .word gameplay_start_scene,  NULL
+    /* Paused Func */ .word func_08016ffc,         NULL
+    /* Update Func */ .word gameplay_update_scene, NULL
+    /* End Func */    .word gameplay_stop_scene,   NULL
+    /* Beatscript */  .word script_ninja_reincarnate_entry
+endstruct
+
+struct scene_ninja_reincarnate      @ struct Scene
+    /* Init Func */   .word func_0801d86c, subscene_ninja_reincarnate
+    /* Update Func */ .word func_0801d8d8, NULL
+    /* End Func */    .word NULL,          NULL
+    /* Memory */      .hword 0x5bc
+endstruct
+
 
 .section .script.prologue
 @ Ninja Reincarnate - Prologue
 
-glabel script_ninja_reincarnate_prologue
+script script_ninja_reincarnate_prologue
     set_game_fade_in_time 8
     load_game ninja_reincarnate_engine, 0
     run stop_all_soundplayers, 0

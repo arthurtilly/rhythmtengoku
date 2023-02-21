@@ -10,7 +10,7 @@ load_drum_studio_labels
 
 
 @ Dialogue
-glabel D_08063e10
+script D_08063e10
 .ascii "よくきいてマネしてね。\n"
 .ascii "好きなタイミングでどうぞ。\n"
 .ascii "演奏を止めると、\n"
@@ -19,7 +19,7 @@ glabel D_08063e10
 
 
 @ Pattern
-glabel D_08063e68
+script D_08063e68
     spawn_cue CUE_SNARE_L
     rest 6
     rest 6
@@ -68,7 +68,7 @@ return
 
 
 @ Pattern Start
-glabel D_08064084
+script D_08064084
     spawn_cue CUE_KICK_R
     rest 6
     rest 6
@@ -79,7 +79,7 @@ return
 
 
 @ Dialogue
-glabel D_080640d8
+script D_080640d8
 .ascii "\n"
 .ascii "スネアとシンバルで\n"
 .ascii "きっちり、まとめよう！\n"
@@ -88,7 +88,7 @@ glabel D_080640d8
 
 
 @ Pattern
-glabel D_08064114
+script D_08064114
     spawn_cue CUE_SNARE_L
     rest 6
     rest 6
@@ -138,7 +138,7 @@ return
 
 
 @ Pattern Start
-glabel D_0806433c
+script D_0806433c
     spawn_cue CUE_KICK_R
     spawn_cue CUE_CRASH
     rest 6
@@ -150,7 +150,7 @@ return
 
 
 @ Dialogue
-glabel D_0806439c
+script D_0806439c
 .ascii "\n"
 .ascii "１ヵ所だけ、スネアを\n"
 .ascii "タムにかえてみるヨ。\n"
@@ -159,7 +159,7 @@ glabel D_0806439c
 
 
 @ Pattern
-glabel D_080643d4
+script D_080643d4
     spawn_cue CUE_SNARE_L
     rest 6
     rest 6
@@ -209,7 +209,7 @@ return
 
 
 @ Dialogue
-glabel D_080645fc
+script D_080645fc
 .ascii "\n"
 .ascii "さいごにスネアをもう１つ！\n"
 .ascii "手順をよく考えてみてネ。\n"
@@ -218,7 +218,7 @@ glabel D_080645fc
 
 
 @ Pattern
-glabel D_08064640
+script D_08064640
     spawn_cue CUE_SNARE_L
     rest 6
     rest 6

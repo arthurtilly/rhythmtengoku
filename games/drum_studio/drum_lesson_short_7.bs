@@ -10,7 +10,7 @@ load_drum_studio_labels
 
 
 @ Dialogue
-glabel D_08060310
+script D_08060310
 .ascii "よくきいてマネしてね。\n"
 .ascii "好きなタイミングでどうぞ。\n"
 .ascii "演奏を止めると、\n"
@@ -19,7 +19,7 @@ glabel D_08060310
 
 
 @ Pattern
-glabel D_08060368
+script D_08060368
     spawn_cue CUE_SNARE_L
     rest 24
     rest 12
@@ -31,14 +31,14 @@ return
 
 
 @ Pattern Start
-glabel D_080603c8
+script D_080603c8
     spawn_cue CUE_KICK_R
     rest 21
 return
 
 
 @ Dialogue
-glabel D_080603ec
+script D_080603ec
 .ascii "\n"
 .ascii "１カ所、音がふえるヨ！\n"
 .ascii "わかるかな？\n"
@@ -47,7 +47,7 @@ glabel D_080603ec
 
 
 @ Pattern Start
-glabel D_08060424
+script D_08060424
     spawn_cue CUE_KICK_R
     spawn_cue CUE_CRASH
     rest 21
@@ -55,7 +55,7 @@ return
 
 
 @ Dialogue
-glabel D_08060454
+script D_08060454
 .ascii "\n"
 .ascii "さらに１カ所、\n"
 .ascii "音がふえるヨ！\n"
@@ -64,7 +64,7 @@ glabel D_08060454
 
 
 @ Pattern
-glabel D_08060484
+script D_08060484
     spawn_cue CUE_SNARE_L
     rest 24
     spawn_cue CUE_SNARE_L
@@ -77,7 +77,7 @@ return
 
 
 @ Dialogue
-glabel D_080604f0
+script D_080604f0
 .ascii "\n"
 .ascii "またまた１カ所、\n"
 .ascii "音がふえるヨ！\n"
@@ -86,7 +86,7 @@ glabel D_080604f0
 
 
 @ Pattern Start
-glabel D_08060520
+script D_08060520
     spawn_cue CUE_KICK_R
     spawn_cue CUE_CRASH
     rest 18
@@ -96,7 +96,7 @@ return
 
 
 @ Dialogue
-glabel D_08060568
+script D_08060568
 .ascii "\n"
 .ascii "そしてまたなんと！\n"
 .ascii "１カ所、音がふえるヨ！\n"
@@ -105,7 +105,7 @@ glabel D_08060568
 
 
 @ Pattern
-glabel D_080605a4
+script D_080605a4
     spawn_cue CUE_SNARE_L
     rest 6
     spawn_cue CUE_KICK_R
@@ -120,7 +120,7 @@ return
 
 
 @ Dialogue
-glabel D_08060628
+script D_08060628
 .ascii "\n"
 .ascii "これまたなんと！！\n"
 .ascii "１カ所、音がふえるヨ！\n"
@@ -129,7 +129,7 @@ glabel D_08060628
 
 
 @ Pattern
-glabel D_08060664
+script D_08060664
     spawn_cue CUE_SNARE_L
     rest 6
     spawn_cue CUE_KICK_R
@@ -146,7 +146,7 @@ return
 
 
 @ Dialogue
-glabel D_08060700
+script D_08060700
 .ascii "\n"
 .ascii "またまたなんと！！\n"
 .ascii "１カ所、音がふえるヨ！\n"
@@ -155,7 +155,7 @@ glabel D_08060700
 
 
 @ Pattern
-glabel D_0806073c
+script D_0806073c
     spawn_cue CUE_SNARE_L
     rest 6
     spawn_cue CUE_KICK_R
@@ -174,7 +174,7 @@ return
 
 
 @ Dialogue
-glabel D_080607f0
+script D_080607f0
 .ascii "これでさいご！！\n"
 .ascii "１カ所、音がふえるヨ！\n"
 .ascii "わかるかな？\n"
@@ -183,7 +183,7 @@ glabel D_080607f0
 
 
 @ Pattern
-glabel D_08060834
+script D_08060834
     spawn_cue CUE_SNARE_L
     rest 6
     spawn_cue CUE_KICK_R

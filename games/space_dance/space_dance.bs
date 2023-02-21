@@ -5,7 +5,7 @@
 .section .script.entry
 @ Space Dance - Script Entry Point
 
-glabel script_space_dance_entry
+script script_space_dance_entry
     set_tempo 124
     rest 24
     call script_space_dance_prologue
@@ -22,11 +22,29 @@ glabel script_space_dance_entry
     rest 24
 stop
 
+@ Space Dance - Scene Definitions
+@ These should not be edited!
+
+struct subscene_space_dance   @ struct SubScene
+    /* Init Func */   .word gameplay_start_scene,  NULL
+    /* Paused Func */ .word func_08016ffc,         NULL
+    /* Update Func */ .word gameplay_update_scene, NULL
+    /* End Func */    .word gameplay_stop_scene,   NULL
+    /* Beatscript */  .word script_space_dance_entry
+endstruct
+
+struct scene_space_dance      @ struct Scene
+    /* Init Func */   .word func_0801d86c, subscene_space_dance
+    /* Update Func */ .word func_0801d8d8, NULL
+    /* End Func */    .word NULL,          NULL
+    /* Memory */      .hword 0x5bc
+endstruct
+
 
 .section .script.prologue
 @ Space Dance - Prologue
 
-glabel script_space_dance_prologue
+script script_space_dance_prologue
     set_game_fade_in_time 8
     load_game space_dance_prologue_engine, 0
     run stop_all_soundplayers, 0

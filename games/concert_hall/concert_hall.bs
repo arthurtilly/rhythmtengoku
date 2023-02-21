@@ -5,7 +5,7 @@
 .section .script.entry
 @ Concert Hall - Script Entry Point
 
-glabel script_concert_hall_entry
+script script_concert_hall_entry
     set_tempo 124
     rest 24
     rest 24
@@ -20,5 +20,23 @@ glabel script_concert_hall_entry
     rest 24
     rest 24
 stop
+
+@ Concert Hall - Scene Definitions
+@ These should not be edited!
+
+struct subscene_concert_hall   @ struct SubScene
+    /* Init Func */   .word gameplay_start_scene,  NULL
+    /* Paused Func */ .word func_08016ffc,         NULL
+    /* Update Func */ .word gameplay_update_scene, NULL
+    /* End Func */    .word gameplay_stop_scene,   NULL
+    /* Beatscript */  .word script_concert_hall_entry
+endstruct
+
+struct scene_concert_hall      @ struct Scene
+    /* Init Func */   .word func_0801d86c, subscene_concert_hall
+    /* Update Func */ .word func_0801d8d8, NULL
+    /* End Func */    .word NULL,          NULL
+    /* Memory */      .hword 0x5bc
+endstruct
 
 .end

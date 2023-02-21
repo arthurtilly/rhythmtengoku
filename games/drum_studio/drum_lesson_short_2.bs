@@ -10,7 +10,7 @@ load_drum_studio_labels
 
 
 @ Dialogue
-glabel D_08061e24
+script D_08061e24
 .ascii "よくきいてマネしてね。\n"
 .ascii "好きなタイミングでどうぞ。\n"
 .ascii "演奏を止めると、\n"
@@ -19,7 +19,7 @@ glabel D_08061e24
 
 
 @ Pattern
-glabel D_08061e7c
+script D_08061e7c
     spawn_cue CUE_KICK_R
     rest 24
     spawn_cue CUE_KICK_R
@@ -30,14 +30,14 @@ return
 
 
 @ Pattern Start
-glabel D_08061ed0
+script D_08061ed0
     spawn_cue CUE_KICK_R
     rest 21
 return
 
 
 @ Dialogue
-glabel D_08061ef4
+script D_08061ef4
 .ascii "\n"
 .ascii "バスとスネアを\n"
 .ascii "交互にたたくヨ！\n"
@@ -46,7 +46,7 @@ glabel D_08061ef4
 
 
 @ Pattern
-glabel D_08061f24
+script D_08061f24
     spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_SNARE_L
@@ -63,7 +63,7 @@ return
 
 
 @ Pattern Start
-glabel D_08061fc0
+script D_08061fc0
     spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_SNARE_L
@@ -72,7 +72,7 @@ return
 
 
 @ Dialogue
-glabel D_08061ffc
+script D_08061ffc
 .ascii "\n"
 .ascii "バスドラムのタイミングを\n"
 .ascii "１カ所、ずらしてみるヨ。\n"
@@ -81,7 +81,7 @@ glabel D_08061ffc
 
 
 @ Pattern
-glabel D_0806203c
+script D_0806203c
     spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_SNARE_L
@@ -99,7 +99,7 @@ return
 
 
 @ Dialogue
-glabel D_080620e4
+script D_080620e4
 .ascii "\n"
 .ascii "こんどは１つ、\n"
 .ascii "音がふえるヨ！\n"
@@ -108,7 +108,7 @@ glabel D_080620e4
 
 
 @ Pattern
-glabel D_08062114
+script D_08062114
     spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_SNARE_L
@@ -128,7 +128,7 @@ return
 
 
 @ Dialogue
-glabel D_080621d4
+script D_080621d4
 .ascii "\n"
 .ascii "さらに１つ、\n"
 .ascii "音がふえるヨ！\n"
@@ -137,7 +137,7 @@ glabel D_080621d4
 
 
 @ Pattern
-glabel D_08062200
+script D_08062200
     spawn_cue CUE_KICK_R
     rest 6
     spawn_cue CUE_KICK_R

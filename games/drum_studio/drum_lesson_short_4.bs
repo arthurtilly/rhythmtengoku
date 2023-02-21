@@ -10,7 +10,7 @@ load_drum_studio_labels
 
 
 @ Dialogue
-glabel D_0805f560
+script D_0805f560
 .ascii "よくきいてマネしてね。\n"
 .ascii "好きなタイミングでどうぞ。\n"
 .ascii "演奏を止めると、\n"
@@ -19,7 +19,7 @@ glabel D_0805f560
 
 
 @ Pattern
-glabel D_0805f5b8
+script D_0805f5b8
     spawn_cue CUE_SNARE_L
     rest 24
     spawn_cue CUE_KICK_R
@@ -32,14 +32,14 @@ return
 
 
 @ Pattern Start
-glabel D_0805f624
+script D_0805f624
     spawn_cue CUE_KICK_R
     rest 21
 return
 
 
 @ Dialogue
-glabel D_0805f648
+script D_0805f648
 .ascii "\n"
 .ascii "１カ所、音がふえるヨ！\n"
 .asciz "わかるかな？\n"
@@ -47,7 +47,7 @@ glabel D_0805f648
 
 
 @ Pattern Start
-glabel D_0805f670
+script D_0805f670
     spawn_cue CUE_KICK_R
     rest 18
     spawn_cue CUE_KICK_R
@@ -55,7 +55,7 @@ glabel D_0805f670
 return
 
 @ Dialogue
-glabel D_0805f6ac
+script D_0805f6ac
 .ascii "さらに１つ、\n"
 .ascii "音がふえるヨ！\n"
 .ascii "わかるかな？\n"
@@ -64,7 +64,7 @@ glabel D_0805f6ac
 
 
 @ Pattern Start
-glabel D_0805f6ec
+script D_0805f6ec
     spawn_cue CUE_KICK_R
     rest 12
     spawn_cue CUE_HIHAT
@@ -75,7 +75,7 @@ return
 
 
 @ Dialogue
-glabel D_0805f740
+script D_0805f740
 .ascii "\n"
 .ascii "またまた１カ所、\n"
 .ascii "音がふえるヨ！\n"
@@ -84,7 +84,7 @@ glabel D_0805f740
 
 
 @ Pattern
-glabel D_0805f770
+script D_0805f770
     spawn_cue CUE_SNARE_L
     rest 24
     spawn_cue CUE_KICK_R
@@ -99,7 +99,7 @@ return
 
 
 @ Dialogue
-glabel D_0805f7f4
+script D_0805f7f4
 .ascii "そしてまたなんと！\n"
 .ascii "１カ所、音がふえるヨ！\n"
 .ascii "わかるかな？\n"
@@ -108,7 +108,7 @@ glabel D_0805f7f4
 
 
 @ Pattern
-glabel D_0805f840
+script D_0805f840
     spawn_cue CUE_SNARE_L
     rest 24
     spawn_cue CUE_KICK_R
@@ -125,7 +125,7 @@ return
 
 
 @ Dialogue
-glabel D_0805f8dc
+script D_0805f8dc
 .ascii "\n"
 .ascii "これまたなんと！！\n"
 .ascii "１カ所、音がふえるヨ！\n"
@@ -134,7 +134,7 @@ glabel D_0805f8dc
 
 
 @ Pattern
-glabel D_0805f918
+script D_0805f918
     spawn_cue CUE_SNARE_L
     rest 12
     spawn_cue CUE_SNARE_L
@@ -153,7 +153,7 @@ return
 
 
 @ Dialogue
-glabel D_0805f9cc
+script D_0805f9cc
 .ascii "\x8f\x5c字ボタンの上で\n"
 .ascii "たたいたパーツは\n"
 .ascii "ハイハットっていう\n"
@@ -162,7 +162,7 @@ glabel D_0805f9cc
 
 
 @ Dialogue
-glabel D_0805fa10
+script D_0805fa10
 .ascii "ドラムセットによって\n"
 .ascii "\x8f\x5c字ボタンの上は\n"
 .ascii "ハイハットだったり\n"
@@ -171,7 +171,7 @@ glabel D_0805fa10
 
 
 @ Dialogue
-glabel D_0805fa60
+script D_0805fa60
 .ascii "\n"
 .asciz "では、つぎ行きまーす！"
 .balign 4, 0
