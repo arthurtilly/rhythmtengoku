@@ -1790,6 +1790,8 @@ SECTIONS {
         build/games/wizards_waltz/wizards_waltz.bs.o(.script.prologue);
 
         build/bin/bindata_089edf48.bin.o(.rodata*);
+        build/games/bon_odori/bon_odori.bs.o(.script.main);
+        build/bin/bindata_08a48ad0.bin.o(.rodata*);
 
         build/audio/audio_data.c.o(.data);
         build/bin/bindata_08a9e8e0.bin.o(.rodata*);

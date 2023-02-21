@@ -21,51 +21,51 @@ const char D_08067754[] = "さいごに　ちゃんと　シメてたね！";
 
 const char D_08067778[] = "まわりの評判";
 
-const char D_08067788[] = ".0:0" "ハァ" SHIFT_JIS_WAVE_DASH;
+const char text_bon_odori_ha[] = ".0:0" "ハァ" SHIFT_JIS_WAVE_DASH;
 
-const char D_08067794[] = ".0:0" "はなび　あがれば" SHIFT_JIS_WAVE_DASH;
+const char text_bon_odori_hanabi_agare_ba[] = ".0:0" "はなび　あがれば" SHIFT_JIS_WAVE_DASH;
 
-const char D_080677ac[] = ".1:0" "ど" ":1" "ーん　" ".1:0" "ど" ":1" "ーん　" ".2:0" "ぱ" ".2:1" "ーん　" ".2:0" "ぱ" ".2:1" "ーん";
+const char text_bon_odori_don_don_pan_pan[] = ".1:0" "ど" ":1" "ーん　" ".1:0" "ど" ":1" "ーん　" ".2:0" "ぱ" ".2:1" "ーん　" ".2:0" "ぱ" ".2:1" "ーん";
 
-const char D_080677e8[] = ".1:0" "ど" ":1" "んど　" ".2:0" "ぱ" ".2:1" "ーん　" ".2:0" "ぱ" ".2:1" "ん";
+const char text_bon_odori_dondo_pan_pan[] = ".1:0" "ど" ":1" "んど　" ".2:0" "ぱ" ".2:1" "ーん　" ".2:0" "ぱ" ".2:1" "ん";
 
-const char D_08067814[] = ".0:0" "ハァ" SHIFT_JIS_WAVE_DASH "　ア" SHIFT_JIS_WAVE_DASH;
+const char text_bon_odori_haa[] = ".0:0" "ハァ" SHIFT_JIS_WAVE_DASH "　ア" SHIFT_JIS_WAVE_DASH;
 
-const char D_08067828[] = ".0:0" "かんせい　あがる" SHIFT_JIS_WAVE_DASH;
+const char text_bon_odori_kansei_agaru[] = ".0:0" "かんせい　あがる" SHIFT_JIS_WAVE_DASH;
 
-const char D_08067840[] = ".0:0" "にんき　あがれば" SHIFT_JIS_WAVE_DASH;
+const char text_bon_odori_ninki_agare_ba[] = ".0:0" "にんき　あがれば" SHIFT_JIS_WAVE_DASH;
 
-const char D_08067858[] = ".0:0" "きゅうりょう　あがる" SHIFT_JIS_WAVE_DASH;
+const char text_bon_odori_kyuryo_agaru[] = ".0:0" "きゅうりょう　あがる" SHIFT_JIS_WAVE_DASH;
 
-const char D_08067874[] = ".0:0" "まつりだ　わっしょい！";
+const char text_bon_odori_matsuri_da_wasshoi[] = ".0:0" "まつりだ　わっしょい！";
 
-const char D_08067890[] = ".1:0" "ど" ":1" "んど　" ".2:0" "ぱ" ".2:1" "ん" ".2:0" "ぱ　" ".1:0" "ど" ":1" "んど　" ".2:0" "ぱ" ".2:1" "ん" ".2:0" "ぱ";
+const char text_bon_odori_dondo_panpa_dondo_panpa[] = ".1:0" "ど" ":1" "んど　" ".2:0" "ぱ" ".2:1" "ん" ".2:0" "ぱ　" ".1:0" "ど" ":1" "んど　" ".2:0" "ぱ" ".2:1" "ん" ".2:0" "ぱ";
 
-const char D_080678d4[] = ".0:0" "にっぽんじゅうが　わっしょい！";
+const char text_bon_odori_nippon_chu_ga_wasshoi[] = ".0:0" "にっぽんじゅうが　わっしょい！";
 
-const char D_080678f8[] = ".1:0" "ど" ":1" "ーん　" ".1:0" "ど" ":1" "ーん　" ".2:0" "ぱ" ".2:1" "ん";
+const char text_bon_odori_don_don_pan[] = ".1:0" "ど" ":1" "ーん　" ".1:0" "ど" ":1" "ーん　" ".2:0" "ぱ" ".2:1" "ん";
 
-const char D_08067924[] = ".0:0" SHIFT_JIS_KATAKANA_SO "レ　ひっくり　かえって";
+const char text_bon_odori_sore_hikkuri_kaette[] = ".0:0" SHIFT_JIS_KATAKANA_SO "レ　ひっくり　かえって";
 
-const char D_08067944[] = ".0:0" "ハァ" SHIFT_JIS_WAVE_DASH "　ぼんおどり";
+const char text_bon_odori_ha_bon_odori[] = ".0:0" "ハァ" SHIFT_JIS_WAVE_DASH "　ぼんおどり";
 
-const char D_0806795c[] = ".1:0" "ど" ":1" "んど　" ".2:0" "ぱ" ".2:1" "ん" ".2:0" "ぱ";
+const char text_bon_odori_dondo_panpa[] = ".1:0" "ど" ":1" "んど　" ".2:0" "ぱ" ".2:1" "ん" ".2:0" "ぱ";
 
-const char D_08067980[] = ".1:0" "ど" ":1" "ーん　" ".2:0" "ぱ" ".2:1" "ーん　" ".2:0" "ぱ" ".2:1" "ん";
+const char text_bon_odori_don_pan_pan[] = ".1:0" "ど" ":1" "ーん　" ".2:0" "ぱ" ".2:1" "ーん　" ".2:0" "ぱ" ".2:1" "ん";
 
-const char D_080679ac[] = ".0:0" "アメが　あがれば" SHIFT_JIS_WAVE_DASH;
+const char text_bon_odori_ame_ga_agare_ba[] = ".0:0" "アメが　あがれば" SHIFT_JIS_WAVE_DASH;
 
-const char D_080679c4[] = ".0:0" "やぐらに　あがる" SHIFT_JIS_WAVE_DASH;
+const char text_bon_odori_yagura_ni_agaru[] = ".0:0" "やぐらに　あがる" SHIFT_JIS_WAVE_DASH;
 
-const char D_080679dc[] = ".0:0" "ほら！　まつりだ　わっしょい！";
+const char text_bon_odori_hora_matsuri_da_wasshoi[] = ".0:0" "ほら！　まつりだ　わっしょい！";
 
-const char D_08067a00[] = ".0:0" "これぞ";
+const char text_bon_odori_korezo[] = ".0:0" "これぞ";
 
-const char D_08067a0c[] = ".0:0" "メイド　イン　ジャ" ".2" "パ" ":1" "ン";
+const char text_bon_odori_meido_in_japan[] = ".0:0" "メイド　イン　ジャ" ".2" "パ" ":1" "ン";
 
-const char D_08067a2c[] = ".2:0" "ぱ" ".2:1" "ん　" ".2:0" "ぱ" ".2:1" "ん";
+const char text_bon_odori_pan_pan[] = ".2:0" "ぱ" ".2:1" "ん　" ".2:0" "ぱ" ".2:1" "ん";
 
-const char D_08067a48[] = ".1:0" "ど" ":1" "ーん　" ".1:0" "ど" ":1" "ーん　" ".2:0" "ぱ" ".2:1" "ーん　" ".2:0" "ぱ" ".2:1" "ん";
+const char text_bon_odori_don_don_pan_pan_2[] = ".1:0" "ど" ":1" "ーん　" ".1:0" "ど" ":1" "ーん　" ".2:0" "ぱ" ".2:1" "ーん　" ".2:0" "ぱ" ".2:1" "ん";
 
 const char D_08067a84[] = ".6:1" "ぼんおどり　しましょう！";
 
