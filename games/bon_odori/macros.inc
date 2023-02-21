@@ -72,6 +72,10 @@
     bon_odori_event 0x01, \text
 .endm
 
+.macro bon_odori_lyrics_clear_line
+    bon_odori_lyrics_print_center NULL
+.endm
+
 @ [Event 0x02] Print Lyrics (Left)
 .macro bon_odori_lyrics_print_left text
     bon_odori_event 0x02, \text
@@ -128,7 +132,7 @@
 .endm
 
 @ [Event 0x0D] Play Animation for All Donpans
-.macro bon_odori_animate_donpans anim
+.macro bon_odori_animate_all anim
     bon_odori_event 0x0D, \anim
 .endm
 

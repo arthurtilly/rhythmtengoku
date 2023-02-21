@@ -1792,6 +1792,8 @@ SECTIONS {
         build/bin/bindata_089edf48.bin.o(.rodata*);
         build/games/bon_odori/bon_odori.bs.o(.script.main);
         build/bin/bindata_08a48ad0.bin.o(.rodata*);
+        build/games/bon_odori/bon_dance.bs.o(.script.main);
+        build/bin/bindata_08a6b13c.bin.o(.rodata*);
 
         build/audio/audio_data.c.o(.data);
         build/bin/bindata_08a9e8e0.bin.o(.rodata*);
