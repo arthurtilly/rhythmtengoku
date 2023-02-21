@@ -378,7 +378,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Rat Race
     {
-        /* scene */        &D_089d2c04,
+        /* scene */        &scene_rat_race,
         /* name */         text_rat_race_name,
         /* description */  text_rat_race_desc,
         /* unkC */         31,
@@ -390,7 +390,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Tram & Pauline
     {
-        /* scene */        &D_089d35fc,
+        /* scene */        &scene_tram_pauline,
         /* name */         text_tram_pauline_name,
         /* description */  text_tram_pauline_desc,
         /* unkC */         32,
@@ -402,7 +402,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Showtime
     {
-        /* scene */        &D_089d3c48,
+        /* scene */        &scene_showtime,
         /* name */         text_showtime_name,
         /* description */  text_showtime_desc,
         /* unkC */         36,
@@ -414,7 +414,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Space Dance
     {
-        /* scene */        &D_089d3e18,
+        /* scene */        &scene_space_dance,
         /* name */         text_space_dance_name,
         /* description */  text_space_dance_desc,
         /* unkC */         40,
@@ -426,7 +426,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Cosmic Dance
     {
-        /* scene */        &D_089d68f8,
+        /* scene */        &scene_cosmic_dance,
         /* name */         text_cosmic_dance_name,
         /* description */  text_cosmic_dance_desc,
         /* unkC */         16,
@@ -438,7 +438,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Rap Men
     {
-        /* scene */        &D_089d40d0,
+        /* scene */        &scene_rap_men,
         /* name */         text_rap_men_name,
         /* description */  text_rap_men_desc,
         /* unkC */         42,
@@ -450,7 +450,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Rap Women
     {
-        /* scene */        &D_089d6440,
+        /* scene */        &scene_rap_women,
         /* name */         text_rap_women_name,
         /* description */  text_rap_women_desc,
         /* unkC */         15,
@@ -462,7 +462,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Quiz Show
     {
-        /* scene */        &D_089d42a0,
+        /* scene */        &scene_quiz_show,
         /* name */         text_quiz_show_name,
         /* description */  text_quiz_show_desc,
         /* unkC */         43,
@@ -474,7 +474,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // The Bon Odori
     {
-        /* scene */        &D_089d6088,
+        /* scene */        &scene_bon_odori,
         /* name */         text_bon_odori_name,
         /* description */  text_bon_odori_desc,
         /* unkC */         35,
@@ -486,7 +486,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // The Bon Dance
     {
-        /* scene */        &D_089d7314,
+        /* scene */        &scene_bon_dance,
         /* name */         text_bon_dance_name,
         /* description */  text_bon_dance_desc,
         /* unkC */         17,
@@ -498,7 +498,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Remix 1
     {
-        /* scene */        &D_089d2764,
+        /* scene */        &scene_remix_1,
         /* name */         text_remix_1_name,
         /* description */  text_remix_desc,
         /* unkC */         22,
@@ -510,7 +510,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Remix 2
     {
-        /* scene */        &D_089d6628,
+        /* scene */        &scene_remix_2,
         /* name */         text_remix_2_name,
         /* description */  text_remix_desc,
         /* unkC */         27,
@@ -522,7 +522,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Remix 3
     {
-        /* scene */        &D_089d7038,
+        /* scene */        &scene_remix_3,
         /* name */         text_remix_3_name,
         /* description */  text_remix_desc,
         /* unkC */         33,
@@ -534,7 +534,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Remix 4
     {
-        /* scene */        &D_089d671c,
+        /* scene */        &scene_remix_4,
         /* name */         text_remix_4_name,
         /* description */  text_remix_desc,
         /* unkC */         34,
@@ -546,7 +546,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Remix 5
     {
-        /* scene */        &D_089d7220,
+        /* scene */        &scene_remix_5,
         /* name */         text_remix_5_name,
         /* description */  text_remix_desc,
         /* unkC */         39,
@@ -558,7 +558,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Remix 6
     {
-        /* scene */        &D_089d7408,
+        /* scene */        &scene_remix_6,
         /* name */         text_remix_6_name,
         /* description */  text_remix_desc,
         /* unkC */         2,
@@ -570,7 +570,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Remix 7
     {
-        /* scene */        &D_089d712c,
+        /* scene */        &scene_remix_7,
         /* name */         text_remix_7_name,
         /* description */  text_remix_desc,
         /* unkC */         19,
@@ -582,7 +582,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Remix 8
     {
-        /* scene */        &D_089d74fc,
+        /* scene */        &scene_remix_8,
         /* name */         text_remix_8_name,
         /* description */  text_remix_desc,
         /* unkC */         37,
@@ -642,7 +642,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Staff Credit
     {
-        /* scene */        &D_089d6e5c,
+        /* scene */        &scene_staff_credit,
         /* name */         text_credits_name,
         /* description */  text_credits_desc,
         /* unkC */         49,
@@ -654,7 +654,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Concert Hall Menu
     {
-        /* scene */        &D_089d6f44,
+        /* scene */        &scene_concert_hall,
         /* name */         text_concert_hall_name,
         /* description */  text_concert_hall_desc,
         /* unkC */         44,

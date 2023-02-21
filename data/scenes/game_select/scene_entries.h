@@ -96,58 +96,58 @@ extern const u32 *D_089ce20c[];
 extern struct Scene scene_toss_boys_2;
 extern const u32 *D_089ce218[];
 
-extern struct Scene D_089d2c04;
+extern struct Scene scene_rat_race;
 extern const u32 *D_089ce224[];
 
-extern struct Scene D_089d35fc;
+extern struct Scene scene_tram_pauline;
 extern const u32 *D_089ce230[];
 
-extern struct Scene D_089d3c48;
+extern struct Scene scene_showtime;
 extern const u32 *D_089ce23c[];
 
-extern struct Scene D_089d3e18;
+extern struct Scene scene_space_dance;
 extern const u32 *D_089ce248[];
 
-extern struct Scene D_089d68f8;
+extern struct Scene scene_cosmic_dance;
 extern const u32 *D_089ce254[];
 
-extern struct Scene D_089d40d0;
+extern struct Scene scene_rap_men;
 extern const u32 *D_089ce260[];
 
-extern struct Scene D_089d6440;
+extern struct Scene scene_rap_women;
 extern const u32 *D_089ce26c[];
 
-extern struct Scene D_089d42a0;
+extern struct Scene scene_quiz_show;
 extern const u32 *D_089ce278[];
 
-extern struct Scene D_089d6088;
+extern struct Scene scene_bon_odori;
 extern const u32 *D_089ce284[];
 
-extern struct Scene D_089d7314;
+extern struct Scene scene_bon_dance;
 extern const u32 *D_089ce290[];
 
-extern struct Scene D_089d2764;
+extern struct Scene scene_remix_1;
 extern const u32 *D_089ce29c[];
 
-extern struct Scene D_089d6628;
+extern struct Scene scene_remix_2;
 extern const u32 *D_089ce2a8[];
 
-extern struct Scene D_089d7038;
+extern struct Scene scene_remix_3;
 extern const u32 *D_089ce2b4[];
 
-extern struct Scene D_089d671c;
+extern struct Scene scene_remix_4;
 extern const u32 *D_089ce2c0[];
 
-extern struct Scene D_089d7220;
+extern struct Scene scene_remix_5;
 extern const u32 *D_089ce2cc[];
 
-extern struct Scene D_089d7408;
+extern struct Scene scene_remix_6;
 extern const u32 *D_089ce2d8[];
 
-extern struct Scene D_089d712c;
+extern struct Scene scene_remix_7;
 extern const u32 *D_089ce2e4[];
 
-extern struct Scene D_089d74fc;
+extern struct Scene scene_remix_8;
 extern const u32 *D_089ce2f0[];
 
 extern struct Scene D_089cda0c;
@@ -162,8 +162,8 @@ extern const u32 *D_089ce314[];
 extern struct Scene D_089dd8ec;
 extern const u32 *D_089ce320[];
 
-extern struct Scene D_089d6e5c;
+extern struct Scene scene_staff_credit;
 extern const u32 *D_089ce32c[];
 
-extern struct Scene D_089d6f44;
+extern struct Scene scene_concert_hall;
 extern const u32 *D_089ce338[];
