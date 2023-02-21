@@ -2,7 +2,7 @@
 #include "text.h"
 
 
-/* Game Text - Bon Dance */
+/* Game Text - The Bon Dance */
 
 
 const char D_0806a384[] = "‘O”¼‚ª@‚¢‚Ü‚Ğ‚Æ‚Â‚¾‚Á‚½‚È‚ŸB";

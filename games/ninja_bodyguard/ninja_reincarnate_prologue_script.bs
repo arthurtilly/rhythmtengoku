@@ -4,7 +4,7 @@
 
 
 @ Prologue (Ninja Reincarnate) - Script
-glabel D_089ed334
+glabel script_ninja_reincarnate_prologue
     set_game_fade_in_time 8
     load_game ninja_reincarnate_engine, 0
     run stop_all_soundplayers, 0

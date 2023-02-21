@@ -32,7 +32,7 @@
 
 
 @ Load Game: Rhythm Tweezers (First Vegetable: Onion)
-.macro load_rhythm_tweezers_onion
+.macro load_rhythm_tweezers
     load_rhythm_tweezers_labels
     load_game rhythm_tweezers_engine, 0
 .endm
@@ -50,7 +50,7 @@
 .endm
 
 @ Load Game: Rhythm Tweezers 2 (First Vegetable: Onion)
-.macro load_rhythm_tweezers_2_onion
+.macro load_rhythm_tweezers_2
     load_rhythm_tweezers_labels
     load_game rhythm_tweezers_engine, 3
 .endm

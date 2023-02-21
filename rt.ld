@@ -196,8 +196,8 @@ SECTIONS {
 		build/src/engines/wizards_waltz.c.o(.text);
 		build/src/prologues/sneaky_spirits.c.o(.text);
 		build/src/prologues/spaceball.c.o(.text);
-		build/src/prologues/bon_odori.c.o(.text);
 		build/src/prologues/bon_dance.c.o(.text);
+		build/src/prologues/bon_odori.c.o(.text);
 		build/src/prologues/karate_man.c.o(.text);
 		build/src/prologues/cosmic_dance.c.o(.text);
 		build/src/prologues/night_walk.c.o(.text);
@@ -1760,10 +1760,10 @@ SECTIONS {
         build/games/sneaky_spirits/sneaky_spirits_prologue_script.bs.o(.rodata);
         build/games/spaceball/spaceball_prologue_engine.c.o(.data);
         build/games/spaceball/spaceball_prologue_script.bs.o(.rodata);
-        build/games/bon_odori/bon_odori_prologue_engine.c.o(.data);
-        build/games/bon_odori/bon_odori_prologue_script.bs.o(.rodata);
         build/games/bon_odori/bon_dance_prologue_engine.c.o(.data);
         build/games/bon_odori/bon_dance_prologue_script.bs.o(.rodata);
+        build/games/bon_odori/bon_odori_prologue_engine.c.o(.data);
+        build/games/bon_odori/bon_odori_prologue_script.bs.o(.rodata);
         build/games/karate_man/karate_man_prologue_engine.c.o(.data);
         build/games/karate_man/karate_man_prologue_script.bs.o(.rodata);
         build/games/space_dance/cosmic_dance_prologue_engine.c.o(.data);

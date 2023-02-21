@@ -4,7 +4,7 @@
 
 
 @ Prologue (Samurai Slice) - Script
-glabel D_089eb3f8
+glabel script_samurai_slice_prologue
     set_game_fade_in_time 8
     load_game samurai_slice_prologue_engine, 0
     run stop_all_soundplayers, 0

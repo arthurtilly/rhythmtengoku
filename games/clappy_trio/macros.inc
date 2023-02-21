@@ -26,10 +26,22 @@
     load_game clappy_trio_engine, 0
 .endm
 
+@ Load Game: The Clappy Trio (4 Members)
+.macro load_clappy_quartet
+    load_clappy_trio_labels
+    load_game clappy_trio_engine, 1
+.endm
+
 @ Load Game: The Snappy Trio
 .macro load_snappy_trio
     load_clappy_trio_labels
-    load_game clappy_trio_engine, 1
+    load_game clappy_trio_engine, 4
+.endm
+
+@ Load Game: The Snappy Trio (4 Members)
+.macro load_snappy_quartet
+    load_clappy_trio_labels
+    load_game clappy_trio_engine, 5
 .endm
 
 
