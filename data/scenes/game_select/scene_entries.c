@@ -42,7 +42,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // The Snappy Trio
     {
-        /* scene */        &D_089d634c,
+        /* scene */        &scene_snappy_trio,
         /* name */         text_snappy_trio_name,
         /* description */  text_snappy_trio_desc,
         /* unkC */         10,
@@ -54,7 +54,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Polyrhythm
     {
-        /* scene */        &D_089d0358,
+        /* scene */        &scene_polyrhythm,
         /* name */         text_polyrhythm_name,
         /* description */  text_polyrhythm_desc,
         /* unkC */         3,
@@ -66,7 +66,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Polyrhythm 2
     {
-        /* scene */        &D_089d044c,
+        /* scene */        &scene_polyrhythm_2,
         /* name */         text_polyrhythm_2_name,
         /* description */  text_polyrhythm_2_desc,
         /* unkC */         51,
@@ -78,7 +78,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Night Walk
     {
-        /* scene */        &D_089d0540,
+        /* scene */        &scene_night_walk,
         /* name */         text_night_walk_name,
         /* description */  text_night_walk_desc,
         /* unkC */         7,
@@ -90,7 +90,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Night Walk 2
     {
-        /* scene */        &D_089d0634,
+        /* scene */        &scene_night_walk_2,
         /* name */         text_night_walk_2_name,
         /* description */  text_night_walk_2_desc,
         /* unkC */         41,
@@ -102,7 +102,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Rhythm Tweezers
     {
-        /* scene */        &D_089d081c,
+        /* scene */        &scene_rhythm_tweezers,
         /* name */         text_rhythm_tweezers_name,
         /* description */  text_rhythm_tweezers_desc,
         /* unkC */         14,
@@ -114,7 +114,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Rhythm Tweezers 2
     {
-        /* scene */        &D_089d09ec,
+        /* scene */        &scene_rhythm_tweezers_2,
         /* name */         text_rhythm_tweezers_2_name,
         /* description */  text_rhythm_tweezers_2_desc,
         /* unkC */         25,
@@ -126,7 +126,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Sick Beats
     {
-        /* scene */        &D_089d0ae0,
+        /* scene */        &scene_sick_beats,
         /* name */         text_sick_beats_name,
         /* description */  text_sick_beats_desc,
         /* unkC */         13,
@@ -138,7 +138,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Bouncy Road
     {
-        /* scene */        &D_089d0da4,
+        /* scene */        &scene_bouncy_road,
         /* name */         text_bouncy_road_name,
         /* description */  text_bouncy_road_desc,
         /* unkC */         12,
@@ -150,7 +150,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Bouncy Road 2
     {
-        /* scene */        &D_089d0f74,
+        /* scene */        &scene_bouncy_road_2,
         /* name */         text_bouncy_road_2_name,
         /* description */  text_bouncy_road_2_desc,
         /* unkC */         50,
@@ -162,7 +162,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Ninja Bodyguard
     {
-        /* scene */        &D_089d1068,
+        /* scene */        &scene_ninja_bodyguard,
         /* name */         text_ninja_bodyguard_name,
         /* description */  text_ninja_bodyguard_desc,
         /* unkC */         5,
@@ -174,7 +174,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Ninja Reincarnate
     {
-        /* scene */        &D_089d1238,
+        /* scene */        &scene_ninja_reincarnate,
         /* name */         text_ninja_reincarnate_name,
         /* description */  text_ninja_reincarnate_desc,
         /* unkC */         38,
@@ -186,7 +186,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Sneaky Spirits
     {
-        /* scene */        &D_089d132c,
+        /* scene */        &scene_sneaky_spirits,
         /* name */         text_sneaky_spirits_name,
         /* description */  text_sneaky_spirits_desc,
         /* unkC */         1,
@@ -198,7 +198,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Sneaky Spirits 2
     {
-        /* scene */        &D_089d14fc,
+        /* scene */        &scene_sneaky_spirits_2,
         /* name */         text_sneaky_spirits_2_name,
         /* description */  text_sneaky_spirits_2_desc,
         /* unkC */         53,
@@ -210,7 +210,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Samurai Slice
     {
-        /* scene */        &D_089d15f0,
+        /* scene */        &scene_samurai_slice,
         /* name */         text_samurai_slice_name,
         /* description */  text_samurai_slice_desc,
         /* unkC */         18,
@@ -222,7 +222,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Spaceball
     {
-        /* scene */        &D_089d18cc,
+        /* scene */        &scene_spaceball,
         /* name */         text_spaceball_name,
         /* description */  text_spaceball_desc,
         /* unkC */         9,
@@ -234,7 +234,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Spaceball 2
     {
-        /* scene */        &D_089d19c0,
+        /* scene */        &scene_spaceball_2,
         /* name */         text_spaceball_2_name,
         /* description */  text_spaceball_2_desc,
         /* unkC */         52,
@@ -246,7 +246,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Tap Trial
     {
-        /* scene */        &D_089d1c6c,
+        /* scene */        &scene_tap_trial,
         /* name */         text_tap_trial_name,
         /* description */  text_tap_trial_desc,
         /* unkC */         6,
@@ -258,7 +258,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Tap Trial 2
     {
-        /* scene */        &D_089d6258,
+        /* scene */        &scene_tap_trial_2,
         /* name */         text_tap_trial_2_name,
         /* description */  text_tap_trial_2_desc,
         /* unkC */         11,
@@ -270,7 +270,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Marching Orders
     {
-        /* scene */        &D_089d21dc,
+        /* scene */        &scene_marching_orders,
         /* name */         text_marching_orders_name,
         /* description */  text_marching_orders_desc,
         /* unkC */         21,
@@ -282,7 +282,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Marching Orders 2
     {
-        /* scene */        &D_089d23ac,
+        /* scene */        &scene_marching_orders_2,
         /* name */         text_marching_orders_2_name,
         /* description */  text_marching_orders_2_desc,
         /* unkC */         20,
@@ -294,7 +294,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Wizard's Waltz
     {
-        /* scene */        &D_089d24a0,
+        /* scene */        &scene_wizards_waltz,
         /* name */         text_wizards_waltz_name,
         /* description */  text_wizards_waltz_desc,
         /* unkC */         23,
@@ -306,7 +306,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Bunny Hop
     {
-        /* scene */        &D_089d2858,
+        /* scene */        &scene_bunny_hop,
         /* name */         text_bunny_hop_name,
         /* description */  text_bunny_hop_desc,
         /* unkC */         24,
@@ -318,7 +318,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Fireworks
     {
-        /* scene */        &D_089d2a34,
+        /* scene */        &scene_fireworks,
         /* name */         text_fireworks_name,
         /* description */  text_fireworks_desc,
         /* unkC */         26,
@@ -330,7 +330,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Power Calligraphy
     {
-        /* scene */        &D_089d2dd4,
+        /* scene */        &scene_power_calligraphy,
         /* name */         text_power_calligraphy_name,
         /* description */  text_power_calligraphy_desc,
         /* unkC */         28,
@@ -342,7 +342,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Power Calligraphy 2 (unused)
     {
-        /* scene */        &D_089d2dd4,
+        /* scene */        &scene_power_calligraphy,
         /* name */         text_power_calligraphy_2_name,
         /* description */  text_power_calligraphy_desc,
         /* unkC */         28,
@@ -354,7 +354,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Toss Boys
     {
-        /* scene */        &D_089d3268,
+        /* scene */        &scene_toss_boys,
         /* name */         text_toss_boys_name,
         /* description */  text_toss_boys_desc,
         /* unkC */         30,
@@ -366,7 +366,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Toss Boys 2
     {
-        /* scene */        &D_089d3174,
+        /* scene */        &scene_toss_boys_2,
         /* name */         text_toss_boys_2_name,
         /* description */  text_toss_boys_desc,
         /* unkC */         29,
