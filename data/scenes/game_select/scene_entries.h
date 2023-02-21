@@ -6,10 +6,10 @@
 extern struct Scene scene_karate_man;
 extern const u32 *D_089ce0b0[];
 
-extern struct Scene D_089d0728;
+extern struct Scene scene_karate_man_2;
 extern const u32 *D_089ce0bc[];
 
-extern struct Scene D_089d0188;
+extern struct Scene scene_clappy_trio;
 extern const u32 *D_089ce0c8[];
 
 extern struct Scene D_089d634c;

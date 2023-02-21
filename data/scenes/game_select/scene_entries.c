@@ -18,7 +18,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // Karate Man 2
     {
-        /* scene */        &D_089d0728,
+        /* scene */        &scene_karate_man_2,
         /* name */         text_karate_man_2_name,
         /* description */  text_karate_man_2_desc,
         /* unkC */         0,
@@ -30,7 +30,7 @@ const struct GameSelectSceneEntry D_089ce344[] = {
     },
     // The Clappy Trio
     {
-        /* scene */        &D_089d0188,
+        /* scene */        &scene_clappy_trio,
         /* name */         text_clappy_trio_name,
         /* description */  text_clappy_trio_desc,
         /* unkC */         4,
