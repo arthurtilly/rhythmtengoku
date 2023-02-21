@@ -1,0 +1,60 @@
+.include "include/beatscript.inc"
+.include "games/toss_boys/macros.inc"
+
+
+.section .script.entry
+@ Toss Boys 2 - Script Entry Point
+
+glabel script_toss_boys_2_entry
+    set_tempo 124
+    rest 24
+    call script_toss_boys_2_prologue
+    set_game_fade_in_time 16
+    load_toss_boys_2
+    enable_play_inputs 1
+    assess_inputs 1
+    call D_08a21e08
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+
+.section .script.prologue
+@ Toss Boys 2 - Prologue
+
+glabel script_toss_boys_2_prologue
+    set_game_fade_in_time 8
+    load_game toss_boys_2_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    play_sfx s_jingle_toss_seqData
+    rest 24
+    rest 24
+    run func_08047aac, 1
+    rest 6
+    run func_08047aac, 2
+    rest 6
+    run func_08047aac, 3
+    rest 6
+    run func_08047aac, 4
+    rest 6
+    run func_08047aac, 5
+    rest 6
+    run func_08047aac, 6
+    rest 6
+    rest 6
+    rest 12
+    rest 6
+    rest 6
+    rest 24
+    rest 24
+    rest 12
+    run func_08006d80, 0
+    rest 24
+    set_game_fade_in_time 16
+return
+
+.end
