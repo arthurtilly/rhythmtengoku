@@ -30,24 +30,24 @@ struct Beatscript {
 
 // Game Run Data
 struct Scene {
-	void (*initFunc)(void *);
+	void (*initFunc)();
 	void *initParam;
-	u32 (*loopFunc)(void *);
+	u32 (*loopFunc)();
 	void *loopParam;
-	void (*endFunc)(void *);
+	void (*endFunc)();
 	void *endParam;
 	u16 requiredMemory;
 };
 
 // Scene Run Data
 struct SubScene {
-	void (*initFunc)(void *, void *);
+	void (*initFunc)();
 	void *initParam;
-	void (*unkFunc)(void *, void *);
+	void (*unkFunc)();
     void *unkParam;
-	void (*loopFunc)(void *, void *);
+	void (*loopFunc)();
 	void *loopParam;
-	void (*endFunc)(void *, void *);
+	void (*endFunc)();
 	void *endParam;
     const struct Beatscript *script;
 };

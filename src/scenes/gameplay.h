@@ -108,9 +108,9 @@ extern struct SoundPlayer *gameplay_play_sound_in_player_w_pitch_volume(u32 play
 // Functions - Scene:
 extern void gameplay_init_scene_static_var(void); // [func_08016e94] Initialise Static Variables
 extern void gameplay_init_gfx1(void); // [func_08016ea4] Graphics Init. 1
-extern void gameplay_start_scene(s32 unused); // [func_08016ec4] Scene Start
-extern void func_08016ffc(s32 unused); // [func_08016ffc] Scene Update Frozen
-extern void gameplay_update_scene(s32 unused); // [func_08017000] Scene Update
+extern void gameplay_start_scene(void); // [func_08016ec4] Scene Start
+extern void func_08016ffc(void); // [func_08016ffc] Scene Update Frozen
+extern void gameplay_update_scene(void); // [func_08017000] Scene Update
 extern u32  gameplay_inputs_are_enabled(void); // [func_0801714c] Check if Play Inputs are Enabled
 extern void gameplay_clear_palette_buffer(Palette buffer); // [func_08017168] Clear Secondary Palette Buffer (loaded to D_03004b10.unk858)
 extern void gameplay_set_current_engine(const struct GameEngine *engine, u32 version); // [func_08017188] Load New Engine
@@ -150,7 +150,7 @@ extern s32  gameplay_get_inter_engine_variable(u32 i); // [func_0801777c] Get In
 extern void gameplay_prevent_dpad_overlap(u32 preventOverlap); // [func_080177a4] Set D-Pad Input Overlap Handling
 extern void gameplay_enable_mercy(u32 enable); // [func_080177c8] Enable Mercy
 extern void gameplay_set_mercy_count(u32 total); // [func_080177dc] Set Total Forgivable Misses
-extern void gameplay_stop_scene(s32 unused); // [func_080177f0] Scene Stop
+extern void gameplay_stop_scene(void); // [func_080177f0] Scene Stop
 
 // Functions - Cues:
 extern void gameplay_reset_cues(void); // [func_080178ac] Reset All Cue Data
