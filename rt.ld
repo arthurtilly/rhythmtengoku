@@ -1591,7 +1591,8 @@ SECTIONS {
         build/data/scenes/game_select/scene_entries.c.o(.rodata);
         build/bin/bindata_089cea24.bin.o(.rodata*);
         build/games/karate_man/script_karate_man.bs.o(.script.entry);
-        build/games/karate_man/scene_karate_man.c.o(.data);        build/bin/bindata_089cfeec.bin.o(.rodata*);
+        build/games/karate_man/scene_karate_man.c.o(.data);
+        build/bin/bindata_089cfeec.bin.o(.rodata*);
         build/bin/bindata_089d3984.bin.o(.rodata*);
 
         build/games/sneaky_spirits/engine.c.o(.data);
