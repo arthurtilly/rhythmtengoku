@@ -3,7 +3,7 @@
 #include "src/main.h"
 
 // Temporary
-extern struct Scene D_089cfed0;
+extern struct Scene scene_karate_man;
 extern const u32 *D_089ce0b0[];
 
 extern struct Scene D_089d0728;

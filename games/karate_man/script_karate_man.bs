@@ -1,4 +1,4 @@
-.include "include/beatscript_ext.inc"
+.include "include/beatscript.inc"
 
 
 .section .script.entry

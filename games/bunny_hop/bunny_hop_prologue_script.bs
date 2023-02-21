@@ -1,8 +1,6 @@
 .section .rodata
-.syntax unified
 
-.include "include/gba.inc"
-.include "include/beatscript_ext.inc"
+.include "include/beatscript.inc"
 
 
 @ Prologue (Bunny Hop) - Script

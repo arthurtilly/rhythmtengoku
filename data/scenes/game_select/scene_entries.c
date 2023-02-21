@@ -6,7 +6,7 @@
 const struct GameSelectSceneEntry D_089ce344[] = {
     // Karate Man 1
     {
-        /* scene */        &D_089cfed0,
+        /* scene */        &scene_karate_man,
         /* name */         text_karate_man_name,
         /* description */  text_karate_man_desc,
         /* unkC */         8,
