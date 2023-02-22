@@ -1790,6 +1790,10 @@ SECTIONS {
         build/games/wizards_waltz/wizards_waltz.bs.o(.script.prologue);
 
         build/bin/bindata_089edf48.bin.o(.rodata*);
+        build/games/bouncy_road/bouncy_road.bs.o(.script.main);
+        build/bin/bindata_089ff958.bin.o(.rodata*);
+        build/games/bouncy_road/bouncy_road_2.bs.o(.script.main);
+        build/bin/bindata_08a0007c.bin.o(.rodata*);
         build/games/bon_odori/bon_odori.bs.o(.script.main);
         build/bin/bindata_08a48ad0.bin.o(.rodata*);
         build/games/bon_odori/bon_dance.bs.o(.script.main);
