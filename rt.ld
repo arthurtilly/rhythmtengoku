@@ -1802,6 +1802,8 @@ SECTIONS {
         build/bin/bindata_08a48ad0.bin.o(.rodata*);
         build/games/clappy_trio/snappy_trio.bs.o(.script.main);
         build/bin/bindata_08a4b3ac.bin.o(.rodata*);
+        build/games/concert_hall/concert_hall.bs.o(.script.main);
+        build/bin/bindata_08a60600.bin.o(.rodata*);
         build/games/bon_odori/bon_dance.bs.o(.script.main);
         build/bin/bindata_08a6b13c.bin.o(.rodata*);
 
