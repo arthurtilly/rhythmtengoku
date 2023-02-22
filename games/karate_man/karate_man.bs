@@ -2,6 +2,7 @@
 .include "games/karate_man/macros.inc"
 
 
+
 .section .script.entry
 @ Karate Man - Script Entry Point
 
@@ -13,7 +14,7 @@ script script_karate_man_entry
     load_karate_man
     enable_play_inputs 1
     assess_inputs 1
-    call D_089ef230
+    call script_karate_man_practice
     enable_pause 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -39,6 +40,7 @@ struct scene_karate_man      @ struct Scene
     /* End Func */    .word NULL,          NULL
     /* Memory */      .hword 0x5bc
 endstruct
+
 
 
 .section .script.prologue
@@ -80,5 +82,535 @@ script script_karate_man_prologue
     rest 18
     set_game_fade_in_time 16
 return
+
+
+
+.section .script.main
+@ Karate Man - Main Script
+
+script karate_man_sub_089edf88
+    set_marking_criteria 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    karate_man_print_textbox D_0805abc4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    karate_man_print_textbox NULL
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    run gameplay_assess_irrelevant_inputs 1
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script karate_man_sub_089ee168
+    set_marking_criteria 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_ROCK
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script karate_man_sub_089ee57c
+    set_marking_criteria 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_SOCCER_BALL
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f 1
+    beat_anim
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_LIGHT_BULB
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_ROCK
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script karate_man_sub_089ee9cc
+    set_marking_criteria 0
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_SOCCER_BALL
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f 3
+    beat_anim
+    rest 24
+    print_text_f NULL
+    set_marking_criteria 1
+    spawn_cue CUE_LIGHT_BULB
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIGHT_BULB
+    beat_anim
+    rest 24
+    spawn_cue CUE_ROCK
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_ROCK
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f 2
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_LIGHT_BULB
+    beat_anim
+    rest 12
+    print_text_f NULL
+    rest 12
+    spawn_cue CUE_BOMB
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script script_karate_man_main
+    run func_08019310, D_0805abdc
+    start_perfect_campaign
+    run func_08019304, D_089edf78
+    forgive_x_misses 2
+    run gameplay_set_sound_tempo, 124
+    set_tempo 120
+    set_music_volume 150
+    play_music s_karate_bgm_seqData
+    assess_inputs 1
+    call karate_man_sub_089edf88
+    call karate_man_sub_089ee168
+    call karate_man_sub_089ee57c
+    call karate_man_sub_089ee9cc
+    set_tempo 150
+    set_music_volume 100
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    mod_music_volume 240, 120
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    rest 6
+    run gameplay_set_reverb, 40
+    rest 6
+    set_tempo 140
+    print_text_f 4
+    rest 24
+    rest 24
+    rest 24
+    print_text_f NULL
+    rest 24
+    run gameplay_set_reverb, 0
+    set_music_volume 150
+    play_music s_karate_fan_seqData
+    set_marking_criteria 2
+    rest 24
+    rest 24
+    spawn_cue CUE_ROCK
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    assess_perfect_inputs 0
+    beat_anim
+    rest 24
+    rest 24
+    enable_pause 0
+    rest 24
+return
+
+
+script script_karate_man_practice
+    set_tempo 124
+    set_music_volume 150
+    play_music s_renshu_bgm1_seqData
+    assess_inputs 0
+    karate_man_enable_flow 0
+    rest 24
+    enable_pause 1
+    rest 24
+    init_tutorial D_089cffac
+    karate_man_print_textbox D_0805abec
+    rest 12
+    karate_man_wait_at_textbox
+    karate_man_print_textbox NULL
+    rest 24
+    karate_man_print_textbox D_0805ac0c
+    rest 12
+    karate_man_wait_at_textbox
+    karate_man_print_textbox NULL
+    rest 24
+    karate_man_print_textbox D_0805ac60
+    rest 12
+    karate_man_wait_at_textbox
+    karate_man_print_textbox NULL
+    rest 24
+    mod_music_volume 0, 96
+    rest 24
+    rest 24
+    karate_man_start_tutorial_loop 3
+    rest 24
+    rest 24
+    run scene_stop_music 0
+    rest 24
+    loop_start
+        run beatscript_disable_loops 0
+        spawn_cue CUE_POT_STRICT
+        rest 24
+        rest 24
+        rest 24
+        rest 24
+        karate_man_exit_loop_if_all_hit 0
+    loop_end
+    karate_man_start_tutorial_loop 0
+    rest 48
+    karate_man_print_textbox D_0805aca0
+    rest 12
+    karate_man_wait_at_textbox
+    karate_man_print_textbox NULL
+    rest 24
+    karate_man_print_textbox D_0805acd8
+    rest 12
+    karate_man_wait_at_textbox
+    karate_man_print_textbox NULL
+    rest 24
+    karate_man_start_tutorial_loop 3
+    rest 24
+    rest 24
+    set_music_volume 150
+    set_tempo 134
+    loop_start
+        run beatscript_disable_loops 0
+        play_sfx s_intro_one_seqData
+        rest 24
+        play_sfx s_intro_two_seqData
+        rest 24
+        play_sfx s_intro_three_seqData
+        rest 12
+        .byte 0xb2, 0x96, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0xd8, 0xc3, 0xa9, 0x08
+        rest 12
+        rest 24
+        play_music s_karate_fan_seqData
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        spawn_cue CUE_POT
+        beat_anim
+        rest 24
+        rest 24
+        karate_man_exit_loop_if_all_hit 0
+    loop_end
+    rest 24
+    karate_man_start_tutorial_loop 0
+    rest 24
+    karate_man_print_textbox D_0805ad04
+    rest 12
+    karate_man_wait_at_textbox
+    karate_man_print_textbox NULL
+    rest 24
+    karate_man_print_textbox D_0805ad38
+    rest 12
+    karate_man_wait_at_textbox
+    karate_man_print_textbox NULL
+    rest 24
+    stop_tutorial
+    karate_man_print_textbox D_0805ad80
+    rest 12
+    karate_man_wait_at_textbox
+    karate_man_print_textbox NULL
+    rest 24
+    rest 24
+    karate_man_enable_flow 1
+    rest 24
+    goto script_karate_man_main
+
+
+script script_karate_man_skipped_practice
+    set_tempo 120
+    set_music_volume 256
+    rest 24
+    enable_pause 1
+    rest 24
+    goto script_karate_man_main
 
 .end
