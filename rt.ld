@@ -1794,6 +1794,8 @@ SECTIONS {
         build/bin/bindata_089ff958.bin.o(.rodata*);
         build/games/bouncy_road/bouncy_road_2.bs.o(.script.main);
         build/bin/bindata_08a0007c.bin.o(.rodata*);
+        build/games/bunny_hop/bunny_hop.bs.o(.script.main);
+        build/bin/bindata_08a19850.bin.o(.rodata*);
         build/games/bon_odori/bon_odori.bs.o(.script.main);
         build/bin/bindata_08a48ad0.bin.o(.rodata*);
         build/games/bon_odori/bon_dance.bs.o(.script.main);

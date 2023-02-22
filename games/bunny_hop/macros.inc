@@ -66,51 +66,51 @@
 
 
 @ [Event 0x0] Nothing
-.macro bunny_hop_stub_event noArgs
-    bunny_hop_event 0x00, \noArgs
+.macro bunny_hop_stub_event
+    bunny_hop_event STUB_EVENT, 0
 .endm
 
 @ [Event 0x01] ?
 .macro bunny_hop_event01 args
-    bunny_hop_event 0x01, \args
+    bunny_hop_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro bunny_hop_event02 args
-    bunny_hop_event 0x02, \args
+    bunny_hop_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro bunny_hop_event03 args
-    bunny_hop_event 0x03, \args
+    bunny_hop_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro bunny_hop_event04 args
-    bunny_hop_event 0x04, \args
+    bunny_hop_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro bunny_hop_event05 args
-    bunny_hop_event 0x05, \args
+    bunny_hop_event EVENT_05, \args
 .endm
 
 @ [Event 0x06] ?
 .macro bunny_hop_event06 args
-    bunny_hop_event 0x06, \args
+    bunny_hop_event EVENT_06, \args
 .endm
 
 @ [Event 0x07] ?
 .macro bunny_hop_event07 args
-    bunny_hop_event 0x07, \args
+    bunny_hop_event EVENT_07, \args
 .endm
 
 @ [Event 0x08] ?
 .macro bunny_hop_event08 args
-    bunny_hop_event 0x08, \args
+    bunny_hop_event EVENT_08, \args
 .endm
 
 @ [Event 0x09] ?
 .macro bunny_hop_event09 args
-    bunny_hop_event 0x09, \args
+    bunny_hop_event EVENT_09, \args
 .endm
