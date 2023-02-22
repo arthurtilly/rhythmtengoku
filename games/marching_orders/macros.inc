@@ -71,35 +71,35 @@
 
 @ [Event 0x00] ?
 .macro marching_orders_event00 args
-    marching_event 0x00, \args
+    marching_orders_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro marching_orders_event01 args
-    marching_orders_event 0x01, \args
+    marching_orders_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro marching_orders_event02 args
-    marching_orders_event 0x02, \args
+    marching_orders_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro marching_orders_event03 args
-    marching_orders_event 0x03, \args
+    marching_orders_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro marching_orders_event04 args
-    marching_orders_event 0x04, \args
+    marching_orders_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] Play Voice SFX
 .macro marching_orders_play_voice_sfx id
-    marching_orders_event 0x05, \id
+    marching_orders_event PLAY_VOICE_SFX, \id
 .endm
 
 @ [Event 0x06] Nothing
 .macro marching_orders_stub_event noArgs
-    marching_orders_event 0x06, \noArgs
+    marching_orders_event STUB_EVENT, \noArgs
 .endm

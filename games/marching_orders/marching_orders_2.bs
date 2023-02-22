@@ -2,6 +2,7 @@
 .include "games/marching_orders/macros.inc"
 
 
+
 .section .script.entry
 @ Marching Orders 2 - Script Entry Point
 
@@ -13,7 +14,7 @@ script script_marching_orders_2_entry
     load_marching_orders_2
     enable_play_inputs 1
     assess_inputs 1
-    call D_08a125ac
+    call script_marching_orders_2_main
     enable_pause 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -39,6 +40,7 @@ struct scene_marching_orders_2      @ struct Scene
     /* End Func */    .word NULL,          NULL
     /* Memory */      .hword 0x5bc
 endstruct
+
 
 
 .section .script.prologue
@@ -70,6 +72,142 @@ script script_marching_orders_2_prologue
     run func_08006d80, 0
     rest 12
     set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Marching Orders 2 - Main Script
+
+script script_marching_orders_2_main
+    run func_08019310, D_0805c9a0
+    run func_08019304, D_08a1259c
+    forgive_x_misses 1
+    start_perfect_campaign
+    assess_inputs 1
+    rest 24
+    enable_pause 1
+    rest 24
+    set_tempo 135
+    set_music_volume 256
+    play_music s_guntai2_seqData
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    call D_08a83848
+    set_marking_criteria 0
+    call D_08a8386c
+    set_marking_criteria 0
+    call D_08a8386c
+    set_marking_criteria 0
+    call D_08a83998
+    call D_08a83848
+    set_marking_criteria 0
+    call D_08a8386c
+    set_marking_criteria 0
+    call D_08a83998
+    set_marking_criteria 0
+    call D_08a84448
+    call D_08a83848
+    set_marking_criteria 0
+    call D_08a8386c
+    set_marking_criteria 0
+    call D_08a83998
+    set_marking_criteria 0
+    call D_08a8452c
+    call D_08a83848
+    set_marking_criteria 0
+    call D_08a83998
+    set_marking_criteria 0
+    call D_08a8452c
+    set_marking_criteria 1
+    call D_08a84610
+    call D_08a83848
+    set_marking_criteria 0
+    call D_08a8386c
+    set_marking_criteria 0
+    call D_08a8386c
+    set_marking_criteria 0
+    call D_08a8386c
+    set_marking_criteria 0
+    call D_08a83998
+    marching_orders_event04 1
+    set_marking_criteria 0
+    call D_08a84448
+    set_marking_criteria 1
+    call D_08a84610
+    set_marking_criteria 0
+    call D_08a8452c
+    set_marking_criteria 1
+    call D_08a84610
+    rest 24
+    rest 24
+    call D_08a83758
+    set_marking_criteria 1
+    call D_08a84610
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    call D_08a83848
+    set_marking_criteria 0
+    call D_08a8386c
+    set_marking_criteria 2
+    call D_08a83cc8
+    set_marking_criteria 0
+    call D_08a8386c
+    set_marking_criteria 2
+    call D_08a83ea8
+    set_marking_criteria 0
+    call D_08a8386c
+    set_marking_criteria 2
+    call D_08a84088
+    set_marking_criteria 0
+    call D_08a8386c
+    set_marking_criteria 2
+    call D_08a84268
+    set_marking_criteria 2
+    call D_08a83cc8
+    set_marking_criteria 2
+    call D_08a84088
+    set_marking_criteria 0
+    call D_08a83b24
+    set_marking_criteria 1
+    call D_08a83bfc
+    set_marking_criteria 0
+    call D_08a84448
+    set_marking_criteria 1
+    call D_08a847d8
+    set_marking_criteria 1
+    call D_08a84610
+    call D_08a83848
+    set_marking_criteria 0
+    call D_08a8386c
+    marching_orders_event03 0
+    set_marking_criteria 0
+    call D_08a8386c
+    set_marking_criteria 0
+    call D_08a8386c
+    marching_orders_event00 8
+    play_sfx s_guntai_foot1_seqData
+    rest 12
+    assess_inputs 0
+    assess_perfect_inputs 0
+    enable_play_inputs 0
+    rest 12
+    marching_orders_event00 7
+    play_sfx s_guntai_foot2_seqData
+    rest 24
+    marching_orders_event00 8
+    play_sfx s_guntai_foot1_seqData
+    rest 24
+    marching_orders_event00 7
+    play_sfx s_guntai_foot2_seqData
+    rest 24
+    marching_orders_event00 8
+    play_sfx s_guntai_foot1_seqData
+    enable_pause 0
 return
 
 .end
