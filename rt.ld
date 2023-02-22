@@ -1794,6 +1794,8 @@ SECTIONS {
         build/bin/bindata_089ef8cc.bin.o(.rodata*);
         build/games/clappy_trio/clappy_trio.bs.o(.script.main);
         build/bin/bindata_089f27f4.bin.o(.rodata*);
+        build/games/karate_man/karate_man_2.bs.o(.script.main);
+        build/bin/bindata_089f9b20.bin.o(.rodata*);
         build/games/bouncy_road/bouncy_road.bs.o(.script.main);
         build/bin/bindata_089ff958.bin.o(.rodata*);
         build/games/bouncy_road/bouncy_road_2.bs.o(.script.main);
