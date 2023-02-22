@@ -2,6 +2,7 @@
 .include "games/clappy_trio/macros.inc"
 
 
+
 .section .script.entry
 @ The Clappy Trio - Script Entry Point
 
@@ -13,7 +14,7 @@ script script_clappy_trio_entry
     load_clappy_trio
     enable_play_inputs 1
     assess_inputs 1
-    call D_089f1ec4
+    call script_clappy_trio_practice
     enable_pause 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -39,6 +40,7 @@ struct scene_clappy_trio      @ struct Scene
     /* End Func */    .word NULL,          NULL
     /* Memory */      .hword 0x5bc
 endstruct
+
 
 
 .section .script.prologue
@@ -72,5 +74,577 @@ script script_clappy_trio_prologue
     rest 12
     set_game_fade_in_time 16
 return
+
+
+
+.section .script.main
+@ The Clappy Trio - Main Script
+
+script script_clappy_trio_main
+    set_tempo 118
+    run func_08019310, D_0805af08
+    run func_08019304, D_089f092c
+    forgive_x_misses 2
+    assess_inputs 1
+    run gameplay_assess_irrelevant_inputs, 1
+    set_marking_criteria 2
+    rest 24
+    enable_pause 1
+    start_perfect_campaign
+    rest 24
+    rest 24
+    print_text_f NULL
+    clappy_trio_hide_textbox 0
+    clappy_trio_crouch_smirk
+    rest 24
+    run scene_stop_music, 0
+    rest 12
+    play_music s_tebyoushi_bgm_seqData
+    set_music_volume 256
+    rest 12
+    clappy_trio_do_clap 0
+    rest 24
+    rest 24
+    clappy_trio_do_clap 1
+    rest 24
+    spawn_cue CUE_FULL_BEAT_W_SMILE
+    rest 24
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 12
+    clappy_trio_crouch_smirk
+    rest 12
+    set_marking_criteria 3
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 12
+    rest 12
+    rest 12
+    beat_anim
+    rest 12
+    rest 24
+    set_marking_criteria 0
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    set_marking_criteria 3
+    clappy_trio_crouch_smirk
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 12
+    rest 12
+    rest 12
+    beat_anim
+    rest 12
+    rest 24
+    set_marking_criteria 2
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    rest 24
+    clappy_trio_do_clap 1
+    rest 24
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    rest 24
+    clappy_trio_do_clap 1
+    rest 24
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 12
+    rest 24
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 12
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 12
+    rest 24
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 12
+    clappy_trio_crouch_smirk
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 2
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    rest 24
+    clappy_trio_do_clap 1
+    rest 24
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    set_marking_criteria 2
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    rest 24
+    clappy_trio_do_clap 1
+    rest 24
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 24
+    set_marking_criteria 2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    rest 24
+    clappy_trio_do_clap 1
+    rest 24
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    rest 24
+    clappy_trio_do_clap 1
+    rest 24
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    rest 24
+    clappy_trio_do_clap 1
+    rest 24
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    rest 12
+    clappy_trio_crouch_smirk
+    rest 12
+    set_marking_criteria 3
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 12
+    rest 12
+    rest 12
+    assess_perfect_inputs 0
+    beat_anim
+    rest 12
+    rest 12
+    run scene_stop_music, 0
+    rest 12
+    rest 24
+    rest 24
+return
+
+
+script script_clappy_trio_practice
+    set_tempo 118
+    assess_inputs 0
+    enable_play_inputs 0
+    clappy_trio_crouch 1
+    rest 24
+    enable_pause 1
+    rest 12
+    rest 6
+    set_music_volume 80
+    mod_music_volume 200, 96
+    play_music s_renshu_bgm1_seqData
+    rest 6
+    init_tutorial D_089d0264
+    print_text_f D_0805af14
+    clappy_trio_hide_textbox 1
+    .byte 0xae, 0x32, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf8, 0xe4, 0xa9, 0x08
+    rest 24
+    rest 24
+    .byte 0xae, 0x64, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf8, 0xe4, 0xa9, 0x08
+    rest 24
+    rest 24
+    .byte 0xae, 0x96, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0c, 0xe5, 0xa9, 0x08
+    rest 24
+    .byte 0xae, 0xaf, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0c, 0xe5, 0xa9, 0x08
+    rest 24
+    .byte 0xae, 0xc8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0c, 0xe5, 0xa9, 0x08
+    rest 24
+    print_text_f NULL
+    rest 24
+    print_text_f D_0805af30
+    play_sfx s_f_handclap_pi_G4_seqData
+    rest 24
+    rest 24
+    play_sfx s_f_handclap_pi_G4_seqData
+    rest 24
+    rest 24
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 24
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 24
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 24
+    print_text_f NULL
+    rest 24
+    print_text_f D_0805af48
+    play_sfx s_f_handclap_pi_G4_seqData
+    rest 24
+    rest 24
+    play_sfx s_f_handclap_pi_G4_seqData
+    rest 24
+    rest 24
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 24
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 24
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 24
+    print_text_f NULL
+    rest 24
+    print_text_f D_0805af60
+    play_sfx s_f_handclap_pi_G4_seqData
+    rest 24
+    rest 24
+    play_sfx s_f_handclap_pi_G4_seqData
+    rest 24
+    rest 24
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 24
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 24
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 24
+    print_text_f NULL
+    rest 24
+    print_text_f D_0805af7c
+    enable_play_inputs 1
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops 0
+        play_sfx s_f_handclap_pi_G4_seqData
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        play_sfx s_f_handclap_pi_G4_seqData
+        beat_anim
+        rest 24
+        clappy_trio_crouch 0
+        rest 24
+        clappy_trio_do_clap 0
+        play_sfx s_f_handclap_pi_E5_seqData
+        rest 24
+        clappy_trio_do_clap 1
+        play_sfx s_f_handclap_pi_E5_seqData
+        spawn_cue CUE_FULL_BEAT
+        rest 24
+        play_sfx s_f_handclap_pi_E5_seqData
+        rest 24
+        beat_anim
+        rest 24
+        run func_080175c4, 0
+    loop_end
+    enable_play_inputs 0
+    print_text_f NULL
+    play_sfx s_f_handclap_pi_G4_seqData
+    rest 24
+    print_text_f D_0805afa0
+    rest 24
+    play_sfx s_f_handclap_pi_G4_seqData
+    rest 24
+    print_text_f NULL
+    rest 24
+    print_text_f D_0805afa8
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 24
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 12
+    rest 12
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 24
+    print_text_f NULL
+    rest 24
+    print_text_f D_0805afb8
+    play_sfx s_f_handclap_pi_G4_seqData
+    rest 24
+    rest 24
+    play_sfx s_f_handclap_pi_G4_seqData
+    rest 24
+    rest 24
+    play_sfx s_f_handclap_pi_G4_seqData
+    rest 24
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 12
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 12
+    play_sfx s_f_handclap_pi_E5_seqData
+    rest 24
+    print_text_f NULL
+    rest 24
+    print_text_f D_0805af7c
+    enable_play_inputs 1
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops 0
+        play_sfx s_f_handclap_pi_G4_seqData
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        play_sfx s_f_handclap_pi_G4_seqData
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        clappy_trio_crouch 0
+        play_sfx s_f_handclap_pi_G4_seqData
+        rest 24
+        clappy_trio_do_clap 0
+        play_sfx s_f_handclap_pi_E5_seqData
+        spawn_cue CUE_FULL_BEAT
+        rest 12
+        clappy_trio_do_clap 1
+        play_sfx s_f_handclap_pi_E5_seqData
+        rest 12
+        play_sfx s_f_handclap_pi_E5_seqData
+        rest 24
+        beat_anim
+        rest 24
+        run func_080175c4, 0
+    loop_end
+    enable_play_inputs 0
+    print_text_f NULL
+    rest 24
+    print_text_f D_0805afd0
+    rest 24
+    rest 24
+    rest 24
+    mod_music_volume 0, 96
+    print_text_f NULL
+    rest 24
+    print_text_f D_0805afd4
+    stop_tutorial
+    rest 24
+    rest 24
+    rest 24
+    enable_play_inputs 1
+    goto script_clappy_trio_main
+
+
+script script_clappy_trio_skipped_practice
+    goto script_clappy_trio_main
 
 .end
