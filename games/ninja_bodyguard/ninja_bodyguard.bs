@@ -2,6 +2,7 @@
 .include "games/ninja_bodyguard/macros.inc"
 
 
+
 .section .script.entry
 @ Ninja Bodyguard - Script Entry Point
 
@@ -13,7 +14,7 @@ script script_ninja_bodyguard_entry
     load_ninja_bodyguard
     enable_play_inputs 1
     assess_inputs 1
-    call D_08a01388
+    call script_ninja_bodyguard_intro
     enable_pause 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -41,6 +42,7 @@ struct scene_ninja_bodyguard      @ struct Scene
 endstruct
 
 
+
 .section .script.prologue
 @ Ninja Bodyguard - Prologue
 
@@ -62,5 +64,407 @@ script script_ninja_bodyguard_prologue
     rest 24
     set_game_fade_in_time 16
 return
+
+
+
+.section .script.main
+@ Ninja Bodyguard - Main Script
+
+script ninja_bodyguard_sub_08a000bc
+    set_marking_criteria 0
+    play_music s_ninja_bgm1_seqData
+    run scene_set_music_key, 0
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event07 1
+    ninja_bodyguard_event0B 1
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rest 6
+    rest 6
+    rest 6
+    ninja_bodyguard_event08 0
+    rest 12
+    rest 12
+    rest 24
+    ninja_bodyguard_event09 1
+    rest 24
+    play_music s_ninja_bgm1_seqData
+    run scene_set_music_key, 2
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event05 0
+    ninja_bodyguard_event0D 1
+    ninja_bodyguard_event0B 0
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+    rest 12
+    spawn_cue CUE_DEFAULT
+    rest 24
+    rest 12
+    ninja_bodyguard_event06 0
+    rest 12
+return
+
+
+script ninja_bodyguard_sub_08a00320
+    set_marking_criteria 0
+    play_music s_ninja_bgm1_seqData
+    run scene_set_music_key, 0
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event07 2
+    ninja_bodyguard_event0B 1
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rest 6
+    rest 6
+    rest 6
+    ninja_bodyguard_event08 0
+    rest 12
+    rest 12
+    rest 12
+    ninja_bodyguard_event0F 126
+    ninja_bodyguard_event09 0
+    rest 12
+    ninja_bodyguard_event0F 256
+    ninja_bodyguard_event09 1
+    rest 24
+    play_music s_ninja_bgm1_seqData
+    run scene_set_music_key, 2
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event05 0
+    ninja_bodyguard_event0D 1
+    ninja_bodyguard_event0B 0
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+    ninja_bodyguard_event0F 126
+    spawn_cue CUE_DEFAULT
+    rest 12
+    ninja_bodyguard_event0F 256
+    spawn_cue CUE_DEFAULT
+    rest 24
+    rest 12
+    ninja_bodyguard_event06 0
+    rest 12
+return
+
+
+script ninja_bodyguard_sub_08a00614
+    set_marking_criteria 1
+    play_music s_ninja_bgm1_seqData
+    run scene_set_music_key, -3
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event07 3
+    ninja_bodyguard_event0B 1
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rest 6
+    rest 6
+    rest 6
+    ninja_bodyguard_event08 0
+    rest 12
+    rest 12
+    rest 12
+    ninja_bodyguard_event0F 126
+    ninja_bodyguard_event09 0
+    rest 6
+    ninja_bodyguard_event0F 96
+    ninja_bodyguard_event09 0
+    rest 6
+    ninja_bodyguard_event0F 256
+    ninja_bodyguard_event09 1
+    rest 24
+    play_music s_ninja_bgm1_seqData
+    run scene_set_music_key, -2
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event05 0
+    ninja_bodyguard_event0D 1
+    ninja_bodyguard_event0B 0
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+    ninja_bodyguard_event0F 126
+    spawn_cue CUE_DEFAULT
+    rest 6
+    ninja_bodyguard_event0F 96
+    spawn_cue CUE_DEFAULT
+    rest 6
+    ninja_bodyguard_event0F 256
+    spawn_cue CUE_DEFAULT
+    rest 24
+    rest 12
+    ninja_bodyguard_event06 0
+    rest 12
+return
+
+
+script ninja_bodyguard_sub_08a00974
+    set_marking_criteria 0
+    play_music s_ninja_bgm2_seqData
+    run scene_set_music_key, 0
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event07 1
+    ninja_bodyguard_event0B 1
+    rest 12
+    rest 24
+    rest 24
+    ninja_bodyguard_event08 0
+    rest 12
+    rest 12
+    rest 24
+    rest 24
+    ninja_bodyguard_event09 1
+    rest 24
+    rest 24
+    play_music s_ninja_bgm2_seqData
+    run scene_set_music_key, -2
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event05 0
+    ninja_bodyguard_event0D 1
+    ninja_bodyguard_event0B 0
+    rest 12
+    rest 24
+    rest 24
+    rest 12
+    rest 12
+    rest 24
+    spawn_cue CUE_DEFAULT
+    rest 24
+    rest 12
+    ninja_bodyguard_event06 0
+    rest 12
+    rest 24
+return
+
+
+script ninja_bodyguard_sub_08a00bb4
+    set_marking_criteria 2
+    play_music s_ninja_bgm2_seqData
+    run scene_set_music_key, 2
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event07 4
+    ninja_bodyguard_event0B 1
+    rest 12
+    rest 24
+    rest 24
+    ninja_bodyguard_event08 0
+    rest 12
+    rest 12
+    rest 24
+    rest 24
+    ninja_bodyguard_event0F 156
+    ninja_bodyguard_event09 0
+    rest 8
+    ninja_bodyguard_event0F 76
+    ninja_bodyguard_event09 0
+    rest 8
+    ninja_bodyguard_event0F 106
+    ninja_bodyguard_event09 0
+    rest 8
+    ninja_bodyguard_event0F 256
+    ninja_bodyguard_event09 1
+    rest 24
+    play_music s_ninja_bgm2_seqData
+    run scene_set_music_key, 0
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event05 0
+    ninja_bodyguard_event0D 1
+    ninja_bodyguard_event0B 0
+    rest 12
+    rest 24
+    rest 24
+    rest 12
+    rest 12
+    rest 24
+    ninja_bodyguard_event0F 156
+    spawn_cue CUE_DEFAULT
+    rest 8
+    ninja_bodyguard_event0F 76
+    spawn_cue CUE_DEFAULT
+    rest 8
+    ninja_bodyguard_event0F 106
+    spawn_cue CUE_DEFAULT
+    rest 8
+    ninja_bodyguard_event0F 256
+    spawn_cue CUE_DEFAULT
+    rest 24
+    rest 12
+    ninja_bodyguard_event06 0
+    rest 12
+return
+
+
+script ninja_bodyguard_sub_08a00f50
+    set_marking_criteria 1
+    play_music s_ninja_bgm2_seqData
+    run scene_set_music_key, 0
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event07 3
+    ninja_bodyguard_event0B 1
+    rest 12
+    rest 24
+    rest 24
+    ninja_bodyguard_event08 0
+    rest 12
+    rest 12
+    rest 24
+    rest 12
+    ninja_bodyguard_event0F 126
+    ninja_bodyguard_event09 0
+    rest 6
+    ninja_bodyguard_event0F 96
+    ninja_bodyguard_event09 0
+    rest 6
+    ninja_bodyguard_event0F 256
+    ninja_bodyguard_event09 1
+    rest 24
+    rest 24
+    play_music s_ninja_bgm2_seqData
+    run scene_set_music_key, -2
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event05 0
+    ninja_bodyguard_event0D 1
+    ninja_bodyguard_event0B 0
+    rest 12
+    rest 24
+    rest 24
+    rest 12
+    rest 12
+    rest 12
+    ninja_bodyguard_event0F 126
+    spawn_cue CUE_DEFAULT
+    rest 6
+    ninja_bodyguard_event0F 96
+    spawn_cue CUE_DEFAULT
+    rest 6
+    ninja_bodyguard_event0F 256
+    spawn_cue CUE_DEFAULT
+    rest 24
+    rest 12
+    ninja_bodyguard_event06 0
+    rest 12
+    rest 24
+return
+
+
+script script_ninja_bodyguard_main
+    run func_08019310, D_0805b988
+    run func_08019304, D_08a000ac
+    assess_inputs 1
+    forgive_x_misses 1
+    start_perfect_campaign
+    set_music_volume 256
+    call ninja_bodyguard_sub_08a000bc
+    call ninja_bodyguard_sub_08a00320
+    call ninja_bodyguard_sub_08a000bc
+    call ninja_bodyguard_sub_08a00614
+    call ninja_bodyguard_sub_08a00974
+    call ninja_bodyguard_sub_08a00f50
+    call ninja_bodyguard_sub_08a00974
+    call ninja_bodyguard_sub_08a00bb4
+    call ninja_bodyguard_sub_08a000bc
+    assess_perfect_inputs 0
+    rest 24
+    enable_pause 0
+    rest 24
+return
+
+
+script script_ninja_bodyguard_intro
+    set_tempo 140
+    play_sfx s_f_ninja_demo_seqData
+    ninja_bodyguard_event07 1
+    ninja_bodyguard_event0B 1
+    rest 24
+    enable_pause 1
+    rest 24
+    run gameplay_set_tutorial D_089d1144
+    rest 24
+    rest 24
+    ninja_bodyguard_event08 0
+    rest 24
+    rest 24
+    rest 24
+    ninja_bodyguard_event0F 126
+    ninja_bodyguard_event09 1
+    rest 24
+    rest 12
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event10 1
+    ninja_bodyguard_event11 264
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    ninja_bodyguard_event10 0
+    rest 24
+    ninja_bodyguard_event0B 2
+    ninja_bodyguard_event00 288
+    rest 276
+    ninja_bodyguard_event0A 0
+    run stop_sound, s_f_ninja_demo_seqData
+    rest 12
+    ninja_bodyguard_event01 0
+    rest 24
+    ninja_bodyguard_event02 0
+    play_sfx s_ninja_wind_seqData
+    rest 24
+    ninja_bodyguard_event03 0
+    rest 48
+    ninja_bodyguard_event04 0
+    run gameplay_set_tutorial NULL
+    rest 48
+    goto script_ninja_bodyguard_main
+
+
+script script_ninja_bodyguard_skipped_intro
+    set_tempo 140
+    ninja_bodyguard_event0B 3
+    ninja_bodyguard_event00 0
+    ninja_bodyguard_event02 0
+    play_sfx s_ninja_wind_seqData
+    rest 24
+    enable_pause 1
+    ninja_bodyguard_event03 0
+    rest 24
+    rest 24
+    ninja_bodyguard_event04 0
+    rest 24
+    rest 24
+    goto script_ninja_bodyguard_main
 
 .end
