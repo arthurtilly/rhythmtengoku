@@ -2,6 +2,7 @@
 .include "games/night_walk/macros.inc"
 
 
+
 .section .script.entry
 @ Night Walk - Script Entry Point
 
@@ -13,7 +14,7 @@ script script_night_walk_entry
     load_night_walk
     enable_play_inputs 1
     assess_inputs 1
-    call D_089f5280
+    call script_night_walk_main
     enable_pause 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -41,6 +42,7 @@ struct scene_night_walk      @ struct Scene
 endstruct
 
 
+
 .section .script.prologue
 @ Night Walk - Prologue
 
@@ -63,6 +65,471 @@ script script_night_walk_prologue
     run func_08006d80, 0
     rest 24
     set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Night Walk - Main Script
+
+script script_night_walk_main
+    run func_08019310, D_0805b1f4
+    run func_08019304, D_089f51bc
+    set_marking_criteria 1
+    night_walk_set_marking_criteria 0
+    night_walk_set_end_script D_089f51cc
+    set_tempo 128
+    assess_inputs 1
+    run gameplay_assess_irrelevant_inputs 0
+    enable_play_inputs 0
+    night_walk_init_balloons 7
+    start_perfect_campaign
+    rest 24
+    enable_pause 1
+    rest 24
+    rest 24
+    rest 24
+    play_music s_4beat_bgm_seqData
+    print_text_s D_0805b1fc
+    run scene_show_bg_layer, 1
+    set_marking_criteria 1
+    night_walk_set_platform 0
+    spawn_cue CUE_KICK
+    night_walk_play_drumtech_note 38, 256, 0
+    night_walk_pop_balloon
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    night_walk_play_drumtech_note 38, 256, 0
+    night_walk_pop_balloon
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    night_walk_play_drumtech_note 38, 256, 0
+    night_walk_pop_balloon
+    rest 24
+    spawn_cue CUE_KICK
+    night_walk_play_drumtech_note 38, 256, 0
+    night_walk_pop_balloon
+    rest 24
+    spawn_cue CUE_KICK
+    night_walk_play_drumtech_note 38, 256, 0
+    night_walk_pop_balloon
+    rest 24
+    night_walk_set_platform 1
+    set_marking_criteria 2
+    spawn_cue CUE_SNARE
+    night_walk_play_drumtech_note 38, 256, 0
+    night_walk_pop_balloon
+    rest 20
+    night_walk_pop_balloon
+    enable_play_inputs 1
+    rest 4
+    print_text_s 0
+    run scene_hide_bg_layer, 1
+    night_walk_set_platform 0
+    set_marking_criteria 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_platform 1
+    set_marking_criteria 2
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_platform 0
+    set_marking_criteria 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_platform 1
+    set_marking_criteria 2
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_platform 0
+    set_marking_criteria 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_ROLL
+    rest 24
+    night_walk_set_platform 1
+    set_marking_criteria 2
+    spawn_cue CUE_CYMBAL
+    rest 24
+    night_walk_set_platform 2
+    set_marking_criteria 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    set_marking_criteria 2
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_ROLL
+    rest 24
+    spawn_cue CUE_CYMBAL
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    print_text_s D_0805b220
+    run scene_show_bg_layer, 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    set_marking_criteria 2
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_CYMBAL
+    rest 24
+    night_walk_set_platform 1
+    set_marking_criteria 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    print_text_s 0
+    run scene_hide_bg_layer, 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_platform 0
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_platform 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_platform 0
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_platform 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_platform 0
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_platform 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_platform 0
+    set_marking_criteria 2
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_CYMBAL
+    rest 24
+    night_walk_set_platform 2
+    set_marking_criteria 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    print_text_s D_0805b250
+    run scene_show_bg_layer, 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    print_text_s 0
+    run scene_hide_bg_layer, 1
+    rest 24
+    night_walk_set_platform 1
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_platform 0
+    set_marking_criteria 2
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_platform 1
+    spawn_cue CUE_STAR_WAND
+    rest 24
+    night_walk_set_platform 1
+    spawn_cue CUE_KICK
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+    enable_play_inputs 0
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    enable_pause 0
+    rest 24
 return
 
 .end
