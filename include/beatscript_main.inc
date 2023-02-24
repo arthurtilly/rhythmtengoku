@@ -14,6 +14,10 @@
 .set REALTIME, 0
 .set TO_TEMPO, 1
 
+@ Marking Criteria Flags
+.set OVERRIDE_COMMENTS, 0x80
+.set CHECK_AVERAGE_HITS, 0x1
+
 @ Music/Sound Players
 .set MUSIC_PLAYER_0,        0
 .set MUSIC_PLAYER_1,        1

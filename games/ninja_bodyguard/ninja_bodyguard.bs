@@ -71,40 +71,40 @@ return
 .section .script.main
 @ Ninja Bodyguard - Marking Criteria
 
-struct ninja_bodyguard_marking_criteria_1      @ struct MarkingCriteria
+struct ninja_bodyguard_marking_criteria_0      @ struct MarkingCriteria
     /* Positive Remark */        .word D_0805b8f8
     /* Negative Remark */        .word D_0805b8e0
-    /* Flags */                  .byte 0x81
+    /* Flags */                  .byte OVERRIDE_COMMENTS | CHECK_AVERAGE_HITS
     /* Check Average Misses */   .byte TRUE
-    /* Min Hits for Success */   .hword 0x00 @ [Q8.8] 0
-    /* Min Hits Before Fail */   .hword 0x80 @ [Q8.8] 8
-    /* Max Misses Before Fail */ .hword 0x4C @ [Q8.8] 4.75
+    /* Min Hits for Success */   .hword 0x00 @ [Q8.8] 0%
+    /* Min Hits Before Fail */   .hword 0x80 @ [Q8.8] 50%
+    /* Max Misses Before Fail */ .hword 0x4C @ [Q8.8] 30%
 endstruct
 
-struct ninja_bodyguard_marking_criteria_2      @ struct MarkingCriteria
+struct ninja_bodyguard_marking_criteria_1      @ struct MarkingCriteria
     /* Positive Remark */        .word D_0805b924
     /* Negative Remark */        .word D_0805b8fc
-    /* Flags */                  .byte 0x01
+    /* Flags */                  .byte CHECK_AVERAGE_HITS
     /* Check Average Misses */   .byte FALSE
-    /* Min Hits for Success */   .hword 0xCC @ [Q8.8] 12.75
-    /* Min Hits Before Fail */   .hword 0x66 @ [Q8.8] 6.375
+    /* Min Hits for Success */   .hword 0xCC @ [Q8.8] 80%
+    /* Min Hits Before Fail */   .hword 0x66 @ [Q8.8] 40%
     /* Max Misses Before Fail */ .hword 3
 endstruct
 
-struct ninja_bodyguard_marking_criteria_3      @ struct MarkingCriteria
+struct ninja_bodyguard_marking_criteria_2      @ struct MarkingCriteria
     /* Positive Remark */        .word D_0805b968
     /* Negative Remark */        .word D_0805b944
-    /* Flags */                  .byte 0x01
+    /* Flags */                  .byte CHECK_AVERAGE_HITS
     /* Check Average Misses */   .byte FALSE
-    /* Min Hits for Success */   .hword 0xB3 @ [Q8.8] 11.1875
-    /* Min Hits Before Fail */   .hword 0x00 @ [Q8.8] 0
+    /* Min Hits for Success */   .hword 0xB3 @ [Q8.8] 70%
+    /* Min Hits Before Fail */   .hword 0x00 @ [Q8.8] 0%
     /* Max Misses Before Fail */ .hword 2
 endstruct
 
 struct marking_criteria_ninja_bodyguard       @ struct MarkingCriteria[]
+    .word ninja_bodyguard_marking_criteria_0
     .word ninja_bodyguard_marking_criteria_1
     .word ninja_bodyguard_marking_criteria_2
-    .word ninja_bodyguard_marking_criteria_3
     .word NULL
 endstruct
 
