@@ -22,7 +22,6 @@
     .set EVENT_0E,      0x0E
     .set EVENT_0F,      0x0F
     .set EVENT_10,      0x10
-    .set STUB_EVENT,    0x11
 
     @ Cues
     .set CUE_DEFAULT, 0x00
@@ -57,90 +56,85 @@
 
 @ [Event 0x00] ?
 .macro quiz_show_event00 args
-    quiz_show_event 0x00, \args
+    quiz_show_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro quiz_show_event01 args
-    quiz_show_event 0x01, \args
+    quiz_show_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] Host Press Button?
 .macro quiz_show_event02 args
-    quiz_show_event 0x02, \args
+    quiz_show_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro quiz_show_event03 args
-    quiz_show_event 0x03, \args
+    quiz_show_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro quiz_show_event04 args
-    quiz_show_event 0x04, \args
+    quiz_show_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro quiz_show_event05 args
-    quiz_show_event 0x05, \args
+    quiz_show_event EVENT_05, \args
 .endm
 
 @ [Event 0x06] ?
 .macro quiz_show_event06 args
-    quiz_show_event 0x06, \args
+    quiz_show_event EVENT_06, \args
 .endm
 
 @ [Event 0x07] ?
 .macro quiz_show_event07 args
-    quiz_show_event 0x07, \args
+    quiz_show_event EVENT_07, \args
 .endm
 
 @ [Event 0x08] ?
 .macro quiz_show_event08 args
-    quiz_show_event 0x08, \args
+    quiz_show_event EVENT_08, \args
 .endm
 
 @ [Event 0x09] ?
 .macro quiz_show_event09 args
-    quiz_show_event 0x09, \args
+    quiz_show_event EVENT_09, \args
 .endm
 
 @ [Event 0x0A] ?
 .macro quiz_show_event0A args
-    quiz_show_event 0x0A, \args
+    quiz_show_event EVENT_0A, \args
 .endm
 
 @ [Event 0x0B] ?
 .macro quiz_show_event0B args
-    quiz_show_event 0x0B, \args
+    quiz_show_event EVENT_0B, \args
 .endm
 
 @ [Event 0x0C] ?
 .macro quiz_show_event0C args
-    quiz_show_event 0x0C, \args
+    quiz_show_event EVENT_0C, \args
 .endm
 
 @ [Event 0x0D] ?
 .macro quiz_show_event0D args
-    quiz_show_event 0x0D, \args
+    quiz_show_event EVENT_0D, \args
 .endm
 
 @ [Event 0x0E] ?
 .macro quiz_show_event0E args
-    quiz_show_event 0x0E, \args
+    quiz_show_event EVENT_0E, \args
 .endm
 
 @ [Event 0x0F] ?
 .macro quiz_show_event0F args
-    quiz_show_event 0x0F, \args
+    quiz_show_event EVENT_0F, \args
 .endm
 
 @ [Event 0x10] ?
 .macro quiz_show_event10 args
-    quiz_show_event 0x10, \args
-.endm
-
-@ [Event 0x11] Nothing
-.macro quiz_show_stub_event noArgs
-    quiz_show_event 0x11, \noArgs
+    quiz_show_event EVENT_10, \args
 .endm
