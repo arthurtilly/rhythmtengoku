@@ -1820,6 +1820,8 @@ SECTIONS {
         build/bin/bindata_08a19850.bin.o(.rodata*);
         build/games/fireworks/fireworks.bs.o(.script.main);
         build/bin/bindata_08a1b5b4.bin.o(.rodata*);
+        build/games/power_calligraphy/power_calligraphy.bs.o(.script.main);
+        build/bin/bindata_08a1f79c.bin.o(.rodata*);
         build/games/bon_odori/bon_odori.bs.o(.script.main);
         build/bin/bindata_08a48ad0.bin.o(.rodata*);
         build/games/clappy_trio/snappy_trio.bs.o(.script.main);
@@ -1828,6 +1830,8 @@ SECTIONS {
         build/bin/bindata_08a60600.bin.o(.rodata*);
         build/games/bon_odori/bon_dance.bs.o(.script.main);
         build/bin/bindata_08a6b13c.bin.o(.rodata*);
+        build/games/power_calligraphy/power_calligraphy.bs.o(.script.sub);
+        build/bin/bindata_08a808d8.bin.o(.rodata*);
 
         build/audio/audio_data.c.o(.data);
         build/bin/bindata_08a9e8e0.bin.o(.rodata*);

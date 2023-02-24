@@ -52,7 +52,7 @@ script script_samurai_slice_prologue
     rest 24
     rest 24
     rest 24
-    play_sfx_sp s_f_iai_title_seqData, 0xC0, 0
+    play_sfx_sp s_f_iai_title_seqData, 192, 0
     run scene_hide_bg_layer, 1
     run scene_show_bg_layer, 2
     rest 24
