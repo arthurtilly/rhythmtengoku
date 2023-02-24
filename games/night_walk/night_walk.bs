@@ -73,8 +73,8 @@ return
 @ Night Walk - Main Script
 
 script script_night_walk_main
-    run func_08019310, D_0805b1f4
-    run func_08019304, D_089f51bc
+    set_results_header D_0805b1f4
+    import_marking_criteria D_089f51bc
     set_marking_criteria 1
     night_walk_set_marking_criteria 0
     night_walk_set_end_script D_089f51cc

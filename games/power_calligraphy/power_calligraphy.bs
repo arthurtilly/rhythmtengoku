@@ -96,8 +96,8 @@ script script_power_calligraphy_main
     rest 24
     rest 24
     rest 24
-    run func_08019310, D_0805d2f0
-    run func_08019304, D_08a1eb70
+    set_results_header D_0805d2f0
+    import_marking_criteria D_08a1eb70
     forgive_x_misses 2
     set_marking_criteria 0
     assess_inputs 1

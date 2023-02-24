@@ -1807,7 +1807,6 @@ SECTIONS {
         build/games/bouncy_road/bouncy_road.bs.o(.script.main);
         build/bin/bindata_089ff958.bin.o(.rodata*);
         build/games/bouncy_road/bouncy_road_2.bs.o(.script.main);
-        build/bin/bindata_08a0007c.bin.o(.rodata*);
         build/games/ninja_bodyguard/ninja_bodyguard.bs.o(.script.main);
         build/bin/bindata_08a0176c.bin.o(.rodata*);
         build/games/ninja_bodyguard/ninja_reincarnate.bs.o(.script.main);

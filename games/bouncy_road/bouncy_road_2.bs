@@ -52,8 +52,8 @@ script script_bouncy_road_2_main
     rest 24
     enable_pause 1
     rest 24
-    run func_08019310, D_0805b8d0
-    run func_08019304, D_089ff988
+    set_results_header D_0805b8d0
+    import_marking_criteria D_089ff988
     assess_inputs 1
     set_tempo 155
     set_music_volume 256

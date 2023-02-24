@@ -47,8 +47,8 @@ endstruct
 @ Night Walk 2 - Main Script
 
 script script_night_walk_2_main
-    run func_08019310, D_0805b308
-    run func_08019304, D_089f69f0
+    set_results_header D_0805b308
+    import_marking_criteria D_089f69f0
     set_marking_criteria 1
     night_walk_set_marking_criteria 0
     night_walk_set_end_script D_089f6a00

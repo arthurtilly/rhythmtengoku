@@ -259,8 +259,8 @@ return
 
 
 script script_bunny_hop_main
-    run func_08019310, D_0805ccb4
-    run func_08019304, D_08a187f0
+    set_results_header D_0805ccb4
+    import_marking_criteria D_08a187f0
     forgive_x_misses 1
     set_music_volume 256
     play_music s_rabbit_bgm_seqData

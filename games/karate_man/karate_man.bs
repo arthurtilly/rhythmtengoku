@@ -429,9 +429,9 @@ return
 
 
 script script_karate_man_main
-    run func_08019310, D_0805abdc
+    set_results_header D_0805abdc
     start_perfect_campaign
-    run func_08019304, D_089edf78
+    import_marking_criteria D_089edf78
     forgive_x_misses 2
     run gameplay_set_sound_tempo, 124
     set_tempo 120

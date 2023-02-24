@@ -82,8 +82,8 @@ return
 @ The Snappy Trio - Main Script
 
 script script_snappy_trio_main
-    run func_08019310, D_08067c74
-    run func_08019304, D_08a498d8
+    set_results_header D_08067c74
+    import_marking_criteria D_08a498d8
     forgive_x_misses 2
     assess_inputs 1
     set_tempo 108

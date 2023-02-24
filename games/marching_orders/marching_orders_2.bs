@@ -80,8 +80,8 @@ return
 @ Marching Orders 2 - Main Script
 
 script script_marching_orders_2_main
-    run func_08019310, D_0805c9a0
-    run func_08019304, D_08a1259c
+    set_results_header D_0805c9a0
+    import_marking_criteria D_08a1259c
     forgive_x_misses 1
     start_perfect_campaign
     assess_inputs 1

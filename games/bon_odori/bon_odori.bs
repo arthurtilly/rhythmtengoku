@@ -71,8 +71,8 @@ return
 @ The Bon Odori - Main Script
 
 script script_bon_odori_main
-    run func_08019310, D_08067778
-    run func_08019304, D_08a43c50
+    set_results_header D_08067778
+    import_marking_criteria D_08a43c50
     forgive_x_misses 1
     assess_inputs 1
     set_tempo 121

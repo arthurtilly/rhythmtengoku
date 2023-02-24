@@ -453,8 +453,8 @@ script script_ninja_reincarnate_main
     rest 24
     rest 24
     start_perfect_campaign
-    run func_08019310, D_0805ba68
-    run func_08019304, D_08a017ac
+    set_results_header D_0805ba68
+    import_marking_criteria D_08a017ac
     assess_inputs 1
     forgive_x_misses 1
     set_music_volume 256

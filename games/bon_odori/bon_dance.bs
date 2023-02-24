@@ -70,8 +70,8 @@ return
 @ The Bon Dance - Main Script
 
 script script_bon_dance_main
-    run func_08019310, D_0806a448
-    run func_08019304, D_08a66e20
+    set_results_header D_0806a448
+    import_marking_criteria D_08a66e20
     forgive_x_misses 1
     assess_inputs 1
     set_tempo 121
