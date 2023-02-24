@@ -1794,6 +1794,8 @@ SECTIONS {
         build/bin/bindata_089ef8cc.bin.o(.rodata*);
         build/games/clappy_trio/clappy_trio.bs.o(.script.main);
         build/bin/bindata_089f27f4.bin.o(.rodata*);
+        build/games/polyrhythm/polyrhythm.bs.o(.script.main);
+        build/bin/bindata_089f3ddc.bin.o(.rodata*);
         build/games/night_walk/night_walk.bs.o(.script.main);
         build/bin/bindata_089f69c0.bin.o(.rodata*);
         build/games/night_walk/night_walk_2.bs.o(.script.main);
