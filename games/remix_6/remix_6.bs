@@ -2,6 +2,7 @@
 .include "games/space_dance/macros.inc"
 
 
+
 .section .script.entry
 @ Remix 6 - Script Entry Point
 
@@ -22,6 +23,7 @@ script script_remix_6_entry
     rest 24
 stop
 
+
 @ Remix 6 - Scene Definitions
 @ These should not be edited!
 
@@ -39,6 +41,7 @@ struct scene_remix_6      @ struct Scene
     /* End Func */    .word NULL,          NULL
     /* Memory */      .hword 0x5bc
 endstruct
+
 
 
 .section .script.prologue

@@ -2,6 +2,7 @@
 .include "games/bunny_hop/macros.inc"
 
 
+
 .section .script.entry
 @ Remix 3 - Script Entry Point
 
@@ -22,6 +23,7 @@ script script_remix_3_entry
     rest 24
 stop
 
+
 @ Remix 3 - Scene Definitions
 @ These should not be edited!
 
@@ -39,6 +41,7 @@ struct scene_remix_3      @ struct Scene
     /* End Func */    .word NULL,          NULL
     /* Memory */      .hword 0x5bc
 endstruct
+
 
 
 .section .script.prologue

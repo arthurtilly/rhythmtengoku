@@ -2,6 +2,7 @@
 .include "games/rat_race/macros.inc"
 
 
+
 .section .script.entry
 @ Rat Race - Script Entry Point
 
@@ -22,6 +23,7 @@ script script_rat_race_entry
     rest 24
 stop
 
+
 @ Rat Race - Scene Definitions
 @ These should not be edited!
 
@@ -39,6 +41,7 @@ struct scene_rat_race      @ struct Scene
     /* End Func */    .word NULL,          NULL
     /* Memory */      .hword 0x5bc
 endstruct
+
 
 
 .section .script.prologue

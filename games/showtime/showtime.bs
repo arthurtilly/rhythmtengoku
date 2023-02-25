@@ -2,6 +2,7 @@
 .include "games/showtime/macros.inc"
 
 
+
 .section .script.entry
 @ Showtime - Script Entry Point
 
@@ -22,6 +23,7 @@ script script_showtime_entry
     rest 24
 stop
 
+
 @ Showtime - Scene Definitions
 @ These should not be edited!
 
@@ -39,6 +41,7 @@ struct scene_showtime      @ struct Scene
     /* End Func */    .word NULL,          NULL
     /* Memory */      .hword 0x5bc
 endstruct
+
 
 
 .section .script.prologue

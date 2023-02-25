@@ -2,6 +2,7 @@
 .include "games/tram_and_pauline/macros.inc"
 
 
+
 .section .script.entry
 @ Tram and Pauline - Script Entry Point
 
@@ -22,6 +23,7 @@ script script_tram_pauline_entry
     rest 24
 stop
 
+
 @ Tram and Pauline - Scene Definitions
 @ These should not be edited!
 
@@ -39,6 +41,7 @@ struct scene_tram_pauline      @ struct Scene
     /* End Func */    .word NULL,          NULL
     /* Memory */      .hword 0x5bc
 endstruct
+
 
 
 .section .script.prologue

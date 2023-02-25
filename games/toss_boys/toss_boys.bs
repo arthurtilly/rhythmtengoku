@@ -2,6 +2,7 @@
 .include "games/toss_boys/macros.inc"
 
 
+
 .section .script.entry
 @ Toss Boys - Script Entry Point
 
@@ -22,6 +23,7 @@ script script_toss_boys_entry
     rest 24
 stop
 
+
 @ Toss Boys - Scene Definitions
 @ These should not be edited!
 
@@ -39,6 +41,7 @@ struct scene_toss_boys      @ struct Scene
     /* End Func */    .word NULL,          NULL
     /* Memory */      .hword 0x5bc
 endstruct
+
 
 
 .section .script.prologue

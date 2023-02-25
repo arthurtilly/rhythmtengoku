@@ -2,6 +2,7 @@
 .include "games/staff_credit/macros.inc"
 
 
+
 .section .script.entry
 @ Staff Credit - Script Entry Point
 
@@ -20,6 +21,7 @@ script script_staff_credit_entry
     rest 24
     rest 24
 stop
+
 
 @ Staff Credit - Scene Definitions
 @ These should not be edited!

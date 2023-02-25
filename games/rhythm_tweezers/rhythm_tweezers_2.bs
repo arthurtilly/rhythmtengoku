@@ -2,6 +2,7 @@
 .include "games/rhythm_tweezers/macros.inc"
 
 
+
 .section .script.entry
 @ Rhythm Tweezers 2 - Script Entry Point
 
@@ -21,6 +22,7 @@ script script_rhythm_tweezers_2_entry
     rest 24
     rest 24
 stop
+
 
 @ Rhythm Tweezers 2 - Scene Definitions
 @ These should not be edited!

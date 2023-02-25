@@ -2,6 +2,7 @@
 .include "games/sick_beats/macros.inc"
 
 
+
 .section .script.entry
 @ Sick Beats - Script Entry Point
 
@@ -22,6 +23,7 @@ script script_sick_beats_entry
     rest 24
 stop
 
+
 @ Sick Beats - Scene Definitions
 @ These should not be edited!
 
@@ -39,6 +41,7 @@ struct scene_sick_beats      @ struct Scene
     /* End Func */    .word NULL,          NULL
     /* Memory */      .hword 0x5bc
 endstruct
+
 
 
 .section .script.prologue

@@ -2,6 +2,7 @@
 .include "games/samurai_slice/macros.inc"
 
 
+
 .section .script.entry
 @ Samurai Slice - Script Entry Point
 
@@ -22,6 +23,7 @@ script script_samurai_slice_entry
     rest 24
 stop
 
+
 @ Samurai Slice - Scene Definitions
 @ These should not be edited!
 
@@ -39,6 +41,7 @@ struct scene_samurai_slice      @ struct Scene
     /* End Func */    .word NULL,          NULL
     /* Memory */      .hword 0x5bc
 endstruct
+
 
 
 .section .script.prologue

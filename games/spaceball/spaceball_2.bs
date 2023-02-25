@@ -2,6 +2,7 @@
 .include "games/spaceball/macros.inc"
 
 
+
 .section .script.entry
 @ Spaceball 2 - Script Entry Point
 
@@ -21,6 +22,7 @@ script script_spaceball_2_entry
     rest 24
     rest 24
 stop
+
 
 @ Spaceball 2 - Scene Definitions
 @ These should not be edited!
