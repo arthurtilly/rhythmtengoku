@@ -1808,6 +1808,8 @@ SECTIONS {
         build/bin/bindata_089fb900.bin.o(.rodata*);
         build/games/rhythm_tweezers/rhythm_tweezers_2.bs.o(.script.main);
         build/bin/bindata_089fd04c.bin.o(.rodata*);
+        build/games/sick_beats/sick_beats.bs.o(.script.main);
+        build/bin/bindata_089fe07c.bin.o(.rodata*);
         build/games/bouncy_road/bouncy_road.bs.o(.script.main);
         build/bin/bindata_089ff958.bin.o(.rodata*);
         build/games/bouncy_road/bouncy_road_2.bs.o(.script.main);

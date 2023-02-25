@@ -14,7 +14,7 @@ script script_sick_beats_entry
     load_sick_beats
     enable_play_inputs 1
     assess_inputs 1
-    call D_089fd1c4
+    call script_sick_beats_main
     enable_pause 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -63,6 +63,306 @@ script script_sick_beats_prologue
     run func_08006d80, 0
     rest 24
     set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Sick Beats - Main Script
+
+script script_sick_beats_main
+    set_results_header D_0805b764
+    import_marking_criteria D_089fd06c
+    assess_inputs 1
+    set_marking_criteria 0
+    set_tempo 125
+    set_music_volume 240
+    play_music s_hitmegeton1_bgm_seqData
+    beat_anim
+    rest 24
+    enable_pause 1
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    start_perfect_campaign
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd078
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd078
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd078
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd078
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd078
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd0d4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd0d4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd078
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd17c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd12c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd078
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd12c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd078
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd17c
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd078
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd12c
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd078
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd078
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd078
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd078
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_set_virus_position D_089fd17c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    assess_perfect_inputs 0
+    beat_anim
+    rest 24
+    enable_pause 0
+    beat_anim
+    rest 24
 return
 
 .end
