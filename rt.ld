@@ -1819,6 +1819,8 @@ SECTIONS {
         build/bin/bindata_08a19850.bin.o(.rodata*);
         build/games/fireworks/fireworks.bs.o(.script.main);
         build/bin/bindata_08a1b5b4.bin.o(.rodata*);
+        build/games/rat_race/rat_race.bs.o(.script.main);
+        build/bin/bindata_08a1eb30.bin.o(.rodata*);
         build/games/power_calligraphy/power_calligraphy.bs.o(.script.main);
         build/bin/bindata_08a1f79c.bin.o(.rodata*);
         build/games/rap_men/rap_men.bs.o(.script.main);
