@@ -5,13 +5,13 @@
 @ Load Data
 .macro load_sick_beats_labels
     @ Game Events
-    .set EVENT_00,      0x00
-    .set EVENT_01,      0x01
-    .set EVENT_02,      0x02
-    .set EVENT_03,      0x03
-    .set EVENT_04,      0x04
-    .set EVENT_05,      0x05
-    .set EVENT_06,      0x06
+    .set EVENT_00,           0x00
+    .set SET_VIRUS_POSITION, 0x01
+    .set SET_HITS_NEEDED,    0x02
+    .set SET_VIRUS_PALETTE,  0x03
+    .set EVENT_04,           0x04
+    .set EVENT_05,           0x05
+    .set EVENT_06,           0x06
 
     @ Cues
     .set CUE_00,    0x00
@@ -47,19 +47,19 @@
     sick_beats_event EVENT_00, \args
 .endm
 
-@ [Event 0x01] ?
-.macro sick_beats_event01 args
-    sick_beats_event EVENT_01, \args
+@ [Event 0x01] Set Virus Position
+.macro sick_beats_set_virus_position position
+    sick_beats_event SET_VIRUS_POSITION, \position
 .endm
 
-@ [Event 0x02] ?
-.macro sick_beats_event02 args
-    sick_beats_event EVENT_02, \args
+@ [Event 0x02] Set Virus Hits Needed
+.macro sick_beats_set_hits_needed hits
+    sick_beats_event SET_HITS_NEEDED, \hits
 .endm
 
-@ [Event 0x03] ?
-.macro sick_beats_event03 args
-    sick_beats_event EVENT_03, \args
+@ [Event 0x03] Set Virus Palette
+.macro sick_beats_set_virus_palette palette
+    sick_beats_event SET_VIRUS_PALETTE, \palette
 .endm
 
 @ [Event 0x04] ?

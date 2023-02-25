@@ -11,7 +11,7 @@ script script_tram_pauline_entry
     rest 24
     call script_tram_pauline_prologue
     set_game_fade_in_time 16
-    load_tram_and_pauline_tutorial
+    load_tram_pauline_tutorial
     enable_play_inputs 1
     assess_inputs 1
     call D_08a2e140

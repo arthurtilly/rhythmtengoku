@@ -16,25 +16,25 @@
 
 
 @ Load Game: Tram & Pauline (Tutorial)
-.macro load_tram_and_pauline_tutorial
+.macro load_tram_pauline_tutorial
     load_tram_pauline_labels
     load_game tram_pauline_engine, 0
 .endm
 
 @ Load Game: Tram & Pauline
-.macro load_tram_and_pauline
+.macro load_tram_pauline
     load_tram_pauline_labels
     load_game tram_pauline_engine, 1
 .endm
 
 @ Load Game: Tram & Pauline (Remix 3)
-.macro load_tram_and_pauline_remix_3
+.macro load_tram_pauline_remix_3
     load_tram_pauline_labels
     load_game tram_pauline_engine, 2
 .endm
 
 @ Load Game: Tram & Pauline (No Curtain)
-.macro load_tram_and_pauline_no_curtain
+.macro load_tram_pauline_no_curtain
     load_tram_pauline_labels
     load_game tram_pauline_engine, 3
 .endm
