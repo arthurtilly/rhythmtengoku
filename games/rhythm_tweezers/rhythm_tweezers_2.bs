@@ -14,7 +14,7 @@ script script_rhythm_tweezers_2_entry
     load_rhythm_tweezers_2
     enable_play_inputs 1
     assess_inputs 1
-    call D_089fb954
+    call script_rhythm_tweezers_2_main
     enable_pause 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -41,5 +41,427 @@ struct scene_rhythm_tweezers_2      @ struct Scene
     /* End Func */    .word NULL,          NULL
     /* Memory */      .hword 0x5bc
 endstruct
+
+
+
+.section .script.main
+@ Rhythm Tweezers 2 - Main Script
+
+script script_rhythm_tweezers_2_main
+    set_results_header D_0805b6e4
+    import_marking_criteria D_089fb940
+    forgive_x_misses 1
+    assess_inputs 1
+    set_tempo 96
+    set_music_volume 220
+    start_perfect_campaign
+    assess_perfect_inputs 0
+    rest 24
+    enable_pause 1
+    rest 24
+    play_music s_datumo_bgm_seqData
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    assess_perfect_inputs 1
+    rhythm_tweezers_start_hair_cycle 0
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LONG
+    rest 24
+    rhythm_tweezers_spawn_tweezers
+    set_marking_criteria 0
+    spawn_cue CUE_LONG
+    rest 24
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    set_marking_criteria 1
+    spawn_cue CUE_SHORT
+    rest 24
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    rhythm_tweezers_spawn_tweezers
+    set_marking_criteria 0
+    spawn_cue CUE_LONG
+    rest 24
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    set_marking_criteria 0
+    spawn_cue CUE_LONG
+    rest 24
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 12
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 12
+    rhythm_tweezers_spawn_tweezers
+    set_marking_criteria 0
+    spawn_cue CUE_LONG
+    rest 24
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    set_marking_criteria 1
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    rest 6
+    set_marking_criteria 0
+    spawn_cue CUE_LONG
+    rest 12
+    rest 12
+    rhythm_tweezers_spawn_tweezers
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 6
+    rest 6
+    set_marking_criteria 1
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    set_marking_criteria 0
+    spawn_cue CUE_LONG
+    rest 24
+    spawn_cue CUE_LONG
+    rest 24
+    rhythm_tweezers_spawn_tweezers
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 12
+    set_marking_criteria 1
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    set_marking_criteria 0
+    spawn_cue CUE_LONG
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 1
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 6
+    rest 6
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    set_marking_criteria 0
+    spawn_cue CUE_LONG
+    rest 6
+    rest 6
+    rest 6
+    rest 6
+    rhythm_tweezers_spawn_tweezers
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 6
+    rest 6
+    set_marking_criteria 1
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    set_marking_criteria 0
+    spawn_cue CUE_LONG
+    rest 24
+    spawn_cue CUE_LONG
+    rest 24
+    rhythm_tweezers_spawn_tweezers
+    spawn_cue CUE_LONG
+    rest 24
+    spawn_cue CUE_LONG
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 1
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    rhythm_tweezers_spawn_tweezers
+    spawn_cue CUE_FAST
+    rest 24
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    rest 24
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 12
+    spawn_cue CUE_SHORT
+    rest 12
+    rhythm_tweezers_spawn_tweezers
+    set_marking_criteria 0
+    spawn_cue CUE_LONG
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 1
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    set_marking_criteria 1
+    spawn_cue CUE_FAST
+    rest 6
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 12
+    spawn_cue CUE_FAST
+    rest 12
+    rhythm_tweezers_spawn_tweezers
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    rest 6
+    spawn_cue CUE_FAST
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 2
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    set_marking_criteria 1
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    rest 6
+    set_marking_criteria 3
+    spawn_cue CUE_FAST
+    rest 6
+    rest 12
+    set_marking_criteria 3
+    spawn_cue CUE_SHORT
+    rest 12
+    rhythm_tweezers_spawn_tweezers
+    set_marking_criteria 1
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    rest 6
+    set_marking_criteria 1
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 1
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    set_marking_criteria 3
+    spawn_cue CUE_FAST
+    rest 6
+    rest 6
+    set_marking_criteria 1
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    set_marking_criteria 0
+    spawn_cue CUE_LONG
+    rest 12
+    rest 12
+    rhythm_tweezers_spawn_tweezers
+    set_marking_criteria 1
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 6
+    rest 6
+    set_marking_criteria 3
+    spawn_cue CUE_FAST
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 2
+    rhythm_tweezers_scroll_veg 12
+    rhythm_tweezers_play_register_sfx
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    set_marking_criteria 1
+    spawn_cue CUE_FAST
+    rest 12
+    spawn_cue CUE_FAST
+    rest 12
+    spawn_cue CUE_FAST
+    rest 12
+    rest 12
+    rhythm_tweezers_spawn_tweezers
+    set_marking_criteria 1
+    spawn_cue CUE_FAST
+    rest 6
+    set_marking_criteria 2
+    spawn_cue CUE_FAST
+    rest 3
+    spawn_cue CUE_FAST
+    rest 3
+    spawn_cue CUE_FAST
+    rest 6
+    set_marking_criteria 1
+    spawn_cue CUE_FAST
+    rest 6
+    spawn_cue CUE_FAST
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    assess_perfect_inputs 0
+    rest 24
+    rest 24
+    rest 24
+    enable_pause 0
+    rest 24
+return
 
 .end

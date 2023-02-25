@@ -77,8 +77,8 @@
 
 
 @ [Event 0x00] Spawn Tweezers (appears two beats before hair cycle start position)
-.macro rhythm_tweezers_spawn_tweezers noArgs
-    rhythm_tweezers_event SPAWN_TWEEZERS, \noArgs
+.macro rhythm_tweezers_spawn_tweezers
+    rhythm_tweezers_event SPAWN_TWEEZERS, 0
 .endm
 
 @ [Event 0x01] Start Hair Placement Cycle
@@ -97,8 +97,8 @@
 .endm
 
 @ [Event 0x04] Play Cash Register SFX
-.macro rhythm_tweezers_play_register_sfx noArgs
-    rhythm_tweezers_event PLAY_REGISTER_SFX, \noArgs
+.macro rhythm_tweezers_play_register_sfx
+    rhythm_tweezers_event PLAY_REGISTER_SFX, 0
 .endm
 
 @ [Event 0x05] Hide Unused Tutorial Text Sprite
