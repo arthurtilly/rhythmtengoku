@@ -1815,6 +1815,8 @@ SECTIONS {
         build/bin/bindata_08a0176c.bin.o(.rodata*);
         build/games/ninja_bodyguard/ninja_reincarnate.bs.o(.script.main);
         build/bin/bindata_08a02ed0.bin.o(.rodata*);
+        build/games/samurai_slice/samurai_slice.bs.o(.script.main);
+        build/bin/bindata_08a05900.bin.o(.rodata*);
         build/games/marching_orders/marching_orders.bs.o(.script.main);
         build/bin/bindata_08a1256c.bin.o(.rodata*);
         build/games/marching_orders/marching_orders_2.bs.o(.script.main);
