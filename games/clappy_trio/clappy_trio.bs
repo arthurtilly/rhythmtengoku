@@ -23,6 +23,7 @@ script script_clappy_trio_entry
     rest 24
 stop
 
+
 @ The Clappy Trio - Scene Definitions
 @ These should not be edited!
 

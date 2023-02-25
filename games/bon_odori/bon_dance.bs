@@ -23,6 +23,7 @@ script script_bon_dance_entry
     rest 24
 stop
 
+
 @ The Bon Dance - Scene Definitions
 @ These should not be edited!
 

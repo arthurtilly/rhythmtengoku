@@ -23,6 +23,7 @@ script script_bon_odori_entry
     rest 24
 stop
 
+
 @ The Bon Odori - Scene Definitions
 @ These should not be edited!
 

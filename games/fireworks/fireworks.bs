@@ -23,6 +23,7 @@ script script_fireworks_entry
     rest 24
 stop
 
+
 @ Fireworks - Scene Definitions
 @ These should not be edited!
 

@@ -15,8 +15,11 @@
 .set TO_TEMPO, 1
 
 @ Marking Criteria Flags
+.set CHECK_AVERAGE_MISSES, 0x100
 .set OVERRIDE_COMMENTS, 0x80
 .set CHECK_AVERAGE_HITS, 0x1
+
+.set END_OF_CRITERIA, NULL
 
 @ Music/Sound Players
 .set MUSIC_PLAYER_0,        0

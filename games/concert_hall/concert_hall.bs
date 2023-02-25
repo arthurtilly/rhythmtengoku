@@ -23,6 +23,7 @@ script script_concert_hall_entry
     rest 24
 stop
 
+
 @ Concert Hall - Scene Definitions
 @ These should not be edited!
 

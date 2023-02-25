@@ -23,6 +23,7 @@ script script_night_walk_2_entry
     rest 24
 stop
 
+
 @ Night Walk 2 - Scene Definitions
 @ These should not be edited!
 

@@ -23,6 +23,7 @@ script script_snappy_trio_entry
     rest 24
 stop
 
+
 @ The Snappy Trio - Scene Definitions
 @ These should not be edited!
 

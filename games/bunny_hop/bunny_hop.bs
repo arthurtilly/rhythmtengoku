@@ -23,7 +23,8 @@ script script_bunny_hop_entry
     rest 24
 stop
 
-@ Bouncy Road - Scene Definitions
+
+@ Bunny Hop - Scene Definitions
 @ These should not be edited!
 
 struct subscene_bunny_hop   @ struct SubScene

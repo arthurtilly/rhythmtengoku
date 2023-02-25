@@ -23,6 +23,7 @@ script script_karate_man_entry
     rest 24
 stop
 
+
 @ Karate Man - Scene Definitions
 @ These should not be edited!
 
