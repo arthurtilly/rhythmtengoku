@@ -9,7 +9,6 @@
     .set EVENT_01,      0x01
     .set EVENT_02,      0x02
     .set EVENT_03,      0x03
-    .set STUB_EVENT,    0x04
 
     @ Cues
     .set CUE_DEFAULT, 0x00
@@ -34,25 +33,20 @@
 
 @ [Event 0x00] ?
 .macro staff_credit_event00 args
-    staff_credit_event 0x00, \args
+    staff_credit_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro staff_credit_event01 args
-    staff_credit_event 0x01, \args
+    staff_credit_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro staff_credit_event02 args
-    staff_credit_event 0x02, \args
+    staff_credit_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro staff_credit_event03 args
-    staff_credit_event 0x03, \args
-.endm
-
-@ [Event 0x04] Nothing
-.macro staff_credit_stub_event noArgs
-    staff_credit_event 0x04, \noArgs
+    staff_credit_event EVENT_03, \args
 .endm

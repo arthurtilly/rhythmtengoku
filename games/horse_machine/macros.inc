@@ -40,40 +40,40 @@
 
 @ [Event 0x00] ?
 .macro horse_machine_event00 args
-    horse_machine_event 0x00, \args
+    horse_machine_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro horse_machine_event01 args
-    horse_machine_event 0x01, \args
+    horse_machine_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro horse_machine_event02 args
-    horse_machine_event 0x02, \args
+    horse_machine_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro horse_machine_event03 args
-    horse_machine_event 0x03, \args
+    horse_machine_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro horse_machine_event04 args
-    horse_machine_event 0x04, \args
+    horse_machine_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro horse_machine_event05 args
-    horse_machine_event 0x05, \args
+    horse_machine_event EVENT_05, \args
 .endm
 
 @ [Event 0x06] ?
 .macro horse_machine_event06 args
-    horse_machine_event 0x06, \args
+    horse_machine_event EVENT_06, \args
 .endm
 
 @ [Event 0x07] ?
 .macro horse_machine_event07 args
-    horse_machine_event 0x07, \args
+    horse_machine_event EVENT_07, \args
 .endm

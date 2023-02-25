@@ -14,7 +14,6 @@
     .set EVENT_06,      0x06
     .set EVENT_07,      0x07
     .set EVENT_08,      0x08
-    .set STUB_EVENT,    0x09
 
     @ Cues
     .set CUE_TOSS_R,    0x00
@@ -70,50 +69,45 @@
 
 @ [Event 0x00] ?
 .macro toss_boys_event00 args
-    toss_boys_event 0x00, \args
+    toss_boys_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro toss_boys_event01 args
-    toss_boys_event 0x01, \args
+    toss_boys_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro toss_boys_event02 args
-    toss_boys_event 0x02, \args
+    toss_boys_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro toss_boys_event03 args
-    toss_boys_event 0x03, \args
+    toss_boys_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro toss_boys_event04 args
-    toss_boys_event 0x04, \args
+    toss_boys_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro toss_boys_event05 args
-    toss_boys_event 0x05, \args
+    toss_boys_event EVENT_05, \args
 .endm
 
 @ [Event 0x06] ?
 .macro toss_boys_event06 args
-    toss_boys_event 0x06, \args
+    toss_boys_event EVENT_06, \args
 .endm
 
 @ [Event 0x07] ?
 .macro toss_boys_event07 args
-    toss_boys_event 0x07, \args
+    toss_boys_event EVENT_07, \args
 .endm
 
 @ [Event 0x08] ?
 .macro toss_boys_event08 args
-    toss_boys_event 0x08, \args
-.endm
-
-@ [Event 0x09] Nothing
-.macro toss_boys_stub_event noArgs
-    toss_boys_event 0x09, \noArgs
+    toss_boys_event EVENT_08, \args
 .endm

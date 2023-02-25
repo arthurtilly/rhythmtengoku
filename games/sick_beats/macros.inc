@@ -12,7 +12,6 @@
     .set EVENT_04,      0x04
     .set EVENT_05,      0x05
     .set EVENT_06,      0x06
-    .set STUB_EVENT,    0x07
 
     @ Cues
     .set CUE_00,    0x00
@@ -45,40 +44,35 @@
 
 @ [Event 0x00] ?
 .macro sick_beats_event00 args
-    sick_beats_event 0x00, \args
+    sick_beats_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro sick_beats_event01 args
-    sick_beats_event 0x01, \args
+    sick_beats_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro sick_beats_event02 args
-    sick_beats_event 0x02, \args
+    sick_beats_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro sick_beats_event03 args
-    sick_beats_event 0x03, \args
+    sick_beats_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro sick_beats_event04 args
-    sick_beats_event 0x04, \args
+    sick_beats_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro sick_beats_event05 args
-    sick_beats_event 0x05, \args
+    sick_beats_event EVENT_05, \args
 .endm
 
 @ [Event 0x06] ?
 .macro sick_beats_event06 args
-    sick_beats_event 0x06, \args
-.endm
-
-@ [Event 0x07] Nothing
-.macro sick_beats_stub_event noArgs
-    sick_beats_event 0x07, \noArgs
+    sick_beats_event EVENT_06, \args
 .endm

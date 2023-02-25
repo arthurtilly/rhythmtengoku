@@ -6,7 +6,6 @@
 .macro load_concert_hall_labels
     @ Game Events
     .set FREEZE_SCENE,  0x00
-    .set STUB_EVENT,    0x01
 
     @ Cues
     .set CUE_DEFAULT, 0x00
@@ -32,9 +31,4 @@
 @ [Event 0x00] Freeze Scene
 .macro concert_hall_freeze_scene args
     concert_hall_event FREEZE_SCENE, \args
-.endm
-
-@ [Event 0x01] Nothing
-.macro concert_hall_stub_event noArgs
-    concert_hall_event STUB_EVENT, \noArgs
 .endm

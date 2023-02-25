@@ -11,17 +11,6 @@
     .set EVENT_03,      0x03
     .set EVENT_04,      0x04
     .set EVENT_05,      0x05
-    .set EVENT_06,      0x06
-    .set EVENT_07,      0x07
-    .set EVENT_08,      0x08
-    .set EVENT_09,      0x09
-    .set EVENT_0A,      0x0A
-    .set EVENT_0B,      0x0B
-    .set EVENT_0C,      0x0C
-    .set EVENT_0D,      0x0D
-    .set EVENT_0E,      0x0E
-    .set EVENT_0F,      0x0F
-    .set STUB_EVENT,    0x10
 
     @ Cues
     .set CUE_H_BEAT_REALTIME,   0x00
@@ -48,35 +37,30 @@
 
 @ [Event 0x00] ?
 .macro mr_upbeat_event00 args
-    mr_upbeat_event 0x00, \args
+    mr_upbeat_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro mr_upbeat_event01 args
-    mr_upbeat_event 0x01, \args
+    mr_upbeat_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro mr_upbeat_event02 args
-    mr_upbeat_event 0x02, \args
+    mr_upbeat_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro mr_upbeat_event03 args
-    mr_upbeat_event 0x03, \args
+    mr_upbeat_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro mr_upbeat_event04 args
-    mr_upbeat_event 0x04, \args
+    mr_upbeat_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro mr_upbeat_event05 args
-    mr_upbeat_event 0x05, \args
-.endm
-
-@ [Event 0x06] Nothing
-.macro mr_upbeat_stub_event noArgs
-    mr_upbeat_event 0x06, \noArgs
+    mr_upbeat_event EVENT_05, \args
 .endm

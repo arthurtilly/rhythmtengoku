@@ -51,15 +51,15 @@
 
 @ [Event 0x00] ?
 .macro tram_pauline_event00 args
-    tram_pauline_event 0x00, \args
+    tram_pauline_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro tram_pauline_event01 args
-    tram_pauline_event 0x01, \args
+    tram_pauline_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro tram_pauline_event02 args
-    tram_pauline_event 0x02, \args
+    tram_pauline_event EVENT_02, \args
 .endm

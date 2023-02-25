@@ -13,7 +13,6 @@
     .set EVENT_05,      0x05
     .set EVENT_06,      0x06
     .set EVENT_07,      0x07
-    .set STUB_EVENT,    0x08
 
     @ Cues
     .set CUE_TURN_RIGHT,    0x00
@@ -66,45 +65,40 @@
 
 @ [Event 0x00] ?
 .macro space_dance_event00 args
-    space_dance_event 0x00, \args
+    space_dance_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro space_dance_event01 args
-    space_dance_event 0x01, \args
+    space_dance_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro space_dance_event02 args
-    space_dance_event 0x02, \args
+    space_dance_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro space_dance_event03 args
-    space_dance_event 0x03, \args
+    space_dance_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro space_dance_event04 args
-    space_dance_event 0x04, \args
+    space_dance_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro space_dance_event05 args
-    space_dance_event 0x05, \args
+    space_dance_event EVENT_05, \args
 .endm
 
 @ [Event 0x06] ?
 .macro space_dance_event06 args
-    space_dance_event 0x06, \args
+    space_dance_event EVENT_06, \args
 .endm
 
 @ [Event 0x07] ?
 .macro space_dance_event07 args
-    space_dance_event 0x07, \args
-.endm
-
-@ [Event 0x08] Nothing
-.macro space_dance_stub_event noArgs
-    space_dance_event 0x08, \noArgs
+    space_dance_event EVENT_07, \args
 .endm
