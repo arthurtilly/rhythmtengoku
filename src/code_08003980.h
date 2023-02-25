@@ -43,32 +43,33 @@ extern u32  func_08003ab8();
 // extern ? func_08004270(?);
 // extern ? func_080042a4(?);
 // extern ? func_080042bc(?);
-// extern ? func_080043c8(?);
+
+extern void func_080043c8(const struct FontDefinition *font, const char *string, void **textureReq, u32 *widthReq); // Get glyph texture and width.
 // extern ? func_080044f0(?);
 // extern ? func_08004508(?); // Create Text1 thing
 // extern ? func_08004574(?);
 // extern ? func_0800459c(?); // Set Text1 things
 // extern ? func_080045b4(?);
 // extern ? func_080045d0(?); // Clear Text1 text
-// extern ? func_080045fc(?);
+extern u32 func_080045fc(const char *string); // Get total animation objects required for generated text (ignoring whitespace).
 // extern ? func_08004628(?);
-// extern ? func_0800467c(?);
+extern u8 func_0800467c(char c); // Get value for font style/palette.
 // extern ? func_080046c0(?);
-// extern ? func_08004714(?);
-// extern ? func_08004748(?);
+extern void func_08004714(const u16 *texture, u16 *dest); // Print glyph (halfwidth).
+extern void func_08004748(const u16 *texture, u16 *dest); // Print glyph (fullwidth).
 // extern ? func_0800477c(?);
-// extern ? func_0800496c(?);
-// extern ? func_080049a0(?);
-// extern ? func_080049dc(?);
-// extern ? func_080049f0(?); // Render(?) Text1 thing
+extern u32 func_0800496c(const char *string); // Check if a char is whitespace.
+extern u32 func_080049a0(const char *string); // Check if a char is a supported Latin alphabet char.
+extern const char *func_080049dc(const char *string); // Convert halfwidth Latin Alphabet character to fullwidth.
+// extern ? func_080049f0(?); // (https://decomp.me/scratch/QO7Bu) Create Animation
 // extern ? func_08004b60(?);
-// extern ? func_08004b70(?); // create an animation from text
+// extern ? func_08004b70(?); // Get Animation (No Alignment)
 // extern ? func_08004b88(?);
-extern struct Animation *func_08004b98(struct TextObject1 *, const char *, u32, u32); // create an animation from text (centre-aligned)
+extern struct Animation *func_08004b98(struct TextObject1 *, const char *, u32, u32); // Get Animation (Center-Aligned)
 // extern ? func_08004bfc(?);
-extern struct Animation *func_08004c0c(struct TextObject1 *, const char *, u32, u32); // create an animation from text (left-aligned)
+extern struct Animation *func_08004c0c(struct TextObject1 *, const char *, u32, u32); // Get Animation (Left-Aligned)
 // extern ? func_08004c40(?);
-extern struct Animation *func_08004c50(struct TextObject1 *, const char *, u32, u32); // create an animation from text (right-aligned)
+extern struct Animation *func_08004c50(struct TextObject1 *, const char *, u32, u32); // Get Animation (Right-Aligned)
 // extern ? func_08004cac(?);
 // extern ? func_08004ccc(?);
 extern void func_08004d44(struct TextObject1 *, struct Animation *); // delete animation for text1 thing?

@@ -56,17 +56,29 @@ typedef u16 FontPalette[4];
 
 // Read-Only Definition for a Font
 struct FontDefinition {
-    u8 unk0;
-    u8 unk1;
-    u8 unk2;
-    u8 unk3;
-    u8 unk4;
-    u8 *font1Tiles;
-    u8 *font1Map;
-    u8 *font2Tiles;
-    u8 *font2Map;
-    u8 *font3Tiles;
-    u8 *font3Map;
+    u8 whitespaceWidth; // Whitespace Width
+    u8 textureWidth; // Glyph Texture Width
+    u8 textureHeight; // Glyph Texture Height
+    u8 descensionHeight; // Descension Height for Lowercase Latin Alphabet Characters
+    s8 spacingWidth; // Glyph Spacing
+    // [(0x8140 .. 0x817E), (0x8180 .. 0x819E)]
+    u16 *punctuationTextures;
+    u8 *punctuationWidths;
+    // [(0x824F .. 0x8258)]
+    u16 *arabicNumeralTextures;
+    u8 *arabicNumeralWidths;
+    // [(0x8260 .. 0x8279)]
+    u16 *latinUppercaseTextures;
+    u8 *latinUppercaseWidths;
+    // [(0x8281 .. 0x829A)]
+    u16 *latinLowercaseTextures;
+    u8 *latinLowercaseWidths;
+    // [(0x829F .. 0x82FC)]
+    u16 *hiraganaTextures;
+    u8 *hiraganaWidths;
+    // [(0x8340 .. 0x837E), (0x8380 .. 0x839E)]
+    u16 *katakanaTextures;
+    u8 *katakanaWidths;
 };
 
 typedef void (*FontFunc)(u8 *, u8 *);
