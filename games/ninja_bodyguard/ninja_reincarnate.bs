@@ -23,6 +23,7 @@ script script_ninja_reincarnate_entry
     rest 24
 stop
 
+
 @ Ninja Reincarnate - Scene Definitions
 @ These should not be edited!
 

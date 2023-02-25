@@ -23,6 +23,7 @@ script script_power_calligraphy_entry
     rest 24
 stop
 
+
 @ Power Calligraphy - Scene Definitions
 @ These should not be edited!
 

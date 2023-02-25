@@ -23,6 +23,7 @@ script script_quiz_show_entry
     rest 24
 stop
 
+
 @ Quiz Show - Scene Definitions
 @ These should not be edited!
 

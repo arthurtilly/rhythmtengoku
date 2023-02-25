@@ -2,6 +2,7 @@
 .include "games/rap_men/macros.inc"
 
 
+
 .section .script.entry
 @ Rap Men - Script Entry Point
 
@@ -13,7 +14,7 @@ script script_rap_men_entry
     load_rap_men
     enable_play_inputs 1
     assess_inputs 1
-    call D_08a3a6dc
+    call script_rap_men_practice
     enable_pause 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -21,6 +22,7 @@ script script_rap_men_entry
     rest 24
     rest 24
 stop
+
 
 @ Rap Men - Scene Definitions
 @ These should not be edited!
@@ -39,6 +41,7 @@ struct scene_rap_men      @ struct Scene
     /* End Func */    .word NULL,          NULL
     /* Memory */      .hword 0x5bc
 endstruct
+
 
 
 .section .script.prologue
@@ -62,5 +65,1154 @@ script script_rap_men_prologue
     rest 24
     set_game_fade_in_time 16
 return
+
+
+
+.section .script.main
+@ Rap Men - Main Script
+
+script script_rap_men_main
+    set_results_header D_0805ea04
+    import_marking_criteria D_08a387d0
+    forgive_x_misses 1
+    assess_inputs 1
+    start_perfect_campaign
+    print_text_f D_0805ea18
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    play_music s_rap_bgm_seqData
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_enable_tutorial 0
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f D_08a385f8
+    play_sfx s_rap_15ji_desuka_seqData
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f D_08a38618
+    play_sfx s_rap_oyatu_desuka_seqData
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f D_08a385f8
+    play_sfx s_rap_15ji_desuka_seqData
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 8
+    rest 8
+    play_sfx s_rap_honto_desuka_seqData
+    rap_men_animate_rapper 4
+    rest 8
+    print_text_f D_08a38630
+    set_marking_criteria 0
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rap_men_animate_rapper 0
+    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_seqData
+    beat_anim
+    rest 24
+    rap_men_animate_rapper 0
+    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_seqData
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    print_text_f D_08a38660
+    play_sfx s_rap_oisi_kamone_seqData
+    rap_men_animate_rapper 4
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rap_men_animate_rapper 0
+    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_seqData
+    beat_anim
+    rest 24
+    rap_men_animate_rapper 0
+    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_seqData
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    print_text_f D_08a38678
+    play_sfx s_rap_herusi_kamone_seqData
+    rap_men_animate_rapper 4
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rap_men_animate_rapper 0
+    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_seqData
+    beat_anim
+    rest 24
+    rap_men_animate_rapper 0
+    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_seqData
+    beat_anim
+    rest 12
+    rest 6
+    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    rest 6
+    rap_men_animate_rapper 0
+    play_sfx_sp s_rap_oyatu_desuka_seqData, 160, 0
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_seqData
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    print_text_f D_08a38618
+    play_sfx s_rap_oyatu_desuka_seqData
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    print_text_f D_08a38660
+    play_sfx s_rap_oisi_kamone_seqData
+    rap_men_animate_rapper 4
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 8
+    rest 8
+    play_sfx s_rap_honto_desuka_seqData
+    rap_men_animate_rapper 4
+    rest 8
+    print_text_f D_08a38630
+    set_marking_criteria 0
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 12
+    rest 6
+    play_sfx s_rap_herusi_kamone_seqData
+    rest 6
+    set_marking_criteria 1
+    print_text_f D_08a38678
+    play_sfx s_rap_herusi_kamone_seqData
+    rap_men_animate_rapper 4
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f D_08a386e0
+    play_sfx s_rap_oyatuha_saiko_seqData
+    rap_men_animate_rapper 2
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 2
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UUN
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f D_08a38700
+    play_sfx s_rap_kibunha_saiko_seqData
+    rap_men_animate_rapper 2
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 2
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UUN
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f D_08a38720
+    play_sfx s_rap_orette_saiko_seqData
+    rap_men_animate_rapper 2
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 2
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UUN
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 8
+    rest 8
+    play_sfx s_rap_honto_desuka_seqData
+    rap_men_animate_rapper 4
+    rest 8
+    print_text_f D_08a38630
+    set_marking_criteria 0
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f D_08a38740
+    play_sfx s_rap_kimitte_saiko_seqData
+    rap_men_animate_rapper 2
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 2
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UUN
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f D_08a38740
+    play_sfx s_rap_kimitte_saiko_seqData
+    rap_men_animate_rapper 2
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 2
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UUN
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f D_08a38760
+    play_sfx s_rap_oyatuga_naiyo_seqData
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UUN
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    print_text_f D_08a38690
+    play_sfx s_rap_orenosei_kamone_seqData
+    rap_men_animate_rapper 4
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    print_text_f D_08a38780
+    play_sfx s_rap_oresira_naiyo_seqData
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UUN
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    print_text_f D_08a386ac
+    play_sfx s_rap_soremoso_kamone_seqData
+    rap_men_animate_rapper 4
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    spawn_cue CUE_UN
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    play_sfx s_rap_yeah_seqData
+    rap_men_animate_rapper 1
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f D_0805ea34
+    assess_perfect_inputs 0
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    mod_music_volume 0, 240
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    enable_pause 0
+    rest 24
+return
+
+
+script script_rap_men_practice
+    set_tempo 180
+    set_music_volume 256
+    assess_inputs 0
+    rap_men_enable_tutorial 1
+    rest 24
+    enable_pause 1
+    rest 24
+    rest 24
+    rest 24
+    run gameplay_display_skip_icon 2
+    run gameplay_set_tutorial D_089d41ac
+    play_music s_rap_bgm_renshu_seqData
+    print_text_f D_0805ea44
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f D_0805ea50
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f D_0805ea6c
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f D_0805ea84
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f D_0805eaac
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    enable_play_inputs 0
+    print_text_f NULL
+    play_sfx s_rap_wakari_desuka_seqData
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    play_sfx s_intro_uh_seqData
+    beat_anim
+    rest 24
+    rest 24
+    play_sfx s_rap_wakari_desuka_seqData
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    play_sfx s_intro_uh_seqData
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f D_0805eac4
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    enable_play_inputs 1
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops 0
+        switch FUNC, func_080175d8
+            case 0
+                print_text_f D_0805ead0
+                break
+            case 1
+                print_text_f D_0805eae8
+                break
+            case 2
+                print_text_f D_0805eaf8
+                break
+            default
+                print_text_f D_0805eb14
+                break
+        end_switch
+        beat_anim
+        rest 24
+        rest 24
+        beat_anim
+        rest 24
+        rest 24
+        beat_anim
+        rest 24
+        rest 24
+        beat_anim
+        rest 24
+        rest 24
+        print_text_f NULL
+        play_sfx s_rap_wakari_desuka_seqData
+        rap_men_animate_rapper 0
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper 0
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper 0
+        beat_anim
+        rest 24
+        spawn_cue CUE_UN
+        rest 24
+        print_text_f NULL
+        play_sfx s_intro_uh_seqData
+        beat_anim
+        rest 24
+        rest 24
+        play_sfx s_rap_wakari_desuka_seqData
+        rap_men_animate_rapper 0
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper 0
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper 0
+        beat_anim
+        rest 24
+        spawn_cue CUE_UN
+        rest 24
+        print_text_f NULL
+        play_sfx s_intro_uh_seqData
+        beat_anim
+        rest 24
+        rest 24
+        play_sfx s_rap_wakari_desuka_seqData
+        rap_men_animate_rapper 0
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper 0
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper 0
+        beat_anim
+        rest 24
+        spawn_cue CUE_UN
+        rest 24
+        print_text_f NULL
+        play_sfx s_intro_uh_seqData
+        beat_anim
+        rest 24
+        rest 24
+        run func_080175c4, 0
+    loop_end
+    print_text_f D_0805eb34
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f D_0805eb3c
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f D_0805eb6c
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops 0
+        switch FUNC, func_080175d8
+            case 0
+                print_text_f D_0805eb94
+                break
+            case 1
+                print_text_f D_0805ebac
+                break
+            case 2
+                print_text_f D_0805eaf8
+                break
+            default
+                print_text_f D_0805eb14
+                break
+        end_switch
+        beat_anim
+        rest 24
+        rest 24
+        beat_anim
+        rest 24
+        rest 24
+        beat_anim
+        rest 24
+        rest 24
+        beat_anim
+        rest 24
+        rest 24
+        print_text_f NULL
+        play_sfx s_rap_tanosi_kamone_seqData
+        rap_men_animate_rapper 4
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper 0
+        beat_anim
+        rest 24
+        rest 24
+        print_text_f NULL
+        spawn_cue CUE_UN
+        beat_anim
+        rest 24
+        play_sfx s_intro_uh_seqData
+        rest 24
+        spawn_cue CUE_UN
+        beat_anim
+        rest 24
+        play_sfx s_intro_uh_seqData
+        rest 24
+        play_sfx s_rap_tanosi_kamone_seqData
+        rap_men_animate_rapper 4
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper 0
+        beat_anim
+        rest 24
+        rest 24
+        print_text_f NULL
+        spawn_cue CUE_UN
+        beat_anim
+        rest 24
+        play_sfx s_intro_uh_seqData
+        rest 24
+        spawn_cue CUE_UN
+        beat_anim
+        rest 24
+        play_sfx s_intro_uh_seqData
+        rest 24
+        play_sfx s_rap_tanosi_kamone_seqData
+        rap_men_animate_rapper 4
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper 0
+        beat_anim
+        rest 24
+        rest 24
+        print_text_f NULL
+        spawn_cue CUE_UN
+        beat_anim
+        rest 24
+        play_sfx s_intro_uh_seqData
+        rest 24
+        spawn_cue CUE_UN
+        beat_anim
+        rest 24
+        play_sfx s_intro_uh_seqData
+        rest 24
+        run func_080175c4, 0
+    loop_end
+    print_text_f D_0805eb34
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f D_0805ebc4
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops 0
+            switch FUNC, func_080175d8
+            case 0
+                print_text_f D_0805ebf4
+                break
+            case 1
+                print_text_f D_0805ec0c
+                break
+            case 2
+                print_text_f D_0805eaf8
+                break
+            default
+                print_text_f D_0805eb14
+                break
+        end_switch
+        beat_anim
+        rest 24
+        rest 24
+        beat_anim
+        rest 24
+        rest 24
+        beat_anim
+        rest 24
+        rest 24
+        beat_anim
+        rest 24
+        rest 24
+        print_text_f NULL
+        play_sfx s_rap_kimitte_saiko_seqData
+        rap_men_animate_rapper 2
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper 2
+        beat_anim
+        rest 24
+        spawn_cue CUE_UN
+        rest 24
+        play_sfx s_intro_uh_seqData
+        print_text_f NULL
+        spawn_cue CUE_UUN
+        beat_anim
+        rest 24
+        play_sfx s_intro_uh_seqData
+        rest 24
+        beat_anim
+        rest 24
+        rest 24
+        play_sfx s_rap_kimitte_saiko_seqData
+        rap_men_animate_rapper 2
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper 2
+        beat_anim
+        rest 24
+        spawn_cue CUE_UN
+        rest 24
+        play_sfx s_intro_uh_seqData
+        print_text_f NULL
+        spawn_cue CUE_UUN
+        beat_anim
+        rest 24
+        play_sfx s_intro_uh_seqData
+        rest 24
+        beat_anim
+        rest 24
+        rest 24
+        play_sfx s_rap_kimitte_saiko_seqData
+        rap_men_animate_rapper 2
+        beat_anim
+        rest 24
+        rest 24
+        rap_men_animate_rapper 2
+        beat_anim
+        rest 24
+        spawn_cue CUE_UN
+        rest 24
+        play_sfx s_intro_uh_seqData
+        print_text_f NULL
+        spawn_cue CUE_UUN
+        beat_anim
+        rest 24
+        play_sfx s_intro_uh_seqData
+        rest 24
+        beat_anim
+        rest 24
+        rest 24
+        run func_080175c4, 0
+    loop_end
+    run gameplay_set_tutorial NULL
+    print_text_f D_0805ec24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    goto script_rap_men_main
+
+
+script script_rap_men_skipped_practice
+    set_tempo 180
+    set_music_volume 256
+    rap_men_enable_tutorial 0
+    rest 24
+    enable_pause 1
+    rest 24
+    play_music s_rap_bgm_renshu_seqData
+    goto script_rap_men_main
 
 .end
