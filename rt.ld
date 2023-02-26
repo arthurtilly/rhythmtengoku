@@ -1837,6 +1837,8 @@ SECTIONS {
         build/bin/bindata_08a1f79c.bin.o(.rodata*);
         build/games/showtime/showtime.bs.o(.script.main);
         build/bin/bindata_08a35588.bin.o(.rodata*);
+        build/games/space_dance/space_dance.bs.o(.script.main);
+        build/bin/bindata_08a36930.bin.o(.rodata*);
         build/games/rap_men/rap_men.bs.o(.script.main);
         build/bin/bindata_08a3c0d4.bin.o(.rodata*);
         build/games/quiz_show/quiz_show.bs.o(.script.main);
@@ -1847,6 +1849,8 @@ SECTIONS {
         build/bin/bindata_08a4b3ac.bin.o(.rodata*);
         build/games/rap_men/rap_women.bs.o(.script.main);
         build/bin/bindata_08a4d8e4.bin.o(.rodata*);
+        build/games/space_dance/cosmic_dance.bs.o(.script.main);
+        build/bin/bindata_08a584c4.bin.o(.rodata*);
         build/games/concert_hall/concert_hall.bs.o(.script.main);
         build/bin/bindata_08a60600.bin.o(.rodata*);
         build/games/bon_odori/bon_dance.bs.o(.script.main);
@@ -1856,6 +1860,8 @@ SECTIONS {
         build/bin/bindata_08a7a20c.bin.o(.rodata*);
         build/games/power_calligraphy/power_calligraphy.bs.o(.script.sub);
         build/bin/bindata_08a808d8.bin.o(.rodata*);
+        build/games/space_dance/space_dance.bs.o(.script.sub);
+        build/bin/bindata_08a85a50.bin.o(.rodata*);
 
         build/audio/audio_data.c.o(.data);
         build/bin/bindata_08a9e8e0.bin.o(.rodata*);
