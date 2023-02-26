@@ -1860,7 +1860,7 @@ SECTIONS {
         build/bin/bindata_08a7a20c.bin.o(.rodata*);
         build/games/power_calligraphy/power_calligraphy.bs.o(.script.sub);
         build/bin/bindata_08a808d8.bin.o(.rodata*);
-        build/games/space_dance/space_dance.bs.o(.script.sub);
+        build/games/space_dance/subroutines.bs.o(.script.sub);
         build/bin/bindata_08a85a50.bin.o(.rodata*);
 
         build/audio/audio_data.c.o(.data);
