@@ -24,6 +24,50 @@ enum BGLayersEnum {
   //  //  //  OBJECT ANIMATION  //  //  //
 
 
+struct OAM {
+    // Attribute 0
+    u16 yPos:8;
+    u16 affineFlag:1;
+    u16 objDisable:1;
+    u16 objMode:2;
+    u16 objMosaic:1;
+    u16 paletteMode:1;
+    u16 objShape:2;
+
+    // Attribute 1
+    u16 xPos:9;
+    u16 unused:3;
+    u16 hFlip:1;
+    u16 vFlip:1;
+    u16 objSize:2;
+
+    // Attribute 2
+    u16 tileNum:10;
+    u16 priority:2;
+    u16 palette:4;
+};
+
+struct AffineOAM {
+    // Attribute 0
+    u16 yPos:8;
+    u16 affineFlag:1;
+    u16 doubleSize:1;
+    u16 objMode:2;
+    u16 objMosaic:1;
+    u16 paletteMode:1;
+    u16 objShape:2;
+
+    // Attribute 1
+    u16 xPos:9;
+    u16 affineParam:5;
+    u16 objSize:2;
+
+    // Attribute 2
+    u16 tileNum:10;
+    u16 priority:2;
+    u16 palette:4;
+};
+
 typedef u16 AnimationCel;
 
 struct Animation {
@@ -81,17 +125,15 @@ struct FontDefinition {
     u8 *katakanaWidths;
 };
 
-typedef void (*FontFunc)(u8 *, u8 *);
-
 struct TextObject1 {
-    u16 id; // mem_id
-    const struct FontDefinition *data;
-    u16 unk8;
-    u8 length;
-    u16 *unkC; // text..?
-    u8 *unk10; // mapping..?
-    FontFunc unk14; // function
-    void *unk18; // some graphics sort of thing
+    u16 memID;
+    const struct FontDefinition *fonts;
+    u16 baseTileNum;
+    u8 maxAllocatedTileRows;
+    u16 *printedGlyphs;
+    u8 *printedGlyphCounts;
+    void (*parseString)(char *, const char *);
+    char *parsedOutput;
 };
 
 struct TextObject2 {

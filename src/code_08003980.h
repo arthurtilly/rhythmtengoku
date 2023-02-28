@@ -44,35 +44,35 @@ extern u32  func_08003ab8();
 // extern ? func_080042a4(?);
 // extern ? func_080042bc(?);
 
-extern void func_080043c8(const struct FontDefinition *font, const char *string, void **textureReq, u32 *widthReq); // Get glyph texture and width.
-// extern ? func_080044f0(?);
-// extern ? func_08004508(?); // Create Text1 thing
-// extern ? func_08004574(?);
-// extern ? func_0800459c(?); // Set Text1 things
-// extern ? func_080045b4(?);
-// extern ? func_080045d0(?); // Clear Text1 text
+extern void func_080043c8(const struct FontDefinition *font, const char *string, void **textureReq, u32 *widthReq); // Get printable glyph texture and width.
+extern struct TextObject1 *func_080044f0(u16 memID, const struct FontDefinition *fonts, u32 baseTileNum, u32 maxTileRows); // Create new TextObject1 (no casting?).
+extern struct TextObject1 *func_08004508(u16 memID, const struct FontDefinition *fonts, u16 baseTileNum, u8 maxTileRows); // Create new TextObject1.
+extern void func_08004574(struct TextObject1 *textObj); // Delete TextObject1.
+extern void func_0800459c(struct TextObject1 *textObj, void *stringParserFunc, u32 maxOutputLength); // Set TextObject1 parseString() function and allocate space for parsedOutput.
+extern void func_080045b4(struct TextObject1 *textObj, const struct FontDefinition *fonts, u16 baseTileNum, u8 maxTileRows, u32, u32, u16 *printedGlyphs, u8 *printedGlyphCounts); // Set TextObject1 data.
+extern void func_080045d0(struct TextObject1 *textObj); // Clear TextObject1 printed glyph data.
 extern u32 func_080045fc(const char *string); // Get total animation objects required for generated text (ignoring whitespace).
-// extern ? func_08004628(?);
+extern u32 func_08004628(const struct FontDefinition *font, const char *string); // Get glyph width.
 extern u8 func_0800467c(char c); // Get value for font style/palette.
-// extern ? func_080046c0(?);
+extern u32 func_080046c0(const struct FontDefinition *font, const char *string); // Get string width.
 extern void func_08004714(const u16 *texture, u16 *dest); // Print glyph (halfwidth).
 extern void func_08004748(const u16 *texture, u16 *dest); // Print glyph (fullwidth).
-// extern ? func_0800477c(?);
+extern u16 func_0800477c(struct TextObject1 *textObj, const char *string, u32 *widthReq); // Print glyph, returning the tileID.
 extern u32 func_0800496c(const char *string); // Check if a char is whitespace.
 extern u32 func_080049a0(const char *string); // Check if a char is a supported Latin alphabet char.
 extern const char *func_080049dc(const char *string); // Convert halfwidth Latin Alphabet character to fullwidth.
-// extern ? func_080049f0(?); // (https://decomp.me/scratch/QO7Bu) Create Animation
-// extern ? func_08004b60(?);
-// extern ? func_08004b70(?); // Get Animation (No Alignment)
-// extern ? func_08004b88(?);
-extern struct Animation *func_08004b98(struct TextObject1 *, const char *, u32, u32); // Get Animation (Center-Aligned)
-// extern ? func_08004bfc(?);
-extern struct Animation *func_08004c0c(struct TextObject1 *, const char *, u32, u32); // Get Animation (Left-Aligned)
-// extern ? func_08004c40(?);
-extern struct Animation *func_08004c50(struct TextObject1 *, const char *, u32, u32); // Get Animation (Right-Aligned)
-// extern ? func_08004cac(?);
-// extern ? func_08004ccc(?);
-extern void func_08004d44(struct TextObject1 *, struct Animation *); // delete animation for text1 thing?
+extern void *func_080049f0(struct TextObject1 *textObj, const char *string, u32 *widthReq, u32 fontStyle, u32 palette); // Create Animation.
+extern struct Animation *func_08004b60(struct TextObject1 *textObj, const char *string); // Get Animation (Unaligned, default FontStyle and Palette).
+extern struct Animation *func_08004b70(struct TextObject1 *textObj, const char *string, u32 fontStyle, u32 palette); // Get Animation (Unaligned).
+extern struct Animation *func_08004b88(struct TextObject1 *textObj, const char *string); // Get Animation (Center-aligned, default FontStyle and Palette).
+extern struct Animation *func_08004b98(struct TextObject1 *textObj, const char *string, u32 fontStyle, u32 palette); // Get Animation (Center-aligned).
+extern struct Animation *func_08004bfc(struct TextObject1 *textObj, const char *string); // Get Animation (Left-aligned, default FontStyle and Palette).
+extern struct Animation *func_08004c0c(struct TextObject1 *textObj, const char *string, u32 fontStyle, u32 palette); // Get Animation (Left-aligned).
+extern struct Animation *func_08004c40(struct TextObject1 *textObj, const char *string); // Get Animation (Right-aligned, default FontStyle and Palette).
+extern struct Animation *func_08004c50(struct TextObject1 *textObj, const char *string, u32 fontStyle, u32 palette); // Get Animation (Right-aligned).
+extern struct Animation *func_08004cac(struct TextObject1 *textObj, const char *string, s16 x, s16 y); // Get Animation (Shift to XY, default FontStyle and Palette).
+extern struct Animation *func_08004ccc(struct TextObject1 *textObj, const char *string, s16 x, s16 y, u32 fontStyle, u32 palette); // Get Animation (Shift to XY).
+extern void func_08004d44(struct TextObject1 *textObj, struct Animation *anim); // Delete printed TextObject1.
 extern struct unk_struct_08004da0 *func_08004da0(struct unk_struct_08004da0_init *arg0);
 extern u32 func_08004dc0(struct unk_struct_08004da0 *arg0);
 // extern ? func_08004e60(?);
