@@ -2,37 +2,38 @@
 #include "graphics.h"
 #include "src/code_08003980.h"
 
-// WarioWare Display Font: Large
-extern const u8 D_088d44e8[]; // Textures - Punctuation/Symbols
-extern const u8 D_088d3ae8[]; // Textures - Arabic Numerals
-extern const u8 D_088d3fe8[]; // Textures - Arabic Numerals (Alt.)
-extern const u8 D_088cc2e8[]; // Textures - Latin Alphabet (Uppercase)
-extern const u8 D_088ccfe8[]; // Textures - Latin Alphabet (Lowercase)
-extern const u8 D_088cdce8[]; // Textures - Hiragana Alphabet
-extern const u8 D_088d0be8[]; // Textures - Katakana Alphabet
-
-// WarioWare Display Font: Small
-extern const u8 D_088e46e8[]; // Textures - Punctuation/Symbols
-extern const u8 D_088e41e8[]; // Textures - Arabic Numerals
-extern const u8 D_088dc9e8[]; // Textures - Latin Alphabet (Uppercase)
-extern const u8 D_088dd6e8[]; // Textures - Latin Alphabet (Lowercase)
-extern const u8 D_088de3e8[]; // Textures - Hiragana Alphabet
-extern const u8 D_088e12e8[]; // Textures - Katakana Alphabet
-
-// WarioWare Body Font: Style 1, Style 2
-extern const u8 D_088db268[]; // Textures - Punctuation/Symbols
-extern const u8 D_088dafe8[]; // Textures - Arabic Numerals
-extern const u8 D_088d73e8[]; // Textures - Latin Alphabet (Uppercase)
-extern const u8 D_088d7a68[]; // Textures - Latin Alphabet (Lowercase)
-extern const u8 D_088d80e8[]; // Textures - Hiragana Alphabet
-extern const u8 D_088d9868[]; // Textures - Katakana Alphabet
-
-// WarioWare Body Font: Style 2
-extern const u8 D_088e7c68[]; // Textures - Arabic Numerals
-extern const u8 D_088e75e8[]; // Textures - Latin Alphabet (Uppercase)
-
 
 /* Font Definitions */
+
+
+// WarioWare Display Font: Large
+extern const u8 warioware_outline_large_symbol_glyphs_bin[]; // Textures - Punctuation/Symbols
+extern const u8 warioware_outline_large_numeral_wide_glyphs_bin[]; // Textures - Arabic Numerals (Wide)
+extern const u8 warioware_outline_large_numeral_narrow_glyphs_bin[]; // Textures - Arabic Numerals (Narrow)
+extern const u8 warioware_outline_large_latin_upper_glyphs_bin[]; // Textures - Latin Alphabet (Uppercase)
+extern const u8 warioware_outline_large_latin_lower_glyphs_bin[]; // Textures - Latin Alphabet (Lowercase)
+extern const u8 warioware_outline_large_hiragana_glyphs_bin[]; // Textures - Hiragana Alphabet
+extern const u8 warioware_outline_large_katakana_glyphs_bin[]; // Textures - Katakana Alphabet
+
+// WarioWare Display Font: Small
+extern const u8 warioware_outline_small_symbol_glyphs_bin[]; // Textures - Punctuation/Symbols
+extern const u8 warioware_outline_small_numeral_glyphs_bin[]; // Textures - Arabic Numerals
+extern const u8 warioware_outline_small_latin_upper_glyphs_bin[]; // Textures - Latin Alphabet (Uppercase)
+extern const u8 warioware_outline_small_latin_lower_glyphs_bin[]; // Textures - Latin Alphabet (Lowercase)
+extern const u8 warioware_outline_small_hiragana_glyphs_bin[]; // Textures - Hiragana Alphabet
+extern const u8 warioware_outline_small_katakana_glyphs_bin[]; // Textures - Katakana Alphabet
+
+// WarioWare Body Font: Text
+extern const u8 warioware_body_text_symbol_glyphs_bin[]; // Textures - Punctuation/Symbols
+extern const u8 warioware_body_text_numeral_glyphs_bin[]; // Textures - Arabic Numerals
+extern const u8 warioware_body_text_latin_upper_glyphs_bin[]; // Textures - Latin Alphabet (Uppercase)
+extern const u8 warioware_body_text_latin_lower_glyphs_bin[]; // Textures - Latin Alphabet (Lowercase)
+extern const u8 warioware_body_text_hiragana_glyphs_bin[]; // Textures - Hiragana Alphabet
+extern const u8 warioware_body_text_katakana_glyphs_bin[]; // Textures - Katakana Alphabet
+
+// WarioWare Body Font: Icon
+extern const u8 warioware_body_icon_numeral_glyphs_bin[]; // Textures - Arabic Numerals
+extern const u8 warioware_body_icon_latin_upper_glyphs_bin[]; // Textures - Latin Alphabet (Uppercase)
 
 
 // [D_089de30c] Display Font (Large) - Punctuation/Symbols
@@ -45,13 +46,13 @@ u8 bitmap_font_warioware_outline_large_symbol_widths[] = {
     11, 12, 14, 15, 14, 13, 15, 11, 16, 16, 12, 13, 13, 13
 };
 
-// [D_089de36a] Display Font (Large) - Arabic Numerals
-u8 bitmap_font_warioware_outline_large_numeral_widths[] = {
+// [D_089de36a] Display Font (Large) - Arabic Numerals (Wide)
+u8 bitmap_font_warioware_outline_large_numeral_wide_widths[] = {
     14, 12, 13, 13, 13, 13, 13, 13, 13, 13
 };
 
-// [D_089de374] Display Font (Large) - Arabic Numerals (Alt.)
-u8 bitmap_font_warioware_outline_large_alt_numeral_widths[] = {
+// [D_089de374] Display Font (Large) - Arabic Numerals (Narrow)
+u8 bitmap_font_warioware_outline_large_numeral_narrow_widths[] = {
      7,  6,  7,  7,  7,  7,  7,  7,  7,  7
 };
 
@@ -138,7 +139,7 @@ u8 bitmap_font_warioware_outline_small_katakana_widths[] = {
 
 // [D_089de5c8] WarioWare Outline Font
 struct BitmapFontData bitmap_font_warioware_outline[] = {
-    /* STYLE 1 - LARGE */ {
+    /* STYLE 1 - LARGE (WIDE NUMERALS) */ {
         /* DIMENSIONS */
             /* Whitespace W. */ 6,
             /* Glyph Width   */ 16,
@@ -147,22 +148,22 @@ struct BitmapFontData bitmap_font_warioware_outline[] = {
             /* Spacing Width */ 0,
 
         /* GLYPHS: PUNCTUATION/SYMBOLS */
-            /* Textures */ D_088d44e8,
+            /* Textures */ warioware_outline_large_symbol_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_symbol_widths,
         /* GLYPHS: ARABIC NUMERALS */
-            /* Textures */ D_088d3ae8,
-            /* Widths   */ bitmap_font_warioware_outline_large_numeral_widths,
+            /* Textures */ warioware_outline_large_numeral_wide_glyphs_bin,
+            /* Widths   */ bitmap_font_warioware_outline_large_numeral_wide_widths,
         /* GLYPHS: LATIN ALPHABET (UPPERCASE) */
-            /* Textures */ D_088cc2e8,
+            /* Textures */ warioware_outline_large_latin_upper_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_latin_upper_widths,
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
-            /* Textures */ D_088ccfe8,
+            /* Textures */ warioware_outline_large_latin_lower_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_latin_lower_widths,
         /* GLYPHS: HIRAGANA ALPHABET */
-            /* Textures */ D_088cdce8,
+            /* Textures */ warioware_outline_large_hiragana_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_hiragana_widths,
         /* GLYPHS: KATAKANA ALPHABET */
-            /* Textures */ D_088d0be8,
+            /* Textures */ warioware_outline_large_katakana_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_katakana_widths,
     },
 
@@ -175,26 +176,26 @@ struct BitmapFontData bitmap_font_warioware_outline[] = {
             /* Spacing Width */ -1,
 
         /* GLYPHS: PUNCTUATION/SYMBOLS */
-            /* Textures */ D_088e46e8,
+            /* Textures */ warioware_outline_small_symbol_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_small_symbol_widths,
         /* GLYPHS: ARABIC NUMERALS */
-            /* Textures */ D_088e41e8,
+            /* Textures */ warioware_outline_small_numeral_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_small_numeral_widths,
         /* GLYPHS: LATIN ALPHABET (UPPERCASE) */
-            /* Textures */ D_088dc9e8,
+            /* Textures */ warioware_outline_small_latin_upper_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_small_latin_upper_widths,
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
-            /* Textures */ D_088dd6e8,
+            /* Textures */ warioware_outline_small_latin_lower_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_small_latin_lower_widths,
         /* GLYPHS: HIRAGANA ALPHABET */
-            /* Textures */ D_088de3e8,
+            /* Textures */ warioware_outline_small_hiragana_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_small_hiragana_widths,
         /* GLYPHS: KATAKANA ALPHABET */
-            /* Textures */ D_088e12e8,
+            /* Textures */ warioware_outline_small_katakana_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_small_katakana_widths,
     },
 
-    /* STYLE 3 - LARGE (ALT. NUMERALS) */ {
+    /* STYLE 3 - LARGE (NARROW NUMERALS) */ {
         /* DIMENSIONS */
             /* Whitespace W. */ 6,
             /* Glyph Width   */ 16,
@@ -203,22 +204,22 @@ struct BitmapFontData bitmap_font_warioware_outline[] = {
             /* Spacing Width */ 0,
 
         /* GLYPHS: PUNCTUATION/SYMBOLS */
-            /* Textures */ D_088d44e8,
+            /* Textures */ warioware_outline_large_symbol_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_symbol_widths,
         /* GLYPHS: ARABIC NUMERALS */
-            /* Textures */ D_088d3fe8,
-            /* Widths   */ bitmap_font_warioware_outline_large_alt_numeral_widths,
+            /* Textures */ warioware_outline_large_numeral_narrow_glyphs_bin,
+            /* Widths   */ bitmap_font_warioware_outline_large_numeral_narrow_widths,
         /* GLYPHS: LATIN ALPHABET (UPPERCASE) */
-            /* Textures */ D_088cc2e8,
+            /* Textures */ warioware_outline_large_latin_upper_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_latin_upper_widths,
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
-            /* Textures */ D_088ccfe8,
+            /* Textures */ warioware_outline_large_latin_lower_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_latin_lower_widths,
         /* GLYPHS: HIRAGANA ALPHABET */
-            /* Textures */ D_088cdce8,
+            /* Textures */ warioware_outline_large_hiragana_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_hiragana_widths,
         /* GLYPHS: KATAKANA ALPHABET */
-            /* Textures */ D_088d0be8,
+            /* Textures */ warioware_outline_large_katakana_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_katakana_widths,
     }
 };
@@ -234,22 +235,22 @@ struct BitmapFontData bitmap_font_warioware_body[] = {
             /* Spacing Width */ 0,
 
         /* GLYPHS: PUNCTUATION/SYMBOLS */
-            /* Textures */ D_088db268,
+            /* Textures */ warioware_body_text_symbol_glyphs_bin,
             /* Widths   */ NULL,
         /* GLYPHS: ARABIC NUMERALS */
-            /* Textures */ D_088dafe8,
+            /* Textures */ warioware_body_text_numeral_glyphs_bin,
             /* Widths   */ NULL,
         /* GLYPHS: LATIN ALPHABET (UPPERCASE) */
-            /* Textures */ D_088d73e8,
+            /* Textures */ warioware_body_text_latin_upper_glyphs_bin,
             /* Widths   */ NULL,
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
-            /* Textures */ D_088d7a68,
+            /* Textures */ warioware_body_text_latin_lower_glyphs_bin,
             /* Widths   */ NULL,
         /* GLYPHS: HIRAGANA ALPHABET */
-            /* Textures */ D_088d80e8,
+            /* Textures */ warioware_body_text_hiragana_glyphs_bin,
             /* Widths   */ NULL,
         /* GLYPHS: KATAKANA ALPHABET */
-            /* Textures */ D_088d9868,
+            /* Textures */ warioware_body_text_katakana_glyphs_bin,
             /* Widths   */ NULL,
     },
 
@@ -262,22 +263,22 @@ struct BitmapFontData bitmap_font_warioware_body[] = {
             /* Spacing Width */ 0,
 
         /* GLYPHS: PUNCTUATION/SYMBOLS */
-            /* Textures */ D_088db268,
+            /* Textures */ warioware_body_text_symbol_glyphs_bin,
             /* Widths   */ NULL,
         /* GLYPHS: ARABIC NUMERALS */
-            /* Textures */ D_088e7c68,
+            /* Textures */ warioware_body_icon_numeral_glyphs_bin,
             /* Widths   */ NULL,
         /* GLYPHS: LATIN ALPHABET (UPPERCASE) */
-            /* Textures */ D_088e75e8,
+            /* Textures */ warioware_body_icon_latin_upper_glyphs_bin,
             /* Widths   */ NULL,
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
-            /* Textures */ D_088d7a68,
+            /* Textures */ warioware_body_text_latin_lower_glyphs_bin,
             /* Widths   */ NULL,
         /* GLYPHS: HIRAGANA ALPHABET */
-            /* Textures */ D_088d80e8,
+            /* Textures */ warioware_body_text_hiragana_glyphs_bin,
             /* Widths   */ NULL,
         /* GLYPHS: KATAKANA ALPHABET */
-            /* Textures */ D_088d9868,
+            /* Textures */ warioware_body_text_katakana_glyphs_bin,
             /* Widths   */ NULL,
     }
 };

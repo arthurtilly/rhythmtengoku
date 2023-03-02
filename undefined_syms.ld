@@ -204,28 +204,6 @@ D_030064d4 = 0x030064d4;
 /* bindata_088a0650 */
 /* 0x088a0650 is .rodata section of the SRAM library */
 
-/* Font Textures */ /* Uncompressed */
-D_088cc2e8 = 0x088cc2e8;
-D_088ccfe8 = 0x088ccfe8;
-D_088cdce8 = 0x088cdce8;
-D_088d0be8 = 0x088d0be8;
-D_088d3ae8 = 0x088d3ae8;
-D_088d3fe8 = 0x088d3fe8;
-D_088d44e8 = 0x088d44e8;
-D_088d73e8 = 0x088d73e8;
-D_088d7a68 = 0x088d7a68;
-D_088d80e8 = 0x088d80e8;
-D_088d9868 = 0x088d9868;
-D_088dafe8 = 0x088dafe8;
-D_088db268 = 0x088db268;
-D_088dc9e8 = 0x088dc9e8;
-D_088dd6e8 = 0x088dd6e8;
-D_088de3e8 = 0x088de3e8;
-D_088e12e8 = 0x088e12e8;
-D_088e41e8 = 0x088e41e8;
-D_088e46e8 = 0x088e46e8;
-D_088e75e8 = 0x088e75e8;
-D_088e7c68 = 0x088e7c68;
 /* Main Menu - Options Animations */
 D_088f5aec = 0x088f5aec;
 D_088f5afc = 0x088f5afc;
