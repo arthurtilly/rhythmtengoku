@@ -195,31 +195,31 @@ void bon_odori_lyrics_display_line(const char *text, u32 line, u32 hAlign) {
     }
 
     if (text != NULL) {
-        struct Animation *anim;
+        struct PrintedTextAnim *textAnim;
 
         switch (hAlign) {
             case BON_LYRICS_ALIGNMENT_CENTRE:
-                anim = func_08004b98(gBonOdoriInfo->unk4, text, 0, 7);
+                textAnim = func_08004b98(gBonOdoriInfo->unk4, text, 0, 7);
                 break;
             case BON_LYRICS_ALIGNMENT_LEFT:
-                anim = func_08004c0c(gBonOdoriInfo->unk4, text, 0, 7);
+                textAnim = func_08004c0c(gBonOdoriInfo->unk4, text, 0, 7);
                 break;
             case BON_LYRICS_ALIGNMENT_RIGHT:
-                anim = func_08004c50(gBonOdoriInfo->unk4, text, 0, 7);
+                textAnim = func_08004c50(gBonOdoriInfo->unk4, text, 0, 7);
                 break;
         }
 
         x = bon_odori_text_x_offsets[hAlign];
         y = (line * 24) + 32;
 
-        lyricObj->textSprite = func_0804d160(D_03005380, anim, 0, x, y, 0x4100, 0, 0, 0);
+        lyricObj->textSprite = func_0804d160(D_03005380, textAnim->frames, 0, x, y, 0x4100, 0, 0, 0);
         func_0804d8c4(D_03005380, lyricObj->textSprite, BON_LYRICS_NORMAL_PALETTE);
         func_0804db44(D_03005380, lyricObj->textSprite, &gBonOdoriInfo->lyricsX, &gBonOdoriInfo->lyricsY);
 
-        lyricObj->highlightSprite = func_0804d294(D_03005380, anim, 0, x, y, 0x4100, 0, 0, 0x8000, 8);
+        lyricObj->highlightSprite = func_0804d294(D_03005380, textAnim->frames, 0, x, y, 0x4100, 0, 0, 0x8000, 8);
         func_0804db44(D_03005380, lyricObj->highlightSprite, &gBonOdoriInfo->lyricsX, &gBonOdoriInfo->lyricsY);
 
-        lyricObj->anim = anim;
+        lyricObj->anim = textAnim->frames;
         lyricObj->width = func_0804ddb0(D_03005380, lyricObj->textSprite, 24);
 
         switch (hAlign) {

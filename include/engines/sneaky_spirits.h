@@ -7,7 +7,7 @@
 
 // Engine Types:
 struct SneakySpiritsInfo {
-    struct TextObject1 *unk0;  // Pointer: Font? (Related to Tutorial Text)
+    struct BitmapFontOBJ *unk0;  // Pointer: Font? (Related to Tutorial Text)
     u8  version;        // Value:   Version
     u8  rainSlow;       // Flag:    Slow-Motion Rain
     s16 rainDrops[30];      // Sprite:  Raindrops

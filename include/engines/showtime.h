@@ -6,7 +6,7 @@
 #include "games/showtime/graphics/showtime_graphics.h"
 
 struct ShowtimeInfo {
-    struct TextObject1 *unk0;
+    struct BitmapFontOBJ *unk0;
     u16 unk4;
     u8 version;
     struct ShowtimeInfo_sub {

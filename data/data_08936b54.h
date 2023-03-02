@@ -26,15 +26,6 @@ extern struct TaskMethods D_08936c7c;
 extern struct TaskMethods D_08936c8c;
 extern struct TaskMethods D_08936c9c;
 
-struct unk_struct_08004da0_init;
-struct unk_struct_08004da0;
-
-struct unk_struct_080054b0_init;
-struct unk_struct_080054b0;
-
-struct unk_struct_08005858_init;
-struct unk_struct_08005858;
-
 struct unk_struct_08006bb4_init {
     u32 pad0;
     u32 pad4;

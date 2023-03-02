@@ -8,7 +8,7 @@
 // Engine Types:
 struct FireworksInfo {
     u8  version;        // Version Number
-    struct TextObject1 *unk4;  // Font?
+    struct BitmapFontOBJ *unk4;  // Font?
     s16 textSprite;     // Tutorial Text (Sprite)
     struct FireworksParticle {
         s16 sprite;     // Sprite

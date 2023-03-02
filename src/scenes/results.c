@@ -39,7 +39,7 @@ extern struct Scene D_089d7c18; // Results (Epilogue)
 extern struct Scene D_089d7964; // Results (Score-Type)
 extern struct Scene D_089cdf08; // Game Select
 
-extern const struct FontDefinition D_089de670;
+extern const struct BitmapFontData D_089de670;
 
 static s32 D_0300132c; // unknown type, unknown if exists
 static s32 D_03001330; // unknown type

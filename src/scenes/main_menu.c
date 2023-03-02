@@ -12,7 +12,7 @@
 #include "gameplay.h"
 #include "src/lib_0804ca80.h"
 
-extern const struct FontDefinition D_089de670;
+extern const struct BitmapFontData D_089de670;
 extern struct Scene D_089ddbcc; // Debug Menu Script
 extern struct Scene D_089cdf08; // Game Select Script
 extern struct Scene D_089d7964; // Results (Score) Script
