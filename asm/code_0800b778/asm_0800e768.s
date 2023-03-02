@@ -33,17 +33,17 @@ branch_0800e796: \n\
  \n\
 branch_0800e79c: \n\
 /* 0800e79c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0800e79e */ BL func_08004b88 \n\
+/* 0800e79e */ BL bmp_font_obj_print_c_default \n\
 /* 0800e7a2 */ B branch_0800e7b2 \n\
  \n\
 branch_0800e7a4: \n\
 /* 0800e7a4 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0800e7a6 */ BL func_08004bfc \n\
+/* 0800e7a6 */ BL bmp_font_obj_print_l_default \n\
 /* 0800e7aa */ B branch_0800e7b2 \n\
  \n\
 branch_0800e7ac: \n\
 /* 0800e7ac */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0800e7ae */ BL func_08004c40 \n\
+/* 0800e7ae */ BL bmp_font_obj_print_r_default \n\
  \n\
 branch_0800e7b2: \n\
 /* 0800e7b2 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\

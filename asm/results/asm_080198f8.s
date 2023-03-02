@@ -15,7 +15,7 @@ thumb_func_start func_080198f8 \n\
 /* 0801990a */ LDR R1, =D_08054ec4 \n\
 /* 0801990c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801990e */ MOVS R3, 0x7 @ Set R3 to 0x7 \n\
-/* 08019910 */ BL func_08004b98 \n\
+/* 08019910 */ BL bmp_font_obj_print_c \n\
 /* 08019914 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08019916 */ LDR R0, =D_03005380 \n\
 /* 08019918 */ LDR R0, [R0] \n\
@@ -163,7 +163,7 @@ branch_08019a0e: \n\
 /* 08019a36 */ ADD R1, SP, 0x14 \n\
 /* 08019a38 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08019a3a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08019a3c */ BL func_08004c50 \n\
+/* 08019a3c */ BL bmp_font_obj_print_r \n\
 /* 08019a40 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08019a42 */ LDR R0, =D_03005380 \n\
 /* 08019a44 */ LDR R0, [R0] \n\

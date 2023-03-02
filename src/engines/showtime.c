@@ -50,7 +50,7 @@ void showtime_engine_start(u32 version) {
     scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, BG_PRIORITY_HIGHEST);
     func_0802d96c();
     gShowtimeInfo->unk0 = func_0800c660(0x340, 2);
-    textAnim = func_08004b98(gShowtimeInfo->unk0, D_0805a3cc, 0, 0);
+    textAnim = bmp_font_obj_print_c(gShowtimeInfo->unk0, D_0805a3cc, 0, 0);
     gShowtimeInfo->unk4 = func_0804d160(D_03005380, textAnim->frames, 0, 120, 56, 0, 0, 0, 0);
     gameplay_set_input_buttons(A_BUTTON, 0);
     func_0802c23c();    

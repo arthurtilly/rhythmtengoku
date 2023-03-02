@@ -29,7 +29,7 @@ thumb_func_start func_0801dbe8 \n\
 /* 0801dc18 */ LSRS R4, R4, 0x18 \n\
 /* 0801dc1a */ STR R4, [SP] \n\
 /* 0801dc1c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0801dc1e */ BL func_08005124 \n\
+/* 0801dc1e */ BL create_new_bmp_font_bg \n\
 /* 0801dc22 */ STR R0, [R7] \n\
 /* 0801dc24 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0801dc26 */ MOV R1, R8 @ Set R1 to R8 \n\

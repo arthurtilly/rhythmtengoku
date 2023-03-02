@@ -70,7 +70,7 @@ void fireworks_engine_start(u32 version) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 0);
     gFireworksInfo->unk4 = func_0800c660(0x340, 2);
-    textAnim = func_08004b98(gFireworksInfo->unk4, D_0805a3d0, 1, 15);
+    textAnim = bmp_font_obj_print_c(gFireworksInfo->unk4, D_0805a3d0, 1, 15);
     gFireworksInfo->textSprite = func_0804d160(D_03005380, textAnim->frames, 0, 120, 144, 0x7f7, 0, 0, 0);
     gFireworksInfo->screenBrightness = 0;
     gFireworksInfo->patternTableNext = 0;
@@ -653,7 +653,7 @@ void fireworks_common_display_text(char *text) {
     if (text == NULL) {
         func_0804d770(D_03005380, gFireworksInfo->textSprite, FALSE);
     } else {
-        textAnim = func_08004b98(gFireworksInfo->unk4, text, 1, 12);
+        textAnim = bmp_font_obj_print_c(gFireworksInfo->unk4, text, 1, 12);
         func_08007b04(gFireworksInfo->unk4, gFireworksInfo->textSprite);
         func_0804d8f8(D_03005380, gFireworksInfo->textSprite, textAnim->frames, 0, 1, 0, 0);
         func_0804d770(D_03005380, gFireworksInfo->textSprite, TRUE);

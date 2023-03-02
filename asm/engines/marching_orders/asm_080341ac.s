@@ -56,7 +56,7 @@ thumb_func_start marching_engine_start \n\
 /* 0803421c */ LDR R1, =D_0805a670 \n\
 /* 0803421e */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 08034220 */ MOVS R3, 0xE @ Set R3 to 0xE \n\
-/* 08034222 */ BL func_08004c0c \n\
+/* 08034222 */ BL bmp_font_obj_print_l \n\
 /* 08034226 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08034228 */ LDR R5, =D_03005380 \n\
 /* 0803422a */ LDR R0, [R5] \n\

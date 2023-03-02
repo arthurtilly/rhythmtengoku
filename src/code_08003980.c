@@ -117,7 +117,7 @@ extern const char *D_08936b50; // Fullwidth Lowercase Latin Alphabet Table
 
 
 // Get printable glyph texture and width.
-void func_080043c8(const struct BitmapFontData *font, const char *string, u16 **textureReq, u32 *widthReq) {
+void bmp_font_get_glyph(const struct BitmapFontData *font, const char *string, u16 **textureReq, u32 *widthReq) {
     void *textures;
     u8 *widths;
     u32 id;
@@ -216,13 +216,13 @@ void func_080043c8(const struct BitmapFontData *font, const char *string, u16 **
 
 
 // Create new BitmapFont (no casting?).
-struct BitmapFontOBJ *func_080044f0(u16 memID, const struct BitmapFontData *fonts, u32 baseTileNum, u32 maxTileRows) {
-    return func_08004508(memID, fonts, baseTileNum, maxTileRows);
+struct BitmapFontOBJ *create_new_bmp_font_obj_alt(u16 memID, const struct BitmapFontData *fonts, u32 baseTileNum, u32 maxTileRows) {
+    return create_new_bmp_font_obj(memID, fonts, baseTileNum, maxTileRows);
 }
 
 
 // Create new BitmapFontOBJ.
-struct BitmapFontOBJ *func_08004508(u16 memID, const struct BitmapFontData *fonts, u16 baseTileNum, u8 maxTileRows) {
+struct BitmapFontOBJ *create_new_bmp_font_obj(u16 memID, const struct BitmapFontData *fonts, u16 baseTileNum, u8 maxTileRows) {
     struct BitmapFontOBJ *textObj;
 
     textObj = mem_heap_alloc_id(memID, sizeof(struct BitmapFontOBJ));
@@ -234,14 +234,14 @@ struct BitmapFontOBJ *func_08004508(u16 memID, const struct BitmapFontData *font
     textObj->printedGlyphCounts = mem_heap_alloc_id(memID, maxTileRows * 16 * sizeof(u8));
     textObj->parseString = NULL;
     textObj->parsedOutput = NULL;
-    func_080045d0(textObj);
+    bmp_font_obj_clear_print_data(textObj);
 
     return textObj;
 }
 
 
 // Delete BitmapFontOBJ.
-void func_08004574(struct BitmapFontOBJ *textObj) {
+void delete_bmp_font_obj(struct BitmapFontOBJ *textObj) {
     mem_heap_dealloc(textObj->printedGlyphs);
     mem_heap_dealloc(textObj->printedGlyphCounts);
     if (textObj->parsedOutput != NULL) {
@@ -252,25 +252,25 @@ void func_08004574(struct BitmapFontOBJ *textObj) {
 
 
 // Set BitmapFontOBJ parseString() function and allocate space for parsedOutput.
-void func_0800459c(struct BitmapFontOBJ *textObj, void *stringParserFunc, u32 maxOutputLength) {
+void bmp_font_obj_set_format_parser(struct BitmapFontOBJ *textObj, void *stringParserFunc, u32 maxOutputLength) {
     textObj->parseString = stringParserFunc;
     textObj->parsedOutput = mem_heap_alloc_id(textObj->memID, maxOutputLength);
 }
 
 
 // Set BitmapFontOBJ data.
-void func_080045b4(struct BitmapFontOBJ *textObj, const struct BitmapFontData *fonts, u16 baseTileNum, u8 maxTileRows, u32 unused1, u32 unused2, u16 *printedGlyphs, u8 *printedGlyphCounts) {
+void bmp_font_obj_set_data(struct BitmapFontOBJ *textObj, const struct BitmapFontData *fonts, u16 baseTileNum, u8 maxTileRows, u32 unused1, u32 unused2, u16 *printedGlyphs, u8 *printedGlyphCounts) {
     textObj->fonts = fonts;
     textObj->baseTileNum = baseTileNum;
     textObj->maxAllocatedTileRows = maxTileRows;
     textObj->printedGlyphs = printedGlyphs;
     textObj->printedGlyphCounts = printedGlyphCounts;
-    func_080045d0(textObj);
+    bmp_font_obj_clear_print_data(textObj);
 }
 
 
 // Clear BitmapFontOBJ printed glyph data.
-void func_080045d0(struct BitmapFontOBJ *textObj) {
+void bmp_font_obj_clear_print_data(struct BitmapFontOBJ *textObj) {
     u32 i;
 
     for (i = 0; i < (textObj->maxAllocatedTileRows * 16); i++) {
@@ -281,7 +281,7 @@ void func_080045d0(struct BitmapFontOBJ *textObj) {
 
 
 // Get total animation objects required for generated text (ignoring whitespace).
-u32 func_080045fc(const char *string) {
+u32 bmp_font_obj_get_anim_total(const char *string) {
     u32 total = 0;
 
     for (; string[0] != '\0'; string += 2) {
@@ -293,7 +293,7 @@ u32 func_080045fc(const char *string) {
             continue;
         }
 
-        if (!func_0800496c(string)) {
+        if (!bmp_font_obj_glyph_is_whitespace(string)) {
             total++;
         }
     }
@@ -303,10 +303,10 @@ u32 func_080045fc(const char *string) {
 
 
 // Get glyph width.
-u32 func_08004628(const struct BitmapFontData *font, const char *string) {
+u32 bmp_font_obj_get_glyph_width(const struct BitmapFontData *font, const char *string) {
     u32 latinSpacingWidth, glyphWidth;
 
-    if (func_0800496c(string)) {
+    if (bmp_font_obj_glyph_is_whitespace(string)) {
         return font->whitespaceWidth;
     }
 
@@ -314,20 +314,20 @@ u32 func_08004628(const struct BitmapFontData *font, const char *string) {
         return 0;
     }
 
-    if (func_080049a0(string) == F_TEXT_LATIN_HALFWIDTH) {
+    if (bmp_font_obj_get_latin_glyph_type(string) == F_TEXT_LATIN_HALFWIDTH) {
         latinSpacingWidth = 8;
-        string = func_080049dc(&string[1]);
+        string = bmp_font_obj_convert_latin_hw_to_fw(&string[1]);
     } else {
         latinSpacingWidth = 0;
     }
 
-    func_080043c8(font, string, NULL, &glyphWidth);
+    bmp_font_get_glyph(font, string, NULL, &glyphWidth);
     return latinSpacingWidth + glyphWidth;
 }
 
 
 // Get font style/palette value.
-u8 func_0800467c(char c) {
+u8 bmp_font_obj_get_style_value(char c) {
     if ((c >= '0') && (c <= '9')) {
         return c - '0';
     }
@@ -345,7 +345,7 @@ u8 func_0800467c(char c) {
 
 
 // Get string width.
-u32 func_080046c0(const struct BitmapFontData *font, const char *string) {
+u32 bmp_font_obj_get_string_width(const struct BitmapFontData *font, const char *string) {
     const struct BitmapFontData *currentFont;
     s32 width;
 
@@ -358,14 +358,14 @@ u32 func_080046c0(const struct BitmapFontData *font, const char *string) {
                 break;
 
             case ':':
-                currentFont = &font[func_0800467c(string[1])];
+                currentFont = &font[bmp_font_obj_get_style_value(string[1])];
                 break;
 
             default:
                 if (width != 0) {
                     width += currentFont->spacingWidth;
                 }
-                width += func_08004628(currentFont, string);
+                width += bmp_font_obj_get_glyph_width(currentFont, string);
                 break;
         }
     }
@@ -379,7 +379,7 @@ u32 func_080046c0(const struct BitmapFontData *font, const char *string) {
 
 
 // Print glyph (halfwidth).
-void func_08004714(const u16 *texture, u16 *dest) {
+void bmp_font_obj_write_glyph_hw(const u16 *texture, u16 *dest) {
     u32 i;
 
     for (i = 0; i < 2; i++) {
@@ -391,7 +391,7 @@ void func_08004714(const u16 *texture, u16 *dest) {
 
 
 // Print glyph (fullwidth).
-void func_08004748(const u16 *texture, u16 *dest) {
+void bmp_font_obj_write_glyph_fw(const u16 *texture, u16 *dest) {
     u32 i;
 
     for (i = 0; i < 2; i++) {
@@ -403,7 +403,7 @@ void func_08004748(const u16 *texture, u16 *dest) {
 
 
 // Print glyph, returning the tile ID.
-u16 func_0800477c(struct BitmapFontOBJ *textObj, const char *string, u32 *widthReq) {
+u16 bmp_font_obj_print_glyph(struct BitmapFontOBJ *textObj, const char *string, u32 *widthReq) {
     u16 *texture, *address;
     u32 width;
     u8 glyphDataB0, glyphDataB1;
@@ -412,7 +412,7 @@ u16 func_0800477c(struct BitmapFontOBJ *textObj, const char *string, u32 *widthR
     u32 latinCharType;
     u32 i, j;
 
-    latinCharType = func_080049a0(string);
+    latinCharType = bmp_font_obj_get_latin_glyph_type(string);
     tileX = 99;
     printed = (u8 *)textObj->printedGlyphs;
 
@@ -427,7 +427,7 @@ u16 func_0800477c(struct BitmapFontOBJ *textObj, const char *string, u32 *widthR
     for (i = 0; i < textObj->maxAllocatedTileRows; i++) {
         for (j = 0; j < 16; j++) {
             if ((glyphDataB0 == printed[0]) && (glyphDataB1 == printed[1])) {
-                *widthReq = func_08004628(&textObj->fonts[D_030008b0], string);
+                *widthReq = bmp_font_obj_get_glyph_width(&textObj->fonts[D_030008b0], string);
                 textObj->printedGlyphCounts[j + (i * 16)]++;
                 return textObj->baseTileNum + (j * 2) + ((i * 32) * 2);
             }
@@ -450,14 +450,14 @@ u16 func_0800477c(struct BitmapFontOBJ *textObj, const char *string, u32 *widthR
 
     if (latinCharType == F_TEXT_LATIN_HALFWIDTH) {
         for (i = 0; i < 2; i++) {
-            const char *fullwidthString = func_080049dc(&string[i]);
-            func_080043c8(&textObj->fonts[D_030008b0], fullwidthString, &texture, &width);
-            func_08004714(texture, &address[i * 16]);
+            const char *fullwidthString = bmp_font_obj_convert_latin_hw_to_fw(&string[i]);
+            bmp_font_get_glyph(&textObj->fonts[D_030008b0], fullwidthString, &texture, &width);
+            bmp_font_obj_write_glyph_hw(texture, &address[i * 16]);
             *widthReq += (i != 0) ? width : 8;
         }
     } else {
-        func_080043c8(&textObj->fonts[D_030008b0], string, &texture, &width);
-        func_08004748(texture, address);
+        bmp_font_get_glyph(&textObj->fonts[D_030008b0], string, &texture, &width);
+        bmp_font_obj_write_glyph_fw(texture, address);
         *widthReq = width;
     }
 
@@ -472,7 +472,7 @@ u16 func_0800477c(struct BitmapFontOBJ *textObj, const char *string, u32 *widthR
 
 
 // Checks if a char is whitespace.
-u32 func_0800496c(const char *string) {
+u32 bmp_font_obj_glyph_is_whitespace(const char *string) {
     if ((string[0] == 0x81) && (string[1] == 0x40)) {
         return TRUE;
     }
@@ -490,7 +490,7 @@ u32 func_0800496c(const char *string) {
 
 
 // Check if a char is a supported Latin alphabet char.
-u32 func_080049a0(const char *string) {
+u32 bmp_font_obj_get_latin_glyph_type(const char *string) {
     // Halfwidth Lowercase Latin Alphabet
     if ((string[0] >= 'a') && (string[0] <= 'z') && (string[1] >= 'a') && (string[1] <= 'z')) {
         return F_TEXT_LATIN_HALFWIDTH;
@@ -509,7 +509,7 @@ u32 func_080049a0(const char *string) {
 
 
 // Convert halfwidth Latin Alphabet character to fullwidth.
-const char *func_080049dc(const char *string) {
+const char *bmp_font_obj_convert_latin_hw_to_fw(const char *string) {
     return &D_08936b50[(string[0] - 'a') * 2];
 }
 
@@ -519,30 +519,30 @@ const char *func_080049dc(const char *string) {
 
 
 // Get Animation (Unaligned, default FontStyle and Palette).
-struct PrintedTextAnim *func_08004b60(struct BitmapFontOBJ *textObj, const char *string) {
-    return func_08004b70(textObj, string, 0, 0);
+struct PrintedTextAnim *bmp_font_obj_print_unaligned_default(struct BitmapFontOBJ *textObj, const char *string) {
+    return bmp_font_obj_print_unaligned(textObj, string, 0, 0);
 }
 
 
 // Get Animation (Unaligned).
-struct PrintedTextAnim *func_08004b70(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette) {
-    return func_080049f0(textObj, string, NULL, fontStyle, palette);
+struct PrintedTextAnim *bmp_font_obj_print_unaligned(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette) {
+    return bmp_font_obj_print_text(textObj, string, NULL, fontStyle, palette);
 }
 
 
 // Get Animation (Center-aligned, default FontStyle and Palette).
-struct PrintedTextAnim *func_08004b88(struct BitmapFontOBJ *textObj, const char *string) {
-    return func_08004b98(textObj, string, 0, 0);
+struct PrintedTextAnim *bmp_font_obj_print_c_default(struct BitmapFontOBJ *textObj, const char *string) {
+    return bmp_font_obj_print_c(textObj, string, 0, 0);
 }
 
 
 // Get Animation (Center-aligned).
-struct PrintedTextAnim *func_08004b98(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette) {
+struct PrintedTextAnim *bmp_font_obj_print_c(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette) {
     struct PrintedTextAnim *anim;
     u16 *cel, *oam;
     u32 totalWidth, i;
 
-    anim = func_080049f0(textObj, string, &totalWidth, fontStyle, palette);
+    anim = bmp_font_obj_print_text(textObj, string, &totalWidth, fontStyle, palette);
     totalWidth /= 2;
     cel = anim->frames[0].cel;
     oam = &cel[1];
@@ -558,18 +558,18 @@ struct PrintedTextAnim *func_08004b98(struct BitmapFontOBJ *textObj, const char 
 
 
 // Get Animation (Left-aligned, default FontStyle and Palette).
-struct PrintedTextAnim *func_08004bfc(struct BitmapFontOBJ *textObj, const char *string) {
-    return func_08004c0c(textObj, string, 0, 0);
+struct PrintedTextAnim *bmp_font_obj_print_l_default(struct BitmapFontOBJ *textObj, const char *string) {
+    return bmp_font_obj_print_l(textObj, string, 0, 0);
 }
 
 
 // Get Animation (Left-aligned).
-struct PrintedTextAnim *func_08004c0c(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette) {
+struct PrintedTextAnim *bmp_font_obj_print_l(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette) {
     struct PrintedTextAnim *anim;
     u16 *cel, *oam;
     u32 i;
 
-    anim = func_080049f0(textObj, string, NULL, fontStyle, palette);
+    anim = bmp_font_obj_print_text(textObj, string, NULL, fontStyle, palette);
     cel = anim->frames[0].cel;
     oam = &cel[1];
 
@@ -583,18 +583,18 @@ struct PrintedTextAnim *func_08004c0c(struct BitmapFontOBJ *textObj, const char 
 
 
 // Get Animation (Right-aligned, default FontStyle and Palette).
-struct PrintedTextAnim *func_08004c40(struct BitmapFontOBJ *textObj, const char *string) {
-    return func_08004c50(textObj, string, 0, 0);
+struct PrintedTextAnim *bmp_font_obj_print_r_default(struct BitmapFontOBJ *textObj, const char *string) {
+    return bmp_font_obj_print_r(textObj, string, 0, 0);
 }
 
 
 // Get Animation (Right-aligned).
-struct PrintedTextAnim *func_08004c50(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette) {
+struct PrintedTextAnim *bmp_font_obj_print_r(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette) {
     struct PrintedTextAnim *anim;
     u16 *cel, *oam;
     u32 totalWidth, i;
 
-    anim = func_080049f0(textObj, string, &totalWidth, fontStyle, palette);
+    anim = bmp_font_obj_print_text(textObj, string, &totalWidth, fontStyle, palette);
     cel = anim->frames[0].cel;
     oam = &cel[1];
 
@@ -609,18 +609,18 @@ struct PrintedTextAnim *func_08004c50(struct BitmapFontOBJ *textObj, const char 
 
 
 // Get Animation (Shift to XY, default FontStyle and Palette).
-struct PrintedTextAnim *func_08004cac(struct BitmapFontOBJ *textObj, const char *string, s16 x, s16 y) {
-    return func_08004ccc(textObj, string, x, y, 0, 0);
+struct PrintedTextAnim *bmp_font_obj_print_to_xy_default(struct BitmapFontOBJ *textObj, const char *string, s16 x, s16 y) {
+    return bmp_font_obj_print_to_xy(textObj, string, x, y, 0, 0);
 }
 
 
 // Get Animation (Shift to XY).
-struct PrintedTextAnim *func_08004ccc(struct BitmapFontOBJ *textObj, const char *string, s16 x, s16 y, u32 fontStyle, u32 palette) {
+struct PrintedTextAnim *bmp_font_obj_print_to_xy(struct BitmapFontOBJ *textObj, const char *string, s16 x, s16 y, u32 fontStyle, u32 palette) {
     struct PrintedTextAnim *anim;
     u16 *cel, *oam;
     u32 i;
 
-    anim = func_080049f0(textObj, string, NULL, fontStyle, palette);
+    anim = bmp_font_obj_print_text(textObj, string, NULL, fontStyle, palette);
     cel = anim->frames[0].cel;
     oam = &cel[1];
 
@@ -635,7 +635,7 @@ struct PrintedTextAnim *func_08004ccc(struct BitmapFontOBJ *textObj, const char 
 
 
 // Delete printed BitmapFontOBJ.
-void func_08004d44(struct BitmapFontOBJ *textObj, struct Animation *anim) {
+void bmp_font_obj_delete_printed_anim(struct BitmapFontOBJ *textObj, struct Animation *anim) {
     u16 *cel, *oam;
     u32 i;
 
@@ -665,7 +665,7 @@ void func_08004d44(struct BitmapFontOBJ *textObj, struct Animation *anim) {
 
 
 // Init. BitmapFontOBJPrinter task.
-struct BitmapFontOBJPrinter *func_08004da0(struct BitmapFontOBJPrinter *inputs) {
+struct BitmapFontOBJPrinter *bmp_font_obj_init_multi_printer(struct BitmapFontOBJPrinter *inputs) {
     struct BitmapFontOBJPrinter *info;
 
     info = mem_heap_alloc(sizeof(struct BitmapFontOBJPrinter));
@@ -679,7 +679,7 @@ struct BitmapFontOBJPrinter *func_08004da0(struct BitmapFontOBJPrinter *inputs) 
 
 
 // Update BitmapFontOBJPrinter task.
-u32 func_08004dc0(struct BitmapFontOBJPrinter *info) {
+u32 bmp_font_obj_update_multi_printer(struct BitmapFontOBJPrinter *info) {
     struct BitmapFontQueuedText *data;
     const char *string;
     u32 current;
@@ -698,16 +698,16 @@ u32 func_08004dc0(struct BitmapFontOBJPrinter *info) {
 
     switch (data->alignment) {
         case 0:
-            info->animTable[current] = func_08004b70(info->textObj, string, data->fontStyle, data->palette);
+            info->animTable[current] = bmp_font_obj_print_unaligned(info->textObj, string, data->fontStyle, data->palette);
             break;
         case 1:
-            info->animTable[current] = func_08004b98(info->textObj, string, data->fontStyle, data->palette);
+            info->animTable[current] = bmp_font_obj_print_c(info->textObj, string, data->fontStyle, data->palette);
             break;
         case 2:
-            info->animTable[current] = func_08004c0c(info->textObj, string, data->fontStyle, data->palette);
+            info->animTable[current] = bmp_font_obj_print_l(info->textObj, string, data->fontStyle, data->palette);
             break;
         case 3:
-            info->animTable[current] = func_08004c50(info->textObj, string, data->fontStyle, data->palette);
+            info->animTable[current] = bmp_font_obj_print_r(info->textObj, string, data->fontStyle, data->palette);
             break;
     }
 
@@ -721,7 +721,7 @@ u32 func_08004dc0(struct BitmapFontOBJPrinter *info) {
 
 
 // Start new BitmapFontOBJPrinter task.
-s32 func_08004e60(u16 memID, struct BitmapFontOBJ *textObj, struct PrintedTextAnim **animTable, struct BitmapFontQueuedText *queue) {
+s32 bmp_font_obj_print_multiple(u16 memID, struct BitmapFontOBJ *textObj, struct PrintedTextAnim **animTable, struct BitmapFontQueuedText *queue) {
     struct BitmapFontOBJPrinter inputs;
 
     inputs.textObj = textObj;
@@ -733,13 +733,13 @@ s32 func_08004e60(u16 memID, struct BitmapFontOBJ *textObj, struct PrintedTextAn
 
 
 // Delete all animations printed by a BitmapFontOBJ.
-void func_08004e88(struct BitmapFontOBJ *textObj, struct PrintedTextAnim **animTable, struct BitmapFontQueuedText *queue) {
+void bmp_font_obj_delete_multi_printed_anim(struct BitmapFontOBJ *textObj, struct PrintedTextAnim **animTable, struct BitmapFontQueuedText *queue) {
     if (queue->string != NULL) {
         struct BitmapFontQueuedText *strings = queue;
         struct Animation **anim = (struct Animation **)animTable;
 
         while (strings->string != NULL) {
-            func_08004d44(textObj, *anim++);
+            bmp_font_obj_delete_printed_anim(textObj, *anim++);
             strings++;
         }
     }
@@ -747,7 +747,7 @@ void func_08004e88(struct BitmapFontOBJ *textObj, struct PrintedTextAnim **animT
 
 
 // Create "wobbly" animation for printed text.
-struct WobblyPrintedTextAnim *func_08004eac(struct BitmapFontOBJ *textObj, struct PrintedTextAnim *anim, u8 frameDuration) {
+struct WobblyPrintedTextAnim *bmp_font_obj_print_wobbly(struct BitmapFontOBJ *textObj, struct PrintedTextAnim *anim, u8 frameDuration) {
     struct WobblyPrintedTextAnim *newAnim;
     u16 *cel, *newCel, *newOam;
     u32 count, size;
@@ -803,17 +803,17 @@ struct WobblyPrintedTextAnim *func_08004eac(struct BitmapFontOBJ *textObj, struc
 
 
 // Replace printed text animation with a wobbly one.
-void func_08004ff4(struct BitmapFontOBJ *textObj, struct PrintedTextAnim **anim, u8 frameDuration) {
+void bmp_font_obj_wobble_printed_anim(struct BitmapFontOBJ *textObj, struct PrintedTextAnim **anim, u8 frameDuration) {
     struct WobblyPrintedTextAnim *wobblyText;
 
-    wobblyText = func_08004eac(textObj, *anim, frameDuration);
+    wobblyText = bmp_font_obj_print_wobbly(textObj, *anim, frameDuration);
     mem_heap_dealloc(*anim);
     *anim = (struct PrintedTextAnim *)wobblyText;
 }
 
 
 // Shift TextObject animation Y position along some sort of curve.
-void func_08005014(struct Animation *anim, s16 vel) {
+void bmp_font_obj_curve_anim_y(struct Animation *anim, s16 vel) {
     u16 *oam;
     u32 count, i;
     s16 x, centre;
@@ -840,7 +840,7 @@ void func_08005014(struct Animation *anim, s16 vel) {
 
 
 // Shift TextObject animation position.
-void func_080050bc(struct Animation *anim, s16 x, s16 y) {
+void bmp_font_obj_move_anim_xy(struct Animation *anim, s16 x, s16 y) {
     u16 *oam;
     u32 count, i;
 
@@ -859,7 +859,7 @@ void func_080050bc(struct Animation *anim, s16 x, s16 y) {
 
 
 // Create new BitmapFontBG.
-struct BitmapFontBG *func_08005124(u16 memID, const struct BitmapFontData *fonts, u8 arg2, u16 baseTileNum, u8 maxTileRows) {
+struct BitmapFontBG *create_new_bmp_font_bg(u16 memID, const struct BitmapFontData *fonts, u8 arg2, u16 baseTileNum, u8 maxTileRows) {
     struct BitmapFontBG *textObj;
 
     textObj = mem_heap_alloc_id(memID, sizeof(struct BitmapFontBG));
@@ -869,14 +869,14 @@ struct BitmapFontBG *func_08005124(u16 memID, const struct BitmapFontData *fonts
     textObj->maxAllocatedTileRows = maxTileRows;
     textObj->printedGlyphs = mem_heap_alloc_id(memID, maxTileRows * 16 * sizeof(u16));
     textObj->printedGlyphCounts = mem_heap_alloc_id(memID, maxTileRows * 16 * sizeof(u8));
-    func_080051c4(textObj);
+    bmp_font_bg_clear_print_data(textObj);
 
     return textObj;
 }
 
 
 // Delete BitmapFontBG.
-void func_08005188(struct BitmapFontBG *textObj) {
+void delete_bmp_font_bg(struct BitmapFontBG *textObj) {
     mem_heap_dealloc(textObj->printedGlyphs);
     mem_heap_dealloc(textObj->printedGlyphCounts);
     mem_heap_dealloc(textObj);
@@ -884,19 +884,19 @@ void func_08005188(struct BitmapFontBG *textObj) {
 
 
 // Set BitmapFontBG data.
-void func_080051a4(struct BitmapFontBG *textObj, const struct BitmapFontData *fonts, u8 arg2, u16 baseTileNum, u8 maxTileRows, u16 *printedGlyphs, u8 *printedGlyphCounts) {
+void bmp_font_bg_set_data(struct BitmapFontBG *textObj, const struct BitmapFontData *fonts, u8 arg2, u16 baseTileNum, u8 maxTileRows, u16 *printedGlyphs, u8 *printedGlyphCounts) {
     textObj->fonts = fonts;
     textObj->unk6 = arg2;
     textObj->baseTileNum = baseTileNum;
     textObj->maxAllocatedTileRows = maxTileRows;
     textObj->printedGlyphs = printedGlyphs;
     textObj->printedGlyphCounts = printedGlyphCounts;
-    func_080051c4(textObj);
+    bmp_font_bg_clear_print_data(textObj);
 }
 
 
 // Clear BitmapFontBG printed glyph data.
-void func_080051c4(struct BitmapFontBG *textObj) {
+void bmp_font_bg_clear_print_data(struct BitmapFontBG *textObj) {
     u32 i;
 
     for (i = 0; i < (textObj->maxAllocatedTileRows * 16); i++) {
@@ -907,13 +907,13 @@ void func_080051c4(struct BitmapFontBG *textObj) {
 
 
 // Print glyph.
-void func_080051f0(const u16 *texture, u16 *dest) {
+void bmp_font_bg_write_glyph(const u16 *texture, u16 *dest) {
     dma3_set(texture, dest, 0x40, 0x10, 0x100);
 }
 
 
 // Print glyph, returning the tile ID.
-u16 func_08005208(struct BitmapFontBG *textObj, const char *string) {
+u16 bmp_font_bg_print_glyph(struct BitmapFontBG *textObj, const char *string) {
     u16 *texture, *address;
     u8 glyphByte0, glyphByte1;
     u32 tileX, tileY, tileID;
@@ -956,8 +956,8 @@ u16 func_08005208(struct BitmapFontBG *textObj, const char *string) {
 
     tileID = textObj->baseTileNum + (tileX * 2) + ((tileY * 16) * 2);
     address = (void *)(VRAMBase + (textObj->unk6 * 0x4000) + (tileID * 0x20));
-    func_080043c8(&textObj->fonts[D_030008f8], string, &texture, NULL);
-    func_080051f0(texture, address);
+    bmp_font_get_glyph(&textObj->fonts[D_030008f8], string, &texture, NULL);
+    bmp_font_bg_write_glyph(texture, address);
 
     i = tileX + (tileY * 16);
     printed = (u8 *)&textObj->printedGlyphs[i];
@@ -970,7 +970,7 @@ u16 func_08005208(struct BitmapFontBG *textObj, const char *string) {
 
 
 // Get value for FontStyle/Palette.
-u8 func_08005328(char c) {
+u8 bmp_font_bg_get_style_value(char c) {
     if ((c >= '0') && (c <= '9')) {
         return c - '0';
     }
@@ -988,7 +988,7 @@ u8 func_08005328(char c) {
 
 
 // Print to BG Map.
-void func_0800536c(struct BitmapFontBG *textObj, u16 *bgMap, u32 mapWidth, const char *string, u32 palette) {
+void bmp_font_bg_print_text(struct BitmapFontBG *textObj, u16 *bgMap, u32 mapWidth, const char *string, u32 palette) {
     u16 tileNum;
     u32 mapX;
 
@@ -1004,17 +1004,17 @@ void func_0800536c(struct BitmapFontBG *textObj, u16 *bgMap, u32 mapWidth, const
                 break;
 
             case '.':
-                palette = func_08005328(string[1]);
+                palette = bmp_font_bg_get_style_value(string[1]);
                 string += 2;
                 break;
 
             case ':':
-                D_030008f8 = func_08005328(string[1]);
+                D_030008f8 = bmp_font_bg_get_style_value(string[1]);
                 string += 2;
                 break;
 
             default:
-                tileNum = func_08005208(textObj, string);
+                tileNum = bmp_font_bg_print_glyph(textObj, string);
 
                 if (tileNum < 0x400) {
                     u16 mapTile;
@@ -1033,7 +1033,7 @@ void func_0800536c(struct BitmapFontBG *textObj, u16 *bgMap, u32 mapWidth, const
 
 
 // Delete printed BitmapFontBG.
-void func_08005424(struct BitmapFontBG *textObj, const char *string) {
+void bmp_font_bg_delete_printed_data(struct BitmapFontBG *textObj, const char *string) {
     u8 glyphByte0, glyphByte1;
     u8 *printed;
     u32 fontStyle;
@@ -1052,7 +1052,7 @@ void func_08005424(struct BitmapFontBG *textObj, const char *string) {
                 break;
 
             case ':':
-                fontStyle = func_08005328(string[1]);
+                fontStyle = bmp_font_bg_get_style_value(string[1]);
                 string += 2;
                 break;
 
@@ -1078,7 +1078,7 @@ void func_08005424(struct BitmapFontBG *textObj, const char *string) {
 
 
 // Init. BitmapFontBGPrinter task.
-struct BitmapFontBGPrinter *func_080054b0(struct BitmapFontBGPrinter *inputs) {
+struct BitmapFontBGPrinter *bmp_font_bg_init_printer(struct BitmapFontBGPrinter *inputs) {
     struct BitmapFontBGPrinter *info;
 
     info = mem_heap_alloc(sizeof(struct BitmapFontBGPrinter));
@@ -1091,7 +1091,7 @@ struct BitmapFontBGPrinter *func_080054b0(struct BitmapFontBGPrinter *inputs) {
 
 
 // Update BitmapFontBGPrinter task.
-u32 func_080054f0(struct BitmapFontBGPrinter *info) {
+u32 bmp_font_bg_update_printer(struct BitmapFontBGPrinter *info) {
     const char *string;
     u16 *bgMap;
     u32 mapX, mapWidth, palette, tileNum;
@@ -1114,17 +1114,17 @@ u32 func_080054f0(struct BitmapFontBGPrinter *info) {
                 break;
 
             case '.': // Palette
-                palette = func_08005328(string[1]);
+                palette = bmp_font_bg_get_style_value(string[1]);
                 string += 2;
                 break;
 
             case ':': // Font/Style
-                D_030008f8 = func_08005328(string[1]);
+                D_030008f8 = bmp_font_bg_get_style_value(string[1]);
                 string += 2;
                 break;
 
             default:
-                tileNum = func_08005208(info->textObj, string);
+                tileNum = bmp_font_bg_print_glyph(info->textObj, string);
 
                 if (tileNum < 0x400) {
                     u16 mapTile;
@@ -1155,7 +1155,7 @@ u32 func_080054f0(struct BitmapFontBGPrinter *info) {
 
 
 // Start new BitmapFontBGPrinter task.
-s32 func_080055fc(u16 memID, struct BitmapFontBG *textObj, u16 *bgMapDest, u32 bgMapWidth, const char *string, u32 palette, u32 processLimit) {
+s32 start_bmp_font_bg_printer_task(u16 memID, struct BitmapFontBG *textObj, u16 *bgMapDest, u32 bgMapWidth, const char *string, u32 palette, u32 processLimit) {
     struct BitmapFontBGPrinter inputs;
 
     inputs.textObj = textObj;
@@ -1170,7 +1170,7 @@ s32 func_080055fc(u16 memID, struct BitmapFontBG *textObj, u16 *bgMapDest, u32 b
 
 
 // Count the total printable characters in a string (including characters not supported by the font).
-u32 func_08005640(const char *string) {
+u32 bmp_font_bg_get_total_printable_chars(const char *string) {
     u32 count = 0;
 
     while (string[0] != '\0') {
@@ -1209,7 +1209,7 @@ extern u8 D_03004ae8;
 
 
 // Render SceneObject
-void func_0800568c(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject object, u16 *spritePool) {
+void import_scene_object(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject object, s16 *spritePool) {
     u16 sprite;
     s32 poolID;
 
@@ -1265,23 +1265,23 @@ void func_0800568c(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bi
 
             switch (data->alignment) {
                 case 0:
-                    textAnim = func_08004b70(bitmapFontOBJ, string, fontStyle, palette);
+                    textAnim = bmp_font_obj_print_unaligned(bitmapFontOBJ, string, fontStyle, palette);
                     break;
                 case 1:
-                    textAnim = func_08004b98(bitmapFontOBJ, string, fontStyle, palette);
+                    textAnim = bmp_font_obj_print_c(bitmapFontOBJ, string, fontStyle, palette);
                     break;
                 case 2:
-                    textAnim = func_08004c0c(bitmapFontOBJ, string, fontStyle, palette);
+                    textAnim = bmp_font_obj_print_l(bitmapFontOBJ, string, fontStyle, palette);
                     break;
                 case 3:
-                    textAnim = func_08004c50(bitmapFontOBJ, string, fontStyle, palette);
+                    textAnim = bmp_font_obj_print_r(bitmapFontOBJ, string, fontStyle, palette);
                     break;
             }
 
             if (data->wobbly == TRUE) {
                 struct WobblyPrintedTextAnim *wobblyAnim;
 
-                wobblyAnim = func_08004eac(bitmapFontOBJ, textAnim, 4);
+                wobblyAnim = bmp_font_obj_print_wobbly(bitmapFontOBJ, textAnim, 4);
                 mem_heap_dealloc(textAnim);
                 textAnim = (struct PrintedTextAnim *)wobblyAnim;
             }
@@ -1301,15 +1301,15 @@ void func_0800568c(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bi
 }
 
 
-// Print All SceneObjects
-u32 func_08005814(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, u16 *spritePool) {
+// Render All SceneObjects
+u32 import_all_scene_objects(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool) {
     u32 count = 0;
 
     if (objects->type != NULL) {
         const union SceneObject *obj = objects;
 
         while (obj->type != NULL) {
-            func_0800568c(spriteHandler, bitmapFontOBJ, *obj++, spritePool);
+            import_scene_object(spriteHandler, bitmapFontOBJ, *obj++, spritePool);
             count++;
         }
     }
@@ -1319,13 +1319,13 @@ u32 func_08005814(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bit
 
 
 // Set D_03004ae8
-void func_0800584c(u32 textID) {
+void set_scene_object_current_text_id(u32 textID) {
     D_03004ae8 = textID;
 }
 
 
 // Init. SceneObjectRenderer task.
-struct SceneObjectRenderer *func_08005858(struct SceneObjectRenderer *inputs) {
+struct SceneObjectRenderer *init_scene_object_importer(struct SceneObjectRenderer *inputs) {
     struct SceneObjectRenderer *info;
 
     info = mem_heap_alloc(sizeof(struct SceneObjectRenderer));
@@ -1339,14 +1339,14 @@ struct SceneObjectRenderer *func_08005858(struct SceneObjectRenderer *inputs) {
 
 
 // Update SceneObjectRenderer task.
-u32 func_08005878(struct SceneObjectRenderer *info) {
+u32 update_scene_object_importer(struct SceneObjectRenderer *info) {
     const union SceneObject *objects;
     u32 type;
 
     objects = info->objects;
 
     while (objects->type != NULL) {
-        func_0800568c(info->spriteHandler, info->bitmapFontOBJ, *objects, info->spritePool);
+        import_scene_object(info->spriteHandler, info->bitmapFontOBJ, *objects, info->spritePool);
         type = *(objects++)->type;
         info->objects = objects;
 
@@ -1364,7 +1364,7 @@ u32 func_08005878(struct SceneObjectRenderer *info) {
 
 
 // Start new SceneObjectRenderer task.
-s32 func_080058b0(u16 memID, struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, u16 *spritePool) {
+s32 start_new_scene_object_importer(u16 memID, struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool) {
     struct SceneObjectRenderer inputs;
 
     inputs.spriteHandler = spriteHandler;
@@ -1376,6 +1376,101 @@ s32 func_080058b0(u16 memID, struct SpriteHandler *spriteHandler, struct BitmapF
 }
 
 
-#include "asm/code_08003980/asm_080058dc.s"
+// Delete All SceneObjects
+void delete_all_scene_objects(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool) {
+    if ((spritePool == NULL) || (objects->type == NULL)) {
+        return;
+    }
 
-#include "asm/code_08003980/asm_0800598c.s"
+    while (objects->type != NULL) {
+        switch (*objects->type) {
+            case SCENE_OBJECT_TYPE_IMM_XY: {
+                struct SceneSprite *data;
+
+                data = objects->sprite;
+                if (data->poolID >= 0) {
+                    func_0804d504(spriteHandler, spritePool[data->poolID]);
+                    spritePool[data->poolID] = -1;
+                }
+                break;
+            }
+
+            case SCENE_OBJECT_TYPE_VEC_XY: {
+                struct SceneSpriteVecXY *data;
+
+                data = objects->spriteVecXY;
+                if (data->poolID >= 0) {
+                    func_0804d504(spriteHandler, spritePool[data->poolID]);
+                    spritePool[data->poolID] = -1;
+                }
+                break;
+            }
+
+            case SCENE_OBJECT_TYPE_TEXT: {
+                struct SceneText *data;
+                s16 sprite;
+
+                if (bitmapFontOBJ == NULL) {
+                    break;
+                }
+
+                data = objects->text;
+                if (data->poolID >= 0) {
+                    sprite = spritePool[data->poolID];
+                    bmp_font_obj_delete_printed_anim(bitmapFontOBJ, (struct Animation *)func_0804ddb0(spriteHandler, sprite, 7));
+                    func_0804d504(spriteHandler, sprite);
+                    spritePool[data->poolID] = -1;
+                }
+                break;
+            }
+        }
+        objects++;
+    }
+}
+
+
+// Show/Hide All SceneObjects
+void display_all_scene_objects(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool, u32 show) {
+    if ((spritePool == NULL) || (objects->type == NULL)) {
+        return;
+    }
+
+    while (objects->type != NULL) {
+        switch (*objects->type) {
+            case SCENE_OBJECT_TYPE_IMM_XY: {
+                struct SceneSprite *data;
+
+                data = objects->sprite;
+                if (data->poolID >= 0) {
+                    func_0804d770(spriteHandler, spritePool[data->poolID], show);
+                }
+                break;
+            }
+
+            case SCENE_OBJECT_TYPE_VEC_XY: {
+                struct SceneSpriteVecXY *data;
+
+                data = objects->spriteVecXY;
+                if (data->poolID >= 0) {
+                    func_0804d770(spriteHandler, spritePool[data->poolID], show);
+                }
+                break;
+            }
+
+            case SCENE_OBJECT_TYPE_TEXT: {
+                struct SceneText *data;
+
+                if (bitmapFontOBJ == NULL) {
+                    break;
+                }
+
+                data = objects->text;
+                if (data->poolID >= 0) {
+                    func_0804d770(spriteHandler, spritePool[data->poolID], show);
+                }
+                break;
+            }
+        }
+        objects++;
+    }
+}

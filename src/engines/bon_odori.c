@@ -188,7 +188,7 @@ void bon_odori_lyrics_display_line(const char *text, u32 line, u32 hAlign) {
     lyricObj = &gBonOdoriInfo->lyrics[line];
 
     if (lyricObj->textSprite >= 0) {
-        func_08004d44(gBonOdoriInfo->unk4, lyricObj->anim);
+        bmp_font_obj_delete_printed_anim(gBonOdoriInfo->unk4, lyricObj->anim);
         func_0804d504(D_03005380, lyricObj->textSprite);
         func_0804d504(D_03005380, lyricObj->highlightSprite);
         lyricObj->textSprite = -1;
@@ -199,13 +199,13 @@ void bon_odori_lyrics_display_line(const char *text, u32 line, u32 hAlign) {
 
         switch (hAlign) {
             case BON_LYRICS_ALIGNMENT_CENTRE:
-                textAnim = func_08004b98(gBonOdoriInfo->unk4, text, 0, 7);
+                textAnim = bmp_font_obj_print_c(gBonOdoriInfo->unk4, text, 0, 7);
                 break;
             case BON_LYRICS_ALIGNMENT_LEFT:
-                textAnim = func_08004c0c(gBonOdoriInfo->unk4, text, 0, 7);
+                textAnim = bmp_font_obj_print_l(gBonOdoriInfo->unk4, text, 0, 7);
                 break;
             case BON_LYRICS_ALIGNMENT_RIGHT:
-                textAnim = func_08004c50(gBonOdoriInfo->unk4, text, 0, 7);
+                textAnim = bmp_font_obj_print_r(gBonOdoriInfo->unk4, text, 0, 7);
                 break;
         }
 

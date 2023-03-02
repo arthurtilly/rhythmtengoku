@@ -52,7 +52,7 @@ void func_08000224(void) {
 	}
 	func_080009b4();
 	func_080029d8(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
-	func_0800584c(func_0800c490());
+	set_scene_object_current_text_id(func_0800c490());
 	init_scene_static_var(); // Initialise Scenes
 	func_08001360();
 	func_08009150();

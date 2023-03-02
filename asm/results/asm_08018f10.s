@@ -21,7 +21,7 @@ thumb_func_start func_08018f10 \n\
 /* 08018f34 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08018f36 */ STR R2, [SP] \n\
 /* 08018f38 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08018f3a */ BL func_08005124 \n\
+/* 08018f3a */ BL create_new_bmp_font_bg \n\
 /* 08018f3e */ LDR R2, =D_030046a4 \n\
 /* 08018f40 */ LDR R1, [R2] \n\
 /* 08018f42 */ STR R0, [R1] \n\

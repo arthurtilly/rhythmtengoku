@@ -32,7 +32,7 @@ branch_08040b80: \n\
 /* 08040b92 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 08040b94 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 08040b96 */ MOVS R3, 0xC @ Set R3 to 0xC \n\
-/* 08040b98 */ BL func_08004b98 \n\
+/* 08040b98 */ BL bmp_font_obj_print_c \n\
 /* 08040b9c */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08040b9e */ LDR R5, =D_03005380 \n\
 /* 08040ba0 */ LDR R0, [R5] \n\

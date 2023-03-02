@@ -24,7 +24,7 @@ branch_08006960: \n\
 branch_0800696c: \n\
 /* 0800696c */ LDR R0, [R5] \n\
 /* 0800696e */ LDR R1, [R4, 0x4] \n\
-/* 08006970 */ BL func_08005424 \n\
+/* 08006970 */ BL bmp_font_bg_delete_printed_data \n\
 /* 08006974 */ ADDS R4, 0x8 @ Add 0x8 to R4 \n\
  \n\
 branch_08006976: \n\

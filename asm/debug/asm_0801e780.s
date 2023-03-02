@@ -17,7 +17,7 @@ thumb_func_start func_0801e780 \n\
 /* 0801e79c */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 0801e79e */ STR R2, [SP] \n\
 /* 0801e7a0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0801e7a2 */ BL func_08005124 \n\
+/* 0801e7a2 */ BL create_new_bmp_font_bg \n\
 /* 0801e7a6 */ LDR R4, =D_030046a4 \n\
 /* 0801e7a8 */ LDR R1, [R4] \n\
 /* 0801e7aa */ STR R0, [R1] \n\
@@ -33,7 +33,7 @@ thumb_func_start func_0801e780 \n\
 /* 0801e7c0 */ LDR R2, =D_089ddfac \n\
 /* 0801e7c2 */ LDR R3, =D_0300558c \n\
 /* 0801e7c4 */ LDR R3, [R3] \n\
-/* 0801e7c6 */ BL func_08005814 \n\
+/* 0801e7c6 */ BL import_all_scene_objects \n\
 /* 0801e7ca */ BL func_0801e764 \n\
 /* 0801e7ce */ LDR R1, [R4] \n\
 /* 0801e7d0 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

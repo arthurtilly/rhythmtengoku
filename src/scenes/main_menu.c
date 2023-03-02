@@ -79,9 +79,9 @@ void func_080124d0(u32 unused) {
     tempScene = func_0800061c();
     func_08007324(FALSE);
     func_080073f0();
-    gMainMenuInfo->font2 = func_08005124(get_current_mem_id(), &D_089de670, 0, 0x340, 6);
+    gMainMenuInfo->font2 = create_new_bmp_font_bg(get_current_mem_id(), &D_089de670, 0, 0x340, 6);
     gMainMenuInfo->font1 = func_0800c660(0x300, 4);
-    func_08005814(D_03005380, gMainMenuInfo->font1, D_089cdc40, D_0300558c);
+    import_all_scene_objects(D_03005380, gMainMenuInfo->font1, D_089cdc40, D_0300558c);
     func_08012494();
     func_0804d160(D_03005380, D_0890a3c4, 0, 120, 64, 0x6e, 1, 0, 0);
 

@@ -19,7 +19,7 @@ thumb_func_start func_0803a230 \n\
 /* 0803a24e */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0803a250 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0803a252 */ MOVS R3, 0xC @ Set R3 to 0xC \n\
-/* 0803a254 */ BL func_08004b98 \n\
+/* 0803a254 */ BL bmp_font_obj_print_c \n\
 /* 0803a258 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803a25a */ LDR R5, =D_03005380 \n\
 /* 0803a25c */ LDR R0, [R5] \n\

@@ -118,7 +118,7 @@ branch_0801e5b2: \n\
 /* 0801e5b8 */ LDR R1, [R4] \n\
 /* 0801e5ba */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0801e5bc */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0801e5be */ BL func_08004c0c \n\
+/* 0801e5be */ BL bmp_font_obj_print_l \n\
 /* 0801e5c2 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0801e5c4 */ LDR R0, =D_03005380 \n\
 /* 0801e5c6 */ LDR R0, [R0] \n\
@@ -188,7 +188,7 @@ branch_0801e610: \n\
 /* 0801e64c */ ADD R1, SP, 0x14 \n\
 /* 0801e64e */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0801e650 */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
-/* 0801e652 */ BL func_08004c50 \n\
+/* 0801e652 */ BL bmp_font_obj_print_r \n\
 /* 0801e656 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0801e658 */ LDR R0, =D_03005380 \n\
 /* 0801e65a */ LDR R0, [R0] \n\

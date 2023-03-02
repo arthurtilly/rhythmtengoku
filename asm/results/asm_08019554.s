@@ -65,7 +65,7 @@ branch_080195a2: \n\
 /* 080195c0 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 080195c2 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 080195c4 */ MOVS R3, 0x7 @ Set R3 to 0x7 \n\
-/* 080195c6 */ BL func_08004c50 \n\
+/* 080195c6 */ BL bmp_font_obj_print_r \n\
 /* 080195ca */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080195cc */ LDR R2, =D_03005380 \n\
 /* 080195ce */ LDR R0, [R2] \n\
@@ -113,7 +113,7 @@ branch_080195a2: \n\
 /* 08019628 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 0801962a */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0801962c */ MOVS R3, 0x7 @ Set R3 to 0x7 \n\
-/* 0801962e */ BL func_08004c0c \n\
+/* 0801962e */ BL bmp_font_obj_print_l \n\
 /* 08019632 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08019634 */ LDR R3, =D_03005380 \n\
 /* 08019636 */ LDR R0, [R3] \n\

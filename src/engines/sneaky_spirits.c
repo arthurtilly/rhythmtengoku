@@ -185,7 +185,7 @@ void sneaky_spirits_engine_start(u32 version) {
     scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, 2);
 
     gSneakySpiritsInfo->unk0 = func_0800c660(0x380, 1);
-    textAnim = func_08004b98(gSneakySpiritsInfo->unk0, D_08059f90, 0, 0);
+    textAnim = bmp_font_obj_print_c(gSneakySpiritsInfo->unk0, D_08059f90, 0, 0);
     gSneakySpiritsInfo->text = func_0804d160(D_03005380, textAnim->frames, 0, 120, 32, 0, 0, 0, 0);
     sneaky_spirits_init_rain();
 
@@ -271,7 +271,7 @@ void sneaky_spirits_display_text(char *string) {
     struct PrintedTextAnim *textAnim;
 
     func_08007b04(gSneakySpiritsInfo->unk0, gSneakySpiritsInfo->text);
-    textAnim = func_08004b98(gSneakySpiritsInfo->unk0, string, 1, 0xc);
+    textAnim = bmp_font_obj_print_c(gSneakySpiritsInfo->unk0, string, 1, 0xc);
     func_0804d8f8(D_03005380, gSneakySpiritsInfo->text, textAnim->frames, 0, 1, 0, 0);
 }
 
