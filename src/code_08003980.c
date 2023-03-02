@@ -117,9 +117,9 @@ extern const char *D_08936b50; // Fullwidth Lowercase Latin Alphabet Table
 
 
 // Get printable glyph texture and width.
-void bmp_font_get_glyph(const struct BitmapFontData *font, const char *string, u16 **textureReq, u32 *widthReq) {
-    void *textures;
-    u8 *widths;
+void bmp_font_get_glyph(const struct BitmapFontData *font, const char *string, const u16 **textureReq, u32 *widthReq) {
+    const void *textures;
+    const u8 *widths;
     u32 id;
 
     textures = NULL;
@@ -404,7 +404,8 @@ void bmp_font_obj_write_glyph_fw(const u16 *texture, u16 *dest) {
 
 // Print glyph, returning the tile ID.
 u16 bmp_font_obj_print_glyph(struct BitmapFontOBJ *textObj, const char *string, u32 *widthReq) {
-    u16 *texture, *address;
+    const u16 *texture;
+    u16 *address;
     u32 width;
     u8 glyphDataB0, glyphDataB1;
     u32 tileX, tileY, tileID;
@@ -914,7 +915,8 @@ void bmp_font_bg_write_glyph(const u16 *texture, u16 *dest) {
 
 // Print glyph, returning the tile ID.
 u16 bmp_font_bg_print_glyph(struct BitmapFontBG *textObj, const char *string) {
-    u16 *texture, *address;
+    const u16 *texture;
+    u16 *address;
     u8 glyphByte0, glyphByte1;
     u32 tileX, tileY, tileID;
     u8 *printed;

@@ -53,23 +53,23 @@ struct BitmapFontData {
     u8 descensionHeight; // Descension Height for Lowercase Latin Alphabet Characters
     s8 spacingWidth; // Glyph Spacing
     // [(0x8140 .. 0x817E), (0x8180 .. 0x819E)]
-    u16 *punctuationTextures;
-    u8 *punctuationWidths;
+    const void *punctuationTextures;
+    const u8 *punctuationWidths;
     // [(0x824F .. 0x8258)]
-    u16 *arabicNumeralTextures;
-    u8 *arabicNumeralWidths;
+    const void *arabicNumeralTextures;
+    const u8 *arabicNumeralWidths;
     // [(0x8260 .. 0x8279)]
-    u16 *latinUppercaseTextures;
-    u8 *latinUppercaseWidths;
+    const void *latinUppercaseTextures;
+    const u8 *latinUppercaseWidths;
     // [(0x8281 .. 0x829A)]
-    u16 *latinLowercaseTextures;
-    u8 *latinLowercaseWidths;
+    const void *latinLowercaseTextures;
+    const u8 *latinLowercaseWidths;
     // [(0x829F .. 0x82FC)]
-    u16 *hiraganaTextures;
-    u8 *hiraganaWidths;
+    const void *hiraganaTextures;
+    const u8 *hiraganaWidths;
     // [(0x8340 .. 0x837E), (0x8380 .. 0x839E)]
-    u16 *katakanaTextures;
-    u8 *katakanaWidths;
+    const void *katakanaTextures;
+    const u8 *katakanaWidths;
 };
 
 struct BitmapFontOBJ {
@@ -128,7 +128,7 @@ struct BitmapFontBGPrinter {
 };
 
 
-extern void bmp_font_get_glyph(const struct BitmapFontData *font, const char *string, u16 **textureReq, u32 *widthReq); // Get printable glyph texture and width.
+extern void bmp_font_get_glyph(const struct BitmapFontData *font, const char *string, const u16 **textureReq, u32 *widthReq); // Get printable glyph texture and width.
 extern struct BitmapFontOBJ *create_new_bmp_font_obj_alt(u16 memID, const struct BitmapFontData *fonts, u32 baseTileNum, u32 maxTileRows); // Create new BitmapFontOBJ (no casting?).
 extern struct BitmapFontOBJ *create_new_bmp_font_obj(u16 memID, const struct BitmapFontData *fonts, u16 baseTileNum, u8 maxTileRows); // Create new BitmapFontOBJ.
 extern void delete_bmp_font_obj(struct BitmapFontOBJ *textObj); // Delete BitmapFontOBJ.

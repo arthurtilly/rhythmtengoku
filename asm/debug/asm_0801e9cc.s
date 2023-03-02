@@ -11,7 +11,7 @@ thumb_func_start func_0801e9cc \n\
 /* 0801e9da */ BL get_current_mem_id \n\
 /* 0801e9de */ LSLS R0, R0, 0x10 \n\
 /* 0801e9e0 */ LSRS R0, R0, 0x10 \n\
-/* 0801e9e2 */ LDR R1, =D_089de670 \n\
+/* 0801e9e2 */ LDR R1, =bitmap_font_warioware_body \n\
 /* 0801e9e4 */ MOVS R3, 0xD0 @ Set R3 to 0xD0 \n\
 /* 0801e9e6 */ LSLS R3, R3, 0x2 \n\
 /* 0801e9e8 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\

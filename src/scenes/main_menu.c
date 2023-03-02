@@ -12,7 +12,7 @@
 #include "gameplay.h"
 #include "src/lib_0804ca80.h"
 
-extern const struct BitmapFontData D_089de670;
+extern const struct BitmapFontData bitmap_font_warioware_body;
 extern struct Scene D_089ddbcc; // Debug Menu Script
 extern struct Scene D_089cdf08; // Game Select Script
 extern struct Scene D_089d7964; // Results (Score) Script
@@ -79,7 +79,7 @@ void func_080124d0(u32 unused) {
     tempScene = func_0800061c();
     func_08007324(FALSE);
     func_080073f0();
-    gMainMenuInfo->font2 = create_new_bmp_font_bg(get_current_mem_id(), &D_089de670, 0, 0x340, 6);
+    gMainMenuInfo->font2 = create_new_bmp_font_bg(get_current_mem_id(), &bitmap_font_warioware_body, 0, 0x340, 6);
     gMainMenuInfo->font1 = func_0800c660(0x300, 4);
     import_all_scene_objects(D_03005380, gMainMenuInfo->font1, D_089cdc40, D_0300558c);
     func_08012494();

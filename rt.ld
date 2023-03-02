@@ -1591,6 +1591,7 @@ SECTIONS {
         build/data/scenes/game_select/scene_entries.c.o(.rodata);
         build/bin/bindata_089cea24.bin.o(.rodata*);
         build/bin/bindata_089d3984.bin.o(.rodata*);
+        build/data/font_definitions.c.o(.data);
 
         build/games/sneaky_spirits/engine.c.o(.data);
         build/games/spaceball/engine.c.o(.data);

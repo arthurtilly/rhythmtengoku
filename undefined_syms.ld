@@ -1249,22 +1249,6 @@ D_089de244 = 0x089de244;
 D_089de250 = 0x089de250;
 D_089de254 = 0x089de254;
 D_089de2cc = 0x089de2cc;
-/* Wario Font Definitions */
-D_089de30c = 0x089de30c;
-D_089de36a = 0x089de36a;
-D_089de374 = 0x089de374;
-D_089de37e = 0x089de37e;
-D_089de398 = 0x089de398;
-D_089de3b2 = 0x089de3b2;
-D_089de410 = 0x089de410;
-D_089de46e = 0x089de46e;
-D_089de4cc = 0x089de4cc;
-D_089de4d6 = 0x089de4d6;
-D_089de4f0 = 0x089de4f0;
-D_089de50a = 0x089de50a;
-D_089de568 = 0x089de568;
-D_089de5c8 = 0x089de5c8;
-D_089de670 = 0x089de670;
 
 /* Rhythm Game Scripts */
 D_089edf48 = 0x089edf48;
