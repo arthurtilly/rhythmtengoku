@@ -226,7 +226,7 @@ struct BitmapFontData bitmap_font_warioware_outline[] = {
 
 // [D_089de670] WarioWare Body Text Font
 struct BitmapFontData bitmap_font_warioware_body[] = {
-    /* STYLE 1 - ? */ {
+    /* STYLE 1 - TEXT */ {
         /* DIMENSIONS */
             /* Whitespace W. */ 8,
             /* Glyph Width   */ 8,
@@ -254,7 +254,7 @@ struct BitmapFontData bitmap_font_warioware_body[] = {
             /* Widths   */ NULL,
     },
 
-    /* STYLE 2 - ? */ {
+    /* STYLE 2 - ICON */ {
         /* DIMENSIONS */
             /* Whitespace W. */ 8,
             /* Glyph Width   */ 8,
