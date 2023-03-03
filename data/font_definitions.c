@@ -1,6 +1,6 @@
 #include "global.h"
 #include "graphics.h"
-#include "src/code_08003980.h"
+#include "src/bitmap_font.h"
 
 
 /* Font Definitions */

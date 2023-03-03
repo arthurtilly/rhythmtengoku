@@ -11,6 +11,7 @@ SECTIONS {
         build/src/memory.c.o(.bss);
 		build/src/code_08001360.c.o(.bss);
 		build/src/code_08003980.c.o(.bss);
+		build/src/bitmap_font.c.o(.bss);
 		build/src/task_pool.c.o(.bss);
 		build/src/code_08005e54.c.o(.bss);
 		build/src/memory_heap.c.o(.bss);
@@ -129,6 +130,7 @@ SECTIONS {
         build/asm/code_08000a00.s.o(.text)
         build/src/code_08001360.c.o(.text);
         build/src/code_08003980.c.o(.text);
+        build/src/bitmap_font.c.o(.text);
         build/src/task_pool.c.o(.text);
         build/src/code_08005e54.c.o(.text);
         build/src/memory_heap.c.o(.text);
@@ -1594,6 +1596,7 @@ SECTIONS {
         build/data/math_tables.c.o(.data);
         build/data/data_089363cc.c.o(.data);
 		build/bin/bindata_08936650.bin.o(.rodata*);
+        build/data/bitmap_font_data.c.o(.data);
         build/data/data_08936b54.c.o(.data);
         build/data/sine_table.c.o(.data);
         build/data/text_printer_data.c.o(.data);

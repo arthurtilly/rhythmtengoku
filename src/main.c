@@ -1,6 +1,7 @@
 #include "main.h"
 #include "memory.h"
 #include "code_08003980.h"
+#include "bitmap_font.h"
 #include "memory_heap.h"
 
 asm(".include \"include/gba.inc\"");//Temporary

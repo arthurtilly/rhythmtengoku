@@ -1,7 +1,7 @@
 #include "global.h"
 #include "riq_main_scene.h"
 #include "src/code_08001360.h"
-#include "src/code_08003980.h"
+#include "src/bitmap_font.h"
 #include "src/task_pool.h"
 #include "src/memory_heap.h"
 #include "src/lib_0804ca80.h"

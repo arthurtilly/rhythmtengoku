@@ -3,7 +3,7 @@ asm(".include \"include/gba.inc\""); // Temporary
 #include "engines/showtime.h"
 
 #include "src/code_08001360.h"
-#include "src/code_08003980.h"
+#include "src/bitmap_font.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
 #include "src/scenes/gameplay.h"

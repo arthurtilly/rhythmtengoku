@@ -3,10 +3,6 @@
 #include "global.h"
 #include "src/task_pool.h"
 
-extern const char *D_08936b50;
-extern struct TaskMethods D_08936b54;
-extern struct TaskMethods D_08936b64;
-extern struct TaskMethods D_08936b74;
 extern struct TaskMethods D_08936b84;
 extern struct TaskMethods D_08936b94;
 extern struct TaskMethods D_08936ba4;
