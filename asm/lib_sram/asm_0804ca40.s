@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0804ca40 \n\
+thumb_func_start write_and_verify_sram_fast \n\
 /* 0804ca40 */ PUSH {R4-R7, LR} \n\
 /* 0804ca42 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 0804ca44 */ ADDS R5, R1, 0x0 @ Set R5 to R1 + 0x0 \n\
@@ -21,8 +21,8 @@ branch_0804ca52: \n\
 /* 0804ca56 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0804ca58 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0804ca5a */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 0804ca5c */ BL func_0804c8b0 \n\
-/* 0804ca60 */ LDR R0, =D_030064d0 \n\
+/* 0804ca5c */ BL write_sram_fast \n\
+/* 0804ca60 */ LDR R0, =gVerifySramFast \n\
 /* 0804ca62 */ LDR R3, [R0] \n\
 /* 0804ca64 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0804ca66 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\

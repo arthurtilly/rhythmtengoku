@@ -596,7 +596,7 @@ jump_08011104: \n\
 /* 0801115c */ LDR R1, [R4] \n\
 /* 0801115e */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
 /* 08011160 */ STRB R0, [R1] \n\
-/* 08011162 */ BL func_08010478 \n\
+/* 08011162 */ BL write_game_save_data \n\
 /* 08011166 */ B branch_08011264 \n\
 \n\
 .ltorg \n\

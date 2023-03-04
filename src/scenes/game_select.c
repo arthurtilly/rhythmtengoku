@@ -503,7 +503,7 @@ void game_select_scene_start(s32 unused) {
     } else {
         gGameSelectInfo->unk2D8 = 0;
         gGameSelectInfo->unk2D9 = 0;
-        func_08010478();
+        write_game_save_data();
         if (gGameSelectInfo->perfectCampaignNotice.unk0 != 0) {
             func_08012cb4(D_030046a8->data.perfectCampaignID);
             gGameSelectInfo->perfectCampaignNotice.unk0 = 0;

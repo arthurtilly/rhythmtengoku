@@ -38,8 +38,8 @@ thumb_func_start func_0801e9cc \n\
 /* 0801ea1a */ LDR R1, [R4] \n\
 /* 0801ea1c */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801ea1e */ STR R0, [R1, 0x8] \n\
-/* 0801ea20 */ BL func_0800081c \n\
-/* 0801ea24 */ BL func_080009a0 \n\
+/* 0801ea20 */ BL clear_save_data \n\
+/* 0801ea24 */ BL flush_save_buffer_to_sram \n\
 /* 0801ea28 */ LDR R0, =D_089dd47c \n\
 /* 0801ea2a */ BL func_08000584 \n\
 /* 0801ea2e */ ADD SP, 0x4 \n\

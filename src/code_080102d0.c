@@ -22,7 +22,7 @@ u32 get_music_base_tempo(struct SequenceData *seqData) {
 
 
 // [func_080102f4] Reset Rhythm Tengoku Game Save Data
-void func_080102f4(void) {
+void reset_game_save_data(void) {
     struct TengokuSaveData *data = &D_030046a8->data;
     u32 i;
 
@@ -84,4 +84,7 @@ void func_080102f4(void) {
 }
 
 
-#include "asm/code_0800b778/asm_08010478.s"
+// [func_08010478] Bulk Copy to Rhythm Tengoku Game Save Data
+void write_game_save_data(void) {
+    write_save_buffer_data_to_sram((void *)&D_030046a8->data, sizeof(struct TengokuSaveData) - sizeof(struct DrumReplaySaveAlloc));
+}

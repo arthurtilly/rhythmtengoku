@@ -11,8 +11,8 @@ thumb_func_start func_08016a18 \n\
 /* 08016a26 */ LDR R0, [R0, 0x24] \n\
 /* 08016a28 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08016a2a */ BEQ branch_08016a48 \n\
-/* 08016a2c */ BL func_0800081c \n\
-/* 08016a30 */ BL func_080009a0 \n\
+/* 08016a2c */ BL clear_save_data \n\
+/* 08016a30 */ BL flush_save_buffer_to_sram \n\
 /* 08016a34 */ LDR R0, =D_030046a8 \n\
 /* 08016a36 */ LDR R0, [R0] \n\
 /* 08016a38 */ MOVS R1, 0xB1 @ Set R1 to 0xB1 \n\

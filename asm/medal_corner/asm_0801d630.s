@@ -53,7 +53,7 @@ branch_0801d69a: \n\
 /* 0801d69e */ BL gameplay_pause_menu_set_quit_destination \n\
 /* 0801d6a2 */ LDR R0, [R4] \n\
 /* 0801d6a4 */ STR R5, [R0] \n\
-/* 0801d6a6 */ BL func_08010478 \n\
+/* 0801d6a6 */ BL write_game_save_data \n\
 /* 0801d6aa */ ADD SP, 0x14 \n\
 /* 0801d6ac */ POP {R4, R5} \n\
 /* 0801d6ae */ POP {R0} \n\

@@ -79,9 +79,9 @@ D_03004220 = 0x03004220;
 D_03004248 = 0x03004248;
 
 /* SRAM Library */
-D_030042d8 = 0x030042d8;
-D_03004378 = 0x03004378;
-D_030043f8 = 0x030043f8;
+sVerifySramFastWorkCopy = 0x030042d8;
+sReadSramFastWorkCopy = 0x03004378;
+sWriteIntSramFastWorkCopy = 0x030043f8;
 
 /* Sprite Library */
 D_03004428 = 0x03004428;
@@ -191,9 +191,9 @@ D_030064c0 = 0x030064c0;
 D_030064c4 = 0x030064c4;
 
 /* SRAM Library */
-D_030064c8 = 0x030064c8;
-D_030064cc = 0x030064cc;
-D_030064d0 = 0x030064d0;
+gReadSramFast = 0x030064c8;
+gWriteIntSramFast = 0x030064cc;
+gVerifySramFast = 0x030064d0;
 
 /* Sprite Library */
 D_030064d4 = 0x030064d4;

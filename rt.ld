@@ -128,6 +128,7 @@ SECTIONS {
         build/src/main.c.o(.text);
         build/src/memory.c.o(.text);
         build/asm/code_08000a00.s.o(.text)
+        build/asm/lib_sram.s.o(.text);
         build/src/code_08001360.c.o(.text);
         build/src/code_08003980.c.o(.text);
         build/src/bitmap_font.c.o(.text);
@@ -241,7 +242,7 @@ SECTIONS {
         build/asm/lib_080482e0.s.o(.text);
         build/src/lib_08049144.c.o(.text);
         build/asm/libagbsyscall.s.o(.text);
-        build/src/lib_0804c870.c.o(.text);
+        build/src/lib_sram.c.o(.text);
         build/src/lib_0804ca80.c.o(.text);
         build/asm/lib_0804e418.s.o(.text);
         build/src/lib_0804e564.c.o(.text);
@@ -1325,7 +1326,7 @@ SECTIONS {
         build/audio/samples/sfx_961.pcm.o(.rodata*);
         build/audio/samples/sfx_962.pcm.o(.rodata*);
 
-        build/bin/bindata_sram_info.bin.o(.rodata*);
+        build/data/lib_sram_data.c.o(.rodata);
 
         build/games/sneaky_spirits/graphics/sneaky_spirits_anim.c.o(.data);
         build/games/sneaky_spirits/graphics/sneaky_spirits_pal.c.o(.data);

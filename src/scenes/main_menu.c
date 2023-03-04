@@ -99,7 +99,7 @@ void func_080124d0(u32 unused) {
     gMainMenuInfo->unk1A = (tempScene != NULL);
     gMainMenuInfo->loadingOptionsMenu = FALSE;
     func_08000584(&D_089ddbcc);
-    func_080009a0();
+    flush_save_buffer_to_sram();
 }
 
 

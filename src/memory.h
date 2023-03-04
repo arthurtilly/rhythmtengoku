@@ -2,7 +2,7 @@
 
 #include "global.h"
 
-#define SAVE_BUFFER_SIZE 0x3B04 // might need renaming
+#define SAVE_BUFFER_SIZE sizeof(struct SaveBuffer)
 
 extern struct SaveBuffer {
     struct SaveBufferHeader {
@@ -77,32 +77,23 @@ extern struct SaveBuffer {
 } *D_030046a8;
 
 
-
-typedef void (struct_030064c8_func)(s32 *, s32 *, s32);
-extern struct_030064c8_func *D_030064c8;
-
-extern s32 *D_08935fb4; // CartRAMBase (0x0E000000)
-extern s32 *D_08935fb8; // CartRAMBase + 0x4000 (0x0E004000)
-extern char D_08935fbc[]; // "RIQ"
-extern char D_08935fc4[]; // "CAL"
-
 extern void init_ewram(void);
 extern void *get_save_buffer_start(void);
 extern void *get_save_buffer_end(void);
 extern void *get_memory_heap_start(void);
 extern u32 get_memory_heap_length(void);
-extern s32 func_08000794(s32 *, u32);
-extern void func_08000804(void);
-extern void func_0800081c(void);
-extern s32 func_08000868(s32 *);
-extern s32 func_080008bc(void);
-extern s32 func_080008d0(void);
-extern void func_080008e4(s32 *);
-extern s32 func_0800091c(void *);
-extern void func_08000928(s32 *);
-extern void func_0800096c(s32 *, s32);
-extern void func_080009a0(void);
-extern void func_080009b4(void);
+extern s32 generate_save_buffer_checksum(s32 *buffer, u32 size);
+extern void init_save_buffer(void);
+extern void clear_save_data(void);
+extern s32 copy_to_save_buffer(u8 *cartRAM);
+extern s32 copy_sram_to_save_buffer(void);
+extern s32 copy_sram_backup_to_save_buffer(void);
+extern void flush_save_buffer(u8 *cartRAM);
+extern s32 get_offset_from_save_buffer(void *buffer);
+extern void write_save_buffer_header_to_sram(u8 *cartRAM);
+extern void write_save_buffer_data_to_sram(u8 *buffer, u32 size);
+extern void flush_save_buffer_to_sram(void);
+extern void flush_save_buffer_to_sram_backup(void);
 extern void func_080009c8_stub(void);
 extern void func_080009cc_stub(void);
 extern s32 func_080009d0(s16 *);

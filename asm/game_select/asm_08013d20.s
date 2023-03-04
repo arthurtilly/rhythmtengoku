@@ -216,7 +216,7 @@ branch_08013ef0: \n\
 /* 08013efa */ STRB R0, [R1] \n\
  \n\
 branch_08013efc: \n\
-/* 08013efc */ BL func_08010478 \n\
+/* 08013efc */ BL write_game_save_data \n\
 /* 08013f00 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08013f02 */ BL pause_beatscript_scene \n\
 /* 08013f06 */ LDR R0, =D_030046a4 \n\
@@ -264,7 +264,7 @@ branch_08013f30: \n\
 /* 08013f64 */ LDR R1, [R3] \n\
 /* 08013f66 */ MOVS R0, 0xFF @ Set R0 to 0xFF \n\
 /* 08013f68 */ STRB R0, [R1, 0x14] \n\
-/* 08013f6a */ BL func_08010478 \n\
+/* 08013f6a */ BL write_game_save_data \n\
 /* 08013f6e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08013f70 */ BL pause_beatscript_scene \n\
 /* 08013f74 */ LDR R0, [R4] \n\

@@ -272,7 +272,7 @@ void func_080191bc(u32 level) {
     if (gameID >= 0)
         D_030046a8->data.unk190[gameID]++;
 
-    func_080009a0();
+    flush_save_buffer_to_sram();
 }
 
 

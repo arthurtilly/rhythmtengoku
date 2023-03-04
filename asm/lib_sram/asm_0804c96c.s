@@ -2,14 +2,14 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0804c96c \n\
+thumb_func_start set_sram_fast_func \n\
 /* 0804c96c */ PUSH {LR} \n\
-/* 0804c96e */ LDR R2, =func_0804c870 \n\
+/* 0804c96e */ LDR R2, =read_sram_fast \n\
 /* 0804c970 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0804c972 */ BICS R2, R0 @ Clear bits in R0 from R2 \n\
-/* 0804c974 */ LDR R3, =D_03004378 \n\
-/* 0804c976 */ LDR R0, =func_0804c8b0 \n\
-/* 0804c978 */ LDR R1, =func_0804c870 \n\
+/* 0804c974 */ LDR R3, =sReadSramFastWorkCopy \n\
+/* 0804c976 */ LDR R0, =write_sram_fast \n\
+/* 0804c978 */ LDR R1, =read_sram_fast \n\
 /* 0804c97a */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
 /* 0804c97c */ LSLS R0, R0, 0xF \n\
 /* 0804c97e */ B branch_0804c998 \n\
@@ -28,15 +28,15 @@ branch_0804c998: \n\
 /* 0804c998 */ LSRS R1, R0, 0x10 \n\
 /* 0804c99a */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 0804c99c */ BNE branch_0804c98c \n\
-/* 0804c99e */ LDR R1, =D_030064c8 \n\
-/* 0804c9a0 */ LDR R0, =(D_03004378 + 1) \n\
+/* 0804c99e */ LDR R1, =gReadSramFast \n\
+/* 0804c9a0 */ LDR R0, =(sReadSramFastWorkCopy + 1) \n\
 /* 0804c9a2 */ STR R0, [R1] \n\
-/* 0804c9a4 */ LDR R2, =func_0804c920 \n\
+/* 0804c9a4 */ LDR R2, =verify_sram_fast \n\
 /* 0804c9a6 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0804c9a8 */ BICS R2, R0 @ Clear bits in R0 from R2 \n\
-/* 0804c9aa */ LDR R3, =D_030042d8 \n\
-/* 0804c9ac */ LDR R0, =func_0804c96c \n\
-/* 0804c9ae */ LDR R1, =func_0804c920 \n\
+/* 0804c9aa */ LDR R3, =sVerifySramFastWorkCopy \n\
+/* 0804c9ac */ LDR R0, =set_sram_fast_func \n\
+/* 0804c9ae */ LDR R1, =verify_sram_fast \n\
 /* 0804c9b0 */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
 /* 0804c9b2 */ LSLS R0, R0, 0xF \n\
 /* 0804c9b4 */ B branch_0804c9d8 \n\
@@ -55,12 +55,12 @@ branch_0804c9d8: \n\
 /* 0804c9d8 */ LSRS R1, R0, 0x10 \n\
 /* 0804c9da */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 0804c9dc */ BNE branch_0804c9cc \n\
-/* 0804c9de */ LDR R1, =D_030064d0 \n\
-/* 0804c9e0 */ LDR R0, =(D_030042d8 + 1) \n\
+/* 0804c9de */ LDR R1, =gVerifySramFast \n\
+/* 0804c9e0 */ LDR R0, =(sVerifySramFastWorkCopy + 1) \n\
 /* 0804c9e2 */ STR R0, [R1] \n\
-/* 0804c9e4 */ LDR R2, =func_08001334 \n\
-/* 0804c9e6 */ LDR R3, =D_030043f8 \n\
-/* 0804c9e8 */ LDR R0, =func_08001334_end \n\
+/* 0804c9e4 */ LDR R2, =write_int_sram_fast \n\
+/* 0804c9e6 */ LDR R3, =sWriteIntSramFastWorkCopy \n\
+/* 0804c9e8 */ LDR R0, =write_int_sram_fast_end \n\
 /* 0804c9ea */ SUBS R0, R0, R2 @ Set R0 to R0 - R2 \n\
 /* 0804c9ec */ LSLS R0, R0, 0xF \n\
 /* 0804c9ee */ B branch_0804ca10 \n\
@@ -79,8 +79,8 @@ branch_0804ca10: \n\
 /* 0804ca10 */ LSRS R1, R0, 0x10 \n\
 /* 0804ca12 */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 0804ca14 */ BNE branch_0804ca04 \n\
-/* 0804ca16 */ LDR R1, =D_030064cc \n\
-/* 0804ca18 */ LDR R0, =D_030043f8 \n\
+/* 0804ca16 */ LDR R1, =gWriteIntSramFast \n\
+/* 0804ca18 */ LDR R0, =sWriteIntSramFastWorkCopy \n\
 /* 0804ca1a */ STR R0, [R1] \n\
 /* 0804ca1c */ LDR R2, =0x04000204 @ !Hardware REG_WAITCNT \n\
 /* 0804ca1e */ LDRH R0, [R2] \n\
