@@ -18,7 +18,6 @@
     .set EVENT_0A,      0x0A
     .set EVENT_0B,      0x0B
     .set EVENT_0C,      0x0C
-    .set STUB_EVENT,    0x0D
 
     @ Cues
     .set CUE_DEFAULT, 0x00

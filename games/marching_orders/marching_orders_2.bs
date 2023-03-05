@@ -96,100 +96,100 @@ script script_marching_orders_2_main
     rest 24
     rest 24
     rest 24
-    call D_08a83848
+    call marching_orders_sub_08a83848
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     set_marking_criteria 0
-    call D_08a83998
-    call D_08a83848
+    call marching_orders_sub_08a83998
+    call marching_orders_sub_08a83848
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     set_marking_criteria 0
-    call D_08a83998
+    call marching_orders_sub_08a83998
     set_marking_criteria 0
-    call D_08a84448
-    call D_08a83848
+    call marching_orders_sub_08a84448
+    call marching_orders_sub_08a83848
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     set_marking_criteria 0
-    call D_08a83998
+    call marching_orders_sub_08a83998
     set_marking_criteria 0
-    call D_08a8452c
-    call D_08a83848
+    call marching_orders_sub_08a8452c
+    call marching_orders_sub_08a83848
     set_marking_criteria 0
-    call D_08a83998
+    call marching_orders_sub_08a83998
     set_marking_criteria 0
-    call D_08a8452c
+    call marching_orders_sub_08a8452c
     set_marking_criteria 1
-    call D_08a84610
-    call D_08a83848
+    call marching_orders_2_sub_08a84610
+    call marching_orders_sub_08a83848
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     set_marking_criteria 0
-    call D_08a83998
+    call marching_orders_sub_08a83998
     marching_orders_event04 1
     set_marking_criteria 0
-    call D_08a84448
+    call marching_orders_sub_08a84448
     set_marking_criteria 1
-    call D_08a84610
+    call marching_orders_2_sub_08a84610
     set_marking_criteria 0
-    call D_08a8452c
+    call marching_orders_sub_08a8452c
     set_marking_criteria 1
-    call D_08a84610
+    call marching_orders_2_sub_08a84610
     rest 24
     rest 24
-    call D_08a83758
+    call marching_orders_sub_08a83758
     set_marking_criteria 1
-    call D_08a84610
+    call marching_orders_2_sub_08a84610
     rest 24
     rest 24
     rest 24
     rest 24
-    call D_08a83848
+    call marching_orders_sub_08a83848
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     set_marking_criteria 2
-    call D_08a83cc8
+    call marching_orders_2_sub_08a83cc8
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     set_marking_criteria 2
-    call D_08a83ea8
+    call marching_orders_2_sub_08a83ea8
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     set_marking_criteria 2
-    call D_08a84088
+    call marching_orders_2_sub_08a84088
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     set_marking_criteria 2
-    call D_08a84268
+    call marching_orders_2_sub_08a84268
     set_marking_criteria 2
-    call D_08a83cc8
+    call marching_orders_2_sub_08a83cc8
     set_marking_criteria 2
-    call D_08a84088
+    call marching_orders_2_sub_08a84088
     set_marking_criteria 0
-    call D_08a83b24
+    call marching_orders_sub_08a83b24
     set_marking_criteria 1
-    call D_08a83bfc
+    call marching_orders_sub_08a83bfc
     set_marking_criteria 0
-    call D_08a84448
+    call marching_orders_sub_08a84448
     set_marking_criteria 1
-    call D_08a847d8
+    call marching_orders_2_sub_08a847d8
     set_marking_criteria 1
-    call D_08a84610
-    call D_08a83848
+    call marching_orders_2_sub_08a84610
+    call marching_orders_sub_08a83848
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     marching_orders_event03 0
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     set_marking_criteria 0
-    call D_08a8386c
+    call marching_orders_sub_08a8386c
     marching_orders_event00 8
     play_sfx s_guntai_foot1_seqData
     rest 12

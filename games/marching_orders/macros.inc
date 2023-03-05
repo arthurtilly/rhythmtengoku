@@ -3,7 +3,7 @@
 
 
 @ Load Data
-.macro load_marching_labels
+.macro load_marching_orders_labels
     @ Game Events
     .set EVENT_00,          0x00
     .set EVENT_01,          0x01
@@ -37,25 +37,25 @@
 
 @ Load Game: Marching Orders
 .macro load_marching_orders
-    load_marching_labels
+    load_marching_orders_labels
     load_game marching_orders_engine, 0
 .endm
 
 @ Load Game: Marching Orders (Remix 7, Remix 8)
 .macro load_marching_space_rabbits
-    load_marching_labels
+    load_marching_orders_labels
     load_game marching_orders_engine, 1
 .endm
 
 @ Load Game: Marching Orders 2 (Unused)
 .macro load_marching_orders_2_unused
-    load_marching_labels
+    load_marching_orders_labels
     load_game marching_orders_engine, 2
 .endm
 
 @ Load Game: Marching Orders 2
 .macro load_marching_orders_2
-    load_marching_labels
+    load_marching_orders_labels
     load_game marching_orders_engine, 3
 .endm
 
