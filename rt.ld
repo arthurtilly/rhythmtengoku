@@ -1833,6 +1833,8 @@ SECTIONS {
         build/bin/bindata_08a1256c.bin.o(.rodata*);
         build/games/marching_orders/marching_orders_2.bs.o(.script.main);
         build/bin/bindata_08a12c0c.bin.o(.rodata*);
+        build/games/wizards_waltz/wizards_waltz.bs.o(.script.main);
+        build/bin/bindata_08a13db4.bin.o(.rodata*);
         build/games/bunny_hop/bunny_hop.bs.o(.script.main);
         build/bin/bindata_08a19850.bin.o(.rodata*);
         build/games/fireworks/fireworks.bs.o(.script.main);
