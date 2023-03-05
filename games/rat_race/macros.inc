@@ -38,6 +38,12 @@
     load_game rat_race_engine, 0
 .endm
 
+@ Load Game: Rat Race (Remix 2)
+.macro load_rat_race_remix_2
+    load_rat_race_labels
+    load_game rat_race_engine, 1
+.endm
+
 
 /* ---------------- Game Engine Events ---------------- */
 

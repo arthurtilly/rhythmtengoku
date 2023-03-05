@@ -1867,6 +1867,8 @@ SECTIONS {
         build/bin/bindata_08a4b3ac.bin.o(.rodata*);
         build/games/rap_men/rap_women.bs.o(.script.main);
         build/bin/bindata_08a4d8e4.bin.o(.rodata*);
+        build/games/remix_2/remix_2.bs.o(.script.main);
+        build/bin/bindata_08a534d8.bin.o(.rodata*);
         build/games/space_dance/cosmic_dance.bs.o(.script.main);
         build/bin/bindata_08a584c4.bin.o(.rodata*);
         build/games/concert_hall/concert_hall.bs.o(.script.main);
