@@ -1,0 +1,87 @@
+.include "include/beatscript.inc"
+.include "games/tap_trial/macros.inc"
+
+load_tap_trial_labels
+
+
+
+.section .script.sub
+@ Tap Trial - Subroutines
+
+script tap_trial_sub_08a85c78
+    tap_trial_event00 0
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 24
+    tap_trial_event00 4
+    beat_anim
+    rest 24
+return
+
+
+script tap_trial_sub_08a85cf0
+    tap_trial_event00 1
+    tap_trial_event00 15
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 12
+    tap_trial_event00 15
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 12
+    tap_trial_event00 5
+    beat_anim
+    rest 12
+    tap_trial_event00 5
+    rest 12
+return
+
+
+script tap_trial_sub_08a85de0
+    tap_trial_event00 9
+    rest 24
+return
+
+
+script tap_trial_sub_08a85e10
+    tap_trial_event00 10
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 24
+    tap_trial_event00 14
+    beat_anim
+    rest 24
+return
+
+
+script tap_trial_sub_08a85e88
+    tap_trial_event00 11
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 24
+    tap_trial_event00 12
+    beat_anim
+    rest 24
+return
+
+
+script tap_trial_sub_08a85f00
+    tap_trial_event00 8
+    rest 12
+    tap_trial_event00 16
+    rest 12
+    spawn_cue CUE_DEFAULT
+    rest 12
+    spawn_cue CUE_DEFAULT
+    rest 12
+    tap_trial_event00 6
+    spawn_cue CUE_DEFAULT
+    rest 12
+    tap_trial_event00 7
+    rest 12
+    tap_trial_event00 6
+    beat_anim
+    rest 24
+return
+
+.end
