@@ -479,7 +479,7 @@ script script_quiz_show_main
         print_text_s D_0805ed8c
         run gameplay_display_text_and_wait, 0
         quiz_show_event03 1
-        mod_lcd_blend 1, 0x3F41, 1, 24
+        mod_lcd_blend_from 0x3F41, TO_TEMPO, 24
         rest 24
         rest 24
         rest 24

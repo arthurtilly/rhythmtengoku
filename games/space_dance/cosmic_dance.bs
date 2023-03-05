@@ -147,7 +147,7 @@ script script_cosmic_dance_main
     space_dance_event01 0
     space_dance_event00 2
     play_sfx s_space_kou_down_seqData
-    .byte 0x3a, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x78, 0xd3, 0xa9, 0x08
+    add_music_in MUSIC_PLAYER_2, s_studio_bgm_seqData
     set_music_volume 40
     mod_music_volume 150, 144
     rest 24
@@ -214,7 +214,7 @@ script script_cosmic_dance_main
     play_sfx s_space_kou_punch_seqData
     play_sfx s_space_ikeo_punch_seqData
     space_dance_event01 63720
-    .byte 0x3f, 0x00, 0x00, 0x00, 0x42, 0x04, 0x00, 0x00, 0x18, 0x00, 0x00, 0x80
+    mod_lcd_blend_to 0x442, TO_TEMPO, 24
     run gameplay_set_reverb, 30
     rest 8
     set_marking_criteria 0
@@ -240,7 +240,7 @@ script script_cosmic_dance_main
     space_dance_event00 1
     play_sfx s_space_kou_punch_seqData
     space_dance_event01 63512
-    .byte 0x3f, 0x00, 0x00, 0x00, 0x42, 0x04, 0x00, 0x00, 0x18, 0x00, 0x00, 0x80
+    mod_lcd_blend_to 0x442, TO_TEMPO, 24
     rest 8
     call cosmic_dance_sub_08a84fdc
     call cosmic_dance_sub_08a84fdc
@@ -256,7 +256,7 @@ script script_cosmic_dance_main
     space_dance_event00 5
     play_sfx s_space_kou_pa_seqData
     play_sfx s_space_ikeo_pa_seqData
-    .byte 0x3f, 0x01, 0x00, 0x00, 0x42, 0x04, 0x00, 0x00, 0x18, 0x00, 0x00, 0x80
+    mod_lcd_blend_from 0x442, TO_TEMPO, 24
     rest 8
     space_dance_event00 4
     play_sfx s_space_kou_pa_seqData

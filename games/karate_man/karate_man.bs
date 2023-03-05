@@ -567,7 +567,7 @@ script script_karate_man_practice
         rest 24
         play_sfx s_intro_three_seqData
         rest 12
-        .byte 0xb2, 0x96, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0xd8, 0xc3, 0xa9, 0x08
+        play_sfx_synced s_intro_four_seqData, 150, 256, 0
         rest 12
         rest 24
         play_music s_karate_fan_seqData
