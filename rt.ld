@@ -1823,6 +1823,10 @@ SECTIONS {
         build/bin/bindata_08a044f0.bin.o(.rodata*);
         build/games/samurai_slice/samurai_slice.bs.o(.script.main);
         build/bin/bindata_08a05900.bin.o(.rodata*);
+        build/games/spaceball/spaceball.bs.o(.script.main);
+        build/bin/bindata_08a0a1f0.bin.o(.rodata*);
+        build/games/spaceball/spaceball_2.bs.o(.script.main);
+        build/bin/bindata_08a0b654.bin.o(.rodata*);
         build/games/marching_orders/marching_orders.bs.o(.script.main);
         build/bin/bindata_08a1256c.bin.o(.rodata*);
         build/games/marching_orders/marching_orders_2.bs.o(.script.main);
