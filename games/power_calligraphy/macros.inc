@@ -3,7 +3,7 @@
 
 
 @ Load Data
-.macro load_calligraphy_labels
+.macro load_power_calligraphy_labels
     @ Game Events
     .set EVENT_00,      0x00
     .set EVENT_01,      0x01
@@ -37,7 +37,7 @@
 
 @ Load Game: Power Calligraphy
 .macro load_power_calligraphy
-    load_calligraphy_labels
+    load_power_calligraphy_labels
     load_game power_calligraphy_engine, 0
 .endm
 

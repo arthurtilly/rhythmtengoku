@@ -1871,10 +1871,9 @@ SECTIONS {
         build/bin/bindata_08a60600.bin.o(.rodata*);
         build/games/bon_odori/bon_dance.bs.o(.script.main);
         build/bin/bindata_08a6b13c.bin.o(.rodata*);
-        build/games/sneaky_spirits/sneaky_spirits.bs.o(.script.sub);
-        build/games/sneaky_spirits/sneaky_spirits_2.bs.o(.script.sub);
+        build/games/sneaky_spirits/subroutines.bs.o(.script.sub);
         build/bin/bindata_08a7a20c.bin.o(.rodata*);
-        build/games/power_calligraphy/power_calligraphy.bs.o(.script.sub);
+        build/games/power_calligraphy/subroutines.bs.o(.script.sub);
         build/bin/bindata_08a808d8.bin.o(.rodata*);
         build/games/space_dance/subroutines.bs.o(.script.sub);
         build/bin/bindata_08a85a50.bin.o(.rodata*);
