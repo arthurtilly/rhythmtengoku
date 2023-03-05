@@ -1845,6 +1845,8 @@ SECTIONS {
         build/bin/bindata_08a25bac.bin.o(.rodata*);
         build/games/toss_boys/toss_boys.bs.o(.script.main);
         build/bin/bindata_08a2b91c.bin.o(.rodata*);
+        build/games/tram_and_pauline/tram_and_pauline.bs.o(.script.main);
+        build/bin/bindata_08a2efe0.bin.o(.rodata*);
         build/games/showtime/showtime.bs.o(.script.main);
         build/bin/bindata_08a35588.bin.o(.rodata*);
         build/games/space_dance/space_dance.bs.o(.script.main);
