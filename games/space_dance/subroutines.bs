@@ -21,7 +21,7 @@ script space_dance_sub_08a848bc
 return
 
 
-@ Space Dance
+@ Space Dance, Remix 3
 script space_dance_sub_08a84928
     beat_anim
     rest 24
