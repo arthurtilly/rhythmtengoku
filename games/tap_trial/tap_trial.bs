@@ -14,7 +14,7 @@ script script_tap_trial_entry
     load_tap_trial
     enable_play_inputs 1
     assess_inputs 1
-    call D_08a0dc1c
+    call script_tap_trial_practice
     enable_pause 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -68,6 +68,459 @@ script script_tap_trial_prologue
     run func_08006d80, 0
     rest 24
     set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Tap Trial - Main Script
+
+script tap_trial_sub_08a0cefc
+    loop_start
+        tap_trial_event01 189
+        call tap_trial_sub_08a85c78
+        call tap_trial_sub_08a85c78
+        call tap_trial_sub_08a85c78
+        call tap_trial_sub_08a85c78
+    loop_end
+return
+
+
+script tap_trial_sub_08a0cf68
+    loop_start
+        tap_trial_event01 189
+        call tap_trial_sub_08a85c78
+        call tap_trial_sub_08a85c78
+        call tap_trial_sub_08a85c78
+        call tap_trial_sub_08a85cf0
+    loop_end
+return
+
+
+script tap_trial_sub_08a0cfd4
+    loop_start
+        tap_trial_event01 189
+        call tap_trial_sub_08a85de0
+        call tap_trial_sub_08a85e10
+        call tap_trial_sub_08a85e10
+        call tap_trial_sub_08a85e88
+        beat_anim
+        rest 24
+    loop_end
+return
+
+
+script tap_trial_sub_08a0d058
+    loop_start
+        tap_trial_event01 189
+        call tap_trial_sub_08a85c78
+        call tap_trial_sub_08a85c78
+        call tap_trial_sub_08a85f00
+    loop_end
+return
+
+
+script script_tap_trial_main
+    set_results_header D_0805c2ec
+    import_marking_criteria D_08a0cee8
+    forgive_x_misses 3
+    assess_inputs 1
+    set_tempo 127
+    play_music s_tapdance_bgm_seqData
+    set_music_volume 50
+    mod_music_volume 256, 192
+    set_marking_criteria 0
+    print_text_f D_0805c300
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    print_text_f NULL
+    start_perfect_campaign
+    tap_trial_event03 1
+    rest 24
+    tap_trial_event04 134595352
+    rest 24
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tap_trial_event04 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85de0
+    call tap_trial_sub_08a85e88
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85cf0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85f00
+    set_marking_criteria 2
+    beat_anim
+    rest 24
+    tap_trial_event02 0
+    call tap_trial_sub_08a85de0
+    call tap_trial_sub_08a85e10
+    call tap_trial_sub_08a85e10
+    call tap_trial_sub_08a85e88
+    tap_trial_event06 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tap_trial_event05 0
+    set_marking_criteria 1
+    call tap_trial_sub_08a85cf0
+    call tap_trial_sub_08a85c78
+    set_marking_criteria 0
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85cf0
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85cf0
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85cf0
+    set_tempo 139
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85f00
+    set_marking_criteria 1
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85cf0
+    call tap_trial_sub_08a85c78
+    set_marking_criteria 0
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85cf0
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85cf0
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    tap_trial_event02 0
+    set_marking_criteria 1
+    call tap_trial_sub_08a85cf0
+    tap_trial_event06 0
+    call tap_trial_sub_08a85cf0
+    tap_trial_event05 0
+    set_marking_criteria 0
+    call tap_trial_sub_08a85f00
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85cf0
+    call tap_trial_sub_08a85c78
+    set_marking_criteria 2
+    tap_trial_event02 0
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85f00
+    call tap_trial_sub_08a85c78
+    tap_trial_event06 1
+    call tap_trial_sub_08a85de0
+    tap_trial_event05 0
+    set_marking_criteria 1
+    call tap_trial_sub_08a85e10
+    call tap_trial_sub_08a85e88
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    set_marking_criteria 0
+    call tap_trial_sub_08a85de0
+    call tap_trial_sub_08a85e10
+    call tap_trial_sub_08a85e88
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85de0
+    call tap_trial_sub_08a85e10
+    call tap_trial_sub_08a85e88
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85de0
+    call tap_trial_sub_08a85e10
+    call tap_trial_sub_08a85e10
+    call tap_trial_sub_08a85e88
+    beat_anim
+    rest 24
+    set_marking_criteria 2
+    tap_trial_event02 0
+    call tap_trial_sub_08a85f00
+    call tap_trial_sub_08a85cf0
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85f00
+    call tap_trial_sub_08a85cf0
+    tap_trial_event06 2
+    call tap_trial_sub_08a85c78
+    tap_trial_event04 0
+    tap_trial_event05 0
+    set_marking_criteria 0
+    call tap_trial_sub_08a85f00
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85cf0
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85de0
+    call tap_trial_sub_08a85e88
+    tap_trial_event04 134595380
+    beat_anim
+    rest 24
+    assess_perfect_inputs 0
+    rest 24
+    rest 24
+    enable_pause 0
+    rest 24
+return
+
+
+script script_tap_trial_practice
+    set_tempo 120
+    print_text_f D_0805c348
+    rest 24
+    enable_pause 1
+    rest 24
+    run gameplay_set_tutorial D_089d1d48
+    rest 24
+    print_text_f NULL
+    rest 24
+    assess_inputs 0
+    set_tempo 110
+    set_music_volume 200
+    play_music s_renshu_bgm1_seqData
+    rest 6
+    print_text_f D_0805c35c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    print_text_f D_0805c374
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a0cefc
+    print_text_f D_0805c384
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a0cf68
+    print_text_f D_0805c39c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a0cfd4
+    print_text_f D_0805c3b4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a0d058
+    run gameplay_set_tutorial NULL
+    mod_music_volume 0, 90
+    print_text_f D_0805c3cc
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    goto script_tap_trial_main
+
+
+script script_tap_trial_skipped_practice
+    set_game_fade_in_time 0
+    set_tempo 120
+    rest 24
+    enable_pause 1
+    rest 24
+    goto script_tap_trial_main
+
+
+
+.section .script.sub
+@ Tap Trial - Subroutines
+
+script tap_trial_sub_08a85c78
+    tap_trial_event00 0
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 24
+    tap_trial_event00 4
+    beat_anim
+    rest 24
+return
+
+
+script tap_trial_sub_08a85cf0
+    tap_trial_event00 1
+    tap_trial_event00 15
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 12
+    tap_trial_event00 15
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 12
+    tap_trial_event00 5
+    beat_anim
+    rest 12
+    tap_trial_event00 5
+    rest 12
+return
+
+
+script tap_trial_sub_08a85de0
+    tap_trial_event00 9
+    rest 24
+return
+
+
+script tap_trial_sub_08a85e10
+    tap_trial_event00 10
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 24
+    tap_trial_event00 14
+    beat_anim
+    rest 24
+return
+
+
+script tap_trial_sub_08a85e88
+    tap_trial_event00 11
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 24
+    tap_trial_event00 12
+    beat_anim
+    rest 24
+return
+
+
+script tap_trial_sub_08a85f00
+    tap_trial_event00 8
+    rest 12
+    tap_trial_event00 16
+    rest 12
+    spawn_cue CUE_DEFAULT
+    rest 12
+    spawn_cue CUE_DEFAULT
+    rest 12
+    tap_trial_event00 6
+    spawn_cue CUE_DEFAULT
+    rest 12
+    tap_trial_event00 7
+    rest 12
+    tap_trial_event00 6
+    beat_anim
+    rest 24
 return
 
 .end

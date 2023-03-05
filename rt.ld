@@ -1827,6 +1827,8 @@ SECTIONS {
         build/bin/bindata_08a0a1f0.bin.o(.rodata*);
         build/games/spaceball/spaceball_2.bs.o(.script.main);
         build/bin/bindata_08a0b654.bin.o(.rodata*);
+        build/games/tap_trial/tap_trial.bs.o(.script.main);
+        build/bin/bindata_08a0e03c.bin.o(.rodata*);
         build/games/marching_orders/marching_orders.bs.o(.script.main);
         build/bin/bindata_08a1256c.bin.o(.rodata*);
         build/games/marching_orders/marching_orders_2.bs.o(.script.main);
@@ -1866,6 +1868,8 @@ SECTIONS {
         build/bin/bindata_08a808d8.bin.o(.rodata*);
         build/games/space_dance/subroutines.bs.o(.script.sub);
         build/bin/bindata_08a85a50.bin.o(.rodata*);
+        build/games/tap_trial/tap_trial.bs.o(.script.sub);
+        build/bin/bindata_08a86008.bin.o(.rodata*);
 
         build/audio/audio_data.c.o(.data);
         build/bin/bindata_08a9e8e0.bin.o(.rodata*);
