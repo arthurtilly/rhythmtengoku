@@ -9,9 +9,9 @@
     .set ENABLE_TUTORIAL,   0x01
 
     @ Cues
-    .set CUE_00,    0x00
-    .set CUE_01,    0x01
-    .set CUE_02,    0x02
+    .set CUE_WIZARD_00,    0x00
+    .set CUE_WIZARD_01,    0x01
+    .set CUE_WIZARD_02,    0x02
 .endm
 
 

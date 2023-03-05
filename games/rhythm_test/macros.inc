@@ -14,8 +14,8 @@
     .set EVENT_06,      0x06
 
     @ Cues
-    .set CUE_00,    0x00
-    .set CUE_01,    0x01
+    .set CUE_TEST_00,    0x00
+    .set CUE_TEST_01,    0x01
 .endm
 
 

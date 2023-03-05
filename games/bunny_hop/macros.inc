@@ -17,17 +17,17 @@
     .set EVENT_09,      0x09
 
     @ Cues
-    .set CUE_00,    0x00
-    .set CUE_01,    0x01
-    .set CUE_02,    0x02
-    .set CUE_03,    0x03
-    .set CUE_04,    0x04
-    .set CUE_05,    0x05
-    .set CUE_06,    0x06
-    .set CUE_07,    0x07
-    .set CUE_08,    0x08
-    .set CUE_09,    0x09
-    .set CUE_0A,    0x0A
+    .set CUE_BUNNY_00,    0x00
+    .set CUE_BUNNY_01,    0x01
+    .set CUE_BUNNY_02,    0x02
+    .set CUE_BUNNY_03,    0x03
+    .set CUE_BUNNY_04,    0x04
+    .set CUE_BUNNY_05,    0x05
+    .set CUE_BUNNY_06,    0x06
+    .set CUE_BUNNY_07,    0x07
+    .set CUE_BUNNY_08,    0x08
+    .set CUE_BUNNY_09,    0x09
+    .set CUE_BUNNY_0A,    0x0A
 .endm
 
 

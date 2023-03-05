@@ -14,12 +14,12 @@
     .set EVENT_06,      0x06
 
     @ Cues
-    .set CUE_00,    0x00
-    .set CUE_01,    0x01
-    .set CUE_02,    0x02
-    .set CUE_03,    0x03
-    .set CUE_04,    0x04
-    .set CUE_05,    0x05
+    .set CUE_MANNEQUIN_00,    0x00
+    .set CUE_MANNEQUIN_01,    0x01
+    .set CUE_MANNEQUIN_02,    0x02
+    .set CUE_MANNEQUIN_03,    0x03
+    .set CUE_MANNEQUIN_04,    0x04
+    .set CUE_MANNEQUIN_05,    0x05
 .endm
 
 

@@ -14,9 +14,9 @@
     .set EVENT_06,           0x06
 
     @ Cues
-    .set CUE_00,    0x00
-    .set CUE_04,    0x04
-    .set CUE_08,    0x08
+    .set CUE_SICK_BEATS_00,    0x00
+    .set CUE_SICK_BEATS_04,    0x04
+    .set CUE_SICK_BEATS_08,    0x08
 .endm
 
 

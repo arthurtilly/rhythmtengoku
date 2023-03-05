@@ -17,12 +17,12 @@
     .set EVENT_09,      0x09
 
     @ Cues
-    .set CUE_00,    0x00
-    .set CUE_01,    0x01
-    .set CUE_02,    0x02
-    .set CUE_03,    0x03
-    .set CUE_04,    0x04
-    .set CUE_05,    0x05
+    .set CUE_LIVE_00,    0x00
+    .set CUE_LIVE_01,    0x01
+    .set CUE_LIVE_02,    0x02
+    .set CUE_LIVE_03,    0x03
+    .set CUE_LIVE_04,    0x04
+    .set CUE_LIVE_05,    0x05
 .endm
 
 

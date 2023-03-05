@@ -88,17 +88,17 @@ return
 script bunny_hop_sub_08a18800
     set_marking_criteria 0
     bunny_hop_event01 0
-    spawn_cue CUE_00
+    spawn_cue CUE_BUNNY_00
     rest 24
     bunny_hop_event01 0
-    spawn_cue CUE_00
+    spawn_cue CUE_BUNNY_00
     rest 24
     bunny_hop_event01 1
-    spawn_cue CUE_01
-    spawn_cue CUE_02
+    spawn_cue CUE_BUNNY_01
+    spawn_cue CUE_BUNNY_02
     rest 24
     bunny_hop_event01 2
-    spawn_cue CUE_03
+    spawn_cue CUE_BUNNY_03
     rest 24
 return
 
@@ -107,36 +107,36 @@ script bunny_hop_sub_08a188e4
     set_marking_criteria 0
     bunny_hop_event03 D_0805cc68
     bunny_hop_event01 0
-    spawn_cue CUE_00
+    spawn_cue CUE_BUNNY_00
     rest 24
     bunny_hop_event01 0
-    spawn_cue CUE_00
+    spawn_cue CUE_BUNNY_00
     bunny_hop_event03 D_0805cc70
     rest 24
     bunny_hop_event01 1
-    spawn_cue CUE_01
-    spawn_cue CUE_02
+    spawn_cue CUE_BUNNY_01
+    spawn_cue CUE_BUNNY_02
     rest 24
     bunny_hop_event01 2
-    spawn_cue CUE_03
+    spawn_cue CUE_BUNNY_03
     rest 24
     bunny_hop_event01 3
-    spawn_cue CUE_04
-    spawn_cue CUE_07
+    spawn_cue CUE_BUNNY_04
+    spawn_cue CUE_BUNNY_07
     rest 24
     bunny_hop_event07 s_rabbit_break2_seqData
     rest 24
     bunny_hop_event03 D_0805cc80
     bunny_hop_event01 1
     set_marking_criteria 2
-    spawn_cue CUE_01
-    spawn_cue CUE_02
+    spawn_cue CUE_BUNNY_01
+    spawn_cue CUE_BUNNY_02
     set_marking_criteria 0
     rest 12
     bunny_hop_event05 0
     rest 12
     bunny_hop_event01 2
-    spawn_cue CUE_03
+    spawn_cue CUE_BUNNY_03
     rest 24
     bunny_hop_event05 256
 return
@@ -146,16 +146,16 @@ script bunny_hop_sub_08a18b30
     set_marking_criteria 0
     bunny_hop_event03 D_0805cc68
     bunny_hop_event01 0
-    spawn_cue CUE_00
+    spawn_cue CUE_BUNNY_00
     rest 24
     bunny_hop_event01 0
-    spawn_cue CUE_00
+    spawn_cue CUE_BUNNY_00
     bunny_hop_event03 D_0805cc84
     rest 24
     bunny_hop_event07 s_rabbit_break_seqData
     bunny_hop_event01 4
-    spawn_cue CUE_05
-    spawn_cue CUE_07
+    spawn_cue CUE_BUNNY_05
+    spawn_cue CUE_BUNNY_07
     rest 24
     rest 24
     bunny_hop_event03 D_0805cc94
@@ -167,8 +167,8 @@ script bunny_hop_sub_08a18b30
     bunny_hop_event03 D_0805cc9c
     bunny_hop_event01 1
     set_marking_criteria 2
-    spawn_cue CUE_01
-    spawn_cue CUE_02
+    spawn_cue CUE_BUNNY_01
+    spawn_cue CUE_BUNNY_02
     set_marking_criteria 0
     bunny_hop_event06 0
     rest 12
@@ -176,7 +176,7 @@ script bunny_hop_sub_08a18b30
     rest 12
     bunny_hop_event03 D_0805cca0
     bunny_hop_event01 2
-    spawn_cue CUE_03
+    spawn_cue CUE_BUNNY_03
     rest 24
     bunny_hop_event03 D_0805cc80
     bunny_hop_event05 256
@@ -187,16 +187,16 @@ script bunny_hop_sub_08a18db8
     set_marking_criteria 0
     bunny_hop_event03 D_0805cc68
     bunny_hop_event01 0
-    spawn_cue CUE_00
+    spawn_cue CUE_BUNNY_00
     rest 24
     bunny_hop_event01 0
-    spawn_cue CUE_00
+    spawn_cue CUE_BUNNY_00
     bunny_hop_event03 D_0805cc84
     rest 24
     bunny_hop_event07 s_rabbit_break_seqData
     bunny_hop_event01 4
-    spawn_cue CUE_05
-    spawn_cue CUE_07
+    spawn_cue CUE_BUNNY_05
+    spawn_cue CUE_BUNNY_07
     rest 24
     rest 24
     bunny_hop_event03 D_0805cc80
@@ -206,13 +206,13 @@ script bunny_hop_sub_08a18db8
     rest 24
     bunny_hop_event01 1
     set_marking_criteria 2
-    spawn_cue CUE_01
-    spawn_cue CUE_02
+    spawn_cue CUE_BUNNY_01
+    spawn_cue CUE_BUNNY_02
     set_marking_criteria 0
     bunny_hop_event06 0
     rest 24
     bunny_hop_event01 2
-    spawn_cue CUE_03
+    spawn_cue CUE_BUNNY_03
     rest 24
     bunny_hop_event05 256
 return
@@ -222,16 +222,16 @@ script bunny_hop_sub_08a18fc8
     set_marking_criteria 0
     bunny_hop_event03 D_0805cc68
     bunny_hop_event01 0
-    spawn_cue CUE_00
+    spawn_cue CUE_BUNNY_00
     rest 24
     bunny_hop_event01 0
-    spawn_cue CUE_00
+    spawn_cue CUE_BUNNY_00
     bunny_hop_event03 D_0805cca4
     rest 24
     bunny_hop_event07 s_rabbit_break_seqData
     bunny_hop_event01 5
-    spawn_cue CUE_06
-    spawn_cue CUE_07
+    spawn_cue CUE_BUNNY_06
+    spawn_cue CUE_BUNNY_07
     rest 24
     rest 24
     bunny_hop_event04 0
@@ -247,13 +247,13 @@ script bunny_hop_sub_08a18fc8
     rest 24
     bunny_hop_event01 1
     set_marking_criteria 2
-    spawn_cue CUE_01
-    spawn_cue CUE_02
+    spawn_cue CUE_BUNNY_01
+    spawn_cue CUE_BUNNY_02
     set_marking_criteria 0
     bunny_hop_event06 0
     rest 24
     bunny_hop_event01 2
-    spawn_cue CUE_03
+    spawn_cue CUE_BUNNY_03
     rest 24
     bunny_hop_event05 256
 return
@@ -287,13 +287,13 @@ script script_bunny_hop_main
     bunny_hop_event02 0
     rest 24
     bunny_hop_event01 1
-    spawn_cue CUE_01
-    spawn_cue CUE_02
+    spawn_cue CUE_BUNNY_01
+    spawn_cue CUE_BUNNY_02
     bunny_hop_event02 0
     rest 24
     bunny_hop_event02 1
     bunny_hop_event01 2
-    spawn_cue CUE_03
+    spawn_cue CUE_BUNNY_03
     rest 24
     bunny_hop_event04 0
     call bunny_hop_sub_08a18800
@@ -337,17 +337,17 @@ script script_bunny_hop_main
     call bunny_hop_sub_08a188e4
     bunny_hop_event04 0
     bunny_hop_event01 0
-    spawn_cue CUE_00
+    spawn_cue CUE_BUNNY_00
     rest 24
     bunny_hop_event01 0
-    spawn_cue CUE_00
+    spawn_cue CUE_BUNNY_00
     rest 24
     bunny_hop_event01 0
-    spawn_cue CUE_00
+    spawn_cue CUE_BUNNY_00
     rest 24
     bunny_hop_event01 6
-    spawn_cue CUE_08
-    spawn_cue CUE_07
+    spawn_cue CUE_BUNNY_08
+    spawn_cue CUE_BUNNY_07
     rest 24
     rest 24
     rest 24
