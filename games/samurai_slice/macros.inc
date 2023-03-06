@@ -28,7 +28,7 @@
     load_game samurai_slice_engine, 0
 .endm
 
-@ Load Game: Samurai Slice (Remix 2, Remix 6, Remix 7)
+@ Load Game: Samurai Slice (Remix 2, Remix 6, Remix 7, Remix 8)
 .macro load_samurai_slice_remix
     load_samurai_slice_labels
     load_game samurai_slice_engine, 1

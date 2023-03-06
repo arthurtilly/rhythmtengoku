@@ -439,11 +439,11 @@ script script_remix_7_main
     rest 24
     sneaky_spirits_enable_wind_sfx 0
     sneaky_spirits_set_ghost_height 256
-    .byte 0xac, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    set_music_track_volume MIDI_TRACK_5, 0
     rest 24
     run scene_stop_music 0
     rest 24
-    .byte 0xac, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    set_music_track_volume 0, 0
     set_tempo 131
     play_music L3_intro_seqData
     rest 24
@@ -641,7 +641,7 @@ script script_remix_7_main
     spawn_cue CUE_LOW
     rest 24
     rest 4
-    .byte 0xac, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    set_music_track_volume MIDI_TRACK_4, 0
     rest 4
     rest 8
     rest 8
@@ -654,7 +654,7 @@ script script_remix_7_main
     set_tempo 120
     run func_08047ef4, 0
     rest 24
-    .byte 0xac, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    set_music_track_volume 0, 0
     run func_08047f08, 0
     set_game_fade_in_time 20
     load_tap_trial_remix_7

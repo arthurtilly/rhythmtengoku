@@ -230,7 +230,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    load_rat_race_remix_2
+    load_rat_race_remix
     rat_race_event12 0
     beat_anim
     rest 24

@@ -111,7 +111,7 @@ endstruct
 script ninja_bodyguard_sub_08a000bc
     set_marking_criteria 0
     play_music s_ninja_bgm1_seqData
-    run scene_set_music_key, 0
+    set_music_key 0
     ninja_bodyguard_event0C 0
     rest 12
     ninja_bodyguard_event07 1
@@ -131,7 +131,7 @@ script ninja_bodyguard_sub_08a000bc
     ninja_bodyguard_event09 1
     rest 24
     play_music s_ninja_bgm1_seqData
-    run scene_set_music_key, 2
+    set_music_key 2
     ninja_bodyguard_event0C 0
     rest 12
     ninja_bodyguard_event05 0
@@ -155,7 +155,7 @@ return
 script ninja_bodyguard_sub_08a00320
     set_marking_criteria 0
     play_music s_ninja_bgm1_seqData
-    run scene_set_music_key, 0
+    set_music_key 0
     ninja_bodyguard_event0C 0
     rest 12
     ninja_bodyguard_event07 2
@@ -179,7 +179,7 @@ script ninja_bodyguard_sub_08a00320
     ninja_bodyguard_event09 1
     rest 24
     play_music s_ninja_bgm1_seqData
-    run scene_set_music_key, 2
+    set_music_key 2
     ninja_bodyguard_event0C 0
     rest 12
     ninja_bodyguard_event05 0
@@ -206,7 +206,7 @@ return
 script ninja_bodyguard_sub_08a00614
     set_marking_criteria 1
     play_music s_ninja_bgm1_seqData
-    run scene_set_music_key, -3
+    set_music_key -3
     ninja_bodyguard_event0C 0
     rest 12
     ninja_bodyguard_event07 3
@@ -233,7 +233,7 @@ script ninja_bodyguard_sub_08a00614
     ninja_bodyguard_event09 1
     rest 24
     play_music s_ninja_bgm1_seqData
-    run scene_set_music_key, -2
+    set_music_key -2
     ninja_bodyguard_event0C 0
     rest 12
     ninja_bodyguard_event05 0
@@ -263,7 +263,7 @@ return
 script ninja_bodyguard_sub_08a00974
     set_marking_criteria 0
     play_music s_ninja_bgm2_seqData
-    run scene_set_music_key, 0
+    set_music_key 0
     ninja_bodyguard_event0C 0
     rest 12
     ninja_bodyguard_event07 1
@@ -280,7 +280,7 @@ script ninja_bodyguard_sub_08a00974
     rest 24
     rest 24
     play_music s_ninja_bgm2_seqData
-    run scene_set_music_key, -2
+    set_music_key -2
     ninja_bodyguard_event0C 0
     rest 12
     ninja_bodyguard_event05 0
@@ -304,7 +304,7 @@ return
 script ninja_bodyguard_sub_08a00bb4
     set_marking_criteria 2
     play_music s_ninja_bgm2_seqData
-    run scene_set_music_key, 2
+    set_music_key 2
     ninja_bodyguard_event0C 0
     rest 12
     ninja_bodyguard_event07 4
@@ -330,7 +330,7 @@ script ninja_bodyguard_sub_08a00bb4
     ninja_bodyguard_event09 1
     rest 24
     play_music s_ninja_bgm2_seqData
-    run scene_set_music_key, 0
+    set_music_key 0
     ninja_bodyguard_event0C 0
     rest 12
     ninja_bodyguard_event05 0
@@ -363,7 +363,7 @@ return
 script ninja_bodyguard_sub_08a00f50
     set_marking_criteria 1
     play_music s_ninja_bgm2_seqData
-    run scene_set_music_key, 0
+    set_music_key 0
     ninja_bodyguard_event0C 0
     rest 12
     ninja_bodyguard_event07 3
@@ -387,7 +387,7 @@ script ninja_bodyguard_sub_08a00f50
     rest 24
     rest 24
     play_music s_ninja_bgm2_seqData
-    run scene_set_music_key, -2
+    set_music_key -2
     ninja_bodyguard_event0C 0
     rest 12
     ninja_bodyguard_event05 0

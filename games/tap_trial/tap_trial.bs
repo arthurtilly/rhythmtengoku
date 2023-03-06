@@ -139,7 +139,7 @@ script script_tap_trial_main
     start_perfect_campaign
     tap_trial_event03 1
     rest 24
-    tap_trial_event04 134595352
+    tap_trial_event04 D_0805c318
     rest 24
     rest 24
     rest 24
@@ -149,7 +149,7 @@ script script_tap_trial_main
     rest 24
     beat_anim
     rest 24
-    tap_trial_event04 0
+    tap_trial_event04 NULL
     beat_anim
     rest 24
     beat_anim
@@ -324,7 +324,7 @@ script script_tap_trial_main
     call tap_trial_sub_08a85cf0
     tap_trial_event06 2
     call tap_trial_sub_08a85c78
-    tap_trial_event04 0
+    tap_trial_event04 NULL
     tap_trial_event05 0
     set_marking_criteria 0
     call tap_trial_sub_08a85f00
@@ -338,7 +338,7 @@ script script_tap_trial_main
     rest 24
     call tap_trial_sub_08a85de0
     call tap_trial_sub_08a85e88
-    tap_trial_event04 134595380
+    tap_trial_event04 D_0805c334
     beat_anim
     rest 24
     assess_perfect_inputs 0

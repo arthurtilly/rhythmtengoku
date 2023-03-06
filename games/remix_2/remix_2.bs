@@ -620,7 +620,7 @@ script script_remix_2_main
     beat_anim
     rest 24
     set_game_fade_in_time 0
-    load_rat_race_remix_2
+    load_rat_race_remix
     rat_race_event12 0
     play_music L2_pat11_seqData
     rest 24
@@ -929,7 +929,7 @@ script script_remix_2_main
     beat_anim
     rest 24
     set_game_fade_in_time 20
-    load_rat_race_remix_2
+    load_rat_race_remix
     rat_race_event12 0
     beat_anim
     rest 24
