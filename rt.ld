@@ -1877,6 +1877,8 @@ SECTIONS {
         build/bin/bindata_08a60600.bin.o(.rodata*);
         build/games/remix_3/remix_3.bs.o(.script.main);
         build/bin/bindata_08a623bc.bin.o(.rodata*);
+        build/games/remix_5/remix_5.bs.o(.script.main);
+        build/bin/bindata_08a66de0.bin.o(.rodata*);
         build/games/bon_odori/bon_dance.bs.o(.script.main);
         build/bin/bindata_08a6b13c.bin.o(.rodata*);
         build/games/sneaky_spirits/subroutines.bs.o(.script.sub);

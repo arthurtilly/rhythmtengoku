@@ -278,7 +278,7 @@ script script_toss_boys_main
     beat_anim
     rest 24
     set_marking_criteria 1
-    toss_boys_event02 NULL
+    toss_boys_event02 0x00000
     spawn_cue CUE_POP_Y
     toss_boys_event05 50
     beat_anim
@@ -464,7 +464,7 @@ script script_toss_boys_main
     beat_anim
     rest 24
     set_marking_criteria 1
-    toss_boys_event02 NULL
+    toss_boys_event02 0x00000
     spawn_cue CUE_POP_Y
     toss_boys_event05 50
     beat_anim
@@ -680,7 +680,7 @@ script script_toss_boys_main
     beat_anim
     rest 24
     set_marking_criteria 1
-    toss_boys_event02 NULL
+    toss_boys_event02 0x00000
     spawn_cue CUE_POP_Y
     toss_boys_event05 50
     beat_anim
@@ -889,7 +889,7 @@ script script_toss_boys_main
     beat_anim
     rest 24
     set_marking_criteria 1
-    toss_boys_event02 NULL
+    toss_boys_event02 0x00000
     spawn_cue CUE_POP_Y
     toss_boys_event05 50
     beat_anim
@@ -976,7 +976,7 @@ script script_toss_boys_practice
         toss_boys_event03 13
         beat_anim
         rest 24
-        toss_boys_event02 NULL
+        toss_boys_event02 0x00000
         spawn_cue CUE_POP_Y
         toss_boys_event05 50
         beat_anim
@@ -1067,7 +1067,7 @@ script script_toss_boys_practice
         toss_boys_event03 4
         beat_anim
         rest 24
-        toss_boys_event02 NULL
+        toss_boys_event02 0x00000
         spawn_cue CUE_POP_Y
         toss_boys_event05 50
         beat_anim
@@ -1154,7 +1154,7 @@ script script_toss_boys_practice
         toss_boys_event03 4
         beat_anim
         rest 24
-        toss_boys_event02 NULL
+        toss_boys_event02 0x00000
         spawn_cue CUE_POP_Y
         toss_boys_event05 50
         beat_anim
@@ -1258,7 +1258,7 @@ script script_toss_boys_practice
         toss_boys_event03 4
         beat_anim
         rest 24
-        toss_boys_event02 NULL
+        toss_boys_event02 0x00000
         spawn_cue CUE_POP_Y
         toss_boys_event05 50
         beat_anim
@@ -1348,7 +1348,7 @@ script script_toss_boys_practice
         toss_boys_event03 4
         beat_anim
         rest 24
-        toss_boys_event02 NULL
+        toss_boys_event02 0x00000
         spawn_cue CUE_POP_Y
         toss_boys_event05 50
         beat_anim
@@ -1443,7 +1443,7 @@ script script_toss_boys_practice
         toss_boys_event03 13
         beat_anim
         rest 24
-        toss_boys_event02 NULL
+        toss_boys_event02 0x00000
         spawn_cue CUE_POP_Y
         toss_boys_event05 50
         beat_anim
@@ -1524,7 +1524,7 @@ script script_toss_boys_practice
         toss_boys_event03 4
         beat_anim
         rest 24
-        toss_boys_event02 NULL
+        toss_boys_event02 0x00000
         spawn_cue CUE_POP_Y
         toss_boys_event05 50
         beat_anim
