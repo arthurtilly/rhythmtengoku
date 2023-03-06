@@ -94,7 +94,7 @@ return
 
 script quiz_show_sub_08a3c210
     run agb_random, 3
-    if_eq INT8, FUNCTION_RESULT, 0
+    if_eq INT8, GLOBAL_VARIABLE, 0
         return
     end_if
     run agb_random, 3
@@ -493,7 +493,7 @@ script script_quiz_show_main
         quiz_show_event03 0
         assess_perfect_inputs 1
         quiz_show_event04 0
-        if_eq INT8, FUNCTION_RESULT, 0
+        if_eq INT8, GLOBAL_VARIABLE, 0
             import_marking_criteria D_08a3c0f4
             assess_inputs 1
             switch FUNC, func_080175d8

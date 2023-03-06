@@ -1869,6 +1869,8 @@ SECTIONS {
         build/bin/bindata_08a4d8e4.bin.o(.rodata*);
         build/games/remix_2/remix_2.bs.o(.script.main);
         build/bin/bindata_08a534d8.bin.o(.rodata*);
+        build/games/remix_4/remix_4.bs.o(.script.main);
+        build/bin/bindata_08a56b88.bin.o(.rodata*);
         build/games/space_dance/cosmic_dance.bs.o(.script.main);
         build/bin/bindata_08a584c4.bin.o(.rodata*);
         build/games/concert_hall/concert_hall.bs.o(.script.main);
@@ -1880,7 +1882,7 @@ SECTIONS {
         build/games/sneaky_spirits/subroutines.bs.o(.script.sub);
         build/bin/bindata_08a7a20c.bin.o(.rodata*);
         build/games/power_calligraphy/subroutines.bs.o(.script.sub);
-        build/bin/bindata_08a808d8.bin.o(.rodata*);
+        build/bin/bindata_08a820e4.bin.o(.rodata*);
         build/games/marching_orders/subroutines.bs.o(.script.sub);
         build/games/space_dance/subroutines.bs.o(.script.sub);
         build/bin/bindata_08a85a50.bin.o(.rodata*);

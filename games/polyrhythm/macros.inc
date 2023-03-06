@@ -37,7 +37,7 @@
 .endm
 
 @ Load Game: Polyrhythm (Remix 4)
-.macro load_polyrhythm_remix
+.macro load_polyrhythm_remix_4
     load_polyrhythm_labels
     load_game polyrhythm_engine, 1
 .endm
