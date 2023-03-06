@@ -320,7 +320,7 @@ script script_remix_2_main
     rest 24
     beat_anim
     rest 24
-    load_sneaky_spirits_remix_2
+    load_sneaky_spirits_remix
     sneaky_spirits_spawn_bow 0
     beat_anim
     rest 24
@@ -891,7 +891,7 @@ script script_remix_2_main
     mod_music_volume 250, 24
     rest 24
     set_game_fade_in_time 0
-    load_sneaky_spirits_remix_2
+    load_sneaky_spirits_remix
     sneaky_spirits_spawn_bow 0
     sneaky_spirits_enable_wind_sfx 1
     sneaky_spirits_set_ghost_height 256

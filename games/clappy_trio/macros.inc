@@ -70,8 +70,8 @@
 .endm
 
 @ [Event 0x03] Run Grayscale Effect on Next Hit
-.macro clappy_trio_prepare_grayscale_effect
-    clappy_trio_event GRAYSCALE_ON_NEXT_HIT, 0
+.macro clappy_trio_prepare_grayscale_effect args
+    clappy_trio_event GRAYSCALE_ON_NEXT_HIT, \args
 .endm
 
 @ [Event 0x04] Set NPC Clap Volume

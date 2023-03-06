@@ -34,8 +34,8 @@
     load_game sneaky_spirits_engine, 0
 .endm
 
-@ Load Game: Sneaky Spirits (Remix 2)
-.macro load_sneaky_spirits_remix_2
+@ Load Game: Sneaky Spirits (Remix 2, Remix 7)
+.macro load_sneaky_spirits_remix
     load_sneaky_spirits_labels
     load_game sneaky_spirits_engine, 1
 .endm
