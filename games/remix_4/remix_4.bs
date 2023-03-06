@@ -377,7 +377,7 @@ script script_remix_4_main
     spawn_cue CUE_SNARE
     rest 12
     set_game_fade_in_time 0
-    load_polyrhythm_remix_4
+    load_polyrhythm_remix
     run gameplay_assess_irrelevant_inputs 0
     rest 12
     set_music_track_volume 0x01A0, 0
@@ -544,7 +544,7 @@ script script_remix_4_main
     spawn_cue CUE_SNARE
     rest 12
     set_game_fade_in_time 0
-    load_polyrhythm_remix_4
+    load_polyrhythm_remix
     run gameplay_assess_irrelevant_inputs 0
     rest 12
     set_music_track_volume 0, 0

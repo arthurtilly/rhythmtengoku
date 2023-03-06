@@ -38,7 +38,7 @@
     load_game rat_race_engine, 0
 .endm
 
-@ Load Game: Rat Race (Remix 2)
+@ Load Game: Rat Race (Remix 2, Remix 6)
 .macro load_rat_race_remix_2
     load_rat_race_labels
     load_game rat_race_engine, 1
