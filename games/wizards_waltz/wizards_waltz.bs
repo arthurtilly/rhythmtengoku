@@ -77,7 +77,7 @@ script script_wizards_waltz_main
     assess_inputs 1
     set_music_volume 256
     play_music s_mitubati_seqData
-    set_music_track_volume 0, 0
+    reset_music_track_volumes
     wizards_waltz_enable_tutorial 0
     rest 24
     enable_pause 1
@@ -353,7 +353,7 @@ script script_wizards_waltz_practice
     set_music_volume 256
     set_tempo 160
     play_music s_mitubati_seqData
-    set_music_track_volume ~MIDI_TRACK_5, 0
+    mute_music_track ~MIDI_TRACK_5
     wizards_waltz_set_cycle_time 144
     rest 24
     enable_pause 1

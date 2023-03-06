@@ -218,7 +218,7 @@ script script_remix_4_main
     rest 24
     night_walk_set_platform 0
     play_music L3_C37_seqData
-    set_music_track_volume 0x01A0, 0
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
     spawn_cue CUE_KICK
     call remix_4_sub_08a536c0
     spawn_cue CUE_SNARE
@@ -243,7 +243,7 @@ script script_remix_4_main
     rest 24
     spawn_cue CUE_SNARE
     rest 12
-    set_music_track_volume 0, 0
+    reset_music_track_volumes
     set_game_fade_in_time 0
     load_quiz_show
     enable_play_inputs 0
@@ -355,7 +355,7 @@ script script_remix_4_main
     night_walk_set_drumtech_volume 160
     spawn_cue CUE_SNARE
     rest 24
-    set_music_track_volume 0x01A0, 0
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
     night_walk_set_platform 0
     night_walk_set_drumtech_volume 192
     spawn_cue CUE_KICK
@@ -380,7 +380,7 @@ script script_remix_4_main
     load_polyrhythm_remix
     run gameplay_assess_irrelevant_inputs 0
     rest 12
-    set_music_track_volume 0x01A0, 0
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
     polyrhythm_spawn_rod 1
     rest 24
     run gameplay_assess_irrelevant_inputs 1
@@ -443,7 +443,7 @@ script script_remix_4_main
     rest 8
     polyrhythm_play_applause_sfx
     rest 8
-    set_music_track_volume 0, 0
+    reset_music_track_volumes
     play_music L3_C35_seqData
     rest 24
     load_power_calligraphy
@@ -514,7 +514,7 @@ script script_remix_4_main
     night_walk_set_drumtech_volume 160
     spawn_cue CUE_SNARE
     rest 24
-    set_music_track_volume 0x01A0, 0
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
     night_walk_set_platform 0
     night_walk_set_drumtech_volume 192
     spawn_cue CUE_KICK
@@ -547,13 +547,13 @@ script script_remix_4_main
     load_polyrhythm_remix
     run gameplay_assess_irrelevant_inputs 0
     rest 12
-    set_music_track_volume 0, 0
+    reset_music_track_volumes
     rest 24
     rest 24
     rest 24
     rest 24
     run gameplay_assess_irrelevant_inputs 1
-    set_music_track_volume 0x01A0, 0
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
     polyrhythm_spawn_rod 1
     polyrhythm_spawn_block 0, 1, 2
     spawn_cue CUE_4_DOWNSIDE
@@ -594,7 +594,7 @@ script script_remix_4_main
     rest 24
     rest 24
     polyrhythm_play_applause_sfx
-    set_music_track_volume 0, 0
+    reset_music_track_volumes
     rest 24
     rest 24
     polyrhythm_retract_pistons 1
@@ -603,7 +603,7 @@ script script_remix_4_main
     polyrhythm_despawn_blocks 1
     polyrhythm_despawn_blocks 0
     rest 24
-    set_music_track_volume 0x01A0, 0
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
     polyrhythm_spawn_rod 1
     polyrhythm_spawn_rod 0
     polyrhythm_spawn_block 0, 1, 2
@@ -638,7 +638,7 @@ script script_remix_4_main
     rest 24
     rest 24
     polyrhythm_play_applause_sfx
-    set_music_track_volume 0, 0
+    reset_music_track_volumes
     rest 24
     rest 24
     rest 24
@@ -796,7 +796,7 @@ script script_remix_4_main
     spawn_cue CUE_SNARE
     rest 24
     night_walk_set_platform 0
-    set_music_track_volume 0x01A0, 0
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
     night_walk_set_drumtech_volume 192
     spawn_cue CUE_KICK
     rest 24
@@ -826,7 +826,7 @@ script script_remix_4_main
     quiz_show_event01 1
     print_text_s D_0806814c
     rest 12
-    set_music_track_volume 0, 0
+    reset_music_track_volumes
     rest 24
     rest 24
     rest 24

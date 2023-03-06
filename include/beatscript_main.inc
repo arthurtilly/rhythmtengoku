@@ -567,6 +567,14 @@
     beatscript_cmd 0xAC, \tracks, \volume, 0
 .endm
 
+.macro mute_music_track tracks
+    set_music_track_volume \tracks, 0
+.endm
+
+.macro reset_music_track_volumes
+    set_music_track_volume 0, 0
+.endm
+
 
 @ [0xAD] Gradually Change Music Track Volume
 .macro mod_music_track_volume tracks, volume, time

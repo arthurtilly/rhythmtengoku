@@ -86,7 +86,7 @@ script samurai_slice_sub_08a04544
     set_music_volume 100
     mod_music_volume 256, 144
     play_music s_iai_bgm1_seqData
-    set_music_track_volume MIDI_TRACK_4, 0
+    mute_music_track MIDI_TRACK_4
     set_tempo 120
     beat_anim
     rest 24

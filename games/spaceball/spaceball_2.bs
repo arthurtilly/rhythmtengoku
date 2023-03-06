@@ -216,7 +216,7 @@ script script_spaceball_2_main
     rest 4
     run scene_stop_music 0
     rest 20
-    set_music_track_volume MIDI_TRACK_9, 0
+    mute_music_track MIDI_TRACK_9
     set_tempo 125
     play_music s_shibafu1_bgm_seqData
     rest 24
@@ -226,7 +226,7 @@ script script_spaceball_2_main
     rest 4
     run scene_stop_music 0
     rest 20
-    set_music_track_volume 0, 0
+    reset_music_track_volumes
     set_tempo 140
     play_music s_shibafu1_bgm_seqData
     rest 24

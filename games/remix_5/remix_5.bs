@@ -115,7 +115,7 @@ script script_remix_5_main
     rest 24
     rest 24
     rest 24
-    .byte 0x3f, 0x01, 0x00, 0x00, 0x42, 0x3f, 0x00, 0x00, 0x60, 0x00, 0x00, 0x80
+    mod_lcd_blend_from 0x3F42, TO_TEMPO, 96
     rest 24
     rest 24
     rest 24
@@ -137,7 +137,7 @@ script script_remix_5_main
     bouncy_road_set_ball_palette 1
     bouncy_road_deploy_ball 24
     run scene_show_bg_layer, 2
-    .byte 0x3f, 0x00, 0x00, 0x00, 0x42, 0x3f, 0x00, 0x00, 0x60, 0x00, 0x00, 0x80
+    mod_lcd_blend_to 0x3F42, TO_TEMPO, 96
     rest 24
     rest 24
     rest 24
@@ -152,7 +152,7 @@ script script_remix_5_main
     rest 24
     run scene_hide_bg_layer, 1
     run scene_show_bg_layer, 3
-    .byte 0x3f, 0x01, 0x00, 0x00, 0x48, 0x3f, 0x00, 0x00, 0x60, 0x00, 0x00, 0x80
+    mod_lcd_blend_from 0x3F48, TO_TEMPO, 96
     rest 24
     rest 24
     rest 24

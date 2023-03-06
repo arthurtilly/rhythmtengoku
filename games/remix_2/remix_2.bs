@@ -513,7 +513,7 @@ script script_remix_2_main
     rest 12
     run func_08047e78, s_bon_dondon1_1_seqData
     rest 12
-    set_music_track_volume MIDI_TRACK_5, 0
+    mute_music_track MIDI_TRACK_5
     bon_odori_animate_all 3
     bon_odori_lyrics_set_curr_line 1
     bon_odori_lyrics_curr_line_start_highlight 93
@@ -593,7 +593,7 @@ script script_remix_2_main
     load_bon_odori
     bon_odori_lyrics_set_curr_line 1
     bon_odori_lyrics_curr_line_print_center D_08067fcc
-    set_music_track_volume MIDI_TRACK_5, 0
+    mute_music_track MIDI_TRACK_5
     beat_anim
     rest 24
     beat_anim
@@ -875,7 +875,7 @@ script script_remix_2_main
     rest 12
     run func_08047e78, s_bon_dondon1_1_seqData
     rest 12
-    set_music_track_volume MIDI_TRACK_5, 0
+    mute_music_track MIDI_TRACK_5
     bon_odori_animate_all 3
     bon_odori_lyrics_set_curr_line 1
     bon_odori_lyrics_curr_line_start_highlight 84
