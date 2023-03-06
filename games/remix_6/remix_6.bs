@@ -195,6 +195,7 @@ script script_remix_6_main
     beat_anim
     rest 24
     set_game_fade_in_time 0
+
     load_bouncy_road
     bouncy_road_enable_ball_goal_sfx
     bouncy_road_deploy_ball 24
@@ -230,6 +231,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
+
     load_rat_race_remix
     rat_race_event12 0
     beat_anim
@@ -289,6 +291,7 @@ script script_remix_6_main
     set_music_volume 200
     beat_anim
     rest 24
+
     load_clappy_trio
     beat_anim
     rest 24
@@ -325,6 +328,7 @@ script script_remix_6_main
     rest 12
     rest 12
     rest 12
+
     load_quiz_show
     assess_perfect_inputs 0
     enable_play_inputs 0
@@ -399,6 +403,7 @@ script script_remix_6_main
     end_if
     beat_anim
     rest 24
+
     load_polyrhythm_remix
     enable_play_inputs 1
     assess_inputs 1
@@ -469,6 +474,7 @@ script script_remix_6_main
     rest 6
     rest 6
     rest 6
+
     load_ninja_bodyguard
     ninja_bodyguard_event07 1
     ninja_bodyguard_event0B 1
@@ -515,6 +521,7 @@ script script_remix_6_main
     beat_anim
     rest 24
     set_game_fade_in_time 30
+
     load_power_calligraphy
     beat_anim
     rest 24
@@ -536,6 +543,7 @@ script script_remix_6_main
     beat_anim
     rest 24
     set_game_fade_in_time 0
+
     load_tap_trial
     beat_anim
     rest 24
@@ -554,6 +562,7 @@ script script_remix_6_main
     call tap_trial_sub_08a85c78
     call tap_trial_sub_08a85f00
     set_tempo 140
+
     load_sick_beats
     beat_anim
     rest 24
@@ -589,6 +598,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
+
     load_toss_boys
     beat_anim
     rest 24
@@ -642,6 +652,7 @@ script script_remix_6_main
     toss_boys_event05 2
     beat_anim
     rest 24
+
     load_wizards_waltz
     wizards_waltz_enable_tutorial 0
     wizards_waltz_set_cycle_time 144
@@ -698,6 +709,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
+
     load_night_walk
     enable_play_inputs 1
     night_walk_set_cue_earliness 240
@@ -773,6 +785,7 @@ script script_remix_6_main
     rest 12
     beat_anim
     rest 6
+
     load_karate_man
     rest 6
     rest 12
@@ -811,6 +824,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
+
     load_bunny_hop
     bunny_hop_event08 8
     beat_anim
@@ -858,6 +872,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
+
     load_rap_men
     beat_anim
     rest 24
@@ -901,6 +916,7 @@ script script_remix_6_main
     beat_anim
     rest 24
     rest 24
+
     load_showtime
     beat_anim
     rest 24
@@ -936,10 +952,12 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
+
     load_sneaky_spirits
     sneaky_spirits_spawn_bow 0
     call sneaky_spirits_sub_08a791a4
     call sneaky_spirits_sub_08a7951c
+
     load_bon_odori
     beat_anim
     rest 24
@@ -1016,6 +1034,7 @@ script script_remix_6_main
     rest 24
     bon_odori_stop_input_check
     rest 24
+
     load_fireworks
     beat_anim
     rest 24
@@ -1051,6 +1070,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
+
     load_tram_pauline_no_curtain
     beat_anim
     rest 24
@@ -1104,6 +1124,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
+
     load_spaceball
     spaceball_zoom_camera 0xfed4, 0
     spaceball_zoom_camera 0xff00, 287
@@ -1150,6 +1171,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
+
     load_samurai_slice_remix
     samurai_slice_event02 0
     beat_anim
@@ -1189,6 +1211,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
+
     load_rhythm_tweezers
     rhythm_tweezers_start_hair_cycle 0
     spawn_cue CUE_SHORT
@@ -1229,6 +1252,7 @@ script script_remix_6_main
     rest 6
     rhythm_tweezers_removed_event 0
     rest 12
+
     load_marching_orders
     call marching_orders_sub_08a83848
     call marching_orders_sub_08a8386c
@@ -1239,6 +1263,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
+
     load_space_dance
     space_dance_event01 63720
     beat_anim

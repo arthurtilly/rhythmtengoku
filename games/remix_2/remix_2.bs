@@ -190,6 +190,7 @@ script script_remix_2_main
     rest 24
     beat_anim
     rest 24
+
     load_sick_beats
     beat_anim
     rest 24
@@ -208,6 +209,7 @@ script script_remix_2_main
     rest 24
     beat_anim
     rest 24
+
     load_samurai_slice_remix
     samurai_slice_event08 1
     beat_anim
@@ -228,6 +230,7 @@ script script_remix_2_main
     rest 24
     beat_anim
     rest 24
+
     load_sick_beats
     beat_anim
     rest 24
@@ -246,6 +249,7 @@ script script_remix_2_main
     rest 24
     beat_anim
     rest 24
+
     load_samurai_slice_remix
     samurai_slice_event08 1
     play_music L2_pat01_seqData
@@ -267,6 +271,7 @@ script script_remix_2_main
     rest 24
     beat_anim
     rest 24
+
     load_sick_beats
     beat_anim
     rest 24
@@ -286,6 +291,7 @@ script script_remix_2_main
     beat_anim
     rest 24
     play_music L2_pat09_seqData
+
     load_samurai_slice_remix
     samurai_slice_event08 2
     beat_anim
@@ -320,6 +326,7 @@ script script_remix_2_main
     rest 24
     beat_anim
     rest 24
+
     load_sneaky_spirits_remix
     sneaky_spirits_spawn_bow 0
     beat_anim
@@ -443,6 +450,7 @@ script script_remix_2_main
     beat_anim
     rest 24
     play_music L2_pat01_seqData
+
     load_sick_beats
     beat_anim
     rest 24
@@ -499,6 +507,7 @@ script script_remix_2_main
     beat_anim
     rest 24
     set_game_fade_in_time 30
+
     load_bon_odori
     bon_odori_lyrics_set_curr_line 1
     bon_odori_lyrics_curr_line_print_center D_08067f90
@@ -529,6 +538,7 @@ script script_remix_2_main
     rest 24
     play_music L2_pat01_seqData
     set_game_fade_in_time 0
+
     load_sick_beats
     beat_anim
     rest 24
@@ -590,6 +600,7 @@ script script_remix_2_main
     beat_anim
     rest 24
     set_game_fade_in_time 30
+
     load_bon_odori
     bon_odori_lyrics_set_curr_line 1
     bon_odori_lyrics_curr_line_print_center D_08067fcc
@@ -620,6 +631,7 @@ script script_remix_2_main
     beat_anim
     rest 24
     set_game_fade_in_time 0
+
     load_rat_race_remix
     rat_race_event12 0
     play_music L2_pat11_seqData
@@ -838,6 +850,7 @@ script script_remix_2_main
     rat_race_event02 1
     rest 24
     play_music L2_pat16_seqData
+
     load_samurai_slice_remix
     samurai_slice_event08 2
     beat_anim
@@ -859,6 +872,7 @@ script script_remix_2_main
     beat_anim
     rest 24
     set_game_fade_in_time 30
+
     load_bon_odori
     bon_odori_lyrics_set_curr_line 1
     bon_odori_lyrics_curr_line_print_center D_08067f90
@@ -891,6 +905,7 @@ script script_remix_2_main
     mod_music_volume 250, 24
     rest 24
     set_game_fade_in_time 0
+
     load_sneaky_spirits_remix
     sneaky_spirits_spawn_bow 0
     sneaky_spirits_enable_wind_sfx 1
@@ -929,6 +944,7 @@ script script_remix_2_main
     beat_anim
     rest 24
     set_game_fade_in_time 20
+
     load_rat_race_remix
     rat_race_event12 0
     beat_anim

@@ -166,6 +166,7 @@ script script_remix_5_main
     rest 24
     rest 24
     set_game_fade_in_time 30
+
     load_tap_trial_remix_5
     beat_anim
     rest 24
@@ -216,6 +217,7 @@ script script_remix_5_main
     rest 24
     call tap_trial_sub_08a85cf0
     set_game_fade_in_time 0
+
     load_toss_boys_remix_5
     beat_anim
     rest 24
@@ -289,6 +291,7 @@ script script_remix_5_main
     rest 24
     toss_boys_event05 2
     rest 0
+
     load_tap_trial_remix_5
     beat_anim
     rest 24
@@ -381,6 +384,7 @@ script script_remix_5_main
     beat_anim
     rest 24
     call tap_trial_sub_08a85c78
+
     load_toss_boys_remix_5
     beat_anim
     rest 24
@@ -400,6 +404,7 @@ script script_remix_5_main
     rest 24
     toss_boys_event05 2
     rest 0
+
     load_ninja_reincarnate
     ninja_bodyguard_event07 2
     ninja_bodyguard_event0B 1
@@ -463,6 +468,7 @@ script script_remix_5_main
     beat_anim
     rest 24
     set_game_fade_in_time 0
+
     load_fireworks_remix_5_bg1
     beat_anim
     rest 24
@@ -496,6 +502,7 @@ script script_remix_5_main
     beat_anim
     rest 24
     set_game_fade_in_time 30
+
     load_tap_trial_remix_5
     beat_anim
     rest 24
@@ -573,6 +580,7 @@ script script_remix_5_main
     rest 24
     call tap_trial_sub_08a85c78
     set_game_fade_in_time 0
+
     load_fireworks_remix_5_bg2
     beat_anim
     rest 24
@@ -604,6 +612,7 @@ script script_remix_5_main
     beat_anim
     rest 24
     set_game_fade_in_time 30
+
     load_tap_trial_remix_5
     beat_anim
     rest 24
@@ -681,6 +690,7 @@ script script_remix_5_main
     rest 24
     call tap_trial_sub_08a85c78
     set_game_fade_in_time 0
+
     load_game fireworks_engine, 3
     beat_anim
     rest 24
@@ -710,6 +720,7 @@ script script_remix_5_main
     beat_anim
     rest 24
     set_game_fade_in_time 20
+
     load_toss_boys_remix_5
     print_text_s D_0806a314
     toss_boys_event08 0
@@ -758,6 +769,7 @@ script script_remix_5_main
     toss_boys_event05 2
     rest 0
     set_game_fade_in_time 0
+
     load_game fireworks_engine, 4
     run gameplay_set_text_x, 24
     run gameplay_set_text_y, 48
@@ -788,6 +800,7 @@ script script_remix_5_main
     rest 24
     rest 24
     set_game_fade_in_time 20
+
     load_toss_boys_remix_5
     run gameplay_set_text_y, 152
     print_text_s D_0806a370

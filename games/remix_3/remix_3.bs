@@ -218,6 +218,7 @@ script script_remix_3_main
     rest 24
     rest 24
     set_game_fade_in_time 20
+
     load_space_dance_remix_3
     beat_anim
     rest 24
@@ -252,6 +253,7 @@ script script_remix_3_main
     beat_anim
     rest 24
     set_game_fade_in_time 0
+
     load_wizards_waltz
     wizards_waltz_set_cycle_time 132
     beat_anim
@@ -298,6 +300,7 @@ script script_remix_3_main
     rest 24
     rest 24
     set_game_fade_in_time 20
+
     load_space_dance_remix_3
     beat_anim
     rest 24
@@ -324,6 +327,7 @@ script script_remix_3_main
     beat_anim
     rest 24
     set_game_fade_in_time 0
+
     load_showtime_remix_3
     showtime_event00 1
     beat_anim
@@ -404,6 +408,7 @@ script script_remix_3_main
     rest 24
     beat_anim
     rest 24
+
     load_tram_pauline_remix_3
     beat_anim
     rest 24
@@ -418,6 +423,7 @@ script script_remix_3_main
     rest 24
     beat_anim
     rest 6
+
     load_space_dance_remix_3
     rest 6
     rest 12
@@ -434,6 +440,7 @@ script script_remix_3_main
     space_dance_event00 0
     beat_anim
     rest 24
+
     load_tram_pauline_remix_3
     beat_anim
     rest 24
@@ -448,6 +455,7 @@ script script_remix_3_main
     rest 24
     beat_anim
     rest 6
+
     load_space_dance_remix_3
     rest 6
     rest 12
@@ -465,6 +473,7 @@ script script_remix_3_main
     play_sfx s_space_ikeo_down_seqData
     beat_anim
     rest 24
+
     load_tram_pauline_remix_3
     beat_anim
     rest 24
@@ -479,6 +488,7 @@ script script_remix_3_main
     rest 24
     beat_anim
     rest 6
+
     load_space_dance_remix_3
     rest 6
     rest 12
@@ -495,6 +505,7 @@ script script_remix_3_main
     space_dance_event00 0
     beat_anim
     rest 24
+
     load_tram_pauline_remix_3
     beat_anim
     rest 24
@@ -520,6 +531,7 @@ script script_remix_3_main
     beat_anim
     rest 24
     set_game_fade_in_time 20
+
     load_bunny_hop_remix_3
     bunny_hop_event08 4
     bunny_hop_event02 0

@@ -245,6 +245,7 @@ script script_remix_4_main
     rest 12
     reset_music_track_volumes
     set_game_fade_in_time 0
+
     load_quiz_show
     enable_play_inputs 0
     assess_inputs 0
@@ -311,6 +312,7 @@ script script_remix_4_main
     rest 24
     rest 24
     set_game_fade_in_time 20
+
     load_night_walk
     night_walk_set_platform 0
     enable_play_inputs 1
@@ -377,6 +379,7 @@ script script_remix_4_main
     spawn_cue CUE_SNARE
     rest 12
     set_game_fade_in_time 0
+
     load_polyrhythm_remix
     run gameplay_assess_irrelevant_inputs 0
     rest 12
@@ -446,6 +449,7 @@ script script_remix_4_main
     reset_music_track_volumes
     play_music L3_C35_seqData
     rest 24
+
     load_power_calligraphy
     rest 24
     rest 24
@@ -469,6 +473,7 @@ script script_remix_4_main
     rest 24
     rest 24
     set_game_fade_in_time 20
+
     load_night_walk
     night_walk_set_platform 0
     enable_play_inputs 1
@@ -544,6 +549,7 @@ script script_remix_4_main
     spawn_cue CUE_SNARE
     rest 12
     set_game_fade_in_time 0
+
     load_polyrhythm_remix
     run gameplay_assess_irrelevant_inputs 0
     rest 12
@@ -642,6 +648,7 @@ script script_remix_4_main
     rest 24
     rest 24
     rest 24
+
     load_rap_men
     rest 24
     set_tempo 180
@@ -742,6 +749,7 @@ script script_remix_4_main
     beat_anim
     rest 24
     rest 24
+
     load_power_calligraphy
     power_calligraphy_event0B 1
     power_calligraphy_event0C 160
@@ -757,6 +765,7 @@ script script_remix_4_main
     rest 24
     play_music L3_C41_end_seqData
     set_game_fade_in_time 20
+
     load_night_walk
     enable_play_inputs 1
     night_walk_set_drumtech_volume 0
@@ -817,6 +826,7 @@ script script_remix_4_main
     spawn_cue CUE_SNARE
     rest 12
     set_game_fade_in_time 0
+
     load_quiz_show
     enable_play_inputs 0
     assess_inputs 0

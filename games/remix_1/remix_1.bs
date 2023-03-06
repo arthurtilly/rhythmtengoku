@@ -112,6 +112,7 @@ script script_remix_1_main
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a83998
+
     load_karate_man
     beat_anim
     rest 24
@@ -124,6 +125,7 @@ script script_remix_1_main
     rest 24
     rest 24
     rest 24
+
     load_marching_orders
     rest 24
     marching_orders_event00 263
@@ -136,6 +138,7 @@ script script_remix_1_main
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a83998
+
     load_karate_man
     beat_anim
     rest 24
@@ -157,6 +160,7 @@ script script_remix_1_main
     rest 24
     rest 24
     rest 24
+
     load_marching_orders
     rest 24
     marching_orders_event00 263
@@ -169,6 +173,7 @@ script script_remix_1_main
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a83998
+
     load_karate_man
     beat_anim
     rest 24
@@ -276,6 +281,7 @@ script script_remix_1_main
     rest 24
     beat_anim
     rest 24
+
     load_clappy_quartet
     beat_anim
     rest 24
@@ -290,6 +296,7 @@ script script_remix_1_main
     rest 12
     rest 12
     rest 12
+
     load_rhythm_tweezers
     rest 12
     rhythm_tweezers_start_hair_cycle 0
@@ -361,6 +368,7 @@ script script_remix_1_main
     rest 24
     rest 24
     rest 12
+
     load_spaceball
     spaceball_zoom_camera 0xff00, 1
     spaceball_prep_pitcher 0
@@ -410,6 +418,7 @@ script script_remix_1_main
     rest 24
     rest 24
     rest 24
+
     load_clappy_trio
     clappy_trio_crouch_smirk
     rest 24
@@ -427,6 +436,7 @@ script script_remix_1_main
     spawn_cue CUE_HALF_BEAT_W_SMILE
     rest 12
     rest 12
+
     load_spaceball
     spaceball_zoom_camera 0xfe0c, 96
     spaceball_prep_pitcher 0
@@ -436,6 +446,7 @@ script script_remix_1_main
     rest 24
     rest 24
     rest 24
+
     load_clappy_trio
     clappy_trio_crouch_smirk
     rest 24
@@ -453,6 +464,7 @@ script script_remix_1_main
     spawn_cue CUE_HALF_BEAT_W_SMILE
     rest 12
     rest 12
+
     load_spaceball
     spaceball_zoom_camera 0xfe0c, 83
     spaceball_prep_pitcher 0
@@ -510,6 +522,7 @@ script script_remix_1_main
     rest 24
     rest 24
     rest 24
+
     load_clappy_trio
     rest 24
     clappy_trio_crouch_smirk
@@ -530,6 +543,7 @@ script script_remix_1_main
     clappy_trio_do_clap 1
     rest 8
     rest 12
+
     load_spaceball
     spaceball_zoom_camera 0xfe0c, 96
     spaceball_prep_pitcher 0
@@ -539,6 +553,7 @@ script script_remix_1_main
     rest 24
     rest 24
     rest 24
+
     load_clappy_trio
     rest 24
     clappy_trio_crouch_smirk
@@ -559,6 +574,7 @@ script script_remix_1_main
     clappy_trio_do_clap 1
     rest 8
     rest 12
+
     load_spaceball
     spaceball_zoom_camera 0xfe0c, 83
     spaceball_prep_pitcher 0
@@ -576,6 +592,7 @@ script script_remix_1_main
     rest 24
     rest 24
     rest 24
+
     load_clappy_trio
     rest 24
     play_music L1_pat16_seqData
@@ -615,6 +632,7 @@ script script_remix_1_main
     rest 12
     rest 12
     rest 12
+
     load_karate_man
     rest 12
     spawn_cue CUE_LIGHT_BULB
@@ -638,6 +656,7 @@ script script_remix_1_main
     rest 24
     beat_anim
     rest 12
+
     load_clappy_trio
     clappy_trio_crouch_smirk
     rest 12
@@ -656,6 +675,7 @@ script script_remix_1_main
     spawn_cue CUE_HALF_BEAT_W_SMILE
     rest 12
     rest 12
+
     load_spaceball
     spaceball_zoom_camera 0xfe0c, 83
     spaceball_prep_pitcher 0
@@ -671,6 +691,7 @@ script script_remix_1_main
     beat_anim
     rest 24
     rest 24
+
     load_karate_man
     print_text_f 4
     rest 24

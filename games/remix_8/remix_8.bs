@@ -112,6 +112,7 @@ script script_remix_8_main
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a83998
+
     load_karate_man
     beat_anim
     rest 24
@@ -132,7 +133,8 @@ script script_remix_8_main
     beat_anim
     rest 24
     play_music L8_pat02_seqData
-    load_tap_trial_remix_8
+
+    load_tap_trial_remix
     beat_anim
     rest 24
     beat_anim
@@ -153,6 +155,7 @@ script script_remix_8_main
     beat_anim
     rest 12
     call tap_trial_sub_08a85cf0
+
     load_karate_man
     rest 12
     spawn_cue CUE_POT
@@ -176,6 +179,7 @@ script script_remix_8_main
     beat_anim
     rest 24
     play_music L8_pat03_seqData
+
     load_samurai_slice_remix
     samurai_slice_event02 0
     beat_anim
@@ -219,6 +223,7 @@ script script_remix_8_main
     rest 24
     beat_anim
     rest 24
+
     load_karate_man
     beat_anim
     rest 24
@@ -243,6 +248,7 @@ script script_remix_8_main
     beat_anim
     rest 24
     play_music L8_pat04_seqData
+
     load_snappy_trio
     beat_anim
     rest 24
@@ -280,6 +286,7 @@ script script_remix_8_main
     rest 12
     beat_anim
     rest 24
+
     load_karate_man
     karate_man_start_serious_next_hit
     beat_anim
@@ -292,6 +299,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
+
     load_rhythm_tweezers
     rest 24
     set_music_key 2
@@ -324,6 +332,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
+
     load_karate_man_serious
     rest 24
     play_music L8_pat_honki_seqData
@@ -339,6 +348,7 @@ script script_remix_8_main
     spawn_cue CUE_ROCK
     rest 24
     rest 12
+
     load_rhythm_tweezers
     rest 12
     play_music L8_pat06_seqData
@@ -370,6 +380,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
+
     load_karate_man_serious
     rest 24
     play_music L8_pat_honki_seqData
@@ -388,6 +399,7 @@ script script_remix_8_main
     spawn_cue CUE_ROCK
     rest 24
     rest 12
+
     load_rhythm_tweezers_turnip
     rest 12
     play_music L8_pat07_seqData
@@ -427,6 +439,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
+
     load_space_dance
     print_text_f D_0806aa40
     beat_anim
@@ -455,6 +468,7 @@ script script_remix_8_main
     space_dance_event00 0
     beat_anim
     rest 12
+
     load_rhythm_tweezers
     rest 12
     play_music L8_pat08_seqData
@@ -485,6 +499,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
+
     load_marching_orders
     print_text_f D_0806aa50
     rest 24
@@ -504,6 +519,7 @@ script script_remix_8_main
     marching_orders_event00 4
     marching_orders_play_voice_sfx 2
     rest 12
+
     load_rhythm_tweezers_potato
     rhythm_tweezers_show_veg_mask 0
     rest 12
@@ -543,6 +559,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
+
     load_tap_trial
     tap_trial_event03 1
     beat_anim
@@ -567,6 +584,7 @@ script script_remix_8_main
     tap_trial_event00 12
     beat_anim
     rest 12
+
     load_rhythm_tweezers_turnip
     rest 12
     play_music L8_pat10_seqData
@@ -600,6 +618,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
+
     load_showtime
     print_text_f D_0806aa74
     beat_anim
@@ -622,6 +641,7 @@ script script_remix_8_main
     rest 24
     beat_anim
     rest 12
+
     load_rhythm_tweezers
     rest 12
     play_music L8_pat11_seqData
@@ -661,6 +681,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
+
     load_rat_race_remix
     rat_race_event06 D_0806aa8c
     rest 24
@@ -688,6 +709,7 @@ script script_remix_8_main
     rat_race_event02 0
     rat_race_event01 0
     rest 12
+
     load_rhythm_tweezers_potato
     rhythm_tweezers_show_veg_mask 0
     rest 12
@@ -729,6 +751,7 @@ script script_remix_8_main
     rest 24
     rest 24
     rest 24
+
     load_karate_man_serious
     rest 24
     spawn_cue CUE_ROCK

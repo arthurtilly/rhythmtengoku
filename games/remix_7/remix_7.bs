@@ -123,6 +123,7 @@ script script_remix_7_main
     call marching_orders_2_sub_08a84088
     call marching_orders_sub_08a83998
     set_game_fade_in_time 0
+
     load_karate_man
     beat_anim
     rest 24
@@ -135,6 +136,7 @@ script script_remix_7_main
     rest 24
     rest 24
     rest 12
+
     load_space_dance
     rest 12
     rest 22
@@ -149,6 +151,7 @@ script script_remix_7_main
     rest 24
     rest 24
     rest 24
+
     load_tram_pauline_no_curtain
     beat_anim
     rest 24
@@ -206,6 +209,7 @@ script script_remix_7_main
     beat_anim
     rest 12
     rest 6
+
     load_karate_man
     rest 6
     beat_anim
@@ -224,6 +228,7 @@ script script_remix_7_main
     rest 12
     rest 6
     set_game_fade_in_time 0
+
     load_rhythm_tweezers
     rest 6
     rest 24
@@ -250,6 +255,7 @@ script script_remix_7_main
     rest 24
     run scene_stop_music 0
     set_game_fade_in_time 30
+
     load_samurai_slice_remix
     beat_anim
     rest 24
@@ -273,6 +279,7 @@ script script_remix_7_main
     beat_anim
     rest 24
     set_game_fade_in_time 0
+
     load_power_calligraphy
     power_calligraphy_event03 0
     call power_calligraphy_sub_08a7da58
@@ -281,6 +288,7 @@ script script_remix_7_main
     rest 24
     play_music L2_pat09_seqData
     set_game_fade_in_time 30
+
     load_samurai_slice_remix
     samurai_slice_event08 2
     beat_anim
@@ -323,6 +331,7 @@ script script_remix_7_main
     set_tempo 133
     play_music L2_pat11_seqData
     set_game_fade_in_time 0
+
     load_clappy_trio
     beat_anim
     rest 24
@@ -392,6 +401,7 @@ script script_remix_7_main
     rest 12
     rest 12
     rest 24
+
     load_marching_space_rabbits
     beat_anim
     rest 24
@@ -399,12 +409,14 @@ script script_remix_7_main
     call marching_orders_sub_08a83848
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a83998
-    load_tap_trial_remix_8
+
+    load_tap_trial_remix
     beat_anim
     rest 24
     beat_anim
     rest 24
     call tap_trial_sub_08a85c78
+
     load_sneaky_spirits_remix
     sneaky_spirits_spawn_bow 0
     rest 24
@@ -451,6 +463,7 @@ script script_remix_7_main
     set_tempo 131
     play_music L3_C36_seqData
     set_game_fade_in_time 20
+
     load_night_walk
     enable_play_inputs 1
     night_walk_set_drumtech_volume 0
@@ -517,6 +530,7 @@ script script_remix_7_main
     rest 4
     rest 4
     set_game_fade_in_time 0
+
     load_karate_man
     enable_play_inputs 0
     rest 8
@@ -551,6 +565,7 @@ script script_remix_7_main
     rest 24
     beat_anim
     rest 24
+
     load_cosmic_dance
     beat_anim
     rest 24
@@ -564,6 +579,7 @@ script script_remix_7_main
     set_tempo 131
     play_music L3_C38_seqData
     set_game_fade_in_time 0
+
     load_showtime
     showtime_event00 0
     beat_anim
@@ -594,6 +610,7 @@ script script_remix_7_main
     rest 24
     beat_anim
     rest 24
+
     load_clappy_quartet
     beat_anim
     rest 24
@@ -612,6 +629,7 @@ script script_remix_7_main
     rest 8
     rest 8
     rest 24
+
     load_spaceball
     spaceball_prep_pitcher 0
     spaceball_zoom_camera 0xff00, 24
@@ -619,6 +637,7 @@ script script_remix_7_main
     spawn_cue CUE_LOW
     rest 24
     rest 24
+
     load_clappy_trio
     rest 24
     rest 24
@@ -633,6 +652,7 @@ script script_remix_7_main
     rest 8
     rest 8
     rest 24
+
     load_spaceball
     spaceball_prep_pitcher 0
     spaceball_zoom_camera 0xff00, 24
@@ -657,7 +677,8 @@ script script_remix_7_main
     reset_music_track_volumes
     run func_08047f08, 0
     set_game_fade_in_time 20
-    load_tap_trial_remix_7
+
+    load_tap_trial_pigs
     set_tempo 120
     play_music L1_pat16_seqData
     beat_anim
@@ -684,6 +705,7 @@ script script_remix_7_main
     beat_anim
     rest 12
     set_game_fade_in_time 0
+
     load_sick_beats
     rest 12
     sick_beats_set_hits_needed 3
@@ -697,7 +719,8 @@ script script_remix_7_main
     rest 24
     rest 24
     rest 6
-    load_tap_trial_remix_8
+
+    load_tap_trial_remix
     mod_music_volume 200, 24
     rest 6
     rest 12
@@ -710,6 +733,7 @@ script script_remix_7_main
     tap_trial_event00 12
     beat_anim
     rest 6
+
     load_space_dance
     beat_anim
     rest 16
@@ -723,6 +747,7 @@ script script_remix_7_main
     rest 2
     space_dance_event00 0
     rest 24
+
     load_bunny_hop
     bunny_hop_event08 3
     bunny_hop_event02 0

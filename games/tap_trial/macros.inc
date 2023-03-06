@@ -33,13 +33,13 @@
 .endm
 
 @ Load Game: Tap Trial (Remix 7, Remix 8)
-.macro load_tap_trial_remix_8
+.macro load_tap_trial_remix
     load_tap_trial_labels
     load_game tap_trial_engine, 1
 .endm
 
 @ Load Game: Tap Trial (Remix 7)
-.macro load_tap_trial_remix_7
+.macro load_tap_trial_pigs
     load_tap_trial_labels
     load_game tap_trial_engine, 2
 .endm
