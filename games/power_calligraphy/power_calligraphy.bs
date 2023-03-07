@@ -69,6 +69,53 @@ return
 
 
 .section .script.main
+@ Power Calligraphy - Marking Criteria
+
+struct power_calligraphy_marking_criteria_0
+    /* Positive Remark */     .word D_0805d25c
+    /* Negative Remark */     .word D_0805d24c
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct power_calligraphy_marking_criteria_1
+    /* Positive Remark */     .word D_0805d274
+    /* Negative Remark */     .word D_0805d260
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct power_calligraphy_marking_criteria_2
+    /* Positive Remark */     .word D_0805d2a8
+    /* Negative Remark */     .word D_0805d288
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct power_calligraphy_marking_criteria_3
+    /* Positive Remark */     .word D_0805d2c0
+    /* Negative Remark */     .word D_0805d25c
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct power_calligraphy_marking_criteria
+    .word power_calligraphy_marking_criteria_0
+    .word power_calligraphy_marking_criteria_1
+    .word power_calligraphy_marking_criteria_2
+    .word power_calligraphy_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Power Calligraphy - Main Script
 
 script script_power_calligraphy_main
@@ -98,7 +145,7 @@ script script_power_calligraphy_main
     rest 24
     rest 24
     set_results_header D_0805d2f0
-    import_marking_criteria D_08a1eb70
+    import_marking_criteria power_calligraphy_marking_criteria
     forgive_x_misses 2
     set_marking_criteria 0
     assess_inputs 1

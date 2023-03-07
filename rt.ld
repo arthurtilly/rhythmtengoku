@@ -1792,9 +1792,7 @@ SECTIONS {
         build/games/karate_man/karate_man.bs.o(.script.main);
         build/bin/bindata_089ef8cc.bin.o(.rodata*);
         build/games/clappy_trio/clappy_trio.bs.o(.script.main);
-        build/bin/bindata_089f27f4.bin.o(.rodata*);
         build/games/polyrhythm/polyrhythm.bs.o(.script.main);
-        build/bin/bindata_089f3ddc.bin.o(.rodata*);
         build/games/polyrhythm/polyrhythm_2.bs.o(.script.main);
         build/games/night_walk/night_walk.bs.o(.script.main);
         build/games/night_walk/night_walk_2.bs.o(.script.main);
@@ -1834,7 +1832,6 @@ SECTIONS {
         build/games/fireworks/fireworks.bs.o(.script.main);
         build/bin/bindata_08a1b5b4.bin.o(.rodata*);
         build/games/rat_race/rat_race.bs.o(.script.main);
-        build/bin/bindata_08a1eb30.bin.o(.rodata*);
         build/games/power_calligraphy/power_calligraphy.bs.o(.script.main);
         build/bin/bindata_08a1f79c.bin.o(.rodata*);
         build/games/toss_boys/toss_boys_2.bs.o(.script.main);

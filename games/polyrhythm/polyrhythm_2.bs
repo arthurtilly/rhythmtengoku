@@ -45,6 +45,53 @@ endstruct
 
 
 .section .script.main
+@ Polyrhythm 2 - Marking Criteria
+
+struct polyrhythm_2_marking_criteria_0
+    /* Positive Remark */     .word D_0805b0b0
+    /* Negative Remark */     .word D_0805b094
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0xCC @ 80%
+endstruct
+
+struct polyrhythm_2_marking_criteria_1
+    /* Positive Remark */     .word D_0805b0d0
+    /* Negative Remark */     .word D_0805b0b4
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct polyrhythm_2_marking_criteria_2
+    /* Positive Remark */     .word D_0805b0b0
+    /* Negative Remark */     .word D_0805b0e8
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct polyrhythm_2_marking_criteria_3
+    /* Positive Remark */     .word D_0805b130
+    /* Negative Remark */     .word D_0805b110
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct polyrhythm_2_marking_criteria
+    .word polyrhythm_2_marking_criteria_0
+    .word polyrhythm_2_marking_criteria_1
+    .word polyrhythm_2_marking_criteria_2
+    .word polyrhythm_2_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Polyrhythm 2 - Main Script
 
 script polyrhythm_2_sub_089f3e30
@@ -357,7 +404,7 @@ return
 
 script script_polyrhythm_2_main
     set_results_header D_0805b14c
-    import_marking_criteria D_089f3e1c
+    import_marking_criteria polyrhythm_2_marking_criteria
     forgive_x_misses 1
     start_perfect_campaign
     set_tempo 150
