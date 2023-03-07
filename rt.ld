@@ -1805,14 +1805,11 @@ SECTIONS {
         build/games/bouncy_road/bouncy_road_2.bs.o(.script.main);
         build/games/ninja_bodyguard/ninja_bodyguard.bs.o(.script.main);
         build/games/ninja_bodyguard/ninja_reincarnate.bs.o(.script.main);
-        build/bin/bindata_08a02ed0.bin.o(.rodata*);
         build/games/sneaky_spirits/sneaky_spirits.bs.o(.script.main);
-        build/bin/bindata_08a040a0.bin.o(.rodata*);
         build/games/sneaky_spirits/sneaky_spirits_2.bs.o(.script.main);
         build/games/samurai_slice/samurai_slice.bs.o(.script.main);
         build/bin/bindata_08a05900.bin.o(.rodata*);
         build/games/spaceball/spaceball.bs.o(.script.main);
-        build/bin/bindata_08a0a1f0.bin.o(.rodata*);
         build/games/spaceball/spaceball_2.bs.o(.script.main);
         build/bin/bindata_08a0b654.bin.o(.rodata*);
         build/games/tap_trial/tap_trial.bs.o(.script.main);
@@ -1836,7 +1833,6 @@ SECTIONS {
         build/games/tram_and_pauline/tram_and_pauline.bs.o(.script.main);
         build/bin/bindata_08a2efe0.bin.o(.rodata*);
         build/games/showtime/showtime.bs.o(.script.main);
-        build/bin/bindata_08a35588.bin.o(.rodata*);
         build/games/space_dance/space_dance.bs.o(.script.main);
         build/bin/bindata_08a36930.bin.o(.rodata*);
         build/games/rap_men/rap_men.bs.o(.script.main);

@@ -83,6 +83,53 @@ return
 
 
 .section .script.main
+@ Sneaky Spirits - Marking Criteria
+
+struct sneaky_spirits_marking_criteria_0
+    /* Positive Remark */     .word D_0805ba9c
+    /* Negative Remark */     .word D_0805ba80
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct sneaky_spirits_marking_criteria_1
+    /* Positive Remark */     .word D_0805bac4
+    /* Negative Remark */     .word D_0805baa0
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x19 @ 10%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct sneaky_spirits_marking_criteria_2
+    /* Positive Remark */     .word D_0805bb04
+    /* Negative Remark */     .word D_0805bae4
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct sneaky_spirits_marking_criteria_3
+    /* Positive Remark */     .word D_0805bb20
+    /* Negative Remark */     .word D_0805ba9c
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct sneaky_spirits_marking_criteria
+    .word sneaky_spirits_marking_criteria_0
+    .word sneaky_spirits_marking_criteria_1
+    .word sneaky_spirits_marking_criteria_2
+    .word sneaky_spirits_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Sneaky Spirits - Main Script
 
 script sneaky_spirits_sub_08a02f24
@@ -293,7 +340,7 @@ return
 
 
 script script_sneaky_spirits_main
-    import_marking_criteria D_08a02f10
+    import_marking_criteria sneaky_spirits_marking_criteria
     set_results_header D_0805bbc8
     assess_inputs 1
     start_perfect_campaign

@@ -67,6 +67,43 @@ return
 
 
 .section .script.main
+@ Cosmic Dance - Marking Criteria
+
+struct cosmic_dance_marking_criteria_0
+    /* Positive Remark */     .word D_08068268
+    /* Negative Remark */     .word D_0806824c
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct cosmic_dance_marking_criteria_1
+    /* Positive Remark */     .word D_08068298
+    /* Negative Remark */     .word D_0806827c
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x40 @ 25%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct cosmic_dance_marking_criteria_2
+    /* Positive Remark */     .word D_080682d4
+    /* Negative Remark */     .word D_080682b0
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x99 @ 60%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct cosmic_dance_marking_criteria
+    .word cosmic_dance_marking_criteria_0
+    .word cosmic_dance_marking_criteria_1
+    .word cosmic_dance_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Cosmic Dance - Main Script
 
 script script_cosmic_dance_main
@@ -81,7 +118,7 @@ script script_cosmic_dance_main
     rest 8
     rest 8
     set_results_header D_080682f4
-    import_marking_criteria D_08a577f4
+    import_marking_criteria cosmic_dance_marking_criteria
     forgive_x_misses 2
     assess_inputs 1
     print_text_f D_08068310

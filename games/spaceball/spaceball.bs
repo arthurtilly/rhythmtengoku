@@ -74,11 +74,58 @@ return
 
 
 .section .script.main
+@ Spaceball - Marking Criteria
+
+struct spaceball_marking_criteria_0
+    /* Positive Remark */     .word D_0805bf54
+    /* Negative Remark */     .word D_0805bf38
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0xB3 @ 70%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct spaceball_marking_criteria_1
+    /* Positive Remark */     .word D_0805bf70
+    /* Negative Remark */     .word D_0805bf58
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct spaceball_marking_criteria_2
+    /* Positive Remark */     .word D_0805bfa8
+    /* Negative Remark */     .word D_0805bf8c
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct spaceball_marking_criteria_3
+    /* Positive Remark */     .word D_0805bfe0
+    /* Negative Remark */     .word D_0805bfc4
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct spaceball_marking_criteria
+    .word spaceball_marking_criteria_0
+    .word spaceball_marking_criteria_1
+    .word spaceball_marking_criteria_2
+    .word spaceball_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Spaceball - Main Script
 
 script script_spaceball_main
     set_results_header D_0805bff8
-    import_marking_criteria D_08a08db4
+    import_marking_criteria spaceball_marking_criteria
     forgive_x_misses 1
     assess_inputs 0
     set_tempo 105

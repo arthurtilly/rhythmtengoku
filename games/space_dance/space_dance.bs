@@ -70,6 +70,43 @@ return
 
 
 .section .script.main
+@ Space Dance - Marking Criteria
+
+struct space_dance_marking_criteria_0
+    /* Positive Remark */     .word D_0805e2c8
+    /* Negative Remark */     .word D_0805e2ac
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x33 @ 20%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct space_dance_marking_criteria_1
+    /* Positive Remark */     .word D_0805e300
+    /* Negative Remark */     .word D_0805e2e4
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0x66 @ 40%
+    /* Neg: Minimum Hits */   .hword 0x40 @ 25%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct space_dance_marking_criteria_2
+    /* Positive Remark */     .word D_0805e344
+    /* Negative Remark */     .word D_0805e320
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x66 @ 40%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct space_dance_marking_criteria
+    .word space_dance_marking_criteria_0
+    .word space_dance_marking_criteria_1
+    .word space_dance_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Space Dance - Main Script
 
 script script_space_dance_main
@@ -81,7 +118,7 @@ script script_space_dance_main
     rest 12
     rest 24
     set_results_header D_0805e364
-    import_marking_criteria D_08a355b8
+    import_marking_criteria space_dance_marking_criteria
     forgive_x_misses 2
     assess_inputs 1
     start_perfect_campaign
