@@ -69,11 +69,58 @@ return
 
 
 .section .script.main
+@ The Bon Odori - Marking Criteria
+
+struct bon_odori_marking_criteria_0
+    /* Positive Remark */     .word D_080676d4
+    /* Negative Remark */     .word D_080676b4
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct bon_odori_marking_criteria_1
+    /* Positive Remark */     .word D_08067710
+    /* Negative Remark */     .word D_080676ec
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct bon_odori_marking_criteria_2
+    /* Positive Remark */     .word D_08067730
+    /* Negative Remark */     .word D_0806772c
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct bon_odori_marking_criteria_3
+    /* Positive Remark */     .word D_08067754
+    /* Negative Remark */     .word D_0806772c
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct bon_odori_marking_criteria
+    .word bon_odori_marking_criteria_0
+    .word bon_odori_marking_criteria_1
+    .word bon_odori_marking_criteria_2
+    .word bon_odori_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ The Bon Odori - Main Script
 
 script script_bon_odori_main
     set_results_header D_08067778
-    import_marking_criteria D_08a43c50
+    import_marking_criteria bon_odori_marking_criteria
     forgive_x_misses 1
     assess_inputs 1
     set_tempo 121

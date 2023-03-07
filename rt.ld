@@ -1814,7 +1814,6 @@ SECTIONS {
         build/bin/bindata_089ff958.bin.o(.rodata*);
         build/games/bouncy_road/bouncy_road_2.bs.o(.script.main);
         build/games/ninja_bodyguard/ninja_bodyguard.bs.o(.script.main);
-        build/bin/bindata_08a0176c.bin.o(.rodata*);
         build/games/ninja_bodyguard/ninja_reincarnate.bs.o(.script.main);
         build/bin/bindata_08a02ed0.bin.o(.rodata*);
         build/games/sneaky_spirits/sneaky_spirits.bs.o(.script.main);
@@ -1880,7 +1879,6 @@ SECTIONS {
         build/games/remix_7/remix_7.bs.o(.script.main);
         build/bin/bindata_08a64820.bin.o(.rodata*);
         build/games/remix_5/remix_5.bs.o(.script.main);
-        build/bin/bindata_08a66de0.bin.o(.rodata*);
         build/games/bon_odori/bon_dance.bs.o(.script.main);
         build/bin/bindata_08a6b13c.bin.o(.rodata*);
         build/games/remix_6/remix_6.bs.o(.script.main);

@@ -68,11 +68,58 @@ return
 
 
 .section .script.main
+@ The Bon Dance - Marking Criteria
+
+struct bon_dance_marking_criteria_0
+    /* Positive Remark */     .word D_0806a3a4
+    /* Negative Remark */     .word D_0806a384
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct bon_dance_marking_criteria_1
+    /* Positive Remark */     .word D_0806a3e0
+    /* Negative Remark */     .word D_0806a3bc
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct bon_dance_marking_criteria_2
+    /* Positive Remark */     .word D_0806a400
+    /* Negative Remark */     .word D_0806a3fc
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct bon_dance_marking_criteria_3
+    /* Positive Remark */     .word D_0806a424
+    /* Negative Remark */     .word D_0806a3fc
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct bon_dance_marking_criteria
+    .word bon_dance_marking_criteria_0
+    .word bon_dance_marking_criteria_1
+    .word bon_dance_marking_criteria_2
+    .word bon_dance_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ The Bon Dance - Main Script
 
 script script_bon_dance_main
     set_results_header D_0806a448
-    import_marking_criteria D_08a66e20
+    import_marking_criteria bon_dance_marking_criteria
     forgive_x_misses 1
     assess_inputs 1
     set_tempo 121

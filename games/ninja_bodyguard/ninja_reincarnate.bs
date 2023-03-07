@@ -69,6 +69,53 @@ return
 
 
 .section .script.main
+@ Ninja Reincarnate - Marking Criteria
+
+struct ninja_reincarnate_marking_criteria_0
+    /* Positive Remark */     .word D_0805b9b4
+    /* Negative Remark */     .word D_0805b99c
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct ninja_reincarnate_marking_criteria_1
+    /* Positive Remark */     .word D_0805b9dc
+    /* Negative Remark */     .word D_0805b9b8
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 3
+endstruct
+
+struct ninja_reincarnate_marking_criteria_2
+    /* Positive Remark */     .word D_0805ba1c
+    /* Negative Remark */     .word D_0805b9fc
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 3
+endstruct
+
+struct ninja_reincarnate_marking_criteria_3
+    /* Positive Remark */     .word D_0805ba40
+    /* Negative Remark */     .word D_0805b9b4
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x66 @ 40%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct ninja_reincarnate_marking_criteria
+    .word ninja_reincarnate_marking_criteria_0
+    .word ninja_reincarnate_marking_criteria_1
+    .word ninja_reincarnate_marking_criteria_2
+    .word ninja_reincarnate_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Ninja Reincarnate - Main Script
 
 script ninja_reincarnate_sub_08a017c0
@@ -455,7 +502,7 @@ script script_ninja_reincarnate_main
     rest 24
     start_perfect_campaign
     set_results_header D_0805ba68
-    import_marking_criteria D_08a017ac
+    import_marking_criteria ninja_reincarnate_marking_criteria
     assess_inputs 1
     forgive_x_misses 1
     set_music_volume 256
