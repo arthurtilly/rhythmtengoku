@@ -87,6 +87,43 @@ return
 
 
 .section .script.main
+@ Karate Man - Marking Criteria
+
+struct karate_man_marking_criteria_0
+    /* Positive Remark */     .word D_0805ab68
+    /* Negative Remark */     .word D_0805ab50
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0xB3 @ 70%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct karate_man_marking_criteria_1
+    /* Positive Remark */     .word D_0805ab90
+    /* Negative Remark */     .word D_0805ab6c
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x40 @ 25%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct karate_man_marking_criteria_2
+    /* Positive Remark */     .word D_0805abb0
+    /* Negative Remark */     .word D_0805ab68
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct karate_man_marking_criteria
+    .word karate_man_marking_criteria_0
+    .word karate_man_marking_criteria_1
+    .word karate_man_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Karate Man - Main Script
 
 script karate_man_sub_089edf88
@@ -432,7 +469,7 @@ return
 script script_karate_man_main
     set_results_header D_0805abdc
     start_perfect_campaign
-    import_marking_criteria D_089edf78
+    import_marking_criteria karate_man_marking_criteria
     forgive_x_misses 2
     run gameplay_set_sound_tempo, 124
     set_tempo 120

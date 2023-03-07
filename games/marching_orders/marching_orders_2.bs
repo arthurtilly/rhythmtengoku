@@ -78,11 +78,48 @@ return
 
 
 .section .script.main
+@ Marching Orders 2 - Marking Criteria
+
+struct marching_orders_2_marking_criteria_0
+    /* Positive Remark */     .word D_0805c910
+    /* Negative Remark */     .word D_0805c8f4
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x33 @ 20%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct marching_orders_2_marking_criteria_1
+    /* Positive Remark */     .word D_0805c948
+    /* Negative Remark */     .word D_0805c92c
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x33 @ 20%
+    /* Neg: Maximum Misses */ .hword 0x99 @ 60%
+endstruct
+
+struct marching_orders_2_marking_criteria_2
+    /* Positive Remark */     .word D_0805c984
+    /* Negative Remark */     .word D_0805c964
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x33 @ 20%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct marching_orders_2_marking_criteria
+    .word marching_orders_2_marking_criteria_0
+    .word marching_orders_2_marking_criteria_1
+    .word marching_orders_2_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Marching Orders 2 - Main Script
 
 script script_marching_orders_2_main
     set_results_header D_0805c9a0
-    import_marking_criteria D_08a1259c
+    import_marking_criteria marching_orders_2_marking_criteria
     forgive_x_misses 1
     start_perfect_campaign
     assess_inputs 1

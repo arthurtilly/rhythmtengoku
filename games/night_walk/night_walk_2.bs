@@ -45,14 +45,69 @@ endstruct
 
 
 .section .script.main
+@ Night Walk 2 - Marking Criteria
+
+struct night_walk_2_marking_criteria_0
+    /* Positive Remark */     .word D_0805b288
+    /* Negative Remark */     .word D_0805b26c
+    /* Flags */               .hword OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x00 @ 0%
+endstruct
+
+struct night_walk_2_marking_criteria_1
+    /* Positive Remark */     .word D_0805b2b8
+    /* Negative Remark */     .word D_0805b2a0
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xE6 @ 90%
+    /* Neg: Minimum Hits */   .hword 0xCC @ 80%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct night_walk_2_marking_criteria_2
+    /* Positive Remark */     .word D_0805b2f0
+    /* Negative Remark */     .word D_0805b2d0
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0xB3 @ 70%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct night_walk_2_marking_criteria
+    .word night_walk_2_marking_criteria_0
+    .word night_walk_2_marking_criteria_1
+    .word night_walk_2_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Night Walk 2 - Main Script
+
+script script_night_walk_2_end
+    fade_music_out TO_TEMPO, 96
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    enable_pause 0
+    rest 24
+    enable_play_inputs 0
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
 
 script script_night_walk_2_main
     set_results_header D_0805b308
-    import_marking_criteria D_089f69f0
+    import_marking_criteria night_walk_2_marking_criteria
     set_marking_criteria 1
     night_walk_set_marking_criteria 0
-    night_walk_set_end_script D_089f6a00
+    night_walk_set_end_script script_night_walk_2_end
     set_tempo 128
     assess_inputs 1
     run gameplay_assess_irrelevant_inputs 0

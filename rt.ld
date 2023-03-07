@@ -1789,7 +1789,6 @@ SECTIONS {
 		build/games/wizards_waltz/wizards_waltz_prologue_engine.c.o(.data);
         build/games/wizards_waltz/wizards_waltz.bs.o(.script.prologue);
 
-        build/bin/bindata_089edf48.bin.o(.rodata*);
         build/games/karate_man/karate_man.bs.o(.script.main);
         build/bin/bindata_089ef8cc.bin.o(.rodata*);
         build/games/clappy_trio/clappy_trio.bs.o(.script.main);
@@ -1797,11 +1796,8 @@ SECTIONS {
         build/games/polyrhythm/polyrhythm.bs.o(.script.main);
         build/bin/bindata_089f3ddc.bin.o(.rodata*);
         build/games/polyrhythm/polyrhythm_2.bs.o(.script.main);
-        build/bin/bindata_089f518c.bin.o(.rodata*);
         build/games/night_walk/night_walk.bs.o(.script.main);
-        build/bin/bindata_089f69c0.bin.o(.rodata*);
         build/games/night_walk/night_walk_2.bs.o(.script.main);
-        build/bin/bindata_089f84f4.bin.o(.rodata*);
         build/games/karate_man/karate_man_2.bs.o(.script.main);
         build/bin/bindata_089f9b20.bin.o(.rodata*);
         build/games/rhythm_tweezers/rhythm_tweezers.bs.o(.script.main);
@@ -1828,7 +1824,6 @@ SECTIONS {
         build/games/tap_trial/tap_trial.bs.o(.script.main);
         build/bin/bindata_08a0e03c.bin.o(.rodata*);
         build/games/marching_orders/marching_orders.bs.o(.script.main);
-        build/bin/bindata_08a1256c.bin.o(.rodata*);
         build/games/marching_orders/marching_orders_2.bs.o(.script.main);
         build/bin/bindata_08a12c0c.bin.o(.rodata*);
         build/games/wizards_waltz/wizards_waltz.bs.o(.script.main);

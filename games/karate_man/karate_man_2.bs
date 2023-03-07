@@ -45,10 +45,57 @@ endstruct
 
 
 .section .script.main
+@ Karate Man 2 - Marking Criteria
+
+struct karate_man_2_marking_criteria_0
+    /* Positive Remark */     .word D_0805b3c4
+    /* Negative Remark */     .word D_0805b3a8
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0xB3 @ 70%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct karate_man_2_marking_criteria_1
+    /* Positive Remark */     .word D_0805b3e8
+    /* Negative Remark */     .word D_0805b3c8
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0xB3 @ 70%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct karate_man_2_marking_criteria_2
+    /* Positive Remark */     .word D_0805b41c
+    /* Negative Remark */     .word D_0805b404
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x00 @ 0%
+endstruct
+
+struct karate_man_2_marking_criteria_3
+    /* Positive Remark */     .word D_0805b460
+    /* Negative Remark */     .word D_0805b43c
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x00 @ 0%
+endstruct
+
+struct karate_man_2_marking_criteria
+    .word karate_man_2_marking_criteria_0
+    .word karate_man_2_marking_criteria_1
+    .word karate_man_2_marking_criteria_2
+    .word karate_man_2_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Karate Man 2 - Main Script
 
 script script_karate_man_2_main
-    import_marking_criteria D_089f8534
+    import_marking_criteria karate_man_2_marking_criteria
     set_results_header D_0805b480
     start_perfect_campaign
     rest 24

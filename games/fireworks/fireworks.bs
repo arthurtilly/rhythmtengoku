@@ -76,11 +76,38 @@ return
 
 
 .section .script.main
+@ Fireworks - Marking Criteria
+
+struct fireworks_marking_criteria_0
+    /* Positive Remark */     .word D_0805cd7c
+    /* Negative Remark */     .word D_0805cd60
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct fireworks_marking_criteria_1
+    /* Positive Remark */     .word D_0805cdb4
+    /* Negative Remark */     .word D_0805cda0
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct fireworks_marking_criteria
+    .word fireworks_marking_criteria_0
+    .word fireworks_marking_criteria_1
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Fireworks - Main Script
 
 script script_fireworks_main
     set_results_header D_0805cdc8
-    import_marking_criteria D_08a19d90
+    import_marking_criteria fireworks_marking_criteria
     forgive_x_misses 2
     assess_inputs 1
     set_tempo 140
