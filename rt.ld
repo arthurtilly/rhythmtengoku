@@ -1845,7 +1845,6 @@ SECTIONS {
         build/games/space_dance/space_dance.bs.o(.script.main);
         build/bin/bindata_08a36930.bin.o(.rodata*);
         build/games/rap_men/rap_men.bs.o(.script.main);
-        build/bin/bindata_08a3c0d4.bin.o(.rodata*);
         build/games/quiz_show/quiz_show.bs.o(.script.main);
         build/bin/bindata_08a3dfe0.bin.o(.rodata*);
         build/games/bon_odori/bon_odori.bs.o(.script.main);

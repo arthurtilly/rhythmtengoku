@@ -68,6 +68,37 @@ return
 
 
 .section .script.main
+@ Quiz Show - Marking Criteria
+
+struct quiz_show_marking_criteria_0
+    /* Positive Remark */     .word D_0805ec60
+    /* Negative Remark */     .word D_0805ec44
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x00 @ 0%
+endstruct
+
+struct quiz_show_marking_criteria_1
+    /* Positive Remark */     .word D_0805ec7c
+    /* Negative Remark */     .word D_0805ec78
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct quiz_show_marking_criteria_set_1
+    .word quiz_show_marking_criteria_0
+    .word quiz_show_marking_criteria_1
+    .word END_OF_CRITERIA
+endstruct
+
+struct quiz_show_marking_criteria_set_2
+    .word quiz_show_marking_criteria_1
+    .word END_OF_CRITERIA
+endstruct
+
 @ Quiz Show - Main Script
 
 script quiz_show_sub_08a3c108
@@ -494,7 +525,7 @@ script script_quiz_show_main
         assess_perfect_inputs 1
         quiz_show_event04 0
         if_eq INT8, GLOBAL_VARIABLE, 0
-            import_marking_criteria D_08a3c0f4
+            import_marking_criteria quiz_show_marking_criteria_set_1
             assess_inputs 1
             switch FUNC, func_080175d8
                 case 5
@@ -513,7 +544,7 @@ script script_quiz_show_main
         else
             switch FUNC, func_080175d8
                 case 5
-                    import_marking_criteria D_08a3c100
+                    import_marking_criteria quiz_show_marking_criteria_set_2
                     assess_inputs 1
                     set_marking_criteria 0
                     run gameplay_add_cue_result_hit, 0
