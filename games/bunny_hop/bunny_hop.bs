@@ -83,6 +83,43 @@ return
 
 
 .section .script.main
+@ Bunny Hop - Marking Criteria
+
+struct bunny_hop_marking_criteria_0
+    /* Positive Remark */     .word D_0805cbd4
+    /* Negative Remark */     .word D_0805cbbc
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct bunny_hop_marking_criteria_1
+    /* Positive Remark */     .word D_0805cc10
+    /* Negative Remark */     .word D_0805cbec
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct bunny_hop_marking_criteria_2
+    /* Positive Remark */     .word D_0805cc48
+    /* Negative Remark */     .word D_0805cc28
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct bunny_hop_marking_criteria
+    .word bunny_hop_marking_criteria_0
+    .word bunny_hop_marking_criteria_1
+    .word bunny_hop_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Bunny Hop - Main Script
 
 script bunny_hop_sub_08a18800
@@ -261,7 +298,7 @@ return
 
 script script_bunny_hop_main
     set_results_header D_0805ccb4
-    import_marking_criteria D_08a187f0
+    import_marking_criteria bunny_hop_marking_criteria
     forgive_x_misses 1
     set_music_volume 256
     play_music s_rabbit_bgm_seqData

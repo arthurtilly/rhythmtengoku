@@ -80,11 +80,48 @@ return
 
 
 .section .script.main
+@ The Snappy Trio - Marking Criteria
+
+struct snappy_trio_marking_criteria_0
+    /* Positive Remark */     .word D_08067bdc
+    /* Negative Remark */     .word D_08067bc4
+    /* Flags */               .hword OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct snappy_trio_marking_criteria_1
+    /* Positive Remark */     .word D_08067c1c
+    /* Negative Remark */     .word D_08067bf4
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x4C @ 30%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct snappy_trio_marking_criteria_2
+    /* Positive Remark */     .word D_08067c44
+    /* Negative Remark */     .word D_08067c40
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct snappy_trio_marking_criteria
+    .word snappy_trio_marking_criteria_0
+    .word snappy_trio_marking_criteria_1
+    .word snappy_trio_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ The Snappy Trio - Main Script
 
 script script_snappy_trio_main
     set_results_header D_08067c74
-    import_marking_criteria D_08a498d8
+    import_marking_criteria snappy_trio_marking_criteria
     forgive_x_misses 2
     assess_inputs 1
     set_tempo 108
