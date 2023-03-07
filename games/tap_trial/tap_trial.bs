@@ -73,6 +73,53 @@ return
 
 
 .section .script.main
+@ Tap Trial - Marking Criteria
+
+struct tap_trial_marking_criteria_0
+    /* Positive Remark */     .word D_0805c264
+    /* Negative Remark */     .word D_0805c248
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct tap_trial_marking_criteria_1
+    /* Positive Remark */     .word D_0805c290
+    /* Negative Remark */     .word D_0805c274
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x99 @ 60%
+endstruct
+
+struct tap_trial_marking_criteria_2
+    /* Positive Remark */     .word D_0805c2bc
+    /* Negative Remark */     .word D_0805c2a8
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct tap_trial_marking_criteria_3
+    /* Positive Remark */     .word D_0805c2e8
+    /* Negative Remark */     .word D_0805c2d4
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x00 @ 0%
+endstruct
+
+struct tap_trial_marking_criteria
+    .word tap_trial_marking_criteria_0
+    .word tap_trial_marking_criteria_1
+    .word tap_trial_marking_criteria_2
+    .word tap_trial_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Tap Trial - Main Script
 
 script tap_trial_sub_08a0cefc
@@ -122,7 +169,7 @@ return
 
 script script_tap_trial_main
     set_results_header D_0805c2ec
-    import_marking_criteria D_08a0cee8
+    import_marking_criteria tap_trial_marking_criteria
     forgive_x_misses 3
     assess_inputs 1
     set_tempo 127

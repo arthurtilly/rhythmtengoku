@@ -73,11 +73,48 @@ return
 
 
 .section .script.main
+@ Tap Trial 2 - Marking Criteria
+
+struct tap_trial_2_marking_criteria_0
+    /* Positive Remark */     .word D_08067b38
+    /* Negative Remark */     .word D_08067b28
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x99 @ 60%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x19 @ 10%
+endstruct
+
+struct tap_trial_2_marking_criteria_1
+    /* Positive Remark */     .word D_08067b6c
+    /* Negative Remark */     .word D_08067b50
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x99 @ 60%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct tap_trial_2_marking_criteria_2
+    /* Positive Remark */     .word D_08067b90
+    /* Negative Remark */     .word D_08067b80
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x99 @ 60%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0xFD @ 99%
+endstruct
+
+struct tap_trial_2_marking_criteria
+    .word tap_trial_2_marking_criteria_0
+    .word tap_trial_2_marking_criteria_1
+    .word tap_trial_2_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Tap Trial 2 - Main Script
 
 script script_tap_trial_2_main
     set_results_header D_08067ba0
-    import_marking_criteria D_08a48b00
+    import_marking_criteria tap_trial_2_marking_criteria
     assess_inputs 1
     forgive_x_misses 2
     run gameplay_set_miss_punishment_duration, 36

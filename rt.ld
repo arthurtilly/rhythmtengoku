@@ -1827,7 +1827,6 @@ SECTIONS {
         build/games/power_calligraphy/power_calligraphy.bs.o(.script.main);
         build/bin/bindata_08a1f79c.bin.o(.rodata*);
         build/games/toss_boys/toss_boys_2.bs.o(.script.main);
-        build/bin/bindata_08a25bac.bin.o(.rodata*);
         build/games/toss_boys/toss_boys.bs.o(.script.main);
         build/bin/bindata_08a2b91c.bin.o(.rodata*);
         build/games/tram_and_pauline/tram_and_pauline.bs.o(.script.main);
@@ -1839,7 +1838,6 @@ SECTIONS {
         build/games/quiz_show/quiz_show.bs.o(.script.main);
         build/bin/bindata_08a3dfe0.bin.o(.rodata*);
         build/games/bon_odori/bon_odori.bs.o(.script.main);
-        build/bin/bindata_08a48ad0.bin.o(.rodata*);
         build/games/tap_trial/tap_trial_2.bs.o(.script.main);
         build/games/clappy_trio/snappy_trio.bs.o(.script.main);
         build/bin/bindata_08a4b3ac.bin.o(.rodata*);

@@ -81,6 +81,43 @@ return
 
 
 .section .script.main
+@ Toss Boys 2 - Marking Criteria
+
+struct toss_boys_2_marking_criteria_0
+    /* Positive Remark */     .word D_0805d634
+    /* Negative Remark */     .word D_0805d618
+    /* Flags */               .hword OVERRIDE_COMMENTS
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 3
+endstruct
+
+struct toss_boys_2_marking_criteria_1
+    /* Positive Remark */     .word D_0805d660
+    /* Negative Remark */     .word D_0805d64c
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x66 @ 40%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct toss_boys_2_marking_criteria_2
+    /* Positive Remark */     .word D_0805d694
+    /* Negative Remark */     .word D_0805d678
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct toss_boys_2_marking_criteria
+    .word toss_boys_2_marking_criteria_0
+    .word toss_boys_2_marking_criteria_1
+    .word toss_boys_2_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Toss Boys 2 - Main Script
 
 script script_toss_boys_2_main
@@ -90,7 +127,7 @@ script script_toss_boys_2_main
     enable_pause 1
     rest 24
     set_results_header D_0805d6b0
-    import_marking_criteria D_08a21df8
+    import_marking_criteria toss_boys_2_marking_criteria
     forgive_x_misses 2
     assess_inputs 1
     set_tempo 106

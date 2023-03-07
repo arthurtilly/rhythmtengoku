@@ -69,6 +69,43 @@ return
 
 
 .section .script.main
+@ Tram and Pauline - Marking Criteria
+
+struct tram_pauline_marking_criteria_0
+    /* Positive Remark */     .word D_0805dafc
+    /* Negative Remark */     .word D_0805dae0
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct tram_pauline_marking_criteria_1
+    /* Positive Remark */     .word D_0805db34
+    /* Negative Remark */     .word D_0805db18
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct tram_pauline_marking_criteria_2
+    /* Positive Remark */     .word D_0805db74
+    /* Negative Remark */     .word D_0805db54
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct tram_pauline_marking_criteria
+    .word tram_pauline_marking_criteria_0
+    .word tram_pauline_marking_criteria_1
+    .word tram_pauline_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Tram and Pauline - Main Script
 
 script script_tram_pauline_main
@@ -76,7 +113,7 @@ script script_tram_pauline_main
     set_music_volume 256
     play_music s_puipui_bgm_seqData
     set_results_header D_0805db94
-    import_marking_criteria D_08a2c9e4
+    import_marking_criteria tram_pauline_marking_criteria
     forgive_x_misses 1
     assess_inputs 1
     start_perfect_campaign
