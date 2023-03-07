@@ -86,6 +86,106 @@ return
 
 
 .section .script.main
+@ Remix 4 - Marking Criteria
+
+struct remix_4_marking_criteria_0
+    /* Positive Remark */     .word D_0806803c
+    /* Negative Remark */     .word D_0806802c
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct remix_4_marking_criteria_1
+    /* Positive Remark */     .word D_0806807c
+    /* Negative Remark */     .word D_08068058
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x99 @ 60%
+endstruct
+
+struct remix_4_marking_criteria_2
+    /* Positive Remark */     .word D_080680bc
+    /* Negative Remark */     .word D_080680a0
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct remix_4_marking_criteria
+    .word remix_4_marking_criteria_0
+    .word remix_4_marking_criteria_1
+    .word remix_4_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Remix 4 - Rap Men Text
+
+text D_08a53518
+    .asciz ".b:1ＰＭ３：００　です:0か？"
+endtext
+
+text D_08a53538
+    .asciz ".b:1おやつ　です:0か？"
+endtext
+
+text D_08a53550
+    .asciz ".b:1ほんとです:0か？"
+endtext
+
+text D_08a53568
+    .asciz ".b:1わかります:0か？"
+endtext
+
+text D_08a53580
+    .asciz ".9:1おいしい　かも:0ネ"
+endtext
+
+text D_08a53598
+    .asciz ".9:1ヘルシー　かも:0ネ"
+endtext
+
+text D_08a535b0
+    .asciz ".9:1オレの　せいかも:0ネ"
+endtext
+
+text D_08a535cc
+    .asciz ".9:1それもそう　かも:0ネ"
+endtext
+
+text D_08a535e8
+    .asciz ".9:1たのしい　かも:0ネ"
+endtext
+
+text D_08a53600
+    .asciz ".a:1おやつは　:0サイコー！！"
+endtext
+
+text D_08a53620
+    .asciz ".a:1きぶんは　:0サイコー！！"
+endtext
+
+text D_08a53640
+    .asciz ".a:1オレって　:0サイコー！！"
+endtext
+
+text D_08a53660
+    .asciz ".a:1キミって　:0サイコー！！"
+endtext
+
+text D_08a53680
+    .asciz ".a:1おやつが　:0ナイヨー！！"
+endtext
+
+text D_08a536a0
+    .asciz ".a:1オレ、　しらない:0ヨー！！"
+endtext
+
+
 @ Remix 4 - Main Script
 
 script remix_4_sub_08a536c0

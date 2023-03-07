@@ -72,6 +72,14 @@
     .balign 4, 0
 .endm
 
+.macro text label
+    glabel \label
+.endm
+
+.macro endtext
+    .balign 4, 0
+.endm
+
 
 /* ------------------------ Command Macros ------------------------ */
 
