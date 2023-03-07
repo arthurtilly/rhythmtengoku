@@ -1830,7 +1830,6 @@ SECTIONS {
         build/games/bunny_hop/bunny_hop.bs.o(.script.main);
         build/bin/bindata_08a19850.bin.o(.rodata*);
         build/games/fireworks/fireworks.bs.o(.script.main);
-        build/bin/bindata_08a1b5b4.bin.o(.rodata*);
         build/games/rat_race/rat_race.bs.o(.script.main);
         build/games/power_calligraphy/power_calligraphy.bs.o(.script.main);
         build/bin/bindata_08a1f79c.bin.o(.rodata*);

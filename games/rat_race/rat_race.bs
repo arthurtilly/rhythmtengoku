@@ -81,6 +81,43 @@ return
 
 
 .section .script.main
+@ Rat Race - Marking Criteria
+
+struct rat_race_marking_criteria_1
+    /* Positive Remark */     .word D_0805d118
+    /* Negative Remark */     .word D_0805d104
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct rat_race_marking_criteria_2
+    /* Positive Remark */     .word D_0805d14c
+    /* Negative Remark */     .word D_0805d130
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct rat_race_marking_criteria_0
+    /* Positive Remark */     .word D_0805d180
+    /* Negative Remark */     .word D_0805d164
+    /* Flags */               .hword OVERRIDE_COMMENTS
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 5
+endstruct
+
+struct rat_race_marking_criteria
+    .word rat_race_marking_criteria_0
+    .word rat_race_marking_criteria_1
+    .word rat_race_marking_criteria_2
+    @! No criteria terminator
+endstruct
+
+
 @ Rat Race - Main Script
 
 script rat_race_sub_08a1b5f0
@@ -306,7 +343,7 @@ return
 
 script script_rat_race_main
     set_results_header D_0805d234
-    import_marking_criteria D_08a1b5e4
+    import_marking_criteria rat_race_marking_criteria
     forgive_x_misses 1
     set_tempo 150
     set_music_volume 256

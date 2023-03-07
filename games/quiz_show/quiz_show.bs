@@ -99,6 +99,7 @@ struct quiz_show_marking_criteria_set_2
     .word END_OF_CRITERIA
 endstruct
 
+
 @ Quiz Show - Main Script
 
 script quiz_show_sub_08a3c108

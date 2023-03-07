@@ -69,11 +69,48 @@ return
 
 
 .section .script.main
+@ Rap Women - Marking Criteria
+
+struct rap_women_marking_criteria_0
+    /* Positive Remark */     .word D_08067ca4
+    /* Negative Remark */     .word D_08067c80
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct rap_women_marking_criteria_1
+    /* Positive Remark */     .word D_08067cf4
+    /* Negative Remark */     .word D_08067ccc
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct rap_women_marking_criteria_2
+    /* Positive Remark */     .word D_08067d44
+    /* Negative Remark */     .word D_08067d18
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct rap_women_marking_criteria
+    .word rap_women_marking_criteria_0
+    .word rap_women_marking_criteria_1
+    .word rap_women_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Rap Women - Main Script
 
 script script_rap_women_main
     set_results_header D_08067d70
-    import_marking_criteria D_08a4b540
+    import_marking_criteria rap_women_marking_criteria
     forgive_x_misses 1
     assess_inputs 1
     rest 24
