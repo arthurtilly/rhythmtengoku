@@ -68,11 +68,48 @@ return
 
 
 .section .script.main
+@ Rhythm Tweezers - Marking Criteria
+
+struct rhythm_tweezers_marking_criteria_0
+    /* Positive Remark */     .word D_0805b4ac
+    /* Negative Remark */     .word D_0805b490
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct rhythm_tweezers_marking_criteria_1
+    /* Positive Remark */     .word D_0805b4d0
+    /* Negative Remark */     .word D_0805b4b0
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct rhythm_tweezers_marking_criteria_2
+    /* Positive Remark */     .word D_0805b510
+    /* Negative Remark */     .word D_0805b4ec
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x33 @ 20%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct rhythm_tweezers_marking_criteria
+    .word rhythm_tweezers_marking_criteria_0
+    .word rhythm_tweezers_marking_criteria_1
+    .word rhythm_tweezers_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Rhythm Tweezers - Main Script
 
 script script_rhythm_tweezers_main
     set_results_header D_0805b530
-    import_marking_criteria D_089f9b50
+    import_marking_criteria rhythm_tweezers_marking_criteria
     forgive_x_misses 2
     assess_inputs 1
     set_tempo 96

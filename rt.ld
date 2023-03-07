@@ -1797,9 +1797,7 @@ SECTIONS {
         build/games/night_walk/night_walk.bs.o(.script.main);
         build/games/night_walk/night_walk_2.bs.o(.script.main);
         build/games/karate_man/karate_man_2.bs.o(.script.main);
-        build/bin/bindata_089f9b20.bin.o(.rodata*);
         build/games/rhythm_tweezers/rhythm_tweezers.bs.o(.script.main);
-        build/bin/bindata_089fb900.bin.o(.rodata*);
         build/games/rhythm_tweezers/rhythm_tweezers_2.bs.o(.script.main);
         build/bin/bindata_089fd04c.bin.o(.rodata*);
         build/games/sick_beats/sick_beats.bs.o(.script.main);

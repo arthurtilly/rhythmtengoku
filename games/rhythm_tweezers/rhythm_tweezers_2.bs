@@ -45,11 +45,58 @@ endstruct
 
 
 .section .script.main
+@ Rhythm Tweezers 2 - Marking Criteria
+
+struct rhythm_tweezers_2_marking_criteria_3
+    /* Positive Remark */     .word D_0805b630
+    /* Negative Remark */     .word D_0805b614
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct rhythm_tweezers_2_marking_criteria_0
+    /* Positive Remark */     .word D_0805b654
+    /* Negative Remark */     .word D_0805b634
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct rhythm_tweezers_2_marking_criteria_1
+    /* Positive Remark */     .word D_0805b694
+    /* Negative Remark */     .word D_0805b670
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x33 @ 20%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct rhythm_tweezers_2_marking_criteria_2
+    /* Positive Remark */     .word D_0805b6b8
+    /* Negative Remark */     .word D_0805b630
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x4C @ 30%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct rhythm_tweezers_2_marking_criteria
+    .word rhythm_tweezers_2_marking_criteria_0
+    .word rhythm_tweezers_2_marking_criteria_1
+    .word rhythm_tweezers_2_marking_criteria_2
+    .word rhythm_tweezers_2_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Rhythm Tweezers 2 - Main Script
 
 script script_rhythm_tweezers_2_main
     set_results_header D_0805b6e4
-    import_marking_criteria D_089fb940
+    import_marking_criteria rhythm_tweezers_2_marking_criteria
     forgive_x_misses 1
     assess_inputs 1
     set_tempo 96
