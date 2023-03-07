@@ -69,11 +69,28 @@ return
 
 
 .section .script.main
+@ Showtime - Marking Criteria
+
+struct showtime_marking_criteria_0
+    /* Positive Remark */     .word D_0805e194
+    /* Negative Remark */     .word D_0805e180
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct showtime_marking_criteria
+    .word showtime_marking_criteria_0
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Showtime - Main Script
 
 script script_showtime_main
     set_results_header D_0805e1a8
-    import_marking_criteria D_08a33d68
+    import_marking_criteria showtime_marking_criteria
     forgive_x_misses 1
     assess_inputs 1
     showtime_event00 1

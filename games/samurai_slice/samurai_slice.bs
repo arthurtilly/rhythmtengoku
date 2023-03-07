@@ -78,6 +78,53 @@ return
 
 
 .section .script.main
+@ Samurai Slice - Marking Criteria
+
+struct samurai_slice_marking_criteria_0
+    /* Positive Remark */     .word D_0805bcc4
+    /* Negative Remark */     .word D_0805bca8
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct samurai_slice_marking_criteria_1
+    /* Positive Remark */     .word D_0805bcec
+    /* Negative Remark */     .word D_0805bcc8
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x19 @ 10%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct samurai_slice_marking_criteria_2
+    /* Positive Remark */     .word D_0805bd30
+    /* Negative Remark */     .word D_0805bd10
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct samurai_slice_marking_criteria_3
+    /* Positive Remark */     .word D_0805bd50
+    /* Negative Remark */     .word D_0805bcc4
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct samurai_slice_marking_criteria
+    .word samurai_slice_marking_criteria_0
+    .word samurai_slice_marking_criteria_1
+    .word samurai_slice_marking_criteria_2
+    .word samurai_slice_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Samurai Slice - Main Script
 
 script samurai_slice_sub_08a04544
@@ -410,7 +457,7 @@ return
 
 script script_samurai_slice_main
     set_results_header D_0805bdb8
-    import_marking_criteria D_08a04530
+    import_marking_criteria samurai_slice_marking_criteria
     samurai_slice_event07 16
     call samurai_slice_sub_08a04544
     assess_inputs 1
