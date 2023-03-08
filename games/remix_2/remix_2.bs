@@ -122,9 +122,9 @@ struct remix_2_marking_criteria
 endstruct
 
 
-@ Remix 2 - Sick Beats Unknown Data
+@ Remix 2 - Sick Beats Pathing Data
 
-struct remix_2_sick_beats_unknown_data_08a4feb0
+struct remix_2_sick_beats_pathing_data_08a4feb0
 .byte 0x0F, 0x00, 0x00, 0x00
 .byte 0x01, 0x00, 0x00, 0x00
 .byte 0x02, 0x00, 0x00, 0x00

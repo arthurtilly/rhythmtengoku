@@ -1878,7 +1878,6 @@ SECTIONS {
         build/games/remix_7/remix_7.bs.o(.script.main);
         build/games/remix_5/remix_5.bs.o(.script.main);
         build/games/bon_odori/bon_dance.bs.o(.script.main);
-        build/bin/bindata_08a6b13c.bin.o(.rodata*);
         build/games/remix_6/remix_6.bs.o(.script.main);
         build/bin/bindata_08a6f480.bin.o(.rodata*);
         build/games/remix_8/remix_8.bs.o(.script.main);
