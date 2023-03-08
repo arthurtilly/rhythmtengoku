@@ -58,14 +58,14 @@
 #define FONT_COLOR_15 "." "f"
 #define FONT_STYLE(x) ":" #x
 
-// Bitmap Font: WarioWare "Header" Font Settings
-#define WW_HEADER_L     ":" "0"
-#define WW_HEADER_S     ":" "1"
-#define WW_HEADER_L_ALT ":" "2"
+// Bitmap Font: WarioWare "Outline" Font Settings
+#define FONT_WW_OUTLINE_L     ":" "0"
+#define FONT_WW_OUTLINE_S     ":" "1"
+#define FONT_WW_OUTLINE_L_ALT ":" "2"
 
 // Bitmap Font: WarioWare "Body" Font Settings
-#define WW_BODY_STYLE_TEXT ":" "0"
-#define WW_BODY_STYLE_ICON ":" "1"
+#define FONT_WW_BODY_TEXT ":" "0"
+#define FONT_WW_BODY_ICON ":" "1"
 
 // Because Shift JIS standards have changed since 2006:
 #define SHIFT_JIS_WAVE_DASH   "\x81\x60"
