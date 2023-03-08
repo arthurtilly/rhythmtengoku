@@ -90,11 +90,48 @@ return
 
 
 .section .script.main
+@ Remix 8 - Marking Criteria
+
+struct remix_8_marking_criteria_0
+    /* Positive Remark */     .word D_0806a98c
+    /* Negative Remark */     .word D_0806a97c
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct remix_8_marking_criteria_1
+    /* Positive Remark */     .word D_0806a9cc
+    /* Negative Remark */     .word D_0806a9a8
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x99 @ 60%
+endstruct
+
+struct remix_8_marking_criteria_2
+    /* Positive Remark */     .word D_0806aa0c
+    /* Negative Remark */     .word D_0806a9f0
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct remix_8_marking_criteria
+    .word remix_8_marking_criteria_0
+    .word remix_8_marking_criteria_1
+    .word remix_8_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
 @ Remix 8 - Main Script
 
 script script_remix_8_main
     set_results_header D_0806aa24
-    import_marking_criteria D_08a6f4b0
+    import_marking_criteria remix_8_marking_criteria
     forgive_x_misses 2
     assess_inputs 1
     set_marking_criteria 0
