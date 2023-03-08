@@ -135,24 +135,24 @@ endstruct
 
 @ Remix 7 - Sick Beats Pathing Data
 
-script remix_7_sick_beats_pathing_data_08a623fc
-    sb_cmd0F
+script remix_7_sick_beats_path_skip_to_point_2
+    sb_init_no_entering
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x03
+    sb_dash_from_invulnerable2 1
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x04
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x05
-    sb_rest 24
-    sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x07
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x08
+    sb_appear 2
+    sb_dash_from 2
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0A
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0B
+    sb_appear 3
+    sb_dash_from 3
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0D
+    sb_appear 4
+    sb_dash_from 4
+    sb_rest 24
+    sb_rest 24
+    sb_attack_microbe
 sb_stop
 
 
@@ -770,7 +770,7 @@ script script_remix_7_main
     rest 12
     sick_beats_set_hits_needed 3
     sick_beats_set_virus_palette 9
-    sick_beats_set_virus_position remix_7_sick_beats_pathing_data_08a623fc
+    sick_beats_spawn_virus remix_7_sick_beats_path_skip_to_point_2
     rest 24
     rest 24
     rest 24

@@ -147,47 +147,47 @@ endstruct
 
 @ Remix 6 - Sick Beats Pathing Data
 
-script remix_6_sick_beats_pathing_data_08a6b17c
+script remix_6_sick_beats_path_normal
     sb_set_marking_criteria 0
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x00
+    sb_enter_tube
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x01
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x02
+    sb_appear 1
+    sb_dash_from 1
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x04
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x05
+    sb_appear 2
+    sb_dash_from 2
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x07
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x08
+    sb_appear 3
+    sb_dash_from 3
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0A
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0B
+    sb_appear 4
+    sb_dash_from 4
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0D
+    sb_attack_microbe
 sb_stop
 
-script remix_6_sick_beats_pathing_data_08a6b1d4
+script remix_6_sick_beats_path_skip_to_point_4
     sb_set_marking_criteria 0
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x00
+    sb_enter_tube
     sb_rest 24
     sb_rest 18
-    sb_spawn_cue CUE_SICK_BEATS_08, 0x03
+    sb_dash_from_invulnerable 1
     sb_rest 3
-    sb_spawn_cue CUE_SICK_BEATS_08, 0x06
+    sb_dash_from_invulnerable 2
     sb_rest 3
-    sb_spawn_cue CUE_SICK_BEATS_08, 0x09
+    sb_dash_from_invulnerable 3
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0A
-    sb_spawn_cue CUE_SICK_BEATS_04, 0x0B
+    sb_appear 4
+    sb_dash_from_after_inv 4
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0D
+    sb_attack_microbe
 sb_stop
 
 
@@ -662,7 +662,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_6_sick_beats_pathing_data_08a6b17c
+    sick_beats_spawn_virus remix_6_sick_beats_path_normal
     beat_anim
     rest 24
     beat_anim
@@ -679,7 +679,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_6_sick_beats_pathing_data_08a6b1d4
+    sick_beats_spawn_virus remix_6_sick_beats_path_skip_to_point_4
     beat_anim
     rest 24
     beat_anim

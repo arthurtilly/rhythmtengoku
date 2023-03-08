@@ -124,87 +124,87 @@ endstruct
 
 @ Remix 2 - Sick Beats Pathing Data
 
-script remix_2_sick_beats_pathing_data_08a4feb0
-    sb_cmd0F
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x01
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x02
+script remix_2_sick_beats_path_appear_from_point_1
+    sb_init_no_entering
+    sb_appear 1
+    sb_dash_from 1
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x04
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x05
+    sb_appear 2
+    sb_dash_from 2
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x07
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x08
+    sb_appear 3
+    sb_dash_from 3
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0A
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0B
+    sb_appear 4
+    sb_dash_from 4
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0D
+    sb_attack_microbe
 sb_stop
 
-script remix_2_sick_beats_pathing_data_08a4fefc
-    sb_cmd0F
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x04
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x05
+script remix_2_sick_beats_path_appear_from_point_2
+    sb_init_no_entering
+    sb_appear 2
+    sb_dash_from 2
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x07
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x08
+    sb_appear 3
+    sb_dash_from 3
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0A
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0B
+    sb_appear 4
+    sb_dash_from 4
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0D
+    sb_attack_microbe
 sb_stop
 
-script remix_2_sick_beats_pathing_data_08a4ff38
-    sb_cmd0F
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x07
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x08
+script remix_2_sick_beats_path_appear_from_point_3
+    sb_init_no_entering
+    sb_appear 3
+    sb_dash_from 3
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0A
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0B
+    sb_appear 4
+    sb_dash_from 4
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0D
+    sb_attack_microbe
 sb_stop
 
-script remix_2_sick_beats_pathing_data_unused_08a4ff64
-    sb_cmd0F
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0A
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0B
+script remix_2_sick_beats_path_appear_from_point_4_unused
+    sb_init_no_entering
+    sb_appear 4
+    sb_dash_from 4
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0D
+    sb_attack_microbe
 sb_stop
 
-script remix_2_sick_beats_pathing_data_08a4ff80
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x00
+script remix_2_sick_beats_path_normal
+    sb_enter_tube
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x01
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x02
+    sb_appear 1
+    sb_dash_from 1
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x04
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x05
+    sb_appear 2
+    sb_dash_from 2
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x07
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x08
+    sb_appear 3
+    sb_dash_from 3
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0A
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0B
+    sb_appear 4
+    sb_dash_from 4
     sb_rest 24
     sb_rest 24
-    sb_spawn_cue CUE_SICK_BEATS_00, 0x0D
+    sb_attack_microbe
 sb_stop
 
 
@@ -317,7 +317,7 @@ script script_remix_2_main
     load_sick_beats
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4feb0
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_1
     beat_anim
     rest 24
     beat_anim
@@ -357,7 +357,7 @@ script script_remix_2_main
     load_sick_beats
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4ff38
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_3
     beat_anim
     rest 24
     beat_anim
@@ -398,7 +398,7 @@ script script_remix_2_main
     load_sick_beats
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4feb0
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_1
     beat_anim
     rest 24
     beat_anim
@@ -579,7 +579,7 @@ script script_remix_2_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4feb0
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_1
     beat_anim
     rest 24
     beat_anim
@@ -592,8 +592,8 @@ script script_remix_2_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4feb0
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4fefc
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_1
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_2
     beat_anim
     rest 24
     beat_anim
@@ -610,9 +610,9 @@ script script_remix_2_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4feb0
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4fefc
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4ff38
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_1
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_2
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_3
     beat_anim
     rest 24
     beat_anim
@@ -671,45 +671,45 @@ script script_remix_2_main
     rest 24
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4feb0
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4fefc
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4ff38
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4ff80
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_1
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_2
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_3
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
     beat_anim
     rest 24
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4ff80
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
     beat_anim
     rest 24
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4ff80
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
     beat_anim
     rest 24
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4ff80
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
     beat_anim
     rest 24
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4ff80
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
     beat_anim
     rest 24
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4ff80
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
     beat_anim
     rest 24
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4ff80
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
     beat_anim
     rest 24
     beat_anim
     rest 24
-    sick_beats_set_virus_position remix_2_sick_beats_pathing_data_08a4ff80
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
     beat_anim
     rest 24
     beat_anim
