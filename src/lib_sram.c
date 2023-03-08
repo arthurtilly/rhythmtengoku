@@ -7,7 +7,7 @@ extern u16 sVerifySramFastWorkCopy[];   // Static Copy of verify_sram_fast()
 extern u16 sReadSramFastWorkCopy[];     // Static Copy of read_sram_fast()
 extern u32 sWriteIntSramFastWorkCopy[]; // Static Copy of write_int_sram_fast()
 
-extern void (*write_int_sram_fast)(const u8 *src, u8 *dest, u32 size);
+extern void (*write_int_sram_fast)(const u8 *src, u8 *dest, u32 size); // ARM Function
 
 
 /* SRAM Library */
