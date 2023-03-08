@@ -211,8 +211,8 @@ arm_func_start func_08000b2c
     bx      lr
 glabel func_08000b2c_end
 
-@ ? (Unreferenced)
-arm_func_start func_08000cfc
+@ Fast Unsigned Division
+arm_func_start fast_udivsi3_rom
     mov     r2, #0
     adcs    r0, r0, r0
     adc     r2, r2, r2
@@ -344,7 +344,7 @@ arm_func_start func_08000cfc
     subcs   r2, r2, r1
     adc     r0, r0, r0
     bx      lr
-glabel func_08000cfc_end
+glabel fast_udivsi3_rom_end
 
 @ Huffman Decompression
 arm_func_start func_08000f08
@@ -650,3 +650,21 @@ branch_080012e4:
     pop     {r4, r5, r6, r7, r8, r9, r10}
     bx      lr
 glabel func_080012bc_end
+
+@ SRAM Library
+@ Write 32-bit Integers to SRAM
+arm_func_start write_int_sram_fast_rom
+    ldr     r12, [r0], #4
+    strb    r12, [r1], #1
+    lsr     r12, r12, #8
+    strb    r12, [r1], #1
+    lsr     r12, r12, #8
+    strb    r12, [r1], #1
+    lsr     r12, r12, #8
+    strb    r12, [r1], #1
+    subs    r2, r2, #1
+    bne     write_int_sram_fast_rom
+    bx      lr
+glabel write_int_sram_fast_rom_end
+
+.end

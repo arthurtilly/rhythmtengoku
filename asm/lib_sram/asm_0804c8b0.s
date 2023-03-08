@@ -35,7 +35,7 @@ branch_0804c8de: \n\
 /* 0804c8e6 */ LSRS R7, R5, 0x2 \n\
 /* 0804c8e8 */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0804c8ea */ BEQ branch_0804c900 \n\
-/* 0804c8ec */ LDR R0, =gWriteIntSramFast \n\
+/* 0804c8ec */ LDR R0, =write_int_sram_fast \n\
 /* 0804c8ee */ LDR R3, [R0] \n\
 /* 0804c8f0 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0804c8f2 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\

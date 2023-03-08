@@ -22,7 +22,7 @@ branch_0804ca52: \n\
 /* 0804ca58 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0804ca5a */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 0804ca5c */ BL write_sram_fast \n\
-/* 0804ca60 */ LDR R0, =gVerifySramFast \n\
+/* 0804ca60 */ LDR R0, =verify_sram_fast \n\
 /* 0804ca62 */ LDR R3, [R0] \n\
 /* 0804ca64 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0804ca66 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\

@@ -94,57 +94,57 @@ struct BitmapFontBGPrinter {
 };
 
 
-extern void bmp_font_get_glyph(const struct BitmapFontData *font, const char *string, const u16 **textureReq, u32 *widthReq); // Get printable glyph texture and width.
-extern struct BitmapFontOBJ *create_new_bmp_font_obj_alt(u16 memID, const struct BitmapFontData *fonts, u32 baseTileNum, u32 maxTileRows); // Create new BitmapFontOBJ (no casting?).
-extern struct BitmapFontOBJ *create_new_bmp_font_obj(u16 memID, const struct BitmapFontData *fonts, u16 baseTileNum, u8 maxTileRows); // Create new BitmapFontOBJ.
-extern void delete_bmp_font_obj(struct BitmapFontOBJ *textObj); // Delete BitmapFontOBJ.
-extern void bmp_font_obj_set_format_parser(struct BitmapFontOBJ *textObj, void *stringParserFunc, u32 maxOutputLength); // Set BitmapFontOBJ parseString() function and allocate space for parsedOutput.
-extern void bmp_font_obj_set_data(struct BitmapFontOBJ *textObj, const struct BitmapFontData *fonts, u16 baseTileNum, u8 maxTileRows, u32, u32, u16 *printedGlyphs, u8 *printedGlyphCounts); // Set BitmapFontOBJ data.
-extern void bmp_font_obj_clear_print_data(struct BitmapFontOBJ *textObj); // Clear BitmapFontOBJ printed glyph data.
-extern u32 bmp_font_obj_get_anim_total(const char *string); // Get total animation objects required for generated text (ignoring whitespace).
-extern u32 bmp_font_obj_get_glyph_width(const struct BitmapFontData *font, const char *string); // Get glyph width.
-extern u8 bmp_font_obj_get_style_value(char c); // Get value for font style/palette.
-extern u32 bmp_font_obj_get_string_width(const struct BitmapFontData *font, const char *string); // Get string width.
-extern void bmp_font_obj_write_glyph_hw(const u16 *texture, u16 *dest); // Print glyph (halfwidth).
-extern void bmp_font_obj_write_glyph_fw(const u16 *texture, u16 *dest); // Print glyph (fullwidth).
-extern u16 bmp_font_obj_print_glyph(struct BitmapFontOBJ *textObj, const char *string, u32 *widthReq); // Print glyph, returning the tileID.
-extern u32 bmp_font_obj_glyph_is_whitespace(const char *string); // Check if a char is whitespace.
-extern u32 bmp_font_obj_get_latin_glyph_type(const char *string); // Check if a char is a supported Latin Alphabet char.
-extern const char *bmp_font_obj_convert_latin_hw_to_fw(const char *string); // Convert halfwidth Latin Alphabet character to fullwidth.
-extern struct PrintedTextAnim *bmp_font_obj_print_text(struct BitmapFontOBJ *textObj, const char *string, u32 *widthReq, u32 fontStyle, u32 palette); // Create Animation.
-extern struct PrintedTextAnim *bmp_font_obj_print_unaligned_default(struct BitmapFontOBJ *textObj, const char *string); // Get Animation (Unaligned, default FontStyle and Palette).
-extern struct PrintedTextAnim *bmp_font_obj_print_unaligned(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette); // Get Animation (Unaligned).
-extern struct PrintedTextAnim *bmp_font_obj_print_c_default(struct BitmapFontOBJ *textObj, const char *string); // Get Animation (Center-aligned, default FontStyle and Palette).
-extern struct PrintedTextAnim *bmp_font_obj_print_c(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette); // Get Animation (Center-aligned).
-extern struct PrintedTextAnim *bmp_font_obj_print_l_default(struct BitmapFontOBJ *textObj, const char *string); // Get Animation (Left-aligned, default FontStyle and Palette).
-extern struct PrintedTextAnim *bmp_font_obj_print_l(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette); // Get Animation (Left-aligned).
-extern struct PrintedTextAnim *bmp_font_obj_print_r_default(struct BitmapFontOBJ *textObj, const char *string); // Get Animation (Right-aligned, default FontStyle and Palette).
-extern struct PrintedTextAnim *bmp_font_obj_print_r(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette); // Get Animation (Right-aligned).
-extern struct PrintedTextAnim *bmp_font_obj_print_to_xy_default(struct BitmapFontOBJ *textObj, const char *string, s16 x, s16 y); // Get Animation (Shift to XY, default FontStyle and Palette).
-extern struct PrintedTextAnim *bmp_font_obj_print_to_xy(struct BitmapFontOBJ *textObj, const char *string, s16 x, s16 y, u32 fontStyle, u32 palette); // Get Animation (Shift to XY).
-extern void bmp_font_obj_delete_printed_anim(struct BitmapFontOBJ *textObj, struct Animation *anim); // Delete printed BitmapFontOBJ.
-extern struct BitmapFontOBJPrinter *bmp_font_obj_init_multi_printer(struct BitmapFontOBJPrinter *inputs); // Init. BitmapFontOBJPrinter task.
-extern u32 bmp_font_obj_update_multi_printer(struct BitmapFontOBJPrinter *info); // Update BitmapFontOBJPrinter task.
-extern s32 bmp_font_obj_print_multiple(u16 memID, struct BitmapFontOBJ *textObj, struct PrintedTextAnim **animTable, struct BitmapFontQueuedText *queue); // Start new BitmapFontOBJPrinter task.
-extern void bmp_font_obj_delete_multi_printed_anim(struct BitmapFontOBJ *textObj, struct PrintedTextAnim **animTable, struct BitmapFontQueuedText *queue); // Delete all animations printed by a BitmapFontOBJ.
-extern struct WobblyPrintedTextAnim *bmp_font_obj_print_wobbly(struct BitmapFontOBJ *textObj, struct PrintedTextAnim *anim, u8 frameDuration); // Create "wobbly" animation for printed text.
-extern void bmp_font_obj_wobble_printed_anim(struct BitmapFontOBJ *textObj, struct PrintedTextAnim **anim, u8 frameDuration); // Replace printed text animation with a wobbly one.
-extern void bmp_font_obj_curve_anim_y(struct Animation *anim, s16 vel); // Shift TextObject animation Y position along some sort of curve.
-extern void bmp_font_obj_move_anim_xy(struct Animation *anim, s16 x, s16 y); // Shift TextObject animation position.
+extern void bmp_font_get_glyph(const struct BitmapFontData *font, const char *string, const u16 **textureReq, u32 *widthReq);
+extern struct BitmapFontOBJ *create_new_bmp_font_obj_alt(u16 memID, const struct BitmapFontData *fonts, u32 baseTileNum, u32 maxTileRows);
+extern struct BitmapFontOBJ *create_new_bmp_font_obj(u16 memID, const struct BitmapFontData *fonts, u16 baseTileNum, u8 maxTileRows);
+extern void delete_bmp_font_obj(struct BitmapFontOBJ *textObj);
+extern void bmp_font_obj_set_format_parser(struct BitmapFontOBJ *textObj, void *stringParserFunc, u32 maxOutputLength);
+extern void bmp_font_obj_set_data(struct BitmapFontOBJ *textObj, const struct BitmapFontData *fonts, u16 baseTileNum, u8 maxTileRows, u32, u32, u16 *printedGlyphs, u8 *printedGlyphCounts);
+extern void bmp_font_obj_clear_print_data(struct BitmapFontOBJ *textObj);
+extern u32 bmp_font_obj_get_anim_total(const char *string);
+extern u32 bmp_font_obj_get_glyph_width(const struct BitmapFontData *font, const char *string);
+extern u8 bmp_font_obj_parse_hex_digit(char c);
+extern u32 bmp_font_obj_get_string_width(const struct BitmapFontData *font, const char *string);
+extern void bmp_font_obj_write_glyph_hw(const u16 *texture, u16 *dest);
+extern void bmp_font_obj_write_glyph_fw(const u16 *texture, u16 *dest);
+extern u16 bmp_font_obj_print_glyph(struct BitmapFontOBJ *textObj, const char *string, u32 *widthReq);
+extern u32 bmp_font_obj_glyph_is_whitespace(const char *string);
+extern u32 bmp_font_obj_get_latin_glyph_type(const char *string);
+extern const char *bmp_font_obj_convert_latin_hw_to_fw(const char *string);
+extern struct PrintedTextAnim *bmp_font_obj_print_text(struct BitmapFontOBJ *textObj, const char *string, u32 *widthReq, u32 fontStyle, u32 palette);
+extern struct PrintedTextAnim *bmp_font_obj_print_unaligned_default(struct BitmapFontOBJ *textObj, const char *string);
+extern struct PrintedTextAnim *bmp_font_obj_print_unaligned(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette);
+extern struct PrintedTextAnim *bmp_font_obj_print_c_default(struct BitmapFontOBJ *textObj, const char *string);
+extern struct PrintedTextAnim *bmp_font_obj_print_c(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette);
+extern struct PrintedTextAnim *bmp_font_obj_print_l_default(struct BitmapFontOBJ *textObj, const char *string);
+extern struct PrintedTextAnim *bmp_font_obj_print_l(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette);
+extern struct PrintedTextAnim *bmp_font_obj_print_r_default(struct BitmapFontOBJ *textObj, const char *string);
+extern struct PrintedTextAnim *bmp_font_obj_print_r(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette);
+extern struct PrintedTextAnim *bmp_font_obj_print_to_xy_default(struct BitmapFontOBJ *textObj, const char *string, s16 x, s16 y);
+extern struct PrintedTextAnim *bmp_font_obj_print_to_xy(struct BitmapFontOBJ *textObj, const char *string, s16 x, s16 y, u32 fontStyle, u32 palette);
+extern void bmp_font_obj_delete_printed_anim(struct BitmapFontOBJ *textObj, struct Animation *anim);
+extern struct BitmapFontOBJPrinter *bmp_font_obj_init_multi_printer(struct BitmapFontOBJPrinter *inputs);
+extern u32 bmp_font_obj_update_multi_printer(struct BitmapFontOBJPrinter *info);
+extern s32 bmp_font_obj_print_multiple(u16 memID, struct BitmapFontOBJ *textObj, struct PrintedTextAnim **animTable, struct BitmapFontQueuedText *queue);
+extern void bmp_font_obj_delete_multi_printed_anim(struct BitmapFontOBJ *textObj, struct PrintedTextAnim **animTable, struct BitmapFontQueuedText *queue);
+extern struct WobblyPrintedTextAnim *bmp_font_obj_print_wobbly(struct BitmapFontOBJ *textObj, struct PrintedTextAnim *anim, u8 frameDuration);
+extern void bmp_font_obj_wobble_printed_anim(struct BitmapFontOBJ *textObj, struct PrintedTextAnim **anim, u8 frameDuration);
+extern void bmp_font_obj_curve_anim_y(struct Animation *anim, s16 vel);
+extern void bmp_font_obj_move_anim_xy(struct Animation *anim, s16 x, s16 y);
 
-extern struct BitmapFontBG *create_new_bmp_font_bg(u16 memID, const struct BitmapFontData *fonts, u8 bgTilesetID, u16 baseTileNum, u8 maxTileRows); // Create new BitmapFontBG.
-extern void delete_bmp_font_bg(struct BitmapFontBG *textObj); // Delete BitmapFontBG.
-extern void bmp_font_bg_set_data(struct BitmapFontBG *textObj, const struct BitmapFontData *fonts, u8 bgTilesetID, u16 baseTileNum, u8 maxTileRows, u16 *printedGlyphs, u8 *printedGlyphCounts); // Set BitmapFontBG data.
-extern void bmp_font_bg_clear_print_data(struct BitmapFontBG *textObj); // Clear BitmapFontBG printed glyph data.
-extern void bmp_font_bg_write_glyph(const u16 *texture, u16 *dest); // Print glyph.
-extern u16 bmp_font_bg_print_glyph(struct BitmapFontBG *textObj, const char *string); // Print glyph, returning the tileID.
-extern u8 bmp_font_bg_get_style_value(char c); // Get value for FontStyle/Palette.
-extern void bmp_font_bg_print_text(struct BitmapFontBG *textObj, u16 *bgMap, u32 mapWidth, const char *string, u32 palette); // Print to BG Map.
-extern void bmp_font_bg_delete_printed_data(struct BitmapFontBG *textObj, const char *string); // Delete printed BitmapFontBG.
-extern struct BitmapFontBGPrinter *bmp_font_bg_init_printer(struct BitmapFontBGPrinter *inputs); // Init. BitmapFontBGPrinter task.
-extern u32 bmp_font_bg_update_printer(struct BitmapFontBGPrinter *info); // Update BitmapFontBGPrinter task.
-extern s32 start_bmp_font_bg_printer_task(u16 memID, struct BitmapFontBG *textObj, u16 *bgMapDest, u32 bgMapWidth, const char *string, u32 palette, u32 processLimit); // Start new BitmapFontBGPrinter task.
-extern u32 bmp_font_bg_get_total_printable_chars(const char *string); // Count the total printable characters in a string (including characters not supported by the font).
+extern struct BitmapFontBG *create_new_bmp_font_bg(u16 memID, const struct BitmapFontData *fonts, u8 bgTilesetID, u16 baseTileNum, u8 maxTileRows);
+extern void delete_bmp_font_bg(struct BitmapFontBG *textObj);
+extern void bmp_font_bg_set_data(struct BitmapFontBG *textObj, const struct BitmapFontData *fonts, u8 bgTilesetID, u16 baseTileNum, u8 maxTileRows, u16 *printedGlyphs, u8 *printedGlyphCounts);
+extern void bmp_font_bg_clear_print_data(struct BitmapFontBG *textObj);
+extern void bmp_font_bg_write_glyph(const u16 *texture, u16 *dest);
+extern u16 bmp_font_bg_print_glyph(struct BitmapFontBG *textObj, const char *string);
+extern u8 bmp_font_bg_parse_hex_digit(char c);
+extern void bmp_font_bg_print_text(struct BitmapFontBG *textObj, u16 *bgMap, u32 mapWidth, const char *string, u32 palette);
+extern void bmp_font_bg_delete_printed_data(struct BitmapFontBG *textObj, const char *string);
+extern struct BitmapFontBGPrinter *bmp_font_bg_init_printer(struct BitmapFontBGPrinter *inputs);
+extern u32 bmp_font_bg_update_printer(struct BitmapFontBGPrinter *info);
+extern s32 start_bmp_font_bg_printer_task(u16 memID, struct BitmapFontBG *textObj, u16 *bgMapDest, u32 bgMapWidth, const char *string, u32 palette, u32 processLimit);
+extern u32 bmp_font_bg_get_total_printable_chars(const char *string);
 
 
 // Scene-initialisation data for Objects/Sprites, on the level of Graphics Tables and Buffered Texture lists.
@@ -214,11 +214,11 @@ enum SceneObjectTypesEnum {
 };
 
 
-extern void import_scene_object(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject object, s16 *spritePool); // Render SceneObject
-extern u32 import_all_scene_objects(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool); // Render All SceneObjects
-extern void set_scene_object_current_text_id(u32 textID); // Set sSceneTextCurrentStringId
-extern struct SceneObjectRenderer *init_scene_object_importer(struct SceneObjectRenderer *inputs); // Init. SceneObjectRenderer Task
-extern u32 update_scene_object_importer(struct SceneObjectRenderer *info); // Update SceneObjectRenderer Task
-extern s32 start_new_scene_object_importer(u16 memID, struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool); // Start New SceneObjectRenderer Task
-extern void delete_all_scene_objects(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool); // Delete All SceneObjects
-extern void display_all_scene_objects(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool, u32 show); // Show/Hide All SceneObjects
+extern void import_scene_object(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject object, s16 *spritePool);
+extern u32 import_all_scene_objects(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool);
+extern void set_scene_object_current_text_id(u32 textID);
+extern struct SceneObjectRenderer *init_scene_object_importer(struct SceneObjectRenderer *inputs);
+extern u32 update_scene_object_importer(struct SceneObjectRenderer *info);
+extern s32 start_new_scene_object_importer(u16 memID, struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool);
+extern void delete_all_scene_objects(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool);
+extern void display_all_scene_objects(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool, u32 show);

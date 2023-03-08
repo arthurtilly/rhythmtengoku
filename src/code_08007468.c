@@ -9,7 +9,7 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-static s32 D_03000eb0[136]; // unknown type
+static s32 fast_udivsi3_code[136]; // unknown type
 static s32 D_030010d0[9]; // unknown type
 
 

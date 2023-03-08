@@ -235,8 +235,8 @@ u32 bmp_font_obj_get_glyph_width(const struct BitmapFontData *font, const char *
 }
 
 
-// Get font style/palette value.
-u8 bmp_font_obj_get_style_value(char c) {
+// Parse an ASCII hex digit.
+u8 bmp_font_obj_parse_hex_digit(char c) {
     if ((c >= '0') && (c <= '9')) {
         return c - '0';
     }
@@ -267,7 +267,7 @@ u32 bmp_font_obj_get_string_width(const struct BitmapFontData *font, const char 
                 break;
 
             case ':':
-                currentFont = &font[bmp_font_obj_get_style_value(string[1])];
+                currentFont = &font[bmp_font_obj_parse_hex_digit(string[1])];
                 break;
 
             default:
@@ -880,8 +880,8 @@ u16 bmp_font_bg_print_glyph(struct BitmapFontBG *textObj, const char *string) {
 }
 
 
-// Get value for FontStyle/Palette.
-u8 bmp_font_bg_get_style_value(char c) {
+// Parse an ASCII hex digit.
+u8 bmp_font_bg_parse_hex_digit(char c) {
     if ((c >= '0') && (c <= '9')) {
         return c - '0';
     }
@@ -915,12 +915,12 @@ void bmp_font_bg_print_text(struct BitmapFontBG *textObj, u16 *bgMap, u32 mapWid
                 break;
 
             case '.':
-                palette = bmp_font_bg_get_style_value(string[1]);
+                palette = bmp_font_bg_parse_hex_digit(string[1]);
                 string += 2;
                 break;
 
             case ':':
-                sBgFontStyle = bmp_font_bg_get_style_value(string[1]);
+                sBgFontStyle = bmp_font_bg_parse_hex_digit(string[1]);
                 string += 2;
                 break;
 
@@ -963,7 +963,7 @@ void bmp_font_bg_delete_printed_data(struct BitmapFontBG *textObj, const char *s
                 break;
 
             case ':':
-                fontStyle = bmp_font_bg_get_style_value(string[1]);
+                fontStyle = bmp_font_bg_parse_hex_digit(string[1]);
                 string += 2;
                 break;
 
@@ -1025,12 +1025,12 @@ u32 bmp_font_bg_update_printer(struct BitmapFontBGPrinter *info) {
                 break;
 
             case '.': // Palette
-                palette = bmp_font_bg_get_style_value(string[1]);
+                palette = bmp_font_bg_parse_hex_digit(string[1]);
                 string += 2;
                 break;
 
             case ':': // Font/Style
-                sBgFontStyle = bmp_font_bg_get_style_value(string[1]);
+                sBgFontStyle = bmp_font_bg_parse_hex_digit(string[1]);
                 string += 2;
                 break;
 

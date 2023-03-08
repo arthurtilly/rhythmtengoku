@@ -127,8 +127,7 @@ SECTIONS {
         build/asm/boot.s.o(.text);
         build/src/main.c.o(.text);
         build/src/memory.c.o(.text);
-        build/asm/code_08000a00.s.o(.text)
-        build/asm/lib_sram.s.o(.text);
+        build/asm/code_08000a00.s.o(.text);
         build/src/code_08001360.c.o(.text);
         build/src/code_08003980.c.o(.text);
         build/src/bitmap_font.c.o(.text);

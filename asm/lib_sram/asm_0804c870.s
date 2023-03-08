@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start read_sram_fast \n\
+thumb_func_start read_sram_fast_rom \n\
 /* 0804c870 */ PUSH {R4, R5, LR} \n\
 /* 0804c872 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0804c874 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\

@@ -112,7 +112,7 @@ void clear_save_data(void) {
 s32 copy_to_save_buffer(u8 *cartRAM) {
     struct SaveBuffer *buffer = D_030046a8;
 
-    gReadSramFast(cartRAM, (u8 *)buffer, SAVE_BUFFER_SIZE);
+    read_sram_fast(cartRAM, (u8 *)buffer, SAVE_BUFFER_SIZE);
 
     if (func_0800820c(buffer->header.RIQ, D_08935fbc, 4)) {
         return 1;

@@ -54,7 +54,7 @@ branch_08004a4e: \n\
 /* 08004a4e */ CMP R0, 0x2E @ Compare R0 and 0x2E \n\
 /* 08004a50 */ BNE branch_08004a64 \n\
 /* 08004a52 */ LDRB R0, [R4, 0x1] \n\
-/* 08004a54 */ BL bmp_font_obj_get_style_value \n\
+/* 08004a54 */ BL bmp_font_obj_parse_hex_digit \n\
 /* 08004a58 */ LSLS R0, R0, 0x18 \n\
 /* 08004a5a */ LSRS R0, R0, 0x18 \n\
 /* 08004a5c */ STR R0, [SP, 0x30] \n\
@@ -66,7 +66,7 @@ branch_08004a64: \n\
 /* 08004a64 */ CMP R0, 0x3A @ Compare R0 and 0x3A \n\
 /* 08004a66 */ BNE branch_08004a74 \n\
 /* 08004a68 */ LDRB R0, [R4, 0x1] \n\
-/* 08004a6a */ BL bmp_font_obj_get_style_value \n\
+/* 08004a6a */ BL bmp_font_obj_parse_hex_digit \n\
 /* 08004a6e */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 08004a70 */ STRB R0, [R1] \n\
 /* 08004a72 */ B branch_08004b24 \n\
