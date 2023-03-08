@@ -113,7 +113,7 @@ D_030046c0 = 0x030046c0;
 D_03004ac0 = 0x03004ac0;
 D_03004ad0 = 0x03004ad0;
 D_03004ae4 = 0x03004ae4;
-D_03004ae8 = 0x03004ae8;
+sSceneTextCurrentStringId = 0x03004ae8;
 D_03004aec = 0x03004aec;
 D_03004af0 = 0x03004af0;
 D_03004af4 = 0x03004af4;
@@ -200,9 +200,6 @@ D_030064d4 = 0x030064d4;
 
 
 /* ROM START */
-
-/* bindata_088a0650 */
-/* 0x088a0650 is .rodata section of the SRAM library */
 
 /* Main Menu - Options Animations */
 D_088f5aec = 0x088f5aec;

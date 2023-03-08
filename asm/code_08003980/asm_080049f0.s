@@ -39,7 +39,7 @@ branch_08004a1c: \n\
 /* 08004a34 */ ADDS R0, 0x10 @ Add 0x10 to R0 \n\
 /* 08004a36 */ STR R0, [SP, 0x8] \n\
 /* 08004a38 */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
-/* 08004a3a */ LDR R1, =D_030008b0 \n\
+/* 08004a3a */ LDR R1, =sObjFontStyle \n\
 /* 08004a3c */ STRB R5, [R1] \n\
 /* 08004a3e */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08004a40 */ STRH R6, [R2, 0x10] \n\
@@ -155,7 +155,7 @@ branch_08004aea: \n\
 /* 08004b0c */ LDR R2, [SP, 0xC] \n\
 /* 08004b0e */ CMP R2, 0x3F @ Compare R2 and 0x3F \n\
 /* 08004b10 */ BHI branch_08004b1c \n\
-/* 08004b12 */ LDR R0, =D_030008b8 \n\
+/* 08004b12 */ LDR R0, =sObjStringGlyphWidths \n\
 /* 08004b14 */ ADDS R0, R2, R0 @ Set R0 to R2 + R0 \n\
 /* 08004b16 */ STRB R1, [R0] \n\
 /* 08004b18 */ ADDS R2, 0x1 @ Add 0x1 to R2 \n\

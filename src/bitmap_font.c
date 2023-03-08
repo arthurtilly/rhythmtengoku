@@ -9,11 +9,11 @@ asm(".include \"include/gba.inc\"");//Temporary
   //  //  //  BITMAP FONT  //  //  //
 
 
-static u8 D_030008b0; // Font/Style
-static u32 D_030008b4; // Unused
-static u8 D_030008b8[0x40]; // Width of Each Glyph in the Current String
-static u32 D_030008f8; // Font/Style
-static u32 D_030008fc; // Unused
+static u8 sObjFontStyle; // BitmapFontOBJ - Font/Style
+static u32 D_030008b4; // BitmapFontOBJ - Unused
+static u8 sObjStringGlyphWidths[0x40]; // BitmapFontOBJ - Width of Each Glyph in the Current String
+static u32 sBgFontStyle; // BitmapFontBG - Font/Style
+static u32 D_030008fc; // BitmapFontBG - Unused
 
 enum FTextLatinCharTypesEnum {
     F_TEXT_NON_LATIN,
@@ -22,6 +22,7 @@ enum FTextLatinCharTypesEnum {
 };
 
 extern s32 (*D_03004ae4)(s32);
+extern u8 sSceneTextCurrentStringId; // Current String in Scene Text Table to Print with SceneObject
 
 
 // Get printable glyph texture and width.
@@ -73,7 +74,7 @@ void bmp_font_get_glyph(const struct BitmapFontData *font, const char *string, c
                 id = string[1] - 0x81;
                 break;
             }
-            // Fullwidth Hiragana Alphabet
+            // Fullwidth Hiragana
             if ((string[1] >= 0x9F) && (string[1] <= 0xFC)) {
                 textures = font->hiraganaTextures;
                 widths = font->hiraganaWidths;
@@ -83,14 +84,14 @@ void bmp_font_get_glyph(const struct BitmapFontData *font, const char *string, c
             break;
 
         case 0x83:
-            // Fullwidth Katakana Alphabet
+            // Fullwidth Katakana
             if ((string[1] >= 0x40) && (string[1] <= 0x7E)) {
                 textures = font->katakanaTextures;
                 widths = font->katakanaWidths;
                 id = string[1] - 0x40;
                 break;
             }
-            // Fullwidth Katakana Alphabet
+            // Fullwidth Katakana
             if ((string[1] >= 0x80) && (string[1] <= 0x9E)) {
                 textures = font->katakanaTextures;
                 widths = font->katakanaWidths;
@@ -326,17 +327,17 @@ u16 bmp_font_obj_print_glyph(struct BitmapFontOBJ *textObj, const char *string, 
     printed = (u8 *)textObj->printedGlyphs;
 
     if (latinCharType != F_TEXT_LATIN_HALFWIDTH) {
-        glyphDataB0 = (D_030008b0 << 4) | string[0];
+        glyphDataB0 = (sObjFontStyle << 4) | string[0];
         glyphDataB1 = string[1];
     } else {
-        glyphDataB0 = ((string[0] - 'a') >> 3) | (D_030008b0 << 4) | (1 << 6);
+        glyphDataB0 = ((string[0] - 'a') >> 3) | (sObjFontStyle << 4) | (1 << 6);
         glyphDataB1 = ((string[0] - 'a') << 5) | (string[1] - 'a');
     }
 
     for (i = 0; i < textObj->maxAllocatedTileRows; i++) {
         for (j = 0; j < 16; j++) {
             if ((glyphDataB0 == printed[0]) && (glyphDataB1 == printed[1])) {
-                *widthReq = bmp_font_obj_get_glyph_width(&textObj->fonts[D_030008b0], string);
+                *widthReq = bmp_font_obj_get_glyph_width(&textObj->fonts[sObjFontStyle], string);
                 textObj->printedGlyphCounts[j + (i * 16)]++;
                 return textObj->baseTileNum + (j * 2) + ((i * 32) * 2);
             }
@@ -360,12 +361,12 @@ u16 bmp_font_obj_print_glyph(struct BitmapFontOBJ *textObj, const char *string, 
     if (latinCharType == F_TEXT_LATIN_HALFWIDTH) {
         for (i = 0; i < 2; i++) {
             const char *fullwidthString = bmp_font_obj_convert_latin_hw_to_fw(&string[i]);
-            bmp_font_get_glyph(&textObj->fonts[D_030008b0], fullwidthString, &texture, &width);
+            bmp_font_get_glyph(&textObj->fonts[sObjFontStyle], fullwidthString, &texture, &width);
             bmp_font_obj_write_glyph_hw(texture, &address[i * 16]);
             *widthReq += (i != 0) ? width : 8;
         }
     } else {
-        bmp_font_get_glyph(&textObj->fonts[D_030008b0], string, &texture, &width);
+        bmp_font_get_glyph(&textObj->fonts[sObjFontStyle], string, &texture, &width);
         bmp_font_obj_write_glyph_fw(texture, address);
         *widthReq = width;
     }
@@ -398,7 +399,7 @@ u32 bmp_font_obj_glyph_is_whitespace(const char *string) {
 }
 
 
-// Check if a char is a supported Latin alphabet char.
+// Check if a char is a supported Latin Alphabet char.
 u32 bmp_font_obj_get_latin_glyph_type(const char *string) {
     // Halfwidth Lowercase Latin Alphabet
     if ((string[0] >= 'a') && (string[0] <= 'z') && (string[1] >= 'a') && (string[1] <= 'z')) {
@@ -739,7 +740,7 @@ void bmp_font_obj_curve_anim_y(struct Animation *anim, s16 vel) {
                 x -= 512;
             }
 
-            centre = x + (D_030008b8[i] / 2);
+            centre = x + (sObjStringGlyphWidths[i] / 2);
             ((struct OAM *)oam)->yPos = -D_03004ae4((vel * vel) - (centre * centre)) - 10;
 
             oam += 3;
@@ -768,12 +769,12 @@ void bmp_font_obj_move_anim_xy(struct Animation *anim, s16 x, s16 y) {
 
 
 // Create new BitmapFontBG.
-struct BitmapFontBG *create_new_bmp_font_bg(u16 memID, const struct BitmapFontData *fonts, u8 arg2, u16 baseTileNum, u8 maxTileRows) {
+struct BitmapFontBG *create_new_bmp_font_bg(u16 memID, const struct BitmapFontData *fonts, u8 bgTilesetID, u16 baseTileNum, u8 maxTileRows) {
     struct BitmapFontBG *textObj;
 
     textObj = mem_heap_alloc_id(memID, sizeof(struct BitmapFontBG));
     textObj->fonts = fonts;
-    textObj->unk6 = arg2;
+    textObj->tilesetID = bgTilesetID;
     textObj->baseTileNum = baseTileNum;
     textObj->maxAllocatedTileRows = maxTileRows;
     textObj->printedGlyphs = mem_heap_alloc_id(memID, maxTileRows * 16 * sizeof(u16));
@@ -793,9 +794,9 @@ void delete_bmp_font_bg(struct BitmapFontBG *textObj) {
 
 
 // Set BitmapFontBG data.
-void bmp_font_bg_set_data(struct BitmapFontBG *textObj, const struct BitmapFontData *fonts, u8 arg2, u16 baseTileNum, u8 maxTileRows, u16 *printedGlyphs, u8 *printedGlyphCounts) {
+void bmp_font_bg_set_data(struct BitmapFontBG *textObj, const struct BitmapFontData *fonts, u8 bgTilesetID, u16 baseTileNum, u8 maxTileRows, u16 *printedGlyphs, u8 *printedGlyphCounts) {
     textObj->fonts = fonts;
-    textObj->unk6 = arg2;
+    textObj->tilesetID = bgTilesetID;
     textObj->baseTileNum = baseTileNum;
     textObj->maxAllocatedTileRows = maxTileRows;
     textObj->printedGlyphs = printedGlyphs;
@@ -840,7 +841,7 @@ u16 bmp_font_bg_print_glyph(struct BitmapFontBG *textObj, const char *string) {
         return -1;
     }
 
-    glyphByte0 = (D_030008f8 << 4) | string[0];
+    glyphByte0 = (sBgFontStyle << 4) | string[0];
     glyphByte1 = string[1];
     tileX = 99;
     printed = (u8 *)textObj->printedGlyphs;
@@ -865,8 +866,8 @@ u16 bmp_font_bg_print_glyph(struct BitmapFontBG *textObj, const char *string) {
     }
 
     tileID = textObj->baseTileNum + (tileX * 2) + ((tileY * 16) * 2);
-    address = (void *)(VRAMBase + (textObj->unk6 * 0x4000) + (tileID * 0x20));
-    bmp_font_get_glyph(&textObj->fonts[D_030008f8], string, &texture, NULL);
+    address = (void *)(VRAMBase + (textObj->tilesetID * 0x4000) + (tileID * 0x20));
+    bmp_font_get_glyph(&textObj->fonts[sBgFontStyle], string, &texture, NULL);
     bmp_font_bg_write_glyph(texture, address);
 
     i = tileX + (tileY * 16);
@@ -902,7 +903,7 @@ void bmp_font_bg_print_text(struct BitmapFontBG *textObj, u16 *bgMap, u32 mapWid
     u16 tileNum;
     u32 mapX;
 
-    D_030008f8 = 0;
+    sBgFontStyle = 0;
     mapX = 0;
 
     while (string[0] != '\0') {
@@ -919,7 +920,7 @@ void bmp_font_bg_print_text(struct BitmapFontBG *textObj, u16 *bgMap, u32 mapWid
                 break;
 
             case ':':
-                D_030008f8 = bmp_font_bg_get_style_value(string[1]);
+                sBgFontStyle = bmp_font_bg_get_style_value(string[1]);
                 string += 2;
                 break;
 
@@ -1008,7 +1009,7 @@ u32 bmp_font_bg_update_printer(struct BitmapFontBGPrinter *info) {
     u32 processLimit;
 
     processLimit = info->processLimit;
-    D_030008f8 = info->fontStyle;
+    sBgFontStyle = info->fontStyle;
     bgMap = info->bgMap;
     mapX = info->currentMapX;
     mapWidth = info->bgMapWidth;
@@ -1029,7 +1030,7 @@ u32 bmp_font_bg_update_printer(struct BitmapFontBGPrinter *info) {
                 break;
 
             case ':': // Font/Style
-                D_030008f8 = bmp_font_bg_get_style_value(string[1]);
+                sBgFontStyle = bmp_font_bg_get_style_value(string[1]);
                 string += 2;
                 break;
 
@@ -1049,7 +1050,7 @@ u32 bmp_font_bg_update_printer(struct BitmapFontBGPrinter *info) {
                 processLimit--;
 
                 if (processLimit == 0) {
-                    info->fontStyle = D_030008f8;
+                    info->fontStyle = sBgFontStyle;
                     info->bgMap = bgMap;
                     info->currentMapX = mapX;
                     info->string = string;
@@ -1115,7 +1116,7 @@ u32 bmp_font_bg_get_total_printable_chars(const char *string) {
 }
 
 
-extern u8 D_03004ae8;
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
 // Render SceneObject
@@ -1168,7 +1169,7 @@ void import_scene_object(struct SpriteHandler *spriteHandler, struct BitmapFontO
             if ((s32)data->textTable < 0) {
                 string = *((char **)((u32)data->textTable & 0x7fffffff));
             } else {
-                string = data->textTable[D_03004ae8];
+                string = data->textTable[sSceneTextCurrentStringId];
             }
             fontStyle = data->fontStyle;
             palette = data->palette;
@@ -1228,9 +1229,9 @@ u32 import_all_scene_objects(struct SpriteHandler *spriteHandler, struct BitmapF
 }
 
 
-// Set D_03004ae8
+// Set sSceneTextCurrentStringId
 void set_scene_object_current_text_id(u32 textID) {
-    D_03004ae8 = textID;
+    sSceneTextCurrentStringId = textID;
 }
 
 

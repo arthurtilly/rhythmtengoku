@@ -4,13 +4,13 @@
 #include "graphics.h"
 #include "data/bitmap_font_data.h"
 
-// Read-Only Definition for a Bitmap Font
+// Definition of a Bitmap Font.
 struct BitmapFontData {
-    u8 whitespaceWidth; // Whitespace Width
-    u8 textureWidth; // Glyph Texture Width
-    u8 textureHeight; // Glyph Texture Height
+    u8 whitespaceWidth;  // Whitespace Width
+    u8 textureWidth;     // Glyph Texture Width
+    u8 textureHeight;    // Glyph Texture Height
     u8 descensionHeight; // Descension Height for Lowercase Latin Alphabet Characters
-    s8 spacingWidth; // Glyph Spacing
+    s8 spacingWidth;     // Glyph Spacing
     // [(0x8140 .. 0x817E), (0x8180 .. 0x819E)]
     const void *punctuationTextures;
     const u8 *punctuationWidths;
@@ -31,6 +31,7 @@ struct BitmapFontData {
     const u8 *katakanaWidths;
 };
 
+// Bitmap Font Printer which creates OBJ Animations.
 struct BitmapFontOBJ {
     u16 memID;
     const struct BitmapFontData *fonts;
@@ -42,25 +43,29 @@ struct BitmapFontOBJ {
     char *parsedOutput;
 };
 
+// Bitmap Font Printer which writes to BG Maps.
 struct BitmapFontBG {
     const struct BitmapFontData *fonts;
     u16 baseTileNum;
-    u8 unk6;
+    u8 tilesetID;
     u8 maxAllocatedTileRows;
     u16 *printedGlyphs;
     u8 *printedGlyphCounts;
 };
 
+// Generated OBJ Animation for text.
 struct PrintedTextAnim {
     struct Animation frames[2];
     u16 oam[0];
 };
 
+// Generated OBJ Animation for wobbly/shaky text.
 struct WobblyPrintedTextAnim {
     struct Animation frames[6];
     u16 oam[0];
 };
 
+// Text queue for the multi-string BitmapFontOBJ printer task.
 struct BitmapFontQueuedText {
     const char *string;
     u32 alignment:4;
@@ -68,6 +73,7 @@ struct BitmapFontQueuedText {
     u32 palette:4;
 };
 
+// Multi-string BitmapFontOBJ printer task.
 struct BitmapFontOBJPrinter {
     struct BitmapFontOBJ *textObj;
     struct PrintedTextAnim **animTable;
@@ -75,6 +81,7 @@ struct BitmapFontOBJPrinter {
     u32 current;
 };
 
+// BitmapFontBG printer task.
 struct BitmapFontBGPrinter {
     struct BitmapFontBG *textObj;
     u32 fontStyle:4;
@@ -102,7 +109,7 @@ extern void bmp_font_obj_write_glyph_hw(const u16 *texture, u16 *dest); // Print
 extern void bmp_font_obj_write_glyph_fw(const u16 *texture, u16 *dest); // Print glyph (fullwidth).
 extern u16 bmp_font_obj_print_glyph(struct BitmapFontOBJ *textObj, const char *string, u32 *widthReq); // Print glyph, returning the tileID.
 extern u32 bmp_font_obj_glyph_is_whitespace(const char *string); // Check if a char is whitespace.
-extern u32 bmp_font_obj_get_latin_glyph_type(const char *string); // Check if a char is a supported Latin alphabet char.
+extern u32 bmp_font_obj_get_latin_glyph_type(const char *string); // Check if a char is a supported Latin Alphabet char.
 extern const char *bmp_font_obj_convert_latin_hw_to_fw(const char *string); // Convert halfwidth Latin Alphabet character to fullwidth.
 extern struct PrintedTextAnim *bmp_font_obj_print_text(struct BitmapFontOBJ *textObj, const char *string, u32 *widthReq, u32 fontStyle, u32 palette); // Create Animation.
 extern struct PrintedTextAnim *bmp_font_obj_print_unaligned_default(struct BitmapFontOBJ *textObj, const char *string); // Get Animation (Unaligned, default FontStyle and Palette).
@@ -125,9 +132,9 @@ extern void bmp_font_obj_wobble_printed_anim(struct BitmapFontOBJ *textObj, stru
 extern void bmp_font_obj_curve_anim_y(struct Animation *anim, s16 vel); // Shift TextObject animation Y position along some sort of curve.
 extern void bmp_font_obj_move_anim_xy(struct Animation *anim, s16 x, s16 y); // Shift TextObject animation position.
 
-extern struct BitmapFontBG *create_new_bmp_font_bg(u16 memID, const struct BitmapFontData *fonts, u8 arg2, u16 baseTileNum, u8 maxTileRows); // Create new BitmapFontBG.
+extern struct BitmapFontBG *create_new_bmp_font_bg(u16 memID, const struct BitmapFontData *fonts, u8 bgTilesetID, u16 baseTileNum, u8 maxTileRows); // Create new BitmapFontBG.
 extern void delete_bmp_font_bg(struct BitmapFontBG *textObj); // Delete BitmapFontBG.
-extern void bmp_font_bg_set_data(struct BitmapFontBG *textObj, const struct BitmapFontData *fonts, u8 arg2, u16 baseTileNum, u8 maxTileRows, u16 *printedGlyphs, u8 *printedGlyphCounts); // Set BitmapFontBG data.
+extern void bmp_font_bg_set_data(struct BitmapFontBG *textObj, const struct BitmapFontData *fonts, u8 bgTilesetID, u16 baseTileNum, u8 maxTileRows, u16 *printedGlyphs, u8 *printedGlyphCounts); // Set BitmapFontBG data.
 extern void bmp_font_bg_clear_print_data(struct BitmapFontBG *textObj); // Clear BitmapFontBG printed glyph data.
 extern void bmp_font_bg_write_glyph(const u16 *texture, u16 *dest); // Print glyph.
 extern u16 bmp_font_bg_print_glyph(struct BitmapFontBG *textObj, const char *string); // Print glyph, returning the tileID.
@@ -140,8 +147,12 @@ extern s32 start_bmp_font_bg_printer_task(u16 memID, struct BitmapFontBG *textOb
 extern u32 bmp_font_bg_get_total_printable_chars(const char *string); // Count the total printable characters in a string (including characters not supported by the font).
 
 
+// Scene-initialisation data for Objects/Sprites, on the level of Graphics Tables and Buffered Texture lists.
 union SceneObject {
+    // Generic access to the "type" field.
     u8 *type;
+
+    // [TYPE 0] Sprite with an immediate XY position.
     struct SceneSprite {
         u8 type;
         s8 poolID;
@@ -155,6 +166,8 @@ union SceneObject {
         u16 unk12;
         u32 unk14;
     } *sprite;
+
+    // [TYPE 1] Sprite with a pointer XY position.
     struct SceneSpriteVecXY {
         u8 type;
         s8 poolID;
@@ -167,6 +180,8 @@ union SceneObject {
         u16 unk14;
         u32 unk18;
     } *spriteVecXY;
+
+    // [TYPE 2] Text Sprite, written with a Bitmap Font.
     struct SceneText {
         u8 type;
         s8 poolID;
@@ -183,6 +198,7 @@ union SceneObject {
     } *text;
 };
 
+// SceneObject rendering task.
 struct SceneObjectRenderer {
     struct SpriteHandler *spriteHandler;
     struct BitmapFontOBJ *bitmapFontOBJ;
@@ -190,6 +206,7 @@ struct SceneObjectRenderer {
     s16 *spritePool;
 };
 
+// Values for the SceneObject "type" field.
 enum SceneObjectTypesEnum {
     SCENE_OBJECT_TYPE_IMM_XY,
     SCENE_OBJECT_TYPE_VEC_XY,
@@ -199,7 +216,7 @@ enum SceneObjectTypesEnum {
 
 extern void import_scene_object(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject object, s16 *spritePool); // Render SceneObject
 extern u32 import_all_scene_objects(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool); // Render All SceneObjects
-extern void set_scene_object_current_text_id(u32 textID); // Set D_03004ae8
+extern void set_scene_object_current_text_id(u32 textID); // Set sSceneTextCurrentStringId
 extern struct SceneObjectRenderer *init_scene_object_importer(struct SceneObjectRenderer *inputs); // Init. SceneObjectRenderer Task
 extern u32 update_scene_object_importer(struct SceneObjectRenderer *info); // Update SceneObjectRenderer Task
 extern s32 start_new_scene_object_importer(u16 memID, struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool); // Start New SceneObjectRenderer Task

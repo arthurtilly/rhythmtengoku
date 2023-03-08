@@ -3,7 +3,7 @@
 #include "src/bitmap_font.h"
 
 
-/* Font Definitions */
+/* FONT DEFINITIONS */
 
 
 // WarioWare Display Font: Large
@@ -12,24 +12,24 @@ extern const u8 warioware_outline_large_numeral_wide_glyphs_bin[]; // Textures -
 extern const u8 warioware_outline_large_numeral_narrow_glyphs_bin[]; // Textures - Arabic Numerals (Narrow)
 extern const u8 warioware_outline_large_latin_upper_glyphs_bin[]; // Textures - Latin Alphabet (Uppercase)
 extern const u8 warioware_outline_large_latin_lower_glyphs_bin[]; // Textures - Latin Alphabet (Lowercase)
-extern const u8 warioware_outline_large_hiragana_glyphs_bin[]; // Textures - Hiragana Alphabet
-extern const u8 warioware_outline_large_katakana_glyphs_bin[]; // Textures - Katakana Alphabet
+extern const u8 warioware_outline_large_hiragana_glyphs_bin[]; // Textures - Hiragana
+extern const u8 warioware_outline_large_katakana_glyphs_bin[]; // Textures - Katakana
 
 // WarioWare Display Font: Small
 extern const u8 warioware_outline_small_symbol_glyphs_bin[]; // Textures - Punctuation/Symbols
 extern const u8 warioware_outline_small_numeral_glyphs_bin[]; // Textures - Arabic Numerals
 extern const u8 warioware_outline_small_latin_upper_glyphs_bin[]; // Textures - Latin Alphabet (Uppercase)
 extern const u8 warioware_outline_small_latin_lower_glyphs_bin[]; // Textures - Latin Alphabet (Lowercase)
-extern const u8 warioware_outline_small_hiragana_glyphs_bin[]; // Textures - Hiragana Alphabet
-extern const u8 warioware_outline_small_katakana_glyphs_bin[]; // Textures - Katakana Alphabet
+extern const u8 warioware_outline_small_hiragana_glyphs_bin[]; // Textures - Hiragana
+extern const u8 warioware_outline_small_katakana_glyphs_bin[]; // Textures - Katakana
 
 // WarioWare Body Font: Text
 extern const u8 warioware_body_text_symbol_glyphs_bin[]; // Textures - Punctuation/Symbols
 extern const u8 warioware_body_text_numeral_glyphs_bin[]; // Textures - Arabic Numerals
 extern const u8 warioware_body_text_latin_upper_glyphs_bin[]; // Textures - Latin Alphabet (Uppercase)
 extern const u8 warioware_body_text_latin_lower_glyphs_bin[]; // Textures - Latin Alphabet (Lowercase)
-extern const u8 warioware_body_text_hiragana_glyphs_bin[]; // Textures - Hiragana Alphabet
-extern const u8 warioware_body_text_katakana_glyphs_bin[]; // Textures - Katakana Alphabet
+extern const u8 warioware_body_text_hiragana_glyphs_bin[]; // Textures - Hiragana
+extern const u8 warioware_body_text_katakana_glyphs_bin[]; // Textures - Katakana
 
 // WarioWare Body Font: Icon
 extern const u8 warioware_body_icon_numeral_glyphs_bin[]; // Textures - Arabic Numerals
@@ -68,7 +68,7 @@ u8 bitmap_font_warioware_outline_large_latin_lower_widths[] = {
      8,  8,  8,  8,  8,  8,  8,  8,  8,  8
 };
 
-// [D_089de3b2] Display Font (Large) - Hiragana Alphabet
+// [D_089de3b2] Display Font (Large) - Hiragana
 u8 bitmap_font_warioware_outline_large_hiragana_widths[] = {
     15, 16, 14, 16, 12, 15, 13, 15, 15, 15, 16, 16, 15, 16, 13, 15,
     16, 16, 15, 16, 15, 16, 15, 15, 15, 16, 16, 16, 15, 16, 16, 16,
@@ -78,7 +78,7 @@ u8 bitmap_font_warioware_outline_large_hiragana_widths[] = {
     16, 15, 16, 16, 14, 14,  0,  0,  0,  0,  0,  0,  0,  0
 };
 
-// [D_089de410] Display Font (Large) - Katakana Alphabet
+// [D_089de410] Display Font (Large) - Katakana
 u8 bitmap_font_warioware_outline_large_katakana_widths[] = {
     14, 16, 13, 16, 13, 16, 14, 16, 13, 16, 16, 16, 16, 16, 15, 16,
     16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 15, 16,
@@ -116,7 +116,7 @@ u8 bitmap_font_warioware_outline_small_latin_lower_widths[] = {
      8,  7,  8,  7,  8,  8,  8,  8,  8,  8
 };
 
-// [D_089de50a] Display Font (Small) - Hiragana Alphabet
+// [D_089de50a] Display Font (Small) - Hiragana
 u8 bitmap_font_warioware_outline_small_hiragana_widths[] = {
     11, 12, 10, 12,  9, 10, 10, 13, 11, 13, 12, 12, 11, 12,  8, 12,
     12, 12, 12, 12, 12, 12, 10, 11, 12, 12, 12, 12, 12, 12, 12, 12,
@@ -126,7 +126,7 @@ u8 bitmap_font_warioware_outline_small_hiragana_widths[] = {
     11, 11, 12, 12,  9,  9,  0,  0,  0,  0,  0,  0,  0,  0
 };
 
-// [D_089de568] Display Font (Small) - Katakana Alphabet
+// [D_089de568] Display Font (Small) - Katakana
 u8 bitmap_font_warioware_outline_small_katakana_widths[] = {
      9, 12,  8, 11,  9, 12, 10, 12,  9, 12, 12, 12, 12, 12, 12, 12,
     12, 12, 11, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12,
@@ -159,10 +159,10 @@ struct BitmapFontData bitmap_font_warioware_outline[] = {
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
             /* Textures */ warioware_outline_large_latin_lower_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_latin_lower_widths,
-        /* GLYPHS: HIRAGANA ALPHABET */
+        /* GLYPHS: HIRAGANA */
             /* Textures */ warioware_outline_large_hiragana_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_hiragana_widths,
-        /* GLYPHS: KATAKANA ALPHABET */
+        /* GLYPHS: KATAKANA */
             /* Textures */ warioware_outline_large_katakana_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_katakana_widths,
     },
@@ -187,10 +187,10 @@ struct BitmapFontData bitmap_font_warioware_outline[] = {
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
             /* Textures */ warioware_outline_small_latin_lower_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_small_latin_lower_widths,
-        /* GLYPHS: HIRAGANA ALPHABET */
+        /* GLYPHS: HIRAGANA */
             /* Textures */ warioware_outline_small_hiragana_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_small_hiragana_widths,
-        /* GLYPHS: KATAKANA ALPHABET */
+        /* GLYPHS: KATAKANA */
             /* Textures */ warioware_outline_small_katakana_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_small_katakana_widths,
     },
@@ -215,10 +215,10 @@ struct BitmapFontData bitmap_font_warioware_outline[] = {
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
             /* Textures */ warioware_outline_large_latin_lower_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_latin_lower_widths,
-        /* GLYPHS: HIRAGANA ALPHABET */
+        /* GLYPHS: HIRAGANA */
             /* Textures */ warioware_outline_large_hiragana_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_hiragana_widths,
-        /* GLYPHS: KATAKANA ALPHABET */
+        /* GLYPHS: KATAKANA */
             /* Textures */ warioware_outline_large_katakana_glyphs_bin,
             /* Widths   */ bitmap_font_warioware_outline_large_katakana_widths,
     }
@@ -246,10 +246,10 @@ struct BitmapFontData bitmap_font_warioware_body[] = {
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
             /* Textures */ warioware_body_text_latin_lower_glyphs_bin,
             /* Widths   */ NULL,
-        /* GLYPHS: HIRAGANA ALPHABET */
+        /* GLYPHS: HIRAGANA */
             /* Textures */ warioware_body_text_hiragana_glyphs_bin,
             /* Widths   */ NULL,
-        /* GLYPHS: KATAKANA ALPHABET */
+        /* GLYPHS: KATAKANA */
             /* Textures */ warioware_body_text_katakana_glyphs_bin,
             /* Widths   */ NULL,
     },
@@ -274,10 +274,10 @@ struct BitmapFontData bitmap_font_warioware_body[] = {
         /* GLYPHS: LATIN ALPHABET (LOWERCASE) */
             /* Textures */ warioware_body_text_latin_lower_glyphs_bin,
             /* Widths   */ NULL,
-        /* GLYPHS: HIRAGANA ALPHABET */
+        /* GLYPHS: HIRAGANA */
             /* Textures */ warioware_body_text_hiragana_glyphs_bin,
             /* Widths   */ NULL,
-        /* GLYPHS: KATAKANA ALPHABET */
+        /* GLYPHS: KATAKANA */
             /* Textures */ warioware_body_text_katakana_glyphs_bin,
             /* Widths   */ NULL,
     }
