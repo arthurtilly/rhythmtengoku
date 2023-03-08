@@ -8,7 +8,7 @@
 // Engine Types:
 struct RapMenInfo {
     u8 version;
-    struct TextObject1 *unk4;
+    struct BitmapFontOBJ *unk4;
     s16 rapperSprite;
     s16 playerSprite;
     s16 textSprite;

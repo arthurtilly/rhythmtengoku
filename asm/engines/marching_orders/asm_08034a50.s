@@ -29,7 +29,7 @@ branch_08034a80: \n\
 /* 08034a84 */ LDR R0, [R0, 0x4] \n\
 /* 08034a86 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 08034a88 */ MOVS R3, 0xC @ Set R3 to 0xC \n\
-/* 08034a8a */ BL func_08004b98 \n\
+/* 08034a8a */ BL bmp_font_obj_print_c \n\
 /* 08034a8e */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 08034a90 */ LDR R1, [R4] \n\
 /* 08034a92 */ LDR R0, [R1, 0x4] \n\

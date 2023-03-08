@@ -26,7 +26,7 @@ branch_0802c178: \n\
 /* 0802c17c */ LDR R0, [R0] \n\
 /* 0802c17e */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0802c180 */ MOVS R3, 0xC @ Set R3 to 0xC \n\
-/* 0802c182 */ BL func_08004b98 \n\
+/* 0802c182 */ BL bmp_font_obj_print_c \n\
 /* 0802c186 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 0802c188 */ LDR R1, [R4] \n\
 /* 0802c18a */ LDR R0, [R1] \n\

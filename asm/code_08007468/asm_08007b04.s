@@ -15,7 +15,7 @@ thumb_func_start func_08007b04 \n\
 /* 08007b16 */ BL func_0804ddb0 \n\
 /* 08007b1a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08007b1c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08007b1e */ BL func_08004d44 \n\
+/* 08007b1e */ BL bmp_font_obj_delete_printed_anim \n\
  \n\
 branch_08007b22: \n\
 /* 08007b22 */ POP {R4} \n\

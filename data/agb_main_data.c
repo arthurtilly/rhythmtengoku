@@ -15,10 +15,10 @@ struct Scene *D_08935fb0 = &D_089dd47c;
 /* MEMORY */
 
 // [D_08935fb4]
-s32 *D_08935fb4 = (s32 *)CartRAMBase;
+u8 *save_memory_base = (u8 *)CartRAMBase;
 
 // [D_08935fb8]
-s32 *D_08935fb8 = (s32 *)(CartRAMBase + 0x4000);
+u8 *backup_save_memory_base = (u8 *)(CartRAMBase + 0x4000);
 
 // [D_08935fbc]
 char D_08935fbc[8] = "RIQ";

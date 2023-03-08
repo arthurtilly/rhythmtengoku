@@ -79,9 +79,9 @@ D_03004220 = 0x03004220;
 D_03004248 = 0x03004248;
 
 /* SRAM Library */
-D_030042d8 = 0x030042d8;
-D_03004378 = 0x03004378;
-D_030043f8 = 0x030043f8;
+verify_sram_fast_code = 0x030042d8;
+read_sram_fast_code = 0x03004378;
+write_int_sram_fast_code = 0x030043f8;
 
 /* Sprite Library */
 D_03004428 = 0x03004428;
@@ -113,7 +113,7 @@ D_030046c0 = 0x030046c0;
 D_03004ac0 = 0x03004ac0;
 D_03004ad0 = 0x03004ad0;
 D_03004ae4 = 0x03004ae4;
-D_03004ae8 = 0x03004ae8;
+sSceneTextCurrentStringId = 0x03004ae8;
 D_03004aec = 0x03004aec;
 D_03004af0 = 0x03004af0;
 D_03004af4 = 0x03004af4;
@@ -191,9 +191,9 @@ D_030064c0 = 0x030064c0;
 D_030064c4 = 0x030064c4;
 
 /* SRAM Library */
-D_030064c8 = 0x030064c8;
-D_030064cc = 0x030064cc;
-D_030064d0 = 0x030064d0;
+read_sram_fast = 0x030064c8;
+write_int_sram_fast = 0x030064cc;
+verify_sram_fast = 0x030064d0;
 
 /* Sprite Library */
 D_030064d4 = 0x030064d4;
@@ -201,31 +201,6 @@ D_030064d4 = 0x030064d4;
 
 /* ROM START */
 
-/* bindata_088a0650 */
-/* 0x088a0650 is .rodata section of the SRAM library */
-
-/* Font Textures */ /* Uncompressed */
-D_088cc2e8 = 0x088cc2e8;
-D_088ccfe8 = 0x088ccfe8;
-D_088cdce8 = 0x088cdce8;
-D_088d0be8 = 0x088d0be8;
-D_088d3ae8 = 0x088d3ae8;
-D_088d3fe8 = 0x088d3fe8;
-D_088d44e8 = 0x088d44e8;
-D_088d73e8 = 0x088d73e8;
-D_088d7a68 = 0x088d7a68;
-D_088d80e8 = 0x088d80e8;
-D_088d9868 = 0x088d9868;
-D_088dafe8 = 0x088dafe8;
-D_088db268 = 0x088db268;
-D_088dc9e8 = 0x088dc9e8;
-D_088dd6e8 = 0x088dd6e8;
-D_088de3e8 = 0x088de3e8;
-D_088e12e8 = 0x088e12e8;
-D_088e41e8 = 0x088e41e8;
-D_088e46e8 = 0x088e46e8;
-D_088e75e8 = 0x088e75e8;
-D_088e7c68 = 0x088e7c68;
 /* Main Menu - Options Animations */
 D_088f5aec = 0x088f5aec;
 D_088f5afc = 0x088f5afc;
@@ -1249,22 +1224,6 @@ D_089de244 = 0x089de244;
 D_089de250 = 0x089de250;
 D_089de254 = 0x089de254;
 D_089de2cc = 0x089de2cc;
-/* Wario Font Definitions */
-D_089de30c = 0x089de30c;
-D_089de36a = 0x089de36a;
-D_089de374 = 0x089de374;
-D_089de37e = 0x089de37e;
-D_089de398 = 0x089de398;
-D_089de3b2 = 0x089de3b2;
-D_089de410 = 0x089de410;
-D_089de46e = 0x089de46e;
-D_089de4cc = 0x089de4cc;
-D_089de4d6 = 0x089de4d6;
-D_089de4f0 = 0x089de4f0;
-D_089de50a = 0x089de50a;
-D_089de568 = 0x089de568;
-D_089de5c8 = 0x089de5c8;
-D_089de670 = 0x089de670;
 
 /* Rhythm Game Scripts */
 D_089edf48 = 0x089edf48;

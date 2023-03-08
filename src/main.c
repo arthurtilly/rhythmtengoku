@@ -1,6 +1,7 @@
 #include "main.h"
 #include "memory.h"
 #include "code_08003980.h"
+#include "bitmap_font.h"
 #include "memory_heap.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
@@ -42,17 +43,17 @@ void func_08000224(void) {
 	func_080073f0();
 	text_printer_init();
 	func_0800861c();
-	func_08000804();
-	if (func_080008bc() != 0) {
-		if (func_080008d0() != 0) {
-			func_0800081c();
+	init_save_buffer();
+	if (copy_sram_to_save_buffer() != 0) {
+		if (copy_sram_backup_to_save_buffer() != 0) {
+			clear_save_data();
 		} else {
-			func_080009a0();
+			flush_save_buffer_to_sram();
 		}
 	}
-	func_080009b4();
+	flush_save_buffer_to_sram_backup();
 	func_080029d8(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
-	func_0800584c(func_0800c490());
+	set_scene_object_current_text_id(func_0800c490());
 	init_scene_static_var(); // Initialise Scenes
 	func_08001360();
 	func_08009150();

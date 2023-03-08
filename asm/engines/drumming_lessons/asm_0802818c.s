@@ -23,7 +23,7 @@ thumb_func_start func_0802818c \n\
 /* 080281ae */ ANDS R3, R1 @ Set R3 to R3 & R1 \n\
 /* 080281b0 */ ORRS R0, R3 @ Set R0 to R0 | R3 \n\
 /* 080281b2 */ STR R0, [R4] \n\
-/* 080281b4 */ BL func_08010478 \n\
+/* 080281b4 */ BL write_game_save_data \n\
 /* 080281b8 */ POP {R4} \n\
 /* 080281ba */ POP {R0} \n\
 /* 080281bc */ BX R0 \n\

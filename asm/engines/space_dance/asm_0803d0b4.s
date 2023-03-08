@@ -61,7 +61,7 @@ branch_0803d11a: \n\
 /* 0803d122 */ LDR R1, =D_0805a8b8 \n\
 /* 0803d124 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0803d126 */ MOVS R3, 0xF @ Set R3 to 0xF \n\
-/* 0803d128 */ BL func_08004c0c \n\
+/* 0803d128 */ BL bmp_font_obj_print_l \n\
 /* 0803d12c */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803d12e */ LDR R4, =D_03005380 \n\
 /* 0803d130 */ LDR R0, [R4] \n\

@@ -25,7 +25,7 @@ thumb_func_start func_080061d0 \n\
 /* 080061f6 */ STR R7, [SP, 0x8] \n\
 /* 080061f8 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080061fa */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 080061fc */ BL func_080055fc \n\
+/* 080061fc */ BL start_bmp_font_bg_printer_task \n\
 /* 08006200 */ ADD SP, 0xC \n\
 /* 08006202 */ POP {R3} \n\
 /* 08006204 */ MOV R8, R3 @ Set R8 to R3 \n\

@@ -3,7 +3,7 @@
 
 #include "src/main.h"
 #include "src/code_08001360.h"
-#include "src/code_08003980.h"
+#include "src/bitmap_font.h"
 #include "src/memory_heap.h"
 #include "src/code_080068f8.h"
 #include "src/code_08007468.h"
@@ -12,7 +12,7 @@
 #include "gameplay.h"
 #include "src/lib_0804ca80.h"
 
-extern const struct FontDefinition D_089de670;
+extern const struct BitmapFontData bitmap_font_warioware_body;
 extern struct Scene D_089ddbcc; // Debug Menu Script
 extern struct Scene D_089cdf08; // Game Select Script
 extern struct Scene D_089d7964; // Results (Score) Script
@@ -79,9 +79,9 @@ void func_080124d0(u32 unused) {
     tempScene = func_0800061c();
     func_08007324(FALSE);
     func_080073f0();
-    gMainMenuInfo->font2 = func_08005124(get_current_mem_id(), &D_089de670, 0, 0x340, 6);
+    gMainMenuInfo->font2 = create_new_bmp_font_bg(get_current_mem_id(), &bitmap_font_warioware_body, 0, 0x340, 6);
     gMainMenuInfo->font1 = func_0800c660(0x300, 4);
-    func_08005814(D_03005380, gMainMenuInfo->font1, D_089cdc40, D_0300558c);
+    import_all_scene_objects(D_03005380, gMainMenuInfo->font1, D_089cdc40, D_0300558c);
     func_08012494();
     func_0804d160(D_03005380, D_0890a3c4, 0, 120, 64, 0x6e, 1, 0, 0);
 
@@ -99,7 +99,7 @@ void func_080124d0(u32 unused) {
     gMainMenuInfo->unk1A = (tempScene != NULL);
     gMainMenuInfo->loadingOptionsMenu = FALSE;
     func_08000584(&D_089ddbcc);
-    func_080009a0();
+    flush_save_buffer_to_sram();
 }
 
 

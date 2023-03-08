@@ -25,7 +25,7 @@ thumb_func_start func_0800e7e8 \n\
 /* 0800e810 */ BL func_0804d504 \n\
 /* 0800e814 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0800e816 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 0800e818 */ BL func_08004d44 \n\
+/* 0800e818 */ BL bmp_font_obj_delete_printed_anim \n\
 /* 0800e81c */ LDR R1, [R6, 0xC] \n\
 /* 0800e81e */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0800e820 */ NEGS R2, R2 @ Set R2 to -R2 \n\

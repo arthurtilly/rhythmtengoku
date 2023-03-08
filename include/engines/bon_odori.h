@@ -16,7 +16,7 @@ struct BonOdoriText {
 
 struct BonOdoriInfo {
     u8 version;
-    struct TextObject1 *unk4;
+    struct BitmapFontOBJ *unk4;
     struct BonOdoriText lyrics[4];
     u8 currentLyric;
     s16 lyricsX;

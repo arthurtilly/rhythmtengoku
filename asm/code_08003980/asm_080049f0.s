@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080049f0 \n\
+thumb_func_start bmp_font_obj_print_text \n\
 /* 080049f0 */ PUSH {R4-R7, LR} \n\
 /* 080049f2 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 080049f4 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -27,7 +27,7 @@ thumb_func_start func_080049f0 \n\
  \n\
 branch_08004a1c: \n\
 /* 08004a1c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08004a1e */ BL func_080045fc \n\
+/* 08004a1e */ BL bmp_font_obj_get_anim_total \n\
 /* 08004a22 */ LSLS R1, R0, 0x1 \n\
 /* 08004a24 */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 08004a26 */ LSLS R1, R1, 0x1 \n\
@@ -39,7 +39,7 @@ branch_08004a1c: \n\
 /* 08004a34 */ ADDS R0, 0x10 @ Add 0x10 to R0 \n\
 /* 08004a36 */ STR R0, [SP, 0x8] \n\
 /* 08004a38 */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
-/* 08004a3a */ LDR R1, =D_030008b0 \n\
+/* 08004a3a */ LDR R1, =sObjFontStyle \n\
 /* 08004a3c */ STRB R5, [R1] \n\
 /* 08004a3e */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08004a40 */ STRH R6, [R2, 0x10] \n\
@@ -54,7 +54,7 @@ branch_08004a4e: \n\
 /* 08004a4e */ CMP R0, 0x2E @ Compare R0 and 0x2E \n\
 /* 08004a50 */ BNE branch_08004a64 \n\
 /* 08004a52 */ LDRB R0, [R4, 0x1] \n\
-/* 08004a54 */ BL func_0800467c \n\
+/* 08004a54 */ BL bmp_font_obj_parse_hex_digit \n\
 /* 08004a58 */ LSLS R0, R0, 0x18 \n\
 /* 08004a5a */ LSRS R0, R0, 0x18 \n\
 /* 08004a5c */ STR R0, [SP, 0x30] \n\
@@ -66,7 +66,7 @@ branch_08004a64: \n\
 /* 08004a64 */ CMP R0, 0x3A @ Compare R0 and 0x3A \n\
 /* 08004a66 */ BNE branch_08004a74 \n\
 /* 08004a68 */ LDRB R0, [R4, 0x1] \n\
-/* 08004a6a */ BL func_0800467c \n\
+/* 08004a6a */ BL bmp_font_obj_parse_hex_digit \n\
 /* 08004a6e */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 08004a70 */ STRB R0, [R1] \n\
 /* 08004a72 */ B branch_08004b24 \n\
@@ -89,7 +89,7 @@ branch_08004a74: \n\
  \n\
 branch_08004a90: \n\
 /* 08004a90 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08004a92 */ BL func_0800496c \n\
+/* 08004a92 */ BL bmp_font_obj_glyph_is_whitespace \n\
 /* 08004a96 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08004a98 */ BEQ branch_08004ab0 \n\
 /* 08004a9a */ MOV R2, R10 @ Set R2 to R10 \n\
@@ -108,14 +108,14 @@ branch_08004ab0: \n\
 /* 08004ab0 */ MOV R0, R8 @ Set R0 to R8 \n\
 /* 08004ab2 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08004ab4 */ MOV R2, SP @ Set R2 to SP \n\
-/* 08004ab6 */ BL func_0800477c \n\
+/* 08004ab6 */ BL bmp_font_obj_print_glyph \n\
 /* 08004aba */ LSLS R0, R0, 0x10 \n\
 /* 08004abc */ LSRS R5, R0, 0x10 \n\
 /* 08004abe */ LDR R0, =0xffff \n\
 /* 08004ac0 */ CMP R5, R0 @ Check R5 - R0 \n\
 /* 08004ac2 */ BEQ branch_08004b2c \n\
 /* 08004ac4 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08004ac6 */ BL func_080049a0 \n\
+/* 08004ac6 */ BL bmp_font_obj_get_latin_glyph_type \n\
 /* 08004aca */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08004acc */ BEQ branch_08004ae8 \n\
 /* 08004ace */ MOV R1, R10 @ Set R1 to R10 \n\
@@ -155,7 +155,7 @@ branch_08004aea: \n\
 /* 08004b0c */ LDR R2, [SP, 0xC] \n\
 /* 08004b0e */ CMP R2, 0x3F @ Compare R2 and 0x3F \n\
 /* 08004b10 */ BHI branch_08004b1c \n\
-/* 08004b12 */ LDR R0, =D_030008b8 \n\
+/* 08004b12 */ LDR R0, =sObjStringGlyphWidths \n\
 /* 08004b14 */ ADDS R0, R2, R0 @ Set R0 to R2 + R0 \n\
 /* 08004b16 */ STRB R1, [R0] \n\
 /* 08004b18 */ ADDS R2, 0x1 @ Add 0x1 to R2 \n\

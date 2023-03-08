@@ -204,7 +204,7 @@ branch_08016780: \n\
 /* 080167be */ STR R1, [R0] \n\
 /* 080167c0 */ LDR R0, [R2, 0xC] \n\
 /* 080167c2 */ BL func_080029d8 \n\
-/* 080167c6 */ BL func_08010478 \n\
+/* 080167c6 */ BL write_game_save_data \n\
 /* 080167ca */ B branch_08016814 \n\
 \n\
 .ltorg \n\

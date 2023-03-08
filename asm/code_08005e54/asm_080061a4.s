@@ -19,7 +19,7 @@ thumb_func_start func_080061a4 \n\
 /* 080061be */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 080061c0 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 080061c2 */ ADDS R3, R7, 0x0 @ Set R3 to R7 + 0x0 \n\
-/* 080061c4 */ BL func_0800536c \n\
+/* 080061c4 */ BL bmp_font_bg_print_text \n\
 /* 080061c8 */ ADD SP, 0x4 \n\
 /* 080061ca */ POP {R4-R7} \n\
 /* 080061cc */ POP {R0} \n\

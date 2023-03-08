@@ -4,7 +4,7 @@
 #include "src/main.h"
 #include "src/memory.h"
 #include "src/code_08001360.h"
-#include "src/code_08003980.h"
+#include "src/bitmap_font.h"
 #include "src/memory_heap.h"
 #include "src/code_08007468.h"
 #include "src/text_printer.h"
@@ -39,7 +39,7 @@ extern struct Scene D_089d7c18; // Results (Epilogue)
 extern struct Scene D_089d7964; // Results (Score-Type)
 extern struct Scene D_089cdf08; // Game Select
 
-extern const struct FontDefinition D_089de670;
+extern const struct BitmapFontData bitmap_font_warioware_body;
 
 static s32 D_0300132c; // unknown type, unknown if exists
 static s32 D_03001330; // unknown type
@@ -106,7 +106,7 @@ void func_08018a80(void) {
 void func_08018aa0(s32 arg) {
     func_08007324(FALSE);
     func_080073f0();
-    gResultsInfo->textObj2 = func_08005124(get_current_mem_id(), &D_089de670, 0, 0x340, 6);
+    gResultsInfo->textObj2 = create_new_bmp_font_bg(get_current_mem_id(), &bitmap_font_warioware_body, 0, 0x340, 6);
     gResultsInfo->textObj1 = func_0800c660(0x300, 4);
     dma3_fill(0, RESULTS_TEXT_TILES_ADDRESS, 0x4000, 0x20, 0x200);
     gResultsInfo->unk24 = 0;
@@ -272,7 +272,7 @@ void func_080191bc(u32 level) {
     if (gameID >= 0)
         D_030046a8->data.unk190[gameID]++;
 
-    func_080009a0();
+    flush_save_buffer_to_sram();
 }
 
 

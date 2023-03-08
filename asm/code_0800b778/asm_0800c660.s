@@ -13,10 +13,10 @@ thumb_func_start func_0800c660 \n\
 /* 0800c66e */ BL get_current_mem_id \n\
 /* 0800c672 */ LSLS R0, R0, 0x10 \n\
 /* 0800c674 */ LSRS R0, R0, 0x10 \n\
-/* 0800c676 */ LDR R1, =D_089de5c8 \n\
+/* 0800c676 */ LDR R1, =bitmap_font_warioware_outline \n\
 /* 0800c678 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 0800c67a */ ADDS R3, R5, 0x0 @ Set R3 to R5 + 0x0 \n\
-/* 0800c67c */ BL func_08004508 \n\
+/* 0800c67c */ BL create_new_bmp_font_obj \n\
 /* 0800c680 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0800c682 */ BL func_0800f09c \n\
 /* 0800c686 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\

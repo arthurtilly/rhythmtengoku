@@ -15,7 +15,7 @@ thumb_func_start func_0801dcb0 \n\
 /* 0801dcc6 */ LDR R1, =D_089dd908 \n\
 /* 0801dcc8 */ BL func_080081a8 \n\
 /* 0801dccc */ LDR R0, [R5, 0x8] \n\
-/* 0801dcce */ BL func_08005640 \n\
+/* 0801dcce */ BL bmp_font_bg_get_total_printable_chars \n\
 /* 0801dcd2 */ STRH R0, [R5, 0x18] \n\
 /* 0801dcd4 */ LDR R0, =0xffff \n\
 /* 0801dcd6 */ STRH R0, [R5, 0x1A] \n\
@@ -28,7 +28,7 @@ thumb_func_start func_0801dcb0 \n\
 /* 0801dce4 */ STR R1, [SP] \n\
 /* 0801dce6 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0801dce8 */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
-/* 0801dcea */ BL func_0800536c \n\
+/* 0801dcea */ BL bmp_font_bg_print_text \n\
 /* 0801dcee */ LDRH R3, [R4] \n\
 /* 0801dcf0 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801dcf2 */ ADDS R0, 0x40 @ Add 0x40 to R0 \n\
@@ -61,7 +61,7 @@ branch_0801dcfe: \n\
 /* 0801dd26 */ STR R4, [SP, 0x4] \n\
 /* 0801dd28 */ MOVS R4, 0x1 @ Set R4 to 0x1 \n\
 /* 0801dd2a */ STR R4, [SP, 0x8] \n\
-/* 0801dd2c */ BL func_080055fc \n\
+/* 0801dd2c */ BL start_bmp_font_bg_printer_task \n\
 /* 0801dd30 */ STR R0, [R5, 0x20] \n\
 /* 0801dd32 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0801dd34 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

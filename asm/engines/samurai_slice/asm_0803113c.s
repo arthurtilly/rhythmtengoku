@@ -18,7 +18,7 @@ thumb_func_start func_0803113c \n\
 /* 08031156 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 08031158 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0803115a */ MOVS R3, 0xC @ Set R3 to 0xC \n\
-/* 0803115c */ BL func_08004b98 \n\
+/* 0803115c */ BL bmp_font_obj_print_c \n\
 /* 08031160 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08031162 */ LDR R0, =D_03005380 \n\
 /* 08031164 */ LDR R0, [R0] \n\

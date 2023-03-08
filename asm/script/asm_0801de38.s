@@ -17,7 +17,7 @@ thumb_func_start func_0801de38 \n\
  \n\
 branch_0801de52: \n\
 /* 0801de52 */ LDR R0, [R4] \n\
-/* 0801de54 */ BL func_080051c4 \n\
+/* 0801de54 */ BL bmp_font_bg_clear_print_data \n\
 /* 0801de58 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801de5a */ STRB R0, [R4, 0x4] \n\
 /* 0801de5c */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\

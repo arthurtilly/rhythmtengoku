@@ -11,6 +11,7 @@ SECTIONS {
         build/src/memory.c.o(.bss);
 		build/src/code_08001360.c.o(.bss);
 		build/src/code_08003980.c.o(.bss);
+		build/src/bitmap_font.c.o(.bss);
 		build/src/task_pool.c.o(.bss);
 		build/src/code_08005e54.c.o(.bss);
 		build/src/memory_heap.c.o(.bss);
@@ -126,9 +127,10 @@ SECTIONS {
         build/asm/boot.s.o(.text);
         build/src/main.c.o(.text);
         build/src/memory.c.o(.text);
-        build/asm/code_08000a00.s.o(.text)
+        build/asm/code_08000a00.s.o(.text);
         build/src/code_08001360.c.o(.text);
         build/src/code_08003980.c.o(.text);
+        build/src/bitmap_font.c.o(.text);
         build/src/task_pool.c.o(.text);
         build/src/code_08005e54.c.o(.text);
         build/src/memory_heap.c.o(.text);
@@ -239,7 +241,7 @@ SECTIONS {
         build/asm/lib_080482e0.s.o(.text);
         build/src/lib_08049144.c.o(.text);
         build/asm/libagbsyscall.s.o(.text);
-        build/src/lib_0804c870.c.o(.text);
+        build/src/lib_sram.c.o(.text);
         build/src/lib_0804ca80.c.o(.text);
         build/asm/lib_0804e418.s.o(.text);
         build/src/lib_0804e564.c.o(.text);
@@ -1323,7 +1325,7 @@ SECTIONS {
         build/audio/samples/sfx_961.pcm.o(.rodata*);
         build/audio/samples/sfx_962.pcm.o(.rodata*);
 
-        build/bin/bindata_sram_info.bin.o(.rodata*);
+        build/data/lib_sram_data.c.o(.rodata);
 
         build/games/sneaky_spirits/graphics/sneaky_spirits_anim.c.o(.data);
         build/games/sneaky_spirits/graphics/sneaky_spirits_pal.c.o(.data);
@@ -1444,7 +1446,27 @@ SECTIONS {
         build/games/showtime/graphics/showtime_pal.c.o(.data);
         build/games/bouncy_road/graphics/bouncy_road_anim.c.o(.data);
         build/games/bouncy_road/graphics/bouncy_road_pal.c.o(.data);
-        build/graphics/font/font_tiles_088cc2e8.bin.o(.rodata*);
+        build/graphics/font/warioware_outline_large_latin_upper_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_outline_large_latin_lower_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_outline_large_hiragana_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_outline_large_katakana_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_outline_large_numeral_wide_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_outline_large_numeral_narrow_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_outline_large_symbol_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_body_text_latin_upper_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_body_text_latin_lower_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_body_text_hiragana_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_body_text_katakana_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_body_text_numeral_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_body_text_symbol_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_outline_small_latin_upper_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_outline_small_latin_lower_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_outline_small_hiragana_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_outline_small_katakana_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_outline_small_numeral_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_outline_small_symbol_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_body_icon_latin_upper_glyphs.bin.o(.rodata*);
+        build/graphics/font/warioware_body_icon_numeral_glyphs.bin.o(.rodata*);
         build/games/rhythm_tweezers/graphics/rhythm_tweezers_anim.c.o(.data);
         build/games/rhythm_tweezers/graphics/rhythm_tweezers_pal.c.o(.data);
         build/games/fireworks/graphics/fireworks_anim.c.o(.data);
@@ -1574,6 +1596,7 @@ SECTIONS {
         build/data/math_tables.c.o(.data);
         build/data/data_089363cc.c.o(.data);
 		build/bin/bindata_08936650.bin.o(.rodata*);
+        build/data/bitmap_font_data.c.o(.data);
         build/data/data_08936b54.c.o(.data);
         build/data/sine_table.c.o(.data);
         build/data/text_printer_data.c.o(.data);
@@ -1668,6 +1691,8 @@ SECTIONS {
         build/games/remix_6/remix_6.bs.o(.script.entry);
         build/games/remix_8/remix_8.bs.o(.script.entry);
         build/bin/bindata_089d7518.bin.o(.rodata*);
+
+        build/data/font_definitions.c.o(.data);
 
         build/games/sneaky_spirits/engine.c.o(.data);
         build/games/spaceball/engine.c.o(.data);

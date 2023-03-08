@@ -1,7 +1,7 @@
 #include "engines/fireworks.h"
 
 #include "src/code_08001360.h"
-#include "src/code_08003980.h"
+#include "src/bitmap_font.h"
 #include "src/code_08007468.h"
 #include "src/text_printer.h"
 #include "src/code_0800b778.h"
@@ -62,7 +62,7 @@ void fireworks_init_gfx1(void) {
 // Game Engine Start
 void fireworks_engine_start(u32 version) {
     struct TextPrinter *textPrinter;
-    struct Animation *textAnim;
+    struct PrintedTextAnim *textAnim;
     u8 i;
 
     gFireworksInfo->version = version;
@@ -70,8 +70,8 @@ void fireworks_engine_start(u32 version) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 0);
     gFireworksInfo->unk4 = func_0800c660(0x340, 2);
-    textAnim = func_08004b98(gFireworksInfo->unk4, D_0805a3d0, 1, 15);
-    gFireworksInfo->textSprite = func_0804d160(D_03005380, textAnim, 0, 120, 144, 0x7f7, 0, 0, 0);
+    textAnim = bmp_font_obj_print_c(gFireworksInfo->unk4, D_0805a3d0, 1, 15);
+    gFireworksInfo->textSprite = func_0804d160(D_03005380, textAnim->frames, 0, 120, 144, 0x7f7, 0, 0, 0);
     gFireworksInfo->screenBrightness = 0;
     gFireworksInfo->patternTableNext = 0;
     D_03004b10.BLDMOD = BLDMOD_BG1_SRC | BLDMOD_BLEND_MODE(BLEND_MODE_LIGHTEN);
@@ -648,14 +648,14 @@ void fireworks_common_beat_animation(void) {
 
 // Common Event 1 (Display Text)
 void fireworks_common_display_text(char *text) {
-    struct Animation *textAnim;
+    struct PrintedTextAnim *textAnim;
 
     if (text == NULL) {
         func_0804d770(D_03005380, gFireworksInfo->textSprite, FALSE);
     } else {
-        textAnim = func_08004b98(gFireworksInfo->unk4, text, 1, 12);
+        textAnim = bmp_font_obj_print_c(gFireworksInfo->unk4, text, 1, 12);
         func_08007b04(gFireworksInfo->unk4, gFireworksInfo->textSprite);
-        func_0804d8f8(D_03005380, gFireworksInfo->textSprite, textAnim, 0, 1, 0, 0);
+        func_0804d8f8(D_03005380, gFireworksInfo->textSprite, textAnim->frames, 0, 1, 0, 0);
         func_0804d770(D_03005380, gFireworksInfo->textSprite, TRUE);
     }
 }

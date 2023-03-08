@@ -11,13 +11,13 @@ thumb_func_start func_080115d0 \n\
 /* 080115de */ BL get_current_mem_id \n\
 /* 080115e2 */ LSLS R0, R0, 0x10 \n\
 /* 080115e4 */ LSRS R0, R0, 0x10 \n\
-/* 080115e6 */ LDR R1, =D_089de670 \n\
+/* 080115e6 */ LDR R1, =bitmap_font_warioware_body \n\
 /* 080115e8 */ MOVS R3, 0xD0 @ Set R3 to 0xD0 \n\
 /* 080115ea */ LSLS R3, R3, 0x2 \n\
 /* 080115ec */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 080115ee */ STR R2, [SP] \n\
 /* 080115f0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080115f2 */ BL func_08005124 \n\
+/* 080115f2 */ BL create_new_bmp_font_bg \n\
 /* 080115f6 */ LDR R4, =D_030046a4 \n\
 /* 080115f8 */ LDR R1, [R4] \n\
 /* 080115fa */ STR R0, [R1] \n\
@@ -63,7 +63,7 @@ branch_08011610: \n\
 /* 0801164e */ LDR R2, =D_089cda28 \n\
 /* 08011650 */ LDR R3, =D_0300558c \n\
 /* 08011652 */ LDR R3, [R3] \n\
-/* 08011654 */ BL func_08005814 \n\
+/* 08011654 */ BL import_all_scene_objects \n\
 /* 08011658 */ BL func_080115b0 \n\
 /* 0801165c */ LDR R0, [R4] \n\
 /* 0801165e */ STR R5, [R0, 0x8] \n\

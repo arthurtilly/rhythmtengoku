@@ -92,7 +92,7 @@ extern void *scene_mem_heap_alloc(u32 size); // Allocate Space in Memory Heap
 // extern ? func_0800c654(?);
 // extern ? func_0800c658(?);
 // extern ? func_0800c65c(?);
-extern struct TextObject1 *func_0800c660(u16, u8);
+extern struct BitmapFontOBJ *func_0800c660(u16, u8);
 // extern ? func_0800c694(?);
 // extern ? func_0800c6a4(?);
 // extern ? func_0800c6c8(?);

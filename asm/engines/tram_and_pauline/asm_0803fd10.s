@@ -93,7 +93,7 @@ branch_0803fdb4: \n\
 /* 0803fdc2 */ LDR R1, =D_0805a910 \n\
 /* 0803fdc4 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0803fdc6 */ MOVS R3, 0xF @ Set R3 to 0xF \n\
-/* 0803fdc8 */ BL func_08004b98 \n\
+/* 0803fdc8 */ BL bmp_font_obj_print_c \n\
 /* 0803fdcc */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803fdce */ LDR R4, =D_03005380 \n\
 /* 0803fdd0 */ LDR R0, [R4] \n\

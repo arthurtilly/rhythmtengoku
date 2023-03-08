@@ -1,7 +1,7 @@
 #include "engines/sneaky_spirits.h"
 
 #include "src/code_08001360.h"
-#include "src/code_08003980.h"
+#include "src/bitmap_font.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
 #include "src/scenes/gameplay.h"
@@ -176,7 +176,7 @@ void sneaky_spirits_init_gfx1(void) {
 
 // Game Engine Start
 void sneaky_spirits_engine_start(u32 version) {
-    struct Animation *textAnim;
+    struct PrintedTextAnim *textAnim;
 
     gSneakySpiritsInfo->version = version;
     sneaky_spirits_init_gfx1();
@@ -185,8 +185,8 @@ void sneaky_spirits_engine_start(u32 version) {
     scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, 2);
 
     gSneakySpiritsInfo->unk0 = func_0800c660(0x380, 1);
-    textAnim = func_08004b98(gSneakySpiritsInfo->unk0, D_08059f90, 0, 0);
-    gSneakySpiritsInfo->text = func_0804d160(D_03005380, textAnim, 0, 120, 32, 0, 0, 0, 0);
+    textAnim = bmp_font_obj_print_c(gSneakySpiritsInfo->unk0, D_08059f90, 0, 0);
+    gSneakySpiritsInfo->text = func_0804d160(D_03005380, textAnim->frames, 0, 120, 32, 0, 0, 0, 0);
     sneaky_spirits_init_rain();
 
     gSneakySpiritsInfo->bow = func_0804d160(D_03005380, anim_sneaky_spirits_bow, 0, 210, 128, 0x4800, 0, 0, 0x8000);
@@ -261,15 +261,18 @@ void sneaky_spirits_update_wind_sfx(void) {
 
     if (gSneakySpiritsInfo->rainChannel == NULL) return;
 
-    rainVolume = clamp_int32((INT_TO_FIXED(1.0) - D_030053c0.musicVolume) / 2, 0, 128) + INT_TO_FIXED(0.25);
+    rainVolume = clamp_int32((INT_TO_FIXED(1.0) - D_030053c0.musicVolume) / 2, INT_TO_FIXED(0.0), INT_TO_FIXED(0.5)) + INT_TO_FIXED(0.25);
     set_soundplayer_volume(gSneakySpiritsInfo->rainChannel, rainVolume);
 }
 
 
 // Engine Event 05 (Display Text)
 void sneaky_spirits_display_text(char *string) {
+    struct PrintedTextAnim *textAnim;
+
     func_08007b04(gSneakySpiritsInfo->unk0, gSneakySpiritsInfo->text);
-    func_0804d8f8(D_03005380, gSneakySpiritsInfo->text, func_08004b98(gSneakySpiritsInfo->unk0, string, 1, 0xc), 0, 1, 0, 0);
+    textAnim = bmp_font_obj_print_c(gSneakySpiritsInfo->unk0, string, 1, 0xc);
+    func_0804d8f8(D_03005380, gSneakySpiritsInfo->text, textAnim->frames, 0, 1, 0, 0);
 }
 
 

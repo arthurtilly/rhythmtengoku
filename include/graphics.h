@@ -24,6 +24,50 @@ enum BGLayersEnum {
   //  //  //  OBJECT ANIMATION  //  //  //
 
 
+struct OAM {
+    // Attribute 0
+    u16 yPos:8;
+    u16 affineFlag:1;
+    u16 objDisable:1;
+    u16 objMode:2;
+    u16 objMosaic:1;
+    u16 paletteMode:1;
+    u16 objShape:2;
+
+    // Attribute 1
+    u16 xPos:9;
+    u16 unused:3;
+    u16 hFlip:1;
+    u16 vFlip:1;
+    u16 objSize:2;
+
+    // Attribute 2
+    u16 tileNum:10;
+    u16 priority:2;
+    u16 palette:4;
+};
+
+struct AffineOAM {
+    // Attribute 0
+    u16 yPos:8;
+    u16 affineFlag:1;
+    u16 doubleSize:1;
+    u16 objMode:2;
+    u16 objMosaic:1;
+    u16 paletteMode:1;
+    u16 objShape:2;
+
+    // Attribute 1
+    u16 xPos:9;
+    u16 affineParam:5;
+    u16 objSize:2;
+
+    // Attribute 2
+    u16 tileNum:10;
+    u16 priority:2;
+    u16 palette:4;
+};
+
 typedef u16 AnimationCel;
 
 struct Animation {
@@ -49,47 +93,6 @@ typedef u16 FontPalette[4];
       (((((x) >> 16) & 0xff) >> 3) << 0 )   \
     | (((((x) >> 8 ) & 0xff) >> 3) << 5 )   \
     | (((((x) >> 0 ) & 0xff) >> 3) << 10)
-
-
-  //  //  //  FONT  //  //  //
-
-
-// Read-Only Definition for a Font
-struct FontDefinition {
-    u8 unk0;
-    u8 unk1;
-    u8 unk2;
-    u8 unk3;
-    u8 unk4;
-    u8 *font1Tiles;
-    u8 *font1Map;
-    u8 *font2Tiles;
-    u8 *font2Map;
-    u8 *font3Tiles;
-    u8 *font3Map;
-};
-
-typedef void (*FontFunc)(u8 *, u8 *);
-
-struct TextObject1 {
-    u16 id; // mem_id
-    const struct FontDefinition *data;
-    u16 unk8;
-    u8 length;
-    u16 *unkC; // text..?
-    u8 *unk10; // mapping..?
-    FontFunc unk14; // function
-    void *unk18; // some graphics sort of thing
-};
-
-struct TextObject2 {
-    const struct FontDefinition *data;
-    u16 unk4;
-    u8 unk6;
-    u8 length;
-    u16 *unk8; // text?
-    u8 *unkC; // mapping?
-};
 
 
   //  //  //  GRAPHICS BUFFER  //  //  //

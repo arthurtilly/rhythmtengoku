@@ -3,6 +3,7 @@
 
 .include "include/gba.inc"
 
+@ RLE Decompression
 arm_func_start func_08000a00
     push    {r4, r5, r6, r7, r8, r9, r10, r11, r12, lr}
     mov     r5, #0xff
@@ -90,6 +91,7 @@ _8000b24:   .word D_03005390
 _8000b28:   .word 0
 glabel func_08000a00_end
 
+@ ? (Mathematics)
 arm_func_start func_08000b2c
     mov     r12, r0
     mov     r0, #0
@@ -209,7 +211,8 @@ arm_func_start func_08000b2c
     bx      lr
 glabel func_08000b2c_end
 
-arm_func_start func_08000cfc
+@ Fast Unsigned Division
+arm_func_start fast_udivsi3_rom
     mov     r2, #0
     adcs    r0, r0, r0
     adc     r2, r2, r2
@@ -341,8 +344,9 @@ arm_func_start func_08000cfc
     subcs   r2, r2, r1
     adc     r0, r0, r0
     bx      lr
-glabel func_08000cfc_end
+glabel fast_udivsi3_rom_end
 
+@ Huffman Decompression
 arm_func_start func_08000f08
     push    {r4, r5, r6, r7, r8, r9, r10, r11, r12, lr}
     stmfd   sp!, {r0}
@@ -494,6 +498,7 @@ branch_08001124:
     bx      lr
 glabel func_08000f08_end
 
+@ Memory Heap Allocation
 arm_func_start mem_heap_alloc_block_rom
     stmfd   sp!, {r4}
     mov     r4, #0
@@ -516,6 +521,7 @@ branch_08001164:
     bx      lr
 glabel mem_heap_alloc_block_rom_end
 
+@ Text Printer Glyph Writing
 arm_func_start func_0800116c
     push    {r4, r5, r6, r7, r8, r9, r10, r11, r12, lr}
     ldr     r9, [r0]
@@ -574,6 +580,7 @@ branch_080011f4:
     bx      lr
 glabel func_0800116c_end
 
+@ Palette Interpolation (Two Palettes)
 arm_func_start func_08001240
     push    {r4, r5, r6, r7, r8, r9, r10}
     ldr     r3, [r0]
@@ -596,12 +603,12 @@ branch_0800125c:
     mul     r1, r7, r1
     add     r0, r0, r1, asr #8
     add     r2, r2, r0, lsl #5
-    and     r0, r10, r8, lsr #0xa
-    and     r1, r10, r9, lsr #0xa
+    and     r0, r10, r8, lsr #10
+    and     r1, r10, r9, lsr #10
     sub     r1, r1, r0
     mul     r1, r7, r1
     add     r0, r0, r1, asr #8
-    add     r2, r2, r0, lsl #0xa
+    add     r2, r2, r0, lsl #10
     strh    r2, [r5], #2
     subs    r6, r6, #1
     bne     branch_0800125c
@@ -609,6 +616,7 @@ branch_0800125c:
     bx      lr
 glabel func_08001240_end
 
+@ Palette Interpolation (Single-Colour Source)
 arm_func_start func_080012bc
     push    {r4, r5, r6, r7, r8, r9, r10}
     ldr     r2, [r0]
@@ -616,9 +624,9 @@ arm_func_start func_080012bc
     ldr     r5, [r0, #8]
     ldr     r6, [r0, #0xc]
     ldr     r7, [r0, #0x10]
-    mov     r10, #0x1f
+    mov     r10, #31
     and     r3, r10, r2, lsr #5
-    and     r8, r10, r2, lsr #0xa
+    and     r8, r10, r2, lsr #10
     and     r2, r10, r2
 branch_080012e4:
     ldrh    r9, [r4], #2
@@ -631,11 +639,11 @@ branch_080012e4:
     mul     r0, r7, r0
     add     r0, r3, r0, asr #8
     add     r1, r1, r0, lsl #5
-    and     r0, r10, r9, lsr #0xa
+    and     r0, r10, r9, lsr #10
     sub     r0, r0, r8
     mul     r0, r7, r0
     add     r0, r8, r0, asr #8
-    add     r1, r1, r0, lsl #0xa
+    add     r1, r1, r0, lsl #10
     strh    r1, [r5], #2
     subs    r6, r6, #1
     bne     branch_080012e4
@@ -643,7 +651,9 @@ branch_080012e4:
     bx      lr
 glabel func_080012bc_end
 
-arm_func_start func_08001334
+@ SRAM Library
+@ Write 32-bit Integers to SRAM
+arm_func_start write_int_sram_fast_rom
     ldr     r12, [r0], #4
     strb    r12, [r1], #1
     lsr     r12, r12, #8
@@ -653,6 +663,8 @@ arm_func_start func_08001334
     lsr     r12, r12, #8
     strb    r12, [r1], #1
     subs    r2, r2, #1
-    bne     func_08001334
+    bne     write_int_sram_fast_rom
     bx      lr
-glabel func_08001334_end
+glabel write_int_sram_fast_rom_end
+
+.end

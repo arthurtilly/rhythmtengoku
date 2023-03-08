@@ -62,7 +62,7 @@ thumb_func_start samurai_slice_engine_start \n\
 /* 08030d30 */ LDR R1, =D_0805a5d0 \n\
 /* 08030d32 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08030d34 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08030d36 */ BL func_08004b98 \n\
+/* 08030d36 */ BL bmp_font_obj_print_c \n\
 /* 08030d3a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08030d3c */ LDR R5, =D_03005380 \n\
 /* 08030d3e */ LDR R0, [R5] \n\

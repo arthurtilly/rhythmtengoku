@@ -218,7 +218,7 @@ branch_08014acc: \n\
 /* 08014b20 */ BL func_08013348 \n\
  \n\
 branch_08014b24: \n\
-/* 08014b24 */ BL func_08010478 \n\
+/* 08014b24 */ BL write_game_save_data \n\
 /* 08014b28 */ LDR R1, [R4] \n\
 /* 08014b2a */ MOVS R3, 0xD0 @ Set R3 to 0xD0 \n\
 /* 08014b2c */ LSLS R3, R3, 0x2 \n\

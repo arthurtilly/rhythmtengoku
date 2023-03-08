@@ -1,5 +1,6 @@
 #include "code_080068f8.h"
 #include "code_08003980.h"
+#include "bitmap_font.h"
 #include "memory_heap.h"
 
 // Can be better split

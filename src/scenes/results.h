@@ -5,8 +5,8 @@
 
 // Scene Types:
 struct ResultsSceneInfo {
-    struct TextObject2 *textObj2;
-    struct TextObject1 *textObj1;
+    struct BitmapFontBG *textObj2;
+    struct BitmapFontOBJ *textObj1;
     u32 awaitingInput;
     u8 finalResultLevel;
     s16 placeholderIcon;

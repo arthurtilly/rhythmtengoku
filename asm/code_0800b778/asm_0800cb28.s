@@ -2342,7 +2342,7 @@ jump_0800dd80: \n\
 /* 0800dd92 */ BL func_0804ddb0 \n\
 /* 0800dd96 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0800dd98 */ LDR R0, [R6] \n\
-/* 0800dd9a */ BL func_08004d44 \n\
+/* 0800dd9a */ BL bmp_font_obj_delete_printed_anim \n\
 /* 0800dd9e */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0800dda0 */ BEQ branch_0800ddb0 \n\
 /* 0800dda2 */ LDR R0, [R5] \n\
@@ -2397,7 +2397,7 @@ jump_0800ddfc: \n\
 /* 0800de02 */ LDR R2, =D_0300558c \n\
 /* 0800de04 */ LDR R3, [R2] \n\
 /* 0800de06 */ MOV R2, R8 @ Set R2 to R8 \n\
-/* 0800de08 */ BL func_08005814 \n\
+/* 0800de08 */ BL import_all_scene_objects \n\
 /* 0800de0c */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -2413,7 +2413,7 @@ jump_0800de18: \n\
 /* 0800de28 */ LDR R3, [R3] \n\
 /* 0800de2a */ STR R3, [SP] \n\
 /* 0800de2c */ MOV R3, R8 @ Set R3 to R8 \n\
-/* 0800de2e */ BL func_080058b0 \n\
+/* 0800de2e */ BL start_new_scene_object_importer \n\
 /* 0800de32 */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -2425,7 +2425,7 @@ jump_0800de3c: \n\
 /* 0800de42 */ LDR R2, =D_0300558c \n\
 /* 0800de44 */ LDR R3, [R2] \n\
 /* 0800de46 */ MOV R2, R8 @ Set R2 to R8 \n\
-/* 0800de48 */ BL func_080058dc \n\
+/* 0800de48 */ BL delete_all_scene_objects \n\
 /* 0800de4c */ B branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -2452,7 +2452,7 @@ jump_0800de70: \n\
 branch_0800de7c: \n\
 /* 0800de7c */ STR R2, [SP] \n\
 /* 0800de7e */ MOV R2, R8 @ Set R2 to R8 \n\
-/* 0800de80 */ BL func_0800598c \n\
+/* 0800de80 */ BL display_all_scene_objects \n\
 /* 0800de84 */ B branch_0800df9e \n\
 \n\
 .ltorg \n\

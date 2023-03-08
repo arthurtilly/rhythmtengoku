@@ -1,7 +1,7 @@
 #include "engines/rap_men.h"
 
 #include "src/code_08001360.h"
-#include "src/code_08003980.h"
+#include "src/bitmap_font.h"
 #include "src/code_08007468.h"
 #include "src/code_0800b778.h"
 #include "src/lib_0804ca80.h"
@@ -48,12 +48,15 @@ void rap_men_init_gfx1(void) {
 
 // Game Engine Start
 void rap_men_engine_start(u32 version) {
+    struct PrintedTextAnim *textAnim;
+
     gRapMenInfo->version = version;
     rap_men_init_gfx1();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
     gRapMenInfo->unk4 = func_0800c660(0x340, 2);
-    gRapMenInfo->textSprite = func_0804d160(D_03005380, func_08004c0c(gRapMenInfo->unk4, D_0805a8b0, 1, 14), 0, 120, 148, 0, 0, 0, 0);
+    textAnim = bmp_font_obj_print_l(gRapMenInfo->unk4, D_0805a8b0, 1, 14);
+    gRapMenInfo->textSprite = func_0804d160(D_03005380, textAnim->frames, 0, 120, 148, 0, 0, 0, 0);
     gRapMenInfo->rapperSprite = func_0804d160(D_03005380, rap_men_get_anim(RAP_MEN_ANIM_RAPPER), 0, 70, 130, 0x4800, 1, 0x7f, 0);
     gRapMenInfo->playerSprite = func_0804d160(D_03005380, rap_men_get_anim(RAP_MEN_ANIM_PLAYER), 0, 160, 130, 0x4800, 1, 0x7f, 0);
     gRapMenInfo->rapperAnimTimer = 0;
@@ -179,14 +182,14 @@ void rap_men_common_beat_animation(void) {
 
 // Common Event 1 (Display Text)
 void rap_men_common_display_text(char *text) {
-    struct Animation *anim;
+    struct PrintedTextAnim *textAnim;
 
     if (text == NULL) {
         func_0804d770(D_03005380, gRapMenInfo->textSprite, FALSE);
     } else {
-        anim = func_08004b98(gRapMenInfo->unk4, text, 1, 8);
+        textAnim = bmp_font_obj_print_c(gRapMenInfo->unk4, text, 1, 8);
         func_08007b04(gRapMenInfo->unk4, gRapMenInfo->textSprite);
-        func_0804d8f8(D_03005380, gRapMenInfo->textSprite, anim, 0, 0, 0, 0);
+        func_0804d8f8(D_03005380, gRapMenInfo->textSprite, textAnim->frames, 0, 0, 0, 0);
         func_0804d770(D_03005380, gRapMenInfo->textSprite, TRUE);
     }
 }

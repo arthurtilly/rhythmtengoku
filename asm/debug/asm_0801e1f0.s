@@ -14,13 +14,13 @@ thumb_func_start func_0801e1f0 \n\
 /* 0801e204 */ BL get_current_mem_id \n\
 /* 0801e208 */ LSLS R0, R0, 0x10 \n\
 /* 0801e20a */ LSRS R0, R0, 0x10 \n\
-/* 0801e20c */ LDR R1, =D_089de670 \n\
+/* 0801e20c */ LDR R1, =bitmap_font_warioware_body \n\
 /* 0801e20e */ MOVS R3, 0xD0 @ Set R3 to 0xD0 \n\
 /* 0801e210 */ LSLS R3, R3, 0x2 \n\
 /* 0801e212 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 0801e214 */ STR R2, [SP] \n\
 /* 0801e216 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0801e218 */ BL func_08005124 \n\
+/* 0801e218 */ BL create_new_bmp_font_bg \n\
 /* 0801e21c */ LDR R5, =D_030046a4 \n\
 /* 0801e21e */ LDR R1, [R5] \n\
 /* 0801e220 */ STR R0, [R1] \n\
@@ -37,14 +37,14 @@ thumb_func_start func_0801e1f0 \n\
 /* 0801e238 */ LDR R2, =D_089ddab0 \n\
 /* 0801e23a */ LDR R3, =D_0300558c \n\
 /* 0801e23c */ LDR R3, [R3] \n\
-/* 0801e23e */ BL func_08005814 \n\
+/* 0801e23e */ BL import_all_scene_objects \n\
 /* 0801e242 */ BL func_0801e1d0 \n\
 /* 0801e246 */ LDR R0, [R5] \n\
 /* 0801e248 */ LDR R0, [R0, 0x4] \n\
 /* 0801e24a */ LDR R1, =D_0805966c \n\
 /* 0801e24c */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0801e24e */ MOVS R3, 0x6 @ Set R3 to 0x6 \n\
-/* 0801e250 */ BL func_08004c0c \n\
+/* 0801e250 */ BL bmp_font_obj_print_l \n\
 /* 0801e254 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801e256 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0801e258 */ LDR R0, [R2] \n\
@@ -66,7 +66,7 @@ thumb_func_start func_0801e1f0 \n\
 /* 0801e27a */ LDR R1, =D_08059680 \n\
 /* 0801e27c */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0801e27e */ MOVS R3, 0x7 @ Set R3 to 0x7 \n\
-/* 0801e280 */ BL func_08004c0c \n\
+/* 0801e280 */ BL bmp_font_obj_print_l \n\
 /* 0801e284 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801e286 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0801e288 */ LDR R0, [R2] \n\
@@ -84,7 +84,7 @@ thumb_func_start func_0801e1f0 \n\
 /* 0801e2a2 */ LDR R1, =D_08059684 \n\
 /* 0801e2a4 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0801e2a6 */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
-/* 0801e2a8 */ BL func_08004c50 \n\
+/* 0801e2a8 */ BL bmp_font_obj_print_r \n\
 /* 0801e2ac */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801e2ae */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0801e2b0 */ LDR R0, [R2] \n\

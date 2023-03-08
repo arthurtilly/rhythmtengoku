@@ -84,7 +84,7 @@ thumb_func_start horse_machine_engine_start \n\
 /* 08041016 */ LDR R1, =D_0805a9fc \n\
 /* 08041018 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0804101a */ MOVS R3, 0xF @ Set R3 to 0xF \n\
-/* 0804101c */ BL func_08004b98 \n\
+/* 0804101c */ BL bmp_font_obj_print_c \n\
 /* 08041020 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08041022 */ LDR R5, =D_03005380 \n\
 /* 08041024 */ LDR R0, [R5] \n\

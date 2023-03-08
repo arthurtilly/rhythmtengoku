@@ -1,6 +1,7 @@
 #include "global.h"
 #include "src/code_08007468.h"
 #include "src/code_08003980.h"
+#include "src/bitmap_font.h"
 #include "src/memory_heap.h"
 #include "src/lib_0804ca80.h"
 
@@ -8,7 +9,7 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-static s32 D_03000eb0[136]; // unknown type
+static s32 fast_udivsi3_code[136]; // unknown type
 static s32 D_030010d0[9]; // unknown type
 
 

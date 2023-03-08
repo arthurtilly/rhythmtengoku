@@ -53,7 +53,7 @@ thumb_func_start bunny_hop_engine_start \n\
 /* 0803806a */ LDR R1, =D_0805a8ac \n\
 /* 0803806c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803806e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08038070 */ BL func_08004b98 \n\
+/* 08038070 */ BL bmp_font_obj_print_c \n\
 /* 08038074 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08038076 */ LDR R0, =D_03005380 \n\
 /* 08038078 */ LDR R0, [R0] \n\

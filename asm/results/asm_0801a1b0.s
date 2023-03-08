@@ -88,13 +88,13 @@ branch_0801a248: \n\
 /* 0801a252 */ BL get_current_mem_id \n\
 /* 0801a256 */ LSLS R0, R0, 0x10 \n\
 /* 0801a258 */ LSRS R0, R0, 0x10 \n\
-/* 0801a25a */ LDR R1, =D_089de670 \n\
+/* 0801a25a */ LDR R1, =bitmap_font_warioware_body \n\
 /* 0801a25c */ MOVS R3, 0xD0 @ Set R3 to 0xD0 \n\
 /* 0801a25e */ LSLS R3, R3, 0x2 \n\
 /* 0801a260 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 0801a262 */ STR R2, [SP] \n\
 /* 0801a264 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0801a266 */ BL func_08005124 \n\
+/* 0801a266 */ BL create_new_bmp_font_bg \n\
 /* 0801a26a */ LDR R1, [R6] \n\
 /* 0801a26c */ STR R0, [R1] \n\
 /* 0801a26e */ LDR R1, =(VRAMBase + 0x17800) \n\
@@ -152,7 +152,7 @@ branch_0801a2ca: \n\
 /* 0801a2de */ LDR R2, =D_089d7b50 \n\
 /* 0801a2e0 */ LDR R3, =D_0300558c \n\
 /* 0801a2e2 */ LDR R3, [R3] \n\
-/* 0801a2e4 */ BL func_08005814 \n\
+/* 0801a2e4 */ BL import_all_scene_objects \n\
 /* 0801a2e8 */ BL func_0801a174 \n\
 /* 0801a2ec */ LDR R1, [R6] \n\
 /* 0801a2ee */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
