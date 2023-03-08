@@ -84,7 +84,7 @@
 /* ------------------------ Command Macros ------------------------ */
 
 
-@ Undefined Beatscript Command
+@ Generic Beatscript Command
 .macro beatscript_cmd id, arg1, arg2, arg3
     .word (((\id) & 0xff) | ((\arg1) << 8))
     .word (\arg2)

@@ -76,3 +76,39 @@
 .macro sick_beats_event06 args
     sick_beats_event EVENT_06, \args
 .endm
+
+
+/* ---------------- Sick Beats Pathing Script ---------------- */
+
+
+@ Generic Sick Beats Pathing Command
+.macro sick_beats_cmd id, arg, rest
+    .byte \id, \arg
+    .hword \rest
+.endm
+
+
+@ [0xFE] Rest
+.macro sb_rest rest
+    sick_beats_cmd 0xFE, 0, \rest
+.endm
+
+@ [0xFF] Stop
+.macro sb_stop
+    sick_beats_cmd 0xFF, 0, 0
+.endm
+
+@ [0x0E] Set Marking Criteria
+.macro sb_set_marking_criteria criteria
+    sick_beats_cmd 0x0E, \criteria, 0
+.endm
+
+@ [0x0F] Unknown
+.macro sb_cmd0F
+    sick_beats_cmd 0x0F, 0, 0
+.endm
+
+@ Spawn Cue
+.macro sb_spawn_cue cue, unkParam
+    sick_beats_cmd \unkParam, \cue, 0
+.endm
