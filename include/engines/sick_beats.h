@@ -6,8 +6,57 @@
 #include "games/sick_beats/graphics/sick_beats_graphics.h"
 
 // Engine Types:
+
+struct SickBeatsPath {
+    /* 00 */ u8 command;
+    /* 01 */ u8 arg;
+    /* 02 */ u16 rest;
+};
+
 struct SickBeatsInfo {
-    /* add fields here */
+    u8 version;
+    u16 unk2;
+    struct SickBeatsYellowMicrobe {
+        s16 sprite;
+        u8 unk2;
+    } yellowMicrobe;
+    u32 unk8;
+    struct SickBeatsForks {
+        s16 launcher;
+        struct AffineSprite *unk4, *unk8, *unkC, *unk10;
+        u16 unk14, unk16, unk18, unk1A;
+    } forks;
+    struct SickBeatsVirus {
+        u8 unk28[0x100]; // whether a virus exists or not (boolean) 
+        s8 unk128; // cue 
+        s8 unk129;
+        u16 unk12A; // virus counter?
+        u8 unk12C, unk12D, unk12E, unk12F;
+        struct SickBeatsSub1 {
+            struct SickBeatsPath *unk0;
+            u8 unk4;
+            u8 unk5;
+            s16 unk6;
+            s32 unk8; // rest value
+        } unk130[16];
+    } virus;
+    s8 unk1F0; // doctor state?
+    s8 unk1F1;
+    u8 unk1F2;
+    s16 unk1F4;
+    s16 unk1F6; // doctor
+    s16 unk1F8; // radio
+    s16 unk1FA;
+    u32 unk1FC;
+    u16 unk200;
+    u8 unk202;
+    u32 pad204[(0x21c-0x204)/4];
+    s16 unk21C;
+    s16 unk21E[20];
+    u16 unk246[20];
+    u8 unk26E;
+    u8 unk26F;
+    u8 unk270;
 };
 
 struct SickBeatsCue {
@@ -45,10 +94,10 @@ extern struct Animation *sick_beats_doctor_anim[];
 
 
 // Functions:
-// extern ? func_08042864(?);
-// extern ? func_08042934(?);
-// extern ? func_0804299c(?);
-// extern ? func_080429e8(?);
+extern void func_08042864(void);
+extern void func_08042934(void);
+extern void func_0804299c(void);
+extern void func_0804299c(void);
 // extern ? func_08042b30(?);
 extern void func_08042b58(); // Engine Event 0x06 (?)
 // extern ? func_08042b88(?);
@@ -56,16 +105,16 @@ extern void func_08042b58(); // Engine Event 0x06 (?)
 // extern ? func_08042cec(?);
 // extern ? func_08042d4c(?);
 // extern ? func_08042d74(?);
-// extern ? func_08042de8(?);
-// extern ? func_08042e80(?);
+extern void func_08042de8(struct SickBeatsSub1 *);
+extern void func_08042e80(void);
 extern void func_08042ea8(); // Engine Event 0x00 (?)
-extern void func_08042ecc(); // Engine Event 0x01 (?)
+extern void func_08042ecc(struct SickBeatsPath *); // Engine Event 0x01 (Spawn Virus)
 extern void func_08042f44(); // Engine Event 0x02 (?)
 extern void func_08042f58(); // Engine Event 0x03 (?)
 // extern ? func_08042f6c(?);
 // extern ? func_08043064(?);
 // extern ? func_08043124(?);
-// extern ? func_0804317c(?);
+extern void func_0804317c(void);
 // extern ? func_080431c4(?);
 // extern ? func_080432d0(?);
 // extern ? func_080432d8(?);
