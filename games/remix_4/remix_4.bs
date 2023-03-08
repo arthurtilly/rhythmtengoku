@@ -125,15 +125,15 @@ endstruct
 
 @ Remix 4 - Rap Men Text
 
-text D_08a53518
+text text_remix_4_sanji_desu_ka
     .asciz ".b:1ＰＭ３：００　です:0か？"
 endtext
 
-text D_08a53538
+text text_remix_4_oyatsu_desu_ka
     .asciz ".b:1おやつ　です:0か？"
 endtext
 
-text D_08a53550
+text text_remix_4_honto_desu_ka
     .asciz ".b:1ほんとです:0か？"
 endtext
 
@@ -165,7 +165,7 @@ text D_08a53600
     .asciz ".a:1おやつは　:0サイコー！！"
 endtext
 
-text D_08a53620
+text text_remix_4_kibun_wa_saikou
     .asciz ".a:1きぶんは　:0サイコー！！"
 endtext
 
@@ -758,7 +758,7 @@ script script_remix_4_main
     beat_anim
     rest 24
     rest 24
-    print_text_f D_08a53518
+    print_text_f text_remix_4_sanji_desu_ka
     play_sfx s_rap_15ji_desuka_seqData
     rap_men_animate_rapper 0
     beat_anim
@@ -777,7 +777,7 @@ script script_remix_4_main
     beat_anim
     rest 24
     rest 24
-    print_text_f D_08a53538
+    print_text_f text_remix_4_oyatsu_desu_ka
     play_sfx s_rap_oyatu_desuka_seqData
     rap_men_animate_rapper 0
     beat_anim
@@ -800,7 +800,7 @@ script script_remix_4_main
     play_sfx s_rap_honto_desuka_seqData
     rap_men_animate_rapper 4
     rest 8
-    print_text_f D_08a53550
+    print_text_f text_remix_4_honto_desu_ka
     beat_anim
     rest 24
     rest 24
@@ -816,7 +816,7 @@ script script_remix_4_main
     rest 24
     rest 24
     play_music L3_C40_seqData
-    print_text_f D_08a53620
+    print_text_f text_remix_4_kibun_wa_saikou
     play_sfx s_rap_kibunha_saiko_seqData
     rap_men_animate_rapper 2
     beat_anim
