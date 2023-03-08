@@ -1690,8 +1690,8 @@ SECTIONS {
         build/games/bon_odori/bon_dance.bs.o(.script.entry);
         build/games/remix_6/remix_6.bs.o(.script.entry);
         build/games/remix_8/remix_8.bs.o(.script.entry);
-        build/bin/bindata_089d7518.bin.o(.rodata*);
 
+        build/bin/bindata_089d7518.bin.o(.rodata*);
         build/data/font_definitions.c.o(.data);
 
         build/games/sneaky_spirits/engine.c.o(.data);
@@ -1876,7 +1876,6 @@ SECTIONS {
         build/games/remix_3/remix_3.bs.o(.script.main);
         build/bin/bindata_08a623bc.bin.o(.rodata*);
         build/games/remix_7/remix_7.bs.o(.script.main);
-        build/bin/bindata_08a64820.bin.o(.rodata*);
         build/games/remix_5/remix_5.bs.o(.script.main);
         build/games/bon_odori/bon_dance.bs.o(.script.main);
         build/bin/bindata_08a6b13c.bin.o(.rodata*);
