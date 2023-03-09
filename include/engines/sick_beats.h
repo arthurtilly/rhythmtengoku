@@ -28,14 +28,17 @@ struct SickBeatsInfo {
     } forks;
     struct SickBeatsVirus {
         u8 unk28[0x100]; // whether a virus exists or not (boolean) 
-        s8 unk128; // cue 
-        s8 unk129;
+        s8 unk128; // cue / virus action
+        s8 unk129; // current virus
         u16 unk12A; // virus counter?
-        u8 unk12C, unk12D, unk12E, unk12F;
-        struct SickBeatsSub1 {
-            struct SickBeatsPath *unk0;
+        u8 unk12C; 
+        u8 unk12D; // virus palette
+        u8 unk12E; // amount of hits
+        u8 unk12F;
+        struct SickBeatsVirusMovement {
+            struct SickBeatsPath *unk0; // path
             u8 unk4;
-            u8 unk5;
+            u8 unk5; // virus palette
             s16 unk6;
             s32 unk8; // rest value
         } unk130[16];
@@ -44,23 +47,34 @@ struct SickBeatsInfo {
     s8 unk1F1;
     u8 unk1F2;
     s16 unk1F4;
-    s16 unk1F6; // doctor
-    s16 unk1F8; // radio
+    s16 unk1F6; // doctor sprite
+    s16 unk1F8; // radio sprite
     s16 unk1FA;
     u32 unk1FC;
     u16 unk200;
     u8 unk202;
     u32 pad204[(0x21c-0x204)/4];
     s16 unk21C;
-    s16 unk21E[20];
+    s16 unk21E[20]; // particle sprites
     u16 unk246[20];
     u8 unk26E;
     u8 unk26F;
-    u8 unk270;
+    u8 unk270; // amount of cels in a particle anim
 };
 
 struct SickBeatsCue {
-    /* add fields here */
+    u32 unk0_b0:4;
+    u32 unk0_b4:1;
+    u32 unk0_b5:1;
+    u32 unk0_b6:5; // cue / virus action 
+    u32 unk0_b12:19; 
+    u8 unk4; // current virus
+    struct AffineSprite *unk8; // virus affine sprite
+    u32 padC[(0x2c-0xc)/4];
+    u8 unk2C;
+    u8 unk2D;
+    u8 unk2E;
+    u8 unk2F; // virus palette
 };
 
 struct VirusAction {
@@ -105,12 +119,12 @@ extern void func_08042b58(); // Engine Event 0x06 (?)
 // extern ? func_08042cec(?);
 // extern ? func_08042d4c(?);
 // extern ? func_08042d74(?);
-extern void func_08042de8(struct SickBeatsSub1 *);
+extern void func_08042de8(struct SickBeatsVirusMovement *);
 extern void func_08042e80(void);
-extern void func_08042ea8(); // Engine Event 0x00 (?)
+extern void func_08042ea8(u32); // Engine Event 0x00 (Set Virus/Virus Action)
 extern void func_08042ecc(struct SickBeatsPath *); // Engine Event 0x01 (Spawn Virus)
-extern void func_08042f44(); // Engine Event 0x02 (?)
-extern void func_08042f58(); // Engine Event 0x03 (?)
+extern void func_08042f44(u32); // Engine Event 0x02 (Set Hits Required)
+extern void func_08042f58(u32); // Engine Event 0x03 (Set Virus Palette)
 // extern ? func_08042f6c(?);
 // extern ? func_08043064(?);
 // extern ? func_08043124(?);
@@ -133,7 +147,7 @@ extern void sick_beats_engine_stop(void); // Game Engine Stop
 extern void sick_beats_cue_spawn(struct Cue *, struct SickBeatsCue *, u32 unused); // Cue - Spawn
 extern u32  sick_beats_cue_update(struct Cue *, struct SickBeatsCue *, u32 runningTime, u32 duration); // Cue - Update
 extern void sick_beats_cue_despawn(struct Cue *, struct SickBeatsCue *); // Cue - Despawn
-// extern ? func_08043a2c(?);
+extern void func_08043a2c(u32, u32, struct AffineSprite *);
 // extern ? func_08043a38(?);
 extern void sick_beats_cue_hit(struct Cue *, struct SickBeatsCue *, u32 pressed, u32 released); // Cue - Hit
 extern void sick_beats_cue_barely(struct Cue *, struct SickBeatsCue *, u32 pressed, u32 released); // Cue - Barely
