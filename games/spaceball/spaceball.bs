@@ -23,24 +23,7 @@ script script_spaceball_entry
     rest 24
 stop
 
-
-@ Spaceball - Scene Definitions
-@ These should not be edited!
-
-struct subscene_spaceball   @ struct SubScene
-    /* Init Func */   .word gameplay_start_scene,  NULL
-    /* Paused Func */ .word func_08016ffc,         NULL
-    /* Update Func */ .word gameplay_update_scene, NULL
-    /* End Func */    .word gameplay_stop_scene,   NULL
-    /* Beatscript */  .word script_spaceball_entry
-endstruct
-
-struct scene_spaceball      @ struct Scene
-    /* Init Func */   .word func_0801d86c, subscene_spaceball
-    /* Update Func */ .word func_0801d8d8, NULL
-    /* End Func */    .word NULL,          NULL
-    /* Memory */      .hword 0x5bc
-endstruct
+define_beatscript_scene scene_spaceball, script_spaceball_entry
 
 
 

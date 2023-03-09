@@ -80,6 +80,24 @@
     .balign 4, 0
 .endm
 
+@ Beatscript Scene Definitions
+
+.macro define_beatscript_scene name, entrypoint
+struct sub_\name
+    /* Init Func */   .word gameplay_start_scene,  NULL
+    /* Paused Func */ .word func_08016ffc,         NULL
+    /* Update Func */ .word gameplay_update_scene, NULL
+    /* End Func */    .word gameplay_stop_scene,   NULL
+    /* Beatscript */  .word \entrypoint
+endstruct
+
+struct \name
+    /* Init Func */   .word func_0801d86c, sub_\name
+    /* Update Func */ .word func_0801d8d8, NULL
+    /* End Func */    .word NULL,          NULL
+    /* Memory */      .hword 0x5bc
+endstruct
+.endm
 
 /* ------------------------ Command Macros ------------------------ */
 

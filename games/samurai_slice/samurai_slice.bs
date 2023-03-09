@@ -23,24 +23,7 @@ script script_samurai_slice_entry
     rest 24
 stop
 
-
-@ Samurai Slice - Scene Definitions
-@ These should not be edited!
-
-struct subscene_samurai_slice   @ struct SubScene
-    /* Init Func */   .word gameplay_start_scene,  NULL
-    /* Paused Func */ .word func_08016ffc,         NULL
-    /* Update Func */ .word gameplay_update_scene, NULL
-    /* End Func */    .word gameplay_stop_scene,   NULL
-    /* Beatscript */  .word script_samurai_slice_entry
-endstruct
-
-struct scene_samurai_slice      @ struct Scene
-    /* Init Func */   .word func_0801d86c, subscene_samurai_slice
-    /* Update Func */ .word func_0801d8d8, NULL
-    /* End Func */    .word NULL,          NULL
-    /* Memory */      .hword 0x5bc
-endstruct
+define_beatscript_scene scene_samurai_slice, script_samurai_slice_entry
 
 
 
