@@ -770,7 +770,7 @@ void drum_studio_select_button_exit(void) {
         func_0801d968(D_089e2b04);
     } else {
         gDrumLessonsInfo->unk3CD = 0;
-        func_08001724(0, 0x3ff, 0, 0);
+        key_rec_set_mode(0, 0x3ff, 0, 0);
         pause_beatscript_scene(FALSE);
         func_0801d968(D_089e2ad4);
     }
@@ -872,7 +872,7 @@ const struct Beatscript *drum_studio_init_script(void) {
         case 2: // Record Replay
             func_0801c960(1);
             availableSpace = get_remaining_replay_data_space(&D_030046a8->data.drumReplaysAlloc);
-            func_08001724(1, 0x3ff, gDrumLessonsInfo->drumReplaySeq, availableSpace / 2);
+            key_rec_set_mode(1, 0x3ff, gDrumLessonsInfo->drumReplaySeq, availableSpace / 2);
             if ((availableSpace == 0) || (get_available_replay_data_id(&D_030046a8->data.drumReplaysAlloc) < 0)) {
                 func_0804d770(D_03005380, gDrumLessonsInfo->memoryWarningSprite, TRUE);
             }
@@ -882,7 +882,7 @@ const struct Beatscript *drum_studio_init_script(void) {
         case 3: // Listen to Replay
             func_0801c960(2);
             replaySize = get_saved_replay_data(&D_030046a8->data.drumReplaysAlloc, replayData->saveID, gDrumLessonsInfo->drumReplaySeq);
-            func_08001724(3, 0x3ff, gDrumLessonsInfo->drumReplaySeq, replaySize / 2);
+            key_rec_set_mode(3, 0x3ff, gDrumLessonsInfo->drumReplaySeq, replaySize / 2);
             gDrumLessonsInfo->playerDrumKitID = replayData->drumKitID;
             drum_studio_init_kit();
             break;
@@ -906,11 +906,11 @@ s32 func_080295d4(void) {
         case 1:
             break;
         case 2:
-            gDrumLessonsInfo->unk416 = func_08001828();
-            func_08001724(0, 0x3ff, 0, 0);
+            gDrumLessonsInfo->unk416 = key_rec_get_next();
+            key_rec_set_mode(0, 0x3ff, 0, 0);
             break;
         case 3:
-            func_08001724(0, 0x3ff, 0, 0);
+            key_rec_set_mode(0, 0x3ff, 0, 0);
             break;
     }
 
@@ -941,14 +941,14 @@ void drum_studio_align_drummer_sprites(struct StudioDrummer *drummer, const stru
 // Update something
 void func_0802972c(void) {
     if (gDrumLessonsInfo->unk3CD == 2) {
-        if (func_0800184c()) {
+        if (key_rec_reached_end()) {
             func_0804d770(D_03005380, gDrumLessonsInfo->memoryWarningSprite, TRUE);
         }
     }
 
     if (gDrumLessonsInfo->unk3CD == 3) {
         if (gDrumLessonsInfo->replayData->songID == 0) {
-            if (func_0800184c()) {
+            if (key_rec_reached_end()) {
                 gDrumLessonsInfo->unk418 = 1;
             }
         }

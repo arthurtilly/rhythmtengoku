@@ -31,7 +31,7 @@ void init_scene_static_var(void) {
 }
 
 void func_08000224(void) {
-	func_08001464();
+	init_key_listener();
 	func_0800b564();
 	func_08007b4c();
 	func_08002f68();
@@ -103,12 +103,12 @@ void agb_main(void) {
 	func_0801d860(0); // Init. Script Operator (Init. Static Variables)
 	func_0800046c(&D_089dda4c); // Warning Screen
 	func_080006b0(&D_089dda4c, D_08935fac); // Warning Screen, Title Screen
-	func_080015bc();
+	update_key_listener();
 	
 	while (1) {
 		func_080013a8();
 		get_agb_random_var();
-		func_080015bc();
+		update_key_listener();
 		D_030046a0 += 1;
 		process_scenes();
 		
@@ -116,7 +116,7 @@ void agb_main(void) {
 			u16 keysPressed = ~REG_KEY;
 			
 			if ((keysPressed & RESET_BUTTON_COMBO) == RESET_BUTTON_COMBO) {
-				func_08001724(0,0x3FF,0,0);
+				key_rec_set_mode(0, 0x3ff, 0, 0);
 				func_08000568(&D_089dd97c);
 				func_08009548();
 				D_03004498 = FALSE;

@@ -47,7 +47,7 @@ thumb_func_start func_0801c6fc \n\
 /* 0801c754 */ LDR R2, [R0] \n\
 /* 0801c756 */ LSRS R3, R3, 0x1 \n\
 /* 0801c758 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 0801c75a */ BL func_08001724 \n\
+/* 0801c75a */ BL key_rec_set_mode \n\
 /* 0801c75e */ LDR R0, [R5] \n\
 /* 0801c760 */ LDRB R1, [R6, 0x2] \n\
 /* 0801c762 */ MOVS R2, 0x93 @ Set R2 to 0x93 \n\
