@@ -48,7 +48,7 @@ void func_08012438(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_080087b4(get_current_mem_id(), D_089cdc8c);
+    task = func_080087b4(get_current_mem_id(), main_menu_buffered_textures);
     run_func_after_task(task, pause_beatscript_scene, FALSE);
 }
 
@@ -58,7 +58,7 @@ void func_08012464(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), D_089cdc44, 0x3000);
+    task = func_08002ee0(get_current_mem_id(), main_menu_gfx_table, 0x3000);
     run_func_after_task(task, func_08012438, 0);
 }
 
@@ -81,15 +81,15 @@ void func_080124d0(u32 unused) {
     func_080073f0();
     gMainMenuInfo->font2 = create_new_bmp_font_bg(get_current_mem_id(), &bitmap_font_warioware_body, 0, 0x340, 6);
     gMainMenuInfo->font1 = func_0800c660(0x300, 4);
-    import_all_scene_objects(D_03005380, gMainMenuInfo->font1, D_089cdc40, D_0300558c);
+    import_all_scene_objects(D_03005380, gMainMenuInfo->font1, main_menu_scene_objects, D_0300558c);
     func_08012494();
     func_0804d160(D_03005380, anim_main_menu_blank1, 0, 120, 64, 0x6e, 1, 0, 0);
 
     for (i = 0; i < 5; i++) {
         if (i == D_030055d8) {
-            gMainMenuInfo->buttons[i] = func_0804d160(D_03005380, D_089cdc90[i], 0, 120, 64, 0x64, 1, 0, 0);
+            gMainMenuInfo->buttons[i] = func_0804d160(D_03005380, main_menu_button_on_anim[i], 0, 120, 64, 0x64, 1, 0, 0);
         } else {
-            gMainMenuInfo->buttons[i] = func_0804d160(D_03005380, D_089cdca4[i], 0, 120, 64, 0x64, 1, 0, 0);
+            gMainMenuInfo->buttons[i] = func_0804d160(D_03005380, main_menu_button_off_anim[i], 0, 120, 64, 0x64, 1, 0, 0);
         }
     }
 
@@ -128,8 +128,8 @@ void func_080125fc(u32 unused) {
 
         if (prevButton != D_030055d8) {
             play_sound(&s_menu_cursor2_seqData);
-            func_0804d8f8(D_03005380, gMainMenuInfo->buttons[prevButton], D_089cdca4[prevButton], 0, 1, 0, 0);
-            func_0804d8f8(D_03005380, gMainMenuInfo->buttons[D_030055d8], D_089cdc90[D_030055d8], 0, 1, 0, 0);
+            func_0804d8f8(D_03005380, gMainMenuInfo->buttons[prevButton], main_menu_button_off_anim[prevButton], 0, 1, 0, 0);
+            func_0804d8f8(D_03005380, gMainMenuInfo->buttons[D_030055d8], main_menu_button_on_anim[D_030055d8], 0, 1, 0, 0);
         }
 
         else if (D_03004afc & (START_BUTTON | A_BUTTON)) {

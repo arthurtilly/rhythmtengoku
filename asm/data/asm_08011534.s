@@ -18,7 +18,7 @@ thumb_func_start func_08011534 \n\
 /* 0801154e */ BL get_current_mem_id \n\
 /* 08011552 */ LSLS R0, R0, 0x10 \n\
 /* 08011554 */ LSRS R0, R0, 0x10 \n\
-/* 08011556 */ LDR R1, =D_089cda38 \n\
+/* 08011556 */ LDR R1, =data_check_buffered_textures \n\
 /* 08011558 */ BL func_080087b4 \n\
 /* 0801155c */ LDR R1, =pause_beatscript_scene \n\
 /* 0801155e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\

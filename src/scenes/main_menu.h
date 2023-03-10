@@ -37,11 +37,11 @@ extern struct Animation anim_main_menu_blank1[]; // Blank
 
 
 // Scene Definition Data:
-extern const union SceneObject D_089cdc40[]; // Scene Objects Table
-extern const struct GraphicsTable D_089cdc44[]; // Graphics Table
-extern struct CompressedGraphics *const D_089cdc8c[]; // Buffered Textures List
-extern struct Animation *const D_089cdc90[5]; // Button Animations (Highlighted)
-extern struct Animation *const D_089cdca4[5]; // Button Animations
+extern union SceneObject main_menu_scene_objects[]; // Scene Objects Table
+extern struct GraphicsTable main_menu_gfx_table[]; // Graphics Table
+extern struct CompressedGraphics *main_menu_buffered_textures[]; // Buffered Textures List
+extern struct Animation *main_menu_button_on_anim[5]; // Button Animations (Highlighted)
+extern struct Animation *main_menu_button_off_anim[5]; // Button Animations
 
 extern void func_0801242c(void); // Init. Static Variables
 extern void func_08012438(void); // Graphics Init. 3

@@ -372,30 +372,20 @@ D_089cd4e4 = 0x089cd4e4;
 D_089cd9e8 = 0x089cd9e8;
 D_089cda0c = 0x089cda0c;
 /* Scene Data - Data Check */
-D_089cda28 = 0x089cda28;
-D_089cda2c = 0x089cda2c;
-D_089cda38 = 0x089cda38;
 D_089cda3c = 0x089cda3c;
 D_089cdab4 = 0x089cdab4;
 D_089cdad8 = 0x089cdad8;
 /* Scene Data - Rhythm Data Room */
-D_089cdaf4 = 0x089cdaf4;
-D_089cdb3c = 0x089cdb3c;
 D_089cdb40 = 0x089cdb40;
 D_089cdc00 = 0x089cdc00;
 D_089cdc24 = 0x089cdc24;
 /* Scene Data - Main Menu */
-D_089cdc40 = 0x089cdc40;
-D_089cdc44 = 0x089cdc44;
-D_089cdc8c = 0x089cdc8c;
-D_089cdc90 = 0x089cdc90;
-D_089cdca4 = 0x089cdca4;
 D_089cdcb8 = 0x089cdcb8;
 D_089cddfc = 0x089cddfc;
 D_089cde20 = 0x089cde20;
+/* Scene Data - Game Select */
 D_089cde3c = 0x089cde3c;
 D_089cdee4 = 0x089cdee4;
-/* Scene Data - Game Select */
 D_089cdf08 = 0x089cdf08;
 D_089cdf24 = 0x089cdf24;
 D_089ce0a4 = 0x089ce0a4;

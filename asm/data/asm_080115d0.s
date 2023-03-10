@@ -60,7 +60,7 @@ branch_08011610: \n\
 /* 08011648 */ LDR R0, [R0] \n\
 /* 0801164a */ LDR R1, [R4] \n\
 /* 0801164c */ LDR R1, [R1, 0x4] \n\
-/* 0801164e */ LDR R2, =D_089cda28 \n\
+/* 0801164e */ LDR R2, =data_check_scene_objects \n\
 /* 08011650 */ LDR R3, =D_0300558c \n\
 /* 08011652 */ LDR R3, [R3] \n\
 /* 08011654 */ BL import_all_scene_objects \n\

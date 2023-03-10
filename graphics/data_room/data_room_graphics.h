@@ -12,6 +12,12 @@ extern struct Animation anim_data_room_user_stare[];
 extern struct Animation anim_data_room_user_almost_sleep[];
 extern struct Animation anim_data_room_user_fall_asleep[];
 
+/* DATA ROOM (MENU) - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08cc77a4;
+extern struct CompressedGraphics D_08cc7a40;
+extern struct CompressedGraphics D_08cc7330;
+
 /* DATA ROOM (MENU) - PALETTES */
 
 extern Palette data_room_pal[];

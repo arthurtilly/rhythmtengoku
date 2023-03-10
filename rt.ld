@@ -1614,6 +1614,12 @@ SECTIONS {
         build/data/scenes/library/script.bs.o(.rodata);
         build/data/scenes/cafe/data.c.o(.data);
         build/bin/scene_cafe.bin.o(.rodata*);
+        build/data/scenes/data_check/data.c.o(.data);
+        build/bin/scene_data_check.bin.o(.rodata*);
+        build/data/scenes/data_room/data.c.o(.data);
+        build/bin/scene_data_room.bin.o(.rodata*);
+        build/data/scenes/main_menu/data.c.o(.data);
+        build/bin/scene_main_menu.bin.o(.rodata*);
         build/bin/bindata_089cd1a4.bin.o(.rodata*);
         build/data/scenes/game_select/scene_entries.c.o(.rodata);
         build/bin/bindata_089cea24.bin.o(.rodata*);
