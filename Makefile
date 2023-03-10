@@ -66,7 +66,7 @@ C_DIRS		   := $(SOURCES) $(AUDIO) $(GRAPHICS) $(TEXT) $(DATA) $(SCENE_DATA) $(LE
 C_DIRS         := $(sort $(C_DIRS)) # remove duplicates
 
 ASM_DIRS       := $(ASM) $(DATA) $(SCENE_DATA) $(LEVEL_DATA) $(TEXT)
-BS_DIRS        := $(GAME_DATA)
+BS_DIRS        := $(GAME_DATA) $(SCENE_DATA)
 
 ALL_DIRS       := $(BIN) $(ASM_DIRS) $(C_DIRS) $(MUSIC) $(SFX)
 ALL_DIRS       := $(sort $(ALL_DIRS)) # remove duplicates

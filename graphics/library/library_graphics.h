@@ -5,8 +5,8 @@
 
 /* LIBRARY - ANIMATIONS */
 
-extern struct Animation library_anim00[];
-extern struct Animation library_anim01[];
+extern struct Animation anim_library_option1[];
+extern struct Animation anim_library_option2[];
 
 /* LIBRARY - PALETTES */
 

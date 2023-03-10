@@ -215,11 +215,6 @@ D_088f5bcc = 0x088f5bcc;
 D_088f5bdc = 0x088f5bdc;
 /* Main Menu - Options Palettes */
 D_088f5bfc = 0x088f5bfc;
-/* Arrival Animations */
-D_089000cc = 0x089000cc;
-D_089000f4 = 0x089000f4;
-/* Arrival Palettes */
-D_0890011c = 0x0890011c;
 /* Cafe Animations */
 D_089001cc = 0x089001cc;
 D_089001dc = 0x089001dc;
@@ -460,14 +455,6 @@ D_0893253c = 0x0893253c;
 D_08936650 = 0x08936650;
 
 /* bindata_089cd1a4 */
-/* Scene Data - Rhythm Library */
-D_089cd1a4 = 0x089cd1a4;
-D_089cd1ec = 0x089cd1ec;
-D_089cd1f0 = 0x089cd1f0;
-D_089cd1f8 = 0x089cd1f8;
-D_089cd200 = 0x089cd200;
-D_089cd2a8 = 0x089cd2a8;
-D_089cd2cc = 0x089cd2cc;
 /* Scene Data - Cafe */
 D_089cd2e8 = 0x089cd2e8;
 D_089cd300 = 0x089cd300;
