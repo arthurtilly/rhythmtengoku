@@ -37,7 +37,7 @@ thumb_func_start func_08010a3c \n\
 /* 08010a80 */ LDRB R0, [R2, 0x1E] \n\
 /* 08010a82 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08010a84 */ BEQ branch_08010aa0 \n\
-/* 08010a86 */ LDR R1, =D_089cd474 \n\
+/* 08010a86 */ LDR R1, =cafe_cursor_animations \n\
 /* 08010a88 */ MOVS R0, 0x1F @ Set R0 to 0x1F \n\
 /* 08010a8a */ LDRSB R0, [R2, R0] \n\
 /* 08010a8c */ LSLS R0, R0, 0x2 \n\

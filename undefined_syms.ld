@@ -368,29 +368,6 @@ D_08936650 = 0x08936650;
 
 /* bindata_089cd1a4 */
 /* Scene Data - Cafe */
-D_089cd2e8 = 0x089cd2e8;
-D_089cd300 = 0x089cd300;
-D_089cd308 = 0x089cd308;
-D_089cd318 = 0x089cd318;
-D_089cd324 = 0x089cd324;
-D_089cd330 = 0x089cd330;
-D_089cd348 = 0x089cd348;
-D_089cd35c = 0x089cd35c;
-D_089cd370 = 0x089cd370;
-D_089cd384 = 0x089cd384;
-D_089cd39c = 0x089cd39c;
-D_089cd3b4 = 0x089cd3b4;
-D_089cd3cc = 0x089cd3cc;
-D_089cd3e0 = 0x089cd3e0;
-D_089cd3f4 = 0x089cd3f4;
-D_089cd408 = 0x089cd408;
-D_089cd41c = 0x089cd41c;
-D_089cd434 = 0x089cd434;
-D_089cd44c = 0x089cd44c;
-D_089cd474 = 0x089cd474;
-D_089cd47c = 0x089cd47c;
-D_089cd48c = 0x089cd48c;
-D_089cd4e0 = 0x089cd4e0;
 D_089cd4e4 = 0x089cd4e4;
 D_089cd9e8 = 0x089cd9e8;
 D_089cda0c = 0x089cda0c;
