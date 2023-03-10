@@ -201,10 +201,6 @@ D_030064d4 = 0x030064d4;
 
 /* ROM START */
 
-/* Game Select Palettes */
-D_08902ec0 = 0x08902ec0;
-D_08903020 = 0x08903020;
-D_08903120 = 0x08903120;
 /* Game Select Overlay Graphics */ /* Uncompressed */
 D_089031c0 = 0x089031c0;
 D_08903640 = 0x08903640;
@@ -213,7 +209,6 @@ D_08903ac0 = 0x08903ac0;
 D_08903be0 = 0x08903be0;
 D_08904180 = 0x08904180;
 D_089055c0 = 0x089055c0;
-D_089056e0 = 0x089056e0;
 /* Game Select Icon Graphics */ /* Uncompressed */
 D_089057e0 = 0x089057e0;
 D_08905900 = 0x08905900;
@@ -270,8 +265,6 @@ D_08909020 = 0x08909020;
 D_08909140 = 0x08909140;
 D_08909260 = 0x08909260;
 D_08909380 = 0x08909380;
-/* Perfect Campaign Palettes */
-D_0890a694 = 0x0890a694;
 /* Rhythm Data Room - Reading Animations */
 D_0890ae24 = 0x0890ae24;
 D_0890ae34 = 0x0890ae34;
@@ -391,18 +384,10 @@ D_089cdf08 = 0x089cdf08;
 D_089ceafc = 0x089ceafc;
 
 /* Scene Data - Options Menu */
-D_089cfac8 = 0x089cfac8;
-D_089cfb10 = 0x089cfb10;
-D_089cfb14 = 0x089cfb14;
-D_089cfb1c = 0x089cfb1c;
 D_089cfb2c = 0x089cfb2c;
 D_089cfbf8 = 0x089cfbf8;
 D_089cfc1c = 0x089cfc1c;
 /* Scene Data - Perfect Campaign Certificate */
-D_089cfc38 = 0x089cfc38;
-D_089cfc74 = 0x089cfc74;
-D_089cfc78 = 0x089cfc78;
-D_089cfc88 = 0x089cfc88;
 D_089cfca0 = 0x089cfca0;
 D_089cfd3c = 0x089cfd3c;
 D_089cfd60 = 0x089cfd60;

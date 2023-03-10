@@ -103,7 +103,7 @@ thumb_func_start func_08016364 \n\
 /* 08016436 */ LDR R2, [R6] \n\
 /* 08016438 */ MOVS R3, 0x6 @ Set R3 to 0x6 \n\
 /* 0801643a */ LDRSH R1, [R2, R3] \n\
-/* 0801643c */ LDR R3, =D_089cfb1c \n\
+/* 0801643c */ LDR R3, =options_sound_mode_anim \n\
 /* 0801643e */ LDR R2, [R2, 0xC] \n\
 /* 08016440 */ LSLS R2, R2, 0x3 \n\
 /* 08016442 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\
@@ -163,7 +163,7 @@ thumb_func_start func_08016364 \n\
 /* 080164c4 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 080164c6 */ MOVS R1, 0xF @ Set R1 to 0xF \n\
 /* 080164c8 */ BL text_printer_set_line_spacing \n\
-/* 080164cc */ LDR R0, =D_089cfb14 \n\
+/* 080164cc */ LDR R0, =options_desc \n\
 /* 080164ce */ LDR R1, [R0] \n\
 /* 080164d0 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 080164d2 */ BL text_printer_set_string \n\

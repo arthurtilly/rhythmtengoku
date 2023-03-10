@@ -1624,6 +1624,10 @@ SECTIONS {
         build/data/scenes/game_select/data.c.o(.data);
         build/bin/game_select_grid_data.bin.o(.rodata*);
         build/data/scenes/game_select/data2.c.o(.data);
+        build/data/scenes/options/data.c.o(.data);
+        build/bin/scene_options.bin.o(.rodata*);
+        build/data/scenes/perfect/data.c.o(.data);
+        build/bin/scene_perfect.bin.o(.rodata*);
         build/bin/bindata_089cea24.bin.o(.rodata*);
         build/bin/bindata_089d3984.bin.o(.rodata*);
         build/data/font_definitions.c.o(.data);

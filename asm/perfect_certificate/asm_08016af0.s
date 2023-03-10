@@ -211,7 +211,7 @@ branch_08016cac: \n\
 /* 08016cb4 */ BL func_080081a8 \n\
 /* 08016cb8 */ LDR R0, [R4] \n\
 /* 08016cba */ ADDS R0, 0xC @ Add 0xC to R0 \n\
-/* 08016cbc */ LDR R2, =D_089cfc78 \n\
+/* 08016cbc */ LDR R2, =perfect_gift_directive_text \n\
 /* 08016cbe */ LSLS R1, R6, 0x2 \n\
 /* 08016cc0 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08016cc2 */ LDR R1, [R1] \n\

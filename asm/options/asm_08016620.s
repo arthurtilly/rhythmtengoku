@@ -93,7 +93,7 @@ branch_080166a0: \n\
 /* 080166b8 */ LDR R2, [R6] \n\
 /* 080166ba */ MOVS R3, 0x6 @ Set R3 to 0x6 \n\
 /* 080166bc */ LDRSH R1, [R2, R3] \n\
-/* 080166be */ LDR R3, =D_089cfb1c \n\
+/* 080166be */ LDR R3, =options_sound_mode_anim \n\
 /* 080166c0 */ LDR R2, [R2, 0xC] \n\
 /* 080166c2 */ LSLS R2, R2, 0x3 \n\
 /* 080166c4 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\
@@ -115,7 +115,7 @@ branch_080166a0: \n\
 /* 080166e6 */ BL func_0804d8f8 \n\
 /* 080166ea */ LDR R0, [R6] \n\
 /* 080166ec */ LDR R0, [R0, 0x14] \n\
-/* 080166ee */ LDR R1, =D_089cfb14 \n\
+/* 080166ee */ LDR R1, =options_desc \n\
 /* 080166f0 */ LDR R1, [R1] \n\
 /* 080166f2 */ B branch_0801675c \n\
 \n\
@@ -136,7 +136,7 @@ branch_08016708: \n\
 /* 08016720 */ LDR R2, [R6] \n\
 /* 08016722 */ MOVS R3, 0x6 @ Set R3 to 0x6 \n\
 /* 08016724 */ LDRSH R1, [R2, R3] \n\
-/* 08016726 */ LDR R3, =D_089cfb1c \n\
+/* 08016726 */ LDR R3, =options_sound_mode_anim \n\
 /* 08016728 */ LDR R2, [R2, 0xC] \n\
 /* 0801672a */ LSLS R2, R2, 0x3 \n\
 /* 0801672c */ ADDS R3, 0x4 @ Add 0x4 to R3 \n\
@@ -159,7 +159,7 @@ branch_08016708: \n\
 /* 08016750 */ BL func_0804d8f8 \n\
 /* 08016754 */ LDR R0, [R6] \n\
 /* 08016756 */ LDR R0, [R0, 0x14] \n\
-/* 08016758 */ LDR R1, =D_089cfb14 \n\
+/* 08016758 */ LDR R1, =options_desc \n\
 /* 0801675a */ LDR R1, [R1, 0x4] \n\
  \n\
 branch_0801675c: \n\
@@ -184,7 +184,7 @@ branch_08016780: \n\
 /* 08016794 */ LDR R0, [R0] \n\
 /* 08016796 */ MOVS R3, 0x6 @ Set R3 to 0x6 \n\
 /* 08016798 */ LDRSH R1, [R1, R3] \n\
-/* 0801679a */ LDR R3, =D_089cfb1c \n\
+/* 0801679a */ LDR R3, =options_sound_mode_anim \n\
 /* 0801679c */ LSLS R2, R2, 0x3 \n\
 /* 0801679e */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\
 /* 080167a0 */ LDR R2, [R2] \n\
