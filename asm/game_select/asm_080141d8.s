@@ -9,7 +9,7 @@ thumb_func_start func_080141d8 \n\
 /* 080141de */ CMP R0, 0x36 @ Compare R0 and 0x36 \n\
 /* 080141e0 */ BGT branch_080141f0 \n\
 /* 080141e2 */ LSLS R0, R0, 0x5 \n\
-/* 080141e4 */ LDR R1, =D_089ce344 \n\
+/* 080141e4 */ LDR R1, =level_data_table \n\
 /* 080141e6 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 080141e8 */ LDR R0, [R0, 0x4] \n\
 /* 080141ea */ B branch_080141f2 \n\

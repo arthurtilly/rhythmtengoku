@@ -1622,6 +1622,8 @@ SECTIONS {
         build/bin/scene_main_menu.bin.o(.rodata*);
         build/bin/scene_game_select.bin.o(.rodata*);
         build/data/scenes/game_select/data.c.o(.data);
+        build/bin/game_select_grid_data.bin.o(.rodata*);
+        build/data/scenes/game_select/data2.c.o(.data);
         build/bin/bindata_089cea24.bin.o(.rodata*);
         build/bin/bindata_089d3984.bin.o(.rodata*);
         build/data/font_definitions.c.o(.data);

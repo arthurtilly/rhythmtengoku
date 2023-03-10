@@ -1,6 +1,6 @@
 #include "level_data.h"
 
-struct LevelData D_089ce344[] = {
+struct LevelData level_data_table[] = {
     // Karate Man 1
     {
         /* scene */        &D_089cfed0,

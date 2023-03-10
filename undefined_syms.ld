@@ -366,7 +366,6 @@ D_0893253c = 0x0893253c;
 /* Karate Man BG Face Map */
 D_08936650 = 0x08936650;
 
-/* bindata_089cd1a4 */
 /* Scene Data - Cafe */
 D_089cd4e4 = 0x089cd4e4;
 D_089cd9e8 = 0x089cd9e8;
@@ -389,28 +388,8 @@ D_089cdee4 = 0x089cdee4;
 D_089cdf08 = 0x089cdf08;
 
 /* bindata_089cea24 */
-D_089cea24 = 0x089cea24;
 D_089ceafc = 0x089ceafc;
-D_089cf90c = 0x089cf90c;
-D_089cf948 = 0x089cf948;
-D_089cf9a8 = 0x089cf9a8;
-D_089cf9ac = 0x089cf9ac;
-D_089cf9e8 = 0x089cf9e8;
-D_089cfa00 = 0x089cfa00;
-D_089cfa14 = 0x089cfa14;
-D_089cfa20 = 0x089cfa20;
-D_089cfa2c = 0x089cfa2c;
-D_089cfa38 = 0x089cfa38;
-D_089cfa44 = 0x089cfa44;
-D_089cfa50 = 0x089cfa50;
-D_089cfa5c = 0x089cfa5c;
-D_089cfa68 = 0x089cfa68;
-D_089cfa74 = 0x089cfa74;
-D_089cfa98 = 0x089cfa98;
-D_089cfa9e = 0x089cfa9e;
-D_089cfaa4 = 0x089cfaa4;
-D_089cfaac = 0x089cfaac;
-D_089cfab8 = 0x089cfab8;
+
 /* Scene Data - Options Menu */
 D_089cfac8 = 0x089cfac8;
 D_089cfb10 = 0x089cfb10;

@@ -163,7 +163,20 @@ const u8 D_08054888[] = {2, 2, 11, 255};
 const u8 D_0805488c[] = {3, 6, 3, 7, 3, 8, 3, 9, 3, 10, 3, 11, 255, 255};
 const u8 D_0805489a[] = {4, 9, 6, 255};
 const u8 D_0805489e[] = {4, 2, 6, 255};
-const u8 D_080548a2[] = {0, 0, 2, 48, 1, 48, 5, 49, 1, 53, 131, 137, 131, 147, 131, 78, 32, 2, 50, 1, 50, 5, 51, 1, 55, 131, 110, 131, 67, 131, 140, 131, 120, 131, 139, 0, 0, 0, 2, 48, 1, 48, 5, 49, 1, 53, 131, 137, 131, 147, 131, 78, 32, 2, 50, 1, 50, 5, 51, 1, 55, 149, 189, 150, 125, 0, 0, 0, 0, 0, 0, 1, 254, 1, 24, 2, 24, 255};
+const u8 D_080548a2[] = {0, 0};
+
+const char text_game_select_rank_superb[] =
+    TEXT_COLOR_0 PRINTER_COLOR_0 TEXT_SHADOW_1 PRINTER_SHADOW_1 "ランク "
+    TEXT_COLOR_2 PRINTER_COLOR_2 TEXT_SHADOW_3 PRINTER_SHADOW_3 "ハイレベル";
+
+const char text_game_select_rank_ok[] =
+    TEXT_COLOR_0 PRINTER_COLOR_0 TEXT_SHADOW_1 PRINTER_SHADOW_1 "ランク "
+    TEXT_COLOR_2 PRINTER_COLOR_2 TEXT_SHADOW_3 PRINTER_SHADOW_3 "平凡";
+
+const char text_game_select_rank_none[] = "" "\0" "\0" "\0";
+
+const u8 D_080548e8[] = {0, 1, 254};
+const u8 D_080548eb[] = {1, 24, 2, 24, 255};
 const u8 D_080548f0[] = {0, 5, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 7, 2, 8, 5, 8, 5, 7, 2, 6, 2, 5, 2, 4, 2, 3, 2, 2, 2, 1, 2, 0, 5, 255};
 const u8 D_08054915[] = {4, 2, 5, 2, 6, 2, 7, 2, 8, 5, 8, 5, 7, 2, 6, 2, 5, 2, 4, 2, 12, 2, 11, 2, 10, 2, 9, 5, 9, 5, 10, 2, 11, 2, 12, 2, 255};
 const u8 D_0805493a[] = {0, 40, 1, 3, 2, 3, 3, 3, 4, 3, 255};

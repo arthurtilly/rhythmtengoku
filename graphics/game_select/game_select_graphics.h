@@ -35,6 +35,13 @@ extern struct Animation anim_game_select_border_perfect1[];
 extern struct Animation anim_game_select_cursor[];
 extern struct Animation anim_game_select_perfect_rank[];
 
+/* GAME SELECT - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08cc9854;
+extern struct CompressedGraphics D_08cc9d14;
+extern struct CompressedGraphics D_08cc9e14;
+extern struct CompressedGraphics D_08cc9148;
+
 /* GAME SELECT - PALETTES */
 
 extern Palette game_select_obj_pal[];

@@ -30,7 +30,7 @@ branch_08015068: \n\
 /* 08015070 */ MOVS R2, 0x10 @ Set R2 to 0x10 \n\
 /* 08015072 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 08015074 */ BL text_printer_fill_vram_tiles \n\
-/* 08015078 */ LDR R1, =D_089cf9e8 \n\
+/* 08015078 */ LDR R1, =game_select_rank_text \n\
 /* 0801507a */ LSLS R0, R6, 0x2 \n\
 /* 0801507c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801507e */ LDR R0, [R0] \n\
@@ -72,7 +72,7 @@ branch_08015068: \n\
 /* 080150cc */ LDR R0, [R5] \n\
 /* 080150ce */ MOVS R2, 0x3C @ Set R2 to 0x3C \n\
 /* 080150d0 */ LDRSH R1, [R1, R2] \n\
-/* 080150d2 */ LDR R2, =D_089cfa00 \n\
+/* 080150d2 */ LDR R2, =game_select_rank_palette \n\
 /* 080150d4 */ ADDS R2, R6, R2 @ Set R2 to R6 + R2 \n\
 /* 080150d6 */ LDRB R2, [R2] \n\
 /* 080150d8 */ LSLS R2, R2, 0x18 \n\

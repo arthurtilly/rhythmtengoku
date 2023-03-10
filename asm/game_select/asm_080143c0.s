@@ -24,7 +24,7 @@ thumb_func_start func_080143c0 \n\
 /* 080143e6 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 080143e8 */ ADDS R7, R0, 0x4 @ Set R7 to R0 + 0x4 \n\
 /* 080143ea */ LSLS R1, R2, 0x5 \n\
-/* 080143ec */ LDR R0, =D_089ce344 \n\
+/* 080143ec */ LDR R0, =level_data_table \n\
 /* 080143ee */ ADDS R3, R1, R0 @ Set R3 to R1 + R0 \n\
 /* 080143f0 */ LDRB R1, [R3, 0xE] \n\
 /* 080143f2 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\

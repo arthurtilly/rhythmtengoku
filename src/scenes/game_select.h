@@ -153,6 +153,13 @@ struct GameSelectGridEntry {
     u32 unk10;
 };
 
+struct GameSelectOverlay {
+    u8 unk0;
+    u8 unk1;
+    const u8 *texture;
+    const u8 *unk8;
+};
+
 
 // Scene Macros/Enums:
 #define GAME_SELECT_GRID_WIDTH 15
@@ -290,11 +297,11 @@ extern struct Animation anim_game_select_perfect_rank[]; // perfect cleared hear
 // Scene Definition Data:
 extern struct PerfectCampaignData perfect_gifts_table[48]; // ??? (related to perfect campaign)
 extern struct Animation *perfect_campaign_borders[3]; // Perfect Campaign Border Animations { 0 = No Flowers; 1 = 3 Flowers; 2 = 6 Flowers }
-extern struct LevelData D_089ce344[55];
+extern struct LevelData level_data_table[55];
 extern struct GameSelectGridEntry D_089ceafc[GAME_SELECT_GRID_HEIGHT * GAME_SELECT_GRID_WIDTH];
-extern struct GraphicsTable D_089cf948[]; // Graphics Table
-extern struct CompressedGraphics *D_089cf9a8[]; // Buffered Textures List
-extern struct Animation *D_089cf9ac[14]; // Stage Title Text Animations
+extern struct GraphicsTable game_select_gfx_table[]; // Graphics Table
+extern struct CompressedGraphics *game_select_buffered_textures[]; // Buffered Textures List
+extern struct Animation *game_select_column_title_anim[]; // Stage Title Text Animations
 
 
 /* FUNCTIONS */
@@ -395,9 +402,9 @@ extern void game_select_scene_stop(s32 unused); // [func_080158d4] Scene Close
 extern void func_080158f0(void); // STUB
 extern void func_080158f4(void); // init. something
 extern void func_0801593c(void); // STUB
-// extern ? func_08015940(?);
-// extern ? func_08015988(?);
-// extern ? func_080159f4(?);
+extern void *func_08015940(void *); // ? Task Init.
+extern u32 func_08015988(void *); // ? Task Update
+extern s32 func_080159f4(); // Start New ? Task
 // extern ? func_08015a24(?);
 // extern ? func_08015a5c(?);
 // extern ? func_08015afc(?);

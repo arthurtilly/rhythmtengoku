@@ -38,7 +38,7 @@ thumb_func_start func_080131e8 \n\
 /* 0801322c */ BL dma3_fill \n\
 /* 08013230 */ MOVS R4, 0x1 @ Set R4 to 0x1 \n\
 /* 08013232 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
-/* 08013234 */ LDR R5, =D_089cea24 \n\
+/* 08013234 */ LDR R5, =game_select_icon_texture_table \n\
  \n\
 branch_08013236: \n\
 /* 08013236 */ LDMIA R5!, {R0} \n\
@@ -80,7 +80,7 @@ branch_0801325e: \n\
 /* 08013278 */ ADDS R0, R0, R7 @ Set R0 to R0 + R7 \n\
 /* 0801327a */ ADDS R6, R0, 0x4 @ Set R6 to R0 + 0x4 \n\
 /* 0801327c */ LSLS R1, R2, 0x5 \n\
-/* 0801327e */ LDR R0, =D_089ce344 \n\
+/* 0801327e */ LDR R0, =level_data_table \n\
 /* 08013280 */ ADDS R3, R1, R0 @ Set R3 to R1 + R0 \n\
 /* 08013282 */ LDRB R1, [R3, 0xE] \n\
 /* 08013284 */ LDR R0, [SP, 0x10] \n\

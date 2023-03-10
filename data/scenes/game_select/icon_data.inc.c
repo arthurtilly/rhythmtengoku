@@ -1,0 +1,112 @@
+extern const u8 D_089057e0[];
+extern const u8 D_08905900[];
+extern const u8 D_08905a20[];
+extern const u8 D_08905b40[];
+extern const u8 D_08905c60[];
+extern const u8 D_08905d80[];
+extern const u8 D_08905ea0[];
+extern const u8 D_08905fc0[];
+extern const u8 D_089060e0[];
+extern const u8 D_08906200[];
+extern const u8 D_08906320[];
+extern const u8 D_08906440[];
+extern const u8 D_08906560[];
+extern const u8 D_08906680[];
+extern const u8 D_089067a0[];
+extern const u8 D_089068c0[];
+extern const u8 D_089069e0[];
+extern const u8 D_08906b00[];
+extern const u8 D_08906c20[];
+extern const u8 D_08906d40[];
+extern const u8 D_08906e60[];
+extern const u8 D_08906f80[];
+extern const u8 D_089070a0[];
+extern const u8 D_089071c0[];
+extern const u8 D_089072e0[];
+extern const u8 D_08907400[];
+extern const u8 D_08907520[];
+extern const u8 D_08907640[];
+extern const u8 D_08907760[];
+extern const u8 D_08907880[];
+extern const u8 D_089079a0[];
+extern const u8 D_08907ac0[];
+extern const u8 D_08907be0[];
+extern const u8 D_08907d00[];
+extern const u8 D_08907e20[];
+extern const u8 D_08907f40[];
+extern const u8 D_08908060[];
+extern const u8 D_08908180[];
+extern const u8 D_089082a0[];
+extern const u8 D_089083c0[];
+extern const u8 D_089084e0[];
+extern const u8 D_08908600[];
+extern const u8 D_08908720[];
+extern const u8 D_08908840[];
+extern const u8 D_08908960[];
+extern const u8 D_08908a80[];
+extern const u8 D_08908ba0[];
+extern const u8 D_08908cc0[];
+extern const u8 D_08908de0[];
+extern const u8 D_08908f00[];
+extern const u8 D_08909020[];
+extern const u8 D_08909140[];
+extern const u8 D_08909260[];
+extern const u8 D_08909380[];
+
+// [D_089cea24] Game Select Icon Textures
+const u8 *game_select_icon_texture_table[] = {
+    /* 0x00 */ D_089057e0,
+    /* 0x01 */ D_08905900,
+    /* 0x02 */ D_08905a20,
+    /* 0x03 */ D_08905b40,
+    /* 0x04 */ D_08905c60,
+    /* 0x05 */ D_08905d80,
+    /* 0x06 */ D_08905ea0,
+    /* 0x07 */ D_08905fc0,
+    /* 0x08 */ D_089060e0,
+    /* 0x09 */ D_08906200,
+    /* 0x0A */ D_08906320,
+    /* 0x0B */ D_08906440,
+    /* 0x0C */ D_08906560,
+    /* 0x0D */ D_08906680,
+    /* 0x0E */ D_089067a0,
+    /* 0x0F */ D_089068c0,
+    /* 0x10 */ D_089069e0,
+    /* 0x11 */ D_08906b00,
+    /* 0x12 */ D_08906c20,
+    /* 0x13 */ D_08906d40,
+    /* 0x14 */ D_08906e60,
+    /* 0x15 */ D_08906f80,
+    /* 0x16 */ D_089070a0,
+    /* 0x17 */ D_089071c0,
+    /* 0x18 */ D_089072e0,
+    /* 0x19 */ D_08907400,
+    /* 0x1A */ D_08907520,
+    /* 0x1B */ D_08907640,
+    /* 0x1C */ D_08907760,
+    /* 0x1D */ D_08907880,
+    /* 0x1E */ D_089079a0,
+    /* 0x1F */ D_08907ac0,
+    /* 0x20 */ D_08907be0,
+    /* 0x21 */ D_08907d00,
+    /* 0x22 */ D_08907e20,
+    /* 0x23 */ D_08907f40,
+    /* 0x24 */ D_08908060,
+    /* 0x25 */ D_08908180,
+    /* 0x26 */ D_089082a0,
+    /* 0x27 */ D_089083c0,
+    /* 0x28 */ D_089084e0,
+    /* 0x29 */ D_08908600,
+    /* 0x2A */ D_08908720,
+    /* 0x2B */ D_08908840,
+    /* 0x2C */ D_08908960,
+    /* 0x2D */ D_08908a80,
+    /* 0x2E */ D_08908ba0,
+    /* 0x2F */ D_08908cc0,
+    /* 0x30 */ D_08908de0,
+    /* 0x31 */ D_08908f00,
+    /* 0x32 */ D_08909020,
+    /* 0x33 */ D_08909140,
+    /* 0x34 */ D_08909260,
+    /* 0x35 */ D_08909380
+};

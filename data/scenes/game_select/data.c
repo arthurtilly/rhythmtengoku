@@ -1,6 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 #include "src/bitmap_font.h"
+#include "src/task_pool.h"
 #include "src/scenes/game_select.h"
 #include "graphics/game_select/game_select_graphics.h"
 #include "text/game_select_text.h"
@@ -262,3 +263,4 @@ struct Animation *perfect_campaign_borders[] = {
 
 #include "epilogue_data.inc.c"
 #include "level_data.inc.c"
+#include "icon_data.inc.c"

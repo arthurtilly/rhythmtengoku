@@ -302,7 +302,7 @@ s32 func_08013100(u32 x, u32 y) {
 const struct LevelData *func_08013130(s32 id) {
     if (id < 0) return NULL;
 
-    return &D_089ce344[id];
+    return &level_data_table[id];
 }
 
 
@@ -407,7 +407,7 @@ void func_08013570(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_080087b4(get_current_mem_id(), D_089cf9a8);
+    task = func_080087b4(get_current_mem_id(), game_select_buffered_textures);
     run_func_after_task(task, func_08013530, 0);
 }
 
@@ -417,7 +417,7 @@ void func_0801359c(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), D_089cf948, 0x3000);
+    task = func_08002ee0(get_current_mem_id(), game_select_gfx_table, 0x3000);
     run_func_after_task(task, func_08013570, 0);
 }
 
@@ -604,7 +604,7 @@ void func_08013f9c(void) {
 
 // Set Stage Title Text
 void func_080140a4(s32 x) {
-    func_0804d8f8(D_03005380, gGameSelectInfo->stageTitleSprite, D_089cf9ac[x], 0, 1, 0x7f, 0);
+    func_0804d8f8(D_03005380, gGameSelectInfo->stageTitleSprite, game_select_column_title_anim[x], 0, 1, 0x7f, 0);
     gGameSelectInfo->unk1A = 100;
 }
 
@@ -790,7 +790,7 @@ void func_08015244(s32 gameID, s32 completionState, s32 arg2) {
         gGameSelectInfo->currentGameID = gameID;
         gGameSelectInfo->currentGameCompletionState = completionState;
         gGameSelectInfo->unk40 = arg2;
-        gGameSelectInfo->currentGameEntry = &D_089ce344[gameID];
+        gGameSelectInfo->currentGameEntry = &level_data_table[gameID];
         gGameSelectInfo->unk41 = 1;
     }
 }

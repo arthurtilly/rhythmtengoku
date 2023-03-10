@@ -17,7 +17,7 @@ thumb_func_start func_0801a1b0 \n\
 /* 0801a1c8 */ LDR R0, [R4, 0x10] \n\
 /* 0801a1ca */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801a1cc */ BEQ branch_0801a228 \n\
-/* 0801a1ce */ LDR R0, =(D_089ce344 + 0x6C0) \n\
+/* 0801a1ce */ LDR R0, =(level_data_table + 0x6C0) \n\
 /* 0801a1d0 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 0801a1d2 */ BNE branch_0801a1e4 \n\
 /* 0801a1d4 */ BL func_08026b18 \n\
