@@ -9,7 +9,7 @@ thumb_func_start func_080128b8 \n\
 /* 080128be */ MOVS R0, 0xD0 @ Set R0 to 0xD0 \n\
 /* 080128c0 */ LSLS R0, R0, 0x2 \n\
 /* 080128c2 */ ADDS R7, R1, R0 @ Set R7 to R1 + R0 \n\
-/* 080128c4 */ LDR R6, =D_089cdf24 \n\
+/* 080128c4 */ LDR R6, =perfect_gifts_table \n\
 /* 080128c6 */ LDR R0, =0x453 \n\
 /* 080128c8 */ ADDS R2, R1, R0 @ Set R2 to R1 + R0 \n\
 /* 080128ca */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

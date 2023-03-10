@@ -20,7 +20,7 @@ thumb_func_start func_08016af0 \n\
 /* 08016b14 */ BL func_080191b8 \n\
 /* 08016b18 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08016b1a */ BEQ branch_08016bf0 \n\
-/* 08016b1c */ LDR R2, =D_089cdf24 \n\
+/* 08016b1c */ LDR R2, =perfect_gifts_table \n\
 /* 08016b1e */ LDR R0, [R4] \n\
 /* 08016b20 */ LDR R3, [R0, 0x8] \n\
 /* 08016b22 */ LSLS R0, R3, 0x3 \n\
@@ -122,7 +122,7 @@ branch_08016bf0: \n\
 /* 08016bf2 */ LDR R1, [R0] \n\
 /* 08016bf4 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08016bf6 */ STR R0, [R1, 0x8] \n\
-/* 08016bf8 */ LDR R0, =D_089cdf24 \n\
+/* 08016bf8 */ LDR R0, =perfect_gifts_table \n\
 /* 08016bfa */ LDRB R6, [R0, 0x2] \n\
 /* 08016bfc */ LDR R7, [R0, 0x4] \n\
  \n\

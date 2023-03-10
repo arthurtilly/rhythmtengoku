@@ -38,7 +38,7 @@ struct GameSelectSceneInfo {
     u8 currentGameCompletionState;
     u8 unk40;
     u8 unk41;
-    const struct GameSelectSceneEntry *currentGameEntry;
+    const struct LevelData *currentGameEntry;
     u16 currentGameID;
     u16 null4A;
     u16 null4C;
@@ -133,13 +133,13 @@ struct PerfectCampaignData {
     u32 rewardID;
 };
 
-struct GameSelectSceneEntry {
+struct LevelData {
     struct Scene *scene;
     const char *name;
     const char *description;
     u16 unkC;
     u16 unkE;
-    const u32 **epilogueGfx;
+    const struct GraphicsTable **epilogueGfx;
     const char *tryAgainText;
     const char *okText;
     const char *superbText;
@@ -288,13 +288,13 @@ extern struct Animation anim_game_select_perfect_rank[]; // perfect cleared hear
 
 
 // Scene Definition Data:
-extern const struct PerfectCampaignData D_089cdf24[48]; // ??? (related to perfect campaign)
-extern struct Animation *const D_089ce0a4[3]; // Perfect Campaign Border Animations { 0 = No Flowers; 1 = 3 Flowers; 2 = 6 Flowers }
-extern const struct GameSelectSceneEntry D_089ce344[55];
-extern const struct GameSelectGridEntry D_089ceafc[GAME_SELECT_GRID_HEIGHT * GAME_SELECT_GRID_WIDTH];
-extern const struct GraphicsTable D_089cf948[]; // Graphics Table
-extern struct CompressedGraphics *const D_089cf9a8[]; // Buffered Textures List
-extern struct Animation *const D_089cf9ac[14]; // Stage Title Text Animations
+extern struct PerfectCampaignData perfect_gifts_table[48]; // ??? (related to perfect campaign)
+extern struct Animation *perfect_campaign_borders[3]; // Perfect Campaign Border Animations { 0 = No Flowers; 1 = 3 Flowers; 2 = 6 Flowers }
+extern struct LevelData D_089ce344[55];
+extern struct GameSelectGridEntry D_089ceafc[GAME_SELECT_GRID_HEIGHT * GAME_SELECT_GRID_WIDTH];
+extern struct GraphicsTable D_089cf948[]; // Graphics Table
+extern struct CompressedGraphics *D_089cf9a8[]; // Buffered Textures List
+extern struct Animation *D_089cf9ac[14]; // Stage Title Text Animations
 
 
 /* FUNCTIONS */
@@ -321,9 +321,9 @@ extern void func_08012fcc(s32 x, s32 y); // Display Perfect Campaign Border
 // extern ? func_080130b0(?);
 // extern ? func_080130e4(?);
 extern s32 func_08013100(u32 x, u32 y); // Get Game Select Scene Entry ID
-extern const struct GameSelectSceneEntry *func_08013130(s32 id); // Get Game Scene Entry
+extern const struct LevelData *func_08013130(s32 id); // Get Game Scene Entry
 extern s32 func_0801314c(s32 gameID); // Get Completion State for a Game
-extern const struct GameSelectSceneEntry *func_0801316c(s32 x, s32 y); // Get Game Scene Entry from Grid Position
+extern const struct LevelData *func_0801316c(s32 x, s32 y); // Get Game Scene Entry from Grid Position
 extern s32 func_0801317c(s32 x, s32 y); // Get Completion State for a Game at Grid Position
 extern void func_0801318c(s32, s32 *, s32 *); // Set X/Y from Game Select Grid Data
 extern void func_080131e8(void); // init. something

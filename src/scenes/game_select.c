@@ -117,8 +117,8 @@ void func_080129e8(void) {
 
     D_030046a8->data.unk266 = 2;
     notice->id = D_030046a8->data.perfectCampaignID;
-    notice->x = D_089cdf24[notice->id].x;
-    notice->y = D_089cdf24[notice->id].y;
+    notice->x = perfect_gifts_table[notice->id].x;
+    notice->y = perfect_gifts_table[notice->id].y;
     notice->unk0 = 1;
 }
 
@@ -162,8 +162,8 @@ void func_08012a58(void) {
              && (D_030046a8->data.unk26A < 3)
              && (D_030046a8->data.unk236[D_030046a8->data.perfectCampaignID] == 0)) {
                 notice->id = D_030046a8->data.perfectCampaignID;
-                notice->x = D_089cdf24[notice->id].x;
-                notice->y = D_089cdf24[notice->id].y;
+                notice->x = perfect_gifts_table[notice->id].x;
+                notice->y = perfect_gifts_table[notice->id].y;
                 func_08012fcc(notice->x, notice->y);
             } else {
                 D_030046a8->data.unk266 = 0;
@@ -184,8 +184,8 @@ const char *func_08012c24(s32 id, s32 shortenSongTitle) {
 
     if (id < 0) return D_08050bcc; // ""
 
-    rewardType = D_089cdf24[id].rewardType;
-    rewardID = D_089cdf24[id].rewardID;
+    rewardType = perfect_gifts_table[id].rewardType;
+    rewardID = perfect_gifts_table[id].rewardID;
 
     switch (rewardType) {
         case PERFECT_REWARD_TYPE_MUSIC:
@@ -209,7 +209,7 @@ const char *func_08012c24(s32 id, s32 shortenSongTitle) {
 
 // Set Perfect Campaign Notice..?
 void func_08012cb4(s32 id) {
-    const struct GameSelectSceneEntry *entry;
+    const struct LevelData *entry;
     struct PerfectCampaignNotice *notice;
     char *string;
     u32 r9;
@@ -220,8 +220,8 @@ void func_08012cb4(s32 id) {
     r9 = FALSE;
     rewardIsMusic = FALSE;
 
-    rewardType = D_089cdf24[id].rewardType;
-    rewardID = D_089cdf24[id].rewardID;
+    rewardType = perfect_gifts_table[id].rewardType;
+    rewardID = perfect_gifts_table[id].rewardID;
     if (rewardType == PERFECT_REWARD_TYPE_MUSIC) {
         rewardIsMusic = TRUE;
         if (rewardID < 7) {
@@ -232,8 +232,8 @@ void func_08012cb4(s32 id) {
             }
         }
     }
-    notice->x = D_089cdf24[id].x;
-    notice->y = D_089cdf24[id].y;
+    notice->x = perfect_gifts_table[id].x;
+    notice->y = perfect_gifts_table[id].y;
 
     entry = func_0801316c(notice->x, notice->y);
     string = notice->text;
@@ -274,7 +274,7 @@ void func_08012fcc(s32 x, s32 y) {
     func_0801332c(x, y, &x2, &y2);
     x2 += 47;
     y2 += 68;
-    func_0804d8f8(D_03005380, notice->perfectBorderSprite, D_089ce0a4[clamp_int32(D_030046a8->data.perfectAttemptsRemaining, 1, 3) - 1], 0, 1, 0, 0);
+    func_0804d8f8(D_03005380, notice->perfectBorderSprite, perfect_campaign_borders[clamp_int32(D_030046a8->data.perfectAttemptsRemaining, 1, 3) - 1], 0, 1, 0, 0);
     func_0804d5d4(D_03005380, notice->perfectBorderSprite, x2, y2);
     func_0804d770(D_03005380, notice->perfectBorderSprite, TRUE);
 }
@@ -299,7 +299,7 @@ s32 func_08013100(u32 x, u32 y) {
 
 
 // Get Game Scene Entry
-const struct GameSelectSceneEntry *func_08013130(s32 id) {
+const struct LevelData *func_08013130(s32 id) {
     if (id < 0) return NULL;
 
     return &D_089ce344[id];
@@ -317,7 +317,7 @@ s32 func_0801314c(s32 gameID) {
 
 
 // Get Game Scene Entry from Grid Position
-const struct GameSelectSceneEntry *func_0801316c(s32 x, s32 y) {
+const struct LevelData *func_0801316c(s32 x, s32 y) {
     return func_08013130(func_08013100(x, y));
 }
 
