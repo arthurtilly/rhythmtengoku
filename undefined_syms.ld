@@ -201,75 +201,6 @@ D_030064d4 = 0x030064d4;
 
 /* ROM START */
 
-/* Main Menu - Options Animations */
-D_088f5aec = 0x088f5aec;
-D_088f5afc = 0x088f5afc;
-D_088f5b2c = 0x088f5b2c;
-D_088f5b5c = 0x088f5b5c;
-D_088f5b6c = 0x088f5b6c;
-D_088f5b7c = 0x088f5b7c;
-D_088f5b9c = 0x088f5b9c;
-D_088f5bac = 0x088f5bac;
-D_088f5bbc = 0x088f5bbc;
-D_088f5bcc = 0x088f5bcc;
-D_088f5bdc = 0x088f5bdc;
-/* Main Menu - Options Palettes */
-D_088f5bfc = 0x088f5bfc;
-/* Cafe Animations */
-D_089001cc = 0x089001cc;
-D_089001dc = 0x089001dc;
-D_089001fc = 0x089001fc;
-D_0890021c = 0x0890021c;
-/* Cafe Palettes */
-D_0890023c = 0x0890023c;
-D_0890035c = 0x0890035c;
-/* Endless Menu Animations */
-D_08900444 = 0x08900444;
-D_08900454 = 0x08900454;
-D_08900464 = 0x08900464;
-D_08900474 = 0x08900474;
-/* Endless Menu Palettes */
-D_08900484 = 0x08900484;
-/* Studio SRAM Usage Indicator Animations */
-D_08900bcc = 0x08900bcc;
-D_08900d9c = 0x08900d9c;
-/* Studio SRAM Usage Indicator Palettes */
-D_08900dac = 0x08900dac;
-/* Drum Lessons Menu Animations */
-D_089012a4 = 0x089012a4;
-D_089012b4 = 0x089012b4;
-D_089012d4 = 0x089012d4;
-D_089012e4 = 0x089012e4;
-D_089012f4 = 0x089012f4;
-D_08901304 = 0x08901304;
-D_08901314 = 0x08901314;
-D_08901324 = 0x08901324;
-D_08901334 = 0x08901334;
-D_08901344 = 0x08901344;
-D_08901354 = 0x08901354;
-D_08901364 = 0x08901364;
-D_08901374 = 0x08901374;
-D_08901384 = 0x08901384;
-D_08901394 = 0x08901394;
-D_089013a4 = 0x089013a4;
-D_089013b4 = 0x089013b4;
-D_089013c4 = 0x089013c4;
-D_089013d4 = 0x089013d4;
-D_089013e4 = 0x089013e4;
-D_089013f4 = 0x089013f4;
-D_08901404 = 0x08901404;
-D_08901414 = 0x08901414;
-/* Drum Lessons Menu Palettes */
-D_08901424 = 0x08901424;
-/* Rhythm Data Room - Menu Animations */
-D_089018f8 = 0x089018f8;
-D_08901910 = 0x08901910;
-D_08901930 = 0x08901930;
-D_08901948 = 0x08901948;
-D_08901980 = 0x08901980;
-D_089019a8 = 0x089019a8;
-/* Rhythm Data Room - Menu Palettes */
-D_08901ac0 = 0x08901ac0;
 /* Game Select Palettes */
 D_08902ec0 = 0x08902ec0;
 D_08903020 = 0x08903020;
@@ -339,22 +270,6 @@ D_08909020 = 0x08909020;
 D_08909140 = 0x08909140;
 D_08909260 = 0x08909260;
 D_08909380 = 0x08909380;
-/* Main Menu Animations */
-D_0890a3c4 = 0x0890a3c4;
-D_0890a3d4 = 0x0890a3d4;
-D_0890a3f4 = 0x0890a3f4;
-D_0890a414 = 0x0890a414;
-D_0890a434 = 0x0890a434;
-D_0890a454 = 0x0890a454;
-D_0890a474 = 0x0890a474;
-D_0890a484 = 0x0890a484;
-D_0890a494 = 0x0890a494;
-D_0890a4a4 = 0x0890a4a4;
-D_0890a4b4 = 0x0890a4b4;
-D_0890a4c4 = 0x0890a4c4;
-D_0890a4d4 = 0x0890a4d4;
-/* Main Menu Palettes */
-D_0890a4f4 = 0x0890a4f4;
 /* Perfect Campaign Palettes */
 D_0890a694 = 0x0890a694;
 /* Rhythm Data Room - Reading Animations */
@@ -370,9 +285,6 @@ D_0890b134 = 0x0890b134;
 D_0890b194 = 0x0890b194;
 D_0890b1f4 = 0x0890b1f4;
 D_0890b294 = 0x0890b294;
-/* Unknown - 087 Animations */
-D_0890b310 = 0x0890b310;
-D_0890b320 = 0x0890b320;
 /* Results - Level Animations */
 D_0890b6ac = 0x0890b6ac;
 D_0890b6bc = 0x0890b6bc;

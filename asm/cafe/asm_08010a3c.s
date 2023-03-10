@@ -48,7 +48,7 @@ thumb_func_start func_08010a3c \n\
 .ltorg \n\
  \n\
 branch_08010aa0: \n\
-/* 08010aa0 */ LDR R3, =D_0890021c \n\
+/* 08010aa0 */ LDR R3, =anim_cafe_text_adv_icon \n\
  \n\
 branch_08010aa2: \n\
 /* 08010aa2 */ LDR R0, =D_03005380 \n\

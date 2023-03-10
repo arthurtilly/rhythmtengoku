@@ -83,7 +83,7 @@ void func_080124d0(u32 unused) {
     gMainMenuInfo->font1 = func_0800c660(0x300, 4);
     import_all_scene_objects(D_03005380, gMainMenuInfo->font1, D_089cdc40, D_0300558c);
     func_08012494();
-    func_0804d160(D_03005380, D_0890a3c4, 0, 120, 64, 0x6e, 1, 0, 0);
+    func_0804d160(D_03005380, anim_main_menu_blank1, 0, 120, 64, 0x6e, 1, 0, 0);
 
     for (i = 0; i < 5; i++) {
         if (i == D_030055d8) {

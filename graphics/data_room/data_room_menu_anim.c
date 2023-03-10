@@ -3,30 +3,30 @@
 
 #include "data_room_menu_anim_cells.inc.c"
 
-// [D_089018f8] <description>
-struct Animation data_room_menu_anim00[] = {
+// [D_089018f8] Green LED Next to OK Sign
+struct Animation anim_data_room_green_led[] = {
     /* 000 */ { data_room_menu_cel001, 40 },
     /* 001 */ { data_room_menu_cel000, 20 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901910] <description>
-struct Animation data_room_menu_anim01[] = {
+// [D_08901910] Cursor
+struct Animation anim_data_room_cursor[] = {
     /* 000 */ { data_room_menu_cel004, 4 },
     /* 001 */ { data_room_menu_cel003, 4 },
     /* 002 */ { data_room_menu_cel002, 14 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901930] <description>
-struct Animation data_room_menu_anim02[] = {
+// [D_08901930] Character - Scroll
+struct Animation anim_data_room_user_scroll[] = {
     /* 000 */ { data_room_menu_cel005, 4 },
     /* 001 */ { data_room_menu_cel006, 8 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901948] <description>
-struct Animation data_room_menu_anim03[] = {
+// [D_08901948] Character - Stare into Screen
+struct Animation anim_data_room_user_stare[] = {
     /* 000 */ { data_room_menu_cel006, 20 },
     /* 001 */ { data_room_menu_cel007, 4 },
     /* 002 */ { data_room_menu_cel008, 4 },
@@ -36,8 +36,8 @@ struct Animation data_room_menu_anim03[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08901980] <description>
-struct Animation data_room_menu_anim04[] = {
+// [D_08901980] Character - Almost Doze Off
+struct Animation anim_data_room_user_almost_sleep[] = {
     /* 000 */ { data_room_menu_cel011, 30 },
     /* 001 */ { data_room_menu_cel012, 4 },
     /* 002 */ { data_room_menu_cel013, 30 },
@@ -45,8 +45,8 @@ struct Animation data_room_menu_anim04[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089019a8] <description>
-struct Animation data_room_menu_anim05[] = {
+// [D_089019a8] Character - Doze Off
+struct Animation anim_data_room_user_fall_asleep[] = {
     /* 000 */ { data_room_menu_cel007, 6 },
     /* 001 */ { data_room_menu_cel008, 6 },
     /* 002 */ { data_room_menu_cel009, 6 },

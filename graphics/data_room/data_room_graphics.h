@@ -5,16 +5,16 @@
 
 /* DATA ROOM (MENU) - ANIMATIONS */
 
-extern struct Animation data_room_menu_anim00[];
-extern struct Animation data_room_menu_anim01[];
-extern struct Animation data_room_menu_anim02[];
-extern struct Animation data_room_menu_anim03[];
-extern struct Animation data_room_menu_anim04[];
-extern struct Animation data_room_menu_anim05[];
+extern struct Animation anim_data_room_green_led[];
+extern struct Animation anim_data_room_cursor[];
+extern struct Animation anim_data_room_user_scroll[];
+extern struct Animation anim_data_room_user_stare[];
+extern struct Animation anim_data_room_user_almost_sleep[];
+extern struct Animation anim_data_room_user_fall_asleep[];
 
 /* DATA ROOM (MENU) - PALETTES */
 
-extern Palette data_room_menu_pal[];
+extern Palette data_room_pal[];
 
 /* DATA ROOM (READING) - ANIMATIONS */
 
@@ -35,8 +35,8 @@ extern Palette data_room_reading_bg_06_pal[];
 
 /* READ ERROR - ANIMATIONS */
 
-extern struct Animation read_error_anim00[];
-extern struct Animation read_error_anim01[];
+extern struct Animation anim_read_error_unk0[];
+extern struct Animation anim_read_error_unk1[];
 
 /* READ ERROR - COMPRESSED GRAPHICS */
 

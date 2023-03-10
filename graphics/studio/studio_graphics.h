@@ -75,9 +75,9 @@ extern Palette studio_bg_monitor_44_pal[];
 
 /* STUDIO MEMORY USAGE GRAPH - ANIMATIONS */
 
-extern struct Animation studio_memory_usage_graph_anim00[];
-extern struct Animation studio_memory_usage_graph_anim01[];
+extern struct Animation anim_studio_mem_chart_data[];
+extern struct Animation anim_studio_mem_chart_borders[];
 
 /* STUDIO MEMORY USAGE GRAPH - PALETTES */
 
-extern Palette studio_memory_usage_graph_pal[];
+extern Palette studio_mem_chart_pal[];

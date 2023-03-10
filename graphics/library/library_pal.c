@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0890011c] <description>
+// [D_0890011c] Library ("Arrival") Scene Palette
 Palette library_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x409080),

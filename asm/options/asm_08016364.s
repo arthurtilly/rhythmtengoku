@@ -15,7 +15,7 @@ thumb_func_start func_08016364 \n\
 /* 0801637a */ BL func_08016328 \n\
 /* 0801637e */ LDR R5, =D_03005380 \n\
 /* 08016380 */ LDR R0, [R5] \n\
-/* 08016382 */ LDR R1, =D_088f5aec \n\
+/* 08016382 */ LDR R1, =anim_options_banner \n\
 /* 08016384 */ MOVS R2, 0x10 @ Set R2 to 0x10 \n\
 /* 08016386 */ STR R2, [SP] \n\
 /* 08016388 */ MOVS R2, 0x90 @ Set R2 to 0x90 \n\
@@ -32,7 +32,7 @@ thumb_func_start func_08016364 \n\
 /* 0801639e */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
 /* 080163a0 */ BL func_0804d160 \n\
 /* 080163a4 */ LDR R0, [R5] \n\
-/* 080163a6 */ LDR R1, =D_088f5b7c \n\
+/* 080163a6 */ LDR R1, =anim_options_cursor_barista \n\
 /* 080163a8 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 080163aa */ STR R2, [SP] \n\
 /* 080163ac */ MOV R3, R10 @ Set R3 to R10 \n\
@@ -55,7 +55,7 @@ thumb_func_start func_08016364 \n\
 /* 080163d0 */ LDR R0, [R0] \n\
 /* 080163d2 */ STR R0, [R1, 0xC] \n\
 /* 080163d4 */ LDR R0, [R5] \n\
-/* 080163d6 */ LDR R1, =D_088f5afc \n\
+/* 080163d6 */ LDR R1, =anim_options_select_stereo \n\
 /* 080163d8 */ MOVS R2, 0x38 @ Set R2 to 0x38 \n\
 /* 080163da */ STR R2, [SP] \n\
 /* 080163dc */ MOV R2, R10 @ Set R2 to R10 \n\
@@ -71,7 +71,7 @@ thumb_func_start func_08016364 \n\
 /* 080163f2 */ LDR R1, [R6] \n\
 /* 080163f4 */ STRH R0, [R1, 0x6] \n\
 /* 080163f6 */ LDR R0, [R5] \n\
-/* 080163f8 */ LDR R1, =D_088f5b5c \n\
+/* 080163f8 */ LDR R1, =anim_options_select_data_clear \n\
 /* 080163fa */ MOVS R2, 0x54 @ Set R2 to 0x54 \n\
 /* 080163fc */ STR R2, [SP] \n\
 /* 080163fe */ MOV R3, R10 @ Set R3 to R10 \n\
@@ -87,7 +87,7 @@ thumb_func_start func_08016364 \n\
 /* 08016414 */ LDR R1, [R6] \n\
 /* 08016416 */ STRH R0, [R1, 0x8] \n\
 /* 08016418 */ LDR R0, [R5] \n\
-/* 0801641a */ LDR R1, =D_088f5b6c \n\
+/* 0801641a */ LDR R1, =anim_options_desc_box \n\
 /* 0801641c */ MOVS R2, 0x74 @ Set R2 to 0x74 \n\
 /* 0801641e */ STR R2, [SP] \n\
 /* 08016420 */ MOVS R2, 0x9E @ Set R2 to 0x9E \n\
@@ -119,7 +119,7 @@ thumb_func_start func_08016364 \n\
 /* 08016458 */ LDR R1, [R6] \n\
 /* 0801645a */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 0801645c */ LDRSH R1, [R1, R2] \n\
-/* 0801645e */ LDR R2, =D_088f5bbc \n\
+/* 0801645e */ LDR R2, =anim_options_off_data_clear \n\
 /* 08016460 */ STR R4, [SP] \n\
 /* 08016462 */ STR R4, [SP, 0x4] \n\
 /* 08016464 */ STR R4, [SP, 0x8] \n\
@@ -170,7 +170,7 @@ thumb_func_start func_08016364 \n\
 /* 080164d6 */ LDR R0, [R6] \n\
 /* 080164d8 */ STR R7, [R0, 0x14] \n\
 /* 080164da */ LDR R0, [R5] \n\
-/* 080164dc */ LDR R1, =D_088f5bcc \n\
+/* 080164dc */ LDR R1, =anim_options_warning_box \n\
 /* 080164de */ MOVS R2, 0x4A @ Set R2 to 0x4A \n\
 /* 080164e0 */ STR R2, [SP] \n\
 /* 080164e2 */ LDR R2, =0x440a \n\
@@ -188,7 +188,7 @@ thumb_func_start func_08016364 \n\
 /* 080164fc */ LDR R1, [R6] \n\
 /* 080164fe */ STRH R0, [R1, 0x1A] \n\
 /* 08016500 */ LDR R0, [R5] \n\
-/* 08016502 */ LDR R1, =D_088f5bdc \n\
+/* 08016502 */ LDR R1, =anim_options_cursor_default \n\
 /* 08016504 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 08016506 */ STR R2, [SP] \n\
 /* 08016508 */ MOVS R3, 0x88 @ Set R3 to 0x88 \n\

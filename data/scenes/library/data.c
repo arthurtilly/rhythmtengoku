@@ -1,12 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 #include "src/scenes/library.h"
-
-extern struct CompressedGraphics D_08cbed78;
-extern struct CompressedGraphics D_08cbefe4;
-extern Palette library_pal[];
-extern struct Animation anim_library_option1[];
-extern struct Animation anim_library_option2[];
+#include "graphics/library/library_graphics.h"
 
 
   /* RIQ LIBRARY - SCENE DATA */

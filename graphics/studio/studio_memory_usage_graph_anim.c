@@ -3,8 +3,8 @@
 
 #include "studio_memory_usage_graph_anim_cells.inc.c"
 
-// [D_08900bcc] <description>
-struct Animation studio_memory_usage_graph_anim00[] = {
+// [D_08900bcc] Graph Data
+struct Animation anim_studio_mem_chart_data[] = {
     /* 000 */ { studio_memory_usage_graph_cel001, 4 },
     /* 001 */ { studio_memory_usage_graph_cel002, 4 },
     /* 002 */ { studio_memory_usage_graph_cel003, 4 },
@@ -65,8 +65,8 @@ struct Animation studio_memory_usage_graph_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08900d9c] <description>
-struct Animation studio_memory_usage_graph_anim01[] = {
+// [D_08900d9c] Graph Borders
+struct Animation anim_studio_mem_chart_borders[] = {
     /* 000 */ { studio_memory_usage_graph_cel000, 4 },
     /* End */ END_ANIMATION
 };

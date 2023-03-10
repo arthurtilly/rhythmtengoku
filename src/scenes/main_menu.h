@@ -24,7 +24,7 @@ extern s8 D_030055d8; // Currently-Selected Button
 
 
 // OAM Animations:
-extern struct Animation D_0890a3c4[]; // Blank
+extern struct Animation anim_main_menu_blank1[]; // Blank
 
 
 // Palettes:

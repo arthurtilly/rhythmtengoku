@@ -35,7 +35,7 @@ branch_08010564: \n\
 /* 0801056e */ BL func_080104f0 \n\
 /* 08010572 */ LDR R0, =D_03005380 \n\
 /* 08010574 */ LDR R0, [R0] \n\
-/* 08010576 */ LDR R1, =D_089000cc \n\
+/* 08010576 */ LDR R1, =anim_library_option1 \n\
 /* 08010578 */ MOVS R2, 0x90 @ Set R2 to 0x90 \n\
 /* 0801057a */ STR R2, [SP] \n\
 /* 0801057c */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\

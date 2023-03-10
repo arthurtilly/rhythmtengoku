@@ -107,7 +107,7 @@ branch_080166a0: \n\
 /* 080166d6 */ LDR R1, [R6] \n\
 /* 080166d8 */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 080166da */ LDRSH R1, [R1, R2] \n\
-/* 080166dc */ LDR R2, =D_088f5bbc \n\
+/* 080166dc */ LDR R2, =anim_options_off_data_clear \n\
 /* 080166de */ STR R4, [SP] \n\
 /* 080166e0 */ STR R4, [SP, 0x4] \n\
 /* 080166e2 */ STR R4, [SP, 0x8] \n\
@@ -151,7 +151,7 @@ branch_08016708: \n\
 /* 08016740 */ LDR R1, [R6] \n\
 /* 08016742 */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 08016744 */ LDRSH R1, [R1, R2] \n\
-/* 08016746 */ LDR R2, =D_088f5b5c \n\
+/* 08016746 */ LDR R2, =anim_options_select_data_clear \n\
 /* 08016748 */ STR R4, [SP] \n\
 /* 0801674a */ STR R4, [SP, 0x4] \n\
 /* 0801674c */ STR R4, [SP, 0x8] \n\

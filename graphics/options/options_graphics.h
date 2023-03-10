@@ -5,17 +5,17 @@
 
 /* OPTIONS - ANIMATIONS */
 
-extern struct Animation options_anim00[];
-extern struct Animation options_anim01[];
-extern struct Animation options_anim02[];
-extern struct Animation options_anim03[];
-extern struct Animation options_anim04[];
-extern struct Animation options_anim05[];
-extern struct Animation options_anim06[];
-extern struct Animation options_anim07[];
-extern struct Animation options_anim08[];
-extern struct Animation options_anim09[];
-extern struct Animation options_anim10[];
+extern struct Animation anim_options_banner[];
+extern struct Animation anim_options_select_stereo[];
+extern struct Animation anim_options_select_mono[];
+extern struct Animation anim_options_select_data_clear[];
+extern struct Animation anim_options_desc_box[];
+extern struct Animation anim_options_cursor_barista[];
+extern struct Animation anim_options_off_stereo[];
+extern struct Animation anim_options_off_mono[];
+extern struct Animation anim_options_off_data_clear[];
+extern struct Animation anim_options_warning_box[];
+extern struct Animation anim_options_cursor_default[];
 
 /* OPTIONS - PALETTES */
 

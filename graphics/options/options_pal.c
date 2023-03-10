@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_088f5bfc] <description>
+// [D_088f5bfc] Options Menu Scene Palette
 Palette options_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x7888A8),
