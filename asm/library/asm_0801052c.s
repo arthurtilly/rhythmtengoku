@@ -21,7 +21,7 @@ thumb_func_start func_0801052c \n\
 /* 08010550 */ BEQ branch_08010564 \n\
 /* 08010552 */ BL func_080005f4 \n\
 /* 08010556 */ LSLS R0, R0, 0x4 \n\
-/* 08010558 */ LDR R1, =D_089d7e74 \n\
+/* 08010558 */ LDR R1, =reading_material_table \n\
 /* 0801055a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801055c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801055e */ BEQ branch_08010564 \n\

@@ -786,32 +786,13 @@ D_089d7b70 = 0x089d7b70;
 D_089d7bf4 = 0x089d7bf4;
 D_089d7c18 = 0x089d7c18;
 /* Scene Data - Reading Material */
-D_089d7c34 = 0x089d7c34;
-D_089d7c70 = 0x089d7c70;
-D_089d7c74 = 0x089d7c74;
-D_089d7cb0 = 0x089d7cb0;
-D_089d7cb4 = 0x089d7cb4;
-D_089d7cf0 = 0x089d7cf0;
-D_089d7cf4 = 0x089d7cf4;
-D_089d7d30 = 0x089d7d30;
-D_089d7d34 = 0x089d7d34;
-D_089d7d70 = 0x089d7d70;
-D_089d7df4 = 0x089d7df4;
-D_089d7e30 = 0x089d7e30;
-D_089d7e34 = 0x089d7e34;
-D_089d7e70 = 0x089d7e70;
-D_089d7e74 = 0x089d7e74;
-D_089d7fb4 = 0x089d7fb4;
-D_089d7fe4 = 0x089d7fe4;
-D_089d7fe8 = 0x089d7fe8;
 D_089d7ff8 = 0x089d7ff8;
 D_089d80ac = 0x089d80ac;
 D_089d80d0 = 0x089d80d0;
-/* Scene Data - Reading Material (Read Error?) */
-D_089d80ec = 0x089d80ec;
-D_089d80f8 = 0x089d80f8;
+/* Scene Data - Empty Scene */
 D_089d80fc = 0x089d80fc;
 D_089d8174 = 0x089d8174;
+D_089d8198 = 0x089d8198;
 /* Scene Data - Studio */
 D_089d81b4 = 0x089d81b4;
 D_089d83d0 = 0x089d83d0;

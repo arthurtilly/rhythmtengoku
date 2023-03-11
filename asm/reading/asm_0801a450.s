@@ -11,7 +11,7 @@ thumb_func_start func_0801a450 \n\
 /* 0801a45a */ SUB SP, 0x14 \n\
 /* 0801a45c */ BL func_0800061c \n\
 /* 0801a460 */ LSLS R0, R0, 0x4 \n\
-/* 0801a462 */ LDR R1, =D_089d7e74 \n\
+/* 0801a462 */ LDR R1, =reading_material_table \n\
 /* 0801a464 */ ADDS R7, R0, R1 @ Set R7 to R0 + R1 \n\
 /* 0801a466 */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0801a468 */ BNE branch_0801a46c \n\

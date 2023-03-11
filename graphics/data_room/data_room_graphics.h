@@ -28,6 +28,28 @@ extern struct Animation data_room_reading_anim00[];
 extern struct Animation data_room_reading_anim01[];
 extern struct Animation data_room_reading_anim02[];
 
+/* DATA ROOM (READING) - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08cd29ac;
+extern struct CompressedGraphics D_08cd2cec;
+extern struct CompressedGraphics D_08cd1d28;
+extern struct CompressedGraphics D_08cd21cc;
+extern struct CompressedGraphics D_08cd31d8;
+extern struct CompressedGraphics D_08cd3470;
+extern struct CompressedGraphics D_08ccf798;
+extern struct CompressedGraphics D_08ccfa5c;
+extern struct CompressedGraphics D_08cd0a10;
+extern struct CompressedGraphics D_08cd0cf8;
+extern struct CompressedGraphics D_08ccd074;
+extern struct CompressedGraphics D_08ccd350;
+extern struct CompressedGraphics D_08cce92c;
+extern struct CompressedGraphics D_08cceb58;
+extern struct CompressedGraphics D_08cceda8;
+extern struct CompressedGraphics D_08ccef6c;
+extern struct CompressedGraphics D_08cce120;
+extern struct CompressedGraphics D_08cce57c;
+extern struct CompressedGraphics D_08cccb04;
+
 /* DATA ROOM (READING) - PALETTES */
 
 extern Palette data_room_reading_obj_pal[];

@@ -11,7 +11,7 @@
 
 
 // [D_08058f00] Reading - Graphics Table ?
-const struct GraphicsTable D_08058f00[] = {
+const struct GraphicsTable text_reading_invalid_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cd29ac,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -31,7 +31,7 @@ const struct GraphicsTable D_08058f00[] = {
 };
 
 // Invalid Data
-const char text_reading_warning_invalid[] =
+const char text_reading_invalid[] =
     "\x01\x43" "\x03\x32" "\x01\x6c" "\n"
     "\n"
     "\n"
@@ -39,4 +39,4 @@ const char text_reading_warning_invalid[] =
     "無効データ";
 
 // Error
-const char text_reading_warning_error[] = "\x02\x33" "\x01\x33" "\x01\x43" "エラー";
+const char text_reading_invalid_title[] = "\x02\x33" "\x01\x33" "\x01\x43" "エラー";

@@ -11,8 +11,8 @@ struct ReadingSceneInfo {
 struct ReadingMaterial {
     const char *title;
     const char *text;
-    const u32 *graphics;
-    struct SequenceData *music;
+    const struct GraphicsTable *gfx;
+    struct SequenceData **bgm;
 };
 
 
@@ -23,10 +23,17 @@ struct ReadingMaterial {
 
 
 // Sound Effects:
+extern struct SequenceData s_f_env_cherry_seqData;
+extern struct SequenceData s_f_env_train_seqData;
+extern struct SequenceData s_sindan_sea_seqData;
+extern struct SequenceData s_f_env_haiku_seqData;
+extern struct SequenceData s_f_env_class_room_seqData;
+extern struct SequenceData s_sindan_mail_seqData;
+extern struct SequenceData s_sindan_manzai_seqData;
 
 
 // Scene Definition Data:
-extern const struct ReadingMaterial D_089d7e74[];
+extern struct ReadingMaterial reading_material_table[];
 
 
 // Scene Functions:
@@ -46,5 +53,5 @@ extern const struct ReadingMaterial D_089d7e74[];
 // extern ? func_0801a924(?); // [func_0801a924] READ ERROR? - Graphics Init. 0
 // extern ? func_0801a940(?); // [func_0801a940] READ ERROR? - Scene Init.
 // extern ? func_0801a96c(?); // [func_0801a96c] READ ERROR? - Scene Main
-// extern ? func_0801a99c(?); // [func_0801a96c] READ ERROR? - ?
+// extern ? func_0801a99c(?); // [func_0801a96c] READ ERROR? - Check if Screen is Ready
 // extern ? func_0801a9b8(?); // [func_0801a9b8] READ ERROR? - Scene Close

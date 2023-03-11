@@ -45,6 +45,6 @@ extern const char text_reading_rhythm_tengoku_welcome[];
 extern const char text_reading_rhythm_tengoku_welcome_title[];
 
 // Reading
-extern const struct GraphicsTable D_08058f00[];
-extern const char text_reading_warning_invalid[];
-extern const char text_reading_warning_error[];
+extern const struct GraphicsTable text_reading_invalid_gfx_table[];
+extern const char text_reading_invalid[];
+extern const char text_reading_invalid_title[];

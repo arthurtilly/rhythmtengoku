@@ -1616,7 +1616,7 @@ SECTIONS {
         build/bin/scene_cafe.bin.o(.rodata*);
         build/data/scenes/data_check/data.c.o(.data);
         build/bin/scene_data_check.bin.o(.rodata*);
-        build/data/scenes/data_room/data.c.o(.data);
+        build/data/scenes/data_room/data_room.c.o(.data);
         build/bin/scene_data_room.bin.o(.rodata*);
         build/data/scenes/main_menu/data.c.o(.data);
         build/bin/scene_main_menu.bin.o(.rodata*);
@@ -1639,6 +1639,10 @@ SECTIONS {
         build/data/scenes/results/data.c.o(.data);
         build/data/scenes/results/epilogue_data.c.o(.data);
         build/bin/scene_epilogues.bin.o(.rodata*);
+        build/data/scenes/data_room/reading.c.o(.data);
+        build/bin/scene_reading.bin.o(.rodata*);
+        build/data/scenes/data_room/read_error.c.o(.data);
+        build/bin/scene_read_error.bin.o(.rodata*);
         build/bin/bindata_089d3984.bin.o(.rodata*);
         build/data/font_definitions.c.o(.data);
 

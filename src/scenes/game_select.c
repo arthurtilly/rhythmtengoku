@@ -199,7 +199,7 @@ const char *func_08012c24(s32 id, s32 shortenSongTitle) {
             return D_089d83d0[rewardID];
 
         case PERFECT_REWARD_TYPE_READING_MATERIAL:
-            return D_089d7e74[rewardID].title;
+            return reading_material_table[rewardID].title;
 
         case PERFECT_REWARD_TYPE_NEW_GAME: // Reward is New Game
             return D_08050bd0; // "êVÉQÅ[ÉÄ"
