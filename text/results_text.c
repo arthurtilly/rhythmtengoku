@@ -18,15 +18,15 @@ const char D_08054be0[] = "‚©‚È‚è—Ç‚¢‚Å‚·I";
 
 const char D_08054bf4[] = "Å‚ƒŒƒxƒ‹‚Å‚·II";
 
-const char D_08054c08[] = ":1.2‚r";
+const char D_08054c08[] = ":1.2" "‚r";
 
-const char D_08054c10[] = ":1.6‚`";
+const char D_08054c10[] = ":1.6" "‚`";
 
-const char D_08054c18[] = ":1.4‚a";
+const char D_08054c18[] = ":1.4" "‚a";
 
-const char D_08054c20[] = ":1.5‚b";
+const char D_08054c20[] = ":1.5" "‚b";
 
-const char D_08054c28[] = ":1.1‚c";
+const char D_08054c28[] = ":1.1" "‚c";
 
 const char D_08054c30[] = "‚È‚Á‚Æ‚­‚Ì@‚¹‚¢‚©‚­‚³";
 

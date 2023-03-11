@@ -769,54 +769,23 @@ D_089d7424 = 0x089d7424;
 D_089d74d8 = 0x089d74d8;
 D_089d74fc = 0x089d74fc;
 
-/* Scene Data - Results (Debug) */
-D_089d7518 = 0x089d7518;
-D_089d751c = 0x089d751c;
-D_089d757c = 0x089d757c;
+/* Scene Data - Results (Debug-Type) */
 D_089d7580 = 0x089d7580;
 D_089d7610 = 0x089d7610;
 D_089d7634 = 0x089d7634;
-/* Scene Data - Results (Level-Type) */
-D_089d7654 = 0x089d7654;
-D_089d7684 = 0x089d7684;
-D_089d7688 = 0x089d7688;
-D_089d7694 = 0x089d7694;
+/* Scene Data - Results (Rank-Type) */
 D_089d76a0 = 0x089d76a0;
 D_089d77c0 = 0x089d77c0;
 D_089d77e4 = 0x089d77e4;
 /* Scene Data - Results (Score-Type) */
-D_089d7804 = 0x089d7804;
-D_089d7834 = 0x089d7834;
-D_089d7838 = 0x089d7838;
-D_089d784c = 0x089d784c;
-D_089d7854 = 0x089d7854;
 D_089d7868 = 0x089d7868;
 D_089d7940 = 0x089d7940;
 D_089d7964 = 0x089d7964;
-D_089d7980 = 0x089d7980;
-D_089d7984 = 0x089d7984;
-D_089d7998 = 0x089d7998;
-D_089d79a8 = 0x089d79a8;
-D_089d79b8 = 0x089d79b8;
-D_089d79c8 = 0x089d79c8;
-D_089d79d8 = 0x089d79d8;
-D_089d79e8 = 0x089d79e8;
-D_089d79f8 = 0x089d79f8;
-D_089d7a08 = 0x089d7a08;
-D_089d7a18 = 0x089d7a18;
-D_089d7a38 = 0x089d7a38;
-D_089d7a8c = 0x089d7a8c;
-D_089d7ae0 = 0x089d7ae0;
-D_089d7b34 = 0x089d7b34;
-D_089d7b40 = 0x089d7b40;
-D_089d7b50 = 0x089d7b50;
 /* Scene Data - Epilogue */
-D_089d7b54 = 0x089d7b54;
-D_089d7b58 = 0x089d7b58;
-D_089d7b64 = 0x089d7b64;
 D_089d7b70 = 0x089d7b70;
 D_089d7bf4 = 0x089d7bf4;
 D_089d7c18 = 0x089d7c18;
+/* Scene Data - Reading Material */
 D_089d7c34 = 0x089d7c34;
 D_089d7c70 = 0x089d7c70;
 D_089d7c74 = 0x089d7c74;
@@ -831,7 +800,6 @@ D_089d7df4 = 0x089d7df4;
 D_089d7e30 = 0x089d7e30;
 D_089d7e34 = 0x089d7e34;
 D_089d7e70 = 0x089d7e70;
-/* Scene Data - Reading Material */
 D_089d7e74 = 0x089d7e74;
 D_089d7fb4 = 0x089d7fb4;
 D_089d7fe4 = 0x089d7fe4;

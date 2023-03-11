@@ -64,6 +64,14 @@ struct ScoreHandler {
     u32 maximumPoints;
 };
 
+struct ResultsTextEvent {
+    u8 unk0;
+    const char **textPool;
+    u32 (*const func)(void);
+};
+
+#define END_OF_RESULTS_TEXT_EVENT_LIST { 0, NULL, NULL }
+
 
 // Scene Macros/Enums:
 enum ResultsLevelsEnum {
@@ -97,16 +105,29 @@ extern struct Animation D_0890b724[]; // "‚Å‚à" ("but")
 
 
 // Sound Effects:
+extern struct SequenceData s_f_result_bad_seqData;
+extern struct SequenceData s_f_result_normal_seqData;
+extern struct SequenceData s_jingle_hi_level_seqData;
+extern struct SequenceData s_kekka_bgm_bad_seqData;
+extern struct SequenceData s_kekka_bgm_common_seqData;
+extern struct SequenceData s_kekka_bgm_good_seqData;
+extern struct SequenceData s_jingle_hi_level_seqData;
+extern struct SequenceData s_fanfare_drum1_seqData;
+extern struct SequenceData s_fanfare_drum2_seqData;
+extern struct SequenceData s_fanfare_drum3_seqData;
+extern struct SequenceData s_yuri_naki_seqData;
+extern struct SequenceData s_epilogue_fan2_seqData;
+extern struct SequenceData s_epilogue_fan1_seqData;
 
 
 // Scene Definition Data:
-extern const struct GraphicsTable D_089d7654[]; // LEVEL - Graphics Table
-extern struct CompressedGraphics *const D_089d7684[]; // LEVEL - Buffered Textures List
-extern struct SequenceData *const D_089d7688[3]; // LEVEL - Result SFX Pool
-extern struct SequenceData *const D_089d7694[3]; // LEVEL - Result BGM Pool
+extern struct GraphicsTable rank_results_gfx_table[]; // LEVEL - Graphics Table
+extern struct CompressedGraphics *rank_results_buffered_textures[]; // LEVEL - Buffered Textures List
+extern struct SequenceData *rank_results_sfx[3]; // LEVEL - Result SFX Pool
+extern struct SequenceData *rank_results_bgm[3]; // LEVEL - Result BGM Pool
 extern struct ScoreHandler *D_089d7980; // ( = D_03001338)
-extern const char *const D_089d7b34[3]; // LEVEL - Comment Pool (Try Again)
-extern const char *const D_089d7b40[4]; // LEVEL - Comment Pool (OK)
+extern const char *results_try_again_comment_pool[3]; // LEVEL - Comment Pool (Try Again)
+extern const char *results_ok_comment_pool[4]; // LEVEL - Comment Pool (OK)
 
 
 // Functions:
@@ -162,15 +183,15 @@ extern void func_08019420(u32 criterion, u32 level, s32 offset); // Register Inp
 extern void func_08019480(struct InputScoreTracker *); // Calculate Input Averages
 // extern ? func_080194e8(?);
 // extern ? func_08019554(?);
-// extern ? func_08019698(?);
-// extern ? func_080196fc(?);
-// extern ? func_08019750(?);
-// extern ? func_080197a4(?);
-// extern ? func_080197ec(?);
-// extern ? func_08019820(?);
-// extern ? func_08019878(?);
-// extern ? func_080198b0(?);
-// extern ? func_080198e8(?);
+extern u32 func_08019698(void);
+extern u32 func_080196fc(void);
+extern u32 func_08019750(void);
+extern u32 func_080197a4(void);
+extern u32 func_080197ec(void);
+extern u32 func_08019820(void);
+extern u32 func_08019878(void);
+extern u32 func_080198b0(void);
+extern u32 func_080198e8(void);
 // extern ? func_080198f8(?); // [func_080198f8] DEBUG ? (Script Function)
 extern u32 func_08019a80(void); // Prepare Negative Comments
 extern u32 func_08019bec(void); // Prepare Positive Comments

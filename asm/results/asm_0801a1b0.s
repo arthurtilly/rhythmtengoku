@@ -64,7 +64,7 @@ branch_0801a206: \n\
 /* 0801a21e */ LDR R5, [R0] \n\
  \n\
 branch_0801a220: \n\
-/* 0801a220 */ LDR R0, =D_089d7b64 \n\
+/* 0801a220 */ LDR R0, =epilogue_jingles \n\
 /* 0801a222 */ ADDS R0, R1, R0 @ Set R0 to R1 + R0 \n\
 /* 0801a224 */ LDR R0, [R0] \n\
 /* 0801a226 */ STR R0, [R2, 0x10] \n\
@@ -149,7 +149,7 @@ branch_0801a2ca: \n\
 /* 0801a2d8 */ STR R1, [R0, 0x4] \n\
 /* 0801a2da */ LDR R0, =D_03005380 \n\
 /* 0801a2dc */ LDR R0, [R0] \n\
-/* 0801a2de */ LDR R2, =D_089d7b50 \n\
+/* 0801a2de */ LDR R2, =epilogue_scene_objects \n\
 /* 0801a2e0 */ LDR R3, =D_0300558c \n\
 /* 0801a2e2 */ LDR R3, [R3] \n\
 /* 0801a2e4 */ BL import_all_scene_objects \n\

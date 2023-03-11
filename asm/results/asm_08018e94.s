@@ -9,7 +9,7 @@ thumb_func_start func_08018e94 \n\
 /* 08018e9c */ BL get_current_mem_id \n\
 /* 08018ea0 */ LSLS R0, R0, 0x10 \n\
 /* 08018ea2 */ LSRS R0, R0, 0x10 \n\
-/* 08018ea4 */ LDR R1, =D_089d7834 \n\
+/* 08018ea4 */ LDR R1, =score_results_buffered_textures \n\
 /* 08018ea6 */ BL func_080087b4 \n\
 /* 08018eaa */ LDR R1, =func_08018e74 \n\
 /* 08018eac */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\

@@ -1630,6 +1630,15 @@ SECTIONS {
         build/bin/scene_perfect.bin.o(.rodata*);
         build/data/scenes/gameplay/data.c.o(.data);
         build/bin/scene_gameplay.bin.o(.rodata*);
+        build/data/scenes/results/debug_results_data.c.o(.data);
+        build/bin/scene_debug_results.bin.o(.rodata*);
+        build/data/scenes/results/rank_results_data.c.o(.data);
+        build/bin/scene_rank_results.bin.o(.rodata*);
+        build/data/scenes/results/score_results_data.c.o(.data);
+        build/bin/scene_score_results.bin.o(.rodata*);
+        build/data/scenes/results/data.c.o(.data);
+        build/data/scenes/results/epilogue_data.c.o(.data);
+        build/bin/scene_epilogues.bin.o(.rodata*);
         build/bin/bindata_089d3984.bin.o(.rodata*);
         build/data/font_definitions.c.o(.data);
 

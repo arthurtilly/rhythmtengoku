@@ -80,7 +80,7 @@ void func_08018a24(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(get_current_mem_id(), D_089d7684);
+    data = func_080087b4(get_current_mem_id(), rank_results_buffered_textures);
     run_func_after_task(data, pause_beatscript_scene, FALSE);
 }
 
@@ -90,7 +90,7 @@ void func_08018a50(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_08002ee0(get_current_mem_id(), D_089d7654, 0x3000);
+    data = func_08002ee0(get_current_mem_id(), rank_results_gfx_table, 0x3000);
     run_func_after_task(data, func_08018a24, 0);
 }
 
@@ -176,13 +176,13 @@ void func_08018cc8(void) {
         func_0804d160(D_03005380, D_0890b724, 0, 180, 140, 0x700, 1, 0, 0);
     }
 
-    play_sound_in_player(5, D_089d7688[gResultsInfo->finalResultLevel]);
+    play_sound_in_player(5, rank_results_sfx[gResultsInfo->finalResultLevel]);
 }
 
 
 // [func_08018d68] LEVEL Play Music (Script Function)
 void func_08018d68(void) {
-    struct SequenceData *music = D_089d7694[gResultsInfo->finalResultLevel];
+    struct SequenceData *music = rank_results_bgm[gResultsInfo->finalResultLevel];
 
     scene_set_music(music);
     set_beatscript_tempo(get_music_base_tempo(music));
@@ -535,7 +535,7 @@ u32 func_08019a80(void) {
     }
 
     for (i = 0; i < totalFailed; i++) {
-        strcpy(textDest, D_089d7b34[clamp_int32(i, 0, 2)]);
+        strcpy(textDest, results_try_again_comment_pool[clamp_int32(i, 0, 2)]);
         func_080081a8(textDest, comments[i]);
         anim = func_08019210(textDest, 2, 3);
         sprite = func_0804d160(D_03005380, anim, 0, 0, 0, 0x800, 0, 0, 0);
@@ -739,7 +739,7 @@ void func_08019ee0(void) {
     }
 
     if (averageCriteriaSucceeded == 0) {
-        textAnim = func_08019210(D_089d7b40[agb_random(4)], 1, 3);
+        textAnim = func_08019210(results_ok_comment_pool[agb_random(4)], 1, 3);
         textSprite = func_0804d160(D_03005380, textAnim, 0, SCREEN_CENTER_X, SCREEN_CENTER_Y, 0x800, 0, 0, 0);
         func_0804d8c4(D_03005380, textSprite, LEVEL_COMMENT_PALETTE);
     }

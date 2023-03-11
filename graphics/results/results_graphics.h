@@ -3,7 +3,7 @@
 #include "global.h"
 #include "graphics.h"
 
-/* RESULTS (LEVEL) - ANIMATIONS */
+/* RESULTS (RANK) - ANIMATIONS */
 
 extern struct Animation results_level_anim00[];
 extern struct Animation results_level_anim01[];
@@ -13,7 +13,11 @@ extern struct Animation results_level_anim04[];
 extern struct Animation results_level_anim05[];
 extern struct Animation results_level_anim06[];
 
-/* RESULTS (LEVEL) - PALETTES */
+/* RESULTS (RANK) - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08cd4a50;
+
+/* RESULTS (RANK) - PALETTES */
 
 extern Palette results_level_pal[];
 
@@ -25,6 +29,10 @@ extern struct Animation results_score_anim02[];
 extern struct Animation results_score_anim03[];
 extern struct Animation results_score_anim04[];
 extern struct Animation results_score_anim05[];
+
+/* RESULTS (SCORE) - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08cd4f58;
 
 /* RESULTS (SCORE) - PALETTES */
 

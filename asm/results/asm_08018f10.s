@@ -155,14 +155,14 @@ branch_0801903e: \n\
 /* 0801905a */ LDR R1, [R0] \n\
 /* 0801905c */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 0801905e */ BNE branch_08019062 \n\
-/* 08019060 */ LDR R1, =D_089d784c \n\
+/* 08019060 */ LDR R1, =score_results_thresholds \n\
  \n\
 branch_08019062: \n\
 /* 08019062 */ LDR R0, =D_03001334 \n\
 /* 08019064 */ LDR R6, [R0] \n\
 /* 08019066 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 08019068 */ BNE branch_0801906c \n\
-/* 0801906a */ LDR R6, =D_089d7838 \n\
+/* 0801906a */ LDR R6, =score_results_comments_text \n\
  \n\
 branch_0801906c: \n\
 /* 0801906c */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
