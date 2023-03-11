@@ -88,13 +88,14 @@ extern struct Animation anim_gameplay_perfect_hit[]; // Perfect Input
 
 
 // Sound Effects:
+extern struct SequenceData s_f_pause_quit_seqData;
 
 
 // Scene Definition Data:
-extern const struct GraphicsTable D_089cfd7c[]; // Graphics Table (Common Gameplay Graphics/Palettes, e.g. Pause Menu)
-extern struct CompressedGraphics *const D_089cfda0[]; // Buffered Textures List
-extern const struct PauseMenuDefinition D_089cfde0; // Pause Handler Definition
-extern struct Animation *const D_089cfdf0[2]; // A Button Prompt Animations { 0 = Black; 1 = White }
+extern struct GraphicsTable gameplay_common_gfx_table[]; // Graphics Table (Common Gameplay Graphics/Palettes, e.g. Pause Menu)
+extern struct CompressedGraphics *gameplay_common_buffered_textures[]; // Buffered Textures List
+extern struct PauseMenuDefinition gameplay_pause_menu_data; // Pause Handler Definition
+extern struct Animation *gameplay_text_adv_icons[2]; // A Button Prompt Animations { 0 = Black; 1 = White }
 
 
 // Functions - Audio:

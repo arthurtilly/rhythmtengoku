@@ -15,6 +15,10 @@ extern struct Animation anim_gameplay_perfect_icon[];
 extern struct Animation anim_gameplay_perfect_miss[];
 extern struct Animation anim_gameplay_perfect_hit[];
 
+/* GAMEPLAY - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08ccca5c;
+
 /* GAMEPLAY - PALETTES */
 
 extern Palette gameplay_obj_pal[];

@@ -379,8 +379,6 @@ D_089cde20 = 0x089cde20;
 D_089cde3c = 0x089cde3c;
 D_089cdee4 = 0x089cdee4;
 D_089cdf08 = 0x089cdf08;
-
-/* bindata_089cea24 */
 D_089ceafc = 0x089ceafc;
 
 /* Scene Data - Options Menu */
@@ -392,11 +390,6 @@ D_089cfca0 = 0x089cfca0;
 D_089cfd3c = 0x089cfd3c;
 D_089cfd60 = 0x089cfd60;
 /* Scene Data - Main Gameplay */
-D_089cfd7c = 0x089cfd7c;
-D_089cfda0 = 0x089cfda0;
-D_089cfda4 = 0x089cfda4;
-D_089cfde0 = 0x089cfde0;
-D_089cfdf0 = 0x089cfdf0;
 D_089cfdf8 = 0x089cfdf8;
 D_089cfeac = 0x089cfeac;
 D_089cfed0 = 0x089cfed0;
@@ -580,8 +573,6 @@ D_089d3878 = 0x089d3878;
 D_089d389c = 0x089d389c;
 D_089d38b8 = 0x089d38b8;
 D_089d3960 = 0x089d3960;
-
-/* bindata_089d3984 */
 D_089d3984 = 0x089d3984;
 D_089d39a0 = 0x089d39a0;
 D_089d3a48 = 0x089d3a48;
@@ -777,6 +768,7 @@ D_089d7408 = 0x089d7408;
 D_089d7424 = 0x089d7424;
 D_089d74d8 = 0x089d74d8;
 D_089d74fc = 0x089d74fc;
+
 /* Scene Data - Results (Debug) */
 D_089d7518 = 0x089d7518;
 D_089d751c = 0x089d751c;

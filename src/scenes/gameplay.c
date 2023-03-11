@@ -87,14 +87,14 @@ void gameplay_init_scene_static_var(void) {
 void gameplay_init_gfx1(void) {
     u32 data;
 
-    data = func_080087b4(0, D_089cfda0);
+    data = func_080087b4(0, gameplay_common_buffered_textures);
     run_func_after_task(data, pause_beatscript_scene, FALSE);
 }
 
 
 // [func_08016ec4] Scene Start
 void gameplay_start_scene(s32 unused) {
-    func_08002e78(D_089cfd7c);
+    func_08002e78(gameplay_common_gfx_table);
     func_08007324(FALSE);
     func_080073f0();
     gameplay_init_overlay();
@@ -1179,7 +1179,7 @@ s32 gameplay_update_pause_menu(void) {
 
 // [func_08018524] Initialise Pause Handler
 void gameplay_init_pause_menu(void) {
-    func_0801daf8(&D_089cfde0);
+    func_0801daf8(&gameplay_pause_menu_data);
     func_0801db04(FALSE); // Disable Pause Menu
 }
 
@@ -1193,7 +1193,7 @@ void gameplay_set_skip_icon(u32 corner, u32 show) {
 
 // [func_0801858c] Set Text Button Style
 void gameplay_set_text_advance_icon(u32 style) {
-    func_0804d8f8(D_03005380, gGameplayInfo->aButtonSprite, D_089cfdf0[style], 0, 1, 0, 0);
+    func_0804d8f8(D_03005380, gGameplayInfo->aButtonSprite, gameplay_text_adv_icons[style], 0, 1, 0, 0);
 }
 
 
