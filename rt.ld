@@ -1643,6 +1643,8 @@ SECTIONS {
         build/bin/scene_reading.bin.o(.rodata*);
         build/data/scenes/data_room/read_error.c.o(.data);
         build/bin/scene_read_error.bin.o(.rodata*);
+        build/data/scenes/studio/data.c.o(.data);
+        build/bin/scene_studio.bin.o(.rodata*);
         build/bin/bindata_089d3984.bin.o(.rodata*);
         build/data/font_definitions.c.o(.data);
 

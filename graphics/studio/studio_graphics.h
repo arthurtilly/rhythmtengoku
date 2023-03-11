@@ -20,6 +20,13 @@ extern struct Animation studio_anim11[];
 extern struct Animation studio_anim12[];
 extern struct Animation studio_anim13[];
 
+/* STUDIO - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08cd5d64;
+extern struct CompressedGraphics D_08cd62ec;
+extern struct CompressedGraphics D_08cd6434;
+extern struct CompressedGraphics D_08cd5288;
+
 /* STUDIO - PALETTES */
 
 extern Palette studio_obj_pal[];

@@ -851,7 +851,7 @@ const struct Beatscript *drum_studio_init_script(void) {
                 gDrumLessonsInfo->playerDrumKitID = 0;
                 drum_studio_init_kit();
             }
-            func_0802918c(D_089d81b4[replayData->songID].fullTitle, replayData->unk3 & 1);
+            func_0802918c(studio_song_table[replayData->songID].fullTitle, replayData->unk3 & 1);
             if (replayData->songID == STUDIO_SONG_SILENCE) {
                 gDrumLessonsInfo->unk402 = 120;
             }
@@ -889,7 +889,7 @@ const struct Beatscript *drum_studio_init_script(void) {
     }
 
     gDrumLessonsInfo->unk3CD = r7;
-    return D_089d81b4[replayData->songID].script;
+    return studio_song_table[replayData->songID].script;
 }
 
 

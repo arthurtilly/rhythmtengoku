@@ -67,7 +67,7 @@ branch_0801c782: \n\
 /* 0801c784 */ LDR R3, [R0] \n\
 /* 0801c786 */ LDR R0, =0x49c \n\
 /* 0801c788 */ ADDS R3, R3, R0 @ Set R3 to R3 + R0 \n\
-/* 0801c78a */ LDR R2, =D_089d81b4 \n\
+/* 0801c78a */ LDR R2, =studio_song_table \n\
 /* 0801c78c */ LDRB R1, [R6] \n\
 /* 0801c78e */ LSLS R0, R1, 0x1 \n\
 /* 0801c790 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

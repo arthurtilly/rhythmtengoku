@@ -39,7 +39,7 @@ branch_0801ba18: \n\
 /* 0801ba2c */ STRB R0, [R1] \n\
 /* 0801ba2e */ LDR R1, [R6] \n\
 /* 0801ba30 */ ADDS R0, R1, R4 @ Set R0 to R1 + R4 \n\
-/* 0801ba32 */ LDR R2, =D_089d843c \n\
+/* 0801ba32 */ LDR R2, =studio_options_text \n\
 /* 0801ba34 */ MOVS R3, 0xDD @ Set R3 to 0xDD \n\
 /* 0801ba36 */ LSLS R3, R3, 0x2 \n\
 /* 0801ba38 */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\

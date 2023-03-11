@@ -41,7 +41,7 @@ branch_0801af84: \n\
 /* 0801afa8 */ LSLS R0, R1, 0x1 \n\
 /* 0801afaa */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801afac */ LSLS R0, R0, 0x2 \n\
-/* 0801afae */ LDR R1, =D_089d81b4 \n\
+/* 0801afae */ LDR R1, =studio_song_table \n\
 /* 0801afb0 */ ADDS R1, R0, R1 @ Set R1 to R0 + R1 \n\
 /* 0801afb2 */ LDR R2, [R1, 0x4] \n\
 /* 0801afb4 */ CMP R2, 0x0 @ Compare R2 and 0x0 \n\

@@ -28,8 +28,8 @@ enum StudioSongsEnum {
 
 
 // Scene Definition Data:
-extern const struct StudioEntry D_089d81b4[]; // Studio Song Data
-extern const char *const D_089d83d0[]; // Drum Kit Names
+extern struct StudioEntry studio_song_table[]; // Studio Song Data
+extern const char *studio_drum_kit_names[]; // Drum Kit Names
 
 
 // Functions:

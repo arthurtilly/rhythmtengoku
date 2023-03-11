@@ -190,13 +190,13 @@ const char *func_08012c24(s32 id, s32 shortenSongTitle) {
     switch (rewardType) {
         case PERFECT_REWARD_TYPE_MUSIC:
             if (shortenSongTitle) {
-                return D_089d81b4[rewardID].shortTitle;
+                return studio_song_table[rewardID].shortTitle;
             } else {
-                return D_089d81b4[rewardID].fullTitle;
+                return studio_song_table[rewardID].fullTitle;
             }
 
         case PERFECT_REWARD_TYPE_DRUM_KIT:
-            return D_089d83d0[rewardID];
+            return studio_drum_kit_names[rewardID];
 
         case PERFECT_REWARD_TYPE_READING_MATERIAL:
             return reading_material_table[rewardID].title;

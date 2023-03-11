@@ -38,7 +38,7 @@ branch_0801b676: \n\
 /* 0801b6a8 */ LDR R0, [R5] \n\
 /* 0801b6aa */ ADDS R1, 0xFD @ Add 0xFD to R1 \n\
 /* 0801b6ac */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
-/* 0801b6ae */ LDR R2, =D_089d83d0 \n\
+/* 0801b6ae */ LDR R2, =studio_drum_kit_names \n\
 /* 0801b6b0 */ LSLS R1, R4, 0x2 \n\
 /* 0801b6b2 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0801b6b4 */ LDR R1, [R1] \n\
