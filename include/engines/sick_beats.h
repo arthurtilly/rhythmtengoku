@@ -146,7 +146,7 @@ extern void sick_beats_engine_event_stub(void); // Engine Event 0x07 (STUB)
 extern void func_08043534(void);
 extern void sick_beats_engine_update(void); // Game Engine Update
 extern void func_080435e8(s32);
-extern void func_08043634(struct BeatScript *); // Engine Event 0x04 (?)
+extern void func_08043634(struct Beatscript *); // Engine Event 0x04 (?)
 extern void func_08043648(void); // Engine Event 0x05 (Endless Game Over?)
 extern void sick_beats_engine_stop(void); // Game Engine Stop
 extern struct SickBeatsVirusData *func_080436a8(u32);

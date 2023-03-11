@@ -418,7 +418,7 @@ void func_080435e8(s32 arg0) {
 }
 
 
-void func_08043634(struct BeatScript *arg0) {
+void func_08043634(struct Beatscript *arg0) {
     gSickBeatsInfo->unk1FC = arg0;
 }
 
