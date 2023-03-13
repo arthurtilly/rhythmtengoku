@@ -773,15 +773,11 @@ D_089dd8ac = 0x089dd8ac;
 D_089dd8c8 = 0x089dd8c8;
 D_089dd8ec = 0x089dd8ec;
 /* Scene Data - Scene Handler */
-D_089dd908 = 0x089dd908;
-D_089dd94a = 0x089dd94a;
-D_089dd962 = 0x089dd962;
 D_089dd97c = 0x089dd97c;
+/* Scene Data - Warning Screen */
 D_089dd998 = 0x089dd998;
 D_089dda28 = 0x089dda28;
 D_089dda4c = 0x089dda4c;
-/* Scene Data - Warning Screen */
-D_089dda68 = 0x089dda68;
 /* Scene Data - Debug (Menu) */
 D_089ddab0 = 0x089ddab0;
 D_089ddab4 = 0x089ddab4;

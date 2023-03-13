@@ -1649,6 +1649,10 @@ SECTIONS {
         build/bin/scene_title.bin.o(.rodata*);
         build/data/scenes/medal_corner/data.c.o(.data);
         build/bin/scene_medal_corner.bin.o(.rodata*);
+        build/data/scenes/riq_main_scene/data.c.o(.data);
+        build/bin/scene_riq_main.bin.o(.rodata*);
+        build/bin/scene_warning.bin.o(.rodata*);
+        build/data/scenes/warning/data.c.o(.data);
         build/bin/bindata_089d3984.bin.o(.rodata*);
         build/data/font_definitions.c.o(.data);
 
