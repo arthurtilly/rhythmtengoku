@@ -111,8 +111,8 @@ void func_08018aa0(s32 arg) {
     dma3_fill(0, RESULTS_TEXT_TILES_ADDRESS, 0x4000, 0x20, 0x200);
     gResultsInfo->unk24 = 0;
 
-    gResultsInfo->placeholderIcon = func_0804d160(D_03005380, D_0890b6ac, 0, LEVEL_HEADER_ICON_X, LEVEL_HEADER_Y, 0x800, 0, 0, 0x8000);
-    gResultsInfo->resultIcon = func_0804d160(D_03005380, D_0890b6bc, 0, LEVEL_RESULT_ICON_X, LEVEL_RESULT_ICON_Y, 0x800, 0, 0, 0x8000);
+    gResultsInfo->placeholderIcon = func_0804d160(D_03005380, anim_rank_results_header_placeholder, 0, LEVEL_HEADER_ICON_X, LEVEL_HEADER_Y, 0x800, 0, 0, 0x8000);
+    gResultsInfo->resultIcon = func_0804d160(D_03005380, anim_rank_results_icon, 0, LEVEL_RESULT_ICON_X, LEVEL_RESULT_ICON_Y, 0x800, 0, 0, 0x8000);
     func_08018a80(); // gfx init.
     D_03005b3c = LFO_MODE_DISABLED;
     gResultsInfo->awaitingInput = FALSE;
@@ -159,8 +159,8 @@ void func_08018bf0(void) {
     textSprite = func_0804d160(D_03005380, textAnim, 0, LEVEL_HEADER_BOX_X, LEVEL_HEADER_Y, 0x800, 0, 0, 0);
     func_0804d8c4(D_03005380, textSprite, LEVEL_COMMENT_PALETTE);
     textWidth = func_0804ddb0(D_03005380, textSprite, 24);
-    func_0804d160(D_03005380, D_0890b6ec, 0, SCREEN_CENTER_X, LEVEL_HEADER_Y, 0x864, 0, 0, 0);
-    func_0804d160(D_03005380, D_0890b6fc, 0, SCREEN_CENTER_X + textWidth, LEVEL_HEADER_Y, 0x850, 0, 0, 0);
+    func_0804d160(D_03005380, anim_rank_results_header_box, 0, SCREEN_CENTER_X, LEVEL_HEADER_Y, 0x864, 0, 0, 0);
+    func_0804d160(D_03005380, anim_rank_results_header_box_mask, 0, SCREEN_CENTER_X + textWidth, LEVEL_HEADER_Y, 0x850, 0, 0, 0);
 }
 
 
@@ -169,11 +169,11 @@ void func_08018cc8(void) {
     func_0804d770(D_03005380, gResultsInfo->resultIcon, TRUE);
 
     if (gResultsInfo->medalObtained) {
-        func_0804d160(D_03005380, D_0890b70c, 0, 180, 140, 0x700, 1, 0, 0);
+        func_0804d160(D_03005380, anim_rank_results_medal_get, 0, 180, 140, 0x700, 1, 0, 0);
     }
 
     if (gResultsInfo->stillJustOK) {
-        func_0804d160(D_03005380, D_0890b724, 0, 180, 140, 0x700, 1, 0, 0);
+        func_0804d160(D_03005380, anim_rank_results_comment_append, 0, 180, 140, 0x700, 1, 0, 0);
     }
 
     play_sound_in_player(5, rank_results_sfx[gResultsInfo->finalResultLevel]);
@@ -215,7 +215,7 @@ void func_08018d9c(void) {
     }
 
     play_sound(&s_f_result_mes_add_seqData);
-    func_0804d160(D_03005380, D_0890b6dc, 0, LEVEL_RESULT_ICON_BUT_X, LEVEL_RESULT_ICON_BUT_Y, 0, 0, 0, 0);
+    func_0804d160(D_03005380, anim_rank_results_supportive_bubble, 0, LEVEL_RESULT_ICON_BUT_X, LEVEL_RESULT_ICON_BUT_Y, 0, 0, 0, 0);
 }
 
 

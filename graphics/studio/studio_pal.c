@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0890c5e8] <description>
+// [D_0890c5e8] Studio Scene OBJ Palette
 Palette studio_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x104028),
@@ -293,7 +293,7 @@ Palette studio_obj_pal[] = {
     }
 };
 
-// [D_0890c7e8] <description>
+// [D_0890c7e8] Studio Scene BG Palette
 Palette studio_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),

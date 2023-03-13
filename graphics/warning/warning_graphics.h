@@ -5,7 +5,7 @@
 
 /* WARNING - ANIMATIONS */
 
-extern struct Animation warning_anim00[];
+extern struct Animation anim_warning_text_continue[];
 
 /* WARNING - PALETTES */
 

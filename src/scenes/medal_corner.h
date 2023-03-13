@@ -3,6 +3,33 @@
 #include "global.h"
 #include "scenes.h"
 
+// Scene Types:
+struct MedalCornerSceneInfo {
+    /* add fields here */
+};
+
+struct MedalCornerLevel {
+    const struct Scene *scene;
+    const char *title;
+    struct Animation *icon;
+    u8 medalsToUnlock;
+};
+
+struct MedalCornerMenu {
+    u8 levelCount;
+    struct SequenceData *bgm;
+    struct GraphicsTable *gfx;
+    struct MedalCornerLevel *levels;
+};
+
+
+// Scene Macros/Enums:
+
+
+// Scene Definition Data:
+
+
+// Functions:
 // extern ? func_0801d0b8(?); // [func_0801d0b8] ?
 // extern ? func_0801d11c(?); // [func_0801d11c] ?
 // extern ? func_0801d14c(?); // [func_0801d14c] ?

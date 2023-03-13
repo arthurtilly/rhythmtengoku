@@ -38,7 +38,7 @@ thumb_func_start func_0801b138 \n\
 /* 0801b17a */ ADDS R1, 0xC2 @ Add 0xC2 to R1 \n\
 /* 0801b17c */ LDRB R1, [R1] \n\
 /* 0801b17e */ STR R1, [SP, 0x20] \n\
-/* 0801b180 */ LDR R1, =D_0890c3b8 \n\
+/* 0801b180 */ LDR R1, =anim_studio_selection_item \n\
 /* 0801b182 */ STR R1, [SP, 0x24] \n\
 /* 0801b184 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
 /* 0801b186 */ STR R1, [SP, 0x28] \n\

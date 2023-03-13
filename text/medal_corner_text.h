@@ -2,7 +2,7 @@
 
 // Medal Corner - Rhythm Toys Titles
 extern const char text_toys_menu_rap_machine[];
-extern const char text_toys_menu_confession_machine[];
+extern const char text_toys_menu_love_machine[];
 extern const char text_toys_menu_horse_machine[];
 extern const char text_toys_menu_cat_machine[];
 

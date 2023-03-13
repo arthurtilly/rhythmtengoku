@@ -3,8 +3,8 @@
 
 #include "results_score_anim_cells.inc.c"
 
-// [D_0890bb68] <description>
-struct Animation results_score_anim00[] = {
+// [D_0890bb68] Score Digits
+struct Animation anim_score_results_num[] = {
     /* 000 */ { results_score_cel000, 40 },
     /* 001 */ { results_score_cel001, 40 },
     /* 002 */ { results_score_cel002, 40 },
@@ -18,32 +18,32 @@ struct Animation results_score_anim00[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890bbc0] <description>
-struct Animation results_score_anim01[] = {
+// [D_0890bbc0] Score Digit One
+struct Animation anim_score_results_num_one[] = {
     /* 000 */ { results_score_cel001, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890bbd0] <description>
-struct Animation results_score_anim02[] = {
+// [D_0890bbd0] Score Digit Zero
+struct Animation anim_score_results_num_zero1[] = {
     /* 000 */ { results_score_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890bbe0] <description>
-struct Animation results_score_anim03[] = {
+// [D_0890bbe0] Score Digit Zero
+struct Animation anim_score_results_num_zero2[] = {
     /* 000 */ { results_score_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890bbf0] <description>
-struct Animation results_score_anim04[] = {
+// [D_0890bbf0] "Points"
+struct Animation anim_score_results_points_label[] = {
     /* 000 */ { results_score_cel010, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890bc00] <description>
-struct Animation results_score_anim05[] = {
+// [D_0890bc00] Score Decimal Digits
+struct Animation anim_score_results_dec_num[] = {
     /* 000 */ { results_score_cel011, 40 },
     /* 001 */ { results_score_cel012, 40 },
     /* 002 */ { results_score_cel013, 40 },

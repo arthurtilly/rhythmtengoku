@@ -47,7 +47,7 @@ thumb_func_start func_08018f10 \n\
 /* 08018f72 */ LDR R0, =D_03005380 \n\
 /* 08018f74 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08018f76 */ LDR R4, [R0] \n\
-/* 08018f78 */ LDR R5, =D_0890bc00 \n\
+/* 08018f78 */ LDR R5, =anim_score_results_dec_num \n\
 /* 08018f7a */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08018f7c */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 08018f7e */ BL __umodsi3 \n\
@@ -71,7 +71,7 @@ thumb_func_start func_08018f10 \n\
 /* 08018fa8 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08018faa */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08018fac */ LDR R4, [R1] \n\
-/* 08018fae */ LDR R2, =D_0890bb68 \n\
+/* 08018fae */ LDR R2, =anim_score_results_num \n\
 /* 08018fb0 */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 08018fb2 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 08018fb4 */ BL __umodsi3 \n\
@@ -141,7 +141,7 @@ branch_0801900a: \n\
 branch_0801903e: \n\
 /* 0801903e */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08019040 */ LDR R0, [R1] \n\
-/* 08019042 */ LDR R1, =D_0890bbf0 \n\
+/* 08019042 */ LDR R1, =anim_score_results_points_label \n\
 /* 08019044 */ MOVS R2, 0x88 @ Set R2 to 0x88 \n\
 /* 08019046 */ STR R2, [SP] \n\
 /* 08019048 */ STR R6, [SP, 0x4] \n\

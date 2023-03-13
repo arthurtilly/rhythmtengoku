@@ -1,16 +1,16 @@
 #include "global.h"
 #include "text.h"
 #include "reading_text.h"
+#include "graphics/data_room/data_room_graphics.h"
 
 
 /* Reading Material */
 
 
 #include "reading_material.inc.c"
-#include "graphics/data_room/data_room_graphics.h"
 
 
-// [D_08058f00] Reading - Graphics Table ?
+// [D_08058f00] Reading Error - Graphics Table
 const struct GraphicsTable text_reading_invalid_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cd29ac,
@@ -23,7 +23,7 @@ const struct GraphicsTable text_reading_invalid_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ read_error_bg_00_pal,
+        /* Src.  */ reading_style_cherry_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x200
     },

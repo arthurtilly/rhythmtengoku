@@ -10,7 +10,7 @@
 const char text_toys_menu_rap_machine[] = "ラップ マシーン";
 
 // Rhythm Toys - Love Machine
-const char text_toys_menu_confession_machine[] = "告白 マシーン";
+const char text_toys_menu_love_machine[] = "告白 マシーン";
 
 // Rhythm Toys - Mechanical Horse
 const char text_toys_menu_horse_machine[] = "うま マシーン";

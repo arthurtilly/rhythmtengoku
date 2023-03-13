@@ -24,9 +24,9 @@ extern Palette data_room_pal[];
 
 /* DATA ROOM (READING) - ANIMATIONS */
 
-extern struct Animation data_room_reading_anim00[];
-extern struct Animation data_room_reading_anim01[];
-extern struct Animation data_room_reading_anim02[];
+extern struct Animation anim_reading_title_bar[];
+extern struct Animation anim_reading_icon_prev[];
+extern struct Animation anim_reading_icon_next[];
 
 /* DATA ROOM (READING) - COMPRESSED GRAPHICS */
 
@@ -52,14 +52,14 @@ extern struct CompressedGraphics D_08cccb04;
 
 /* DATA ROOM (READING) - PALETTES */
 
-extern Palette data_room_reading_obj_pal[];
-extern Palette data_room_reading_bg_00_pal[];
-extern Palette data_room_reading_bg_01_pal[];
-extern Palette data_room_reading_bg_02_pal[];
-extern Palette data_room_reading_bg_03_pal[];
-extern Palette data_room_reading_bg_04_pal[];
-extern Palette data_room_reading_bg_05_pal[];
-extern Palette data_room_reading_bg_06_pal[];
+extern Palette reading_obj_pal[];
+extern Palette reading_style_bulletin_pal[];
+extern Palette reading_style_manzai_pal[];
+extern Palette reading_style_cooking_pal[];
+extern Palette reading_style_mail_pal[];
+extern Palette reading_style_haiku_pal[];
+extern Palette reading_style_classroom_pal[];
+extern Palette reading_style_train_pal[];
 
 /* READ ERROR - ANIMATIONS */
 
@@ -73,5 +73,5 @@ extern struct CompressedGraphics D_08cd2cec;
 
 /* READ ERROR - PALETTES */
 
-extern Palette read_error_bg_00_pal[];
-extern Palette read_error_bg_01_pal[];
+extern Palette reading_style_cherry_pal[];
+extern Palette reading_style_sea_pal[];

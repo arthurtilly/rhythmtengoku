@@ -13,7 +13,7 @@ thumb_func_start func_0801dfe8 \n\
 /* 0801dffa */ LSLS R1, R1, 0x18 \n\
 /* 0801dffc */ LSRS R1, R1, 0x18 \n\
 /* 0801dffe */ LDR R3, =0x7fff \n\
-/* 0801e000 */ LDR R0, =D_0893253c \n\
+/* 0801e000 */ LDR R0, =warning_pal \n\
 /* 0801e002 */ STR R0, [SP] \n\
 /* 0801e004 */ LDR R0, =(D_03004b10 + 0x54) \n\
 /* 0801e006 */ STR R0, [SP, 0x4] \n\

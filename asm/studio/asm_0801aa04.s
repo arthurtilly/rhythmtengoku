@@ -7,7 +7,7 @@ thumb_func_start func_0801aa04 \n\
 /* 0801aa06 */ SUB SP, 0x14 \n\
 /* 0801aa08 */ LDR R0, =D_03005380 \n\
 /* 0801aa0a */ LDR R0, [R0] \n\
-/* 0801aa0c */ LDR R1, =D_0890c518 \n\
+/* 0801aa0c */ LDR R1, =anim_studio_warning_options_y \n\
 /* 0801aa0e */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\
 /* 0801aa10 */ STR R2, [SP] \n\
 /* 0801aa12 */ MOVS R6, 0x80 @ Set R6 to 0x80 \n\

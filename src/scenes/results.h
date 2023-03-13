@@ -95,13 +95,13 @@ extern const char D_08054f30[]; // "Ç≥ÇÁÇ…ÅA" ("also,")
 
 
 // OAM Animations:
-extern struct Animation D_0890b6ac[]; // Placeholder Header ("nori-kan check")
-extern struct Animation D_0890b6bc[]; // Result Icon { 0 = OK; 1 = Try Again; 2 = Superb }
-extern struct Animation D_0890b6dc[]; // Positive Reinforcement Text Bubble
-extern struct Animation D_0890b6ec[]; // Header Text Box
-extern struct Animation D_0890b6fc[]; // Header Text Box Mask
-extern struct Animation D_0890b70c[]; // "Medal Get!"
-extern struct Animation D_0890b724[]; // "Ç≈Ç‡" ("but")
+extern struct Animation anim_rank_results_header_placeholder[]; // Placeholder Header ("nori-kan check")
+extern struct Animation anim_rank_results_icon[]; // Result Icon { 0 = OK; 1 = Try Again; 2 = Superb }
+extern struct Animation anim_rank_results_supportive_bubble[]; // Positive Reinforcement Text Bubble
+extern struct Animation anim_rank_results_header_box[]; // Header Text Box
+extern struct Animation anim_rank_results_header_box_mask[]; // Header Text Box Mask
+extern struct Animation anim_rank_results_medal_get[]; // "Medal Get!"
+extern struct Animation anim_rank_results_comment_append[]; // "Ç≈Ç‡" ("but")
 
 
 // Sound Effects:

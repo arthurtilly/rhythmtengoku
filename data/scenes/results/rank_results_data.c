@@ -22,12 +22,12 @@ struct GraphicsTable rank_results_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ results_level_pal,
+        /* Src.  */ rank_results_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x200
     },
     /* OBJ Palette */ {
-        /* Src.  */ results_level_pal,
+        /* Src.  */ rank_results_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x200
     },

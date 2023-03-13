@@ -47,7 +47,7 @@ thumb_func_start func_0801ba74 \n\
 /* 0801baca */ ADDS R5, R5, R1 @ Set R5 to R5 + R1 \n\
 /* 0801bacc */ LDRB R1, [R5] \n\
 /* 0801bace */ STR R1, [SP, 0x20] \n\
-/* 0801bad0 */ LDR R1, =D_0890c3c8 \n\
+/* 0801bad0 */ LDR R1, =anim_studio_selection_option \n\
 /* 0801bad2 */ STR R1, [SP, 0x24] \n\
 /* 0801bad4 */ STR R6, [SP, 0x28] \n\
 /* 0801bad6 */ MOVS R1, 0x4 @ Set R1 to 0x4 \n\

@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0890d5a8] <description>
+// [D_0890d5a8] Title Scene Palette
 Palette title_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xC8C880),

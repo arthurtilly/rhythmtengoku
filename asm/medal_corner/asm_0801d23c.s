@@ -14,7 +14,7 @@ thumb_func_start func_0801d23c \n\
 /* 0801d24c */ LDRB R7, [R0] \n\
 /* 0801d24e */ LDR R5, =D_03005380 \n\
 /* 0801d250 */ LDR R0, [R5] \n\
-/* 0801d252 */ LDR R1, =D_0890db38 \n\
+/* 0801d252 */ LDR R1, =anim_medal_corner_count_num \n\
 /* 0801d254 */ MOVS R2, 0x97 @ Set R2 to 0x97 \n\
 /* 0801d256 */ STR R2, [SP] \n\
 /* 0801d258 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
@@ -93,7 +93,7 @@ branch_0801d2fe: \n\
 /* 0801d2fe */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 0801d300 */ BL func_0804d614 \n\
 /* 0801d304 */ LDR R0, [R5] \n\
-/* 0801d306 */ LDR R1, =D_0890dad8 \n\
+/* 0801d306 */ LDR R1, =anim_medal_corner_req_num \n\
 /* 0801d308 */ MOVS R2, 0x8E @ Set R2 to 0x8E \n\
 /* 0801d30a */ STR R2, [SP] \n\
 /* 0801d30c */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
