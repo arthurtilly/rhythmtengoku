@@ -104,7 +104,7 @@ branch_0801e586: \n\
 /* 0801e5a0 */ CMP R5, R0 @ Check R5 - R0 \n\
 /* 0801e5a2 */ BCS branch_0801e610 \n\
 /* 0801e5a4 */ MOV R9, R1 @ Set R9 to R1 \n\
-/* 0801e5a6 */ LDR R1, =D_089ddbe8 \n\
+/* 0801e5a6 */ LDR R1, =debug_menu_entry_table \n\
 /* 0801e5a8 */ LSLS R0, R7, 0x6 \n\
 /* 0801e5aa */ ADDS R0, 0x4 @ Add 0x4 to R0 \n\
 /* 0801e5ac */ ADDS R4, R0, R1 @ Set R4 to R0 + R1 \n\
@@ -167,7 +167,7 @@ branch_0801e610: \n\
 /* 0801e61a */ BL func_08007b04 \n\
 /* 0801e61e */ LDR R3, [SP, 0x7C] \n\
 /* 0801e620 */ LSLS R1, R3, 0x1 \n\
-/* 0801e622 */ LDR R6, =D_089ddf60 \n\
+/* 0801e622 */ LDR R6, =debug_menu_fullwidth_char \n\
 /* 0801e624 */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\
 /* 0801e626 */ ADD R0, SP, 0x14 \n\
 /* 0801e628 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\

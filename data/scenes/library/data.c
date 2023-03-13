@@ -8,7 +8,7 @@
 
 
 // [D_089cd1a4] Graphics Table
-struct GraphicsTable D_089cd1a4[] = {
+struct GraphicsTable library_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cbed78,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -38,15 +38,15 @@ struct GraphicsTable D_089cd1a4[] = {
 };
 
 // [D_089cd1ec] Buffered Textures List
-struct CompressedGraphics *D_089cd1ec[] = {
+struct CompressedGraphics *library_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089cd1f0] "Error" Text
-char D_089cd1f0[] = "エラー";
+char library_error_text[] = "エラー";
 
 // [D_089cd1f8] Animations
-struct Animation *D_089cd1f8[] = {
+struct Animation *library_option_anim[] = {
     /* 0x00 */ anim_library_option1,
     /* 0x01 */ anim_library_option2
 };

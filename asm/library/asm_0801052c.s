@@ -7,7 +7,7 @@ thumb_func_start func_0801052c \n\
 /* 0801052e */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 08010530 */ PUSH {R7} \n\
 /* 08010532 */ SUB SP, 0x14 \n\
-/* 08010534 */ LDR R0, =D_089cd1f0 \n\
+/* 08010534 */ LDR R0, =library_error_text \n\
 /* 08010536 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08010538 */ BL get_current_mem_id \n\
 /* 0801053c */ LSLS R0, R0, 0x10 \n\

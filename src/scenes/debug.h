@@ -3,6 +3,26 @@
 #include "global.h"
 #include "scenes.h"
 
+// Scene Types:
+struct DebugMenuSceneInfo {
+    /* add fields here */
+};
+
+struct DebugMenuEntry {
+    const struct Scene *scene;
+    const char *label;
+};
+
+#define END_OF_DEBUG_ENTRIES { NULL, NULL }
+
+
+// Scene Macros/Enums:
+
+
+// Scene Definition Data:
+
+
+// Functions:
 // extern ? func_0801e100(?); // [func_0801e100] MENU - Initialise Static Variables
 // extern ? func_0801e154(?); // [func_0801e154] MENU - ?
 // extern ? func_0801e174(?); // [func_0801e174] MENU - Graphics Init. 2

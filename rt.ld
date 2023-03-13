@@ -1653,7 +1653,17 @@ SECTIONS {
         build/bin/scene_riq_main.bin.o(.rodata*);
         build/bin/scene_warning.bin.o(.rodata*);
         build/data/scenes/warning/data.c.o(.data);
-        build/bin/bindata_089d3984.bin.o(.rodata*);
+        build/data/scenes/debug/menu.c.o(.data);
+        build/bin/scene_debug_menu.bin.o(.rodata*);
+        build/data/scenes/debug/data.c.o(.data);
+        build/data/scenes/debug/flash_mem_test.c.o(.data);
+        build/bin/scene_flash_mem_test.bin.o(.rodata*);
+        build/data/scenes/debug/data_clear.c.o(.data);
+        build/bin/scene_data_clear.bin.o(.rodata*);
+        build/data/scenes/debug/asset_test.c.o(.data);
+        build/bin/scene_asset_test.bin.o(.rodata*);
+        build/data/scenes/debug/unknown_test.c.o(.data);
+        build/bin/scene_unknown_test.bin.o(.rodata*);
         build/data/font_definitions.c.o(.data);
 
         build/games/sneaky_spirits/engine.c.o(.data);

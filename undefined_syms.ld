@@ -779,41 +779,25 @@ D_089dd998 = 0x089dd998;
 D_089dda28 = 0x089dda28;
 D_089dda4c = 0x089dda4c;
 /* Scene Data - Debug (Menu) */
-D_089ddab0 = 0x089ddab0;
-D_089ddab4 = 0x089ddab4;
-D_089ddb20 = 0x089ddb20;
 D_089ddb24 = 0x089ddb24;
 D_089ddba8 = 0x089ddba8;
 D_089ddbcc = 0x089ddbcc;
-D_089ddbe8 = 0x089ddbe8;
-D_089ddf60 = 0x089ddf60;
 /* Scene Data - Debug (Flash Memory Test) */
-D_089ddfac = 0x089ddfac;
-D_089ddfb0 = 0x089ddfb0;
-D_089ddfbc = 0x089ddfbc;
 D_089ddfc0 = 0x089ddfc0;
 D_089de038 = 0x089de038;
 D_089de05c = 0x089de05c;
 /* Scene Data - Debug (Data Clear) */
-D_089de078 = 0x089de078;
-D_089de07c = 0x089de07c;
-D_089de088 = 0x089de088;
 D_089de08c = 0x089de08c;
 D_089de0a4 = 0x089de0a4;
 D_089de0c8 = 0x089de0c8;
 /* Scene Data - Debug (Asset Test?) */
-D_089de0e4 = 0x089de0e4;
-D_089de0e8 = 0x089de0e8;
-D_089de130 = 0x089de130;
-D_089de134 = 0x089de134;
 D_089de17c = 0x089de17c;
 D_089de200 = 0x089de200;
+D_089de224 = 0x089de224;
 /* Scene Data - Debug (Unknown Test) */
-D_089de240 = 0x089de240;
-D_089de244 = 0x089de244;
-D_089de250 = 0x089de250;
 D_089de254 = 0x089de254;
 D_089de2cc = 0x089de2cc;
+D_089de2f0 = 0x089de2f0;
 
 /* Rhythm Game Scripts */
 D_089edf48 = 0x089edf48;

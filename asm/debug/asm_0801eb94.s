@@ -19,7 +19,7 @@ branch_0801eba0: \n\
 /* 0801ebac */ BL get_current_mem_id \n\
 /* 0801ebb0 */ LSLS R0, R0, 0x10 \n\
 /* 0801ebb2 */ LSRS R0, R0, 0x10 \n\
-/* 0801ebb4 */ LDR R1, =D_089de134 \n\
+/* 0801ebb4 */ LDR R1, =asset_test_gfx_table_dupe \n\
 /* 0801ebb6 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 0801ebb8 */ LSLS R2, R2, 0x8 \n\
 /* 0801ebba */ BL func_08002ee0 \n\
