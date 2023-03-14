@@ -105,7 +105,7 @@ void agb_main(void) {
 	func_080006b0(&D_089dda4c, D_08935fac); // Warning Screen, Title Screen
 	update_key_listener();
 	
-	while (1) {
+	while (TRUE) {
 		func_080013a8();
 		get_agb_random_var();
 		update_key_listener();

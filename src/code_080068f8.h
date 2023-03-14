@@ -22,10 +22,10 @@ extern struct unk_struct_08006bb4 *func_08006bb4(struct unk_struct_08006bb4_init
 extern u32 func_08006c08(struct unk_struct_08006bb4 *);
 extern struct unk_struct_08006ca4 *func_08006ca4(struct unk_struct_08006ca4_init *);
 extern u32 func_08006ce8(struct unk_struct_08006ca4 *);
-extern void func_08006d80(); // Disable Graphics Buffer?
+extern void func_08006d80(void); // Disable Graphics Buffer?
 extern void func_08006da8(void); // Reset Graphics Buffer
-// extern ? func_08006e00(?);
-// extern ? func_08006e30(?);
+extern void func_08006e00(void); // Flush Affine BG
+extern void func_08006e30(s32 layer, u16 dx, u16 dmx, u16 dy, u16 dmy, u32 xRef, u32 yRef); // Set Affine BG
 extern void func_08006e88(void); // Flush Graphics Buffer
 extern void func_08006f84(void); // Update Palette
 extern void func_08006fec(void); // Clear OAM Buffer
@@ -38,8 +38,7 @@ extern void func_0800724c(void); // Update Palette Transition
 extern void func_08007324(u32 update); // Enable Display Updates
 extern void func_08007344(void *paletteFunc); // Set Palette Mod. Function
 extern void func_08007370(void);
-// extern ? func_08007394(?);
-// extern ? func_080073b8(?);
+extern void func_08007394(const void *palette, u32 indexOfs, u32 total); // Set Palette (Immediate)
+extern void func_080073b8(void); // Init. Sprite Library for Internal Library Graphics Buffer
 extern void func_080073f0(void); // Init. OAM Buffer
 extern void func_08007410(void); // Update OAM Buffer
-// extern ? func_0800742c(?);

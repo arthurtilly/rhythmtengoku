@@ -13,6 +13,13 @@ static s32 fast_udivsi3_code[136]; // unknown type
 static s32 D_030010d0[9]; // unknown type
 
 
+// Get Sprite XY
+void func_0800742c(s16 sprite, s16 *xReq, s16 *yReq) {
+    *xReq = func_0804ddb0(D_03005380, sprite, 4);
+    *yReq = func_0804ddb0(D_03005380, sprite, 5);
+}
+
+
 void func_08007468(s16 sprite, s8 affineParamID) {
     func_0804dc10(D_03005380, sprite, affineParamID, func_08002520(affineParamID));
 }

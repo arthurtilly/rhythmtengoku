@@ -31,7 +31,7 @@ static s32 D_030003e8[120]; // unknown type
 
 void func_08001360(void) {
     func_08003f28();
-    D_03000098 = 0;
+    D_03000098 = FALSE;
     D_0300009c = NULL;
     return;
 }
@@ -43,25 +43,26 @@ void func_08001380(void) {
     if (D_0300009c != NULL) {
         D_0300009c();
     }
-    D_03000098 = 1;
+    D_03000098 = TRUE;
     return;
 }
 
 
 void func_080013a8(void) {
-    volatile u32 temp;
-    if (!(REG_DISPCNT & 0x80)) {
+    volatile s32 temp;
+
+    if (!(REG_DISPCNT & DISPCNT_FORCE_BLANK)) {
         while (!D_03000098) {
-			temp = *((u32*)GameROMBase + get_agb_random_var());
+			temp = *((s32 *)GameROMBase + get_agb_random_var());
 		}
     }
-    D_03000098 = 0;
+
+    D_03000098 = FALSE;
 }
 
 
 void func_080013e8(D_0300009c_func arg1) {
 	D_0300009c = arg1;
-	return;
 }
 
 
