@@ -159,83 +159,75 @@ u8 game_select_rank_palette[] = {
     /* 0x07 */ 0
 };
 
-extern const u8 D_089055c0[];
-extern const u8 D_08903ac0[];
-extern const u8 D_08903640[];
-extern const u8 D_08904180[];
-extern const u8 D_089039a0[];
-extern const u8 D_08903be0[];
-extern const u8 D_089031c0[];
-
-// [D_089cfa08] Overlay Data
+// [D_089cfa08] Blank
 struct GameSelectOverlay D_089cfa08 = {
     /* unk0    */ 3,
     /* unk1    */ 3,
-    /* Texture */ D_089055c0,
+    /* Texture */ icon_overlay_blank2_bin,
     /* unk8    */ D_080548e8
 };
 
-// [D_089cfa14] Overlay Data
+// [D_089cfa14] Blank
 struct GameSelectOverlay D_089cfa14 = {
     /* unk0    */ 3,
     /* unk1    */ 3,
-    /* Texture */ D_08903ac0,
+    /* Texture */ icon_overlay_blank1_bin,
     /* unk8    */ D_080548e8
 };
 
-// [D_089cfa20] Overlay Data
+// [D_089cfa20] Not Yet Unlocked
 struct GameSelectOverlay D_089cfa20 = {
     /* unk0    */ 3,
     /* unk1    */ 3,
-    /* Texture */ D_08903640,
+    /* Texture */ icon_overlay_closed_bin,
     /* unk8    */ D_080548e8
 };
 
-// [D_089cfa2c] Overlay Data
+// [D_089cfa2c] Not Yet Unlocked
 struct GameSelectOverlay D_089cfa2c = {
     /* unk0    */ 3,
     /* unk1    */ 3,
-    /* Texture */ D_08903640,
+    /* Texture */ icon_overlay_closed_bin,
     /* unk8    */ D_080548eb
 };
 
-// [D_089cfa38] Overlay Data
+// [D_089cfa38] Unlocked, Not Yet Cleared
 struct GameSelectOverlay D_089cfa38 = {
     /* unk0    */ 3,
     /* unk1    */ 3,
-    /* Texture */ D_08904180,
+    /* Texture */ icon_overlay_new_game_bin,
     /* unk8    */ D_080548f0
 };
 
-// [D_089cfa44] Overlay Data
+// [D_089cfa44] Unlocked, Not Yet Cleared
 struct GameSelectOverlay D_089cfa44 = {
     /* unk0    */ 3,
     /* unk1    */ 3,
-    /* Texture */ D_08904180,
+    /* Texture */ icon_overlay_new_game_bin,
     /* unk8    */ D_08054915
 };
 
-// [D_089cfa50] Overlay Data
+// [D_089cfa50] Cleared, No Medal
 struct GameSelectOverlay D_089cfa50 = {
     /* unk0    */ 3,
     /* unk1    */ 3,
-    /* Texture */ D_089039a0,
+    /* Texture */ icon_overlay_normal_border_bin,
     /* unk8    */ D_080548e8
 };
 
-// [D_089cfa5c] Overlay Data
+// [D_089cfa5c] Cleared, With Medal
 struct GameSelectOverlay D_089cfa5c = {
     /* unk0    */ 3,
     /* unk1    */ 3,
-    /* Texture */ D_08903be0,
+    /* Texture */ icon_overlay_medal_bin,
     /* unk8    */ D_0805493a
 };
 
-// [D_089cfa68] Overlay Data
+// [D_089cfa68] Medal Corner
 struct GameSelectOverlay D_089cfa68 = {
     /* unk0    */ 3,
     /* unk1    */ 3,
-    /* Texture */ D_089031c0,
+    /* Texture */ icon_overlay_striped_border_bin,
     /* unk8    */ D_08054945
 };
 
