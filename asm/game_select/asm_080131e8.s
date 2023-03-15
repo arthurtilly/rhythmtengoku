@@ -70,7 +70,7 @@ branch_0801325e: \n\
 /* 08013264 */ LSLS R0, R1, 0x2 \n\
 /* 08013266 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08013268 */ LSLS R0, R0, 0x2 \n\
-/* 0801326a */ LDR R1, =D_089ceafc \n\
+/* 0801326a */ LDR R1, =game_select_grid_data \n\
 /* 0801326c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801326e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08013270 */ LDRSH R2, [R0, R1] \n\

@@ -39,7 +39,7 @@ branch_08014526: \n\
 /* 0801453a */ LSLS R0, R1, 0x4 \n\
 /* 0801453c */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
 /* 0801453e */ LSLS R0, R0, 0x2 \n\
-/* 08014540 */ LDR R1, =D_089ceafc \n\
+/* 08014540 */ LDR R1, =game_select_grid_data \n\
 /* 08014542 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08014544 */ ADDS R7, R2, R0 @ Set R7 to R2 + R0 \n\
 /* 08014546 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\

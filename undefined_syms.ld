@@ -223,7 +223,6 @@ D_089cde20 = 0x089cde20;
 D_089cde3c = 0x089cde3c;
 D_089cdee4 = 0x089cdee4;
 D_089cdf08 = 0x089cdf08;
-D_089ceafc = 0x089ceafc;
 /* Scene Data - Options Menu */
 D_089cfb2c = 0x089cfb2c;
 D_089cfbf8 = 0x089cfbf8;

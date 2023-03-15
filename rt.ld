@@ -1687,8 +1687,6 @@ SECTIONS {
         build/bin/scene_main_menu.bin.o(.rodata*);
         build/bin/scene_game_select.bin.o(.rodata*);
         build/data/scenes/game_select/data.c.o(.data);
-        build/bin/game_select_grid_data.bin.o(.rodata*);
-        build/data/scenes/game_select/data2.c.o(.data);
         build/data/scenes/options/data.c.o(.data);
         build/bin/scene_options.bin.o(.rodata*);
         build/data/scenes/perfect/data.c.o(.data);

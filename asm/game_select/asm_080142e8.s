@@ -17,7 +17,7 @@ thumb_func_start func_080142e8 \n\
 /* 080142fe */ LSLS R0, R2, 0x4 \n\
 /* 08014300 */ SUBS R0, R0, R2 @ Set R0 to R0 - R2 \n\
 /* 08014302 */ LSLS R0, R0, 0x2 \n\
-/* 08014304 */ LDR R1, =D_089ceafc \n\
+/* 08014304 */ LDR R1, =game_select_grid_data \n\
 /* 08014306 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08014308 */ ADDS R2, R3, R0 @ Set R2 to R3 + R0 \n\
 /* 0801430a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\

@@ -13,7 +13,7 @@ thumb_func_start func_08013348 \n\
 /* 08013356 */ BHI branch_0801337c \n\
 /* 08013358 */ CMP R3, 0xB @ Compare R3 and 0xB \n\
 /* 0801335a */ BHI branch_0801337c \n\
-/* 0801335c */ LDR R2, =D_089ceafc \n\
+/* 0801335c */ LDR R2, =game_select_grid_data \n\
 /* 0801335e */ LSLS R1, R3, 0x4 \n\
 /* 08013360 */ SUBS R1, R1, R3 @ Set R1 to R1 - R3 \n\
 /* 08013362 */ ADDS R1, R4, R1 @ Set R1 to R4 + R1 \n\

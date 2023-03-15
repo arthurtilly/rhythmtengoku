@@ -1,5 +1,8 @@
 #include "global.h"
 #include "game_select.h"
+#include "text/game_select_text.h"
+#include "graphics/game_select/game_select_graphics.h"
+
 #include "src/memory.h"
 #include "src/code_08001360.h"
 #include "src/bitmap_font.h"
@@ -188,20 +191,20 @@ const char *func_08012c24(s32 id, s32 shortenSongTitle) {
     rewardID = perfect_gifts_table[id].rewardID;
 
     switch (rewardType) {
-        case PERFECT_REWARD_TYPE_MUSIC:
+        case PERFECT_GIFT_TYPE_SONG:
             if (shortenSongTitle) {
                 return studio_song_table[rewardID].shortTitle;
             } else {
                 return studio_song_table[rewardID].fullTitle;
             }
 
-        case PERFECT_REWARD_TYPE_DRUM_KIT:
+        case PERFECT_GIFT_TYPE_DRUM_KIT:
             return studio_drum_kit_names[rewardID];
 
-        case PERFECT_REWARD_TYPE_READING_MATERIAL:
+        case PERFECT_GIFT_TYPE_READING_MATERIAL:
             return reading_material_table[rewardID].title;
 
-        case PERFECT_REWARD_TYPE_NEW_GAME: // Reward is New Game
+        case PERFECT_GIFT_TYPE_NEW_GAME: // Reward is New Game
             return D_08050bd0; // "êVÉQÅ[ÉÄ"
     }
 }
@@ -222,7 +225,7 @@ void func_08012cb4(s32 id) {
 
     rewardType = perfect_gifts_table[id].rewardType;
     rewardID = perfect_gifts_table[id].rewardID;
-    if (rewardType == PERFECT_REWARD_TYPE_MUSIC) {
+    if (rewardType == PERFECT_GIFT_TYPE_SONG) {
         rewardIsMusic = TRUE;
         if (rewardID < 7) {
             temp = 5;
@@ -292,7 +295,7 @@ void func_08012fcc(s32 x, s32 y) {
 // Get Game Select Scene Entry ID
 s32 func_08013100(u32 x, u32 y) {
     if ((x < GAME_SELECT_GRID_WIDTH) && (y < GAME_SELECT_GRID_HEIGHT)) {
-        return D_089ceafc[x + (y * GAME_SELECT_GRID_WIDTH)].id;
+        return game_select_grid_data[x + (y * GAME_SELECT_GRID_WIDTH)].id;
     }
     return -1;
 }
@@ -340,7 +343,7 @@ void func_0801318c(s32 id, s32 *x, s32 *y) {
 
     for (i = 0; i < GAME_SELECT_GRID_HEIGHT; i++) {
         for (j = 0; j < GAME_SELECT_GRID_WIDTH; j++) {
-            if (D_089ceafc[j + (i * GAME_SELECT_GRID_WIDTH)].id == id) {
+            if (game_select_grid_data[j + (i * GAME_SELECT_GRID_WIDTH)].id == id) {
                 *x = j;
                 *y = i;
                 return;
@@ -497,7 +500,7 @@ void game_select_scene_start(s32 unused) {
             gGameSelectInfo->unk4F6 = cursorY;
             gGameSelectInfo->unk4F8 = 60;
         }
-        if ((func_08013100(cursorX, cursorY) == SCENE_ENTRY_REMIX_6) && (recentCompletionLevel >= RHYTHM_GAME_STATE_CLEARED)) {
+        if ((func_08013100(cursorX, cursorY) == LEVEL_REMIX_6) && (recentCompletionLevel >= RHYTHM_GAME_STATE_CLEARED)) {
             func_08012808();
         }
     } else {
@@ -515,7 +518,7 @@ void game_select_scene_start(s32 unused) {
     saveData->gameSelectUnk5 = 0;
     func_080191ac(TRUE);
     func_08013994();
-    func_0801318c(SCENE_ENTRY_STAFF_CREDIT, &cursorX, &cursorY);
+    func_0801318c(LEVEL_STAFF_CREDIT, &cursorX, &cursorY);
     if (func_0801317c(cursorX, cursorY) > 3) {
         func_08012808();
     }

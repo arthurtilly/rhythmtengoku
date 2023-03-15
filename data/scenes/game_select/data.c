@@ -10,257 +10,159 @@
   /* GAME SELECT - SCENE DATA */
 
 
-// [D_089cdf24] Perfect Campaign Gifts
-struct PerfectCampaignData perfect_gifts_table[] = {
-    /* 0x00 */ {
-        /* Grid Pos.   */ 2, 6,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 11
-    },
-    /* 0x01 */ {
-        /* Grid Pos.   */ 3, 6,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 9
-    },
-    /* 0x02 */ {
-        /* Grid Pos.   */ 4, 6,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 5
-    },
-    /* 0x03 */ {
-        /* Grid Pos.   */ 5, 6,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 2
-    },
-    /* 0x04 */ {
-        /* Grid Pos.   */ 6, 6,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 6
-    },
-    /* 0x05 */ {
-        /* Grid Pos.   */ 7, 6,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 32
-    },
-    /* 0x06 */ {
-        /* Grid Pos.   */ 8, 6,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 15
-    },
-    /* 0x07 */ {
-        /* Grid Pos.   */ 9, 6,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 12
-    },
-    /* 0x08 */ {
-        /* Grid Pos.   */ 2, 7,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 2
-    },
-    /* 0x09 */ {
-        /* Grid Pos.   */ 3, 7,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 8
-    },
-    /* 0x0A */ {
-        /* Grid Pos.   */ 4, 7,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 4
-    },
-    /* 0x0B */ {
-        /* Grid Pos.   */ 5, 7,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 8
-    },
-    /* 0x0C */ {
-        /* Grid Pos.   */ 6, 7,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 3
-    },
-    /* 0x0D */ {
-        /* Grid Pos.   */ 7, 7,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 13
-    },
-    /* 0x0E */ {
-        /* Grid Pos.   */ 8, 7,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 9
-    },
-    /* 0x0F */ {
-        /* Grid Pos.   */ 9, 7,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 7
-    },
-    /* 0x10 */ {
-        /* Grid Pos.   */ 2, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 5
-    },
-    /* 0x11 */ {
-        /* Grid Pos.   */ 3, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 17
-    },
-    /* 0x12 */ {
-        /* Grid Pos.   */ 4, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 7
-    },
-    /* 0x13 */ {
-        /* Grid Pos.   */ 5, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 10
-    },
-    /* 0x14 */ {
-        /* Grid Pos.   */ 6, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 19
-    },
-    /* 0x15 */ {
-        /* Grid Pos.   */ 7, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 11
-    },
-    /* 0x16 */ {
-        /* Grid Pos.   */ 8, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 4
-    },
-    /* 0x17 */ {
-        /* Grid Pos.   */ 9, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 6
-    },
-    /* 0x18 */ {
-        /* Grid Pos.   */ 2, 9,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 1
-    },
-    /* 0x19 */ {
-        /* Grid Pos.   */ 3, 9,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 12
-    },
-    /* 0x1A */ {
-        /* Grid Pos.   */ 4, 9,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 22
-    },
-    /* 0x1B */ {
-        /* Grid Pos.   */ 5, 9,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 25
-    },
-    /* 0x1C */ {
-        /* Grid Pos.   */ 6, 9,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 13
-    },
-    /* 0x1D */ {
-        /* Grid Pos.   */ 7, 9,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 10
-    },
-    /* 0x1E */ {
-        /* Grid Pos.   */ 8, 9,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 13
-    },
-    /* 0x1F */ {
-        /* Grid Pos.   */ 9, 9,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 10
-    },
-    /* 0x20 */ {
-        /* Grid Pos.   */ 2, 10,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 3
-    },
-    /* 0x21 */ {
-        /* Grid Pos.   */ 3, 10,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 5
-    },
-    /* 0x22 */ {
-        /* Grid Pos.   */ 4, 10,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 21
-    },
-    /* 0x23 */ {
-        /* Grid Pos.   */ 5, 10,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 7
-    },
-    /* 0x24 */ {
-        /* Grid Pos.   */ 6, 10,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 6
-    },
-    /* 0x25 */ {
-        /* Grid Pos.   */ 7, 10,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 9
-    },
-    /* 0x26 */ {
-        /* Grid Pos.   */ 8, 10,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 8
-    },
-    /* 0x27 */ {
-        /* Grid Pos.   */ 9, 10,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 14
-    },
-    /* 0x28 */ {
-        /* Grid Pos.   */ 2, 11,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 1
-    },
-    /* 0x29 */ {
-        /* Grid Pos.   */ 3, 11,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 2
-    },
-    /* 0x2A */ {
-        /* Grid Pos.   */ 4, 11,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 18
-    },
-    /* 0x2B */ {
-        /* Grid Pos.   */ 5, 11,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 16
-    },
-    /* 0x2C */ {
-        /* Grid Pos.   */ 6, 11,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 4
-    },
-    /* 0x2D */ {
-        /* Grid Pos.   */ 7, 11,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 12
-    },
-    /* 0x2E */ {
-        /* Grid Pos.   */ 8, 11,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 14
-    },
-    /* 0x2F */ {
-        /* Grid Pos.   */ 9, 11,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 3
-    },
-};
-
-// [D_089ce0a4] Perfect Campaign Border Sprites
-struct Animation *perfect_campaign_borders[] = {
-    /* Attempt 3 */ anim_game_select_border_perfect1,
-    /* Attempt 2 */ anim_game_select_border_perfect2,
-    /* Attempt 1 */ anim_game_select_border_perfect3
-};
-
+#include "perfect_data.inc.c"
 #include "epilogue_data.inc.c"
 #include "level_data.inc.c"
 #include "icon_data.inc.c"
+#include "grid_data.inc.c"
+
+// [D_089cf90c] Game Icon Palettes
+u8 D_089cf90c[] = {
+    /* 0x00 */ 1,
+    /* 0x01 */ 0,
+    /* 0x02 */ 2,
+    /* 0x03 */ 0,
+    /* 0x04 */ 0,
+    /* 0x05 */ 0,
+    /* 0x06 */ 0,
+    /* 0x07 */ 0,
+    /* 0x08 */ 0,
+    /* 0x09 */ 0,
+    /* 0x0A */ 0,
+    /* 0x0B */ 0,
+    /* 0x0C */ 0,
+    /* 0x0D */ 0,
+    /* 0x0E */ 0,
+    /* 0x0F */ 0,
+    /* 0x10 */ 1,
+    /* 0x11 */ 1,
+    /* 0x12 */ 0,
+    /* 0x13 */ 2,
+    /* 0x14 */ 0,
+    /* 0x15 */ 0,
+    /* 0x16 */ 2,
+    /* 0x17 */ 0,
+    /* 0x18 */ 1,
+    /* 0x19 */ 0,
+    /* 0x1A */ 0,
+    /* 0x1B */ 2,
+    /* 0x1C */ 0,
+    /* 0x1D */ 0,
+    /* 0x1E */ 0,
+    /* 0x1F */ 0,
+    /* 0x20 */ 1,
+    /* 0x21 */ 2,
+    /* 0x22 */ 2,
+    /* 0x23 */ 1,
+    /* 0x24 */ 0,
+    /* 0x25 */ 2,
+    /* 0x26 */ 0,
+    /* 0x27 */ 2,
+    /* 0x28 */ 0,
+    /* 0x29 */ 0,
+    /* 0x2A */ 0,
+    /* 0x2B */ 1,
+    /* 0x2C */ 0,
+    /* 0x2D */ 0,
+    /* 0x2E */ 0,
+    /* 0x2F */ 0,
+    /* 0x30 */ 0,
+    /* 0x31 */ 0,
+    /* 0x32 */ 3,
+    /* 0x33 */ 0,
+    /* 0x34 */ 0,
+    /* 0x35 */ 4
+};
+
+// [D_089cf944] Scene Objects
+union SceneObject game_select_scene_objects[] = {
+    END_OF_SCENE_OBJECTS_LIST
+};
+
+// [D_089cf948] Graphics Table
+struct GraphicsTable game_select_gfx_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &D_08cc9854,
+        /* Dest. */ BG_TILESET_BASE(0x8000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08cc9d14,
+        /* Dest. */ BG_MAP_BASE(0xB000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &D_08cc9e14,
+        /* Dest. */ BG_MAP_BASE(0xB800),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &D_08cc9148,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ game_select_bg_icon_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x100
+    },
+    /* BG Palette */ {
+        /* Src.  */ game_select_bg_overlay_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(8),
+        /* Size  */ 0x100
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ game_select_obj_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x200
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
+// [D_089cf9a8] Buffered Textures List
+struct CompressedGraphics *game_select_buffered_textures[] = {
+    END_OF_BUFFERED_TEXTURES_LIST
+};
+
+// [D_089cf9ac] Stage Title Text Animations (by Grid X Pos.)
+struct Animation *game_select_column_title_anim[] = {
+    /* 0x00 */ anim_game_select_stage0,
+    /* 0x01 */ anim_game_select_stage0,
+    /* 0x02 */ anim_game_select_stage1,
+    /* 0x03 */ anim_game_select_stage2,
+    /* 0x04 */ anim_game_select_stage3,
+    /* 0x05 */ anim_game_select_stage4,
+    /* 0x06 */ anim_game_select_stage5,
+    /* 0x07 */ anim_game_select_stage6,
+    /* 0x08 */ anim_game_select_stage7,
+    /* 0x09 */ anim_game_select_stage8,
+    /* 0x0A */ anim_game_select_stage0,
+    /* 0x0B */ anim_game_select_stage0,
+    /* 0x0C */ anim_game_select_stage0,
+    /* 0x0D */ anim_game_select_stage0,
+    /* 0x0E */ anim_game_select_stage0
+};
+
+// [D_089cf9e8] Rank Text (by Completion Level)
+const char *game_select_rank_text[] = {
+    /* 0x00 */ text_game_select_rank_none,
+    /* 0x01 */ text_game_select_rank_none,
+    /* 0x02 */ text_game_select_rank_none,
+    /* 0x03 */ text_game_select_rank_none,
+    /* 0x04 */ text_game_select_rank_ok,
+    /* 0x05 */ text_game_select_rank_superb
+};
+
+// [D_089cfa00] Rank Text Palette (by Completion Level)
+u8 game_select_rank_palette[] = {
+    /* 0x00 */ 0,
+    /* 0x01 */ 0,
+    /* 0x02 */ 0,
+    /* 0x03 */ 0,
+    /* 0x04 */ 9,
+    /* 0x05 */ 10,
+    /* 0x06 */ 0,
+    /* 0x07 */ 0
+};
+
+#include "icon_overlay_data.inc.c"

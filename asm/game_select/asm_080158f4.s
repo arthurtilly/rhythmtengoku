@@ -13,7 +13,7 @@ thumb_func_start func_080158f4 \n\
 /* 08015902 */ MOVS R2, 0x20 @ Set R2 to 0x20 \n\
 /* 08015904 */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
 /* 08015906 */ BL dma3_fill \n\
-/* 0801590a */ LDR R1, =D_089cfa74 \n\
+/* 0801590a */ LDR R1, =game_select_icon_overlays \n\
 /* 0801590c */ LDR R0, [R1] \n\
 /* 0801590e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08015910 */ BEQ branch_08015928 \n\

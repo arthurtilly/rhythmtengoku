@@ -252,7 +252,7 @@ branch_0801482e: \n\
 /* 0801483c */ LSLS R0, R1, 0x4 \n\
 /* 0801483e */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
 /* 08014840 */ LSLS R0, R0, 0x2 \n\
-/* 08014842 */ LDR R1, =D_089ceafc \n\
+/* 08014842 */ LDR R1, =game_select_grid_data \n\
 /* 08014844 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08014846 */ ADDS R2, R2, R0 @ Set R2 to R2 + R0 \n\
 /* 08014848 */ LDR R0, [SP, 0x20] \n\
