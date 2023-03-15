@@ -1,6 +1,5 @@
 #include "global.h"
 #include "game_select.h"
-#include "text/game_select_text.h"
 #include "graphics/game_select/game_select_graphics.h"
 
 #include "src/memory.h"

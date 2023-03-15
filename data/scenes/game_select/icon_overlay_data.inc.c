@@ -3,7 +3,9 @@ struct GameSelectOverlay D_089cfa08 = {
     /* Width   */ 3,
     /* Height  */ 3,
     /* Texture */ icon_overlay_blank2_bin,
-    /* unk8    */ D_080548e8
+    /* unk8    */ (s8[]) {
+        0, 1, -2
+    }
 };
 
 // [D_089cfa14] Blank
@@ -11,7 +13,9 @@ struct GameSelectOverlay D_089cfa14 = {
     /* Width   */ 3,
     /* Height  */ 3,
     /* Texture */ icon_overlay_blank1_bin,
-    /* unk8    */ D_080548e8
+    /* unk8    */ (s8[]) {
+        0, 1, -2
+    }
 };
 
 // [D_089cfa20] Not Yet Unlocked
@@ -19,7 +23,9 @@ struct GameSelectOverlay D_089cfa20 = {
     /* Width   */ 3,
     /* Height  */ 3,
     /* Texture */ icon_overlay_closed_bin,
-    /* unk8    */ D_080548e8
+    /* unk8    */ (s8[]) {
+        0, 1, -2
+    }
 };
 
 // [D_089cfa2c] Not Yet Unlocked
@@ -27,7 +33,9 @@ struct GameSelectOverlay D_089cfa2c = {
     /* Width   */ 3,
     /* Height  */ 3,
     /* Texture */ icon_overlay_closed_bin,
-    /* unk8    */ D_080548eb
+    /* unk8    */ (s8[]) {
+        1, 24, 2, 24, -1
+    }
 };
 
 // [D_089cfa38] Unlocked, Not Yet Cleared
@@ -35,7 +43,11 @@ struct GameSelectOverlay D_089cfa38 = {
     /* Width   */ 3,
     /* Height  */ 3,
     /* Texture */ icon_overlay_new_game_bin,
-    /* unk8    */ D_080548f0
+    /* unk8    */ (s8[]) {
+        0, 5, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 7, 2,
+        8, 5, 8, 5, 7, 2, 6, 2, 5, 2, 4, 2, 3, 2, 2, 2,
+        1, 2, 0, 5, -1
+    }
 };
 
 // [D_089cfa44] Unlocked, Not Yet Cleared
@@ -43,7 +55,11 @@ struct GameSelectOverlay D_089cfa44 = {
     /* Width   */ 3,
     /* Height  */ 3,
     /* Texture */ icon_overlay_new_game_bin,
-    /* unk8    */ D_08054915
+    /* unk8    */ (s8[]) {
+        4, 2, 5, 2, 6, 2, 7, 2, 8, 5, 8, 5, 7, 2, 6, 2,
+        5, 2, 4, 2, 12, 2, 11, 2, 10, 2, 9, 5, 9, 5, 10,
+        2, 11, 2, 12, 2, -1
+    }
 };
 
 // [D_089cfa50] Cleared, No Medal
@@ -51,7 +67,9 @@ struct GameSelectOverlay D_089cfa50 = {
     /* Width   */ 3,
     /* Height  */ 3,
     /* Texture */ icon_overlay_normal_border_bin,
-    /* unk8    */ D_080548e8
+    /* unk8    */ (s8[]) {
+        0, 1, -2
+    }
 };
 
 // [D_089cfa5c] Cleared, With Medal
@@ -59,7 +77,9 @@ struct GameSelectOverlay D_089cfa5c = {
     /* Width   */ 3,
     /* Height  */ 3,
     /* Texture */ icon_overlay_medal_bin,
-    /* unk8    */ D_0805493a
+    /* unk8    */ (s8[]) {
+        0, 40, 1, 3, 2, 3, 3, 3, 4, 3, -1
+    }
 };
 
 // [D_089cfa68] Medal Corner
@@ -67,7 +87,9 @@ struct GameSelectOverlay D_089cfa68 = {
     /* Width   */ 3,
     /* Height  */ 3,
     /* Texture */ icon_overlay_striped_border_bin,
-    /* unk8    */ D_08054945
+    /* unk8    */ (s8[]) {
+        0, 3, 1, 3, 2, 3, 3, 3, -1
+    }
 };
 
 // [D_089cfa74] Overlay Data Table

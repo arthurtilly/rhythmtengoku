@@ -198,6 +198,7 @@ extern u32 func_08019bec(void); // Prepare Positive Comments
 extern void func_08019d9c(void); // Display Comments
 extern void func_08019ee0(void); // [func_08019ee0] LEVEL Display Comments (Script Function)
 extern u32 func_0801a060(void); // Calculate Final Score
+
 // extern ? func_0801a0ec(?); // [func_0801a0ec] EPILOGUE Initialise Static Variables
 // extern ? func_0801a0f0(?); // [func_0801a0f0] EPILOGUE Graphics Init. 2
 // extern ? func_0801a140(?); // [func_0801a140] EPILOGUE Graphics Init. 1

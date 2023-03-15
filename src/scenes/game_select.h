@@ -140,9 +140,7 @@ struct LevelData {
     u16 unkC;
     u16 unkE;
     const struct GraphicsTable **epilogueGfx;
-    const char *tryAgainText;
-    const char *okText;
-    const char *superbText;
+    const char *epilogueText[3];
 };
 
 struct GameSelectGridEntry {

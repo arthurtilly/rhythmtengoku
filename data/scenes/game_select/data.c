@@ -1,10 +1,10 @@
 #include "global.h"
 #include "graphics.h"
+#include "text.h"
 #include "src/bitmap_font.h"
 #include "src/task_pool.h"
 #include "src/scenes/game_select.h"
 #include "graphics/game_select/game_select_graphics.h"
-#include "text/game_select_text.h"
 
 
   /* GAME SELECT - SCENE DATA */
@@ -145,13 +145,15 @@ struct Animation *game_select_column_title_anim[] = {
 
 // [D_089cf9e8] Rank Text (by Completion Level)
 const char *game_select_rank_text[] = {
-    /* 0x00 */ text_game_select_rank_none,
-    /* 0x01 */ text_game_select_rank_none,
-    /* 0x02 */ text_game_select_rank_none,
-    /* 0x03 */ text_game_select_rank_none,
-    /* 0x04 */ text_game_select_rank_ok,
-    /* 0x05 */ text_game_select_rank_superb
+    /* 0x00 */ "",
+    /* 0x01 */ "",
+    /* 0x02 */ "",
+    /* 0x03 */ "",
+    /* 0x04 */ "\2\x30" "\1\x30" "\5\x31" "\1\x35" "ランク " "\2\x32" "\1\x32" "\5\x33" "\1\x37" "平凡",
+    /* 0x05 */ "\2\x30" "\1\x30" "\5\x31" "\1\x35" "ランク " "\2\x32" "\1\x32" "\5\x33" "\1\x37" "ハイレベル"
 };
+
+asm(".balign 4, 0");
 
 // [D_089cfa00] Rank Text Palette (by Completion Level)
 u8 game_select_rank_palette[] = {
