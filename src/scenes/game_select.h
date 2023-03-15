@@ -265,6 +265,15 @@ extern struct GameSelectGridEntry game_select_grid_data[GAME_SELECT_GRID_HEIGHT 
 extern struct GraphicsTable game_select_gfx_table[];
 extern struct CompressedGraphics *game_select_buffered_textures[];
 extern struct Animation *game_select_column_title_anim[];
+extern const char D_08050bcc[];
+extern const char D_08050bd0[];
+extern const char D_08050bdc[];
+extern const char D_08050be8[];
+extern const char D_08050c08[];
+extern const char D_08050c14[];
+extern const char D_08050c18[];
+extern const char D_08050c1c[];
+extern const char D_08050c24[];
 
 
 // Functions:
