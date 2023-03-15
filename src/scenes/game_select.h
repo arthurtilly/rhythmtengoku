@@ -267,9 +267,7 @@ extern struct CompressedGraphics *game_select_buffered_textures[];
 extern struct Animation *game_select_column_title_anim[];
 
 
-/* FUNCTIONS */
-
-
+// Functions:
 extern void func_080127fc(void); // [func_080127fc] Initialise Static Variables (Clear D_0300131c)
 extern void func_08012808(void); // Set D_0300131c
 extern void func_08012814(void); // [func_08012814] Play Music (Script Function)

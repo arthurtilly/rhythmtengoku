@@ -248,3 +248,30 @@ struct Animation *perfect_campaign_borders[] = {
     /* Attempt 2 */ anim_game_select_border_perfect2,
     /* Attempt 1 */ anim_game_select_border_perfect3
 };
+
+// Null Perfect Gift
+const char D_08050bcc[] = "";
+
+// New Game
+const char D_08050bd0[] = "新ゲーム";
+
+//
+const char D_08050bdc[] = "ただいま「";
+
+// Get a perfect on this
+const char D_08050be8[] = "」でパーフェクトを達成すると";
+
+// game, and you'll receive
+const char D_08050c08[] = "もれなく";
+
+// "
+const char D_08050c14[] = "「";
+
+// "
+const char D_08050c18[] = "」";
+
+// 's song
+const char D_08050c1c[] = "の曲";
+
+// received as a present!!
+const char D_08050c24[] = "をプレゼント!!";

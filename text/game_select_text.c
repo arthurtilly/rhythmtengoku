@@ -3,43 +3,6 @@
 #include "game_select_text.h"
 
 
-/* Perfect Campaign Notice */
-
-
-// Null Perfect Gift
-const char D_08050bcc[] = "";
-
-// New Game
-const char D_08050bd0[] = "新ゲーム";
-
-//
-const char D_08050bdc[] = "ただいま「";
-
-// Get a perfect on this
-const char D_08050be8[] = "」でパーフェクトを達成すると";
-
-// game, and you'll receive
-const char D_08050c08[] = "もれなく";
-
-//
-const char D_08050c14[] = "「";
-
-//
-const char D_08050c18[] = "」";
-
-// 's song
-const char D_08050c1c[] = "の曲";
-
-// received as a present!!
-const char D_08050c24[] = "をプレゼント!!";
-
-
-/* Epilogue Graphics Tables */
-
-
-#include "game_epilogues.inc.c"
-
-
 /* Rhythm Game Descriptions & Epilogue Text */
 
 
