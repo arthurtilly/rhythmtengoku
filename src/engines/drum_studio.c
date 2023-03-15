@@ -2,7 +2,7 @@
 
 #include "engines/drum_studio.h"
 #include "src/scenes/gameplay.h"
-#include "src/scenes/data.h"
+#include "src/scenes/drum_replay.h"
 #include "src/memory.h"
 #include "src/code_08001360.h"
 #include "src/task_pool.h"

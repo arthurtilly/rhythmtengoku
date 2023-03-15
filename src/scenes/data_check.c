@@ -1,9 +1,36 @@
 #include "global.h"
-#include "text.h"
-#include "data_check_text.h"
+#include "data_check.h"
+
+asm(".include \"include/gba.inc\"");//Temporary
 
 
-/* Data Check */
+/* DATA CHECK */
+
+
+#include "asm/data/asm_08011530.s"
+
+#include "asm/data/asm_08011534.s"
+
+#include "asm/data/asm_08011580.s"
+
+#include "asm/data/asm_080115b0.s"
+
+#include "asm/data/asm_080115d0.s"
+
+#include "asm/data/asm_08011690.s"
+
+#include "asm/data/asm_08011694.s"
+
+#include "asm/data/asm_08011728.s"
+
+#include "asm/data/asm_08011744.s"
+
+#include "asm/data/asm_08011820.s"
+
+#include "asm/data/asm_08011a08.s"
+
+
+/* DATA */
 
 
 // Gameplay Logs

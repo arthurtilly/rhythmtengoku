@@ -503,7 +503,7 @@ jump_0801104c: \n\
 .ltorg \n\
  \n\
 branch_080110a8: \n\
-/* 080110a8 */ LDR R4, =D_089cd44c \n\
+/* 080110a8 */ LDR R4, =cafe_dialogue_table \n\
 /* 080110aa */ MOVS R0, 0xA @ Set R0 to 0xA \n\
 /* 080110ac */ BL agb_random \n\
 /* 080110b0 */ LSLS R0, R0, 0x10 \n\

@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 #include "src/bitmap_font.h"
-#include "src/scenes/data.h"
+#include "src/scenes/data_check.h"
 
 
   /* DATA CHECK - SCENE DATA */

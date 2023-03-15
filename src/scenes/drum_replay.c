@@ -1,38 +1,10 @@
 #include "global.h"
-#include "data.h"
+#include "drum_replay.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
 
-/* DATA CHECK */
-
-
-#include "asm/data/asm_08011530.s"
-
-#include "asm/data/asm_08011534.s"
-
-#include "asm/data/asm_08011580.s"
-
-#include "asm/data/asm_080115b0.s"
-
-#include "asm/data/asm_080115d0.s"
-
-#include "asm/data/asm_08011690.s"
-
-#include "asm/data/asm_08011694.s"
-
-#include "asm/data/asm_08011728.s"
-
-#include "asm/data/asm_08011744.s"
-
-#include "asm/data/asm_08011820.s"
-
-#include "asm/data/asm_08011a08.s"
-
-
-
-/* Drum Replay Save Allocator */
-
+/* DRUM REPLAY SAVE ALLOCATOR */
 
 
 #define REPLAY_BLOCK_TOTAL 0x38
@@ -45,7 +17,7 @@ void reset_all_replay_save_data(struct DrumReplaySaveAlloc *allocator) {
     u32 i;
 
     allocator->nextAvailableBlock = 0;
-    
+
     for (i = 0; i < MAX_REPLAYS; i++) {
         allocator->replayStartBlocks[i] = 0;
         allocator->replaySizes[i] = 0;

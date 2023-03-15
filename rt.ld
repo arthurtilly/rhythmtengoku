@@ -26,7 +26,8 @@ SECTIONS {
 		build/src/code_080102d0.c.o(.bss);
 		build/src/scenes/library.c.o(.bss);
 		build/src/scenes/cafe.c.o(.bss);
-		build/src/scenes/data.c.o(.bss);
+		build/src/scenes/data_check.c.o(.bss);
+		build/src/scenes/drum_replay.c.o(.bss);
 		build/src/scenes/data_room.c.o(.bss);
 		build/src/scenes/main_menu.c.o(.bss);
 		build/src/scenes/game_select.c.o(.bss);
@@ -145,7 +146,8 @@ SECTIONS {
         build/src/code_080102d0.c.o(.text);
 		build/src/scenes/library.c.o(.text);
 		build/src/scenes/cafe.c.o(.text);
-		build/src/scenes/data.c.o(.text);
+		build/src/scenes/data_check.c.o(.text);
+		build/src/scenes/drum_replay.c.o(.text);
 		build/src/scenes/data_room.c.o(.text);
 		build/src/scenes/main_menu.c.o(.text);
 		build/src/scenes/game_select.c.o(.text);
@@ -257,12 +259,13 @@ SECTIONS {
         *libc.a:memcpy.o(.text);
         *libc.a:strcpy.o(.text);
         *libc.a:strlen.o(.text);
-		
+
+        # Some of these are likely rodata sections of src/ files
 		build/asm/boot.s.o(.rodata);
         build/text/beatscript_text.c.o(.rodata);
-        build/text/library_text.c.o(.rodata);
-        build/text/cafe_text.c.o(.rodata);
-        build/text/data_check_text.c.o(.rodata);
+		build/src/scenes/library.c.o(.rodata);
+        build/data/scenes/cafe/data.c.o(.rodata);
+		build/src/scenes/data_check.c.o(.rodata);
         build/text/game_select_text.c.o(.rodata);
         build/text/options_text.c.o(.rodata);
         build/text/perfect_text.c.o(.rodata);
@@ -1679,7 +1682,7 @@ SECTIONS {
         build/data/scenes/library/script.bs.o(.rodata);
         build/data/scenes/cafe/data.c.o(.data);
         build/bin/scene_cafe.bin.o(.rodata*);
-        build/data/scenes/data_check/data.c.o(.data);
+        build/data/scenes/debug/data_check.c.o(.data);
         build/bin/scene_data_check.bin.o(.rodata*);
         build/data/scenes/data_room/data_room.c.o(.data);
         build/bin/scene_data_room.bin.o(.rodata*);

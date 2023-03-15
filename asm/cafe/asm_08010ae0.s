@@ -60,7 +60,7 @@ branch_08010b22: \n\
 /* 08010b48 */ LDR R0, [R0] \n\
 /* 08010b4a */ MOVS R3, 0x8 @ Set R3 to 0x8 \n\
 /* 08010b4c */ LDRSH R1, [R2, R3] \n\
-/* 08010b4e */ LDR R3, =cafe_cursor_animations \n\
+/* 08010b4e */ LDR R3, =cafe_cursor_option_anim \n\
 /* 08010b50 */ LDRB R2, [R2, 0x1F] \n\
 /* 08010b52 */ LSLS R2, R2, 0x18 \n\
 /* 08010b54 */ ASRS R2, R2, 0x18 \n\
