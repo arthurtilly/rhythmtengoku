@@ -40,10 +40,10 @@ const char D_08050718[] = "\n";
 const char D_0805071c[] = "そうそう、";
 
 // Shadowed Text
-const char D_08050728[] = "\x05\x31" "\x01\x35";
+const char D_08050728[] = "\5\x31" "\1\x35";
 
 // ...]?
-const char D_08050730[] = "\x05\x34" "\x01\x38" "で\n";
+const char D_08050730[] = "\5\x34" "\1\x38" "で\n";
 
 // I heard you just got a Perfect!?
 const char D_08050738[] = "パーフェクト　だしたんだって！？";
@@ -58,7 +58,7 @@ const char D_0805076c[] = "行きづまってませんか？\n" "\n";
 const char D_08050788[] = "う～む…　";
 
 // [...] giving...
-const char D_08050794[] = "\x05\x34" "\x01\x38" "に\n";
+const char D_08050794[] = "\5\x34" "\1\x38" "に\n";
 
 // ...you trouble earning that medal?
 const char D_0805079c[] = "てこずってるんですねぇ。\n" "\n";
@@ -67,7 +67,7 @@ const char D_0805079c[] = "てこずってるんですねぇ。\n" "\n";
 const char D_080507b8[] = "ウワサを　きいたんですけど、\n";
 
 // [...] was doing a perfect campaign.
-const char D_080507d8[] = "\x05\x34" "\x01\x38" "　ばかり\n";
+const char D_080507d8[] = "\5\x34" "\1\x38" "　ばかり\n";
 
 // Weren't you playing it just now?
 const char D_080507e8[] = "してるみたいですね。";
@@ -88,7 +88,7 @@ const char D_08050828[] =
 // [...] is going
 // to be having a perfect campaign.
 const char D_0805083c[] =
-    "\x05\x34" "\x01\x38" "で、\n"
+    "\5\x34" "\1\x38" "で、\n"
     "パーフェクトキャンペーンを\n"
     "するそうですヨ。";
 
@@ -107,7 +107,7 @@ const char D_08050874[] =
 // "No, thank you."
 const char D_080508b0[] =
     "う～ん、もし　よければ　なんだけどね、\n"
-    "\x05\x31" "\x01\x35" "進めるようにしておく" "\x05\x34" "\x01\x38" "けど…？\n"
+    "\5\x31" "\1\x35" "進めるようにしておく" "\5\x34" "\1\x38" "けど…？\n"
     "\n"
     "　　　　　　　　「おねがいします」\n"
     "　　　　　　　　「けっこうです」";
@@ -116,7 +116,7 @@ const char D_080508b0[] =
 const char D_08050944[] =
     "\n"
     "\n"
-    "\x03\x32" "\x01\x6c" "\x05\x31" "\x01\x35" "まかせとき！" "\x03\x30" "\x01\x73" "\x05\x34" "\x01\x38";
+    "\3\x32" "\1\x6c" "\5\x31" "\1\x35" "まかせとき！" "\3\x30" "\1\x73" "\5\x34" "\1\x38";
 
 // Oh, is that so?
 // You're determined to beat
@@ -151,7 +151,7 @@ const char D_080509ec[] =
 //         "That's right."
 //         "Not right now."
 const char D_08050a10[] =
-    "\x05\x31" "\x01\x35" "パーフェクト　キャンペーン" "\x05\x34" "\x01\x38" "　に　そなえて　れんしゅうですか？\n"
+    "\5\x31" "\1\x35" "パーフェクト　キャンペーン" "\5\x34" "\1\x38" "　に　そなえて　れんしゅうですか？\n"
     "\n"
     "　　　　　　　　「そうなんです」\n"
     "　　　　　　　　「ちがいますヨ」";
@@ -175,6 +175,6 @@ const char D_08050acc[] =
 
 // Crazy awesome!!
 const char D_08050b14[] =
-    "\x03\x32" "\x01\x6c" "\x05\x31" "\x01\x35" "\n"
+    "\3\x32" "\1\x6c" "\5\x31" "\1\x35" "\n"
     "\n"
-    "めちゃすごーい!!" "\x03\x30" "\x01\x73" "\x05\x34" "\x01\x38";
+    "めちゃすごーい!!" "\3\x30" "\1\x73" "\5\x34" "\1\x38";

@@ -37,9 +37,9 @@ extern const char D_08050bc8[];
 
 // Functions:
 // extern ? func_08011530(?); // Initialise Static Variables
-// extern ? func_08011534(?); // Graphics Init. 2
-// extern ? func_08011580(?); // Graphics Init. 1
-// extern ? func_080115b0(?); // Graphics Init. 0
+// extern ? func_08011534(?); // Graphics Init. 3
+// extern ? func_08011580(?); // Graphics Init. 2
+// extern ? func_080115b0(?); // Graphics Init. 1
 // extern ? func_080115d0(?); // Scene Start
 // extern ? func_08011690(?); // Scene Update (Paused)
 // extern ? func_08011694(?); // Scene Update (Active)

@@ -92,7 +92,7 @@ jump_08010cbc: \n\
 /* 08010cc8 */ BEQ branch_08010ce0 \n\
 /* 08010cca */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08010ccc */ STRB R0, [R1] \n\
-/* 08010cce */ LDR R0, =D_089cd2e8 \n\
+/* 08010cce */ LDR R0, =cafe_dialogue_first_visit \n\
 /* 08010cd0 */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 08010cd2 */ B branch_08011264 \n\
 \n\
@@ -124,7 +124,7 @@ branch_08010d08: \n\
 /* 08010d0c */ LDRH R0, [R1, 0x16] \n\
 /* 08010d0e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08010d10 */ BNE branch_08010d20 \n\
-/* 08010d12 */ LDR R2, =D_089cd300 \n\
+/* 08010d12 */ LDR R2, =cafe_dialogue_come_back_later \n\
 /* 08010d14 */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 08010d16 */ B branch_08011264 \n\
 \n\
@@ -417,7 +417,7 @@ jump_08010f64: \n\
 /* 08010f9c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08010f9e */ BL func_080081a8 \n\
 /* 08010fa2 */ MOV R8, R5 @ Set R8 to R5 \n\
-/* 08010fa4 */ LDR R0, =D_089cd308 \n\
+/* 08010fa4 */ LDR R0, =cafe_dialogue_keep_trying \n\
 /* 08010fa6 */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 08010fa8 */ MOVS R0, 0xFF @ Set R0 to 0xFF \n\
 /* 08010faa */ STRB R0, [R6] \n\
@@ -503,7 +503,7 @@ jump_0801104c: \n\
 .ltorg \n\
  \n\
 branch_080110a8: \n\
-/* 080110a8 */ LDR R4, =cafe_dialogue_table \n\
+/* 080110a8 */ LDR R4, =cafe_random_conversation_pool \n\
 /* 080110aa */ MOVS R0, 0xA @ Set R0 to 0xA \n\
 /* 080110ac */ BL agb_random \n\
 /* 080110b0 */ LSLS R0, R0, 0x10 \n\
@@ -516,7 +516,7 @@ branch_080110a8: \n\
 .ltorg \n\
 \n\
 jump_080110c0: \n\
-/* 080110c0 */ LDR R4, =D_089cd348 \n\
+/* 080110c0 */ LDR R4, =cafe_dialogue_shouts_praise \n\
 /* 080110c2 */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
 /* 080110c4 */ BL agb_random \n\
 /* 080110c8 */ LSLS R0, R0, 0x10 \n\
@@ -650,7 +650,7 @@ jump_080111bc: \n\
 /* 080111c4 */ ASRS R0, R0, 0x18 \n\
 /* 080111c6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080111c8 */ BNE branch_080111f8 \n\
-/* 080111ca */ LDR R4, =D_089cd35c \n\
+/* 080111ca */ LDR R4, =cafe_dialogue_shouts_cheer \n\
 /* 080111cc */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
 /* 080111ce */ BL agb_random \n\
 /* 080111d2 */ LSLS R0, R0, 0x10 \n\
@@ -663,14 +663,14 @@ jump_080111bc: \n\
 /* 080111e0 */ STRB R1, [R0, 0x1D] \n\
 /* 080111e2 */ LDR R0, [R5] \n\
 /* 080111e4 */ STRB R1, [R0, 0x1C] \n\
-/* 080111e6 */ LDR R2, =D_089cd318 \n\
+/* 080111e6 */ LDR R2, =cafe_dialogue_practicing_perfect \n\
 /* 080111e8 */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 080111ea */ B branch_08011264 \n\
 \n\
 .ltorg \n\
  \n\
 branch_080111f8: \n\
-/* 080111f8 */ LDR R0, =D_089cd324 \n\
+/* 080111f8 */ LDR R0, =cafe_dialogue_not_practicing_perfect \n\
 /* 080111fa */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 080111fc */ B branch_08011264 \n\
 \n\
@@ -703,7 +703,7 @@ jump_08011220: \n\
 /* 0801122c */ LDR R1, [R2] \n\
 /* 0801122e */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
 /* 08011230 */ STRB R0, [R1, 0x1D] \n\
-/* 08011232 */ LDR R2, =D_089cd330 \n\
+/* 08011232 */ LDR R2, =cafe_dialogue_all_perfects_clear \n\
 /* 08011234 */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 08011236 */ B branch_08011264 \n\
 \n\

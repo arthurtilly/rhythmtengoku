@@ -10,6 +10,7 @@ struct CafeSceneInfo {
 
 
 // Scene Macros/Enums:
+#define END_OF_DIALOGUE NULL
 
 
 // Scene Data:
@@ -76,9 +77,9 @@ extern const char D_08050b14[];
 // extern ? func_080113b4(?); // ?
 
 // extern ? func_080113d0(?); // Initialise Static Variables
-// extern ? func_080113dc(?); // Graphics Init. 2
-// extern ? func_08011408(?); // Graphics Init. 1
-// extern ? func_08011438(?); // Graphics Init. 0
+// extern ? func_080113dc(?); // Graphics Init. 3
+// extern ? func_08011408(?); // Graphics Init. 2
+// extern ? func_08011438(?); // Graphics Init. 1
 // extern ? func_08011488(?); // Scene Start
 // extern ? func_080114d0(?); // Scene Update (Paused)
 // extern ? func_080114d4(?); // Scene Update (Active)

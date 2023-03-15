@@ -1,770 +1,870 @@
-// See you later.
-const char D_0804f3ec[] =
-    "\n"
-    "\n"
-    "では　また。\n"
-    "\n";
+// [D_089cd2e8] Dialogue - First Visit
+    /* -------------------------------- */
+        //
+        // Welcome. This is your
+        // first time here, isn't it?
+        //
+    /* -------------------------------- */
+        // This is the Cafe.
+        // <When you can't finish a game>,
+        // or when you just want a break,
+        // please come here and relax.
+    /* -------------------------------- */
+        //
+        // I'm pretty good at Rhythm Games.
+        // If you need help, <come to the Cafe>.
+        //
+    /* -------------------------------- */
+        //
+        // I'm still unpacking boxes, so
+        // please come back in a bit.
+        //
+    /* -------------------------------- */
+        //
+        //
+        // See you later.
+        //
+    /* -------------------------------- */
 
-// I'm still unpacking boxes, so
-// please come back in a bit.
-const char D_0804f400[] =
-    "\n"
-    "いま　ちょっと　しこみ中なので\n"
-    "また　あとで　きてくださいね。\n"
-    "\n";
-
-// I'm pretty good at Rhythm Games.
-// If you need help, <come to the Cafe>.
-const char D_0804f444[] =
-    "\n"
-    "わたしに　できることが　あれば、\n"
-    "\x05\x31" "\x01\x35" "ちからに　なりますよ" "\x05\x34" "\x01\x38" "。\n"
-    "\n";
-
-// This is the Cafe.
-// <When you can't finish a game>,
-// or when you just want a break,
-// please come here and relax.
-const char D_0804f488[] =
-    "\n"
-    "ここは　いわゆる　キッサ店です。\n"
-    "ゲームが　" "\x05\x31" "\x01\x35" "うまくできないとき" "\x05\x34" "\x01\x38" "や\n"
-    "つかれたときにでも　おいで下さい。";
-
-// Welcome. This is your
-// first time here, isn't it?
-const char D_0804f4f4[] =
-    "\n"
-    "いらっしゃいませ。\n"
-    "こちらに　来たのは　はじめてですね？\n"
-    "\n";
-
-// [D_089cd2e8] Dialogue List - ?
-const char *D_089cd2e8[] = {
-    D_0804f4f4,
-    D_0804f488,
-    D_0804f444,
-    D_0804f400,
-    D_0804f3ec,
-    NULL
+const char *cafe_dialogue_first_visit[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "いらっしゃいませ。\n"
+        "こちらに　来たのは　はじめてですね？\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "ここは　いわゆる　キッサ店です。\n"
+        "ゲームが　" "\5\x31" "\1\x35" "うまくできないとき" "\5\x34" "\1\x38" "や\n"
+        "つかれたときにでも　おいで下さい。",
+    /* ------------------------------------------------ */
+        "\n"
+        "わたしに　できることが　あれば、\n"
+        "\5\x31" "\1\x35" "ちからに　なりますよ" "\5\x34" "\1\x38" "。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "いま　ちょっと　しこみ中なので\n"
+        "また　あとで　きてくださいね。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "\n"
+        "では　また。\n"
+        "\n",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// Come back in a while!
-const char D_0804f530[] =
-    "\n"
-    "\n"
-    "しばらく　してから　きてね～。\n"
-    "\n";
+// [D_089cd300] Dialogue - Come Back Later
+    /* -------------------------------- */
+        //
+        //
+        // Come back in a while!
+        //
+    /* -------------------------------- */
 
-// [D_089cd300] Dialogue List - ?
-const char *D_089cd300[] = {
-    D_0804f530,
-    NULL
+const char *cafe_dialogue_come_back_later[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "\n"
+        "しばらく　してから　きてね～。\n"
+        "\n",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// Don't let it frustrate you.
-// You're supposed to enjoy yourself.
-const char D_0804f554[] =
-    "\n"
-    "あまり　ムキに　ならずに\n"
-    "楽しんで下さいね…\n"
-    "\n";
+// [D_089cd308] Dialogue - Keep Trying
+    /* -------------------------------- */
+        //
+        // You know, after a few tries
+        // I think you'll manage that superb.
+        //
+    /* -------------------------------- */
+        //
+        // Just keep moving to the music,
+        // and you'll have fun doing it, too.
+        //
+    /* -------------------------------- */
+        //
+        // Don't let it frustrate you.
+        // You're supposed to enjoy yourself.
+        //
+    /* -------------------------------- */
 
-// Just keep moving to the music,
-// and you'll have fun doing it, too.
-const char D_0804f584[] =
-    "\n"
-    "それと同時に　音楽に　ノるのが\n"
-    "楽しくなるとも思うんです。\n"
-    "\n";
-
-// You know, after a few tries
-// I think you'll manage that superb.
-const char D_0804f5c4[] =
-    "\n"
-    "なんどか　やるうちに　コツが\n"
-    "つかめると　思いますよ。\n"
-    "\n";
-
-// [D_089cd308] Dialogue List - ?
-const char *D_089cd308[] = {
-    D_0804f5c4,
-    D_0804f584,
-    D_0804f554,
-    NULL
+const char *cafe_dialogue_keep_trying[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "なんどか　やるうちに　コツが\n"
+        "つかめると　思いますよ。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "それと同時に　音楽に　ノるのが\n"
+        "楽しくなるとも思うんです。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "あまり　ムキに　ならずに\n"
+        "楽しんで下さいね…\n"
+        "\n",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// Please try your best
-// for those Perfects.
-// See you soon!
-const char D_0804f600[] =
-    "\n"
-    "パーフェクト　がんばってくださいね。\n"
-    "ではまた。\n"
-    "\n";
+// [D_089cd318] Dialogue - Practicing for the Perfect Campaign
+    /* -------------------------------- */
+        //
+        // Sorry for yelling. I just got
+        // a little too excited there.
+        //
+    /* -------------------------------- */
+        //
+        // Please try your best
+        // for those Perfects.
+        // See you soon!
+    /* -------------------------------- */
 
-// Sorry for yelling. I just got
-// a little too excited there.
-const char D_0804f634[] =
-    "\n"
-    "大きい声をだして　すみません。\n"
-    "なんだか　うれしかったものですから…\n"
-    "\n";
-
-// [D_089cd318] Dialogue List - ?
-const char *D_089cd318[] = {
-    D_0804f634,
-    D_0804f600,
-    NULL
+const char *cafe_dialogue_practicing_perfect[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "大きい声をだして　すみません。\n"
+        "なんだか　うれしかったものですから…\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "パーフェクト　がんばってくださいね。\n"
+        "ではまた。\n"
+        "\n",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// Please enjoy the
-// game. See you!
-const char D_0804f67c[] =
-    "\n"
-    "ゲーム　楽しんでくださいね。\n"
-    "ではまた。\n"
-    "\n";
+// [D_089cd324] Dialogue - Not Practicing for the Perfect Campaign
+    /* -------------------------------- */
+        //
+        // Is that right? Loose lips can sink
+        // friendships... please forgive me.
+        //
+    /* -------------------------------- */
+        //
+        // Please enjoy the
+        // game. See you!
+        //
+    /* -------------------------------- */
 
-// Is that right? Loose lips can sink
-// friendships... please forgive me.
-const char D_0804f6a8[] =
-    "\n"
-    "そうですか。\n"
-    "ウワサ話なんて　してしまい\n"
-    "しつれいしました。";
-
-// [D_089cd324] Dialogue List - ?
-const char *D_089cd324[] = {
-    D_0804f6a8,
-    D_0804f67c,
-    NULL
+const char *cafe_dialogue_not_practicing_perfect[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "そうですか。\n"
+        "ウワサ話なんて　してしまい\n"
+        "しつれいしました。",
+    /* ------------------------------------------------ */
+        "\n"
+        "ゲーム　楽しんでくださいね。\n"
+        "ではまた。\n"
+        "\n",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// Had enough, I suppose? Go
-// get some rest. I'll be waiting.
-const char D_0804f6e4[] =
-    "\n"
-    "おつかれでしょう？\n"
-    "少し　休んでくださいネ。\n"
-    "では　また。";
+// [D_089cd330] Dialogue - All Perfects Cleared
+    /* -------------------------------- */
+        //
+        // You must have excellent rhythm
+        // sense to have gotten this far!
+        //
+    /* -------------------------------- */
+        //
+        // Oh, I'm so happy I think
+        // I might just start to cry.
+        //
+    /* -------------------------------- */
+        //
+        // Well, in celebration I've added
+        // more songs to the studio.
+        //
+    /* -------------------------------- */
+        //
+        // Wow. It looks like you've
+        // mastered the game. Not bad.
+        //
+    /* -------------------------------- */
+        //
+        // Had enough, I suppose? Go
+        // get some rest. I'll be waiting.
+        //
+    /* -------------------------------- */
 
-// Wow. It looks like you've
-// mastered the game. Not bad.
-const char D_0804f720[] =
-    "\n"
-    "いやいや、しかし　なんと　まぁ\n"
-    "コンプリートですか。\n"
-    "やりますな～。";
-
-// Well, in celebration I've added
-// more songs to the studio.
-const char D_0804f764[] =
-    "\n"
-    "そうそう、\n"
-    "お祝いに　ささやかでは　ありますが\n"
-    "スタジオの曲をふやしておきました。\n";
-
-// Oh, I'm so happy I think
-// I might just start to cry.
-const char D_0804f7b8[] =
-    "\n"
-    "なんだか　私も、すっごく\n"
-    "うれしくって　ウルウルです…\n"
-    "\n";
-
-// You must have excellent rhythm
-// sense to have gotten this far!
-const char D_0804f7f4[] =
-    "\n"
-    "もう、そこまで　やりこんだら\n"
-    "リズム感　かなり　良くなって\n"
-    "いるでしょうネ！";
-
-// [D_089cd330] Dialogue List - ?
-const char *D_089cd330[] = {
-    D_0804f7f4,
-    D_0804f7b8,
-    D_0804f764,
-    D_0804f720,
-    D_0804f6e4,
-    NULL
+const char *cafe_dialogue_all_perfects_clear[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "もう、そこまで　やりこんだら\n"
+        "リズム感　かなり　良くなって\n"
+        "いるでしょうネ！",
+    /* ------------------------------------------------ */
+        "\n"
+        "なんだか　私も、すっごく\n"
+        "うれしくって　ウルウルです…\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "そうそう、\n"
+        "お祝いに　ささやかでは　ありますが\n"
+        "スタジオの曲をふやしておきました。\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "いやいや、しかし　なんと　まぁ\n"
+        "コンプリートですか。\n"
+        "やりますな～。",
+    /* ------------------------------------------------ */
+        "\n"
+        "おつかれでしょう？\n"
+        "少し　休んでくださいネ。\n"
+        "では　また。",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
-
-// Unbelievable!!
-const char D_0804f840[] =
-    "\x03\x32" "\x01\x6c" "\x05\x31" "\x01\x35" "\n"
-    "\n"
-    "アンビリーバボー!!" "\x03\x30" "\x01\x73" "\x05\x34" "\x01\x38";
-
-// Good job!!
-const char D_0804f868[] =
-    "\x03\x32" "\x01\x6c" "\x05\x31" "\x01\x35" "\n"
-    "\n"
-    "グッド　ジョブ!!" "\x03\x30" "\x01\x73" "\x05\x34" "\x01\x38";
-
-// Congratulations!!
-const char D_0804f88c[] =
-    "\x03\x32" "\x01\x6c" "\x05\x31" "\x01\x35" "\n"
-    "\n"
-    "おめでとー!!" "\x03\x30" "\x01\x73" "\x05\x34" "\x01\x38";
-
-// You're good!!
-const char D_0804f8ac[] =
-    "\x03\x32" "\x01\x6c" "\x05\x31" "\x01\x35" "\n"
-    "\n"
-    "やるじゃなーい!!" "\x03\x30" "\x01\x73" "\x05\x34" "\x01\x38";
-
-// Not too bad!!
-const char D_0804f8d0[] =
-    "\x03\x32" "\x01\x6c" "\x05\x31" "\x01\x35" "\n"
-    "\n"
-    "すごいじゃなーい!!" "\x03\x30" "\x01\x73" "\x05\x34" "\x01\x38";
 
 // [D_089cd348] Praise
-const char *D_089cd348[] = {
-    D_0804f8d0,
-    D_0804f8ac,
-    D_0804f88c,
-    D_0804f868,
-    D_0804f840
+    /* -------------------------------- */
+        //
+        //
+        // Not too bad!!
+    /* -------------------------------- */
+        //
+        //
+        // You're good!!
+    /* -------------------------------- */
+        //
+        //
+        // Congratulations!!
+    /* -------------------------------- */
+        //
+        //
+        // Good job!!
+    /* -------------------------------- */
+        //
+        //
+        // Unbelievable!!
+    /* -------------------------------- */
+
+const char *cafe_dialogue_shouts_praise[] = {
+    /* ------------------------------------------------ */
+    "\3\x32" "\1\x6c" "\5\x31" "\1\x35" "\n"
+    "\n"
+    "すごいじゃなーい!!" "\3\x30" "\1\x73" "\5\x34" "\1\x38",
+    /* ------------------------------------------------ */
+    "\3\x32" "\1\x6c" "\5\x31" "\1\x35" "\n"
+    "\n"
+    "やるじゃなーい!!" "\3\x30" "\1\x73" "\5\x34" "\1\x38",
+    /* ------------------------------------------------ */
+    "\3\x32" "\1\x6c" "\5\x31" "\1\x35" "\n"
+    "\n"
+    "おめでとー!!" "\3\x30" "\1\x73" "\5\x34" "\1\x38",
+    /* ------------------------------------------------ */
+    "\3\x32" "\1\x6c" "\5\x31" "\1\x35" "\n"
+    "\n"
+    "グッド　ジョブ!!" "\3\x30" "\1\x73" "\5\x34" "\1\x38",
+    /* ------------------------------------------------ */
+    "\3\x32" "\1\x6c" "\5\x31" "\1\x35" "\n"
+    "\n"
+    "アンビリーバボー!!" "\3\x30" "\1\x73" "\5\x34" "\1\x38",
+    /* ------------------------------------------------ */
 };
 
-
-// I was moved!
-const char D_0804f8f8[] =
-    "\x03\x32" "\x01\x6c" "\x05\x31" "\x01\x35" "\n"
-    "\n"
-    "感動したー！" "\x03\x30" "\x01\x73" "\x05\x34" "\x01\x38";
-
-// Good luck!
-const char D_0804f918[] =
-    "\x03\x32" "\x01\x6c" "\x05\x31" "\x01\x35" "\n"
-    "\n"
-    "グッド　ラック！" "\x03\x30" "\x01\x73" "\x05\x34" "\x01\x38";
-
-// <Go! Go!>
-const char D_0804f93c[] =
-    "\x03\x32" "\x01\x6c" "\x05\x31" "\x01\x35" "\n"
-    "\n"
-    "イケイケー！" "\x03\x30" "\x01\x73" "\x05\x34" "\x01\x38";
-
-// <Fight!>
-const char D_0804f95c[] =
-    "\x03\x32" "\x01\x6c" "\x05\x31" "\x01\x35" "\n"
-    "\n"
-    "ファイトー！" "\x03\x30" "\x01\x73" "\x05\x34" "\x01\x38";
-
-// <Go for it!>
-const char D_0804f97c[] =
-    "\x03\x32" "\x01\x6c" "\x05\x31" "\x01\x35" "\n"
-    "\n"
-    "がんばれー！" "\x03\x30" "\x01\x73" "\x05\x34" "\x01\x38";
 
 // [D_089cd35c] Encouragement
-const char *D_089cd35c[] = {
-    D_0804f97c,
-    D_0804f95c,
-    D_0804f93c,
-    D_0804f918,
-    D_0804f8f8,
+    /* -------------------------------- */
+        //
+        //
+        // <Go for it!>
+    /* -------------------------------- */
+        //
+        //
+        // <Fight!>
+    /* -------------------------------- */
+        //
+        //
+        // <Go! Go!>
+    /* -------------------------------- */
+        //
+        //
+        // Good luck!
+    /* -------------------------------- */
+        //
+        //
+        // I was moved!
+    /* -------------------------------- */
+
+const char *cafe_dialogue_shouts_cheer[] = {
+    /* ------------------------------------------------ */
+        "\3\x32" "\1\x6c" "\5\x31" "\1\x35" "\n"
+        "\n"
+        "がんばれー！" "\3\x30" "\1\x73" "\5\x34" "\1\x38",
+    /* ------------------------------------------------ */
+        "\3\x32" "\1\x6c" "\5\x31" "\1\x35" "\n"
+        "\n"
+        "ファイトー！" "\3\x30" "\1\x73" "\5\x34" "\1\x38",
+    /* ------------------------------------------------ */
+        "\3\x32" "\1\x6c" "\5\x31" "\1\x35" "\n"
+        "\n"
+        "イケイケー！" "\3\x30" "\1\x73" "\5\x34" "\1\x38",
+    /* ------------------------------------------------ */
+        "\3\x32" "\1\x6c" "\5\x31" "\1\x35" "\n"
+        "\n"
+        "グッド　ラック！" "\3\x30" "\1\x73" "\5\x34" "\1\x38",
+    /* ------------------------------------------------ */
+        "\3\x32" "\1\x6c" "\5\x31" "\1\x35" "\n"
+        "\n"
+        "感動したー！" "\3\x30" "\1\x73" "\5\x34" "\1\x38",
+    /* ------------------------------------------------ */
 };
 
 
-// Maybe I should try a little harder
-// to get good at Rhythm Heaven...
-const char D_0804f99c[] =
-    "\n"
-    "\n"
-    "私も　ゲーム　してみようかな…\n"
-    "\n";
+// [D_089cd370] Dialogue - Rhythm Sense
+    /* -------------------------------- */
+        //
+        // By the way, I wonder how
+        // Rhythm Sense is for humans?
+        //
+    /* -------------------------------- */
+        //
+        // Well, not that I'm very
+        // aware of it myself.
+        //
+    /* -------------------------------- */
+        //
+        // But you'll be a bit happier once you
+        // find your Rhythm Sense, I'm sure.
+        //
+    /* -------------------------------- */
+        //
+        // Maybe I should try a little harder
+        // to get good at Rhythm Heaven...
+        //
+    /* -------------------------------- */
 
-// But you'll be a bit happier once you
-// find your Rhythm Sense, I'm sure.
-const char D_0804f9c0[] =
-    "\n"
-    "でも、リズム感が　よくなると　きっと　ちょっと　ハッピーに　なるんでしょうね。";
-
-// Well, not that I'm very
-// aware of it myself.
-const char D_0804fa10[] =
-    "\n"
-    "ま、私なんかは　あんまり\n"
-    "いしきすることも　ないんですがね。\n"
-    "\n";
-
-// By the way, I wonder how
-// Rhythm Sense is for humans?
-const char D_0804fa50[] =
-    "\n"
-    "それはそうと、リズム感って　人間にとって　どういうものなんでしょうねぇ。\n"
-    "\n";
-
-// [D_089cd370] Dialogue List - ?
-const char *D_089cd370[] = {
-    D_0804fa50,
-    D_0804fa10,
-    D_0804f9c0,
-    D_0804f99c,
-    NULL
+const char *cafe_dialogue_rhythm_sense[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "それはそうと、リズム感って　人間にとって　どういうものなんでしょうねぇ。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "ま、私なんかは　あんまり\n"
+        "いしきすることも　ないんですがね。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "でも、リズム感が　よくなると　きっと　ちょっと　ハッピーに　なるんでしょうね。",
+    /* ------------------------------------------------ */
+        "\n"
+        "\n"
+        "私も　ゲーム　してみようかな…\n"
+        "\n",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// Did you know that already?
-// Sorry if it seems like I'm
-// talking down to you.
-// Anyways, see you again.
-const char D_0804fa9c[] =
-    "\n"
-    "まぁ、そういうモン　らしいです。\n"
-    "テキトーで　ごめんなさいネ。\n"
-    "では　また。";
+// [D_089cd384] Dialogue - Offbeats
+    /* -------------------------------- */
+        //
+        // I hear the word "offbeat" often.
+        // Do you know what an "offbeat" is?
+        //
+    /* -------------------------------- */
+        // Honestly, I wasn't sure
+        // what it meant either.
+        // So, the other day I looked
+        // up the definition.
+    /* -------------------------------- */
+        //
+        // How do I explain it...
+        // Well, you naturally clap
+        // your hands to music, right?
+    /* -------------------------------- */
+        // Halfway between one clap
+        // and the next (the "onbeats")
+        // is called the "offbeat".
+        // At least, so I understand.
+    /* -------------------------------- */
+        // Did you know that already?
+        // Sorry if it seems like I'm
+        // talking down to you.
+        // Anyways, see you again.
+    /* -------------------------------- */
 
-// Halfway between one clap
-// and the next (the "onbeats")
-// is called the "offbeat".
-// At least, so I understand.
-const char D_0804fae8[] =
-    "\n"
-    "その　手びょうしと手びょうしの\n"
-    "ちょうど　まん中のタイミングが\n"
-    "「ウラ」なんだそうです。";
-
-// How do I explain it...
-// Well, you naturally clap
-// your hands to music, right?
-const char D_0804fb40[] =
-    "\n"
-    "たとえば、音楽にあわせて\n"
-    "自然に手をたたくとしますね。\n"
-    "\n";
-
-// Honestly, I wasn't sure
-// what it meant either.
-// So, the other day I looked
-// up the definition.
-const char D_0804fb7c[] =
-    "\n"
-    "ま、私も　それほど　詳しくはないので　アレなんですけどネ。\n"
-    "\n";
-
-// I hear the word "offbeat" often.
-// Do you know what an "offbeat" is?
-const char D_0804fbbc[] =
-    "\n"
-    "それはそうと、この世界でよく聞く\n"
-    "「ウラ」って　どういうものか\n"
-    "知ってますか？";
-
-// [D_089cd384] Dialogue List - ?
-const char *D_089cd384[] = {
-    D_0804fbbc,
-    D_0804fb7c,
-    D_0804fb40,
-    D_0804fae8,
-    D_0804fa9c,
-    NULL
+const char *cafe_dialogue_offbeats[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "それはそうと、この世界でよく聞く\n"
+        "「ウラ」って　どういうものか\n"
+        "知ってますか？",
+    /* ------------------------------------------------ */
+        "\n"
+        "ま、私も　それほど　詳しくはないので　アレなんですけどネ。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "たとえば、音楽にあわせて\n"
+        "自然に手をたたくとしますね。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "その　手びょうしと手びょうしの\n"
+        "ちょうど　まん中のタイミングが\n"
+        "「ウラ」なんだそうです。",
+    /* ------------------------------------------------ */
+        "\n"
+        "まぁ、そういうモン　らしいです。\n"
+        "テキトーで　ごめんなさいネ。\n"
+        "では　また。",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// Well, nothing we can do but practice.
-// Take care for now.
-const char D_0804fc0c[] =
-    "\n"
-    "ま、ぼちぼち　やっていきましょうネ。\n"
-    "では　また。\n"
-    "\n";
+// [D_089cd39c] Dialogue - Rhythm Test
+    /* -------------------------------- */
+        //
+        // Say, when was the last time you
+        // checked your "Rhythm Test" score?
+        //
+    /* -------------------------------- */
+        //
+        // I just tried it again yesterday, but
+        // 65 points seems to be my limit...
+        //
+    /* -------------------------------- */
+        //
+        // I always have trouble with
+        // the rests in the second test.
+        //
+    /* -------------------------------- */
+        //
+        // Counting to yourself is hard, isn't it?
+        // I always go too fast or lose my place.
+        //
+    /* -------------------------------- */
+        //
+        // Well, nothing we can do but practice.
+        // Take care for now.
+        //
+    /* -------------------------------- */
 
-// Counting to yourself is hard, isn't it?
-// I always go too fast or lose my place.
-const char D_0804fc44[] =
-    "\n"
-    "空白を　カウントするってのは\n"
-    "ムズいもんですね～。\n"
-    "\n";
-
-// I always have trouble with
-// the rests in the second test.
-const char D_0804fc7c[] =
-    "\n"
-    "なかなか　どうして　２つめのテストが　うまく　できないんですヨ。\n"
-    "\n";
-
-// I just tried it again yesterday, but
-// 65 points seems to be my limit...
-const char D_0804fcc0[] =
-    "\n"
-    "私も　ときどき　やるんですけど\n"
-    "６５点くらいが　限界なんですよねぇ…\n"
-    "\n";
-
-// Say, when was the last time you
-// checked your "Rhythm Test" score?
-const char D_0804fd08[] =
-    "\n"
-    "それはそうと、\n"
-    "最近　「リズム感測定」してます？\n"
-    "\n";
-
-// [D_089cd39c] Dialogue List - ?
-const char *D_089cd39c[] = {
-    D_0804fd08,
-    D_0804fcc0,
-    D_0804fc7c,
-    D_0804fc44,
-    D_0804fc0c,
-    NULL
+const char *cafe_dialogue_rhythm_test[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "それはそうと、\n"
+        "最近　「リズム感測定」してます？\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "私も　ときどき　やるんですけど\n"
+        "６５点くらいが　限界なんですよねぇ…\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "なかなか　どうして　２つめのテストが　うまく　できないんですヨ。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "空白を　カウントするってのは\n"
+        "ムズいもんですね～。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "ま、ぼちぼち　やっていきましょうネ。\n"
+        "では　また。\n"
+        "\n",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// Maybe it's for the best.
-// For musical instruments, you
-// just have to keep at it.
-// You should try your best, too.
-const char D_0804fd3c[] =
-    "\n"
-    "ま、楽器は　すぐには　うまくならないでしょうし、じっくりと　つきあってみましょうかね…";
+// [D_089cd3b4] Dialogue - Drum Lessons
+    /* -------------------------------- */
+        //
+        // Let me ask... have you tried the
+        // Drum Lessons in the Prize Corner?
+        //
+    /* -------------------------------- */
+        //
+        // I take lessons once a week, but
+        // I don't really seem to improve.
+        //
+    /* -------------------------------- */
+        // The teacher is really strict.
+        // I asked him for an easier
+        // lesson, but he told me to
+        // just keep on trying my best.
+    /* -------------------------------- */
+        //
+        // You'll find it's hard to quit
+        // once you start a lesson.
+        //
+    /* -------------------------------- */
+        // Maybe it's for the best.
+        // For musical instruments, you
+        // just have to keep at it.
+        // You should try your best, too.
+    /* -------------------------------- */
 
-// You'll find it's hard to quit
-// once you start a lesson.
-const char D_0804fd94[] =
-    "\n"
-    "レッスンを　やりだすと　これが\n"
-    "なかなか　やめられないんですよね～。\n"
-    "\n";
-
-// The teacher is really strict.
-// I asked him for an easier
-// lesson, but he told me to
-// just keep on trying my best.
-const char D_0804fddc[] =
-    "\n"
-    "先生が、こういうのは　すききらいが\n"
-    "あるから、ムリして　しないでネって\n"
-    "言ってましたけど、";
-
-// I take lessons once a week, but
-// I don't really seem to improve.
-const char D_0804fe38[] =
-    "\n"
-    "私は　週に１回だけ　レッスンを\n"
-    "うけてるんですが、なかなか\n"
-    "上達しませんねぇ。";
-
-// Let me ask... have you tried the
-// Drum Lessons in the Prize Corner?
-const char D_0804fe88[] =
-    "\n"
-    "それはそうと、おまけコーナーの　ドラムレッスンって　やったことあります？\n"
-    "\n";
-
-// [D_089cd3b4] Dialogue List - ?
-const char *D_089cd3b4[] = {
-    D_0804fe88,
-    D_0804fe38,
-    D_0804fddc,
-    D_0804fd94,
-    D_0804fd3c,
-    NULL
+const char *cafe_dialogue_drum_lessons[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "それはそうと、おまけコーナーの　ドラムレッスンって　やったことあります？\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "私は　週に１回だけ　レッスンを\n"
+        "うけてるんですが、なかなか\n"
+        "上達しませんねぇ。",
+    /* ------------------------------------------------ */
+        "\n"
+        "先生が、こういうのは　すききらいが\n"
+        "あるから、ムリして　しないでネって\n"
+        "言ってましたけど、",
+    /* ------------------------------------------------ */
+        "\n"
+        "レッスンを　やりだすと　これが\n"
+        "なかなか　やめられないんですよね～。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "ま、楽器は　すぐには　うまくならないでしょうし、じっくりと　つきあってみましょうかね…",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// Learn from me, and don't forget
-// to take a break every so often.
-// Anyway, see you again.
-const char D_0804fed4[] =
-    "\n"
-    "こんど　ドライブでも　行きませんか？\n"
-    "ま、よかったら　ですけどネ。\n"
-    "では　また。";
+// [D_089cd3cc] Dialogue - Staying Up All Night
+    /* -------------------------------- */
+        //
+        // By the way, right now
+        // I'm terribly tired...
+        //
+    /* -------------------------------- */
+        //
+        // I was up all last night playing.
+        // I just couldn't stop myself...
+        //
+    /* -------------------------------- */
+        //
+        // What? Oh, I was talking to myself.
+        // It was a monologue... sorry.
+        //
+    /* -------------------------------- */
+        //
+        // Learn from me, and don't forget
+        // to take a break every so often.
+        // Anyway, see you again.
+    /* -------------------------------- */
 
-// What? Oh, I was talking to myself.
-// It was a monologue... sorry.
-const char D_0804ff24[] =
-    "\n"
-    "あ、いや、こっちの話です。\n"
-    "ひとりごとですので…　すみませんね。\n"
-    "\n";
-
-// I was up all last night playing.
-// I just couldn't stop myself...
-const char D_0804ff68[] =
-    "\n"
-    "\n"
-    "きのう　おそくまで　遊んでたからなぁ…\n"
-    "\n";
-
-// By the way, right now
-// I'm terribly tired...
-const char D_0804ff94[] =
-    "\n"
-    "それはそうと、\n"
-    "なんだか　今　すごく　ねむいのです…\n"
-    "\n";
-
-// [D_089cd3cc] Dialogue List - ?
-const char *D_089cd3cc[] = {
-    D_0804ff94,
-    D_0804ff68,
-    D_0804ff24,
-    D_0804fed4,
-    NULL
+const char *cafe_dialogue_adhd[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "それはそうと、\n"
+        "なんだか　今　すごく　ねむいのです…\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "\n"
+        "きのう　おそくまで　遊んでたからなぁ…\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "あ、いや、こっちの話です。\n"
+        "ひとりごとですので…　すみませんね。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "こんど　ドライブでも　行きませんか？\n"
+        "ま、よかったら　ですけどネ。\n"
+        "では　また。",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// All I can do is pour
-// the coffee, but... heh.
-const char D_0804ffcc[] =
-    "\n"
-    "私は、コーヒーを　入れるだけしか\n"
-    "できませんが…　ははは…\n"
-    "\n";
+// [D_089cd3e0] Dialogue - Coffee
+    /* -------------------------------- */
+        //
+        // By the way, here's the
+        // coffee you ordered.
+        //
+    /* -------------------------------- */
+        //
+        // Hm? You didn't order it?
+        // Ah, I see. This is actually
+        // for the guy next to you...
+    /* -------------------------------- */
+        //
+        // Well... he isn't a talkative person,
+        // but you seem to be getting along.
+        //
+    /* -------------------------------- */
+        //
+        // All I can do is pour
+        // the coffee, but... heh.
+        //
+    /* -------------------------------- */
 
-// Well... he isn't a talkative person,
-// but you seem to be getting along.
-const char D_0805000c[] =
-    "\n"
-    "ま、まぁ　無口な方ですが\n"
-    "なかよくしたいんじゃないですか？\n"
-    "\n";
-
-// Hm? You didn't order it?
-// Ah, I see. This is actually
-// for the guy next to you...
-const char D_0805004c[] =
-    "\n"
-    "え？　たのんでないって？　あぁ、これは　おとなりから　なんですが…\n"
-    "\n";
-
-// By the way, here's the
-// coffee you ordered.
-const char D_08050094[] =
-    "\n"
-    "それはそうと、\n"
-    "コーヒー　入りましたヨ。\n"
-    "\n";
-
-// [D_089cd3e0] Dialogue List - ?
-const char *D_089cd3e0[] = {
-    D_08050094,
-    D_0805004c,
-    D_0805000c,
-    D_0804ffcc,
-    NULL
+const char *cafe_dialogue_coffee[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "それはそうと、\n"
+        "コーヒー　入りましたヨ。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "え？　たのんでないって？　あぁ、これは　おとなりから　なんですが…\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "ま、まぁ　無口な方ですが\n"
+        "なかよくしたいんじゃないですか？\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "私は、コーヒーを　入れるだけしか\n"
+        "できませんが…　ははは…\n"
+        "\n",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// Hey, you're a human, right?
-// Well, despite our species I still
-// hope that we can get along
-const char D_080500c0[] =
-    "\n"
-    "お客さんは　人間ですよね？\n"
-    "まぁ、私は　犬ですが　これからも\n"
-    "なかよくしてくださいネ～。";
+// [D_089cd3f4] Dialogue - Dog
+    /* -------------------------------- */
+        //
+        // By the way, if you hadn't
+        // noticed, I'm actually a dog.
+        //
+    /* -------------------------------- */
+        //
+        // I'm not one of those young pups,
+        // either. I'm nine years old.
+        //
+    /* -------------------------------- */
+        //
+        // When you get to be my age,
+        // time really does seem to fly.
+        //
+    /* -------------------------------- */
+        //
+        // Hey, you're a human, right?
+        // Well, despite our species I still
+        // hope that we can get along
+    /* -------------------------------- */
 
-// When you get to be my age,
-// time really does seem to fly.
-const char D_08050118[] =
-    "\n"
-    "いやはや、このトシになると\n"
-    "時がたつのが　はやいですねぇ。\n"
-    "\n";
-
-// I'm not one of those young pups,
-// either. I'm nine years old.
-const char D_08050158[] =
-    "\n"
-    "かれこれ　９才で　もう　けっこう\n"
-    "いいトシなんです。\n"
-    "\n";
-
-// By the way, if you hadn't
-// noticed, I'm actually a dog.
-const char D_08050190[] =
-    "\n"
-    "それはそうと、\n"
-    "実は　私　犬なんですヨ。\n"
-    "\n";
-
-// [D_089cd3f4] Dialogue List - ?
-const char *D_089cd3f4[] = {
-    D_08050190,
-    D_08050158,
-    D_08050118,
-    D_080500c0,
-    NULL
+const char *cafe_dialogue_dog_barista[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "それはそうと、\n"
+        "実は　私　犬なんですヨ。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "かれこれ　９才で　もう　けっこう\n"
+        "いいトシなんです。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "いやはや、このトシになると\n"
+        "時がたつのが　はやいですねぇ。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "お客さんは　人間ですよね？\n"
+        "まぁ、私は　犬ですが　これからも\n"
+        "なかよくしてくださいネ～。",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// Just don't think that good
-// rhythm makes you qualified
-// to be a doctor, ha ha ha.
-const char D_080501bc[] =
-    "\n"
-    "まぁ、私には　詳しい理屈なんて\n"
-    "わからないですけどネ。ははは。\n"
-    "\n";
+// [D_089cd408] Dialogue - Music
+    /* -------------------------------- */
+        //
+        // By the way, what do
+        // you do when you're sad?
+        // I always listen to music.
+    /* -------------------------------- */
+        //
+        // Taking out a good old record and
+        // reminiscing about the past
+        // always makes me feel better.
+    /* -------------------------------- */
+        //
+        // Music is strange, isn't it?
+        // It has this mysterious
+        // power to heal the heart.
+    /* -------------------------------- */
+        //
+        // Just don't think that good
+        // rhythm makes you qualified
+        // to be a doctor, ha ha ha.
+    /* -------------------------------- */
 
-// Music is strange, isn't it?
-// It has this mysterious
-// power to heal the heart.
-const char D_08050200[] =
-    "\n"
-    "音楽って　フシギですよね～。\n"
-    "どうして　あんなにも　心を\n"
-    "ゆさぶるんでしょうね。";
-
-// Taking out a good old record and
-// reminiscing about the past
-// always makes me feel better.
-const char D_08050250[] =
-    "\n"
-    "けっこう古いレコードなんかを　出してきて　当時を　思い出したりすると、ホッとするんです。";
-
-// By the way, what do
-// you do when you're sad?
-// I always listen to music.
-const char D_080502ac[] =
-    "\n"
-    "それはそうと、悲しいときって\n"
-    "どうしてますか？\n"
-    "私は　もっぱら　音楽を　ききますねぇ。";
-
-// [D_089cd408] Dialogue List - ?
-const char *D_089cd408[] = {
-    D_080502ac,
-    D_08050250,
-    D_08050200,
-    D_080501bc,
-    NULL
+const char *cafe_dialogue_healing_with_music[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "それはそうと、悲しいときって\n"
+        "どうしてますか？\n"
+        "私は　もっぱら　音楽を　ききますねぇ。",
+    /* ------------------------------------------------ */
+        "\n"
+        "けっこう古いレコードなんかを　出してきて　当時を　思い出したりすると、ホッとするんです。",
+    /* ------------------------------------------------ */
+        "\n"
+        "音楽って　フシギですよね～。\n"
+        "どうして　あんなにも　心を\n"
+        "ゆさぶるんでしょうね。",
+    /* ------------------------------------------------ */
+        "\n"
+        "まぁ、私には　詳しい理屈なんて\n"
+        "わからないですけどネ。ははは。\n"
+        "\n",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// Then again, if we gave speeches
-// with bongos or the neighbors
-// argued with trumpets, it'd get
-// noisy, don't you think? Ha ha ha.
-const char D_08050304[] =
-    "\n"
-    "でも　もし、ドラムで　選挙演説とか\n"
-    "ボンゴで　夫婦ゲンカとかあったら\n"
-    "やかましそうですネ。ははは。";
+// [D_089cd41c] Dialogue - Speaking Through Rhythm
+    /* -------------------------------- */
+        //
+        // Say... did you know that you can
+        // have a conversation with rhythm?
+        //
+    /* -------------------------------- */
+        //
+        // By attaching words and meanings
+        // to certain beats, you can have a
+        // conversation without speaking.
+    /* -------------------------------- */
+        // For example... you could play
+        // a drum beat to ask "How are
+        // you?" or say "Please come
+        // visit!" even from far away.
+    /* -------------------------------- */
+        //
+        // I learned it from another
+        // customer, and now I want
+        // to try it for myself.
+    /* -------------------------------- */
+        // Then again, if we gave speeches
+        // with bongos or the neighbors
+        // argued with trumpets, it'd get
+        // noisy, don't you think? Ha ha ha.
+    /* -------------------------------- */
 
-// I learned it from another
-// customer, and now I want
-// to try it for myself.
-const char D_08050368[] =
-    "\n"
-    "このまえ　いらっしゃった　お客さんが\n"
-    "教えてくれたんですけど、ちょっと\n"
-    "面白そうじゃないですか？";
-
-// For example... you could play
-// a drum beat to ask "How are
-// you?" or say "Please come
-// visit!" even from far away.
-const char D_080503c8[] =
-    "\n"
-    "タイコの大きな音で　リズムをきざんで\n"
-    "はなれた人と　コミュニケーションを\n"
-    "とるらしいんですヨ。";
-
-// By attaching words and meanings
-// to certain beats, you can have a
-// conversation without speaking.
-const char D_08050428[] =
-    "\n"
-    "リズムパターンに　言葉や　意味を　対応させて、会話をするんだそうです。\n"
-    "\n";
-
-// Say... did you know that you can
-// have a conversation with rhythm?
-const char D_08050474[] =
-    "\n"
-    "それはそうと、リズムで\n"
-    "会話ができるって　知ってました？\n"
-    "\n";
-
-// [D_089cd41c] Dialogue List - ?
-const char *D_089cd41c[] = {
-    D_08050474,
-    D_08050428,
-    D_080503c8,
-    D_08050368,
-    D_08050304,
-    NULL
+const char *cafe_dialogue_speaking_with_music[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "それはそうと、リズムで\n"
+        "会話ができるって　知ってました？\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "リズムパターンに　言葉や　意味を　対応させて、会話をするんだそうです。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "タイコの大きな音で　リズムをきざんで\n"
+        "はなれた人と　コミュニケーションを\n"
+        "とるらしいんですヨ。",
+    /* ------------------------------------------------ */
+        "\n"
+        "このまえ　いらっしゃった　お客さんが\n"
+        "教えてくれたんですけど、ちょっと\n"
+        "面白そうじゃないですか？",
+    /* ------------------------------------------------ */
+        "\n"
+        "でも　もし、ドラムで　選挙演説とか\n"
+        "ボンゴで　夫婦ゲンカとかあったら\n"
+        "やかましそうですネ。ははは。",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
 
-// Oh... but if you already knew that,
-// I'm sorry if I bored you.
-// See you later.
-const char D_080504b0[] =
-    "\n"
-    "ご存知でしたら　つまらない話でしたネ。\n"
-    "すみません。ではまた。\n"
-    "\n";
+// [D_089cd434] Dialogue - Ranks and Medals
+    /* -------------------------------- */
+        //
+        // By the way, have you ever
+        // gotten a "Superb" rating on a game?
+        //
+    /* -------------------------------- */
+        //
+        // There are three grades, you know:
+        // "Try Again", "OK" and "Superb".
+        //
+    /* -------------------------------- */
+        //
+        // If you get a "Superb",
+        // you'll even get a medal.
+        //
+    /* -------------------------------- */
+        // Collecting lots of medals will
+        // unlock all sorts of prizes that
+        // you can play with. Please do your
+        // best to collect them all!
+    /* -------------------------------- */
+        //
+        // Oh... but if you already knew that,
+        // I'm sorry if I bored you.
+        // See you later.
+    /* -------------------------------- */
 
-// Collecting lots of medals will
-// unlock all sorts of prizes that
-// you can play with. Please do your
-// best to collect them all!
-const char D_080504f4[] =
-    "\n"
-    "メダルを　集めると　いろいろな\n"
-    "おまけが　遊べるようになるので\n"
-    "がんばって　集めてくださいネ。";
-
-// If you get a "Superb",
-// you'll even get a medal.
-const char D_08050554[] =
-    "\n"
-    "で、「ハイレベル」をとると\n"
-    "メダルが　もらえるんです。\n"
-    "\n";
-
-// There are three grades, you know:
-// "Try Again", "OK" and "Superb".
-const char D_08050590[] =
-    "\n"
-    "ゲームの成績は「やりなおし」「平凡」「ハイレベル」の３つが、あるんですヨ。\n"
-    "\n";
-
-// By the way, have you ever
-// gotten a "Superb" rating on a game?
-const char D_080505e0[] =
-    "\n"
-    "それはそうと、ゲームで\n"
-    "「ハイレベル」っていう成績を\n"
-    "とったことありますか？";
-
-// [D_089cd434] Dialogue List - ?
-const char *D_089cd434[] = {
-    D_080505e0,
-    D_08050590,
-    D_08050554,
-    D_080504f4,
-    D_080504b0,
-    NULL
+const char *cafe_dialogue_ranks_and_medals[] = {
+    /* ------------------------------------------------ */
+        "\n"
+        "それはそうと、ゲームで\n"
+        "「ハイレベル」っていう成績を\n"
+        "とったことありますか？",
+    /* ------------------------------------------------ */
+        "\n"
+        "ゲームの成績は「やりなおし」「平凡」「ハイレベル」の３つが、あるんですヨ。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "で、「ハイレベル」をとると\n"
+        "メダルが　もらえるんです。\n"
+        "\n",
+    /* ------------------------------------------------ */
+        "\n"
+        "メダルを　集めると　いろいろな\n"
+        "おまけが　遊べるようになるので\n"
+        "がんばって　集めてくださいネ。",
+    /* ------------------------------------------------ */
+        "\n"
+        "ご存知でしたら　つまらない話でしたネ。\n"
+        "すみません。ではまた。\n"
+        "\n",
+    /* ------------------------------------------------ */
+    END_OF_DIALOGUE
 };
 
-// [D_089cd44c] Dialogue Table
-const char **cafe_dialogue_table[] = {
-    D_089cd370,
-    D_089cd384,
-    D_089cd39c,
-    D_089cd3b4,
-    D_089cd3cc,
-    D_089cd3e0,
-    D_089cd3f4,
-    D_089cd408,
-    D_089cd41c,
-    D_089cd434
+
+// [D_089cd44c] Random Dialogue Pool
+const char **cafe_random_conversation_pool[] = {
+    cafe_dialogue_rhythm_sense,
+    cafe_dialogue_offbeats,
+    cafe_dialogue_rhythm_test,
+    cafe_dialogue_drum_lessons,
+    cafe_dialogue_adhd,
+    cafe_dialogue_coffee,
+    cafe_dialogue_dog_barista,
+    cafe_dialogue_healing_with_music,
+    cafe_dialogue_speaking_with_music,
+    cafe_dialogue_ranks_and_medals
 };
