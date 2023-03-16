@@ -1613,6 +1613,7 @@ SECTIONS {
         build/bin/bindata_089cd1a4.bin.o(.rodata*);
         build/data/scenes/game_select/scene_entries.c.o(.rodata);
         build/bin/bindata_089cea24.bin.o(.rodata*);
+        build/data/scenes/gameplay/scene_definitions.c.o(.data);
         build/games/karate_man/karate_man.bs.o(.script.entry);
         build/bin/bindata_089cffc8.bin.o(.rodata*);
         build/games/clappy_trio/clappy_trio.bs.o(.script.entry);

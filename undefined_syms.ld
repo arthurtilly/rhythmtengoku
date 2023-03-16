@@ -362,6 +362,10 @@ D_0890a4d4 = 0x0890a4d4;
 D_0890a4f4 = 0x0890a4f4;
 /* Perfect Campaign Palettes */
 D_0890a694 = 0x0890a694;
+/* Gameplay */
+D_0890ac00 = 0x0890ac00;
+D_0890ac20 = 0x0890ac20;
+D_0890ada0 = 0x0890ada0;
 /* Rhythm Data Room - Reading Animations */
 D_0890ae24 = 0x0890ae24;
 D_0890ae34 = 0x0890ae34;

@@ -17,13 +17,10 @@ enum PauseMenuSelectedOption {
     PAUSE_MENU_SELECTION_QUIT
 };
 
-typedef void (*PauseMenuInitFunc)(void);
-typedef u32 (*PauseMenuUpdateFunc)(void);
-
 struct PauseMenuDefinition {
     u16 pauseButton;
-    PauseMenuInitFunc onPause;
-    PauseMenuUpdateFunc update;
+    void (*onPause)();
+    u32 (*update)();
     struct SequenceData *quitSfx;
 };
 

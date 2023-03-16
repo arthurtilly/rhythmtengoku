@@ -23,7 +23,6 @@ enum PauseMenuOptionsEnum {
 
 
 extern struct Scene D_089cfd60; // Perfect Certificate Scene
-extern const struct Beatscript D_089cfda4[]; // Generic Fade-Out Sequence
 extern struct Scene D_089d77e4; // Results Scene (Level-type)
 extern struct Scene D_089d7c18; // Results Scene (Epilogue)
 extern struct Scene D_089ddbcc; // Debug Menu Scene
@@ -1132,7 +1131,7 @@ void gameplay_start_pause_menu(void) {
 
 
 // [func_080183c8] Update Pause Menu
-s32 gameplay_update_pause_menu(void) {
+u32 gameplay_update_pause_menu(void) {
     if (!gGameplayInfo->unpausing) {
         if (D_03004afc & DPAD_LEFT) {
             gGameplayInfo->currentPauseOption = PAUSE_OPTION_CONTINUE;

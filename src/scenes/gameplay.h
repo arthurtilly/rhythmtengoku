@@ -5,6 +5,7 @@
 #include "engines.h"
 #include "src/main.h"
 #include "riq_main_scene.h"
+#include "data/scenes/gameplay/scene_definitions.h"
 
 // Scene Types:
 struct GameplaySceneInfo {
@@ -88,13 +89,6 @@ extern struct Animation anim_gameplay_perfect_hit[]; // Perfect Input
 
 
 // Sound Effects:
-
-
-// Scene Definition Data:
-extern const struct GraphicsTable D_089cfd7c[]; // Graphics Table (Common Gameplay Graphics/Palettes, e.g. Pause Menu)
-extern struct CompressedGraphics *const D_089cfda0[]; // Buffered Textures List
-extern const struct PauseMenuDefinition D_089cfde0; // Pause Handler Definition
-extern struct Animation *const D_089cfdf0[2]; // A Button Prompt Animations { 0 = Black; 1 = White }
 
 
 // Functions - Audio:
@@ -198,7 +192,7 @@ extern void gameplay_pause_menu_set_quit_destination(struct Scene *scene); // [f
 extern void gameplay_pause_menu_darken_screen(void); // [func_080182b8] Screen Darken (Pause)
 extern void gameplay_pause_menu_lighten_screen(void); // [func_08018318] Screen Lighten (Unpause)
 extern void gameplay_start_pause_menu(void); // [func_08018344] Open Pause Menu
-extern s32  gameplay_update_pause_menu(void); // [func_080183c8] Update Pause Menu
+extern u32  gameplay_update_pause_menu(void); // [func_080183c8] Update Pause Menu
 extern void gameplay_init_pause_menu(void); // [func_08018524] Initialise Pause Handler
 extern void gameplay_set_skip_icon(u32 corner, u32 show); // [func_0801853c] Set Skip Tutorial Icon Display
 extern void gameplay_set_text_advance_icon(u32 style); // [func_0801858c] Set Text Button Style
