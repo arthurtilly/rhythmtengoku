@@ -1,1746 +1,789 @@
 #include "level_data.h"
 
-// Producer: "Have you considered going on tour?";
-const char text_concert_hall_superb[] = "プロデューサー「うちで、ガンバってみない？」";
-
-// Owner: "You've got a lot of talent, you know!";
-const char text_concert_hall_ok[] = "オーナー「キミ、なかなか スジあるヨ」";
-
-// Lady: "Do your best at the next show, too!";
-const char text_concert_hall_try_again[] = "おばちゃん「またつぎ、がんばりなよ！」";
-
-// It's a live concert!
-// Your Sense of Rhythm
-// is good, so you get
-// to play in the band!
-const char text_concert_hall_desc[] =
-    "ライブに出演だ！\n"
-    "キミのリズム感は\n"
-    "よいと思うから\n"
-    "どうぞお気楽に～";
-
-// Concert Hall
-const char text_concert_hall_name[] = "ライブ";
-
-// If you have the time,
-// take a look. They're
-// the people who made
-// the game.
-const char text_credits_desc[] =
-    "もし よかったら\n"
-    "見てみてネ。\n"
-    "このゲームの\n"
-    "スタッフたちです。";
-
-// Credits
-const char text_credits_name[] = "スタッフ";
-
-// Our game comes with
-// free drum lessons!
-// You paid good money
-// for them, so why not?
-const char text_drum_lessons_desc[] = "メダルを あつめて\n"
-"ドラムのレッスンを\n"
-"うけてみよう。\n"
-"上手になってネ！";
-
-// Drum Lessons
-const char text_drum_lessons_name[] = "ドラムレッスン";
-
-// Earn medals to
-// unlock special
-// games. See how
-// far you can get!
-const char text_endless_games_desc[] =
-    "メダルを あつめて\n"
-    "とくべつなゲームに\n"
-    "挑戦してみてネ！\n"
-    "いくつかあるヨ。";
-
-// Endless Games
-const char text_endless_games_name[] = "ゲーム";
-
-// Collect medals
-// to play with more
-// toys. Everyone
-// likes toys!
-const char text_rhythm_toys_desc[] =
-    "メダルを あつめて\n"
-    "音のでるおもちゃで\n"
-    "あそんでみてネ！\n"
-    "いくつかあるヨ。";
-
-// Rhythm Toys
-const char text_rhythm_toys_name[] = "おもちゃ";
-
-// How's your mood
-// been lately?
-// Come here for
-// a consultation.
-const char text_cafe_desc[] =
-    "最近の調子 どう？\n"
-    "なにか気になれば\n"
-    "ここで相談を\n"
-    "してみよう。";
-
-// Cafe
-const char text_cafe_name[] = "喫茶カウンセル";
-
-
-// Today's trip was... an exhilarating drive!!
-const char text_remix_8_superb[] = "今回のドライブ ： とっても爽快！！";
-
-// Today's trip was... long and stressful.
-const char text_remix_8_ok[] = "今回のドライブ ： まだまだかかるなぁ";
-
-// Today's trip was... pretty much a total wreck.
-const char text_remix_8_try_again[] = "今回のドライブ ： んもぅ…";
-
-// Remix 8
-const char text_remix_8_name[] = "リミックス ８";
-
-
-// Your dinosaur was... having too much fun!!
-const char text_remix_7_superb[] = "今回のきょうりゅう ： 楽しすぎ～！！";
-
-// Your dinosaur was... feeling pretty lazy.
-const char text_remix_7_ok[] = "今回のきょうりゅう ： ほのぼの";
-
-// Your dinosaur was... not very friendly.
-const char text_remix_7_try_again[] = "今回のきょうりゅう ： いじわる";
-
-// Remix 7
-const char text_remix_7_name[] = "リミックス ７";
-
-
-// Your fishtank contains... something unbelievable!!
-const char text_remix_6_superb[] = "今回の内容 ： アンビリーバボーなカンジ！！";
-
-// Your fishtank contains... something unexpected!
-const char text_remix_6_ok[] = "今回の内容 ： 意外なカンジ";
-
-// Your fishtank contains... something lonely.
-const char text_remix_6_try_again[] = "今回の内容 ： ややさみしいカンジ";
-
-// Remix 6
-const char text_remix_6_name[] = "リミックス ６";
-
-
-// The couple's future... happily ever after!
-const char text_remix_5_superb[] = "今回のふたり ： 幸せになりました♪";
-
-// The couple's future... an awkward wedding.
-const char text_remix_5_ok[] = "今回のふたり ： このさき、チョット不安かも…";
-
-// The couple's future... forever apart!
-const char text_remix_5_try_again[] = "今回のふたり ： ジャマされてしまった！";
-
-// Remix 5
-const char text_remix_5_name[] = "リミックス ５";
-
-
-// Your weather forecast... a happy, clear day!!
-const char text_remix_4_superb[] = "今回の天気 ： ハッピーな晴れ！！";
-
-// Your weather forecast... cloudy and gray.
-const char text_remix_4_ok[] = "今回の天気 ： くもり";
-
-// Your weather forecast... rain, rain and rain.
-const char text_remix_4_try_again[] = "今回の天気 ： 雨";
-
-// Remix 4
-const char text_remix_4_name[] = "リミックス ４";
-
-
-// Your love fortune... it's Lovey-Dovey!!
-const char text_remix_3_superb[] = "今回のラブ ： ラブラブでーす！！";
-
-// Your love fortune... you'll be best friends♪
-const char text_remix_3_ok[] = "今回のラブ ： とってもフレンドリーな感じ♪";
-
-// Your love fortune... your heart might break soon...
-const char text_remix_3_try_again[] = "今回のラブ ： ブロークンハートかも…";
-
-// Remix 3
-const char text_remix_3_name[] = "リミックス ３";
-
-
-// Your hype level was... a baseball tournament!!
-const char text_remix_2_superb[] = "今回の熱気 ： すごい大会レベル！！";
-
-// Your hype level was... a short round of catch.
-const char text_remix_2_ok[] = "今回の熱気 ： 楽しくキャッチボールレベル";
-
-// Your hype level was... practicing alone.
-const char text_remix_2_try_again[] = "今回の熱気 ： ひとりで練習レベル";
-
-// Remix 2
-const char text_remix_2_name[] = "リミックス ２";
-
-
-// Your performance was like... a filling dinner!!
-const char text_remix_1_superb[] = "今回のデキ ： なんと、 ディナークラス！！";
-
-// Your performance was like... a breakfast.
-const char text_remix_1_ok[] = "今回のデキ ： 朝食クラス";
-
-// Your performance was like... a cat's snack.
-const char text_remix_1_try_again[] = "今回のデキ ： 猫のおやつクラス";
-
-// Want to test your
-// merit? Your skill so
-// far speaks for
-// itself, you know! (NP)
-const char text_remix_desc[] =
-    "キミの実力を\n"
-    "試してみてみる？\n"
-    "これまでの経験が\n"
-    "モノを言うヨ～！";
-
-// Remix 1
-const char text_remix_1_name[] = "リミックス １";
-
-
-// Bon dancing is awfully fun!
-const char text_bon_dance_superb[] = "ボンダンスって すごく楽しいよネー！";
-
-// Oh darn, it's raining.
-const char text_bon_dance_ok[] = "うーん、雨がふってきちゃった。";
-
-// Just forget it...
-const char text_bon_dance_try_again[] = "もういや…";
-
-// It's time for the
-// Bon festival again!
-// We're all in high
-// spirits, yay! (NP)
-const char text_bon_dance_desc[] =
-    "これが いまどきの\n"
-    "ぼんおどり！\n"
-    "ノリノリだヨ！\n"
-    "イェーイ！";
-
-// The☆Bon Dance
-const char text_bon_dance_name[] = "ボンダンス";
-
-
-// Whee! That was fun!
-const char text_bon_odori_superb[] = "あー、楽しかった！";
-
-// Sparklers are kind of melancholic, aren't they?
-const char text_bon_odori_ok[] = "せんこう花火って、せつないね。";
-
-// I'm cold...
-const char text_bon_odori_try_again[] = "さむいわ…";
-
-// It's the traditional
-// Bon festival!
-// Clap your hands
-// and sing along!
-const char text_bon_odori_desc[] =
-    "ぼんおどりの\n"
-    "うたに あわせて\n"
-    "パンッと 手を\n"
-    "たたきましょう。";
-
-// The☆Bon-Odori
-const char text_bon_odori_name[] = "ザ☆ぼんおどり";
-
-
-// I won a trip to Rhythm Heaven!
-const char text_quiz_show_superb[] = "世界旅行 もらっちゃった！";
-
-// Must study for next time... after a nap.
-const char text_quiz_show_ok[] = "次回に向けて 勉強、勉強…Zzz";
-
-// This is way better than any gameshow.
-const char text_quiz_show_try_again[] = "ま、 こんなものさ。";
-
-// A gameshow that's
-// all style and no
-// substance... just
-// what viewers want.
-const char text_quiz_show_desc[] =
-    "司会者の、\n"
-    "「たたいた回数」を\n"
-    "当てるカンタンな\n"
-    "クイズです。";
-
-// Quiz Show
-const char text_quiz_show_name[] = "クイズ";
-
-
-// Those rap boys have nothing on us!
-const char text_rap_women_superb[] = "そうそう コレコレ、これやわー！！イェーイ！";
-
-// We can't lose to the Rap Men...!
-const char text_rap_women_ok[] = "なんか ちょっと イマイチかも…！";
-
-// That was not our best take...
-const char text_rap_women_try_again[] = "こんなん ちゃうわぁ…";
-
-// The rivals of the
-// Rap Men are here!
-// Be charmed by their
-// cute voices! (NP)
-const char text_rap_women_desc[] =
-    "あのラップメンに\n"
-    "ライバルが登場だ！\n"
-    "キュートなボイスに\n"
-    "もう メロメロ！";
-
-// Rap Women
-const char text_rap_women_name[] = "ラップウイメン";
-
-
-// The record company wants a word with you two!!
-const char text_rap_men_superb[] = "これからも よろしく たのんまっせー！！";
-
-// I think our tone was off.
-const char text_rap_men_ok[] = "チェッ。 なんか 調子わるいわぁ。";
-
-// Man, we're uncool.
-const char text_rap_men_try_again[] = "オレたち、 ダサいやん…";
-
-// The Rap Men are here
-// with a cool rap.
-// Fitting, because they
-// are pretty cool too.
-const char text_rap_men_desc[] =
-    "クールなふたり組が\n"
-    "やってきた！\n"
-    "アツいラップで\n"
-    "大コーフンだぜ！";
-
-// Rap Men
-const char text_rap_men_name[] = "ラップメン";
-
-
-// We are super cosmic stars!!
-const char text_cosmic_dance_superb[] = "ボクたちは スーパーコスモスターさ！！";
-
-// Is that all you guys have?
-const char text_cosmic_dance_ok[] = "あなたたちって こんなものなの？";
-
-// M-mission failed!!
-const char text_cosmic_dance_try_again[] = "お、おわりだー！！";
-
-// We are emissaries
-// from deep space.
-// We come... in style.
-// (No practice)
-const char text_cosmic_dance_desc[] =
-    "宇宙を代表\\する\n"
-    "ダンサーたち！\n"
-    "キレた動きに\n"
-    "くぎづけです！！";
-
-// Cosmic Dance
-const char text_cosmic_dance_name[] = "コスモダンス";
-
-
-// We are space superstars!!
-const char text_space_dance_superb[] = "ボクたちは スペーススーパースター！！";
-
-// Someday we'll shine like the stars...
-const char text_space_dance_ok[] = "あの星のように かがやきたいな…";
-
-// We danced right into a black hole!
-const char text_space_dance_try_again[] = "ブ、 ブラックホールだー！！";
-
-// This is zero gravity
-// outer space.
-// But, let's dance.
-// Let's Space Dance!
-const char text_space_dance_desc[] =
-    "ここは無重力の宇宙。\n"
-    "でも、 おどろうヨ！\n"
-    "レッツスペースダンス！";
-
-// Space Dance
-const char text_space_dance_name[] = "スペースダンス";
-
-
-// Woohoo! The crowd loves us!!
-const char text_showtime_superb[] = "やった！！ お客さん 楽しんでくれたー！！";
-
-// This shouldn't have been a problem for us...
-const char text_showtime_ok[] = "ボクたち こんなもんじゃないはず…";
-
-// The customers looked angry...
-const char text_showtime_try_again[] = "お客さん、 おこってたネ…";
-
-// It's a sold out show
-// for the penguins'
-// opening night!
-const char text_showtime_desc[] =
-    "ペンギン君たちの\n"
-    "ショータイムが\n"
-    "はじまるヨ！\n"
-    "わーいわーい！";
-
-// Showtime
-const char text_showtime_name[] = "ショータイム";
-
-
-// Tram and Pauline, we're the perfect team!!
-const char text_tram_pauline_superb[] = "コンビネーション バッチシ！！";
-
-// We could only get halfway there...
-const char text_tram_pauline_ok[] = "ちゅうとハンパでした…";
-
-// Maybe we need to try a different act!
-const char text_tram_pauline_try_again[] = "大しっぱいだ～！！";
-
-// Tram and Pauline are
-// acrobatic foxes!
-// Quick, their show
-// is about to start!
-const char text_tram_pauline_desc[] =
-    "こぎつねトラン、\n"
-    "そしてポリンの\n"
-    "アクロバティックショーがはじまるヨ！";
-
-// Tram & Pauline
-const char text_tram_pauline_name[] = "トランとポリン";
-
-
-// Want to hear about Daddy's big heist?
-const char text_rat_race_superb[] = "みんな、 よかったネ！";
-
-// I love you... and this cheese!
-const char text_rat_race_ok[] = "チーズ おいしいね。";
-
-// The important thing is that we're together.
-const char text_rat_race_try_again[] = "チーズ 食べたいよ～…";
-
-// I got a family now.
-// One last job, and
-// I'm out of this
-// business for good.
-const char text_rat_race_desc[] =
-    "あなたはネズミ。\n"
-    "大スキなチーズを\n"
-    "めざして\n"
-    "ストップ＆ゴー！！";
-
-// Rat Race
-const char text_rat_race_name[] = "こっそり ラット";
-
-
-// Together, we are unstoppable!!
-const char text_toss_boys_2_superb[] = "最強メンバーのたんじょうだー！！";
-
-// We're completely pooped!
-const char text_toss_boys_2_try_again[] = "ボロボロだァ～！";
-
-// Toss Boys 2
-const char text_toss_boys_2_name[] = "トスボーイズ ２";
-
-// Next, we'll become World Champion Tossers!!
-const char text_toss_boys_superb[] = "目標は、 トス世界選手権 優勝だー！！";
-
-// We're good, but we can get better!
-const char text_toss_boys_ok[] = "まだまだもっと上手にできるはず！";
-
-// No good, no good at all!!
-const char text_toss_boys_try_again[] = "ダメダメだァ～！";
-
-// Practice your
-// tossing technique
-// with these three
-// close friends!
-const char text_toss_boys_desc[] =
-    "なかよし３人組、\n"
-    "声をかけあいながら\n"
-    "いつも楽しくトスの\n"
-    "練習してます。";
-
-// Toss Boys
-const char text_toss_boys_name[] = "トスボーイズ";
-
-
-// Power Calligraphy 2
-const char text_power_calligraphy_2_name[] = "リズムお習字 ２";
-
-// Hooray for Japanese calligraphy!!
-const char text_power_calligraphy_superb[] = "お習字って ノリノリだネ！！";
-
-// Who says calligraphy isn't fun?
-const char text_power_calligraphy_ok[] = "お習字を もっと楽しもう！";
-
-// Maybe I should stick with pencils...
-const char text_power_calligraphy_try_again[] = "ふ～…  アカンわ。";
-
-// Write Japanese
-// with the brush.
-// (You only have to
-// do the fun parts.)
-const char text_power_calligraphy_desc[] =
-    "筆を使って日本語を\n"
-    "書きます。\n"
-    "あなたがするのは\n"
-    "オイシイとこだけ。";
-
-// Power Calligraphy
-const char text_power_calligraphy_name[] = "リズムお習字";
-
-
-// Just leave the fireworks to me!!
-const char text_fireworks_superb[] = "花火のことならオレにまかせろ！！";
-
-// I think I put on a pretty good show!
-const char text_fireworks_ok[] = "なかなかのデキだぜ！";
-
-// Hack cough... where'd everyone go?!
-const char text_fireworks_try_again[] = "ゲホゲホッ… 失敗。";
-
-// If it's summer, that
-// means it's time for
-// fireworks. The colors
-// are amazing!
-const char text_fireworks_desc[] =
-    "夏といえばさ、\n"
-    "やっぱ花火かな？\n"
-    "色あざやかに\n"
-    "打ち上げよう！";
-
-// Fireworks
-const char text_fireworks_name[] = "花火";
-
-
-// That one's a perfect 10!
-const char text_bunny_hop_superb[] = "まん点！！";
-
-// Now you just need to practice the landing...
-const char text_bunny_hop_ok[] = "着地は失敗しちゃった…";
-
-// I want to go back to the moon!
-const char text_bunny_hop_try_again[] = "月に帰りた～い！";
-
-// White rabbit, jump
-// to the beat and
-// cross the sea!
-// (No practice.)
-const char text_bunny_hop_desc[] =
-    "ジャンプが得意な\n"
-    "白いウサギさん。\n"
-    "ビートにのって\n"
-    "海をわたろう！";
-
-// Bunny Hop
-const char text_bunny_hop_name[] = "ウサギとび";
-
-
-// Hooray! I'm not lonely any more!
-const char text_wizards_waltz_superb[] = "わーい、 わたし もう さみしくないヨ！";
-
-// I'd be even more happy if more flowers bloomed...
-const char text_wizards_waltz_ok[] = "もっと 花がさくと うれしいな～。";
-
-// I don't like this! It was better when I was alone!
-const char text_wizards_waltz_try_again[] = "こんなのヤダ～、 こわいヨ～！";
-
-// Nothing brightens up
-// a sad face like a
-// beautiful flower!
-// Let's see some magic!
-const char text_wizards_waltz_desc[] =
-    "あなたはまほう使い。\n"
-    "さみしがりやの\n"
-    "おじょうちゃんに花を\n"
-    "プレゼントしよう。";
-
-// Wizard's Waltz
-const char text_wizards_waltz_name[] = "まほうつかい";
-
-
-// The Hare-force will march on to victory!
-const char text_marching_orders_2_superb[] = "ごほうびに、こんなのもらってしまった！！";
-
-// Hmph! You've gotta march cooler than that!
-const char text_marching_orders_2_ok[] = "ぐっ！ もっとカッコよくおどらなければ！";
-
-// Th-this could be the end of the Marchers!
-const char text_marching_orders_2_try_again[] = "こ、これでは、イカン！う～む…";
-
-// Now let's march to
-// a different beat.
-// Listen to the cues
-// and hop to it! (NP)
-const char text_marching_orders_2_desc[] =
-    "行進をするのだ。\n"
-    "こんどのは ちょっと\n"
-    "テクニカルだ！\n"
-    "がんばりたまえ。";
-
-// Marcher 2
-const char text_marching_orders_2_name[] = "マーチャ ２";
-
-
-// The alien rescue was a huge success!
-const char text_marching_orders_superb[] = "宇宙人の救出、大成功！！";
-
-// Today's duty is cleaning～♪
-const char text_marching_orders_ok[] = "今日の任務は、おそうじでーす♪";
-
-// Aaah! We got left behind!
-const char text_marching_orders_try_again[] = "わぁっ！おいてけぼりされた！";
-
-// Following orders as a
-// unit builds a sense
-// of camaraderie.
-// Also, rhythm.
-const char text_marching_orders_desc[] =
-    "行進をするのだ。\n"
-    "かってな行動はチームをダメにする！\n"
-    "がんばりたまえ。";
-
-// Marching Orders
-const char text_marching_orders_name[] = "マーチャ";
-
-
-// With tap, we can do anything!
-const char text_tap_trial_2_superb[] = "この気持ち、とまらなーい！";
-
-// Hm... feels a little off.
-const char text_tap_trial_2_ok[] = "う～ん… すこし ちがうカンジ…";
-
-// We're tapped out!
-const char text_tap_trial_2_try_again[] = "ガーン！";
-
-// The monkeys have
-// powered up! Can you
-// keep up? Don't lose!
-// (No practice.)
-const char text_tap_trial_2_desc[] =
-    "サルがパワーアップ！\n"
-    "あなたは かれらに\n"
-    "ついていけるか！？\n"
-    "まけるな～！";
-
-// Tap Trial 2
-const char text_tap_trial_2_name[] = "スーパータップ";
-
-
-// It feels good to belong!
-const char text_tap_trial_superb[] = "気分は もう、サイコー！！";
-
-// Pretty good...for a human.
-const char text_tap_trial_ok[] = "ちょっと、 ヘンなトコあったけどネ！";
-
-// Disappointing...
-const char text_tap_trial_try_again[] = "無念だわ。";
-
-// Think you've got
-// what it takes to
-// tap-dance with
-// the monkeys?
-const char text_tap_trial_desc[] =
-    "あなたは女の子。\n"
-    "となりのサルたちに\n"
-    "合わせてタップを\n"
-    "きざむッス！";
-
-// Tap Trial
-const char text_tap_trial_name[] = "タップダンズ";
-
-
-// Look mom, I finally made it!
-const char text_spaceball_2_superb[] = "みんな、見て見てー！";
-
-// I'll make the big leagues yet!
-const char text_spaceball_2_ok[] = "こんなところで 終われない！";
-
-// What do you think you're doing?!
-const char text_spaceball_2_try_again[] = "ナニスルノデスカー！";
-
-// Close your eyes.
-// Free your mind.
-// Hit the ball.
-// Don't cry. (NP)
-const char text_spaceball_2_desc[] =
-    "ズームをきにするな！\n"
-    "心でボールを打て！\n"
-    "視覚に頼るな！\n"
-    "涙もふくな～！";
-
-// Spaceball 2
-const char text_spaceball_2_name[] = "エアーバッター ２";
-
-
-// Look what I got!
-const char text_spaceball_superb[] = "こんなの もらっちゃったー！";
-
-// Practice is the key to reaching new heights!
-const char text_spaceball_ok[] = "さらに上を目指して練習だ！";
-
-// I hope this makes it up to you.
-const char text_spaceball_try_again[] = "これで ゆるしてください。";
-
-// Don't worry about
-// the zoom! Follow
-// the trajectories
-// in your heart!
-const char text_spaceball_desc[] =
-    "ズームをきにするな！\n"
-    "心でボールを打て！\n"
-    "視覚に頼るな！\n"
-    "どんと行け～！";
-
-// Spaceball
-const char text_spaceball_name[] = "エアーバッター";
-
-
-// The feeling of a sharp blade is unbeatable!!
-const char text_samurai_slice_superb[] = "切れあじ、 サイコーだ！！";
-
-// Must concentrate more!
-const char text_samurai_slice_ok[] = "さらに精進（しょうじん）すべし！";
-
-// You have bested me!
-const char text_samurai_slice_try_again[] = "刃こぼれしちまった！";
-
-// Run! They're coming!
-// You're a samurai, so
-// you can stay behind
-// and stop them. (NP)
-const char text_samurai_slice_desc[] =
-    "そこのけ そこのけ\n"
-    "奴らが通る。\n"
-    "おぬしは サムライ、\n"
-    "斬り捨て 御免！";
-
-// Samurai Slice
-const char text_samurai_slice_name[] = "ゐあひ斬り";
-
-// Time out!  In the corner, all of you!
-const char text_sneaky_spirits_2_superb[] = "みんな、反省してネ！";
-
-// “Let me go, please~?”
-const char text_sneaky_spirits_2_ok[] = "おばけ「ナ、ナンダヨ～」";
-
-// Wow! Put down the bow, and help me clean up.
-const char text_sneaky_spirits_2_try_again[] = "うわー！ やられほうだいだ！";
-
-// Those ghosts are at
-// it again! Grab your
-// arrows and aim
-// for their souls! (NP)
-const char text_sneaky_spirits_2_desc[] =
-    "白いヤツが こちらを\n"
-    "ナメきっている！\n"
-    "ムカムカーッ！！\n"
-    "こらしめちゃおう！";
-
-// Sneaky Spirits 2
-const char text_sneaky_spirits_2_name[] = "しろいおばけ ２";
-
-
-// No ghost escapes on your watch!
-const char text_sneaky_spirits_superb[] = "いっぱい しとめた！！";
-
-// You got one!
-const char text_sneaky_spirits_ok[] = "しとめた！";
-
-// Escaped ghosts are nothing but trouble.
-const char text_sneaky_spirits_try_again[] = "逃げたヤツにイタズラされた！";
-
-// Ghosts are trying
-// to escape their
-// haunted house! Grab
-// your trusty bow!
-const char text_sneaky_spirits_desc[] =
-    "白いヤツが こちらを\n"
-    "バカにしている！\n"
-    "ムキーッ！！\n"
-    "こらしめちゃおう！";
-
-// Sneaky Spirits
-const char text_sneaky_spirits_name[] = "しろいおばけ";
-
-
-// Thou art strong. Live happily!
-const char text_ninja_reincarnate_superb[] = "オヌシは強い。お幸せに…！";
-
-// You have courage. Work harder!
-const char text_ninja_reincarnate_ok[] = "うむ、スジは良いな。がんばれ！";
-
-// Don't lose! People depend on you!
-const char text_ninja_reincarnate_try_again[] = "まけるな！ おまえが頼りなのだー！！";
-
-// Watch out! I'm a
-// warrior just like
-// my ancestors!
-// (No practice.)
-const char text_ninja_reincarnate_desc[] =
-    "オレのじいちゃんの\n"
-    "じいちゃんの\n"
-    "じいちゃんは\n"
-    "忍者なんだぜ。";
-
-// Ninja Reincarnate
-const char text_ninja_reincarnate_name[] = "忍者の子孫";
-
-
-// He told me “great job!";
-const char text_ninja_bodyguard_superb[] = "アッパレって 言われちゃったゼ！！";
-
-// Forgive me, my lord!
-const char text_ninja_bodyguard_ok[] = "トノ！ ごめんなさ～い。";
-
-// No! The feudal lord has fainted!
-const char text_ninja_bodyguard_try_again[] = "ゲッ！ トノが きぜつしてる！！";
-
-// It's an enemy raid!
-// Take on their
-// challenge with both
-// of your hands. (NP)
-const char text_ninja_bodyguard_desc[] =
-    "敵襲(てきしゅう)だ！\n"
-    "十\\字ボタンとAボタンで応戦(おうせん)だ！\n"
-    "フジヤマ（ふじさん）！！";
-
-// Ninja Bodyguard
-const char text_ninja_bodyguard_name[] = "忍者";
-
-
-// Way too easy for us♪
-const char text_bouncy_road_2_superb[] = "らくちん らくちん♪";
-
-// Whew, that was hard!
-const char text_bouncy_road_2_ok[] = "なかなか がんばっていたネ！";
-
-// Ouch! I think I've sprained something.
-const char text_bouncy_road_2_try_again[] = "エーン！ しっぱい！！";
-
-// Protect those balls!
-// They're our good
-// friends, and they
-// need our help! (NP)
-const char text_bouncy_road_2_desc[] =
-    "とんでくる丸い玉。\n"
-    "ほんとにイイやつ\n"
-    "なんですヨ～。\n"
-    "落とさないでネ！";
-
-// Bouncy Road 2
-const char text_bouncy_road_2_name[] = "ホッピングロード２";
-
-
-// This is super simple♪
-const char text_bouncy_road_superb[] = "かんたん かんたん♪";
-
-// We're good partners!
-const char text_bouncy_road_ok[] = "けっこうな コンビネーションだったネ！";
-
-// This is tough!
-const char text_bouncy_road_try_again[] = "なかなか ムズカシー！";
-
-// The bouncing balls
-// need your help.
-// They're good to us,
-// so don't drop them!
-const char text_bouncy_road_desc[] =
-    "とんでくる丸い玉。\n"
-    "あれはイイやつです。\n"
-    "落とさないでネ！";
-
-// Bouncy Road
-const char text_bouncy_road_name[] = "ホッピングロード";
-
-
-// This medicine will save lives!!
-const char text_sick_beats_superb[] = "ものすごいクスリができた！！";
-
-// Unwanted results are a step towards success!
-const char text_sick_beats_ok[] = "失敗は成功のもとカモ！";
-
-// They'll cut my funding...
-const char text_sick_beats_try_again[] = "研究は失敗だ。";
-
-// <Memo from Assistant>
-// We have quite a germ
-// outbreak on our
-// hands. Help us! (NP)
-const char text_sick_beats_desc[] =
-    "助手からの知らせ\n"
-    "「大変です！\n"
-    "バイキン発生です！！\n"
-    "先生、たすけて～」";
-
-// Sick Beats
-const char text_sick_beats_name[] = "バイキン はかせ";
-
-
-// The air tastes as good as my produce!
-const char text_rhythm_tweezers_2_superb[] = "スッキリそうかい！ 空気がうますぎ！！";
-
-// I guess I could market these as “organic.”
-const char text_rhythm_tweezers_2_ok[] = "しかしなんで うちのヤサイだけに 毛が…？";
-
-// Note to self: sell all veggies before five o'clock.
-const char text_rhythm_tweezers_2_try_again[] = "なんで 毛が はえるんだー！？";
-
-// The hairs are gone,
-// but their heirs
-// are a huge pain!
-// (No practice.)
-const char text_rhythm_tweezers_2_desc[] =
-    "またしても生えてくる\n"
-    "うっとうしい「毛」！\n"
-    "ぬいちゃえ、 \n"
-    "ぬいちゃえ！";
-
-// Rhythm Tweezers 2
-const char text_rhythm_tweezers_2_name[] = "リズム脱毛 ２";
-
-
-// Fresh and so clean! The air is delicious!
-const char text_rhythm_tweezers_superb[] = "スッキリそうかい！ 空気がうまい！！";
-
-// Why do our vegetables grow hair...?
-const char text_rhythm_tweezers_ok[] = "なんで うちのヤサイは 毛がはえるんだ？";
-
-// I can't sell this!
-const char text_rhythm_tweezers_try_again[] = "これじゃ 売りものに ならん！";
-
-// These weird hairs
-// keep growing!
-// Pluck'em,
-// pluck'em!
-const char text_rhythm_tweezers_desc[] =
-    "どんどん生えてくる\n"
-    "うっとうしい「毛」！\n"
-    "ぬいちゃえ、 \n"
-    "ぬいちゃえ！";
-
-// Rhythm Tweezers
-const char text_rhythm_tweezers_name[] = "リズム脱毛";
-
-
-// You're friends with the stars!
-const char text_night_walk_2_superb[] = "星たちと おともだちだヨ！";
-
-// The night wind feels so nice~
-const char text_night_walk_2_ok[] = "夜風が とっても きもちいいな。";
-
-// Eek! You messed up!
-const char text_night_walk_2_try_again[] = "うひゃー！ しっぱいしちゃった！！";
-
-// It's a beautiful night.
-// We just have to
-// watch out for those
-// fish! (No practice.)
-const char text_night_walk_2_desc[] =
-    "音楽にあわせて\n"
-    "ジャンプしてネ！\n"
-    "ビリビリウオに\n"
-    "気をつけよう。";
-
-// Night Walk 2
-const char text_night_walk_2_name[] = "ナイトウォーク ２";
-
-
-// The stars welcome you!
-const char text_night_walk_superb[] = "星たちが かんげいしてるヨ！";
-
-// Night sky walks are so fun.
-const char text_night_walk_ok[] = "夜空の おさんぽ、 たのしいな。";
-
-// Try harder next time.
-const char text_night_walk_try_again[] = "つぎは もっと がんばってネ…";
-
-// Jump with the music!
-// The stars will gather
-// and put a spring in
-// your step. (NP)
-const char text_night_walk_desc[] =
-    "音楽にあわせて\n"
-    "ジャンプしてネ！\n"
-    "星たちが あつまって\n"
-    "あなたも夜空へ…";
-
-// Night Walk
-const char text_night_walk_name[] = "ナイトウォーク";
-
-
-// That's how you become employee of the year!
-const char text_polyrhythm_2_superb[] = "赤いモノを じゃんじゃん生産しちゃうヨ！！";
-
-// Let's keep the production lines moving!
-const char text_polyrhythm_2_ok[] = "もっともっと 赤いモノを 生産だ！";
-
-// At this rate, we'll go out of business.
-const char text_polyrhythm_2_try_again[] = "赤いモノ、もっと生産しなきゃ…";
-
-// Orders keep coming
-// for our widgets! Use
-// both hands to meet
-// our quotas! (NP)
-const char text_polyrhythm_2_desc[] =
-    "これぞ左右独立！\n"
-    "テンポよく こなして\n"
-    "レッツ ポリリズム！\n"
-    "イェーイ！";
-
-// Polyrhythm 2
-const char text_polyrhythm_2_name[] = "ポリリズム ２";
-
-
-// Widgets, Inc. is a huge success!
-const char text_polyrhythm_superb[] = "赤いモノを 生産しまくりだネ！！";
-
-// You can't beat running your own business.
-const char text_polyrhythm_ok[] = "どんどん 赤いモノを 生産だ！";
-
-// Maybe I should be a craftsman...
-const char text_polyrhythm_try_again[] = "赤いモノ、量産は たいへんだなぁ…";
-
-// Master pressing
-// different buttons
-// at the same time! It
-// should be easy... (NP)
-const char text_polyrhythm_desc[] = "十\\字ボタンとＡボタンの同時押しをマスターだ！けっこうカンタンだ。たぶん…";
-
-// Polyrhythm
-const char text_polyrhythm_name[] = "ポリリズム";
-
-
-// The Clappy Trio is still in perfect sync!
-const char text_snappy_trio_superb[] = "息ピッタリでーす！ イェーイ！";
-
-// I need just a little more practice...
-const char text_snappy_trio_ok[] = "あとチョットなんだけどね…";
-
-// Oh no! I've done it again!
-const char text_snappy_trio_try_again[] = "キャー！ ゆるしてー！！";
-
-// The Clappy Trio
-// is on a world tour!
-// Their new style is
-// just too cool! (NP)
-const char text_snappy_trio_desc[] =
-    "ラフだった彼らが\n"
-    "バリっとスーツを\n"
-    "着てきたヨ！\n"
-    "カッコイイ！！";
-
-// The Snappy Trio
-const char text_snappy_trio_name[] = "バリバリ三人衆";
-
-
-// Trio-riffic!
-const char text_clappy_trio_superb[] = "この三人衆、 息ピッタリだ！！";
-
-// Please show up for more of our practice sessions.
-const char text_clappy_trio_ok[] = "満足するのは まだ早いかもね。";
-
-// The trio just went solo!
-const char text_clappy_trio_try_again[] = "仲間が帰っちゃった！";
-
-// The world-famous
-// Clappy Trio never
-// misses a beat. Watch
-// the other two!
-const char text_clappy_trio_desc[] =
-    "順番に拍手をするヨ！\n"
-    "あなたは３番目。\n"
-    "前の2人をよく見てネ！";
-
-// The Clappy Trio
-const char text_clappy_trio_name[] = "パチパチ三人衆";
-
-
-// This is how you do it, baby!
-const char text_karate_man_2_superb[] = "ざっと こんなモンだぜー！！";
-
-// Well, that's good enough. So let's eat!
-const char text_karate_man_2_ok[] = "ま、さておき。 ごはん 食べよう！";
-
-// What was wrong with the tempo?!
-const char text_karate_man_2_try_again[] = "テンポが なんだー！！";
-
-// Let's punch to the
-// rhythm again...
-// But watch for the
-// tempo change! (NP)
-const char text_karate_man_2_desc[] =
-    "とんでくるモノを\n"
-    "Aボタンでパンチ！\n"
-    "でも、 スピードが\n"
-    "ヘンテコだヨ。";
-
-// Karate Man 2
-const char text_karate_man_2_name[] = "カラテ家 ２";
-
-
-// You sent all of this flying!!
-const char text_karate_man_superb[] = "こんなに ブッとばしちゃった！！";
-
-// Let's break for lunch!
-const char text_karate_man_ok[] = "とりあえず、ごはん 食べとこう！";
-
-// There's always tomorrow.
-const char text_karate_man_try_again[] = "明日が あるさ。";
-
-// This is karate
-// training at its most
-// intense! (Or, at its
-// most unorthodox...)
-const char text_karate_man_desc[] =
-    "とんでくるモノを\n"
-    "Aボタンでパンチ！\n"
-    "よくあるゲーム？\n"
-    "…かもね。";
-
-// Karate Man
-const char text_karate_man_name[] = "カラテ家";
-
-
 // Level Data
 struct LevelData level_data_table[] = {
     /* KARATE_MAN */ {
         /* Entry Scene   */ &D_089cfed0,
-        /* Game Name     */ text_karate_man_name,
-        /* Game Desc.    */ text_karate_man_desc,
+        /* Game Name     */ "カラテ家",
+        /* Game Desc.    */ "とんでくるモノを\n"
+                            "Aボタンでパンチ！\n"
+                            "よくあるゲーム？\n"
+                            "…かもね。",
         /* Icon ID       */ 8,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_karate_man_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_karate_man_try_again,
-            /* OK        */ text_karate_man_ok,
-            /* SUPERB    */ text_karate_man_superb
+            /* TRY AGAIN */ "明日が あるさ。",
+            /* OK        */ "とりあえず、ごはん 食べとこう！",
+            /* SUPERB    */ "こんなに ブッとばしちゃった！！"
         }
     },
     /* KARATE_MAN_2 */ {
         /* Entry Scene   */ &D_089d0728,
-        /* Game Name     */ text_karate_man_2_name,
-        /* Game Desc.    */ text_karate_man_2_desc,
+        /* Game Name     */ "カラテ家 ２",
+        /* Game Desc.    */ "とんでくるモノを\n"
+                            "Aボタンでパンチ！\n"
+                            "でも、 スピードが\n"
+                            "ヘンテコだヨ。",
         /* Icon ID       */ 0,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_karate_man_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_karate_man_2_try_again,
-            /* OK        */ text_karate_man_2_ok,
-            /* SUPERB    */ text_karate_man_2_superb
+            /* TRY AGAIN */ "テンポが なんだー！！",
+            /* OK        */ "ま、さておき。 ごはん 食べよう！",
+            /* SUPERB    */ "ざっと こんなモンだぜー！！"
         }
     },
     /* CLAPPY_TRIO */ {
         /* Entry Scene   */ &D_089d0188,
-        /* Game Name     */ text_clappy_trio_name,
-        /* Game Desc.    */ text_clappy_trio_desc,
+        /* Game Name     */ "パチパチ三人衆",
+        /* Game Desc.    */ "順番に拍手をするヨ！\n"
+                            "あなたは３番目。\n"
+                            "前の2人をよく見てネ！",
         /* Icon ID       */ 4,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_clappy_trio_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_clappy_trio_try_again,
-            /* OK        */ text_clappy_trio_ok,
-            /* SUPERB    */ text_clappy_trio_superb
+            /* TRY AGAIN */ "仲間が帰っちゃった！",
+            /* OK        */ "満足するのは まだ早いかもね。",
+            /* SUPERB    */ "この三人衆、 息ピッタリだ！！"
         }
     },
     /* SNAPPY_TRIO */ {
         /* Entry Scene   */ &D_089d634c,
-        /* Game Name     */ text_snappy_trio_name,
-        /* Game Desc.    */ text_snappy_trio_desc,
+        /* Game Name     */ "バリバリ三人衆",
+        /* Game Desc.    */ "ラフだった彼らが\n"
+                            "バリっとスーツを\n"
+                            "着てきたヨ！\n"
+                            "カッコイイ！！",
         /* Icon ID       */ 10,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_snappy_trio_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_snappy_trio_try_again,
-            /* OK        */ text_snappy_trio_ok,
-            /* SUPERB    */ text_snappy_trio_superb
+            /* TRY AGAIN */ "キャー！ ゆるしてー！！",
+            /* OK        */ "あとチョットなんだけどね…",
+            /* SUPERB    */ "息ピッタリでーす！ イェーイ！"
         }
     },
     /* POLYRHYTHM */ {
         /* Entry Scene   */ &D_089d0358,
-        /* Game Name     */ text_polyrhythm_name,
-        /* Game Desc.    */ text_polyrhythm_desc,
+        /* Game Name     */ "ポリリズム",
+        /* Game Desc.    */ "十\\字ボタンとＡボタンの同時押しをマスターだ！けっこうカンタンだ。たぶん…",
         /* Icon ID       */ 3,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_polyrhythm_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_polyrhythm_try_again,
-            /* OK        */ text_polyrhythm_ok,
-            /* SUPERB    */ text_polyrhythm_superb
+            /* TRY AGAIN */ "赤いモノ、量産は たいへんだなぁ…",
+            /* OK        */ "どんどん 赤いモノを 生産だ！",
+            /* SUPERB    */ "赤いモノを 生産しまくりだネ！！"
         }
     },
     /* POLYRHYTHM_2 */ {
         /* Entry Scene   */ &D_089d044c,
-        /* Game Name     */ text_polyrhythm_2_name,
-        /* Game Desc.    */ text_polyrhythm_2_desc,
+        /* Game Name     */ "ポリリズム ２",
+        /* Game Desc.    */ "これぞ左右独立！\n"
+                            "テンポよく こなして\n"
+                            "レッツ ポリリズム！\n"
+                            "イェーイ！",
         /* Icon ID       */ 51,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_polyrhythm_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_polyrhythm_2_try_again,
-            /* OK        */ text_polyrhythm_2_ok,
-            /* SUPERB    */ text_polyrhythm_2_superb
+            /* TRY AGAIN */ "赤いモノ、もっと生産しなきゃ…",
+            /* OK        */ "もっともっと 赤いモノを 生産だ！",
+            /* SUPERB    */ "赤いモノを じゃんじゃん生産しちゃうヨ！！"
         }
     },
     /* NIGHT_WALK */ {
         /* Entry Scene   */ &D_089d0540,
-        /* Game Name     */ text_night_walk_name,
-        /* Game Desc.    */ text_night_walk_desc,
+        /* Game Name     */ "ナイトウォーク",
+        /* Game Desc.    */ "音楽にあわせて\n"
+                            "ジャンプしてネ！\n"
+                            "星たちが あつまって\n"
+                            "あなたも夜空へ…",
         /* Icon ID       */ 7,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_night_walk_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_night_walk_try_again,
-            /* OK        */ text_night_walk_ok,
-            /* SUPERB    */ text_night_walk_superb
+            /* TRY AGAIN */ "つぎは もっと がんばってネ…",
+            /* OK        */ "夜空の おさんぽ、 たのしいな。",
+            /* SUPERB    */ "星たちが かんげいしてるヨ！"
         }
     },
     /* NIGHT_WALK_2 */ {
         /* Entry Scene   */ &D_089d0634,
-        /* Game Name     */ text_night_walk_2_name,
-        /* Game Desc.    */ text_night_walk_2_desc,
+        /* Game Name     */ "ナイトウォーク ２",
+        /* Game Desc.    */ "音楽にあわせて\n"
+                            "ジャンプしてネ！\n"
+                            "ビリビリウオに\n"
+                            "気をつけよう。",
         /* Icon ID       */ 41,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_night_walk_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_night_walk_2_try_again,
-            /* OK        */ text_night_walk_2_ok,
-            /* SUPERB    */ text_night_walk_2_superb
+            /* TRY AGAIN */ "うひゃー！ しっぱいしちゃった！！",
+            /* OK        */ "夜風が とっても きもちいいな。",
+            /* SUPERB    */ "星たちと おともだちだヨ！"
         }
     },
     /* RHYTHM_TWEEZERS */ {
         /* Entry Scene   */ &D_089d081c,
-        /* Game Name     */ text_rhythm_tweezers_name,
-        /* Game Desc.    */ text_rhythm_tweezers_desc,
+        /* Game Name     */ "リズム脱毛",
+        /* Game Desc.    */ "どんどん生えてくる\n"
+                            "うっとうしい「毛」！\n"
+                            "ぬいちゃえ、 \n"
+                            "ぬいちゃえ！",
         /* Icon ID       */ 14,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_rhythm_tweezers_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_rhythm_tweezers_try_again,
-            /* OK        */ text_rhythm_tweezers_ok,
-            /* SUPERB    */ text_rhythm_tweezers_superb
+            /* TRY AGAIN */ "これじゃ 売りものに ならん！",
+            /* OK        */ "なんで うちのヤサイは 毛がはえるんだ？",
+            /* SUPERB    */ "スッキリそうかい！ 空気がうまい！！"
         }
     },
     /* RHYTHM_TWEEZERS_2 */ {
         /* Entry Scene   */ &D_089d09ec,
-        /* Game Name     */ text_rhythm_tweezers_2_name,
-        /* Game Desc.    */ text_rhythm_tweezers_2_desc,
+        /* Game Name     */ "リズム脱毛 ２",
+        /* Game Desc.    */ "またしても生えてくる\n"
+                            "うっとうしい「毛」！\n"
+                            "ぬいちゃえ、 \n"
+                            "ぬいちゃえ！",
         /* Icon ID       */ 25,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_rhythm_tweezers_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_rhythm_tweezers_2_try_again,
-            /* OK        */ text_rhythm_tweezers_2_ok,
-            /* SUPERB    */ text_rhythm_tweezers_2_superb
+            /* TRY AGAIN */ "なんで 毛が はえるんだー！？",
+            /* OK        */ "しかしなんで うちのヤサイだけに 毛が…？",
+            /* SUPERB    */ "スッキリそうかい！ 空気がうますぎ！！"
         }
     },
     /* SICK_BEATS */ {
         /* Entry Scene   */ &D_089d0ae0,
-        /* Game Name     */ text_sick_beats_name,
-        /* Game Desc.    */ text_sick_beats_desc,
+        /* Game Name     */ "バイキン はかせ",
+        /* Game Desc.    */ "助手からの知らせ\n"
+                            "「大変です！\n"
+                            "バイキン発生です！！\n"
+                            "先生、たすけて～」",
         /* Icon ID       */ 13,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_sick_beats_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_sick_beats_try_again,
-            /* OK        */ text_sick_beats_ok,
-            /* SUPERB    */ text_sick_beats_superb
+            /* TRY AGAIN */ "研究は失敗だ。",
+            /* OK        */ "失敗は成功のもとカモ！",
+            /* SUPERB    */ "ものすごいクスリができた！！"
         }
     },
     /* BOUNCY_ROAD */ {
         /* Entry Scene   */ &D_089d0da4,
-        /* Game Name     */ text_bouncy_road_name,
-        /* Game Desc.    */ text_bouncy_road_desc,
+        /* Game Name     */ "ホッピングロード",
+        /* Game Desc.    */ "とんでくる丸い玉。\n"
+                            "あれはイイやつです。\n"
+                            "落とさないでネ！",
         /* Icon ID       */ 12,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_bouncy_road_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_bouncy_road_try_again,
-            /* OK        */ text_bouncy_road_ok,
-            /* SUPERB    */ text_bouncy_road_superb
+            /* TRY AGAIN */ "なかなか ムズカシー！",
+            /* OK        */ "けっこうな コンビネーションだったネ！",
+            /* SUPERB    */ "かんたん かんたん♪"
         }
     },
     /* BOUNCY_ROAD_2 */ {
         /* Entry Scene   */ &D_089d0f74,
-        /* Game Name     */ text_bouncy_road_2_name,
-        /* Game Desc.    */ text_bouncy_road_2_desc,
+        /* Game Name     */ "ホッピングロード２",
+        /* Game Desc.    */ "とんでくる丸い玉。\n"
+                            "ほんとにイイやつ\n"
+                            "なんですヨ～。\n"
+                            "落とさないでネ！",
         /* Icon ID       */ 50,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_bouncy_road_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_bouncy_road_2_try_again,
-            /* OK        */ text_bouncy_road_2_ok,
-            /* SUPERB    */ text_bouncy_road_2_superb
+            /* TRY AGAIN */ "エーン！ しっぱい！！",
+            /* OK        */ "なかなか がんばっていたネ！",
+            /* SUPERB    */ "らくちん らくちん♪"
         }
     },
     /* NINJA_BODYGUARD */ {
         /* Entry Scene   */ &D_089d1068,
-        /* Game Name     */ text_ninja_bodyguard_name,
-        /* Game Desc.    */ text_ninja_bodyguard_desc,
+        /* Game Name     */ "忍者",
+        /* Game Desc.    */ "敵襲(てきしゅう)だ！\n"
+                            "十\\字ボタンとAボタンで応戦(おうせん)だ！\n"
+                            "フジヤマ（ふじさん）！！",
         /* Icon ID       */ 5,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_ninja_bodyguard_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_ninja_bodyguard_try_again,
-            /* OK        */ text_ninja_bodyguard_ok,
-            /* SUPERB    */ text_ninja_bodyguard_superb
+            /* TRY AGAIN */ "ゲッ！ トノが きぜつしてる！！",
+            /* OK        */ "トノ！ ごめんなさ～い。",
+            /* SUPERB    */ "アッパレって 言われちゃったゼ！！"
         }
     },
     /* NINJA_REINCARNATE */ {
         /* Entry Scene   */ &D_089d1238,
-        /* Game Name     */ text_ninja_reincarnate_name,
-        /* Game Desc.    */ text_ninja_reincarnate_desc,
+        /* Game Name     */ "忍者の子孫",
+        /* Game Desc.    */ "オレのじいちゃんの\n"
+                            "じいちゃんの\n"
+                            "じいちゃんは\n"
+                            "忍者なんだぜ。",
         /* Icon ID       */ 38,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_ninja_reincarnate_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_ninja_reincarnate_try_again,
-            /* OK        */ text_ninja_reincarnate_ok,
-            /* SUPERB    */ text_ninja_reincarnate_superb
+            /* TRY AGAIN */ "まけるな！ おまえが頼りなのだー！！",
+            /* OK        */ "うむ、スジは良いな。がんばれ！",
+            /* SUPERB    */ "オヌシは強い。お幸せに…！"
         }
     },
     /* SNEAKY_SPIRITS */ {
         /* Entry Scene   */ &D_089d132c,
-        /* Game Name     */ text_sneaky_spirits_name,
-        /* Game Desc.    */ text_sneaky_spirits_desc,
+        /* Game Name     */ "しろいおばけ",
+        /* Game Desc.    */ "白いヤツが こちらを\n"
+                            "バカにしている！\n"
+                            "ムキーッ！！\n"
+                            "こらしめちゃおう！",
         /* Icon ID       */ 1,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_sneaky_spirits_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_sneaky_spirits_try_again,
-            /* OK        */ text_sneaky_spirits_ok,
-            /* SUPERB    */ text_sneaky_spirits_superb
+            /* TRY AGAIN */ "逃げたヤツにイタズラされた！",
+            /* OK        */ "しとめた！",
+            /* SUPERB    */ "いっぱい しとめた！！"
         }
     },
     /* SNEAKY_SPIRITS_2 */ {
         /* Entry Scene   */ &D_089d14fc,
-        /* Game Name     */ text_sneaky_spirits_2_name,
-        /* Game Desc.    */ text_sneaky_spirits_2_desc,
+        /* Game Name     */ "しろいおばけ ２",
+        /* Game Desc.    */ "白いヤツが こちらを\n"
+                            "ナメきっている！\n"
+                            "ムカムカーッ！！\n"
+                            "こらしめちゃおう！",
         /* Icon ID       */ 53,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_sneaky_spirits_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_sneaky_spirits_2_try_again,
-            /* OK        */ text_sneaky_spirits_2_ok,
-            /* SUPERB    */ text_sneaky_spirits_2_superb
+            /* TRY AGAIN */ "うわー！ やられほうだいだ！",
+            /* OK        */ "おばけ「ナ、ナンダヨ～」",
+            /* SUPERB    */ "みんな、反省してネ！"
         }
     },
     /* SAMURAI_SLICE */ {
         /* Entry Scene   */ &D_089d15f0,
-        /* Game Name     */ text_samurai_slice_name,
-        /* Game Desc.    */ text_samurai_slice_desc,
+        /* Game Name     */ "ゐあひ斬り",
+        /* Game Desc.    */ "そこのけ そこのけ\n"
+                            "奴らが通る。\n"
+                            "おぬしは サムライ、\n"
+                            "斬り捨て 御免！",
         /* Icon ID       */ 18,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_samurai_slice_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_samurai_slice_try_again,
-            /* OK        */ text_samurai_slice_ok,
-            /* SUPERB    */ text_samurai_slice_superb
+            /* TRY AGAIN */ "刃こぼれしちまった！",
+            /* OK        */ "さらに精進（しょうじん）すべし！",
+            /* SUPERB    */ "切れあじ、 サイコーだ！！"
         }
     },
     /* SPACEBALL */ {
         /* Entry Scene   */ &D_089d18cc,
-        /* Game Name     */ text_spaceball_name,
-        /* Game Desc.    */ text_spaceball_desc,
+        /* Game Name     */ "エアーバッター",
+        /* Game Desc.    */ "ズームをきにするな！\n"
+                            "心でボールを打て！\n"
+                            "視覚に頼るな！\n"
+                            "どんと行け～！",
         /* Icon ID       */ 9,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_spaceball_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_spaceball_try_again,
-            /* OK        */ text_spaceball_ok,
-            /* SUPERB    */ text_spaceball_superb
+            /* TRY AGAIN */ "これで ゆるしてください。",
+            /* OK        */ "さらに上を目指して練習だ！",
+            /* SUPERB    */ "こんなの もらっちゃったー！"
         }
     },
     /* SPACEBALL_2 */ {
         /* Entry Scene   */ &D_089d19c0,
-        /* Game Name     */ text_spaceball_2_name,
-        /* Game Desc.    */ text_spaceball_2_desc,
+        /* Game Name     */ "エアーバッター ２",
+        /* Game Desc.    */ "ズームをきにするな！\n"
+                            "心でボールを打て！\n"
+                            "視覚に頼るな！\n"
+                            "涙もふくな～！",
         /* Icon ID       */ 52,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_spaceball_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_spaceball_2_try_again,
-            /* OK        */ text_spaceball_2_ok,
-            /* SUPERB    */ text_spaceball_2_superb
+            /* TRY AGAIN */ "ナニスルノデスカー！",
+            /* OK        */ "こんなところで 終われない！",
+            /* SUPERB    */ "みんな、見て見てー！"
         }
     },
     /* TAP_TRIAL */ {
         /* Entry Scene   */ &D_089d1c6c,
-        /* Game Name     */ text_tap_trial_name,
-        /* Game Desc.    */ text_tap_trial_desc,
+        /* Game Name     */ "タップダンズ",
+        /* Game Desc.    */ "あなたは女の子。\n"
+                            "となりのサルたちに\n"
+                            "合わせてタップを\n"
+                            "きざむッス！",
         /* Icon ID       */ 6,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_tap_trial_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_tap_trial_try_again,
-            /* OK        */ text_tap_trial_ok,
-            /* SUPERB    */ text_tap_trial_superb
+            /* TRY AGAIN */ "無念だわ。",
+            /* OK        */ "ちょっと、 ヘンなトコあったけどネ！",
+            /* SUPERB    */ "気分は もう、サイコー！！"
         }
     },
     /* TAP_TRIAL_2 */ {
         /* Entry Scene   */ &D_089d6258,
-        /* Game Name     */ text_tap_trial_2_name,
-        /* Game Desc.    */ text_tap_trial_2_desc,
+        /* Game Name     */ "スーパータップ",
+        /* Game Desc.    */ "サルがパワーアップ！\n"
+                            "あなたは かれらに\n"
+                            "ついていけるか！？\n"
+                            "まけるな～！",
         /* Icon ID       */ 11,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_tap_trial_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_tap_trial_2_try_again,
-            /* OK        */ text_tap_trial_2_ok,
-            /* SUPERB    */ text_tap_trial_2_superb
+            /* TRY AGAIN */ "ガーン！",
+            /* OK        */ "う～ん… すこし ちがうカンジ…",
+            /* SUPERB    */ "この気持ち、とまらなーい！"
         }
     },
     /* MARCHING_ORDERS */ {
         /* Entry Scene   */ &D_089d21dc,
-        /* Game Name     */ text_marching_orders_name,
-        /* Game Desc.    */ text_marching_orders_desc,
+        /* Game Name     */ "マーチャ",
+        /* Game Desc.    */ "行進をするのだ。\n"
+                            "かってな行動はチームをダメにする！\n"
+                            "がんばりたまえ。",
         /* Icon ID       */ 21,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_marching_orders_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_marching_orders_try_again,
-            /* OK        */ text_marching_orders_ok,
-            /* SUPERB    */ text_marching_orders_superb
+            /* TRY AGAIN */ "わぁっ！おいてけぼりされた！",
+            /* OK        */ "今日の任務は、おそうじでーす♪",
+            /* SUPERB    */ "宇宙人の救出、大成功！！"
         }
     },
     /* MARCHING_ORDERS_2 */ {
         /* Entry Scene   */ &D_089d23ac,
-        /* Game Name     */ text_marching_orders_2_name,
-        /* Game Desc.    */ text_marching_orders_2_desc,
+        /* Game Name     */ "マーチャ ２",
+        /* Game Desc.    */ "行進をするのだ。\n"
+                            "こんどのは ちょっと\n"
+                            "テクニカルだ！\n"
+                            "がんばりたまえ。",
         /* Icon ID       */ 20,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_marching_orders_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_marching_orders_2_try_again,
-            /* OK        */ text_marching_orders_2_ok,
-            /* SUPERB    */ text_marching_orders_2_superb
+            /* TRY AGAIN */ "こ、これでは、イカン！う～む…",
+            /* OK        */ "ぐっ！ もっとカッコよくおどらなければ！",
+            /* SUPERB    */ "ごほうびに、こんなのもらってしまった！！"
         }
     },
     /* WIZARDS_WALTZ */ {
         /* Entry Scene   */ &D_089d24a0,
-        /* Game Name     */ text_wizards_waltz_name,
-        /* Game Desc.    */ text_wizards_waltz_desc,
+        /* Game Name     */ "まほうつかい",
+        /* Game Desc.    */ "あなたはまほう使い。\n"
+                            "さみしがりやの\n"
+                            "おじょうちゃんに花を\n"
+                            "プレゼントしよう。",
         /* Icon ID       */ 23,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_wizards_waltz_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_wizards_waltz_try_again,
-            /* OK        */ text_wizards_waltz_ok,
-            /* SUPERB    */ text_wizards_waltz_superb
+            /* TRY AGAIN */ "こんなのヤダ～、 こわいヨ～！",
+            /* OK        */ "もっと 花がさくと うれしいな～。",
+            /* SUPERB    */ "わーい、 わたし もう さみしくないヨ！"
         }
     },
     /* BUNNY_HOP */ {
         /* Entry Scene   */ &D_089d2858,
-        /* Game Name     */ text_bunny_hop_name,
-        /* Game Desc.    */ text_bunny_hop_desc,
+        /* Game Name     */ "ウサギとび",
+        /* Game Desc.    */ "ジャンプが得意な\n"
+                            "白いウサギさん。\n"
+                            "ビートにのって\n"
+                            "海をわたろう！",
         /* Icon ID       */ 24,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_bunny_hop_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_bunny_hop_try_again,
-            /* OK        */ text_bunny_hop_ok,
-            /* SUPERB    */ text_bunny_hop_superb
+            /* TRY AGAIN */ "月に帰りた～い！",
+            /* OK        */ "着地は失敗しちゃった…",
+            /* SUPERB    */ "まん点！！"
         }
     },
     /* FIREWORKS */ {
         /* Entry Scene   */ &D_089d2a34,
-        /* Game Name     */ text_fireworks_name,
-        /* Game Desc.    */ text_fireworks_desc,
+        /* Game Name     */ "花火",
+        /* Game Desc.    */ "夏といえばさ、\n"
+                            "やっぱ花火かな？\n"
+                            "色あざやかに\n"
+                            "打ち上げよう！",
         /* Icon ID       */ 26,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_fireworks_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_fireworks_try_again,
-            /* OK        */ text_fireworks_ok,
-            /* SUPERB    */ text_fireworks_superb
+            /* TRY AGAIN */ "ゲホゲホッ… 失敗。",
+            /* OK        */ "なかなかのデキだぜ！",
+            /* SUPERB    */ "花火のことならオレにまかせろ！！"
         }
     },
     /* POWER_CALLIGRAPHY */ {
         /* Entry Scene   */ &D_089d2dd4,
-        /* Game Name     */ text_power_calligraphy_name,
-        /* Game Desc.    */ text_power_calligraphy_desc,
+        /* Game Name     */ "リズムお習字",
+        /* Game Desc.    */ "筆を使って日本語を\n"
+                            "書きます。\n"
+                            "あなたがするのは\n"
+                            "オイシイとこだけ。",
         /* Icon ID       */ 28,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_power_calligraphy_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_power_calligraphy_try_again,
-            /* OK        */ text_power_calligraphy_ok,
-            /* SUPERB    */ text_power_calligraphy_superb
+            /* TRY AGAIN */ "ふ～…  アカンわ。",
+            /* OK        */ "お習字を もっと楽しもう！",
+            /* SUPERB    */ "お習字って ノリノリだネ！！"
         }
     },
     /* POWER_CALLIGRAPHY_2 */ {
         /* Entry Scene   */ &D_089d2dd4,
-        /* Game Name     */ text_power_calligraphy_2_name,
-        /* Game Desc.    */ text_power_calligraphy_desc,
+        /* Game Name     */ "リズムお習字 ２",
+        /* Game Desc.    */ "筆を使って日本語を\n"
+                            "書きます。\n"
+                            "あなたがするのは\n"
+                            "オイシイとこだけ。",
         /* Icon ID       */ 28,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_power_calligraphy_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_power_calligraphy_try_again,
-            /* OK        */ text_power_calligraphy_ok,
-            /* SUPERB    */ text_power_calligraphy_superb
+            /* TRY AGAIN */ "ふ～…  アカンわ。",
+            /* OK        */ "お習字を もっと楽しもう！",
+            /* SUPERB    */ "お習字って ノリノリだネ！！"
         }
     },
     /* TOSS_BOYS */ {
         /* Entry Scene   */ &D_089d3268,
-        /* Game Name     */ text_toss_boys_name,
-        /* Game Desc.    */ text_toss_boys_desc,
+        /* Game Name     */ "トスボーイズ",
+        /* Game Desc.    */ "なかよし３人組、\n"
+                            "声をかけあいながら\n"
+                            "いつも楽しくトスの\n"
+                            "練習してます。",
         /* Icon ID       */ 30,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_toss_boys_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_toss_boys_try_again,
-            /* OK        */ text_toss_boys_ok,
-            /* SUPERB    */ text_toss_boys_superb
+            /* TRY AGAIN */ "ダメダメだァ～！",
+            /* OK        */ "まだまだもっと上手にできるはず！",
+            /* SUPERB    */ "目標は、 トス世界選手権 優勝だー！！"
         }
     },
     /* TOSS_BOYS_2 */ {
         /* Entry Scene   */ &D_089d3174,
-        /* Game Name     */ text_toss_boys_2_name,
-        /* Game Desc.    */ text_toss_boys_desc,
+        /* Game Name     */ "トスボーイズ ２",
+        /* Game Desc.    */ "なかよし３人組、\n"
+                            "声をかけあいながら\n"
+                            "いつも楽しくトスの\n"
+                            "練習してます。",
         /* Icon ID       */ 29,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_toss_boys_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_toss_boys_2_try_again,
-            /* OK        */ text_spaceball_2_ok,
-            /* SUPERB    */ text_toss_boys_2_superb
+            /* TRY AGAIN */ "ボロボロだァ～！",
+            /* OK        */ "こんなところで 終われない！",
+            /* SUPERB    */ "最強メンバーのたんじょうだー！！"
         }
     },
     /* RAT_RACE */ {
         /* Entry Scene   */ &D_089d2c04,
-        /* Game Name     */ text_rat_race_name,
-        /* Game Desc.    */ text_rat_race_desc,
+        /* Game Name     */ "こっそり ラット",
+        /* Game Desc.    */ "あなたはネズミ。\n"
+                            "大スキなチーズを\n"
+                            "めざして\n"
+                            "ストップ＆ゴー！！",
         /* Icon ID       */ 31,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_rat_race_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_rat_race_try_again,
-            /* OK        */ text_rat_race_ok,
-            /* SUPERB    */ text_rat_race_superb
+            /* TRY AGAIN */ "チーズ 食べたいよ～…",
+            /* OK        */ "チーズ おいしいね。",
+            /* SUPERB    */ "みんな、 よかったネ！"
         }
     },
     /* TRAM_PAULINE */ {
         /* Entry Scene   */ &D_089d35fc,
-        /* Game Name     */ text_tram_pauline_name,
-        /* Game Desc.    */ text_tram_pauline_desc,
+        /* Game Name     */ "トランとポリン",
+        /* Game Desc.    */ "こぎつねトラン、\n"
+                            "そしてポリンの\n"
+                            "アクロバティックショーがはじまるヨ！",
         /* Icon ID       */ 32,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_tram_pauline_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_tram_pauline_try_again,
-            /* OK        */ text_tram_pauline_ok,
-            /* SUPERB    */ text_tram_pauline_superb
+            /* TRY AGAIN */ "大しっぱいだ～！！",
+            /* OK        */ "ちゅうとハンパでした…",
+            /* SUPERB    */ "コンビネーション バッチシ！！"
         }
     },
     /* SHOWTIME */ {
         /* Entry Scene   */ &D_089d3c48,
-        /* Game Name     */ text_showtime_name,
-        /* Game Desc.    */ text_showtime_desc,
+        /* Game Name     */ "ショータイム",
+        /* Game Desc.    */ "ペンギン君たちの\n"
+                            "ショータイムが\n"
+                            "はじまるヨ！\n"
+                            "わーいわーい！",
         /* Icon ID       */ 36,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_showtime_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_showtime_try_again,
-            /* OK        */ text_showtime_ok,
-            /* SUPERB    */ text_showtime_superb
+            /* TRY AGAIN */ "お客さん、 おこってたネ…",
+            /* OK        */ "ボクたち こんなもんじゃないはず…",
+            /* SUPERB    */ "やった！！ お客さん 楽しんでくれたー！！"
         }
     },
     /* SPACE_DANCE */ {
         /* Entry Scene   */ &D_089d3e18,
-        /* Game Name     */ text_space_dance_name,
-        /* Game Desc.    */ text_space_dance_desc,
+        /* Game Name     */ "スペースダンス",
+        /* Game Desc.    */ "ここは無重力の宇宙。\n"
+                            "でも、 おどろうヨ！\n"
+                            "レッツスペースダンス！",
         /* Icon ID       */ 40,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_space_dance_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_space_dance_try_again,
-            /* OK        */ text_space_dance_ok,
-            /* SUPERB    */ text_space_dance_superb
+            /* TRY AGAIN */ "ブ、 ブラックホールだー！！",
+            /* OK        */ "あの星のように かがやきたいな…",
+            /* SUPERB    */ "ボクたちは スペーススーパースター！！"
         }
     },
     /* COSMIC_DANCE */ {
         /* Entry Scene   */ &D_089d68f8,
-        /* Game Name     */ text_cosmic_dance_name,
-        /* Game Desc.    */ text_cosmic_dance_desc,
+        /* Game Name     */ "コスモダンス",
+        /* Game Desc.    */ "宇宙を代表\\する\n"
+                            "ダンサーたち！\n"
+                            "キレた動きに\n"
+                            "くぎづけです！！",
         /* Icon ID       */ 16,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_cosmic_dance_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_cosmic_dance_try_again,
-            /* OK        */ text_cosmic_dance_ok,
-            /* SUPERB    */ text_cosmic_dance_superb
+            /* TRY AGAIN */ "お、おわりだー！！",
+            /* OK        */ "あなたたちって こんなものなの？",
+            /* SUPERB    */ "ボクたちは スーパーコスモスターさ！！"
         }
     },
     /* RAP_MEN */ {
         /* Entry Scene   */ &D_089d40d0,
-        /* Game Name     */ text_rap_men_name,
-        /* Game Desc.    */ text_rap_men_desc,
+        /* Game Name     */ "ラップメン",
+        /* Game Desc.    */ "クールなふたり組が\n"
+                            "やってきた！\n"
+                            "アツいラップで\n"
+                            "大コーフンだぜ！",
         /* Icon ID       */ 42,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_rap_men_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_rap_men_try_again,
-            /* OK        */ text_rap_men_ok,
-            /* SUPERB    */ text_rap_men_superb
+            /* TRY AGAIN */ "オレたち、 ダサいやん…",
+            /* OK        */ "チェッ。 なんか 調子わるいわぁ。",
+            /* SUPERB    */ "これからも よろしく たのんまっせー！！"
         }
     },
     /* RAP_WOMEN */ {
         /* Entry Scene   */ &D_089d6440,
-        /* Game Name     */ text_rap_women_name,
-        /* Game Desc.    */ text_rap_women_desc,
+        /* Game Name     */ "ラップウイメン",
+        /* Game Desc.    */ "あのラップメンに\n"
+                            "ライバルが登場だ！\n"
+                            "キュートなボイスに\n"
+                            "もう メロメロ！",
         /* Icon ID       */ 15,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_rap_women_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_rap_women_try_again,
-            /* OK        */ text_rap_women_ok,
-            /* SUPERB    */ text_rap_women_superb
+            /* TRY AGAIN */ "こんなん ちゃうわぁ…",
+            /* OK        */ "なんか ちょっと イマイチかも…！",
+            /* SUPERB    */ "そうそう コレコレ、これやわー！！イェーイ！"
         }
     },
     /* QUIZ_SHOW */ {
         /* Entry Scene   */ &D_089d42a0,
-        /* Game Name     */ text_quiz_show_name,
-        /* Game Desc.    */ text_quiz_show_desc,
+        /* Game Name     */ "クイズ",
+        /* Game Desc.    */ "司会者の、\n"
+                            "「たたいた回数」を\n"
+                            "当てるカンタンな\n"
+                            "クイズです。",
         /* Icon ID       */ 43,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_quiz_show_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_quiz_show_try_again,
-            /* OK        */ text_quiz_show_ok,
-            /* SUPERB    */ text_quiz_show_superb
+            /* TRY AGAIN */ "ま、 こんなものさ。",
+            /* OK        */ "次回に向けて 勉強、勉強…Zzz",
+            /* SUPERB    */ "世界旅行 もらっちゃった！"
         }
     },
     /* BON_ODORI */ {
         /* Entry Scene   */ &D_089d6088,
-        /* Game Name     */ text_bon_odori_name,
-        /* Game Desc.    */ text_bon_odori_desc,
+        /* Game Name     */ "ザ☆ぼんおどり",
+        /* Game Desc.    */ "ぼんおどりの\n"
+                            "うたに あわせて\n"
+                            "パンッと 手を\n"
+                            "たたきましょう。",
         /* Icon ID       */ 35,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_bon_odori_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_bon_odori_try_again,
-            /* OK        */ text_bon_odori_ok,
-            /* SUPERB    */ text_bon_odori_superb
+            /* TRY AGAIN */ "さむいわ…",
+            /* OK        */ "せんこう花火って、せつないね。",
+            /* SUPERB    */ "あー、楽しかった！"
         }
     },
     /* BON_DANCE */ {
         /* Entry Scene   */ &D_089d7314,
-        /* Game Name     */ text_bon_dance_name,
-        /* Game Desc.    */ text_bon_dance_desc,
+        /* Game Name     */ "ボンダンス",
+        /* Game Desc.    */ "これが いまどきの\n"
+                            "ぼんおどり！\n"
+                            "ノリノリだヨ！\n"
+                            "イェーイ！",
         /* Icon ID       */ 17,
         /* Icon Style    */ 0,
         /* Epilogue GFX  */ epilogue_bon_dance_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_bon_dance_try_again,
-            /* OK        */ text_bon_dance_ok,
-            /* SUPERB    */ text_bon_dance_superb
+            /* TRY AGAIN */ "もういや…",
+            /* OK        */ "うーん、雨がふってきちゃった。",
+            /* SUPERB    */ "ボンダンスって すごく楽しいよネー！"
         }
     },
     /* REMIX_1 */ {
         /* Entry Scene   */ &D_089d2764,
-        /* Game Name     */ text_remix_1_name,
-        /* Game Desc.    */ text_remix_desc,
+        /* Game Name     */ "リミックス １",
+        /* Game Desc.    */ "キミの実力を\n"
+                            "試してみてみる？\n"
+                            "これまでの経験が\n"
+                            "モノを言うヨ～！",
         /* Icon ID       */ 22,
         /* Icon Style    */ 1,
         /* Epilogue GFX  */ epilogue_remix1_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_remix_1_try_again,
-            /* OK        */ text_remix_1_ok,
-            /* SUPERB    */ text_remix_1_superb
+            /* TRY AGAIN */ "今回のデキ ： 猫のおやつクラス",
+            /* OK        */ "今回のデキ ： 朝食クラス",
+            /* SUPERB    */ "今回のデキ ： なんと、 ディナークラス！！"
         }
     },
     /* REMIX_2 */ {
         /* Entry Scene   */ &D_089d6628,
-        /* Game Name     */ text_remix_2_name,
-        /* Game Desc.    */ text_remix_desc,
+        /* Game Name     */ "リミックス ２",
+        /* Game Desc.    */ "キミの実力を\n"
+                            "試してみてみる？\n"
+                            "これまでの経験が\n"
+                            "モノを言うヨ～！",
         /* Icon ID       */ 27,
         /* Icon Style    */ 1,
         /* Epilogue GFX  */ epilogue_remix2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_remix_2_try_again,
-            /* OK        */ text_remix_2_ok,
-            /* SUPERB    */ text_remix_2_superb
+            /* TRY AGAIN */ "今回の熱気 ： ひとりで練習レベル",
+            /* OK        */ "今回の熱気 ： 楽しくキャッチボールレベル",
+            /* SUPERB    */ "今回の熱気 ： すごい大会レベル！！"
         }
     },
     /* REMIX_3 */ {
         /* Entry Scene   */ &D_089d7038,
-        /* Game Name     */ text_remix_3_name,
-        /* Game Desc.    */ text_remix_desc,
+        /* Game Name     */ "リミックス ３",
+        /* Game Desc.    */ "キミの実力を\n"
+                            "試してみてみる？\n"
+                            "これまでの経験が\n"
+                            "モノを言うヨ～！",
         /* Icon ID       */ 33,
         /* Icon Style    */ 1,
         /* Epilogue GFX  */ epilogue_remix3_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_remix_3_try_again,
-            /* OK        */ text_remix_3_ok,
-            /* SUPERB    */ text_remix_3_superb
+            /* TRY AGAIN */ "今回のラブ ： ブロークンハートかも…",
+            /* OK        */ "今回のラブ ： とってもフレンドリーな感じ♪",
+            /* SUPERB    */ "今回のラブ ： ラブラブでーす！！"
         }
     },
     /* REMIX_4 */ {
         /* Entry Scene   */ &D_089d671c,
-        /* Game Name     */ text_remix_4_name,
-        /* Game Desc.    */ text_remix_desc,
+        /* Game Name     */ "リミックス ４",
+        /* Game Desc.    */ "キミの実力を\n"
+                            "試してみてみる？\n"
+                            "これまでの経験が\n"
+                            "モノを言うヨ～！",
         /* Icon ID       */ 34,
         /* Icon Style    */ 1,
         /* Epilogue GFX  */ epilogue_remix4_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_remix_4_try_again,
-            /* OK        */ text_remix_4_ok,
-            /* SUPERB    */ text_remix_4_superb
+            /* TRY AGAIN */ "今回の天気 ： 雨",
+            /* OK        */ "今回の天気 ： くもり",
+            /* SUPERB    */ "今回の天気 ： ハッピーな晴れ！！"
         }
     },
     /* REMIX_5 */ {
         /* Entry Scene   */ &D_089d7220,
-        /* Game Name     */ text_remix_5_name,
-        /* Game Desc.    */ text_remix_desc,
+        /* Game Name     */ "リミックス ５",
+        /* Game Desc.    */ "キミの実力を\n"
+                            "試してみてみる？\n"
+                            "これまでの経験が\n"
+                            "モノを言うヨ～！",
         /* Icon ID       */ 39,
         /* Icon Style    */ 1,
         /* Epilogue GFX  */ epilogue_remix5_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_remix_5_try_again,
-            /* OK        */ text_remix_5_ok,
-            /* SUPERB    */ text_remix_5_superb
+            /* TRY AGAIN */ "今回のふたり ： ジャマされてしまった！",
+            /* OK        */ "今回のふたり ： このさき、チョット不安かも…",
+            /* SUPERB    */ "今回のふたり ： 幸せになりました♪"
         }
     },
     /* REMIX_6 */ {
         /* Entry Scene   */ &D_089d7408,
-        /* Game Name     */ text_remix_6_name,
-        /* Game Desc.    */ text_remix_desc,
+        /* Game Name     */ "リミックス ６",
+        /* Game Desc.    */ "キミの実力を\n"
+                            "試してみてみる？\n"
+                            "これまでの経験が\n"
+                            "モノを言うヨ～！",
         /* Icon ID       */ 2,
         /* Icon Style    */ 1,
         /* Epilogue GFX  */ epilogue_remix6_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_remix_6_try_again,
-            /* OK        */ text_remix_6_ok,
-            /* SUPERB    */ text_remix_6_superb
+            /* TRY AGAIN */ "今回の内容 ： ややさみしいカンジ",
+            /* OK        */ "今回の内容 ： 意外なカンジ",
+            /* SUPERB    */ "今回の内容 ： アンビリーバボーなカンジ！！"
         }
     },
     /* REMIX_7 */ {
         /* Entry Scene   */ &D_089d712c,
-        /* Game Name     */ text_remix_7_name,
-        /* Game Desc.    */ text_remix_desc,
+        /* Game Name     */ "リミックス ７",
+        /* Game Desc.    */ "キミの実力を\n"
+                            "試してみてみる？\n"
+                            "これまでの経験が\n"
+                            "モノを言うヨ～！",
         /* Icon ID       */ 19,
         /* Icon Style    */ 1,
         /* Epilogue GFX  */ epilogue_remix7_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_remix_7_try_again,
-            /* OK        */ text_remix_7_ok,
-            /* SUPERB    */ text_remix_7_superb
+            /* TRY AGAIN */ "今回のきょうりゅう ： いじわる",
+            /* OK        */ "今回のきょうりゅう ： ほのぼの",
+            /* SUPERB    */ "今回のきょうりゅう ： 楽しすぎ～！！"
         }
     },
     /* REMIX_8 */ {
         /* Entry Scene   */ &D_089d74fc,
-        /* Game Name     */ text_remix_8_name,
-        /* Game Desc.    */ text_remix_desc,
+        /* Game Name     */ "リミックス ８",
+        /* Game Desc.    */ "キミの実力を\n"
+                            "試してみてみる？\n"
+                            "これまでの経験が\n"
+                            "モノを言うヨ～！",
         /* Icon ID       */ 37,
         /* Icon Style    */ 1,
         /* Epilogue GFX  */ epilogue_remix8_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_remix_8_try_again,
-            /* OK        */ text_remix_8_ok,
-            /* SUPERB    */ text_remix_8_superb
+            /* TRY AGAIN */ "今回のドライブ ： んもぅ…",
+            /* OK        */ "今回のドライブ ： まだまだかかるなぁ",
+            /* SUPERB    */ "今回のドライブ ： とっても爽快！！"
         }
     },
     /* CAFE */ {
         /* Entry Scene   */ &D_089cda0c,
-        /* Game Name     */ text_cafe_name,
-        /* Game Desc.    */ text_cafe_desc,
+        /* Game Name     */ "喫茶カウンセル",
+        /* Game Desc.    */ "最近の調子 どう？\n"
+                            "なにか気になれば\n"
+                            "ここで相談を\n"
+                            "してみよう。",
         /* Icon ID       */ 45,
         /* Icon Style    */ 2,
         /* Epilogue GFX  */ epilogue_cafe_gfx_tables,
@@ -1752,8 +795,11 @@ struct LevelData level_data_table[] = {
     },
     /* RHYTHM_TOYS */ {
         /* Entry Scene   */ &D_089dd86c,
-        /* Game Name     */ text_rhythm_toys_name,
-        /* Game Desc.    */ text_rhythm_toys_desc,
+        /* Game Name     */ "おもちゃ",
+        /* Game Desc.    */ "メダルを あつめて\n"
+                            "音のでるおもちゃで\n"
+                            "あそんでみてネ！\n"
+                            "いくつかあるヨ。",
         /* Icon ID       */ 46,
         /* Icon Style    */ 2,
         /* Epilogue GFX  */ epilogue_toys_menu_gfx_tables,
@@ -1765,8 +811,11 @@ struct LevelData level_data_table[] = {
     },
     /* ENDLESS_GAMES */ {
         /* Entry Scene   */ &D_089dd8ac,
-        /* Game Name     */ text_endless_games_name,
-        /* Game Desc.    */ text_endless_games_desc,
+        /* Game Name     */ "ゲーム",
+        /* Game Desc.    */ "メダルを あつめて\n"
+                            "とくべつなゲームに\n"
+                            "挑戦してみてネ！\n"
+                            "いくつかあるヨ。",
         /* Icon ID       */ 47,
         /* Icon Style    */ 2,
         /* Epilogue GFX  */ epilogue_endless_menu_gfx_tables,
@@ -1778,8 +827,11 @@ struct LevelData level_data_table[] = {
     },
     /* DRUM_LESSONS */ {
         /* Entry Scene   */ &D_089dd8ec,
-        /* Game Name     */ text_drum_lessons_name,
-        /* Game Desc.    */ text_drum_lessons_desc,
+        /* Game Name     */ "ドラムレッスン",
+        /* Game Desc.    */ "メダルを あつめて\n"
+                            "ドラムのレッスンを\n"
+                            "うけてみよう。\n"
+                            "上手になってネ！",
         /* Icon ID       */ 48,
         /* Icon Style    */ 2,
         /* Epilogue GFX  */ epilogue_lessons_menu_gfx_tables,
@@ -1791,8 +843,11 @@ struct LevelData level_data_table[] = {
     },
     /* STAFF_CREDIT */ {
         /* Entry Scene   */ &D_089d6e5c,
-        /* Game Name     */ text_credits_name,
-        /* Game Desc.    */ text_credits_desc,
+        /* Game Name     */ "スタッフ",
+        /* Game Desc.    */ "もし よかったら\n"
+                            "見てみてネ。\n"
+                            "このゲームの\n"
+                            "スタッフたちです。",
         /* Icon ID       */ 49,
         /* Icon Style    */ 2,
         /* Epilogue GFX  */ epilogue_staff_credit_gfx_tables,
@@ -1804,15 +859,18 @@ struct LevelData level_data_table[] = {
     },
     /* LIVE_MENU */ {
         /* Entry Scene   */ &D_089d6f44,
-        /* Game Name     */ text_concert_hall_name,
-        /* Game Desc.    */ text_concert_hall_desc,
+        /* Game Name     */ "ライブ",
+        /* Game Desc.    */ "ライブに出演だ！\n"
+                            "キミのリズム感は\n"
+                            "よいと思うから\n"
+                            "どうぞお気楽に～",
         /* Icon ID       */ 44,
         /* Icon Style    */ 2,
         /* Epilogue GFX  */ epilogue_concert_hall_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY AGAIN */ text_concert_hall_try_again,
-            /* OK        */ text_concert_hall_ok,
-            /* SUPERB    */ text_concert_hall_superb
+            /* TRY AGAIN */ "おばちゃん「またつぎ、がんばりなよ！」",
+            /* OK        */ "オーナー「キミ、なかなか スジあるヨ」",
+            /* SUPERB    */ "プロデューサー「うちで、ガンバってみない？」"
         }
-    },
+    }
 };
