@@ -115,7 +115,7 @@ branch_080166a0: \n\
 /* 080166e6 */ BL func_0804d8f8 \n\
 /* 080166ea */ LDR R0, [R6] \n\
 /* 080166ec */ LDR R0, [R0, 0x14] \n\
-/* 080166ee */ LDR R1, =options_desc \n\
+/* 080166ee */ LDR R1, =options_desc_text \n\
 /* 080166f0 */ LDR R1, [R1] \n\
 /* 080166f2 */ B branch_0801675c \n\
 \n\
@@ -159,7 +159,7 @@ branch_08016708: \n\
 /* 08016750 */ BL func_0804d8f8 \n\
 /* 08016754 */ LDR R0, [R6] \n\
 /* 08016756 */ LDR R0, [R0, 0x14] \n\
-/* 08016758 */ LDR R1, =options_desc \n\
+/* 08016758 */ LDR R1, =options_desc_text \n\
 /* 0801675a */ LDR R1, [R1, 0x4] \n\
  \n\
 branch_0801675c: \n\

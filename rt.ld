@@ -267,8 +267,8 @@ SECTIONS {
         build/data/scenes/cafe/data.c.o(.rodata);
 		build/src/scenes/data_check.c.o(.rodata);
         build/data/scenes/game_select/data.c.o(.rodata);
-        build/text/options_text.c.o(.rodata);
-        build/text/perfect_text.c.o(.rodata);
+        build/data/scenes/options/data.c.o(.rodata);
+        build/data/scenes/perfect/data.c.o(.rodata);
         build/text/results_text.c.o(.rodata);
         build/text/reading_text.c.o(.rodata);
         build/text/studio_text.c.o(.rodata);

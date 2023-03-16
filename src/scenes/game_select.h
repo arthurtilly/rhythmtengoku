@@ -255,7 +255,7 @@ enum RhythmGameLevelsEnum {
 // Sound Effects:
 
 
-// Scene Definition Data:
+// Scene Data:
 extern struct PerfectCampaignData perfect_gifts_table[48];
 extern struct Animation *perfect_campaign_borders[3]; // { 0 = No Flowers; 1 = 3 Flowers; 2 = 6 Flowers }
 extern struct LevelData level_data_table[55];
@@ -275,9 +275,9 @@ extern const char D_08050c24[];
 
 
 // Functions:
-extern void func_080127fc(void); // [func_080127fc] Initialise Static Variables (Clear D_0300131c)
+extern void func_080127fc(void); // Initialise Static Variables (Clear D_0300131c)
 extern void func_08012808(void); // Set D_0300131c
-extern void func_08012814(void); // [func_08012814] Play Music (Script Function)
+extern void func_08012814(void); // Play Music (Script Function)
 extern void func_08012850(void); // Set D_03001320 to -1
 extern void func_08012860(s32); // Set D_03001320
 extern s32 func_0801286c(void); // Get D_03001320
@@ -308,14 +308,14 @@ extern void func_0801338c(void); // Initialise unk1C
 // extern ? func_080133cc(?);
 extern void func_080134ec(void); // update something
 // extern ? func_0801350c(?);
-extern void func_08013530(void); // [func_08013530] Graphics Init. 3
-extern void func_08013570(void); // [func_08013570] Graphics Init. 2
-extern void func_0801359c(void); // [func_0801359c] Graphics Init. 1
-extern void func_080135cc(void); // [func_080135cc] Graphics Init. 0
-extern void game_select_scene_start(s32);  // [func_08013644] Scene Init.
+extern void func_08013530(void); // Graphics Init. 4
+extern void func_08013570(void); // Graphics Init. 3
+extern void func_0801359c(void); // Graphics Init. 2
+extern void func_080135cc(void); // Graphics Init. 1
+extern void game_select_scene_start(s32);  // Scene Start
 extern void func_08013994(void); // init. something
 // extern ? func_080139a0(?);
-extern void game_select_scene_update_frozen(s32 unused); // [func_080139ac] Scene STUB
+extern void game_select_scene_paused(s32 unused); // Scene Update (Paused)
 // extern ? func_080139b0(?);
 // extern ? func_080139f4(?);
 extern void func_08013a38(void); // update something
@@ -331,7 +331,7 @@ extern void func_08013f9c(void); // Set Current Game Scene Entry
 extern void func_080140a4(s32 x); // Set Stage Title Text
 extern void func_080140ec(void); // update something
 extern void func_080140f8(s16 sprite); // Link Sprite Position to BG Offset?
-extern void game_select_scene_update(s32); // [func_08014118] Scene Main
+extern void game_select_scene_update(s32); // Scene Update (Active)
 // extern ? func_080141a4(?);
 // extern ? func_080141c0(?);
 // extern ? func_080141d4(?);
@@ -366,7 +366,7 @@ extern u32 func_080152b0(u32 *outMod, u32 *outScore); // Calculate Flow?
 extern u32 func_080153a8(void); // Set Flow?
 extern void func_080154f0(void); // Initialise Flow Display
 extern void func_08015660(void); // update something (cursor movement?)
-extern void game_select_scene_stop(s32 unused); // [func_080158d4] Scene Close
+extern void game_select_scene_stop(s32 unused); // Scene Stop
 extern void func_080158f0(void); // STUB
 extern void func_080158f4(void); // init. something
 extern void func_0801593c(void); // STUB

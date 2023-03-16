@@ -1,5 +1,6 @@
 #include "global.h"
 #include "main_menu.h"
+#include "graphics/main_menu/main_menu_graphics.h"
 
 #include "src/main.h"
 #include "src/code_08001360.h"

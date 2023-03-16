@@ -163,7 +163,7 @@ thumb_func_start func_08016364 \n\
 /* 080164c4 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 080164c6 */ MOVS R1, 0xF @ Set R1 to 0xF \n\
 /* 080164c8 */ BL text_printer_set_line_spacing \n\
-/* 080164cc */ LDR R0, =options_desc \n\
+/* 080164cc */ LDR R0, =options_desc_text \n\
 /* 080164ce */ LDR R1, [R0] \n\
 /* 080164d0 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 080164d2 */ BL text_printer_set_string \n\
@@ -242,7 +242,7 @@ thumb_func_start func_08016364 \n\
 /* 0801657e */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08016580 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08016582 */ BL text_printer_show_text \n\
-/* 08016586 */ LDR R1, =D_08054950 \n\
+/* 08016586 */ LDR R1, =options_data_clear_confirm_text \n\
 /* 08016588 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0801658a */ BL text_printer_set_string \n\
 /* 0801658e */ LDR R0, [R6] \n\

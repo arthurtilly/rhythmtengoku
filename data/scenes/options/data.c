@@ -2,7 +2,6 @@
 #include "graphics.h"
 #include "src/scenes/options.h"
 #include "graphics/options/options_graphics.h"
-#include "text/options_text.h"
 
 
   /* OPTIONS MENU - SCENE DATA */
@@ -38,16 +37,46 @@ struct GraphicsTable options_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
+
 // [D_089cfb10] Buffered Textures List
 struct CompressedGraphics *options_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
+
+// [D_08054950] Data Clear Confirmation Options
+        // Erase ALL data?
+        //　　　　　　　Erase
+        //　　　　　　　Cancel
+const char options_data_clear_confirm_text[] =
+        "\x02\x33" "\x01\x33" "\x01\x43" "ホントに消すの？\n"
+        "\x02\x31" "\x01\x31" "\x01\x4c" "　　　　　　　はい\n"
+        "　　　　　　　いいえ";
+
+
 // [D_089cfb14] Option Descriptions
-const char *options_desc[] = {
-    /* Sound Mode */ D_080549fc,
-    /* Data Clear */ D_08054998,
+    /* -------------------------------- */
+        // Sound Mode
+        // <Stereo>  For headphones, Nintendo DS, etc.
+        // <Mono>  For GBAs without headphones.
+    /* -------------------------------- */
+        // Clear Save Data
+        // Erase progress, gifts, drum lessons,
+        // <everything>! Think about it!
+    /* -------------------------------- */
+
+const char *options_desc_text[] = {
+    /* SOUND MODE ------------------------------------- */
+        "\x02\x33" "\x01\x33" "\x01\x43" "サウンドモード\n"
+        "\x02\x31" "\x01\x31" "\x01\x4c" "ステレオ　　ヘッドホンならこっち！オススメ！\n"
+        "モノラル　　本体のスピーカーならこっち。",
+    /* DATA CLEAR ------------------------------------- */
+        "\x02\x33" "\x01\x33" "\x01\x43" "データのクリア\n"
+        "\x02\x31" "\x01\x31" "\x01\x4c" "いままでの記録を全部けして、はじめから\n"
+        "やりなおします。よく考えてネ！"
+    /* ------------------------------------------------ */
 };
+
 
 // [D_089cfb1c] Audio Options
 struct Animation *options_sound_mode_anim[][2] = {

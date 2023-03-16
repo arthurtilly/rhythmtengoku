@@ -75,23 +75,11 @@ struct GameplaySceneInfo {
 // Scene Macros/Enums:
 
 
-// OAM Animations:
-extern struct Animation anim_gameplay_pause_title[]; // Pause Menu Title
-extern struct Animation anim_gameplay_pause_option1[]; // Pause Menu Options (Continue)
-extern struct Animation anim_gameplay_pause_option2[]; // Pause Menu Options (Quit)
-extern struct Animation anim_gameplay_skip_icon[]; // Skip Tutorial ("Select to Skip")
-extern struct Animation anim_gameplay_text_button_black[]; // Black A Button Prompt
-extern struct Animation anim_gameplay_text_button_white[]; // White A Button Prompt
-extern struct Animation anim_gameplay_perfect_icon[]; // Go For A Perfect!
-extern struct Animation anim_gameplay_perfect_miss[]; // Fail Perfect
-extern struct Animation anim_gameplay_perfect_hit[]; // Perfect Input
-
-
 // Sound Effects:
 extern struct SequenceData s_f_pause_quit_seqData;
 
 
-// Scene Definition Data:
+// Scene Data:
 extern struct GraphicsTable gameplay_common_gfx_table[]; // Graphics Table (Common Gameplay Graphics/Palettes, e.g. Pause Menu)
 extern struct CompressedGraphics *gameplay_common_buffered_textures[]; // Buffered Textures List
 extern struct PauseMenuDefinition gameplay_pause_menu_data; // Pause Handler Definition
@@ -110,8 +98,8 @@ extern struct SoundPlayer *gameplay_play_sound_in_player_w_pitch_volume(u32 play
 extern void gameplay_init_scene_static_var(void); // [func_08016e94] Initialise Static Variables
 extern void gameplay_init_gfx1(void); // [func_08016ea4] Graphics Init. 1
 extern void gameplay_start_scene(s32 unused); // [func_08016ec4] Scene Start
-extern void func_08016ffc(s32 unused); // [func_08016ffc] Scene Update Frozen
-extern void gameplay_update_scene(s32 unused); // [func_08017000] Scene Update
+extern void gameplay_update_paused_scene(s32 unused); // [func_08016ffc] Scene Update (Paused)
+extern void gameplay_update_scene(s32 unused); // [func_08017000] Scene Update (Active)
 extern u32  gameplay_inputs_are_enabled(void); // [func_0801714c] Check if Play Inputs are Enabled
 extern void gameplay_clear_palette_buffer(Palette buffer); // [func_08017168] Clear Secondary Palette Buffer (loaded to D_03004b10.unk858)
 extern void gameplay_set_current_engine(const struct GameEngine *engine, u32 version); // [func_08017188] Load New Engine

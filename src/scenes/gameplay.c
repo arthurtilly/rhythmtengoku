@@ -1,5 +1,6 @@
 #include "global.h"
 #include "gameplay.h"
+#include "graphics/gameplay/gameplay_graphics.h"
 #include "src/code_08001360.h"
 #include "src/bitmap_font.h"
 #include "src/task_pool.h"
@@ -138,7 +139,7 @@ void gameplay_start_scene(s32 unused) {
 
 
 // [func_08016ffc] Scene Update Frozen
-void func_08016ffc(s32 unused) {
+void gameplay_update_paused_scene(s32 unused) {
 }
 
 
