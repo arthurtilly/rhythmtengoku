@@ -221,4 +221,3 @@ struct ResultsTextEvent D_089d7ae0[] = {
     },
     END_OF_RESULTS_TEXT_EVENT_LIST
 };
-
