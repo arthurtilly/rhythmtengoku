@@ -14,7 +14,7 @@ script script_power_calligraphy_entry
     load_power_calligraphy
     enable_play_inputs 1
     assess_inputs 1
-    call D_08a1f454
+    call script_power_calligraphy_practice
     enable_pause 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -24,6 +24,26 @@ script script_power_calligraphy_entry
 stop
 
 define_gameplay_scene scene_power_calligraphy, script_power_calligraphy_entry
+
+
+@ Power Calligraphy - Script Entry Point (Skipped Practice)
+
+script script_power_calligraphy_skipped_practice_entry
+    set_tempo 124
+    set_game_fade_in_time 0
+    load_power_calligraphy
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_power_calligraphy_skipped_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_power_calligraphy_skipped_practice, script_power_calligraphy_skipped_practice_entry
 
 
 
@@ -271,7 +291,7 @@ script script_power_calligraphy_practice
     rest 24
     rest 24
     run gameplay_display_skip_icon 3
-    run gameplay_set_tutorial D_089d2eb0
+    run gameplay_set_tutorial scene_power_calligraphy_skipped_practice
     rest 24
     rest 24
     rest 24

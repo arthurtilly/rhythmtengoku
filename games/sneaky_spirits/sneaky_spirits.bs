@@ -26,6 +26,26 @@ stop
 define_gameplay_scene scene_sneaky_spirits, script_sneaky_spirits_entry
 
 
+@ Sneaky Spirits - Script Entry Point (Skipped Practice)
+
+script script_sneaky_spirits_skipped_practice_entry
+    set_tempo 124
+    set_game_fade_in_time 0
+    load_sneaky_spirits
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_sneaky_spirits_skipped_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_sneaky_spirits_skipped_practice, script_sneaky_spirits_skipped_practice_entry
+
+
 
 .section .script.prologue
 @ Sneaky Spirits - Prologue
@@ -122,7 +142,7 @@ script sneaky_spirits_sub_08a02f24
     rest 24
     enable_pause 1
     rest 24
-    run gameplay_set_tutorial D_089d1408
+    run gameplay_set_tutorial scene_sneaky_spirits_skipped_practice
     mod_music_volume 256, 144
     rest 24
     rest 24

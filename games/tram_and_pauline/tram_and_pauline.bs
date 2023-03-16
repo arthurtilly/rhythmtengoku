@@ -11,7 +11,7 @@ script script_tram_pauline_entry
     rest 24
     call script_tram_pauline_prologue
     set_game_fade_in_time 16
-    load_tram_pauline_tutorial
+    load_tram_pauline_practice
     enable_play_inputs 1
     assess_inputs 1
     call script_tram_pauline_practice
@@ -24,6 +24,26 @@ script script_tram_pauline_entry
 stop
 
 define_gameplay_scene scene_tram_pauline, script_tram_pauline_entry
+
+
+@ Tram and Pauline - Script Entry Point (Skipped Practice)
+
+script script_tram_pauline_skipped_practice_entry
+    set_tempo 124
+    set_game_fade_in_time 0
+    load_tram_pauline
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_tram_pauline_skipped_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_tram_pauline_skipped_practice, script_tram_pauline_skipped_practice_entry
 
 
 
@@ -516,7 +536,7 @@ script script_tram_pauline_practice
     enable_pause 1
     beat_anim
     rest 24
-    run gameplay_set_tutorial D_089d36d8
+    run gameplay_set_tutorial scene_tram_pauline_skipped_practice
     beat_anim
     rest 24
     beat_anim

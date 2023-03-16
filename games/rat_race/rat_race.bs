@@ -11,7 +11,7 @@ script script_rat_race_entry
     rest 24
     call script_rat_race_prologue
     set_game_fade_in_time 16
-    load_rat_race
+    load_rat_race_practice
     enable_play_inputs 1
     assess_inputs 1
     call script_rat_race_practice
@@ -24,6 +24,26 @@ script script_rat_race_entry
 stop
 
 define_gameplay_scene scene_rat_race, script_rat_race_entry
+
+
+@ Rat Race - Script Entry Point (Skipped Practice)
+
+script script_rat_race_skipped_practice_entry
+    set_tempo 124
+    set_game_fade_in_time 0
+    load_rat_race
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_rat_race_skipped_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_rat_race_skipped_practice, script_rat_race_skipped_practice_entry
 
 
 
@@ -108,7 +128,7 @@ script rat_race_sub_08a1b5f0
     beat_anim
     rest 24
     enable_pause 1
-    run gameplay_set_tutorial D_089d2ce0
+    run gameplay_set_tutorial scene_rat_race_skipped_practice
     beat_anim
     rest 24
     beat_anim

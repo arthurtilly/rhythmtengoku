@@ -26,6 +26,26 @@ stop
 define_gameplay_scene scene_space_dance, script_space_dance_entry
 
 
+@ Space Dance - Script Entry Point (Skipped Practice)
+
+script script_space_dance_skipped_practice_entry
+    set_tempo 124
+    set_game_fade_in_time 0
+    load_space_dance
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_space_dance_skipped_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_space_dance_skipped_practice, script_space_dance_skipped_practice_entry
+
+
 
 .section .script.prologue
 @ Space Dance - Prologue
@@ -304,7 +324,7 @@ script script_space_dance_practice
     rest 24
     assess_inputs 0
     run gameplay_display_skip_icon 1
-    run gameplay_set_tutorial D_089d3ef4
+    run gameplay_set_tutorial scene_space_dance_skipped_practice
     print_text_f D_0805e38c
     space_dance_event07 7
     rest 24

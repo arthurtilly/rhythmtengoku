@@ -16,7 +16,7 @@
 
 
 @ Load Game: Tram & Pauline (Tutorial)
-.macro load_tram_pauline_tutorial
+.macro load_tram_pauline_practice
     load_tram_pauline_labels
     load_game tram_pauline_engine, 0
 .endm
