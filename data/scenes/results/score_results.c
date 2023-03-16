@@ -3,7 +3,6 @@
 #include "src/bitmap_font.h"
 #include "src/scenes/results.h"
 #include "graphics/results/results_graphics.h"
-#include "text/results_text.h"
 
 
   /* RESULTS (SCORE-TYPE) - SCENE DATA */
@@ -41,11 +40,11 @@ struct CompressedGraphics *score_results_buffered_textures[] = {
 
 // [D_089d7838] Score Result Text
 const char *score_results_comments_text[] = {
-    /* Best  */ D_08054bf4,
-    /* Great */ D_08054be0,
-    /* Good  */ D_08054bd0,
-    /* OK    */ D_08054bc4,
-    /* Bad   */ D_08054bb8,
+    /* Best  */ "最高レベルです！！",
+    /* Great */ "かなり良いです！",
+    /* Good  */ "人並みです。",
+    /* OK    */ "もう一歩。",
+    /* Bad   */ "う～ん…"
 };
 
 // [D_089d784c] Score Thresholds?
@@ -62,5 +61,5 @@ struct SequenceData *score_results_reveal_sfx[] = {
     /* Great */ &s_fanfare_drum1_seqData,
     /* Good  */ &s_fanfare_drum2_seqData,
     /* OK    */ &s_fanfare_drum3_seqData,
-    /* Bad   */ &s_yuri_naki_seqData,
+    /* Bad   */ &s_yuri_naki_seqData
 };

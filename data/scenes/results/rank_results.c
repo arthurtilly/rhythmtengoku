@@ -3,7 +3,6 @@
 #include "src/bitmap_font.h"
 #include "src/scenes/results.h"
 #include "graphics/results/results_graphics.h"
-#include "text/results_text.h"
 
 
   /* RESULTS (RANK-TYPE) - SCENE DATA */

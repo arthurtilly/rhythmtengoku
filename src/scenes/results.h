@@ -67,7 +67,7 @@ struct ScoreHandler {
 struct ResultsTextEvent {
     u8 unk0;
     const char **textPool;
-    u32 (*const func)(void);
+    u32 (*func)(void);
 };
 
 #define END_OF_RESULTS_TEXT_EVENT_LIST { 0, NULL, NULL }
@@ -87,23 +87,6 @@ enum ResultsLevelIconsEnum {
 };
 
 
-// Text:
-extern const char D_08054f14[]; // ""
-extern const char D_08054f18[]; // "…でも、" ("...but,")
-extern const char D_08054f24[]; // "しかも、" ("moreover,")
-extern const char D_08054f30[]; // "さらに、" ("also,")
-
-
-// OAM Animations:
-extern struct Animation anim_rank_results_header_placeholder[]; // Placeholder Header ("nori-kan check")
-extern struct Animation anim_rank_results_icon[]; // Result Icon { 0 = OK; 1 = Try Again; 2 = Superb }
-extern struct Animation anim_rank_results_supportive_bubble[]; // Positive Reinforcement Text Bubble
-extern struct Animation anim_rank_results_header_box[]; // Header Text Box
-extern struct Animation anim_rank_results_header_box_mask[]; // Header Text Box Mask
-extern struct Animation anim_rank_results_medal_get[]; // "Medal Get!"
-extern struct Animation anim_rank_results_comment_append[]; // "でも" ("but")
-
-
 // Sound Effects:
 extern struct SequenceData s_f_result_bad_seqData;
 extern struct SequenceData s_f_result_normal_seqData;
@@ -120,14 +103,14 @@ extern struct SequenceData s_epilogue_fan2_seqData;
 extern struct SequenceData s_epilogue_fan1_seqData;
 
 
-// Scene Definition Data:
-extern struct GraphicsTable rank_results_gfx_table[]; // LEVEL - Graphics Table
-extern struct CompressedGraphics *rank_results_buffered_textures[]; // LEVEL - Buffered Textures List
-extern struct SequenceData *rank_results_sfx[3]; // LEVEL - Result SFX Pool
-extern struct SequenceData *rank_results_bgm[3]; // LEVEL - Result BGM Pool
+// Scene Data:
+extern struct GraphicsTable rank_results_gfx_table[];
+extern struct CompressedGraphics *rank_results_buffered_textures[];
+extern struct SequenceData *rank_results_sfx[];
+extern struct SequenceData *rank_results_bgm[];
 extern struct ScoreHandler *D_089d7980; // ( = D_03001338)
-extern const char *results_try_again_comment_pool[3]; // LEVEL - Comment Pool (Try Again)
-extern const char *results_ok_comment_pool[4]; // LEVEL - Comment Pool (OK)
+extern const char *results_try_again_comment_pool[];
+extern const char *results_ok_comment_pool[];
 
 
 // Functions:

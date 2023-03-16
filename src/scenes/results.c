@@ -475,6 +475,9 @@ void func_08019480(struct InputScoreTracker *tracker) {
 
 #include "asm/results/asm_080198f8.s"
 
+const char D_08054ec4[] = ":1＊＊＊＊:0　　さいてん　　:1＊＊＊＊";
+const char D_08054eec[] = ".5:1Ｒ－ＩＱ　　.6:0";
+
 
 // Prepare Negative Remarks (if any)
 u32 func_08019a80(void) {
@@ -549,6 +552,13 @@ u32 func_08019a80(void) {
     return totalFailed;
 }
 
+// [D_089d7b34] Rank Comment Pool (Try Again)
+const char *results_try_again_comment_pool[] = {
+    "",
+    "また、",
+    "あと、"
+};
+
 
 // Prepare Positive Remarks (if any)
 u32 func_08019bec(void) {
@@ -598,20 +608,20 @@ u32 func_08019bec(void) {
             continue;
 
         if (gResultsInfo->totalNegativeComments != 0) {
-            memcpy(textDest, D_08054f18, 9); // "…でも、"
+            memcpy(textDest, "…でも、", 9); // ("...but,")
             func_080081a8(textDest, criteria->positiveRemark);
             anim = func_08019210(textDest, 3, 3);
             palette = LEVEL_EXTRA_COMMENT_PALETTE;
         } else {
             switch (totalSucceeded) {
                 case 0:
-                    *textDest = *D_08054f14; // ""
+                    memcpy(textDest, "", 1); // ("")
                     break;
                 case 1:
-                    memcpy(textDest, D_08054f24, 9); // "しかも、"
+                    memcpy(textDest, "しかも、", 9); // ("moreover,")
                     break;
                 default:
-                    memcpy(textDest, D_08054f30, 9); // "さらに、"
+                    memcpy(textDest, "さらに、", 9); // ("also,")
                     break;
             }
             func_080081a8(textDest, criteria->positiveRemark);
@@ -644,6 +654,14 @@ u32 func_08019bec(void) {
 
     return averageSucceeded;
 }
+
+// [D_089d7b40] Rank Comment Pool (OK)
+const char *results_ok_comment_pool[] = {
+    "よしと　します。",
+    "とりあえず．．．",
+    "まぁまぁ、　かな。",
+    "う～ん．．．"
+};
 
 
 // Display Comments
@@ -797,3 +815,6 @@ u32 func_0801a060(void) {
 
     return 0;
 }
+
+
+/* DATA */
