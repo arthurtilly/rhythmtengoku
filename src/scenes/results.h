@@ -131,41 +131,41 @@ extern const char *results_ok_comment_pool[4]; // LEVEL - Comment Pool (OK)
 
 
 // Functions:
-// extern ? func_080188b4(?); // [func_080188b4] DEBUG Initialise Static Variables (STUB)
-// extern ? func_080188b8(?); // [func_080188b8] DEBUG Graphics Init. 2
-// extern ? func_080188e4(?); // [func_080188e4] DEBUG Graphics Init. 1
-// extern ? func_08018914(?); // [func_08018914] DEBUG Graphics Init. 0
-// extern ? func_08018934(?); // [func_08018934] DEBUG Scene Init.
-// extern ? func_080189b0(?); // [func_080189b0] DEBUG Scene STUB
-// extern ? func_080189b4(?); // [func_080189b4] DEBUG Scene Main
-// extern ? func_080189f4(?); // [func_080189f4] DEBUG ?
-// extern ? func_08018a10(?); // [func_08018a10] DEBUG Scene Close
+// extern ? func_080188b4(?); // DEBUG Init. Static Variables
+// extern ? func_080188b8(?); // DEBUG Graphics Init. 3
+// extern ? func_080188e4(?); // DEBUG Graphics Init. 2
+// extern ? func_08018914(?); // DEBUG Graphics Init. 1
+// extern ? func_08018934(?); // DEBUG Scene Start
+// extern ? func_080189b0(?); // DEBUG Scene Update (Paused)
+// extern ? func_080189b4(?); // DEBUG Scene Update (Active)
+// extern ? func_080189f4(?); // DEBUG ?
+// extern ? func_08018a10(?); // DEBUG Scene Stop
 
-extern void func_08018a20(void); // [func_08018a20] LEVEL Initialise Static Variables (STUB)
-extern void func_08018a24(void); // [func_08018a24] LEVEL Graphics Init. 2
-extern void func_08018a50(void); // [func_08018a50] LEVEL Graphics Init. 1
-extern void func_08018a80(void); // [func_08018a80] LEVEL Graphics Init. 0
-extern void func_08018aa0(s32); // [func_08018aa0] LEVEL Scene Init.
-extern void func_08018b9c(s32); // [func_08018b9c] LEVEL Scene STUB
-extern void func_08018ba0(s32); // [func_08018ba0] LEVEL Scene Main
-extern void func_08018be0(s32); // [func_08018be0] LEVEL Scene Close
-extern void func_08018bf0(void); // [func_08018bf0] LEVEL Display Header Text (Script Function)
-extern void func_08018cc8(void); // [func_08018cc8] LEVEL Display Result Icon (Script Function)
-extern void func_08018d68(void); // [func_08018d68] LEVEL Play Music (Script Function)
-extern void func_08018d9c(void); // [func_08018d9c] LEVEL Display Positive Reinforcement (Script Function)
+extern void func_08018a20(void); // RANK Init. Static Variables
+extern void func_08018a24(void); // RANK Graphics Init. 3
+extern void func_08018a50(void); // RANK Graphics Init. 2
+extern void func_08018a80(void); // RANK Graphics Init. 1
+extern void func_08018aa0(s32); // RANK Scene Start
+extern void func_08018b9c(s32); // RANK Scene Update (Paused)
+extern void func_08018ba0(s32); // RANK Scene Update (Active)
+extern void func_08018be0(s32); // RANK Scene Stop
+extern void func_08018bf0(void); // RANK Display Header Text (Script Function)
+extern void func_08018cc8(void); // RANK Display Result Icon (Script Function)
+extern void func_08018d68(void); // RANK Play Music (Script Function)
+extern void func_08018d9c(void); // RANK Display Positive Reinforcement (Script Function)
 
-// extern ? func_08018e60(?); // [func_08018e60] SCORE Initialise Static Variables
-// extern ? func_08018e74(?); // [func_08018e74] SCORE Graphics Init. 3
-// extern ? func_08018e94(?); // [func_08018e94] SCORE Graphics Init. 2
-// extern ? func_08018ec0(?); // [func_08018ec0] SCORE Graphics Init. 1
-// extern ? func_08018ef0(?); // [func_08018ef0] SCORE Graphics Init. 0
-// extern ? func_08018f10(?); // [func_08018f10] SCORE Scene Init.
-// extern ? func_0801911c(?); // [func_0801911c] SCORE Import Criteria/Data? (Script Function)
-// extern ? func_08019128(?); // [func_08019128] SCORE Import Text? (Script Function)
-// extern ? func_08019134(?); // [func_08019134] SCORE Scene STUB
-// extern ? func_08019138(?); // [func_08019138] SCORE Scene Main
-// extern ? func_08019178(?); // [func_08019178] SCORE Scene Close
-// extern ? func_08019188(?); // [func_08019188] SCORE ? (Script Function)
+// extern ? func_08018e60(?); // SCORE Init. Static Variables
+// extern ? func_08018e74(?); // SCORE Graphics Init. 4
+// extern ? func_08018e94(?); // SCORE Graphics Init. 3
+// extern ? func_08018ec0(?); // SCORE Graphics Init. 2
+// extern ? func_08018ef0(?); // SCORE Graphics Init. 1
+// extern ? func_08018f10(?); // SCORE Scene Start
+// extern ? func_0801911c(?); // SCORE Import Criteria/Data? (Script Function)
+// extern ? func_08019128(?); // SCORE Import Text? (Script Function)
+// extern ? func_08019134(?); // SCORE Scene Update (Paused)
+// extern ? func_08019138(?); // SCORE Scene Update (Active)
+// extern ? func_08019178(?); // SCORE Scene Stop
+// extern ? func_08019188(?); // SCORE ? (Script Function)
 
 extern void func_080191ac(u32 updateSave); // Set D_03001540
 extern u32 func_080191b8(void); // Return TRUE
@@ -174,9 +174,9 @@ extern struct Animation *func_08019210(const char *, u32, u32); // Get Animation
 extern void func_08019268(struct InputScoreTracker *); // Initialise Any-Input Trackers
 extern void func_08019278(void); // Initialise Cue Input Trackers and Marking Criteria
 extern void func_080192a4(void); // Initialise Score Handler
-extern void func_08019304(const struct MarkingCriteria **); // [func_08019304] Import Criteria (Script Function)
-extern void func_08019310(char *); // [func_08019310] Set Header Text (Script Function)
-extern void func_08019324(u32 assess); // [func_08019324] Assess Inputs (Script Function)
+extern void func_08019304(const struct MarkingCriteria **); // Import Criteria (Script Function)
+extern void func_08019310(char *); // Set Header Text (Script Function)
+extern void func_08019324(u32 assess); // Assess Inputs (Script Function)
 extern u32 func_08019340(void); // Check if Assessing Inputs
 extern void func_08019350(u32 criterion, u32 level, s32 offset); // Register Input
 extern void func_08019420(u32 criterion, u32 level, s32 offset); // Register Input for Cue
@@ -192,19 +192,9 @@ extern u32 func_08019820(void);
 extern u32 func_08019878(void);
 extern u32 func_080198b0(void);
 extern u32 func_080198e8(void);
-// extern ? func_080198f8(?); // [func_080198f8] DEBUG ? (Script Function)
+// extern ? func_080198f8(?); // DEBUG ? (Script Function)
 extern u32 func_08019a80(void); // Prepare Negative Comments
 extern u32 func_08019bec(void); // Prepare Positive Comments
 extern void func_08019d9c(void); // Display Comments
-extern void func_08019ee0(void); // [func_08019ee0] LEVEL Display Comments (Script Function)
+extern void func_08019ee0(void); // LEVEL Display Comments (Script Function)
 extern u32 func_0801a060(void); // Calculate Final Score
-
-// extern ? func_0801a0ec(?); // [func_0801a0ec] EPILOGUE Initialise Static Variables
-// extern ? func_0801a0f0(?); // [func_0801a0f0] EPILOGUE Graphics Init. 2
-// extern ? func_0801a140(?); // [func_0801a140] EPILOGUE Graphics Init. 1
-// extern ? func_0801a174(?); // [func_0801a174] EPILOGUE Graphics Init. 0
-// extern ? func_0801a1b0(?); // [func_0801a1b0] EPILOGUE Scene Init.
-// extern ? func_0801a310(?); // [func_0801a310] EPILOGUE Scene STUB
-// extern ? func_0801a314(?); // [func_0801a314] EPILOGUE Scene Main
-// extern ? func_0801a354(?); // [func_0801a354] EPILOGUE ?
-// extern ? func_0801a370(?); // [func_0801a370] EPILOGUE Scene Close

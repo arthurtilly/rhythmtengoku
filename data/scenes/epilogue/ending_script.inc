@@ -6,5 +6,5 @@
 
 
 @ Fade Out
-glabel D_089d7b58
+glabel epilogue_end_script
     stop

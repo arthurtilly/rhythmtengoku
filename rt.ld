@@ -35,6 +35,7 @@ SECTIONS {
 		build/src/scenes/perfect.c.o(.bss);
 		build/src/scenes/gameplay.c.o(.bss);
 		build/src/scenes/results.c.o(.bss);
+		build/src/scenes/epilogue.c.o(.bss);
 		build/src/scenes/reading.c.o(.bss);
 		build/src/scenes/studio.c.o(.bss);
 		build/src/scenes/title.c.o(.bss);
@@ -155,6 +156,7 @@ SECTIONS {
 		build/src/scenes/perfect.c.o(.text);
 		build/src/scenes/gameplay.c.o(.text);
 		build/src/scenes/results.c.o(.text);
+		build/src/scenes/epilogue.c.o(.text);
 		build/src/scenes/reading.c.o(.text);
 		build/src/scenes/studio.c.o(.text);
 		build/src/scenes/title.c.o(.text);
@@ -1703,8 +1705,8 @@ SECTIONS {
         build/data/scenes/results/score_results_data.c.o(.data);
         build/bin/scene_score_results.bin.o(.rodata*);
         build/data/scenes/results/data.c.o(.data);
-        build/data/scenes/results/epilogue_data.c.o(.data);
-        build/bin/scene_epilogues.bin.o(.rodata*);
+        build/data/scenes/epilogue/data.c.o(.data);
+        build/bin/scene_epilogue.bin.o(.rodata*);
         build/data/scenes/data_room/reading.c.o(.data);
         build/bin/scene_reading.bin.o(.rodata*);
         build/data/scenes/data_room/read_error.c.o(.data);

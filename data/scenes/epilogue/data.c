@@ -3,7 +3,6 @@
 #include "src/bitmap_font.h"
 #include "src/scenes/results.h"
 #include "graphics/results/results_graphics.h"
-#include "text/results_text.h"
 
 
   /* EPILOGUES - SCENE DATA */
@@ -19,7 +18,7 @@ struct CompressedGraphics *epilogue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
-asm(".include \"data/scenes/results/epilogue_ending_script.inc\"");
+asm(".include \"data/scenes/epilogue/ending_script.inc\"");
 
 // [D_089d7b64] Epilogue Jingles
 struct SequenceData *epilogue_jingles[] = {

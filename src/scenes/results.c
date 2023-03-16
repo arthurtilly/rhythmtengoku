@@ -1,5 +1,7 @@
 #include "global.h"
 #include "results.h"
+#include "graphics/results/results_graphics.h"
+
 #include "cues.h"
 #include "src/main.h"
 #include "src/memory.h"
@@ -795,24 +797,3 @@ u32 func_0801a060(void) {
 
     return 0;
 }
-
-
-// Epilogue screen
-
-#include "asm/results/asm_0801a0ec.s"
-
-#include "asm/results/asm_0801a0f0.s"
-
-#include "asm/results/asm_0801a140.s"
-
-#include "asm/results/asm_0801a174.s"
-
-#include "asm/results/asm_0801a1b0.s"
-
-#include "asm/results/asm_0801a310.s"
-
-#include "asm/results/asm_0801a314.s"
-
-#include "asm/results/asm_0801a354.s"
-
-#include "asm/results/asm_0801a370.s"
