@@ -23,7 +23,7 @@ script script_tram_pauline_entry
     rest 24
 stop
 
-define_beatscript_scene scene_tram_pauline, script_tram_pauline_entry
+define_gameplay_scene scene_tram_pauline, script_tram_pauline_entry
 
 
 

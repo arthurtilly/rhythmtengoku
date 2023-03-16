@@ -23,7 +23,7 @@ script script_rhythm_tweezers_entry
     rest 24
 stop
 
-define_beatscript_scene scene_rhythm_tweezers, script_rhythm_tweezers_entry
+define_gameplay_scene scene_rhythm_tweezers, script_rhythm_tweezers_entry
 
 
 

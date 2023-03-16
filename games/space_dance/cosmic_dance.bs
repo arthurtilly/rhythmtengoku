@@ -23,7 +23,7 @@ script script_cosmic_dance_entry
     rest 24
 stop
 
-define_beatscript_scene scene_cosmic_dance, script_cosmic_dance_entry
+define_gameplay_scene scene_cosmic_dance, script_cosmic_dance_entry
 
 
 

@@ -23,7 +23,7 @@ script script_concert_hall_entry
     rest 24
 stop
 
-define_beatscript_scene scene_concert_hall, script_concert_hall_entry
+define_gameplay_scene scene_concert_hall, script_concert_hall_entry
 
 
 

@@ -23,7 +23,7 @@ script script_samurai_slice_entry
     rest 24
 stop
 
-define_beatscript_scene scene_samurai_slice, script_samurai_slice_entry
+define_gameplay_scene scene_samurai_slice, script_samurai_slice_entry
 
 
 

@@ -82,7 +82,7 @@
 
 @ Beatscript Scene Definitions
 
-.macro define_beatscript_scene name, entrypoint
+.macro define_gameplay_scene name, entrypoint
 struct sub_\name
     /* Init Func */   .word gameplay_start_scene,  NULL
     /* Paused Func */ .word func_08016ffc,         NULL

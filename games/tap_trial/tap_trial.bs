@@ -23,7 +23,7 @@ script script_tap_trial_entry
     rest 24
 stop
 
-define_beatscript_scene scene_tap_trial, script_tap_trial_entry
+define_gameplay_scene scene_tap_trial, script_tap_trial_entry
 
 
 

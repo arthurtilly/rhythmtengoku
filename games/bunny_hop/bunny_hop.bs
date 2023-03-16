@@ -23,7 +23,7 @@ script script_bunny_hop_entry
     rest 24
 stop
 
-define_beatscript_scene scene_bunny_hop, script_bunny_hop_entry
+define_gameplay_scene scene_bunny_hop, script_bunny_hop_entry
 
 
 

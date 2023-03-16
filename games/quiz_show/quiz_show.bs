@@ -23,7 +23,7 @@ script script_quiz_show_entry
     rest 24
 stop
 
-define_beatscript_scene scene_quiz_show, script_quiz_show_entry
+define_gameplay_scene scene_quiz_show, script_quiz_show_entry
 
 
 
@@ -113,7 +113,7 @@ script quiz_show_sub_08a3c210
         return
     end_if
     run agb_random, 3
-        switch INT8, FUNCTION_RESULT
+    switch INT8, FUNCTION_RESULT
         case 0
             rest 24
             quiz_show_event02 0

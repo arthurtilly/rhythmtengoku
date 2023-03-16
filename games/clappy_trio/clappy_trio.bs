@@ -23,7 +23,7 @@ script script_clappy_trio_entry
     rest 24
 stop
 
-define_beatscript_scene scene_clappy_trio, script_clappy_trio_entry
+define_gameplay_scene scene_clappy_trio, script_clappy_trio_entry
 
 
 

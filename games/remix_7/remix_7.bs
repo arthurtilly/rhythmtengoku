@@ -37,7 +37,7 @@ script script_remix_7_entry
     rest 24
 stop
 
-define_beatscript_scene scene_remix_7, script_remix_7_entry
+define_gameplay_scene scene_remix_7, script_remix_7_entry
 
 
 

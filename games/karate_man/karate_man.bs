@@ -23,7 +23,7 @@ script script_karate_man_entry
     rest 24
 stop
 
-define_beatscript_scene scene_karate_man, script_karate_man_entry
+define_gameplay_scene scene_karate_man, script_karate_man_entry
 
 
 

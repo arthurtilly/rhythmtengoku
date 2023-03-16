@@ -23,7 +23,7 @@ script script_polyrhythm_2_entry
     rest 24
 stop
 
-define_beatscript_scene scene_polyrhythm_2, script_polyrhythm_2_entry
+define_gameplay_scene scene_polyrhythm_2, script_polyrhythm_2_entry
 
 
 

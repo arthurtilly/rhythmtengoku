@@ -23,7 +23,7 @@ script script_showtime_entry
     rest 24
 stop
 
-define_beatscript_scene scene_showtime, script_showtime_entry
+define_gameplay_scene scene_showtime, script_showtime_entry
 
 
 

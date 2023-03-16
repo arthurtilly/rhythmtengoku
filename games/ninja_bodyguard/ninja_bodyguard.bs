@@ -23,7 +23,7 @@ script script_ninja_bodyguard_entry
     rest 24
 stop
 
-define_beatscript_scene scene_ninja_bodyguard, script_ninja_bodyguard_entry
+define_gameplay_scene scene_ninja_bodyguard, script_ninja_bodyguard_entry
 
 
 

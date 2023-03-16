@@ -23,7 +23,7 @@ script script_snappy_trio_entry
     rest 24
 stop
 
-define_beatscript_scene scene_snappy_trio, script_snappy_trio_entry
+define_gameplay_scene scene_snappy_trio, script_snappy_trio_entry
 
 
 

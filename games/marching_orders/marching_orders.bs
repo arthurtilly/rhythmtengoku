@@ -23,7 +23,7 @@ script script_marching_orders_entry
     rest 24
 stop
 
-define_beatscript_scene scene_marching_orders, script_marching_orders_entry
+define_gameplay_scene scene_marching_orders, script_marching_orders_entry
 
 
 

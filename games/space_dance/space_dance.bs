@@ -23,7 +23,7 @@ script script_space_dance_entry
     rest 24
 stop
 
-define_beatscript_scene scene_space_dance, script_space_dance_entry
+define_gameplay_scene scene_space_dance, script_space_dance_entry
 
 
 

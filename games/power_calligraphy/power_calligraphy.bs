@@ -23,7 +23,7 @@ script script_power_calligraphy_entry
     rest 24
 stop
 
-define_beatscript_scene scene_power_calligraphy, script_power_calligraphy_entry
+define_gameplay_scene scene_power_calligraphy, script_power_calligraphy_entry
 
 
 

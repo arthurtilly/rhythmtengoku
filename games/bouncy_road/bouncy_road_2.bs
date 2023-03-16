@@ -22,7 +22,7 @@ script script_bouncy_road_2_entry
     rest 24
 stop
 
-define_beatscript_scene scene_bouncy_road_2, script_bouncy_road_2_entry
+define_gameplay_scene scene_bouncy_road_2, script_bouncy_road_2_entry
 
 
 

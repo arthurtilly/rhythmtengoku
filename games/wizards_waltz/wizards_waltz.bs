@@ -23,7 +23,7 @@ script script_wizards_waltz_entry
     rest 24
 stop
 
-define_beatscript_scene scene_wizards_waltz, script_wizards_waltz_entry
+define_gameplay_scene scene_wizards_waltz, script_wizards_waltz_entry
 
 
 

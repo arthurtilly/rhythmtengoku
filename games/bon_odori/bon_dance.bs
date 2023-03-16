@@ -23,7 +23,7 @@ script script_bon_dance_entry
     rest 24
 stop
 
-define_beatscript_scene scene_bon_dance, script_bon_dance_entry
+define_gameplay_scene scene_bon_dance, script_bon_dance_entry
 
 
 

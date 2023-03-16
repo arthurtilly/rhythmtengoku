@@ -1672,7 +1672,6 @@ SECTIONS {
         build/games/quiz_show/quiz_show.bs.o(.script.entry);
         build/bin/bindata_089d42bc.bin.o(.rodata*);
         build/games/bon_odori/bon_odori.bs.o(.script.entry);
-        build/bin/bindata_089d60a4.bin.o(.rodata*);
         build/games/tap_trial/tap_trial_2.bs.o(.script.entry);
         build/games/clappy_trio/snappy_trio.bs.o(.script.entry);
         build/games/rap_men/rap_women.bs.o(.script.entry);

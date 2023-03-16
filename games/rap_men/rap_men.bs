@@ -23,7 +23,7 @@ script script_rap_men_entry
     rest 24
 stop
 
-define_beatscript_scene scene_rap_men, script_rap_men_entry
+define_gameplay_scene scene_rap_men, script_rap_men_entry
 
 
 

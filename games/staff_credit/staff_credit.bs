@@ -22,6 +22,6 @@ script script_staff_credit_entry
     rest 24
 stop
 
-define_beatscript_scene scene_staff_credit, script_staff_credit_entry
+define_gameplay_scene scene_staff_credit, script_staff_credit_entry
 
 .end
