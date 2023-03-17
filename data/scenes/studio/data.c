@@ -2,70 +2,100 @@
 #include "graphics.h"
 #include "src/scenes/studio.h"
 #include "graphics/studio/studio_graphics.h"
-#include "text/studio_text.h"
 
 
   /* STUDIO MENU - SCENE DATA */
 
 
 #include "songs.inc.c"
+#include "drums.inc.c"
 
-// [D_089d83d0] Drum Kit Names
-const char *studio_drum_kit_names[] = {
-    text_studio_kit_standard_drum,
-    text_studio_kit_dry_drum,
-    text_studio_kit_power_drum,
-    text_studio_kit_techno_drum,
-    text_studio_kit_matte_drum,
-    text_studio_kit_asian_drum,
-    text_studio_kit_light_drum,
-    text_studio_kit_heavy_drum,
-    text_studio_kit_hihat_drum,
-    text_studio_kit_heel_tech_drum_1,
-    text_studio_kit_heel_tech_drum_2,
-    text_studio_kit_sfx_drum,
-    text_studio_kit_tap_drum,
-    text_studio_kit_air_cutter_drum,
-    text_studio_kit_samurai_drum,
-};
 
 // [D_089d840c] Memory Warnings
+    /* -------------------------------- */
+        // You can't save any more data.
+        // Perform without saving?
+    /* -------------------------------- */
+        // You can only save 10 recitals.
+        // Perform without saving?
+    /* -------------------------------- */
+        // There's not much memory left.
+        // Perform anyway?
+    /* -------------------------------- */
+
 const char *studio_mem_warnings_text[] = {
-    NULL,
-    text_studio_warning_no_mem,
-    text_studio_warning_no_slots,
-    text_studio_warning_low_mem,
+    /* NO WARNING NEEDED ------------------------------ */
+        NULL,
+    /* NO MEMORY -------------------------------------- */
+        "メモリがいっぱいです。\n"
+        "データは残らないけど演奏する？",
+    /* TOO MANY REPLAYS ------------------------------- */
+        "演奏データは10コしか残せません。\n"
+        "データは残らないけど演奏する？",
+    /* LOW MEMORY ------------------------------------- */
+        "メモリが少なくなってきてます。\n"
+        "このまま演奏する？"
+    /* ------------------------------------------------ */
 };
+
 
 // [D_089d841c] Options (no replay for this song)
 const char *studio_options_no_replay[] = {
-    text_studio_option_listen,
-    text_studio_option_drum,
-    text_studio_option_sort,
-    text_studio_option_mark,
+    /* LISTEN */ "リスニング",
+    /* DRUM   */ "ドラミング",
+    /* SORT   */ "ならびかえ",
+    /* MARK   */ "チェック"
 };
+
 
 // [D_089d842c] Options (replay exists for this song)
 const char *studio_options_has_replay[] = {
-    text_studio_option_listen,
-    text_studio_option_delete,
-    text_studio_option_sort,
-    text_studio_option_mark,
+    /* LISTEN */ "リスニング",
+    /* DELETE */ "データ消去",
+    /* SORT   */ "ならびかえ",
+    /* MARK   */ "チェック"
 };
+
 
 // [D_089d843c] Options Text
 const char **studio_options_text[] = {
     studio_options_no_replay,
-    studio_options_has_replay,
+    studio_options_has_replay
 };
 
-// [D_089d8444] Animation/Playback Data..?
+
+// Option Text Start
+const char text_studio_option_default[] = "";
+
+
+// Not even one song has
+// a check mark on it.
+const char text_studio_warning_no_checks1[] =
+    "チェックのついている曲が、\n"
+    "ひとつもありません。";
+
+
+// In listening mode, only the songs
+// with a check mark will be played.
+const char text_studio_warning_no_checks2[] =
+    "リスニングではチェックのある曲だけ再生します。　よろしいですか～？";
+
+
+// You'll erase this performance
+// data! Is that really OK?
+const char text_studio_warning_delete[] =
+    "この演奏データを削除するヨ！\n"
+    "ホントにOK？";
+
+
+// [D_089d8444] ?
 u8 D_089d8444[] = {
     /* 0x00 */ 4,
     /* 0x01 */ 4,
     /* 0x02 */ 0,
     /* 0x03 */ 0
 };
+
 
 // [D_089d8448] Graphics Table
 struct GraphicsTable studio_gfx_table[] = {
@@ -102,10 +132,12 @@ struct GraphicsTable studio_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
+
 // [D_089d849c] Buffered Textures List
 struct CompressedGraphics *studio_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
+
 
 // [D_089d84a0] ?
 u16 D_089d84a0[] = {
@@ -113,6 +145,7 @@ u16 D_089d84a0[] = {
     /* 0x01 */ 104,
     /* 0x02 */ 240
 };
+
 
 // [D_089d84a6] ?
 u8 D_089d84a6[] = {

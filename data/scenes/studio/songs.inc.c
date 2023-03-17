@@ -44,230 +44,235 @@ extern const struct Beatscript D_089dbd14[];
 extern const struct Beatscript D_089dbe28[];
 extern const struct Beatscript D_089dad6c[];
 
+
+// Song Title Formatting
+const char text_studio_song_formatting[] = "\4" "14.";
+
+
 // [D_089d81b4] Studio Song Entries
 struct StudioEntry studio_song_table[] = {
-    /* 0x00 */ {
-        /* Full Title  */ text_studio_song_silence,
+    /* SILENCE */ {
+        /* Full Title  */ "サイレント",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dbf84
     },
-    /* 0x01 */ {
-        /* Full Title  */ text_studio_song_karate_man,
+    /* KARATE_MAN */ {
+        /* Full Title  */ "カラテ家",
         /* Short Title */ NULL,
         /* Drum Script */ D_089da4fc
     },
-    /* 0x02 */ {
-        /* Full Title  */ text_studio_song_clappy_trio,
+    /* CLAPPY_TRIO */ {
+        /* Full Title  */ "パチパチ三人衆",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d9ab8
     },
-    /* 0x03 */ {
-        /* Full Title  */ text_studio_song_tap_trial,
+    /* TAP_TRIAL */ {
+        /* Full Title  */ "タップダンズ",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dc314
     },
-    /* 0x04 */ {
-        /* Full Title  */ text_studio_song_space_dance,
+    /* SPACE_DANCE */ {
+        /* Full Title  */ "スペースダンス",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dbfa8
     },
-    /* 0x05 */ {
-        /* Full Title  */ text_studio_song_remix_3,
-        /* Short Title */ text_studio_song_remix_3_short,
+    /* HONEY_SWEET_ANGEL */ {
+        /* Full Title  */ "恋のハニースイ～トエンジェル",
+        /* Short Title */ "恋のハニースイ～…",
         /* Drum Script */ D_089d9d64
     },
-    /* 0x06 */ {
-        /* Full Title  */ text_studio_song_remix_5,
-        /* Short Title */ text_studio_song_remix_5_short,
+    /* WISH */ {
+        /* Full Title  */ "WISH 君を待てなくて",
+        /* Short Title */ "WISH 君を待て…",
         /* Drum Script */ D_089dcaf4
     },
-    /* 0x07 */ {
-        /* Full Title  */ text_studio_song_night_walk,
+    /* NIGHT_WALK */ {
+        /* Full Title  */ "ナイトウォーク",
         /* Short Title */ NULL,
         /* Drum Script */ D_089daa9c
     },
-    /* 0x08 */ {
-        /* Full Title  */ text_studio_song_bon_odori,
+    /* BON_ODORI */ {
+        /* Full Title  */ "ザ☆ぼんおどり",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d8a44
     },
-    /* 0x09 */ {
-        /* Full Title  */ text_studio_song_bon_dance,
+    /* BON_DANCE */ {
+        /* Full Title  */ "ボンダンス",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d88e8
     },
-    /* 0x0A */ {
-        /* Full Title  */ text_studio_song_cosmic_dance,
+    /* COSMIC_DANCE */ {
+        /* Full Title  */ "コスモダンス",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d8c24
     },
-    /* 0x0B */ {
-        /* Full Title  */ text_studio_song_rhythm_tweezers,
+    /* RHYTHM_TWEEZERS */ {
+        /* Full Title  */ "リズム脱毛",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d980c
     },
-    /* 0x0C */ {
-        /* Full Title  */ text_studio_song_snappy_trio,
+    /* SNAPPY_TRIO */ {
+        /* Full Title  */ "バリバリ三人衆",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d9c44
     },
-    /* 0x0D */ {
-        /* Full Title  */ text_studio_song_tap_trial_2,
+    /* TAP_TRIAL_2 */ {
+        /* Full Title  */ "スーパータップ",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dc134
     },
-    /* 0x0E */ {
-        /* Full Title  */ text_studio_song_wizards_waltz,
+    /* WIZARDS_WALTZ */ {
+        /* Full Title  */ "まほうつかい",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dcda0
     },
-    /* 0x0F */ {
-        /* Full Title  */ text_studio_song_marching_orders,
+    /* MARCHING_ORDERS */ {
+        /* Full Title  */ "マーチャ",
         /* Short Title */ NULL,
         /* Drum Script */ D_089da7d8
     },
-    /* 0x10 */ {
-        /* Full Title  */ text_studio_song_spaceball,
+    /* SPACEBALL */ {
+        /* Full Title  */ "エアーバッター",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d8768
     },
-    /* 0x11 */ {
-        /* Full Title  */ text_studio_song_sneaky_spirits,
+    /* SNEAKY_SPIRITS */ {
+        /* Full Title  */ "しろいおばけ",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d85d0
     },
-    /* 0x12 */ {
-        /* Full Title  */ text_studio_song_samurai_slice,
+    /* SAMURAI_SLICE */ {
+        /* Full Title  */ "ゐあひ斬り",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d9f08
     },
-    /* 0x13 */ {
-        /* Full Title  */ text_studio_song_rat_race,
+    /* RAT_RACE */ {
+        /* Full Title  */ "こっそりラット",
         /* Short Title */ NULL,
         /* Drum Script */ D_089db2e8
     },
-    /* 0x14 */ {
-        /* Full Title  */ text_studio_song_sick_beats,
+    /* SICK_BEATS */ {
+        /* Full Title  */ "バイキンはかせ",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dc98c
     },
-    /* 0x15 */ {
-        /* Full Title  */ text_studio_song_showtime,
+    /* SHOWTIME */ {
+        /* Full Title  */ "ショータイム",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d9128
     },
-    /* 0x16 */ {
-        /* Full Title  */ text_studio_song_bunny_hop,
+    /* BUNNY_HOP */ {
+        /* Full Title  */ "ウサギとび",
         /* Short Title */ NULL,
         /* Drum Script */ D_089db1c8
     },
-    /* 0x17 */ {
-        /* Full Title  */ text_studio_song_tram_pauline,
+    /* TRAM_PAULINE */ {
+        /* Full Title  */ "トランとポリン",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dc7f4
     },
-    /* 0x18 */ {
-        /* Full Title  */ text_studio_song_quiz_show,
+    /* QUIZ_SHOW */ {
+        /* Full Title  */ "クイズ",
         /* Short Title */ NULL,
         /* Drum Script */ D_089db0a8
     },
-    /* 0x19 */ {
-        /* Full Title  */ text_studio_song_power_calligraphy,
+    /* POWER_CALLIGRAPHY */ {
+        /* Full Title  */ "リズムお習字",
         /* Short Title */ NULL,
         /* Drum Script */ D_089da22c
     },
-    /* 0x1A */ {
-        /* Full Title  */ text_studio_song_polyrhythm,
+    /* POLYRHYTHM */ {
+        /* Full Title  */ "ポリリズム",
         /* Short Title */ NULL,
         /* Drum Script */ D_089daea4
     },
-    /* 0x1B */ {
-        /* Full Title  */ text_studio_song_bouncy_road,
+    /* BOUNCY_ROAD */ {
+        /* Full Title  */ "ホッピングロード",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d9320
     },
-    /* 0x1C */ {
-        /* Full Title  */ text_studio_song_toss_boys,
+    /* TOSS_BOYS */ {
+        /* Full Title  */ "トスボーイズ",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dc6a4
     },
-    /* 0x1D */ {
-        /* Full Title  */ text_studio_song_fireworks,
+    /* FIREWORKS */ {
+        /* Full Title  */ "花火",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d995c
     },
-    /* 0x1E */ {
-        /* Full Title  */ text_studio_song_remix_7,
+    /* REMIX7 */ {
+        /* Full Title  */ "リミックス７",
         /* Short Title */ NULL,
         /* Drum Script */ D_089db45c
     },
-    /* 0x1F */ {
-        /* Full Title  */ text_studio_song_remix_8,
+    /* REMIX8 */ {
+        /* Full Title  */ "リミックス８",
         /* Short Title */ NULL,
         /* Drum Script */ D_089db804
     },
-    /* 0x20 */ {
-        /* Full Title  */ text_studio_song_remix_6,
+    /* REMIX6 */ {
+        /* Full Title  */ "リミックス６",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dba50
     },
-    /* 0x21 */ {
-        /* Full Title  */ text_studio_song_title,
+    /* TITLE */ {
+        /* Full Title  */ "タイトル",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dc518
     },
-    /* 0x22 */ {
-        /* Full Title  */ text_studio_song_main_menu,
+    /* MAIN_MENU */ {
+        /* Full Title  */ "メニュー",
         /* Short Title */ NULL,
         /* Drum Script */ D_089da964
     },
-    /* 0x23 */ {
-        /* Full Title  */ text_studio_song_game_select,
+    /* GAME_SELECT_1 */ {
+        /* Full Title  */ "ゲームセレクト",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d9440
     },
-    /* 0x24 */ {
-        /* Full Title  */ text_studio_song_data_room,
+    /* DATA_ROOM */ {
+        /* Full Title  */ "リズム資料室",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d8ffc
     },
-    /* 0x25 */ {
-        /* Full Title  */ text_studio_song_opening,
+    /* OPENING */ {
+        /* Full Title  */ "オープニング",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dac28
     },
-    /* 0x26 */ {
-        /* Full Title  */ text_studio_song_credits,
+    /* STAFF_CREDIT */ {
+        /* Full Title  */ "スタッフクレジット",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d8f3c
     },
-    /* 0x27 */ {
-        /* Full Title  */ text_studio_song_game_select_2,
+    /* GAME_SELECT_2 */ {
+        /* Full Title  */ "ゲームセレクト２",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d96b0
     },
-    /* 0x28 */ {
-        /* Full Title  */ text_studio_song_cafe,
+    /* CAFE */ {
+        /* Full Title  */ "喫茶カウンセル",
         /* Short Title */ NULL,
         /* Drum Script */ D_089d8df8
     },
-    /* 0x29 */ {
-        /* Full Title  */ text_studio_song_try_again,
+    /* TRY_AGAIN */ {
+        /* Full Title  */ "やりなおし",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dbc00
     },
-    /* 0x2A */ {
-        /* Full Title  */ text_studio_song_ok,
+    /* OK */ {
+        /* Full Title  */ "平凡",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dbd14
     },
-    /* 0x2B */ {
-        /* Full Title  */ text_studio_song_superb,
+    /* SUPERB */ {
+        /* Full Title  */ "ハイレベル",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dbe28,
     },
-    /* 0x2C */ {
-        /* Full Title  */ text_studio_song_perfect,
+    /* PERFECT */ {
+        /* Full Title  */ "パーフェクト",
         /* Short Title */ NULL,
         /* Drum Script */ D_089dad6c,
     }

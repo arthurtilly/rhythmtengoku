@@ -277,7 +277,7 @@ SECTIONS {
         build/data/scenes/results/data.c.o(.rodata);
 		build/src/scenes/results.c.o(.rodata);
         build/data/scenes/data_room/reading.c.o(.rodata);
-        build/text/studio_text.c.o(.rodata);
+        build/data/scenes/studio/data.c.o(.rodata);
         build/text/medal_corner_text.c.o(.rodata);
         build/text/debug_text.c.o(.rodata);
 
