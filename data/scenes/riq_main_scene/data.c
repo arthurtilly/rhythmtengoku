@@ -9,6 +9,7 @@
 // [D_089dd908] ?
 char D_089dd908[] = "ÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQ";
 
+
 // [D_089dd94a] Font Palettes
 FontPalette D_089dd94a[] = {
     /* PALETTE 00 */ {
@@ -30,6 +31,7 @@ FontPalette D_089dd94a[] = {
         /* 03 */ TO_RGB555(0x40B0F8)
     }
 };
+
 
 // [D_089dd962] Font Palettes
 FontPalette D_089dd962[] = {

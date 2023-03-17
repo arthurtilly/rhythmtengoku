@@ -19,123 +19,125 @@ extern const struct Scene D_089d5bf4;
 extern const struct Scene D_089d5cdc;
 extern struct SequenceData s_lesson_sel_bgm_seqData;
 
+
 // [D_089dd5ec] Drum Lessons Menu - Levels
-struct MedalCornerLevel lessons_menu_levels[] = {
-    /* 0x00 */ {
+struct MedalCornerLevel lessons_menu_levels[TOTAL_DRUM_LESSONS] = {
+    /* BASIC_1 */ {
         /* Scene  */ &D_089d52e4,
-        /* Title  */ text_lessons_menu_basic_1,
+        /* Title  */ "ベーシック　１",
         /* Anim   */ anim_lessons_menu_basic_1,
         /* Medals */ 3
     },
-    /* 0x01 */ {
+    /* BASIC_2 */ {
         /* Scene  */ &D_089d53cc,
-        /* Title  */ text_lessons_menu_basic_2,
+        /* Title  */ "ベーシック　２",
         /* Anim   */ anim_lessons_menu_basic_2,
         /* Medals */ 6
     },
-    /* 0x02 */ {
+    /* SHORT_1 */ {
         /* Scene  */ &D_089d4c8c,
-        /* Title  */ text_lessons_menu_short_1,
+        /* Title  */ "ショート　１",
         /* Anim   */ anim_lessons_menu_short_1,
         /* Medals */ 9
     },
-    /* 0x03 */ {
+    /* SHORT_2 */ {
         /* Scene  */ &D_089d54b4,
-        /* Title  */ text_lessons_menu_short_2,
+        /* Title  */ "ショート　２",
         /* Anim   */ anim_lessons_menu_short_2,
         /* Medals */ 12
     },
-    /* 0x04 */ {
+    /* SHORT_3 */ {
         /* Scene  */ &D_089d559c,
-        /* Title  */ text_lessons_menu_short_3,
+        /* Title  */ "ショート　３",
         /* Anim   */ anim_lessons_menu_short_3,
         /* Medals */ 15
     },
-    /* 0x05 */ {
+    /* SHORT_4 */ {
         /* Scene  */ &D_089d4d74,
-        /* Title  */ text_lessons_menu_short_4,
+        /* Title  */ "ショート　４",
         /* Anim   */ anim_lessons_menu_short_4,
         /* Medals */ 18
     },
-    /* 0x06 */ {
+    /* SHORT_5 */ {
         /* Scene  */ &D_089d4f44,
-        /* Title  */ text_lessons_menu_short_5,
+        /* Title  */ "ショート　５",
         /* Anim   */ anim_lessons_menu_short_5,
         /* Medals */ 21
     },
-    /* 0x07 */ {
+    /* SHORT_6 */ {
         /* Scene  */ &D_089d51fc,
-        /* Title  */ text_lessons_menu_short_6,
+        /* Title  */ "ショート　６",
         /* Anim   */ anim_lessons_menu_short_6,
         /* Medals */ 24
     },
-    /* 0x08 */ {
+    /* SHORT_7 */ {
         /* Scene  */ &D_089d502c,
-        /* Title  */ text_lessons_menu_short_7,
+        /* Title  */ "ショート　７",
         /* Anim   */ anim_lessons_menu_short_7,
         /* Medals */ 27
     },
-    /* 0x09 */ {
+    /* SHORT_8 */ {
         /* Scene  */ &D_089d4e5c,
-        /* Title  */ text_lessons_menu_short_8,
+        /* Title  */ "ショート　８",
         /* Anim   */ anim_lessons_menu_short_8,
         /* Medals */ 30
     },
-    /* 0x0A */ {
+    /* SHORT_9 */ {
         /* Scene  */ &D_089d5114,
-        /* Title  */ text_lessons_menu_short_9,
+        /* Title  */ "ショート　９",
         /* Anim   */ anim_lessons_menu_short_9,
         /* Medals */ 32
     },
-    /* 0x0B */ {
+    /* LONG_1 */ {
         /* Scene  */ &D_089d593c,
-        /* Title  */ text_lessons_menu_long_1,
+        /* Title  */ "ロング　１",
         /* Anim   */ anim_lessons_menu_long_1,
         /* Medals */ 34
     },
-    /* 0x0C */ {
+    /* LONG_2 */ {
         /* Scene  */ &D_089d576c,
-        /* Title  */ text_lessons_menu_long_2,
+        /* Title  */ "ロング　２",
         /* Anim   */ anim_lessons_menu_long_2,
         /* Medals */ 36
     },
-    /* 0x0D */ {
+    /* LONG_3 */ {
         /* Scene  */ &D_089d5854,
-        /* Title  */ text_lessons_menu_long_3,
+        /* Title  */ "ロング　３",
         /* Anim   */ anim_lessons_menu_long_3,
         /* Medals */ 38
     },
-    /* 0x0E */ {
+    /* LONG_4 */ {
         /* Scene  */ &D_089d5684,
-        /* Title  */ text_lessons_menu_long_4,
+        /* Title  */ "ロング　４",
         /* Anim   */ anim_lessons_menu_long_4,
         /* Medals */ 40
     },
-    /* 0x0F */ {
+    /* LONG_5 */ {
         /* Scene  */ &D_089d5a24,
-        /* Title  */ text_lessons_menu_long_5,
+        /* Title  */ "ロング　５",
         /* Anim   */ anim_lessons_menu_long_5,
         /* Medals */ 42
     },
-    /* 0x10 */ {
+    /* LONG_6 */ {
         /* Scene  */ &D_089d5b0c,
-        /* Title  */ text_lessons_menu_long_6,
+        /* Title  */ "ロング　６",
         /* Anim   */ anim_lessons_menu_long_5,
         /* Medals */ 44
     },
-    /* 0x11 */ {
+    /* HI_TECH_1 */ {
         /* Scene  */ &D_089d5bf4,
-        /* Title  */ text_lessons_menu_hi_tech_1,
+        /* Title  */ "ハイテク　１",
         /* Anim   */ anim_lessons_menu_hi_tech_1,
         /* Medals */ 46
     },
-    /* 0x12 */ {
+    /* HI_TECH_2 */ {
         /* Scene  */ &D_089d5cdc,
-        /* Title  */ text_lessons_menu_hi_tech_2,
+        /* Title  */ "ハイテク　２",
         /* Anim   */ anim_lessons_menu_hi_tech_1,
         /* Medals */ 48
-    },
+    }
 };
+
 
 // [D_089dd71c] Drum Lessons Menu - Graphics Table
 struct GraphicsTable lessons_menu_gfx_table[] = {
@@ -172,13 +174,15 @@ struct GraphicsTable lessons_menu_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
+
 // [D_089dd770] Drum Lessons Menu
 struct MedalCornerMenu lessons_menu_data = {
-    /* Level Count */ 19,
+    /* Level Count */ TOTAL_DRUM_LESSONS,
     /* Music       */ &s_lesson_sel_bgm_seqData,
     /* Graphics    */ lessons_menu_gfx_table,
     /* Level Data  */ lessons_menu_levels
 };
+
 
 // [D_089dd780] Drum Lessons Menu - Rank Icons
 struct Animation *lessons_menu_rank_icons[] = {

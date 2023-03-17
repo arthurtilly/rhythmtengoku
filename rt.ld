@@ -278,7 +278,7 @@ SECTIONS {
 		build/src/scenes/results.c.o(.rodata);
         build/data/scenes/data_room/reading.c.o(.rodata);
         build/data/scenes/studio/data.c.o(.rodata);
-        build/text/medal_corner_text.c.o(.rodata);
+        build/data/scenes/medal_corner/data.c.o(.rodata);
         build/text/debug_text.c.o(.rodata);
 
         # Rodata section of engines. Some of these are likely rodata sections of src/ files

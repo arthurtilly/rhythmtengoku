@@ -2,7 +2,6 @@
 #include "graphics.h"
 #include "src/scenes/medal_corner.h"
 #include "graphics/medal_corner/medal_corner_graphics.h"
-#include "text/medal_corner_text.h"
 
 
   /* MEDAL CORNER MENUS - SCENE DATA */
@@ -19,12 +18,15 @@ struct MedalCornerMenu *medal_corner_menu_table[] = {
     /* LESSONS */ &lessons_menu_data
 };
 
+
 #include "toys_menu.inc.c"
 #include "endless_menu.inc.c"
 #include "lessons_menu.inc.c"
 
+
 // [D_089dd794] ???
 char medal_corner_locked_text[] = "ÅHÅHÅH";
+
 
 // [D_089dd79c] Buffered Textures List
 struct CompressedGraphics *medal_corner_buffered_textures[] = {

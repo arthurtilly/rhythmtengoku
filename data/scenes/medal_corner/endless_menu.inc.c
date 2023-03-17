@@ -4,33 +4,35 @@ extern const struct Scene D_089d6ba4;
 extern const struct Scene D_089d69e0;
 extern struct SequenceData s_mini_game_bgm_seqData;
 
+
 // [D_089dd548] Endless Games Menu - Levels
-struct MedalCornerLevel endless_menu_levels[] = {
-    /* 0x00 */ {
+struct MedalCornerLevel endless_menu_levels[TOTAL_ENDLESS_GAMES] = {
+    /* MR_UPBEAT */ {
         /* Scene  */ &D_089d6804,
-        /* Title  */ text_endless_menu_mr_upbeat,
+        /* Title  */ "ウラおとこ",
         /* Anim   */ anim_endless_menu_mr_upbeat,
         /* Medals */ 1
     },
-    /* 0x01 */ {
+    /* SICK_BEATS */ {
         /* Scene  */ &D_089d6c8c,
-        /* Title  */ text_endless_menu_sick_beats,
+        /* Title  */ "バイキンはかせＳＰ",
         /* Anim   */ anim_endless_menu_sick_beats,
         /* Medals */ 10
     },
-    /* 0x02 */ {
+    /* QUIZ_SHOW */ {
         /* Scene  */ &D_089d6ba4,
-        /* Title  */ text_endless_menu_quiz_show,
+        /* Title  */ "クイズ　スペシャル",
         /* Anim   */ anim_endless_menu_quiz_show,
         /* Medals */ 20
     },
-    /* 0x03 */ {
+    /* MANNEQUIN_FACTORY */ {
         /* Scene  */ &D_089d69e0,
-        /* Title  */ text_endless_menu_mannequin_factory,
+        /* Title  */ "マネキン工場",
         /* Anim   */ anim_endless_menu_mannequin,
         /* Medals */ 30
-    },
+    }
 };
+
 
 // [D_089dd588] Endless Games Menu - Graphics Table
 struct GraphicsTable endless_menu_gfx_table[] = {
@@ -67,9 +69,10 @@ struct GraphicsTable endless_menu_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
+
 // [D_089dd5dc] Endless Games Menu
 struct MedalCornerMenu endless_menu_data = {
-    /* Level Count */ 4,
+    /* Level Count */ TOTAL_ENDLESS_GAMES,
     /* Music       */ &s_mini_game_bgm_seqData,
     /* Graphics    */ endless_menu_gfx_table,
     /* Level Data  */ endless_menu_levels
