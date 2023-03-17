@@ -36,6 +36,7 @@ struct PauseMenu {
 extern struct PauseMenu gPauseMenu;
 
 
+extern const char D_08059668[];
 extern char D_089dd908[];
 extern FontPalette D_089dd94a[];
 extern FontPalette D_089dd962[];

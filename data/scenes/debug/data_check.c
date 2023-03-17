@@ -12,10 +12,12 @@ union SceneObject data_check_scene_objects[] = {
     END_OF_SCENE_OBJECTS_LIST
 };
 
+
 // [D_089cda2c] Graphics Table
 struct GraphicsTable data_check_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
+
 
 // [D_089cda38] Buffered Textures List
 struct CompressedGraphics *data_check_buffered_textures[] = {

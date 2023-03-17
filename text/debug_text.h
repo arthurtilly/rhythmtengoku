@@ -1,10 +1,7 @@
 #pragma once
 
 // Debug Menu
-extern const char D_08059668[];
-extern const char D_0805966c[];
-extern const char D_08059680[];
-extern const char D_08059684[];
+
 extern const char text_debug_menu_data_clear[];
 extern const char text_debug_menu_credits_again[];
 extern const char text_debug_menu_credits_first_time[];

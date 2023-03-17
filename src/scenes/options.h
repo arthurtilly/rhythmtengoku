@@ -21,7 +21,7 @@ extern struct Animation *options_sound_mode_anim[][2];
 
 
 // Functions:
-// extern ? func_080162c8(?); // Initialise Static Variables
+// extern ? func_080162c8(?); // Init. Static Variables
 // extern ? func_080162cc(?); // Graphics Init. 3
 // extern ? func_080162f8(?); // Graphics Init. 2
 // extern ? func_08016328(?); // Graphics Init. 1

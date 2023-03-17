@@ -9,7 +9,7 @@ thumb_func_start func_0801ed50 \n\
 /* 0801ed58 */ BL get_current_mem_id \n\
 /* 0801ed5c */ LSLS R0, R0, 0x10 \n\
 /* 0801ed5e */ LSRS R0, R0, 0x10 \n\
-/* 0801ed60 */ LDR R1, =unknown_test_buffered_textures \n\
+/* 0801ed60 */ LDR R1, =empty_test_buffered_textures \n\
 /* 0801ed62 */ BL func_080087b4 \n\
 /* 0801ed66 */ LDR R1, =pause_beatscript_scene \n\
 /* 0801ed68 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\

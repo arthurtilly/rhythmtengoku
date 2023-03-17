@@ -1,8 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 #include "src/bitmap_font.h"
-#include "src/scenes/debug.h"
-#include "text/debug_text.h"
+#include "src/scenes/debug_menu.h"
 
 
   /* DEBUG MENU - SCENE DATA */
@@ -12,6 +11,7 @@
 union SceneObject debug_menu_scene_objects[] = {
     END_OF_SCENE_OBJECTS_LIST
 };
+
 
 // [D_089ddab4] Graphics Table
 struct GraphicsTable debug_menu_gfx_table[] = {
@@ -57,6 +57,7 @@ struct GraphicsTable debug_menu_gfx_table[] = {
     },
     END_OF_GRAPHICS_TABLE
 };
+
 
 // [D_089ddb20] Buffered Textures List
 struct CompressedGraphics *debug_menu_buffered_textures[] = {

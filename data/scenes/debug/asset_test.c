@@ -1,8 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 #include "src/bitmap_font.h"
-#include "src/scenes/debug.h"
-#include "text/debug_text.h"
+#include "src/scenes/debug_asset_test.h"
 #include "games/drum_studio/graphics/drum_studio_graphics.h"
 
 
@@ -13,6 +12,7 @@
 union SceneObject asset_test_scene_objects[] = {
     END_OF_SCENE_OBJECTS_LIST
 };
+
 
 // [D_089de0e8] Graphics Table
 struct GraphicsTable asset_test_gfx_table[] = {
@@ -44,10 +44,12 @@ struct GraphicsTable asset_test_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
+
 // [D_089de130] Buffered Textures List
 struct CompressedGraphics *asset_test_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
+
 
 // [D_089de134] Graphics Table
 struct GraphicsTable asset_test_gfx_table_dupe[] = {

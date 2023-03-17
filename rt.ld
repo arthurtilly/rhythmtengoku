@@ -42,7 +42,11 @@ SECTIONS {
 		build/src/scenes/medal_corner.c.o(.bss);
 		build/src/scenes/riq_main_scene.c.o(.bss);
 		build/src/scenes/warning.c.o(.bss);
-		build/src/scenes/debug.c.o(.bss);
+		build/src/scenes/debug_menu.c.o(.bss);
+		build/src/scenes/debug_flash_mem.c.o(.bss);
+		build/src/scenes/debug_data_clear.c.o(.bss);
+		build/src/scenes/debug_asset_test.c.o(.bss);
+		build/src/scenes/debug_empty_test.c.o(.bss);
 		build/src/engines/sneaky_spirits.c.o(.bss);
 		build/src/engines/spaceball.c.o(.bss);
 		build/src/engines/bon_odori.c.o(.bss);
@@ -163,7 +167,11 @@ SECTIONS {
 		build/src/scenes/medal_corner.c.o(.text);
         build/src/scenes/riq_main_scene.c.o(.text);
         build/src/scenes/warning.c.o(.text);
-        build/src/scenes/debug.c.o(.text);
+        build/src/scenes/debug_menu.c.o(.text);
+        build/src/scenes/debug_flash_mem.c.o(.text);
+        build/src/scenes/debug_data_clear.c.o(.text);
+        build/src/scenes/debug_asset_test.c.o(.text);
+        build/src/scenes/debug_empty_test.c.o(.text);
 		build/src/engines/sneaky_spirits.c.o(.text);
 		build/src/engines/spaceball.c.o(.text);
 		build/src/engines/bon_odori.c.o(.text);
@@ -264,7 +272,8 @@ SECTIONS {
 
         # Some of these are likely rodata sections of src/ files
 		build/asm/boot.s.o(.rodata);
-        build/text/beatscript_text.c.o(.rodata);
+        build/data/bitmap_font_data.c.o(.rodata);
+        build/data/beatscript_scene_data.c.o(.rodata);
 		build/src/scenes/library.c.o(.rodata);
         build/data/scenes/cafe/data.c.o(.rodata);
 		build/src/scenes/data_check.c.o(.rodata);
@@ -279,7 +288,8 @@ SECTIONS {
         build/data/scenes/data_room/reading.c.o(.rodata);
         build/data/scenes/studio/data.c.o(.rodata);
         build/data/scenes/medal_corner/data.c.o(.rodata);
-        build/text/debug_text.c.o(.rodata);
+        build/data/scenes/riq_main_scene/data.c.o(.rodata);
+        build/data/scenes/debug/data.c.o(.rodata);
 
         # Rodata section of engines. Some of these are likely rodata sections of src/ files
         build/games/sneaky_spirits/engine.c.o(.rodata);
@@ -1735,8 +1745,8 @@ SECTIONS {
         build/bin/scene_data_clear.bin.o(.rodata*);
         build/data/scenes/debug/asset_test.c.o(.data);
         build/bin/scene_asset_test.bin.o(.rodata*);
-        build/data/scenes/debug/unknown_test.c.o(.data);
-        build/bin/scene_unknown_test.bin.o(.rodata*);
+        build/data/scenes/debug/empty_test.c.o(.data);
+        build/bin/scene_empty_test.bin.o(.rodata*);
         build/data/font_definitions.c.o(.data);
 
         build/games/sneaky_spirits/engine.c.o(.data);

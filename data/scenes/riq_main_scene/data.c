@@ -6,6 +6,10 @@
   /* RIQ GLOBAL SCENE - MISC. DATA */
 
 
+// Underscore
+const char D_08059668[] = "ÅQ";
+
+
 // [D_089dd908] ?
 char D_089dd908[] = "ÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQ";
 

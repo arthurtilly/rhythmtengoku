@@ -159,7 +159,6 @@ FontPalette D_089ccbc8[] = {
     }
 };
 
-
 // [D_089ccc80] Arbitrarily-Split Data
 u16 D_089ccc80[] = {
     /* 00 */ TO_RGB555(0x000000),
@@ -171,5 +170,15 @@ u16 D_089ccc80[] = {
 };
 
 
-// [D_089ccc94] Wide-Spaced Characters
+// [D_089ccc94] Full Width Characters
 char D_089ccc94[] = "‚‚‚‚ƒ‚„‚…‚†‚‡‚ˆ‚‰‚Š‚‹‚Œ‚‚‚‚‚‘‚’‚“‚”‚•‚–‚—‚˜‚™‚š";
+
+const char D_0804f370[] = "Q";
+
+const char D_0804f374[] = "I";
+
+const char D_0804f378[] = "H";
+
+const char D_0804f37c[] = "C";
+
+const char D_0804f380[] = "|";
