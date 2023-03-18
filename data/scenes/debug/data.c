@@ -120,781 +120,456 @@ extern const struct Scene D_089de0c8;
 // Sequence Test
 const char D_0805966c[] = "シーケンス　テスト";
 
+
 // Asterisk
 const char D_08059680[] = "＊";
 
+
 // 1/1
 const char D_08059684[] = "１／１";
-
-// Data Clear
-const char text_debug_menu_data_clear[] = "データクリア";
-
-// Ending (from Medal Corner)
-const char text_debug_menu_credits_again[] = "エンディング（おまけから）";
-
-// Ending (from clearing Remix 6)
-const char text_debug_menu_credits_first_time[] = "エンディング（クリアご）";
-
-// R-IQ (Rhythm Toys)
-const char text_debug_menu_riq_rhythm_toys[] = "Ｒ－ＩＱ　（おもちゃ）";
-
-// R-IQ (Drum Lessons)
-const char text_debug_menu_riq_drum_lessons[] = "Ｒ－ＩＱ　（ドラムレッスン）";
-
-// R-IQ (Endless Games)
-const char text_debug_menu_riq_endless_games[] = "Ｒ－ＩＱ　（ミニゲーム）";
-
-// R-IQ (Cafe)
-const char text_debug_menu_riq_cafe[] = "Ｒ－ＩＱ　（カウンセラー）";
-
-// R-IQ (Perfect)
-const char text_debug_menu_riq_perfect[] = "Ｒ－ＩＱ　（パーフェクト）";
-
-// R-IQ (Rhythm Library)
-const char text_debug_menu_riq_library[] = "Ｒ－ＩＱ　（にゅうか）";
-
-// R-IQ (Result 4)
-const char text_debug_menu_riq_results4[] = "Ｒ－ＩＱ　（リザルト４）";
-
-// R-IQ (Result 3)
-const char text_debug_menu_riq_results3[] = "Ｒ－ＩＱ　（リザルト３）";
-
-// R-IQ (Result 2)
-const char text_debug_menu_riq_results2[] = "Ｒ－ＩＱ　（リザルト２）";
-
-// R-IQ (Result [1])
-const char text_debug_menu_riq_results[] = "Ｒ－ＩＱ　（リザルト）";
-
-// R-IQ (Options)
-const char text_debug_menu_riq_options[] = "Ｒ－ＩＱ　（オプション）";
-
-// R-IQ (Studio)
-const char text_debug_menu_riq_studio[] = "Ｒ－ＩＱ　（スタジオ）";
-
-// R-IQ (Rhythm Data Room)
-const char text_debug_menu_riq_data_room[] = "Ｒ－ＩＱ　（しりょうしつ）";
-
-// R-IQ (Game Select)
-const char text_debug_menu_riq_game_select[] = "Ｒ－ＩＱ　（ゲーム）";
-
-// R-IQ (Main Menu)
-const char text_debug_menu_riq_main_menu[] = "Ｒ－ＩＱ　（メニュー）";
-
-// R-IQ (Title Screen)
-const char text_debug_menu_riq_title[] = "Ｒ－ＩＱ　（タイトル）";
-
-// Karate Man 2
-const char text_debug_menu_karate_man_2[] = "カラテカ　２";
-
-// Karate Man
-const char text_debug_menu_karate_man[] = "カラテカ";
-
-// The Snappy Trio
-const char text_debug_menu_snappy_trio[] = "バリバリ３にんしゅう";
-
-// The Clappy Trio
-const char text_debug_menu_clappy_trio[] = "パチパチ３にんしゅう";
-
-// Polyrhythm 2
-const char text_debug_menu_polyrhythm_2[] = "ポリリズム　２";
-
-// Polyrhythm
-const char text_debug_menu_polyrhythm[] = "ポリリズム";
-
-// Night Walk 2
-const char text_debug_menu_night_walk_2[] = "ナイト　ウォーク　２";
-
-// Night Walk
-const char text_debug_menu_night_walk[] = "ナイト　ウォーク";
-
-// Rhythm Tweezers 2
-const char text_debug_menu_rhythm_tweezers_2[] = "リズムだつもう　２";
-
-// Rhythm Tweezers
-const char text_debug_menu_rhythm_tweezers[] = "リズムだつもう";
-
-// Sick Beats
-const char text_debug_menu_sick_beats[] = "バイキン　はかせ";
-
-// Bouncy Road 2
-const char text_debug_menu_bouncy_road_2[] = "ホッピングロード　２";
-
-// Bouncy Road
-const char text_debug_menu_bouncy_road[] = "ホッピングロード";
-
-// Ninja Bodyguard 2
-const char text_debug_menu_ninja_reincarnate[] = "ニンジャ　２";
-
-// Ninja Bodyguard
-const char text_debug_menu_ninja_bodyguard[] = "ニンジャ";
-
-// Sneaky Spirits 2
-const char text_debug_menu_sneaky_spirits_2[] = "しろいおばけ　２";
-
-// Sneaky Spirits
-const char text_debug_menu_sneaky_spirits[] = "しろいおばけ";
-
-// Spaceball 2
-const char text_debug_menu_spaceball_2[] = "エアーバッター２";
-
-// Spaceball
-const char text_debug_menu_spaceball[] = "エアーバッター";
-
-// Samurai Slice
-const char text_debug_menu_samurai_slice[] = "いあいぎり";
-
-// Tap Trial 2
-const char text_debug_menu_tap_trial_2[] = "スーパータップ";
-
-// Tap Trial
-const char text_debug_menu_tap_trial[] = "タップダンズ";
-
-// Horse Machine
-const char text_debug_menu_horse_machine[] = "うま（スピード）";
-
-// Marching Orders 2
-const char text_debug_menu_marching_orders_2[] = "マーチャ　２";
-
-// Marching Orders
-const char text_debug_menu_marching_orders[] = "マーチャ";
-
-// Wizard's Waltz
-const char text_debug_menu_wizards_waltz[] = "まほうつかい";
-
-// Dance Lesson 1
-const char text_debug_menu_dance_lesson_1[] = "ダンスレッスン　１";
-
-// Bunny Hop
-const char text_debug_menu_bunny_hop[] = "ウサギとび";
-
-// Metronome
-const char text_debug_menu_metronome[] = "メトロノーム";
-
-// Fireworks
-const char text_debug_menu_fireworks[] = "ハナビ";
-
-// Flash Memory Test
-const char text_debug_menu_flash_memory_test[] = "フラッシュメモリテスト";
-
-// Rat Race
-const char text_debug_menu_rat_race[] = "こっそりラット";
-
-// Power Calligraphy
-const char text_debug_menu_power_calligraphy[] = "リズム　おしゅうじ";
-
-// Drum Girls LIVE
-const char text_debug_menu_drum_girls_live[] = "ドラムガールズ";
-
-// Toss Boys 2
-const char text_debug_menu_toss_boys_2[] = "トスボーイズ　２";
-
-// Toss Boys
-const char text_debug_menu_toss_boys[] = "トスボーイズ";
-
-// Tram & Pauline
-const char text_debug_menu_tram_pauline[] = "トランとポリン";
-
-// Opening (A Type)
-const char text_debug_menu_opening_a[] = "オープニング　（Ａ　Ｔｙｐｅ）";
-
-// Opening (B Type)
-const char text_debug_menu_opening_b[] = "オープニング　（Ｂ　Ｔｙｐｅ）";
-
-// RIQ Data Check
-const char text_debug_menu_riq_data_check[] = "ＲＩＱデータチェック";
-
-// Showtime
-const char text_debug_menu_showtime[] = "ショータイム";
-
-// Cosmic Dance
-const char text_debug_menu_cosmic_dance[] = "コスモダンス";
-
-// Space Dance
-const char text_debug_menu_space_dance[] = "スペースダンス";
-
-// Rap Women (by KAZU)
-const char text_debug_menu_rap_women_kazu[] = "ラップ　ウィメン（ｂｙ　ＫＡＺＵ）";
-
-// Rap Women (by YONE)
-const char text_debug_menu_rap_women_yone[] = "ラップ　ウィメン（ｂｙ　ＹＯＮＥ）";
-
-// Rap Men
-const char text_debug_menu_rap_men[] = "ラップメン";
-
-// Quiz Show
-const char text_debug_menu_quiz_show[] = "クイズ";
-
-// Reading Material
-const char text_debug_menu_reading_material[] = "テキスト";
-
-// Rhythm Test (Total)
-const char text_debug_menu_rhythm_test_total[] = "チェックマシン　（トータル）";
-
-// Rhythm Test (Trick)
-const char text_debug_menu_rhythm_test_trick[] = "チェックマシン　（トリッキー）";
-
-// Rhythm Test (Cue)
-const char text_debug_menu_rhythm_test_cue[] = "チェックマシン　（キューフ）";
-
-// Check Machine (Click)
-const char text_debug_menu_rhythm_test_click[] = "チェックマシン　（クリック）";
-
-// Studio Drummer
-const char text_debug_menu_studio_drummer[] = "スタジオドラマー";
-
-// Lesson (High-Tech 2)
-const char text_debug_menu_drum_lesson_hi_tech_2[] = "レッスン（じっせん８）";
-
-// Lesson (High-Tech 1)
-const char text_debug_menu_drum_lesson_hi_tech_1[] = "レッスン（じっせん７）";
-
-// Lesson (Long 6)
-const char text_debug_menu_drum_lesson_long_6[] = "レッスン（じっせん６）";
-
-// Lesson (Long 5)
-const char text_debug_menu_drum_lesson_long_5[] = "レッスン（じっせん５）";
-
-// Lesson (Long 1)
-const char text_debug_menu_drum_lesson_long_1[] = "レッスン（じっせん４）";
-
-// Lesson (Long 3)
-const char text_debug_menu_drum_lesson_long_3[] = "レッスン（じっせん３）";
-
-// Lesson (Long 2)
-const char text_debug_menu_drum_lesson_long_2[] = "レッスン（じっせん２）";
-
-// Lesson (Long 4)
-const char text_debug_menu_drum_lesson_long_4[] = "レッスン（じっせん１）";
-
-// Lesson (Short 3)
-const char text_debug_menu_drum_lesson_short_3[] = "レッスン（スネアテクニック）";
-
-// Lesson (Short 2)
-const char text_debug_menu_drum_lesson_short_2[] = "レッスン（はやい８ビート）";
-
-// Lesson (Basic 2)
-const char text_debug_menu_drum_lesson_basic_2[] = "レッスン（バスとスネア）";
-
-// Lesson (Basic 1)
-const char text_debug_menu_drum_lesson_basic_1[] = "レッスン（スネア）";
-
-// Lesson (Short 9)
-const char text_debug_menu_drum_lesson_short_9[] = "レッスン（ボッサ）";
-
-// Lesson (Short 6)
-const char text_debug_menu_drum_lesson_short_6[] = "レッスン（デスコビート）";
-
-// Lesson (Short 7)
-const char text_debug_menu_drum_lesson_short_7[] = "レッスン（キメパターン２）";
-
-// Lesson (Short 5)
-const char text_debug_menu_drum_lesson_short_5[] = "レッスン（キメパターン１）";
-
-// Lesson (Short 8)
-const char text_debug_menu_drum_lesson_short_8[] = "レッスン（ハード２）";
-
-// Lesson (Short 4)
-const char text_debug_menu_drum_lesson_short_4[] = "レッスン（ハード１）";
-
-// Lesson (Short 1)
-const char text_debug_menu_drum_lesson_short_1[] = "レッスン（イージー）";
-
-// Rhythm Toys (Rap Machine)
-const char text_debug_menu_rap_machine[] = "こえマシン（ラップ）";
-
-// Rhythm Toys (Confession Machine)
-const char text_debug_menu_confession_machine[] = "こえマシン（ラブ）";
-
-// Rhythm Toys (Cat Machine)
-const char text_debug_menu_cat_machine[] = "こえマシン（ネコ）";
-
-// Bon Dance
-const char text_debug_menu_bon_dance[] = "ボンダンス";
-
-// Bon Odori
-const char text_debug_menu_bon_odori[] = "ぼんおどり";
-
-// Remix 1
-const char text_debug_menu_remix_1[] = "リミックス　１";
-
-// Remix 2
-const char text_debug_menu_remix_2[] = "リミックス　２";
-
-// Remix 3
-const char text_debug_menu_remix_3[] = "リミックス　３";
-
-// Remix 4
-const char text_debug_menu_remix_4[] = "リミックス　４";
-
-// Remix 5
-const char text_debug_menu_remix_5[] = "リミックス　５";
-
-// Remix 6
-const char text_debug_menu_remix_6[] = "リミックス　６";
-
-// Remix 7
-const char text_debug_menu_remix_7[] = "リミックス　７";
-
-// Remix 8
-const char text_debug_menu_remix_8[] = "リミックス　８";
-
-// Mr. Upbeat
-const char text_debug_menu_mr_upbeat[] = "ウラおとこ";
-
-// Mannequin Factory
-const char text_debug_menu_mannequin_factory[] = "マネキンこうじょう";
-
-// Quiz Show Endless
-const char text_debug_menu_quiz_show_endless[] = "クイズ（スペシャル）";
-
-// Sick Beats Endless
-const char text_debug_menu_sick_beats_endless[] = "バイキン　はかせ　ＳＰ";
-
-// LIVE
-const char text_debug_menu_concert_hall[] = "ライブ";
 
 
 // [D_089ddbe8] Debug Menu Table
 struct DebugMenuEntry debug_menu_entry_table[] = {
     /* LIVE */ {
         /* Scene */ &D_089d6f44,
-        /* Label */ text_debug_menu_concert_hall
+        /* Label */ "ライブ"
     },
     /* Sick Beats Endless */ {
         /* Scene */ &D_089d6c8c,
-        /* Label */ text_debug_menu_sick_beats_endless
+        /* Label */ "バイキン　はかせ　ＳＰ"
     },
     /* Quiz Show Endless */ {
         /* Scene */ &D_089d6ba4,
-        /* Label */ text_debug_menu_quiz_show_endless
+        /* Label */ "クイズ（スペシャル）"
     },
     /* Mannequin Factory */ {
         /* Scene */ &D_089d69e0,
-        /* Label */ text_debug_menu_mannequin_factory
+        /* Label */ "マネキンこうじょう"
     },
     /* Mr. Upbeat */ {
         /* Scene */ &D_089d6804,
-        /* Label */ text_debug_menu_mr_upbeat
+        /* Label */ "ウラおとこ"
     },
-    /* 0x05 */ {
+    /* Remix 8 */ {
         /* Scene */ &D_089d74fc,
-        /* Label */ text_debug_menu_remix_8
+        /* Label */ "リミックス　８"
     },
-    /* 0x06 */ {
+    /* Remix 7 */ {
         /* Scene */ &D_089d712c,
-        /* Label */ text_debug_menu_remix_7
+        /* Label */ "リミックス　７"
     },
-    /* 0x07 */ {
+    /* Remix 6 */ {
         /* Scene */ &D_089d7408,
-        /* Label */ text_debug_menu_remix_6
+        /* Label */ "リミックス　６"
     },
-    /* 0x08 */ {
+    /* Remix 5 */ {
         /* Scene */ &D_089d7220,
-        /* Label */ text_debug_menu_remix_5
+        /* Label */ "リミックス　５"
     },
-    /* 0x09 */ {
+    /* Remix 4 */ {
         /* Scene */ &D_089d671c,
-        /* Label */ text_debug_menu_remix_4
+        /* Label */ "リミックス　４"
     },
-    /* 0x0A */ {
+    /* Remix 3 */ {
         /* Scene */ &D_089d7038,
-        /* Label */ text_debug_menu_remix_3
+        /* Label */ "リミックス　３"
     },
-    /* 0x0B */ {
+    /* Remix 2 */ {
         /* Scene */ &D_089d6628,
-        /* Label */ text_debug_menu_remix_2
+        /* Label */ "リミックス　２"
     },
-    /* 0x0C */ {
+    /* Remix 1 */ {
         /* Scene */ &D_089d2764,
-        /* Label */ text_debug_menu_remix_1
+        /* Label */ "リミックス　１"
     },
-    /* 0x0D */ {
+    /* The Bon Odori */ {
         /* Scene */ &D_089d6088,
-        /* Label */ text_debug_menu_bon_odori
+        /* Label */ "ぼんおどり"
     },
-    /* 0x0E */ {
+    /* Bon Dance */ {
         /* Scene */ &D_089d7314,
-        /* Label */ text_debug_menu_bon_dance
+        /* Label */ "ボンダンス"
     },
-    /* 0x0F */ {
+    /* Rhythm Toys (Cat Machine) */ {
         /* Scene */ &D_089d5dc4,
-        /* Label */ text_debug_menu_cat_machine
+        /* Label */ "こえマシン（ネコ）"
     },
-    /* 0x10 */ {
+    /* Rhythm Toys (Confession Machine) */ {
         /* Scene */ &D_089d5eac,
-        /* Label */ text_debug_menu_confession_machine
+        /* Label */ "こえマシン（ラブ）"
     },
-    /* 0x11 */ {
+    /* Rhythm Toys (Rap Machine) */ {
         /* Scene */ &D_089d5f94,
-        /* Label */ text_debug_menu_rap_machine
+        /* Label */ "こえマシン（ラップ）"
     },
-    /* 0x12 */ {
+    /* Lesson (Short 1) */ {
         /* Scene */ &D_089d4c8c,
-        /* Label */ text_debug_menu_drum_lesson_short_1
+        /* Label */ "レッスン（イージー）"
     },
-    /* 0x13 */ {
+    /* Lesson (Short 4) */ {
         /* Scene */ &D_089d4d74,
-        /* Label */ text_debug_menu_drum_lesson_short_4
+        /* Label */ "レッスン（ハード１）"
     },
-    /* 0x14 */ {
+    /* Lesson (Short 8) */ {
         /* Scene */ &D_089d4e5c,
-        /* Label */ text_debug_menu_drum_lesson_short_8
+        /* Label */ "レッスン（ハード２）"
     },
-    /* 0x15 */ {
+    /* Lesson (Short 5) */ {
         /* Scene */ &D_089d4f44,
-        /* Label */ text_debug_menu_drum_lesson_short_5
+        /* Label */ "レッスン（キメパターン１）"
     },
-    /* 0x16 */ {
+    /* Lesson (Short 7) */ {
         /* Scene */ &D_089d502c,
-        /* Label */ text_debug_menu_drum_lesson_short_7
+        /* Label */ "レッスン（キメパターン２）"
     },
-    /* 0x17 */ {
+    /* Lesson (Short 6) */ {
         /* Scene */ &D_089d51fc,
-        /* Label */ text_debug_menu_drum_lesson_short_6
+        /* Label */ "レッスン（デスコビート）"
     },
-    /* 0x18 */ {
+    /* Lesson (Short 9) */ {
         /* Scene */ &D_089d5114,
-        /* Label */ text_debug_menu_drum_lesson_short_9
+        /* Label */ "レッスン（ボッサ）"
     },
-    /* 0x19 */ {
+    /* Lesson (Basic 1) */ {
         /* Scene */ &D_089d52e4,
-        /* Label */ text_debug_menu_drum_lesson_basic_1
+        /* Label */ "レッスン（スネア）"
     },
-    /* 0x1A */ {
+    /* Lesson (Basic 2) */ {
         /* Scene */ &D_089d53cc,
-        /* Label */ text_debug_menu_drum_lesson_basic_2
+        /* Label */ "レッスン（バスとスネア）"
     },
-    /* 0x1B */ {
+    /* Lesson (Short 2) */ {
         /* Scene */ &D_089d54b4,
-        /* Label */ text_debug_menu_drum_lesson_short_2
+        /* Label */ "レッスン（はやい８ビート）"
     },
-    /* 0x1C */ {
+    /* Lesson (Short 3) */ {
         /* Scene */ &D_089d559c,
-        /* Label */ text_debug_menu_drum_lesson_short_3
+        /* Label */ "レッスン（スネアテクニック）"
     },
-    /* 0x1D */ {
+    /* Lesson (Long 4) */ {
         /* Scene */ &D_089d5684,
-        /* Label */ text_debug_menu_drum_lesson_long_4
+        /* Label */ "レッスン（じっせん１）"
     },
-    /* 0x1E */ {
+    /* Lesson (Long 2) */ {
         /* Scene */ &D_089d576c,
-        /* Label */ text_debug_menu_drum_lesson_long_2
+        /* Label */ "レッスン（じっせん２）"
     },
-    /* 0x1F */ {
+    /* Lesson (Long 3) */ {
         /* Scene */ &D_089d5854,
-        /* Label */ text_debug_menu_drum_lesson_long_3
+        /* Label */ "レッスン（じっせん３）"
     },
-    /* 0x20 */ {
+    /* Lesson (Long 1) */ {
         /* Scene */ &D_089d593c,
-        /* Label */ text_debug_menu_drum_lesson_long_1
+        /* Label */ "レッスン（じっせん４）"
     },
-    /* 0x21 */ {
+    /* Lesson (Long 5) */ {
         /* Scene */ &D_089d5a24,
-        /* Label */ text_debug_menu_drum_lesson_long_5
+        /* Label */ "レッスン（じっせん５）"
     },
-    /* 0x22 */ {
+    /* Lesson (Long 6) */ {
         /* Scene */ &D_089d5b0c,
-        /* Label */ text_debug_menu_drum_lesson_long_6
+        /* Label */ "レッスン（じっせん６）"
     },
-    /* 0x23 */ {
+    /* Lesson (High-Tech 1) */ {
         /* Scene */ &D_089d5bf4,
-        /* Label */ text_debug_menu_drum_lesson_hi_tech_1
+        /* Label */ "レッスン（じっせん７）"
     },
-    /* 0x24 */ {
+    /* Lesson (High-Tech 2) */ {
         /* Scene */ &D_089d5cdc,
-        /* Label */ text_debug_menu_drum_lesson_hi_tech_2
+        /* Label */ "レッスン（じっせん８）"
     },
-    /* 0x25 */ {
+    /* Studio Drummer */ {
         /* Scene */ &D_089d48ec,
-        /* Label */ text_debug_menu_studio_drummer
+        /* Label */ "スタジオドラマー"
     },
-    /* 0x26 */ {
+    /* Check Machine (Click) */ {
         /* Scene */ &D_089d4464,
-        /* Label */ text_debug_menu_rhythm_test_click
+        /* Label */ "チェックマシン　（クリック）"
     },
-    /* 0x27 */ {
+    /* Rhythm Test (Cue) */ {
         /* Scene */ &D_089d454c,
-        /* Label */ text_debug_menu_rhythm_test_cue
+        /* Label */ "チェックマシン　（キューフ）"
     },
-    /* 0x28 */ {
+    /* Rhythm Test (Trick) */ {
         /* Scene */ &D_089d4634,
-        /* Label */ text_debug_menu_rhythm_test_trick
+        /* Label */ "チェックマシン　（トリッキー）"
     },
-    /* 0x29 */ {
+    /* Rhythm Test (Total) */ {
         /* Scene */ &D_089d4804,
-        /* Label */ text_debug_menu_rhythm_test_total
+        /* Label */ "チェックマシン　（トータル）"
     },
-    /* 0x2A */ {
+    /* Reading Material */ {
         /* Scene */ &D_089d80d0,
-        /* Label */ text_debug_menu_reading_material
+        /* Label */ "テキスト"
     },
-    /* 0x2B */ {
+    /* Quiz Show */ {
         /* Scene */ &D_089d42a0,
-        /* Label */ text_debug_menu_quiz_show
+        /* Label */ "クイズ"
     },
-    /* 0x2C */ {
+    /* Rap Men */ {
         /* Scene */ &D_089d40d0,
-        /* Label */ text_debug_menu_rap_men
+        /* Label */ "ラップメン"
     },
-    /* 0x2D */ {
+    /* Rap Women (by YONE) */ {
         /* Scene */ &D_089d6440,
-        /* Label */ text_debug_menu_rap_women_yone
+        /* Label */ "ラップ　ウィメン（ｂｙ　ＹＯＮＥ）"
     },
-    /* 0x2E */ {
+    /* Rap Women (by KAZU) */ {
         /* Scene */ &D_089d6534,
-        /* Label */ text_debug_menu_rap_women_kazu
+        /* Label */ "ラップ　ウィメン（ｂｙ　ＫＡＺＵ）"
     },
-    /* 0x2F */ {
+    /* Space Dance */ {
         /* Scene */ &D_089d3e18,
-        /* Label */ text_debug_menu_space_dance
+        /* Label */ "スペースダンス"
     },
-    /* 0x30 */ {
+    /* Cosmic Dance */ {
         /* Scene */ &D_089d68f8,
-        /* Label */ text_debug_menu_cosmic_dance
+        /* Label */ "コスモダンス"
     },
-    /* 0x31 */ {
+    /* Showtime */ {
         /* Scene */ &D_089d3c48,
-        /* Label */ text_debug_menu_showtime
+        /* Label */ "ショータイム"
     },
-    /* 0x32 */ {
+    /* RIQ Data Check */ {
         /* Scene */ &D_089cdad8,
-        /* Label */ text_debug_menu_riq_data_check
+        /* Label */ "ＲＩＱデータチェック"
     },
-    /* 0x33 */ {
+    /* Opening (B Type) */ {
         /* Scene */ &D_089d3a6c,
-        /* Label */ text_debug_menu_opening_b
+        /* Label */ "オープニング　（Ｂ　Ｔｙｐｅ）"
     },
-    /* 0x34 */ {
+    /* Opening (A Type) */ {
         /* Scene */ &D_089d3984,
-        /* Label */ text_debug_menu_opening_a
+        /* Label */ "オープニング　（Ａ　Ｔｙｐｅ）"
     },
-    /* 0x35 */ {
+    /* Tram & Pauline */ {
         /* Scene */ &D_089d35fc,
-        /* Label */ text_debug_menu_tram_pauline
+        /* Label */ "トランとポリン"
     },
-    /* 0x36 */ {
+    /* Toss Boys */ {
         /* Scene */ &D_089d3268,
-        /* Label */ text_debug_menu_toss_boys
+        /* Label */ "トスボーイズ"
     },
-    /* 0x37 */ {
+    /* Toss Boys 2 */ {
         /* Scene */ &D_089d3174,
-        /* Label */ text_debug_menu_toss_boys_2
+        /* Label */ "トスボーイズ　２"
     },
-    /* 0x38 */ {
+    /* Drum Girls LIVE */ {
         /* Scene */ &D_089d2f98,
-        /* Label */ text_debug_menu_drum_girls_live
+        /* Label */ "ドラムガールズ"
     },
-    /* 0x39 */ {
+    /* Power Calligraphy */ {
         /* Scene */ &D_089d2dd4,
-        /* Label */ text_debug_menu_power_calligraphy
+        /* Label */ "リズム　おしゅうじ"
     },
-    /* 0x3A */ {
+    /* Rat Race */ {
         /* Scene */ &D_089d2c04,
-        /* Label */ text_debug_menu_rat_race
+        /* Label */ "こっそりラット"
     },
-    /* 0x3B */ {
+    /* Flash Memory Test */ {
         /* Scene */ &D_089de05c,
-        /* Label */ text_debug_menu_flash_memory_test
+        /* Label */ "フラッシュメモリテスト"
     },
-    /* 0x3C */ {
+    /* Fireworks */ {
         /* Scene */ &D_089d2a34,
-        /* Label */ text_debug_menu_fireworks
+        /* Label */ "ハナビ"
     },
-    /* 0x3D */ {
+    /* Metronome */ {
         /* Scene */ &D_089d2940,
-        /* Label */ text_debug_menu_metronome
+        /* Label */ "メトロノーム"
     },
-    /* 0x3E */ {
+    /* Bunny Hop */ {
         /* Scene */ &D_089d2858,
-        /* Label */ text_debug_menu_bunny_hop
+        /* Label */ "ウサギとび"
     },
-    /* 0x3F */ {
+    /* Dance Lesson 1 */ {
         /* Scene */ &D_089d2670,
-        /* Label */ text_debug_menu_dance_lesson_1
+        /* Label */ "ダンスレッスン　１"
     },
-    /* 0x40 */ {
+    /* Wizard's Waltz */ {
         /* Scene */ &D_089d24a0,
-        /* Label */ text_debug_menu_wizards_waltz
+        /* Label */ "まほうつかい"
     },
-    /* 0x41 */ {
+    /* Marching Orders */ {
         /* Scene */ &D_089d21dc,
-        /* Label */ text_debug_menu_marching_orders
+        /* Label */ "マーチャ"
     },
-    /* 0x42 */ {
+    /* Marching Orders 2 */ {
         /* Scene */ &D_089d23ac,
-        /* Label */ text_debug_menu_marching_orders_2
+        /* Label */ "マーチャ　２"
     },
-    /* 0x43 */ {
+    /* Horse Machine */ {
         /* Scene */ &D_089d1f18,
-        /* Label */ text_debug_menu_horse_machine
+        /* Label */ "うま（スピード）"
     },
-    /* 0x44 */ {
+    /* Tap Trial */ {
         /* Scene */ &D_089d1c6c,
-        /* Label */ text_debug_menu_tap_trial
+        /* Label */ "タップダンズ"
     },
-    /* 0x45 */ {
+    /* Tap Trial 2 */ {
         /* Scene */ &D_089d6258,
-        /* Label */ text_debug_menu_tap_trial_2
+        /* Label */ "スーパータップ"
     },
-    /* 0x46 */ {
+    /* Samurai Slice */ {
         /* Scene */ &D_089d15f0,
-        /* Label */ text_debug_menu_samurai_slice
+        /* Label */ "いあいぎり"
     },
-    /* 0x47 */ {
+    /* Spaceball */ {
         /* Scene */ &D_089d18cc,
-        /* Label */ text_debug_menu_spaceball
+        /* Label */ "エアーバッター"
     },
-    /* 0x48 */ {
+    /* Spaceball 2 */ {
         /* Scene */ &D_089d19c0,
-        /* Label */ text_debug_menu_spaceball_2
+        /* Label */ "エアーバッター２"
     },
-    /* 0x49 */ {
+    /* Sneaky Spirits */ {
         /* Scene */ &D_089d132c,
-        /* Label */ text_debug_menu_sneaky_spirits
+        /* Label */ "しろいおばけ"
     },
-    /* 0x4A */ {
+    /* Sneaky Spirits 2 */ {
         /* Scene */ &D_089d14fc,
-        /* Label */ text_debug_menu_sneaky_spirits_2
+        /* Label */ "しろいおばけ　２"
     },
-    /* 0x4B */ {
+    /* Ninja Bodyguard */ {
         /* Scene */ &D_089d1068,
-        /* Label */ text_debug_menu_ninja_bodyguard
+        /* Label */ "ニンジャ"
     },
-    /* 0x4C */ {
+    /* Ninja Bodyguard 2 */ {
         /* Scene */ &D_089d1238,
-        /* Label */ text_debug_menu_ninja_reincarnate
+        /* Label */ "ニンジャ　２"
     },
-    /* 0x4D */ {
+    /* Bouncy Road */ {
         /* Scene */ &D_089d0da4,
-        /* Label */ text_debug_menu_bouncy_road
+        /* Label */ "ホッピングロード"
     },
-    /* 0x4E */ {
+    /* Bouncy Road 2 */ {
         /* Scene */ &D_089d0f74,
-        /* Label */ text_debug_menu_bouncy_road_2
+        /* Label */ "ホッピングロード　２"
     },
-    /* 0x4F */ {
+    /* Sick Beats */ {
         /* Scene */ &D_089d0ae0,
-        /* Label */ text_debug_menu_sick_beats
+        /* Label */ "バイキン　はかせ"
     },
-    /* 0x50 */ {
+    /* Rhythm Tweezers */ {
         /* Scene */ &D_089d081c,
-        /* Label */ text_debug_menu_rhythm_tweezers
+        /* Label */ "リズムだつもう"
     },
-    /* 0x51 */ {
+    /* Rhythm Tweezers 2 */ {
         /* Scene */ &D_089d09ec,
-        /* Label */ text_debug_menu_rhythm_tweezers_2
+        /* Label */ "リズムだつもう　２"
     },
-    /* 0x52 */ {
+    /* Night Walk */ {
         /* Scene */ &D_089d0540,
-        /* Label */ text_debug_menu_night_walk
+        /* Label */ "ナイト　ウォーク"
     },
-    /* 0x53 */ {
+    /* Night Walk 2 */ {
         /* Scene */ &D_089d0634,
-        /* Label */ text_debug_menu_night_walk_2
+        /* Label */ "ナイト　ウォーク　２"
     },
-    /* 0x54 */ {
+    /* Polyrhythm */ {
         /* Scene */ &D_089d0358,
-        /* Label */ text_debug_menu_polyrhythm
+        /* Label */ "ポリリズム"
     },
-    /* 0x55 */ {
+    /* Polyrhythm 2 */ {
         /* Scene */ &D_089d044c,
-        /* Label */ text_debug_menu_polyrhythm_2
+        /* Label */ "ポリリズム　２"
     },
-    /* 0x56 */ {
+    /* The Clappy Trio */ {
         /* Scene */ &D_089d0188,
-        /* Label */ text_debug_menu_clappy_trio
+        /* Label */ "パチパチ３にんしゅう"
     },
-    /* 0x57 */ {
+    /* The Snappy Trio */ {
         /* Scene */ &D_089d634c,
-        /* Label */ text_debug_menu_snappy_trio
+        /* Label */ "バリバリ３にんしゅう"
     },
-    /* 0x58 */ {
+    /* Karate Man */ {
         /* Scene */ &D_089cfed0,
-        /* Label */ text_debug_menu_karate_man
+        /* Label */ "カラテカ"
     },
-    /* 0x59 */ {
+    /* Karate Man 2 */ {
         /* Scene */ &D_089d0728,
-        /* Label */ text_debug_menu_karate_man_2
+        /* Label */ "カラテカ　２"
     },
-    /* 0x5A */ {
+    /* R-IQ (Title Screen) */ {
         /* Scene */ &D_089dd47c,
-        /* Label */ text_debug_menu_riq_title
+        /* Label */ "Ｒ－ＩＱ　（タイトル）"
     },
-    /* 0x5B */ {
+    /* R-IQ (Main Menu) */ {
         /* Scene */ &D_089cde20,
-        /* Label */ text_debug_menu_riq_main_menu
+        /* Label */ "Ｒ－ＩＱ　（メニュー）"
     },
-    /* 0x5C */ {
+    /* R-IQ (Game Select) */ {
         /* Scene */ &D_089cdf08,
-        /* Label */ text_debug_menu_riq_game_select
+        /* Label */ "Ｒ－ＩＱ　（ゲーム）"
     },
-    /* 0x5D */ {
+    /* R-IQ (Rhythm Data Room) */ {
         /* Scene */ &D_089cdc24,
-        /* Label */ text_debug_menu_riq_data_room
+        /* Label */ "Ｒ－ＩＱ　（しりょうしつ）"
     },
-    /* 0x5E */ {
+    /* R-IQ (Studio) */ {
         /* Scene */ &D_089d85b4,
-        /* Label */ text_debug_menu_riq_studio
+        /* Label */ "Ｒ－ＩＱ　（スタジオ）"
     },
-    /* 0x5F */ {
+    /* R-IQ (Options) */ {
         /* Scene */ &D_089cfc1c,
-        /* Label */ text_debug_menu_riq_options
+        /* Label */ "Ｒ－ＩＱ　（オプション）"
     },
-    /* 0x60 */ {
+    /* R-IQ (Result [1]) */ {
         /* Scene */ &D_089d7634,
-        /* Label */ text_debug_menu_riq_results
+        /* Label */ "Ｒ－ＩＱ　（リザルト）"
     },
-    /* 0x61 */ {
+    /* R-IQ (Result 2) */ {
         /* Scene */ &D_089d77e4,
-        /* Label */ text_debug_menu_riq_results2
+        /* Label */ "Ｒ－ＩＱ　（リザルト２）"
     },
-    /* 0x62 */ {
+    /* R-IQ (Result 3) */ {
         /* Scene */ &D_089d7964,
-        /* Label */ text_debug_menu_riq_results3
+        /* Label */ "Ｒ－ＩＱ　（リザルト３）"
     },
-    /* 0x63 */ {
+    /* R-IQ (Result 4) */ {
         /* Scene */ &D_089d7c18,
-        /* Label */ text_debug_menu_riq_results4
+        /* Label */ "Ｒ－ＩＱ　（リザルト４）"
     },
-    /* 0x64 */ {
+    /* R-IQ (Rhythm Library) */ {
         /* Scene */ &D_089cd2cc,
-        /* Label */ text_debug_menu_riq_library
+        /* Label */ "Ｒ－ＩＱ　（にゅうか）"
     },
-    /* 0x65 */ {
+    /* R-IQ (Perfect) */ {
         /* Scene */ &D_089cfd60,
-        /* Label */ text_debug_menu_riq_perfect
+        /* Label */ "Ｒ－ＩＱ　（パーフェクト）"
     },
-    /* 0x66 */ {
+    /* R-IQ (Cafe) */ {
         /* Scene */ &D_089cda0c,
-        /* Label */ text_debug_menu_riq_cafe
+        /* Label */ "Ｒ－ＩＱ　（カウンセラー）"
     },
-    /* 0x67 */ {
+    /* R-IQ (Endless Games) */ {
         /* Scene */ &D_089dd8ac,
-        /* Label */ text_debug_menu_riq_endless_games
+        /* Label */ "Ｒ－ＩＱ　（ミニゲーム）"
     },
-    /* 0x68 */ {
+    /* R-IQ (Drum Lessons) */ {
         /* Scene */ &D_089dd8ec,
-        /* Label */ text_debug_menu_riq_drum_lessons
+        /* Label */ "Ｒ－ＩＱ　（ドラムレッスン）"
     },
-    /* 0x69 */ {
+    /* R-IQ (Rhythm Toys) */ {
         /* Scene */ &D_089dd86c,
-        /* Label */ text_debug_menu_riq_rhythm_toys
+        /* Label */ "Ｒ－ＩＱ　（おもちゃ）"
     },
-    /* 0x6A */ {
+    /* R-IQ (Cafe) */ {
         /* Scene */ &D_089cda0c,
-        /* Label */ text_debug_menu_riq_cafe
+        /* Label */ "Ｒ－ＩＱ　（カウンセラー）"
     },
-    /* 0x6B */ {
+    /* Ending (from clearing Remix 6) */ {
         /* Scene */ &D_089d6d74,
-        /* Label */ text_debug_menu_credits_first_time
+        /* Label */ "エンディング（クリアご）"
     },
-    /* 0x6C */ {
+    /* Ending (from Medal Corner) */ {
         /* Scene */ &D_089d6e5c,
-        /* Label */ text_debug_menu_credits_again
+        /* Label */ "エンディング（おまけから）"
     },
-    /* 0x6D */ {
+    /* Data Clear */ {
         /* Scene */ &D_089de0c8,
-        /* Label */ text_debug_menu_data_clear
+        /* Label */ "データクリア"
     },
     END_OF_DEBUG_ENTRIES
 };

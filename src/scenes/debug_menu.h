@@ -26,6 +26,8 @@ extern struct CompressedGraphics *debug_menu_buffered_textures[];
 extern const char D_0805966c[];
 extern const char D_08059680[];
 extern const char D_08059684[];
+extern const char D_08059f8c[];
+extern char debug_menu_fullwidth_char[];
 
 
 // Functions:
