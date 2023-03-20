@@ -176,7 +176,7 @@ branch_0801e610: \n\
 /* 0801e630 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0801e632 */ STRB R4, [R0, 0x2] \n\
 /* 0801e634 */ LDR R1, =D_08059f8c \n\
-/* 0801e636 */ BL func_080081a8 \n\
+/* 0801e636 */ BL string_concat \n\
 /* 0801e63a */ LDR R0, [SP, 0x80] \n\
 /* 0801e63c */ LSLS R1, R0, 0x1 \n\
 /* 0801e63e */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\

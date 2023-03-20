@@ -12,7 +12,7 @@ thumb_func_start func_080143c0 \n\
 /* 080143cc */ LDR R0, =D_030046a8 \n\
 /* 080143ce */ LDR R6, [R0] \n\
 /* 080143d0 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 080143d2 */ BL func_08013100 \n\
+/* 080143d2 */ BL get_level_id_from_grid_xy \n\
 /* 080143d6 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080143d8 */ CMP R2, 0x0 @ Compare R2 and 0x0 \n\
 /* 080143da */ BLT branch_0801444c \n\
@@ -55,7 +55,7 @@ thumb_func_start func_080143c0 \n\
 /* 08014424 */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
 /* 08014426 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08014428 */ ADDS R3, R7, 0x0 @ Set R3 to R7 + 0x0 \n\
-/* 0801442a */ BL func_08015afc \n\
+/* 0801442a */ BL game_select_print_icon_maps \n\
 /* 0801442e */ LSLS R0, R5, 0x3 \n\
 /* 08014430 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 08014432 */ LDR R1, =0x101 \n\
@@ -69,7 +69,7 @@ thumb_func_start func_080143c0 \n\
 /* 08014442 */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
 /* 08014444 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08014446 */ ADDS R3, R7, 0x0 @ Set R3 to R7 + 0x0 \n\
-/* 08014448 */ BL func_08015afc \n\
+/* 08014448 */ BL game_select_print_icon_maps \n\
  \n\
 branch_0801444c: \n\
 /* 0801444c */ ADD SP, 0x10 \n\

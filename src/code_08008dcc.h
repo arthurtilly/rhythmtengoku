@@ -13,7 +13,7 @@ extern void func_08008e74(s32 arg0[], u32 length);
 extern void func_08008ea4(s16 arg0[], s16 arg1[], u32 arg2);
 extern s32 func_08008ed0(s32 arg0[]);
 extern s32 func_08008eec(s32 arg0[], u32 arg1);
-extern s32 func_08008f04(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
+extern s32 func_08008f04(s32 start, s32 target, u32 runningTime, u32 duration);
 extern s32 func_08008f1c(void);
 extern u32 func_08008f68(void);
 extern s32 func_08008f74(void);

@@ -75,14 +75,14 @@ branch_08013cae: \n\
 /* 08013cda */ ADDS R4, 0x2 @ Add 0x2 to R4 \n\
 /* 08013cdc */ MOV R2, SP @ Set R2 to SP \n\
 /* 08013cde */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 08013ce0 */ BL func_0801332c \n\
+/* 08013ce0 */ BL get_pixel_xy_from_grid_xy \n\
 /* 08013ce4 */ MOV R0, SP @ Set R0 to SP \n\
 /* 08013ce6 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08013ce8 */ LDRSH R0, [R0, R1] \n\
 /* 08013cea */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08013cec */ LDRSH R1, [R4, R2] \n\
 /* 08013cee */ MOVS R2, 0xC8 @ Set R2 to 0xC8 \n\
-/* 08013cf0 */ BL func_080139b0 \n\
+/* 08013cf0 */ BL game_select_scroll_bg_grid \n\
 /* 08013cf4 */ BL func_08013f9c \n\
 /* 08013cf8 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 08013cfa */ BEQ branch_08013d02 \n\

@@ -38,10 +38,10 @@ branch_08013c2a: \n\
 /* 08013c38 */ BGT branch_08013c20 \n\
 /* 08013c3a */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08013c3c */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08013c3e */ BL func_08013100 \n\
+/* 08013c3e */ BL get_level_id_from_grid_xy \n\
 /* 08013c42 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08013c44 */ BLT branch_08013c2a \n\
-/* 08013c46 */ BL func_0801314c \n\
+/* 08013c46 */ BL get_level_state_from_id \n\
 /* 08013c4a */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
 /* 08013c4c */ BLE branch_08013c2a \n\
 /* 08013c4e */ MOV R0, R8 @ Set R0 to R8 \n\

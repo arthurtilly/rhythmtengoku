@@ -329,22 +329,22 @@ jump_08010e94: \n\
 /* 08010ea0 */ STRB R0, [R5] \n\
 /* 08010ea2 */ LDR R1, =D_08050718 \n\
 /* 08010ea4 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010ea6 */ BL func_080081a8 \n\
+/* 08010ea6 */ BL string_concat \n\
 /* 08010eaa */ LDR R1, =D_0805071c \n\
 /* 08010eac */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010eae */ BL func_080081a8 \n\
+/* 08010eae */ BL string_concat \n\
 /* 08010eb2 */ LDR R1, =D_08050728 \n\
 /* 08010eb4 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010eb6 */ BL func_080081a8 \n\
+/* 08010eb6 */ BL string_concat \n\
 /* 08010eba */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08010ebc */ MOV R1, R9 @ Set R1 to R9 \n\
-/* 08010ebe */ BL func_080081a8 \n\
+/* 08010ebe */ BL string_concat \n\
 /* 08010ec2 */ LDR R1, =D_08050730 \n\
 /* 08010ec4 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010ec6 */ BL func_080081a8 \n\
+/* 08010ec6 */ BL string_concat \n\
 /* 08010eca */ LDR R1, =D_08050738 \n\
 /* 08010ecc */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010ece */ BL func_080081a8 \n\
+/* 08010ece */ BL string_concat \n\
 /* 08010ed2 */ MOV R8, R5 @ Set R8 to R5 \n\
 /* 08010ed4 */ MOVS R0, 0xFF @ Set R0 to 0xFF \n\
 /* 08010ed6 */ STRB R0, [R6] \n\
@@ -363,22 +363,22 @@ jump_08010ef8: \n\
 /* 08010f04 */ STRB R0, [R5] \n\
 /* 08010f06 */ LDR R1, =D_08050718 \n\
 /* 08010f08 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f0a */ BL func_080081a8 \n\
+/* 08010f0a */ BL string_concat \n\
 /* 08010f0e */ LDR R1, =D_0805075c \n\
 /* 08010f10 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f12 */ BL func_080081a8 \n\
+/* 08010f12 */ BL string_concat \n\
 /* 08010f16 */ LDR R1, =D_08050728 \n\
 /* 08010f18 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f1a */ BL func_080081a8 \n\
+/* 08010f1a */ BL string_concat \n\
 /* 08010f1e */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08010f20 */ MOV R1, R9 @ Set R1 to R9 \n\
-/* 08010f22 */ BL func_080081a8 \n\
+/* 08010f22 */ BL string_concat \n\
 /* 08010f26 */ LDR R1, =D_08050730 \n\
 /* 08010f28 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f2a */ BL func_080081a8 \n\
+/* 08010f2a */ BL string_concat \n\
 /* 08010f2e */ LDR R1, =D_0805076c \n\
 /* 08010f30 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f32 */ BL func_080081a8 \n\
+/* 08010f32 */ BL string_concat \n\
 /* 08010f36 */ MOV R8, R5 @ Set R8 to R5 \n\
 /* 08010f38 */ LDR R1, [R4] \n\
 /* 08010f3a */ LDRB R0, [R6] \n\
@@ -400,22 +400,22 @@ jump_08010f64: \n\
 /* 08010f70 */ STRB R0, [R5] \n\
 /* 08010f72 */ LDR R1, =D_08050718 \n\
 /* 08010f74 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f76 */ BL func_080081a8 \n\
+/* 08010f76 */ BL string_concat \n\
 /* 08010f7a */ LDR R1, =D_08050788 \n\
 /* 08010f7c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f7e */ BL func_080081a8 \n\
+/* 08010f7e */ BL string_concat \n\
 /* 08010f82 */ LDR R1, =D_08050728 \n\
 /* 08010f84 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f86 */ BL func_080081a8 \n\
+/* 08010f86 */ BL string_concat \n\
 /* 08010f8a */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08010f8c */ MOV R1, R9 @ Set R1 to R9 \n\
-/* 08010f8e */ BL func_080081a8 \n\
+/* 08010f8e */ BL string_concat \n\
 /* 08010f92 */ LDR R1, =D_08050794 \n\
 /* 08010f94 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f96 */ BL func_080081a8 \n\
+/* 08010f96 */ BL string_concat \n\
 /* 08010f9a */ LDR R1, =D_0805079c \n\
 /* 08010f9c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f9e */ BL func_080081a8 \n\
+/* 08010f9e */ BL string_concat \n\
 /* 08010fa2 */ MOV R8, R5 @ Set R8 to R5 \n\
 /* 08010fa4 */ LDR R0, =cafe_dialogue_keep_trying \n\
 /* 08010fa6 */ MOV R10, R0 @ Set R10 to R0 \n\
@@ -435,22 +435,22 @@ jump_08010fd0: \n\
 /* 08010fdc */ STRB R0, [R5] \n\
 /* 08010fde */ LDR R1, =D_08050718 \n\
 /* 08010fe0 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010fe2 */ BL func_080081a8 \n\
+/* 08010fe2 */ BL string_concat \n\
 /* 08010fe6 */ LDR R1, =D_080507b8 \n\
 /* 08010fe8 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010fea */ BL func_080081a8 \n\
+/* 08010fea */ BL string_concat \n\
 /* 08010fee */ LDR R1, =D_08050728 \n\
 /* 08010ff0 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010ff2 */ BL func_080081a8 \n\
+/* 08010ff2 */ BL string_concat \n\
 /* 08010ff6 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08010ff8 */ MOV R1, R9 @ Set R1 to R9 \n\
-/* 08010ffa */ BL func_080081a8 \n\
+/* 08010ffa */ BL string_concat \n\
 /* 08010ffe */ LDR R1, =D_080507d8 \n\
 /* 08011000 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08011002 */ BL func_080081a8 \n\
+/* 08011002 */ BL string_concat \n\
 /* 08011006 */ LDR R1, =D_080507e8 \n\
 /* 08011008 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0801100a */ BL func_080081a8 \n\
+/* 0801100a */ BL string_concat \n\
 /* 0801100e */ MOV R8, R5 @ Set R8 to R5 \n\
 /* 08011010 */ MOVS R0, 0xFF @ Set R0 to 0xFF \n\
 /* 08011012 */ STRB R0, [R6] \n\
@@ -480,16 +480,16 @@ jump_0801104c: \n\
 /* 08011058 */ STRB R0, [R5] \n\
 /* 0801105a */ LDR R1, =D_08050828 \n\
 /* 0801105c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0801105e */ BL func_080081a8 \n\
+/* 0801105e */ BL string_concat \n\
 /* 08011062 */ LDR R1, =D_08050728 \n\
 /* 08011064 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08011066 */ BL func_080081a8 \n\
+/* 08011066 */ BL string_concat \n\
 /* 0801106a */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0801106c */ MOV R1, R9 @ Set R1 to R9 \n\
-/* 0801106e */ BL func_080081a8 \n\
+/* 0801106e */ BL string_concat \n\
 /* 08011072 */ LDR R1, =D_0805083c \n\
 /* 08011074 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08011076 */ BL func_080081a8 \n\
+/* 08011076 */ BL string_concat \n\
 /* 0801107a */ MOV R8, R5 @ Set R8 to R5 \n\
 /* 0801107c */ MOVS R7, 0x1A @ Set R7 to 0x1A \n\
 /* 0801107e */ LDR R0, =D_030046a8 \n\
@@ -570,7 +570,7 @@ jump_08011104: \n\
 /* 08011124 */ LDRSH R0, [R0, R1] \n\
 /* 08011126 */ ADD R2, SP, 0x4 \n\
 /* 08011128 */ MOV R1, SP @ Set R1 to SP \n\
-/* 0801112a */ BL func_0801318c \n\
+/* 0801112a */ BL get_pixel_xy_from_level_id \n\
 /* 0801112e */ LDR R4, =D_030046a8 \n\
 /* 08011130 */ LDR R1, [R4] \n\
 /* 08011132 */ LDR R0, [SP] \n\

@@ -1,5 +1,5 @@
 // [D_089cdf24] Perfect Campaign Gifts
-struct PerfectCampaignData perfect_gifts_table[] = {
+struct CampaignGiftData campaign_gifts_table[] = {
     /* 0x00 */ {
         /* Grid Pos.   */ 2, 6,
         /* Reward Type */ 1,
@@ -243,7 +243,7 @@ struct PerfectCampaignData perfect_gifts_table[] = {
 };
 
 // [D_089ce0a4] Perfect Campaign Border Sprites
-struct Animation *perfect_campaign_borders[] = {
+struct Animation *campaign_icon_borders[] = {
     /* Attempt 3 */ anim_game_select_border_perfect1,
     /* Attempt 2 */ anim_game_select_border_perfect2,
     /* Attempt 1 */ anim_game_select_border_perfect3

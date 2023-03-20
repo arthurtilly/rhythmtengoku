@@ -37,7 +37,7 @@ void reset_game_save_data(void) {
     data->recentGameScore = -1;
 
     for (i = 0; i < 55; i++) {
-        data->rhythmGameCompletion[i] = RHYTHM_GAME_STATE_HIDDEN;
+        data->rhythmGameCompletion[i] = LEVEL_STATE_HIDDEN;
         data->rhythmGameScores[i] = -1;
     }
     func_0801ad9c(); // studio-related
@@ -72,12 +72,12 @@ void reset_game_save_data(void) {
     D_030046a8->data.unk294[3] = 10;    // High Score - Quiz Show EX
     D_030046a8->data.unk294[8] = DIRECTSOUND_MODE_STEREO; // Sound Mode
 
-    data->rhythmGameCompletion[LEVEL_KARATE_MAN] = RHYTHM_GAME_STATE_AVAILABLE;
-    data->rhythmGameCompletion[LEVEL_CLAPPY_TRIO] = RHYTHM_GAME_STATE_CLOSED;
-    data->rhythmGameCompletion[LEVEL_SPACEBALL] = RHYTHM_GAME_STATE_CLOSED;
-    data->rhythmGameCompletion[LEVEL_RHYTHM_TWEEZERS] = RHYTHM_GAME_STATE_CLOSED;
-    data->rhythmGameCompletion[LEVEL_MARCHING_ORDERS] = RHYTHM_GAME_STATE_CLOSED;
-    data->rhythmGameCompletion[LEVEL_REMIX_1] = RHYTHM_GAME_STATE_CLOSED;
+    data->rhythmGameCompletion[LEVEL_KARATE_MAN] = LEVEL_STATE_AVAILABLE;
+    data->rhythmGameCompletion[LEVEL_CLAPPY_TRIO] = LEVEL_STATE_CLOSED;
+    data->rhythmGameCompletion[LEVEL_SPACEBALL] = LEVEL_STATE_CLOSED;
+    data->rhythmGameCompletion[LEVEL_RHYTHM_TWEEZERS] = LEVEL_STATE_CLOSED;
+    data->rhythmGameCompletion[LEVEL_MARCHING_ORDERS] = LEVEL_STATE_CLOSED;
+    data->rhythmGameCompletion[LEVEL_REMIX_1] = LEVEL_STATE_CLOSED;
     data->drumKitUnlocked[0] = TRUE;
     data->readingMaterialUnlocked[0] = TRUE;
     data->readingMaterialUnlocked[1] = TRUE;

@@ -268,7 +268,7 @@ void func_080191bc(u32 level) {
     saveData->recentGameCompletionLevel = level;
     saveData->recentGameScore = func_0801a060();
 
-    gameID = func_08013100(saveData->gameSelectPosX, saveData->gameSelectPosY);
+    gameID = get_level_id_from_grid_xy(saveData->gameSelectPosX, saveData->gameSelectPosY);
     func_080108a0(gameID);
 
     if (gameID >= 0)
@@ -541,7 +541,7 @@ u32 func_08019a80(void) {
 
     for (i = 0; i < totalFailed; i++) {
         strcpy(textDest, results_try_again_comment_pool[clamp_int32(i, 0, 2)]);
-        func_080081a8(textDest, comments[i]);
+        string_concat(textDest, comments[i]);
         anim = func_08019210(textDest, 2, 3);
         sprite = func_0804d160(D_03005380, anim, 0, 0, 0, 0x800, 0, 0, 0);
         func_0804d8c4(D_03005380, sprite, LEVEL_COMMENT_PALETTE);
@@ -609,7 +609,7 @@ u32 func_08019bec(void) {
 
         if (gResultsInfo->totalNegativeComments != 0) {
             memcpy(textDest, "c‚Å‚àA", 9); // ("...but,")
-            func_080081a8(textDest, criteria->positiveRemark);
+            string_concat(textDest, criteria->positiveRemark);
             anim = func_08019210(textDest, 3, 3);
             palette = LEVEL_EXTRA_COMMENT_PALETTE;
         } else {
@@ -624,7 +624,7 @@ u32 func_08019bec(void) {
                     memcpy(textDest, "‚³‚ç‚ÉA", 9); // ("also,")
                     break;
             }
-            func_080081a8(textDest, criteria->positiveRemark);
+            string_concat(textDest, criteria->positiveRemark);
             anim = func_08019210(textDest, 2, 3);
             palette = LEVEL_COMMENT_PALETTE;
         }
@@ -730,7 +730,7 @@ void func_08019ee0(void) {
     u32 totalCriteriaFailed, averageCriteriaSucceeded;
     u32 previousResult;
 
-    func_0801287c();
+    update_plays_until_next_campaign();
 
     while (*markingData != NULL) {
         if (tracker->totalInputs != 0)
@@ -767,17 +767,17 @@ void func_08019ee0(void) {
     if (averageCriteriaSucceeded == INT_TO_FIXED(1.0)) {
         gResultsInfo->finalResultLevel = RESULT_LEVEL_SUPERB;
         func_0804cebc(D_03005380, gResultsInfo->resultIcon, RESULT_ICON_SUPERB);
-        func_080191bc(RHYTHM_GAME_STATE_MEDAL_OBTAINED);
+        func_080191bc(LEVEL_STATE_MEDAL_OBTAINED);
 
-        previousResult = func_0801317c(D_030046a8->data.gameSelectPosX, D_030046a8->data.gameSelectPosY);
-        if (previousResult < RHYTHM_GAME_STATE_MEDAL_OBTAINED)
+        previousResult = get_level_state_from_grid_xy(D_030046a8->data.gameSelectPosX, D_030046a8->data.gameSelectPosY);
+        if (previousResult < LEVEL_STATE_MEDAL_OBTAINED)
             gResultsInfo->medalObtained = TRUE;
     }
 
     else {
         gResultsInfo->finalResultLevel = RESULT_LEVEL_OK;
         func_0804cebc(D_03005380, gResultsInfo->resultIcon, RESULT_ICON_OK);
-        func_080191bc(RHYTHM_GAME_STATE_CLEARED);
+        func_080191bc(LEVEL_STATE_CLEARED);
 
         if (averageCriteriaSucceeded != 0)
             gResultsInfo->stillJustOK = TRUE;

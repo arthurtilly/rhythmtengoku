@@ -50,7 +50,7 @@ branch_0801ba18: \n\
 /* 0801ba42 */ LSLS R1, R5, 0x2 \n\
 /* 0801ba44 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0801ba46 */ LDR R1, [R1] \n\
-/* 0801ba48 */ BL func_080081a8 \n\
+/* 0801ba48 */ BL string_concat \n\
 /* 0801ba4c */ LDR R0, [R6] \n\
 /* 0801ba4e */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
  \n\

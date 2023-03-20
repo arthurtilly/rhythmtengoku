@@ -32,7 +32,7 @@ branch_08013d4c: \n\
 /* 08013d54 */ LDRB R1, [R1, 0x11] \n\
 /* 08013d56 */ LSLS R1, R1, 0x18 \n\
 /* 08013d58 */ ASRS R1, R1, 0x18 \n\
-/* 08013d5a */ BL func_0801317c \n\
+/* 08013d5a */ BL get_level_state_from_grid_xy \n\
 /* 08013d5e */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08013d60 */ SUBS R0, 0x3 @ Subtract 0x3 from R0 \n\
 /* 08013d62 */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\
@@ -55,9 +55,9 @@ branch_08013d68: \n\
 /* 08013d80 */ LDRB R1, [R1, 0x11] \n\
 /* 08013d82 */ LSLS R1, R1, 0x18 \n\
 /* 08013d84 */ ASRS R1, R1, 0x18 \n\
-/* 08013d86 */ BL func_08013100 \n\
+/* 08013d86 */ BL get_level_id_from_grid_xy \n\
 /* 08013d8a */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
-/* 08013d8c */ BL func_08013130 \n\
+/* 08013d8c */ BL get_level_data_from_id \n\
 /* 08013d90 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 08013d92 */ LDR R0, [R6] \n\
 /* 08013d94 */ BL func_08000584 \n\
@@ -191,7 +191,7 @@ branch_08013e4c: \n\
 /* 08013eb0 */ BNE branch_08013ef0 \n\
 /* 08013eb2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08013eb4 */ LDRSB R0, [R3, R0] \n\
-/* 08013eb6 */ BL func_08012860 \n\
+/* 08013eb6 */ BL set_current_campaign \n\
 /* 08013eba */ LDR R1, [R5] \n\
 /* 08013ebc */ LDR R4, =0x277 \n\
 /* 08013ebe */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\

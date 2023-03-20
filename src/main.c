@@ -19,7 +19,7 @@ void func_080001f4_stub(void) {
 
 // Initialise Scenes (Init. Static Variables)
 void init_scene_static_var(void) {
-	func_0801350c(); // Game Select
+	game_select_init_static_var(); // Game Select
 	func_08018e60(); // Results (Score-Type)
 	func_0801242c(); // Main Menu
 	gameplay_init_scene_static_var(); // Gameplay

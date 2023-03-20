@@ -48,14 +48,14 @@ branch_08014998: \n\
 /* 080149cc */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 080149ce */ MOV R2, SP @ Set R2 to SP \n\
 /* 080149d0 */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 080149d2 */ BL func_0801332c \n\
+/* 080149d2 */ BL get_pixel_xy_from_grid_xy \n\
 /* 080149d6 */ MOV R0, SP @ Set R0 to SP \n\
 /* 080149d8 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080149da */ LDRSH R0, [R0, R1] \n\
 /* 080149dc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080149de */ LDRSH R1, [R4, R2] \n\
 /* 080149e0 */ MOVS R2, 0xF0 @ Set R2 to 0xF0 \n\
-/* 080149e2 */ BL func_080139b0 \n\
+/* 080149e2 */ BL game_select_scroll_bg_grid \n\
 /* 080149e6 */ LDR R2, [R6] \n\
 /* 080149e8 */ MOVS R0, 0x10 @ Set R0 to 0x10 \n\
 /* 080149ea */ LDRSB R0, [R2, R0] \n\
@@ -160,14 +160,14 @@ branch_08014a90: \n\
 /* 08014aac */ ADDS R4, 0x2 @ Add 0x2 to R4 \n\
 /* 08014aae */ MOV R2, SP @ Set R2 to SP \n\
 /* 08014ab0 */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 08014ab2 */ BL func_0801332c \n\
+/* 08014ab2 */ BL get_pixel_xy_from_grid_xy \n\
 /* 08014ab6 */ MOV R0, SP @ Set R0 to SP \n\
 /* 08014ab8 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08014aba */ LDRSH R0, [R0, R1] \n\
 /* 08014abc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08014abe */ LDRSH R1, [R4, R2] \n\
 /* 08014ac0 */ MOVS R2, 0xF0 @ Set R2 to 0xF0 \n\
-/* 08014ac2 */ BL func_080139b0 \n\
+/* 08014ac2 */ BL game_select_scroll_bg_grid \n\
 /* 08014ac6 */ B branch_08014b60 \n\
 \n\
 .ltorg \n\
@@ -230,7 +230,7 @@ branch_08014b24: \n\
 /* 08014b38 */ LDR R1, =0x279 \n\
 /* 08014b3a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08014b3c */ LDRB R0, [R0] \n\
-/* 08014b3e */ BL func_08012cb4 \n\
+/* 08014b3e */ BL start_campaign_notice \n\
 /* 08014b42 */ LDR R0, [R4] \n\
 /* 08014b44 */ MOVS R2, 0xD0 @ Set R2 to 0xD0 \n\
 /* 08014b46 */ LSLS R2, R2, 0x2 \n\

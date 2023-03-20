@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_080130b0 \n\
 /* 080130b0 */ PUSH {R4, LR} \n\
 /* 080130b2 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 080130b4 */ LDR R3, =perfect_gifts_table \n\
+/* 080130b4 */ LDR R3, =campaign_gifts_table \n\
 /* 080130b6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
  \n\
 branch_080130b8: \n\

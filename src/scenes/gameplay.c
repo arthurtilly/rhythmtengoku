@@ -427,7 +427,9 @@ void gameplay_set_reverb(u32 level) {
 
 // [func_08017604] Start Perfect Campaign
 void gameplay_start_perfect_campaign(void) {
-    if ((func_0801286c() < 0)) return; // (s8) D_03001320, related to Game Select
+    if (get_current_campaign() < 0) {
+        return;
+    }
 
     if (!gGameplayInfo->goingForPerfect) {
         gGameplayInfo->goingForPerfect = TRUE;

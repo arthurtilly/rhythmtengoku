@@ -458,7 +458,7 @@ s32 func_08008054(u16 memID, u32 blendControls, u32 duration, u32 flip) {
 
 
 // Append String
-char *func_080081a8(char *s1, const char *s2) {
+char *string_concat(char *s1, const char *s2) {
     u8 *s = s1;
     while (*s1 != 0) {
         s1++;

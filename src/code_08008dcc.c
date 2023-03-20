@@ -94,8 +94,9 @@ s32 func_08008eec(s32 arg0[], u32 arg1) {
     return arg0[arg1];
 }
 
-s32 func_08008f04(u32 arg0, u32 arg1, u32 arg2, u32 arg3) {
-    return fast_divsi3((arg1 - arg0) * arg2, arg3) + arg0;
+// LERP
+s32 func_08008f04(s32 start, s32 target, u32 runningTime, u32 duration) {
+    return fast_divsi3((target - start) * runningTime, duration) + start;
 }
 
 s32 func_08008f1c(void) {

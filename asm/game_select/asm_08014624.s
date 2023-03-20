@@ -41,7 +41,7 @@ branch_08014650: \n\
 branch_08014668: \n\
 /* 08014668 */ LDR R0, [SP, 0x18] \n\
 /* 0801466a */ LDR R1, [SP, 0x1C] \n\
-/* 0801466c */ BL func_08013100 \n\
+/* 0801466c */ BL get_level_id_from_grid_xy \n\
 /* 08014670 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 08014672 */ LDR R0, [SP, 0x18] \n\
 /* 08014674 */ LDR R1, [SP, 0x1C] \n\
@@ -49,7 +49,7 @@ branch_08014668: \n\
 /* 08014678 */ ADDS R4, 0x16 @ Add 0x16 to R4 \n\
 /* 0801467a */ ADD R2, SP, 0x14 \n\
 /* 0801467c */ ADDS R3, R4, 0x0 @ Set R3 to R4 + 0x0 \n\
-/* 0801467e */ BL func_0801332c \n\
+/* 0801467e */ BL get_pixel_xy_from_grid_xy \n\
 /* 08014682 */ LDR R5, [SP, 0x20] \n\
 /* 08014684 */ CMP R5, 0x4 @ Compare R5 and 0x4 \n\
 /* 08014686 */ BEQ branch_080146ec \n\

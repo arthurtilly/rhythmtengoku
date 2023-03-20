@@ -393,22 +393,22 @@ void drum_lessons_get_score(void) {
 
     if (digit4 > 0) {
         num[0] = ('0' + digit4);
-        func_080081a8(resultsText, num);
+        string_concat(resultsText, num);
     }
 
     if ((digit4 > 0) || (digit3 > 0)) {
         num[0] = ('0' + digit3);
-        func_080081a8(resultsText, num);
+        string_concat(resultsText, num);
     }
 
     num[0] = ('0' + digit2);
-    func_080081a8(resultsText, num);
-    func_080081a8(resultsText, D_0805a0c8);
+    string_concat(resultsText, num);
+    string_concat(resultsText, D_0805a0c8);
 
     num[0] = ('0' + digit1);
-    func_080081a8(resultsText, num);
-    func_080081a8(resultsText, D_0805a0cc);
-    func_080081a8(resultsText, drum_lessons_rank_text[rank]);
+    string_concat(resultsText, num);
+    string_concat(resultsText, D_0805a0cc);
+    string_concat(resultsText, drum_lessons_rank_text[rank]);
 
     drum_lessons_set_dialogue(resultsText);
     set_beatscript_tempo(150);

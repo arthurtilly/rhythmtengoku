@@ -52,7 +52,7 @@ extern u32 func_08007fdc(struct BlendControlsInterpolator *task); // Update LCD 
 extern s32 func_08008054(u16 memID, u32 blendControls, u32 duration, u32 flip); // Interpolate LCD Special Effects
 // extern ? func_08008090(?);
 // extern ? func_08008184(?);
-extern char *func_080081a8(char *, const char *); // Append String
+extern char *string_concat(char *, const char *); // Append String
 // extern ? func_080081d4(?);
 // extern ? func_0800820c(?); // Check if two strings are equal?
 // extern ? func_08008248(?);

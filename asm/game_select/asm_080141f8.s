@@ -12,7 +12,7 @@ thumb_func_start func_080141f8 \n\
 /* 08014204 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 08014206 */ BEQ branch_08014258 \n\
 /* 08014208 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0801420a */ BL func_0801317c \n\
+/* 0801420a */ BL get_level_state_from_grid_xy \n\
 /* 0801420e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08014210 */ BLT branch_08014258 \n\
 /* 08014212 */ CMP R0, R4 @ Check R0 - R4 \n\

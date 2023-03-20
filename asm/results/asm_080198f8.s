@@ -156,7 +156,7 @@ branch_08019a0e: \n\
 /* 08019a26 */ STRB R0, [R1] \n\
 /* 08019a28 */ ADD R0, SP, 0x14 \n\
 /* 08019a2a */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08019a2c */ BL func_080081a8 \n\
+/* 08019a2c */ BL string_concat \n\
 /* 08019a30 */ LDR R0, =D_030046a4 \n\
 /* 08019a32 */ LDR R0, [R0] \n\
 /* 08019a34 */ LDR R0, [R0, 0x4] \n\

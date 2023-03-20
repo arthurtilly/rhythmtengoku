@@ -43,14 +43,14 @@ branch_080153f0: \n\
 /* 080153f6 */ LDRSB R5, [R6, R5] \n\
 /* 080153f8 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 080153fa */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 080153fc */ BL func_08013100 \n\
+/* 080153fc */ BL get_level_id_from_grid_xy \n\
 /* 08015400 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08015402 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
 /* 08015404 */ LDRSB R0, [R6, R0] \n\
 /* 08015406 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08015408 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801540a */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 0801540c */ BL func_0801317c \n\
+/* 0801540c */ BL get_level_state_from_grid_xy \n\
 /* 08015410 */ CMP R0, 0x4 @ Compare R0 and 0x4 \n\
 /* 08015412 */ BGT branch_0801541e \n\
 /* 08015414 */ MOV R1, R8 @ Set R1 to R8 \n\

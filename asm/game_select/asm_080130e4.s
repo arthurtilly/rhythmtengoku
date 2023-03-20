@@ -7,7 +7,7 @@ thumb_func_start func_080130e4 \n\
 /* 080130e6 */ SUB SP, 0x8 \n\
 /* 080130e8 */ ADD R2, SP, 0x4 \n\
 /* 080130ea */ MOV R1, SP @ Set R1 to SP \n\
-/* 080130ec */ BL func_0801318c \n\
+/* 080130ec */ BL get_pixel_xy_from_level_id \n\
 /* 080130f0 */ LDR R0, [SP] \n\
 /* 080130f2 */ LDR R1, [SP, 0x4] \n\
 /* 080130f4 */ BL func_080130b0 \n\

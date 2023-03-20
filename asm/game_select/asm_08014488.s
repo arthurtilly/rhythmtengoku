@@ -28,14 +28,14 @@ thumb_func_start func_08014488 \n\
 /* 080144b4 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 080144b6 */ MOV R2, SP @ Set R2 to SP \n\
 /* 080144b8 */ ADDS R3, R5, 0x0 @ Set R3 to R5 + 0x0 \n\
-/* 080144ba */ BL func_0801332c \n\
+/* 080144ba */ BL get_pixel_xy_from_grid_xy \n\
 /* 080144be */ MOV R0, SP @ Set R0 to SP \n\
 /* 080144c0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080144c2 */ LDRSH R0, [R0, R1] \n\
 /* 080144c4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080144c6 */ LDRSH R1, [R5, R2] \n\
 /* 080144c8 */ MOV R2, R8 @ Set R2 to R8 \n\
-/* 080144ca */ BL func_080139b0 \n\
+/* 080144ca */ BL game_select_scroll_bg_grid \n\
 /* 080144ce */ LDR R4, [R4] \n\
 /* 080144d0 */ MOVS R1, 0x10 @ Set R1 to 0x10 \n\
 /* 080144d2 */ LDRSB R1, [R4, R1] \n\
