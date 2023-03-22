@@ -2,8 +2,9 @@
 struct GameSelectOverlay game_select_icon_overlay_null = {
     /* Dimensions */ 3, 3,
     /* Texture    */ icon_overlay_blank2_bin,
-    /* unk8       */ (s8[]) {
-        0, 1, -2
+    /* Anim. Data */ (s8[]) {
+        /* 000 */ 0, 1,
+        /* End */ LEVEL_ICON_ANIM_STOP
     }
 };
 
@@ -11,8 +12,9 @@ struct GameSelectOverlay game_select_icon_overlay_null = {
 struct GameSelectOverlay game_select_icon_overlay_hidden = {
     /* Dimensions */ 3, 3,
     /* Texture    */ icon_overlay_blank1_bin,
-    /* unk8       */ (s8[]) {
-        0, 1, -2
+    /* Anim. Data */ (s8[]) {
+        /* 000 */ 0, 1,
+        /* End */ LEVEL_ICON_ANIM_STOP
     }
 };
 
@@ -20,8 +22,9 @@ struct GameSelectOverlay game_select_icon_overlay_hidden = {
 struct GameSelectOverlay game_select_icon_overlay_closed = {
     /* Dimensions */ 3, 3,
     /* Texture    */ icon_overlay_closed_bin,
-    /* unk8       */ (s8[]) {
-        0, 1, -2
+    /* Anim. Data */ (s8[]) {
+        /* 000 */ 0, 1,
+        /* End */ LEVEL_ICON_ANIM_STOP
     }
 };
 
@@ -29,8 +32,10 @@ struct GameSelectOverlay game_select_icon_overlay_closed = {
 struct GameSelectOverlay game_select_icon_overlay_remix_closed = {
     /* Dimensions */ 3, 3,
     /* Texture    */ icon_overlay_closed_bin,
-    /* unk8       */ (s8[]) {
-        1, 24, 2, 24, -1
+    /* Anim. Data */ (s8[]) {
+        /* 000 */ 1, 24,
+        /* 001 */ 2, 24,
+        /* End */ LEVEL_ICON_ANIM_LOOP
     }
 };
 
@@ -38,10 +43,26 @@ struct GameSelectOverlay game_select_icon_overlay_remix_closed = {
 struct GameSelectOverlay game_select_icon_overlay_uncleared = {
     /* Dimensions */ 3, 3,
     /* Texture    */ icon_overlay_new_game_bin,
-    /* unk8       */ (s8[]) {
-        0, 5, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 7, 2,
-        8, 5, 8, 5, 7, 2, 6, 2, 5, 2, 4, 2, 3, 2, 2, 2,
-        1, 2, 0, 5, -1
+    /* Anim. Data */ (s8[]) {
+        /* 000 */ 0, 5,
+        /* 001 */ 1, 2,
+        /* 002 */ 2, 2,
+        /* 003 */ 3, 2,
+        /* 004 */ 4, 2,
+        /* 005 */ 5, 2,
+        /* 006 */ 6, 2,
+        /* 007 */ 7, 2,
+        /* 008 */ 8, 5,
+        /* 009 */ 8, 5,
+        /* 010 */ 7, 2,
+        /* 011 */ 6, 2,
+        /* 012 */ 5, 2,
+        /* 013 */ 4, 2,
+        /* 014 */ 3, 2,
+        /* 015 */ 2, 2,
+        /* 016 */ 1, 2,
+        /* 017 */ 0, 5,
+        /* End */ LEVEL_ICON_ANIM_LOOP
     }
 };
 
@@ -49,10 +70,26 @@ struct GameSelectOverlay game_select_icon_overlay_uncleared = {
 struct GameSelectOverlay game_select_icon_overlay_remix_uncleared = {
     /* Dimensions */ 3, 3,
     /* Texture    */ icon_overlay_new_game_bin,
-    /* unk8       */ (s8[]) {
-        4, 2, 5, 2, 6, 2, 7, 2, 8, 5, 8, 5, 7, 2, 6, 2,
-        5, 2, 4, 2, 12, 2, 11, 2, 10, 2, 9, 5, 9, 5, 10,
-        2, 11, 2, 12, 2, -1
+    /* Anim. Data */ (s8[]) {
+        /* 000 */  4, 2,
+        /* 001 */  5, 2,
+        /* 002 */  6, 2,
+        /* 003 */  7, 2,
+        /* 004 */  8, 5,
+        /* 005 */  8, 5,
+        /* 006 */  7, 2,
+        /* 007 */  6, 2,
+        /* 008 */  5, 2,
+        /* 009 */  4, 2,
+        /* 010 */ 12, 2,
+        /* 011 */ 11, 2,
+        /* 012 */ 10, 2,
+        /* 013 */  9, 5,
+        /* 014 */  9, 5,
+        /* 015 */ 10, 2,
+        /* 016 */ 11, 2,
+        /* 017 */ 12, 2,
+        /* End */ LEVEL_ICON_ANIM_LOOP
     }
 };
 
@@ -60,8 +97,9 @@ struct GameSelectOverlay game_select_icon_overlay_remix_uncleared = {
 struct GameSelectOverlay game_select_icon_overlay_cleared = {
     /* Dimensions */ 3, 3,
     /* Texture    */ icon_overlay_normal_border_bin,
-    /* unk8       */ (s8[]) {
-        0, 1, -2
+    /* Anim. Data */ (s8[]) {
+        /* 000 */ 0, 1,
+        /* End */ LEVEL_ICON_ANIM_STOP
     }
 };
 
@@ -69,8 +107,13 @@ struct GameSelectOverlay game_select_icon_overlay_cleared = {
 struct GameSelectOverlay game_select_icon_overlay_medal = {
     /* Dimensions */ 3, 3,
     /* Texture    */ icon_overlay_medal_bin,
-    /* unk8       */ (s8[]) {
-        0, 40, 1, 3, 2, 3, 3, 3, 4, 3, -1
+    /* Anim. Data */ (s8[]) {
+        /* 000 */ 0, 40,
+        /* 001 */ 1, 3,
+        /* 002 */ 2, 3,
+        /* 003 */ 3, 3,
+        /* 004 */ 4, 3,
+        /* End */ LEVEL_ICON_ANIM_LOOP
     }
 };
 
@@ -78,8 +121,12 @@ struct GameSelectOverlay game_select_icon_overlay_medal = {
 struct GameSelectOverlay game_select_icon_overlay_bonus = {
     /* Dimensions */ 3, 3,
     /* Texture    */ icon_overlay_striped_border_bin,
-    /* unk8       */ (s8[]) {
-        0, 3, 1, 3, 2, 3, 3, 3, -1
+    /* Anim. Data */ (s8[]) {
+        /* 000 */ 0, 3,
+        /* 001 */ 1, 3,
+        /* 002 */ 2, 3,
+        /* 003 */ 3, 3,
+        /* End */ LEVEL_ICON_ANIM_LOOP
     }
 };
 
@@ -137,8 +184,8 @@ u8 *level_icon_overlays_map[] = {
 
 // [D_089cfab8] Task
 struct TaskMethods D_089cfab8 = {
-    (TaskStartFunc)func_08015940,
+    (TaskStartFunc)game_select_init_icon_animator,
     NULL,
-    (TaskUpdateFunc)func_08015988,
+    (TaskUpdateFunc)game_select_update_icon_animator,
     NULL
 };

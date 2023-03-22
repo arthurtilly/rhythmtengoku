@@ -193,7 +193,7 @@ branch_08014768: \n\
 /* 080147c2 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
 /* 080147c4 */ STRB R0, [R1] \n\
 /* 080147c6 */ MOVS R0, 0x7F @ Set R0 to 0x7F \n\
-/* 080147c8 */ BL func_08014dbc \n\
+/* 080147c8 */ BL game_select_refresh_medal_count \n\
 /* 080147cc */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 080147ce */ BL func_080108c8 \n\
 /* 080147d2 */ LDR R0, [R4] \n\
@@ -239,7 +239,7 @@ branch_080147fc: \n\
 /* 08014822 */ CMP R0, R1 @ Check R0 - R1 \n\
 /* 08014824 */ BNE branch_0801482e \n\
 /* 08014826 */ BL game_select_set_cursor_border_z \n\
-/* 0801482a */ BL game_select_set_desc_panel_to_cursor_target \n\
+/* 0801482a */ BL game_select_set_info_pane_to_cursor_target \n\
  \n\
 branch_0801482e: \n\
 /* 0801482e */ LDR R0, [SP, 0x18] \n\

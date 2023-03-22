@@ -9,32 +9,29 @@ struct GameSelectSceneInfo {
     /* [0x000] Scene */
     u8 sceneState;
     u32 screenIsReady;
-    s32 unk8_b0:1;
-    s32 unk8_b1:1;
-    u16 unkA;
+    u32 loadingSceneGfx:1;
+    u32 hideStageTitle:1;
+    u16 nullA;
     /* [0x00C] Cursor */
     s16 selectionBorderSprite;
     s16 cursorSprite;
     s8 cursorX; // { 1..9 }
     s8 cursorY; // { 6..11 }
-    /* [0x012] Stage Title */
-    s16 stageTitleSprite;
-    s16 stageTitleBoxSprite;
-    u16 unk16;
+    /* [0x012] Stage Title Pane */
+    s16 stageTitleText;
+    s16 stageTitlePane;
+    s16 stageTitleY;
     u16 unk18;
-    u16 unk1A;
-    struct GameSelectUnk1C {
-        u8 unk0;
-        u8 unk1;
-        u8 unk2;
-        u8 unk3;
-        u8 unk4;
-        u8 unk5;
-        u8 unk6;
-        u16 unk8;
-        u16 unkA;
-    } unk1C[2];
-    /* [0x034] Info Pane */
+    u16 stageTitlePersistTime;
+    /* [0x01C] BG Color Controls */
+    struct ColorChanger {
+        u8 state;
+        u8 r1, g1, b1;
+        u8 r2, g2, b2;
+        u16 timer;
+        u16 target;
+    } colorChangers[2];
+    /* [0x034] Level Info Pane */
     s16 infoPaneName;
     struct TextPrinter *infoPaneDesc;
     s16 infoPaneRank;
@@ -116,10 +113,12 @@ struct GameSelectSceneInfo {
     u32 null460[32];
     u32 null4E0;
     u32 null4E4;
-    s16 medalsTextSprite;
-    s16 medalsNumSprite1;
-    s16 medalsNumSprite2;
-    u16 unk4EE;
+    /* [0x4E8] Medal Pane */
+    s16 medalPaneTitle;
+    s16 medalPaneDigit1;
+    s16 medalPaneDigit2;
+    u16 medalPaneFlickerTimer;
+    /* ? */
     u32 null4F0;
     u8 unk4F4;
     u8 unk4F5;
@@ -156,7 +155,16 @@ struct GameSelectGridEntry {
 struct GameSelectOverlay {
     u8 width, height;
     const u8 *texture;
-    const s8 *unk8;
+    const s8 *animData;
+};
+
+struct LevelIconAnimatorTask {
+    const u8 *texture;
+    u16 *tilesetBase;
+    const s8 *frameData;
+    u16 size;
+    u8 currentFrame;
+    u8 timeUntilNext;
 };
 
 
@@ -252,6 +260,9 @@ enum RhythmGameLevelsEnum {
     /* 54 */ LEVEL_LIVE_MENU
 };
 
+#define LEVEL_ICON_ANIM_STOP -2
+#define LEVEL_ICON_ANIM_LOOP -1
+
 enum LevelIconOverlaysEnum {
     /* 00 */ LEVEL_ICON_OVERLAY_BLANK,
     /* 01 */ LEVEL_ICON_OVERLAY_CLOSED,
@@ -296,6 +307,7 @@ extern const char *game_select_rank_text[];
 extern u8 game_select_rank_palette[];
 extern struct GameSelectOverlay *level_icon_overlay_data[];
 extern u8 *level_icon_overlays_map[];
+extern struct TaskMethods D_089cfab8;
 
 
 // Functions - BGM:
@@ -332,9 +344,11 @@ extern void get_grid_xy_from_level_id(s32 level, s32 *xReq, s32 *yReq); // Get G
 extern void init_game_select_grid_gfx(void); // Write Game Select Grid to VRAM
 extern void get_pixel_xy_from_grid_xy(s32 x, s32 y, s16 *xReq, s16 *yReq); // Get Screen X/Y from Grid Position
 extern void set_level_state_from_grid_xy(s32 x, s32 y, s32 state);
-extern void func_0801338c(void); // Initialise unk1C
-// extern ? func_080133cc(?);
-extern void func_080134ec(void); // update something
+
+// Functions - BG Color Changer
+extern void game_select_init_color_mod(void);
+extern void game_select_update_color_mod(struct ColorChanger *changer);
+extern void game_select_update_bg_colors(void);
 
 // Functions - Scene
 extern void game_select_init_static_var(void); // Init. Static Variables
@@ -356,8 +370,8 @@ extern void game_select_read_dpad_inputs(void);
 extern void game_select_read_inputs_sub1(void);
 extern void game_select_read_inputs_sub2(void);
 extern void game_select_read_inputs(void);
-extern void game_select_set_desc_panel_to_cursor_target(void);
-extern void game_select_update_stage_title_anim(void);
+extern void game_select_set_info_pane_to_cursor_target(void);
+extern void game_select_update_stage_title_pos(void);
 extern void game_select_set_stage_title(s32 x);
 extern void game_select_update_stage_title(void);
 extern void game_select_link_sprite_xy_to_bg(s16 sprite);
@@ -377,11 +391,11 @@ extern void func_080141f8(s32 x, s32 y, s32 levelState); // init. something
 // extern ? func_0801490c(?);
 extern void func_08014938(u32); // init. something
 extern void func_08014978(void); // update something
-// extern ? func_08014b68(?);
-extern void func_08014c10(void); // Init. Medal Counter
-extern void func_08014d40(void); // update something
-extern void func_08014db0(void); // update something
-// extern ? func_08014dbc(?);
+extern void game_select_set_medal_count(u32 total);
+extern void game_select_init_medal_pane(void);
+extern u32 game_select_update_medal_pane_flicker(void);
+extern void game_select_update_medal_pane(void);
+extern void game_select_refresh_medal_count(u32 flickerDuration);
 extern void game_select_init_info_pane(void);
 extern void game_select_delete_info_pane_sprite(s16 *ptr);
 extern void game_select_clear_info_pane(void);
@@ -399,18 +413,19 @@ extern void func_08015660(void); // Update Flow Display
 extern void game_select_scene_stop(s32 unused); // Scene Stop
 
 // Functions - VRAM
-extern void func_080158f0_stub(void); // STUB
-extern void func_080158f4(void); // init. something
-extern void func_0801593c_stub(void); // STUB
-extern void *func_08015940(void *); // ? Task Init.
-extern u32 func_08015988(void *); // ? Task Update
-extern s32 func_080159f4(); // Start New ? Task
-// extern ? func_08015a24(?);
+extern void func_080158f0_stub(void); // Stub
+extern void game_select_init_icon_overlays(void);
+extern void func_0801593c_stub(void); // Stub
+extern struct LevelIconAnimatorTask *game_select_init_icon_animator(struct LevelIconAnimatorTask *inputs);
+extern u32 game_select_update_icon_animator(struct LevelIconAnimatorTask *task);
+extern s32 game_select_start_new_icon_animator(u16 memID, const void *texture, u16 *tilesetBase, u32 size, const s8 *frameData);
+extern s32 game_select_animate_icon(struct GameSelectOverlay *overlay, u32 tilesetNum, u32 baseTileNum);
 extern void game_select_print_icon_map(u32 baseMap, u32 mapSize, u32 tileX, u32 tileY, u32 width, u32 height, u32 tilesPerRow, u32 tileNum, u32 palette);
 extern void game_select_print_icon_maps(u32 baseMap, u32 mapSize, u32 tileX, u32 tileY, u32 width, u32 height, u32 tileNum, u32 palette);
 extern void game_select_print_icon_texture(const void *texture, u32 tileset, u32 tileNum);
 extern void func_08015cf4(void); // Initialise BG Squares
 // extern ? func_08015ea4(?);
+// extern ? func_08016058(?);
 // extern ? func_0801616c(?);
 extern void func_0801626c(void); // update something
 // extern ? func_08016290(?);
