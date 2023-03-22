@@ -50,7 +50,7 @@ branch_08011610: \n\
 /* 08011630 */ LDR R0, [R4] \n\
 /* 08011632 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 08011634 */ STRH R5, [R0, 0x22] \n\
-/* 08011636 */ BL func_080141d4 \n\
+/* 08011636 */ BL game_select_get_total_levels \n\
 /* 0801163a */ LDR R1, [R4] \n\
 /* 0801163c */ STRH R0, [R1, 0x20] \n\
 /* 0801163e */ MOVS R2, 0x22 @ Set R2 to 0x22 \n\

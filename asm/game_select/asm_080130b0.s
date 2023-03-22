@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080130b0 \n\
+thumb_func_start get_campaign_from_grid_xy \n\
 /* 080130b0 */ PUSH {R4, LR} \n\
 /* 080130b2 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 080130b4 */ LDR R3, =campaign_gifts_table \n\

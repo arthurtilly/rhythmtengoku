@@ -16,8 +16,9 @@
 #include "icon_data.inc.c"
 #include "grid_data.inc.c"
 
-// [D_089cf90c] Game Icon Palettes
-u8 D_089cf90c[] = {
+
+// [D_089cf90c] Level Icon Palettes
+u8 level_icon_palette_table[] = {
     /* 0x00 */ 1,
     /* 0x01 */ 0,
     /* 0x02 */ 2,
@@ -74,10 +75,12 @@ u8 D_089cf90c[] = {
     /* 0x35 */ 4
 };
 
+
 // [D_089cf944] Scene Objects
 union SceneObject game_select_scene_objects[] = {
     END_OF_SCENE_OBJECTS_LIST
 };
+
 
 // [D_089cf948] Graphics Table
 struct GraphicsTable game_select_gfx_table[] = {
@@ -119,52 +122,55 @@ struct GraphicsTable game_select_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
+
 // [D_089cf9a8] Buffered Textures List
 struct CompressedGraphics *game_select_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
+
 // [D_089cf9ac] Stage Title Text Animations (by Grid X Pos.)
-struct Animation *game_select_column_title_anim[] = {
-    /* 0x00 */ anim_game_select_stage0,
-    /* 0x01 */ anim_game_select_stage0,
-    /* 0x02 */ anim_game_select_stage1,
-    /* 0x03 */ anim_game_select_stage2,
-    /* 0x04 */ anim_game_select_stage3,
-    /* 0x05 */ anim_game_select_stage4,
-    /* 0x06 */ anim_game_select_stage5,
-    /* 0x07 */ anim_game_select_stage6,
-    /* 0x08 */ anim_game_select_stage7,
-    /* 0x09 */ anim_game_select_stage8,
-    /* 0x0A */ anim_game_select_stage0,
-    /* 0x0B */ anim_game_select_stage0,
-    /* 0x0C */ anim_game_select_stage0,
-    /* 0x0D */ anim_game_select_stage0,
-    /* 0x0E */ anim_game_select_stage0
+struct Animation *game_select_stage_title_anim[] = {
+    /* 00 */ anim_game_select_stage0,
+    /* 01 */ anim_game_select_stage0,
+    /* 02 */ anim_game_select_stage1,
+    /* 03 */ anim_game_select_stage2,
+    /* 04 */ anim_game_select_stage3,
+    /* 05 */ anim_game_select_stage4,
+    /* 06 */ anim_game_select_stage5,
+    /* 07 */ anim_game_select_stage6,
+    /* 08 */ anim_game_select_stage7,
+    /* 09 */ anim_game_select_stage8,
+    /* 10 */ anim_game_select_stage0,
+    /* 11 */ anim_game_select_stage0,
+    /* 12 */ anim_game_select_stage0,
+    /* 13 */ anim_game_select_stage0,
+    /* 14 */ anim_game_select_stage0
 };
+
 
 // [D_089cf9e8] Rank Text (by Completion Level)
 const char *game_select_rank_text[] = {
-    /* 0x00 */ "",
-    /* 0x01 */ "",
-    /* 0x02 */ "",
-    /* 0x03 */ "",
-    /* 0x04 */ "\2\x30" "\1\x30" "\5\x31" "\1\x35" "ランク " "\2\x32" "\1\x32" "\5\x33" "\1\x37" "平凡",
-    /* 0x05 */ "\2\x30" "\1\x30" "\5\x31" "\1\x35" "ランク " "\2\x32" "\1\x32" "\5\x33" "\1\x37" "ハイレベル"
+    /* HIDDEN    */ "",
+    /* INVALID   */ "",
+    /* CLOSED    */ "",
+    /* UNCLEARED */ "",
+    /* CLEARED   */ "\2\x30" "\1\x30" "\5\x31" "\1\x35" "ランク " "\2\x32" "\1\x32" "\5\x33" "\1\x37" "平凡",
+    /* HAS_MEDAL */ "\2\x30" "\1\x30" "\5\x31" "\1\x35" "ランク " "\2\x32" "\1\x32" "\5\x33" "\1\x37" "ハイレベル"
 };
 
 asm(".balign 4, 0");
 
+
 // [D_089cfa00] Rank Text Palette (by Completion Level)
 u8 game_select_rank_palette[] = {
-    /* 0x00 */ 0,
-    /* 0x01 */ 0,
-    /* 0x02 */ 0,
-    /* 0x03 */ 0,
-    /* 0x04 */ 9,
-    /* 0x05 */ 10,
-    /* 0x06 */ 0,
-    /* 0x07 */ 0
+    /* HIDDEN    */ 0,
+    /* INVALID   */ 0,
+    /* CLOSED    */ 0,
+    /* UNCLEARED */ 0,
+    /* CLEARED   */ 9,
+    /* HAS_MEDAL */ 10
 };
+
 
 #include "icon_overlay_data.inc.c"

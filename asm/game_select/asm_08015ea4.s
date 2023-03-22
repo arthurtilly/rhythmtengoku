@@ -329,7 +329,7 @@ branch_08016090: \n\
 /* 08016116 */ BL func_0804d8c4 \n\
 /* 0801611a */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
 /* 0801611c */ LDRSH R0, [R7, R1] \n\
-/* 0801611e */ BL func_080140f8 \n\
+/* 0801611e */ BL game_select_link_sprite_xy_to_bg \n\
 /* 08016122 */ MOV R2, SP @ Set R2 to SP \n\
 /* 08016124 */ LDRH R2, [R2, 0x14] \n\
 /* 08016126 */ STRH R2, [R7, 0x4] \n\

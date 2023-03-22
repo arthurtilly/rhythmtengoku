@@ -126,7 +126,7 @@ branch_080145f2: \n\
 /* 080145f2 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 080145f4 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 080145f6 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
-/* 080145f8 */ BL func_08013348 \n\
+/* 080145f8 */ BL set_level_state_from_grid_xy \n\
  \n\
 branch_080145fc: \n\
 /* 080145fc */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\

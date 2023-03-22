@@ -35,7 +35,7 @@ thumb_func_start func_08014488 \n\
 /* 080144c4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080144c6 */ LDRSH R1, [R5, R2] \n\
 /* 080144c8 */ MOV R2, R8 @ Set R2 to R8 \n\
-/* 080144ca */ BL game_select_scroll_bg_grid \n\
+/* 080144ca */ BL game_select_scroll_grid_pane \n\
 /* 080144ce */ LDR R4, [R4] \n\
 /* 080144d0 */ MOVS R1, 0x10 @ Set R1 to 0x10 \n\
 /* 080144d2 */ LDRSB R1, [R4, R1] \n\
@@ -52,7 +52,7 @@ branch_080144e0: \n\
 /* 080144e4 */ BEQ branch_080144ee \n\
 /* 080144e6 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 080144e8 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
-/* 080144ea */ BL func_08013b98 \n\
+/* 080144ea */ BL game_select_move_cursor_to_grid_xy \n\
  \n\
 branch_080144ee: \n\
 /* 080144ee */ ADD SP, 0x4 \n\

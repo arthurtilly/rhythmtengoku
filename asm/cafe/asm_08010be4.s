@@ -227,7 +227,7 @@ branch_08010dc8: \n\
 /* 08010dd0 */ BHI branch_08010df0 \n\
 /* 08010dd2 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 08010dd4 */ STR R3, [SP, 0xC] \n\
-/* 08010dd6 */ BL func_080130e4 \n\
+/* 08010dd6 */ BL get_campaign_from_level_id \n\
 /* 08010dda */ LDR R2, =0x246 \n\
 /* 08010ddc */ ADDS R1, R4, R2 @ Set R1 to R4 + R2 \n\
 /* 08010dde */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
@@ -293,7 +293,7 @@ branch_08010e2c: \n\
 /* 08010e4e */ SUBS R2, 0x28 @ Subtract 0x28 from R2 \n\
 /* 08010e50 */ ADDS R0, R1, R2 @ Set R0 to R1 + R2 \n\
 /* 08010e52 */ LDRB R0, [R0] \n\
-/* 08010e54 */ BL func_08013090 \n\
+/* 08010e54 */ BL get_level_name_from_campaign \n\
 /* 08010e58 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08010e5a */ MOVS R5, 0x6 @ Set R5 to 0x6 \n\
  \n\
@@ -570,7 +570,7 @@ jump_08011104: \n\
 /* 08011124 */ LDRSH R0, [R0, R1] \n\
 /* 08011126 */ ADD R2, SP, 0x4 \n\
 /* 08011128 */ MOV R1, SP @ Set R1 to SP \n\
-/* 0801112a */ BL get_pixel_xy_from_level_id \n\
+/* 0801112a */ BL get_grid_xy_from_level_id \n\
 /* 0801112e */ LDR R4, =D_030046a8 \n\
 /* 08011130 */ LDR R1, [R4] \n\
 /* 08011132 */ LDR R0, [SP] \n\

@@ -12,15 +12,15 @@ extern struct SaveBuffer {
         u32 unkC; // 0x26040000
     } header;
     struct TengokuSaveData {
-        s8 gameSelectCursorX;
-        s8 gameSelectCursorY;
-        s8 gameSelectPosX;
-        s8 gameSelectPosY;
-        s8 recentGameCompletionLevel;
+        s8 gsCursorX;
+        s8 gsCursorY;
+        s8 recentLevelX;
+        s8 recentLevelY;
+        s8 recentLevelState;
         u8 gameSelectUnk5;
-        u8 rhythmGameCompletion[55];
-        u16 recentGameScore;
-        u16 rhythmGameScores[55];
+        u8 levelStates[55];
+        u16 previousLevelScore;
+        u16 levelScores[55];
         u16 currentFlow;
         u16 unkB0;
         u8 unkB2; // relates to studio
@@ -35,14 +35,14 @@ extern struct SaveBuffer {
         u8 unk1C7[55];
         u8 unk1FE[55];
         u8 unk235;
-        u8 unk236[48];
+        u8 campaignsCleared[48];
         u8 unk266;
-        u8 perfectAttemptsRemaining;
-        u8 playsUntilNextPerfectCampaign;
-        u8 perfectCampaignID;
+        u8 campaignAttemptsLeft;
+        u8 playsUntilNextCampaign;
+        u8 currentCampaign;
         u8 unk26A;
         u8 readingMaterialUnlocked[20];
-        u8 drumKitUnlocked[15];
+        u8 drumKitsUnlocked[15];
         u8 totalMedals;
         u8 unk28F;
         u8 unk290;

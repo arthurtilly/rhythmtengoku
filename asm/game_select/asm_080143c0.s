@@ -31,7 +31,7 @@ thumb_func_start func_080143c0 \n\
 /* 080143f4 */ ADDS R0, 0x16 @ Add 0x16 to R0 \n\
 /* 080143f6 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 080143f8 */ LDRB R2, [R0] \n\
-/* 080143fa */ LDR R0, =D_089cfaac \n\
+/* 080143fa */ LDR R0, =level_icon_overlays_map \n\
 /* 080143fc */ LSLS R1, R1, 0x2 \n\
 /* 080143fe */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 08014400 */ LDR R0, [R1] \n\
@@ -43,7 +43,7 @@ thumb_func_start func_080143c0 \n\
 /* 0801440c */ LSLS R0, R1, 0x3 \n\
 /* 0801440e */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08014410 */ ADDS R2, R0, 0x1 @ Set R2 to R0 + 0x1 \n\
-/* 08014412 */ LDR R0, =D_089cf90c \n\
+/* 08014412 */ LDR R0, =level_icon_palette_table \n\
 /* 08014414 */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 08014416 */ LDRB R0, [R1] \n\
 /* 08014418 */ MOVS R4, 0x3 @ Set R4 to 0x3 \n\

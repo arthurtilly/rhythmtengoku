@@ -17,15 +17,15 @@ struct GraphicsTable staff_credit_gfx_table[] = {
 // [D_089df628] Text Position/Alignment Data
 struct CreditsTextStartPos D_089df628[] = {
     /* Left-Aligned */ {
-        /* Anchor */ TEXT_ANIM_ANCHOR_BOTTOM_LEFT,
+        /* Anchor */ TEXT_ANCHOR_BOTTOM_LEFT,
         /* X Pos. */ 100
     },
     /* Right-Aligned */ {
-        /* Anchor */ TEXT_ANIM_ANCHOR_BOTTOM_RIGHT,
+        /* Anchor */ TEXT_ANCHOR_BOTTOM_RIGHT,
         /* X Pos. */ 232
     },
     /* Center-Aligned */ {
-        /* Anchor */ TEXT_ANIM_ANCHOR_BOTTOM_CENTER,
+        /* Anchor */ TEXT_ANCHOR_BOTTOM_CENTER,
         /* X Pos. */ 120
     }
 };

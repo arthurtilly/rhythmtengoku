@@ -55,7 +55,7 @@ branch_08014998: \n\
 /* 080149dc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080149de */ LDRSH R1, [R4, R2] \n\
 /* 080149e0 */ MOVS R2, 0xF0 @ Set R2 to 0xF0 \n\
-/* 080149e2 */ BL game_select_scroll_bg_grid \n\
+/* 080149e2 */ BL game_select_scroll_grid_pane \n\
 /* 080149e6 */ LDR R2, [R6] \n\
 /* 080149e8 */ MOVS R0, 0x10 @ Set R0 to 0x10 \n\
 /* 080149ea */ LDRSB R0, [R2, R0] \n\
@@ -167,7 +167,7 @@ branch_08014a90: \n\
 /* 08014abc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08014abe */ LDRSH R1, [R4, R2] \n\
 /* 08014ac0 */ MOVS R2, 0xF0 @ Set R2 to 0xF0 \n\
-/* 08014ac2 */ BL game_select_scroll_bg_grid \n\
+/* 08014ac2 */ BL game_select_scroll_grid_pane \n\
 /* 08014ac6 */ B branch_08014b60 \n\
 \n\
 .ltorg \n\
@@ -215,7 +215,7 @@ branch_08014acc: \n\
 /* 08014b1a */ LSLS R1, R1, 0x18 \n\
 /* 08014b1c */ ASRS R1, R1, 0x18 \n\
 /* 08014b1e */ MOVS R2, 0x3 @ Set R2 to 0x3 \n\
-/* 08014b20 */ BL func_08013348 \n\
+/* 08014b20 */ BL set_level_state_from_grid_xy \n\
  \n\
 branch_08014b24: \n\
 /* 08014b24 */ BL write_game_save_data \n\

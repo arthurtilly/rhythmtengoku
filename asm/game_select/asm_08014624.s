@@ -92,7 +92,7 @@ branch_08014698: \n\
 /* 080146c8 */ BL func_0804d160 \n\
 /* 080146cc */ LSLS R0, R0, 0x10 \n\
 /* 080146ce */ ASRS R0, R0, 0x10 \n\
-/* 080146d0 */ BL func_080140f8 \n\
+/* 080146d0 */ BL game_select_link_sprite_xy_to_bg \n\
 /* 080146d4 */ LDR R0, =s_f_open_game_seqData \n\
 /* 080146d6 */ BL play_sound \n\
 /* 080146da */ B branch_080147fc \n\
@@ -128,7 +128,7 @@ branch_080146ec: \n\
 /* 0801471e */ BL func_0804d160 \n\
 /* 08014722 */ LSLS R0, R0, 0x10 \n\
 /* 08014724 */ ASRS R0, R0, 0x10 \n\
-/* 08014726 */ BL func_080140f8 \n\
+/* 08014726 */ BL game_select_link_sprite_xy_to_bg \n\
 /* 0801472a */ LDR R0, =s_f_clear_game_seqData \n\
 /* 0801472c */ BL play_sound \n\
 /* 08014730 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
@@ -177,7 +177,7 @@ branch_08014768: \n\
 /* 0801479a */ BL func_0804d160 \n\
 /* 0801479e */ LSLS R0, R0, 0x10 \n\
 /* 080147a0 */ ASRS R0, R0, 0x10 \n\
-/* 080147a2 */ BL func_080140f8 \n\
+/* 080147a2 */ BL game_select_link_sprite_xy_to_bg \n\
 /* 080147a6 */ LDR R0, =s_f_clear_game_seqData \n\
 /* 080147a8 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 080147aa */ LSLS R2, R2, 0x2 \n\
@@ -222,7 +222,7 @@ branch_080147fc: \n\
 /* 080147fc */ LDR R0, [SP, 0x18] \n\
 /* 080147fe */ LDR R1, [SP, 0x1C] \n\
 /* 08014800 */ LDR R2, [SP, 0x20] \n\
-/* 08014802 */ BL func_08013348 \n\
+/* 08014802 */ BL set_level_state_from_grid_xy \n\
 /* 08014806 */ LDR R0, [SP, 0x18] \n\
 /* 08014808 */ LDR R1, [SP, 0x1C] \n\
 /* 0801480a */ BL func_080143c0 \n\
@@ -238,8 +238,8 @@ branch_080147fc: \n\
 /* 08014820 */ LDR R0, [SP, 0x1C] \n\
 /* 08014822 */ CMP R0, R1 @ Check R0 - R1 \n\
 /* 08014824 */ BNE branch_0801482e \n\
-/* 08014826 */ BL func_08013b48 \n\
-/* 0801482a */ BL func_08013f9c \n\
+/* 08014826 */ BL game_select_set_cursor_border_z \n\
+/* 0801482a */ BL game_select_set_desc_panel_to_cursor_target \n\
  \n\
 branch_0801482e: \n\
 /* 0801482e */ LDR R0, [SP, 0x18] \n\

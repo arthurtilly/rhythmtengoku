@@ -1240,7 +1240,7 @@ void gameplay_align_text_advance_icon(void) {
 void gameplay_display_text_and_wait(void) {
     if (gGameplayInfo->skippingTutorial) return;
 
-    if (text_printer_is_printing(gGameplayInfo->textPrinter)) {
+    if (text_printer_is_busy(gGameplayInfo->textPrinter)) {
         gGameplayInfo->printingTutorialText = TRUE;
     } else {
         gameplay_align_text_advance_icon();
@@ -1266,12 +1266,12 @@ void gameplay_update_text(void) {
         return;
     }
 
-    if (!text_printer_is_printing(gGameplayInfo->textPrinter) && gGameplayInfo->printingTutorialText) {
+    if (!text_printer_is_busy(gGameplayInfo->textPrinter) && gGameplayInfo->printingTutorialText) {
         gameplay_align_text_advance_icon(); // Text-related
         gGameplayInfo->printingTutorialText = FALSE;
     }
 
-    if (!text_printer_is_printing(gGameplayInfo->textPrinter) && (D_03004afc & A_BUTTON)) {
+    if (!text_printer_is_busy(gGameplayInfo->textPrinter) && (D_03004afc & A_BUTTON)) {
         text_printer_set_string(gGameplayInfo->textPrinter, NULL);
         gameplay_display_text_advance_icon(0, 0, FALSE); // Hide A Button Prompt
         play_sound(&s_f_send_mes_seqData);

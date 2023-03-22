@@ -1,5 +1,5 @@
 // [D_089cea24] Game Select Icon Textures
-const u8 *game_select_icon_texture_table[] = {
+const u8 *level_icon_texture_table[] = {
     /* 0x00 */ icon_karate_man_2_bin,
     /* 0x01 */ icon_sneaky_spirits_bin,
     /* 0x02 */ icon_remix6_bin,

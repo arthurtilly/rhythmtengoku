@@ -35,11 +35,11 @@ asm(".include \"include/gba.inc\"");//Temporary
 #define MAX_POINTS_PER_INPUT 10
 #define POINTS_LOST_PER_MISS -20
 
-extern struct Scene D_089d6d74; // Gameplay Scene..?
-extern struct Scene D_089d77e4; // Results (Level-Type)
-extern struct Scene D_089d7c18; // Results (Epilogue)
-extern struct Scene D_089d7964; // Results (Score-Type)
 extern struct Scene D_089cdf08; // Game Select
+extern struct Scene D_089d6d74; // Staff Credit
+extern struct Scene D_089d77e4; // Results (Level-Type)
+extern struct Scene D_089d7964; // Results (Score-Type)
+extern struct Scene D_089d7c18; // Epilogue
 
 extern const struct BitmapFontData bitmap_font_warioware_body;
 
@@ -265,10 +265,10 @@ void func_080191bc(u32 level) {
 
     if (!D_03001540) return;
 
-    saveData->recentGameCompletionLevel = level;
-    saveData->recentGameScore = func_0801a060();
+    saveData->recentLevelState = level;
+    saveData->previousLevelScore = func_0801a060();
 
-    gameID = get_level_id_from_grid_xy(saveData->gameSelectPosX, saveData->gameSelectPosY);
+    gameID = get_level_id_from_grid_xy(saveData->recentLevelX, saveData->recentLevelY);
     func_080108a0(gameID);
 
     if (gameID >= 0)
@@ -751,11 +751,11 @@ void func_08019ee0(void) {
         return;
     }
 
-    if (func_080139a0() != 0) {
+    if (game_select_roll_credits_after_epilogue()) {
         scene = func_080005e0(&D_089d7c18);
         func_080006b0(&D_089d7c18, &D_089d6d74);
         func_080006b0(&D_089d6d74, scene);
-        func_08013994();
+        game_select_disable_credits_after_epilogue();
     }
 
     if (averageCriteriaSucceeded == 0) {
@@ -769,7 +769,7 @@ void func_08019ee0(void) {
         func_0804cebc(D_03005380, gResultsInfo->resultIcon, RESULT_ICON_SUPERB);
         func_080191bc(LEVEL_STATE_MEDAL_OBTAINED);
 
-        previousResult = get_level_state_from_grid_xy(D_030046a8->data.gameSelectPosX, D_030046a8->data.gameSelectPosY);
+        previousResult = get_level_state_from_grid_xy(D_030046a8->data.recentLevelX, D_030046a8->data.recentLevelY);
         if (previousResult < LEVEL_STATE_MEDAL_OBTAINED)
             gResultsInfo->medalObtained = TRUE;
     }

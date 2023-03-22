@@ -900,7 +900,7 @@ void func_0800abb0(void *printer, s32 line) {
 
 
 // Get Active Printing Status
-s32 text_printer_is_printing(struct TextPrinter *textPrinter) {
+s32 text_printer_is_busy(struct TextPrinter *textPrinter) {
     if (textPrinter == NULL) return FALSE;
 
     return textPrinter->currentlyPrinting;

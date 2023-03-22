@@ -1,246 +1,250 @@
+#include "src/scenes/studio.h"
+#include "src/scenes/reading.h"
+
 // [D_089cdf24] Perfect Campaign Gifts
 struct CampaignGiftData campaign_gifts_table[] = {
-    /* 0x00 */ {
-        /* Grid Pos.   */ 2, 6,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 11
+    /* REMIX1 */ {
+        /* Grid Pos. */ 2, 6,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_SFX
     },
-    /* 0x01 */ {
-        /* Grid Pos.   */ 3, 6,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 9
+    /* REMIX2 */ {
+        /* Grid Pos. */ 3, 6,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_BON_ODORI
     },
-    /* 0x02 */ {
-        /* Grid Pos.   */ 4, 6,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 5
+    /* REMIX3 */ {
+        /* Grid Pos. */ 4, 6,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_HONEY_SWEET_ANGEL
     },
-    /* 0x03 */ {
-        /* Grid Pos.   */ 5, 6,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 2
+    /* REMIX4 */ {
+        /* Grid Pos. */ 5, 6,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_CAFE
     },
-    /* 0x04 */ {
-        /* Grid Pos.   */ 6, 6,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 6
+    /* REMIX5 */ {
+        /* Grid Pos. */ 6, 6,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_WISH
     },
-    /* 0x05 */ {
-        /* Grid Pos.   */ 7, 6,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 32
+    /* REMIX6 */ {
+        /* Grid Pos. */ 7, 6,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_REMIX6
     },
-    /* 0x06 */ {
-        /* Grid Pos.   */ 8, 6,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 15
+    /* REMIX7 */ {
+        /* Grid Pos. */ 8, 6,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_FAN_MAIL
     },
-    /* 0x07 */ {
-        /* Grid Pos.   */ 9, 6,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 12
+    /* REMIX8 */ {
+        /* Grid Pos. */ 9, 6,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_REMIX8
     },
-    /* 0x08 */ {
-        /* Grid Pos.   */ 2, 7,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 2
+    /* CLAPPY_TRIO */ {
+        /* Grid Pos. */ 2, 7,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_CLAPPY_TRIO
     },
-    /* 0x09 */ {
-        /* Grid Pos.   */ 3, 7,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 8
+    /* BON_ODORI */ {
+        /* Grid Pos. */ 3, 7,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_BON_ODORI
     },
-    /* 0x0A */ {
-        /* Grid Pos.   */ 4, 7,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 4
+    /* SPACE_DANCE */ {
+        /* Grid Pos. */ 4, 7,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_SPACE_DANCE
     },
-    /* 0x0B */ {
-        /* Grid Pos.   */ 5, 7,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 8
+    /* RAP_MEN */ {
+        /* Grid Pos. */ 5, 7,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_RAP_MEN
     },
-    /* 0x0C */ {
-        /* Grid Pos.   */ 6, 7,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 3
+    /* TAP_TRIAL */ {
+        /* Grid Pos. */ 6, 7,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_TAP_TRIAL
     },
-    /* 0x0D */ {
-        /* Grid Pos.   */ 7, 7,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 13
+    /* TAP_TRIAL_2 */ {
+        /* Grid Pos. */ 7, 7,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_TAP_TRIAL_2
     },
-    /* 0x0E */ {
-        /* Grid Pos.   */ 8, 7,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 9
+    /* MARCHING_ORDERS_2 */ {
+        /* Grid Pos. */ 8, 7,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_HEEL_TECH_1
     },
-    /* 0x0F */ {
-        /* Grid Pos.   */ 9, 7,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 7
+    /* SNEAKY_SPIRITS_2 */ {
+        /* Grid Pos. */ 9, 7,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_HEAVY
     },
-    /* 0x10 */ {
-        /* Grid Pos.   */ 2, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 5
+    /* SPACEBALL */ {
+        /* Grid Pos. */ 2, 8,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_SPACEBALL
     },
-    /* 0x11 */ {
-        /* Grid Pos.   */ 3, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 17
+    /* SICK_BEATS */ {
+        /* Grid Pos. */ 3, 8,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_RHYTHM_DIAGNOSIS
     },
-    /* 0x12 */ {
-        /* Grid Pos.   */ 4, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 7
+    /* TRAM_PAULINE */ {
+        /* Grid Pos. */ 4, 8,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_MARCHING_ORDERS
     },
-    /* 0x13 */ {
-        /* Grid Pos.   */ 5, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 10
+    /* POLYRHYTHM */ {
+        /* Grid Pos. */ 5, 8,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_REMIX3
     },
-    /* 0x14 */ {
-        /* Grid Pos.   */ 6, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 19
+    /* FIREWORKS */ {
+        /* Grid Pos. */ 6, 8,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_RHYTHM_HAIKU
     },
-    /* 0x15 */ {
-        /* Grid Pos.   */ 7, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 11
+    /* RAP_WOMEN */ {
+        /* Grid Pos. */ 7, 8,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_REMIX5
     },
-    /* 0x16 */ {
-        /* Grid Pos.   */ 8, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 4
+    /* NIGHT_WALK_2 */ {
+        /* Grid Pos. */ 8, 8,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_NIGHT_WALK
     },
-    /* 0x17 */ {
-        /* Grid Pos.   */ 9, 8,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 6
+    /* SPACEBALL_2 */ {
+        /* Grid Pos. */ 9, 8,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_HORSE_MACHINE
     },
-    /* 0x18 */ {
-        /* Grid Pos.   */ 2, 9,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 1
+    /* MARCHING_ORDERS */ {
+        /* Grid Pos. */ 2, 9,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_DRY
     },
-    /* 0x19 */ {
-        /* Grid Pos.   */ 3, 9,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 12
+    /* RAT_RACE */ {
+        /* Grid Pos. */ 3, 9,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_TAP
     },
-    /* 0x1A */ {
-        /* Grid Pos.   */ 4, 9,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 22
+    /* BUNNY_HOP */ {
+        /* Grid Pos. */ 4, 9,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_BUNNY_HOP
     },
-    /* 0x1B */ {
-        /* Grid Pos.   */ 5, 9,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 25
+    /* POWER_CALLIGRAPHY */ {
+        /* Grid Pos. */ 5, 9,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_POWER_CALLIGRAPHY
     },
-    /* 0x1C */ {
-        /* Grid Pos.   */ 6, 9,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 13
+    /* TOSS_BOYS */ {
+        /* Grid Pos. */ 6, 9,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_AIR
     },
-    /* 0x1D */ {
-        /* Grid Pos.   */ 7, 9,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 10
+    /* COSMIC_DANCE */ {
+        /* Grid Pos. */ 7, 9,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_COSMIC_DANCE
     },
-    /* 0x1E */ {
-        /* Grid Pos.   */ 8, 9,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 13
+    /* NINJA_REINCARNATE */ {
+        /* Grid Pos. */ 8, 9,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_NINJA_BODYGUARD
     },
-    /* 0x1F */ {
-        /* Grid Pos.   */ 9, 9,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 10
+    /* POLYRHYTHM_2 */ {
+        /* Grid Pos. */ 9, 9,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_HEEL_TECH_2
     },
-    /* 0x20 */ {
-        /* Grid Pos.   */ 2, 10,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 3
+    /* RHYTHM_TWEEZERS */ {
+        /* Grid Pos. */ 2, 10,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_RHYTHM_TWEEZERS
     },
-    /* 0x21 */ {
-        /* Grid Pos.   */ 3, 10,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 5
+    /* SAMURAI_SLICE */ {
+        /* Grid Pos. */ 3, 10,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_ASIAN
     },
-    /* 0x22 */ {
-        /* Grid Pos.   */ 4, 10,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 21
+    /* SHOWTIME */ {
+        /* Grid Pos. */ 4, 10,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_SHOWTIME
     },
-    /* 0x23 */ {
-        /* Grid Pos.   */ 5, 10,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 7
+    /* NIGHT_WALK */ {
+        /* Grid Pos. */ 5, 10,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_NIGHT_WALK
     },
-    /* 0x24 */ {
-        /* Grid Pos.   */ 6, 10,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 6
+    /* NINJA_BODYGUARD */ {
+        /* Grid Pos. */ 6, 10,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_LIGHT
     },
-    /* 0x25 */ {
-        /* Grid Pos.   */ 7, 10,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 9
+    /* BON_DANCE */ {
+        /* Grid Pos. */ 7, 10,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_BON_DANCE
     },
-    /* 0x26 */ {
-        /* Grid Pos.   */ 8, 10,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 8
+    /* RHYTHM_TWEEZERS_2 */ {
+        /* Grid Pos. */ 8, 10,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_HIHAT
     },
-    /* 0x27 */ {
-        /* Grid Pos.   */ 9, 10,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 14
+    /* TOSS_BOYS_2 */ {
+        /* Grid Pos. */ 9, 10,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_TOSS_BOYS
     },
-    /* 0x28 */ {
-        /* Grid Pos.   */ 2, 11,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 1
+    /* KARATE_MAN */ {
+        /* Grid Pos. */ 2, 11,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_KARATE_MAN
     },
-    /* 0x29 */ {
-        /* Grid Pos.   */ 3, 11,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 2
+    /* SNEAKY_SPIRITS */ {
+        /* Grid Pos. */ 3, 11,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_POWER
     },
-    /* 0x2A */ {
-        /* Grid Pos.   */ 4, 11,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 18
+    /* WIZARDS_WALTZ */ {
+        /* Grid Pos. */ 4, 11,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_RHYTHM_POEM
     },
-    /* 0x2B */ {
-        /* Grid Pos.   */ 5, 11,
-        /* Reward Type */ 2,
-        /* Reward ID   */ 16
+    /* QUIZ_SHOW */ {
+        /* Grid Pos. */ 5, 11,
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_RHYTHM_FORMULA
     },
-    /* 0x2C */ {
-        /* Grid Pos.   */ 6, 11,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 4
+    /* BOUNCY_ROAD */ {
+        /* Grid Pos. */ 6, 11,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_MATTE
     },
-    /* 0x2D */ {
-        /* Grid Pos.   */ 7, 11,
-        /* Reward Type */ 0,
-        /* Reward ID   */ 12
+    /* SNAPPY_TRIO */ {
+        /* Grid Pos. */ 7, 11,
+        /* Gift Type */ CAMPAIGN_GIFT_SONG,
+        /* Gift ID   */ STUDIO_SONG_SNAPPY_TRIO
     },
-    /* 0x2E */ {
-        /* Grid Pos.   */ 8, 11,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 14
+    /* KARATE_MAN_2 */ {
+        /* Grid Pos. */ 8, 11,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_SAMURAI
     },
-    /* 0x2F */ {
-        /* Grid Pos.   */ 9, 11,
-        /* Reward Type */ 1,
-        /* Reward ID   */ 3
+    /* BOUNCY_ROAD_2 */ {
+        /* Grid Pos. */ 9, 11,
+        /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
+        /* Gift ID   */ STUDIO_DRUM_TECHNO
     },
 };
+
 
 // [D_089ce0a4] Perfect Campaign Border Sprites
 struct Animation *campaign_icon_borders[] = {
@@ -248,6 +252,7 @@ struct Animation *campaign_icon_borders[] = {
     /* Attempt 2 */ anim_game_select_border_perfect2,
     /* Attempt 1 */ anim_game_select_border_perfect3
 };
+
 
 // Null Perfect Gift
 const char D_08050bcc[] = "";
