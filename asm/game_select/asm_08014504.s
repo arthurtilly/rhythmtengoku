@@ -107,7 +107,7 @@ branch_080145a8: \n\
 /* 080145cc */ LSLS R2, R2, 0x1 \n\
 /* 080145ce */ STR R2, [SP] \n\
 /* 080145d0 */ LDR R2, =func_0801446c \n\
-/* 080145d2 */ BL func_08016058 \n\
+/* 080145d2 */ BL game_select_spawn_shadow_square \n\
 /* 080145d6 */ LDRB R1, [R7, 0x10] \n\
 /* 080145d8 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080145da */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\

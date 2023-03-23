@@ -36,7 +36,7 @@ void reset_game_save_data(void) {
     data->gameSelectUnk5 = 0;
     data->currentFlow = 0;
     data->unkB0 = 0;
-    data->previousLevelScore = -1;
+    data->recentLevelScore = DEFAULT_LEVEL_SCORE;
 
     for (i = 0; i < 55; i++) {
         data->levelStates[i] = LEVEL_STATE_HIDDEN;

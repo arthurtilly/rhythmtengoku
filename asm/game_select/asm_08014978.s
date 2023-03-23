@@ -77,7 +77,7 @@ branch_080149f8: \n\
  \n\
 branch_08014a14: \n\
 /* 08014a14 */ MOVS R5, 0x1 @ Set R5 to 0x1 \n\
-/* 08014a16 */ BL func_08016290 \n\
+/* 08014a16 */ BL game_select_check_for_shadow_squares \n\
 /* 08014a1a */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08014a1c */ BEQ branch_08014a20 \n\
 /* 08014a1e */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\

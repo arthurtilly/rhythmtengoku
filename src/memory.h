@@ -19,7 +19,7 @@ extern struct SaveBuffer {
         s8 recentLevelState;
         u8 gameSelectUnk5;
         u8 levelStates[55];
-        u16 previousLevelScore;
+        u16 recentLevelScore;
         u16 levelScores[55];
         u16 currentFlow;
         u16 unkB0;

@@ -55,20 +55,21 @@ struct GameSelectSceneInfo {
     s16 infoPaneX2, infoPaneY2;
     u16 infoPaneMotionTime;
     u16 infoPaneMotionDecay;
-    /* [0x06A] BG Squares */
+    /* [0x06A] Squares */
     s16 squareSprites[50];
     struct Vector2 squareVectors[50];
-    struct GameSelectUnk198 {
-        u8 unk0;
-        u32 unk4;
-        u32 unk8;
-        u32 unkC;
-        u32 unk10;
-        u32 unk14;
-        u32 unk18;
-        u32 unk1C;
-    } unk198[10];
-    /* ? */
+    struct NewLevelIconShadow {
+        u8 active;
+        s16 sprite;
+        s16 xIn, yIn;
+        s16 x1, y1;
+        s16 x2, y2;
+        s16 progress;
+        void (*onFinish)();
+        s32 onFinishArg;
+        u16 delay;
+    } newLevelShadows[10];
+    /* [0x2D8] ? */
     u8 unk2D8;
     u8 unk2D9;
     u8 unk2DA;
@@ -82,20 +83,20 @@ struct GameSelectSceneInfo {
     u32 null324;
     u8 unk328;
     u8 unk329;
-    /* [0x32C] Flow Display */
+    /* [0x32C] Flow Pane */
     struct FlowDisplay {
-        s16 textSprite; // "Your Flow"
-        s16 numberSprites[3];
-        s16 arrowSprite;
-        u8 unkA;
-        u16 unkC;
-        u16 unkE;
+        s16 title;
+        s16 digits[3];
+        s16 arrow;
+        u8 state;
+        u16 timer;
+        u16 counter;
         u16 currentScore;
-        u16 previousScore; // flow value?
+        u16 previousScore;
     } flowDisplay;
     /* [0x340] Campaign Notice */
     struct CampaignNotice {
-        u8 unk0;
+        u8 hasNewCampaign;
         s8 id;
         s16 x, y;
         s16 borderSprite;
@@ -283,6 +284,9 @@ extern struct SequenceData s_menu_kettei1_seqData;
 extern struct SequenceData s_menu_error_seqData;
 extern struct SequenceData s_menu_cancel3_seqData;
 extern struct SequenceData s_menu_cursor1_seqData;
+extern struct SequenceData s_f_point_stop_seqData;
+extern struct SequenceData s_f_point_roll_seqData;
+extern struct SequenceData s_f_appear_game_seqData;
 
 
 // Scene Data:
@@ -378,7 +382,7 @@ extern void game_select_update_stage_title(void);
 extern void game_select_link_sprite_xy_to_bg(s16 sprite);
 extern void game_select_scene_update(s32 unused); // Scene Update (Active)
 extern u32 game_select_scene_is_ready(void); // Scene Can Receive Inputs
-extern void func_080141c0(u32 arg0, u32 arg1); // Set D_030055d4 and D_03005590
+extern void game_select_set_unused_static_var(u32 arg0, u32 arg1); // Set D_030055d4 and D_03005590
 extern u32 game_select_get_total_levels(void);
 // extern ? func_080141d8(?);
 extern void func_080141f8(s32 x, s32 y, s32 levelState); // init. something
@@ -406,17 +410,17 @@ extern void game_select_print_level_rank(s32 levelState);
 extern void game_select_process_info_pane(void);
 extern void game_select_set_info_pane(s32 id, s32 state, s32 delay);
 extern void game_select_update_info_pane(void);
-extern u32 game_select_calculate_flow(u32 *outMod, u32 *outScore); // Calculate Flow?
+extern u32 game_select_calculate_flow(u32 *modifierReq, u32 *averageReq);
 extern u32 game_select_calculate_flow_old(void);
-extern u32 func_080153a8(void); // Set Flow?
+extern u32 game_select_update_scores(void);
 extern void game_select_init_flow_pane(void);
 extern void game_select_update_flow_pane(void);
 extern void game_select_scene_stop(s32 unused); // Scene Stop
 
 // Functions - VRAM
-extern void func_080158f0_stub(void); // Stub
+extern void game_select_init_stub(void);
 extern void game_select_init_icon_overlays(void);
-extern void func_0801593c_stub(void); // Stub
+extern void game_select_update_stub(void);
 extern struct LevelIconAnimatorTask *game_select_init_icon_animator(struct LevelIconAnimatorTask *inputs);
 extern u32 game_select_update_icon_animator(struct LevelIconAnimatorTask *task);
 extern s32 game_select_start_new_icon_animator(u16 memID, const void *texture, u16 *tilesetBase, u32 size, const s8 *frameData);
@@ -424,10 +428,10 @@ extern s32 game_select_animate_icon(struct GameSelectOverlay *overlay, u32 tiles
 extern void game_select_print_icon_map(u32 baseMap, u32 mapSize, u32 tileX, u32 tileY, u32 width, u32 height, u32 tilesPerRow, u32 tileNum, u32 palette);
 extern void game_select_print_icon_maps(u32 baseMap, u32 mapSize, u32 tileX, u32 tileY, u32 width, u32 height, u32 tileNum, u32 palette);
 extern void game_select_print_icon_texture(const void *texture, u32 tileset, u32 tileNum);
-extern void func_08015cf4(void); // Initialise BG Squares
-// extern ? func_08015ea4(?);
-// extern ? func_08016058(?);
-// extern ? func_0801616c(?);
-extern void func_0801626c(void); // update something
-// extern ? func_08016290(?);
-extern void func_080162bc(s32, s32); // update something
+extern void game_select_init_squares(void);
+extern void game_select_update_bg_squares_motion(s32 dx, s32 dy);
+extern void game_select_spawn_shadow_square(s16 x, s16 y, void *onFinish, s32 onFinishArg, u32 delay);
+extern void game_select_update_shadow_square(struct NewLevelIconShadow *shadow);
+extern void game_select_update_shadow_squares(void);
+extern u32 game_select_check_for_shadow_squares(void);
+extern void game_select_update_bg_squares(s32 dx, s32 dy);

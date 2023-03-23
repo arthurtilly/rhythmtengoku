@@ -266,7 +266,7 @@ void func_080191bc(u32 level) {
     if (!D_03001540) return;
 
     saveData->recentLevelState = level;
-    saveData->previousLevelScore = func_0801a060();
+    saveData->recentLevelScore = func_0801a060();
 
     gameID = get_level_id_from_grid_xy(saveData->recentLevelX, saveData->recentLevelY);
     func_080108a0(gameID);

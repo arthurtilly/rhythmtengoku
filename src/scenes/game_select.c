@@ -62,6 +62,13 @@ enum InfoPaneStatesEnum {
     /* 05 */ INFO_PANE_TASK_RENDER
 };
 
+enum FlowPaneStatesEnum {
+    /* 00 */ FLOW_PANE_TASK_NONE,
+    /* 01 */ FLOW_PANE_TASK_WAIT,
+    /* 02 */ FLOW_PANE_TASK_ROLL,
+    /* 03 */ FLOW_PANE_TASK_FLICKER
+};
+
 
 
 /* GAME SELECT */
@@ -83,12 +90,12 @@ void enable_game_select_2_bgm(void) {
 // Play Game Select Music
 void play_game_select_bgm(void) {
     if (sPlayAltBGM) {
-        set_beatscript_tempo(105); // Set Tempo
-        scene_set_music(&s_shibafu2_bgm_seqData); // Play Music
+        set_beatscript_tempo(105);
+        scene_set_music(&s_shibafu2_bgm_seqData);
         sPlayAltBGM = FALSE;
     } else {
-        set_beatscript_tempo(152); // Set Tempo
-        scene_set_music(&s_menu_bgm_seqData); // Play Music
+        set_beatscript_tempo(152);
+        scene_set_music(&s_menu_bgm_seqData);
     }
 }
 
@@ -182,7 +189,7 @@ void func_080129e8(void) {
     notice->id = D_030046a8->data.currentCampaign;
     notice->x = campaign_gifts_table[notice->id].x;
     notice->y = campaign_gifts_table[notice->id].y;
-    notice->unk0 = TRUE;
+    notice->hasNewCampaign = TRUE;
 }
 
 
@@ -205,7 +212,7 @@ void init_campaign_notice(void) {
     text_printer_center_by_content(notice->printer, 1);
     text_printer_set_x_y_controller(notice->printer, &vector->x, &vector->y);
 
-    notice->unk0 = FALSE;
+    notice->hasNewCampaign = FALSE;
     notice->id = -1;
 
     switch (D_030046a8->data.unk266) {
@@ -708,49 +715,53 @@ void game_select_scene_start(s32 unused) {
     s16 bgOfsX, bgOfsY;
     s32 prevX, prevY;
 
+    // Init. Graphics
     gGameSelectInfo->loadingSceneGfx = TRUE;
     func_08007324(FALSE);
     func_080073f0();
     game_select_init_gfx1();
     game_select_init_color_mod();
-    func_080158f0_stub();
+    game_select_init_stub();
 
+    // Init. Cursor
     gGameSelectInfo->cursorX = D_030046a8->data.gsCursorX;
     gGameSelectInfo->cursorY = D_030046a8->data.gsCursorY;
     get_pixel_xy_from_grid_xy(gGameSelectInfo->cursorX, gGameSelectInfo->cursorY, &bgOfsX, &bgOfsY);
     scene_set_bg_layer_pos(BG_LAYER_3, bgOfsX, bgOfsY);
     scene_set_bg_layer_pos(BG_LAYER_2, bgOfsX, bgOfsY);
-
     gGameSelectInfo->selectionBorderSprite = func_0804d160(D_03005380, anim_game_select_border_target, 0, 48, 72, 0x4800, 1, 0, 0);
-    gGameSelectInfo->cursorSprite = func_0804d160(D_03005380, anim_game_select_cursor, 0, 64, 64, 0x47ff, 1, 0, 0);
+    gGameSelectInfo->cursorSprite = func_0804d160(D_03005380, anim_game_select_cursor, 0, 64, 64, 0x47FF, 1, 0, 0);
     game_select_link_sprite_xy_to_bg(gGameSelectInfo->selectionBorderSprite);
     game_select_link_sprite_xy_to_bg(gGameSelectInfo->cursorSprite);
     game_select_move_cursor_to_grid_xy(gGameSelectInfo->cursorX, gGameSelectInfo->cursorY);
 
+    // Init. BG Motion
     gGameSelectInfo->gridPaneIsMoving = FALSE;
     gGameSelectInfo->gridPaneX1 = gGameSelectInfo->gridPaneX2 = bgOfsX;
     gGameSelectInfo->gridPaneY1 = gGameSelectInfo->gridPaneY2 = bgOfsY;
     gGameSelectInfo->infoPaneIsMoving = FALSE;
-    gGameSelectInfo->infoPaneX2 = 0;
-    gGameSelectInfo->infoPaneX1 = 0;
-    gGameSelectInfo->infoPaneY2 = 0;
-    gGameSelectInfo->infoPaneY1 = 0;
+    gGameSelectInfo->infoPaneX1 = gGameSelectInfo->infoPaneX2 = 0;
+    gGameSelectInfo->infoPaneY1 = gGameSelectInfo->infoPaneY2 = 0;
 
-    gGameSelectInfo->stageTitleText = func_0804d160(D_03005380, anim_game_select_stage1, 0x7f, 60, 140, 0x479c, 1, 0x7f, 0);
-    gGameSelectInfo->stageTitlePane = func_0804d294(D_03005380, anim_game_select_stage_box, 0, 60, 140, 0x479d, 0, 0, 0, 0);
-    gGameSelectInfo->stageTitleY = 140;
+    // Init. Stage Title Pane
+    gGameSelectInfo->stageTitleText = func_0804d160(D_03005380, anim_game_select_stage1, 0x7F, 60, 140, 0x479C, 1, 0x7F, 0);
+    gGameSelectInfo->stageTitlePane = func_0804d294(D_03005380, anim_game_select_stage_box, 0, 60, 140, 0x479D, 0, 0, 0, 0);
+    gGameSelectInfo->stageTitleY = STAGE_PANE_Y_VISIBLE;
     gGameSelectInfo->unk18 = 0;
     gGameSelectInfo->hideStageTitle = FALSE;
     gGameSelectInfo->stageTitlePersistTime = 0;
     game_select_set_stage_title(gGameSelectInfo->cursorX);
 
+    // Init. Various
     init_campaign_notice();
     game_select_init_medal_pane();
-    func_08015cf4();
+    game_select_init_squares();
     gGameSelectInfo->screenIsReady = FALSE;
     game_select_init_info_pane();
     game_select_set_info_pane_to_cursor_target();
     game_select_init_flow_pane();
+
+    // Init. Events
     gGameSelectInfo->unk2DA = 0;
     gGameSelectInfo->unk2DB = 0;
     gGameSelectInfo->unk2DC = 0;
@@ -765,12 +776,14 @@ void game_select_scene_start(s32 unused) {
     if (recentLevelState > previousLevelState) {
         func_08014938(60);
         func_080141f8(prevX, prevY, recentLevelState);
+
         if (saveData->gameSelectUnk5 != 0) {
             gGameSelectInfo->unk4F4 = 1;
             gGameSelectInfo->unk4F5 = prevX;
             gGameSelectInfo->unk4F6 = prevY;
             gGameSelectInfo->unk4F8 = 60;
         }
+
         if ((get_level_id_from_grid_xy(prevX, prevY) == LEVEL_REMIX_6) && (recentLevelState >= LEVEL_STATE_CLEARED)) {
             enable_game_select_2_bgm();
         }
@@ -778,9 +791,10 @@ void game_select_scene_start(s32 unused) {
         gGameSelectInfo->unk2D8 = 0;
         gGameSelectInfo->unk2D9 = 0;
         write_game_save_data();
-        if (gGameSelectInfo->campaignNotice.unk0) {
+
+        if (gGameSelectInfo->campaignNotice.hasNewCampaign) {
             start_campaign_notice(D_030046a8->data.currentCampaign);
-            gGameSelectInfo->campaignNotice.unk0 = FALSE;
+            gGameSelectInfo->campaignNotice.hasNewCampaign = FALSE;
         } else {
             gGameSelectInfo->sceneState = SCENE_STATE_ACTIVE;
         }
@@ -791,24 +805,26 @@ void game_select_scene_start(s32 unused) {
     func_080191ac(TRUE);
     game_select_disable_credits_after_epilogue();
 
+    /* Init. BGM */
     get_grid_xy_from_level_id(LEVEL_STAFF_CREDIT, &prevX, &prevY);
     if (get_level_state_from_grid_xy(prevX, prevY) >= LEVEL_STATE_CLEARED) {
         enable_game_select_2_bgm();
     }
 
+    /* Init. Scene Transitions */
     func_080006b0(&D_089d77e4, &D_089d7c18);
     func_080006b0(&D_089d7964, &D_089cdf08);
     func_080006b0(&D_089d7c18, &D_089cdf08);
 }
 
 
-// Clear sPlayCreditsAfterEpilogue
+// Disable Credits Playing After Epilogue
 void game_select_disable_credits_after_epilogue(void) {
     sPlayCreditsAfterEpilogue = FALSE;
 }
 
 
-// Get sPlayCreditsAfterEpilogue
+// Enable Credits Playing After Epilogue
 u32 game_select_roll_credits_after_epilogue(void) {
     return sPlayCreditsAfterEpilogue;
 }
@@ -1209,14 +1225,14 @@ void game_select_scene_update(s32 unused) {
     }
 
     game_select_update_bg_colors();
-    func_0801593c_stub();
+    game_select_update_stub();
     game_select_update_info_pane();
     game_select_update_bg_scroll();
     game_select_update_stage_title();
     bgOfsX -= D_03004b10.BG_OFS[BG_LAYER_3].x;
     bgOfsY -= D_03004b10.BG_OFS[BG_LAYER_3].y;
-    func_080162bc(bgOfsX - 1, bgOfsY);
-    func_0801626c();
+    game_select_update_bg_squares(bgOfsX - 1, bgOfsY);
+    game_select_update_shadow_squares();
     game_select_update_flow_pane();
     game_select_update_medal_pane();
 }
@@ -1233,7 +1249,7 @@ u32 game_select_scene_is_ready(void) {
 
 
 // Set D_030055d4 and D_03005590
-void func_080141c0(u32 arg0, u32 arg1) {
+void game_select_set_unused_static_var(u32 arg0, u32 arg1) {
     D_030055d4 = arg0;
     D_03005590 = arg1;
 }
@@ -1308,7 +1324,7 @@ void game_select_set_medal_count(u32 total) {
 
     func_0804cebc(D_03005380, gGameSelectInfo->medalPaneDigit1, total % 10);
     func_0804cebc(D_03005380, gGameSelectInfo->medalPaneDigit2, (total < 10) ? 10 : (total / 10));
-    func_0804d614(D_03005380, gGameSelectInfo->medalPaneDigit1, (total < 10) ? 0xA4 : 0xA8);
+    func_0804d614(D_03005380, gGameSelectInfo->medalPaneDigit1, (total < 10) ? 164 : 168);
 }
 
 
@@ -1316,10 +1332,10 @@ void game_select_set_medal_count(u32 total) {
 void game_select_init_medal_pane(void) {
     struct Vector2 *bgOfs = &D_03004b10.BG_OFS[BG_LAYER_1];
 
-    gGameSelectInfo->medalPaneTitle = func_0804d160(D_03005380, anim_game_select_medal_text, 0, 0xA2, 0x97, 0x800, 0, 0, 0);
-    gGameSelectInfo->medalPaneDigit1 = func_0804d160(D_03005380, anim_game_select_medal_num, 0, 0xA8, 0x97, 0x800, 0, 0x7f, 0);
-    gGameSelectInfo->medalPaneDigit2 = func_0804d160(D_03005380, anim_game_select_medal_num, 0, 0xA8, 0x97, 0x800, 0, 0x7f, 0);
-    func_0804d5d4(D_03005380, gGameSelectInfo->medalPaneDigit2, 0xA1, 0x97);
+    gGameSelectInfo->medalPaneTitle = func_0804d160(D_03005380, anim_game_select_medal_text, 0, 162, 151, 0x800, 0, 0, 0);
+    gGameSelectInfo->medalPaneDigit1 = func_0804d160(D_03005380, anim_game_select_medal_num, 0, 168, 151, 0x800, 0, 0x7f, 0);
+    gGameSelectInfo->medalPaneDigit2 = func_0804d160(D_03005380, anim_game_select_medal_num, 0, 168, 151, 0x800, 0, 0x7f, 0);
+    func_0804d5d4(D_03005380, gGameSelectInfo->medalPaneDigit2, 161, 151);
 
     func_0804db44(D_03005380, gGameSelectInfo->medalPaneTitle, &bgOfs->x, &bgOfs->y);
     func_0804db44(D_03005380, gGameSelectInfo->medalPaneDigit1, &bgOfs->x, &bgOfs->y);
@@ -1358,7 +1374,7 @@ void game_select_refresh_medal_count(u32 flickerDuration) {
 
 // Init. Level Info Pane
 void game_select_init_info_pane(void) {
-    struct Vector2 *vector = &D_03004b10.BG_OFS[BG_LAYER_1];
+    struct Vector2 *bgOfs = &D_03004b10.BG_OFS[BG_LAYER_1];
 
     gGameSelectInfo->infoPaneName = -1;
     gGameSelectInfo->infoPaneRank = -1;
@@ -1369,10 +1385,10 @@ void game_select_init_info_pane(void) {
     text_printer_set_palette(gGameSelectInfo->infoPaneDesc, 8);
     text_printer_set_line_spacing(gGameSelectInfo->infoPaneDesc, 14);
     text_printer_center_by_content(gGameSelectInfo->infoPaneDesc, 1);
-    text_printer_set_x_y_controller(gGameSelectInfo->infoPaneDesc, &vector->x, &vector->y);
+    text_printer_set_x_y_controller(gGameSelectInfo->infoPaneDesc, &bgOfs->x, &bgOfs->y);
     text_printer_set_shadow_colors(gGameSelectInfo->infoPaneDesc, -1);
-    gGameSelectInfo->perfectClearedSprite = func_0804d160(D_03005380, anim_game_select_perfect_rank, 0, 138, 115, 0x80a, 1, 0, 0x8000);
-    func_0804db44(D_03005380, gGameSelectInfo->perfectClearedSprite, &vector->x, &vector->y);
+    gGameSelectInfo->perfectClearedSprite = func_0804d160(D_03005380, anim_game_select_perfect_rank, 0, 138, 115, 0x80A, 1, 0, 0x8000);
+    func_0804db44(D_03005380, gGameSelectInfo->perfectClearedSprite, &bgOfs->x, &bgOfs->y);
     gGameSelectInfo->infoPaneIsClear = TRUE;
     gGameSelectInfo->infoPaneTask = INFO_PANE_TASK_NONE;
 }
@@ -1519,14 +1535,15 @@ void game_select_update_info_pane(void) {
 // Calculate Flow
 u32 game_select_calculate_flow(u32 *modifierReq, u32 *averageReq) {
     struct TengokuSaveData *saveData = &D_030046a8->data;
-    u32 totalGames = 0;
-    u32 totalScore = 0;
-    u32 i, score;
     s24_8 completionModifier;
     u32 modifiedScore;
+    u32 totalGames = 0;
+    u32 totalScore = 0;
+    u32 i;
 
     for (i = 0; i < 55; i++) {
-        score = saveData->levelScores[i];
+        u32 score = saveData->levelScores[i];
+
         if (score != DEFAULT_LEVEL_SCORE) {
             totalGames++;
             totalScore += score;
@@ -1593,122 +1610,211 @@ u32 game_select_calculate_flow_old(void) {
 }
 
 
-// Set Flow?
-u32 func_080153a8(void) {
-    struct TengokuSaveData *saveData;
-    struct FlowDisplay *flow;
-    u32 scoreModifier, averageScore;
-    u32 prevModifiedScoreAvg;
-    u32 newModifiedScoreAvg;
-    u32 newScore, prevScore, finalScore;
-    u32 scoreIncrement;
-    u32 medalWasObtained;
-    u32 recentLevelState;
-    s8 x, y;
-    s32 id;
+// Update Scores
+u32 game_select_update_scores(void) {
+    struct TengokuSaveData *saveData = &D_030046a8->data;
+    struct FlowDisplay *flowPane = &gGameSelectInfo->flowDisplay;
+    u32 modifier, average;
+    u32 prevModScore, newModScore;
+    u32 newScore, score, flow;
+    u32 medalWasObtained = FALSE;
+    u32 newLevelState;
+    s32 x, y, levelID;
     u32 i;
 
-    saveData = &D_030046a8->data;
-    flow = &gGameSelectInfo->flowDisplay;
-    medalWasObtained = FALSE;
-    newScore = saveData->previousLevelScore;
+    newScore = saveData->recentLevelScore;
 
+    // Arrived from another menu or Staff Credit.
     if (newScore == DEFAULT_LEVEL_SCORE) {
-        flow->previousScore = D_030046a8->data.currentFlow;
-        flow->currentScore = D_030046a8->data.currentFlow;
+        flowPane->previousScore = D_030046a8->data.currentFlow;
+        flowPane->currentScore = D_030046a8->data.currentFlow;
         return 0;
     }
 
     x = saveData->recentLevelX;
     y = saveData->recentLevelY;
-    id = get_level_id_from_grid_xy(x, y);
-    recentLevelState = saveData->recentLevelState;
+    levelID = get_level_id_from_grid_xy(x, y);
+    newLevelState = saveData->recentLevelState;
 
-    if ((get_level_state_from_grid_xy(x, y) < LEVEL_STATE_MEDAL_OBTAINED)
-     && (recentLevelState == LEVEL_STATE_MEDAL_OBTAINED)) {
+    if ((get_level_state_from_grid_xy(x, y) < LEVEL_STATE_MEDAL_OBTAINED) && (newLevelState == LEVEL_STATE_MEDAL_OBTAINED)) {
         medalWasObtained = TRUE;
     }
-
     if (medalWasObtained) {
-        prevModifiedScoreAvg = game_select_calculate_flow(NULL, NULL);
+        prevModScore = game_select_calculate_flow(NULL, NULL);
     }
 
-    if (id >= 0) {
-        prevScore = saveData->levelScores[id];
-        if (prevScore == DEFAULT_LEVEL_SCORE) {
-            prevScore = newScore;
-        } else if (prevScore < newScore) {
-            prevScore = ((prevScore + (newScore * 3)) / 4);
+    // Save new score.
+    if (levelID >= 0) {
+        score = saveData->levelScores[levelID];
+
+        if (score == DEFAULT_LEVEL_SCORE) {
+            // New scores have a weight of 100%.
+            score = newScore;
+        } else if (score < newScore) {
+            // Improved scores have a weight of 75%.
+            score = ((score + (newScore * 3)) / 4);
         } else {
-            prevScore = ((newScore + (prevScore * 3)) / 4) & 0xFFFFFF;
+            // Worse scores have a weight of 25%.
+            score = ((newScore + (score * 3)) / 4) & 0xFFFFFF;
         }
-        saveData->levelScores[id] = prevScore;
-    }
-    saveData->previousLevelScore = -1;
-    newModifiedScoreAvg = game_select_calculate_flow(&scoreModifier, &averageScore);
 
+        saveData->levelScores[levelID] = score;
+    }
+
+    saveData->recentLevelScore = DEFAULT_LEVEL_SCORE;
+    newModScore = game_select_calculate_flow(&modifier, &average);
+
+    // If a new medal was obtained, but the new flow value would be worse, apply a bonus to all scores and recalculate.
     if (medalWasObtained) {
-        if (newModifiedScoreAvg < prevModifiedScoreAvg) {
-            scoreIncrement = ((INT_TO_FIXED(prevModifiedScoreAvg)) / scoreModifier) - averageScore + 1;
+        if (newModScore < prevModScore) {
+            u32 scoreBonus = (INT_TO_FIXED(prevModScore) / modifier) - average + 1;
+
             for (i = 0; i < 55; i++) {
-                prevScore = saveData->levelScores[i];
-                if (prevScore != DEFAULT_LEVEL_SCORE) {
-                    saveData->levelScores[i] = clamp_int32(prevScore + scoreIncrement, 0, 1000);
+                score = saveData->levelScores[i];
+
+                if (score != DEFAULT_LEVEL_SCORE) {
+                    saveData->levelScores[i] = clamp_int32(score + scoreBonus, 0, 1000);
                 }
             }
         }
-        newModifiedScoreAvg = game_select_calculate_flow(NULL, NULL);
+        newModScore = game_select_calculate_flow(NULL, NULL);
     }
 
-    finalScore = newModifiedScoreAvg / 10;
-    if (finalScore < 9) finalScore = 9;
+    flow = newModScore / 10;
+    if (flow < 9) {
+        flow = 9;
+    }
 
-    flow->previousScore = saveData->currentFlow;
-    saveData->currentFlow = finalScore;
-    flow->currentScore = saveData->currentFlow;
+    flowPane->previousScore = saveData->currentFlow;
+    flowPane->currentScore = saveData->currentFlow = flow;
 }
 
 
 // Init. Flow Display
 void game_select_init_flow_pane(void) {
-    struct FlowDisplay *flow;
-    struct Vector2 *vector;
+    struct FlowDisplay *flowPane = &gGameSelectInfo->flowDisplay;
+    struct Vector2 *bgOfs = &D_03004b10.BG_OFS[BG_LAYER_1];
+    u32 initialScore;
+    u32 updateFlow;
     u32 i;
-    u32 temp;
-    u32 prevScore;
-
-    flow = &gGameSelectInfo->flowDisplay;
-    vector = &D_03004b10.BG_OFS[BG_LAYER_1];
 
     for (i = 0; i < 3; i++) {
-        flow->numberSprites[i] = func_0804d160(D_03005380, anim_game_select_flow_num, 10, 208 - (i * 8), 128, 0, 0, 0, 0);
-        func_0804db44(D_03005380, flow->numberSprites[i], &vector->x, &vector->y);
+        flowPane->digits[i] = func_0804d160(D_03005380, anim_game_select_flow_num, 10, 208 - (i * 8), 128, 0, 0, 0, 0);
+        func_0804db44(D_03005380, flowPane->digits[i], &bgOfs->x, &bgOfs->y);
     }
 
-    flow->textSprite = func_0804d160(D_03005380, anim_game_select_flow_text, 0, 128, 128, 0, 0, 0, 0);
-    func_0804db44(D_03005380, flow->textSprite, &vector->x, &vector->y);
+    flowPane->title = func_0804d160(D_03005380, anim_game_select_flow_text, 0, 128, 128, 0, 0, 0, 0);
+    func_0804db44(D_03005380, flowPane->title, &bgOfs->x, &bgOfs->y);
 
-    flow->arrowSprite = func_0804d160(D_03005380, anim_game_select_flow_arrow, 0, 224, 128, 0, 0, 0, 0x8000);
-    func_0804db44(D_03005380, flow->arrowSprite, &vector->x, &vector->y);
-    temp = func_080153a8();
-    prevScore = flow->previousScore;
+    flowPane->arrow = func_0804d160(D_03005380, anim_game_select_flow_arrow, 0, 224, 128, 0, 0, 0, 0x8000);
+    func_0804db44(D_03005380, flowPane->arrow, &bgOfs->x, &bgOfs->y);
 
-    if (prevScore > 0) {
+    updateFlow = game_select_update_scores();
+    initialScore = flowPane->previousScore;
+
+    if (initialScore > 0) {
         for (i = 0; i < 3; i++) {
-            func_0804cebc(D_03005380, flow->numberSprites[i], ((prevScore != 0) ? (prevScore % 10) : 10));
-            prevScore /= 10;
+            func_0804cebc(D_03005380, flowPane->digits[i], ((initialScore != 0) ? (initialScore % 10) : 10));
+            initialScore /= 10;
         }
     }
 
-    flow->unkA = ((flow->currentScore != 0) && (temp != 0));
-    flow->unkC = 60;
+    flowPane->state = (flowPane->currentScore > 0) && updateFlow;
+    flowPane->timer = 60;
     if (D_030046a8->data.gameSelectUnk5 != 0) {
-        flow->unkC = 180;
+        flowPane->timer = 180;
     }
 }
 
 
-#include "asm/game_select/asm_08015660.s"
+// Update Flow Display
+void game_select_update_flow_pane(void) {
+    struct FlowDisplay *flowPane = &gGameSelectInfo->flowDisplay;
+    u32 volume, flow, render;
+    u32 i;
+
+    switch (flowPane->state) {
+        case FLOW_PANE_TASK_WAIT:
+            if (--flowPane->timer == 0) {
+                flowPane->state = FLOW_PANE_TASK_ROLL;
+                flowPane->timer = 120;
+                flowPane->counter = 0;
+                func_0804dae0(D_03005380, flowPane->title, 1, 0, 0);
+            }
+            break;
+
+        case FLOW_PANE_TASK_ROLL:
+            if (gGameSelectInfo->sceneState == SCENE_STATE_DISPLAYING_CAMPAIGN_NOTICE) {
+                volume = 100;
+            } else {
+                volume = 0x100;
+                flowPane->timer--;
+            }
+
+            if (flowPane->timer == 0) {
+                flowPane->state = FLOW_PANE_TASK_FLICKER;
+                flowPane->timer = 240;
+
+                func_0804dae0(D_03005380, flowPane->title, 0, 0, 0);
+                func_0804cebc(D_03005380, flowPane->title, 0);
+                flow = flowPane->currentScore;
+
+                for (i = 0; i < 3; i++) {
+                    func_0804cebc(D_03005380, flowPane->digits[i], ((flow != 0) ? (flow % 10) : 10));
+                    flow /= 10;
+                }
+
+                func_0804cebc(D_03005380, flowPane->arrow, 1);
+                if (flowPane->previousScore < flowPane->currentScore) {
+                    func_0804cebc(D_03005380, flowPane->arrow, 0);
+                }
+
+                if ((flowPane->previousScore > flowPane->currentScore)) {
+                    func_0804cebc(D_03005380, flowPane->arrow, 2);
+                }
+
+                play_sound(&s_f_point_stop_seqData);
+            } else {
+                if ((flowPane->counter & 1) == 0) {
+                    func_0804cebc(D_03005380, flowPane->digits[0], agb_random(10));
+                    func_0804cebc(D_03005380, flowPane->digits[1], agb_random(10));
+                    func_0804cebc(D_03005380, flowPane->digits[2], agb_random((flowPane->timer) ? 10 : 2));
+
+                    if ((flowPane->counter & 3) == 0) {
+                        play_sound_w_pitch_volume(&s_f_point_roll_seqData, volume, 0);
+                    }
+                }
+            }
+            break;
+
+        case FLOW_PANE_TASK_FLICKER:
+            if (--flowPane->timer == 0) {
+                flowPane->state = FLOW_PANE_TASK_NONE;
+
+                if (flowPane->previousScore > 0) {
+                    func_0804d770(D_03005380, flowPane->arrow, TRUE);
+                }
+
+                for (i = 0; i < 3; i++) {
+                    func_0804d770(D_03005380, flowPane->digits[i], TRUE);
+                }
+            } else {
+                render = (flowPane->timer >> 4) & 1;
+                render ^= 1;
+
+                for (i = 0; i < 3; i++) {
+                    func_0804d770(D_03005380, flowPane->digits[i], render);
+                }
+
+                if (flowPane->previousScore > 0) {
+                    func_0804d770(D_03005380, flowPane->arrow, render);
+                }
+            }
+            break;
+    }
+
+    flowPane->counter++;
+}
 
 
 // Scene Stop
@@ -1721,7 +1827,8 @@ void game_select_scene_stop(s32 unused) {
 }
 
 
-void func_080158f0_stub(void) {
+// Init. Stub
+void game_select_init_stub(void) {
 }
 
 
@@ -1737,7 +1844,8 @@ void game_select_init_icon_overlays(void) {
 }
 
 
-void func_0801593c_stub(void) {
+// Update Stub
+void game_select_update_stub(void) {
 }
 
 
@@ -1920,8 +2028,8 @@ void game_select_print_icon_texture(const void *texture, u32 tileset, u32 tileNu
 }
 
 
-// Initialise BG Squares
-void func_08015cf4(void) {
+// Init. BG Squares
+void game_select_init_squares(void) {
     struct Vector2 *vector;
     s32 x, y;
     u32 i;
@@ -1934,7 +2042,7 @@ void func_08015cf4(void) {
         vector = &gGameSelectInfo->squareVectors[i];
         vector->x = agb_random(x);
         vector->y = agb_random(y);
-        gGameSelectInfo->squareSprites[i] = func_0804d294(D_03005380, anim_game_select_bg_square_large, agb_random(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
+        gGameSelectInfo->squareSprites[i] = func_0804d294(D_03005380, anim_game_select_bg_square_large, agb_random(6), 0, 0, 0xC800, -1, 0x7f, 0, 4);
         func_0804dcb8(D_03005380, gGameSelectInfo->squareSprites[i], agb_random(INT_TO_FIXED(1.0)) + INT_TO_FIXED(1.0));
     }
 
@@ -1945,27 +2053,194 @@ void func_08015cf4(void) {
         vector = &gGameSelectInfo->squareVectors[i];
         vector->x = agb_random(x);
         vector->y = agb_random(y);
-        gGameSelectInfo->squareSprites[i] = func_0804d294(D_03005380, anim_game_select_bg_square_small, agb_random(6), 0, 0, 0xc800, -1, 0x7f, 0, 4);
+        gGameSelectInfo->squareSprites[i] = func_0804d294(D_03005380, anim_game_select_bg_square_small, agb_random(6), 0, 0, 0xC800, -1, 0x7f, 0, 4);
         func_0804dcb8(D_03005380, gGameSelectInfo->squareSprites[i], agb_random(INT_TO_FIXED(1.0)) + INT_TO_FIXED(1.0));
     }
 
     D_03004b10.BLDMOD = (BLDMOD_BG0_TGT | BLDMOD_BG1_TGT | BLDMOD_BG2_TGT | BLDMOD_BG3_TGT | BLDMOD_BACKDROP_TGT);
-    D_03004b10.COLEV = (COLEV_SRC_PIXEL(0x10) | COLEV_TGT_PIXEL(0x10));
+    D_03004b10.COLEV = (COLEV_SRC_PIXEL(16) | COLEV_TGT_PIXEL(16));
 
     for (i = 0; i < 10; i++) {
-        gGameSelectInfo->unk198[i].unk0 = 0;
+        gGameSelectInfo->newLevelShadows[i].active = FALSE;
     }
 }
 
 
-#include "asm/game_select/asm_08015ea4.s"
+// Update BG Squares
+void game_select_update_bg_squares_motion(s32 dx, s32 dy) {
+    struct Vector2 *vector;
+    s32 x, y, x2, y2;
+    u32 i;
 
-#include "asm/game_select/asm_0801616c.s"
+    x = 272;
+    y = 192;
+    x2 = x * 2;
+    y2 = y * 2;
 
-#include "asm/game_select/asm_0801626c.s"
+    // Large Squares
+    for (i = 0; i < 16; i++) {
+        vector = &gGameSelectInfo->squareVectors[i];
+        vector->x += dx;
+        vector->y += dy;
 
-#include "asm/game_select/asm_08016290.s"
+        if (vector->x < 0) {
+            vector->x = x2;
+            vector->y = agb_random(y2);
+        }
+        if (vector->x > x2) {
+            vector->x = 0;
+            vector->y = agb_random(y2);
+        }
+        if (vector->y < 0) {
+            vector->x = agb_random(x2);
+            vector->y = y2;
+        }
+        if (vector->y > y2) {
+            vector->x = agb_random(x2);
+            vector->y = 0;
+        }
 
-#include "asm/game_select/asm_080162bc.s"
+        func_0804d5d4(D_03005380, gGameSelectInfo->squareSprites[i], 120 + ((vector->x - x) >> 1), 80 + ((vector->y - y) >> 1));
+    }
 
-#include "asm/game_select/asm_080162c8.s"
+    x = x2;
+    y = y2;
+    x2 = x * 2;
+    y2 = y * 2;
+
+    // Small Squares
+    for (i = 16; i < 50; i++) {
+        vector = &gGameSelectInfo->squareVectors[i];
+        vector->x += dx;
+        vector->y += dy;
+
+        if (vector->x < 0) {
+            vector->x = x2;
+            vector->y = agb_random(y2);
+        }
+        if (vector->x > x2) {
+            vector->x = 0;
+            vector->y = agb_random(y2);
+        }
+        if (vector->y < 0) {
+            vector->x = agb_random(x2);
+            vector->y = y2;
+        }
+        if (vector->y > y2) {
+            vector->x = agb_random(x2);
+            vector->y = 0;
+        }
+
+        func_0804d5d4(D_03005380, gGameSelectInfo->squareSprites[i], 120 + ((vector->x - x) >> 2), 80 + ((vector->y - y) >> 2));
+    }
+}
+
+
+// Spawn New Level Icon Shadow
+void game_select_spawn_shadow_square(s16 x, s16 y, void *onFinish, s32 onFinishArg, u32 delay) {
+    struct NewLevelIconShadow *shadow = gGameSelectInfo->newLevelShadows;
+    s32 x1, y1, x2, y2;
+    u32 i;
+
+    for (i = 0; i < 10; i++) {
+        if (!shadow->active) {
+            break;
+        }
+        shadow++;
+    }
+
+    if (i >= 10) {
+        return;
+    }
+
+    x2 = 20 + (x * 40);
+    y1 = (4 + (y * 3)) * 8;
+    y2 = y1 + 12;
+    x1 = x2 + agb_random(200);
+
+    x1 -= 200;
+    y1 -= 188;
+
+    shadow->sprite = func_0804d160(D_03005380, anim_game_select_bg_square_large, 0, x1, y1, 0x479C, 1, 0, 0x8000);
+    func_0804dcb8(D_03005380, shadow->sprite, INT_TO_FIXED(2.0));
+    func_0804d8c4(D_03005380, shadow->sprite, 1);
+    game_select_link_sprite_xy_to_bg(shadow->sprite);
+    shadow->xIn = x;
+    shadow->yIn = y;
+    shadow->x1 = x1;
+    shadow->y1 = y1;
+    shadow->x2 = x2;
+    shadow->y2 = y2;
+    shadow->progress = INT_TO_FIXED(1.0);
+    shadow->onFinish = onFinish;
+    shadow->onFinishArg = onFinishArg;
+    shadow->delay = delay;
+    shadow->active = TRUE;
+}
+
+
+// Update New Level Icon Shadow
+void game_select_update_shadow_square(struct NewLevelIconShadow *shadow) {
+    s32 x, y;
+
+    if (!shadow->active) {
+        return;
+    }
+
+    if (shadow->delay > 0) {
+        shadow->delay--;
+        return;
+    }
+
+    if (shadow->progress != 0) {
+        x = math_lerp(shadow->x2, shadow->x1, shadow->progress, INT_TO_FIXED(1.0));
+        y = math_lerp(shadow->y2, shadow->y1, shadow->progress, INT_TO_FIXED(1.0));
+        func_0804d5d4(D_03005380, shadow->sprite, x, y);
+        func_0804d770(D_03005380, shadow->sprite, TRUE);
+        shadow->progress = FIXED_POINT_MUL(INT_TO_FIXED(0.9), shadow->progress);
+        return;
+    }
+
+    if (shadow->onFinish != NULL) {
+        shadow->onFinish(shadow->onFinishArg);
+    }
+
+    func_0804d8c4(D_03005380, shadow->sprite, 0);
+    func_0804dcb8(D_03005380, shadow->sprite, INT_TO_FIXED(1.0));
+    func_0804d8f8(D_03005380, shadow->sprite, anim_game_select_clear_game, 0, 1, 0, 3);
+    func_0804d55c(D_03005380, shadow->sprite, shadow->x2 - 12, shadow->y2 - 12, 0x4864);
+    play_sound(&s_f_appear_game_seqData);
+    shadow->active = FALSE;
+}
+
+
+// Update New Level Icon Shadows
+void game_select_update_shadow_squares(void) {
+    u32 i;
+
+    for (i = 0; i < 10; i++) {
+        game_select_update_shadow_square(&gGameSelectInfo->newLevelShadows[i]);
+    }
+}
+
+
+// Check for Active New Level Icon Shadows
+u32 game_select_check_for_shadow_squares(void) {
+    struct NewLevelIconShadow *shadow = gGameSelectInfo->newLevelShadows;
+    u32 i;
+
+    for (i = 0; i < 10; i++) {
+        if (shadow->active) {
+            return TRUE;
+        }
+        shadow++;
+    }
+
+    return FALSE;
+}
+
+
+// Update BG Squares
+void game_select_update_bg_squares(s32 dx, s32 dy) {
+    game_select_update_bg_squares_motion(dx, dy);
+}
