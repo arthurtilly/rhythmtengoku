@@ -242,10 +242,10 @@ void karate_cue_spawn(struct Cue *cue, struct KarateManCue *data, u32 type) {
     data->isHit = FALSE;
     data->unk8 = func_0800c42c();
     data->sprite = func_0804d160(D_03005380, anim_karate_object, 0, 156, 52, 0x4800, 0, 0, 0);
-    func_08007468(data->sprite, data->unk8);
+    assign_sprite_affine_param(data->sprite, data->unk8);
     data->unk9 = func_0800c42c();
     data->shadow = func_0804d160(D_03005380, anim_karate_object_shadow, 0, 156, 133, 0x4a00, 0, 0, 0);
-    func_08007468(data->shadow, data->unk9);
+    assign_sprite_affine_param(data->shadow, data->unk9);
     data->unk1C = 0;
     data->unk18 = 0;
     data->unk24 = 0;
@@ -274,8 +274,8 @@ void karate_cue_update_object(struct KarateManCue *cue) {
     y = cue->unk10;
     func_0804d55c(D_03005380, cue->sprite, FIXED_TO_INT(x), FIXED_TO_INT(y), (0x4700 + cue->unk28 + cue->unk2E));
     func_0804d5d4(D_03005380, cue->shadow, FIXED_TO_INT(x), cue->unk14);
-    func_08007498(cue->unk8, cue->unk2A, cue->unk2C);
-    func_08007498(cue->unk9, cue->unk2A, 0);
+    set_affine_scale_rotation(cue->unk8, cue->unk2A, cue->unk2C);
+    set_affine_scale_rotation(cue->unk9, cue->unk2A, 0);
     func_0804d770(D_03005380, cue->sprite, TRUE);
     func_0804d770(D_03005380, cue->shadow, TRUE);
 }

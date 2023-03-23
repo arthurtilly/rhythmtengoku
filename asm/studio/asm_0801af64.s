@@ -24,7 +24,7 @@ branch_0801af7a: \n\
 branch_0801af84: \n\
 /* 0801af84 */ ADDS R1, R4, 0x1 @ Set R1 to R4 + 0x1 \n\
 /* 0801af86 */ MOV R0, SP @ Set R0 to SP \n\
-/* 0801af88 */ BL func_08008248 \n\
+/* 0801af88 */ BL strint \n\
 /* 0801af8c */ LDR R5, =D_030046a4 \n\
 /* 0801af8e */ LDR R0, [R5] \n\
 /* 0801af90 */ MOVS R1, 0xE3 @ Set R1 to 0xE3 \n\
@@ -51,7 +51,7 @@ branch_0801af84: \n\
 /* 0801afbc */ LSLS R1, R1, 0x2 \n\
 /* 0801afbe */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801afc0 */ ADDS R1, R2, 0x0 @ Set R1 to R2 + 0x0 \n\
-/* 0801afc2 */ BL string_concat \n\
+/* 0801afc2 */ BL strcat \n\
 /* 0801afc6 */ B branch_0801afe2 \n\
 \n\
 .ltorg \n\
@@ -62,7 +62,7 @@ branch_0801afd4: \n\
 /* 0801afd8 */ LSLS R2, R2, 0x2 \n\
 /* 0801afda */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0801afdc */ LDR R1, [R1] \n\
-/* 0801afde */ BL string_concat \n\
+/* 0801afde */ BL strcat \n\
  \n\
 branch_0801afe2: \n\
 /* 0801afe2 */ LDR R0, =D_030046a4 \n\

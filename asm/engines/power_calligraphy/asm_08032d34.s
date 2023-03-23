@@ -104,7 +104,7 @@ branch_08032dde: \n\
 /* 08032df6 */ LDRH R3, [R1] \n\
 /* 08032df8 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 08032dfa */ LSLS R1, R1, 0x3 \n\
-/* 08032dfc */ BL func_08008f04 \n\
+/* 08032dfc */ BL math_lerp \n\
 /* 08032e00 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08032e02 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 08032e04 */ BGE branch_08032e20 \n\

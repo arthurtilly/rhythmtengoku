@@ -65,7 +65,7 @@ branch_0801541e: \n\
 /* 08015422 */ BEQ branch_0801542e \n\
 /* 08015424 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08015426 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08015428 */ BL func_080152b0 \n\
+/* 08015428 */ BL game_select_calculate_flow \n\
 /* 0801542c */ STR R0, [SP, 0x8] \n\
  \n\
 branch_0801542e: \n\
@@ -110,7 +110,7 @@ branch_08015468: \n\
 /* 0801546a */ STRH R0, [R6, 0x3E] \n\
 /* 0801546c */ ADD R1, SP, 0x4 \n\
 /* 0801546e */ MOV R0, SP @ Set R0 to SP \n\
-/* 08015470 */ BL func_080152b0 \n\
+/* 08015470 */ BL game_select_calculate_flow \n\
 /* 08015474 */ MOVS R1, 0xAE @ Set R1 to 0xAE \n\
 /* 08015476 */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\
 /* 08015478 */ MOV R8, R1 @ Set R8 to R1 \n\
@@ -151,7 +151,7 @@ branch_080154b0: \n\
 branch_080154b8: \n\
 /* 080154b8 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080154ba */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 080154bc */ BL func_080152b0 \n\
+/* 080154bc */ BL game_select_calculate_flow \n\
  \n\
 branch_080154c0: \n\
 /* 080154c0 */ MOVS R1, 0xA @ Set R1 to 0xA \n\

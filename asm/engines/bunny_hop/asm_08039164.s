@@ -228,7 +228,7 @@ branch_08039318: \n\
 /* 08039330 */ LSLS R1, R1, 0x1 \n\
 /* 08039332 */ MOVS R2, 0x17 @ Set R2 to 0x17 \n\
 /* 08039334 */ LDRSB R2, [R6, R2] \n\
-/* 08039336 */ BL func_08007498 \n\
+/* 08039336 */ BL set_affine_scale_rotation \n\
 /* 0803933a */ ADD SP, 0xC \n\
 /* 0803933c */ POP {R4-R7} \n\
 /* 0803933e */ POP {R0} \n\

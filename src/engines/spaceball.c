@@ -342,7 +342,7 @@ u32 spaceball_cue_update_launch(struct Cue *cue, struct SpaceballCue *cueInfo, u
     }
     else {
         temp = runningTime - (cueInfo->endTime / 2);
-        cueInfo->x = func_08008f04(70, 138, runningTime, cueInfo->endTime);
+        cueInfo->x = math_lerp(70, 138, runningTime, cueInfo->endTime);
         cueInfo->y = 120 - (cueInfo->unk1C - fast_udivsi3(cueInfo->unk1C * (temp << 2) * temp, cueInfo->endTime * cueInfo->endTime));
         spaceball_update_entity(cueInfo->sprite, cueInfo->x - SCREEN_CENTER_X, cueInfo->y - SCREEN_CENTER_Y, cueInfo->z);
         affine_sprite_set_rotation(cueInfo->sprite, cueInfo->rotation);

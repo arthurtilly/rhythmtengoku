@@ -114,7 +114,7 @@ s32 copy_to_save_buffer(u8 *cartRAM) {
 
     read_sram_fast(cartRAM, (u8 *)buffer, SAVE_BUFFER_SIZE);
 
-    if (func_0800820c(buffer->header.RIQ, D_08935fbc, 4)) {
+    if (strncmp(buffer->header.RIQ, D_08935fbc, 4) != 0) {
         return 1;
     }
 
@@ -191,7 +191,7 @@ void func_080009cc_stub(void) {
 
 
 s32 func_080009d0(s16 *arg1) {
-    if (!func_0800820c(arg1, D_08935fc4, 4) && (arg1[2] == arg1[3])) {
+    if ((strncmp(arg1, D_08935fc4, 4) == 0) && (arg1[2] == arg1[3])) {
         return arg1[2];
     }
     return 0;

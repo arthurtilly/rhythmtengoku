@@ -14,7 +14,7 @@ thumb_func_start func_0801b668 \n\
 branch_0801b676: \n\
 /* 0801b676 */ ADDS R1, R4, 0x1 @ Set R1 to R4 + 0x1 \n\
 /* 0801b678 */ MOV R0, SP @ Set R0 to SP \n\
-/* 0801b67a */ BL func_08008248 \n\
+/* 0801b67a */ BL strint \n\
 /* 0801b67e */ LDR R5, =D_030046a4 \n\
 /* 0801b680 */ LDR R1, [R5] \n\
 /* 0801b682 */ MOVS R2, 0xE3 @ Set R2 to 0xE3 \n\
@@ -26,7 +26,7 @@ branch_0801b676: \n\
 /* 0801b68e */ LDR R0, [R5] \n\
 /* 0801b690 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0801b692 */ LDR R1, =text_studio_kit_formatting \n\
-/* 0801b694 */ BL string_concat \n\
+/* 0801b694 */ BL strcat \n\
 /* 0801b698 */ LDR R0, =D_030046a8 \n\
 /* 0801b69a */ LDR R0, [R0] \n\
 /* 0801b69c */ LDR R1, =0x28f \n\
@@ -42,7 +42,7 @@ branch_0801b676: \n\
 /* 0801b6b0 */ LSLS R1, R4, 0x2 \n\
 /* 0801b6b2 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0801b6b4 */ LDR R1, [R1] \n\
-/* 0801b6b6 */ BL string_concat \n\
+/* 0801b6b6 */ BL strcat \n\
 /* 0801b6ba */ B branch_0801b6e2 \n\
 \n\
 .ltorg \n\
@@ -53,7 +53,7 @@ branch_0801b6d4: \n\
 /* 0801b6d8 */ LSLS R1, R1, 0x2 \n\
 /* 0801b6da */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b6dc */ LDR R1, =text_studio_kit_not_unlocked \n\
-/* 0801b6de */ BL string_concat \n\
+/* 0801b6de */ BL strcat \n\
  \n\
 branch_0801b6e2: \n\
 /* 0801b6e2 */ LDR R0, =D_030046a4 \n\

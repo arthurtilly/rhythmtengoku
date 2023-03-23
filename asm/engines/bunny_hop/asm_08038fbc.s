@@ -153,7 +153,7 @@ branch_080390b6: \n\
 /* 080390e0 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 080390e2 */ LSLS R1, R1, 0x1 \n\
 /* 080390e4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 080390e6 */ BL func_08007498 \n\
+/* 080390e6 */ BL set_affine_scale_rotation \n\
 /* 080390ea */ B branch_08039112 \n\
 \n\
 .ltorg \n\

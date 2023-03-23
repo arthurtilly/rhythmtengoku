@@ -29,7 +29,7 @@ branch_0801ba0c: \n\
 branch_0801ba18: \n\
 /* 0801ba18 */ ADDS R1, R5, 0x1 @ Set R1 to R5 + 0x1 \n\
 /* 0801ba1a */ MOV R0, SP @ Set R0 to SP \n\
-/* 0801ba1c */ BL func_08008248 \n\
+/* 0801ba1c */ BL strint \n\
 /* 0801ba20 */ LDR R1, [R6] \n\
 /* 0801ba22 */ MOVS R4, 0xE3 @ Set R4 to 0xE3 \n\
 /* 0801ba24 */ LSLS R4, R4, 0x2 \n\
@@ -50,7 +50,7 @@ branch_0801ba18: \n\
 /* 0801ba42 */ LSLS R1, R5, 0x2 \n\
 /* 0801ba44 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0801ba46 */ LDR R1, [R1] \n\
-/* 0801ba48 */ BL string_concat \n\
+/* 0801ba48 */ BL strcat \n\
 /* 0801ba4c */ LDR R0, [R6] \n\
 /* 0801ba4e */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
  \n\

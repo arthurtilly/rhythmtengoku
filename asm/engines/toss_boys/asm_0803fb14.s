@@ -34,7 +34,7 @@ thumb_func_start func_0803fb14 \n\
 /* 0803fb4c */ ASRS R1, R1, 0x10 \n\
 /* 0803fb4e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803fb50 */ LDRSH R2, [R4, R3] \n\
-/* 0803fb52 */ BL func_08007498 \n\
+/* 0803fb52 */ BL set_affine_scale_rotation \n\
 /* 0803fb56 */ POP {R4} \n\
 /* 0803fb58 */ POP {R0} \n\
 /* 0803fb5a */ BX R0 \n\

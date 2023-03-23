@@ -11,7 +11,7 @@ thumb_func_start func_0801c290 \n\
 /* 0801c29c */ LDR R1, =func_0801c260 \n\
 /* 0801c29e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801c2a0 */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
-/* 0801c2a2 */ BL func_0800856c \n\
+/* 0801c2a2 */ BL schedule_function_call \n\
 /* 0801c2a6 */ BL scene_show_obj_layer \n\
 /* 0801c2aa */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0801c2ac */ STR R4, [SP] \n\

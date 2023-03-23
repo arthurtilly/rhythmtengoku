@@ -36,7 +36,7 @@ branch_08034a80: \n\
 /* 08034a94 */ ADDS R1, 0x40 @ Add 0x40 to R1 \n\
 /* 08034a96 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08034a98 */ LDRSH R1, [R1, R2] \n\
-/* 08034a9a */ BL func_08007b04 \n\
+/* 08034a9a */ BL delete_bmp_font_obj_text_anim \n\
 /* 08034a9e */ LDR R5, =D_03005380 \n\
 /* 08034aa0 */ LDR R0, [R5] \n\
 /* 08034aa2 */ LDR R1, [R4] \n\

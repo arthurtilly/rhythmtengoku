@@ -654,7 +654,7 @@ void fireworks_common_display_text(char *text) {
         func_0804d770(D_03005380, gFireworksInfo->textSprite, FALSE);
     } else {
         textAnim = bmp_font_obj_print_c(gFireworksInfo->unk4, text, 1, 12);
-        func_08007b04(gFireworksInfo->unk4, gFireworksInfo->textSprite);
+        delete_bmp_font_obj_text_anim(gFireworksInfo->unk4, gFireworksInfo->textSprite);
         func_0804d8f8(D_03005380, gFireworksInfo->textSprite, textAnim->frames, 0, 1, 0, 0);
         func_0804d770(D_03005380, gFireworksInfo->textSprite, TRUE);
     }

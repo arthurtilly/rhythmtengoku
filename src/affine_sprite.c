@@ -57,7 +57,7 @@ void update_affine_sprite(struct AffineSprite *affineData) {
         }
 
         // Update Scaling & Rotation
-        func_080074c4(index, affineData->scaleX, affineData->scaleY, rotation);
+        set_affine_stretch_rotation(index, affineData->scaleX, affineData->scaleY, rotation);
     }
 }
 
@@ -111,9 +111,9 @@ struct AffineSprite *create_affine_sprite(struct Animation *anim, s8 arg1, s16 x
     affineData->flipVertical = FALSE;
     affineData->ignoreUpdates = FALSE;
 
-    func_08007468(sprite, index);
+    assign_sprite_affine_param(sprite, index);
     func_080022d8(index);
-    func_080074c4(index, affineData->scaleX, affineData->scaleY, affineData->rotation);
+    set_affine_stretch_rotation(index, affineData->scaleX, affineData->scaleY, affineData->rotation);
     func_0804dc8c(D_03005380, sprite, (doubleSize ? 3 : 1));
 
     return affineData;
@@ -167,14 +167,14 @@ void affine_sprite_set_param_id(struct AffineSprite *affineData, u32 setIndex) {
         affineData->index = func_0800c42c();
         if (affineData->index >= 0) {
             func_0804dc8c(D_03005380, affineData->sprite, (affineData->doubleSize ? 3 : 1));
-            func_08007468(affineData->sprite, affineData->index);
+            assign_sprite_affine_param(affineData->sprite, affineData->index);
             update_affine_sprite(affineData);
         }
     } else if (!setIndex) {
         if (affineData->index >= 0) {
             func_080021b8();
             affineData->index = -1;
-            func_08007468(affineData->sprite, -1);
+            assign_sprite_affine_param(affineData->sprite, -1);
         }
     }
 }

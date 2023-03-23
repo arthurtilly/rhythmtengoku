@@ -98,10 +98,10 @@ branch_08010564: \n\
 /* 08010608 */ BL memcpy \n\
 /* 0801060c */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0801060e */ MOV R1, R8 @ Set R1 to R8 \n\
-/* 08010610 */ BL string_concat \n\
+/* 08010610 */ BL strcat \n\
 /* 08010614 */ LDR R1, =D_0804f3e4 \n\
 /* 08010616 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
-/* 08010618 */ BL string_concat \n\
+/* 08010618 */ BL strcat \n\
 /* 0801061c */ BL get_current_mem_id \n\
 /* 08010620 */ LSLS R0, R0, 0x10 \n\
 /* 08010622 */ LSRS R0, R0, 0x10 \n\

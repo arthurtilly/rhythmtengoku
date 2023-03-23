@@ -66,7 +66,7 @@ void func_08012464(void) {
 
 // Graphics Init. 1
 void func_08012494(void) {
-    func_0800856c(get_current_mem_id(), func_08012464, 0, 2);
+    schedule_function_call(get_current_mem_id(), func_08012464, 0, 2);
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 }

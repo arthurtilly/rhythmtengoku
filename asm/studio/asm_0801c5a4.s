@@ -67,7 +67,7 @@ branch_0801c5fe: \n\
 /* 0801c618 */ MOVS R3, 0x80 @ Set R3 to 0x80 \n\
 /* 0801c61a */ LSLS R3, R3, 0x1 \n\
 /* 0801c61c */ SUBS R2, R3, R2 @ Set R2 to R3 - R2 \n\
-/* 0801c61e */ BL func_08008f04 \n\
+/* 0801c61e */ BL math_lerp \n\
 /* 0801c622 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0801c624 */ LSLS R4, R4, 0x10 \n\
 /* 0801c626 */ LSRS R4, R4, 0x10 \n\

@@ -29,7 +29,7 @@ branch_08016184: \n\
 /* 08016196 */ MOVS R5, 0x80 @ Set R5 to 0x80 \n\
 /* 08016198 */ LSLS R5, R5, 0x1 \n\
 /* 0801619a */ ADDS R3, R5, 0x0 @ Set R3 to R5 + 0x0 \n\
-/* 0801619c */ BL func_08008f04 \n\
+/* 0801619c */ BL math_lerp \n\
 /* 080161a0 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 080161a2 */ MOVS R1, 0xE @ Set R1 to 0xE \n\
 /* 080161a4 */ LDRSH R0, [R6, R1] \n\
@@ -38,7 +38,7 @@ branch_08016184: \n\
 /* 080161aa */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
 /* 080161ac */ LDRSH R2, [R6, R3] \n\
 /* 080161ae */ ADDS R3, R5, 0x0 @ Set R3 to R5 + 0x0 \n\
-/* 080161b0 */ BL func_08008f04 \n\
+/* 080161b0 */ BL math_lerp \n\
 /* 080161b4 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 080161b6 */ LDR R5, =D_03005380 \n\
 /* 080161b8 */ LDR R0, [R5] \n\

@@ -65,7 +65,7 @@ jump_08043944: \n\
 /* 08043952 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08043954 */ MOVS R1, 0xB0 @ Set R1 to 0xB0 \n\
 /* 08043956 */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
-/* 08043958 */ BL func_08008f04 \n\
+/* 08043958 */ BL math_lerp \n\
 /* 0804395c */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0804395e */ LSLS R1, R1, 0x10 \n\
 /* 08043960 */ ASRS R1, R1, 0x10 \n\
@@ -110,7 +110,7 @@ jump_080439a0: \n\
 /* 080439aa */ MOVS R0, 0x68 @ Set R0 to 0x68 \n\
 /* 080439ac */ MOVS R1, 0x8A @ Set R1 to 0x8A \n\
 /* 080439ae */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
-/* 080439b0 */ BL func_08008f04 \n\
+/* 080439b0 */ BL math_lerp \n\
 /* 080439b4 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 080439b6 */ LSLS R1, R1, 0x10 \n\
 /* 080439b8 */ ASRS R1, R1, 0x10 \n\

@@ -230,7 +230,7 @@ void beatscript_exit_loop_after_delay(u32 duration) {
     }
 
     if (!D_030053c0.exitLoopNextUpdate) {
-        func_0800856c((u16)get_current_mem_id(), func_0800bc58, 0, beats_to_ticks(duration));
+        schedule_function_call((u16)get_current_mem_id(), func_0800bc58, 0, beats_to_ticks(duration));
         if (D_030053c0.memID == 1) {
             func_0800c3ec(2);
         }

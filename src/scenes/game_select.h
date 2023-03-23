@@ -58,7 +58,6 @@ struct GameSelectSceneInfo {
     /* [0x06A] BG Squares */
     s16 squareSprites[50];
     struct Vector2 squareVectors[50];
-    /* ? */
     struct GameSelectUnk198 {
         u8 unk0;
         u32 unk4;
@@ -69,6 +68,7 @@ struct GameSelectSceneInfo {
         u32 unk18;
         u32 unk1C;
     } unk198[10];
+    /* ? */
     u8 unk2D8;
     u8 unk2D9;
     u8 unk2DA;
@@ -184,6 +184,7 @@ enum CampaignGiftTypesEnum {
 
 #define GAME_SELECT_GRID_WIDTH 15u
 #define GAME_SELECT_GRID_HEIGHT 12u
+#define DEFAULT_LEVEL_SCORE ((u16)-1)
 
 enum LevelTypesEnum {
     /* 00 */ LEVEL_TYPE_GAME,
@@ -405,11 +406,11 @@ extern void game_select_print_level_rank(s32 levelState);
 extern void game_select_process_info_pane(void);
 extern void game_select_set_info_pane(s32 id, s32 state, s32 delay);
 extern void game_select_update_info_pane(void);
-extern u32 func_080152b0(u32 *outMod, u32 *outScore); // Calculate Flow?
-// extern ? func_08015338(?);
+extern u32 game_select_calculate_flow(u32 *outMod, u32 *outScore); // Calculate Flow?
+extern u32 game_select_calculate_flow_old(void);
 extern u32 func_080153a8(void); // Set Flow?
-extern void func_080154f0(void); // Init. Flow Display
-extern void func_08015660(void); // Update Flow Display
+extern void game_select_init_flow_pane(void);
+extern void game_select_update_flow_pane(void);
 extern void game_select_scene_stop(s32 unused); // Scene Stop
 
 // Functions - VRAM

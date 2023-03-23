@@ -33,7 +33,7 @@ void init_scene_static_var(void) {
 void func_08000224(void) {
 	init_key_listener();
 	func_0800b564();
-	func_08007b4c();
+	init_fast_udivsi3();
 	func_08002f68();
 	mem_heap_init(get_memory_heap_start(), get_memory_heap_length());
 	task_pool_init();

@@ -74,10 +74,10 @@ struct ResultsTextEvent {
 
 
 // Scene Macros/Enums:
-enum ResultsLevelsEnum {
-    RESULT_LEVEL_TRY_AGAIN,
-    RESULT_LEVEL_OK,
-    RESULT_LEVEL_SUPERB
+enum ResultsRanksEnum {
+    RESULTS_RANK_TRY_AGAIN,
+    RESULTS_RANK_OK,
+    RESULTS_RANK_SUPERB
 };
 
 enum ResultsLevelIconsEnum {

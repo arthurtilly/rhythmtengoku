@@ -296,18 +296,18 @@ void start_campaign_notice(s32 id) {
     level = get_level_data_from_grid_xy(notice->x, notice->y);
     string = notice->text;
     memcpy(string, D_08050bdc, 11); // "ただいま「"
-    string_concat(string, level->name); // "<game_name>"
-    string_concat(string, D_08050be8); // "」でパーフェクトを達成すると"
+    strcat(string, level->name); // "<game_name>"
+    strcat(string, D_08050be8); // "」でパーフェクトを達成すると"
     if (!isSpecialSong) {
-        string_concat(string, D_08050c08); // "もれなく"
+        strcat(string, D_08050c08); // "もれなく"
     }
-    string_concat(string, D_08050c14); // "「"
-    string_concat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
-    string_concat(string, D_08050c18); // "」"
+    strcat(string, D_08050c14); // "「"
+    strcat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
+    strcat(string, D_08050c18); // "」"
     if (isStandardSong) {
-        string_concat(string, D_08050c1c); // "の曲"
+        strcat(string, D_08050c1c); // "の曲"
     }
-    string_concat(string, D_08050c24); // "をプレゼント!!"
+    strcat(string, D_08050c24); // "をプレゼント!!"
     text_printer_set_string(notice->printer, string);
 
     func_0804d770(D_03005380, gGameSelectInfo->selectionBorderSprite, FALSE);
@@ -628,9 +628,9 @@ void game_select_update_color_mod(struct ColorChanger *changer) {
 
         case COLOR_CHANGER_STATE_INTERPOLATING:
             changer->timer++;
-            r = func_08008f04(changer->r1, changer->r2, changer->timer, COLOR_MOD_INTERP_TIME);
-            g = func_08008f04(changer->g1, changer->g2, changer->timer, COLOR_MOD_INTERP_TIME);
-            b = func_08008f04(changer->b1, changer->b2, changer->timer, COLOR_MOD_INTERP_TIME);
+            r = math_lerp(changer->r1, changer->r2, changer->timer, COLOR_MOD_INTERP_TIME);
+            g = math_lerp(changer->g1, changer->g2, changer->timer, COLOR_MOD_INTERP_TIME);
+            b = math_lerp(changer->b1, changer->b2, changer->timer, COLOR_MOD_INTERP_TIME);
             D_03004b10.bgPalette[0][changer->target] = ((r & 0x1F)) | ((g & 0x1F) << 5) | ((b & 0x1F) << 10);
 
             if (changer->timer >= COLOR_MOD_INTERP_TIME) {
@@ -693,7 +693,7 @@ void game_select_init_gfx2(void) {
 
 // Graphics Init. 1
 void game_select_init_gfx1(void) {
-    func_0800856c(get_current_mem_id(), game_select_init_gfx2, 0, 2);
+    schedule_function_call(get_current_mem_id(), game_select_init_gfx2, 0, 2);
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 2, 22, BGCNT_TILEMAP_SIZE(2) | BGCNT_PRIORITY(0));
     scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 2, 24, BGCNT_TILEMAP_SIZE(3) | BGCNT_PRIORITY(1));
@@ -750,7 +750,7 @@ void game_select_scene_start(s32 unused) {
     gGameSelectInfo->screenIsReady = FALSE;
     game_select_init_info_pane();
     game_select_set_info_pane_to_cursor_target();
-    func_080154f0();
+    game_select_init_flow_pane();
     gGameSelectInfo->unk2DA = 0;
     gGameSelectInfo->unk2DB = 0;
     gGameSelectInfo->unk2DC = 0;
@@ -849,8 +849,8 @@ void game_select_update_bg_scroll(void) {
 
     if (gGameSelectInfo->gridPaneIsMoving) {
         gGameSelectInfo->gridPaneMotionTime = FIXED_POINT_MUL(gGameSelectInfo->gridPaneMotionTime, gGameSelectInfo->gridPaneMotionDecay);
-        x = func_08008f04(gGameSelectInfo->gridPaneX2, gGameSelectInfo->gridPaneX1, gGameSelectInfo->gridPaneMotionTime, INT_TO_FIXED(1.0));
-        y = func_08008f04(gGameSelectInfo->gridPaneY2, gGameSelectInfo->gridPaneY1, gGameSelectInfo->gridPaneMotionTime, INT_TO_FIXED(1.0));
+        x = math_lerp(gGameSelectInfo->gridPaneX2, gGameSelectInfo->gridPaneX1, gGameSelectInfo->gridPaneMotionTime, INT_TO_FIXED(1.0));
+        y = math_lerp(gGameSelectInfo->gridPaneY2, gGameSelectInfo->gridPaneY1, gGameSelectInfo->gridPaneMotionTime, INT_TO_FIXED(1.0));
         scene_set_bg_layer_pos(BG_LAYER_3, x, y);
         scene_set_bg_layer_pos(BG_LAYER_2, x, y);
 
@@ -861,8 +861,8 @@ void game_select_update_bg_scroll(void) {
 
     if (gGameSelectInfo->infoPaneIsMoving) {
         gGameSelectInfo->infoPaneMotionTime = FIXED_POINT_MUL(gGameSelectInfo->infoPaneMotionTime, gGameSelectInfo->infoPaneMotionDecay);
-        x = func_08008f04(gGameSelectInfo->infoPaneX2, gGameSelectInfo->infoPaneX1, gGameSelectInfo->infoPaneMotionTime, INT_TO_FIXED(1.0));
-        y = func_08008f04(gGameSelectInfo->infoPaneY2, gGameSelectInfo->infoPaneY1, gGameSelectInfo->infoPaneMotionTime, INT_TO_FIXED(1.0));
+        x = math_lerp(gGameSelectInfo->infoPaneX2, gGameSelectInfo->infoPaneX1, gGameSelectInfo->infoPaneMotionTime, INT_TO_FIXED(1.0));
+        y = math_lerp(gGameSelectInfo->infoPaneY2, gGameSelectInfo->infoPaneY1, gGameSelectInfo->infoPaneMotionTime, INT_TO_FIXED(1.0));
         scene_set_bg_layer_pos(BG_LAYER_1, x, y);
 
         if (gGameSelectInfo->infoPaneMotionTime == 0) {
@@ -1217,7 +1217,7 @@ void game_select_scene_update(s32 unused) {
     bgOfsY -= D_03004b10.BG_OFS[BG_LAYER_3].y;
     func_080162bc(bgOfsX - 1, bgOfsY);
     func_0801626c();
-    func_08015660();
+    game_select_update_flow_pane();
     game_select_update_medal_pane();
 }
 
@@ -1433,7 +1433,7 @@ void game_select_print_level_rank(s32 levelState) {
     struct Animation *anim;
     const char *string;
 
-    if (D_030046a8->data.levelScores[gGameSelectInfo->infoPaneLevelID] == (u16)-1) {
+    if (D_030046a8->data.levelScores[gGameSelectInfo->infoPaneLevelID] == DEFAULT_LEVEL_SCORE) {
         levelState = LEVEL_STATE_UNCLEARED;
     }
 
@@ -1516,51 +1516,18 @@ void game_select_update_info_pane(void) {
 }
 
 
-// Calculate Flow?
-u32 func_080152b0(u32 *outMod, u32 *outScore) {
-    struct TengokuSaveData *saveData;
-    u32 totalGames, totalScore;
-    u32 i, score;
-    u32 modifier, modifiedScore;
-
-    saveData = &D_030046a8->data;
-    totalGames = 0;
-    totalScore = 0;
-    for (i = 0; i < 55; i++) {
-        score = saveData->levelScores[i];
-        if (score != (u16) -1) {
-            totalGames++;
-            totalScore += score;
-        }
-    }
-
-    if (totalGames == 0) return 0;
-
-    modifier = (INT_TO_FIXED((totalGames + 48) * 7)) / 480u;
-    modifiedScore = (FIXED_TO_INT(modifier * totalScore)) / totalGames;
-    if (outMod != NULL) {
-        *outMod = modifier;
-    }
-    if (outScore != NULL) {
-        *outScore = totalScore / totalGames;
-    }
-    return modifiedScore;
-}
-
-
-// Unused Flow Calculation
-u32 func_08015338(void) {
+// Calculate Flow
+u32 game_select_calculate_flow(u32 *modifierReq, u32 *averageReq) {
     struct TengokuSaveData *saveData = &D_030046a8->data;
     u32 totalGames = 0;
     u32 totalScore = 0;
-    u32 i;
-    s24_8 multiplier;
-    u32 baseScore;
+    u32 i, score;
+    s24_8 completionModifier;
+    u32 modifiedScore;
 
     for (i = 0; i < 55; i++) {
-        u32 score = saveData->levelScores[i];
-
-        if (score != (u16)-1) {
+        score = saveData->levelScores[i];
+        if (score != DEFAULT_LEVEL_SCORE) {
             totalGames++;
             totalScore += score;
         }
@@ -1570,14 +1537,59 @@ u32 func_08015338(void) {
         return 0;
     }
 
-    // Min = 0.7 (<4 games cleared); Max = 1.4 (28 games cleared)
-    multiplier = INT_TO_FIXED(0.7) + (INT_TO_FIXED(clamp_int32(totalGames - 3, 0, 25) * 7) / 25 / 10);
+    // Min = 0.7 (0 levels played)
+    // Max = 1.4 (48 levels played)
+    completionModifier = INT_TO_FIXED((48 + totalGames) * 7) / 10 / 48u;
 
-    // Min = 30 (avg. <= 300); Max = 100 (avg. >= 995)
+    // Min = 0 (0 * 0.7)
+    // Max = 1400 (1000 * 1.4)
+    modifiedScore = FIXED_TO_INT(completionModifier * totalScore) / totalGames;
+
+    if (modifierReq != NULL) {
+        *modifierReq = completionModifier;
+    }
+
+    if (averageReq != NULL) {
+        *averageReq = totalScore / totalGames;
+    }
+
+    return modifiedScore;
+}
+
+
+// Unused Flow Calculation
+u32 game_select_calculate_flow_old(void) {
+    struct TengokuSaveData *saveData = &D_030046a8->data;
+    s24_8 completionModifier;
+    u32 baseScore;
+    u32 totalGames = 0;
+    u32 totalScore = 0;
+    u32 i;
+
+    for (i = 0; i < 55; i++) {
+        u32 score = saveData->levelScores[i];
+
+        if (score != DEFAULT_LEVEL_SCORE) {
+            totalGames++;
+            totalScore += score;
+        }
+    }
+
+    if (totalGames == 0) {
+        return 0;
+    }
+
+    // Min = 0.7 (0-3 levels played)
+    // Max = 1.4 (28+ levels played)
+    completionModifier = INT_TO_FIXED(0.7) + (INT_TO_FIXED(clamp_int32(totalGames - 3, 0, 25) * 7) / 10 / 25);
+
+    // Min =  30 (avg. score <= 300)
+    // Max = 100 (avg. score >= 995)
     baseScore = clamp_int32((5 + (totalScore / totalGames)) / 10, 30, 100);
 
-    // Min = 30 * 0.7 (21); Max = 100 * 1.4 (140)
-    return FIXED_TO_INT(baseScore * multiplier);
+    // Min =  21 ( 30 * 0.7)
+    // Max = 140 (100 * 1.4)
+    return FIXED_TO_INT(baseScore * completionModifier);
 }
 
 
@@ -1601,7 +1613,7 @@ u32 func_080153a8(void) {
     medalWasObtained = FALSE;
     newScore = saveData->previousLevelScore;
 
-    if (newScore == (u16) -1) {
+    if (newScore == DEFAULT_LEVEL_SCORE) {
         flow->previousScore = D_030046a8->data.currentFlow;
         flow->currentScore = D_030046a8->data.currentFlow;
         return 0;
@@ -1618,34 +1630,34 @@ u32 func_080153a8(void) {
     }
 
     if (medalWasObtained) {
-        prevModifiedScoreAvg = func_080152b0(NULL, NULL);
+        prevModifiedScoreAvg = game_select_calculate_flow(NULL, NULL);
     }
 
     if (id >= 0) {
         prevScore = saveData->levelScores[id];
-        if (prevScore == (u16) -1) {
+        if (prevScore == DEFAULT_LEVEL_SCORE) {
             prevScore = newScore;
         } else if (prevScore < newScore) {
-            prevScore = (prevScore + (newScore * 3)) / 4;
+            prevScore = ((prevScore + (newScore * 3)) / 4);
         } else {
-            prevScore = (((newScore + (prevScore * 3)) / 4) << 8) >> 8;
+            prevScore = ((newScore + (prevScore * 3)) / 4) & 0xFFFFFF;
         }
         saveData->levelScores[id] = prevScore;
     }
     saveData->previousLevelScore = -1;
-    newModifiedScoreAvg = func_080152b0(&scoreModifier, &averageScore);
+    newModifiedScoreAvg = game_select_calculate_flow(&scoreModifier, &averageScore);
 
     if (medalWasObtained) {
         if (newModifiedScoreAvg < prevModifiedScoreAvg) {
             scoreIncrement = ((INT_TO_FIXED(prevModifiedScoreAvg)) / scoreModifier) - averageScore + 1;
             for (i = 0; i < 55; i++) {
                 prevScore = saveData->levelScores[i];
-                if (prevScore != (u16) -1) {
+                if (prevScore != DEFAULT_LEVEL_SCORE) {
                     saveData->levelScores[i] = clamp_int32(prevScore + scoreIncrement, 0, 1000);
                 }
             }
         }
-        newModifiedScoreAvg = func_080152b0(NULL, NULL);
+        newModifiedScoreAvg = game_select_calculate_flow(NULL, NULL);
     }
 
     finalScore = newModifiedScoreAvg / 10;
@@ -1657,13 +1669,13 @@ u32 func_080153a8(void) {
 }
 
 
-// Initialise Flow Display
-void func_080154f0(void) {
+// Init. Flow Display
+void game_select_init_flow_pane(void) {
     struct FlowDisplay *flow;
     struct Vector2 *vector;
     u32 i;
     u32 temp;
-    u32 score;
+    u32 prevScore;
 
     flow = &gGameSelectInfo->flowDisplay;
     vector = &D_03004b10.BG_OFS[BG_LAYER_1];
@@ -1679,12 +1691,12 @@ void func_080154f0(void) {
     flow->arrowSprite = func_0804d160(D_03005380, anim_game_select_flow_arrow, 0, 224, 128, 0, 0, 0, 0x8000);
     func_0804db44(D_03005380, flow->arrowSprite, &vector->x, &vector->y);
     temp = func_080153a8();
-    score = flow->previousScore;
+    prevScore = flow->previousScore;
 
-    if (score != 0) {
+    if (prevScore > 0) {
         for (i = 0; i < 3; i++) {
-            func_0804cebc(D_03005380, flow->numberSprites[i], ((score != 0) ? (score % 10) : 10));
-            score /= 10;
+            func_0804cebc(D_03005380, flow->numberSprites[i], ((prevScore != 0) ? (prevScore % 10) : 10));
+            prevScore /= 10;
         }
     }
 

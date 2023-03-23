@@ -10,7 +10,7 @@ thumb_func_start func_0801edac \n\
 /* 0801edb6 */ LDR R1, =func_0801ed7c \n\
 /* 0801edb8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801edba */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
-/* 0801edbc */ BL func_0800856c \n\
+/* 0801edbc */ BL schedule_function_call \n\
 /* 0801edc0 */ POP {R0} \n\
 /* 0801edc2 */ BX R0 \n\
 \n\

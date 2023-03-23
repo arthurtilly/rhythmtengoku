@@ -99,7 +99,7 @@ void func_08018a50(void) {
 
 // [func_08018a80] LEVEL Graphics Init. 0
 void func_08018a80(void) {
-    func_0800856c(get_current_mem_id(), func_08018a50, 0, 2);
+    schedule_function_call(get_current_mem_id(), func_08018a50, 0, 2);
     scene_show_obj_layer();
 }
 
@@ -201,7 +201,7 @@ void func_08018d9c(void) {
     totalNegativeComments = gResultsInfo->totalNegativeComments;
     totalComments = gResultsInfo->totalNegativeComments + gResultsInfo->totalPositiveComments;
 
-    if ((gResultsInfo->finalResultLevel != RESULT_LEVEL_TRY_AGAIN)
+    if ((gResultsInfo->finalResultLevel != RESULTS_RANK_TRY_AGAIN)
       || (gResultsInfo->totalPositiveComments == 0)
       || (gResultsInfo->singleCommentTryAgain)) {
         return;
@@ -541,7 +541,7 @@ u32 func_08019a80(void) {
 
     for (i = 0; i < totalFailed; i++) {
         strcpy(textDest, results_try_again_comment_pool[clamp_int32(i, 0, 2)]);
-        string_concat(textDest, comments[i]);
+        strcat(textDest, comments[i]);
         anim = func_08019210(textDest, 2, 3);
         sprite = func_0804d160(D_03005380, anim, 0, 0, 0, 0x800, 0, 0, 0);
         func_0804d8c4(D_03005380, sprite, LEVEL_COMMENT_PALETTE);
@@ -609,7 +609,7 @@ u32 func_08019bec(void) {
 
         if (gResultsInfo->totalNegativeComments != 0) {
             memcpy(textDest, "c‚Å‚àA", 9); // ("...but,")
-            string_concat(textDest, criteria->positiveRemark);
+            strcat(textDest, criteria->positiveRemark);
             anim = func_08019210(textDest, 3, 3);
             palette = LEVEL_EXTRA_COMMENT_PALETTE;
         } else {
@@ -624,7 +624,7 @@ u32 func_08019bec(void) {
                     memcpy(textDest, "‚³‚ç‚ÉA", 9); // ("also,")
                     break;
             }
-            string_concat(textDest, criteria->positiveRemark);
+            strcat(textDest, criteria->positiveRemark);
             anim = func_08019210(textDest, 2, 3);
             palette = LEVEL_COMMENT_PALETTE;
         }
@@ -745,7 +745,7 @@ void func_08019ee0(void) {
     func_08019d9c();
 
     if (totalCriteriaFailed != 0) {
-        gResultsInfo->finalResultLevel = RESULT_LEVEL_TRY_AGAIN;
+        gResultsInfo->finalResultLevel = RESULTS_RANK_TRY_AGAIN;
         func_0804cebc(D_03005380, gResultsInfo->resultIcon, RESULT_ICON_TRY_AGAIN);
         func_080191bc(-1);
         return;
@@ -765,7 +765,7 @@ void func_08019ee0(void) {
     }
 
     if (averageCriteriaSucceeded == INT_TO_FIXED(1.0)) {
-        gResultsInfo->finalResultLevel = RESULT_LEVEL_SUPERB;
+        gResultsInfo->finalResultLevel = RESULTS_RANK_SUPERB;
         func_0804cebc(D_03005380, gResultsInfo->resultIcon, RESULT_ICON_SUPERB);
         func_080191bc(LEVEL_STATE_MEDAL_OBTAINED);
 
@@ -775,7 +775,7 @@ void func_08019ee0(void) {
     }
 
     else {
-        gResultsInfo->finalResultLevel = RESULT_LEVEL_OK;
+        gResultsInfo->finalResultLevel = RESULTS_RANK_OK;
         func_0804cebc(D_03005380, gResultsInfo->resultIcon, RESULT_ICON_OK);
         func_080191bc(LEVEL_STATE_CLEARED);
 
@@ -815,6 +815,3 @@ u32 func_0801a060(void) {
 
     return 0;
 }
-
-
-/* DATA */

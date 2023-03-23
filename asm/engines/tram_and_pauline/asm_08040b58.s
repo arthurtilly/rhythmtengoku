@@ -26,7 +26,7 @@ branch_08040b80: \n\
 /* 08040b84 */ LDR R0, [R1, 0x38] \n\
 /* 08040b86 */ MOVS R3, 0x3C @ Set R3 to 0x3C \n\
 /* 08040b88 */ LDRSH R1, [R1, R3] \n\
-/* 08040b8a */ BL func_08007b04 \n\
+/* 08040b8a */ BL delete_bmp_font_obj_text_anim \n\
 /* 08040b8e */ LDR R0, [R4] \n\
 /* 08040b90 */ LDR R0, [R0, 0x38] \n\
 /* 08040b92 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
