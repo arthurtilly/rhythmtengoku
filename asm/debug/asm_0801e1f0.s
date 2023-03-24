@@ -170,7 +170,7 @@ branch_0801e318: \n\
 /* 0801e350 */ LDR R0, =D_089ddbcc \n\
 /* 0801e352 */ BL gameplay_pause_menu_set_quit_destination \n\
 /* 0801e356 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801e358 */ BL func_080191ac \n\
+/* 0801e358 */ BL results_set_enable_save \n\
 /* 0801e35c */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0801e35e */ NEGS R0, R0 @ Set R0 to -R0 \n\
 /* 0801e360 */ BL func_0801d6c4 \n\

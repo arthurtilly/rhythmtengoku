@@ -1,6 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 #include "text.h"
+#include "levels.h"
 #include "src/bitmap_font.h"
 #include "src/task_pool.h"
 #include "src/scenes/game_select.h"

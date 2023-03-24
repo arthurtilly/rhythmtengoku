@@ -112,7 +112,7 @@ branch_08016bbe: \n\
 /* 08016bce */ BL func_080108e8 \n\
 /* 08016bd2 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08016bd4 */ NEGS R0, R0 @ Set R0 to -R0 \n\
-/* 08016bd6 */ BL func_080191bc \n\
+/* 08016bd6 */ BL results_save_to_cart \n\
 /* 08016bda */ B branch_08016bfe \n\
 \n\
 .ltorg \n\

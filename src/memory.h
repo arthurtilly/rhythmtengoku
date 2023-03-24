@@ -1,21 +1,22 @@
 #pragma once
 
 #include "global.h"
+#include "levels.h"
 
 #define SAVE_BUFFER_SIZE sizeof(struct SaveBuffer)
 
 extern struct SaveBuffer {
+    /* [0x000] Header */
     struct SaveBufferHeader {
         char RIQ[4]; // "RIQ"
         u32 bufferSize;
         u32 checksum;
         u32 unkC; // 0x26040000
     } header;
+    /* [0x010] Game Save Data */
     struct TengokuSaveData {
-        s8 gsCursorX;
-        s8 gsCursorY;
-        s8 recentLevelX;
-        s8 recentLevelY;
+        s8 gsCursorX, gsCursorY;
+        s8 recentLevelX, recentLevelY;
         s8 recentLevelState;
         u8 gameSelectUnk5;
         u8 levelStates[55];

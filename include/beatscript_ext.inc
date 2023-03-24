@@ -65,19 +65,19 @@
 
 @ [RIQ] Set Results Header Text
 .macro set_results_header text
-    run func_08019310, \text
+    run results_set_header, \text
 .endm
 
 
 @ [RIQ] Import Marking Criteria
 .macro import_marking_criteria list
-    run func_08019304, \list
+    run results_import_marking_criteria, \list
 .endm
 
 
 @ [RIQ] Enable Input Assessment
 .macro assess_inputs enable
-    run func_08019324, \enable
+    run results_enable_input_tracking, \enable
 .endm
 
 

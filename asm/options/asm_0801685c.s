@@ -59,7 +59,7 @@ branch_080168bc: \n\
 /* 080168d6 */ LDR R0, [R5] \n\
 /* 080168d8 */ STR R6, [R0, 0x24] \n\
 /* 080168da */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 080168dc */ BL pause_beatscript_scene \n\
+/* 080168dc */ BL set_pause_beatscript_scene \n\
 /* 080168e0 */ LDR R0, [R5] \n\
 /* 080168e2 */ STR R4, [R0, 0x10] \n\
 /* 080168e4 */ STRB R4, [R0] \n\

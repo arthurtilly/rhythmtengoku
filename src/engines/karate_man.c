@@ -142,7 +142,7 @@ void karate_tutorial_wait_for_input(void) {
     func_0804cebc(D_03005380, gKarateManInfo->textButtonSprite, 0);
     func_0804d770(D_03005380, gKarateManInfo->textButtonSprite, TRUE);
     gameplay_set_input_buttons(0, 0);
-    pause_beatscript_scene(TRUE);
+    set_pause_beatscript_scene(TRUE);
     gKarateManInfo->awaitingInput = TRUE;
 }
 
@@ -194,7 +194,7 @@ void karate_engine_update(void) {
         if (D_03004afc & A_BUTTON) {
             func_0804d770(D_03005380, gKarateManInfo->textButtonSprite, FALSE);
             gameplay_set_input_buttons(A_BUTTON, 0);
-            pause_beatscript_scene(FALSE);
+            set_pause_beatscript_scene(FALSE);
             gKarateManInfo->awaitingInput = FALSE;
         }
     }

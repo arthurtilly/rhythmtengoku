@@ -189,7 +189,7 @@ void func_080277b8(void) {
         gDrumLessonsInfo->unk458 = 0;
         if (gDrumLessonsInfo->unk424 > 3) {
             gDrumLessonsInfo->unk427 = 1;
-            func_08019324(0);
+            results_enable_input_tracking(FALSE);
             func_08027c90(0);
             beatscript_disable_loops();
         } else {
@@ -203,7 +203,7 @@ void func_080277b8(void) {
         }
     } else {
         func_08027f4c(0);
-        func_080192a4();
+        results_init_score_handler();
     }
 
     gameplay_get_cue_info(&cue, (void**)&info);
@@ -320,7 +320,7 @@ void drum_lessons_update_lesson(void) {
         if (D_03004afc & A_BUTTON) {
             gDrumLessonsInfo->unk45C = 0;
             play_sound((void *)0x08a9db84);
-            pause_beatscript_scene(FALSE);
+            set_pause_beatscript_scene(FALSE);
         }
     }
     func_08027d08();
@@ -379,7 +379,7 @@ void drum_lessons_get_score(void) {
     s32 sVar; // value of a static variable in Medal Corner code
 
     num[1] = '\0';
-    score = func_0801a060();
+    score = results_calculate_final_score();
     rank = func_08027fc8(score);
     digit1 = score % 10;
     score /= 10;
@@ -413,7 +413,7 @@ void drum_lessons_get_score(void) {
     drum_lessons_set_dialogue(resultsText);
     set_beatscript_tempo(150);
     scene_set_music(drum_lessons_rank_sfx[rank]);
-    pause_beatscript_scene(TRUE);
+    set_pause_beatscript_scene(TRUE);
 
     gDrumLessonsInfo->unk45C = 1;
     func_0804d8f8(D_03005380, gDrumLessonsInfo->lessonRankSprite, drum_lessons_rank_anim[rank], 0, 1, 0, 0);
@@ -771,7 +771,7 @@ void drum_studio_select_button_exit(void) {
     } else {
         gDrumLessonsInfo->unk3CD = 0;
         key_rec_set_mode(0, 0x3ff, 0, 0);
-        pause_beatscript_scene(FALSE);
+        set_pause_beatscript_scene(FALSE);
         func_0801d968(D_089e2ad4);
     }
 
@@ -1022,7 +1022,7 @@ s32 drum_studio_cannot_save_replay(void) {
 void drum_studio_show_save_options(void) {
     if (gDrumLessonsInfo->version == ENGINE_VER_DRUM_STUDIO_PLAY) {
         if (!drum_studio_cannot_save_replay()) {
-            pause_beatscript_scene(TRUE);
+            set_pause_beatscript_scene(TRUE);
             text_printer_set_string(gDrumLessonsInfo->replayTextPrinter, D_0805a3a0);
             gDrumLessonsInfo->saveOptionsDelayTime = (gDrumLessonsInfo->replayData->songID == STUDIO_SONG_SILENCE) ? 15 : 60;
             gDrumLessonsInfo->state = DRUM_STUDIO_STATE_SAVING_REPLAY;
@@ -1081,7 +1081,7 @@ void drum_studio_update_save_options(void) {
             }
             func_0804d770(D_03005380, gDrumLessonsInfo->replaySaveOptionSprite, FALSE);
             text_printer_clear(gDrumLessonsInfo->replayTextPrinter);
-            pause_beatscript_scene(FALSE);
+            set_pause_beatscript_scene(FALSE);
             gDrumLessonsInfo->state = DRUM_STUDIO_STATE_INACTIVE;
         }
     }

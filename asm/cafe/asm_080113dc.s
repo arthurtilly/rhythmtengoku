@@ -11,7 +11,7 @@ thumb_func_start func_080113dc \n\
 /* 080113ea */ LSRS R0, R0, 0x10 \n\
 /* 080113ec */ LDR R1, =cafe_buffered_textures \n\
 /* 080113ee */ BL func_080087b4 \n\
-/* 080113f2 */ LDR R1, =pause_beatscript_scene \n\
+/* 080113f2 */ LDR R1, =set_pause_beatscript_scene \n\
 /* 080113f4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080113f6 */ BL run_func_after_task \n\
 /* 080113fa */ POP {R0} \n\

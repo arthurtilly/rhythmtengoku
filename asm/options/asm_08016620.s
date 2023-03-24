@@ -252,7 +252,7 @@ branch_08016824: \n\
 /* 08016830 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08016832 */ BL func_080006d0 \n\
 /* 08016836 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08016838 */ BL pause_beatscript_scene \n\
+/* 08016838 */ BL set_pause_beatscript_scene \n\
 /* 0801683c */ LDR R0, [R4] \n\
 /* 0801683e */ STR R5, [R0, 0x10] \n\
 /* 08016840 */ LDR R0, =s_menu_cancel3_seqData \n\

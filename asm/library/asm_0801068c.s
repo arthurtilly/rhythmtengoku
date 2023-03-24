@@ -90,7 +90,7 @@ branch_08010738: \n\
  \n\
 branch_08010740: \n\
 /* 08010740 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08010742 */ BL pause_beatscript_scene \n\
+/* 08010742 */ BL set_pause_beatscript_scene \n\
 /* 08010746 */ LDR R0, =D_030046a4 \n\
 /* 08010748 */ LDR R1, [R0] \n\
 /* 0801074a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

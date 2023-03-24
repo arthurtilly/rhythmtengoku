@@ -50,7 +50,7 @@ void func_08012438(void) {
 
     func_0800c604(0);
     task = func_080087b4(get_current_mem_id(), main_menu_buffered_textures);
-    run_func_after_task(task, pause_beatscript_scene, FALSE);
+    run_func_after_task(task, set_pause_beatscript_scene, FALSE);
 }
 
 
@@ -158,7 +158,7 @@ void func_080125fc(u32 unused) {
                     gMainMenuInfo->loadingOptionsMenu = TRUE;
                     break;
             }
-            pause_beatscript_scene(FALSE);
+            set_pause_beatscript_scene(FALSE);
             gMainMenuInfo->screenReady = FALSE;
             play_sound(&s_menu_kettei1_seqData);
         }

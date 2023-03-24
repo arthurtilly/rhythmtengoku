@@ -5,8 +5,8 @@
 
 // Scene Types:
 struct ResultsSceneInfo {
-    struct BitmapFontBG *textObj2;
-    struct BitmapFontOBJ *textObj1;
+    struct BitmapFontBG *bgFont;
+    struct BitmapFontOBJ *objFont;
     u32 awaitingInput;
     u8 finalResultLevel;
     s16 placeholderIcon;
@@ -16,7 +16,7 @@ struct ResultsSceneInfo {
     u16 commentSprites[3];
     u32 null1C;
     u32 null20;
-    u8 unk24;
+    u8 currentLine;
     u8 null25;
     char negativeCommentsText[0x100];
     u8 medalObtained;
@@ -114,56 +114,56 @@ extern const char *results_ok_comment_pool[];
 
 
 // Functions:
-// extern ? func_080188b4(?); // DEBUG Init. Static Variables
-// extern ? func_080188b8(?); // DEBUG Graphics Init. 3
-// extern ? func_080188e4(?); // DEBUG Graphics Init. 2
-// extern ? func_08018914(?); // DEBUG Graphics Init. 1
-// extern ? func_08018934(?); // DEBUG Scene Start
-// extern ? func_080189b0(?); // DEBUG Scene Update (Paused)
-// extern ? func_080189b4(?); // DEBUG Scene Update (Active)
-// extern ? func_080189f4(?); // DEBUG ?
-// extern ? func_08018a10(?); // DEBUG Scene Stop
+extern void results_scene_init_static_var(void); // DEBUG Init. Static Variables
+extern void results_scene_init_gfx3(void); // DEBUG Graphics Init. 3
+extern void results_scene_init_gfx2(void); // DEBUG Graphics Init. 2
+extern void results_scene_init_gfx1(void); // DEBUG Graphics Init. 1
+extern void results_scene_start(void *sceneParam, s32 startParam); // DEBUG Scene Start
+extern void results_scene_paused(void *sceneParam, s32 pausedParam); // DEBUG Scene Update (Paused)
+extern void results_scene_update(void *sceneParam, s32 updateParam); // DEBUG Scene Update (Active)
+extern u32 results_scene_inputs_enabled(void); // DEBUG Scene Is Ready
+extern void results_scene_stop(void *sceneParam, s32 stopParam); // DEBUG Scene Stop
 
-extern void func_08018a20(void); // RANK Init. Static Variables
-extern void func_08018a24(void); // RANK Graphics Init. 3
-extern void func_08018a50(void); // RANK Graphics Init. 2
-extern void func_08018a80(void); // RANK Graphics Init. 1
-extern void func_08018aa0(s32); // RANK Scene Start
-extern void func_08018b9c(s32); // RANK Scene Update (Paused)
-extern void func_08018ba0(s32); // RANK Scene Update (Active)
-extern void func_08018be0(s32); // RANK Scene Stop
-extern void func_08018bf0(void); // RANK Display Header Text (Script Function)
-extern void func_08018cc8(void); // RANK Display Result Icon (Script Function)
-extern void func_08018d68(void); // RANK Play Music (Script Function)
-extern void func_08018d9c(void); // RANK Display Positive Reinforcement (Script Function)
+extern void rank_results_scene_init_static_var(void); // RANK Init. Static Variables
+extern void rank_results_scene_init_gfx3(void); // RANK Graphics Init. 3
+extern void rank_results_scene_init_gfx2(void); // RANK Graphics Init. 2
+extern void rank_results_scene_init_gfx1(void); // RANK Graphics Init. 1
+extern void rank_results_scene_start(void *sceneParam, s32 startParam); // RANK Scene Start
+extern void rank_results_scene_paused(void *sceneParam, s32 pausedParam); // RANK Scene Update (Paused)
+extern void rank_results_scene_update(void *sceneParam, s32 updateParam); // RANK Scene Update (Active)
+extern void rank_results_scene_stop(void *sceneParam, s32 stopParam); // RANK Scene Stop
+extern void rank_results_display_header(void);
+extern void rank_results_display_rank(void);
+extern void rank_results_play_bgm(void);
+extern void rank_results_append_encouragement(void);
 
-// extern ? func_08018e60(?); // SCORE Init. Static Variables
-// extern ? func_08018e74(?); // SCORE Graphics Init. 4
-// extern ? func_08018e94(?); // SCORE Graphics Init. 3
-// extern ? func_08018ec0(?); // SCORE Graphics Init. 2
-// extern ? func_08018ef0(?); // SCORE Graphics Init. 1
-// extern ? func_08018f10(?); // SCORE Scene Start
-// extern ? func_0801911c(?); // SCORE Import Criteria/Data? (Script Function)
-// extern ? func_08019128(?); // SCORE Import Text? (Script Function)
-// extern ? func_08019134(?); // SCORE Scene Update (Paused)
-// extern ? func_08019138(?); // SCORE Scene Update (Active)
-// extern ? func_08019178(?); // SCORE Scene Stop
-// extern ? func_08019188(?); // SCORE ? (Script Function)
+extern void score_results_scene_init_static_var(void); // SCORE Init. Static Variables
+extern void score_results_scene_init_gfx4(void); // SCORE Graphics Init. 4
+extern void score_results_scene_init_gfx3(void); // SCORE Graphics Init. 3
+extern void score_results_scene_init_gfx2(void); // SCORE Graphics Init. 2
+extern void score_results_scene_init_gfx1(void); // SCORE Graphics Init. 1
+extern void score_results_scene_start(void *sceneParam, s32 startParam); // SCORE Scene Start
+// extern ? func_0801911c(?); // SCORE Import Criteria/Data? (Script Event)
+// extern ? func_08019128(?); // SCORE Import Text? (Script Event)
+extern void score_results_scene_paused(void *sceneParam, s32 pausedParam); // SCORE Scene Update (Paused)
+extern void score_results_scene_update(void *sceneParam, s32 updateParam); // SCORE Scene Update (Active)
+extern void score_results_scene_stop(void *sceneParam, s32 stopParam); // SCORE Scene Stop
+// extern ? func_08019188(?); // SCORE ? (Script Event)
 
-extern void func_080191ac(u32 updateSave); // Set D_03001540
-extern u32 func_080191b8(void); // Return TRUE
-extern void func_080191bc(u32 level); // Save Result
-extern struct Animation *func_08019210(const char *, u32, u32); // Get Animation for Text
-extern void func_08019268(struct InputScoreTracker *); // Initialise Any-Input Trackers
-extern void func_08019278(void); // Initialise Cue Input Trackers and Marking Criteria
-extern void func_080192a4(void); // Initialise Score Handler
-extern void func_08019304(const struct MarkingCriteria **); // Import Criteria (Script Function)
-extern void func_08019310(char *); // Set Header Text (Script Function)
-extern void func_08019324(u32 assess); // Assess Inputs (Script Function)
-extern u32 func_08019340(void); // Check if Assessing Inputs
-extern void func_08019350(u32 criterion, u32 level, s32 offset); // Register Input
-extern void func_08019420(u32 criterion, u32 level, s32 offset); // Register Input for Cue
-extern void func_08019480(struct InputScoreTracker *); // Calculate Input Averages
+extern void results_set_enable_save(u32 updateSave);
+extern u32 func_080191b8(void); // Return TRUE (used in the Perfect Certificate scene)
+extern void results_save_to_cart(u32 levelState);
+extern struct Animation *results_get_comment_anim(const char *comment, u32 anchor, u32 colors);
+extern void results_init_tracker(struct InputScoreTracker *);
+extern void results_init_cue_tracking(void);
+extern void results_init_score_handler(void);
+extern void results_import_marking_criteria(const struct MarkingCriteria **);
+extern void results_set_header(char *headerText);
+extern void results_enable_input_tracking(u32 assess);
+extern u32 results_tracking_is_enabled(void);
+extern void results_register_input(u32 criterion, u32 level, s32 offset);
+extern void results_register_cue_input(u32 criterion, u32 level, s32 offset);
+extern void results_tracker_calculate_averages(struct InputScoreTracker *);
 // extern ? func_080194e8(?);
 // extern ? func_08019554(?);
 extern u32 func_08019698(void);
@@ -176,8 +176,8 @@ extern u32 func_08019878(void);
 extern u32 func_080198b0(void);
 extern u32 func_080198e8(void);
 // extern ? func_080198f8(?); // DEBUG ? (Script Function)
-extern u32 func_08019a80(void); // Prepare Negative Comments
-extern u32 func_08019bec(void); // Prepare Positive Comments
-extern void func_08019d9c(void); // Display Comments
-extern void func_08019ee0(void); // LEVEL Display Comments (Script Function)
-extern u32 func_0801a060(void); // Calculate Final Score
+extern u32 results_get_negative_comments(void);
+extern s24_8 results_get_positive_comments(void);
+extern void results_render_comments(void);
+extern void results_publish_comments(void);
+extern u32 results_calculate_final_score(void);

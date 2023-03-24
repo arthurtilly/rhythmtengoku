@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08018f10 \n\
+thumb_func_start score_results_scene_start \n\
 /* 08018f10 */ PUSH {R4-R7, LR} \n\
 /* 08018f12 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 08018f14 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -41,8 +41,8 @@ thumb_func_start func_08018f10 \n\
 /* 08018f62 */ LDR R2, =D_030046a4 \n\
 /* 08018f64 */ LDR R1, [R2] \n\
 /* 08018f66 */ STR R0, [R1, 0x4] \n\
-/* 08018f68 */ BL func_08018ef0 \n\
-/* 08018f6c */ BL func_0801a060 \n\
+/* 08018f68 */ BL score_results_scene_init_gfx1 \n\
+/* 08018f6c */ BL results_calculate_final_score \n\
 /* 08018f70 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08018f72 */ LDR R0, =D_03005380 \n\
 /* 08018f74 */ MOV R9, R0 @ Set R9 to R0 \n\

@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08018e60 \n\
+thumb_func_start score_results_scene_init_static_var \n\
 /* 08018e60 */ LDR R0, =D_03001330 \n\
 /* 08018e62 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08018e64 */ STR R1, [R0] \n\

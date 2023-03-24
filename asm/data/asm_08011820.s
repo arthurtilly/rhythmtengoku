@@ -34,7 +34,7 @@ thumb_func_start func_08011820 \n\
 /* 0801185e */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08011860 */ BL strcat \n\
 /* 08011864 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
-/* 08011866 */ BL func_080141d8 \n\
+/* 08011866 */ BL game_select_get_level_name \n\
 /* 0801186a */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801186c */ MOV R0, SP @ Set R0 to SP \n\
 /* 0801186e */ BL strcat \n\

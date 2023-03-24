@@ -46,7 +46,7 @@ thumb_func_start func_08027bd8 \n\
 /* 08027c2e */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08027c30 */ STRB R1, [R0] \n\
 /* 08027c32 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 08027c34 */ BL pause_beatscript_scene \n\
+/* 08027c34 */ BL set_pause_beatscript_scene \n\
 /* 08027c38 */ ADD SP, 0x4 \n\
 /* 08027c3a */ POP {R3} \n\
 /* 08027c3c */ MOV R8, R3 @ Set R8 to R3 \n\

@@ -23,7 +23,7 @@ thumb_func_start mannequin_engine_update \n\
 /* 08023068 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0802306a */ BEQ branch_0802307a \n\
 /* 0802306c */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0802306e */ BL pause_beatscript_scene \n\
+/* 0802306e */ BL set_pause_beatscript_scene \n\
 /* 08023072 */ LDR R0, [R5] \n\
 /* 08023074 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 08023076 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\

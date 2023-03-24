@@ -16,7 +16,7 @@ extern void beatscript_exit_loop_after_one_beat(void); // Exit Loop After One Be
 extern void beatscript_force_exit_loop(void); // Exit Loop (If Within a Loop)
 extern void beatscript_disable_loops(void); // Force Stop Loop
 extern void beatscript_force_exit_loop_next_update(void); // Exit Loop on Next Update
-extern void pause_beatscript_scene(u32); // Pause Script
+extern void set_pause_beatscript_scene(u32); // Pause Script
 extern u32 beatscript_scene_is_paused(void); // Check if Beatscript Handler Is Paused
 extern void stop_beatscript_scene(void); // Beatscript Engine Force Quit
 extern void set_beatscript_tempo(u16 tempo); // Set Script Tempo
@@ -131,7 +131,7 @@ extern void scene_hide_bg_layer(s32 layer); // VIDEO - Hide BG Layer
 extern void scene_set_bg_layer_pos(s32 layer, s16 x, s16 y); // VIDEO - Set BG Layer Position
 extern void scene_set_bg_layer_controls(s32 layer, s32 tileset, s32 map, s32 priority); // VIDEO - Set BG Layer Render Data
 extern void scene_set_bg_layer_priority(s32 layer, s32 priority); // VIDEO - Set BG Layer Priority
-extern void scene_set_bg_layer_display(s32 layer, s32 show, s32 x, s32 y, s32 tileset, s32 map, s32 priority); // VIDEO - Set BG Layer Controls
+extern void scene_set_bg_layer_display(s32 layer, s32 show, s32 x, s32 y, s32 tileset, s32 map, s32 params); // VIDEO - Set BG Layer Controls
 extern void scene_show_obj_layer(void); // VIDEO - Display OBJ Layer
 extern void scene_hide_obj_layer(void); // VIDEO - Hide OBJ Layer
 extern void scene_enable_obj_windows(void); // Enable OBJ Windows

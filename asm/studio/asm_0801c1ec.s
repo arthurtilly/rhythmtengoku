@@ -26,7 +26,7 @@ thumb_func_start func_0801c1ec \n\
 /* 0801c21a */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 0801c21c */ BL func_08011e74 \n\
 /* 0801c220 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801c222 */ BL pause_beatscript_scene \n\
+/* 0801c222 */ BL set_pause_beatscript_scene \n\
 /* 0801c226 */ POP {R4, R5} \n\
 /* 0801c228 */ POP {R0} \n\
 /* 0801c22a */ BX R0 \n\

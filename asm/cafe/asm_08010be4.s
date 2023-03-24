@@ -266,7 +266,7 @@ branch_08010e04: \n\
  \n\
 branch_08010e14: \n\
 /* 08010e14 */ LDRB R0, [R6] \n\
-/* 08010e16 */ BL func_080141d8 \n\
+/* 08010e16 */ BL game_select_get_level_name \n\
 /* 08010e1a */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08010e1c */ B branch_08010e5c \n\
 \n\

@@ -89,7 +89,7 @@ void gameplay_init_gfx1(void) {
     u32 data;
 
     data = func_080087b4(0, gameplay_common_buffered_textures);
-    run_func_after_task(data, pause_beatscript_scene, FALSE);
+    run_func_after_task(data, set_pause_beatscript_scene, FALSE);
 }
 
 
@@ -103,8 +103,8 @@ void gameplay_start_scene(s32 unused) {
     gameplay_set_text_printer(NULL);
     gGameplayInfo->gameEngine = NULL;
     gameplay_init_cues();
-    func_08019324(FALSE); // Disable input assessment.
-    func_080192a4(); // Reset results handler.
+    results_enable_input_tracking(FALSE);
+    results_init_score_handler();
     gGameplayInfo->mercyEnabled = TRUE;
     gGameplayInfo->forgivableMisses = 0;
     gGameplayInfo->playInputsEnabled = FALSE;
@@ -372,7 +372,7 @@ void gameplay_display_skip_icon(u32 corner) {
 void gameplay_skip_tutorial(void) {
     func_0804e0f0(D_03005380, get_current_mem_id(), 1);
     task_pool_pause_id(get_current_mem_id(), TRUE);
-    pause_beatscript_scene(FALSE);
+    set_pause_beatscript_scene(FALSE);
     func_0801d968(D_089cfda4);
     func_0801db04(FALSE);
     gGameplayInfo->skippingTutorial = TRUE;
@@ -603,9 +603,9 @@ void gameplay_add_cue_result(u32 markingCriteria, u32 cueResult, s32 timingOffse
     }
 
     // Results
-    func_08019350(0, cueResult, timingOffset);
+    results_register_input(0, cueResult, timingOffset);
     if (!noCue) {
-        func_08019420(markingCriteria, cueResult, timingOffset);
+        results_register_cue_input(markingCriteria, cueResult, timingOffset);
     }
 
     // Perfect Campaign
@@ -1249,7 +1249,7 @@ void gameplay_display_text_and_wait(void) {
     gGameplayInfo->textButtonPressFilter = gGameplayInfo->buttonPressFilter;
     gGameplayInfo->textButtonReleaseFilter = gGameplayInfo->buttonReleaseFilter;
     gameplay_set_input_buttons(0, 0);
-    pause_beatscript_scene(TRUE);
+    set_pause_beatscript_scene(TRUE);
     gGameplayInfo->pausedAtTextBox = TRUE;
 }
 
@@ -1276,7 +1276,7 @@ void gameplay_update_text(void) {
         gameplay_display_text_advance_icon(0, 0, FALSE); // Hide A Button Prompt
         play_sound(&s_f_send_mes_seqData);
         gameplay_set_input_buttons(gGameplayInfo->textButtonPressFilter, gGameplayInfo->textButtonReleaseFilter);
-        pause_beatscript_scene(FALSE);
+        set_pause_beatscript_scene(FALSE);
         gGameplayInfo->pausedAtTextBox = FALSE;
     }
 }

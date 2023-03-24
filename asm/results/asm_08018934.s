@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08018934 \n\
+thumb_func_start results_scene_start \n\
 /* 08018934 */ PUSH {R4, LR} \n\
 /* 08018936 */ SUB SP, 0x4 \n\
 /* 08018938 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
@@ -34,7 +34,7 @@ thumb_func_start func_08018934 \n\
 /* 08018976 */ LDR R3, =D_0300558c \n\
 /* 08018978 */ LDR R3, [R3] \n\
 /* 0801897a */ BL import_all_scene_objects \n\
-/* 0801897e */ BL func_08018914 \n\
+/* 0801897e */ BL results_scene_init_gfx1 \n\
 /* 08018982 */ LDR R1, [R4] \n\
 /* 08018984 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08018986 */ STR R0, [R1, 0x8] \n\
