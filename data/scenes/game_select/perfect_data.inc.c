@@ -2,7 +2,7 @@
 #include "src/scenes/reading.h"
 
 // [D_089cdf24] Perfect Campaign Gifts
-struct CampaignGiftData campaign_gifts_table[] = {
+struct CampaignGiftData campaign_gifts_table[TOTAL_PERFECT_CAMPAIGNS] = {
     /* REMIX1 */ {
         /* Grid Pos. */ 2, 6,
         /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
@@ -247,7 +247,7 @@ struct CampaignGiftData campaign_gifts_table[] = {
 
 
 // [D_089ce0a4] Perfect Campaign Border Sprites
-struct Animation *campaign_icon_borders[] = {
+struct Animation *campaign_icon_borders[MAX_PERFECT_ATTEMPTS] = {
     /* Attempt 3 */ anim_game_select_border_perfect1,
     /* Attempt 2 */ anim_game_select_border_perfect2,
     /* Attempt 1 */ anim_game_select_border_perfect3

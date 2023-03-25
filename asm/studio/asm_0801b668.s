@@ -25,7 +25,7 @@ branch_0801b676: \n\
 /* 0801b68c */ STRB R0, [R1] \n\
 /* 0801b68e */ LDR R0, [R5] \n\
 /* 0801b690 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
-/* 0801b692 */ LDR R1, =text_studio_kit_formatting \n\
+/* 0801b692 */ LDR R1, =text_studio_kit_pad_8px \n\
 /* 0801b694 */ BL strcat \n\
 /* 0801b698 */ LDR R0, =D_030046a8 \n\
 /* 0801b69a */ LDR R0, [R0] \n\

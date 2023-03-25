@@ -129,7 +129,7 @@ glabel D_08061704
 @ Dialogue
 glabel D_08061740
 .ascii "\n"
-.ascii "Aボタンと\x8f\x5c字ボタンの左、\n"
+.ascii "Aボタンと十\字ボタンの左、\n"
 .ascii "どちらでもスネアドラムを\n"
 .asciz "たたくことができるヨ！"
 .balign 4, 0

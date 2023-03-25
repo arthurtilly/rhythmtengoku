@@ -2,6 +2,15 @@
 
 #include "global.h"
 
+
+// Perfect Campaign activity/availability states.
+enum CampaignStatesEnum {
+    /* 00 */ CAMPAIGN_STATE_INACTIVE,
+    /* 01 */ CAMPAIGN_STATE_AVAILABLE,
+    /* 02 */ CAMPAIGN_STATE_ACTIVE
+};
+
+
 // Types of Perfect Campaign gifts.
 enum CampaignGiftTypesEnum {
     /* 00 */ CAMPAIGN_GIFT_SONG,
@@ -11,7 +20,7 @@ enum CampaignGiftTypesEnum {
 };
 
 
-// Indexes for All Perfect Campaigns
+// Indexes for all Perfect Campaigns.
 enum PerfectCampaignsEnum {
     /* -- */ CAMPAIGN_NULL = -1,
 
@@ -69,26 +78,43 @@ enum PerfectCampaignsEnum {
 };
 
 
-// Default score for levels
+// Total standard games and remixes, i.e. those within the main campaign.
+#define TOTAL_RHYTHM_GAMES ((u32)TOTAL_PERFECT_CAMPAIGNS)
+
+
+// Total Medals to collect.
+#define MAX_MEDALS TOTAL_RHYTHM_GAMES
+
+
+// Default score for Levels.
 #define DEFAULT_LEVEL_SCORE ((u16)-1)
 
 
+// Maximum score for Levels.
+#define MAX_LEVEL_SCORE 1000
+
+
+// Types of Levels, relevant to scene transitions and icon borders.
 enum LevelTypesEnum {
     /* 00 */ LEVEL_TYPE_GAME,
     /* 01 */ LEVEL_TYPE_REMIX,
     /* 02 */ LEVEL_TYPE_BONUS
 };
 
+
+// Level unlock/clear states. Note that Perfects are saved separately.
 enum LevelCompletionStatesEnum {
     /* -- */ LEVEL_STATE_NULL = -1,
     /* 00 */ LEVEL_STATE_HIDDEN,
-    /* 01 */ LEVEL_STATE_INVALID,
+    /* 01 */ LEVEL_STATE_APPEARING,
     /* 02 */ LEVEL_STATE_CLOSED,
-    /* 03 */ LEVEL_STATE_UNCLEARED,
+    /* 03 */ LEVEL_STATE_OPEN,
     /* 04 */ LEVEL_STATE_CLEARED,
-    /* 05 */ LEVEL_STATE_MEDAL_OBTAINED
+    /* 05 */ LEVEL_STATE_HAS_MEDAL
 };
 
+
+// Indexes for all Levels.
 enum RhythmGameLevelsEnum {
     /* -- */ LEVEL_NULL = -1,
     /* 00 */ LEVEL_KARATE_MAN,

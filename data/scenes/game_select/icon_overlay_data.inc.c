@@ -182,8 +182,8 @@ u8 *level_icon_overlays_map[] = {
 };
 
 
-// [D_089cfab8] Task
-struct TaskMethods D_089cfab8 = {
+// [D_089cfab8] Level Icon Overlay Animator Task
+struct TaskMethods level_icon_overlay_animator_task = {
     (TaskStartFunc)game_select_init_icon_animator,
     NULL,
     (TaskUpdateFunc)game_select_update_icon_animator,

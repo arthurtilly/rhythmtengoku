@@ -45,8 +45,8 @@ extern const struct Beatscript D_089dbe28[];
 extern const struct Beatscript D_089dad6c[];
 
 
-// Song Title Formatting
-const char text_studio_song_formatting[] = "\4" "14.";
+// Song Title Padding
+const char text_studio_song_pad_14px[] = "\4" "14" ".";
 
 
 // [D_089d81b4] Studio Song Entries

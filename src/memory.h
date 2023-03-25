@@ -18,10 +18,10 @@ extern struct SaveBuffer {
         s8 gsCursorX, gsCursorY;
         s8 recentLevelX, recentLevelY;
         s8 recentLevelState;
-        u8 gameSelectUnk5;
-        u8 levelStates[55];
+        u8 recentLevelClearedByBarista;
+        u8 levelStates[TOTAL_LEVELS];
         u16 recentLevelScore;
-        u16 levelScores[55];
+        u16 levelScores[TOTAL_LEVELS];
         u16 currentFlow;
         u16 unkB0;
         u8 unkB2; // relates to studio
@@ -31,13 +31,13 @@ extern struct SaveBuffer {
             s8 saveID;
             u8 drumKitID;
             u8 unk3;
-        } drumReplayData[55];
-        u8 unk190[55]; // number of plays?
-        u8 unk1C7[55];
-        u8 unk1FE[55];
+        } drumReplayData[TOTAL_LEVELS];
+        u8 unk190[TOTAL_LEVELS]; // number of plays?
+        u8 unk1C7[TOTAL_LEVELS];
+        u8 unk1FE[TOTAL_LEVELS];
         u8 unk235;
-        u8 campaignsCleared[48];
-        u8 unk266;
+        u8 campaignsCleared[TOTAL_PERFECT_CAMPAIGNS];
+        u8 campaignState;
         u8 campaignAttemptsLeft;
         u8 playsUntilNextCampaign;
         u8 currentCampaign;
@@ -48,7 +48,6 @@ extern struct SaveBuffer {
         u8 unk28F;
         u8 unk290;
         u8 unk291;
-        u8 padding292[0x2];
         u32 unk294[16];
         /*
             u32 highScoreMrUpbeat;

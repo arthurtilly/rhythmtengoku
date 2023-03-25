@@ -21,7 +21,7 @@ const char D_0805b530[] = "ムダ毛　チェック";
 
 const char D_0805b544[] = "ようこそ。";
 
-const char D_0805b550[] = "Ａボタン、または" SHIFT_JIS_KANJI_JUU "字ボタンで　毛をぬいてネ！";
+const char D_0805b550[] = "Ａボタン、または十\字ボタンで　毛をぬいてネ！";
 
 const char D_0805b580[] = "\x05\x30" "\x01\x34" "\x03\x31" "\x01\x6d" "ＯＫ";
 

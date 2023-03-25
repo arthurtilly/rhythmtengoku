@@ -1,5 +1,6 @@
 #include "global.h"
 #include "graphics.h"
+#include "text.h"
 #include "src/scenes/reading.h"
 #include "graphics/data_room/data_room_graphics.h"
 

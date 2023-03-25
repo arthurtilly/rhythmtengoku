@@ -33,33 +33,40 @@ void reset_game_save_data(void) {
     data->recentLevelX = 2;
     data->recentLevelY = 11;
     data->recentLevelState = LEVEL_STATE_NULL;
-    data->gameSelectUnk5 = 0;
+    data->recentLevelClearedByBarista = FALSE;
     data->currentFlow = 0;
     data->unkB0 = 0;
     data->recentLevelScore = DEFAULT_LEVEL_SCORE;
 
-    for (i = 0; i < 55; i++) {
+    for (i = 0; i < TOTAL_LEVELS; i++) {
         data->levelStates[i] = LEVEL_STATE_HIDDEN;
-        data->levelScores[i] = -1;
+        data->levelScores[i] = DEFAULT_LEVEL_SCORE;
     }
+
     func_0801ad9c(); // studio-related
-    for (i = 0; i < 55; i++) {
+
+    for (i = 0; i < TOTAL_LEVELS; i++) {
         data->unk190[i] = 0; // number of attempts?
         data->unk1C7[i] = 0;
         data->unk1FE[i] = 0;
     }
+
     reset_all_replay_save_data(&data->drumReplaysAlloc);
     data->unk235 = 0;
-    for (i = 0; i < 48; i++) {
+
+    for (i = 0; i < TOTAL_PERFECT_CAMPAIGNS; i++) {
         data->campaignsCleared[i] = FALSE;
     }
-    data->unk266 = 0;
+    data->campaignState = CAMPAIGN_STATE_INACTIVE;
+
     for (i = 0; i < 20; i++) {
         data->readingMaterialUnlocked[i] = FALSE;
     }
+
     for (i = 0; i < 15; i++) {
         data->drumKitsUnlocked[i] = FALSE;
     }
+
     data->totalMedals = 0;
     data->unk28F = 1;
     data->unk290 = 2;
@@ -68,13 +75,14 @@ void reset_game_save_data(void) {
     for (i = 0; i < 16; i++) {
         data->unk294[i] = 0;
     }
+
     D_030046a8->data.unk294[0] = 5;     // High Score - Mr. Upbeat
     D_030046a8->data.unk294[1] = 50;    // High Score - Mannequin Factory
     D_030046a8->data.unk294[2] = 100;   // High Score - Sick Beats SP
     D_030046a8->data.unk294[3] = 10;    // High Score - Quiz Show EX
     D_030046a8->data.unk294[8] = DIRECTSOUND_MODE_STEREO; // Sound Mode
 
-    data->levelStates[LEVEL_KARATE_MAN] = LEVEL_STATE_UNCLEARED;
+    data->levelStates[LEVEL_KARATE_MAN] = LEVEL_STATE_OPEN;
     data->levelStates[LEVEL_CLAPPY_TRIO] = LEVEL_STATE_CLOSED;
     data->levelStates[LEVEL_SPACEBALL] = LEVEL_STATE_CLOSED;
     data->levelStates[LEVEL_RHYTHM_TWEEZERS] = LEVEL_STATE_CLOSED;

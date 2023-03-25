@@ -793,10 +793,10 @@ void results_publish_comments(void) {
     if (averageCriteriaSucceeded == INT_TO_FIXED(1.0)) {
         gResultsInfo->finalResultLevel = RESULTS_RANK_SUPERB;
         func_0804cebc(D_03005380, gResultsInfo->resultIcon, RESULT_ICON_SUPERB);
-        results_save_to_cart(LEVEL_STATE_MEDAL_OBTAINED);
+        results_save_to_cart(LEVEL_STATE_HAS_MEDAL);
 
         previousResult = get_level_state_from_grid_xy(D_030046a8->data.recentLevelX, D_030046a8->data.recentLevelY);
-        if (previousResult < LEVEL_STATE_MEDAL_OBTAINED) {
+        if (previousResult < LEVEL_STATE_HAS_MEDAL) {
             gResultsInfo->medalObtained = TRUE;
         }
     }
@@ -839,7 +839,7 @@ u32 results_calculate_final_score(void) {
     }
 
     if (maxPoints != 0) {
-        return 1000 * result / maxResult;
+        return MAX_LEVEL_SCORE * result / maxResult;
     }
 
     return 0;

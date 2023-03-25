@@ -30,7 +30,7 @@ branch_0801af84: \n\
 /* 0801af90 */ MOVS R1, 0xE3 @ Set R1 to 0xE3 \n\
 /* 0801af92 */ LSLS R1, R1, 0x2 \n\
 /* 0801af94 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
-/* 0801af96 */ LDR R1, =text_studio_song_formatting \n\
+/* 0801af96 */ LDR R1, =text_studio_song_pad_14px \n\
 /* 0801af98 */ MOVS R2, 0x5 @ Set R2 to 0x5 \n\
 /* 0801af9a */ BL memcpy \n\
 /* 0801af9e */ LSLS R1, R4, 0x2 \n\

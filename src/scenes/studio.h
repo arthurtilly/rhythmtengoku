@@ -87,11 +87,11 @@ enum StudioDrumKitsEnum {
 
 
 // Scene Data:
-extern const char text_studio_song_formatting[];
+extern const char text_studio_song_pad_14px[];
 extern struct StudioEntry studio_song_table[];
 extern const char *studio_drum_kit_names[];
 extern const char text_studio_kit_default[];
-extern const char text_studio_kit_formatting[];
+extern const char text_studio_kit_pad_8px[];
 extern const char text_studio_kit_not_unlocked[];
 extern const char *studio_mem_warnings_text[];
 extern const char **studio_options_text[];

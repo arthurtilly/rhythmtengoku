@@ -1,7 +1,8 @@
 #include "level_data.h"
+#include "text.h"
 
 // Level Data
-struct LevelData level_data_table[] = {
+struct LevelData level_data_table[TOTAL_LEVELS] = {
     /* KARATE_MAN */ {
         /* Entry Scene   */ &D_089cfed0,
         /* Level Name    */ "カラテ家",
@@ -68,7 +69,7 @@ struct LevelData level_data_table[] = {
     /* POLYRHYTHM */ {
         /* Entry Scene   */ &D_089d0358,
         /* Level Name    */ "ポリリズム",
-        /* Level Desc.   */ "十\\字ボタンとＡボタンの同時押しをマスターだ！けっこうカンタンだ。たぶん…",
+        /* Level Desc.   */ "十\字ボタンとＡボタンの同時押しをマスターだ！けっこうカンタンだ。たぶん…",
         /* Level Icon    */ 3,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_polyrhythm_gfx_tables,
@@ -209,7 +210,7 @@ struct LevelData level_data_table[] = {
         /* Entry Scene   */ &D_089d1068,
         /* Level Name    */ "忍者",
         /* Level Desc.   */ "敵襲(てきしゅう)だ！\n"
-                            "十\\字ボタンとAボタンで応戦(おうせん)だ！\n"
+                            "十\字ボタンとAボタンで応戦(おうせん)だ！\n"
                             "フジヤマ（ふじさん）！！",
         /* Level Icon    */ 5,
         /* Level Type    */ LEVEL_TYPE_GAME,
@@ -556,7 +557,7 @@ struct LevelData level_data_table[] = {
     /* COSMIC_DANCE */ {
         /* Entry Scene   */ &D_089d68f8,
         /* Level Name    */ "コスモダンス",
-        /* Level Desc.   */ "宇宙を代表\\する\n"
+        /* Level Desc.   */ "宇宙を代表\する\n"
                             "ダンサーたち！\n"
                             "キレた動きに\n"
                             "くぎづけです！！",

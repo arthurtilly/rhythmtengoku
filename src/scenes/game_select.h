@@ -11,18 +11,20 @@ struct GameSelectSceneInfo {
     u32 screenIsReady;
     u32 loadingSceneGfx:1;
     u32 hideStageTitle:1;
-    u16 nullA;
+    u32 unused8:30;
+
     /* [0x00C] Cursor */
     s16 selectionBorderSprite;
     s16 cursorSprite;
-    s8 cursorX; // { 1..9 }
-    s8 cursorY; // { 6..11 }
+    s8 cursorX, cursorY; // { 1..9 }, { 6..11 }
+
     /* [0x012] Stage Title Pane */
     s16 stageTitleText;
     s16 stageTitlePane;
     s16 stageTitleY;
     u16 unk18;
     u16 stageTitlePersistTime;
+
     /* [0x01C] BG Color Controls */
     struct ColorChanger {
         u8 state;
@@ -31,6 +33,7 @@ struct GameSelectSceneInfo {
         u16 timer;
         u16 target;
     } colorChangers[2];
+
     /* [0x034] Level Info Pane */
     s16 infoPaneName;
     struct TextPrinter *infoPaneDesc;
@@ -41,20 +44,23 @@ struct GameSelectSceneInfo {
     u8 infoPaneTask;
     struct LevelData *infoPaneLevelData;
     s16 infoPaneLevelID;
-    u16 null4A;
-    u16 null4C;
+    u16 unused4A;
+    u16 unused4C;
+
     /* [0x04E] BG Motion (Grid Pane) */
     u8 gridPaneIsMoving;
     s16 gridPaneX1, gridPaneY1;
     s16 gridPaneX2, gridPaneY2;
     u16 gridPaneMotionTime;
     u16 gridPaneMotionDecay;
+
     /* [0x05C] BG Motion (Info Pane) */
     u8 infoPaneIsMoving;
     s16 infoPaneX1, infoPaneY1;
     s16 infoPaneX2, infoPaneY2;
     u16 infoPaneMotionTime;
     u16 infoPaneMotionDecay;
+
     /* [0x06A] Squares */
     s16 squareSprites[50];
     struct Vector2 squareVectors[50];
@@ -69,20 +75,22 @@ struct GameSelectSceneInfo {
         s32 onFinishArg;
         u16 delay;
     } newLevelShadows[10];
-    /* [0x2D8] ? */
-    u8 unk2D8;
-    u8 unk2D9;
-    u8 unk2DA;
-    u8 unk2DB;
-    u8 unk2DC;
-    struct LevelStateData {
+
+    /* [0x2D8] Level Events */
+    u8 runningLevelEvents;
+    u8 levelEventTimer;
+    u8 totalLevelEventsQueued;
+    u8 levelEventDequeueID;
+    u8 levelEventEnqueueID;
+    struct QueuedLevelEvent {
         s8 x, y;
         s8 state;
-    } unk2E0[16];
-    u8 unk320;
-    const s8 *unk324;
-    s8 unk328;
-    s8 unk329;
+    } levelEventsQueue[16];
+    u8 levelEventPending;
+    const s8 *levelEventTargets;
+    s8 levelEventTargetX;
+    s8 levelEventTargetY;
+
     /* [0x32C] Flow Pane */
     struct FlowDisplay {
         s16 title;
@@ -94,6 +102,7 @@ struct GameSelectSceneInfo {
         u16 currentScore;
         u16 previousScore;
     } flowDisplay;
+
     /* [0x340] Campaign Notice */
     struct CampaignNotice {
         u8 hasNewCampaign;
@@ -105,29 +114,31 @@ struct GameSelectSceneInfo {
         struct TextPrinter *printer;
         s16 textAdvSprite;
         char text[0x100];
-        u8 null452;
-        u8 unk453;
-        u8 unk454[4];
+        u8 unused452;
+        u8 totalAvailable;
+        u8 indexes[48];
     } campaignNotice;
-    u32 null458;
-    u32 null45C;
-    u32 null460[32];
-    u32 null4E0;
-    u32 null4E4;
+    u8 unused484[100];
+
     /* [0x4E8] Medal Pane */
     s16 medalPaneTitle;
     s16 medalPaneDigit1;
     s16 medalPaneDigit2;
     u16 medalPaneFlickerTimer;
-    /* ? */
-    u8 null4F0;
-    s8 unk4F1;
-    s8 unk4F2;
-    u8 unk4F3;
-    u8 unk4F4;
-    s8 unk4F5;
-    s8 unk4F6;
-    u16 unk4F8;
+
+    /* [0x4F0] Unused Forced Level Unlock */
+    u8 unused4F0;
+    s8 manualUnlockX;
+    s8 manualUnlockY;
+    u8 manualUnlockEnabled;
+
+    /* [0x4F4] Barista Level Unlock */
+    u8 baristaLevelEventPending;
+    s8 baristaLevelEventX;
+    s8 baristaLevelEventY;
+    u16 baristaLevelEventTimer;
+
+    /* [0x4F8] Perfect Rank Icon */
     s16 perfectClearedSprite;
 };
 
@@ -149,11 +160,11 @@ struct LevelData {
 
 struct GameSelectGridEntry {
     s16 id;
-    const s8 *unk4;
-    const s8 *unk8;
-    const s8 *unkC;
-    u8 unk10;
-    u8 unk11;
+    const s8 *displayReq;
+    const s8 *unlockReq;
+    const s8 *targets;
+    u8 flags;
+    u8 orderIndex;
 };
 
 struct GameSelectOverlay {
@@ -179,8 +190,18 @@ enum CampaignBordersEnum {
     /* 02 */ CAMPAIGN_BORDER_6_FLOWERS
 };
 
-#define GAME_SELECT_GRID_WIDTH 15u
-#define GAME_SELECT_GRID_HEIGHT 12u
+#define MAX_PERFECT_ATTEMPTS 3
+
+#define GS_GRID_WIDTH 15u
+#define GS_GRID_HEIGHT 12u
+
+#define LEVEL_EVENT_TARGET_ON_SHOW   (1 << 0)
+#define LEVEL_EVENT_MOVE_CURSOR      (1 << 1)
+#define LEVEL_EVENT_CLEAR_BY_DEFAULT (1 << 2)
+#define LEVEL_EVENT_DELAY_CLEAR      (1 << 3)
+#define LEVEL_EVENT_DELAY_OPEN       (1 << 4)
+#define LEVEL_EVENT_DELAY_SHOW       (1 << 5)
+#define LEVEL_EVENT_TARGET_ON_OPEN   (1 << 6)
 
 #define LEVEL_ICON_ANIM_STOP -2
 #define LEVEL_ICON_ANIM_LOOP -1
@@ -213,8 +234,8 @@ extern struct SequenceData s_f_get_medal_seqData;
 
 
 // Scene Data:
-extern struct CampaignGiftData campaign_gifts_table[48];
-extern struct Animation *campaign_icon_borders[3]; // { 0 = No Flowers; 1 = 3 Flowers; 2 = 6 Flowers }
+extern struct CampaignGiftData campaign_gifts_table[];
+extern struct Animation *campaign_icon_borders[];
 extern const char D_08050bcc[];
 extern const char D_08050bd0[];
 extern const char D_08050bdc[];
@@ -224,9 +245,9 @@ extern const char D_08050c14[];
 extern const char D_08050c18[];
 extern const char D_08050c1c[];
 extern const char D_08050c24[];
-extern struct LevelData level_data_table[55];
+extern struct LevelData level_data_table[];
 extern const u8 *level_icon_texture_table[];
-extern struct GameSelectGridEntry game_select_grid_data[GAME_SELECT_GRID_HEIGHT * GAME_SELECT_GRID_WIDTH];
+extern struct GameSelectGridEntry game_select_grid_data[];
 extern u8 level_icon_palette_table[];
 extern struct GraphicsTable game_select_gfx_table[];
 extern struct CompressedGraphics *game_select_buffered_textures[];
@@ -235,7 +256,7 @@ extern const char *game_select_rank_text[];
 extern u8 game_select_rank_palette[];
 extern struct GameSelectOverlay *level_icon_overlay_data[];
 extern u8 *level_icon_overlays_map[];
-extern struct TaskMethods D_089cfab8;
+extern struct TaskMethods level_icon_overlay_animator_task;
 
 
 // Functions - BGM
@@ -243,19 +264,18 @@ extern void disable_game_select_2_bgm(void);
 extern void enable_game_select_2_bgm(void);
 extern void play_game_select_bgm(void);
 
-
 // Functions - Perfect Campaign
 extern void clear_current_campaign(void);
 extern void set_current_campaign(s32 id);
 extern s32 get_current_campaign(void);
 extern void update_plays_until_next_campaign(void);
-extern void func_080128b8(void);
-extern void func_08012928(void);
-extern void func_080129e8(void);
+extern void get_all_uncleared_campaigns(void);
+extern void start_new_campaign(void);
+extern void activate_campaign_notice(void);
 extern void init_campaign_notice(void);
 extern const char *get_campaign_gift_title(s32 id, s32 shortenSongTitle);
 extern void start_campaign_notice(s32 id);
-extern s32 func_08012de0(void);
+extern s32 start_random_campaign_notice(void);
 extern void update_campaign_notice(void);
 extern void display_campaign_icon_border(s32 x, s32 y);
 extern void hide_campaign_icon_border(void);
@@ -263,24 +283,21 @@ extern const char *get_level_name_from_campaign(s32 id);
 extern s32 get_campaign_from_grid_xy(s32 x, s32 y);
 extern s32 get_campaign_from_level_id(s32 id);
 
-
 // Functions - Grid
-extern s32 get_level_id_from_grid_xy(s32 x, s32 y); // Get Level ID from Grid Position
-extern struct LevelData *get_level_data_from_id(s32 id); // Get Level Data from ID
-extern s32 get_level_state_from_id(s32 id); // Get Level State from ID
-extern struct LevelData *get_level_data_from_grid_xy(s32 x, s32 y); // Get Level Data from Grid Position
-extern s32 get_level_state_from_grid_xy(s32 x, s32 y); // Get Level State from Grid Position
-extern void get_grid_xy_from_level_id(s32 level, s32 *xReq, s32 *yReq); // Get Grid Position from Level ID
-extern void init_game_select_grid_gfx(void); // Write Game Select Grid to VRAM
-extern void get_pixel_xy_from_grid_xy(s32 x, s32 y, s16 *xReq, s16 *yReq); // Get Screen X/Y from Grid Position
-extern void set_level_state_from_grid_xy(s32 x, s32 y, s32 state); // Save Level State from Grid Position
-
+extern s32 get_level_id_from_grid_xy(s32 x, s32 y);
+extern struct LevelData *get_level_data_from_id(s32 id);
+extern s32 get_level_state_from_id(s32 id);
+extern struct LevelData *get_level_data_from_grid_xy(s32 x, s32 y);
+extern s32 get_level_state_from_grid_xy(s32 x, s32 y);
+extern void get_grid_xy_from_level_id(s32 id, s32 *xReq, s32 *yReq);
+extern void init_game_select_grid_gfx(void);
+extern void get_pixel_xy_from_grid_xy(s32 x, s32 y, s16 *xReq, s16 *yReq);
+extern void save_level_state_from_grid_xy(s32 x, s32 y, s32 state);
 
 // Functions - BG Color Changer
 extern void game_select_init_color_mod(void);
 extern void game_select_update_color_mod(struct ColorChanger *changer);
 extern void game_select_update_bg_colors(void);
-
 
 // Functions - Scene
 extern void game_select_scene_init_static_var(void); // Init. Static Variables
@@ -289,15 +306,12 @@ extern void game_select_scene_init_gfx3(void); // Graphics Init. 3
 extern void game_select_scene_init_gfx2(void); // Graphics Init. 2
 extern void game_select_scene_init_gfx1(void); // Graphics Init. 1
 extern void game_select_scene_start(void *sceneParam, s32 startParam); // Scene Start
-
 extern void game_select_disable_credits_after_epilogue(void);
 extern u32 game_select_roll_credits_after_epilogue(void);
 extern void game_select_scene_paused(void *sceneParam, s32 pausedParam); // Scene Update (Paused)
-
 extern void game_select_scroll_grid_pane(s32 x, s32 y, s24_8 rate);
 extern void game_select_scroll_info_pane(s32 x, s32 y, s24_8 rate);
 extern void game_select_update_bg_scroll(void);
-
 extern void game_select_set_cursor_border_z(void);
 extern void game_select_move_cursor_to_grid_xy(s32 x, s32 y);
 extern u32 game_select_get_next_valid_xy(s32 *xReq, s32 *yReq, s32 dx, s32 dy);
@@ -306,36 +320,31 @@ extern void game_select_read_inputs_sub1(void);
 extern void game_select_read_inputs_sub2(void);
 extern void game_select_read_inputs(void);
 extern void game_select_set_info_pane_to_cursor_target(void);
-
 extern void game_select_update_stage_title_pos(void);
 extern void game_select_set_stage_title(s32 x);
 extern void game_select_update_stage_title(void);
-
 extern void game_select_link_sprite_xy_to_bg(s16 sprite);
 extern void game_select_scene_update(void *sceneParam, s32 updateParam); // Scene Update (Active)
 extern u32 game_select_scene_inputs_enabled(void); // Scene Can Receive Inputs
-extern void game_select_set_unused_static_var(u32 arg0, u32 arg1); // Set D_030055d4 and D_03005590
+extern void game_select_set_unused_static_var(u32 arg0, u32 arg1);
 extern u32 game_select_get_total_levels(void);
 extern const char *game_select_get_level_name(s32 id);
-
-extern void func_080141f8(s32 x, s32 y, s32 state);
-extern void func_08014268(s32 *xReq, s32 *yReq, s32 *stateReq);
-extern u32 func_080142e8(s32 x, s32 y, s32 state);
-extern void func_080143c0(s32 x, s32 y);
-extern void func_0801446c(u32 args);
-extern u32 func_08014488(s32 x, s32 y, u32 moveCursor, s24_8 scrollRate);
-extern u32 func_08014504(const s8 *data);
-extern u32 func_08014624(void);
-extern void func_0801490c(void);
-extern void func_08014938(u32 delay);
-extern void func_08014978(void);
-
+extern void game_select_enqueue_level_event(s32 x, s32 y, s32 state);
+extern void game_select_dequeue_level_event(s32 *xReq, s32 *yReq, s32 *stateReq);
+extern u32 game_select_check_level_event_req(s32 x, s32 y, s32 state);
+extern void game_select_set_icon_map_after_level_event(s32 x, s32 y);
+extern void enqueue_level_event_after_reveal(u32 args);
+extern u32 game_select_set_level_event_target(s32 x, s32 y, u32 moveCursor, s24_8 scrollRate);
+extern u32 game_select_process_level_event_targets(const s8 *data);
+extern u32 game_select_process_level_events(void);
+extern void game_select_update_level_unlocks(void);
+extern void game_select_start_level_events(u32 delay);
+extern void game_select_update_level_events(void);
 extern void game_select_set_medal_count(u32 total);
 extern void game_select_init_medal_pane(void);
 extern u32 game_select_update_medal_pane_flicker(void);
 extern void game_select_update_medal_pane(void);
 extern void game_select_refresh_medal_count(u32 flickerDuration);
-
 extern void game_select_init_info_pane(void);
 extern void game_select_delete_info_pane_sprite(s16 *ptr);
 extern void game_select_clear_info_pane(void);
@@ -345,15 +354,12 @@ extern void game_select_print_level_rank(s32 levelState);
 extern void game_select_process_info_pane(void);
 extern void game_select_set_info_pane(s32 id, s32 state, s32 delay);
 extern void game_select_update_info_pane(void);
-
 extern u32 game_select_calculate_flow(u32 *modifierReq, u32 *averageReq);
 extern u32 game_select_calculate_flow_old(void);
 extern u32 game_select_update_scores(void);
 extern void game_select_init_flow_pane(void);
 extern void game_select_update_flow_pane(void);
-
 extern void game_select_scene_stop(void *sceneParam, s32 stopParam); // Scene Stop
-
 
 // Functions - VRAM
 extern void game_select_init_stub(void);

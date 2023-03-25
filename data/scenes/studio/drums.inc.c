@@ -21,8 +21,8 @@ const char *studio_drum_kit_names[] = {
 // Drum Kit Title Start
 const char text_studio_kit_default[] = "";
 
-// Drum Kit Name Formatting
-const char text_studio_kit_formatting[] = "\4" "8.";
+// Drum Kit Name Padding
+const char text_studio_kit_pad_8px[] = "\4" "8" ".";
 
 // Drum Kit Title - Not Unlocked
 const char text_studio_kit_not_unlocked[] = "ÅHÅHÅH";

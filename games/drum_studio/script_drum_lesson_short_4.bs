@@ -61,7 +61,7 @@ glabel D_0805f6ac
 .ascii "さらに１つ、\n"
 .ascii "音がふえるヨ！\n"
 .ascii "わかるかな？\n"
-.asciz "ヒント：\x8f\x5c字ボタン上"
+.asciz "ヒント：十\字ボタン上"
 .balign 4, 0
 
 
@@ -105,7 +105,7 @@ glabel D_0805f7f4
 .ascii "そしてまたなんと！\n"
 .ascii "１カ所、音がふえるヨ！\n"
 .ascii "わかるかな？\n"
-.asciz "ヒント：\x8f\x5c字ボタン右"
+.asciz "ヒント：十\字ボタン右"
 .balign 4, 0
 
 
@@ -156,7 +156,7 @@ glabel D_0805f918
 
 @ Dialogue
 glabel D_0805f9cc
-.ascii "\x8f\x5c字ボタンの上で\n"
+.ascii "十\字ボタンの上で\n"
 .ascii "たたいたパーツは\n"
 .ascii "ハイハットっていう\n"
 .asciz "シンバルです。"
@@ -166,7 +166,7 @@ glabel D_0805f9cc
 @ Dialogue
 glabel D_0805fa10
 .ascii "ドラムセットによって\n"
-.ascii "\x8f\x5c字ボタンの上は\n"
+.ascii "十\字ボタンの上は\n"
 .ascii "ハイハットだったり\n"
 .asciz "ロールだったりします。"
 .balign 4, 0

@@ -86,7 +86,7 @@ glabel D_080611c0
 .ascii "またまた１カ所、\n"
 .ascii "音がふえるヨ！\n"
 .ascii "わかるかな？\n"
-.asciz "ヒント：\x8f\x5c字ボタン上"
+.asciz "ヒント：十\字ボタン上"
 .balign 4, 0
 
 

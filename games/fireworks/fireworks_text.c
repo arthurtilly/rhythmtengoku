@@ -105,35 +105,35 @@ const char D_0805d010[] =
     ".b" "た"
     ".b" "ま"
     ".b" "や"
-    ".b" SHIFT_JIS_WAVE_DASH "　　"
+    ".b" "～　　"
     ".b" "ハイ！";
 
 const char D_0805d030[] =
     ".d" "た"
     ".b" "ま"
     ".b" "や"
-    ".b" SHIFT_JIS_WAVE_DASH "　　"
+    ".b" "～　　"
     ".b" "ハイ！";
 
 const char D_0805d050[] =
     ".d" "た"
     ".d" "ま"
     ".b" "や"
-    ".b" SHIFT_JIS_WAVE_DASH "　　"
+    ".b" "～　　"
     ".b" "ハイ！";
 
 const char D_0805d070[] =
     ".d" "た"
     ".d" "ま"
     ".d" "や"
-    ".b" SHIFT_JIS_WAVE_DASH "　　"
+    ".b" "～　　"
     ".b" "ハイ！";
 
 const char D_0805d090[] =
     ".d" "た"
     ".d" "ま"
     ".d" "や"
-    ".d" SHIFT_JIS_WAVE_DASH "　　"
+    ".d" "～　　"
     ".b" "ハイ！";
 
 const char D_0805d0b0[] =
@@ -141,7 +141,7 @@ const char D_0805d0b0[] =
     ".c" "た"
     ".c" "ま"
     ".c" "や"
-    ".c" SHIFT_JIS_WAVE_DASH "　"
+    ".c" "～　"
     ".c:0" "ハイ！";
 
 const char D_0805d0d0[] = "さあ、　ではホンバン！";
