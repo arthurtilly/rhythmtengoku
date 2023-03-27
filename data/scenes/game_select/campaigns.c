@@ -1,5 +1,14 @@
+#include "global.h"
+#include "graphics.h"
+#include "levels.h"
+#include "src/scenes/game_select.h"
 #include "src/scenes/studio.h"
 #include "src/scenes/reading.h"
+#include "graphics/game_select/game_select_graphics.h"
+
+
+  /* GAME SELECT - PERFECT CAMPAIGN DATA */
+
 
 // [D_089cdf24] Perfect Campaign Gifts
 struct CampaignGiftData campaign_gifts_table[TOTAL_PERFECT_CAMPAIGNS] = {
@@ -252,31 +261,3 @@ struct Animation *campaign_icon_borders[MAX_PERFECT_ATTEMPTS] = {
     /* Attempt 2 */ anim_game_select_border_perfect2,
     /* Attempt 1 */ anim_game_select_border_perfect3
 };
-
-
-// Null Perfect Gift
-const char D_08050bcc[] = "";
-
-// New Game
-const char D_08050bd0[] = "新ゲーム";
-
-//
-const char D_08050bdc[] = "ただいま「";
-
-// Get a perfect on this
-const char D_08050be8[] = "」でパーフェクトを達成すると";
-
-// game, and you'll receive
-const char D_08050c08[] = "もれなく";
-
-// "
-const char D_08050c14[] = "「";
-
-// "
-const char D_08050c18[] = "」";
-
-// 's song
-const char D_08050c1c[] = "の曲";
-
-// received as a present!!
-const char D_08050c24[] = "をプレゼント!!";

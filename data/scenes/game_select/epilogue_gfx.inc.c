@@ -1,5 +1,3 @@
-#include "graphics/epilogues/epilogues_graphics.h"
-
 // [D_089ce0b0] Karate Man
 const struct GraphicsTable *epilogue_karate_man_gfx_tables[] = {
     /* TRY AGAIN */ (struct GraphicsTable[]) {

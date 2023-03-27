@@ -1,4 +1,20 @@
-// [D_089cea24] Game Select Icon Textures
+#include "global.h"
+#include "graphics.h"
+#include "text.h"
+#include "levels.h"
+#include "src/scenes/game_select.h"
+#include "graphics/game_select/game_select_graphics.h"
+#include "graphics/epilogues/epilogues_graphics.h"
+
+
+  /* GAME SELECT - LEVEL GRID DATA */
+
+
+#include "epilogue_gfx.inc.c"
+#include "levels.inc.c"
+
+
+// [D_089cea24] Level Icon Textures
 const u8 *level_icon_texture_table[] = {
     /* 0x00 */ icon_karate_man_2_bin,
     /* 0x01 */ icon_sneaky_spirits_bin,
@@ -54,4 +70,66 @@ const u8 *level_icon_texture_table[] = {
     /* 0x33 */ icon_polyrhythm_2_bin,
     /* 0x34 */ icon_spaceball_2_bin,
     /* 0x35 */ icon_sneaky_spirits_2_bin
+};
+
+
+#include "grid.inc.c"
+
+
+// [D_089cf90c] Level Icon Palettes
+u8 level_icon_palette_table[] = {
+    /* 0x00 */ 1,
+    /* 0x01 */ 0,
+    /* 0x02 */ 2,
+    /* 0x03 */ 0,
+    /* 0x04 */ 0,
+    /* 0x05 */ 0,
+    /* 0x06 */ 0,
+    /* 0x07 */ 0,
+    /* 0x08 */ 0,
+    /* 0x09 */ 0,
+    /* 0x0A */ 0,
+    /* 0x0B */ 0,
+    /* 0x0C */ 0,
+    /* 0x0D */ 0,
+    /* 0x0E */ 0,
+    /* 0x0F */ 0,
+    /* 0x10 */ 1,
+    /* 0x11 */ 1,
+    /* 0x12 */ 0,
+    /* 0x13 */ 2,
+    /* 0x14 */ 0,
+    /* 0x15 */ 0,
+    /* 0x16 */ 2,
+    /* 0x17 */ 0,
+    /* 0x18 */ 1,
+    /* 0x19 */ 0,
+    /* 0x1A */ 0,
+    /* 0x1B */ 2,
+    /* 0x1C */ 0,
+    /* 0x1D */ 0,
+    /* 0x1E */ 0,
+    /* 0x1F */ 0,
+    /* 0x20 */ 1,
+    /* 0x21 */ 2,
+    /* 0x22 */ 2,
+    /* 0x23 */ 1,
+    /* 0x24 */ 0,
+    /* 0x25 */ 2,
+    /* 0x26 */ 0,
+    /* 0x27 */ 2,
+    /* 0x28 */ 0,
+    /* 0x29 */ 0,
+    /* 0x2A */ 0,
+    /* 0x2B */ 1,
+    /* 0x2C */ 0,
+    /* 0x2D */ 0,
+    /* 0x2E */ 0,
+    /* 0x2F */ 0,
+    /* 0x30 */ 0,
+    /* 0x31 */ 0,
+    /* 0x32 */ 3,
+    /* 0x33 */ 0,
+    /* 0x34 */ 0,
+    /* 0x35 */ 4
 };

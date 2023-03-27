@@ -15,25 +15,8 @@
 #include "studio.h"
 #include "src/lib_0804ca80.h"
 
-asm(".include \"include/gba.inc\"");//Temporary
-
 // For readability.
 #define gGameSelectInfo ((struct GameSelectSceneInfo *)D_030046a4)
-
-static u8 sPlayAltBGM; // Play "Game Select 2" music
-static u16 D_0300131e_padding; // unused
-static s8 sCurrentCampaign; // Current Perfect Campaign ID
-static u16 D_03001322_padding; // unused
-static u8 sPlayCreditsAfterEpilogue; // Currently playing through Remix 6 for the first time.
-
-extern u32 D_03005590; // Unused
-extern u32 D_030055d4; // Unused
-
-extern const struct Scene D_089d77e4; // Results (Rank-Type)
-extern const struct Scene D_089d7c18; // Epilogue
-extern const struct Scene D_089d7964; // Results (Score-Type)
-extern const struct Scene D_089cdf08; // Game Select
-extern const struct Scene D_089cde20; // Main Menu
 
 #define COLOR_MOD_MAX_WAIT_TIME 60
 #define COLOR_MOD_INTERP_TIME 96
@@ -70,10 +53,23 @@ enum FlowPaneStatesEnum {
     /* 03 */ FLOW_PANE_TASK_FLICKER
 };
 
+extern u32 D_03005590; // Unused
+extern u32 D_030055d4; // Unused
+
+extern const struct Scene D_089d77e4; // Results (Rank-Type)
+extern const struct Scene D_089d7c18; // Epilogue
+extern const struct Scene D_089d7964; // Results (Score-Type)
+extern const struct Scene D_089cdf08; // Game Select
+extern const struct Scene D_089cde20; // Main Menu
+
+static u8 sPlayAltBGM; // Play "Game Select 2" music
+static u16 D_0300131e_padding; // unused
+static s8 sCurrentCampaign; // Current Perfect Campaign ID
+static u16 D_03001322_padding; // unused
+static u8 sPlayCreditsAfterEpilogue; // Currently playing through Remix 6 for the first time.
 
 
 /* GAME SELECT */
-
 
 
 // Clear sPlayAltBGM
@@ -256,7 +252,9 @@ void init_campaign_notice(void) {
 const char *get_campaign_gift_title(s32 id, s32 shortenSongTitle) {
     u32 giftID, giftType;
 
-    if (id < 0) return D_08050bcc; // ""
+    if (id < 0) {
+        return "";
+    }
 
     giftType = campaign_gifts_table[id].type;
     giftID = campaign_gifts_table[id].id;
@@ -275,8 +273,8 @@ const char *get_campaign_gift_title(s32 id, s32 shortenSongTitle) {
         case CAMPAIGN_GIFT_READING_MATERIAL:
             return reading_material_table[giftID].title;
 
-        case CAMPAIGN_GIFT_NEW_GAME: // Reward is New Game
-            return D_08050bd0; // "新ゲーム"
+        case CAMPAIGN_GIFT_NEW_GAME:
+            return "新ゲーム"; // New Game
     }
 }
 
@@ -301,24 +299,24 @@ void start_campaign_notice(s32 id) {
                 break;
         }
     }
+
     notice->x = campaign_gifts_table[id].x;
     notice->y = campaign_gifts_table[id].y;
-
     level = get_level_data_from_grid_xy(notice->x, notice->y);
     string = notice->text;
-    memcpy(string, D_08050bdc, 11); // "ただいま「"
+    memcpy(string, "ただいま「", 11); // [Right now]
     strcat(string, level->name); // "<game_name>"
-    strcat(string, D_08050be8); // "」でパーフェクトを達成すると"
+    strcat(string, "」でパーフェクトを達成すると"); // Get a perfect on this
     if (!isSpecialSong) {
-        strcat(string, D_08050c08); // "もれなく"
+        strcat(string, "もれなく"); // game, and you'll receive
     }
-    strcat(string, D_08050c14); // "「"
+    strcat(string, "「"); // "
     strcat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
-    strcat(string, D_08050c18); // "」"
+    strcat(string, "」"); // "
     if (isStandardSong) {
-        strcat(string, D_08050c1c); // "の曲"
+        strcat(string, "の曲"); // 's song
     }
-    strcat(string, D_08050c24); // "をプレゼント!!"
+    strcat(string, "をプレゼント!!"); // received as a present!!
     text_printer_set_string(notice->printer, string);
 
     func_0804d770(D_03005380, gGameSelectInfo->selectionBorderSprite, FALSE);
@@ -1247,7 +1245,7 @@ void game_select_scene_update(void *sceneParam, s32 updateParam) {
     bgOfsX -= D_03004b10.BG_OFS[BG_LAYER_3].x;
     bgOfsY -= D_03004b10.BG_OFS[BG_LAYER_3].y;
     game_select_update_bg_squares(bgOfsX - 1, bgOfsY);
-    game_select_update_shadow_squares();
+    game_select_update_icon_squares();
     game_select_update_flow_pane();
     game_select_update_medal_pane();
 }
@@ -1527,7 +1525,7 @@ u32 game_select_process_level_event_targets(const s8 *eventTargets) {
             args <<= 8;
             args |= y;
 
-            game_select_spawn_shadow_square(x, y, enqueue_level_event_after_reveal, args, gridEntry->orderIndex * 6);
+            game_select_spawn_icon_square(x, y, enqueue_level_event_after_reveal, args, gridEntry->orderIndex * 6);
             if (gridEntry->flags & LEVEL_EVENT_TARGET_ON_SHOW) {
                 game_select_set_level_event_target(x, y, gridEntry->flags & LEVEL_EVENT_MOVE_CURSOR, 250);
             }
@@ -1694,7 +1692,7 @@ void game_select_update_level_events(void) {
 
     // Update level-unlock events.
     eventsFinished = TRUE;
-    if (game_select_check_for_shadow_squares()) {
+    if (game_select_check_for_icon_squares()) {
         eventsFinished = FALSE;
     }
     if ((gGameSelectInfo->totalLevelEventsQueued > 0) || (gGameSelectInfo->levelEventPending)) {
@@ -2525,7 +2523,7 @@ void game_select_init_squares(void) {
     D_03004b10.COLEV = (COLEV_SRC_PIXEL(16) | COLEV_TGT_PIXEL(16));
 
     for (i = 0; i < 10; i++) {
-        gGameSelectInfo->newLevelShadows[i].active = FALSE;
+        gGameSelectInfo->newIconSquares[i].active = FALSE;
     }
 }
 
@@ -2600,9 +2598,9 @@ void game_select_update_bg_squares_motion(s32 dx, s32 dy) {
 }
 
 
-// Spawn New Level Icon Shadow
-void game_select_spawn_shadow_square(s16 x, s16 y, void *onFinish, s32 onFinishArg, u32 delay) {
-    struct NewLevelIconShadow *shadow = gGameSelectInfo->newLevelShadows;
+// Spawn New Icon Square
+void game_select_spawn_icon_square(s16 x, s16 y, void *onFinish, s32 onFinishArg, u32 delay) {
+    struct NewIconSquare *shadow = gGameSelectInfo->newIconSquares;
     s32 x1, y1, x2, y2;
     u32 i;
 
@@ -2643,8 +2641,8 @@ void game_select_spawn_shadow_square(s16 x, s16 y, void *onFinish, s32 onFinishA
 }
 
 
-// Update New Level Icon Shadow
-void game_select_update_shadow_square(struct NewLevelIconShadow *shadow) {
+// Update New Icon Square
+void game_select_update_icon_square(struct NewIconSquare *shadow) {
     s32 x, y;
 
     if (!shadow->active) {
@@ -2678,19 +2676,19 @@ void game_select_update_shadow_square(struct NewLevelIconShadow *shadow) {
 }
 
 
-// Update New Level Icon Shadows
-void game_select_update_shadow_squares(void) {
+// Update New Icon Squares
+void game_select_update_icon_squares(void) {
     u32 i;
 
     for (i = 0; i < 10; i++) {
-        game_select_update_shadow_square(&gGameSelectInfo->newLevelShadows[i]);
+        game_select_update_icon_square(&gGameSelectInfo->newIconSquares[i]);
     }
 }
 
 
-// Check for Active New Level Icon Shadows
-u32 game_select_check_for_shadow_squares(void) {
-    struct NewLevelIconShadow *shadow = gGameSelectInfo->newLevelShadows;
+// Check for Active New Icon Squares
+u32 game_select_check_for_icon_squares(void) {
+    struct NewIconSquare *shadow = gGameSelectInfo->newIconSquares;
     u32 i;
 
     for (i = 0; i < 10; i++) {

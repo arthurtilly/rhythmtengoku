@@ -277,7 +277,11 @@ SECTIONS {
 		build/src/scenes/library.c.o(.rodata);
         build/data/scenes/cafe/data.c.o(.rodata);
 		build/src/scenes/data_check.c.o(.rodata);
-        build/data/scenes/game_select/data.c.o(.rodata);
+		build/src/scenes/game_select.c.o(.rodata);
+        build/data/scenes/game_select/campaigns.c.o(.rodata);
+        build/data/scenes/game_select/level_grid.c.o(.rodata);
+        build/data/scenes/game_select/scene.c.o(.rodata);
+        build/data/scenes/game_select/overlays.c.o(.rodata);
         build/data/scenes/options/data.c.o(.rodata);
         build/data/scenes/perfect/data.c.o(.rodata);
         build/data/scenes/results/debug_results.c.o(.rodata);
@@ -1705,7 +1709,10 @@ SECTIONS {
         build/data/scenes/main_menu/data.c.o(.data);
         build/bin/scene_main_menu.bin.o(.rodata*);
         build/bin/scene_game_select.bin.o(.rodata*);
-        build/data/scenes/game_select/data.c.o(.data);
+        build/data/scenes/game_select/campaigns.c.o(.data);
+        build/data/scenes/game_select/level_grid.c.o(.data);
+        build/data/scenes/game_select/scene.c.o(.data);
+        build/data/scenes/game_select/overlays.c.o(.data);
         build/data/scenes/options/data.c.o(.data);
         build/bin/scene_options.bin.o(.rodata*);
         build/data/scenes/perfect/data.c.o(.data);

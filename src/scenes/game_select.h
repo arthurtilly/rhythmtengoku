@@ -64,7 +64,7 @@ struct GameSelectSceneInfo {
     /* [0x06A] Squares */
     s16 squareSprites[50];
     struct Vector2 squareVectors[50];
-    struct NewLevelIconShadow {
+    struct NewIconSquare {
         u8 active;
         s16 sprite;
         s16 xIn, yIn;
@@ -74,7 +74,7 @@ struct GameSelectSceneInfo {
         void (*onFinish)();
         s32 onFinishArg;
         u16 delay;
-    } newLevelShadows[10];
+    } newIconSquares[10];
 
     /* [0x2D8] Level Events */
     u8 runningLevelEvents;
@@ -236,15 +236,6 @@ extern struct SequenceData s_f_get_medal_seqData;
 // Scene Data:
 extern struct CampaignGiftData campaign_gifts_table[];
 extern struct Animation *campaign_icon_borders[];
-extern const char D_08050bcc[];
-extern const char D_08050bd0[];
-extern const char D_08050bdc[];
-extern const char D_08050be8[];
-extern const char D_08050c08[];
-extern const char D_08050c14[];
-extern const char D_08050c18[];
-extern const char D_08050c1c[];
-extern const char D_08050c24[];
 extern struct LevelData level_data_table[];
 extern const u8 *level_icon_texture_table[];
 extern struct GameSelectGridEntry game_select_grid_data[];
@@ -374,8 +365,8 @@ extern void game_select_print_icon_maps(u32 baseMap, u32 mapSize, u32 tileX, u32
 extern void game_select_print_icon_texture(const void *texture, u32 tileset, u32 tileNum);
 extern void game_select_init_squares(void);
 extern void game_select_update_bg_squares_motion(s32 dx, s32 dy);
-extern void game_select_spawn_shadow_square(s16 x, s16 y, void *onFinish, s32 onFinishArg, u32 delay);
-extern void game_select_update_shadow_square(struct NewLevelIconShadow *shadow);
-extern void game_select_update_shadow_squares(void);
-extern u32 game_select_check_for_shadow_squares(void);
+extern void game_select_spawn_icon_square(s16 x, s16 y, void *onFinish, s32 onFinishArg, u32 delay);
+extern void game_select_update_icon_square(struct NewIconSquare *shadow);
+extern void game_select_update_icon_squares(void);
+extern u32 game_select_check_for_icon_squares(void);
 extern void game_select_update_bg_squares(s32 dx, s32 dy);

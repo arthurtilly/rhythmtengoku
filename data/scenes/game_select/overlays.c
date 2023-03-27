@@ -1,3 +1,14 @@
+#include "global.h"
+#include "graphics.h"
+#include "levels.h"
+#include "src/task_pool.h"
+#include "src/scenes/game_select.h"
+#include "graphics/game_select/game_select_graphics.h"
+
+
+  /* GAME SELECT - LEVEL ICON OVERLAY DATA */
+
+
 // [D_089cfa08] Blank, Unused
 struct GameSelectOverlay game_select_icon_overlay_null = {
     /* Dimensions */ 3, 3,
