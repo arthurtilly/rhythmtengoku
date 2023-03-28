@@ -248,7 +248,7 @@ branch_08016824: \n\
 /* 08016828 */ ADDS R0, 0x28 @ Add 0x28 to R0 \n\
 /* 0801682a */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0801682c */ STRB R2, [R0] \n\
-/* 0801682e */ LDR R0, =D_089cde20 \n\
+/* 0801682e */ LDR R0, =scene_main_menu \n\
 /* 08016830 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08016832 */ BL func_080006d0 \n\
 /* 08016836 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

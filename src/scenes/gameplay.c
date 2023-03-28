@@ -23,11 +23,11 @@ enum PauseMenuOptionsEnum {
 };
 
 
-extern struct Scene D_089cfd60; // Perfect Certificate Scene
+extern struct Scene scene_perfect;
 extern const struct Beatscript D_089cfda4[]; // Generic Fade-Out Sequence
-extern struct Scene D_089d77e4; // Results Scene (Level-type)
-extern struct Scene D_089d7c18; // Results Scene (Epilogue)
-extern struct Scene D_089ddbcc; // Debug Menu Scene
+extern struct Scene scene_results_ver_rank;
+extern struct Scene scene_epilogue;
+extern struct Scene scene_debug_menu;
 
 
 /* MAIN GAMEPLAY SCENE */
@@ -80,7 +80,7 @@ struct SoundPlayer *gameplay_play_sound_in_player_w_pitch_volume(u32 player, str
 
 // [func_08016e94] Initialise Static Variables
 void gameplay_init_scene_static_var(void) {
-    gameplay_pause_menu_set_quit_destination(&D_089ddbcc);
+    gameplay_pause_menu_set_quit_destination(&scene_debug_menu);
 }
 
 
@@ -88,7 +88,7 @@ void gameplay_init_scene_static_var(void) {
 void gameplay_init_gfx1(void) {
     u32 data;
 
-    data = func_080087b4(0, gameplay_common_buffered_textures);
+    data = start_new_texture_loader(0, gameplay_common_buffered_textures);
     run_func_after_task(data, set_pause_beatscript_scene, FALSE);
 }
 
@@ -132,7 +132,7 @@ void gameplay_start_scene(s32 unused) {
     gGameplayInfo->latenessRangeMax = 0x7f;
     func_0804c340(35, 2, 2, 4); // Reverb
     if (func_08000608() == NULL) {
-        func_08000584(&D_089d77e4);
+        func_08000584(&scene_results_ver_rank);
     }
     func_0801911c(0); // set D_03001330 to 0
 }
@@ -516,7 +516,7 @@ void gameplay_set_mercy_count(u32 total) {
 
 // [func_080177f0] Scene Stop
 void gameplay_stop_scene(s32 unused) {
-    struct Scene *tempScene;
+    const struct Scene *tempScene;
 
     func_0804e0c4(D_03005380, 0x10);
     gameplay_reset_cues(); // Reset Cues
@@ -535,8 +535,8 @@ void gameplay_stop_scene(s32 unused) {
         stop_all_soundplayers(); // Sound
     } else {
         if (gGameplayInfo->goingForPerfect && !gGameplayInfo->perfectFailed) {
-            func_08000584(&D_089cfd60);
-            func_080006b0(&D_089cfd60, func_080005e0(&D_089d7c18));
+            func_08000584(&scene_perfect);
+            func_080006b0(&scene_perfect, func_080005e0(&scene_epilogue));
         }
     }
 

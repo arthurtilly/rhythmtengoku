@@ -266,7 +266,7 @@ void rhythm_tweezers_init_gfx1(void) {
     u32 temp;
 
     func_0800c604(0);
-    temp = func_080087b4(get_current_mem_id(), rhythm_tweezers_buffered_textures);
+    temp = start_new_texture_loader(get_current_mem_id(), rhythm_tweezers_buffered_textures);
     run_func_after_task(temp, &rhythm_tweezers_init_gfx2, 0);
 }
 

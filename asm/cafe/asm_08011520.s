@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08011520 \n\
+thumb_func_start cafe_scene_stop \n\
 /* 08011520 */ PUSH {LR} \n\
 /* 08011522 */ BL func_08008628 \n\
 /* 08011526 */ BL func_08004058 \n\

@@ -39,11 +39,11 @@ asm(".include \"include/gba.inc\"");//Temporary
 #define COMMENT_BASE_LINE 8
 #define COMMENT_TILE_Y(line) ((COMMENT_BASE_LINE * 2) + ((line) * 2))
 
-extern struct Scene D_089cdf08; // Game Select
+extern struct Scene scene_game_select;
 extern struct Scene D_089d6d74; // Staff Credit
-extern struct Scene D_089d77e4; // Results (Level-Type)
-extern struct Scene D_089d7964; // Results (Score-Type)
-extern struct Scene D_089d7c18; // Epilogue
+extern struct Scene scene_results_ver_rank;
+extern struct Scene scene_results_ver_score;
+extern struct Scene scene_epilogue;
 
 extern const struct BitmapFontData bitmap_font_warioware_body;
 
@@ -86,7 +86,7 @@ void rank_results_scene_init_gfx3(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(get_current_mem_id(), rank_results_buffered_textures);
+    data = start_new_texture_loader(get_current_mem_id(), rank_results_buffered_textures);
     run_func_after_task(data, set_pause_beatscript_scene, FALSE);
 }
 
@@ -484,8 +484,8 @@ void results_tracker_calculate_averages(struct InputScoreTracker *tracker) {
 
 #include "asm/results/asm_080198f8.s"
 
-const char D_08054ec4[] = ":1––––:0@@‚³‚¢‚Ä‚ñ@@:1––––";
-const char D_08054eec[] = ".5:1‚q|‚h‚p@@.6:0";
+const char D_08054ec4[] = ":1" "––––" ":0" "@@‚³‚¢‚Ä‚ñ@@" ":1" "––––";
+const char D_08054eec[] = ".5:1" "‚q|‚h‚p@@" ".6:0";
 
 
 // Prepare Negative Remarks (return total failed criteria)
@@ -750,7 +750,7 @@ void results_render_comments(void) {
 void results_publish_comments(void) {
     struct InputScoreTracker *tracker = D_089d7980->cueInputTrackers;
     const struct MarkingCriteria **criteriaTable = D_089d7980->markingData;
-    struct Scene *scene;
+    const struct Scene *scene;
     struct Animation *textAnim;
     s16 textSprite;
     u32 totalCriteriaFailed, averageCriteriaSucceeded;
@@ -778,8 +778,8 @@ void results_publish_comments(void) {
     }
 
     if (game_select_roll_credits_after_epilogue()) {
-        scene = func_080005e0(&D_089d7c18);
-        func_080006b0(&D_089d7c18, &D_089d6d74);
+        scene = func_080005e0(&scene_epilogue);
+        func_080006b0(&scene_epilogue, &D_089d6d74);
         func_080006b0(&D_089d6d74, scene);
         game_select_disable_credits_after_epilogue();
     }

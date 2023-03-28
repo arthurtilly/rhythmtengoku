@@ -41,7 +41,7 @@ void rap_men_init_gfx1(void) {
 	s32 task;
 
 	func_0800c604(0);
-	task = func_080087b4(get_current_mem_id(), rap_men_buffered_textures);
+	task = start_new_texture_loader(get_current_mem_id(), rap_men_buffered_textures);
 	run_func_after_task(task, rap_men_init_gfx2, 0);
 }
 

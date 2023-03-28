@@ -120,8 +120,8 @@ struct TaskMethods D_08936c8c = {
 };
 
 struct TaskMethods D_08936c9c = {
-    (TaskStartFunc)func_0800873c,
-    (TaskUpdateFunc)func_08008758,
+    (TaskStartFunc)init_texture_loader_task,
+    (TaskUpdateFunc)update_texture_loader_task,
     NULL,
     NULL,
 };

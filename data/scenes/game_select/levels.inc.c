@@ -47,10 +47,10 @@ extern struct Scene D_089d7220;
 extern struct Scene D_089d7408;
 extern struct Scene D_089d712c;
 extern struct Scene D_089d74fc;
-extern struct Scene D_089cda0c;
-extern struct Scene D_089dd86c;
-extern struct Scene D_089dd8ac;
-extern struct Scene D_089dd8ec;
+extern struct Scene scene_cafe;
+extern struct Scene scene_toys_menu;
+extern struct Scene scene_endless_menu;
+extern struct Scene scene_lessons_menu;
 extern struct Scene D_089d6e5c;
 extern struct Scene D_089d6f44;
 
@@ -833,7 +833,7 @@ struct LevelData level_data_table[TOTAL_LEVELS] = {
         }
     },
     /* CAFE */ {
-        /* Entry Scene   */ &D_089cda0c,
+        /* Entry Scene   */ &scene_cafe,
         /* Level Name    */ "喫茶カウンセル",
         /* Level Desc.   */ "最近の調子 どう？\n"
                             "なにか気になれば\n"
@@ -849,7 +849,7 @@ struct LevelData level_data_table[TOTAL_LEVELS] = {
         }
     },
     /* RHYTHM_TOYS */ {
-        /* Entry Scene   */ &D_089dd86c,
+        /* Entry Scene   */ &scene_toys_menu,
         /* Level Name    */ "おもちゃ",
         /* Level Desc.   */ "メダルを あつめて\n"
                             "音のでるおもちゃで\n"
@@ -865,7 +865,7 @@ struct LevelData level_data_table[TOTAL_LEVELS] = {
         }
     },
     /* ENDLESS_GAMES */ {
-        /* Entry Scene   */ &D_089dd8ac,
+        /* Entry Scene   */ &scene_endless_menu,
         /* Level Name    */ "ゲーム",
         /* Level Desc.   */ "メダルを あつめて\n"
                             "とくべつなゲームに\n"
@@ -881,7 +881,7 @@ struct LevelData level_data_table[TOTAL_LEVELS] = {
         }
     },
     /* DRUM_LESSONS */ {
-        /* Entry Scene   */ &D_089dd8ec,
+        /* Entry Scene   */ &scene_lessons_menu,
         /* Level Name    */ "ドラムレッスン",
         /* Level Desc.   */ "メダルを あつめて\n"
                             "ドラムのレッスンを\n"

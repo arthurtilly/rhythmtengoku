@@ -22,7 +22,7 @@ const char *studio_drum_kit_names[] = {
 const char text_studio_kit_default[] = "";
 
 // Drum Kit Name Padding
-const char text_studio_kit_pad_8px[] = "\4" "8" ".";
+const char text_studio_kit_pad_8px[] = "\0048.";
 
 // Drum Kit Title - Not Unlocked
 const char text_studio_kit_not_unlocked[] = "ÅHÅHÅH";

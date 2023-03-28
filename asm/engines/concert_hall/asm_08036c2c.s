@@ -10,7 +10,7 @@ thumb_func_start concert_hall_init_gfx1 \n\
 /* 08036c38 */ LSLS R0, R0, 0x10 \n\
 /* 08036c3a */ LSRS R0, R0, 0x10 \n\
 /* 08036c3c */ LDR R1, =concert_hall_buffered_textures \n\
-/* 08036c3e */ BL func_080087b4 \n\
+/* 08036c3e */ BL start_new_texture_loader \n\
 /* 08036c42 */ LDR R1, =concert_hall_init_gfx2 \n\
 /* 08036c44 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08036c46 */ BL run_func_after_task \n\

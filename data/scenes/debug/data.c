@@ -96,25 +96,25 @@ extern const struct Scene D_089d0188;
 extern const struct Scene D_089d634c;
 extern const struct Scene D_089cfed0;
 extern const struct Scene D_089d0728;
-extern const struct Scene D_089dd47c;
-extern const struct Scene D_089cde20;
-extern const struct Scene D_089cdf08;
-extern const struct Scene D_089cdc24;
-extern const struct Scene D_089d85b4;
-extern const struct Scene D_089cfc1c;
-extern const struct Scene D_089d7634;
-extern const struct Scene D_089d77e4;
-extern const struct Scene D_089d7964;
-extern const struct Scene D_089d7c18;
+extern const struct Scene scene_riq_title;
+extern const struct Scene scene_main_menu;
+extern const struct Scene scene_game_select;
+extern const struct Scene scene_data_room;
+extern const struct Scene scene_studio;
+extern const struct Scene scene_options_menu;
+extern const struct Scene scene_results_ver_debug;
+extern const struct Scene scene_results_ver_rank;
+extern const struct Scene scene_results_ver_score;
+extern const struct Scene scene_epilogue;
 extern const struct Scene D_089cd2cc;
-extern const struct Scene D_089cfd60;
-extern const struct Scene D_089cda0c;
-extern const struct Scene D_089dd8ac;
-extern const struct Scene D_089dd8ec;
-extern const struct Scene D_089dd86c;
+extern const struct Scene scene_perfect;
+extern const struct Scene scene_cafe;
+extern const struct Scene scene_endless_menu;
+extern const struct Scene scene_lessons_menu;
+extern const struct Scene scene_toys_menu;
 extern const struct Scene D_089d6d74;
 extern const struct Scene D_089d6e5c;
-extern const struct Scene D_089de0c8;
+extern const struct Scene scene_data_clear;
 
 
 // Sequence Test
@@ -492,43 +492,43 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "ƒJƒ‰ƒeƒJ@‚Q"
     },
     /* R-IQ (Title Screen) */ {
-        /* Scene */ &D_089dd47c,
+        /* Scene */ &scene_riq_title,
         /* Label */ "‚q|‚h‚p@iƒ^ƒCƒgƒ‹j"
     },
     /* R-IQ (Main Menu) */ {
-        /* Scene */ &D_089cde20,
+        /* Scene */ &scene_main_menu,
         /* Label */ "‚q|‚h‚p@iƒƒjƒ…[j"
     },
     /* R-IQ (Game Select) */ {
-        /* Scene */ &D_089cdf08,
+        /* Scene */ &scene_game_select,
         /* Label */ "‚q|‚h‚p@iƒQ[ƒ€j"
     },
     /* R-IQ (Rhythm Data Room) */ {
-        /* Scene */ &D_089cdc24,
+        /* Scene */ &scene_data_room,
         /* Label */ "‚q|‚h‚p@i‚µ‚è‚å‚¤‚µ‚Âj"
     },
     /* R-IQ (Studio) */ {
-        /* Scene */ &D_089d85b4,
+        /* Scene */ &scene_studio,
         /* Label */ "‚q|‚h‚p@iƒXƒ^ƒWƒIj"
     },
     /* R-IQ (Options) */ {
-        /* Scene */ &D_089cfc1c,
+        /* Scene */ &scene_options_menu,
         /* Label */ "‚q|‚h‚p@iƒIƒvƒVƒ‡ƒ“j"
     },
     /* R-IQ (Result [1]) */ {
-        /* Scene */ &D_089d7634,
+        /* Scene */ &scene_results_ver_debug,
         /* Label */ "‚q|‚h‚p@iƒŠƒUƒ‹ƒgj"
     },
     /* R-IQ (Result 2) */ {
-        /* Scene */ &D_089d77e4,
+        /* Scene */ &scene_results_ver_rank,
         /* Label */ "‚q|‚h‚p@iƒŠƒUƒ‹ƒg‚Qj"
     },
     /* R-IQ (Result 3) */ {
-        /* Scene */ &D_089d7964,
+        /* Scene */ &scene_results_ver_score,
         /* Label */ "‚q|‚h‚p@iƒŠƒUƒ‹ƒg‚Rj"
     },
     /* R-IQ (Result 4) */ {
-        /* Scene */ &D_089d7c18,
+        /* Scene */ &scene_epilogue,
         /* Label */ "‚q|‚h‚p@iƒŠƒUƒ‹ƒg‚Sj"
     },
     /* R-IQ (Rhythm Library) */ {
@@ -536,39 +536,39 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚q|‚h‚p@i‚É‚ã‚¤‚©j"
     },
     /* R-IQ (Perfect) */ {
-        /* Scene */ &D_089cfd60,
+        /* Scene */ &scene_perfect,
         /* Label */ "‚q|‚h‚p@iƒp[ƒtƒFƒNƒgj"
     },
     /* R-IQ (Cafe) */ {
-        /* Scene */ &D_089cda0c,
+        /* Scene */ &scene_cafe,
         /* Label */ "‚q|‚h‚p@iƒJƒEƒ“ƒZƒ‰[j"
     },
     /* R-IQ (Endless Games) */ {
-        /* Scene */ &D_089dd8ac,
+        /* Scene */ &scene_endless_menu,
         /* Label */ "‚q|‚h‚p@iƒ~ƒjƒQ[ƒ€j"
     },
     /* R-IQ (Drum Lessons) */ {
-        /* Scene */ &D_089dd8ec,
+        /* Scene */ &scene_lessons_menu,
         /* Label */ "‚q|‚h‚p@iƒhƒ‰ƒ€ƒŒƒbƒXƒ“j"
     },
     /* R-IQ (Rhythm Toys) */ {
-        /* Scene */ &D_089dd86c,
+        /* Scene */ &scene_toys_menu,
         /* Label */ "‚q|‚h‚p@i‚¨‚à‚¿‚áj"
     },
     /* R-IQ (Cafe) */ {
-        /* Scene */ &D_089cda0c,
+        /* Scene */ &scene_cafe,
         /* Label */ "‚q|‚h‚p@iƒJƒEƒ“ƒZƒ‰[j"
     },
     /* Ending (from clearing Remix 6) */ {
         /* Scene */ &D_089d6d74,
         /* Label */ "ƒGƒ“ƒfƒBƒ“ƒOiƒNƒŠƒA‚²j"
     },
-    /* Ending (from Medal Corner) */ {
+    /* Ending (from Game Select) */ {
         /* Scene */ &D_089d6e5c,
         /* Label */ "ƒGƒ“ƒfƒBƒ“ƒOi‚¨‚Ü‚¯‚©‚çj"
     },
     /* Data Clear */ {
-        /* Scene */ &D_089de0c8,
+        /* Scene */ &scene_data_clear,
         /* Label */ "ƒf[ƒ^ƒNƒŠƒA"
     },
     END_OF_DEBUG_ENTRIES

@@ -6,7 +6,7 @@ thumb_func_start func_0801b7b8 \n\
 /* 0801b7b8 */ PUSH {R4-R6, LR} \n\
 /* 0801b7ba */ MOV R6, R8 @ Set R6 to R8 \n\
 /* 0801b7bc */ PUSH {R6} \n\
-/* 0801b7be */ LDR R0, =D_089d85b4 \n\
+/* 0801b7be */ LDR R0, =scene_studio \n\
 /* 0801b7c0 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0801b7c2 */ BL func_080005e0 \n\
 /* 0801b7c6 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\

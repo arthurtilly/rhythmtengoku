@@ -313,7 +313,7 @@ branch_080355e2: \n\
 /* 08035716 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08035718 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803571a */ BL gameplay_set_input_buttons \n\
-/* 0803571e */ LDR R0, =D_089d7964 \n\
+/* 0803571e */ LDR R0, =scene_results_ver_score \n\
 /* 08035720 */ BL func_08000584 \n\
 /* 08035724 */ ADD SP, 0x1C \n\
 /* 08035726 */ POP {R3-R5} \n\

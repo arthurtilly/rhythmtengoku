@@ -284,6 +284,7 @@ SECTIONS {
         build/data/scenes/game_select/overlays.c.o(.rodata);
         build/data/scenes/options/data.c.o(.rodata);
         build/data/scenes/perfect/data.c.o(.rodata);
+		build/src/scenes/perfect.c.o(.rodata);
         build/data/scenes/results/debug_results.c.o(.rodata);
         build/data/scenes/results/rank_results.c.o(.rodata);
         build/data/scenes/results/score_results.c.o(.rodata);

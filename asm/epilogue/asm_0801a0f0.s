@@ -19,7 +19,7 @@ thumb_func_start func_0801a0f0 \n\
 /* 0801a110 */ LSLS R0, R0, 0x10 \n\
 /* 0801a112 */ LSRS R0, R0, 0x10 \n\
 /* 0801a114 */ LDR R1, =epilogue_buffered_textures \n\
-/* 0801a116 */ BL func_080087b4 \n\
+/* 0801a116 */ BL start_new_texture_loader \n\
 /* 0801a11a */ LDR R1, =set_pause_beatscript_scene \n\
 /* 0801a11c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801a11e */ BL run_func_after_task \n\

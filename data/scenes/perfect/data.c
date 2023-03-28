@@ -57,38 +57,3 @@ s8 D_089cfc88[] = {
     11, 14, 15, 16, 17, 18, 19, 20, 23, 24, 26, 27,
     28, 29, 30, 31, 38, 39, 40, 41, 42, 43, 44, -1
 };
-
-
-//
-const char D_08054acc[] = "\x02\x31" "\x01\x31" "\x01\x43" "\x03\x30" "\x01\x73" "\x05\x34" "\x01\x38" "「";
-
-
-//
-const char D_08054ae0[] = "」";
-
-
-//
-const char D_08054ae4[] = "の曲";
-
-
-// You've earned a gift!
-const char D_08054aec[] = "\x02\x30" "\x01\x30" "をプレゼント！\n";
-
-
-//
-const char D_08054b00[] = "プレゼントは　あと　" "\x02\x31" "\x01\x31";
-
-
-// gifts
-// left to get. Keep going!
-const char D_08054b1c[] = "コ" "\x02\x30" "\x01\x30" "　あるから、\n"
-    "他のキャンペーンにもチャレンジしてみてネ！";
-
-
-// 0 gifts left.
-// You finally got them all!
-const char D_08054b5c[] = "プレゼントは　これで" "\x02\x31" "\x01\x31" "オシマイ" "\x02\x30" "\x01\x30" "です。\n";
-
-
-// Congratulations!
-const char D_08054b88[] = "パーフェクトキャンペーン、コンプリートです！";

@@ -169,7 +169,7 @@ void sneaky_spirits_init_gfx1(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(get_current_mem_id(), sneaky_spirits_buffered_textures);
+    data = start_new_texture_loader(get_current_mem_id(), sneaky_spirits_buffered_textures);
     run_func_after_task(data, sneaky_spirits_init_gfx2, 0);
 }
 

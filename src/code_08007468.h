@@ -55,7 +55,7 @@ extern struct unk_struct_08007e7c *func_08007e7c(struct unk_struct_08007e7c_init
 extern u32 func_08007ef8(struct unk_struct_08007e7c *task);
 extern struct BlendControlsInterpolator *init_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *inputs);
 extern u32 update_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *task);
-extern s32 interpolate_lcd_blend_mode(u16 memID, u32 blendControls, u32 duration, u32 flip); // Interpolate LCD Special Effects
+extern s32 interpolate_lcd_blend_mode(u16 memID, u32 blendControls, u32 duration, u32 flip);
 // extern ? func_08008090(?);
 
 /* STRING */
@@ -88,9 +88,9 @@ extern s32 schedule_function_call(u16 memID, void *function, s32 param, u32 dela
 // extern ? func_0800869c(?);
 // extern ? func_080086c4(?);
 // extern ? func_08008720(?);
-extern struct unk_struct_0800873c *func_0800873c(struct unk_struct_0800873c_init *inputs); // texture_loader_start_new_task
-extern u32 func_08008758(struct unk_struct_0800873c *arg0); // texture_loader_task_update
-extern u32 func_080087b4(u16, struct CompressedGraphics **); // new_texture_loader_task
+extern struct TextureLoader *init_texture_loader_task(struct TextureLoaderInputs *inputs);
+extern u32 update_texture_loader_task(struct TextureLoader *task);
+extern u32 start_new_texture_loader(u16 memID, struct CompressedGraphics **textureList);
 
 /* ? */
 extern s32 clamp_int32(s32 var, s32 min, s32 max); // Signed Clamp

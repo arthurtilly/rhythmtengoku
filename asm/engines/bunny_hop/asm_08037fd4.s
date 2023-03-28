@@ -10,7 +10,7 @@ thumb_func_start bunny_hop_init_gfx1 \n\
 /* 08037fe0 */ LSLS R0, R0, 0x10 \n\
 /* 08037fe2 */ LSRS R0, R0, 0x10 \n\
 /* 08037fe4 */ LDR R1, =bunny_hop_buffered_textures \n\
-/* 08037fe6 */ BL func_080087b4 \n\
+/* 08037fe6 */ BL start_new_texture_loader \n\
 /* 08037fea */ LDR R1, =bunny_hop_init_gfx2 \n\
 /* 08037fec */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037fee */ BL run_func_after_task \n\

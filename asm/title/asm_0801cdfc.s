@@ -90,7 +90,7 @@ thumb_func_start func_0801cdfc \n\
 /* 0801cebe */ STRB R7, [R0, 0x10] \n\
 /* 0801cec0 */ LDR R0, =D_089d3984 \n\
 /* 0801cec2 */ BL func_08000584 \n\
-/* 0801cec6 */ LDR R0, =D_089cde20 \n\
+/* 0801cec6 */ LDR R0, =scene_main_menu \n\
 /* 0801cec8 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0801ceca */ BL func_080006d0 \n\
 /* 0801cece */ ADD SP, 0x14 \n\

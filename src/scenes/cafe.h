@@ -76,13 +76,13 @@ extern const char D_08050b14[];
 // extern ? func_080113a8(?); // ?
 // extern ? func_080113b4(?); // ?
 
-// extern ? func_080113d0(?); // Initialise Static Variables
-// extern ? func_080113dc(?); // Graphics Init. 3
-// extern ? func_08011408(?); // Graphics Init. 2
-// extern ? func_08011438(?); // Graphics Init. 1
-// extern ? func_08011488(?); // Scene Start
-// extern ? func_080114d0(?); // Scene Update (Paused)
-// extern ? func_080114d4(?); // Scene Update (Active)
-// extern ? func_080114f4(?); // ?
+extern void cafe_scene_init_static_var(void); // Init. Static Variables
+extern void cafe_scene_init_gfx3(void); // Graphics Init. 3
+extern void cafe_scene_init_gfx2(void); // Graphics Init. 2
+extern void cafe_scene_init_gfx1(void); // Graphics Init. 1
+extern void cafe_scene_start(void *sceneVar, s32 dataArg); // Scene Start
+extern void cafe_scene_paused(void *sceneVar, s32 dataArg); // Scene Update (Paused)
+extern void cafe_scene_update(void *sceneVar, s32 dataArg); // Scene Update (Active)
+extern u32 cafe_scene_script_is_ready(void); // Communicate with Script
 // extern ? func_08011510(?); // ? (Script Function)
-// extern ? func_08011520(?); // Scene Stop
+extern void cafe_scene_stop(void *sceneVar, s32 dataArg); // Scene Stop

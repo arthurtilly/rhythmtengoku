@@ -28,7 +28,7 @@ enum SaveReplayOptionsEnum {
     REPLAY_SAVE_OPTION_NO
 };
 
-extern struct Scene D_089d85b4; // Studio Scene
+extern struct Scene scene_studio;
 
 
 /* DRUM LESSONS */
@@ -621,7 +621,7 @@ void drum_studio_init_gfx1(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_080087b4(get_current_mem_id(), drum_studio_buffered_textures);
+    task = start_new_texture_loader(get_current_mem_id(), drum_studio_buffered_textures);
     run_func_after_task(task, drum_studio_init_gfx2, 0);
 }
 
@@ -1048,7 +1048,7 @@ void drum_studio_save_replay(void) {
             delete_saved_replay(&D_030046a8->data.drumReplaysAlloc, saveID);
         } else {
             func_0801b498(replayID);
-            func_080006d0(&D_089d85b4, NULL);
+            func_080006d0(&scene_studio, NULL);
         }
     }
     func_0800c484();

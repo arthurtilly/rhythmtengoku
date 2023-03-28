@@ -140,7 +140,7 @@ D_03005590 = 0x03005590;
 D_030055a0 = 0x030055a0;
 D_030055d0 = 0x030055d0;
 D_030055d4 = 0x030055d4;
-D_030055d8 = 0x030055d8;
+sMainMenuButton = 0x030055d8;
 gPauseMenu = 0x030055e0;
 
 /* Sound Library */
@@ -206,7 +206,7 @@ D_08936650 = 0x08936650;
 /* Scene Data - Cafe */
 D_089cd4e4 = 0x089cd4e4;
 D_089cd9e8 = 0x089cd9e8;
-D_089cda0c = 0x089cda0c;
+scene_cafe = 0x089cda0c;
 /* Scene Data - Data Check */
 D_089cda3c = 0x089cda3c;
 D_089cdab4 = 0x089cdab4;
@@ -214,23 +214,23 @@ D_089cdad8 = 0x089cdad8;
 /* Scene Data - Rhythm Data Room */
 D_089cdb40 = 0x089cdb40;
 D_089cdc00 = 0x089cdc00;
-D_089cdc24 = 0x089cdc24;
+scene_data_room = 0x089cdc24;
 /* Scene Data - Main Menu */
 D_089cdcb8 = 0x089cdcb8;
 D_089cddfc = 0x089cddfc;
-D_089cde20 = 0x089cde20;
+scene_main_menu = 0x089cde20;
 /* Scene Data - Game Select */
 D_089cde3c = 0x089cde3c;
 D_089cdee4 = 0x089cdee4;
-D_089cdf08 = 0x089cdf08;
+scene_game_select = 0x089cdf08;
 /* Scene Data - Options Menu */
 D_089cfb2c = 0x089cfb2c;
 D_089cfbf8 = 0x089cfbf8;
-D_089cfc1c = 0x089cfc1c;
+scene_options_menu = 0x089cfc1c;
 /* Scene Data - Perfect Campaign Certificate */
 D_089cfca0 = 0x089cfca0;
 D_089cfd3c = 0x089cfd3c;
-D_089cfd60 = 0x089cfd60;
+scene_perfect = 0x089cfd60;
 /* Scene Data - Main Gameplay */
 D_089cfdf8 = 0x089cfdf8;
 D_089cfeac = 0x089cfeac;
@@ -459,7 +459,7 @@ D_089d4610 = 0x089d4610;
 D_089d4634 = 0x089d4634;
 D_089d4650 = 0x089d4650;
 D_089d46f8 = 0x089d46f8;
-D_089d471c = 0x089d471c;
+scene_rhythm_test = 0x089d471c;
 D_089d4738 = 0x089d4738;
 D_089d47e0 = 0x089d47e0;
 D_089d4804 = 0x089d4804;
@@ -613,19 +613,19 @@ D_089d74fc = 0x089d74fc;
 /* Scene Data - Results (Debug-Type) */
 D_089d7580 = 0x089d7580;
 D_089d7610 = 0x089d7610;
-D_089d7634 = 0x089d7634;
+scene_results_ver_debug = 0x089d7634;
 /* Scene Data - Results (Rank-Type) */
 D_089d76a0 = 0x089d76a0;
 D_089d77c0 = 0x089d77c0;
-D_089d77e4 = 0x089d77e4;
+scene_results_ver_rank = 0x089d77e4;
 /* Scene Data - Results (Score-Type) */
 D_089d7868 = 0x089d7868;
 D_089d7940 = 0x089d7940;
-D_089d7964 = 0x089d7964;
+scene_results_ver_score = 0x089d7964;
 /* Scene Data - Epilogue */
 D_089d7b70 = 0x089d7b70;
 D_089d7bf4 = 0x089d7bf4;
-D_089d7c18 = 0x089d7c18;
+scene_epilogue = 0x089d7c18;
 /* Scene Data - Reading Material */
 D_089d7ff8 = 0x089d7ff8;
 D_089d80ac = 0x089d80ac;
@@ -640,7 +640,7 @@ D_089d84c4 = 0x089d84c4;
 D_089d8518 = 0x089d8518;
 D_089d853c = 0x089d853c;
 D_089d8590 = 0x089d8590;
-D_089d85b4 = 0x089d85b4;
+scene_studio = 0x089d85b4;
 D_089d85d0 = 0x089d85d0;
 D_089d8768 = 0x089d8768;
 D_089d88e8 = 0x089d88e8;
@@ -696,25 +696,25 @@ D_089dcff0 = 0x089dcff0;
 D_089dd02c = 0x089dd02c;
 D_089dd260 = 0x089dd260;
 D_089dd458 = 0x089dd458;
-D_089dd47c = 0x089dd47c;
+scene_riq_title = 0x089dd47c;
 /* Scene Data - Medal Corner Menus */
 D_089dd7a0 = 0x089dd7a0;
 D_089dd848 = 0x089dd848;
-D_089dd86c = 0x089dd86c;
+scene_toys_menu = 0x089dd86c;
 D_089dd888 = 0x089dd888;
-D_089dd8ac = 0x089dd8ac;
+scene_endless_menu = 0x089dd8ac;
 D_089dd8c8 = 0x089dd8c8;
-D_089dd8ec = 0x089dd8ec;
+scene_lessons_menu = 0x089dd8ec;
 /* Scene Data - Scene Handler */
 D_089dd97c = 0x089dd97c;
 /* Scene Data - Warning Screen */
 D_089dd998 = 0x089dd998;
 D_089dda28 = 0x089dda28;
-D_089dda4c = 0x089dda4c;
+scene_warning = 0x089dda4c;
 /* Scene Data - Debug (Menu) */
 D_089ddb24 = 0x089ddb24;
 D_089ddba8 = 0x089ddba8;
-D_089ddbcc = 0x089ddbcc;
+scene_debug_menu = 0x089ddbcc;
 /* Scene Data - Debug (Flash Memory Test) */
 D_089ddfc0 = 0x089ddfc0;
 D_089de038 = 0x089de038;
@@ -722,7 +722,7 @@ D_089de05c = 0x089de05c;
 /* Scene Data - Debug (Data Clear) */
 D_089de08c = 0x089de08c;
 D_089de0a4 = 0x089de0a4;
-D_089de0c8 = 0x089de0c8;
+scene_data_clear = 0x089de0c8;
 /* Scene Data - Debug (Asset Test?) */
 D_089de17c = 0x089de17c;
 D_089de200 = 0x089de200;

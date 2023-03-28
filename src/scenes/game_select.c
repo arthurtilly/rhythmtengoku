@@ -56,11 +56,11 @@ enum FlowPaneStatesEnum {
 extern u32 D_03005590; // Unused
 extern u32 D_030055d4; // Unused
 
-extern const struct Scene D_089d77e4; // Results (Rank-Type)
-extern const struct Scene D_089d7c18; // Epilogue
-extern const struct Scene D_089d7964; // Results (Score-Type)
-extern const struct Scene D_089cdf08; // Game Select
-extern const struct Scene D_089cde20; // Main Menu
+extern const struct Scene scene_results_ver_rank;
+extern const struct Scene scene_epilogue;
+extern const struct Scene scene_results_ver_score;
+extern const struct Scene scene_game_select;
+extern const struct Scene scene_main_menu;
 
 static u8 sPlayAltBGM; // Play "Game Select 2" music
 static u16 D_0300131e_padding; // unused
@@ -670,7 +670,7 @@ void game_select_update_bg_colors(void) {
 
 
 // Scene Init. Static Variables
-void game_select_scene_init_static_var(void) {
+void game_select_init_static_var(void) {
     D_030055d4 = 0;
     D_03005590 = 0;
     clear_current_campaign();
@@ -696,7 +696,7 @@ void game_select_scene_init_gfx3(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_080087b4(get_current_mem_id(), game_select_buffered_textures);
+    task = start_new_texture_loader(get_current_mem_id(), game_select_buffered_textures);
     run_func_after_task(task, game_select_scene_init_gfx4, 0);
 }
 
@@ -769,7 +769,7 @@ void game_select_scene_start(void *sceneParam, s32 startParam) {
     init_campaign_notice();
     game_select_init_medal_pane();
     game_select_init_squares();
-    gGameSelectInfo->screenIsReady = FALSE;
+    gGameSelectInfo->scriptIsReady = FALSE;
     game_select_init_info_pane();
     game_select_set_info_pane_to_cursor_target();
     game_select_init_flow_pane();
@@ -825,9 +825,9 @@ void game_select_scene_start(void *sceneParam, s32 startParam) {
     }
 
     /* Init. Scene Transitions */
-    func_080006b0(&D_089d77e4, &D_089d7c18);
-    func_080006b0(&D_089d7964, &D_089cdf08);
-    func_080006b0(&D_089d7c18, &D_089cdf08);
+    func_080006b0(&scene_results_ver_rank, &scene_epilogue);
+    func_080006b0(&scene_results_ver_score, &scene_game_select);
+    func_080006b0(&scene_epilogue, &scene_game_select);
 }
 
 
@@ -1036,7 +1036,7 @@ void game_select_read_inputs(void) {
     s32 levelState, levelID;
     u32 canHaveCampaign;
 
-    if (!game_select_scene_inputs_enabled()) {
+    if (!game_select_scene_script_is_ready()) {
         return;
     }
 
@@ -1060,11 +1060,11 @@ void game_select_read_inputs(void) {
             switch (levelData->type) {
                 case LEVEL_TYPE_GAME:
                 case LEVEL_TYPE_REMIX:
-                    func_080006b0(&D_089d77e4, &D_089d7c18);
-                    func_080006b0(&D_089d7964, &D_089cdf08);
-                    func_080006b0(&D_089d7c18, &D_089cdf08);
-                    func_080006d0(&D_089d7c18, levelData);
-                    gameplay_pause_menu_set_quit_destination(&D_089cdf08);
+                    func_080006b0(&scene_results_ver_rank, &scene_epilogue);
+                    func_080006b0(&scene_results_ver_score, &scene_game_select);
+                    func_080006b0(&scene_epilogue, &scene_game_select);
+                    func_080006d0(&scene_epilogue, levelData);
+                    gameplay_pause_menu_set_quit_destination(&scene_game_select);
                     if ((levelID == LEVEL_REMIX_6) && (levelState == LEVEL_STATE_OPEN)) {
                         sPlayCreditsAfterEpilogue = TRUE;
                     }
@@ -1073,13 +1073,13 @@ void game_select_read_inputs(void) {
 
                 case LEVEL_TYPE_BONUS:
                     if (levelID == LEVEL_LIVE_MENU) {
-                        func_080006b0(levelData->scene, &D_089d7c18);
-                        func_080006b0(&D_089d7c18, &D_089cdf08);
-                        func_080006d0(&D_089d7c18, levelData);
-                        gameplay_pause_menu_set_quit_destination(&D_089cdf08);
+                        func_080006b0(levelData->scene, &scene_epilogue);
+                        func_080006b0(&scene_epilogue, &scene_game_select);
+                        func_080006d0(&scene_epilogue, levelData);
+                        gameplay_pause_menu_set_quit_destination(&scene_game_select);
                     } else {
-                        func_080006b0(levelData->scene, &D_089cdf08);
-                        gameplay_pause_menu_set_quit_destination(&D_089cdf08);
+                        func_080006b0(levelData->scene, &scene_game_select);
+                        gameplay_pause_menu_set_quit_destination(&scene_game_select);
                     }
                     canHaveCampaign = FALSE;
                     break;
@@ -1101,7 +1101,7 @@ void game_select_read_inputs(void) {
 
             write_game_save_data();
             set_pause_beatscript_scene(FALSE);
-            gGameSelectInfo->screenIsReady = FALSE;
+            gGameSelectInfo->scriptIsReady = FALSE;
             play_sound(&s_menu_kettei1_seqData);
             return;
         }
@@ -1113,14 +1113,14 @@ void game_select_read_inputs(void) {
 
     /* B_BUTTON was pressed: Return to Main Menu. */
     if (D_03004afc & B_BUTTON) {
-        func_08000584(&D_089cde20);
-        func_080006d0(&D_089cde20, NULL);
+        func_08000584(&scene_main_menu);
+        func_080006d0(&scene_main_menu, NULL);
         D_030046a8->data.gsCursorX = D_030046a8->data.recentLevelX = gGameSelectInfo->cursorX;
         D_030046a8->data.gsCursorY = D_030046a8->data.recentLevelY = gGameSelectInfo->cursorY;
         D_030046a8->data.recentLevelState = LEVEL_STATE_NULL;
         write_game_save_data();
         set_pause_beatscript_scene(FALSE);
-        gGameSelectInfo->screenIsReady = FALSE;
+        gGameSelectInfo->scriptIsReady = FALSE;
         play_sound(&s_menu_cancel3_seqData);
     }
 }
@@ -1251,9 +1251,9 @@ void game_select_scene_update(void *sceneParam, s32 updateParam) {
 }
 
 
-// Check if Scene Can Receive Inputs
-u32 game_select_scene_inputs_enabled(void) {
-    if (gGameSelectInfo->screenIsReady) {
+// Communicate with Script
+u32 game_select_scene_script_is_ready(void) {
+    if (gGameSelectInfo->scriptIsReady) {
         return TRUE;
     } else {
         return FALSE;

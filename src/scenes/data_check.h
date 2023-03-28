@@ -43,7 +43,7 @@ extern const char D_08050bc8[];
 // extern ? func_080115d0(?); // Scene Start
 // extern ? func_08011690(?); // Scene Update (Paused)
 // extern ? func_08011694(?); // Scene Update (Active)
-// extern ? func_08011728(?); // ?
+// extern ? func_08011728(?); // Communicate with Script
 // extern ? func_08011744(?); // ?
 // extern ? func_08011820(?); // ?
 // extern ? func_08011a08(?); // Scene Stop

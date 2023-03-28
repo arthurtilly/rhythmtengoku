@@ -36,7 +36,7 @@ void func_080456a4(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(get_current_mem_id(), cosmic_dance_prologue_buffered_textures);
+    task = start_new_texture_loader(get_current_mem_id(), cosmic_dance_prologue_buffered_textures);
     run_func_after_task(task, func_08045674, 0);
 }
 

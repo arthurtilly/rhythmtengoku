@@ -10,7 +10,7 @@ thumb_func_start results_scene_init_gfx3 \n\
 /* 080188c4 */ LSLS R0, R0, 0x10 \n\
 /* 080188c6 */ LSRS R0, R0, 0x10 \n\
 /* 080188c8 */ LDR R1, =debug_results_buffered_textures \n\
-/* 080188ca */ BL func_080087b4 \n\
+/* 080188ca */ BL start_new_texture_loader \n\
 /* 080188ce */ LDR R1, =set_pause_beatscript_scene \n\
 /* 080188d0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080188d2 */ BL run_func_after_task \n\

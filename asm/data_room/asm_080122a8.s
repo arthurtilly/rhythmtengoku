@@ -78,7 +78,7 @@ branch_0801230a: \n\
 .ltorg \n\
  \n\
 branch_0801233c: \n\
-/* 0801233c */ LDR R5, =D_089cdc24 \n\
+/* 0801233c */ LDR R5, =scene_data_room \n\
 /* 0801233e */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08012340 */ BL func_080005e0 \n\
 /* 08012344 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\

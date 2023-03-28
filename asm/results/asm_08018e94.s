@@ -10,7 +10,7 @@ thumb_func_start score_results_scene_init_gfx3 \n\
 /* 08018ea0 */ LSLS R0, R0, 0x10 \n\
 /* 08018ea2 */ LSRS R0, R0, 0x10 \n\
 /* 08018ea4 */ LDR R1, =score_results_buffered_textures \n\
-/* 08018ea6 */ BL func_080087b4 \n\
+/* 08018ea6 */ BL start_new_texture_loader \n\
 /* 08018eaa */ LDR R1, =score_results_scene_init_gfx4 \n\
 /* 08018eac */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08018eae */ BL run_func_after_task \n\

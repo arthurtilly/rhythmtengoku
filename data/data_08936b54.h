@@ -221,5 +221,5 @@ struct unk_struct_08008420;
 
 struct ScheduledFunctionTask;
 
-struct unk_struct_0800873c_init;
-struct unk_struct_0800873c;
+struct TextureLoaderInputs;
+struct TextureLoader;

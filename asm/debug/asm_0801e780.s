@@ -44,7 +44,7 @@ thumb_func_start func_0801e780 \n\
 /* 0801e7da */ BL func_08008fe0 \n\
 /* 0801e7de */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801e7e0 */ BL func_0801e928 \n\
-/* 0801e7e4 */ LDR R0, =D_089ddbcc \n\
+/* 0801e7e4 */ LDR R0, =scene_debug_menu \n\
 /* 0801e7e6 */ BL func_08000584 \n\
 /* 0801e7ea */ ADD SP, 0x8 \n\
 /* 0801e7ec */ POP {R4} \n\

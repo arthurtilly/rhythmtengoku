@@ -8,7 +8,7 @@
 struct GameSelectSceneInfo {
     /* [0x000] Scene */
     u8 sceneState;
-    u32 screenIsReady;
+    u32 scriptIsReady;
     u32 loadingSceneGfx:1;
     u32 hideStageTitle:1;
     u32 unused8:30;
@@ -291,7 +291,7 @@ extern void game_select_update_color_mod(struct ColorChanger *changer);
 extern void game_select_update_bg_colors(void);
 
 // Functions - Scene
-extern void game_select_scene_init_static_var(void); // Init. Static Variables
+extern void game_select_init_static_var(void); // Init. Static Variables
 extern void game_select_scene_init_gfx4(void); // Graphics Init. 4
 extern void game_select_scene_init_gfx3(void); // Graphics Init. 3
 extern void game_select_scene_init_gfx2(void); // Graphics Init. 2
@@ -316,7 +316,7 @@ extern void game_select_set_stage_title(s32 x);
 extern void game_select_update_stage_title(void);
 extern void game_select_link_sprite_xy_to_bg(s16 sprite);
 extern void game_select_scene_update(void *sceneParam, s32 updateParam); // Scene Update (Active)
-extern u32 game_select_scene_inputs_enabled(void); // Scene Can Receive Inputs
+extern u32 game_select_scene_script_is_ready(void); // Communicate with Script
 extern void game_select_set_unused_static_var(u32 arg0, u32 arg1);
 extern u32 game_select_get_total_levels(void);
 extern const char *game_select_get_level_name(s32 id);
