@@ -42,9 +42,9 @@ struct CompressedGraphics *reading_buffered_textures[] = {
 // [D_089d7fe8] Default Reading Material (Error Case)
 struct ReadingMaterial reading_material_error = {
     /* TITLE ---------------------------------------------------------- */
-        "\x02\x33" "\x01\x33" "\x01\x43" "エラー",
+        "\0023" "\0013" "\001C" "エラー",
     /* BODY ----------------------------------------------------------- */
-        "\x01\x43" "\x03\x32" "\x01\x6c" "\n"
+        "\001C" "\0032" "\001l" "\n"
         "\n"
         "\n"
         "\n"
