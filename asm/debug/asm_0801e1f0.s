@@ -155,18 +155,18 @@ branch_0801e318: \n\
 /* 0801e32a */ STR R0, [R1, 0x8] \n\
 /* 0801e32c */ LDR R0, =scene_epilogue \n\
 /* 0801e32e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0801e330 */ BL func_080006d0 \n\
+/* 0801e330 */ BL set_scene_trans_var \n\
 /* 0801e334 */ LDR R0, =D_089cd2cc \n\
 /* 0801e336 */ LDR R4, =D_089d80d0 \n\
 /* 0801e338 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 0801e33a */ BL func_080006d0 \n\
+/* 0801e33a */ BL set_scene_trans_var \n\
 /* 0801e33e */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
 /* 0801e340 */ BL agb_random \n\
 /* 0801e344 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801e346 */ LSLS R1, R1, 0x10 \n\
 /* 0801e348 */ LSRS R1, R1, 0x10 \n\
 /* 0801e34a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0801e34c */ BL func_080006d0 \n\
+/* 0801e34c */ BL set_scene_trans_var \n\
 /* 0801e350 */ LDR R0, =scene_debug_menu \n\
 /* 0801e352 */ BL gameplay_pause_menu_set_quit_destination \n\
 /* 0801e356 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

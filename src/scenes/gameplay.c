@@ -131,8 +131,8 @@ void gameplay_start_scene(s32 unused) {
     gGameplayInfo->earlinessRangeMin = -0x80;
     gGameplayInfo->latenessRangeMax = 0x7f;
     func_0804c340(35, 2, 2, 4); // Reverb
-    if (func_08000608() == NULL) {
-        func_08000584(&scene_results_ver_rank);
+    if (get_current_scene_trans_target() == NULL) {
+        set_next_scene(&scene_results_ver_rank);
     }
     func_0801911c(0); // set D_03001330 to 0
 }
@@ -528,15 +528,15 @@ void gameplay_stop_scene(s32 unused) {
     }
     if (gGameplayInfo->skippingTutorial) {
         if (gGameplayInfo->skipDestination != NULL) {
-            tempScene = func_08000608();
-            func_08000584(gGameplayInfo->skipDestination);
-            func_080006b0(gGameplayInfo->skipDestination, tempScene);
+            tempScene = get_current_scene_trans_target();
+            set_next_scene(gGameplayInfo->skipDestination);
+            set_scene_trans_target(gGameplayInfo->skipDestination, tempScene);
         }
         stop_all_soundplayers(); // Sound
     } else {
         if (gGameplayInfo->goingForPerfect && !gGameplayInfo->perfectFailed) {
-            func_08000584(&scene_perfect);
-            func_080006b0(&scene_perfect, func_080005e0(&scene_epilogue));
+            set_next_scene(&scene_perfect);
+            set_scene_trans_target(&scene_perfect, get_scene_trans_target(&scene_epilogue));
         }
     }
 
@@ -1156,7 +1156,7 @@ s32 gameplay_update_pause_menu(void) {
                 return PAUSE_MENU_SELECTION_PENDING;
             } else {
                 gGameplayInfo->perfectFailed = TRUE;
-                func_08000584(D_03001328);
+                set_next_scene(D_03001328);
                 return PAUSE_MENU_SELECTION_QUIT;
             }
         }

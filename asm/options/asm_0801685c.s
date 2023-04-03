@@ -55,7 +55,7 @@ branch_080168bc: \n\
 /* 080168cc */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 080168ce */ BNE branch_080168fc \n\
 /* 080168d0 */ LDR R0, =scene_riq_title \n\
-/* 080168d2 */ BL func_08000584 \n\
+/* 080168d2 */ BL set_next_scene \n\
 /* 080168d6 */ LDR R0, [R5] \n\
 /* 080168d8 */ STR R6, [R0, 0x24] \n\
 /* 080168da */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

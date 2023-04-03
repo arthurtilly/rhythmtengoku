@@ -49,7 +49,7 @@ thumb_func_start func_0801d630 \n\
 /* 0801d696 */ BL func_0801d0b8 \n\
  \n\
 branch_0801d69a: \n\
-/* 0801d69a */ BL func_0800070c \n\
+/* 0801d69a */ BL get_current_scene \n\
 /* 0801d69e */ BL gameplay_pause_menu_set_quit_destination \n\
 /* 0801d6a2 */ LDR R0, [R4] \n\
 /* 0801d6a4 */ STR R5, [R0] \n\

@@ -129,7 +129,7 @@ branch_0801e47a: \n\
 /* 0801e498 */ LSLS R0, R0, 0x3 \n\
 /* 0801e49a */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0801e49c */ LDR R0, [R0] \n\
-/* 0801e49e */ BL func_08000584 \n\
+/* 0801e49e */ BL set_next_scene \n\
 /* 0801e4a2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801e4a4 */ BL set_pause_beatscript_scene \n\
 /* 0801e4a8 */ LDR R1, [R4] \n\

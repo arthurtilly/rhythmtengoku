@@ -200,8 +200,8 @@ void func_0801cdfc(void *sceneVar, s32 dataArg) {
     gTitleInfo->scriptIsReady = FALSE;
     gTitleInfo->timeUntilDemo = 180 * 16;
     gTitleInfo->titleIsDisplayed = FALSE;
-    func_08000584(&D_089d3984);
-    func_080006d0(&scene_main_menu, 0);
+    set_next_scene(&D_089d3984);
+    set_scene_trans_var(&scene_main_menu, 0);
 }
 
 
@@ -235,9 +235,9 @@ void func_0801cfa4(void *sceneVar, s32 dataArg) {
 void func_0801cfa8(void) {
     if (D_03004afc & (A_BUTTON | START_BUTTON)) {
         if (D_030046a8->data.unkB0) {
-            func_08000584(&scene_main_menu);
+            set_next_scene(&scene_main_menu);
         } else {
-            func_08000584(&D_089d3a6c);
+            set_next_scene(&D_089d3a6c);
         }
 
         func_0801d968(D_089dcff0);
@@ -254,8 +254,8 @@ void func_0801cfa8(void) {
 void func_0801d02c(void *sceneVar, s32 dataArg) {
     if (gTitleInfo->timeUntilDemo > 0) {
         if (--gTitleInfo->timeUntilDemo == 0) {
-            func_08000584(&D_089d3984);
-            func_080006b0(&D_089d3984, &scene_riq_title);
+            set_next_scene(&D_089d3984);
+            set_scene_trans_target(&D_089d3984, &scene_riq_title);
             func_0801d968(D_089dcff0);
             gTitleInfo->scriptIsReady = FALSE;
         }

@@ -67,20 +67,20 @@ branch_0801d762: \n\
 /* 0801d76e */ BL func_0801d204 \n\
 /* 0801d772 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801d774 */ BEQ branch_0801d7c0 \n\
-/* 0801d776 */ BL func_08000608 \n\
+/* 0801d776 */ BL get_current_scene_trans_target \n\
 /* 0801d77a */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 0801d77c */ BL func_0800061c \n\
+/* 0801d77c */ BL get_current_scene_trans_var \n\
 /* 0801d780 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801d782 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801d784 */ BL func_080006f0 \n\
 /* 0801d788 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0801d78a */ BL func_0801d1f0 \n\
 /* 0801d78e */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 0801d790 */ BL func_08000584 \n\
-/* 0801d794 */ BL func_0800070c \n\
+/* 0801d790 */ BL set_next_scene \n\
+/* 0801d794 */ BL get_current_scene \n\
 /* 0801d798 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801d79a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0801d79c */ BL func_080006b0 \n\
+/* 0801d79c */ BL set_scene_trans_target \n\
 /* 0801d7a0 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0801d7a2 */ BL func_0801d6c4 \n\
 /* 0801d7a6 */ LDR R0, =s_menu_kettei2_seqData \n\

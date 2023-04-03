@@ -778,9 +778,9 @@ void results_publish_comments(void) {
     }
 
     if (game_select_roll_credits_after_epilogue()) {
-        scene = func_080005e0(&scene_epilogue);
-        func_080006b0(&scene_epilogue, &D_089d6d74);
-        func_080006b0(&D_089d6d74, scene);
+        scene = get_scene_trans_target(&scene_epilogue);
+        set_scene_trans_target(&scene_epilogue, &D_089d6d74);
+        set_scene_trans_target(&D_089d6d74, scene);
         game_select_disable_credits_after_epilogue();
     }
 

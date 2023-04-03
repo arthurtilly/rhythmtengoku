@@ -68,7 +68,7 @@ branch_08011610: \n\
 /* 0801165c */ LDR R0, [R4] \n\
 /* 0801165e */ STR R5, [R0, 0x8] \n\
 /* 08011660 */ LDR R0, =scene_debug_menu \n\
-/* 08011662 */ BL func_08000584 \n\
+/* 08011662 */ BL set_next_scene \n\
 /* 08011666 */ ADD SP, 0x4 \n\
 /* 08011668 */ POP {R4, R5} \n\
 /* 0801166a */ POP {R0} \n\
