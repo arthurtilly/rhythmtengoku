@@ -127,7 +127,6 @@ void agb_main(void) {
 		func_0800b590();
 		func_08003ff0();
 	}
-	
 }
 
 void func_0800046c(const struct Scene *next) {
