@@ -268,18 +268,21 @@ u32 func_080191b8(void) {
  // Save Result
 void results_save_to_cart(u32 levelState) {
     struct TengokuSaveData *saveData = &D_030046a8->data;
-    s32 gameID;
+    s32 levelID;
 
-    if (!D_03001540) return;
+    if (!D_03001540) {
+        return;
+    }
 
     saveData->recentLevelState = levelState;
     saveData->recentLevelScore = results_calculate_final_score();
 
-    gameID = get_level_id_from_grid_xy(saveData->recentLevelX, saveData->recentLevelY);
-    func_080108a0(gameID);
+    levelID = get_level_id_from_grid_xy(saveData->recentLevelX, saveData->recentLevelY);
+    cafe_add_level_to_session(levelID);
 
-    if (gameID >= 0)
-        D_030046a8->data.unk190[gameID]++;
+    if (levelID >= 0) {
+        D_030046a8->data.unk190[levelID]++;
+    }
 
     flush_save_buffer_to_sram();
 }

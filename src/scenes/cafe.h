@@ -10,35 +10,36 @@ struct CafeSceneInfo {
     s16 textAdvIcon;
     u16 nextDialogueTask;
     u8 textAdvReady;
-    u8 unkD;
-    u8 unkE;
-    u8 unkF;
-    u8 unk10[5];
-    u16 unk16;
-    u16 unk18;
-    u16 unk1A;
+    u8 disableTextUpdates;
+    u8 totalLevelsThisSession;
+    u8 unused;
+    u8 sessionIndexes[5];
+    u16 timeSinceLastVisit;
+    u16 totalPlayTime;
+    u16 totalActivePlayTime;
     u8 bgEvent;
     u8 textAdvHold;
     u8 queryEnabled;
     s8 queryResult;
     s16 levelToClear;
     const char **dialogue;
-    char string[0];
+    char string[0x800];
 };
 
-extern struct S_030055a0 {
-    struct CafeSub {
+// [0x030055A0] Play Session
+extern struct PlaySessionInfo {
+    struct LevelPlayActivity {
         u8 levelID;
-        u8 unk1;
-        u8 unk2;
-        u16 unk4;
-        u16 unk6;
-    } unk0[5];
+        u8 totalStalePlays;
+        u8 justGotPerfect;
+        u16 timeOfLastPlay;
+        u16 activeTimeOfLastPlay;
+    } lastPlayedLevels[5];
     u8 totalMedals;
-    u8 unk29;
+    u8 unused;
     u16 currentFlow;
-    u16 unk2C;
-} D_030055a0;
+    u16 timeOfLastCafeVisit;
+} gSessionInfo;
 
 
 // Scene Macros/Enums:
@@ -62,30 +63,30 @@ extern const char *cafe_dialogue_all_perfects_clear[];
 
 
 // Functions:
-extern void func_080107a8(struct CafeSub *data); // Set unk4 and unk6
-extern void func_080107c8(struct CafeSub *data, s32 levelID); // Set Level ID, unk1 and unk2
-extern struct CafeSub *func_080107dc(s32 levelID); // Allocate ?
-extern struct CafeSub *func_0801082c(s32 levelID); // Get ?
-extern void func_08010854(void); // Init. D_030055a0
-extern void func_080108a0(s32 levelID); // ? (called by Results Scene while saving to cart)
-extern void func_080108c8(s32 levelID); // ? (called by Game Select Scene after clear or medal)
-extern void func_080108e8(s32 levelID); // ?
-extern void func_08010904(u32 arg0, u32 arg1); // Init. ?
-extern void func_08010938(void); // ?
-extern void func_080109cc(void); // Init. ?
-extern void func_08010a04(void); // Remove Level if (unk2 != 0)
+extern void cafe_init_level_session_playtime(struct LevelPlayActivity *activity);
+extern void cafe_init_level_session(struct LevelPlayActivity *activity, s32 levelID);
+extern struct LevelPlayActivity *cafe_alloc_level_session(s32 levelID);
+extern struct LevelPlayActivity *cafe_get_level_session(s32 levelID);
+extern void cafe_init_session_info(void);
+extern void cafe_add_level_to_session(s32 levelID);
+extern void cafe_remove_level_from_session(s32 levelID);
+extern void cafe_add_perfect_level_to_session(s32 levelID);
+extern void cafe_remove_old_levels_from_session(u32 totalPlayTime, u32 inactivityThreshold);
+extern void cafe_init_session_indexes(void);
+extern void cafe_init_session_playtime(void);
+extern void cafe_remove_perfect_level_sessions(void);
 
-extern void func_08010a28(void); // Init. ?
-extern void func_08010a3c(void); // Start Text Advance Options (Script Function)
-extern void func_08010ae0(void); // Update Text Advance Options
-extern u32 func_08010bc0(s32 levelID); // Check if Barista Can Clear Level
-extern void func_08010be4(void); // Start of Loop (Script Function)
-extern s32 func_080112dc(void); // Get BG Event (Script Function)
-extern void func_080112e8(void); // Show Text Box
-extern void func_080112f4(void); // Hide Text Box
-extern void func_08011300(void); // Init. Text Printer
-extern s32 func_080113a8(void); // Get Text Advance Hold Time (Script Function)
-extern void func_080113b4(void); // Hide Text (Script Function)
+extern void cafe_init_dialogue(void);
+extern void cafe_start_dialogue_inputs(void); // (Script Function)
+extern void cafe_update_dialogue_inputs(void);
+extern u32 barista_can_clear_level(s32 levelID);
+extern void cafe_print_dialogue(void); // (Script Function)
+extern s32 cafe_get_bg_event(void); // (Script Function)
+extern void cafe_text_printer_show_box(void);
+extern void cafe_text_printer_hide_box(void);
+extern void cafe_init_text_printer(void);
+extern s32 cafe_get_dialogue_hold_time(void); // (Script Function)
+extern void cafe_clear_dialogue(void); // (Script Function)
 
 extern void cafe_scene_init_static_var(void); // Init. Static Variables
 extern void cafe_scene_init_gfx3(void); // Graphics Init. 3
@@ -95,5 +96,5 @@ extern void cafe_scene_start(void *sceneVar, s32 dataArg); // Scene Start
 extern void cafe_scene_paused(void *sceneVar, s32 dataArg); // Scene Update (Paused)
 extern void cafe_scene_update(void *sceneVar, s32 dataArg); // Scene Update (Active)
 extern u32 cafe_scene_script_is_ready(void); // Communicate with Script
-extern void func_08011510(struct CompressedGraphics *texture); // Load Texture (Script Function)
+extern void cafe_load_bg_event_map(struct CompressedGraphics *map); // (Script Function)
 extern void cafe_scene_stop(void *sceneVar, s32 dataArg); // Scene Stop

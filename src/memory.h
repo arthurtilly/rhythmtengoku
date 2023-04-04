@@ -46,7 +46,7 @@ extern struct SaveBuffer {
         u8 drumKitsUnlocked[15];
         u8 totalMedals;
         u8 unk28F;
-        u8 unk290;
+        u8 minFailsForBaristaHelp;
         u8 unk291;
         u32 unk294[16];
         /*

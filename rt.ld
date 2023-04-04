@@ -20,7 +20,7 @@ SECTIONS {
 		build/src/code_08008dcc.c.o(.bss);
 		build/src/code_080092cc.c.o(.bss);
 		build/src/text_printer.c.o(.bss);
-		build/src/code_0800b3c8.c.o(.bss);
+		build/src/time_keeper.c.o(.bss);
 		build/src/code_0800b778.c.o(.bss);
 		build/src/affine_sprite.c.o(.bss);
 		build/src/code_080102d0.c.o(.bss);
@@ -145,7 +145,7 @@ SECTIONS {
 		build/src/code_08008dcc.c.o(.text);
 		build/src/code_080092cc.c.o(.text);
 		build/src/text_printer.c.o(.text);
-		build/src/code_0800b3c8.c.o(.text);
+		build/src/time_keeper.c.o(.text);
 		build/src/code_0800b778.c.o(.text);
         build/src/affine_sprite.c.o(.text);
         build/src/code_080102d0.c.o(.text);

@@ -2,8 +2,32 @@
 #include "sound.h"
 #include "data/beatscript_scene_data.h"
 
+
 /* Main Game Handler */
 
+
+struct struct_0800b71c_sub {
+    u8 unk0;
+    u32 unk1:10;
+    u32 unk4;
+};
+
+struct struct_0800b71c {
+    u8 unk0;
+    u32 unk1_0:1;
+    u32 unk1_1:23;
+    struct struct_0800b71c_sub *unk4;
+};
+
+extern u8 func_0800b634(s16 *arg0, s16 *arg1, s16 *arg2, s16 *arg3);
+extern void func_0800b698(void);
+extern void func_0800b6bc(void (*function)(s32), s32 param);
+extern void func_0800b6dc(struct struct_0800b71c *, u32, u32, struct struct_0800b71c_sub *);
+extern void func_0800b71c(struct struct_0800b71c *, u32, u32, u32);
+extern void func_0800b768(void);
+extern void func_0800b76c(void);
+extern void func_0800b770(void);
+extern void func_0800b774(void);
 extern void start_beatscript_scene(u32 memID); // Beatscript Init.
 extern void set_beatscript_subscenes(const struct SubScene **subScenes); // Set SubScenes
 extern void update_paused_beatscript_scene(void); // ? (called each loop after the pause menu has been opened at least once)

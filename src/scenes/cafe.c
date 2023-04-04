@@ -8,10 +8,10 @@
 #include "src/code_08001360.h"
 #include "src/code_08007468.h"
 #include "src/text_printer.h"
+#include "src/time_keeper.h"
 #include "src/code_0800b778.h"
 #include "src/lib_0804ca80.h"
 
-asm(".include \"include/gba.inc\"");//Temporary
 
 // For readability.
 #define gCafeInfo ((struct CafeSceneInfo *)D_030046a4)
@@ -80,27 +80,27 @@ extern struct SequenceData s_f_cafe_send_mes_seqData;
 /* CAFE */
 
 
-// Set unk4 and unk6
-void func_080107a8(struct CafeSub *data) {
-    data->unk4 = func_0800b60c(0xE10);
-    data->unk6 = func_0800b60c(0x80000000 | 0xE10);
+// Set Level Session Play Time
+void cafe_init_level_session_playtime(struct LevelPlayActivity *activity) {
+    activity->timeOfLastPlay = get_total_playtime(T_MINUTE);
+    activity->activeTimeOfLastPlay = get_active_playtime(T_MINUTE);
 }
 
 
-// Set Level ID, unk1 and unk2
-void func_080107c8(struct CafeSub *data, s32 levelID) {
-    data->levelID = levelID;
-    data->unk1 = 0;
-    data->unk2 = 0;
-    func_080107a8(data);
+// Init. Level Session
+void cafe_init_level_session(struct LevelPlayActivity *activity, s32 levelID) {
+    activity->levelID = levelID;
+    activity->totalStalePlays = 0;
+    activity->justGotPerfect = FALSE;
+    cafe_init_level_session_playtime(activity);
 }
 
 
-// Allocate ?
-struct CafeSub *func_080107dc(s32 levelID) {
-    struct CafeSub *current = D_030055a0.unk0;
-    struct CafeSub *free = NULL;
-    struct CafeSub *oldest = current;
+// Allocate Level Session
+struct LevelPlayActivity *cafe_alloc_level_session(s32 levelID) {
+    struct LevelPlayActivity *current = gSessionInfo.lastPlayedLevels;
+    struct LevelPlayActivity *free = NULL;
+    struct LevelPlayActivity *oldest = current;
     s32 i;
 
     for (i = 0; i < 5; i++, current++) {
@@ -110,29 +110,29 @@ struct CafeSub *func_080107dc(s32 levelID) {
         if (current->levelID == (u8)LEVEL_NULL) {
             free = current;
         }
-        if (current->unk4 <= oldest->unk4) {
+        if (current->timeOfLastPlay <= oldest->timeOfLastPlay) {
             oldest = current;
         }
     }
 
     if (free != NULL) {
-        func_080107c8(free, levelID);
+        cafe_init_level_session(free, levelID);
         return free;
     } else {
-        func_080107c8(oldest, levelID);
+        cafe_init_level_session(oldest, levelID);
         return oldest;
     }
 }
 
 
-// Get ?
-struct CafeSub *func_0801082c(s32 levelID) {
-    struct CafeSub *data = D_030055a0.unk0;
+// Get Level Session
+struct LevelPlayActivity *cafe_get_level_session(s32 levelID) {
+    struct LevelPlayActivity *activity = gSessionInfo.lastPlayedLevels;
     s32 i;
 
-    for (i = 0; i < 5; i++, data++) {
-        if (data->levelID == levelID) {
-            return data;
+    for (i = 0; i < 5; i++, activity++) {
+        if (activity->levelID == levelID) {
+            return activity;
         }
     }
 
@@ -140,156 +140,156 @@ struct CafeSub *func_0801082c(s32 levelID) {
 }
 
 
-// Init. D_030055a0
-void func_08010854(void) {
+// Init. Play Session Info
+void cafe_init_session_info(void) {
     u32 i;
 
     for (i = 0; i < 5; i++) {
-        D_030055a0.unk0[i].levelID = LEVEL_NULL;
+        gSessionInfo.lastPlayedLevels[i].levelID = LEVEL_NULL;
     }
 
-    D_030055a0.unk29 = 0;
-    D_030055a0.currentFlow = D_030046a8->data.currentFlow;
-    D_030055a0.totalMedals = D_030046a8->data.totalMedals;
-    D_030055a0.unk2C = 0;
+    gSessionInfo.unused = 0;
+    gSessionInfo.currentFlow = D_030046a8->data.currentFlow;
+    gSessionInfo.totalMedals = D_030046a8->data.totalMedals;
+    gSessionInfo.timeOfLastCafeVisit = 0;
 }
 
 
-// ? (called by Results Scene while saving to cart)
-void func_080108a0(s32 levelID) {
-    struct CafeSub *data;
+// Add Level to Play Session Info
+void cafe_add_level_to_session(s32 levelID) {
+    struct LevelPlayActivity *activity;
 
     if (levelID < 0) {
         return;
     }
 
-    data = func_080107dc(levelID);
+    activity = cafe_alloc_level_session(levelID);
 
-    if (data->unk2 == 0) {
-        if (data->unk1 < 0xFF) {
-            data->unk1++;
+    if (!activity->justGotPerfect) {
+        if (activity->totalStalePlays < 255) {
+            activity->totalStalePlays++;
         }
-        func_080107a8(data);
+        cafe_init_level_session_playtime(activity);
     }
 }
 
 
-// ? (called by Game Select Scene after clear or medal)
-void func_080108c8(s32 levelID) {
-    struct CafeSub *data;
+// Remove Level from Play Session Info
+void cafe_remove_level_from_session(s32 levelID) {
+    struct LevelPlayActivity *activity;
 
     if (levelID < 0) {
         return;
     }
 
-    data = func_0801082c(levelID);
+    activity = cafe_get_level_session(levelID);
 
-    if (data == NULL) {
+    if (activity == NULL) {
         return;
     }
 
-    if (data->unk2 == 0) {
-        data->levelID = LEVEL_NULL;
+    if (!activity->justGotPerfect) {
+        activity->levelID = LEVEL_NULL;
     }
 }
 
 
-// ?
-void func_080108e8(s32 levelID) {
-    struct CafeSub *data;
+// Add Level with Perfect Just Cleared to Session Info
+void cafe_add_perfect_level_to_session(s32 levelID) {
+    struct LevelPlayActivity *activity;
 
     if (levelID < 0) {
         return;
     }
 
-    data = func_080107dc(levelID);
-    data->unk2 = 1;
-    data->unk1 = 0;
-    func_080107a8(data);
+    activity = cafe_alloc_level_session(levelID);
+    activity->justGotPerfect = TRUE;
+    activity->totalStalePlays = 0;
+    cafe_init_level_session_playtime(activity);
 }
 
 
-// Init. ?
-void func_08010904(u32 arg0, u32 arg1) {
+// Remove Very Old Level Play Activity Sessions
+void cafe_remove_old_levels_from_session(u32 totalPlayTime, u32 inactivityThreshold) {
     u32 i;
 
     for (i = 0; i < 5; i++) {
-        if (D_030055a0.unk0[i].levelID == (u8)LEVEL_NULL) {
+        if (gSessionInfo.lastPlayedLevels[i].levelID == (u8)LEVEL_NULL) {
             continue;
         }
-        if (arg0 - D_030055a0.unk0[i].unk4 > arg1) {
-            D_030055a0.unk0[i].levelID = LEVEL_NULL;
+        if (totalPlayTime - gSessionInfo.lastPlayedLevels[i].timeOfLastPlay > inactivityThreshold) {
+            gSessionInfo.lastPlayedLevels[i].levelID = LEVEL_NULL;
         }
     }
 }
 
 
-// ?
-void func_08010938(void) {
-    struct CafeSub *r10 = D_030055a0.unk0;
-    u8 *r12 = gCafeInfo->unk10;
+// Init. Level Play Activity Indexes
+void cafe_init_session_indexes(void) {
+    struct LevelPlayActivity *levelSessions = gSessionInfo.lastPlayedLevels;
+    u8 *indexes = gCafeInfo->sessionIndexes;
     s32 total = 0;
+    s32 older, newer;
     s32 i, j;
 
     for (i = 0; i < 5; i++) {
-        if (r10[i].levelID != (u8)LEVEL_NULL) {
-            r12[total] = i;
+        if (levelSessions[i].levelID != (u8)LEVEL_NULL) {
+            indexes[total] = i;
             total++;
         }
     }
 
-    gCafeInfo->unkE = total;
+    gCafeInfo->totalLevelsThisSession = total;
 
     for (i = 0; i < (total - 1); i++) {
         for (j = (i + 1); j < total; j++) {
-            if (r10[r12[i]].unk4 < r10[r12[j]].unk4) {
-                u32 iPrev = r12[i];
-                u32 jPrev = r12[j];
-
-                r12[i] = jPrev;
-                r12[j] = iPrev;
+            if (levelSessions[indexes[i]].timeOfLastPlay < levelSessions[indexes[j]].timeOfLastPlay) {
+                older = indexes[i];
+                newer = indexes[j];
+                indexes[i] = newer;
+                indexes[j] = older;
             }
         }
     }
 }
 
 
-// Init. ?
-void func_080109cc(void) {
-    s32 temp = func_0800b60c(0xE10);
+// Init. Session Play Time
+void cafe_init_session_playtime(void) {
+    s32 playtime = get_total_playtime(T_MINUTE);
 
-    gCafeInfo->unk16 = temp - D_030055a0.unk2C;
-    D_030055a0.unk2C = temp;
-    gCafeInfo->unk18 = temp;
-    gCafeInfo->unk1A = func_0800b60c(0x80000000 | 0xE10);
+    gCafeInfo->timeSinceLastVisit = playtime - gSessionInfo.timeOfLastCafeVisit;
+    gSessionInfo.timeOfLastCafeVisit = playtime;
+    gCafeInfo->totalPlayTime = playtime;
+    gCafeInfo->totalActivePlayTime = get_active_playtime(T_MINUTE);
 }
 
 
-// Remove Level if (unk2 != 0)
-void func_08010a04(void) {
+// Remove Level Play Activity with Perfect
+void cafe_remove_perfect_level_sessions(void) {
     u32 i;
 
     for (i = 0; i < 5; i++) {
-        if (D_030055a0.unk0[i].unk2 != 0) {
-            D_030055a0.unk0[i].levelID = LEVEL_NULL;
+        if (gSessionInfo.lastPlayedLevels[i].justGotPerfect) {
+            gSessionInfo.lastPlayedLevels[i].levelID = LEVEL_NULL;
         }
     }
 }
 
 
-// Init. ?
-void func_08010a28(void) {
-    gCafeInfo->nextDialogueTask = 0;
+// Init. Dialogue Text
+void cafe_init_dialogue(void) {
+    gCafeInfo->nextDialogueTask = CAFE_EVENT_INITIALISE_DIALOGUE;
     gCafeInfo->textAdvReady = FALSE;
 }
 
 
 // Start Text Advance Options (Script Function)
-void func_08010a3c(void) {
+void cafe_start_dialogue_inputs(void) {
     struct Animation *anim;
     s16 x, y;
 
-    if (gCafeInfo->unkD) {
+    if (gCafeInfo->disableTextUpdates) {
         return;
     }
 
@@ -310,15 +310,14 @@ void func_08010a3c(void) {
 
 
 // Update Text Advance Options
-void func_08010ae0(void) {
-    s8 choice;
-
+void cafe_update_dialogue_inputs(void) {
     if (!cafe_scene_script_is_ready() || !gCafeInfo->textAdvReady) {
         return;
     }
 
     if (gCafeInfo->queryEnabled) {
-        choice = gCafeInfo->queryResult;
+        s8 choice = gCafeInfo->queryResult;
+
         if (D_03004afc & DPAD_UP) {
             gCafeInfo->queryResult--;
         }
@@ -343,7 +342,7 @@ void func_08010ae0(void) {
 
 
 // Check if Barista Can Clear Level
-u32 func_08010bc0(s32 levelID) {
+u32 barista_can_clear_level(s32 levelID) {
     u8 *deniedLevels;
 
     for (deniedLevels = cafe_barista_denied_levels; *deniedLevels != (u8)LEVEL_NULL; deniedLevels++) {
@@ -357,20 +356,20 @@ u32 func_08010bc0(s32 levelID) {
 
 
 // Start of Loop (Script Function)
-void func_08010be4(void) {
-    struct CafeSub *r6;
+void cafe_print_dialogue(void) {
+    struct LevelPlayActivity *activity;
     const char **dialogue;
     const char *string;
-    char *str;
     const char *levelName;
-    u32 unk18;
+    char *s;
+    u32 playtime;
     u32 topic;
     u32 i;
     s32 x, y;
     u32 dialogueTask = gCafeInfo->nextDialogueTask;
     u8 dialogueExhausted = FALSE;
 
-    if (gCafeInfo->unkD) {
+    if (gCafeInfo->disableTextUpdates) {
         return;
     }
 
@@ -394,26 +393,25 @@ void func_08010be4(void) {
                          "お、きたきた！\n"
                          "待ってたヨ～！！\n"
                          "\n";
-                func_08010a04();
+                cafe_remove_perfect_level_sessions();
                 D_030046a8->data.unk294[9] = FALSE;
                 dialogueTask = CAFE_EVENT_ALL_CAMPAIGNS_CLEAR_00;
                 break;
             }
-            if (gCafeInfo->unk16 == 0) {
+            if (gCafeInfo->timeSinceLastVisit == 0) {
                 dialogue = cafe_dialogue_come_back_later;
                 break;
             }
 
-            unk18 = gCafeInfo->unk18;
-
-            if (unk18 <= 20) {
+            playtime = gCafeInfo->totalPlayTime;
+            if (playtime <= 20) {
                 // Are you making progress?
                 // Please do your best!
                 string = "\n"
                          "ゲーム　すすんでますか？\n"
                          "がんばって　くださいね～。\n"
                          "\n";
-            } else if (unk18 <= 60) {
+            } else if (playtime <= 60) {
                 // Aren't you getting tired?
                 // Don't forget to rest now and then.
                 string = "\n"
@@ -435,32 +433,32 @@ void func_08010be4(void) {
             topic = CAFE_TOPIC_RANDOM;
             i = 0;
 
-            while ((topic == CAFE_TOPIC_RANDOM) && (i < gCafeInfo->unkE)) {
-                r6 = &D_030055a0.unk0[gCafeInfo->unk10[i]];
+            while ((topic == CAFE_TOPIC_RANDOM) && (i < gCafeInfo->totalLevelsThisSession)) {
+                activity = &gSessionInfo.lastPlayedLevels[gCafeInfo->sessionIndexes[i]];
 
-                if (r6->unk2 != 0) {
+                if (activity->justGotPerfect) {
                     topic = CAFE_TOPIC_CAMPAIGN_CLEAR;
                     continue;
                 }
 
-                switch (D_030046a8->data.levelStates[r6->levelID]) {
+                switch (D_030046a8->data.levelStates[activity->levelID]) {
                     case LEVEL_STATE_OPEN:
-                        if ((r6->unk1 >= D_030046a8->data.unk290)
-                          && func_08010bc0(r6->levelID)) {
+                        if ((activity->totalStalePlays >= D_030046a8->data.minFailsForBaristaHelp)
+                          && barista_can_clear_level(activity->levelID)) {
                             topic = CAFE_TOPIC_TROUBLE_CLEARING_LEVEL;
                         }
                         break;
 
                     case LEVEL_STATE_CLEARED:
-                        if (r6->unk1 > 2) {
+                        if (activity->totalStalePlays > 2) {
                             topic = CAFE_TOPIC_TROUBLE_GETTING_MEDAL;
                         }
                         break;
 
                     case LEVEL_STATE_HAS_MEDAL:
                         if ((D_030046a8->data.unk235 < 48)
-                          && !D_030046a8->data.campaignsCleared[get_campaign_from_level_id(r6->levelID)]
-                          && (r6->unk1 > 2)) {
+                          && !D_030046a8->data.campaignsCleared[get_campaign_from_level_id(activity->levelID)]
+                          && (activity->totalStalePlays > 2)) {
                             topic = CAFE_TOPIC_TROUBLE_CLEARING_CAMPAIGN;
                         }
                         break;
@@ -470,10 +468,10 @@ void func_08010be4(void) {
             }
 
             if (topic != CAFE_TOPIC_RANDOM) {
-                if ((gCafeInfo->unk18 - r6->unk4) > 20) {
+                if ((gCafeInfo->totalPlayTime - activity->timeOfLastPlay) > 20) {
                     topic = CAFE_TOPIC_REMEMBERING;
                 }
-                levelName = game_select_get_level_name(r6->levelID);
+                levelName = game_select_get_level_name(activity->levelID);
             } else {
                 if ((D_030046a8->data.campaignState == CAMPAIGN_STATE_AVAILABLE)
                   && (D_030046a8->data.playsUntilNextCampaign < 3)
@@ -487,69 +485,69 @@ void func_08010be4(void) {
                 case CAFE_TOPIC_CAMPAIGN_CLEAR:
                     // Was that you on [...]?
                     // I heard you just got a Perfect!?
-                    str = gCafeInfo->string;
-                    memcpy(str, "", 1);
-                    strcat(str, "\n");
-                    strcat(str, "そうそう、");
-                    strcat(str, "\0051" "\0015");
-                    strcat(str, levelName);
-                    strcat(str, "\0054" "\0018" "で\n");
-                    strcat(str, "パーフェクト　だしたんだって！？");
-                    string = str;
-                    r6->levelID = LEVEL_NULL;
+                    s = gCafeInfo->string;
+                    memcpy(s, "", 1);
+                    strcat(s, "\n");
+                    strcat(s, "そうそう、");
+                    strcat(s, "\0051" "\0015");
+                    strcat(s, levelName);
+                    strcat(s, "\0054" "\0018" "で\n");
+                    strcat(s, "パーフェクト　だしたんだって！？");
+                    string = s;
+                    activity->levelID = LEVEL_NULL;
                     dialogueTask = CAFE_EVENT_CAMPAIGN_CLEAR_00;
                     break;
 
                 case CAFE_TOPIC_TROUBLE_CLEARING_LEVEL:
                     // You're still on [...].
                     // Are you having trouble?
-                    str = gCafeInfo->string;
-                    memcpy(str, "", 1);
-                    strcat(str, "\n");
-                    strcat(str, "そういえば、");
-                    strcat(str, "\0051" "\0015");
-                    strcat(str, levelName);
-                    strcat(str, "\0054" "\0018" "で\n");
-                    strcat(str, "行きづまってませんか？\n" "\n");
-                    string = str;
-                    gCafeInfo->levelToClear = r6->levelID;
-                    r6->levelID = LEVEL_NULL;
+                    s = gCafeInfo->string;
+                    memcpy(s, "", 1);
+                    strcat(s, "\n");
+                    strcat(s, "そういえば、");
+                    strcat(s, "\0051" "\0015");
+                    strcat(s, levelName);
+                    strcat(s, "\0054" "\0018" "で\n");
+                    strcat(s, "行きづまってませんか？\n" "\n");
+                    string = s;
+                    gCafeInfo->levelToClear = activity->levelID;
+                    activity->levelID = LEVEL_NULL;
                     dialogueTask = CAFE_EVENT_OFFER_CLEAR_00;
                     break;
 
                 case CAFE_TOPIC_TROUBLE_GETTING_MEDAL:
                     // Hmm... is [...] giving you trouble earning that medal?
-                    str = gCafeInfo->string;
-                    memcpy(str, "", 1);
-                    strcat(str, "\n");
-                    strcat(str, "う～む…　");
-                    strcat(str, "\0051" "\0015");
-                    strcat(str, levelName);
-                    strcat(str, "\0054" "\0018" "に\n");
-                    strcat(str, "てこずってるんですねぇ。\n" "\n");
-                    string = str;
+                    s = gCafeInfo->string;
+                    memcpy(s, "", 1);
+                    strcat(s, "\n");
+                    strcat(s, "う～む…　");
+                    strcat(s, "\0051" "\0015");
+                    strcat(s, levelName);
+                    strcat(s, "\0054" "\0018" "に\n");
+                    strcat(s, "てこずってるんですねぇ。\n" "\n");
+                    string = s;
                     dialogue = cafe_dialogue_keep_trying;
-                    r6->levelID = LEVEL_NULL;
+                    activity->levelID = LEVEL_NULL;
                     break;
 
                 case CAFE_TOPIC_TROUBLE_CLEARING_CAMPAIGN:
                     // Rumor has it [...] was doing a perfect campaign.
                     // Weren't you playing it just now?
-                    str = gCafeInfo->string;
-                    memcpy(str, "", 1);
-                    strcat(str, "\n");
-                    strcat(str, "ウワサを　きいたんですけど、\n");
-                    strcat(str, "\0051" "\0015");
-                    strcat(str, levelName);
-                    strcat(str, "\0054" "\0018" "　ばかり\n");
-                    strcat(str, "してるみたいですね。");
-                    string = str;
-                    r6->levelID = LEVEL_NULL;
+                    s = gCafeInfo->string;
+                    memcpy(s, "", 1);
+                    strcat(s, "\n");
+                    strcat(s, "ウワサを　きいたんですけど、\n");
+                    strcat(s, "\0051" "\0015");
+                    strcat(s, levelName);
+                    strcat(s, "\0054" "\0018" "　ばかり\n");
+                    strcat(s, "してるみたいですね。");
+                    string = s;
+                    activity->levelID = LEVEL_NULL;
                     dialogueTask = CAFE_EVENT_CAMPAIGN_ADVICE_00;
                     break;
 
                 case CAFE_TOPIC_REMEMBERING:
-                    r6->unk4 = gCafeInfo->unk18;
+                    activity->timeOfLastPlay = gCafeInfo->totalPlayTime;
                     // Ah! Wait, I remember!
                     string = "\n"
                              "\n"
@@ -559,16 +557,16 @@ void func_08010be4(void) {
 
                 case CAFE_TOPIC_UPCOMING_CAMPAIGN:
                     // Hey, here's a tip! Soon [...] is going to be having a perfect campaign.
-                    str = gCafeInfo->string;
-                    memcpy(str, "", 1);
-                    strcat(str, "そうそう、\n"
+                    s = gCafeInfo->string;
+                    memcpy(s, "", 1);
+                    strcat(s, "そうそう、\n"
                                 "もうすぐ");
-                    strcat(str, "\0051" "\0015");
-                    strcat(str, levelName);
-                    strcat(str, "\0054" "\0018" "で、\n"
+                    strcat(s, "\0051" "\0015");
+                    strcat(s, levelName);
+                    strcat(s, "\0054" "\0018" "で、\n"
                                 "パーフェクトキャンペーンを\n"
                                 "するそうですヨ。");
-                    string = str;
+                    string = s;
                     dialogueTask = CAFE_EVENT_UPCOMING_CAMPAIGN_00;
                     D_030046a8->data.unk291 = TRUE;
                     break;
@@ -626,7 +624,7 @@ void func_08010be4(void) {
                 D_030046a8->data.recentLevelY = y;
                 D_030046a8->data.recentLevelState = LEVEL_STATE_CLEARED;
                 D_030046a8->data.recentLevelClearedByBarista = TRUE;
-                D_030046a8->data.unk290 = clamp_int32(D_030046a8->data.unk290 + 1, 2, 7);
+                D_030046a8->data.minFailsForBaristaHelp = clamp_int32(D_030046a8->data.minFailsForBaristaHelp + 1, 2, 7);
                 write_game_save_data();
             } else {
                 // Oh, is that so?
@@ -756,25 +754,25 @@ void func_08010be4(void) {
 
 
 // Get BG Event (Script Function)
-s32 func_080112dc(void) {
+s32 cafe_get_bg_event(void) {
     return gCafeInfo->bgEvent;
 }
 
 
 // Show Text Box
-void func_080112e8(void) {
+void cafe_text_printer_show_box(void) {
     scene_show_bg_layer(BG_LAYER_1);
 }
 
 
 // Hide Text Box
-void func_080112f4(void) {
+void cafe_text_printer_hide_box(void) {
     scene_hide_bg_layer(BG_LAYER_1);
 }
 
 
 // Init. Text Printer
-void func_08011300(void) {
+void cafe_init_text_printer(void) {
     struct TextPrinter *printer;
 
     printer = text_printer_create_new(get_current_mem_id(), 6, 176, 32);
@@ -783,8 +781,8 @@ void func_08011300(void) {
     text_printer_set_palette(printer, 8);
     text_printer_set_colors(printer, 0);
     text_printer_center_by_content(printer, TRUE);
-    text_printer_run_func_on_finish(printer, func_080112e8, 0);
-    text_printer_run_func_on_clear(printer, func_080112f4, 0);
+    text_printer_run_func_on_finish(printer, cafe_text_printer_show_box, 0);
+    text_printer_run_func_on_clear(printer, cafe_text_printer_hide_box, 0);
     gCafeInfo->printer = printer;
     gCafeInfo->textAdvIcon = func_0804d160(D_03005380, anim_cafe_text_adv_icon, 0, 64, 64, 0x700, 1, 0, 0x8000);
     gCafeInfo->textAdvHold = 0;
@@ -792,13 +790,13 @@ void func_08011300(void) {
 
 
 // Get Text Advance Hold Time (Script Function)
-s32 func_080113a8(void) {
+s32 cafe_get_dialogue_hold_time(void) {
     return gCafeInfo->textAdvHold;
 }
 
 
 // Hide Text (Script Function)
-void func_080113b4(void) {
+void cafe_clear_dialogue(void) {
     scene_hide_bg_layer(BG_LAYER_1);
     text_printer_show_text(gCafeInfo->printer, FALSE);
 }
@@ -806,7 +804,7 @@ void func_080113b4(void) {
 
 // Init. Static Variables
 void cafe_scene_init_static_var(void) {
-    func_08010854();
+    cafe_init_session_info();
 }
 
 
@@ -841,16 +839,17 @@ void cafe_scene_init_gfx1(void) {
 
 // Scene Start
 void cafe_scene_start(void *sceneVar, s32 dataArg) {
-    func_08007324(0);
+    func_08007324(FALSE);
     func_080073f0();
     cafe_scene_init_gfx1();
-    func_08011300();
-    func_08010a28();
-    func_080109cc();
-    func_08010904(gCafeInfo->unk18, 60);
-    func_08010938();
+    cafe_init_text_printer();
+    cafe_init_dialogue();
+    cafe_init_session_playtime();
+    cafe_remove_old_levels_from_session(gCafeInfo->totalPlayTime, 60);
+    cafe_init_session_indexes();
+
     gCafeInfo->scriptIsReady = FALSE;
-    gCafeInfo->unkD = FALSE;
+    gCafeInfo->disableTextUpdates = FALSE;
     gCafeInfo->levelToClear = LEVEL_NULL;
 }
 
@@ -863,7 +862,7 @@ void cafe_scene_paused(void *sceneVar, s32 dataArg) {
 // Scene Update (Active)
 void cafe_scene_update(void *sceneVar, s32 dataArg) {
     if (cafe_scene_script_is_ready()) {
-        func_08010ae0();
+        cafe_update_dialogue_inputs();
     }
 
     text_printer_update(gCafeInfo->printer);
@@ -880,9 +879,9 @@ u32 cafe_scene_script_is_ready(void) {
 }
 
 
-// Load Texture (Script Function)
-void func_08011510(struct CompressedGraphics *texture) {
-    func_08003eb8(texture, (VRAMBase + 0xF000));
+// Load BG Event Map (Script Function)
+void cafe_load_bg_event_map(struct CompressedGraphics *map) {
+    func_08003eb8(map, (VRAMBase + 0xF000));
 }
 
 

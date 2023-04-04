@@ -17,6 +17,88 @@ static s32 D_03001310[2]; // unknown type
 /* Main Game Handler */
 
 
+// ?
+u8 func_0800b634(s16 *arg0, s16 *arg1, s16 *arg2, s16 *arg3) {
+    if (arg0[0] + arg1[0] < arg2[0] + arg3[0] + arg3[2]
+     && arg2[0] + arg3[0] < arg0[0] + arg1[0] + arg1[2]
+     && arg0[1] + arg1[1] < arg2[1] + arg3[1] + arg3[3]
+     && arg2[1] + arg3[1] < arg0[1] + arg1[1] + arg1[3]) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
+
+// ?
+void func_0800b698(void) {
+    if (D_030053c0.unk1C0 != NULL) {
+        D_030053c0.unk1C0(D_030053c0.unk1C4);
+    }
+}
+
+
+// ?
+void func_0800b6bc(void (*function)(s32), s32 param) {
+    D_030053c0.unk1C0 = function;
+    D_030053c0.unk1C4 = param;
+}
+
+
+// ?
+void func_0800b6dc(struct struct_0800b71c *arg0, u32 arg1, u32 arg2, struct struct_0800b71c_sub *sub) {
+    arg0->unk0 = 0;
+    arg0->unk1_0 = arg1;
+    arg0->unk1_1 = arg2;
+    arg0->unk4 = sub;
+
+    sub->unk0 = -1;
+    sub->unk1 = 0;
+    sub->unk4 = 0;
+}
+
+
+// ?
+void func_0800b71c(struct struct_0800b71c *arg0, u32 arg1, u32 arg2, u32 arg3) {
+    struct struct_0800b71c_sub *sub = arg0->unk4;
+
+    while(sub->unk0 != (u8)-1) {
+        sub++;
+    }
+
+    sub->unk0 = arg1;
+    sub->unk1 = arg2;
+    sub->unk4 = arg3;
+
+    sub++;
+    sub->unk0 = -1;
+    sub->unk1 = 0;
+    sub->unk4 = 0;
+
+    arg0->unk0++;
+}
+
+
+// Stub
+void func_0800b768(void) {
+}
+
+
+// Stub
+void func_0800b76c(void) {
+}
+
+
+// Stub
+void func_0800b770(void) {
+}
+
+
+// Stub
+void func_0800b774(void) {
+}
+
+
 // Beatscript Engine Init.
 void start_beatscript_scene(u32 memID) {
     u32 i;

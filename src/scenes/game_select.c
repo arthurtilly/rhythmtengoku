@@ -1575,7 +1575,7 @@ u32 game_select_process_level_events(void) {
             game_select_link_sprite_xy_to_bg(sprite);
             play_sound(&s_f_clear_game_seqData);
 
-            func_080108c8(id);
+            cafe_remove_level_from_session(id);
             D_030046a8->data.unk1C7[id] = D_030046a8->data.unk190[id];
             break;
 
@@ -1589,7 +1589,7 @@ u32 game_select_process_level_events(void) {
 
             D_030046a8->data.totalMedals++;
             game_select_refresh_medal_count(127);
-            func_080108c8(id);
+            cafe_remove_level_from_session(id);
             D_030046a8->data.unk1FE[id] = D_030046a8->data.unk190[id];
             if (D_030046a8->data.unk1C7[id] == 0) {
                 D_030046a8->data.unk1C7[id] = D_030046a8->data.unk190[id];

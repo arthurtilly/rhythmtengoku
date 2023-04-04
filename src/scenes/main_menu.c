@@ -8,7 +8,6 @@
 #include "src/memory_heap.h"
 #include "src/code_080068f8.h"
 #include "src/code_08007468.h"
-#include "src/code_0800b3c8.h"
 #include "src/code_0800b778.h"
 #include "gameplay.h"
 #include "src/lib_0804ca80.h"

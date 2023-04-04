@@ -69,7 +69,7 @@ void reset_game_save_data(void) {
 
     data->totalMedals = 0;
     data->unk28F = 1;
-    data->unk290 = 2;
+    data->minFailsForBaristaHelp = 2;
     data->unk291 = 0;
 
     for (i = 0; i < 16; i++) {

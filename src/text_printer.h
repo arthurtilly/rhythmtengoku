@@ -54,6 +54,30 @@ struct TextPrinterData {
     u8 indentWidth;
 };
 
+struct struct_0800b3c8 {
+    u32 pad0;
+    void *printer;
+    u8 totalLines;
+    s16 unkA;
+    s16 unkC;
+    u16 unkE;
+    s16 unk10;
+    u16 pad12[2];
+    s16 unk16;
+    u32 pad18;
+    s16 x1, y1;
+    s16 pad20;
+    s16 x2, y2;
+    s16 unk26;
+    s16 unk28;
+    s16 unk2A;
+    s16 unk2C;
+    u16 pad2E;
+    s16 unk30;
+    char *(*unk34)(s32);
+    s16 (*unk38)(s32);
+};
+
 enum TextPrinterModesEnum {
     TEXT_PRINTER_MODE_STANDARD,
     TEXT_PRINTER_MODE_STATIC_TABLE
@@ -139,3 +163,26 @@ extern void text_printer_set_mode(struct TextPrinter *textPrinter, u32 mode); //
 extern s16 text_printer_get_line_sprite(struct TextPrinter *textPrinter, s32 line); // Get Line Sprite
 extern void text_printer_set_line_spacing(struct TextPrinter *textPrinter, u32 lineSpacing); // Set Line Spacing
 extern void text_printer_set_shadow_colors(struct TextPrinter *textPrinter, s32 shadowColors); // Set Shadow Colors
+
+// extern ? func_0800ae1c(?);
+// extern ? func_0800ae3c(?);
+// extern ? func_0800ae88(?);
+// extern ? func_0800aeb4(?);
+// extern ? func_0800b074(?);
+// extern ? func_0800b0d4(?);
+// extern ? func_0800b108(?);
+// extern ? func_0800b118(?);
+// extern ? func_0800b12c(?);
+// extern ? func_0800b140(?);
+// extern ? func_0800b21c(?);
+// extern ? func_0800b30c(?);
+// extern ? func_0800b31c(?);
+// extern ? func_0800b32c(?);
+// extern ? func_0800b368(?);
+// extern ? func_0800b384(?);
+extern void func_0800b3c8(struct struct_0800b3c8 *);
+extern void func_0800b3e8(struct struct_0800b3c8 *);
+extern void func_0800b408(struct struct_0800b3c8 *, s16, u32);
+extern void func_0800b454(struct struct_0800b3c8 *, s32);
+extern void func_0800b4d8(struct struct_0800b3c8 *arg0, struct Animation *arg1);
+extern s16 func_0800b550(struct struct_0800b3c8 *);

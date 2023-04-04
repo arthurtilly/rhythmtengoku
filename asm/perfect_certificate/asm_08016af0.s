@@ -109,7 +109,7 @@ branch_08016bbe: \n\
 /* 08016bc6 */ LSLS R1, R1, 0x18 \n\
 /* 08016bc8 */ ASRS R1, R1, 0x18 \n\
 /* 08016bca */ BL get_level_id_from_grid_xy \n\
-/* 08016bce */ BL func_080108e8 \n\
+/* 08016bce */ BL cafe_add_perfect_level_to_session \n\
 /* 08016bd2 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08016bd4 */ NEGS R0, R0 @ Set R0 to -R0 \n\
 /* 08016bd6 */ BL results_save_to_cart \n\

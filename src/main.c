@@ -35,7 +35,7 @@ void init_scene_static_var(void) {
 
 void func_08000224(void) {
 	init_key_listener();
-	func_0800b564();
+	init_time_keeper();
 	init_fast_udivsi3();
 	func_08002f68();
 	mem_heap_init(get_memory_heap_start(), get_memory_heap_length());
@@ -128,7 +128,7 @@ void agb_main(void) {
 		}
 
 		func_0804c170();
-		func_0800b590();
+		update_time_keeper();
 		func_08003ff0();
 	}
 }
