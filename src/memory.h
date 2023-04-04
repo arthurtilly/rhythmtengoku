@@ -59,7 +59,7 @@ extern struct SaveBuffer {
             u32 unk2AC;
             u32 unk2B0;
             u32 soundMode;
-            u32 unk2B8;
+            u32 perfectClearCafeDialoguePending;
             u32 unk2BC;
             u32 unk2C0;
             u32 unk2C4;

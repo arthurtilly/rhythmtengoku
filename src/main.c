@@ -14,7 +14,8 @@ static const struct Scene *D_03000084;
 static s32 D_03000088;
 
 
-void func_080001f4_stub(void) {
+// Default Interrupt Procedure (Do Nothing)
+void interrupt_default(void) {
 }
 
 

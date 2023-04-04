@@ -275,7 +275,8 @@ SECTIONS {
         build/data/bitmap_font_data.c.o(.rodata);
         build/data/beatscript_scene_data.c.o(.rodata);
 		build/src/scenes/library.c.o(.rodata);
-        build/data/scenes/cafe/data.c.o(.rodata);
+        build/data/scenes/cafe/dialogue.c.o(.rodata);
+        build/src/scenes/cafe.c.o(.rodata);
 		build/src/scenes/data_check.c.o(.rodata);
 		build/src/scenes/game_select.c.o(.rodata);
         build/data/scenes/game_select/campaigns.c.o(.rodata);
@@ -1701,7 +1702,9 @@ SECTIONS {
 
         build/data/scenes/library/data.c.o(.data);
         build/data/scenes/library/script.bs.o(.rodata);
-        build/data/scenes/cafe/data.c.o(.data);
+        build/data/scenes/cafe/dialogue.c.o(.data);
+        build/src/scenes/cafe.c.o(.data);
+        build/data/scenes/cafe/scene.c.o(.data);
         build/bin/scene_cafe.bin.o(.rodata*);
         build/data/scenes/debug/data_check.c.o(.data);
         build/bin/scene_data_check.bin.o(.rodata*);
