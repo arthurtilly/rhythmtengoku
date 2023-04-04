@@ -62,25 +62,151 @@ enum CafeDialogueTopicsEnum {
     /* 06 */ CAFE_TOPIC_UPCOMING_CAMPAIGN,
 };
 
+enum CafeBgEventsEnum {
+    /* 00 */ CAFE_BG_EVENT_NONE,
+    /* 01 */ CAFE_BG_EVENT_CHEER_01,
+    /* 02 */ CAFE_BG_EVENT_HELPING,
+    /* 03 */ CAFE_BG_EVENT_CHEER_02,
+};
+
+enum CafeOptionResultsEnum {
+    /* 00 */ CAFE_OPTION_YES,
+    /* 01 */ CAFE_OPTION_NO
+};
+
+extern struct SequenceData s_f_cafe_send_mes_seqData;
+
 
 /* CAFE */
 
 
-#include "asm/cafe/asm_080107a8.s"
+// Set unk4 and unk6
+void func_080107a8(struct CafeSub *data) {
+    data->unk4 = func_0800b60c(0xE10);
+    data->unk6 = func_0800b60c(0x80000000 | 0xE10);
+}
 
-#include "asm/cafe/asm_080107c8.s"
 
-#include "asm/cafe/asm_080107dc.s"
+// Set Level ID, unk1 and unk2
+void func_080107c8(struct CafeSub *data, s32 levelID) {
+    data->levelID = levelID;
+    data->unk1 = 0;
+    data->unk2 = 0;
+    func_080107a8(data);
+}
 
-#include "asm/cafe/asm_0801082c.s"
 
-#include "asm/cafe/asm_08010854.s"
+// Allocate ?
+struct CafeSub *func_080107dc(s32 levelID) {
+    struct CafeSub *current = D_030055a0.unk0;
+    struct CafeSub *free = NULL;
+    struct CafeSub *oldest = current;
+    s32 i;
 
-#include "asm/cafe/asm_080108a0.s"
+    for (i = 0; i < 5; i++, current++) {
+        if (current->levelID == levelID) {
+            return current;
+        }
+        if (current->levelID == (u8)LEVEL_NULL) {
+            free = current;
+        }
+        if (current->unk4 <= oldest->unk4) {
+            oldest = current;
+        }
+    }
 
-#include "asm/cafe/asm_080108c8.s"
+    if (free != NULL) {
+        func_080107c8(free, levelID);
+        return free;
+    } else {
+        func_080107c8(oldest, levelID);
+        return oldest;
+    }
+}
 
-#include "asm/cafe/asm_080108e8.s"
+
+// Get ?
+struct CafeSub *func_0801082c(s32 levelID) {
+    struct CafeSub *data = D_030055a0.unk0;
+    s32 i;
+
+    for (i = 0; i < 5; i++, data++) {
+        if (data->levelID == levelID) {
+            return data;
+        }
+    }
+
+    return NULL;
+}
+
+
+// Init. D_030055a0
+void func_08010854(void) {
+    u32 i;
+
+    for (i = 0; i < 5; i++) {
+        D_030055a0.unk0[i].levelID = LEVEL_NULL;
+    }
+
+    D_030055a0.unk29 = 0;
+    D_030055a0.currentFlow = D_030046a8->data.currentFlow;
+    D_030055a0.totalMedals = D_030046a8->data.totalMedals;
+    D_030055a0.unk2C = 0;
+}
+
+
+// ? (called by Results Scene while saving to cart)
+void func_080108a0(s32 levelID) {
+    struct CafeSub *data;
+
+    if (levelID < 0) {
+        return;
+    }
+
+    data = func_080107dc(levelID);
+
+    if (data->unk2 == 0) {
+        if (data->unk1 < 0xFF) {
+            data->unk1++;
+        }
+        func_080107a8(data);
+    }
+}
+
+
+// ? (called by Game Select Scene after clear or medal)
+void func_080108c8(s32 levelID) {
+    struct CafeSub *data;
+
+    if (levelID < 0) {
+        return;
+    }
+
+    data = func_0801082c(levelID);
+
+    if (data == NULL) {
+        return;
+    }
+
+    if (data->unk2 == 0) {
+        data->levelID = LEVEL_NULL;
+    }
+}
+
+
+// ?
+void func_080108e8(s32 levelID) {
+    struct CafeSub *data;
+
+    if (levelID < 0) {
+        return;
+    }
+
+    data = func_080107dc(levelID);
+    data->unk2 = 1;
+    data->unk1 = 0;
+    func_080107a8(data);
+}
 
 
 // Init. ?
@@ -154,13 +280,66 @@ void func_08010a04(void) {
 // Init. ?
 void func_08010a28(void) {
     gCafeInfo->nextDialogueTask = 0;
-    gCafeInfo->unkC = 0;
+    gCafeInfo->textAdvReady = FALSE;
 }
 
 
-#include "asm/cafe/asm_08010a3c.s"
+// Start Text Advance Options (Script Function)
+void func_08010a3c(void) {
+    struct Animation *anim;
+    s16 x, y;
 
-#include "asm/cafe/asm_08010ae0.s"
+    if (gCafeInfo->unkD) {
+        return;
+    }
+
+    text_printer_get_x_y(gCafeInfo->printer, &x, &y);
+    func_0804d5d4(D_03005380, gCafeInfo->textAdvIcon, x, y);
+    func_0804d770(D_03005380, gCafeInfo->textAdvIcon, TRUE);
+
+    if (gCafeInfo->queryEnabled) {
+        anim = cafe_cursor_option_anim[gCafeInfo->queryResult];
+    } else {
+        anim = anim_cafe_text_adv_icon;
+    }
+
+    func_0804d8f8(D_03005380, gCafeInfo->textAdvIcon, anim, 0, 1, 0, 0);
+    gCafeInfo->textAdvReady = TRUE;
+    set_pause_beatscript_scene(TRUE);
+}
+
+
+// Update Text Advance Options
+void func_08010ae0(void) {
+    s8 choice;
+
+    if (!cafe_scene_script_is_ready() || !gCafeInfo->textAdvReady) {
+        return;
+    }
+
+    if (gCafeInfo->queryEnabled) {
+        choice = gCafeInfo->queryResult;
+        if (D_03004afc & DPAD_UP) {
+            gCafeInfo->queryResult--;
+        }
+        if (D_03004afc & DPAD_DOWN) {
+            gCafeInfo->queryResult++;
+        }
+        gCafeInfo->queryResult = clamp_int32(gCafeInfo->queryResult, CAFE_OPTION_YES, CAFE_OPTION_NO);
+
+        if (choice != gCafeInfo->queryResult) {
+            func_0804d8f8(D_03005380, gCafeInfo->textAdvIcon, cafe_cursor_option_anim[gCafeInfo->queryResult], 0, 1, 0, 0);
+        }
+    }
+
+    if (D_03004afc & A_BUTTON) {
+        text_printer_set_string(gCafeInfo->printer, NULL);
+        func_0804d770(D_03005380, gCafeInfo->textAdvIcon, FALSE);
+        play_sound(&s_f_cafe_send_mes_seqData);
+        gCafeInfo->textAdvReady = FALSE;
+        set_pause_beatscript_scene(FALSE);
+    }
+}
 
 
 // Check if Barista Can Clear Level
@@ -177,7 +356,7 @@ u32 func_08010bc0(s32 levelID) {
 }
 
 
-// Start of Loop
+// Start of Loop (Script Function)
 void func_08010be4(void) {
     struct CafeSub *r6;
     const char **dialogue;
@@ -195,9 +374,9 @@ void func_08010be4(void) {
         return;
     }
 
-    gCafeInfo->unk1C = 0;
-    gCafeInfo->unk1D = 0;
-    gCafeInfo->unk1E = 0;
+    gCafeInfo->bgEvent = CAFE_BG_EVENT_NONE;
+    gCafeInfo->textAdvHold = 0;
+    gCafeInfo->queryEnabled = FALSE;
     string = NULL;
     dialogue = NULL;
 
@@ -291,7 +470,7 @@ void func_08010be4(void) {
             }
 
             if (topic != CAFE_TOPIC_RANDOM) {
-                if (gCafeInfo->unk18 - r6->unk4 > 20) {
+                if ((gCafeInfo->unk18 - r6->unk4) > 20) {
                     topic = CAFE_TOPIC_REMEMBERING;
                 }
                 levelName = game_select_get_level_name(r6->levelID);
@@ -333,7 +512,7 @@ void func_08010be4(void) {
                     strcat(str, "\0054" "\0018" "で\n");
                     strcat(str, "行きづまってませんか？\n" "\n");
                     string = str;
-                    gCafeInfo->unk20 = r6->levelID;
+                    gCafeInfo->levelToClear = r6->levelID;
                     r6->levelID = LEVEL_NULL;
                     dialogueTask = CAFE_EVENT_OFFER_CLEAR_00;
                     break;
@@ -402,8 +581,8 @@ void func_08010be4(void) {
 
         case CAFE_EVENT_CAMPAIGN_CLEAR_00:
             string = cafe_dialogue_shouts_praise[agb_random(5)];
-            gCafeInfo->unk1C = 1;
-            gCafeInfo->unk1D = 4;
+            gCafeInfo->bgEvent = CAFE_BG_EVENT_CHEER_01;
+            gCafeInfo->textAdvHold = 4;
             dialogueTask++;
             break;
 
@@ -428,21 +607,21 @@ void func_08010be4(void) {
                      "\n"
                      "　　　　　　　　「おねがいします」\n"
                      "　　　　　　　　「けっこうです」";
-            gCafeInfo->unk1E = 1;
-            gCafeInfo->unk1F = 0;
+            gCafeInfo->queryEnabled = TRUE;
+            gCafeInfo->queryResult = CAFE_OPTION_YES;
             dialogueTask++;
             break;
 
         case CAFE_EVENT_OFFER_CLEAR_01:
-            if (gCafeInfo->unk1F == 0) {
+            if (gCafeInfo->queryResult == CAFE_OPTION_YES) {
                 // <Leave it to me!>
                 string = "\n"
                          "\n"
                          "\0032" "\001l" "\0051" "\0015" "まかせとき！" "\0030" "\001s" "\0054" "\0018";
-                gCafeInfo->unk1D = 3;
-                gCafeInfo->unk1C = 2;
+                gCafeInfo->textAdvHold = 3;
+                gCafeInfo->bgEvent = CAFE_BG_EVENT_HELPING;
                 dialogueTask = CAFE_EVENT_OFFER_CLEAR_02_Y;
-                get_grid_xy_from_level_id(gCafeInfo->unk20, &x, &y);
+                get_grid_xy_from_level_id(gCafeInfo->levelToClear, &x, &y);
                 D_030046a8->data.recentLevelX = x;
                 D_030046a8->data.recentLevelY = y;
                 D_030046a8->data.recentLevelState = LEVEL_STATE_CLEARED;
@@ -493,16 +672,16 @@ void func_08010be4(void) {
                      "\n"
                      "　　　　　　　　「そうなんです」\n"
                      "　　　　　　　　「ちがいますヨ」";
-            gCafeInfo->unk1E = 1;
-            gCafeInfo->unk1F = 0;
+            gCafeInfo->queryEnabled = TRUE;
+            gCafeInfo->queryResult = CAFE_OPTION_YES;
             dialogueTask++;
             break;
 
         case CAFE_EVENT_CAMPAIGN_ADVICE_01:
-            if (gCafeInfo->unk1F == 0) {
+            if (gCafeInfo->queryResult == CAFE_OPTION_YES) {
                 string = cafe_dialogue_shouts_cheer[agb_random(5)];
-                gCafeInfo->unk1D = 3;
-                gCafeInfo->unk1C = 3;
+                gCafeInfo->textAdvHold = 3;
+                gCafeInfo->bgEvent = CAFE_BG_EVENT_CHEER_02;
                 dialogue = cafe_dialogue_practicing_perfect;
             } else {
                 dialogue = cafe_dialogue_not_practicing_perfect;
@@ -535,8 +714,8 @@ void func_08010be4(void) {
             string = "\0032" "\001l" "\0051" "\0015" "\n"
                      "\n"
                      "めちゃすごーい!!" "\0030" "\001s" "\0054" "\0018";
-            gCafeInfo->unk1C = 3;
-            gCafeInfo->unk1D = 4;
+            gCafeInfo->bgEvent = CAFE_BG_EVENT_CHEER_02;
+            gCafeInfo->textAdvHold = 4;
             dialogue = cafe_dialogue_all_perfects_clear;
             break;
 
@@ -576,7 +755,10 @@ void func_08010be4(void) {
 }
 
 
-#include "asm/cafe/asm_080112dc.s"
+// Get BG Event (Script Function)
+s32 func_080112dc(void) {
+    return gCafeInfo->bgEvent;
+}
 
 
 // Show Text Box
@@ -605,13 +787,21 @@ void func_08011300(void) {
     text_printer_run_func_on_clear(printer, func_080112f4, 0);
     gCafeInfo->printer = printer;
     gCafeInfo->textAdvIcon = func_0804d160(D_03005380, anim_cafe_text_adv_icon, 0, 64, 64, 0x700, 1, 0, 0x8000);
-    gCafeInfo->unk1D = 0;
+    gCafeInfo->textAdvHold = 0;
 }
 
 
-#include "asm/cafe/asm_080113a8.s"
+// Get Text Advance Hold Time (Script Function)
+s32 func_080113a8(void) {
+    return gCafeInfo->textAdvHold;
+}
 
-#include "asm/cafe/asm_080113b4.s"
+
+// Hide Text (Script Function)
+void func_080113b4(void) {
+    scene_hide_bg_layer(BG_LAYER_1);
+    text_printer_show_text(gCafeInfo->printer, FALSE);
+}
 
 
 // Init. Static Variables
@@ -660,8 +850,8 @@ void cafe_scene_start(void *sceneVar, s32 dataArg) {
     func_08010904(gCafeInfo->unk18, 60);
     func_08010938();
     gCafeInfo->scriptIsReady = FALSE;
-    gCafeInfo->unkD = 0;
-    gCafeInfo->unk20 = LEVEL_NULL;
+    gCafeInfo->unkD = FALSE;
+    gCafeInfo->levelToClear = LEVEL_NULL;
 }
 
 
@@ -671,7 +861,13 @@ void cafe_scene_paused(void *sceneVar, s32 dataArg) {
 
 
 // Scene Update (Active)
-#include "asm/cafe/asm_080114d4.s"
+void cafe_scene_update(void *sceneVar, s32 dataArg) {
+    if (cafe_scene_script_is_ready()) {
+        func_08010ae0();
+    }
+
+    text_printer_update(gCafeInfo->printer);
+}
 
 
 // Communicate with Script
