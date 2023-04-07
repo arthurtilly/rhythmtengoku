@@ -182,7 +182,7 @@ void func_0801cdc0(void) {
 void func_0801cdfc(void *sceneVar, s32 dataArg) {
     struct TextPrinter *textPrinter;
 
-    func_08007324(0);
+    func_08007324(FALSE);
     func_080073f0();
 
     gTitleInfo->directiveText = func_0804d160(D_03005380, anim_title_text, 0, 120, 132, 0x800, 1, 0x7f, 0x8000);

@@ -104,7 +104,7 @@ void agb_main(void) {
 	REG_IF = 0xFFFF;
 	REG_IME = 1;
 
-	func_0801d860(0); // Init. Script Operator (Init. Static Variables)
+	func_0801d860(FALSE); // Init. Script Operator (Init. Static Variables)
 	init_scenes(&scene_warning);
 	set_scene_trans_target(&scene_warning, D_08935fac); // Title Screen
 	update_key_listener();
