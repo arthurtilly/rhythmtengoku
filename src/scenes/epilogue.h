@@ -5,7 +5,11 @@
 
 // Scene Types:
 struct EpilogueSceneInfo {
-    /* add fields here */
+    struct BitmapFontBG *bgFont;
+    struct BitmapFontOBJ *objFont;
+    u32 scriptIsReady;
+    const struct GraphicsTable *gfxTable;
+    struct SequenceData *jingle;
 };
 
 
@@ -20,12 +24,12 @@ extern struct SequenceData *epilogue_jingles[];
 
 
 // Functions:
-// extern ? func_0801a0ec(?); // Init. Static Variables
-// extern ? func_0801a0f0(?); // Graphics Init. 3
-// extern ? func_0801a140(?); // Graphics Init. 2
-// extern ? func_0801a174(?); // Graphics Init. 1
-// extern ? func_0801a1b0(?); // Scene Start
-// extern ? func_0801a310(?); // Scene Update (Paused)
-// extern ? func_0801a314(?); // Scene Update (Active)
-// extern ? func_0801a354(?); // ?
-// extern ? func_0801a370(?); // Scene Stop
+extern void epilogue_scene_init_static_var(void); // Init. Static Variables
+extern void epilogue_scene_init_gfx3(void); // Graphics Init. 3
+extern void epilogue_scene_init_gfx2(void); // Graphics Init. 2
+extern void epilogue_scene_init_gfx1(void); // Graphics Init. 1
+extern void epilogue_scene_start(void *sceneVar, s32 dataArg); // Scene Start
+extern void epilogue_scene_paused(void *sceneVar, s32 dataArg); // Scene Update (Paused)
+extern void epilogue_scene_update(void *sceneVar, s32 dataArg); // Scene Update (Active)
+extern u32 epilogue_scene_script_is_ready(void); // Communicate with Script
+extern void epilogue_scene_stop(void *sceneVar, s32 dataArg); // Scene Stop
