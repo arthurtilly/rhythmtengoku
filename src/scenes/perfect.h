@@ -5,7 +5,10 @@
 
 // Scene Types:
 struct PerfectSceneInfo {
-    /* add fields here */
+    struct TextPrinter *printer;
+    u32 scriptIsReady;
+    s32 campaignID;
+    char string[0x200];
 };
 
 
@@ -16,25 +19,17 @@ struct PerfectSceneInfo {
 extern struct GraphicsTable perfect_certificate_gfx_table[];
 extern struct CompressedGraphics *perfect_certificate_buffered_textures[];
 extern const char *perfect_gift_directive_text[];
-extern s8 D_089cfc88[];
-extern const char D_08054acc[];
-extern const char D_08054ae0[];
-extern const char D_08054ae4[];
-extern const char D_08054aec[];
-extern const char D_08054b00[];
-extern const char D_08054b1c[];
-extern const char D_08054b5c[];
-extern const char D_08054b88[];
+extern s8 unassigned_campaign_gift_songs[];
 
 
 // Functions:
-// extern ? func_08016a54(?); // Init. Static Variables
-// extern ? func_08016a58(?); // Graphics Init. 3
-// extern ? func_08016a84(?); // Graphics Init. 2
-// extern ? func_08016ab4(?); // Graphics Init. 1
-// extern ? func_08016af0(?); // Scene Start
-// extern ? func_08016d5c(?); // ?
-// extern ? func_08016d90(?); // Scene Update (Paused)
-// extern ? func_08016d94(?); // Scene Update (Active)
-// extern ? func_08016dd8(?); // ?
-// extern ? func_08016df4(?); // Scene Stop
+extern void perfect_scene_init_static_var(void); // Init. Static Variables
+extern void perfect_scene_init_gfx3(void); // Graphics Init. 3
+extern void perfect_scene_init_gfx2(void); // Graphics Init. 2
+extern void perfect_scene_init_gfx1(void); // Graphics Init. 1
+extern void perfect_scene_start(void *sceneVar, s32 dataArg); // Scene Start
+extern void unlock_all_unassigned_campaign_gift_songs(void);
+extern void perfect_scene_paused(void *sceneVar, s32 dataArg); // Scene Update (Paused)
+extern void perfect_scene_update(void *sceneVar, s32 dataArg); // Scene Update (Active)
+extern u32 perfect_scene_script_is_ready(void); // Communicate with Script
+extern void perfect_scene_close(void *sceneVar, s32 dataArg); // Scene Stop

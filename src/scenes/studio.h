@@ -17,6 +17,7 @@ struct StudioEntry {
 
 // Scene Macros/Enums:
 enum StudioSongsEnum {
+    /* -- */ STUDIO_SONG_NULL = -1,
     /* 00 */ STUDIO_SONG_SILENCE,
     /* 01 */ STUDIO_SONG_KARATE_MAN,
     /* 02 */ STUDIO_SONG_CLAPPY_TRIO,

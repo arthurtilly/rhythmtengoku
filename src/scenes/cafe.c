@@ -456,7 +456,7 @@ void cafe_print_dialogue(void) {
                         break;
 
                     case LEVEL_STATE_HAS_MEDAL:
-                        if ((D_030046a8->data.unk235 < 48)
+                        if ((D_030046a8->data.totalPerfects < TOTAL_PERFECT_CAMPAIGNS)
                           && !D_030046a8->data.campaignsCleared[get_campaign_from_level_id(activity->levelID)]
                           && (activity->totalStalePlays > 2)) {
                             topic = CAFE_TOPIC_TROUBLE_CLEARING_CAMPAIGN;
@@ -560,12 +560,12 @@ void cafe_print_dialogue(void) {
                     s = gCafeInfo->string;
                     memcpy(s, "", 1);
                     strcat(s, "そうそう、\n"
-                                "もうすぐ");
+                              "もうすぐ");
                     strcat(s, "\0051" "\0015");
                     strcat(s, levelName);
                     strcat(s, "\0054" "\0018" "で、\n"
-                                "パーフェクトキャンペーンを\n"
-                                "するそうですヨ。");
+                              "パーフェクトキャンペーンを\n"
+                              "するそうですヨ。");
                     string = s;
                     dialogueTask = CAFE_EVENT_UPCOMING_CAMPAIGN_00;
                     D_030046a8->data.unk291 = TRUE;

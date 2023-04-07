@@ -52,7 +52,7 @@ void reset_game_save_data(void) {
     }
 
     reset_all_replay_save_data(&data->drumReplaysAlloc);
-    data->unk235 = 0;
+    data->totalPerfects = 0;
 
     for (i = 0; i < TOTAL_PERFECT_CAMPAIGNS; i++) {
         data->campaignsCleared[i] = FALSE;

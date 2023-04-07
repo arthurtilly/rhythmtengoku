@@ -518,7 +518,7 @@ void gameplay_set_mercy_count(u32 total) {
 void gameplay_stop_scene(s32 unused) {
     const struct Scene *tempScene;
 
-    func_0804e0c4(D_03005380, 0x10);
+    func_0804e0c4(D_03005380, 16);
     gameplay_reset_cues(); // Reset Cues
     if (gGameplayInfo->gameEngine->closeFunc != NULL) {
         gGameplayInfo->gameEngine->closeFunc();
@@ -1089,7 +1089,22 @@ void gameplay_get_previous_cue_info(struct Cue *cue, struct Cue **prev, void **i
 
 
 // [func_08018154] Initialise Common Graphics (Perfect Campaign, etc.)
-#include "asm/gameplay/asm_08018154.s"
+void gameplay_init_overlay(void) {
+    u32 memID;
+
+    memID = func_0804e0c0(D_03005380);
+    func_0804e0bc(D_03005380, 16);
+    gGameplayInfo->pauseSprite = func_0804d160(D_03005380, anim_gameplay_pause_title, 0, 120, 80, 0, 1, 0, 0x8000);
+    gGameplayInfo->pauseOptionsSprite = func_0804d160(D_03005380, anim_gameplay_pause_option1, 0, 120, 80, 0, 1, 0, 0x8000);
+    gGameplayInfo->skipTutorialSprite = func_0804d160(D_03005380, anim_gameplay_skip_icon, 0, 120, 80, 0, 0, 0, 0x8000);
+    gGameplayInfo->aButtonSprite = func_0804d160(D_03005380, anim_gameplay_text_button_black, 0, 64, 64, 0x64, 1, 0, 0x8000);
+    gGameplayInfo->perfectSprite = func_0804d160(D_03005380, anim_gameplay_perfect_icon, 0, 230, 10, 0x5A, 1, 0x7f, 0x8000);
+    func_0804da68(D_03005380, gGameplayInfo->pauseSprite, 1);
+    func_0804da68(D_03005380, gGameplayInfo->pauseOptionsSprite, 1);
+    func_0804e158(D_03005380, 16, 960);
+    func_0804e170(D_03005380, 16, 14);
+    func_0804e0bc(D_03005380, memID);
+}
 
 
 // [func_080182ac] Set D_03001328

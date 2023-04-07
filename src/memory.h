@@ -35,7 +35,7 @@ extern struct SaveBuffer {
         u8 unk190[TOTAL_LEVELS]; // number of plays?
         u8 unk1C7[TOTAL_LEVELS];
         u8 unk1FE[TOTAL_LEVELS];
-        u8 unk235;
+        u8 totalPerfects;
         u8 campaignsCleared[TOTAL_PERFECT_CAMPAIGNS];
         u8 campaignState;
         u8 campaignAttemptsLeft;

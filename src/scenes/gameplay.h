@@ -182,7 +182,7 @@ extern void gameplay_get_cue_info(struct Cue **cue, void **info); // [func_08018
 extern void gameplay_get_previous_cue_info(struct Cue *cue, struct Cue **prev, void **info); // [func_08018138] Get Previous Cue and GameCueInfo
 
 // Functions - Video:
-// extern ? gameplay_init_overlay(?); // [func_08018154] Initialise Common Graphics (Perfect Campaign, etc.)
+extern void gameplay_init_overlay(void); // [func_08018154] Initialise Common Graphics (Perfect Campaign, etc.)
 extern void gameplay_pause_menu_set_quit_destination(struct Scene *scene); // [func_080182ac] Set D_03001328
 extern void gameplay_pause_menu_darken_screen(void); // [func_080182b8] Screen Darken (Pause)
 extern void gameplay_pause_menu_lighten_screen(void); // [func_08018318] Screen Lighten (Unpause)
