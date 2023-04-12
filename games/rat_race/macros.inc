@@ -121,7 +121,7 @@
 
 @ [Event 0x0D] ?
 .macro rat_race_event0D args
-    rat_race_event 0x0D, \args
+    rat_race_event EVENT_0D, \args
 .endm
 
 @ [Event 0x0E] ?

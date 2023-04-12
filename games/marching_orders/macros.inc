@@ -11,7 +11,6 @@
     .set EVENT_03,          0x03
     .set EVENT_04,          0x04
     .set PLAY_VOICE_SFX,    0x05
-    .set STUB_EVENT,        0x06
 
     @ Cues
     .set CUE_STEP,          0x00
@@ -97,9 +96,4 @@
 @ [Event 0x05] Play Voice SFX
 .macro marching_orders_play_voice_sfx id
     marching_orders_event PLAY_VOICE_SFX, \id
-.endm
-
-@ [Event 0x06] Nothing
-.macro marching_orders_stub_event noArgs
-    marching_orders_event STUB_EVENT, \noArgs
 .endm
