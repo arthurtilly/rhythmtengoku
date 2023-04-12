@@ -151,7 +151,7 @@ script D_08061d18
 @ Dialogue
 script D_08061d70
 .ascii "\n"
-.ascii "Bボタンと\x8f\x5c字ボタンの下、\n"
+.ascii "Bボタンと十\字ボタンの下、\n"
 .ascii "どちらでもバスドラムを\n"
 .asciz "たたくことができるヨ！"
 .balign 4, 0
@@ -162,7 +162,7 @@ script D_08061dbc
 .ascii "\n"
 .ascii "しってると思うけど\n"
 .ascii "スネアドラムはAボタンと\n"
-.asciz "\x8f\x5c字ボタンの左だからネ。"
+.asciz "十\字ボタンの左だからネ。"
 .balign 4, 0
 
 

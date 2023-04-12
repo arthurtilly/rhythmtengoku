@@ -42,7 +42,7 @@ return
 script D_080623c0
 .ascii "タムっていうのを\n"
 .ascii "たたいてみよう！\n"
-.ascii "\x8f\x5c字ボタンの右で\n"
+.ascii "十\字ボタンの右で\n"
 .asciz "タムをたたくヨ！"
 .balign 4, 0
 
@@ -65,7 +65,7 @@ return
 @ Dialogue
 script D_08062488
 .ascii "タムだったところを\n"
-.ascii "\x8f\x5c字ボタンの上に\n"
+.ascii "十\字ボタンの上に\n"
 .ascii "かえてみるヨ！\n"
 .asciz "(ロールっていうみたい)"
 .balign 4, 0

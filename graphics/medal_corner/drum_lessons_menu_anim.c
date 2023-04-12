@@ -3,142 +3,142 @@
 
 #include "drum_lessons_menu_anim_cells.inc.c"
 
-// [D_089012a4] <description>
-struct Animation drum_lessons_menu_anim00[] = {
+// [D_089012a4] Lesson Icon - Short 1
+struct Animation anim_lessons_menu_short_1[] = {
     /* 000 */ { drum_lessons_menu_cel007, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_089012b4] <description>
-struct Animation drum_lessons_menu_anim01[] = {
+// [D_089012b4] Rank S
+struct Animation anim_lessons_menu_rank_s[] = {
     /* 000 */ { drum_lessons_menu_cel001, 5 },
     /* 001 */ { drum_lessons_menu_cel003, 5 },
     /* 002 */ { drum_lessons_menu_cel002, 5 },
     /* End */ END_ANIMATION
 };
 
-// [D_089012d4] <description>
-struct Animation drum_lessons_menu_anim02[] = {
+// [D_089012d4] Rank A
+struct Animation anim_lessons_menu_rank_a[] = {
     /* 000 */ { drum_lessons_menu_cel004, 40 },
     /* End */ END_ANIMATION
 };
 
-// [D_089012e4] <description>
-struct Animation drum_lessons_menu_anim03[] = {
+// [D_089012e4] Rank B
+struct Animation anim_lessons_menu_rank_b[] = {
     /* 000 */ { drum_lessons_menu_cel005, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_089012f4] <description>
-struct Animation drum_lessons_menu_anim04[] = {
+// [D_089012f4] Rank C
+struct Animation anim_lessons_menu_rank_c[] = {
     /* 000 */ { drum_lessons_menu_cel006, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901304] <description>
-struct Animation drum_lessons_menu_anim05[] = {
+// [D_08901304] Lesson Icon - Short 2
+struct Animation anim_lessons_menu_short_2[] = {
     /* 000 */ { drum_lessons_menu_cel008, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901314] <description>
-struct Animation drum_lessons_menu_anim06[] = {
+// [D_08901314] Lesson Icon - Short 3
+struct Animation anim_lessons_menu_short_3[] = {
     /* 000 */ { drum_lessons_menu_cel009, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901324] <description>
-struct Animation drum_lessons_menu_anim07[] = {
+// [D_08901324] Lesson Icon - Short 4
+struct Animation anim_lessons_menu_short_4[] = {
     /* 000 */ { drum_lessons_menu_cel010, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901334] <description>
-struct Animation drum_lessons_menu_anim08[] = {
+// [D_08901334] Lesson Icon - Short 5
+struct Animation anim_lessons_menu_short_5[] = {
     /* 000 */ { drum_lessons_menu_cel011, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901344] <description>
-struct Animation drum_lessons_menu_anim09[] = {
+// [D_08901344] Lesson Icon - Short 6
+struct Animation anim_lessons_menu_short_6[] = {
     /* 000 */ { drum_lessons_menu_cel012, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901354] <description>
-struct Animation drum_lessons_menu_anim10[] = {
+// [D_08901354] Lesson Icon - Short 7
+struct Animation anim_lessons_menu_short_7[] = {
     /* 000 */ { drum_lessons_menu_cel013, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901364] <description>
-struct Animation drum_lessons_menu_anim11[] = {
+// [D_08901364] Lesson Icon - Short 8
+struct Animation anim_lessons_menu_short_8[] = {
     /* 000 */ { drum_lessons_menu_cel014, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901374] <description>
-struct Animation drum_lessons_menu_anim12[] = {
+// [D_08901374] Lesson Icon - Short 9
+struct Animation anim_lessons_menu_short_9[] = {
     /* 000 */ { drum_lessons_menu_cel015, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901384] <description>
-struct Animation drum_lessons_menu_anim13[] = {
+// [D_08901384] Lesson Icon - Long 1
+struct Animation anim_lessons_menu_long_1[] = {
     /* 000 */ { drum_lessons_menu_cel016, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901394] <description>
-struct Animation drum_lessons_menu_anim14[] = {
+// [D_08901394] Lesson Icon - Long 2
+struct Animation anim_lessons_menu_long_2[] = {
     /* 000 */ { drum_lessons_menu_cel017, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_089013a4] <description>
-struct Animation drum_lessons_menu_anim15[] = {
+// [D_089013a4] Lesson Icon - Long 3
+struct Animation anim_lessons_menu_long_3[] = {
     /* 000 */ { drum_lessons_menu_cel018, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_089013b4] <description>
-struct Animation drum_lessons_menu_anim16[] = {
+// [D_089013b4] Lesson Icon - Long 4
+struct Animation anim_lessons_menu_long_4[] = {
     /* 000 */ { drum_lessons_menu_cel019, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_089013c4] <description>
-struct Animation drum_lessons_menu_anim17[] = {
+// [D_089013c4] Lesson Icon - Long 5, Long 6
+struct Animation anim_lessons_menu_long_5[] = {
     /* 000 */ { drum_lessons_menu_cel020, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_089013d4] <description>
-struct Animation drum_lessons_menu_anim18[] = {
+// [D_089013d4] Lesson Icon - Hi-Tech 1
+struct Animation anim_lessons_menu_hi_tech_1[] = {
     /* 000 */ { drum_lessons_menu_cel021, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_089013e4] <description>
-struct Animation drum_lessons_menu_anim19[] = {
+// [D_089013e4] Lesson Icon - Hi-Tech 2
+struct Animation anim_lessons_menu_hi_tech_2[] = {
     /* 000 */ { drum_lessons_menu_cel021, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_089013f4] <description>
-struct Animation drum_lessons_menu_anim20[] = {
+// [D_089013f4] Lesson Icon - Basic 1
+struct Animation anim_lessons_menu_basic_1[] = {
     /* 000 */ { drum_lessons_menu_cel022, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901404] <description>
-struct Animation drum_lessons_menu_anim21[] = {
+// [D_08901404] Lesson Icon - Basic 2
+struct Animation anim_lessons_menu_basic_2[] = {
     /* 000 */ { drum_lessons_menu_cel023, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08901414] <description>
-struct Animation drum_lessons_menu_anim22[] = {
+// [D_08901414] Lesson Icon - Basic 3 (Unused)
+struct Animation anim_lessons_menu_basic_3[] = {
     /* 000 */ { drum_lessons_menu_cel024, 4 },
     /* End */ END_ANIMATION
 };

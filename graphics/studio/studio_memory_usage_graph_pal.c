@@ -1,8 +1,8 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_08900dac] <description>
-Palette studio_memory_usage_graph_pal[] = {
+// [D_08900dac] Studio Memory Usage Graph Palettes
+Palette studio_mem_chart_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x104028),
         /* 01 */ TO_RGB555(0x000000),

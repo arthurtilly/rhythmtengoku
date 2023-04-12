@@ -117,7 +117,7 @@ branch_0801e47a: \n\
 /* 0801e480 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 0801e482 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801e484 */ BEQ branch_0801e4ae \n\
-/* 0801e486 */ LDR R2, =D_089ddbe8 \n\
+/* 0801e486 */ LDR R2, =debug_menu_entry_table \n\
 /* 0801e488 */ LDR R4, =D_030046a4 \n\
 /* 0801e48a */ LDR R1, [R4] \n\
 /* 0801e48c */ MOVS R3, 0xE @ Set R3 to 0xE \n\
@@ -131,7 +131,7 @@ branch_0801e47a: \n\
 /* 0801e49c */ LDR R0, [R0] \n\
 /* 0801e49e */ BL func_08000584 \n\
 /* 0801e4a2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801e4a4 */ BL pause_beatscript_scene \n\
+/* 0801e4a4 */ BL set_pause_beatscript_scene \n\
 /* 0801e4a8 */ LDR R1, [R4] \n\
 /* 0801e4aa */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801e4ac */ STR R0, [R1, 0x8] \n\

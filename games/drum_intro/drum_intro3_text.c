@@ -23,7 +23,7 @@ const char D_0805e4e0[] =
 
 const char D_0805e4f8[] =
     "ちがうんです！\n"
-    "よく、　よ" SHIFT_JIS_WAVE_DASH "くきいてネ。";
+    "よく、　よ～くきいてネ。";
 
 const char *const D_0805e520[] = {
     D_0805e4c0,
@@ -146,7 +146,7 @@ const char *const D_0805e844[] = {
     NULL
 };
 
-const char D_0805e858[] = "こんなかんじで、　曲のスタート、　中間、　キメを" SHIFT_JIS_KANJI_HYOU "現できれば楽しく演奏できるのではないかと思います。";
+const char D_0805e858[] = "こんなかんじで、　曲のスタート、　中間、　キメを表\現できれば楽しく演奏できるのではないかと思います。";
 
 const char D_0805e8c0[] = "あのコーナーで練習して、　ぜひ楽しくなってください。";
 

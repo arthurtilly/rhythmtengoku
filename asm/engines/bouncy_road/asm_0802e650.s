@@ -42,7 +42,7 @@ branch_0802e682: \n\
 /* 0802e69a */ LDR R1, =func_0802e644 \n\
 /* 0802e69c */ LDRH R2, [R6] \n\
 /* 0802e69e */ NEGS R3, R4 @ Set R3 to -R4 \n\
-/* 0802e6a0 */ BL func_0800856c \n\
+/* 0802e6a0 */ BL schedule_function_call \n\
 /* 0802e6a4 */ B branch_0802e6b4 \n\
 \n\
 .ltorg \n\

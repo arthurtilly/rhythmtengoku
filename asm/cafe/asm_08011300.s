@@ -42,7 +42,7 @@ thumb_func_start func_08011300 \n\
 /* 0801135a */ STR R4, [R0, 0x4] \n\
 /* 0801135c */ LDR R0, =D_03005380 \n\
 /* 0801135e */ LDR R0, [R0] \n\
-/* 08011360 */ LDR R1, =D_0890021c \n\
+/* 08011360 */ LDR R1, =anim_cafe_text_adv_icon \n\
 /* 08011362 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 08011364 */ STR R2, [SP] \n\
 /* 08011366 */ MOVS R2, 0xE0 @ Set R2 to 0xE0 \n\

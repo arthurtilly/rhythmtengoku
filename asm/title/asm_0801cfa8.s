@@ -16,7 +16,7 @@ thumb_func_start func_0801cfa8 \n\
 /* 0801cfbc */ LDRH R0, [R0] \n\
 /* 0801cfbe */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801cfc0 */ BEQ branch_0801cfd8 \n\
-/* 0801cfc2 */ LDR R0, =D_089cde20 \n\
+/* 0801cfc2 */ LDR R0, =scene_main_menu \n\
 /* 0801cfc4 */ BL func_08000584 \n\
 /* 0801cfc8 */ B branch_0801cfde \n\
 \n\

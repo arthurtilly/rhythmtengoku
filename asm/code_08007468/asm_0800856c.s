@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0800856c \n\
+thumb_func_start schedule_function_call \n\
 /* 0800856c */ PUSH {LR} \n\
 /* 0800856e */ SUB SP, 0x10 \n\
 /* 08008570 */ LSLS R0, R0, 0x10 \n\

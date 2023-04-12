@@ -118,7 +118,7 @@ branch_0801c3da: \n\
 /* 0801c3f8 */ STR R4, [R0] \n\
 /* 0801c3fa */ LDR R6, =D_03005380 \n\
 /* 0801c3fc */ LDR R0, [R6] \n\
-/* 0801c3fe */ LDR R1, =D_0890c498 \n\
+/* 0801c3fe */ LDR R1, =anim_studio_item_move_highlight \n\
 /* 0801c400 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 0801c402 */ STR R2, [SP] \n\
 /* 0801c404 */ LDR R2, =0x8864 \n\
@@ -150,7 +150,7 @@ branch_0801c3da: \n\
 /* 0801c43e */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 0801c440 */ STR R0, [R1] \n\
 /* 0801c442 */ LDR R0, [R6] \n\
-/* 0801c444 */ LDR R1, =D_0890c5a8 \n\
+/* 0801c444 */ LDR R1, =anim_studio_graphs_l \n\
 /* 0801c446 */ MOVS R2, 0x42 @ Set R2 to 0x42 \n\
 /* 0801c448 */ STR R2, [SP] \n\
 /* 0801c44a */ MOVS R2, 0x90 @ Set R2 to 0x90 \n\
@@ -175,7 +175,7 @@ branch_0801c3da: \n\
 /* 0801c472 */ ADDS R3, R7, 0x0 @ Set R3 to R7 + 0x0 \n\
 /* 0801c474 */ BL func_0804db44 \n\
 /* 0801c478 */ LDR R0, [R6] \n\
-/* 0801c47a */ LDR R1, =D_0890c5c8 \n\
+/* 0801c47a */ LDR R1, =anim_studio_graph_r \n\
 /* 0801c47c */ MOVS R3, 0xA0 @ Set R3 to 0xA0 \n\
 /* 0801c47e */ LSLS R3, R3, 0x1 \n\
 /* 0801c480 */ MOVS R2, 0x82 @ Set R2 to 0x82 \n\

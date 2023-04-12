@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0890a4f4] <description>
+// [D_0890a4f4] Main Menu Scene Palette
 Palette main_menu_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x7888A8),

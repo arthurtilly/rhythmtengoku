@@ -97,8 +97,8 @@ struct TaskMethods D_08936c44 = {
 
 // Interpolate LCD Special Effects (Blend Controls)
 struct TaskMethods D_08936c54 = {
-    (TaskStartFunc)func_08007f58,
-    (TaskUpdateFunc)func_08007fdc,
+    (TaskStartFunc)init_lcd_blend_mode_interpolator,
+    (TaskUpdateFunc)update_lcd_blend_mode_interpolator,
     NULL,
     NULL,
 };
@@ -113,15 +113,15 @@ struct TaskMethods D_08936c7c = {
 };
 
 struct TaskMethods D_08936c8c = {
-    (TaskStartFunc)func_0800852c,
-    (TaskUpdateFunc)func_08008548,
+    (TaskStartFunc)init_scheduled_function_task,
+    (TaskUpdateFunc)update_scheduled_function_task,
     NULL,
     NULL,
 };
 
 struct TaskMethods D_08936c9c = {
-    (TaskStartFunc)func_0800873c,
-    (TaskUpdateFunc)func_08008758,
+    (TaskStartFunc)init_texture_loader_task,
+    (TaskUpdateFunc)update_texture_loader_task,
     NULL,
     NULL,
 };

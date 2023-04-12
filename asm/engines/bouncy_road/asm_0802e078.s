@@ -142,7 +142,7 @@ branch_0802e182: \n\
 /* 0802e18c */ LDR R1, [SP, 0xC] \n\
 /* 0802e18e */ LDR R2, [R5, 0x14] \n\
 /* 0802e190 */ LDR R3, [R5, 0x18] \n\
-/* 0802e192 */ BL func_08008f04 \n\
+/* 0802e192 */ BL math_lerp \n\
 /* 0802e196 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0802e198 */ LDRB R0, [R5, 0x4] \n\
 /* 0802e19a */ LSLS R0, R0, 0x1B \n\

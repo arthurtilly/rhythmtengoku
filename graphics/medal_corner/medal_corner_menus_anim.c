@@ -3,16 +3,16 @@
 
 #include "medal_corner_menus_anim_cells.inc.c"
 
-// [D_0890dab8] <description>
-struct Animation medal_corner_menus_anim00[] = {
+// [D_0890dab8] Cursor
+struct Animation anim_medal_corner_cursor[] = {
     /* 000 */ { medal_corner_menus_cel001, 4 },
     /* 001 */ { medal_corner_menus_cel002, 4 },
     /* 002 */ { medal_corner_menus_cel003, 30 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890dad8] <description>
-struct Animation medal_corner_menus_anim01[] = {
+// [D_0890dad8] "Medals to Unlock" Digits
+struct Animation anim_medal_corner_req_num[] = {
     /* 000 */ { medal_corner_menus_cel004, 10 },
     /* 001 */ { medal_corner_menus_cel005, 10 },
     /* 002 */ { medal_corner_menus_cel006, 10 },
@@ -27,8 +27,8 @@ struct Animation medal_corner_menus_anim01[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890db38] <description>
-struct Animation medal_corner_menus_anim02[] = {
+// [D_0890db38] "Medal Count" Digits
+struct Animation anim_medal_corner_count_num[] = {
     /* 000 */ { medal_corner_menus_cel014, 10 },
     /* 001 */ { medal_corner_menus_cel015, 10 },
     /* 002 */ { medal_corner_menus_cel016, 10 },
@@ -43,20 +43,20 @@ struct Animation medal_corner_menus_anim02[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890db98] <description>
-struct Animation medal_corner_menus_anim03[] = {
+// [D_0890db98] Icon (Game Not Yet Unlocked)
+struct Animation anim_medal_corner_locked_icon[] = {
     /* 000 */ { medal_corner_menus_cel024, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890dba8] <description>
-struct Animation medal_corner_menus_anim04[] = {
+// [D_0890dba8] "Medals to Unlock" Zero
+struct Animation anim_medal_corner_req_zero[] = {
     /* 000 */ { medal_corner_menus_cel004, 10 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890dbb8] <description>
-struct Animation medal_corner_menus_anim05[] = {
+// [D_0890dbb8] "Medal Count" Zero
+struct Animation anim_medal_corner_count_zero[] = {
     /* 000 */ { medal_corner_menus_cel014, 10 },
     /* End */ END_ANIMATION
 };

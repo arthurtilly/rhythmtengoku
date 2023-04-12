@@ -50,7 +50,6 @@ BUILD		   := build
 SOURCES		   := src $(shell find src -type d)
 ASM            := asm
 INCLUDES	   := include
-TEXT           := text
 BIN		       := bin
 DATA		   := data
 SCENE_DATA     := $(shell find $(DATA)/scenes -type d)
@@ -62,11 +61,11 @@ AUDIO		   := audio
 MUSIC		   := $(AUDIO)/sequences
 SFX            := $(AUDIO)/samples
 
-C_DIRS		   := $(SOURCES) $(AUDIO) $(GRAPHICS) $(TEXT) $(DATA) $(SCENE_DATA) $(LEVEL_DATA) $(GAME_DATA)
+C_DIRS		   := $(SOURCES) $(AUDIO) $(GRAPHICS) $(DATA) $(SCENE_DATA) $(LEVEL_DATA) $(GAME_DATA)
 C_DIRS         := $(sort $(C_DIRS)) # remove duplicates
 
-ASM_DIRS       := $(ASM) $(DATA) $(SCENE_DATA) $(LEVEL_DATA) $(TEXT)
-BS_DIRS        := $(GAME_DATA)
+ASM_DIRS       := $(ASM) $(DATA) $(SCENE_DATA) $(LEVEL_DATA)
+BS_DIRS        := $(GAME_DATA) $(SCENE_DATA)
 
 ALL_DIRS       := $(BIN) $(ASM_DIRS) $(C_DIRS) $(MUSIC) $(SFX)
 ALL_DIRS       := $(sort $(ALL_DIRS)) # remove duplicates

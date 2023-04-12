@@ -1272,7 +1272,7 @@ branch_0800d542: \n\
 /* 0800d54a */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 0800d54c */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 0800d54e */ ADDS R3, R7, 0x0 @ Set R3 to R7 + 0x0 \n\
-/* 0800d550 */ BL func_08008054 \n\
+/* 0800d550 */ BL interpolate_lcd_blend_mode \n\
 /* 0800d554 */ BL branch_0800df9e \n\
 \n\
 .ltorg \n\

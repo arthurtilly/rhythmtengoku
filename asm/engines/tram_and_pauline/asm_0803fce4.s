@@ -10,7 +10,7 @@ thumb_func_start tram_pauline_init_gfx1 \n\
 /* 0803fcf0 */ LSLS R0, R0, 0x10 \n\
 /* 0803fcf2 */ LSRS R0, R0, 0x10 \n\
 /* 0803fcf4 */ LDR R1, =tram_pauline_buffered_textures \n\
-/* 0803fcf6 */ BL func_080087b4 \n\
+/* 0803fcf6 */ BL start_new_texture_loader \n\
 /* 0803fcfa */ LDR R1, =tram_pauline_init_gfx2 \n\
 /* 0803fcfc */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803fcfe */ BL run_func_after_task \n\

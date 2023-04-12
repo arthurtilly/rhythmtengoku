@@ -120,7 +120,7 @@ branch_0801b930: \n\
 /* 0801b932 */ BEQ branch_0801b960 \n\
  \n\
 branch_0801b934: \n\
-/* 0801b934 */ LDR R1, =D_089d840c \n\
+/* 0801b934 */ LDR R1, =studio_mem_warnings_text \n\
 /* 0801b936 */ LSLS R0, R2, 0x2 \n\
 /* 0801b938 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b93a */ LDR R1, [R0] \n\

@@ -2,6 +2,8 @@
 #include "code_080102d0.h"
 #include "src/memory.h"
 #include "scenes/game_select.h"
+#include "scenes/reading.h"
+#include "scenes/studio.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
@@ -26,38 +28,45 @@ void reset_game_save_data(void) {
     struct TengokuSaveData *data = &D_030046a8->data;
     u32 i;
 
-    data->gameSelectCursorX = 2;
-    data->gameSelectCursorY = 11;
-    data->gameSelectPosX = 2;
-    data->gameSelectPosY = 11;
-    data->recentGameCompletionLevel = -1;
-    data->gameSelectUnk5 = 0;
+    data->gsCursorX = 2;
+    data->gsCursorY = 11;
+    data->recentLevelX = 2;
+    data->recentLevelY = 11;
+    data->recentLevelState = LEVEL_STATE_NULL;
+    data->recentLevelClearedByBarista = FALSE;
     data->currentFlow = 0;
     data->unkB0 = 0;
-    data->recentGameScore = -1;
+    data->recentLevelScore = DEFAULT_LEVEL_SCORE;
 
-    for (i = 0; i < 55; i++) {
-        data->rhythmGameCompletion[i] = RHYTHM_GAME_STATE_HIDDEN;
-        data->rhythmGameScores[i] = -1;
+    for (i = 0; i < TOTAL_LEVELS; i++) {
+        data->levelStates[i] = LEVEL_STATE_HIDDEN;
+        data->levelScores[i] = DEFAULT_LEVEL_SCORE;
     }
+
     func_0801ad9c(); // studio-related
-    for (i = 0; i < 55; i++) {
+
+    for (i = 0; i < TOTAL_LEVELS; i++) {
         data->unk190[i] = 0; // number of attempts?
         data->unk1C7[i] = 0;
         data->unk1FE[i] = 0;
     }
+
     reset_all_replay_save_data(&data->drumReplaysAlloc);
     data->unk235 = 0;
-    for (i = 0; i < 48; i++) {
-        data->unk236[i] = 0; // perfects?
+
+    for (i = 0; i < TOTAL_PERFECT_CAMPAIGNS; i++) {
+        data->campaignsCleared[i] = FALSE;
     }
-    data->unk266 = 0;
+    data->campaignState = CAMPAIGN_STATE_INACTIVE;
+
     for (i = 0; i < 20; i++) {
-        data->readingMaterialUnlocked[i] = 0;
+        data->readingMaterialUnlocked[i] = FALSE;
     }
+
     for (i = 0; i < 15; i++) {
-        data->drumKitUnlocked[i] = 0;
+        data->drumKitsUnlocked[i] = FALSE;
     }
+
     data->totalMedals = 0;
     data->unk28F = 1;
     data->unk290 = 2;
@@ -66,21 +75,22 @@ void reset_game_save_data(void) {
     for (i = 0; i < 16; i++) {
         data->unk294[i] = 0;
     }
+
     D_030046a8->data.unk294[0] = 5;     // High Score - Mr. Upbeat
     D_030046a8->data.unk294[1] = 50;    // High Score - Mannequin Factory
     D_030046a8->data.unk294[2] = 100;   // High Score - Sick Beats SP
     D_030046a8->data.unk294[3] = 10;    // High Score - Quiz Show EX
     D_030046a8->data.unk294[8] = DIRECTSOUND_MODE_STEREO; // Sound Mode
 
-    data->rhythmGameCompletion[SCENE_ENTRY_KARATE_MAN] = RHYTHM_GAME_STATE_AVAILABLE;
-    data->rhythmGameCompletion[SCENE_ENTRY_CLAPPY_TRIO] = RHYTHM_GAME_STATE_CLOSED;
-    data->rhythmGameCompletion[SCENE_ENTRY_SPACEBALL] = RHYTHM_GAME_STATE_CLOSED;
-    data->rhythmGameCompletion[SCENE_ENTRY_RHYTHM_TWEEZERS] = RHYTHM_GAME_STATE_CLOSED;
-    data->rhythmGameCompletion[SCENE_ENTRY_MARCHING_ORDERS] = RHYTHM_GAME_STATE_CLOSED;
-    data->rhythmGameCompletion[SCENE_ENTRY_REMIX_1] = RHYTHM_GAME_STATE_CLOSED;
-    data->drumKitUnlocked[0] = TRUE;
-    data->readingMaterialUnlocked[0] = TRUE;
-    data->readingMaterialUnlocked[1] = TRUE;
+    data->levelStates[LEVEL_KARATE_MAN] = LEVEL_STATE_OPEN;
+    data->levelStates[LEVEL_CLAPPY_TRIO] = LEVEL_STATE_CLOSED;
+    data->levelStates[LEVEL_SPACEBALL] = LEVEL_STATE_CLOSED;
+    data->levelStates[LEVEL_RHYTHM_TWEEZERS] = LEVEL_STATE_CLOSED;
+    data->levelStates[LEVEL_MARCHING_ORDERS] = LEVEL_STATE_CLOSED;
+    data->levelStates[LEVEL_REMIX_1] = LEVEL_STATE_CLOSED;
+    data->drumKitsUnlocked[STUDIO_DRUM_STANDARD] = TRUE;
+    data->readingMaterialUnlocked[READING_MATERIAL_WELCOME] = TRUE;
+    data->readingMaterialUnlocked[READING_MATERIAL_MANUAL] = TRUE;
 }
 
 

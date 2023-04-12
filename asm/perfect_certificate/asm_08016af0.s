@@ -11,7 +11,7 @@ thumb_func_start func_08016af0 \n\
 /* 08016afa */ BL func_08007324 \n\
 /* 08016afe */ BL func_080073f0 \n\
 /* 08016b02 */ BL func_08016ab4 \n\
-/* 08016b06 */ BL func_0801286c \n\
+/* 08016b06 */ BL get_current_campaign \n\
 /* 08016b0a */ LDR R4, =D_030046a4 \n\
 /* 08016b0c */ LDR R1, [R4] \n\
 /* 08016b0e */ STR R0, [R1, 0x8] \n\
@@ -20,7 +20,7 @@ thumb_func_start func_08016af0 \n\
 /* 08016b14 */ BL func_080191b8 \n\
 /* 08016b18 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08016b1a */ BEQ branch_08016bf0 \n\
-/* 08016b1c */ LDR R2, =D_089cdf24 \n\
+/* 08016b1c */ LDR R2, =campaign_gifts_table \n\
 /* 08016b1e */ LDR R0, [R4] \n\
 /* 08016b20 */ LDR R3, [R0, 0x8] \n\
 /* 08016b22 */ LSLS R0, R3, 0x3 \n\
@@ -108,11 +108,11 @@ branch_08016bbe: \n\
 /* 08016bc4 */ LDRB R1, [R1, 0x13] \n\
 /* 08016bc6 */ LSLS R1, R1, 0x18 \n\
 /* 08016bc8 */ ASRS R1, R1, 0x18 \n\
-/* 08016bca */ BL func_08013100 \n\
+/* 08016bca */ BL get_level_id_from_grid_xy \n\
 /* 08016bce */ BL func_080108e8 \n\
 /* 08016bd2 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 08016bd4 */ NEGS R0, R0 @ Set R0 to -R0 \n\
-/* 08016bd6 */ BL func_080191bc \n\
+/* 08016bd6 */ BL results_save_to_cart \n\
 /* 08016bda */ B branch_08016bfe \n\
 \n\
 .ltorg \n\
@@ -122,7 +122,7 @@ branch_08016bf0: \n\
 /* 08016bf2 */ LDR R1, [R0] \n\
 /* 08016bf4 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08016bf6 */ STR R0, [R1, 0x8] \n\
-/* 08016bf8 */ LDR R0, =D_089cdf24 \n\
+/* 08016bf8 */ LDR R0, =campaign_gifts_table \n\
 /* 08016bfa */ LDRB R6, [R0, 0x2] \n\
 /* 08016bfc */ LDR R7, [R0, 0x4] \n\
  \n\
@@ -171,7 +171,7 @@ branch_08016bfe: \n\
 /* 08016c60 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08016c62 */ MOV R0, SP @ Set R0 to SP \n\
 /* 08016c64 */ MOV R1, R8 @ Set R1 to R8 \n\
-/* 08016c66 */ BL func_08008248 \n\
+/* 08016c66 */ BL strint \n\
 /* 08016c6a */ LDR R0, [R5] \n\
 /* 08016c6c */ LDR R1, =D_08054acc \n\
 /* 08016c6e */ ADDS R0, 0xC @ Add 0xC to R0 \n\
@@ -182,14 +182,14 @@ branch_08016bfe: \n\
 /* 08016c7a */ ADDS R4, 0xC @ Add 0xC to R4 \n\
 /* 08016c7c */ LDR R0, [R0, 0x8] \n\
 /* 08016c7e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08016c80 */ BL func_08012c24 \n\
+/* 08016c80 */ BL get_campaign_gift_title \n\
 /* 08016c84 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08016c86 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08016c88 */ BL func_080081a8 \n\
+/* 08016c88 */ BL strcat \n\
 /* 08016c8c */ LDR R0, [R5] \n\
 /* 08016c8e */ ADDS R0, 0xC @ Add 0xC to R0 \n\
 /* 08016c90 */ LDR R1, =D_08054ae0 \n\
-/* 08016c92 */ BL func_080081a8 \n\
+/* 08016c92 */ BL strcat \n\
 /* 08016c96 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 08016c98 */ BNE branch_08016cac \n\
 /* 08016c9a */ CMP R7, 0x6 @ Compare R7 and 0x6 \n\
@@ -201,36 +201,36 @@ branch_08016ca2: \n\
 /* 08016ca2 */ LDR R0, [R5] \n\
 /* 08016ca4 */ ADDS R0, 0xC @ Add 0xC to R0 \n\
 /* 08016ca6 */ LDR R1, =D_08054ae4 \n\
-/* 08016ca8 */ BL func_080081a8 \n\
+/* 08016ca8 */ BL strcat \n\
  \n\
 branch_08016cac: \n\
 /* 08016cac */ LDR R4, =D_030046a4 \n\
 /* 08016cae */ LDR R0, [R4] \n\
 /* 08016cb0 */ ADDS R0, 0xC @ Add 0xC to R0 \n\
 /* 08016cb2 */ LDR R1, =D_08054aec \n\
-/* 08016cb4 */ BL func_080081a8 \n\
+/* 08016cb4 */ BL strcat \n\
 /* 08016cb8 */ LDR R0, [R4] \n\
 /* 08016cba */ ADDS R0, 0xC @ Add 0xC to R0 \n\
-/* 08016cbc */ LDR R2, =D_089cfc78 \n\
+/* 08016cbc */ LDR R2, =perfect_gift_directive_text \n\
 /* 08016cbe */ LSLS R1, R6, 0x2 \n\
 /* 08016cc0 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08016cc2 */ LDR R1, [R1] \n\
-/* 08016cc4 */ BL func_080081a8 \n\
+/* 08016cc4 */ BL strcat \n\
 /* 08016cc8 */ MOV R3, R8 @ Set R3 to R8 \n\
 /* 08016cca */ CMP R3, 0x0 @ Compare R3 and 0x0 \n\
 /* 08016ccc */ BEQ branch_08016d1c \n\
 /* 08016cce */ LDR R0, [R4] \n\
 /* 08016cd0 */ ADDS R0, 0xC @ Add 0xC to R0 \n\
 /* 08016cd2 */ LDR R1, =D_08054b00 \n\
-/* 08016cd4 */ BL func_080081a8 \n\
+/* 08016cd4 */ BL strcat \n\
 /* 08016cd8 */ LDR R0, [R4] \n\
 /* 08016cda */ ADDS R0, 0xC @ Add 0xC to R0 \n\
 /* 08016cdc */ MOV R1, SP @ Set R1 to SP \n\
-/* 08016cde */ BL func_080081a8 \n\
+/* 08016cde */ BL strcat \n\
 /* 08016ce2 */ LDR R0, [R4] \n\
 /* 08016ce4 */ ADDS R0, 0xC @ Add 0xC to R0 \n\
 /* 08016ce6 */ LDR R1, =D_08054b1c \n\
-/* 08016ce8 */ BL func_080081a8 \n\
+/* 08016ce8 */ BL strcat \n\
 /* 08016cec */ B branch_08016d30 \n\
 \n\
 .ltorg \n\
@@ -239,11 +239,11 @@ branch_08016d1c: \n\
 /* 08016d1c */ LDR R0, [R4] \n\
 /* 08016d1e */ ADDS R0, 0xC @ Add 0xC to R0 \n\
 /* 08016d20 */ LDR R1, =D_08054b5c \n\
-/* 08016d22 */ BL func_080081a8 \n\
+/* 08016d22 */ BL strcat \n\
 /* 08016d26 */ LDR R0, [R4] \n\
 /* 08016d28 */ ADDS R0, 0xC @ Add 0xC to R0 \n\
 /* 08016d2a */ LDR R1, =D_08054b88 \n\
-/* 08016d2c */ BL func_080081a8 \n\
+/* 08016d2c */ BL strcat \n\
  \n\
 branch_08016d30: \n\
 /* 08016d30 */ LDR R4, =D_030046a4 \n\

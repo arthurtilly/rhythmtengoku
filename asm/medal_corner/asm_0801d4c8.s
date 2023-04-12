@@ -37,7 +37,7 @@ thumb_func_start func_0801d4c8 \n\
 /* 0801d508 */ LDRB R1, [R1] \n\
 /* 0801d50a */ STR R1, [SP, 0x1C] \n\
 /* 0801d50c */ STR R6, [SP, 0x20] \n\
-/* 0801d50e */ LDR R1, =D_0890dab8 \n\
+/* 0801d50e */ LDR R1, =anim_medal_corner_cursor \n\
 /* 0801d510 */ STR R1, [SP, 0x24] \n\
 /* 0801d512 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
 /* 0801d514 */ STR R1, [SP, 0x28] \n\

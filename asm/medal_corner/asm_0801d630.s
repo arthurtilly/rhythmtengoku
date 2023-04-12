@@ -10,7 +10,7 @@ thumb_func_start func_0801d630 \n\
 /* 0801d638 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0801d63a */ STRB R1, [R0, 0x18] \n\
 /* 0801d63c */ LDR R2, [R4] \n\
-/* 0801d63e */ LDR R0, =D_089dd498 \n\
+/* 0801d63e */ LDR R0, =medal_corner_menu_table \n\
 /* 0801d640 */ LSLS R1, R1, 0x2 \n\
 /* 0801d642 */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 0801d644 */ LDR R0, [R1] \n\
@@ -22,7 +22,7 @@ thumb_func_start func_0801d630 \n\
 /* 0801d656 */ BL func_0801d23c \n\
 /* 0801d65a */ LDR R0, =D_03005380 \n\
 /* 0801d65c */ LDR R0, [R0] \n\
-/* 0801d65e */ LDR R1, =D_0890db98 \n\
+/* 0801d65e */ LDR R1, =anim_medal_corner_locked_icon \n\
 /* 0801d660 */ MOVS R2, 0x58 @ Set R2 to 0x58 \n\
 /* 0801d662 */ STR R2, [SP] \n\
 /* 0801d664 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\

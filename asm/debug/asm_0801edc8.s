@@ -30,7 +30,7 @@ thumb_func_start func_0801edc8 \n\
 /* 0801ee02 */ STR R1, [R0, 0x4] \n\
 /* 0801ee04 */ LDR R0, =D_03005380 \n\
 /* 0801ee06 */ LDR R0, [R0] \n\
-/* 0801ee08 */ LDR R2, =D_089de240 \n\
+/* 0801ee08 */ LDR R2, =empty_test_scene_objects \n\
 /* 0801ee0a */ LDR R3, =D_0300558c \n\
 /* 0801ee0c */ LDR R3, [R3] \n\
 /* 0801ee0e */ BL import_all_scene_objects \n\

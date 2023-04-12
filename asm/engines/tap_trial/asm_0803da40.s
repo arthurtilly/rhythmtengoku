@@ -65,7 +65,7 @@ branch_0803da9e: \n\
 /* 0803daba */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803dabc */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0803dabe */ MOVS R2, 0xD @ Set R2 to 0xD \n\
-/* 0803dac0 */ BL func_0800856c \n\
+/* 0803dac0 */ BL schedule_function_call \n\
  \n\
 branch_0803dac4: \n\
 /* 0803dac4 */ CMP R7, 0xB @ Compare R7 and 0xB \n\

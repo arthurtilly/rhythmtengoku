@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0890a694] <description>
+// [D_0890a694] Perfect Certificate Scene Palette
 Palette perfect_certificate_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF800B8),

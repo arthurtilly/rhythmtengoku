@@ -1,8 +1,8 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0890b734] <description>
-Palette results_level_pal[] = {
+// [D_0890b734] Results (Rank-Type) Scene Palette
+Palette rank_results_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),

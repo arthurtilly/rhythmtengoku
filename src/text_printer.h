@@ -66,10 +66,10 @@ enum TextPrinterAlignmentsEnum {
 };
 
 enum TextAnimAnchorsEnum {
-    TEXT_ANIM_ANCHOR_TOP_LEFT,
-    TEXT_ANIM_ANCHOR_BOTTOM_CENTER,
-    TEXT_ANIM_ANCHOR_BOTTOM_LEFT,
-    TEXT_ANIM_ANCHOR_BOTTOM_RIGHT
+    TEXT_ANCHOR_TOP_LEFT,
+    TEXT_ANCHOR_BOTTOM_CENTER,
+    TEXT_ANCHOR_BOTTOM_LEFT,
+    TEXT_ANCHOR_BOTTOM_RIGHT
 };
 
 enum TextPrinterFontsEnum {
@@ -117,7 +117,7 @@ extern const char *text_printer_get_text(struct TextPrinter *textPrinter); // Ge
 extern void text_printer_resume(struct TextPrinter *textPrinter); // Reinsert Text ("Continue"?)
 // extern ? func_0800aac0(?);
 extern void func_0800abb0(void *printer, s32 line);
-extern s32 text_printer_is_printing(struct TextPrinter *textPrinter); // Get Active Printing Status
+extern s32 text_printer_is_busy(struct TextPrinter *textPrinter); // Get Active Printing Status
 extern void text_printer_set_x_y(struct TextPrinter *textPrinter, s16 x, s16 y); // Set X & Y
 extern void text_printer_set_x(struct TextPrinter *textPrinter, s16 x); // Set X
 extern void text_printer_set_y(struct TextPrinter *textPrinter, s16 y); // Set Y

@@ -11,11 +11,11 @@ thumb_func_start func_0801a450 \n\
 /* 0801a45a */ SUB SP, 0x14 \n\
 /* 0801a45c */ BL func_0800061c \n\
 /* 0801a460 */ LSLS R0, R0, 0x4 \n\
-/* 0801a462 */ LDR R1, =D_089d7e74 \n\
+/* 0801a462 */ LDR R1, =reading_material_table \n\
 /* 0801a464 */ ADDS R7, R0, R1 @ Set R7 to R0 + R1 \n\
 /* 0801a466 */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0801a468 */ BNE branch_0801a46c \n\
-/* 0801a46a */ LDR R7, =D_089d7fe8 \n\
+/* 0801a46a */ LDR R7, =reading_material_error \n\
  \n\
 branch_0801a46c: \n\
 /* 0801a46c */ LDR R6, =D_030046a4 \n\
@@ -40,7 +40,7 @@ branch_0801a46c: \n\
 /* 0801a498 */ STRH R5, [R0] \n\
 /* 0801a49a */ LDR R4, =D_03005380 \n\
 /* 0801a49c */ LDR R0, [R4] \n\
-/* 0801a49e */ LDR R1, =D_0890ae34 \n\
+/* 0801a49e */ LDR R1, =anim_reading_icon_prev \n\
 /* 0801a4a0 */ STR R5, [SP] \n\
 /* 0801a4a2 */ LDR R2, =0x4864 \n\
 /* 0801a4a4 */ MOV R9, R2 @ Set R9 to R2 \n\
@@ -60,7 +60,7 @@ branch_0801a46c: \n\
 /* 0801a4c2 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0801a4c4 */ STRH R0, [R1] \n\
 /* 0801a4c6 */ LDR R0, [R4] \n\
-/* 0801a4c8 */ LDR R1, =D_0890ae44 \n\
+/* 0801a4c8 */ LDR R1, =anim_reading_icon_next \n\
 /* 0801a4ca */ STR R5, [SP] \n\
 /* 0801a4cc */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 0801a4ce */ STR R2, [SP, 0x4] \n\
@@ -77,7 +77,7 @@ branch_0801a46c: \n\
 /* 0801a4e6 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0801a4e8 */ STRH R0, [R1] \n\
 /* 0801a4ea */ LDR R0, [R4] \n\
-/* 0801a4ec */ LDR R1, =D_0890ae24 \n\
+/* 0801a4ec */ LDR R1, =anim_reading_title_bar \n\
 /* 0801a4ee */ STR R5, [SP] \n\
 /* 0801a4f0 */ LDR R2, =0x48c8 \n\
 /* 0801a4f2 */ STR R2, [SP, 0x4] \n\

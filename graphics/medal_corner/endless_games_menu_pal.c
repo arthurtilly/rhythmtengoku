@@ -1,8 +1,8 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_08900484] <description>
-Palette endless_games_menu_pal[] = {
+// [D_08900484] Endless Games Menu Scene Palette
+Palette endless_menu_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF078C0),
         /* 01 */ TO_RGB555(0x000000),

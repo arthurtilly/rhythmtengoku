@@ -16,7 +16,7 @@ thumb_func_start func_0801d02c \n\
 /* 0801d040 */ LDR R4, =D_089d3984 \n\
 /* 0801d042 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801d044 */ BL func_08000584 \n\
-/* 0801d048 */ LDR R1, =D_089dd47c \n\
+/* 0801d048 */ LDR R1, =scene_riq_title \n\
 /* 0801d04a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801d04c */ BL func_080006b0 \n\
 /* 0801d050 */ LDR R0, =D_089dcff0 \n\

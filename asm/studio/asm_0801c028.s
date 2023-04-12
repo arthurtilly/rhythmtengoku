@@ -101,7 +101,7 @@ branch_0801c09c: \n\
 /* 0801c0e0 */ LSLS R1, R1, 0x2 \n\
 /* 0801c0e2 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801c0e4 */ LDR R0, [R0] \n\
-/* 0801c0e6 */ LDR R1, =D_0890c3b8 \n\
+/* 0801c0e6 */ LDR R1, =anim_studio_selection_item \n\
 /* 0801c0e8 */ BL func_0800b4d8 \n\
 /* 0801c0ec */ LDR R0, [R4] \n\
 /* 0801c0ee */ MOVS R2, 0xDC @ Set R2 to 0xDC \n\
@@ -136,7 +136,7 @@ branch_0801c11c: \n\
 /* 0801c13e */ LSLS R5, R5, 0x2 \n\
 /* 0801c140 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 0801c142 */ LDR R0, [R0] \n\
-/* 0801c144 */ LDR R1, =D_0890c3b8 \n\
+/* 0801c144 */ LDR R1, =anim_studio_selection_item \n\
 /* 0801c146 */ BL func_0800b4d8 \n\
 /* 0801c14a */ LDR R0, [R4] \n\
 /* 0801c14c */ MOVS R1, 0xDC @ Set R1 to 0xDC \n\

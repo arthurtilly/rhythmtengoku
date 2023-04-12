@@ -7,7 +7,7 @@ thumb_func_start func_0801052c \n\
 /* 0801052e */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 08010530 */ PUSH {R7} \n\
 /* 08010532 */ SUB SP, 0x14 \n\
-/* 08010534 */ LDR R0, =D_089cd1f0 \n\
+/* 08010534 */ LDR R0, =library_error_text \n\
 /* 08010536 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08010538 */ BL get_current_mem_id \n\
 /* 0801053c */ LSLS R0, R0, 0x10 \n\
@@ -21,7 +21,7 @@ thumb_func_start func_0801052c \n\
 /* 08010550 */ BEQ branch_08010564 \n\
 /* 08010552 */ BL func_080005f4 \n\
 /* 08010556 */ LSLS R0, R0, 0x4 \n\
-/* 08010558 */ LDR R1, =D_089d7e74 \n\
+/* 08010558 */ LDR R1, =reading_material_table \n\
 /* 0801055a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801055c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801055e */ BEQ branch_08010564 \n\
@@ -35,7 +35,7 @@ branch_08010564: \n\
 /* 0801056e */ BL func_080104f0 \n\
 /* 08010572 */ LDR R0, =D_03005380 \n\
 /* 08010574 */ LDR R0, [R0] \n\
-/* 08010576 */ LDR R1, =D_089000cc \n\
+/* 08010576 */ LDR R1, =anim_library_option1 \n\
 /* 08010578 */ MOVS R2, 0x90 @ Set R2 to 0x90 \n\
 /* 0801057a */ STR R2, [SP] \n\
 /* 0801057c */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
@@ -98,10 +98,10 @@ branch_08010564: \n\
 /* 08010608 */ BL memcpy \n\
 /* 0801060c */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 0801060e */ MOV R1, R8 @ Set R1 to R8 \n\
-/* 08010610 */ BL func_080081a8 \n\
+/* 08010610 */ BL strcat \n\
 /* 08010614 */ LDR R1, =D_0804f3e4 \n\
 /* 08010616 */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
-/* 08010618 */ BL func_080081a8 \n\
+/* 08010618 */ BL strcat \n\
 /* 0801061c */ BL get_current_mem_id \n\
 /* 08010620 */ LSLS R0, R0, 0x10 \n\
 /* 08010622 */ LSRS R0, R0, 0x10 \n\

@@ -76,7 +76,7 @@ branch_0803db9e: \n\
 /* 0803dbbc */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803dbbe */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0803dbc0 */ MOVS R2, 0xD @ Set R2 to 0xD \n\
-/* 0803dbc2 */ BL func_0800856c \n\
+/* 0803dbc2 */ BL schedule_function_call \n\
  \n\
 branch_0803dbc6: \n\
 /* 0803dbc6 */ MOV R2, R9 @ Set R2 to R9 \n\

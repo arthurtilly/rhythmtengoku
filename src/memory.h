@@ -1,26 +1,27 @@
 #pragma once
 
 #include "global.h"
+#include "levels.h"
 
 #define SAVE_BUFFER_SIZE sizeof(struct SaveBuffer)
 
 extern struct SaveBuffer {
+    /* [0x000] Header */
     struct SaveBufferHeader {
         char RIQ[4]; // "RIQ"
         u32 bufferSize;
         u32 checksum;
         u32 unkC; // 0x26040000
     } header;
+    /* [0x010] Game Save Data */
     struct TengokuSaveData {
-        s8 gameSelectCursorX;
-        s8 gameSelectCursorY;
-        s8 gameSelectPosX;
-        s8 gameSelectPosY;
-        s8 recentGameCompletionLevel;
-        u8 gameSelectUnk5;
-        u8 rhythmGameCompletion[55];
-        u16 recentGameScore;
-        u16 rhythmGameScores[55];
+        s8 gsCursorX, gsCursorY;
+        s8 recentLevelX, recentLevelY;
+        s8 recentLevelState;
+        u8 recentLevelClearedByBarista;
+        u8 levelStates[TOTAL_LEVELS];
+        u16 recentLevelScore;
+        u16 levelScores[TOTAL_LEVELS];
         u16 currentFlow;
         u16 unkB0;
         u8 unkB2; // relates to studio
@@ -30,24 +31,23 @@ extern struct SaveBuffer {
             s8 saveID;
             u8 drumKitID;
             u8 unk3;
-        } drumReplayData[55];
-        u8 unk190[55]; // number of plays?
-        u8 unk1C7[55];
-        u8 unk1FE[55];
+        } drumReplayData[TOTAL_LEVELS];
+        u8 unk190[TOTAL_LEVELS]; // number of plays?
+        u8 unk1C7[TOTAL_LEVELS];
+        u8 unk1FE[TOTAL_LEVELS];
         u8 unk235;
-        u8 unk236[48];
-        u8 unk266;
-        u8 perfectAttemptsRemaining;
-        u8 playsUntilNextPerfectCampaign;
-        u8 perfectCampaignID;
+        u8 campaignsCleared[TOTAL_PERFECT_CAMPAIGNS];
+        u8 campaignState;
+        u8 campaignAttemptsLeft;
+        u8 playsUntilNextCampaign;
+        u8 currentCampaign;
         u8 unk26A;
         u8 readingMaterialUnlocked[20];
-        u8 drumKitUnlocked[15];
+        u8 drumKitsUnlocked[15];
         u8 totalMedals;
         u8 unk28F;
         u8 unk290;
         u8 unk291;
-        u8 padding292[0x2];
         u32 unk294[16];
         /*
             u32 highScoreMrUpbeat;

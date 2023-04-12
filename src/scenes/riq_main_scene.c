@@ -120,7 +120,7 @@ void func_0801d978(void) {
 void func_0801d98c(void) {
     u32 i;
 
-    func_080013e8(0);
+    func_080013e8(NULL);
     func_08003f28();
 
     for (i = 0; i < 2;) {

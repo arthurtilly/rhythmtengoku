@@ -213,6 +213,9 @@ enum SceneObjectTypesEnum {
     SCENE_OBJECT_TYPE_TEXT
 };
 
+// End of SceneObject list.
+#define END_OF_SCENE_OBJECTS_LIST { .type = NULL }
+
 
 extern void import_scene_object(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject object, s16 *spritePool);
 extern u32 import_all_scene_objects(struct SpriteHandler *spriteHandler, struct BitmapFontOBJ *bitmapFontOBJ, const union SceneObject *objects, s16 *spritePool);

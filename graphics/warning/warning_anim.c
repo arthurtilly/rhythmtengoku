@@ -3,8 +3,8 @@
 
 #include "warning_anim_cells.inc.c"
 
-// [D_08932444] <description>
-struct Animation warning_anim00[] = {
+// [D_08932444] Animated Continue Text
+struct Animation anim_warning_text_continue[] = {
     /* 000 */ { warning_cel000, 20 },
     /* 001 */ { warning_cel001, 1 },
     /* 002 */ { warning_cel002, 1 },

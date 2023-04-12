@@ -219,8 +219,7 @@ struct BlendControlsInterpolator {
 struct unk_struct_08008420_init;
 struct unk_struct_08008420;
 
-struct unk_struct_0800852c_init;
-struct unk_struct_0800852c;
+struct ScheduledFunctionTask;
 
-struct unk_struct_0800873c_init;
-struct unk_struct_0800873c;
+struct TextureLoaderInputs;
+struct TextureLoader;

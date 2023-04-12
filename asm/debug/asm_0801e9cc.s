@@ -30,7 +30,7 @@ thumb_func_start func_0801e9cc \n\
 /* 0801ea06 */ STR R1, [R0, 0x4] \n\
 /* 0801ea08 */ LDR R0, =D_03005380 \n\
 /* 0801ea0a */ LDR R0, [R0] \n\
-/* 0801ea0c */ LDR R2, =D_089de078 \n\
+/* 0801ea0c */ LDR R2, =data_clear_scene_objects \n\
 /* 0801ea0e */ LDR R3, =D_0300558c \n\
 /* 0801ea10 */ LDR R3, [R3] \n\
 /* 0801ea12 */ BL import_all_scene_objects \n\
@@ -40,7 +40,7 @@ thumb_func_start func_0801e9cc \n\
 /* 0801ea1e */ STR R0, [R1, 0x8] \n\
 /* 0801ea20 */ BL clear_save_data \n\
 /* 0801ea24 */ BL flush_save_buffer_to_sram \n\
-/* 0801ea28 */ LDR R0, =D_089dd47c \n\
+/* 0801ea28 */ LDR R0, =scene_riq_title \n\
 /* 0801ea2a */ BL func_08000584 \n\
 /* 0801ea2e */ ADD SP, 0x4 \n\
 /* 0801ea30 */ POP {R4} \n\

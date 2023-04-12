@@ -16,7 +16,7 @@ thumb_func_start func_0802c55c \n\
 /* 0802c570 */ LSLS R1, R4, 0x8 \n\
 /* 0802c572 */ LDR R2, [SP, 0x20] \n\
 /* 0802c574 */ LDR R3, [SP, 0x24] \n\
-/* 0802c576 */ BL func_08008f04 \n\
+/* 0802c576 */ BL math_lerp \n\
 /* 0802c57a */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0802c57c */ ADDS R0, R6, R4 @ Set R0 to R6 + R4 \n\
 /* 0802c57e */ LSLS R0, R0, 0x8 \n\
@@ -40,7 +40,7 @@ thumb_func_start func_0802c55c \n\
 /* 0802c5a4 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0802c5a6 */ LDR R2, [SP, 0x20] \n\
 /* 0802c5a8 */ LDR R3, [SP, 0x24] \n\
-/* 0802c5aa */ BL func_08008f04 \n\
+/* 0802c5aa */ BL math_lerp \n\
 /* 0802c5ae */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
 /* 0802c5b0 */ ASRS R5, R5, 0x8 \n\
 /* 0802c5b2 */ LDR R0, [SP, 0x28] \n\

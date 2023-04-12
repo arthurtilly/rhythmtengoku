@@ -161,7 +161,7 @@ branch_0800efac: \n\
  \n\
 branch_0800efb0: \n\
 /* 0800efb0 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0800efb2 */ BL func_080081a8 \n\
+/* 0800efb2 */ BL strcat \n\
 /* 0800efb6 */ B branch_0800efbe \n\
  \n\
 branch_0800efb8: \n\
@@ -226,7 +226,7 @@ branch_0800f00c: \n\
 /* 0800f014 */ LDR R1, =D_0804f380 \n\
  \n\
 branch_0800f016: \n\
-/* 0800f016 */ BL func_080081a8 \n\
+/* 0800f016 */ BL strcat \n\
 /* 0800f01a */ ADDS R4, 0x2 @ Add 0x2 to R4 \n\
 /* 0800f01c */ B branch_0800f02e \n\
 \n\

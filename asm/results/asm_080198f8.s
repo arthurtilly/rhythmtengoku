@@ -145,7 +145,7 @@ branch_08019a0e: \n\
 /* 08019a0e */ ADD R4, SP, 0x34 \n\
 /* 08019a10 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08019a12 */ ADDS R1, R3, 0x0 @ Set R1 to R3 + 0x0 \n\
-/* 08019a14 */ BL func_080082cc \n\
+/* 08019a14 */ BL strintf \n\
 /* 08019a18 */ ADD R1, SP, 0x14 \n\
 /* 08019a1a */ LDR R0, =D_08054eec \n\
 /* 08019a1c */ LDMIA R0!, {R2, R3, R5} \n\
@@ -156,7 +156,7 @@ branch_08019a0e: \n\
 /* 08019a26 */ STRB R0, [R1] \n\
 /* 08019a28 */ ADD R0, SP, 0x14 \n\
 /* 08019a2a */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
-/* 08019a2c */ BL func_080081a8 \n\
+/* 08019a2c */ BL strcat \n\
 /* 08019a30 */ LDR R0, =D_030046a4 \n\
 /* 08019a32 */ LDR R0, [R0] \n\
 /* 08019a34 */ LDR R0, [R0, 0x4] \n\

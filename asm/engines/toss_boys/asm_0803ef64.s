@@ -57,7 +57,7 @@ thumb_func_start func_0803ef64 \n\
 /* 0803efcc */ SUBS R2, R2, R3 @ Set R2 to R2 - R3 \n\
 /* 0803efce */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
 /* 0803efd0 */ LDRSH R3, [R4, R7] \n\
-/* 0803efd2 */ BL func_080074c4 \n\
+/* 0803efd2 */ BL set_affine_stretch_rotation \n\
 /* 0803efd6 */ LDR R1, [R6] \n\
 /* 0803efd8 */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
 /* 0803efda */ LDRB R0, [R1] \n\
@@ -91,7 +91,7 @@ branch_0803effc: \n\
 /* 0803f024 */ ASRS R1, R1, 0x10 \n\
 /* 0803f026 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
 /* 0803f028 */ LDRSH R2, [R2, R7] \n\
-/* 0803f02a */ BL func_08007498 \n\
+/* 0803f02a */ BL set_affine_scale_rotation \n\
  \n\
 branch_0803f02e: \n\
 /* 0803f02e */ POP {R4-R7} \n\

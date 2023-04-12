@@ -84,10 +84,10 @@
 
 .macro define_gameplay_scene name, entrypoint
 struct sub_\name
-    /* Init Func */   .word gameplay_start_scene,  NULL
-    /* Paused Func */ .word func_08016ffc,         NULL
-    /* Update Func */ .word gameplay_update_scene, NULL
-    /* End Func */    .word gameplay_stop_scene,   NULL
+    /* Init Func */   .word gameplay_start_scene,         NULL
+    /* Paused Func */ .word gameplay_update_paused_scene, NULL
+    /* Update Func */ .word gameplay_update_scene,        NULL
+    /* End Func */    .word gameplay_stop_scene,          NULL
     /* Beatscript */  .word \entrypoint
 endstruct
 

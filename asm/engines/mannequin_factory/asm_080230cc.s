@@ -21,7 +21,7 @@ thumb_func_start func_080230cc \n\
 /* 080230ee */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 080230f0 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 080230f2 */ ADDS R2, R6, 0x0 @ Set R2 to R6 + 0x0 \n\
-/* 080230f4 */ BL func_0800856c \n\
+/* 080230f4 */ BL schedule_function_call \n\
 /* 080230f8 */ B branch_08023106 \n\
 \n\
 .ltorg \n\

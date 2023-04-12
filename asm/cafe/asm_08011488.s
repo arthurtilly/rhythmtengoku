@@ -2,12 +2,12 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08011488 \n\
+thumb_func_start cafe_scene_start \n\
 /* 08011488 */ PUSH {R4, LR} \n\
 /* 0801148a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801148c */ BL func_08007324 \n\
 /* 08011490 */ BL func_080073f0 \n\
-/* 08011494 */ BL func_08011438 \n\
+/* 08011494 */ BL cafe_scene_init_gfx1 \n\
 /* 08011498 */ BL func_08011300 \n\
 /* 0801149c */ BL func_08010a28 \n\
 /* 080114a0 */ BL func_080109cc \n\

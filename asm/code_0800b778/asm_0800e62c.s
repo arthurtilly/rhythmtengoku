@@ -28,7 +28,7 @@ thumb_func_start func_0800e62c \n\
 /* 0800e658 */ MOV R9, R1 @ Set R9 to R1 \n\
 /* 0800e65a */ ADD R1, SP, 0xC \n\
 /* 0800e65c */ MOV R2, R9 @ Set R2 to R9 \n\
-/* 0800e65e */ BL func_0800742c \n\
+/* 0800e65e */ BL get_sprite_xy \n\
 /* 0800e662 */ ADD R0, SP, 0xC \n\
 /* 0800e664 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0800e666 */ LDRSH R2, [R0, R1] \n\

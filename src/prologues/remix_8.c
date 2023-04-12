@@ -36,7 +36,7 @@ void func_08046d4c(void) {
 
     func_0800c604(0);
     func_08006d80();
-    task = func_080087b4(get_current_mem_id(), remix_8_prologue_buffered_textures);
+    task = start_new_texture_loader(get_current_mem_id(), remix_8_prologue_buffered_textures);
     run_func_after_task(task, func_08046d1c, 0);
 }
 

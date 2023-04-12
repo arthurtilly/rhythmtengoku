@@ -11,7 +11,7 @@ const char D_0806817c[] = "そうです。";
 
 const char D_08068188[] = "そうそう！";
 
-const char D_08068194[] = "いいね" SHIFT_JIS_WAVE_DASH "！";
+const char D_08068194[] = "いいね～！";
 
 const char D_080681a0[] = "よいヨ！";
 

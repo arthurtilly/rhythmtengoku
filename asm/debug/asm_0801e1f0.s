@@ -34,7 +34,7 @@ thumb_func_start func_0801e1f0 \n\
 /* 0801e232 */ LDR R0, =D_03005380 \n\
 /* 0801e234 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0801e236 */ LDR R0, [R0] \n\
-/* 0801e238 */ LDR R2, =D_089ddab0 \n\
+/* 0801e238 */ LDR R2, =debug_menu_scene_objects \n\
 /* 0801e23a */ LDR R3, =D_0300558c \n\
 /* 0801e23c */ LDR R3, [R3] \n\
 /* 0801e23e */ BL import_all_scene_objects \n\
@@ -122,7 +122,7 @@ branch_0801e2da: \n\
 /* 0801e2ee */ LDR R0, [R4] \n\
 /* 0801e2f0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0801e2f2 */ STRH R1, [R0, 0xC] \n\
-/* 0801e2f4 */ LDR R1, =D_089ddbe8 \n\
+/* 0801e2f4 */ LDR R1, =debug_menu_entry_table \n\
 /* 0801e2f6 */ LDR R0, [R1] \n\
 /* 0801e2f8 */ LDR R5, =D_03001560 \n\
 /* 0801e2fa */ LDR R6, =D_03001561 \n\
@@ -153,7 +153,7 @@ branch_0801e318: \n\
 /* 0801e326 */ LDR R1, [R0] \n\
 /* 0801e328 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801e32a */ STR R0, [R1, 0x8] \n\
-/* 0801e32c */ LDR R0, =D_089d7c18 \n\
+/* 0801e32c */ LDR R0, =scene_epilogue \n\
 /* 0801e32e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0801e330 */ BL func_080006d0 \n\
 /* 0801e334 */ LDR R0, =D_089cd2cc \n\
@@ -167,10 +167,10 @@ branch_0801e318: \n\
 /* 0801e348 */ LSRS R1, R1, 0x10 \n\
 /* 0801e34a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801e34c */ BL func_080006d0 \n\
-/* 0801e350 */ LDR R0, =D_089ddbcc \n\
+/* 0801e350 */ LDR R0, =scene_debug_menu \n\
 /* 0801e352 */ BL gameplay_pause_menu_set_quit_destination \n\
 /* 0801e356 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801e358 */ BL func_080191ac \n\
+/* 0801e358 */ BL results_set_enable_save \n\
 /* 0801e35c */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0801e35e */ NEGS R0, R0 @ Set R0 to -R0 \n\
 /* 0801e360 */ BL func_0801d6c4 \n\

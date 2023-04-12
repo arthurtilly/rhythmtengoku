@@ -55,7 +55,7 @@ branch_080106c6: \n\
 /* 080106ea */ LDR R1, [R5] \n\
 /* 080106ec */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
 /* 080106ee */ LDRSH R1, [R1, R3] \n\
-/* 080106f0 */ LDR R3, =D_089cd1f8 \n\
+/* 080106f0 */ LDR R3, =library_option_anim \n\
 /* 080106f2 */ LSLS R2, R2, 0x2 \n\
 /* 080106f4 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\
 /* 080106f6 */ LDR R2, [R2] \n\
@@ -90,7 +90,7 @@ branch_08010738: \n\
  \n\
 branch_08010740: \n\
 /* 08010740 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 08010742 */ BL pause_beatscript_scene \n\
+/* 08010742 */ BL set_pause_beatscript_scene \n\
 /* 08010746 */ LDR R0, =D_030046a4 \n\
 /* 08010748 */ LDR R1, [R0] \n\
 /* 0801074a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

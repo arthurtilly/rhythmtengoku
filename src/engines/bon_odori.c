@@ -135,7 +135,7 @@ void bon_odori_init_gfx1(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_080087b4(get_current_mem_id(), bon_odori_buffered_textures);
+    task = start_new_texture_loader(get_current_mem_id(), bon_odori_buffered_textures);
     run_func_after_task(task, bon_odori_init_gfx2, 0);
 }
 

@@ -19,7 +19,7 @@ branch_08011f74: \n\
 /* 08011f7e */ LDRB R0, [R0] \n\
 /* 08011f80 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08011f82 */ BEQ branch_08011f9c \n\
-/* 08011f84 */ LDR R1, =D_089d7e74 \n\
+/* 08011f84 */ LDR R1, =reading_material_table \n\
 /* 08011f86 */ LSLS R0, R2, 0x4 \n\
 /* 08011f88 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08011f8a */ LDR R0, [R0] \n\

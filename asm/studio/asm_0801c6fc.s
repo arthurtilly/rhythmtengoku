@@ -47,7 +47,7 @@ thumb_func_start func_0801c6fc \n\
 /* 0801c754 */ LDR R2, [R0] \n\
 /* 0801c756 */ LSRS R3, R3, 0x1 \n\
 /* 0801c758 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
-/* 0801c75a */ BL func_08001724 \n\
+/* 0801c75a */ BL key_rec_set_mode \n\
 /* 0801c75e */ LDR R0, [R5] \n\
 /* 0801c760 */ LDRB R1, [R6, 0x2] \n\
 /* 0801c762 */ MOVS R2, 0x93 @ Set R2 to 0x93 \n\
@@ -67,7 +67,7 @@ branch_0801c782: \n\
 /* 0801c784 */ LDR R3, [R0] \n\
 /* 0801c786 */ LDR R0, =0x49c \n\
 /* 0801c788 */ ADDS R3, R3, R0 @ Set R3 to R3 + R0 \n\
-/* 0801c78a */ LDR R2, =D_089d81b4 \n\
+/* 0801c78a */ LDR R2, =studio_song_table \n\
 /* 0801c78c */ LDRB R1, [R6] \n\
 /* 0801c78e */ LSLS R0, R1, 0x1 \n\
 /* 0801c790 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

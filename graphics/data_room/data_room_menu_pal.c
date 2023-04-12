@@ -1,8 +1,8 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_08901ac0] <description>
-Palette data_room_menu_pal[] = {
+// [D_08901ac0] Rhythm Data Room Scene Palette
+Palette data_room_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),

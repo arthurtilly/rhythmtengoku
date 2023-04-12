@@ -17,7 +17,7 @@ thumb_func_start func_0801cefc \n\
 /* 0801cf14 */ LDR R1, [R4] \n\
 /* 0801cf16 */ MOVS R2, 0xE @ Set R2 to 0xE \n\
 /* 0801cf18 */ LDRSH R1, [R1, R2] \n\
-/* 0801cf1a */ LDR R2, =D_0890d428 \n\
+/* 0801cf1a */ LDR R2, =anim_title_stars_spin \n\
 /* 0801cf1c */ MOVS R5, 0x1 @ Set R5 to 0x1 \n\
 /* 0801cf1e */ STR R5, [SP] \n\
 /* 0801cf20 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\

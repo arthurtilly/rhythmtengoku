@@ -280,7 +280,7 @@ branch_0803a00e: \n\
 /* 0803a0bc */ LDRB R1, [R1] \n\
 /* 0803a0be */ LSLS R1, R1, 0x18 \n\
 /* 0803a0c0 */ ASRS R1, R1, 0x18 \n\
-/* 0803a0c2 */ BL func_08007468 \n\
+/* 0803a0c2 */ BL assign_sprite_affine_param \n\
 /* 0803a0c6 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0803a0c8 */ LDR R0, [R1] \n\
 /* 0803a0ca */ LDR R1, [R5] \n\

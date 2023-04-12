@@ -71,7 +71,7 @@ thumb_func_start space_dance_cue_miss \n\
 /* 0803d7ae */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803d7b0 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0803d7b2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803d7b4 */ BL func_0800856c \n\
+/* 0803d7b4 */ BL schedule_function_call \n\
 /* 0803d7b8 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803d7ba */ BL func_0803d6c0 \n\
 /* 0803d7be */ BL beatscript_enable_loops \n\

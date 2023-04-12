@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start func_0801e100 \n\
 /* 0801e100 */ PUSH {R4-R7, LR} \n\
-/* 0801e102 */ LDR R1, =D_089ddbe8 \n\
+/* 0801e102 */ LDR R1, =debug_menu_entry_table \n\
 /* 0801e104 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801e106 */ LDR R0, [R1] \n\
 /* 0801e108 */ LDR R7, =D_03001560 \n\
@@ -12,7 +12,7 @@ thumb_func_start func_0801e100 \n\
 /* 0801e10c */ MOV R12, R3 @ Set R12 to R3 \n\
 /* 0801e10e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801e110 */ BEQ branch_0801e146 \n\
-/* 0801e112 */ LDR R4, =D_089dd47c \n\
+/* 0801e112 */ LDR R4, =scene_riq_title \n\
 /* 0801e114 */ ADDS R5, R7, 0x0 @ Set R5 to R7 + 0x0 \n\
 /* 0801e116 */ MOV R6, R12 @ Set R6 to R12 \n\
 /* 0801e118 */ MOVS R3, 0x7 @ Set R3 to 0x7 \n\

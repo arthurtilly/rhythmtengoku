@@ -19,8 +19,8 @@ void sneaky_spirits_show_ghost(u32 position) {
     s16 ghostSprite;
     s32 x, y;
 
-    x = func_08008f04(8, 88, position, gSneakySpiritsInfo->maxSteps - 1);
-    y = func_08008f04(80, 76, position, gSneakySpiritsInfo->maxSteps - 1);
+    x = math_lerp(8, 88, position, gSneakySpiritsInfo->maxSteps - 1);
+    y = math_lerp(80, 76, position, gSneakySpiritsInfo->maxSteps - 1);
     y += (0x100 - gSneakySpiritsInfo->ghostHeight) >> 3;
     ghostSprite = gSneakySpiritsInfo->ghostWalk;
 
@@ -169,7 +169,7 @@ void sneaky_spirits_init_gfx1(void) {
     u32 data;
 
     func_0800c604(0);
-    data = func_080087b4(get_current_mem_id(), sneaky_spirits_buffered_textures);
+    data = start_new_texture_loader(get_current_mem_id(), sneaky_spirits_buffered_textures);
     run_func_after_task(data, sneaky_spirits_init_gfx2, 0);
 }
 
@@ -270,7 +270,7 @@ void sneaky_spirits_update_wind_sfx(void) {
 void sneaky_spirits_display_text(char *string) {
     struct PrintedTextAnim *textAnim;
 
-    func_08007b04(gSneakySpiritsInfo->unk0, gSneakySpiritsInfo->text);
+    delete_bmp_font_obj_text_anim(gSneakySpiritsInfo->unk0, gSneakySpiritsInfo->text);
     textAnim = bmp_font_obj_print_c(gSneakySpiritsInfo->unk0, string, 1, 0xc);
     func_0804d8f8(D_03005380, gSneakySpiritsInfo->text, textAnim->frames, 0, 1, 0, 0);
 }
@@ -408,7 +408,7 @@ void sneaky_spirits_cue_miss(struct Cue *cue, struct SneakySpiritsCue *info) {
 
     if (!info->disableTaunt) {
         func_0804d160(D_03005380, anim_sneaky_spirit_taunt, 0, 160, 105, 0x8792, 1, 0, 3);
-        func_0800856c(get_current_mem_id(), play_sound, (u32)&s_ghost_warai_seqData, beats_to_ticks(0x0C));
+        schedule_function_call(get_current_mem_id(), play_sound, (u32)&s_ghost_warai_seqData, beats_to_ticks(0x0C));
     }
 
     play_sound(&s_ghost_dash_seqData);

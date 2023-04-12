@@ -6,12 +6,15 @@
 
 #define SCREEN_WIDTH 240
 #define SCREEN_HEIGHT 160
-#define SCREEN_CENTER_X (SCREEN_WIDTH/2)
-#define SCREEN_CENTER_Y (SCREEN_HEIGHT/2)
+#define SCREEN_CENTER_X (SCREEN_WIDTH / 2)
+#define SCREEN_CENTER_Y (SCREEN_HEIGHT / 2)
 
 #define BG_TILESET_BASE(offset) (void *)(VRAMBase + offset)
 #define BG_MAP_BASE(offset) (void *)(VRAMBase + offset)
 #define OBJ_TILESET_BASE(offset) (void *)(VRAMBase + 0x10000 + offset)
+
+#define GET_BG_TILESET_ADDR(tileset, ofs) ((u16 *)(VRAMBase + ((tileset) << 14) + (ofs)))
+#define GET_BG_MAP_ADDR(map, x, y) (((u16 *)VRAMBase) + ((map) << 10) + (x) + ((y) << 5))
 
 enum BGLayersEnum {
     BG_LAYER_0,
@@ -111,14 +114,22 @@ typedef u16 FontPalette[4];
 #define COLEV_SRC_PIXEL(x)      ((x) << 0)
 #define COLEV_TGT_PIXEL(x)      ((x) << 8)
 
+struct AffineBG {
+    u16 dx;
+    u16 dmx;
+    u16 dy;
+    u16 dmy;
+    u32 xRef;
+    u32 yRef;
+};
+
 extern struct GraphicsBuffer {
-    u16 DISPCNT;    // LCD Control
+    u16 DISPCNT;
     u16 unk2;
-    u16 BG_CNT[4]; // BG Registers (IORAMBase + 0x8)
-    struct Vector2 BG_OFS[4]; // BG Horizontal & Vertical Offsets
-    u32 unk1C[4];
-    u32 unk2C[4];
-    u16 WIN0H; // Window Registers (IORAMBase + 0x40)
+    u16 BG_CNT[4]; // (IORAMBase + 0x8)
+    struct Vector2 BG_OFS[4];
+    struct AffineBG affineBG[2];
+    u16 WIN0H; // (IORAMBase + 0x40)
     u16 WIN1H;
     u16 WIN0V;
     u16 WIN1V;
@@ -130,10 +141,10 @@ extern struct GraphicsBuffer {
     u16 COLEV;
     u16 COLEY;
     u16 unk52;
-    u16 bgPalette[16][16];   // BG Palette Buffer, 03004b64, 0x54
-    u16 objPalette[16][16];  // OBJ Palette Buffer, 03004d64, 0x254
-    u32 oam[0x100];   // OAM Buffer, 03004f64
-    u16 updateDisplay:1;
+    u16 bgPalette[16][16]; // (0x03004b64; D_03004b10 + 0x54)
+    u16 objPalette[16][16]; // (0x03004d64; D_03004b10 + 0x254)
+    u32 oam[0x100]; // (0x03004f64; D_03004b10 + 0x454)
+    u16 updateDisplay:1; // Buffer Settings (0x854)
     u16 unk854_1:1;
     u16 unk854_2:1;
     u16 unk854_3:1;

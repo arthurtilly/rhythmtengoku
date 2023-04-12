@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_08010ae0 \n\
 /* 08010ae0 */ PUSH {R4-R6, LR} \n\
 /* 08010ae2 */ SUB SP, 0xC \n\
-/* 08010ae4 */ BL func_080114f4 \n\
+/* 08010ae4 */ BL cafe_scene_script_is_ready \n\
 /* 08010ae8 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08010aea */ BEQ branch_08010ba2 \n\
 /* 08010aec */ LDR R5, =D_030046a4 \n\
@@ -60,7 +60,7 @@ branch_08010b22: \n\
 /* 08010b48 */ LDR R0, [R0] \n\
 /* 08010b4a */ MOVS R3, 0x8 @ Set R3 to 0x8 \n\
 /* 08010b4c */ LDRSH R1, [R2, R3] \n\
-/* 08010b4e */ LDR R3, =D_089cd474 \n\
+/* 08010b4e */ LDR R3, =cafe_cursor_option_anim \n\
 /* 08010b50 */ LDRB R2, [R2, 0x1F] \n\
 /* 08010b52 */ LSLS R2, R2, 0x18 \n\
 /* 08010b54 */ ASRS R2, R2, 0x18 \n\
@@ -98,7 +98,7 @@ branch_08010b6a: \n\
 /* 08010b98 */ LDR R1, [R4] \n\
 /* 08010b9a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08010b9c */ STRB R0, [R1, 0xC] \n\
-/* 08010b9e */ BL pause_beatscript_scene \n\
+/* 08010b9e */ BL set_pause_beatscript_scene \n\
  \n\
 branch_08010ba2: \n\
 /* 08010ba2 */ ADD SP, 0xC \n\

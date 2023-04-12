@@ -78,7 +78,7 @@ branch_0801230a: \n\
 .ltorg \n\
  \n\
 branch_0801233c: \n\
-/* 0801233c */ LDR R5, =D_089cdc24 \n\
+/* 0801233c */ LDR R5, =scene_data_room \n\
 /* 0801233e */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08012340 */ BL func_080005e0 \n\
 /* 08012344 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
@@ -102,7 +102,7 @@ branch_0801233c: \n\
 /* 08012374 */ LDR R0, =s_menu_kettei2_seqData \n\
 /* 08012376 */ BL play_sound \n\
 /* 0801237a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801237c */ BL pause_beatscript_scene \n\
+/* 0801237c */ BL set_pause_beatscript_scene \n\
 /* 08012380 */ LDR R1, [R6] \n\
 /* 08012382 */ B branch_080123c0 \n\
 \n\
@@ -130,7 +130,7 @@ branch_080123b0: \n\
 /* 080123b0 */ LDR R0, =s_menu_cancel3_seqData \n\
 /* 080123b2 */ BL play_sound \n\
 /* 080123b6 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 080123b8 */ BL pause_beatscript_scene \n\
+/* 080123b8 */ BL set_pause_beatscript_scene \n\
 /* 080123bc */ LDR R0, =D_030046a4 \n\
 /* 080123be */ LDR R1, [R0] \n\
  \n\

@@ -123,13 +123,13 @@ D_03004b00 = 0x03004b00;
 D_03004b10 = 0x03004b10;
 D_0300536c = 0x0300536c;
 D_03005370 = 0x03005370;
-D_03005374 = 0x03005374;
+sRecMaxKeys = 0x03005374;
 D_03005378 = 0x03005378;
 D_0300537c = 0x0300537c;
 D_03005380 = 0x03005380;
 D_03005390 = 0x03005390;
 D_030053b0 = 0x030053b0;
-D_030053b4 = 0x030053b4;
+sRecCurrentKey = 0x030053b4;
 D_030053b8 = 0x030053b8;
 D_030053c0 = 0x030053c0;
 D_03005588 = 0x03005588;
@@ -140,7 +140,7 @@ D_03005590 = 0x03005590;
 D_030055a0 = 0x030055a0;
 D_030055d0 = 0x030055d0;
 D_030055d4 = 0x030055d4;
-D_030055d8 = 0x030055d8;
+sMainMenuButton = 0x030055d8;
 gPauseMenu = 0x030055e0;
 
 /* Sound Library */
@@ -200,432 +200,38 @@ D_030064d4 = 0x030064d4;
 
 
 /* ROM START */
-
-/* Main Menu - Options Animations */
-D_088f5aec = 0x088f5aec;
-D_088f5afc = 0x088f5afc;
-D_088f5b2c = 0x088f5b2c;
-D_088f5b5c = 0x088f5b5c;
-D_088f5b6c = 0x088f5b6c;
-D_088f5b7c = 0x088f5b7c;
-D_088f5b9c = 0x088f5b9c;
-D_088f5bac = 0x088f5bac;
-D_088f5bbc = 0x088f5bbc;
-D_088f5bcc = 0x088f5bcc;
-D_088f5bdc = 0x088f5bdc;
-/* Main Menu - Options Palettes */
-D_088f5bfc = 0x088f5bfc;
-/* Arrival Animations */
-D_089000cc = 0x089000cc;
-D_089000f4 = 0x089000f4;
-/* Arrival Palettes */
-D_0890011c = 0x0890011c;
-/* Cafe Animations */
-D_089001cc = 0x089001cc;
-D_089001dc = 0x089001dc;
-D_089001fc = 0x089001fc;
-D_0890021c = 0x0890021c;
-/* Cafe Palettes */
-D_0890023c = 0x0890023c;
-D_0890035c = 0x0890035c;
-/* Endless Menu Animations */
-D_08900444 = 0x08900444;
-D_08900454 = 0x08900454;
-D_08900464 = 0x08900464;
-D_08900474 = 0x08900474;
-/* Endless Menu Palettes */
-D_08900484 = 0x08900484;
-/* Studio SRAM Usage Indicator Animations */
-D_08900bcc = 0x08900bcc;
-D_08900d9c = 0x08900d9c;
-/* Studio SRAM Usage Indicator Palettes */
-D_08900dac = 0x08900dac;
-/* Drum Lessons Menu Animations */
-D_089012a4 = 0x089012a4;
-D_089012b4 = 0x089012b4;
-D_089012d4 = 0x089012d4;
-D_089012e4 = 0x089012e4;
-D_089012f4 = 0x089012f4;
-D_08901304 = 0x08901304;
-D_08901314 = 0x08901314;
-D_08901324 = 0x08901324;
-D_08901334 = 0x08901334;
-D_08901344 = 0x08901344;
-D_08901354 = 0x08901354;
-D_08901364 = 0x08901364;
-D_08901374 = 0x08901374;
-D_08901384 = 0x08901384;
-D_08901394 = 0x08901394;
-D_089013a4 = 0x089013a4;
-D_089013b4 = 0x089013b4;
-D_089013c4 = 0x089013c4;
-D_089013d4 = 0x089013d4;
-D_089013e4 = 0x089013e4;
-D_089013f4 = 0x089013f4;
-D_08901404 = 0x08901404;
-D_08901414 = 0x08901414;
-/* Drum Lessons Menu Palettes */
-D_08901424 = 0x08901424;
-/* Rhythm Data Room - Menu Animations */
-D_089018f8 = 0x089018f8;
-D_08901910 = 0x08901910;
-D_08901930 = 0x08901930;
-D_08901948 = 0x08901948;
-D_08901980 = 0x08901980;
-D_089019a8 = 0x089019a8;
-/* Rhythm Data Room - Menu Palettes */
-D_08901ac0 = 0x08901ac0;
-/* Game Select Palettes */
-D_08902ec0 = 0x08902ec0;
-D_08903020 = 0x08903020;
-D_08903120 = 0x08903120;
-/* Game Select Overlay Graphics */ /* Uncompressed */
-D_089031c0 = 0x089031c0;
-D_08903640 = 0x08903640;
-D_089039a0 = 0x089039a0;
-D_08903ac0 = 0x08903ac0;
-D_08903be0 = 0x08903be0;
-D_08904180 = 0x08904180;
-D_089055c0 = 0x089055c0;
-D_089056e0 = 0x089056e0;
-/* Game Select Icon Graphics */ /* Uncompressed */
-D_089057e0 = 0x089057e0;
-D_08905900 = 0x08905900;
-D_08905a20 = 0x08905a20;
-D_08905b40 = 0x08905b40;
-D_08905c60 = 0x08905c60;
-D_08905d80 = 0x08905d80;
-D_08905ea0 = 0x08905ea0;
-D_08905fc0 = 0x08905fc0;
-D_089060e0 = 0x089060e0;
-D_08906200 = 0x08906200;
-D_08906320 = 0x08906320;
-D_08906440 = 0x08906440;
-D_08906560 = 0x08906560;
-D_08906680 = 0x08906680;
-D_089067a0 = 0x089067a0;
-D_089068c0 = 0x089068c0;
-D_089069e0 = 0x089069e0;
-D_08906b00 = 0x08906b00;
-D_08906c20 = 0x08906c20;
-D_08906d40 = 0x08906d40;
-D_08906e60 = 0x08906e60;
-D_08906f80 = 0x08906f80;
-D_089070a0 = 0x089070a0;
-D_089071c0 = 0x089071c0;
-D_089072e0 = 0x089072e0;
-D_08907400 = 0x08907400;
-D_08907520 = 0x08907520;
-D_08907640 = 0x08907640;
-D_08907760 = 0x08907760;
-D_08907880 = 0x08907880;
-D_089079a0 = 0x089079a0;
-D_08907ac0 = 0x08907ac0;
-D_08907be0 = 0x08907be0;
-D_08907d00 = 0x08907d00;
-D_08907e20 = 0x08907e20;
-D_08907f40 = 0x08907f40;
-D_08908060 = 0x08908060;
-D_08908180 = 0x08908180;
-D_089082a0 = 0x089082a0;
-D_089083c0 = 0x089083c0;
-D_08908405 = 0x08908405;
-D_089084e0 = 0x089084e0;
-D_08908600 = 0x08908600;
-D_08908720 = 0x08908720;
-D_08908840 = 0x08908840;
-D_08908960 = 0x08908960;
-D_08908a80 = 0x08908a80;
-D_08908ba0 = 0x08908ba0;
-D_08908cc0 = 0x08908cc0;
-D_08908de0 = 0x08908de0;
-D_08908f00 = 0x08908f00;
-D_08909020 = 0x08909020;
-D_08909140 = 0x08909140;
-D_08909260 = 0x08909260;
-D_08909380 = 0x08909380;
-/* Main Menu Animations */
-D_0890a3c4 = 0x0890a3c4;
-D_0890a3d4 = 0x0890a3d4;
-D_0890a3f4 = 0x0890a3f4;
-D_0890a414 = 0x0890a414;
-D_0890a434 = 0x0890a434;
-D_0890a454 = 0x0890a454;
-D_0890a474 = 0x0890a474;
-D_0890a484 = 0x0890a484;
-D_0890a494 = 0x0890a494;
-D_0890a4a4 = 0x0890a4a4;
-D_0890a4b4 = 0x0890a4b4;
-D_0890a4c4 = 0x0890a4c4;
-D_0890a4d4 = 0x0890a4d4;
-/* Main Menu Palettes */
-D_0890a4f4 = 0x0890a4f4;
-/* Perfect Campaign Palettes */
-D_0890a694 = 0x0890a694;
-/* Rhythm Data Room - Reading Animations */
-D_0890ae24 = 0x0890ae24;
-D_0890ae34 = 0x0890ae34;
-D_0890ae44 = 0x0890ae44;
-/* Rhythm Data Room - Reading Palettes */
-D_0890ae54 = 0x0890ae54;
-D_0890ae94 = 0x0890ae94;
-D_0890aef4 = 0x0890aef4;
-D_0890af94 = 0x0890af94;
-D_0890b134 = 0x0890b134;
-D_0890b194 = 0x0890b194;
-D_0890b1f4 = 0x0890b1f4;
-D_0890b294 = 0x0890b294;
-/* Unknown - 087 Animations */
-D_0890b310 = 0x0890b310;
-D_0890b320 = 0x0890b320;
-/* Results - Level Animations */
-D_0890b6ac = 0x0890b6ac;
-D_0890b6bc = 0x0890b6bc;
-D_0890b6dc = 0x0890b6dc;
-D_0890b6ec = 0x0890b6ec;
-D_0890b6fc = 0x0890b6fc;
-D_0890b70c = 0x0890b70c;
-D_0890b724 = 0x0890b724;
-/* Results - Level Palettes */
-D_0890b734 = 0x0890b734;
-/* Results - Score Animations */
-D_0890bb68 = 0x0890bb68;
-D_0890bbc0 = 0x0890bbc0;
-D_0890bbd0 = 0x0890bbd0;
-D_0890bbe0 = 0x0890bbe0;
-D_0890bbf0 = 0x0890bbf0;
-D_0890bc00 = 0x0890bc00;
-/* Results - Score Palettes */
-D_0890bc58 = 0x0890bc58;
-/* Studio Menu Animations */
-D_0890c3b8 = 0x0890c3b8;
-D_0890c3c8 = 0x0890c3c8;
-D_0890c3d8 = 0x0890c3d8;
-D_0890c430 = 0x0890c430;
-D_0890c440 = 0x0890c440;
-D_0890c498 = 0x0890c498;
-D_0890c4a8 = 0x0890c4a8;
-D_0890c4e0 = 0x0890c4e0;
-D_0890c518 = 0x0890c518;
-D_0890c540 = 0x0890c540;
-D_0890c568 = 0x0890c568;
-D_0890c588 = 0x0890c588;
-D_0890c5a8 = 0x0890c5a8;
-D_0890c5c8 = 0x0890c5c8;
-/* Studio Menu Palettes */
-D_0890c5e8 = 0x0890c5e8;
-D_0890c7e8 = 0x0890c7e8;
-/* Title Screen Animations */
-D_0890d3a0 = 0x0890d3a0;
-D_0890d3b0 = 0x0890d3b0;
-D_0890d3c0 = 0x0890d3c0;
-D_0890d3d0 = 0x0890d3d0;
-D_0890d3e0 = 0x0890d3e0;
-D_0890d3f0 = 0x0890d3f0;
-D_0890d400 = 0x0890d400;
-D_0890d420 = 0x0890d420;
-D_0890d428 = 0x0890d428;
-D_0890d450 = 0x0890d450;
-D_0890d4a0 = 0x0890d4a0;
-D_0890d4b0 = 0x0890d4b0;
-D_0890d4c0 = 0x0890d4c0;
-D_0890d4d0 = 0x0890d4d0;
-D_0890d4e0 = 0x0890d4e0;
-D_0890d4f0 = 0x0890d4f0;
-D_0890d500 = 0x0890d500;
-D_0890d510 = 0x0890d510;
-D_0890d520 = 0x0890d520;
-/* Title Screen Palettes */
-D_0890d5a8 = 0x0890d5a8;
-/* Rhythm Toys Menu - Icons Animations */
-D_0890d918 = 0x0890d918;
-D_0890d940 = 0x0890d940;
-D_0890d968 = 0x0890d968;
-D_0890d990 = 0x0890d990;
-/* Rhythm Toys Menu Animations */
-D_0890dab8 = 0x0890dab8;
-D_0890dad8 = 0x0890dad8;
-D_0890db38 = 0x0890db38;
-D_0890db98 = 0x0890db98;
-D_0890dba8 = 0x0890dba8;
-D_0890dbb8 = 0x0890dbb8;
-/* Rhythm Toys Menu Palettes */
-D_0890dbc8 = 0x0890dbc8;
-/* Health & Safety Warning Animations */
-D_08932444 = 0x08932444;
-/* Health & Safety Warning Palettes */
-D_0893253c = 0x0893253c;
-
 /* Karate Man BG Face Map */
 D_08936650 = 0x08936650;
 
-/* bindata_089cd1a4 */
-/* Scene Data - Rhythm Library */
-D_089cd1a4 = 0x089cd1a4;
-D_089cd1ec = 0x089cd1ec;
-D_089cd1f0 = 0x089cd1f0;
-D_089cd1f8 = 0x089cd1f8;
-D_089cd200 = 0x089cd200;
-D_089cd2a8 = 0x089cd2a8;
-D_089cd2cc = 0x089cd2cc;
 /* Scene Data - Cafe */
-D_089cd2e8 = 0x089cd2e8;
-D_089cd300 = 0x089cd300;
-D_089cd308 = 0x089cd308;
-D_089cd318 = 0x089cd318;
-D_089cd324 = 0x089cd324;
-D_089cd330 = 0x089cd330;
-D_089cd348 = 0x089cd348;
-D_089cd35c = 0x089cd35c;
-D_089cd370 = 0x089cd370;
-D_089cd384 = 0x089cd384;
-D_089cd39c = 0x089cd39c;
-D_089cd3b4 = 0x089cd3b4;
-D_089cd3cc = 0x089cd3cc;
-D_089cd3e0 = 0x089cd3e0;
-D_089cd3f4 = 0x089cd3f4;
-D_089cd408 = 0x089cd408;
-D_089cd41c = 0x089cd41c;
-D_089cd434 = 0x089cd434;
-D_089cd44c = 0x089cd44c;
-D_089cd474 = 0x089cd474;
-D_089cd47c = 0x089cd47c;
-D_089cd48c = 0x089cd48c;
-D_089cd4e0 = 0x089cd4e0;
 D_089cd4e4 = 0x089cd4e4;
 D_089cd9e8 = 0x089cd9e8;
-D_089cda0c = 0x089cda0c;
+scene_cafe = 0x089cda0c;
 /* Scene Data - Data Check */
-D_089cda28 = 0x089cda28;
-D_089cda2c = 0x089cda2c;
-D_089cda38 = 0x089cda38;
 D_089cda3c = 0x089cda3c;
 D_089cdab4 = 0x089cdab4;
 D_089cdad8 = 0x089cdad8;
 /* Scene Data - Rhythm Data Room */
-D_089cdaf4 = 0x089cdaf4;
-D_089cdb3c = 0x089cdb3c;
 D_089cdb40 = 0x089cdb40;
 D_089cdc00 = 0x089cdc00;
-D_089cdc24 = 0x089cdc24;
+scene_data_room = 0x089cdc24;
 /* Scene Data - Main Menu */
-D_089cdc40 = 0x089cdc40;
-D_089cdc44 = 0x089cdc44;
-D_089cdc8c = 0x089cdc8c;
-D_089cdc90 = 0x089cdc90;
-D_089cdca4 = 0x089cdca4;
 D_089cdcb8 = 0x089cdcb8;
 D_089cddfc = 0x089cddfc;
-D_089cde20 = 0x089cde20;
+scene_main_menu = 0x089cde20;
+/* Scene Data - Game Select */
 D_089cde3c = 0x089cde3c;
 D_089cdee4 = 0x089cdee4;
-/* Scene Data - Game Select */
-D_089cdf08 = 0x089cdf08;
-D_089cdf24 = 0x089cdf24;
-D_089ce0a4 = 0x089ce0a4;
-D_089ce0b0 = 0x089ce0b0;
-D_089ce0bc = 0x089ce0bc;
-D_089ce0c8 = 0x089ce0c8;
-D_089ce0d4 = 0x089ce0d4;
-D_089ce0e0 = 0x089ce0e0;
-D_089ce0ec = 0x089ce0ec;
-D_089ce0f8 = 0x089ce0f8;
-D_089ce104 = 0x089ce104;
-D_089ce110 = 0x089ce110;
-D_089ce11c = 0x089ce11c;
-D_089ce128 = 0x089ce128;
-D_089ce134 = 0x089ce134;
-D_089ce140 = 0x089ce140;
-D_089ce14c = 0x089ce14c;
-D_089ce158 = 0x089ce158;
-D_089ce164 = 0x089ce164;
-D_089ce170 = 0x089ce170;
-D_089ce17c = 0x089ce17c;
-D_089ce188 = 0x089ce188;
-D_089ce194 = 0x089ce194;
-D_089ce1a0 = 0x089ce1a0;
-D_089ce1ac = 0x089ce1ac;
-D_089ce1b8 = 0x089ce1b8;
-D_089ce1c4 = 0x089ce1c4;
-D_089ce1d0 = 0x089ce1d0;
-D_089ce1dc = 0x089ce1dc;
-D_089ce1e8 = 0x089ce1e8;
-D_089ce1f4 = 0x089ce1f4;
-D_089ce200 = 0x089ce200;
-D_089ce20c = 0x089ce20c;
-D_089ce218 = 0x089ce218;
-D_089ce224 = 0x089ce224;
-D_089ce230 = 0x089ce230;
-D_089ce23c = 0x089ce23c;
-D_089ce248 = 0x089ce248;
-D_089ce254 = 0x089ce254;
-D_089ce260 = 0x089ce260;
-D_089ce26c = 0x089ce26c;
-D_089ce278 = 0x089ce278;
-D_089ce284 = 0x089ce284;
-D_089ce290 = 0x089ce290;
-D_089ce29c = 0x089ce29c;
-D_089ce2a8 = 0x089ce2a8;
-D_089ce2b4 = 0x089ce2b4;
-D_089ce2c0 = 0x089ce2c0;
-D_089ce2cc = 0x089ce2cc;
-D_089ce2d8 = 0x089ce2d8;
-D_089ce2e4 = 0x089ce2e4;
-D_089ce2f0 = 0x089ce2f0;
-D_089ce2fc = 0x089ce2fc;
-D_089ce308 = 0x089ce308;
-D_089ce314 = 0x089ce314;
-D_089ce320 = 0x089ce320;
-D_089ce32c = 0x089ce32c;
-D_089ce338 = 0x089ce338;
-D_089ce344 = 0x089ce344;
-D_089cea04 = 0x089cea04;
-
-/* bindata_089cea24 */
-D_089cea24 = 0x089cea24;
-D_089ceafc = 0x089ceafc;
-D_089cf90c = 0x089cf90c;
-D_089cf948 = 0x089cf948;
-D_089cf9a8 = 0x089cf9a8;
-D_089cf9ac = 0x089cf9ac;
-D_089cf9e8 = 0x089cf9e8;
-D_089cfa00 = 0x089cfa00;
-D_089cfa14 = 0x089cfa14;
-D_089cfa20 = 0x089cfa20;
-D_089cfa2c = 0x089cfa2c;
-D_089cfa38 = 0x089cfa38;
-D_089cfa44 = 0x089cfa44;
-D_089cfa50 = 0x089cfa50;
-D_089cfa5c = 0x089cfa5c;
-D_089cfa68 = 0x089cfa68;
-D_089cfa74 = 0x089cfa74;
-D_089cfa98 = 0x089cfa98;
-D_089cfa9e = 0x089cfa9e;
-D_089cfaa4 = 0x089cfaa4;
-D_089cfaac = 0x089cfaac;
-D_089cfab8 = 0x089cfab8;
+scene_game_select = 0x089cdf08;
 /* Scene Data - Options Menu */
-D_089cfac8 = 0x089cfac8;
-D_089cfb10 = 0x089cfb10;
-D_089cfb14 = 0x089cfb14;
-D_089cfb1c = 0x089cfb1c;
 D_089cfb2c = 0x089cfb2c;
 D_089cfbf8 = 0x089cfbf8;
-D_089cfc1c = 0x089cfc1c;
+scene_options_menu = 0x089cfc1c;
 /* Scene Data - Perfect Campaign Certificate */
-D_089cfc38 = 0x089cfc38;
-D_089cfc74 = 0x089cfc74;
-D_089cfc78 = 0x089cfc78;
-D_089cfc88 = 0x089cfc88;
 D_089cfca0 = 0x089cfca0;
 D_089cfd3c = 0x089cfd3c;
-D_089cfd60 = 0x089cfd60;
+scene_perfect = 0x089cfd60;
 /* Scene Data - Main Gameplay */
-D_089cfd7c = 0x089cfd7c;
-D_089cfda0 = 0x089cfda0;
-D_089cfda4 = 0x089cfda4;
-D_089cfde0 = 0x089cfde0;
-D_089cfdf0 = 0x089cfdf0;
 D_089cfdf8 = 0x089cfdf8;
 D_089cfeac = 0x089cfeac;
 D_089cfed0 = 0x089cfed0;
@@ -809,8 +415,6 @@ D_089d3878 = 0x089d3878;
 D_089d389c = 0x089d389c;
 D_089d38b8 = 0x089d38b8;
 D_089d3960 = 0x089d3960;
-
-/* bindata_089d3984 */
 D_089d3984 = 0x089d3984;
 D_089d39a0 = 0x089d39a0;
 D_089d3a48 = 0x089d3a48;
@@ -855,7 +459,7 @@ D_089d4610 = 0x089d4610;
 D_089d4634 = 0x089d4634;
 D_089d4650 = 0x089d4650;
 D_089d46f8 = 0x089d46f8;
-D_089d471c = 0x089d471c;
+scene_rhythm_test = 0x089d471c;
 D_089d4738 = 0x089d4738;
 D_089d47e0 = 0x089d47e0;
 D_089d4804 = 0x089d4804;
@@ -1006,98 +610,37 @@ D_089d7408 = 0x089d7408;
 D_089d7424 = 0x089d7424;
 D_089d74d8 = 0x089d74d8;
 D_089d74fc = 0x089d74fc;
-/* Scene Data - Results (Debug) */
-D_089d7518 = 0x089d7518;
-D_089d751c = 0x089d751c;
-D_089d757c = 0x089d757c;
+/* Scene Data - Results (Debug-Type) */
 D_089d7580 = 0x089d7580;
 D_089d7610 = 0x089d7610;
-D_089d7634 = 0x089d7634;
-/* Scene Data - Results (Level-Type) */
-D_089d7654 = 0x089d7654;
-D_089d7684 = 0x089d7684;
-D_089d7688 = 0x089d7688;
-D_089d7694 = 0x089d7694;
+scene_results_ver_debug = 0x089d7634;
+/* Scene Data - Results (Rank-Type) */
 D_089d76a0 = 0x089d76a0;
 D_089d77c0 = 0x089d77c0;
-D_089d77e4 = 0x089d77e4;
+scene_results_ver_rank = 0x089d77e4;
 /* Scene Data - Results (Score-Type) */
-D_089d7804 = 0x089d7804;
-D_089d7834 = 0x089d7834;
-D_089d7838 = 0x089d7838;
-D_089d784c = 0x089d784c;
-D_089d7854 = 0x089d7854;
 D_089d7868 = 0x089d7868;
 D_089d7940 = 0x089d7940;
-D_089d7964 = 0x089d7964;
-D_089d7980 = 0x089d7980;
-D_089d7984 = 0x089d7984;
-D_089d7998 = 0x089d7998;
-D_089d79a8 = 0x089d79a8;
-D_089d79b8 = 0x089d79b8;
-D_089d79c8 = 0x089d79c8;
-D_089d79d8 = 0x089d79d8;
-D_089d79e8 = 0x089d79e8;
-D_089d79f8 = 0x089d79f8;
-D_089d7a08 = 0x089d7a08;
-D_089d7a18 = 0x089d7a18;
-D_089d7a38 = 0x089d7a38;
-D_089d7a8c = 0x089d7a8c;
-D_089d7ae0 = 0x089d7ae0;
-D_089d7b34 = 0x089d7b34;
-D_089d7b40 = 0x089d7b40;
-D_089d7b50 = 0x089d7b50;
+scene_results_ver_score = 0x089d7964;
 /* Scene Data - Epilogue */
-D_089d7b54 = 0x089d7b54;
-D_089d7b58 = 0x089d7b58;
-D_089d7b64 = 0x089d7b64;
 D_089d7b70 = 0x089d7b70;
 D_089d7bf4 = 0x089d7bf4;
-D_089d7c18 = 0x089d7c18;
-D_089d7c34 = 0x089d7c34;
-D_089d7c70 = 0x089d7c70;
-D_089d7c74 = 0x089d7c74;
-D_089d7cb0 = 0x089d7cb0;
-D_089d7cb4 = 0x089d7cb4;
-D_089d7cf0 = 0x089d7cf0;
-D_089d7cf4 = 0x089d7cf4;
-D_089d7d30 = 0x089d7d30;
-D_089d7d34 = 0x089d7d34;
-D_089d7d70 = 0x089d7d70;
-D_089d7df4 = 0x089d7df4;
-D_089d7e30 = 0x089d7e30;
-D_089d7e34 = 0x089d7e34;
-D_089d7e70 = 0x089d7e70;
+scene_epilogue = 0x089d7c18;
 /* Scene Data - Reading Material */
-D_089d7e74 = 0x089d7e74;
-D_089d7fb4 = 0x089d7fb4;
-D_089d7fe4 = 0x089d7fe4;
-D_089d7fe8 = 0x089d7fe8;
 D_089d7ff8 = 0x089d7ff8;
 D_089d80ac = 0x089d80ac;
 D_089d80d0 = 0x089d80d0;
-/* Scene Data - Reading Material (Read Error?) */
-D_089d80ec = 0x089d80ec;
-D_089d80f8 = 0x089d80f8;
+/* Scene Data - Empty Scene */
 D_089d80fc = 0x089d80fc;
 D_089d8174 = 0x089d8174;
+D_089d8198 = 0x089d8198;
 /* Scene Data - Studio */
-D_089d81b4 = 0x089d81b4;
-D_089d83d0 = 0x089d83d0;
-D_089d840c = 0x089d840c;
-D_089d841c = 0x089d841c;
-D_089d842c = 0x089d842c;
-D_089d843c = 0x089d843c;
-D_089d8444 = 0x089d8444;
-D_089d8448 = 0x089d8448;
-D_089d849c = 0x089d849c;
-D_089d84a0 = 0x089d84a0;
 D_089d84ac = 0x089d84ac;
 D_089d84c4 = 0x089d84c4;
 D_089d8518 = 0x089d8518;
 D_089d853c = 0x089d853c;
 D_089d8590 = 0x089d8590;
-D_089d85b4 = 0x089d85b4;
+scene_studio = 0x089d85b4;
 D_089d85d0 = 0x089d85d0;
 D_089d8768 = 0x089d8768;
 D_089d88e8 = 0x089d88e8;
@@ -1149,81 +692,45 @@ D_089dc98c = 0x089dc98c;
 D_089dcaf4 = 0x089dcaf4;
 D_089dcda0 = 0x089dcda0;
 /* Scene Data - Title Screen */
-D_089dcf68 = 0x089dcf68;
-D_089dcfa4 = 0x089dcfa4;
-D_089dcfec = 0x089dcfec;
 D_089dcff0 = 0x089dcff0;
 D_089dd02c = 0x089dd02c;
 D_089dd260 = 0x089dd260;
 D_089dd458 = 0x089dd458;
-D_089dd47c = 0x089dd47c;
+scene_riq_title = 0x089dd47c;
 /* Scene Data - Medal Corner Menus */
-D_089dd498 = 0x089dd498;
-D_089dd4a4 = 0x089dd4a4;
-D_089dd4e4 = 0x089dd4e4;
-D_089dd538 = 0x089dd538;
-D_089dd548 = 0x089dd548;
-D_089dd588 = 0x089dd588;
-D_089dd5dc = 0x089dd5dc;
-D_089dd5ec = 0x089dd5ec;
-D_089dd71c = 0x089dd71c;
-D_089dd770 = 0x089dd770;
-D_089dd780 = 0x089dd780;
-D_089dd794 = 0x089dd794;
-D_089dd79c = 0x089dd79c;
 D_089dd7a0 = 0x089dd7a0;
 D_089dd848 = 0x089dd848;
-D_089dd86c = 0x089dd86c;
+scene_toys_menu = 0x089dd86c;
 D_089dd888 = 0x089dd888;
-D_089dd8ac = 0x089dd8ac;
+scene_endless_menu = 0x089dd8ac;
 D_089dd8c8 = 0x089dd8c8;
-D_089dd8ec = 0x089dd8ec;
+scene_lessons_menu = 0x089dd8ec;
 /* Scene Data - Scene Handler */
-D_089dd908 = 0x089dd908;
-D_089dd94a = 0x089dd94a;
-D_089dd962 = 0x089dd962;
 D_089dd97c = 0x089dd97c;
+/* Scene Data - Warning Screen */
 D_089dd998 = 0x089dd998;
 D_089dda28 = 0x089dda28;
-D_089dda4c = 0x089dda4c;
-/* Scene Data - Warning Screen */
-D_089dda68 = 0x089dda68;
+scene_warning = 0x089dda4c;
 /* Scene Data - Debug (Menu) */
-D_089ddab0 = 0x089ddab0;
-D_089ddab4 = 0x089ddab4;
-D_089ddb20 = 0x089ddb20;
 D_089ddb24 = 0x089ddb24;
 D_089ddba8 = 0x089ddba8;
-D_089ddbcc = 0x089ddbcc;
-D_089ddbe8 = 0x089ddbe8;
-D_089ddf60 = 0x089ddf60;
+scene_debug_menu = 0x089ddbcc;
 /* Scene Data - Debug (Flash Memory Test) */
-D_089ddfac = 0x089ddfac;
-D_089ddfb0 = 0x089ddfb0;
-D_089ddfbc = 0x089ddfbc;
 D_089ddfc0 = 0x089ddfc0;
 D_089de038 = 0x089de038;
 D_089de05c = 0x089de05c;
 /* Scene Data - Debug (Data Clear) */
-D_089de078 = 0x089de078;
-D_089de07c = 0x089de07c;
-D_089de088 = 0x089de088;
 D_089de08c = 0x089de08c;
 D_089de0a4 = 0x089de0a4;
-D_089de0c8 = 0x089de0c8;
+scene_data_clear = 0x089de0c8;
 /* Scene Data - Debug (Asset Test?) */
-D_089de0e4 = 0x089de0e4;
-D_089de0e8 = 0x089de0e8;
-D_089de130 = 0x089de130;
-D_089de134 = 0x089de134;
 D_089de17c = 0x089de17c;
 D_089de200 = 0x089de200;
+D_089de224 = 0x089de224;
 /* Scene Data - Debug (Unknown Test) */
-D_089de240 = 0x089de240;
-D_089de244 = 0x089de244;
-D_089de250 = 0x089de250;
 D_089de254 = 0x089de254;
 D_089de2cc = 0x089de2cc;
+D_089de2f0 = 0x089de2f0;
 
 /* Rhythm Game Scripts */
 D_089edf48 = 0x089edf48;

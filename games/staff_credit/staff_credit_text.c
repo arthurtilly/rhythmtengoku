@@ -185,7 +185,7 @@ const char D_08069e78[] =
 const char D_08069ed4[] =
     "\n"
     "\n"
-    "では、どうぞ" SHIFT_JIS_WAVE_DASH "！";
+    "では、どうぞ～！";
 
 const char D_08069ee8[] =
     "\n"
@@ -213,4 +213,4 @@ const char D_08069f90[] =
 const char D_08069fe4[] =
     "\x01\x43" "ま、それはさておき。\n"
     "\n"
-    "では、どうぞ" SHIFT_JIS_WAVE_DASH "！";
+    "では、どうぞ～！";

@@ -68,7 +68,7 @@ branch_0803d874: \n\
 /* 0803d8bc */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803d8be */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0803d8c0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803d8c2 */ BL func_0800856c \n\
+/* 0803d8c2 */ BL schedule_function_call \n\
 /* 0803d8c6 */ LDR R0, =s_tebyoushi_pati_seqData \n\
 /* 0803d8c8 */ BL play_sound \n\
 /* 0803d8cc */ LDR R1, [R6] \n\

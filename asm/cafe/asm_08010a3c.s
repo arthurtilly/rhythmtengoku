@@ -37,7 +37,7 @@ thumb_func_start func_08010a3c \n\
 /* 08010a80 */ LDRB R0, [R2, 0x1E] \n\
 /* 08010a82 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08010a84 */ BEQ branch_08010aa0 \n\
-/* 08010a86 */ LDR R1, =D_089cd474 \n\
+/* 08010a86 */ LDR R1, =cafe_cursor_option_anim \n\
 /* 08010a88 */ MOVS R0, 0x1F @ Set R0 to 0x1F \n\
 /* 08010a8a */ LDRSB R0, [R2, R0] \n\
 /* 08010a8c */ LSLS R0, R0, 0x2 \n\
@@ -48,7 +48,7 @@ thumb_func_start func_08010a3c \n\
 .ltorg \n\
  \n\
 branch_08010aa0: \n\
-/* 08010aa0 */ LDR R3, =D_0890021c \n\
+/* 08010aa0 */ LDR R3, =anim_cafe_text_adv_icon \n\
  \n\
 branch_08010aa2: \n\
 /* 08010aa2 */ LDR R0, =D_03005380 \n\
@@ -68,7 +68,7 @@ branch_08010aa2: \n\
 /* 08010ac0 */ LDR R0, [R5] \n\
 /* 08010ac2 */ STRB R4, [R0, 0xC] \n\
 /* 08010ac4 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 08010ac6 */ BL pause_beatscript_scene \n\
+/* 08010ac6 */ BL set_pause_beatscript_scene \n\
  \n\
 branch_08010aca: \n\
 /* 08010aca */ ADD SP, 0x10 \n\
