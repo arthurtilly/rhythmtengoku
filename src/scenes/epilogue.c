@@ -14,12 +14,11 @@
 #include "src/code_0800b778.h"
 #include "src/lib_0804ca80.h"
 
-asm(".include \"include/gba.inc\"");//Temporary
 
 // For readability.
 #define gEpilogueInfo ((struct EpilogueSceneInfo *)D_030046a4)
 
-extern const struct BitmapFontData bitmap_font_warioware_body;
+extern struct BitmapFontData bitmap_font_warioware_body[];
 extern struct SequenceData s_menu_se20_seqData;
 
 
@@ -102,7 +101,7 @@ void epilogue_scene_start(void *sceneVar, s32 dataArg) {
 
     func_08007324(FALSE);
     func_080073f0();
-    gEpilogueInfo->bgFont = create_new_bmp_font_bg(get_current_mem_id(), &bitmap_font_warioware_body, 0, 0x340, 6);
+    gEpilogueInfo->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
     dma3_fill(0, OBJ_TILESET_BASE(0x7800), 0x800, 0x20, 0x200);
 
     if (text != NULL) {

@@ -57,18 +57,50 @@ extern u32  func_0801dabc(void); // Update Pause Menu (State: Stop)
 extern void func_0801daf8(const struct PauseMenuDefinition *data); // Set Pause Handler Definition
 extern void func_0801db04(u32 enable); // Enable Pause Menu
 
-// extern ? func_0801db1c(?);
-// extern ? func_0801db74(?);
-// extern ? func_0801dbe8(?);
-// extern ? func_0801dcb0(?);
-// extern ? func_0801dd58(?);
-// extern ? func_0801de38(?);
-// extern ? func_0801de6c(?);
+
+struct DebugText {
+    struct BitmapFontBG *bgFont;
+    u8 unk4;
+    char *string; // 0x400
+    u8 bgLayer;
+    u8 unkD;
+    u16 *cursorMap;
+    u16 *textMap; // 0x1000 / 2
+    u16 totalChars;
+    s16 xOffset;
+    u16 unk1C;
+    u16 unk1E;
+    s32 printerTask;
+    u8 null24;
+    u8 unk25;
+    u8 unk26;
+    u8 lineColor;
+    s8 linePalette;
+    u8 unk29;
+    u16 baseTile;
+    void *tileDest;
+    u8 palette;
+    u8 unk31;
+    u16 unk32; // Keys
+};
+
+extern void func_0801db1c(struct DebugText *debugText); // Palette
+extern void func_0801db74(struct DebugText *debugText); // Palette
+extern struct DebugText *func_0801dbe8(u16 memID, u32 layer, u16 *arg2, u32 tilesetNum, u32 baseTileNum, u32 maxTileRows, u32 arg6, u32 arg7);
+extern void func_0801dcb0(struct DebugText *debugText, const char *string); // Print
+extern void func_0801dd58(struct DebugText *debugText); // X Offset
+extern void func_0801de38(struct DebugText *debugText); // Clear Task
+extern void func_0801de6c(struct DebugText *debugText); // Tile/Map
 // extern ? func_0801debc(?);
 // extern ? func_0801dec0(?);
 // extern ? func_0801dec4(?);
 // extern ? func_0801decc(?);
 // extern ? func_0801ded4(?);
-// extern ? func_0801dedc(?); // D_089dd97c - Stop
-// extern ? func_0801def4(?); // D_089dd97c - Start
-// extern ? func_0801df1c(?); // D_089dd97c - Update
+
+struct SoftResetSceneInfo {
+    u8 state;
+};
+
+extern void func_0801dedc(void *endParam); // D_089dd97c - Stop
+extern void func_0801def4(void *initParam); // D_089dd97c - Start
+extern u32 func_0801df1c(void *loopParam); // D_089dd97c - Update

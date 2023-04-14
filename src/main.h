@@ -3,6 +3,9 @@
 #include "global.h"
 #include "scenes.h"
 
+
+#define RESET_BUTTON_COMBO (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON)
+
 struct SceneTransition {
     const struct Scene *initial;
     const struct Scene *target;

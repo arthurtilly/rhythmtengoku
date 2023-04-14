@@ -1,5 +1,7 @@
 #include "global.h"
 #include "riq_main_scene.h"
+
+#include "src/main.h"
 #include "src/code_08001360.h"
 #include "src/bitmap_font.h"
 #include "src/task_pool.h"
@@ -212,6 +214,7 @@ void func_0801db04(u32 enable) {
 
 // ??? (debug related?)
 
+
 #include "asm/script/asm_0801db1c.s"
 
 #include "asm/script/asm_0801db74.s"
@@ -236,10 +239,63 @@ void func_0801db04(u32 enable) {
 
 #include "asm/script/asm_0801ded4.s"
 
-// Soft reset
 
-#include "asm/script/asm_0801dedc.s"
 
-#include "asm/script/asm_0801def4.s"
+// For readability.
+#define gResetInfo ((struct SoftResetSceneInfo *)D_030046a4)
 
-#include "asm/script/asm_0801df1c.s"
+
+/* SOFT RESET */
+
+
+// Stop
+void func_0801dedc(void *endParam) {
+    func_08000224();
+    set_next_scene(D_08935fb0);
+}
+
+
+// Start
+void func_0801def4(void *initParam) {
+    func_080013e8(0);
+    func_0804e1bc(D_03005380, 1);
+    gResetInfo->state = 0;
+}
+
+
+// Update
+u32 func_0801df1c(void *loopParam) {
+    u32 complete = FALSE;
+
+    func_08006e88();
+    func_08003fb4();
+
+    switch (gResetInfo->state) {
+        case 0:
+            func_080070c4(20, 0);
+            fade_out_all_soundplayers(20);
+            gResetInfo->state++;
+            break;
+
+        case 1:
+            if (D_03004b10.unk854_3) {
+                func_08004058();
+                gResetInfo->state++;
+            }
+            break;
+
+        case 2:
+            if ((D_03004ac0 & RESET_BUTTON_COMBO) != RESET_BUTTON_COMBO) {
+                pause_all_soundplayers(FALSE);
+                stop_all_soundplayers();
+                complete = TRUE;
+            }
+            break;
+    }
+
+    func_08007410();
+    func_08006f84();
+    func_080042a4();
+
+    return complete;
+}

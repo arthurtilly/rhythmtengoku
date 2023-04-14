@@ -65,8 +65,6 @@ void func_08000224(void) {
 }
 
 
-#define RESET_BUTTON_COMBO (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON)
-
 void agb_main(void) {
 	REG_WAITCNT = (WAITCNT_SRAM_8
 		| WAITCNT_WS0_N_3 | WAITCNT_WS0_S_1
