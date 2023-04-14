@@ -9,7 +9,7 @@ thumb_func_start func_0801c2ec \n\
 /* 0801c2f2 */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 0801c2f4 */ PUSH {R5-R7} \n\
 /* 0801c2f6 */ SUB SP, 0x14 \n\
-/* 0801c2f8 */ BL func_0800061c \n\
+/* 0801c2f8 */ BL get_current_scene_trans_var \n\
 /* 0801c2fc */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0801c2fe */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801c300 */ BL func_08007324 \n\

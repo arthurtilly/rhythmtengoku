@@ -78,15 +78,15 @@ branch_08010706: \n\
 /* 08010716 */ ASRS R0, R0, 0x18 \n\
 /* 08010718 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801071a */ BNE branch_08010738 \n\
-/* 0801071c */ BL func_0800061c \n\
-/* 08010720 */ BL func_08000584 \n\
+/* 0801071c */ BL get_current_scene_trans_var \n\
+/* 08010720 */ BL set_next_scene \n\
 /* 08010724 */ B branch_08010740 \n\
 \n\
 .ltorg \n\
  \n\
 branch_08010738: \n\
-/* 08010738 */ BL func_0800061c \n\
-/* 0801073c */ BL func_08000674 \n\
+/* 08010738 */ BL get_current_scene_trans_var \n\
+/* 0801073c */ BL dealloc_scene_trans \n\
  \n\
 branch_08010740: \n\
 /* 08010740 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

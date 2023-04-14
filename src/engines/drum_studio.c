@@ -695,7 +695,7 @@ void drum_studio_engine_start(u32 version) {
         case ENGINE_VER_DRUM_STUDIO_PLAY:
         case ENGINE_VER_DRUM_STUDIO_2:
         case ENGINE_VER_DRUM_STUDIO_LISTEN:
-            gDrumLessonsInfo->replayID = (s32)func_0800061c(); // ???
+            gDrumLessonsInfo->replayID = get_current_scene_trans_var();
             break;
     }
 
@@ -1048,7 +1048,7 @@ void drum_studio_save_replay(void) {
             delete_saved_replay(&D_030046a8->data.drumReplaysAlloc, saveID);
         } else {
             func_0801b498(replayID);
-            func_080006d0(&scene_studio, NULL);
+            set_scene_trans_var(&scene_studio, 0);
         }
     }
     func_0800c484();

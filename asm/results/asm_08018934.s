@@ -39,7 +39,7 @@ thumb_func_start results_scene_start \n\
 /* 08018984 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08018986 */ STR R0, [R1, 0x8] \n\
 /* 08018988 */ LDR R0, =scene_debug_menu \n\
-/* 0801898a */ BL func_08000584 \n\
+/* 0801898a */ BL set_next_scene \n\
 /* 0801898e */ ADD SP, 0x4 \n\
 /* 08018990 */ POP {R4} \n\
 /* 08018992 */ POP {R0} \n\

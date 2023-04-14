@@ -80,25 +80,25 @@ branch_0801230a: \n\
 branch_0801233c: \n\
 /* 0801233c */ LDR R5, =scene_data_room \n\
 /* 0801233e */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08012340 */ BL func_080005e0 \n\
+/* 08012340 */ BL get_scene_trans_target \n\
 /* 08012344 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08012346 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08012348 */ BL func_080005f4 \n\
+/* 08012348 */ BL get_scene_trans_var \n\
 /* 0801234c */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801234e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08012350 */ BL func_080006f0 \n\
 /* 08012354 */ LDR R4, =D_089d80d0 \n\
 /* 08012356 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08012358 */ BL func_08000584 \n\
+/* 08012358 */ BL set_next_scene \n\
 /* 0801235c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801235e */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
-/* 08012360 */ BL func_080006b0 \n\
+/* 08012360 */ BL set_scene_trans_target \n\
 /* 08012364 */ LDR R0, [R6] \n\
 /* 08012366 */ LDR R0, [R0, 0x4] \n\
 /* 08012368 */ BL func_0800b118 \n\
 /* 0801236c */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801236e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08012370 */ BL func_080006d0 \n\
+/* 08012370 */ BL set_scene_trans_var \n\
 /* 08012374 */ LDR R0, =s_menu_kettei2_seqData \n\
 /* 08012376 */ BL play_sound \n\
 /* 0801237a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

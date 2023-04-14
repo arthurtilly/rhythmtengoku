@@ -9,7 +9,7 @@ thumb_func_start func_0801a450 \n\
 /* 0801a456 */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 0801a458 */ PUSH {R5-R7} \n\
 /* 0801a45a */ SUB SP, 0x14 \n\
-/* 0801a45c */ BL func_0800061c \n\
+/* 0801a45c */ BL get_current_scene_trans_var \n\
 /* 0801a460 */ LSLS R0, R0, 0x4 \n\
 /* 0801a462 */ LDR R1, =reading_material_table \n\
 /* 0801a464 */ ADDS R7, R0, R1 @ Set R7 to R0 + R1 \n\

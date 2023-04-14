@@ -825,9 +825,9 @@ void game_select_scene_start(void *sceneParam, s32 startParam) {
     }
 
     /* Init. Scene Transitions */
-    func_080006b0(&scene_results_ver_rank, &scene_epilogue);
-    func_080006b0(&scene_results_ver_score, &scene_game_select);
-    func_080006b0(&scene_epilogue, &scene_game_select);
+    set_scene_trans_target(&scene_results_ver_rank, &scene_epilogue);
+    set_scene_trans_target(&scene_results_ver_score, &scene_game_select);
+    set_scene_trans_target(&scene_epilogue, &scene_game_select);
 }
 
 
@@ -1055,15 +1055,15 @@ void game_select_read_inputs(void) {
             D_030046a8->data.gsCursorY = gGameSelectInfo->cursorY;
             levelID = get_level_id_from_grid_xy(gGameSelectInfo->cursorX, gGameSelectInfo->cursorY);
             levelData = get_level_data_from_id(levelID);
-            func_08000584(levelData->scene);
+            set_next_scene(levelData->scene);
 
             switch (levelData->type) {
                 case LEVEL_TYPE_GAME:
                 case LEVEL_TYPE_REMIX:
-                    func_080006b0(&scene_results_ver_rank, &scene_epilogue);
-                    func_080006b0(&scene_results_ver_score, &scene_game_select);
-                    func_080006b0(&scene_epilogue, &scene_game_select);
-                    func_080006d0(&scene_epilogue, levelData);
+                    set_scene_trans_target(&scene_results_ver_rank, &scene_epilogue);
+                    set_scene_trans_target(&scene_results_ver_score, &scene_game_select);
+                    set_scene_trans_target(&scene_epilogue, &scene_game_select);
+                    set_scene_trans_var(&scene_epilogue, levelData);
                     gameplay_pause_menu_set_quit_destination(&scene_game_select);
                     if ((levelID == LEVEL_REMIX_6) && (levelState == LEVEL_STATE_OPEN)) {
                         sPlayCreditsAfterEpilogue = TRUE;
@@ -1073,12 +1073,12 @@ void game_select_read_inputs(void) {
 
                 case LEVEL_TYPE_BONUS:
                     if (levelID == LEVEL_LIVE_MENU) {
-                        func_080006b0(levelData->scene, &scene_epilogue);
-                        func_080006b0(&scene_epilogue, &scene_game_select);
-                        func_080006d0(&scene_epilogue, levelData);
+                        set_scene_trans_target(levelData->scene, &scene_epilogue);
+                        set_scene_trans_target(&scene_epilogue, &scene_game_select);
+                        set_scene_trans_var(&scene_epilogue, levelData);
                         gameplay_pause_menu_set_quit_destination(&scene_game_select);
                     } else {
-                        func_080006b0(levelData->scene, &scene_game_select);
+                        set_scene_trans_target(levelData->scene, &scene_game_select);
                         gameplay_pause_menu_set_quit_destination(&scene_game_select);
                     }
                     canHaveCampaign = FALSE;
@@ -1113,8 +1113,8 @@ void game_select_read_inputs(void) {
 
     /* B_BUTTON was pressed: Return to Main Menu. */
     if (D_03004afc & B_BUTTON) {
-        func_08000584(&scene_main_menu);
-        func_080006d0(&scene_main_menu, NULL);
+        set_next_scene(&scene_main_menu);
+        set_scene_trans_var(&scene_main_menu, 0);
         D_030046a8->data.gsCursorX = D_030046a8->data.recentLevelX = gGameSelectInfo->cursorX;
         D_030046a8->data.gsCursorY = D_030046a8->data.recentLevelY = gGameSelectInfo->cursorY;
         D_030046a8->data.recentLevelState = LEVEL_STATE_NULL;
@@ -1575,7 +1575,7 @@ u32 game_select_process_level_events(void) {
             game_select_link_sprite_xy_to_bg(sprite);
             play_sound(&s_f_clear_game_seqData);
 
-            func_080108c8(id);
+            cafe_remove_level_from_session(id);
             D_030046a8->data.unk1C7[id] = D_030046a8->data.unk190[id];
             break;
 
@@ -1589,7 +1589,7 @@ u32 game_select_process_level_events(void) {
 
             D_030046a8->data.totalMedals++;
             game_select_refresh_medal_count(127);
-            func_080108c8(id);
+            cafe_remove_level_from_session(id);
             D_030046a8->data.unk1FE[id] = D_030046a8->data.unk190[id];
             if (D_030046a8->data.unk1C7[id] == 0) {
                 D_030046a8->data.unk1C7[id] = D_030046a8->data.unk190[id];

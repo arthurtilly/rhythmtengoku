@@ -35,7 +35,7 @@ extern struct SaveBuffer {
         u8 unk190[TOTAL_LEVELS]; // number of plays?
         u8 unk1C7[TOTAL_LEVELS];
         u8 unk1FE[TOTAL_LEVELS];
-        u8 unk235;
+        u8 totalPerfects;
         u8 campaignsCleared[TOTAL_PERFECT_CAMPAIGNS];
         u8 campaignState;
         u8 campaignAttemptsLeft;
@@ -46,7 +46,7 @@ extern struct SaveBuffer {
         u8 drumKitsUnlocked[15];
         u8 totalMedals;
         u8 unk28F;
-        u8 unk290;
+        u8 minFailsForBaristaHelp;
         u8 unk291;
         u32 unk294[16];
         /*
@@ -59,7 +59,7 @@ extern struct SaveBuffer {
             u32 unk2AC;
             u32 unk2B0;
             u32 soundMode;
-            u32 unk2B8;
+            u32 perfectClearCafeDialoguePending;
             u32 unk2BC;
             u32 unk2C0;
             u32 unk2C4;

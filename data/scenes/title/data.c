@@ -8,33 +8,34 @@
 
 
 // [D_089dcf68] Title Logo Characters
-struct TitleLogoCharData title_logo_char_data[] = {
+struct TitleLogoCharData title_logo_char_data[TOTAL_TITLE_LOGO_BUBBLES] = {
     /* RI */ {
-        /* Anim */ anim_title_logo_ri,
-        /* X, Y */ 44, 78,
-        /* Unk8 */ 148
+        /* Anim. */ anim_title_logo_ri,
+        /* X, Y  */ 44, 78,
+        /* Angle */ 148
     },
     /* ZU */ {
-        /* Anim */ anim_title_logo_zu,
-        /* X, Y */ 77, 88,
-        /* Unk8 */ 84
+        /* Anim. */ anim_title_logo_zu,
+        /* X, Y  */ 77, 88,
+        /* Angle */ 84
     },
     /* MU */ {
-        /* Anim */ anim_title_logo_mu,
-        /* X, Y */ 117, 77,
-        /* Unk8 */ 192
+        /* Anim. */ anim_title_logo_mu,
+        /* X, Y  */ 117, 77,
+        /* Angle */ 192
     },
     /* TEN */ {
-        /* Anim */ anim_title_logo_ten,
-        /* X, Y */ 158, 87,
-        /* Unk8 */ 44
+        /* Anim. */ anim_title_logo_ten,
+        /* X, Y  */ 158, 87,
+        /* Angle */ 44
     },
     /* GOKU */ {
-        /* Anim */ anim_title_logo_goku,
-        /* X, Y */ 198, 78,
-        /* Unk8 */ -20
+        /* Anim. */ anim_title_logo_goku,
+        /* X, Y  */ 198, 78,
+        /* Angle */ -20
     }
 };
+
 
 // [D_089dcfa4] Graphics Table
 struct GraphicsTable title_gfx_table[] = {
@@ -65,6 +66,7 @@ struct GraphicsTable title_gfx_table[] = {
     },
     END_OF_GRAPHICS_TABLE
 };
+
 
 // [D_089dcfec] Buffered Textures List
 struct CompressedGraphics *title_buffered_textures[] = {

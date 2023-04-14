@@ -1,3 +1,13 @@
+#include "global.h"
+#include "graphics.h"
+#include "text.h"
+#include "src/scenes/cafe.h"
+#include "graphics/cafe/cafe_graphics.h"
+
+
+  /* CAFE - DIALOGUE */
+
+
 // [D_089cd2e8] Dialogue - First Visit
     /* -------------------------------- */
         //

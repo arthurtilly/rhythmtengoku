@@ -94,7 +94,7 @@ void gameplay_init_gfx1(void) {
 
 
 // [func_08016ec4] Scene Start
-void gameplay_start_scene(void) {
+void gameplay_start_scene(s32 unused) {
     func_08002e78(gameplay_common_gfx_table);
     func_08007324(FALSE);
     func_080073f0();
@@ -131,20 +131,20 @@ void gameplay_start_scene(void) {
     gGameplayInfo->earlinessRangeMin = -0x80;
     gGameplayInfo->latenessRangeMax = 0x7f;
     func_0804c340(35, 2, 2, 4); // Reverb
-    if (func_08000608() == NULL) {
-        func_08000584(&scene_results_ver_rank);
+    if (get_current_scene_trans_target() == NULL) {
+        set_next_scene(&scene_results_ver_rank);
     }
     func_0801911c(0); // set D_03001330 to 0
 }
 
 
 // [func_08016ffc] Scene Update Frozen
-void gameplay_update_paused_scene(void) {
+void gameplay_update_paused_scene(s32 unused) {
 }
 
 
 // [func_08017000] Scene Update
-void gameplay_update_scene(void) {
+void gameplay_update_scene(s32 unused) {
     u32 pressed, released, buttonsOnly;
 
     if (gGameplayInfo->skippingTutorial) return;
@@ -515,10 +515,10 @@ void gameplay_set_mercy_count(u32 total) {
 
 
 // [func_080177f0] Scene Stop
-void gameplay_stop_scene(void) {
+void gameplay_stop_scene(s32 unused) {
     const struct Scene *tempScene;
 
-    func_0804e0c4(D_03005380, 0x10);
+    func_0804e0c4(D_03005380, 16);
     gameplay_reset_cues(); // Reset Cues
     if (gGameplayInfo->gameEngine->closeFunc != NULL) {
         gGameplayInfo->gameEngine->closeFunc();
@@ -528,15 +528,15 @@ void gameplay_stop_scene(void) {
     }
     if (gGameplayInfo->skippingTutorial) {
         if (gGameplayInfo->skipDestination != NULL) {
-            tempScene = func_08000608();
-            func_08000584(gGameplayInfo->skipDestination);
-            func_080006b0(gGameplayInfo->skipDestination, tempScene);
+            tempScene = get_current_scene_trans_target();
+            set_next_scene(gGameplayInfo->skipDestination);
+            set_scene_trans_target(gGameplayInfo->skipDestination, tempScene);
         }
         stop_all_soundplayers(); // Sound
     } else {
         if (gGameplayInfo->goingForPerfect && !gGameplayInfo->perfectFailed) {
-            func_08000584(&scene_perfect);
-            func_080006b0(&scene_perfect, func_080005e0(&scene_epilogue));
+            set_next_scene(&scene_perfect);
+            set_scene_trans_target(&scene_perfect, get_scene_trans_target(&scene_epilogue));
         }
     }
 
@@ -1089,7 +1089,22 @@ void gameplay_get_previous_cue_info(struct Cue *cue, struct Cue **prev, void **i
 
 
 // [func_08018154] Initialise Common Graphics (Perfect Campaign, etc.)
-#include "asm/gameplay/asm_08018154.s"
+void gameplay_init_overlay(void) {
+    u32 memID;
+
+    memID = func_0804e0c0(D_03005380);
+    func_0804e0bc(D_03005380, 16);
+    gGameplayInfo->pauseSprite = func_0804d160(D_03005380, anim_gameplay_pause_title, 0, 120, 80, 0, 1, 0, 0x8000);
+    gGameplayInfo->pauseOptionsSprite = func_0804d160(D_03005380, anim_gameplay_pause_option1, 0, 120, 80, 0, 1, 0, 0x8000);
+    gGameplayInfo->skipTutorialSprite = func_0804d160(D_03005380, anim_gameplay_skip_icon, 0, 120, 80, 0, 0, 0, 0x8000);
+    gGameplayInfo->aButtonSprite = func_0804d160(D_03005380, anim_gameplay_text_button_black, 0, 64, 64, 0x64, 1, 0, 0x8000);
+    gGameplayInfo->perfectSprite = func_0804d160(D_03005380, anim_gameplay_perfect_icon, 0, 230, 10, 0x5A, 1, 0x7f, 0x8000);
+    func_0804da68(D_03005380, gGameplayInfo->pauseSprite, 1);
+    func_0804da68(D_03005380, gGameplayInfo->pauseOptionsSprite, 1);
+    func_0804e158(D_03005380, 16, 960);
+    func_0804e170(D_03005380, 16, 14);
+    func_0804e0bc(D_03005380, memID);
+}
 
 
 // [func_080182ac] Set D_03001328
@@ -1156,7 +1171,7 @@ s32 gameplay_update_pause_menu(void) {
                 return PAUSE_MENU_SELECTION_PENDING;
             } else {
                 gGameplayInfo->perfectFailed = TRUE;
-                func_08000584(D_03001328);
+                set_next_scene(D_03001328);
                 return PAUSE_MENU_SELECTION_QUIT;
             }
         }

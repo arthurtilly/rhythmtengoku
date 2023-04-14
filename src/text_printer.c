@@ -1097,3 +1097,153 @@ void text_printer_set_shadow_colors(struct TextPrinter *textPrinter, s32 shadowC
 
     textPrinter->shadowColors = shadowColors;
 }
+
+
+// ?
+s32 func_0800ae1c(struct struct_0800b3c8 *arg0) {
+    return arg0->unkC + ((arg0->unk30 + arg0->unk2C) * arg0->unk10);
+}
+
+
+// ?
+#include "asm/code_080092cc/asm_0800ae3c.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800ae88.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800aeb4.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800b074.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800b0d4.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800b108.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800b118.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800b12c.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800b140.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800b21c.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800b30c.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800b31c.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800b32c.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800b368.s"
+
+
+// ?
+#include "asm/code_080092cc/asm_0800b384.s"
+
+
+// ?
+void func_0800b3c8(struct struct_0800b3c8 *arg0) {
+    if (arg0 == NULL) return;
+
+    func_0804d770(D_03005380, arg0->unk2A, TRUE);
+}
+
+
+// ?
+void func_0800b3e8(struct struct_0800b3c8 *arg0) {
+    if (arg0 == NULL) return;
+
+    func_0804d770(D_03005380, arg0->unk2A, FALSE);
+}
+
+
+// ?
+void func_0800b408(struct struct_0800b3c8 *arg0, s16 sprite, u32 arg2) {
+    if (arg0 == NULL) return;
+
+    func_0804db44(D_03005380, sprite, &arg0->x2, &arg0->y2);
+    func_0804d5d4(D_03005380, sprite, arg0->unkA, arg2 * arg0->unk10 + arg0->unkC);
+}
+
+
+// ?
+void func_0800b454(struct struct_0800b3c8 *arg0, s32 arg1) {
+    void *printer;
+    s32 line;
+    char *string;
+    s32 backSprite;
+    s32 totalLines;
+
+    if (arg0 == NULL) return;
+
+    if (arg1 >= 0 && arg1 < arg0->unk28) {
+        line = arg1 - arg0->unk26 + arg0->unk2C + arg0->unk30;
+        if (line < 0) return;
+
+        totalLines = arg0->totalLines;
+        if (line >= totalLines) return;
+
+        line += arg0->unk16;
+        line %= totalLines;
+        if (line < 0) {
+            line += totalLines;
+        }
+
+        printer = arg0->printer;
+        string = arg0->unk34(arg1);
+        if (arg0->unk38 != NULL) {
+            backSprite = arg0->unk38(arg1);
+        } else {
+            backSprite = -1;
+        }
+        func_0800aac0(printer, line, string, backSprite);
+    }
+}
+
+
+// ?
+void func_0800b4d8(struct struct_0800b3c8 *arg0, struct Animation *anim) {
+    if (arg0 == NULL) return;
+
+    if (arg0->unk2A >= 0) {
+        func_0804d504(D_03005380, arg0->unk2A);
+    }
+    arg0->unk2A = -1;
+    if (anim != NULL) {
+        arg0->unk2A = func_0804d160(D_03005380, anim, 0, arg0->unkA, func_0800ae1c(arg0), arg0->unkE, 1, 0, 0);
+        func_0804db44(D_03005380, arg0->unk2A, &arg0->x1, &arg0->y1);
+    }
+}
+
+
+// ?
+s16 func_0800b550(struct struct_0800b3c8 *arg0) {
+    if (arg0 == NULL) {
+        return -1;
+    }
+    return arg0->unk2A;
+}

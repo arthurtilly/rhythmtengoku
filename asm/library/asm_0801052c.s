@@ -16,10 +16,10 @@ thumb_func_start func_0801052c \n\
 /* 08010542 */ LSLS R1, R1, 0x1 \n\
 /* 08010544 */ BL mem_heap_alloc_id \n\
 /* 08010548 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
-/* 0801054a */ BL func_0800061c \n\
+/* 0801054a */ BL get_current_scene_trans_var \n\
 /* 0801054e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08010550 */ BEQ branch_08010564 \n\
-/* 08010552 */ BL func_080005f4 \n\
+/* 08010552 */ BL get_scene_trans_var \n\
 /* 08010556 */ LSLS R0, R0, 0x4 \n\
 /* 08010558 */ LDR R1, =reading_material_table \n\
 /* 0801055a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

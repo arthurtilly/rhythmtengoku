@@ -52,7 +52,7 @@ void reset_game_save_data(void) {
     }
 
     reset_all_replay_save_data(&data->drumReplaysAlloc);
-    data->unk235 = 0;
+    data->totalPerfects = 0;
 
     for (i = 0; i < TOTAL_PERFECT_CAMPAIGNS; i++) {
         data->campaignsCleared[i] = FALSE;
@@ -69,7 +69,7 @@ void reset_game_save_data(void) {
 
     data->totalMedals = 0;
     data->unk28F = 1;
-    data->unk290 = 2;
+    data->minFailsForBaristaHelp = 2;
     data->unk291 = 0;
 
     for (i = 0; i < 16; i++) {

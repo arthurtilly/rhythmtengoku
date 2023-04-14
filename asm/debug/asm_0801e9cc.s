@@ -41,7 +41,7 @@ thumb_func_start func_0801e9cc \n\
 /* 0801ea20 */ BL clear_save_data \n\
 /* 0801ea24 */ BL flush_save_buffer_to_sram \n\
 /* 0801ea28 */ LDR R0, =scene_riq_title \n\
-/* 0801ea2a */ BL func_08000584 \n\
+/* 0801ea2a */ BL set_next_scene \n\
 /* 0801ea2e */ ADD SP, 0x4 \n\
 /* 0801ea30 */ POP {R4} \n\
 /* 0801ea32 */ POP {R0} \n\

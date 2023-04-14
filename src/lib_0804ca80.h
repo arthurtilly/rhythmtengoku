@@ -60,7 +60,7 @@ extern void func_0804df4c(struct SpriteHandler *, s16, s8);
 // extern ? func_0804df80(?); // Set Values by Mem. ID
 // extern ? func_0804e0a0(?);
 extern void func_0804e0bc(struct SpriteHandler *, u16);
-// extern ? func_0804e0c0(?);
+extern u16  func_0804e0c0(struct SpriteHandler *);
 extern void func_0804e0c4(struct SpriteHandler *, u16);
 // extern ? func_0804e0d8(?);
 extern void func_0804e0f0(struct SpriteHandler *, u16, u16);

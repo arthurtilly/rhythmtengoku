@@ -8,7 +8,6 @@
 #include "src/memory_heap.h"
 #include "src/code_080068f8.h"
 #include "src/code_08007468.h"
-#include "src/code_0800b3c8.h"
 #include "src/code_0800b778.h"
 #include "gameplay.h"
 #include "src/lib_0804ca80.h"
@@ -76,10 +75,10 @@ void main_menu_scene_init_gfx1(void) {
 
 // Scene Start
 void main_menu_scene_start(void *sceneVar, s32 dataArg) {
-    const struct Scene *tempScene;
+    s32 sceneTransVar;
     u32 i;
 
-    tempScene = func_0800061c();
+    sceneTransVar = get_current_scene_trans_var();
     func_08007324(FALSE);
     func_080073f0();
     gMainMenuInfo->bmpFontBG = create_new_bmp_font_bg(get_current_mem_id(), &bitmap_font_warioware_body, 0, 0x340, 6);
@@ -99,9 +98,9 @@ void main_menu_scene_start(void *sceneVar, s32 dataArg) {
     gMainMenuInfo->scriptIsReady = FALSE;
     gMainMenuInfo->bgY = 0;
     gMainMenuInfo->bgX = 0;
-    gMainMenuInfo->unk1A = (tempScene != NULL);
+    gMainMenuInfo->unk1A = (sceneTransVar != 0);
     gMainMenuInfo->loadingOptionsMenu = FALSE;
-    func_08000584(&scene_debug_menu);
+    set_next_scene(&scene_debug_menu);
     flush_save_buffer_to_sram();
 }
 
@@ -138,25 +137,25 @@ void main_menu_scene_update(void *sceneVar, s32 dataArg) {
         else if (D_03004afc & (START_BUTTON | A_BUTTON)) {
             switch (prevButton) {
                 case GAME_SELECT:
-                    func_08000584(&scene_game_select);
+                    set_next_scene(&scene_game_select);
                     break;
                 case RHYTHM_TEST:
-                    func_080006b0(&scene_results_ver_score, &scene_main_menu);
-                    func_08000584(&scene_rhythm_test);
+                    set_scene_trans_target(&scene_results_ver_score, &scene_main_menu);
+                    set_next_scene(&scene_rhythm_test);
                     gameplay_pause_menu_set_quit_destination(&scene_main_menu);
                     break;
                 case RHYTHM_DATA_ROOM:
-                    func_08000584(&scene_data_room);
-                    func_080006b0(&scene_data_room, &scene_main_menu);
+                    set_next_scene(&scene_data_room);
+                    set_scene_trans_target(&scene_data_room, &scene_main_menu);
                     break;
                 case STUDIO:
-                    func_08000584(&scene_studio);
-                    func_080006b0(&scene_studio, &scene_main_menu);
-                    func_080006d0(&scene_studio, NULL);
+                    set_next_scene(&scene_studio);
+                    set_scene_trans_target(&scene_studio, &scene_main_menu);
+                    set_scene_trans_var(&scene_studio, 0);
                     break;
                 case OPTIONS_MENU:
-                    func_08000584(&scene_options_menu);
-                    func_080006b0(&scene_options_menu, &scene_main_menu);
+                    set_next_scene(&scene_options_menu);
+                    set_scene_trans_target(&scene_options_menu, &scene_main_menu);
                     gMainMenuInfo->loadingOptionsMenu = TRUE;
                     break;
             }

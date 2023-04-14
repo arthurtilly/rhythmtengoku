@@ -137,7 +137,7 @@ D_0300558c = 0x0300558c;
 
 /* Rhythm Tengoku Global */
 D_03005590 = 0x03005590;
-D_030055a0 = 0x030055a0;
+gSessionInfo = 0x030055a0;
 D_030055d0 = 0x030055d0;
 D_030055d4 = 0x030055d4;
 sMainMenuButton = 0x030055d8;

@@ -114,7 +114,7 @@ extern struct BeatscriptScene {
     u32 null1B4;
     u32 null1B8;
     u32 null1BC;
-    void (*unk1C0)(u32);
+    void (*unk1C0)(s32);
     u32 unk1C4;
 } D_030053c0;
 
