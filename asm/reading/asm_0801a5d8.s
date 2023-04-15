@@ -7,7 +7,7 @@ thumb_func_start func_0801a5d8 \n\
 /* 0801a5da */ LDR R6, =D_030046a4 \n\
 /* 0801a5dc */ LDR R0, [R6] \n\
 /* 0801a5de */ LDR R0, [R0, 0x8] \n\
-/* 0801a5e0 */ BL text_printer_is_printing \n\
+/* 0801a5e0 */ BL text_printer_is_busy \n\
 /* 0801a5e4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801a5e6 */ BNE branch_0801a628 \n\
 /* 0801a5e8 */ LDR R4, =D_03005380 \n\
@@ -49,7 +49,7 @@ branch_0801a628: \n\
 /* 0801a632 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801a634 */ BEQ branch_0801a704 \n\
 /* 0801a636 */ LDR R0, [R1, 0x8] \n\
-/* 0801a638 */ BL text_printer_is_printing \n\
+/* 0801a638 */ BL text_printer_is_busy \n\
 /* 0801a63c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801a63e */ BNE branch_0801a66a \n\
 /* 0801a640 */ LDR R0, [R6] \n\

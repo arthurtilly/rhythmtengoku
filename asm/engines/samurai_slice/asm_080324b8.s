@@ -28,7 +28,7 @@ thumb_func_start func_080324b8 \n\
 /* 080324e8 */ LDRSH R0, [R5, R1] \n\
 /* 080324ea */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
 /* 080324ec */ LDRSB R1, [R5, R1] \n\
-/* 080324ee */ BL func_08007468 \n\
+/* 080324ee */ BL assign_sprite_affine_param \n\
 /* 080324f2 */ LDR R0, [R6] \n\
 /* 080324f4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080324f6 */ LDRSH R1, [R5, R2] \n\

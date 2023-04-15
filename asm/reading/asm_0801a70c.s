@@ -140,7 +140,7 @@ branch_0801a7ec: \n\
  \n\
 branch_0801a824: \n\
 /* 0801a824 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801a826 */ BL pause_beatscript_scene \n\
+/* 0801a826 */ BL set_pause_beatscript_scene \n\
 /* 0801a82a */ LDR R0, =D_030046a4 \n\
 /* 0801a82c */ LDR R1, [R0] \n\
 /* 0801a82e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

@@ -5,19 +5,25 @@
 
 /* MAIN MENU - ANIMATIONS */
 
-extern struct Animation main_menu_anim00[];
-extern struct Animation main_menu_anim01[];
-extern struct Animation main_menu_anim02[];
-extern struct Animation main_menu_anim03[];
-extern struct Animation main_menu_anim04[];
-extern struct Animation main_menu_anim05[];
-extern struct Animation main_menu_anim06[];
-extern struct Animation main_menu_anim07[];
-extern struct Animation main_menu_anim08[];
-extern struct Animation main_menu_anim09[];
-extern struct Animation main_menu_anim10[];
-extern struct Animation main_menu_anim11[];
-extern struct Animation main_menu_anim12[];
+extern struct Animation anim_main_menu_blank1[];
+extern struct Animation anim_main_menu_button_on_game_select[];
+extern struct Animation anim_main_menu_button_on_rhythm_test[];
+extern struct Animation anim_main_menu_button_on_data_room[];
+extern struct Animation anim_main_menu_button_on_studio[];
+extern struct Animation anim_main_menu_button_on_options[];
+extern struct Animation anim_main_menu_button_off_game_select[];
+extern struct Animation anim_main_menu_button_off_rhythm_test[];
+extern struct Animation anim_main_menu_button_off_data_room[];
+extern struct Animation anim_main_menu_button_off_studio[];
+extern struct Animation anim_main_menu_button_off_options[];
+extern struct Animation anim_main_menu_blank2[];
+extern struct Animation anim_main_menu_blank3[];
+
+/* MAIN MENU - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08ccb374;
+extern struct CompressedGraphics D_08ccb840;
+extern struct CompressedGraphics D_08ccb298;
 
 /* MAIN MENU - PALETTES */
 

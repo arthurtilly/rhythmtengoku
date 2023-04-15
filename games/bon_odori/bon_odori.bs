@@ -1,0 +1,1149 @@
+.include "include/beatscript.inc"
+.include "games/bon_odori/macros.inc"
+
+
+
+.section .script.entry
+@ The Bon Odori - Script Entry Point
+
+script script_bon_odori_entry
+    set_tempo 124
+    rest 24
+    call script_bon_odori_prologue
+    set_game_fade_in_time 16
+    load_bon_odori
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_bon_odori_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_bon_odori, script_bon_odori_entry
+
+
+@ The Bon Odori - Script Entry Point (Skipped Practice)
+
+script script_bon_odori_skipped_practice_entry
+    set_tempo 124
+    set_game_fade_in_time 0
+    load_bon_odori
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_bon_odori_skipped_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_bon_odori_skipped_practice, script_bon_odori_skipped_practice_entry
+
+
+
+.section .script.prologue
+@ The Bon Odori - Prologue
+
+script script_bon_odori_prologue
+    set_game_fade_in_time 8
+    load_game bon_odori_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    rest 24
+    play_sfx s_jingle_bon_seqData
+    rest 24
+    rest 24
+    run func_080454e0, 5
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    run func_08006d80, 0
+    rest 24
+    set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ The Bon Odori - Marking Criteria
+
+struct bon_odori_marking_criteria_0
+    /* Positive Remark */     .word D_080676d4
+    /* Negative Remark */     .word D_080676b4
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct bon_odori_marking_criteria_1
+    /* Positive Remark */     .word D_08067710
+    /* Negative Remark */     .word D_080676ec
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct bon_odori_marking_criteria_2
+    /* Positive Remark */     .word D_08067730
+    /* Negative Remark */     .word D_0806772c
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct bon_odori_marking_criteria_3
+    /* Positive Remark */     .word D_08067754
+    /* Negative Remark */     .word D_0806772c
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct bon_odori_marking_criteria
+    .word bon_odori_marking_criteria_0
+    .word bon_odori_marking_criteria_1
+    .word bon_odori_marking_criteria_2
+    .word bon_odori_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ The Bon Odori - Main Script
+
+script script_bon_odori_main
+    set_results_header D_08067778
+    import_marking_criteria bon_odori_marking_criteria
+    forgive_x_misses 1
+    assess_inputs 1
+    set_tempo 121
+    set_music_volume 256
+    play_music s_bon_odori_bgm_seqData
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    bon_odori_lyrics_clear_line 1
+    rest 24
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_animate_all ANIM_BOW
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    start_perfect_campaign
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_animate_all ANIM_BOW
+    beat_anim
+    rest 24
+    bon_odori_darken_screen 48
+    start_perfect_campaign
+    set_marking_criteria 0
+    bon_odori_lyrics_print_left 0, text_bon_odori_ha
+    bon_odori_lyrics_print_center 1, text_bon_odori_hanabi_agare_ba
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 2
+    bon_odori_lyrics_clear_line 3
+    bon_odori_lyrics_start_highlight 0, 93
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_center 2, text_bon_odori_don_don_pan_pan
+    bon_odori_lyrics_print_right 3, text_bon_odori_dondo_pan_pan
+    bon_odori_lyrics_start_highlight 1, 93
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_start_input_check
+    bon_odori_lyrics_start_highlight 2, 93
+    bon_odori_animate_all ANIM_BOW
+    beat_anim
+    rest 24
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_F
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 0
+    bon_odori_lyrics_clear_line 1
+    bon_odori_lyrics_start_highlight 3, 60
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    bon_odori_stop_input_check
+    bon_odori_lyrics_print_left 0, text_bon_odori_haa
+    bon_odori_lyrics_print_center 1, text_bon_odori_kansei_agaru
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 2
+    bon_odori_lyrics_clear_line 3
+    bon_odori_lyrics_start_highlight 0, 93
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_center 2, text_bon_odori_don_don_pan_pan
+    bon_odori_lyrics_print_right 3, text_bon_odori_dondo_pan_pan
+    bon_odori_lyrics_start_highlight 1, 93
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_start_input_check
+    bon_odori_lyrics_start_highlight 2, 93
+    bon_odori_animate_all ANIM_BOW
+    beat_anim
+    rest 24
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_F
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 0
+    bon_odori_lyrics_clear_line 1
+    bon_odori_lyrics_start_highlight 3, 60
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    bon_odori_stop_input_check
+    bon_odori_lyrics_print_left 0, text_bon_odori_ha
+    bon_odori_lyrics_print_center 1, text_bon_odori_ninki_agare_ba
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 2
+    bon_odori_lyrics_clear_line 3
+    bon_odori_lyrics_start_highlight 0, 93
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_center 2, text_bon_odori_don_don_pan_pan
+    bon_odori_lyrics_print_right 3, text_bon_odori_dondo_pan_pan
+    bon_odori_lyrics_start_highlight 1, 93
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_start_input_check
+    bon_odori_lyrics_start_highlight 2, 93
+    bon_odori_animate_all ANIM_BOW
+    beat_anim
+    rest 24
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_F
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 0
+    bon_odori_lyrics_clear_line 1
+    bon_odori_lyrics_start_highlight 3, 60
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    bon_odori_stop_input_check
+    bon_odori_lyrics_print_left 0, text_bon_odori_haa
+    bon_odori_lyrics_print_center 1, text_bon_odori_kyuryo_agaru
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 2
+    bon_odori_lyrics_clear_line 3
+    bon_odori_lyrics_start_highlight 0, 93
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_center 2, text_bon_odori_don_don_pan_pan
+    bon_odori_lyrics_print_right 3, text_bon_odori_dondo_pan_pan
+    bon_odori_lyrics_start_highlight 1, 93
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_start_input_check
+    bon_odori_lyrics_start_highlight 2, 93
+    bon_odori_animate_all ANIM_BOW
+    beat_anim
+    rest 24
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_F
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 0
+    bon_odori_lyrics_clear_line 1
+    bon_odori_lyrics_start_highlight 3, 60
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    bon_odori_stop_input_check
+    bon_odori_lyrics_print_left 1, text_bon_odori_matsuri_da_wasshoi
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 2
+    bon_odori_lyrics_clear_line 3
+    bon_odori_lyrics_start_highlight 1, 93
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_right 3, text_bon_odori_dondo_panpa_dondo_panpa
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_start_input_check
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_lyrics_start_highlight 3, 93
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 8
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    bon_odori_lyrics_clear_line 1
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 8
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 8
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    bon_odori_lyrics_print_left 1, text_bon_odori_nippon_chu_ga_wasshoi
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 8
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    rest 8
+    bon_odori_stop_input_check
+    bon_odori_lyrics_clear_line 3
+    bon_odori_lyrics_start_highlight 1, 93
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_right 3, text_bon_odori_don_don_pan
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_start_input_check
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_lyrics_start_highlight 3, 60
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 1
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    bon_odori_stop_input_check
+    bon_odori_lyrics_print_left 1, text_bon_odori_sore_hikkuri_kaette
+    bon_odori_lyrics_start_highlight 1, 117
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 3
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_right 3, text_bon_odori_dondo_pan_pan
+    beat_anim
+    rest 24
+    bon_odori_animate_all ANIM_SPIN
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_start_input_check
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_lyrics_start_highlight 3, 60
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 1
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    bon_odori_stop_input_check
+    bon_odori_lyrics_print_left 0, text_bon_odori_ha_bon_odori
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 3
+    bon_odori_lyrics_start_highlight 0, 93
+    bon_odori_animate_all ANIM_BOW
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_left 1, text_bon_odori_dondo_panpa
+    bon_odori_lyrics_print_center 2, text_bon_odori_dondo_panpa
+    bon_odori_lyrics_print_right 3, text_bon_odori_don_pan_pan
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    bon_odori_start_input_check
+    bon_odori_lyrics_start_highlight 1, 45
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 8
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    bon_odori_lyrics_clear_line 0
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 8
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    rest 8
+    bon_odori_lyrics_start_highlight 2, 45
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 8
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 8
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    rest 8
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_lyrics_start_highlight 3, 60
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    bon_odori_stop_input_check
+    bon_odori_lighten_screen 48
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 1
+    bon_odori_lyrics_clear_line 2
+    bon_odori_lyrics_clear_line 3
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_darken_screen 48
+    rest 24
+    set_marking_criteria 1
+    rest 12
+    bon_odori_lyrics_print_left 0, text_bon_odori_ha
+    bon_odori_lyrics_print_center 1, text_bon_odori_ame_ga_agare_ba
+    rest 12
+    bon_odori_lyrics_start_highlight 0, 93
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_center 2, text_bon_odori_don_don_pan_pan
+    bon_odori_lyrics_print_right 3, text_bon_odori_dondo_pan_pan
+    bon_odori_lyrics_start_highlight 1, 93
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_start_input_check
+    bon_odori_lyrics_start_highlight 2, 93
+    bon_odori_animate_all ANIM_BOW
+    beat_anim
+    rest 24
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_F
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 0
+    bon_odori_lyrics_clear_line 1
+    bon_odori_lyrics_start_highlight 3, 60
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    bon_odori_stop_input_check
+    bon_odori_lyrics_print_left 0, text_bon_odori_haa
+    bon_odori_lyrics_print_center 1, text_bon_odori_yagura_ni_agaru
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 2
+    bon_odori_lyrics_clear_line 3
+    bon_odori_lyrics_start_highlight 0, 93
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_center 2, text_bon_odori_don_don_pan_pan
+    bon_odori_lyrics_print_right 3, text_bon_odori_dondo_pan_pan
+    bon_odori_lyrics_start_highlight 1, 93
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_start_input_check
+    bon_odori_lyrics_start_highlight 2, 93
+    bon_odori_animate_all ANIM_BOW
+    beat_anim
+    rest 24
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_F
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 0
+    bon_odori_lyrics_clear_line 1
+    bon_odori_lyrics_start_highlight 3, 60
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    bon_odori_lyrics_print_left 1, text_bon_odori_hora_matsuri_da_wasshoi
+    beat_anim
+    rest 24
+    bon_odori_stop_input_check
+    bon_odori_lyrics_start_highlight 1, 117
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 2
+    bon_odori_lyrics_clear_line 3
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_right 3, text_bon_odori_dondo_panpa_dondo_panpa
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_start_input_check
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_lyrics_start_highlight 3, 84
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 8
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    bon_odori_lyrics_clear_line 1
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 8
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 8
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    bon_odori_lyrics_print_left 1, text_bon_odori_korezo
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 8
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    rest 4
+    bon_odori_lyrics_clear_line 2
+    bon_odori_lyrics_clear_line 3
+    rest 4
+    set_marking_criteria 2
+    bon_odori_lyrics_print_right 3, text_bon_odori_meido_in_japan
+    bon_odori_lyrics_start_highlight 1, 45
+    beat_anim
+    rest 24
+    rest 24
+    bon_odori_lyrics_start_highlight 3, 106
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FORWARD_CLAP
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    bon_odori_set_screen_light
+    bon_odori_darken_screen 48
+    beat_anim
+    rest 16
+    bon_odori_lyrics_set_y_offset 0
+    bon_odori_lyrics_clear_line 0
+    bon_odori_lyrics_clear_line 1
+    bon_odori_lyrics_clear_line 2
+    bon_odori_lyrics_clear_line 3
+    rest 8
+    bon_odori_stop_input_check
+    set_marking_criteria 1
+    bon_odori_lyrics_print_left 1, text_bon_odori_sore_hikkuri_kaette
+    bon_odori_lyrics_start_highlight 1, 117
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 3
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_right 3, text_bon_odori_dondo_pan_pan
+    beat_anim
+    rest 24
+    bon_odori_animate_all ANIM_SPIN
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_start_input_check
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_lyrics_start_highlight 3, 60
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 1
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    bon_odori_stop_input_check
+    bon_odori_lyrics_print_left 0, text_bon_odori_ha_bon_odori
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 3
+    bon_odori_lyrics_start_highlight 0, 93
+    bon_odori_animate_all ANIM_BOW
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_left 1, text_bon_odori_dondo_panpa
+    bon_odori_lyrics_print_center 2, text_bon_odori_dondo_panpa
+    bon_odori_lyrics_print_right 3, text_bon_odori_don_pan_pan
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    bon_odori_start_input_check
+    bon_odori_lyrics_start_highlight 1, 45
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 8
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    bon_odori_lyrics_clear_line 0
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 8
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    rest 8
+    bon_odori_lyrics_start_highlight 2, 45
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 8
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 8
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    rest 8
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_lyrics_start_highlight 3, 60
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    bon_odori_stop_input_check
+    bon_odori_lyrics_clear_line 1
+    bon_odori_lyrics_clear_line 2
+    bon_odori_lyrics_clear_line 3
+    beat_anim
+    rest 12
+    bon_odori_lyrics_print_left 1, text_bon_odori_dondo_panpa
+    bon_odori_lyrics_print_center 2, text_bon_odori_dondo_panpa
+    bon_odori_lyrics_print_right 3, text_bon_odori_don_pan_pan
+    rest 12
+    bon_odori_start_input_check
+    bon_odori_lyrics_start_highlight 1, 45
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 8
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    bon_odori_lyrics_clear_line 0
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 8
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    rest 8
+    bon_odori_lyrics_start_highlight 2, 45
+    spawn_cue CUE_SIDE_CLAP
+    beat_anim
+    rest 8
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 8
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    rest 8
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_lyrics_start_highlight 3, 60
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_stop_input_check
+    set_marking_criteria 3
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 1
+    bon_odori_lyrics_clear_line 2
+    bon_odori_lyrics_clear_line 3
+    beat_anim
+    rest 24
+    bon_odori_lyrics_print_center 1, text_bon_odori_pan_pan
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_animate_all ANIM_BOW
+    beat_anim
+    rest 24
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_lyrics_start_highlight 1, 36
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    bon_odori_lighten_screen 24
+    bon_odori_lyrics_clear_line 1
+    assess_perfect_inputs 0
+    rest 24
+    rest 24
+    rest 24
+    enable_pause 0
+    rest 24
+return
+
+
+script bon_odori_sub_08a47d44
+    bon_odori_lyrics_print_left 0, text_bon_odori_don_don_pan_pan_2
+    bon_odori_lyrics_print_right 1, text_bon_odori_dondo_pan_pan
+return
+
+
+script bon_odori_sub_08a47db0
+    play_sfx s_bon_dondon1_seqData
+    rest 12
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_lyrics_start_highlight 0, 93
+    rest 24
+    spawn_cue CUE_FORWARD_CLAP
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    rest 24
+    bon_odori_lyrics_start_highlight 1, 60
+    spawn_cue CUE_FORWARD_CLAP
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 0
+    bon_odori_lyrics_clear_line 1
+    rest 12
+return
+
+
+script bon_odori_sub_08a47fb4
+    bon_odori_lyrics_print_left 0, text_bon_odori_dondo_panpa
+    bon_odori_lyrics_print_center 1, text_bon_odori_dondo_panpa
+    bon_odori_lyrics_print_right 2, text_bon_odori_don_pan_pan
+return
+
+
+script bon_odori_sub_08a478050
+    play_sfx s_bon_dondon2_seqData
+    rest 12
+    bon_odori_lyrics_start_highlight 0, 45
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 8
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    rest 8
+    bon_odori_lyrics_start_highlight 1, 45
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    rest 8
+    spawn_cue CUE_SIDE_CLAP
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    beat_anim
+    rest 8
+    rest 8
+    bon_odori_animate_npc ANIM_CLAP_F
+    rest 8
+    bon_odori_animate_all ANIM_BOW
+    bon_odori_lyrics_start_highlight 2, 60
+    spawn_cue CUE_FORWARD_CLAP
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    spawn_cue CUE_FORWARD_CLAP
+    rest 24
+    bon_odori_animate_npc ANIM_CLAP_S
+    beat_anim
+    rest 24
+    bon_odori_lyrics_clear_line 0
+    bon_odori_lyrics_clear_line 1
+    bon_odori_lyrics_clear_line 2
+    rest 12
+return
+
+
+script script_bon_odori_practice
+    assess_inputs 0
+    set_tempo 121
+    rest 24
+    enable_pause 1
+    rest 24
+    set_music_volume 150
+    play_music s_mario2_seqData
+    assess_inputs 0
+    run gameplay_display_skip_icon 1
+    run gameplay_set_tutorial scene_bon_odori_skipped_practice
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    bon_odori_lyrics_print_center 1, D_08067a84
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    bon_odori_lyrics_clear_line 1
+    rest 24
+    rest 24
+    bon_odori_lyrics_print_center 1, D_08067aa4
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    bon_odori_lyrics_clear_line 1
+    rest 24
+    rest 24
+    bon_odori_darken_screen 48
+    call bon_odori_sub_08a47d44
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops 0
+        bon_odori_start_input_check
+        switch FUNC, func_080175d8
+            case 0
+                break
+            default
+                call bon_odori_sub_08a47d44
+        end_switch
+        call bon_odori_sub_08a47db0
+        call bon_odori_sub_08a47d44
+        call bon_odori_sub_08a47db0
+        bon_odori_stop_input_check
+        run func_080175c4, 0
+    loop_end
+    rest 12
+    bon_odori_lighten_screen 48
+    bon_odori_lyrics_print_center 1, D_08067ad0
+    rest 24
+    rest 24
+    bon_odori_lyrics_clear_line 1
+    rest 24
+    bon_odori_lyrics_print_center 1, D_08067adc
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    bon_odori_lyrics_clear_line 1
+    rest 24
+    rest 24
+    bon_odori_darken_screen 48
+    call bon_odori_sub_08a47fb4
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops 0
+        bon_odori_start_input_check
+        switch FUNC, func_080175d8
+            case 0
+                break
+            default
+                call bon_odori_sub_08a47fb4
+        end_switch
+        call bon_odori_sub_08a478050
+        call bon_odori_sub_08a47fb4
+        call bon_odori_sub_08a478050
+        bon_odori_stop_input_check
+        run func_080175c4, 0
+    loop_end
+    rest 12
+    run gameplay_set_tutorial NULL
+    mod_music_volume 60, 168
+    bon_odori_lighten_screen 48
+    bon_odori_lyrics_print_center 1, D_08067ad0
+    rest 24
+    rest 24
+    bon_odori_lyrics_clear_line 1
+    rest 24
+    bon_odori_lyrics_print_center 1, D_08067b00
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    goto script_bon_odori_main
+
+
+script script_bon_odori_skipped_practice
+    set_tempo 120
+    rest 24
+    enable_pause 1
+    rest 24
+    goto script_bon_odori_main
+
+
+.end

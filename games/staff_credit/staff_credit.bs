@@ -1,0 +1,27 @@
+.include "include/beatscript.inc"
+.include "games/staff_credit/macros.inc"
+
+
+
+.section .script.entry
+@ Staff Credit - Script Entry Point
+
+script script_staff_credit_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_staff_credit
+    enable_play_inputs 1
+    assess_inputs 1
+    call D_08a5fe74
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_staff_credit, script_staff_credit_entry
+
+.end

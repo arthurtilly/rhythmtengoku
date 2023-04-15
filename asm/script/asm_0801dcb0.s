@@ -13,7 +13,7 @@ thumb_func_start func_0801dcb0 \n\
 /* 0801dcc0 */ BL func_0800eebc \n\
 /* 0801dcc4 */ LDR R0, [R5, 0x8] \n\
 /* 0801dcc6 */ LDR R1, =D_089dd908 \n\
-/* 0801dcc8 */ BL func_080081a8 \n\
+/* 0801dcc8 */ BL strcat \n\
 /* 0801dccc */ LDR R0, [R5, 0x8] \n\
 /* 0801dcce */ BL bmp_font_bg_get_total_printable_chars \n\
 /* 0801dcd2 */ STRH R0, [R5, 0x18] \n\

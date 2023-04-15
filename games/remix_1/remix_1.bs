@@ -1,0 +1,742 @@
+.include "include/beatscript.inc"
+.include "games/marching_orders/macros.inc"
+.include "games/karate_man/macros.inc"
+.include "games/clappy_trio/macros.inc"
+.include "games/rhythm_tweezers/macros.inc"
+.include "games/spaceball/macros.inc"
+
+
+
+.section .script.entry
+@ Remix 1 - Script Entry Point
+
+script script_remix_1_entry
+    set_tempo 124
+    rest 24
+    call script_remix_1_prologue
+    set_game_fade_in_time 16
+    load_marching_orders
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_remix_1_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_remix_1, script_remix_1_entry
+
+
+
+.section .script.prologue
+@ Remix 1 - Prologue
+
+script script_remix_1_prologue
+    set_game_fade_in_time 8
+    load_game remix_1_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    rest 24
+    play_sfx s_jingle_remix_seqData
+    rest 24
+    rest 24
+    run func_08046700, 1
+    rest 2
+    run func_08046700, 2
+    rest 2
+    run func_08046700, 3
+    rest 2
+    run func_08046700, 4
+    rest 2
+    run func_08046700, 5
+    rest 2
+    run func_08046700, 6
+    rest 6
+    rest 6
+    rest 24
+    rest 24
+    rest 12
+    play_sfx s_f_scratch_seqData
+    rest 6
+    run func_08006d80, 0
+    rest 18
+    set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Remix 1 - Marking Criteria
+
+struct remix_1_marking_criteria_0
+    /* Positive Remark */     .word D_0805cb08
+    /* Negative Remark */     .word D_0805caf8
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct remix_1_marking_criteria_1
+    /* Positive Remark */     .word D_0805cb48
+    /* Negative Remark */     .word D_0805cb24
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x99 @ 60%
+endstruct
+
+struct remix_1_marking_criteria_2
+    /* Positive Remark */     .word D_0805cb88
+    /* Negative Remark */     .word D_0805cb6c
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct remix_1_marking_criteria
+    .word remix_1_marking_criteria_0
+    .word remix_1_marking_criteria_1
+    .word remix_1_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Remix 1 - Main Script
+
+script script_remix_1_main
+    set_tempo 120
+    set_music_volume 256
+    load_marching_orders
+    start_perfect_campaign
+    rest 24
+    enable_pause 1
+    rest 24
+    rest 24
+    rest 24
+    assess_perfect_inputs 1
+    set_results_header D_0805cba0
+    import_marking_criteria remix_1_marking_criteria
+    forgive_x_misses 2
+    assess_inputs 1
+    set_marking_criteria 0
+    set_game_fade_in_time 0
+    play_music Lesson1_seqData
+    call marching_orders_sub_08a83848
+    play_music L1_pat01_seqData
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a83998
+
+    load_karate_man
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+
+    load_marching_orders
+    rest 24
+    marching_orders_event00 263
+    spawn_cue CUE_STEP
+    beat_anim
+    rest 24
+    play_music L1_pat02_seqData
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a83998
+
+    load_karate_man
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIGHT_BULB
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+
+    load_marching_orders
+    rest 24
+    marching_orders_event00 263
+    spawn_cue CUE_STEP
+    beat_anim
+    rest 24
+    play_music L1_pat03_seqData
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a83998
+
+    load_karate_man
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f 2
+    beat_anim
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_LIGHT_BULB
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIGHT_BULB
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    play_music L1_pat06_seqData
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_ROCK
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f 2
+    beat_anim
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_LIGHT_BULB
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIGHT_BULB
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+
+    load_clappy_quartet
+    beat_anim
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 24
+    clappy_trio_do_clap 3
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 12
+    rest 12
+    rest 12
+
+    load_rhythm_tweezers
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    rest 24
+    play_music L1_pat09_seqData
+    spawn_cue CUE_SHORT
+    rest 24
+    rhythm_tweezers_spawn_tweezers
+    spawn_cue CUE_LONG
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_scroll_veg 12
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    rest 24
+    spawn_cue CUE_SHORT
+    rest 24
+    rhythm_tweezers_spawn_tweezers
+    spawn_cue CUE_LONG
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rhythm_tweezers_set_next_veg 0
+    rhythm_tweezers_scroll_veg 12
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    rest 24
+    spawn_cue CUE_SHORT
+    rest 24
+    rhythm_tweezers_spawn_tweezers
+    spawn_cue CUE_LONG
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+    rest 6
+    rhythm_tweezers_set_next_veg 1
+    rhythm_tweezers_scroll_veg 12
+    rest 6
+    rhythm_tweezers_removed_event 0
+    rest 12
+    rhythm_tweezers_start_hair_cycle 0
+    rest 12
+    rest 6
+    rest 12
+    spawn_cue CUE_SHORT
+    rest 12
+    spawn_cue CUE_SHORT
+    rest 6
+    rhythm_tweezers_spawn_tweezers
+    rest 12
+    rest 6
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+
+    load_spaceball
+    spaceball_zoom_camera 0xff00, 1
+    spaceball_prep_pitcher 0
+    rest 12
+    rest 24
+    spaceball_zoom_camera 0xfe0c, 24
+    spawn_cue CUE_HIGH
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    play_music L1_pat10_seqData
+    spaceball_zoom_camera 0xff00, 192
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spaceball_zoom_camera 0xfe0c, 24
+    spawn_cue CUE_HIGH
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+
+    load_clappy_trio
+    clappy_trio_crouch_smirk
+    rest 24
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 12
+    rest 12
+    clappy_trio_crouch_smirk
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 12
+    rest 12
+
+    load_spaceball
+    spaceball_zoom_camera 0xfe0c, 96
+    spaceball_prep_pitcher 0
+    rest 12
+    spawn_cue CUE_HIGH
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+
+    load_clappy_trio
+    clappy_trio_crouch_smirk
+    rest 24
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 12
+    rest 12
+    clappy_trio_crouch_smirk
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 12
+    rest 12
+
+    load_spaceball
+    spaceball_zoom_camera 0xfe0c, 83
+    spaceball_prep_pitcher 0
+    rest 12
+    spawn_cue CUE_HIGH
+    beat_anim
+    rest 24
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spaceball_zoom_camera 0xff00, 24
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    spaceball_zoom_camera 0xfc00, 23
+    rest 24
+    play_music L1_pat13_seqData
+    spaceball_zoom_camera 0xff00, 240
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spaceball_zoom_camera 0xfe0c, 24
+    spawn_cue CUE_HIGH
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+
+    load_clappy_trio
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 8
+    clappy_trio_do_clap 0
+    rest 4
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 4
+    clappy_trio_do_clap 1
+    rest 8
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 8
+    clappy_trio_do_clap 0
+    rest 4
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 4
+    clappy_trio_do_clap 1
+    rest 8
+    rest 12
+
+    load_spaceball
+    spaceball_zoom_camera 0xfe0c, 96
+    spaceball_prep_pitcher 0
+    rest 12
+    spawn_cue CUE_HIGH
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+
+    load_clappy_trio
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 8
+    clappy_trio_do_clap 0
+    rest 4
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 4
+    clappy_trio_do_clap 1
+    rest 8
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 8
+    clappy_trio_do_clap 0
+    rest 4
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 4
+    clappy_trio_do_clap 1
+    rest 8
+    rest 12
+
+    load_spaceball
+    spaceball_zoom_camera 0xfe0c, 83
+    spaceball_prep_pitcher 0
+    rest 12
+    spawn_cue CUE_HIGH
+    beat_anim
+    rest 24
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spaceball_zoom_camera 0xf830, 24
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+
+    load_clappy_trio
+    rest 24
+    play_music L1_pat16_seqData
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 24
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 12
+    rest 12
+    rest 12
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 24
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+
+    load_karate_man
+    rest 12
+    spawn_cue CUE_LIGHT_BULB
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIGHT_BULB
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIGHT_BULB
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    run gameplay_set_next_cue_hit_sfx, s_f_boxing_just_rock_nc_seqData
+    spawn_cue CUE_ROCK
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+
+    load_clappy_trio
+    clappy_trio_crouch_smirk
+    rest 12
+    run stop_sound, s_f_boxing_just_rock_nc_seqData
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 12
+    rest 12
+    clappy_trio_crouch_smirk
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 12
+    rest 12
+
+    load_spaceball
+    spaceball_zoom_camera 0xfe0c, 83
+    spaceball_prep_pitcher 0
+    rest 12
+    spawn_cue CUE_HIGH
+    beat_anim
+    rest 24
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spaceball_zoom_camera 0xff00, 24
+    spawn_cue CUE_LOW
+    beat_anim
+    rest 24
+    rest 24
+
+    load_karate_man
+    print_text_f 4
+    rest 24
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    spawn_cue CUE_LIGHT_BULB
+    beat_anim
+    rest 24
+    spawn_cue CUE_ROCK
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    assess_perfect_inputs 0
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+return
+
+.end

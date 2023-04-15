@@ -1,0 +1,827 @@
+.include "include/beatscript.inc"
+.include "games/marching_orders/macros.inc"
+.include "games/karate_man/macros.inc"
+.include "games/space_dance/macros.inc"
+.include "games/tram_and_pauline/macros.inc"
+.include "games/rhythm_tweezers/macros.inc"
+.include "games/samurai_slice/macros.inc"
+.include "games/power_calligraphy/macros.inc"
+.include "games/clappy_trio/macros.inc"
+.include "games/tap_trial/macros.inc"
+.include "games/sneaky_spirits/macros.inc"
+.include "games/night_walk/macros.inc"
+.include "games/showtime/macros.inc"
+.include "games/spaceball/macros.inc"
+.include "games/sick_beats/macros.inc"
+.include "games/bunny_hop/macros.inc"
+
+
+
+.section .script.entry
+@ Remix 7 - Script Entry Point
+
+script script_remix_7_entry
+    set_tempo 124
+    rest 24
+    call script_remix_7_prologue
+    set_game_fade_in_time 16
+    load_marching_orders
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_remix_7_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_remix_7, script_remix_7_entry
+
+
+
+.section .script.prologue
+@ Remix 7 - Prologue
+
+script script_remix_7_prologue
+    set_game_fade_in_time 8
+    load_game remix_7_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    rest 24
+    play_sfx s_jingle_remix_seqData
+    rest 24
+    rest 24
+    run func_08046ce8, 1
+    rest 2
+    run func_08046ce8, 2
+    rest 2
+    run func_08046ce8, 3
+    rest 2
+    run func_08046ce8, 4
+    rest 2
+    run func_08046ce8, 5
+    rest 2
+    run func_08046ce8, 6
+    rest 6
+    rest 6
+    rest 24
+    rest 24
+    rest 12
+    play_sfx s_f_scratch_seqData
+    rest 6
+    run func_08006d80, 0
+    rest 18
+    rest 24
+    set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Remix 7 - Marking Criteria
+
+struct remix_7_marking_criteria_0
+    /* Positive Remark */     .word D_0806a17c
+    /* Negative Remark */     .word D_0806a16c
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct remix_7_marking_criteria_1
+    /* Positive Remark */     .word D_0806a1bc
+    /* Negative Remark */     .word D_0806a198
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x99 @ 60%
+endstruct
+
+struct remix_7_marking_criteria_2
+    /* Positive Remark */     .word D_0806a1fc
+    /* Negative Remark */     .word D_0806a1e0
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct remix_7_marking_criteria
+    .word remix_7_marking_criteria_0
+    .word remix_7_marking_criteria_1
+    .word remix_7_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Remix 7 - Sick Beats Pathing Data
+
+script remix_7_sick_beats_path_skip_to_point_2
+    sb_init_no_entering
+    sb_rest 24
+    sb_dash_from_invulnerable2 1
+    sb_rest 24
+    sb_appear 2
+    sb_dash_from 2
+    sb_rest 24
+    sb_rest 24
+    sb_appear 3
+    sb_dash_from 3
+    sb_rest 24
+    sb_rest 24
+    sb_appear 4
+    sb_dash_from 4
+    sb_rest 24
+    sb_rest 24
+    sb_attack_microbe
+sb_stop
+
+
+@ Remix 7 - Main Script
+
+script script_remix_7_main
+    set_results_header D_0806a214
+    import_marking_criteria remix_7_marking_criteria
+    forgive_x_misses 2
+    assess_inputs 1
+    set_marking_criteria 0
+    start_perfect_campaign
+    set_tempo 140
+    set_music_volume 200
+    rest 24
+    enable_pause 1
+    rest 24
+    rest 24
+    rest 24
+    set_tempo 120
+    play_music Lesson1_seqData
+    call marching_orders_sub_08a83848
+    set_tempo 120
+    play_music L1_pat03_seqData
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c
+    call marching_orders_2_sub_08a83cc8
+    call marching_orders_2_sub_08a84088
+    call marching_orders_sub_08a83998
+    set_game_fade_in_time 0
+
+    load_karate_man
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    rest 24
+    rest 12
+
+    load_space_dance
+    rest 12
+    rest 22
+    play_sfx s_space_ikeo_turn_seqData
+    rest 2
+    space_dance_event00 3
+    spawn_cue CUE_TURN_RIGHT
+    rest 22
+    play_sfx s_space_ikeo_right_seqData
+    rest 2
+    space_dance_event00 0
+    rest 24
+    rest 24
+    rest 24
+
+    load_tram_pauline_no_curtain
+    beat_anim
+    rest 24
+    play_music L1_pat05_seqData
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    tram_pauline_event01 1
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    tram_pauline_event01 1
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    tram_pauline_event01 1
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    rest 6
+
+    load_karate_man
+    rest 6
+    beat_anim
+    rest 12
+    rest 12
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    rest 6
+    set_game_fade_in_time 0
+
+    load_rhythm_tweezers
+    rest 6
+    rest 24
+    rest 24
+    rhythm_tweezers_start_hair_cycle 0
+    spawn_cue CUE_SHORT
+    rest 12
+    rest 12
+    spawn_cue CUE_SHORT
+    rest 24
+    spawn_cue CUE_SHORT
+    rhythm_tweezers_spawn_tweezers
+    rest 12
+    rest 12
+    spawn_cue CUE_LONG
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_tempo 133
+    run func_08047ea4, 0
+    rest 24
+    rest 24
+    run scene_stop_music 0
+    set_game_fade_in_time 30
+
+    load_samurai_slice_remix
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    play_music L2_pat01_seqData
+    samurai_slice_event02 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_game_fade_in_time 0
+
+    load_power_calligraphy
+    power_calligraphy_event03 0
+    call power_calligraphy_sub_08a7da58
+    call power_calligraphy_sub_08a7dadc
+    beat_anim
+    rest 24
+    play_music L2_pat09_seqData
+    set_game_fade_in_time 30
+
+    load_samurai_slice_remix
+    samurai_slice_event08 2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    samurai_slice_event03 16
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    samurai_slice_event02 0
+    beat_anim
+    rest 24
+    samurai_slice_event02 1
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    spawn_cue CUE_SECOND
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_tempo 133
+    play_music L2_pat11_seqData
+    set_game_fade_in_time 0
+
+    load_clappy_trio
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT
+    rest 24
+    rest 24
+    rest 24
+    play_music L2_pat12_seqData
+    clappy_trio_prepare_grayscale_effect 1
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 24
+    clappy_trio_do_clap 0
+    rest 12
+    spawn_cue CUE_FULL_BEAT_W_SMILE
+    rest 6
+    clappy_trio_do_clap 1
+    rest 6
+    rest 12
+    rest 12
+    rest 24
+    rest 24
+    clappy_trio_prepare_grayscale_effect 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 24
+    clappy_trio_do_clap 0
+    rest 12
+    spawn_cue CUE_FULL_BEAT_W_SMILE
+    rest 6
+    clappy_trio_do_clap 1
+    rest 6
+    rest 12
+    rest 12
+    rest 24
+
+    load_marching_space_rabbits
+    beat_anim
+    rest 24
+    play_music L2_pat01_seqData
+    call marching_orders_sub_08a83848
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a83998
+
+    load_tap_trial_remix
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+
+    load_sneaky_spirits_remix
+    sneaky_spirits_spawn_bow 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_set_ghost_height 112
+    rest 24
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 0
+    rest 24
+    sneaky_spirits_set_ghost_height 32
+    sneaky_spirits_show_ghost 1
+    rest 24
+    sneaky_spirits_set_ghost_height 64
+    sneaky_spirits_show_ghost 2
+    rest 24
+    sneaky_spirits_set_ghost_height 112
+    sneaky_spirits_show_ghost 3
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_set_ghost_height 160
+    sneaky_spirits_show_ghost 4
+    rest 24
+    sneaky_spirits_set_ghost_height 208
+    sneaky_spirits_show_ghost 5
+    rest 24
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_LENIENT
+    rest 24
+    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_set_ghost_height 256
+    mute_music_track MIDI_TRACK_5
+    rest 24
+    run scene_stop_music 0
+    rest 24
+    reset_music_track_volumes
+    set_tempo 131
+    play_music L3_intro_seqData
+    rest 24
+    rest 24
+    set_tempo 131
+    play_music L3_C36_seqData
+    set_game_fade_in_time 20
+
+    load_night_walk
+    enable_play_inputs 1
+    night_walk_set_drumtech_volume 0
+    night_walk_enable_swing 1
+    night_walk_set_cue_earliness 240
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 216
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 192
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 168
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 144
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 120
+    spawn_cue CUE_KICK
+    night_walk_set_platform 1
+    night_walk_set_cue_earliness 96
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 72
+    spawn_cue CUE_SNARE
+    night_walk_set_cue_earliness 48
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 24
+    spawn_cue CUE_SNARE
+    night_walk_set_cue_earliness 0
+    night_walk_set_drumtech_volume 0
+    night_walk_set_platform 3
+    spawn_cue CUE_KICK
+    rest 8
+    rest 8
+    rest 4
+    night_walk_set_drumtech_volume 96
+    rest 4
+    night_walk_set_drumtech_volume 112
+    night_walk_set_platform 1
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_drumtech_volume 128
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_drumtech_volume 160
+    night_walk_set_platform 3
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_platform 0
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_platform 3
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_platform 0
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_CYMBAL
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 4
+    rest 4
+    set_game_fade_in_time 0
+
+    load_karate_man
+    enable_play_inputs 0
+    rest 8
+    rest 8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    enable_play_inputs 1
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_POT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    run gameplay_set_next_cue_hit_sfx, s_f_boxing_just_rock_nc_seqData
+    spawn_cue CUE_ROCK
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+
+    load_cosmic_dance
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call cosmic_dance_sub_08a85318
+    set_tempo 131
+    play_music L3_C38_seqData
+    set_game_fade_in_time 0
+
+    load_showtime
+    showtime_event00 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_GRAY
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_WHITE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+
+    load_clappy_quartet
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 24
+    clappy_trio_do_clap 3
+    rest 8
+    rest 8
+    clappy_trio_do_clap 0
+    rest 8
+    spawn_cue CUE_FULL_BEAT_W_SMILE
+    rest 8
+    clappy_trio_do_clap 1
+    rest 8
+    rest 8
+    rest 24
+
+    load_spaceball
+    spaceball_prep_pitcher 0
+    spaceball_zoom_camera 0xff00, 24
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    rest 24
+
+    load_clappy_trio
+    rest 24
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 8
+    rest 8
+    clappy_trio_do_clap 0
+    rest 8
+    spawn_cue CUE_FULL_BEAT_W_SMILE
+    rest 8
+    clappy_trio_do_clap 1
+    rest 8
+    rest 8
+    rest 24
+
+    load_spaceball
+    spaceball_prep_pitcher 0
+    spaceball_zoom_camera 0xff00, 24
+    rest 24
+    run func_08047ecc, 0
+    spawn_cue CUE_LOW
+    rest 24
+    rest 4
+    mute_music_track MIDI_TRACK_4
+    rest 4
+    rest 8
+    rest 8
+    rest 4
+    run scene_stop_music 0
+    rest 4
+    rest 8
+    spaceball_zoom_camera 0xf000, 32
+    rest 8
+    set_tempo 120
+    run func_08047ef4, 0
+    rest 24
+    reset_music_track_volumes
+    run func_08047f08, 0
+    set_game_fade_in_time 20
+
+    load_tap_trial_pigs
+    set_tempo 120
+    play_music L1_pat16_seqData
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85cf0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85cf0
+    beat_anim
+    rest 12
+    set_game_fade_in_time 0
+
+    load_sick_beats
+    rest 12
+    sick_beats_set_hits_needed 3
+    sick_beats_set_virus_palette 9
+    sick_beats_spawn_virus remix_7_sick_beats_path_skip_to_point_2
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 6
+
+    load_tap_trial_remix
+    mod_music_volume 200, 24
+    rest 6
+    rest 12
+    call tap_trial_sub_08a85f00
+    call tap_trial_sub_08a85de0
+    tap_trial_event00 11
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 24
+    tap_trial_event00 12
+    beat_anim
+    rest 6
+
+    load_space_dance
+    beat_anim
+    rest 16
+    play_sfx s_space_ikeo_turn_seqData
+    rest 2
+    space_dance_event00 3
+    spawn_cue CUE_TURN_RIGHT
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_right_seqData
+    rest 2
+    space_dance_event00 0
+    rest 24
+
+    load_bunny_hop
+    bunny_hop_event08 3
+    bunny_hop_event02 0
+    rest 24
+    bunny_hop_event02 0
+    bunny_hop_event01 0
+    spawn_cue CUE_BUNNY_00
+    rest 24
+    bunny_hop_event02 1
+    bunny_hop_event01 0
+    spawn_cue CUE_BUNNY_00
+    rest 24
+    bunny_hop_event01 0
+    spawn_cue CUE_BUNNY_00
+    rest 24
+    bunny_hop_event01 6
+    spawn_cue CUE_BUNNY_08
+    spawn_cue CUE_BUNNY_07
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    enable_pause 0
+return
+
+.end

@@ -3,7 +3,9 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
+
 /* READING MATERIAL */
+
 
 #include "asm/reading/asm_0801a384.s"
 
@@ -25,8 +27,10 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 #include "asm/reading/asm_0801a8b0.s"
 
-// READ ERROR (?)
+
+/* READ ERROR (?) */
 // could be its own file
+
 
 #include "asm/reading/asm_0801a8c8.s"
 

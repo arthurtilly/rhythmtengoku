@@ -81,8 +81,8 @@ void set_beatscript_subscenes(const struct SubScene **subScenes) {
         if ((D_030053c0.memID == 1) && (i == 1)) {
             D_030053c0.threads[1].startDelay = 2;
         } else {
-            if (subScenes[i]->initFunc != NULL) {
-                subScenes[i]->initFunc(&D_030053c0.localVariables[i], subScenes[i]->initParam);
+            if (subScenes[i]->startFunc != NULL) {
+                subScenes[i]->startFunc(&D_030053c0.localVariables[i], subScenes[i]->startParam);
             }
             D_030053c0.threads[i].startDelay = 0;
         }
@@ -104,8 +104,8 @@ void update_paused_beatscript_scene(void) {
                 D_03005588 = &D_030053c0.localVariables[i];
                 D_0300558c = D_030053c0.threads[i].sprites;
                 subScene = D_030053c0.threads[i].subScene;
-                if (subScene->unkFunc != NULL) {
-                    subScene->unkFunc(&D_030053c0.localVariables[i], subScene->unkParam);
+                if (subScene->pausedFunc != NULL) {
+                    subScene->pausedFunc(&D_030053c0.localVariables[i], subScene->pausedParam);
                 }
             }
         }
@@ -152,23 +152,23 @@ void update_active_beatscript_scene(void) {
                 if (thread->startDelay != 0) {
                     thread->startDelay--;
                     if (thread->startDelay == 0) {
-                        subSceneFunc = subScene->initFunc;
+                        subSceneFunc = subScene->startFunc;
                         if (subSceneFunc != NULL) {
-                            subSceneFunc(&D_030053c0.localVariables[i], subScene->initParam);
+                            subSceneFunc(&D_030053c0.localVariables[i], subScene->startParam);
                         }
                     }
                 } else {
-                    subSceneFunc = subScene->loopFunc;
+                    subSceneFunc = subScene->updateFunc;
                     if (subSceneFunc != NULL) {
-                        subSceneFunc(&D_030053c0.localVariables[i], subScene->loopParam);
+                        subSceneFunc(&D_030053c0.localVariables[i], subScene->updateParam);
                     }
                 }
             }
 
             if (!thread->active) {
-                subSceneFunc = subScene->endFunc;
+                subSceneFunc = subScene->stopFunc;
                 if (subSceneFunc != NULL) {
-                    subSceneFunc(&D_030053c0.localVariables[i], subScene->endParam);
+                    subSceneFunc(&D_030053c0.localVariables[i], subScene->stopParam);
                 }
                 if (!thread->unk0_b7) {
                     func_0804e0c4(D_03005380, i2);
@@ -230,7 +230,7 @@ void beatscript_exit_loop_after_delay(u32 duration) {
     }
 
     if (!D_030053c0.exitLoopNextUpdate) {
-        func_0800856c((u16)get_current_mem_id(), func_0800bc58, 0, beats_to_ticks(duration));
+        schedule_function_call((u16)get_current_mem_id(), func_0800bc58, 0, beats_to_ticks(duration));
         if (D_030053c0.memID == 1) {
             func_0800c3ec(2);
         }
@@ -269,7 +269,7 @@ void beatscript_force_exit_loop_next_update(void) {
 
 
 // Pause Script
-void pause_beatscript_scene(u32 pause) {
+void set_pause_beatscript_scene(u32 pause) {
     D_030053c0.paused = pause;
 }
 
@@ -296,8 +296,8 @@ void stop_beatscript_scene(void) {
         if (thread->active) {
             D_03005588 = &D_030053c0.localVariables[i];
             D_0300558c = D_030053c0.threads[i].sprites;
-            if (subScene->endFunc != NULL) {
-                subScene->endFunc(&D_030053c0.localVariables[i], subScene->endParam);
+            if (subScene->stopFunc != NULL) {
+                subScene->stopFunc(&D_030053c0.localVariables[i], subScene->stopParam);
             }
             func_0804e0c4(D_03005380, i2);
             func_0800222c(i2);
@@ -815,10 +815,10 @@ void scene_set_bg_layer_pos(s32 layer, s16 x, s16 y) {
 
 
 // Set BG Layer Render Data
-void scene_set_bg_layer_controls(s32 layer, s32 tileset, s32 map, s32 priority) {
+void scene_set_bg_layer_controls(s32 layer, s32 tileset, s32 map, s32 params) {
     u16 *bgControls = D_03004b10.BG_CNT;
 
-    bgControls[layer] = BGCNT_TILEDATA_ADDR(tileset) | BGCNT_TILEMAP_ADDR(map) | BGCNT_PRIORITY(priority);
+    bgControls[layer] = BGCNT_TILEDATA_ADDR(tileset) | BGCNT_TILEMAP_ADDR(map) | params;
 }
 
 
@@ -832,9 +832,9 @@ void scene_set_bg_layer_priority(s32 layer, s32 priority) {
 
 
 // Set BG Layer Controls
-void scene_set_bg_layer_display(s32 layer, s32 show, s32 x, s32 y, s32 tileset, s32 map, s32 priority) {
+void scene_set_bg_layer_display(s32 layer, s32 show, s32 x, s32 y, s32 tileset, s32 map, s32 params) {
     scene_set_bg_layer_pos(layer, x, y);
-    scene_set_bg_layer_controls(layer, tileset, map, priority);
+    scene_set_bg_layer_controls(layer, tileset, map, params);
 
     if (show) {
         scene_show_bg_layer(layer);

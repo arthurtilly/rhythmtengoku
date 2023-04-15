@@ -1,5 +1,6 @@
 #include "global.h"
 #include "gameplay.h"
+#include "graphics/gameplay/gameplay_graphics.h"
 #include "src/code_08001360.h"
 #include "src/bitmap_font.h"
 #include "src/task_pool.h"
@@ -22,11 +23,11 @@ enum PauseMenuOptionsEnum {
 };
 
 
-extern struct Scene D_089cfd60; // Perfect Certificate Scene
+extern struct Scene scene_perfect;
 extern const struct Beatscript D_089cfda4[]; // Generic Fade-Out Sequence
-extern struct Scene D_089d77e4; // Results Scene (Level-type)
-extern struct Scene D_089d7c18; // Results Scene (Epilogue)
-extern struct Scene D_089ddbcc; // Debug Menu Scene
+extern struct Scene scene_results_ver_rank;
+extern struct Scene scene_epilogue;
+extern struct Scene scene_debug_menu;
 
 
 /* MAIN GAMEPLAY SCENE */
@@ -79,7 +80,7 @@ struct SoundPlayer *gameplay_play_sound_in_player_w_pitch_volume(u32 player, str
 
 // [func_08016e94] Initialise Static Variables
 void gameplay_init_scene_static_var(void) {
-    gameplay_pause_menu_set_quit_destination(&D_089ddbcc);
+    gameplay_pause_menu_set_quit_destination(&scene_debug_menu);
 }
 
 
@@ -87,14 +88,14 @@ void gameplay_init_scene_static_var(void) {
 void gameplay_init_gfx1(void) {
     u32 data;
 
-    data = func_080087b4(0, D_089cfda0);
-    run_func_after_task(data, pause_beatscript_scene, FALSE);
+    data = start_new_texture_loader(0, gameplay_common_buffered_textures);
+    run_func_after_task(data, set_pause_beatscript_scene, FALSE);
 }
 
 
 // [func_08016ec4] Scene Start
-void gameplay_start_scene(s32 unused) {
-    func_08002e78(D_089cfd7c);
+void gameplay_start_scene(void) {
+    func_08002e78(gameplay_common_gfx_table);
     func_08007324(FALSE);
     func_080073f0();
     gameplay_init_overlay();
@@ -102,8 +103,8 @@ void gameplay_start_scene(s32 unused) {
     gameplay_set_text_printer(NULL);
     gGameplayInfo->gameEngine = NULL;
     gameplay_init_cues();
-    func_08019324(FALSE); // Disable input assessment.
-    func_080192a4(); // Reset results handler.
+    results_enable_input_tracking(FALSE);
+    results_init_score_handler();
     gGameplayInfo->mercyEnabled = TRUE;
     gGameplayInfo->forgivableMisses = 0;
     gGameplayInfo->playInputsEnabled = FALSE;
@@ -131,19 +132,19 @@ void gameplay_start_scene(s32 unused) {
     gGameplayInfo->latenessRangeMax = 0x7f;
     func_0804c340(35, 2, 2, 4); // Reverb
     if (func_08000608() == NULL) {
-        func_08000584(&D_089d77e4);
+        func_08000584(&scene_results_ver_rank);
     }
     func_0801911c(0); // set D_03001330 to 0
 }
 
 
 // [func_08016ffc] Scene Update Frozen
-void func_08016ffc(s32 unused) {
+void gameplay_update_paused_scene(void) {
 }
 
 
 // [func_08017000] Scene Update
-void gameplay_update_scene(s32 unused) {
+void gameplay_update_scene(void) {
     u32 pressed, released, buttonsOnly;
 
     if (gGameplayInfo->skippingTutorial) return;
@@ -371,7 +372,7 @@ void gameplay_display_skip_icon(u32 corner) {
 void gameplay_skip_tutorial(void) {
     func_0804e0f0(D_03005380, get_current_mem_id(), 1);
     task_pool_pause_id(get_current_mem_id(), TRUE);
-    pause_beatscript_scene(FALSE);
+    set_pause_beatscript_scene(FALSE);
     func_0801d968(D_089cfda4);
     func_0801db04(FALSE);
     gGameplayInfo->skippingTutorial = TRUE;
@@ -426,7 +427,9 @@ void gameplay_set_reverb(u32 level) {
 
 // [func_08017604] Start Perfect Campaign
 void gameplay_start_perfect_campaign(void) {
-    if ((func_0801286c() < 0)) return; // (s8) D_03001320, related to Game Select
+    if (get_current_campaign() < 0) {
+        return;
+    }
 
     if (!gGameplayInfo->goingForPerfect) {
         gGameplayInfo->goingForPerfect = TRUE;
@@ -512,8 +515,8 @@ void gameplay_set_mercy_count(u32 total) {
 
 
 // [func_080177f0] Scene Stop
-void gameplay_stop_scene(s32 unused) {
-    struct Scene *tempScene;
+void gameplay_stop_scene(void) {
+    const struct Scene *tempScene;
 
     func_0804e0c4(D_03005380, 0x10);
     gameplay_reset_cues(); // Reset Cues
@@ -532,8 +535,8 @@ void gameplay_stop_scene(s32 unused) {
         stop_all_soundplayers(); // Sound
     } else {
         if (gGameplayInfo->goingForPerfect && !gGameplayInfo->perfectFailed) {
-            func_08000584(&D_089cfd60);
-            func_080006b0(&D_089cfd60, func_080005e0(&D_089d7c18));
+            func_08000584(&scene_perfect);
+            func_080006b0(&scene_perfect, func_080005e0(&scene_epilogue));
         }
     }
 
@@ -600,9 +603,9 @@ void gameplay_add_cue_result(u32 markingCriteria, u32 cueResult, s32 timingOffse
     }
 
     // Results
-    func_08019350(0, cueResult, timingOffset);
+    results_register_input(0, cueResult, timingOffset);
     if (!noCue) {
-        func_08019420(markingCriteria, cueResult, timingOffset);
+        results_register_cue_input(markingCriteria, cueResult, timingOffset);
     }
 
     // Perfect Campaign
@@ -1179,7 +1182,7 @@ s32 gameplay_update_pause_menu(void) {
 
 // [func_08018524] Initialise Pause Handler
 void gameplay_init_pause_menu(void) {
-    func_0801daf8(&D_089cfde0);
+    func_0801daf8(&gameplay_pause_menu_data);
     func_0801db04(FALSE); // Disable Pause Menu
 }
 
@@ -1193,7 +1196,7 @@ void gameplay_set_skip_icon(u32 corner, u32 show) {
 
 // [func_0801858c] Set Text Button Style
 void gameplay_set_text_advance_icon(u32 style) {
-    func_0804d8f8(D_03005380, gGameplayInfo->aButtonSprite, D_089cfdf0[style], 0, 1, 0, 0);
+    func_0804d8f8(D_03005380, gGameplayInfo->aButtonSprite, gameplay_text_adv_icons[style], 0, 1, 0, 0);
 }
 
 
@@ -1237,7 +1240,7 @@ void gameplay_align_text_advance_icon(void) {
 void gameplay_display_text_and_wait(void) {
     if (gGameplayInfo->skippingTutorial) return;
 
-    if (text_printer_is_printing(gGameplayInfo->textPrinter)) {
+    if (text_printer_is_busy(gGameplayInfo->textPrinter)) {
         gGameplayInfo->printingTutorialText = TRUE;
     } else {
         gameplay_align_text_advance_icon();
@@ -1246,7 +1249,7 @@ void gameplay_display_text_and_wait(void) {
     gGameplayInfo->textButtonPressFilter = gGameplayInfo->buttonPressFilter;
     gGameplayInfo->textButtonReleaseFilter = gGameplayInfo->buttonReleaseFilter;
     gameplay_set_input_buttons(0, 0);
-    pause_beatscript_scene(TRUE);
+    set_pause_beatscript_scene(TRUE);
     gGameplayInfo->pausedAtTextBox = TRUE;
 }
 
@@ -1263,17 +1266,17 @@ void gameplay_update_text(void) {
         return;
     }
 
-    if (!text_printer_is_printing(gGameplayInfo->textPrinter) && gGameplayInfo->printingTutorialText) {
+    if (!text_printer_is_busy(gGameplayInfo->textPrinter) && gGameplayInfo->printingTutorialText) {
         gameplay_align_text_advance_icon(); // Text-related
         gGameplayInfo->printingTutorialText = FALSE;
     }
 
-    if (!text_printer_is_printing(gGameplayInfo->textPrinter) && (D_03004afc & A_BUTTON)) {
+    if (!text_printer_is_busy(gGameplayInfo->textPrinter) && (D_03004afc & A_BUTTON)) {
         text_printer_set_string(gGameplayInfo->textPrinter, NULL);
         gameplay_display_text_advance_icon(0, 0, FALSE); // Hide A Button Prompt
         play_sound(&s_f_send_mes_seqData);
         gameplay_set_input_buttons(gGameplayInfo->textButtonPressFilter, gGameplayInfo->textButtonReleaseFilter);
-        pause_beatscript_scene(FALSE);
+        set_pause_beatscript_scene(FALSE);
         gGameplayInfo->pausedAtTextBox = FALSE;
     }
 }

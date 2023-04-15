@@ -18,7 +18,7 @@ branch_080194fc: \n\
 /* 080194fc */ LDR R0, [R2] \n\
 /* 080194fe */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 08019500 */ STR R2, [SP] \n\
-/* 08019502 */ BL func_08019480 \n\
+/* 08019502 */ BL results_tracker_calculate_averages \n\
 /* 08019506 */ LDR R2, [SP] \n\
 /* 08019508 */ LDR R1, [R2] \n\
 /* 0801950a */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\
@@ -50,7 +50,7 @@ branch_080194fc: \n\
 /* 0801953e */ LDR R0, =D_089d7980 \n\
 /* 08019540 */ LDR R0, [R0] \n\
 /* 08019542 */ ADDS R0, 0x50 @ Add 0x50 to R0 \n\
-/* 08019544 */ BL func_08019480 \n\
+/* 08019544 */ BL results_tracker_calculate_averages \n\
 /* 08019548 */ ADD SP, 0x4 \n\
 /* 0801954a */ POP {R4-R7} \n\
 /* 0801954c */ POP {R0} \n\

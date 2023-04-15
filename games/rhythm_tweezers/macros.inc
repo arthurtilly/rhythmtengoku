@@ -14,7 +14,6 @@
     .set REMOVED_EVENT,         0x06
     .set SHOW_MASK,             0x07
     .set HIDE_MASK,             0x08
-    .set STUB_EVENT,            0x09
 
     @ Cues
     .set CUE_SHORT,     0x00
@@ -32,7 +31,7 @@
 
 
 @ Load Game: Rhythm Tweezers (First Vegetable: Onion)
-.macro load_rhythm_tweezers_onion
+.macro load_rhythm_tweezers
     load_rhythm_tweezers_labels
     load_game rhythm_tweezers_engine, 0
 .endm
@@ -50,7 +49,7 @@
 .endm
 
 @ Load Game: Rhythm Tweezers 2 (First Vegetable: Onion)
-.macro load_rhythm_tweezers_2_onion
+.macro load_rhythm_tweezers_2
     load_rhythm_tweezers_labels
     load_game rhythm_tweezers_engine, 3
 .endm
@@ -78,51 +77,46 @@
 
 
 @ [Event 0x00] Spawn Tweezers (appears two beats before hair cycle start position)
-.macro rhythm_tweezers_spawn_tweezers noArgs
-    rhythm_tweezers_event 0x00, \noArgs
+.macro rhythm_tweezers_spawn_tweezers
+    rhythm_tweezers_event SPAWN_TWEEZERS, 0
 .endm
 
 @ [Event 0x01] Start Hair Placement Cycle
 .macro rhythm_tweezers_start_hair_cycle noArgs
-    rhythm_tweezers_event 0x01, \noArgs
+    rhythm_tweezers_event START_HAIR_CYCLE, \noArgs
 .endm
 
 @ [Event 0x02] Scroll to Next Vegetable
 .macro rhythm_tweezers_scroll_veg scrollTime
-    rhythm_tweezers_event 0x02, \scrollTime
+    rhythm_tweezers_event SCROLL_VEG, \scrollTime
 .endm
 
 @ [Event 0x03] Set Next Vegetable Type
 .macro rhythm_tweezers_set_next_veg vegType
-    rhythm_tweezers_event 0x03, \vegType
+    rhythm_tweezers_event SET_NEXT_VEG, \vegType
 .endm
 
 @ [Event 0x04] Play Cash Register SFX
-.macro rhythm_tweezers_play_register_sfx noArgs
-    rhythm_tweezers_event 0x04, \noArgs
+.macro rhythm_tweezers_play_register_sfx
+    rhythm_tweezers_event PLAY_REGISTER_SFX, 0
 .endm
 
 @ [Event 0x05] Hide Unused Tutorial Text Sprite
 .macro rhythm_tweezers_hide_tutorial_text noArgs
-    rhythm_tweezers_event 0x05, \noArgs
+    rhythm_tweezers_event HIDE_TUTORIAL_TEXT, \noArgs
 .endm
 
 @ [Event 0x06] Nothing (present in script, but its functionality seems to have been removed entirely)
 .macro rhythm_tweezers_removed_event noArgs
-    rhythm_tweezers_event 0x06, \noArgs
+    rhythm_tweezers_event REMOVED_EVENT, \noArgs
 .endm
 
 @ [Event 0x07] Show "No Peeking~!" Mask
 .macro rhythm_tweezers_show_veg_mask noArgs
-    rhythm_tweezers_event 0x07, \noArgs
+    rhythm_tweezers_event SHOW_MASK, \noArgs
 .endm
 
 @ [Event 0x08] Hide "No Peeking~!" Mask
 .macro rhythm_tweezers_hide_veg_mask noArgs
-    rhythm_tweezers_event 0x08, \noArgs
-.endm
-
-@ [Event 0x09] Nothing
-.macro rhythm_tweezers_stub_event noArgs
-    rhythm_tweezers_event 0x09, \noArgs
+    rhythm_tweezers_event HIDE_MASK, \noArgs
 .endm

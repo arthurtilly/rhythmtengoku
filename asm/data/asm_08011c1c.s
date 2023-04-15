@@ -18,7 +18,7 @@ thumb_func_start func_08011c1c \n\
 /* 08011c34 */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 08011c36 */ LDR R0, =D_08cc4bcc \n\
 /* 08011c38 */ BL func_08003eb8 \n\
-/* 08011c3c */ LDR R2, =(D_08900dac + 2) \n\
+/* 08011c3c */ LDR R2, =(studio_mem_chart_pal + 2) \n\
 /* 08011c3e */ LDR R3, [SP, 0x18] \n\
 /* 08011c40 */ LSLS R1, R3, 0x5 \n\
 /* 08011c42 */ LDR R0, =(D_03004b10 + 0x256) \n\
@@ -62,7 +62,7 @@ branch_08011c72: \n\
 /* 08011c84 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08011c86 */ LDR R4, =D_03005380 \n\
 /* 08011c88 */ LDR R0, [R4] \n\
-/* 08011c8a */ LDR R1, =D_08900d9c \n\
+/* 08011c8a */ LDR R1, =anim_studio_mem_chart_borders \n\
 /* 08011c8c */ MOVS R2, 0x9C @ Set R2 to 0x9C \n\
 /* 08011c8e */ STR R2, [SP] \n\
 /* 08011c90 */ MOVS R3, 0x80 @ Set R3 to 0x80 \n\
@@ -96,7 +96,7 @@ branch_08011c72: \n\
 /* 08011ccc */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08011cce */ BL func_0804d8c4 \n\
 /* 08011cd2 */ LDR R0, [R4] \n\
-/* 08011cd4 */ LDR R1, =D_08900bcc \n\
+/* 08011cd4 */ LDR R1, =anim_studio_mem_chart_data \n\
 /* 08011cd6 */ MOVS R2, 0x9C @ Set R2 to 0x9C \n\
 /* 08011cd8 */ STR R2, [SP] \n\
 /* 08011cda */ MOV R3, R10 @ Set R3 to R10 \n\
@@ -133,7 +133,7 @@ branch_08011d08: \n\
 /* 08011d1a */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 08011d1c */ LSLS R1, R1, 0x8 \n\
 /* 08011d1e */ STR R1, [SP, 0x10] \n\
-/* 08011d20 */ LDR R1, =D_08900bcc \n\
+/* 08011d20 */ LDR R1, =anim_studio_mem_chart_data \n\
 /* 08011d22 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08011d24 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08011d26 */ BL func_0804d160 \n\

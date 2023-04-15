@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0800852c \n\
+thumb_func_start init_scheduled_function_task \n\
 /* 0800852c */ PUSH {R4, LR} \n\
 /* 0800852e */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08008530 */ MOVS R0, 0xC @ Set R0 to 0xC \n\

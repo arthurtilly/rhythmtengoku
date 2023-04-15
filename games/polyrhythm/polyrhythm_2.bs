@@ -1,0 +1,428 @@
+.include "include/beatscript.inc"
+.include "games/polyrhythm/macros.inc"
+
+
+
+.section .script.entry
+@ Polyrhythm 2 - Script Entry Point
+
+script script_polyrhythm_2_entry
+    set_tempo 124
+    rest 24
+    call script_polyrhythm_prologue
+    set_game_fade_in_time 16
+    load_polyrhythm_2
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_polyrhythm_2_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_polyrhythm_2, script_polyrhythm_2_entry
+
+
+
+.section .script.main
+@ Polyrhythm 2 - Marking Criteria
+
+struct polyrhythm_2_marking_criteria_0
+    /* Positive Remark */     .word D_0805b0b0
+    /* Negative Remark */     .word D_0805b094
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0xCC @ 80%
+endstruct
+
+struct polyrhythm_2_marking_criteria_1
+    /* Positive Remark */     .word D_0805b0d0
+    /* Negative Remark */     .word D_0805b0b4
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct polyrhythm_2_marking_criteria_2
+    /* Positive Remark */     .word D_0805b0b0
+    /* Negative Remark */     .word D_0805b0e8
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct polyrhythm_2_marking_criteria_3
+    /* Positive Remark */     .word D_0805b130
+    /* Negative Remark */     .word D_0805b110
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct polyrhythm_2_marking_criteria
+    .word polyrhythm_2_marking_criteria_0
+    .word polyrhythm_2_marking_criteria_1
+    .word polyrhythm_2_marking_criteria_2
+    .word polyrhythm_2_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Polyrhythm 2 - Main Script
+
+script polyrhythm_2_sub_089f3e30
+    run polyrhythm_spawn_rod, 1
+    polyrhythm_spawn_block 0, 1, 2
+    rest 12
+    rest 12
+    polyrhythm_spawn_block 2, 1, 2
+    rest 12
+    rest 12
+    polyrhythm_spawn_block 4, 1, 2
+    rest 12
+    rest 12
+    polyrhythm_spawn_block 6, 1, 2
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    run polyrhythm_spawn_rod, 1
+    polyrhythm_spawn_block 8, 1, 0
+    polyrhythm_spawn_block 9, 1, 0
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    polyrhythm_retract_pistons 1
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    rest 12
+    rest 24
+    run polyrhythm_play_applause, 0
+    rest 24
+    polyrhythm_retract_pistons 1
+    rest 24
+    polyrhythm_despawn_blocks 0
+    polyrhythm_despawn_blocks 1
+    rest 24
+return
+
+
+script polyrhythm_2_sub_089f4100
+    run polyrhythm_spawn_rod, 1
+    rest 12
+    polyrhythm_spawn_block 0, 1, 0
+    polyrhythm_spawn_block 1, 1, 2
+    rest 12
+    rest 12
+    polyrhythm_spawn_block 3, 1, 2
+    rest 12
+    rest 12
+    polyrhythm_spawn_block 5, 1, 2
+    rest 12
+    rest 12
+    polyrhythm_spawn_block 7, 1, 2
+    rest 12
+    run polyrhythm_spawn_rod, 1
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    polyrhythm_spawn_block 9, 1, 0
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    polyrhythm_retract_pistons 1
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    rest 24
+    run polyrhythm_play_applause, 0
+    rest 24
+    polyrhythm_retract_pistons 0
+    polyrhythm_retract_pistons 1
+    rest 24
+    polyrhythm_despawn_blocks 0
+    polyrhythm_despawn_blocks 1
+    rest 24
+return
+
+
+script polyrhythm_2_sub_089f43e8
+    run polyrhythm_spawn_rod, 0
+    run polyrhythm_spawn_rod, 1
+    polyrhythm_spawn_block 0, 1, 2
+    rest 24
+    polyrhythm_spawn_block 2, 1, 2
+    rest 24
+    polyrhythm_spawn_block 4, 1, 2
+    rest 24
+    polyrhythm_spawn_block 6, 1, 2
+    polyrhythm_spawn_block 0, 0, 0
+    polyrhythm_spawn_block 1, 0, 0
+    polyrhythm_spawn_block 2, 0, 0
+    polyrhythm_spawn_block 3, 0, 0
+    polyrhythm_spawn_block 4, 0, 0
+    polyrhythm_spawn_block 5, 0, 0
+    polyrhythm_spawn_block 6, 0, 1
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    polyrhythm_spawn_block 8, 1, 0
+    polyrhythm_spawn_block 9, 1, 0
+    polyrhythm_spawn_block 8, 0, 0
+    polyrhythm_spawn_block 9, 0, 0
+    polyrhythm_spawn_block 10, 0, 0
+    polyrhythm_spawn_block 11, 0, 0
+    run polyrhythm_spawn_rod, 0
+    run polyrhythm_spawn_rod, 1
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_UPSIDE
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    polyrhythm_retract_pistons 0
+    polyrhythm_retract_pistons 1
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_UPSIDE
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    rest 12
+    rest 24
+    run polyrhythm_play_applause, 0
+    rest 24
+    polyrhythm_retract_pistons 0
+    polyrhythm_retract_pistons 1
+    rest 24
+    polyrhythm_despawn_blocks 0
+    polyrhythm_despawn_blocks 1
+    rest 24
+return
+
+
+script polyrhythm_2_sub_089f47fc
+    run polyrhythm_spawn_rod, 0
+    run polyrhythm_spawn_rod, 1
+    polyrhythm_spawn_block 0, 1, 2
+    rest 24
+    polyrhythm_spawn_block 2, 1, 2
+    rest 12
+    polyrhythm_spawn_block 0, 0, 0
+    polyrhythm_spawn_block 1, 0, 0
+    polyrhythm_spawn_block 2, 0, 0
+    polyrhythm_spawn_block 3, 0, 1
+    rest 12
+    polyrhythm_spawn_block 4, 1, 2
+    rest 24
+    polyrhythm_spawn_block 6, 1, 2
+    polyrhythm_spawn_block 6, 0, 1
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    polyrhythm_spawn_block 8, 1, 0
+    polyrhythm_spawn_block 9, 1, 0
+    polyrhythm_spawn_block 9, 0, 0
+    polyrhythm_spawn_block 10, 0, 0
+    polyrhythm_spawn_block 11, 0, 0
+    run polyrhythm_spawn_rod, 0
+    run polyrhythm_spawn_rod, 1
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    spawn_cue CUE_H_UPSIDE
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_UPSIDE
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    polyrhythm_retract_pistons 0
+    polyrhythm_retract_pistons 1
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    spawn_cue CUE_H_UPSIDE
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_UPSIDE
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    rest 12
+    rest 24
+    run polyrhythm_play_applause, 0
+    rest 24
+    polyrhythm_retract_pistons 0
+    polyrhythm_retract_pistons 1
+    rest 24
+    polyrhythm_despawn_blocks 0
+    polyrhythm_despawn_blocks 1
+    rest 24
+return
+
+
+script polyrhythm_2_sub_089f4bec
+    run polyrhythm_spawn_rod, 0
+    run polyrhythm_spawn_rod, 1
+    polyrhythm_spawn_block 0, 0, 1
+    polyrhythm_spawn_block 0, 1, 2
+    rest 24
+    polyrhythm_spawn_block 2, 1, 2
+    rest 12
+    polyrhythm_spawn_block 3, 0, 1
+    rest 12
+    polyrhythm_spawn_block 4, 1, 2
+    rest 24
+    polyrhythm_spawn_block 6, 1, 2
+    polyrhythm_spawn_block 6, 0, 1
+    rest 12
+    spawn_cue CUE_H_UPSIDE
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    polyrhythm_spawn_block 8, 1, 0
+    polyrhythm_spawn_block 9, 1, 0
+    polyrhythm_spawn_block 9, 0, 0
+    polyrhythm_spawn_block 10, 0, 0
+    polyrhythm_spawn_block 11, 0, 0
+    run polyrhythm_spawn_rod, 0
+    run polyrhythm_spawn_rod, 1
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    spawn_cue CUE_H_UPSIDE
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_UPSIDE
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    polyrhythm_retract_pistons 0
+    polyrhythm_retract_pistons 1
+    spawn_cue CUE_H_UPSIDE
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    spawn_cue CUE_H_UPSIDE
+    rest 12
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    spawn_cue CUE_H_UPSIDE
+    spawn_cue CUE_H_DOWNSIDE
+    rest 12
+    rest 12
+    rest 12
+    rest 24
+    run polyrhythm_play_applause, 0
+    rest 24
+    polyrhythm_retract_pistons 0
+    polyrhythm_retract_pistons 1
+    rest 24
+    polyrhythm_despawn_blocks 0
+    polyrhythm_despawn_blocks 1
+    rest 24
+return
+
+
+script script_polyrhythm_2_main
+    set_results_header D_0805b14c
+    import_marking_criteria polyrhythm_2_marking_criteria
+    forgive_x_misses 1
+    start_perfect_campaign
+    set_tempo 150
+    set_music_volume 256
+    play_music s_poly_bgm_seqData
+    set_music_pitch 512
+    rest 24
+    enable_pause 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    call polyrhythm_2_sub_089f3e30
+    set_marking_criteria 1
+    call polyrhythm_2_sub_089f4100
+    set_marking_criteria 0
+    call polyrhythm_2_sub_089f3e30
+    set_marking_criteria 1
+    call polyrhythm_2_sub_089f4100
+    set_marking_criteria 0
+    call polyrhythm_2_sub_089f43e8
+    call polyrhythm_2_sub_089f43e8
+    set_marking_criteria 2
+    call polyrhythm_2_sub_089f47fc
+    call polyrhythm_2_sub_089f47fc
+    set_marking_criteria 3
+    call polyrhythm_2_sub_089f4bec
+    call polyrhythm_2_sub_089f4bec
+    assess_perfect_inputs 0
+    enable_pause 0
+    rest 24
+return
+
+.end

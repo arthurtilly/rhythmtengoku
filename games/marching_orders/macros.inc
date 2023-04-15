@@ -3,7 +3,7 @@
 
 
 @ Load Data
-.macro load_marching_labels
+.macro load_marching_orders_labels
     @ Game Events
     .set EVENT_00,          0x00
     .set EVENT_01,          0x01
@@ -11,7 +11,6 @@
     .set EVENT_03,          0x03
     .set EVENT_04,          0x04
     .set PLAY_VOICE_SFX,    0x05
-    .set STUB_EVENT,        0x06
 
     @ Cues
     .set CUE_STEP,          0x00
@@ -37,25 +36,25 @@
 
 @ Load Game: Marching Orders
 .macro load_marching_orders
-    load_marching_labels
+    load_marching_orders_labels
     load_game marching_orders_engine, 0
 .endm
 
 @ Load Game: Marching Orders (Remix 7, Remix 8)
 .macro load_marching_space_rabbits
-    load_marching_labels
+    load_marching_orders_labels
     load_game marching_orders_engine, 1
 .endm
 
 @ Load Game: Marching Orders 2 (Unused)
 .macro load_marching_orders_2_unused
-    load_marching_labels
+    load_marching_orders_labels
     load_game marching_orders_engine, 2
 .endm
 
 @ Load Game: Marching Orders 2
 .macro load_marching_orders_2
-    load_marching_labels
+    load_marching_orders_labels
     load_game marching_orders_engine, 3
 .endm
 
@@ -71,35 +70,30 @@
 
 @ [Event 0x00] ?
 .macro marching_orders_event00 args
-    marching_event 0x00, \args
+    marching_orders_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro marching_orders_event01 args
-    marching_orders_event 0x01, \args
+    marching_orders_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro marching_orders_event02 args
-    marching_orders_event 0x02, \args
+    marching_orders_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro marching_orders_event03 args
-    marching_orders_event 0x03, \args
+    marching_orders_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro marching_orders_event04 args
-    marching_orders_event 0x04, \args
+    marching_orders_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] Play Voice SFX
 .macro marching_orders_play_voice_sfx id
-    marching_orders_event 0x05, \id
-.endm
-
-@ [Event 0x06] Nothing
-.macro marching_orders_stub_event noArgs
-    marching_orders_event 0x06, \noArgs
+    marching_orders_event PLAY_VOICE_SFX, \id
 .endm

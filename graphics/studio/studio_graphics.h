@@ -5,20 +5,27 @@
 
 /* STUDIO - ANIMATIONS */
 
-extern struct Animation studio_anim00[];
-extern struct Animation studio_anim01[];
-extern struct Animation studio_anim02[];
-extern struct Animation studio_anim03[];
-extern struct Animation studio_anim04[];
-extern struct Animation studio_anim05[];
-extern struct Animation studio_anim06[];
-extern struct Animation studio_anim07[];
-extern struct Animation studio_anim08[];
-extern struct Animation studio_anim09[];
-extern struct Animation studio_anim10[];
-extern struct Animation studio_anim11[];
-extern struct Animation studio_anim12[];
-extern struct Animation studio_anim13[];
+extern struct Animation anim_studio_selection_item[];
+extern struct Animation anim_studio_selection_option[];
+extern struct Animation anim_studio_item_markers[];
+extern struct Animation anim_studio_item_marker_check[];
+extern struct Animation anim_studio_item_marker_replay[];
+extern struct Animation anim_studio_item_move_highlight[];
+extern struct Animation anim_studio_item_move_above[];
+extern struct Animation anim_studio_item_move_below[];
+extern struct Animation anim_studio_warning_options_y[];
+extern struct Animation anim_studio_warning_options_n[];
+extern struct Animation anim_studio_text_adv_icon[];
+extern struct Animation anim_studio_yellow_arrows[];
+extern struct Animation anim_studio_graphs_l[];
+extern struct Animation anim_studio_graph_r[];
+
+/* STUDIO - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08cd5d64;
+extern struct CompressedGraphics D_08cd62ec;
+extern struct CompressedGraphics D_08cd6434;
+extern struct CompressedGraphics D_08cd5288;
 
 /* STUDIO - PALETTES */
 
@@ -75,9 +82,9 @@ extern Palette studio_bg_monitor_44_pal[];
 
 /* STUDIO MEMORY USAGE GRAPH - ANIMATIONS */
 
-extern struct Animation studio_memory_usage_graph_anim00[];
-extern struct Animation studio_memory_usage_graph_anim01[];
+extern struct Animation anim_studio_mem_chart_data[];
+extern struct Animation anim_studio_mem_chart_borders[];
 
 /* STUDIO MEMORY USAGE GRAPH - PALETTES */
 
-extern Palette studio_memory_usage_graph_pal[];
+extern Palette studio_mem_chart_pal[];

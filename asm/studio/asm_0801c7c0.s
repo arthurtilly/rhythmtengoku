@@ -12,7 +12,7 @@ thumb_func_start func_0801c7c0 \n\
 /* 0801c7d2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801c7d4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801c7d6 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0801c7d8 */ BL func_08001724 \n\
+/* 0801c7d8 */ BL key_rec_set_mode \n\
 /* 0801c7dc */ POP {R0} \n\
 /* 0801c7de */ BX R0 \n\
 \n\

@@ -44,7 +44,7 @@ thumb_func_start func_0801b710 \n\
 /* 0801b760 */ STR R1, [SP, 0x1C] \n\
 /* 0801b762 */ MOVS R1, 0xF @ Set R1 to 0xF \n\
 /* 0801b764 */ STR R1, [SP, 0x20] \n\
-/* 0801b766 */ LDR R1, =D_0890c3b8 \n\
+/* 0801b766 */ LDR R1, =anim_studio_selection_item \n\
 /* 0801b768 */ STR R1, [SP, 0x24] \n\
 /* 0801b76a */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
 /* 0801b76c */ STR R1, [SP, 0x28] \n\

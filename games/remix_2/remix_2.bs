@@ -1,0 +1,1095 @@
+.include "include/beatscript.inc"
+.include "games/samurai_slice/macros.inc"
+.include "games/sick_beats/macros.inc"
+.include "games/sneaky_spirits/macros.inc"
+.include "games/bon_odori/macros.inc"
+.include "games/rat_race/macros.inc"
+
+
+
+.section .script.entry
+@ Remix 2 - Script Entry Point
+
+script script_remix_2_entry
+    set_tempo 124
+    rest 24
+    call script_remix_2_prologue
+    set_game_fade_in_time 16
+    load_samurai_slice_remix
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_remix_2_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_remix_2, script_remix_2_entry
+
+
+
+.section .script.prologue
+@ Remix 2 - Prologue
+
+script script_remix_2_prologue
+    set_game_fade_in_time 8
+    load_game remix_2_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    rest 24
+    play_sfx s_jingle_remix_seqData
+    rest 24
+    rest 24
+    run func_080467fc, 1
+    rest 2
+    run func_080467fc, 2
+    rest 2
+    run func_080467fc, 3
+    rest 2
+    run func_080467fc, 4
+    rest 2
+    run func_080467fc, 5
+    rest 2
+    run func_080467fc, 6
+    rest 6
+    rest 6
+    rest 24
+    rest 24
+    rest 12
+    play_sfx s_f_scratch_seqData
+    rest 6
+    run func_08006d80, 0
+    rest 18
+    set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Remix 2 - Marking Criteria
+
+struct remix_2_marking_criteria_0
+    /* Positive Remark */     .word D_08067edc
+    /* Negative Remark */     .word D_08067ecc
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct remix_2_marking_criteria_1
+    /* Positive Remark */     .word D_08067f1c
+    /* Negative Remark */     .word D_08067ef8
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x99 @ 60%
+endstruct
+
+struct remix_2_marking_criteria_2
+    /* Positive Remark */     .word D_08067f5c
+    /* Negative Remark */     .word D_08067f40
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct remix_2_marking_criteria
+    .word remix_2_marking_criteria_0
+    .word remix_2_marking_criteria_1
+    .word remix_2_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Remix 2 - Sick Beats Pathing Data
+
+script remix_2_sick_beats_path_appear_from_point_1
+    sb_init_no_entering
+    sb_appear 1
+    sb_dash_from 1
+    sb_rest 24
+    sb_rest 24
+    sb_appear 2
+    sb_dash_from 2
+    sb_rest 24
+    sb_rest 24
+    sb_appear 3
+    sb_dash_from 3
+    sb_rest 24
+    sb_rest 24
+    sb_appear 4
+    sb_dash_from 4
+    sb_rest 24
+    sb_rest 24
+    sb_attack_microbe
+sb_stop
+
+script remix_2_sick_beats_path_appear_from_point_2
+    sb_init_no_entering
+    sb_appear 2
+    sb_dash_from 2
+    sb_rest 24
+    sb_rest 24
+    sb_appear 3
+    sb_dash_from 3
+    sb_rest 24
+    sb_rest 24
+    sb_appear 4
+    sb_dash_from 4
+    sb_rest 24
+    sb_rest 24
+    sb_attack_microbe
+sb_stop
+
+script remix_2_sick_beats_path_appear_from_point_3
+    sb_init_no_entering
+    sb_appear 3
+    sb_dash_from 3
+    sb_rest 24
+    sb_rest 24
+    sb_appear 4
+    sb_dash_from 4
+    sb_rest 24
+    sb_rest 24
+    sb_attack_microbe
+sb_stop
+
+script remix_2_sick_beats_path_appear_from_point_4_unused
+    sb_init_no_entering
+    sb_appear 4
+    sb_dash_from 4
+    sb_rest 24
+    sb_rest 24
+    sb_attack_microbe
+sb_stop
+
+script remix_2_sick_beats_path_normal
+    sb_enter_tube
+    sb_rest 24
+    sb_rest 24
+    sb_appear 1
+    sb_dash_from 1
+    sb_rest 24
+    sb_rest 24
+    sb_appear 2
+    sb_dash_from 2
+    sb_rest 24
+    sb_rest 24
+    sb_appear 3
+    sb_dash_from 3
+    sb_rest 24
+    sb_rest 24
+    sb_appear 4
+    sb_dash_from 4
+    sb_rest 24
+    sb_rest 24
+    sb_attack_microbe
+sb_stop
+
+
+@ Remix 2 - Main Script
+
+script script_remix_2_main
+    set_results_header D_08067f74
+    import_marking_criteria remix_2_marking_criteria
+    forgive_x_misses 2
+    assess_inputs 1
+    set_marking_criteria 0
+    set_tempo 133
+    set_music_volume 250
+    samurai_slice_event09 -57
+    rest 24
+    enable_pause 1
+    set_game_fade_in_time 0
+    samurai_slice_event09 -56
+    rest 6
+    samurai_slice_event09 -55
+    rest 6
+    samurai_slice_event09 -54
+    rest 6
+    samurai_slice_event09 -53
+    rest 6
+    samurai_slice_event09 -52
+    rest 6
+    samurai_slice_event09 -51
+    rest 6
+    samurai_slice_event09 -50
+    rest 6
+    samurai_slice_event09 -49
+    rest 6
+    samurai_slice_event09 -48
+    rest 24
+    rest 24
+    start_perfect_campaign
+    play_music L2_pat00_seqData
+    samurai_slice_event09 -45
+    beat_anim
+    rest 24
+    samurai_slice_event09 -42
+    beat_anim
+    rest 24
+    samurai_slice_event09 -39
+    beat_anim
+    rest 24
+    samurai_slice_event09 -36
+    beat_anim
+    rest 24
+    play_music L2_pat00_seqData
+    samurai_slice_event09 -33
+    beat_anim
+    rest 24
+    samurai_slice_event09 -30
+    beat_anim
+    rest 24
+    samurai_slice_event09 -27
+    beat_anim
+    rest 24
+    samurai_slice_event09 -24
+    beat_anim
+    rest 24
+    play_music L2_pat00_seqData
+    samurai_slice_event09 -21
+    beat_anim
+    rest 24
+    samurai_slice_event09 -18
+    beat_anim
+    rest 24
+    samurai_slice_event09 -15
+    beat_anim
+    rest 24
+    samurai_slice_event09 -12
+    beat_anim
+    rest 24
+    play_music L2_pat00_seqData
+    samurai_slice_event09 -9
+    beat_anim
+    rest 24
+    samurai_slice_event09 -6
+    beat_anim
+    rest 24
+    samurai_slice_event09 -3
+    beat_anim
+    rest 24
+    samurai_slice_event09 0
+    beat_anim
+    rest 24
+    play_music L2_pat01_seqData
+    beat_anim
+    rest 24
+    samurai_slice_event02 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+
+    load_sick_beats
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_1
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+
+    load_samurai_slice_remix
+    samurai_slice_event08 1
+    beat_anim
+    rest 24
+    samurai_slice_event02 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+
+    load_sick_beats
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_3
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+
+    load_samurai_slice_remix
+    samurai_slice_event08 1
+    play_music L2_pat01_seqData
+    beat_anim
+    rest 24
+    samurai_slice_event02 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+
+    load_sick_beats
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_1
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    play_music L2_pat09_seqData
+
+    load_samurai_slice_remix
+    samurai_slice_event08 2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    samurai_slice_event02 0
+    beat_anim
+    rest 24
+    samurai_slice_event02 1
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    spawn_cue CUE_SECOND
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+
+    load_sneaky_spirits_remix
+    sneaky_spirits_spawn_bow 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    play_music L2_pat11_seqData
+    sneaky_spirits_show_ghost 1
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 2
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 3
+    beat_anim
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_show_ghost 4
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 5
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_STRICT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 1
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 2
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 3
+    beat_anim
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_show_ghost 4
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 5
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_STRICT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    play_music L2_pat11_seqData
+    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 1
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 208
+    sneaky_spirits_show_ghost 2
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 160
+    sneaky_spirits_show_ghost 3
+    beat_anim
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_set_ghost_height 112
+    sneaky_spirits_show_ghost 4
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 64
+    sneaky_spirits_show_ghost 5
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 16
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_STRICT
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_enable_wind_sfx 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 1
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 2
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 160
+    sneaky_spirits_show_ghost 3
+    beat_anim
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_set_ghost_height 80
+    sneaky_spirits_show_ghost 4
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 5
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_STRICT
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_enable_wind_sfx 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    play_music L2_pat01_seqData
+
+    load_sick_beats
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_1
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_1
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_1
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_2
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_3
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_game_fade_in_time 30
+
+    load_bon_odori
+    bon_odori_lyrics_set_curr_line 1
+    bon_odori_lyrics_curr_line_print_center D_08067f90
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_darken_screen 24
+    beat_anim
+    rest 12
+    run func_08047e78, s_bon_dondon1_1_seqData
+    rest 12
+    mute_music_track MIDI_TRACK_5
+    bon_odori_animate_all 3
+    bon_odori_lyrics_set_curr_line 1
+    bon_odori_lyrics_curr_line_start_highlight 93
+    rest 24
+    spawn_cue CUE_FORWARD_CLAP
+    rest 24
+    bon_odori_animate_npc 1
+    spawn_cue CUE_FORWARD_CLAP
+    mod_music_track_volume MIDI_TRACK_5, 250, 48
+    beat_anim
+    rest 24
+    bon_odori_animate_npc 1
+    rest 24
+    play_music L2_pat01_seqData
+    set_game_fade_in_time 0
+
+    load_sick_beats
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_1
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_2
+    sick_beats_spawn_virus remix_2_sick_beats_path_appear_from_point_3
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_virus remix_2_sick_beats_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_game_fade_in_time 30
+
+    load_bon_odori
+    bon_odori_lyrics_set_curr_line 1
+    bon_odori_lyrics_curr_line_print_center D_08067fcc
+    mute_music_track MIDI_TRACK_5
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bon_odori_darken_screen 24
+    beat_anim
+    rest 24
+    bon_odori_start_input_check
+    run func_08047e78, s_bon_dondon1_2_seqData
+    bon_odori_lyrics_set_curr_line 1
+    bon_odori_lyrics_curr_line_start_highlight 60
+    spawn_cue CUE_FORWARD_CLAP
+    beat_anim
+    rest 24
+    bon_odori_animate_npc 1
+    spawn_cue CUE_FORWARD_CLAP
+    rest 24
+    bon_odori_animate_npc 1
+    mod_music_track_volume MIDI_TRACK_5, 250, 48
+    rest 24
+    bon_odori_stop_input_check
+    beat_anim
+    rest 24
+    set_game_fade_in_time 0
+
+    load_rat_race
+    rat_race_event12 0
+    play_music L2_pat11_seqData
+    rest 24
+    rest 24
+    rat_race_event09 1
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rest 24
+    set_music_volume 64
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 256
+    rat_race_event02 1
+    set_music_volume 250
+    rest 24
+    play_music L2_pat11_seqData
+    rest 24
+    rest 24
+    rat_race_event09 1
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rest 24
+    set_music_volume 64
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 256
+    rat_race_event02 1
+    set_music_volume 250
+    rest 24
+    play_music L2_pat14_seqData
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    run agb_random, 3
+    switch INT8, FUNCTION_RESULT
+        case 0
+            rat_race_event06 D_08067ff8
+            break
+        case 1
+            rat_race_event06 D_08068008
+            break
+        case 2
+            rat_race_event06 D_08068018
+            break
+    end_switch
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event07 D_08068028
+    rest 24
+    rest 24
+    rat_race_event09 2
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rest 24
+    set_music_volume 120
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 250
+    rat_race_event02 1
+    rat_race_event09 1
+    rat_race_event10 s_tebyoushi_pati_seqData
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    spawn_cue CUE_STOP2
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rest 24
+    rest 24
+    set_music_volume 180
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 250
+    rat_race_event02 1
+    rest 24
+    play_music L2_pat16_seqData
+
+    load_samurai_slice_remix
+    samurai_slice_event08 2
+    beat_anim
+    rest 24
+    samurai_slice_event02 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_game_fade_in_time 30
+
+    load_bon_odori
+    bon_odori_lyrics_set_curr_line 1
+    bon_odori_lyrics_curr_line_print_center D_08067f90
+    bon_odori_darken_screen 1
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    mod_music_volume 100, 24
+    bon_odori_darken_screen 24
+    beat_anim
+    rest 12
+    run func_08047e78, s_bon_dondon1_1_seqData
+    rest 12
+    mute_music_track MIDI_TRACK_5
+    bon_odori_animate_all 3
+    bon_odori_lyrics_set_curr_line 1
+    bon_odori_lyrics_curr_line_start_highlight 84
+    rest 24
+    spawn_cue CUE_FORWARD_CLAP
+    rest 24
+    bon_odori_animate_npc 1
+    spawn_cue CUE_FORWARD_CLAP
+    mod_music_track_volume MIDI_TRACK_5, 250, 48
+    beat_anim
+    rest 24
+    bon_odori_animate_npc 1
+    mod_music_volume 250, 24
+    rest 24
+    set_game_fade_in_time 0
+
+    load_sneaky_spirits_remix
+    sneaky_spirits_spawn_bow 0
+    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 0
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 192
+    sneaky_spirits_show_ghost 1
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 128
+    sneaky_spirits_show_ghost 2
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 64
+    sneaky_spirits_show_ghost 3
+    beat_anim
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_set_ghost_height 128
+    sneaky_spirits_show_ghost 4
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 192
+    sneaky_spirits_show_ghost 5
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_STRICT
+    beat_anim
+    rest 24
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_enable_wind_sfx 0
+    beat_anim
+    rest 24
+    set_game_fade_in_time 20
+
+    load_rat_race
+    rat_race_event12 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    beat_anim
+    rest 24
+    rest 24
+    assess_inputs 0
+    rest 24
+    rest 24
+    rest 24
+    enable_pause 0
+    rest 24
+    rat_race_event11 0
+return
+
+.end

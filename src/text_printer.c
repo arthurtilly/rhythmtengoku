@@ -236,7 +236,7 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
     totalWidth = clamp_int32(indentWidth, 0, maxWidth);
 
     while (*stream != '\0') {
-        if (*stream < '\x20') {
+        if (*stream < ' ') {
             s32 newLine = FALSE;
 
             switch (*stream) {
@@ -244,22 +244,26 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
                     stream += 1;
                     newLine = TRUE;
                     break;
+
                 case '\1': // Set Text Printer Data
                     if (sModifyPrinterSettings != NULL) {
                         sModifyPrinterSettings(stream[1], totalWidth);
                     }
                     stream += 2;
                     break;
-                case '\2': // Set Color Depth..?
+
+                case '\2': // Set Colors?
                     lineColors = stream[1] - '0';
                     stream += 2;
                     break;
+
                 case '\3': // Set Font
                     font = stream[1] - '0';
                     spacing = D_089380ac[font].glyphSpacing;
                     stream += 2;
                     break;
-                case '\4': // Insert Padding..?
+
+                case '\4': // Insert Padding
                     stream += 1;
                     totalWidth = 0;
                     while (*stream != '.') {
@@ -269,6 +273,7 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
                     totalWidth = clamp_int32(totalWidth, 0, maxWidth);
                     stream += 1;
                     break;
+
                 case '\5': // Set Text Shadow
                     shadowColors = stream[1] - '0';
                     if (shadowColors > 3) {
@@ -900,7 +905,7 @@ void func_0800abb0(void *printer, s32 line) {
 
 
 // Get Active Printing Status
-s32 text_printer_is_printing(struct TextPrinter *textPrinter) {
+s32 text_printer_is_busy(struct TextPrinter *textPrinter) {
     if (textPrinter == NULL) return FALSE;
 
     return textPrinter->currentlyPrinting;

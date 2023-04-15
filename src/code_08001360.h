@@ -17,38 +17,59 @@ extern u16 D_030046b8;
 extern u16 D_03005378;
 extern u16 D_0300537c;
 
-extern u32 D_030053b4;
-extern u32 D_03005374;
+extern u32 sRecCurrentKey;
+extern u32 sRecMaxKeys;
+
 
 /* AGB ... */
+
 
 extern void func_08001360(void);
 extern void func_08001380(void);
 extern void func_080013a8(void);
 extern void func_080013e8(D_0300009c_func);
-extern void func_080013f4(u16);
-extern void func_0800142c(u16);
-extern void func_08001464(u16);
-extern void func_0800149c(u16);
-extern void func_0800152c(u16);
-// extern ? func_080015bc(?);
-// extern ? func_08001724(?);
-extern void func_0800181c(u8);
-extern u32 func_08001828(void);
-extern u32 func_0800184c(void);
+
+
+/* AGB INPUT */
+
+
+enum InputRecordingModesEnum {
+    INPUT_REC_MODE_NONE,
+    INPUT_REC_MODE_RECORD,
+    INPUT_REC_MODE_PLAY_AS_REALTIME,
+    INPUT_REC_MODE_PLAY_AS_SECONDARY,
+    INPUT_REC_MODE_PLAY_WITH_REALTIME
+};
+
+extern void reset_main_key_buffers(u16 keys);
+extern void reset_rec_key_buffers(u16 keys);
+extern void init_key_listener(void);
+extern void update_main_key_buffers(u16 keys);
+extern void update_rec_key_buffers(u16 keys);
+extern void update_key_listener(void);
+extern void key_rec_set_mode(u32 mode, u16 keyFilter, u16 *recording, u32 maxInputs);
+extern void key_rec_set_paused(u32 pause);
+extern u32 key_rec_get_next(void);
+extern u32 key_rec_reached_end(void);
+
 
 /* AGB DMA3 */
+
 
 extern void dma3_set(const void *source, void *destination, u32 bytesToSet, u16 unit, u32 bytesPerInterrupt); // DMA3 Set
 extern void dma3_fill(u32 value, void *destination, u32 bytesToFill, u16 unit, u32 bytesPerInterrupt); // DMA3 Fill
 
+
 /* AGB RANDOM */
+
 
 extern void set_agb_random_var(u32); // Set Global Random Value
 extern u16 get_agb_random_var(void); // Get Global Random Value
 extern u16 agb_random(u16); // AGB Random
 
+
 /* AGB ... */
+
 
 // extern ? func_080019a4(?);
 // extern ? func_080019e4(?);
@@ -74,7 +95,9 @@ extern s32 func_08002018(u16 id, u8 duration, u32 count, u32 initial, const void
 extern s32 func_08002050(u16 id, u8 duration, u32 count, const void *initial, u32 final, void *target); // Gradual Set (for an array initial and singular final)
 // extern ? func_08002088(?);
 
+
 /* AGB ROTATION/SCALING PARAMETER GROUPS */
+
 
 // extern ? func_080020ec(?);
 // extern ? func_08002150(?);
@@ -97,7 +120,9 @@ extern void func_080022d8(s16); // AFFINE GROUP - ?? (Fine Angle Precision)
 // extern ? func_080025d8(?);
 // extern ? func_080025fc(?);
 
+
 /* AGB SOUND */
+
 
 extern u16 get_sound_num(struct SequenceData *); // Get Sound ID
 extern struct SoundPlayer *play_sound(struct SequenceData *); // Play Sound
@@ -128,7 +153,9 @@ extern void set_soundplayer_key(struct SoundPlayer *player, s32 key); // Set Pla
 // extern ? func_080029d8(?);
 extern struct SoundPlayer *get_soundplayer_by_sound(struct SequenceData *); // Return Player Currently Playing the Given Sound
 
+
 /* AGB GRAPHICS TABLES */
+
 
 extern void *func_08002a54(void *dest); // Remove the highest bit from a pointer (since that shouldn't be set, not that this keeps the pointer in range though)
 extern void func_08002a6c(struct GfxTableLoader *info, const struct GraphicsTable *gfxTable, u32 limit); // Initialise GfxTableLoader

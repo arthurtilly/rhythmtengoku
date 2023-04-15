@@ -1,8 +1,8 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0890bc58] <description>
-Palette results_score_pal[] = {
+// [D_0890bc58] Results (Score-Type) Scene Palette
+Palette score_results_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),
         /* 01 */ TO_RGB555(0x000000),

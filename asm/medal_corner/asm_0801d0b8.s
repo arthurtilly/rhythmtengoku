@@ -16,7 +16,7 @@ branch_0801d0c0: \n\
 /* 0801d0ca */ BEQ branch_0801d102 \n\
 /* 0801d0cc */ LDR R0, =D_03005380 \n\
 /* 0801d0ce */ LDR R0, [R0] \n\
-/* 0801d0d0 */ LDR R2, =D_089dd780 \n\
+/* 0801d0d0 */ LDR R2, =lessons_menu_rank_icons \n\
 /* 0801d0d2 */ LSLS R1, R1, 0x2 \n\
 /* 0801d0d4 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0801d0d6 */ LDR R1, [R1] \n\

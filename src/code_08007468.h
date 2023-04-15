@@ -4,6 +4,7 @@
 #include "graphics.h"
 #include "sound.h"
 #include "data/data_08936b54.h"
+#include "src/bitmap_font.h"
 
 struct unk_struct_08008b00 {
     s16 unk0;
@@ -16,9 +17,11 @@ struct unk_struct_08008b00 {
 
 extern s32 (*D_03004ae4)(s32);
 
-extern void func_08007468(s16 sprite, s8 affineParamID);
-extern void func_08007498(s8 arg0, s16 arg1, s16 arg2);
-extern void func_080074c4(s8 arg0, s16 arg1, s16 arg2, s16 arg3);
+/* GRAPHICS UTIL */
+extern void get_sprite_xy(s16 sprite, s16 *xReq, s16 *yReq);
+extern void assign_sprite_affine_param(s16 sprite, s8 affineParam);
+extern void set_affine_scale_rotation(s8 affineParam, s16 scale, s16 rotation);
+extern void set_affine_stretch_rotation(s8 affineParam, s16 xScale, s16 yScale, s16 rotation);
 extern struct unk_struct_080074ec *func_080074ec(struct unk_struct_080074ec_init *inputs);
 extern u32 func_08007544(struct unk_struct_080074ec *task);
 extern struct unk_struct_0800757c *func_0800757c(struct unk_struct_0800757c_init *inputs);
@@ -33,10 +36,14 @@ extern u32 func_0800793c(struct unk_struct_080079bc *task);
 extern struct unk_struct_080079bc *func_080079bc(struct unk_struct_080079bc_init *inputs);
 extern u32 func_08007a14(struct unk_struct_08007aa0 *task);
 extern struct unk_struct_08007aa0 *func_08007aa0(struct unk_struct_08007aa0_init *inputs);
-// extern ? func_08007b04(?);
-// extern ? func_08007b2c(?);
-// extern ? func_08007b4c(?);
+extern void delete_bmp_font_obj_text_anim(struct BitmapFontOBJ *bmpFontOBJ, s16 sprite);
+extern void delete_bmp_font_obj_text_sprite(struct BitmapFontOBJ *bmpFontOBJ, s16 sprite);
+
+/* FAST DIVISION */
+extern void init_fast_udivsi3(void);
 extern s32 fast_divsi3(s32 dividend, s32 divisor);
+
+/* INTERPOLATION */
 extern struct LinearDataInterpolator *func_08007bb8(struct LinearDataInterpolator *inputs);
 extern u32 func_08007c30(struct LinearDataInterpolator *task);
 extern struct unk_struct_08007ca8 *func_08007ca8(struct unk_struct_08007ca8_init *inputs);
@@ -46,24 +53,32 @@ extern u32 func_08007e00(struct unk_struct_08007d88 *task);
 // extern ? func_08007e68(?);
 extern struct unk_struct_08007e7c *func_08007e7c(struct unk_struct_08007e7c_init *inputs);
 extern u32 func_08007ef8(struct unk_struct_08007e7c *task);
-extern struct BlendControlsInterpolator *func_08007f58(struct BlendControlsInterpolator *inputs); // Initialise LCD Special Effects Interpolator
-extern u32 func_08007fdc(struct BlendControlsInterpolator *task); // Update LCD Special Effects Interpolator
-extern s32 func_08008054(u16 memID, u32 blendControls, u32 duration, u32 flip); // Interpolate LCD Special Effects
+extern struct BlendControlsInterpolator *init_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *inputs);
+extern u32 update_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *task);
+extern s32 interpolate_lcd_blend_mode(u16 memID, u32 blendControls, u32 duration, u32 flip);
 // extern ? func_08008090(?);
-// extern ? func_08008184(?);
-extern char *func_080081a8(char *, const char *); // Append String
-// extern ? func_080081d4(?);
-// extern ? func_0800820c(?); // Check if two strings are equal?
-// extern ? func_08008248(?);
-// extern ? func_08008294(?);
-// extern ? func_080082cc(?);
-// extern ? func_08008328(?);
+
+/* STRING */
+extern char *strncpy(char *s1, const char *s2, u32 len);
+extern char *strcat(char *s1, const char *s2);
+extern char *strncat(char *s1, const char *s2, u32 len);
+extern s32 strncmp(const char *s1, const char *s2, u32 len);
+extern void strint(char *s, u32 n);
+extern void strnint(char *s, u32 n, u32 len);
+extern void strintf(char *s, u32 n);
+extern void strnintf(char *s, u32 n, u32 len);
+
+/* ? */
 // extern ? func_08008370(?);
 extern struct unk_struct_08008420 *func_08008420(struct unk_struct_08008420_init *inputs);
-extern u32 func_08008464(struct unk_struct_08008420 *arg0);
-extern struct unk_struct_0800852c *func_0800852c(struct unk_struct_0800852c_init *inputs);
-extern u32 func_08008548(struct unk_struct_0800852c *arg0);
-extern u32 func_0800856c(u16 memID, void *func, s32 arg, u32 delayTicks); // Run Function with Parameter after given Delay Time
+extern u32 func_08008464(struct unk_struct_08008420 *task);
+
+/* SCHEDULED FUNCTION CALL */
+extern struct ScheduledFunctionTask *init_scheduled_function_task(struct ScheduledFunctionTask *inputs);
+extern u32 update_scheduled_function_task(struct ScheduledFunctionTask *task);
+extern s32 schedule_function_call(u16 memID, void *function, s32 param, u32 delay);
+
+/* BUFFERED TEXTURE */
 // extern ? func_08008594(?);
 // extern ? func_080085e4(?);
 // extern ? func_08008608(?);
@@ -73,9 +88,11 @@ extern u32 func_0800856c(u16 memID, void *func, s32 arg, u32 delayTicks); // Run
 // extern ? func_0800869c(?);
 // extern ? func_080086c4(?);
 // extern ? func_08008720(?);
-extern struct unk_struct_0800873c *func_0800873c(struct unk_struct_0800873c_init *inputs); // bg_texture_loader_start_new_task
-extern u32 func_08008758(struct unk_struct_0800873c *arg0); // bg_texture_loader_task_update
-extern u32 func_080087b4(u16, struct CompressedGraphics *const *); // new_bg_texture_loader_task
+extern struct TextureLoader *init_texture_loader_task(struct TextureLoaderInputs *inputs);
+extern u32 update_texture_loader_task(struct TextureLoader *task);
+extern u32 start_new_texture_loader(u16 memID, struct CompressedGraphics **textureList);
+
+/* ? */
 extern s32 clamp_int32(s32 var, s32 min, s32 max); // Signed Clamp
 // extern ? func_080087e8(?);
 // extern ? func_08008910(?);

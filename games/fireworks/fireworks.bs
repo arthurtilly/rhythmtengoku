@@ -1,0 +1,611 @@
+.include "include/beatscript.inc"
+.include "games/fireworks/macros.inc"
+
+
+
+.section .script.entry
+@ Fireworks - Script Entry Point
+
+script script_fireworks_entry
+    set_tempo 124
+    rest 24
+    call script_fireworks_prologue
+    set_game_fade_in_time 16
+    load_fireworks
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_fireworks_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_fireworks, script_fireworks_entry
+
+
+@ Fireworks - Script Entry Point (Skipped Practice)
+
+script script_fireworks_skipped_practice_entry
+    set_tempo 124
+    set_game_fade_in_time 0
+    load_fireworks
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_fireworks_skipped_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_fireworks_skipped_practice, script_fireworks_skipped_practice_entry
+
+
+
+.section .script.prologue
+@ Fireworks - Prologue
+
+script script_fireworks_prologue
+    set_game_fade_in_time 8
+    load_game fireworks_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    run func_08045dc8, 1
+    rest 24
+    play_sfx s_jingle_bon_seqData
+    rest 24
+    rest 24
+    rest 6
+    rest 6
+    rest 6
+    rest 6
+    rest 6
+    rest 6
+    rest 6
+    rest 12
+    rest 6
+    rest 6
+    rest 12
+    rest 24
+    run func_08006d80, 0
+    rest 24
+    set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Fireworks - Marking Criteria
+
+struct fireworks_marking_criteria_0
+    /* Positive Remark */     .word D_0805cd7c
+    /* Negative Remark */     .word D_0805cd60
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct fireworks_marking_criteria_1
+    /* Positive Remark */     .word D_0805cdb4
+    /* Negative Remark */     .word D_0805cda0
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct fireworks_marking_criteria
+    .word fireworks_marking_criteria_0
+    .word fireworks_marking_criteria_1
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Fireworks - Main Script
+
+script script_fireworks_main
+    set_results_header D_0805cdc8
+    import_marking_criteria fireworks_marking_criteria
+    forgive_x_misses 2
+    assess_inputs 1
+    set_tempo 140
+    set_music_volume 256
+    play_music s_hanabi_bgm_seqData
+    start_perfect_campaign
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    set_marking_criteria 1
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 24
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    rest 24
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    rest 24
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    rest 24
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    set_marking_criteria 0
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_NORMAL_FIREWORK
+    rest 24
+    spawn_cue CUE_TAIKO_BOMBER
+    rest 12
+    fireworks_play_sfx 4
+    rest 12
+    spawn_cue CUE_SPIRIT_SPARKLER
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    assess_perfect_inputs 0
+    rest 24
+    rest 24
+    rest 24
+    enable_pause 0
+    rest 24
+return
+
+
+script script_fireworks_practice
+    assess_inputs 0
+    set_tempo 130
+    set_music_volume 200
+    play_music s_renshu_bgm1_seqData
+    rest 6
+    rest 24
+    enable_pause 1
+    run gameplay_set_tutorial scene_fireworks_skipped_practice
+    rest 24
+    rest 24
+    rest 24
+    mod_music_volume 128, 144
+    print_text_f D_0805cde0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    print_text_f NULL
+    rest 24
+    rest 24
+    print_text_f D_0805ce00
+    rest 24
+    rest 24
+    rest 24
+    print_text_f NULL
+    rest 24
+    print_text_f D_0805ce10
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    print_text_f NULL
+    rest 24
+    mod_music_volume 200, 144
+    print_text_f D_0805ce34
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    print_text_f NULL
+    rest 24
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops 0
+        rest 24
+        rest 24
+        print_text_f D_0805ce5c
+        rest 24
+        rest 24
+        fireworks_play_sfx 3
+        play_sfx_synced s_hanabi_1_seqData, 150, 256, 0
+        print_text_f D_0805ce80
+        spawn_cue CUE_NORMAL_FIREWORK
+        rest 24
+        play_sfx s_hanabi_2_seqData
+        print_text_f D_0805cea4
+        rest 24
+        play_sfx s_hanabi_3_seqData
+        print_text_f D_0805cec8
+        rest 24
+        play_sfx s_hanabi_hai_seqData
+        print_text_f D_0805ceec
+        rest 24
+        print_text_f NULL
+        rest 24
+        rest 24
+        print_text_f D_0805ce5c
+        rest 24
+        rest 24
+        fireworks_play_sfx 3
+        play_sfx_synced s_hanabi_1_seqData, 150, 256, 0
+        print_text_f D_0805ce80
+        spawn_cue CUE_NORMAL_FIREWORK
+        rest 24
+        play_sfx s_hanabi_2_seqData
+        print_text_f D_0805cea4
+        rest 24
+        play_sfx s_hanabi_3_seqData
+        print_text_f D_0805cec8
+        rest 24
+        play_sfx s_hanabi_hai_seqData
+        print_text_f D_0805ceec
+        rest 24
+        print_text_f NULL
+        run func_080175c4, 0
+    loop_end
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    fireworks_set_pattern_mode 1
+    print_text_f D_0805cf10
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    print_text_f NULL
+    rest 24
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops 0
+        rest 24
+        rest 24
+        print_text_f D_0805cf2c
+        rest 24
+        rest 24
+        rest 12
+        fireworks_play_sfx 4
+        print_text_f D_0805cf4c
+        rest 4
+        print_text_f D_0805cf6c
+        rest 4
+        print_text_f D_0805cf8c
+        rest 4
+        print_text_f D_0805cfac
+        spawn_cue CUE_SPIRIT_SPARKLER
+        rest 24
+        play_sfx s_hanabi_hai_seqData
+        print_text_f D_0805cfcc
+        rest 24
+        print_text_f NULL
+        rest 24
+        rest 24
+        rest 24
+        print_text_f D_0805cf2c
+        rest 24
+        rest 24
+        rest 12
+        fireworks_play_sfx 4
+        print_text_f D_0805cf4c
+        rest 4
+        print_text_f D_0805cf6c
+        rest 4
+        print_text_f D_0805cf8c
+        rest 4
+        print_text_f D_0805cfac
+        spawn_cue CUE_SPIRIT_SPARKLER
+        rest 24
+        play_sfx s_hanabi_hai_seqData
+        print_text_f D_0805cfcc
+        rest 24
+        print_text_f NULL
+        rest 24
+        run func_080175c4, 0
+    loop_end
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    fireworks_set_pattern_mode 2
+    print_text_f D_0805cfec
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    print_text_f NULL
+    rest 24
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops 0
+        rest 24
+        rest 24
+        print_text_f D_0805d010
+        rest 24
+        rest 24
+        spawn_cue CUE_TAIKO_BOMBER
+        print_text_f D_0805d030
+        rest 8
+        print_text_f D_0805d050
+        rest 8
+        print_text_f D_0805d070
+        rest 8
+        print_text_f D_0805d090
+        rest 24
+        play_sfx s_hanabi_hai_seqData
+        print_text_f D_0805d0b0
+        rest 24
+        print_text_f NULL
+        rest 24
+        rest 24
+        rest 24
+        print_text_f D_0805d010
+        rest 24
+        rest 24
+        spawn_cue CUE_TAIKO_BOMBER
+        print_text_f D_0805d030
+        rest 8
+        print_text_f D_0805d050
+        rest 8
+        print_text_f D_0805d070
+        rest 8
+        print_text_f D_0805d090
+        rest 24
+        play_sfx s_hanabi_hai_seqData
+        print_text_f D_0805d0b0
+        rest 24
+        print_text_f NULL
+        rest 24
+        run func_080175c4, 0
+    loop_end
+    run gameplay_set_tutorial NULL
+    mod_music_volume 0, 144
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    fireworks_set_pattern_mode 3
+    print_text_f D_0805d0d0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    print_text_f NULL
+    rest 24
+    print_text_f D_0805d0e8
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    print_text_f NULL
+    rest 24
+    goto script_fireworks_main
+
+
+script script_fireworks_skipped_practice
+    rest 24
+    enable_pause 1
+    fireworks_set_pattern_mode 3
+    goto script_fireworks_main
+
+.end

@@ -45,7 +45,7 @@ thumb_func_start space_dance_cue_hit \n\
 /* 0803d64e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803d650 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0803d652 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803d654 */ BL func_0800856c \n\
+/* 0803d654 */ BL schedule_function_call \n\
 /* 0803d658 */ ADD SP, 0xC \n\
 /* 0803d65a */ POP {R4, R5} \n\
 /* 0803d65c */ POP {R0} \n\

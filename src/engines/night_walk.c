@@ -749,7 +749,7 @@ void night_walk_init_gfx1(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_080087b4(get_current_mem_id(), night_walk_buffered_textures);
+    task = start_new_texture_loader(get_current_mem_id(), night_walk_buffered_textures);
     run_func_after_task(task, night_walk_init_gfx2, 0);
 }
 

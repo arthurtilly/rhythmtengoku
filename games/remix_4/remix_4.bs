@@ -1,0 +1,1061 @@
+.include "include/beatscript.inc"
+.include "games/night_walk/macros.inc"
+.include "games/quiz_show/macros.inc"
+.include "games/polyrhythm/macros.inc"
+.include "games/power_calligraphy/macros.inc"
+.include "games/rap_men/macros.inc"
+
+
+
+.section .script.entry
+@ Remix 4 - Script Entry Point
+
+script script_remix_4_entry
+    set_tempo 124
+    rest 24
+    call script_remix_4_prologue
+    set_game_fade_in_time 16
+    load_quiz_show
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_remix_4_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_remix_4, script_remix_4_entry
+
+
+
+.section .script.prologue
+@ Remix 4 - Prologue
+
+script script_remix_4_prologue
+    set_game_fade_in_time 8
+    load_game remix_4_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    rest 24
+    play_sfx s_jingle_remix_seqData
+    rest 24
+    rest 24
+    run func_080469f4, 1
+    rest 2
+    run func_080469f4, 2
+    rest 2
+    run func_080469f4, 3
+    rest 2
+    run func_080469f4, 4
+    rest 2
+    run func_080469f4, 5
+    rest 2
+    run func_080469f4, 6
+    rest 6
+    rest 6
+    rest 24
+    rest 24
+    rest 12
+    play_sfx s_f_scratch_seqData
+    rest 6
+    run func_08006d80, 0
+    rest 18
+    rest 24
+    set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Remix 4 - Marking Criteria
+
+struct remix_4_marking_criteria_0
+    /* Positive Remark */     .word D_0806803c
+    /* Negative Remark */     .word D_0806802c
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct remix_4_marking_criteria_1
+    /* Positive Remark */     .word D_0806807c
+    /* Negative Remark */     .word D_08068058
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x99 @ 60%
+endstruct
+
+struct remix_4_marking_criteria_2
+    /* Positive Remark */     .word D_080680bc
+    /* Negative Remark */     .word D_080680a0
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct remix_4_marking_criteria
+    .word remix_4_marking_criteria_0
+    .word remix_4_marking_criteria_1
+    .word remix_4_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Remix 4 - Rap Men Text
+
+text text_remix_4_sanji_desu_ka
+    .asciz ".b:1ＰＭ３：００　です:0か？"
+endtext
+
+text text_remix_4_oyatsu_desu_ka
+    .asciz ".b:1おやつ　です:0か？"
+endtext
+
+text text_remix_4_honto_desu_ka
+    .asciz ".b:1ほんとです:0か？"
+endtext
+
+text D_08a53568
+    .asciz ".b:1わかります:0か？"
+endtext
+
+text D_08a53580
+    .asciz ".9:1おいしい　かも:0ネ"
+endtext
+
+text D_08a53598
+    .asciz ".9:1ヘルシー　かも:0ネ"
+endtext
+
+text D_08a535b0
+    .asciz ".9:1オレの　せいかも:0ネ"
+endtext
+
+text D_08a535cc
+    .asciz ".9:1それもそう　かも:0ネ"
+endtext
+
+text D_08a535e8
+    .asciz ".9:1たのしい　かも:0ネ"
+endtext
+
+text D_08a53600
+    .asciz ".a:1おやつは　:0サイコー！！"
+endtext
+
+text text_remix_4_kibun_wa_saikou
+    .asciz ".a:1きぶんは　:0サイコー！！"
+endtext
+
+text D_08a53640
+    .asciz ".a:1オレって　:0サイコー！！"
+endtext
+
+text D_08a53660
+    .asciz ".a:1キミって　:0サイコー！！"
+endtext
+
+text D_08a53680
+    .asciz ".a:1おやつが　:0ナイヨー！！"
+endtext
+
+text D_08a536a0
+    .asciz ".a:1オレ、　しらない:0ヨー！！"
+endtext
+
+
+@ Remix 4 - Main Script
+
+script remix_4_sub_08a536c0
+    night_walk_inc_stars_progress 1
+    rest 3
+    night_walk_inc_stars_progress 1
+    rest 3
+    night_walk_inc_stars_progress 1
+    rest 3
+    night_walk_inc_stars_progress 1
+    rest 3
+    night_walk_inc_stars_progress 1
+    rest 3
+    night_walk_inc_stars_progress 1
+    rest 3
+    night_walk_inc_stars_progress 1
+    rest 3
+    night_walk_inc_stars_progress 1
+    rest 3
+return
+
+
+script remix_4_sub_08a537ec
+    night_walk_inc_stars_progress 2
+    rest 3
+    night_walk_inc_stars_progress 2
+    rest 3
+    night_walk_inc_stars_progress 2
+    rest 3
+    night_walk_inc_stars_progress 2
+    rest 3
+    night_walk_inc_stars_progress 2
+    rest 3
+    night_walk_inc_stars_progress 2
+    rest 3
+    night_walk_inc_stars_progress 2
+    rest 3
+    night_walk_inc_stars_progress 2
+    rest 3
+return
+
+
+script remix_4_sub_08a53918
+    night_walk_inc_stars_progress 3
+    rest 3
+    night_walk_inc_stars_progress 3
+    rest 3
+    night_walk_inc_stars_progress 3
+    rest 3
+    night_walk_inc_stars_progress 3
+    rest 3
+    night_walk_inc_stars_progress 3
+    rest 3
+    night_walk_inc_stars_progress 3
+    rest 3
+    night_walk_inc_stars_progress 3
+    rest 3
+    night_walk_inc_stars_progress 3
+    rest 3
+return
+
+
+script script_remix_4_main
+    set_results_header D_080680d4
+    import_marking_criteria D_08a53508
+    forgive_x_misses 2
+    assess_inputs 1
+    set_marking_criteria 0
+    start_perfect_campaign
+    set_tempo 128
+    set_music_volume 200
+    set_game_fade_in_time 0
+    set_game_fade_in_time 20
+    load_night_walk
+    enable_play_inputs 1
+    night_walk_set_drumtech_volume 0
+    night_walk_enable_swing 1
+    night_walk_set_cue_earliness 24
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 48
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 72
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 96
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 120
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 144
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 168
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 192
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 216
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 240
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 0
+    night_walk_set_drumtech_volume 0
+    spawn_cue CUE_KICK
+    rest 8
+    rest 8
+    rest 4
+    night_walk_set_drumtech_volume 96
+    rest 4
+    enable_pause 1
+    night_walk_set_platform 1
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_drumtech_volume 112
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_drumtech_volume 128
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_drumtech_volume 160
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_drumtech_volume 192
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_drumtech_volume 224
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_drumtech_volume 256
+    play_music L3_intro_seqData
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_platform 0
+    play_music L3_C37_seqData
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
+    spawn_cue CUE_KICK
+    call remix_4_sub_08a536c0
+    spawn_cue CUE_SNARE
+    call remix_4_sub_08a536c0
+    spawn_cue CUE_KICK
+    call remix_4_sub_08a536c0
+    spawn_cue CUE_SNARE
+    call remix_4_sub_08a536c0
+    spawn_cue CUE_KICK
+    call remix_4_sub_08a536c0
+    spawn_cue CUE_SNARE
+    call remix_4_sub_08a536c0
+    spawn_cue CUE_KICK
+    call remix_4_sub_08a536c0
+    spawn_cue CUE_SNARE
+    call remix_4_sub_08a536c0
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 12
+    reset_music_track_volumes
+    set_game_fade_in_time 0
+
+    load_quiz_show
+    enable_play_inputs 0
+    assess_inputs 0
+    run gameplay_assess_irrelevant_inputs 0
+    quiz_show_event01 0
+    quiz_show_event01 -16
+    quiz_show_event01 1
+    print_text_s D_080680f0
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    quiz_show_event00 0
+    print_text_s 0
+    rest 24
+    rest 24
+    quiz_show_event02 0
+    rest 24
+    rest 24
+    quiz_show_event02 0
+    rest 24
+    quiz_show_event02 1
+    rest 24
+    quiz_show_event02 1
+    rest 24
+    quiz_show_event00 16
+    print_text_s D_080680fc
+    rest 24
+    print_text_s 0
+    quiz_show_event00 1
+    enable_play_inputs 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    play_sfx s_f_quiz_stop_seqData
+    print_text_s D_08068108
+    rest 12
+    enable_play_inputs 0
+    rest 12
+    rest 12
+    print_text_s 0
+    rest 12
+    quiz_show_event01 -32
+    quiz_show_event04 0
+    if_eq INT8, GLOBAL_VARIABLE, 0
+        print_text_s D_08068118
+        quiz_show_event00 64
+        quiz_show_event00 65
+        play_sfx s_f_quiz_miss_seqData
+        run gameplay_add_cue_result_miss, 0
+    else
+        print_text_s D_08068128
+        quiz_show_event00 48
+        quiz_show_event00 49
+        play_sfx s_f_quiz_ok_seqData
+        run gameplay_add_cue_result_hit, 0
+    end_if
+    play_music L3_C39_seqData
+    rest 24
+    rest 24
+    rest 24
+    set_game_fade_in_time 20
+
+    load_night_walk
+    night_walk_set_platform 0
+    enable_play_inputs 1
+    assess_inputs 1
+    run gameplay_assess_irrelevant_inputs 1
+    night_walk_set_drumtech_volume 0
+    night_walk_enable_swing 1
+    night_walk_set_cue_earliness 240
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 216
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 192
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 168
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 144
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 120
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 96
+    spawn_cue CUE_KICK
+    night_walk_set_platform 1
+    night_walk_set_cue_earliness 72
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 48
+    spawn_cue CUE_SNARE
+    night_walk_set_cue_earliness 24
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 0
+    night_walk_set_drumtech_volume 96
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_drumtech_volume 96
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_drumtech_volume 112
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_drumtech_volume 128
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_drumtech_volume 160
+    spawn_cue CUE_SNARE
+    rest 24
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
+    night_walk_set_platform 0
+    night_walk_set_drumtech_volume 192
+    spawn_cue CUE_KICK
+    call remix_4_sub_08a537ec
+    night_walk_set_drumtech_volume 224
+    spawn_cue CUE_SNARE
+    call remix_4_sub_08a537ec
+    night_walk_set_drumtech_volume 256
+    spawn_cue CUE_KICK
+    call remix_4_sub_08a537ec
+    spawn_cue CUE_SNARE
+    call remix_4_sub_08a537ec
+    spawn_cue CUE_KICK
+    call remix_4_sub_08a536c0
+    spawn_cue CUE_SNARE
+    call remix_4_sub_08a536c0
+    spawn_cue CUE_KICK
+    call remix_4_sub_08a536c0
+    spawn_cue CUE_SNARE
+    rest 12
+    set_game_fade_in_time 0
+
+    load_polyrhythm_remix
+    run gameplay_assess_irrelevant_inputs 0
+    rest 12
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
+    polyrhythm_spawn_rod 1
+    rest 24
+    run gameplay_assess_irrelevant_inputs 1
+    polyrhythm_despawn_blocks 0
+    polyrhythm_spawn_block 0, 1, 0
+    polyrhythm_spawn_block 1, 1, 0
+    polyrhythm_spawn_block 2, 1, 2
+    spawn_cue CUE_4_DOWNSIDE
+    rest 24
+    rest 24
+    polyrhythm_spawn_block 4, 1, 0
+    polyrhythm_spawn_block 5, 1, 0
+    polyrhythm_spawn_block 6, 1, 2
+    spawn_cue CUE_4_DOWNSIDE
+    polyrhythm_spawn_block 8, 1, 0
+    polyrhythm_spawn_block 9, 1, 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 8
+    rest 8
+    polyrhythm_play_applause_sfx
+    rest 8
+    polyrhythm_spawn_rod 1
+    polyrhythm_spawn_rod 0
+    polyrhythm_retract_pistons 1
+    rest 24
+    polyrhythm_despawn_blocks 1
+    polyrhythm_spawn_block 0, 0, 0
+    polyrhythm_spawn_block 1, 0, 0
+    polyrhythm_spawn_block 2, 0, 1
+    spawn_cue CUE_4_UPSIDE
+    rest 24
+    rest 24
+    polyrhythm_spawn_block 0, 1, 0
+    polyrhythm_spawn_block 1, 1, 0
+    polyrhythm_spawn_block 2, 1, 0
+    polyrhythm_spawn_block 3, 1, 0
+    polyrhythm_spawn_block 4, 1, 0
+    polyrhythm_spawn_block 5, 1, 0
+    polyrhythm_spawn_block 6, 1, 2
+    spawn_cue CUE_4_DOWNSIDE
+    polyrhythm_spawn_block 8, 1, 0
+    polyrhythm_spawn_block 9, 1, 0
+    polyrhythm_spawn_block 4, 0, 0
+    polyrhythm_spawn_block 5, 0, 0
+    polyrhythm_spawn_block 6, 0, 1
+    spawn_cue CUE_4_UPSIDE
+    polyrhythm_spawn_block 8, 0, 0
+    polyrhythm_spawn_block 9, 0, 0
+    polyrhythm_spawn_block 10, 0, 0
+    polyrhythm_spawn_block 11, 0, 0
+    polyrhythm_spawn_block 12, 0, 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 8
+    rest 8
+    polyrhythm_play_applause_sfx
+    rest 8
+    reset_music_track_volumes
+    play_music L3_C35_seqData
+    rest 24
+
+    load_power_calligraphy
+    rest 24
+    rest 24
+    rest 24
+    power_calligraphy_event03 0
+    call power_calligraphy_remix_4_sub_08a82060
+    rest 24
+    rest 24
+    rest 24
+    call power_calligraphy_sub_08a7f264
+    power_calligraphy_event03 0
+    call power_calligraphy_remix_4_sub_08a808d8
+    call power_calligraphy_remix_4_sub_08a8095c
+    power_calligraphy_event03 0
+    call power_calligraphy_remix_4_sub_08a80d88
+    call power_calligraphy_remix_4_sub_08a80e0c
+    rest 24
+    set_tempo 180
+    play_music L3_C32_seqData
+    rest 24
+    rest 24
+    rest 24
+    set_game_fade_in_time 20
+
+    load_night_walk
+    night_walk_set_platform 0
+    enable_play_inputs 1
+    night_walk_set_drumtech_volume 0
+    night_walk_enable_swing 1
+    night_walk_set_cue_earliness 240
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 216
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 192
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 168
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 144
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 120
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 96
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 72
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 48
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 24
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 0
+    night_walk_set_drumtech_volume 0
+    spawn_cue CUE_KICK
+    rest 8
+    rest 8
+    rest 4
+    night_walk_set_drumtech_volume 96
+    rest 4
+    night_walk_set_platform 1
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_drumtech_volume 112
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_drumtech_volume 128
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_drumtech_volume 160
+    spawn_cue CUE_SNARE
+    rest 24
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
+    night_walk_set_platform 0
+    night_walk_set_drumtech_volume 192
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_drumtech_volume 224
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_drumtech_volume 256
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    call remix_4_sub_08a53918
+    spawn_cue CUE_SNARE
+    call remix_4_sub_08a53918
+    spawn_cue CUE_KICK
+    call remix_4_sub_08a53918
+    spawn_cue CUE_SNARE
+    call remix_4_sub_08a53918
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 12
+    set_game_fade_in_time 0
+
+    load_polyrhythm_remix
+    run gameplay_assess_irrelevant_inputs 0
+    rest 12
+    reset_music_track_volumes
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    run gameplay_assess_irrelevant_inputs 1
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
+    polyrhythm_spawn_rod 1
+    polyrhythm_spawn_block 0, 1, 2
+    spawn_cue CUE_4_DOWNSIDE
+    rest 24
+    polyrhythm_spawn_block 2, 1, 2
+    spawn_cue CUE_4_DOWNSIDE
+    rest 24
+    polyrhythm_spawn_block 4, 1, 2
+    spawn_cue CUE_4_DOWNSIDE
+    rest 24
+    polyrhythm_spawn_block 6, 1, 2
+    spawn_cue CUE_4_DOWNSIDE
+    polyrhythm_spawn_block 8, 1, 0
+    polyrhythm_spawn_block 9, 1, 0
+    rest 24
+    polyrhythm_spawn_rod 0
+    polyrhythm_spawn_block 0, 0, 1
+    spawn_cue CUE_4_UPSIDE
+    rest 24
+    polyrhythm_spawn_block 2, 0, 1
+    spawn_cue CUE_4_UPSIDE
+    rest 24
+    polyrhythm_spawn_block 4, 0, 1
+    spawn_cue CUE_4_UPSIDE
+    rest 24
+    polyrhythm_spawn_block 6, 0, 1
+    spawn_cue CUE_4_UPSIDE
+    polyrhythm_spawn_block 8, 0, 0
+    polyrhythm_spawn_block 9, 0, 0
+    polyrhythm_spawn_block 10, 0, 0
+    polyrhythm_spawn_block 11, 0, 0
+    polyrhythm_spawn_block 12, 0, 0
+    rest 8
+    rest 8
+    rest 8
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    polyrhythm_play_applause_sfx
+    reset_music_track_volumes
+    rest 24
+    rest 24
+    polyrhythm_retract_pistons 1
+    polyrhythm_retract_pistons 0
+    rest 24
+    polyrhythm_despawn_blocks 1
+    polyrhythm_despawn_blocks 0
+    rest 24
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
+    polyrhythm_spawn_rod 1
+    polyrhythm_spawn_rod 0
+    polyrhythm_spawn_block 0, 1, 2
+    spawn_cue CUE_4_DOWNSIDE
+    polyrhythm_spawn_block 0, 0, 1
+    spawn_cue CUE_4_UPSIDE
+    rest 24
+    polyrhythm_spawn_block 2, 1, 2
+    spawn_cue CUE_4_DOWNSIDE
+    polyrhythm_spawn_block 2, 0, 1
+    spawn_cue CUE_4_UPSIDE
+    rest 24
+    polyrhythm_spawn_block 4, 1, 2
+    spawn_cue CUE_4_DOWNSIDE
+    polyrhythm_spawn_block 4, 0, 1
+    spawn_cue CUE_4_UPSIDE
+    rest 24
+    polyrhythm_spawn_block 6, 1, 2
+    spawn_cue CUE_4_DOWNSIDE
+    polyrhythm_spawn_block 8, 1, 0
+    polyrhythm_spawn_block 9, 1, 0
+    polyrhythm_spawn_block 6, 0, 1
+    spawn_cue CUE_4_UPSIDE
+    polyrhythm_spawn_block 8, 0, 0
+    polyrhythm_spawn_block 9, 0, 0
+    polyrhythm_spawn_block 10, 0, 0
+    polyrhythm_spawn_block 11, 0, 0
+    polyrhythm_spawn_block 12, 0, 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    polyrhythm_play_applause_sfx
+    reset_music_track_volumes
+    rest 24
+    rest 24
+    rest 24
+
+    load_rap_men
+    rest 24
+    set_tempo 180
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f text_remix_4_sanji_desu_ka
+    play_sfx s_rap_15ji_desuka_seqData
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    print_text_f text_remix_4_oyatsu_desu_ka
+    play_sfx s_rap_oyatu_desuka_seqData
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 0
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 8
+    rest 8
+    play_sfx s_rap_honto_desuka_seqData
+    rap_men_animate_rapper 4
+    rest 8
+    print_text_f text_remix_4_honto_desu_ka
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    play_music L3_C40_seqData
+    print_text_f text_remix_4_kibun_wa_saikou
+    play_sfx s_rap_kibunha_saiko_seqData
+    rap_men_animate_rapper 2
+    beat_anim
+    rest 24
+    rest 24
+    rap_men_animate_rapper 2
+    beat_anim
+    rest 24
+    spawn_cue CUE_UN
+    rest 24
+    print_text_f NULL
+    spawn_cue CUE_UUN
+    beat_anim
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_tempo 155
+    print_text_f D_08068138
+    beat_anim
+    rest 24
+    play_sfx s_rap_yeah_seqData
+    rap_men_animate_rapper 1
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    set_tempo 140
+    beat_anim
+    rest 24
+    rest 24
+
+    load_power_calligraphy
+    power_calligraphy_event0B 1
+    power_calligraphy_event0C 160
+    power_calligraphy_event03 0
+    call power_calligraphy_remix_4_sub_08a80d88
+    beat_anim
+    rest 24
+    set_tempo 128
+    call power_calligraphy_remix_4_sub_08a80e0c
+    power_calligraphy_event03 0
+    call power_calligraphy_remix_4_sub_08a819b8
+    call power_calligraphy_remix_4_sub_08a81a3c
+    rest 24
+    play_music L3_C41_end_seqData
+    set_game_fade_in_time 20
+
+    load_night_walk
+    enable_play_inputs 1
+    night_walk_set_drumtech_volume 0
+    night_walk_enable_swing 1
+    night_walk_set_cue_earliness 240
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 216
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 192
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 168
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 144
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 120
+    spawn_cue CUE_KICK
+    night_walk_set_platform 1
+    night_walk_set_cue_earliness 96
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 72
+    spawn_cue CUE_SNARE
+    night_walk_set_cue_earliness 48
+    spawn_cue CUE_KICK
+    night_walk_set_cue_earliness 24
+    spawn_cue CUE_SNARE
+    night_walk_set_cue_earliness 0
+    night_walk_set_drumtech_volume 80
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_drumtech_volume 112
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_drumtech_volume 128
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_drumtech_volume 160
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_platform 0
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
+    night_walk_set_drumtech_volume 192
+    spawn_cue CUE_KICK
+    rest 24
+    night_walk_set_drumtech_volume 224
+    spawn_cue CUE_SNARE
+    rest 24
+    night_walk_set_drumtech_volume 256
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 24
+    spawn_cue CUE_KICK
+    rest 24
+    spawn_cue CUE_SNARE
+    rest 12
+    set_game_fade_in_time 0
+
+    load_quiz_show
+    enable_play_inputs 0
+    assess_inputs 0
+    run gameplay_assess_irrelevant_inputs 0
+    quiz_show_event01 0
+    quiz_show_event01 -16
+    quiz_show_event01 1
+    print_text_s D_0806814c
+    rest 12
+    reset_music_track_volumes
+    rest 24
+    rest 24
+    rest 24
+    quiz_show_event00 0
+    print_text_s 0
+    set_music_volume 150
+    rest 24
+    run agb_random, 4
+    switch INT8, FUNCTION_RESULT
+        case 0
+            rest 24
+            quiz_show_event02 0
+            rest 8
+            rest 8
+            quiz_show_event02 1
+            rest 8
+            rest 24
+            quiz_show_event02 0
+            rest 24
+            quiz_show_event02 0
+            rest 24
+            quiz_show_event02 0
+            rest 24
+            break
+        case 1
+            rest 24
+            quiz_show_event02 0
+            rest 24
+            rest 24
+            quiz_show_event02 0
+            rest 8
+            rest 8
+            quiz_show_event02 1
+            rest 8
+            quiz_show_event02 0
+            rest 24
+            quiz_show_event02 0
+            rest 24
+            break
+        case 2
+            rest 24
+            quiz_show_event02 0
+            rest 24
+            rest 8
+            rest 8
+            quiz_show_event02 1
+            rest 8
+            quiz_show_event02 0
+            rest 24
+            quiz_show_event02 0
+            rest 24
+            quiz_show_event02 0
+            rest 24
+            break
+        case 3
+            rest 24
+            quiz_show_event02 0
+            rest 24
+            rest 24
+            quiz_show_event02 0
+            rest 24
+            quiz_show_event02 0
+            rest 24
+            quiz_show_event02 0
+            rest 24
+            break
+    end_switch
+    quiz_show_event00 16
+    print_text_s D_080680fc
+    rest 24
+    print_text_s 0
+    quiz_show_event00 1
+    enable_play_inputs 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    mod_music_volume 256, 24
+    rest 24
+    rest 24
+    play_sfx s_f_quiz_stop_seqData
+    print_text_s D_08068108
+    rest 12
+    enable_play_inputs 0
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    quiz_show_event00 17
+    run gameplay_display_text_and_wait, 0
+    rest 12
+    set_tempo 140
+    print_text_s D_0806815c
+    run gameplay_display_text_and_wait, 0
+    quiz_show_event03 1
+    mod_lcd_blend_from 0x3F41, TO_TEMPO, 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    play_sfx s_f_quiz_answer_seqData
+    quiz_show_event01 -32
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    quiz_show_event03 0
+    quiz_show_event04 0
+    if_eq INT8, GLOBAL_VARIABLE, 0
+        print_text_s D_08068118
+        quiz_show_event00 64
+        quiz_show_event00 65
+        play_sfx s_f_quiz_miss_seqData
+        rest 12
+        play_sfx s_warai_solo_seqData
+        play_sfx s_quiz_fan_bad_seqData
+        rest 12
+        run gameplay_add_cue_result_miss, 0
+    else
+        print_text_s D_08068128
+        quiz_show_event00 48
+        quiz_show_event00 49
+        play_sfx s_f_quiz_ok_seqData
+        rest 12
+        play_sfx s_kansei_seqData
+        play_sfx s_quiz_fan_good_seqData
+        rest 12
+        run gameplay_add_cue_result_hit, 0
+    end_if
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    enable_pause 0
+    rest 24
+return
+
+.end

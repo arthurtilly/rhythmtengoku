@@ -50,7 +50,7 @@ branch_08011610: \n\
 /* 08011630 */ LDR R0, [R4] \n\
 /* 08011632 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 08011634 */ STRH R5, [R0, 0x22] \n\
-/* 08011636 */ BL func_080141d4 \n\
+/* 08011636 */ BL game_select_get_total_levels \n\
 /* 0801163a */ LDR R1, [R4] \n\
 /* 0801163c */ STRH R0, [R1, 0x20] \n\
 /* 0801163e */ MOVS R2, 0x22 @ Set R2 to 0x22 \n\
@@ -60,14 +60,14 @@ branch_08011610: \n\
 /* 08011648 */ LDR R0, [R0] \n\
 /* 0801164a */ LDR R1, [R4] \n\
 /* 0801164c */ LDR R1, [R1, 0x4] \n\
-/* 0801164e */ LDR R2, =D_089cda28 \n\
+/* 0801164e */ LDR R2, =data_check_scene_objects \n\
 /* 08011650 */ LDR R3, =D_0300558c \n\
 /* 08011652 */ LDR R3, [R3] \n\
 /* 08011654 */ BL import_all_scene_objects \n\
 /* 08011658 */ BL func_080115b0 \n\
 /* 0801165c */ LDR R0, [R4] \n\
 /* 0801165e */ STR R5, [R0, 0x8] \n\
-/* 08011660 */ LDR R0, =D_089ddbcc \n\
+/* 08011660 */ LDR R0, =scene_debug_menu \n\
 /* 08011662 */ BL func_08000584 \n\
 /* 08011666 */ ADD SP, 0x4 \n\
 /* 08011668 */ POP {R4, R5} \n\

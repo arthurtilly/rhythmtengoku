@@ -15,7 +15,7 @@ thumb_func_start func_0801cdfc \n\
 /* 0801ce12 */ LDR R0, =D_03005380 \n\
 /* 0801ce14 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 0801ce16 */ LDR R0, [R0] \n\
-/* 0801ce18 */ LDR R1, =D_0890d400 \n\
+/* 0801ce18 */ LDR R1, =anim_title_text \n\
 /* 0801ce1a */ MOVS R2, 0x84 @ Set R2 to 0x84 \n\
 /* 0801ce1c */ STR R2, [SP] \n\
 /* 0801ce1e */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
@@ -40,7 +40,7 @@ thumb_func_start func_0801cdfc \n\
 /* 0801ce46 */ STRH R0, [R1, 0xC] \n\
 /* 0801ce48 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 0801ce4a */ LDR R0, [R1] \n\
-/* 0801ce4c */ LDR R1, =D_0890d450 \n\
+/* 0801ce4c */ LDR R1, =anim_title_stars_appear \n\
 /* 0801ce4e */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 0801ce50 */ STR R2, [SP] \n\
 /* 0801ce52 */ LDR R2, =0x4864 \n\
@@ -90,7 +90,7 @@ thumb_func_start func_0801cdfc \n\
 /* 0801cebe */ STRB R7, [R0, 0x10] \n\
 /* 0801cec0 */ LDR R0, =D_089d3984 \n\
 /* 0801cec2 */ BL func_08000584 \n\
-/* 0801cec6 */ LDR R0, =D_089cde20 \n\
+/* 0801cec6 */ LDR R0, =scene_main_menu \n\
 /* 0801cec8 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0801ceca */ BL func_080006d0 \n\
 /* 0801cece */ ADD SP, 0x14 \n\

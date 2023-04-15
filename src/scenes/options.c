@@ -5,6 +5,8 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 /* OPTIONS MENU */
 
+#include "asm/options/asm_080162c8.s"
+
 #include "asm/options/asm_080162cc.s"
 
 #include "asm/options/asm_080162f8.s"

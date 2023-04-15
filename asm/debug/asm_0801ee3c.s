@@ -14,7 +14,7 @@ thumb_func_start func_0801ee3c \n\
 /* 0801ee4e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801ee50 */ BEQ branch_0801ee60 \n\
 /* 0801ee52 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801ee54 */ BL pause_beatscript_scene \n\
+/* 0801ee54 */ BL set_pause_beatscript_scene \n\
 /* 0801ee58 */ LDR R0, =D_030046a4 \n\
 /* 0801ee5a */ LDR R1, [R0] \n\
 /* 0801ee5c */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

@@ -10,7 +10,7 @@ thumb_func_start marching_init_gfx1 \n\
 /* 0803418c */ LSLS R0, R0, 0x10 \n\
 /* 0803418e */ LSRS R0, R0, 0x10 \n\
 /* 08034190 */ LDR R1, =marching_buffered_textures \n\
-/* 08034192 */ BL func_080087b4 \n\
+/* 08034192 */ BL start_new_texture_loader \n\
 /* 08034196 */ LDR R1, =marching_init_gfx2 \n\
 /* 08034198 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803419a */ BL run_func_after_task \n\

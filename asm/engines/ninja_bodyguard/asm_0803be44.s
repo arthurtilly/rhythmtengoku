@@ -18,7 +18,7 @@ thumb_func_start func_0803be44 \n\
 /* 0803be5c */ ADDS R5, 0x4 @ Add 0x4 to R5 \n\
 /* 0803be5e */ ADDS R3, R3, R5 @ Set R3 to R3 + R5 \n\
 /* 0803be60 */ LDR R3, [R3] \n\
-/* 0803be62 */ BL func_08008f04 \n\
+/* 0803be62 */ BL math_lerp \n\
 /* 0803be66 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803be68 */ LDR R0, [R4] \n\
 /* 0803be6a */ MOVS R2, 0xBD @ Set R2 to 0xBD \n\

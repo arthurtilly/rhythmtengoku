@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0890023c] <description>
+// [D_0890023c] Cafe Scene OBJ Palette
 Palette cafe_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x504848),
@@ -167,7 +167,7 @@ Palette cafe_obj_pal[] = {
     }
 };
 
-// [D_0890035c] <description>
+// [D_0890035c] Cafe Scene BG Palette
 Palette cafe_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x102050),

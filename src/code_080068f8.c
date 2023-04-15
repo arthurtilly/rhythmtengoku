@@ -2,6 +2,7 @@
 #include "code_08003980.h"
 #include "bitmap_font.h"
 #include "memory_heap.h"
+#include "src/lib_0804ca80.h"
 
 // Can be better split
 
@@ -95,6 +96,7 @@ u32 func_08006c08(struct unk_struct_08006bb4 *arg0) {
     return FALSE;
 }
 
+
 // D_08936b94 function 1
 #include "asm/code_080068f8/asm_08006ca4.s"
 
@@ -116,9 +118,31 @@ void func_08006da8(void) {
 }
 
 
-#include "asm/code_080068f8/asm_08006e00.s"
+// Flush Affine BG
+void func_08006e00(void) {
+    if (D_03004b10.updateDisplay) {
+        CpuFastSet(&D_03004b10.affineBG, &REG_BG2PA, 8);
+    }
+}
 
-#include "asm/code_080068f8/asm_08006e30.s"
+
+// Set Affine BG
+void func_08006e30(s32 layer, u16 dx, u16 dmx, u16 dy, u16 dmy, u32 xRef, u32 yRef) {
+    s32 affineBgLayer = layer - 2;
+
+    if ((affineBgLayer == 0) || (affineBgLayer == 1)) {
+        struct AffineBG bgData;
+
+        bgData.dx = dx;
+        bgData.dmx = dmx;
+        bgData.dy = dy;
+        bgData.dmy = dmy;
+        bgData.xRef = xRef;
+        bgData.yRef = yRef;
+
+        DmaCopy32(3, &bgData, ((affineBgLayer != 0) ? &D_03004b10.affineBG[1] : &D_03004b10.affineBG[0]), 16);
+    }
+}
 
 
 // Flush Graphics Buffer
@@ -263,9 +287,18 @@ void func_08007370(void) {
 }
 
 
-#include "asm/code_080068f8/asm_08007394.s"
+// Set Palette
+void func_08007394(const void *palette, u32 indexOfs, u32 total) {
+    dma3_set(palette, D_03004b10.bgPalette[indexOfs], total * 0x20, 0x20, 0x100);
+}
 
-#include "asm/code_080068f8/asm_080073b8.s"
+
+// Init. Sprite Library for Internal Library Graphics Buffer
+void func_080073b8(void) {
+    func_0804ca80(mem_heap_alloc, mem_heap_dealloc);
+    func_0804ca94(mem_heap_alloc_id);
+    D_03005380 = func_0804caa0(0x80, D_03004b10.oam, 100, 0);
+}
 
 
 // Init. OAM Buffer
@@ -281,6 +314,3 @@ void func_08007410(void) {
     func_0804e1c8(D_03005380);
     func_08002584();
 }
-
-
-#include "asm/code_080068f8/asm_0800742c.s"

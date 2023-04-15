@@ -19,7 +19,7 @@ branch_0801eba0: \n\
 /* 0801ebac */ BL get_current_mem_id \n\
 /* 0801ebb0 */ LSLS R0, R0, 0x10 \n\
 /* 0801ebb2 */ LSRS R0, R0, 0x10 \n\
-/* 0801ebb4 */ LDR R1, =D_089de134 \n\
+/* 0801ebb4 */ LDR R1, =asset_test_gfx_table_dupe \n\
 /* 0801ebb6 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 0801ebb8 */ LSLS R2, R2, 0x8 \n\
 /* 0801ebba */ BL func_08002ee0 \n\
@@ -184,7 +184,7 @@ branch_0801ecf8: \n\
 /* 0801ed00 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801ed02 */ BEQ branch_0801ed12 \n\
 /* 0801ed04 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801ed06 */ BL pause_beatscript_scene \n\
+/* 0801ed06 */ BL set_pause_beatscript_scene \n\
 /* 0801ed0a */ LDR R0, =D_030046a4 \n\
 /* 0801ed0c */ LDR R1, [R0] \n\
 /* 0801ed0e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

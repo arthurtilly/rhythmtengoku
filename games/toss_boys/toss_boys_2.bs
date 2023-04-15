@@ -1,0 +1,1029 @@
+.include "include/beatscript.inc"
+.include "games/toss_boys/macros.inc"
+
+
+
+.section .script.entry
+@ Toss Boys 2 - Script Entry Point
+
+script script_toss_boys_2_entry
+    set_tempo 124
+    rest 24
+    call script_toss_boys_2_prologue
+    set_game_fade_in_time 16
+    load_toss_boys_2
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_toss_boys_2_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_toss_boys_2, script_toss_boys_2_entry
+
+
+
+.section .script.prologue
+@ Toss Boys 2 - Prologue
+
+script script_toss_boys_2_prologue
+    set_game_fade_in_time 8
+    load_game toss_boys_2_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    play_sfx s_jingle_toss_seqData
+    rest 24
+    rest 24
+    run func_08047aac, 1
+    rest 6
+    run func_08047aac, 2
+    rest 6
+    run func_08047aac, 3
+    rest 6
+    run func_08047aac, 4
+    rest 6
+    run func_08047aac, 5
+    rest 6
+    run func_08047aac, 6
+    rest 6
+    rest 6
+    rest 12
+    rest 6
+    rest 6
+    rest 24
+    rest 24
+    rest 12
+    run func_08006d80, 0
+    rest 24
+    set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Toss Boys 2 - Marking Criteria
+
+struct toss_boys_2_marking_criteria_0
+    /* Positive Remark */     .word D_0805d634
+    /* Negative Remark */     .word D_0805d618
+    /* Flags */               .hword OVERRIDE_COMMENTS
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 3
+endstruct
+
+struct toss_boys_2_marking_criteria_1
+    /* Positive Remark */     .word D_0805d660
+    /* Negative Remark */     .word D_0805d64c
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x66 @ 40%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct toss_boys_2_marking_criteria_2
+    /* Positive Remark */     .word D_0805d694
+    /* Negative Remark */     .word D_0805d678
+    /* Flags */               .hword 0
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct toss_boys_2_marking_criteria
+    .word toss_boys_2_marking_criteria_0
+    .word toss_boys_2_marking_criteria_1
+    .word toss_boys_2_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Toss Boys 2 - Main Script
+
+script script_toss_boys_2_main
+    set_tempo 120
+    start_perfect_campaign
+    rest 24
+    enable_pause 1
+    rest 24
+    set_results_header D_0805d6b0
+    import_marking_criteria toss_boys_2_marking_criteria
+    forgive_x_misses 2
+    assess_inputs 1
+    set_tempo 106
+    set_music_volume 150
+    toss_boys_event00 0
+    toss_boys_event04 0
+    print_text_s D_0805d6c4
+    play_music s_toss_bgm_seqData
+    set_marking_criteria 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_s 0
+    toss_boys_event01 196928
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300c9
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 1
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300c8
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 10
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300c9
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 1
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300c8
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 10
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a2
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 4
+    beat_anim
+    rest 24
+    toss_boys_event02 0x1807a
+    spawn_cue CUE_TOSS_Y
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 18
+    toss_boys_event03 30
+    toss_boys_event06 2
+    beat_anim
+    rest 24
+    toss_boys_event03 23
+    set_marking_criteria 2
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 26
+    toss_boys_event02 0x300c8
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 10
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 16
+    toss_boys_event03 28
+    toss_boys_event06 0
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    toss_boys_event02 0x18078
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 11
+    rest 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    toss_boys_event02 0x18078
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 11
+    rest 0
+    toss_boys_event02 0x300a2
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 4
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a1
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 24
+    toss_boys_event03 22
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300c8
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 10
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a2
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 4
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a1
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 24
+    toss_boys_event03 22
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300c9
+    spawn_cue CUE_TOSS_B
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 17
+    toss_boys_event03 29
+    toss_boys_event06 1
+    beat_anim
+    rest 24
+    toss_boys_event03 16
+    beat_anim
+    rest 24
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 17
+    rest 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 17
+    rest 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 17
+    rest 0
+    toss_boys_event02 0x48282
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 15
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    toss_boys_event02 0x00000
+    spawn_cue CUE_POP_Y
+    toss_boys_event05 50
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    toss_boys_event05 2
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    toss_boys_event01 196930
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a1
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 24
+    toss_boys_event03 22
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a2
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 13
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a0
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 24
+    toss_boys_event03 19
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a2
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 4
+    beat_anim
+    rest 24
+    toss_boys_event02 0x1807a
+    spawn_cue CUE_TOSS_Y
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 18
+    toss_boys_event03 30
+    toss_boys_event06 2
+    beat_anim
+    rest 24
+    toss_boys_event03 20
+    set_marking_criteria 2
+    toss_boys_event02 0x18078
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 26
+    toss_boys_event02 0x300c9
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 1
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    toss_boys_event02 0x300c9
+    spawn_cue CUE_TOSS_B
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 17
+    toss_boys_event03 29
+    toss_boys_event06 1
+    beat_anim
+    rest 24
+    toss_boys_event03 16
+    beat_anim
+    rest 24
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 17
+    rest 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 17
+    rest 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 17
+    rest 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 17
+    rest 0
+    toss_boys_event02 0x300a2
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 13
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    toss_boys_event02 0x300a0
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 24
+    toss_boys_event03 19
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    toss_boys_event02 0x300c9
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 1
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a2
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 13
+    beat_anim
+    rest 24
+    toss_boys_event02 0x1807a
+    spawn_cue CUE_TOSS_Y
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 18
+    toss_boys_event03 30
+    toss_boys_event06 2
+    beat_anim
+    rest 24
+    toss_boys_event03 23
+    set_marking_criteria 2
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 26
+    toss_boys_event02 0x300c8
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 10
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 16
+    toss_boys_event03 28
+    toss_boys_event06 0
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    toss_boys_event02 0x18078
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 11
+    rest 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    toss_boys_event02 0x48282
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 15
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    toss_boys_event02 0x00000
+    spawn_cue CUE_POP_Y
+    toss_boys_event05 50
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    toss_boys_event05 2
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    toss_boys_event01 196930
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a1
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 24
+    toss_boys_event03 22
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a2
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 13
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a1
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 24
+    toss_boys_event03 22
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a2
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 13
+    beat_anim
+    rest 24
+    toss_boys_event02 0x1807a
+    spawn_cue CUE_TOSS_Y
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 18
+    toss_boys_event03 30
+    toss_boys_event06 2
+    beat_anim
+    rest 24
+    toss_boys_event03 23
+    set_marking_criteria 2
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 26
+    toss_boys_event02 0x300c8
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 10
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 16
+    toss_boys_event03 28
+    toss_boys_event06 0
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    toss_boys_event02 0x18078
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 11
+    rest 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    toss_boys_event02 0x18078
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 11
+    rest 0
+    toss_boys_event02 0x300a2
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 4
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a1
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 24
+    toss_boys_event03 22
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300a2
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 13
+    beat_anim
+    rest 24
+    toss_boys_event02 0x1807a
+    spawn_cue CUE_TOSS_Y
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 18
+    toss_boys_event03 30
+    toss_boys_event06 2
+    beat_anim
+    rest 24
+    toss_boys_event03 23
+    set_marking_criteria 2
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 26
+    toss_boys_event02 0x300c8
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 10
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 16
+    toss_boys_event03 28
+    toss_boys_event06 0
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    toss_boys_event02 0x18078
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 11
+    rest 0
+    toss_boys_event02 0x300c9
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 1
+    beat_anim
+    rest 24
+    toss_boys_event02 0x300c9
+    spawn_cue CUE_TOSS_B
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 17
+    toss_boys_event03 29
+    toss_boys_event06 1
+    beat_anim
+    rest 24
+    toss_boys_event03 16
+    beat_anim
+    rest 24
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 17
+    rest 0
+    toss_boys_event02 0x48282
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 15
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    toss_boys_event02 0x00000
+    spawn_cue CUE_POP_Y
+    toss_boys_event05 50
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    toss_boys_event05 2
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    toss_boys_event01 196928
+    beat_anim
+    rest 24
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 16
+    toss_boys_event03 28
+    toss_boys_event06 0
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    toss_boys_event02 0x18078
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 11
+    rest 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    toss_boys_event02 0x300c8
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 10
+    beat_anim
+    rest 24
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 16
+    toss_boys_event03 28
+    toss_boys_event06 0
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    toss_boys_event02 0x300c8
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 10
+    beat_anim
+    rest 24
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 16
+    toss_boys_event03 28
+    toss_boys_event06 0
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    toss_boys_event02 0x18078
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 11
+    rest 0
+    toss_boys_event02 0x300a2
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 4
+    beat_anim
+    rest 24
+    toss_boys_event02 0x1807a
+    spawn_cue CUE_TOSS_Y
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 18
+    toss_boys_event03 30
+    toss_boys_event06 2
+    beat_anim
+    rest 24
+    toss_boys_event03 23
+    set_marking_criteria 2
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 26
+    toss_boys_event02 0x300c8
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 10
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    toss_boys_event02 0x300a2
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 4
+    beat_anim
+    rest 24
+    toss_boys_event02 0x1807a
+    spawn_cue CUE_TOSS_Y
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 18
+    toss_boys_event03 30
+    toss_boys_event06 2
+    beat_anim
+    rest 24
+    toss_boys_event03 20
+    set_marking_criteria 2
+    toss_boys_event02 0x18078
+    spawn_cue CUE_TOSS_Y
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 26
+    toss_boys_event02 0x300c9
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 1
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    toss_boys_event02 0x300c9
+    spawn_cue CUE_TOSS_B
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 17
+    toss_boys_event03 29
+    toss_boys_event06 1
+    beat_anim
+    rest 24
+    toss_boys_event03 16
+    beat_anim
+    rest 24
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 17
+    rest 0
+    toss_boys_event02 0x48280
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 12
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    toss_boys_event05 16
+    toss_boys_event03 28
+    toss_boys_event06 0
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    set_marking_criteria 0
+    toss_boys_event02 0x18078
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 11
+    rest 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    toss_boys_event02 0x18078
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 24
+    toss_boys_event03 11
+    rest 0
+    toss_boys_event02 0x18079
+    spawn_cue CUE_TOSS_R
+    beat_anim
+    rest 24
+    toss_boys_event03 2
+    rest 0
+    toss_boys_event02 0x48282
+    spawn_cue CUE_TOSS_B
+    beat_anim
+    rest 12
+    toss_boys_event05 0
+    toss_boys_event05 1
+    toss_boys_event05 2
+    rest 12
+    toss_boys_event07 0
+    toss_boys_event03 15
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 1
+    toss_boys_event02 0x00000
+    spawn_cue CUE_POP_Y
+    toss_boys_event05 50
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    toss_boys_event05 2
+    rest 0
+    beat_anim
+    rest 24
+    print_text_s D_0805d6d4
+    assess_perfect_inputs 0
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    enable_pause 0
+    rest 24
+return
+
+.end

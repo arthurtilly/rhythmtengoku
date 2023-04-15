@@ -9,7 +9,7 @@ thumb_func_start func_08011efc \n\
 /* 08011f04 */ BL get_current_mem_id \n\
 /* 08011f08 */ LSLS R0, R0, 0x10 \n\
 /* 08011f0a */ LSRS R0, R0, 0x10 \n\
-/* 08011f0c */ LDR R1, =D_089cdaf4 \n\
+/* 08011f0c */ LDR R1, =data_room_gfx_table \n\
 /* 08011f0e */ MOVS R2, 0xC0 @ Set R2 to 0xC0 \n\
 /* 08011f10 */ LSLS R2, R2, 0x6 \n\
 /* 08011f12 */ BL func_08002ee0 \n\

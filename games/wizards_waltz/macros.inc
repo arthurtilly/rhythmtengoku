@@ -9,9 +9,9 @@
     .set ENABLE_TUTORIAL,   0x01
 
     @ Cues
-    .set CUE_00,    0x00
-    .set CUE_01,    0x01
-    .set CUE_02,    0x02
+    .set CUE_WIZARD_00,    0x00
+    .set CUE_WIZARD_01,    0x01
+    .set CUE_WIZARD_02,    0x02
 .endm
 
 
@@ -33,10 +33,10 @@
 
 @ [Event 0x00] Set Rotation Cycle Period (default = 6 beats)
 .macro wizards_waltz_set_cycle_time time
-    wizards_waltz_event 0x00, \time
+    wizards_waltz_event SET_CYCLE_TIME, \time
 .endm
 
 @ [Event 0x01] Enable Tutorial Mode
 .macro wizards_waltz_enable_tutorial enable
-    wizards_waltz_event 0x01, \enable
+    wizards_waltz_event ENABLE_TUTORIAL, \enable
 .endm

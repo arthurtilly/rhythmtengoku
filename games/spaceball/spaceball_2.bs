@@ -1,0 +1,432 @@
+.include "include/beatscript.inc"
+.include "games/spaceball/macros.inc"
+
+
+
+.section .script.entry
+@ Spaceball 2 - Script Entry Point
+
+script script_spaceball_2_entry
+    set_tempo 124
+    rest 24
+    call script_spaceball_prologue
+    set_game_fade_in_time 16
+    load_spaceball
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_spaceball_2_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_spaceball_2, script_spaceball_2_entry
+
+
+
+.section .script.main
+@ Spaceball 2 - Marking Criteria
+
+struct spaceball_2_marking_criteria_0
+    /* Positive Remark */     .word D_0805c020
+    /* Negative Remark */     .word D_0805c004
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0xB3 @ 70%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct spaceball_2_marking_criteria_1
+    /* Positive Remark */     .word D_0805c03c
+    /* Negative Remark */     .word D_0805c024
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct spaceball_2_marking_criteria_2
+    /* Positive Remark */     .word D_0805c074
+    /* Negative Remark */     .word D_0805c058
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 2
+endstruct
+
+struct spaceball_2_marking_criteria_3
+    /* Positive Remark */     .word D_0805c0ac
+    /* Negative Remark */     .word D_0805c090
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct spaceball_2_marking_criteria
+    .word spaceball_2_marking_criteria_0
+    .word spaceball_2_marking_criteria_1
+    .word spaceball_2_marking_criteria_2
+    .word spaceball_2_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Spaceball 2 - Main Script
+
+script script_spaceball_2_main
+    set_results_header D_0805c0c4
+    import_marking_criteria spaceball_2_marking_criteria
+    forgive_x_misses 1
+    assess_inputs 1
+    set_tempo 105
+    set_music_volume 240
+    spaceball_set_batter_sprite 2
+    spaceball_zoom_camera 0xff00, 1
+    start_perfect_campaign
+    rest 24
+    enable_pause 1
+    rest 24
+    set_music_volume 180
+    play_music s_shibafu1_bgm_seqData
+    spaceball_zoom_camera 0xfed4, 94
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+    spaceball_zoom_camera 0xf000, 60
+    rest 12
+    spaceball_prep_pitcher 0
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_HIGH
+    rest 24
+    rest 24
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spaceball_zoom_camera 0xf800, 96
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spaceball_zoom_camera 0xff00, 24
+    set_marking_criteria 1
+    spawn_cue CUE_HIGH
+    rest 24
+    rest 24
+    spaceball_zoom_camera 0xf000, 48
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spaceball_set_batter_sprite 1
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_HIGH
+    rest 24
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_HIGH
+    rest 24
+    rest 24
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spaceball_zoom_camera 0xf600, 18
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spaceball_zoom_camera 0xfb00, 18
+    set_marking_criteria 0
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spaceball_zoom_camera 0xfed4, 42
+    set_marking_criteria 1
+    spawn_cue CUE_HIGH
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 3
+    rest 24
+    rest 24
+    spaceball_zoom_camera 0xfef2, 24
+    rest 24
+    rest 4
+    run scene_stop_music 0
+    rest 20
+    mute_music_track MIDI_TRACK_9
+    set_tempo 125
+    play_music s_shibafu1_bgm_seqData
+    rest 24
+    rest 24
+    spaceball_zoom_camera 0xff00, 24
+    rest 24
+    rest 4
+    run scene_stop_music 0
+    rest 20
+    reset_music_track_volumes
+    set_tempo 140
+    play_music s_shibafu1_bgm_seqData
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    spaceball_prep_pitcher 0
+    spaceball_zoom_camera 0xff2e, 1
+    rest 12
+    spaceball_zoom_camera 0xff56, 1
+    rest 12
+    rest 6
+    spaceball_zoom_camera 0xff7e, 1
+    rest 6
+    rest 6
+    spaceball_zoom_camera 0xff9c, 1
+    rest 6
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spaceball_zoom_camera 0xff00, 6
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    set_tempo 150
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    set_tempo 160
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    set_tempo 165
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    set_tempo 170
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    set_tempo 175
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spaceball_zoom_camera 0xf000, 864
+    mod_music_volume 0, 768
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    run gameplay_set_reverb, 20
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    run gameplay_set_reverb, 30
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    run gameplay_set_reverb, 40
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    spaceball_prep_pitcher 0
+    rest 24
+    spawn_cue CUE_LOW
+    rest 24
+    rest 12
+    assess_perfect_inputs 0
+    enable_pause 0
+    rest 12
+return
+
+.end

@@ -70,7 +70,7 @@ branch_080116fc: \n\
 /* 08011704 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08011706 */ BEQ branch_08011714 \n\
 /* 08011708 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801170a */ BL pause_beatscript_scene \n\
+/* 0801170a */ BL set_pause_beatscript_scene \n\
 /* 0801170e */ LDR R1, [R4] \n\
 /* 08011710 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08011712 */ STR R0, [R1, 0x8] \n\

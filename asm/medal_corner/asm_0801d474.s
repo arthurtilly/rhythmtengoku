@@ -30,7 +30,7 @@ branch_0801d490: \n\
 /* 0801d4a0 */ B branch_0801d4a4 \n\
  \n\
 branch_0801d4a2: \n\
-/* 0801d4a2 */ LDR R0, =D_089dd794 \n\
+/* 0801d4a2 */ LDR R0, =medal_corner_locked_text \n\
  \n\
 branch_0801d4a4: \n\
 /* 0801d4a4 */ POP {R4} \n\

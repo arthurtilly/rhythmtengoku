@@ -3,29 +3,37 @@
 #include "global.h"
 #include "graphics.h"
 
-/* RESULTS (LEVEL) - ANIMATIONS */
+/* RESULTS (RANK) - ANIMATIONS */
 
-extern struct Animation results_level_anim00[];
-extern struct Animation results_level_anim01[];
-extern struct Animation results_level_anim02[];
-extern struct Animation results_level_anim03[];
-extern struct Animation results_level_anim04[];
-extern struct Animation results_level_anim05[];
-extern struct Animation results_level_anim06[];
+extern struct Animation anim_rank_results_header_placeholder[];
+extern struct Animation anim_rank_results_icon[];
+extern struct Animation anim_rank_results_supportive_bubble[];
+extern struct Animation anim_rank_results_header_box[];
+extern struct Animation anim_rank_results_header_box_mask[];
+extern struct Animation anim_rank_results_medal_get[];
+extern struct Animation anim_rank_results_comment_append[];
 
-/* RESULTS (LEVEL) - PALETTES */
+/* RESULTS (RANK) - COMPRESSED GRAPHICS */
 
-extern Palette results_level_pal[];
+extern struct CompressedGraphics D_08cd4a50;
+
+/* RESULTS (RANK) - PALETTES */
+
+extern Palette rank_results_pal[];
 
 /* RESULTS (SCORE) - ANIMATIONS */
 
-extern struct Animation results_score_anim00[];
-extern struct Animation results_score_anim01[];
-extern struct Animation results_score_anim02[];
-extern struct Animation results_score_anim03[];
-extern struct Animation results_score_anim04[];
-extern struct Animation results_score_anim05[];
+extern struct Animation anim_score_results_num[];
+extern struct Animation anim_score_results_num_one[];
+extern struct Animation anim_score_results_num_zero1[];
+extern struct Animation anim_score_results_num_zero2[];
+extern struct Animation anim_score_results_points_label[];
+extern struct Animation anim_score_results_dec_num[];
+
+/* RESULTS (SCORE) - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08cd4f58;
 
 /* RESULTS (SCORE) - PALETTES */
 
-extern Palette results_score_pal[];
+extern Palette score_results_pal[];

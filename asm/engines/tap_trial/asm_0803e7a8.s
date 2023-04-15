@@ -32,7 +32,7 @@ branch_0803e7d0: \n\
 /* 0803e7e2 */ LDR R0, [R1, 0x4] \n\
 /* 0803e7e4 */ MOVS R2, 0x22 @ Set R2 to 0x22 \n\
 /* 0803e7e6 */ LDRSH R1, [R1, R2] \n\
-/* 0803e7e8 */ BL func_08007b04 \n\
+/* 0803e7e8 */ BL delete_bmp_font_obj_text_anim \n\
 /* 0803e7ec */ LDR R5, =D_03005380 \n\
 /* 0803e7ee */ LDR R0, [R5] \n\
 /* 0803e7f0 */ LDR R1, [R4] \n\

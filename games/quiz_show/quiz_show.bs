@@ -1,0 +1,641 @@
+.include "include/beatscript.inc"
+.include "games/quiz_show/macros.inc"
+
+
+
+.section .script.entry
+@ Quiz Show - Script Entry Point
+
+script script_quiz_show_entry
+    set_tempo 124
+    rest 24
+    call script_quiz_show_prologue
+    set_game_fade_in_time 16
+    load_quiz_show
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_quiz_show_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_quiz_show, script_quiz_show_entry
+
+
+@ Quiz Show - Script Entry Point (Skipped Practice)
+
+script script_quiz_show_skipped_practice_entry
+    set_tempo 124
+    set_game_fade_in_time 0
+    load_quiz_show
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_quiz_show_skipped_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_quiz_show_skipped_practice, script_quiz_show_skipped_practice_entry
+
+
+
+.section .script.prologue
+@ Quiz Show - Prologue
+
+script script_quiz_show_prologue
+    set_game_fade_in_time 8
+    load_game quiz_show_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    rest 24
+    play_sfx s_jingle_quiz_seqData
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    run func_08006d80, 0
+    rest 24
+    set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Quiz Show - Marking Criteria
+
+struct quiz_show_marking_criteria_0
+    /* Positive Remark */     .word D_0805ec60
+    /* Negative Remark */     .word D_0805ec44
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x00 @ 0%
+endstruct
+
+struct quiz_show_marking_criteria_1
+    /* Positive Remark */     .word D_0805ec7c
+    /* Negative Remark */     .word D_0805ec78
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct quiz_show_marking_criteria_set_1
+    .word quiz_show_marking_criteria_0
+    .word quiz_show_marking_criteria_1
+    .word END_OF_CRITERIA
+endstruct
+
+struct quiz_show_marking_criteria_set_2
+    .word quiz_show_marking_criteria_1
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Quiz Show - Main Script
+
+script quiz_show_sub_08a3c108
+    quiz_show_event00 64
+    quiz_show_event00 65
+    play_sfx s_f_quiz_miss_seqData
+    rest 12
+    play_sfx s_warai_solo_seqData
+    play_sfx s_quiz_fan_bad_seqData
+    print_text_s D_0805eca4
+    run gameplay_display_text_and_wait, 0
+    rest 12
+    quiz_show_event00 32
+    set_tempo 125
+    play_music s_quiz_bgm_seqData
+    set_music_volume 0
+    mod_music_volume 256, 96
+    print_text_s D_0805ecb0
+    run gameplay_display_text_and_wait, 0
+    enable_pause 0
+    rest 24
+return
+
+
+script quiz_show_sub_08a3c210
+    run agb_random, 3
+    if_eq INT8, GLOBAL_VARIABLE, 0
+        return
+    end_if
+    run agb_random, 3
+    switch INT8, FUNCTION_RESULT
+        case 0
+            rest 24
+            quiz_show_event02 0
+            rest 12
+            rest 12
+            break
+        case 1
+            rest 24
+            rest 24
+            quiz_show_event02 0
+            rest 12
+            quiz_show_event02 1
+            rest 12
+            break
+        default
+            rest 12
+            quiz_show_event02 1
+            rest 12
+    end_switch
+return
+
+
+script script_quiz_show_main
+    set_tempo 140
+    set_results_header D_0805ecd4
+    assess_inputs 0
+    start_perfect_campaign
+    assess_perfect_inputs 0
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops 0
+        switch FUNC, func_080175d8
+            case 0
+                print_text_s D_0805ece8
+                break
+            case 1
+                print_text_s D_0805ecf8
+                break
+            case 2
+                print_text_s D_0805ed08
+                break
+            case 3
+                run gameplay_set_tutorial NULL
+                print_text_s D_0805ed14
+                run gameplay_display_text_and_wait, 0
+                rest 12
+                print_text_s D_0805ed28
+                break
+            case 4
+                print_text_s D_0805ed44
+                break
+            case 5
+                print_text_s D_0805ed60
+                break
+        end_switch
+        run gameplay_display_text_and_wait, 0
+        quiz_show_event01 0
+        quiz_show_event01 -16
+        quiz_show_event01 1
+        rest 24
+        quiz_show_event00 0
+        rest 24
+        switch FUNC, func_080175d8
+            case 0
+                rest 24
+                rest 24
+                rest 24
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                rest 24
+                break
+            case 1
+                rest 24
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                rest 24
+                break
+            case 2
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                rest 24
+                break
+            case 3
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 1
+                rest 12
+                quiz_show_event02 0
+                rest 24
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 1
+                rest 12
+                quiz_show_event02 0
+                rest 24
+                rest 24
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 1
+                rest 12
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 1
+                rest 12
+                quiz_show_event02 0
+                rest 24
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 1
+                rest 12
+                quiz_show_event02 0
+                rest 24
+                call quiz_show_sub_08a3c210
+                rest 24
+                break
+            case 4
+                rest 24
+                rest 24
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 1
+                rest 12
+                quiz_show_event02 0
+                rest 24
+                rest 24
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 1
+                rest 12
+                quiz_show_event02 0
+                rest 24
+                rest 24
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 1
+                rest 12
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 1
+                rest 12
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 12
+                quiz_show_event02 1
+                rest 12
+                quiz_show_event02 0
+                rest 24
+                call quiz_show_sub_08a3c210
+                rest 24
+                break
+            case 5
+                rest 24
+                rest 24
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 24
+                rest 24
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 24
+                rest 24
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 6
+                quiz_show_event02 1
+                rest 6
+                quiz_show_event02 0
+                rest 24
+                call quiz_show_sub_08a3c210
+                rest 24
+                break
+        end_switch
+        rest 24
+        rest 24
+        rest 24
+        quiz_show_event00 16
+        rest 24
+        print_text_s D_0805ed74
+        rest 24
+        rest 24
+        rest 24
+        print_text_s 0
+        quiz_show_event05 1
+        quiz_show_event00 1
+        rest 12
+        enable_play_inputs 1
+        rest 12
+        play_sfx s_keytoy_count2_seqData
+        switch FUNC, func_080175d8
+            case 0
+                quiz_show_event06 192
+                rest 192
+                break
+            case 1
+                quiz_show_event06 288
+                rest 288
+                break
+            case 2
+            case 3
+            case 4
+                quiz_show_event06 480
+                rest 480
+                break
+            case 5
+                quiz_show_event06 576
+                rest 576
+                break
+        end_switch
+        play_sfx s_keytoy_count1_seqData
+        rest 24
+        quiz_show_event05 0
+        play_sfx s_f_quiz_stop_seqData
+        print_text_s D_0805ed7c
+        rest 12
+        enable_play_inputs 0
+        rest 24
+        rest 24
+        rest 24
+        quiz_show_event00 17
+        run gameplay_display_text_and_wait, 0
+        rest 12
+        print_text_s D_0805ed8c
+        run gameplay_display_text_and_wait, 0
+        quiz_show_event03 1
+        mod_lcd_blend_from 0x3F41, TO_TEMPO, 24
+        rest 24
+        rest 24
+        rest 24
+        rest 24
+        play_sfx s_f_quiz_answer_seqData
+        quiz_show_event01 -32
+        rest 24
+        rest 24
+        rest 24
+        rest 24
+        quiz_show_event03 0
+        assess_perfect_inputs 1
+        quiz_show_event04 0
+        if_eq INT8, GLOBAL_VARIABLE, 0
+            import_marking_criteria quiz_show_marking_criteria_set_1
+            assess_inputs 1
+            switch FUNC, func_080175d8
+                case 5
+                    set_marking_criteria 0
+                    run gameplay_add_cue_result_hit, 0
+                    set_marking_criteria 1
+                    run gameplay_add_cue_result_barely, 0
+                    break
+                default
+                    set_marking_criteria 0
+                    run gameplay_add_cue_result_barely, 0
+            end_switch
+            assess_inputs 0
+            run gameplay_set_tutorial NULL
+            goto quiz_show_sub_08a3c108
+        else
+            switch FUNC, func_080175d8
+                case 5
+                    import_marking_criteria quiz_show_marking_criteria_set_2
+                    assess_inputs 1
+                    set_marking_criteria 0
+                    run gameplay_add_cue_result_hit, 0
+                    assess_inputs 0
+                    break
+                default
+                    run gameplay_register_perfect_input, 0
+            end_switch
+        end_if
+        assess_perfect_inputs 0
+        quiz_show_event00 48
+        quiz_show_event00 49
+        play_sfx s_f_quiz_ok_seqData
+        print_text_s D_0805ed9c
+        rest 12
+        play_sfx s_kansei_seqData
+        play_sfx s_quiz_fan_good_seqData
+        run gameplay_display_text_and_wait, 0
+        quiz_show_event00 32
+        quiz_show_event00 33
+        rest 12
+        switch FUNC, func_080175d8
+            case 5
+                break
+            default
+                rest 24
+                rest 24
+                run beatscript_enable_loops, 0
+        end_switch
+        run func_080175c4, 0
+    loop_end
+    set_tempo 125
+    play_music s_quiz_bgm_seqData
+    set_music_volume 0
+    mod_music_volume 256, 96
+    print_text_s D_0805eda8
+    run gameplay_display_text_and_wait, 0
+    rest 12
+    print_text_s D_0805edd8
+    run gameplay_display_text_and_wait, 0
+    enable_pause 0
+    rest 24
+return
+
+
+script script_quiz_show_practice
+    enable_play_inputs 0
+    set_tempo 125
+    play_music s_quiz_bgm_seqData
+    set_music_volume 40
+    mod_music_volume 256, 192
+    rest 24
+    enable_pause 1
+    rest 24
+    run gameplay_set_tutorial scene_quiz_show_skipped_practice
+    print_text_s D_0805edf4
+    run gameplay_display_text_and_wait, 0
+    rest 12
+    print_text_s D_0805ee20
+    run gameplay_display_text_and_wait, 0
+    rest 12
+    print_text_s D_0805ee34
+    run gameplay_display_text_and_wait, 0
+    rest 12
+    print_text_s D_0805ee5c
+    run gameplay_display_text_and_wait, 0
+    rest 12
+    print_text_s D_0805ee8c
+    run gameplay_display_text_and_wait, 0
+    rest 12
+    print_text_s D_0805eebc
+    mod_music_volume 0, 96
+    rest 24
+    rest 24
+    rest 24
+    run gameplay_display_text_and_wait, 0
+    rest 24
+    goto script_quiz_show_main
+
+
+script script_quiz_show_skipped_practice
+    enable_play_inputs 0
+    set_tempo 125
+    rest 24
+    enable_pause 1
+    rest 24
+    run func_080175a0, 3
+    goto script_quiz_show_main
+
+.end

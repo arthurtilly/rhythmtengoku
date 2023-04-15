@@ -4,47 +4,47 @@
   //  //  //  GAME ENGINE DATA  //  //  //
 
 
-// [D_089ea514] Buffered Textures List
+// [D_089ea3e4] Buffered Textures List
 struct CompressedGraphics *bon_dance_prologue_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
-// [D_089ea518] Graphics Table
+// [D_089ea3e8] Graphics Table
 struct GraphicsTable bon_dance_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &D_08be854c,
+        /* Src.  */ &D_08be694c,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &D_08be8828,
+        /* Src.  */ &D_08be6d70,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* OBJ Tileset */ {
-        /* Src.  */ &D_08be75b8,
+        /* Src.  */ &D_08be3e20,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ bon_odori_prologue_bg_pal,
+        /* Src.  */ bon_dance_prologue_bg_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ bon_odori_prologue_obj_pal,
+        /* Src.  */ bon_dance_prologue_obj_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     END_OF_GRAPHICS_TABLE
 };
 
-// [D_089ea560] Engine Events
+// [D_089ea430] Engine Events
 EngineEvent bon_dance_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080454d4
+    /* 0x00 */ (EngineEvent) func_080453d0
 };
 
-// [D_089ea564] Prologue (Bon Dance) Game Engine
+// [D_089ea434] Prologue (The Bon Odori) Game Engine
 struct GameEngine bon_dance_prologue_engine = {
     /* Size in Memory */ sizeof(struct BonDancePrologueInfo),
     /* Start Engine   */ bon_dance_prologue_engine_start,

@@ -1,8 +1,8 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0890ae54] <description>
-Palette data_room_reading_obj_pal[] = {
+// [D_0890ae54] Reading Scene OBJ Palette
+Palette reading_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -41,8 +41,8 @@ Palette data_room_reading_obj_pal[] = {
     }
 };
 
-// [D_0890ae94] <description>
-Palette data_room_reading_bg_00_pal[] = {
+// [D_0890ae94] Reading Scene BG Palette (Bulletin)
+Palette reading_style_bulletin_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -99,8 +99,8 @@ Palette data_room_reading_bg_00_pal[] = {
     }
 };
 
-// [D_0890aef4] <description>
-Palette data_room_reading_bg_01_pal[] = {
+// [D_0890aef4] Reading Scene BG Palette (Manzai)
+Palette reading_style_manzai_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -193,8 +193,8 @@ Palette data_room_reading_bg_01_pal[] = {
     }
 };
 
-// [D_0890af94] <description>
-Palette data_room_reading_bg_02_pal[] = {
+// [D_0890af94] Reading Scene BG Palette (Cooking)
+Palette reading_style_cooking_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -431,8 +431,8 @@ Palette data_room_reading_bg_02_pal[] = {
     }
 };
 
-// [D_0890b134] <description>
-Palette data_room_reading_bg_03_pal[] = {
+// [D_0890b134] Reading Scene BG Palette (Mail)
+Palette reading_style_mail_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -489,8 +489,8 @@ Palette data_room_reading_bg_03_pal[] = {
     }
 };
 
-// [D_0890b194] <description>
-Palette data_room_reading_bg_04_pal[] = {
+// [D_0890b194] Reading Scene BG Palette (Haiku)
+Palette reading_style_haiku_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -547,8 +547,8 @@ Palette data_room_reading_bg_04_pal[] = {
     }
 };
 
-// [D_0890b1f4] <description>
-Palette data_room_reading_bg_05_pal[] = {
+// [D_0890b1f4] Reading Scene BG Palette (Classroom)
+Palette reading_style_classroom_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0xF8F8F8),
@@ -641,8 +641,8 @@ Palette data_room_reading_bg_05_pal[] = {
     }
 };
 
-// [D_0890b294] <description>
-Palette data_room_reading_bg_06_pal[] = {
+// [D_0890b294] Reading Scene BG Palette (Train)
+Palette reading_style_train_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),

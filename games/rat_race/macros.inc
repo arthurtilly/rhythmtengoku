@@ -33,9 +33,15 @@
 
 
 @ Load Game: Rat Race
-.macro load_rat_race
+.macro load_rat_race_practice
     load_rat_race_labels
     load_game rat_race_engine, 0
+.endm
+
+@ Load Game: Rat Race (Remix 2, Remix 6, Remix 8)
+.macro load_rat_race
+    load_rat_race_labels
+    load_game rat_race_engine, 1
 .endm
 
 
@@ -50,95 +56,95 @@
 
 @ [Event 0x00] Nothing
 .macro rat_race_stub_event noArgs
-    rat_race_event 0x00, \noArgs
+    rat_race_event STUB_EVENT, \noArgs
 .endm
 
 @ [Event 0x01] ?
 .macro rat_race_event01 args
-    rat_race_event 0x01, \args
+    rat_race_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro rat_race_event02 args
-    rat_race_event 0x02, \args
+    rat_race_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro rat_race_event03 args
-    rat_race_event 0x03, \args
+    rat_race_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro rat_race_event04 args
-    rat_race_event 0x04, \args
+    rat_race_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro rat_race_event05 args
-    rat_race_event 0x05, \args
+    rat_race_event EVENT_05, \args
 .endm
 
 @ [Event 0x06] ?
 .macro rat_race_event06 args
-    rat_race_event 0x06, \args
+    rat_race_event EVENT_06, \args
 .endm
 
 @ [Event 0x07] ?
 .macro rat_race_event07 args
-    rat_race_event 0x07, \args
+    rat_race_event EVENT_07, \args
 .endm
 
 @ [Event 0x08] ?
 .macro rat_race_event08 args
-    rat_race_event 0x08, \args
+    rat_race_event EVENT_08, \args
 .endm
 
 @ [Event 0x09] ?
 .macro rat_race_event09 args
-    rat_race_event 0x09, \args
+    rat_race_event EVENT_09, \args
 .endm
 
 @ [Event 0x0A] ?
 .macro rat_race_event0A args
-    rat_race_event 0x0A, \args
+    rat_race_event EVENT_0A, \args
 .endm
 
 @ [Event 0x0B] ?
 .macro rat_race_event0B args
-    rat_race_event 0x0B, \args
+    rat_race_event EVENT_0B, \args
 .endm
 
 @ [Event 0x0C] ?
 .macro rat_race_event0C args
-    rat_race_event 0x0C, \args
+    rat_race_event EVENT_0C, \args
 .endm
 
 @ [Event 0x0D] ?
 .macro rat_race_event0D args
-    rat_race_event 0x0D, \args
+    rat_race_event EVENT_0D, \args
 .endm
 
 @ [Event 0x0E] ?
 .macro rat_race_event0E args
-    rat_race_event 0x0E, \args
+    rat_race_event EVENT_0E, \args
 .endm
 
 @ [Event 0x0F] ?
 .macro rat_race_event0F args
-    rat_race_event 0x0F, \args
+    rat_race_event EVENT_0F, \args
 .endm
 
 @ [Event 0x10] ?
 .macro rat_race_event10 args
-    rat_race_event 0x10, \args
+    rat_race_event EVENT_10, \args
 .endm
 
 @ [Event 0x11] ?
 .macro rat_race_event11 args
-    rat_race_event 0x11, \args
+    rat_race_event EVENT_11, \args
 .endm
 
 @ [Event 0x12] ?
 .macro rat_race_event12 args
-    rat_race_event 0x12, \args
+    rat_race_event EVENT_12, \args
 .endm

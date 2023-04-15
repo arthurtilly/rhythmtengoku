@@ -120,7 +120,7 @@ branch_0801e8cc: \n\
 /* 0801e8d4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801e8d6 */ BEQ branch_0801e8e6 \n\
 /* 0801e8d8 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
-/* 0801e8da */ BL pause_beatscript_scene \n\
+/* 0801e8da */ BL set_pause_beatscript_scene \n\
 /* 0801e8de */ LDR R0, =D_030046a4 \n\
 /* 0801e8e0 */ LDR R1, [R0] \n\
 /* 0801e8e2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

@@ -11,7 +11,7 @@ thumb_func_start func_080120e4 \n\
 /* 080120f2 */ BL func_08011f2c \n\
 /* 080120f6 */ LDR R0, =D_03005380 \n\
 /* 080120f8 */ LDR R0, [R0] \n\
-/* 080120fa */ LDR R1, =D_089018f8 \n\
+/* 080120fa */ LDR R1, =anim_data_room_green_led \n\
 /* 080120fc */ MOVS R2, 0x9B @ Set R2 to 0x9B \n\
 /* 080120fe */ STR R2, [SP] \n\
 /* 08012100 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
@@ -62,7 +62,7 @@ branch_0801211e: \n\
 /* 0801215a */ STR R1, [SP, 0x1C] \n\
 /* 0801215c */ MOVS R1, 0x14 @ Set R1 to 0x14 \n\
 /* 0801215e */ STR R1, [SP, 0x20] \n\
-/* 08012160 */ LDR R1, =D_08901910 \n\
+/* 08012160 */ LDR R1, =anim_data_room_cursor \n\
 /* 08012162 */ STR R1, [SP, 0x24] \n\
 /* 08012164 */ STR R3, [SP, 0x28] \n\
 /* 08012166 */ MOVS R1, 0x4 @ Set R1 to 0x4 \n\
@@ -90,7 +90,7 @@ branch_0801211e: \n\
 /* 08012196 */ BL func_0800b31c \n\
 /* 0801219a */ LDR R0, =D_03005380 \n\
 /* 0801219c */ LDR R0, [R0] \n\
-/* 0801219e */ LDR R1, =D_08901948 \n\
+/* 0801219e */ LDR R1, =anim_data_room_user_stare \n\
 /* 080121a0 */ MOVS R2, 0xA0 @ Set R2 to 0xA0 \n\
 /* 080121a2 */ STR R2, [SP] \n\
 /* 080121a4 */ MOVS R2, 0x90 @ Set R2 to 0x90 \n\

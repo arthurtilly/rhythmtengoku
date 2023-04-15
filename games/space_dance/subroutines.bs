@@ -1,0 +1,405 @@
+.include "include/beatscript.inc"
+.include "games/space_dance/macros.inc"
+
+load_space_dance_labels
+
+
+
+.section .script.sub
+@ Space Dance / Cosmic Dance - Subroutines
+
+@ Space Dance, Cosmic Dance
+script space_dance_sub_08a848bc
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+@ Space Dance, Remix 3
+script space_dance_sub_08a84928
+    beat_anim
+    rest 24
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_turn_seqData
+    rest 2
+    space_dance_event00 3
+    spawn_cue CUE_TURN_RIGHT
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_right_seqData
+    rest 2
+    space_dance_event00 0
+    beat_anim
+    rest 24
+return
+
+
+@ Neither
+script space_dance_sub_08a84a00
+    space_dance_event00 3
+    play_sfx s_space_ikeo_turn_seqData
+    spawn_cue CUE_TURN_RIGHT
+    beat_anim
+    rest 24
+    space_dance_event00 0
+    play_sfx s_space_ikeo_right_seqData
+    beat_anim
+    rest 24
+    space_dance_event00 3
+    play_sfx s_space_kou_turn_seqData
+    spawn_cue CUE_TURN_RIGHT
+    beat_anim
+    rest 24
+    space_dance_event00 0
+    play_sfx s_space_kou_right_seqData
+    beat_anim
+    rest 24
+return
+
+
+@ Space Dance
+script space_dance_sub_08a84b14
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_turn_seqData
+    rest 2
+    space_dance_event00 3
+    spawn_cue CUE_TURN_RIGHT
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_right_seqData
+    rest 2
+    space_dance_event00 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+@ Space Dance, Cosmic Dance
+script space_dance_sub_08a84bec
+    beat_anim
+    rest 24
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_turn_seqData
+    rest 2
+    space_dance_event00 3
+    spawn_cue CUE_TURN_RIGHT
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_right_seqData
+    rest 2
+    space_dance_event00 0
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_turn_seqData
+    rest 2
+    space_dance_event00 3
+    spawn_cue CUE_TURN_RIGHT
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_right_seqData
+    rest 2
+    space_dance_event00 0
+    beat_anim
+    rest 24
+    space_dance_event05 1
+    space_dance_event00 3
+    play_sfx s_space_kou_turn_seqData
+    spawn_cue CUE_TURN_RIGHT
+    beat_anim
+    rest 24
+    space_dance_event00 0
+    play_sfx s_space_kou_right_seqData
+    beat_anim
+    rest 24
+    space_dance_event05 0
+return
+
+
+@ Cosmic Dance
+script cosmic_dance_sub_08a84e14
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 14
+    play_sfx s_space_ikeo_turn_swing_seqData
+    rest 2
+    space_dance_event00 3
+    spawn_cue CUE_TURN_RIGHT
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_right_seqData
+    rest 2
+    space_dance_event00 0
+    rest 8
+return
+
+
+@ Cosmic Dance
+script cosmic_dance_sub_08a84ef8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 14
+    play_sfx s_space_ikeo_turn_swing_seqData
+    rest 2
+    space_dance_event00 3
+    spawn_cue CUE_TURN_RIGHT
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_right_seqData
+    rest 2
+    space_dance_event00 0
+    rest 8
+    beat_anim
+    rest 24
+return
+
+
+@ Cosmic Dance
+script cosmic_dance_sub_08a84fdc
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 14
+    play_sfx s_space_ikeo_turn_swing_seqData
+    play_sfx s_space_kou_turn_swing_seqData
+    rest 2
+    space_dance_event00 3
+    spawn_cue CUE_TURN_RIGHT
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_right_seqData
+    play_sfx s_space_kou_right_seqData
+    rest 2
+    space_dance_event00 0
+    rest 8
+return
+
+
+@ Space Dance
+script space_dance_sub_08a850d8
+    space_dance_event00 4
+    play_sfx s_space_ikeo_pa_seqData
+    beat_anim
+    rest 12
+    space_dance_event00 5
+    play_sfx s_space_ikeo_pa_seqData
+    rest 12
+    space_dance_event00 4
+    play_sfx s_space_ikeo_pa_seqData
+    spawn_cue CUE_PUNCH
+    beat_anim
+    rest 12
+    space_dance_event00 1
+    play_sfx s_space_ikeo_punch_seqData
+    rest 12
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+@ Space Dance
+script space_dance_sub_08a851f8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    space_dance_event00 4
+    play_sfx s_space_ikeo_pa_seqData
+    beat_anim
+    rest 12
+    space_dance_event00 5
+    play_sfx s_space_ikeo_pa_seqData
+    rest 12
+    space_dance_event00 4
+    play_sfx s_space_ikeo_pa_seqData
+    spawn_cue CUE_PUNCH
+    beat_anim
+    rest 12
+    space_dance_event00 1
+    play_sfx s_space_ikeo_punch_seqData
+    rest 12
+return
+
+
+@ Cosmic Dance
+script cosmic_dance_sub_08a85318
+    space_dance_event00 4
+    play_sfx s_space_ikeo_pa_seqData
+    beat_anim
+    rest 8
+    rest 8
+    space_dance_event00 5
+    play_sfx s_space_ikeo_pa_seqData
+    rest 8
+    space_dance_event00 4
+    play_sfx s_space_ikeo_pa_seqData
+    beat_anim
+    rest 8
+    spawn_cue CUE_PUNCH_S
+    rest 8
+    space_dance_event00 1
+    play_sfx s_space_ikeo_punch_seqData
+    rest 8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+@ Neither
+script space_dance_sub_08a85450
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    space_dance_event00 4
+    play_sfx s_space_ikeo_pa_seqData
+    beat_anim
+    rest 8
+    rest 8
+    space_dance_event00 5
+    play_sfx s_space_ikeo_pa_seqData
+    rest 8
+    space_dance_event00 4
+    play_sfx s_space_ikeo_pa_seqData
+    beat_anim
+    rest 8
+    spawn_cue CUE_PUNCH_S
+    rest 8
+    space_dance_event00 1
+    play_sfx s_space_ikeo_punch_seqData
+    rest 8
+return
+
+
+@ Space Dance
+script space_dance_sub_08a85588
+    beat_anim
+    rest 24
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_lets_seqData
+    rest 2
+    space_dance_event00 6
+    spawn_cue CUE_SIT_DOWN
+    beat_anim
+    rest 10
+    play_sfx s_space_ikeo_sit_seqData
+    rest 14
+    space_dance_event00 2
+    play_sfx s_space_ikeo_down_seqData
+    beat_anim
+    rest 24
+return
+
+
+@ Space Dance
+script space_dance_sub_08a8566c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_lets_seqData
+    rest 2
+    play_sfx s_space_kou_lets_seqData
+    space_dance_event00 6
+    spawn_cue CUE_SIT_DOWN
+    beat_anim
+    rest 10
+    play_sfx s_space_kou_sit_seqData
+    play_sfx s_space_ikeo_sit_seqData
+    rest 14
+    space_dance_event00 2
+    play_sfx s_space_kou_down_seqData
+    play_sfx s_space_ikeo_down_seqData
+    beat_anim
+    rest 24
+return
+
+
+@ Space Dance
+script space_dance_sub_08a85774
+    beat_anim
+    rest 22
+    rest 2
+    play_sfx s_space_kou_lets_seqData
+    space_dance_event00 6
+    spawn_cue CUE_SIT_DOWN
+    beat_anim
+    rest 10
+    play_sfx s_space_kou_sit_seqData
+    rest 14
+    space_dance_event00 2
+    play_sfx s_space_kou_down_seqData
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+@ Cosmic Dance
+script cosmic_dance_sub_08a85858
+    beat_anim
+    rest 24
+    beat_anim
+    rest 22
+    play_sfx s_space_ikeo_lets_seqData
+    rest 2
+    space_dance_event00 6
+    spawn_cue CUE_SIT_DOWN
+    beat_anim
+    rest 8
+    rest 6
+    play_sfx s_space_ikeo_sit_seqData
+    rest 2
+    rest 8
+    space_dance_event00 2
+    play_sfx s_space_ikeo_down_seqData
+    beat_anim
+    rest 24
+return
+
+
+@ Cosmic Dance
+script cosmic_dance_sub_08a85954
+    beat_anim
+    rest 22
+    rest 2
+    play_sfx s_space_kou_lets_seqData
+    space_dance_event00 6
+    spawn_cue CUE_SIT_DOWN
+    beat_anim
+    rest 8
+    rest 6
+    play_sfx s_space_kou_sit_seqData
+    rest 2
+    rest 8
+    space_dance_event00 2
+    play_sfx s_space_kou_down_seqData
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+.end

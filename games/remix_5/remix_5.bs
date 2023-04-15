@@ -1,0 +1,854 @@
+.include "include/beatscript.inc"
+.include "games/bouncy_road/macros.inc"
+.include "games/tap_trial/macros.inc"
+.include "games/toss_boys/macros.inc"
+.include "games/ninja_bodyguard/macros.inc"
+.include "games/fireworks/macros.inc"
+
+
+
+.section .script.entry
+@ Remix 5 - Script Entry Point
+
+script script_remix_5_entry
+    set_tempo 124
+    rest 24
+    call script_remix_5_prologue
+    set_game_fade_in_time 16
+    load_bouncy_road_remix_5
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_remix_5_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_remix_5, script_remix_5_entry
+
+
+
+.section .script.prologue
+@ Remix 5 - Prologue
+
+script script_remix_5_prologue
+    set_game_fade_in_time 8
+    load_game remix_5_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    rest 24
+    play_sfx s_jingle_remix_seqData
+    rest 24
+    rest 24
+    run func_08046af0, 1
+    rest 2
+    run func_08046af0, 2
+    rest 2
+    run func_08046af0, 3
+    rest 2
+    run func_08046af0, 4
+    rest 2
+    run func_08046af0, 5
+    rest 2
+    run func_08046af0, 6
+    rest 6
+    rest 6
+    rest 24
+    rest 24
+    rest 12
+    play_sfx s_f_scratch_seqData
+    rest 6
+    run func_08006d80, 0
+    rest 18
+    rest 24
+    set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Remix 5 - Marking Criteria
+
+struct remix_5_marking_criteria_0
+    /* Positive Remark */     .word D_0806a240
+    /* Negative Remark */     .word D_0806a230
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct remix_5_marking_criteria_1
+    /* Positive Remark */     .word D_0806a280
+    /* Negative Remark */     .word D_0806a25c
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x99 @ 60%
+endstruct
+
+struct remix_5_marking_criteria_2
+    /* Positive Remark */     .word D_0806a2c0
+    /* Negative Remark */     .word D_0806a2a4
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct remix_5_marking_criteria
+    .word remix_5_marking_criteria_0
+    .word remix_5_marking_criteria_1
+    .word remix_5_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Remix 5 - Main Script
+
+script script_remix_5_main
+    set_results_header D_0806a2d8
+    import_marking_criteria remix_5_marking_criteria
+    forgive_x_misses 3
+    assess_inputs 1
+    set_marking_criteria 0
+    set_tempo 204
+    set_music_volume 150
+    set_game_fade_in_time 120
+    print_text_s D_0806a2f4
+    rest 24
+    rest 24
+    enable_pause 1
+    bouncy_road_set_bounce_height 192
+    play_music s_wish_bgm_seqData
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    mod_lcd_blend_from 0x3F42, TO_TEMPO, 96
+    rest 24
+    rest 24
+    rest 24
+    print_text_s 0
+    rest 24
+    start_perfect_campaign
+    bouncy_road_enable_ball_goal_sfx
+    bouncy_road_set_ball_palette 2
+    bouncy_road_deploy_ball 48
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    bouncy_road_enable_ball_goal_sfx
+    bouncy_road_set_ball_palette 1
+    bouncy_road_deploy_ball 24
+    run scene_show_bg_layer, 2
+    mod_lcd_blend_to 0x3F42, TO_TEMPO, 96
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    run scene_hide_bg_layer, 1
+    run scene_show_bg_layer, 3
+    mod_lcd_blend_from 0x3F48, TO_TEMPO, 96
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_game_fade_in_time 30
+
+    load_tap_trial_remix_5
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    call tap_trial_sub_08a85cf0
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85cf0
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85cf0
+    set_game_fade_in_time 0
+
+    load_toss_boys_remix_5
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event01 393536
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event02 0x600c9
+    beat_anim
+    rest 24
+    spawn_cue CUE_TOSS_R
+    rest 24
+    toss_boys_event03 1
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event02 0x600a2
+    beat_anim
+    rest 24
+    spawn_cue CUE_TOSS_B
+    rest 24
+    toss_boys_event03 13
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event02 0x600a1
+    beat_anim
+    rest 24
+    spawn_cue CUE_TOSS_Y
+    rest 24
+    toss_boys_event03 22
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event02 0x600c8
+    beat_anim
+    rest 24
+    spawn_cue CUE_TOSS_B
+    rest 24
+    toss_boys_event03 10
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event02 0x600c9
+    beat_anim
+    rest 24
+    spawn_cue CUE_TOSS_R
+    rest 24
+    toss_boys_event03 1
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event02 0x600a2
+    beat_anim
+    rest 24
+    spawn_cue CUE_TOSS_B
+    rest 24
+    toss_boys_event03 13
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event02 0x00000
+    toss_boys_event05 50
+    beat_anim
+    rest 24
+    spawn_cue CUE_POP_Y
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event05 2
+    rest 0
+
+    load_tap_trial_remix_5
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+
+    load_toss_boys_remix_5
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event01 393538
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event02 0x00000
+    toss_boys_event05 50
+    beat_anim
+    rest 24
+    spawn_cue CUE_POP_Y
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event05 2
+    rest 0
+
+    load_ninja_reincarnate
+    ninja_bodyguard_event07 2
+    ninja_bodyguard_event0B 1
+    rest 24
+    rest 12
+    ninja_bodyguard_event08 0
+    rest 12
+    rest 24
+    ninja_bodyguard_event09 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    ninja_bodyguard_event09 1
+    rest 12
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event05 0
+    ninja_bodyguard_event0D 1
+    ninja_bodyguard_event0B 0
+    rest 24
+    rest 24
+    ninja_bodyguard_event0F 256
+    spawn_cue CUE_DEFAULT
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    ninja_bodyguard_event0F 256
+    spawn_cue CUE_DEFAULT
+    rest 24
+    rest 12
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event07 2
+    ninja_bodyguard_event0B 1
+    ninja_bodyguard_event08 0
+    rest 24
+    ninja_bodyguard_event09 0
+    rest 24
+    rest 24
+    ninja_bodyguard_event09 1
+    rest 12
+    ninja_bodyguard_event0C 0
+    rest 12
+    ninja_bodyguard_event05 0
+    ninja_bodyguard_event0D 1
+    ninja_bodyguard_event0B 0
+    ninja_bodyguard_event0F 256
+    spawn_cue CUE_DEFAULT
+    rest 24
+    rest 24
+    ninja_bodyguard_event0F 256
+    spawn_cue CUE_DEFAULT
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_game_fade_in_time 0
+
+    load_fireworks_remix_5_bg1
+    beat_anim
+    rest 24
+    play_sfx_sp s_hanabi_wish1_seqData, 288, 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    play_sfx_sp s_hanabi_wish2_seqData, 288, 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_NORMAL_FIREWORK
+    play_sfx_sp s_hanabi_wish1_seqData, 288, 0
+    beat_anim
+    rest 24
+    play_sfx_sp s_hanabi_wish2_seqData, 288, 0
+    beat_anim
+    rest 12
+    rest 8
+    play_sfx_sp s_hanabi_wish3_seqData, 288, 0
+    rest 4
+    beat_anim
+    rest 24
+    play_sfx_sp s_hanabi_wish4_seqData, 288, 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_game_fade_in_time 30
+
+    load_tap_trial_remix_5
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    rest 12
+    call tap_trial_sub_08a85c78
+    rest 12
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    set_game_fade_in_time 0
+
+    load_fireworks_remix_5_bg2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    fireworks_set_pattern_mode 99
+    fireworks_set_default_pattern 14
+    spawn_cue CUE_NORMAL_FIREWORK
+    play_sfx_sp s_hanabi_wish1_seqData, 288, 0
+    beat_anim
+    rest 24
+    play_sfx_sp s_hanabi_wish2_seqData, 288, 0
+    beat_anim
+    rest 12
+    rest 8
+    play_sfx_sp s_hanabi_wish3_seqData, 288, 0
+    rest 4
+    beat_anim
+    rest 24
+    play_sfx_sp s_hanabi_wish4_seqData, 288, 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_game_fade_in_time 30
+
+    load_tap_trial_remix_5
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    rest 12
+    call tap_trial_sub_08a85c78
+    rest 12
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    call tap_trial_sub_08a85c78
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_sub_08a85c78
+    set_game_fade_in_time 0
+
+    load_game fireworks_engine, 3
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    fireworks_set_pattern_mode 99
+    fireworks_set_default_pattern 15
+    spawn_cue CUE_NORMAL_FIREWORK
+    play_sfx_sp s_hanabi_wish1_seqData, 288, 0
+    beat_anim
+    rest 24
+    play_sfx_sp s_hanabi_wish2_seqData, 288, 0
+    beat_anim
+    rest 12
+    rest 8
+    play_sfx_sp s_hanabi_wish3_seqData, 288, 0
+    rest 4
+    beat_anim
+    rest 24
+    play_sfx_sp s_hanabi_wish4_seqData, 288, 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    set_game_fade_in_time 20
+
+    load_toss_boys_remix_5
+    print_text_s D_0806a314
+    toss_boys_event08 0
+    beat_anim
+    rest 24
+    toss_boys_event01 393538
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event02 0x600a0
+    beat_anim
+    rest 24
+    spawn_cue CUE_TOSS_Y
+    rest 24
+    toss_boys_event03 19
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event02 0x600c9
+    beat_anim
+    rest 24
+    spawn_cue CUE_TOSS_R
+    rest 24
+    toss_boys_event03 1
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event02 0x600a2
+    beat_anim
+    rest 24
+    spawn_cue CUE_TOSS_B
+    rest 24
+    toss_boys_event03 13
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event02 0x00000
+    toss_boys_event05 50
+    beat_anim
+    rest 24
+    spawn_cue CUE_POP_Y
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event05 2
+    rest 0
+    set_game_fade_in_time 0
+
+    load_game fireworks_engine, 4
+    run gameplay_set_text_x, 24
+    run gameplay_set_text_y, 48
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_s D_0806a32c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    fireworks_set_pattern_mode 99
+    fireworks_set_default_pattern 17
+    spawn_cue CUE_NORMAL_FIREWORK
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_game_fade_in_time 20
+
+    load_toss_boys_remix_5
+    run gameplay_set_text_y, 152
+    print_text_s D_0806a370
+    toss_boys_event08 0
+    rest 24
+    rest 24
+    toss_boys_event01 393538
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event02 0x00000
+    toss_boys_event05 50
+    beat_anim
+    rest 24
+    spawn_cue CUE_POP_Y
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    toss_boys_event05 2
+    rest 0
+    rest 24
+    rest 24
+    assess_perfect_inputs 0
+    rest 24
+    rest 24
+    rest 24
+    enable_pause 0
+return
+
+.end

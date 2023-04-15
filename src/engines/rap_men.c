@@ -41,7 +41,7 @@ void rap_men_init_gfx1(void) {
 	s32 task;
 
 	func_0800c604(0);
-	task = func_080087b4(get_current_mem_id(), rap_men_buffered_textures);
+	task = start_new_texture_loader(get_current_mem_id(), rap_men_buffered_textures);
 	run_func_after_task(task, rap_men_init_gfx2, 0);
 }
 
@@ -188,7 +188,7 @@ void rap_men_common_display_text(char *text) {
         func_0804d770(D_03005380, gRapMenInfo->textSprite, FALSE);
     } else {
         textAnim = bmp_font_obj_print_c(gRapMenInfo->unk4, text, 1, 8);
-        func_08007b04(gRapMenInfo->unk4, gRapMenInfo->textSprite);
+        delete_bmp_font_obj_text_anim(gRapMenInfo->unk4, gRapMenInfo->textSprite);
         func_0804d8f8(D_03005380, gRapMenInfo->textSprite, textAnim->frames, 0, 0, 0, 0);
         func_0804d770(D_03005380, gRapMenInfo->textSprite, TRUE);
     }

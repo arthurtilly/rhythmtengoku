@@ -92,7 +92,7 @@ jump_08010cbc: \n\
 /* 08010cc8 */ BEQ branch_08010ce0 \n\
 /* 08010cca */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08010ccc */ STRB R0, [R1] \n\
-/* 08010cce */ LDR R0, =D_089cd2e8 \n\
+/* 08010cce */ LDR R0, =cafe_dialogue_first_visit \n\
 /* 08010cd0 */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 08010cd2 */ B branch_08011264 \n\
 \n\
@@ -124,7 +124,7 @@ branch_08010d08: \n\
 /* 08010d0c */ LDRH R0, [R1, 0x16] \n\
 /* 08010d0e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08010d10 */ BNE branch_08010d20 \n\
-/* 08010d12 */ LDR R2, =D_089cd300 \n\
+/* 08010d12 */ LDR R2, =cafe_dialogue_come_back_later \n\
 /* 08010d14 */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 08010d16 */ B branch_08011264 \n\
 \n\
@@ -227,7 +227,7 @@ branch_08010dc8: \n\
 /* 08010dd0 */ BHI branch_08010df0 \n\
 /* 08010dd2 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 08010dd4 */ STR R3, [SP, 0xC] \n\
-/* 08010dd6 */ BL func_080130e4 \n\
+/* 08010dd6 */ BL get_campaign_from_level_id \n\
 /* 08010dda */ LDR R2, =0x246 \n\
 /* 08010ddc */ ADDS R1, R4, R2 @ Set R1 to R4 + R2 \n\
 /* 08010dde */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
@@ -266,7 +266,7 @@ branch_08010e04: \n\
  \n\
 branch_08010e14: \n\
 /* 08010e14 */ LDRB R0, [R6] \n\
-/* 08010e16 */ BL func_080141d8 \n\
+/* 08010e16 */ BL game_select_get_level_name \n\
 /* 08010e1a */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08010e1c */ B branch_08010e5c \n\
 \n\
@@ -293,7 +293,7 @@ branch_08010e2c: \n\
 /* 08010e4e */ SUBS R2, 0x28 @ Subtract 0x28 from R2 \n\
 /* 08010e50 */ ADDS R0, R1, R2 @ Set R0 to R1 + R2 \n\
 /* 08010e52 */ LDRB R0, [R0] \n\
-/* 08010e54 */ BL func_08013090 \n\
+/* 08010e54 */ BL get_level_name_from_campaign \n\
 /* 08010e58 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08010e5a */ MOVS R5, 0x6 @ Set R5 to 0x6 \n\
  \n\
@@ -329,22 +329,22 @@ jump_08010e94: \n\
 /* 08010ea0 */ STRB R0, [R5] \n\
 /* 08010ea2 */ LDR R1, =D_08050718 \n\
 /* 08010ea4 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010ea6 */ BL func_080081a8 \n\
+/* 08010ea6 */ BL strcat \n\
 /* 08010eaa */ LDR R1, =D_0805071c \n\
 /* 08010eac */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010eae */ BL func_080081a8 \n\
+/* 08010eae */ BL strcat \n\
 /* 08010eb2 */ LDR R1, =D_08050728 \n\
 /* 08010eb4 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010eb6 */ BL func_080081a8 \n\
+/* 08010eb6 */ BL strcat \n\
 /* 08010eba */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08010ebc */ MOV R1, R9 @ Set R1 to R9 \n\
-/* 08010ebe */ BL func_080081a8 \n\
+/* 08010ebe */ BL strcat \n\
 /* 08010ec2 */ LDR R1, =D_08050730 \n\
 /* 08010ec4 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010ec6 */ BL func_080081a8 \n\
+/* 08010ec6 */ BL strcat \n\
 /* 08010eca */ LDR R1, =D_08050738 \n\
 /* 08010ecc */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010ece */ BL func_080081a8 \n\
+/* 08010ece */ BL strcat \n\
 /* 08010ed2 */ MOV R8, R5 @ Set R8 to R5 \n\
 /* 08010ed4 */ MOVS R0, 0xFF @ Set R0 to 0xFF \n\
 /* 08010ed6 */ STRB R0, [R6] \n\
@@ -363,22 +363,22 @@ jump_08010ef8: \n\
 /* 08010f04 */ STRB R0, [R5] \n\
 /* 08010f06 */ LDR R1, =D_08050718 \n\
 /* 08010f08 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f0a */ BL func_080081a8 \n\
+/* 08010f0a */ BL strcat \n\
 /* 08010f0e */ LDR R1, =D_0805075c \n\
 /* 08010f10 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f12 */ BL func_080081a8 \n\
+/* 08010f12 */ BL strcat \n\
 /* 08010f16 */ LDR R1, =D_08050728 \n\
 /* 08010f18 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f1a */ BL func_080081a8 \n\
+/* 08010f1a */ BL strcat \n\
 /* 08010f1e */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08010f20 */ MOV R1, R9 @ Set R1 to R9 \n\
-/* 08010f22 */ BL func_080081a8 \n\
+/* 08010f22 */ BL strcat \n\
 /* 08010f26 */ LDR R1, =D_08050730 \n\
 /* 08010f28 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f2a */ BL func_080081a8 \n\
+/* 08010f2a */ BL strcat \n\
 /* 08010f2e */ LDR R1, =D_0805076c \n\
 /* 08010f30 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f32 */ BL func_080081a8 \n\
+/* 08010f32 */ BL strcat \n\
 /* 08010f36 */ MOV R8, R5 @ Set R8 to R5 \n\
 /* 08010f38 */ LDR R1, [R4] \n\
 /* 08010f3a */ LDRB R0, [R6] \n\
@@ -400,24 +400,24 @@ jump_08010f64: \n\
 /* 08010f70 */ STRB R0, [R5] \n\
 /* 08010f72 */ LDR R1, =D_08050718 \n\
 /* 08010f74 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f76 */ BL func_080081a8 \n\
+/* 08010f76 */ BL strcat \n\
 /* 08010f7a */ LDR R1, =D_08050788 \n\
 /* 08010f7c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f7e */ BL func_080081a8 \n\
+/* 08010f7e */ BL strcat \n\
 /* 08010f82 */ LDR R1, =D_08050728 \n\
 /* 08010f84 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f86 */ BL func_080081a8 \n\
+/* 08010f86 */ BL strcat \n\
 /* 08010f8a */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08010f8c */ MOV R1, R9 @ Set R1 to R9 \n\
-/* 08010f8e */ BL func_080081a8 \n\
+/* 08010f8e */ BL strcat \n\
 /* 08010f92 */ LDR R1, =D_08050794 \n\
 /* 08010f94 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f96 */ BL func_080081a8 \n\
+/* 08010f96 */ BL strcat \n\
 /* 08010f9a */ LDR R1, =D_0805079c \n\
 /* 08010f9c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010f9e */ BL func_080081a8 \n\
+/* 08010f9e */ BL strcat \n\
 /* 08010fa2 */ MOV R8, R5 @ Set R8 to R5 \n\
-/* 08010fa4 */ LDR R0, =D_089cd308 \n\
+/* 08010fa4 */ LDR R0, =cafe_dialogue_keep_trying \n\
 /* 08010fa6 */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 08010fa8 */ MOVS R0, 0xFF @ Set R0 to 0xFF \n\
 /* 08010faa */ STRB R0, [R6] \n\
@@ -435,22 +435,22 @@ jump_08010fd0: \n\
 /* 08010fdc */ STRB R0, [R5] \n\
 /* 08010fde */ LDR R1, =D_08050718 \n\
 /* 08010fe0 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010fe2 */ BL func_080081a8 \n\
+/* 08010fe2 */ BL strcat \n\
 /* 08010fe6 */ LDR R1, =D_080507b8 \n\
 /* 08010fe8 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010fea */ BL func_080081a8 \n\
+/* 08010fea */ BL strcat \n\
 /* 08010fee */ LDR R1, =D_08050728 \n\
 /* 08010ff0 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08010ff2 */ BL func_080081a8 \n\
+/* 08010ff2 */ BL strcat \n\
 /* 08010ff6 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 08010ff8 */ MOV R1, R9 @ Set R1 to R9 \n\
-/* 08010ffa */ BL func_080081a8 \n\
+/* 08010ffa */ BL strcat \n\
 /* 08010ffe */ LDR R1, =D_080507d8 \n\
 /* 08011000 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08011002 */ BL func_080081a8 \n\
+/* 08011002 */ BL strcat \n\
 /* 08011006 */ LDR R1, =D_080507e8 \n\
 /* 08011008 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0801100a */ BL func_080081a8 \n\
+/* 0801100a */ BL strcat \n\
 /* 0801100e */ MOV R8, R5 @ Set R8 to R5 \n\
 /* 08011010 */ MOVS R0, 0xFF @ Set R0 to 0xFF \n\
 /* 08011012 */ STRB R0, [R6] \n\
@@ -480,16 +480,16 @@ jump_0801104c: \n\
 /* 08011058 */ STRB R0, [R5] \n\
 /* 0801105a */ LDR R1, =D_08050828 \n\
 /* 0801105c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 0801105e */ BL func_080081a8 \n\
+/* 0801105e */ BL strcat \n\
 /* 08011062 */ LDR R1, =D_08050728 \n\
 /* 08011064 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08011066 */ BL func_080081a8 \n\
+/* 08011066 */ BL strcat \n\
 /* 0801106a */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0801106c */ MOV R1, R9 @ Set R1 to R9 \n\
-/* 0801106e */ BL func_080081a8 \n\
+/* 0801106e */ BL strcat \n\
 /* 08011072 */ LDR R1, =D_0805083c \n\
 /* 08011074 */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
-/* 08011076 */ BL func_080081a8 \n\
+/* 08011076 */ BL strcat \n\
 /* 0801107a */ MOV R8, R5 @ Set R8 to R5 \n\
 /* 0801107c */ MOVS R7, 0x1A @ Set R7 to 0x1A \n\
 /* 0801107e */ LDR R0, =D_030046a8 \n\
@@ -503,7 +503,7 @@ jump_0801104c: \n\
 .ltorg \n\
  \n\
 branch_080110a8: \n\
-/* 080110a8 */ LDR R4, =D_089cd44c \n\
+/* 080110a8 */ LDR R4, =cafe_random_conversation_pool \n\
 /* 080110aa */ MOVS R0, 0xA @ Set R0 to 0xA \n\
 /* 080110ac */ BL agb_random \n\
 /* 080110b0 */ LSLS R0, R0, 0x10 \n\
@@ -516,7 +516,7 @@ branch_080110a8: \n\
 .ltorg \n\
 \n\
 jump_080110c0: \n\
-/* 080110c0 */ LDR R4, =D_089cd348 \n\
+/* 080110c0 */ LDR R4, =cafe_dialogue_shouts_praise \n\
 /* 080110c2 */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
 /* 080110c4 */ BL agb_random \n\
 /* 080110c8 */ LSLS R0, R0, 0x10 \n\
@@ -570,7 +570,7 @@ jump_08011104: \n\
 /* 08011124 */ LDRSH R0, [R0, R1] \n\
 /* 08011126 */ ADD R2, SP, 0x4 \n\
 /* 08011128 */ MOV R1, SP @ Set R1 to SP \n\
-/* 0801112a */ BL func_0801318c \n\
+/* 0801112a */ BL get_grid_xy_from_level_id \n\
 /* 0801112e */ LDR R4, =D_030046a8 \n\
 /* 08011130 */ LDR R1, [R4] \n\
 /* 08011132 */ LDR R0, [SP] \n\
@@ -650,7 +650,7 @@ jump_080111bc: \n\
 /* 080111c4 */ ASRS R0, R0, 0x18 \n\
 /* 080111c6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080111c8 */ BNE branch_080111f8 \n\
-/* 080111ca */ LDR R4, =D_089cd35c \n\
+/* 080111ca */ LDR R4, =cafe_dialogue_shouts_cheer \n\
 /* 080111cc */ MOVS R0, 0x5 @ Set R0 to 0x5 \n\
 /* 080111ce */ BL agb_random \n\
 /* 080111d2 */ LSLS R0, R0, 0x10 \n\
@@ -663,14 +663,14 @@ jump_080111bc: \n\
 /* 080111e0 */ STRB R1, [R0, 0x1D] \n\
 /* 080111e2 */ LDR R0, [R5] \n\
 /* 080111e4 */ STRB R1, [R0, 0x1C] \n\
-/* 080111e6 */ LDR R2, =D_089cd318 \n\
+/* 080111e6 */ LDR R2, =cafe_dialogue_practicing_perfect \n\
 /* 080111e8 */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 080111ea */ B branch_08011264 \n\
 \n\
 .ltorg \n\
  \n\
 branch_080111f8: \n\
-/* 080111f8 */ LDR R0, =D_089cd324 \n\
+/* 080111f8 */ LDR R0, =cafe_dialogue_not_practicing_perfect \n\
 /* 080111fa */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 080111fc */ B branch_08011264 \n\
 \n\
@@ -703,7 +703,7 @@ jump_08011220: \n\
 /* 0801122c */ LDR R1, [R2] \n\
 /* 0801122e */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\
 /* 08011230 */ STRB R0, [R1, 0x1D] \n\
-/* 08011232 */ LDR R2, =D_089cd330 \n\
+/* 08011232 */ LDR R2, =cafe_dialogue_all_perfects_clear \n\
 /* 08011234 */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 08011236 */ B branch_08011264 \n\
 \n\

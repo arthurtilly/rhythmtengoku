@@ -1,0 +1,81 @@
+.include "include/beatscript.inc"
+.include "games/concert_hall/macros.inc"
+.include "games/drum_live/macros.inc"
+
+
+
+.section .script.entry
+@ Concert Hall - Script Entry Point
+
+script script_concert_hall_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_concert_hall
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_concert_hall_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_concert_hall, script_concert_hall_entry
+
+
+
+.section .script.main
+@ Concert Hall - Main Script
+
+script script_concert_hall_main
+    set_music_volume 200
+    play_music s_studio_bgm_seqData
+    rest 24
+    concert_hall_freeze_scene 0
+    run gameplay_get_inter_engine_variable, 0
+    switch INT8, FUNCTION_RESULT
+        case 0
+            load_drum_girls_live
+            break
+        case 1
+            load_drum_boys_live
+            break
+        case 2
+            load_drum_samurai_band_live
+            break
+    end_switch
+    dml_event09 1
+    dml_event08 0
+    run gameplay_enable_cue_input_overlap, 0
+    rest 24
+    enable_pause 1
+    run gameplay_get_inter_engine_variable, 0
+    switch INT8, FUNCTION_RESULT
+        case 0
+            call D_08a73618
+            call D_08a716ec
+            call D_08a724a8
+            break
+        case 1
+            call D_08a74170
+            call D_08a74bcc
+            call D_08a759c4
+            break
+        case 2
+            call D_08a770e0
+            call D_08a77c80
+            call D_08a78490
+            break
+    end_switch
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    run gameplay_enable_tutorial, 0
+    enable_pause 0
+return
+
+.end

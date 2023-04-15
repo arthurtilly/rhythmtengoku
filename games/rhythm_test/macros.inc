@@ -12,11 +12,10 @@
     .set EVENT_04,      0x04
     .set EVENT_05,      0x05
     .set EVENT_06,      0x06
-    .set STUB_EVENT,    0x07
 
     @ Cues
-    .set CUE_00,    0x00
-    .set CUE_01,    0x01
+    .set CUE_TEST_00,    0x00
+    .set CUE_TEST_01,    0x01
 .endm
 
 
@@ -38,40 +37,35 @@
 
 @ [Event 0x00] ?
 .macro rhythm_test_event00 args
-    rhythm_test_event 0x00, \args
+    rhythm_test_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro rhythm_test_event01 args
-    rhythm_test_event 0x01, \args
+    rhythm_test_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro rhythm_test_event02 args
-    rhythm_test_event 0x02, \args
+    rhythm_test_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro rhythm_test_event03 args
-    rhythm_test_event 0x03, \args
+    rhythm_test_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro rhythm_test_event04 args
-    rhythm_test_event 0x04, \args
+    rhythm_test_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro rhythm_test_event05 args
-    rhythm_test_event 0x05, \args
+    rhythm_test_event EVENT_05, \args
 .endm
 
 @ [Event 0x06] ?
 .macro rhythm_test_event06 args
-    rhythm_test_event 0x06, \args
-.endm
-
-@ [Event 0x07] Nothing
-.macro rhythm_test_stub_event noArgs
-    rhythm_test_event 0x07, \noArgs
+    rhythm_test_event EVENT_06, \args
 .endm

@@ -39,21 +39,21 @@ const char D_0805ead0[] = "ちょっと、　やってみ";
 
 const char D_0805eae8[] = "がんばってや";
 
-const char D_0805eaf8[] = "「ウッ」　ってトコやで" SHIFT_JIS_WAVE_DASH;
+const char D_0805eaf8[] = "「ウッ」　ってトコやで～";
 
 const char D_0805eb14[] = "「ウッ」　ってトコやっちゅーに";
 
 const char D_0805eb34[] = "ＯＫ！";
 
-const char D_0805eb3c[] = "いまのは、　「" ".b" SHIFT_JIS_WAVE_DASH "ですか？" ".8" "」の　ノリやねん";
+const char D_0805eb3c[] = "いまのは、　「" ".b" "～ですか？" ".8" "」の　ノリやねん";
 
-const char D_0805eb6c[] = "こんどは、　「" ".9" SHIFT_JIS_WAVE_DASH "かもネ" ".8" "」の　ノリや";
+const char D_0805eb6c[] = "こんどは、　「" ".9" "～かもネ" ".8" "」の　ノリや";
 
 const char D_0805eb94[] = "いっぺん　きいてみてな";
 
 const char D_0805ebac[] = "ほな、　がんばってや";
 
-const char D_0805ebc4[] = "あといっこ、　「" ".a" SHIFT_JIS_WAVE_DASH "サイコー！！" ".8" "」の　ノリや";
+const char D_0805ebc4[] = "あといっこ、　「" ".a" "～サイコー！！" ".8" "」の　ノリや";
 
 const char D_0805ebf4[] = "いっぺん　きいてみてや";
 

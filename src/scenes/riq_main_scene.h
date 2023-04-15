@@ -4,7 +4,6 @@
 #include "scenes.h"
 
 
-
 enum PauseHandlerState {
     PAUSE_STATE_PLAY,
     PAUSE_STATE_PAUSE,
@@ -18,7 +17,7 @@ enum PauseMenuSelectedOption {
 };
 
 typedef void (*PauseMenuInitFunc)(void);
-typedef u32 (*PauseMenuUpdateFunc)(void);
+typedef s32 (*PauseMenuUpdateFunc)(void);
 
 struct PauseMenuDefinition {
     u16 pauseButton;
@@ -37,21 +36,26 @@ struct PauseMenu {
 extern struct PauseMenu gPauseMenu;
 
 
+extern const char D_08059668[];
+extern char D_089dd908[];
+extern FontPalette D_089dd94a[];
+extern FontPalette D_089dd962[];
 
-extern void func_0801d860(u32); // [func_0801d860] Set D_0300155c
-extern void func_0801d86c(const struct SubScene *); // [func_0801d86c] Script Init.
-extern u32  func_0801d8d8(void); // [func_0801d8d8] Script Main
-extern void func_0801d95c(const struct Beatscript *); // [func_0801d95c] Change Script
-extern void func_0801d968(const struct Beatscript *); // [func_0801d968] Change Script (w/ Timer Reset)
-extern void func_0801d978(void); // [func_0801d978] Reset BranchStack Position
-extern void func_0801d98c(void); // [func_0801d98c] Script Close
+
+extern void func_0801d860(u32); // Set D_0300155c
+extern void func_0801d86c(const struct SubScene *); // Start Tengoku Scene
+extern u32  func_0801d8d8(void); // Update Tengoku Scene
+extern void func_0801d95c(const struct Beatscript *); // Change Script
+extern void func_0801d968(const struct Beatscript *); // Change Script (w/ Timer Reset)
+extern void func_0801d978(void); // Reset BranchStack Position
+extern void func_0801d98c(void); // Stop Tengoku Scene
 extern u32  func_0801d9cc(void);
 
-extern u32  func_0801d9d0(void); // [func_0801d9d0] Update Pause Menu (State: Play)
-extern void func_0801da48(void); // [func_0801da48] Update Pause Menu (State: Pause)
-extern u32  func_0801dabc(void); // [func_0801dabc] Update Pause Menu (State: Stop)
-extern void func_0801daf8(const struct PauseMenuDefinition *data); // [func_0801daf8] Set Pause Handler Definition
-extern void func_0801db04(u32 enable); // [func_0801db04] Enable Pause Menu
+extern u32  func_0801d9d0(void); // Update Pause Menu (State: Play)
+extern void func_0801da48(void); // Update Pause Menu (State: Pause)
+extern u32  func_0801dabc(void); // Update Pause Menu (State: Stop)
+extern void func_0801daf8(const struct PauseMenuDefinition *data); // Set Pause Handler Definition
+extern void func_0801db04(u32 enable); // Enable Pause Menu
 
 // extern ? func_0801db1c(?);
 // extern ? func_0801db74(?);
@@ -65,6 +69,6 @@ extern void func_0801db04(u32 enable); // [func_0801db04] Enable Pause Menu
 // extern ? func_0801dec4(?);
 // extern ? func_0801decc(?);
 // extern ? func_0801ded4(?);
-// extern ? func_0801dedc(?); // D_089dd97c - Close
-// extern ? func_0801def4(?); // D_089dd97c - Init.
+// extern ? func_0801dedc(?); // D_089dd97c - Stop
+// extern ? func_0801def4(?); // D_089dd97c - Start
 // extern ? func_0801df1c(?); // D_089dd97c - Update

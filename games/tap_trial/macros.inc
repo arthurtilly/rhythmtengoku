@@ -20,7 +20,6 @@
     .set EVENT_0C,      0x0C
     .set EVENT_0D,      0x0D
     .set EVENT_0E,      0x0E
-    .set STUB_EVENT,    0x0F
 
     @ Cues
     .set CUE_DEFAULT, 0x00
@@ -34,13 +33,13 @@
 .endm
 
 @ Load Game: Tap Trial (Remix 7, Remix 8)
-.macro load_tap_trial_remix_8
+.macro load_tap_trial_remix
     load_tap_trial_labels
     load_game tap_trial_engine, 1
 .endm
 
 @ Load Game: Tap Trial (Remix 7)
-.macro load_tap_trial_remix_7
+.macro load_tap_trial_pigs
     load_tap_trial_labels
     load_game tap_trial_engine, 2
 .endm
@@ -69,80 +68,75 @@
 
 @ [Event 0x00] ?
 .macro tap_trial_event00 args
-    tap_trial_event 0x00, \args
+    tap_trial_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro tap_trial_event01 args
-    tap_trial_event 0x01, \args
+    tap_trial_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro tap_trial_event02 args
-    tap_trial_event 0x02, \args
+    tap_trial_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro tap_trial_event03 args
-    tap_trial_event 0x03, \args
+    tap_trial_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro tap_trial_event04 args
-    tap_trial_event 0x04, \args
+    tap_trial_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro tap_trial_event05 args
-    tap_trial_event 0x05, \args
+    tap_trial_event EVENT_05, \args
 .endm
 
 @ [Event 0x06] ?
 .macro tap_trial_event06 args
-    tap_trial_event 0x06, \args
+    tap_trial_event EVENT_06, \args
 .endm
 
 @ [Event 0x07] ?
 .macro tap_trial_event07 args
-    tap_trial_event 0x07, \args
+    tap_trial_event EVENT_07, \args
 .endm
 
 @ [Event 0x08] ?
 .macro tap_trial_event08 args
-    tap_trial_event 0x08, \args
+    tap_trial_event EVENT_08, \args
 .endm
 
 @ [Event 0x09] ?
 .macro tap_trial_event09 args
-    tap_trial_event 0x09, \args
+    tap_trial_event EVENT_09, \args
 .endm
 
 @ [Event 0x0A] ?
 .macro tap_trial_event0A args
-    tap_trial_event 0x0A, \args
+    tap_trial_event EVENT_0A, \args
 .endm
 
 @ [Event 0x0B] ?
 .macro tap_trial_event0B args
-    tap_trial_event 0x0B, \args
+    tap_trial_event EVENT_0B, \args
 .endm
 
 @ [Event 0x0C] ?
 .macro tap_trial_event0C args
-    tap_trial_event 0x0C, \args
+    tap_trial_event EVENT_0C, \args
 .endm
 
 @ [Event 0x0D] ?
 .macro tap_trial_event0D args
-    tap_trial_event 0x0D, \args
+    tap_trial_event EVENT_0D, \args
 .endm
 
 @ [Event 0x0E] ?
 .macro tap_trial_event0E args
-    tap_trial_event 0x0E, \args
-.endm
-
-@ [Event 0x0F] Nothing
-.macro tap_trial_stub_event noArgs
-    tap_trial_event 0x0F, \noArgs
+    tap_trial_event EVENT_0E, \args
 .endm

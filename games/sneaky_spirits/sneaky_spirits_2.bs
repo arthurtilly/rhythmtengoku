@@ -1,0 +1,164 @@
+.include "include/beatscript.inc"
+.include "games/sneaky_spirits/macros.inc"
+
+
+
+.section .script.entry
+@ Sneaky Spirits 2 - Script Entry Point
+
+script script_sneaky_spirits_2_entry
+    set_tempo 124
+    rest 24
+    call script_sneaky_spirits_prologue
+    set_game_fade_in_time 16
+    load_sneaky_spirits_2
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_sneaky_spirits_2_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_sneaky_spirits_2, script_sneaky_spirits_2_entry
+
+
+
+.section .script.main
+@ Sneaky Spirits 2 - Marking Criteria
+
+struct sneaky_spirits_2_marking_criteria_0
+    /* Positive Remark */     .word D_0805bbf4
+    /* Negative Remark */     .word D_0805bbd8
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct sneaky_spirits_2_marking_criteria_1
+    /* Positive Remark */     .word D_0805bc1c
+    /* Negative Remark */     .word D_0805bbf8
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x19 @ 10%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct sneaky_spirits_2_marking_criteria_2
+    /* Positive Remark */     .word D_0805bc5c
+    /* Negative Remark */     .word D_0805bc3c
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct sneaky_spirits_2_marking_criteria_3
+    /* Positive Remark */     .word D_0805bc78
+    /* Negative Remark */     .word D_0805bbf4
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct sneaky_spirits_2_marking_criteria
+    .word sneaky_spirits_2_marking_criteria_0
+    .word sneaky_spirits_2_marking_criteria_1
+    .word sneaky_spirits_2_marking_criteria_2
+    .word sneaky_spirits_2_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Sneaky Spirits 2 - Main Script
+
+script script_sneaky_spirits_2_main
+    set_tempo 120
+    start_perfect_campaign
+    sneaky_spirits_enable_wind_sfx 1
+    set_music_volume 256
+    mod_music_volume 128, 24
+    rest 24
+    play_music s_aimu_bgm_seqData
+    mod_music_volume 256, 96
+    enable_pause 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    sneaky_spirits_spawn_bow 0
+    rest 24
+    rest 24
+    rest 24
+    sneaky_spirits_enable_wind_sfx 0
+    rest 24
+    import_marking_criteria sneaky_spirits_2_marking_criteria
+    set_results_header D_0805bc98
+    assess_inputs 1
+    set_marking_criteria 0
+    set_tempo 120
+    call sneaky_spirits_sub_08a791a4
+    set_marking_criteria 0
+    set_tempo 120
+    call sneaky_spirits_sub_08a7933c
+    set_marking_criteria 2
+    set_tempo 90
+    call sneaky_spirits_sub_08a7951c
+    set_marking_criteria 1
+    set_tempo 120
+    call sneaky_spirits_2_sub_08a7996c
+    set_marking_criteria 2
+    set_tempo 160
+    call sneaky_spirits_sub_08a7951c
+    set_marking_criteria 1
+    set_tempo 160
+    call sneaky_spirits_2_sub_08a79b94
+    set_marking_criteria 3
+    set_tempo 70
+    call sneaky_spirits_sub_08a7951c
+    set_marking_criteria 0
+    set_tempo 160
+    call sneaky_spirits_sub_08a7933c
+    set_marking_criteria 0
+    set_tempo 120
+    call sneaky_spirits_sub_08a791a4
+    set_marking_criteria 1
+    set_tempo 160
+    call sneaky_spirits_2_sub_08a79b94
+    set_marking_criteria 1
+    set_tempo 160
+    call sneaky_spirits_2_sub_08a79dbc
+    set_marking_criteria 2
+    set_tempo 160
+    call sneaky_spirits_sub_08a7951c
+    set_marking_criteria 0
+    set_tempo 120
+    call sneaky_spirits_sub_08a7933c
+    set_marking_criteria 0
+    set_tempo 120
+    call sneaky_spirits_2_sub_08a79fe4
+    set_marking_criteria 1
+    set_tempo 90
+    call sneaky_spirits_2_sub_08a7996c
+    set_marking_criteria 2
+    set_tempo 200
+    call sneaky_spirits_sub_08a7951c
+    set_tempo 120
+    assess_perfect_inputs 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    enable_pause 0
+return
+
+.end

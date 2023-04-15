@@ -11,40 +11,85 @@ struct ReadingSceneInfo {
 struct ReadingMaterial {
     const char *title;
     const char *text;
-    const u32 *graphics;
-    struct SequenceData *music;
+    const struct GraphicsTable *gfx;
+    struct SequenceData **bgm;
+};
+
+
+// Scene Macros/Enums:
+enum ReadingMaterialEnum {
+    /* 00 */ READING_MATERIAL_WELCOME,
+    /* 01 */ READING_MATERIAL_MANUAL,
+    /* 02 */ READING_MATERIAL_CAFE,
+    /* 03 */ READING_MATERIAL_RHYTHM_TWEEZERS,
+    /* 04 */ READING_MATERIAL_NIGHT_WALK,
+    /* 05 */ READING_MATERIAL_SPACEBALL,
+    /* 06 */ READING_MATERIAL_HORSE_MACHINE,
+    /* 07 */ READING_MATERIAL_MARCHING_ORDERS,
+    /* 08 */ READING_MATERIAL_RAP_MEN,
+    /* 09 */ READING_MATERIAL_BON_ODORI,
+    /* 10 */ READING_MATERIAL_REMIX3,
+    /* 11 */ READING_MATERIAL_REMIX5,
+    /* 12 */ READING_MATERIAL_REMIX8,
+    /* 13 */ READING_MATERIAL_NINJA_BODYGUARD,
+    /* 14 */ READING_MATERIAL_TOSS_BOYS,
+    /* 15 */ READING_MATERIAL_FAN_MAIL,
+    /* 16 */ READING_MATERIAL_RHYTHM_FORMULA,
+    /* 17 */ READING_MATERIAL_RHYTHM_DIAGNOSIS,
+    /* 18 */ READING_MATERIAL_RHYTHM_POEM,
+    /* 19 */ READING_MATERIAL_RHYTHM_HAIKU
+};
+
+
+// Sound Effects:
+extern struct SequenceData s_f_env_cherry_seqData;
+extern struct SequenceData s_f_env_train_seqData;
+extern struct SequenceData s_sindan_sea_seqData;
+extern struct SequenceData s_f_env_haiku_seqData;
+extern struct SequenceData s_f_env_class_room_seqData;
+extern struct SequenceData s_sindan_mail_seqData;
+extern struct SequenceData s_sindan_manzai_seqData;
+
+
+// Scene Data:
+extern struct ReadingMaterial reading_material_table[];
+extern struct GraphicsTable reading_gfx_table[];
+extern struct CompressedGraphics *reading_buffered_textures[];
+extern struct ReadingMaterial reading_material_error;
+
+
+// Functions:
+// extern ? func_0801a384(?); // Graphics Init. 4
+// extern ? func_0801a3b0(?); // Graphics Init. 3
+// extern ? func_0801a3e4(?); // Graphics Init. 2
+// extern ? func_0801a414(?); // Graphics Init. 1
+// extern ? func_0801a450(?); // Scene Start
+// extern ? func_0801a5d8(?); // ?
+// extern ? func_0801a70c(?); // Scene Update (Active)
+// extern ? func_0801a860(?); // ?
+// extern ? func_0801a8a0(?); // Scene Stop
+// extern ? func_0801a8b0(?); // ? (Script Function)
+
+
+// Scene Types:
+struct ReadErrorSceneInfo {
+    /* add fields here */
 };
 
 
 // Scene Macros/Enums:
 
 
-// OAM Animations:
+// Scene Data:
+extern struct GraphicsTable D_089d80ec[];
+extern struct CompressedGraphics *D_089d80f8[];
 
 
-// Sound Effects:
-
-
-// Scene Definition Data:
-extern const struct ReadingMaterial D_089d7e74[];
-
-
-// Scene Functions:
-// extern ? func_0801a384(?); // [func_0801a384] READING - Graphics Init. 3 (BG?)
-// extern ? func_0801a3b0(?); // [func_0801a3b0] READING - Graphics Init. 2 (OBJ)
-// extern ? func_0801a3e4(?); // [func_0801a3e4] READING - Graphics Init. 1
-// extern ? func_0801a414(?); // [func_0801a414] READING - Graphics Init. 0
-// extern ? func_0801a450(?); // [func_0801a450] READING - Scene Init.
-// extern ? func_0801a5d8(?); // [func_0801a5d8] READING - ?
-// extern ? func_0801a70c(?); // [func_0801a70c] READING - Scene Main
-// extern ? func_0801a860(?); // [func_0801a860] READING - ?
-// extern ? func_0801a8a0(?); // [func_0801a8a0] READING - Scene Close
-// extern ? func_0801a8b0(?); // [func_0801a8b0] READING - ? (Script Function)
-
-// extern ? func_0801a8c8(?); // [func_0801a8c8] READ ERROR? - Graphics Init. 2
-// extern ? func_0801a8f4(?); // [func_0801a8f4] READ ERROR? - Graphics Init. 1
-// extern ? func_0801a924(?); // [func_0801a924] READ ERROR? - Graphics Init. 0
-// extern ? func_0801a940(?); // [func_0801a940] READ ERROR? - Scene Init.
-// extern ? func_0801a96c(?); // [func_0801a96c] READ ERROR? - Scene Main
-// extern ? func_0801a99c(?); // [func_0801a96c] READ ERROR? - ?
-// extern ? func_0801a9b8(?); // [func_0801a9b8] READ ERROR? - Scene Close
+// Functions:
+// extern ? func_0801a8c8(?); // Graphics Init. 3
+// extern ? func_0801a8f4(?); // Graphics Init. 2
+// extern ? func_0801a924(?); // Graphics Init. 1
+// extern ? func_0801a940(?); // Scene Start
+// extern ? func_0801a96c(?); // Scene Update (Active)
+// extern ? func_0801a99c(?); // Check if Screen is Ready
+// extern ? func_0801a9b8(?); // Scene Stop

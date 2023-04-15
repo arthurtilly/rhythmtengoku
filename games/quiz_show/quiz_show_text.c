@@ -7,11 +7,11 @@
 
 const char D_0805ec44[] = "次回、がんばって下さいネ。";
 
-const char D_0805ec60[] = "おしかったですね" SHIFT_JIS_WAVE_DASH "！";
+const char D_0805ec60[] = "おしかったですね～！";
 
 const char D_0805ec78[] = "";
 
-const char D_0805ec7c[] = "全問正解、おめでとうございました" SHIFT_JIS_WAVE_DASH "！";
+const char D_0805ec7c[] = "全問正解、おめでとうございました～！";
 
 const char D_0805eca4[] =
     "\n"
@@ -88,6 +88,6 @@ const char D_0805ee34[] = "私がボタンをたたいた回数を当てるだけ。";
 
 const char D_0805ee5c[] = "「どうぞ」のあと、同じ数だけたたいて下さい。";
 
-const char D_0805ee8c[] = "Ａボタンと　" SHIFT_JIS_KANJI_JUU "字ボタン、どちらでもＯＫです。";
+const char D_0805ee8c[] = "Ａボタンと　十\字ボタン、どちらでもＯＫです。";
 
 const char D_0805eebc[] = "では、いってみましょう。";

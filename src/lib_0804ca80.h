@@ -5,9 +5,9 @@
 
 
 // Functions:
-// extern ? func_0804ca80(?);
-// extern ? func_0804ca94(?);
-// extern ? func_0804caa0(?);
+extern void func_0804ca80(void *memAllocFunc, void *memDeallocFunc);
+extern void func_0804ca94(void *memAllocIdFunc);
+extern struct SpriteHandler *func_0804caa0(u16, void *, u16, u32);
 // extern ? func_0804cb60(?);
 // extern ? func_0804cb80(?);
 // extern ? func_0804cb88(?);

@@ -1,8 +1,8 @@
 #include "global.h"
 #include "graphics.h"
 
-// [D_0890b330] <description>
-Palette read_error_bg_00_pal[] = {
+// [D_0890b330] Reading Scene BG Palette (Cherry, Error)
+Palette reading_style_cherry_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),
@@ -59,8 +59,8 @@ Palette read_error_bg_00_pal[] = {
     }
 };
 
-// [D_0890b390] <description>
-Palette read_error_bg_01_pal[] = {
+// [D_0890b390] Reading Scene BG Palette (Sea)
+Palette reading_style_sea_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x204858),
         /* 01 */ TO_RGB555(0x000000),

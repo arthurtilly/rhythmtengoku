@@ -22,7 +22,7 @@ branch_0801cb28: \n\
 /* 0801cb28 */ LDR R2, =D_030046a4 \n\
 /* 0801cb2a */ LDR R4, [R2] \n\
 /* 0801cb2c */ ADD R4, R8 @ Add R8 to R4 \n\
-/* 0801cb2e */ LDR R5, =D_089dcf68 \n\
+/* 0801cb2e */ LDR R5, =title_logo_char_data \n\
 /* 0801cb30 */ ADD R5, R10 @ Add R10 to R5 \n\
 /* 0801cb32 */ STRB R6, [R4] \n\
 /* 0801cb34 */ LDR R3, =D_03005380 \n\
@@ -58,7 +58,7 @@ branch_0801cb28: \n\
 /* 0801cb72 */ STR R6, [SP, 0xC] \n\
 /* 0801cb74 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 0801cb76 */ STR R1, [SP, 0x10] \n\
-/* 0801cb78 */ LDR R1, =D_0890d4f0 \n\
+/* 0801cb78 */ LDR R1, =anim_title_logo_bubble_inner \n\
 /* 0801cb7a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801cb7c */ BL func_0804d160 \n\
 /* 0801cb80 */ STRH R0, [R4, 0x2] \n\
@@ -75,7 +75,7 @@ branch_0801cb28: \n\
 /* 0801cb96 */ STR R6, [SP, 0xC] \n\
 /* 0801cb98 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 0801cb9a */ STR R1, [SP, 0x10] \n\
-/* 0801cb9c */ LDR R1, =D_0890d500 \n\
+/* 0801cb9c */ LDR R1, =anim_title_logo_bubble_outer \n\
 /* 0801cb9e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801cba0 */ BL func_0804d160 \n\
 /* 0801cba4 */ STRH R0, [R4, 0x4] \n\

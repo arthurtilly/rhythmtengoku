@@ -2,15 +2,15 @@
 #include "src/main.h"
 #include "src/memory.h"
 
-extern struct Scene D_089dd47c;
+extern const struct Scene scene_riq_title;
 
 /* MAIN */
 
 // [D_08935fac]
-struct Scene *D_08935fac = &D_089dd47c;
+const struct Scene *D_08935fac = &scene_riq_title;
 
 // [D_08935fb0]
-struct Scene *D_08935fb0 = &D_089dd47c;
+const struct Scene *D_08935fb0 = &scene_riq_title;
 
 /* MEMORY */
 

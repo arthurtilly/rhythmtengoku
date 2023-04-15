@@ -3,7 +3,7 @@
 
 
 @ Load Data
-.macro load_calligraphy_labels
+.macro load_power_calligraphy_labels
     @ Game Events
     .set EVENT_00,      0x00
     .set EVENT_01,      0x01
@@ -18,7 +18,6 @@
     .set EVENT_0A,      0x0A
     .set EVENT_0B,      0x0B
     .set EVENT_0C,      0x0C
-    .set STUB_EVENT,    0x0D
 
     @ Cues
     .set CUE_DEFAULT, 0x00
@@ -37,7 +36,7 @@
 
 @ Load Game: Power Calligraphy
 .macro load_power_calligraphy
-    load_calligraphy_labels
+    load_power_calligraphy_labels
     load_game power_calligraphy_engine, 0
 .endm
 
@@ -53,70 +52,65 @@
 
 @ [Event 0x00] ?
 .macro power_calligraphy_event00 args
-    power_calligraphy_event 0x00, \args
+    power_calligraphy_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro power_calligraphy_event01 args
-    power_calligraphy_event 0x01, \args
+    power_calligraphy_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro power_calligraphy_event02 args
-    power_calligraphy_event 0x02, \args
+    power_calligraphy_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro power_calligraphy_event03 args
-    power_calligraphy_event 0x03, \args
+    power_calligraphy_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro power_calligraphy_event04 args
-    power_calligraphy_event 0x04, \args
+    power_calligraphy_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro power_calligraphy_event05 args
-    power_calligraphy_event 0x05, \args
+    power_calligraphy_event EVENT_05, \args
 .endm
 
 @ [Event 0x06] ?
 .macro power_calligraphy_event06 args
-    power_calligraphy_event 0x06, \args
+    power_calligraphy_event EVENT_06, \args
 .endm
 
 @ [Event 0x07] ?
 .macro power_calligraphy_event07 args
-    power_calligraphy_event 0x07, \args
+    power_calligraphy_event EVENT_07, \args
 .endm
 
 @ [Event 0x08] ?
 .macro power_calligraphy_event08 args
-    power_calligraphy_event 0x08, \args
+    power_calligraphy_event EVENT_08, \args
 .endm
 
 @ [Event 0x09] ?
 .macro power_calligraphy_event09 args
-    power_calligraphy_event 0x09, \args
+    power_calligraphy_event EVENT_09, \args
 .endm
 
 @ [Event 0x0A] ?
 .macro power_calligraphy_event0A args
-    power_calligraphy_event 0x0A, \args
+    power_calligraphy_event EVENT_0A, \args
 .endm
 
 @ [Event 0x0B] ?
 .macro power_calligraphy_event0B args
-    power_calligraphy_event 0x0B, \args
+    power_calligraphy_event EVENT_0B, \args
 .endm
 
 @ [Event 0x0C] ?
 .macro power_calligraphy_event0C args
-    power_calligraphy_event 0x0C, \args
-.endm
-
-@ [Event 0x0D] Nothing
-.macro power_calligraphy_stub_event noArgs
-    power_calligraphy_event 0x0D, \noArgs
+    power_calligraphy_event EVENT_0C, \args
 .endm

@@ -1,0 +1,554 @@
+.include "include/beatscript.inc"
+.include "games/clappy_trio/macros.inc"
+
+
+
+.section .script.entry
+@ The Snappy Trio - Script Entry Point
+
+script script_snappy_trio_entry
+    set_tempo 124
+    rest 24
+    call script_snappy_trio_prologue
+    set_game_fade_in_time 16
+    load_snappy_trio
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_snappy_trio_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_snappy_trio, script_snappy_trio_entry
+
+
+
+.section .script.prologue
+@ The Snappy Trio - Prologue
+
+@ Prologue (The Snappy Trio) - Script
+script script_snappy_trio_prologue
+    set_game_fade_in_time 8
+    load_game snappy_trio_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    rest 24
+    play_sfx s_jingle_handclap_seqData
+    run func_08045fc0, 1
+    rest 2
+    run func_08045fc0, 2
+    rest 2
+    run func_08045fc0, 3
+    rest 2
+    run func_08045fc0, 4
+    rest 2
+    run func_08045fc0, 5
+    rest 2
+    run func_08045fc0, 6
+    rest 6
+    rest 6
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+    rest 12
+    run func_08006d80, 0
+    rest 12
+    set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ The Snappy Trio - Marking Criteria
+
+struct snappy_trio_marking_criteria_0
+    /* Positive Remark */     .word D_08067bdc
+    /* Negative Remark */     .word D_08067bc4
+    /* Flags */               .hword OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct snappy_trio_marking_criteria_1
+    /* Positive Remark */     .word D_08067c1c
+    /* Negative Remark */     .word D_08067bf4
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x4C @ 30%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct snappy_trio_marking_criteria_2
+    /* Positive Remark */     .word D_08067c44
+    /* Negative Remark */     .word D_08067c40
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct snappy_trio_marking_criteria
+    .word snappy_trio_marking_criteria_0
+    .word snappy_trio_marking_criteria_1
+    .word snappy_trio_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ The Snappy Trio - Main Script
+
+script script_snappy_trio_main
+    set_results_header D_08067c74
+    import_marking_criteria snappy_trio_marking_criteria
+    forgive_x_misses 2
+    assess_inputs 1
+    set_tempo 108
+    set_music_volume 200
+    rest 24
+    enable_pause 1
+    rest 24
+    play_music s_tebyoushi_dexy_bgm_seqData
+    start_perfect_campaign
+    set_marking_criteria 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 24
+    clappy_trio_do_clap 1
+    spawn_cue CUE_FULL_BEAT_W_SMILE
+    rest 24
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    beat_anim
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    beat_anim
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    rest 12
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 24
+    set_marking_criteria 1
+    beat_anim
+    rest 24
+    beat_anim
+    rest 8
+    rest 4
+    clappy_trio_crouch 0
+    rest 8
+    rest 4
+    rest 8
+    rest 4
+    clappy_trio_do_clap 0
+    rest 8
+    rest 4
+    rest 8
+    clappy_trio_do_clap 1
+    rest 4
+    spawn_cue CUE_HALF_BEAT
+    rest 8
+    rest 4
+    rest 24
+    beat_anim
+    rest 8
+    rest 4
+    clappy_trio_crouch 0
+    rest 8
+    rest 4
+    rest 8
+    rest 4
+    clappy_trio_do_clap 0
+    rest 8
+    rest 4
+    rest 8
+    clappy_trio_do_clap 1
+    rest 4
+    spawn_cue CUE_HALF_BEAT
+    rest 8
+    rest 4
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 12
+    clappy_trio_do_clap 0
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    clappy_trio_do_clap 1
+    rest 4
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    beat_anim
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 12
+    clappy_trio_do_clap 0
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    clappy_trio_do_clap 1
+    rest 4
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    rest 4
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 24
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    set_marking_criteria 2
+    beat_anim
+    rest 24
+    clappy_trio_crouch_smirk
+    rest 12
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 4
+    clappy_trio_set_npc_clap_volume 128
+    clappy_trio_do_clap 0
+    clappy_trio_set_npc_clap_volume 256
+    rest 4
+    clappy_trio_set_npc_clap_volume 160
+    clappy_trio_do_clap 1
+    clappy_trio_set_npc_clap_volume 256
+    rest 4
+    rest 24
+    beat_anim
+    rest 24
+    set_marking_criteria 0
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    clappy_trio_crouch 0
+    rest 12
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT
+    rest 12
+    rest 12
+    beat_anim
+    rest 24
+    clappy_trio_crouch 0
+    rest 24
+    clappy_trio_do_clap 0
+    rest 12
+    clappy_trio_do_clap 1
+    spawn_cue CUE_HALF_BEAT_W_SMILE
+    rest 12
+    rest 24
+    assess_perfect_inputs 0
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    enable_pause 0
+return
+
+.end

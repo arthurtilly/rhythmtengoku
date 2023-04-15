@@ -1,0 +1,819 @@
+.include "include/beatscript.inc"
+.include "games/tram_and_pauline/macros.inc"
+
+
+
+.section .script.entry
+@ Tram and Pauline - Script Entry Point
+
+script script_tram_pauline_entry
+    set_tempo 124
+    rest 24
+    call script_tram_pauline_prologue
+    set_game_fade_in_time 16
+    load_tram_pauline_practice
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_tram_pauline_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_tram_pauline, script_tram_pauline_entry
+
+
+@ Tram and Pauline - Script Entry Point (Skipped Practice)
+
+script script_tram_pauline_skipped_practice_entry
+    set_tempo 124
+    set_game_fade_in_time 0
+    load_tram_pauline
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_tram_pauline_skipped_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_tram_pauline_skipped_practice, script_tram_pauline_skipped_practice_entry
+
+
+
+.section .script.prologue
+@ Tram and Pauline - Prologue
+
+script script_tram_pauline_prologue
+    set_game_fade_in_time 8
+    load_game tram_pauline_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    play_sfx s_jingle_tap_seqData
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+    run func_08047bdc, 5
+    rest 12
+    rest 24
+    rest 24
+    rest 24
+    run func_08006d80, 0
+    rest 24
+    set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Tram and Pauline - Marking Criteria
+
+struct tram_pauline_marking_criteria_0
+    /* Positive Remark */     .word D_0805dafc
+    /* Negative Remark */     .word D_0805dae0
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct tram_pauline_marking_criteria_1
+    /* Positive Remark */     .word D_0805db34
+    /* Negative Remark */     .word D_0805db18
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct tram_pauline_marking_criteria_2
+    /* Positive Remark */     .word D_0805db74
+    /* Negative Remark */     .word D_0805db54
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x33 @ 20%
+endstruct
+
+struct tram_pauline_marking_criteria
+    .word tram_pauline_marking_criteria_0
+    .word tram_pauline_marking_criteria_1
+    .word tram_pauline_marking_criteria_2
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Tram and Pauline - Main Script
+
+script script_tram_pauline_main
+    set_tempo 150
+    set_music_volume 256
+    play_music s_puipui_bgm_seqData
+    set_results_header D_0805db94
+    import_marking_criteria tram_pauline_marking_criteria
+    forgive_x_misses 1
+    assess_inputs 1
+    start_perfect_campaign
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    tram_pauline_event01 1
+    set_marking_criteria 2
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    tram_pauline_event01 1
+    set_marking_criteria 2
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 3
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event01 2
+    tram_pauline_event01 3
+    set_marking_criteria 2
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    tram_pauline_event01 1
+    set_marking_criteria 2
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event01 2
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 2
+    tram_pauline_event01 3
+    set_marking_criteria 2
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event01 2
+    tram_pauline_event01 3
+    set_marking_criteria 2
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event01 2
+    tram_pauline_event01 3
+    set_marking_criteria 2
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    tram_pauline_event01 1
+    set_marking_criteria 2
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    tram_pauline_event01 1
+    set_marking_criteria 2
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    beat_anim
+    rest 24
+    tram_pauline_event01 3
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    tram_pauline_event01 1
+    set_marking_criteria 2
+    spawn_cue CUE_TRAM
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tram_pauline_event00 0
+    beat_anim
+    rest 24
+    tram_pauline_event00 1
+    tram_pauline_event01 2
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    tram_pauline_event01 3
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    tram_pauline_event01 0
+    set_marking_criteria 0
+    spawn_cue CUE_TRAM
+    beat_anim
+    rest 24
+    tram_pauline_event01 1
+    set_marking_criteria 1
+    spawn_cue CUE_PAULINE
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    assess_perfect_inputs 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    enable_pause 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 0
+return
+
+
+script script_tram_pauline_practice
+    assess_inputs 0
+    set_tempo 130
+    set_music_volume 256
+    play_music s_puipui_intro_bgm_seqData
+    beat_anim
+    rest 24
+    enable_pause 1
+    beat_anim
+    rest 24
+    run gameplay_set_tutorial scene_tram_pauline_skipped_practice
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    mod_music_volume 230, 96
+    print_text_f D_0805dba0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    print_text_f NULL
+    rest 12
+    tram_pauline_event02 1
+    print_text_f D_0805dbb0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    print_text_f NULL
+    rest 12
+    tram_pauline_event02 2
+    print_text_f D_0805dbc0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    print_text_f NULL
+    rest 12
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f D_0805dbd8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    print_text_f NULL
+    rest 12
+    tram_pauline_event02 0
+    print_text_f D_0805dbf4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    print_text_f NULL
+    rest 12
+    tram_pauline_event02 1
+    print_text_f D_0805dc0c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    print_text_f NULL
+    rest 12
+    tram_pauline_event02 2
+    print_text_f D_0805dc24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 12
+    print_text_f NULL
+    rest 12
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f D_0805dc38
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    loop_start
+        run beatscript_disable_loops 0
+        beat_anim
+        rest 24
+        tram_pauline_event00 0
+        beat_anim
+        rest 24
+        tram_pauline_event01 0
+        spawn_cue CUE_TRAM
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+    loop_end
+    loop_start
+        run beatscript_disable_loops 0
+        beat_anim
+        rest 24
+        tram_pauline_event00 1
+        beat_anim
+        rest 24
+        tram_pauline_event01 1
+        spawn_cue CUE_PAULINE
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+    loop_end
+    tram_pauline_event02 0
+    print_text_f D_0805dc58
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    loop_start
+        run beatscript_disable_loops 0
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        tram_pauline_event00 0
+        beat_anim
+        rest 24
+        tram_pauline_event01 2
+        spawn_cue CUE_TRAM
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        tram_pauline_event01 0
+        spawn_cue CUE_TRAM
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+    loop_end
+    loop_start
+        run beatscript_disable_loops 0
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        tram_pauline_event00 1
+        beat_anim
+        rest 24
+        tram_pauline_event01 3
+        spawn_cue CUE_PAULINE
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        tram_pauline_event01 1
+        spawn_cue CUE_PAULINE
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+    loop_end
+    tram_pauline_event02 2
+    print_text_f D_0805dc70
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    loop_start
+        run beatscript_disable_loops 0
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        tram_pauline_event00 0
+        beat_anim
+        rest 24
+        tram_pauline_event00 1
+        tram_pauline_event01 0
+        spawn_cue CUE_TRAM
+        beat_anim
+        rest 24
+        tram_pauline_event01 1
+        spawn_cue CUE_PAULINE
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+    loop_end
+    print_text_f D_0805dc88
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    loop_start
+        run beatscript_disable_loops 0
+        beat_anim
+        rest 24
+        tram_pauline_event00 0
+        tram_pauline_event00 1
+        beat_anim
+        rest 24
+        tram_pauline_event01 0
+        tram_pauline_event01 1
+        spawn_cue CUE_TRAM
+        spawn_cue CUE_PAULINE
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+    loop_end
+    run gameplay_set_tutorial NULL
+    mod_music_volume 0, 72
+    tram_pauline_event02 3
+    print_text_f D_0805dc9c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    load_game tram_pauline_engine, 1
+    goto script_tram_pauline_main
+
+
+script script_tram_pauline_skipped_practice
+    tram_pauline_event02 2
+    rest 24
+    enable_pause 1
+    rest 24
+    goto script_tram_pauline_main
+
+.end

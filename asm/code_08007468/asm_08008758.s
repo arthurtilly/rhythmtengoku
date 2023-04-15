@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08008758 \n\
+thumb_func_start update_texture_loader_task \n\
 /* 08008758 */ PUSH {R4, R5, LR} \n\
 /* 0800875a */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0800875c */ ADDS R0, 0x28 @ Add 0x28 to R0 \n\

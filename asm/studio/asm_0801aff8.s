@@ -39,7 +39,7 @@ branch_0801b02a: \n\
 branch_0801b034: \n\
 /* 0801b034 */ LDR R0, =D_03005380 \n\
 /* 0801b036 */ LDR R0, [R0] \n\
-/* 0801b038 */ LDR R1, =D_0890c430 \n\
+/* 0801b038 */ LDR R1, =anim_studio_item_marker_check \n\
 /* 0801b03a */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 0801b03c */ STR R2, [SP] \n\
 /* 0801b03e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
@@ -54,7 +54,7 @@ branch_0801b034: \n\
 branch_0801b054: \n\
 /* 0801b054 */ LDR R0, =D_03005380 \n\
 /* 0801b056 */ LDR R0, [R0] \n\
-/* 0801b058 */ LDR R1, =D_0890c3d8 \n\
+/* 0801b058 */ LDR R1, =anim_studio_item_markers \n\
 /* 0801b05a */ ADDS R2, 0xC5 @ Add 0xC5 to R2 \n\
 /* 0801b05c */ LDRB R2, [R2] \n\
 /* 0801b05e */ LSLS R2, R2, 0x18 \n\
@@ -74,7 +74,7 @@ branch_0801b054: \n\
 branch_0801b07c: \n\
 /* 0801b07c */ LDR R0, =D_03005380 \n\
 /* 0801b07e */ LDR R0, [R0] \n\
-/* 0801b080 */ LDR R1, =D_0890c440 \n\
+/* 0801b080 */ LDR R1, =anim_studio_item_marker_replay \n\
 /* 0801b082 */ ADDS R2, 0xC5 @ Add 0xC5 to R2 \n\
 /* 0801b084 */ LDRB R2, [R2] \n\
 /* 0801b086 */ LSLS R2, R2, 0x18 \n\

@@ -27,7 +27,7 @@ thumb_func_start func_08012218 \n\
 /* 08012242 */ LDR R0, [R0] \n\
 /* 08012244 */ MOVS R2, 0x18 @ Set R2 to 0x18 \n\
 /* 08012246 */ LDRSH R1, [R1, R2] \n\
-/* 08012248 */ LDR R2, =D_089019a8 \n\
+/* 08012248 */ LDR R2, =anim_data_room_user_fall_asleep \n\
 /* 0801224a */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0801224c */ STR R3, [SP] \n\
 /* 0801224e */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
@@ -47,7 +47,7 @@ branch_08012270: \n\
 /* 08012272 */ LDR R0, [R0] \n\
 /* 08012274 */ MOVS R2, 0x18 @ Set R2 to 0x18 \n\
 /* 08012276 */ LDRSH R1, [R1, R2] \n\
-/* 08012278 */ LDR R2, =D_08901948 \n\
+/* 08012278 */ LDR R2, =anim_data_room_user_stare \n\
 /* 0801227a */ STR R3, [SP] \n\
 /* 0801227c */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
 /* 0801227e */ STR R3, [SP, 0x4] \n\

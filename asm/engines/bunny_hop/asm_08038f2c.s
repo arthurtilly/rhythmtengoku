@@ -43,7 +43,7 @@ thumb_func_start func_08038f2c \n\
 /* 08038f7a */ LDRSH R0, [R6, R1] \n\
 /* 08038f7c */ MOVS R1, 0x16 @ Set R1 to 0x16 \n\
 /* 08038f7e */ LDRSB R1, [R4, R1] \n\
-/* 08038f80 */ BL func_08007468 \n\
+/* 08038f80 */ BL assign_sprite_affine_param \n\
 /* 08038f84 */ STRB R5, [R4, 0x17] \n\
 /* 08038f86 */ STRB R5, [R4, 0x18] \n\
 /* 08038f88 */ MOV R2, R8 @ Set R2 to R8 \n\

@@ -30,7 +30,7 @@ thumb_func_start func_0801e780 \n\
 /* 0801e7ba */ STR R1, [R0, 0x4] \n\
 /* 0801e7bc */ LDR R0, =D_03005380 \n\
 /* 0801e7be */ LDR R0, [R0] \n\
-/* 0801e7c0 */ LDR R2, =D_089ddfac \n\
+/* 0801e7c0 */ LDR R2, =flash_mem_test_scene_objects \n\
 /* 0801e7c2 */ LDR R3, =D_0300558c \n\
 /* 0801e7c4 */ LDR R3, [R3] \n\
 /* 0801e7c6 */ BL import_all_scene_objects \n\
@@ -44,7 +44,7 @@ thumb_func_start func_0801e780 \n\
 /* 0801e7da */ BL func_08008fe0 \n\
 /* 0801e7de */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801e7e0 */ BL func_0801e928 \n\
-/* 0801e7e4 */ LDR R0, =D_089ddbcc \n\
+/* 0801e7e4 */ LDR R0, =scene_debug_menu \n\
 /* 0801e7e6 */ BL func_08000584 \n\
 /* 0801e7ea */ ADD SP, 0x8 \n\
 /* 0801e7ec */ POP {R4} \n\

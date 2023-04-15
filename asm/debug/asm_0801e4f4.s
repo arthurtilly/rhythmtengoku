@@ -72,7 +72,7 @@ branch_0801e54e: \n\
 /* 0801e560 */ LDR R0, [R2, 0x4] \n\
 /* 0801e562 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801e564 */ LDRSH R1, [R1, R2] \n\
-/* 0801e566 */ BL func_08007b04 \n\
+/* 0801e566 */ BL delete_bmp_font_obj_text_anim \n\
 /* 0801e56a */ LDR R0, =D_03005380 \n\
 /* 0801e56c */ LDR R0, [R0] \n\
 /* 0801e56e */ LDR R1, [R6] \n\
@@ -104,7 +104,7 @@ branch_0801e586: \n\
 /* 0801e5a0 */ CMP R5, R0 @ Check R5 - R0 \n\
 /* 0801e5a2 */ BCS branch_0801e610 \n\
 /* 0801e5a4 */ MOV R9, R1 @ Set R9 to R1 \n\
-/* 0801e5a6 */ LDR R1, =D_089ddbe8 \n\
+/* 0801e5a6 */ LDR R1, =debug_menu_entry_table \n\
 /* 0801e5a8 */ LSLS R0, R7, 0x6 \n\
 /* 0801e5aa */ ADDS R0, 0x4 @ Add 0x4 to R0 \n\
 /* 0801e5ac */ ADDS R4, R0, R1 @ Set R4 to R0 + R1 \n\
@@ -164,25 +164,25 @@ branch_0801e610: \n\
 /* 0801e614 */ LDR R0, [R1, 0x4] \n\
 /* 0801e616 */ MOVS R2, 0x14 @ Set R2 to 0x14 \n\
 /* 0801e618 */ LDRSH R1, [R1, R2] \n\
-/* 0801e61a */ BL func_08007b04 \n\
+/* 0801e61a */ BL delete_bmp_font_obj_text_anim \n\
 /* 0801e61e */ LDR R3, [SP, 0x7C] \n\
 /* 0801e620 */ LSLS R1, R3, 0x1 \n\
-/* 0801e622 */ LDR R6, =D_089ddf60 \n\
+/* 0801e622 */ LDR R6, =debug_menu_fullwidth_char \n\
 /* 0801e624 */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\
 /* 0801e626 */ ADD R0, SP, 0x14 \n\
 /* 0801e628 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
-/* 0801e62a */ BL func_08008184 \n\
+/* 0801e62a */ BL strncpy \n\
 /* 0801e62e */ ADD R0, SP, 0x14 \n\
 /* 0801e630 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0801e632 */ STRB R4, [R0, 0x2] \n\
 /* 0801e634 */ LDR R1, =D_08059f8c \n\
-/* 0801e636 */ BL func_080081a8 \n\
+/* 0801e636 */ BL strcat \n\
 /* 0801e63a */ LDR R0, [SP, 0x80] \n\
 /* 0801e63c */ LSLS R1, R0, 0x1 \n\
 /* 0801e63e */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\
 /* 0801e640 */ ADD R0, SP, 0x14 \n\
 /* 0801e642 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
-/* 0801e644 */ BL func_080081d4 \n\
+/* 0801e644 */ BL strncat \n\
 /* 0801e648 */ LDR R0, [R5] \n\
 /* 0801e64a */ LDR R0, [R0, 0x4] \n\
 /* 0801e64c */ ADD R1, SP, 0x14 \n\

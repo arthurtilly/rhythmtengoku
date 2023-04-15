@@ -6,7 +6,6 @@
 .macro load_showtime_labels
     @ Game Events
     .set EVENT_00,      0x00
-    .set STUB_EVENT,    0x01
 
     @ Cues
     .set CUE_GRAY,          0x00
@@ -41,10 +40,5 @@
 
 @ [Event 0x00] ?
 .macro showtime_event00 args
-    showtime_event 0x00, \args
-.endm
-
-@ [Event 0x01] Nothing
-.macro showtime_stub_event noArgs
-    showtime_event 0x01, \noArgs
+    showtime_event EVENT_00, \args
 .endm

@@ -29,7 +29,7 @@ branch_0801ac56: \n\
 /* 0801ac62 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0801ac64 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801ac66 */ LDRSH R1, [R1, R2] \n\
-/* 0801ac68 */ LDR R2, =D_0890c568 \n\
+/* 0801ac68 */ LDR R2, =anim_studio_text_adv_icon \n\
 /* 0801ac6a */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0801ac6c */ STR R3, [SP] \n\
 /* 0801ac6e */ B branch_0801ac92 \n\
@@ -46,7 +46,7 @@ branch_0801ac7c: \n\
 /* 0801ac88 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0801ac8a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801ac8c */ LDRSH R1, [R1, R2] \n\
-/* 0801ac8e */ LDR R2, =D_0890c518 \n\
+/* 0801ac8e */ LDR R2, =anim_studio_warning_options_y \n\
 /* 0801ac90 */ STR R5, [SP] \n\
  \n\
 branch_0801ac92: \n\
@@ -68,7 +68,7 @@ branch_0801acac: \n\
 /* 0801acb8 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0801acba */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801acbc */ LDRSH R1, [R1, R2] \n\
-/* 0801acbe */ LDR R2, =D_0890c540 \n\
+/* 0801acbe */ LDR R2, =anim_studio_warning_options_n \n\
 /* 0801acc0 */ MOVS R3, 0x1 @ Set R3 to 0x1 \n\
 /* 0801acc2 */ STR R3, [SP] \n\
 /* 0801acc4 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\

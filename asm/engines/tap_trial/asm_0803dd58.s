@@ -10,7 +10,7 @@ thumb_func_start tap_trial_init_gfx1 \n\
 /* 0803dd64 */ LSLS R0, R0, 0x10 \n\
 /* 0803dd66 */ LSRS R0, R0, 0x10 \n\
 /* 0803dd68 */ LDR R1, =tap_trial_buffered_textures \n\
-/* 0803dd6a */ BL func_080087b4 \n\
+/* 0803dd6a */ BL start_new_texture_loader \n\
 /* 0803dd6e */ LDR R1, =tap_trial_init_gfx2 \n\
 /* 0803dd70 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803dd72 */ BL run_func_after_task \n\

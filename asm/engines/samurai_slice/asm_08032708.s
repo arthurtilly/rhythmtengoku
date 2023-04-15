@@ -64,7 +64,7 @@ branch_0803273e: \n\
 /* 08032772 */ LSLS R1, R1, 0x1 \n\
 /* 08032774 */ MOVS R2, 0x1D @ Set R2 to 0x1D \n\
 /* 08032776 */ LDRSB R2, [R4, R2] \n\
-/* 08032778 */ BL func_08007498 \n\
+/* 08032778 */ BL set_affine_scale_rotation \n\
  \n\
 branch_0803277c: \n\
 /* 0803277c */ LDR R0, [R4, 0x8] \n\

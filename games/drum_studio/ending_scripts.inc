@@ -1,5 +1,4 @@
-.include "include/gba.inc"
-.include "include/beatscript_ext.inc"
+.include "include/beatscript.inc"
 .include "games/drum_studio/macros.inc"
 
 load_drum_studio_labels
@@ -13,7 +12,7 @@ glabel D_089e2ad4
     fade_music_out TO_TEMPO, 24
     fade_screen_out 12, BLACK
     rest 24
-    stop
+stop
 
 
 @ Show Replay Options, then Fade Out

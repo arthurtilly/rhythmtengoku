@@ -1,0 +1,974 @@
+.include "include/beatscript.inc"
+.include "games/rat_race/macros.inc"
+
+
+
+.section .script.entry
+@ Rat Race - Script Entry Point
+
+script script_rat_race_entry
+    set_tempo 124
+    rest 24
+    call script_rat_race_prologue
+    set_game_fade_in_time 16
+    load_rat_race_practice
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_rat_race_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_rat_race, script_rat_race_entry
+
+
+@ Rat Race - Script Entry Point (Skipped Practice)
+
+script script_rat_race_skipped_practice_entry
+    set_tempo 124
+    set_game_fade_in_time 0
+    load_rat_race
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_rat_race_skipped_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_rat_race_skipped_practice, script_rat_race_skipped_practice_entry
+
+
+
+.section .script.prologue
+@ Rat Race - Prologue
+
+script script_rat_race_prologue
+    set_game_fade_in_time 8
+    load_game rat_race_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    play_sfx s_jingle_rat_seqData
+    rest 24
+    rest 24
+    run func_08047280, 0
+    run func_0804725c, 1
+    rest 6
+    run func_0804725c, 2
+    rest 6
+    run func_0804725c, 3
+    rest 6
+    run func_0804725c, 4
+    rest 6
+    rest 6
+    rest 6
+    rest 6
+    rest 12
+    run func_0804725c, 5
+    rest 6
+    rest 6
+    rest 24
+    rest 24
+    rest 12
+    run func_08006d80, 0
+    rest 24
+    set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Rat Race - Marking Criteria
+
+struct rat_race_marking_criteria_1
+    /* Positive Remark */     .word D_0805d118
+    /* Negative Remark */     .word D_0805d104
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct rat_race_marking_criteria_2
+    /* Positive Remark */     .word D_0805d14c
+    /* Negative Remark */     .word D_0805d130
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xCC @ 80%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct rat_race_marking_criteria_0
+    /* Positive Remark */     .word D_0805d180
+    /* Negative Remark */     .word D_0805d164
+    /* Flags */               .hword OVERRIDE_COMMENTS
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 5
+endstruct
+
+struct rat_race_marking_criteria
+    .word rat_race_marking_criteria_0
+    .word rat_race_marking_criteria_1
+    .word rat_race_marking_criteria_2
+    @! No criteria terminator
+endstruct
+
+
+@ Rat Race - Main Script
+
+script rat_race_sub_08a1b5f0
+    rat_race_event02 2
+    beat_anim
+    rest 24
+    enable_pause 1
+    run gameplay_set_tutorial scene_rat_race_skipped_practice
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event06 D_0805d184
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event06 D_0805d198
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event06 D_0805d1ac
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event07 D_0805d180
+    rest 24
+    rat_race_event06 D_0805d1bc
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event06 D_0805d1d0
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event06 D_0805d1e0
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event06 D_0805d1f0
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event07 D_0805d180
+    rat_race_event0F 0
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+return
+
+
+script rat_race_sub_08a1b998
+    rat_race_event02 2
+    rat_race_event0E 0
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event0E 1
+    rat_race_event06 D_0805d204
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event06 D_0805d214
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event0E 1
+    rat_race_event06 D_0805d220
+    run gameplay_set_tutorial NULL
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event0E 0
+    rat_race_event07 D_0805d180
+return
+
+
+script rat_race_sub_08a1bb78
+    set_marking_criteria 1
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event09 2
+    rat_race_event0D 2
+    rat_race_event01 2
+    set_marking_criteria 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    rat_race_event02 1
+    set_marking_criteria 1
+    spawn_cue CUE_STOP2
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 0
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 0
+    rat_race_event0D 2
+    rat_race_event01 2
+    set_marking_criteria 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    rat_race_event02 1
+    set_marking_criteria 1
+    spawn_cue CUE_STOP2
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 0
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event09 1
+    rat_race_event0D 2
+    rat_race_event01 2
+    set_marking_criteria 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    rat_race_event02 1
+return
+
+
+script script_rat_race_main
+    set_results_header D_0805d234
+    import_marking_criteria rat_race_marking_criteria
+    forgive_x_misses 1
+    set_tempo 150
+    set_music_volume 256
+    assess_inputs 1
+    rat_race_event12 0
+    start_perfect_campaign
+    play_music s_rat_bgm2_seqData
+    rat_race_event08 0
+    rat_race_event09 1
+    rest 24
+    rest 24
+    rat_race_event0E 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event0E 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 256
+    rat_race_event02 1
+    rat_race_event0E 0
+    rest 24
+    rest 24
+    rat_race_event0E 1
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 256
+    rat_race_event02 1
+    rat_race_event0E 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 256
+    rat_race_event02 1
+    rat_race_event0E 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 256
+    rat_race_event02 1
+    rat_race_event0E 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event0E 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 256
+    rat_race_event02 1
+    rat_race_event0E 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event0E 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event0E 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rat_race_event0E 1
+    rest 24
+    rest 24
+    rat_race_event0E 1
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    set_marking_criteria 2
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 256
+    rat_race_event02 1
+    rat_race_event0E 0
+    call rat_race_sub_08a1bb78
+    set_marking_criteria 1
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    set_marking_criteria 2
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 256
+    rat_race_event02 1
+    rat_race_event0E 1
+    rat_race_event0A 0
+    rat_race_event02 2
+    set_tempo 140
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 12
+    rat_race_event0B 0
+    rat_race_event0C 0
+    assess_perfect_inputs 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    enable_pause 0
+return
+
+
+script script_rat_race_practice
+    set_tempo 150
+    set_music_volume 256
+    assess_inputs 0
+    play_music s_rat_bgm1_seqData
+    call rat_race_sub_08a1b5f0
+    rat_race_event09 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 256
+    rat_race_event02 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 256
+    rat_race_event02 1
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 1
+    spawn_cue CUE_STOP4
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rat_race_event05 1
+    beat_anim
+    rest 24
+    rat_race_event0D 2
+    rat_race_event05 2
+    rest 12
+    rest 4
+    rest 4
+    rat_race_event05 3
+    rest 4
+    rat_race_event05 4
+    rat_race_event0D 3
+    rat_race_event02 0
+    rat_race_event01 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 2
+    rest 24
+    rat_race_event0D 0
+    rest 24
+    rat_race_event0D 1
+    rest 12
+    rest 6
+    rat_race_event05 5
+    rest 6
+    rat_race_event0D 2
+    rat_race_event01 2
+    spawn_cue CUE_DASH
+    rest 12
+    rest 6
+    rat_race_event05 6
+    rest 6
+    rat_race_event05 0
+    rat_race_event0D 4
+    rat_race_event01 1
+    set_music_volume 256
+    rat_race_event02 1
+    call rat_race_sub_08a1b998
+    goto script_rat_race_main
+
+
+script script_rat_race_skipped_practice
+    rat_race_event0F 0
+    rest 24
+    enable_pause 1
+    goto script_rat_race_main
+
+.end

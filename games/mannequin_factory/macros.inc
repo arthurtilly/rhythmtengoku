@@ -12,15 +12,14 @@
     .set EVENT_04,      0x04
     .set EVENT_05,      0x05
     .set EVENT_06,      0x06
-    .set STUB_EVENT,    0x07
 
     @ Cues
-    .set CUE_00,    0x00
-    .set CUE_01,    0x01
-    .set CUE_02,    0x02
-    .set CUE_03,    0x03
-    .set CUE_04,    0x04
-    .set CUE_05,    0x05
+    .set CUE_MANNEQUIN_00,    0x00
+    .set CUE_MANNEQUIN_01,    0x01
+    .set CUE_MANNEQUIN_02,    0x02
+    .set CUE_MANNEQUIN_03,    0x03
+    .set CUE_MANNEQUIN_04,    0x04
+    .set CUE_MANNEQUIN_05,    0x05
 .endm
 
 
@@ -48,40 +47,35 @@
 
 @ [Event 0x00] ?
 .macro mannequin_factory_event00 args
-    mannequin_factory_event 0x00, \args
+    mannequin_factory_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro mannequin_factory_event01 args
-    mannequin_factory_event 0x01, \args
+    mannequin_factory_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro mannequin_factory_event02 args
-    mannequin_factory_event 0x02, \args
+    mannequin_factory_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro mannequin_factory_event03 args
-    mannequin_factory_event 0x03, \args
+    mannequin_factory_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro mannequin_factory_event04 args
-    mannequin_factory_event 0x04, \args
+    mannequin_factory_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro mannequin_factory_event05 args
-    mannequin_factory_event 0x05, \args
+    mannequin_factory_event EVENT_05, \args
 .endm
 
 @ [Event 0x06] ?
 .macro mannequin_factory_event06 args
-    mannequin_factory_event 0x06, \args
-.endm
-
-@ [Event 0x07] Nothing
-.macro mannequin_factory_stub_event noArgs
-    mannequin_factory_event 0x07, \noArgs
+    mannequin_factory_event EVENT_06, \args
 .endm

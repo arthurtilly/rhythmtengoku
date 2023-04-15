@@ -1,0 +1,536 @@
+.include "include/beatscript.inc"
+.include "games/samurai_slice/macros.inc"
+
+
+
+.section .script.entry
+@ Samurai Slice - Script Entry Point
+
+script script_samurai_slice_entry
+    set_tempo 124
+    rest 24
+    call script_samurai_slice_prologue
+    set_game_fade_in_time 16
+    load_samurai_slice
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_samurai_slice_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_samurai_slice, script_samurai_slice_entry
+
+
+
+.section .script.prologue
+@ Samurai Slice - Prologue
+
+script script_samurai_slice_prologue
+    set_game_fade_in_time 8
+    load_game samurai_slice_prologue_engine, 0
+    run stop_all_soundplayers, 0
+    play_sfx s_jingle_iai_seqData
+    rest 24
+    rest 24
+    rest 24
+    play_sfx_sp s_f_iai_title_seqData, 192, 0
+    run scene_hide_bg_layer, 1
+    run scene_show_bg_layer, 2
+    rest 24
+    run func_080460d4, 1
+    rest 6
+    run func_080460d4, 2
+    rest 6
+    run func_080460d4, 3
+    rest 6
+    run func_080460d4, 4
+    rest 6
+    run func_080460d4, 5
+    rest 24
+    rest 24
+    run func_08006d80, 0
+    rest 24
+    set_game_fade_in_time 16
+return
+
+
+
+.section .script.main
+@ Samurai Slice - Marking Criteria
+
+struct samurai_slice_marking_criteria_0
+    /* Positive Remark */     .word D_0805bcc4
+    /* Negative Remark */     .word D_0805bca8
+    /* Flags */               .hword CHECK_AVERAGE_HITS | OVERRIDE_COMMENTS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct samurai_slice_marking_criteria_1
+    /* Positive Remark */     .word D_0805bcec
+    /* Negative Remark */     .word D_0805bcc8
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0x80 @ 50%
+    /* Neg: Minimum Hits */   .hword 0x19 @ 10%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct samurai_slice_marking_criteria_2
+    /* Positive Remark */     .word D_0805bd30
+    /* Negative Remark */     .word D_0805bd10
+    /* Flags */               .hword CHECK_AVERAGE_HITS
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 1
+endstruct
+
+struct samurai_slice_marking_criteria_3
+    /* Positive Remark */     .word D_0805bd50
+    /* Negative Remark */     .word D_0805bcc4
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x100 @ 100%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x100 @ 100%
+endstruct
+
+struct samurai_slice_marking_criteria
+    .word samurai_slice_marking_criteria_0
+    .word samurai_slice_marking_criteria_1
+    .word samurai_slice_marking_criteria_2
+    .word samurai_slice_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
+@ Samurai Slice - Main Script
+
+script samurai_slice_sub_08a04544
+    rest 24
+    enable_pause 1
+    set_music_volume 100
+    mod_music_volume 256, 144
+    play_music s_iai_bgm1_seqData
+    mute_music_track MIDI_TRACK_4
+    set_tempo 120
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    samurai_slice_event05 D_0805bd68
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    samurai_slice_event05 D_0805bcc4
+return
+
+
+script samurai_slice_sub_08a04754
+    samurai_slice_event02 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script samurai_slice_sub_08a04844
+    samurai_slice_event02 2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script samurai_slice_sub_08a04934
+    samurai_slice_event03 4
+    beat_anim
+    rest 24
+    samurai_slice_event05 D_0805bd7c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    samurai_slice_event05 D_0805bd88
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    samurai_slice_event05 D_0805bcc4
+    samurai_slice_event02 4
+    beat_anim
+    rest 24
+    samurai_slice_event03 14
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script samurai_slice_sub_08a04b5c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    samurai_slice_event05 D_0805bd7c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    samurai_slice_event05 D_0805bda4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    samurai_slice_event05 D_0805bcc4
+return
+
+
+script samurai_slice_sub_08a04d30
+    samurai_slice_event02 0
+    beat_anim
+    rest 24
+    samurai_slice_event02 1
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    spawn_cue CUE_SECOND
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script samurai_slice_sub_08a04e44
+    samurai_slice_event02 0
+    beat_anim
+    rest 24
+    samurai_slice_event02 1
+    beat_anim
+    rest 24
+    samurai_slice_event03 14
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    spawn_cue CUE_SECOND
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script samurai_slice_sub_08a04f70
+    samurai_slice_event02 2
+    beat_anim
+    rest 24
+    samurai_slice_event02 3
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    spawn_cue CUE_SECOND
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script samurai_slice_sub_08a05084
+    samurai_slice_event02 2
+    beat_anim
+    rest 24
+    samurai_slice_event03 16
+    samurai_slice_event02 3
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    spawn_cue CUE_SECOND
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script samurai_slice_sub_08a051b0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    samurai_slice_event03 6
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    samurai_slice_event02 4
+    samurai_slice_event03 16
+    beat_anim
+    rest 24
+    samurai_slice_event02 5
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    spawn_cue CUE_FIRST
+    beat_anim
+    rest 24
+    spawn_cue CUE_SECOND
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    mod_music_volume 0, 72
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+return
+
+
+script samurai_slice_sub_unused_08a053f0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+return
+
+
+script script_samurai_slice_main
+    set_results_header D_0805bdb8
+    import_marking_criteria samurai_slice_marking_criteria
+    samurai_slice_event07 16
+    call samurai_slice_sub_08a04544
+    assess_inputs 1
+    start_perfect_campaign
+    set_marking_criteria 0
+    set_tempo 120
+    call samurai_slice_sub_08a04754
+    set_tempo 120
+    call samurai_slice_sub_08a04754
+    set_tempo 140
+    call samurai_slice_sub_08a04754
+    set_tempo 160
+    call samurai_slice_sub_08a04754
+    play_music s_iai_bgm2_seqData
+    set_tempo 160
+    call samurai_slice_sub_08a04844
+    set_marking_criteria 2
+    set_tempo 180
+    call samurai_slice_sub_08a04844
+    set_tempo 200
+    call samurai_slice_sub_08a04844
+    set_tempo 220
+    call samurai_slice_sub_08a04844
+    set_marking_criteria 3
+    play_music s_iai_bgm3_seqData
+    set_tempo 80
+    call samurai_slice_sub_08a04934
+    samurai_slice_event04 1
+    play_music s_iai_bgm1_seqData
+    set_tempo 120
+    call samurai_slice_sub_08a04b5c
+    set_marking_criteria 0
+    set_tempo 120
+    call samurai_slice_sub_08a04d30
+    set_tempo 140
+    call samurai_slice_sub_08a04d30
+    set_marking_criteria 1
+    set_tempo 160
+    call samurai_slice_sub_08a04e44
+    set_tempo 180
+    call samurai_slice_sub_08a04e44
+    set_marking_criteria 2
+    play_music s_iai_bgm2_seqData
+    set_tempo 180
+    call samurai_slice_sub_08a04f70
+    set_marking_criteria 1
+    set_tempo 200
+    call samurai_slice_sub_08a05084
+    set_tempo 210
+    call samurai_slice_sub_08a05084
+    set_tempo 220
+    call samurai_slice_sub_08a05084
+    set_tempo 230
+    call samurai_slice_sub_08a05084
+    set_marking_criteria 2
+    set_tempo 240
+    call samurai_slice_sub_08a05084
+    set_tempo 250
+    call samurai_slice_sub_08a05084
+    set_tempo 260
+    call samurai_slice_sub_08a05084
+    set_marking_criteria 3
+    play_music s_iai_bgm3_seqData
+    set_tempo 70
+    call samurai_slice_sub_08a051b0
+    set_tempo 140
+    play_music s_iai_result_seqData
+    set_music_volume 256
+    assess_perfect_inputs 0
+    samurai_slice_event06 1
+    rest 24
+    rest 24
+    samurai_slice_event06 2
+    rest 24
+    samurai_slice_event06 3
+    rest 24
+    rest 24
+    rest 24
+    samurai_slice_event06 4
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    enable_pause 0
+    rest 24
+return
+
+.end

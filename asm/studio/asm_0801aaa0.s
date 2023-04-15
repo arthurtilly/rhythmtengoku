@@ -87,7 +87,7 @@ branch_0801ab14: \n\
 /* 0801ab3a */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0801ab3c */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0801ab3e */ LDRSH R1, [R1, R3] \n\
-/* 0801ab40 */ LDR R2, =D_0890c540 \n\
+/* 0801ab40 */ LDR R2, =anim_studio_warning_options_n \n\
 /* 0801ab42 */ STR R4, [SP] \n\
 /* 0801ab44 */ B branch_0801abbc \n\
 \n\
@@ -144,7 +144,7 @@ branch_0801ab8c: \n\
 /* 0801abb2 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0801abb4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801abb6 */ LDRSH R1, [R1, R2] \n\
-/* 0801abb8 */ LDR R2, =D_0890c518 \n\
+/* 0801abb8 */ LDR R2, =anim_studio_warning_options_y \n\
 /* 0801abba */ STR R3, [SP] \n\
  \n\
 branch_0801abbc: \n\

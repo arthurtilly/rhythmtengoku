@@ -12,92 +12,124 @@ static void (*D_03001108)(s32);
 static s32 D_0300110c;
 
 
-void func_08008dcc(s8 arg0[], u32 length) {
+// Set of Natural Numbers from 0
+void math_arr_set_natural_int8(s8 arr[], u32 len) {
     u32 i;
-    for (i = 0; i < length; i++) {
-        arg0[i] = i;
+
+    for (i = 0; i < len; i++) {
+        arr[i] = i;
     }
 }
 
-void func_08008de4(s16 arg0[], u32 length) {
+
+// Set of Natural Numbers from 0
+void math_arr_set_natural_int16(s16 arr[], u32 len) {
     u32 i;
-    for (i = 0; i < length; i++) {
-        arg0[i] = i;
+
+    for (i = 0; i < len; i++) {
+        arr[i] = i;
     }
 }
 
-void func_08008dfc(s32 arg0[], u32 length) {
+
+// Set of Natural Numbers from 0
+void math_arr_set_natural_int32(s32 arr[], u32 len) {
     u32 i;
-    for (i = 0; i < length; i++) {
-        arg0[i] = i;
+
+    for (i = 0; i < len; i++) {
+        arr[i] = i;
     }
 }
 
-// Shuffles s8/u8 array
-void func_08008e10(s8 arg0[], u32 length) {
+
+// Shuffled Set of Natural Numbers
+void math_arr_set_shuffled_int8(s8 arr[], u32 len) {
     u32 i;
-    func_08008dcc(arg0, length);
+
+    math_arr_set_natural_int8(arr, len);
     
-    for (i = 0; i < length; i++) {
-        u32 randIndex = agb_random(length);
-        s8 temp = arg0[i];
-        arg0[i] = arg0[randIndex];
-        arg0[randIndex] = temp;
+    for (i = 0; i < len; i++) {
+        u32 r = agb_random(len);
+        s8 n = arr[i];
+
+        arr[i] = arr[r];
+        arr[r] = n;
     }
 }
 
-// Shuffles s16/u16 array
-void func_08008e40(s16 arg0[], u32 length) {
+
+// Shuffled Set of Natural Numbers
+void math_arr_set_shuffled_int16(s16 arr[], u32 len) {
     u32 i;
-    func_08008de4(arg0, length);
+
+    math_arr_set_natural_int16(arr, len);
     
-    for (i = 0; i < length; i++) {
-        u32 randIndex = agb_random(length);
-        s16 temp = arg0[i];
-        arg0[i] = arg0[randIndex];
-        arg0[randIndex] = temp;
+    for (i = 0; i < len; i++) {
+        u32 r = agb_random(len);
+        s16 n = arr[i];
+
+        arr[i] = arr[r];
+        arr[r] = n;
     }
 }
 
-// Shuffles s32/u32 array
-void func_08008e74(s32 arg0[], u32 length) {
+
+// Shuffled Set of Natural Numbers
+void math_arr_set_shuffled_int32(s32 arr[], u32 len) {
     u32 i;
-    func_08008dfc(arg0, length);
+
+    math_arr_set_natural_int32(arr, len);
     
-    for (i = 0; i < length; i++) {
-        u32 randIndex = agb_random(length);
-        s32 temp = arg0[i];
-        arg0[i] = arg0[randIndex];
-        arg0[randIndex] = temp;
+    for (i = 0; i < len; i++) {
+        u32 r = agb_random(len);
+        s32 n = arr[i];
+
+        arr[i] = arr[r];
+        arr[r] = n;
     }
 }
 
-void func_08008ea4(s16 arg0[], s16 arg1[], u32 arg2) {
+
+// Invert (Palette?)
+void math_arr_invert_palette(s16 src[], s16 dest[], u32 total) {
     u32 i;
-    for (i = 0; i < arg2 * 16; i++) {
-        arg1[i] = 0x7FFF - arg0[i];
+
+    for (i = 0; i < (total * 16); i++) {
+        dest[i] = 0x7FFF - src[i];
     }
 }
 
-s32 func_08008ed0(s32 arg0[]) {
-    u32 temp = func_0800c490();
-    if (arg0 == NULL) {
+
+// Retrieve Item from Array at Scene-related Index
+s32 math_arr_get_scene(s32 arr[]) {
+    u32 id = func_0800c490();
+
+    if (arr == NULL) {
         return 0;
     }
-    return arg0[temp];
+
+    return arr[id];
 }
 
-s32 func_08008eec(s32 arg0[], u32 arg1) {
-    if (arg0 == NULL) {
+
+// Retrieve Item from Array at Given Index
+s32 math_arr_get_i(s32 arr[], u32 id) {
+    if (arr == NULL) {
         return 0;
     }
-    return arg0[arg1];
+
+    return arr[id];
 }
 
-s32 func_08008f04(u32 arg0, u32 arg1, u32 arg2, u32 arg3) {
-    return fast_divsi3((arg1 - arg0) * arg2, arg3) + arg0;
+
+// LERP
+s32 math_lerp(s32 v1, s32 v2, u32 t, u32 total) {
+    return fast_divsi3((v2 - v1) * t, total) + v1;
 }
 
+
+
+//
 s32 func_08008f1c(void) {
     u32 i;
     u32 temp2 = 1000000;
@@ -115,10 +147,14 @@ s32 func_08008f1c(void) {
     return -1;
 }
 
+
+//
 u32 func_08008f68(void) {
 	return D_030010f4;
 }
 
+
+//
 s32 func_08008f74(void) {
     volatile u32 temp;
     D_0E000003 = 1;
@@ -136,11 +172,15 @@ s32 func_08008f74(void) {
     return func_08008f1c();
 }
 
+
+//
 void func_08008fe0(u8 *arg0, u8 *arg1) {
     *arg0 = D_030010f8;
     *arg1 = D_030010f9;
 }
 
+
+//
 s32 func_08008ff8(u32 arg0) {
     volatile u32 unused;
     D_0E000000 = 0xFF;
@@ -152,6 +192,8 @@ s32 func_08008ff8(u32 arg0) {
     return func_08008f1c();
 }
 
+
+//
 u32 func_08009024(void) {
     u32 i;
     for (i = 0; i < 0x400; i++) {
@@ -163,6 +205,8 @@ u32 func_08009024(void) {
     return 0;
 }
 
+
+//
 s32 func_08009048(u32 arg0, u8 arg1[]) {
     u32 i;
     volatile u32 unused;
@@ -180,6 +224,8 @@ s32 func_08009048(u32 arg0, u8 arg1[]) {
     return func_08008f1c();
 }
 
+
+//
 s32 func_08009090(u32 arg0, u8 arg1[], u32 arg2) {
     u32 temp1 = arg0;
     u32 temp2 = (arg2 + UNK_SIZE_210 - 1) / UNK_SIZE_210;
@@ -195,11 +241,15 @@ s32 func_08009090(u32 arg0, u8 arg1[], u32 arg2) {
     return temp3;
 }
 
+
+//
 void func_080090d0(void) {
     volatile u32 temp;
     for (temp = 0; temp < 200; temp++) {}
 }
 
+
+//
 void func_080090ec(u32 arg0, u8 arg1[], u32 arg2) {
     u32 i;
     
@@ -229,7 +279,9 @@ void func_080090ec(u32 arg0, u8 arg1[], u32 arg2) {
     D_0E000003 = 1;
 }
 
+
 // Possible split
+
 
 void func_08009150(void) {
     D_030010fc = NULL;

@@ -10,7 +10,6 @@
     .set RETRACT_PISTONS,   0x02
     .set SPAWN_ROD,         0x03
     .set PLAY_APPLAUSE_SFX, 0x04
-    .set STUB_EVENT,        0x05
 
     @ Cues
     .set CUE_H_UPSIDE,      0x00
@@ -37,7 +36,7 @@
     load_game polyrhythm_engine, 0
 .endm
 
-@ Load Game: Polyrhythm (Remix 4)
+@ Load Game: Polyrhythm (Remix 4, Remix 6)
 .macro load_polyrhythm_remix
     load_polyrhythm_labels
     load_game polyrhythm_engine, 1
@@ -61,30 +60,25 @@
 
 @ [Event 0x00] Spawn Block
 .macro polyrhythm_spawn_block blockID, lane, blockType
-    polyrhythm_event 0x00, (((\blockID & 0xF)) | ((\lane & 1) << 4) | ((\blockType) << 5))
+    polyrhythm_event SPAWN_BLOCK, (((\blockID & 0xF)) | ((\lane & 1) << 4) | ((\blockType) << 5))
 .endm
 
 @ [Event 0x01] Despawn All Blocks on Lane
 .macro polyrhythm_despawn_blocks lane
-    polyrhythm_event 0x01, \lane
+    polyrhythm_event DESPAWN_BLOCKS, \lane
 .endm
 
 @ [Event 0x02] Retract All Pistons on Lane
 .macro polyrhythm_retract_pistons lane
-    polyrhythm_event 0x02, \lane
+    polyrhythm_event RETRACT_PISTONS, \lane
 .endm
 
 @ [Event 0x03] Spawn Rod on Lane
 .macro polyrhythm_spawn_rod lane
-    polyrhythm_event 0x03, \lane
+    polyrhythm_event SPAWN_ROD, \lane
 .endm
 
 @ [Event 0x04] Play Applause SFX on Successful Pattern
-.macro polyrhythm_play_applause_sfx noArgs
-    polyrhythm_event 0x04, \noArgs
-.endm
-
-@ [Event 0x05] Nothing
-.macro polyrhythm_stub_event noArgs
-    polyrhythm_event 0x05, \noArgs
+.macro polyrhythm_play_applause_sfx
+    polyrhythm_event PLAY_APPLAUSE_SFX, 0
 .endm

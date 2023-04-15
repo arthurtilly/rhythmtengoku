@@ -28,42 +28,42 @@ struct Beatscript {
     u32 param3;
 };
 
-// Game Run Data
+// Scene Data
 struct Scene {
-	void (*initFunc)(void *);
+	void (*initFunc)();
 	void *initParam;
-	u32 (*loopFunc)(void *);
+	u32 (*loopFunc)();
 	void *loopParam;
-	void (*endFunc)(void *);
+	void (*endFunc)();
 	void *endParam;
 	u16 requiredMemory;
 };
 
-// Scene Run Data
+// SubScene Data
 struct SubScene {
-	void (*initFunc)(void *, void *);
-	void *initParam;
-	void (*unkFunc)(void *, void *);
-    void *unkParam;
-	void (*loopFunc)(void *, void *);
-	void *loopParam;
-	void (*endFunc)(void *, void *);
-	void *endParam;
+	void (*startFunc)();
+	s32 startParam;
+	void (*pausedFunc)();
+    s32 pausedParam;
+	void (*updateFunc)();
+	s32 updateParam;
+	void (*stopFunc)();
+	s32 stopParam;
     const struct Beatscript *script;
 };
 
-// Beatscript Thread (Size = 0x9C)
+// Active SubScene
 struct BeatscriptThread {
-    u8 active:1;  // Execution flag (?)
-    u8 stackCounter:4;  // Stack Counter
+    u8 active:1;
+    u8 stackCounter:4;
     u8 startDelay:2;
     u8 unk0_b7:1;
-    const struct SubScene *subScene; // Scene Definition Struct (note: not the Script one that's currently called "Scene")
-    const struct Beatscript *current;  // Current Position
-    s32 timeUntilNext; // Time until next instruction (in Q24.8 Beats)
-    const struct Beatscript *jumpStack[8];  // Stack
+    const struct SubScene *subScene;
+    const struct Beatscript *current;
+    s24_8 timeUntilNext; // Time until next instruction (in Q24.8 Beats)
+    const struct Beatscript *jumpStack[8];
     u8 unk30[0x20];
-    const struct Beatscript *loopStart; // Loop Start
+    const struct Beatscript *loopStart;
     u16 unk54;
     s16 sprites[0x20];
     u16 unk96;

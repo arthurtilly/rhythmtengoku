@@ -21,7 +21,6 @@
     .set EVENT_0D,      0x0D
     .set EVENT_0E,      0x0E
     .set EVENT_0F,      0x0F
-    .set STUB_EVENT,    0x10
 
     @ Cues
     .set CUE_KICK,      0x00
@@ -70,85 +69,80 @@
 
 @ [Event 0x00] ?
 .macro dmi_event00 args
-    drum_intro_event 0x00, \args
+    drum_intro_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro dmi_event01 args
-    drum_intro_event 0x01, \args
+    drum_intro_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro dmi_event02 args
-    drum_intro_event 0x02, \args
+    drum_intro_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro dmi_event03 args
-    drum_intro_event 0x03, \args
+    drum_intro_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro dmi_event04 args
-    drum_intro_event 0x04, \args
+    drum_intro_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro dmi_event05 args
-    drum_intro_event 0x05, \args
+    drum_intro_event EVENT_05, \args
 .endm
 
 @ [Event 0x06] ?
 .macro dmi_event06 args
-    drum_intro_event 0x06, \args
+    drum_intro_event EVENT_06, \args
 .endm
 
 @ [Event 0x07] ?
 .macro dmi_event07 args
-    drum_intro_event 0x07, \args
+    drum_intro_event EVENT_07, \args
 .endm
 
 @ [Event 0x08] ?
 .macro dmi_event08 args
-    drum_intro_event 0x08, \args
+    drum_intro_event EVENT_08, \args
 .endm
 
 @ [Event 0x09] ?
 .macro dmi_event09 args
-    drum_intro_event 0x09, \args
+    drum_intro_event EVENT_09, \args
 .endm
 
 @ [Event 0x0A] ?
 .macro dmi_event0A args
-    drum_intro_event 0x0A, \args
+    drum_intro_event EVENT_0A, \args
 .endm
 
 @ [Event 0x0B] ?
 .macro dmi_event0B args
-    drum_intro_event 0x0B, \args
+    drum_intro_event EVENT_0B, \args
 .endm
 
 @ [Event 0x0C] ?
 .macro dmi_event0C args
-    drum_intro_event 0x0C, \args
+    drum_intro_event EVENT_0C, \args
 .endm
 
 @ [Event 0x0D] ?
 .macro dmi_event0D args
-    drum_intro_event 0x0D, \args
+    drum_intro_event EVENT_0D, \args
 .endm
 
 @ [Event 0x0E] ?
 .macro dmi_event0E args
-    drum_intro_event 0x0E, \args
+    drum_intro_event EVENT_0E, \args
 .endm
 
 @ [Event 0x0F] ?
 .macro dmi_event0F args
-    drum_intro_event 0x0F, \args
-.endm
-
-@ [Event 0x10] Nothing
-.macro dmi_stub_event noArgs
-    drum_intro_event 0x10, \noArgs
+    drum_intro_event EVENT_0F, \args
 .endm

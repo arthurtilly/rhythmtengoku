@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080087b4 \n\
+thumb_func_start start_new_texture_loader \n\
 /* 080087b4 */ PUSH {LR} \n\
 /* 080087b6 */ SUB SP, 0x4 \n\
 /* 080087b8 */ ADDS R2, R1, 0x0 @ Set R2 to R1 + 0x0 \n\

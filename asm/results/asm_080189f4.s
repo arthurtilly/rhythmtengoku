@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_080189f4 \n\
+thumb_func_start results_scene_inputs_enabled \n\
 /* 080189f4 */ PUSH {LR} \n\
 /* 080189f6 */ LDR R0, =D_030046a4 \n\
 /* 080189f8 */ LDR R0, [R0] \n\

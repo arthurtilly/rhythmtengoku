@@ -15,15 +15,14 @@
     .set EVENT_07,      0x07
     .set EVENT_08,      0x08
     .set EVENT_09,      0x09
-    .set STUB_EVENT,    0x0A
 
     @ Cues
-    .set CUE_00,    0x00
-    .set CUE_01,    0x01
-    .set CUE_02,    0x02
-    .set CUE_03,    0x03
-    .set CUE_04,    0x04
-    .set CUE_05,    0x05
+    .set CUE_LIVE_00,    0x00
+    .set CUE_LIVE_01,    0x01
+    .set CUE_LIVE_02,    0x02
+    .set CUE_LIVE_03,    0x03
+    .set CUE_LIVE_04,    0x04
+    .set CUE_LIVE_05,    0x05
 .endm
 
 
@@ -57,55 +56,50 @@
 
 @ [Event 0x00] ?
 .macro dml_event00 args
-    drum_live_event 0x00, \args
+    drum_live_event EVENT_00, \args
 .endm
 
 @ [Event 0x01] ?
 .macro dml_event01 args
-    drum_live_event 0x01, \args
+    drum_live_event EVENT_01, \args
 .endm
 
 @ [Event 0x02] ?
 .macro dml_event02 args
-    drum_live_event 0x02, \args
+    drum_live_event EVENT_02, \args
 .endm
 
 @ [Event 0x03] ?
 .macro dml_event03 args
-    drum_live_event 0x03, \args
+    drum_live_event EVENT_03, \args
 .endm
 
 @ [Event 0x04] ?
 .macro dml_event04 args
-    drum_live_event 0x04, \args
+    drum_live_event EVENT_04, \args
 .endm
 
 @ [Event 0x05] ?
 .macro dml_event05 args
-    drum_live_event 0x05, \args
+    drum_live_event EVENT_05, \args
 .endm
 
 @ [Event 0x06] ?
 .macro dml_event06 args
-    drum_live_event 0x06, \args
+    drum_live_event EVENT_06, \args
 .endm
 
 @ [Event 0x07] ?
 .macro dml_event07 args
-    drum_live_event 0x07, \args
+    drum_live_event EVENT_07, \args
 .endm
 
 @ [Event 0x08] ?
 .macro dml_event08 args
-    drum_live_event 0x08, \args
+    drum_live_event EVENT_08, \args
 .endm
 
 @ [Event 0x09] ?
 .macro dml_event09 args
-    drum_live_event 0x09, \args
-.endm
-
-@ [Event 0x0A] Nothing
-.macro dml_stub_event noArgs
-    drum_live_event 0x0A, \noArgs
+    drum_live_event EVENT_09, \args
 .endm

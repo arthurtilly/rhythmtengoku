@@ -1,0 +1,251 @@
+.include "include/beatscript.inc"
+.include "games/sneaky_spirits/macros.inc"
+
+load_sneaky_spirits_labels
+
+
+
+.section .script.sub
+@ Sneaky Spirits - Subroutines
+
+script sneaky_spirits_sub_08a791a4
+    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 0
+    rest 24
+    sneaky_spirits_show_ghost 1
+    rest 24
+    sneaky_spirits_show_ghost 2
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_show_ghost 3
+    rest 24
+    sneaky_spirits_show_ghost 4
+    rest 24
+    sneaky_spirits_show_ghost 5
+    rest 24
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_STRICT
+    rest 24
+    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_set_ghost_height 256
+    rest 24
+return
+
+
+script sneaky_spirits_sub_08a7933c
+    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 0
+    rest 24
+    sneaky_spirits_show_ghost 1
+    rest 24
+    sneaky_spirits_show_ghost 2
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_show_ghost 3
+    rest 24
+    sneaky_spirits_set_ghost_height 160
+    sneaky_spirits_show_ghost 4
+    rest 24
+    sneaky_spirits_set_ghost_height 80
+    sneaky_spirits_show_ghost 5
+    rest 24
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_NORMAL
+    rest 24
+    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_set_ghost_height 256
+    rest 24
+return
+
+
+script sneaky_spirits_sub_08a7951c
+    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 0
+    rest 24
+    sneaky_spirits_set_ghost_height 192
+    sneaky_spirits_show_ghost 1
+    rest 24
+    sneaky_spirits_set_ghost_height 128
+    sneaky_spirits_show_ghost 2
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_set_ghost_height 80
+    sneaky_spirits_show_ghost 3
+    rest 24
+    sneaky_spirits_set_ghost_height 32
+    sneaky_spirits_show_ghost 4
+    rest 24
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 5
+    rest 24
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_LENIENT
+    rest 24
+    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_set_ghost_height 256
+    rest 24
+return
+
+
+script sneaky_spirits_sub_08a79744
+    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 0
+    rest 24
+    sneaky_spirits_set_ghost_height 160
+    sneaky_spirits_show_ghost 1
+    rest 24
+    sneaky_spirits_set_ghost_height 80
+    sneaky_spirits_show_ghost 2
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 3
+    rest 24
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 4
+    rest 24
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 5
+    rest 24
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_LENIENT
+    rest 24
+    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_set_ghost_height 256
+    rest 24
+return
+
+
+@ Sneaky Spirits 2 - Subroutines
+
+script sneaky_spirits_2_sub_08a7996c
+    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 0
+    rest 24
+    sneaky_spirits_set_ghost_height 32
+    sneaky_spirits_show_ghost 1
+    rest 24
+    sneaky_spirits_set_ghost_height 64
+    sneaky_spirits_show_ghost 2
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_set_ghost_height 112
+    sneaky_spirits_show_ghost 3
+    rest 24
+    sneaky_spirits_set_ghost_height 160
+    sneaky_spirits_show_ghost 4
+    rest 24
+    sneaky_spirits_set_ghost_height 208
+    sneaky_spirits_show_ghost 5
+    rest 24
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_LENIENT
+    rest 24
+    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_set_ghost_height 256
+    rest 24
+return
+
+
+script sneaky_spirits_2_sub_08a79b94
+    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 0
+    rest 24
+    sneaky_spirits_set_ghost_height 64
+    sneaky_spirits_show_ghost 1
+    rest 24
+    sneaky_spirits_set_ghost_height 128
+    sneaky_spirits_show_ghost 2
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_set_ghost_height 160
+    sneaky_spirits_show_ghost 3
+    rest 24
+    sneaky_spirits_set_ghost_height 96
+    sneaky_spirits_show_ghost 4
+    rest 24
+    sneaky_spirits_set_ghost_height 48
+    sneaky_spirits_show_ghost 5
+    rest 24
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_LENIENT
+    rest 24
+    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_set_ghost_height 256
+    rest 24
+return
+
+
+script sneaky_spirits_2_sub_08a79dbc
+    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_set_ghost_height 32
+    sneaky_spirits_show_ghost 0
+    rest 24
+    sneaky_spirits_set_ghost_height 32
+    sneaky_spirits_show_ghost 1
+    rest 24
+    sneaky_spirits_set_ghost_height 16
+    sneaky_spirits_show_ghost 2
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_set_ghost_height 16
+    sneaky_spirits_show_ghost 3
+    rest 24
+    sneaky_spirits_set_ghost_height 80
+    sneaky_spirits_show_ghost 4
+    rest 24
+    sneaky_spirits_set_ghost_height 160
+    sneaky_spirits_show_ghost 5
+    rest 24
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_LENIENT
+    rest 24
+    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_set_ghost_height 256
+    rest 24
+return
+
+
+script sneaky_spirits_2_sub_08a79fe4
+    sneaky_spirits_enable_wind_sfx 1
+    sneaky_spirits_set_ghost_height 32
+    sneaky_spirits_show_ghost 0
+    rest 24
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 1
+    rest 24
+    sneaky_spirits_set_ghost_height 16
+    sneaky_spirits_show_ghost 2
+    rest 24
+    sneaky_spirits_draw_bow 0
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 3
+    rest 24
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 4
+    rest 24
+    sneaky_spirits_set_ghost_height 256
+    sneaky_spirits_show_ghost 5
+    rest 24
+    sneaky_spirits_set_ghost_height 0
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_LENIENT
+    rest 24
+    sneaky_spirits_enable_wind_sfx 0
+    sneaky_spirits_set_ghost_height 256
+    rest 24
+return
+
+.end

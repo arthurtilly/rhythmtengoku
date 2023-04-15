@@ -4,16 +4,17 @@
 
 #define UNK_SIZE_210 0x210
 
-extern void func_08008dcc(s8 arg0[], u32 length);
-extern void func_08008de4(s16 arg0[], u32 length);
-extern void func_08008dfc(s32 arg0[], u32 length);
-extern void func_08008e10(s8 arg0[], u32 length);
-extern void func_08008e40(s16 arg0[], u32 length);
-extern void func_08008e74(s32 arg0[], u32 length);
-extern void func_08008ea4(s16 arg0[], s16 arg1[], u32 arg2);
-extern s32 func_08008ed0(s32 arg0[]);
-extern s32 func_08008eec(s32 arg0[], u32 arg1);
-extern s32 func_08008f04(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
+extern void math_arr_set_natural_int8(s8 arr[], u32 len);
+extern void math_arr_set_natural_int16(s16 arr[], u32 len);
+extern void math_arr_set_natural_int32(s32 arr[], u32 len);
+extern void math_arr_set_shuffled_int8(s8 arr[], u32 len);
+extern void math_arr_set_shuffled_int16(s16 arr[], u32 len);
+extern void math_arr_set_shuffled_int32(s32 arr[], u32 len);
+extern void math_arr_invert_palette(s16 src[], s16 dest[], u32 total);
+extern s32 math_arr_get_scene(s32 arr[]);
+extern s32 math_arr_get_i(s32 arr[], u32 id);
+extern s32 math_lerp(s32 v1, s32 v2, u32 t, u32 total);
+
 extern s32 func_08008f1c(void);
 extern u32 func_08008f68(void);
 extern s32 func_08008f74(void);

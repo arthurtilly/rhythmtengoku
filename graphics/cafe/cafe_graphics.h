@@ -5,10 +5,17 @@
 
 /* CAFE - ANIMATIONS */
 
-extern struct Animation cafe_anim00[];
-extern struct Animation cafe_anim01[];
-extern struct Animation cafe_anim02[];
-extern struct Animation cafe_anim03[];
+extern struct Animation anim_cafe_barista_icon[];
+extern struct Animation anim_cafe_cursor_option1[];
+extern struct Animation anim_cafe_cursor_option2[];
+extern struct Animation anim_cafe_text_adv_icon[];
+
+/* CAFE - COMPRESSED GRAPHICS */
+
+extern struct CompressedGraphics D_08cc0c30;
+extern struct CompressedGraphics D_08cc0cf0;
+extern struct CompressedGraphics D_08cc1158;
+extern struct CompressedGraphics D_08cbf0e8;
 
 /* CAFE - PALETTES */
 

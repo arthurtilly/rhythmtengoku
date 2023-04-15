@@ -195,7 +195,7 @@ branch_0803eb86: \n\
 /* 0803ec2c */ LDRB R1, [R1] \n\
 /* 0803ec2e */ LSLS R1, R1, 0x18 \n\
 /* 0803ec30 */ ASRS R1, R1, 0x18 \n\
-/* 0803ec32 */ BL func_08007468 \n\
+/* 0803ec32 */ BL assign_sprite_affine_param \n\
 /* 0803ec36 */ LDR R0, [R6] \n\
 /* 0803ec38 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 0803ec3a */ LDRB R0, [R0] \n\
@@ -210,7 +210,7 @@ branch_0803eb86: \n\
 /* 0803ec4e */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 0803ec50 */ LSLS R1, R1, 0x1 \n\
 /* 0803ec52 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0803ec54 */ BL func_08007498 \n\
+/* 0803ec54 */ BL set_affine_scale_rotation \n\
 /* 0803ec58 */ LDR R0, [R6] \n\
 /* 0803ec5a */ MOVS R1, 0xDE @ Set R1 to 0xDE \n\
 /* 0803ec5c */ LSLS R1, R1, 0x2 \n\

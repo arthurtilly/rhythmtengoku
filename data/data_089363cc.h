@@ -20,7 +20,7 @@ struct struct_08001f94 {
 };
 
 struct LoadGfxTableTaskInputs {
-    struct GraphicsTable *gfxTable;
+    const struct GraphicsTable *gfxTable;
     u32 limit;
 };
 
@@ -30,8 +30,8 @@ struct GfxTableLoader {
     u16 decodingRLE:1;
     u16 decompressingHuffman:12;
     u32 limit;
-    struct GraphicsTable *gfxTable;
-    void *src;
+    const struct GraphicsTable *gfxTable;
+    const void *src;
     u16 *dest;
     s32 size;
     u32 rleSaveState[8];

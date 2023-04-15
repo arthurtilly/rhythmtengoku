@@ -68,7 +68,7 @@ branch_0803adca: \n\
 /* 0803addc */ LDRB R2, [R2] \n\
 /* 0803adde */ LSLS R2, R2, 0x18 \n\
 /* 0803ade0 */ ASRS R2, R2, 0x18 \n\
-/* 0803ade2 */ BL func_08007498 \n\
+/* 0803ade2 */ BL set_affine_scale_rotation \n\
 /* 0803ade6 */ B branch_0803ae6c \n\
 \n\
 .ltorg \n\
@@ -136,7 +136,7 @@ branch_0803ae50: \n\
 /* 0803ae62 */ LDRB R2, [R2] \n\
 /* 0803ae64 */ LSLS R2, R2, 0x18 \n\
 /* 0803ae66 */ ASRS R2, R2, 0x18 \n\
-/* 0803ae68 */ BL func_08007498 \n\
+/* 0803ae68 */ BL set_affine_scale_rotation \n\
  \n\
 branch_0803ae6c: \n\
 /* 0803ae6c */ LDR R0, =D_030055d0 \n\
@@ -197,7 +197,7 @@ branch_0803aebc: \n\
 /* 0803aed4 */ LSLS R3, R7, 0x18 \n\
 /* 0803aed6 */ ASRS R3, R3, 0x18 \n\
 /* 0803aed8 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\
-/* 0803aeda */ BL func_08007498 \n\
+/* 0803aeda */ BL set_affine_scale_rotation \n\
  \n\
 branch_0803aede: \n\
 /* 0803aede */ POP {R4-R7} \n\

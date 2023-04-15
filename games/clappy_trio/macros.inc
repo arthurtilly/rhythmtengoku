@@ -26,10 +26,22 @@
     load_game clappy_trio_engine, 0
 .endm
 
+@ Load Game: The Clappy Trio (4 Members)
+.macro load_clappy_quartet
+    load_clappy_trio_labels
+    load_game clappy_trio_engine, 1
+.endm
+
 @ Load Game: The Snappy Trio
 .macro load_snappy_trio
     load_clappy_trio_labels
-    load_game clappy_trio_engine, 1
+    load_game clappy_trio_engine, 4
+.endm
+
+@ Load Game: The Snappy Trio (4 Members)
+.macro load_snappy_quartet
+    load_clappy_trio_labels
+    load_game clappy_trio_engine, 5
 .endm
 
 
@@ -43,31 +55,31 @@
 
 
 @ [Event 0x00] Crouch
-.macro clappy_trio_crouch noArgs
-    clappy_trio_event 0x00, \noArgs
+.macro clappy_trio_crouch unkParam
+    clappy_trio_event LIONS_CROUCH, \unkParam
 .endm
 
 @ [Event 0x01] Crouch (Smirk)
-.macro clappy_trio_crouch_smirk noArgs
-    clappy_trio_event 0x01, \noArgs
+.macro clappy_trio_crouch_smirk
+    clappy_trio_event LIONS_CROUCH_SMIRK, 0
 .endm
 
 @ [Event 0x02] Clap
 .macro clappy_trio_do_clap lionID
-    clappy_trio_event 0x02, \lionID
+    clappy_trio_event LION_CLAP, \lionID
 .endm
 
 @ [Event 0x03] Run Grayscale Effect on Next Hit
-.macro clappy_trio_prepare_grayscale_effect noArgs
-    clappy_trio_event 0x03, \noArgs
+.macro clappy_trio_prepare_grayscale_effect args
+    clappy_trio_event GRAYSCALE_ON_NEXT_HIT, \args
 .endm
 
 @ [Event 0x04] Set NPC Clap Volume
 .macro clappy_trio_set_npc_clap_volume volume
-    clappy_trio_event 0x04, \volume
+    clappy_trio_event SET_LION_CLAP_VOLUME, \volume
 .endm
 
 @ [Event 0x05] Hide Textbox
-.macro clappy_trio_hide_textbox noArgs
-    clappy_trio_event 0x05, \noArgs
+.macro clappy_trio_hide_textbox unkParam
+    clappy_trio_event HIDE_TEXTBOX, \unkParam
 .endm

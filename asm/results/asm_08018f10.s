@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08018f10 \n\
+thumb_func_start score_results_scene_start \n\
 /* 08018f10 */ PUSH {R4-R7, LR} \n\
 /* 08018f12 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 08018f14 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -41,13 +41,13 @@ thumb_func_start func_08018f10 \n\
 /* 08018f62 */ LDR R2, =D_030046a4 \n\
 /* 08018f64 */ LDR R1, [R2] \n\
 /* 08018f66 */ STR R0, [R1, 0x4] \n\
-/* 08018f68 */ BL func_08018ef0 \n\
-/* 08018f6c */ BL func_0801a060 \n\
+/* 08018f68 */ BL score_results_scene_init_gfx1 \n\
+/* 08018f6c */ BL results_calculate_final_score \n\
 /* 08018f70 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08018f72 */ LDR R0, =D_03005380 \n\
 /* 08018f74 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08018f76 */ LDR R4, [R0] \n\
-/* 08018f78 */ LDR R5, =D_0890bc00 \n\
+/* 08018f78 */ LDR R5, =anim_score_results_dec_num \n\
 /* 08018f7a */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
 /* 08018f7c */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 08018f7e */ BL __umodsi3 \n\
@@ -71,7 +71,7 @@ thumb_func_start func_08018f10 \n\
 /* 08018fa8 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08018faa */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08018fac */ LDR R4, [R1] \n\
-/* 08018fae */ LDR R2, =D_0890bb68 \n\
+/* 08018fae */ LDR R2, =anim_score_results_num \n\
 /* 08018fb0 */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 08018fb2 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 08018fb4 */ BL __umodsi3 \n\
@@ -141,7 +141,7 @@ branch_0801900a: \n\
 branch_0801903e: \n\
 /* 0801903e */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08019040 */ LDR R0, [R1] \n\
-/* 08019042 */ LDR R1, =D_0890bbf0 \n\
+/* 08019042 */ LDR R1, =anim_score_results_points_label \n\
 /* 08019044 */ MOVS R2, 0x88 @ Set R2 to 0x88 \n\
 /* 08019046 */ STR R2, [SP] \n\
 /* 08019048 */ STR R6, [SP, 0x4] \n\
@@ -155,14 +155,14 @@ branch_0801903e: \n\
 /* 0801905a */ LDR R1, [R0] \n\
 /* 0801905c */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 0801905e */ BNE branch_08019062 \n\
-/* 08019060 */ LDR R1, =D_089d784c \n\
+/* 08019060 */ LDR R1, =score_results_thresholds \n\
  \n\
 branch_08019062: \n\
 /* 08019062 */ LDR R0, =D_03001334 \n\
 /* 08019064 */ LDR R6, [R0] \n\
 /* 08019066 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 08019068 */ BNE branch_0801906c \n\
-/* 0801906a */ LDR R6, =D_089d7838 \n\
+/* 0801906a */ LDR R6, =score_results_comments_text \n\
  \n\
 branch_0801906c: \n\
 /* 0801906c */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\

@@ -19,7 +19,7 @@ const char D_0806aa0c[] = "とても　テクニカルだ！";
 
 const char D_0806aa24[] = "なぞのリズム組織から通達";
 
-const char D_0806aa40[] = "ガンバレ" SHIFT_JIS_WAVE_DASH "！！";
+const char D_0806aa40[] = "ガンバレ～！！";
 
 const char D_0806aa50[] = "がんばるのだー！！";
 
