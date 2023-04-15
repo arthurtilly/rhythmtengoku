@@ -113,14 +113,14 @@ extern struct Animation *sick_beats_doctor_anim[];
 
 
 // Functions:
-extern void func_08042864(void);
-extern void func_08042934(void);
+extern void func_08042864(void); // Init Particles
+extern void func_08042934(void); // Update Particles
 extern void func_0804299c(void);
 extern void func_0804299c(void);
 // extern ? func_080429e8(?);
 extern void func_08042b30(u32);
 extern void func_08042b58(void); // Engine Event 0x06 (?)
-// extern ? func_08042b88(?);
+extern void func_08042b88(void); // Init Counters
 extern void func_08042c84(u32); // Draw Score
 extern void func_08042cec(u32, u32); // Update Score
 extern void func_08042d4c(u32); // Add Score
@@ -131,11 +131,11 @@ extern void func_08042ea8(u32); // Engine Event 0x00 (Set Virus/Virus Action)
 extern void func_08042ecc(struct SickBeatsPath *); // Engine Event 0x01 (Spawn Virus)
 extern void func_08042f44(u32); // Engine Event 0x02 (Set Hits Required)
 extern void func_08042f58(u32); // Engine Event 0x03 (Set Virus Palette)
-extern void func_08042f6c(void);
+extern void func_08042f6c(void); // Init Forks
 extern void func_08043064(void); // Update Forks
 extern void func_08043124(u32);
-extern void func_0804317c(void);
-// extern ? func_080431c4(?);
+extern void func_0804317c(void); // Init Yellow Microbe
+extern void func_080431c4(void); // Update Yellow Microbe
 extern void func_080432d0(u32, u32, u8 *);
 extern void func_080432d8(u32);
 extern void sick_beats_init_gfx3(void); // Graphics Init. 3
@@ -154,7 +154,7 @@ extern void sick_beats_cue_spawn(struct Cue *, struct SickBeatsCue *, u32 unused
 extern u32  sick_beats_cue_update(struct Cue *, struct SickBeatsCue *, u32 runningTime, u32 duration); // Cue - Update
 extern void sick_beats_cue_despawn(struct Cue *, struct SickBeatsCue *); // Cue - Despawn
 extern void func_08043a2c(u32, u32, struct AffineSprite *);
-// extern ? func_08043a38(?);
+extern struct AffineSprite *func_08043a38(struct SickBeatsCue *, struct Animation *, struct SequenceData *);
 extern void sick_beats_cue_hit(struct Cue *, struct SickBeatsCue *, u32 pressed, u32 released); // Cue - Hit
 extern void sick_beats_cue_barely(struct Cue *, struct SickBeatsCue *, u32 pressed, u32 released); // Cue - Barely
 extern void sick_beats_cue_miss(struct Cue *, struct SickBeatsCue *); // Cue - Miss
