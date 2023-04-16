@@ -200,21 +200,8 @@ D_030064d4 = 0x030064d4;
 
 
 /* ROM START */
-/* Karate Man BG Face Map */
-D_08936650 = 0x08936650;
 
-/* Scene Data - Cafe */
-D_089cd4e4 = 0x089cd4e4;
-D_089cd9e8 = 0x089cd9e8;
-scene_cafe = 0x089cda0c;
-/* Scene Data - Data Check */
-D_089cda3c = 0x089cda3c;
-D_089cdab4 = 0x089cdab4;
-D_089cdad8 = 0x089cdad8;
-/* Scene Data - Rhythm Data Room */
-D_089cdb40 = 0x089cdb40;
-D_089cdc00 = 0x089cdc00;
-scene_data_room = 0x089cdc24;
+
 /* Scene Data - Main Menu */
 D_089cdcb8 = 0x089cdcb8;
 D_089cddfc = 0x089cddfc;

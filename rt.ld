@@ -1686,7 +1686,7 @@ SECTIONS {
         build/data/agb_main_data.c.o(.data);
         build/data/math_tables.c.o(.data);
         build/data/data_089363cc.c.o(.data);
-		build/bin/bindata_08936650.bin.o(.rodata*);
+		build/bin/karate_face_maps.bin.o(.rodata*);
         build/data/bitmap_font_data.c.o(.data);
         build/data/data_08936b54.c.o(.data);
         build/data/sine_table.c.o(.data);
@@ -1702,15 +1702,15 @@ SECTIONS {
         build/data/sound_tempo_table.c.o(.data);
 
         build/data/scenes/library/data.c.o(.data);
-        build/data/scenes/library/script.bs.o(.rodata);
+        build/data/scenes/library/script.bs.o(.scene);
         build/data/scenes/cafe/dialogue.c.o(.data);
         build/src/scenes/cafe.c.o(.data);
         build/data/scenes/cafe/scene.c.o(.data);
-        build/bin/scene_cafe.bin.o(.rodata*);
+        build/data/scenes/cafe/script.bs.o(.scene);
         build/data/scenes/debug/data_check.c.o(.data);
-        build/bin/scene_data_check.bin.o(.rodata*);
+        build/data/scenes/debug/data_check.bs.o(.scene);
         build/data/scenes/data_room/data_room.c.o(.data);
-        build/bin/scene_data_room.bin.o(.rodata*);
+        build/data/scenes/data_room/data_room.bs.o(.scene);
         build/data/scenes/main_menu/data.c.o(.data);
         build/bin/scene_main_menu.bin.o(.rodata*);
         build/bin/scene_game_select.bin.o(.rodata*);

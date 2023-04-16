@@ -56,7 +56,7 @@ extern const struct Scene D_089d6534;
 extern const struct Scene scene_space_dance;
 extern const struct Scene scene_cosmic_dance;
 extern const struct Scene scene_showtime;
-extern const struct Scene D_089cdad8;
+extern const struct Scene scene_data_check;
 extern const struct Scene D_089d3a6c;
 extern const struct Scene D_089d3984;
 extern const struct Scene scene_tram_pauline;
@@ -106,7 +106,7 @@ extern const struct Scene scene_results_ver_debug;
 extern const struct Scene scene_results_ver_rank;
 extern const struct Scene scene_results_ver_score;
 extern const struct Scene scene_epilogue;
-extern const struct Scene D_089cd2cc;
+extern const struct Scene scene_arrival;
 extern const struct Scene scene_perfect;
 extern const struct Scene scene_cafe;
 extern const struct Scene scene_endless_menu;
@@ -332,7 +332,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "ƒVƒ‡[ƒ^ƒCƒ€"
     },
     /* RIQ Data Check */ {
-        /* Scene */ &D_089cdad8,
+        /* Scene */ &scene_data_check,
         /* Label */ "‚q‚h‚pƒf[ƒ^ƒ`ƒFƒbƒN"
     },
     /* Opening (B Type) */ {
@@ -532,7 +532,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚q|‚h‚p@iƒŠƒUƒ‹ƒg‚Sj"
     },
     /* R-IQ (Rhythm Library) */ {
-        /* Scene */ &D_089cd2cc,
+        /* Scene */ &scene_arrival,
         /* Label */ "‚q|‚h‚p@i‚É‚ã‚¤‚©j"
     },
     /* R-IQ (Perfect) */ {

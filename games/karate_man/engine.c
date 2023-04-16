@@ -3,7 +3,8 @@
 
   //  //  //  GAME ENGINE DATA  //  //  //
 
-extern u16 D_08936650[]; // BG Map (Face)
+
+extern const u8 karate_face_maps_bin[]; // BG Map (Face)
 
 extern struct CueDefinition *karate_cue_index[];
 
@@ -60,7 +61,7 @@ struct GraphicsTable karate_man_faces_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ D_08936650,
+        /* Src.  */ karate_face_maps_bin,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ 0x500
     },
@@ -145,7 +146,7 @@ struct GraphicsTable karate_man_2_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ D_08936650,
+        /* Src.  */ karate_face_maps_bin,
         /* Dest. */ BG_MAP_BASE(0xE000),
         /* Size  */ 0x500
     },

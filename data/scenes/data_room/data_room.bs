@@ -1,0 +1,43 @@
+.include "include/beatscript.inc"
+
+.section .scene
+
+@ Script
+script script_scene_data_room
+    set_tempo 130
+    set_music_volume 0x100
+    run set_pause_beatscript_scene, TRUE
+    play_music s_siryo_bgm_seqData
+    rest 12
+    run func_08007324, TRUE
+    fade_screen_in 12, BLACK
+    rest 12
+    scene_set_int INT8, 0, TRUE
+    run set_pause_beatscript_scene, TRUE
+
+    scene_set_int INT8, 0, FALSE
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 12
+    rest 12
+    stop
+
+
+@ Local Scene
+struct sub_scene_data_room
+    /* Start  */ .word func_080120e4, 0
+    /* Paused */ .word func_08012214, 0
+    /* Active */ .word func_080122a8, 0
+    /* Stop   */ .word func_080123fc, 0
+    /* Script */ .word script_scene_data_room
+endstruct
+
+@ RIQ data_room Scene
+struct scene_data_room
+    /* Start  */ .word func_0801d86c, sub_scene_data_room
+    /* Update */ .word func_0801d8d8, 0
+    /* Stop   */ .word NULL,          0
+    /* Memory */ .word 0x20
+endstruct
+
+.end
