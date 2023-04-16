@@ -38,7 +38,7 @@ extern struct PauseMenu gPauseMenu;
 
 extern const char D_08059668[];
 extern char D_089dd908[];
-extern FontPalette D_089dd94a[];
+extern FontPalette dev_text_font_pal[];
 extern FontPalette D_089dd962[];
 
 
@@ -60,7 +60,7 @@ extern void func_0801db04(u32 enable); // Enable Pause Menu
 
 struct DebugText {
     struct BitmapFontBG *bgFont;
-    u8 unk4;
+    u8 isPrinted;
     char *string; // 0x400
     u8 bgLayer;
     u8 unkD;
@@ -71,31 +71,31 @@ struct DebugText {
     u16 unk1C;
     u16 unk1E;
     s32 printerTask;
-    u8 null24;
-    u8 unk25;
-    u8 unk26;
-    u8 lineColor;
-    s8 linePalette;
-    u8 unk29;
+    u8 fontCol1;
+    s8 fontPal1;
+    u8 fontPal2Enabled;
+    u8 fontCol2;
+    s8 fontPal2;
+    u8 tilesetIsOutdated;
     u16 baseTile;
-    void *tileDest;
+    void *tileset;
     u8 palette;
-    u8 unk31;
-    u16 unk32; // Keys
+    u8 reachedEndOfString;
+    u16 scrollKeys; // Keys
 };
 
-extern void func_0801db1c(struct DebugText *debugText); // Palette
-extern void func_0801db74(struct DebugText *debugText); // Palette
-extern struct DebugText *func_0801dbe8(u16 memID, u32 layer, u16 *arg2, u32 tilesetNum, u32 baseTileNum, u32 maxTileRows, u32 arg6, u32 arg7);
-extern void func_0801dcb0(struct DebugText *debugText, const char *string); // Print
-extern void func_0801dd58(struct DebugText *debugText); // X Offset
-extern void func_0801de38(struct DebugText *debugText); // Clear Task
-extern void func_0801de6c(struct DebugText *debugText); // Tile/Map
-// extern ? func_0801debc(?);
-// extern ? func_0801dec0(?);
-// extern ? func_0801dec4(?);
-// extern ? func_0801decc(?);
-// extern ? func_0801ded4(?);
+extern void dev_text_update_pal1(struct DebugText *debugText);
+extern void dev_text_update_pal2(struct DebugText *debugText);
+extern struct DebugText *create_new_dev_text(u16 memID, u32 layer, u16 *arg2, u32 tilesetNum, u32 baseTileNum, u32 maxTileRows, u32 palette, u32 fontPal1);
+extern void dev_text_print(struct DebugText *debugText, const char *string);
+extern void update_dev_text(struct DebugText *debugText);
+extern void dev_text_reset_print(struct DebugText *debugText);
+extern void dev_text_reset_tiles(struct DebugText *debugText);
+extern void dev_text_set_scroll_keys(struct DebugText *debugText, u16 keys);
+extern void dev_text_set_exhausted_string_behaviour(struct DebugText *debugText, u32 arg);
+extern u32 dev_text_has_exhausted_string(struct DebugText *debugText);
+extern void dev_text_set_font_pal_2(struct DebugText *debugText, u32 palette);
+extern void dev_text_set_enable_font_pal_2(struct DebugText *debugText, u32 enable);
 
 struct SoftResetSceneInfo {
     u8 state;

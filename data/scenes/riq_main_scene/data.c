@@ -6,29 +6,25 @@
   /* RIQ GLOBAL SCENE - MISC. DATA */
 
 
-// Underscore
-const char D_08059668[] = "ÅQ";
-
-
 // [D_089dd908] ?
 char D_089dd908[] = "ÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQ";
 
 
 // [D_089dd94a] Font Palettes
-FontPalette D_089dd94a[] = {
-    /* PALETTE 00 */ {
+FontPalette dev_text_font_pal[] = {
+    /* PALETTE 00 (White) */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x808080),
         /* 02 */ TO_RGB555(0xC0C0C0),
         /* 03 */ TO_RGB555(0xF8F8F8)
     },
-    /* PALETTE 01 */ {
+    /* PALETTE 01 (Gold) */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x806800),
         /* 02 */ TO_RGB555(0xC0A800),
         /* 03 */ TO_RGB555(0xF8E000)
     },
-    /* PALETTE 02 */ {
+    /* PALETTE 02 (Blue) */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x007080),
         /* 02 */ TO_RGB555(0x2090C0),

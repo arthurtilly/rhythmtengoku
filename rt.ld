@@ -294,6 +294,7 @@ SECTIONS {
         build/data/scenes/data_room/reading.c.o(.rodata);
         build/data/scenes/studio/data.c.o(.rodata);
         build/data/scenes/medal_corner/data.c.o(.rodata);
+		build/src/scenes/riq_main_scene.c.o(.rodata);
         build/data/scenes/riq_main_scene/data.c.o(.rodata);
         build/data/scenes/debug/data.c.o(.rodata);
 

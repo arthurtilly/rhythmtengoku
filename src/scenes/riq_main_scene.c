@@ -212,32 +212,249 @@ void func_0801db04(u32 enable) {
 }
 
 
-// ??? (debug related?)
+// Debug Text..? (Unused)
 
 
-#include "asm/script/asm_0801db1c.s"
+extern struct BitmapFontData bitmap_font_warioware_body[];
+extern char D_089dd908[]; // "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
+extern FontPalette dev_text_font_pal[];
 
-#include "asm/script/asm_0801db74.s"
 
-#include "asm/script/asm_0801dbe8.s"
+// Update Font Palette 1.
+void dev_text_update_pal1(struct DebugText *debugText) {
+    u16 *address;
+    u32 lineColor;
+    u32 i;
 
-#include "asm/script/asm_0801dcb0.s"
+    if (debugText->fontPal1 < 0) {
+        return;
+    }
 
-#include "asm/script/asm_0801dd58.s"
+    debugText->fontCol1++;
+    if (debugText->fontCol1 >= 12) {
+        debugText->fontCol1 = 0;
+    }
 
-#include "asm/script/asm_0801de38.s"
+    lineColor = debugText->fontCol1 / 4;
+    address = &D_03004b10.bgPalette[debugText->fontPal1][8];
 
-#include "asm/script/asm_0801de6c.s"
+    for (i = 0; i < 4; i++) {
+        address[i] = dev_text_font_pal[lineColor][i];
+    }
+}
 
-#include "asm/script/asm_0801debc.s"
 
-#include "asm/script/asm_0801dec0.s"
+// Update Font Palette 2.
+void dev_text_update_pal2(struct DebugText *debugText) {
+    u16 *address;
+    u32 lineColor;
+    u32 i;
 
-#include "asm/script/asm_0801dec4.s"
+    if (debugText->fontPal2 < 0) {
+        return;
+    }
 
-#include "asm/script/asm_0801decc.s"
+    address = &D_03004b10.bgPalette[debugText->fontPal2][8];
 
-#include "asm/script/asm_0801ded4.s"
+    if (debugText->fontPal2Enabled) {
+        debugText->fontCol2++;
+        if (debugText->fontCol2 >= 12) {
+            debugText->fontCol2 = 0;
+        }
+
+        lineColor = debugText->fontCol2 / 4;
+        for (i = 0; i < 4; i++) {
+            address[i] = D_089dd962[lineColor][i];
+        }
+    } else {
+        for (i = 0; i < 4; i++) {
+            address[i] = 0;
+        }
+    }
+}
+
+
+// Create new DebugText object.
+struct DebugText *create_new_dev_text(u16 memID, u32 layer, u16 *arg2, u32 tilesetNum, u32 baseTileNum, u32 maxTileRows, u32 palette, u32 fontPal1) {
+    struct DebugText *debugText;
+    void *tilesetAddress;
+
+    debugText = mem_heap_alloc_id(memID, sizeof(struct DebugText));
+    debugText->bgFont = create_new_bmp_font_bg(memID, bitmap_font_warioware_body, tilesetNum, baseTileNum, maxTileRows);
+    debugText->bgLayer = layer;
+    debugText->cursorMap = arg2;
+    debugText->string = mem_heap_alloc_id(memID, 0x400);
+    debugText->isPrinted = FALSE;
+    debugText->textMap = mem_heap_alloc_id(memID, 0x1000);
+    debugText->printerTask = -1;
+    debugText->palette = palette;
+    debugText->fontPal1 = fontPal1;
+    debugText->fontPal2 = -1;
+    debugText->fontPal2Enabled = FALSE;
+    debugText->fontCol2 = 0;
+    debugText->unkD = TRUE;
+    debugText->reachedEndOfString = FALSE;
+    debugText->tilesetIsOutdated = FALSE;
+    debugText->baseTile = baseTileNum;
+    tilesetAddress = BG_TILESET_BASE(tilesetNum * 0x4000);
+    debugText->tileset = tilesetAddress + (baseTileNum * 0x20);
+    debugText->scrollKeys = (LEFT_SHOULDER_BUTTON | RIGHT_SHOULDER_BUTTON);
+
+    return debugText;
+}
+
+
+// Print DebugText object.
+void dev_text_print(struct DebugText *debugText, const char *string) {
+    u16 *bgMap;
+    u32 t1, t2;
+    u32 i;
+
+    dev_text_reset_print(debugText);
+    func_0800eebc(debugText->string, string);
+    strcat(debugText->string, D_089dd908);
+    debugText->totalChars = bmp_font_bg_get_total_printable_chars(debugText->string);
+    debugText->xOffset = -1;
+
+    bgMap = debugText->cursorMap;
+    bmp_font_bg_print_text(debugText->bgFont, bgMap, 32, "Q", debugText->palette);
+    t1 = bgMap[0];
+    t2 = bgMap[32];
+    bgMap++;
+    for (i = 0; i < 31; i++) {
+        bgMap[i] = t1;
+        bgMap[i+32] = t2;
+    }
+
+    debugText->printerTask = start_bmp_font_bg_printer_task(get_current_mem_id(), debugText->bgFont, debugText->textMap, 0x200, debugText->string, debugText->palette, 1);
+    debugText->unk1C = 0;
+    debugText->unk1E = 30;
+    debugText->reachedEndOfString = FALSE;
+    debugText->isPrinted = TRUE;
+}
+
+
+// Update DebugText object.
+void update_dev_text(struct DebugText *debugText) {
+    u16 offset;
+    s16 x;
+
+    if (debugText->tilesetIsOutdated) {
+        return;
+    }
+
+    if (debugText->isPrinted) {
+        offset = debugText->xOffset;
+
+        if ((offset & 7) == 0) {
+            u16 *r2 = &debugText->textMap[debugText->unk1C];
+            u16 *r1 = &debugText->cursorMap[debugText->unk1E];
+
+            *r1 = *r2;
+
+            r1 += 0x20;
+            r2 += 0x200;
+            *r1 = *r2;
+
+            debugText->unk1C++;
+            if (debugText->unk1C >= debugText->totalChars) {
+                if (debugText->unkD) {
+                    debugText->unk1C = 0;
+                } else {
+                    debugText->unk1C--;
+                }
+                debugText->reachedEndOfString = TRUE;
+            }
+
+            debugText->unk1E++;
+            if (debugText->unk1E >= 32) {
+                debugText->unk1E = 0;
+            }
+        }
+
+        offset++;
+        if (D_03004ac0 & debugText->scrollKeys) {
+            if (offset & 7) {
+                offset++;
+            }
+            if (offset & 7) {
+                offset++;
+            }
+            if (offset & 7) {
+                offset++;
+            }
+        }
+
+        debugText->xOffset = offset;
+        dev_text_update_pal1(debugText);
+        dev_text_update_pal2(debugText);
+    }
+
+    x = (debugText->isPrinted) ? debugText->xOffset : 0;
+    D_03004b10.BG_OFS[debugText->bgLayer].x = x;
+}
+
+
+// Reset text/print data.
+void dev_text_reset_print(struct DebugText *debugText) {
+    if (!debugText->isPrinted) {
+        return;
+    }
+
+    if (get_task_state(debugText->printerTask)) {
+        force_stop_task(debugText->printerTask);
+    }
+
+    bmp_font_bg_clear_print_data(debugText->bgFont);
+    debugText->isPrinted = FALSE;
+    debugText->tilesetIsOutdated = TRUE;
+}
+
+
+// Refresh tileset.
+void dev_text_reset_tiles(struct DebugText *debugText) {
+    u32 tile;
+
+    if (!debugText->tilesetIsOutdated) {
+        return;
+    }
+
+    debugText->tilesetIsOutdated = FALSE;
+    dma3_fill(0x88888888, debugText->tileset, 0x20, 0x20, 0x100);
+
+    tile = debugText->baseTile + (debugText->palette << 12);
+    dma3_fill(tile | (tile << 16), debugText->cursorMap, 0x80, 0x20, 0x100);
+}
+
+
+// Set input keys for scrolling.
+void dev_text_set_scroll_keys(struct DebugText *debugText, u16 keys) {
+    debugText->scrollKeys = keys;
+}
+
+
+// Set behaviour for when the end of the string has been reached.
+void dev_text_set_exhausted_string_behaviour(struct DebugText *debugText, u32 arg) {
+    debugText->unkD = arg;
+}
+
+
+// Check if the end of the string has been reached.
+u32 dev_text_has_exhausted_string(struct DebugText *debugText) {
+    return debugText->reachedEndOfString;
+}
+
+
+// Set FontPal2 ID.
+void dev_text_set_font_pal_2(struct DebugText *debugText, u32 palette) {
+    debugText->fontPal2 = palette;
+}
+
+
+// Enable FontPal2 (disabling will instead clear the palette).
+void dev_text_set_enable_font_pal_2(struct DebugText *debugText, u32 enable) {
+    debugText->fontPal2Enabled = enable;
+}
 
 
 
