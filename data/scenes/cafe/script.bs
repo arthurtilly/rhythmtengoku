@@ -5,7 +5,7 @@
 @ Script
 script script_scene_cafe
     set_tempo 118
-    run set_pause_beatscript_scene, TRUE
+    pause_scene
     rest 24
     play_music s_counseling_bgm_seqData
     run func_08007324, TRUE
@@ -16,11 +16,11 @@ script script_scene_cafe
     scene_set_int INT8, 0, TRUE
 
     loop_start
-        run cafe_print_dialogue, 0
+        run cafe_print_dialogue
         switch FUNC, cafe_get_dialogue_hold_time
             case 0
                 rest 12
-                run cafe_start_dialogue_inputs, 0
+                run cafe_start_dialogue_inputs
                 break
             case 8
                 rest 24
@@ -41,7 +41,7 @@ script script_scene_cafe
                 break
         end_switch
 
-        run cafe_clear_dialogue, 0
+        run cafe_clear_dialogue
         switch FUNC, cafe_get_bg_event
             case 1
                 play_sfx s_hakushu_solo_seqData

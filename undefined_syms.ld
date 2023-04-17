@@ -202,22 +202,6 @@ D_030064d4 = 0x030064d4;
 /* ROM START */
 
 
-/* Scene Data - Main Menu */
-D_089cdcb8 = 0x089cdcb8;
-D_089cddfc = 0x089cddfc;
-scene_main_menu = 0x089cde20;
-/* Scene Data - Game Select */
-D_089cde3c = 0x089cde3c;
-D_089cdee4 = 0x089cdee4;
-scene_game_select = 0x089cdf08;
-/* Scene Data - Options Menu */
-D_089cfb2c = 0x089cfb2c;
-D_089cfbf8 = 0x089cfbf8;
-scene_options_menu = 0x089cfc1c;
-/* Scene Data - Perfect Campaign Certificate */
-D_089cfca0 = 0x089cfca0;
-D_089cfd3c = 0x089cfd3c;
-scene_perfect = 0x089cfd60;
 /* Scene Data - Main Gameplay */
 D_089cfdf8 = 0x089cfdf8;
 D_089cfeac = 0x089cfeac;
@@ -597,6 +581,7 @@ D_089d7408 = 0x089d7408;
 D_089d7424 = 0x089d7424;
 D_089d74d8 = 0x089d74d8;
 D_089d74fc = 0x089d74fc;
+
 /* Scene Data - Results (Debug-Type) */
 D_089d7580 = 0x089d7580;
 D_089d7610 = 0x089d7610;

@@ -5,7 +5,7 @@
 @ Script
 script script_scene_arrival
     set_tempo 120
-    run set_pause_beatscript_scene, TRUE
+    pause_scene
 
     run func_08007324, TRUE
     fade_screen_in 12, WHITE
@@ -13,7 +13,7 @@ script script_scene_arrival
     rest 72
     run func_08010788, 0
     scene_set_int INT8, 0, TRUE
-    run set_pause_beatscript_scene, TRUE
+    pause_scene
 
     scene_set_int INT8, 0, FALSE
     fade_music_out TO_TEMPO, 48

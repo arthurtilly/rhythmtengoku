@@ -496,7 +496,7 @@ void scene_play_music_with_soundplayer(struct SequenceData *music, s32 soundPlay
 
 
 // Play Music (override, use predefined SoundPlayer ID)
-void scene_play_music_ignore_lfo(struct SequenceData *music) {
+void scene_set_music_player_by_sound(struct SequenceData *music) {
     struct SoundPlayer *player;
 
     player = get_soundplayer_by_sound(music);

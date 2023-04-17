@@ -122,13 +122,13 @@ endstruct
 
 
 @ [0x02] (Scene) Run Function
-.macro scene_run function, arg
+.macro scene_run function, arg=0
     beatscript_cmd 0x02, 0, \function, \arg
 .endm
 
 
 @ [0x03] Run Function (1 Argument)
-.macro run function, arg
+.macro run function, arg=0
     beatscript_cmd 0x03, 0, \function, \arg
 .endm
 
@@ -311,7 +311,7 @@ endstruct
 
 
 @ [0x28] Play Music
-.macro play_music_in player, music
+.macro play_music_in player=DEFAULT_SOUND_PLAYER, music
     beatscript_cmd 0x28, 0, \player, \music
 .endm
 

@@ -26,6 +26,17 @@
 .endm
 
 
+@ [SCENE] Pause Scene
+.macro pause_scene
+    run set_pause_beatscript_scene, TRUE
+.endm
+
+@ [SCENE] Unpause Scene
+.macro unpause_scene
+    run set_pause_beatscript_scene, FALSE
+.endm
+
+
 @ [SCENE] Get Random Value
 .macro get_random range
     run agb_random, \range
@@ -59,7 +70,7 @@
 .endm
 
 .macro clear_text_s
-    print_text_s 0
+    print_text_s NULL
 .endm
 
 
@@ -95,7 +106,7 @@
 
 @ [RIQ] Start Perfect Campaign
 .macro start_perfect_campaign
-    run gameplay_start_perfect_campaign, 0
+    run gameplay_start_perfect_campaign
 .endm
 
 
@@ -112,20 +123,20 @@
 
 
 @ [RIQ] Run Game Engine Event
-.macro game_event engine, event, args
+.macro game_event engine, event, args=0
     run gameplay_set_engine_event_param, \args
     run2 gameplay_run_engine_event, \event, \engine
 .endm
 
 
 @ [RIQ] Run Game Common Event
-.macro common_event event, arg
+.macro common_event event, arg=0
     run2 gameplay_run_common_event, \event, \arg
 .endm
 
 @ Play Beat Animations
 .macro beat_anim
-    common_event 0, 0
+    common_event 0
 .endm
 
 @ Print Special Text/Sprite
@@ -143,7 +154,7 @@
 .endm
 
 .macro stop_tutorial
-    init_tutorial 0
+    init_tutorial NULL
 .endm
 
 

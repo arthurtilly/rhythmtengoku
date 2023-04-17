@@ -54,7 +54,7 @@ extern void scene_set_music(struct SequenceData *); // Play Music (Override)
 extern void scene_play_music(struct SequenceData *); // Play Music (No Override)
 extern void scene_set_music_with_soundplayer(struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (Override)
 extern void scene_play_music_with_soundplayer(struct SequenceData *, s32 soundPlayer); // Play Music in Given SoundPlayer (No Override)
-extern void scene_play_music_ignore_lfo(struct SequenceData *); // Play Music (override, use predefined SoundPlayer ID)
+extern void scene_set_music_player_by_sound(struct SequenceData *); // Play Music (override, use predefined SoundPlayer ID)
 extern void scene_stop_music(void); // Stop Music
 extern void scene_fade_in_music(u16 duration); // Fade-In Music
 extern void scene_fade_out_music(u16 duration); // Fade-Out Music

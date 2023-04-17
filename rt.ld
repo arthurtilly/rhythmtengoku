@@ -1712,16 +1712,16 @@ SECTIONS {
         build/data/scenes/data_room/data_room.c.o(.data);
         build/data/scenes/data_room/data_room.bs.o(.scene);
         build/data/scenes/main_menu/data.c.o(.data);
-        build/bin/scene_main_menu.bin.o(.rodata*);
-        build/bin/scene_game_select.bin.o(.rodata*);
+        build/data/scenes/main_menu/scene.bs.o(.scene);
+        build/data/scenes/game_select/scene.bs.o(.scene);
         build/data/scenes/game_select/campaigns.c.o(.data);
         build/data/scenes/game_select/level_grid.c.o(.data);
         build/data/scenes/game_select/scene.c.o(.data);
         build/data/scenes/game_select/overlays.c.o(.data);
         build/data/scenes/options/data.c.o(.data);
-        build/bin/scene_options.bin.o(.rodata*);
+        build/data/scenes/options/scene.bs.o(.scene);
         build/data/scenes/perfect/data.c.o(.data);
-        build/bin/scene_perfect.bin.o(.rodata*);
+        build/data/scenes/perfect/scene.bs.o(.scene);
         build/data/scenes/gameplay/data.c.o(.data);
 
         build/games/karate_man/karate_man.bs.o(.script.entry);
