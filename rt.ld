@@ -1721,7 +1721,7 @@ SECTIONS {
         build/data/scenes/gameplay/data.c.o(.data);
 
         build/games/karate_man/karate_man.bs.o(.script.entry);
-        build/bin/bindata_089cffc8.bin.o(.rodata*);
+        build/games/clappy_trio/snappy_trio_unused.bs.o(.script.entry);
         build/games/clappy_trio/clappy_trio.bs.o(.script.entry);
         build/games/polyrhythm/polyrhythm.bs.o(.script.entry);
         build/games/polyrhythm/polyrhythm_2.bs.o(.script.entry);
@@ -1946,7 +1946,7 @@ SECTIONS {
         build/games/wizards_waltz/wizards_waltz.bs.o(.script.prologue);
 
         build/games/karate_man/karate_man.bs.o(.script.main);
-        build/bin/bindata_089ef8cc.bin.o(.rodata*);
+        build/games/clappy_trio/snappy_trio_unused.bs.o(.script.main);
         build/games/clappy_trio/clappy_trio.bs.o(.script.main);
         build/games/polyrhythm/polyrhythm.bs.o(.script.main);
         build/games/polyrhythm/polyrhythm_2.bs.o(.script.main);
