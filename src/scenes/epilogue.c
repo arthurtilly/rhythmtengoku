@@ -130,7 +130,7 @@ void epilogue_scene_update(void *sceneVar, s32 dataArg) {
     if (epilogue_scene_script_is_ready()) {
         if (D_03004afc & A_BUTTON) {
             set_pause_beatscript_scene(FALSE);
-            play_sound_w_pitch_volume(&s_menu_se20_seqData, 0x80, 0);
+            play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), 0);
             gEpilogueInfo->scriptIsReady = FALSE;
         }
     }

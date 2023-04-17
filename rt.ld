@@ -1792,15 +1792,15 @@ SECTIONS {
         build/games/remix_8/remix_8.bs.o(.script.entry);
 
         build/data/scenes/results/debug_results.c.o(.data);
-        build/bin/scene_debug_results.bin.o(.rodata*);
+        build/data/scenes/results/debug_scene.bs.o(.scene);
         build/data/scenes/results/rank_results.c.o(.data);
-        build/bin/scene_rank_results.bin.o(.rodata*);
+        build/data/scenes/results/rank_scene.bs.o(.scene);
         build/data/scenes/results/score_results.c.o(.data);
-        build/bin/scene_score_results.bin.o(.rodata*);
+        build/data/scenes/results/score_scene.bs.o(.scene);
         build/data/scenes/results/data.c.o(.data);
         build/src/scenes/results.c.o(.data);
         build/data/scenes/epilogue/data.c.o(.data);
-        build/bin/scene_epilogue.bin.o(.rodata*);
+        build/data/scenes/epilogue/scene.bs.o(.scene);
         build/data/scenes/data_room/reading.c.o(.data);
         build/bin/scene_reading.bin.o(.rodata*);
         build/data/scenes/data_room/read_error.c.o(.data);

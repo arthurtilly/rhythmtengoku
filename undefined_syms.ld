@@ -582,22 +582,6 @@ D_089d7424 = 0x089d7424;
 D_089d74d8 = 0x089d74d8;
 D_089d74fc = 0x089d74fc;
 
-/* Scene Data - Results (Debug-Type) */
-D_089d7580 = 0x089d7580;
-D_089d7610 = 0x089d7610;
-scene_results_ver_debug = 0x089d7634;
-/* Scene Data - Results (Rank-Type) */
-D_089d76a0 = 0x089d76a0;
-D_089d77c0 = 0x089d77c0;
-scene_results_ver_rank = 0x089d77e4;
-/* Scene Data - Results (Score-Type) */
-D_089d7868 = 0x089d7868;
-D_089d7940 = 0x089d7940;
-scene_results_ver_score = 0x089d7964;
-/* Scene Data - Epilogue */
-D_089d7b70 = 0x089d7b70;
-D_089d7bf4 = 0x089d7bf4;
-scene_epilogue = 0x089d7c18;
 /* Scene Data - Reading Material */
 D_089d7ff8 = 0x089d7ff8;
 D_089d80ac = 0x089d80ac;
