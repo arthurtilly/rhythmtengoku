@@ -1,25 +1,25 @@
 // do not rename these
 
 // [D_088f673c]
-AnimationCel concert_hall_cel000[] = {
+AnimationCel drum_live_menu_cel000[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x011f
 };
 
 // [D_088f6744]
-AnimationCel concert_hall_cel001[] = {
+AnimationCel drum_live_menu_cel001[] = {
     /* Len */ 1,
     /* 000 */ 0x00b8, 0x41f8, 0x0151
 };
 
 // [D_088f674c]
-AnimationCel concert_hall_cel002[] = {
+AnimationCel drum_live_menu_cel002[] = {
     /* Len */ 1,
     /* 000 */ 0x0038, 0x61f8, 0x0151
 };
 
 // [D_088f6754]
-AnimationCel concert_hall_cel003[] = {
+AnimationCel drum_live_menu_cel003[] = {
     /* Len */ 4,
     /* 000 */ 0x40f0, 0x8190, 0x0115,
     /* 001 */ 0x40f0, 0x81b0, 0x0119,
@@ -28,7 +28,7 @@ AnimationCel concert_hall_cel003[] = {
 };
 
 // [D_088f676e]
-AnimationCel concert_hall_cel004[] = {
+AnimationCel drum_live_menu_cel004[] = {
     /* Len */ 5,
     /* 000 */ 0x0000, 0xc000, 0x0010,
     /* 001 */ 0x8000, 0x4040, 0x010f,
@@ -38,7 +38,7 @@ AnimationCel concert_hall_cel004[] = {
 };
 
 // [D_088f678e]
-AnimationCel concert_hall_cel005[] = {
+AnimationCel drum_live_menu_cel005[] = {
     /* Len */ 5,
     /* 000 */ 0x0000, 0xc000, 0x3000,
     /* 001 */ 0x8000, 0x4040, 0x310a,
@@ -48,7 +48,7 @@ AnimationCel concert_hall_cel005[] = {
 };
 
 // [D_088f67ae]
-AnimationCel concert_hall_cel006[] = {
+AnimationCel drum_live_menu_cel006[] = {
     /* Len */ 5,
     /* 000 */ 0x0000, 0xc000, 0x0008,
     /* 001 */ 0x8000, 0x4040, 0x010d,

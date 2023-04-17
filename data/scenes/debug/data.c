@@ -6,7 +6,7 @@
   /* DEBUG MENU - MISC. DATA */
 
 
-extern const struct Scene scene_concert_hall;
+extern const struct Scene scene_drum_live;
 extern const struct Scene D_089d6c8c;
 extern const struct Scene D_089d6ba4;
 extern const struct Scene D_089d69e0;
@@ -131,8 +131,8 @@ const char D_08059684[] = "ÇPÅ^ÇP";
 
 // [D_089ddbe8] Debug Menu Table
 struct DebugMenuEntry debug_menu_entry_table[] = {
-    /* LIVE */ {
-        /* Scene */ &scene_concert_hall,
+    /* Drum LIVE */ {
+        /* Scene */ &scene_drum_live,
         /* Label */ "ÉâÉCÉu"
     },
     /* Sick Beats Endless */ {

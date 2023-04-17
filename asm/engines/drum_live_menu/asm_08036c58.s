@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start concert_hall_engine_start \n\
+thumb_func_start drum_live_menu_engine_start \n\
 /* 08036c58 */ PUSH {R4-R7, LR} \n\
 /* 08036c5a */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 08036c5c */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -13,7 +13,7 @@ thumb_func_start concert_hall_engine_start \n\
 /* 08036c66 */ LDR R1, [R5] \n\
 /* 08036c68 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08036c6a */ STRB R0, [R1] \n\
-/* 08036c6c */ BL concert_hall_init_gfx1 \n\
+/* 08036c6c */ BL drum_live_menu_init_gfx1 \n\
 /* 08036c70 */ BL scene_show_obj_layer \n\
 /* 08036c74 */ STR R4, [SP] \n\
 /* 08036c76 */ MOVS R0, 0x1D @ Set R0 to 0x1D \n\
@@ -79,7 +79,7 @@ branch_08036cf2: \n\
 /* 08036d02 */ STR R5, [SP, 0x8] \n\
 /* 08036d04 */ STR R5, [SP, 0xC] \n\
 /* 08036d06 */ STR R5, [SP, 0x10] \n\
-/* 08036d08 */ LDR R1, =anim_concert_hall_poster \n\
+/* 08036d08 */ LDR R1, =anim_drum_live_menu_poster \n\
 /* 08036d0a */ MOVS R3, 0x8 @ Set R3 to 0x8 \n\
 /* 08036d0c */ BL func_0804d160 \n\
 /* 08036d10 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
@@ -97,7 +97,7 @@ branch_08036cf2: \n\
 /* 08036d2a */ BLS branch_08036cf2 \n\
 /* 08036d2c */ LDR R5, =D_03005380 \n\
 /* 08036d2e */ LDR R0, [R5] \n\
-/* 08036d30 */ LDR R1, =anim_concert_hall_arrow_up \n\
+/* 08036d30 */ LDR R1, =anim_drum_live_menu_arrow_up \n\
 /* 08036d32 */ MOVS R7, 0x50 @ Set R7 to 0x50 \n\
 /* 08036d34 */ STR R7, [SP] \n\
 /* 08036d36 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
@@ -120,7 +120,7 @@ branch_08036cf2: \n\
 /* 08036d5a */ LDR R1, [R4] \n\
 /* 08036d5c */ STRH R0, [R1, 0x16] \n\
 /* 08036d5e */ LDR R0, [R5] \n\
-/* 08036d60 */ LDR R1, =anim_concert_hall_arrow_down \n\
+/* 08036d60 */ LDR R1, =anim_drum_live_menu_arrow_down \n\
 /* 08036d62 */ STR R7, [SP] \n\
 /* 08036d64 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08036d66 */ STR R2, [SP, 0x4] \n\
@@ -148,7 +148,7 @@ branch_08036cf2: \n\
 /* 08036d96 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08036d98 */ BL func_0804db44 \n\
 /* 08036d9c */ LDR R0, [R5] \n\
-/* 08036d9e */ LDR R1, =anim_concert_hall_start_icon \n\
+/* 08036d9e */ LDR R1, =anim_drum_live_menu_start_icon \n\
 /* 08036da0 */ MOVS R2, 0xA0 @ Set R2 to 0xA0 \n\
 /* 08036da2 */ STR R2, [SP] \n\
 /* 08036da4 */ MOV R2, R10 @ Set R2 to R10 \n\

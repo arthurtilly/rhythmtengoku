@@ -1,28 +1,28 @@
-#include "engines/concert_hall.h"
+#include "engines/drum_live_menu.h"
 
 
   //  //  //  GRAPHICS DATA  //  //  //
 
 
 // [D_089e5c40] Buffered Textures List
-struct CompressedGraphics *concert_hall_buffered_textures[] = {
+struct CompressedGraphics *drum_live_menu_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e5c44] Graphics Table
-struct GraphicsTable concert_hall_gfx_table[] = {
+struct GraphicsTable drum_live_menu_gfx_table[] = {
     /* OBJ Tileset */ {
         /* Src.  */ &D_08c79bb0,
         /* Dest. */ OBJ_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ concert_hall_pal,
+        /* Src.  */ drum_live_menu_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ concert_hall_pal,
+        /* Src.  */ drum_live_menu_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -30,7 +30,7 @@ struct GraphicsTable concert_hall_gfx_table[] = {
 };
 
 // [D_089e5c74] Poster Descriptions
-const char *concert_hall_poster_desc[] = {
+const char *drum_live_menu_poster_desc[] = {
     /* DRUM GIRLS */
     "\x03\x31" "\x01\x6d" "\x05\x30" "\x01\x34" "Drum Girls LIVE!\n"
     "\n"
@@ -62,7 +62,7 @@ const char *concert_hall_poster_desc[] = {
 
 
 // [D_089e5c80] Cue 00 (Default)
-struct CueDefinition concert_hall_cue_default = {
+struct CueDefinition drum_live_menu_cue_default = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -71,13 +71,13 @@ struct CueDefinition concert_hall_cue_default = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ 0x4,
-    /* Func. Spawn     */ concert_hall_cue_spawn,
+    /* Func. Spawn     */ drum_live_menu_cue_spawn,
     /* Spawn Parameter */ 0,
-    /* Func. Update    */ concert_hall_cue_update,
-    /* Func. Despawn   */ concert_hall_cue_despawn,
-    /* Func. Hit       */ concert_hall_cue_hit,
-    /* Func. Barely    */ concert_hall_cue_barely,
-    /* Func. Miss      */ concert_hall_cue_miss,
+    /* Func. Update    */ drum_live_menu_cue_update,
+    /* Func. Despawn   */ drum_live_menu_cue_despawn,
+    /* Func. Hit       */ drum_live_menu_cue_hit,
+    /* Func. Barely    */ drum_live_menu_cue_barely,
+    /* Func. Miss      */ drum_live_menu_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -86,8 +86,8 @@ struct CueDefinition concert_hall_cue_default = {
 };
 
 // [D_089e5cc0] Cue Definition Index
-struct CueDefinition *concert_hall_cue_index[] = {
-    /* 0x00 */ &concert_hall_cue_default,
+struct CueDefinition *drum_live_menu_cue_index[] = {
+    /* 0x00 */ &drum_live_menu_cue_default,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
     /* 0x03 */ NULL,
@@ -107,27 +107,27 @@ struct CueDefinition *concert_hall_cue_index[] = {
 
 
 // [D_089e5cf4] Common Events
-EngineEvent concert_hall_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) concert_hall_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) concert_hall_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) concert_hall_common_init_tutorial,
+EngineEvent drum_live_menu_common_events[] = {
+    /* BEAT_ANIMATION */ (EngineEvent) drum_live_menu_common_beat_animation,
+    /* DISPLAY_TEXT   */ (EngineEvent) drum_live_menu_common_display_text,
+    /* INIT_TUTORIAL  */ (EngineEvent) drum_live_menu_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e5d04] Engine Events
-EngineEvent concert_hall_engine_events[] = {
+EngineEvent drum_live_menu_engine_events[] = {
     /* 0x00 */ (EngineEvent) func_08036f94,
-    /* 0x01 */ (EngineEvent) concert_hall_engine_event_stub
+    /* 0x01 */ (EngineEvent) drum_live_menu_engine_event_stub
 };
 
 // [D_089e5d0c] LIVE Menu Game Engine
-struct GameEngine concert_hall_engine = {
+struct GameEngine drum_live_menu_engine = {
     /* Size in Memory */ 0x1c,
-    /* Start Engine   */ concert_hall_engine_start,
-    /* Update Engine  */ concert_hall_engine_update,
-    /* Stop Engine    */ concert_hall_engine_stop,
-    /* Cue Index      */ concert_hall_cue_index,
-    /* Common Events  */ concert_hall_common_events,
-    /* Engine Events  */ concert_hall_engine_events,
-    /* Input Event    */ concert_hall_input_event
+    /* Start Engine   */ drum_live_menu_engine_start,
+    /* Update Engine  */ drum_live_menu_engine_update,
+    /* Stop Engine    */ drum_live_menu_engine_stop,
+    /* Cue Index      */ drum_live_menu_cue_index,
+    /* Common Events  */ drum_live_menu_common_events,
+    /* Engine Events  */ drum_live_menu_engine_events,
+    /* Input Event    */ drum_live_menu_input_event
 };

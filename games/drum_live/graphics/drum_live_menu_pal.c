@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088f6830] LIVE Menu Palette
-Palette concert_hall_pal[] = {
+Palette drum_live_menu_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x000000),
         /* 01 */ TO_RGB555(0x000000),

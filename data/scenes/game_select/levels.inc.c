@@ -52,7 +52,7 @@ extern struct Scene scene_toys_menu;
 extern struct Scene scene_endless_menu;
 extern struct Scene scene_lessons_menu;
 extern struct Scene scene_staff_credit;
-extern struct Scene scene_concert_hall;
+extern struct Scene scene_drum_live;
 
 
 // Level Entries Table
@@ -913,7 +913,7 @@ struct LevelData level_data_table[TOTAL_LEVELS] = {
         }
     },
     /* LIVE_MENU */ {
-        /* Entry Scene   */ &scene_concert_hall,
+        /* Entry Scene   */ &scene_drum_live,
         /* Level Name    */ "ライブ",
         /* Level Desc.   */ "ライブに出演だ！\n"
                             "キミのリズム感は\n"
@@ -921,7 +921,7 @@ struct LevelData level_data_table[TOTAL_LEVELS] = {
                             "どうぞお気楽に～",
         /* Level Icon    */ 44,
         /* Level Type    */ LEVEL_TYPE_BONUS,
-        /* Epilogue GFX  */ epilogue_concert_hall_gfx_tables,
+        /* Epilogue GFX  */ epilogue_drum_live_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "おばちゃん「またつぎ、がんばりなよ！」",
             /* OK        */ "オーナー「キミ、なかなか スジあるヨ」",

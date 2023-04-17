@@ -69,7 +69,7 @@ SECTIONS {
 		build/src/engines/mr_upbeat.c.o(.bss);
 		build/src/engines/metronome.c.o(.bss);
 		build/src/engines/polyrhythm.c.o(.bss);
-		build/src/engines/concert_hall.c.o(.bss);
+		build/src/engines/drum_live_menu.c.o(.bss);
 		build/src/engines/quiz_show.c.o(.bss);
 		build/src/engines/bunny_hop.c.o(.bss);
 		build/src/engines/rap_men.c.o(.bss);
@@ -194,7 +194,7 @@ SECTIONS {
 		build/src/engines/mr_upbeat.c.o(.text);
 		build/src/engines/metronome.c.o(.text);
 		build/src/engines/polyrhythm.c.o(.text);
-		build/src/engines/concert_hall.c.o(.text);
+		build/src/engines/drum_live_menu.c.o(.text);
 		build/src/engines/quiz_show.c.o(.text);
 		build/src/engines/bunny_hop.c.o(.text);
 		build/src/engines/rap_men.c.o(.text);
@@ -305,7 +305,7 @@ SECTIONS {
         build/games/marching_orders/engine.c.o(.rodata);
         build/games/mr_upbeat/engine.c.o(.rodata);
         build/games/metronome/engine.c.o(.rodata);
-        build/games/concert_hall/engine.c.o(.rodata);
+        build/games/drum_live/drum_live_menu_engine.c.o(.rodata);
         build/games/bunny_hop/engine.c.o(.rodata);
         build/games/rap_men/engine.c.o(.rodata);
         build/games/rat_race/engine.c.o(.rodata);
@@ -1517,8 +1517,8 @@ SECTIONS {
         build/graphics/options/options_pal.c.o(.data);
         build/games/polyrhythm/graphics/polyrhythm_anim.c.o(.data);
         build/games/polyrhythm/graphics/polyrhythm_pal.c.o(.data);
-        build/games/concert_hall/graphics/concert_hall_anim.c.o(.data);
-        build/games/concert_hall/graphics/concert_hall_pal.c.o(.data);
+        build/games/drum_live/graphics/drum_live_menu_anim.c.o(.data);
+        build/games/drum_live/graphics/drum_live_menu_pal.c.o(.data);
         build/games/quiz_show/graphics/quiz_show_anim.c.o(.data);
         build/games/quiz_show/graphics/quiz_show_pal.c.o(.data);
         build/games/bunny_hop/graphics/bunny_hop_anim.c.o(.data);
@@ -1779,7 +1779,7 @@ SECTIONS {
         build/games/space_dance/cosmic_dance.bs.o(.script.entry);
         build/bin/bindata_089d6914.bin.o(.rodata*);
         build/games/staff_credit/staff_credit.bs.o(.script.entry);
-        build/games/concert_hall/concert_hall.bs.o(.script.entry);
+        build/games/drum_live/drum_live.bs.o(.script.entry);
         build/games/remix_3/remix_3.bs.o(.script.entry);
         build/games/remix_7/remix_7.bs.o(.script.entry);
         build/games/remix_5/remix_5.bs.o(.script.entry);
@@ -1847,7 +1847,7 @@ SECTIONS {
         build/games/mr_upbeat/engine.c.o(.data);
         build/games/metronome/engine.c.o(.data);
         build/games/polyrhythm/engine.c.o(.data);
-        build/games/concert_hall/engine.c.o(.data);
+        build/games/drum_live/drum_live_menu_engine.c.o(.data);
         build/games/quiz_show/engine.c.o(.data);
         build/games/bunny_hop/engine.c.o(.data);
         build/games/rap_men/engine.c.o(.data);
@@ -2003,7 +2003,7 @@ SECTIONS {
         build/bin/bindata_08a56b88.bin.o(.rodata*);
         build/games/space_dance/cosmic_dance.bs.o(.script.main);
         build/bin/bindata_08a584c4.bin.o(.rodata*);
-        build/games/concert_hall/concert_hall.bs.o(.script.main);
+        build/games/drum_live/drum_live.bs.o(.script.menu);
         build/games/remix_3/remix_3.bs.o(.script.main);
         build/games/remix_7/remix_7.bs.o(.script.main);
         build/games/remix_5/remix_5.bs.o(.script.main);
