@@ -2010,9 +2010,11 @@ SECTIONS {
         build/games/bon_odori/bon_dance.bs.o(.script.main);
         build/games/remix_6/remix_6.bs.o(.script.main);
         build/games/remix_8/remix_8.bs.o(.script.main);
-        build/bin/bindata_08a716ec.bin.o(.rodata*);
+        build/games/drum_live/drum_live.bs.o(.script.main);
         build/games/sneaky_spirits/subroutines.bs.o(.script.sub);
         build/bin/bindata_08a7a20c.bin.o(.rodata*);
+        build/games/drum_live/subroutines.bs.o(.script.sub);
+        build/bin/bindata_08a7d7a0.bin.o(.rodata*);
         build/games/power_calligraphy/subroutines.bs.o(.script.sub);
         build/bin/bindata_08a820e4.bin.o(.rodata*);
         build/games/marching_orders/subroutines.bs.o(.script.sub);
