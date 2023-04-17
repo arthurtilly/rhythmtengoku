@@ -1731,7 +1731,7 @@ SECTIONS {
         build/games/rhythm_tweezers/rhythm_tweezers.bs.o(.script.entry);
         build/games/rhythm_tweezers/rhythm_tweezers_2.bs.o(.script.entry);
         build/games/sick_beats/sick_beats.bs.o(.script.entry);
-        build/bin/bindata_089d0afc.bin.o(.rodata*);
+        build/games/bouncy_road/bouncy_road_unused.bs.o(.script.entry);
         build/games/bouncy_road/bouncy_road.bs.o(.script.entry);
         build/games/bouncy_road/bouncy_road_2.bs.o(.script.entry);
         build/games/ninja_bodyguard/ninja_bodyguard.bs.o(.script.entry);
@@ -1956,7 +1956,7 @@ SECTIONS {
         build/games/rhythm_tweezers/rhythm_tweezers.bs.o(.script.main);
         build/games/rhythm_tweezers/rhythm_tweezers_2.bs.o(.script.main);
         build/games/sick_beats/sick_beats.bs.o(.script.main);
-        build/bin/bindata_089fe07c.bin.o(.rodata*);
+        build/games/bouncy_road/bouncy_road_unused.bs.o(.script.main);
         build/games/bouncy_road/bouncy_road.bs.o(.script.main);
         build/games/bouncy_road/bouncy_road_2.bs.o(.script.main);
         build/games/ninja_bodyguard/ninja_bodyguard.bs.o(.script.main);
