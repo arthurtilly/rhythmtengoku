@@ -77,7 +77,7 @@ branch_0801c782: \n\
 /* 0801c798 */ LDR R0, [R0] \n\
 /* 0801c79a */ STR R0, [R3] \n\
 /* 0801c79c */ BL func_0801d978 \n\
-/* 0801c7a0 */ LDR R0, =D_089d8518 \n\
+/* 0801c7a0 */ LDR R0, =script_scene_studio_start_song \n\
 /* 0801c7a2 */ BL func_0801d968 \n\
 /* 0801c7a6 */ ADD SP, 0x4 \n\
 /* 0801c7a8 */ POP {R4-R7} \n\

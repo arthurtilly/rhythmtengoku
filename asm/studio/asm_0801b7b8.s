@@ -35,7 +35,7 @@ thumb_func_start func_0801b7b8 \n\
 /* 0801b800 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801b802 */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 0801b804 */ BL set_scene_trans_var \n\
-/* 0801b808 */ LDR R0, =D_089d853c \n\
+/* 0801b808 */ LDR R0, =script_scene_studio_exit \n\
 /* 0801b80a */ BL func_0801d968 \n\
 /* 0801b80e */ LDR R0, [R5] \n\
 /* 0801b810 */ MOVS R1, 0xD6 @ Set R1 to 0xD6 \n\

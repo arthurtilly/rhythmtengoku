@@ -11,7 +11,7 @@ script script_scene_title_exit
     stop
 
 
-@ Script
+@ Simple Pattern Loop
 script script_scene_title_loop
     run title_scene_beat_anim
     rest 24

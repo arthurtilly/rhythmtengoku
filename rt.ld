@@ -1806,8 +1806,8 @@ SECTIONS {
         build/data/scenes/data_room/read_error.bs.o(.scene);
 
         build/data/scenes/studio/data.c.o(.data);
-        build/bin/scene_studio.bin.o(.rodata*);
-
+        build/data/scenes/studio/scene.bs.o(.scene);
+        build/data/scenes/studio/scripts.bs.o(.script);
         build/data/scenes/title/data.c.o(.data);
         build/data/scenes/title/scene.bs.o(.scene);
         build/data/scenes/medal_corner/data.c.o(.data);

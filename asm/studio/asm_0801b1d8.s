@@ -171,7 +171,7 @@ jump_0801b324: \n\
 /* 0801b334 */ ADDS R0, R0, R3 @ Set R0 to R0 + R3 \n\
 /* 0801b336 */ LDR R0, [R0] \n\
 /* 0801b338 */ BL func_0800b3e8 \n\
-/* 0801b33c */ LDR R0, =D_089d853c \n\
+/* 0801b33c */ LDR R0, =script_scene_studio_exit \n\
 /* 0801b33e */ BL func_0801d968 \n\
 /* 0801b342 */ LDR R0, [R4] \n\
 /* 0801b344 */ MOVS R1, 0xD6 @ Set R1 to 0xD6 \n\
