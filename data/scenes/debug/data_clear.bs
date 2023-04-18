@@ -1,0 +1,28 @@
+.include "include/beatscript.inc"
+
+.section .scene
+
+@ Script
+script script_scene_data_clear
+    set_tempo 120
+    stop
+
+
+@ Local Scene
+struct sub_scene_data_clear
+    /* Start  */ .word func_0801e9cc, 0
+    /* Paused */ .word func_0801ea50, 0
+    /* Active */ .word func_0801ea54, 0
+    /* Stop   */ .word func_0801ea74, 0
+    /* Script */ .word script_scene_data_clear
+endstruct
+
+@ RIQ Data Clear Scene
+struct scene_data_clear
+    /* Start  */ .word func_0801d86c, sub_scene_data_clear
+    /* Update */ .word func_0801d8d8, 0
+    /* Stop   */ .word NULL,          0
+    /* Memory */ .word 0xC
+endstruct
+
+.end

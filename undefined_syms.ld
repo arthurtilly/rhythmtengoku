@@ -640,27 +640,6 @@ D_089dc98c = 0x089dc98c;
 D_089dcaf4 = 0x089dcaf4;
 D_089dcda0 = 0x089dcda0;
 
-/* Scene Data - Debug (Menu) */
-D_089ddb24 = 0x089ddb24;
-D_089ddba8 = 0x089ddba8;
-scene_debug_menu = 0x089ddbcc;
-/* Scene Data - Debug (Flash Memory Test) */
-D_089ddfc0 = 0x089ddfc0;
-D_089de038 = 0x089de038;
-scene_flash_mem_test = 0x089de05c;
-/* Scene Data - Debug (Data Clear) */
-D_089de08c = 0x089de08c;
-D_089de0a4 = 0x089de0a4;
-scene_data_clear = 0x089de0c8;
-/* Scene Data - Debug (Asset Test?) */
-D_089de17c = 0x089de17c;
-D_089de200 = 0x089de200;
-scene_asset_test = 0x089de224;
-/* Scene Data - Debug (Template Scene?) */
-D_089de254 = 0x089de254;
-D_089de2cc = 0x089de2cc;
-scene_template = 0x089de2f0;
-
 /* Rhythm Game Scripts */
 D_089edf48 = 0x089edf48;
 D_089edf58 = 0x089edf58;

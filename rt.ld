@@ -1816,16 +1816,16 @@ SECTIONS {
         build/data/scenes/warning/scene.bs.o(.scene);
         build/data/scenes/warning/data.c.o(.data);
         build/data/scenes/debug/menu.c.o(.data);
-        build/bin/scene_debug_menu.bin.o(.rodata*);
+        build/data/scenes/debug/menu.bs.o(.scene);
         build/data/scenes/debug/data.c.o(.data);
         build/data/scenes/debug/flash_mem_test.c.o(.data);
-        build/bin/scene_flash_mem_test.bin.o(.rodata*);
+        build/data/scenes/debug/flash_mem_test.bs.o(.scene);
         build/data/scenes/debug/data_clear.c.o(.data);
-        build/bin/scene_data_clear.bin.o(.rodata*);
+        build/data/scenes/debug/data_clear.bs.o(.scene);
         build/data/scenes/debug/asset_test.c.o(.data);
-        build/bin/scene_asset_test.bin.o(.rodata*);
+        build/data/scenes/debug/asset_test.bs.o(.scene);
         build/data/scenes/debug/empty_test.c.o(.data);
-        build/bin/scene_empty_test.bin.o(.rodata*);
+        build/data/scenes/debug/template.bs.o(.scene);
 
         build/data/font_definitions.c.o(.data);
 
