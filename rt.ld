@@ -1775,7 +1775,7 @@ SECTIONS {
         build/bin/bindata_089d645c.bin.o(.rodata*);
         build/games/remix_2/remix_2.bs.o(.script.entry);
         build/games/remix_4/remix_4.bs.o(.script.entry);
-        build/bin/bindata_089d6738.bin.o(.rodata*);
+        build/games/mr_upbeat/mr_upbeat.bs.o(.script.entry);
         build/games/space_dance/cosmic_dance.bs.o(.script.entry);
         build/bin/bindata_089d6914.bin.o(.rodata*);
         build/games/staff_credit/staff_credit.bs.o(.script.entry);
@@ -2001,6 +2001,7 @@ SECTIONS {
         build/games/remix_2/remix_2.bs.o(.script.main);
         build/games/remix_4/remix_4.bs.o(.script.main);
         build/bin/bindata_08a56b88.bin.o(.rodata*);
+        build/games/mr_upbeat/mr_upbeat.bs.o(.script.main);
         build/games/space_dance/cosmic_dance.bs.o(.script.main);
         build/bin/bindata_08a584c4.bin.o(.rodata*);
         build/games/drum_live/drum_live.bs.o(.script.menu);

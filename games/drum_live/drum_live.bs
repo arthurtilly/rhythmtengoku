@@ -85,7 +85,7 @@ return
 script script_drum_girls_space_dance
     set_tempo 120
     set_music_volume 256
-    .byte 0xac, 0x90, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    mute_music_track MIDI_TRACK_4 | MIDI_TRACK_7
     run func_08047f28, 0
     run func_08047f5c, 0
     rest 24
@@ -359,7 +359,7 @@ return
 script script_drum_girls_koi_no_honey_sweet_angel
     set_tempo 137
     set_music_volume 210
-    .byte 0xac, 0x30, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    mute_music_track MIDI_TRACK_4 | MIDI_TRACK_5 | MIDI_TRACK_12
     run func_08047f84, 0
     dml_event00 7
     rest 24
@@ -687,7 +687,7 @@ return
 script script_drum_girls_night_walk
     set_tempo 127
     set_music_volume 200
-    .byte 0xac, 0x48, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    mute_music_track MIDI_TRACK_3 | MIDI_TRACK_6
     dml_event02 0
     dml_event03 0xA300
     dml_event03 0xA301
@@ -915,7 +915,7 @@ return
 script script_drum_boys_clappy_trio
     set_tempo 118
     set_music_volume 256
-    .byte 0xac, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    mute_music_track MIDI_TRACK_2 | MIDI_TRACK_3
     run func_0804803c, 0
     rest 24
     rest 24
@@ -1125,7 +1125,7 @@ return
 script script_drum_boys_tap_trial
     set_tempo 124
     set_music_volume 200
-    .byte 0xac, 0xc0, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    mute_music_track MIDI_TRACK_6 | MIDI_TRACK_7 | MIDI_TRACK_9
     run func_08048098, 0
     rest 24
     rest 24
@@ -1401,7 +1401,7 @@ return
 script script_drum_boys_wish_kimi_wo_matenakute
     set_tempo 204
     set_music_volume 200
-    .byte 0xac, 0x60, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    mute_music_track MIDI_TRACK_5 | MIDI_TRACK_6
     run func_080480f4, 0
     rest 24
     rest 24
@@ -1857,7 +1857,7 @@ return
 script script_drum_samurai_cosmic_dance
     set_tempo 135
     set_music_volume 230
-    .byte 0xac, 0x40, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    mute_music_track MIDI_TRACK_6 | MIDI_TRACK_8 | MIDI_TRACK_9
     run func_08048150, 0
     rest 24
     rest 24
@@ -2095,7 +2095,7 @@ return
 script script_drum_samurai_snappy_trio
     set_tempo 108
     set_music_volume 230
-    .byte 0xac, 0x70, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    mute_music_track MIDI_TRACK_4 | MIDI_TRACK_5 | MIDI_TRACK_6
     run func_080481ac, 0
     rest 24
     rest 24
@@ -2255,7 +2255,7 @@ return
 script script_drum_samurai_tap_trial_2
     set_tempo 165
     set_music_volume 230
-    .byte 0xac, 0x18, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    mute_music_track MIDI_TRACK_3 | MIDI_TRACK_4
     run func_08048208, 0
     rest 24
     rest 24
