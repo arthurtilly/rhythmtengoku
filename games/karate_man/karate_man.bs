@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_karate_man, script_karate_man_entry
 
 
+
 @ Karate Man - Script Entry Point (Skipped Practice)
 
 script script_karate_man_skipped_practice_entry
@@ -125,6 +126,7 @@ struct karate_man_marking_criteria
     .word karate_man_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Karate Man - Main Script

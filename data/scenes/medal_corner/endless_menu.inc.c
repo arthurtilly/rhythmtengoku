@@ -1,4 +1,4 @@
-extern const struct Scene D_089d6804;
+extern const struct Scene scene_mr_upbeat;
 extern const struct Scene D_089d6c8c;
 extern const struct Scene D_089d6ba4;
 extern const struct Scene D_089d69e0;
@@ -8,7 +8,7 @@ extern struct SequenceData s_mini_game_bgm_seqData;
 // [D_089dd548] Endless Games Menu - Levels
 struct MedalCornerLevel endless_menu_levels[TOTAL_ENDLESS_GAMES] = {
     /* MR_UPBEAT */ {
-        /* Scene  */ &D_089d6804,
+        /* Scene  */ &scene_mr_upbeat,
         /* Title  */ "ƒEƒ‰‚¨‚Æ‚±",
         /* Anim   */ anim_endless_menu_mr_upbeat,
         /* Medals */ 1

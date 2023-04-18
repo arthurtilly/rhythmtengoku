@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_marching_orders, script_marching_orders_entry
 
 
+
 @ Marching Orders - Script Entry Point (Skipped Practice)
 
 script script_marching_orders_skipped_practice_entry
@@ -106,6 +107,7 @@ struct marching_orders_marking_criteria
     .word marching_orders_marking_criteria_1
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Marching Orders - Main Script

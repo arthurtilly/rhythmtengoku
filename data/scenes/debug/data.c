@@ -10,7 +10,7 @@ extern const struct Scene scene_drum_live;
 extern const struct Scene D_089d6c8c;
 extern const struct Scene D_089d6ba4;
 extern const struct Scene D_089d69e0;
-extern const struct Scene D_089d6804;
+extern const struct Scene scene_mr_upbeat;
 extern const struct Scene scene_remix_8;
 extern const struct Scene scene_remix_7;
 extern const struct Scene scene_remix_6;
@@ -148,7 +148,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "マネキンこうじょう"
     },
     /* Mr. Upbeat */ {
-        /* Scene */ &D_089d6804,
+        /* Scene */ &scene_mr_upbeat,
         /* Label */ "ウラおとこ"
     },
     /* Remix 8 */ {

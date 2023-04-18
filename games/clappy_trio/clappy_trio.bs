@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_clappy_trio, script_clappy_trio_entry
 
 
+
 @ The Clappy Trio - Script Entry Point (Skipped Practice)
 
 script script_clappy_trio_skipped_practice_entry
@@ -127,6 +128,7 @@ struct clappy_trio_marking_criteria
     .word clappy_trio_marking_criteria_3
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ The Clappy Trio - Main Script

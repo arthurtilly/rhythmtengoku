@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_rhythm_tweezers, script_rhythm_tweezers_entry
 
 
+
 @ Rhythm Tweezers - Script Entry Point (Skipped Practice)
 
 script script_rhythm_tweezers_skipped_practice_entry
@@ -106,6 +107,7 @@ struct rhythm_tweezers_marking_criteria
     .word rhythm_tweezers_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Rhythm Tweezers - Main Script

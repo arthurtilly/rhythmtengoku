@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_rap_men, script_rap_men_entry
 
 
+
 @ Rap Men - Script Entry Point (Skipped Practice)
 
 script script_rap_men_skipped_practice_entry
@@ -107,6 +108,7 @@ struct rap_men_marking_criteria
     .word rap_men_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Rap Men - Main Script

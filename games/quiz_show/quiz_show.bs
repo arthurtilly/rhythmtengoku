@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_quiz_show, script_quiz_show_entry
 
 
+
 @ Quiz Show - Script Entry Point (Skipped Practice)
 
 script script_quiz_show_skipped_practice_entry
@@ -101,6 +102,7 @@ struct quiz_show_marking_criteria_set_2
     .word quiz_show_marking_criteria_1
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Quiz Show - Main Script

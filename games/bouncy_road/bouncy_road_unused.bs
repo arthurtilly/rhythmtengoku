@@ -25,6 +25,7 @@ stop
 define_gameplay_scene scene_bouncy_road_unused, script_bouncy_road_unused_entry
 
 
+
 @ Bouncy Road (Unused 2) - Script Entry Point
 
 script script_bouncy_road_unused_2_entry
@@ -227,6 +228,7 @@ script script_bouncy_road_unused_main
     beat_anim
     rest 24
 return
+
 
 
 @ Bouncy Road (Unused 2) - Main Script

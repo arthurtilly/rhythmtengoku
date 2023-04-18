@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_tap_trial, script_tap_trial_entry
 
 
+
 @ Tap Trial - Script Entry Point (Skipped Practice)
 
 script script_tap_trial_skipped_practice_entry
@@ -121,6 +122,7 @@ struct tap_trial_marking_criteria
     .word tap_trial_marking_criteria_3
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Tap Trial - Main Script

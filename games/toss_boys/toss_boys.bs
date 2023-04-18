@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_toss_boys, script_toss_boys_entry
 
 
+
 @ Toss Boys - Script Entry Point (Skipped Practice)
 
 script script_toss_boys_skipped_practice_entry
@@ -119,6 +120,7 @@ struct toss_boys_marking_criteria
     .word toss_boys_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Toss Boys - Main Script

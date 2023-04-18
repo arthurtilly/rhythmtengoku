@@ -98,6 +98,7 @@ struct bon_dance_marking_criteria
 endstruct
 
 
+
 @ The Bon Dance - Main Script
 
 script script_bon_dance_main

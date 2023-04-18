@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_bon_odori, script_bon_odori_entry
 
 
+
 @ The Bon Odori - Script Entry Point (Skipped Practice)
 
 script script_bon_odori_skipped_practice_entry
@@ -117,6 +118,7 @@ struct bon_odori_marking_criteria
     .word bon_odori_marking_criteria_3
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ The Bon Odori - Main Script

@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_showtime, script_showtime_entry
 
 
+
 @ Showtime - Script Entry Point (Skipped Practice)
 
 script script_showtime_skipped_practice_entry
@@ -87,6 +88,7 @@ struct showtime_marking_criteria
     .word showtime_marking_criteria_0
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Showtime - Main Script

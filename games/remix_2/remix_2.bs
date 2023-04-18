@@ -105,6 +105,7 @@ struct remix_2_marking_criteria
 endstruct
 
 
+
 @ Remix 2 - Sick Beats Pathing Data
 
 script remix_2_sick_beats_path_appear_from_point_1
@@ -189,6 +190,7 @@ script remix_2_sick_beats_path_normal
     sb_rest 24
     sb_attack_microbe
 sb_stop
+
 
 
 @ Remix 2 - Main Script

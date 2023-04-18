@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_wizards_waltz, script_wizards_waltz_entry
 
 
+
 @ Wizard's Waltz - Script Entry Point (Skipped Practice)
 
 script script_wizards_waltz_skipped_practice_entry
@@ -95,6 +96,7 @@ struct wizards_waltz_marking_criteria
     .word wizards_waltz_marking_criteria_1
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Wizard's Waltz - Main Script

@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_bouncy_road, script_bouncy_road_entry
 
 
+
 @ Bouncy Road - Script Entry Point (Skipped Practice)
 
 script script_bouncy_road_skipped_practice_entry
@@ -107,6 +108,7 @@ struct bouncy_road_marking_criteria
     .word bouncy_road_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Bouncy Road - Main Script

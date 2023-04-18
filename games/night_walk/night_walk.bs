@@ -91,6 +91,7 @@ struct night_walk_marking_criteria
 endstruct
 
 
+
 @ Night Walk - Main Script
 
 script script_night_walk_end

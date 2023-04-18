@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_power_calligraphy, script_power_calligraphy_entry
 
 
+
 @ Power Calligraphy - Script Entry Point (Skipped Practice)
 
 script script_power_calligraphy_skipped_practice_entry
@@ -117,6 +118,7 @@ struct power_calligraphy_marking_criteria
     .word power_calligraphy_marking_criteria_3
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Power Calligraphy - Main Script

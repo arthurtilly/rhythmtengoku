@@ -106,6 +106,7 @@ struct remix_4_marking_criteria
 endstruct
 
 
+
 @ Remix 4 - Rap Men Text
 
 text text_remix_4_sanji_desu_ka
@@ -167,6 +168,7 @@ endtext
 text D_08a536a0
     .asciz ".a:1オレ、　しらない:0ヨー！！"
 endtext
+
 
 
 @ Remix 4 - Main Script

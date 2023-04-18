@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_tram_pauline, script_tram_pauline_entry
 
 
+
 @ Tram and Pauline - Script Entry Point (Skipped Practice)
 
 script script_tram_pauline_skipped_practice_entry
@@ -107,6 +108,7 @@ struct tram_pauline_marking_criteria
     .word tram_pauline_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Tram and Pauline - Main Script

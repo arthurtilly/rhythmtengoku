@@ -694,6 +694,7 @@ script power_calligraphy_sub_08a7f894
 return
 
 
+
 @ Power Calligraphy (Remix 4) - Subroutines
 
 script power_calligraphy_remix_4_sub_08a808d8

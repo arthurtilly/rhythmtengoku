@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_fireworks, script_fireworks_entry
 
 
+
 @ Fireworks - Script Entry Point (Skipped Practice)
 
 script script_fireworks_skipped_practice_entry
@@ -104,6 +105,7 @@ struct fireworks_marking_criteria
     .word fireworks_marking_criteria_1
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Fireworks - Main Script
