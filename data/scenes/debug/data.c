@@ -48,7 +48,7 @@ extern const struct Scene D_089d4464;
 extern const struct Scene D_089d454c;
 extern const struct Scene D_089d4634;
 extern const struct Scene D_089d4804;
-extern const struct Scene D_089d80d0;
+extern const struct Scene scene_reading;
 extern const struct Scene scene_quiz_show;
 extern const struct Scene scene_rap_men;
 extern const struct Scene scene_rap_women;
@@ -96,7 +96,7 @@ extern const struct Scene scene_clappy_trio;
 extern const struct Scene scene_snappy_trio;
 extern const struct Scene scene_karate_man;
 extern const struct Scene scene_karate_man_2;
-extern const struct Scene scene_riq_title;
+extern const struct Scene scene_title;
 extern const struct Scene scene_main_menu;
 extern const struct Scene scene_game_select;
 extern const struct Scene scene_data_room;
@@ -300,7 +300,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "チェックマシン　（トータル）"
     },
     /* Reading Material */ {
-        /* Scene */ &D_089d80d0,
+        /* Scene */ &scene_reading,
         /* Label */ "テキスト"
     },
     /* Quiz Show */ {
@@ -492,7 +492,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "カラテカ　２"
     },
     /* R-IQ (Title Screen) */ {
-        /* Scene */ &scene_riq_title,
+        /* Scene */ &scene_title,
         /* Label */ "Ｒ－ＩＱ　（タイトル）"
     },
     /* R-IQ (Main Menu) */ {

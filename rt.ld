@@ -1722,8 +1722,8 @@ SECTIONS {
         build/data/scenes/options/scene.bs.o(.scene);
         build/data/scenes/perfect/data.c.o(.data);
         build/data/scenes/perfect/scene.bs.o(.scene);
-        build/data/scenes/gameplay/data.c.o(.data);
 
+        build/data/scenes/gameplay/data.c.o(.data);
         build/games/karate_man/karate_man.bs.o(.script.entry);
         build/bin/bindata_089cffc8.bin.o(.rodata*);
         build/games/clappy_trio/clappy_trio.bs.o(.script.entry);
@@ -1802,15 +1802,17 @@ SECTIONS {
         build/data/scenes/epilogue/data.c.o(.data);
         build/data/scenes/epilogue/scene.bs.o(.scene);
         build/data/scenes/data_room/reading.c.o(.data);
-        build/bin/scene_reading.bin.o(.rodata*);
+        build/data/scenes/data_room/reading.bs.o(.scene);
         build/data/scenes/data_room/read_error.c.o(.data);
-        build/bin/scene_read_error.bin.o(.rodata*);
+        build/data/scenes/data_room/read_error.bs.o(.scene);
+
         build/data/scenes/studio/data.c.o(.data);
         build/bin/scene_studio.bin.o(.rodata*);
+
         build/data/scenes/title/data.c.o(.data);
-        build/bin/scene_title.bin.o(.rodata*);
+        build/data/scenes/title/scene.bs.o(.scene);
         build/data/scenes/medal_corner/data.c.o(.data);
-        build/bin/scene_medal_corner.bin.o(.rodata*);
+        build/data/scenes/medal_corner/scene.bs.o(.scene);
         build/data/scenes/riq_main_scene/data.c.o(.data);
         build/bin/scene_riq_main.bin.o(.rodata*);
         build/bin/scene_warning.bin.o(.rodata*);

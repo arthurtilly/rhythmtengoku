@@ -87,7 +87,7 @@ branch_0801233c: \n\
 /* 0801234c */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801234e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08012350 */ BL func_080006f0 \n\
-/* 08012354 */ LDR R4, =D_089d80d0 \n\
+/* 08012354 */ LDR R4, =scene_reading \n\
 /* 08012356 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08012358 */ BL set_next_scene \n\
 /* 0801235c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\

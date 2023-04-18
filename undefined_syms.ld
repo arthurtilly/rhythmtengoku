@@ -582,14 +582,6 @@ D_089d7424 = 0x089d7424;
 D_089d74d8 = 0x089d74d8;
 D_089d74fc = 0x089d74fc;
 
-/* Scene Data - Reading Material */
-D_089d7ff8 = 0x089d7ff8;
-D_089d80ac = 0x089d80ac;
-D_089d80d0 = 0x089d80d0;
-/* Scene Data - Empty Scene */
-D_089d80fc = 0x089d80fc;
-D_089d8174 = 0x089d8174;
-D_089d8198 = 0x089d8198;
 /* Scene Data - Studio */
 D_089d84ac = 0x089d84ac;
 D_089d84c4 = 0x089d84c4;
@@ -647,20 +639,7 @@ D_089dc7f4 = 0x089dc7f4;
 D_089dc98c = 0x089dc98c;
 D_089dcaf4 = 0x089dcaf4;
 D_089dcda0 = 0x089dcda0;
-/* Scene Data - Title Screen */
-D_089dcff0 = 0x089dcff0;
-D_089dd02c = 0x089dd02c;
-D_089dd260 = 0x089dd260;
-D_089dd458 = 0x089dd458;
-scene_riq_title = 0x089dd47c;
-/* Scene Data - Medal Corner Menus */
-D_089dd7a0 = 0x089dd7a0;
-D_089dd848 = 0x089dd848;
-scene_toys_menu = 0x089dd86c;
-D_089dd888 = 0x089dd888;
-scene_endless_menu = 0x089dd8ac;
-D_089dd8c8 = 0x089dd8c8;
-scene_lessons_menu = 0x089dd8ec;
+
 /* Scene Data - Scene Handler */
 D_089dd97c = 0x089dd97c;
 /* Scene Data - Warning Screen */

@@ -47,21 +47,21 @@ extern struct CompressedGraphics *title_buffered_textures[];
 
 
 // Functions:
-extern void func_0801ca34(s32 id); // Update Logo Bubble Position
-extern void func_0801cb0c(void); // Init. Logo Bubbles
-extern void func_0801cc2c(void); // Start Logo Bubble Rise (Script Function)
-extern void func_0801cc84(void); // Update Logo Bubbles
-extern void func_0801ccd0(void); // Logo Bubbles Beat Animation
-extern void func_0801cd14(s32 id); // Animate Logo Bubble (Script Function)
-extern void func_0801cd60(void); // Init. Static Variables
-extern void func_0801cd64(void); // Graphics Init. 3
-extern void func_0801cd90(void); // Graphics Init. 2
-extern void func_0801cdc0(void); // Graphics Init. 1
-extern void func_0801cdfc(void *sceneVar, s32 dataArg); // Scene Start
-extern void func_0801cefc(void); // Finish Intro (Script Function)
-extern void func_0801cf44(void); // Beat Animation? (Script Function)
-extern void func_0801cfa4(void *sceneVar, s32 dataArg); // Scene Update (Paused)
-extern void func_0801cfa8(void); // Update Inputs
-extern void func_0801d02c(void *sceneVar, s32 dataArg); // Scene Update (Active)
-extern u32 func_0801d08c(void); // Communicate with Script
-extern void func_0801d0a8(void *sceneVar, s32 dataArg); // Scene Stop
+extern void title_logo_set_bubble_pos(s32 id);
+extern void title_logo_init(void);
+extern void title_logo_appear(void); // (Script Function)
+extern void title_logo_update(void);
+extern void title_logo_bounce_all(void);
+extern void title_logo_bounce_bubble(s32 id); // (Script Function)
+extern void title_scene_init_static_var(void); // Init. Static Variables
+extern void title_scene_init_gfx3(void); // Graphics Init. 3
+extern void title_scene_init_gfx2(void); // Graphics Init. 2
+extern void title_scene_init_gfx1(void); // Graphics Init. 1
+extern void title_scene_start(void *sceneVar, s32 dataArg); // Scene Start
+extern void title_scene_complete_intro(void); // (Script Function)
+extern void title_scene_beat_anim(void); // (Script Function)
+extern void title_scene_paused(void *sceneVar, s32 dataArg); // Scene Update (Paused)
+extern void title_scene_update_inputs(void);
+extern void title_scene_update(void *sceneVar, s32 dataArg); // Scene Update (Active)
+extern u32 title_scene_script_is_ready(void); // Communicate with Script
+extern void title_scene_stop(void *sceneVar, s32 dataArg); // Scene Stop

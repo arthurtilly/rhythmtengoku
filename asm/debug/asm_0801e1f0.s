@@ -157,7 +157,7 @@ branch_0801e318: \n\
 /* 0801e32e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0801e330 */ BL set_scene_trans_var \n\
 /* 0801e334 */ LDR R0, =scene_arrival \n\
-/* 0801e336 */ LDR R4, =D_089d80d0 \n\
+/* 0801e336 */ LDR R4, =scene_reading \n\
 /* 0801e338 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0801e33a */ BL set_scene_trans_var \n\
 /* 0801e33e */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\

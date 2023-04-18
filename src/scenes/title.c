@@ -18,8 +18,8 @@ asm(".include \"include/gba.inc\"");//Temporary
 extern const struct Scene D_089d3984; // Opening - A Type
 extern const struct Scene D_089d3a6c; // Opening - B Type
 extern const struct Scene scene_main_menu;
-extern const struct Scene scene_riq_title;
-extern const struct BeatScript D_089dcff0[];
+extern const struct Scene scene_title;
+extern const struct BeatScript script_scene_title_exit[];
 extern struct SequenceData s_nyuka_fan_seqData;
 
 
@@ -27,7 +27,7 @@ extern struct SequenceData s_nyuka_fan_seqData;
 
 
 // Update Logo Bubble Position
-void func_0801ca34(s32 id) {
+void title_logo_set_bubble_pos(s32 id) {
     struct LogoBubble *bubble = &gTitleInfo->logoBubbles[id];
     s24_8 xOfs, yOfs, xB, yB;
     s32 x, y, rise;
@@ -49,7 +49,7 @@ void func_0801ca34(s32 id) {
 
 
 // Init. Logo Bubbles
-void func_0801cb0c(void) {
+void title_logo_init(void) {
     u32 i;
 
     for (i = 0; i < TOTAL_TITLE_LOGO_BUBBLES; i++) {
@@ -69,7 +69,7 @@ void func_0801cb0c(void) {
         bubble->bounceAngle = letter->bounceAngle;
         bubble->bounceBaseAngle = letter->bounceAngle;
         bubble->bounceDistance = INT_TO_FIXED(0.0);
-        func_0801ca34(i);
+        title_logo_set_bubble_pos(i);
     }
 
     gTitleInfo->nextLogoBubble = 0;
@@ -77,7 +77,7 @@ void func_0801cb0c(void) {
 
 
 // Start Logo Bubble Rise (Script Function)
-void func_0801cc2c(void) {
+void title_logo_appear(void) {
     u32 i;
 
     for (i = 0; i < TOTAL_TITLE_LOGO_BUBBLES; i++) {
@@ -92,7 +92,7 @@ void func_0801cc2c(void) {
 
 
 // Update Logo Bubbles
-void func_0801cc84(void) {
+void title_logo_update(void) {
     u32 i;
 
     for (i = 0; i < TOTAL_TITLE_LOGO_BUBBLES; i++) {
@@ -102,14 +102,14 @@ void func_0801cc84(void) {
             bubble->riseAngle += bubble->riseTurnSpeed;
             bubble->riseDistance = FIXED_POINT_MUL(bubble->riseDistance, bubble->riseSpeed);
             bubble->bounceDistance = FIXED_POINT_MUL(bubble->bounceDistance, INT_TO_FIXED(0.9));
-            func_0801ca34(i);
+            title_logo_set_bubble_pos(i);
         }
     }
 }
 
 
 // Logo Bubbles Beat Animation
-void func_0801ccd0(void) {
+void title_logo_bounce_all(void) {
     u32 i;
 
     for (i = 0; i < TOTAL_TITLE_LOGO_BUBBLES; i++) {
@@ -118,14 +118,14 @@ void func_0801ccd0(void) {
         if (bubble->active) {
             bubble->bounceDistance += INT_TO_FIXED(6.0);
             bubble->bounceAngle = bubble->bounceBaseAngle + agb_random(INT_TO_FIXED(2.0 / 8)) - INT_TO_FIXED(1.0 / 8);
-            func_0801ca34(i);
+            title_logo_set_bubble_pos(i);
         }
     }
 }
 
 
 // Animate Logo Bubble (Script Function)
-void func_0801cd14(s32 id) {
+void title_logo_bounce_bubble(s32 id) {
     struct LogoBubble *bubble;
 
     if (id >= 0) {
@@ -146,12 +146,12 @@ void func_0801cd14(s32 id) {
 
 
 // Init. Static Variables
-void func_0801cd60(void) {
+void title_scene_init_static_var(void) {
 }
 
 
 // Graphics Init. 3
-void func_0801cd64(void) {
+void title_scene_init_gfx3(void) {
     s32 task;
 
     func_0800c604(0);
@@ -161,25 +161,25 @@ void func_0801cd64(void) {
 
 
 // Graphics Init. 2
-void func_0801cd90(void) {
+void title_scene_init_gfx2(void) {
     s32 task;
 
     func_0800c604(0);
     task = func_08002ee0(get_current_mem_id(), title_gfx_table, 0x3000);
-    run_func_after_task(task, func_0801cd64, 0);
+    run_func_after_task(task, title_scene_init_gfx3, 0);
 }
 
 
 // Graphics Init. 1
-void func_0801cdc0(void) {
-    schedule_function_call(get_current_mem_id(), func_0801cd90, 0, 2);
+void title_scene_init_gfx1(void) {
+    schedule_function_call(get_current_mem_id(), title_scene_init_gfx2, 0, 2);
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, BGCNT_PRIORITY(1));
 }
 
 
 // Scene Start
-void func_0801cdfc(void *sceneVar, s32 dataArg) {
+void title_scene_start(void *sceneVar, s32 dataArg) {
     struct TextPrinter *textPrinter;
 
     func_08007324(FALSE);
@@ -195,8 +195,8 @@ void func_0801cdfc(void *sceneVar, s32 dataArg) {
     text_printer_set_colors(textPrinter, 0);
     gTitleInfo->textPrinter = textPrinter;
 
-    func_0801cdc0();
-    func_0801cb0c();
+    title_scene_init_gfx1();
+    title_logo_init();
     gTitleInfo->scriptIsReady = FALSE;
     gTitleInfo->timeUntilDemo = 180 * 16;
     gTitleInfo->titleIsDisplayed = FALSE;
@@ -206,7 +206,7 @@ void func_0801cdfc(void *sceneVar, s32 dataArg) {
 
 
 // Finish Intro (Script Function)
-void func_0801cefc(void) {
+void title_scene_complete_intro(void) {
     func_0804d770(D_03005380, gTitleInfo->directiveText, TRUE);
     func_0804d8f8(D_03005380, gTitleInfo->stars, anim_title_stars_spin, 0, 1, 0, 0);
     gTitleInfo->titleIsDisplayed = TRUE;
@@ -214,7 +214,7 @@ void func_0801cefc(void) {
 
 
 // Beat Animation (Script Function)
-void func_0801cf44(void) {
+void title_scene_beat_anim(void) {
     if (!gTitleInfo->titleIsDisplayed) {
         s32 frame = func_0804d6cc(D_03005380, gTitleInfo->stars);
         func_0804cebc(D_03005380, gTitleInfo->stars, frame + 1);
@@ -222,17 +222,17 @@ void func_0801cf44(void) {
     }
 
     func_0804cebc(D_03005380, gTitleInfo->directiveText, 0);
-    func_0801ccd0();
+    title_logo_bounce_all();
 }
 
 
 // Scene Update (Paused)
-void func_0801cfa4(void *sceneVar, s32 dataArg) {
+void title_scene_paused(void *sceneVar, s32 dataArg) {
 }
 
 
 // Update Inputs
-void func_0801cfa8(void) {
+void title_scene_update_inputs(void) {
     if (D_03004afc & (A_BUTTON | START_BUTTON)) {
         if (D_030046a8->data.unkB0) {
             set_next_scene(&scene_main_menu);
@@ -240,7 +240,7 @@ void func_0801cfa8(void) {
             set_next_scene(&D_089d3a6c);
         }
 
-        func_0801d968(D_089dcff0);
+        func_0801d968(script_scene_title_exit);
         gTitleInfo->scriptIsReady = FALSE;
         play_sound_w_pitch_volume(&s_nyuka_fan_seqData, INT_TO_FIXED(1.25), INT_TO_FIXED(0.0));
         scene_set_music_volume_env(100);
@@ -251,27 +251,27 @@ void func_0801cfa8(void) {
 
 
 // Scene Update (Active)
-void func_0801d02c(void *sceneVar, s32 dataArg) {
+void title_scene_update(void *sceneVar, s32 dataArg) {
     if (gTitleInfo->timeUntilDemo > 0) {
         if (--gTitleInfo->timeUntilDemo == 0) {
             set_next_scene(&D_089d3984);
-            set_scene_trans_target(&D_089d3984, &scene_riq_title);
-            func_0801d968(D_089dcff0);
+            set_scene_trans_target(&D_089d3984, &scene_title);
+            func_0801d968(script_scene_title_exit);
             gTitleInfo->scriptIsReady = FALSE;
         }
     }
 
-    if (func_0801d08c()) {
-        func_0801cfa8();
+    if (title_scene_script_is_ready()) {
+        title_scene_update_inputs();
     }
 
-    func_0801cc84();
+    title_logo_update();
     text_printer_update(gTitleInfo->textPrinter);
 }
 
 
 // Communicate with Script
-u32 func_0801d08c(void) {
+u32 title_scene_script_is_ready(void) {
     if (gTitleInfo->scriptIsReady) {
         return TRUE;
     } else {
@@ -281,7 +281,7 @@ u32 func_0801d08c(void) {
 
 
 // Scene Stop
-void func_0801d0a8(void *sceneVar, s32 dataArg) {
+void title_scene_stop(void *sceneVar, s32 dataArg) {
     func_08008628();
     func_08004058();
 }
