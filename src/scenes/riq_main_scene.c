@@ -217,7 +217,7 @@ void func_0801db04(u32 enable) {
 
 extern struct BitmapFontData bitmap_font_warioware_body[];
 extern char D_089dd908[]; // "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
-extern FontPalette dev_text_font_pal[];
+extern FontPalette dev_text_font_pal1[];
 
 
 // Update Font Palette 1.
@@ -239,7 +239,7 @@ void dev_text_update_pal1(struct DebugText *debugText) {
     address = &D_03004b10.bgPalette[debugText->fontPal1][8];
 
     for (i = 0; i < 4; i++) {
-        address[i] = dev_text_font_pal[lineColor][i];
+        address[i] = dev_text_font_pal1[lineColor][i];
     }
 }
 
@@ -264,7 +264,7 @@ void dev_text_update_pal2(struct DebugText *debugText) {
 
         lineColor = debugText->fontCol2 / 4;
         for (i = 0; i < 4; i++) {
-            address[i] = D_089dd962[lineColor][i];
+            address[i] = dev_text_font_pal2[lineColor][i];
         }
     } else {
         for (i = 0; i < 4; i++) {
@@ -303,6 +303,9 @@ struct DebugText *create_new_dev_text(u16 memID, u32 layer, u16 *arg2, u32 tiles
     return debugText;
 }
 
+
+// [D_089dd908] ?
+char D_089dd908[] = "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ";
 
 // Print DebugText object.
 void dev_text_print(struct DebugText *debugText, const char *string) {
@@ -457,6 +460,51 @@ void dev_text_set_enable_font_pal_2(struct DebugText *debugText, u32 enable) {
 }
 
 
+// [D_089dd94a] Font Palettes
+FontPalette dev_text_font_pal1[] = {
+    /* PALETTE 00 (White) */ {
+        /* 00 */ TO_RGB555(0x000000),
+        /* 01 */ TO_RGB555(0x808080),
+        /* 02 */ TO_RGB555(0xC0C0C0),
+        /* 03 */ TO_RGB555(0xF8F8F8)
+    },
+    /* PALETTE 01 (Gold) */ {
+        /* 00 */ TO_RGB555(0x000000),
+        /* 01 */ TO_RGB555(0x806800),
+        /* 02 */ TO_RGB555(0xC0A800),
+        /* 03 */ TO_RGB555(0xF8E000)
+    },
+    /* PALETTE 02 (Blue) */ {
+        /* 00 */ TO_RGB555(0x000000),
+        /* 01 */ TO_RGB555(0x007080),
+        /* 02 */ TO_RGB555(0x2090C0),
+        /* 03 */ TO_RGB555(0x40B0F8)
+    }
+};
+
+// [D_089dd962] Font Palettes
+FontPalette dev_text_font_pal2[] = {
+    /* PALETTE 00 (White) */ {
+        /* 00 */ TO_RGB555(0x000000),
+        /* 01 */ TO_RGB555(0x808080),
+        /* 02 */ TO_RGB555(0xC0C0C0),
+        /* 03 */ TO_RGB555(0xF8F8F8)
+    },
+    /* PALETTE 01 (Gold) */ {
+        /* 00 */ TO_RGB555(0x000000),
+        /* 01 */ TO_RGB555(0x806800),
+        /* 02 */ TO_RGB555(0xC0A800),
+        /* 03 */ TO_RGB555(0xF8E000)
+    },
+    /* PALETTE 02 (Blue) */ {
+        /* 00 */ TO_RGB555(0x000000),
+        /* 01 */ TO_RGB555(0x007080),
+        /* 02 */ TO_RGB555(0x2090C0),
+        /* 03 */ TO_RGB555(0x40B0F8)
+    }
+};
+
+
 
 // For readability.
 #define gResetInfo ((struct SoftResetSceneInfo *)D_030046a4)
@@ -466,14 +514,14 @@ void dev_text_set_enable_font_pal_2(struct DebugText *debugText, u32 enable) {
 
 
 // Stop
-void func_0801dedc(void *endParam) {
+void soft_reset_scene_stop(void *endParam) {
     func_08000224();
     set_next_scene(D_08935fb0);
 }
 
 
 // Start
-void func_0801def4(void *initParam) {
+void soft_reset_scene_start(void *initParam) {
     func_080013e8(0);
     func_0804e1bc(D_03005380, 1);
     gResetInfo->state = 0;
@@ -481,7 +529,7 @@ void func_0801def4(void *initParam) {
 
 
 // Update
-u32 func_0801df1c(void *loopParam) {
+u32 soft_reset_scene_update(void *loopParam) {
     u32 complete = FALSE;
 
     func_08006e88();
@@ -516,3 +564,12 @@ u32 func_0801df1c(void *loopParam) {
 
     return complete;
 }
+
+
+// [D_089dd97c] Soft Reset Scene
+struct Scene scene_soft_reset = {
+    /* Start  */ soft_reset_scene_start,  0,
+    /* Update */ soft_reset_scene_update, 0,
+    /* Stop   */ soft_reset_scene_stop,   0,
+    /* Memory */ 0x4
+};

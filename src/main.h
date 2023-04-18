@@ -21,7 +21,7 @@ extern void *interrupt_handler_jtbl_rom;
 extern void *interrupt_handler_jtbl;
 extern const struct Scene *D_08935fac; // Pointer to Title Screen
 extern const struct Scene *D_08935fb0; // Pointer to Title Screen (again)
-extern const struct Scene D_089dd97c; // some special type of scene (uses different script operation functions!)
+extern struct Scene scene_soft_reset; // Soft Reset Scene
 extern const struct Scene scene_warning;
 
 extern void init_scene_static_var(void);

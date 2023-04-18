@@ -119,7 +119,7 @@ void agb_main(void) {
 
 			if ((keysPressed & RESET_BUTTON_COMBO) == RESET_BUTTON_COMBO) {
 				key_rec_set_mode(0, 0x3ff, 0, 0);
-				set_current_scene(&D_089dd97c);
+				set_current_scene(&scene_soft_reset);
 				func_08009548();
 				D_03004498 = FALSE;
 			}

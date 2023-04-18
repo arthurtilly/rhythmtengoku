@@ -38,8 +38,8 @@ extern struct PauseMenu gPauseMenu;
 
 extern const char D_08059668[];
 extern char D_089dd908[];
-extern FontPalette dev_text_font_pal[];
-extern FontPalette D_089dd962[];
+extern FontPalette dev_text_font_pal1[];
+extern FontPalette dev_text_font_pal2[];
 
 
 extern void func_0801d860(u32); // Set D_0300155c
@@ -101,6 +101,6 @@ struct SoftResetSceneInfo {
     u8 state;
 };
 
-extern void func_0801dedc(void *endParam); // D_089dd97c - Stop
-extern void func_0801def4(void *initParam); // D_089dd97c - Start
-extern u32 func_0801df1c(void *loopParam); // D_089dd97c - Update
+extern void soft_reset_scene_stop(void *endParam);
+extern void soft_reset_scene_start(void *initParam);
+extern u32 soft_reset_scene_update(void *loopParam);

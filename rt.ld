@@ -295,7 +295,6 @@ SECTIONS {
         build/data/scenes/studio/data.c.o(.rodata);
         build/data/scenes/medal_corner/data.c.o(.rodata);
 		build/src/scenes/riq_main_scene.c.o(.rodata);
-        build/data/scenes/riq_main_scene/data.c.o(.rodata);
         build/data/scenes/debug/data.c.o(.rodata);
 
         # Rodata section of engines. Some of these are likely rodata sections of src/ files
@@ -1813,9 +1812,8 @@ SECTIONS {
         build/data/scenes/title/scene.bs.o(.scene);
         build/data/scenes/medal_corner/data.c.o(.data);
         build/data/scenes/medal_corner/scene.bs.o(.scene);
-        build/data/scenes/riq_main_scene/data.c.o(.data);
-        build/bin/scene_riq_main.bin.o(.rodata*);
-        build/bin/scene_warning.bin.o(.rodata*);
+		build/src/scenes/riq_main_scene.c.o(.data);
+        build/data/scenes/warning/scene.bs.o(.scene);
         build/data/scenes/warning/data.c.o(.data);
         build/data/scenes/debug/menu.c.o(.data);
         build/bin/scene_debug_menu.bin.o(.rodata*);

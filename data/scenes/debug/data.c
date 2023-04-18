@@ -65,7 +65,7 @@ extern const struct Scene scene_toss_boys_2;
 extern const struct Scene D_089d2f98;
 extern const struct Scene scene_power_calligraphy;
 extern const struct Scene scene_rat_race;
-extern const struct Scene D_089de05c;
+extern const struct Scene scene_flash_mem_test;
 extern const struct Scene scene_fireworks;
 extern const struct Scene D_089d2940;
 extern const struct Scene scene_bunny_hop;
@@ -368,7 +368,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "こっそりラット"
     },
     /* Flash Memory Test */ {
-        /* Scene */ &D_089de05c,
+        /* Scene */ &scene_flash_mem_test,
         /* Label */ "フラッシュメモリテスト"
     },
     /* Fireworks */ {
