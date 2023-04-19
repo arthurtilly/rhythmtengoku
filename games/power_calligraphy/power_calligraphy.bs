@@ -268,7 +268,7 @@ script script_power_calligraphy_main
     power_calligraphy_event01 0
     power_calligraphy_event06 4156
     rest 24
-    run scene_stop_music 0
+    run scene_stop_music, 0
     rest 24
     set_music_volume 256
     assess_perfect_inputs 0
@@ -292,7 +292,7 @@ script script_power_calligraphy_practice
     print_text_f D_0805d300
     rest 24
     rest 24
-    run gameplay_display_skip_icon 3
+    run gameplay_display_skip_icon, 3
     run gameplay_set_tutorial scene_power_calligraphy_skipped_practice
     rest 24
     rest 24
@@ -303,7 +303,7 @@ script script_power_calligraphy_practice
     print_text_f D_0805d318
     power_calligraphy_event03 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         call power_calligraphy_sub_08a7f1e0
         call power_calligraphy_sub_08a7f264
         power_calligraphy_event03 0
@@ -322,7 +322,7 @@ script script_power_calligraphy_practice
     rest 24
     power_calligraphy_event03 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         call power_calligraphy_sub_08a7f534
         call power_calligraphy_sub_08a7f594
         power_calligraphy_event03 0

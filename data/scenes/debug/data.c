@@ -9,7 +9,7 @@
 extern const struct Scene scene_drum_live;
 extern const struct Scene scene_sick_beats_endless;
 extern const struct Scene scene_quiz_show_endless;
-extern const struct Scene D_089d69e0;
+extern const struct Scene scene_mannequin_factory;
 extern const struct Scene scene_mr_upbeat;
 extern const struct Scene scene_remix_8;
 extern const struct Scene scene_remix_7;
@@ -144,7 +144,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "クイズ（スペシャル）"
     },
     /* Mannequin Factory */ {
-        /* Scene */ &D_089d69e0,
+        /* Scene */ &scene_mannequin_factory,
         /* Label */ "マネキンこうじょう"
     },
     /* Mr. Upbeat */ {

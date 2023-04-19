@@ -29,6 +29,25 @@ define_gameplay_scene scene_mr_upbeat, script_mr_upbeat_entry
 .section .script.main
 @ Mr. Upbeat - Main Script
 
+script script_mr_upbeat_game_over
+    mod_tempo 120, 24
+    run scene_stop_music, 0
+    enable_pause 0
+    enable_play_inputs 0
+    mr_upbeat_event04 0
+    rest 24
+    rest 24
+    rest 24
+    mr_upbeat_event05 0
+    rest 24
+    run gameplay_display_text_and_wait, 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+
 script mr_upbeat_sub_08a56c60
     play_sfx_sp s_intro_one_seqData, 384, 0
     rest 12
@@ -87,7 +106,7 @@ script script_mr_upbeat_main
     set_tempo 70
     set_music_volume 200
     run gameplay_set_cue_hit_window, 3
-    mr_upbeat_event01 D_08a56b88
+    mr_upbeat_event01 script_mr_upbeat_game_over
     print_text_s D_08068170
     rest 24
     enable_pause 1
@@ -98,7 +117,7 @@ script script_mr_upbeat_main
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
-    run scene_stop_music 0
+    run scene_stop_music, 0
     play_sfx s_metro_tin_seqData
     mr_upbeat_event03 0
     print_text_s D_0806817c
@@ -111,7 +130,7 @@ script script_mr_upbeat_main
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
-    run scene_stop_music 0
+    run scene_stop_music, 0
     play_sfx s_metro_tin_seqData
     mr_upbeat_event03 0
     print_text_s D_08068188
@@ -124,7 +143,7 @@ script script_mr_upbeat_main
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
-    run scene_stop_music 0
+    run scene_stop_music, 0
     play_sfx s_metro_tin_seqData
     mr_upbeat_event03 0
     print_text_s D_08068194
@@ -137,7 +156,7 @@ script script_mr_upbeat_main
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
-    run scene_stop_music 0
+    run scene_stop_music, 0
     play_sfx s_metro_tin_seqData
     mr_upbeat_event03 0
     print_text_s D_080681a0
@@ -150,7 +169,7 @@ script script_mr_upbeat_main
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
-    run scene_stop_music 0
+    run scene_stop_music, 0
     play_sfx s_metro_tin_seqData
     mr_upbeat_event03 0
     print_text_s D_080681ac
@@ -163,7 +182,7 @@ script script_mr_upbeat_main
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
-    run scene_stop_music 0
+    run scene_stop_music, 0
     play_sfx s_metro_tin_seqData
     mr_upbeat_event03 0
     print_text_s D_080681bc
@@ -176,7 +195,7 @@ script script_mr_upbeat_main
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
-    run scene_stop_music 0
+    run scene_stop_music, 0
     play_sfx s_metro_tin_seqData
     mr_upbeat_event03 0
     print_text_s D_080681c8
@@ -189,7 +208,7 @@ script script_mr_upbeat_main
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
-    run scene_stop_music 0
+    run scene_stop_music, 0
     play_sfx s_metro_tin_seqData
     mr_upbeat_event03 0
     print_text_s D_080681d8
@@ -202,7 +221,7 @@ script script_mr_upbeat_main
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
-    run scene_stop_music 0
+    run scene_stop_music, 0
     play_sfx s_metro_tin_seqData
     mr_upbeat_event03 0
     print_text_s D_080681e8
@@ -215,7 +234,7 @@ script script_mr_upbeat_main
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
     call mr_upbeat_sub_08a56e64
-    run scene_stop_music 0
+    run scene_stop_music, 0
     play_sfx s_metro_tin_seqData
     mr_upbeat_event03 0
     print_text_s D_080681f0
@@ -229,7 +248,7 @@ script script_mr_upbeat_main
         call mr_upbeat_sub_08a56e64
         call mr_upbeat_sub_08a56e64
         call mr_upbeat_sub_08a56e64
-        run scene_stop_music 0
+        run scene_stop_music, 0
         play_sfx s_metro_tin_seqData
         mr_upbeat_event03 0
         switch_random INT8, 5

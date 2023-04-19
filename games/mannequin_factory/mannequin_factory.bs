@@ -1,0 +1,489 @@
+.include "include/beatscript.inc"
+.include "games/mannequin_factory/macros.inc"
+
+
+
+.section .script.entry
+@ Mannequin Factory - Script Entry Point
+
+script script_mannequin_factory_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_mannequin_factory_practice
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_mannequin_factory_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_mannequin_factory, script_mannequin_factory_entry
+
+
+
+@ Mannequin Factory - Script Entry Point (Skipped Practice)
+
+script script_mannequin_factory_skipped_practice_entry
+    set_tempo 124
+    set_game_fade_in_time 0
+    load_mannequin_factory
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_mannequin_factory_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_mannequin_factory_skipped_practice, script_mannequin_factory_skipped_practice_entry
+
+
+
+.section .script.main
+@ Mannequin Factory - Main Script
+
+script script_mannequin_factory_game_over
+    mod_tempo 120, 24
+    run scene_stop_music, 0
+    enable_pause 0
+    enable_play_inputs 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    mannequin_factory_event05 0
+    play_sfx s_gameover_fan_seqData
+    run set_pause_beatscript_scene, TRUE
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+
+script script_mannequin_factory_practice
+    mannequin_factory_event02 100
+    set_music_volume 156
+    mannequin_factory_event04 script_mannequin_factory_game_over
+    rest 24
+    enable_pause 1
+    run gameplay_display_skip_icon, 1
+    run gameplay_set_tutorial scene_mannequin_factory_skipped_practice
+    rest 24
+    rest 6
+    play_sfx_sp s_dontan_count_seqData, 96, 0
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    play_sfx_sp s_dontan_count_seqData, 96, 0
+    rest 12
+    rest 12
+    play_sfx_sp s_dontan_count_seqData, 96, 0
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    play_sfx_sp s_dontan_count_seqData, 96, 0
+    rest 12
+    rest 12
+    loop_start
+        mannequin_factory_event06 0
+        mannequin_factory_event00 0
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        rest 12
+        mannequin_factory_event01 0
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        rest 12
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        rest 12
+        mannequin_factory_event01 0
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        rest 12
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        rest 12
+        mannequin_factory_event01 0
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        play_sfx s_ninja_furu_seqData
+        rest 12
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        rest 12
+        mannequin_factory_event01 0
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        rest 12
+        rest 12
+        mannequin_factory_event06 1
+        mannequin_factory_event00 0
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        rest 12
+        mannequin_factory_event01 0
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        rest 12
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        rest 12
+        mannequin_factory_event01 0
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        play_sfx s_ninja_furu_seqData
+        rest 12
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        rest 12
+        mannequin_factory_event01 0
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        play_sfx s_ninja_furu_seqData
+        rest 12
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        rest 12
+        mannequin_factory_event01 0
+        rest 12
+        play_sfx_sp s_dontan_count_seqData, 96, 0
+        rest 12
+        rest 12
+    loop_end
+return
+
+
+script mannequin_factory_sub_08a58aa0
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+return
+
+
+script mannequin_factory_sub_08a58b3c
+    mannequin_factory_event06 0
+    mannequin_factory_event00 0
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event06 1
+    mannequin_factory_event00 0
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+return
+
+
+script mannequin_factory_sub_08a58de8
+    mannequin_factory_event06 2
+    mannequin_factory_event00 0
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event06 2
+    mannequin_factory_event00 0
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+return
+
+
+script mannequin_factory_sub_08a59094
+    mannequin_factory_event06 0
+    mannequin_factory_event00 0
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event06 1
+    mannequin_factory_event00 0
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event06 0
+    mannequin_factory_event00 0
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+return
+
+
+script mannequin_factory_sub_08a59490
+    mannequin_factory_event06 2
+    mannequin_factory_event00 0
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event00 0
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event00 0
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    mannequin_factory_event01 0
+    rest 12
+    rest 12
+    rest 12
+return
+
+
+script script_mannequin_factory_main
+    mannequin_factory_event02 120
+    set_music_volume 156
+    mannequin_factory_event04 script_mannequin_factory_game_over
+    rest 24
+    enable_pause 1
+    rest 24
+    play_music s_renshu_bgm1_seqData
+    rest 6
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58b3c
+    call mannequin_factory_sub_08a58b3c
+    mannequin_factory_event02 150
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58b3c
+    call mannequin_factory_sub_08a58b3c
+    mannequin_factory_event02 180
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58b3c
+    call mannequin_factory_sub_08a58b3c
+    mannequin_factory_event02 140
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58de8
+    call mannequin_factory_sub_08a58de8
+    mannequin_factory_event02 170
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58de8
+    call mannequin_factory_sub_08a58de8
+    mannequin_factory_event02 120
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a59094
+    call mannequin_factory_sub_08a59094
+    mannequin_factory_event02 150
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a59094
+    call mannequin_factory_sub_08a59094
+    mannequin_factory_event02 180
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a59094
+    call mannequin_factory_sub_08a59094
+    mannequin_factory_event02 140
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a59490
+    call mannequin_factory_sub_08a59490
+    mannequin_factory_event02 170
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a58aa0
+    call mannequin_factory_sub_08a59490
+    call mannequin_factory_sub_08a59490
+    loop_start
+        mannequin_factory_event03 288
+        call mannequin_factory_sub_08a58aa0
+        call mannequin_factory_sub_08a58aa0
+        switch_random INT8, 2
+            case 0
+                call mannequin_factory_sub_08a58de8
+                call mannequin_factory_sub_08a58de8
+                break
+            case 1
+                call mannequin_factory_sub_08a59490
+                call mannequin_factory_sub_08a59490
+                break
+        end_switch
+    loop_end
+return
+
+.end

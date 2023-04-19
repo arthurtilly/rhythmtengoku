@@ -89,7 +89,7 @@ script script_snappy_trio_unused_main
     rest 24
     clappy_trio_crouch 1
     rest 24
-    run gameplay_assess_irrelevant_inputs 1
+    run gameplay_assess_irrelevant_inputs, 1
     beat_anim
     rest 24
     beat_anim

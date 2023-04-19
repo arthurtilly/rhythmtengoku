@@ -413,7 +413,7 @@ script script_remix_6_main
     assess_perfect_inputs 0
     enable_play_inputs 0
     assess_inputs 0
-    run gameplay_assess_irrelevant_inputs 0
+    run gameplay_assess_irrelevant_inputs, 0
     quiz_show_event01 0
     quiz_show_event01 -16
     quiz_show_event01 1

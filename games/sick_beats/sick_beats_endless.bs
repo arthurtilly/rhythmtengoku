@@ -31,7 +31,7 @@ define_gameplay_scene scene_sick_beats_endless, script_sick_beats_endless_entry
 
 script script_sick_beats_endless_game_over
     set_tempo 120
-    run scene_stop_music 0
+    run scene_stop_music, 0
     enable_pause 0
     enable_play_inputs 0
     rest 24

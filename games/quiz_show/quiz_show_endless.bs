@@ -671,7 +671,7 @@ script script_quiz_show_endless_main
     end_switch
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         switch FUNC, func_080175d8
             case 5
             case 10
