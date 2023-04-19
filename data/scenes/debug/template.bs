@@ -20,10 +20,10 @@ script script_scene_template
 
 @ Local Scene
 struct sub_scene_template
-    /* Start  */ .word func_0801edc8, 0
-    /* Paused */ .word func_0801ee38, 0
-    /* Active */ .word func_0801ee3c, 0
-    /* Stop   */ .word func_0801ee88, 0
+    /* Start  */ .word template_scene_start, 0
+    /* Paused */ .word template_scene_paused, 0
+    /* Active */ .word template_scene_update, 0
+    /* Stop   */ .word template_scene_stop, 0
     /* Script */ .word script_scene_template
 endstruct
 

@@ -22,5 +22,3 @@ asm(".include \"include/gba.inc\"");//Temporary
 #include "asm/debug/asm_0801ed20.s"
 
 #include "asm/debug/asm_0801ed3c.s"
-
-#include "asm/debug/asm_0801ed4c.s"

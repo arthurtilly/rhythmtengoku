@@ -8,18 +8,18 @@
 
 
 // [D_089de240] SceneObjects
-union SceneObject empty_test_scene_objects[] = {
+union SceneObject template_scene_objects[] = {
     END_OF_SCENE_OBJECTS_LIST
 };
 
 
 // [D_089de244] Graphics Table
-struct GraphicsTable empty_test_gfx_table[] = {
+struct GraphicsTable template_scene_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
 
 // [D_089de250] Buffered Textures List
-struct CompressedGraphics *empty_test_buffered_textures[] = {
+struct CompressedGraphics *template_scene_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
