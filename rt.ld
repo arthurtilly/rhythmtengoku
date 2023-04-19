@@ -1061,8 +1061,8 @@ SECTIONS {
         build/games/space_dance/subroutines.bs.o(.script.sub);
         build/bin/bindata_08a85a50.bin.o(.rodata*);
         build/games/tap_trial/subroutines.bs.o(.script.sub);
-        build/bin/bindata_08a86008.bin.o(.rodata*);
 
+        build/bin/bindata_08a86008.bin.o(.rodata*);
         build/audio/instruments.c.o(.data);
         build/audio/sequences.c.o(.rodata);
         build/audio/sequences.c.o(.data);
