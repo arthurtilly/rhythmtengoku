@@ -1,3 +1,8 @@
+#include "global.h"
+#include "sound.h"
+
+#include "sequence_names.inc.c"
+
 extern const u32 Lesson1_mid;
 struct SequenceData Lesson1_seqData = {
     /* ROM Address */        &Lesson1_mid,
