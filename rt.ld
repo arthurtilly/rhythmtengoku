@@ -37,6 +37,7 @@ SECTIONS {
 		build/src/scenes/results.c.o(.bss);
 		build/src/scenes/epilogue.c.o(.bss);
 		build/src/scenes/reading.c.o(.bss);
+		build/src/scenes/read_error.c.o(.bss);
 		build/src/scenes/studio.c.o(.bss);
 		build/src/scenes/title.c.o(.bss);
 		build/src/scenes/medal_corner.c.o(.bss);
@@ -162,6 +163,7 @@ SECTIONS {
 		build/src/scenes/results.c.o(.text);
 		build/src/scenes/epilogue.c.o(.text);
 		build/src/scenes/reading.c.o(.text);
+		build/src/scenes/read_error.c.o(.text);
 		build/src/scenes/studio.c.o(.text);
 		build/src/scenes/title.c.o(.text);
 		build/src/scenes/medal_corner.c.o(.text);
@@ -1804,7 +1806,6 @@ SECTIONS {
         build/data/scenes/data_room/reading.bs.o(.scene);
         build/data/scenes/data_room/read_error.c.o(.data);
         build/data/scenes/data_room/read_error.bs.o(.scene);
-
         build/data/scenes/studio/data.c.o(.data);
         build/data/scenes/studio/scene.bs.o(.scene);
         build/data/scenes/studio/scripts.bs.o(.script);
@@ -1826,7 +1827,6 @@ SECTIONS {
         build/data/scenes/debug/asset_test.bs.o(.scene);
         build/data/scenes/debug/template_scene.c.o(.data);
         build/data/scenes/debug/template_scene.bs.o(.scene);
-
         build/data/font_definitions.c.o(.data);
 
         build/games/sneaky_spirits/engine.c.o(.data);

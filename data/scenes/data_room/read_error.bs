@@ -20,14 +20,14 @@ script script_scene_read_error
 
 @ Local Scene
 struct sub_scene_read_error
-    /* Start  */ .word func_0801a940, 0
-    /* Paused */ .word NULL,          0
-    /* Active */ .word func_0801a96c, 0
-    /* Stop   */ .word func_0801a9b8, 0
+    /* Start  */ .word read_error_scene_start,  0
+    /* Paused */ .word NULL,                    0
+    /* Active */ .word read_error_scene_update, 0
+    /* Stop   */ .word read_error_scene_stop,   0
     /* Script */ .word script_scene_read_error
 endstruct
 
-@ RIQ Data Room Read Error(?) Scene
+@ RIQ Rhythm Data Room Read Error(?) Scene
 struct scene_read_error
     /* Start  */ .word func_0801d86c, sub_scene_read_error
     /* Update */ .word func_0801d8d8, 0

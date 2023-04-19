@@ -59,37 +59,13 @@ extern struct ReadingMaterial reading_material_error;
 
 
 // Functions:
-// extern ? func_0801a384(?); // Graphics Init. 4
-// extern ? func_0801a3b0(?); // Graphics Init. 3
-// extern ? func_0801a3e4(?); // Graphics Init. 2
-// extern ? func_0801a414(?); // Graphics Init. 1
-// extern ? func_0801a450(?); // Scene Start
+extern void func_0801a384(void); // Graphics Init. 4
+extern void func_0801a3b0(void); // Graphics Init. 3
+extern void func_0801a3e4(void); // Graphics Init. 2
+extern void func_0801a414(void); // Graphics Init. 1
+extern void func_0801a450(void *sceneVar, s32 dataArg); // Scene Start
 // extern ? func_0801a5d8(?); // ?
-// extern ? func_0801a70c(?); // Scene Update (Active)
+extern void func_0801a70c(void *sceneVar, s32 dataArg); // Scene Update (Active)
 // extern ? func_0801a860(?); // ?
-// extern ? func_0801a8a0(?); // Scene Stop
+extern void func_0801a8a0(void *sceneVar, s32 dataArg); // Scene Stop
 // extern ? func_0801a8b0(?); // ? (Script Function)
-
-
-// Scene Types:
-struct ReadErrorSceneInfo {
-    /* add fields here */
-};
-
-
-// Scene Macros/Enums:
-
-
-// Scene Data:
-extern struct GraphicsTable D_089d80ec[];
-extern struct CompressedGraphics *D_089d80f8[];
-
-
-// Functions:
-// extern ? func_0801a8c8(?); // Graphics Init. 3
-// extern ? func_0801a8f4(?); // Graphics Init. 2
-// extern ? func_0801a924(?); // Graphics Init. 1
-// extern ? func_0801a940(?); // Scene Start
-// extern ? func_0801a96c(?); // Scene Update (Active)
-// extern ? func_0801a99c(?); // Check if Screen is Ready
-// extern ? func_0801a9b8(?); // Scene Stop

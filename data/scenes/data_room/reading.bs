@@ -32,7 +32,7 @@ struct sub_scene_reading
     /* Script */ .word script_scene_reading
 endstruct
 
-@ RIQ Data Room Reading Scene
+@ RIQ Rhythm Data Room Reading Scene
 struct scene_reading
     /* Start  */ .word func_0801d86c, sub_scene_reading
     /* Update */ .word func_0801d8d8, 0
