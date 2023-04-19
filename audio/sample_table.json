@@ -1,14 +1,14 @@
 {
     "comments": [
-        "This file is used to autogenerate the sample table lookup which contains information about each sample.",
+        "This file is used to auto-generate the sample table lookup which contains information about each sample.",
         "Most of this is auto-generated from the sample file but some additional data needs to be specified.",
         "sample: The name of the .wav file to use as sample data.",
         "pitch: The pitch of the sample in scientific pitch notation, where middle C is C4.",
         "loop (optional): The start and end of the sample's loop, in samples."
     ],
-    "sfx": [
+    "samples": [
         {
-            "sample": "sfx_001.wav",
+            "sample": "sample_001.wav",
             "pitch": "C5",
             "loop": [
                 4367,
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "sample": "sfx_002.wav",
+            "sample": "sample_002.wav",
             "pitch": "E6",
             "loop": [
                 12482,
@@ -24,11 +24,11 @@
             ]
         },
         {
-            "sample": "sfx_003.wav",
+            "sample": "sample_003.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_004.wav",
+            "sample": "sample_004.wav",
             "pitch": "C5",
             "loop": [
                 7676,
@@ -36,7 +36,7 @@
             ]
         },
         {
-            "sample": "sfx_005.wav",
+            "sample": "sample_005.wav",
             "pitch": "E4",
             "loop": [
                 1400,
@@ -44,7 +44,7 @@
             ]
         },
         {
-            "sample": "sfx_006.wav",
+            "sample": "sample_006.wav",
             "pitch": "E4",
             "loop": [
                 1062,
@@ -52,15 +52,15 @@
             ]
         },
         {
-            "sample": "sfx_007.wav",
+            "sample": "sample_007.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_008.wav",
+            "sample": "sample_008.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_009.wav",
+            "sample": "sample_009.wav",
             "pitch": "G5",
             "loop": [
                 8,
@@ -68,7 +68,7 @@
             ]
         },
         {
-            "sample": "sfx_010.wav",
+            "sample": "sample_010.wav",
             "pitch": "A5",
             "loop": [
                 2623,
@@ -76,7 +76,7 @@
             ]
         },
         {
-            "sample": "sfx_011.wav",
+            "sample": "sample_011.wav",
             "pitch": "C5",
             "loop": [
                 81,
@@ -84,7 +84,7 @@
             ]
         },
         {
-            "sample": "sfx_012.wav",
+            "sample": "sample_012.wav",
             "pitch": "C4",
             "loop": [
                 2968,
@@ -92,7 +92,7 @@
             ]
         },
         {
-            "sample": "sfx_013.wav",
+            "sample": "sample_013.wav",
             "pitch": "C4",
             "loop": [
                 1073,
@@ -100,7 +100,7 @@
             ]
         },
         {
-            "sample": "sfx_014.wav",
+            "sample": "sample_014.wav",
             "pitch": "C5",
             "loop": [
                 5610,
@@ -108,7 +108,7 @@
             ]
         },
         {
-            "sample": "sfx_015.wav",
+            "sample": "sample_015.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -116,7 +116,7 @@
             ]
         },
         {
-            "sample": "sfx_016.wav",
+            "sample": "sample_016.wav",
             "pitch": "C2",
             "loop": [
                 3505,
@@ -124,7 +124,7 @@
             ]
         },
         {
-            "sample": "sfx_017.wav",
+            "sample": "sample_017.wav",
             "pitch": "C5",
             "loop": [
                 1478,
@@ -132,7 +132,7 @@
             ]
         },
         {
-            "sample": "sfx_018.wav",
+            "sample": "sample_018.wav",
             "pitch": "C5",
             "loop": [
                 1644,
@@ -140,19 +140,19 @@
             ]
         },
         {
-            "sample": "sfx_019.wav",
+            "sample": "sample_019.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_020.wav",
+            "sample": "sample_020.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_021.wav",
+            "sample": "sample_021.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_022.wav",
+            "sample": "sample_022.wav",
             "pitch": "C5",
             "loop": [
                 4,
@@ -160,19 +160,19 @@
             ]
         },
         {
-            "sample": "sfx_023.wav",
+            "sample": "sample_023.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_024.wav",
+            "sample": "sample_024.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_025.wav",
+            "sample": "sample_025.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_026.wav",
+            "sample": "sample_026.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -180,7 +180,7 @@
             ]
         },
         {
-            "sample": "sfx_027.wav",
+            "sample": "sample_027.wav",
             "pitch": "C6",
             "loop": [
                 1024,
@@ -188,7 +188,7 @@
             ]
         },
         {
-            "sample": "sfx_028.wav",
+            "sample": "sample_028.wav",
             "pitch": "C5",
             "loop": [
                 4703,
@@ -196,15 +196,15 @@
             ]
         },
         {
-            "sample": "sfx_029.wav",
+            "sample": "sample_029.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_030.wav",
+            "sample": "sample_030.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_031.wav",
+            "sample": "sample_031.wav",
             "pitch": "C5",
             "loop": [
                 1716,
@@ -212,7 +212,7 @@
             ]
         },
         {
-            "sample": "sfx_032.wav",
+            "sample": "sample_032.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -220,7 +220,7 @@
             ]
         },
         {
-            "sample": "sfx_033.wav",
+            "sample": "sample_033.wav",
             "pitch": "C5",
             "loop": [
                 320,
@@ -228,11 +228,11 @@
             ]
         },
         {
-            "sample": "sfx_034.wav",
+            "sample": "sample_034.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_035.wav",
+            "sample": "sample_035.wav",
             "pitch": "C5",
             "loop": [
                 2568,
@@ -240,15 +240,15 @@
             ]
         },
         {
-            "sample": "sfx_036.wav",
+            "sample": "sample_036.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_037.wav",
+            "sample": "sample_037.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_038.wav",
+            "sample": "sample_038.wav",
             "pitch": "C5",
             "loop": [
                 2666,
@@ -256,11 +256,11 @@
             ]
         },
         {
-            "sample": "sfx_039.wav",
+            "sample": "sample_039.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_040.wav",
+            "sample": "sample_040.wav",
             "pitch": "C5",
             "loop": [
                 923,
@@ -268,7 +268,7 @@
             ]
         },
         {
-            "sample": "sfx_041.wav",
+            "sample": "sample_041.wav",
             "pitch": "C4",
             "loop": [
                 4757,
@@ -276,71 +276,71 @@
             ]
         },
         {
-            "sample": "sfx_042.wav",
+            "sample": "sample_042.wav",
             "pitch": "C3"
         },
         {
-            "sample": "sfx_043.wav",
+            "sample": "sample_043.wav",
             "pitch": "C3"
         },
         {
-            "sample": "sfx_044.wav",
+            "sample": "sample_044.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_045.wav",
+            "sample": "sample_045.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_046.wav",
+            "sample": "sample_046.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_047.wav",
+            "sample": "sample_047.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_048.wav",
+            "sample": "sample_048.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_049.wav",
+            "sample": "sample_049.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_050.wav",
+            "sample": "sample_050.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_051.wav",
+            "sample": "sample_051.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_052.wav",
+            "sample": "sample_052.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_053.wav",
+            "sample": "sample_053.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_054.wav",
+            "sample": "sample_054.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_055.wav",
+            "sample": "sample_055.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_056.wav",
+            "sample": "sample_056.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_057.wav",
+            "sample": "sample_057.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_058.wav",
+            "sample": "sample_058.wav",
             "pitch": "C5",
             "loop": [
                 971,
@@ -348,7 +348,7 @@
             ]
         },
         {
-            "sample": "sfx_059.wav",
+            "sample": "sample_059.wav",
             "pitch": "C5",
             "loop": [
                 1126,
@@ -356,7 +356,7 @@
             ]
         },
         {
-            "sample": "sfx_060.wav",
+            "sample": "sample_060.wav",
             "pitch": "C2",
             "loop": [
                 1423,
@@ -364,7 +364,7 @@
             ]
         },
         {
-            "sample": "sfx_061.wav",
+            "sample": "sample_061.wav",
             "pitch": "C5",
             "loop": [
                 5559,
@@ -372,7 +372,7 @@
             ]
         },
         {
-            "sample": "sfx_062.wav",
+            "sample": "sample_062.wav",
             "pitch": "C5",
             "loop": [
                 989,
@@ -380,107 +380,107 @@
             ]
         },
         {
-            "sample": "sfx_063.wav",
+            "sample": "sample_063.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_064.wav",
+            "sample": "sample_064.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_065.wav",
+            "sample": "sample_065.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_066.wav",
+            "sample": "sample_066.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_067.wav",
+            "sample": "sample_067.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_068.wav",
+            "sample": "sample_068.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_069.wav",
+            "sample": "sample_069.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_070.wav",
+            "sample": "sample_070.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_071.wav",
+            "sample": "sample_071.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_072.wav",
+            "sample": "sample_072.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_073.wav",
+            "sample": "sample_073.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_074.wav",
+            "sample": "sample_074.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_075.wav",
+            "sample": "sample_075.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_076.wav",
+            "sample": "sample_076.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_077.wav",
+            "sample": "sample_077.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_078.wav",
+            "sample": "sample_078.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_079.wav",
+            "sample": "sample_079.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_080.wav",
+            "sample": "sample_080.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_081.wav",
+            "sample": "sample_081.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_082.wav",
+            "sample": "sample_082.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_083.wav",
+            "sample": "sample_083.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_084.wav",
+            "sample": "sample_084.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_085.wav",
+            "sample": "sample_085.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_086.wav",
+            "sample": "sample_086.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_087.wav",
+            "sample": "sample_087.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_088.wav",
+            "sample": "sample_088.wav",
             "pitch": "C5",
             "loop": [
                 1520,
@@ -488,23 +488,23 @@
             ]
         },
         {
-            "sample": "sfx_089.wav",
+            "sample": "sample_089.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_090.wav",
+            "sample": "sample_090.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_091.wav",
+            "sample": "sample_091.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_092.wav",
+            "sample": "sample_092.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_093.wav",
+            "sample": "sample_093.wav",
             "pitch": "C5",
             "loop": [
                 5696,
@@ -512,11 +512,11 @@
             ]
         },
         {
-            "sample": "sfx_094.wav",
+            "sample": "sample_094.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_095.wav",
+            "sample": "sample_095.wav",
             "pitch": "C5",
             "loop": [
                 3128,
@@ -524,23 +524,23 @@
             ]
         },
         {
-            "sample": "sfx_096.wav",
+            "sample": "sample_096.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_097.wav",
+            "sample": "sample_097.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_098.wav",
+            "sample": "sample_098.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_099.wav",
+            "sample": "sample_099.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_100.wav",
+            "sample": "sample_100.wav",
             "pitch": "C5",
             "loop": [
                 6043,
@@ -548,11 +548,11 @@
             ]
         },
         {
-            "sample": "sfx_101.wav",
+            "sample": "sample_101.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_102.wav",
+            "sample": "sample_102.wav",
             "pitch": "C5",
             "loop": [
                 2048,
@@ -560,23 +560,23 @@
             ]
         },
         {
-            "sample": "sfx_103.wav",
+            "sample": "sample_103.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_104.wav",
+            "sample": "sample_104.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_105.wav",
+            "sample": "sample_105.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_106.wav",
+            "sample": "sample_106.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_107.wav",
+            "sample": "sample_107.wav",
             "pitch": "C5",
             "loop": [
                 699,
@@ -584,7 +584,7 @@
             ]
         },
         {
-            "sample": "sfx_108.wav",
+            "sample": "sample_108.wav",
             "pitch": "C3",
             "loop": [
                 5192,
@@ -592,7 +592,7 @@
             ]
         },
         {
-            "sample": "sfx_109.wav",
+            "sample": "sample_109.wav",
             "pitch": "C5",
             "loop": [
                 4278,
@@ -600,7 +600,7 @@
             ]
         },
         {
-            "sample": "sfx_110.wav",
+            "sample": "sample_110.wav",
             "pitch": "A3",
             "loop": [
                 10255,
@@ -608,7 +608,7 @@
             ]
         },
         {
-            "sample": "sfx_111.wav",
+            "sample": "sample_111.wav",
             "pitch": "A5",
             "loop": [
                 4831,
@@ -616,7 +616,7 @@
             ]
         },
         {
-            "sample": "sfx_112.wav",
+            "sample": "sample_112.wav",
             "pitch": "C5",
             "loop": [
                 1598,
@@ -624,7 +624,7 @@
             ]
         },
         {
-            "sample": "sfx_113.wav",
+            "sample": "sample_113.wav",
             "pitch": "A4",
             "loop": [
                 4736,
@@ -632,7 +632,7 @@
             ]
         },
         {
-            "sample": "sfx_114.wav",
+            "sample": "sample_114.wav",
             "pitch": "C5",
             "loop": [
                 5257,
@@ -640,7 +640,7 @@
             ]
         },
         {
-            "sample": "sfx_115.wav",
+            "sample": "sample_115.wav",
             "pitch": "C4",
             "loop": [
                 4494,
@@ -648,11 +648,11 @@
             ]
         },
         {
-            "sample": "sfx_116.wav",
+            "sample": "sample_116.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_117.wav",
+            "sample": "sample_117.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -660,7 +660,7 @@
             ]
         },
         {
-            "sample": "sfx_118.wav",
+            "sample": "sample_118.wav",
             "pitch": "C5",
             "loop": [
                 2572,
@@ -668,19 +668,19 @@
             ]
         },
         {
-            "sample": "sfx_119.wav",
+            "sample": "sample_119.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_120.wav",
+            "sample": "sample_120.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_121.wav",
+            "sample": "sample_121.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_122.wav",
+            "sample": "sample_122.wav",
             "pitch": "C5",
             "loop": [
                 11072,
@@ -688,11 +688,11 @@
             ]
         },
         {
-            "sample": "sfx_123.wav",
+            "sample": "sample_123.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_124.wav",
+            "sample": "sample_124.wav",
             "pitch": "C5",
             "loop": [
                 4,
@@ -700,7 +700,7 @@
             ]
         },
         {
-            "sample": "sfx_125.wav",
+            "sample": "sample_125.wav",
             "pitch": "G4",
             "loop": [
                 939,
@@ -708,115 +708,115 @@
             ]
         },
         {
-            "sample": "sfx_126.wav",
+            "sample": "sample_126.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_127.wav",
+            "sample": "sample_127.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_128.wav",
+            "sample": "sample_128.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_129.wav",
+            "sample": "sample_129.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_130.wav",
+            "sample": "sample_130.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_131.wav",
+            "sample": "sample_131.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_132.wav",
+            "sample": "sample_132.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_133.wav",
+            "sample": "sample_133.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_134.wav",
+            "sample": "sample_134.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_135.wav",
+            "sample": "sample_135.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_136.wav",
+            "sample": "sample_136.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_137.wav",
+            "sample": "sample_137.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_138.wav",
+            "sample": "sample_138.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_139.wav",
+            "sample": "sample_139.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_140.wav",
+            "sample": "sample_140.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_141.wav",
+            "sample": "sample_141.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_142.wav",
+            "sample": "sample_142.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_143.wav",
+            "sample": "sample_143.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_144.wav",
+            "sample": "sample_144.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_145.wav",
+            "sample": "sample_145.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_146.wav",
+            "sample": "sample_146.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_147.wav",
+            "sample": "sample_147.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_148.wav",
+            "sample": "sample_148.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_149.wav",
+            "sample": "sample_149.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_150.wav",
+            "sample": "sample_150.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_151.wav",
+            "sample": "sample_151.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_152.wav",
+            "sample": "sample_152.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_153.wav",
+            "sample": "sample_153.wav",
             "pitch": "C5",
             "loop": [
                 1487,
@@ -824,123 +824,123 @@
             ]
         },
         {
-            "sample": "sfx_154.wav",
+            "sample": "sample_154.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_155.wav",
+            "sample": "sample_155.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_156.wav",
+            "sample": "sample_156.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_157.wav",
+            "sample": "sample_157.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_158.wav",
+            "sample": "sample_158.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_159.wav",
+            "sample": "sample_159.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_160.wav",
+            "sample": "sample_160.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_161.wav",
+            "sample": "sample_161.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_162.wav",
+            "sample": "sample_162.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_163.wav",
+            "sample": "sample_163.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_164.wav",
+            "sample": "sample_164.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_165.wav",
+            "sample": "sample_165.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_166.wav",
+            "sample": "sample_166.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_167.wav",
+            "sample": "sample_167.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_168.wav",
+            "sample": "sample_168.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_169.wav",
+            "sample": "sample_169.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_170.wav",
+            "sample": "sample_170.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_171.wav",
+            "sample": "sample_171.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_172.wav",
+            "sample": "sample_172.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_173.wav",
+            "sample": "sample_173.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_174.wav",
+            "sample": "sample_174.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_175.wav",
+            "sample": "sample_175.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_176.wav",
+            "sample": "sample_176.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_177.wav",
+            "sample": "sample_177.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_178.wav",
+            "sample": "sample_178.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_179.wav",
+            "sample": "sample_179.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_180.wav",
+            "sample": "sample_180.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_181.wav",
+            "sample": "sample_181.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_182.wav",
+            "sample": "sample_182.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_183.wav",
+            "sample": "sample_183.wav",
             "pitch": "C5",
             "loop": [
                 1738,
@@ -948,27 +948,27 @@
             ]
         },
         {
-            "sample": "sfx_184.wav",
+            "sample": "sample_184.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_185.wav",
+            "sample": "sample_185.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_186.wav",
+            "sample": "sample_186.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_187.wav",
+            "sample": "sample_187.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_188.wav",
+            "sample": "sample_188.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_189.wav",
+            "sample": "sample_189.wav",
             "pitch": "C5",
             "loop": [
                 1802,
@@ -976,7 +976,7 @@
             ]
         },
         {
-            "sample": "sfx_190.wav",
+            "sample": "sample_190.wav",
             "pitch": "C5",
             "loop": [
                 1162,
@@ -984,7 +984,7 @@
             ]
         },
         {
-            "sample": "sfx_191.wav",
+            "sample": "sample_191.wav",
             "pitch": "C5",
             "loop": [
                 386,
@@ -992,7 +992,7 @@
             ]
         },
         {
-            "sample": "sfx_192.wav",
+            "sample": "sample_192.wav",
             "pitch": "C5",
             "loop": [
                 2144,
@@ -1000,7 +1000,7 @@
             ]
         },
         {
-            "sample": "sfx_193.wav",
+            "sample": "sample_193.wav",
             "pitch": "C5",
             "loop": [
                 1852,
@@ -1008,7 +1008,7 @@
             ]
         },
         {
-            "sample": "sfx_194.wav",
+            "sample": "sample_194.wav",
             "pitch": "C5",
             "loop": [
                 3728,
@@ -1016,11 +1016,11 @@
             ]
         },
         {
-            "sample": "sfx_195.wav",
+            "sample": "sample_195.wav",
             "pitch": "C4"
         },
         {
-            "sample": "sfx_196.wav",
+            "sample": "sample_196.wav",
             "pitch": "C#5",
             "loop": [
                 494,
@@ -1028,7 +1028,7 @@
             ]
         },
         {
-            "sample": "sfx_197.wav",
+            "sample": "sample_197.wav",
             "pitch": "C5",
             "loop": [
                 5184,
@@ -1036,15 +1036,15 @@
             ]
         },
         {
-            "sample": "sfx_198.wav",
+            "sample": "sample_198.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_199.wav",
+            "sample": "sample_199.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_200.wav",
+            "sample": "sample_200.wav",
             "pitch": "C5",
             "loop": [
                 1571,
@@ -1052,7 +1052,7 @@
             ]
         },
         {
-            "sample": "sfx_201.wav",
+            "sample": "sample_201.wav",
             "pitch": "C4",
             "loop": [
                 2026,
@@ -1060,7 +1060,7 @@
             ]
         },
         {
-            "sample": "sfx_202.wav",
+            "sample": "sample_202.wav",
             "pitch": "C4",
             "loop": [
                 4244,
@@ -1068,7 +1068,7 @@
             ]
         },
         {
-            "sample": "sfx_203.wav",
+            "sample": "sample_203.wav",
             "pitch": "C4",
             "loop": [
                 1605,
@@ -1076,7 +1076,7 @@
             ]
         },
         {
-            "sample": "sfx_204.wav",
+            "sample": "sample_204.wav",
             "pitch": "C4",
             "loop": [
                 2331,
@@ -1084,7 +1084,7 @@
             ]
         },
         {
-            "sample": "sfx_205.wav",
+            "sample": "sample_205.wav",
             "pitch": "D#5",
             "loop": [
                 2821,
@@ -1092,15 +1092,15 @@
             ]
         },
         {
-            "sample": "sfx_206.wav",
+            "sample": "sample_206.wav",
             "pitch": "A4"
         },
         {
-            "sample": "sfx_207.wav",
+            "sample": "sample_207.wav",
             "pitch": "E4"
         },
         {
-            "sample": "sfx_208.wav",
+            "sample": "sample_208.wav",
             "pitch": "G4",
             "loop": [
                 4161,
@@ -1108,11 +1108,11 @@
             ]
         },
         {
-            "sample": "sfx_209.wav",
+            "sample": "sample_209.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_210.wav",
+            "sample": "sample_210.wav",
             "pitch": "C4",
             "loop": [
                 6528,
@@ -1120,11 +1120,11 @@
             ]
         },
         {
-            "sample": "sfx_211.wav",
+            "sample": "sample_211.wav",
             "pitch": "G4"
         },
         {
-            "sample": "sfx_212.wav",
+            "sample": "sample_212.wav",
             "pitch": "C5",
             "loop": [
                 4275,
@@ -1132,7 +1132,7 @@
             ]
         },
         {
-            "sample": "sfx_213.wav",
+            "sample": "sample_213.wav",
             "pitch": "C5",
             "loop": [
                 2467,
@@ -1140,7 +1140,7 @@
             ]
         },
         {
-            "sample": "sfx_214.wav",
+            "sample": "sample_214.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -1148,7 +1148,7 @@
             ]
         },
         {
-            "sample": "sfx_215.wav",
+            "sample": "sample_215.wav",
             "pitch": "C#4",
             "loop": [
                 5,
@@ -1156,19 +1156,19 @@
             ]
         },
         {
-            "sample": "sfx_216.wav",
+            "sample": "sample_216.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_217.wav",
+            "sample": "sample_217.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_218.wav",
+            "sample": "sample_218.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_219.wav",
+            "sample": "sample_219.wav",
             "pitch": "C5",
             "loop": [
                 23,
@@ -1176,7 +1176,7 @@
             ]
         },
         {
-            "sample": "sfx_220.wav",
+            "sample": "sample_220.wav",
             "pitch": "C5",
             "loop": [
                 2668,
@@ -1184,7 +1184,7 @@
             ]
         },
         {
-            "sample": "sfx_221.wav",
+            "sample": "sample_221.wav",
             "pitch": "C5",
             "loop": [
                 2787,
@@ -1192,11 +1192,11 @@
             ]
         },
         {
-            "sample": "sfx_222.wav",
+            "sample": "sample_222.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_223.wav",
+            "sample": "sample_223.wav",
             "pitch": "C5",
             "loop": [
                 2374,
@@ -1204,15 +1204,15 @@
             ]
         },
         {
-            "sample": "sfx_224.wav",
+            "sample": "sample_224.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_225.wav",
+            "sample": "sample_225.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_226.wav",
+            "sample": "sample_226.wav",
             "pitch": "C5",
             "loop": [
                 7034,
@@ -1220,11 +1220,11 @@
             ]
         },
         {
-            "sample": "sfx_227.wav",
+            "sample": "sample_227.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_228.wav",
+            "sample": "sample_228.wav",
             "pitch": "C5",
             "loop": [
                 3163,
@@ -1232,7 +1232,7 @@
             ]
         },
         {
-            "sample": "sfx_229.wav",
+            "sample": "sample_229.wav",
             "pitch": "A4",
             "loop": [
                 2470,
@@ -1240,7 +1240,7 @@
             ]
         },
         {
-            "sample": "sfx_230.wav",
+            "sample": "sample_230.wav",
             "pitch": "A4",
             "loop": [
                 3585,
@@ -1248,11 +1248,11 @@
             ]
         },
         {
-            "sample": "sfx_231.wav",
+            "sample": "sample_231.wav",
             "pitch": "G3"
         },
         {
-            "sample": "sfx_232.wav",
+            "sample": "sample_232.wav",
             "pitch": "C3",
             "loop": [
                 3179,
@@ -1260,11 +1260,11 @@
             ]
         },
         {
-            "sample": "sfx_233.wav",
+            "sample": "sample_233.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_234.wav",
+            "sample": "sample_234.wav",
             "pitch": "E4",
             "loop": [
                 4240,
@@ -1272,7 +1272,7 @@
             ]
         },
         {
-            "sample": "sfx_235.wav",
+            "sample": "sample_235.wav",
             "pitch": "C5",
             "loop": [
                 5464,
@@ -1280,7 +1280,7 @@
             ]
         },
         {
-            "sample": "sfx_236.wav",
+            "sample": "sample_236.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -1288,7 +1288,7 @@
             ]
         },
         {
-            "sample": "sfx_237.wav",
+            "sample": "sample_237.wav",
             "pitch": "C5",
             "loop": [
                 3,
@@ -1296,7 +1296,7 @@
             ]
         },
         {
-            "sample": "sfx_238.wav",
+            "sample": "sample_238.wav",
             "pitch": "C4",
             "loop": [
                 2171,
@@ -1304,7 +1304,7 @@
             ]
         },
         {
-            "sample": "sfx_239.wav",
+            "sample": "sample_239.wav",
             "pitch": "B4",
             "loop": [
                 5141,
@@ -1312,7 +1312,7 @@
             ]
         },
         {
-            "sample": "sfx_240.wav",
+            "sample": "sample_240.wav",
             "pitch": "E2",
             "loop": [
                 5265,
@@ -1320,87 +1320,87 @@
             ]
         },
         {
-            "sample": "sfx_241.wav",
+            "sample": "sample_241.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_242.wav",
+            "sample": "sample_242.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_243.wav",
+            "sample": "sample_243.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_244.wav",
+            "sample": "sample_244.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_245.wav",
+            "sample": "sample_245.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_246.wav",
+            "sample": "sample_246.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_247.wav",
+            "sample": "sample_247.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_248.wav",
+            "sample": "sample_248.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_249.wav",
+            "sample": "sample_249.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_250.wav",
+            "sample": "sample_250.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_251.wav",
+            "sample": "sample_251.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_252.wav",
+            "sample": "sample_252.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_253.wav",
+            "sample": "sample_253.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_254.wav",
+            "sample": "sample_254.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_255.wav",
+            "sample": "sample_255.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_256.wav",
+            "sample": "sample_256.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_257.wav",
+            "sample": "sample_257.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_258.wav",
+            "sample": "sample_258.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_259.wav",
+            "sample": "sample_259.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_260.wav",
+            "sample": "sample_260.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_261.wav",
+            "sample": "sample_261.wav",
             "pitch": "C4",
             "loop": [
                 1376,
@@ -1408,7 +1408,7 @@
             ]
         },
         {
-            "sample": "sfx_262.wav",
+            "sample": "sample_262.wav",
             "pitch": "C4",
             "loop": [
                 6366,
@@ -1416,11 +1416,11 @@
             ]
         },
         {
-            "sample": "sfx_263.wav",
+            "sample": "sample_263.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_264.wav",
+            "sample": "sample_264.wav",
             "pitch": "F4",
             "loop": [
                 1509,
@@ -1428,7 +1428,7 @@
             ]
         },
         {
-            "sample": "sfx_265.wav",
+            "sample": "sample_265.wav",
             "pitch": "C5",
             "loop": [
                 2054,
@@ -1436,47 +1436,47 @@
             ]
         },
         {
-            "sample": "sfx_266.wav",
+            "sample": "sample_266.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_267.wav",
+            "sample": "sample_267.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_268.wav",
+            "sample": "sample_268.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_269.wav",
+            "sample": "sample_269.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_270.wav",
+            "sample": "sample_270.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_271.wav",
+            "sample": "sample_271.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_272.wav",
+            "sample": "sample_272.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_273.wav",
+            "sample": "sample_273.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_274.wav",
+            "sample": "sample_274.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_275.wav",
+            "sample": "sample_275.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_276.wav",
+            "sample": "sample_276.wav",
             "pitch": "C5",
             "loop": [
                 2446,
@@ -1484,7 +1484,7 @@
             ]
         },
         {
-            "sample": "sfx_277.wav",
+            "sample": "sample_277.wav",
             "pitch": "C5",
             "loop": [
                 627,
@@ -1492,7 +1492,7 @@
             ]
         },
         {
-            "sample": "sfx_278.wav",
+            "sample": "sample_278.wav",
             "pitch": "G2",
             "loop": [
                 763,
@@ -1500,15 +1500,15 @@
             ]
         },
         {
-            "sample": "sfx_279.wav",
+            "sample": "sample_279.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_280.wav",
+            "sample": "sample_280.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_281.wav",
+            "sample": "sample_281.wav",
             "pitch": "C5",
             "loop": [
                 2097,
@@ -1516,19 +1516,19 @@
             ]
         },
         {
-            "sample": "sfx_282.wav",
+            "sample": "sample_282.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_283.wav",
+            "sample": "sample_283.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_284.wav",
+            "sample": "sample_284.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_285.wav",
+            "sample": "sample_285.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -1536,7 +1536,7 @@
             ]
         },
         {
-            "sample": "sfx_286.wav",
+            "sample": "sample_286.wav",
             "pitch": "C#6",
             "loop": [
                 0,
@@ -1544,7 +1544,7 @@
             ]
         },
         {
-            "sample": "sfx_287.wav",
+            "sample": "sample_287.wav",
             "pitch": "C3",
             "loop": [
                 1424,
@@ -1552,7 +1552,7 @@
             ]
         },
         {
-            "sample": "sfx_288.wav",
+            "sample": "sample_288.wav",
             "pitch": "G5",
             "loop": [
                 548,
@@ -1560,7 +1560,7 @@
             ]
         },
         {
-            "sample": "sfx_289.wav",
+            "sample": "sample_289.wav",
             "pitch": "C5",
             "loop": [
                 10002,
@@ -1568,7 +1568,7 @@
             ]
         },
         {
-            "sample": "sfx_290.wav",
+            "sample": "sample_290.wav",
             "pitch": "E4",
             "loop": [
                 1494,
@@ -1576,11 +1576,11 @@
             ]
         },
         {
-            "sample": "sfx_291.wav",
+            "sample": "sample_291.wav",
             "pitch": "A4"
         },
         {
-            "sample": "sfx_292.wav",
+            "sample": "sample_292.wav",
             "pitch": "A3",
             "loop": [
                 1175,
@@ -1588,7 +1588,7 @@
             ]
         },
         {
-            "sample": "sfx_293.wav",
+            "sample": "sample_293.wav",
             "pitch": "A4",
             "loop": [
                 4820,
@@ -1596,7 +1596,7 @@
             ]
         },
         {
-            "sample": "sfx_294.wav",
+            "sample": "sample_294.wav",
             "pitch": "A4",
             "loop": [
                 2361,
@@ -1604,7 +1604,7 @@
             ]
         },
         {
-            "sample": "sfx_295.wav",
+            "sample": "sample_295.wav",
             "pitch": "A4",
             "loop": [
                 2692,
@@ -1612,7 +1612,7 @@
             ]
         },
         {
-            "sample": "sfx_296.wav",
+            "sample": "sample_296.wav",
             "pitch": "D2",
             "loop": [
                 1632,
@@ -1620,7 +1620,7 @@
             ]
         },
         {
-            "sample": "sfx_297.wav",
+            "sample": "sample_297.wav",
             "pitch": "G4",
             "loop": [
                 2576,
@@ -1628,7 +1628,7 @@
             ]
         },
         {
-            "sample": "sfx_298.wav",
+            "sample": "sample_298.wav",
             "pitch": "C4",
             "loop": [
                 10918,
@@ -1636,7 +1636,7 @@
             ]
         },
         {
-            "sample": "sfx_299.wav",
+            "sample": "sample_299.wav",
             "pitch": "G4",
             "loop": [
                 815,
@@ -1644,7 +1644,7 @@
             ]
         },
         {
-            "sample": "sfx_300.wav",
+            "sample": "sample_300.wav",
             "pitch": "A2",
             "loop": [
                 1023,
@@ -1652,7 +1652,7 @@
             ]
         },
         {
-            "sample": "sfx_301.wav",
+            "sample": "sample_301.wav",
             "pitch": "E3",
             "loop": [
                 2726,
@@ -1660,7 +1660,7 @@
             ]
         },
         {
-            "sample": "sfx_302.wav",
+            "sample": "sample_302.wav",
             "pitch": "E5",
             "loop": [
                 2940,
@@ -1668,7 +1668,7 @@
             ]
         },
         {
-            "sample": "sfx_303.wav",
+            "sample": "sample_303.wav",
             "pitch": "A2",
             "loop": [
                 83,
@@ -1676,7 +1676,7 @@
             ]
         },
         {
-            "sample": "sfx_304.wav",
+            "sample": "sample_304.wav",
             "pitch": "A4",
             "loop": [
                 444,
@@ -1684,7 +1684,7 @@
             ]
         },
         {
-            "sample": "sfx_305.wav",
+            "sample": "sample_305.wav",
             "pitch": "A4",
             "loop": [
                 4065,
@@ -1692,7 +1692,7 @@
             ]
         },
         {
-            "sample": "sfx_306.wav",
+            "sample": "sample_306.wav",
             "pitch": "A6",
             "loop": [
                 1400,
@@ -1700,7 +1700,7 @@
             ]
         },
         {
-            "sample": "sfx_307.wav",
+            "sample": "sample_307.wav",
             "pitch": "A4",
             "loop": [
                 9952,
@@ -1708,7 +1708,7 @@
             ]
         },
         {
-            "sample": "sfx_308.wav",
+            "sample": "sample_308.wav",
             "pitch": "C4",
             "loop": [
                 2223,
@@ -1716,7 +1716,7 @@
             ]
         },
         {
-            "sample": "sfx_309.wav",
+            "sample": "sample_309.wav",
             "pitch": "C5",
             "loop": [
                 5120,
@@ -1724,7 +1724,7 @@
             ]
         },
         {
-            "sample": "sfx_310.wav",
+            "sample": "sample_310.wav",
             "pitch": "C4",
             "loop": [
                 1207,
@@ -1732,7 +1732,7 @@
             ]
         },
         {
-            "sample": "sfx_311.wav",
+            "sample": "sample_311.wav",
             "pitch": "C4",
             "loop": [
                 5168,
@@ -1740,7 +1740,7 @@
             ]
         },
         {
-            "sample": "sfx_312.wav",
+            "sample": "sample_312.wav",
             "pitch": "C6",
             "loop": [
                 168,
@@ -1748,7 +1748,7 @@
             ]
         },
         {
-            "sample": "sfx_313.wav",
+            "sample": "sample_313.wav",
             "pitch": "C5",
             "loop": [
                 1183,
@@ -1756,7 +1756,7 @@
             ]
         },
         {
-            "sample": "sfx_314.wav",
+            "sample": "sample_314.wav",
             "pitch": "G5",
             "loop": [
                 2846,
@@ -1764,7 +1764,7 @@
             ]
         },
         {
-            "sample": "sfx_315.wav",
+            "sample": "sample_315.wav",
             "pitch": "E4",
             "loop": [
                 2192,
@@ -1772,7 +1772,7 @@
             ]
         },
         {
-            "sample": "sfx_316.wav",
+            "sample": "sample_316.wav",
             "pitch": "B4",
             "loop": [
                 275,
@@ -1780,7 +1780,7 @@
             ]
         },
         {
-            "sample": "sfx_317.wav",
+            "sample": "sample_317.wav",
             "pitch": "G#5",
             "loop": [
                 844,
@@ -1788,7 +1788,7 @@
             ]
         },
         {
-            "sample": "sfx_318.wav",
+            "sample": "sample_318.wav",
             "pitch": "E4",
             "loop": [
                 0,
@@ -1796,7 +1796,7 @@
             ]
         },
         {
-            "sample": "sfx_319.wav",
+            "sample": "sample_319.wav",
             "pitch": "E4",
             "loop": [
                 947,
@@ -1804,7 +1804,7 @@
             ]
         },
         {
-            "sample": "sfx_320.wav",
+            "sample": "sample_320.wav",
             "pitch": "E4",
             "loop": [
                 1958,
@@ -1812,7 +1812,7 @@
             ]
         },
         {
-            "sample": "sfx_321.wav",
+            "sample": "sample_321.wav",
             "pitch": "G#4",
             "loop": [
                 3544,
@@ -1820,7 +1820,7 @@
             ]
         },
         {
-            "sample": "sfx_322.wav",
+            "sample": "sample_322.wav",
             "pitch": "C4",
             "loop": [
                 2112,
@@ -1828,7 +1828,7 @@
             ]
         },
         {
-            "sample": "sfx_323.wav",
+            "sample": "sample_323.wav",
             "pitch": "D#4",
             "loop": [
                 3022,
@@ -1836,7 +1836,7 @@
             ]
         },
         {
-            "sample": "sfx_324.wav",
+            "sample": "sample_324.wav",
             "pitch": "C#5",
             "loop": [
                 2215,
@@ -1844,7 +1844,7 @@
             ]
         },
         {
-            "sample": "sfx_325.wav",
+            "sample": "sample_325.wav",
             "pitch": "G#4",
             "loop": [
                 4882,
@@ -1852,7 +1852,7 @@
             ]
         },
         {
-            "sample": "sfx_326.wav",
+            "sample": "sample_326.wav",
             "pitch": "G#4",
             "loop": [
                 15,
@@ -1860,7 +1860,7 @@
             ]
         },
         {
-            "sample": "sfx_327.wav",
+            "sample": "sample_327.wav",
             "pitch": "G#4",
             "loop": [
                 0,
@@ -1868,7 +1868,7 @@
             ]
         },
         {
-            "sample": "sfx_328.wav",
+            "sample": "sample_328.wav",
             "pitch": "C#5",
             "loop": [
                 326,
@@ -1876,7 +1876,7 @@
             ]
         },
         {
-            "sample": "sfx_329.wav",
+            "sample": "sample_329.wav",
             "pitch": "G#3",
             "loop": [
                 833,
@@ -1884,7 +1884,7 @@
             ]
         },
         {
-            "sample": "sfx_330.wav",
+            "sample": "sample_330.wav",
             "pitch": "G#2",
             "loop": [
                 665,
@@ -1892,7 +1892,7 @@
             ]
         },
         {
-            "sample": "sfx_331.wav",
+            "sample": "sample_331.wav",
             "pitch": "A1",
             "loop": [
                 2493,
@@ -1900,15 +1900,15 @@
             ]
         },
         {
-            "sample": "sfx_332.wav",
+            "sample": "sample_332.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_333.wav",
+            "sample": "sample_333.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_334.wav",
+            "sample": "sample_334.wav",
             "pitch": "C5",
             "loop": [
                 504,
@@ -1916,7 +1916,7 @@
             ]
         },
         {
-            "sample": "sfx_335.wav",
+            "sample": "sample_335.wav",
             "pitch": "C4",
             "loop": [
                 1668,
@@ -1924,7 +1924,7 @@
             ]
         },
         {
-            "sample": "sfx_336.wav",
+            "sample": "sample_336.wav",
             "pitch": "C4",
             "loop": [
                 497,
@@ -1932,7 +1932,7 @@
             ]
         },
         {
-            "sample": "sfx_337.wav",
+            "sample": "sample_337.wav",
             "pitch": "C4",
             "loop": [
                 1038,
@@ -1940,7 +1940,7 @@
             ]
         },
         {
-            "sample": "sfx_338.wav",
+            "sample": "sample_338.wav",
             "pitch": "C4",
             "loop": [
                 2251,
@@ -1948,11 +1948,11 @@
             ]
         },
         {
-            "sample": "sfx_339.wav",
+            "sample": "sample_339.wav",
             "pitch": "C2"
         },
         {
-            "sample": "sfx_340.wav",
+            "sample": "sample_340.wav",
             "pitch": "C2",
             "loop": [
                 3050,
@@ -1960,7 +1960,7 @@
             ]
         },
         {
-            "sample": "sfx_341.wav",
+            "sample": "sample_341.wav",
             "pitch": "C4",
             "loop": [
                 2335,
@@ -1968,7 +1968,7 @@
             ]
         },
         {
-            "sample": "sfx_342.wav",
+            "sample": "sample_342.wav",
             "pitch": "C5",
             "loop": [
                 459,
@@ -1976,7 +1976,7 @@
             ]
         },
         {
-            "sample": "sfx_343.wav",
+            "sample": "sample_343.wav",
             "pitch": "G4",
             "loop": [
                 475,
@@ -1984,7 +1984,7 @@
             ]
         },
         {
-            "sample": "sfx_344.wav",
+            "sample": "sample_344.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -1992,15 +1992,15 @@
             ]
         },
         {
-            "sample": "sfx_345.wav",
+            "sample": "sample_345.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_346.wav",
+            "sample": "sample_346.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_347.wav",
+            "sample": "sample_347.wav",
             "pitch": "F4",
             "loop": [
                 4036,
@@ -2008,7 +2008,7 @@
             ]
         },
         {
-            "sample": "sfx_348.wav",
+            "sample": "sample_348.wav",
             "pitch": "G2",
             "loop": [
                 2471,
@@ -2016,27 +2016,27 @@
             ]
         },
         {
-            "sample": "sfx_349.wav",
+            "sample": "sample_349.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_350.wav",
+            "sample": "sample_350.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_351.wav",
+            "sample": "sample_351.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_352.wav",
+            "sample": "sample_352.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_353.wav",
+            "sample": "sample_353.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_354.wav",
+            "sample": "sample_354.wav",
             "pitch": "C5",
             "loop": [
                 1407,
@@ -2044,7 +2044,7 @@
             ]
         },
         {
-            "sample": "sfx_355.wav",
+            "sample": "sample_355.wav",
             "pitch": "G2",
             "loop": [
                 1133,
@@ -2052,7 +2052,7 @@
             ]
         },
         {
-            "sample": "sfx_356.wav",
+            "sample": "sample_356.wav",
             "pitch": "G4",
             "loop": [
                 2546,
@@ -2060,7 +2060,7 @@
             ]
         },
         {
-            "sample": "sfx_357.wav",
+            "sample": "sample_357.wav",
             "pitch": "A4",
             "loop": [
                 966,
@@ -2068,7 +2068,7 @@
             ]
         },
         {
-            "sample": "sfx_358.wav",
+            "sample": "sample_358.wav",
             "pitch": "E3",
             "loop": [
                 1620,
@@ -2076,7 +2076,7 @@
             ]
         },
         {
-            "sample": "sfx_359.wav",
+            "sample": "sample_359.wav",
             "pitch": "E5",
             "loop": [
                 2,
@@ -2084,7 +2084,7 @@
             ]
         },
         {
-            "sample": "sfx_360.wav",
+            "sample": "sample_360.wav",
             "pitch": "A5",
             "loop": [
                 1276,
@@ -2092,7 +2092,7 @@
             ]
         },
         {
-            "sample": "sfx_361.wav",
+            "sample": "sample_361.wav",
             "pitch": "E2",
             "loop": [
                 1367,
@@ -2100,7 +2100,7 @@
             ]
         },
         {
-            "sample": "sfx_362.wav",
+            "sample": "sample_362.wav",
             "pitch": "C4",
             "loop": [
                 1613,
@@ -2108,11 +2108,11 @@
             ]
         },
         {
-            "sample": "sfx_363.wav",
+            "sample": "sample_363.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_364.wav",
+            "sample": "sample_364.wav",
             "pitch": "C3",
             "loop": [
                 2304,
@@ -2120,7 +2120,7 @@
             ]
         },
         {
-            "sample": "sfx_365.wav",
+            "sample": "sample_365.wav",
             "pitch": "C5",
             "loop": [
                 1148,
@@ -2128,7 +2128,7 @@
             ]
         },
         {
-            "sample": "sfx_366.wav",
+            "sample": "sample_366.wav",
             "pitch": "C5",
             "loop": [
                 2350,
@@ -2136,11 +2136,11 @@
             ]
         },
         {
-            "sample": "sfx_367.wav",
+            "sample": "sample_367.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_368.wav",
+            "sample": "sample_368.wav",
             "pitch": "C5",
             "loop": [
                 4919,
@@ -2148,7 +2148,7 @@
             ]
         },
         {
-            "sample": "sfx_369.wav",
+            "sample": "sample_369.wav",
             "pitch": "C5",
             "loop": [
                 1810,
@@ -2156,7 +2156,7 @@
             ]
         },
         {
-            "sample": "sfx_370.wav",
+            "sample": "sample_370.wav",
             "pitch": "C5",
             "loop": [
                 2169,
@@ -2164,7 +2164,7 @@
             ]
         },
         {
-            "sample": "sfx_371.wav",
+            "sample": "sample_371.wav",
             "pitch": "C4",
             "loop": [
                 2480,
@@ -2172,11 +2172,11 @@
             ]
         },
         {
-            "sample": "sfx_372.wav",
+            "sample": "sample_372.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_373.wav",
+            "sample": "sample_373.wav",
             "pitch": "E2",
             "loop": [
                 1454,
@@ -2184,7 +2184,7 @@
             ]
         },
         {
-            "sample": "sfx_374.wav",
+            "sample": "sample_374.wav",
             "pitch": "E5",
             "loop": [
                 672,
@@ -2192,7 +2192,7 @@
             ]
         },
         {
-            "sample": "sfx_375.wav",
+            "sample": "sample_375.wav",
             "pitch": "B3",
             "loop": [
                 1211,
@@ -2200,7 +2200,7 @@
             ]
         },
         {
-            "sample": "sfx_376.wav",
+            "sample": "sample_376.wav",
             "pitch": "E5",
             "loop": [
                 4107,
@@ -2208,11 +2208,11 @@
             ]
         },
         {
-            "sample": "sfx_377.wav",
+            "sample": "sample_377.wav",
             "pitch": "A5"
         },
         {
-            "sample": "sfx_378.wav",
+            "sample": "sample_378.wav",
             "pitch": "E4",
             "loop": [
                 4129,
@@ -2220,7 +2220,7 @@
             ]
         },
         {
-            "sample": "sfx_379.wav",
+            "sample": "sample_379.wav",
             "pitch": "E2",
             "loop": [
                 1983,
@@ -2228,7 +2228,7 @@
             ]
         },
         {
-            "sample": "sfx_380.wav",
+            "sample": "sample_380.wav",
             "pitch": "G#4",
             "loop": [
                 896,
@@ -2236,7 +2236,7 @@
             ]
         },
         {
-            "sample": "sfx_381.wav",
+            "sample": "sample_381.wav",
             "pitch": "G#5",
             "loop": [
                 602,
@@ -2244,7 +2244,7 @@
             ]
         },
         {
-            "sample": "sfx_382.wav",
+            "sample": "sample_382.wav",
             "pitch": "C3",
             "loop": [
                 1748,
@@ -2252,7 +2252,7 @@
             ]
         },
         {
-            "sample": "sfx_383.wav",
+            "sample": "sample_383.wav",
             "pitch": "G5",
             "loop": [
                 619,
@@ -2260,7 +2260,7 @@
             ]
         },
         {
-            "sample": "sfx_384.wav",
+            "sample": "sample_384.wav",
             "pitch": "C5",
             "loop": [
                 11626,
@@ -2268,11 +2268,11 @@
             ]
         },
         {
-            "sample": "sfx_385.wav",
+            "sample": "sample_385.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_386.wav",
+            "sample": "sample_386.wav",
             "pitch": "C5",
             "loop": [
                 848,
@@ -2280,7 +2280,7 @@
             ]
         },
         {
-            "sample": "sfx_387.wav",
+            "sample": "sample_387.wav",
             "pitch": "C4",
             "loop": [
                 2567,
@@ -2288,7 +2288,7 @@
             ]
         },
         {
-            "sample": "sfx_388.wav",
+            "sample": "sample_388.wav",
             "pitch": "D4",
             "loop": [
                 3947,
@@ -2296,7 +2296,7 @@
             ]
         },
         {
-            "sample": "sfx_389.wav",
+            "sample": "sample_389.wav",
             "pitch": "A2",
             "loop": [
                 1511,
@@ -2304,7 +2304,7 @@
             ]
         },
         {
-            "sample": "sfx_390.wav",
+            "sample": "sample_390.wav",
             "pitch": "D4",
             "loop": [
                 4109,
@@ -2312,7 +2312,7 @@
             ]
         },
         {
-            "sample": "sfx_391.wav",
+            "sample": "sample_391.wav",
             "pitch": "C5",
             "loop": [
                 8117,
@@ -2320,7 +2320,7 @@
             ]
         },
         {
-            "sample": "sfx_392.wav",
+            "sample": "sample_392.wav",
             "pitch": "C5",
             "loop": [
                 10368,
@@ -2328,7 +2328,7 @@
             ]
         },
         {
-            "sample": "sfx_393.wav",
+            "sample": "sample_393.wav",
             "pitch": "C6",
             "loop": [
                 6336,
@@ -2336,7 +2336,7 @@
             ]
         },
         {
-            "sample": "sfx_394.wav",
+            "sample": "sample_394.wav",
             "pitch": "C2",
             "loop": [
                 1584,
@@ -2344,7 +2344,7 @@
             ]
         },
         {
-            "sample": "sfx_395.wav",
+            "sample": "sample_395.wav",
             "pitch": "G3",
             "loop": [
                 2722,
@@ -2352,7 +2352,7 @@
             ]
         },
         {
-            "sample": "sfx_396.wav",
+            "sample": "sample_396.wav",
             "pitch": "D6",
             "loop": [
                 513,
@@ -2360,7 +2360,7 @@
             ]
         },
         {
-            "sample": "sfx_397.wav",
+            "sample": "sample_397.wav",
             "pitch": "C4",
             "loop": [
                 3264,
@@ -2368,7 +2368,7 @@
             ]
         },
         {
-            "sample": "sfx_398.wav",
+            "sample": "sample_398.wav",
             "pitch": "C5",
             "loop": [
                 20736,
@@ -2376,7 +2376,7 @@
             ]
         },
         {
-            "sample": "sfx_399.wav",
+            "sample": "sample_399.wav",
             "pitch": "C5",
             "loop": [
                 2660,
@@ -2384,7 +2384,7 @@
             ]
         },
         {
-            "sample": "sfx_400.wav",
+            "sample": "sample_400.wav",
             "pitch": "C2",
             "loop": [
                 5457,
@@ -2392,7 +2392,7 @@
             ]
         },
         {
-            "sample": "sfx_401.wav",
+            "sample": "sample_401.wav",
             "pitch": "D4",
             "loop": [
                 2814,
@@ -2400,19 +2400,19 @@
             ]
         },
         {
-            "sample": "sfx_402.wav",
+            "sample": "sample_402.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_403.wav",
+            "sample": "sample_403.wav",
             "pitch": "A5"
         },
         {
-            "sample": "sfx_404.wav",
+            "sample": "sample_404.wav",
             "pitch": "G6"
         },
         {
-            "sample": "sfx_405.wav",
+            "sample": "sample_405.wav",
             "pitch": "C2",
             "loop": [
                 5044,
@@ -2420,19 +2420,19 @@
             ]
         },
         {
-            "sample": "sfx_406.wav",
+            "sample": "sample_406.wav",
             "pitch": "D#5"
         },
         {
-            "sample": "sfx_407.wav",
+            "sample": "sample_407.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_408.wav",
+            "sample": "sample_408.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_409.wav",
+            "sample": "sample_409.wav",
             "pitch": "F4",
             "loop": [
                 1184,
@@ -2440,7 +2440,7 @@
             ]
         },
         {
-            "sample": "sfx_410.wav",
+            "sample": "sample_410.wav",
             "pitch": "C5",
             "loop": [
                 1767,
@@ -2448,7 +2448,7 @@
             ]
         },
         {
-            "sample": "sfx_411.wav",
+            "sample": "sample_411.wav",
             "pitch": "C3",
             "loop": [
                 3518,
@@ -2456,7 +2456,7 @@
             ]
         },
         {
-            "sample": "sfx_412.wav",
+            "sample": "sample_412.wav",
             "pitch": "C5",
             "loop": [
                 3008,
@@ -2464,7 +2464,7 @@
             ]
         },
         {
-            "sample": "sfx_413.wav",
+            "sample": "sample_413.wav",
             "pitch": "G4",
             "loop": [
                 589,
@@ -2472,7 +2472,7 @@
             ]
         },
         {
-            "sample": "sfx_414.wav",
+            "sample": "sample_414.wav",
             "pitch": "C5",
             "loop": [
                 3898,
@@ -2480,11 +2480,11 @@
             ]
         },
         {
-            "sample": "sfx_415.wav",
+            "sample": "sample_415.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_416.wav",
+            "sample": "sample_416.wav",
             "pitch": "A#4",
             "loop": [
                 3080,
@@ -2492,7 +2492,7 @@
             ]
         },
         {
-            "sample": "sfx_417.wav",
+            "sample": "sample_417.wav",
             "pitch": "D4",
             "loop": [
                 2624,
@@ -2500,7 +2500,7 @@
             ]
         },
         {
-            "sample": "sfx_418.wav",
+            "sample": "sample_418.wav",
             "pitch": "D4",
             "loop": [
                 2768,
@@ -2508,7 +2508,7 @@
             ]
         },
         {
-            "sample": "sfx_419.wav",
+            "sample": "sample_419.wav",
             "pitch": "D4",
             "loop": [
                 3184,
@@ -2516,7 +2516,7 @@
             ]
         },
         {
-            "sample": "sfx_420.wav",
+            "sample": "sample_420.wav",
             "pitch": "G3",
             "loop": [
                 2453,
@@ -2524,7 +2524,7 @@
             ]
         },
         {
-            "sample": "sfx_421.wav",
+            "sample": "sample_421.wav",
             "pitch": "F4",
             "loop": [
                 1400,
@@ -2532,7 +2532,7 @@
             ]
         },
         {
-            "sample": "sfx_422.wav",
+            "sample": "sample_422.wav",
             "pitch": "C4",
             "loop": [
                 4829,
@@ -2540,7 +2540,7 @@
             ]
         },
         {
-            "sample": "sfx_423.wav",
+            "sample": "sample_423.wav",
             "pitch": "A3",
             "loop": [
                 1680,
@@ -2548,7 +2548,7 @@
             ]
         },
         {
-            "sample": "sfx_424.wav",
+            "sample": "sample_424.wav",
             "pitch": "A#2",
             "loop": [
                 3933,
@@ -2556,7 +2556,7 @@
             ]
         },
         {
-            "sample": "sfx_425.wav",
+            "sample": "sample_425.wav",
             "pitch": "F#2",
             "loop": [
                 1159,
@@ -2564,7 +2564,7 @@
             ]
         },
         {
-            "sample": "sfx_426.wav",
+            "sample": "sample_426.wav",
             "pitch": "A#3",
             "loop": [
                 3034,
@@ -2572,7 +2572,7 @@
             ]
         },
         {
-            "sample": "sfx_427.wav",
+            "sample": "sample_427.wav",
             "pitch": "C5",
             "loop": [
                 2163,
@@ -2580,7 +2580,7 @@
             ]
         },
         {
-            "sample": "sfx_428.wav",
+            "sample": "sample_428.wav",
             "pitch": "C5",
             "loop": [
                 4969,
@@ -2588,11 +2588,11 @@
             ]
         },
         {
-            "sample": "sfx_429.wav",
+            "sample": "sample_429.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_430.wav",
+            "sample": "sample_430.wav",
             "pitch": "C5",
             "loop": [
                 1499,
@@ -2600,27 +2600,27 @@
             ]
         },
         {
-            "sample": "sfx_431.wav",
+            "sample": "sample_431.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_432.wav",
+            "sample": "sample_432.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_433.wav",
+            "sample": "sample_433.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_434.wav",
+            "sample": "sample_434.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_435.wav",
+            "sample": "sample_435.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_436.wav",
+            "sample": "sample_436.wav",
             "pitch": "G5",
             "loop": [
                 537,
@@ -2628,27 +2628,27 @@
             ]
         },
         {
-            "sample": "sfx_437.wav",
+            "sample": "sample_437.wav",
             "pitch": "E5"
         },
         {
-            "sample": "sfx_438.wav",
+            "sample": "sample_438.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_439.wav",
+            "sample": "sample_439.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_440.wav",
+            "sample": "sample_440.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_441.wav",
+            "sample": "sample_441.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_442.wav",
+            "sample": "sample_442.wav",
             "pitch": "C5",
             "loop": [
                 1616,
@@ -2656,15 +2656,15 @@
             ]
         },
         {
-            "sample": "sfx_443.wav",
+            "sample": "sample_443.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_444.wav",
+            "sample": "sample_444.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_445.wav",
+            "sample": "sample_445.wav",
             "pitch": "C5",
             "loop": [
                 1354,
@@ -2672,15 +2672,15 @@
             ]
         },
         {
-            "sample": "sfx_446.wav",
+            "sample": "sample_446.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_447.wav",
+            "sample": "sample_447.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_448.wav",
+            "sample": "sample_448.wav",
             "pitch": "C5",
             "loop": [
                 989,
@@ -2688,11 +2688,11 @@
             ]
         },
         {
-            "sample": "sfx_449.wav",
+            "sample": "sample_449.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_450.wav",
+            "sample": "sample_450.wav",
             "pitch": "C5",
             "loop": [
                 2372,
@@ -2700,11 +2700,11 @@
             ]
         },
         {
-            "sample": "sfx_451.wav",
+            "sample": "sample_451.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_452.wav",
+            "sample": "sample_452.wav",
             "pitch": "C5",
             "loop": [
                 796,
@@ -2712,11 +2712,11 @@
             ]
         },
         {
-            "sample": "sfx_453.wav",
+            "sample": "sample_453.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_454.wav",
+            "sample": "sample_454.wav",
             "pitch": "C5",
             "loop": [
                 1914,
@@ -2724,7 +2724,7 @@
             ]
         },
         {
-            "sample": "sfx_455.wav",
+            "sample": "sample_455.wav",
             "pitch": "C5",
             "loop": [
                 3452,
@@ -2732,11 +2732,11 @@
             ]
         },
         {
-            "sample": "sfx_456.wav",
+            "sample": "sample_456.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_457.wav",
+            "sample": "sample_457.wav",
             "pitch": "C5",
             "loop": [
                 452,
@@ -2744,59 +2744,59 @@
             ]
         },
         {
-            "sample": "sfx_458.wav",
+            "sample": "sample_458.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_459.wav",
+            "sample": "sample_459.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_460.wav",
+            "sample": "sample_460.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_461.wav",
+            "sample": "sample_461.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_462.wav",
+            "sample": "sample_462.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_463.wav",
+            "sample": "sample_463.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_464.wav",
+            "sample": "sample_464.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_465.wav",
+            "sample": "sample_465.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_466.wav",
+            "sample": "sample_466.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_467.wav",
+            "sample": "sample_467.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_468.wav",
+            "sample": "sample_468.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_469.wav",
+            "sample": "sample_469.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_470.wav",
+            "sample": "sample_470.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_471.wav",
+            "sample": "sample_471.wav",
             "pitch": "C5",
             "loop": [
                 5328,
@@ -2804,15 +2804,15 @@
             ]
         },
         {
-            "sample": "sfx_472.wav",
+            "sample": "sample_472.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_473.wav",
+            "sample": "sample_473.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_474.wav",
+            "sample": "sample_474.wav",
             "pitch": "C5",
             "loop": [
                 4016,
@@ -2820,11 +2820,11 @@
             ]
         },
         {
-            "sample": "sfx_475.wav",
+            "sample": "sample_475.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_476.wav",
+            "sample": "sample_476.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -2832,7 +2832,7 @@
             ]
         },
         {
-            "sample": "sfx_477.wav",
+            "sample": "sample_477.wav",
             "pitch": "C5",
             "loop": [
                 7315,
@@ -2840,43 +2840,43 @@
             ]
         },
         {
-            "sample": "sfx_478.wav",
+            "sample": "sample_478.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_479.wav",
+            "sample": "sample_479.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_480.wav",
+            "sample": "sample_480.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_481.wav",
+            "sample": "sample_481.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_482.wav",
+            "sample": "sample_482.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_483.wav",
+            "sample": "sample_483.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_484.wav",
+            "sample": "sample_484.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_485.wav",
+            "sample": "sample_485.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_486.wav",
+            "sample": "sample_486.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_487.wav",
+            "sample": "sample_487.wav",
             "pitch": "C5",
             "loop": [
                 55,
@@ -2884,19 +2884,19 @@
             ]
         },
         {
-            "sample": "sfx_488.wav",
+            "sample": "sample_488.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_489.wav",
+            "sample": "sample_489.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_490.wav",
+            "sample": "sample_490.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_491.wav",
+            "sample": "sample_491.wav",
             "pitch": "C5",
             "loop": [
                 2620,
@@ -2904,7 +2904,7 @@
             ]
         },
         {
-            "sample": "sfx_492.wav",
+            "sample": "sample_492.wav",
             "pitch": "C5",
             "loop": [
                 985,
@@ -2912,7 +2912,7 @@
             ]
         },
         {
-            "sample": "sfx_493.wav",
+            "sample": "sample_493.wav",
             "pitch": "C5",
             "loop": [
                 1449,
@@ -2920,31 +2920,31 @@
             ]
         },
         {
-            "sample": "sfx_494.wav",
+            "sample": "sample_494.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_495.wav",
+            "sample": "sample_495.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_496.wav",
+            "sample": "sample_496.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_497.wav",
+            "sample": "sample_497.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_498.wav",
+            "sample": "sample_498.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_499.wav",
+            "sample": "sample_499.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_500.wav",
+            "sample": "sample_500.wav",
             "pitch": "C5",
             "loop": [
                 3651,
@@ -2952,7 +2952,7 @@
             ]
         },
         {
-            "sample": "sfx_501.wav",
+            "sample": "sample_501.wav",
             "pitch": "C5",
             "loop": [
                 2629,
@@ -2960,7 +2960,7 @@
             ]
         },
         {
-            "sample": "sfx_502.wav",
+            "sample": "sample_502.wav",
             "pitch": "C5",
             "loop": [
                 2930,
@@ -2968,7 +2968,7 @@
             ]
         },
         {
-            "sample": "sfx_503.wav",
+            "sample": "sample_503.wav",
             "pitch": "C5",
             "loop": [
                 1298,
@@ -2976,7 +2976,7 @@
             ]
         },
         {
-            "sample": "sfx_504.wav",
+            "sample": "sample_504.wav",
             "pitch": "C5",
             "loop": [
                 1168,
@@ -2984,7 +2984,7 @@
             ]
         },
         {
-            "sample": "sfx_505.wav",
+            "sample": "sample_505.wav",
             "pitch": "C5",
             "loop": [
                 2704,
@@ -2992,23 +2992,23 @@
             ]
         },
         {
-            "sample": "sfx_506.wav",
+            "sample": "sample_506.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_507.wav",
+            "sample": "sample_507.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_508.wav",
+            "sample": "sample_508.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_509.wav",
+            "sample": "sample_509.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_510.wav",
+            "sample": "sample_510.wav",
             "pitch": "C5",
             "loop": [
                 1306,
@@ -3016,7 +3016,7 @@
             ]
         },
         {
-            "sample": "sfx_511.wav",
+            "sample": "sample_511.wav",
             "pitch": "C5",
             "loop": [
                 1284,
@@ -3024,7 +3024,7 @@
             ]
         },
         {
-            "sample": "sfx_512.wav",
+            "sample": "sample_512.wav",
             "pitch": "C5",
             "loop": [
                 3135,
@@ -3032,7 +3032,7 @@
             ]
         },
         {
-            "sample": "sfx_513.wav",
+            "sample": "sample_513.wav",
             "pitch": "C5",
             "loop": [
                 5073,
@@ -3040,7 +3040,7 @@
             ]
         },
         {
-            "sample": "sfx_514.wav",
+            "sample": "sample_514.wav",
             "pitch": "C5",
             "loop": [
                 2958,
@@ -3048,7 +3048,7 @@
             ]
         },
         {
-            "sample": "sfx_515.wav",
+            "sample": "sample_515.wav",
             "pitch": "C5",
             "loop": [
                 3182,
@@ -3056,7 +3056,7 @@
             ]
         },
         {
-            "sample": "sfx_516.wav",
+            "sample": "sample_516.wav",
             "pitch": "C5",
             "loop": [
                 2432,
@@ -3064,7 +3064,7 @@
             ]
         },
         {
-            "sample": "sfx_517.wav",
+            "sample": "sample_517.wav",
             "pitch": "C5",
             "loop": [
                 1498,
@@ -3072,7 +3072,7 @@
             ]
         },
         {
-            "sample": "sfx_518.wav",
+            "sample": "sample_518.wav",
             "pitch": "C5",
             "loop": [
                 2365,
@@ -3080,19 +3080,19 @@
             ]
         },
         {
-            "sample": "sfx_519.wav",
+            "sample": "sample_519.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_520.wav",
+            "sample": "sample_520.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_521.wav",
+            "sample": "sample_521.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_522.wav",
+            "sample": "sample_522.wav",
             "pitch": "C5",
             "loop": [
                 2931,
@@ -3100,7 +3100,7 @@
             ]
         },
         {
-            "sample": "sfx_523.wav",
+            "sample": "sample_523.wav",
             "pitch": "C5",
             "loop": [
                 3411,
@@ -3108,7 +3108,7 @@
             ]
         },
         {
-            "sample": "sfx_524.wav",
+            "sample": "sample_524.wav",
             "pitch": "C5",
             "loop": [
                 928,
@@ -3116,7 +3116,7 @@
             ]
         },
         {
-            "sample": "sfx_525.wav",
+            "sample": "sample_525.wav",
             "pitch": "C5",
             "loop": [
                 229,
@@ -3124,7 +3124,7 @@
             ]
         },
         {
-            "sample": "sfx_526.wav",
+            "sample": "sample_526.wav",
             "pitch": "C5",
             "loop": [
                 1517,
@@ -3132,7 +3132,7 @@
             ]
         },
         {
-            "sample": "sfx_527.wav",
+            "sample": "sample_527.wav",
             "pitch": "C5",
             "loop": [
                 1483,
@@ -3140,7 +3140,7 @@
             ]
         },
         {
-            "sample": "sfx_528.wav",
+            "sample": "sample_528.wav",
             "pitch": "C5",
             "loop": [
                 2701,
@@ -3148,7 +3148,7 @@
             ]
         },
         {
-            "sample": "sfx_529.wav",
+            "sample": "sample_529.wav",
             "pitch": "C5",
             "loop": [
                 2862,
@@ -3156,7 +3156,7 @@
             ]
         },
         {
-            "sample": "sfx_530.wav",
+            "sample": "sample_530.wav",
             "pitch": "C5",
             "loop": [
                 1855,
@@ -3164,11 +3164,11 @@
             ]
         },
         {
-            "sample": "sfx_531.wav",
+            "sample": "sample_531.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_532.wav",
+            "sample": "sample_532.wav",
             "pitch": "C5",
             "loop": [
                 11200,
@@ -3176,7 +3176,7 @@
             ]
         },
         {
-            "sample": "sfx_533.wav",
+            "sample": "sample_533.wav",
             "pitch": "C5",
             "loop": [
                 21246,
@@ -3184,7 +3184,7 @@
             ]
         },
         {
-            "sample": "sfx_534.wav",
+            "sample": "sample_534.wav",
             "pitch": "C5",
             "loop": [
                 2495,
@@ -3192,11 +3192,11 @@
             ]
         },
         {
-            "sample": "sfx_535.wav",
+            "sample": "sample_535.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_536.wav",
+            "sample": "sample_536.wav",
             "pitch": "C5",
             "loop": [
                 2350,
@@ -3204,11 +3204,11 @@
             ]
         },
         {
-            "sample": "sfx_537.wav",
+            "sample": "sample_537.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_538.wav",
+            "sample": "sample_538.wav",
             "pitch": "C5",
             "loop": [
                 4787,
@@ -3216,35 +3216,35 @@
             ]
         },
         {
-            "sample": "sfx_539.wav",
+            "sample": "sample_539.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_540.wav",
+            "sample": "sample_540.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_541.wav",
+            "sample": "sample_541.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_542.wav",
+            "sample": "sample_542.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_543.wav",
+            "sample": "sample_543.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_544.wav",
+            "sample": "sample_544.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_545.wav",
+            "sample": "sample_545.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_546.wav",
+            "sample": "sample_546.wav",
             "pitch": "C5",
             "loop": [
                 3759,
@@ -3252,7 +3252,7 @@
             ]
         },
         {
-            "sample": "sfx_547.wav",
+            "sample": "sample_547.wav",
             "pitch": "C5",
             "loop": [
                 2163,
@@ -3260,11 +3260,11 @@
             ]
         },
         {
-            "sample": "sfx_548.wav",
+            "sample": "sample_548.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_549.wav",
+            "sample": "sample_549.wav",
             "pitch": "C5",
             "loop": [
                 7002,
@@ -3272,67 +3272,67 @@
             ]
         },
         {
-            "sample": "sfx_550.wav",
+            "sample": "sample_550.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_551.wav",
+            "sample": "sample_551.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_552.wav",
+            "sample": "sample_552.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_553.wav",
+            "sample": "sample_553.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_554.wav",
+            "sample": "sample_554.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_555.wav",
+            "sample": "sample_555.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_556.wav",
+            "sample": "sample_556.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_557.wav",
+            "sample": "sample_557.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_558.wav",
+            "sample": "sample_558.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_559.wav",
+            "sample": "sample_559.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_560.wav",
+            "sample": "sample_560.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_561.wav",
+            "sample": "sample_561.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_562.wav",
+            "sample": "sample_562.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_563.wav",
+            "sample": "sample_563.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_564.wav",
+            "sample": "sample_564.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_565.wav",
+            "sample": "sample_565.wav",
             "pitch": "C5",
             "loop": [
                 3036,
@@ -3340,55 +3340,55 @@
             ]
         },
         {
-            "sample": "sfx_566.wav",
+            "sample": "sample_566.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_567.wav",
+            "sample": "sample_567.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_568.wav",
+            "sample": "sample_568.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_569.wav",
+            "sample": "sample_569.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_570.wav",
+            "sample": "sample_570.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_571.wav",
+            "sample": "sample_571.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_572.wav",
+            "sample": "sample_572.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_573.wav",
+            "sample": "sample_573.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_574.wav",
+            "sample": "sample_574.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_575.wav",
+            "sample": "sample_575.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_576.wav",
+            "sample": "sample_576.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_577.wav",
+            "sample": "sample_577.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_578.wav",
+            "sample": "sample_578.wav",
             "pitch": "C5",
             "loop": [
                 7235,
@@ -3396,43 +3396,43 @@
             ]
         },
         {
-            "sample": "sfx_579.wav",
+            "sample": "sample_579.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_580.wav",
+            "sample": "sample_580.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_581.wav",
+            "sample": "sample_581.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_582.wav",
+            "sample": "sample_582.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_583.wav",
+            "sample": "sample_583.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_584.wav",
+            "sample": "sample_584.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_585.wav",
+            "sample": "sample_585.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_586.wav",
+            "sample": "sample_586.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_587.wav",
+            "sample": "sample_587.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_588.wav",
+            "sample": "sample_588.wav",
             "pitch": "C5",
             "loop": [
                 992,
@@ -3440,11 +3440,11 @@
             ]
         },
         {
-            "sample": "sfx_589.wav",
+            "sample": "sample_589.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_590.wav",
+            "sample": "sample_590.wav",
             "pitch": "C5",
             "loop": [
                 1216,
@@ -3452,19 +3452,19 @@
             ]
         },
         {
-            "sample": "sfx_591.wav",
+            "sample": "sample_591.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_592.wav",
+            "sample": "sample_592.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_593.wav",
+            "sample": "sample_593.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_594.wav",
+            "sample": "sample_594.wav",
             "pitch": "C5",
             "loop": [
                 2059,
@@ -3472,787 +3472,787 @@
             ]
         },
         {
-            "sample": "sfx_595.wav",
+            "sample": "sample_595.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_596.wav",
+            "sample": "sample_596.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_597.wav",
+            "sample": "sample_597.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_598.wav",
+            "sample": "sample_598.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_599.wav",
+            "sample": "sample_599.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_600.wav",
+            "sample": "sample_600.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_601.wav",
+            "sample": "sample_601.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_602.wav",
+            "sample": "sample_602.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_603.wav",
+            "sample": "sample_603.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_604.wav",
+            "sample": "sample_604.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_605.wav",
+            "sample": "sample_605.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_606.wav",
+            "sample": "sample_606.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_607.wav",
+            "sample": "sample_607.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_608.wav",
+            "sample": "sample_608.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_609.wav",
+            "sample": "sample_609.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_610.wav",
+            "sample": "sample_610.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_611.wav",
+            "sample": "sample_611.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_612.wav",
+            "sample": "sample_612.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_613.wav",
+            "sample": "sample_613.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_614.wav",
+            "sample": "sample_614.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_615.wav",
+            "sample": "sample_615.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_616.wav",
+            "sample": "sample_616.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_617.wav",
+            "sample": "sample_617.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_618.wav",
+            "sample": "sample_618.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_619.wav",
+            "sample": "sample_619.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_620.wav",
+            "sample": "sample_620.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_621.wav",
+            "sample": "sample_621.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_622.wav",
+            "sample": "sample_622.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_623.wav",
+            "sample": "sample_623.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_624.wav",
+            "sample": "sample_624.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_625.wav",
+            "sample": "sample_625.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_626.wav",
+            "sample": "sample_626.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_627.wav",
+            "sample": "sample_627.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_628.wav",
+            "sample": "sample_628.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_629.wav",
+            "sample": "sample_629.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_630.wav",
+            "sample": "sample_630.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_631.wav",
+            "sample": "sample_631.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_632.wav",
+            "sample": "sample_632.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_633.wav",
+            "sample": "sample_633.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_634.wav",
+            "sample": "sample_634.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_635.wav",
+            "sample": "sample_635.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_636.wav",
+            "sample": "sample_636.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_637.wav",
+            "sample": "sample_637.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_638.wav",
+            "sample": "sample_638.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_639.wav",
+            "sample": "sample_639.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_640.wav",
+            "sample": "sample_640.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_641.wav",
+            "sample": "sample_641.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_642.wav",
+            "sample": "sample_642.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_643.wav",
+            "sample": "sample_643.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_644.wav",
+            "sample": "sample_644.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_645.wav",
+            "sample": "sample_645.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_646.wav",
+            "sample": "sample_646.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_647.wav",
+            "sample": "sample_647.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_648.wav",
+            "sample": "sample_648.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_649.wav",
+            "sample": "sample_649.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_650.wav",
+            "sample": "sample_650.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_651.wav",
+            "sample": "sample_651.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_652.wav",
+            "sample": "sample_652.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_653.wav",
+            "sample": "sample_653.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_654.wav",
+            "sample": "sample_654.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_655.wav",
+            "sample": "sample_655.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_656.wav",
+            "sample": "sample_656.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_657.wav",
+            "sample": "sample_657.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_658.wav",
+            "sample": "sample_658.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_659.wav",
+            "sample": "sample_659.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_660.wav",
+            "sample": "sample_660.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_661.wav",
+            "sample": "sample_661.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_662.wav",
+            "sample": "sample_662.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_663.wav",
+            "sample": "sample_663.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_664.wav",
+            "sample": "sample_664.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_665.wav",
+            "sample": "sample_665.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_666.wav",
+            "sample": "sample_666.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_667.wav",
+            "sample": "sample_667.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_668.wav",
+            "sample": "sample_668.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_669.wav",
+            "sample": "sample_669.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_670.wav",
+            "sample": "sample_670.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_671.wav",
+            "sample": "sample_671.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_672.wav",
+            "sample": "sample_672.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_673.wav",
+            "sample": "sample_673.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_674.wav",
+            "sample": "sample_674.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_675.wav",
+            "sample": "sample_675.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_676.wav",
+            "sample": "sample_676.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_677.wav",
+            "sample": "sample_677.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_678.wav",
+            "sample": "sample_678.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_679.wav",
+            "sample": "sample_679.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_680.wav",
+            "sample": "sample_680.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_681.wav",
+            "sample": "sample_681.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_682.wav",
+            "sample": "sample_682.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_683.wav",
+            "sample": "sample_683.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_684.wav",
+            "sample": "sample_684.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_685.wav",
+            "sample": "sample_685.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_686.wav",
+            "sample": "sample_686.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_687.wav",
+            "sample": "sample_687.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_688.wav",
+            "sample": "sample_688.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_689.wav",
+            "sample": "sample_689.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_690.wav",
+            "sample": "sample_690.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_691.wav",
+            "sample": "sample_691.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_692.wav",
+            "sample": "sample_692.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_693.wav",
+            "sample": "sample_693.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_694.wav",
+            "sample": "sample_694.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_695.wav",
+            "sample": "sample_695.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_696.wav",
+            "sample": "sample_696.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_697.wav",
+            "sample": "sample_697.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_698.wav",
+            "sample": "sample_698.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_699.wav",
+            "sample": "sample_699.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_700.wav",
+            "sample": "sample_700.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_701.wav",
+            "sample": "sample_701.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_702.wav",
+            "sample": "sample_702.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_703.wav",
+            "sample": "sample_703.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_704.wav",
+            "sample": "sample_704.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_705.wav",
+            "sample": "sample_705.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_706.wav",
+            "sample": "sample_706.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_707.wav",
+            "sample": "sample_707.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_708.wav",
+            "sample": "sample_708.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_709.wav",
+            "sample": "sample_709.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_710.wav",
+            "sample": "sample_710.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_711.wav",
+            "sample": "sample_711.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_712.wav",
+            "sample": "sample_712.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_713.wav",
+            "sample": "sample_713.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_714.wav",
+            "sample": "sample_714.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_715.wav",
+            "sample": "sample_715.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_716.wav",
+            "sample": "sample_716.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_717.wav",
+            "sample": "sample_717.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_718.wav",
+            "sample": "sample_718.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_719.wav",
+            "sample": "sample_719.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_720.wav",
+            "sample": "sample_720.wav",
             "pitch": "C0"
         },
         {
-            "sample": "sfx_721.wav",
+            "sample": "sample_721.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_722.wav",
+            "sample": "sample_722.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_723.wav",
+            "sample": "sample_723.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_724.wav",
+            "sample": "sample_724.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_725.wav",
+            "sample": "sample_725.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_726.wav",
+            "sample": "sample_726.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_727.wav",
+            "sample": "sample_727.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_728.wav",
+            "sample": "sample_728.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_729.wav",
+            "sample": "sample_729.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_730.wav",
+            "sample": "sample_730.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_731.wav",
+            "sample": "sample_731.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_732.wav",
+            "sample": "sample_732.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_733.wav",
+            "sample": "sample_733.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_734.wav",
+            "sample": "sample_734.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_735.wav",
+            "sample": "sample_735.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_736.wav",
+            "sample": "sample_736.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_737.wav",
+            "sample": "sample_737.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_738.wav",
+            "sample": "sample_738.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_739.wav",
+            "sample": "sample_739.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_740.wav",
+            "sample": "sample_740.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_741.wav",
+            "sample": "sample_741.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_742.wav",
+            "sample": "sample_742.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_743.wav",
+            "sample": "sample_743.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_744.wav",
+            "sample": "sample_744.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_745.wav",
+            "sample": "sample_745.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_746.wav",
+            "sample": "sample_746.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_747.wav",
+            "sample": "sample_747.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_748.wav",
+            "sample": "sample_748.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_749.wav",
+            "sample": "sample_749.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_750.wav",
+            "sample": "sample_750.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_751.wav",
+            "sample": "sample_751.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_752.wav",
+            "sample": "sample_752.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_753.wav",
+            "sample": "sample_753.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_754.wav",
+            "sample": "sample_754.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_755.wav",
+            "sample": "sample_755.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_756.wav",
+            "sample": "sample_756.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_757.wav",
+            "sample": "sample_757.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_758.wav",
+            "sample": "sample_758.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_759.wav",
+            "sample": "sample_759.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_760.wav",
+            "sample": "sample_760.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_761.wav",
+            "sample": "sample_761.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_762.wav",
+            "sample": "sample_762.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_763.wav",
+            "sample": "sample_763.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_764.wav",
+            "sample": "sample_764.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_765.wav",
+            "sample": "sample_765.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_766.wav",
+            "sample": "sample_766.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_767.wav",
+            "sample": "sample_767.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_768.wav",
+            "sample": "sample_768.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_769.wav",
+            "sample": "sample_769.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_770.wav",
+            "sample": "sample_770.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_771.wav",
+            "sample": "sample_771.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_772.wav",
+            "sample": "sample_772.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_773.wav",
+            "sample": "sample_773.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_774.wav",
+            "sample": "sample_774.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_775.wav",
+            "sample": "sample_775.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_776.wav",
+            "sample": "sample_776.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_777.wav",
+            "sample": "sample_777.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_778.wav",
+            "sample": "sample_778.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_779.wav",
+            "sample": "sample_779.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_780.wav",
+            "sample": "sample_780.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_781.wav",
+            "sample": "sample_781.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_782.wav",
+            "sample": "sample_782.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_783.wav",
+            "sample": "sample_783.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_784.wav",
+            "sample": "sample_784.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_785.wav",
+            "sample": "sample_785.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_786.wav",
+            "sample": "sample_786.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_787.wav",
+            "sample": "sample_787.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_788.wav",
+            "sample": "sample_788.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_789.wav",
+            "sample": "sample_789.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_790.wav",
+            "sample": "sample_790.wav",
             "pitch": "C5",
             "loop": [
                 600,
@@ -4260,15 +4260,15 @@
             ]
         },
         {
-            "sample": "sfx_791.wav",
+            "sample": "sample_791.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_792.wav",
+            "sample": "sample_792.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_793.wav",
+            "sample": "sample_793.wav",
             "pitch": "G5",
             "loop": [
                 1000,
@@ -4276,7 +4276,7 @@
             ]
         },
         {
-            "sample": "sfx_794.wav",
+            "sample": "sample_794.wav",
             "pitch": "D5",
             "loop": [
                 1135,
@@ -4284,7 +4284,7 @@
             ]
         },
         {
-            "sample": "sfx_795.wav",
+            "sample": "sample_795.wav",
             "pitch": "C5",
             "loop": [
                 1077,
@@ -4292,11 +4292,11 @@
             ]
         },
         {
-            "sample": "sfx_796.wav",
+            "sample": "sample_796.wav",
             "pitch": "F#4"
         },
         {
-            "sample": "sfx_797.wav",
+            "sample": "sample_797.wav",
             "pitch": "C5",
             "loop": [
                 434,
@@ -4304,15 +4304,15 @@
             ]
         },
         {
-            "sample": "sfx_798.wav",
+            "sample": "sample_798.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_799.wav",
+            "sample": "sample_799.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_800.wav",
+            "sample": "sample_800.wav",
             "pitch": "C5",
             "loop": [
                 1625,
@@ -4320,7 +4320,7 @@
             ]
         },
         {
-            "sample": "sfx_801.wav",
+            "sample": "sample_801.wav",
             "pitch": "C5",
             "loop": [
                 7181,
@@ -4328,11 +4328,11 @@
             ]
         },
         {
-            "sample": "sfx_802.wav",
+            "sample": "sample_802.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_803.wav",
+            "sample": "sample_803.wav",
             "pitch": "C5",
             "loop": [
                 595,
@@ -4340,7 +4340,7 @@
             ]
         },
         {
-            "sample": "sfx_804.wav",
+            "sample": "sample_804.wav",
             "pitch": "C5",
             "loop": [
                 1410,
@@ -4348,23 +4348,23 @@
             ]
         },
         {
-            "sample": "sfx_805.wav",
+            "sample": "sample_805.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_806.wav",
+            "sample": "sample_806.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_807.wav",
+            "sample": "sample_807.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_808.wav",
+            "sample": "sample_808.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_809.wav",
+            "sample": "sample_809.wav",
             "pitch": "C5",
             "loop": [
                 167,
@@ -4372,7 +4372,7 @@
             ]
         },
         {
-            "sample": "sfx_810.wav",
+            "sample": "sample_810.wav",
             "pitch": "F5",
             "loop": [
                 846,
@@ -4380,7 +4380,7 @@
             ]
         },
         {
-            "sample": "sfx_811.wav",
+            "sample": "sample_811.wav",
             "pitch": "F5",
             "loop": [
                 230,
@@ -4388,7 +4388,7 @@
             ]
         },
         {
-            "sample": "sfx_812.wav",
+            "sample": "sample_812.wav",
             "pitch": "F5",
             "loop": [
                 670,
@@ -4396,7 +4396,7 @@
             ]
         },
         {
-            "sample": "sfx_813.wav",
+            "sample": "sample_813.wav",
             "pitch": "F5",
             "loop": [
                 571,
@@ -4404,7 +4404,7 @@
             ]
         },
         {
-            "sample": "sfx_814.wav",
+            "sample": "sample_814.wav",
             "pitch": "C5",
             "loop": [
                 1296,
@@ -4412,27 +4412,27 @@
             ]
         },
         {
-            "sample": "sfx_815.wav",
+            "sample": "sample_815.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_816.wav",
+            "sample": "sample_816.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_817.wav",
+            "sample": "sample_817.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_818.wav",
+            "sample": "sample_818.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_819.wav",
+            "sample": "sample_819.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_820.wav",
+            "sample": "sample_820.wav",
             "pitch": "C5",
             "loop": [
                 6847,
@@ -4440,15 +4440,15 @@
             ]
         },
         {
-            "sample": "sfx_821.wav",
+            "sample": "sample_821.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_822.wav",
+            "sample": "sample_822.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_823.wav",
+            "sample": "sample_823.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -4456,15 +4456,15 @@
             ]
         },
         {
-            "sample": "sfx_824.wav",
+            "sample": "sample_824.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_825.wav",
+            "sample": "sample_825.wav",
             "pitch": "G#5"
         },
         {
-            "sample": "sfx_826.wav",
+            "sample": "sample_826.wav",
             "pitch": "C5",
             "loop": [
                 5150,
@@ -4472,15 +4472,15 @@
             ]
         },
         {
-            "sample": "sfx_827.wav",
+            "sample": "sample_827.wav",
             "pitch": "G#5"
         },
         {
-            "sample": "sfx_828.wav",
+            "sample": "sample_828.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_829.wav",
+            "sample": "sample_829.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -4488,39 +4488,39 @@
             ]
         },
         {
-            "sample": "sfx_830.wav",
+            "sample": "sample_830.wav",
             "pitch": "C6"
         },
         {
-            "sample": "sfx_831.wav",
+            "sample": "sample_831.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_832.wav",
+            "sample": "sample_832.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_833.wav",
+            "sample": "sample_833.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_834.wav",
+            "sample": "sample_834.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_835.wav",
+            "sample": "sample_835.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_836.wav",
+            "sample": "sample_836.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_837.wav",
+            "sample": "sample_837.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_838.wav",
+            "sample": "sample_838.wav",
             "pitch": "C5",
             "loop": [
                 8400,
@@ -4528,11 +4528,11 @@
             ]
         },
         {
-            "sample": "sfx_839.wav",
+            "sample": "sample_839.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_840.wav",
+            "sample": "sample_840.wav",
             "pitch": "C5",
             "loop": [
                 2848,
@@ -4540,11 +4540,11 @@
             ]
         },
         {
-            "sample": "sfx_841.wav",
+            "sample": "sample_841.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_842.wav",
+            "sample": "sample_842.wav",
             "pitch": "C5",
             "loop": [
                 621,
@@ -4552,27 +4552,27 @@
             ]
         },
         {
-            "sample": "sfx_843.wav",
+            "sample": "sample_843.wav",
             "pitch": "C6"
         },
         {
-            "sample": "sfx_844.wav",
+            "sample": "sample_844.wav",
             "pitch": "C6"
         },
         {
-            "sample": "sfx_845.wav",
+            "sample": "sample_845.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_846.wav",
+            "sample": "sample_846.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_847.wav",
+            "sample": "sample_847.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_848.wav",
+            "sample": "sample_848.wav",
             "pitch": "C5",
             "loop": [
                 495,
@@ -4580,27 +4580,27 @@
             ]
         },
         {
-            "sample": "sfx_849.wav",
+            "sample": "sample_849.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_850.wav",
+            "sample": "sample_850.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_851.wav",
+            "sample": "sample_851.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_852.wav",
+            "sample": "sample_852.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_853.wav",
+            "sample": "sample_853.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_854.wav",
+            "sample": "sample_854.wav",
             "pitch": "C5",
             "loop": [
                 5624,
@@ -4608,11 +4608,11 @@
             ]
         },
         {
-            "sample": "sfx_855.wav",
+            "sample": "sample_855.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_856.wav",
+            "sample": "sample_856.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -4620,15 +4620,15 @@
             ]
         },
         {
-            "sample": "sfx_857.wav",
+            "sample": "sample_857.wav",
             "pitch": "F#5"
         },
         {
-            "sample": "sfx_858.wav",
+            "sample": "sample_858.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_859.wav",
+            "sample": "sample_859.wav",
             "pitch": "C6",
             "loop": [
                 1899,
@@ -4636,7 +4636,7 @@
             ]
         },
         {
-            "sample": "sfx_860.wav",
+            "sample": "sample_860.wav",
             "pitch": "C7",
             "loop": [
                 2011,
@@ -4644,23 +4644,23 @@
             ]
         },
         {
-            "sample": "sfx_861.wav",
+            "sample": "sample_861.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_862.wav",
+            "sample": "sample_862.wav",
             "pitch": "C6"
         },
         {
-            "sample": "sfx_863.wav",
+            "sample": "sample_863.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_864.wav",
+            "sample": "sample_864.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_865.wav",
+            "sample": "sample_865.wav",
             "pitch": "C5",
             "loop": [
                 1788,
@@ -4668,11 +4668,11 @@
             ]
         },
         {
-            "sample": "sfx_866.wav",
+            "sample": "sample_866.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_867.wav",
+            "sample": "sample_867.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -4680,31 +4680,31 @@
             ]
         },
         {
-            "sample": "sfx_868.wav",
+            "sample": "sample_868.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_869.wav",
+            "sample": "sample_869.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_870.wav",
+            "sample": "sample_870.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_871.wav",
+            "sample": "sample_871.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_872.wav",
+            "sample": "sample_872.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_873.wav",
+            "sample": "sample_873.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_874.wav",
+            "sample": "sample_874.wav",
             "pitch": "E7",
             "loop": [
                 1745,
@@ -4712,31 +4712,31 @@
             ]
         },
         {
-            "sample": "sfx_875.wav",
+            "sample": "sample_875.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_876.wav",
+            "sample": "sample_876.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_877.wav",
+            "sample": "sample_877.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_878.wav",
+            "sample": "sample_878.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_879.wav",
+            "sample": "sample_879.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_880.wav",
+            "sample": "sample_880.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_881.wav",
+            "sample": "sample_881.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -4744,23 +4744,23 @@
             ]
         },
         {
-            "sample": "sfx_882.wav",
+            "sample": "sample_882.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_883.wav",
+            "sample": "sample_883.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_884.wav",
+            "sample": "sample_884.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_885.wav",
+            "sample": "sample_885.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_886.wav",
+            "sample": "sample_886.wav",
             "pitch": "C5",
             "loop": [
                 1945,
@@ -4768,7 +4768,7 @@
             ]
         },
         {
-            "sample": "sfx_887.wav",
+            "sample": "sample_887.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -4776,15 +4776,15 @@
             ]
         },
         {
-            "sample": "sfx_888.wav",
+            "sample": "sample_888.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_889.wav",
+            "sample": "sample_889.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_890.wav",
+            "sample": "sample_890.wav",
             "pitch": "F5",
             "loop": [
                 6338,
@@ -4792,11 +4792,11 @@
             ]
         },
         {
-            "sample": "sfx_891.wav",
+            "sample": "sample_891.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_892.wav",
+            "sample": "sample_892.wav",
             "pitch": "G5",
             "loop": [
                 5646,
@@ -4804,47 +4804,47 @@
             ]
         },
         {
-            "sample": "sfx_893.wav",
+            "sample": "sample_893.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_894.wav",
+            "sample": "sample_894.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_895.wav",
+            "sample": "sample_895.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_896.wav",
+            "sample": "sample_896.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_897.wav",
+            "sample": "sample_897.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_898.wav",
+            "sample": "sample_898.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_899.wav",
+            "sample": "sample_899.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_900.wav",
+            "sample": "sample_900.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_901.wav",
+            "sample": "sample_901.wav",
             "pitch": "G5"
         },
         {
-            "sample": "sfx_902.wav",
+            "sample": "sample_902.wav",
             "pitch": "B5"
         },
         {
-            "sample": "sfx_903.wav",
+            "sample": "sample_903.wav",
             "pitch": "C5",
             "loop": [
                 1854,
@@ -4852,23 +4852,23 @@
             ]
         },
         {
-            "sample": "sfx_904.wav",
+            "sample": "sample_904.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_905.wav",
+            "sample": "sample_905.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_906.wav",
+            "sample": "sample_906.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_907.wav",
+            "sample": "sample_907.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_908.wav",
+            "sample": "sample_908.wav",
             "pitch": "C5",
             "loop": [
                 6611,
@@ -4876,23 +4876,23 @@
             ]
         },
         {
-            "sample": "sfx_909.wav",
+            "sample": "sample_909.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_910.wav",
+            "sample": "sample_910.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_911.wav",
+            "sample": "sample_911.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_912.wav",
+            "sample": "sample_912.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_913.wav",
+            "sample": "sample_913.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -4900,7 +4900,7 @@
             ]
         },
         {
-            "sample": "sfx_914.wav",
+            "sample": "sample_914.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -4908,11 +4908,11 @@
             ]
         },
         {
-            "sample": "sfx_915.wav",
+            "sample": "sample_915.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_916.wav",
+            "sample": "sample_916.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -4920,15 +4920,15 @@
             ]
         },
         {
-            "sample": "sfx_917.wav",
+            "sample": "sample_917.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_918.wav",
+            "sample": "sample_918.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_919.wav",
+            "sample": "sample_919.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -4936,7 +4936,7 @@
             ]
         },
         {
-            "sample": "sfx_920.wav",
+            "sample": "sample_920.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -4944,27 +4944,27 @@
             ]
         },
         {
-            "sample": "sfx_921.wav",
+            "sample": "sample_921.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_922.wav",
+            "sample": "sample_922.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_923.wav",
+            "sample": "sample_923.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_924.wav",
+            "sample": "sample_924.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_925.wav",
+            "sample": "sample_925.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_926.wav",
+            "sample": "sample_926.wav",
             "pitch": "C5",
             "loop": [
                 925,
@@ -4972,15 +4972,15 @@
             ]
         },
         {
-            "sample": "sfx_927.wav",
+            "sample": "sample_927.wav",
             "pitch": "F#5"
         },
         {
-            "sample": "sfx_928.wav",
+            "sample": "sample_928.wav",
             "pitch": "F#5"
         },
         {
-            "sample": "sfx_929.wav",
+            "sample": "sample_929.wav",
             "pitch": "C5",
             "loop": [
                 577,
@@ -4988,7 +4988,7 @@
             ]
         },
         {
-            "sample": "sfx_930.wav",
+            "sample": "sample_930.wav",
             "pitch": "C5",
             "loop": [
                 0,
@@ -4996,7 +4996,7 @@
             ]
         },
         {
-            "sample": "sfx_931.wav",
+            "sample": "sample_931.wav",
             "pitch": "E5",
             "loop": [
                 2665,
@@ -5004,127 +5004,127 @@
             ]
         },
         {
-            "sample": "sfx_932.wav",
+            "sample": "sample_932.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_933.wav",
+            "sample": "sample_933.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_934.wav",
+            "sample": "sample_934.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_935.wav",
+            "sample": "sample_935.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_936.wav",
+            "sample": "sample_936.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_937.wav",
+            "sample": "sample_937.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_938.wav",
+            "sample": "sample_938.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_939.wav",
+            "sample": "sample_939.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_940.wav",
+            "sample": "sample_940.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_941.wav",
+            "sample": "sample_941.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_942.wav",
+            "sample": "sample_942.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_943.wav",
+            "sample": "sample_943.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_944.wav",
+            "sample": "sample_944.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_945.wav",
+            "sample": "sample_945.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_946.wav",
+            "sample": "sample_946.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_947.wav",
+            "sample": "sample_947.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_948.wav",
+            "sample": "sample_948.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_949.wav",
+            "sample": "sample_949.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_950.wav",
+            "sample": "sample_950.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_951.wav",
+            "sample": "sample_951.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_952.wav",
+            "sample": "sample_952.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_953.wav",
+            "sample": "sample_953.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_954.wav",
+            "sample": "sample_954.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_955.wav",
+            "sample": "sample_955.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_956.wav",
+            "sample": "sample_956.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_957.wav",
+            "sample": "sample_957.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_958.wav",
+            "sample": "sample_958.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_959.wav",
+            "sample": "sample_959.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_960.wav",
+            "sample": "sample_960.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_961.wav",
+            "sample": "sample_961.wav",
             "pitch": "C5"
         },
         {
-            "sample": "sfx_962.wav",
+            "sample": "sample_962.wav",
             "pitch": "C5"
         }
     ]
