@@ -753,9 +753,7 @@ script script_remix_7_main
 
     load_sick_beats
     rest 12
-    sick_beats_set_hits_needed 3
-    sick_beats_set_virus_palette 9
-    sick_beats_spawn_virus remix_7_sick_beats_path_skip_to_point_2
+    sick_beats_spawn_3_hit_virus remix_7_sick_beats_path_skip_to_point_2
     rest 24
     rest 24
     rest 24

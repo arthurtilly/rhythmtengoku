@@ -377,7 +377,7 @@ SECTIONS {
         build/games/remix_4/remix_4_text.c.o(.rodata);
         build/games/mr_upbeat/mr_upbeat_text.c.o(.rodata);
         build/games/space_dance/cosmic_dance_text.c.o(.rodata);
-        build/games/quiz_show/quiz_show_endless.bs.o(.script.rodata);
+        build/games/quiz_show/quiz_show_endless.bs.o(.rodata);
         build/games/staff_credit/staff_credit_text.c.o(.rodata);
         build/games/remix_3/remix_3_text.c.o(.rodata);
         build/games/remix_7/remix_7_text.c.o(.rodata);
@@ -1779,7 +1779,8 @@ SECTIONS {
         build/games/space_dance/cosmic_dance.bs.o(.script.entry);
         build/bin/bindata_089d6914.bin.o(.rodata*);
         build/games/quiz_show/quiz_show_endless.bs.o(.script.entry);
-        build/bin/bindata_089d6bc0.bin.o(.rodata*);
+        build/games/sick_beats/sick_beats_endless.bs.o(.script.entry);
+        build/bin/bindata_089d6ca8.bin.o(.rodata*);
         build/games/staff_credit/staff_credit.bs.o(.script.entry);
         build/games/drum_live/drum_live.bs.o(.script.entry);
         build/games/remix_3/remix_3.bs.o(.script.entry);
@@ -2007,7 +2008,8 @@ SECTIONS {
         build/games/space_dance/cosmic_dance.bs.o(.script.main);
         build/bin/bindata_08a584c4.bin.o(.rodata*);
         build/games/quiz_show/quiz_show_endless.bs.o(.script.main);
-        build/bin/bindata_08a5a474.bin.o(.rodata*);
+        build/games/sick_beats/sick_beats_endless.bs.o(.script.main);
+        build/bin/bindata_08a5dd8c.bin.o(.rodata*);
         build/games/drum_live/drum_live.bs.o(.script.menu);
         build/games/remix_3/remix_3.bs.o(.script.main);
         build/games/remix_7/remix_7.bs.o(.script.main);

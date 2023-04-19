@@ -7,8 +7,8 @@
 
 
 extern const struct Scene scene_drum_live;
-extern const struct Scene D_089d6c8c;
-extern const struct Scene D_089d6ba4;
+extern const struct Scene scene_sick_beats_endless;
+extern const struct Scene scene_quiz_show_endless;
 extern const struct Scene D_089d69e0;
 extern const struct Scene scene_mr_upbeat;
 extern const struct Scene scene_remix_8;
@@ -136,11 +136,11 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "ライブ"
     },
     /* Sick Beats Endless */ {
-        /* Scene */ &D_089d6c8c,
+        /* Scene */ &scene_sick_beats_endless,
         /* Label */ "バイキン　はかせ　ＳＰ"
     },
     /* Quiz Show Endless */ {
-        /* Scene */ &D_089d6ba4,
+        /* Scene */ &scene_quiz_show_endless,
         /* Label */ "クイズ（スペシャル）"
     },
     /* Mannequin Factory */ {
