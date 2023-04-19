@@ -1,5 +1,5 @@
 #include "global.h"
-#include "debug_empty_test.h"
+#include "debug_template_scene.h"
 
 #include "src/memory.h"
 #include "src/code_08001360.h"

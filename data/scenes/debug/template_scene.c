@@ -1,7 +1,7 @@
 #include "global.h"
 #include "graphics.h"
 #include "src/bitmap_font.h"
-#include "src/scenes/debug_empty_test.h"
+#include "src/scenes/debug_template_scene.h"
 
 
   /* EMPTY TEST - SCENE DATA */

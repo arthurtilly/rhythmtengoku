@@ -46,7 +46,7 @@ SECTIONS {
 		build/src/scenes/debug_flash_mem.c.o(.bss);
 		build/src/scenes/debug_data_clear.c.o(.bss);
 		build/src/scenes/debug_asset_test.c.o(.bss);
-		build/src/scenes/debug_empty_test.c.o(.bss);
+		build/src/scenes/debug_template_scene.c.o(.bss);
 		build/src/engines/sneaky_spirits.c.o(.bss);
 		build/src/engines/spaceball.c.o(.bss);
 		build/src/engines/bon_odori.c.o(.bss);
@@ -171,7 +171,7 @@ SECTIONS {
         build/src/scenes/debug_flash_mem.c.o(.text);
         build/src/scenes/debug_data_clear.c.o(.text);
         build/src/scenes/debug_asset_test.c.o(.text);
-        build/src/scenes/debug_empty_test.c.o(.text);
+        build/src/scenes/debug_template_scene.c.o(.text);
 		build/src/engines/sneaky_spirits.c.o(.text);
 		build/src/engines/spaceball.c.o(.text);
 		build/src/engines/bon_odori.c.o(.text);
@@ -1824,8 +1824,8 @@ SECTIONS {
         build/data/scenes/debug/data_clear.bs.o(.scene);
         build/data/scenes/debug/asset_test.c.o(.data);
         build/data/scenes/debug/asset_test.bs.o(.scene);
-        build/data/scenes/debug/empty_test.c.o(.data);
-        build/data/scenes/debug/template.bs.o(.scene);
+        build/data/scenes/debug/template_scene.c.o(.data);
+        build/data/scenes/debug/template_scene.bs.o(.scene);
 
         build/data/font_definitions.c.o(.data);
 
