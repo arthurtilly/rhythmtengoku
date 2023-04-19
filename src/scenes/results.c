@@ -4,19 +4,10 @@
 
 #include "levels.h"
 #include "cues.h"
-#include "src/main.h"
-#include "src/memory.h"
-#include "src/code_08001360.h"
-#include "src/bitmap_font.h"
-#include "src/memory_heap.h"
-#include "src/code_08007468.h"
-#include "src/text_printer.h"
-#include "src/code_0800b778.h"
-#include "src/code_080102d0.h"
-#include "game_select.h"
-#include "src/lib_0804ca80.h"
+#include "src/scenes/game_select.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
+
 
 // For readability.
 #define gResultsInfo ((struct ResultsSceneInfo *)D_030046a4)
@@ -44,8 +35,6 @@ extern struct Scene D_089d6d74; // Staff Credit
 extern struct Scene scene_results_ver_rank;
 extern struct Scene scene_results_ver_score;
 extern struct Scene scene_epilogue;
-
-extern const struct BitmapFontData bitmap_font_warioware_body;
 
 static s32 D_0300132c; // unknown type, unknown if exists
 static s32 D_03001330; // unknown type
@@ -112,7 +101,7 @@ void rank_results_scene_init_gfx1(void) {
 void rank_results_scene_start(void *sceneParam, s32 startParam) {
     func_08007324(FALSE);
     func_080073f0();
-    gResultsInfo->bgFont = create_new_bmp_font_bg(get_current_mem_id(), &bitmap_font_warioware_body, 0, 0x340, 6);
+    gResultsInfo->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
     gResultsInfo->objFont = func_0800c660(0x300, 4);
     dma3_fill(0, COMMENT_TILESET_BASE, 0x4000, 0x20, 0x200);
     gResultsInfo->currentLine = 0;

@@ -212,12 +212,11 @@ void func_0801db04(u32 enable) {
 }
 
 
-// Debug Text..? (Unused)
+/* DEBUG TEXT (Unused) */
 
 
-extern struct BitmapFontData bitmap_font_warioware_body[];
-extern char D_089dd908[]; // "ÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQÅQ"
 extern FontPalette dev_text_font_pal1[];
+extern FontPalette dev_text_font_pal2[];
 
 
 // Update Font Palette 1.

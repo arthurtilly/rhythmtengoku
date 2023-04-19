@@ -2,12 +2,6 @@
 #include "warning.h"
 #include "graphics/warning/warning_graphics.h"
 
-#include "src/code_08001360.h"
-#include "src/code_08007468.h"
-#include "src/text_printer.h"
-#include "src/code_0800b778.h"
-#include "src/lib_0804ca80.h"
-
 
 // For readability.
 #define gWarningInfo ((struct WarningSceneInfo *)D_030046a4)

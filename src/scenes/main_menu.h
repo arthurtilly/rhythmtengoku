@@ -11,8 +11,8 @@ struct MainMenuSceneInfo {
     s16 buttons[5];
     s16 bgX;
     s16 bgY;
-    u8 unk1A;
-    u8 loadingOptionsMenu;
+    u8 enteredFromOptionsMenu;
+    u8 exitingToOptionsMenu;
 };
 
 

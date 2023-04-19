@@ -2,15 +2,8 @@
 #include "main_menu.h"
 #include "graphics/main_menu/main_menu_graphics.h"
 
-#include "src/main.h"
-#include "src/code_08001360.h"
-#include "src/bitmap_font.h"
-#include "src/memory_heap.h"
-#include "src/code_080068f8.h"
-#include "src/code_08007468.h"
-#include "src/code_0800b778.h"
-#include "gameplay.h"
-#include "src/lib_0804ca80.h"
+#include "src/scenes/gameplay.h"
+
 
 // For readability.
 #define gMainMenuInfo ((struct MainMenuSceneInfo *)D_030046a4)
@@ -25,7 +18,6 @@ enum MainMenuButtonsEnum {
 
 extern s8 sMainMenuButton;
 
-extern const struct BitmapFontData bitmap_font_warioware_body;
 extern struct Scene scene_debug_menu;
 extern struct Scene scene_game_select;
 extern struct Scene scene_results_ver_score;
@@ -75,13 +67,13 @@ void main_menu_scene_init_gfx1(void) {
 
 // Scene Start
 void main_menu_scene_start(void *sceneVar, s32 dataArg) {
-    s32 sceneTransVar;
+    s32 enteredFromOptionsMenu;
     u32 i;
 
-    sceneTransVar = get_current_scene_trans_var();
+    enteredFromOptionsMenu = get_current_scene_trans_var();
     func_08007324(FALSE);
     func_080073f0();
-    gMainMenuInfo->bmpFontBG = create_new_bmp_font_bg(get_current_mem_id(), &bitmap_font_warioware_body, 0, 0x340, 6);
+    gMainMenuInfo->bmpFontBG = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
     gMainMenuInfo->bmpFontOBJ = func_0800c660(0x300, 4);
     import_all_scene_objects(D_03005380, gMainMenuInfo->bmpFontOBJ, main_menu_scene_objects, D_0300558c);
     main_menu_scene_init_gfx1();
@@ -98,8 +90,8 @@ void main_menu_scene_start(void *sceneVar, s32 dataArg) {
     gMainMenuInfo->scriptIsReady = FALSE;
     gMainMenuInfo->bgY = 0;
     gMainMenuInfo->bgX = 0;
-    gMainMenuInfo->unk1A = (sceneTransVar != 0);
-    gMainMenuInfo->loadingOptionsMenu = FALSE;
+    gMainMenuInfo->enteredFromOptionsMenu = (enteredFromOptionsMenu != FALSE);
+    gMainMenuInfo->exitingToOptionsMenu = FALSE;
     set_next_scene(&scene_debug_menu);
     flush_save_buffer_to_sram();
 }
@@ -156,7 +148,7 @@ void main_menu_scene_update(void *sceneVar, s32 dataArg) {
                 case OPTIONS_MENU:
                     set_next_scene(&scene_options_menu);
                     set_scene_trans_target(&scene_options_menu, &scene_main_menu);
-                    gMainMenuInfo->loadingOptionsMenu = TRUE;
+                    gMainMenuInfo->exitingToOptionsMenu = TRUE;
                     break;
             }
             set_pause_beatscript_scene(FALSE);

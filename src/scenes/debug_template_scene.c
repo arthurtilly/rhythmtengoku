@@ -1,18 +1,9 @@
 #include "global.h"
 #include "debug_template_scene.h"
 
-#include "src/memory.h"
-#include "src/code_08001360.h"
-#include "src/bitmap_font.h"
-#include "src/code_08007468.h"
-#include "src/code_0800b778.h"
-#include "src/lib_0804ca80.h"
-
 
 // For readability.
 #define gTemplateInfo ((struct TemplateSceneInfo *)D_030046a4)
-
-extern struct BitmapFontData bitmap_font_warioware_body[];
 
 
 /* TEMPLATE SCENE */

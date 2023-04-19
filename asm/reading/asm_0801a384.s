@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0801a384 \n\
+thumb_func_start reading_scene_init_gfx4 \n\
 /* 0801a384 */ PUSH {LR} \n\
 /* 0801a386 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801a388 */ BL func_0800c604 \n\

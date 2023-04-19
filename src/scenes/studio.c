@@ -3,6 +3,7 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
+
 static s8 D_03001544; // Selected Drum Kit ID
 static s8 D_03001545; // unknown type
 static s8 D_03001546; // unknown type
@@ -11,7 +12,9 @@ static s8 D_03001548; // unknown type
 static s8 D_03001549; // unknown type
 static s32 D_0300154c; // unknown type
 
+
 /* STUDIO */
+
 
 #include "asm/studio/asm_0801a9c8.s"
 

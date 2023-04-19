@@ -3,12 +3,15 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
+
 static s32 D_03001550; // unknown type
 static s32 D_03001554; // unknown type
 static s32 D_03001558; // unknown type
 
+
 /* MEDAL CORNER MENUS */
 /* (Rhythm Toys Menu, Endless Games Menu, Drum Lessons Menu) */
+
 
 #include "asm/medal_corner/asm_0801d0b8.s"
 

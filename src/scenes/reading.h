@@ -59,13 +59,13 @@ extern struct ReadingMaterial reading_material_error;
 
 
 // Functions:
-extern void func_0801a384(void); // Graphics Init. 4
-extern void func_0801a3b0(void); // Graphics Init. 3
-extern void func_0801a3e4(void); // Graphics Init. 2
-extern void func_0801a414(void); // Graphics Init. 1
-extern void func_0801a450(void *sceneVar, s32 dataArg); // Scene Start
+extern void reading_scene_init_gfx4(void); // Graphics Init. 4
+extern void reading_scene_init_gfx3(void); // Graphics Init. 3
+extern void reading_scene_init_gfx2(void); // Graphics Init. 2
+extern void reading_scene_init_gfx1(void); // Graphics Init. 1
+extern void reading_scene_start(void *sceneVar, s32 dataArg); // Scene Start
 // extern ? func_0801a5d8(?); // ?
-extern void func_0801a70c(void *sceneVar, s32 dataArg); // Scene Update (Active)
+extern void reading_scene_update(void *sceneVar, s32 dataArg); // Scene Update (Active)
 // extern ? func_0801a860(?); // ?
-extern void func_0801a8a0(void *sceneVar, s32 dataArg); // Scene Stop
+extern void reading_scene_stop(void *sceneVar, s32 dataArg); // Scene Stop
 // extern ? func_0801a8b0(?); // ? (Script Function)

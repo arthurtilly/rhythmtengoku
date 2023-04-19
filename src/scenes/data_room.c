@@ -6,7 +6,9 @@ asm(".include \"include/gba.inc\"");//Temporary
 static s8 D_03001318; // unknown type
 static s8 D_03001319; // unknown type
 
+
 /* RHYTHM DATA ROOM */
+
 
 #include "asm/data_room/asm_08011ec0.s"
 

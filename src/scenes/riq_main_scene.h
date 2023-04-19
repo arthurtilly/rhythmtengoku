@@ -3,7 +3,7 @@
 #include "global.h"
 #include "scenes.h"
 
-
+// Types:
 enum PauseHandlerState {
     PAUSE_STATE_PLAY,
     PAUSE_STATE_PAUSE,
@@ -33,15 +33,12 @@ struct PauseMenu {
     const struct PauseMenuDefinition *data;
 };
 
+
+// Static Variables:
 extern struct PauseMenu gPauseMenu;
 
 
-extern const char D_08059668[];
-extern char D_089dd908[];
-extern FontPalette dev_text_font_pal1[];
-extern FontPalette dev_text_font_pal2[];
-
-
+// Functions:
 extern void func_0801d860(u32); // Set D_0300155c
 extern void func_0801d86c(const struct SubScene *); // Start Tengoku Scene
 extern u32  func_0801d8d8(void); // Update Tengoku Scene
@@ -50,7 +47,6 @@ extern void func_0801d968(const struct Beatscript *); // Change Script (w/ Timer
 extern void func_0801d978(void); // Reset BranchStack Position
 extern void func_0801d98c(void); // Stop Tengoku Scene
 extern u32  func_0801d9cc(void);
-
 extern u32  func_0801d9d0(void); // Update Pause Menu (State: Play)
 extern void func_0801da48(void); // Update Pause Menu (State: Pause)
 extern u32  func_0801dabc(void); // Update Pause Menu (State: Stop)
@@ -58,6 +54,7 @@ extern void func_0801daf8(const struct PauseMenuDefinition *data); // Set Pause 
 extern void func_0801db04(u32 enable); // Enable Pause Menu
 
 
+// Types (Debug Text):
 struct DebugText {
     struct BitmapFontBG *bgFont;
     u8 isPrinted;
@@ -84,6 +81,8 @@ struct DebugText {
     u16 scrollKeys; // Keys
 };
 
+
+// Functions (Debug Text):
 extern void dev_text_update_pal1(struct DebugText *debugText);
 extern void dev_text_update_pal2(struct DebugText *debugText);
 extern struct DebugText *create_new_dev_text(u16 memID, u32 layer, u16 *arg2, u32 tilesetNum, u32 baseTileNum, u32 maxTileRows, u32 palette, u32 fontPal1);
@@ -97,10 +96,14 @@ extern u32 dev_text_has_exhausted_string(struct DebugText *debugText);
 extern void dev_text_set_font_pal_2(struct DebugText *debugText, u32 palette);
 extern void dev_text_set_enable_font_pal_2(struct DebugText *debugText, u32 enable);
 
+
+// Types (Soft Reset):
 struct SoftResetSceneInfo {
     u8 state;
 };
 
+
+// Functions (Soft Reset):
 extern void soft_reset_scene_stop(void *endParam);
 extern void soft_reset_scene_start(void *initParam);
 extern u32 soft_reset_scene_update(void *loopParam);

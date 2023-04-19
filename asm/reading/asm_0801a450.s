@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_0801a450 \n\
+thumb_func_start reading_scene_start \n\
 /* 0801a450 */ PUSH {R4-R7, LR} \n\
 /* 0801a452 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 0801a454 */ MOV R6, R9 @ Set R6 to R9 \n\
@@ -24,7 +24,7 @@ branch_0801a46c: \n\
 /* 0801a472 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801a474 */ BL func_08007324 \n\
 /* 0801a478 */ BL func_080073f0 \n\
-/* 0801a47c */ BL func_0801a414 \n\
+/* 0801a47c */ BL reading_scene_init_gfx1 \n\
 /* 0801a480 */ LDR R0, [R6] \n\
 /* 0801a482 */ MOVS R1, 0x88 @ Set R1 to 0x88 \n\
 /* 0801a484 */ LSLS R1, R1, 0x1 \n\

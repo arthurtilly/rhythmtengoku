@@ -1,12 +1,7 @@
 #include "global.h"
+#include "scenes.h"
 #include "read_error.h"
 #include "graphics/data_room/data_room_graphics.h"
-
-#include "src/memory.h"
-#include "src/code_08001360.h"
-#include "src/code_08007468.h"
-#include "src/code_0800b778.h"
-#include "src/lib_0804ca80.h"
 
 
 // For readability.

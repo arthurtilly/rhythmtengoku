@@ -25,10 +25,10 @@ script script_scene_reading
 
 @ Local Scene
 struct sub_scene_reading
-    /* Start  */ .word func_0801a450, 0
+    /* Start  */ .word reading_scene_start, 0
     /* Paused */ .word NULL,          0
-    /* Active */ .word func_0801a70c, 0
-    /* Stop   */ .word func_0801a8a0, 0
+    /* Active */ .word reading_scene_update, 0
+    /* Stop   */ .word reading_scene_stop, 0
     /* Script */ .word script_scene_reading
 endstruct
 

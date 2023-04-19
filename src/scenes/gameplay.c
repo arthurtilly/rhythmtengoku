@@ -1,16 +1,9 @@
 #include "global.h"
 #include "gameplay.h"
 #include "graphics/gameplay/gameplay_graphics.h"
-#include "src/code_08001360.h"
-#include "src/bitmap_font.h"
-#include "src/task_pool.h"
-#include "src/memory_heap.h"
-#include "src/code_08007468.h"
-#include "src/text_printer.h"
-#include "src/code_0800b778.h"
-#include "src/lib_0804ca80.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
+
 
 // For readability.
 #define gGameplayInfo ((struct GameplaySceneInfo *)D_030046a4)

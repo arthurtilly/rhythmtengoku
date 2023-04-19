@@ -2,24 +2,15 @@
 #include "title.h"
 #include "graphics/title/title_graphics.h"
 
-#include "src/memory.h"
-#include "src/code_08001360.h"
-#include "src/code_08007468.h"
-#include "src/text_printer.h"
-#include "src/code_0800b778.h"
-#include "src/lib_0804ca80.h"
-
-asm(".include \"include/gba.inc\"");//Temporary
 
 // For readability.
 #define gTitleInfo ((struct TitleSceneInfo *)D_030046a4)
 
-
-extern const struct Scene D_089d3984; // Opening - A Type
-extern const struct Scene D_089d3a6c; // Opening - B Type
-extern const struct Scene scene_main_menu;
-extern const struct Scene scene_title;
-extern const struct BeatScript script_scene_title_exit[];
+extern struct Scene D_089d3984;
+extern struct Scene D_089d3a6c;
+extern struct Scene scene_main_menu;
+extern struct Scene scene_title;
+extern struct BeatScript script_scene_title_exit[];
 extern struct SequenceData s_nyuka_fan_seqData;
 
 

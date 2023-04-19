@@ -3,17 +3,9 @@
 #include "graphics/game_select/game_select_graphics.h"
 
 #include "levels.h"
-#include "src/memory.h"
-#include "src/code_08001360.h"
-#include "src/bitmap_font.h"
-#include "src/memory_heap.h"
-#include "src/code_08007468.h"
-#include "src/code_08008dcc.h"
-#include "src/text_printer.h"
-#include "src/code_0800b778.h"
-#include "reading.h"
-#include "studio.h"
-#include "src/lib_0804ca80.h"
+#include "src/scenes/reading.h"
+#include "src/scenes/studio.h"
+
 
 // For readability.
 #define gGameSelectInfo ((struct GameSelectSceneInfo *)D_030046a4)
@@ -1063,7 +1055,7 @@ void game_select_read_inputs(void) {
                     set_scene_trans_target(&scene_results_ver_rank, &scene_epilogue);
                     set_scene_trans_target(&scene_results_ver_score, &scene_game_select);
                     set_scene_trans_target(&scene_epilogue, &scene_game_select);
-                    set_scene_trans_var(&scene_epilogue, levelData);
+                    set_scene_trans_var(&scene_epilogue, (s32)levelData);
                     gameplay_pause_menu_set_quit_destination(&scene_game_select);
                     if ((levelID == LEVEL_REMIX_6) && (levelState == LEVEL_STATE_OPEN)) {
                         sPlayCreditsAfterEpilogue = TRUE;
@@ -1075,7 +1067,7 @@ void game_select_read_inputs(void) {
                     if (levelID == LEVEL_LIVE_MENU) {
                         set_scene_trans_target(levelData->scene, &scene_epilogue);
                         set_scene_trans_target(&scene_epilogue, &scene_game_select);
-                        set_scene_trans_var(&scene_epilogue, levelData);
+                        set_scene_trans_var(&scene_epilogue, (s32)levelData);
                         gameplay_pause_menu_set_quit_destination(&scene_game_select);
                     } else {
                         set_scene_trans_target(levelData->scene, &scene_game_select);
