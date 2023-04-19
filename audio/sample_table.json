@@ -6,7 +6,7 @@
         "pitch: The pitch of the sample in scientific pitch notation, where middle C is C4.",
         "loop (optional): The start and end of the sample's loop, in samples."
     ],
-    "sfx": [
+    "samples": [
         {
             "sample": "sample_001.wav",
             "pitch": "C5",

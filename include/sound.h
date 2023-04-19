@@ -71,7 +71,7 @@ struct InstrumentHeader {
 
 struct InstrumentPCM {
 	struct InstrumentHeader header;
-	const struct SampleInfo *sample;
+	struct SampleInfo *sample;
 	u32 unk8;
 	u32 unkC;
 	u32 unk10;
