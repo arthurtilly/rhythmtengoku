@@ -40,10 +40,10 @@ script script_scene_studio_exit
 
 @ SubScene
 struct sub_scene_studio
-    /* Start  */ .word func_0801c2ec, 0
-    /* Paused */ .word func_0801c5a0, 0
-    /* Active */ .word func_0801c7ec, 0
-    /* Stop   */ .word func_0801c918, 0
+    /* Start  */ .word studio_scene_start,  0
+    /* Paused */ .word studio_scene_paused, 0
+    /* Active */ .word studio_scene_update, 0
+    /* Stop   */ .word studio_scene_stop,   0
     /* Script */ .word script_scene_studio
 endstruct
 

@@ -46,7 +46,7 @@ branch_0801bc5a: \n\
 /* 0801bc60 */ LSLS R1, R1, 0x3 \n\
 /* 0801bc62 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801bc64 */ LDR R0, [R0] \n\
-/* 0801bc66 */ BL func_08011d8c \n\
+/* 0801bc66 */ BL update_replay_memory_graph_data_bars \n\
  \n\
 branch_0801bc6a: \n\
 /* 0801bc6a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

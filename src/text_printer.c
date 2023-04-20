@@ -1100,7 +1100,7 @@ void text_printer_set_shadow_colors(struct TextPrinter *textPrinter, s32 shadowC
 
 
 // ?
-s32 func_0800ae1c(struct struct_0800b3c8 *arg0) {
+s32 func_0800ae1c(struct ListboxPrinter *arg0) {
     return arg0->unkC + ((arg0->unk30 + arg0->unk2C) * arg0->unk10);
 }
 
@@ -1166,7 +1166,7 @@ s32 func_0800ae1c(struct struct_0800b3c8 *arg0) {
 
 
 // ?
-void func_0800b3c8(struct struct_0800b3c8 *arg0) {
+void func_0800b3c8(struct ListboxPrinter *arg0) {
     if (arg0 == NULL) return;
 
     func_0804d770(D_03005380, arg0->unk2A, TRUE);
@@ -1174,7 +1174,7 @@ void func_0800b3c8(struct struct_0800b3c8 *arg0) {
 
 
 // ?
-void func_0800b3e8(struct struct_0800b3c8 *arg0) {
+void func_0800b3e8(struct ListboxPrinter *arg0) {
     if (arg0 == NULL) return;
 
     func_0804d770(D_03005380, arg0->unk2A, FALSE);
@@ -1182,7 +1182,7 @@ void func_0800b3e8(struct struct_0800b3c8 *arg0) {
 
 
 // ?
-void func_0800b408(struct struct_0800b3c8 *arg0, s16 sprite, u32 arg2) {
+void func_0800b408(struct ListboxPrinter *arg0, s16 sprite, u32 arg2) {
     if (arg0 == NULL) return;
 
     func_0804db44(D_03005380, sprite, &arg0->x2, &arg0->y2);
@@ -1191,7 +1191,7 @@ void func_0800b408(struct struct_0800b3c8 *arg0, s16 sprite, u32 arg2) {
 
 
 // ?
-void func_0800b454(struct struct_0800b3c8 *arg0, s32 arg1) {
+void func_0800b454(struct ListboxPrinter *arg0, s32 arg1) {
     void *printer;
     s32 line;
     char *string;
@@ -1226,7 +1226,7 @@ void func_0800b454(struct struct_0800b3c8 *arg0, s32 arg1) {
 
 
 // ?
-void func_0800b4d8(struct struct_0800b3c8 *arg0, struct Animation *anim) {
+void func_0800b4d8(struct ListboxPrinter *arg0, struct Animation *anim) {
     if (arg0 == NULL) return;
 
     if (arg0->unk2A >= 0) {
@@ -1241,7 +1241,7 @@ void func_0800b4d8(struct struct_0800b3c8 *arg0, struct Animation *anim) {
 
 
 // ?
-s16 func_0800b550(struct struct_0800b3c8 *arg0) {
+s16 func_0800b550(struct ListboxPrinter *arg0) {
     if (arg0 == NULL) {
         return -1;
     }

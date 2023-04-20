@@ -2,10 +2,44 @@
 
 #include "global.h"
 #include "scenes.h"
+#include "src/scenes/drum_replay.h"
+#include "engines/night_walk.h"
 
 // Scene Types:
 struct StudioSceneInfo {
-    /* add fields here */
+    /* 0x000 */
+    u32 null0;
+    u32 null4;
+    struct DrumTechController drumTech;
+    /* 0x358 */
+    u32 unk358;
+    u8 menuState;
+    struct ListboxPrinter *songsList;
+    u32 unk364;
+    struct ListboxPrinter *drumsList;
+    u32 unk36C;
+    struct ListboxPrinter *optionsList;
+    u32 unk374;
+    u32 null378;
+    u32 null37C;
+    /* 0x380 */
+    u32 unk380;
+    u16 unk384;
+    u32 unk388;
+    u8 padding[0x100];
+    /* 0x48C */
+    s16 itemMoveHighlight;
+    struct DrumReplaySaveGraph *replayMemoryGraph;
+    void *replaySeq;
+    u8 replayDrumKit;
+    u32 null49C;
+    u32 null4A0;
+    u32 null4A4;
+    u32 null4A8;
+    u32 null4AC;
+    u32 null4B0;
+    u32 null4B4;
+    struct SoundPlayer *musicPlayer;
 };
 
 struct StudioEntry {
@@ -142,26 +176,26 @@ extern u8 D_089d84a6[];
 // extern ? func_0801bc0c(?);
 // extern ? func_0801bce0(?);
 // extern ? func_0801c028(?);
-// extern ? func_0801c1b8(?); // Init. Static Variables
-// extern ? func_0801c1ec(?); // Graphics Init. 4
-// extern ? func_0801c234(?); // Graphics Init. 3
-// extern ? func_0801c260(?); // Graphics Init. 2
-// extern ? func_0801c290(?); // Graphics Init. 1
-// extern ? func_0801c2ec(?); // Scene Start
-// extern ? func_0801c504(?); // Get Selected Drum Kit
-// extern ? func_0801c510(?);
+extern void studio_scene_init_static_var(void); // Init. Static Variables
+extern void studio_scene_init_gfx4(void); // Graphics Init. 4
+extern void studio_scene_init_gfx3(void); // Graphics Init. 3
+extern void studio_scene_init_gfx2(void); // Graphics Init. 2
+extern void studio_scene_init_gfx1(void); // Graphics Init. 1
+extern void studio_scene_start(void *sceneVar, s32 dataArg); // Scene Start
+extern s32 studio_get_current_kit(void);
+extern void studio_set_current_kit(s32 id);
 // extern ? func_0801c51c(?);
 // extern ? func_0801c530(?);
-// extern ? func_0801c5a0(?); // Scene Update (Paused)
+extern void studio_scene_paused(void *sceneVar, s32 dataArg); // Scene Update (Paused)
 // extern ? func_0801c5a4(?);
 // extern ? func_0801c674(?);
 // extern ? func_0801c6b8(?);
 // extern ? func_0801c6fc(?);
 // extern ? func_0801c7c0(?);
 // extern ? func_0801c7e8(?);
-// extern ? func_0801c7ec(?); // Scene Update (Active)
-// extern ? func_0801c8b8(?);
-// extern ? func_0801c918(?); // Scene Stop
+extern void studio_scene_update(void *sceneVar, s32 dataArg); // Scene Update (Active)
+extern u32 studio_scene_can_receive_inputs(void); // Communicate with Script
+extern void studio_scene_stop(void *sceneVar, s32 dataArg); // Scene Stop
 // extern ? func_0801c930(?); // ? (Script Function)
 // extern ? func_0801c944(?); // ? (Script Function)
 // extern ? func_0801c960(?);

@@ -1,7 +1,6 @@
 #include "global.h"
 #include "drum_replay.h"
-
-asm(".include \"include/gba.inc\"");//Temporary
+#include "graphics/studio/studio_graphics.h"
 
 
 /* DRUM REPLAY SAVE ALLOCATOR */
@@ -27,7 +26,17 @@ void reset_all_replay_save_data(struct DrumReplaySaveAlloc *allocator) {
 }
 
 
-#include "asm/data/asm_08011a58.s"
+// Get Replay Indexes
+s32 get_saved_replay_block_data(struct DrumReplaySaveAlloc *allocator, s32 saveID, s32 *blockBaseReq, s32 *blockCountReq) {
+    if (allocator->replaySizes[saveID] == 0) {
+        *blockBaseReq = 0;
+        *blockCountReq = 0;
+        return -1;
+    }
+
+    *blockBaseReq = allocator->replayStartBlocks[saveID];
+    *blockCountReq = (allocator->replaySizes[saveID] + 0xff) / REPLAY_BLOCK_SIZE;
+}
 
 
 // Get Replay Data
@@ -126,8 +135,90 @@ s32 get_available_replay_data_id(struct DrumReplaySaveAlloc *allocator) {
 }
 
 
-#include "asm/data/asm_08011c1c.s"
+// Create New Replay Memory Graph
+struct DrumReplaySaveGraph *create_new_replay_memory_graph(u32 memID, struct DrumReplaySaveAlloc *allocator, u32 baseTile, u32 basePalette) {
+    struct DrumReplaySaveGraph *graph;
+    void *objTexturesAddress;
+    u16 *srcPal, *destPal;
+    u32 colors;
+    u32 i, j;
 
-#include "asm/data/asm_08011d8c.s"
+    objTexturesAddress = OBJ_TILESET_BASE(baseTile * 0x20);
+    func_08003eb8(&D_08cc4bcc, objTexturesAddress);
 
-#include "asm/data/asm_08011e74.s"
+    srcPal = &studio_mem_chart_pal[0][1];
+    destPal = &D_03004b10.objPalette[basePalette][1];
+    colors = 3;
+
+    for (i = 0; i < 11; i++) {
+        for (j = 0; j < colors; j++) {
+            destPal[j] = srcPal[j];
+        }
+        srcPal += 16;
+        destPal += 16;
+    }
+
+    graph = mem_heap_alloc_id(memID, 0x1C);
+    graph->outerEdges = func_0804d160(D_03005380, anim_studio_mem_chart_borders, 0, 128, 156, 0x800, 0, 0, 0x8000);
+    func_0804d890(D_03005380, graph->outerEdges, baseTile);
+    func_0804d8c4(D_03005380, graph->outerEdges, basePalette);
+    graph->dataBack = func_0804d160(D_03005380, anim_studio_mem_chart_data, 0, 0, 156, 0x800, 0, 0, 0x8000);
+    func_0804d890(D_03005380, graph->dataBack, baseTile);
+    func_0804d8c4(D_03005380, graph->dataBack, basePalette);
+
+    for (i = 0; i < 10; i++) {
+        graph->dataBars[i] = func_0804d160(D_03005380, anim_studio_mem_chart_data, 0, 0, 156, 0x800, 0, 0, 0x8000);
+        func_0804d890(D_03005380, graph->dataBars[i], baseTile);
+        func_0804d8c4(D_03005380, graph->dataBars[i], basePalette + i + 1);
+    }
+
+    graph->replaysAlloc = allocator;
+
+    return graph;
+}
+
+
+// Render Data Bars
+void update_replay_memory_graph_data_bars(struct DrumReplaySaveGraph *graph) {
+    struct DrumReplaySaveAlloc *allocator = graph->replaysAlloc;
+    s32 baseBlock, totalBlocks;
+    u32 backBaseBlock = 0;
+    s32 backFrame;
+    u32 i;
+
+    for (i = 0; i < 10; i++) {
+        get_saved_replay_block_data(allocator, i, &baseBlock, &totalBlocks);
+        if (totalBlocks != 0) {
+            func_0804d614(D_03005380, graph->dataBars[i], (baseBlock * 4) + 128);
+            func_0804cebc(D_03005380, graph->dataBars[i], totalBlocks);
+        } else {
+            func_0804cebc(D_03005380, graph->dataBars[i], 0);
+        }
+
+        if (backBaseBlock < baseBlock + totalBlocks) {
+            backBaseBlock = baseBlock + totalBlocks;
+        }
+    }
+
+    backFrame = REPLAY_BLOCK_TOTAL - backBaseBlock;
+    if (backFrame != 0) {
+        func_0804d614(D_03005380, graph->dataBack, (backBaseBlock * 4) + 128);
+        func_0804cebc(D_03005380, graph->dataBack, backFrame);
+    } else {
+        func_0804cebc(D_03005380, graph->dataBack, 0);
+    }
+}
+
+
+// Show/Hide Memory Graph
+void show_replay_memory_graph(struct DrumReplaySaveGraph *graph, u32 show) {
+    struct DrumReplaySaveGraph *chart = graph; // probably the result of some list macro
+    u32 i;
+
+    func_0804d770(D_03005380, graph->outerEdges, show);
+    func_0804d770(D_03005380, graph->dataBack, show);
+
+    for (i = 0; i < 10; i++) {
+        func_0804d770(D_03005380, chart->dataBars[i], show);
+    }
+}

@@ -54,7 +54,7 @@ struct TextPrinterData {
     u8 indentWidth;
 };
 
-struct struct_0800b3c8 {
+struct ListboxPrinter {
     u32 pad0;
     void *printer;
     u8 totalLines;
@@ -180,9 +180,9 @@ extern void text_printer_set_shadow_colors(struct TextPrinter *textPrinter, s32 
 // extern ? func_0800b32c(?);
 // extern ? func_0800b368(?);
 // extern ? func_0800b384(?);
-extern void func_0800b3c8(struct struct_0800b3c8 *);
-extern void func_0800b3e8(struct struct_0800b3c8 *);
-extern void func_0800b408(struct struct_0800b3c8 *, s16, u32);
-extern void func_0800b454(struct struct_0800b3c8 *, s32);
-extern void func_0800b4d8(struct struct_0800b3c8 *arg0, struct Animation *arg1);
-extern s16 func_0800b550(struct struct_0800b3c8 *);
+extern void func_0800b3c8(struct ListboxPrinter *);
+extern void func_0800b3e8(struct ListboxPrinter *);
+extern void func_0800b408(struct ListboxPrinter *, s16, u32);
+extern void func_0800b454(struct ListboxPrinter *, s32);
+extern void func_0800b4d8(struct ListboxPrinter *arg0, struct Animation *arg1);
+extern s16 func_0800b550(struct ListboxPrinter *);

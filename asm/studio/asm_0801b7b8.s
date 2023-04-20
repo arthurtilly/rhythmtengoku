@@ -25,7 +25,7 @@ thumb_func_start func_0801b7b8 \n\
 /* 0801b7e4 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b7e6 */ LDR R0, [R0] \n\
 /* 0801b7e8 */ BL func_0800b118 \n\
-/* 0801b7ec */ BL func_0801c510 \n\
+/* 0801b7ec */ BL studio_set_current_kit \n\
 /* 0801b7f0 */ LDR R4, =D_089d49d4 \n\
 /* 0801b7f2 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801b7f4 */ BL set_next_scene \n\

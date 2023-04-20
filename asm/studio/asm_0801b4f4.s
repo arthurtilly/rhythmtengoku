@@ -14,7 +14,7 @@ thumb_func_start func_0801b4f4 \n\
 /* 0801b504 */ BL func_0800b368 \n\
 /* 0801b508 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801b50a */ BNE branch_0801b548 \n\
-/* 0801b50c */ BL func_0801c8b8 \n\
+/* 0801b50c */ BL studio_scene_can_receive_inputs \n\
 /* 0801b510 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801b512 */ BEQ branch_0801b548 \n\
 /* 0801b514 */ LDR R0, =D_03004afc \n\

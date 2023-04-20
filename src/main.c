@@ -27,7 +27,7 @@ void init_scene_static_var(void) {
 	gameplay_init_scene_static_var();
 	func_08010490(); // Rhythm Library
 	func_08011ec0(); // Rhythm Data Room
-	func_0801c1b8(); // Studio
+	studio_scene_init_static_var(); // Studio
 	func_0801d580(); // Medal Corner Menus
 	cafe_scene_init_static_var();
 }
