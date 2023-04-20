@@ -1,24 +1,21 @@
-.section .rodata
-
 .include "include/beatscript.inc"
 .include "games/drum_studio/macros.inc"
 
 load_drum_studio_labels
 
 
-/* Script Data - Drum Lesson (Basic 2) */
+
+.section .rodata
+@ Drum Lesson (Basic 2) - Data
+
+text D_08061998
+    .ascii "よくきいてマネしてね。\n"
+    .ascii "好きなタイミングでどうぞ。\n"
+    .ascii "演奏を止めると、\n"
+    .asciz "お手本がきけるヨ！"
+endtext
 
 
-@ Dialogue
-script D_08061998
-.ascii "よくきいてマネしてね。\n"
-.ascii "好きなタイミングでどうぞ。\n"
-.ascii "演奏を止めると、\n"
-.asciz "お手本がきけるヨ！"
-.balign 4, 0
-
-
-@ Pattern
 script D_080619f0
     spawn_cue CUE_KICK_R
     rest 24
@@ -29,22 +26,19 @@ script D_080619f0
 return
 
 
-@ Pattern Start
 script D_08061a44
     spawn_cue CUE_KICK_R
     rest 21
 return
 
 
-@ Dialogue
-script D_08061a68
-.ascii "\n"
-.ascii "１カ所、音が変わるヨ！\n"
-.asciz "わかるかな？"
-.balign 4, 0
+text D_08061a68
+    .ascii "\n"
+    .ascii "１カ所、音が変わるヨ！\n"
+    .asciz "わかるかな？"
+endtext
 
 
-@ Pattern
 script D_08061a90
     spawn_cue CUE_KICK_R
     rest 24
@@ -55,16 +49,14 @@ script D_08061a90
 return
 
 
-@ Dialogue
-script D_08061ae4
-.ascii "\n"
-.ascii "さらに１カ所、\n"
-.ascii "音が変わるヨ！\n"
-.asciz "わかるかな？"
-.balign 4, 0
+text D_08061ae4
+    .ascii "\n"
+    .ascii "さらに１カ所、\n"
+    .ascii "音が変わるヨ！\n"
+    .asciz "わかるかな？"
+endtext
 
 
-@ Pattern
 script D_08061b10
     spawn_cue CUE_SNARE_L
     rest 24
@@ -75,16 +67,14 @@ script D_08061b10
 return
 
 
-@ Dialogue
-script D_08061b64
-.ascii "\n"
-.ascii "こんどは１つ、\n"
-.ascii "音がふえるヨ！\n"
-.asciz "わかるかな？\n"
-.balign 4, 0
+text D_08061b64
+    .ascii "\n"
+    .ascii "こんどは１つ、\n"
+    .ascii "音がふえるヨ！\n"
+    .asciz "わかるかな？\n"
+endtext
 
 
-@ Pattern
 script D_08061b94
     spawn_cue CUE_SNARE_L
     rest 24
@@ -97,16 +87,14 @@ script D_08061b94
 return
 
 
-@ Dialogue
-script D_08061c00
-.ascii "\n"
-.ascii "さらに１つ、\n"
-.ascii "音がふえるヨ！\n"
-.asciz "わかるかな？"
-.balign 4, 0
+text D_08061c00
+    .ascii "\n"
+    .ascii "さらに１つ、\n"
+    .ascii "音がふえるヨ！\n"
+    .asciz "わかるかな？"
+endtext
 
 
-@ Pattern
 script D_08061c2c
     spawn_cue CUE_SNARE_L
     rest 24
@@ -121,16 +109,14 @@ script D_08061c2c
 return
 
 
-@ Dialogue
-script D_08061cb0
-.ascii "\n"
-.ascii "またまた１つ、\n"
-.ascii "音がふえるヨ！\n"
-.asciz "わかるかな？"
-.balign 4, 0
+text D_08061cb0
+    .ascii "\n"
+    .ascii "またまた１つ、\n"
+    .ascii "音がふえるヨ！\n"
+    .asciz "わかるかな？"
+endtext
 
 
-@ Pattern Start
 script D_08061cdc
     spawn_cue CUE_KICK_R
     rest 12
@@ -139,38 +125,34 @@ script D_08061cdc
 return
 
 
-@ Dialogue
-script D_08061d18
-.ascii "今回は、バスドラムと\n"
-.ascii "スネアドラムという、\n"
-.ascii "２つのタイコを使って\n"
-.asciz "レッスンをしましょう。"
-.balign 4, 0
+text D_08061d18
+    .ascii "今回は、バスドラムと\n"
+    .ascii "スネアドラムという、\n"
+    .ascii "２つのタイコを使って\n"
+    .asciz "レッスンをしましょう。"
+endtext
 
 
-@ Dialogue
-script D_08061d70
-.ascii "\n"
-.ascii "Bボタンと十\字ボタンの下、\n"
-.ascii "どちらでもバスドラムを\n"
-.asciz "たたくことができるヨ！"
-.balign 4, 0
+text D_08061d70
+    .ascii "\n"
+    .ascii "Bボタンと十\字ボタンの下、\n"
+    .ascii "どちらでもバスドラムを\n"
+    .asciz "たたくことができるヨ！"
+endtext
 
 
-@ Dialogue
-script D_08061dbc
-.ascii "\n"
-.ascii "しってると思うけど\n"
-.ascii "スネアドラムはAボタンと\n"
-.asciz "十\字ボタンの左だからネ。"
-.balign 4, 0
+text D_08061dbc
+    .ascii "\n"
+    .ascii "しってると思うけど\n"
+    .ascii "スネアドラムはAボタンと\n"
+    .asciz "十\字ボタンの左だからネ。"
+endtext
 
 
-@ Dialogue
-script D_08061e04
-.ascii "\n"
-.ascii "では　ぼちぼち\n"
-.asciz "はじめますネ～\n"
-.balign 4, 0
+text D_08061e04
+    .ascii "\n"
+    .ascii "では　ぼちぼち\n"
+    .asciz "はじめますネ～\n"
+endtext
 
 .end

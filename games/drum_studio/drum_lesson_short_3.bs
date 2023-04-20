@@ -1,24 +1,21 @@
-.section .rodata
-
 .include "include/beatscript.inc"
 .include "games/drum_studio/macros.inc"
 
 load_drum_studio_labels
 
 
-/* Script Data - Drum Lesson (Short 3) */
+
+.section .rodata
+@ Drum Lesson (Short 3) - Data
+
+text D_080622d8
+    .ascii "よくきいてマネしてね。\n"
+    .ascii "好きなタイミングでどうぞ。\n"
+    .ascii "演奏を止めると、\n"
+    .asciz "お手本がきけるヨ！"
+endtext
 
 
-@ Dialogue
-script D_080622d8
-.ascii "よくきいてマネしてね。\n"
-.ascii "好きなタイミングでどうぞ。\n"
-.ascii "演奏を止めると、\n"
-.asciz "お手本がきけるヨ！"
-.balign 4, 0
-
-
-@ Pattern
 script D_08062330
     spawn_cue CUE_SNARE_L
     rest 12
@@ -31,23 +28,20 @@ script D_08062330
 return
 
 
-@ Pattern Start
 script D_0806239c
     spawn_cue CUE_KICK_R
     rest 21
 return
 
 
-@ Dialogue
-script D_080623c0
-.ascii "タムっていうのを\n"
-.ascii "たたいてみよう！\n"
-.ascii "十\字ボタンの右で\n"
-.asciz "タムをたたくヨ！"
-.balign 4, 0
+text D_080623c0
+    .ascii "タムっていうのを\n"
+    .ascii "たたいてみよう！\n"
+    .ascii "十\字ボタンの右で\n"
+    .asciz "タムをたたくヨ！"
+endtext
 
 
-@ Pattern
 script D_08062404
     spawn_cue CUE_SNARE_L
     rest 12
@@ -62,16 +56,14 @@ script D_08062404
 return
 
 
-@ Dialogue
-script D_08062488
-.ascii "タムだったところを\n"
-.ascii "十\字ボタンの上に\n"
-.ascii "かえてみるヨ！\n"
-.asciz "(ロールっていうみたい)"
-.balign 4, 0
+text D_08062488
+    .ascii "タムだったところを\n"
+    .ascii "十\字ボタンの上に\n"
+    .ascii "かえてみるヨ！\n"
+    .asciz "(ロールっていうみたい)"
+endtext
 
 
-@ Pattern
 script D_080624d4
     spawn_cue CUE_SNARE_L
     rest 12
@@ -86,16 +78,14 @@ script D_080624d4
 return
 
 
-@ Dialogue
-script D_08062558
-.ascii "\n"
-.ascii "さっきと　ちがうところに\n"
-.ascii "タムを１つ、ふやすヨ！\n"
-.asciz "わかるかな？\n"
-.balign 4, 0
+text D_08062558
+    .ascii "\n"
+    .ascii "さっきと　ちがうところに\n"
+    .ascii "タムを１つ、ふやすヨ！\n"
+    .asciz "わかるかな？\n"
+endtext
 
 
-@ Pattern
 script D_08062598
     spawn_cue CUE_SNARE_L
     rest 12

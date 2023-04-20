@@ -1,24 +1,21 @@
-.section .rodata
-
 .include "include/beatscript.inc"
 .include "games/drum_studio/macros.inc"
 
 load_drum_studio_labels
 
 
-/* Script Data - Drum Lesson (Long 5) */
+
+.section .rodata
+@ Drum Lesson (Long 5) - Data
+
+text D_08063e10
+    .ascii "よくきいてマネしてね。\n"
+    .ascii "好きなタイミングでどうぞ。\n"
+    .ascii "演奏を止めると、\n"
+    .asciz "お手本がきけるヨ！"
+endtext
 
 
-@ Dialogue
-script D_08063e10
-.ascii "よくきいてマネしてね。\n"
-.ascii "好きなタイミングでどうぞ。\n"
-.ascii "演奏を止めると、\n"
-.asciz "お手本がきけるヨ！"
-.balign 4, 0
-
-
-@ Pattern
 script D_08063e68
     spawn_cue CUE_SNARE_L
     rest 6
@@ -67,7 +64,6 @@ script D_08063e68
 return
 
 
-@ Pattern Start
 script D_08064084
     spawn_cue CUE_KICK_R
     rest 6
@@ -78,16 +74,14 @@ script D_08064084
 return
 
 
-@ Dialogue
-script D_080640d8
-.ascii "\n"
-.ascii "スネアとシンバルで\n"
-.ascii "きっちり、まとめよう！\n"
-.asciz "がんばって！\n"
-.balign 4, 0
+text D_080640d8
+    .ascii "\n"
+    .ascii "スネアとシンバルで\n"
+    .ascii "きっちり、まとめよう！\n"
+    .asciz "がんばって！\n"
+endtext
 
 
-@ Pattern
 script D_08064114
     spawn_cue CUE_SNARE_L
     rest 6
@@ -137,7 +131,6 @@ script D_08064114
 return
 
 
-@ Pattern Start
 script D_0806433c
     spawn_cue CUE_KICK_R
     spawn_cue CUE_CRASH
@@ -149,16 +142,14 @@ script D_0806433c
 return
 
 
-@ Dialogue
-script D_0806439c
-.ascii "\n"
-.ascii "１ヵ所だけ、スネアを\n"
-.ascii "タムにかえてみるヨ。\n"
-.asciz "わかるかな？"
-.balign 4, 0
+text D_0806439c
+    .ascii "\n"
+    .ascii "１ヵ所だけ、スネアを\n"
+    .ascii "タムにかえてみるヨ。\n"
+    .asciz "わかるかな？"
+endtext
 
 
-@ Pattern
 script D_080643d4
     spawn_cue CUE_SNARE_L
     rest 6
@@ -208,16 +199,14 @@ script D_080643d4
 return
 
 
-@ Dialogue
-script D_080645fc
-.ascii "\n"
-.ascii "さいごにスネアをもう１つ！\n"
-.ascii "手順をよく考えてみてネ。\n"
-.asciz "がんばれ～！"
-.balign 4, 0
+text D_080645fc
+    .ascii "\n"
+    .ascii "さいごにスネアをもう１つ！\n"
+    .ascii "手順をよく考えてみてネ。\n"
+    .asciz "がんばれ～！"
+endtext
 
 
-@ Pattern
 script D_08064640
     spawn_cue CUE_SNARE_L
     rest 6

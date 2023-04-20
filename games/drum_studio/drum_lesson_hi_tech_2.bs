@@ -1,23 +1,20 @@
-.section .rodata
-
 .include "include/beatscript.inc"
 .include "games/drum_studio/macros.inc"
 
 load_drum_studio_labels
 
 
-/* Script Data - Drum Lesson (Hi-Tech 2) */
+
+.section .rodata
+@ Drum Lesson (Hi-Tech 1) - Data
+
+text D_08065f9c
+    .ascii "\n"
+    .ascii "まずは、おさらいです。\n"
+    .asciz "がんばってネ！"
+endtext
 
 
-@ Dialogue
-script D_08065f9c
-.ascii "\n"
-.ascii "まずは、おさらいです。\n"
-.asciz "がんばってネ！"
-.balign 4, 0
-
-
-@ Pattern
 script D_08065fc4
     spawn_cue CUE_SNARE_L
     rest 6
@@ -67,7 +64,6 @@ script D_08065fc4
 return
 
 
-@ Pattern Start
 script D_0805f7e0
     spawn_cue CUE_KICK_R
     spawn_cue CUE_CRASH
@@ -80,16 +76,14 @@ script D_0805f7e0
 return
 
 
-@ Dialogue
-script D_08066258
-.ascii "\n"
-.ascii "ここからが勝負です！\n"
-.ascii "よ～くきいて、\n"
-.asciz "ちゃんとマネしてネ！\n"
-.balign 4, 0
+text D_08066258
+    .ascii "\n"
+    .ascii "ここからが勝負です！\n"
+    .ascii "よ～くきいて、\n"
+    .asciz "ちゃんとマネしてネ！\n"
+endtext
 
 
-@ Pattern
 script D_08066294
     spawn_cue CUE_SNARE_L
     rest 6
@@ -134,16 +128,14 @@ script D_08066294
 return
 
 
-@ Dialogue
-script D_08066480
-.ascii "\n"
-.ascii "バスとスネアを\n"
-.ascii "ちょっと　たすヨ！\n"
-.asciz "できるかな？"
-.balign 4, 0
+text D_08066480
+    .ascii "\n"
+    .ascii "バスとスネアを\n"
+    .ascii "ちょっと　たすヨ！\n"
+    .asciz "できるかな？"
+endtext
 
 
-@ Pattern
 script D_080664b0
     spawn_cue CUE_SNARE_L
     rest 6
@@ -191,16 +183,14 @@ script D_080664b0
 return
 
 
-@ Dialogue
-script D_080666c0
-.ascii "\n"
-.ascii "バスドラムを１つ\n"
-.ascii "ふやしてみるヨ。\n"
-.asciz "がんばって！"
-.balign 4, 0
+text D_080666c0
+    .ascii "\n"
+    .ascii "バスドラムを１つ\n"
+    .ascii "ふやしてみるヨ。\n"
+    .asciz "がんばって！"
+endtext
 
 
-@ Pattern
 script D_080666f0
     spawn_cue CUE_SNARE_L
     rest 6
@@ -250,16 +240,14 @@ script D_080666f0
 return
 
 
-@ Dialogue
-script D_08066918
-.ascii "さらに、またまた\n"
-.ascii "バスとスネアを追加！！\n"
-.ascii "キミならできる！\n"
-.asciz "がんばれ～！！\n"
-.balign 4, 0
+text D_08066918
+    .ascii "さらに、またまた\n"
+    .ascii "バスとスネアを追加！！\n"
+    .ascii "キミならできる！\n"
+    .asciz "がんばれ～！！\n"
+endtext
 
 
-@ Pattern
 script D_08066964
     spawn_cue CUE_SNARE_L
     rest 6
@@ -311,16 +299,14 @@ script D_08066964
 return
 
 
-@ Dialogue
-script D_08066ba4
-.ascii "\n"
-.ascii "バスドラムを１つ\n"
-.ascii "ふやしてみるヨ。\n"
-.asciz "キメてネ！！"
-.balign 4, 0
+text D_08066ba4
+    .ascii "\n"
+    .ascii "バスドラムを１つ\n"
+    .ascii "ふやしてみるヨ。\n"
+    .asciz "キメてネ！！"
+endtext
 
 
-@ Pattern
 script D_08066bd4
     spawn_cue CUE_SNARE_L
     rest 6
@@ -373,16 +359,14 @@ script D_08066bd4
 return
 
 
-@ Dialogue
-script D_08066e20
-.ascii "さっきのバスドラに\n"
-.ascii "シンバルをかさねるヨ！\n"
-.ascii "これは、ムズイ！！\n"
-.asciz "ファイトー！！"
-.balign 4, 0
+text D_08066e20
+    .ascii "さっきのバスドラに\n"
+    .ascii "シンバルをかさねるヨ！\n"
+    .ascii "これは、ムズイ！！\n"
+    .asciz "ファイトー！！"
+endtext
 
 
-@ Pattern
 script D_08066e6c
     spawn_cue CUE_SNARE_L
     rest 6
@@ -436,16 +420,14 @@ script D_08066e6c
 return
 
 
-@ Dialogue
-script D_080670c4
-.ascii "\n"
-.ascii "これまたムズイところに\n"
-.ascii "スネアを１つ追加！！\n"
-.asciz "もう、いくしかない！！！"
-.balign 4, 0
+text D_080670c4
+    .ascii "\n"
+    .ascii "これまたムズイところに\n"
+    .ascii "スネアを１つ追加！！\n"
+    .asciz "もう、いくしかない！！！"
+endtext
 
 
-@ Pattern
 script D_0806710c
     spawn_cue CUE_SNARE_L
     rest 6
@@ -500,16 +482,14 @@ script D_0806710c
 return
 
 
-@ Dialogue
-script D_08067370
-.ascii "これで　さいご！\n"
-.ascii "タムを１つ追加するヨ！\n"
-.ascii "流れるようなイカした\n"
-.asciz "プレイをよろしくです！！"
-.balign 4, 0
+text D_08067370
+    .ascii "これで　さいご！\n"
+    .ascii "タムを１つ追加するヨ！\n"
+    .ascii "流れるようなイカした\n"
+    .asciz "プレイをよろしくです！！"
+endtext
 
 
-@ Pattern
 script D_080673c8
     spawn_cue CUE_SNARE_L
     rest 6
@@ -565,28 +545,25 @@ script D_080673c8
 return
 
 
-@ Dialogue
-script D_08067638
-.ascii "\n"
-.ascii "今回は、\n"
-.ascii "１つ前のレッスンを\n"
-.asciz "応用してみます。"
-.balign 4, 0
+text D_08067638
+    .ascii "\n"
+    .ascii "今回は、\n"
+    .ascii "１つ前のレッスンを\n"
+    .asciz "応用してみます。"
+endtext
 
 
-@ Dialogue
-script D_08067668
-.ascii "\n"
-.ascii "１つ前のレッスンを\n"
-.ascii "クリアしてから、\n"
-.asciz "挑戦してネ！"
-.balign 4, 0
+text D_08067668
+    .ascii "\n"
+    .ascii "１つ前のレッスンを\n"
+    .ascii "クリアしてから、\n"
+    .asciz "挑戦してネ！"
+endtext
 
 
-@ Dialogue
-script D_0806769c
-.ascii "\n"
-.asciz "では、はじめまーす！"
-.balign 4, 0
+text D_0806769c
+    .ascii "\n"
+    .asciz "では、はじめまーす！"
+endtext
 
 .end

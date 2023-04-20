@@ -1,24 +1,21 @@
-.section .rodata
-
 .include "include/beatscript.inc"
 .include "games/drum_studio/macros.inc"
 
 load_drum_studio_labels
 
 
-/* Script Data - Drum Lesson (Long 1) */
+
+.section .rodata
+@ Drum Lesson (Long 1) - Data
+
+text D_080639f8
+    .ascii "よくきいてマネしてね。\n"
+    .ascii "好きなタイミングでどうぞ。\n"
+    .ascii "演奏を止めると、\n"
+    .asciz "お手本がきけるヨ！"
+endtext
 
 
-@ Dialogue
-script D_080639f8
-.ascii "よくきいてマネしてね。\n"
-.ascii "好きなタイミングでどうぞ。\n"
-.ascii "演奏を止めると、\n"
-.asciz "お手本がきけるヨ！"
-.balign 4, 0
-
-
-@ Pattern
 script D_08063a50
     spawn_cue CUE_SNARE_L
     rest 24
@@ -41,23 +38,20 @@ script D_08063a50
 return
 
 
-@ Pattern Start
 script D_08063b34
     spawn_cue CUE_KICK_R
     rest 21
 return
 
 
-@ Dialogue
-script D_08063b58
-.ascii "\n"
-.ascii "シンバルでキッチリと\n"
-.ascii "まとめておこうネ！\n"
-.asciz "これは、できるよネ？\n"
-.balign 4, 0
+text D_08063b58
+    .ascii "\n"
+    .ascii "シンバルでキッチリと\n"
+    .ascii "まとめておこうネ！\n"
+    .asciz "これは、できるよネ？\n"
+endtext
 
 
-@ Pattern Start
 script D_08063b98
     spawn_cue CUE_KICK_R
     spawn_cue CUE_CRASH
@@ -65,15 +59,13 @@ script D_08063b98
 return
 
 
-@ Dialogue
-script D_08063bc8
-.ascii "\n"
-.ascii "チョットだけ　かえるヨ！\n"
-.asciz "わかるかな？\n"
-.balign 4, 0
+text D_08063bc8
+    .ascii "\n"
+    .ascii "チョットだけ　かえるヨ！\n"
+    .asciz "わかるかな？\n"
+endtext
 
 
-@ Pattern
 script D_08063bf0
     spawn_cue CUE_SNARE_L
     rest 24
@@ -96,16 +88,14 @@ script D_08063bf0
 return
 
 
-@ Dialogue
-script D_08063cd4
-.ascii "\n"
-.ascii "１つだけ、音がふえるヨ！\n"
-.ascii "わりとカンタンだから\n"
-.asciz "がんばってネ！\n"
-.balign 4, 0
+text D_08063cd4
+    .ascii "\n"
+    .ascii "１つだけ、音がふえるヨ！\n"
+    .ascii "わりとカンタンだから\n"
+    .asciz "がんばってネ！\n"
+endtext
 
 
-@ Pattern
 script D_08063d14
     spawn_cue CUE_SNARE_L
     rest 24

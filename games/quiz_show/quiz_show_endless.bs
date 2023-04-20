@@ -27,7 +27,7 @@ define_gameplay_scene scene_quiz_show_endless, script_quiz_show_endless_entry
 
 
 .section .rodata
-@ Quiz Show (Endless) - ???
+@ Quiz Show (Endless) - Data
 
 .macro quiz_show_endless_table name, entry
     struct \name

@@ -1,24 +1,21 @@
-.section .rodata
-
 .include "include/beatscript.inc"
 .include "games/drum_studio/macros.inc"
 
 load_drum_studio_labels
 
 
-/* Script Data - Drum Lesson (Short 9) */
+
+.section .rodata
+@ Drum Lesson (Short 9) - Data
+
+text D_0806090c
+    .ascii "よくきいてマネしてね。\n"
+    .ascii "好きなタイミングでどうぞ。\n"
+    .ascii "演奏を止めると、\n"
+    .asciz "お手本がきけるヨ！"
+endtext
 
 
-@ Dialogue
-script D_0806090c
-.ascii "よくきいてマネしてね。\n"
-.ascii "好きなタイミングでどうぞ。\n"
-.ascii "演奏を止めると、\n"
-.asciz "お手本がきけるヨ！"
-.balign 4, 0
-
-
-@ Pattern
 script D_08060964
     spawn_cue CUE_KICK_R
     rest 24
@@ -29,23 +26,20 @@ script D_08060964
 return
 
 
-@ Pattern Start
 script D_080609b8
     spawn_cue CUE_KICK_R
     rest 21
 return
 
 
-@ Dialogue
-script D_080609dc
-.ascii "\n"
-.ascii "キックを２回ずつだヨ！\n"
-.ascii "できるかな？\n"
-.asciz "ポイント：Bボタンだけで"
-.balign 4, 0
+text D_080609dc
+    .ascii "\n"
+    .ascii "キックを２回ずつだヨ！\n"
+    .ascii "できるかな？\n"
+    .asciz "ポイント：Bボタンだけで"
+endtext
 
 
-@ Pattern
 script D_08060a1c
     spawn_cue CUE_KICK_R
     rest 18
@@ -62,7 +56,6 @@ script D_08060a1c
 return
 
 
-@ Pattern Start
 script D_08060ab8
     spawn_cue CUE_KICK_R
     rest 18
@@ -71,16 +64,14 @@ script D_08060ab8
 return
 
 
-@ Dialogue
-script D_08060af4
-.ascii "さらに１カ所、\n"
-.ascii "音がふえるヨ！\n"
-.ascii "わかるかな？\n"
-.asciz "ヒント：キックは前と同じ"
-.balign 4, 0
+text D_08060af4
+    .ascii "さらに１カ所、\n"
+    .ascii "音がふえるヨ！\n"
+    .ascii "わかるかな？\n"
+    .asciz "ヒント：キックは前と同じ"
+endtext
 
 
-@ Pattern
 script D_08060b38
     spawn_cue CUE_KICK_R
     rest 18
@@ -98,16 +89,14 @@ script D_08060b38
 return
 
 
-@ Dialogue
-script D_08060be0
-.ascii "\n"
-.ascii "またまた１カ所、\n"
-.ascii "音がふえるヨ！\n"
-.asciz "わかるかな？\n"
-.balign 4, 0
+text D_08060be0
+    .ascii "\n"
+    .ascii "またまた１カ所、\n"
+    .ascii "音がふえるヨ！\n"
+    .asciz "わかるかな？\n"
+endtext
 
 
-@ Pattern
 script D_08060c10
     spawn_cue CUE_KICK_R
     rest 18
@@ -127,16 +116,14 @@ script D_08060c10
 return
 
 
-@ Dialogue
-script D_08060cd0
-.ascii "\n"
-.ascii "そしてまたなんと！\n"
-.ascii "１カ所、音がふえるヨ！\n"
-.asciz "わかるかな？\n"
-.balign 4, 0
+text D_08060cd0
+    .ascii "\n"
+    .ascii "そしてまたなんと！\n"
+    .ascii "１カ所、音がふえるヨ！\n"
+    .asciz "わかるかな？\n"
+endtext
 
 
-@ Pattern
 script D_08060d0c
     spawn_cue CUE_KICK_R
     rest 18
@@ -158,16 +145,14 @@ script D_08060d0c
 return
 
 
-@ Dialogue
-script D_08060de4
-.ascii "\n"
-.ascii "これまたなんと！！\n"
-.ascii "１カ所、音がふえるヨ！\n"
-.asciz "わかるかな？\n"
-.balign 4, 0
+text D_08060de4
+    .ascii "\n"
+    .ascii "これまたなんと！！\n"
+    .ascii "１カ所、音がふえるヨ！\n"
+    .asciz "わかるかな？\n"
+endtext
 
 
-@ Pattern
 script D_08060e20
     spawn_cue CUE_KICK_R
     rest 6
@@ -191,16 +176,14 @@ script D_08060e20
 return
 
 
-@ Dialogue
-script D_08060f10
-.ascii "\n"
-.ascii "またまたなんと！！\n"
-.ascii "１カ所、音がふえるヨ！\n"
-.asciz "わかるかな？\n"
-.balign 4, 0
+text D_08060f10
+    .ascii "\n"
+    .ascii "またまたなんと！！\n"
+    .ascii "１カ所、音がふえるヨ！\n"
+    .asciz "わかるかな？\n"
+endtext
 
 
-@ Pattern Start
 script D_08060f4c
     spawn_cue CUE_KICK_R
     rest 12
