@@ -1,7 +1,28 @@
 .include "include/beatscript.inc"
 .include "games/drum_studio/macros.inc"
 
-load_drum_studio_labels
+
+
+.section .script.entry
+@ Drum Lesson (Hi-Tech 2) - Script Entry Point
+
+script script_drum_lesson_hitech_2_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_lessons
+    enable_play_inputs 1
+    assess_inputs 1
+    call D_08a43844
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_lesson_hitech_2, script_drum_lesson_hitech_2_entry
 
 
 
