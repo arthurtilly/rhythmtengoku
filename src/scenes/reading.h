@@ -5,14 +5,24 @@
 
 // Scene Types:
 struct ReadingSceneInfo {
-    /* add fields here */
+    struct ReadingMaterial *material;
+    u32 scriptIsReady;
+    struct TextPrinter *printer;
+    s8 currentPage;
+    struct TextPrinterData pageData[32];
+    u8 pageState;
+    s16 targetY;
+    s16 relativeY;
+    s16 pagePosY;
+    s16 iconPrev;
+    s16 iconNext;
 };
 
 struct ReadingMaterial {
     const char *title;
     const char *text;
-    const struct GraphicsTable *gfx;
-    struct SequenceData **bgm;
+    const struct GraphicsTable *graphics;
+    struct SequenceData **sounds;
 };
 
 
@@ -49,6 +59,9 @@ extern struct SequenceData s_f_env_haiku_seqData;
 extern struct SequenceData s_f_env_class_room_seqData;
 extern struct SequenceData s_sindan_mail_seqData;
 extern struct SequenceData s_sindan_manzai_seqData;
+extern struct SequenceData s_f_env_paper_seqData;
+extern struct SequenceData s_f_env_paper_rev_seqData;
+extern struct SequenceData s_menu_cancel2_seqData;
 
 
 // Scene Data:
@@ -64,8 +77,8 @@ extern void reading_scene_init_gfx3(void); // Graphics Init. 3
 extern void reading_scene_init_gfx2(void); // Graphics Init. 2
 extern void reading_scene_init_gfx1(void); // Graphics Init. 1
 extern void reading_scene_start(void *sceneVar, s32 dataArg); // Scene Start
-// extern ? func_0801a5d8(?); // ?
+extern void reading_scene_update_page(void);
 extern void reading_scene_update(void *sceneVar, s32 dataArg); // Scene Update (Active)
-// extern ? func_0801a860(?); // ?
+extern u32 reading_scene_can_receive_inputs(void); // Communicate with Script
 extern void reading_scene_stop(void *sceneVar, s32 dataArg); // Scene Stop
-// extern ? func_0801a8b0(?); // ? (Script Function)
+extern void reading_scene_play_bgm(void); // (Script Function)

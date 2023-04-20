@@ -7,7 +7,7 @@ script script_scene_reading
     set_tempo 140
     pause_scene
 
-    run func_0801a8b0
+    run reading_scene_play_bgm
     rest 12
     run func_08007324 TRUE
     fade_screen_in 12, BLACK
@@ -25,10 +25,10 @@ script script_scene_reading
 
 @ Local Scene
 struct sub_scene_reading
-    /* Start  */ .word reading_scene_start, 0
-    /* Paused */ .word NULL,          0
+    /* Start  */ .word reading_scene_start,  0
+    /* Paused */ .word NULL,                 0
     /* Active */ .word reading_scene_update, 0
-    /* Stop   */ .word reading_scene_stop, 0
+    /* Stop   */ .word reading_scene_stop,   0
     /* Script */ .word script_scene_reading
 endstruct
 

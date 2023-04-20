@@ -25,7 +25,7 @@ struct sub_scene_perfect
     /* Start  */ .word perfect_scene_start,  0
     /* Paused */ .word perfect_scene_paused, 0
     /* Active */ .word perfect_scene_update, 0
-    /* Stop   */ .word perfect_scene_close,  0
+    /* Stop   */ .word perfect_scene_stop,   0
     /* Script */ .word script_scene_perfect
 endstruct
 

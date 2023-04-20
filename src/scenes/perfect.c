@@ -188,7 +188,7 @@ u32 perfect_scene_script_is_ready(void) {
 
 
 // Scene Stop
-void perfect_scene_close(void *sceneVar, s32 dataArg) {
+void perfect_scene_stop(void *sceneVar, s32 dataArg) {
     func_08008628();
     func_08004058();
 }

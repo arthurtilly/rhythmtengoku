@@ -32,4 +32,4 @@ extern void unlock_all_unassigned_campaign_gift_songs(void);
 extern void perfect_scene_paused(void *sceneVar, s32 dataArg); // Scene Update (Paused)
 extern void perfect_scene_update(void *sceneVar, s32 dataArg); // Scene Update (Active)
 extern u32 perfect_scene_script_is_ready(void); // Communicate with Script
-extern void perfect_scene_close(void *sceneVar, s32 dataArg); // Scene Stop
+extern void perfect_scene_stop(void *sceneVar, s32 dataArg); // Scene Stop
