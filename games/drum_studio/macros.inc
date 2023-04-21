@@ -193,8 +193,8 @@
 .endm
 
 @ [Event 0x14] Display Lesson Rank, Score and Dialogue
-.macro dms_get_lesson_score noArgs
-    drum_studio_event GET_LESSON_SCORE, \noArgs
+.macro dms_get_lesson_score
+    drum_studio_event GET_LESSON_SCORE, 0
 .endm
 
 @ [Event 0x15] ?

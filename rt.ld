@@ -1053,6 +1053,8 @@ SECTIONS {
         build/games/rap_men/rap_men.bs.o(.script.main);
         build/games/quiz_show/quiz_show.bs.o(.script.main);
         build/bin/bindata_08a3dfe0.bin.o(.rodata*);
+        build/games/drum_studio/drum_lesson_short_1.bs.o(.script.main);
+        build/bin/bindata_08a41230.bin.o(.rodata*);
         build/games/bon_odori/bon_odori.bs.o(.script.main);
         build/games/tap_trial/tap_trial_2.bs.o(.script.main);
         build/games/clappy_trio/snappy_trio.bs.o(.script.main);
