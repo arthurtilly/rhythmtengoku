@@ -13,7 +13,7 @@ script script_drum_lesson_short_4_entry
     load_drum_lessons
     enable_play_inputs 1
     assess_inputs 1
-    call D_08a41290
+    call script_drum_lesson_short_4_main
     enable_pause 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -179,5 +179,98 @@ text D_0805fa60
     .ascii "\n"
     .asciz "では、つぎ行きまーす！"
 endtext
+
+
+
+.section .script.main
+@ Drum Lesson (Short 4) - Tables
+
+struct D_08a41230
+    .word D_0805f624
+    .word D_0805f5b8
+    .word s_hakushu_solo_seqData
+    .word D_0805f560
+endstruct
+
+struct D_08a41240
+    .word D_0805f670
+    .word D_0805f5b8
+    .word s_hakushu_solo_seqData
+    .word D_0805f648
+endstruct
+
+struct D_08a41250
+    .word D_0805f6ec
+    .word D_0805f5b8
+    .word s_warai_little_seqData
+    .word D_0805f6ac
+endstruct
+
+struct D_08a41260
+    .word D_0805f6ec
+    .word D_0805f770
+    .word s_warai_seqData
+    .word D_0805f740
+endstruct
+
+struct D_08a41270
+    .word D_0805f6ec
+    .word D_0805f840
+    .word s_kansei_solo_seqData
+    .word D_0805f7f4
+endstruct
+
+struct D_08a41280
+    .word D_0805f6ec
+    .word D_0805f918
+    .word s_kansei_seqData
+    .word D_0805f8dc
+endstruct
+
+
+
+@ Drum Lesson (Short 4) - Main Script
+
+script script_drum_lesson_short_4_main
+    set_tempo 116
+    set_music_volume 256
+    assess_inputs 0
+    dms_event08 4
+    dms_event09 1
+    rest 24
+    dms_event02 1
+    run func_08048264, D_08a41230
+    call drum_lessons_sub_08a7d7a0
+    run func_08048264, D_08a41240
+    call drum_lessons_sub_08a7d7a0
+    run func_08048264, D_08a41250
+    call drum_lessons_sub_08a7d7a0
+    dms_show_dialogue 1
+    dms_set_dialogue_text D_0805f9cc
+    rest 12
+    dms_event15 0
+    dms_event16 0
+    rest 12
+    dms_set_dialogue_text D_0805fa10
+    rest 12
+    dms_event15 0
+    dms_event16 0
+    rest 12
+    dms_set_dialogue_text D_0805fa60
+    rest 12
+    dms_event15 0
+    dms_event16 0
+    rest 12
+    run func_08048264, D_08a41260
+    call drum_lessons_sub_08a7d7a0
+    run func_08048264, D_08a41270
+    call drum_lessons_sub_08a7d7a0
+    assess_inputs 1
+    run func_08048264, D_08a41280
+    call drum_lessons_sub_08a7d7a0
+    dms_show_dialogue 1
+    dms_set_teacher_exp 4
+    dms_get_lesson_score
+return
 
 .end

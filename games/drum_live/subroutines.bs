@@ -1009,5 +1009,4 @@ script drum_live_sub_08a7d6a4
     rest 0
 return
 
-
 .end

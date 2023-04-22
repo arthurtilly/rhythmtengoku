@@ -1147,5 +1147,4 @@ script script_bon_odori_skipped_practice
     rest 24
     goto script_bon_odori_main
 
-
 .end

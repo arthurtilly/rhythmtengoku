@@ -219,18 +219,18 @@ script script_drum_lesson_short_1_main
     rest 24
     dms_event02 1
     run func_08048264, D_08a41068
-    call D_08a7d7a0
+    call drum_lessons_sub_08a7d7a0
     run func_08048264, D_08a41078
-    call D_08a7d7a0
+    call drum_lessons_sub_08a7d7a0
     run func_08048264, D_08a41088
-    call D_08a7d7a0
+    call drum_lessons_sub_08a7d7a0
     run func_08048264, D_08a41098
-    call D_08a7d7a0
+    call drum_lessons_sub_08a7d7a0
     run func_08048264, D_08a410a8
-    call D_08a7d7a0
+    call drum_lessons_sub_08a7d7a0
     assess_inputs 1
     run func_08048264, D_08a410b8
-    call D_08a7d7a0
+    call drum_lessons_sub_08a7d7a0
     dms_show_dialogue 1
     dms_set_teacher_exp 4
     dms_get_lesson_score
