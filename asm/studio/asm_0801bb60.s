@@ -20,7 +20,7 @@ thumb_func_start func_0801bb60 \n\
 /* 0801bb80 */ LSLS R1, R1, 0x2 \n\
 /* 0801bb82 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801bb84 */ LDR R0, [R0] \n\
-/* 0801bb86 */ BL func_0800b118 \n\
+/* 0801bb86 */ BL listbox_get_sel_item \n\
 /* 0801bb8a */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0801bb8c */ LDR R4, =D_089d4ba4 \n\
 /* 0801bb8e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\

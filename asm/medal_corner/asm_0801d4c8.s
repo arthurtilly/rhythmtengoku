@@ -54,10 +54,10 @@ thumb_func_start func_0801d4c8 \n\
 /* 0801d52a */ MOVS R1, 0x8 @ Set R1 to 0x8 \n\
 /* 0801d52c */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 0801d52e */ MOVS R3, 0x20 @ Set R3 to 0x20 \n\
-/* 0801d530 */ BL func_0800aeb4 \n\
+/* 0801d530 */ BL create_new_listbox \n\
 /* 0801d534 */ LDR R1, [R4] \n\
 /* 0801d536 */ STR R0, [R1, 0x4] \n\
-/* 0801d538 */ BL func_0800b550 \n\
+/* 0801d538 */ BL listbox_get_sel_sprite \n\
 /* 0801d53c */ LSLS R0, R0, 0x10 \n\
 /* 0801d53e */ ASRS R0, R0, 0x10 \n\
 /* 0801d540 */ BL func_0801d6e4 \n\
@@ -65,7 +65,7 @@ thumb_func_start func_0801d4c8 \n\
 /* 0801d546 */ LDR R0, [R0, 0x4] \n\
 /* 0801d548 */ LDR R1, =func_0801d4b0 \n\
 /* 0801d54a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0801d54c */ BL func_0800b30c \n\
+/* 0801d54c */ BL listbox_run_func_on_scroll \n\
 /* 0801d550 */ LDR R0, [R4] \n\
 /* 0801d552 */ LDRB R0, [R0, 0x18] \n\
 /* 0801d554 */ ADD R0, R8 @ Add R8 to R0 \n\

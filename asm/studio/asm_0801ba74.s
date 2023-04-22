@@ -59,7 +59,7 @@ thumb_func_start func_0801ba74 \n\
 /* 0801bae2 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0801bae4 */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 0801bae6 */ MOVS R3, 0xC @ Set R3 to 0xC \n\
-/* 0801bae8 */ BL func_0800aeb4 \n\
+/* 0801bae8 */ BL create_new_listbox \n\
 /* 0801baec */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 0801baee */ LDR R1, [R2] \n\
 /* 0801baf0 */ MOVS R2, 0xDC @ Set R2 to 0xDC \n\
@@ -68,7 +68,7 @@ thumb_func_start func_0801ba74 \n\
 /* 0801baf6 */ STR R0, [R1] \n\
 /* 0801baf8 */ LDR R1, =func_0801ba60 \n\
 /* 0801bafa */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0801bafc */ BL func_0800b30c \n\
+/* 0801bafc */ BL listbox_run_func_on_scroll \n\
 /* 0801bb00 */ ADD SP, 0x3C \n\
 /* 0801bb02 */ POP {R3, R4} \n\
 /* 0801bb04 */ MOV R8, R3 @ Set R8 to R3 \n\

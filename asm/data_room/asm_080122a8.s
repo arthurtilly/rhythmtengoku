@@ -64,7 +64,7 @@ branch_0801230a: \n\
 /* 0801230e */ LDR R6, =D_030046a4 \n\
 /* 08012310 */ LDR R0, [R6] \n\
 /* 08012312 */ LDR R0, [R0, 0x4] \n\
-/* 08012314 */ BL func_0800b118 \n\
+/* 08012314 */ BL listbox_get_sel_item \n\
 /* 08012318 */ LDR R1, =0x27b \n\
 /* 0801231a */ ADDS R4, R4, R1 @ Set R4 to R4 + R1 \n\
 /* 0801231c */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
@@ -95,7 +95,7 @@ branch_0801233c: \n\
 /* 08012360 */ BL set_scene_trans_target \n\
 /* 08012364 */ LDR R0, [R6] \n\
 /* 08012366 */ LDR R0, [R0, 0x4] \n\
-/* 08012368 */ BL func_0800b118 \n\
+/* 08012368 */ BL listbox_get_sel_item \n\
 /* 0801236c */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801236e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 08012370 */ BL set_scene_trans_var \n\
@@ -112,7 +112,7 @@ branch_08012390: \n\
 /* 08012390 */ LDR R0, =D_030046a4 \n\
 /* 08012392 */ LDR R0, [R0] \n\
 /* 08012394 */ LDR R0, [R0, 0x4] \n\
-/* 08012396 */ BL func_0800b140 \n\
+/* 08012396 */ BL listbox_scroll_up \n\
 /* 0801239a */ B branch_080123c4 \n\
 \n\
 .ltorg \n\
@@ -121,7 +121,7 @@ branch_080123a0: \n\
 /* 080123a0 */ LDR R0, =D_030046a4 \n\
 /* 080123a2 */ LDR R0, [R0] \n\
 /* 080123a4 */ LDR R0, [R0, 0x4] \n\
-/* 080123a6 */ BL func_0800b21c \n\
+/* 080123a6 */ BL listbox_scroll_down \n\
 /* 080123aa */ B branch_080123c4 \n\
 \n\
 .ltorg \n\
@@ -142,7 +142,7 @@ branch_080123c4: \n\
 /* 080123c4 */ LDR R0,=D_030046a4 \n\
 /* 080123c6 */ LDR R0, [R0] \n\
 /* 080123c8 */ LDR R0, [R0, 0x4] \n\
-/* 080123ca */ BL func_0800b074 \n\
+/* 080123ca */ BL update_listbox \n\
 /* 080123ce */ BL func_08012218 \n\
 /* 080123d2 */ POP {R4-R6} \n\
 /* 080123d4 */ POP {R0} \n\

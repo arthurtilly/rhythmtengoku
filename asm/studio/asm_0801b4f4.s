@@ -11,7 +11,7 @@ thumb_func_start func_0801b4f4 \n\
 /* 0801b4fe */ LSLS R1, R1, 0x2 \n\
 /* 0801b500 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b502 */ LDR R0, [R0] \n\
-/* 0801b504 */ BL func_0800b368 \n\
+/* 0801b504 */ BL listbox_is_busy \n\
 /* 0801b508 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801b50a */ BNE branch_0801b548 \n\
 /* 0801b50c */ BL studio_scene_can_receive_inputs \n\
@@ -73,7 +73,7 @@ branch_0801b56e: \n\
 /* 0801b574 */ LSLS R2, R2, 0x2 \n\
 /* 0801b576 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0801b578 */ LDR R0, [R0] \n\
-/* 0801b57a */ BL func_0800b118 \n\
+/* 0801b57a */ BL listbox_get_sel_item \n\
 /* 0801b57e */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801b580 */ LDR R0, [R5] \n\
 /* 0801b582 */ LDR R2, =0x48e \n\
@@ -101,7 +101,7 @@ branch_0801b56e: \n\
 /* 0801b5b4 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b5b6 */ LDR R0, [R0] \n\
 /* 0801b5b8 */ LDR R1, =anim_studio_selection_item \n\
-/* 0801b5ba */ BL func_0800b4d8 \n\
+/* 0801b5ba */ BL listbox_set_sel_sprite \n\
 /* 0801b5be */ LDR R0, [R5] \n\
 /* 0801b5c0 */ MOVS R2, 0xD7 @ Set R2 to 0xD7 \n\
 /* 0801b5c2 */ LSLS R2, R2, 0x2 \n\
@@ -131,7 +131,7 @@ branch_0801b5e4: \n\
 /* 0801b608 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b60a */ LDR R0, [R0] \n\
 /* 0801b60c */ LDR R1, =anim_studio_selection_item \n\
-/* 0801b60e */ BL func_0800b4d8 \n\
+/* 0801b60e */ BL listbox_set_sel_sprite \n\
 /* 0801b612 */ LDR R0, [R4] \n\
 /* 0801b614 */ MOVS R2, 0xD7 @ Set R2 to 0xD7 \n\
 /* 0801b616 */ LSLS R2, R2, 0x2 \n\
@@ -149,7 +149,7 @@ branch_0801b634: \n\
 /* 0801b63a */ LSLS R1, R1, 0x2 \n\
 /* 0801b63c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b63e */ LDR R0, [R0] \n\
-/* 0801b640 */ BL func_0800b140 \n\
+/* 0801b640 */ BL listbox_scroll_up \n\
 /* 0801b644 */ B branch_0801b65c \n\
 \n\
 .ltorg \n\
@@ -161,7 +161,7 @@ branch_0801b64c: \n\
 /* 0801b652 */ LSLS R2, R2, 0x2 \n\
 /* 0801b654 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0801b656 */ LDR R0, [R0] \n\
-/* 0801b658 */ BL func_0800b21c \n\
+/* 0801b658 */ BL listbox_scroll_down \n\
  \n\
 branch_0801b65c: \n\
 /* 0801b65c */ POP {R4, R5} \n\

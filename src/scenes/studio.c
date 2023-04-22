@@ -8,6 +8,31 @@ asm(".include \"include/gba.inc\"");//Temporary
 // For readability.
 #define gStudioInfo ((struct StudioSceneInfo *)D_030046a4)
 
+enum StudioOptionsEnum {
+    OPTION_LISTEN,
+    OPTION_DRUM,
+    OPTION_SORT,
+    OPTION_MARK,
+    OPTION_DELETE = OPTION_DRUM
+};
+
+enum StudioListsEnum {
+    SONGS_LIST,
+    OPTIONS_LIST,
+    DRUMS_LIST
+};
+
+enum StudioSongsListEventsEnum {
+    SONGS_LIST_DO_NOTHING,
+    SONGS_LIST_CONFIRM,
+    SONGS_LIST_SCROLL_UP,
+    SONGS_LIST_SCROLL_DOWN,
+    SONGS_LIST_EXIT,
+    SONGS_LIST_MOVE_ITEM,
+    SONGS_LIST_CHECK_ITEM
+};
+
+
 static u8 sCurrentDrumKit; // Selected Drum Kit ID
 static u8 sListSongIndex; // Song Item Index (Total)
 static s8 sListSongPosition; // Song Item Index (Screen)
@@ -46,9 +71,114 @@ static s32 D_0300154c; // unknown type
 
 #include "asm/studio/asm_0801b0b0.s"
 
-#include "asm/studio/asm_0801b138.s"
 
-#include "asm/studio/asm_0801b1d8.s"
+// Init. Song List
+void func_0801b138(s32 arg, s32 index, s32 position) {
+    gStudioInfo->unk364 = arg;
+    gStudioInfo->songsList = create_new_listbox(
+            get_current_mem_id(),
+            10, 128, 32,
+            0, 1, 3,
+            118, 16, 0x8800,
+            16, index, D_030046a8->data.unkB2,
+            anim_studio_selection_item, 2, 6, position,
+            func_0801af64, func_0801aff8);
+    listbox_run_func_on_scroll(gStudioInfo->songsList, func_0801b0b0, 0);
+}
+
+
+// Update (Menu State 1 - Song List)
+void func_0801b1d8(void) {
+    s32 songItem, optionItem;
+    s32 event = SONGS_LIST_DO_NOTHING;
+
+    if (!listbox_is_busy(gStudioInfo->songsList) && studio_scene_can_receive_inputs()) {
+        if (D_03004afc & A_BUTTON) {
+            event = SONGS_LIST_CONFIRM;
+        }
+        if (D_03004afc & B_BUTTON) {
+            event = SONGS_LIST_EXIT;
+        }
+        if (D_030053b8 & DPAD_UP) {
+            event = SONGS_LIST_SCROLL_UP;
+        }
+        if (D_030053b8 & DPAD_DOWN) {
+            event = SONGS_LIST_SCROLL_DOWN;
+        }
+        if (D_03004afc & LEFT_SHOULDER_BUTTON) {
+            event = SONGS_LIST_MOVE_ITEM;
+        }
+        if (D_03004afc & RIGHT_SHOULDER_BUTTON) {
+            event = SONGS_LIST_CHECK_ITEM;
+        }
+    }
+
+    switch (event) {
+        case SONGS_LIST_CONFIRM:
+            stop_sound(&s_studio_bgm_seqData);
+            play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+
+            songItem = listbox_get_sel_item(gStudioInfo->songsList);
+            func_0801c6fc(songItem);
+            optionItem = listbox_get_sel_item(gStudioInfo->optionsList);
+            delete_listbox(gStudioInfo->optionsList);
+
+            if (D_030046a8->data.drumReplayData[songItem].saveID < 0) {
+                func_0801ba74(FALSE, optionItem);
+            } else {
+                if (optionItem == OPTION_DELETE) {
+                    optionItem = OPTION_LISTEN;
+                }
+                func_0801ba74(TRUE, optionItem);
+            }
+
+            listbox_hide_sel_sprite(gStudioInfo->songsList);
+            listbox_show_sel_sprite(gStudioInfo->optionsList);
+            func_0801c6b8(OPTIONS_LIST);
+            gStudioInfo->menuState = 2;
+            break;
+
+        case SONGS_LIST_EXIT:
+            play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+            listbox_hide_sel_sprite(gStudioInfo->songsList);
+            func_0801d968(script_scene_studio_exit);
+            gStudioInfo->unk358 = 0;
+            break;
+
+        case SONGS_LIST_SCROLL_UP:
+            listbox_scroll_up(gStudioInfo->songsList);
+            break;
+
+        case SONGS_LIST_SCROLL_DOWN:
+            listbox_scroll_down(gStudioInfo->songsList);
+            break;
+
+        case SONGS_LIST_MOVE_ITEM:
+            play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+            gStudioInfo->selectedItem = listbox_get_sel_item(gStudioInfo->songsList);
+            func_0800b408(gStudioInfo->songsList, gStudioInfo->itemMoveHighlight, gStudioInfo->selectedItem);
+            func_0804d770(D_03005380, gStudioInfo->itemMoveHighlight, TRUE);
+            gStudioInfo->menuState = 4;
+            break;
+
+        case SONGS_LIST_CHECK_ITEM:
+            songItem = listbox_get_sel_item(gStudioInfo->songsList);
+            if ((D_030046a8->data.drumReplayData[songItem].songID == STUDIO_SONG_SILENCE)
+              && ((D_030046a8->data.drumReplayData[songItem].unk3 & 1) == 0)) {
+                play_sound_in_player(MUSIC_PLAYER_2, &s_menu_error_seqData);
+            } else {
+                D_030046a8->data.drumReplayData[songItem].unk3 ^= 2;
+                func_0800b454(gStudioInfo->songsList, songItem);
+                if (D_030046a8->data.drumReplayData[songItem].unk3 & 2) {
+                    play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+                } else {
+                    play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+                }
+            }
+            break;
+    }
+}
+
 
 #include "asm/studio/asm_0801b498.s"
 
@@ -155,18 +285,18 @@ void studio_scene_start(void *sceneVar, s32 dataArg) {
     switch (entryPoint) {
         case 1:
             gStudioInfo->menuState = 3;
-            func_0800b3e8(gStudioInfo->songsList);
-            func_0800b3e8(gStudioInfo->optionsList);
-            func_0800b3c8(gStudioInfo->drumsList);
+            listbox_hide_sel_sprite(gStudioInfo->songsList);
+            listbox_hide_sel_sprite(gStudioInfo->optionsList);
+            listbox_show_sel_sprite(gStudioInfo->drumsList);
             func_0801c674(2);
             break;
 
         case 0:
         default:
             gStudioInfo->menuState = 1;
-            func_0800b3c8(gStudioInfo->songsList);
-            func_0800b3e8(gStudioInfo->optionsList);
-            func_0800b3e8(gStudioInfo->drumsList);
+            listbox_show_sel_sprite(gStudioInfo->songsList);
+            listbox_hide_sel_sprite(gStudioInfo->optionsList);
+            listbox_hide_sel_sprite(gStudioInfo->drumsList);
             func_0801c674(0);
             break;
     }
@@ -247,9 +377,9 @@ void studio_scene_update(void *sceneVar, s32 dataArg) {
 
     func_0801c5a4();
     func_0801c7e8();
-    func_0800b074(gStudioInfo->songsList);
-    func_0800b074(gStudioInfo->optionsList);
-    func_0800b074(gStudioInfo->drumsList);
+    update_listbox(gStudioInfo->songsList);
+    update_listbox(gStudioInfo->optionsList);
+    update_listbox(gStudioInfo->drumsList);
     func_08029cac(gStudioInfo->replayDrumKit, D_030046b8, D_03005378, D_030046b4);
     update_drumtech();
 }

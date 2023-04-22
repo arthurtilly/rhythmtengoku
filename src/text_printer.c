@@ -865,38 +865,83 @@ void text_printer_resume(struct TextPrinter *textPrinter) {
 }
 
 
-// ? (https://decomp.me/scratch/477tU)
-#include "asm/code_080092cc/asm_0800aac0.s"
+// Set Text (Table Mode)
+void func_0800aac0(struct TextPrinter *textPrinter, s32 lineIndex, const char *string, s16 shadowSprite) {
+    struct TextPrinter *printer;
+    s16 lineSprite;
+    u32 line;
+
+    line = lineIndex;
+    printer = textPrinter;
+
+    if (printer == NULL) {
+        return;
+    }
+
+    if ((printer->mode == TEXT_PRINTER_MODE_STATIC_TABLE) && (line < printer->totalLines)) {
+        lineSprite = printer->lineSprites[line];
+        if (lineSprite >= 0) {
+            text_printer_delete_anim((void *)func_0804ddb0(D_03005380, lineSprite, 7));
+            func_0804d504(D_03005380, lineSprite);
+            printer->lineSprites[line] = -1;
+        }
+
+        if (printer->lineShadowSprites[line] >= 0) {
+            func_0804d504(D_03005380, printer->lineShadowSprites[line]);
+            printer->lineShadowSprites[line] = -1;
+        }
+
+        printer->lineShadowSprites[line] = shadowSprite;
+        func_0804d770(D_03005380, printer->lineShadowSprites[line], FALSE);
+
+        if (printer->lineStrings[line] != NULL) {
+            mem_heap_dealloc(printer->lineStrings[line]);
+        }
+
+        if (string != NULL) {
+            printer->lineStrings[line] = mem_heap_alloc_id(printer->memID, strlen(string) + 1);
+            strcpy(printer->lineStrings[line], string);
+        } else {
+            printer->lineStrings[line] = NULL;
+        }
+
+        if (string != NULL) {
+            printer->currentlyPrinting = TRUE;
+        }
+    }
+}
 
 
-// ?
-void func_0800abb0(void *printer, s32 line) {
-    struct TextPrinter *textPrinter = printer;
+// Clear Text (Table Mode)
+void func_0800abb0(struct TextPrinter *textPrinter, s32 line) {
+    struct TextPrinter *printer = textPrinter;
     s16 sprite;
     u32 i;
 
-    if (textPrinter == NULL) return;
+    if (printer == NULL) {
+        return;
+    }
 
-    if (textPrinter->mode == TEXT_PRINTER_MODE_STATIC_TABLE) {
-        line %= textPrinter->totalLines;
+    if (printer->mode == TEXT_PRINTER_MODE_STATIC_TABLE) {
+        line %= printer->totalLines;
         if (line < 0) {
-            line += textPrinter->totalLines;
+            line += printer->totalLines;
         }
-        textPrinter->unk54 = line;
+        printer->unk54 = line;
 
-        for (i = 0; i < textPrinter->totalLines; i++) {
-            sprite = textPrinter->lineSprites[line];
+        for (i = 0; i < printer->totalLines; i++) {
+            sprite = printer->lineSprites[line];
             if (sprite >= 0) {
-                func_0804d648(D_03005380, sprite, (textPrinter->lineSpacing * i) + textPrinter->y);
+                func_0804d648(D_03005380, sprite, (printer->lineSpacing * i) + printer->y);
             }
 
-            sprite = textPrinter->lineShadowSprites[line];
+            sprite = printer->lineShadowSprites[line];
             if (sprite >= 0) {
-                func_0804d648(D_03005380, sprite, (textPrinter->lineSpacing * i) + textPrinter->y);
+                func_0804d648(D_03005380, sprite, (printer->lineSpacing * i) + printer->y);
             }
 
             line++;
-            if (line >= textPrinter->totalLines) {
+            if (line >= printer->totalLines) {
                 line = 0;
             }
         }
@@ -1099,151 +1144,428 @@ void text_printer_set_shadow_colors(struct TextPrinter *textPrinter, s32 shadowC
 }
 
 
-// ?
-s32 func_0800ae1c(struct ListboxPrinter *arg0) {
-    return arg0->unkC + ((arg0->unk30 + arg0->unk2C) * arg0->unk10);
+
+/* LISTBOX PRINTER */
+
+
+
+// Get... something.
+s32 func_0800ae1c(struct Listbox *listbox) {
+    return listbox->y + ((listbox->selLine + listbox->unk2C) * listbox->lineSpacing);
 }
 
 
-// ?
-#include "asm/code_080092cc/asm_0800ae3c.s"
+// Set Palette for... some line.
+void func_0800ae3c(struct Listbox *listbox, u32 palette) {
+    s32 line, maxLines;
+    s16 sprite;
+
+    line = listbox->unk16 + listbox->unk2C + listbox->selLine;
+    maxLines = listbox->maxLines;
+
+    line %= maxLines;
+    if (line < 0) {
+        line += maxLines;
+    }
+
+    sprite = text_printer_get_line_sprite(listbox->printer, line);
+    func_0804d8c4(D_03005380, sprite, palette);
+}
 
 
-// ?
-#include "asm/code_080092cc/asm_0800ae88.s"
+// Listbox On-Finish Function
+void func_0800ae88(struct Listbox *listbox) {
+    func_0800ae3c(listbox, listbox->unk12);
+
+    if (listbox->unk3C) {
+        if (listbox->onFinish != NULL) {
+            listbox->onFinish(listbox->onFinishArg);
+        }
+        listbox->unk3C = FALSE;
+    }
+}
 
 
-// ?
-#include "asm/code_080092cc/asm_0800aeb4.s"
+// Create New Listbox
+struct Listbox *create_new_listbox(
+        u16 memID, u32 maxLines, u32 maxWidth, u32 arg3, u32 arg4, u32 palette,
+        u32 colors, s32 x, s32 y, u32 z, u32 lineSpacing, u32 selectionItem,
+        s32 arg12, struct Animation *selectionAnim, u32 arg14, u32 arg15,
+        u32 selectionLine, const char *getString(), s16 getSprite()
+    ) {
+
+    struct Listbox *listbox;
+    struct TextPrinter *printer;
+    const char *string;
+    s32 sprite;
+    s32 r4;
+    u32 i;
+
+    listbox = mem_heap_alloc_id(memID, sizeof(struct Listbox));
+    listbox->memID = memID;
+    listbox->printer = text_printer_create_new(memID, maxLines, maxWidth, arg3);
+    text_printer_set_mode(listbox->printer, TEXT_PRINTER_MODE_STATIC_TABLE);
+    text_printer_set_x_y_controller(listbox->printer, &listbox->x1, &listbox->y1);
+    text_printer_set_x_y(listbox->printer, x, y);
+    text_printer_set_layer(listbox->printer, z);
+    text_printer_set_palette(listbox->printer, palette);
+    text_printer_set_colors(listbox->printer, colors);
+    text_printer_set_line_spacing(listbox->printer, lineSpacing);
+    text_printer_run_func_on_finish(listbox->printer, func_0800ae88, (s32)listbox);
+    listbox->maxLines = maxLines;
+    listbox->unk12 = arg4;
+    listbox->palette = palette;
+    listbox->colors = colors;
+    listbox->x = x;
+    listbox->y = y;
+    listbox->z = z;
+    listbox->lineSpacing = lineSpacing;
+    listbox->unk16 = 0;
+    listbox->unk1A = 0;
+    listbox->unk18 = 0;
+    listbox->unk20 = 0;
+    listbox->x1 = 0;
+    listbox->y1 = 0;
+    listbox->selItem = selectionItem;
+    listbox->unk28 = arg12;
+    listbox->unk2C = arg14;
+    listbox->unk2E = arg15;
+    listbox->selLine = selectionLine;
+    listbox->getString = getString;
+    listbox->getSprite = getSprite;
+
+    if (selectionAnim != NULL) {
+        listbox->selSprite = func_0804d160(D_03005380, selectionAnim, 0, x, func_0800ae1c(listbox), z, 1, 0, 0);
+    } else {
+        listbox->selSprite = -1;
+    }
+
+    func_0804db44(D_03005380, listbox->selSprite, &listbox->x1, &listbox->y1);
+    listbox->unk3C = TRUE;
+    listbox->onScroll = NULL;
+    listbox->onFinish = NULL;
+
+    r4 = (selectionItem - selectionLine) - arg14;
+
+    for (i = 0; i < maxLines; i++) {
+        if ((r4 >= 0) && (r4 < arg12)) {
+            printer = listbox->printer;
+            string = getString(r4);
+            sprite = (getSprite != NULL) ? getSprite(r4) : -1;
+
+            func_0800aac0(printer, i, string, sprite);
+        }
+        r4++;
+    }
+
+    return listbox;
+}
 
 
-// ?
-#include "asm/code_080092cc/asm_0800b074.s"
+// Update Listbox
+void update_listbox(struct Listbox *listbox) {
+    struct Listbox *list = listbox;
+    s32 unk20, temp;
+
+    if (listbox == NULL) {
+        return;
+    }
+
+    // Investigate this: (https://decomp.me/scratch/GfMM8)
+    temp = ((u32)listbox->unk20) >> 31;
+    unk20 = listbox->unk20;
+    if (unk20 < 0) {
+        unk20 = -unk20;
+    }
+
+    listbox->unk20 = (unk20 * 5) >> 3;
+
+    if (temp != 0) {
+        listbox->unk20 = -listbox->unk20;
+    }
+
+    list->x1 = list->unk18;
+    list->y1 = list->unk1A + list->unk20;
+    list->x2 = list->x1;
+    list->y2 = ((list->selItem - list->unk2C - list->selLine) * list->lineSpacing) + list->unk1A + list->unk20;
+    text_printer_update(list->printer);
+}
 
 
-// ?
-#include "asm/code_080092cc/asm_0800b0d4.s"
+// Delete Listbox
+void delete_listbox(struct Listbox *listbox) {
+    if (listbox == NULL) {
+        return;
+    }
+
+    text_printer_delete(listbox->printer);
+
+    if (listbox->selSprite >= 0) {
+        func_0804d504(D_03005380, listbox->selSprite);
+    }
+
+    mem_heap_dealloc(listbox);
+}
 
 
-// ?
-#include "asm/code_080092cc/asm_0800b108.s"
+// Get Text Printer
+struct TextPrinter *listbox_get_text_printer(struct Listbox *listbox) {
+    if (listbox == NULL) {
+        return NULL;
+    }
+
+    return listbox->printer;
+}
 
 
-// ?
-#include "asm/code_080092cc/asm_0800b118.s"
+// Get Selection Item
+s32 listbox_get_sel_item(struct Listbox *listbox) {
+    if (listbox == NULL) {
+        return 0;
+    }
+
+    return listbox->selItem;
+}
 
 
-// ?
-#include "asm/code_080092cc/asm_0800b12c.s"
+// Get Selection Line
+s32 listbox_get_sel_line(struct Listbox *listbox) {
+    if (listbox == NULL) {
+        return 0;
+    }
+
+    return listbox->selLine;
+}
 
 
-// ?
-#include "asm/code_080092cc/asm_0800b140.s"
+// Scroll Up
+void listbox_scroll_up(struct Listbox *listbox) {
+    struct TextPrinter *printer;
+    const char *string;
+    s32 sprite;
+    s32 next, line;
+
+    if ((listbox == NULL) || (listbox->selItem <= 0)) {
+        return;
+    }
+
+    func_0800ae3c(listbox, listbox->palette);
+
+    if (listbox->selLine <= 0) {
+        next = listbox->selItem - listbox->selLine - listbox->unk2C;
+        line = listbox->unk16 % listbox->maxLines;
+
+        if (line < 0) {
+            line += listbox->maxLines;
+        }
+
+        printer = listbox->printer;
+        string = listbox->getString(next);
+
+        if (listbox->getSprite != NULL) {
+            sprite = listbox->getSprite(next);
+        } else {
+            sprite = -1;
+        }
+
+        func_0800aac0(printer, line, string, sprite);
+        listbox->unk16--;
+        func_0800abb0(listbox->printer, listbox->unk16);
+        listbox->unk20 = 16;
+    } else {
+        listbox->selLine--;
+        func_0804d648(D_03005380, listbox->selSprite, func_0800ae1c(listbox));
+    }
+
+    listbox->selItem--;
+    func_0800ae3c(listbox, listbox->unk12);
+
+    if (listbox->onScroll != NULL) {
+        listbox->onScroll(listbox->onScrollArg, listbox->selItem, listbox->selItem + 1);
+    }
+}
 
 
-// ?
-#include "asm/code_080092cc/asm_0800b21c.s"
+// Scroll Down
+void listbox_scroll_down(struct Listbox *listbox) {
+    struct TextPrinter *printer;
+    const char *string;
+    s32 sprite;
+    s32 next, line, max;
+
+    if ((listbox == NULL) || (listbox->selItem >= (listbox->unk28 - 1))) {
+        return;
+    }
+
+    func_0800ae3c(listbox, listbox->palette);
+
+    if (listbox->selLine < (listbox->unk2E - 1)) {
+        listbox->selLine++;
+        func_0804d648(D_03005380, listbox->selSprite, func_0800ae1c(listbox));
+    } else {
+        next = listbox->selItem - listbox->selLine - listbox->unk2C + listbox->maxLines - 1;
+        line = (listbox->unk16 - 1) % listbox->maxLines;
+
+        if (line < 0) {
+            line += listbox->maxLines;
+        }
+
+        printer = listbox->printer;
+        string = listbox->getString(next);
+
+        if (listbox->getSprite != NULL) {
+            sprite = listbox->getSprite(next);
+        } else {
+            sprite = -1;
+        }
+
+        func_0800aac0(printer, line, string, sprite);
+        listbox->unk16++;
+        func_0800abb0(listbox->printer, listbox->unk16);
+        listbox->unk20 = -16;
+    }
+
+    listbox->selItem++;
+    func_0800ae3c(listbox, listbox->unk12);
+
+    if (listbox->onScroll != NULL) {
+        listbox->onScroll(listbox->onScrollArg, listbox->selItem, listbox->selItem - 1);
+    }
+}
 
 
-// ?
-#include "asm/code_080092cc/asm_0800b30c.s"
+// Set On-Key-Press Function and Parameter
+void listbox_run_func_on_scroll(struct Listbox *listbox, void onScroll(), s32 onScrollArg) {
+    if (listbox == NULL) {
+        return;
+    }
+
+    listbox->onScroll = onScroll;
+    listbox->onScrollArg = onScrollArg;
+}
 
 
-// ?
-#include "asm/code_080092cc/asm_0800b31c.s"
+// Set On-Finish Function and Parameter
+void listbox_run_func_on_finish(struct Listbox *listbox, void onFinish(), s32 onFinishArg) {
+    if (listbox == NULL) {
+        return;
+    }
+
+    listbox->onFinish = onFinish;
+    listbox->onFinishArg = onFinishArg;
+}
 
 
 // ?
 #include "asm/code_080092cc/asm_0800b32c.s"
 
 
-// ?
-#include "asm/code_080092cc/asm_0800b368.s"
+// Check if Listbox is Busy
+s32 listbox_is_busy(struct Listbox *listbox) {
+    if (listbox != NULL) {
+        return (listbox != NULL) && (text_printer_is_busy(listbox->printer) != FALSE);
+    } else {
+        return FALSE;
+    }
+}
 
 
 // ?
 #include "asm/code_080092cc/asm_0800b384.s"
 
 
-// ?
-void func_0800b3c8(struct ListboxPrinter *arg0) {
-    if (arg0 == NULL) return;
+// Show Selection Sprite
+void listbox_show_sel_sprite(struct Listbox *listbox) {
+    if (listbox == NULL) {
+        return;
+    }
 
-    func_0804d770(D_03005380, arg0->unk2A, TRUE);
+    func_0804d770(D_03005380, listbox->selSprite, TRUE);
+}
+
+
+// Hide Selection Sprite
+void listbox_hide_sel_sprite(struct Listbox *listbox) {
+    if (listbox == NULL) {
+        return;
+    }
+
+    func_0804d770(D_03005380, listbox->selSprite, FALSE);
 }
 
 
 // ?
-void func_0800b3e8(struct ListboxPrinter *arg0) {
-    if (arg0 == NULL) return;
+void func_0800b408(struct Listbox *listbox, s16 sprite, u32 arg2) {
+    if (listbox == NULL) {
+        return;
+    }
 
-    func_0804d770(D_03005380, arg0->unk2A, FALSE);
+    func_0804db44(D_03005380, sprite, &listbox->x2, &listbox->y2);
+    func_0804d5d4(D_03005380, sprite, listbox->x, arg2 * listbox->lineSpacing + listbox->y);
 }
 
 
 // ?
-void func_0800b408(struct ListboxPrinter *arg0, s16 sprite, u32 arg2) {
-    if (arg0 == NULL) return;
+void func_0800b454(struct Listbox *listbox, s32 arg1) {
+    struct TextPrinter *printer;
+    const char *string;
+    s32 sprite;
+    s32 line, maxLines;
 
-    func_0804db44(D_03005380, sprite, &arg0->x2, &arg0->y2);
-    func_0804d5d4(D_03005380, sprite, arg0->unkA, arg2 * arg0->unk10 + arg0->unkC);
-}
+    if (listbox == NULL) {
+        return;
+    }
 
-
-// ?
-void func_0800b454(struct ListboxPrinter *arg0, s32 arg1) {
-    void *printer;
-    s32 line;
-    char *string;
-    s32 backSprite;
-    s32 totalLines;
-
-    if (arg0 == NULL) return;
-
-    if (arg1 >= 0 && arg1 < arg0->unk28) {
-        line = arg1 - arg0->unk26 + arg0->unk2C + arg0->unk30;
-        if (line < 0) return;
-
-        totalLines = arg0->totalLines;
-        if (line >= totalLines) return;
-
-        line += arg0->unk16;
-        line %= totalLines;
+    if ((arg1 >= 0) && (arg1 < listbox->unk28)) {
+        line = arg1 - listbox->selItem + listbox->unk2C + listbox->selLine;
         if (line < 0) {
-            line += totalLines;
+            return;
         }
 
-        printer = arg0->printer;
-        string = arg0->unk34(arg1);
-        if (arg0->unk38 != NULL) {
-            backSprite = arg0->unk38(arg1);
-        } else {
-            backSprite = -1;
+        maxLines = listbox->maxLines;
+        if (line >= maxLines) {
+            return;
         }
-        func_0800aac0(printer, line, string, backSprite);
+
+        line += listbox->unk16;
+        line %= maxLines;
+        if (line < 0) {
+            line += maxLines;
+        }
+
+        printer = listbox->printer;
+        string = listbox->getString(arg1);
+        sprite = (listbox->getSprite != NULL) ? listbox->getSprite(arg1) : -1;
+
+        func_0800aac0(printer, line, string, sprite);
     }
 }
 
 
-// ?
-void func_0800b4d8(struct ListboxPrinter *arg0, struct Animation *anim) {
-    if (arg0 == NULL) return;
-
-    if (arg0->unk2A >= 0) {
-        func_0804d504(D_03005380, arg0->unk2A);
+// Set Selection Sprite
+void listbox_set_sel_sprite(struct Listbox *listbox, struct Animation *selectionAnim) {
+    if (listbox == NULL) {
+        return;
     }
-    arg0->unk2A = -1;
-    if (anim != NULL) {
-        arg0->unk2A = func_0804d160(D_03005380, anim, 0, arg0->unkA, func_0800ae1c(arg0), arg0->unkE, 1, 0, 0);
-        func_0804db44(D_03005380, arg0->unk2A, &arg0->x1, &arg0->y1);
+
+    if (listbox->selSprite >= 0) {
+        func_0804d504(D_03005380, listbox->selSprite);
+    }
+
+    listbox->selSprite = -1;
+
+    if (selectionAnim != NULL) {
+        listbox->selSprite = func_0804d160(D_03005380, selectionAnim, 0, listbox->x, func_0800ae1c(listbox), listbox->z, 1, 0, 0);
+        func_0804db44(D_03005380, listbox->selSprite, &listbox->x1, &listbox->y1);
     }
 }
 
 
-// ?
-s16 func_0800b550(struct ListboxPrinter *arg0) {
-    if (arg0 == NULL) {
+// Get Selection Sprite
+s16 listbox_get_sel_sprite(struct Listbox *listbox) {
+    if (listbox == NULL) {
         return -1;
     }
-    return arg0->unk2A;
+
+    return listbox->selSprite;
 }

@@ -12,17 +12,17 @@ thumb_func_start func_0801bc0c \n\
 /* 0801bc18 */ LSLS R4, R4, 0x2 \n\
 /* 0801bc1a */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0801bc1c */ LDR R0, [R0] \n\
-/* 0801bc1e */ BL func_0800b118 \n\
+/* 0801bc1e */ BL listbox_get_sel_item \n\
 /* 0801bc22 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 0801bc24 */ LDR R0, [R5] \n\
 /* 0801bc26 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0801bc28 */ LDR R0, [R0] \n\
-/* 0801bc2a */ BL func_0800b12c \n\
+/* 0801bc2a */ BL listbox_get_sel_line \n\
 /* 0801bc2e */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 0801bc30 */ LDR R0, [R5] \n\
 /* 0801bc32 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0801bc34 */ LDR R0, [R0] \n\
-/* 0801bc36 */ BL func_0800b0d4 \n\
+/* 0801bc36 */ BL delete_listbox \n\
 /* 0801bc3a */ LDR R0, =D_030046a8 \n\
 /* 0801bc3c */ LDR R0, [R0] \n\
 /* 0801bc3e */ ADDS R0, 0xC2 @ Add 0xC2 to R0 \n\
@@ -60,13 +60,13 @@ branch_0801bc6a: \n\
 /* 0801bc7e */ LSLS R2, R2, 0x2 \n\
 /* 0801bc80 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0801bc82 */ LDR R0, [R0] \n\
-/* 0801bc84 */ BL func_0800b3e8 \n\
+/* 0801bc84 */ BL listbox_hide_sel_sprite \n\
 /* 0801bc88 */ LDR R0, [R4] \n\
 /* 0801bc8a */ MOVS R1, 0xD8 @ Set R1 to 0xD8 \n\
 /* 0801bc8c */ LSLS R1, R1, 0x2 \n\
 /* 0801bc8e */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801bc90 */ LDR R0, [R0] \n\
-/* 0801bc92 */ BL func_0800b3c8 \n\
+/* 0801bc92 */ BL listbox_show_sel_sprite \n\
 /* 0801bc96 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801bc98 */ BL func_0801c6b8 \n\
 /* 0801bc9c */ LDR R0, [R4] \n\

@@ -62,7 +62,7 @@ branch_0801d762: \n\
 /* 0801d762 */ LDR R6, =D_030046a4 \n\
 /* 0801d764 */ LDR R0, [R6] \n\
 /* 0801d766 */ LDR R0, [R0, 0x4] \n\
-/* 0801d768 */ BL func_0800b118 \n\
+/* 0801d768 */ BL listbox_get_sel_item \n\
 /* 0801d76c */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0801d76e */ BL func_0801d204 \n\
 /* 0801d772 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
@@ -103,7 +103,7 @@ branch_0801d7cc: \n\
 /* 0801d7cc */ LDR R0, =D_030046a4 \n\
 /* 0801d7ce */ LDR R0, [R0] \n\
 /* 0801d7d0 */ LDR R0, [R0, 0x4] \n\
-/* 0801d7d2 */ BL func_0800b140 \n\
+/* 0801d7d2 */ BL listbox_scroll_up \n\
 /* 0801d7d6 */ B branch_0801d800 \n\
 \n\
 .ltorg \n\
@@ -112,7 +112,7 @@ branch_0801d7dc: \n\
 /* 0801d7dc */ LDR R0, =D_030046a4 \n\
 /* 0801d7de */ LDR R0, [R0] \n\
 /* 0801d7e0 */ LDR R0, [R0, 0x4] \n\
-/* 0801d7e2 */ BL func_0800b21c \n\
+/* 0801d7e2 */ BL listbox_scroll_down \n\
 /* 0801d7e6 */ B branch_0801d800 \n\
 \n\
 .ltorg \n\
@@ -133,7 +133,7 @@ branch_0801d800: \n\
 /* 0801d800 */ LDR R0, =D_030046a4 \n\
 /* 0801d802 */ LDR R0, [R0] \n\
 /* 0801d804 */ LDR R0, [R0, 0x4] \n\
-/* 0801d806 */ BL func_0800b074 \n\
+/* 0801d806 */ BL update_listbox \n\
 /* 0801d80a */ POP {R4-R6} \n\
 /* 0801d80c */ POP {R0} \n\
 /* 0801d80e */ BX R0 \n\

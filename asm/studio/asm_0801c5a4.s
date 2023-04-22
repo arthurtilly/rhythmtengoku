@@ -12,7 +12,7 @@ thumb_func_start func_0801c5a4 \n\
 /* 0801c5b0 */ LSLS R7, R7, 0x2 \n\
 /* 0801c5b2 */ ADDS R0, R0, R7 @ Set R0 to R0 + R7 \n\
 /* 0801c5b4 */ LDR R0, [R0] \n\
-/* 0801c5b6 */ BL func_0800b368 \n\
+/* 0801c5b6 */ BL listbox_is_busy \n\
 /* 0801c5ba */ NEGS R1, R0 @ Set R1 to -R0 \n\
 /* 0801c5bc */ ORRS R1, R0 @ Set R1 to R1 | R0 \n\
 /* 0801c5be */ LSRS R4, R1, 0x1F \n\
@@ -22,7 +22,7 @@ thumb_func_start func_0801c5a4 \n\
 /* 0801c5c6 */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 0801c5c8 */ ADD R0, R8 @ Add R8 to R0 \n\
 /* 0801c5ca */ LDR R0, [R0] \n\
-/* 0801c5cc */ BL func_0800b368 \n\
+/* 0801c5cc */ BL listbox_is_busy \n\
 /* 0801c5d0 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801c5d2 */ BEQ branch_0801c5d6 \n\
 /* 0801c5d4 */ MOVS R4, 0x1 @ Set R4 to 0x1 \n\
@@ -33,7 +33,7 @@ branch_0801c5d6: \n\
 /* 0801c5da */ LSLS R6, R6, 0x2 \n\
 /* 0801c5dc */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 0801c5de */ LDR R0, [R0] \n\
-/* 0801c5e0 */ BL func_0800b368 \n\
+/* 0801c5e0 */ BL listbox_is_busy \n\
 /* 0801c5e4 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801c5e6 */ BEQ branch_0801c5ea \n\
 /* 0801c5e8 */ MOVS R4, 0x1 @ Set R4 to 0x1 \n\

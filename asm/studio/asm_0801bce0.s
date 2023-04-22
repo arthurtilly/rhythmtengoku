@@ -12,7 +12,7 @@ thumb_func_start func_0801bce0 \n\
 /* 0801bcec */ LSLS R1, R1, 0x2 \n\
 /* 0801bcee */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801bcf0 */ LDR R0, [R0] \n\
-/* 0801bcf2 */ BL func_0800b368 \n\
+/* 0801bcf2 */ BL listbox_is_busy \n\
 /* 0801bcf6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801bcf8 */ BNE branch_0801bd2c \n\
 /* 0801bcfa */ BL studio_scene_can_receive_inputs \n\
@@ -78,7 +78,7 @@ branch_0801bd56: \n\
 /* 0801bd5c */ LSLS R2, R2, 0x2 \n\
 /* 0801bd5e */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0801bd60 */ LDR R0, [R0] \n\
-/* 0801bd62 */ BL func_0800b118 \n\
+/* 0801bd62 */ BL listbox_get_sel_item \n\
 /* 0801bd66 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801bd68 */ BNE branch_0801bdfc \n\
 /* 0801bd6a */ BL func_0801bb24 \n\
@@ -104,7 +104,7 @@ branch_0801bd9c: \n\
 /* 0801bda0 */ LSLS R3, R3, 0x2 \n\
 /* 0801bda2 */ ADDS R0, R0, R3 @ Set R0 to R0 + R3 \n\
 /* 0801bda4 */ LDR R0, [R0] \n\
-/* 0801bda6 */ BL func_0800b118 \n\
+/* 0801bda6 */ BL listbox_get_sel_item \n\
 /* 0801bdaa */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0801bdac */ LDR R0, =D_030046a8 \n\
 /* 0801bdae */ LDR R0, [R0] \n\
@@ -143,7 +143,7 @@ branch_0801bdfc: \n\
 /* 0801be02 */ LSLS R5, R5, 0x2 \n\
 /* 0801be04 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 0801be06 */ LDR R0, [R0] \n\
-/* 0801be08 */ BL func_0800b118 \n\
+/* 0801be08 */ BL listbox_get_sel_item \n\
 /* 0801be0c */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
 /* 0801be0e */ BNE branch_0801be78 \n\
 /* 0801be10 */ LDR R0, [R4] \n\
@@ -159,13 +159,13 @@ branch_0801bdfc: \n\
 /* 0801be26 */ LDR R0, [R4] \n\
 /* 0801be28 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
 /* 0801be2a */ LDR R0, [R0] \n\
-/* 0801be2c */ BL func_0800b3e8 \n\
+/* 0801be2c */ BL listbox_hide_sel_sprite \n\
 /* 0801be30 */ LDR R0, [R4] \n\
 /* 0801be32 */ MOVS R2, 0xDA @ Set R2 to 0xDA \n\
 /* 0801be34 */ LSLS R2, R2, 0x2 \n\
 /* 0801be36 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0801be38 */ LDR R0, [R0] \n\
-/* 0801be3a */ BL func_0800b3c8 \n\
+/* 0801be3a */ BL listbox_show_sel_sprite \n\
 /* 0801be3e */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0801be40 */ BL func_0801c6b8 \n\
 /* 0801be44 */ LDR R0, [R4] \n\
@@ -197,7 +197,7 @@ branch_0801be78: \n\
 /* 0801be7e */ LSLS R6, R6, 0x2 \n\
 /* 0801be80 */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 0801be82 */ LDR R0, [R0] \n\
-/* 0801be84 */ BL func_0800b118 \n\
+/* 0801be84 */ BL listbox_get_sel_item \n\
 /* 0801be88 */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\
 /* 0801be8a */ BNE branch_0801bef0 \n\
 /* 0801be8c */ LDR R1, =s_menu_kettei2_seqData \n\
@@ -206,17 +206,17 @@ branch_0801be78: \n\
 /* 0801be94 */ LDR R0, [R5] \n\
 /* 0801be96 */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 0801be98 */ LDR R0, [R0] \n\
-/* 0801be9a */ BL func_0800b3e8 \n\
+/* 0801be9a */ BL listbox_hide_sel_sprite \n\
 /* 0801be9e */ LDR R0, [R5] \n\
 /* 0801bea0 */ MOVS R4, 0xD8 @ Set R4 to 0xD8 \n\
 /* 0801bea2 */ LSLS R4, R4, 0x2 \n\
 /* 0801bea4 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0801bea6 */ LDR R0, [R0] \n\
-/* 0801bea8 */ BL func_0800b3c8 \n\
+/* 0801bea8 */ BL listbox_show_sel_sprite \n\
 /* 0801beac */ LDR R0, [R5] \n\
 /* 0801beae */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0801beb0 */ LDR R0, [R0] \n\
-/* 0801beb2 */ BL func_0800b118 \n\
+/* 0801beb2 */ BL listbox_get_sel_item \n\
 /* 0801beb6 */ LDR R1, [R5] \n\
 /* 0801beb8 */ LDR R3, =0x48e \n\
 /* 0801beba */ ADDS R2, R1, R3 @ Set R2 to R1 + R3 \n\
@@ -249,7 +249,7 @@ branch_0801bef0: \n\
 /* 0801bef0 */ LDR R0, [R5] \n\
 /* 0801bef2 */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 0801bef4 */ LDR R0, [R0] \n\
-/* 0801bef6 */ BL func_0800b118 \n\
+/* 0801bef6 */ BL listbox_get_sel_item \n\
 /* 0801befa */ CMP R0, 0x3 @ Compare R0 and 0x3 \n\
 /* 0801befc */ BEQ branch_0801bf00 \n\
 /* 0801befe */ B branch_0801c01c \n\
@@ -260,7 +260,7 @@ branch_0801bf00: \n\
 /* 0801bf04 */ LSLS R7, R7, 0x2 \n\
 /* 0801bf06 */ ADDS R0, R0, R7 @ Set R0 to R0 + R7 \n\
 /* 0801bf08 */ LDR R0, [R0] \n\
-/* 0801bf0a */ BL func_0800b118 \n\
+/* 0801bf0a */ BL listbox_get_sel_item \n\
 /* 0801bf0e */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0801bf10 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0801bf12 */ LDR R6, =D_030046a8 \n\
@@ -331,13 +331,13 @@ branch_0801bf9c: \n\
 /* 0801bfae */ LSLS R1, R1, 0x2 \n\
 /* 0801bfb0 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801bfb2 */ LDR R0, [R0] \n\
-/* 0801bfb4 */ BL func_0800b3e8 \n\
+/* 0801bfb4 */ BL listbox_hide_sel_sprite \n\
 /* 0801bfb8 */ LDR R0, [R4] \n\
 /* 0801bfba */ MOVS R2, 0xD8 @ Set R2 to 0xD8 \n\
 /* 0801bfbc */ LSLS R2, R2, 0x2 \n\
 /* 0801bfbe */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0801bfc0 */ LDR R0, [R0] \n\
-/* 0801bfc2 */ BL func_0800b3c8 \n\
+/* 0801bfc2 */ BL listbox_show_sel_sprite \n\
 /* 0801bfc6 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801bfc8 */ BL func_0801c6b8 \n\
 /* 0801bfcc */ LDR R0, =s_studio_bgm_seqData \n\
@@ -363,7 +363,7 @@ branch_0801bff4: \n\
 /* 0801bffa */ LSLS R1, R1, 0x2 \n\
 /* 0801bffc */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801bffe */ LDR R0, [R0] \n\
-/* 0801c000 */ BL func_0800b140 \n\
+/* 0801c000 */ BL listbox_scroll_up \n\
 /* 0801c004 */ B branch_0801c01c \n\
 \n\
 .ltorg \n\
@@ -375,7 +375,7 @@ branch_0801c00c: \n\
 /* 0801c012 */ LSLS R2, R2, 0x2 \n\
 /* 0801c014 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0801c016 */ LDR R0, [R0] \n\
-/* 0801c018 */ BL func_0800b21c \n\
+/* 0801c018 */ BL listbox_scroll_down \n\
  \n\
 branch_0801c01c: \n\
 /* 0801c01c */ ADD SP, 0x4 \n\

@@ -12,7 +12,7 @@ thumb_func_start func_0801b858 \n\
 /* 0801b864 */ LSLS R1, R1, 0x2 \n\
 /* 0801b866 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b868 */ LDR R0, [R0] \n\
-/* 0801b86a */ BL func_0800b368 \n\
+/* 0801b86a */ BL listbox_is_busy \n\
 /* 0801b86e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801b870 */ BNE branch_0801b8a4 \n\
 /* 0801b872 */ BL studio_scene_can_receive_inputs \n\
@@ -77,7 +77,7 @@ branch_0801b8cc: \n\
 /* 0801b8d6 */ LSLS R1, R1, 0x2 \n\
 /* 0801b8d8 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b8da */ LDR R0, [R0] \n\
-/* 0801b8dc */ BL func_0800b118 \n\
+/* 0801b8dc */ BL listbox_get_sel_item \n\
 /* 0801b8e0 */ LDR R1, =0x28f \n\
 /* 0801b8e2 */ ADDS R4, R4, R1 @ Set R4 to R4 + R1 \n\
 /* 0801b8e4 */ ADDS R4, R4, R0 @ Set R4 to R4 + R0 \n\
@@ -156,13 +156,13 @@ branch_0801b974: \n\
 /* 0801b982 */ LSLS R1, R1, 0x2 \n\
 /* 0801b984 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b986 */ LDR R0, [R0] \n\
-/* 0801b988 */ BL func_0800b3e8 \n\
+/* 0801b988 */ BL listbox_hide_sel_sprite \n\
 /* 0801b98c */ LDR R0, [R4] \n\
 /* 0801b98e */ MOVS R1, 0xDC @ Set R1 to 0xDC \n\
 /* 0801b990 */ LSLS R1, R1, 0x2 \n\
 /* 0801b992 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b994 */ LDR R0, [R0] \n\
-/* 0801b996 */ BL func_0800b3c8 \n\
+/* 0801b996 */ BL listbox_show_sel_sprite \n\
 /* 0801b99a */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0801b99c */ BL func_0801c6b8 \n\
 /* 0801b9a0 */ LDR R0, [R4] \n\
@@ -182,7 +182,7 @@ branch_0801b9b8: \n\
 /* 0801b9be */ LSLS R1, R1, 0x2 \n\
 /* 0801b9c0 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b9c2 */ LDR R0, [R0] \n\
-/* 0801b9c4 */ BL func_0800b140 \n\
+/* 0801b9c4 */ BL listbox_scroll_up \n\
 /* 0801b9c8 */ B branch_0801b9e0 \n\
 \n\
 .ltorg \n\
@@ -194,7 +194,7 @@ branch_0801b9d0: \n\
 /* 0801b9d6 */ LSLS R1, R1, 0x2 \n\
 /* 0801b9d8 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b9da */ LDR R0, [R0] \n\
-/* 0801b9dc */ BL func_0800b21c \n\
+/* 0801b9dc */ BL listbox_scroll_down \n\
  \n\
 branch_0801b9e0: \n\
 /* 0801b9e0 */ ADD SP, 0x4 \n\

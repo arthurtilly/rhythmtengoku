@@ -16,7 +16,7 @@ thumb_func_start studio_scene_can_receive_inputs \n\
 /* 0801c8cc */ LSLS R2, R2, 0x2 \n\
 /* 0801c8ce */ ADDS R0, R1, R2 @ Set R0 to R1 + R2 \n\
 /* 0801c8d0 */ LDR R0, [R0] \n\
-/* 0801c8d2 */ BL func_0800b368 \n\
+/* 0801c8d2 */ BL listbox_is_busy \n\
 /* 0801c8d6 */ NEGS R1, R0 @ Set R1 to -R0 \n\
 /* 0801c8d8 */ ORRS R1, R0 @ Set R1 to R1 | R0 \n\
 /* 0801c8da */ LSRS R4, R1, 0x1F \n\
@@ -25,7 +25,7 @@ thumb_func_start studio_scene_can_receive_inputs \n\
 /* 0801c8e0 */ LSLS R1, R1, 0x2 \n\
 /* 0801c8e2 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801c8e4 */ LDR R0, [R0] \n\
-/* 0801c8e6 */ BL func_0800b368 \n\
+/* 0801c8e6 */ BL listbox_is_busy \n\
 /* 0801c8ea */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801c8ec */ BEQ branch_0801c8f0 \n\
 /* 0801c8ee */ MOVS R4, 0x1 @ Set R4 to 0x1 \n\
@@ -36,7 +36,7 @@ branch_0801c8f0: \n\
 /* 0801c8f4 */ LSLS R2, R2, 0x2 \n\
 /* 0801c8f6 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0801c8f8 */ LDR R0, [R0] \n\
-/* 0801c8fa */ BL func_0800b368 \n\
+/* 0801c8fa */ BL listbox_is_busy \n\
 /* 0801c8fe */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801c900 */ BEQ branch_0801c904 \n\
 /* 0801c902 */ MOVS R4, 0x1 @ Set R4 to 0x1 \n\

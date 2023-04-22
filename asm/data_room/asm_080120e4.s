@@ -76,18 +76,18 @@ branch_0801211e: \n\
 /* 08012176 */ MOVS R1, 0xA @ Set R1 to 0xA \n\
 /* 08012178 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 0801217a */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\
-/* 0801217c */ BL func_0800aeb4 \n\
+/* 0801217c */ BL create_new_listbox \n\
 /* 08012180 */ LDR R4, =D_030046a4 \n\
 /* 08012182 */ LDR R1, [R4] \n\
 /* 08012184 */ STR R0, [R1, 0x4] \n\
 /* 08012186 */ LDR R1, =func_08012090 \n\
 /* 08012188 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0801218a */ BL func_0800b30c \n\
+/* 0801218a */ BL listbox_run_func_on_scroll \n\
 /* 0801218e */ LDR R0, [R4] \n\
 /* 08012190 */ LDR R0, [R0, 0x4] \n\
 /* 08012192 */ LDR R1, =func_08012084 \n\
 /* 08012194 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08012196 */ BL func_0800b31c \n\
+/* 08012196 */ BL listbox_run_func_on_finish \n\
 /* 0801219a */ LDR R0, =D_03005380 \n\
 /* 0801219c */ LDR R0, [R0] \n\
 /* 0801219e */ LDR R1, =anim_data_room_user_stare \n\

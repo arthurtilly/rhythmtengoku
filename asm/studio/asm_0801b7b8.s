@@ -17,14 +17,14 @@ thumb_func_start func_0801b7b8 \n\
 /* 0801b7d2 */ LSLS R1, R1, 0x2 \n\
 /* 0801b7d4 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b7d6 */ LDR R0, [R0] \n\
-/* 0801b7d8 */ BL func_0800b118 \n\
+/* 0801b7d8 */ BL listbox_get_sel_item \n\
 /* 0801b7dc */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 0801b7de */ LDR R0, [R5] \n\
 /* 0801b7e0 */ MOVS R1, 0xDA @ Set R1 to 0xDA \n\
 /* 0801b7e2 */ LSLS R1, R1, 0x2 \n\
 /* 0801b7e4 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801b7e6 */ LDR R0, [R0] \n\
-/* 0801b7e8 */ BL func_0800b118 \n\
+/* 0801b7e8 */ BL listbox_get_sel_item \n\
 /* 0801b7ec */ BL studio_set_current_kit \n\
 /* 0801b7f0 */ LDR R4, =D_089d49d4 \n\
 /* 0801b7f2 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\

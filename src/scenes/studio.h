@@ -14,12 +14,12 @@ struct StudioSceneInfo {
     /* 0x358 */
     u32 unk358;
     u8 menuState;
-    struct ListboxPrinter *songsList;
-    u32 unk364;
-    struct ListboxPrinter *drumsList;
-    u32 unk36C;
-    struct ListboxPrinter *optionsList;
-    u32 unk374;
+    struct Listbox *songsList;
+    u8 unk364;
+    struct Listbox *drumsList;
+    u8 unk36C;
+    struct Listbox *optionsList;
+    u8 unk374;
     u32 null378;
     u32 null37C;
     /* 0x380 */
@@ -29,6 +29,7 @@ struct StudioSceneInfo {
     u8 padding[0x100];
     /* 0x48C */
     s16 itemMoveHighlight;
+    s16 selectedItem;
     struct DrumReplaySaveGraph *replayMemoryGraph;
     void *replaySeq;
     u8 replayDrumKit;
@@ -119,6 +120,10 @@ enum StudioDrumKitsEnum {
 
 
 // Sound Effects:
+extern struct SequenceData s_studio_bgm_seqData;
+extern struct SequenceData s_menu_kettei2_seqData;
+extern struct SequenceData s_menu_cancel3_seqData;
+extern struct SequenceData s_menu_error_seqData;
 
 
 // Scene Data:
@@ -139,6 +144,7 @@ extern struct GraphicsTable studio_gfx_table[];
 extern struct CompressedGraphics *studio_buffered_textures[];
 extern u16 D_089d84a0[];
 extern u8 D_089d84a6[];
+extern struct BeatScript script_scene_studio_exit[];
 
 
 // Functions:
@@ -152,11 +158,11 @@ extern u8 D_089d84a6[];
 // extern ? func_0801ae34(?);
 // extern ? func_0801aea4(?);
 // extern ? func_0801aed0(?);
-// extern ? func_0801af64(?);
-// extern ? func_0801aff8(?);
-// extern ? func_0801b0b0(?);
-// extern ? func_0801b138(?);
-// extern ? func_0801b1d8(?);
+extern const char *func_0801af64();
+extern s16 func_0801aff8();
+extern void func_0801b0b0();
+extern void func_0801b138(s32 arg, s32 index, s32 position);
+extern void func_0801b1d8(void);
 // extern ? func_0801b498(?);
 // extern ? func_0801b4b4(?);
 // extern ? func_0801b4f4(?);
