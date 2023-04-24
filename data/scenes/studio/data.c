@@ -91,9 +91,7 @@ const char text_studio_warning_delete[] =
 // [D_089d8444] ?
 u8 D_089d8444[] = {
     /* 0x00 */ 4,
-    /* 0x01 */ 4,
-    /* 0x02 */ 0,
-    /* 0x03 */ 0
+    /* 0x01 */ 4
 };
 
 

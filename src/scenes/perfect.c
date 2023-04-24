@@ -69,7 +69,7 @@ void perfect_scene_start(void *sceneVar, s32 dataArg) {
         if (!D_030046a8->data.campaignsCleared[gPerfectInfo->campaignID]) {
             switch (giftType) {
                 case CAMPAIGN_GIFT_SONG:
-                    func_0801adf0(giftID, -1, 1, 0);
+                    save_studio_song(giftID, -1, 1, 0);
                     break;
 
                 case CAMPAIGN_GIFT_DRUM_KIT:
@@ -153,7 +153,7 @@ void unlock_all_unassigned_campaign_gift_songs(void) {
     }
 
     for (studioSongs = unassigned_campaign_gift_songs; *studioSongs >= 0; studioSongs++) {
-        func_0801adf0(*studioSongs, -1, 1, 0);
+        save_studio_song(*studioSongs, -1, 1, 0);
     }
 }
 

@@ -64,17 +64,17 @@ struct Listbox {
     u8 unk12;
     u8 palette;
     u8 colors;
-    s16 unk16;
-    s16 unk18;
-    s16 unk1A;
-    s16 x1, y1;
-    s16 unk20;
-    s16 x2, y2;
+    s16 scrollIndex;
+    s16 listX;
+    s16 listY;
+    s16 textX, textY;
+    s16 velY;
+    s16 itemsX, itemsY;
     s16 selItem;
-    s16 unk28;
+    s16 totalItems;
     s16 selSprite;
-    s16 unk2C;
-    s16 unk2E;
+    s16 selMinLine;
+    s16 selMaxLine;
     s16 selLine;
     const char *(*getString)();
     s16 (*getSprite)();
@@ -171,12 +171,12 @@ extern s16 text_printer_get_line_sprite(struct TextPrinter *textPrinter, s32 lin
 extern void text_printer_set_line_spacing(struct TextPrinter *textPrinter, u32 lineSpacing); // Set Line Spacing
 extern void text_printer_set_shadow_colors(struct TextPrinter *textPrinter, s32 shadowColors); // Set Shadow Colors
 
-extern s32 func_0800ae1c(struct Listbox *listbox);
+extern s32 listbox_get_y(struct Listbox *listbox);
 extern void func_0800ae3c(struct Listbox *listbox, u32 palette);
 extern void func_0800ae88(struct Listbox *listbox);
 extern struct Listbox *create_new_listbox(u16 memID, u32 maxLines, u32 maxWidth, u32 arg3, u32 arg4, u32 palette,
                                           u32 colors, s32 x, s32 y, u32 z, u32 lineSpacing, u32 selectionItem,
-                                          s32 arg12, struct Animation *selectionAnim, u32 arg14, u32 arg15,
+                                          s32 totalItems, struct Animation *selectionAnim, u32 arg14, u32 selMaxLine,
                                           u32 selectionLine, const char *getString(), s16 getSprite());
 extern void update_listbox(struct Listbox *listbox);
 extern void delete_listbox(struct Listbox *listbox);
@@ -189,10 +189,10 @@ extern void listbox_run_func_on_scroll(struct Listbox *listbox, void onScroll(),
 extern void listbox_run_func_on_finish(struct Listbox *listbox, void onFinish(), s32 onFinishArg);
 // extern ? func_0800b32c(?);
 extern s32 listbox_is_busy(struct Listbox *listbox);
-// extern ? func_0800b384(?);
+extern void listbox_offset_x_y(struct Listbox *listbox, s16 x, s16 y);
 extern void listbox_show_sel_sprite(struct Listbox *listbox);
 extern void listbox_hide_sel_sprite(struct Listbox *listbox);
-extern void func_0800b408(struct Listbox *listbox, s16 sprite, u32);
+extern void listbox_link_sprite_x_y_to_line(struct Listbox *listbox, s16 sprite, s32);
 extern void func_0800b454(struct Listbox *listbox, s32);
 extern void listbox_set_sel_sprite(struct Listbox *listbox, struct Animation *selectionAnim);
 extern s16 listbox_get_sel_sprite(struct Listbox *listbox);

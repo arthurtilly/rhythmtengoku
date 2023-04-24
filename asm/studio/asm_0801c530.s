@@ -18,8 +18,8 @@ thumb_func_start func_0801c530 \n\
 /* 0801c54a */ BL listbox_get_sel_line \n\
 /* 0801c54e */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0801c550 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0801c552 */ BL func_0801c51c \n\
-/* 0801c556 */ LDR R4, =sListOptionIndex \n\
+/* 0801c552 */ BL studio_set_current_song \n\
+/* 0801c556 */ LDR R4, =sListOptionSelItem \n\
 /* 0801c558 */ LDR R0, [R5] \n\
 /* 0801c55a */ MOVS R1, 0xDC @ Set R1 to 0xDC \n\
 /* 0801c55c */ LSLS R1, R1, 0x2 \n\
@@ -27,7 +27,7 @@ thumb_func_start func_0801c530 \n\
 /* 0801c560 */ LDR R0, [R0] \n\
 /* 0801c562 */ BL listbox_get_sel_item \n\
 /* 0801c566 */ STRB R0, [R4] \n\
-/* 0801c568 */ LDR R6, =sListDrumIndex \n\
+/* 0801c568 */ LDR R6, =sListDrumSelItem \n\
 /* 0801c56a */ LDR R0, [R5] \n\
 /* 0801c56c */ MOVS R4, 0xDA @ Set R4 to 0xDA \n\
 /* 0801c56e */ LSLS R4, R4, 0x2 \n\
@@ -35,7 +35,7 @@ thumb_func_start func_0801c530 \n\
 /* 0801c572 */ LDR R0, [R0] \n\
 /* 0801c574 */ BL listbox_get_sel_item \n\
 /* 0801c578 */ STRB R0, [R6] \n\
-/* 0801c57a */ LDR R6, =sListDrumPosition \n\
+/* 0801c57a */ LDR R6, =sListDrumSelLine \n\
 /* 0801c57c */ LDR R0, [R5] \n\
 /* 0801c57e */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0801c580 */ LDR R0, [R0] \n\

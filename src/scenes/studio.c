@@ -22,99 +22,369 @@ enum StudioListsEnum {
     DRUMS_LIST
 };
 
-enum StudioSongsListEventsEnum {
-    SONGS_LIST_DO_NOTHING,
-    SONGS_LIST_CONFIRM,
-    SONGS_LIST_SCROLL_UP,
-    SONGS_LIST_SCROLL_DOWN,
-    SONGS_LIST_EXIT,
-    SONGS_LIST_MOVE_ITEM,
-    SONGS_LIST_CHECK_ITEM
+enum StudioMenuEventsEnum {
+    LIST_EV_NONE,
+    LIST_EV_CONFIRM,
+    LIST_EV_SCROLL_UP,
+    LIST_EV_SCROLL_DOWN,
+    LIST_EV_CANCEL,
+    LIST_EV_MOVE_ITEM,
+    LIST_EV_CHECK_ITEM
+};
+
+enum StudioWarningOptionsEnum {
+    WARNING_OPT_DISMISS,
+    WARNING_OPT_Y,
+    WARNING_OPT_N
 };
 
 
 static u8 sCurrentDrumKit; // Selected Drum Kit ID
-static u8 sListSongIndex; // Song Item Index (Total)
-static s8 sListSongPosition; // Song Item Index (Screen)
-static u8 sListOptionIndex; // Option Item Index
-static u8 sListDrumIndex; // Drum Kit Item Index (Total)
-static u8 sListDrumPosition; // Drum Kit Item Index (Screen)
-static s32 D_0300154c; // unknown type
+static u8 sListSongSelItem; // Song Item Index (Total)
+static s8 sListSongSelLine; // Song Item Index (Screen)
+static u8 sListOptionSelItem; // Option Item Index
+static u8 sListDrumSelItem; // Drum Kit Item Index (Total)
+static u8 sListDrumSelLine; // Drum Kit Item Index (Screen)
+static s32 D_0300154c; // Studio Drumming Mode?
+
+extern struct Scene D_089d4ba4; // Studio Drumming - Listening
+extern struct Scene D_089d49d4; // Studio Drumming - Drumming
 
 
 /* STUDIO */
 
 
-#include "asm/studio/asm_0801a9c8.s"
-
-#include "asm/studio/asm_0801aa04.s"
-
-#include "asm/studio/asm_0801aaa0.s"
-
-#include "asm/studio/asm_0801ac38.s"
-
-#include "asm/studio/asm_0801ad44.s"
-
-#include "asm/studio/asm_0801ad9c.s"
-
-#include "asm/studio/asm_0801adf0.s"
-
-#include "asm/studio/asm_0801ae34.s"
-
-#include "asm/studio/asm_0801aea4.s"
-
-#include "asm/studio/asm_0801aed0.s"
-
-#include "asm/studio/asm_0801af64.s"
-
-#include "asm/studio/asm_0801aff8.s"
-
-#include "asm/studio/asm_0801b0b0.s"
+// Warning Notice - On-Finish Function
+void studio_warning_show(void) {
+    scene_show_bg_layer(BG_LAYER_0);
+    func_0804d770(D_03005380, gStudioInfo->warningAdvIcon, TRUE);
+    gStudioInfo->warningIsRendering = FALSE;
+}
 
 
-// Init. Song List
-void func_0801b138(s32 arg, s32 index, s32 position) {
+// Warning Notice - Init.
+void studio_warning_init(void) {
+    gStudioInfo->warningAdvIcon = func_0804d160(D_03005380, anim_studio_warning_options_y, 0, 120, 120, 0x800, 1, 0, 0x8000);
+    gStudioInfo->warningPrinter = text_printer_create_new(get_current_mem_id(), 2, 160, 10);
+    text_printer_set_x_y(gStudioInfo->warningPrinter, 40, 84);
+    text_printer_set_layer(gStudioInfo->warningPrinter, 0x800);
+    text_printer_center_by_content(gStudioInfo->warningPrinter, TRUE);
+    text_printer_run_func_on_finish(gStudioInfo->warningPrinter, studio_warning_show, 0);
+}
+
+
+// Warning Notice - Update
+void studio_warning_update(void) {
+    s32 event = 0;
+
+    if (!gStudioInfo->warningIsActive) {
+        return;
+    }
+
+    if (gStudioInfo->warningIsRendering) {
+        text_printer_update(gStudioInfo->warningPrinter);
+        return;
+    }
+
+    switch (gStudioInfo->warningOption) {
+        case WARNING_OPT_DISMISS:
+            if (D_03004afc & (A_BUTTON | B_BUTTON)) {
+                play_sound_in_player(MUSIC_PLAYER_2, gStudioInfo->warningSfx);
+                event = 1;
+            }
+            break;
+
+        case WARNING_OPT_Y:
+            if (D_03004afc & DPAD_RIGHT) {
+                play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cursor1_seqData);
+                gStudioInfo->warningOption = WARNING_OPT_N;
+                func_0804d8f8(D_03005380, gStudioInfo->warningAdvIcon, anim_studio_warning_options_n, 0, 1, 0, 0);
+            } else if (D_03004afc & A_BUTTON) {
+                play_sound_in_player(MUSIC_PLAYER_2, gStudioInfo->warningSfx);
+                event = 1;
+            } else if (D_03004afc & B_BUTTON) {
+                play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+                event = 3;
+            }
+            break;
+
+        case WARNING_OPT_N:
+            if (D_03004afc & DPAD_LEFT) {
+                play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cursor1_seqData);
+                gStudioInfo->warningOption = WARNING_OPT_Y;
+                func_0804d8f8(D_03005380, gStudioInfo->warningAdvIcon, anim_studio_warning_options_y, 0, 1, 0, 0);
+            } else if (D_03004afc & A_BUTTON) {
+                play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+                event = 2;
+            } else if (D_03004afc & B_BUTTON) {
+                play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+                event = 3;
+            }
+            break;
+    }
+
+    if (event != 0) {
+        studio_warning_remove();
+
+        if (gStudioInfo->warningEvent != NULL) {
+            gStudioInfo->warningEvent(event, gStudioInfo->warningEventArg);
+        }
+    }
+}
+
+
+// Warning Notice - Create
+void studio_warning_create(u32 options, const char *dialogue, void eventFunc(s32, s32), s32 eventArg, struct SequenceData *sfx) {
+    switch (options) {
+        case WARNING_OPT_DISMISS:
+            func_0804d8f8(D_03005380, gStudioInfo->warningAdvIcon, anim_studio_text_adv_icon, 0, 1, 0, 0);
+            break;
+
+        case WARNING_OPT_Y:
+            func_0804d8f8(D_03005380, gStudioInfo->warningAdvIcon, anim_studio_warning_options_y, 0, 1, 0, 0);
+            break;
+
+        case WARNING_OPT_N:
+            func_0804d8f8(D_03005380, gStudioInfo->warningAdvIcon, anim_studio_warning_options_n, 0, 1, 0, 0);
+            break;
+    }
+
+    text_printer_set_string(gStudioInfo->warningPrinter, dialogue);
+    gStudioInfo->warningOption = options;
+    gStudioInfo->warningEvent = eventFunc;
+    gStudioInfo->warningEventArg = eventArg;
+    gStudioInfo->warningSfx = sfx;
+    gStudioInfo->warningIsActive = TRUE;
+    gStudioInfo->warningIsRendering = TRUE;
+    gStudioInfo->menuState = 6;
+}
+
+
+// Warning Notice - Remove
+void studio_warning_remove(void) {
+    text_printer_clear(gStudioInfo->warningPrinter);
+    scene_hide_bg_layer(BG_LAYER_0);
+    func_0804d770(D_03005380, gStudioInfo->warningAdvIcon, FALSE);
+    gStudioInfo->warningIsActive = FALSE;
+    gStudioInfo->warningIsRendering = FALSE;
+}
+
+
+// Song Save Data - Unlock Default Songs
+void unlock_default_studio_songs(void) {
+    save_studio_song(STUDIO_SONG_SILENCE, -1, 1, 2);
+    save_studio_song(STUDIO_SONG_TITLE, -1, 1, 0);
+    save_studio_song(STUDIO_SONG_OPENING, -1, 1, 0);
+    save_studio_song(STUDIO_SONG_MAIN_MENU, -1, 1, 0);
+    save_studio_song(STUDIO_SONG_GAME_SELECT_1, -1, 1, 0);
+    save_studio_song(STUDIO_SONG_DATA_ROOM, -1, 1, 0);
+}
+
+
+// Song Save Data - Save
+s32 save_studio_song(s32 song, s32 replay, s32 drumKit, s32 flags) {
+    struct StudioSongData *data;
+    s32 id;
+
+    id = D_030046a8->data.totalSongs;
+
+    if (id >= 55) {
+        return -1;
+    }
+
+    data = &D_030046a8->data.studioSongs[id];
+    data->songID = song;
+    data->replayID = replay;
+    data->drumKitID = drumKit;
+    data->unk3 = flags;
+    D_030046a8->data.totalSongs++;
+
+    return id;
+}
+
+
+// Song Save Data - Swap
+void swap_studio_songs(s32 id1, s32 id2) {
+    struct StudioSongData *data1, *data2;
+    struct StudioSongData temp;
+
+    data1 = &D_030046a8->data.studioSongs[id1];
+    data2 = &D_030046a8->data.studioSongs[id2];
+
+    temp.songID = data1->songID;
+    temp.replayID = data1->replayID;
+    temp.drumKitID = data1->drumKitID;
+    temp.unk3 = data1->unk3;
+
+    data1->songID = data2->songID;
+    data1->replayID = data2->replayID;
+    data1->drumKitID = data2->drumKitID;
+    data1->unk3 = data2->unk3;
+
+    data2->songID = temp.songID;
+    data2->replayID = temp.replayID;
+    data2->drumKitID = temp.drumKitID;
+    data2->unk3 = temp.unk3;
+}
+
+
+// Song Save Data - Move
+void move_studio_song(s32 id, s32 newIndex) {
+    if (id > newIndex) {
+        while (id > newIndex) {
+            swap_studio_songs(id, id - 1);
+            id--;
+        }
+    } else {
+        while (id < newIndex) {
+            swap_studio_songs(id, id + 1);
+            id++;
+        }
+    }
+}
+
+
+// Song Save Data - Delete
+void delete_studio_song(s32 id) {
+    s32 totalSongs, replay;
+    u32 i;
+
+    totalSongs = D_030046a8->data.totalSongs;
+    replay = D_030046a8->data.studioSongs[id].replayID;
+
+    if (replay >= 0) {
+        delete_saved_replay(&D_030046a8->data.drumReplaysAlloc, replay);
+    }
+
+    for (i = id; i < (totalSongs - 1); i++) {
+        D_030046a8->data.studioSongs[i].songID = D_030046a8->data.studioSongs[i+1].songID;
+        D_030046a8->data.studioSongs[i].replayID = D_030046a8->data.studioSongs[i+1].replayID;
+        D_030046a8->data.studioSongs[i].drumKitID = D_030046a8->data.studioSongs[i+1].drumKitID;
+        D_030046a8->data.studioSongs[i].unk3 = D_030046a8->data.studioSongs[i+1].unk3;
+    }
+
+    D_030046a8->data.totalSongs--;
+}
+
+
+// Song List - Get String
+const char *studio_song_list_get_string(s32 line) {
+    struct StudioSongData *songData;
+    struct StudioEntry *songEntry;
+    char numString[0x10];
+
+    if ((line < 0) || (line >= D_030046a8->data.totalSongs)) {
+        return NULL;
+    }
+
+    strint(numString, line + 1);
+    memcpy(gStudioInfo->string, text_studio_song_pad_14px, 5);
+    songData = &D_030046a8->data.studioSongs[line];
+    songEntry = &studio_song_table[songData->songID];
+
+    if (songEntry->shortTitle != NULL) {
+        strcat(gStudioInfo->string, songEntry->shortTitle);
+    } else {
+        strcat(gStudioInfo->string, songEntry->fullTitle);
+    }
+
+    return gStudioInfo->string;
+}
+
+
+// Song List - Get Sprite
+s16 studio_song_list_get_sprite(s32 line) {
+    struct StudioSongData *songData;
+
+    if ((line < 0) || (line >= D_030046a8->data.totalSongs)) {
+        return -1;
+    }
+
+    switch (D_030046a8->data.studioSongs[line].unk3 & 3u) {
+        case 0:
+            return func_0804d160(D_03005380, anim_studio_item_marker_check, 0, 64, 64, 0, 0, 0, 0);
+
+        case 1:
+            return func_0804d160(D_03005380, anim_studio_item_markers, D_030046a8->data.studioSongs[line].replayID, 118, 96, 0, 0, 0, 0);
+
+        case 3:
+            return func_0804d160(D_03005380, anim_studio_item_marker_replay, D_030046a8->data.studioSongs[line].replayID, 64, 64, 0, 0, 0, 0);
+
+        default:
+            return -1;
+    }
+}
+
+
+// Song List - On Scroll
+void studio_song_list_on_scroll(s32 arg, u32 current, u32 previous) {
+    s32 isMoveState = FALSE;
+
+    play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cursor1_seqData);
+
+    if (gStudioInfo->menuState == 4) {
+        isMoveState = TRUE;
+    }
+
+    if (gStudioInfo->menuState == 5) {
+        isMoveState = TRUE;
+    }
+
+    if (isMoveState) {
+        if (current == gStudioInfo->selectedItem) {
+            listbox_set_sel_sprite(gStudioInfo->songsList, anim_studio_selection_item);
+        } else if (current < gStudioInfo->selectedItem) {
+            listbox_set_sel_sprite(gStudioInfo->songsList, anim_studio_item_move_above);
+        } else {
+            listbox_set_sel_sprite(gStudioInfo->songsList, anim_studio_item_move_below);
+        }
+    }
+}
+
+
+// Song List - Init.
+void studio_song_list_init(s32 arg, s32 index, s32 position) {
     gStudioInfo->unk364 = arg;
     gStudioInfo->songsList = create_new_listbox(
             get_current_mem_id(),
             10, 128, 32,
             0, 1, 3,
             118, 16, 0x8800,
-            16, index, D_030046a8->data.unkB2,
+            16, index, D_030046a8->data.totalSongs,
             anim_studio_selection_item, 2, 6, position,
-            func_0801af64, func_0801aff8);
-    listbox_run_func_on_scroll(gStudioInfo->songsList, func_0801b0b0, 0);
+            studio_song_list_get_string, studio_song_list_get_sprite);
+    listbox_run_func_on_scroll(gStudioInfo->songsList, studio_song_list_on_scroll, 0);
 }
 
 
-// Update (Menu State 1 - Song List)
-void func_0801b1d8(void) {
+// Song List - Update
+void studio_song_list_update(void) {
     s32 songItem, optionItem;
-    s32 event = SONGS_LIST_DO_NOTHING;
+    s32 event = LIST_EV_NONE;
 
     if (!listbox_is_busy(gStudioInfo->songsList) && studio_scene_can_receive_inputs()) {
         if (D_03004afc & A_BUTTON) {
-            event = SONGS_LIST_CONFIRM;
+            event = LIST_EV_CONFIRM;
         }
         if (D_03004afc & B_BUTTON) {
-            event = SONGS_LIST_EXIT;
+            event = LIST_EV_CANCEL;
         }
         if (D_030053b8 & DPAD_UP) {
-            event = SONGS_LIST_SCROLL_UP;
+            event = LIST_EV_SCROLL_UP;
         }
         if (D_030053b8 & DPAD_DOWN) {
-            event = SONGS_LIST_SCROLL_DOWN;
+            event = LIST_EV_SCROLL_DOWN;
         }
         if (D_03004afc & LEFT_SHOULDER_BUTTON) {
-            event = SONGS_LIST_MOVE_ITEM;
+            event = LIST_EV_MOVE_ITEM;
         }
         if (D_03004afc & RIGHT_SHOULDER_BUTTON) {
-            event = SONGS_LIST_CHECK_ITEM;
+            event = LIST_EV_CHECK_ITEM;
         }
     }
 
     switch (event) {
-        case SONGS_LIST_CONFIRM:
+        case LIST_EV_CONFIRM:
             stop_sound(&s_studio_bgm_seqData);
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
 
@@ -123,13 +393,13 @@ void func_0801b1d8(void) {
             optionItem = listbox_get_sel_item(gStudioInfo->optionsList);
             delete_listbox(gStudioInfo->optionsList);
 
-            if (D_030046a8->data.drumReplayData[songItem].saveID < 0) {
-                func_0801ba74(FALSE, optionItem);
+            if (D_030046a8->data.studioSongs[songItem].replayID < 0) {
+                studio_option_list_init(FALSE, optionItem);
             } else {
                 if (optionItem == OPTION_DELETE) {
                     optionItem = OPTION_LISTEN;
                 }
-                func_0801ba74(TRUE, optionItem);
+                studio_option_list_init(TRUE, optionItem);
             }
 
             listbox_hide_sel_sprite(gStudioInfo->songsList);
@@ -138,38 +408,38 @@ void func_0801b1d8(void) {
             gStudioInfo->menuState = 2;
             break;
 
-        case SONGS_LIST_EXIT:
+        case LIST_EV_CANCEL:
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
             listbox_hide_sel_sprite(gStudioInfo->songsList);
             func_0801d968(script_scene_studio_exit);
-            gStudioInfo->unk358 = 0;
+            gStudioInfo->scriptIsReady = FALSE;
             break;
 
-        case SONGS_LIST_SCROLL_UP:
+        case LIST_EV_SCROLL_UP:
             listbox_scroll_up(gStudioInfo->songsList);
             break;
 
-        case SONGS_LIST_SCROLL_DOWN:
+        case LIST_EV_SCROLL_DOWN:
             listbox_scroll_down(gStudioInfo->songsList);
             break;
 
-        case SONGS_LIST_MOVE_ITEM:
+        case LIST_EV_MOVE_ITEM:
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
             gStudioInfo->selectedItem = listbox_get_sel_item(gStudioInfo->songsList);
-            func_0800b408(gStudioInfo->songsList, gStudioInfo->itemMoveHighlight, gStudioInfo->selectedItem);
+            listbox_link_sprite_x_y_to_line(gStudioInfo->songsList, gStudioInfo->itemMoveHighlight, gStudioInfo->selectedItem);
             func_0804d770(D_03005380, gStudioInfo->itemMoveHighlight, TRUE);
             gStudioInfo->menuState = 4;
             break;
 
-        case SONGS_LIST_CHECK_ITEM:
+        case LIST_EV_CHECK_ITEM:
             songItem = listbox_get_sel_item(gStudioInfo->songsList);
-            if ((D_030046a8->data.drumReplayData[songItem].songID == STUDIO_SONG_SILENCE)
-              && ((D_030046a8->data.drumReplayData[songItem].unk3 & 1) == 0)) {
+            if ((D_030046a8->data.studioSongs[songItem].songID == STUDIO_SONG_SILENCE)
+              && ((D_030046a8->data.studioSongs[songItem].unk3 & 1) == 0)) {
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_error_seqData);
             } else {
-                D_030046a8->data.drumReplayData[songItem].unk3 ^= 2;
+                D_030046a8->data.studioSongs[songItem].unk3 ^= 2;
                 func_0800b454(gStudioInfo->songsList, songItem);
-                if (D_030046a8->data.drumReplayData[songItem].unk3 & 2) {
+                if (D_030046a8->data.studioSongs[songItem].unk3 & 2) {
                     play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
                 } else {
                     play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
@@ -180,53 +450,511 @@ void func_0801b1d8(void) {
 }
 
 
-#include "asm/studio/asm_0801b498.s"
+// Song List - Select Item
+void studio_song_list_select_item(s32 id) {
+    studio_set_current_song(id, clamp_int32(id, 0, 5));
+}
 
-#include "asm/studio/asm_0801b4b4.s"
 
-#include "asm/studio/asm_0801b4f4.s"
+// Song List - Move Item
+void studio_song_list_move_item(s32 prevIndex, s32 newIndex) {
+    s32 first, last;
+    s32 i;
 
-#include "asm/studio/asm_0801b668.s"
+    move_studio_song(prevIndex, newIndex);
 
-#include "asm/studio/asm_0801b6fc.s"
+    if (prevIndex < newIndex) {
+        first = prevIndex;
+        last = newIndex;
+    } else {
+        last = prevIndex;
+        first = newIndex;
+    }
 
-#include "asm/studio/asm_0801b710.s"
+    for (i = first; i <= last; i++) {
+        func_0800b454(gStudioInfo->songsList, i);
+    }
+}
 
-#include "asm/studio/asm_0801b7b8.s"
 
-#include "asm/studio/asm_0801b834.s"
+// Song List - Update (Moving Selected Item)
+void studio_song_list_update_w_selection(void) {
+    s32 songItem;
+    u32 event = LIST_EV_NONE;
 
-#include "asm/studio/asm_0801b858.s"
+    if (!listbox_is_busy(gStudioInfo->songsList) && studio_scene_can_receive_inputs()) {
+        if (D_03004afc & LEFT_SHOULDER_BUTTON) {
+            event = LIST_EV_CONFIRM;
+        }
+        if (D_03004afc & B_BUTTON) {
+            event = LIST_EV_CANCEL;
+        }
+        if (D_030053b8 & DPAD_UP) {
+            event = LIST_EV_SCROLL_UP;
+        }
+        if (D_030053b8 & DPAD_DOWN) {
+            event = LIST_EV_SCROLL_DOWN;
+        }
+    }
 
-#include "asm/studio/asm_0801b9ec.s"
+    switch (event) {
+        case LIST_EV_CONFIRM:
+            songItem = listbox_get_sel_item(gStudioInfo->songsList);
+            if (songItem != gStudioInfo->selectedItem) {
+                studio_song_list_move_item(gStudioInfo->selectedItem, songItem);
+                play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+                func_0804d770(D_03005380, gStudioInfo->itemMoveHighlight, FALSE);
+                listbox_set_sel_sprite(gStudioInfo->songsList, anim_studio_selection_item);
+                gStudioInfo->menuState = 1;
+                break;
+            }
 
-#include "asm/studio/asm_0801ba60.s"
+        case LIST_EV_CANCEL:
+            play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+            func_0804d770(D_03005380, gStudioInfo->itemMoveHighlight, FALSE);
+            listbox_set_sel_sprite(gStudioInfo->songsList, anim_studio_selection_item);
+            gStudioInfo->menuState = 1;
+            break;
 
-#include "asm/studio/asm_0801ba74.s"
+        case LIST_EV_SCROLL_UP:
+            listbox_scroll_up(gStudioInfo->songsList);
+            break;
 
-#include "asm/studio/asm_0801bb24.s"
+        case LIST_EV_SCROLL_DOWN:
+            listbox_scroll_down(gStudioInfo->songsList);
+            break;
+    }
+}
 
-#include "asm/studio/asm_0801bb60.s"
 
-#include "asm/studio/asm_0801bbd4.s"
+// Drum Kit List - Get String
+const char *studio_drum_list_get_string(s32 line) {
+    char numString[0x10];
 
-#include "asm/studio/asm_0801bbe8.s"
+    if ((line < 0) || (line >= 15)) {
+        return NULL;
+    }
 
-#include "asm/studio/asm_0801bc0c.s"
+    strint(numString, line + 1);
+    memcpy(gStudioInfo->string, text_studio_kit_default, 1);
+    strcat(gStudioInfo->string, text_studio_kit_pad_8px);
 
-#include "asm/studio/asm_0801bce0.s"
+    if (D_030046a8->data.drumKitsUnlocked[line]) {
+        strcat(gStudioInfo->string, studio_drum_kit_names[line]);
+    } else {
+        strcat(gStudioInfo->string, text_studio_kit_not_unlocked);
+    }
 
-#include "asm/studio/asm_0801c028.s"
+    return gStudioInfo->string;
+}
+
+
+// Drum Kit List - On-Scroll
+void studio_drum_list_on_scroll(s32 arg, u32 current, u32 previous) {
+    play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cursor1_seqData);
+}
+
+
+// Drum Kit List - Init.
+void studio_drum_list_init(s32 arg, s32 index, s32 position) {
+    gStudioInfo->unk36C = arg;
+    gStudioInfo->drumsList = create_new_listbox(
+            get_current_mem_id(),
+            10, 128, 22,
+            0, 1, 3,
+            358, 16, 0x8800,
+            16, index, 15,
+            anim_studio_selection_item, 2, 6, clamp_int32(position, 0, 5),
+            studio_drum_list_get_string, NULL);
+    listbox_run_func_on_scroll(gStudioInfo->drumsList, studio_drum_list_on_scroll, 0);
+}
+
+
+// Drum Kit List - Exit to Listening Scene
+void studio_drum_list_exit_to_drumming(void) {
+    const struct Scene *scene;
+    s32 songItem, drumItem;
+
+    func_080006f0(get_scene_trans_target(&scene_studio), 1);
+
+    songItem = listbox_get_sel_item(gStudioInfo->songsList);
+    drumItem = listbox_get_sel_item(gStudioInfo->drumsList);
+    studio_set_current_kit(drumItem);
+    set_next_scene(&D_089d49d4);
+    set_scene_trans_target(&D_089d49d4, &scene_studio);
+    set_scene_trans_var(&D_089d49d4, songItem);
+    func_0801d968(script_scene_studio_exit);
+    gStudioInfo->scriptIsReady = FALSE;
+}
+
+
+// Drum Kit List - End of Memory Warning
+void studio_drum_list_warning_memory_result(s32 event, s32 arg) {
+    if (event == 1) {
+        studio_drum_list_exit_to_drumming();
+    } else {
+        gStudioInfo->menuState = 3;
+    }
+}
+
+
+// Drum Kit List - Update
+void studio_drum_list_update(void) {
+    struct TengokuSaveData *saveBuffer;
+    u32 remaining, warningReason;
+    u32 event = LIST_EV_NONE;
+
+    if (!listbox_is_busy(gStudioInfo->drumsList) && studio_scene_can_receive_inputs()) {
+        if (D_03004afc & A_BUTTON) {
+            event = LIST_EV_CONFIRM;
+        }
+        if (D_03004afc & B_BUTTON) {
+            event = LIST_EV_CANCEL;
+        }
+        if (D_030053b8 & DPAD_UP) {
+            event = LIST_EV_SCROLL_UP;
+        }
+        if (D_030053b8 & DPAD_DOWN) {
+            event = LIST_EV_SCROLL_DOWN;
+        }
+    }
+
+    switch(event) {
+        case LIST_EV_CONFIRM:
+            if (!D_030046a8->data.drumKitsUnlocked[listbox_get_sel_item(gStudioInfo->drumsList)]) {
+                play_sound_in_player(MUSIC_PLAYER_2, &s_menu_error_seqData);
+            } else {
+                remaining = (u32)get_remaining_replay_data_space(&D_030046a8->data.drumReplaysAlloc) >> 8;
+                if (remaining != 0) {
+                    if (get_available_replay_data_id(&D_030046a8->data.drumReplaysAlloc) < 0) {
+                        warningReason = 2;
+                    } else if (remaining < 10) {
+                        warningReason = 3;
+                    } else {
+                        warningReason = 0;
+                    }
+                } else {
+                    warningReason = 1;
+                }
+                if (warningReason != 0) {
+                    studio_warning_create(WARNING_OPT_Y, studio_mem_warnings_text[warningReason], studio_drum_list_warning_memory_result, 0, &s_menu_se24_seqData);
+                    play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+                } else {
+                    studio_drum_list_exit_to_drumming();
+                    play_sound_in_player(MUSIC_PLAYER_2, &s_menu_se24_seqData);
+                }
+            }
+            break;
+
+        case LIST_EV_CANCEL:
+            play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+            listbox_hide_sel_sprite(gStudioInfo->drumsList);
+            listbox_show_sel_sprite(gStudioInfo->optionsList);
+            func_0801c6b8(OPTIONS_LIST);
+            gStudioInfo->menuState = 2;
+            break;
+
+        case LIST_EV_SCROLL_UP:
+            listbox_scroll_up(gStudioInfo->drumsList);
+            break;
+
+        case LIST_EV_SCROLL_DOWN:
+            listbox_scroll_down(gStudioInfo->drumsList);
+            break;
+    }
+}
+
+
+// Option List - Get String
+const char *studio_option_list_get_string(s32 line) {
+    char numString[0x10];
+
+    if ((line < 0) || (line >= D_089d8444[gStudioInfo->unk374])) {
+        return NULL;
+    }
+
+    strint(numString, line + 1);
+    memcpy(gStudioInfo->string, text_studio_option_default, 1);
+    strcat(gStudioInfo->string, studio_options_text[gStudioInfo->unk374][line]);
+
+    return gStudioInfo->string;
+}
+
+
+// Option List - On-Scroll
+void studio_option_list_on_scroll(s32 arg, u32 current, u32 previous) {
+    play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cursor1_seqData);
+}
+
+
+// Option List - Init.
+void studio_option_list_init(s32 arg, s32 index) {
+    gStudioInfo->unk374 = arg;
+    gStudioInfo->optionsList = create_new_listbox(
+            get_current_mem_id(),
+            4, 64, 12,
+            0, 1, 3,
+            264, 44, 0x8800,
+            16, index, D_089d8444[arg],
+            anim_studio_selection_option, 0, 4, clamp_int32(index, 0, 3),
+            studio_option_list_get_string, NULL);
+    listbox_run_func_on_scroll(gStudioInfo->optionsList, studio_option_list_on_scroll, 0);
+}
+
+
+// Option List - Check for No Checks
+s32 studio_option_list_no_checked_songs(void) {
+    u32 i;
+
+    for (i = 0; i < D_030046a8->data.totalSongs; i++) {
+        if (!(D_030046a8->data.studioSongs[i].unk3 & 2)) {
+            return FALSE;
+        }
+    }
+
+    return TRUE;
+}
+
+
+// Option List - Exit to Listening Scene
+void studio_option_list_exit_to_listening(void) {
+    const struct Scene *scene;
+    s32 var, songItem;
+
+    scene = get_scene_trans_target(&scene_studio);
+    var = 0;
+    func_080006f0(scene, var);
+
+    songItem = listbox_get_sel_item(gStudioInfo->songsList);
+    set_next_scene(&D_089d4ba4);
+    set_scene_trans_target(&D_089d4ba4, &scene_studio);
+    set_scene_trans_var(&D_089d4ba4, songItem);
+    func_0801d968(script_scene_studio_exit);
+    gStudioInfo->scriptIsReady = FALSE;
+}
+
+
+// Option List - End of "No Checks" Warning
+void studio_option_list_warning_no_checks_result(s32 event, s32 arg) {
+    gStudioInfo->menuState = 2;
+}
+
+
+// Option List - End of "Unchecked" Warning
+void studio_option_list_warning_unchecked_result(s32 event, s32 arg) {
+    if (event == 1) {
+        studio_option_list_exit_to_listening();
+    } else {
+        gStudioInfo->menuState = 2;
+    }
+}
+
+
+// Options List - End of "Delete" Warning
+void studio_option_list_warning_deletion_result(s32 result, s32 arg) {
+    s32 selItem, selLine;
+    s32 totalSongs;
+
+    if (result == 1) {
+        selItem = listbox_get_sel_item(gStudioInfo->songsList);
+        selLine = listbox_get_sel_line(gStudioInfo->songsList);
+        delete_listbox(gStudioInfo->songsList);
+
+        totalSongs = D_030046a8->data.totalSongs;
+        if (totalSongs > 1) {
+            delete_studio_song(selItem);
+            if (selItem >= (totalSongs - 1)) {
+                selItem--;
+
+                if (selLine > 0) {
+                    selLine--;
+                }
+            }
+            update_replay_memory_graph_data_bars(gStudioInfo->replayMemoryGraph);
+        }
+        studio_song_list_init(0, selItem, selLine);
+        func_0801c7c0();
+        listbox_hide_sel_sprite(gStudioInfo->optionsList);
+        listbox_show_sel_sprite(gStudioInfo->songsList);
+        func_0801c6b8(SONGS_LIST);
+        gStudioInfo->menuState = 1;
+        gStudioInfo->musicPlayer = play_sound(&s_studio_bgm_seqData);
+    } else {
+        gStudioInfo->menuState = 2;
+    }
+}
+
+
+// Option List - Update
+void studio_option_list_update(void) {
+    s32 songItem, isValid;
+    u32 event = LIST_EV_NONE;
+
+    if (!listbox_is_busy(gStudioInfo->optionsList) && studio_scene_can_receive_inputs()) {
+        if (D_03004afc & A_BUTTON) {
+            event = LIST_EV_CONFIRM;
+        }
+        if (D_03004afc & B_BUTTON) {
+            event = LIST_EV_CANCEL;
+        }
+        if (D_030053b8 & DPAD_UP) {
+            event = LIST_EV_SCROLL_UP;
+        }
+        if (D_030053b8 & DPAD_DOWN) {
+            event = LIST_EV_SCROLL_DOWN;
+        }
+    }
+
+    switch (event) {
+        case LIST_EV_CONFIRM:
+            if (listbox_get_sel_item(gStudioInfo->optionsList) == OPTION_LISTEN) {
+                if (studio_option_list_no_checked_songs()) {
+                    studio_warning_create(WARNING_OPT_DISMISS, text_studio_warning_no_checks1, studio_option_list_warning_no_checks_result, 0, &s_menu_kettei2_seqData);
+                    play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+                } else {
+                    songItem = listbox_get_sel_item(gStudioInfo->songsList);
+
+                    if (D_030046a8->data.studioSongs[songItem].unk3 & 2) {
+                        studio_warning_create(WARNING_OPT_Y, text_studio_warning_no_checks2, studio_option_list_warning_unchecked_result, 0, &s_menu_se24_seqData);
+                        play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+                    } else {
+                        studio_option_list_exit_to_listening();
+                        play_sound_in_player(MUSIC_PLAYER_2, &s_menu_se24_seqData);
+                    }
+                }
+            }
+
+            if (listbox_get_sel_item(gStudioInfo->optionsList) == OPTION_DRUM) {
+                if (gStudioInfo->unk374 == 0) {
+                    play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+                    listbox_hide_sel_sprite(gStudioInfo->optionsList);
+                    listbox_show_sel_sprite(gStudioInfo->drumsList);
+                    func_0801c6b8(DRUMS_LIST);
+                    gStudioInfo->menuState = 3;
+                } else {
+                    play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+                    studio_warning_create(WARNING_OPT_N, text_studio_warning_delete, studio_option_list_warning_deletion_result, 0, &s_menu_se13_seqData);
+                }
+            }
+
+            if (listbox_get_sel_item(gStudioInfo->optionsList) == OPTION_SORT) {
+                play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+                listbox_hide_sel_sprite(gStudioInfo->optionsList);
+                listbox_show_sel_sprite(gStudioInfo->songsList);
+                gStudioInfo->selectedItem = listbox_get_sel_item(gStudioInfo->songsList);
+                listbox_link_sprite_x_y_to_line(gStudioInfo->songsList, gStudioInfo->itemMoveHighlight, gStudioInfo->selectedItem);
+                func_0804d770(D_03005380, gStudioInfo->itemMoveHighlight, TRUE);
+                gStudioInfo->menuState = 5;
+            }
+
+            if (listbox_get_sel_item(gStudioInfo->optionsList) == OPTION_MARK) {
+                songItem = listbox_get_sel_item(gStudioInfo->songsList);
+                isValid = TRUE;
+
+                if (D_030046a8->data.studioSongs[songItem].songID == STUDIO_SONG_SILENCE) {
+                    if (!(D_030046a8->data.studioSongs[songItem].unk3 & 1)) {
+                        isValid = FALSE;
+                    }
+                }
+
+                if (isValid) {
+                    D_030046a8->data.studioSongs[songItem].unk3 ^= 2;
+                    func_0800b454(gStudioInfo->songsList, songItem);
+
+                    if (D_030046a8->data.studioSongs[songItem].unk3 & 2) {
+                        play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+                    } else {
+                        play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+                    }
+                } else {
+                    play_sound_in_player(MUSIC_PLAYER_2, &s_menu_error_seqData);
+                }
+            }
+            break;
+
+        case LIST_EV_CANCEL:
+            play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+            func_0801c7c0();
+            listbox_hide_sel_sprite(gStudioInfo->optionsList);
+            listbox_show_sel_sprite(gStudioInfo->songsList);
+            func_0801c6b8(SONGS_LIST);
+            gStudioInfo->musicPlayer = play_sound(&s_studio_bgm_seqData);
+            gStudioInfo->menuState = 1;
+            break;
+
+        case LIST_EV_SCROLL_UP:
+            listbox_scroll_up(gStudioInfo->optionsList);
+            break;
+
+        case LIST_EV_SCROLL_DOWN:
+            listbox_scroll_down(gStudioInfo->optionsList);
+            break;
+    }
+}
+
+
+// Option List - Update (Moving Item)
+void studio_option_list_update_w_selection(void) {
+    s32 songItem;
+    u32 event = LIST_EV_NONE;
+
+    if (!listbox_is_busy(gStudioInfo->songsList) && studio_scene_can_receive_inputs()) {
+        if (D_03004afc & A_BUTTON) {
+            event = LIST_EV_CONFIRM;
+        }
+        if (D_03004afc & B_BUTTON) {
+            event = LIST_EV_CANCEL;
+        }
+        if (D_030053b8 & DPAD_UP) {
+            event = LIST_EV_SCROLL_UP;
+        }
+        if (D_030053b8 & DPAD_DOWN) {
+            event = LIST_EV_SCROLL_DOWN;
+        }
+    }
+
+    switch(event) {
+        case LIST_EV_CONFIRM:
+            songItem = listbox_get_sel_item(gStudioInfo->songsList);
+            if (songItem != gStudioInfo->selectedItem) {
+                studio_song_list_move_item(gStudioInfo->selectedItem, songItem);
+                play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+                func_0804d770(D_03005380, gStudioInfo->itemMoveHighlight, FALSE);
+                listbox_set_sel_sprite(gStudioInfo->songsList, anim_studio_selection_item);
+                listbox_show_sel_sprite(gStudioInfo->optionsList);
+                listbox_hide_sel_sprite(gStudioInfo->songsList);
+                gStudioInfo->menuState = 2;
+                break;
+            }
+
+        case LIST_EV_CANCEL:
+            play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+            func_0804d770(D_03005380, gStudioInfo->itemMoveHighlight, FALSE);
+            listbox_set_sel_sprite(gStudioInfo->songsList, anim_studio_selection_item);
+            listbox_show_sel_sprite(gStudioInfo->optionsList);
+            listbox_hide_sel_sprite(gStudioInfo->songsList);
+            gStudioInfo->menuState = 2;
+            break;
+
+        case LIST_EV_SCROLL_UP:
+            listbox_scroll_up(gStudioInfo->songsList);
+            break;
+
+        case LIST_EV_SCROLL_DOWN:
+            listbox_scroll_down(gStudioInfo->songsList);
+            break;
+    }
+}
 
 
 // Init. Static Variables
 void studio_scene_init_static_var(void) {
     sCurrentDrumKit = 0;
-    sListSongIndex = 0;
-    sListSongPosition = 0;
-    sListOptionIndex = 0;
-    sListDrumIndex = 0;
-    sListDrumPosition = 0;
+    sListSongSelItem = 0;
+    sListSongSelLine = 0;
+    sListOptionSelItem = 0;
+    sListDrumSelItem = 0;
+    sListDrumSelLine = 0;
 }
 
 
@@ -278,9 +1006,9 @@ void studio_scene_start(void *sceneVar, s32 dataArg) {
     func_080073f0();
     studio_scene_init_gfx1();
     init_drumtech(&gStudioInfo->drumTech);
-    func_0801b138(0, sListSongIndex, sListSongPosition);
-    func_0801ba74(0, sListOptionIndex);
-    func_0801b710(0, sListDrumIndex, sListDrumPosition);
+    studio_song_list_init(0, sListSongSelItem, sListSongSelLine);
+    studio_option_list_init(0, sListOptionSelItem);
+    studio_drum_list_init(0, sListDrumSelItem, sListDrumSelLine);
 
     switch (entryPoint) {
         case 1:
@@ -306,13 +1034,13 @@ void studio_scene_start(void *sceneVar, s32 dataArg) {
     gStudioInfo->unk388 = 0;
     gStudioInfo->itemMoveHighlight = func_0804d160(D_03005380, anim_studio_item_move_highlight, 0, 64, 64, 0x8864, 0, 0, 0x8000);
     gStudioInfo->replayDrumKit = STUDIO_DRUM_STANDARD;
-    func_0801aa04();
+    studio_warning_init();
     gStudioInfo->musicPlayer = play_sound(&s_studio_bgm_seqData);
     graph = func_0804d160(D_03005380, anim_studio_graphs_l, 0, 77, 66, 0x4800, 1, 0, 0);
     func_0804db44(D_03005380, graph, &D_03004b10.BG_OFS[BG_LAYER_1].x, &D_03004b10.BG_OFS[BG_LAYER_1].y);
     graph = func_0804d160(D_03005380, anim_studio_graph_r, 0, 320, 130, 0x4800, 1, 0, 0);
     func_0804db44(D_03005380, graph, &D_03004b10.BG_OFS[BG_LAYER_1].x, &D_03004b10.BG_OFS[BG_LAYER_1].y);
-    gStudioInfo->unk358 = 0;
+    gStudioInfo->scriptIsReady = FALSE;
     gStudioInfo->replaySeq = mem_heap_alloc_id(get_current_mem_id(), 0x3800);
 }
 
@@ -329,7 +1057,12 @@ void studio_set_current_kit(s32 id) {
 }
 
 
-#include "asm/studio/asm_0801c51c.s"
+// Set Currently Selected Song (Index)
+void studio_set_current_song(s32 id, s32 line) {
+    sListSongSelItem = id;
+    sListSongSelLine = line;
+}
+
 
 #include "asm/studio/asm_0801c530.s"
 
@@ -349,29 +1082,32 @@ void studio_scene_paused(void *sceneVar, s32 dataArg) {
 
 #include "asm/studio/asm_0801c7c0.s"
 
-#include "asm/studio/asm_0801c7e8.s"
+
+// Update Nothing
+void func_0801c7e8(void) {
+}
 
 
 // Scene Update
 void studio_scene_update(void *sceneVar, s32 dataArg) {
     switch (gStudioInfo->menuState) {
         case 1:
-            func_0801b1d8();
+            studio_song_list_update();
             break;
         case 4:
-            func_0801b4f4();
+            studio_song_list_update_w_selection();
             break;
         case 2:
-            func_0801bce0();
+            studio_option_list_update();
             break;
         case 5:
-            func_0801c028();
+            studio_option_list_update_w_selection();
             break;
         case 3:
-            func_0801b858();
+            studio_drum_list_update();
             break;
         case 6:
-            func_0801aaa0();
+            studio_warning_update();
             break;
     }
 

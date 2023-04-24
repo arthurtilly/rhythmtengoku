@@ -43,7 +43,7 @@ void reset_game_save_data(void) {
         data->levelScores[i] = DEFAULT_LEVEL_SCORE;
     }
 
-    func_0801ad9c(); // studio-related
+    unlock_default_studio_songs();
 
     for (i = 0; i < TOTAL_LEVELS; i++) {
         data->unk190[i] = 0; // number of attempts?

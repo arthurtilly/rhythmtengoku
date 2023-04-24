@@ -38,7 +38,7 @@ branch_0801d0c0: \n\
 /* 0801d0f8 */ LSLS R1, R1, 0x10 \n\
 /* 0801d0fa */ ASRS R1, R1, 0x10 \n\
 /* 0801d0fc */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
-/* 0801d0fe */ BL func_0800b408 \n\
+/* 0801d0fe */ BL listbox_link_sprite_x_y_to_line \n\
  \n\
 branch_0801d102: \n\
 /* 0801d102 */ ADDS R4, 0x1 @ Add 0x1 to R4 \n\

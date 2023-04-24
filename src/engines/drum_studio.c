@@ -700,8 +700,8 @@ void drum_studio_engine_start(u32 version) {
     }
 
     if (gDrumLessonsInfo->version == ENGINE_VER_DRUM_STUDIO_LISTEN) {
-        while (D_030046a8->data.drumReplayData[gDrumLessonsInfo->replayID].unk3 & 2) {
-            if (++gDrumLessonsInfo->replayID >= D_030046a8->data.unkB2) {
+        while (D_030046a8->data.studioSongs[gDrumLessonsInfo->replayID].unk3 & 2) {
+            if (++gDrumLessonsInfo->replayID >= D_030046a8->data.totalSongs) {
                 gDrumLessonsInfo->replayID = 0;
             }
         }
@@ -713,7 +713,7 @@ void drum_studio_engine_start(u32 version) {
             gDrumLessonsInfo->playerDrumKitID = clamp_int32(studio_get_current_kit(), 0, drum_studio_get_total_kits());
             break;
         case ENGINE_VER_DRUM_STUDIO_LISTEN:
-            gDrumLessonsInfo->playerDrumKitID = D_030046a8->data.drumReplayData[gDrumLessonsInfo->replayID].drumKitID;
+            gDrumLessonsInfo->playerDrumKitID = D_030046a8->data.studioSongs[gDrumLessonsInfo->replayID].drumKitID;
             break;
     }
 
@@ -817,7 +817,7 @@ void drum_studio_update_song_title(void) {
 
 // Engine Event 00 (Init. Studio Script & Recording)
 const struct Beatscript *drum_studio_init_script(void) {
-    struct DrumReplayData *replayData;
+    struct StudioSongData *replayData;
     u32 r7;
     u32 availableSpace;
     u32 replaySize;
@@ -826,7 +826,7 @@ const struct Beatscript *drum_studio_init_script(void) {
         return NULL;
     }
 
-    gDrumLessonsInfo->replayData = replayData = &D_030046a8->data.drumReplayData[gDrumLessonsInfo->replayID];
+    gDrumLessonsInfo->replayData = replayData = &D_030046a8->data.studioSongs[gDrumLessonsInfo->replayID];
     gDrumLessonsInfo->unk418 = 0;
     dma3_fill(0, gDrumLessonsInfo->drumReplaySeq, 0x3800, 0x20, 0x200);
 
@@ -856,7 +856,7 @@ const struct Beatscript *drum_studio_init_script(void) {
                 gDrumLessonsInfo->unk402 = 120;
             }
             func_080292e0(~replayData->unk3 & 1);
-            func_0801b498(gDrumLessonsInfo->replayID);
+            studio_song_list_select_item(gDrumLessonsInfo->replayID);
             break;
     }
 
@@ -881,7 +881,7 @@ const struct Beatscript *drum_studio_init_script(void) {
 
         case 3: // Listen to Replay
             func_0801c960(2);
-            replaySize = get_saved_replay_data(&D_030046a8->data.drumReplaysAlloc, replayData->saveID, gDrumLessonsInfo->drumReplaySeq);
+            replaySize = get_saved_replay_data(&D_030046a8->data.drumReplaysAlloc, replayData->replayID, gDrumLessonsInfo->drumReplaySeq);
             key_rec_set_mode(3, 0x3ff, gDrumLessonsInfo->drumReplaySeq, replaySize / 2);
             gDrumLessonsInfo->playerDrumKitID = replayData->drumKitID;
             drum_studio_init_kit();
@@ -916,10 +916,10 @@ s32 func_080295d4(void) {
 
     if (gDrumLessonsInfo->version == ENGINE_VER_DRUM_STUDIO_LISTEN) {
         do {
-            if (++gDrumLessonsInfo->replayID >= D_030046a8->data.unkB2) {
+            if (++gDrumLessonsInfo->replayID >= D_030046a8->data.totalSongs) {
                 gDrumLessonsInfo->replayID = 0;
             }
-        } while (D_030046a8->data.drumReplayData[gDrumLessonsInfo->replayID].unk3 & 2);
+        } while (D_030046a8->data.studioSongs[gDrumLessonsInfo->replayID].unk3 & 2);
         result = TRUE;
         func_080291bc();
     }
@@ -1033,21 +1033,21 @@ void drum_studio_show_save_options(void) {
 
 // Save Replay
 void drum_studio_save_replay(void) {
-    struct DrumReplayData *replayData;
+    struct StudioSongData *replayData;
     s32 replayID;
     s32 saveID;
 
-    if (gDrumLessonsInfo->replayData->saveID >= 0) {
+    if (gDrumLessonsInfo->replayData->replayID >= 0) {
         return;
     }
 
     saveID = alloc_replay_save_data(&D_030046a8->data.drumReplaysAlloc, gDrumLessonsInfo->drumReplaySeq, gDrumLessonsInfo->unk416 * 2);
     if (saveID >= 0) {
-        replayID = func_0801adf0(gDrumLessonsInfo->replayData->songID, saveID, studio_get_current_kit(), 1);
+        replayID = save_studio_song(gDrumLessonsInfo->replayData->songID, saveID, studio_get_current_kit(), 1);
         if (replayID < 0) {
             delete_saved_replay(&D_030046a8->data.drumReplaysAlloc, saveID);
         } else {
-            func_0801b498(replayID);
+            studio_song_list_select_item(replayID);
             set_scene_trans_var(&scene_studio, 0);
         }
     }

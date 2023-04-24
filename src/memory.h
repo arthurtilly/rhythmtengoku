@@ -24,14 +24,14 @@ extern struct SaveBuffer {
         u16 levelScores[TOTAL_LEVELS];
         u16 currentFlow;
         u16 unkB0;
-        u8 unkB2; // relates to studio
+        u8 totalSongs;
         u8 unkB3; // above
-        struct DrumReplayData {
+        struct StudioSongData {
             u8 songID;
-            s8 saveID;
+            s8 replayID;
             u8 drumKitID;
             u8 unk3;
-        } drumReplayData[TOTAL_LEVELS];
+        } studioSongs[45 + 10];
         u8 unk190[TOTAL_LEVELS]; // number of plays?
         u8 unk1C7[TOTAL_LEVELS];
         u8 unk1FE[TOTAL_LEVELS];

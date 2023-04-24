@@ -47,7 +47,7 @@ struct DrumLessonsInfo {
     u8 unk3C1;
     u16 drummingButtons; // 0x3C2
     void *drumReplaySeq; // 0x3C4
-    struct DrumReplayData *replayData; // 0x3C8
+    struct StudioSongData *replayData; // 0x3C8
     u8 replayID; // 0x3CC
     u8 unk3CD; // 0x3CD
     u8 unk3CE; // 0x3CE

@@ -80,19 +80,19 @@ branch_0801c5fe: \n\
 /* 0801c634 */ ASRS R4, R4, 0x10 \n\
 /* 0801c636 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0801c638 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0801c63a */ BL func_0800b384 \n\
+/* 0801c63a */ BL listbox_offset_x_y \n\
 /* 0801c63e */ LDR R0, [R5] \n\
 /* 0801c640 */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 0801c642 */ LDR R0, [R0] \n\
 /* 0801c644 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0801c646 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0801c648 */ BL func_0800b384 \n\
+/* 0801c648 */ BL listbox_offset_x_y \n\
 /* 0801c64c */ LDR R0, [R5] \n\
 /* 0801c64e */ ADD R0, R8 @ Add R8 to R0 \n\
 /* 0801c650 */ LDR R0, [R0] \n\
 /* 0801c652 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0801c654 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0801c656 */ BL func_0800b384 \n\
+/* 0801c656 */ BL listbox_offset_x_y \n\
 /* 0801c65a */ POP {R3} \n\
 /* 0801c65c */ MOV R8, R3 @ Set R8 to R3 \n\
 /* 0801c65e */ POP {R4-R7} \n\
