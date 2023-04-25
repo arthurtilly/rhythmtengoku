@@ -1,0 +1,166 @@
+.include "include/beatscript.inc"
+.include "games/bouncy_road/macros.inc"
+
+
+
+.section .script.entry
+@ Bouncy Road (Unused 2) - Script Entry Point
+
+script script_bouncy_road_unused_2_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_bouncy_road
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_bouncy_road_unused_2_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_bouncy_road_unused_2, script_bouncy_road_unused_2_entry
+
+
+
+.section .script.main
+@ Bouncy Road (Unused 2) - Main Script
+
+script bouncy_road_unused_2_sub_089fe9a0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script script_bouncy_road_unused_2_main
+    set_results_header D_0805b778
+    set_tempo 120
+    set_music_volume 256
+    rest 24
+    enable_pause 1
+    play_music s_f_even_road_seqData
+    call bouncy_road_unused_2_sub_089fe9a0
+    bouncy_road_enable_ball_goal_sfx
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bouncy_road_enable_ball_goal_sfx
+    bouncy_road_deploy_ball 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    bouncy_road_enable_ball_goal_sfx
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call bouncy_road_unused_2_sub_089fe9a0
+    play_music s_f_even_road_seqData
+    call bouncy_road_unused_2_sub_089fe9a0
+    bouncy_road_deploy_ball 8
+    beat_anim
+    rest 16
+    bouncy_road_deploy_ball 8
+    beat_anim
+    rest 16
+    bouncy_road_enable_ball_goal_sfx
+    bouncy_road_deploy_ball 8
+    beat_anim
+    rest 16
+    beat_anim
+    rest 16
+    beat_anim
+    rest 16
+    beat_anim
+    rest 16
+    call bouncy_road_unused_2_sub_089fe9a0
+    bouncy_road_enable_ball_goal_sfx
+    bouncy_road_deploy_ball 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    bouncy_road_deploy_ball 12
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call bouncy_road_unused_2_sub_089fe9a0
+    call bouncy_road_unused_2_sub_089fe9a0
+    bouncy_road_deploy_ball 6
+    beat_anim
+    rest 12
+    bouncy_road_enable_ball_goal_sfx
+    bouncy_road_deploy_ball 6
+    beat_anim
+    rest 12
+    beat_anim
+    rest 12
+    beat_anim
+    rest 12
+    beat_anim
+    rest 12
+    beat_anim
+    rest 12
+    beat_anim
+    rest 12
+    beat_anim
+    rest 12
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    enable_pause 0
+    beat_anim
+    rest 24
+return
+
+.end
