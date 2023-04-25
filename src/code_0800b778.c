@@ -639,9 +639,29 @@ s32 func_0800c1d0(s24_8 arg) {
 
 #include "asm/code_0800b778/asm_0800c228.s"
 
-#include "asm/code_0800b778/asm_0800c280.s"
 
-#include "asm/code_0800b778/asm_0800c2b0.s"
+// Play Sound Effect to Scene Tempo and Music Pitch
+struct SoundPlayer *scene_play_sound_to_tempo_and_pitch(struct SequenceData *sfx) {
+    struct SoundPlayer *player;
+
+    player = play_sound(sfx);
+    set_soundplayer_speed(player, func_0800c1b4());
+    set_soundplayer_pitch(player, D_030053c0.musicPitchSrc1);
+
+    return player;
+}
+
+
+// Play Sound Effect to Scene Tempo
+struct SoundPlayer *scene_play_sound_to_tempo(struct SequenceData *sfx) {
+    struct SoundPlayer *player;
+
+    player = play_sound(sfx);
+    set_soundplayer_speed(player, func_0800c1b4());
+
+    return player;
+}
+
 
 #include "asm/code_0800b778/asm_0800c2d0.s"
 
@@ -649,14 +669,25 @@ s32 func_0800c1d0(s24_8 arg) {
 
 #include "asm/code_0800b778/asm_0800c350.s"
 
-#include "asm/code_0800b778/asm_0800c390.s"
 
-#include "asm/code_0800b778/asm_0800c394.s"
+// Stub
+void func_0800c390(void) {
+}
 
-#include "asm/code_0800b778/asm_0800c398.s"
+
+// Return 2
+u32 func_0800c394(void) {
+    return 2;
+}
 
 
-// Convert Script Beats To Real-Time Ticks
+// Get Delta Time
+u32 func_0800c398(void) {
+    return D_030053c0.deltaTime;
+}
+
+
+// Convert Script Tatums to Real-Time Frames
 s32 beats_to_ticks(u32 beats) {
     fast_divsi3(INT_TO_FIXED(beats), D_030053c0.deltaTime);
 }
@@ -675,40 +706,90 @@ void set_current_mem_id(u32 id) {
 }
 
 
-#include "asm/code_0800b778/asm_0800c3e4.s"
-
-#include "asm/code_0800b778/asm_0800c3e8.s"
-
-#include "asm/code_0800b778/asm_0800c3ec.s"
-
-#include "asm/code_0800b778/asm_0800c3fc.s"
-
-#include "asm/code_0800b778/asm_0800c400.s"
-
-#include "asm/code_0800b778/asm_0800c404.s"
-
-#include "asm/code_0800b778/asm_0800c408.s"
-
-#include "asm/code_0800b778/asm_0800c40c.s"
-
-#include "asm/code_0800b778/asm_0800c410.s"
-
-#include "asm/code_0800b778/asm_0800c414.s"
-
-#include "asm/code_0800b778/asm_0800c418.s"
-
-#include "asm/code_0800b778/asm_0800c41c.s"
-
-#include "asm/code_0800b778/asm_0800c420.s"
-
-#include "asm/code_0800b778/asm_0800c424.s"
-
-#include "asm/code_0800b778/asm_0800c428.s"
-
-#include "asm/code_0800b778/asm_0800c42c.s"
+// Stub
+void func_0800c3e4(void) {
+}
 
 
-// Allocate memory for a struct of size [arg0] (bytes). (?)
+// Stub
+void func_0800c3e8(u32 arg) {
+}
+
+
+// ? (effectively does nothing, but is called anyway)
+void func_0800c3ec(u32 arg) {
+    func_0800c3e8(arg);
+    func_0800c3e8(2);
+}
+
+
+// Stub
+void func_0800c3fc(void) {
+}
+
+
+// Stub
+void func_0800c400(void) {
+}
+
+
+// Stub
+void func_0800c404(void) {
+}
+
+
+// Stub
+void func_0800c408(void) {
+}
+
+
+// Stub
+void func_0800c40c(void) {
+}
+
+
+// Stub
+void func_0800c410(void) {
+}
+
+
+// Stub
+void func_0800c414(void) {
+}
+
+
+// Stub
+void func_0800c418(void) {
+}
+
+
+// Stub
+void func_0800c41c(void) {
+}
+
+
+// Stub
+void func_0800c420(void) {
+}
+
+
+// Stub
+void func_0800c424(void) {
+}
+
+
+// Stub
+void func_0800c428(void) {
+}
+
+
+// Allocate Affine Parameter Group ID
+s32 scene_affine_group_alloc(void) {
+    return func_08002194(get_current_mem_id());
+}
+
+
+// Allocate Memory
 void *scene_mem_heap_alloc(u32 size) {
     return mem_heap_alloc_id(get_current_mem_id(), size);
 }
@@ -716,13 +797,29 @@ void *scene_mem_heap_alloc(u32 size) {
 
 #include "asm/code_0800b778/asm_0800c454.s"
 
-#include "asm/code_0800b778/asm_0800c484.s"
 
-#include "asm/code_0800b778/asm_0800c490.s"
+// Save Data
+void scene_flush_save_buffer(void) {
+    flush_save_buffer_to_sram();
+}
 
-#include "asm/code_0800b778/asm_0800c494.s"
 
-#include "asm/code_0800b778/asm_0800c4ac.s"
+// Get a Thread
+u32 func_0800c490(void) {
+    return 0;
+}
+
+
+// Set Thread unk0_b7
+void func_0800c494(u32 id) {
+    D_030053c0.threads[id].unk0_b7 = TRUE;
+}
+
+
+// Stub
+void func_0800c4ac(void) {
+}
+
 
 #include "asm/code_0800b778/asm_0800c4b0.s"
 
@@ -732,13 +829,30 @@ void *scene_mem_heap_alloc(u32 size) {
 
 #include "asm/code_0800b778/asm_0800c5b8.s"
 
-#include "asm/code_0800b778/asm_0800c604.s"
 
-#include "asm/code_0800b778/asm_0800c654.s"
+// Set Current Thread
+void func_0800c604(u32 thread) {
+    D_030053c0.currentThread = thread;
+    set_current_mem_id(D_030053c0.currentThread + 1);
+    D_03005588 = &D_030053c0.localVariables[thread];
+    D_0300558c = D_030053c0.threads[thread].sprites;
+}
 
-#include "asm/code_0800b778/asm_0800c658.s"
 
-#include "asm/code_0800b778/asm_0800c65c.s"
+// Stub
+void func_0800c654(void) {
+}
+
+
+// Stub
+void func_0800c658(void) {
+}
+
+
+// Stub
+void func_0800c65c(void) {
+}
+
 
 #include "asm/code_0800b778/asm_0800c660.s"
 
@@ -748,13 +862,26 @@ void *scene_mem_heap_alloc(u32 size) {
 
 #include "asm/code_0800b778/asm_0800c6c8.s"
 
-#include "asm/code_0800b778/asm_0800c6d4.s"
 
-#include "asm/code_0800b778/asm_0800c6d8.s"
+// Stub
+void func_0800c6d4(void) {
+}
 
-#include "asm/code_0800b778/asm_0800c6dc.s"
 
-#include "asm/code_0800b778/asm_0800c6e0.s"
+// Stub
+void func_0800c6d8(void) {
+}
+
+
+// Stub
+void func_0800c6dc(void) {
+}
+
+
+// Stub
+void func_0800c6e0(void) {
+}
+
 
 #include "asm/code_0800b778/asm_0800c6e4.s"
 
@@ -1032,9 +1159,16 @@ void scene_set_bg_mosaic_size(s16 xSize, s16 ySize) {
 
 #include "asm/code_0800b778/asm_0800e8f4.s"
 
-#include "asm/code_0800b778/asm_0800e940.s"
 
-#include "asm/code_0800b778/asm_0800e944.s"
+// Stub
+void func_0800e940(void) {
+}
+
+
+// Stub
+void func_0800e944(void) {
+}
+
 
 #include "asm/code_0800b778/asm_0800e948.s"
 
@@ -1054,61 +1188,156 @@ void scene_set_bg_mosaic_size(s16 xSize, s16 ySize) {
 
 #include "asm/code_0800b778/asm_0800eaa0.s"
 
-#include "asm/code_0800b778/asm_0800eb0c.s"
+
+// Clear unk1_b7
+void func_0800eb0c(void) {
+    D_030053c0.unk1_b7 = FALSE;
+}
+
 
 #include "asm/code_0800b778/asm_0800eb1c.s"
 
 #include "asm/code_0800b778/asm_0800ebac.s"
 
-#include "asm/code_0800b778/asm_0800ebf8.s"
 
-#include "asm/code_0800b778/asm_0800ec20.s"
+// Change Tempo
+void func_0800ebf8(u32 target, u32 duration) {
+    if (duration == 0) {
+        set_beatscript_tempo(target);
+    } else {
+        func_0800ebac(get_beatscript_tempo(), target, duration);
+    }
+}
+
+
+// Clear unk2_b0
+void func_0800ec20(void) {
+    D_030053c0.unk2_b0 = FALSE;
+}
+
 
 #include "asm/code_0800b778/asm_0800ec34.s"
 
 #include "asm/code_0800b778/asm_0800ecac.s"
 
-#include "asm/code_0800b778/asm_0800ecec.s"
 
-#include "asm/code_0800b778/asm_0800ed08.s"
+// Change Music Pitch
+void func_0800ecec(s32 target, u32 duration) {
+    func_0800ecac(D_030053c0.musicPitchSrc1, target, duration);
+}
 
-#include "asm/code_0800b778/asm_0800ed24.s"
 
-#include "asm/code_0800b778/asm_0800ed3c.s"
+// Set unk2_b1
+void func_0800ed08(u32 set) {
+    D_030053c0.unk2_b1 = set;
+}
 
-#include "asm/code_0800b778/asm_0800ed54.s"
 
-#include "asm/code_0800b778/asm_0800ed58.s"
+// Fade Music In
+void func_0800ed24(u32 duration) {
+    fade_in_soundplayer(D_030053c0.musicPlayer, duration);
+}
 
-#include "asm/code_0800b778/asm_0800ed5c.s"
 
-#include "asm/code_0800b778/asm_0800ed60.s"
+// Fade Music Out
+void func_0800ed3c(u32 duration) {
+    fade_out_soundplayer(D_030053c0.musicPlayer, duration);
+}
+
+
+// Stub
+void func_0800ed54(void) {
+}
+
+
+// Stub
+void func_0800ed58(void) {
+}
+
+
+// Stub
+void func_0800ed5c(void) {
+}
+
+
+// Stub
+void func_0800ed60(u32 speed) {
+}
+
 
 #include "asm/code_0800b778/asm_0800ed64.s"
 
-#include "asm/code_0800b778/asm_0800edb8.s"
+
+// Deallocate Memory
+void func_0800edb8(void *data) {
+    mem_heap_dealloc(data);
+    func_08004058();
+}
+
 
 #include "asm/code_0800b778/asm_0800edc8.s"
 
-#include "asm/code_0800b778/asm_0800edfc.s"
 
-#include "asm/code_0800b778/asm_0800ee1c.s"
+// Write BG Palette to Graphics Buffer (0-15)
+void func_0800edfc(void *bgPalette) {
+    dma3_set(bgPalette, D_03004b10.bgPalette, 0x200, 0x10, 0x100);
+}
 
-#include "asm/code_0800b778/asm_0800ee3c.s"
 
-#include "asm/code_0800b778/asm_0800ee5c.s"
+// Write OBJ Palette to Graphics Buffer (0-15)
+void func_0800ee1c(void *objPalette) {
+    dma3_set(objPalette, D_03004b10.objPalette, 0x200, 0x10, 0x100);
+}
 
-#include "asm/code_0800b778/asm_0800ee7c.s"
 
-#include "asm/code_0800b778/asm_0800ee9c.s"
+// Write BG Palette to Graphics Buffer (0-9)
+void func_0800ee3c(void *bgPalette) {
+    dma3_set(bgPalette, D_03004b10.bgPalette, 0x140, 0x10, 0x100);
+}
+
+
+// Write OBJ Palette to Graphics Buffer (0-9)
+void func_0800ee5c(void *objPalette) {
+    dma3_set(objPalette, D_03004b10.objPalette, 0x140, 0x10, 0x100);
+}
+
+
+// Write BG Palette to Graphics Buffer (12-15)
+void func_0800ee7c(void *bgPalette) {
+    dma3_set(bgPalette, D_03004b10.bgPalette[12], 0x80, 0x10, 0x100);
+}
+
+
+// Write OBJ Palette to Graphics Buffer (12-15)
+void func_0800ee9c(void *objPalette) {
+    dma3_set(objPalette, D_03004b10.objPalette[12], 0x80, 0x10, 0x100);
+}
+
 
 #include "asm/code_0800b778/asm_0800eebc.s"
 
-#include "asm/code_0800b778/asm_0800f070.s"
 
-#include "asm/code_0800b778/asm_0800f084.s"
+// Set String
+void func_0800f070(u32 id, const char *string) {
+    D_030053c0.strings[id] = string;
+}
 
-#include "asm/code_0800b778/asm_0800f09c.s"
+
+// Clear Strings
+void func_0800f084(void) {
+    u32 i;
+
+    for (i = 0; i < 10; i++) {
+        func_0800f070(i, NULL);
+    }
+}
+
+
+// Set OBJ Font Parsing/Filtering Function
+void func_0800f09c(struct BitmapFontOBJ *objFont) {
+    bmp_font_obj_set_format_parser(objFont, func_0800eebc, 0x101);
+}
+
 
 #include "asm/code_0800b778/asm_0800f0b4.s"
 

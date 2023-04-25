@@ -37,7 +37,7 @@ thumb_func_start func_08038f2c \n\
 /* 08038f6a */ BL func_0804d160 \n\
 /* 08038f6e */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 08038f70 */ STRH R0, [R6, 0x4] \n\
-/* 08038f72 */ BL func_0800c42c \n\
+/* 08038f72 */ BL scene_affine_group_alloc \n\
 /* 08038f76 */ STRB R0, [R4, 0x16] \n\
 /* 08038f78 */ MOVS R1, 0x4 @ Set R1 to 0x4 \n\
 /* 08038f7a */ LDRSH R0, [R6, R1] \n\

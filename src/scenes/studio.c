@@ -1129,7 +1129,7 @@ void studio_scene_stop(void *sceneVar, s32 dataArg) {
     func_08008628();
     func_08004058();
     func_0801c530();
-    func_0800c484();
+    scene_flush_save_buffer();
 }
 
 

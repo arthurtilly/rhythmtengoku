@@ -254,7 +254,7 @@ branch_0803a00e: \n\
 /* 0803a084 */ SUBS R0, 0x4 @ Subtract 0x4 from R0 \n\
 /* 0803a086 */ MOVS R6, 0x40 @ Set R6 to 0x40 \n\
 /* 0803a088 */ STRB R6, [R0] \n\
-/* 0803a08a */ BL func_0800c42c \n\
+/* 0803a08a */ BL scene_affine_group_alloc \n\
 /* 0803a08e */ LDR R1, [R5] \n\
 /* 0803a090 */ ADDS R1, 0xDF @ Add 0xDF to R1 \n\
 /* 0803a092 */ STRB R0, [R1] \n\

@@ -1051,7 +1051,7 @@ void drum_studio_save_replay(void) {
             set_scene_trans_var(&scene_studio, 0);
         }
     }
-    func_0800c484();
+    scene_flush_save_buffer();
 }
 
 

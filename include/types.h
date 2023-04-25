@@ -71,8 +71,6 @@ struct BeatscriptThread {
 };
 
 // Beatscript Handler
-// Null = "Data Not Known to be Used YET"
-
 extern struct BeatscriptScene {
     u32 memID:4;
     u32 bypassLoops:1;
@@ -104,19 +102,10 @@ extern struct BeatscriptScene {
     u16 musicTrkVolume; // [D_03005552] Beatscript: Music Channel Selection Volume
     u16 musicTrkTargets; // [D_03005554] Beatscript: Music Channel Selection
     s8  musicKey; // [D_03005556] Beatscript: Music Key
-    u32 null198;
-    u32 null19C;
-    u32 null1A0;
-    u32 null1A4;
-    u32 null1A8;
-    u32 null1AC;
-    u32 null1B0;
-    u32 null1B4;
-    u32 null1B8;
-    u32 null1BC;
+    const char *strings[10]; // [D_030053c0 + 0x198]
     void (*unk1C0)(s32);
     u32 unk1C4;
 } D_030053c0;
 
-extern u32 *D_03005588; // Local Scene Variable
-extern s16 *D_0300558c; // Global Scene Sprite Pool
+extern u32 *D_03005588; // Current Scene Variable
+extern s16 *D_0300558c; // Current Scene Sprite Pool

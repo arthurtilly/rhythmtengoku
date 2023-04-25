@@ -46,7 +46,7 @@ extern void stop_beatscript_scene(void); // Beatscript Engine Force Quit
 extern void set_beatscript_tempo(u16 tempo); // Set Script Tempo
 extern void update_beatscript_tempo(void); // Update Script Tempo (retain unk1_b7)
 extern void set_beatscript_speed(u16 speed); // Set Script Speed (Q8.8)
-extern void func_0800be9c(void); // Stub
+extern void func_0800be9c(void);
 extern void func_0800bea0(u32 arg); // Set unk0_b7
 extern void func_0800bebc(u32 arg); // Set unk1C
 extern u32  scene_change_music(struct SequenceData *, u32 override, s32 soundPlayer); // Play Music
@@ -75,55 +75,55 @@ extern s32 func_0800c1c0(s24_8 arg); // Return (arg * unk10)
 extern s32 func_0800c1d0(s24_8 arg); // Return (arg * (unk10 * unk10))
 // extern ? func_0800c1e8(?); // Set Music Panning
 // extern ? func_0800c228(?);
-// extern ? func_0800c280(?);
-// extern ? func_0800c2b0(?);
+extern struct SoundPlayer *scene_play_sound_to_tempo_and_pitch(struct SequenceData *sfx);
+extern struct SoundPlayer *scene_play_sound_to_tempo(struct SequenceData *sfx);
 // extern ? func_0800c2d0(?);
 // extern ? func_0800c310(?);
 // extern ? func_0800c350(?);
-// extern ? func_0800c390(?);
-// extern ? func_0800c394(?);
+extern void func_0800c390(void);
+extern u32 func_0800c394(void);
 extern u32 func_0800c398(void);
-extern s32 beats_to_ticks(u32); // Convert Script Beats To Real-Time Ticks
+extern s32 beats_to_ticks(u32); // Convert Script Tatums to Real-Time Frames
 extern u32 get_current_mem_id(void); // Get Current Active Thread (Memory ID / SubScene)
 extern void set_current_mem_id(u32 id); // Set Current Active Thread (Memory ID / SubScene)
-// extern ? func_0800c3e4(?);
-// extern ? func_0800c3e8(?);
-// extern ? func_0800c3ec(?);
-// extern ? func_0800c3fc(?);
-// extern ? func_0800c400(?);
-// extern ? func_0800c404(?);
-// extern ? func_0800c408(?);
-// extern ? func_0800c40c(?);
-// extern ? func_0800c410(?);
-// extern ? func_0800c414(?);
-// extern ? func_0800c418(?);
-// extern ? func_0800c41c(?);
-// extern ? func_0800c420(?);
-// extern ? func_0800c424(?);
-// extern ? func_0800c428(?);
-// extern ? func_0800c42c(?);
-extern void *scene_mem_heap_alloc(u32 size); // Allocate Space in Memory Heap
+extern void func_0800c3e4(void);
+extern void func_0800c3e8(u32 arg);
+extern void func_0800c3ec(u32 arg);
+extern void func_0800c3fc(void);
+extern void func_0800c400(void);
+extern void func_0800c404(void);
+extern void func_0800c408(void);
+extern void func_0800c40c(void);
+extern void func_0800c410(void);
+extern void func_0800c414(void);
+extern void func_0800c418(void);
+extern void func_0800c41c(void);
+extern void func_0800c420(void);
+extern void func_0800c424(void);
+extern void func_0800c428(void);
+extern s32 scene_affine_group_alloc(void);
+extern void *scene_mem_heap_alloc(u32 size);
 // extern ? func_0800c454(?);
-// extern ? func_0800c484(?);
-// extern ? func_0800c490(?);
-// extern ? func_0800c494(?);
-// extern ? func_0800c4ac(?);
+extern void scene_flush_save_buffer(void);
+extern u32 func_0800c490(void);
+extern void func_0800c494(u32 thread);
+extern void func_0800c4ac(void);
 // extern ? func_0800c4b0(?);
 // extern ? func_0800c508(?);
 // extern ? func_0800c560(?);
 // extern ? func_0800c5b8(?);
-// extern ? func_0800c604(?);
-// extern ? func_0800c654(?);
-// extern ? func_0800c658(?);
-// extern ? func_0800c65c(?);
+extern void func_0800c604(u32 thread);
+extern void func_0800c654(void);
+extern void func_0800c658(void);
+extern void func_0800c65c(void);
 extern struct BitmapFontOBJ *func_0800c660(u16, u8);
 // extern ? func_0800c694(?);
 // extern ? func_0800c6a4(?);
 // extern ? func_0800c6c8(?);
-// extern ? func_0800c6d4(?);
-// extern ? func_0800c6d8(?);
-// extern ? func_0800c6dc(?);
-// extern ? func_0800c6e0(?);
+extern void func_0800c6d4(void);
+extern void func_0800c6d8(void);
+extern void func_0800c6dc(void);
+extern void func_0800c6e0(void);
 // extern ? func_0800c6e4(?); // BEATSCRIPT - IF Statement Start
 // extern ? func_0800c824(?); // BEATSCRIPT - ELSE Statement Start
 // extern ? func_0800c95c(?); // BEATSCRIPT - SWITCH Statement Start
@@ -132,23 +132,23 @@ extern struct BitmapFontOBJ *func_0800c660(u16, u8);
 // extern ? func_0800ca1c(?); // BEATSCRIPT - CMD_20 Statement Start ("Else"?)
 // extern ? func_0800ca70(?);
 // extern ? func_0800cb28(?); // BEATSCRIPT - Update Stream
-extern void func_0800dfbc(void); // Stub
-extern void func_0800dfc0(void); // Stub
+extern void func_0800dfbc(void);
+extern void func_0800dfc0(void);
 extern s32 func_0800dfc4(void); // a very broken (and unused) function
-extern void func_0800dfe0(void); // Stub
-extern void func_0800dfe4(void); // Stub
-extern void func_0800dfe8(void); // Stub
-extern void func_0800dfec(void); // Stub
-extern void func_0800dff0(void); // Stub
-extern void func_0800dff4(void); // Stub
-extern void func_0800dff8(void); // Stub
-extern void func_0800dffc(void); // Stub
-extern void func_0800e000(void); // Stub
-extern void func_0800e004(void); // Stub
-extern void func_0800e008(void); // Stub
-extern void func_0800e00c(void); // Stub
-extern void func_0800e010(void); // Stub
-extern void func_0800e014(void); // Stub
+extern void func_0800dfe0(void);
+extern void func_0800dfe4(void);
+extern void func_0800dfe8(void);
+extern void func_0800dfec(void);
+extern void func_0800dff0(void);
+extern void func_0800dff4(void);
+extern void func_0800dff8(void);
+extern void func_0800dffc(void);
+extern void func_0800e000(void);
+extern void func_0800e004(void);
+extern void func_0800e008(void);
+extern void func_0800e00c(void);
+extern void func_0800e010(void);
+extern void func_0800e014(void);
 extern void scene_set_video_mode(s32 videoMode); // VIDEO - Set Video Mode
 extern void scene_show_bg_layer(s32 layer); // VIDEO - Show BG Layer
 extern void scene_hide_bg_layer(s32 layer); // VIDEO - Hide BG Layer
@@ -186,8 +186,8 @@ extern void func_0800e62c(s16 sprite, u32 arg1, s16 x, s16 y, u16 duration);
 // extern ? func_0800e8b0(?);
 // extern ? func_0800e8d8(?);
 // extern ? func_0800e8f4(?);
-// extern ? func_0800e940(?);
-// extern ? func_0800e944(?);
+extern void func_0800e940(void);
+extern void func_0800e944(void);
 // extern ? func_0800e948(?);
 // extern ? func_0800e970(?);
 // extern ? func_0800e9d8(?);
@@ -197,34 +197,35 @@ extern void func_0800e62c(s16 sprite, u32 arg1, s16 x, s16 y, u16 duration);
 // extern ? func_0800ea3c(?);
 // extern ? func_0800ea70(?);
 // extern ? func_0800eaa0(?);
-// extern ? func_0800eb0c(?);
+extern void func_0800eb0c(void); // Clear unk1_b7
 // extern ? func_0800eb1c(?);
-// extern ? func_0800ebac(?);
-// extern ? func_0800ebf8(u32 target, u32 duration); // BEATSCRIPT - Change Tempo
-// extern ? func_0800ec20(?);
+extern void func_0800ebac(u32 initial, u32 target, u32 duration);
+extern void func_0800ebf8(u32 target, u32 duration); // BEATSCRIPT - Change Tempo
+extern void func_0800ec20(void); // Clear unk2_b0
 // extern ? func_0800ec34(?);
-// extern ? func_0800ecac(?);
-// extern ? func_0800ecec(s32 target, u32 duration); // BEATSCRIPT - Change Music Pitch
-// extern ? func_0800ed08(?);
-// extern ? func_0800ed24(?); // BEATSCRIPT - Fade-In Music
-// extern ? func_0800ed3c(?); // BEATSCRIPT - Fade-Out Music
-// extern ? func_0800ed54(?);
-// extern ? func_0800ed58(?);
-// extern ? func_0800ed5c(?);
-// extern ? func_0800ed60(?); // Stub
+extern void func_0800ecac(s32 initial, s32 target, u32 duration);
+extern void func_0800ecec(s32 target, u32 duration); // BEATSCRIPT - Change Music Pitch
+extern void func_0800ed08(u32 set); // Set unk2_b1
+extern void func_0800ed24(u32 duration); // BEATSCRIPT - Fade-In Music
+extern void func_0800ed3c(u32 duration); // BEATSCRIPT - Fade-Out Music
+extern void func_0800ed54(void);
+extern void func_0800ed58(void);
+extern void func_0800ed5c(void);
+extern void func_0800ed60(u32 speed);
 // extern ? func_0800ed64(?);
-// extern ? func_0800edb8(?);
+extern void func_0800edb8(void *data);
 // extern ? func_0800edc8(?);
-// extern ? func_0800edfc(?);
-// extern ? func_0800ee1c(?);
-// extern ? func_0800ee3c(?);
-// extern ? func_0800ee5c(?);
-// extern ? func_0800ee7c(?);
-// extern ? func_0800ee9c(?);
-// extern ? func_0800eebc(?);
-// extern ? func_0800f070(?);
-// extern ? func_0800f084(?);
-// extern ? func_0800f09c(?);
+extern void func_0800edfc(void *bgPalette);
+extern void func_0800ee1c(void *objPalette);
+extern void func_0800ee3c(void *bgPalette);
+extern void func_0800ee5c(void *objPalette);
+extern void func_0800ee7c(void *bgPalette);
+extern void func_0800ee9c(void *objPalette);
+extern void func_0800eebc(char *dest, const char *src);
+extern void func_0800f070(u32 id, const char *string);
+extern void func_0800f084(void);
+extern void func_0800f09c(struct BitmapFontOBJ *objFont);
+
 // extern ? func_0800f0b4(?);
 // extern ? func_0800f180(?);
 // extern ? func_0800f1ec(?);

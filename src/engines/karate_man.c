@@ -239,10 +239,10 @@ void karate_cue_increment_z_for_existing_objects(struct Cue *currentCue) {
 // CUE - Spawn
 void karate_cue_spawn(struct Cue *cue, struct KarateManCue *data, u32 type) {
     data->isHit = FALSE;
-    data->unk8 = func_0800c42c();
+    data->unk8 = scene_affine_group_alloc();
     data->sprite = func_0804d160(D_03005380, anim_karate_object, 0, 156, 52, 0x4800, 0, 0, 0);
     assign_sprite_affine_param(data->sprite, data->unk8);
-    data->unk9 = func_0800c42c();
+    data->unk9 = scene_affine_group_alloc();
     data->shadow = func_0804d160(D_03005380, anim_karate_object_shadow, 0, 156, 133, 0x4a00, 0, 0, 0);
     assign_sprite_affine_param(data->shadow, data->unk9);
     data->unk1C = 0;

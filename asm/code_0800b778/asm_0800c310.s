@@ -30,7 +30,7 @@ branch_0800c32c: \n\
 /* 0800c33a */ LSRS R0, R0, 0xE \n\
 /* 0800c33c */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0800c33e */ LDR R0, [R0] \n\
-/* 0800c340 */ BL func_0800c280 \n\
+/* 0800c340 */ BL scene_play_sound_to_tempo_and_pitch \n\
 /* 0800c344 */ B branch_0800c348 \n\
  \n\
 branch_0800c346: \n\

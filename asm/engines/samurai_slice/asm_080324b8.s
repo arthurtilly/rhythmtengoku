@@ -8,7 +8,7 @@ thumb_func_start func_080324b8 \n\
 /* 080324bc */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 080324be */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 080324c0 */ STRB R4, [R5, 0x1C] \n\
-/* 080324c2 */ BL func_0800c42c \n\
+/* 080324c2 */ BL scene_affine_group_alloc \n\
 /* 080324c6 */ STRB R0, [R5, 0x2] \n\
 /* 080324c8 */ LDR R6, =D_03005380 \n\
 /* 080324ca */ LDR R0, [R6] \n\
