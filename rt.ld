@@ -675,8 +675,8 @@ SECTIONS {
         build/games/rhythm_toys/graphics/cat_machine_pal.c.o(.data);
         build/games/rhythm_toys/graphics/rap_machine_anim.c.o(.data);
         build/games/rhythm_toys/graphics/rap_machine_pal.c.o(.data);
-        build/games/rhythm_toys/graphics/confession_machine_anim.c.o(.data);
-        build/games/rhythm_toys/graphics/confession_machine_pal.c.o(.data);
+        build/games/rhythm_toys/graphics/love_machine_anim.c.o(.data);
+        build/games/rhythm_toys/graphics/love_machine_pal.c.o(.data);
         build/games/ninja_bodyguard/graphics/ninja_bodyguard_anim.c.o(.data);
         build/games/ninja_bodyguard/graphics/ninja_bodyguard_pal.c.o(.data);
         build/games/space_dance/graphics/space_dance_anim.c.o(.data);

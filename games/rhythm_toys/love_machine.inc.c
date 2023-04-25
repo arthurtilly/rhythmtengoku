@@ -2,7 +2,7 @@
 
 
 // Sound Effect Pool
-struct SequenceData *const confession_machine_sfx_pool_right[] = {
+struct SequenceData *const love_machine_sfx_pool_right[] = {
     &s_heat_v_anataga_seqData,
     &s_heat_v_anatatara_seqData,
     &s_heat_v_kimiga_seqData,
@@ -10,7 +10,7 @@ struct SequenceData *const confession_machine_sfx_pool_right[] = {
 };
 
 // Sound Effect Pool
-struct SequenceData *const confession_machine_sfx_pool_left[] = {
+struct SequenceData *const love_machine_sfx_pool_left[] = {
     &s_heat_v_jituhane_seqData,
     &s_heat_v_watasine_seqData,
     &s_heat_v_watasitara_seqData,
@@ -18,7 +18,7 @@ struct SequenceData *const confession_machine_sfx_pool_left[] = {
 };
 
 // Sound Effect Pool
-struct SequenceData *const confession_machine_sfx_pool_down[] = {
+struct SequenceData *const love_machine_sfx_pool_down[] = {
     &s_heat_v_okubyo_seqData,
     &s_heat_v_majime_seqData,
     &s_heat_v_kouitta_seqData,
@@ -26,7 +26,7 @@ struct SequenceData *const confession_machine_sfx_pool_down[] = {
 };
 
 // Sound Effect Pool
-struct SequenceData *const confession_machine_sfx_pool_up[] = {
+struct SequenceData *const love_machine_sfx_pool_up[] = {
     &s_heat_v_doji_seqData,
     &s_heat_v_sugoi_seqData,
     &s_heat_v_koumietemo_seqData,
@@ -34,7 +34,7 @@ struct SequenceData *const confession_machine_sfx_pool_up[] = {
 };
 
 // Sound Effect Pool
-struct SequenceData *const confession_machine_sfx_pool_b[] = {
+struct SequenceData *const love_machine_sfx_pool_b[] = {
     &s_heat_v_demo_seqData,
     &s_heat_v_yappari_seqData,
     &s_heat_v_dakedo_seqData,
@@ -42,7 +42,7 @@ struct SequenceData *const confession_machine_sfx_pool_b[] = {
 };
 
 // Sound Effect Pool
-struct SequenceData *const confession_machine_sfx_pool_a[] = {
+struct SequenceData *const love_machine_sfx_pool_a[] = {
     &s_heat_v_suki_seqData,
     &s_heat_v_kirai_seqData,
     &s_heat_v_seki_seqData,
@@ -50,20 +50,20 @@ struct SequenceData *const confession_machine_sfx_pool_a[] = {
 };
 
 // [D_089e9b04] Confession Machine SFX Pool Table
-struct SequenceData *const *confession_machine_sfx_table[] = {
-    /* A */ confession_machine_sfx_pool_a,
-    /* B */ confession_machine_sfx_pool_b,
-    /* U */ confession_machine_sfx_pool_up,
-    /* D */ confession_machine_sfx_pool_down,
-    /* L */ confession_machine_sfx_pool_left,
-    /* R */ confession_machine_sfx_pool_right
+struct SequenceData *const *love_machine_sfx_table[] = {
+    /* A */ love_machine_sfx_pool_a,
+    /* B */ love_machine_sfx_pool_b,
+    /* U */ love_machine_sfx_pool_up,
+    /* D */ love_machine_sfx_pool_down,
+    /* L */ love_machine_sfx_pool_left,
+    /* R */ love_machine_sfx_pool_right
 };
 
 // [D_089e9b1c] Confession Machine Demo BPM
-u16 confession_machine_demo_bpm = 130;
+u16 love_machine_demo_bpm = 130;
 
 // [D_089e9b20] Confession Machine Demo Script (Unused)
-struct RhythmToysDemo confession_machine_demo_seq[] = {
+struct RhythmToysDemo love_machine_demo_seq[] = {
     /* 0x00 */ { RHYTHM_TOYS_DEMO_PRESS_A, 0x5F },
     /* 0x01 */ { RHYTHM_TOYS_DEMO_PRESS_A, 0x5F },
     /* 0x02 */ { RHYTHM_TOYS_DEMO_PRESS_B, 0x8E },

@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0890e868] Confession Machine Palette
-Palette confession_machine_pal[] = {
+Palette love_machine_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x504848),
         /* 01 */ TO_RGB555(0x000000),

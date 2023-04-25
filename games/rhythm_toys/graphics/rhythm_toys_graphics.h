@@ -37,7 +37,7 @@ extern struct Animation anim_not_love_san_speak_short[];
 
 /* CONFESSION MACHINE - PALETTES */
 
-extern Palette confession_machine_pal[];
+extern Palette love_machine_pal[];
 
 /* RAP MACHINE - ANIMATIONS */
 
