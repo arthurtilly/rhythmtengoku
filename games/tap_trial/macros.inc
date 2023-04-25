@@ -56,6 +56,12 @@
     load_game tap_trial_engine, 4
 .endm
 
+@ Load Game: Tap Trial (Random Version)
+.macro load_tap_trial_random
+    load_tap_trial_labels
+    load_game tap_trial_engine, 6
+.endm
+
 
 /* ---------------- Game Engine Events ---------------- */
 

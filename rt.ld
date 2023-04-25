@@ -782,7 +782,7 @@ SECTIONS {
         build/games/spaceball/spaceball_unused_2.bs.o(.script.entry);
         build/games/spaceball/spaceball.bs.o(.script.entry);
         build/games/spaceball/spaceball_2.bs.o(.script.entry);
-        build/bin/bindata_089d19dc.bin.o(.rodata*);
+        build/games/tap_trial/tap_trial_unused.bs.o(.script.entry);
         build/games/tap_trial/tap_trial.bs.o(.script.entry);
         build/games/mechanical_horse/mechanical_horse_unused.bs.o(.script.entry);
         build/games/mechanical_horse/mechanical_horse.bs.o(.script.entry);
@@ -1034,7 +1034,7 @@ SECTIONS {
         build/games/spaceball/spaceball_unused_2.bs.o(.script.main);
         build/games/spaceball/spaceball.bs.o(.script.main);
         build/games/spaceball/spaceball_2.bs.o(.script.main);
-        build/bin/bindata_08a0b654.bin.o(.rodata*);
+        build/games/tap_trial/tap_trial_unused.bs.o(.script.main);
         build/games/tap_trial/tap_trial.bs.o(.script.main);
         build/games/mechanical_horse/mechanical_horse_unused.bs.o(.script.main);
         build/games/mechanical_horse/mechanical_horse.bs.o(.script.main);
