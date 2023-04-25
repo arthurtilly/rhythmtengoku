@@ -6,14 +6,14 @@
 .section .script.entry
 @ Drum Lesson (Hi-Tech 2) - Script Entry Point
 
-script script_drum_lesson_hitech_2_entry
+script script_drum_lesson_hi_tech_2_entry
     set_tempo 124
     rest 24
     rest 24
     load_drum_lessons
     enable_play_inputs 1
     assess_inputs 1
-    call script_drum_lesson_hitech_2_main
+    call script_drum_lesson_hi_tech_2_main
     enable_pause 0
     enable_play_inputs 0
     fade_music_out TO_TEMPO, 48
@@ -22,7 +22,7 @@ script script_drum_lesson_hitech_2_entry
     rest 24
 stop
 
-define_gameplay_scene scene_drum_lesson_hitech_2, script_drum_lesson_hitech_2_entry
+define_gameplay_scene scene_drum_lesson_hi_tech_2, script_drum_lesson_hi_tech_2_entry
 
 
 
@@ -659,7 +659,7 @@ endstruct
 
 @ Drum Lesson (Hi-Tech 2) - Main Script
 
-script script_drum_lesson_hitech_2_main
+script script_drum_lesson_hi_tech_2_main
     set_tempo 110
     set_music_volume 256
     assess_inputs 0

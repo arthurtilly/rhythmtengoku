@@ -24,25 +24,25 @@ extern const struct Scene scene_bon_dance;
 extern const struct Scene D_089d5dc4;
 extern const struct Scene D_089d5eac;
 extern const struct Scene D_089d5f94;
-extern const struct Scene D_089d4c8c;
-extern const struct Scene D_089d4d74;
-extern const struct Scene D_089d4e5c;
-extern const struct Scene D_089d4f44;
-extern const struct Scene D_089d502c;
-extern const struct Scene D_089d51fc;
-extern const struct Scene D_089d5114;
-extern const struct Scene D_089d52e4;
-extern const struct Scene D_089d53cc;
-extern const struct Scene D_089d54b4;
-extern const struct Scene D_089d559c;
-extern const struct Scene D_089d5684;
-extern const struct Scene D_089d576c;
-extern const struct Scene D_089d5854;
-extern const struct Scene D_089d593c;
-extern const struct Scene D_089d5a24;
-extern const struct Scene D_089d5b0c;
-extern const struct Scene D_089d5bf4;
-extern const struct Scene D_089d5cdc;
+extern const struct Scene scene_drum_lesson_short_1;
+extern const struct Scene scene_drum_lesson_short_4;
+extern const struct Scene scene_drum_lesson_short_8;
+extern const struct Scene scene_drum_lesson_short_5;
+extern const struct Scene scene_drum_lesson_short_7;
+extern const struct Scene scene_drum_lesson_short_6;
+extern const struct Scene scene_drum_lesson_short_9;
+extern const struct Scene scene_drum_lesson_basic_1;
+extern const struct Scene scene_drum_lesson_basic_2;
+extern const struct Scene scene_drum_lesson_short_2;
+extern const struct Scene scene_drum_lesson_short_3;
+extern const struct Scene scene_drum_lesson_long_4;
+extern const struct Scene scene_drum_lesson_long_2;
+extern const struct Scene scene_drum_lesson_long_3;
+extern const struct Scene scene_drum_lesson_long_1;
+extern const struct Scene scene_drum_lesson_long_5;
+extern const struct Scene scene_drum_lesson_long_6;
+extern const struct Scene scene_drum_lesson_hi_tech_1;
+extern const struct Scene scene_drum_lesson_hi_tech_2;
 extern const struct Scene D_089d48ec;
 extern const struct Scene D_089d4464;
 extern const struct Scene D_089d454c;
@@ -204,79 +204,79 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "こえマシン（ラップ）"
     },
     /* Lesson (Short 1) */ {
-        /* Scene */ &D_089d4c8c,
+        /* Scene */ &scene_drum_lesson_short_1,
         /* Label */ "レッスン（イージー）"
     },
     /* Lesson (Short 4) */ {
-        /* Scene */ &D_089d4d74,
+        /* Scene */ &scene_drum_lesson_short_4,
         /* Label */ "レッスン（ハード１）"
     },
     /* Lesson (Short 8) */ {
-        /* Scene */ &D_089d4e5c,
+        /* Scene */ &scene_drum_lesson_short_8,
         /* Label */ "レッスン（ハード２）"
     },
     /* Lesson (Short 5) */ {
-        /* Scene */ &D_089d4f44,
+        /* Scene */ &scene_drum_lesson_short_5,
         /* Label */ "レッスン（キメパターン１）"
     },
     /* Lesson (Short 7) */ {
-        /* Scene */ &D_089d502c,
+        /* Scene */ &scene_drum_lesson_short_7,
         /* Label */ "レッスン（キメパターン２）"
     },
     /* Lesson (Short 6) */ {
-        /* Scene */ &D_089d51fc,
+        /* Scene */ &scene_drum_lesson_short_6,
         /* Label */ "レッスン（デスコビート）"
     },
     /* Lesson (Short 9) */ {
-        /* Scene */ &D_089d5114,
+        /* Scene */ &scene_drum_lesson_short_9,
         /* Label */ "レッスン（ボッサ）"
     },
     /* Lesson (Basic 1) */ {
-        /* Scene */ &D_089d52e4,
+        /* Scene */ &scene_drum_lesson_basic_1,
         /* Label */ "レッスン（スネア）"
     },
     /* Lesson (Basic 2) */ {
-        /* Scene */ &D_089d53cc,
+        /* Scene */ &scene_drum_lesson_basic_2,
         /* Label */ "レッスン（バスとスネア）"
     },
     /* Lesson (Short 2) */ {
-        /* Scene */ &D_089d54b4,
+        /* Scene */ &scene_drum_lesson_short_2,
         /* Label */ "レッスン（はやい８ビート）"
     },
     /* Lesson (Short 3) */ {
-        /* Scene */ &D_089d559c,
+        /* Scene */ &scene_drum_lesson_short_3,
         /* Label */ "レッスン（スネアテクニック）"
     },
     /* Lesson (Long 4) */ {
-        /* Scene */ &D_089d5684,
+        /* Scene */ &scene_drum_lesson_long_4,
         /* Label */ "レッスン（じっせん１）"
     },
     /* Lesson (Long 2) */ {
-        /* Scene */ &D_089d576c,
+        /* Scene */ &scene_drum_lesson_long_2,
         /* Label */ "レッスン（じっせん２）"
     },
     /* Lesson (Long 3) */ {
-        /* Scene */ &D_089d5854,
+        /* Scene */ &scene_drum_lesson_long_3,
         /* Label */ "レッスン（じっせん３）"
     },
     /* Lesson (Long 1) */ {
-        /* Scene */ &D_089d593c,
+        /* Scene */ &scene_drum_lesson_long_1,
         /* Label */ "レッスン（じっせん４）"
     },
     /* Lesson (Long 5) */ {
-        /* Scene */ &D_089d5a24,
+        /* Scene */ &scene_drum_lesson_long_5,
         /* Label */ "レッスン（じっせん５）"
     },
     /* Lesson (Long 6) */ {
-        /* Scene */ &D_089d5b0c,
+        /* Scene */ &scene_drum_lesson_long_6,
         /* Label */ "レッスン（じっせん６）"
     },
     /* Lesson (High-Tech 1) */ {
-        /* Scene */ &D_089d5bf4,
+        /* Scene */ &scene_drum_lesson_hi_tech_1,
         /* Label */ "レッスン（じっせん７）"
     },
     /* Lesson (High-Tech 2) */ {
-        /* Scene */ &D_089d5cdc,
+        /* Scene */ &scene_drum_lesson_hi_tech_2,
         /* Label */ "レッスン（じっせん８）"
     },
     /* Studio Drummer */ {
