@@ -13,7 +13,7 @@ struct StudioSceneInfo {
     struct DrumTechController drumTech;
     /* 0x358 */
     u32 scriptIsReady;
-    u8 menuState;
+    u8 sceneState;
     struct Listbox *songList;
     u8 songListState;
     struct Listbox *drumList;
@@ -129,30 +129,52 @@ enum StudioDrummerModesEnum {
     /* 02 */ STUDIO_DRUMMER_MODE_PLAYBACK
 };
 
+enum StudioStatesEnum {
+    /* 00 */ STUDIO_STATE_NONE,
+    /* 01 */ STUDIO_STATE_NAV_SONG_LIST,
+    /* 02 */ STUDIO_STATE_NAV_OPTION_LIST,
+    /* 03 */ STUDIO_STATE_NAV_DRUM_LIST,
+    /* 04 */ STUDIO_STATE_EDIT_VIA_SONG_LIST,
+    /* 05 */ STUDIO_STATE_EDIT_VIA_OPTION_LIST,
+    /* 06 */ STUDIO_STATE_WARNING_DISPLAY
+};
 
-// Sound Effects:
-extern struct SequenceData s_studio_bgm_seqData;
-extern struct SequenceData s_menu_kettei2_seqData;
-extern struct SequenceData s_menu_cancel3_seqData;
-extern struct SequenceData s_menu_error_seqData;
-extern struct SequenceData s_menu_cursor1_seqData;
-extern struct SequenceData s_menu_se24_seqData;
-extern struct SequenceData s_menu_se13_seqData;
+enum StudioWarningOptionsEnum {
+    /* 00 */ STUDIO_WARNING_OPT_DISMISS,
+    /* 01 */ STUDIO_WARNING_OPT_Y,
+    /* 02 */ STUDIO_WARNING_OPT_N
+};
+
+enum StudioOptionsEnum {
+    /* 00 */ STUDIO_OPTION_LISTEN,
+    /* 01 */ STUDIO_OPTION_DRUM,
+    /* 02 */ STUDIO_OPTION_SORT,
+    /* 03 */ STUDIO_OPTION_MARK,
+    /* 01 */ STUDIO_OPTION_DELETE = STUDIO_OPTION_DRUM
+};
+
+enum StudioMenusEnum {
+    /* 00 */ STUDIO_MENU_SONG_LIST,
+    /* 01 */ STUDIO_MENU_OPTION_LIST,
+    /* 02 */ STUDIO_MENU_DRUM_LIST
+};
+
+enum StudioListEventsEnum {
+    /* 00 */ STUDIO_LIST_EV_NONE,
+    /* 01 */ STUDIO_LIST_EV_CONFIRM,
+    /* 02 */ STUDIO_LIST_EV_SCROLL_UP,
+    /* 03 */ STUDIO_LIST_EV_SCROLL_DOWN,
+    /* 04 */ STUDIO_LIST_EV_CANCEL,
+    /* 05 */ STUDIO_LIST_EV_MOVE_ITEM,
+    /* 06 */ STUDIO_LIST_EV_CHECK_ITEM
+};
 
 
 // Scene Data:
-extern const char text_studio_song_pad_14px[];
 extern struct StudioEntry studio_song_table[];
 extern const char *studio_drum_kit_names[];
-extern const char text_studio_kit_default[];
-extern const char text_studio_kit_pad_8px[];
-extern const char text_studio_kit_not_unlocked[];
 extern const char *studio_mem_warnings_text[];
 extern const char **studio_options_text[];
-extern const char text_studio_option_default[];
-extern const char text_studio_warning_no_checks1[];
-extern const char text_studio_warning_no_checks2[];
-extern const char text_studio_warning_delete[];
 extern u8 studio_total_options[];
 extern struct GraphicsTable studio_gfx_table[];
 extern struct CompressedGraphics *studio_buffered_textures[];
@@ -178,7 +200,6 @@ extern s32 save_studio_song(s32 song, s32 replay, s32 drumKit, s32 flags);
 extern void swap_studio_songs(s32 id1, s32 id2);
 extern void move_studio_song(s32 id, s32 newIndex);
 extern void delete_studio_song(s32 id);
-
 extern const char *studio_song_list_get_string(s32 line);
 extern s16 studio_song_list_get_sprite(s32 line);
 extern void studio_song_list_on_scroll(s32 arg, u32 current, u32 previous);

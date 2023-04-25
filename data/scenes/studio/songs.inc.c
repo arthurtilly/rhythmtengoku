@@ -45,10 +45,6 @@ extern const struct Beatscript script_studio_superb[];
 extern const struct Beatscript script_studio_perfect[];
 
 
-// Song Title Padding
-const char text_studio_song_pad_14px[] = "\00414.";
-
-
 // [D_089d81b4] Studio Song Entries
 struct StudioEntry studio_song_table[] = {
     /* SILENCE */ {
