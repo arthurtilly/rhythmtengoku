@@ -56,7 +56,7 @@ extern struct Scene scene_drum_live;
 
 
 // Level Entries Table
-struct LevelData level_data_table[TOTAL_LEVELS] = {
+struct LevelData level_data_table[] = {
     /* KARATE_MAN */ {
         /* Entry Scene   */ &scene_karate_man,
         /* Level Name    */ "ƒJƒ‰ƒe‰Æ",

@@ -6,7 +6,7 @@ extern struct SequenceData s_toys_bgm_seqData;
 
 
 // [D_089dd4a4] Rhythm Toys Menu - Levels
-struct MedalCornerLevel toys_menu_levels[TOTAL_RHYTHM_TOYS] = {
+struct MedalCornerLevel toys_menu_levels[] = {
     /* CAT_MACHINE */ {
         /* Scene  */ &scene_cat_machine,
         /* Title  */ "ネコ マシーン",
