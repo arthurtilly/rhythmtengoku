@@ -790,7 +790,7 @@ SECTIONS {
         build/games/marching_orders/marching_orders.bs.o(.script.entry);
         build/games/marching_orders/marching_orders_2.bs.o(.script.entry);
         build/games/wizards_waltz/wizards_waltz.bs.o(.script.entry);
-        build/bin/bindata_089d2598.bin.o(.rodata*);
+        build/games/remix_1/remix_1_unused.bs.o(.script.entry);
         build/games/remix_1/remix_1.bs.o(.script.entry);
         build/games/bunny_hop/bunny_hop.bs.o(.script.entry);
         build/bin/bindata_089d2874.bin.o(.rodata*);
@@ -1042,7 +1042,7 @@ SECTIONS {
         build/games/marching_orders/marching_orders.bs.o(.script.main);
         build/games/marching_orders/marching_orders_2.bs.o(.script.main);
         build/games/wizards_waltz/wizards_waltz.bs.o(.script.main);
-        build/bin/bindata_08a13db4.bin.o(.rodata*);
+        build/games/remix_1/remix_1_unused.bs.o(.script.main);
         build/games/remix_1/remix_1.bs.o(.script.main);
         build/games/bunny_hop/bunny_hop.bs.o(.script.main);
         build/bin/bindata_08a19850.bin.o(.rodata*);
