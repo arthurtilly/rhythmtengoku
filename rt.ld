@@ -777,7 +777,8 @@ SECTIONS {
         build/games/sneaky_spirits/sneaky_spirits.bs.o(.script.entry);
         build/games/sneaky_spirits/sneaky_spirits_2.bs.o(.script.entry);
         build/games/samurai_slice/samurai_slice.bs.o(.script.entry);
-        build/bin/bindata_089d160c.bin.o(.rodata*);
+        build/games/spaceball/spaceball_unused.bs.o(.script.entry);
+        build/bin/bindata_089d1700.bin.o(.rodata*);
         build/games/spaceball/spaceball.bs.o(.script.entry);
         build/games/spaceball/spaceball_2.bs.o(.script.entry);
         build/bin/bindata_089d19dc.bin.o(.rodata*);
@@ -1027,7 +1028,8 @@ SECTIONS {
         build/games/sneaky_spirits/sneaky_spirits.bs.o(.script.main);
         build/games/sneaky_spirits/sneaky_spirits_2.bs.o(.script.main);
         build/games/samurai_slice/samurai_slice.bs.o(.script.main);
-        build/bin/bindata_08a05900.bin.o(.rodata*);
+        build/games/spaceball/spaceball_unused.bs.o(.script.main);
+        build/bin/bindata_08a07334.bin.o(.rodata*);
         build/games/spaceball/spaceball.bs.o(.script.main);
         build/games/spaceball/spaceball_2.bs.o(.script.main);
         build/bin/bindata_08a0b654.bin.o(.rodata*);
