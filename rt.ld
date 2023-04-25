@@ -786,7 +786,7 @@ SECTIONS {
         build/games/tap_trial/tap_trial.bs.o(.script.entry);
         build/games/mechanical_horse/mechanical_horse_unused.bs.o(.script.entry);
         build/games/mechanical_horse/mechanical_horse.bs.o(.script.entry);
-        build/bin/bindata_089d1f34.bin.o(.rodata*);
+        build/games/marching_orders/marching_orders_unused.bs.o(.script.entry);
         build/games/marching_orders/marching_orders.bs.o(.script.entry);
         build/games/marching_orders/marching_orders_2.bs.o(.script.entry);
         build/games/wizards_waltz/wizards_waltz.bs.o(.script.entry);
@@ -1038,7 +1038,7 @@ SECTIONS {
         build/games/tap_trial/tap_trial.bs.o(.script.main);
         build/games/mechanical_horse/mechanical_horse_unused.bs.o(.script.main);
         build/games/mechanical_horse/mechanical_horse.bs.o(.script.main);
-        build/bin/bindata_08a0fec0.bin.o(.rodata*);
+        build/games/marching_orders/marching_orders_unused.bs.o(.script.main);
         build/games/marching_orders/marching_orders.bs.o(.script.main);
         build/games/marching_orders/marching_orders_2.bs.o(.script.main);
         build/games/wizards_waltz/wizards_waltz.bs.o(.script.main);
