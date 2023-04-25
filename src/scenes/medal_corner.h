@@ -26,7 +26,7 @@ struct MedalCornerMenu {
 // Scene Macros/Enums:
 enum RhythmToysEnum {
     RHYTHM_TOY_CAT_MACHINE,
-    RHYTHM_TOY_HORSE_MACHINE,
+    RHYTHM_TOY_MECHANICAL_HORSE,
     RHYTHM_TOY_LOVE_MACHINE,
     RHYTHM_TOY_RAP_MACHINE,
 

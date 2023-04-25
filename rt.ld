@@ -79,7 +79,7 @@ SECTIONS {
 		build/src/engines/tap_trial.c.o(.bss);
 		build/src/engines/toss_boys.c.o(.bss);
 		build/src/engines/tram_and_pauline.c.o(.bss);
-		build/src/engines/horse_machine.c.o(.bss);
+		build/src/engines/mechanical_horse.c.o(.bss);
 		build/src/engines/sick_beats.c.o(.bss);
 		build/src/engines/rhythm_toys.c.o(.bss);
 		build/src/engines/wizards_waltz.c.o(.bss);
@@ -204,7 +204,7 @@ SECTIONS {
 		build/src/engines/tap_trial.c.o(.text);
 		build/src/engines/toss_boys.c.o(.text);
 		build/src/engines/tram_and_pauline.c.o(.text);
-		build/src/engines/horse_machine.c.o(.text);
+		build/src/engines/mechanical_horse.c.o(.text);
 		build/src/engines/sick_beats.c.o(.text);
 		build/src/engines/rhythm_toys.c.o(.text);
 		build/src/engines/wizards_waltz.c.o(.text);
@@ -312,7 +312,7 @@ SECTIONS {
         build/games/space_dance/engine.c.o(.rodata);
         build/games/tap_trial/engine.c.o(.rodata);
         build/games/tram_and_pauline/engine.c.o(.rodata);
-        build/games/horse_machine/engine.c.o(.rodata);
+        build/games/mechanical_horse/engine.c.o(.rodata);
         build/games/rhythm_toys/engine.c.o(.rodata);
 
         build/games/karate_man/karate_man_text.c.o(.rodata);
@@ -328,7 +328,7 @@ SECTIONS {
         build/games/samurai_slice/samurai_slice_text.c.o(.rodata);
         build/games/spaceball/spaceball_text.c.o(.rodata);
         build/games/tap_trial/tap_trial_text.c.o(.rodata);
-        build/games/horse_machine/horse_machine_text.c.o(.rodata);
+        build/games/mechanical_horse/mechanical_horse_text.c.o(.rodata);
         build/games/marching_orders/marching_orders_text.c.o(.rodata);
         build/games/wizards_waltz/wizards_waltz_text.c.o(.rodata);
         build/games/remix_1/remix_1_text.c.o(.rodata);
@@ -705,8 +705,8 @@ SECTIONS {
         build/games/tram_and_pauline/graphics/tram_pauline_tutorial_pal.c.o(.data);
         build/games/tram_and_pauline/graphics/tram_pauline_anim.c.o(.data);
         build/games/tram_and_pauline/graphics/tram_pauline_pal.c.o(.data);
-        build/games/horse_machine/graphics/horse_machine_anim.c.o(.data);
-        build/games/horse_machine/graphics/horse_machine_pal.c.o(.data);
+        build/games/mechanical_horse/graphics/mechanical_horse_anim.c.o(.data);
+        build/games/mechanical_horse/graphics/mechanical_horse_pal.c.o(.data);
         build/games/sick_beats/graphics/sick_beats_anim.c.o(.data);
         build/games/sick_beats/graphics/sick_beats_pal.c.o(.data);
         build/graphics/warning/warning_anim.c.o(.data);
@@ -918,7 +918,7 @@ SECTIONS {
         build/games/tap_trial/engine.c.o(.data);
         build/games/toss_boys/engine.c.o(.data);
         build/games/tram_and_pauline/engine.c.o(.data);
-        build/games/horse_machine/engine.c.o(.data);
+        build/games/mechanical_horse/engine.c.o(.data);
         build/games/sick_beats/engine.c.o(.data);
         build/games/rhythm_toys/engine.c.o(.data);
         build/games/wizards_waltz/engine.c.o(.data);

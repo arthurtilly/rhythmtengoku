@@ -12,8 +12,8 @@ struct Animation anim_toys_menu_cat_machine[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890d940] Horse Machine
-struct Animation anim_toys_menu_horse_machine[] = {
+// [D_0890d940] Mechanical Horse
+struct Animation anim_toys_menu_mechanical_horse[] = {
     /* 000 */ { rhythm_toys_menu_cel003, 16 },
     /* 001 */ { rhythm_toys_menu_cel004, 4 },
     /* 002 */ { rhythm_toys_menu_cel005, 16 },

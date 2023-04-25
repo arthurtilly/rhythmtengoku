@@ -399,7 +399,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Scene */ &scene_marching_orders_2,
         /* Label */ "マーチャ　２"
     },
-    /* Horse Machine */ {
+    /* Mechanical Horse */ {
         /* Scene */ &D_089d1f18,
         /* Label */ "うま（スピード）"
     },

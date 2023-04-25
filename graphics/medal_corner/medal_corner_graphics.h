@@ -72,7 +72,7 @@ extern Palette endless_menu_pal[];
 /* RHYTHM TOYS MENU - ANIMATIONS */
 
 extern struct Animation anim_toys_menu_cat_machine[];
-extern struct Animation anim_toys_menu_horse_machine[];
+extern struct Animation anim_toys_menu_mechanical_horse[];
 extern struct Animation anim_toys_menu_love_machine[];
 extern struct Animation anim_toys_menu_rap_machine[];
 

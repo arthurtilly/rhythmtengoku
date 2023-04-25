@@ -13,10 +13,10 @@ struct MedalCornerLevel toys_menu_levels[TOTAL_RHYTHM_TOYS] = {
         /* Anim   */ anim_toys_menu_cat_machine,
         /* Medals */ 1
     },
-    /* HORSE_MACHINE */ {
+    /* MECHANICAL_HORSE */ {
         /* Scene  */ &D_089d1f18,
         /* Title  */ "Ç§Ç‹ É}ÉVÅ[Éì",
-        /* Anim   */ anim_toys_menu_horse_machine,
+        /* Anim   */ anim_toys_menu_mechanical_horse,
         /* Medals */ 7
     },
     /* LOVE_MACHINE */ {
