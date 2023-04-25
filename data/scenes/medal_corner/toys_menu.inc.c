@@ -1,14 +1,14 @@
-extern const struct Scene D_089d5dc4;
+extern const struct Scene scene_cat_machine;
 extern const struct Scene D_089d1f18;
-extern const struct Scene D_089d5eac;
-extern const struct Scene D_089d5f94;
+extern const struct Scene scene_love_machine;
+extern const struct Scene scene_rap_machine;
 extern struct SequenceData s_toys_bgm_seqData;
 
 
 // [D_089dd4a4] Rhythm Toys Menu - Levels
 struct MedalCornerLevel toys_menu_levels[TOTAL_RHYTHM_TOYS] = {
     /* CAT_MACHINE */ {
-        /* Scene  */ &D_089d5dc4,
+        /* Scene  */ &scene_cat_machine,
         /* Title  */ "ネコ マシーン",
         /* Anim   */ anim_toys_menu_cat_machine,
         /* Medals */ 1
@@ -20,13 +20,13 @@ struct MedalCornerLevel toys_menu_levels[TOTAL_RHYTHM_TOYS] = {
         /* Medals */ 7
     },
     /* LOVE_MACHINE */ {
-        /* Scene  */ &D_089d5eac,
+        /* Scene  */ &scene_love_machine,
         /* Title  */ "告白 マシーン",
         /* Anim   */ anim_toys_menu_love_machine,
         /* Medals */ 15
     },
     /* RAP_MACHINE */ {
-        /* Scene  */ &D_089d5f94,
+        /* Scene  */ &scene_rap_machine,
         /* Title  */ "ラップ マシーン",
         /* Anim   */ anim_toys_menu_rap_machine,
         /* Medals */ 25

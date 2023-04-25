@@ -21,9 +21,9 @@ extern const struct Scene scene_remix_2;
 extern const struct Scene scene_remix_1;
 extern const struct Scene scene_bon_odori;
 extern const struct Scene scene_bon_dance;
-extern const struct Scene D_089d5dc4;
-extern const struct Scene D_089d5eac;
-extern const struct Scene D_089d5f94;
+extern const struct Scene scene_cat_machine;
+extern const struct Scene scene_love_machine;
+extern const struct Scene scene_rap_machine;
 extern const struct Scene scene_drum_lesson_short_1;
 extern const struct Scene scene_drum_lesson_short_4;
 extern const struct Scene scene_drum_lesson_short_8;
@@ -192,15 +192,15 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "ボンダンス"
     },
     /* Rhythm Toys (Cat Machine) */ {
-        /* Scene */ &D_089d5dc4,
+        /* Scene */ &scene_cat_machine,
         /* Label */ "こえマシン（ネコ）"
     },
     /* Rhythm Toys (Confession Machine) */ {
-        /* Scene */ &D_089d5eac,
+        /* Scene */ &scene_love_machine,
         /* Label */ "こえマシン（ラブ）"
     },
     /* Rhythm Toys (Rap Machine) */ {
-        /* Scene */ &D_089d5f94,
+        /* Scene */ &scene_rap_machine,
         /* Label */ "こえマシン（ラップ）"
     },
     /* Lesson (Short 1) */ {

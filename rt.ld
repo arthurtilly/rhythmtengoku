@@ -825,7 +825,7 @@ SECTIONS {
         build/games/drum_studio/drum_lesson_long_6.bs.o(.script.entry);
         build/games/drum_studio/drum_lesson_hi_tech_1.bs.o(.script.entry);
         build/games/drum_studio/drum_lesson_hi_tech_2.bs.o(.script.entry);
-        build/bin/bindata_089d5cf8.bin.o(.rodata*);
+        build/games/rhythm_toys/rhythm_toys.bs.o(.script.entry);
         build/games/bon_odori/bon_odori.bs.o(.script.entry);
         build/games/tap_trial/tap_trial_2.bs.o(.script.entry);
         build/games/clappy_trio/snappy_trio.bs.o(.script.entry);
@@ -1072,7 +1072,7 @@ SECTIONS {
         build/games/drum_studio/drum_lesson_long_6.bs.o(.script.main);
         build/games/drum_studio/drum_lesson_hi_tech_1.bs.o(.script.main);
         build/games/drum_studio/drum_lesson_hi_tech_2.bs.o(.script.main);
-        build/bin/bindata_08a43b38.bin.o(.rodata*);
+        build/games/rhythm_toys/rhythm_toys.bs.o(.script.main);
         build/games/bon_odori/bon_odori.bs.o(.script.main);
         build/games/tap_trial/tap_trial_2.bs.o(.script.main);
         build/games/clappy_trio/snappy_trio.bs.o(.script.main);
