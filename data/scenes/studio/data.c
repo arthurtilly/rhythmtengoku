@@ -88,10 +88,10 @@ const char text_studio_warning_delete[] =
     "ÉzÉìÉgÇ…OKÅH";
 
 
-// [D_089d8444] ?
-u8 D_089d8444[] = {
-    /* 0x00 */ 4,
-    /* 0x01 */ 4
+// [D_089d8444] Total Options
+u8 studio_total_options[] = {
+    /* NO_REPLAY  */ 4,
+    /* HAS_REPLAY */ 4
 };
 
 
@@ -137,17 +137,17 @@ struct CompressedGraphics *studio_buffered_textures[] = {
 };
 
 
-// [D_089d84a0] ?
-u16 D_089d84a0[] = {
-    /* 0x00 */ 0,
-    /* 0x01 */ 104,
-    /* 0x02 */ 240
+// [D_089d84a0] Menu X Offsets
+u16 studio_menu_x_ofs[] = {
+    /* SONG   */ 0,
+    /* OPTION */ 104,
+    /* DRUM   */ 240
 };
 
 
-// [D_089d84a6] ?
-u8 D_089d84a6[] = {
-    /* 0x00 */ 1,
-    /* 0x01 */ 2,
-    /* 0x02 */ 3
+// [D_089d84a6] Unused
+u8 studio_menu_unused_table[] = {
+    /* SONG   */ 1,
+    /* OPTION */ 2,
+    /* DRUM   */ 3
 };

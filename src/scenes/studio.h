@@ -14,14 +14,16 @@ struct StudioSceneInfo {
     /* 0x358 */
     u32 scriptIsReady;
     u8 menuState;
-    struct Listbox *songsList;
-    u8 unk364;
-    struct Listbox *drumsList;
-    u8 unk36C;
-    struct Listbox *optionsList;
-    u8 unk374;
-    u32 null378;
-    u32 null37C;
+    struct Listbox *songList;
+    u8 songListState;
+    struct Listbox *drumList;
+    u8 drumListState;
+    struct Listbox *optionList;
+    u8 optionListState;
+    s16 panStartX;
+    s16 panTargetX;
+    u16 panProgress;
+    u8 currentMenu;
     /* 0x380 */
     u32 unk380;
     u16 unk384;
@@ -33,7 +35,7 @@ struct StudioSceneInfo {
     struct DrumReplaySaveGraph *replayMemoryGraph;
     void *replaySeq;
     u8 replayDrumKit;
-    u32 null49C;
+    const struct Beatscript *drumScript;
     /* 0x4A0 */
     u8 warningIsActive;
     u8 warningIsRendering;
@@ -121,6 +123,12 @@ enum StudioDrumKitsEnum {
     /* 14 */ STUDIO_DRUM_SAMURAI
 };
 
+enum StudioDrummerModesEnum {
+    /* 00 */ STUDIO_DRUMMER_MODE_LISTEN,
+    /* 01 */ STUDIO_DRUMMER_MODE_RECORD,
+    /* 02 */ STUDIO_DRUMMER_MODE_PLAYBACK
+};
+
 
 // Sound Effects:
 extern struct SequenceData s_studio_bgm_seqData;
@@ -145,13 +153,17 @@ extern const char text_studio_option_default[];
 extern const char text_studio_warning_no_checks1[];
 extern const char text_studio_warning_no_checks2[];
 extern const char text_studio_warning_delete[];
-extern u8 D_089d8444[];
+extern u8 studio_total_options[];
 extern struct GraphicsTable studio_gfx_table[];
 extern struct CompressedGraphics *studio_buffered_textures[];
-extern u16 D_089d84a0[];
-extern u8 D_089d84a6[];
-extern struct BeatScript script_scene_studio_exit[];
+extern u16 studio_menu_x_ofs[];
+extern u8 studio_menu_unused_table[];
+extern struct Beatscript script_scene_studio_idle[];
+extern struct Beatscript script_scene_studio_start_song[];
+extern struct Beatscript script_scene_studio_exit[];
 extern struct Scene scene_studio;
+extern struct Scene D_089d4ba4; // Studio Drumming - Listening
+extern struct Scene D_089d49d4; // Studio Drumming - Drumming
 
 
 // Functions:
@@ -170,7 +182,7 @@ extern void delete_studio_song(s32 id);
 extern const char *studio_song_list_get_string(s32 line);
 extern s16 studio_song_list_get_sprite(s32 line);
 extern void studio_song_list_on_scroll(s32 arg, u32 current, u32 previous);
-extern void studio_song_list_init(s32 arg, s32 index, s32 position);
+extern void studio_song_list_init(s32 state, s32 selItem, s32 selLine);
 extern void studio_song_list_update(void);
 extern void studio_song_list_select_item(s32 id);
 extern void studio_song_list_move_item(s32 prevIndex, s32 newIndex);
@@ -178,14 +190,14 @@ extern void studio_song_list_update_w_selection(void);
 
 extern const char *studio_drum_list_get_string(s32 line);
 extern void studio_drum_list_on_scroll(s32 arg, u32 current, u32 previous);
-extern void studio_drum_list_init(s32 arg, s32 index, s32 position);
+extern void studio_drum_list_init(s32 state, s32 selItem, s32 selLine);
 extern void studio_drum_list_exit_to_drumming(void);
 extern void studio_drum_list_warning_memory_result(s32 event, s32 arg);
 extern void studio_drum_list_update(void);
 
 extern const char *studio_option_list_get_string(s32 line);
 extern void studio_option_list_on_scroll(s32 arg, u32 current, u32 previous);
-extern void studio_option_list_init(s32 arg, s32 index);
+extern void studio_option_list_init(s32 state, s32 selItem);
 extern s32 studio_option_list_no_checked_songs(void);
 extern void studio_option_list_exit_to_listening(void);
 extern void studio_option_list_warning_no_checks_result(s32 event, s32 arg);
@@ -203,24 +215,25 @@ extern void studio_scene_start(void *sceneVar, s32 dataArg); // Scene Start
 extern s32 studio_get_current_kit(void);
 extern void studio_set_current_kit(s32 id);
 extern void studio_set_current_song(s32 id, s32 line);
-// extern ? func_0801c530(?);
+extern void studio_remember_list_positions(void);
 extern void studio_scene_paused(void *sceneVar, s32 dataArg); // Scene Update (Paused)
-// extern ? func_0801c5a4(?);
-// extern ? func_0801c674(?);
-// extern ? func_0801c6b8(?);
-// extern ? func_0801c6fc(?);
-// extern ? func_0801c7c0(?);
-extern void func_0801c7e8(void);
+extern void studio_scene_update_panning(void);
+extern void studio_scene_set_current_menu(u32 menu);
+extern void studio_scene_pan_to_menu(u32 menu);
+extern void studio_scene_play_music(s32 item);
+extern void studio_scene_clear_music(void);
+extern void studio_scene_update_stub(void);
 extern void studio_scene_update(void *sceneVar, s32 dataArg); // Scene Update (Active)
 extern u32 studio_scene_can_receive_inputs(void); // Communicate with Script
 extern void studio_scene_stop(void *sceneVar, s32 dataArg); // Scene Stop
-// extern ? func_0801c930(?); // ? (Script Function)
-// extern ? func_0801c944(?); // ? (Script Function)
-// extern ? func_0801c960(?);
-// extern ? func_0801c96c(?);
-// extern ? func_0801c99c(?); // Play Count-In Click (Script Function)
-// extern ? func_0801c9b8(?);
-// extern ? func_0801c9c4(?);
-// extern ? func_0801c9ec(?);
-// extern ? func_0801ca08(?);
-// extern ? func_0801ca20(?);
+
+extern const struct Beatscript *get_studio_mus_script(void); // (Script Function)
+extern void fade_out_studio_mus(void); // (Script Function)
+extern void set_studio_drummer_mode(u32 mode);
+extern void mute_studio_mus_tracks(u32 tracks); // (Script Function)
+extern void play_studio_mus_count_in(void); // (Script Function)
+extern u32 get_studio_drummer_mode(void);
+extern void start_studio_mus_remix2(void); // (Script Function)
+extern void start_studio_mus_remix7_end(void); // (Script Function)
+extern void slow_studio_mus_remix7_end(void); // (Script Function)
+extern void stop_studio_mus_remix7_end(void); // (Script Function)

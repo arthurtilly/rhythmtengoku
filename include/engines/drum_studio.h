@@ -290,7 +290,7 @@ extern void drum_studio_save_replay(void); // Save Replay
 extern void drum_studio_update_save_options(void); // Update (Save Replay Prompt State)
 // extern ? func_08029b8c(?); // DRUM LESSON - Engine Event 0x06 (?)
 extern void drum_studio_engine_update(void); // DRUM LESSON - Game Engine Update
-// extern ? func_08029cac(?);
+extern void func_08029cac(u32 drumKitID, u16 keys, u16 pressed, u16 released);
 // extern ? func_08029cec(u32); // DRUM LESSON - Engine Event 0x13 (?) [called at the end of each lesson pattern]
 extern void drum_studio_engine_stop(void); // DRUM LESSON - Game Engine Stop
 extern void drum_studio_cue_spawn(struct Cue *, struct DrumLessonsCue *, u32 drum); // DRUM LESSON - Cue - Spawn

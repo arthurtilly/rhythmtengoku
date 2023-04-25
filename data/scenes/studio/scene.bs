@@ -22,7 +22,7 @@ script script_scene_studio
 
 @ Start Next Song
 script script_scene_studio_start_song
-    run func_0801c930
+    run get_studio_mus_script
     call_result
     goto script_scene_studio_idle
 
@@ -32,7 +32,7 @@ script script_scene_studio_exit
     scene_set_int INT8, 0x358, FALSE
     fade_music_out TO_TEMPO, 48
     rest 12
-    run func_0801c944
+    run fade_out_studio_mus
     fade_screen_out 13, BLACK
     rest 12
     stop

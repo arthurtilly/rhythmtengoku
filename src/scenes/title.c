@@ -10,7 +10,7 @@ extern struct Scene D_089d3984;
 extern struct Scene D_089d3a6c;
 extern struct Scene scene_main_menu;
 extern struct Scene scene_title;
-extern struct BeatScript script_scene_title_exit[];
+extern struct Beatscript script_scene_title_exit[];
 extern struct SequenceData s_nyuka_fan_seqData;
 
 

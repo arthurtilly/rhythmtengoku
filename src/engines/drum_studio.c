@@ -862,15 +862,15 @@ const struct Beatscript *drum_studio_init_script(void) {
 
     switch (r7) {
         case 0:
-            func_0801c960(0);
+            set_studio_drummer_mode(0);
             break;
 
         case 1:
-            func_0801c960(0);
+            set_studio_drummer_mode(0);
             break;
 
         case 2: // Record Replay
-            func_0801c960(1);
+            set_studio_drummer_mode(1);
             availableSpace = get_remaining_replay_data_space(&D_030046a8->data.drumReplaysAlloc);
             key_rec_set_mode(1, 0x3ff, gDrumLessonsInfo->drumReplaySeq, availableSpace / 2);
             if ((availableSpace == 0) || (get_available_replay_data_id(&D_030046a8->data.drumReplaysAlloc) < 0)) {
@@ -880,7 +880,7 @@ const struct Beatscript *drum_studio_init_script(void) {
             break;
 
         case 3: // Listen to Replay
-            func_0801c960(2);
+            set_studio_drummer_mode(2);
             replaySize = get_saved_replay_data(&D_030046a8->data.drumReplaysAlloc, replayData->replayID, gDrumLessonsInfo->drumReplaySeq);
             key_rec_set_mode(3, 0x3ff, gDrumLessonsInfo->drumReplaySeq, replaySize / 2);
             gDrumLessonsInfo->playerDrumKitID = replayData->drumKitID;
@@ -1131,7 +1131,14 @@ void drum_studio_engine_update(void) {
 }
 
 
-#include "asm/engines/drumming_lessons/asm_08029cac.s"
+// Play Drum Kit
+void func_08029cac(u32 drumKitID, u16 keys, u16 pressed, u16 released) {
+    struct DrumTechKit *drumKit = drum_studio_kits[drumKitID];
+
+    play_drumtech_kit_no_anim(drumKit, pressed);
+    update_drumtech_hihat(drumKit, keys, pressed, released);
+}
+
 
 #include "asm/engines/drumming_lessons/asm_08029cec.s"
 

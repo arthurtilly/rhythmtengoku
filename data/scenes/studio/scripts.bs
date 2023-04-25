@@ -9,14 +9,14 @@ load_drum_studio_labels
 script script_studio_sneaky_spirits
     set_tempo 120
     set_music_volume 0x100
-    run func_0801c96c, MIDI_TRACK_6
-    run func_0801c99c
+    run mute_studio_mus_tracks, MIDI_TRACK_6
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_aimu_bgm_seqData
     rest (24 * 8)
@@ -46,14 +46,14 @@ script script_studio_sneaky_spirits
 script script_studio_spaceball
     set_tempo 105
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_8 | MIDI_TRACK_9)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_8 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_shibafu1_bgm_seqData
     rest (24 * 8)
@@ -81,14 +81,14 @@ script script_studio_spaceball
 script script_studio_bon_dance
     set_tempo 121
     set_music_volume 0xC8
-    run func_0801c96c, (MIDI_TRACK_6 | MIDI_TRACK_7)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_7)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_bon_dance_bgm_seqData
     rest (24 * 8)
@@ -113,27 +113,27 @@ script script_studio_bon_dance
 script script_studio_bon_odori
     set_tempo 121
     set_music_volume 0xC8
-    run func_0801c96c, (MIDI_TRACK_5 | MIDI_TRACK_6 | MIDI_TRACK_11)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6 | MIDI_TRACK_11)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_bon_odori_bgm_seqData
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     dms_start_bg_monitor 1
     rest (24 * 20)
@@ -156,12 +156,12 @@ script script_studio_bon_odori
 script script_studio_cosmic_dance
     set_tempo 135
     set_music_volume 0xC8
-    run func_0801c96c, (MIDI_TRACK_6 | MIDI_TRACK_8 | MIDI_TRACK_9)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_8 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 8
     rest 8
     play_music s_trexnew_bgm1_seqData
@@ -198,14 +198,14 @@ script script_studio_cosmic_dance
 script script_studio_cafe
     set_tempo 116
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_5 | MIDI_TRACK_7)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_7)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_counseling_bgm_seqData
     rest (24 * 8)
@@ -228,7 +228,7 @@ script script_studio_cafe
 script script_studio_staff_credit
     set_tempo 140
     set_music_volume 0xBE
-    run func_0801c96c, MIDI_TRACK_1
+    run mute_studio_mus_tracks, MIDI_TRACK_1
     rest 24
     rest 24
     rest 24
@@ -247,9 +247,9 @@ script script_studio_staff_credit
 script script_studio_data_room
     set_tempo 130
     set_music_volume 0x100
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_siryo_bgm_seqData
     rest 24
@@ -275,14 +275,14 @@ script script_studio_data_room
 script script_studio_showtime
     set_tempo 150
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_4 | MIDI_TRACK_7 | MIDI_TRACK_8)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_7 | MIDI_TRACK_8)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_naniwa_bgm_seqData
     rest (24 * 4)
@@ -320,14 +320,14 @@ script script_studio_showtime
 script script_studio_bouncy_road
     set_tempo 160
     set_music_volume 0x100
-    run func_0801c96c, MIDI_TRACK_5
-    run func_0801c99c
+    run mute_studio_mus_tracks, MIDI_TRACK_5
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_emanikanto_bgm_seqData
     rest (24 * 4)
@@ -347,16 +347,16 @@ script script_studio_bouncy_road
 script script_studio_game_select_1
     set_tempo 152
     set_music_volume 0x100
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_menu_bgm_seqData
-    run func_0801c96c, (MIDI_TRACK_7 | MIDI_TRACK_8 | MIDI_TRACK_11)
+    run mute_studio_mus_tracks, (MIDI_TRACK_7 | MIDI_TRACK_8 | MIDI_TRACK_11)
     rest (24 * 4)
     dms_start_bg_monitor 2
     rest 12
@@ -402,18 +402,18 @@ script script_studio_game_select_1
 script script_studio_game_select_2
     set_tempo 105
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_5 | MIDI_TRACK_6 | MIDI_TRACK_7)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6 | MIDI_TRACK_7)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 12
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 12
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 12
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 12
     play_music s_shibafu2_bgm_seqData
     rest (24 * 4)
@@ -434,14 +434,14 @@ script script_studio_game_select_2
 script script_studio_rhythm_tweezers
     set_tempo 96
     set_music_volume 0xC8
-    run func_0801c96c, MIDI_TRACK_7
-    run func_0801c99c
+    run mute_studio_mus_tracks, MIDI_TRACK_7
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_datumo_bgm_seqData
     rest (24 * 8)
@@ -464,14 +464,14 @@ script script_studio_rhythm_tweezers
 script script_studio_fireworks
     set_tempo 140
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_7 | MIDI_TRACK_9)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_7 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_hanabi_bgm_seqData
     rest (24 * 12)
@@ -496,14 +496,14 @@ script script_studio_fireworks
 script script_studio_clappy_trio
     set_tempo 118
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_2 | MIDI_TRACK_3)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_2 | MIDI_TRACK_3)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 12
     play_music s_tebyoushi_bgm_seqData
     rest 12
@@ -532,14 +532,14 @@ script script_studio_clappy_trio
 script script_studio_snappy_trio
     set_tempo 108
     set_music_volume 0xC8
-    run func_0801c96c, (MIDI_TRACK_4 | MIDI_TRACK_5 | MIDI_TRACK_6)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_5 | MIDI_TRACK_6)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_tebyoushi_dexy_bgm_seqData
     dms_start_bg_monitor 1
@@ -559,16 +559,16 @@ script script_studio_snappy_trio
 script script_studio_honey_sweet_angel
     set_tempo 137
     set_music_volume 0xD2
-    run func_0801c96c, (MIDI_TRACK_4 | MIDI_TRACK_5 | MIDI_TRACK_12)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_5 | MIDI_TRACK_12)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 12
     play_music s_koihoney_bgm_seqData
     rest 12
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     dms_start_bg_monitor 0
     rest (24 * 16)
@@ -597,14 +597,14 @@ script script_studio_honey_sweet_angel
 script script_studio_samurai_slice
     set_tempo 120
     set_music_volume 0x100
-    run func_0801c96c, MIDI_TRACK_6
-    run func_0801c99c
+    run mute_studio_mus_tracks, MIDI_TRACK_6
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_iai_bgm_studio_seqData
     dms_start_bg_monitor 2
@@ -667,14 +667,14 @@ script script_studio_samurai_slice
 script script_studio_power_calligraphy
     set_tempo 127
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_7 | MIDI_TRACK_9)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_7 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 12
     rest 6
     play_music s_shuji_bgm1_seqData
@@ -686,36 +686,36 @@ script script_studio_power_calligraphy
     rest (24 * 16)
     rest (24 * 32)
     rest (24 * 12)
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     set_tempo 161
     play_music s_shuji_bgm2_seqData
     rest (24 * 32)
     rest (24 * 16)
     rest (24 * 12)
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     set_tempo 98
     play_music s_shuji_bgm3_seqData
-    run func_0801c96c, MIDI_TRACK_8
+    run mute_studio_mus_tracks, MIDI_TRACK_8
     rest (24 * 16)
     mod_music_volume 0, (24 * 7) + 21
     rest (24 * 8)
     set_music_volume 0x100
     play_music s_shuji_bgm_end_seqData
-    run func_0801c96c, 0
+    run mute_studio_mus_tracks, 0
     rest (24 * 16)
     rest 24
     rest 24
@@ -730,14 +730,14 @@ script script_studio_power_calligraphy
 script script_studio_karate_man
     set_tempo 120
     set_music_volume 0x96
-    run func_0801c96c, MIDI_TRACK_4
-    run func_0801c99c
+    run mute_studio_mus_tracks, MIDI_TRACK_4
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     dms_start_bg_monitor 2
     play_music s_karate_bgm_seqData
@@ -770,18 +770,18 @@ script script_studio_karate_man
     run gameplay_set_reverb, 40
     rest 6
     set_tempo 140
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     run gameplay_set_reverb, 0
     set_music_volume 0x96
     play_music s_karate_fan_seqData
-    run func_0801c96c, MIDI_TRACK_4
+    run mute_studio_mus_tracks, MIDI_TRACK_4
     rest (24 * 4)
     rest 24
     rest 24
@@ -794,21 +794,21 @@ script script_studio_karate_man
 script script_studio_marching_orders
     set_tempo 135
     set_music_volume 0x100
-    run func_0801c96c, MIDI_TRACK_9
+    run mute_studio_mus_tracks, MIDI_TRACK_9
     play_music s_guntai2_seqData
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     dms_start_bg_monitor 2
     rest (24 * 32)
@@ -830,14 +830,14 @@ script script_studio_marching_orders
 script script_studio_main_menu
     set_tempo 155
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_5 | MIDI_TRACK_9)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_manza_bgm_seqData
     rest (24 * 8)
@@ -859,14 +859,14 @@ script script_studio_main_menu
 script script_studio_night_walk
     set_tempo 127
     set_music_volume 0xC8
-    run func_0801c96c, (MIDI_TRACK_3 | MIDI_TRACK_6)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_3 | MIDI_TRACK_6)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_4beat_bgm_seqData
     dms_start_bg_monitor 1
@@ -895,14 +895,14 @@ script script_studio_night_walk
 script script_studio_opening
     set_tempo 118
     set_music_volume 0x100
-    run func_0801c96c, MIDI_TRACK_6
-    run func_0801c99c
+    run mute_studio_mus_tracks, MIDI_TRACK_6
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_dr_sam_bgm_seqData
     dms_start_bg_monitor 2
@@ -925,14 +925,14 @@ script script_studio_opening
 script script_studio_perfect
     set_tempo 145
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_8 | MIDI_TRACK_9)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_8 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 12
     play_music s_perfect_fan_seqData
     rest (24 * 8)
@@ -954,14 +954,14 @@ script script_studio_perfect
 script script_studio_polyrhythm
     set_tempo 130
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_6 | MIDI_TRACK_7 | MIDI_TRACK_8)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_7 | MIDI_TRACK_8)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_poly_bgm_seqData
     rest (24 * 8)
@@ -1000,14 +1000,14 @@ script script_studio_polyrhythm
 script script_studio_quiz_show
     set_tempo 125
     set_music_volume 0x100
-    run func_0801c96c, MIDI_TRACK_7
-    run func_0801c99c
+    run mute_studio_mus_tracks, MIDI_TRACK_7
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_quiz_bgm_seqData
     dms_start_bg_monitor 2
@@ -1027,14 +1027,14 @@ script script_studio_quiz_show
 script script_studio_bunny_hop
     set_tempo 150
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_5 | MIDI_TRACK_6)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     dms_start_bg_monitor 2
     play_music s_rabbit_bgm_studio_seqData
@@ -1054,19 +1054,19 @@ script script_studio_bunny_hop
 script script_studio_rat_race
     set_tempo 150
     set_music_volume 0x100
-    run func_0801c96c, MIDI_TRACK_11
+    run mute_studio_mus_tracks, MIDI_TRACK_11
     play_music s_rat_bgm_studio_seqData
     rest 24
     rest 24
     rest 24
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     dms_start_bg_monitor 2
     rest (24 * 32)
@@ -1088,15 +1088,15 @@ script script_studio_rat_race
 script script_studio_remix7
     set_tempo 120
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_6 | MIDI_TRACK_8 | MIDI_TRACK_9)
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_8 | MIDI_TRACK_9)
     play_music Lesson1_seqData
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     dms_start_bg_monitor 2
     play_music L1_pat03_seqData
@@ -1106,13 +1106,13 @@ script script_studio_remix7
     rest (24 * 16)
     rest (24 * 16)
     set_tempo 133
-    run func_0801c9c4
+    run start_studio_mus_remix2
     rest 24
     rest 24
     run scene_stop_music
     rest 24
     rest 24
-    run func_0801c96c, (MIDI_TRACK_4 | MIDI_TRACK_8 | MIDI_TRACK_9)
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_8 | MIDI_TRACK_9)
     play_music L2_pat01_seqData
     rest (24 * 16)
     play_music L2_pat09_seqData
@@ -1133,12 +1133,12 @@ script script_studio_remix7
     play_music L3_intro_seqData
     rest 24
     rest 24
-    run func_0801c96c, (MIDI_TRACK_5 | MIDI_TRACK_6 | MIDI_TRACK_7)
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6 | MIDI_TRACK_7)
     play_music L3_C36_seqData
     rest (24 * 32)
     play_music L3_C38_seqData
     rest (24 * 28)
-    run func_0801c9ec
+    run start_studio_mus_remix7_end
     rest 24
     rest 4
     set_music_track_volume MIDI_TRACK_4, 0
@@ -1151,11 +1151,11 @@ script script_studio_remix7
     rest 8
     rest 8
     set_tempo 120
-    run func_0801ca08
+    run slow_studio_mus_remix7_end
     rest 24
     set_music_track_volume 0, 0
-    run func_0801ca20
-    run func_0801c96c, (MIDI_TRACK_6 | MIDI_TRACK_8 | MIDI_TRACK_9)
+    run stop_studio_mus_remix7_end
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_8 | MIDI_TRACK_9)
     play_music L1_pat16_seqData
     rest (24 * 40)
     rest 24
@@ -1169,14 +1169,14 @@ script script_studio_remix7
 script script_studio_remix8
     set_tempo 109
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_6 | MIDI_TRACK_7 | MIDI_TRACK_8)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_7 | MIDI_TRACK_8)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music L8_pat_intro_seqData
     rest (24 * 4)
@@ -1221,12 +1221,12 @@ script script_studio_remix8
 script script_studio_remix6
     set_tempo 140
     set_music_volume 0xC8
-    run func_0801c96c, (MIDI_TRACK_10 | MIDI_TRACK_11)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_10 | MIDI_TRACK_11)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 12
     play_music s_remix_all_bgm_seqData
     rest 12
@@ -1260,14 +1260,14 @@ script script_studio_remix6
 script script_studio_try_again
     set_tempo 80
     set_music_volume 0x100
-    run func_0801c96c, MIDI_TRACK_5
-    run func_0801c99c
+    run mute_studio_mus_tracks, MIDI_TRACK_5
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 12
     play_music s_kekka_bgm_bad_seqData
     rest 12
@@ -1286,12 +1286,12 @@ script script_studio_try_again
 script script_studio_ok
     set_tempo 120
     set_music_volume 0x100
-    run func_0801c96c, MIDI_TRACK_5
-    run func_0801c99c
+    run mute_studio_mus_tracks, MIDI_TRACK_5
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_kekka_bgm_common_seqData
     rest 24
@@ -1312,10 +1312,10 @@ script script_studio_ok
 script script_studio_superb
     set_tempo 133
     set_music_volume 0x100
-    run func_0801c96c, MIDI_TRACK_1
-    run func_0801c99c
+    run mute_studio_mus_tracks, MIDI_TRACK_1
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_kekka_bgm_good_seqData
     rest 24
@@ -1353,12 +1353,12 @@ script script_studio_silence
 script script_studio_space_dance
     set_tempo 120
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_4 | MIDI_TRACK_7)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_7)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 12
     play_music s_trex_bgm_seqData
     rest 12
@@ -1389,14 +1389,14 @@ script script_studio_space_dance
 script script_studio_tap_trial_2
     set_tempo 165
     set_music_volume 0xC8
-    run func_0801c96c, (MIDI_TRACK_3 | MIDI_TRACK_4)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_3 | MIDI_TRACK_4)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_tapdance_ska_bgm_seqData
     rest (24 * 15)
@@ -1407,13 +1407,13 @@ script script_studio_tap_trial_2
     rest (24 * 28)
     set_tempo 180
     rest (24 * 4)
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     rest (24 * 16)
     rest (24 * 32)
@@ -1432,14 +1432,14 @@ script script_studio_tap_trial_2
 script script_studio_tap_trial
     set_tempo 127
     set_music_volume 0xC8
-    run func_0801c96c, (MIDI_TRACK_6 | MIDI_TRACK_7 | MIDI_TRACK_9)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_6 | MIDI_TRACK_7 | MIDI_TRACK_9)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     dms_start_bg_monitor 3
     play_music s_tapdance_bgm_seqData
@@ -1450,13 +1450,13 @@ script script_studio_tap_trial
     rest (24 * 16)
     rest (24 * 12)
     set_tempo 139
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     rest (24 * 16)
     rest (24 * 16)
@@ -1478,14 +1478,14 @@ script script_studio_tap_trial
 script script_studio_title
     set_tempo 105
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_5 | MIDI_TRACK_8 | MIDI_TRACK_12)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_8 | MIDI_TRACK_12)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_title_bgm_seqData
     rest (24 * 4)
@@ -1514,14 +1514,14 @@ script script_studio_title
 script script_studio_toss_boys
     set_tempo 106
     set_music_volume 0xC8
-    run func_0801c96c, (MIDI_TRACK_4 | MIDI_TRACK_9 | MIDI_TRACK_11)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_9 | MIDI_TRACK_11)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_toss_bgm_seqData
     rest (24 * 4)
@@ -1545,14 +1545,14 @@ script script_studio_toss_boys
 script script_studio_tram_pauline
     set_tempo 160
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_5 | MIDI_TRACK_6)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_puipui_bgm_seqData
     rest (24 * 8)
@@ -1582,14 +1582,14 @@ script script_studio_tram_pauline
 script script_studio_sick_beats
     set_tempo 125
     set_music_volume 0x100
-    run func_0801c96c, (MIDI_TRACK_4 | MIDI_TRACK_5 | MIDI_TRACK_6)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_5 | MIDI_TRACK_6)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_hitmegeton1_bgm_seqData
     rest (24 * 4)
@@ -1615,14 +1615,14 @@ script script_studio_sick_beats
 script script_studio_wish
     set_tempo 204
     set_music_volume 0x96
-    run func_0801c96c, (MIDI_TRACK_5 | MIDI_TRACK_6)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     dms_start_bg_monitor 0
     play_music s_wish_bgm_seqData
@@ -1631,7 +1631,7 @@ script script_studio_wish
     rest (24 * 16)
     rest (24 * 16)
     rest (24 * 15) + 21
-    run func_0801c96c, (MIDI_TRACK_5 | MIDI_TRACK_6)
+    run mute_studio_mus_tracks, (MIDI_TRACK_5 | MIDI_TRACK_6)
     rest 3
     rest (24 * 16)
     rest (24 * 16)
@@ -1652,13 +1652,13 @@ script script_studio_wish
     rest (24 * 16)
     rest (24 * 16)
     rest (24 * 16)
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     rest 24
     rest 24
@@ -1675,18 +1675,18 @@ script script_studio_wish
 script script_studio_wizards_waltz
     set_tempo 160
     set_music_volume 0xC8
-    run func_0801c96c, (MIDI_TRACK_4 | MIDI_TRACK_5)
-    run func_0801c99c
+    run mute_studio_mus_tracks, (MIDI_TRACK_4 | MIDI_TRACK_5)
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
-    run func_0801c99c
+    run play_studio_mus_count_in
     rest 24
     play_music s_mitubati_seqData
     dms_start_bg_monitor 1

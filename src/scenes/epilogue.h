@@ -19,7 +19,7 @@ struct EpilogueSceneInfo {
 // Scene Data:
 extern union SceneObject epilogue_scene_objects[];
 extern struct CompressedGraphics *epilogue_buffered_textures[];
-extern const struct BeatScript epilogue_end_script[];
+extern struct Beatscript epilogue_end_script[];
 extern struct SequenceData *epilogue_jingles[];
 
 
