@@ -73,7 +73,7 @@ extern const struct Scene D_089d2670;
 extern const struct Scene scene_wizards_waltz;
 extern const struct Scene scene_marching_orders;
 extern const struct Scene scene_marching_orders_2;
-extern const struct Scene D_089d1f18;
+extern const struct Scene scene_mechanical_horse;
 extern const struct Scene scene_tap_trial;
 extern const struct Scene scene_tap_trial_2;
 extern const struct Scene scene_samurai_slice;
@@ -400,7 +400,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "マーチャ　２"
     },
     /* Mechanical Horse */ {
-        /* Scene */ &D_089d1f18,
+        /* Scene */ &scene_mechanical_horse,
         /* Label */ "うま（スピード）"
     },
     /* Tap Trial */ {

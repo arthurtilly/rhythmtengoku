@@ -1,5 +1,5 @@
 extern const struct Scene scene_cat_machine;
-extern const struct Scene D_089d1f18;
+extern const struct Scene scene_mechanical_horse;
 extern const struct Scene scene_love_machine;
 extern const struct Scene scene_rap_machine;
 extern struct SequenceData s_toys_bgm_seqData;
@@ -14,7 +14,7 @@ struct MedalCornerLevel toys_menu_levels[] = {
         /* Medals */ 1
     },
     /* MECHANICAL_HORSE */ {
-        /* Scene  */ &D_089d1f18,
+        /* Scene  */ &scene_mechanical_horse,
         /* Title  */ "Ç§Ç‹ É}ÉVÅ[Éì",
         /* Anim   */ anim_toys_menu_mechanical_horse,
         /* Medals */ 7
