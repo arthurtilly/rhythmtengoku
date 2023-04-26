@@ -50,7 +50,7 @@ branch_0803320a: \n\
 /* 08033230 */ LDR R0, [R4] \n\
 /* 08033232 */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 08033234 */ LDRSH R1, [R1, R2] \n\
-/* 08033236 */ LDR R2, =anim_calligraphy_brush \n\
+/* 08033236 */ LDR R2, =anim_power_calligraphy_brush \n\
 /* 08033238 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803323a */ STR R3, [SP] \n\
 /* 0803323c */ STR R3, [SP, 0x4] \n\

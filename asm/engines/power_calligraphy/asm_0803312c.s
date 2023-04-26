@@ -14,7 +14,7 @@ thumb_func_start func_0803312c \n\
 /* 0803313c */ LDR R1, [R2] \n\
 /* 0803313e */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08033140 */ LDRSH R1, [R1, R2] \n\
-/* 08033142 */ LDR R2, =calligraphy_pattern_anim \n\
+/* 08033142 */ LDR R2, =power_calligraphy_pattern_anim \n\
 /* 08033144 */ LSLS R0, R0, 0x2 \n\
 /* 08033146 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 08033148 */ LDR R2, [R0] \n\

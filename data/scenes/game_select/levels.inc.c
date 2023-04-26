@@ -434,7 +434,7 @@ struct LevelData level_data_table[] = {
                             "オイシイとこだけ。",
         /* Level Icon    */ 28,
         /* Level Type    */ LEVEL_TYPE_GAME,
-        /* Epilogue GFX  */ epilogue_power_calligraphy_gfx_tables,
+        /* Epilogue GFX  */ epilogue_power_power_calligraphy_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "ふ～…  アカンわ。",
             /* OK        */ "お習字を もっと楽しもう！",

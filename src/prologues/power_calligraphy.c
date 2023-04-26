@@ -49,7 +49,7 @@ void power_calligraphy_prologue_engine_start(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_prologue_calligraphy_title, 0, 160, 150, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_power_calligraphy_prologue_title, 0, 160, 150, 0, 0, 0x7f, 0);
 }
 
 
@@ -76,6 +76,6 @@ void func_080461d0(u32 frame) {
 
 // [func_080461f4] Event 1 - HAI
 void func_080461f4(void) {
-    func_0804d160(D_03005380, anim_prologue_calligraphy_artist, 0, 120, 88, 0x800, 1, 0x7f, 0);
+    func_0804d160(D_03005380, anim_power_calligraphy_prologue_artist, 0, 120, 88, 0x800, 1, 0x7f, 0);
     play_sound(&s_sword_hi_seqData);
 }

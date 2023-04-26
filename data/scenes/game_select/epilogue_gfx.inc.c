@@ -1592,7 +1592,7 @@ const struct GraphicsTable *epilogue_fireworks_gfx_tables[] = {
 
 
 // [D_089ce1f4] Power Calligraphy
-const struct GraphicsTable *epilogue_power_calligraphy_gfx_tables[] = {
+const struct GraphicsTable *epilogue_power_power_calligraphy_gfx_tables[] = {
     /* TRY AGAIN */ (struct GraphicsTable[]) {
         /* BG Tileset */ {
             /* Src.  */ &D_08c9b9fc,

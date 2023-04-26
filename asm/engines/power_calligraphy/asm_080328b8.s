@@ -111,7 +111,7 @@ branch_08032972: \n\
 /* 0803297c */ LSLS R3, R3, 0x1 \n\
 /* 0803297e */ ADDS R4, R0, R3 @ Set R4 to R0 + R3 \n\
 /* 08032980 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
-/* 08032982 */ LDR R6, =calligraphy_people_dance_anim \n\
+/* 08032982 */ LDR R6, =power_calligraphy_people_dance_anim \n\
  \n\
 branch_08032984: \n\
 /* 08032984 */ LDR R0, =D_03005380 \n\
