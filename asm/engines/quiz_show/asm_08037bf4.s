@@ -25,7 +25,7 @@ branch_08037c12: \n\
 /* 08037c14 */ LDR R0, [R0] \n\
 /* 08037c16 */ LSLS R1, R1, 0x10 \n\
 /* 08037c18 */ ASRS R1, R1, 0x10 \n\
-/* 08037c1a */ LDR R3, =quiz_host_button_press_anim \n\
+/* 08037c1a */ LDR R3, =quiz_show_host_button_press_anim \n\
 /* 08037c1c */ LSLS R2, R4, 0x2 \n\
 /* 08037c1e */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\
 /* 08037c20 */ LDR R2, [R2] \n\
@@ -62,7 +62,7 @@ branch_08037c52: \n\
 /* 08037c64 */ LDR R2, [R4] \n\
 /* 08037c66 */ MOVS R3, 0xA @ Set R3 to 0xA \n\
 /* 08037c68 */ LDRSH R1, [R2, R3] \n\
-/* 08037c6a */ LDR R3, =quiz_ex_host_face_anim \n\
+/* 08037c6a */ LDR R3, =quiz_show_endless_host_face_anim \n\
 /* 08037c6c */ ADDS R2, 0x49 @ Add 0x49 to R2 \n\
 /* 08037c6e */ LDRB R2, [R2] \n\
 /* 08037c70 */ LSLS R2, R2, 0x2 \n\

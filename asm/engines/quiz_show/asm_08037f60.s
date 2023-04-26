@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start quiz_common_init_tutorial \n\
+thumb_func_start quiz_show_common_init_tutorial \n\
 /* 08037f60 */ PUSH {R4, LR} \n\
 /* 08037f62 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08037f64 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\

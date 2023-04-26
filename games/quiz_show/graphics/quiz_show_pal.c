@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088f8788] Quiz Show OBJ Palette
-Palette quiz_obj_pal[] = {
+Palette quiz_show_obj_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x18E000),
         /* 01 */ TO_RGB555(0x383838),
@@ -150,7 +150,7 @@ Palette quiz_obj_pal[] = {
 };
 
 // [D_088f8888] Quiz Show BG Palette
-Palette quiz_bg_pal[] = {
+Palette quiz_show_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x18E000),
         /* 01 */ TO_RGB555(0x505050),
