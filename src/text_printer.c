@@ -387,7 +387,7 @@ s32 text_printer_get_current_line_width(void) {
 
 
 // Delete Text Animation
-void text_printer_delete_anim(struct StaticAnimation *anim) {
+void text_printer_delete_anim(struct Animation *anim) {
     if (anim == NULL) return;
 
     mem_heap_dealloc(anim->cel);

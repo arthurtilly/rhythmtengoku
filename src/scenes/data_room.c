@@ -39,3 +39,10 @@ static s8 D_03001319; // unknown type
 #include "asm/data_room/asm_080123e0.s"
 
 #include "asm/data_room/asm_080123fc.s"
+
+
+/* DATA */
+
+
+// ???
+const char D_08050bc8[] = "???";

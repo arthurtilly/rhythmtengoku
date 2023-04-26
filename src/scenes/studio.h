@@ -7,11 +7,14 @@
 
 // Scene Types:
 struct StudioSceneInfo {
-    /* 0x000 */
+    /* [0x000] Empty (probably unused Bitmap Fonts) */
     u32 null0;
     u32 null4;
+
+    /* [0x008] DrumTech Controller */
     struct DrumTechController drumTech;
-    /* 0x358 */
+
+    /* [0x358] Scene */
     u32 scriptIsReady;
     u8 sceneState;
     struct Listbox *songList;
@@ -20,23 +23,28 @@ struct StudioSceneInfo {
     u8 drumListState;
     struct Listbox *optionList;
     u8 optionListState;
+
+    /* [0x376] Scene Panning */
     s16 panStartX;
     s16 panTargetX;
     u16 panProgress;
     u8 currentMenu;
-    /* 0x380 */
-    u32 unk380;
-    u16 unk384;
-    u32 unk388;
+
+    /* [0x380] List Targets */
+    u32 unused380;
+    u16 unused384;
+    u32 unused388;
     char string[0x100];
-    /* 0x48C */
     s16 itemMoveHighlight;
     s16 selectedItem;
+
+    /* [0x490] Replay & Script */
     struct DrumReplaySaveGraph *replayMemoryGraph;
     void *replaySeq;
     u8 replayDrumKit;
     const struct Beatscript *drumScript;
-    /* 0x4A0 */
+
+    /* [0x4A0] Warning Notice */
     u8 warningIsActive;
     u8 warningIsRendering;
     u8 warningOption;
@@ -45,6 +53,8 @@ struct StudioSceneInfo {
     struct SequenceData *warningSfx;
     s16 warningAdvIcon;
     struct TextPrinter *warningPrinter;
+
+    /* [0x4B8] Music Player */
     struct SoundPlayer *musicPlayer;
 };
 

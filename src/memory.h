@@ -32,9 +32,9 @@ extern struct SaveBuffer {
             u8 drumKitID;
             u8 unk3;
         } studioSongs[45 + 10];
-        u8 unk190[TOTAL_LEVELS]; // number of plays?
-        u8 unk1C7[TOTAL_LEVELS];
-        u8 unk1FE[TOTAL_LEVELS];
+        u8 levelTotalPlays[TOTAL_LEVELS];
+        u8 levelFirstOK[TOTAL_LEVELS];
+        u8 levelFirstSuperb[TOTAL_LEVELS];
         u8 totalPerfects;
         u8 campaignsCleared[TOTAL_PERFECT_CAMPAIGNS];
         u8 campaignState;

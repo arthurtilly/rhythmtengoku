@@ -100,9 +100,9 @@ void studio_scene_start(void *sceneVar, s32 dataArg) {
             break;
     }
 
-    gStudioInfo->unk380 = 0;
-    gStudioInfo->unk384 = 0;
-    gStudioInfo->unk388 = 0;
+    gStudioInfo->unused380 = 0;
+    gStudioInfo->unused384 = 0;
+    gStudioInfo->unused388 = 0;
     gStudioInfo->itemMoveHighlight = func_0804d160(D_03005380, anim_studio_item_move_highlight, 0, 64, 64, 0x8864, 0, 0, 0x8000);
     gStudioInfo->replayDrumKit = STUDIO_DRUM_STANDARD;
     studio_warning_init();

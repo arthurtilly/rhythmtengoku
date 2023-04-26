@@ -290,6 +290,7 @@ SECTIONS {
         build/data/scenes/cafe/dialogue.c.o(.rodata);
         build/src/scenes/cafe.c.o(.rodata);
 		build/src/scenes/data_check.c.o(.rodata);
+		build/src/scenes/data_room.c.o(.rodata);
 		build/src/scenes/game_select.c.o(.rodata);
         build/data/scenes/game_select/campaigns.c.o(.rodata);
         build/data/scenes/game_select/level_grid.c.o(.rodata);

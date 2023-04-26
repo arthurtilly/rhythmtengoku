@@ -125,7 +125,7 @@ extern struct Animation *func_08009de4(u32 memID, s32 tileBaseX, s32 tileBaseY, 
 extern struct Animation *text_printer_get_unformatted_line_anim(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, u32 anchor, s32 lineColors, s32 maxWidth);
 extern struct Animation *text_printer_get_formatted_line_anim(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char **string, u32 anchor, s32 lineColors, s32 maxWidth, s32 indentWidth, s32 shadowColors);
 extern s32 text_printer_get_current_line_width(void); // Get sCurrentLineWidth
-extern void text_printer_delete_anim(struct StaticAnimation *anim); // Delete Text Animation
+extern void text_printer_delete_anim(struct Animation *anim); // Delete Text Animation
 extern void text_printer_set_format_func(void *func); // Set sModifyPrinterSettings
 extern void text_printer_clear_tiles(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, u32 unused, u32 color); // Fill Allocated Space With Given Pixel
 extern void text_printer_fill_vram_tiles(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, u32 unused, u32 color); // Fill Allocated Space With Given Pixel

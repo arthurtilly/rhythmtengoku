@@ -20,10 +20,10 @@ script script_scene_data_check
 
 @ Local Scene
 struct sub_scene_data_check
-    /* Start  */ .word func_080115d0, 0
-    /* Paused */ .word func_08011690, 0
-    /* Active */ .word func_08011694, 0
-    /* Stop   */ .word func_08011a08, 0
+    /* Start  */ .word data_check_scene_start,  0
+    /* Paused */ .word data_check_scene_paused, 0
+    /* Active */ .word data_check_scene_update, 0
+    /* Stop   */ .word data_check_scene_stop,   0
     /* Script */ .word script_scene_data_check
 endstruct
 

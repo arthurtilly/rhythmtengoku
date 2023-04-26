@@ -1568,7 +1568,7 @@ u32 game_select_process_level_events(void) {
             play_sound(&s_f_clear_game_seqData);
 
             cafe_remove_level_from_session(id);
-            D_030046a8->data.unk1C7[id] = D_030046a8->data.unk190[id];
+            D_030046a8->data.levelFirstOK[id] = D_030046a8->data.levelTotalPlays[id];
             break;
 
         case LEVEL_STATE_HAS_MEDAL:
@@ -1582,9 +1582,9 @@ u32 game_select_process_level_events(void) {
             D_030046a8->data.totalMedals++;
             game_select_refresh_medal_count(127);
             cafe_remove_level_from_session(id);
-            D_030046a8->data.unk1FE[id] = D_030046a8->data.unk190[id];
-            if (D_030046a8->data.unk1C7[id] == 0) {
-                D_030046a8->data.unk1C7[id] = D_030046a8->data.unk190[id];
+            D_030046a8->data.levelFirstSuperb[id] = D_030046a8->data.levelTotalPlays[id];
+            if (D_030046a8->data.levelFirstOK[id] == 0) {
+                D_030046a8->data.levelFirstOK[id] = D_030046a8->data.levelTotalPlays[id];
             }
             break;
     }
