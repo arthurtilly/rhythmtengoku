@@ -159,32 +159,32 @@ struct Animation *quiz_show_endless_player_face_anim[] = {
 
 // [D_089e5e68] Common Events
 EngineEvent quiz_show_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) quiz_show_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) quiz_show_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) quiz_show_common_init_tutorial,
+    /* BEAT_ANIMATION */ quiz_show_common_beat_animation,
+    /* DISPLAY_TEXT   */ quiz_show_common_display_text,
+    /* INIT_TUTORIAL  */ quiz_show_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e5e78] Engine Events
 EngineEvent quiz_show_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08037be0,
-    /* 0x01 */ (EngineEvent) func_08037a64,
-    /* 0x02 */ (EngineEvent) func_08037bf4,
-    /* 0x03 */ (EngineEvent) func_08037cb8,
-    /* 0x04 */ (EngineEvent) func_08037cd0,
-    /* 0x05 */ (EngineEvent) func_080373ac,
-    /* 0x06 */ (EngineEvent) func_080373dc,
-    /* 0x07 */ (EngineEvent) func_08037d00,
-    /* 0x08 */ (EngineEvent) func_08037d0c,
-    /* 0x09 */ (EngineEvent) func_08037d1c,
-    /* 0x0A */ (EngineEvent) func_08037d2c,
-    /* 0x0B */ (EngineEvent) func_08037d6c,
-    /* 0x0C */ (EngineEvent) func_08037d90,
-    /* 0x0D */ (EngineEvent) func_08037dc8,
-    /* 0x0E */ (EngineEvent) func_08037e24,
-    /* 0x0F */ (EngineEvent) func_08037280,
-    /* 0x10 */ (EngineEvent) func_080372c0,
-    /* 0x11 */ (EngineEvent) quiz_show_engine_event_stub
+    /* 0x00 */ func_08037be0,
+    /* 0x01 */ func_08037a64,
+    /* 0x02 */ func_08037bf4,
+    /* 0x03 */ func_08037cb8,
+    /* 0x04 */ func_08037cd0,
+    /* 0x05 */ func_080373ac,
+    /* 0x06 */ func_080373dc,
+    /* 0x07 */ func_08037d00,
+    /* 0x08 */ func_08037d0c,
+    /* 0x09 */ func_08037d1c,
+    /* 0x0A */ func_08037d2c,
+    /* 0x0B */ func_08037d6c,
+    /* 0x0C */ func_08037d90,
+    /* 0x0D */ func_08037dc8,
+    /* 0x0E */ func_08037e24,
+    /* 0x0F */ func_08037280,
+    /* 0x10 */ func_080372c0,
+    /* 0x11 */ quiz_show_engine_event_stub
 };
 
 // [D_089e5ec0] Quiz Show Game Engine

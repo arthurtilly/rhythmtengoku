@@ -242,16 +242,16 @@ struct CueDefinition *showtime_cue_index[] = {
 
 // [D_089e3a8c] Common Events
 EngineEvent showtime_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) showtime_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) showtime_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) showtime_common_init_tutorial,
+    /* BEAT_ANIMATION */ showtime_common_beat_animation,
+    /* DISPLAY_TEXT   */ showtime_common_display_text,
+    /* INIT_TUTORIAL  */ showtime_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e3a9c] Engine Events
 EngineEvent showtime_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_0802be10,
-    /* 0x01 */ (EngineEvent) showtime_engine_event_stub
+    /* 0x00 */ func_0802be10,
+    /* 0x01 */ showtime_engine_event_stub
 };
 
 // [D_089e3aa4] Showtime Game Engine

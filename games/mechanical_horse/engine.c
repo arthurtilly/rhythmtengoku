@@ -463,22 +463,22 @@ struct CueDefinition *mechanical_horse_cue_index[] = {
 
 // [D_089e9084] Common Events
 EngineEvent mechanical_horse_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) mechanical_horse_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) mechanical_horse_common_display_text,
+    /* BEAT_ANIMATION */ mechanical_horse_common_beat_animation,
+    /* DISPLAY_TEXT   */ mechanical_horse_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e9090] Engine Events
 EngineEvent mechanical_horse_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08041444,
-    /* 0x01 */ (EngineEvent) func_080415c0,
-    /* 0x02 */ (EngineEvent) func_080416cc,
-    /* 0x03 */ (EngineEvent) func_08041730,
-    /* 0x04 */ (EngineEvent) func_08041744,
-    /* 0x05 */ (EngineEvent) func_080417ac,
-    /* 0x06 */ (EngineEvent) func_080424f0,
-    /* 0x07 */ (EngineEvent) func_08042504
+    /* 0x00 */ func_08041444,
+    /* 0x01 */ func_080415c0,
+    /* 0x02 */ func_080416cc,
+    /* 0x03 */ func_08041730,
+    /* 0x04 */ func_08041744,
+    /* 0x05 */ func_080417ac,
+    /* 0x06 */ func_080424f0,
+    /* 0x07 */ func_08042504
 };
 
 // [D_089e90b0] Mechanical Horse Game Engine

@@ -41,7 +41,7 @@ struct GraphicsTable remix_5_prologue_gfx_table[] = {
 
 // [D_089ec434] Engine Events
 EngineEvent remix_5_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08046ae4
+    /* 0x00 */ func_08046ae4
 };
 
 // [D_089ec438] Prologue (Remix 5) Game Engine

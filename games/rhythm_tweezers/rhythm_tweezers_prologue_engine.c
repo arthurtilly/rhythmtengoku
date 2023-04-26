@@ -41,7 +41,7 @@ struct GraphicsTable rhythm_tweezers_prologue_gfx_table[] = {
 
 // [D_089eada0] Engine Events
 EngineEvent rhythm_tweezers_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08045cb8
+    /* 0x00 */ func_08045cb8
 };
 
 // [D_089eada4] Prologue (Rhythm Tweezers) Game Engine

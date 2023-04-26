@@ -41,7 +41,7 @@ struct GraphicsTable marching_orders_2_prologue_gfx_table[] = {
 
 // [D_089eb860] Engine Events
 EngineEvent marching_orders_2_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080463fc
+    /* 0x00 */ func_080463fc
 };
 
 // [D_089eb864] Prologue (Marching Orders 2) Game Engine

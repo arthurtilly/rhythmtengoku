@@ -41,7 +41,7 @@ struct GraphicsTable tap_trial_prologue_gfx_table[] = {
 
 // [D_089ed594] Engine Events
 EngineEvent tap_trial_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08047764
+    /* 0x00 */ func_08047764
 };
 
 // [D_089ed598] Prologue (Tap Trial) Game Engine

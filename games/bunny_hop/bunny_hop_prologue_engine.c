@@ -41,7 +41,7 @@ struct GraphicsTable bunny_hop_prologue_gfx_table[] = {
 
 // [D_089ecbac] Engine Events
 EngineEvent bunny_hop_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08046f00
+    /* 0x00 */ func_08046f00
 };
 
 // [D_089ecbb0] Prologue (Bunny Hop) Game Engine

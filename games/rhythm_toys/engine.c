@@ -449,15 +449,15 @@ struct CueDefinition *rhythm_toys_cue_index[] = {
 
 // [D_089e9edc] Common Events
 EngineEvent rhythm_toys_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) rhythm_toys_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) rhythm_toys_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) rhythm_toys_common_init_tutorial,
+    /* BEAT_ANIMATION */ rhythm_toys_common_beat_animation,
+    /* DISPLAY_TEXT   */ rhythm_toys_common_display_text,
+    /* INIT_TUTORIAL  */ rhythm_toys_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e9eec] Engine Events
 EngineEvent rhythm_toys_engine_events[] = {
-    /* 0x00 */ (EngineEvent) rhythm_toys_engine_event_stub
+    /* 0x00 */ rhythm_toys_engine_event_stub
 };
 
 // [D_089e9ef0] Rhythm Toys Game Engine

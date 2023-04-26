@@ -41,7 +41,7 @@ struct GraphicsTable power_calligraphy_prologue_gfx_table[] = {
 
 // [D_089eb57c] Engine Events
 EngineEvent power_calligraphy_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080461c4
+    /* 0x00 */ func_080461c4
 };
 
 // [D_089eb580] Prologue (Power Calligraphy) Game Engine

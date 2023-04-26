@@ -41,7 +41,7 @@ struct GraphicsTable clappy_trio_prologue_gfx_table[] = {
 
 // [D_089eb060] Engine Events
 EngineEvent clappy_trio_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08045eb8
+    /* 0x00 */ func_08045eb8
 };
 
 // [D_089eb064] Prologue (The Clappy Trio) Game Engine

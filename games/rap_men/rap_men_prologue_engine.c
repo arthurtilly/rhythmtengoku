@@ -41,7 +41,7 @@ struct GraphicsTable rap_men_prologue_gfx_table[] = {
 
 // [D_089ecd90] Engine Events
 EngineEvent rap_men_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08047028
+    /* 0x00 */ func_08047028
 };
 
 // [D_089ecd94] Prologue (Rap Men) Game Engine

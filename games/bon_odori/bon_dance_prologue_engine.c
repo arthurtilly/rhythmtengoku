@@ -41,7 +41,7 @@ struct GraphicsTable bon_dance_prologue_gfx_table[] = {
 
 // [D_089ea430] Engine Events
 EngineEvent bon_dance_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080453d0
+    /* 0x00 */ func_080453d0
 };
 
 // [D_089ea434] Prologue (The Bon Odori) Game Engine

@@ -41,7 +41,7 @@ struct GraphicsTable rat_race_prologue_gfx_table[] = {
 
 // [D_089ed008] Engine Events
 EngineEvent rat_race_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08047250
+    /* 0x00 */ func_08047250
 };
 
 // [D_089ed00c] Prologue (Rat Race) Game Engine

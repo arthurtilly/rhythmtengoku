@@ -108,16 +108,16 @@ struct CueDefinition *drum_live_menu_cue_index[] = {
 
 // [D_089e5cf4] Common Events
 EngineEvent drum_live_menu_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) drum_live_menu_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) drum_live_menu_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) drum_live_menu_common_init_tutorial,
+    /* BEAT_ANIMATION */ drum_live_menu_common_beat_animation,
+    /* DISPLAY_TEXT   */ drum_live_menu_common_display_text,
+    /* INIT_TUTORIAL  */ drum_live_menu_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e5d04] Engine Events
 EngineEvent drum_live_menu_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08036f94,
-    /* 0x01 */ (EngineEvent) drum_live_menu_engine_event_stub
+    /* 0x00 */ func_08036f94,
+    /* 0x01 */ drum_live_menu_engine_event_stub
 };
 
 // [D_089e5d0c] LIVE Menu Game Engine

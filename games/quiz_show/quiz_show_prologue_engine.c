@@ -41,7 +41,7 @@ struct GraphicsTable quiz_show_prologue_gfx_table[] = {
 
 // [D_089ebbc8] Engine Events
 EngineEvent quiz_show_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080465f8
+    /* 0x00 */ func_080465f8
 };
 
 // [D_089ebbcc] Prologue (Quiz Show) Game Engine

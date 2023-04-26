@@ -41,7 +41,7 @@ struct GraphicsTable polyrhythm_prologue_gfx_table[] = {
 
 // [D_089eba08] Engine Events
 EngineEvent polyrhythm_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080464f8
+    /* 0x00 */ func_080464f8
 };
 
 // [D_089eba0c] Prologue (Polyrhythm) Game Engine

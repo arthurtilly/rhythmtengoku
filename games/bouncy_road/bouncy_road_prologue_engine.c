@@ -41,7 +41,7 @@ struct GraphicsTable bouncy_road_prologue_gfx_table[] = {
 
 // [D_089eac64] Engine Events
 EngineEvent bouncy_road_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08045b88
+    /* 0x00 */ func_08045b88
 };
 
 // [D_089eac68] Prologue (Bouncy Road) Game Engine

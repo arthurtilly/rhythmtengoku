@@ -41,7 +41,7 @@ struct GraphicsTable karate_man_prologue_gfx_table[] = {
 
 // [D_089ea69c] Engine Events
 EngineEvent karate_man_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080455f8
+    /* 0x00 */ func_080455f8
 };
 
 // [D_089ea6a0] Prologue (Karate Man) Game Engine

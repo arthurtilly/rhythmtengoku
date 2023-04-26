@@ -250,28 +250,28 @@ struct CueDefinition *power_calligraphy_cue_index[] = {
 
 // [D_089e4bb0] Common Events
 EngineEvent power_calligraphy_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) power_calligraphy_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) power_calligraphy_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) power_calligraphy_common_init_tutorial,
+    /* BEAT_ANIMATION */ power_calligraphy_common_beat_animation,
+    /* DISPLAY_TEXT   */ power_calligraphy_common_display_text,
+    /* INIT_TUTORIAL  */ power_calligraphy_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e4bc0] Engine Events
 EngineEvent power_calligraphy_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_0803312c,
-    /* 0x01 */ (EngineEvent) func_0803316c,
-    /* 0x02 */ (EngineEvent) func_080331c0,
-    /* 0x03 */ (EngineEvent) func_080331dc,
-    /* 0x04 */ (EngineEvent) func_080333dc,
-    /* 0x05 */ (EngineEvent) func_080333e8,
-    /* 0x06 */ (EngineEvent) func_080334d4,
-    /* 0x07 */ (EngineEvent) func_080334ec,
-    /* 0x08 */ (EngineEvent) func_08033558,
-    /* 0x09 */ (EngineEvent) func_080335e8,
-    /* 0x0A */ (EngineEvent) func_08032c8c,
-    /* 0x0B */ (EngineEvent) func_08032a64,
-    /* 0x0C */ (EngineEvent) func_08032a04,
-    /* 0x0D */ (EngineEvent) power_calligraphy_engine_event_stub
+    /* 0x00 */ func_0803312c,
+    /* 0x01 */ func_0803316c,
+    /* 0x02 */ func_080331c0,
+    /* 0x03 */ func_080331dc,
+    /* 0x04 */ func_080333dc,
+    /* 0x05 */ func_080333e8,
+    /* 0x06 */ func_080334d4,
+    /* 0x07 */ func_080334ec,
+    /* 0x08 */ func_08033558,
+    /* 0x09 */ func_080335e8,
+    /* 0x0A */ func_08032c8c,
+    /* 0x0B */ func_08032a64,
+    /* 0x0C */ func_08032a04,
+    /* 0x0D */ power_calligraphy_engine_event_stub
 };
 
 // [D_089e4bf8] Power Calligraphy Game Engine

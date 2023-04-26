@@ -41,7 +41,7 @@ struct GraphicsTable sneaky_spirits_prologue_gfx_table[] = {
 
 // [D_089ea0d4] Engine Events
 EngineEvent sneaky_spirits_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080451d8
+    /* 0x00 */ func_080451d8
 };
 
 // [D_089ea0d8] Prologue (Sneaky Spirits) Game Engine

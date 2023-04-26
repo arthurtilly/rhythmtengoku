@@ -41,7 +41,7 @@ struct GraphicsTable wizards_waltz_prologue_gfx_table[] = {
 
 // [D_089ede70] Engine Events
 EngineEvent wizards_waltz_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08047e18
+    /* 0x00 */ func_08047e18
 };
 
 // [D_089ede74] Prologue (Wizard's Waltz) Game Engine

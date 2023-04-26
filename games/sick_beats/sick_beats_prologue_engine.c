@@ -41,7 +41,7 @@ struct GraphicsTable sick_beats_prologue_gfx_table[] = {
 
 // [D_089edd40] Engine Events
 EngineEvent sick_beats_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08047d00
+    /* 0x00 */ func_08047d00
 };
 
 // [D_089edd44] Prologue (Sick Beats) Game Engine

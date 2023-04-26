@@ -46,7 +46,7 @@ struct GraphicsTable samurai_slice_prologue_gfx_table[] = {
 
 // [D_089eb3d4] Engine Events
 EngineEvent samurai_slice_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080460c8
+    /* 0x00 */ func_080460c8
 };
 
 // [D_089eb3d8] Prologue (Samurai Slice) Game Engine

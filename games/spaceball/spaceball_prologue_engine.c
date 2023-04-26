@@ -41,7 +41,7 @@ struct GraphicsTable spaceball_prologue_gfx_table[] = {
 
 // [D_089ea2b8] Engine Events
 EngineEvent spaceball_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080452d4
+    /* 0x00 */ func_080452d4
 };
 
 // [D_089ea2bc] Prologue (Spaceball) Game Engine

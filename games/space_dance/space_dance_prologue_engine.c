@@ -41,7 +41,7 @@ struct GraphicsTable space_dance_prologue_gfx_table[] = {
 
 // [D_089ed44c] Engine Events
 EngineEvent space_dance_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08047624
+    /* 0x00 */ func_08047624
 };
 
 // [D_089ed450] Prologue (Space Dance) Game Engine

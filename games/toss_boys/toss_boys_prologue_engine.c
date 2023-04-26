@@ -41,7 +41,7 @@ struct GraphicsTable toss_boys_prologue_gfx_table[] = {
 
 // [D_089ed86c] Engine Events
 EngineEvent toss_boys_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080479a4
+    /* 0x00 */ func_080479a4
 };
 
 // [D_089ed870] Prologue (Toss Boys) Game Engine

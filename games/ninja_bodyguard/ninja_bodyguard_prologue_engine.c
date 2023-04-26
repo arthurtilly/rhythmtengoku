@@ -41,7 +41,7 @@ struct GraphicsTable ninja_bodyguard_prologue_gfx_table[] = {
 
 // [D_089ed1d4] Engine Events
 EngineEvent ninja_bodyguard_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08047398
+    /* 0x00 */ func_08047398
 };
 
 // [D_089ed1d8] Prologue (Ninja Bodyguard) Game Engine
