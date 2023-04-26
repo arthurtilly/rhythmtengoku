@@ -7,6 +7,7 @@
 
 // Engine Types:
 struct MannequinFactoryEngineData {
+    u8 pad[0x434];
 };
 
 struct MannequinFactoryCue {

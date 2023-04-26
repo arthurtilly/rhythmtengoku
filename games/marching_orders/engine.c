@@ -373,7 +373,7 @@ EngineEvent marching_engine_events[] = {
 
 // [D_089e5518] Marching Orders Game Engine
 struct GameEngine marching_orders_engine = {
-    /* Size in Memory */ 0x48,
+    /* Size in Memory */ sizeof(struct MarchingOrdersEngineData),
     /* Start Engine   */ marching_engine_start,
     /* Update Engine  */ marching_engine_update,
     /* Stop Engine    */ marching_engine_stop,

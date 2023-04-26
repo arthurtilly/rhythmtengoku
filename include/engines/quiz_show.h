@@ -7,7 +7,7 @@
 
 // Engine Types:
 struct QuizShowEngineData {
-    /* add fields here */
+    u8 pad[0x58];
 };
 
 struct QuizShowCue {

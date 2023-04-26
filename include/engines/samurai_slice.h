@@ -7,7 +7,7 @@
 
 // Engine Types:
 struct SamuraiSliceEngineData {
-    /* add fields here */
+    u8 pad[0x1e4];
 };
 
 struct SamuraiSliceCue {

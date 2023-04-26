@@ -7,7 +7,7 @@
 
 // Engine Types:
 struct PowerCalligraphyEngineData {
-    /* add fields here */
+    u8 pad[0x218];
 };
 
 struct PowerCalligraphyCue {

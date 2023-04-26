@@ -766,7 +766,7 @@ EngineEvent rhythm_test_engine_events[] = {
 
 // [D_089e50b8] Rhythm Test Game Engine
 struct GameEngine rhythm_test_engine = {
-    /* Size in Memory */ 0x3e8,
+    /* Size in Memory */ sizeof(struct RhythmTestEngineData),
     /* Start Engine   */ rhythm_test_engine_start,
     /* Update Engine  */ rhythm_test_engine_update,
     /* Stop Engine    */ rhythm_test_engine_stop,

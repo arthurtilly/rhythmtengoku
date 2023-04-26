@@ -667,7 +667,7 @@ EngineEvent drum_studio_engine_events[] = {
 
 // [D_089e2ea0] Drum Lessons Game Engine
 struct GameEngine drum_studio_engine = {
-    /* Size in Memory */ 0x580,
+    /* Size in Memory */ sizeof(struct DrumStudioEngineData),
     /* Start Engine   */ drum_studio_engine_start,
     /* Update Engine  */ drum_studio_engine_update,
     /* Stop Engine    */ drum_studio_engine_stop,

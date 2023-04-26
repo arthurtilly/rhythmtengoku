@@ -7,7 +7,7 @@
 
 // Engine Types:
 struct NinjaBodyguardEngineData {
-    /* add fields here */
+    u8 pad[0x300];
 };
 
 struct NinjaBodyguardCue {

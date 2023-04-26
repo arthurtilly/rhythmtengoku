@@ -98,7 +98,7 @@ EngineEvent staff_credit_engine_events[] = {
 
 // [D_089df6cc] Staff Credit Game Engine
 struct GameEngine staff_credit_engine = {
-    /* Size in Memory */ 0x80,
+    /* Size in Memory */ sizeof(struct StaffCreditEngineData),
     /* Start Engine   */ staff_credit_engine_start,
     /* Update Engine  */ staff_credit_engine_update,
     /* Stop Engine    */ staff_credit_engine_stop,

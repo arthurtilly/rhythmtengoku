@@ -462,7 +462,7 @@ EngineEvent rhythm_toys_engine_events[] = {
 
 // [D_089e9ef0] Rhythm Toys Game Engine
 struct GameEngine rhythm_toys_engine = {
-    /* Size in Memory */ 0x384,
+    /* Size in Memory */ sizeof(struct RhythmToysEngineData),
     /* Start Engine   */ rhythm_toys_engine_start,
     /* Update Engine  */ rhythm_toys_engine_update,
     /* Stop Engine    */ rhythm_toys_engine_stop,

@@ -460,7 +460,7 @@ EngineEvent drum_intro_engine_events[] = {
 
 // [D_089e0378] Drum Intro Game Engine
 struct GameEngine drum_intro_engine = {
-    /* Size in Memory */ 0x3b4,
+    /* Size in Memory */ sizeof(struct DrumIntroEngineData),
     /* Start Engine   */ drum_intro_engine_start,
     /* Update Engine  */ drum_intro_engine_update,
     /* Stop Engine    */ drum_intro_engine_stop,

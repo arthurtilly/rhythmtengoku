@@ -239,7 +239,7 @@ EngineEvent ninja_bodyguard_engine_events[] = {
 
 // [D_089e6b84] Ninja Bodyguard Game Engine
 struct GameEngine ninja_bodyguard_engine = {
-    /* Size in Memory */ 0x300,
+    /* Size in Memory */ sizeof(struct NinjaBodyguardEngineData),
     /* Start Engine   */ ninja_bodyguard_engine_start,
     /* Update Engine  */ ninja_bodyguard_engine_update,
     /* Stop Engine    */ ninja_bodyguard_engine_stop,

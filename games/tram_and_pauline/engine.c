@@ -354,7 +354,7 @@ EngineEvent tram_pauline_engine_events[] = {
 
 // [D_089e8d7c] Tram & Pauline Game Engine
 struct GameEngine tram_pauline_engine = {
-    /* Size in Memory */ 0x48,
+    /* Size in Memory */ sizeof(struct TramPaulineEngineData),
     /* Start Engine   */ tram_pauline_engine_start,
     /* Update Engine  */ tram_pauline_engine_update,
     /* Stop Engine    */ tram_pauline_engine_stop,

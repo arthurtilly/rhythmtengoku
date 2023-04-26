@@ -186,7 +186,7 @@ EngineEvent samurai_slice_engine_events[] = {
 
 // [D_089e4908] Samurai Slice Game Engine
 struct GameEngine samurai_slice_engine = {
-    /* Size in Memory */ 0x1e4,
+    /* Size in Memory */ sizeof(struct SamuraiSliceEngineData),
     /* Start Engine   */ samurai_slice_engine_start,
     /* Update Engine  */ samurai_slice_engine_update,
     /* Stop Engine    */ samurai_slice_engine_stop,

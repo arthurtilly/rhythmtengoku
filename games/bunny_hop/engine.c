@@ -463,7 +463,7 @@ EngineEvent bunny_hop_engine_events[] = {
 
 // [D_089e6364] Bunny Hop Game Engine
 struct GameEngine bunny_hop_engine = {
-    /* Size in Memory */ 0x31c,
+    /* Size in Memory */ sizeof(struct BunnyHopEngineData),
     /* Start Engine   */ bunny_hop_engine_start,
     /* Update Engine  */ bunny_hop_engine_update,
     /* Stop Engine    */ bunny_hop_engine_stop,

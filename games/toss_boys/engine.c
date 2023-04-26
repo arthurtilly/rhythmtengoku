@@ -1000,7 +1000,7 @@ EngineEvent toss_boys_engine_events[] = {
 
 // [D_089e8a08] Toss Boys Game Engine
 struct GameEngine toss_boys_engine = {
-    /* Size in Memory */ 0x3a4,
+    /* Size in Memory */ sizeof(struct TossBoysEngineData),
     /* Start Engine   */ toss_boys_engine_start,
     /* Update Engine  */ toss_boys_engine_update,
     /* Stop Engine    */ toss_boys_engine_stop,

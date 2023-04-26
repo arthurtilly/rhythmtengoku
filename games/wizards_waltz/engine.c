@@ -152,7 +152,7 @@ EngineEvent wizards_waltz_engine_events[] = {
 
 // [D_089ea068] Wizard's Waltz Game Engine
 struct GameEngine wizards_waltz_engine = {
-    /* Size in Memory */ 0x1b4,
+    /* Size in Memory */ sizeof(struct WizardsWaltzEngineData),
     /* Start Engine   */ wizards_waltz_engine_start,
     /* Update Engine  */ wizards_waltz_engine_update,
     /* Stop Engine    */ wizards_waltz_engine_stop,

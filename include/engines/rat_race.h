@@ -16,7 +16,7 @@ struct Rat {
 };
 
 struct RatRaceEngineData {
-    /* add fields here */
+    u8 pad[0x120];
 };
 
 struct RatRaceCue {

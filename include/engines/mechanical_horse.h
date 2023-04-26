@@ -7,7 +7,7 @@
 
 // Engine Types:
 struct MechanicalHorseEngineData {
-    /* add fields here */
+    u8 pad[0x310];
 };
 
 struct MechanicalHorseCue {

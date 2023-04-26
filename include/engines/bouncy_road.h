@@ -7,6 +7,7 @@
 
 // Engine Types:
 struct BouncyRoadEngineData {
+    u8 pad[0x1dc];
 };
 
 struct BouncyRoadCue {

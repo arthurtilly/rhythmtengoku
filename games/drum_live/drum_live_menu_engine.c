@@ -122,7 +122,7 @@ EngineEvent drum_live_menu_engine_events[] = {
 
 // [D_089e5d0c] LIVE Menu Game Engine
 struct GameEngine drum_live_menu_engine = {
-    /* Size in Memory */ 0x1c,
+    /* Size in Memory */ sizeof(struct DrumLiveMenuEngineData),
     /* Start Engine   */ drum_live_menu_engine_start,
     /* Update Engine  */ drum_live_menu_engine_update,
     /* Stop Engine    */ drum_live_menu_engine_stop,

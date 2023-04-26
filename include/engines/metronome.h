@@ -7,7 +7,7 @@
 
 // Engine Types:
 struct MetronomeEngineData {
-    /* add fields here */
+    u8 pad[0x30];
 };
 
 struct MetronomeCue {

@@ -483,7 +483,7 @@ EngineEvent mechanical_horse_engine_events[] = {
 
 // [D_089e90b0] Mechanical Horse Game Engine
 struct GameEngine mechanical_horse_engine = {
-    /* Size in Memory */ 0x310,
+    /* Size in Memory */ sizeof(struct MechanicalHorseEngineData),
     /* Start Engine   */ mechanical_horse_engine_start,
     /* Update Engine  */ mechanical_horse_engine_update,
     /* Stop Engine    */ mechanical_horse_engine_stop,

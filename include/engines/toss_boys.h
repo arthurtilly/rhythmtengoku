@@ -8,7 +8,7 @@
 
 // Engine Types:
 struct TossBoysEngineData {
-    /* add fields here */
+    u8 pad[0x3a4];
 };
 
 struct TossBoysCue {

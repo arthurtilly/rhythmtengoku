@@ -7,6 +7,7 @@
 
 // Engine Types:
 struct StaffCreditEngineData {
+    u8 pad[0x80];
 };
 
 struct StaffCreditCue {

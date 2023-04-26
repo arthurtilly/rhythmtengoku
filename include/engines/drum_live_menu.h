@@ -7,7 +7,7 @@
 
 // Engine Types:
 struct DrumLiveMenuEngineData {
-    /* add fields here */
+    u8 pad[0x1c];
 };
 
 struct DrumLiveMenuCue {

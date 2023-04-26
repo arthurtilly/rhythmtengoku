@@ -175,7 +175,7 @@ EngineEvent mr_upbeat_engine_events[] = {
 
 // [D_089e583c] Mr. Upbeat Game Engine
 struct GameEngine mr_upbeat_engine = {
-    /* Size in Memory */ 0x54,
+    /* Size in Memory */ sizeof(struct MrUpbeatEngineData),
     /* Start Engine   */ mr_upbeat_engine_start,
     /* Update Engine  */ mr_upbeat_engine_update,
     /* Stop Engine    */ mr_upbeat_engine_stop,

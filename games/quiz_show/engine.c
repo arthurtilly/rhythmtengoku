@@ -189,7 +189,7 @@ EngineEvent quiz_engine_events[] = {
 
 // [D_089e5ec0] Quiz Show Game Engine
 struct GameEngine quiz_show_engine = {
-    /* Size in Memory */ 0x58,
+    /* Size in Memory */ sizeof(struct QuizShowEngineData),
     /* Start Engine   */ quiz_engine_start,
     /* Update Engine  */ quiz_engine_update,
     /* Stop Engine    */ quiz_engine_stop,

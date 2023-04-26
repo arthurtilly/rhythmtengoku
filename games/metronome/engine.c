@@ -126,7 +126,7 @@ EngineEvent metronome_engine_events[] = {
 
 // [D_089e5948] Metronome Game Engine
 struct GameEngine metronome_engine = {
-    /* Size in Memory */ 0x30,
+    /* Size in Memory */ sizeof(struct MetronomeEngineData),
     /* Start Engine   */ metronome_engine_start,
     /* Update Engine  */ metronome_engine_update,
     /* Stop Engine    */ metronome_engine_stop,

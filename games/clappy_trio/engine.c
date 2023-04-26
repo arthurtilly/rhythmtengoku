@@ -240,7 +240,7 @@ EngineEvent clappy_trio_engine_events[] = {
 
 // [D_089e4778] The Clappy Trio Game Engine
 struct GameEngine clappy_trio_engine = {
-    /* Size in Memory */ 0x1c,
+    /* Size in Memory */ sizeof(struct ClappyTrioEngineData),
     /* Start Engine   */ clappy_trio_engine_start,
     /* Update Engine  */ clappy_trio_engine_update,
     /* Stop Engine    */ clappy_trio_engine_stop,

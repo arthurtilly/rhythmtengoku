@@ -276,7 +276,7 @@ EngineEvent calligraphy_engine_events[] = {
 
 // [D_089e4bf8] Power Calligraphy Game Engine
 struct GameEngine power_calligraphy_engine = {
-    /* Size in Memory */ 0x218,
+    /* Size in Memory */ sizeof(struct PowerCalligraphyEngineData),
     /* Start Engine   */ calligraphy_engine_start,
     /* Update Engine  */ calligraphy_engine_update,
     /* Stop Engine    */ calligraphy_engine_stop,

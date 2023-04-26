@@ -172,7 +172,7 @@ EngineEvent bouncy_road_engine_events[] = {
 
 // [D_089e3d78] Bouncy Road Game Engine
 struct GameEngine bouncy_road_engine = {
-    /* Size in Memory */ 0x1dc,
+    /* Size in Memory */ sizeof(struct BouncyRoadEngineData),
     /* Start Engine   */ bouncy_road_engine_start,
     /* Update Engine  */ bouncy_road_engine_update,
     /* Stop Engine    */ bouncy_road_engine_stop,

@@ -7,7 +7,7 @@
 
 // Engine Types:
 struct SpaceDanceEngineData {
-    /* add fields here */
+    u8 pad[0x38];
 };
 
 struct SpaceDanceCue {

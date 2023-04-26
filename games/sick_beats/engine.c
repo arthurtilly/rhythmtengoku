@@ -304,7 +304,7 @@ EngineEvent sick_beats_engine_events[] = {
 
 // [D_089e9330] Sick Beats Game Engine
 struct GameEngine sick_beats_engine = {
-    /* Size in Memory */ 0x274,
+    /* Size in Memory */ sizeof(struct SickBeatsEngineData),
     /* Start Engine   */ sick_beats_engine_start,
     /* Update Engine  */ sick_beats_engine_update,
     /* Stop Engine    */ sick_beats_engine_stop,

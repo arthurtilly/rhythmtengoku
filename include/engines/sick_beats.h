@@ -7,7 +7,7 @@
 
 // Engine Types:
 struct SickBeatsEngineData {
-    /* add fields here */
+    u8 pad[0x274];
 };
 
 struct SickBeatsCue {

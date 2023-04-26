@@ -7,7 +7,7 @@
 
 // Engine Types:
 struct TramPaulineEngineData {
-    /* add fields here */
+    u8 pad[0x48];
 };
 
 struct TramPaulineCue {

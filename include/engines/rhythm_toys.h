@@ -8,7 +8,7 @@
 
 // Engine Types:
 struct RhythmToysEngineData {
-    /* add fields here */
+    u8 pad[0x384];
 };
 
 struct RhythmToysCue {

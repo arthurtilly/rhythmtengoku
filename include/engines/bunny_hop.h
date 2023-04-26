@@ -7,7 +7,7 @@
 
 // Engine Types:
 struct BunnyHopEngineData {
-    /* add fields here */
+    u8 pad[0x31c];
 };
 
 struct BunnyHopCue {

@@ -200,7 +200,7 @@ EngineEvent rat_race_engine_events[] = {
 
 // [D_089e6814] Rat Race Game Engine
 struct GameEngine rat_race_engine = {
-    /* Size in Memory */ 0x120,
+    /* Size in Memory */ sizeof(struct RatRaceEngineData),
     /* Start Engine   */ rat_race_engine_start,
     /* Update Engine  */ rat_race_engine_update,
     /* Stop Engine    */ rat_race_engine_stop,

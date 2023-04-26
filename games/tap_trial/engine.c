@@ -2300,7 +2300,7 @@ EngineEvent tap_trial_engine_events[] = {
 
 // [D_089e8130] Tap Trial Game Engine
 struct GameEngine tap_trial_engine = {
-    /* Size in Memory */ 0x398,
+    /* Size in Memory */ sizeof(struct TapTrialEngineData),
     /* Start Engine   */ tap_trial_engine_start,
     /* Update Engine  */ tap_trial_engine_update,
     /* Stop Engine    */ tap_trial_engine_stop,

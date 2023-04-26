@@ -387,7 +387,7 @@ EngineEvent space_dance_engine_events[] = {
 
 // [D_089e702c] Space Dance Game Engine
 struct GameEngine space_dance_engine = {
-    /* Size in Memory */ 0x38,
+    /* Size in Memory */ sizeof(struct SpaceDanceEngineData),
     /* Start Engine   */ space_dance_engine_start,
     /* Update Engine  */ space_dance_engine_update,
     /* Stop Engine    */ space_dance_engine_stop,
