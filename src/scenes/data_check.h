@@ -5,7 +5,7 @@
 #include "src/memory.h"
 
 // Scene Types:
-struct DataCheckSceneInfo {
+struct DataCheckSceneData {
     /* add fields here */
 };
 

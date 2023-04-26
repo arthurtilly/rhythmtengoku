@@ -324,7 +324,7 @@ EngineEvent fireworks_engine_events[] = {
 
 // [D_089e4500] Fireworks Game Engine
 struct GameEngine fireworks_engine = {
-    /* Size in Memory */ sizeof(struct FireworksInfo),
+    /* Size in Memory */ sizeof(struct FireworksEngineData),
     /* Start Engine   */ fireworks_engine_start,
     /* Update Engine  */ fireworks_engine_update,
     /* Stop Engine    */ fireworks_engine_stop,

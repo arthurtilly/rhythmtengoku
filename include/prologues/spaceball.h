@@ -11,7 +11,7 @@
 
 
 // Types:
-struct SpaceballPrologueInfo {
+struct SpaceballPrologueEngineData {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };

@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct DataRoomSceneInfo {
+struct DataRoomSceneData {
     /* add fields here */
 };
 

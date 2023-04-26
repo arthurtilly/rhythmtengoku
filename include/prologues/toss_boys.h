@@ -10,7 +10,7 @@
 
 
 // Types:
-struct TossBoysPrologueInfo {
+struct TossBoysPrologueEngineData {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };

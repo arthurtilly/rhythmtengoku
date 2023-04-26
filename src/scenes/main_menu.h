@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct MainMenuSceneInfo {
+struct MainMenuSceneData {
     struct BitmapFontBG *bmpFontBG;
     struct BitmapFontOBJ *bmpFontOBJ;
     u32 scriptIsReady; // Set to FALSE during screen fade-in/out.

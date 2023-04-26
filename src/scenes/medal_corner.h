@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct MedalCornerSceneInfo {
+struct MedalCornerSceneData {
     /* add fields here */
 };
 

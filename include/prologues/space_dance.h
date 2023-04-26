@@ -10,7 +10,7 @@
 
 
 // Types:
-struct SpaceDancePrologueInfo {
+struct SpaceDancePrologueEngineData {
     u8  ver;         // Value:  Version
     s16 textSprite;  // Sprite: Text
     s16 facesSprite; // Sprite: Faces

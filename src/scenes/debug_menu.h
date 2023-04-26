@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct DebugMenuSceneInfo {
+struct DebugMenuSceneData {
     /* add fields here */
 };
 

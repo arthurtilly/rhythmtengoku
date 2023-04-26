@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gMechanicalHorseInfo ((struct MechanicalHorseInfo *)D_030055d0)
+#define gMechanicalHorse ((struct MechanicalHorseEngineData *)D_030055d0)
 
 
 /* MECHANICAL HORSE */

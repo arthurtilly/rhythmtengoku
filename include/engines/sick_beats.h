@@ -6,7 +6,7 @@
 #include "games/sick_beats/graphics/sick_beats_graphics.h"
 
 // Engine Types:
-struct SickBeatsInfo {
+struct SickBeatsEngineData {
     /* add fields here */
 };
 

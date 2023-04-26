@@ -6,7 +6,7 @@
 #include "games/ninja_bodyguard/graphics/ninja_bodyguard_graphics.h"
 
 // Engine Types:
-struct NinjaBodyguardInfo {
+struct NinjaBodyguardEngineData {
     /* add fields here */
 };
 

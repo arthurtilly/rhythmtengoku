@@ -6,7 +6,7 @@
 #include "games/metronome/graphics/metronome_graphics.h"
 
 // Engine Types:
-struct MetronomeInfo {
+struct MetronomeEngineData {
     /* add fields here */
 };
 

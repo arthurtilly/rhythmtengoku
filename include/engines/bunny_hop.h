@@ -6,7 +6,7 @@
 #include "games/bunny_hop/graphics/bunny_hop_graphics.h"
 
 // Engine Types:
-struct BunnyHopInfo {
+struct BunnyHopEngineData {
     /* add fields here */
 };
 

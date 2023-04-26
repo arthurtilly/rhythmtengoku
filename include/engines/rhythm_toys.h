@@ -7,7 +7,7 @@
 #include "games/rhythm_toys/graphics/rhythm_toys_graphics.h"
 
 // Engine Types:
-struct RhythmToysInfo {
+struct RhythmToysEngineData {
     /* add fields here */
 };
 

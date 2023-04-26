@@ -46,7 +46,7 @@ EngineEvent tap_trial_prologue_engine_events[] = {
 
 // [D_089ed598] Prologue (Tap Trial) Game Engine
 struct GameEngine tap_trial_prologue_engine = {
-    /* Size in Memory */ sizeof(struct TapTrialPrologueInfo),
+    /* Size in Memory */ sizeof(struct TapTrialPrologueEngineData),
     /* Start Engine   */ tap_trial_prologue_engine_start,
     /* Update Engine  */ tap_trial_prologue_engine_update,
     /* Stop Engine    */ tap_trial_prologue_engine_stop,

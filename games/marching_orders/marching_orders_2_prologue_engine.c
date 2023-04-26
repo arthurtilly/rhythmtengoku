@@ -46,7 +46,7 @@ EngineEvent marching_orders_2_prologue_engine_events[] = {
 
 // [D_089eb864] Prologue (Marching Orders 2) Game Engine
 struct GameEngine marching_orders_2_prologue_engine = {
-    /* Size in Memory */ sizeof(struct MarchingOrders2PrologueInfo),
+    /* Size in Memory */ sizeof(struct MarchingOrders2PrologueEngineData),
     /* Start Engine   */ marching_orders_2_prologue_engine_start,
     /* Update Engine  */ marching_orders_2_prologue_engine_update,
     /* Stop Engine    */ marching_orders_2_prologue_engine_stop,

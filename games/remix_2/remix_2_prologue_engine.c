@@ -46,7 +46,7 @@ EngineEvent remix_2_prologue_engine_events[] = {
 
 // [D_089ebec8] Prologue (Remix 2) Game Engine
 struct GameEngine remix_2_prologue_engine = {
-    /* Size in Memory */ sizeof(struct Remix2PrologueInfo),
+    /* Size in Memory */ sizeof(struct Remix2PrologueEngineData),
     /* Start Engine   */ remix_2_prologue_engine_start,
     /* Update Engine  */ remix_2_prologue_engine_update,
     /* Stop Engine    */ remix_2_prologue_engine_stop,

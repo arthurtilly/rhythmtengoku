@@ -6,7 +6,7 @@
 #include "games/clappy_trio/graphics/clappy_trio_graphics.h"
 
 // Engine Types:
-struct ClappyTrioInfo {
+struct ClappyTrioEngineData {
     /* add fields here */
 };
 

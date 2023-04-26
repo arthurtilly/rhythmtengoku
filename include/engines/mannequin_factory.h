@@ -6,7 +6,7 @@
 #include "games/mannequin_factory/graphics/mannequin_factory_graphics.h"
 
 // Engine Types:
-struct MannequinFactoryInfo {
+struct MannequinFactoryEngineData {
 };
 
 struct MannequinFactoryCue {

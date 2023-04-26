@@ -7,7 +7,7 @@
 #include "games/drum_intro/graphics/drum_intro_graphics.h"
 
 // Engine Types:
-struct DrumIntroInfo {
+struct DrumIntroEngineData {
     /* add fields here */
 };
 

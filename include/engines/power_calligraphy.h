@@ -6,7 +6,7 @@
 #include "games/power_calligraphy/graphics/power_calligraphy_graphics.h"
 
 // Engine Types:
-struct PowerCalligraphyInfo {
+struct PowerCalligraphyEngineData {
     /* add fields here */
 };
 

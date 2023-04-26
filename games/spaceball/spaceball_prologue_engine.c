@@ -46,7 +46,7 @@ EngineEvent spaceball_prologue_engine_events[] = {
 
 // [D_089ea2bc] Prologue (Spaceball) Game Engine
 struct GameEngine spaceball_prologue_engine = {
-    /* Size in Memory */ sizeof(struct SpaceballPrologueInfo),
+    /* Size in Memory */ sizeof(struct SpaceballPrologueEngineData),
     /* Start Engine   */ spaceball_prologue_engine_start,
     /* Update Engine  */ spaceball_prologue_engine_update,
     /* Stop Engine    */ spaceball_prologue_engine_stop,

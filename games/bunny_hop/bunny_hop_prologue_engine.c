@@ -46,7 +46,7 @@ EngineEvent bunny_hop_prologue_engine_events[] = {
 
 // [D_089ecbb0] Prologue (Bunny Hop) Game Engine
 struct GameEngine bunny_hop_prologue_engine = {
-    /* Size in Memory */ sizeof(struct BunnyHopPrologueInfo),
+    /* Size in Memory */ sizeof(struct BunnyHopPrologueEngineData),
     /* Start Engine   */ bunny_hop_prologue_engine_start,
     /* Update Engine  */ bunny_hop_prologue_engine_update,
     /* Stop Engine    */ bunny_hop_prologue_engine_stop,

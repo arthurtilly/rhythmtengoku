@@ -46,7 +46,7 @@ EngineEvent bon_odori_prologue_engine_events[] = {
 
 // [D_089ea564] Prologue (Bon Dance) Game Engine
 struct GameEngine bon_odori_prologue_engine = {
-    /* Size in Memory */ sizeof(struct BonOdoriPrologueInfo),
+    /* Size in Memory */ sizeof(struct BonOdoriPrologueEngineData),
     /* Start Engine   */ bon_odori_prologue_engine_start,
     /* Update Engine  */ bon_odori_prologue_engine_update,
     /* Stop Engine    */ bon_odori_prologue_engine_stop,

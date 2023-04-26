@@ -5,7 +5,7 @@
 
 
 // Scene Types:
-struct GameSelectSceneInfo {
+struct GameSelectSceneData {
     /* [0x000] Scene */
     u8 sceneState;
     u32 scriptIsReady;

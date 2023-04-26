@@ -15,7 +15,7 @@ struct Rat {
     u32 unkC;
 };
 
-struct RatRaceInfo {
+struct RatRaceEngineData {
     /* add fields here */
 };
 

@@ -46,7 +46,7 @@ EngineEvent bouncy_road_prologue_engine_events[] = {
 
 // [D_089eac68] Prologue (Bouncy Road) Game Engine
 struct GameEngine bouncy_road_prologue_engine = {
-    /* Size in Memory */ sizeof(struct BouncyRoadPrologueInfo),
+    /* Size in Memory */ sizeof(struct BouncyRoadPrologueEngineData),
     /* Start Engine   */ bouncy_road_prologue_engine_start,
     /* Update Engine  */ bouncy_road_prologue_engine_update,
     /* Stop Engine    */ bouncy_road_prologue_engine_stop,

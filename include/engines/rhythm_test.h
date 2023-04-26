@@ -6,7 +6,7 @@
 #include "games/rhythm_test/graphics/rhythm_test_graphics.h"
 
 // Engine Types:
-struct RhythmTestInfo {
+struct RhythmTestEngineData {
     /* add fields here */
 };
 

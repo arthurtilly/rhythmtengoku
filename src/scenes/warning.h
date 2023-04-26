@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct WarningSceneInfo {
+struct WarningSceneData {
     /* add fields here */
 };
 

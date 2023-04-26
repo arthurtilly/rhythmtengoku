@@ -6,7 +6,7 @@
 #include "games/rap_men/graphics/rap_men_graphics.h"
 
 // Engine Types:
-struct RapMenInfo {
+struct RapMenEngineData {
     u8 version;
     struct BitmapFontOBJ *unk4;
     s16 rapperSprite;

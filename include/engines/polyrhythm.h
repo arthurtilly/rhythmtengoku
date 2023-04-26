@@ -6,7 +6,7 @@
 #include "games/polyrhythm/graphics/polyrhythm_graphics.h"
 
 // Engine Types:
-struct PolyrhythmInfo {
+struct PolyrhythmEngineData {
     u8 version;
     struct PolyrhythmBlock {
         u32 type:3;

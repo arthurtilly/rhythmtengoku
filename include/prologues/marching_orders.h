@@ -10,7 +10,7 @@
 
 
 // Types:
-struct MarchingOrdersPrologueInfo {
+struct MarchingOrdersPrologueEngineData {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };

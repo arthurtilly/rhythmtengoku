@@ -51,7 +51,7 @@ EngineEvent samurai_slice_prologue_engine_events[] = {
 
 // [D_089eb3d8] Prologue (Samurai Slice) Game Engine
 struct GameEngine samurai_slice_prologue_engine = {
-    /* Size in Memory */ sizeof(struct SamuraiSlicePrologueInfo),
+    /* Size in Memory */ sizeof(struct SamuraiSlicePrologueEngineData),
     /* Start Engine   */ samurai_slice_prologue_engine_start,
     /* Update Engine  */ samurai_slice_prologue_engine_update,
     /* Stop Engine    */ samurai_slice_prologue_engine_stop,

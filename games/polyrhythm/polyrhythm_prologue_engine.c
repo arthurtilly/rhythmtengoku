@@ -46,7 +46,7 @@ EngineEvent polyrhythm_prologue_engine_events[] = {
 
 // [D_089eba0c] Prologue (Polyrhythm) Game Engine
 struct GameEngine polyrhythm_prologue_engine = {
-    /* Size in Memory */ sizeof(struct PolyrhythmPrologueInfo),
+    /* Size in Memory */ sizeof(struct PolyrhythmPrologueEngineData),
     /* Start Engine   */ polyrhythm_prologue_engine_start,
     /* Update Engine  */ polyrhythm_prologue_engine_update,
     /* Stop Engine    */ polyrhythm_prologue_engine_stop,

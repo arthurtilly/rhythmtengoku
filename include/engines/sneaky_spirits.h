@@ -6,7 +6,7 @@
 #include "games/sneaky_spirits/graphics/sneaky_spirits_graphics.h"
 
 // Engine Types:
-struct SneakySpiritsInfo {
+struct SneakySpiritsEngineData {
     struct BitmapFontOBJ *unk0;  // Pointer: Font? (Related to Tutorial Text)
     u8  version;        // Value:   Version
     u8  rainSlow;       // Flag:    Slow-Motion Rain

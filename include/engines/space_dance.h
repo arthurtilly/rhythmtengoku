@@ -6,7 +6,7 @@
 #include "games/space_dance/graphics/space_dance_graphics.h"
 
 // Engine Types:
-struct SpaceDanceInfo {
+struct SpaceDanceEngineData {
     /* add fields here */
 };
 

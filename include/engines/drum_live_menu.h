@@ -6,7 +6,7 @@
 #include "games/drum_live/graphics/drum_live_menu_graphics.h"
 
 // Engine Types:
-struct DrumLiveMenuInfo {
+struct DrumLiveMenuEngineData {
     /* add fields here */
 };
 

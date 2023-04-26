@@ -6,7 +6,7 @@
 #include "games/mechanical_horse/graphics/mechanical_horse_graphics.h"
 
 // Engine Types:
-struct MechanicalHorseInfo {
+struct MechanicalHorseEngineData {
     /* add fields here */
 };
 

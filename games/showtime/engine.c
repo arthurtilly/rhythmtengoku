@@ -256,7 +256,7 @@ EngineEvent showtime_engine_events[] = {
 
 // [D_089e3aa4] Showtime Game Engine
 struct GameEngine showtime_engine = {
-    /* Size in Memory */ sizeof(struct ShowtimeInfo),
+    /* Size in Memory */ sizeof(struct ShowtimeEngineData),
     /* Start Engine   */ showtime_engine_start,
     /* Update Engine  */ showtime_engine_update,
     /* Stop Engine    */ showtime_engine_stop,

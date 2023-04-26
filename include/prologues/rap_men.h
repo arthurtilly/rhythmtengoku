@@ -10,7 +10,7 @@
 
 
 // Types:
-struct RapMenPrologueInfo {
+struct RapMenPrologueEngineData {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };

@@ -46,7 +46,7 @@ EngineEvent power_calligraphy_prologue_engine_events[] = {
 
 // [D_089eb580] Prologue (Power Calligraphy) Game Engine
 struct GameEngine power_calligraphy_prologue_engine = {
-    /* Size in Memory */ sizeof(struct PowerCalligraphyPrologueInfo),
+    /* Size in Memory */ sizeof(struct PowerCalligraphyPrologueEngineData),
     /* Start Engine   */ power_calligraphy_prologue_engine_start,
     /* Update Engine  */ power_calligraphy_prologue_engine_update,
     /* Stop Engine    */ power_calligraphy_prologue_engine_stop,

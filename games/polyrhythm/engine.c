@@ -265,7 +265,7 @@ EngineEvent polyrhythm_engine_events[] = {
 
 // [D_089e5be0] Polyrhythm Game Engine
 struct GameEngine polyrhythm_engine = {
-    /* Size in Memory */ sizeof(struct PolyrhythmInfo),
+    /* Size in Memory */ sizeof(struct PolyrhythmEngineData),
     /* Start Engine   */ polyrhythm_engine_start,
     /* Update Engine  */ polyrhythm_engine_update,
     /* Stop Engine    */ polyrhythm_engine_stop,

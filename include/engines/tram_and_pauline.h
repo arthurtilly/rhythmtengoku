@@ -6,7 +6,7 @@
 #include "games/tram_and_pauline/graphics/tram_pauline_graphics.h"
 
 // Engine Types:
-struct TramPaulineInfo {
+struct TramPaulineEngineData {
     /* add fields here */
 };
 

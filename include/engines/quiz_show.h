@@ -6,7 +6,7 @@
 #include "games/quiz_show/graphics/quiz_show_graphics.h"
 
 // Engine Types:
-struct QuizShowInfo {
+struct QuizShowEngineData {
     /* add fields here */
 };
 

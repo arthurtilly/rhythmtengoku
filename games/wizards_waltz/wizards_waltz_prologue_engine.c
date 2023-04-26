@@ -46,7 +46,7 @@ EngineEvent wizards_waltz_prologue_engine_events[] = {
 
 // [D_089ede74] Prologue (Wizard's Waltz) Game Engine
 struct GameEngine wizards_waltz_prologue_engine = {
-    /* Size in Memory */ sizeof(struct WizardsWaltzPrologueInfo),
+    /* Size in Memory */ sizeof(struct WizardsWaltzPrologueEngineData),
     /* Start Engine   */ wizards_waltz_prologue_engine_start,
     /* Update Engine  */ wizards_waltz_prologue_engine_update,
     /* Stop Engine    */ wizards_waltz_prologue_engine_stop,

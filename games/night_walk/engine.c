@@ -700,7 +700,7 @@ EngineEvent night_walk_engine_events[] = {
 
 // [D_089e382c] Night Walk Game Engine
 struct GameEngine night_walk_engine = {
-    /* Size in Memory */ sizeof(struct NightWalkInfo),
+    /* Size in Memory */ sizeof(struct NightWalkEngineData),
     /* Start Engine   */ night_walk_engine_start,
     /* Update Engine  */ night_walk_engine_update,
     /* Stop Engine    */ night_walk_engine_stop,

@@ -22,7 +22,7 @@ typedef void (*EngineCloseFunc)();
 typedef void (*EngineInputFunc)(u32 pressed, u32 released);
 
 struct GameEngine {
-    u32 gameInfoSize; // Size of Respective GameInfo Struct (in bytes)
+    u32 gameDataSize; // Size of Respective GameData Struct (in bytes)
     EngineInitFunc initFunc;
     EngineUpdateFunc updateFunc;
     EngineCloseFunc closeFunc;

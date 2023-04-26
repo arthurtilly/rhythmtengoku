@@ -46,7 +46,7 @@ EngineEvent fireworks_prologue_engine_events[] = {
 
 // [D_089eaed4] Prologue (Fireworks) Game Engine
 struct GameEngine fireworks_prologue_engine = {
-    /* Size in Memory */ sizeof(struct FireworksPrologueInfo),
+    /* Size in Memory */ sizeof(struct FireworksPrologueEngineData),
     /* Start Engine   */ fireworks_prologue_engine_start,
     /* Update Engine  */ fireworks_prologue_engine_update,
     /* Stop Engine    */ fireworks_prologue_engine_stop,

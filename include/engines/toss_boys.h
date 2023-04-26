@@ -7,7 +7,7 @@
 #include "games/toss_boys/graphics/toss_boys_graphics.h"
 
 // Engine Types:
-struct TossBoysInfo {
+struct TossBoysEngineData {
     /* add fields here */
 };
 

@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct FlashMemoryTestSceneInfo {
+struct FlashMemoryTestSceneData {
     /* add fields here */
 };
 

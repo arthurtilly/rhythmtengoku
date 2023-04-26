@@ -7,7 +7,7 @@
 #include "games/metronome/graphics/metronome_graphics.h"
 
 // Engine Types:
-struct MrUpbeatInfo {
+struct MrUpbeatEngineData {
     /* add fields here */
 };
 

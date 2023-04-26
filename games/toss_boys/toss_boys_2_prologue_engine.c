@@ -46,7 +46,7 @@ EngineEvent toss_boys_2_prologue_engine_events[] = {
 
 // [D_089eda3c] Prologue (Toss Boys 2) Game Engine
 struct GameEngine toss_boys_2_prologue_engine = {
-    /* Size in Memory */ sizeof(struct TossBoys2PrologueInfo),
+    /* Size in Memory */ sizeof(struct TossBoys2PrologueEngineData),
     /* Start Engine   */ toss_boys_2_prologue_engine_start,
     /* Update Engine  */ toss_boys_2_prologue_engine_update,
     /* Stop Engine    */ toss_boys_2_prologue_engine_stop,

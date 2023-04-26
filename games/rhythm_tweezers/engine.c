@@ -466,7 +466,7 @@ EngineEvent rhythm_tweezers_engine_events[] = {
 
 // [D_089e41f4] Rhythm Tweezers Game Engine
 struct GameEngine rhythm_tweezers_engine = {
-    /* Size in Memory */ sizeof(struct RhythmTweezersInfo),
+    /* Size in Memory */ sizeof(struct RhythmTweezersEngineData),
     /* Start Engine   */ rhythm_tweezers_engine_start,
     /* Update Engine  */ rhythm_tweezers_engine_update,
     /* Stop Engine    */ rhythm_tweezers_engine_stop,

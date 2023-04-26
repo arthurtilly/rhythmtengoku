@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct ReadingSceneInfo {
+struct ReadingSceneData {
     /* add fields here */
 };
 
@@ -72,7 +72,7 @@ extern struct ReadingMaterial reading_material_error;
 
 
 // Scene Types:
-struct ReadErrorSceneInfo {
+struct ReadErrorSceneData {
     /* add fields here */
 };
 

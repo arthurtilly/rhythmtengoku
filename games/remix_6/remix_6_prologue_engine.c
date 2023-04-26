@@ -46,7 +46,7 @@ EngineEvent remix_6_prologue_engine_events[] = {
 
 // [D_089ec610] Prologue (Remix 6) Game Engine
 struct GameEngine remix_6_prologue_engine = {
-    /* Size in Memory */ sizeof(struct Remix6PrologueInfo),
+    /* Size in Memory */ sizeof(struct Remix6PrologueEngineData),
     /* Start Engine   */ remix_6_prologue_engine_start,
     /* Update Engine  */ remix_6_prologue_engine_update,
     /* Stop Engine    */ remix_6_prologue_engine_stop,

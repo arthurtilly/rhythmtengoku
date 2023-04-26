@@ -46,7 +46,7 @@ EngineEvent space_dance_prologue_engine_events[] = {
 
 // [D_089ed450] Prologue (Space Dance) Game Engine
 struct GameEngine space_dance_prologue_engine = {
-    /* Size in Memory */ sizeof(struct SpaceDancePrologueInfo),
+    /* Size in Memory */ sizeof(struct SpaceDancePrologueEngineData),
     /* Start Engine   */ space_dance_prologue_engine_start,
     /* Update Engine  */ space_dance_prologue_engine_update,
     /* Stop Engine    */ space_dance_prologue_engine_stop,

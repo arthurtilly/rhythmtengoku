@@ -10,7 +10,7 @@
 
 
 // Types:
-struct SneakySpiritsPrologueInfo {
+struct SneakySpiritsPrologueEngineData {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };

@@ -6,7 +6,7 @@
 #include "games/marching_orders/graphics/marching_orders_graphics.h"
 
 // Engine Types:
-struct MarchingOrdersInfo {
+struct MarchingOrdersEngineData {
     /* add fields here */
 };
 

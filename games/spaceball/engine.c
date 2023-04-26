@@ -206,7 +206,7 @@ EngineEvent spaceball_engine_events[] = {
 
 // [D_089deb08] Spaceball Game Engine
 struct GameEngine spaceball_engine = {
-    /* Size in Memory */ sizeof(struct SpaceballInfo),
+    /* Size in Memory */ sizeof(struct SpaceballEngineData),
     /* Start Engine   */ spaceball_engine_start,
     /* Update Engine  */ spaceball_engine_update,
     /* Stop Engine    */ spaceball_engine_stop,

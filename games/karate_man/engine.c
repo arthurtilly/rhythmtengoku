@@ -30,7 +30,7 @@ EngineEvent karate_engine_events[] = {
 
 // [D_089df044] Karate Man Game Engine
 struct GameEngine karate_man_engine = {
-    /* Size in Memory */ sizeof(struct KarateManInfo),
+    /* Size in Memory */ sizeof(struct KarateManEngineData),
     /* Start Engine   */ karate_engine_start,
     /* Update Engine  */ karate_engine_update,
     /* Stop Engine    */ karate_engine_stop,

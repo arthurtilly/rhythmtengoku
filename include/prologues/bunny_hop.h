@@ -10,7 +10,7 @@
 
 
 // Types:
-struct BunnyHopPrologueInfo {
+struct BunnyHopPrologueEngineData {
     u8  ver;            // Value:  Version
     s16 textSprite;     // Sprite: Text
     s16 rabbitsSprite;  // Sprite: Rabbits

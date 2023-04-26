@@ -46,7 +46,7 @@ EngineEvent sneaky_spirits_prologue_engine_events[] = {
 
 // [D_089ea0d8] Prologue (Sneaky Spirits) Game Engine
 struct GameEngine sneaky_spirits_prologue_engine = {
-    /* Size in Memory */ sizeof(struct SneakySpiritsPrologueInfo),
+    /* Size in Memory */ sizeof(struct SneakySpiritsPrologueEngineData),
     /* Start Engine   */ sneaky_spirits_prologue_engine_start,
     /* Update Engine  */ sneaky_spirits_prologue_engine_update,
     /* Stop Engine    */ sneaky_spirits_prologue_engine_stop,

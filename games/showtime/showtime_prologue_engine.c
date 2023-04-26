@@ -46,7 +46,7 @@ EngineEvent showtime_prologue_engine_events[] = {
 
 // [D_089eab2c] Prologue (Showtime) Game Engine
 struct GameEngine showtime_prologue_engine = {
-    /* Size in Memory */ sizeof(struct ShowtimePrologueInfo),
+    /* Size in Memory */ sizeof(struct ShowtimePrologueEngineData),
     /* Start Engine   */ showtime_prologue_engine_start,
     /* Update Engine  */ showtime_prologue_engine_update,
     /* Stop Engine    */ showtime_prologue_engine_stop,

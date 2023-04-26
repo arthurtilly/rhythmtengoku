@@ -12,7 +12,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gDrumLiveInfo ((struct DrumLiveInfo *)D_030055d0)
+#define gDrumLive ((struct DrumLiveEngineData *)D_030055d0)
 
 static s32 D_03001564; // unknown type
 

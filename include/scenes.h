@@ -32,6 +32,7 @@ extern struct Scene scene_cafe;
 extern struct Scene scene_toys_menu;
 extern struct Scene scene_endless_menu;
 extern struct Scene scene_lessons_menu;
+extern struct Scene scene_debug_menu;
 
 // Main Games
 extern struct Scene scene_karate_man;

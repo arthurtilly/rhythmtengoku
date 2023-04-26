@@ -14,7 +14,7 @@ struct BonOdoriText {
     u16 width;
 };
 
-struct BonOdoriInfo {
+struct BonOdoriEngineData {
     u8 version;
     struct BitmapFontOBJ *unk4;
     struct BonOdoriText lyrics[4];

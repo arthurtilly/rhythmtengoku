@@ -46,7 +46,7 @@ EngineEvent quiz_show_prologue_engine_events[] = {
 
 // [D_089ebbcc] Prologue (Quiz Show) Game Engine
 struct GameEngine quiz_show_prologue_engine = {
-    /* Size in Memory */ sizeof(struct QuizShowPrologueInfo),
+    /* Size in Memory */ sizeof(struct QuizShowPrologueEngineData),
     /* Start Engine   */ quiz_show_prologue_engine_start,
     /* Update Engine  */ quiz_show_prologue_engine_update,
     /* Stop Engine    */ quiz_show_prologue_engine_stop,

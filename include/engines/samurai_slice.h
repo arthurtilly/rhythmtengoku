@@ -6,7 +6,7 @@
 #include "games/samurai_slice/graphics/samurai_slice_graphics.h"
 
 // Engine Types:
-struct SamuraiSliceInfo {
+struct SamuraiSliceEngineData {
     /* add fields here */
 };
 

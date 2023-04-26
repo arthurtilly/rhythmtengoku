@@ -46,7 +46,7 @@ EngineEvent rat_race_prologue_engine_events[] = {
 
 // [D_089ed00c] Prologue (Rat Race) Game Engine
 struct GameEngine rat_race_prologue_engine = {
-    /* Size in Memory */ sizeof(struct RatRacePrologueInfo),
+    /* Size in Memory */ sizeof(struct RatRacePrologueEngineData),
     /* Start Engine   */ rat_race_prologue_engine_start,
     /* Update Engine  */ rat_race_prologue_engine_update,
     /* Stop Engine    */ rat_race_prologue_engine_stop,

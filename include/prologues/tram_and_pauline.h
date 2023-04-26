@@ -10,7 +10,7 @@
 
 
 // Types:
-struct TramPaulinePrologueInfo {
+struct TramPaulinePrologueEngineData {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };

@@ -46,7 +46,7 @@ EngineEvent rap_men_prologue_engine_events[] = {
 
 // [D_089ecd94] Prologue (Rap Men) Game Engine
 struct GameEngine rap_men_prologue_engine = {
-    /* Size in Memory */ sizeof(struct RapMenPrologueInfo),
+    /* Size in Memory */ sizeof(struct RapMenPrologueEngineData),
     /* Start Engine   */ rap_men_prologue_engine_start,
     /* Update Engine  */ rap_men_prologue_engine_update,
     /* Stop Engine    */ rap_men_prologue_engine_stop,

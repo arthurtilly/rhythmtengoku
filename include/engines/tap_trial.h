@@ -6,7 +6,7 @@
 #include "games/tap_trial/graphics/tap_trial_graphics.h"
 
 // Engine Types:
-struct TapTrialInfo {
+struct TapTrialEngineData {
     /* add fields here */
 };
 
