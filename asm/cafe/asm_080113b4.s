@@ -6,7 +6,7 @@ thumb_func_start func_080113b4 \n\
 /* 080113b4 */ PUSH {LR} \n\
 /* 080113b6 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080113b8 */ BL scene_hide_bg_layer \n\
-/* 080113bc */ LDR R0, =D_030046a4 \n\
+/* 080113bc */ LDR R0, =gCurrentSceneData \n\
 /* 080113be */ LDR R0, [R0] \n\
 /* 080113c0 */ LDR R0, [R0, 0x4] \n\
 /* 080113c2 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\

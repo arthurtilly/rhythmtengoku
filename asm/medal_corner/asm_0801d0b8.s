@@ -32,7 +32,7 @@ branch_0801d0c0: \n\
 /* 0801d0ea */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0801d0ec */ BL func_0804d160 \n\
 /* 0801d0f0 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0801d0f2 */ LDR R0, =D_030046a4 \n\
+/* 0801d0f2 */ LDR R0, =gCurrentSceneData \n\
 /* 0801d0f4 */ LDR R0, [R0] \n\
 /* 0801d0f6 */ LDR R0, [R0, 0x4] \n\
 /* 0801d0f8 */ LSLS R1, R1, 0x10 \n\

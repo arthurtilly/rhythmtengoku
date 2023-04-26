@@ -18,7 +18,7 @@ thumb_func_start func_0801a450 \n\
 /* 0801a46a */ LDR R7, =reading_material_error \n\
  \n\
 branch_0801a46c: \n\
-/* 0801a46c */ LDR R6, =D_030046a4 \n\
+/* 0801a46c */ LDR R6, =gCurrentSceneData \n\
 /* 0801a46e */ LDR R0, [R6] \n\
 /* 0801a470 */ STR R7, [R0] \n\
 /* 0801a472 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

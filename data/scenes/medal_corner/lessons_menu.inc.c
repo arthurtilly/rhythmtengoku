@@ -1,22 +1,3 @@
-extern const struct Scene scene_drum_lesson_basic_1;
-extern const struct Scene scene_drum_lesson_basic_2;
-extern const struct Scene scene_drum_lesson_short_1;
-extern const struct Scene scene_drum_lesson_short_2;
-extern const struct Scene scene_drum_lesson_short_3;
-extern const struct Scene scene_drum_lesson_short_4;
-extern const struct Scene scene_drum_lesson_short_5;
-extern const struct Scene scene_drum_lesson_short_6;
-extern const struct Scene scene_drum_lesson_short_7;
-extern const struct Scene scene_drum_lesson_short_8;
-extern const struct Scene scene_drum_lesson_short_9;
-extern const struct Scene scene_drum_lesson_long_1;
-extern const struct Scene scene_drum_lesson_long_2;
-extern const struct Scene scene_drum_lesson_long_3;
-extern const struct Scene scene_drum_lesson_long_4;
-extern const struct Scene scene_drum_lesson_long_5;
-extern const struct Scene scene_drum_lesson_long_6;
-extern const struct Scene scene_drum_lesson_hi_tech_1;
-extern const struct Scene scene_drum_lesson_hi_tech_2;
 extern struct SequenceData s_lesson_sel_bgm_seqData;
 
 

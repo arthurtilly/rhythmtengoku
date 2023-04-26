@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_08010a3c \n\
 /* 08010a3c */ PUSH {R4-R7, LR} \n\
 /* 08010a3e */ SUB SP, 0x10 \n\
-/* 08010a40 */ LDR R6, =D_030046a4 \n\
+/* 08010a40 */ LDR R6, =gCurrentSceneData \n\
 /* 08010a42 */ LDR R1, [R6] \n\
 /* 08010a44 */ LDRB R0, [R1, 0xD] \n\
 /* 08010a46 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
@@ -53,7 +53,7 @@ branch_08010aa0: \n\
 branch_08010aa2: \n\
 /* 08010aa2 */ LDR R0, =D_03005380 \n\
 /* 08010aa4 */ LDR R0, [R0] \n\
-/* 08010aa6 */ LDR R5, =D_030046a4 \n\
+/* 08010aa6 */ LDR R5, =gCurrentSceneData \n\
 /* 08010aa8 */ LDR R1, [R5] \n\
 /* 08010aaa */ MOVS R7, 0x8 @ Set R7 to 0x8 \n\
 /* 08010aac */ LDRSH R1, [R1, R7] \n\

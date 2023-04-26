@@ -9,7 +9,7 @@ struct MedalCornerSceneInfo {
 };
 
 struct MedalCornerLevel {
-    const struct Scene *scene;
+    struct Scene *scene;
     const char *title;
     struct Animation *icon;
     u8 medalsToUnlock;

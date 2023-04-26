@@ -22,7 +22,7 @@ thumb_func_start func_0801ac38 \n\
 branch_0801ac56: \n\
 /* 0801ac56 */ LDR R0, =D_03005380 \n\
 /* 0801ac58 */ LDR R0, [R0] \n\
-/* 0801ac5a */ LDR R1, =D_030046a4 \n\
+/* 0801ac5a */ LDR R1, =gCurrentSceneData \n\
 /* 0801ac5c */ LDR R1, [R1] \n\
 /* 0801ac5e */ MOVS R2, 0x96 @ Set R2 to 0x96 \n\
 /* 0801ac60 */ LSLS R2, R2, 0x3 \n\
@@ -39,7 +39,7 @@ branch_0801ac56: \n\
 branch_0801ac7c: \n\
 /* 0801ac7c */ LDR R0, =D_03005380 \n\
 /* 0801ac7e */ LDR R0, [R0] \n\
-/* 0801ac80 */ LDR R1, =D_030046a4 \n\
+/* 0801ac80 */ LDR R1, =gCurrentSceneData \n\
 /* 0801ac82 */ LDR R1, [R1] \n\
 /* 0801ac84 */ MOVS R2, 0x96 @ Set R2 to 0x96 \n\
 /* 0801ac86 */ LSLS R2, R2, 0x3 \n\
@@ -61,7 +61,7 @@ branch_0801ac92: \n\
 branch_0801acac: \n\
 /* 0801acac */ LDR R0, =D_03005380 \n\
 /* 0801acae */ LDR R0, [R0] \n\
-/* 0801acb0 */ LDR R1, =D_030046a4 \n\
+/* 0801acb0 */ LDR R1, =gCurrentSceneData \n\
 /* 0801acb2 */ LDR R1, [R1] \n\
 /* 0801acb4 */ MOVS R2, 0x96 @ Set R2 to 0x96 \n\
 /* 0801acb6 */ LSLS R2, R2, 0x3 \n\
@@ -77,7 +77,7 @@ branch_0801acac: \n\
 /* 0801acca */ BL func_0804d8f8 \n\
  \n\
 branch_0801acce: \n\
-/* 0801acce */ LDR R4, =D_030046a4 \n\
+/* 0801acce */ LDR R4, =gCurrentSceneData \n\
 /* 0801acd0 */ LDR R0, [R4] \n\
 /* 0801acd2 */ LDR R1, =0x4b4 \n\
 /* 0801acd4 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

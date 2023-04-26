@@ -14,7 +14,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gMainMenuInfo ((struct MainMenuSceneInfo *)D_030046a4)
+#define gMainMenuInfo ((struct MainMenuSceneInfo *)gCurrentSceneData)
 
 enum MainMenuButtonsEnum {
     /* 00 */ GAME_SELECT,
@@ -76,7 +76,7 @@ void main_menu_scene_init_gfx1(void) {
 
 // Scene Start
 void main_menu_scene_start(void *sceneVar, s32 dataArg) {
-    const struct Scene *tempScene;
+    struct Scene *tempScene;
     u32 i;
 
     tempScene = func_0800061c();

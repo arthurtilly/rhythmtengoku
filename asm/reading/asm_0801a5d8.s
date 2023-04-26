@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start func_0801a5d8 \n\
 /* 0801a5d8 */ PUSH {R4-R6, LR} \n\
-/* 0801a5da */ LDR R6, =D_030046a4 \n\
+/* 0801a5da */ LDR R6, =gCurrentSceneData \n\
 /* 0801a5dc */ LDR R0, [R6] \n\
 /* 0801a5de */ LDR R0, [R0, 0x8] \n\
 /* 0801a5e0 */ BL text_printer_is_busy \n\
@@ -81,7 +81,7 @@ branch_0801a668: \n\
 /* 0801a668 */ STRH R1, [R2] \n\
  \n\
 branch_0801a66a: \n\
-/* 0801a66a */ LDR R5, =D_030046a4 \n\
+/* 0801a66a */ LDR R5, =gCurrentSceneData \n\
 /* 0801a66c */ LDR R2, [R5] \n\
 /* 0801a66e */ MOVS R6, 0x89 @ Set R6 to 0x89 \n\
 /* 0801a670 */ LSLS R6, R6, 0x1 \n\

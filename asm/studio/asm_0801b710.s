@@ -10,7 +10,7 @@ thumb_func_start func_0801b710 \n\
 /* 0801b718 */ SUB SP, 0x3C \n\
 /* 0801b71a */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 0801b71c */ ADDS R5, R2, 0x0 @ Set R5 to R2 + 0x0 \n\
-/* 0801b71e */ LDR R1, =D_030046a4 \n\
+/* 0801b71e */ LDR R1, =gCurrentSceneData \n\
 /* 0801b720 */ MOV R9, R1 @ Set R9 to R1 \n\
 /* 0801b722 */ LDR R1, [R1] \n\
 /* 0801b724 */ MOVS R2, 0xDB @ Set R2 to 0xDB \n\

@@ -1,7 +1,3 @@
-extern const struct Scene scene_cat_machine;
-extern const struct Scene scene_mechanical_horse;
-extern const struct Scene scene_love_machine;
-extern const struct Scene scene_rap_machine;
 extern struct SequenceData s_toys_bgm_seqData;
 
 

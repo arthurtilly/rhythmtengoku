@@ -9,7 +9,7 @@ struct DebugMenuSceneInfo {
 };
 
 struct DebugMenuEntry {
-    const struct Scene *scene;
+    struct Scene *scene;
     const char *label;
 };
 

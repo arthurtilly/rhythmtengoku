@@ -9,7 +9,7 @@ thumb_func_start func_08010be4 \n\
 /* 08010bea */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 08010bec */ PUSH {R5-R7} \n\
 /* 08010bee */ SUB SP, 0x10 \n\
-/* 08010bf0 */ LDR R1, =D_030046a4 \n\
+/* 08010bf0 */ LDR R1, =gCurrentSceneData \n\
 /* 08010bf2 */ LDR R2, [R1] \n\
 /* 08010bf4 */ LDRH R7, [R2, 0xA] \n\
 /* 08010bf6 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
@@ -23,7 +23,7 @@ branch_08010c02: \n\
 /* 08010c02 */ MOV R1, SP @ Set R1 to SP \n\
 /* 08010c04 */ LDRB R1, [R1, 0x8] \n\
 /* 08010c06 */ STRB R1, [R2, 0x1C] \n\
-/* 08010c08 */ LDR R2, =D_030046a4 \n\
+/* 08010c08 */ LDR R2, =gCurrentSceneData \n\
 /* 08010c0a */ LDR R0, [R2] \n\
 /* 08010c0c */ MOV R1, SP @ Set R1 to SP \n\
 /* 08010c0e */ LDRB R1, [R1, 0x8] \n\
@@ -119,7 +119,7 @@ branch_08010ce0: \n\
 .ltorg \n\
  \n\
 branch_08010d08: \n\
-/* 08010d08 */ LDR R0, =D_030046a4 \n\
+/* 08010d08 */ LDR R0, =gCurrentSceneData \n\
 /* 08010d0a */ LDR R1, [R0] \n\
 /* 08010d0c */ LDRH R0, [R1, 0x16] \n\
 /* 08010d0e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
@@ -156,7 +156,7 @@ branch_08010d48: \n\
 jump_08010d4c: \n\
 /* 08010d4c */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 08010d4e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08010d50 */ LDR R1, =D_030046a4 \n\
+/* 08010d50 */ LDR R1, =gCurrentSceneData \n\
 /* 08010d52 */ LDR R0, [R1] \n\
 /* 08010d54 */ LDRB R0, [R0, 0xE] \n\
 /* 08010d56 */ CMP R5, R0 @ Check R5 - R0 \n\
@@ -244,7 +244,7 @@ branch_08010df0: \n\
 /* 08010df0 */ ADDS R3, 0x1 @ Add 0x1 to R3 \n\
 /* 08010df2 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 08010df4 */ BNE branch_08010e04 \n\
-/* 08010df6 */ LDR R1, =D_030046a4 \n\
+/* 08010df6 */ LDR R1, =gCurrentSceneData \n\
 /* 08010df8 */ LDR R0, [R1] \n\
 /* 08010dfa */ LDRB R0, [R0, 0xE] \n\
 /* 08010dfc */ CMP R3, R0 @ Check R3 - R0 \n\
@@ -255,7 +255,7 @@ branch_08010e00: \n\
 /* 08010e02 */ BEQ branch_08010e2c \n\
  \n\
 branch_08010e04: \n\
-/* 08010e04 */ LDR R0, =D_030046a4 \n\
+/* 08010e04 */ LDR R0, =gCurrentSceneData \n\
 /* 08010e06 */ LDR R0, [R0] \n\
 /* 08010e08 */ LDRH R0, [R0, 0x18] \n\
 /* 08010e0a */ LDRH R1, [R6, 0x4] \n\
@@ -320,7 +320,7 @@ jtbl_08010e7c: \n\
 .word jump_0801104c \n\
 \n\
 jump_08010e94: \n\
-/* 08010e94 */ LDR R0, =D_030046a4 \n\
+/* 08010e94 */ LDR R0, =gCurrentSceneData \n\
 /* 08010e96 */ LDR R0, [R0] \n\
 /* 08010e98 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08010e9a */ ADDS R5, 0x28 @ Add 0x28 to R5 \n\
@@ -354,7 +354,7 @@ jump_08010e94: \n\
 .ltorg \n\
 \n\
 jump_08010ef8: \n\
-/* 08010ef8 */ LDR R4, =D_030046a4 \n\
+/* 08010ef8 */ LDR R4, =gCurrentSceneData \n\
 /* 08010efa */ LDR R0, [R4] \n\
 /* 08010efc */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08010efe */ ADDS R5, 0x28 @ Add 0x28 to R5 \n\
@@ -391,7 +391,7 @@ jump_08010ef8: \n\
 .ltorg \n\
 \n\
 jump_08010f64: \n\
-/* 08010f64 */ LDR R0, =D_030046a4 \n\
+/* 08010f64 */ LDR R0, =gCurrentSceneData \n\
 /* 08010f66 */ LDR R0, [R0] \n\
 /* 08010f68 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08010f6a */ ADDS R5, 0x28 @ Add 0x28 to R5 \n\
@@ -426,7 +426,7 @@ jump_08010f64: \n\
 .ltorg \n\
 \n\
 jump_08010fd0: \n\
-/* 08010fd0 */ LDR R0, =D_030046a4 \n\
+/* 08010fd0 */ LDR R0, =gCurrentSceneData \n\
 /* 08010fd2 */ LDR R0, [R0] \n\
 /* 08010fd4 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08010fd6 */ ADDS R5, 0x28 @ Add 0x28 to R5 \n\
@@ -460,7 +460,7 @@ jump_08010fd0: \n\
 .ltorg \n\
 \n\
 jump_08011034: \n\
-/* 08011034 */ LDR R0, =D_030046a4 \n\
+/* 08011034 */ LDR R0, =gCurrentSceneData \n\
 /* 08011036 */ LDR R0, [R0] \n\
 /* 08011038 */ LDRH R0, [R0, 0x18] \n\
 /* 0801103a */ STRH R0, [R6, 0x4] \n\
@@ -471,7 +471,7 @@ jump_08011034: \n\
 .ltorg \n\
 \n\
 jump_0801104c: \n\
-/* 0801104c */ LDR R0, =D_030046a4 \n\
+/* 0801104c */ LDR R0, =gCurrentSceneData \n\
 /* 0801104e */ LDR R0, [R0] \n\
 /* 08011050 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08011052 */ ADDS R5, 0x28 @ Add 0x28 to R5 \n\
@@ -524,7 +524,7 @@ jump_080110c0: \n\
 /* 080110cc */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 080110ce */ LDR R0, [R0] \n\
 /* 080110d0 */ MOV R8, R0 @ Set R8 to R0 \n\
-/* 080110d2 */ LDR R2, =D_030046a4 \n\
+/* 080110d2 */ LDR R2, =gCurrentSceneData \n\
 /* 080110d4 */ LDR R1, [R2] \n\
 /* 080110d6 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080110d8 */ STRB R0, [R1, 0x1C] \n\
@@ -551,7 +551,7 @@ jump_080110f8: \n\
 .ltorg \n\
 \n\
 jump_08011104: \n\
-/* 08011104 */ LDR R2, =D_030046a4 \n\
+/* 08011104 */ LDR R2, =gCurrentSceneData \n\
 /* 08011106 */ LDR R1, [R2] \n\
 /* 08011108 */ MOVS R0, 0x1F @ Set R0 to 0x1F \n\
 /* 0801110a */ LDRSB R0, [R1, R0] \n\
@@ -630,7 +630,7 @@ jump_0801119c: \n\
 /* 0801119e */ MOV R8, R1 @ Set R8 to R1 \n\
  \n\
 branch_080111a0: \n\
-/* 080111a0 */ LDR R2, =D_030046a4 \n\
+/* 080111a0 */ LDR R2, =gCurrentSceneData \n\
 /* 080111a2 */ LDR R1, [R2] \n\
 /* 080111a4 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080111a6 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
@@ -643,7 +643,7 @@ branch_080111a0: \n\
 .ltorg \n\
 \n\
 jump_080111bc: \n\
-/* 080111bc */ LDR R5, =D_030046a4 \n\
+/* 080111bc */ LDR R5, =gCurrentSceneData \n\
 /* 080111be */ LDR R0, [R5] \n\
 /* 080111c0 */ LDRB R0, [R0, 0x1F] \n\
 /* 080111c2 */ LSLS R0, R0, 0x18 \n\
@@ -696,7 +696,7 @@ jump_08011214: \n\
 jump_08011220: \n\
 /* 08011220 */ LDR R1, =D_08050b14 \n\
 /* 08011222 */ MOV R8, R1 @ Set R8 to R1 \n\
-/* 08011224 */ LDR R2, =D_030046a4 \n\
+/* 08011224 */ LDR R2, =gCurrentSceneData \n\
 /* 08011226 */ LDR R1, [R2] \n\
 /* 08011228 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
 /* 0801122a */ STRB R0, [R1, 0x1C] \n\
@@ -710,7 +710,7 @@ jump_08011220: \n\
 .ltorg \n\
 \n\
 jump_08011244: \n\
-/* 08011244 */ LDR R0, =D_030046a4 \n\
+/* 08011244 */ LDR R0, =gCurrentSceneData \n\
 /* 08011246 */ LDR R2, [R0] \n\
 /* 08011248 */ LDR R1, [R2, 0x24] \n\
 /* 0801124a */ LDR R0, [R1] \n\
@@ -743,7 +743,7 @@ branch_08011264: \n\
 /* 0801127a */ LDR R0, [R2] \n\
 /* 0801127c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801127e */ BEQ branch_08011290 \n\
-/* 08011280 */ LDR R2, =D_030046a4 \n\
+/* 08011280 */ LDR R2, =gCurrentSceneData \n\
 /* 08011282 */ LDR R0, [R2] \n\
 /* 08011284 */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 08011286 */ STR R1, [R0, 0x24] \n\
@@ -757,7 +757,7 @@ branch_08011290: \n\
 /* 08011294 */ B branch_080112a0 \n\
  \n\
 branch_08011296: \n\
-/* 08011296 */ LDR R1, =D_030046a4 \n\
+/* 08011296 */ LDR R1, =gCurrentSceneData \n\
 /* 08011298 */ LDR R0, [R1] \n\
 /* 0801129a */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 0801129c */ STR R2, [R0, 0x24] \n\
@@ -766,7 +766,7 @@ branch_0801129e: \n\
 /* 0801129e */ MOVS R7, 0x20 @ Set R7 to 0x20 \n\
  \n\
 branch_080112a0: \n\
-/* 080112a0 */ LDR R4, =D_030046a4 \n\
+/* 080112a0 */ LDR R4, =gCurrentSceneData \n\
 /* 080112a2 */ LDR R0, [R4] \n\
 /* 080112a4 */ LDR R0, [R0, 0x4] \n\
 /* 080112a6 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
@@ -781,7 +781,7 @@ branch_080112a0: \n\
 /* 080112bc */ BL beatscript_disable_loops \n\
  \n\
 branch_080112c0: \n\
-/* 080112c0 */ LDR R1, =D_030046a4 \n\
+/* 080112c0 */ LDR R1, =gCurrentSceneData \n\
 /* 080112c2 */ LDR R0, [R1] \n\
 /* 080112c4 */ STRH R7, [R0, 0xA] \n\
  \n\

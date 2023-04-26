@@ -102,7 +102,7 @@ interrupt_handler = 0x030044a0;
 
 /* Main Game State */
 D_030046a0 = 0x030046a0;
-D_030046a4 = 0x030046a4;
+gCurrentSceneData = 0x030046a4;
 D_030046a8 = 0x030046a8;
 
 /* Internal Library */

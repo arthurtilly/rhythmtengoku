@@ -16,7 +16,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gGameSelectInfo ((struct GameSelectSceneInfo *)D_030046a4)
+#define gGameSelectInfo ((struct GameSelectSceneInfo *)gCurrentSceneData)
 
 #define COLOR_MOD_MAX_WAIT_TIME 60
 #define COLOR_MOD_INTERP_TIME 96
@@ -55,12 +55,6 @@ enum FlowPaneStatesEnum {
 
 extern u32 D_03005590; // Unused
 extern u32 D_030055d4; // Unused
-
-extern const struct Scene scene_results_ver_rank;
-extern const struct Scene scene_epilogue;
-extern const struct Scene scene_results_ver_score;
-extern const struct Scene scene_game_select;
-extern const struct Scene scene_main_menu;
 
 static u8 sPlayAltBGM; // Play "Game Select 2" music
 static u16 D_0300131e_padding; // unused

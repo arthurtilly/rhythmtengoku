@@ -17,13 +17,13 @@ thumb_func_start func_08016d94 \n\
 /* 08016dac */ BL play_sound \n\
 /* 08016db0 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08016db2 */ BL set_pause_beatscript_scene \n\
-/* 08016db6 */ LDR R0, =D_030046a4 \n\
+/* 08016db6 */ LDR R0, =gCurrentSceneData \n\
 /* 08016db8 */ LDR R1, [R0] \n\
 /* 08016dba */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08016dbc */ STR R0, [R1, 0x4] \n\
  \n\
 branch_08016dbe: \n\
-/* 08016dbe */ LDR R0, =D_030046a4 \n\
+/* 08016dbe */ LDR R0, =gCurrentSceneData \n\
 /* 08016dc0 */ LDR R0, [R0] \n\
 /* 08016dc2 */ LDR R0, [R0] \n\
 /* 08016dc4 */ BL text_printer_update \n\

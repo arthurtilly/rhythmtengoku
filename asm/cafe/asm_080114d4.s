@@ -10,7 +10,7 @@ thumb_func_start cafe_scene_update \n\
 /* 080114de */ BL func_08010ae0 \n\
  \n\
 branch_080114e2: \n\
-/* 080114e2 */ LDR R0, =D_030046a4 \n\
+/* 080114e2 */ LDR R0, =gCurrentSceneData \n\
 /* 080114e4 */ LDR R0, [R0] \n\
 /* 080114e6 */ LDR R0, [R0, 0x4] \n\
 /* 080114e8 */ BL text_printer_update \n\

@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_0801c028 \n\
 /* 0801c028 */ PUSH {R4, R5, LR} \n\
 /* 0801c02a */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
-/* 0801c02c */ LDR R0, =D_030046a4 \n\
+/* 0801c02c */ LDR R0, =gCurrentSceneData \n\
 /* 0801c02e */ LDR R0, [R0] \n\
 /* 0801c030 */ MOVS R1, 0xD8 @ Set R1 to 0xD8 \n\
 /* 0801c032 */ LSLS R1, R1, 0x2 \n\
@@ -68,7 +68,7 @@ branch_0801c096: \n\
 /* 0801c09a */ B branch_0801c1ac \n\
  \n\
 branch_0801c09c: \n\
-/* 0801c09c */ LDR R4, =D_030046a4 \n\
+/* 0801c09c */ LDR R4, =gCurrentSceneData \n\
 /* 0801c09e */ LDR R0, [R4] \n\
 /* 0801c0a0 */ MOVS R2, 0xD8 @ Set R2 to 0xD8 \n\
 /* 0801c0a2 */ LSLS R2, R2, 0x2 \n\
@@ -123,7 +123,7 @@ branch_0801c11c: \n\
 /* 0801c120 */ BL play_sound_in_player \n\
 /* 0801c124 */ LDR R0, =D_03005380 \n\
 /* 0801c126 */ LDR R0, [R0] \n\
-/* 0801c128 */ LDR R4, =D_030046a4 \n\
+/* 0801c128 */ LDR R4, =gCurrentSceneData \n\
 /* 0801c12a */ LDR R1, [R4] \n\
 /* 0801c12c */ LDR R2, =0x48c \n\
 /* 0801c12e */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
@@ -161,7 +161,7 @@ branch_0801c15c: \n\
 .ltorg \n\
  \n\
 branch_0801c184: \n\
-/* 0801c184 */ LDR R0, =D_030046a4 \n\
+/* 0801c184 */ LDR R0, =gCurrentSceneData \n\
 /* 0801c186 */ LDR R0, [R0] \n\
 /* 0801c188 */ MOVS R1, 0xD8 @ Set R1 to 0xD8 \n\
 /* 0801c18a */ LSLS R1, R1, 0x2 \n\
@@ -173,7 +173,7 @@ branch_0801c184: \n\
 .ltorg \n\
  \n\
 branch_0801c19c: \n\
-/* 0801c19c */ LDR R0, =D_030046a4 \n\
+/* 0801c19c */ LDR R0, =gCurrentSceneData \n\
 /* 0801c19e */ LDR R0, [R0] \n\
 /* 0801c1a0 */ MOVS R2, 0xD8 @ Set R2 to 0xD8 \n\
 /* 0801c1a2 */ LSLS R2, R2, 0x2 \n\

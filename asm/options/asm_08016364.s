@@ -44,7 +44,7 @@ thumb_func_start func_08016364 \n\
 /* 080163b8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080163ba */ MOVS R3, 0x68 @ Set R3 to 0x68 \n\
 /* 080163bc */ BL func_0804d160 \n\
-/* 080163c0 */ LDR R6, =D_030046a4 \n\
+/* 080163c0 */ LDR R6, =gCurrentSceneData \n\
 /* 080163c2 */ LDR R1, [R6] \n\
 /* 080163c4 */ STRH R0, [R1, 0x4] \n\
 /* 080163c6 */ LDR R0, =D_030046a8 \n\

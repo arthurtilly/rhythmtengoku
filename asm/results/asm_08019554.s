@@ -48,7 +48,7 @@ branch_08019598: \n\
 /* 080195a0 */ BNE branch_08019598 \n\
  \n\
 branch_080195a2: \n\
-/* 080195a2 */ LDR R1, =D_030046a4 \n\
+/* 080195a2 */ LDR R1, =gCurrentSceneData \n\
 /* 080195a4 */ LDR R0, [R1] \n\
 /* 080195a6 */ LDR R5, [R0, 0x4] \n\
 /* 080195a8 */ LSLS R0, R3, 0x10 \n\
@@ -103,7 +103,7 @@ branch_080195a2: \n\
 /* 08019614 */ LDR R1, [SP, 0x18] \n\
 /* 08019616 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08019618 */ STR R1, [SP, 0x18] \n\
-/* 0801961a */ LDR R2, =D_030046a4 \n\
+/* 0801961a */ LDR R2, =gCurrentSceneData \n\
 /* 0801961c */ LDR R1, [R2] \n\
 /* 0801961e */ LDR R2, [R1, 0x4] \n\
 /* 08019620 */ LDR R1, =D_089d7984 \n\

@@ -1,7 +1,3 @@
-extern const struct Scene scene_mr_upbeat;
-extern const struct Scene scene_sick_beats_endless;
-extern const struct Scene scene_quiz_show_endless;
-extern const struct Scene scene_mannequin_factory;
 extern struct SequenceData s_mini_game_bgm_seqData;
 
 

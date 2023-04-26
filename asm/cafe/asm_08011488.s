@@ -11,7 +11,7 @@ thumb_func_start cafe_scene_start \n\
 /* 08011498 */ BL func_08011300 \n\
 /* 0801149c */ BL func_08010a28 \n\
 /* 080114a0 */ BL func_080109cc \n\
-/* 080114a4 */ LDR R4, =D_030046a4 \n\
+/* 080114a4 */ LDR R4, =gCurrentSceneData \n\
 /* 080114a6 */ LDR R0, [R4] \n\
 /* 080114a8 */ LDRH R0, [R0, 0x18] \n\
 /* 080114aa */ MOVS R1, 0x3C @ Set R1 to 0x3C \n\

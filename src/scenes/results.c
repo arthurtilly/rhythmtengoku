@@ -19,7 +19,7 @@
 asm(".include \"include/gba.inc\"");//Temporary
 
 // For readability.
-#define gResultsInfo ((struct ResultsSceneInfo *)D_030046a4)
+#define gResultsInfo ((struct ResultsSceneInfo *)gCurrentSceneData)
 
 #define COMMENT_TILESET_BASE OBJ_TILESET_BASE(0x4000)
 #define COMMENT_PALETTE 4
@@ -750,7 +750,7 @@ void results_render_comments(void) {
 void results_publish_comments(void) {
     struct InputScoreTracker *tracker = D_089d7980->cueInputTrackers;
     const struct MarkingCriteria **criteriaTable = D_089d7980->markingData;
-    const struct Scene *scene;
+    struct Scene *scene;
     struct Animation *textAnim;
     s16 textSprite;
     u32 totalCriteriaFailed, averageCriteriaSucceeded;

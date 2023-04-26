@@ -15,7 +15,7 @@ thumb_func_start score_results_scene_update \n\
 /* 0801914c */ BEQ branch_08019166 \n\
 /* 0801914e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08019150 */ BL set_pause_beatscript_scene \n\
-/* 08019154 */ LDR R0, =D_030046a4 \n\
+/* 08019154 */ LDR R0, =gCurrentSceneData \n\
 /* 08019156 */ LDR R1, [R0] \n\
 /* 08019158 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801915a */ STR R0, [R1, 0x8] \n\

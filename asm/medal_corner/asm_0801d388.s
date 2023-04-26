@@ -10,7 +10,7 @@ thumb_func_start func_0801d388 \n\
 /* 0801d390 */ LDR R6, =D_03005380 \n\
 /* 0801d392 */ LDR R0, [R6] \n\
 /* 0801d394 */ MOV R8, R0 @ Set R8 to R0 \n\
-/* 0801d396 */ LDR R5, =D_030046a4 \n\
+/* 0801d396 */ LDR R5, =gCurrentSceneData \n\
 /* 0801d398 */ LDR R0, [R5] \n\
 /* 0801d39a */ MOVS R1, 0xC @ Set R1 to 0xC \n\
 /* 0801d39c */ LDRSH R4, [R0, R1] \n\
@@ -47,7 +47,7 @@ branch_0801d3da: \n\
 /* 0801d3de */ BL func_0804cebc \n\
 /* 0801d3e2 */ LDR R0, =D_03005380 \n\
 /* 0801d3e4 */ LDR R3, [R0] \n\
-/* 0801d3e6 */ LDR R0, =D_030046a4 \n\
+/* 0801d3e6 */ LDR R0, =gCurrentSceneData \n\
 /* 0801d3e8 */ LDR R0, [R0] \n\
 /* 0801d3ea */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 0801d3ec */ LDRSH R1, [R0, R2] \n\

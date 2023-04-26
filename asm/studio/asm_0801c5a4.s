@@ -6,7 +6,7 @@ thumb_func_start func_0801c5a4 \n\
 /* 0801c5a4 */ PUSH {R4-R7, LR} \n\
 /* 0801c5a6 */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 0801c5a8 */ PUSH {R7} \n\
-/* 0801c5aa */ LDR R5, =D_030046a4 \n\
+/* 0801c5aa */ LDR R5, =gCurrentSceneData \n\
 /* 0801c5ac */ LDR R0, [R5] \n\
 /* 0801c5ae */ MOVS R7, 0xD8 @ Set R7 to 0xD8 \n\
 /* 0801c5b0 */ LSLS R7, R7, 0x2 \n\

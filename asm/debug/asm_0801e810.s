@@ -57,7 +57,7 @@ branch_0801e85a: \n\
 branch_0801e86a: \n\
 /* 0801e86a */ CMP R2, 0x0 @ Compare R2 and 0x0 \n\
 /* 0801e86c */ BEQ branch_0801e87a \n\
-/* 0801e86e */ LDR R0, =D_030046a4 \n\
+/* 0801e86e */ LDR R0, =gCurrentSceneData \n\
 /* 0801e870 */ LDR R0, [R0] \n\
 /* 0801e872 */ LDR R0, [R0, 0xC] \n\
 /* 0801e874 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
@@ -71,7 +71,7 @@ branch_0801e87a: \n\
 /* 0801e882 */ ADDS R5, R2, 0x0 @ Set R5 to R2 + 0x0 \n\
 /* 0801e884 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801e886 */ BEQ branch_0801e8aa \n\
-/* 0801e888 */ LDR R0, =D_030046a4 \n\
+/* 0801e888 */ LDR R0, =gCurrentSceneData \n\
 /* 0801e88a */ LDR R0, [R0] \n\
 /* 0801e88c */ LDR R0, [R0, 0xC] \n\
 /* 0801e88e */ MOVS R2, 0x84 @ Set R2 to 0x84 \n\
@@ -121,7 +121,7 @@ branch_0801e8cc: \n\
 /* 0801e8d6 */ BEQ branch_0801e8e6 \n\
 /* 0801e8d8 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801e8da */ BL set_pause_beatscript_scene \n\
-/* 0801e8de */ LDR R0, =D_030046a4 \n\
+/* 0801e8de */ LDR R0, =gCurrentSceneData \n\
 /* 0801e8e0 */ LDR R1, [R0] \n\
 /* 0801e8e2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801e8e4 */ STR R0, [R1, 0x8] \n\

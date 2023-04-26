@@ -59,7 +59,7 @@ branch_0801d758: \n\
 /* 0801d760 */ B branch_0801d800 \n\
  \n\
 branch_0801d762: \n\
-/* 0801d762 */ LDR R6, =D_030046a4 \n\
+/* 0801d762 */ LDR R6, =gCurrentSceneData \n\
 /* 0801d764 */ LDR R0, [R6] \n\
 /* 0801d766 */ LDR R0, [R0, 0x4] \n\
 /* 0801d768 */ BL func_0800b118 \n\
@@ -100,7 +100,7 @@ branch_0801d7c0: \n\
 .ltorg \n\
  \n\
 branch_0801d7cc: \n\
-/* 0801d7cc */ LDR R0, =D_030046a4 \n\
+/* 0801d7cc */ LDR R0, =gCurrentSceneData \n\
 /* 0801d7ce */ LDR R0, [R0] \n\
 /* 0801d7d0 */ LDR R0, [R0, 0x4] \n\
 /* 0801d7d2 */ BL func_0800b140 \n\
@@ -109,7 +109,7 @@ branch_0801d7cc: \n\
 .ltorg \n\
  \n\
 branch_0801d7dc: \n\
-/* 0801d7dc */ LDR R0, =D_030046a4 \n\
+/* 0801d7dc */ LDR R0, =gCurrentSceneData \n\
 /* 0801d7de */ LDR R0, [R0] \n\
 /* 0801d7e0 */ LDR R0, [R0, 0x4] \n\
 /* 0801d7e2 */ BL func_0800b21c \n\
@@ -122,7 +122,7 @@ branch_0801d7ec: \n\
 /* 0801d7ee */ BL play_sound \n\
 /* 0801d7f2 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801d7f4 */ BL set_pause_beatscript_scene \n\
-/* 0801d7f8 */ LDR R0, =D_030046a4 \n\
+/* 0801d7f8 */ LDR R0, =gCurrentSceneData \n\
 /* 0801d7fa */ LDR R1, [R0] \n\
  \n\
 branch_0801d7fc: \n\
@@ -130,7 +130,7 @@ branch_0801d7fc: \n\
 /* 0801d7fe */ STR R0, [R1] \n\
  \n\
 branch_0801d800: \n\
-/* 0801d800 */ LDR R0, =D_030046a4 \n\
+/* 0801d800 */ LDR R0, =gCurrentSceneData \n\
 /* 0801d802 */ LDR R0, [R0] \n\
 /* 0801d804 */ LDR R0, [R0, 0x4] \n\
 /* 0801d806 */ BL func_0800b074 \n\

@@ -10,7 +10,7 @@ thumb_func_start func_0801b834 \n\
 /* 0801b83e */ B branch_0801b84e \n\
  \n\
 branch_0801b840: \n\
-/* 0801b840 */ LDR R0, =D_030046a4 \n\
+/* 0801b840 */ LDR R0, =gCurrentSceneData \n\
 /* 0801b842 */ LDR R0, [R0] \n\
 /* 0801b844 */ MOVS R1, 0xD7 @ Set R1 to 0xD7 \n\
 /* 0801b846 */ LSLS R1, R1, 0x2 \n\

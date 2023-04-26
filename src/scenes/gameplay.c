@@ -13,7 +13,7 @@
 asm(".include \"include/gba.inc\"");//Temporary
 
 // For readability.
-#define gGameplayInfo ((struct GameplaySceneInfo *)D_030046a4)
+#define gGameplayInfo ((struct GameplaySceneInfo *)gCurrentSceneData)
 
 #define PAUSE_MENU_PALETTE_MOD 0x3DEF3DEF // Equivalent to RGB #7F7F7F
 
@@ -516,7 +516,7 @@ void gameplay_set_mercy_count(u32 total) {
 
 // [func_080177f0] Scene Stop
 void gameplay_stop_scene(void) {
-    const struct Scene *tempScene;
+    struct Scene *tempScene;
 
     func_0804e0c4(D_03005380, 0x10);
     gameplay_reset_cues(); // Reset Cues

@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_0801b1d8 \n\
 /* 0801b1d8 */ PUSH {R4-R7, LR} \n\
 /* 0801b1da */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
-/* 0801b1dc */ LDR R0, =D_030046a4 \n\
+/* 0801b1dc */ LDR R0, =gCurrentSceneData \n\
 /* 0801b1de */ LDR R0, [R0] \n\
 /* 0801b1e0 */ MOVS R1, 0xD8 @ Set R1 to 0xD8 \n\
 /* 0801b1e2 */ LSLS R1, R1, 0x2 \n\
@@ -87,7 +87,7 @@ jump_0801b274: \n\
 /* 0801b27a */ LDR R1, =s_menu_kettei2_seqData \n\
 /* 0801b27c */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0801b27e */ BL play_sound_in_player \n\
-/* 0801b282 */ LDR R4, =D_030046a4 \n\
+/* 0801b282 */ LDR R4, =gCurrentSceneData \n\
 /* 0801b284 */ LDR R0, [R4] \n\
 /* 0801b286 */ MOVS R2, 0xD8 @ Set R2 to 0xD8 \n\
 /* 0801b288 */ LSLS R2, R2, 0x2 \n\
@@ -135,7 +135,7 @@ branch_0801b2e6: \n\
 /* 0801b2ea */ BL func_0801ba74 \n\
  \n\
 branch_0801b2ee: \n\
-/* 0801b2ee */ LDR R4, =D_030046a4 \n\
+/* 0801b2ee */ LDR R4, =gCurrentSceneData \n\
 /* 0801b2f0 */ LDR R0, [R4] \n\
 /* 0801b2f2 */ MOVS R3, 0xD8 @ Set R3 to 0xD8 \n\
 /* 0801b2f4 */ LSLS R3, R3, 0x2 \n\
@@ -164,7 +164,7 @@ jump_0801b324: \n\
 /* 0801b324 */ LDR R1, =s_menu_cancel3_seqData \n\
 /* 0801b326 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0801b328 */ BL play_sound_in_player \n\
-/* 0801b32c */ LDR R4, =D_030046a4 \n\
+/* 0801b32c */ LDR R4, =gCurrentSceneData \n\
 /* 0801b32e */ LDR R0, [R4] \n\
 /* 0801b330 */ MOVS R3, 0xD8 @ Set R3 to 0xD8 \n\
 /* 0801b332 */ LSLS R3, R3, 0x2 \n\
@@ -184,7 +184,7 @@ jump_0801b324: \n\
 .ltorg \n\
 \n\
 jump_0801b35c: \n\
-/* 0801b35c */ LDR R0, =D_030046a4 \n\
+/* 0801b35c */ LDR R0, =gCurrentSceneData \n\
 /* 0801b35e */ LDR R0, [R0] \n\
 /* 0801b360 */ MOVS R2, 0xD8 @ Set R2 to 0xD8 \n\
 /* 0801b362 */ LSLS R2, R2, 0x2 \n\
@@ -196,7 +196,7 @@ jump_0801b35c: \n\
 .ltorg \n\
 \n\
 jump_0801b374: \n\
-/* 0801b374 */ LDR R0, =D_030046a4 \n\
+/* 0801b374 */ LDR R0, =gCurrentSceneData \n\
 /* 0801b376 */ LDR R0, [R0] \n\
 /* 0801b378 */ MOVS R3, 0xD8 @ Set R3 to 0xD8 \n\
 /* 0801b37a */ LSLS R3, R3, 0x2 \n\
@@ -211,7 +211,7 @@ jump_0801b38c: \n\
 /* 0801b38c */ LDR R1, =s_menu_kettei2_seqData \n\
 /* 0801b38e */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0801b390 */ BL play_sound_in_player \n\
-/* 0801b394 */ LDR R5, =D_030046a4 \n\
+/* 0801b394 */ LDR R5, =gCurrentSceneData \n\
 /* 0801b396 */ LDR R0, [R5] \n\
 /* 0801b398 */ MOVS R4, 0xD8 @ Set R4 to 0xD8 \n\
 /* 0801b39a */ LSLS R4, R4, 0x2 \n\
@@ -250,7 +250,7 @@ jump_0801b38c: \n\
 .ltorg \n\
 \n\
 jump_0801b3f4: \n\
-/* 0801b3f4 */ LDR R0, =D_030046a4 \n\
+/* 0801b3f4 */ LDR R0, =gCurrentSceneData \n\
 /* 0801b3f6 */ LDR R0, [R0] \n\
 /* 0801b3f8 */ MOVS R1, 0xD8 @ Set R1 to 0xD8 \n\
 /* 0801b3fa */ LSLS R1, R1, 0x2 \n\
@@ -289,7 +289,7 @@ branch_0801b438: \n\
 /* 0801b444 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 0801b446 */ EORS R0, R2 @ Set R0 to R0 ^ R2 \n\
 /* 0801b448 */ STRB R0, [R1] \n\
-/* 0801b44a */ LDR R0, =D_030046a4 \n\
+/* 0801b44a */ LDR R0, =gCurrentSceneData \n\
 /* 0801b44c */ LDR R0, [R0] \n\
 /* 0801b44e */ MOVS R2, 0xD8 @ Set R2 to 0xD8 \n\
 /* 0801b450 */ LSLS R2, R2, 0x2 \n\

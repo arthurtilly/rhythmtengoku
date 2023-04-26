@@ -25,7 +25,7 @@ thumb_func_start func_080120e4 \n\
 /* 08012110 */ MOVS R3, 0xBC @ Set R3 to 0xBC \n\
 /* 08012112 */ BL func_0804d160 \n\
 /* 08012116 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08012118 */ LDR R4, =D_030046a4 \n\
+/* 08012118 */ LDR R4, =gCurrentSceneData \n\
 /* 0801211a */ LDR R0, =0xffff \n\
 /* 0801211c */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
  \n\
@@ -77,7 +77,7 @@ branch_0801211e: \n\
 /* 08012178 */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\
 /* 0801217a */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\
 /* 0801217c */ BL func_0800aeb4 \n\
-/* 08012180 */ LDR R4, =D_030046a4 \n\
+/* 08012180 */ LDR R4, =gCurrentSceneData \n\
 /* 08012182 */ LDR R1, [R4] \n\
 /* 08012184 */ STR R0, [R1, 0x4] \n\
 /* 08012186 */ LDR R1, =func_08012090 \n\
