@@ -249,7 +249,8 @@ s32 gameplay_run_common_event(s32 param, s32 id) {
     }
 
     if (functions[id] != NULL) {
-        // Engine events return void, but this code uses the return value anyway
+        // Engine events usually return void, but this code gets the return value
+        // even if it's garbage data.
         s32 (*commonFunc)() = (void *)functions[id];
         returnVal = commonFunc(param);
     }
@@ -273,7 +274,8 @@ s32 gameplay_run_engine_event(const struct GameEngine *engine, s32 id) {
     }
 
     if ((gGameplay->gameEngine->engineFunctions != NULL) && (gGameplay->gameEngine->engineFunctions[id] != NULL)) {
-        // Engine events return void, but this code uses the return value anyway
+        // Engine events usually return void, but this code gets the return value
+        // even if it's garbage data.
         s32 (*engineFunc)() = (void *)gGameplay->gameEngine->engineFunctions[id];
         returnVal = engineFunc(gGameplay->engineFuncParam);
     }
