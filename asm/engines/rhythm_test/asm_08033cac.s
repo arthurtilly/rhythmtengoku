@@ -9,7 +9,7 @@ thumb_func_start rhythm_test_engine_start \n\
 /* 08033cb2 */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 08033cb4 */ PUSH {R5-R7} \n\
 /* 08033cb6 */ SUB SP, 0x14 \n\
-/* 08033cb8 */ LDR R1, =D_030055d0 \n\
+/* 08033cb8 */ LDR R1, =gCurrentEngineData \n\
 /* 08033cba */ MOV R10, R1 @ Set R10 to R1 \n\
 /* 08033cbc */ LDR R1, [R1] \n\
 /* 08033cbe */ STR R0, [R1] \n\

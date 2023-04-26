@@ -8,7 +8,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gRhythmTweezers ((struct RhythmTweezersEngineData *)D_030055d0)
+#define gRhythmTweezers ((struct RhythmTweezersEngineData *)gCurrentEngineData)
 
 
 /* RHYTHM TWEEZERS */

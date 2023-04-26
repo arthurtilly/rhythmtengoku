@@ -6,7 +6,7 @@
 #include "src/affine_sprite.h"
 
 // For readability.
-#define gWizardsWaltz ((struct WizardsWaltzEngineData *)D_030055d0)
+#define gWizardsWaltz ((struct WizardsWaltzEngineData *)gCurrentEngineData)
 
 enum WizardStatesEnum {
     WIZARD_STATE_FLYING,

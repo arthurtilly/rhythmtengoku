@@ -3,7 +3,7 @@ asm(".syntax unified \n\
 .balign 4, 0 \n\
 \n\
 thumb_func_start func_08040cfc \n\
-/* 08040cfc */ LDR R0, =D_030055d0 \n\
+/* 08040cfc */ LDR R0, =gCurrentEngineData \n\
 /* 08040cfe */ LDR R0, [R0] \n\
 /* 08040d00 */ MOVS R1, 0xC0 @ Set R1 to 0xC0 \n\
 /* 08040d02 */ LSLS R1, R1, 0x2 \n\

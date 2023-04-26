@@ -9,7 +9,7 @@ thumb_func_start func_08034bf4 \n\
 /* 08034bfa */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 08034bfc */ PUSH {R5-R7} \n\
 /* 08034bfe */ SUB SP, 0x4 \n\
-/* 08034c00 */ LDR R0, =D_030055d0 \n\
+/* 08034c00 */ LDR R0, =gCurrentEngineData \n\
 /* 08034c02 */ LDR R0, [R0] \n\
 /* 08034c04 */ ADDS R0, 0x4E @ Add 0x4E to R0 \n\
 /* 08034c06 */ LDRH R0, [R0] \n\
@@ -37,7 +37,7 @@ branch_08034c22: \n\
 branch_08034c28: \n\
 /* 08034c28 */ LDR R3, =D_03005380 \n\
 /* 08034c2a */ LDR R0, [R3] \n\
-/* 08034c2c */ LDR R6, =D_030055d0 \n\
+/* 08034c2c */ LDR R6, =gCurrentEngineData \n\
 /* 08034c2e */ LDR R1, [R6] \n\
 /* 08034c30 */ LSLS R2, R7, 0x1 \n\
 /* 08034c32 */ ADDS R1, 0x42 @ Add 0x42 to R1 \n\
@@ -62,7 +62,7 @@ branch_08034c56: \n\
 /* 08034c56 */ LDR R0, =D_03005380 \n\
 /* 08034c58 */ LDR R0, [R0] \n\
 /* 08034c5a */ MOV R9, R0 @ Set R9 to R0 \n\
-/* 08034c5c */ LDR R1, =D_030055d0 \n\
+/* 08034c5c */ LDR R1, =gCurrentEngineData \n\
 /* 08034c5e */ LDR R0, [R1] \n\
 /* 08034c60 */ LSLS R6, R7, 0x1 \n\
 /* 08034c62 */ ADDS R0, 0x42 @ Add 0x42 to R0 \n\
@@ -84,7 +84,7 @@ branch_08034c56: \n\
 /* 08034c88 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08034c8a */ LDR R1, =D_03005380 \n\
 /* 08034c8c */ LDR R0, [R1] \n\
-/* 08034c8e */ LDR R2, =D_030055d0 \n\
+/* 08034c8e */ LDR R2, =gCurrentEngineData \n\
 /* 08034c90 */ LDR R1, [R2] \n\
 /* 08034c92 */ ADDS R1, 0x42 @ Add 0x42 to R1 \n\
 /* 08034c94 */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\
@@ -99,7 +99,7 @@ branch_08034c56: \n\
 /* 08034ca8 */ BCC branch_08034c56 \n\
  \n\
 branch_08034caa: \n\
-/* 08034caa */ LDR R0, =D_030055d0 \n\
+/* 08034caa */ LDR R0, =gCurrentEngineData \n\
 /* 08034cac */ LDR R0, [R0] \n\
 /* 08034cae */ ADDS R0, 0x50 @ Add 0x50 to R0 \n\
 /* 08034cb0 */ LDRH R0, [R0] \n\
@@ -127,7 +127,7 @@ branch_08034ccc: \n\
 branch_08034cd2: \n\
 /* 08034cd2 */ LDR R3, =D_03005380 \n\
 /* 08034cd4 */ LDR R0, [R3] \n\
-/* 08034cd6 */ LDR R6, =D_030055d0 \n\
+/* 08034cd6 */ LDR R6, =gCurrentEngineData \n\
 /* 08034cd8 */ LDR R1, [R6] \n\
 /* 08034cda */ LSLS R2, R7, 0x1 \n\
 /* 08034cdc */ ADDS R1, 0x48 @ Add 0x48 to R1 \n\
@@ -151,7 +151,7 @@ branch_08034cfe: \n\
 /* 08034cfe */ LDR R0, =D_03005380 \n\
 /* 08034d00 */ LDR R0, [R0] \n\
 /* 08034d02 */ MOV R9, R0 @ Set R9 to R0 \n\
-/* 08034d04 */ LDR R1, =D_030055d0 \n\
+/* 08034d04 */ LDR R1, =gCurrentEngineData \n\
 /* 08034d06 */ LDR R0, [R1] \n\
 /* 08034d08 */ LSLS R6, R7, 0x1 \n\
 /* 08034d0a */ ADDS R0, 0x48 @ Add 0x48 to R0 \n\
@@ -173,7 +173,7 @@ branch_08034cfe: \n\
 /* 08034d30 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08034d32 */ LDR R1, =D_03005380 \n\
 /* 08034d34 */ LDR R0, [R1] \n\
-/* 08034d36 */ LDR R2, =D_030055d0 \n\
+/* 08034d36 */ LDR R2, =gCurrentEngineData \n\
 /* 08034d38 */ LDR R1, [R2] \n\
 /* 08034d3a */ ADDS R1, 0x48 @ Add 0x48 to R1 \n\
 /* 08034d3c */ ADDS R1, R1, R6 @ Set R1 to R1 + R6 \n\

@@ -6,7 +6,7 @@ thumb_func_start func_08025afc \n\
 /* 08025afc */ PUSH {R4, R5, LR} \n\
 /* 08025afe */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 08025b00 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
-/* 08025b02 */ LDR R5, =D_030055d0 \n\
+/* 08025b02 */ LDR R5, =gCurrentEngineData \n\
 /* 08025b04 */ LDR R1, [R5] \n\
 /* 08025b06 */ LDR R3, =0x000013f8 \n\
 /* 08025b08 */ ADDS R0, R1, R3 @ Set R0 to R1 + R3 \n\

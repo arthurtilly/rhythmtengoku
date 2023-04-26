@@ -7,7 +7,7 @@ thumb_func_start func_08037178 \n\
 /* 0803717a */ MOV R6, R8 @ Set R6 to R8 \n\
 /* 0803717c */ PUSH {R6} \n\
 /* 0803717e */ SUB SP, 0x14 \n\
-/* 08037180 */ LDR R0, =D_030055d0 \n\
+/* 08037180 */ LDR R0, =gCurrentEngineData \n\
 /* 08037182 */ LDR R2, [R0] \n\
 /* 08037184 */ LDRB R0, [R2] \n\
 /* 08037186 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
@@ -73,7 +73,7 @@ branch_080371de: \n\
 /* 080371fe */ LDR R1, =anim_quiz_show_score_num \n\
 /* 08037200 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037202 */ BL func_0804d160 \n\
-/* 08037206 */ LDR R1, =D_030055d0 \n\
+/* 08037206 */ LDR R1, =gCurrentEngineData \n\
 /* 08037208 */ LDR R1, [R1] \n\
 /* 0803720a */ LSLS R2, R4, 0x1 \n\
 /* 0803720c */ ADDS R1, 0x4E @ Add 0x4E to R1 \n\
@@ -105,7 +105,7 @@ branch_0803721c: \n\
 /* 0803723c */ LDR R1, =anim_quiz_show_score_num \n\
 /* 0803723e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037240 */ BL func_0804d160 \n\
-/* 08037244 */ LDR R1, =D_030055d0 \n\
+/* 08037244 */ LDR R1, =gCurrentEngineData \n\
 /* 08037246 */ LDR R1, [R1] \n\
 /* 08037248 */ LSLS R2, R4, 0x1 \n\
 /* 0803724a */ ADDS R1, 0x52 @ Add 0x52 to R1 \n\

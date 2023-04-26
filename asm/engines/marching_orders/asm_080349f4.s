@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start marching_input_event \n\
 /* 080349f4 */ PUSH {R4, R5, LR} \n\
 /* 080349f6 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 080349f8 */ LDR R0, =D_030055d0 \n\
+/* 080349f8 */ LDR R0, =gCurrentEngineData \n\
 /* 080349fa */ LDR R0, [R0] \n\
 /* 080349fc */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 080349fe */ ADDS R5, 0x2C @ Add 0x2C to R5 \n\

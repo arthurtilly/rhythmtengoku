@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gBunnyHop ((struct BunnyHopEngineData *)D_030055d0)
+#define gBunnyHop ((struct BunnyHopEngineData *)gCurrentEngineData)
 
 
 /* BUNNY HOP */

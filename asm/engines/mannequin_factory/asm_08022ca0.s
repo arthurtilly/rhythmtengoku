@@ -7,7 +7,7 @@ thumb_func_start func_08022ca0 \n\
 /* 08022ca2 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
  \n\
 branch_08022ca4: \n\
-/* 08022ca4 */ LDR R0, =D_030055d0 \n\
+/* 08022ca4 */ LDR R0, =gCurrentEngineData \n\
 /* 08022ca6 */ LDR R2, [R0] \n\
 /* 08022ca8 */ LSLS R3, R4, 0x1 \n\
 /* 08022caa */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\

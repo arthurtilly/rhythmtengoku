@@ -9,7 +9,7 @@ thumb_func_start drum_live_menu_engine_start \n\
 /* 08036c5e */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 08036c60 */ PUSH {R5-R7} \n\
 /* 08036c62 */ SUB SP, 0x14 \n\
-/* 08036c64 */ LDR R5, =D_030055d0 \n\
+/* 08036c64 */ LDR R5, =gCurrentEngineData \n\
 /* 08036c66 */ LDR R1, [R5] \n\
 /* 08036c68 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08036c6a */ STRB R0, [R1] \n\
@@ -116,7 +116,7 @@ branch_08036cf2: \n\
 /* 08036d50 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08036d52 */ MOVS R3, 0x2C @ Set R3 to 0x2C \n\
 /* 08036d54 */ BL func_0804d160 \n\
-/* 08036d58 */ LDR R4, =D_030055d0 \n\
+/* 08036d58 */ LDR R4, =gCurrentEngineData \n\
 /* 08036d5a */ LDR R1, [R4] \n\
 /* 08036d5c */ STRH R0, [R1, 0x16] \n\
 /* 08036d5e */ LDR R0, [R5] \n\

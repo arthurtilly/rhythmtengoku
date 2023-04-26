@@ -8,7 +8,7 @@ thumb_func_start quiz_show_input_event \n\
 /* 08037e84 */ PUSH {R7} \n\
 /* 08037e86 */ SUB SP, 0xC \n\
 /* 08037e88 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
-/* 08037e8a */ LDR R0, =D_030055d0 \n\
+/* 08037e8a */ LDR R0, =gCurrentEngineData \n\
 /* 08037e8c */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08037e8e */ LDR R0, [R0] \n\
 /* 08037e90 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\

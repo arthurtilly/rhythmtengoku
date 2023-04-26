@@ -9,7 +9,7 @@ thumb_func_start func_080317f4 \n\
 /* 080317fa */ SUB SP, 0xC \n\
 /* 080317fc */ LDR R0, =D_03005380 \n\
 /* 080317fe */ LDR R3, [R0] \n\
-/* 08031800 */ LDR R0, =D_030055d0 \n\
+/* 08031800 */ LDR R0, =gCurrentEngineData \n\
 /* 08031802 */ LDR R0, [R0] \n\
 /* 08031804 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08031806 */ LDRSH R1, [R0, R2] \n\
@@ -43,7 +43,7 @@ branch_0803182a: \n\
 /* 08031842 */ LDR R0, =D_03005380 \n\
 /* 08031844 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08031846 */ LDR R0, [R0] \n\
-/* 08031848 */ LDR R7, =D_030055d0 \n\
+/* 08031848 */ LDR R7, =gCurrentEngineData \n\
 /* 0803184a */ LDR R1, [R7] \n\
 /* 0803184c */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 0803184e */ LDRSH R1, [R1, R2] \n\

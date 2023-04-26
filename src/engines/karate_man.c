@@ -10,7 +10,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gKarateMan ((struct KarateManEngineData *)D_030055d0)
+#define gKarateMan ((struct KarateManEngineData *)gCurrentEngineData)
 
 
 /* KARATE MAN */

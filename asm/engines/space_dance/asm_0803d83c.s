@@ -38,7 +38,7 @@ branch_0803d874: \n\
 /* 0803d876 */ BEQ branch_0803d8f2 \n\
 /* 0803d878 */ LDR R0, =D_03005380 \n\
 /* 0803d87a */ LDR R0, [R0] \n\
-/* 0803d87c */ LDR R6, =D_030055d0 \n\
+/* 0803d87c */ LDR R6, =gCurrentEngineData \n\
 /* 0803d87e */ LDR R1, [R6] \n\
 /* 0803d880 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 0803d882 */ LDRSH R1, [R1, R2] \n\

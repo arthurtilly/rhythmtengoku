@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gRapMen ((struct RapMenEngineData *)D_030055d0)
+#define gRapMen ((struct RapMenEngineData *)gCurrentEngineData)
 
 
 /* RAP MEN */

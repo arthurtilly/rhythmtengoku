@@ -35,7 +35,7 @@ thumb_func_start func_080336a0 \n\
 /* 080336dc */ LDR R2, =(D_03004b10 + 0x14) \n\
 /* 080336de */ ADDS R3, R2, 0x2 @ Set R3 to R2 + 0x2 \n\
 /* 080336e0 */ BL func_0804db44 \n\
-/* 080336e4 */ LDR R0, =D_030055d0 \n\
+/* 080336e4 */ LDR R0, =gCurrentEngineData \n\
 /* 080336e6 */ LDR R0, [R0] \n\
 /* 080336e8 */ LDRB R1, [R0, 0xB] \n\
 /* 080336ea */ LSLS R1, R1, 0x1 \n\
@@ -75,7 +75,7 @@ branch_08033724: \n\
 /* 08033748 */ BL play_sound \n\
  \n\
 branch_0803374c: \n\
-/* 0803374c */ LDR R0, =D_030055d0 \n\
+/* 0803374c */ LDR R0, =gCurrentEngineData \n\
 /* 0803374e */ LDR R1, [R0] \n\
 /* 08033750 */ LDRB R0, [R1, 0xB] \n\
 /* 08033752 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\

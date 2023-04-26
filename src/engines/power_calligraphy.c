@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gPowerCalligraphy ((struct PowerCalligraphyEngineData *)D_030055d0)
+#define gPowerCalligraphy ((struct PowerCalligraphyEngineData *)gCurrentEngineData)
 
 
 /* POWER CALLIGRAPHY */

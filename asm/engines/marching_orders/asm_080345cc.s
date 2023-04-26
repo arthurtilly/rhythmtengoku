@@ -35,7 +35,7 @@ thumb_func_start func_080345cc \n\
 /* 0803460c */ LSLS R0, R0, 0x18 \n\
 /* 0803460e */ ASRS R3, R0, 0x18 \n\
 /* 08034610 */ LDR R2, =D_089e5368 \n\
-/* 08034612 */ LDR R0, =D_030055d0 \n\
+/* 08034612 */ LDR R0, =gCurrentEngineData \n\
 /* 08034614 */ LDR R0, [R0] \n\
 /* 08034616 */ LDRB R0, [R0] \n\
 /* 08034618 */ LSLS R0, R0, 0x2 \n\

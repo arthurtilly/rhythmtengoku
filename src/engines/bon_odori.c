@@ -8,7 +8,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gBonOdori ((struct BonOdoriEngineData *)D_030055d0)
+#define gBonOdori ((struct BonOdoriEngineData *)gCurrentEngineData)
 
 #define BON_LYRICS_NORMAL_PALETTE 7
 #define BON_LYRICS_HIGHLIGHT_PALETTE 10

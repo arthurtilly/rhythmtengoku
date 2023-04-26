@@ -27,7 +27,7 @@ thumb_func_start func_0803bda8 \n\
 /* 0803bdd4 */ MOVS R2, 0x78 @ Set R2 to 0x78 \n\
 /* 0803bdd6 */ MOVS R3, 0xC8 @ Set R3 to 0xC8 \n\
 /* 0803bdd8 */ BL create_affine_sprite \n\
-/* 0803bddc */ LDR R5, =D_030055d0 \n\
+/* 0803bddc */ LDR R5, =gCurrentEngineData \n\
 /* 0803bdde */ LDR R1, [R5] \n\
 /* 0803bde0 */ MOVS R2, 0xBD @ Set R2 to 0xBD \n\
 /* 0803bde2 */ LSLS R2, R2, 0x2 \n\

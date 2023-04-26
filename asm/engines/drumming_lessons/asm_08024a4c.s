@@ -12,7 +12,7 @@ thumb_func_start func_08024a4c \n\
 /* 08024a58 */ LDR R0, =D_03005380 \n\
 /* 08024a5a */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08024a5c */ LDR R0, [R0] \n\
-/* 08024a5e */ LDR R5, =D_030055d0 \n\
+/* 08024a5e */ LDR R5, =gCurrentEngineData \n\
 /* 08024a60 */ LDR R1, [R5] \n\
 /* 08024a62 */ MOVS R4, 0xD5 @ Set R4 to 0xD5 \n\
 /* 08024a64 */ LSLS R4, R4, 0x2 \n\

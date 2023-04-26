@@ -14,7 +14,7 @@ thumb_func_start func_080364f4 \n\
 /* 08036504 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08036506 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 08036508 */ BLT branch_0803655c \n\
-/* 0803650a */ LDR R1, =D_030055d0 \n\
+/* 0803650a */ LDR R1, =gCurrentEngineData \n\
 /* 0803650c */ MOV R10, R1 @ Set R10 to R1 \n\
 /* 0803650e */ MOVS R7, 0x84 @ Set R7 to 0x84 \n\
 /* 08036510 */ LSLS R7, R7, 0x1 \n\

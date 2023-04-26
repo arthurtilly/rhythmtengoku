@@ -8,7 +8,7 @@ thumb_func_start ninja_bodyguard_cue_hit \n\
 /* 0803cd40 */ PUSH {R7} \n\
 /* 0803cd42 */ SUB SP, 0xC \n\
 /* 0803cd44 */ MOV R8, R1 @ Set R8 to R1 \n\
-/* 0803cd46 */ LDR R7, =D_030055d0 \n\
+/* 0803cd46 */ LDR R7, =gCurrentEngineData \n\
 /* 0803cd48 */ LDR R0, [R7] \n\
 /* 0803cd4a */ LDRB R6, [R0, 0x6] \n\
 /* 0803cd4c */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\

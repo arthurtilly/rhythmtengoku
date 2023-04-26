@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start func_08042b58 \n\
 /* 08042b58 */ PUSH {LR} \n\
-/* 08042b5a */ LDR R0, =D_030055d0 \n\
+/* 08042b5a */ LDR R0, =gCurrentEngineData \n\
 /* 08042b5c */ LDR R1, [R0] \n\
 /* 08042b5e */ LDRB R0, [R1] \n\
 /* 08042b60 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\

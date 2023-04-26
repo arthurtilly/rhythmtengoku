@@ -7,7 +7,7 @@ thumb_func_start func_0803c20c \n\
 /* 0803c20e */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0803c210 */ BL scene_show_bg_layer \n\
 /* 0803c214 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
-/* 0803c216 */ LDR R1, =D_030055d0 \n\
+/* 0803c216 */ LDR R1, =gCurrentEngineData \n\
 /* 0803c218 */ LDR R0, [R1] \n\
 /* 0803c21a */ MOVS R2, 0xB6 @ Set R2 to 0xB6 \n\
 /* 0803c21c */ LSLS R2, R2, 0x2 \n\

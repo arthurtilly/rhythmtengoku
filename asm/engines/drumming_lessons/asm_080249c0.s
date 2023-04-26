@@ -6,7 +6,7 @@ thumb_func_start func_080249c0 \n\
 /* 080249c0 */ PUSH {LR} \n\
 /* 080249c2 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 080249c4 */ LDR R2, =drum_intro_kits \n\
-/* 080249c6 */ LDR R0, =D_030055d0 \n\
+/* 080249c6 */ LDR R0, =gCurrentEngineData \n\
 /* 080249c8 */ LDR R1, [R0] \n\
 /* 080249ca */ LDRB R0, [R1] \n\
 /* 080249cc */ LSLS R0, R0, 0x2 \n\

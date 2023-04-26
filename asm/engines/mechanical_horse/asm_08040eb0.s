@@ -7,7 +7,7 @@ thumb_func_start func_08040eb0 \n\
 /* 08040eb2 */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 08040eb4 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
 /* 08040eb6 */ ADDS R5, R2, 0x0 @ Set R5 to R2 + 0x0 \n\
-/* 08040eb8 */ LDR R2, =D_030055d0 \n\
+/* 08040eb8 */ LDR R2, =gCurrentEngineData \n\
 /* 08040eba */ LDR R1, [R2] \n\
 /* 08040ebc */ LDR R6, =0x2fe \n\
 /* 08040ebe */ ADDS R0, R1, R6 @ Set R0 to R1 + R6 \n\

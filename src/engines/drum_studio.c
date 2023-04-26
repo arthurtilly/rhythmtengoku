@@ -15,7 +15,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gDrumStudio ((struct DrumStudioEngineData *)D_030055d0)
+#define gDrumStudio ((struct DrumStudioEngineData *)gCurrentEngineData)
 
 enum DrumStudioStatesEnum {
     DRUM_STUDIO_STATE_INACTIVE,

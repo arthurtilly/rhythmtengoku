@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueEngineData ((struct FireworksPrologueEngineData *)D_030055d0)
+#define gPrologueEngineData ((struct FireworksPrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: FIREWORKS  //  //  //

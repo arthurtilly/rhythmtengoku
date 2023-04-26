@@ -11,7 +11,7 @@ thumb_func_start func_08032708 \n\
 /* 08032712 */ STR R0, [R4, 0x10] \n\
 /* 08032714 */ LDR R1, [R4, 0xC] \n\
 /* 08032716 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
-/* 08032718 */ LDR R0, =D_030055d0 \n\
+/* 08032718 */ LDR R0, =gCurrentEngineData \n\
 /* 0803271a */ LDR R0, [R0] \n\
 /* 0803271c */ MOVS R2, 0xE9 @ Set R2 to 0xE9 \n\
 /* 0803271e */ LSLS R2, R2, 0x1 \n\

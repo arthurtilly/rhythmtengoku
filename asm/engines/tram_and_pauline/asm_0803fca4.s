@@ -10,7 +10,7 @@ thumb_func_start tram_pauline_init_gfx2 \n\
 /* 0803fcb0 */ LSLS R0, R0, 0x10 \n\
 /* 0803fcb2 */ LSRS R0, R0, 0x10 \n\
 /* 0803fcb4 */ LDR R2, =tram_pauline_gfx_tables \n\
-/* 0803fcb6 */ LDR R1, =D_030055d0 \n\
+/* 0803fcb6 */ LDR R1, =gCurrentEngineData \n\
 /* 0803fcb8 */ LDR R1, [R1] \n\
 /* 0803fcba */ LDRB R1, [R1] \n\
 /* 0803fcbc */ LSLS R1, R1, 0x2 \n\

@@ -37,7 +37,7 @@ thumb_func_start func_080320c8 \n\
 /* 0803210a */ CMP R0, 0x30 @ Compare R0 and 0x30 \n\
 /* 0803210c */ BGT branch_0803217e \n\
 /* 0803210e */ LDR R0, [R5] \n\
-/* 08032110 */ LDR R4, =D_030055d0 \n\
+/* 08032110 */ LDR R4, =gCurrentEngineData \n\
 /* 08032112 */ LDR R1, [R4] \n\
 /* 08032114 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08032116 */ LDRSH R1, [R1, R2] \n\

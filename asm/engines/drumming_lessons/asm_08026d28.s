@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start drum_live_input_event \n\
 /* 08026d28 */ PUSH {LR} \n\
-/* 08026d2a */ LDR R2, =D_030055d0 \n\
+/* 08026d2a */ LDR R2, =gCurrentEngineData \n\
 /* 08026d2c */ LDR R1, [R2] \n\
 /* 08026d2e */ LDR R3, =0x000013f8 \n\
 /* 08026d30 */ ADDS R0, R1, R3 @ Set R0 to R1 + R3 \n\

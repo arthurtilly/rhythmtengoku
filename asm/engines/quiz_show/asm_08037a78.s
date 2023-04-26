@@ -11,7 +11,7 @@ thumb_func_start func_08037a78 \n\
 /* 08037a82 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08037a84 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 08037a86 */ BNE branch_08037a98 \n\
-/* 08037a88 */ LDR R0, =D_030055d0 \n\
+/* 08037a88 */ LDR R0, =gCurrentEngineData \n\
 /* 08037a8a */ LDR R0, [R0] \n\
 /* 08037a8c */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08037a8e */ ADDS R7, 0x8 @ Add 0x8 to R7 \n\
@@ -20,7 +20,7 @@ thumb_func_start func_08037a78 \n\
 .ltorg \n\
  \n\
 branch_08037a98: \n\
-/* 08037a98 */ LDR R0, =D_030055d0 \n\
+/* 08037a98 */ LDR R0, =gCurrentEngineData \n\
 /* 08037a9a */ LDR R0, [R0] \n\
 /* 08037a9c */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08037a9e */ ADDS R7, 0x1C @ Add 0x1C to R7 \n\

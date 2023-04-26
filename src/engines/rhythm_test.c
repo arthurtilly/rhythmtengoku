@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gRhythmTest ((struct RhythmTestEngineData *)D_030055d0)
+#define gRhythmTest ((struct RhythmTestEngineData *)gCurrentEngineData)
 
 
 /* RHYTHM TEST */

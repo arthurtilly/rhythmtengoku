@@ -12,7 +12,7 @@ thumb_func_start func_0803934c \n\
 /* 0803935a */ B branch_08039374 \n\
  \n\
 branch_0803935c: \n\
-/* 0803935c */ LDR R0, =D_030055d0 \n\
+/* 0803935c */ LDR R0, =gCurrentEngineData \n\
 /* 0803935e */ LDR R1, [R0] \n\
 /* 08039360 */ MOVS R0, 0xC6 @ Set R0 to 0xC6 \n\
 /* 08039362 */ LSLS R0, R0, 0x2 \n\

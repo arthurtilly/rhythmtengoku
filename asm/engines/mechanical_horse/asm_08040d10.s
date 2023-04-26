@@ -10,7 +10,7 @@ thumb_func_start func_08040d10 \n\
 /* 08040d18 */ BL get_current_mem_id \n\
 /* 08040d1c */ LSLS R0, R0, 0x10 \n\
 /* 08040d1e */ LSRS R0, R0, 0x10 \n\
-/* 08040d20 */ LDR R1, =D_030055d0 \n\
+/* 08040d20 */ LDR R1, =gCurrentEngineData \n\
 /* 08040d22 */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 08040d24 */ LDR R4, [R1] \n\
 /* 08040d26 */ MOVS R2, 0xC1 @ Set R2 to 0xC1 \n\

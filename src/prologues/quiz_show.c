@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueEngineData ((struct QuizShowPrologueEngineData *)D_030055d0)
+#define gPrologueEngineData ((struct QuizShowPrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: QUIZ SHOW  //  //  //

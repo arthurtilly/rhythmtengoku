@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gTramPauline ((struct TramPaulineEngineData *)D_030055d0)
+#define gTramPauline ((struct TramPaulineEngineData *)gCurrentEngineData)
 
 
 /* TRAM & PAULINE */

@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueEngineData ((struct RatRacePrologueEngineData *)D_030055d0)
+#define gPrologueEngineData ((struct RatRacePrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: RAT RACE  //  //  //

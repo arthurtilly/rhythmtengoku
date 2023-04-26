@@ -7,7 +7,7 @@ thumb_func_start func_080335e8 \n\
 /* 080335ea */ SUB SP, 0xC \n\
 /* 080335ec */ LDR R5, =D_03005380 \n\
 /* 080335ee */ LDR R0, [R5] \n\
-/* 080335f0 */ LDR R4, =D_030055d0 \n\
+/* 080335f0 */ LDR R4, =gCurrentEngineData \n\
 /* 080335f2 */ LDR R1, [R4] \n\
 /* 080335f4 */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 080335f6 */ LDRSH R1, [R1, R2] \n\

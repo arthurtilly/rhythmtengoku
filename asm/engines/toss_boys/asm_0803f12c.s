@@ -3,7 +3,7 @@ asm(".syntax unified \n\
 .balign 4, 0 \n\
 \n\
 thumb_func_start func_0803f12c \n\
-/* 0803f12c */ LDR R0, =D_030055d0 \n\
+/* 0803f12c */ LDR R0, =gCurrentEngineData \n\
 /* 0803f12e */ LDR R0, [R0] \n\
 /* 0803f130 */ LDR R1, =0x39a \n\
 /* 0803f132 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

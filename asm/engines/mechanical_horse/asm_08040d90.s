@@ -8,7 +8,7 @@ thumb_func_start func_08040d90 \n\
 /* 08040d96 */ LSLS R0, R0, 0x10 \n\
 /* 08040d98 */ LSRS R0, R0, 0x10 \n\
 /* 08040d9a */ LDR R2, =mechanical_horse_backgrounds \n\
-/* 08040d9c */ LDR R1, =D_030055d0 \n\
+/* 08040d9c */ LDR R1, =gCurrentEngineData \n\
 /* 08040d9e */ LDR R1, [R1] \n\
 /* 08040da0 */ LDR R3, =0x2ff \n\
 /* 08040da2 */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\

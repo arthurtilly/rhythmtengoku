@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueEngineData ((struct Remix1PrologueEngineData *)D_030055d0)
+#define gPrologueEngineData ((struct Remix1PrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: REMIX 1  //  //  //

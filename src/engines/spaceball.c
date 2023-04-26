@@ -9,7 +9,7 @@ extern s32 (*D_03004ae4)(s32);
 extern s32 (*fast_udivsi3)(s32, s32);
 
 // For readability.
-#define gSpaceball ((struct SpaceballEngineData *)D_030055d0)
+#define gSpaceball ((struct SpaceballEngineData *)gCurrentEngineData)
 
 
 /* SPACEBALL */

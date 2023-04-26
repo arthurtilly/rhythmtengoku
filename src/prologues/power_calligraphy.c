@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueEngineData ((struct PowerCalligraphyPrologueEngineData *)D_030055d0)
+#define gPrologueEngineData ((struct PowerCalligraphyPrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: POWER CALLIGRAPHY  //  //  //

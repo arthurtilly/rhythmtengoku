@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start mechanical_horse_cue_hit \n\
 /* 080427ec */ PUSH {LR} \n\
-/* 080427ee */ LDR R0, =D_030055d0 \n\
+/* 080427ee */ LDR R0, =gCurrentEngineData \n\
 /* 080427f0 */ LDR R1, [R0] \n\
 /* 080427f2 */ LDR R2, =0x2e9 \n\
 /* 080427f4 */ ADDS R0, R1, R2 @ Set R0 to R1 + R2 \n\

@@ -23,7 +23,7 @@ branch_0803579a: \n\
 /* 0803579a */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
 /* 0803579c */ BL beats_to_ticks \n\
 /* 080357a0 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 080357a2 */ LDR R4, =D_030055d0 \n\
+/* 080357a2 */ LDR R4, =gCurrentEngineData \n\
 /* 080357a4 */ LDR R2, [R4] \n\
 /* 080357a6 */ ADDS R2, 0xA @ Add 0xA to R2 \n\
 /* 080357a8 */ STR R5, [SP] \n\

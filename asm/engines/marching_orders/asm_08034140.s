@@ -10,7 +10,7 @@ thumb_func_start marching_init_gfx2 \n\
 /* 0803414c */ LSLS R0, R0, 0x10 \n\
 /* 0803414e */ LSRS R0, R0, 0x10 \n\
 /* 08034150 */ LDR R2, =marching_gfx_tables \n\
-/* 08034152 */ LDR R1, =D_030055d0 \n\
+/* 08034152 */ LDR R1, =gCurrentEngineData \n\
 /* 08034154 */ LDR R1, [R1] \n\
 /* 08034156 */ LDRB R1, [R1] \n\
 /* 08034158 */ LSLS R1, R1, 0x2 \n\

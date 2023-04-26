@@ -11,7 +11,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gNightWalk ((struct NightWalkEngineData *)D_030055d0)
+#define gNightWalk ((struct NightWalkEngineData *)gCurrentEngineData)
 
 enum PlayYanStatesEnum {
     PLAY_YAN_STATE_WALKING,

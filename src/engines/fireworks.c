@@ -8,7 +8,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gFireworks ((struct FireworksEngineData *)D_030055d0)
+#define gFireworks ((struct FireworksEngineData *)gCurrentEngineData)
 
 enum SpiritSparklerStatesEnum {
     SPIRIT_SPARKLER_STATE_0,

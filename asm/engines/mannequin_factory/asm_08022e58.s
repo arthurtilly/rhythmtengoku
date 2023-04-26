@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start mannequin_engine_start \n\
 /* 08022e58 */ PUSH {R4-R6, LR} \n\
 /* 08022e5a */ SUB SP, 0xC \n\
-/* 08022e5c */ LDR R4, =D_030055d0 \n\
+/* 08022e5c */ LDR R4, =gCurrentEngineData \n\
 /* 08022e5e */ LDR R1, [R4] \n\
 /* 08022e60 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 08022e62 */ STRB R0, [R1] \n\
@@ -43,7 +43,7 @@ branch_08022ea4: \n\
 /* 08022ea4 */ BL func_08022bb4 \n\
 /* 08022ea8 */ BL func_080224a8 \n\
 /* 08022eac */ BL func_08022244 \n\
-/* 08022eb0 */ LDR R4, =D_030055d0 \n\
+/* 08022eb0 */ LDR R4, =gCurrentEngineData \n\
 /* 08022eb2 */ LDR R0, [R4] \n\
 /* 08022eb4 */ ADDS R0, 0xBC @ Add 0xBC to R0 \n\
 /* 08022eb6 */ BL init_drumtech \n\

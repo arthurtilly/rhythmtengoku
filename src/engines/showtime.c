@@ -10,7 +10,7 @@ asm(".include \"include/gba.inc\""); // Temporary
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gShowtime ((struct ShowtimeEngineData *)D_030055d0)
+#define gShowtime ((struct ShowtimeEngineData *)gCurrentEngineData)
 
 
 /* SHOWTIME */

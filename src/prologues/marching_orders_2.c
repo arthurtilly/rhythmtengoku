@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueEngineData ((struct MarchingOrders2PrologueEngineData *)D_030055d0)
+#define gPrologueEngineData ((struct MarchingOrders2PrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: MARCHING ORDERS 2  //  //  //

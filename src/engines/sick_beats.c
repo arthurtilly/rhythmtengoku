@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gSickBeats ((struct SickBeatsEngineData *)D_030055d0)
+#define gSickBeats ((struct SickBeatsEngineData *)gCurrentEngineData)
 
 
 /* SICK BEATS */

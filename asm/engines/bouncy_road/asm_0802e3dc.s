@@ -10,7 +10,7 @@ thumb_func_start bouncy_road_init_gfx2 \n\
 /* 0802e3e8 */ LSLS R0, R0, 0x10 \n\
 /* 0802e3ea */ LSRS R0, R0, 0x10 \n\
 /* 0802e3ec */ LDR R2, =bouncy_road_gfx_tables \n\
-/* 0802e3ee */ LDR R1, =D_030055d0 \n\
+/* 0802e3ee */ LDR R1, =gCurrentEngineData \n\
 /* 0802e3f0 */ LDR R1, [R1] \n\
 /* 0802e3f2 */ LDRB R1, [R1] \n\
 /* 0802e3f4 */ LSLS R1, R1, 0x2 \n\

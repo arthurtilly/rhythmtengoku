@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start func_08036e28 \n\
 /* 08036e28 */ PUSH {R4, R5, LR} \n\
-/* 08036e2a */ LDR R0, =D_030055d0 \n\
+/* 08036e2a */ LDR R0, =gCurrentEngineData \n\
 /* 08036e2c */ LDR R1, [R0] \n\
 /* 08036e2e */ LDRB R0, [R1, 0x9] \n\
 /* 08036e30 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
@@ -36,7 +36,7 @@ branch_08036e4e: \n\
 /* 08036e62 */ BL play_sound \n\
  \n\
 branch_08036e66: \n\
-/* 08036e66 */ LDR R5, =D_030055d0 \n\
+/* 08036e66 */ LDR R5, =gCurrentEngineData \n\
 /* 08036e68 */ LDR R1, [R5] \n\
 /* 08036e6a */ LDRB R0, [R1, 0x8] \n\
 /* 08036e6c */ CMP R0, R4 @ Check R0 - R4 \n\

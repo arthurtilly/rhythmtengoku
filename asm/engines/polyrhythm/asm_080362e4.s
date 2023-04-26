@@ -9,7 +9,7 @@ thumb_func_start polyrhythm_retract_pistons \n\
 /* 080362ea */ PUSH {R6, R7} \n\
 /* 080362ec */ SUB SP, 0x14 \n\
 /* 080362ee */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
-/* 080362f0 */ LDR R0, =D_030055d0 \n\
+/* 080362f0 */ LDR R0, =gCurrentEngineData \n\
 /* 080362f2 */ LSLS R1, R6, 0x7 \n\
 /* 080362f4 */ ADDS R1, 0x4 @ Add 0x4 to R1 \n\
 /* 080362f6 */ LDR R0, [R0] \n\
@@ -54,7 +54,7 @@ branch_0803633c: \n\
 /* 0803633e */ ADDS R5, 0x1 @ Add 0x1 to R5 \n\
 /* 08036340 */ CMP R5, 0xF @ Compare R5 and 0xF \n\
 /* 08036342 */ BLS branch_08036306 \n\
-/* 08036344 */ LDR R0, =D_030055d0 \n\
+/* 08036344 */ LDR R0, =gCurrentEngineData \n\
 /* 08036346 */ LDR R0, [R0] \n\
 /* 08036348 */ MOVS R3, 0x82 @ Set R3 to 0x82 \n\
 /* 0803634a */ LSLS R3, R3, 0x1 \n\

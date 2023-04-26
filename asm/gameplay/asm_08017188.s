@@ -101,7 +101,7 @@ branch_08017270: \n\
 /* 08017270 */ STR R0, [R2, 0x14] \n\
  \n\
 branch_08017272: \n\
-/* 08017272 */ LDR R1, =D_030055d0 \n\
+/* 08017272 */ LDR R1, =gCurrentEngineData \n\
 /* 08017274 */ LDR R2, =gCurrentSceneData \n\
 /* 08017276 */ LDR R0, [R2] \n\
 /* 08017278 */ LDR R0, [R0, 0x14] \n\

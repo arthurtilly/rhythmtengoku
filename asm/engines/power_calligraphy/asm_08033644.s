@@ -9,7 +9,7 @@ thumb_func_start power_calligraphy_engine_update \n\
 /* 0803364e */ BL func_080328b8 \n\
 /* 08033652 */ LDR R6, =D_03005380 \n\
 /* 08033654 */ LDR R0, [R6] \n\
-/* 08033656 */ LDR R5, =D_030055d0 \n\
+/* 08033656 */ LDR R5, =gCurrentEngineData \n\
 /* 08033658 */ LDR R1, [R5] \n\
 /* 0803365a */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 0803365c */ LDRSH R1, [R1, R2] \n\

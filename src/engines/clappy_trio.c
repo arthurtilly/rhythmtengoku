@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gClappyTrio ((struct ClappyTrioEngineData *)D_030055d0)
+#define gClappyTrio ((struct ClappyTrioEngineData *)gCurrentEngineData)
 
 
 /* THE CLAPPY TRIO */

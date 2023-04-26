@@ -12,7 +12,7 @@ thumb_func_start func_08043a38 \n\
 /* 08043a44 */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 08043a46 */ STR R1, [SP, 0x1C] \n\
 /* 08043a48 */ STR R2, [SP, 0x20] \n\
-/* 08043a4a */ LDR R0, =D_030055d0 \n\
+/* 08043a4a */ LDR R0, =gCurrentEngineData \n\
 /* 08043a4c */ LDR R0, [R0] \n\
 /* 08043a4e */ ADDS R0, 0x28 @ Add 0x28 to R0 \n\
 /* 08043a50 */ STR R0, [SP, 0x24] \n\

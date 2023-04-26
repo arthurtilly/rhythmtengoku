@@ -8,7 +8,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gSneakySpirits ((struct SneakySpiritsEngineData *)D_030055d0)
+#define gSneakySpirits ((struct SneakySpiritsEngineData *)gCurrentEngineData)
 
 
 /* SNEAKY SPIRITS */

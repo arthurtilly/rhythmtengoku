@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gSamuraiSlice ((struct SamuraiSliceEngineData *)D_030055d0)
+#define gSamuraiSlice ((struct SamuraiSliceEngineData *)gCurrentEngineData)
 
 
 /* SAMURAI SLICE */

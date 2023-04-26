@@ -10,7 +10,7 @@ thumb_func_start func_08041ddc \n\
 /* 08041de4 */ BL func_08041940 \n\
 /* 08041de8 */ LSLS R0, R0, 0x18 \n\
 /* 08041dea */ LSRS R0, R0, 0x18 \n\
-/* 08041dec */ LDR R5, =D_030055d0 \n\
+/* 08041dec */ LDR R5, =gCurrentEngineData \n\
 /* 08041dee */ LDR R2, [R5] \n\
 /* 08041df0 */ LSLS R1, R0, 0x3 \n\
 /* 08041df2 */ SUBS R1, R1, R0 @ Set R1 to R1 - R0 \n\
@@ -137,7 +137,7 @@ branch_08041efc: \n\
  \n\
 branch_08041f00: \n\
 /* 08041f00 */ LDR R1, =D_0805aa20 \n\
-/* 08041f02 */ LDR R5, =D_030055d0 \n\
+/* 08041f02 */ LDR R5, =gCurrentEngineData \n\
 /* 08041f04 */ LDR R2, [R5] \n\
 /* 08041f06 */ MOVS R3, 0xB3 @ Set R3 to 0xB3 \n\
 /* 08041f08 */ LSLS R3, R3, 0x2 \n\

@@ -10,7 +10,7 @@ thumb_func_start mechanical_horse_cue_spawn \n\
 /* 08042760 */ STRB R2, [R4, 0x1] \n\
 /* 08042762 */ BL func_08041940 \n\
 /* 08042766 */ STRB R0, [R4, 0x2] \n\
-/* 08042768 */ LDR R5, =D_030055d0 \n\
+/* 08042768 */ LDR R5, =gCurrentEngineData \n\
 /* 0804276a */ LDR R1, [R5] \n\
 /* 0804276c */ LDRB R2, [R4, 0x2] \n\
 /* 0804276e */ LSLS R0, R2, 0x3 \n\

@@ -12,7 +12,7 @@ thumb_func_start func_08041444 \n\
 /* 08041450 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 08041452 */ BNE branch_08041480 \n\
 /* 08041454 */ LDR R2, =mechanical_horse_player_horse_sfx \n\
-/* 08041456 */ LDR R0, =D_030055d0 \n\
+/* 08041456 */ LDR R0, =gCurrentEngineData \n\
 /* 08041458 */ LDR R1, [R0] \n\
 /* 0804145a */ MOVS R3, 0xB3 @ Set R3 to 0xB3 \n\
 /* 0804145c */ LSLS R3, R3, 0x2 \n\
@@ -32,7 +32,7 @@ thumb_func_start func_08041444 \n\
  \n\
 branch_08041480: \n\
 /* 08041480 */ LDR R3, =mechanical_horse_teacher_horse_sfx \n\
-/* 08041482 */ LDR R5, =D_030055d0 \n\
+/* 08041482 */ LDR R5, =gCurrentEngineData \n\
 /* 08041484 */ LDR R2, [R5] \n\
 /* 08041486 */ MOVS R1, 0xB3 @ Set R1 to 0xB3 \n\
 /* 08041488 */ LSLS R1, R1, 0x2 \n\
@@ -89,7 +89,7 @@ branch_080414e4: \n\
 /* 080414e4 */ LDR R2, =D_03005380 \n\
 /* 080414e6 */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 080414e8 */ LDR R0, [R2] \n\
-/* 080414ea */ LDR R5, =D_030055d0 \n\
+/* 080414ea */ LDR R5, =gCurrentEngineData \n\
 /* 080414ec */ LDR R2, [R5] \n\
 /* 080414ee */ ADDS R1, R4, R6 @ Set R1 to R4 + R6 \n\
 /* 080414f0 */ LSLS R4, R1, 0x3 \n\

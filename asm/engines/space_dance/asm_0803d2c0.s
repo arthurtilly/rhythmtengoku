@@ -17,7 +17,7 @@ thumb_func_start func_0803d2c0 \n\
 /* 0803d2d8 */ LDR R0, =space_dancer_anim_map \n\
 /* 0803d2da */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 0803d2dc */ MOV R8, R0 @ Set R8 to R0 \n\
-/* 0803d2de */ LDR R7, =D_030055d0 \n\
+/* 0803d2de */ LDR R7, =gCurrentEngineData \n\
  \n\
 branch_0803d2e0: \n\
 /* 0803d2e0 */ CMP R5, 0x3 @ Compare R5 and 0x3 \n\
@@ -56,7 +56,7 @@ branch_0803d320: \n\
 /* 0803d320 */ ADDS R5, 0x1 @ Add 0x1 to R5 \n\
 /* 0803d322 */ CMP R5, 0x3 @ Compare R5 and 0x3 \n\
 /* 0803d324 */ BLS branch_0803d2e0 \n\
-/* 0803d326 */ LDR R5, =D_030055d0 \n\
+/* 0803d326 */ LDR R5, =gCurrentEngineData \n\
 /* 0803d328 */ LDR R1, [R5] \n\
 /* 0803d32a */ LDRB R0, [R1, 0x1A] \n\
 /* 0803d32c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

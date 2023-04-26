@@ -7,7 +7,7 @@ thumb_func_start drum_live_common_beat_animation \n\
 /* 08026d6a */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 08026d6c */ PUSH {R7} \n\
 /* 08026d6e */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
-/* 08026d70 */ LDR R0, =D_030055d0 \n\
+/* 08026d70 */ LDR R0, =gCurrentEngineData \n\
 /* 08026d72 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08026d74 */ LDR R5, =D_03005380 \n\
 /* 08026d76 */ MOVS R6, 0xDD @ Set R6 to 0xDD \n\
@@ -46,7 +46,7 @@ branch_08026db6: \n\
 /* 08026db8 */ ADDS R7, 0x1 @ Add 0x1 to R7 \n\
 /* 08026dba */ CMP R7, 0x1 @ Compare R7 and 0x1 \n\
 /* 08026dbc */ BLS branch_08026d7a \n\
-/* 08026dbe */ LDR R0, =D_030055d0 \n\
+/* 08026dbe */ LDR R0, =gCurrentEngineData \n\
 /* 08026dc0 */ LDR R0, [R0] \n\
 /* 08026dc2 */ LDR R1, =0x000013d4 \n\
 /* 08026dc4 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

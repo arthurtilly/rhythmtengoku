@@ -13,7 +13,7 @@ thumb_func_start func_08030e84 \n\
 /* 08030e92 */ BEQ branch_08030ee0 \n\
 /* 08030e94 */ LDR R0, =D_03005380 \n\
 /* 08030e96 */ LDR R0, [R0] \n\
-/* 08030e98 */ LDR R1, =D_030055d0 \n\
+/* 08030e98 */ LDR R1, =gCurrentEngineData \n\
 /* 08030e9a */ LDR R1, [R1] \n\
 /* 08030e9c */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08030e9e */ LDRSH R1, [R1, R2] \n\
@@ -33,7 +33,7 @@ thumb_func_start func_08030e84 \n\
 branch_08030eba: \n\
 /* 08030eba */ LDR R5, =D_03005380 \n\
 /* 08030ebc */ LDR R0, [R5] \n\
-/* 08030ebe */ LDR R4, =D_030055d0 \n\
+/* 08030ebe */ LDR R4, =gCurrentEngineData \n\
 /* 08030ec0 */ LDR R1, [R4] \n\
 /* 08030ec2 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08030ec4 */ LDRSH R1, [R1, R2] \n\

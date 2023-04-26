@@ -10,7 +10,7 @@ thumb_func_start toss_boys_init_gfx2 \n\
 /* 0803ea38 */ LSLS R0, R0, 0x10 \n\
 /* 0803ea3a */ LSRS R0, R0, 0x10 \n\
 /* 0803ea3c */ LDR R2, =toss_boys_gfx_tables \n\
-/* 0803ea3e */ LDR R1, =D_030055d0 \n\
+/* 0803ea3e */ LDR R1, =gCurrentEngineData \n\
 /* 0803ea40 */ LDR R1, [R1] \n\
 /* 0803ea42 */ LDRB R1, [R1] \n\
 /* 0803ea44 */ LSLS R1, R1, 0x2 \n\

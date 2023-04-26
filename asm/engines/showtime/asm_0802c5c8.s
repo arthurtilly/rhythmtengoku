@@ -13,7 +13,7 @@ thumb_func_start func_0802c5c8 \n\
 /* 0802c5d6 */ STR R0, [SP, 0x1C] \n\
 branch_0802c5d8: \n\
 /* 0802c5d8 */ LDR R5, =D_089e3b14 \n\
-/* 0802c5da */ LDR R0, =D_030055d0 \n\
+/* 0802c5da */ LDR R0, =gCurrentEngineData \n\
 /* 0802c5dc */ LDR R2, [R0] \n\
 /* 0802c5de */ LDR R1, [SP, 0x1C] \n\
 /* 0802c5e0 */ LSLS R4, R1, 0x2 \n\
@@ -77,7 +77,7 @@ jump_0802c658: \n\
 \n\
 jump_0802c66a: \n\
 /* 0802c66a */ BL func_0800c398 \n\
-/* 0802c66e */ LDR R5, =D_030055d0 \n\
+/* 0802c66e */ LDR R5, =gCurrentEngineData \n\
 /* 0802c670 */ LDR R2, [R5] \n\
 /* 0802c672 */ LDR R3, [SP, 0x20] \n\
 /* 0802c674 */ LDR R4, [SP, 0x1C] \n\
@@ -165,7 +165,7 @@ branch_0802c70c: \n\
 \n\
 jump_0802c71a: \n\
 /* 0802c71a */ BL func_0800c398 \n\
-/* 0802c71e */ LDR R5, =D_030055d0 \n\
+/* 0802c71e */ LDR R5, =gCurrentEngineData \n\
 /* 0802c720 */ LDR R2, [R5] \n\
 /* 0802c722 */ LDR R3, [SP, 0x20] \n\
 /* 0802c724 */ LDR R4, [SP, 0x1C] \n\
@@ -235,7 +235,7 @@ branch_0802c78a: \n\
 \n\
 jump_0802c7a8: \n\
 /* 0802c7a8 */ BL func_0800c398 \n\
-/* 0802c7ac */ LDR R5, =D_030055d0 \n\
+/* 0802c7ac */ LDR R5, =gCurrentEngineData \n\
 /* 0802c7ae */ LDR R2, [R5] \n\
 /* 0802c7b0 */ LDR R3, [SP, 0x20] \n\
 /* 0802c7b2 */ LDR R4, [SP, 0x1C] \n\
@@ -317,7 +317,7 @@ branch_0802c830: \n\
 \n\
 jump_0802c850: \n\
 /* 0802c850 */ BL func_0800c398 \n\
-/* 0802c854 */ LDR R7, =D_030055d0 \n\
+/* 0802c854 */ LDR R7, =gCurrentEngineData \n\
 /* 0802c856 */ LDR R2, [R7] \n\
 /* 0802c858 */ LDR R3, [SP, 0x20] \n\
 /* 0802c85a */ LDR R4, [SP, 0x1C] \n\
@@ -443,7 +443,7 @@ branch_0802c914: \n\
 \n\
 jump_0802c954: \n\
 /* 0802c954 */ BL func_0800c398 \n\
-/* 0802c958 */ LDR R1, =D_030055d0 \n\
+/* 0802c958 */ LDR R1, =gCurrentEngineData \n\
 /* 0802c95a */ LDR R2, [R1] \n\
 /* 0802c95c */ LDR R4, [SP, 0x20] \n\
 /* 0802c95e */ LDR R1, [SP, 0x1C] \n\
@@ -499,7 +499,7 @@ branch_0802c9a0: \n\
 branch_0802c9c0: \n\
 /* 0802c9c0 */ LDR R7, =D_03005380 \n\
 /* 0802c9c2 */ LDR R0, [R7] \n\
-/* 0802c9c4 */ LDR R6, =D_030055d0 \n\
+/* 0802c9c4 */ LDR R6, =gCurrentEngineData \n\
 /* 0802c9c6 */ LDR R2, [R6] \n\
 /* 0802c9c8 */ LDR R3, [SP, 0x20] \n\
 /* 0802c9ca */ LDR R4, [SP, 0x1C] \n\
@@ -612,7 +612,7 @@ branch_0802caa2: \n\
 /* 0802caae */ B branch_0802ce28 \n\
  \n\
 branch_0802cab0: \n\
-/* 0802cab0 */ LDR R4, =D_030055d0 \n\
+/* 0802cab0 */ LDR R4, =gCurrentEngineData \n\
 /* 0802cab2 */ MOV R8, R4 @ Set R8 to R4 \n\
 /* 0802cab4 */ LDR R1, [R4] \n\
 /* 0802cab6 */ LDR R2, [SP, 0x20] \n\
@@ -691,7 +691,7 @@ branch_0802cb30: \n\
 jump_0802cb58: \n\
 /* 0802cb58 */ BL func_0800c398 \n\
 /* 0802cb5c */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0802cb5e */ LDR R0, =D_030055d0 \n\
+/* 0802cb5e */ LDR R0, =gCurrentEngineData \n\
 /* 0802cb60 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0802cb62 */ LDR R2, [R0] \n\
 /* 0802cb64 */ MOV R9, R2 @ Set R9 to R2 \n\
@@ -801,7 +801,7 @@ branch_0802cc28: \n\
 /* 0802cc38 */ B branch_0802ce28 \n\
  \n\
 branch_0802cc3a: \n\
-/* 0802cc3a */ LDR R4, =D_030055d0 \n\
+/* 0802cc3a */ LDR R4, =gCurrentEngineData \n\
 /* 0802cc3c */ MOV R8, R4 @ Set R8 to R4 \n\
 /* 0802cc3e */ LDR R1, [R4] \n\
 /* 0802cc40 */ LDR R0, [SP, 0x20] \n\
@@ -849,7 +849,7 @@ branch_0802cc3a: \n\
 \n\
 jump_0802cca4: \n\
 /* 0802cca4 */ BL func_0800c398 \n\
-/* 0802cca8 */ LDR R1, =D_030055d0 \n\
+/* 0802cca8 */ LDR R1, =gCurrentEngineData \n\
 /* 0802ccaa */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 0802ccac */ LDR R4, [R1] \n\
 /* 0802ccae */ LDR R2, [SP, 0x20] \n\
@@ -948,7 +948,7 @@ branch_0802cd10: \n\
 jump_0802cd7c: \n\
 /* 0802cd7c */ BL func_0800c398 \n\
 /* 0802cd80 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 0802cd82 */ LDR R3, =D_030055d0 \n\
+/* 0802cd82 */ LDR R3, =gCurrentEngineData \n\
 /* 0802cd84 */ MOV R8, R3 @ Set R8 to R3 \n\
 /* 0802cd86 */ LDR R5, [R3] \n\
 /* 0802cd88 */ LDR R4, [SP, 0x20] \n\
@@ -1029,7 +1029,7 @@ jump_0802cd7c: \n\
 /* 0802ce24 */ BL func_0804d8f8 \n\
  \n\
 branch_0802ce28: \n\
-/* 0802ce28 */ LDR R0, =D_030055d0 \n\
+/* 0802ce28 */ LDR R0, =gCurrentEngineData \n\
 /* 0802ce2a */ LDR R3, [R0] \n\
 /* 0802ce2c */ LDR R4, [SP, 0x20] \n\
 /* 0802ce2e */ LDR R0, [SP, 0x1C] \n\

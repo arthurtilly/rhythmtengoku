@@ -12,7 +12,7 @@ thumb_func_start func_08038fbc \n\
 /* 08038fc8 */ LSLS R1, R1, 0x18 \n\
 /* 08038fca */ LSRS R1, R1, 0x18 \n\
 /* 08038fcc */ MOV R8, R1 @ Set R8 to R1 \n\
-/* 08038fce */ LDR R4, =D_030055d0 \n\
+/* 08038fce */ LDR R4, =gCurrentEngineData \n\
 /* 08038fd0 */ LDR R0, [R4] \n\
 /* 08038fd2 */ ADDS R5, R0, 0x4 @ Set R5 to R0 + 0x4 \n\
 /* 08038fd4 */ STRB R7, [R5, 0x2] \n\

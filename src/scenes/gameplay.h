@@ -15,7 +15,7 @@ struct GameplaySceneData {
     u16 buttonPressFilter;
 	u16 buttonReleaseFilter;
 	const struct GameEngine *gameEngine; // Game Engine Pointer
-	void *gameEngineData; // Same value as D_030055d0
+	void *gameEngineData; // Same value as gCurrentEngineData
 	struct Cue *cues; // Linked List (most recent element)
 	const struct CueDefinition *cueDefinitions[12]; // Cue Definitions (copied from Game Engine)
 	EngineEvent commonFunctions[3]; // Engine "Common" Functions

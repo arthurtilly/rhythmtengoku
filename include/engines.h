@@ -44,4 +44,4 @@ struct GameEngine {
  */
 
 // Game Engine Info
-extern void *D_030055d0;
+extern void *gCurrentEngineData;

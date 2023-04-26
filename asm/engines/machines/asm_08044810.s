@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_08044810 \n\
 /* 08044810 */ PUSH {LR} \n\
 /* 08044812 */ BL scene_stop_music \n\
-/* 08044816 */ LDR R0, =D_030055d0 \n\
+/* 08044816 */ LDR R0, =gCurrentEngineData \n\
 /* 08044818 */ LDR R0, [R0] \n\
 /* 0804481a */ MOVS R1, 0xDE @ Set R1 to 0xDE \n\
 /* 0804481c */ LSLS R1, R1, 0x2 \n\

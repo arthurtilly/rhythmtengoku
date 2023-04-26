@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start drum_live_cue_barely \n\
 /* 08026cc4 */ PUSH {R4, R5, LR} \n\
 /* 08026cc6 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
-/* 08026cc8 */ LDR R5, =D_030055d0 \n\
+/* 08026cc8 */ LDR R5, =gCurrentEngineData \n\
 /* 08026cca */ LDR R0, [R5] \n\
 /* 08026ccc */ MOVS R1, 0xE7 @ Set R1 to 0xE7 \n\
 /* 08026cce */ LSLS R1, R1, 0x2 \n\

@@ -11,7 +11,7 @@ thumb_func_start func_080404c4 \n\
 /* 080404ce */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080404d0 */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
 /* 080404d2 */ BNE branch_08040584 \n\
-/* 080404d4 */ LDR R7, =D_030055d0 \n\
+/* 080404d4 */ LDR R7, =gCurrentEngineData \n\
 /* 080404d6 */ LDR R4, [R7] \n\
 /* 080404d8 */ LSLS R5, R2, 0x2 \n\
 /* 080404da */ ADDS R0, R5, R2 @ Set R0 to R5 + R2 \n\
@@ -102,7 +102,7 @@ branch_08040574: \n\
 branch_08040584: \n\
 /* 08040584 */ CMP R1, 0x1 @ Compare R1 and 0x1 \n\
 /* 08040586 */ BNE branch_080405f8 \n\
-/* 08040588 */ LDR R7, =D_030055d0 \n\
+/* 08040588 */ LDR R7, =gCurrentEngineData \n\
 /* 0804058a */ LDR R4, [R7] \n\
 /* 0804058c */ LSLS R5, R2, 0x2 \n\
 /* 0804058e */ ADDS R0, R5, R2 @ Set R0 to R5 + R2 \n\
@@ -159,7 +159,7 @@ branch_080405e0: \n\
 .ltorg \n\
  \n\
 branch_080405f8: \n\
-/* 080405f8 */ LDR R6, =D_030055d0 \n\
+/* 080405f8 */ LDR R6, =gCurrentEngineData \n\
 /* 080405fa */ LDR R4, [R6] \n\
 /* 080405fc */ LSLS R7, R0, 0x2 \n\
 /* 080405fe */ ADDS R0, R7, R0 @ Set R0 to R7 + R0 \n\

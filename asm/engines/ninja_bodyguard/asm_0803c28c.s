@@ -8,7 +8,7 @@ thumb_func_start func_0803c28c \n\
 /* 0803c290 */ BL scene_show_bg_layer \n\
 /* 0803c294 */ LDR R0, =D_03005380 \n\
 /* 0803c296 */ LDR R0, [R0] \n\
-/* 0803c298 */ LDR R1, =D_030055d0 \n\
+/* 0803c298 */ LDR R1, =gCurrentEngineData \n\
 /* 0803c29a */ LDR R1, [R1] \n\
 /* 0803c29c */ MOVS R2, 0xB4 @ Set R2 to 0xB4 \n\
 /* 0803c29e */ LSLS R2, R2, 0x2 \n\

@@ -12,7 +12,7 @@ thumb_func_start func_080400d0 \n\
 /* 080400dc */ SUBS R0, R4, 0x2 @ Set R0 to R4 - 0x2 \n\
 /* 080400de */ LSLS R0, R0, 0x18 \n\
 /* 080400e0 */ LSRS R4, R0, 0x18 \n\
-/* 080400e2 */ LDR R2, =D_030055d0 \n\
+/* 080400e2 */ LDR R2, =gCurrentEngineData \n\
 /* 080400e4 */ LDR R1, [R2] \n\
 /* 080400e6 */ LSLS R0, R4, 0x2 \n\
 /* 080400e8 */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
@@ -24,7 +24,7 @@ thumb_func_start func_080400d0 \n\
 .ltorg \n\
  \n\
 branch_080400f8: \n\
-/* 080400f8 */ LDR R2, =D_030055d0 \n\
+/* 080400f8 */ LDR R2, =gCurrentEngineData \n\
 /* 080400fa */ LDR R1, [R2] \n\
 /* 080400fc */ LSLS R0, R4, 0x2 \n\
 /* 080400fe */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\

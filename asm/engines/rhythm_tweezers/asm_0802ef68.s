@@ -11,7 +11,7 @@ thumb_func_start rhythm_tweezers_cue_update_long \n\
 /* 0802ef72 */ SUB SP, 0x8 \n\
 /* 0802ef74 */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 0802ef76 */ ADDS R5, R1, 0x0 @ Set R5 to R1 + 0x0 \n\
-/* 0802ef78 */ LDR R0, =D_030055d0 \n\
+/* 0802ef78 */ LDR R0, =gCurrentEngineData \n\
 /* 0802ef7a */ LDR R6, [R0] \n\
 /* 0802ef7c */ ADDS R7, R6, 0x4 @ Set R7 to R6 + 0x4 \n\
 /* 0802ef7e */ MOVS R1, 0x74 @ Set R1 to 0x74 \n\
@@ -142,7 +142,7 @@ branch_0802f012: \n\
 /* 0802f084 */ BL stop_sound \n\
 /* 0802f088 */ LDR R0, =s_f_hair_nuki_long_seqData \n\
 /* 0802f08a */ BL play_sound \n\
-/* 0802f08e */ LDR R3, =D_030055d0 \n\
+/* 0802f08e */ LDR R3, =gCurrentEngineData \n\
 /* 0802f090 */ LDR R1, [R3] \n\
 /* 0802f092 */ ADDS R1, 0x88 @ Add 0x88 to R1 \n\
 /* 0802f094 */ LDRH R0, [R1] \n\
@@ -204,7 +204,7 @@ branch_0802f0c4: \n\
 /* 0802f110 */ LDR R0, =s_witch_donats_seqData  \n\
 /* 0802f112 */ BL play_sound \n\
 /* 0802f116 */ BL beatscript_enable_loops \n\
-/* 0802f11a */ LDR R0, =D_030055d0 \n\
+/* 0802f11a */ LDR R0, =gCurrentEngineData \n\
 /* 0802f11c */ LDR R1, [R0] \n\
 /* 0802f11e */ ADDS R1, 0x8A @ Add 0x8A to R1 \n\
 /* 0802f120 */ LDRH R0, [R1] \n\

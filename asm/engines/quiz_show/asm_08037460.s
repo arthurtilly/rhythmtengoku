@@ -9,7 +9,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 08037466 */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 08037468 */ PUSH {R5-R7} \n\
 /* 0803746a */ SUB SP, 0x14 \n\
-/* 0803746c */ LDR R2, =D_030055d0 \n\
+/* 0803746c */ LDR R2, =gCurrentEngineData \n\
 /* 0803746e */ LDR R1, [R2] \n\
 /* 08037470 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08037472 */ STRB R0, [R1] \n\
@@ -59,50 +59,50 @@ thumb_func_start quiz_show_engine_start \n\
 /* 080374d8 */ MOVS R2, 0x50 @ Set R2 to 0x50 \n\
 /* 080374da */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\
 /* 080374dc */ BL text_printer_create_new \n\
-/* 080374e0 */ LDR R2, =D_030055d0 \n\
+/* 080374e0 */ LDR R2, =gCurrentEngineData \n\
 /* 080374e2 */ LDR R1, [R2] \n\
 /* 080374e4 */ STR R0, [R1, 0x4] \n\
 /* 080374e6 */ MOVS R1, 0x54 @ Set R1 to 0x54 \n\
 /* 080374e8 */ MOVS R2, 0x24 @ Set R2 to 0x24 \n\
 /* 080374ea */ BL text_printer_set_x_y \n\
-/* 080374ee */ LDR R1, =D_030055d0 \n\
+/* 080374ee */ LDR R1, =gCurrentEngineData \n\
 /* 080374f0 */ LDR R0, [R1] \n\
 /* 080374f2 */ LDR R0, [R0, 0x4] \n\
 /* 080374f4 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 080374f6 */ LSLS R1, R1, 0x4 \n\
 /* 080374f8 */ BL text_printer_set_layer \n\
-/* 080374fc */ LDR R2, =D_030055d0 \n\
+/* 080374fc */ LDR R2, =gCurrentEngineData \n\
 /* 080374fe */ LDR R0, [R2] \n\
 /* 08037500 */ LDR R0, [R0, 0x4] \n\
 /* 08037502 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08037504 */ BL text_printer_center_by_content \n\
-/* 08037508 */ LDR R1, =D_030055d0 \n\
+/* 08037508 */ LDR R1, =gCurrentEngineData \n\
 /* 0803750a */ LDR R0, [R1] \n\
 /* 0803750c */ LDR R0, [R0, 0x4] \n\
 /* 0803750e */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
 /* 08037510 */ BL text_printer_set_palette \n\
-/* 08037514 */ LDR R2, =D_030055d0 \n\
+/* 08037514 */ LDR R2, =gCurrentEngineData \n\
 /* 08037516 */ LDR R0, [R2] \n\
 /* 08037518 */ LDR R0, [R0, 0x4] \n\
 /* 0803751a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803751c */ BL text_printer_set_colors \n\
-/* 08037520 */ LDR R1, =D_030055d0 \n\
+/* 08037520 */ LDR R1, =gCurrentEngineData \n\
 /* 08037522 */ LDR R0, [R1] \n\
 /* 08037524 */ LDR R0, [R0, 0x4] \n\
 /* 08037526 */ LDR R1, =scene_show_bg_layer \n\
 /* 08037528 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0803752a */ BL text_printer_run_func_on_finish \n\
-/* 0803752e */ LDR R2, =D_030055d0 \n\
+/* 0803752e */ LDR R2, =gCurrentEngineData \n\
 /* 08037530 */ LDR R0, [R2] \n\
 /* 08037532 */ LDR R0, [R0, 0x4] \n\
 /* 08037534 */ LDR R1, =scene_hide_bg_layer \n\
 /* 08037536 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 08037538 */ BL text_printer_run_func_on_clear \n\
-/* 0803753c */ LDR R1, =D_030055d0 \n\
+/* 0803753c */ LDR R1, =gCurrentEngineData \n\
 /* 0803753e */ LDR R0, [R1] \n\
 /* 08037540 */ LDR R0, [R0, 0x4] \n\
 /* 08037542 */ BL gameplay_set_text_printer \n\
-/* 08037546 */ LDR R2, =D_030055d0 \n\
+/* 08037546 */ LDR R2, =gCurrentEngineData \n\
 /* 08037548 */ LDR R2, [R2] \n\
 /* 0803754a */ MOV R8, R2 @ Set R8 to R2 \n\
 /* 0803754c */ MOV R7, R8 @ Set R7 to R8 \n\
@@ -248,7 +248,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 08037678 */ STR R4, [SP, 0x8] \n\
 /* 0803767a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803767c */ BL func_0804d8f8 \n\
-/* 08037680 */ LDR R0, =D_030055d0 \n\
+/* 08037680 */ LDR R0, =gCurrentEngineData \n\
 /* 08037682 */ LDR R0, [R0] \n\
 /* 08037684 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08037686 */ MOV R7, R8 @ Set R7 to R8 \n\
@@ -397,7 +397,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 080377bc */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080377be */ BL gameplay_set_input_buttons \n\
 /* 080377c2 */ BL func_08037178 \n\
-/* 080377c6 */ LDR R0, =D_030055d0 \n\
+/* 080377c6 */ LDR R0, =gCurrentEngineData \n\
 /* 080377c8 */ LDR R2, [R0] \n\
 /* 080377ca */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 080377cc */ ADDS R0, 0x44 @ Add 0x44 to R0 \n\
@@ -408,7 +408,7 @@ thumb_func_start quiz_show_engine_start \n\
 /* 080377d6 */ ADDS R0, 0x2 @ Add 0x2 to R0 \n\
 /* 080377d8 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080377da */ STRB R1, [R0] \n\
-/* 080377dc */ LDR R2, =D_030055d0 \n\
+/* 080377dc */ LDR R2, =gCurrentEngineData \n\
 /* 080377de */ LDR R0, [R2] \n\
 /* 080377e0 */ ADDS R0, 0x49 @ Add 0x49 to R0 \n\
 /* 080377e2 */ STRB R1, [R0] \n\

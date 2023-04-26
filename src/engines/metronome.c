@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gMetronome ((struct MetronomeEngineData *)D_030055d0)
+#define gMetronome ((struct MetronomeEngineData *)gCurrentEngineData)
 
 
 /* METRONOME */

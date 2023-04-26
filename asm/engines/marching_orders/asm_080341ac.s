@@ -10,7 +10,7 @@ thumb_func_start marching_engine_start \n\
 /* 080341b4 */ PUSH {R5-R7} \n\
 /* 080341b6 */ SUB SP, 0x1C \n\
 /* 080341b8 */ STR R0, [SP, 0x14] \n\
-/* 080341ba */ LDR R6, =D_030055d0 \n\
+/* 080341ba */ LDR R6, =gCurrentEngineData \n\
 /* 080341bc */ LDR R0, [R6] \n\
 /* 080341be */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 080341c0 */ MOV R1, SP @ Set R1 to SP \n\
@@ -83,7 +83,7 @@ thumb_func_start marching_engine_start \n\
 /* 08034256 */ MOV R9, R1 @ Set R9 to R1 \n\
  \n\
 branch_08034258: \n\
-/* 08034258 */ LDR R2, =D_030055d0 \n\
+/* 08034258 */ LDR R2, =gCurrentEngineData \n\
 /* 0803425a */ MOV R8, R2 @ Set R8 to R2 \n\
 /* 0803425c */ LDR R4, [R2] \n\
 /* 0803425e */ ADD R4, R9 @ Add R9 to R4 \n\

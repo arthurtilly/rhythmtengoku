@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start samurai_slice_cue_hit \n\
 /* 080312b8 */ PUSH {R4-R6, LR} \n\
-/* 080312ba */ LDR R0, =D_030055d0 \n\
+/* 080312ba */ LDR R0, =gCurrentEngineData \n\
 /* 080312bc */ LDR R2, [R0] \n\
 /* 080312be */ ADDS R5, R2, 0x0 @ Set R5 to R2 + 0x0 \n\
 /* 080312c0 */ ADDS R5, 0x10 @ Add 0x10 to R5 \n\
@@ -167,7 +167,7 @@ branch_080313f2: \n\
 /* 08031408 */ BL func_0804d770 \n\
 /* 0803140c */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0803140e */ STRB R0, [R5, 0x4] \n\
-/* 08031410 */ LDR R0, =D_030055d0 \n\
+/* 08031410 */ LDR R0, =gCurrentEngineData \n\
 /* 08031412 */ LDR R0, [R0] \n\
 /* 08031414 */ MOVS R1, 0xE8 @ Set R1 to 0xE8 \n\
 /* 08031416 */ LSLS R1, R1, 0x1 \n\
@@ -191,7 +191,7 @@ branch_08031430: \n\
 /* 08031432 */ BL set_beatscript_speed \n\
 /* 08031436 */ LDR R0, =0xfffff400 \n\
 /* 08031438 */ BL scene_set_music_pitch_env \n\
-/* 0803143c */ LDR R4, =D_030055d0 \n\
+/* 0803143c */ LDR R4, =gCurrentEngineData \n\
 /* 0803143e */ LDR R2, [R4] \n\
 /* 08031440 */ MOVS R0, 0xE9 @ Set R0 to 0xE9 \n\
 /* 08031442 */ LSLS R0, R0, 0x1 \n\
@@ -228,7 +228,7 @@ branch_0803147e: \n\
 /* 08031488 */ LSLS R2, R2, 0x1 \n\
 /* 0803148a */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0803148c */ STR R0, [R1] \n\
-/* 0803148e */ LDR R5, =D_030055d0 \n\
+/* 0803148e */ LDR R5, =gCurrentEngineData \n\
 /* 08031490 */ LDR R0, [R5] \n\
 /* 08031492 */ MOVS R4, 0xEA @ Set R4 to 0xEA \n\
 /* 08031494 */ LSLS R4, R4, 0x1 \n\
@@ -252,7 +252,7 @@ branch_0803147e: \n\
 .ltorg \n\
  \n\
 branch_080314cc: \n\
-/* 080314cc */ LDR R4, =D_030055d0 \n\
+/* 080314cc */ LDR R4, =gCurrentEngineData \n\
 /* 080314ce */ LDR R0, [R4] \n\
 /* 080314d0 */ MOVS R1, 0xEC @ Set R1 to 0xEC \n\
 /* 080314d2 */ LSLS R1, R1, 0x1 \n\
@@ -284,7 +284,7 @@ branch_080314f6: \n\
 /* 08031500 */ LSLS R2, R2, 0x1 \n\
 /* 08031502 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 08031504 */ STR R0, [R1] \n\
-/* 08031506 */ LDR R5, =D_030055d0 \n\
+/* 08031506 */ LDR R5, =gCurrentEngineData \n\
 /* 08031508 */ LDR R0, [R5] \n\
 /* 0803150a */ MOVS R4, 0xEA @ Set R4 to 0xEA \n\
 /* 0803150c */ LSLS R4, R4, 0x1 \n\
@@ -315,7 +315,7 @@ branch_08031534: \n\
  \n\
 branch_0803153e: \n\
 /* 0803153e */ BL func_080317f4 \n\
-/* 08031542 */ LDR R5, =D_030055d0 \n\
+/* 08031542 */ LDR R5, =gCurrentEngineData \n\
 /* 08031544 */ LDR R0, [R5] \n\
 /* 08031546 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08031548 */ ADDS R1, 0x78 @ Add 0x78 to R1 \n\

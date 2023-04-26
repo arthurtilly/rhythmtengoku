@@ -8,7 +8,7 @@ thumb_func_start bouncy_road_cue_spawn \n\
 /* 0802e5a4 */ PUSH {R7} \n\
 /* 0802e5a6 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0802e5a8 */ ADDS R7, R1, 0x0 @ Set R7 to R1 + 0x0 \n\
-/* 0802e5aa */ LDR R5, =D_030055d0 \n\
+/* 0802e5aa */ LDR R5, =gCurrentEngineData \n\
 /* 0802e5ac */ LDR R0, [R5] \n\
 /* 0802e5ae */ MOVS R4, 0xEA @ Set R4 to 0xEA \n\
 /* 0802e5b0 */ LSLS R4, R4, 0x1 \n\

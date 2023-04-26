@@ -13,7 +13,7 @@ thumb_func_start func_0803f1f4 \n\
 /* 0803f202 */ ADDS R6, R1, 0x0 @ Set R6 to R1 + 0x0 \n\
 /* 0803f204 */ MOV R9, R2 @ Set R9 to R2 \n\
 /* 0803f206 */ MOV R8, R3 @ Set R8 to R3 \n\
-/* 0803f208 */ LDR R5, =D_030055d0 \n\
+/* 0803f208 */ LDR R5, =gCurrentEngineData \n\
 /* 0803f20a */ LDR R0, [R5] \n\
 /* 0803f20c */ MOVS R2, 0xDF @ Set R2 to 0xDF \n\
 /* 0803f20e */ LSLS R2, R2, 0x2 \n\
@@ -81,7 +81,7 @@ branch_0803f21a: \n\
 /* 0803f288 */ BL force_cancel_task \n\
  \n\
 branch_0803f28c: \n\
-/* 0803f28c */ LDR R3, =D_030055d0 \n\
+/* 0803f28c */ LDR R3, =gCurrentEngineData \n\
 /* 0803f28e */ MOV R10, R3 @ Set R10 to R3 \n\
 /* 0803f290 */ LDR R0, [R3] \n\
 /* 0803f292 */ LDR R4, =0x372 \n\

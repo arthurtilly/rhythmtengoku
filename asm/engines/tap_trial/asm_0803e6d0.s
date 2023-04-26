@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start tap_trial_input_event \n\
 /* 0803e6d0 */ PUSH {LR} \n\
-/* 0803e6d2 */ LDR R0, =D_030055d0 \n\
+/* 0803e6d2 */ LDR R0, =gCurrentEngineData \n\
 /* 0803e6d4 */ LDR R0, [R0] \n\
 /* 0803e6d6 */ LDRB R0, [R0, 0x10] \n\
 /* 0803e6d8 */ CMP R0, 0xE @ Compare R0 and 0xE \n\
@@ -20,7 +20,7 @@ branch_0803e6e0: \n\
 /* 0803e6ec */ BL play_sound \n\
  \n\
 branch_0803e6f0: \n\
-/* 0803e6f0 */ LDR R0, =D_030055d0 \n\
+/* 0803e6f0 */ LDR R0, =gCurrentEngineData \n\
 /* 0803e6f2 */ LDR R1, [R0] \n\
 /* 0803e6f4 */ LDRB R0, [R1, 0x1E] \n\
 /* 0803e6f6 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\

@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueEngineData ((struct TapTrialPrologueEngineData *)D_030055d0)
+#define gPrologueEngineData ((struct TapTrialPrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: TAP TRIAL  //  //  //

@@ -32,7 +32,7 @@ thumb_func_start func_08033558 \n\
 branch_08033594: \n\
 /* 08033594 */ LDR R0, =D_03005380 \n\
 /* 08033596 */ LDR R0, [R0] \n\
-/* 08033598 */ LDR R1, =D_030055d0 \n\
+/* 08033598 */ LDR R1, =gCurrentEngineData \n\
 /* 0803359a */ LDR R1, [R1] \n\
 /* 0803359c */ MOVS R2, 0x38 @ Set R2 to 0x38 \n\
 /* 0803359e */ LDRSH R1, [R1, R2] \n\

@@ -39,14 +39,14 @@ branch_08038636: \n\
 /* 08038644 */ B branch_080386d8 \n\
 \n\
 branch_08038646: \n\
-/* 08038646 */ LDR R0, =D_030055d0 \n\
+/* 08038646 */ LDR R0, =gCurrentEngineData \n\
 /* 08038648 */ LDR R0, [R0] \n\
 /* 0803864a */ ADDS R0, 0xF4 @ Add 0xF4 to R0 \n\
 /* 0803864c */ B branch_0803865a \n\
 \n\
 .ltorg \n\
 branch_08038654: \n\
-/* 08038654 */ LDR R0, =D_030055d0 \n\
+/* 08038654 */ LDR R0, =gCurrentEngineData \n\
 /* 08038656 */ LDR R0, [R0] \n\
 /* 08038658 */ ADDS R0, 0xF5 @ Add 0xF5 to R0 \n\
  \n\
@@ -58,7 +58,7 @@ branch_0803865a: \n\
 \n\
 .ltorg \n\
 branch_08038668: \n\
-/* 08038668 */ LDR R0, =D_030055d0 \n\
+/* 08038668 */ LDR R0, =gCurrentEngineData \n\
 /* 0803866a */ LDR R0, [R0] \n\
 /* 0803866c */ ADDS R0, 0xF4 @ Add 0xF4 to R0 \n\
 /* 0803866e */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
@@ -69,7 +69,7 @@ branch_08038668: \n\
 \n\
 .ltorg \n\
 branch_08038680: \n\
-/* 08038680 */ LDR R0, =D_030055d0 \n\
+/* 08038680 */ LDR R0, =gCurrentEngineData \n\
 /* 08038682 */ LDR R0, [R0] \n\
 /* 08038684 */ ADDS R0, 0xF4 @ Add 0xF4 to R0 \n\
 /* 08038686 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
@@ -80,7 +80,7 @@ branch_08038680: \n\
 \n\
 .ltorg \n\
 branch_08038698: \n\
-/* 08038698 */ LDR R0, =D_030055d0 \n\
+/* 08038698 */ LDR R0, =gCurrentEngineData \n\
 /* 0803869a */ LDR R0, [R0] \n\
 /* 0803869c */ ADDS R0, 0xF4 @ Add 0xF4 to R0 \n\
 /* 0803869e */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
@@ -91,7 +91,7 @@ branch_08038698: \n\
 \n\
 .ltorg \n\
 branch_080386b0: \n\
-/* 080386b0 */ LDR R0, =D_030055d0 \n\
+/* 080386b0 */ LDR R0, =gCurrentEngineData \n\
 /* 080386b2 */ LDR R0, [R0] \n\
 /* 080386b4 */ ADDS R0, 0xF5 @ Add 0xF5 to R0 \n\
 /* 080386b6 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
@@ -102,7 +102,7 @@ branch_080386b0: \n\
 \n\
 .ltorg \n\
 branch_080386c8: \n\
-/* 080386c8 */ LDR R0, =D_030055d0 \n\
+/* 080386c8 */ LDR R0, =gCurrentEngineData \n\
 /* 080386ca */ LDR R0, [R0] \n\
 /* 080386cc */ ADDS R0, 0xF4 @ Add 0xF4 to R0 \n\
 /* 080386ce */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\

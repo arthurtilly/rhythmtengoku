@@ -27,7 +27,7 @@ thumb_func_start func_0802e078 \n\
 /* 0802e0a4 */ B branch_0802e200 \n\
  \n\
 branch_0802e0a6: \n\
-/* 0802e0a6 */ LDR R0, =D_030055d0 \n\
+/* 0802e0a6 */ LDR R0, =gCurrentEngineData \n\
 /* 0802e0a8 */ LDR R0, [R0] \n\
 /* 0802e0aa */ LDR R0, [R0, 0x3C] \n\
 /* 0802e0ac */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
@@ -77,7 +77,7 @@ branch_0802e0dc: \n\
 /* 0802e10e */ ADDS R0, 0x26 @ Add 0x26 to R0 \n\
 /* 0802e110 */ LDRB R0, [R0] \n\
 /* 0802e112 */ BL gameplay_set_marking_criteria \n\
-/* 0802e116 */ LDR R0, =D_030055d0 \n\
+/* 0802e116 */ LDR R0, =gCurrentEngineData \n\
 /* 0802e118 */ LDR R0, [R0] \n\
 /* 0802e11a */ LDRH R1, [R5, 0x8] \n\
 /* 0802e11c */ MOVS R2, 0xEA @ Set R2 to 0xEA \n\
@@ -101,7 +101,7 @@ branch_0802e130: \n\
 /* 0802e142 */ LDRB R0, [R5, 0xE] \n\
 /* 0802e144 */ CMP R0, 0xE @ Compare R0 and 0xE \n\
 /* 0802e146 */ BHI branch_0802e15c \n\
-/* 0802e148 */ LDR R0, =D_030055d0 \n\
+/* 0802e148 */ LDR R0, =gCurrentEngineData \n\
 /* 0802e14a */ LDR R1, [R0] \n\
 /* 0802e14c */ LDRB R0, [R5, 0xE] \n\
 /* 0802e14e */ LSLS R0, R0, 0x2 \n\

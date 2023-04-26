@@ -8,7 +8,7 @@ thumb_func_start clappy_trio_engine_start \n\
 /* 0803058c */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 0803058e */ PUSH {R5, R6} \n\
 /* 08030590 */ SUB SP, 0x14 \n\
-/* 08030592 */ LDR R4, =D_030055d0 \n\
+/* 08030592 */ LDR R4, =gCurrentEngineData \n\
 /* 08030594 */ LDR R2, [R4] \n\
 /* 08030596 */ LSRS R1, R0, 0x2 \n\
 /* 08030598 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\

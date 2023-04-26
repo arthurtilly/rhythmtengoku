@@ -14,7 +14,7 @@ thumb_func_start func_08033468 \n\
 /* 08033478 */ LDR R0, =D_03005380 \n\
 /* 0803347a */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 0803347c */ LDR R0, [R0] \n\
-/* 0803347e */ LDR R1, =D_030055d0 \n\
+/* 0803347e */ LDR R1, =gCurrentEngineData \n\
 /* 08033480 */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 08033482 */ LDR R1, [R1] \n\
 /* 08033484 */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\

@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start mechanical_horse_input_event \n\
 /* 0804283c */ PUSH {LR} \n\
-/* 0804283e */ LDR R0, =D_030055d0 \n\
+/* 0804283e */ LDR R0, =gCurrentEngineData \n\
 /* 08042840 */ LDR R0, [R0] \n\
 /* 08042842 */ LDRB R0, [R0, 0x6] \n\
 /* 08042844 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

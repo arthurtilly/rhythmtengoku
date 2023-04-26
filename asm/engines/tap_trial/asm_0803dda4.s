@@ -9,7 +9,7 @@ thumb_func_start tap_trial_engine_start \n\
 /* 0803ddaa */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 0803ddac */ PUSH {R5-R7} \n\
 /* 0803ddae */ SUB SP, 0x14 \n\
-/* 0803ddb0 */ LDR R1, =D_030055d0 \n\
+/* 0803ddb0 */ LDR R1, =gCurrentEngineData \n\
 /* 0803ddb2 */ MOV R10, R1 @ Set R10 to R1 \n\
 /* 0803ddb4 */ LDR R1, [R1] \n\
 /* 0803ddb6 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\

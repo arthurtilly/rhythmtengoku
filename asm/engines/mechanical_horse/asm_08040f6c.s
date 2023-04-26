@@ -9,7 +9,7 @@ thumb_func_start mechanical_horse_engine_start \n\
 /* 08040f72 */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 08040f74 */ PUSH {R5-R7} \n\
 /* 08040f76 */ SUB SP, 0x1C \n\
-/* 08040f78 */ LDR R6, =D_030055d0 \n\
+/* 08040f78 */ LDR R6, =gCurrentEngineData \n\
 /* 08040f7a */ LDR R1, [R6] \n\
 /* 08040f7c */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08040f7e */ STRB R0, [R1] \n\
@@ -106,7 +106,7 @@ thumb_func_start mechanical_horse_engine_start \n\
 /* 08041046 */ MOV R10, R5 @ Set R10 to R5 \n\
  \n\
 branch_08041048: \n\
-/* 08041048 */ LDR R3, =D_030055d0 \n\
+/* 08041048 */ LDR R3, =gCurrentEngineData \n\
 /* 0804104a */ LDR R1, [R3] \n\
 /* 0804104c */ LSLS R3, R7, 0x1 \n\
 /* 0804104e */ ADDS R0, R3, R7 @ Set R0 to R3 + R7 \n\
@@ -114,7 +114,7 @@ branch_08041048: \n\
 /* 08041052 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 08041054 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08041056 */ STRB R2, [R1, 0x6] \n\
-/* 08041058 */ LDR R1, =D_030055d0 \n\
+/* 08041058 */ LDR R1, =gCurrentEngineData \n\
 /* 0804105a */ LDR R0, [R1] \n\
 /* 0804105c */ ADDS R0, R0, R4 @ Set R0 to R0 + R4 \n\
 /* 0804105e */ STRB R2, [R0, 0x7] \n\
@@ -136,7 +136,7 @@ branch_08041048: \n\
 .ltorg \n\
  \n\
 branch_0804108c: \n\
-/* 0804108c */ LDR R3, =D_030055d0 \n\
+/* 0804108c */ LDR R3, =gCurrentEngineData \n\
 /* 0804108e */ LDR R2, [R3] \n\
 /* 08041090 */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 08041092 */ ADDS R0, 0xC @ Add 0xC to R0 \n\
@@ -151,7 +151,7 @@ branch_0804108c: \n\
 /* 080410a4 */ STR R0, [R2] \n\
  \n\
 branch_080410a6: \n\
-/* 080410a6 */ LDR R6, =D_030055d0 \n\
+/* 080410a6 */ LDR R6, =gCurrentEngineData \n\
 /* 080410a8 */ LDR R2, [R6] \n\
 /* 080410aa */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 080410ac */ ADDS R0, R1, R7 @ Set R0 to R1 + R7 \n\
@@ -226,7 +226,7 @@ branch_080410fc: \n\
 /* 0804113e */ BL func_0804d8c4 \n\
  \n\
 branch_08041142: \n\
-/* 08041142 */ LDR R0, =D_030055d0 \n\
+/* 08041142 */ LDR R0, =gCurrentEngineData \n\
 /* 08041144 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08041146 */ LDR R0, [R0] \n\
 /* 08041148 */ LSLS R6, R7, 0x2 \n\
@@ -321,7 +321,7 @@ branch_08041200: \n\
 /* 08041206 */ MOVS R6, 0x40 @ Set R6 to 0x40 \n\
 /* 08041208 */ NEGS R6, R6 @ Set R6 to -R6 \n\
 /* 0804120a */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
-/* 0804120c */ LDR R5, =D_030055d0 \n\
+/* 0804120c */ LDR R5, =gCurrentEngineData \n\
  \n\
 branch_0804120e: \n\
 /* 0804120e */ MOV R1, R8 @ Set R1 to R8 \n\
@@ -358,7 +358,7 @@ branch_0804120e: \n\
 /* 08041250 */ CMP R7, 0x13 @ Compare R7 and 0x13 \n\
 /* 08041252 */ BLS branch_0804120e \n\
 /* 08041254 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
-/* 08041256 */ LDR R3, =D_030055d0 \n\
+/* 08041256 */ LDR R3, =gCurrentEngineData \n\
 /* 08041258 */ MOV R8, R3 @ Set R8 to R3 \n\
 /* 0804125a */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
 /* 0804125c */ LDR R0, =D_03005380 \n\
@@ -472,7 +472,7 @@ branch_08041266: \n\
 /* 08041334 */ MOVS R2, 0x57 @ Set R2 to 0x57 \n\
 /* 08041336 */ MOVS R3, 0x90 @ Set R3 to 0x90 \n\
 /* 08041338 */ BL create_affine_sprite \n\
-/* 0804133c */ LDR R6, =D_030055d0 \n\
+/* 0804133c */ LDR R6, =gCurrentEngineData \n\
 /* 0804133e */ LDR R1, [R6] \n\
 /* 08041340 */ MOVS R3, 0xBD @ Set R3 to 0xBD \n\
 /* 08041342 */ LSLS R3, R3, 0x2 \n\

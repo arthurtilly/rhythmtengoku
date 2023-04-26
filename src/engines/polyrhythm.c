@@ -10,7 +10,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gPolyrhythm ((struct PolyrhythmEngineData *)D_030055d0)
+#define gPolyrhythm ((struct PolyrhythmEngineData *)gCurrentEngineData)
 
 enum BlockTypesEnum {
     BLOCK_TYPE_PLATFORM,

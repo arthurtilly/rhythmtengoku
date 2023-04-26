@@ -9,7 +9,7 @@ thumb_func_start power_calligraphy_engine_start \n\
 /* 08032f42 */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 08032f44 */ PUSH {R5-R7} \n\
 /* 08032f46 */ SUB SP, 0x14 \n\
-/* 08032f48 */ LDR R1, =D_030055d0 \n\
+/* 08032f48 */ LDR R1, =gCurrentEngineData \n\
 /* 08032f4a */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 08032f4c */ LDR R1, [R1] \n\
 /* 08032f4e */ STRB R0, [R1] \n\

@@ -8,7 +8,7 @@ thumb_func_start func_0802372c \n\
 /* 08023730 */ PUSH {R7} \n\
 /* 08023732 */ SUB SP, 0x1C \n\
 /* 08023734 */ STR R0, [SP, 0x18] \n\
-/* 08023736 */ LDR R7, =D_030055d0 \n\
+/* 08023736 */ LDR R7, =gCurrentEngineData \n\
 /* 08023738 */ LDR R5, [R7] \n\
 /* 0802373a */ LDRB R4, [R5, 0x1] \n\
 /* 0802373c */ LSLS R0, R4, 0x3 \n\
