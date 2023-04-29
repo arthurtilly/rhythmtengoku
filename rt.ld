@@ -793,7 +793,7 @@ SECTIONS {
         build/games/remix_1/remix_1_unused.bs.o(.script.entry);
         build/games/remix_1/remix_1.bs.o(.script.entry);
         build/games/bunny_hop/bunny_hop.bs.o(.script.entry);
-        build/bin/bindata_089d2874.bin.o(.rodata*);
+        build/games/metronome/metronome.bs.o(.script.entry);
         build/games/fireworks/fireworks.bs.o(.script.entry);
         build/games/rat_race/rat_race.bs.o(.script.entry);
         build/games/power_calligraphy/power_calligraphy.bs.o(.script.entry);
@@ -1045,7 +1045,7 @@ SECTIONS {
         build/games/remix_1/remix_1_unused.bs.o(.script.main);
         build/games/remix_1/remix_1.bs.o(.script.main);
         build/games/bunny_hop/bunny_hop.bs.o(.script.main);
-        build/bin/bindata_08a19850.bin.o(.rodata*);
+        build/games/metronome/metronome.bs.o(.script.main);
         build/games/fireworks/fireworks.bs.o(.script.main);
         build/games/rat_race/rat_race.bs.o(.script.main);
         build/games/power_calligraphy/power_calligraphy.bs.o(.script.main);
