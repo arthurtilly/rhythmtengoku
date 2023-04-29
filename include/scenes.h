@@ -131,7 +131,7 @@ extern struct Scene D_089d3a6c;
 extern struct Scene D_089d3984;
 extern struct Scene D_089d2f98;
 extern struct Scene D_089de05c;
-extern struct Scene D_089d2940;
+extern struct Scene scene_metronome;
 extern struct Scene D_089d2670;
 extern struct Scene D_089cd2cc;
 extern struct Scene D_089d6d74;

@@ -439,7 +439,7 @@ script script_spaceball_unused_main
     rest 24
     spaceball_zoom_camera 0xff00, 96
     mod_tempo 157, 144
-    .byte 0x3d, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00
+    set_music_pitch_s 512
     rest 24
     rest 24
     rest 24
