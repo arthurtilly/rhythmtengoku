@@ -6,8 +6,66 @@
 #include "games/sick_beats/graphics/sick_beats_graphics.h"
 
 // Engine Types:
+
+struct SickBeatsPath {
+    /* 00 */ u8 command;
+    /* 01 */ u8 arg;
+    /* 02 */ u16 rest;
+};
+
+
 struct SickBeatsEngineData {
-    u8 pad[0x274];
+    u8 version;
+    u16 unk2;
+    struct SickBeatsYellowMicrobe {
+        s16 sprite;
+        u8 unk2; // microbe state?
+        u8 unk3; 
+        u16 unk4; // microbe event duration
+    } yellowMicrobe;
+    struct SickBeatsForks {
+        s16 launcher;
+        struct AffineSprite *unk4, *unk8, *unkC, *unk10;
+        u16 unk14, unk16, unk18, unk1A;
+    } forks;
+    struct SickBeatsVirus {
+        u8 unk28[0x100]; // whether a virus exists or not (boolean) 
+        s8 unk128; // cue / virus action
+        s8 unk129; // current virus
+        u16 unk12A; // virus counter?
+        u8 unk12C; // amount of hits too?
+        u8 unk12D; // virus palette
+        u8 unk12E; // amount of hits
+        u8 unk12F;
+        struct SickBeatsVirusData {
+            struct SickBeatsPath *unk0; // path
+            u8 unk4; // amount of hits
+            u8 unk5; // virus palette
+            s16 unk6; // virus id?
+            s32 unk8; // rest value
+        } unk130[16];
+    } virus;
+    s8 unk1F0; // doctor state?
+    s8 unk1F1;
+    u8 unk1F2;
+    u16 unk1F4;
+    s16 unk1F6; // doctor sprite
+    s16 unk1F8; // radio sprite
+    s16 unk1FA;
+    struct Beatscript *unk1FC;
+    u16 unk200;
+    u8 unk202;
+    struct SickBeatsScoreCounter {
+        u16 unk0; // counter sprite
+        s16 unk2[4]; // digit sprite
+        u16 unkA; // value?
+    } unk204[2];
+    u8 unk21C;
+    s16 unk21E[20]; // particle sprites
+    u16 unk246[20];
+    u8 unk26E;
+    u8 unk26F;
+    u8 unk270; // amount of cels in a particle anim
 };
 
 struct SickBeatsCue {

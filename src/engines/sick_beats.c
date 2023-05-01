@@ -19,31 +19,31 @@ asm(".include \"include/gba.inc\""); // Temporary
 // Init Particles
 void func_08042864(void) {
     u32 i;
-    if (gSickBeatsInfo->version != ENGINE_VER_SICK_BEATS_ENDLESS) return;
+    if (gSickBeats->version != ENGINE_VER_SICK_BEATS_ENDLESS) return;
     // base particle
-    gSickBeatsInfo->unk21E[0] = func_0804d160(D_03005380, anim_sick_beats_endless_particle, 0, 0x40, 0x40, 0x800, 0, 0, 0x8000);
-    for (i = 1; i < ARRAY_SIZE(gSickBeatsInfo->unk21E); i++) { // copy particles
-        gSickBeatsInfo->unk21E[i] = func_0804d3cc(D_03005380, gSickBeatsInfo->unk21E[0]);
+    gSickBeats->unk21E[0] = func_0804d160(D_03005380, anim_sick_beats_endless_particle, 0, 0x40, 0x40, 0x800, 0, 0, 0x8000);
+    for (i = 1; i < ARRAY_COUNT(gSickBeats->unk21E); i++) { // copy particles
+        gSickBeats->unk21E[i] = func_0804d3cc(D_03005380, gSickBeats->unk21E[0]);
     }
 
-    for (i = 0; i < ARRAY_SIZE(gSickBeatsInfo->unk246); i++) {
-        gSickBeatsInfo->unk246[i] = 0;
+    for (i = 0; i < ARRAY_COUNT(gSickBeats->unk246); i++) {
+        gSickBeats->unk246[i] = 0;
     }
-    gSickBeatsInfo->unk26E = 0;
-    gSickBeatsInfo->unk26F = 1;
-    gSickBeatsInfo->unk270 = func_0804ddb0(D_03005380, gSickBeatsInfo->unk21E[0], 2); // amount of cels in the particle anim
+    gSickBeats->unk26E = 0;
+    gSickBeats->unk26F = 1;
+    gSickBeats->unk270 = func_0804ddb0(D_03005380, gSickBeats->unk21E[0], 2); // amount of cels in the particle anim
 }
 
 // Update Particles
 void func_08042934(void) {
     u32 i;
 
-    if ((gSickBeatsInfo->version != ENGINE_VER_SICK_BEATS_ENDLESS) || gSickBeatsInfo->unk202) return;
-    for (i = 0; i < ARRAY_SIZE(gSickBeatsInfo->unk246); i++) {
-        if (gSickBeatsInfo->unk246[i]) {
-            gSickBeatsInfo->unk246[i] -= 1;
-            if (!gSickBeatsInfo->unk246[i]) {
-                func_0804d770(D_03005380, gSickBeatsInfo->unk21E[i], 0);
+    if ((gSickBeats->version != ENGINE_VER_SICK_BEATS_ENDLESS) || gSickBeats->unk202) return;
+    for (i = 0; i < ARRAY_COUNT(gSickBeats->unk246); i++) {
+        if (gSickBeats->unk246[i]) {
+            gSickBeats->unk246[i] -= 1;
+            if (!gSickBeats->unk246[i]) {
+                func_0804d770(D_03005380, gSickBeats->unk21E[i], 0);
             }
         }
     }
@@ -54,7 +54,7 @@ void func_0804299c(void) {
     s32 pitch;
     
     func_0800c604(0);
-    temp = clamp_int32(gSickBeatsInfo->unk26F, 1, 8);
+    temp = clamp_int32(gSickBeats->unk26F, 1, 8);
     pitch = sick_beats_particle_sfx_pitch[agb_random(temp)];
     play_sound_w_pitch_volume(&s_f_virus_note_land_seqData, 128, pitch);
 }
@@ -64,16 +64,16 @@ void func_0804299c(void) {
 void func_08042b30(u32 arg0) {
     u32 i;
 
-    if (gSickBeatsInfo->version != ENGINE_VER_SICK_BEATS_ENDLESS) return;
+    if (gSickBeats->version != ENGINE_VER_SICK_BEATS_ENDLESS) return;
     for (i = 0; i < arg0; i++) {
         func_080429e8();
     }
 }
 
 void func_08042b58(void) {
-    if (gSickBeatsInfo->version != ENGINE_VER_SICK_BEATS_ENDLESS) return;
-    if (gSickBeatsInfo->unk26F < gSickBeatsInfo->unk270) {
-        gSickBeatsInfo->unk26F++;
+    if (gSickBeats->version != ENGINE_VER_SICK_BEATS_ENDLESS) return;
+    if (gSickBeats->unk26F < gSickBeats->unk270) {
+        gSickBeats->unk26F++;
     }
 }
 
@@ -83,9 +83,9 @@ void func_08042b88(void) {
     s32 x, y;
     struct SickBeatsScoreCounter *counter;
     
-    if (gSickBeatsInfo->version != ENGINE_VER_SICK_BEATS_ENDLESS) return;
-    for (i = 0; i < ARRAY_SIZE(gSickBeatsInfo->unk204); i++) {
-        counter = &gSickBeatsInfo->unk204[i];
+    if (gSickBeats->version != ENGINE_VER_SICK_BEATS_ENDLESS) return;
+    for (i = 0; i < ARRAY_COUNT(gSickBeats->unk204); i++) {
+        counter = &gSickBeats->unk204[i];
         
         if (i == 0) {
             counter->unk0 = func_0804d160(D_03005380, anim_sick_beats_score_counter, 0, 0xd6, 0x28, 0x8f00, 0, 0, 0);
@@ -97,17 +97,17 @@ void func_08042b88(void) {
             y = 0x10;
         }
 
-        for (j = 0; j < ARRAY_SIZE(counter->unk2); j++) {
+        for (j = 0; j < ARRAY_COUNT(counter->unk2); j++) {
             counter->unk2[j] = func_0804d160(D_03005380, anim_sick_beats_score_num, 0, x - 5 * j, y, 0x8f00, 0, 0, 0);
         }
     }
-    gSickBeatsInfo->unk21C = 0;
+    gSickBeats->unk21C = 0;
 }
 
 // Draw Score
 void func_08042c84(u32 arg0) {
     u32 i;
-    struct SickBeatsScoreCounter *temp_r8 = &gSickBeatsInfo->unk204[arg0];
+    struct SickBeatsScoreCounter *temp_r8 = &gSickBeats->unk204[arg0];
     u32 value = temp_r8->unkA;
 
     for (i = 0; i < 4; i++) {
@@ -118,29 +118,29 @@ void func_08042c84(u32 arg0) {
 
 // Update Score
 void func_08042cec(u32 arg0, u32 arg1) {
-    if (gSickBeatsInfo->version != ENGINE_VER_SICK_BEATS_ENDLESS) return;
-    gSickBeatsInfo->unk204[arg0].unkA = clamp_int32(arg1, 0, 9999); // ?????
+    if (gSickBeats->version != ENGINE_VER_SICK_BEATS_ENDLESS) return;
+    gSickBeats->unk204[arg0].unkA = clamp_int32(arg1, 0, 9999); // ?????
     func_08042c84(arg0);
     if (arg0) return;
-    if (gSickBeatsInfo->unk204[0].unkA > gSickBeatsInfo->unk204[1].unkA) {
-        gSickBeatsInfo->unk204[1].unkA = gSickBeatsInfo->unk204[0].unkA;
+    if (gSickBeats->unk204[0].unkA > gSickBeats->unk204[1].unkA) {
+        gSickBeats->unk204[1].unkA = gSickBeats->unk204[0].unkA;
         func_08042c84(1);
     }
 }
 
 // Add Score
 void func_08042d4c(u32 arg0) {
-    if (gSickBeatsInfo->version == ENGINE_VER_SICK_BEATS_ENDLESS) {
-        func_08042cec(0, gSickBeatsInfo->unk204[0].unkA + arg0);
+    if (gSickBeats->version == ENGINE_VER_SICK_BEATS_ENDLESS) {
+        func_08042cec(0, gSickBeats->unk204[0].unkA + arg0);
     }
 }
 
 // Init Virus
 void func_08042d74(void) {
     u32 i;
-    struct SickBeatsVirus *virus = &gSickBeatsInfo->virus;
+    struct SickBeatsVirus *virus = &gSickBeats->virus;
 
-    for (i = 0; i < ARRAY_SIZE(virus->unk28); i++) virus->unk28[i] = 0;
+    for (i = 0; i < ARRAY_COUNT(virus->unk28); i++) virus->unk28[i] = 0;
     virus->unk128 = -1;
     virus->unk129 = 0;
     virus->unk12A = 0;
@@ -149,11 +149,11 @@ void func_08042d74(void) {
     virus->unk12E = 1;
     virus->unk12F = 0;
 
-    for (i = 0; i < ARRAY_SIZE(virus->unk130); i++) virus->unk130[i].unk0 = NULL;
+    for (i = 0; i < ARRAY_COUNT(virus->unk130); i++) virus->unk130[i].unk0 = NULL;
 }
 
 void func_08042de8(struct SickBeatsVirusData *arg0) {
-    struct SickBeatsVirus *virus = &gSickBeatsInfo->virus;
+    struct SickBeatsVirus *virus = &gSickBeats->virus;
     struct SickBeatsPath *path = arg0->unk0;
     
     if (!path) return;
@@ -187,14 +187,14 @@ void func_08042de8(struct SickBeatsVirusData *arg0) {
 // Update Virus
 void func_08042e80(void) {
     u32 i;
-    struct SickBeatsInfo *info;
+    struct SickBeatsEngineData *engineData;
     struct SickBeatsVirusData *virusData;
     
-    info = gSickBeatsInfo;
+    engineData = gSickBeats;
     i = 0;
-    virusData = info->virus.unk130;
+    virusData = engineData->virus.unk130;
 
-    for (i; i < ARRAY_SIZE(gSickBeatsInfo->virus.unk130); i++) {
+    for (i; i < ARRAY_COUNT(gSickBeats->virus.unk130); i++) {
         func_08042de8(virusData);
         virusData++;
     }
@@ -202,28 +202,28 @@ void func_08042e80(void) {
 
 // Engine Event 0x00 (Set Virus/Virus Action)
 void func_08042ea8(u32 arg0) {
-    struct SickBeatsVirus *virus = &gSickBeatsInfo->virus;
+    struct SickBeatsVirus *virus = &gSickBeats->virus;
     virus->unk128 = (arg0 >> 8);
     virus->unk129 = (arg0 >> 0); 
 }
 
 // Engine Event 0x01 (Spawn Virus)
 void func_08042ecc(struct SickBeatsPath *path) {
-    struct SickBeatsVirus *virus = &gSickBeatsInfo->virus;
+    struct SickBeatsVirus *virus = &gSickBeats->virus;
     struct SickBeatsVirusData *virusData;
     u32 i = 0;
     
-    virusData = gSickBeatsInfo->virus.unk130;
+    virusData = gSickBeats->virus.unk130;
     if (virusData->unk0) {
         struct SickBeatsVirusData *virusDatatemp = virus->unk130;
         
         do {
             virusDatatemp++;
-            if (++i > ARRAY_SIZE(gSickBeatsInfo->virus.unk130)-1) return;
+            if (++i > ARRAY_COUNT(gSickBeats->virus.unk130)-1) return;
             virusData = virusDatatemp;
         } while (virusData->unk0);
     }
-    if (i > ARRAY_SIZE(gSickBeatsInfo->virus.unk130)-1) return;
+    if (i > ARRAY_COUNT(gSickBeats->virus.unk130)-1) return;
     virusData->unk0 = path;
     virusData->unk6 = virus->unk12A;
     virusData->unk8 = 0;
@@ -236,21 +236,21 @@ void func_08042ecc(struct SickBeatsPath *path) {
 
 // Engine Event 0x02 (Set Hits Required)
 void func_08042f44(u32 arg0) {
-    struct SickBeatsVirus *virus = &gSickBeatsInfo->virus;
+    struct SickBeatsVirus *virus = &gSickBeats->virus;
 
     virus->unk12E = arg0;
 }
 
 // Engine Event 0x03 (Set Virus Palette)
 void func_08042f58(u32 arg0) {
-    struct SickBeatsVirus *virus = &gSickBeatsInfo->virus;
+    struct SickBeatsVirus *virus = &gSickBeats->virus;
 
     virus->unk12F = arg0;
 }
 
 // Init Forks 
 void func_08042f6c(void) {
-    struct SickBeatsForks *forks = &gSickBeatsInfo->forks;
+    struct SickBeatsForks *forks = &gSickBeats->forks;
     forks->launcher = func_0804d160(D_03005380, anim_fork_launcher, 0, 104, 60, INT_TO_FIXED(72), 1, 0x7f, 0);
     forks->unk4 = create_affine_sprite(anim_fork_hit_none2, 0, 104, 60, INT_TO_FIXED(72), INT_TO_FIXED(1), 
                                         INT_TO_FIXED(-2), 1, 0x7f, 0, FALSE);
@@ -264,7 +264,7 @@ void func_08042f6c(void) {
 
 // Update Forks 
 void func_08043064(void) {
-    struct SickBeatsForks *forks = &gSickBeatsInfo->forks;
+    struct SickBeatsForks *forks = &gSickBeats->forks;
     u16 buttons = DPAD_LEFT | DPAD_RIGHT | DPAD_UP | DPAD_DOWN;
 
     affine_sprite_play_anim(forks->unk4, 1);
@@ -300,7 +300,7 @@ void func_08043064(void) {
 }
 
 void func_08043124(u32 arg0) {
-    struct SickBeatsForks *forks = &gSickBeatsInfo->forks;
+    struct SickBeatsForks *forks = &gSickBeats->forks;
     u32 temp_r1 = beats_to_ticks(30);
 
     if (arg0 & DPAD_UP) {
@@ -320,7 +320,7 @@ void func_08043124(u32 arg0) {
 
 // Init Yellow Microbe
 void func_0804317c(void) {
-    struct SickBeatsYellowMicrobe *ymicrobe = &gSickBeatsInfo->yellowMicrobe;
+    struct SickBeatsYellowMicrobe *ymicrobe = &gSickBeats->yellowMicrobe;
 
     ymicrobe->sprite = func_0804d160(D_03005380, anim_yellow_microbe_beat, 0, 0xae, 0x8a, 0x8900, 1, 0x7f, 0);
     ymicrobe->unk2 = 0;
@@ -328,7 +328,7 @@ void func_0804317c(void) {
 
 // Update Yellow Microbe
 void func_080431c4(void) {
-    struct SickBeatsYellowMicrobe *yellowMicrobe = &gSickBeatsInfo->yellowMicrobe;
+    struct SickBeatsYellowMicrobe *yellowMicrobe = &gSickBeats->yellowMicrobe;
 
     if (yellowMicrobe->unk4) {
         yellowMicrobe->unk4--;
@@ -343,10 +343,10 @@ void func_080431c4(void) {
                     play_sound(&s_f_virus_face_fadeout_seqData);
                     func_080435e8(3);
                 }
-                if (gSickBeatsInfo->unk1FC && (!gSickBeatsInfo->unk202)) {
-                    gSickBeatsInfo->unk202 = TRUE;
-                    gSickBeatsInfo->unk200 = 9999;
-                    func_0801d968(gSickBeatsInfo->unk1FC);
+                if (gSickBeats->unk1FC && (!gSickBeats->unk202)) {
+                    gSickBeats->unk202 = TRUE;
+                    gSickBeats->unk200 = 9999;
+                    func_0801d968(gSickBeats->unk1FC);
                 }
                 break;
             case 2:
@@ -356,7 +356,7 @@ void func_080431c4(void) {
                 break;
             case 3:
                 if (yellowMicrobe->unk3) {
-                    if (gSickBeatsInfo->unk202) {
+                    if (gSickBeats->unk202) {
                         func_0804dae0(D_03005380, yellowMicrobe->sprite, 1, 0, 0);
                         func_0804daa8(D_03005380, yellowMicrobe->sprite, 0, 0);
                         yellowMicrobe->unk3 = 0;
@@ -380,7 +380,7 @@ void func_080432d0(u32 arg0, u32 arg1, u8 *arg2) {
 }
 
 void func_080432d8(u32 arg0) {
-    struct SickBeatsYellowMicrobe *yellowMicrobe = &gSickBeatsInfo->yellowMicrobe;
+    struct SickBeatsYellowMicrobe *yellowMicrobe = &gSickBeats->yellowMicrobe;
     if (arg0 == 0) {
         func_0804d8f8(D_03005380, yellowMicrobe->sprite, sick_beats_microbe_event_anim[0], 0, 1, 0x1b, 0);
         func_0804daa8(D_03005380, yellowMicrobe->sprite, 0, 0);
@@ -420,7 +420,7 @@ void sick_beats_init_gfx1(void) {
 
 // Game Engine Start
 void sick_beats_engine_start(u32 version) {
-    gSickBeatsInfo->version = version;
+    gSickBeats->version = version;
     sick_beats_init_gfx1();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
@@ -428,21 +428,21 @@ void sick_beats_engine_start(u32 version) {
     func_0804317c();
     func_08042f6c();
     func_08042d74();
-    gSickBeatsInfo->unk1F6 = func_0804d160(D_03005380, anim_virus_doctor_beat, 0, 17, 155, 0x800, 1, 0x7f, 0);
-    gSickBeatsInfo->unk1F8 = func_0804d160(D_03005380, anim_sick_beats_radio, 0, 17, 155, 0x810, 1, 0x7f, 0);
-    gSickBeatsInfo->unk1F0 = 0;
-    gSickBeatsInfo->unk1F1 = -1;
-    gSickBeatsInfo->unk1F2 = 0;
-    gSickBeatsInfo->unk1F4 = 0;
+    gSickBeats->unk1F6 = func_0804d160(D_03005380, anim_virus_doctor_beat, 0, 17, 155, 0x800, 1, 0x7f, 0);
+    gSickBeats->unk1F8 = func_0804d160(D_03005380, anim_sick_beats_radio, 0, 17, 155, 0x810, 1, 0x7f, 0);
+    gSickBeats->unk1F0 = 0;
+    gSickBeats->unk1F1 = -1;
+    gSickBeats->unk1F2 = 0;
+    gSickBeats->unk1F4 = 0;
     func_08042b88();
     func_08042cec(0, 0);
     func_08042cec(1, D_030046a8->data.unk294[2]);
     func_08042864();
     gameplay_set_input_buttons(0, 0);
     gameplay_prevent_dpad_overlap(FALSE);
-    gSickBeatsInfo->unk202 = 0;
-    gSickBeatsInfo->unk1FC = 0;
-    gSickBeatsInfo->unk200 = 0;
+    gSickBeats->unk202 = 0;
+    gSickBeats->unk1FC = 0;
+    gSickBeats->unk200 = 0;
 }
 
 // Engine Event 0x07 (STUB)
@@ -451,12 +451,12 @@ void sick_beats_engine_event_stub(void) {
 }
 
 void func_08043534(void) {
-    if (gSickBeatsInfo->unk1F4) {
-        gSickBeatsInfo->unk1F4--;
-        if ((!gSickBeatsInfo->unk1F4) && (gSickBeatsInfo->unk1F1 > -1)) {
-            gSickBeatsInfo->unk1F0 = gSickBeatsInfo->unk1F1;
-            gSickBeatsInfo->unk1F1 = -1;
-            gSickBeatsInfo->unk1F2 = 0;
+    if (gSickBeats->unk1F4) {
+        gSickBeats->unk1F4--;
+        if ((!gSickBeats->unk1F4) && (gSickBeats->unk1F1 > -1)) {
+            gSickBeats->unk1F0 = gSickBeats->unk1F1;
+            gSickBeats->unk1F1 = -1;
+            gSickBeats->unk1F2 = 0;
         }
     }
 }
@@ -468,9 +468,9 @@ void sick_beats_engine_update(void) {
     func_08042e80();
     func_08043534();
     func_08042934();
-    if (gSickBeatsInfo->unk202) {
-        if (gSickBeatsInfo->unk200) {
-            gSickBeatsInfo->unk200--;
+    if (gSickBeats->unk202) {
+        if (gSickBeats->unk200) {
+            gSickBeats->unk200--;
         } else {
             if (D_03004afc & A_BUTTON) {
                 set_pause_beatscript_scene(FALSE);
@@ -480,24 +480,24 @@ void sick_beats_engine_update(void) {
 }
 
 void func_080435e8(s32 arg0) {
-    if ((gSickBeatsInfo->unk1F0 <= arg0) && (gSickBeatsInfo->unk1F1 <= arg0)) {
-        if ((gSickBeatsInfo->unk1F0 == 1 || gSickBeatsInfo->unk1F0 == 2) && (arg0 == 1)) {
+    if ((gSickBeats->unk1F0 <= arg0) && (gSickBeats->unk1F1 <= arg0)) {
+        if ((gSickBeats->unk1F0 == 1 || gSickBeats->unk1F0 == 2) && (arg0 == 1)) {
             arg0 = 2;
         }
-        gSickBeatsInfo->unk1F1 = arg0;
+        gSickBeats->unk1F1 = arg0;
     }
 }
 
 
 void func_08043634(struct Beatscript *arg0) {
-    gSickBeatsInfo->unk1FC = arg0;
+    gSickBeats->unk1FC = arg0;
 }
 
 // Engine Event 0x05 (Endless Game Over?)
 void func_08043648(void) {
     func_0804d160(D_03005380, anim_sick_beats_game_over, 0, 0x78, 0x50, 0x400, 1, 0, 0);
-    gSickBeatsInfo->unk200 = 20;
-    D_030046a8->data.unk294[2] = gSickBeatsInfo->unk204[1].unkA; // high score
+    gSickBeats->unk200 = 20;
+    D_030046a8->data.unk294[2] = gSickBeats->unk204[1].unkA; // high score
 }
 
 // Game Engine Stop
@@ -507,11 +507,11 @@ void sick_beats_engine_stop(void) {
 
 struct SickBeatsVirusData *func_080436a8(u32 arg0) {
     u32 i = 0;
-    struct SickBeatsVirus *virus = &gSickBeatsInfo->virus;
-    struct SickBeatsVirusData *virusData = gSickBeatsInfo->virus.unk130;
+    struct SickBeatsVirus *virus = &gSickBeats->virus;
+    struct SickBeatsVirusData *virusData = gSickBeats->virus.unk130;
     struct SickBeatsVirusData *virusData1 = virus->unk130;
 
-    for (i; (i < ARRAY_SIZE(gSickBeatsInfo->virus.unk130)); virusData++, virusData1++, i++) {
+    for (i; (i < ARRAY_COUNT(gSickBeats->virus.unk130)); virusData++, virusData1++, i++) {
         if (virusData->unk0 && virusData->unk6 == arg0) return virusData1;
     }
     
@@ -520,7 +520,7 @@ struct SickBeatsVirusData *func_080436a8(u32 arg0) {
 
 // Cue - Spawn
 void sick_beats_cue_spawn(struct Cue *cue, struct SickBeatsCue *info, u32 unused) {
-    struct SickBeatsVirus *virus = &gSickBeatsInfo->virus;
+    struct SickBeatsVirus *virus = &gSickBeats->virus;
     struct VirusAction *act;
     u32 isVirusHit = FALSE;
     
@@ -585,7 +585,7 @@ void sick_beats_cue_spawn(struct Cue *cue, struct SickBeatsCue *info, u32 unused
 
 // Cue - Update
 u32 sick_beats_cue_update(struct Cue *cue, struct SickBeatsCue *info, u32 runningTime, u32 duration) {
-    struct SickBeatsVirus *virus = &gSickBeatsInfo->virus;
+    struct SickBeatsVirus *virus = &gSickBeats->virus;
 
     if (!virus->unk28[info->unk4]) {
         return TRUE;
@@ -629,7 +629,7 @@ u32 sick_beats_cue_update(struct Cue *cue, struct SickBeatsCue *info, u32 runnin
             affine_sprite_set_y(info->unk8, math_lerp(104, 138, runningTime, beats_to_ticks(0x30)));
             if (!info->unk0_b4 && (runningTime > beats_to_ticks(0x28))) {
                 info->unk0_b4 = TRUE;
-                if (!gSickBeatsInfo->unk202) {
+                if (!gSickBeats->unk202) {
                     func_080432d8(1);
                 }
             }
@@ -655,7 +655,7 @@ void func_08043a2c(u32 arg0, u32 arg1, struct AffineSprite *arg2) {
 
 struct AffineSprite *func_08043a38(struct SickBeatsCue *info, struct Animation *anim, struct SequenceData *seqData) {
     s16 virusEffectSprite;
-    struct SickBeatsVirus *virus = &gSickBeatsInfo->virus;
+    struct SickBeatsVirus *virus = &gSickBeats->virus;
     struct AffineSprite *baseVirusAfSprite = info->unk8;
     struct AffineSprite *nextVirusAfSprite = NULL; // hit animation
     s32 virusX = affine_sprite_get_base_sprite_x(info->unk8);
@@ -728,7 +728,7 @@ struct AffineSprite *func_08043a38(struct SickBeatsCue *info, struct Animation *
 void sick_beats_cue_hit(struct Cue *cue, struct SickBeatsCue *info, u32 pressed, u32 released) {
     if (func_08043a38(info, anim_fork_hit_virus, &s_f_virus_hit_seqData)) {
         func_080435e8(1);
-        if (gSickBeatsInfo->unk1F1 == 2) {
+        if (gSickBeats->unk1F1 == 2) {
             func_08042d4c(5);
             func_08042b30(7);
         } else {
@@ -802,21 +802,21 @@ void sick_beats_input_event(u32 pressed, u32 released) {
 
 // Common Event 0 (Beat Animation)
 void sick_beats_common_beat_animation(void) {
-    struct SickBeatsYellowMicrobe *ymicrobe = &gSickBeatsInfo->yellowMicrobe;
+    struct SickBeatsYellowMicrobe *ymicrobe = &gSickBeats->yellowMicrobe;
     
-    if (gSickBeatsInfo->unk1F2 == 0) {
-        func_0804d8f8(D_03005380, gSickBeatsInfo->unk1F6, sick_beats_doctor_anim[gSickBeatsInfo->unk1F0], 0, 1, 0x7f, 0);
+    if (gSickBeats->unk1F2 == 0) {
+        func_0804d8f8(D_03005380, gSickBeats->unk1F6, sick_beats_doctor_anim[gSickBeats->unk1F0], 0, 1, 0x7f, 0);
     }
-    gSickBeatsInfo->unk1F2++;
-    if (gSickBeatsInfo->unk1F2 >= D_089e92f0[gSickBeatsInfo->unk1F0]) {
-        gSickBeatsInfo->unk1F0 = 0;
+    gSickBeats->unk1F2++;
+    if (gSickBeats->unk1F2 >= D_089e92f0[gSickBeats->unk1F0]) {
+        gSickBeats->unk1F0 = 0;
         func_080435e8(0);
     }
-    gSickBeatsInfo->unk1F4 = beats_to_ticks(12);
+    gSickBeats->unk1F4 = beats_to_ticks(12);
     if (ymicrobe->unk2 == 0) {
         func_0804cebc(D_03005380, ymicrobe->sprite, 0);
     }
-    func_0804cebc(D_03005380, gSickBeatsInfo->unk1F8, 1);
+    func_0804cebc(D_03005380, gSickBeats->unk1F8, 1);
 }
 
 // Common Event 1 (Display Text, Unimplemented)
