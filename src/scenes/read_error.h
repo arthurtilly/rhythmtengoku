@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct ReadErrorSceneInfo {
+struct ReadErrorSceneData {
     u32 scriptIsReady;
 };
 

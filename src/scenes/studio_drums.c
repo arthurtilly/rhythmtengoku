@@ -4,7 +4,7 @@
 
 
 // For readability.
-#define gStudioInfo ((struct StudioSceneInfo *)D_030046a4)
+#define gStudio ((struct StudioSceneData *)gCurrentSceneData)
 
 
 /* STUDIO */
@@ -39,16 +39,16 @@ const char *studio_drum_list_get_string(s32 line) {
     }
 
     strint(numString, line + 1);
-    memcpy(gStudioInfo->string, "", 1);
-    strcat(gStudioInfo->string, "\0048.");
+    memcpy(gStudio->string, "", 1);
+    strcat(gStudio->string, "\0048.");
 
     if (D_030046a8->data.drumKitsUnlocked[line]) {
-        strcat(gStudioInfo->string, studio_drum_kit_names[line]);
+        strcat(gStudio->string, studio_drum_kit_names[line]);
     } else {
-        strcat(gStudioInfo->string, "？？？");
+        strcat(gStudio->string, "？？？");
     }
 
-    return gStudioInfo->string;
+    return gStudio->string;
 }
 
 
@@ -60,12 +60,12 @@ void studio_drum_list_on_scroll(s32 arg, u32 current, u32 previous) {
 
 // Drum Kit List - Init.
 void studio_drum_list_init(s32 state, s32 selItem, s32 selLine) {
-    gStudioInfo->drumListState = state;
-    gStudioInfo->drumList = create_new_listbox(
+    gStudio->drumListState = state;
+    gStudio->drumList = create_new_listbox(
             get_current_mem_id(), 10, 128, 22, 0, 1, 3, 358, 16, 0x8800, 16,
             selItem, 15, anim_studio_selection_item, 2, 6, clamp_int32(selLine, 0, 5),
             studio_drum_list_get_string, NULL);
-    listbox_run_func_on_scroll(gStudioInfo->drumList, studio_drum_list_on_scroll, 0);
+    listbox_run_func_on_scroll(gStudio->drumList, studio_drum_list_on_scroll, 0);
 }
 
 
@@ -76,14 +76,14 @@ void studio_drum_list_exit_to_drumming(void) {
 
     func_080006f0(get_scene_trans_target(&scene_studio), 1);
 
-    songItem = listbox_get_sel_item(gStudioInfo->songList);
-    drumItem = listbox_get_sel_item(gStudioInfo->drumList);
+    songItem = listbox_get_sel_item(gStudio->songList);
+    drumItem = listbox_get_sel_item(gStudio->drumList);
     studio_set_current_kit(drumItem);
     set_next_scene(&D_089d49d4);
     set_scene_trans_target(&D_089d49d4, &scene_studio);
     set_scene_trans_var(&D_089d49d4, songItem);
     func_0801d968(script_scene_studio_exit);
-    gStudioInfo->scriptIsReady = FALSE;
+    gStudio->scriptIsReady = FALSE;
 }
 
 
@@ -92,7 +92,7 @@ void studio_drum_list_warning_memory_result(s32 event, s32 arg) {
     if (event == 1) {
         studio_drum_list_exit_to_drumming();
     } else {
-        gStudioInfo->sceneState = STUDIO_STATE_NAV_DRUM_LIST;
+        gStudio->sceneState = STUDIO_STATE_NAV_DRUM_LIST;
     }
 }
 
@@ -126,7 +126,7 @@ void studio_drum_list_update(void) {
     u32 remaining, warningReason;
     u32 event = STUDIO_LIST_EV_NONE;
 
-    if (!listbox_is_busy(gStudioInfo->drumList) && studio_scene_can_receive_inputs()) {
+    if (!listbox_is_busy(gStudio->drumList) && studio_scene_can_receive_inputs()) {
         if (D_03004afc & A_BUTTON) {
             event = STUDIO_LIST_EV_CONFIRM;
         }
@@ -143,7 +143,7 @@ void studio_drum_list_update(void) {
 
     switch(event) {
         case STUDIO_LIST_EV_CONFIRM:
-            if (!D_030046a8->data.drumKitsUnlocked[listbox_get_sel_item(gStudioInfo->drumList)]) {
+            if (!D_030046a8->data.drumKitsUnlocked[listbox_get_sel_item(gStudio->drumList)]) {
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_error_seqData);
             } else {
                 remaining = get_remaining_replay_data_space(&D_030046a8->data.drumReplaysAlloc) >> 8;
@@ -170,18 +170,18 @@ void studio_drum_list_update(void) {
 
         case STUDIO_LIST_EV_CANCEL:
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
-            listbox_hide_sel_sprite(gStudioInfo->drumList);
-            listbox_show_sel_sprite(gStudioInfo->optionList);
+            listbox_hide_sel_sprite(gStudio->drumList);
+            listbox_show_sel_sprite(gStudio->optionList);
             studio_scene_pan_to_menu(STUDIO_MENU_OPTION_LIST);
-            gStudioInfo->sceneState = STUDIO_STATE_NAV_OPTION_LIST;
+            gStudio->sceneState = STUDIO_STATE_NAV_OPTION_LIST;
             break;
 
         case STUDIO_LIST_EV_SCROLL_UP:
-            listbox_scroll_up(gStudioInfo->drumList);
+            listbox_scroll_up(gStudio->drumList);
             break;
 
         case STUDIO_LIST_EV_SCROLL_DOWN:
-            listbox_scroll_down(gStudioInfo->drumList);
+            listbox_scroll_down(gStudio->drumList);
             break;
     }
 }

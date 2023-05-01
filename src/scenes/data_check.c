@@ -4,7 +4,7 @@
 
 
 // For readability.
-#define gDataCheckInfo ((struct DataCheckSceneInfo *)D_030046a4)
+#define gDataCheck ((struct DataCheckSceneData *)gCurrentSceneData)
 
 
 /* DATA CHECK */
@@ -50,21 +50,21 @@ void data_check_scene_start(void *sVar, s32 dArg) {
 
     func_08007324(FALSE);
     func_080073f0();
-    gDataCheckInfo->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
-    gDataCheckInfo->objFont = func_0800c660(0x300, 4);
+    gDataCheck->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
+    gDataCheck->objFont = func_0800c660(0x300, 4);
 
     for (i = 0; i < 10; i++) {
-        gDataCheckInfo->textLineSprites[i] = -1;
+        gDataCheck->textLineSprites[i] = -1;
     }
 
     data_check_print_line(0, 1, "ƒQ[ƒ€ƒvƒŒƒC—š—ð"); // Gameplay Logs
-    gDataCheckInfo->currentPage = 0;
-    gDataCheckInfo->totalPages = game_select_get_total_levels();
-    data_check_print_page(gDataCheckInfo->currentPage);
+    gDataCheck->currentPage = 0;
+    gDataCheck->totalPages = game_select_get_total_levels();
+    data_check_print_page(gDataCheck->currentPage);
 
-    import_all_scene_objects(D_03005380, gDataCheckInfo->objFont, data_check_scene_objects, D_0300558c);
+    import_all_scene_objects(D_03005380, gDataCheck->objFont, data_check_scene_objects, D_0300558c);
     data_check_scene_init_gfx1();
-    gDataCheckInfo->scriptIsReady = FALSE;
+    gDataCheck->scriptIsReady = FALSE;
     set_next_scene(&scene_debug_menu);
 }
 
@@ -79,31 +79,31 @@ void data_check_scene_update(void *sVar, s32 dArg) {
     s32 previousPage;
 
     if (data_check_scene_can_receive_inputs()) {
-        previousPage = gDataCheckInfo->currentPage;
+        previousPage = gDataCheck->currentPage;
 
         if (D_030053b8 & DPAD_LEFT) {
-            gDataCheckInfo->currentPage--;
+            gDataCheck->currentPage--;
         }
 
         if (D_030053b8 & DPAD_RIGHT) {
-            gDataCheckInfo->currentPage++;
+            gDataCheck->currentPage++;
         }
 
-        if (gDataCheckInfo->currentPage < 0) {
-            gDataCheckInfo->currentPage = gDataCheckInfo->totalPages - 1;
+        if (gDataCheck->currentPage < 0) {
+            gDataCheck->currentPage = gDataCheck->totalPages - 1;
         }
 
-        if (gDataCheckInfo->currentPage > gDataCheckInfo->totalPages - 1) {
-            gDataCheckInfo->currentPage = 0;
+        if (gDataCheck->currentPage > gDataCheck->totalPages - 1) {
+            gDataCheck->currentPage = 0;
         }
 
-        if (gDataCheckInfo->currentPage != previousPage) {
-            data_check_print_page(gDataCheckInfo->currentPage);
+        if (gDataCheck->currentPage != previousPage) {
+            data_check_print_page(gDataCheck->currentPage);
         }
 
         if (D_03004afc & B_BUTTON) {
             set_pause_beatscript_scene(FALSE);
-            gDataCheckInfo->scriptIsReady = FALSE;
+            gDataCheck->scriptIsReady = FALSE;
         }
     }
 }
@@ -111,7 +111,7 @@ void data_check_scene_update(void *sVar, s32 dArg) {
 
 // Communicate with Script
 u32 data_check_scene_can_receive_inputs(void) {
-    if (gDataCheckInfo->scriptIsReady) {
+    if (gDataCheck->scriptIsReady) {
         return TRUE;
     }
 
@@ -126,7 +126,7 @@ void data_check_print_line(u32 line, u32 palette, const char *string) {
     u32 tileY;
     s16 sprite;
 
-    sprite = gDataCheckInfo->textLineSprites[line];
+    sprite = gDataCheck->textLineSprites[line];
 
     if (sprite >= 0) {
         anim = (void *)func_0804ddb0(D_03005380, sprite, 7);
@@ -141,7 +141,7 @@ void data_check_print_line(u32 line, u32 palette, const char *string) {
     anim = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, tileY, TEXT_PRINTER_FONT_SMALL, string, TEXT_ANCHOR_BOTTOM_LEFT, 0, 256);
     sprite = func_0804d160(D_03005380, anim, 0, 8, (line * 16) + 8, 0, 0, 0, 0);
     func_0804d8c4(D_03005380, sprite, palette + 8);
-    gDataCheckInfo->textLineSprites[line] = sprite;
+    gDataCheck->textLineSprites[line] = sprite;
 }
 
 

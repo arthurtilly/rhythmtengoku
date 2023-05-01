@@ -4,7 +4,6 @@
 #include "bitmap_font.h"
 #include "memory_heap.h"
 
-asm(".include \"include/gba.inc\"");//Temporary
 
 static struct Scene *gCurrentScene;
 static struct Scene *gNextScene;
@@ -232,7 +231,7 @@ struct SceneTransition *get_scene_trans(struct Scene *scene) {
 
 
 // Get Transition Next Scene
-const struct Scene *get_scene_trans_target(struct Scene *scene) {
+struct Scene *get_scene_trans_target(struct Scene *scene) {
 	struct SceneTransition *transData = get_scene_trans(scene);
 
 	if (transData == NULL) {

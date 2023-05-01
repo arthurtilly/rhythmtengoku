@@ -3,7 +3,7 @@
 
 
 // For readability.
-#define gTemplateInfo ((struct TemplateSceneInfo *)D_030046a4)
+#define gTemplate ((struct TemplateSceneData *)gCurrentSceneData)
 
 
 /* TEMPLATE SCENE */
@@ -45,11 +45,11 @@ void template_scene_start(void *sceneVar, s32 dataArg) {
     func_08007324(FALSE);
     func_080073f0();
 
-    gTemplateInfo->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
-    gTemplateInfo->objFont = func_0800c660(0x300, 4);
-    import_all_scene_objects(D_03005380, gTemplateInfo->objFont, template_scene_objects, D_0300558c);
+    gTemplate->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
+    gTemplate->objFont = func_0800c660(0x300, 4);
+    import_all_scene_objects(D_03005380, gTemplate->objFont, template_scene_objects, D_0300558c);
     template_scene_init_gfx1();
-    gTemplateInfo->scriptIsReady = FALSE;
+    gTemplate->scriptIsReady = FALSE;
 }
 
 
@@ -63,7 +63,7 @@ void template_scene_update(void *sceneVar, s32 dataArg) {
     if (template_scene_script_is_ready()) {
         if (D_03004afc & SELECT_BUTTON) {
             set_pause_beatscript_scene(FALSE);
-            gTemplateInfo->scriptIsReady = FALSE;
+            gTemplate->scriptIsReady = FALSE;
         }
     }
 }
@@ -71,7 +71,7 @@ void template_scene_update(void *sceneVar, s32 dataArg) {
 
 // Communicate with Script
 u32 template_scene_script_is_ready(void) {
-    if (gTemplateInfo->scriptIsReady) {
+    if (gTemplate->scriptIsReady) {
         return TRUE;
     } else {
         return FALSE;

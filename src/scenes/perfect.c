@@ -9,7 +9,7 @@
 
 
 // For readability.
-#define gPerfectInfo ((struct PerfectSceneInfo *)D_030046a4)
+#define gPerfect ((struct PerfectSceneData *)gCurrentSceneData)
 
 extern struct SequenceData s_menu_kettei2_seqData;
 
@@ -60,13 +60,13 @@ void perfect_scene_start(void *sceneVar, s32 dataArg) {
     func_080073f0();
     perfect_scene_init_gfx1();
 
-    gPerfectInfo->campaignID = get_current_campaign();
+    gPerfect->campaignID = get_current_campaign();
 
-    if ((gPerfectInfo->campaignID >= 0) && func_080191b8()) {
-        giftType = campaign_gifts_table[gPerfectInfo->campaignID].type;
-        giftID = campaign_gifts_table[gPerfectInfo->campaignID].id;
+    if ((gPerfect->campaignID >= 0) && func_080191b8()) {
+        giftType = campaign_gifts_table[gPerfect->campaignID].type;
+        giftID = campaign_gifts_table[gPerfect->campaignID].id;
 
-        if (!D_030046a8->data.campaignsCleared[gPerfectInfo->campaignID]) {
+        if (!D_030046a8->data.campaignsCleared[gPerfect->campaignID]) {
             switch (giftType) {
                 case CAMPAIGN_GIFT_SONG:
                     save_studio_song(giftID, -1, 1, 0);
@@ -82,7 +82,7 @@ void perfect_scene_start(void *sceneVar, s32 dataArg) {
             }
 
             D_030046a8->data.totalPerfects++;
-            D_030046a8->data.campaignsCleared[gPerfectInfo->campaignID] = TRUE;
+            D_030046a8->data.campaignsCleared[gPerfect->campaignID] = TRUE;
 
             if (D_030046a8->data.totalPerfects == TOTAL_PERFECT_CAMPAIGNS) {
                 unlock_all_unassigned_campaign_gift_songs();
@@ -93,24 +93,24 @@ void perfect_scene_start(void *sceneVar, s32 dataArg) {
             results_save_to_cart(LEVEL_STATE_NULL);
         }
     } else {
-        gPerfectInfo->campaignID = 0;
-        giftType = campaign_gifts_table[gPerfectInfo->campaignID].type;
-        giftID = campaign_gifts_table[gPerfectInfo->campaignID].id;
+        gPerfect->campaignID = 0;
+        giftType = campaign_gifts_table[gPerfect->campaignID].type;
+        giftID = campaign_gifts_table[gPerfect->campaignID].id;
     }
 
-    gPerfectInfo->printer = text_printer_create_new(get_current_mem_id(), 4, 238, 32);
-    text_printer_set_x_y(gPerfectInfo->printer, 1, 88);
-    text_printer_set_layer(gPerfectInfo->printer, 0x800);
-    text_printer_set_colors(gPerfectInfo->printer, 1);
-    text_printer_set_palette(gPerfectInfo->printer, 4);
-    text_printer_set_line_spacing(gPerfectInfo->printer, 16);
-    text_printer_center_by_content(gPerfectInfo->printer, TRUE);
+    gPerfect->printer = text_printer_create_new(get_current_mem_id(), 4, 238, 32);
+    text_printer_set_x_y(gPerfect->printer, 1, 88);
+    text_printer_set_layer(gPerfect->printer, 0x800);
+    text_printer_set_colors(gPerfect->printer, 1);
+    text_printer_set_palette(gPerfect->printer, 4);
+    text_printer_set_line_spacing(gPerfect->printer, 16);
+    text_printer_center_by_content(gPerfect->printer, TRUE);
 
     campaignsLeft = TOTAL_PERFECT_CAMPAIGNS - D_030046a8->data.totalPerfects;
     strint(count, campaignsLeft);
-    memcpy(gPerfectInfo->string, "\0021" "\0011" "\001C" "\0030" "\001s" "\0054" "\0018" "「", 17);
-    strcat(gPerfectInfo->string, get_campaign_gift_title(gPerfectInfo->campaignID, FALSE));
-    strcat(gPerfectInfo->string, "」");
+    memcpy(gPerfect->string, "\0021" "\0011" "\001C" "\0030" "\001s" "\0054" "\0018" "「", 17);
+    strcat(gPerfect->string, get_campaign_gift_title(gPerfect->campaignID, FALSE));
+    strcat(gPerfect->string, "」");
 
     if (giftType == CAMPAIGN_GIFT_SONG) {
         switch (giftID) {
@@ -119,28 +119,28 @@ void perfect_scene_start(void *sceneVar, s32 dataArg) {
                 break;
 
             default:
-                strcat(gPerfectInfo->string, "の曲");
+                strcat(gPerfect->string, "の曲");
                 break;
         }
     }
 
-    strcat(gPerfectInfo->string, "\0020" "\0010" "をプレゼント！\n"); // You've earned a gift!
-    strcat(gPerfectInfo->string, perfect_gift_directive_text[giftType]);
+    strcat(gPerfect->string, "\0020" "\0010" "をプレゼント！\n"); // You've earned a gift!
+    strcat(gPerfect->string, perfect_gift_directive_text[giftType]);
 
     if (campaignsLeft > 0) {
-        strcat(gPerfectInfo->string, "プレゼントは　あと　" "\0021" "\0011"); // There are still...
-        strcat(gPerfectInfo->string, count);
-        strcat(gPerfectInfo->string, "コ" "\0020" "\0010" "　あるから、\n" // ...gifts
+        strcat(gPerfect->string, "プレゼントは　あと　" "\0021" "\0011"); // There are still...
+        strcat(gPerfect->string, count);
+        strcat(gPerfect->string, "コ" "\0020" "\0010" "　あるから、\n" // ...gifts
                                      "他のキャンペーンにもチャレンジしてみてネ！"); // left to get. Keep going!
     } else {
-        strcat(gPerfectInfo->string, "プレゼントは　これで" "\0021" "\0011" // 0 gifts left.
+        strcat(gPerfect->string, "プレゼントは　これで" "\0021" "\0011" // 0 gifts left.
                                      "オシマイ" "\0020" "\0010" "です。\n"); // You finally got them all!
-        strcat(gPerfectInfo->string, "パーフェクトキャンペーン、コンプリートです！"); // Congratulations!
+        strcat(gPerfect->string, "パーフェクトキャンペーン、コンプリートです！"); // Congratulations!
     }
 
-    text_printer_set_string(gPerfectInfo->printer, gPerfectInfo->string);
+    text_printer_set_string(gPerfect->printer, gPerfect->string);
 
-    gPerfectInfo->scriptIsReady = FALSE;
+    gPerfect->scriptIsReady = FALSE;
 }
 
 
@@ -169,17 +169,17 @@ void perfect_scene_update(void *sceneVar, s32 dataArg) {
         if (D_03004afc & A_BUTTON) {
             play_sound(&s_menu_kettei2_seqData);
             set_pause_beatscript_scene(FALSE);
-            gPerfectInfo->scriptIsReady = FALSE;
+            gPerfect->scriptIsReady = FALSE;
         }
     }
 
-    text_printer_update(gPerfectInfo->printer);
+    text_printer_update(gPerfect->printer);
 }
 
 
 // Communicate with Script
 u32 perfect_scene_script_is_ready(void) {
-    if (gPerfectInfo->scriptIsReady) {
+    if (gPerfect->scriptIsReady) {
         return TRUE;
     } else {
         return FALSE;

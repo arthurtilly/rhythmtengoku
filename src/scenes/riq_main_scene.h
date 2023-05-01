@@ -98,7 +98,7 @@ extern void dev_text_set_enable_font_pal_2(struct DebugText *debugText, u32 enab
 
 
 // Types (Soft Reset):
-struct SoftResetSceneInfo {
+struct SoftResetSceneData {
     u8 state;
 };
 

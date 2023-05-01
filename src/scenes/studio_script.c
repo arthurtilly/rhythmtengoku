@@ -4,7 +4,7 @@
 
 
 // For readability.
-#define gStudioInfo ((struct StudioSceneInfo *)D_030046a4)
+#define gStudio ((struct StudioSceneData *)gCurrentSceneData)
 
 
 static u8 sStudioDrummerMode; // Studio Drummer Mode
@@ -15,13 +15,13 @@ static u8 sStudioDrummerMode; // Studio Drummer Mode
 
 // Get Studio Drummer Script (Script Function)
 const struct Beatscript *get_studio_mus_script(void) {
-    return gStudioInfo->drumScript;
+    return gStudio->drumScript;
 }
 
 
 // Fade Music Out (Script Function)
 void fade_out_studio_mus(void) {
-    fade_out_soundplayer(gStudioInfo->musicPlayer, 16);
+    fade_out_soundplayer(gStudio->musicPlayer, 16);
 }
 
 

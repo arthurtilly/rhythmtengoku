@@ -1101,8 +1101,8 @@ void game_select_read_inputs(void) {
     if (D_03004afc & B_BUTTON) {
         set_next_scene(&scene_main_menu);
         set_scene_trans_var(&scene_main_menu, 0);
-        D_030046a8->data.gsCursorX = D_030046a8->data.recentLevelX = gGameSelectInfo->cursorX;
-        D_030046a8->data.gsCursorY = D_030046a8->data.recentLevelY = gGameSelectInfo->cursorY;
+        D_030046a8->data.gsCursorX = D_030046a8->data.recentLevelX = gGameSelect->cursorX;
+        D_030046a8->data.gsCursorY = D_030046a8->data.recentLevelY = gGameSelect->cursorY;
         D_030046a8->data.recentLevelState = LEVEL_STATE_NULL;
         write_game_save_data();
         set_pause_beatscript_scene(FALSE);

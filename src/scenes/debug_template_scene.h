@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct TemplateSceneInfo {
+struct TemplateSceneData {
     struct BitmapFontBG *bgFont;
     struct BitmapFontOBJ *objFont;
     u32 scriptIsReady;

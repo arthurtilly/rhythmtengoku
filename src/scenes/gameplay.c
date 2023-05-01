@@ -1088,13 +1088,13 @@ void gameplay_init_overlay(void) {
 
     memID = func_0804e0c0(D_03005380);
     func_0804e0bc(D_03005380, 16);
-    gGameplayInfo->pauseSprite = func_0804d160(D_03005380, anim_gameplay_pause_title, 0, 120, 80, 0, 1, 0, 0x8000);
-    gGameplayInfo->pauseOptionsSprite = func_0804d160(D_03005380, anim_gameplay_pause_option1, 0, 120, 80, 0, 1, 0, 0x8000);
-    gGameplayInfo->skipTutorialSprite = func_0804d160(D_03005380, anim_gameplay_skip_icon, 0, 120, 80, 0, 0, 0, 0x8000);
-    gGameplayInfo->aButtonSprite = func_0804d160(D_03005380, anim_gameplay_text_button_black, 0, 64, 64, 0x64, 1, 0, 0x8000);
-    gGameplayInfo->perfectSprite = func_0804d160(D_03005380, anim_gameplay_perfect_icon, 0, 230, 10, 0x5A, 1, 0x7f, 0x8000);
-    func_0804da68(D_03005380, gGameplayInfo->pauseSprite, 1);
-    func_0804da68(D_03005380, gGameplayInfo->pauseOptionsSprite, 1);
+    gGameplay->pauseSprite = func_0804d160(D_03005380, anim_gameplay_pause_title, 0, 120, 80, 0, 1, 0, 0x8000);
+    gGameplay->pauseOptionsSprite = func_0804d160(D_03005380, anim_gameplay_pause_option1, 0, 120, 80, 0, 1, 0, 0x8000);
+    gGameplay->skipTutorialSprite = func_0804d160(D_03005380, anim_gameplay_skip_icon, 0, 120, 80, 0, 0, 0, 0x8000);
+    gGameplay->aButtonSprite = func_0804d160(D_03005380, anim_gameplay_text_button_black, 0, 64, 64, 0x64, 1, 0, 0x8000);
+    gGameplay->perfectSprite = func_0804d160(D_03005380, anim_gameplay_perfect_icon, 0, 230, 10, 0x5A, 1, 0x7f, 0x8000);
+    func_0804da68(D_03005380, gGameplay->pauseSprite, 1);
+    func_0804da68(D_03005380, gGameplay->pauseOptionsSprite, 1);
     func_0804e158(D_03005380, 16, 960);
     func_0804e170(D_03005380, 16, 14);
     func_0804e0bc(D_03005380, memID);

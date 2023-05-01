@@ -5,7 +5,7 @@
 
 
 // For readability.
-#define gReadingInfo ((struct ReadingSceneInfo *)D_030046a4)
+#define gReading ((struct ReadingSceneData *)gCurrentSceneData)
 
 enum ReadingEventsEnum {
     DO_NOTHING,
@@ -41,7 +41,7 @@ void reading_scene_init_gfx3(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), gReadingInfo->material->graphics, 0x3000);
+    task = func_08002ee0(get_current_mem_id(), gReading->material->graphics, 0x3000);
     run_func_after_task(task, reading_scene_init_gfx4, 0);
 }
 
@@ -75,18 +75,18 @@ void reading_scene_start(void *sceneVar, s32 dataArg) {
         material = &reading_material_error;
     }
 
-    gReadingInfo->material = material;
+    gReading->material = material;
 
     func_08007324(FALSE);
     func_080073f0();
     reading_scene_init_gfx1();
 
-    gReadingInfo->pageState = PAGE_IDLE;
-    gReadingInfo->pagePosY = 0;
-    gReadingInfo->iconPrev = func_0804d160(D_03005380, anim_reading_icon_prev, 0, 0, 0, 0x4864, 0, 0, 0x8000);
-    gReadingInfo->iconNext = func_0804d160(D_03005380, anim_reading_icon_next, 0, 0, 0, 0x4864, 0, 0, 0x8000);
+    gReading->pageState = PAGE_IDLE;
+    gReading->pagePosY = 0;
+    gReading->iconPrev = func_0804d160(D_03005380, anim_reading_icon_prev, 0, 0, 0, 0x4864, 0, 0, 0x8000);
+    gReading->iconNext = func_0804d160(D_03005380, anim_reading_icon_next, 0, 0, 0, 0x4864, 0, 0, 0x8000);
     func_0804d160(D_03005380, anim_reading_title_bar, 0, 120, 0, 0x48C8, 0, 0, 0);
-    gReadingInfo->currentPage = 0;
+    gReading->currentPage = 0;
 
     titlePrinter = text_printer_create_new(get_current_mem_id(), 1, 232, 32);
     text_printer_set_x_y(titlePrinter, 4, 7);
@@ -97,30 +97,30 @@ void reading_scene_start(void *sceneVar, s32 dataArg) {
     text_printer_update(titlePrinter);
     text_printer_update(titlePrinter);
 
-    gReadingInfo->printer = text_printer_create_new(get_current_mem_id(), 9, 230, 30);
-    text_printer_set_x_y(gReadingInfo->printer, 8, 24);
-    text_printer_set_layer(gReadingInfo->printer, 0x8800);
-    text_printer_set_x_y_controller(gReadingInfo->printer, NULL, &gReadingInfo->pagePosY);
-    text_printer_set_string(gReadingInfo->printer, material->text);
-    text_printer_export_data(gReadingInfo->printer, &gReadingInfo->pageData[0]);
+    gReading->printer = text_printer_create_new(get_current_mem_id(), 9, 230, 30);
+    text_printer_set_x_y(gReading->printer, 8, 24);
+    text_printer_set_layer(gReading->printer, 0x8800);
+    text_printer_set_x_y_controller(gReading->printer, NULL, &gReading->pagePosY);
+    text_printer_set_string(gReading->printer, material->text);
+    text_printer_export_data(gReading->printer, &gReading->pageData[0]);
 
-    gReadingInfo->scriptIsReady = FALSE;
+    gReading->scriptIsReady = FALSE;
 }
 
 
 // Update UI
 void reading_scene_update_page(void) {
-    if (!text_printer_is_busy(gReadingInfo->printer)) {
-        func_0804d770(D_03005380, gReadingInfo->iconPrev, gReadingInfo->currentPage != 0);
-        func_0804d770(D_03005380, gReadingInfo->iconNext, text_printer_get_text(gReadingInfo->printer) != NULL);
+    if (!text_printer_is_busy(gReading->printer)) {
+        func_0804d770(D_03005380, gReading->iconPrev, gReading->currentPage != 0);
+        func_0804d770(D_03005380, gReading->iconNext, text_printer_get_text(gReading->printer) != NULL);
     }
 
-    if (gReadingInfo->pageState == PAGE_IDLE) {
+    if (gReading->pageState == PAGE_IDLE) {
         return;
     }
 
-    if (!text_printer_is_busy(gReadingInfo->printer)) {
-        s32 y = gReadingInfo->relativeY;
+    if (!text_printer_is_busy(gReading->printer)) {
+        s32 y = gReading->relativeY;
 
         if (y < 0) {
             y = -y;
@@ -132,36 +132,36 @@ void reading_scene_update_page(void) {
             y = 0;
         }
 
-        if (gReadingInfo->relativeY < 0) {
+        if (gReading->relativeY < 0) {
             y = -y;
         }
 
-        gReadingInfo->relativeY = y;
+        gReading->relativeY = y;
     }
 
-    gReadingInfo->pagePosY = gReadingInfo->targetY + gReadingInfo->relativeY;
+    gReading->pagePosY = gReading->targetY + gReading->relativeY;
 
-    if (gReadingInfo->relativeY == 0) {
-        switch (gReadingInfo->pageState) {
+    if (gReading->relativeY == 0) {
+        switch (gReading->pageState) {
             default:
-                gReadingInfo->pageState = PAGE_IDLE;
+                gReading->pageState = PAGE_IDLE;
                 break;
 
             case PAGE_SCROLLING_DOWN:
-                gReadingInfo->targetY = 0;
-                gReadingInfo->relativeY = -SCREEN_HEIGHT;
-                gReadingInfo->pageState = PAGE_SCROLLED_DOWN;
-                gReadingInfo->currentPage++;
-                text_printer_resume(gReadingInfo->printer);
-                text_printer_export_data(gReadingInfo->printer, &gReadingInfo->pageData[gReadingInfo->currentPage]);
+                gReading->targetY = 0;
+                gReading->relativeY = -SCREEN_HEIGHT;
+                gReading->pageState = PAGE_SCROLLED_DOWN;
+                gReading->currentPage++;
+                text_printer_resume(gReading->printer);
+                text_printer_export_data(gReading->printer, &gReading->pageData[gReading->currentPage]);
                 break;
 
             case PAGE_SCROLLING_UP:
-                gReadingInfo->targetY = 0;
-                gReadingInfo->relativeY = SCREEN_HEIGHT;
-                gReadingInfo->pageState = PAGE_SCROLLED_UP;
-                gReadingInfo->currentPage--;
-                text_printer_import_data(gReadingInfo->printer, &gReadingInfo->pageData[gReadingInfo->currentPage]);
+                gReading->targetY = 0;
+                gReading->relativeY = SCREEN_HEIGHT;
+                gReading->pageState = PAGE_SCROLLED_UP;
+                gReading->currentPage--;
+                text_printer_import_data(gReading->printer, &gReading->pageData[gReading->currentPage]);
                 break;
         }
     }
@@ -174,17 +174,17 @@ void reading_scene_update(void *sceneVar, s32 dataArg) {
 
     if (reading_scene_can_receive_inputs()) {
         if (D_03004ac0 & DPAD_UP) {
-            if (gReadingInfo->currentPage > 0) {
+            if (gReading->currentPage > 0) {
                 event = SCROLL_TO_PREV;
             }
         }
         if (D_03004ac0 & DPAD_DOWN) {
-            if ((text_printer_get_text(gReadingInfo->printer) != NULL) && (gReadingInfo->currentPage < 31)) {
+            if ((text_printer_get_text(gReading->printer) != NULL) && (gReading->currentPage < 31)) {
                 event = SCROLL_TO_NEXT;
             }
         }
         if (D_03004afc & A_BUTTON) {
-            if ((text_printer_get_text(gReadingInfo->printer) != NULL) && (gReadingInfo->currentPage < 31)) {
+            if ((text_printer_get_text(gReading->printer) != NULL) && (gReading->currentPage < 31)) {
                 event = SCROLL_TO_NEXT;
             }
         }
@@ -195,42 +195,42 @@ void reading_scene_update(void *sceneVar, s32 dataArg) {
 
     switch (event) {
         case SCROLL_TO_PREV:
-            gReadingInfo->pageState = PAGE_SCROLLING_UP;
-            gReadingInfo->targetY = -SCREEN_HEIGHT;
-            gReadingInfo->relativeY = SCREEN_HEIGHT;
+            gReading->pageState = PAGE_SCROLLING_UP;
+            gReading->targetY = -SCREEN_HEIGHT;
+            gReading->relativeY = SCREEN_HEIGHT;
             play_sound(&s_f_env_paper_rev_seqData);
             break;
 
         case SCROLL_TO_NEXT:
-            gReadingInfo->pageState = PAGE_SCROLLING_DOWN;
-            gReadingInfo->targetY = SCREEN_HEIGHT;
-            gReadingInfo->relativeY = -SCREEN_HEIGHT;
+            gReading->pageState = PAGE_SCROLLING_DOWN;
+            gReading->targetY = SCREEN_HEIGHT;
+            gReading->relativeY = -SCREEN_HEIGHT;
             play_sound(&s_f_env_paper_seqData);
             break;
 
         case EXIT_SCENE:
             set_pause_beatscript_scene(FALSE);
-            gReadingInfo->scriptIsReady = FALSE;
+            gReading->scriptIsReady = FALSE;
             play_sound_in_player(SFX_PLAYER_3, &s_menu_cancel2_seqData);
             break;
     }
 
     reading_scene_update_page();
-    text_printer_update(gReadingInfo->printer);
-    text_printer_update(gReadingInfo->printer);
+    text_printer_update(gReading->printer);
+    text_printer_update(gReading->printer);
 }
 
 
 // Communicate with Script
 u32 reading_scene_can_receive_inputs(void) {
-    if (gReadingInfo->scriptIsReady) {
-        u32 busy = text_printer_is_busy(gReadingInfo->printer);
+    if (gReading->scriptIsReady) {
+        u32 busy = text_printer_is_busy(gReading->printer);
 
-        if (gReadingInfo->pageState == PAGE_SCROLLING_DOWN) {
+        if (gReading->pageState == PAGE_SCROLLING_DOWN) {
             busy = TRUE;
         }
 
-        if (gReadingInfo->pageState == PAGE_SCROLLING_UP) {
+        if (gReading->pageState == PAGE_SCROLLING_UP) {
             busy = TRUE;
         }
 
@@ -252,5 +252,5 @@ void reading_scene_stop(void *sceneVar, s32 dataArg) {
 
 // Play BGM
 void reading_scene_play_bgm(void) {
-    scene_set_music(gReadingInfo->material->sounds[0]);
+    scene_set_music(gReading->material->sounds[0]);
 }

@@ -4,7 +4,7 @@
 
 
 // For readability.
-#define gTitleInfo ((struct TitleSceneInfo *)D_030046a4)
+#define gTitle ((struct TitleSceneData *)gCurrentSceneData)
 
 extern struct Scene D_089d3984;
 extern struct Scene D_089d3a6c;
@@ -19,7 +19,7 @@ extern struct SequenceData s_nyuka_fan_seqData;
 
 // Update Logo Bubble Position
 void title_logo_set_bubble_pos(s32 id) {
-    struct LogoBubble *bubble = &gTitleInfo->logoBubbles[id];
+    struct LogoBubble *bubble = &gTitle->logoBubbles[id];
     s24_8 xOfs, yOfs, xB, yB;
     s32 x, y, rise;
 
@@ -44,7 +44,7 @@ void title_logo_init(void) {
     u32 i;
 
     for (i = 0; i < TOTAL_TITLE_LOGO_BUBBLES; i++) {
-        struct LogoBubble *bubble = &gTitleInfo->logoBubbles[i];
+        struct LogoBubble *bubble = &gTitle->logoBubbles[i];
         struct TitleLogoCharData *letter = &title_logo_char_data[i];
 
         bubble->active = FALSE;
@@ -63,7 +63,7 @@ void title_logo_init(void) {
         title_logo_set_bubble_pos(i);
     }
 
-    gTitleInfo->nextLogoBubble = 0;
+    gTitle->nextLogoBubble = 0;
 }
 
 
@@ -72,7 +72,7 @@ void title_logo_appear(void) {
     u32 i;
 
     for (i = 0; i < TOTAL_TITLE_LOGO_BUBBLES; i++) {
-        struct LogoBubble *bubble = &gTitleInfo->logoBubbles[i];
+        struct LogoBubble *bubble = &gTitle->logoBubbles[i];
 
         bubble->active = TRUE;
         func_0804d770(D_03005380, bubble->letter, TRUE);
@@ -87,7 +87,7 @@ void title_logo_update(void) {
     u32 i;
 
     for (i = 0; i < TOTAL_TITLE_LOGO_BUBBLES; i++) {
-        struct LogoBubble *bubble = &gTitleInfo->logoBubbles[i];
+        struct LogoBubble *bubble = &gTitle->logoBubbles[i];
 
         if (bubble->active) {
             bubble->riseAngle += bubble->riseTurnSpeed;
@@ -104,7 +104,7 @@ void title_logo_bounce_all(void) {
     u32 i;
 
     for (i = 0; i < TOTAL_TITLE_LOGO_BUBBLES; i++) {
-        struct LogoBubble *bubble = &gTitleInfo->logoBubbles[i];
+        struct LogoBubble *bubble = &gTitle->logoBubbles[i];
 
         if (bubble->active) {
             bubble->bounceDistance += INT_TO_FIXED(6.0);
@@ -120,17 +120,17 @@ void title_logo_bounce_bubble(s32 id) {
     struct LogoBubble *bubble;
 
     if (id >= 0) {
-        gTitleInfo->nextLogoBubble = id;
+        gTitle->nextLogoBubble = id;
     }
 
-    bubble = &gTitleInfo->logoBubbles[gTitleInfo->nextLogoBubble];
+    bubble = &gTitle->logoBubbles[gTitle->nextLogoBubble];
 
     if (bubble->active) {
         bubble->bounceDistance += INT_TO_FIXED(10.0);
 
-        gTitleInfo->nextLogoBubble++;
-        if (gTitleInfo->nextLogoBubble >= TOTAL_TITLE_LOGO_BUBBLES) {
-            gTitleInfo->nextLogoBubble = 0;
+        gTitle->nextLogoBubble++;
+        if (gTitle->nextLogoBubble >= TOTAL_TITLE_LOGO_BUBBLES) {
+            gTitle->nextLogoBubble = 0;
         }
     }
 }
@@ -176,21 +176,21 @@ void title_scene_start(void *sceneVar, s32 dataArg) {
     func_08007324(FALSE);
     func_080073f0();
 
-    gTitleInfo->directiveText = func_0804d160(D_03005380, anim_title_text, 0, 120, 132, 0x800, 1, 0x7f, 0x8000);
-    gTitleInfo->stars = func_0804d160(D_03005380, anim_title_stars_appear, 0, 120, 64, 0x4864, 1, 0x7f, 0x8000);
+    gTitle->directiveText = func_0804d160(D_03005380, anim_title_text, 0, 120, 132, 0x800, 1, 0x7f, 0x8000);
+    gTitle->stars = func_0804d160(D_03005380, anim_title_stars_appear, 0, 120, 64, 0x4864, 1, 0x7f, 0x8000);
     textPrinter = text_printer_create_new(get_current_mem_id(), 1, 240, 32);
     text_printer_set_x_y(textPrinter, 0, 8);
     text_printer_set_layer(textPrinter, 0);
     text_printer_center_by_content(textPrinter, TRUE);
     text_printer_set_palette(textPrinter, 2);
     text_printer_set_colors(textPrinter, 0);
-    gTitleInfo->textPrinter = textPrinter;
+    gTitle->textPrinter = textPrinter;
 
     title_scene_init_gfx1();
     title_logo_init();
-    gTitleInfo->scriptIsReady = FALSE;
-    gTitleInfo->timeUntilDemo = 180 * 16;
-    gTitleInfo->titleIsDisplayed = FALSE;
+    gTitle->scriptIsReady = FALSE;
+    gTitle->timeUntilDemo = 180 * 16;
+    gTitle->titleIsDisplayed = FALSE;
     set_next_scene(&D_089d3984);
     set_scene_trans_var(&scene_main_menu, 0);
 }
@@ -198,21 +198,21 @@ void title_scene_start(void *sceneVar, s32 dataArg) {
 
 // Finish Intro (Script Function)
 void title_scene_complete_intro(void) {
-    func_0804d770(D_03005380, gTitleInfo->directiveText, TRUE);
-    func_0804d8f8(D_03005380, gTitleInfo->stars, anim_title_stars_spin, 0, 1, 0, 0);
-    gTitleInfo->titleIsDisplayed = TRUE;
+    func_0804d770(D_03005380, gTitle->directiveText, TRUE);
+    func_0804d8f8(D_03005380, gTitle->stars, anim_title_stars_spin, 0, 1, 0, 0);
+    gTitle->titleIsDisplayed = TRUE;
 }
 
 
 // Beat Animation (Script Function)
 void title_scene_beat_anim(void) {
-    if (!gTitleInfo->titleIsDisplayed) {
-        s32 frame = func_0804d6cc(D_03005380, gTitleInfo->stars);
-        func_0804cebc(D_03005380, gTitleInfo->stars, frame + 1);
-        func_0804d770(D_03005380, gTitleInfo->stars, TRUE);
+    if (!gTitle->titleIsDisplayed) {
+        s32 frame = func_0804d6cc(D_03005380, gTitle->stars);
+        func_0804cebc(D_03005380, gTitle->stars, frame + 1);
+        func_0804d770(D_03005380, gTitle->stars, TRUE);
     }
 
-    func_0804cebc(D_03005380, gTitleInfo->directiveText, 0);
+    func_0804cebc(D_03005380, gTitle->directiveText, 0);
     title_logo_bounce_all();
 }
 
@@ -232,23 +232,23 @@ void title_scene_update_inputs(void) {
         }
 
         func_0801d968(script_scene_title_exit);
-        gTitleInfo->scriptIsReady = FALSE;
+        gTitle->scriptIsReady = FALSE;
         play_sound_w_pitch_volume(&s_nyuka_fan_seqData, INT_TO_FIXED(1.25), INT_TO_FIXED(0.0));
         scene_set_music_volume_env(100);
         D_030046a8->data.unkB0 = TRUE;
-        gTitleInfo->timeUntilDemo = 9999;
+        gTitle->timeUntilDemo = 9999;
     }
 }
 
 
 // Scene Update (Active)
 void title_scene_update(void *sceneVar, s32 dataArg) {
-    if (gTitleInfo->timeUntilDemo > 0) {
-        if (--gTitleInfo->timeUntilDemo == 0) {
+    if (gTitle->timeUntilDemo > 0) {
+        if (--gTitle->timeUntilDemo == 0) {
             set_next_scene(&D_089d3984);
             set_scene_trans_target(&D_089d3984, &scene_title);
             func_0801d968(script_scene_title_exit);
-            gTitleInfo->scriptIsReady = FALSE;
+            gTitle->scriptIsReady = FALSE;
         }
     }
 
@@ -257,13 +257,13 @@ void title_scene_update(void *sceneVar, s32 dataArg) {
     }
 
     title_logo_update();
-    text_printer_update(gTitleInfo->textPrinter);
+    text_printer_update(gTitle->textPrinter);
 }
 
 
 // Communicate with Script
 u32 title_scene_script_is_ready(void) {
-    if (gTitleInfo->scriptIsReady) {
+    if (gTitle->scriptIsReady) {
         return TRUE;
     } else {
         return FALSE;

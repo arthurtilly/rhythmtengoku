@@ -9,9 +9,7 @@
 
 
 // For readability.
-#define gEpilogueInfo ((struct EpilogueSceneInfo *)D_030046a4)
-
-extern struct SequenceData s_menu_se20_seqData;
+#define gEpilogue ((struct EpilogueSceneData *)gCurrentSceneData)
 
 
 /* EPILOGUE */
@@ -28,7 +26,7 @@ void epilogue_scene_init_gfx3(void) {
 
     func_0800c604(0);
     D_03004b10.objPalette[4][1] = 0x7FFF;
-    play_sound(gEpilogueInfo->jingle);
+    play_sound(gEpilogue->jingle);
     task = start_new_texture_loader(get_current_mem_id(), epilogue_buffered_textures);
     run_func_after_task(task, set_pause_beatscript_scene, FALSE);
 }
@@ -39,7 +37,7 @@ void epilogue_scene_init_gfx2(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), gEpilogueInfo->gfxTable, 0x3000);
+    task = func_08002ee0(get_current_mem_id(), gEpilogue->gfxTable, 0x3000);
     run_func_after_task(task, epilogue_scene_init_gfx3, 0);
 }
 
@@ -59,7 +57,7 @@ void epilogue_scene_start(void *sceneVar, s32 dataArg) {
     u32 rank;
 
     levelData = (struct LevelData *)get_current_scene_trans_var();
-    gEpilogueInfo->gfxTable = NULL;
+    gEpilogue->gfxTable = NULL;
     text = NULL;
 
     if ((levelData != NULL) && (levelData->epilogueGfx != NULL)) {
@@ -79,21 +77,21 @@ void epilogue_scene_start(void *sceneVar, s32 dataArg) {
             }
         }
 
-        gEpilogueInfo->gfxTable = levelData->epilogueGfx[rank];
+        gEpilogue->gfxTable = levelData->epilogueGfx[rank];
         if (levelData->epilogueText != NULL) {
             text = levelData->epilogueText[rank];
         }
-        gEpilogueInfo->jingle = epilogue_jingles[rank];
+        gEpilogue->jingle = epilogue_jingles[rank];
     }
 
-    if (gEpilogueInfo->gfxTable == NULL) {
+    if (gEpilogue->gfxTable == NULL) {
         func_0801d95c(epilogue_end_script);
         return;
     }
 
     func_08007324(FALSE);
     func_080073f0();
-    gEpilogueInfo->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
+    gEpilogue->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
     dma3_fill(0, OBJ_TILESET_BASE(0x7800), 0x800, 0x20, 0x200);
 
     if (text != NULL) {
@@ -105,10 +103,10 @@ void epilogue_scene_start(void *sceneVar, s32 dataArg) {
         func_0804d8c4(D_03005380, sprite, 4);
     }
 
-    gEpilogueInfo->objFont = func_0800c660(0x300, 4);
-    import_all_scene_objects(D_03005380, gEpilogueInfo->objFont, epilogue_scene_objects, D_0300558c);
+    gEpilogue->objFont = func_0800c660(0x300, 4);
+    import_all_scene_objects(D_03005380, gEpilogue->objFont, epilogue_scene_objects, D_0300558c);
     epilogue_scene_init_gfx1();
-    gEpilogueInfo->scriptIsReady = FALSE;
+    gEpilogue->scriptIsReady = FALSE;
 }
 
 
@@ -123,7 +121,7 @@ void epilogue_scene_update(void *sceneVar, s32 dataArg) {
         if (D_03004afc & A_BUTTON) {
             set_pause_beatscript_scene(FALSE);
             play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), 0);
-            gEpilogueInfo->scriptIsReady = FALSE;
+            gEpilogue->scriptIsReady = FALSE;
         }
     }
 }
@@ -131,7 +129,7 @@ void epilogue_scene_update(void *sceneVar, s32 dataArg) {
 
 // Communicate with Script
 u32 epilogue_scene_script_is_ready(void) {
-    if (gEpilogueInfo->scriptIsReady) {
+    if (gEpilogue->scriptIsReady) {
         return TRUE;
     } else {
         return FALSE;

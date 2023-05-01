@@ -5,9 +5,7 @@
 
 
 // For readability.
-#define gReadErrorInfo ((struct ReadErrorSceneInfo *)D_030046a4)
-
-extern struct Scene scene_debug_menu;
+#define gReadError ((struct ReadErrorSceneData *)gCurrentSceneData)
 
 
 /* READ ERROR(?) */
@@ -45,7 +43,7 @@ void read_error_scene_start(void *sceneVar, s32 dataArg) {
     func_080073f0();
     read_error_scene_init_gfx1();
 
-    gReadErrorInfo->scriptIsReady = FALSE;
+    gReadError->scriptIsReady = FALSE;
     set_next_scene(&scene_debug_menu);
 }
 
@@ -55,7 +53,7 @@ void read_error_scene_update(void *sceneVar, s32 dataArg) {
     if (read_error_scene_can_receive_inputs()) {
         if (D_03004afc & SELECT_BUTTON) {
             set_pause_beatscript_scene(FALSE);
-            gReadErrorInfo->scriptIsReady = FALSE;
+            gReadError->scriptIsReady = FALSE;
         }
     }
 }
@@ -63,7 +61,7 @@ void read_error_scene_update(void *sceneVar, s32 dataArg) {
 
 // Communicate with Script
 u32 read_error_scene_can_receive_inputs(void) {
-    if (gReadErrorInfo->scriptIsReady) {
+    if (gReadError->scriptIsReady) {
         return TRUE;
     } else {
         return FALSE;

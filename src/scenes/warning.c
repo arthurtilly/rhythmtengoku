@@ -4,7 +4,7 @@
 
 
 // For readability.
-#define gWarningInfo ((struct WarningSceneInfo *)D_030046a4)
+#define gWarning ((struct WarningSceneData *)gCurrentSceneData)
 
 extern u8 D_03004498;
 
@@ -57,17 +57,17 @@ void warning_scene_start(void *sceneVar, s32 dataArg) {
     func_0801d860(TRUE);
     D_03004498 = FALSE;
     warning_scene_init_gfx1();
-    gWarningInfo->scriptIsReady = FALSE;
-    gWarningInfo->timer = 3600;
+    gWarning->scriptIsReady = FALSE;
+    gWarning->timer = 3600;
 }
 
 
 // Scene Update
 void warning_scene_update(void *sceneVar, s32 dataArg) {
-    if (gWarningInfo->scriptIsReady) {
-        if ((D_03004afc != 0) || (--gWarningInfo->timer == 0)) {
+    if (gWarning->scriptIsReady) {
+        if ((D_03004afc != 0) || (--gWarning->timer == 0)) {
             set_pause_beatscript_scene(FALSE);
-            gWarningInfo->scriptIsReady = FALSE;
+            gWarning->scriptIsReady = FALSE;
         }
     }
 }

@@ -8,8 +8,6 @@
 #include "src/memory_heap.h"
 #include "src/lib_0804ca80.h"
 
-asm(".include \"include/gba.inc\"");//Temporary
-
 static u8 D_0300155c;
 
 
@@ -506,7 +504,7 @@ FontPalette dev_text_font_pal2[] = {
 
 
 // For readability.
-#define gResetInfo ((struct SoftResetSceneInfo *)D_030046a4)
+#define gSoftReset ((struct SoftResetSceneData *)gCurrentSceneData)
 
 
 /* SOFT RESET */
@@ -523,7 +521,7 @@ void soft_reset_scene_stop(void *endParam) {
 void soft_reset_scene_start(void *initParam) {
     func_080013e8(0);
     func_0804e1bc(D_03005380, 1);
-    gResetInfo->state = 0;
+    gSoftReset->state = 0;
 }
 
 
@@ -534,17 +532,17 @@ u32 soft_reset_scene_update(void *loopParam) {
     func_08006e88();
     func_08003fb4();
 
-    switch (gResetInfo->state) {
+    switch (gSoftReset->state) {
         case 0:
             func_080070c4(20, 0);
             fade_out_all_soundplayers(20);
-            gResetInfo->state++;
+            gSoftReset->state++;
             break;
 
         case 1:
             if (D_03004b10.unk854_3) {
                 func_08004058();
-                gResetInfo->state++;
+                gSoftReset->state++;
             }
             break;
 

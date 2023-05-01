@@ -4,7 +4,7 @@
 
 
 // For readability.
-#define gStudioInfo ((struct StudioSceneInfo *)D_030046a4)
+#define gStudio ((struct StudioSceneData *)gCurrentSceneData)
 
 
 static u8 sCurrentDrumKit; // Selected Drum Kit ID
@@ -31,9 +31,9 @@ void studio_scene_init_static_var(void) {
 
 // Graphics Init. 4
 void studio_scene_init_gfx4(void) {
-    gStudioInfo->replayMemoryGraph = create_new_replay_memory_graph(get_current_mem_id(), &D_030046a8->data.drumReplaysAlloc, 128, 5);
-    update_replay_memory_graph_data_bars(gStudioInfo->replayMemoryGraph);
-    show_replay_memory_graph(gStudioInfo->replayMemoryGraph, TRUE);
+    gStudio->replayMemoryGraph = create_new_replay_memory_graph(get_current_mem_id(), &D_030046a8->data.drumReplaysAlloc, 128, 5);
+    update_replay_memory_graph_data_bars(gStudio->replayMemoryGraph);
+    show_replay_memory_graph(gStudio->replayMemoryGraph, TRUE);
     set_pause_beatscript_scene(FALSE);
 }
 
@@ -76,43 +76,43 @@ void studio_scene_start(void *sceneVar, s32 dataArg) {
     func_08007324(FALSE);
     func_080073f0();
     studio_scene_init_gfx1();
-    init_drumtech(&gStudioInfo->drumTech);
+    init_drumtech(&gStudio->drumTech);
     studio_song_list_init(0, sListSongSelItem, sListSongSelLine);
     studio_option_list_init(0, sListOptionSelItem);
     studio_drum_list_init(0, sListDrumSelItem, sListDrumSelLine);
 
     switch (entryPoint) {
         case 1:
-            gStudioInfo->sceneState = STUDIO_STATE_NAV_DRUM_LIST;
-            listbox_hide_sel_sprite(gStudioInfo->songList);
-            listbox_hide_sel_sprite(gStudioInfo->optionList);
-            listbox_show_sel_sprite(gStudioInfo->drumList);
+            gStudio->sceneState = STUDIO_STATE_NAV_DRUM_LIST;
+            listbox_hide_sel_sprite(gStudio->songList);
+            listbox_hide_sel_sprite(gStudio->optionList);
+            listbox_show_sel_sprite(gStudio->drumList);
             studio_scene_set_current_menu(STUDIO_MENU_DRUM_LIST);
             break;
 
         case 0:
         default:
-            gStudioInfo->sceneState = STUDIO_STATE_NAV_SONG_LIST;
-            listbox_show_sel_sprite(gStudioInfo->songList);
-            listbox_hide_sel_sprite(gStudioInfo->optionList);
-            listbox_hide_sel_sprite(gStudioInfo->drumList);
+            gStudio->sceneState = STUDIO_STATE_NAV_SONG_LIST;
+            listbox_show_sel_sprite(gStudio->songList);
+            listbox_hide_sel_sprite(gStudio->optionList);
+            listbox_hide_sel_sprite(gStudio->drumList);
             studio_scene_set_current_menu(STUDIO_MENU_SONG_LIST);
             break;
     }
 
-    gStudioInfo->unused380 = 0;
-    gStudioInfo->unused384 = 0;
-    gStudioInfo->unused388 = 0;
-    gStudioInfo->itemMoveHighlight = func_0804d160(D_03005380, anim_studio_item_move_highlight, 0, 64, 64, 0x8864, 0, 0, 0x8000);
-    gStudioInfo->replayDrumKit = STUDIO_DRUM_STANDARD;
+    gStudio->unused380 = 0;
+    gStudio->unused384 = 0;
+    gStudio->unused388 = 0;
+    gStudio->itemMoveHighlight = func_0804d160(D_03005380, anim_studio_item_move_highlight, 0, 64, 64, 0x8864, 0, 0, 0x8000);
+    gStudio->replayDrumKit = STUDIO_DRUM_STANDARD;
     studio_warning_init();
-    gStudioInfo->musicPlayer = play_sound(&s_studio_bgm_seqData);
+    gStudio->musicPlayer = play_sound(&s_studio_bgm_seqData);
     graph = func_0804d160(D_03005380, anim_studio_graphs_l, 0, 77, 66, 0x4800, 1, 0, 0);
     func_0804db44(D_03005380, graph, &D_03004b10.BG_OFS[BG_LAYER_1].x, &D_03004b10.BG_OFS[BG_LAYER_1].y);
     graph = func_0804d160(D_03005380, anim_studio_graph_r, 0, 320, 130, 0x4800, 1, 0, 0);
     func_0804db44(D_03005380, graph, &D_03004b10.BG_OFS[BG_LAYER_1].x, &D_03004b10.BG_OFS[BG_LAYER_1].y);
-    gStudioInfo->scriptIsReady = FALSE;
-    gStudioInfo->replaySeq = mem_heap_alloc_id(get_current_mem_id(), 0x3800);
+    gStudio->scriptIsReady = FALSE;
+    gStudio->replaySeq = mem_heap_alloc_id(get_current_mem_id(), 0x3800);
 }
 
 
@@ -139,13 +139,13 @@ void studio_set_current_song(s32 id, s32 line) {
 void studio_remember_list_positions(void) {
     s32 songItem, songLine;
 
-    songItem = listbox_get_sel_item(gStudioInfo->songList);
-    songLine = listbox_get_sel_line(gStudioInfo->songList);
+    songItem = listbox_get_sel_item(gStudio->songList);
+    songLine = listbox_get_sel_line(gStudio->songList);
     studio_set_current_song(songItem, songLine);
 
-    sListOptionSelItem = listbox_get_sel_item(gStudioInfo->optionList);
-    sListDrumSelItem = listbox_get_sel_item(gStudioInfo->drumList);
-    sListDrumSelLine = listbox_get_sel_line(gStudioInfo->drumList);
+    sListOptionSelItem = listbox_get_sel_item(gStudio->optionList);
+    sListDrumSelItem = listbox_get_sel_item(gStudio->drumList);
+    sListDrumSelLine = listbox_get_sel_line(gStudio->drumList);
 }
 
 
@@ -159,46 +159,46 @@ void studio_scene_update_panning(void) {
     u32 busy = FALSE;
     s16 x;
 
-    if (listbox_is_busy(gStudioInfo->songList)) {
+    if (listbox_is_busy(gStudio->songList)) {
         busy = TRUE;
     }
 
-    if (listbox_is_busy(gStudioInfo->optionList)) {
+    if (listbox_is_busy(gStudio->optionList)) {
         busy = TRUE;
     }
 
-    if (listbox_is_busy(gStudioInfo->drumList)) {
+    if (listbox_is_busy(gStudio->drumList)) {
         busy = TRUE;
     }
 
     if (!busy) {
-        gStudioInfo->panProgress = FIXED_POINT_MUL(gStudioInfo->panProgress, 200);
+        gStudio->panProgress = FIXED_POINT_MUL(gStudio->panProgress, 200);
     }
 
-    x = math_lerp(gStudioInfo->panStartX, gStudioInfo->panTargetX, INT_TO_FIXED(1.0) - gStudioInfo->panProgress, INT_TO_FIXED(1.0));
+    x = math_lerp(gStudio->panStartX, gStudio->panTargetX, INT_TO_FIXED(1.0) - gStudio->panProgress, INT_TO_FIXED(1.0));
     D_03004b10.BG_OFS[BG_LAYER_1].x = x;
 
-    listbox_offset_x_y(gStudioInfo->songList, x, 0);
-    listbox_offset_x_y(gStudioInfo->drumList, x, 0);
-    listbox_offset_x_y(gStudioInfo->optionList, x, 0);
+    listbox_offset_x_y(gStudio->songList, x, 0);
+    listbox_offset_x_y(gStudio->drumList, x, 0);
+    listbox_offset_x_y(gStudio->optionList, x, 0);
 }
 
 
 // Set Current Menu
 void studio_scene_set_current_menu(u32 menu) {
-    gStudioInfo->panTargetX = studio_menu_x_ofs[menu];
-    gStudioInfo->panStartX = studio_menu_x_ofs[menu];
-    gStudioInfo->panProgress = 0;
-    gStudioInfo->currentMenu = menu;
+    gStudio->panTargetX = studio_menu_x_ofs[menu];
+    gStudio->panStartX = studio_menu_x_ofs[menu];
+    gStudio->panProgress = 0;
+    gStudio->currentMenu = menu;
 }
 
 
 // Pan Screen to Menu
 void studio_scene_pan_to_menu(u32 menu) {
-    gStudioInfo->panStartX = gStudioInfo->panTargetX;
-    gStudioInfo->panTargetX = studio_menu_x_ofs[menu];
-    gStudioInfo->panProgress = 0x100;
-    gStudioInfo->currentMenu = menu;
+    gStudio->panStartX = gStudio->panTargetX;
+    gStudio->panTargetX = studio_menu_x_ofs[menu];
+    gStudio->panProgress = 0x100;
+    gStudio->currentMenu = menu;
 }
 
 
@@ -210,16 +210,16 @@ void studio_scene_play_music(s32 item) {
     data = &D_030046a8->data.studioSongs[item];
 
     if (data->unk3 & 1) {
-        dma3_fill(0, gStudioInfo->replaySeq, 0x3800, 0x20, 0x200);
+        dma3_fill(0, gStudio->replaySeq, 0x3800, 0x20, 0x200);
         set_studio_drummer_mode(STUDIO_DRUMMER_MODE_PLAYBACK);
-        length = get_saved_replay_data(&D_030046a8->data.drumReplaysAlloc, data->replayID, gStudioInfo->replaySeq);
-        key_rec_set_mode(3, 0x3FF, gStudioInfo->replaySeq, length / sizeof(u16));
-        gStudioInfo->replayDrumKit = data->drumKitID;
+        length = get_saved_replay_data(&D_030046a8->data.drumReplaysAlloc, data->replayID, gStudio->replaySeq);
+        key_rec_set_mode(3, 0x3FF, gStudio->replaySeq, length / sizeof(u16));
+        gStudio->replayDrumKit = data->drumKitID;
     } else {
         set_studio_drummer_mode(STUDIO_DRUMMER_MODE_LISTEN);
     }
 
-    gStudioInfo->drumScript = studio_song_table[data->songID].script;
+    gStudio->drumScript = studio_song_table[data->songID].script;
     func_0801d978();
     func_0801d968(script_scene_studio_start_song);
 }
@@ -241,7 +241,7 @@ void studio_scene_update_stub(void) {
 
 // Scene Update
 void studio_scene_update(void *sceneVar, s32 dataArg) {
-    switch (gStudioInfo->sceneState) {
+    switch (gStudio->sceneState) {
         case STUDIO_STATE_NAV_SONG_LIST:
             studio_song_list_update();
             break;
@@ -269,10 +269,10 @@ void studio_scene_update(void *sceneVar, s32 dataArg) {
 
     studio_scene_update_panning();
     studio_scene_update_stub();
-    update_listbox(gStudioInfo->songList);
-    update_listbox(gStudioInfo->optionList);
-    update_listbox(gStudioInfo->drumList);
-    func_08029cac(gStudioInfo->replayDrumKit, D_030046b8, D_03005378, D_030046b4);
+    update_listbox(gStudio->songList);
+    update_listbox(gStudio->optionList);
+    update_listbox(gStudio->drumList);
+    func_08029cac(gStudio->replayDrumKit, D_030046b8, D_03005378, D_030046b4);
     update_drumtech();
 }
 
@@ -281,21 +281,21 @@ void studio_scene_update(void *sceneVar, s32 dataArg) {
 u32 studio_scene_can_receive_inputs(void) {
     u32 busy;
 
-    if (!gStudioInfo->scriptIsReady) {
+    if (!gStudio->scriptIsReady) {
         return FALSE;
     }
 
     busy = FALSE;
 
-    if (listbox_is_busy(gStudioInfo->songList)) {
+    if (listbox_is_busy(gStudio->songList)) {
         busy = TRUE;
     }
 
-    if (listbox_is_busy(gStudioInfo->optionList)) {
+    if (listbox_is_busy(gStudio->optionList)) {
         busy = TRUE;
     }
 
-    if (listbox_is_busy(gStudioInfo->drumList)) {
+    if (listbox_is_busy(gStudio->drumList)) {
         busy = TRUE;
     }
 

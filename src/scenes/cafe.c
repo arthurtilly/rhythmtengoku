@@ -9,7 +9,7 @@
 
 
 // For readability.
-#define gCafeInfo ((struct CafeSceneInfo *)D_030046a4)
+#define gCafe ((struct CafeSceneData *)gCurrentSceneData)
 
 enum CafeDialogueTasksEnum {
     /* 00 */ CAFE_EVENT_INITIALISE_DIALOGUE,
@@ -222,7 +222,7 @@ void cafe_remove_old_levels_from_session(u32 totalPlayTime, u32 inactivityThresh
 // Init. Level Play Activity Indexes
 void cafe_init_session_indexes(void) {
     struct LevelPlayActivity *levelSessions = gSessionInfo.lastPlayedLevels;
-    u8 *indexes = gCafeInfo->sessionIndexes;
+    u8 *indexes = gCafe->sessionIndexes;
     s32 total = 0;
     s32 older, newer;
     s32 i, j;
@@ -234,7 +234,7 @@ void cafe_init_session_indexes(void) {
         }
     }
 
-    gCafeInfo->totalLevelsThisSession = total;
+    gCafe->totalLevelsThisSession = total;
 
     for (i = 0; i < (total - 1); i++) {
         for (j = (i + 1); j < total; j++) {
@@ -253,10 +253,10 @@ void cafe_init_session_indexes(void) {
 void cafe_init_session_playtime(void) {
     s32 playtime = get_total_playtime(T_MINUTE);
 
-    gCafeInfo->timeSinceLastVisit = playtime - gSessionInfo.timeOfLastCafeVisit;
+    gCafe->timeSinceLastVisit = playtime - gSessionInfo.timeOfLastCafeVisit;
     gSessionInfo.timeOfLastCafeVisit = playtime;
-    gCafeInfo->totalPlayTime = playtime;
-    gCafeInfo->totalActivePlayTime = get_active_playtime(T_MINUTE);
+    gCafe->totalPlayTime = playtime;
+    gCafe->totalActivePlayTime = get_active_playtime(T_MINUTE);
 }
 
 
@@ -274,8 +274,8 @@ void cafe_remove_perfect_level_sessions(void) {
 
 // Init. Dialogue Text
 void cafe_init_dialogue(void) {
-    gCafeInfo->nextDialogueTask = CAFE_EVENT_INITIALISE_DIALOGUE;
-    gCafeInfo->textAdvReady = FALSE;
+    gCafe->nextDialogueTask = CAFE_EVENT_INITIALISE_DIALOGUE;
+    gCafe->textAdvReady = FALSE;
 }
 
 
@@ -284,53 +284,53 @@ void cafe_start_dialogue_inputs(void) {
     struct Animation *anim;
     s16 x, y;
 
-    if (gCafeInfo->disableTextUpdates) {
+    if (gCafe->disableTextUpdates) {
         return;
     }
 
-    text_printer_get_x_y(gCafeInfo->printer, &x, &y);
-    func_0804d5d4(D_03005380, gCafeInfo->textAdvIcon, x, y);
-    func_0804d770(D_03005380, gCafeInfo->textAdvIcon, TRUE);
+    text_printer_get_x_y(gCafe->printer, &x, &y);
+    func_0804d5d4(D_03005380, gCafe->textAdvIcon, x, y);
+    func_0804d770(D_03005380, gCafe->textAdvIcon, TRUE);
 
-    if (gCafeInfo->queryEnabled) {
-        anim = cafe_cursor_option_anim[gCafeInfo->queryResult];
+    if (gCafe->queryEnabled) {
+        anim = cafe_cursor_option_anim[gCafe->queryResult];
     } else {
         anim = anim_cafe_text_adv_icon;
     }
 
-    func_0804d8f8(D_03005380, gCafeInfo->textAdvIcon, anim, 0, 1, 0, 0);
-    gCafeInfo->textAdvReady = TRUE;
+    func_0804d8f8(D_03005380, gCafe->textAdvIcon, anim, 0, 1, 0, 0);
+    gCafe->textAdvReady = TRUE;
     set_pause_beatscript_scene(TRUE);
 }
 
 
 // Update Text Advance Options
 void cafe_update_dialogue_inputs(void) {
-    if (!cafe_scene_script_is_ready() || !gCafeInfo->textAdvReady) {
+    if (!cafe_scene_script_is_ready() || !gCafe->textAdvReady) {
         return;
     }
 
-    if (gCafeInfo->queryEnabled) {
-        s8 choice = gCafeInfo->queryResult;
+    if (gCafe->queryEnabled) {
+        s8 choice = gCafe->queryResult;
 
         if (D_03004afc & DPAD_UP) {
-            gCafeInfo->queryResult--;
+            gCafe->queryResult--;
         }
         if (D_03004afc & DPAD_DOWN) {
-            gCafeInfo->queryResult++;
+            gCafe->queryResult++;
         }
-        gCafeInfo->queryResult = clamp_int32(gCafeInfo->queryResult, CAFE_OPTION_YES, CAFE_OPTION_NO);
+        gCafe->queryResult = clamp_int32(gCafe->queryResult, CAFE_OPTION_YES, CAFE_OPTION_NO);
 
-        if (choice != gCafeInfo->queryResult) {
-            func_0804d8f8(D_03005380, gCafeInfo->textAdvIcon, cafe_cursor_option_anim[gCafeInfo->queryResult], 0, 1, 0, 0);
+        if (choice != gCafe->queryResult) {
+            func_0804d8f8(D_03005380, gCafe->textAdvIcon, cafe_cursor_option_anim[gCafe->queryResult], 0, 1, 0, 0);
         }
     }
 
     if (D_03004afc & A_BUTTON) {
-        text_printer_set_string(gCafeInfo->printer, NULL);
-        func_0804d770(D_03005380, gCafeInfo->textAdvIcon, FALSE);
+        text_printer_set_string(gCafe->printer, NULL);
+        func_0804d770(D_03005380, gCafe->textAdvIcon, FALSE);
         play_sound(&s_f_cafe_send_mes_seqData);
-        gCafeInfo->textAdvReady = FALSE;
+        gCafe->textAdvReady = FALSE;
         set_pause_beatscript_scene(FALSE);
     }
 }
@@ -361,16 +361,16 @@ void cafe_print_dialogue(void) {
     u32 topic;
     u32 i;
     s32 x, y;
-    u32 dialogueTask = gCafeInfo->nextDialogueTask;
+    u32 dialogueTask = gCafe->nextDialogueTask;
     u8 dialogueExhausted = FALSE;
 
-    if (gCafeInfo->disableTextUpdates) {
+    if (gCafe->disableTextUpdates) {
         return;
     }
 
-    gCafeInfo->bgEvent = CAFE_BG_EVENT_NONE;
-    gCafeInfo->textAdvHold = 0;
-    gCafeInfo->queryEnabled = FALSE;
+    gCafe->bgEvent = CAFE_BG_EVENT_NONE;
+    gCafe->textAdvHold = 0;
+    gCafe->queryEnabled = FALSE;
     string = NULL;
     dialogue = NULL;
 
@@ -393,12 +393,12 @@ void cafe_print_dialogue(void) {
                 dialogueTask = CAFE_EVENT_ALL_CAMPAIGNS_CLEAR_00;
                 break;
             }
-            if (gCafeInfo->timeSinceLastVisit == 0) {
+            if (gCafe->timeSinceLastVisit == 0) {
                 dialogue = cafe_dialogue_come_back_later;
                 break;
             }
 
-            playtime = gCafeInfo->totalPlayTime;
+            playtime = gCafe->totalPlayTime;
             if (playtime <= 20) {
                 // Are you making progress?
                 // Please do your best!
@@ -428,8 +428,8 @@ void cafe_print_dialogue(void) {
             topic = CAFE_TOPIC_RANDOM;
             i = 0;
 
-            while ((topic == CAFE_TOPIC_RANDOM) && (i < gCafeInfo->totalLevelsThisSession)) {
-                activity = &gSessionInfo.lastPlayedLevels[gCafeInfo->sessionIndexes[i]];
+            while ((topic == CAFE_TOPIC_RANDOM) && (i < gCafe->totalLevelsThisSession)) {
+                activity = &gSessionInfo.lastPlayedLevels[gCafe->sessionIndexes[i]];
 
                 if (activity->justGotPerfect) {
                     topic = CAFE_TOPIC_CAMPAIGN_CLEAR;
@@ -463,7 +463,7 @@ void cafe_print_dialogue(void) {
             }
 
             if (topic != CAFE_TOPIC_RANDOM) {
-                if ((gCafeInfo->totalPlayTime - activity->timeOfLastPlay) > 20) {
+                if ((gCafe->totalPlayTime - activity->timeOfLastPlay) > 20) {
                     topic = CAFE_TOPIC_REMEMBERING;
                 }
                 levelName = game_select_get_level_name(activity->levelID);
@@ -480,7 +480,7 @@ void cafe_print_dialogue(void) {
                 case CAFE_TOPIC_CAMPAIGN_CLEAR:
                     // Was that you on [...]?
                     // I heard you just got a Perfect!?
-                    s = gCafeInfo->string;
+                    s = gCafe->string;
                     memcpy(s, "", 1);
                     strcat(s, "\n");
                     strcat(s, "そうそう、");
@@ -496,7 +496,7 @@ void cafe_print_dialogue(void) {
                 case CAFE_TOPIC_TROUBLE_CLEARING_LEVEL:
                     // You're still on [...].
                     // Are you having trouble?
-                    s = gCafeInfo->string;
+                    s = gCafe->string;
                     memcpy(s, "", 1);
                     strcat(s, "\n");
                     strcat(s, "そういえば、");
@@ -505,14 +505,14 @@ void cafe_print_dialogue(void) {
                     strcat(s, "\0054" "\0018" "で\n");
                     strcat(s, "行きづまってませんか？\n" "\n");
                     string = s;
-                    gCafeInfo->levelToClear = activity->levelID;
+                    gCafe->levelToClear = activity->levelID;
                     activity->levelID = LEVEL_NULL;
                     dialogueTask = CAFE_EVENT_OFFER_CLEAR_00;
                     break;
 
                 case CAFE_TOPIC_TROUBLE_GETTING_MEDAL:
                     // Hmm... is [...] giving you trouble earning that medal?
-                    s = gCafeInfo->string;
+                    s = gCafe->string;
                     memcpy(s, "", 1);
                     strcat(s, "\n");
                     strcat(s, "う～む…　");
@@ -528,7 +528,7 @@ void cafe_print_dialogue(void) {
                 case CAFE_TOPIC_TROUBLE_CLEARING_CAMPAIGN:
                     // Rumor has it [...] was doing a perfect campaign.
                     // Weren't you playing it just now?
-                    s = gCafeInfo->string;
+                    s = gCafe->string;
                     memcpy(s, "", 1);
                     strcat(s, "\n");
                     strcat(s, "ウワサを　きいたんですけど、\n");
@@ -542,7 +542,7 @@ void cafe_print_dialogue(void) {
                     break;
 
                 case CAFE_TOPIC_REMEMBERING:
-                    activity->timeOfLastPlay = gCafeInfo->totalPlayTime;
+                    activity->timeOfLastPlay = gCafe->totalPlayTime;
                     // Ah! Wait, I remember!
                     string = "\n"
                              "\n"
@@ -552,7 +552,7 @@ void cafe_print_dialogue(void) {
 
                 case CAFE_TOPIC_UPCOMING_CAMPAIGN:
                     // Hey, here's a tip! Soon [...] is going to be having a perfect campaign.
-                    s = gCafeInfo->string;
+                    s = gCafe->string;
                     memcpy(s, "", 1);
                     strcat(s, "そうそう、\n"
                               "もうすぐ");
@@ -574,8 +574,8 @@ void cafe_print_dialogue(void) {
 
         case CAFE_EVENT_CAMPAIGN_CLEAR_00:
             string = cafe_dialogue_shouts_praise[agb_random(5)];
-            gCafeInfo->bgEvent = CAFE_BG_EVENT_CHEER_01;
-            gCafeInfo->textAdvHold = 4;
+            gCafe->bgEvent = CAFE_BG_EVENT_CHEER_01;
+            gCafe->textAdvHold = 4;
             dialogueTask++;
             break;
 
@@ -600,21 +600,21 @@ void cafe_print_dialogue(void) {
                      "\n"
                      "　　　　　　　　「おねがいします」\n"
                      "　　　　　　　　「けっこうです」";
-            gCafeInfo->queryEnabled = TRUE;
-            gCafeInfo->queryResult = CAFE_OPTION_YES;
+            gCafe->queryEnabled = TRUE;
+            gCafe->queryResult = CAFE_OPTION_YES;
             dialogueTask++;
             break;
 
         case CAFE_EVENT_OFFER_CLEAR_01:
-            if (gCafeInfo->queryResult == CAFE_OPTION_YES) {
+            if (gCafe->queryResult == CAFE_OPTION_YES) {
                 // <Leave it to me!>
                 string = "\n"
                          "\n"
                          "\0032" "\001l" "\0051" "\0015" "まかせとき！" "\0030" "\001s" "\0054" "\0018";
-                gCafeInfo->textAdvHold = 3;
-                gCafeInfo->bgEvent = CAFE_BG_EVENT_HELPING;
+                gCafe->textAdvHold = 3;
+                gCafe->bgEvent = CAFE_BG_EVENT_HELPING;
                 dialogueTask = CAFE_EVENT_OFFER_CLEAR_02_Y;
-                get_grid_xy_from_level_id(gCafeInfo->levelToClear, &x, &y);
+                get_grid_xy_from_level_id(gCafe->levelToClear, &x, &y);
                 D_030046a8->data.recentLevelX = x;
                 D_030046a8->data.recentLevelY = y;
                 D_030046a8->data.recentLevelState = LEVEL_STATE_CLEARED;
@@ -665,16 +665,16 @@ void cafe_print_dialogue(void) {
                      "\n"
                      "　　　　　　　　「そうなんです」\n"
                      "　　　　　　　　「ちがいますヨ」";
-            gCafeInfo->queryEnabled = TRUE;
-            gCafeInfo->queryResult = CAFE_OPTION_YES;
+            gCafe->queryEnabled = TRUE;
+            gCafe->queryResult = CAFE_OPTION_YES;
             dialogueTask++;
             break;
 
         case CAFE_EVENT_CAMPAIGN_ADVICE_01:
-            if (gCafeInfo->queryResult == CAFE_OPTION_YES) {
+            if (gCafe->queryResult == CAFE_OPTION_YES) {
                 string = cafe_dialogue_shouts_cheer[agb_random(5)];
-                gCafeInfo->textAdvHold = 3;
-                gCafeInfo->bgEvent = CAFE_BG_EVENT_CHEER_02;
+                gCafe->textAdvHold = 3;
+                gCafe->bgEvent = CAFE_BG_EVENT_CHEER_02;
                 dialogue = cafe_dialogue_practicing_perfect;
             } else {
                 dialogue = cafe_dialogue_not_practicing_perfect;
@@ -707,15 +707,15 @@ void cafe_print_dialogue(void) {
             string = "\0032" "\001l" "\0051" "\0015" "\n"
                      "\n"
                      "めちゃすごーい!!" "\0030" "\001s" "\0054" "\0018";
-            gCafeInfo->bgEvent = CAFE_BG_EVENT_CHEER_02;
-            gCafeInfo->textAdvHold = 4;
+            gCafe->bgEvent = CAFE_BG_EVENT_CHEER_02;
+            gCafe->textAdvHold = 4;
             dialogue = cafe_dialogue_all_perfects_clear;
             break;
 
         case CAFE_EVENT_CONTINUE_DIALOGUE:
-            string = *gCafeInfo->dialogue;
-            if (*(gCafeInfo->dialogue + 1) != NULL) {
-                gCafeInfo->dialogue++;
+            string = *gCafe->dialogue;
+            if (*(gCafe->dialogue + 1) != NULL) {
+                gCafe->dialogue++;
             } else {
                 dialogueExhausted = TRUE;
             }
@@ -726,31 +726,31 @@ void cafe_print_dialogue(void) {
         if (string == NULL) {
             string = *dialogue++;
             if (*dialogue != NULL) {
-                gCafeInfo->dialogue = dialogue;
+                gCafe->dialogue = dialogue;
                 dialogueTask = CAFE_EVENT_CONTINUE_DIALOGUE;
             } else {
                 dialogueExhausted = TRUE;
             }
         } else {
-            gCafeInfo->dialogue = dialogue;
+            gCafe->dialogue = dialogue;
             dialogueTask = CAFE_EVENT_CONTINUE_DIALOGUE;
         }
     }
 
-    text_printer_show_text(gCafeInfo->printer, TRUE);
-    text_printer_set_string(gCafeInfo->printer, string);
+    text_printer_show_text(gCafe->printer, TRUE);
+    text_printer_set_string(gCafe->printer, string);
 
     if (dialogueExhausted) {
         beatscript_disable_loops();
     }
 
-    gCafeInfo->nextDialogueTask = dialogueTask;
+    gCafe->nextDialogueTask = dialogueTask;
 }
 
 
 // Get BG Event (Script Function)
 s32 cafe_get_bg_event(void) {
-    return gCafeInfo->bgEvent;
+    return gCafe->bgEvent;
 }
 
 
@@ -778,22 +778,22 @@ void cafe_init_text_printer(void) {
     text_printer_center_by_content(printer, TRUE);
     text_printer_run_func_on_finish(printer, cafe_text_printer_show_box, 0);
     text_printer_run_func_on_clear(printer, cafe_text_printer_hide_box, 0);
-    gCafeInfo->printer = printer;
-    gCafeInfo->textAdvIcon = func_0804d160(D_03005380, anim_cafe_text_adv_icon, 0, 64, 64, 0x700, 1, 0, 0x8000);
-    gCafeInfo->textAdvHold = 0;
+    gCafe->printer = printer;
+    gCafe->textAdvIcon = func_0804d160(D_03005380, anim_cafe_text_adv_icon, 0, 64, 64, 0x700, 1, 0, 0x8000);
+    gCafe->textAdvHold = 0;
 }
 
 
 // Get Text Advance Hold Time (Script Function)
 s32 cafe_get_dialogue_hold_time(void) {
-    return gCafeInfo->textAdvHold;
+    return gCafe->textAdvHold;
 }
 
 
 // Hide Text (Script Function)
 void cafe_clear_dialogue(void) {
     scene_hide_bg_layer(BG_LAYER_1);
-    text_printer_show_text(gCafeInfo->printer, FALSE);
+    text_printer_show_text(gCafe->printer, FALSE);
 }
 
 
@@ -840,12 +840,12 @@ void cafe_scene_start(void *sceneVar, s32 dataArg) {
     cafe_init_text_printer();
     cafe_init_dialogue();
     cafe_init_session_playtime();
-    cafe_remove_old_levels_from_session(gCafeInfo->totalPlayTime, 60);
+    cafe_remove_old_levels_from_session(gCafe->totalPlayTime, 60);
     cafe_init_session_indexes();
 
-    gCafeInfo->scriptIsReady = FALSE;
-    gCafeInfo->disableTextUpdates = FALSE;
-    gCafeInfo->levelToClear = LEVEL_NULL;
+    gCafe->scriptIsReady = FALSE;
+    gCafe->disableTextUpdates = FALSE;
+    gCafe->levelToClear = LEVEL_NULL;
 }
 
 
@@ -860,13 +860,13 @@ void cafe_scene_update(void *sceneVar, s32 dataArg) {
         cafe_update_dialogue_inputs();
     }
 
-    text_printer_update(gCafeInfo->printer);
+    text_printer_update(gCafe->printer);
 }
 
 
 // Communicate with Script
 u32 cafe_scene_script_is_ready(void) {
-    if (gCafeInfo->scriptIsReady) {
+    if (gCafe->scriptIsReady) {
         return TRUE;
     } else {
         return FALSE;

@@ -713,7 +713,7 @@ void drum_studio_engine_start(u32 version) {
             gDrumStudio->playerDrumKitID = clamp_int32(studio_get_current_kit(), 0, drum_studio_get_total_kits());
             break;
         case ENGINE_VER_DRUM_STUDIO_LISTEN:
-            gDrumStudio->playerDrumKitID = D_030046a8->data.studioSongs[gDrumLessonsInfo->replayID].drumKitID;
+            gDrumStudio->playerDrumKitID = D_030046a8->data.studioSongs[gDrumStudio->replayID].drumKitID;
             break;
     }
 
