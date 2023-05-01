@@ -6,7 +6,7 @@ thumb_func_start func_0803a798 \n\
 /* 0803a798 */ PUSH {R4, R5, LR} \n\
 /* 0803a79a */ SUB SP, 0x4 \n\
 /* 0803a79c */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 0803a79e */ LDR R3, =D_030055d0 \n\
+/* 0803a79e */ LDR R3, =gCurrentEngineData \n\
 /* 0803a7a0 */ LDR R0, [R3] \n\
 /* 0803a7a2 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803a7a4 */ ADDS R2, 0x80 @ Add 0x80 to R2 \n\
@@ -103,7 +103,7 @@ jump_0803a86c: \n\
 /* 0803a86e */ BL play_sound \n\
 /* 0803a872 */ LDR R5, =D_03005380 \n\
 /* 0803a874 */ LDR R0, [R5] \n\
-/* 0803a876 */ LDR R4, =D_030055d0 \n\
+/* 0803a876 */ LDR R4, =gCurrentEngineData \n\
 /* 0803a878 */ LDR R1, [R4] \n\
 /* 0803a87a */ ADDS R1, 0x7A @ Add 0x7A to R1 \n\
 /* 0803a87c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\

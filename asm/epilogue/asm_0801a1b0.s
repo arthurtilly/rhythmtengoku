@@ -7,7 +7,7 @@ thumb_func_start func_0801a1b0 \n\
 /* 0801a1b2 */ SUB SP, 0x14 \n\
 /* 0801a1b4 */ BL func_0800061c \n\
 /* 0801a1b8 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 0801a1ba */ LDR R0, =D_030046a4 \n\
+/* 0801a1ba */ LDR R0, =gCurrentSceneData \n\
 /* 0801a1bc */ LDR R1, [R0] \n\
 /* 0801a1be */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801a1c0 */ STR R0, [R1, 0xC] \n\
@@ -49,7 +49,7 @@ branch_0801a204: \n\
 /* 0801a204 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
  \n\
 branch_0801a206: \n\
-/* 0801a206 */ LDR R0, =D_030046a4 \n\
+/* 0801a206 */ LDR R0, =gCurrentSceneData \n\
 /* 0801a208 */ LDR R2, [R0] \n\
 /* 0801a20a */ LDR R0, [R4, 0x10] \n\
 /* 0801a20c */ LSLS R1, R1, 0x2 \n\
@@ -70,7 +70,7 @@ branch_0801a220: \n\
 /* 0801a226 */ STR R0, [R2, 0x10] \n\
  \n\
 branch_0801a228: \n\
-/* 0801a228 */ LDR R6, =D_030046a4 \n\
+/* 0801a228 */ LDR R6, =gCurrentSceneData \n\
 /* 0801a22a */ LDR R0, [R6] \n\
 /* 0801a22c */ LDR R0, [R0, 0xC] \n\
 /* 0801a22e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

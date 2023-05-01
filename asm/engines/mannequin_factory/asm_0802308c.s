@@ -7,7 +7,7 @@ thumb_func_start func_0802308c \n\
 /* 0802308e */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08023090 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08023092 */ BL func_0800c604 \n\
-/* 08023096 */ LDR R0, =D_030055d0 \n\
+/* 08023096 */ LDR R0, =gCurrentEngineData \n\
 /* 08023098 */ LDR R0, [R0] \n\
 /* 0802309a */ LDR R1, =0x0000040c \n\
 /* 0802309c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

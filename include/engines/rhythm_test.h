@@ -6,8 +6,8 @@
 #include "games/rhythm_test/graphics/rhythm_test_graphics.h"
 
 // Engine Types:
-struct RhythmTestInfo {
-    /* add fields here */
+struct RhythmTestEngineData {
+    u8 pad[0x3e8];
 };
 
 struct RhythmTestCue {

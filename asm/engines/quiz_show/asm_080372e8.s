@@ -10,7 +10,7 @@ thumb_func_start func_080372e8 \n\
 /* 080372f0 */ LDR R0, =D_03005380 \n\
 /* 080372f2 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 080372f4 */ LDR R0, [R0] \n\
-/* 080372f6 */ LDR R1, =anim_quiz_clock \n\
+/* 080372f6 */ LDR R1, =anim_quiz_show_clock \n\
 /* 080372f8 */ MOVS R2, 0x4C @ Set R2 to 0x4C \n\
 /* 080372fa */ STR R2, [SP] \n\
 /* 080372fc */ MOVS R2, 0x88 @ Set R2 to 0x88 \n\
@@ -25,10 +25,10 @@ thumb_func_start func_080372e8 \n\
 /* 0803730e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037310 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
 /* 08037312 */ BL func_0804d160 \n\
-/* 08037316 */ LDR R5, =D_030055d0 \n\
+/* 08037316 */ LDR R5, =gCurrentEngineData \n\
 /* 08037318 */ LDR R1, [R5] \n\
 /* 0803731a */ STRH R0, [R1, 0x30] \n\
-/* 0803731c */ LDR R0, =anim_quiz_clock_hand \n\
+/* 0803731c */ LDR R0, =anim_quiz_show_clock_hand \n\
 /* 0803731e */ LDR R1, =0x87ff \n\
 /* 08037320 */ STR R1, [SP] \n\
 /* 08037322 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\

@@ -18,7 +18,7 @@ thumb_func_start results_scene_start \n\
 /* 08018952 */ STR R2, [SP] \n\
 /* 08018954 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08018956 */ BL create_new_bmp_font_bg \n\
-/* 0801895a */ LDR R4, =D_030046a4 \n\
+/* 0801895a */ LDR R4, =gCurrentSceneData \n\
 /* 0801895c */ LDR R1, [R4] \n\
 /* 0801895e */ STR R0, [R1] \n\
 /* 08018960 */ MOVS R0, 0xC0 @ Set R0 to 0xC0 \n\

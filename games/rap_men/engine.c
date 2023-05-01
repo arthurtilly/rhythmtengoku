@@ -252,22 +252,22 @@ struct SequenceData *rap_men_cue_miss_sfx[] = {
 
 // [D_089e65f8] Common Events
 EngineEvent rap_men_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) rap_men_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) rap_men_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) rap_men_common_init_tutorial,
+    /* BEAT_ANIMATION */ rap_men_common_beat_animation,
+    /* DISPLAY_TEXT   */ rap_men_common_display_text,
+    /* INIT_TUTORIAL  */ rap_men_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e6608] Engine Events
 EngineEvent rap_men_engine_events[] = {
-    /* 0x00 */ (EngineEvent) rap_men_set_rapper_anim,
-    /* 0x01 */ (EngineEvent) rap_men_enable_tutorial,
-    /* 0x02 */ (EngineEvent) rap_men_engine_event_stub
+    /* 0x00 */ rap_men_set_rapper_anim,
+    /* 0x01 */ rap_men_enable_tutorial,
+    /* 0x02 */ rap_men_engine_event_stub
 };
 
 // [D_089e6614] Rap Men Game Engine
 struct GameEngine rap_men_engine = {
-    /* Size in Memory */ sizeof(struct RapMenInfo),
+    /* Size in Memory */ sizeof(struct RapMenEngineData),
     /* Start Engine   */ rap_men_engine_start,
     /* Update Engine  */ rap_men_engine_update,
     /* Stop Engine    */ rap_men_engine_stop,

@@ -6,8 +6,8 @@
 #include "games/metronome/graphics/metronome_graphics.h"
 
 // Engine Types:
-struct MetronomeInfo {
-    /* add fields here */
+struct MetronomeEngineData {
+    u8 pad[0x30];
 };
 
 struct MetronomeCue {

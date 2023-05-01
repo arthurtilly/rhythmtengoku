@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start metronome_input_event \n\
 /* 08035c04 */ PUSH {LR} \n\
-/* 08035c06 */ LDR R0, =D_030055d0 \n\
+/* 08035c06 */ LDR R0, =gCurrentEngineData \n\
 /* 08035c08 */ LDR R1, [R0] \n\
 /* 08035c0a */ LDRH R0, [R1, 0x28] \n\
 /* 08035c0c */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\

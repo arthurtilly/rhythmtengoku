@@ -41,12 +41,12 @@ struct GraphicsTable showtime_prologue_gfx_table[] = {
 
 // [D_089eab28] Engine Events
 EngineEvent showtime_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08045a44
+    /* 0x00 */ func_08045a44
 };
 
 // [D_089eab2c] Prologue (Showtime) Game Engine
 struct GameEngine showtime_prologue_engine = {
-    /* Size in Memory */ sizeof(struct ShowtimePrologueInfo),
+    /* Size in Memory */ sizeof(struct ShowtimePrologueEngineData),
     /* Start Engine   */ showtime_prologue_engine_start,
     /* Update Engine  */ showtime_prologue_engine_update,
     /* Stop Engine    */ showtime_prologue_engine_stop,

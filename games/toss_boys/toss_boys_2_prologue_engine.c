@@ -41,12 +41,12 @@ struct GraphicsTable toss_boys_2_prologue_gfx_table[] = {
 
 // [D_089eda38] Engine Events
 EngineEvent toss_boys_2_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08047aa0
+    /* 0x00 */ func_08047aa0
 };
 
 // [D_089eda3c] Prologue (Toss Boys 2) Game Engine
 struct GameEngine toss_boys_2_prologue_engine = {
-    /* Size in Memory */ sizeof(struct TossBoys2PrologueInfo),
+    /* Size in Memory */ sizeof(struct TossBoys2PrologueEngineData),
     /* Start Engine   */ toss_boys_2_prologue_engine_start,
     /* Update Engine  */ toss_boys_2_prologue_engine_update,
     /* Stop Engine    */ toss_boys_2_prologue_engine_stop,

@@ -7,7 +7,7 @@ thumb_func_start tap_trial_common_beat_animation \n\
 /* 0803e712 */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 0803e714 */ PUSH {R7} \n\
 /* 0803e716 */ SUB SP, 0xC \n\
-/* 0803e718 */ LDR R0, =D_030055d0 \n\
+/* 0803e718 */ LDR R0, =gCurrentEngineData \n\
 /* 0803e71a */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0803e71c */ LDR R0, [R0] \n\
 /* 0803e71e */ LDRH R4, [R0, 0xA] \n\

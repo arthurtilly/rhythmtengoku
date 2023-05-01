@@ -11,7 +11,7 @@ thumb_func_start func_0801e4f4 \n\
 /* 0801e4fe */ SUB SP, 0x84 \n\
 /* 0801e500 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 0801e502 */ STR R1, [SP, 0x78] \n\
-/* 0801e504 */ LDR R6, =D_030046a4 \n\
+/* 0801e504 */ LDR R6, =gCurrentSceneData \n\
 /* 0801e506 */ LDR R4, [R6] \n\
 /* 0801e508 */ LDRH R2, [R4, 0xC] \n\
 /* 0801e50a */ SUBS R0, R2, 0x1 @ Set R0 to R2 - 0x1 \n\
@@ -98,7 +98,7 @@ branch_0801e586: \n\
 /* 0801e594 */ ADDS R0, 0x8 @ Add 0x8 to R0 \n\
 /* 0801e596 */ CMP R5, R0 @ Check R5 - R0 \n\
 /* 0801e598 */ BCS branch_0801e610 \n\
-/* 0801e59a */ LDR R1, =D_030046a4 \n\
+/* 0801e59a */ LDR R1, =gCurrentSceneData \n\
 /* 0801e59c */ LDR R0, [R1] \n\
 /* 0801e59e */ LDRH R0, [R0, 0xC] \n\
 /* 0801e5a0 */ CMP R5, R0 @ Check R5 - R0 \n\
@@ -159,7 +159,7 @@ branch_0801e5b2: \n\
 /* 0801e60e */ BCC branch_0801e5b2 \n\
  \n\
 branch_0801e610: \n\
-/* 0801e610 */ LDR R5, =D_030046a4 \n\
+/* 0801e610 */ LDR R5, =gCurrentSceneData \n\
 /* 0801e612 */ LDR R1, [R5] \n\
 /* 0801e614 */ LDR R0, [R1, 0x4] \n\
 /* 0801e616 */ MOVS R2, 0x14 @ Set R2 to 0x14 \n\
@@ -202,7 +202,7 @@ branch_0801e610: \n\
 /* 0801e66a */ BL func_0804d8f8 \n\
  \n\
 branch_0801e66e: \n\
-/* 0801e66e */ LDR R0, =D_030046a4 \n\
+/* 0801e66e */ LDR R0, =gCurrentSceneData \n\
 /* 0801e670 */ LDR R0, [R0] \n\
 /* 0801e672 */ STRH R7, [R0, 0xE] \n\
 /* 0801e674 */ ADD R4, SP, 0x78 \n\
@@ -213,7 +213,7 @@ branch_0801e66e: \n\
 /* 0801e67e */ NEGS R4, R4 @ Set R4 to -R4 \n\
  \n\
 branch_0801e680: \n\
-/* 0801e680 */ LDR R6, =D_030046a4 \n\
+/* 0801e680 */ LDR R6, =gCurrentSceneData \n\
 /* 0801e682 */ LDR R0, [R6] \n\
 /* 0801e684 */ LSLS R1, R5, 0x1 \n\
 /* 0801e686 */ ADDS R0, 0x16 @ Add 0x16 to R0 \n\

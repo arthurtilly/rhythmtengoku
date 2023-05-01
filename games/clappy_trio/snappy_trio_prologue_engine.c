@@ -41,12 +41,12 @@ struct GraphicsTable snappy_trio_prologue_gfx_table[] = {
 
 // [D_089eb214] Engine Events
 EngineEvent snappy_trio_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08045fb4
+    /* 0x00 */ func_08045fb4
 };
 
 // [D_089eb218] Prologue (The Snappy Trio) Game Engine
 struct GameEngine snappy_trio_prologue_engine = {
-    /* Size in Memory */ sizeof(struct SnappyTrioPrologueInfo),
+    /* Size in Memory */ sizeof(struct SnappyTrioPrologueEngineData),
     /* Start Engine   */ snappy_trio_prologue_engine_start,
     /* Update Engine  */ snappy_trio_prologue_engine_update,
     /* Stop Engine    */ snappy_trio_prologue_engine_stop,

@@ -53,7 +53,7 @@ branch_0803abee: \n\
 /* 0803ac02 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
 /* 0803ac04 */ BL func_0804d160 \n\
 /* 0803ac08 */ STRH R0, [R6, 0x2] \n\
-/* 0803ac0a */ LDR R0, =D_030055d0 \n\
+/* 0803ac0a */ LDR R0, =gCurrentEngineData \n\
 /* 0803ac0c */ LDR R0, [R0] \n\
 /* 0803ac0e */ LDRB R0, [R0] \n\
 /* 0803ac10 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

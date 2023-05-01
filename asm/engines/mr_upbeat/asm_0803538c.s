@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start mr_upbeat_cue_hit \n\
 /* 0803538c */ PUSH {R4, LR} \n\
-/* 0803538e */ LDR R0, =D_030055d0 \n\
+/* 0803538e */ LDR R0, =gCurrentEngineData \n\
 /* 08035390 */ LDR R4, [R0] \n\
 /* 08035392 */ BL func_08034ff4 \n\
 /* 08035396 */ BL func_08035358 \n\

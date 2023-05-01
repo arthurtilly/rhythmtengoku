@@ -7,7 +7,7 @@ thumb_func_start func_080331dc \n\
 /* 080331de */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 080331e0 */ PUSH {R7} \n\
 /* 080331e2 */ SUB SP, 0xC \n\
-/* 080331e4 */ LDR R3, =D_030055d0 \n\
+/* 080331e4 */ LDR R3, =gCurrentEngineData \n\
 /* 080331e6 */ LDR R2, [R3] \n\
 /* 080331e8 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 080331ea */ STRB R1, [R2, 0x7] \n\
@@ -40,7 +40,7 @@ branch_0803320a: \n\
 /* 0803321a */ LDRSH R2, [R0, R3] \n\
 /* 0803321c */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 0803321e */ BL scene_set_bg_layer_pos \n\
-/* 08033222 */ LDR R6, =D_030055d0 \n\
+/* 08033222 */ LDR R6, =gCurrentEngineData \n\
 /* 08033224 */ LDR R1, [R6] \n\
 /* 08033226 */ MOVS R0, 0x6 @ Set R0 to 0x6 \n\
 /* 08033228 */ LDRSB R0, [R1, R0] \n\
@@ -50,7 +50,7 @@ branch_0803320a: \n\
 /* 08033230 */ LDR R0, [R4] \n\
 /* 08033232 */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 08033234 */ LDRSH R1, [R1, R2] \n\
-/* 08033236 */ LDR R2, =anim_calligraphy_brush \n\
+/* 08033236 */ LDR R2, =anim_power_calligraphy_brush \n\
 /* 08033238 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803323a */ STR R3, [SP] \n\
 /* 0803323c */ STR R3, [SP, 0x4] \n\
@@ -102,7 +102,7 @@ branch_08033264: \n\
 branch_080332aa: \n\
 /* 080332aa */ LDR R0, =D_03005380 \n\
 /* 080332ac */ LDR R0, [R0] \n\
-/* 080332ae */ LDR R4, =D_030055d0 \n\
+/* 080332ae */ LDR R4, =gCurrentEngineData \n\
 /* 080332b0 */ LDR R1, [R4] \n\
 /* 080332b2 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 080332b4 */ LDRSH R1, [R1, R2] \n\
@@ -135,7 +135,7 @@ branch_080332ea: \n\
 /* 080332ee */ CMP R5, R0 @ Check R5 - R0 \n\
 /* 080332f0 */ BCC branch_080332d4 \n\
 /* 080332f2 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
-/* 080332f4 */ LDR R1, =D_030055d0 \n\
+/* 080332f4 */ LDR R1, =gCurrentEngineData \n\
 /* 080332f6 */ LDR R0, [R1] \n\
 /* 080332f8 */ LDRB R0, [R0, 0xB] \n\
 /* 080332fa */ CMP R5, R0 @ Check R5 - R0 \n\
@@ -174,7 +174,7 @@ branch_08033304: \n\
 /* 0803333c */ BCC branch_08033304 \n\
  \n\
 branch_0803333e: \n\
-/* 0803333e */ LDR R1, =D_030055d0 \n\
+/* 0803333e */ LDR R1, =gCurrentEngineData \n\
 /* 08033340 */ LDR R0, [R1] \n\
 /* 08033342 */ LDRB R2, [R0, 0xB] \n\
 /* 08033344 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\

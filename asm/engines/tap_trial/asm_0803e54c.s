@@ -9,7 +9,7 @@ thumb_func_start tap_trial_cue_barely \n\
 /* 0803e554 */ BL stop_sound \n\
 /* 0803e558 */ LDR R0, =s_tebyoushi_pati_seqData \n\
 /* 0803e55a */ BL play_sound \n\
-/* 0803e55e */ LDR R0, =D_030055d0 \n\
+/* 0803e55e */ LDR R0, =gCurrentEngineData \n\
 /* 0803e560 */ LDR R1, [R0] \n\
 /* 0803e562 */ LDRH R0, [R1, 0x20] \n\
 /* 0803e564 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\

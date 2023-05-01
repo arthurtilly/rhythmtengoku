@@ -10,7 +10,7 @@ thumb_func_start showtime_common_display_text \n\
 /* 0802c158 */ BNE branch_0802c178 \n\
 /* 0802c15a */ LDR R0, =D_03005380 \n\
 /* 0802c15c */ LDR R0, [R0] \n\
-/* 0802c15e */ LDR R1, =D_030055d0 \n\
+/* 0802c15e */ LDR R1, =gCurrentEngineData \n\
 /* 0802c160 */ LDR R1, [R1] \n\
 /* 0802c162 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 0802c164 */ LDRSH R1, [R1, R2] \n\
@@ -21,7 +21,7 @@ thumb_func_start showtime_common_display_text \n\
 .ltorg \n\
  \n\
 branch_0802c178: \n\
-/* 0802c178 */ LDR R4, =D_030055d0 \n\
+/* 0802c178 */ LDR R4, =gCurrentEngineData \n\
 /* 0802c17a */ LDR R0, [R4] \n\
 /* 0802c17c */ LDR R0, [R0] \n\
 /* 0802c17e */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\

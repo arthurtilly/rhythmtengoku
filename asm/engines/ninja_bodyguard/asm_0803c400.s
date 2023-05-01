@@ -8,7 +8,7 @@ thumb_func_start func_0803c400 \n\
 /* 0803c404 */ ADDS R0, 0x54 @ Add 0x54 to R0 \n\
 /* 0803c406 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803c408 */ STRH R1, [R0] \n\
-/* 0803c40a */ LDR R0, =D_030055d0 \n\
+/* 0803c40a */ LDR R0, =gCurrentEngineData \n\
 /* 0803c40c */ LDR R0, [R0] \n\
 /* 0803c40e */ LDRB R0, [R0, 0x1] \n\
 /* 0803c410 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\

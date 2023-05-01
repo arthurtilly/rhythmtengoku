@@ -8,7 +8,7 @@ thumb_func_start func_08022614 \n\
 /* 08022618 */ LDRB R0, [R6] \n\
 /* 0802261a */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0802261c */ BEQ branch_08022692 \n\
-/* 0802261e */ LDR R0, =D_030055d0 \n\
+/* 0802261e */ LDR R0, =gCurrentEngineData \n\
 /* 08022620 */ LDR R0, [R0] \n\
 /* 08022622 */ ADDS R0, 0xB2 @ Add 0xB2 to R0 \n\
 /* 08022624 */ LDRB R2, [R0] \n\

@@ -12,7 +12,7 @@ thumb_func_start func_080268cc \n\
 /* 080268d8 */ MOVS R7, 0x3 @ Set R7 to 0x3 \n\
 /* 080268da */ ANDS R7, R0 @ Set R7 to R7 & R0 \n\
 /* 080268dc */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
-/* 080268de */ LDR R0, =D_030055d0 \n\
+/* 080268de */ LDR R0, =gCurrentEngineData \n\
 /* 080268e0 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 080268e2 */ MOVS R6, 0xDD @ Set R6 to 0xDD \n\
 /* 080268e4 */ LSLS R6, R6, 0x2 \n\

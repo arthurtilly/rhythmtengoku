@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_08038b98 \n\
 /* 08038b98 */ PUSH {R4-R6, LR} \n\
 /* 08038b9a */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
-/* 08038b9c */ LDR R0, =D_030055d0 \n\
+/* 08038b9c */ LDR R0, =gCurrentEngineData \n\
 /* 08038b9e */ LDR R0, [R0] \n\
 /* 08038ba0 */ MOVS R1, 0xBB @ Set R1 to 0xBB \n\
 /* 08038ba2 */ LSLS R1, R1, 0x1 \n\
@@ -98,7 +98,7 @@ branch_08038c40: \n\
 /* 08038c58 */ ADDS R2, R2, R6 @ Set R2 to R2 + R6 \n\
 /* 08038c5a */ LSLS R2, R2, 0x8 \n\
 /* 08038c5c */ ASRS R2, R2, 0x10 \n\
-/* 08038c5e */ LDR R3, =D_030055d0 \n\
+/* 08038c5e */ LDR R3, =gCurrentEngineData \n\
 /* 08038c60 */ LDR R4, [R3] \n\
 /* 08038c62 */ ADDS R4, 0xE0 @ Add 0xE0 to R4 \n\
 /* 08038c64 */ LDR R3, [R5, 0x8] \n\
@@ -146,7 +146,7 @@ branch_08038ca0: \n\
 /* 08038caa */ ADDS R2, R2, R6 @ Set R2 to R2 + R6 \n\
 /* 08038cac */ LSLS R2, R2, 0x8 \n\
 /* 08038cae */ ASRS R2, R2, 0x10 \n\
-/* 08038cb0 */ LDR R3, =D_030055d0 \n\
+/* 08038cb0 */ LDR R3, =gCurrentEngineData \n\
 /* 08038cb2 */ LDR R4, [R3] \n\
 /* 08038cb4 */ ADDS R4, 0xE0 @ Add 0xE0 to R4 \n\
 /* 08038cb6 */ LDR R3, [R5, 0x8] \n\

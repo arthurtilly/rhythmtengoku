@@ -10,7 +10,7 @@
 
 
 // Types:
-struct ShowtimePrologueInfo {
+struct ShowtimePrologueEngineData {
     u8  ver;            // Value:  Version
     s16 textSprite;     // Sprite: Text
     s16 penguinSprite;  // Sprite: Penguin

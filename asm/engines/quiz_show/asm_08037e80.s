@@ -2,13 +2,13 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start quiz_input_event \n\
+thumb_func_start quiz_show_input_event \n\
 /* 08037e80 */ PUSH {R4-R7, LR} \n\
 /* 08037e82 */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 08037e84 */ PUSH {R7} \n\
 /* 08037e86 */ SUB SP, 0xC \n\
 /* 08037e88 */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
-/* 08037e8a */ LDR R0, =D_030055d0 \n\
+/* 08037e8a */ LDR R0, =gCurrentEngineData \n\
 /* 08037e8c */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08037e8e */ LDR R0, [R0] \n\
 /* 08037e90 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
@@ -22,7 +22,7 @@ thumb_func_start quiz_input_event \n\
 /* 08037ea0 */ LDR R0, [R4] \n\
 /* 08037ea2 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08037ea4 */ LDRSH R1, [R5, R2] \n\
-/* 08037ea6 */ LDR R2, =anim_quiz_player_press_button_r \n\
+/* 08037ea6 */ LDR R2, =anim_quiz_show_player_press_button_r \n\
 /* 08037ea8 */ STR R7, [SP] \n\
 /* 08037eaa */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
 /* 08037eac */ STR R3, [SP, 0x4] \n\
@@ -50,7 +50,7 @@ branch_08037ed2: \n\
 /* 08037edc */ LDR R0, [R4] \n\
 /* 08037ede */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08037ee0 */ LDRSH R1, [R5, R2] \n\
-/* 08037ee2 */ LDR R2, =anim_quiz_player_press_button_l \n\
+/* 08037ee2 */ LDR R2, =anim_quiz_show_player_press_button_l \n\
 /* 08037ee4 */ STR R7, [SP] \n\
 /* 08037ee6 */ MOVS R3, 0x7F @ Set R3 to 0x7F \n\
 /* 08037ee8 */ STR R3, [SP, 0x4] \n\
@@ -74,7 +74,7 @@ branch_08037f0e: \n\
 /* 08037f10 */ LDR R0, [R0] \n\
 /* 08037f12 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08037f14 */ LDRSH R1, [R5, R2] \n\
-/* 08037f16 */ LDR R3, =quiz_ex_player_face_anim \n\
+/* 08037f16 */ LDR R3, =quiz_show_endless_player_face_anim \n\
 /* 08037f18 */ MOV R4, R8 @ Set R4 to R8 \n\
 /* 08037f1a */ LDR R2, [R4] \n\
 /* 08037f1c */ ADDS R2, 0x49 @ Add 0x49 to R2 \n\

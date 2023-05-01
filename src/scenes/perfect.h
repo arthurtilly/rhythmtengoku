@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct PerfectSceneInfo {
+struct PerfectSceneData {
     /* add fields here */
 };
 

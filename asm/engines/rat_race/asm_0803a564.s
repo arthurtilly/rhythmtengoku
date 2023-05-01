@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start rat_race_cue_update_stop \n\
 /* 0803a564 */ PUSH {R4, LR} \n\
 /* 0803a566 */ ADDS R3, R1, 0x0 @ Set R3 to R1 + 0x0 \n\
-/* 0803a568 */ LDR R0, =D_030055d0 \n\
+/* 0803a568 */ LDR R0, =gCurrentEngineData \n\
 /* 0803a56a */ LDR R1, [R0] \n\
 /* 0803a56c */ LDR R0, [R3, 0x4] \n\
 /* 0803a56e */ LDR R1, [R1, 0x34] \n\

@@ -12,7 +12,7 @@ struct SpaceballEntity {
     s32 z;
 };
 
-struct SpaceballInfo {
+struct SpaceballEngineData {
     u8 version;
     s32 zoom;   // Value: Camera Position
     struct SpaceballBatter {

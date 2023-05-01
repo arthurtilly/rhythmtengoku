@@ -441,29 +441,29 @@ struct CueDefinition *bunny_hop_cue_index[] = {
 
 // [D_089e632c] Common Events
 EngineEvent bunny_hop_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) bunny_hop_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) bunny_hop_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) bunny_hop_common_init_tutorial,
+    /* BEAT_ANIMATION */ bunny_hop_common_beat_animation,
+    /* DISPLAY_TEXT   */ bunny_hop_common_display_text,
+    /* INIT_TUTORIAL  */ bunny_hop_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e633c] Engine Events
 EngineEvent bunny_hop_engine_events[] = {
-    /* 0x00 */ (EngineEvent) bunny_hop_engine_event_stub,
-    /* 0x01 */ (EngineEvent) func_0803899c,
-    /* 0x02 */ (EngineEvent) func_0803934c,
-    /* 0x03 */ (EngineEvent) func_08038248,
-    /* 0x04 */ (EngineEvent) func_080382b0,
-    /* 0x05 */ (EngineEvent) func_080382f4,
-    /* 0x06 */ (EngineEvent) func_08038314,
-    /* 0x07 */ (EngineEvent) func_0803833c,
-    /* 0x08 */ (EngineEvent) func_080395dc,
-    /* 0x09 */ (EngineEvent) func_080383f0
+    /* 0x00 */ bunny_hop_engine_event_stub,
+    /* 0x01 */ func_0803899c,
+    /* 0x02 */ func_0803934c,
+    /* 0x03 */ func_08038248,
+    /* 0x04 */ func_080382b0,
+    /* 0x05 */ func_080382f4,
+    /* 0x06 */ func_08038314,
+    /* 0x07 */ func_0803833c,
+    /* 0x08 */ func_080395dc,
+    /* 0x09 */ func_080383f0
 };
 
 // [D_089e6364] Bunny Hop Game Engine
 struct GameEngine bunny_hop_engine = {
-    /* Size in Memory */ 0x31c,
+    /* Size in Memory */ sizeof(struct BunnyHopEngineData),
     /* Start Engine   */ bunny_hop_engine_start,
     /* Update Engine  */ bunny_hop_engine_update,
     /* Stop Engine    */ bunny_hop_engine_stop,

@@ -222,25 +222,25 @@ struct CueDefinition *clappy_trio_cue_index[] = {
 
 // [D_089e4750] Common Events
 EngineEvent clappy_trio_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) clappy_trio_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) clappy_trio_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) clappy_trio_common_init_tutorial,
+    /* BEAT_ANIMATION */ clappy_trio_common_beat_animation,
+    /* DISPLAY_TEXT   */ clappy_trio_common_display_text,
+    /* INIT_TUTORIAL  */ clappy_trio_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e4760] Engine Events
 EngineEvent clappy_trio_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_0803068c,
-    /* 0x01 */ (EngineEvent) func_0803074c,
-    /* 0x02 */ (EngineEvent) func_0803080c,
-    /* 0x03 */ (EngineEvent) func_08030898,
-    /* 0x04 */ (EngineEvent) func_0803088c,
-    /* 0x05 */ (EngineEvent) func_08030bf0
+    /* 0x00 */ func_0803068c,
+    /* 0x01 */ func_0803074c,
+    /* 0x02 */ func_0803080c,
+    /* 0x03 */ func_08030898,
+    /* 0x04 */ func_0803088c,
+    /* 0x05 */ func_08030bf0
 };
 
 // [D_089e4778] The Clappy Trio Game Engine
 struct GameEngine clappy_trio_engine = {
-    /* Size in Memory */ 0x1c,
+    /* Size in Memory */ sizeof(struct ClappyTrioEngineData),
     /* Start Engine   */ clappy_trio_engine_start,
     /* Update Engine  */ clappy_trio_engine_update,
     /* Stop Engine    */ clappy_trio_engine_stop,

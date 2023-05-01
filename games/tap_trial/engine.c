@@ -2272,35 +2272,35 @@ struct CueDefinition *tap_trial_cue_index[] = {
 
 // [D_089e80e4] Common Events
 EngineEvent tap_trial_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) tap_trial_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) tap_trial_common_display_text,
+    /* BEAT_ANIMATION */ tap_trial_common_beat_animation,
+    /* DISPLAY_TEXT   */ tap_trial_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e80f0] Engine Events
 EngineEvent tap_trial_engine_events[] = {
-    /* 0x00 */ (EngineEvent) tap_trial_play_monkey_action,
-    /* 0x01 */ (EngineEvent) func_0803e0bc,
-    /* 0x02 */ (EngineEvent) func_0803e0f8,
-    /* 0x03 */ (EngineEvent) func_0803e10c,
-    /* 0x04 */ (EngineEvent) func_0803e258,
-    /* 0x05 */ (EngineEvent) func_0803e160,
-    /* 0x06 */ (EngineEvent) func_0803e1a4,
-    /* 0x07 */ (EngineEvent) func_0803e208,
-    /* 0x08 */ (EngineEvent) func_0803e448,
-    /* 0x09 */ (EngineEvent) func_0803e2e0,
-    /* 0x0A */ (EngineEvent) func_0803e2f4,
-    /* 0x0B */ (EngineEvent) func_0803e310,
-    /* 0x0C */ (EngineEvent) func_0803e324,
-    /* 0x0D */ (EngineEvent) func_0803e338,
-    /* 0x0E */ (EngineEvent) func_0803e354,
-    /* 0x0F */ (EngineEvent) tap_trial_engine_event_stub
+    /* 0x00 */ tap_trial_play_monkey_action,
+    /* 0x01 */ func_0803e0bc,
+    /* 0x02 */ func_0803e0f8,
+    /* 0x03 */ func_0803e10c,
+    /* 0x04 */ func_0803e258,
+    /* 0x05 */ func_0803e160,
+    /* 0x06 */ func_0803e1a4,
+    /* 0x07 */ func_0803e208,
+    /* 0x08 */ func_0803e448,
+    /* 0x09 */ func_0803e2e0,
+    /* 0x0A */ func_0803e2f4,
+    /* 0x0B */ func_0803e310,
+    /* 0x0C */ func_0803e324,
+    /* 0x0D */ func_0803e338,
+    /* 0x0E */ func_0803e354,
+    /* 0x0F */ tap_trial_engine_event_stub
 };
 
 // [D_089e8130] Tap Trial Game Engine
 struct GameEngine tap_trial_engine = {
-    /* Size in Memory */ 0x398,
+    /* Size in Memory */ sizeof(struct TapTrialEngineData),
     /* Start Engine   */ tap_trial_engine_start,
     /* Update Engine  */ tap_trial_engine_update,
     /* Stop Engine    */ tap_trial_engine_stop,

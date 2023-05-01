@@ -7,7 +7,7 @@ thumb_func_start func_08034ff4 \n\
 /* 08034ff6 */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 08034ff8 */ PUSH {R7} \n\
 /* 08034ffa */ SUB SP, 0xC \n\
-/* 08034ffc */ LDR R0, =D_030055d0 \n\
+/* 08034ffc */ LDR R0, =gCurrentEngineData \n\
 /* 08034ffe */ LDR R6, [R0] \n\
 /* 08035000 */ ADDS R7, R6, 0x4 @ Set R7 to R6 + 0x4 \n\
 /* 08035002 */ LDR R0, =s_tap_kick_monky_seqData \n\

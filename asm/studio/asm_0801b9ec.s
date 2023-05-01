@@ -9,7 +9,7 @@ thumb_func_start func_0801b9ec \n\
 /* 0801b9f2 */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 0801b9f4 */ BLT branch_0801ba0c \n\
 /* 0801b9f6 */ LDR R0, =D_089d8444 \n\
-/* 0801b9f8 */ LDR R6, =D_030046a4 \n\
+/* 0801b9f8 */ LDR R6, =gCurrentSceneData \n\
 /* 0801b9fa */ LDR R1, [R6] \n\
 /* 0801b9fc */ MOVS R2, 0xDD @ Set R2 to 0xDD \n\
 /* 0801b9fe */ LSLS R2, R2, 0x2 \n\

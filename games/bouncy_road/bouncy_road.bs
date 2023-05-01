@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_bouncy_road, script_bouncy_road_entry
 
 
+
 @ Bouncy Road - Script Entry Point (Skipped Practice)
 
 script script_bouncy_road_skipped_practice_entry
@@ -107,6 +108,7 @@ struct bouncy_road_marking_criteria
     .word bouncy_road_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Bouncy Road - Main Script
@@ -208,7 +210,7 @@ script script_bouncy_road_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         bouncy_road_enable_ball_goal_sfx
         bouncy_road_deploy_ball 24
         rest 288
@@ -218,7 +220,7 @@ script script_bouncy_road_practice
     loop_end
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         rest 24
         rest 24
         bouncy_road_deploy_ball 24
@@ -233,7 +235,7 @@ script script_bouncy_road_practice
     loop_end
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         bouncy_road_enable_ball_goal_sfx
         bouncy_road_deploy_ball 12
         rest 192

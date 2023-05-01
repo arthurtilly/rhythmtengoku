@@ -10,7 +10,7 @@
 
 
 // Types:
-struct Remix5PrologueInfo {
+struct Remix5PrologueEngineData {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };

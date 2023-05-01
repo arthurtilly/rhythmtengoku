@@ -9,7 +9,7 @@ thumb_func_start func_0802dc54 \n\
 /* 0802dc5a */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 0802dc5c */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 0802dc5e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 0802dc60 */ LDR R5, =D_030055d0 \n\
+/* 0802dc60 */ LDR R5, =gCurrentEngineData \n\
 /* 0802dc62 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
  \n\
 branch_0802dc64: \n\

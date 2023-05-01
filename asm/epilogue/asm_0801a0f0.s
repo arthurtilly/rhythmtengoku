@@ -11,7 +11,7 @@ thumb_func_start func_0801a0f0 \n\
 /* 0801a0fc */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 0801a0fe */ LDR R1, =0x7fff \n\
 /* 0801a100 */ STRH R1, [R0] \n\
-/* 0801a102 */ LDR R0, =D_030046a4 \n\
+/* 0801a102 */ LDR R0, =gCurrentSceneData \n\
 /* 0801a104 */ LDR R0, [R0] \n\
 /* 0801a106 */ LDR R0, [R0, 0x10] \n\
 /* 0801a108 */ BL play_sound \n\

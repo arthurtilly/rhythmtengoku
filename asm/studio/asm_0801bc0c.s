@@ -6,7 +6,7 @@ thumb_func_start func_0801bc0c \n\
 /* 0801bc0c */ PUSH {R4-R7, LR} \n\
 /* 0801bc0e */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
 /* 0801bc10 */ BNE branch_0801bcc8 \n\
-/* 0801bc12 */ LDR R5, =D_030046a4 \n\
+/* 0801bc12 */ LDR R5, =gCurrentSceneData \n\
 /* 0801bc14 */ LDR R0, [R5] \n\
 /* 0801bc16 */ MOVS R4, 0xD8 @ Set R4 to 0xD8 \n\
 /* 0801bc18 */ LSLS R4, R4, 0x2 \n\
@@ -40,7 +40,7 @@ thumb_func_start func_0801bc0c \n\
 /* 0801bc58 */ SUBS R7, 0x1 @ Subtract 0x1 from R7 \n\
  \n\
 branch_0801bc5a: \n\
-/* 0801bc5a */ LDR R0, =D_030046a4 \n\
+/* 0801bc5a */ LDR R0, =gCurrentSceneData \n\
 /* 0801bc5c */ LDR R0, [R0] \n\
 /* 0801bc5e */ MOVS R1, 0x92 @ Set R1 to 0x92 \n\
 /* 0801bc60 */ LSLS R1, R1, 0x3 \n\
@@ -54,7 +54,7 @@ branch_0801bc6a: \n\
 /* 0801bc6e */ ADDS R2, R7, 0x0 @ Set R2 to R7 + 0x0 \n\
 /* 0801bc70 */ BL func_0801b138 \n\
 /* 0801bc74 */ BL func_0801c7c0 \n\
-/* 0801bc78 */ LDR R4, =D_030046a4 \n\
+/* 0801bc78 */ LDR R4, =gCurrentSceneData \n\
 /* 0801bc7a */ LDR R0, [R4] \n\
 /* 0801bc7c */ MOVS R2, 0xDC @ Set R2 to 0xDC \n\
 /* 0801bc7e */ LSLS R2, R2, 0x2 \n\
@@ -87,7 +87,7 @@ branch_0801bc6a: \n\
 .ltorg \n\
  \n\
 branch_0801bcc8: \n\
-/* 0801bcc8 */ LDR R0, =D_030046a4 \n\
+/* 0801bcc8 */ LDR R0, =gCurrentSceneData \n\
 /* 0801bcca */ LDR R0, [R0] \n\
 /* 0801bccc */ MOVS R1, 0xD7 @ Set R1 to 0xD7 \n\
 /* 0801bcce */ LSLS R1, R1, 0x2 \n\

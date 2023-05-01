@@ -6,7 +6,7 @@ thumb_func_start space_dance_common_beat_animation \n\
 /* 0803d914 */ PUSH {R4-R7, LR} \n\
 /* 0803d916 */ SUB SP, 0xC \n\
 /* 0803d918 */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
-/* 0803d91a */ LDR R7, =D_030055d0 \n\
+/* 0803d91a */ LDR R7, =gCurrentEngineData \n\
  \n\
 branch_0803d91c: \n\
 /* 0803d91c */ LDR R0, [R7] \n\
@@ -38,7 +38,7 @@ branch_0803d950: \n\
 /* 0803d950 */ ADDS R6, 0x1 @ Add 0x1 to R6 \n\
 /* 0803d952 */ CMP R6, 0x3 @ Compare R6 and 0x3 \n\
 /* 0803d954 */ BLS branch_0803d91c \n\
-/* 0803d956 */ LDR R5, =D_030055d0 \n\
+/* 0803d956 */ LDR R5, =gCurrentEngineData \n\
 /* 0803d958 */ LDR R1, [R5] \n\
 /* 0803d95a */ LDRH R0, [R1, 0x18] \n\
 /* 0803d95c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

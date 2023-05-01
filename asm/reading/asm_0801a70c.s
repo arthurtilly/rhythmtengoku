@@ -14,7 +14,7 @@ thumb_func_start func_0801a70c \n\
 /* 0801a71e */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 0801a720 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801a722 */ BEQ branch_0801a734 \n\
-/* 0801a724 */ LDR R0, =D_030046a4 \n\
+/* 0801a724 */ LDR R0, =gCurrentSceneData \n\
 /* 0801a726 */ LDR R0, [R0] \n\
 /* 0801a728 */ LDRB R0, [R0, 0xC] \n\
 /* 0801a72a */ LSLS R0, R0, 0x18 \n\
@@ -29,7 +29,7 @@ branch_0801a734: \n\
 /* 0801a738 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 0801a73a */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801a73c */ BEQ branch_0801a75a \n\
-/* 0801a73e */ LDR R4, =D_030046a4 \n\
+/* 0801a73e */ LDR R4, =gCurrentSceneData \n\
 /* 0801a740 */ LDR R0, [R4] \n\
 /* 0801a742 */ LDR R0, [R0, 0x8] \n\
 /* 0801a744 */ BL text_printer_get_text \n\
@@ -50,7 +50,7 @@ branch_0801a75a: \n\
 /* 0801a760 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 0801a762 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801a764 */ BEQ branch_0801a782 \n\
-/* 0801a766 */ LDR R4, =D_030046a4 \n\
+/* 0801a766 */ LDR R4, =gCurrentSceneData \n\
 /* 0801a768 */ LDR R0, [R4] \n\
 /* 0801a76a */ LDR R0, [R0, 0x8] \n\
 /* 0801a76c */ BL text_printer_get_text \n\
@@ -90,7 +90,7 @@ branch_0801a7ac: \n\
 /* 0801a7b0 */ B branch_0801a83a \n\
  \n\
 branch_0801a7b2: \n\
-/* 0801a7b2 */ LDR R2, =D_030046a4 \n\
+/* 0801a7b2 */ LDR R2, =gCurrentSceneData \n\
 /* 0801a7b4 */ LDR R0, [R2] \n\
 /* 0801a7b6 */ MOVS R1, 0x88 @ Set R1 to 0x88 \n\
 /* 0801a7b8 */ LSLS R1, R1, 0x1 \n\
@@ -115,7 +115,7 @@ branch_0801a7b2: \n\
 .ltorg \n\
  \n\
 branch_0801a7ec: \n\
-/* 0801a7ec */ LDR R2, =D_030046a4 \n\
+/* 0801a7ec */ LDR R2, =gCurrentSceneData \n\
 /* 0801a7ee */ LDR R0, [R2] \n\
 /* 0801a7f0 */ MOVS R1, 0x88 @ Set R1 to 0x88 \n\
 /* 0801a7f2 */ LSLS R1, R1, 0x1 \n\
@@ -141,7 +141,7 @@ branch_0801a7ec: \n\
 branch_0801a824: \n\
 /* 0801a824 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801a826 */ BL set_pause_beatscript_scene \n\
-/* 0801a82a */ LDR R0, =D_030046a4 \n\
+/* 0801a82a */ LDR R0, =gCurrentSceneData \n\
 /* 0801a82c */ LDR R1, [R0] \n\
 /* 0801a82e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801a830 */ STR R0, [R1, 0x4] \n\
@@ -151,7 +151,7 @@ branch_0801a824: \n\
  \n\
 branch_0801a83a: \n\
 /* 0801a83a */ BL func_0801a5d8 \n\
-/* 0801a83e */ LDR R4, =D_030046a4 \n\
+/* 0801a83e */ LDR R4, =gCurrentSceneData \n\
 /* 0801a840 */ LDR R0, [R4] \n\
 /* 0801a842 */ LDR R0, [R0, 0x8] \n\
 /* 0801a844 */ BL text_printer_update \n\

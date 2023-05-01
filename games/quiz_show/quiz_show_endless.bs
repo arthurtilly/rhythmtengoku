@@ -1,32 +1,52 @@
-.section .rodata
-
 .include "include/beatscript.inc"
 .include "games/quiz_show/macros.inc"
 
-load_quiz_show_labels
-
-.set END_OF_TABLE, 0
 
 
-/* Script Data - Quiz Show (Endless) */
+.section .script.entry
+@ Quiz Show (Endless) - Script Entry Point
+
+script script_quiz_show_endless_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_quiz_show_endless
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_quiz_show_endless_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_quiz_show_endless, script_quiz_show_endless_entry
 
 
-@ Script Table
-script D_08068320
-    .word D_08a59c58
-    .word END_OF_TABLE
-.balign 4, 0
+
+.section .rodata
+@ Quiz Show (Endless) - Data
+
+.macro quiz_show_endless_table name, entry
+    struct \name
+        .word \entry
+        .word NULL
+    endstruct
+.endm
 
 
-@ Pattern
-script D_08068328
+quiz_show_endless_table D_08068320, D_08a59c58
+
+
+script quiz_show_endless_sub_08068328
     quiz_show_event06 192
     rest 192
 return
 
 
-@ Pattern
-script D_08068358
+script quiz_show_endless_sub_08068358
     rest 24
     rest 24
     quiz_show_event02 0
@@ -40,7 +60,6 @@ script D_08068358
     rest 6
     quiz_show_event02 1
     rest 6
-
     switch_random INT8, 3
         case 0
             quiz_show_event02 0
@@ -50,7 +69,6 @@ script D_08068358
             quiz_show_event02 0
             rest 8
             break
-
         case 1
             quiz_show_event02 0
             rest 6
@@ -59,7 +77,6 @@ script D_08068358
             quiz_show_event02 1
             rest 6
             break
-
         case 2
             quiz_show_event02 0
             rest 6
@@ -70,7 +87,6 @@ script D_08068358
             rest 6
             break
     end_switch
-
     switch_random INT8, 3
         case 0
             quiz_show_event02 0
@@ -83,7 +99,6 @@ script D_08068358
             rest 12
             rest 6
             break
-
         case 1
             quiz_show_event02 0
             rest 6
@@ -92,7 +107,6 @@ script D_08068358
             rest 6
             rest 6
             break
-
         case 2
             quiz_show_event02 0
             rest 12
@@ -104,13 +118,11 @@ script D_08068358
             rest 12
             break
     end_switch
-
     quiz_show_event0C 0x108
 return
 
 
-@ Pattern
-script D_080687f0
+script quiz_show_endless_sub_080687f0
     rest 24
     rest 24
     quiz_show_event02 0
@@ -140,15 +152,10 @@ script D_080687f0
 return
 
 
-@ Script Table
-script D_080689b8
-    .word D_08a59c64
-    .word END_OF_TABLE
-.balign 4, 0
+quiz_show_endless_table D_080689b8, D_08a59c64
 
 
-@ Pattern
-script D_080689c0
+script quiz_show_endless_sub_080689c0
     rest 24
     rest 24
     quiz_show_event02 0
@@ -173,22 +180,13 @@ script D_080689c0
 return
 
 
-@ Script Table
-script D_08068b34
-    .word D_08a59c70
-    .word END_OF_TABLE
-.balign 4, 0
+quiz_show_endless_table D_08068b34, D_08a59c70
 
 
-@ Script Table
-script D_08068b3c
-    .word D_08a59c7c
-    .word END_OF_TABLE
-.balign 4, 0
+quiz_show_endless_table D_08068b3c, D_08a59c7c
 
 
-@ Pattern
-script D_08068b44
+script quiz_show_endless_sub_08068b44
     rest 24
     rest 24
     quiz_show_event02 0
@@ -211,15 +209,10 @@ script D_08068b44
 return
 
 
-@ Script Table
-script D_08068c94
-    .word D_08a59c88
-    .word END_OF_TABLE
-.balign 4, 0
+quiz_show_endless_table D_08068c94, D_08a59c88
 
 
-@ Pattern
-script D_08068c9c
+script quiz_show_endless_sub_08068c9c
     rest 24
     rest 24
     quiz_show_event02 0
@@ -239,15 +232,10 @@ script D_08068c9c
 return
 
 
-@ Script Table
-script D_08068db0
-    .word D_08a59c94
-    .word END_OF_TABLE
-.balign 4, 0
+quiz_show_endless_table D_08068db0, D_08a59c94
 
 
-@ Pattern
-script D_08068db8
+script quiz_show_endless_sub_08068db8
     rest 24
     rest 24
     quiz_show_event02 0
@@ -265,15 +253,10 @@ script D_08068db8
 return
 
 
-@ Script Table
-script D_08068ea8
-    .word D_08a59ca0
-    .word END_OF_TABLE
-.balign 4, 0
+quiz_show_endless_table D_08068ea8, D_08a59ca0
 
 
-@ Pattern
-script D_08068eb0
+script quiz_show_endless_sub_08068eb0
     rest 24
     rest 24
     quiz_show_event02 0
@@ -288,15 +271,10 @@ script D_08068eb0
 return
 
 
-@ Script Table
-script D_08068f70
-    .word D_08a59cac
-    .word END_OF_TABLE
-.balign 4, 0
+quiz_show_endless_table D_08068f70, D_08a59cac
 
 
-@ Pattern
-script D_08068f78
+script quiz_show_endless_sub_08068f78
     rest 24
     rest 24
     quiz_show_event02 0
@@ -309,24 +287,17 @@ script D_08068f78
 return
 
 
-@ Script Table
-script D_08069014
-    .word D_08a59cc4
-    .word END_OF_TABLE
-.balign 4, 0
+quiz_show_endless_table D_08069014, D_08a59cc4
 
 
-@ Pattern
-script D_0806901c
+script quiz_show_endless_sub_0806901c
     rest 24
     rest 24
-
     switch_random INT8, 2
         case 0
             quiz_show_event02 0
             rest 24
             break
-
         case 1
             quiz_show_event02 0
             rest 12
@@ -334,7 +305,6 @@ script D_0806901c
             rest 12
             break
     end_switch
-
     switch_random INT8, 3
         case 0
             quiz_show_event02 0
@@ -344,7 +314,6 @@ script D_0806901c
             quiz_show_event02 0
             rest 12
             break
-
         case 1
             quiz_show_event02 0
             rest 12
@@ -353,7 +322,6 @@ script D_0806901c
             quiz_show_event02 1
             rest 6
             break
-
         case 2
             quiz_show_event02 0
             rest 6
@@ -365,7 +333,6 @@ script D_0806901c
             rest 6
             break
     end_switch
-
     switch_random INT8, 3
         case 0
             quiz_show_event02 0
@@ -373,7 +340,6 @@ script D_0806901c
             quiz_show_event02 0
             rest 12
             break
-
         case 1
             quiz_show_event02 0
             rest 12
@@ -382,7 +348,6 @@ script D_0806901c
             quiz_show_event02 1
             rest 6
             break
-
         case 2
             quiz_show_event02 0
             rest 6
@@ -394,13 +359,11 @@ script D_0806901c
             rest 6
             break
     end_switch
-
     quiz_show_event0C 0x108
 return
 
 
-@ Pattern
-script D_0806949c
+script quiz_show_endless_sub_0806949c
     rest 24
     rest 24
     quiz_show_event02 0
@@ -425,15 +388,10 @@ script D_0806949c
 return
 
 
-@ Script Table
-script D_08069610
-    .word D_08a59cd0
-    .word END_OF_TABLE
-.balign 4, 0
+quiz_show_endless_table D_08069610, D_08a59cd0
 
 
-@ Pattern
-script D_08069618
+script quiz_show_endless_sub_08069618
     rest 24
     rest 24
     quiz_show_event02 0
@@ -456,15 +414,10 @@ script D_08069618
 return
 
 
-@ Script Table
-script D_08069768
-    .word D_08a59cdc
-    .word END_OF_TABLE
-.balign 4, 0
+quiz_show_endless_table D_08069768, D_08a59cdc
 
 
-@ Pattern
-script D_08069770
+script quiz_show_endless_sub_08069770
     rest 24
     rest 24
     quiz_show_event02 0
@@ -484,15 +437,10 @@ script D_08069770
 return
 
 
-@ Script Table
-script D_08069884
-    .word D_08a59ce8
-    .word END_OF_TABLE
-.balign 4, 0
+quiz_show_endless_table D_08069884, D_08a59ce8
 
 
-@ Pattern
-script D_0806988c
+script quiz_show_endless_sub_0806988c
     rest 24
     rest 24
     quiz_show_event02 0
@@ -508,73 +456,293 @@ script D_0806988c
 return
 
 
-@ Script Table
-script D_08069958
-    .word D_08a59cf4
-    .word END_OF_TABLE
-.balign 4, 0
+quiz_show_endless_table D_08069958, D_08a59cf4
 
 
-@ Text
-script D_08069960
-.ascii "\n"
-.asciz "残念！！"
-.balign 4, 0
+
+@ Quiz Show (Endless) - Text
+
+text D_08069960
+    .ascii "\n"
+    .asciz "残念！！"
+endtext
 
 
-@ Text
-script D_0806996c
-.ascii "また挑戦して下さい。\n"
-.asciz "さようなら。"
-.balign 4, 0
+text D_0806996c
+    .ascii "また挑戦して下さい。\n"
+    .asciz "さようなら。"
+endtext
 
 
-@ Text
-script D_08069990
-.ascii "こんばんは。\n"
-.asciz "クイズナンダダ！？の時間です。"
-.balign 4, 0
+text D_08069990
+    .ascii "こんばんは。\n"
+    .asciz "クイズナンダダ！？の時間です。"
+endtext
 
 
-@ Text
-script D_080699bc
-.ascii "今回は、　なんと\n"
-.asciz "スペシャルです！"
-.balign 4, 0
+text D_080699bc
+    .ascii "今回は、　なんと\n"
+    .asciz "スペシャルです！"
+endtext
 
 
-@ Text
-script D_080699e0
-.ascii "では　さっそく\n"
-.asciz "いってみましょう！"
-.balign 4, 0
+text D_080699e0
+    .ascii "では　さっそく\n"
+    .asciz "いってみましょう！"
+endtext
 
 
-@ Text
-script D_08069a04
-.ascii "\n"
-.asciz "そこまで！！"
-.balign 4, 0
+text D_08069a04
+    .ascii "\n"
+    .asciz "そこまで！！"
+endtext
 
 
-@ Text
-script D_08069a14
-.ascii "\n"
-.asciz "さて、 正解は？"
-.balign 4, 0
+text D_08069a14
+    .ascii "\n"
+    .asciz "さて、 正解は？"
+endtext
 
 
-@ Text
-script D_08069a28
-.ascii "\n"
-.asciz "正解！！"
-.balign 4, 0
+text D_08069a28
+    .ascii "\n"
+    .asciz "正解！！"
+endtext
 
 
-@ Text
-script D_08069a34
-.ascii "\n"
-.asciz "では、　つぎです。"
-.balign 4, 0
+text D_08069a34
+    .ascii "\n"
+    .asciz "では、　つぎです。"
+endtext
+
+
+
+.section .script.main
+@ Quiz Show (Endless) - ???
+
+struct D_08a59c58
+    .word quiz_show_endless_sub_08068358
+    .word quiz_show_endless_sub_08068328
+    .word D_08068320
+endstruct
+
+struct D_08a59c64
+    .word quiz_show_endless_sub_080687f0
+    .word quiz_show_endless_sub_08068328
+    .word D_08068320
+endstruct
+
+struct D_08a59c70
+    .word quiz_show_endless_sub_080689c0
+    .word quiz_show_endless_sub_08068328
+    .word D_080689b8
+endstruct
+
+struct D_08a59c7c
+    .word quiz_show_endless_sub_080689c0
+    .word quiz_show_endless_sub_08068328
+    .word D_08068b34
+endstruct
+
+struct D_08a59c88
+    .word quiz_show_endless_sub_08068b44
+    .word quiz_show_endless_sub_08068328
+    .word D_08068b3c
+endstruct
+
+struct D_08a59c94
+    .word quiz_show_endless_sub_08068c9c
+    .word quiz_show_endless_sub_08068328
+    .word D_08068c94
+endstruct
+
+struct D_08a59ca0
+    .word quiz_show_endless_sub_08068db8
+    .word quiz_show_endless_sub_08068328
+    .word D_08068db0
+endstruct
+
+struct D_08a59cac
+    .word quiz_show_endless_sub_08068eb0
+    .word quiz_show_endless_sub_08068328
+    .word D_08068ea8
+endstruct
+
+struct D_08a59cb8
+    .word quiz_show_endless_sub_08068f78
+    .word quiz_show_endless_sub_08068328
+    .word D_08068f70
+endstruct
+
+struct D_08a59cc4
+    .word quiz_show_endless_sub_0806901c
+    .word quiz_show_endless_sub_08068328
+    .word D_08069014
+endstruct
+
+struct D_08a59cd0
+    .word quiz_show_endless_sub_0806949c
+    .word quiz_show_endless_sub_08068328
+    .word D_08069014
+endstruct
+
+struct D_08a59cdc
+    .word quiz_show_endless_sub_08069618
+    .word quiz_show_endless_sub_08068328
+    .word D_08069610
+endstruct
+
+struct D_08a59ce8
+    .word quiz_show_endless_sub_08069770
+    .word quiz_show_endless_sub_08068328
+    .word D_08069768
+endstruct
+
+struct D_08a59cf4
+    .word quiz_show_endless_sub_0806988c
+    .word quiz_show_endless_sub_08068328
+    .word D_08069884
+endstruct
+
+struct D_08a59d00
+    .word quiz_show_endless_sub_08068f78
+    .word quiz_show_endless_sub_08068328
+    .word D_08069958
+endstruct
+
+
+
+@ Quiz Show (Endless) - Main Script
+
+script script_quiz_show_endless_game_over
+    quiz_show_event00 64
+    quiz_show_event00 65
+    enable_pause 0
+    quiz_show_event10 0
+    play_sfx s_f_quiz_miss_seqData
+    rest 12
+    play_sfx s_warai_solo_seqData
+    play_sfx s_quiz_fan_bad_seqData
+    print_text_s D_08069960
+    run gameplay_display_text_and_wait, 0
+    rest 12
+    quiz_show_event00 32
+    set_tempo 120
+    play_music s_quiz_bgm_seqData
+    set_music_volume 0
+    mod_music_volume 256, 96
+    print_text_s D_0806996c
+    run gameplay_display_text_and_wait, 0
+    enable_pause 0
+    rest 24
+return
+
+
+script script_quiz_show_endless_main
+    enable_play_inputs 0
+    set_tempo 120
+    play_music s_quiz_bgm_seqData
+    set_music_volume 40
+    mod_music_volume 256, 48
+    rest 24
+    enable_pause 1
+    rest 24
+    print_text_s D_08069990
+    run gameplay_display_text_and_wait, 0
+    rest 12
+    print_text_s D_080699bc
+    run gameplay_display_text_and_wait, 0
+    rest 12
+    print_text_s D_080699e0
+    mod_music_volume 0, 96
+    rest 24
+    rest 24
+    rest 24
+    run gameplay_display_text_and_wait, 0
+    rest 24
+    quiz_show_event0B 120
+    switch_random INT8, 2
+        case 0
+            quiz_show_event07 D_08a59cb8
+            break
+        case 1
+            quiz_show_event07 D_08a59d00
+            break
+    end_switch
+    run func_080175b0, 0
+    loop_start
+        run beatscript_disable_loops, 0
+        switch FUNC, func_080175d8
+            case 5
+            case 10
+            case 15
+            case 20
+                quiz_show_event0E 0
+                break
+        end_switch
+        quiz_show_event01 0
+        quiz_show_event01 -16
+        quiz_show_event01 1
+        rest 24
+        quiz_show_event00 0
+        rest 24
+        quiz_show_event0D 1
+        quiz_show_event08 0
+        call_result
+        quiz_show_event0D 0
+        rest 12
+        quiz_show_event00 16
+        rest 24
+        print_text_s 0
+        quiz_show_event05 1
+        quiz_show_event00 1
+        rest 12
+        enable_play_inputs 1
+        rest 12
+        play_sfx s_keytoy_count2_seqData
+        quiz_show_event0D 1
+        quiz_show_event09 0
+        call_result
+        quiz_show_event0D 0
+        play_sfx s_keytoy_count1_seqData
+        rest 24
+        quiz_show_event05 0
+        play_sfx s_f_quiz_stop_seqData
+        print_text_s D_08069a04
+        rest 12
+        enable_play_inputs 0
+        rest 12
+        quiz_show_event00 17
+        run gameplay_display_text_and_wait, 0
+        rest 12
+        print_text_s D_08069a14
+        run gameplay_display_text_and_wait, 0
+        rest 24
+        play_sfx s_f_quiz_answer_seqData
+        quiz_show_event01 -32
+        rest 24
+        quiz_show_event04 0
+        if_eq INT8, GLOBAL_VARIABLE, 0
+            goto script_quiz_show_endless_game_over
+        end_if
+        quiz_show_event00 48
+        quiz_show_event00 49
+        play_sfx s_f_quiz_ok_seqData
+        print_text_s D_08069a28
+        quiz_show_event0F 0
+        rest 12
+        play_sfx s_kansei_seqData
+        play_sfx s_quiz_fan_good_seqData
+        run gameplay_display_text_and_wait, 0
+        quiz_show_event00 32
+        quiz_show_event00 33
+        rest 12
+        print_text_s D_08069a34
+        run gameplay_display_text_and_wait, 0
+        quiz_show_event0A 0
+        run beatscript_enable_loops, 0
+        run func_080175c4, 0
+    loop_end
+return
 
 .end

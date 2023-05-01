@@ -10,8 +10,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gSickBeatsInfo ((struct SickBeatsInfo *)D_030055d0)
-#define ARRAY_SIZE(a) (size_t) (sizeof(a))/sizeof((a)[0])
+#define gSickBeats ((struct SickBeatsEngineData *)gCurrentEngineData)
 
 
 /* SICK BEATS */

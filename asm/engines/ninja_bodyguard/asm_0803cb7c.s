@@ -10,7 +10,7 @@ thumb_func_start ninja_bodyguard_init_gfx2 \n\
 /* 0803cb88 */ LSLS R0, R0, 0x10 \n\
 /* 0803cb8a */ LSRS R0, R0, 0x10 \n\
 /* 0803cb8c */ LDR R2, =ninja_bodyguard_gfx_tables \n\
-/* 0803cb8e */ LDR R1, =D_030055d0 \n\
+/* 0803cb8e */ LDR R1, =gCurrentEngineData \n\
 /* 0803cb90 */ LDR R1, [R1] \n\
 /* 0803cb92 */ LDRB R1, [R1] \n\
 /* 0803cb94 */ LSLS R1, R1, 0x2 \n\

@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct SpaceDancePrologueInfo *)D_030055d0)
+#define gPrologueEngineData ((struct SpaceDancePrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: SPACE DANCE  //  //  //
@@ -43,16 +43,16 @@ void func_0804751c(void) {
 
 // [func_0804754c] MAIN - Init
 void space_dance_prologue_engine_start(u32 ver) {
-    gPrologueInfo->ver = ver;
+    gPrologueEngineData->ver = ver;
 
     func_0804751c();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_space_dance_prologue_title, 0, 80, 32, 0, 1, 0x7f, 0x8000);
-    func_0804dcb8(D_03005380, gPrologueInfo->textSprite, 0x280);
-    gPrologueInfo->facesSprite = func_0804d160(D_03005380, anim_space_dance_prologue_faces, 1, 120, 120, 0, 0, 0x7f, 0x8000);
-    gPrologueInfo->starSprite = func_0804d160(D_03005380, anim_space_dance_prologue_star, 0, 64, 64, 0, 1, 0x7f, 0x8002);
+    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_space_dance_prologue_title, 0, 80, 32, 0, 1, 0x7f, 0x8000);
+    func_0804dcb8(D_03005380, gPrologueEngineData->textSprite, 0x280);
+    gPrologueEngineData->facesSprite = func_0804d160(D_03005380, anim_space_dance_prologue_faces, 1, 120, 120, 0, 0, 0x7f, 0x8000);
+    gPrologueEngineData->starSprite = func_0804d160(D_03005380, anim_space_dance_prologue_star, 0, 64, 64, 0, 1, 0x7f, 0x8002);
 }
 
 
@@ -76,13 +76,13 @@ void func_08047630(u32 event) {
     u16 sprite;
     switch (event) {
         case 0: // Sprite 0 - Text
-            sprite = gPrologueInfo->textSprite;
+            sprite = gPrologueEngineData->textSprite;
             break;
         case 1: // Sprite 1 - Faces
-            sprite = gPrologueInfo->facesSprite;
+            sprite = gPrologueEngineData->facesSprite;
             break;
         case 2: // Sprite 2 - Star
-            sprite = gPrologueInfo->starSprite;
+            sprite = gPrologueEngineData->starSprite;
             break;
     }
     func_0804d770(D_03005380, sprite, TRUE);

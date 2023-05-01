@@ -41,12 +41,12 @@ struct GraphicsTable tram_pauline_prologue_gfx_table[] = {
 
 // [D_089edc04] Engine Events
 EngineEvent tram_pauline_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08047bd0
+    /* 0x00 */ func_08047bd0
 };
 
 // [D_089edc08] Prologue (Tram & Pauline) Game Engine
 struct GameEngine tram_pauline_prologue_engine = {
-    /* Size in Memory */ sizeof(struct TramPaulinePrologueInfo),
+    /* Size in Memory */ sizeof(struct TramPaulinePrologueEngineData),
     /* Start Engine   */ tram_pauline_prologue_engine_start,
     /* Update Engine  */ tram_pauline_prologue_engine_update,
     /* Stop Engine    */ tram_pauline_prologue_engine_stop,

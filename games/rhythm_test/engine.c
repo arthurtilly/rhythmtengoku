@@ -746,27 +746,27 @@ struct CueDefinition *rhythm_test_cue_index[] = {
 
 // [D_089e5088] Common Events
 EngineEvent rhythm_test_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) rhythm_test_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) rhythm_test_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) rhythm_test_common_init_tutorial,
+    /* BEAT_ANIMATION */ rhythm_test_common_beat_animation,
+    /* DISPLAY_TEXT   */ rhythm_test_common_display_text,
+    /* INIT_TUTORIAL  */ rhythm_test_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e5098] Engine Events
 EngineEvent rhythm_test_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08033e00,
-    /* 0x01 */ (EngineEvent) func_08033b24,
-    /* 0x02 */ (EngineEvent) func_08033b34,
-    /* 0x03 */ (EngineEvent) func_08033b9c,
-    /* 0x04 */ (EngineEvent) func_08033f28,
-    /* 0x05 */ (EngineEvent) func_08033960,
-    /* 0x06 */ (EngineEvent) func_08033f80,
-    /* 0x07 */ (EngineEvent) rhythm_test_engine_event_stub
+    /* 0x00 */ func_08033e00,
+    /* 0x01 */ func_08033b24,
+    /* 0x02 */ func_08033b34,
+    /* 0x03 */ func_08033b9c,
+    /* 0x04 */ func_08033f28,
+    /* 0x05 */ func_08033960,
+    /* 0x06 */ func_08033f80,
+    /* 0x07 */ rhythm_test_engine_event_stub
 };
 
 // [D_089e50b8] Rhythm Test Game Engine
 struct GameEngine rhythm_test_engine = {
-    /* Size in Memory */ 0x3e8,
+    /* Size in Memory */ sizeof(struct RhythmTestEngineData),
     /* Start Engine   */ rhythm_test_engine_start,
     /* Update Engine  */ rhythm_test_engine_update,
     /* Stop Engine    */ rhythm_test_engine_stop,

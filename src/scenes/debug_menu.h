@@ -4,12 +4,12 @@
 #include "scenes.h"
 
 // Scene Types:
-struct DebugMenuSceneInfo {
+struct DebugMenuSceneData {
     /* add fields here */
 };
 
 struct DebugMenuEntry {
-    const struct Scene *scene;
+    struct Scene *scene;
     const char *label;
 };
 

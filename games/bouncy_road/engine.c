@@ -153,26 +153,26 @@ struct CueDefinition *bouncy_road_cue_index[] = {
 
 // [D_089e3d50] Common Events
 EngineEvent bouncy_road_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) bouncy_road_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) bouncy_road_common_display_text,
+    /* BEAT_ANIMATION */ bouncy_road_common_beat_animation,
+    /* DISPLAY_TEXT   */ bouncy_road_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e3d5c] Engine Events
 EngineEvent bouncy_road_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_0802dd84,
-    /* 0x01 */ (EngineEvent) func_0802deb0,
-    /* 0x02 */ (EngineEvent) func_0802e234,
-    /* 0x03 */ (EngineEvent) func_0802df98,
-    /* 0x04 */ (EngineEvent) func_0802e248,
-    /* 0x05 */ (EngineEvent) func_0802e25c,
-    /* 0x06 */ (EngineEvent) bouncy_road_engine_event_stub
+    /* 0x00 */ func_0802dd84,
+    /* 0x01 */ func_0802deb0,
+    /* 0x02 */ func_0802e234,
+    /* 0x03 */ func_0802df98,
+    /* 0x04 */ func_0802e248,
+    /* 0x05 */ func_0802e25c,
+    /* 0x06 */ bouncy_road_engine_event_stub
 };
 
 // [D_089e3d78] Bouncy Road Game Engine
 struct GameEngine bouncy_road_engine = {
-    /* Size in Memory */ 0x1dc,
+    /* Size in Memory */ sizeof(struct BouncyRoadEngineData),
     /* Start Engine   */ bouncy_road_engine_start,
     /* Update Engine  */ bouncy_road_engine_update,
     /* Stop Engine    */ bouncy_road_engine_stop,

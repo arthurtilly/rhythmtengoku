@@ -7,7 +7,7 @@ thumb_func_start func_080335e8 \n\
 /* 080335ea */ SUB SP, 0xC \n\
 /* 080335ec */ LDR R5, =D_03005380 \n\
 /* 080335ee */ LDR R0, [R5] \n\
-/* 080335f0 */ LDR R4, =D_030055d0 \n\
+/* 080335f0 */ LDR R4, =gCurrentEngineData \n\
 /* 080335f2 */ LDR R1, [R4] \n\
 /* 080335f4 */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 080335f6 */ LDRSH R1, [R1, R2] \n\
@@ -27,7 +27,7 @@ thumb_func_start func_080335e8 \n\
 /* 08033616 */ LDR R1, [R4] \n\
 /* 08033618 */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 0803361a */ LDRSH R1, [R1, R2] \n\
-/* 0803361c */ LDR R2, =anim_calligraphy_brush \n\
+/* 0803361c */ LDR R2, =anim_power_calligraphy_brush \n\
 /* 0803361e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08033620 */ STR R3, [SP] \n\
 /* 08033622 */ STR R3, [SP, 0x4] \n\

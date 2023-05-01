@@ -109,24 +109,24 @@ const char D_0805a6c8[] = "計測おわり！ さて、 結果は…";
 
 // [D_089e5924] Common Events
 EngineEvent metronome_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) metronome_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) metronome_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) metronome_common_init_tutorial,
+    /* BEAT_ANIMATION */ metronome_common_beat_animation,
+    /* DISPLAY_TEXT   */ metronome_common_display_text,
+    /* INIT_TUTORIAL  */ metronome_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e5934] Engine Events
 EngineEvent metronome_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08035780,
-    /* 0x01 */ (EngineEvent) func_080357c4,
-    /* 0x02 */ (EngineEvent) func_080358b0,
-    /* 0x03 */ (EngineEvent) func_080358d8,
-    /* 0x04 */ (EngineEvent) func_080358f8
+    /* 0x00 */ func_08035780,
+    /* 0x01 */ func_080357c4,
+    /* 0x02 */ func_080358b0,
+    /* 0x03 */ func_080358d8,
+    /* 0x04 */ func_080358f8
 };
 
 // [D_089e5948] Metronome Game Engine
 struct GameEngine metronome_engine = {
-    /* Size in Memory */ 0x30,
+    /* Size in Memory */ sizeof(struct MetronomeEngineData),
     /* Start Engine   */ metronome_engine_start,
     /* Update Engine  */ metronome_engine_update,
     /* Stop Engine    */ metronome_engine_stop,

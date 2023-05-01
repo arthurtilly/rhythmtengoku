@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct BunnyHopPrologueInfo *)D_030055d0)
+#define gPrologueEngineData ((struct BunnyHopPrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: BUNNY HOP  //  //  //
@@ -43,14 +43,14 @@ void func_08046e48(void) {
 
 // [func_08046e78] MAIN - Init
 void bunny_hop_prologue_engine_start(u32 ver) {
-    gPrologueInfo->ver = ver;
+    gPrologueEngineData->ver = ver;
 
     func_08046e48();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_bunny_hop_prologue_title, 0, 22, 162, 0, 0, 0x7f, 0);
-    gPrologueInfo->rabbitsSprite = func_0804d160(D_03005380, anim_bunny_hop_prologue_rabbits, 0, 114, 120, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_bunny_hop_prologue_title, 0, 22, 162, 0, 0, 0x7f, 0);
+    gPrologueEngineData->rabbitsSprite = func_0804d160(D_03005380, anim_bunny_hop_prologue_rabbits, 0, 114, 120, 0, 0, 0x7f, 0);
 }
 
 
@@ -71,11 +71,11 @@ void bunny_hop_prologue_engine_stop(void) {
 
 // [func_08046f0c] Event 0 - Set Animation Frame (Text)
 void func_08046f0c(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo->textSprite, frame);
+    func_0804cebc(D_03005380, gPrologueEngineData->textSprite, frame);
 }
 
 
 // [func_08046f30] Event 1 - Play Animation (Rabbits)
 void func_08046f30(void) {
-    func_0804dae0(D_03005380, gPrologueInfo->rabbitsSprite, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueEngineData->rabbitsSprite, 1, 0x7f, 0);
 }

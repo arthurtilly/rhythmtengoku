@@ -103,3 +103,36 @@
 .macro dml_event09 args
     drum_live_event EVENT_09, \args
 .endm
+
+
+
+/* ------------------------ Beatscript Labels: Drum LIVE (Menu) ------------------------ */
+
+
+@ Load Data
+.macro load_drum_live_menu_labels
+    @ Game Events
+    .set FREEZE_SCENE,      0x00
+.endm
+
+
+@ Load Game: Drum LIVE Menu
+.macro load_drum_live_menu
+    load_drum_live_menu_labels
+    load_game drum_live_menu_engine, 0
+.endm
+
+
+/* ---------------- Game Engine Events ---------------- */
+
+
+@ Run Game Event
+.macro drum_live_menu_event event, args
+    game_event drum_live_menu_engine, \event, \args
+.endm
+
+
+@ [Event 0x00] Freeze Scene
+.macro drum_live_menu_freeze_scene
+    drum_live_menu_event FREEZE_SCENE, 0
+.endm

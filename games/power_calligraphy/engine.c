@@ -5,36 +5,36 @@
 
 
 // [D_089e4958] Little People Start Positions
-struct Vector2 calligraphy_people_start_pos[] = {
+struct Vector2 power_calligraphy_people_start_pos[] = {
     /* M */ {  32, -160 },
     /* W */ { 216,  192 }
 };
 
 // [D_089e4960] Little People Dancing Animations
-struct Animation *calligraphy_people_dance_anim[][2] = {
-    /* M */ { anim_calligraphy_people_m_dance_l, anim_calligraphy_people_m_dance_r },
-    /* W */ { anim_calligraphy_people_w_dance_r, anim_calligraphy_people_w_dance_l }
+struct Animation *power_calligraphy_people_dance_anim[][2] = {
+    /* M */ { anim_power_calligraphy_people_m_dance_l, anim_power_calligraphy_people_m_dance_r },
+    /* W */ { anim_power_calligraphy_people_w_dance_r, anim_power_calligraphy_people_w_dance_l }
 };
 
 // [D_089e4970] Little People Stumbling Animations
-struct Animation *calligraphy_people_fall_anim[][2] = {
-    /* M */ { anim_calligraphy_people_m_fall_r, anim_calligraphy_people_m_fall_l },
-    /* W */ { anim_calligraphy_people_w_fall_r, anim_calligraphy_people_w_fall_l }
+struct Animation *power_calligraphy_people_fall_anim[][2] = {
+    /* M */ { anim_power_calligraphy_people_m_fall_r, anim_power_calligraphy_people_m_fall_l },
+    /* W */ { anim_power_calligraphy_people_w_fall_r, anim_power_calligraphy_people_w_fall_l }
 };
 
 // [D_089e4980] Little People Bowing Animations
-struct Animation *calligraphy_people_bow_anim[][2] = {
-    /* M */ { anim_calligraphy_people_m_bow_r, anim_calligraphy_people_m_bow_l },
-    /* W */ { anim_calligraphy_people_w_bow_r, anim_calligraphy_people_w_bow_l }
+struct Animation *power_calligraphy_people_bow_anim[][2] = {
+    /* M */ { anim_power_calligraphy_people_m_bow_r, anim_power_calligraphy_people_m_bow_l },
+    /* W */ { anim_power_calligraphy_people_w_bow_r, anim_power_calligraphy_people_w_bow_l }
 };
 
 // [D_089e4990] Buffered Textures List
-struct CompressedGraphics *calligraphy_buffered_textures[] = {
+struct CompressedGraphics *power_calligraphy_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089e4994] Graphics Table (Power Calligraphy)
-struct GraphicsTable calligraphy_gfx_table[] = {
+struct GraphicsTable power_calligraphy_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08c68d64,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -69,34 +69,34 @@ struct GraphicsTable calligraphy_gfx_table[] = {
 };
 
 // [D_089e49e8] Kana Animations
-struct Animation *calligraphy_pattern_anim[] = {
-    /* 0x00 */ anim_calligraphy_onore,
-    /* 0x01 */ anim_calligraphy_chikara,
-    /* 0x02 */ anim_calligraphy_sun,
-    /* 0x03 */ anim_calligraphy_kokoro,
-    /* 0x04 */ anim_calligraphy_re,
-    /* 0x05 */ anim_calligraphy_comma,
-    /* 0x06 */ anim_calligraphy_face,
-    /* 0x07 */ anim_calligraphy_end_kanji
+struct Animation *power_calligraphy_pattern_anim[] = {
+    /* 0x00 */ anim_power_calligraphy_onore,
+    /* 0x01 */ anim_power_calligraphy_chikara,
+    /* 0x02 */ anim_power_calligraphy_sun,
+    /* 0x03 */ anim_power_calligraphy_kokoro,
+    /* 0x04 */ anim_power_calligraphy_re,
+    /* 0x05 */ anim_power_calligraphy_comma,
+    /* 0x06 */ anim_power_calligraphy_face,
+    /* 0x07 */ anim_power_calligraphy_end_kanji
 };
 
 // [D_089e4a08] Player Brush Stroke Animations
-struct Animation *calligraphy_pattern_input_anim[] = {
-    /* ONORE 1   */ anim_calligraphy_onore_input1,
-    /* CHIKARA 1 */ anim_calligraphy_chikara_input1,
-    /* CHIKARA 2 */ anim_calligraphy_chikara_input2,
-    /* SUN 1     */ anim_calligraphy_sun_input1,
-    /* SUN 2     */ anim_calligraphy_sun_input2,
-    /* KOKORO 1  */ anim_calligraphy_kokoro_input1,
-    /* KOKORO 2  */ anim_calligraphy_kokoro_input2,
-    /* KOKORO 3  */ anim_calligraphy_kokoro_input3,
-    /* RE 1      */ anim_calligraphy_re_input1,
-    /* COMMA 1   */ anim_calligraphy_comma_input1,
-    /* FACE 1    */ anim_calligraphy_face_input1
+struct Animation *power_calligraphy_pattern_input_anim[] = {
+    /* ONORE 1   */ anim_power_calligraphy_onore_input1,
+    /* CHIKARA 1 */ anim_power_calligraphy_chikara_input1,
+    /* CHIKARA 2 */ anim_power_calligraphy_chikara_input2,
+    /* SUN 1     */ anim_power_calligraphy_sun_input1,
+    /* SUN 2     */ anim_power_calligraphy_sun_input2,
+    /* KOKORO 1  */ anim_power_calligraphy_kokoro_input1,
+    /* KOKORO 2  */ anim_power_calligraphy_kokoro_input2,
+    /* KOKORO 3  */ anim_power_calligraphy_kokoro_input3,
+    /* RE 1      */ anim_power_calligraphy_re_input1,
+    /* COMMA 1   */ anim_power_calligraphy_comma_input1,
+    /* FACE 1    */ anim_power_calligraphy_face_input1
 };
 
 // [D_089e4a34] Paper Motions (?)
-struct Vector2 calligraphy_paper_motions[] = {
+struct Vector2 power_calligraphy_paper_motions[] = {
     /* ONORE 1   */ {  0, -8 },
     /* CHIKARA 1 */ { -6, -6 },
     /* CHIKARA 2 */ { -4,  8 },
@@ -111,7 +111,7 @@ struct Vector2 calligraphy_paper_motions[] = {
 };
 
 // [D_089e4a60] Brush Motions
-struct CalligraphyBrushMotion calligraphy_brush_motions[][3] = {
+struct PowerCalligraphyBrushMotion power_calligraphy_brush_motions[][3] = {
     /* ONORE 1 */ {
         /* Hit   */ {  31, -30, 0 },
         /* Early */ {  65, -14, 0 },
@@ -174,7 +174,7 @@ struct CalligraphyBrushMotion calligraphy_brush_motions[][3] = {
 
 
 // [D_089e4ae4] Input Sounds (Hit)
-struct SequenceData *calligraphy_input_hit_sfx[] = {
+struct SequenceData *power_calligraphy_input_hit_sfx[] = {
     /* ONORE 1   */ &s_sword_orya_seqData,
     /* CHIKARA 1 */ &s_sword_orya_seqData,
     /* CHIKARA 2 */ &s_sword_orya_seqData,
@@ -189,7 +189,7 @@ struct SequenceData *calligraphy_input_hit_sfx[] = {
 };
 
 // [D_089e4b10] Input Sounds (Barely)
-struct SequenceData *calligraphy_input_barely_sfx[] = {
+struct SequenceData *power_calligraphy_input_barely_sfx[] = {
     /* ONORE 1   */ &s_f_shuji_v_nuaa_seqData,
     /* CHIKARA 1 */ &s_f_shuji_v_nuaa_seqData,
     /* CHIKARA 2 */ &s_f_shuji_v_unuu_seqData,
@@ -204,7 +204,7 @@ struct SequenceData *calligraphy_input_barely_sfx[] = {
 };
 
 // [D_089e4b3c] Cue 00 (Stroke)
-struct CueDefinition calligraphy_cue_default = {
+struct CueDefinition power_calligraphy_cue_default = {
     /* Unknown Param.  */ 0,
     /* Input Buttons   */ PRESS_BUTTON(A_BUTTON),
     /* Total Duration  */ 0x18,
@@ -213,13 +213,13 @@ struct CueDefinition calligraphy_cue_default = {
     /* Tempo-Dependent */ FALSE,
     /* Force-Delete    */ FALSE,
     /* Size in Memory  */ 0x4,
-    /* Func. Spawn     */ calligraphy_cue_spawn,
+    /* Func. Spawn     */ power_calligraphy_cue_spawn,
     /* Spawn Parameter */ 0,
-    /* Func. Update    */ calligraphy_cue_update,
-    /* Func. Despawn   */ calligraphy_cue_despawn,
-    /* Func. Hit       */ calligraphy_cue_hit,
-    /* Func. Barely    */ calligraphy_cue_barely,
-    /* Func. Miss      */ calligraphy_cue_miss,
+    /* Func. Update    */ power_calligraphy_cue_update,
+    /* Func. Despawn   */ power_calligraphy_cue_despawn,
+    /* Func. Hit       */ power_calligraphy_cue_hit,
+    /* Func. Barely    */ power_calligraphy_cue_barely,
+    /* Func. Miss      */ power_calligraphy_cue_miss,
     /* SFX Spawn       */ NULL,
     /* SFX Hit         */ NULL,
     /* SFX Barely      */ NULL,
@@ -228,8 +228,8 @@ struct CueDefinition calligraphy_cue_default = {
 };
 
 // [D_089e4b7c] Cue Definition Index
-struct CueDefinition *calligraphy_cue_index[] = {
-    /* 0x00 */ &calligraphy_cue_default,
+struct CueDefinition *power_calligraphy_cue_index[] = {
+    /* 0x00 */ &power_calligraphy_cue_default,
     /* 0x01 */ NULL,
     /* 0x02 */ NULL,
     /* 0x03 */ NULL,
@@ -249,39 +249,39 @@ struct CueDefinition *calligraphy_cue_index[] = {
 
 
 // [D_089e4bb0] Common Events
-EngineEvent calligraphy_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) calligraphy_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) calligraphy_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) calligraphy_common_init_tutorial,
+EngineEvent power_calligraphy_common_events[] = {
+    /* BEAT_ANIMATION */ power_calligraphy_common_beat_animation,
+    /* DISPLAY_TEXT   */ power_calligraphy_common_display_text,
+    /* INIT_TUTORIAL  */ power_calligraphy_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e4bc0] Engine Events
-EngineEvent calligraphy_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_0803312c,
-    /* 0x01 */ (EngineEvent) func_0803316c,
-    /* 0x02 */ (EngineEvent) func_080331c0,
-    /* 0x03 */ (EngineEvent) func_080331dc,
-    /* 0x04 */ (EngineEvent) func_080333dc,
-    /* 0x05 */ (EngineEvent) func_080333e8,
-    /* 0x06 */ (EngineEvent) func_080334d4,
-    /* 0x07 */ (EngineEvent) func_080334ec,
-    /* 0x08 */ (EngineEvent) func_08033558,
-    /* 0x09 */ (EngineEvent) func_080335e8,
-    /* 0x0A */ (EngineEvent) func_08032c8c,
-    /* 0x0B */ (EngineEvent) func_08032a64,
-    /* 0x0C */ (EngineEvent) func_08032a04,
-    /* 0x0D */ (EngineEvent) calligraphy_engine_event_stub
+EngineEvent power_calligraphy_engine_events[] = {
+    /* 0x00 */ func_0803312c,
+    /* 0x01 */ func_0803316c,
+    /* 0x02 */ func_080331c0,
+    /* 0x03 */ func_080331dc,
+    /* 0x04 */ func_080333dc,
+    /* 0x05 */ func_080333e8,
+    /* 0x06 */ func_080334d4,
+    /* 0x07 */ func_080334ec,
+    /* 0x08 */ func_08033558,
+    /* 0x09 */ func_080335e8,
+    /* 0x0A */ func_08032c8c,
+    /* 0x0B */ func_08032a64,
+    /* 0x0C */ func_08032a04,
+    /* 0x0D */ power_calligraphy_engine_event_stub
 };
 
 // [D_089e4bf8] Power Calligraphy Game Engine
 struct GameEngine power_calligraphy_engine = {
-    /* Size in Memory */ 0x218,
-    /* Start Engine   */ calligraphy_engine_start,
-    /* Update Engine  */ calligraphy_engine_update,
-    /* Stop Engine    */ calligraphy_engine_stop,
-    /* Cue Index      */ calligraphy_cue_index,
-    /* Common Events  */ calligraphy_common_events,
-    /* Engine Events  */ calligraphy_engine_events,
-    /* Input Event    */ calligraphy_input_event
+    /* Size in Memory */ sizeof(struct PowerCalligraphyEngineData),
+    /* Start Engine   */ power_calligraphy_engine_start,
+    /* Update Engine  */ power_calligraphy_engine_update,
+    /* Stop Engine    */ power_calligraphy_engine_stop,
+    /* Cue Index      */ power_calligraphy_cue_index,
+    /* Common Events  */ power_calligraphy_common_events,
+    /* Engine Events  */ power_calligraphy_engine_events,
+    /* Input Event    */ power_calligraphy_input_event
 };

@@ -9,7 +9,7 @@ thumb_func_start func_08032a64 \n\
 /* 08032a6a */ PUSH {R6, R7} \n\
 /* 08032a6c */ SUB SP, 0xC \n\
 /* 08032a6e */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 08032a70 */ LDR R5, =D_030055d0 \n\
+/* 08032a70 */ LDR R5, =gCurrentEngineData \n\
 /* 08032a72 */ LDR R0, [R5] \n\
 /* 08032a74 */ MOVS R1, 0xD8 @ Set R1 to 0xD8 \n\
 /* 08032a76 */ LSLS R1, R1, 0x1 \n\
@@ -44,7 +44,7 @@ branch_08032aa4: \n\
 /* 08032aaa */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08032aac */ STRB R2, [R0] \n\
 /* 08032aae */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08032ab0 */ LDR R6, =calligraphy_people_dance_anim \n\
+/* 08032ab0 */ LDR R6, =power_calligraphy_people_dance_anim \n\
  \n\
 branch_08032ab2: \n\
 /* 08032ab2 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
@@ -86,7 +86,7 @@ branch_08032af0: \n\
 /* 08032afa */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
 /* 08032afc */ STRB R0, [R1] \n\
 /* 08032afe */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08032b00 */ LDR R0, =calligraphy_people_fall_anim \n\
+/* 08032b00 */ LDR R0, =power_calligraphy_people_fall_anim \n\
 /* 08032b02 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08032b04 */ MOV R8, R2 @ Set R8 to R2 \n\
  \n\
@@ -130,7 +130,7 @@ branch_08032b4c: \n\
 /* 08032b52 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08032b54 */ STRB R2, [R0] \n\
 /* 08032b56 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08032b58 */ LDR R3, =calligraphy_people_bow_anim \n\
+/* 08032b58 */ LDR R3, =power_calligraphy_people_bow_anim \n\
 /* 08032b5a */ MOV R8, R3 @ Set R8 to R3 \n\
  \n\
 branch_08032b5c: \n\
@@ -173,7 +173,7 @@ branch_08032b9c: \n\
 /* 08032ba2 */ ADDS R0, R0, R3 @ Set R0 to R0 + R3 \n\
 /* 08032ba4 */ STRB R2, [R0] \n\
 /* 08032ba6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
-/* 08032ba8 */ LDR R0, =calligraphy_people_bow_anim \n\
+/* 08032ba8 */ LDR R0, =power_calligraphy_people_bow_anim \n\
 /* 08032baa */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08032bac */ MOV R8, R2 @ Set R8 to R2 \n\
  \n\

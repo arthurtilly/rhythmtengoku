@@ -10,7 +10,7 @@ thumb_func_start marching_common_display_text \n\
 /* 08034a58 */ BNE branch_08034a80 \n\
 /* 08034a5a */ LDR R0, =D_03005380 \n\
 /* 08034a5c */ LDR R0, [R0] \n\
-/* 08034a5e */ LDR R1, =D_030055d0 \n\
+/* 08034a5e */ LDR R1, =gCurrentEngineData \n\
 /* 08034a60 */ LDR R1, [R1] \n\
 /* 08034a62 */ ADDS R1, 0x40 @ Add 0x40 to R1 \n\
 /* 08034a64 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
@@ -24,7 +24,7 @@ thumb_func_start marching_common_display_text \n\
 .ltorg \n\
  \n\
 branch_08034a80: \n\
-/* 08034a80 */ LDR R4, =D_030055d0 \n\
+/* 08034a80 */ LDR R4, =gCurrentEngineData \n\
 /* 08034a82 */ LDR R0, [R4] \n\
 /* 08034a84 */ LDR R0, [R0, 0x4] \n\
 /* 08034a86 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\

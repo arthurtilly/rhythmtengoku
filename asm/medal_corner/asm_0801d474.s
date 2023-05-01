@@ -7,7 +7,7 @@ thumb_func_start func_0801d474 \n\
 /* 0801d476 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0801d478 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0801d47a */ BLT branch_0801d488 \n\
-/* 0801d47c */ LDR R0, =D_030046a4 \n\
+/* 0801d47c */ LDR R0, =gCurrentSceneData \n\
 /* 0801d47e */ LDR R0, [R0] \n\
 /* 0801d480 */ LDR R0, [R0, 0x14] \n\
 /* 0801d482 */ LDRB R0, [R0] \n\

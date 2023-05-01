@@ -9,7 +9,7 @@ thumb_func_start toss_boys_engine_update \n\
 /* 0803f14e */ BL func_0803ef64 \n\
 /* 0803f152 */ BL update_drumtech \n\
 /* 0803f156 */ BL func_0803f038 \n\
-/* 0803f15a */ LDR R0, =D_030055d0 \n\
+/* 0803f15a */ LDR R0, =gCurrentEngineData \n\
 /* 0803f15c */ LDR R1, [R0] \n\
 /* 0803f15e */ LDR R0, =0x396 \n\
 /* 0803f160 */ ADDS R2, R1, R0 @ Set R2 to R1 + R0 \n\
@@ -28,7 +28,7 @@ thumb_func_start toss_boys_engine_update \n\
 /* 0803f17a */ STRB R0, [R1] \n\
  \n\
 branch_0803f17c: \n\
-/* 0803f17c */ LDR R0, =D_030055d0 \n\
+/* 0803f17c */ LDR R0, =gCurrentEngineData \n\
 /* 0803f17e */ LDR R1, [R0] \n\
 /* 0803f180 */ MOVS R2, 0xDF @ Set R2 to 0xDF \n\
 /* 0803f182 */ LSLS R2, R2, 0x2 \n\

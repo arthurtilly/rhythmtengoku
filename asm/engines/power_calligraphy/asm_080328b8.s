@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_080328b8 \n\
 /* 080328b8 */ PUSH {R4-R6, LR} \n\
 /* 080328ba */ SUB SP, 0xC \n\
-/* 080328bc */ LDR R4, =D_030055d0 \n\
+/* 080328bc */ LDR R4, =gCurrentEngineData \n\
 /* 080328be */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
 /* 080328c0 */ BL func_0800c398 \n\
 /* 080328c4 */ LDR R2, [R4] \n\
@@ -105,20 +105,20 @@ branch_08032958: \n\
 branch_08032972: \n\
 /* 08032972 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 08032974 */ BEQ branch_080329f6 \n\
-/* 08032976 */ LDR R0, =D_030055d0 \n\
+/* 08032976 */ LDR R0, =gCurrentEngineData \n\
 /* 08032978 */ LDR R0, [R0] \n\
 /* 0803297a */ MOVS R3, 0xD8 @ Set R3 to 0xD8 \n\
 /* 0803297c */ LSLS R3, R3, 0x1 \n\
 /* 0803297e */ ADDS R4, R0, R3 @ Set R4 to R0 + R3 \n\
 /* 08032980 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
-/* 08032982 */ LDR R6, =calligraphy_people_dance_anim \n\
+/* 08032982 */ LDR R6, =power_calligraphy_people_dance_anim \n\
  \n\
 branch_08032984: \n\
 /* 08032984 */ LDR R0, =D_03005380 \n\
 /* 08032986 */ LDR R0, [R0] \n\
 /* 08032988 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803298a */ LDRSH R1, [R4, R2] \n\
-/* 0803298c */ LDR R2, =D_030055d0 \n\
+/* 0803298c */ LDR R2, =gCurrentEngineData \n\
 /* 0803298e */ LDR R2, [R2] \n\
 /* 08032990 */ LDR R3, =0x212 \n\
 /* 08032992 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\

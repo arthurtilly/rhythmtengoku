@@ -9,7 +9,7 @@ thumb_func_start func_080228d8 \n\
 /* 080228de */ LDRB R0, [R5] \n\
 /* 080228e0 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080228e2 */ BEQ branch_080229b4 \n\
-/* 080228e4 */ LDR R0, =D_030055d0 \n\
+/* 080228e4 */ LDR R0, =gCurrentEngineData \n\
 /* 080228e6 */ LDR R0, [R0] \n\
 /* 080228e8 */ ADDS R0, 0x8C @ Add 0x8C to R0 \n\
 /* 080228ea */ STR R5, [R0] \n\
@@ -56,7 +56,7 @@ jump_0802291c: \n\
 /* 08022948 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0802294a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0802294c */ BL func_0804d8f8 \n\
-/* 08022950 */ LDR R0, =D_030055d0 \n\
+/* 08022950 */ LDR R0, =gCurrentEngineData \n\
 /* 08022952 */ LDR R0, [R0] \n\
 /* 08022954 */ LDRB R0, [R0] \n\
 /* 08022956 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\

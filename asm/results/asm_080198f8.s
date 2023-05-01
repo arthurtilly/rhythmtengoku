@@ -9,7 +9,7 @@ thumb_func_start func_080198f8 \n\
 /* 080198fe */ LDR R0, [R0] \n\
 /* 08019900 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08019902 */ ADDS R4, 0x50 @ Add 0x50 to R4 \n\
-/* 08019904 */ LDR R0, =D_030046a4 \n\
+/* 08019904 */ LDR R0, =gCurrentSceneData \n\
 /* 08019906 */ LDR R0, [R0] \n\
 /* 08019908 */ LDR R0, [R0, 0x4] \n\
 /* 0801990a */ LDR R1, =D_08054ec4 \n\
@@ -157,7 +157,7 @@ branch_08019a0e: \n\
 /* 08019a28 */ ADD R0, SP, 0x14 \n\
 /* 08019a2a */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08019a2c */ BL strcat \n\
-/* 08019a30 */ LDR R0, =D_030046a4 \n\
+/* 08019a30 */ LDR R0, =gCurrentSceneData \n\
 /* 08019a32 */ LDR R0, [R0] \n\
 /* 08019a34 */ LDR R0, [R0, 0x4] \n\
 /* 08019a36 */ ADD R1, SP, 0x14 \n\

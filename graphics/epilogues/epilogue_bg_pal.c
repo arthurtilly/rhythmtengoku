@@ -764,7 +764,7 @@ Palette epilogue_cosmic_dance_bg_pal[] = {
 };
 
 // [D_088fedec] BG Palette
-Palette epilogue_concert_hall_bg_pal[] = {
+Palette epilogue_drum_live_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00E028),
         /* 01 */ TO_RGB555(0x000000),

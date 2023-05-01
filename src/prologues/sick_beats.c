@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct SickBeatsPrologueInfo *)D_030055d0)
+#define gPrologueEngineData ((struct SickBeatsPrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: SICK BEATS  //  //  //
@@ -43,14 +43,14 @@ void func_08047c48(void) {
 
 // [func_08047c78] MAIN - Init
 void sick_beats_prologue_engine_start(u32 ver) {
-    gPrologueInfo->ver = ver;
+    gPrologueEngineData->ver = ver;
 
     func_08047c48();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_sick_beats_prologue_title, 0, 96, 17, 0, 0, 0x7f, 0);
-    gPrologueInfo->virusSprite = func_0804d160(D_03005380, anim_sick_beats_prologue_virus, 0, 160, 48, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_sick_beats_prologue_title, 0, 96, 17, 0, 0, 0x7f, 0);
+    gPrologueEngineData->virusSprite = func_0804d160(D_03005380, anim_sick_beats_prologue_virus, 0, 160, 48, 0, 0, 0x7f, 0);
 }
 
 
@@ -71,6 +71,6 @@ void sick_beats_prologue_engine_stop(void) {
 
 // [func_08047d0c] Event 0 - Play Animation (Text), Play Animation (Virus)
 void func_08047d0c(void) {
-    func_0804dae0(D_03005380, gPrologueInfo->textSprite, 1, 0x7f, 0);
-    func_0804dae0(D_03005380, gPrologueInfo->virusSprite, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueEngineData->textSprite, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueEngineData->virusSprite, 1, 0x7f, 0);
 }

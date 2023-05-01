@@ -6,7 +6,7 @@ thumb_func_start func_0803e644 \n\
 /* 0803e644 */ PUSH {LR} \n\
 /* 0803e646 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0803e648 */ NEGS R2, R2 @ Set R2 to -R2 \n\
-/* 0803e64a */ LDR R0, =D_030055d0 \n\
+/* 0803e64a */ LDR R0, =gCurrentEngineData \n\
 /* 0803e64c */ LDR R0, [R0] \n\
 /* 0803e64e */ LDRB R0, [R0, 0x10] \n\
 /* 0803e650 */ CMP R0, 0xD @ Compare R0 and 0xD \n\

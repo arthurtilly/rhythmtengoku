@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start calligraphy_cue_update \n\
+thumb_func_start power_calligraphy_cue_update \n\
 /* 080337a4 */ PUSH {R4, LR} \n\
 /* 080337a6 */ ADDS R4, R2, 0x0 @ Set R4 to R2 + 0x0 \n\
 /* 080337a8 */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\

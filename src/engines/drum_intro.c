@@ -12,7 +12,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gDrumIntroInfo ((struct DrumIntroInfo *)D_030055d0)
+#define gDrumIntro ((struct DrumIntroEngineData *)gCurrentEngineData)
 
 
 /* DRUM INTRO */

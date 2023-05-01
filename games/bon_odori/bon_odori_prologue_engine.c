@@ -41,12 +41,12 @@ struct GraphicsTable bon_odori_prologue_gfx_table[] = {
 
 // [D_089ea560] Engine Events
 EngineEvent bon_odori_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080454d4
+    /* 0x00 */ func_080454d4
 };
 
 // [D_089ea564] Prologue (Bon Dance) Game Engine
 struct GameEngine bon_odori_prologue_engine = {
-    /* Size in Memory */ sizeof(struct BonOdoriPrologueInfo),
+    /* Size in Memory */ sizeof(struct BonOdoriPrologueEngineData),
     /* Start Engine   */ bon_odori_prologue_engine_start,
     /* Update Engine  */ bon_odori_prologue_engine_update,
     /* Stop Engine    */ bon_odori_prologue_engine_stop,

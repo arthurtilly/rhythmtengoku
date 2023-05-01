@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start bunny_hop_engine_start \n\
 /* 08038000 */ PUSH {R4-R6, LR} \n\
 /* 08038002 */ SUB SP, 0x14 \n\
-/* 08038004 */ LDR R6, =D_030055d0 \n\
+/* 08038004 */ LDR R6, =gCurrentEngineData \n\
 /* 08038006 */ LDR R1, [R6] \n\
 /* 08038008 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0803800a */ STRB R0, [R1] \n\
@@ -124,7 +124,7 @@ branch_080380f2: \n\
 /* 080380fe */ ADDS R5, 0x20 @ Add 0x20 to R5 \n\
 /* 08038100 */ CMP R4, 0x5 @ Compare R4 and 0x5 \n\
 /* 08038102 */ BLS branch_080380f2 \n\
-/* 08038104 */ LDR R0, =D_030055d0 \n\
+/* 08038104 */ LDR R0, =gCurrentEngineData \n\
 /* 08038106 */ LDR R0, [R0] \n\
 /* 08038108 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 0803810a */ ADDS R5, 0xF8 @ Add 0xF8 to R5 \n\
@@ -140,7 +140,7 @@ branch_0803810e: \n\
 /* 0803811c */ ADDS R5, 0xC @ Add 0xC to R5 \n\
 /* 0803811e */ CMP R4, 0x9 @ Compare R4 and 0x9 \n\
 /* 08038120 */ BLS branch_0803810e \n\
-/* 08038122 */ LDR R0, =D_030055d0 \n\
+/* 08038122 */ LDR R0, =gCurrentEngineData \n\
 /* 08038124 */ LDR R0, [R0] \n\
 /* 08038126 */ MOVS R1, 0xC0 @ Set R1 to 0xC0 \n\
 /* 08038128 */ LSLS R1, R1, 0x1 \n\
@@ -156,7 +156,7 @@ branch_0803812e: \n\
 /* 0803813a */ ADDS R5, 0x14 @ Add 0x14 to R5 \n\
 /* 0803813c */ CMP R4, 0x13 @ Compare R4 and 0x13 \n\
 /* 0803813e */ BLS branch_0803812e \n\
-/* 08038140 */ LDR R6, =D_030055d0 \n\
+/* 08038140 */ LDR R6, =gCurrentEngineData \n\
 /* 08038142 */ LDR R0, [R6] \n\
 /* 08038144 */ MOVS R5, 0xBE @ Set R5 to 0xBE \n\
 /* 08038146 */ LSLS R5, R5, 0x1 \n\

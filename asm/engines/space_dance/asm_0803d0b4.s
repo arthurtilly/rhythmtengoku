@@ -10,7 +10,7 @@ thumb_func_start space_dance_engine_start \n\
 /* 0803d0bc */ PUSH {R5-R7} \n\
 /* 0803d0be */ SUB SP, 0x14 \n\
 /* 0803d0c0 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 0803d0c2 */ LDR R6, =D_030055d0 \n\
+/* 0803d0c2 */ LDR R6, =gCurrentEngineData \n\
 /* 0803d0c4 */ LDR R0, [R6] \n\
 /* 0803d0c6 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0803d0c8 */ STRB R4, [R0, 0x4] \n\
@@ -152,7 +152,7 @@ branch_0803d158: \n\
 /* 0803d1e0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803d1e2 */ MOVS R3, 0xC8 @ Set R3 to 0xC8 \n\
 /* 0803d1e4 */ BL func_0804d160 \n\
-/* 0803d1e8 */ LDR R4, =D_030055d0 \n\
+/* 0803d1e8 */ LDR R4, =gCurrentEngineData \n\
 /* 0803d1ea */ LDR R1, [R4] \n\
 /* 0803d1ec */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803d1ee */ MOV R8, R3 @ Set R8 to R3 \n\

@@ -25,7 +25,7 @@ thumb_func_start func_08031a6c \n\
 /* 08031a92 */ MOVS R0, 0xC0 @ Set R0 to 0xC0 \n\
 /* 08031a94 */ BL beats_to_ticks \n\
 /* 08031a98 */ STR R0, [R6, 0x28] \n\
-/* 08031a9a */ LDR R0, =D_030055d0 \n\
+/* 08031a9a */ LDR R0, =gCurrentEngineData \n\
 /* 08031a9c */ LDR R0, [R0] \n\
 /* 08031a9e */ MOVS R1, 0xE8 @ Set R1 to 0xE8 \n\
 /* 08031aa0 */ LSLS R1, R1, 0x1 \n\

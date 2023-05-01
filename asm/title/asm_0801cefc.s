@@ -7,7 +7,7 @@ thumb_func_start func_0801cefc \n\
 /* 0801cefe */ SUB SP, 0xC \n\
 /* 0801cf00 */ LDR R5, =D_03005380 \n\
 /* 0801cf02 */ LDR R0, [R5] \n\
-/* 0801cf04 */ LDR R4, =D_030046a4 \n\
+/* 0801cf04 */ LDR R4, =gCurrentSceneData \n\
 /* 0801cf06 */ LDR R1, [R4] \n\
 /* 0801cf08 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 0801cf0a */ LDRSH R1, [R1, R2] \n\

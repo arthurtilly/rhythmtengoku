@@ -8,7 +8,7 @@ thumb_func_start func_08044268 \n\
 /* 0804426c */ MOV R6, R8 @ Set R6 to R8 \n\
 /* 0804426e */ PUSH {R6, R7} \n\
 /* 08044270 */ SUB SP, 0x14 \n\
-/* 08044272 */ LDR R7, =D_030055d0 \n\
+/* 08044272 */ LDR R7, =gCurrentEngineData \n\
 /* 08044274 */ LDR R2, [R7] \n\
 /* 08044276 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08044278 */ LDR R0, =rhythm_toys_demo_table \n\

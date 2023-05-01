@@ -6,7 +6,7 @@ thumb_func_start func_0803f59c \n\
 /* 0803f59c */ PUSH {R4-R7, LR} \n\
 /* 0803f59e */ SUB SP, 0x14 \n\
 /* 0803f5a0 */ ADDS R7, R1, 0x0 @ Set R7 to R1 + 0x0 \n\
-/* 0803f5a2 */ LDR R4, =D_030055d0 \n\
+/* 0803f5a2 */ LDR R4, =gCurrentEngineData \n\
 /* 0803f5a4 */ LDR R1, [R4] \n\
 /* 0803f5a6 */ MOVS R3, 0xDF @ Set R3 to 0xDF \n\
 /* 0803f5a8 */ LSLS R3, R3, 0x2 \n\
@@ -102,7 +102,7 @@ branch_0803f622: \n\
 /* 0803f660 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803f662 */ LDR R0, =D_03005380 \n\
 /* 0803f664 */ LDR R0, [R0] \n\
-/* 0803f666 */ LDR R4, =D_030055d0 \n\
+/* 0803f666 */ LDR R4, =gCurrentEngineData \n\
 /* 0803f668 */ LDR R1, [R4] \n\
 /* 0803f66a */ LDR R3, =0x366 \n\
 /* 0803f66c */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
@@ -131,7 +131,7 @@ branch_0803f6a0: \n\
 /* 0803f6ac */ BL func_0803f9a0 \n\
 /* 0803f6b0 */ LDR R0, =D_03005380 \n\
 /* 0803f6b2 */ LDR R0, [R0] \n\
-/* 0803f6b4 */ LDR R1, =D_030055d0 \n\
+/* 0803f6b4 */ LDR R1, =gCurrentEngineData \n\
 /* 0803f6b6 */ LDR R1, [R1] \n\
 /* 0803f6b8 */ LDR R2, =0x366 \n\
 /* 0803f6ba */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
@@ -165,7 +165,7 @@ branch_0803f6f8: \n\
 /* 0803f704 */ BL func_0803fa64 \n\
 /* 0803f708 */ LDR R5, =D_03005380 \n\
 /* 0803f70a */ LDR R0, [R5] \n\
-/* 0803f70c */ LDR R6, =D_030055d0 \n\
+/* 0803f70c */ LDR R6, =gCurrentEngineData \n\
 /* 0803f70e */ LDR R1, [R6] \n\
 /* 0803f710 */ LDR R2, =0x366 \n\
 /* 0803f712 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
@@ -222,7 +222,7 @@ branch_0803f6f8: \n\
 /* 0803f786 */ STRB R4, [R0] \n\
  \n\
 branch_0803f788: \n\
-/* 0803f788 */ LDR R0, =D_030055d0 \n\
+/* 0803f788 */ LDR R0, =gCurrentEngineData \n\
 /* 0803f78a */ LDR R0, [R0] \n\
 /* 0803f78c */ LDR R2, =0x392 \n\
 /* 0803f78e */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\

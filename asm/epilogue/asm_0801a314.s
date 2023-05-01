@@ -19,7 +19,7 @@ thumb_func_start func_0801a314 \n\
 /* 0801a332 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 0801a334 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801a336 */ BL play_sound_w_pitch_volume \n\
-/* 0801a33a */ LDR R0, =D_030046a4 \n\
+/* 0801a33a */ LDR R0, =gCurrentSceneData \n\
 /* 0801a33c */ LDR R1, [R0] \n\
 /* 0801a33e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801a340 */ STR R0, [R1, 0x8] \n\

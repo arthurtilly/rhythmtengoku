@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start func_08037d6c \n\
 /* 08037d6c */ PUSH {LR} \n\
-/* 08037d6e */ LDR R1, =D_030055d0 \n\
+/* 08037d6e */ LDR R1, =gCurrentEngineData \n\
 /* 08037d70 */ LDR R1, [R1] \n\
 /* 08037d72 */ ADDS R2, R1, 0x0 @ Set R2 to R1 + 0x0 \n\
 /* 08037d74 */ ADDS R2, 0x44 @ Add 0x44 to R2 \n\

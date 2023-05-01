@@ -1,121 +1,10 @@
 #include "global.h"
 #include "graphics.h"
+#include "scenes.h"
 #include "src/scenes/debug_menu.h"
 
 
   /* DEBUG MENU - MISC. DATA */
-
-
-extern const struct Scene scene_concert_hall;
-extern const struct Scene D_089d6c8c;
-extern const struct Scene D_089d6ba4;
-extern const struct Scene D_089d69e0;
-extern const struct Scene D_089d6804;
-extern const struct Scene scene_remix_8;
-extern const struct Scene scene_remix_7;
-extern const struct Scene scene_remix_6;
-extern const struct Scene scene_remix_5;
-extern const struct Scene scene_remix_4;
-extern const struct Scene scene_remix_3;
-extern const struct Scene scene_remix_2;
-extern const struct Scene scene_remix_1;
-extern const struct Scene scene_bon_odori;
-extern const struct Scene scene_bon_dance;
-extern const struct Scene D_089d5dc4;
-extern const struct Scene D_089d5eac;
-extern const struct Scene D_089d5f94;
-extern const struct Scene D_089d4c8c;
-extern const struct Scene D_089d4d74;
-extern const struct Scene D_089d4e5c;
-extern const struct Scene D_089d4f44;
-extern const struct Scene D_089d502c;
-extern const struct Scene D_089d51fc;
-extern const struct Scene D_089d5114;
-extern const struct Scene D_089d52e4;
-extern const struct Scene D_089d53cc;
-extern const struct Scene D_089d54b4;
-extern const struct Scene D_089d559c;
-extern const struct Scene D_089d5684;
-extern const struct Scene D_089d576c;
-extern const struct Scene D_089d5854;
-extern const struct Scene D_089d593c;
-extern const struct Scene D_089d5a24;
-extern const struct Scene D_089d5b0c;
-extern const struct Scene D_089d5bf4;
-extern const struct Scene D_089d5cdc;
-extern const struct Scene D_089d48ec;
-extern const struct Scene D_089d4464;
-extern const struct Scene D_089d454c;
-extern const struct Scene D_089d4634;
-extern const struct Scene D_089d4804;
-extern const struct Scene D_089d80d0;
-extern const struct Scene scene_quiz_show;
-extern const struct Scene scene_rap_men;
-extern const struct Scene scene_rap_women;
-extern const struct Scene D_089d6534;
-extern const struct Scene scene_space_dance;
-extern const struct Scene scene_cosmic_dance;
-extern const struct Scene scene_showtime;
-extern const struct Scene D_089cdad8;
-extern const struct Scene D_089d3a6c;
-extern const struct Scene D_089d3984;
-extern const struct Scene scene_tram_pauline;
-extern const struct Scene scene_toss_boys;
-extern const struct Scene scene_toss_boys_2;
-extern const struct Scene D_089d2f98;
-extern const struct Scene scene_power_calligraphy;
-extern const struct Scene scene_rat_race;
-extern const struct Scene D_089de05c;
-extern const struct Scene scene_fireworks;
-extern const struct Scene D_089d2940;
-extern const struct Scene scene_bunny_hop;
-extern const struct Scene D_089d2670;
-extern const struct Scene scene_wizards_waltz;
-extern const struct Scene scene_marching_orders;
-extern const struct Scene scene_marching_orders_2;
-extern const struct Scene D_089d1f18;
-extern const struct Scene scene_tap_trial;
-extern const struct Scene scene_tap_trial_2;
-extern const struct Scene scene_samurai_slice;
-extern const struct Scene scene_spaceball;
-extern const struct Scene scene_spaceball_2;
-extern const struct Scene scene_sneaky_spirits;
-extern const struct Scene scene_sneaky_spirits_2;
-extern const struct Scene scene_ninja_bodyguard;
-extern const struct Scene scene_ninja_reincarnate;
-extern const struct Scene scene_bouncy_road;
-extern const struct Scene scene_bouncy_road_2;
-extern const struct Scene scene_sick_beats;
-extern const struct Scene scene_rhythm_tweezers;
-extern const struct Scene scene_rhythm_tweezers_2;
-extern const struct Scene scene_night_walk;
-extern const struct Scene scene_night_walk_2;
-extern const struct Scene scene_polyrhythm;
-extern const struct Scene scene_polyrhythm_2;
-extern const struct Scene scene_clappy_trio;
-extern const struct Scene scene_snappy_trio;
-extern const struct Scene scene_karate_man;
-extern const struct Scene scene_karate_man_2;
-extern const struct Scene scene_riq_title;
-extern const struct Scene scene_main_menu;
-extern const struct Scene scene_game_select;
-extern const struct Scene scene_data_room;
-extern const struct Scene scene_studio;
-extern const struct Scene scene_options_menu;
-extern const struct Scene scene_results_ver_debug;
-extern const struct Scene scene_results_ver_rank;
-extern const struct Scene scene_results_ver_score;
-extern const struct Scene scene_epilogue;
-extern const struct Scene D_089cd2cc;
-extern const struct Scene scene_perfect;
-extern const struct Scene scene_cafe;
-extern const struct Scene scene_endless_menu;
-extern const struct Scene scene_lessons_menu;
-extern const struct Scene scene_toys_menu;
-extern const struct Scene D_089d6d74;
-extern const struct Scene scene_staff_credit;
-extern const struct Scene scene_data_clear;
-
 
 // Sequence Test
 const char D_0805966c[] = "シーケンス　テスト";
@@ -131,24 +20,24 @@ const char D_08059684[] = "１／１";
 
 // [D_089ddbe8] Debug Menu Table
 struct DebugMenuEntry debug_menu_entry_table[] = {
-    /* LIVE */ {
-        /* Scene */ &scene_concert_hall,
+    /* Drum LIVE */ {
+        /* Scene */ &scene_drum_live,
         /* Label */ "ライブ"
     },
     /* Sick Beats Endless */ {
-        /* Scene */ &D_089d6c8c,
+        /* Scene */ &scene_sick_beats_endless,
         /* Label */ "バイキン　はかせ　ＳＰ"
     },
     /* Quiz Show Endless */ {
-        /* Scene */ &D_089d6ba4,
+        /* Scene */ &scene_quiz_show_endless,
         /* Label */ "クイズ（スペシャル）"
     },
     /* Mannequin Factory */ {
-        /* Scene */ &D_089d69e0,
+        /* Scene */ &scene_mannequin_factory,
         /* Label */ "マネキンこうじょう"
     },
     /* Mr. Upbeat */ {
-        /* Scene */ &D_089d6804,
+        /* Scene */ &scene_mr_upbeat,
         /* Label */ "ウラおとこ"
     },
     /* Remix 8 */ {
@@ -192,91 +81,91 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "ボンダンス"
     },
     /* Rhythm Toys (Cat Machine) */ {
-        /* Scene */ &D_089d5dc4,
+        /* Scene */ &scene_cat_machine,
         /* Label */ "こえマシン（ネコ）"
     },
     /* Rhythm Toys (Confession Machine) */ {
-        /* Scene */ &D_089d5eac,
+        /* Scene */ &scene_love_machine,
         /* Label */ "こえマシン（ラブ）"
     },
     /* Rhythm Toys (Rap Machine) */ {
-        /* Scene */ &D_089d5f94,
+        /* Scene */ &scene_rap_machine,
         /* Label */ "こえマシン（ラップ）"
     },
     /* Lesson (Short 1) */ {
-        /* Scene */ &D_089d4c8c,
+        /* Scene */ &scene_drum_lesson_short_1,
         /* Label */ "レッスン（イージー）"
     },
     /* Lesson (Short 4) */ {
-        /* Scene */ &D_089d4d74,
+        /* Scene */ &scene_drum_lesson_short_4,
         /* Label */ "レッスン（ハード１）"
     },
     /* Lesson (Short 8) */ {
-        /* Scene */ &D_089d4e5c,
+        /* Scene */ &scene_drum_lesson_short_8,
         /* Label */ "レッスン（ハード２）"
     },
     /* Lesson (Short 5) */ {
-        /* Scene */ &D_089d4f44,
+        /* Scene */ &scene_drum_lesson_short_5,
         /* Label */ "レッスン（キメパターン１）"
     },
     /* Lesson (Short 7) */ {
-        /* Scene */ &D_089d502c,
+        /* Scene */ &scene_drum_lesson_short_7,
         /* Label */ "レッスン（キメパターン２）"
     },
     /* Lesson (Short 6) */ {
-        /* Scene */ &D_089d51fc,
+        /* Scene */ &scene_drum_lesson_short_6,
         /* Label */ "レッスン（デスコビート）"
     },
     /* Lesson (Short 9) */ {
-        /* Scene */ &D_089d5114,
+        /* Scene */ &scene_drum_lesson_short_9,
         /* Label */ "レッスン（ボッサ）"
     },
     /* Lesson (Basic 1) */ {
-        /* Scene */ &D_089d52e4,
+        /* Scene */ &scene_drum_lesson_basic_1,
         /* Label */ "レッスン（スネア）"
     },
     /* Lesson (Basic 2) */ {
-        /* Scene */ &D_089d53cc,
+        /* Scene */ &scene_drum_lesson_basic_2,
         /* Label */ "レッスン（バスとスネア）"
     },
     /* Lesson (Short 2) */ {
-        /* Scene */ &D_089d54b4,
+        /* Scene */ &scene_drum_lesson_short_2,
         /* Label */ "レッスン（はやい８ビート）"
     },
     /* Lesson (Short 3) */ {
-        /* Scene */ &D_089d559c,
+        /* Scene */ &scene_drum_lesson_short_3,
         /* Label */ "レッスン（スネアテクニック）"
     },
     /* Lesson (Long 4) */ {
-        /* Scene */ &D_089d5684,
+        /* Scene */ &scene_drum_lesson_long_4,
         /* Label */ "レッスン（じっせん１）"
     },
     /* Lesson (Long 2) */ {
-        /* Scene */ &D_089d576c,
+        /* Scene */ &scene_drum_lesson_long_2,
         /* Label */ "レッスン（じっせん２）"
     },
     /* Lesson (Long 3) */ {
-        /* Scene */ &D_089d5854,
+        /* Scene */ &scene_drum_lesson_long_3,
         /* Label */ "レッスン（じっせん３）"
     },
     /* Lesson (Long 1) */ {
-        /* Scene */ &D_089d593c,
+        /* Scene */ &scene_drum_lesson_long_1,
         /* Label */ "レッスン（じっせん４）"
     },
     /* Lesson (Long 5) */ {
-        /* Scene */ &D_089d5a24,
+        /* Scene */ &scene_drum_lesson_long_5,
         /* Label */ "レッスン（じっせん５）"
     },
     /* Lesson (Long 6) */ {
-        /* Scene */ &D_089d5b0c,
+        /* Scene */ &scene_drum_lesson_long_6,
         /* Label */ "レッスン（じっせん６）"
     },
     /* Lesson (High-Tech 1) */ {
-        /* Scene */ &D_089d5bf4,
+        /* Scene */ &scene_drum_lesson_hi_tech_1,
         /* Label */ "レッスン（じっせん７）"
     },
     /* Lesson (High-Tech 2) */ {
-        /* Scene */ &D_089d5cdc,
+        /* Scene */ &scene_drum_lesson_hi_tech_2,
         /* Label */ "レッスン（じっせん８）"
     },
     /* Studio Drummer */ {
@@ -399,8 +288,8 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Scene */ &scene_marching_orders_2,
         /* Label */ "マーチャ　２"
     },
-    /* Horse Machine */ {
-        /* Scene */ &D_089d1f18,
+    /* Mechanical Horse */ {
+        /* Scene */ &scene_mechanical_horse,
         /* Label */ "うま（スピード）"
     },
     /* Tap Trial */ {

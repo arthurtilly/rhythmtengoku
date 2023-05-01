@@ -10,7 +10,7 @@ thumb_func_start space_dance_init_gfx2 \n\
 /* 0803d054 */ LSLS R0, R0, 0x10 \n\
 /* 0803d056 */ LSRS R0, R0, 0x10 \n\
 /* 0803d058 */ LDR R2, =space_dance_gfx_tables \n\
-/* 0803d05a */ LDR R1, =D_030055d0 \n\
+/* 0803d05a */ LDR R1, =gCurrentEngineData \n\
 /* 0803d05c */ LDR R1, [R1] \n\
 /* 0803d05e */ LDRB R1, [R1, 0x4] \n\
 /* 0803d060 */ LSLS R1, R1, 0x2 \n\

@@ -29,7 +29,7 @@ branch_0801cfd8: \n\
 branch_0801cfde: \n\
 /* 0801cfde */ LDR R0, =D_089dcff0 \n\
 /* 0801cfe0 */ BL func_0801d968 \n\
-/* 0801cfe4 */ LDR R4, =D_030046a4 \n\
+/* 0801cfe4 */ LDR R4, =gCurrentSceneData \n\
 /* 0801cfe6 */ LDR R1, [R4] \n\
 /* 0801cfe8 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801cfea */ STR R0, [R1] \n\

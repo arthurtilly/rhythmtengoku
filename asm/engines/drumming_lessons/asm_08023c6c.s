@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start drum_intro_cue_spawn_auto \n\
 /* 08023c6c */ PUSH {R4, R5, LR} \n\
-/* 08023c6e */ LDR R5, =D_030055d0 \n\
+/* 08023c6e */ LDR R5, =gCurrentEngineData \n\
 /* 08023c70 */ LDR R2, [R5] \n\
 /* 08023c72 */ MOVS R3, 0xEA @ Set R3 to 0xEA \n\
 /* 08023c74 */ LSLS R3, R3, 0x2 \n\

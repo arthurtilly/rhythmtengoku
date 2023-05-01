@@ -29,8 +29,8 @@
     load_game mannequin_factory_engine, 0
 .endm
 
-@ Load Game: Mannequin Factory (Tutorial)
-.macro load_mannequin_factory_tutorial
+@ Load Game: Mannequin Factory (Practice)
+.macro load_mannequin_factory_practice
     load_mannequin_labels
     load_game mannequin_factory_engine, 1
 .endm

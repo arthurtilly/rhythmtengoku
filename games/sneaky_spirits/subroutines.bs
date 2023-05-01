@@ -123,6 +123,7 @@ script sneaky_spirits_sub_08a79744
 return
 
 
+
 @ Sneaky Spirits 2 - Subroutines
 
 script sneaky_spirits_2_sub_08a7996c

@@ -18,7 +18,7 @@ thumb_func_start func_0802dfc8 \n\
 /* 0802dfe0 */ MULS R0, R1 @ Multiply R0 by R1 \n\
 /* 0802dfe2 */ MOVS R1, 0x18 @ Set R1 to 0x18 \n\
 /* 0802dfe4 */ BL __divsi3 \n\
-/* 0802dfe8 */ LDR R1, =D_030055d0 \n\
+/* 0802dfe8 */ LDR R1, =gCurrentEngineData \n\
 /* 0802dfea */ LDR R1, [R1] \n\
 /* 0802dfec */ MOVS R2, 0xEC @ Set R2 to 0xEC \n\
 /* 0802dfee */ LSLS R2, R2, 0x1 \n\

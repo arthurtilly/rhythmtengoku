@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_0801ccd0 \n\
 /* 0801ccd0 */ PUSH {R4-R7, LR} \n\
 /* 0801ccd2 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
-/* 0801ccd4 */ LDR R7, =D_030046a4 \n\
+/* 0801ccd4 */ LDR R7, =gCurrentSceneData \n\
 /* 0801ccd6 */ MOVS R6, 0x14 @ Set R6 to 0x14 \n\
  \n\
 branch_0801ccd8: \n\

@@ -7,7 +7,7 @@
 #include "riq_main_scene.h"
 
 // Scene Types:
-struct GameplaySceneInfo {
+struct GameplaySceneData {
 	s32 unk0;
 	s32 unk4;
 	u8 playInputsEnabled; // A, B, +, L, R
@@ -15,7 +15,7 @@ struct GameplaySceneInfo {
     u16 buttonPressFilter;
 	u16 buttonReleaseFilter;
 	const struct GameEngine *gameEngine; // Game Engine Pointer
-	void *gameEngineInfo; // Same value as D_030055d0
+	void *gameEngineData; // Same value as gCurrentEngineData
 	struct Cue *cues; // Linked List (most recent element)
 	const struct CueDefinition *cueDefinitions[12]; // Cue Definitions (copied from Game Engine)
 	EngineEvent commonFunctions[3]; // Engine "Common" Functions
@@ -103,7 +103,7 @@ extern void gameplay_update_scene(void); // [func_08017000] Scene Update (Active
 extern u32  gameplay_inputs_are_enabled(void); // [func_0801714c] Check if Play Inputs are Enabled
 extern void gameplay_clear_palette_buffer(Palette buffer); // [func_08017168] Clear Secondary Palette Buffer (loaded to D_03004b10.unk858)
 extern void gameplay_set_current_engine(const struct GameEngine *engine, u32 version); // [func_08017188] Load New Engine
-extern void *gameplay_get_engine_info(void); // [func_0801732c] Get Current Game Engine Info
+extern void *gameplay_get_engine_data(void); // [func_0801732c] Get Current Game Engine Data
 extern void gameplay_set_input_buttons(u16 press, u16 release); // [func_08017338] Set Input Button Filters
 extern s32  gameplay_run_common_event(s32 param, s32 id); // [func_08017348] Run Engine-Common Event
 extern void gameplay_set_engine_event_param(s32 param); // [func_08017380] Set Parameter for Engine-Specific Event

@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_rap_men, script_rap_men_entry
 
 
+
 @ Rap Men - Script Entry Point (Skipped Practice)
 
 script script_rap_men_skipped_practice_entry
@@ -107,6 +108,7 @@ struct rap_men_marking_criteria
     .word rap_men_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Rap Men - Main Script
@@ -735,7 +737,7 @@ script script_rap_men_practice
     rest 24
     rest 24
     rest 24
-    run gameplay_display_skip_icon 2
+    run gameplay_display_skip_icon, 2
     run gameplay_set_tutorial scene_rap_men_skipped_practice
     play_music s_rap_bgm_renshu_seqData
     print_text_f D_0805ea44
@@ -874,7 +876,7 @@ script script_rap_men_practice
     enable_play_inputs 1
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         switch FUNC, func_080175d8
             case 0
                 print_text_f D_0805ead0
@@ -1017,7 +1019,7 @@ script script_rap_men_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         switch FUNC, func_080175d8
             case 0
                 print_text_f D_0805eb94
@@ -1137,7 +1139,7 @@ script script_rap_men_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
             switch FUNC, func_080175d8
             case 0
                 print_text_f D_0805ebf4

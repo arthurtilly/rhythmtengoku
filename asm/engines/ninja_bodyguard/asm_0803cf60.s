@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start ninja_bodyguard_input_event \n\
 /* 0803cf60 */ PUSH {R4-R7, LR} \n\
 /* 0803cf62 */ SUB SP, 0xC \n\
-/* 0803cf64 */ LDR R7, =D_030055d0 \n\
+/* 0803cf64 */ LDR R7, =gCurrentEngineData \n\
 /* 0803cf66 */ LDR R0, [R7] \n\
 /* 0803cf68 */ LDRB R6, [R0, 0x6] \n\
 /* 0803cf6a */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\

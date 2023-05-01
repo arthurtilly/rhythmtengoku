@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct TapTrialPrologueInfo *)D_030055d0)
+#define gPrologueEngineData ((struct TapTrialPrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: TAP TRIAL  //  //  //
@@ -43,14 +43,14 @@ void func_080476b8(void) {
 
 // [func_080476e8] MAIN - Init
 void tap_trial_prologue_engine_start(u32 ver) {
-    gPrologueInfo->ver = ver;
+    gPrologueEngineData->ver = ver;
 
     func_080476b8();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_tap_trial_prologue_title, 0, 120, 80, 0, 1, 0x7f, 0x8000);
-    func_0804dcb8(D_03005380, gPrologueInfo->textSprite, INT_TO_FIXED(1.5));
+    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_tap_trial_prologue_title, 0, 120, 80, 0, 1, 0x7f, 0x8000);
+    func_0804dcb8(D_03005380, gPrologueEngineData->textSprite, INT_TO_FIXED(1.5));
 }
 
 
@@ -71,11 +71,11 @@ void tap_trial_prologue_engine_stop(void) {
 
 // [func_08047770] Event 0 - Set Animation Frame (Text)
 void func_08047770(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo->textSprite, frame);
+    func_0804cebc(D_03005380, gPrologueEngineData->textSprite, frame);
 }
 
 
 // [func_08047794] Event 1 - Animate Text
 void func_08047794(void) {
-    func_0804d770(D_03005380, gPrologueInfo->textSprite, TRUE);
+    func_0804d770(D_03005380, gPrologueEngineData->textSprite, TRUE);
 }

@@ -4,19 +4,19 @@
 #include "power_calligraphy_prologue_anim_cells.inc.c"
 
 // [D_088b0690] Title
-struct Animation anim_prologue_calligraphy_title[] = {
+struct Animation anim_power_calligraphy_prologue_title[] = {
     /* 000 */ { power_calligraphy_prologue_cel001, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088b06a0] ? (Unused)
-struct Animation anim_prologue_calligraphy_unused[] = {
+struct Animation anim_power_calligraphy_prologue_unused[] = {
     /* 000 */ { power_calligraphy_prologue_cel000, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088b06b0] Calligrapher
-struct Animation anim_prologue_calligraphy_artist[] = {
+struct Animation anim_power_calligraphy_prologue_artist[] = {
     /* 000 */ { power_calligraphy_prologue_cel003, 3 },
     /* 001 */ { power_calligraphy_prologue_cel004, 3 },
     /* 002 */ { power_calligraphy_prologue_cel005, 3 },

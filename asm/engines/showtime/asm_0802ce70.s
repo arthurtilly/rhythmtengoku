@@ -17,7 +17,7 @@ thumb_func_start func_0802ce70 \n\
 branch_0802ce84: \n\
 /* 0802ce84 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0802ce86 */ MOV R9, R0 @ Set R9 to R0 \n\
-/* 0802ce88 */ LDR R1, =D_030055d0 \n\
+/* 0802ce88 */ LDR R1, =gCurrentEngineData \n\
 /* 0802ce8a */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 0802ce8c */ MOV R10, R8 @ Set R10 to R8 \n\
 /* 0802ce8e */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\

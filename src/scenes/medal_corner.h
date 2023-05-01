@@ -4,12 +4,12 @@
 #include "scenes.h"
 
 // Scene Types:
-struct MedalCornerSceneInfo {
+struct MedalCornerSceneData {
     /* add fields here */
 };
 
 struct MedalCornerLevel {
-    const struct Scene *scene;
+    struct Scene *scene;
     const char *title;
     struct Animation *icon;
     u8 medalsToUnlock;
@@ -26,19 +26,21 @@ struct MedalCornerMenu {
 // Scene Macros/Enums:
 enum RhythmToysEnum {
     RHYTHM_TOY_CAT_MACHINE,
-    RHYTHM_TOY_HORSE_MACHINE,
+    RHYTHM_TOY_MECHANICAL_HORSE,
     RHYTHM_TOY_LOVE_MACHINE,
-    RHYTHM_TOY_RAP_MACHINE
+    RHYTHM_TOY_RAP_MACHINE,
+
+    TOTAL_RHYTHM_TOYS
 };
-#define TOTAL_RHYTHM_TOYS 4
 
 enum EndlessGamesEnum {
     ENDLESS_GAME_MR_UPBEAT,
     ENDLESS_GAME_SICK_BEATS,
     ENDLESS_GAME_QUIZ_SHOW,
-    ENDLESS_GAME_MANNEQUIN_FACTORY
+    ENDLESS_GAME_MANNEQUIN_FACTORY,
+
+    TOTAL_ENDLESS_GAMES
 };
-#define TOTAL_ENDLESS_GAMES 4
 
 enum DrumLessonsEnum {
     DRUM_LESSON_BASIC_1,
@@ -59,9 +61,10 @@ enum DrumLessonsEnum {
     DRUM_LESSON_LONG_5,
     DRUM_LESSON_LONG_6,
     DRUM_LESSON_HI_TECH_1,
-    DRUM_LESSON_HI_TECH_2
+    DRUM_LESSON_HI_TECH_2,
+
+    TOTAL_DRUM_LESSONS
 };
-#define TOTAL_DRUM_LESSONS 19
 
 
 // Scene Data:

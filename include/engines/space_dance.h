@@ -6,8 +6,8 @@
 #include "games/space_dance/graphics/space_dance_graphics.h"
 
 // Engine Types:
-struct SpaceDanceInfo {
-    /* add fields here */
+struct SpaceDanceEngineData {
+    u8 pad[0x38];
 };
 
 struct SpaceDanceCue {

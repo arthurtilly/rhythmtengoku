@@ -40,7 +40,7 @@ YELLOW  := \033[0;33m
 
 # Generic print function for make rules
 define print
-  $(V)echo "$(GREEN)$(1) $(YELLOW)$(2)$(GREEN) -> $(BLUE)$(3)$(NO_COL)"
+  $(V)echo -e "$(GREEN)$(1) $(YELLOW)$(2)$(GREEN) -> $(BLUE)$(3)$(NO_COL)"
 endef
 
 #---------------------------------------------------------------------------------

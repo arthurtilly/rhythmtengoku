@@ -29,7 +29,7 @@ thumb_func_start func_080303a4 \n\
 /* 080303d4 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
 /* 080303d6 */ BL func_0804d160 \n\
 /* 080303da */ STRH R0, [R7] \n\
-/* 080303dc */ LDR R0, =D_030055d0 \n\
+/* 080303dc */ LDR R0, =gCurrentEngineData \n\
 /* 080303de */ LDR R0, [R0] \n\
 /* 080303e0 */ LDRB R0, [R0, 0x1] \n\
 /* 080303e2 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\

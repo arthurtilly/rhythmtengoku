@@ -168,7 +168,7 @@ enum InstrumentBanksEnum {
 	INST_BANK_63
 };
 
-struct SampleInfo {
+struct SampleData {
 	u32 length;
 	u32 sampleRate;
 	u32 pitch;
@@ -185,7 +185,7 @@ struct InstrumentHeader {
 
 struct InstrumentPCM {
 	struct InstrumentHeader header;
-	struct SampleInfo *sample;
+	struct SampleData *sample;
 	u32 unk8;
 	u32 unkC;
 	u32 unk10;
@@ -311,7 +311,7 @@ struct SoundPlayer {
     u32 volumeFadeType:3; // Type of currently-active Volume Fade { 0 = None; 1 = Fade-In; 2 = Fade-Out & Close; 3 = Fade-Out & Pause }
     struct MidiBus *midiBus;             // MIDI: Bus with effects for all MIDI Channels.
     struct MidiTrackStream *midiReader;  // MIDI: Multiple structures which each keep track of a MIDI Track being processed.
-    struct SequenceData *songInfo; // SequenceData: Currently-loaded Sound Sequence.
+    struct SequenceData *sequence; // SequenceData: Currently-loaded Sound Sequence.
     u32 deltaTime;              // MIDI: Ticks Per Frame, using internal assumption of 60fps [default = 1]
     const char *loopStartSym;   // MIDI: Label char denoting "Loop Start". [always D_08A865D4, '[']
     const char *loopEndSym;     // MIDI: Label char denoting "Loop End". [always D_08A865D8, ']']

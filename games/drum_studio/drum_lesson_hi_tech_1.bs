@@ -1,24 +1,42 @@
-.section .rodata
-
 .include "include/beatscript.inc"
 .include "games/drum_studio/macros.inc"
 
-load_drum_studio_labels
 
 
-/* Script Data - Drum Lesson (Hi-Tech 1) */
+.section .script.entry
+@ Drum Lesson (Hi-Tech 1) - Script Entry Point
+
+script script_drum_lesson_hi_tech_1_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_lessons
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_drum_lesson_hi_tech_1_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_lesson_hi_tech_1, script_drum_lesson_hi_tech_1_entry
 
 
-@ Dialogue
-script D_0806557c
-.ascii "よくきいてマネしてね。\n"
-.ascii "好きなタイミングでどうぞ。\n"
-.ascii "演奏を止めると、\n"
-.asciz "お手本がきけるヨ！"
-.balign 4, 0
+
+.section .rodata
+@ Drum Lesson (Hi-Tech 1) - Data
+
+text D_0806557c
+    .ascii "よくきいてマネしてね。\n"
+    .ascii "好きなタイミングでどうぞ。\n"
+    .ascii "演奏を止めると、\n"
+    .asciz "お手本がきけるヨ！"
+endtext
 
 
-@ Pattern
 script D_080655d4
     spawn_cue CUE_SNARE_L
     rest 6
@@ -64,7 +82,6 @@ script D_080655d4
 return
 
 
-@ Pattern Start
 script D_080657cc
     spawn_cue CUE_KICK_R
     spawn_cue CUE_CRASH
@@ -76,15 +93,13 @@ script D_080657cc
 return
 
 
-@ Dialogue
-script D_0806582c
-.ascii "\n"
-.ascii "ハイハットをいれて\n"
-.asciz "カッコよくするヨ！\n"
-.balign 4, 0
+text D_0806582c
+    .ascii "\n"
+    .ascii "ハイハットをいれて\n"
+    .asciz "カッコよくするヨ！\n"
+endtext
 
 
-@ Pattern
 script D_08065854
     spawn_cue CUE_SNARE_L
     rest 6
@@ -132,7 +147,6 @@ script D_08065854
 return
 
 
-@ Pattern Start
 script D_08065a64
     spawn_cue CUE_KICK_R
     spawn_cue CUE_CRASH
@@ -145,16 +159,14 @@ script D_08065a64
 return
 
 
-@ Dialogue
-script D_08065ad0
-.ascii "\n"
-.ascii "さらに、もう少し\n"
-.ascii "ハイハットをいれて\n"
-.asciz "カッコよくするヨ！\n"
-.balign 4, 0
+text D_08065ad0
+    .ascii "\n"
+    .ascii "さらに、もう少し\n"
+    .ascii "ハイハットをいれて\n"
+    .asciz "カッコよくするヨ！\n"
+endtext
 
 
-@ Pattern
 script D_08065b0c
     spawn_cue CUE_SNARE_L
     rest 6
@@ -204,16 +216,14 @@ script D_08065b0c
 return
 
 
-@ Dialogue
-script D_08065d34
-.ascii "\n"
-.ascii "さいごにスネアを\n"
-.ascii "１つ追加しちゃうヨ！\n"
-.asciz "わかるかな？"
-.balign 4, 0
+text D_08065d34
+    .ascii "\n"
+    .ascii "さいごにスネアを\n"
+    .ascii "１つ追加しちゃうヨ！\n"
+    .asciz "わかるかな？"
+endtext
 
 
-@ Pattern
 script D_08065d68
     spawn_cue CUE_SNARE_L
     rest 6
@@ -261,6 +271,65 @@ script D_08065d68
     spawn_cue CUE_TOM
     rest 6
     rest 6
+return
+
+
+
+.section .script.main
+@ Drum Lesson (Hi-Tech 1) - Tables
+
+struct D_08a4363c
+    .word D_080657cc
+    .word D_080655d4
+    .word s_hakushu_solo_seqData
+    .word D_0806557c
+endstruct
+
+struct D_08a4364c   
+    .word D_08065a64
+    .word D_08065854
+    .word s_hakushu_solo_seqData
+    .word D_0806582c
+endstruct
+
+struct D_08a4365c
+    .word D_08065a64
+    .word D_08065b0c
+    .word s_warai_little_seqData
+    .word D_08065ad0
+endstruct
+
+struct D_08a4366c
+    .word D_08065a64
+    .word D_08065d68
+    .word s_warai_seqData
+    .word D_08065d34
+endstruct
+
+
+
+@ Drum Lesson (Hi-Tech 1) - Main Script
+
+script script_drum_lesson_hi_tech_1_main
+    set_tempo 110
+    set_music_volume 256
+    assess_inputs 0
+    dms_event08 4
+    dms_event09 1
+    rest 24
+    dms_event02 1
+    run func_08048264, D_08a4363c
+    call drum_lessons_sub_08a7d7a0
+    run func_08048264, D_08a4364c
+    call drum_lessons_sub_08a7d7a0
+    run func_08048264, D_08a4365c
+    call drum_lessons_sub_08a7d7a0
+    assess_inputs 1
+    run func_08048264, D_08a4366c
+    call drum_lessons_sub_08a7d7a0
+    dms_show_dialogue 1
+    dms_set_teacher_exp 4
+    dms_get_lesson_score
 return
 
 .end

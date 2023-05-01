@@ -12,7 +12,7 @@ thumb_func_start func_08022bb4 \n\
 /* 08022bc0 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08022bc2 */ LDR R7, =D_03005380 \n\
 /* 08022bc4 */ LDR R5, =anim_mannequin_hand_r \n\
-/* 08022bc6 */ LDR R4, =D_030055d0 \n\
+/* 08022bc6 */ LDR R4, =gCurrentEngineData \n\
 /* 08022bc8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
  \n\
 branch_08022bca: \n\
@@ -43,7 +43,7 @@ branch_08022bca: \n\
 /* 08022bfa */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 08022bfc */ MOVS R3, 0x2C @ Set R3 to 0x2C \n\
 /* 08022bfe */ BL func_0804d160 \n\
-/* 08022c02 */ LDR R5, =D_030055d0 \n\
+/* 08022c02 */ LDR R5, =gCurrentEngineData \n\
 /* 08022c04 */ LDR R1, [R5] \n\
 /* 08022c06 */ STRH R0, [R1, 0x6] \n\
 /* 08022c08 */ LDR R0, [R7] \n\

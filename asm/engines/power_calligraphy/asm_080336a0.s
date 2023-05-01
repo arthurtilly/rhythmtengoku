@@ -11,7 +11,7 @@ thumb_func_start func_080336a0 \n\
 /* 080336aa */ BLT branch_08033776 \n\
 /* 080336ac */ LDR R4, =D_03005380 \n\
 /* 080336ae */ LDR R0, [R4] \n\
-/* 080336b0 */ LDR R1, =calligraphy_pattern_input_anim \n\
+/* 080336b0 */ LDR R1, =power_calligraphy_pattern_input_anim \n\
 /* 080336b2 */ LSLS R5, R7, 0x2 \n\
 /* 080336b4 */ ADDS R1, R5, R1 @ Set R1 to R5 + R1 \n\
 /* 080336b6 */ LDR R1, [R1] \n\
@@ -35,7 +35,7 @@ thumb_func_start func_080336a0 \n\
 /* 080336dc */ LDR R2, =(D_03004b10 + 0x14) \n\
 /* 080336de */ ADDS R3, R2, 0x2 @ Set R3 to R2 + 0x2 \n\
 /* 080336e0 */ BL func_0804db44 \n\
-/* 080336e4 */ LDR R0, =D_030055d0 \n\
+/* 080336e4 */ LDR R0, =gCurrentEngineData \n\
 /* 080336e6 */ LDR R0, [R0] \n\
 /* 080336e8 */ LDRB R1, [R0, 0xB] \n\
 /* 080336ea */ LSLS R1, R1, 0x1 \n\
@@ -46,7 +46,7 @@ thumb_func_start func_080336a0 \n\
 /* 080336f4 */ BL stop_sound \n\
 /* 080336f8 */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
 /* 080336fa */ BEQ branch_08033724 \n\
-/* 080336fc */ LDR R0, =calligraphy_input_barely_sfx \n\
+/* 080336fc */ LDR R0, =power_calligraphy_input_barely_sfx \n\
 /* 080336fe */ ADDS R0, R5, R0 @ Set R0 to R5 + R0 \n\
 /* 08033700 */ LDR R0, [R0] \n\
 /* 08033702 */ BL play_sound \n\
@@ -55,7 +55,7 @@ thumb_func_start func_080336a0 \n\
 .ltorg \n\
  \n\
 branch_08033724: \n\
-/* 08033724 */ LDR R1, =calligraphy_paper_motions \n\
+/* 08033724 */ LDR R1, =power_calligraphy_paper_motions \n\
 /* 08033726 */ ADDS R1, R5, R1 @ Set R1 to R5 + R1 \n\
 /* 08033728 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803372a */ LDRSH R0, [R1, R2] \n\
@@ -69,13 +69,13 @@ branch_08033724: \n\
 /* 0803373a */ LSLS R1, R1, 0x8 \n\
 /* 0803373c */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 0803373e */ BL func_080331c0 \n\
-/* 08033742 */ LDR R0, =calligraphy_input_hit_sfx \n\
+/* 08033742 */ LDR R0, =power_calligraphy_input_hit_sfx \n\
 /* 08033744 */ ADDS R0, R5, R0 @ Set R0 to R5 + R0 \n\
 /* 08033746 */ LDR R0, [R0] \n\
 /* 08033748 */ BL play_sound \n\
  \n\
 branch_0803374c: \n\
-/* 0803374c */ LDR R0, =D_030055d0 \n\
+/* 0803374c */ LDR R0, =gCurrentEngineData \n\
 /* 0803374e */ LDR R1, [R0] \n\
 /* 08033750 */ LDRB R0, [R1, 0xB] \n\
 /* 08033752 */ ADDS R0, 0x1 @ Add 0x1 to R0 \n\
@@ -84,7 +84,7 @@ branch_0803374c: \n\
 /* 08033758 */ ADDS R2, R2, R7 @ Set R2 to R2 + R7 \n\
 /* 0803375a */ LSLS R2, R2, 0x2 \n\
 /* 0803375c */ LSLS R0, R6, 0x2 \n\
-/* 0803375e */ LDR R1, =calligraphy_brush_motions \n\
+/* 0803375e */ LDR R1, =power_calligraphy_brush_motions \n\
 /* 08033760 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 08033762 */ ADDS R2, R2, R0 @ Set R2 to R2 + R0 \n\
 /* 08033764 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

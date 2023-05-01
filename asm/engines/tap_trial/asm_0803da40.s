@@ -13,7 +13,7 @@ thumb_func_start tap_trial_play_girl_action \n\
 /* 0803da4e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803da50 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 0803da52 */ LDR R0, =tap_trial_girl_action_table \n\
-/* 0803da54 */ LDR R1, =D_030055d0 \n\
+/* 0803da54 */ LDR R1, =gCurrentEngineData \n\
 /* 0803da56 */ MOV R10, R1 @ Set R10 to R1 \n\
 /* 0803da58 */ LDR R2, [R1] \n\
 /* 0803da5a */ LDRB R1, [R2] \n\

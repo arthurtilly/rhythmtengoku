@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start drum_intro_common_beat_animation \n\
 /* 08024e48 */ PUSH {R4, R5, LR} \n\
-/* 08024e4a */ LDR R5, =D_030055d0 \n\
+/* 08024e4a */ LDR R5, =gCurrentEngineData \n\
 /* 08024e4c */ LDR R1, [R5] \n\
 /* 08024e4e */ LDRB R0, [R1] \n\
 /* 08024e50 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\

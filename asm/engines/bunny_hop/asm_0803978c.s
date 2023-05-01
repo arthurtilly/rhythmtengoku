@@ -9,7 +9,7 @@ thumb_func_start func_0803978c \n\
 /* 08039792 */ LSRS R2, R0, 0x10 \n\
 /* 08039794 */ LSLS R1, R1, 0x10 \n\
 /* 08039796 */ LSRS R1, R1, 0x10 \n\
-/* 08039798 */ LDR R0, =D_030055d0 \n\
+/* 08039798 */ LDR R0, =gCurrentEngineData \n\
 /* 0803979a */ LDR R0, [R0] \n\
 /* 0803979c */ MOVS R4, 0xC0 @ Set R4 to 0xC0 \n\
 /* 0803979e */ LSLS R4, R4, 0x1 \n\

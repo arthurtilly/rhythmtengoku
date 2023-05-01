@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct TramPaulinePrologueInfo *)D_030055d0)
+#define gPrologueEngineData ((struct TramPaulinePrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: TRAM & PAULINE  //  //  //
@@ -43,13 +43,13 @@ void func_08047b10(void) {
 
 // [func_08047b40] MAIN - Init
 void tram_pauline_prologue_engine_start(u32 ver) {
-    gPrologueInfo->ver = ver;
+    gPrologueEngineData->ver = ver;
 
     func_08047b10();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_tram_pauline_prologue_title, 0, 120, 150, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_tram_pauline_prologue_title, 0, 120, 150, 0, 0, 0x7f, 0);
     func_0804d160(D_03005380, anim_tram_pauline_prologue_characters, 0, 120, 150, 0x800, 0, 0x7f, 0);
 }
 
@@ -71,5 +71,5 @@ void tram_pauline_prologue_engine_stop(void) {
 
 // [func_08047bdc] Event 0 - Show Text
 void func_08047bdc(void) {
-    func_0804dae0(D_03005380, gPrologueInfo->textSprite, 1, 0x7f, 0);
+    func_0804dae0(D_03005380, gPrologueEngineData->textSprite, 1, 0x7f, 0);
 }

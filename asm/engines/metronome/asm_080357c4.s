@@ -8,7 +8,7 @@ thumb_func_start func_080357c4 \n\
 /* 080357c8 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 080357ca */ LDR R0, =D_03005380 \n\
 /* 080357cc */ LDR R0, [R0] \n\
-/* 080357ce */ LDR R5, =D_030055d0 \n\
+/* 080357ce */ LDR R5, =gCurrentEngineData \n\
 /* 080357d0 */ LDR R1, [R5] \n\
 /* 080357d2 */ MOVS R2, 0xE @ Set R2 to 0xE \n\
 /* 080357d4 */ LDRSH R1, [R1, R2] \n\
@@ -49,7 +49,7 @@ branch_08035824: \n\
 /* 08035826 */ BL play_sound \n\
  \n\
 branch_0803582a: \n\
-/* 0803582a */ LDR R6, =D_030055d0 \n\
+/* 0803582a */ LDR R6, =gCurrentEngineData \n\
 /* 0803582c */ LDR R1, [R6] \n\
 /* 0803582e */ LDRB R0, [R1, 0xC] \n\
 /* 08035830 */ ADDS R5, R0, 0x1 @ Set R5 to R0 + 0x1 \n\

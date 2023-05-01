@@ -3,7 +3,7 @@ asm(".syntax unified \n\
 .balign 4, 0 \n\
 \n\
 thumb_func_start mannequin_cue_spawn \n\
-/* 08023404 */ LDR R0, =D_030055d0 \n\
+/* 08023404 */ LDR R0, =gCurrentEngineData \n\
 /* 08023406 */ LDR R0, [R0] \n\
 /* 08023408 */ ADDS R0, 0x8C @ Add 0x8C to R0 \n\
 /* 0802340a */ LDR R0, [R0] \n\

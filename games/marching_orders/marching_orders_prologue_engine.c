@@ -41,12 +41,12 @@ struct GraphicsTable marching_orders_prologue_gfx_table[] = {
 
 // [D_089eb6b8] Engine Events
 EngineEvent marching_orders_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08046300
+    /* 0x00 */ func_08046300
 };
 
 // [D_089eb6bc] Prologue (Marching Orders) Game Engine
 struct GameEngine marching_orders_prologue_engine = {
-    /* Size in Memory */ sizeof(struct MarchingOrdersPrologueInfo),
+    /* Size in Memory */ sizeof(struct MarchingOrdersPrologueEngineData),
     /* Start Engine   */ marching_orders_prologue_engine_start,
     /* Update Engine  */ marching_orders_prologue_engine_update,
     /* Stop Engine    */ marching_orders_prologue_engine_stop,

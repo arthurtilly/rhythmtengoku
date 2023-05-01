@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_080333e8 \n\
 /* 080333e8 */ PUSH {R4-R7, LR} \n\
 /* 080333ea */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
-/* 080333ec */ LDR R1, =D_030055d0 \n\
+/* 080333ec */ LDR R1, =gCurrentEngineData \n\
 /* 080333ee */ LDR R0, [R1] \n\
 /* 080333f0 */ LDRB R0, [R0, 0xB] \n\
 /* 080333f2 */ CMP R6, R0 @ Check R6 - R0 \n\
@@ -29,7 +29,7 @@ branch_080333f8: \n\
 /* 08033414 */ BL func_0804d6cc \n\
 /* 08033418 */ LSLS R0, R0, 0x18 \n\
 /* 0803341a */ ASRS R1, R0, 0x18 \n\
-/* 0803341c */ LDR R0, =anim_calligraphy_kokoro_input2 \n\
+/* 0803341c */ LDR R0, =anim_power_calligraphy_kokoro_input2 \n\
 /* 0803341e */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 08033420 */ BNE branch_08033450 \n\
 /* 08033422 */ CMP R1, 0x0 @ Compare R1 and 0x0 \n\
@@ -49,7 +49,7 @@ branch_080333f8: \n\
  \n\
 branch_08033450: \n\
 /* 08033450 */ ADDS R6, 0x1 @ Add 0x1 to R6 \n\
-/* 08033452 */ LDR R1, =D_030055d0 \n\
+/* 08033452 */ LDR R1, =gCurrentEngineData \n\
 /* 08033454 */ LDR R0, [R1] \n\
 /* 08033456 */ LDRB R0, [R0, 0xB] \n\
 /* 08033458 */ CMP R6, R0 @ Check R6 - R0 \n\

@@ -9,7 +9,7 @@ thumb_func_start func_0803be44 \n\
 /* 0803be4a */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 0803be4c */ SUBS R0, 0xC8 @ Subtract 0xC8 from R0 \n\
 /* 0803be4e */ ADDS R1, 0xC8 @ Add 0xC8 to R1 \n\
-/* 0803be50 */ LDR R4, =D_030055d0 \n\
+/* 0803be50 */ LDR R4, =gCurrentEngineData \n\
 /* 0803be52 */ LDR R3, [R4] \n\
 /* 0803be54 */ MOVS R5, 0xBE @ Set R5 to 0xBE \n\
 /* 0803be56 */ LSLS R5, R5, 0x2 \n\

@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct ReadingSceneInfo {
+struct ReadingSceneData {
     /* add fields here */
 };
 
@@ -24,7 +24,7 @@ enum ReadingMaterialEnum {
     /* 03 */ READING_MATERIAL_RHYTHM_TWEEZERS,
     /* 04 */ READING_MATERIAL_NIGHT_WALK,
     /* 05 */ READING_MATERIAL_SPACEBALL,
-    /* 06 */ READING_MATERIAL_HORSE_MACHINE,
+    /* 06 */ READING_MATERIAL_MECHANICAL_HORSE,
     /* 07 */ READING_MATERIAL_MARCHING_ORDERS,
     /* 08 */ READING_MATERIAL_RAP_MEN,
     /* 09 */ READING_MATERIAL_BON_ODORI,
@@ -72,7 +72,7 @@ extern struct ReadingMaterial reading_material_error;
 
 
 // Scene Types:
-struct ReadErrorSceneInfo {
+struct ReadErrorSceneData {
     /* add fields here */
 };
 

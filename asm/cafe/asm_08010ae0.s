@@ -8,7 +8,7 @@ thumb_func_start func_08010ae0 \n\
 /* 08010ae4 */ BL cafe_scene_script_is_ready \n\
 /* 08010ae8 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08010aea */ BEQ branch_08010ba2 \n\
-/* 08010aec */ LDR R5, =D_030046a4 \n\
+/* 08010aec */ LDR R5, =gCurrentSceneData \n\
 /* 08010aee */ LDR R2, [R5] \n\
 /* 08010af0 */ LDRB R0, [R2, 0xC] \n\
 /* 08010af2 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
@@ -81,7 +81,7 @@ branch_08010b6a: \n\
 /* 08010b70 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 08010b72 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08010b74 */ BEQ branch_08010ba2 \n\
-/* 08010b76 */ LDR R4, =D_030046a4 \n\
+/* 08010b76 */ LDR R4, =gCurrentSceneData \n\
 /* 08010b78 */ LDR R0, [R4] \n\
 /* 08010b7a */ LDR R0, [R0, 0x4] \n\
 /* 08010b7c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\

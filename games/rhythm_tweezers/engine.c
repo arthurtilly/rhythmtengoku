@@ -444,29 +444,29 @@ struct CueDefinition *rhythm_tweezers_cue_index[] = {
 
 // [D_089e41c0] Common Events
 EngineEvent rhythm_tweezers_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) rhythm_tweezers_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) rhythm_tweezers_common_display_text,
+    /* BEAT_ANIMATION */ rhythm_tweezers_common_beat_animation,
+    /* DISPLAY_TEXT   */ rhythm_tweezers_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e41cc] Engine Events
 EngineEvent rhythm_tweezers_engine_events[] = {
-    /* 0x00 */ (EngineEvent) rhythm_tweezers_spawn_tweezers,
-    /* 0x01 */ (EngineEvent) rhythm_tweezers_start_hair_cycle,
-    /* 0x02 */ (EngineEvent) rhythm_tweezers_scroll_to_next_veg,
-    /* 0x03 */ (EngineEvent) rhythm_tweezers_set_next_veg_type,
-    /* 0x04 */ (EngineEvent) rhythm_tweezers_play_cash_reg_sfx,
-    /* 0x05 */ (EngineEvent) rhythm_tweezers_hide_tutorial_text,
-    /* 0x06 */ (EngineEvent) rhythm_tweezers_removed_engine_event,
-    /* 0x07 */ (EngineEvent) rhythm_tweezers_show_mask,
-    /* 0x08 */ (EngineEvent) rhythm_tweezers_hide_mask,
-    /* 0x09 */ (EngineEvent) rhythm_tweezers_engine_event_stub
+    /* 0x00 */ rhythm_tweezers_spawn_tweezers,
+    /* 0x01 */ rhythm_tweezers_start_hair_cycle,
+    /* 0x02 */ rhythm_tweezers_scroll_to_next_veg,
+    /* 0x03 */ rhythm_tweezers_set_next_veg_type,
+    /* 0x04 */ rhythm_tweezers_play_cash_reg_sfx,
+    /* 0x05 */ rhythm_tweezers_hide_tutorial_text,
+    /* 0x06 */ rhythm_tweezers_removed_engine_event,
+    /* 0x07 */ rhythm_tweezers_show_mask,
+    /* 0x08 */ rhythm_tweezers_hide_mask,
+    /* 0x09 */ rhythm_tweezers_engine_event_stub
 };
 
 // [D_089e41f4] Rhythm Tweezers Game Engine
 struct GameEngine rhythm_tweezers_engine = {
-    /* Size in Memory */ sizeof(struct RhythmTweezersInfo),
+    /* Size in Memory */ sizeof(struct RhythmTweezersEngineData),
     /* Start Engine   */ rhythm_tweezers_engine_start,
     /* Update Engine  */ rhythm_tweezers_engine_update,
     /* Stop Engine    */ rhythm_tweezers_engine_stop,

@@ -36,7 +36,7 @@ thumb_func_start gameplay_init_overlay \n\
 /* 08018194 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08018196 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
 /* 08018198 */ BL func_0804d160 \n\
-/* 0801819c */ LDR R3, =D_030046a4 \n\
+/* 0801819c */ LDR R3, =gCurrentSceneData \n\
 /* 0801819e */ MOV R9, R3 @ Set R9 to R3 \n\
 /* 080181a0 */ LDR R1, [R3] \n\
 /* 080181a2 */ ADDS R1, 0x8C @ Add 0x8C to R1 \n\

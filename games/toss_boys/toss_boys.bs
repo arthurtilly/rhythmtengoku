@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_toss_boys, script_toss_boys_entry
 
 
+
 @ Toss Boys - Script Entry Point (Skipped Practice)
 
 script script_toss_boys_skipped_practice_entry
@@ -119,6 +120,7 @@ struct toss_boys_marking_criteria
     .word toss_boys_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Toss Boys - Main Script
@@ -970,7 +972,7 @@ script script_toss_boys_practice
     toss_boys_event04 0
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         toss_boys_event01 196928
         beat_anim
         rest 24
@@ -1040,7 +1042,7 @@ script script_toss_boys_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         toss_boys_event01 196930
         beat_anim
         rest 24
@@ -1127,7 +1129,7 @@ script script_toss_boys_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         toss_boys_event01 196930
         beat_anim
         rest 24
@@ -1228,7 +1230,7 @@ script script_toss_boys_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         toss_boys_event01 196928
         beat_anim
         rest 24
@@ -1318,7 +1320,7 @@ script script_toss_boys_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         toss_boys_event01 196928
         beat_anim
         rest 24
@@ -1422,7 +1424,7 @@ script script_toss_boys_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         toss_boys_event01 196928
         beat_anim
         rest 24
@@ -1503,7 +1505,7 @@ script script_toss_boys_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         toss_boys_event01 196928
         beat_anim
         rest 24

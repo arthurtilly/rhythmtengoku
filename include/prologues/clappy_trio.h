@@ -10,7 +10,7 @@
 
 
 // Types:
-struct ClappyTrioPrologueInfo {
+struct ClappyTrioPrologueEngineData {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };

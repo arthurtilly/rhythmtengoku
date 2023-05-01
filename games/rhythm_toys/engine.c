@@ -48,7 +48,7 @@ extern struct Vector2 D_08cdd104;
   //  //  //  CONFESSION MACHINE DATA  //  //  //
 
 
-#include "confession_machine.inc.c"
+#include "love_machine.inc.c"
 
 
   //  //  //  GRAPHICS DATA  //  //  //
@@ -64,7 +64,7 @@ struct RhythmToysSpriteData rhythm_toys_sprite_button_a[] = {
         /* Anim */ anim_cat_machine_button_a,
         /* Vec2 */ &D_08cda134
     },
-    /* CONFESSION_MACHINE */ {
+    /* LOVE_MACHINE */ {
         /* Anim */ anim_love_machine_button_a,
         /* Vec2 */ &D_08cdd0f0
     },
@@ -84,7 +84,7 @@ struct RhythmToysSpriteData rhythm_toys_sprite_button_b[] = {
         /* Anim */ anim_cat_machine_button_b,
         /* Vec2 */ &D_08cda138
     },
-    /* CONFESSION_MACHINE */ {
+    /* LOVE_MACHINE */ {
         /* Anim */ anim_love_machine_button_b,
         /* Vec2 */ &D_08cdd0f4
     },
@@ -104,7 +104,7 @@ struct RhythmToysSpriteData rhythm_toys_sprite_button_u[] = {
         /* Anim */ anim_cat_machine_button_up,
         /* Vec2 */ &D_08cda13c
     },
-    /* CONFESSION_MACHINE */ {
+    /* LOVE_MACHINE */ {
         /* Anim */ anim_love_machine_button_up,
         /* Vec2 */ &D_08cdd0f8
     },
@@ -124,7 +124,7 @@ struct RhythmToysSpriteData rhythm_toys_sprite_button_d[] = {
         /* Anim */ anim_cat_machine_button_down,
         /* Vec2 */ &D_08cda140
     },
-    /* CONFESSION_MACHINE */ {
+    /* LOVE_MACHINE */ {
         /* Anim */ anim_love_machine_button_down,
         /* Vec2 */ &D_08cdd0fc
     },
@@ -144,7 +144,7 @@ struct RhythmToysSpriteData rhythm_toys_sprite_button_l[] = {
         /* Anim */ anim_cat_machine_button_left,
         /* Vec2 */ &D_08cda144
     },
-    /* CONFESSION_MACHINE */ {
+    /* LOVE_MACHINE */ {
         /* Anim */ anim_love_machine_button_left,
         /* Vec2 */ &D_08cdd100
     },
@@ -164,7 +164,7 @@ struct RhythmToysSpriteData rhythm_toys_sprite_button_r[] = {
         /* Anim */ anim_cat_machine_button_right,
         /* Vec2 */ &D_08cda148
     },
-    /* CONFESSION_MACHINE */ {
+    /* LOVE_MACHINE */ {
         /* Anim */ anim_love_machine_button_right,
         /* Vec2 */ &D_08cdd104
     },
@@ -184,7 +184,7 @@ struct RhythmToysSpriteData rhythm_toys_sprite_demo_icon[] = {
         /* Anim */ anim_cat_machine_demo_icon,
         /* Vec2 */ &D_08cda128
     },
-    /* CONFESSION_MACHINE */ {
+    /* LOVE_MACHINE */ {
         /* Anim */ anim_love_machine_demo_icon,
         /* Vec2 */ &D_08cdd0e4
     },
@@ -204,7 +204,7 @@ struct RhythmToysSpriteData rhythm_toys_sprite_machine_r[] = {
         /* Anim */ anim_cat_machine_listen,
         /* Vec2 */ &D_08cda12c
     },
-    /* CONFESSION_MACHINE */ {
+    /* LOVE_MACHINE */ {
         /* Anim */ anim_love_san_speak_short,
         /* Vec2 */ &D_08cdd0ec
     },
@@ -224,7 +224,7 @@ struct RhythmToysSpriteData rhythm_toys_sprite_machine_l[] = {
         /* Anim */ anim_cat_machine_meow,
         /* Vec2 */ &D_08cda130
     },
-    /* CONFESSION_MACHINE */ {
+    /* LOVE_MACHINE */ {
         /* Anim */ anim_love_san_speak_long,
         /* Vec2 */ &D_08cdd0e8
     },
@@ -291,7 +291,7 @@ struct GraphicsTable gfx_table_cat_machine[] = {
 };
 
 // [D_089e9d98] Graphics Table (Confession Machine)
-struct GraphicsTable gfx_table_confession_machine[] = {
+struct GraphicsTable gfx_table_love_machine[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cdd0d4,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -308,12 +308,12 @@ struct GraphicsTable gfx_table_confession_machine[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ confession_machine_pal,
+        /* Src.  */ love_machine_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ confession_machine_pal,
+        /* Src.  */ love_machine_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -354,7 +354,7 @@ struct GraphicsTable gfx_table_rap_machine[] = {
 struct GraphicsTable *rhythm_toys_gfx_tables[] = {
     /* CAT1 */ gfx_table_cat_machine,
     /* CAT2 */ gfx_table_cat_machine,
-    /* LOVE */ gfx_table_confession_machine,
+    /* LOVE */ gfx_table_love_machine,
     /* RAP  */ gfx_table_rap_machine
 };
 
@@ -376,7 +376,7 @@ u8 rhythm_toys_button_anim_ids[] = {
 u16 *rhythm_toys_demo_bpm_table[] = {
     /* CAT1 */ &cat_machine_demo_bpm,
     /* CAT2 */ &cat_machine_demo_bpm,
-    /* LOVE */ &confession_machine_demo_bpm,
+    /* LOVE */ &love_machine_demo_bpm,
     /* RAP  */ &rap_machine_demo_bpm
 };
 
@@ -449,20 +449,20 @@ struct CueDefinition *rhythm_toys_cue_index[] = {
 
 // [D_089e9edc] Common Events
 EngineEvent rhythm_toys_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) rhythm_toys_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) rhythm_toys_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) rhythm_toys_common_init_tutorial,
+    /* BEAT_ANIMATION */ rhythm_toys_common_beat_animation,
+    /* DISPLAY_TEXT   */ rhythm_toys_common_display_text,
+    /* INIT_TUTORIAL  */ rhythm_toys_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e9eec] Engine Events
 EngineEvent rhythm_toys_engine_events[] = {
-    /* 0x00 */ (EngineEvent) rhythm_toys_engine_event_stub
+    /* 0x00 */ rhythm_toys_engine_event_stub
 };
 
 // [D_089e9ef0] Rhythm Toys Game Engine
 struct GameEngine rhythm_toys_engine = {
-    /* Size in Memory */ 0x384,
+    /* Size in Memory */ sizeof(struct RhythmToysEngineData),
     /* Start Engine   */ rhythm_toys_engine_start,
     /* Update Engine  */ rhythm_toys_engine_update,
     /* Stop Engine    */ rhythm_toys_engine_stop,

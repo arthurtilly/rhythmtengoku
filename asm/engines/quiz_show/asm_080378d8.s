@@ -7,7 +7,7 @@ thumb_func_start func_080378d8 \n\
 /* 080378da */ SUB SP, 0x14 \n\
 /* 080378dc */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080378de */ BNE branch_080378f0 \n\
-/* 080378e0 */ LDR R0, =D_030055d0 \n\
+/* 080378e0 */ LDR R0, =gCurrentEngineData \n\
 /* 080378e2 */ LDR R0, [R0] \n\
 /* 080378e4 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 080378e6 */ ADDS R5, 0x8 @ Add 0x8 to R5 \n\
@@ -16,7 +16,7 @@ thumb_func_start func_080378d8 \n\
 .ltorg \n\
  \n\
 branch_080378f0: \n\
-/* 080378f0 */ LDR R0, =D_030055d0 \n\
+/* 080378f0 */ LDR R0, =gCurrentEngineData \n\
 /* 080378f2 */ LDR R0, [R0] \n\
 /* 080378f4 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 080378f6 */ ADDS R5, 0x1C @ Add 0x1C to R5 \n\
@@ -89,7 +89,7 @@ branch_08037966: \n\
 branch_0803796c: \n\
 /* 0803796c */ LDR R4, =D_03005380 \n\
 /* 0803796e */ LDR R0, [R4] \n\
-/* 08037970 */ LDR R5, =D_030055d0 \n\
+/* 08037970 */ LDR R5, =gCurrentEngineData \n\
 /* 08037972 */ LDR R1, [R5] \n\
 /* 08037974 */ MOVS R2, 0x28 @ Set R2 to 0x28 \n\
 /* 08037976 */ LDRSH R1, [R1, R2] \n\
@@ -102,7 +102,7 @@ branch_0803796c: \n\
 /* 08037986 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037988 */ BL func_0804d770 \n\
 /* 0803798c */ LDR R0, [R4] \n\
-/* 0803798e */ LDR R1, =anim_quiz_explode_player_podium \n\
+/* 0803798e */ LDR R1, =anim_quiz_show_explode_player_podium \n\
 /* 08037990 */ MOVS R2, 0x98 @ Set R2 to 0x98 \n\
 /* 08037992 */ STR R2, [SP] \n\
 /* 08037994 */ LDR R2, =0x8814 \n\
@@ -123,7 +123,7 @@ branch_0803796c: \n\
 branch_080379c4: \n\
 /* 080379c4 */ LDR R4, =D_03005380 \n\
 /* 080379c6 */ LDR R0, [R4] \n\
-/* 080379c8 */ LDR R5, =D_030055d0 \n\
+/* 080379c8 */ LDR R5, =gCurrentEngineData \n\
 /* 080379ca */ LDR R1, [R5] \n\
 /* 080379cc */ MOVS R2, 0x14 @ Set R2 to 0x14 \n\
 /* 080379ce */ LDRSH R1, [R1, R2] \n\
@@ -136,7 +136,7 @@ branch_080379c4: \n\
 /* 080379de */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080379e0 */ BL func_0804d770 \n\
 /* 080379e4 */ LDR R0, [R4] \n\
-/* 080379e6 */ LDR R1, =anim_quiz_explode_host_podium \n\
+/* 080379e6 */ LDR R1, =anim_quiz_show_explode_host_podium \n\
 /* 080379e8 */ MOVS R2, 0x98 @ Set R2 to 0x98 \n\
 /* 080379ea */ STR R2, [SP] \n\
 /* 080379ec */ LDR R2, =0x8814 \n\
@@ -157,7 +157,7 @@ branch_080379c4: \n\
 branch_08037a1c: \n\
 /* 08037a1c */ LDR R0, =D_03005380 \n\
 /* 08037a1e */ LDR R0, [R0] \n\
-/* 08037a20 */ LDR R1, =anim_quiz_explode_sign \n\
+/* 08037a20 */ LDR R1, =anim_quiz_show_explode_sign \n\
 /* 08037a22 */ MOVS R2, 0x2D @ Set R2 to 0x2D \n\
 /* 08037a24 */ STR R2, [SP] \n\
 /* 08037a26 */ MOVS R2, 0x88 @ Set R2 to 0x88 \n\

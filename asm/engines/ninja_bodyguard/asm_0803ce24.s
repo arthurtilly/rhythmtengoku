@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start ninja_bodyguard_cue_barely \n\
 /* 0803ce24 */ PUSH {R4-R7, LR} \n\
 /* 0803ce26 */ SUB SP, 0xC \n\
-/* 0803ce28 */ LDR R7, =D_030055d0 \n\
+/* 0803ce28 */ LDR R7, =gCurrentEngineData \n\
 /* 0803ce2a */ LDR R0, [R7] \n\
 /* 0803ce2c */ LDRB R6, [R0, 0x6] \n\
 /* 0803ce2e */ CMP R6, 0x0 @ Compare R6 and 0x0 \n\
@@ -88,7 +88,7 @@ branch_0803ce8c: \n\
 branch_0803ced4: \n\
 /* 0803ced4 */ LDR R0, =s_ninja_kin_seqData \n\
 /* 0803ced6 */ BL play_sound \n\
-/* 0803ceda */ LDR R0, =D_030055d0 \n\
+/* 0803ceda */ LDR R0, =gCurrentEngineData \n\
 /* 0803cedc */ LDR R1, [R0] \n\
 /* 0803cede */ LDR R0, =0x2ce \n\
 /* 0803cee0 */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\

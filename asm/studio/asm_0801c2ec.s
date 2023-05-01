@@ -15,7 +15,7 @@ thumb_func_start func_0801c2ec \n\
 /* 0801c300 */ BL func_08007324 \n\
 /* 0801c304 */ BL func_080073f0 \n\
 /* 0801c308 */ BL func_0801c290 \n\
-/* 0801c30c */ LDR R4, =D_030046a4 \n\
+/* 0801c30c */ LDR R4, =gCurrentSceneData \n\
 /* 0801c30e */ LDR R0, [R4] \n\
 /* 0801c310 */ ADDS R0, 0x8 @ Add 0x8 to R0 \n\
 /* 0801c312 */ BL init_drumtech \n\
@@ -71,7 +71,7 @@ thumb_func_start func_0801c2ec \n\
 .ltorg \n\
  \n\
 branch_0801c39c: \n\
-/* 0801c39c */ LDR R4, =D_030046a4 \n\
+/* 0801c39c */ LDR R4, =gCurrentSceneData \n\
 /* 0801c39e */ LDR R0, [R4] \n\
 /* 0801c3a0 */ MOVS R2, 0xD7 @ Set R2 to 0xD7 \n\
 /* 0801c3a2 */ LSLS R2, R2, 0x2 \n\
@@ -100,7 +100,7 @@ branch_0801c39c: \n\
 /* 0801c3d6 */ BL func_0801c674 \n\
  \n\
 branch_0801c3da: \n\
-/* 0801c3da */ LDR R3, =D_030046a4 \n\
+/* 0801c3da */ LDR R3, =gCurrentSceneData \n\
 /* 0801c3dc */ MOV R8, R3 @ Set R8 to R3 \n\
 /* 0801c3de */ LDR R1, [R3] \n\
 /* 0801c3e0 */ MOVS R2, 0xE0 @ Set R2 to 0xE0 \n\

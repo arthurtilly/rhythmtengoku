@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_fireworks, script_fireworks_entry
 
 
+
 @ Fireworks - Script Entry Point (Skipped Practice)
 
 script script_fireworks_skipped_practice_entry
@@ -104,6 +105,7 @@ struct fireworks_marking_criteria
     .word fireworks_marking_criteria_1
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Fireworks - Main Script
@@ -413,7 +415,7 @@ script script_fireworks_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         rest 24
         rest 24
         print_text_f D_0805ce5c
@@ -473,7 +475,7 @@ script script_fireworks_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         rest 24
         rest 24
         print_text_f D_0805cf2c
@@ -535,7 +537,7 @@ script script_fireworks_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         rest 24
         rest 24
         print_text_f D_0805d010

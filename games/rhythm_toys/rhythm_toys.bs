@@ -1,0 +1,114 @@
+.include "include/beatscript.inc"
+.include "games/rhythm_toys/macros.inc"
+
+
+
+.section .script.entry
+@ Cat Machine - Script Entry Point
+
+script script_cat_machine_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_cat_machine
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_cat_machine_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_cat_machine, script_cat_machine_entry
+
+
+
+@ Love Machine - Script Entry Point
+
+script script_love_machine_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_love_machine
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_love_machine_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_love_machine, script_love_machine_entry
+
+
+
+@ Rap Machine - Script Entry Point
+
+script script_rap_machine_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_rap_machine
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_rap_machine_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_rap_machine, script_rap_machine_entry
+
+
+
+.section .script.main
+@ Cat Machine - Main Script
+
+script script_cat_machine_main
+    set_music_volume 256
+    loop_start
+        rest 3
+    loop_end
+return
+
+
+
+@ Love Machine - Main Script
+
+script script_love_machine_main
+    set_tempo 140
+    set_music_volume 256
+    play_music s_heat_machine_bgm_seqData
+    loop_start
+        rest 3
+    loop_end
+return
+
+
+
+@ Rap Machine - Main Script
+
+script script_rap_machine_main
+    set_music_volume 256
+    loop_start
+        rest 3
+    loop_end
+return
+
+
+
+@ Unknown - unused?
+
+script script_rhythm_toys_unk_08a43c04
+    goto script_cat_machine_main
+
+.end

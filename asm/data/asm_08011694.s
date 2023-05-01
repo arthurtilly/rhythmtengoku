@@ -7,7 +7,7 @@ thumb_func_start func_08011694 \n\
 /* 08011696 */ BL func_08011728 \n\
 /* 0801169a */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801169c */ BEQ branch_08011714 \n\
-/* 0801169e */ LDR R4, =D_030046a4 \n\
+/* 0801169e */ LDR R4, =gCurrentSceneData \n\
 /* 080116a0 */ LDR R2, [R4] \n\
 /* 080116a2 */ MOVS R0, 0x22 @ Set R0 to 0x22 \n\
 /* 080116a4 */ LDRSH R5, [R2, R0] \n\

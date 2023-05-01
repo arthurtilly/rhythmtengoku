@@ -6,7 +6,8 @@
 #include "games/staff_credit/graphics/staff_credit_graphics.h"
 
 // Engine Types:
-struct StaffCreditInfo {
+struct StaffCreditEngineData {
+    u8 pad[0x80];
 };
 
 struct StaffCreditCue {

@@ -11,7 +11,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gNightWalkInfo ((struct NightWalkInfo *)D_030055d0)
+#define gNightWalk ((struct NightWalkEngineData *)gCurrentEngineData)
 
 enum PlayYanStatesEnum {
     PLAY_YAN_STATE_WALKING,
@@ -38,7 +38,7 @@ static struct DrumTechController *D_03001568;
 
 // Init. Play-Yan
 void night_walk_init_play_yan(void) {
-    struct PlayYan *playYan = &gNightWalkInfo->playYan;
+    struct PlayYan *playYan = &gNightWalk->playYan;
 
     playYan->sprite = func_0804d160(D_03005380, anim_play_yan_walk, 0, 64, 120, 0x4800, 1, 0, 0);
     playYan->state = PLAY_YAN_STATE_WALKING;
@@ -48,8 +48,8 @@ void night_walk_init_play_yan(void) {
 
 // Play-Yan Jump
 void night_walk_play_yan_jump(s32 jumpOverGap, s32 timingOffset) {
-    struct PlayYan *playYan = &gNightWalkInfo->playYan;
-    struct NightWalkUnk3B8 *unk3B8 = &gNightWalkInfo->unk3B8;
+    struct PlayYan *playYan = &gNightWalk->playYan;
+    struct NightWalkUnk3B8 *unk3B8 = &gNightWalk->unk3B8;
 
     if (playYan->state == PLAY_YAN_STATE_JUMPING) {
         if (playYan->isAscending) {
@@ -67,7 +67,7 @@ void night_walk_play_yan_jump(s32 jumpOverGap, s32 timingOffset) {
 
 // Update Play-Yan (State 1)
 void night_walk_play_yan_update_jump(struct PlayYan *playYan) {
-    struct NightWalkUnk3B8 *unk3B8 = &gNightWalkInfo->unk3B8;
+    struct NightWalkUnk3B8 *unk3B8 = &gNightWalk->unk3B8;
     s32 ascending;
     s32 totalSteps;
     s32 jumpHeight;
@@ -113,11 +113,11 @@ void night_walk_play_yan_update_jump(struct PlayYan *playYan) {
     if (playYan->zapTime != 0) {
         playYan->zapTime--;
         if (playYan->zapTime == 0) {
-            gNightWalkInfo->stoppedScrolling = TRUE;
-            if (gNightWalkInfo->endScript != NULL) {
-                func_0801d95c(gNightWalkInfo->endScript);
+            gNightWalk->stoppedScrolling = TRUE;
+            if (gNightWalk->endScript != NULL) {
+                func_0801d95c(gNightWalk->endScript);
             }
-            gameplay_add_cue_result(gNightWalkInfo->markingCriteria, 2, 0);
+            gameplay_add_cue_result(gNightWalk->markingCriteria, 2, 0);
             func_0804d8f8(D_03005380, playYan->sprite, anim_play_yan_violent_electrocution, 0, 1, 0, 0);
             func_0804d8f8(D_03005380, playYan->fishSprite, anim_night_walk_fish_zap, 0, 1, 0, 0);
             playYan->zapTime = beats_to_ticks(0x48);
@@ -130,25 +130,25 @@ void night_walk_play_yan_update_jump(struct PlayYan *playYan) {
 
 // Play-Yan Hold On
 void night_walk_play_yan_hold_on(s16 x, s16 y) {
-    struct PlayYan *playYan = &gNightWalkInfo->playYan;
-    struct NightWalkUnk3B8 *unk3B8 = &gNightWalkInfo->unk3B8;
+    struct PlayYan *playYan = &gNightWalk->playYan;
+    struct NightWalkUnk3B8 *unk3B8 = &gNightWalk->unk3B8;
 
     playYan->state = PLAY_YAN_STATE_HANGING_ON;
     func_0804d8f8(D_03005380, playYan->sprite, anim_play_yan_fall, 0, 1, 1, 0);
     func_0804db44(D_03005380, playYan->sprite, NULL, &unk3B8->unk6);
     func_0804d5d4(D_03005380, playYan->sprite, x, y);
-    gNightWalkInfo->stoppedScrolling = TRUE;
+    gNightWalk->stoppedScrolling = TRUE;
     play_sound(&s_f_drumtech_miss_seqData);
-    if (gNightWalkInfo->endScript != NULL) {
-        func_0801d95c(gNightWalkInfo->endScript);
+    if (gNightWalk->endScript != NULL) {
+        func_0801d95c(gNightWalk->endScript);
     }
-    gameplay_add_cue_result(gNightWalkInfo->markingCriteria, 2, 0);
+    gameplay_add_cue_result(gNightWalk->markingCriteria, 2, 0);
 }
 
 
 // Play-Yan Fall
 void night_walk_play_yan_fall(void) {
-    struct PlayYan *playYan = &gNightWalkInfo->playYan;
+    struct PlayYan *playYan = &gNightWalk->playYan;
 
     playYan->state = PLAY_YAN_STATE_FALLING;
     playYan->yOrigin = func_0804ddb0(D_03005380, playYan->sprite, 5);
@@ -170,7 +170,7 @@ void night_walk_play_yan_update_fall(struct PlayYan *playYan) {
 
 // Play-Yan Grab Star Wand
 void night_walk_play_yan_get_wand(void) {
-    struct PlayYan *playYan = &gNightWalkInfo->playYan;
+    struct PlayYan *playYan = &gNightWalk->playYan;
 
     playYan->state = PLAY_YAN_STATE_STAR_WAND;
     func_0804d8f8(D_03005380, playYan->sprite, anim_play_yan_star_wand, 0, 1, 0, 0);
@@ -200,7 +200,7 @@ void night_walk_play_yan_update_zap_fall(struct PlayYan *playYan) {
 
 // Engine Event 0x01 (Give Play-Yan Balloons)
 void night_walk_init_balloons(u32 balloonCount) {
-    struct PlayYan *playYan = &gNightWalkInfo->playYan;
+    struct PlayYan *playYan = &gNightWalk->playYan;
     u16 sprite;
     u16 x, y;
     u32 i;
@@ -221,7 +221,7 @@ void night_walk_init_balloons(u32 balloonCount) {
 
 // Engine Event 0x02 (Pop Balloon)
 void night_walk_pop_balloon(void) {
-    struct PlayYan *playYan = &gNightWalkInfo->playYan;
+    struct PlayYan *playYan = &gNightWalk->playYan;
     u32 total;
 
     if (playYan->balloonCount == 0) return;
@@ -238,7 +238,7 @@ void night_walk_pop_balloon(void) {
 
 // Update Play-Yan
 void night_walk_update_play_yan(void) {
-    struct PlayYan *playYan = &gNightWalkInfo->playYan;
+    struct PlayYan *playYan = &gNightWalk->playYan;
 
     switch (playYan->state) {
         case PLAY_YAN_STATE_WALKING:
@@ -267,19 +267,19 @@ void night_walk_update_play_yan(void) {
 
 // Update Stars
 s32 night_walk_scroll_stars(void) {
-    struct NightWalkUnk3B8 *unk3B8 = &gNightWalkInfo->unk3B8;
+    struct NightWalkUnk3B8 *unk3B8 = &gNightWalk->unk3B8;
     struct NightWalkStar *star;
     s32 hOffset, vOffset;
     s32 y;
     u32 i;
 
-    gNightWalkInfo->starsVOffset = unk3B8->unk6 / 2;
+    gNightWalk->starsVOffset = unk3B8->unk6 / 2;
 
     hOffset = INT_TO_FIXED(-0.5);
-    vOffset = gNightWalkInfo->starsVOffset;
+    vOffset = gNightWalk->starsVOffset;
 
     for (i = 0; i < 32; i++) {
-        star = &gNightWalkInfo->stars[i];
+        star = &gNightWalk->stars[i];
         star->x += hOffset;
         if (star->x < INT_TO_FIXED(-8.0)) {
             star->x += INT_TO_FIXED(0x100);
@@ -311,16 +311,16 @@ void night_walk_finish_star_expansion(s32 arg0, s16 sprite, struct Animation *an
 void night_walk_expand_star(void) {
     struct NightWalkStar *star;
 
-    if (gNightWalkInfo->currentStarSize >= 4) return;
+    if (gNightWalk->currentStarSize >= 4) return;
 
-    star = &gNightWalkInfo->stars[gNightWalkInfo->nextStar];
-    func_0804d8f8(D_03005380, star->sprite, night_walk_star_expand_anim[gNightWalkInfo->currentStarSize], 0, 1, 0, 4);
-    func_0804daa8(D_03005380, star->sprite, night_walk_finish_star_expansion, (s32)night_walk_star_anim[gNightWalkInfo->currentStarSize + 1]);
-    star->size = gNightWalkInfo->currentStarSize + 1;
-    gNightWalkInfo->nextStar++;
-    if (gNightWalkInfo->nextStar >= 32) {
-        gNightWalkInfo->nextStar = 0;
-        gNightWalkInfo->currentStarSize++;
+    star = &gNightWalk->stars[gNightWalk->nextStar];
+    func_0804d8f8(D_03005380, star->sprite, night_walk_star_expand_anim[gNightWalk->currentStarSize], 0, 1, 0, 4);
+    func_0804daa8(D_03005380, star->sprite, night_walk_finish_star_expansion, (s32)night_walk_star_anim[gNightWalk->currentStarSize + 1]);
+    star->size = gNightWalk->currentStarSize + 1;
+    gNightWalk->nextStar++;
+    if (gNightWalk->nextStar >= 32) {
+        gNightWalk->nextStar = 0;
+        gNightWalk->currentStarSize++;
     }
 }
 
@@ -345,18 +345,18 @@ void night_walk_event_expand_stars(u32 total) {
 void night_walk_shrink_star(void) {
     struct NightWalkStar *star;
 
-    if (gNightWalkInfo->nextStar == 0) {
-        if (gNightWalkInfo->currentStarSize == 0) {
+    if (gNightWalk->nextStar == 0) {
+        if (gNightWalk->currentStarSize == 0) {
             return;
         }
-        gNightWalkInfo->nextStar = 32;
-        gNightWalkInfo->currentStarSize--;
+        gNightWalk->nextStar = 32;
+        gNightWalk->currentStarSize--;
     }
 
-    gNightWalkInfo->nextStar--;
-    star = &gNightWalkInfo->stars[gNightWalkInfo->nextStar];
-    func_0804d8f8(D_03005380, star->sprite, night_walk_star_anim[gNightWalkInfo->currentStarSize], -1, 1, 0, 0);
-    star->size = gNightWalkInfo->currentStarSize;
+    gNightWalk->nextStar--;
+    star = &gNightWalk->stars[gNightWalk->nextStar];
+    func_0804d8f8(D_03005380, star->sprite, night_walk_star_anim[gNightWalk->currentStarSize], -1, 1, 0, 0);
+    star->size = gNightWalk->currentStarSize;
 }
 
 
@@ -376,7 +376,7 @@ void night_walk_clear_all_stars(void) {
     u32 i;
 
     for (i = 0; i < 32; i++) {
-        star = &gNightWalkInfo->stars[i];
+        star = &gNightWalk->stars[i];
         func_0804d8f8(D_03005380, star->sprite, anim_night_walk_star_disappear, 0, 1, 0, 3);
     }
 }
@@ -384,7 +384,7 @@ void night_walk_clear_all_stars(void) {
 
 // Update Stars
 void night_walk_update_stars(void) {
-    if (!gNightWalkInfo->stoppedScrolling) {
+    if (!gNightWalk->stoppedScrolling) {
         night_walk_scroll_stars();
     }
 }
@@ -392,7 +392,7 @@ void night_walk_update_stars(void) {
 
 // Init. unk3B8
 void func_0802a970(void) {
-    struct NightWalkUnk3B8 *unk3B8 = &gNightWalkInfo->unk3B8;
+    struct NightWalkUnk3B8 *unk3B8 = &gNightWalk->unk3B8;
 
     unk3B8->unk4 = 120;
     unk3B8->unk0_b0 = FALSE;
@@ -758,14 +758,14 @@ void night_walk_init_gfx1(void) {
 void night_walk_engine_start(u32 ver) {
     struct TextPrinter *textPrinter;
 
-    gNightWalkInfo->version = ver;
+    gNightWalk->version = ver;
     night_walk_init_gfx1();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, FALSE, 0, 0, 0, 29, 0);
     gameplay_enable_inputs(FALSE);
     gameplay_set_input_buttons(A_BUTTON, 0);
-    init_drumtech(&gNightWalkInfo->drumTech);
-    gNightWalkInfo->drumVolume = INT_TO_FIXED(1.0);
+    init_drumtech(&gNightWalk->drumTech);
+    gNightWalk->drumVolume = INT_TO_FIXED(1.0);
     night_walk_init_play_yan();
     func_0802a970();
     night_walk_init_stars();
@@ -778,12 +778,12 @@ void night_walk_engine_start(u32 ver) {
     text_printer_set_colors(textPrinter, 0);
     gameplay_set_text_printer(textPrinter);
 
-    gNightWalkInfo->stoppedScrolling = FALSE;
-    gNightWalkInfo->nextBridgeType = PLATFORM_TYPE_BRIDGE;
-    gNightWalkInfo->endScript = NULL;
-    gNightWalkInfo->markingCriteria = 0;
-    gNightWalkInfo->inSwing = FALSE;
-    gNightWalkInfo->cueEarlinessOffset = 0;
+    gNightWalk->stoppedScrolling = FALSE;
+    gNightWalk->nextBridgeType = PLATFORM_TYPE_BRIDGE;
+    gNightWalk->endScript = NULL;
+    gNightWalk->markingCriteria = 0;
+    gNightWalk->inSwing = FALSE;
+    gNightWalk->cueEarlinessOffset = 0;
 }
 
 
@@ -794,31 +794,31 @@ void night_walk_engine_event_stub(void) {
 
 // Engine Event 0x03 (Set Ending Script)
 void night_walk_set_ending_script(const struct Beatscript *endScript) {
-    gNightWalkInfo->endScript = endScript;
+    gNightWalk->endScript = endScript;
 }
 
 
 // Engine Event 0x04 (Set Next Bridge Type)
 void night_walk_set_bridge_type(u32 type) {
-    gNightWalkInfo->nextBridgeType = type;
+    gNightWalk->nextBridgeType = type;
 }
 
 
 // Engine Event 0x05 (Set Current Marking Criteria)
 void night_walk_set_marking_criteria(u32 criteria) {
-    gNightWalkInfo->markingCriteria = criteria;
+    gNightWalk->markingCriteria = criteria;
 }
 
 
 // Engine Event 0x07 (Set Swing)
 void night_walk_set_swing(u32 inSwing) {
-    gNightWalkInfo->inSwing = inSwing;
+    gNightWalk->inSwing = inSwing;
 }
 
 
 // Engine Event 0x08 (Set Drum Volume)
 void night_walk_set_drum_volume(u32 volume) {
-    gNightWalkInfo->drumVolume = volume;
+    gNightWalk->drumVolume = volume;
     set_drumtech_volume(volume);
 }
 
@@ -846,25 +846,25 @@ s32 night_walk_cue_get_x(struct NightWalkCue *info) {
 
 // Engine Event 0x06 (Set Next Cue Earliness Time Offset)
 void night_walk_set_cue_earliness(u32 duration) {
-    gNightWalkInfo->cueEarlinessOffset = duration;
+    gNightWalk->cueEarlinessOffset = duration;
 }
 
 
 // Cue - Spawn
 void night_walk_cue_spawn(struct Cue *cue, struct NightWalkCue *info, u32 type) {
-    struct NightWalkUnk3B8 *unk3B8 = &gNightWalkInfo->unk3B8;
+    struct NightWalkUnk3B8 *unk3B8 = &gNightWalk->unk3B8;
     u32 endOfBridge = FALSE;
     s32 x, y;
 
     info->type = type;
     info->hasOpened = FALSE;
-    info->earlinessBeats = gNightWalkInfo->cueEarlinessOffset;
-    info->earlinessTime = beats_to_ticks(gNightWalkInfo->cueEarlinessOffset);
+    info->earlinessBeats = gNightWalk->cueEarlinessOffset;
+    info->earlinessTime = beats_to_ticks(gNightWalk->cueEarlinessOffset);
     info->hasFish = -1;
-    gameplay_set_cue_duration(cue, beats_to_ticks(0xC0 - gNightWalkInfo->cueEarlinessOffset)); // set cue duration
+    gameplay_set_cue_duration(cue, beats_to_ticks(0xC0 - gNightWalk->cueEarlinessOffset)); // set cue duration
     info->hasFish = FALSE;
 
-    switch (gNightWalkInfo->nextBridgeType) {
+    switch (gNightWalk->nextBridgeType) {
         case PLATFORM_TYPE_BRIDGE:
             endOfBridge = FALSE;
             break;
@@ -916,14 +916,14 @@ u32 night_walk_cue_update(struct Cue *cue, struct NightWalkCue *info, u32 runnin
     u32 noteBoxDelay;
     s32 x, y;
 
-    noteBoxDelay = (gNightWalkInfo->inSwing) ? 0x10 : 0x0C;
+    noteBoxDelay = (gNightWalk->inSwing) ? 0x10 : 0x0C;
 
-    if (!gNightWalkInfo->stoppedScrolling && !info->endOfBridge && !info->hasOpened) {
+    if (!gNightWalk->stoppedScrolling && !info->endOfBridge && !info->hasOpened) {
         if (runningTime > (beats_to_ticks(0xC0 + noteBoxDelay) - info->earlinessTime)) {
             info->hasOpened = TRUE;
             func_0804d8f8(D_03005380, info->boxSprite, anim_night_walk_note_bridge, 1, 1, 4, 0);
 
-            if (gNightWalkInfo->inSwing) {
+            if (gNightWalk->inSwing) {
                 play_drumtech_seq(night_walk_drum_seq_offbeat_swing[info->type], 0, 0);
             } else {
                 play_drumtech_seq(night_walk_drum_seq_offbeat[info->type], 0, 0);
@@ -946,18 +946,18 @@ u32 night_walk_cue_update(struct Cue *cue, struct NightWalkCue *info, u32 runnin
         func_0804d614(D_03005380, info->fishSprite, x);
     }
 
-    if (!gNightWalkInfo->stoppedScrolling) {
+    if (!gNightWalk->stoppedScrolling) {
         info->runningTime++;
     }
 
     if ((info->type == NIGHT_WALK_CUE_STAR_WAND) && !info->hasOpened) {
         if (info->starWandIsAvailable) {
-            if (gNightWalkInfo->currentStarSize < 4) {
+            if (gNightWalk->currentStarSize < 4) {
                 func_0804d8f8(D_03005380, info->boxSprite, anim_night_walk_ng_wand_box, 0, 0, 0, 0);
                 info->starWandIsAvailable = FALSE;
             }
         } else {
-            if (gNightWalkInfo->currentStarSize > 3) {
+            if (gNightWalk->currentStarSize > 3) {
                 func_0804d8f8(D_03005380, info->boxSprite, anim_night_walk_wand_box, 0, 1, 0, 0);
                 info->starWandIsAvailable = TRUE;
             }
@@ -970,7 +970,7 @@ u32 night_walk_cue_update(struct Cue *cue, struct NightWalkCue *info, u32 runnin
 
 // Cue - Despawn
 void night_walk_cue_despawn(struct Cue *cue, struct NightWalkCue *info) {
-    if (gNightWalkInfo->stoppedScrolling) {
+    if (gNightWalk->stoppedScrolling) {
         if (info->endOfBridge) {
             func_0804d8f8(D_03005380, info->boxSprite, anim_night_walk_box_disappear, 0, 1, 0, 3);
         } else {
@@ -992,8 +992,8 @@ void night_walk_cue_despawn(struct Cue *cue, struct NightWalkCue *info) {
 void night_walk_cue_check_for_fish(struct NightWalkCue *info) {
     if (!info->hasFish) return;
 
-    gNightWalkInfo->playYan.zapTime = beats_to_ticks(0x08);
-    gNightWalkInfo->playYan.fishSprite = info->fishSprite;
+    gNightWalk->playYan.zapTime = beats_to_ticks(0x08);
+    gNightWalk->playYan.fishSprite = info->fishSprite;
 }
 
 
@@ -1002,7 +1002,7 @@ void night_walk_cue_hit(struct Cue *cue, struct NightWalkCue *info, u32 pressed,
     s32 starWandObtained = FALSE;
     s32 timingOffset;
 
-    if (gNightWalkInfo->stoppedScrolling) {
+    if (gNightWalk->stoppedScrolling) {
         gameplay_ignore_this_cue_result();
         return;
     }
@@ -1010,7 +1010,7 @@ void night_walk_cue_hit(struct Cue *cue, struct NightWalkCue *info, u32 pressed,
     timingOffset = ~(gameplay_get_last_hit_offset());
 
     if (D_03004afc & A_BUTTON) {
-        if (gNightWalkInfo->inSwing) {
+        if (gNightWalk->inSwing) {
             if (info->type == NIGHT_WALK_CUE_HEART) {
                 play_drumtech_seq(night_walk_drum_seq_kick_swing[agb_random(1)], timingOffset, 0);
             }
@@ -1061,13 +1061,13 @@ void night_walk_cue_hit(struct Cue *cue, struct NightWalkCue *info, u32 pressed,
     info->hasOpened = TRUE;
 
     if (starWandObtained) {
-        gNightWalkInfo->stoppedScrolling = TRUE;
+        gNightWalk->stoppedScrolling = TRUE;
         night_walk_play_yan_get_wand();
         night_walk_clear_all_stars();
-        if (gNightWalkInfo->endScript != NULL) {
-            func_0801d95c(gNightWalkInfo->endScript);
+        if (gNightWalk->endScript != NULL) {
+            func_0801d95c(gNightWalk->endScript);
         }
-        gameplay_add_cue_result(gNightWalkInfo->markingCriteria, 0, 0); // register cue result
+        gameplay_add_cue_result(gNightWalk->markingCriteria, 0, 0); // register cue result
         func_0804d8f8(D_03005380, info->boxSprite, anim_night_walk_ng_wand_box, 1, 1, 0x7f, 0);
     } else {
         night_walk_play_yan_jump(info->endOfBridge, gameplay_get_last_hit_offset());
@@ -1084,7 +1084,7 @@ void night_walk_cue_hit(struct Cue *cue, struct NightWalkCue *info, u32 pressed,
 void night_walk_cue_barely(struct Cue *cue, struct NightWalkCue *info, u32 pressed, u32 released) {
     s32 timingOffset;
 
-    if (gNightWalkInfo->stoppedScrolling) {
+    if (gNightWalk->stoppedScrolling) {
         gameplay_ignore_this_cue_result();
         return;
     }
@@ -1110,10 +1110,10 @@ void night_walk_cue_barely(struct Cue *cue, struct NightWalkCue *info, u32 press
     night_walk_play_yan_jump(info->endOfBridge, gameplay_get_last_hit_offset());
     info->hasOpened = TRUE;
     func_0804d8f8(D_03005380, info->boxSprite, night_walk_barely_anim[info->type][info->endOfBridge], 0, 1, 0x7f, 0);
-    if (gNightWalkInfo->version == NIGHT_WALK_VER_1) {
-        if (gNightWalkInfo->nextStar != 0) {
-            night_walk_shrink_stars(gNightWalkInfo->nextStar);
-        } else if (gNightWalkInfo->currentStarSize > 3) {
+    if (gNightWalk->version == NIGHT_WALK_VER_1) {
+        if (gNightWalk->nextStar != 0) {
+            night_walk_shrink_stars(gNightWalk->nextStar);
+        } else if (gNightWalk->currentStarSize > 3) {
             night_walk_shrink_stars(32);
         }
     }
@@ -1125,9 +1125,9 @@ void night_walk_cue_barely(struct Cue *cue, struct NightWalkCue *info, u32 press
 void night_walk_cue_miss(struct Cue *cue, struct NightWalkCue *info) {
     s32 x, y;
 
-    if (gNightWalkInfo->stoppedScrolling || !info->endOfBridge || info->hasOpened) {
+    if (gNightWalk->stoppedScrolling || !info->endOfBridge || info->hasOpened) {
         gameplay_ignore_this_cue_result();
-        if (!gNightWalkInfo->stoppedScrolling && !info->endOfBridge && !info->hasOpened) {
+        if (!gNightWalk->stoppedScrolling && !info->endOfBridge && !info->hasOpened) {
             func_0804d8f8(D_03005380, info->boxSprite, anim_night_walk_note_bridge, 0, 0, 0, 0);
         }
     } else {
@@ -1142,9 +1142,9 @@ void night_walk_cue_miss(struct Cue *cue, struct NightWalkCue *info) {
 
 // Input Event
 void night_walk_input_event(u32 pressed, u32 released) {
-    struct PlayYan *playYan = &gNightWalkInfo->playYan;
+    struct PlayYan *playYan = &gNightWalk->playYan;
 
-    if (!gNightWalkInfo->stoppedScrolling && (playYan->state == PLAY_YAN_STATE_WALKING)) {
+    if (!gNightWalk->stoppedScrolling && (playYan->state == PLAY_YAN_STATE_WALKING)) {
         func_0804d8f8(D_03005380, playYan->sprite, anim_play_yan_short_hop, 0, 1, 5, 0);
         play_drumtech_seq(drum_seq_night_walk_short_hop, 0, 0);
     }

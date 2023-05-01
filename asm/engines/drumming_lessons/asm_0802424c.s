@@ -12,7 +12,7 @@ thumb_func_start drum_intro_init_gfx3 \n\
 /* 0802425c */ ADDS R3, R2, R0 @ Set R3 to R2 + R0 \n\
 /* 0802425e */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08024260 */ STRH R1, [R3] \n\
-/* 08024262 */ LDR R0, =D_030055d0 \n\
+/* 08024262 */ LDR R0, =gCurrentEngineData \n\
 /* 08024264 */ LDR R0, [R0] \n\
 /* 08024266 */ LDRB R0, [R0] \n\
 /* 08024268 */ CMP R0, 0x3 @ Compare R0 and 0x3 \n\

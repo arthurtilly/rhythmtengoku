@@ -10,7 +10,7 @@ thumb_func_start rhythm_toys_engine_start \n\
 /* 08044538 */ PUSH {R5-R7} \n\
 /* 0804453a */ SUB SP, 0x14 \n\
 /* 0804453c */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
-/* 0804453e */ LDR R0, =D_030055d0 \n\
+/* 0804453e */ LDR R0, =gCurrentEngineData \n\
 /* 08044540 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08044542 */ LDR R0, [R0] \n\
 /* 08044544 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
@@ -115,7 +115,7 @@ branch_0804462c: \n\
 /* 08044630 */ STRH R2, [R0] \n\
  \n\
 branch_08044632: \n\
-/* 08044632 */ LDR R4, =D_030055d0 \n\
+/* 08044632 */ LDR R4, =gCurrentEngineData \n\
 /* 08044634 */ LDR R0, [R4] \n\
 /* 08044636 */ ADDS R0, 0x4 @ Add 0x4 to R0 \n\
 /* 08044638 */ BL init_drumtech \n\
@@ -170,7 +170,7 @@ branch_0804465c: \n\
 /* 0804469c */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 0804469e */ ADDS R3, R5, 0x0 @ Set R3 to R5 + 0x0 \n\
 /* 080446a0 */ BL func_0804d160 \n\
-/* 080446a4 */ LDR R4, =D_030055d0 \n\
+/* 080446a4 */ LDR R4, =gCurrentEngineData \n\
 /* 080446a6 */ LDR R1, [R4] \n\
 /* 080446a8 */ LSLS R2, R7, 0x1 \n\
 /* 080446aa */ MOVS R3, 0xDB @ Set R3 to 0xDB \n\

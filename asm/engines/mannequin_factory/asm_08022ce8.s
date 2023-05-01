@@ -18,7 +18,7 @@ thumb_func_start func_08022ce8 \n\
 branch_08022cfe: \n\
 /* 08022cfe */ LDR R5, =D_03005380 \n\
 /* 08022d00 */ LDR R0, [R5] \n\
-/* 08022d02 */ LDR R4, =D_030055d0 \n\
+/* 08022d02 */ LDR R4, =gCurrentEngineData \n\
 /* 08022d04 */ LDR R1, [R4] \n\
 /* 08022d06 */ MOVS R2, 0x8 @ Set R2 to 0x8 \n\
 /* 08022d08 */ LDRSH R1, [R1, R2] \n\
@@ -33,7 +33,7 @@ branch_08022cfe: \n\
 branch_08022d20: \n\
 /* 08022d20 */ LDR R0, =D_03005380 \n\
 /* 08022d22 */ LDR R0, [R0] \n\
-/* 08022d24 */ LDR R1, =D_030055d0 \n\
+/* 08022d24 */ LDR R1, =gCurrentEngineData \n\
 /* 08022d26 */ LDR R1, [R1] \n\
  \n\
 branch_08022d28: \n\
@@ -48,7 +48,7 @@ branch_08022d28: \n\
 branch_08022d3c: \n\
 /* 08022d3c */ LDR R5, =D_03005380 \n\
 /* 08022d3e */ LDR R0, [R5] \n\
-/* 08022d40 */ LDR R4, =D_030055d0 \n\
+/* 08022d40 */ LDR R4, =gCurrentEngineData \n\
 /* 08022d42 */ LDR R1, [R4] \n\
 /* 08022d44 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08022d46 */ LDRSH R1, [R1, R2] \n\
@@ -73,7 +73,7 @@ branch_08022d3c: \n\
 branch_08022d7c: \n\
 /* 08022d7c */ LDR R5, =D_03005380 \n\
 /* 08022d7e */ LDR R0, [R5] \n\
-/* 08022d80 */ LDR R4, =D_030055d0 \n\
+/* 08022d80 */ LDR R4, =gCurrentEngineData \n\
 /* 08022d82 */ LDR R1, [R4] \n\
 /* 08022d84 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08022d86 */ LDRSH R1, [R1, R2] \n\
@@ -93,7 +93,7 @@ branch_08022d7c: \n\
 /* 08022da6 */ BL func_0804d67c \n\
  \n\
 branch_08022daa: \n\
-/* 08022daa */ LDR R5, =D_030055d0 \n\
+/* 08022daa */ LDR R5, =gCurrentEngineData \n\
 /* 08022dac */ LDR R1, [R5] \n\
 /* 08022dae */ LDR R0, =mannequin_input_buttons \n\
 /* 08022db0 */ LSLS R4, R6, 0x1 \n\

@@ -75,6 +75,7 @@ struct karate_man_2_marking_criteria
 endstruct
 
 
+
 @ Karate Man 2 - Main Script
 
 script script_karate_man_2_main

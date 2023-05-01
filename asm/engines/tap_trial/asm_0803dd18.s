@@ -10,7 +10,7 @@ thumb_func_start tap_trial_init_gfx2 \n\
 /* 0803dd24 */ LSLS R0, R0, 0x10 \n\
 /* 0803dd26 */ LSRS R0, R0, 0x10 \n\
 /* 0803dd28 */ LDR R2, =tap_trial_gfx_tables \n\
-/* 0803dd2a */ LDR R1, =D_030055d0 \n\
+/* 0803dd2a */ LDR R1, =gCurrentEngineData \n\
 /* 0803dd2c */ LDR R1, [R1] \n\
 /* 0803dd2e */ LDRB R1, [R1] \n\
 /* 0803dd30 */ LSLS R1, R1, 0x2 \n\

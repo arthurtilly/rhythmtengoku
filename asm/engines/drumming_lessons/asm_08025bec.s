@@ -9,7 +9,7 @@ thumb_func_start func_08025bec \n\
 /* 08025bf2 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08025bf4 */ BL clamp_int32 \n\
 /* 08025bf8 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 08025bfa */ LDR R0, =D_030055d0 \n\
+/* 08025bfa */ LDR R0, =gCurrentEngineData \n\
 /* 08025bfc */ LDR R0, [R0] \n\
 /* 08025bfe */ LDR R1, =0x000013a8 \n\
 /* 08025c00 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

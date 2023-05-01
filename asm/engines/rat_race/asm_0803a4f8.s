@@ -32,7 +32,7 @@ thumb_func_start rat_race_cue_spawn_stop \n\
 /* 0803a530 */ LSLS R2, R2, 0x8 \n\
 /* 0803a532 */ ASRS R2, R2, 0x10 \n\
 /* 0803a534 */ BL func_0804d614 \n\
-/* 0803a538 */ LDR R0, =D_030055d0 \n\
+/* 0803a538 */ LDR R0, =gCurrentEngineData \n\
 /* 0803a53a */ LDR R0, [R0] \n\
 /* 0803a53c */ LDRB R0, [R0, 0x10] \n\
 /* 0803a53e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

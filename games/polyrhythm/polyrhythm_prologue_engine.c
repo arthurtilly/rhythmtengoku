@@ -41,12 +41,12 @@ struct GraphicsTable polyrhythm_prologue_gfx_table[] = {
 
 // [D_089eba08] Engine Events
 EngineEvent polyrhythm_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080464f8
+    /* 0x00 */ func_080464f8
 };
 
 // [D_089eba0c] Prologue (Polyrhythm) Game Engine
 struct GameEngine polyrhythm_prologue_engine = {
-    /* Size in Memory */ sizeof(struct PolyrhythmPrologueInfo),
+    /* Size in Memory */ sizeof(struct PolyrhythmPrologueEngineData),
     /* Start Engine   */ polyrhythm_prologue_engine_start,
     /* Update Engine  */ polyrhythm_prologue_engine_update,
     /* Stop Engine    */ polyrhythm_prologue_engine_stop,

@@ -15,7 +15,7 @@ branch_0801b676: \n\
 /* 0801b676 */ ADDS R1, R4, 0x1 @ Set R1 to R4 + 0x1 \n\
 /* 0801b678 */ MOV R0, SP @ Set R0 to SP \n\
 /* 0801b67a */ BL strint \n\
-/* 0801b67e */ LDR R5, =D_030046a4 \n\
+/* 0801b67e */ LDR R5, =gCurrentSceneData \n\
 /* 0801b680 */ LDR R1, [R5] \n\
 /* 0801b682 */ MOVS R2, 0xE3 @ Set R2 to 0xE3 \n\
 /* 0801b684 */ LSLS R2, R2, 0x2 \n\
@@ -56,7 +56,7 @@ branch_0801b6d4: \n\
 /* 0801b6de */ BL strcat \n\
  \n\
 branch_0801b6e2: \n\
-/* 0801b6e2 */ LDR R0, =D_030046a4 \n\
+/* 0801b6e2 */ LDR R0, =gCurrentSceneData \n\
 /* 0801b6e4 */ LDR R0, [R0] \n\
 /* 0801b6e6 */ MOVS R1, 0xE3 @ Set R1 to 0xE3 \n\
 /* 0801b6e8 */ LSLS R1, R1, 0x2 \n\

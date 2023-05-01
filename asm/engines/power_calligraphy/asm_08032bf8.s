@@ -9,7 +9,7 @@ thumb_func_start func_08032bf8 \n\
 /* 08032bfe */ PUSH {R6, R7} \n\
 /* 08032c00 */ SUB SP, 0x14 \n\
 /* 08032c02 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
-/* 08032c04 */ LDR R0, =D_030055d0 \n\
+/* 08032c04 */ LDR R0, =gCurrentEngineData \n\
 /* 08032c06 */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 08032c08 */ LDR R5, =D_03005380 \n\
 /* 08032c0a */ MOVS R6, 0x3C @ Set R6 to 0x3C \n\
@@ -33,7 +33,7 @@ branch_08032c10: \n\
 /* 08032c2a */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 08032c2c */ LSLS R1, R1, 0x8 \n\
 /* 08032c2e */ STR R1, [SP, 0x10] \n\
-/* 08032c30 */ LDR R1, =anim_calligraphy_ink_dot \n\
+/* 08032c30 */ LDR R1, =anim_power_calligraphy_ink_dot \n\
 /* 08032c32 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08032c34 */ MOVS R3, 0x40 @ Set R3 to 0x40 \n\
 /* 08032c36 */ BL func_0804d160 \n\
@@ -55,7 +55,7 @@ branch_08032c10: \n\
 /* 08032c5c */ CMP R7, 0x1D @ Compare R7 and 0x1D \n\
 /* 08032c5e */ BLS branch_08032c10 \n\
 /* 08032c60 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 08032c62 */ LDR R0, =D_030055d0 \n\
+/* 08032c62 */ LDR R0, =gCurrentEngineData \n\
 /* 08032c64 */ LDR R0, [R0] \n\
 /* 08032c66 */ MOVS R2, 0xD2 @ Set R2 to 0xD2 \n\
 /* 08032c68 */ LSLS R2, R2, 0x1 \n\

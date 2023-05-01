@@ -14,12 +14,12 @@ thumb_func_start func_08033468 \n\
 /* 08033478 */ LDR R0, =D_03005380 \n\
 /* 0803347a */ MOV R9, R0 @ Set R9 to R0 \n\
 /* 0803347c */ LDR R0, [R0] \n\
-/* 0803347e */ LDR R1, =D_030055d0 \n\
+/* 0803347e */ LDR R1, =gCurrentEngineData \n\
 /* 08033480 */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 08033482 */ LDR R1, [R1] \n\
 /* 08033484 */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 08033486 */ LDRSH R1, [R1, R2] \n\
-/* 08033488 */ LDR R2, =anim_calligraphy_brush \n\
+/* 08033488 */ LDR R2, =anim_power_calligraphy_brush \n\
 /* 0803348a */ LSLS R3, R3, 0x18 \n\
 /* 0803348c */ ASRS R3, R3, 0x18 \n\
 /* 0803348e */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\

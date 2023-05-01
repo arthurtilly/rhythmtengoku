@@ -12,7 +12,7 @@ thumb_func_start func_08032510 \n\
 /* 0803251c */ LSLS R0, R0, 0x18 \n\
 /* 0803251e */ LSRS R0, R0, 0x18 \n\
 /* 08032520 */ MOV R10, R0 @ Set R10 to R0 \n\
-/* 08032522 */ LDR R0, =D_030055d0 \n\
+/* 08032522 */ LDR R0, =gCurrentEngineData \n\
 /* 08032524 */ LDR R0, [R0] \n\
 /* 08032526 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08032528 */ ADDS R7, 0x90 @ Add 0x90 to R7 \n\
@@ -55,7 +55,7 @@ branch_0803255a: \n\
 /* 08032564 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08032566 */ BL agb_random \n\
 /* 0803256a */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
-/* 0803256c */ LDR R1, =D_030055d0 \n\
+/* 0803256c */ LDR R1, =gCurrentEngineData \n\
 /* 0803256e */ LDR R0, [R1] \n\
 /* 08032570 */ MOVS R2, 0xEC @ Set R2 to 0xEC \n\
 /* 08032572 */ LSLS R2, R2, 0x1 \n\
@@ -84,7 +84,7 @@ branch_0803255a: \n\
 /* 080325a4 */ ADDS R3, R3, R5 @ Set R3 to R3 + R5 \n\
 /* 080325a6 */ LSLS R4, R4, 0x10 \n\
 /* 080325a8 */ LSRS R4, R4, 0x10 \n\
-/* 080325aa */ LDR R2, =D_030055d0 \n\
+/* 080325aa */ LDR R2, =gCurrentEngineData \n\
 /* 080325ac */ LDR R1, [R2] \n\
 /* 080325ae */ ADD R1, R8 @ Add R8 to R1 \n\
 /* 080325b0 */ LDRH R2, [R1] \n\
@@ -118,7 +118,7 @@ jtbl_080325e8: \n\
 .word jump_08032618 \n\
 .word jump_08032600 \n\
 jump_08032600: \n\
-/* 08032600 */ LDR R0, =D_030055d0 \n\
+/* 08032600 */ LDR R0, =gCurrentEngineData \n\
 /* 08032602 */ LDR R0, [R0] \n\
 /* 08032604 */ MOVS R1, 0xEC @ Set R1 to 0xEC \n\
 /* 08032606 */ LSLS R1, R1, 0x1 \n\
@@ -130,7 +130,7 @@ jump_08032600: \n\
 \n\
 .ltorg \n\
 jump_08032618: \n\
-/* 08032618 */ LDR R0, =D_030055d0 \n\
+/* 08032618 */ LDR R0, =gCurrentEngineData \n\
 /* 0803261a */ LDR R0, [R0] \n\
 /* 0803261c */ MOVS R2, 0xEC @ Set R2 to 0xEC \n\
 /* 0803261e */ LSLS R2, R2, 0x1 \n\
@@ -144,7 +144,7 @@ jump_08032618: \n\
 \n\
 .ltorg \n\
 jump_08032634: \n\
-/* 08032634 */ LDR R0, =D_030055d0 \n\
+/* 08032634 */ LDR R0, =gCurrentEngineData \n\
 /* 08032636 */ LDR R0, [R0] \n\
 /* 08032638 */ MOVS R3, 0xEC @ Set R3 to 0xEC \n\
 /* 0803263a */ LSLS R3, R3, 0x1 \n\

@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start samurai_slice_input_event \n\
 /* 080317c8 */ PUSH {LR} \n\
-/* 080317ca */ LDR R0, =D_030055d0 \n\
+/* 080317ca */ LDR R0, =gCurrentEngineData \n\
 /* 080317cc */ LDR R0, [R0] \n\
 /* 080317ce */ MOVS R1, 0xE9 @ Set R1 to 0xE9 \n\
 /* 080317d0 */ LSLS R1, R1, 0x1 \n\

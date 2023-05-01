@@ -6,7 +6,7 @@ thumb_func_start func_0803d414 \n\
 /* 0803d414 */ PUSH {R4, R5, LR} \n\
 /* 0803d416 */ SUB SP, 0xC \n\
 /* 0803d418 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 0803d41a */ LDR R5, =D_030055d0 \n\
+/* 0803d41a */ LDR R5, =gCurrentEngineData \n\
 /* 0803d41c */ LDR R0, [R5] \n\
 /* 0803d41e */ LDRH R4, [R0, 0x18] \n\
 /* 0803d420 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\

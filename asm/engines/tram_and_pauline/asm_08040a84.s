@@ -10,7 +10,7 @@ thumb_func_start tram_pauline_cue_hit \n\
 /* 08040a8c */ BL func_0804016c \n\
 /* 08040a90 */ LDR R0, =D_03005380 \n\
 /* 08040a92 */ LDR R3, [R0] \n\
-/* 08040a94 */ LDR R0, =D_030055d0 \n\
+/* 08040a94 */ LDR R0, =gCurrentEngineData \n\
 /* 08040a96 */ LDR R2, [R0] \n\
 /* 08040a98 */ LDRB R1, [R4] \n\
 /* 08040a9a */ LSLS R1, R1, 0x1 \n\
@@ -46,7 +46,7 @@ branch_08040ac2: \n\
 /* 08040ad2 */ BL func_0804d8f8 \n\
 /* 08040ad6 */ LDR R0, =D_03005380 \n\
 /* 08040ad8 */ LDR R0, [R0] \n\
-/* 08040ada */ LDR R1, =D_030055d0 \n\
+/* 08040ada */ LDR R1, =gCurrentEngineData \n\
 /* 08040adc */ LDR R2, [R1] \n\
 /* 08040ade */ LDRB R1, [R4] \n\
 /* 08040ae0 */ LSLS R1, R1, 0x1 \n\

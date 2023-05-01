@@ -11,7 +11,7 @@ thumb_func_start func_08037a78 \n\
 /* 08037a82 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08037a84 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 08037a86 */ BNE branch_08037a98 \n\
-/* 08037a88 */ LDR R0, =D_030055d0 \n\
+/* 08037a88 */ LDR R0, =gCurrentEngineData \n\
 /* 08037a8a */ LDR R0, [R0] \n\
 /* 08037a8c */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08037a8e */ ADDS R7, 0x8 @ Add 0x8 to R7 \n\
@@ -20,7 +20,7 @@ thumb_func_start func_08037a78 \n\
 .ltorg \n\
  \n\
 branch_08037a98: \n\
-/* 08037a98 */ LDR R0, =D_030055d0 \n\
+/* 08037a98 */ LDR R0, =gCurrentEngineData \n\
 /* 08037a9a */ LDR R0, [R0] \n\
 /* 08037a9c */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 08037a9e */ ADDS R7, 0x1C @ Add 0x1C to R7 \n\
@@ -50,7 +50,7 @@ jump_08037acc: \n\
 /* 08037ad0 */ LDR R0, [R0] \n\
 /* 08037ad2 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08037ad4 */ LDRSH R1, [R7, R2] \n\
-/* 08037ad6 */ LDR R2, =quiz_arm_r_anim \n\
+/* 08037ad6 */ LDR R2, =quiz_show_arm_r_anim \n\
 /* 08037ad8 */ LSLS R4, R4, 0x2 \n\
 /* 08037ada */ ADDS R2, R4, R2 @ Set R2 to R4 + R2 \n\
 /* 08037adc */ LDR R2, [R2] \n\
@@ -66,7 +66,7 @@ jump_08037acc: \n\
 /* 08037af2 */ LDR R0, [R1] \n\
 /* 08037af4 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08037af6 */ LDRSH R1, [R7, R2] \n\
-/* 08037af8 */ LDR R2, =quiz_arm_l_anim \n\
+/* 08037af8 */ LDR R2, =quiz_show_arm_l_anim \n\
 /* 08037afa */ ADDS R4, R4, R2 @ Set R4 to R4 + R2 \n\
 /* 08037afc */ LDR R2, [R4] \n\
 /* 08037afe */ MOV R3, R8 @ Set R3 to R8 \n\
@@ -84,7 +84,7 @@ jump_08037b1c: \n\
 /* 08037b20 */ LDR R0, [R0] \n\
 /* 08037b22 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08037b24 */ LDRSH R1, [R7, R2] \n\
-/* 08037b26 */ LDR R2, =quiz_arm_r_anim \n\
+/* 08037b26 */ LDR R2, =quiz_show_arm_r_anim \n\
 /* 08037b28 */ LSLS R5, R4, 0x2 \n\
 /* 08037b2a */ ADDS R2, R5, R2 @ Set R2 to R5 + R2 \n\
 /* 08037b2c */ LDR R2, [R2] \n\
@@ -100,7 +100,7 @@ jump_08037b1c: \n\
 /* 08037b42 */ LDR R0, [R3] \n\
 /* 08037b44 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08037b46 */ LDRSH R1, [R7, R2] \n\
-/* 08037b48 */ LDR R2, =quiz_arm_l_anim \n\
+/* 08037b48 */ LDR R2, =quiz_show_arm_l_anim \n\
 /* 08037b4a */ ADDS R5, R5, R2 @ Set R5 to R5 + R2 \n\
 /* 08037b4c */ LDR R2, [R5] \n\
 /* 08037b4e */ STR R6, [SP] \n\
@@ -116,7 +116,7 @@ jump_08037b68: \n\
 /* 08037b6a */ LDR R0, [R0] \n\
 /* 08037b6c */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 08037b6e */ LDRSH R1, [R7, R3] \n\
-/* 08037b70 */ LDR R3, =quiz_face_neutral_anim \n\
+/* 08037b70 */ LDR R3, =quiz_show_face_neutral_anim \n\
 /* 08037b72 */ B branch_08037b86 \n\
 \n\
 .ltorg \n\
@@ -125,7 +125,7 @@ jump_08037b7c: \n\
 /* 08037b7e */ LDR R0, [R0] \n\
 /* 08037b80 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\
 /* 08037b82 */ LDRSH R1, [R7, R2] \n\
-/* 08037b84 */ LDR R3, =quiz_face_success_anim \n\
+/* 08037b84 */ LDR R3, =quiz_show_face_success_anim \n\
  \n\
 branch_08037b86: \n\
 /* 08037b86 */ LSLS R2, R4, 0x2 \n\
@@ -146,7 +146,7 @@ jump_08037ba8: \n\
 /* 08037baa */ LDR R0, [R0] \n\
 /* 08037bac */ MOVS R3, 0x2 @ Set R3 to 0x2 \n\
 /* 08037bae */ LDRSH R1, [R7, R3] \n\
-/* 08037bb0 */ LDR R3, =quiz_face_failure_anim \n\
+/* 08037bb0 */ LDR R3, =quiz_show_face_failure_anim \n\
 /* 08037bb2 */ LSLS R2, R4, 0x2 \n\
 /* 08037bb4 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\
 /* 08037bb6 */ LDR R2, [R2] \n\

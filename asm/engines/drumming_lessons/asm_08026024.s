@@ -9,7 +9,7 @@ thumb_func_start drum_live_engine_start \n\
 /* 0802602a */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 0802602c */ PUSH {R5-R7} \n\
 /* 0802602e */ SUB SP, 0x14 \n\
-/* 08026030 */ LDR R1, =D_030055d0 \n\
+/* 08026030 */ LDR R1, =gCurrentEngineData \n\
 /* 08026032 */ LDR R1, [R1] \n\
 /* 08026034 */ MOV R9, R1 @ Set R9 to R1 \n\
 /* 08026036 */ MOVS R4, 0xD5 @ Set R4 to 0xD5 \n\
@@ -39,7 +39,7 @@ thumb_func_start drum_live_engine_start \n\
 /* 0802606c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0802606e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 08026070 */ BL scene_set_bg_layer_display \n\
-/* 08026074 */ LDR R3, =D_030055d0 \n\
+/* 08026074 */ LDR R3, =gCurrentEngineData \n\
 /* 08026076 */ LDR R0, [R3] \n\
 /* 08026078 */ LDR R1, =0x000013a8 \n\
 /* 0802607a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
@@ -300,7 +300,7 @@ thumb_func_start drum_live_engine_start \n\
 /* 080262be */ LDRSH R0, [R4, R1] \n\
 /* 080262c0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080262c2 */ BL func_08025fbc \n\
-/* 080262c6 */ LDR R2, =D_030055d0 \n\
+/* 080262c6 */ LDR R2, =gCurrentEngineData \n\
 /* 080262c8 */ LDR R0, [R2] \n\
 /* 080262ca */ MOVS R3, 0xE2 @ Set R3 to 0xE2 \n\
 /* 080262cc */ LSLS R3, R3, 0x2 \n\
@@ -432,7 +432,7 @@ thumb_func_start drum_live_engine_start \n\
 /* 080263ea */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 080263ec */ STRB R3, [R7, 0xE] \n\
 /* 080263ee */ STRH R5, [R7, 0x10] \n\
-/* 080263f0 */ LDR R1, =D_030055d0 \n\
+/* 080263f0 */ LDR R1, =gCurrentEngineData \n\
 /* 080263f2 */ LDR R0, [R1] \n\
 /* 080263f4 */ MOVS R2, 0xDD @ Set R2 to 0xDD \n\
 /* 080263f6 */ LSLS R2, R2, 0x2 \n\
@@ -573,7 +573,7 @@ branch_08026454: \n\
 /* 0802655c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802655e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08026560 */ BL func_0804e188 \n\
-/* 08026564 */ LDR R2, =D_030055d0 \n\
+/* 08026564 */ LDR R2, =gCurrentEngineData \n\
 /* 08026566 */ LDR R0, [R2] \n\
 /* 08026568 */ MOVS R3, 0xE7 @ Set R3 to 0xE7 \n\
 /* 0802656a */ LSLS R3, R3, 0x2 \n\
@@ -589,7 +589,7 @@ branch_08026454: \n\
 /* 08026580 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08026582 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 08026584 */ LDR R0, [R2] \n\
-/* 08026586 */ LDR R3, =D_030055d0 \n\
+/* 08026586 */ LDR R3, =gCurrentEngineData \n\
 /* 08026588 */ LDR R2, [R3] \n\
 /* 0802658a */ ADDS R2, R2, R4 @ Set R2 to R2 + R4 \n\
 /* 0802658c */ LDRB R2, [R2] \n\
@@ -605,7 +605,7 @@ branch_08026454: \n\
 /* 080265a0 */ STR R4, [SP, 0x10] \n\
 /* 080265a2 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
 /* 080265a4 */ BL func_0804d160 \n\
-/* 080265a8 */ LDR R2, =D_030055d0 \n\
+/* 080265a8 */ LDR R2, =gCurrentEngineData \n\
 /* 080265aa */ LDR R1, [R2] \n\
 /* 080265ac */ LDR R3, =0x000003a2 \n\
 /* 080265ae */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\
@@ -625,7 +625,7 @@ branch_08026454: \n\
 /* 080265cc */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
 /* 080265ce */ BL func_0804d160 \n\
 /* 080265d2 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
-/* 080265d4 */ LDR R3, =D_030055d0 \n\
+/* 080265d4 */ LDR R3, =gCurrentEngineData \n\
 /* 080265d6 */ LDR R0, [R3] \n\
 /* 080265d8 */ MOVS R3, 0xE9 @ Set R3 to 0xE9 \n\
 /* 080265da */ LSLS R3, R3, 0x2 \n\
@@ -639,7 +639,7 @@ branch_08026454: \n\
 /* 080265ee */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080265f0 */ BL gameplay_prevent_dpad_overlap \n\
 /* 080265f4 */ BL func_08025b88 \n\
-/* 080265f8 */ LDR R1, =D_030055d0 \n\
+/* 080265f8 */ LDR R1, =gCurrentEngineData \n\
 /* 080265fa */ LDR R0, [R1] \n\
 /* 080265fc */ LDR R2, =0x000013d0 \n\
 /* 080265fe */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\

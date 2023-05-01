@@ -6,7 +6,7 @@ thumb_func_start func_0801b858 \n\
 /* 0801b858 */ PUSH {R4, R5, LR} \n\
 /* 0801b85a */ SUB SP, 0x4 \n\
 /* 0801b85c */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
-/* 0801b85e */ LDR R0, =D_030046a4 \n\
+/* 0801b85e */ LDR R0, =gCurrentSceneData \n\
 /* 0801b860 */ LDR R0, [R0] \n\
 /* 0801b862 */ MOVS R1, 0xDA @ Set R1 to 0xDA \n\
 /* 0801b864 */ LSLS R1, R1, 0x2 \n\
@@ -71,7 +71,7 @@ branch_0801b8c6: \n\
 branch_0801b8cc: \n\
 /* 0801b8cc */ LDR R5, =D_030046a8 \n\
 /* 0801b8ce */ LDR R4, [R5] \n\
-/* 0801b8d0 */ LDR R0, =D_030046a4 \n\
+/* 0801b8d0 */ LDR R0, =gCurrentSceneData \n\
 /* 0801b8d2 */ LDR R0, [R0] \n\
 /* 0801b8d4 */ MOVS R1, 0xDA @ Set R1 to 0xDA \n\
 /* 0801b8d6 */ LSLS R1, R1, 0x2 \n\
@@ -150,7 +150,7 @@ branch_0801b974: \n\
 /* 0801b974 */ LDR R1, =s_menu_cancel3_seqData \n\
 /* 0801b976 */ MOVS R0, 0x2 @ Set R0 to 0x2 \n\
 /* 0801b978 */ BL play_sound_in_player \n\
-/* 0801b97c */ LDR R4, =D_030046a4 \n\
+/* 0801b97c */ LDR R4, =gCurrentSceneData \n\
 /* 0801b97e */ LDR R0, [R4] \n\
 /* 0801b980 */ MOVS R1, 0xDA @ Set R1 to 0xDA \n\
 /* 0801b982 */ LSLS R1, R1, 0x2 \n\
@@ -176,7 +176,7 @@ branch_0801b974: \n\
 .ltorg \n\
  \n\
 branch_0801b9b8: \n\
-/* 0801b9b8 */ LDR R0, =D_030046a4 \n\
+/* 0801b9b8 */ LDR R0, =gCurrentSceneData \n\
 /* 0801b9ba */ LDR R0, [R0] \n\
 /* 0801b9bc */ MOVS R1, 0xDA @ Set R1 to 0xDA \n\
 /* 0801b9be */ LSLS R1, R1, 0x2 \n\
@@ -188,7 +188,7 @@ branch_0801b9b8: \n\
 .ltorg \n\
  \n\
 branch_0801b9d0: \n\
-/* 0801b9d0 */ LDR R0, =D_030046a4 \n\
+/* 0801b9d0 */ LDR R0, =gCurrentSceneData \n\
 /* 0801b9d2 */ LDR R0, [R0] \n\
 /* 0801b9d4 */ MOVS R1, 0xDA @ Set R1 to 0xDA \n\
 /* 0801b9d6 */ LSLS R1, R1, 0x2 \n\

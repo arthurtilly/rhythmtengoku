@@ -11,7 +11,7 @@ thumb_func_start func_08033f80 \n\
 /* 08033f8c */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
 /* 08033f8e */ STRH R0, [R1, 0x16] \n\
 /* 08033f90 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
-/* 08033f92 */ LDR R1, =D_030055d0 \n\
+/* 08033f92 */ LDR R1, =gCurrentEngineData \n\
 /* 08033f94 */ LDR R0, [R1] \n\
 /* 08033f96 */ LDRH R0, [R0, 0xC] \n\
 /* 08033f98 */ SUBS R0, 0x1 @ Subtract 0x1 from R0 \n\
@@ -46,7 +46,7 @@ branch_08033fa2: \n\
 branch_08033fd0: \n\
 /* 08033fd0 */ LDR R0, =D_03005380 \n\
 /* 08033fd2 */ LDR R0, [R0] \n\
-/* 08033fd4 */ LDR R1, =D_030055d0 \n\
+/* 08033fd4 */ LDR R1, =gCurrentEngineData \n\
 /* 08033fd6 */ LDR R1, [R1] \n\
 /* 08033fd8 */ LSLS R2, R5, 0x1 \n\
 /* 08033fda */ ADDS R1, 0xE @ Add 0xE to R1 \n\

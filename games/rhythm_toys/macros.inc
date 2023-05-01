@@ -25,7 +25,7 @@
 .endm
 
 @ Load Game: Confession Machine
-.macro load_confession_machine
+.macro load_love_machine
     load_rhythm_toys_labels
     load_game rhythm_toys_engine, 2
 .endm

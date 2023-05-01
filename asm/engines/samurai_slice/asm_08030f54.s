@@ -8,7 +8,7 @@ thumb_func_start samurai_slice_engine_update \n\
 /* 08030f58 */ BL func_080321c8 \n\
 /* 08030f5c */ BL func_08032478 \n\
 /* 08030f60 */ BL func_080327a4 \n\
-/* 08030f64 */ LDR R7, =D_030055d0 \n\
+/* 08030f64 */ LDR R7, =gCurrentEngineData \n\
 /* 08030f66 */ LDR R0, [R7] \n\
 /* 08030f68 */ MOVS R2, 0xE9 @ Set R2 to 0xE9 \n\
 /* 08030f6a */ LSLS R2, R2, 0x1 \n\
@@ -76,7 +76,7 @@ branch_08030fe8: \n\
 /* 08030ffa */ BL scene_show_bg_layer \n\
  \n\
 branch_08030ffe: \n\
-/* 08030ffe */ LDR R1, =D_030055d0 \n\
+/* 08030ffe */ LDR R1, =gCurrentEngineData \n\
 /* 08031000 */ LDR R0, [R1] \n\
 /* 08031002 */ MOVS R2, 0xF0 @ Set R2 to 0xF0 \n\
 /* 08031004 */ LSLS R2, R2, 0x1 \n\

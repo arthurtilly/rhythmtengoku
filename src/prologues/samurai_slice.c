@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct SamuraiSlicePrologueInfo *)D_030055d0)
+#define gPrologueEngineData ((struct SamuraiSlicePrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: SAMURAI SLICE  //  //  //
@@ -43,14 +43,14 @@ void func_08046024(void) {
 
 // [func_08046054] MAIN - Init
 void samurai_slice_prologue_engine_start(u32 ver) {
-    gPrologueInfo->ver = ver;
+    gPrologueEngineData->ver = ver;
 
     func_08046024();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
     scene_set_bg_layer_display(BG_LAYER_2, FALSE, 0, 0, 0, 30, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_samurai_slice_prologue_title, 0, 135, 20, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_samurai_slice_prologue_title, 0, 135, 20, 0, 0, 0x7f, 0);
 }
 
 
@@ -71,5 +71,5 @@ void samurai_slice_prologue_engine_stop(void) {
 
 // [func_080460d4] Event 0 - Set Animation Frame (Text)
 void func_080460d4(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo->textSprite, frame);
+    func_0804cebc(D_03005380, gPrologueEngineData->textSprite, frame);
 }

@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start quiz_engine_update \n\
+thumb_func_start quiz_show_engine_update \n\
 /* 08037cf4 */ PUSH {LR} \n\
 /* 08037cf6 */ BL func_08037378 \n\
 /* 08037cfa */ POP {R0} \n\

@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start staff_credit_engine_start \n\
 /* 08023604 */ PUSH {R4, R5, LR} \n\
 /* 08023606 */ SUB SP, 0xC \n\
-/* 08023608 */ LDR R5, =D_030055d0 \n\
+/* 08023608 */ LDR R5, =gCurrentEngineData \n\
 /* 0802360a */ LDR R1, [R5] \n\
 /* 0802360c */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 0802360e */ STRB R0, [R1] \n\

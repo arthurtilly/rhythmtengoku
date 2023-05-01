@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start showtime_common_beat_animation \n\
 /* 0802c0c8 */ PUSH {R4-R7, LR} \n\
 /* 0802c0ca */ SUB SP, 0xC \n\
-/* 0802c0cc */ LDR R7, =D_030055d0 \n\
+/* 0802c0cc */ LDR R7, =gCurrentEngineData \n\
 /* 0802c0ce */ LDR R1, [R7] \n\
 /* 0802c0d0 */ MOVS R2, 0xB8 @ Set R2 to 0xB8 \n\
 /* 0802c0d2 */ LSLS R2, R2, 0x1 \n\

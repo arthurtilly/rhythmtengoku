@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct RatRacePrologueInfo *)D_030055d0)
+#define gPrologueEngineData ((struct RatRacePrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: RAT RACE  //  //  //
@@ -43,14 +43,14 @@ void func_080471a4(void) {
 
 // [func_080471d4] MAIN - Init
 void rat_race_prologue_engine_start(u32 ver) {
-    gPrologueInfo->ver = ver;
+    gPrologueEngineData->ver = ver;
 
     func_080471a4();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_rat_race_prologue_title, 0, 8, 8, 0, 0, 0x7f, 0);
-    gPrologueInfo->ratSprite = func_0804d160(D_03005380, anim_rat_race_prologue_rat, 0, 190, 160, 0, 0, 0, 0);
+    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_rat_race_prologue_title, 0, 8, 8, 0, 0, 0x7f, 0);
+    gPrologueEngineData->ratSprite = func_0804d160(D_03005380, anim_rat_race_prologue_rat, 0, 190, 160, 0, 0, 0, 0);
 }
 
 
@@ -71,12 +71,12 @@ void rat_race_prologue_engine_stop(void) {
 
 // [func_0804725c] Event 0 - Set Animation Frame (Text)
 void func_0804725c(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo->textSprite, frame);
+    func_0804cebc(D_03005380, gPrologueEngineData->textSprite, frame);
 }
 
 
 // [func_08047280] Event 1 - Play Animation (Rat)
 void func_08047280(void) {
-    func_0804cebc(D_03005380, gPrologueInfo->ratSprite, 1);
-    func_0804dae0(D_03005380, gPrologueInfo->ratSprite, 1, 0x7f, 0);
+    func_0804cebc(D_03005380, gPrologueEngineData->ratSprite, 1);
+    func_0804dae0(D_03005380, gPrologueEngineData->ratSprite, 1, 0x7f, 0);
 }

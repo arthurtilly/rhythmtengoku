@@ -9,7 +9,7 @@ thumb_func_start func_0801a3b0 \n\
 /* 0801a3b8 */ BL get_current_mem_id \n\
 /* 0801a3bc */ LSLS R0, R0, 0x10 \n\
 /* 0801a3be */ LSRS R0, R0, 0x10 \n\
-/* 0801a3c0 */ LDR R1, =D_030046a4 \n\
+/* 0801a3c0 */ LDR R1, =gCurrentSceneData \n\
 /* 0801a3c2 */ LDR R1, [R1] \n\
 /* 0801a3c4 */ LDR R1, [R1] \n\
 /* 0801a3c6 */ LDR R1, [R1, 0x8] \n\

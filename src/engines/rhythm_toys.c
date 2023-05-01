@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gRhythmToysInfo ((struct RhythmToysInfo *)D_030055d0)
+#define gRhythmToys ((struct RhythmToysEngineData *)gCurrentEngineData)
 
 
 /* RHYTHM TOYS */

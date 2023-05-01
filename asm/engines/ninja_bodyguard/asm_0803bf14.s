@@ -27,7 +27,7 @@ branch_0803bf1a: \n\
 /* 0803bf3c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803bf3e */ MOVS R3, 0x82 @ Set R3 to 0x82 \n\
 /* 0803bf40 */ BL func_0804d160 \n\
-/* 0803bf44 */ LDR R1, =D_030055d0 \n\
+/* 0803bf44 */ LDR R1, =gCurrentEngineData \n\
 /* 0803bf46 */ LDR R3, [R1] \n\
 /* 0803bf48 */ LSLS R2, R4, 0x1 \n\
 /* 0803bf4a */ MOVS R6, 0xB7 @ Set R6 to 0xB7 \n\

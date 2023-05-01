@@ -6,8 +6,8 @@
 #include "games/marching_orders/graphics/marching_orders_graphics.h"
 
 // Engine Types:
-struct MarchingOrdersInfo {
-    /* add fields here */
+struct MarchingOrdersEngineData {
+    u8 pad[0x48];
 };
 
 struct MarchingOrdersCue {

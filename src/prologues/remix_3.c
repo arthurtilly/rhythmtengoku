@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct Remix3PrologueInfo *)D_030055d0)
+#define gPrologueEngineData ((struct Remix3PrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: REMIX 3  //  //  //
@@ -43,13 +43,13 @@ void func_08046860(void) {
 
 // [func_08046890] MAIN - Init
 void remix_3_prologue_engine_start(u32 ver) {
-    gPrologueInfo->ver = ver;
+    gPrologueEngineData->ver = ver;
 
     func_08046860();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_remix_3_prologue_title, 0, 112, 128, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_remix_3_prologue_title, 0, 112, 128, 0, 0, 0x7f, 0);
 }
 
 
@@ -70,5 +70,5 @@ void remix_3_prologue_engine_stop(void) {
 
 // [func_080468f8] Event 0 - Set Animation Frame (Text)
 void func_080468f8(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo->textSprite, frame);
+    func_0804cebc(D_03005380, gPrologueEngineData->textSprite, frame);
 }

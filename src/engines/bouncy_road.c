@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gBouncyRoadInfo ((struct BouncyRoadInfo *)D_030055d0)
+#define gBouncyRoad ((struct BouncyRoadEngineData *)gCurrentEngineData)
 
 
 /* BOUNCY ROAD */

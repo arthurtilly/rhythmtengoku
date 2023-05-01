@@ -91,6 +91,7 @@ struct night_walk_marking_criteria
 endstruct
 
 
+
 @ Night Walk - Main Script
 
 script script_night_walk_end
@@ -119,7 +120,7 @@ script script_night_walk_main
     night_walk_set_end_script script_night_walk_end
     set_tempo 128
     assess_inputs 1
-    run gameplay_assess_irrelevant_inputs 0
+    run gameplay_assess_irrelevant_inputs, 0
     enable_play_inputs 0
     night_walk_init_balloons 7
     start_perfect_campaign

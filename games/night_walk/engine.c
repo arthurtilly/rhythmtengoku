@@ -676,8 +676,8 @@ struct DrumTechNote drum_seq_night_walk_short_hop[] = {
 
 // [D_089e37f4] Common Events
 EngineEvent night_walk_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) night_walk_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) night_walk_common_display_text,
+    /* BEAT_ANIMATION */ night_walk_common_beat_animation,
+    /* DISPLAY_TEXT   */ night_walk_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
@@ -685,22 +685,22 @@ EngineEvent night_walk_common_events[] = {
 
 // [D_089e3800] Engine Events
 EngineEvent night_walk_engine_events[] = {
-    /* 0x00 */ (EngineEvent) play_drumtech_seq_from_beatscript,
-    /* 0x01 */ (EngineEvent) night_walk_init_balloons,
-    /* 0x02 */ (EngineEvent) night_walk_pop_balloon,
-    /* 0x03 */ (EngineEvent) night_walk_set_ending_script,
-    /* 0x04 */ (EngineEvent) night_walk_set_bridge_type,
-    /* 0x05 */ (EngineEvent) night_walk_set_marking_criteria,
-    /* 0x06 */ (EngineEvent) night_walk_set_cue_earliness,
-    /* 0x07 */ (EngineEvent) night_walk_set_swing,
-    /* 0x08 */ (EngineEvent) night_walk_set_drum_volume,
-    /* 0x09 */ (EngineEvent) night_walk_event_expand_stars,
-    /* 0x0A */ (EngineEvent) night_walk_engine_event_stub
+    /* 0x00 */ play_drumtech_seq_from_beatscript,
+    /* 0x01 */ night_walk_init_balloons,
+    /* 0x02 */ night_walk_pop_balloon,
+    /* 0x03 */ night_walk_set_ending_script,
+    /* 0x04 */ night_walk_set_bridge_type,
+    /* 0x05 */ night_walk_set_marking_criteria,
+    /* 0x06 */ night_walk_set_cue_earliness,
+    /* 0x07 */ night_walk_set_swing,
+    /* 0x08 */ night_walk_set_drum_volume,
+    /* 0x09 */ night_walk_event_expand_stars,
+    /* 0x0A */ night_walk_engine_event_stub
 };
 
 // [D_089e382c] Night Walk Game Engine
 struct GameEngine night_walk_engine = {
-    /* Size in Memory */ sizeof(struct NightWalkInfo),
+    /* Size in Memory */ sizeof(struct NightWalkEngineData),
     /* Start Engine   */ night_walk_engine_start,
     /* Update Engine  */ night_walk_engine_update,
     /* Stop Engine    */ night_walk_engine_stop,

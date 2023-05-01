@@ -10,7 +10,7 @@
 
 
 // Types:
-struct FireworksPrologueInfo {
+struct FireworksPrologueEngineData {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };

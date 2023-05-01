@@ -21,7 +21,7 @@ branch_0801b4cc: \n\
 /* 0801b4cc */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0801b4ce */ CMP R4, R6 @ Check R4 - R6 \n\
 /* 0801b4d0 */ BGT branch_0801b4ea \n\
-/* 0801b4d2 */ LDR R5, =D_030046a4 \n\
+/* 0801b4d2 */ LDR R5, =gCurrentSceneData \n\
  \n\
 branch_0801b4d4: \n\
 /* 0801b4d4 */ LDR R0, [R5] \n\

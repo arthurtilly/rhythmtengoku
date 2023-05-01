@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct EmptyTestSceneInfo {
+struct EmptyTestSceneData {
     /* add fields here */
 };
 

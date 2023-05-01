@@ -10,7 +10,7 @@ asm(".include \"include/gba.inc\""); // Temporary
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gShowtimeInfo ((struct ShowtimeInfo *)D_030055d0)
+#define gShowtime ((struct ShowtimeEngineData *)gCurrentEngineData)
 
 
 /* SHOWTIME */
@@ -26,7 +26,7 @@ void showtime_init_gfx2(void) {
     s32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), showtime_gfx_tables[gShowtimeInfo->version], 0x2000);
+    task = func_08002ee0(get_current_mem_id(), showtime_gfx_tables[gShowtime->version], 0x2000);
     run_func_after_task(task, showtime_init_gfx3, 0);
 }
 
@@ -43,25 +43,25 @@ void showtime_init_gfx1(void) {
 void showtime_engine_start(u32 version) {
     struct PrintedTextAnim *textAnim;
 
-    gShowtimeInfo->version = version;
+    gShowtime->version = version;
     showtime_init_gfx1();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, BG_PRIORITY_LOW);
     scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, BG_PRIORITY_HIGHEST);
     func_0802d96c();
-    gShowtimeInfo->unk0 = func_0800c660(0x340, 2);
-    textAnim = bmp_font_obj_print_c(gShowtimeInfo->unk0, D_0805a3cc, 0, 0);
-    gShowtimeInfo->unk4 = func_0804d160(D_03005380, textAnim->frames, 0, 120, 56, 0, 0, 0, 0);
+    gShowtime->unk0 = func_0800c660(0x340, 2);
+    textAnim = bmp_font_obj_print_c(gShowtime->unk0, D_0805a3cc, 0, 0);
+    gShowtime->unk4 = func_0804d160(D_03005380, textAnim->frames, 0, 120, 56, 0, 0, 0, 0);
     gameplay_set_input_buttons(A_BUTTON, 0);
     func_0802c23c();    
     func_0802d104();
     func_0802c40c();
     func_0802d394();
     func_0802da84();
-    gShowtimeInfo->unk3C0 = 0;
-    gShowtimeInfo->unk3C8 = 0;
-    gShowtimeInfo->unk3CC = 0;
-    gShowtimeInfo->unk3D0 = 0;
+    gShowtime->unk3C0 = 0;
+    gShowtime->unk3C8 = 0;
+    gShowtime->unk3CC = 0;
+    gShowtime->unk3D0 = 0;
 }
 
 
@@ -165,7 +165,7 @@ void showtime_cue_hit(struct Cue *cue, struct ShowtimeCue *info, u32 pressed, u3
     func_0802cf8c(info->unk4);
     func_0802d81c(info->unk4);
     func_0802d2bc();
-    gShowtimeInfo->unk3C0 = beats_to_ticks(0x14);
+    gShowtime->unk3C0 = beats_to_ticks(0x14);
 }
 
 
@@ -175,10 +175,10 @@ void showtime_cue_hit(struct Cue *cue, struct ShowtimeCue *info, u32 pressed, u3
 
 
 void showtime_input_event(u32 pressed, u32 released) {
-    if (gShowtimeInfo->unk3C0 == 0) {
+    if (gShowtime->unk3C0 == 0) {
         func_0802d918(-1);
         func_0802d2bc();
-        gShowtimeInfo->unk3C0 = beats_to_ticks(0x1E);
+        gShowtime->unk3C0 = beats_to_ticks(0x1E);
         play_sound(&s_block_hit_seqData);
     }
 }
@@ -192,11 +192,11 @@ void showtime_input_event(u32 pressed, u32 released) {
 
 
 void func_0802c1f0(u32 unused, s16 sprite, u32 arg2) {
-    switch (gShowtimeInfo->unk8[arg2].unk4) {
+    switch (gShowtime->unk8[arg2].unk4) {
         case 0:
             break;
         case 1:
-            gShowtimeInfo->unk8[arg2].unk4 = 0;
+            gShowtime->unk8[arg2].unk4 = 0;
         func_0804cebc(D_03005380, sprite, 3);
         func_0804dcb8(D_03005380, sprite, 0);
     }
@@ -207,23 +207,23 @@ void func_0802c23c() {
     s32 i;
 
     for (i = 0; i < 2; i++) {
-        gShowtimeInfo->unk8[i].unk4 = 0;
+        gShowtime->unk8[i].unk4 = 0;
 
-        if (gShowtimeInfo->version != SHOWTIME_VER_REMIX_3) {
-            gShowtimeInfo->unk8[i].sprite = func_0804d160(D_03005380, anim_showtime_block, 0, 64, 64, 0x4800, 1, 0, 4);
+        if (gShowtime->version != SHOWTIME_VER_REMIX_3) {
+            gShowtime->unk8[i].sprite = func_0804d160(D_03005380, anim_showtime_block, 0, 64, 64, 0x4800, 1, 0, 4);
         } else {
-            gShowtimeInfo->unk8[i].sprite = func_0804d160(D_03005380, anim_showtime_block_pink, 0, 64, 64, 0x4800, 1, 0, 4);
+            gShowtime->unk8[i].sprite = func_0804d160(D_03005380, anim_showtime_block_pink, 0, 64, 64, 0x4800, 1, 0, 4);
         }
 
-        gShowtimeInfo->unk8[i].unk8 = 0;
+        gShowtime->unk8[i].unk8 = 0;
 
-        func_0804daa8(D_03005380, gShowtimeInfo->unk8[i].sprite, &func_0802c1f0, i);
-        func_0804cebc(D_03005380, gShowtimeInfo->unk8[i].sprite, 3);
-        func_0804dcb8(D_03005380, gShowtimeInfo->unk8[i].sprite, 0);
+        func_0804daa8(D_03005380, gShowtime->unk8[i].sprite, &func_0802c1f0, i);
+        func_0804cebc(D_03005380, gShowtime->unk8[i].sprite, 3);
+        func_0804dcb8(D_03005380, gShowtime->unk8[i].sprite, 0);
     }
 
-    func_0804d5d4(D_03005380, gShowtimeInfo->unk8[0].sprite, 200, 128);
-    func_0804d5d4(D_03005380, gShowtimeInfo->unk8[1].sprite, 184, 144);
+    func_0804d5d4(D_03005380, gShowtime->unk8[0].sprite, 200, 128);
+    func_0804d5d4(D_03005380, gShowtime->unk8[1].sprite, 184, 144);
 }
 
 
@@ -231,12 +231,12 @@ void func_0802c334() {
     s32 i;
 
     for (i = 0; i < 2; i++) {
-        if (gShowtimeInfo->unk8[i].unk4 == 0) {
+        if (gShowtime->unk8[i].unk4 == 0) {
             continue;
         }
 
-        if (gShowtimeInfo->unk8[i].unk4 == 1) {
-            gShowtimeInfo->unk8[i].unk8++;
+        if (gShowtime->unk8[i].unk4 == 1) {
+            gShowtime->unk8[i].unk8++;
         }
     }
 }
@@ -246,7 +246,7 @@ void func_0802c334() {
 
 
 u32 func_0802c3d0(u32 arg) {
-    switch (gShowtimeInfo->unk8[arg].unk8 / 4) {
+    switch (gShowtime->unk8[arg].unk8 / 4) {
         case 1:
             return 3;
         case 0:
@@ -279,8 +279,8 @@ u32 func_0802c3d0(u32 arg) {
 
 
 void func_0802cfa4(u32 arg) {
-    gShowtimeInfo->unk24[arg].unk18 = 0;
-    gShowtimeInfo->unk24[arg].unk20 = 1;
+    gShowtime->unk24[arg].unk18 = 0;
+    gShowtime->unk24[arg].unk20 = 1;
 }
 
 
@@ -290,23 +290,23 @@ void func_0802cfa4(u32 arg) {
 
 
 u32 func_0802d068(u32 arg) {
-    return gShowtimeInfo->unk24[arg].unk8;
+    return gShowtime->unk24[arg].unk8;
 }
 
 
 u32 func_0802d080(u32 arg) {
-    if (gShowtimeInfo->unk24[arg].unk0 == 8) {
-        return gShowtimeInfo->unk24[arg].unkC + 13;
+    if (gShowtime->unk24[arg].unk0 == 8) {
+        return gShowtime->unk24[arg].unkC + 13;
     } else {
-        return gShowtimeInfo->unk24[arg].unkC;
+        return gShowtime->unk24[arg].unkC;
     }
 }
 
 
 void func_0802d0b8() {
-    if (gShowtimeInfo->unk168 != 0) {
-        if (gShowtimeInfo->unk168 == 2) {
-            gShowtimeInfo->unk168 = 0;
+    if (gShowtime->unk168 != 0) {
+        if (gShowtime->unk168 == 2) {
+            gShowtime->unk168 = 0;
             }
     }
 }
@@ -342,11 +342,11 @@ void func_0802d8bc(u32 arg) {
     s32 i;
 
     for (i = 0; i < 8; i++) {
-        if (gShowtimeInfo->unk174[i].unk4 == 0) {
-            gShowtimeInfo->unk174[i].unk4 = 4;
-            gShowtimeInfo->unk174[i].unkC = arg;
-            gShowtimeInfo->unk174[i].unk8 = 0;
-            func_0804d770(D_03005380, gShowtimeInfo->unk174[i].sprite, TRUE);
+        if (gShowtime->unk174[i].unk4 == 0) {
+            gShowtime->unk174[i].unk4 = 4;
+            gShowtime->unk174[i].unkC = arg;
+            gShowtime->unk174[i].unk8 = 0;
+            func_0804d770(D_03005380, gShowtime->unk174[i].sprite, TRUE);
             return;
         }
     }

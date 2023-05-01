@@ -9,7 +9,7 @@ thumb_func_start func_080258c0 \n\
 /* 080258c6 */ MOV R4, R8 @ Set R4 to R8 \n\
 /* 080258c8 */ PUSH {R4-R6} \n\
 /* 080258ca */ SUB SP, 0x8 \n\
-/* 080258cc */ LDR R4, =D_030055d0 \n\
+/* 080258cc */ LDR R4, =gCurrentEngineData \n\
 /* 080258ce */ LDR R1, [R4] \n\
 /* 080258d0 */ LDR R2, =0x0000179c \n\
 /* 080258d2 */ ADDS R0, R1, R2 @ Set R0 to R1 + R2 \n\
@@ -74,7 +74,7 @@ branch_08025968: \n\
 /* 08025968 */ BL func_08025848 \n\
  \n\
 branch_0802596c: \n\
-/* 0802596c */ LDR R3, =D_030055d0 \n\
+/* 0802596c */ LDR R3, =gCurrentEngineData \n\
 /* 0802596e */ MOV R10, R3 @ Set R10 to R3 \n\
 /* 08025970 */ LDR R3, [R3] \n\
 /* 08025972 */ LDR R6, =0x0000171c \n\

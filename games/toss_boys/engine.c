@@ -978,29 +978,29 @@ s8 toss_boys_beat_anim_playback[][3] = {
 
 // [D_089e89d0] Common Events
 EngineEvent toss_boys_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) toss_boys_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) toss_boys_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) toss_boys_common_init_tutorial,
+    /* BEAT_ANIMATION */ toss_boys_common_beat_animation,
+    /* DISPLAY_TEXT   */ toss_boys_common_display_text,
+    /* INIT_TUTORIAL  */ toss_boys_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e89e0] Engine Events
 EngineEvent toss_boys_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_0803f1bc,
-    /* 0x01 */ (EngineEvent) func_0803f390,
-    /* 0x02 */ (EngineEvent) func_0803f3b0,
-    /* 0x03 */ (EngineEvent) func_0803e9b0,
-    /* 0x04 */ (EngineEvent) func_0803ea08,
-    /* 0x05 */ (EngineEvent) func_0803fb00,
-    /* 0x06 */ (EngineEvent) func_0803f0b8,
-    /* 0x07 */ (EngineEvent) func_0803f12c,
-    /* 0x08 */ (EngineEvent) func_0803e884,
-    /* 0x09 */ (EngineEvent) toss_boys_engine_event_stub
+    /* 0x00 */ func_0803f1bc,
+    /* 0x01 */ func_0803f390,
+    /* 0x02 */ func_0803f3b0,
+    /* 0x03 */ func_0803e9b0,
+    /* 0x04 */ func_0803ea08,
+    /* 0x05 */ func_0803fb00,
+    /* 0x06 */ func_0803f0b8,
+    /* 0x07 */ func_0803f12c,
+    /* 0x08 */ func_0803e884,
+    /* 0x09 */ toss_boys_engine_event_stub
 };
 
 // [D_089e8a08] Toss Boys Game Engine
 struct GameEngine toss_boys_engine = {
-    /* Size in Memory */ 0x3a4,
+    /* Size in Memory */ sizeof(struct TossBoysEngineData),
     /* Start Engine   */ toss_boys_engine_start,
     /* Update Engine  */ toss_boys_engine_update,
     /* Stop Engine    */ toss_boys_engine_stop,

@@ -19,7 +19,7 @@
 asm(".include \"include/gba.inc\"");//Temporary
 
 // For readability.
-#define gResultsInfo ((struct ResultsSceneInfo *)D_030046a4)
+#define gResults ((struct ResultsSceneData *)gCurrentSceneData)
 
 #define COMMENT_TILESET_BASE OBJ_TILESET_BASE(0x4000)
 #define COMMENT_PALETTE 4
@@ -112,18 +112,18 @@ void rank_results_scene_init_gfx1(void) {
 void rank_results_scene_start(void *sceneParam, s32 startParam) {
     func_08007324(FALSE);
     func_080073f0();
-    gResultsInfo->bgFont = create_new_bmp_font_bg(get_current_mem_id(), &bitmap_font_warioware_body, 0, 0x340, 6);
-    gResultsInfo->objFont = func_0800c660(0x300, 4);
+    gResults->bgFont = create_new_bmp_font_bg(get_current_mem_id(), &bitmap_font_warioware_body, 0, 0x340, 6);
+    gResults->objFont = func_0800c660(0x300, 4);
     dma3_fill(0, COMMENT_TILESET_BASE, 0x4000, 0x20, 0x200);
-    gResultsInfo->currentLine = 0;
+    gResults->currentLine = 0;
 
-    gResultsInfo->placeholderIcon = func_0804d160(D_03005380, anim_rank_results_header_placeholder, 0, RANK_HEADER_ICON_X, RANK_HEADER_Y, 0x800, 0, 0, 0x8000);
-    gResultsInfo->resultIcon = func_0804d160(D_03005380, anim_rank_results_icon, 0, RANK_RESULT_ICON_X, RANK_RESULT_ICON_Y, 0x800, 0, 0, 0x8000);
+    gResults->placeholderIcon = func_0804d160(D_03005380, anim_rank_results_header_placeholder, 0, RANK_HEADER_ICON_X, RANK_HEADER_Y, 0x800, 0, 0, 0x8000);
+    gResults->resultIcon = func_0804d160(D_03005380, anim_rank_results_icon, 0, RANK_RESULT_ICON_X, RANK_RESULT_ICON_Y, 0x800, 0, 0, 0x8000);
     rank_results_scene_init_gfx1();
     D_03005b3c = LFO_MODE_DISABLED;
-    gResultsInfo->awaitingInput = FALSE;
-    gResultsInfo->medalObtained = FALSE;
-    gResultsInfo->stillJustOK = FALSE;
+    gResults->awaitingInput = FALSE;
+    gResults->medalObtained = FALSE;
+    gResults->stillJustOK = FALSE;
 }
 
 
@@ -140,7 +140,7 @@ void rank_results_scene_update(void *sceneParam, s32 updateParam) {
 
     if (D_03004afc & A_BUTTON) {
         set_pause_beatscript_scene(FALSE);
-        gResultsInfo->awaitingInput = FALSE;
+        gResults->awaitingInput = FALSE;
         play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), 0);
     }
 }
@@ -159,7 +159,7 @@ void rank_results_display_header(void) {
     s32 sprite, width;
 
     if (D_089d7980->headerText == NULL) {
-        func_0804d770(D_03005380, gResultsInfo->placeholderIcon, TRUE);
+        func_0804d770(D_03005380, gResults->placeholderIcon, TRUE);
         return;
     }
 
@@ -174,23 +174,23 @@ void rank_results_display_header(void) {
 
 // RANK Display Result Icon (Script Event)
 void rank_results_display_rank(void) {
-    func_0804d770(D_03005380, gResultsInfo->resultIcon, TRUE);
+    func_0804d770(D_03005380, gResults->resultIcon, TRUE);
 
-    if (gResultsInfo->medalObtained) {
+    if (gResults->medalObtained) {
         func_0804d160(D_03005380, anim_rank_results_medal_get, 0, 180, 140, 0x700, 1, 0, 0);
     }
 
-    if (gResultsInfo->stillJustOK) {
+    if (gResults->stillJustOK) {
         func_0804d160(D_03005380, anim_rank_results_comment_append, 0, 180, 140, 0x700, 1, 0, 0);
     }
 
-    play_sound_in_player(SFX_PLAYER_2, rank_results_sfx[gResultsInfo->finalResultLevel]);
+    play_sound_in_player(SFX_PLAYER_2, rank_results_sfx[gResults->finalResultLevel]);
 }
 
 
 // RANK Play Music (Script Event)
 void rank_results_play_bgm(void) {
-    struct SequenceData *music = rank_results_bgm[gResultsInfo->finalResultLevel];
+    struct SequenceData *music = rank_results_bgm[gResults->finalResultLevel];
 
     scene_set_music(music);
     set_beatscript_tempo(get_music_base_tempo(music));
@@ -203,13 +203,13 @@ void rank_results_append_encouragement(void) {
     u32 totalNegativeComments, totalComments;
     u32 i;
 
-    commentSprites = gResultsInfo->commentSprites;
-    totalNegativeComments = gResultsInfo->totalNegativeComments;
-    totalComments = gResultsInfo->totalNegativeComments + gResultsInfo->totalPositiveComments;
+    commentSprites = gResults->commentSprites;
+    totalNegativeComments = gResults->totalNegativeComments;
+    totalComments = gResults->totalNegativeComments + gResults->totalPositiveComments;
 
-    if ((gResultsInfo->finalResultLevel != RESULTS_RANK_TRY_AGAIN)
-      || (gResultsInfo->totalPositiveComments == 0)
-      || (gResultsInfo->singleCommentTryAgain)) {
+    if ((gResults->finalResultLevel != RESULTS_RANK_TRY_AGAIN)
+      || (gResults->totalPositiveComments == 0)
+      || (gResults->singleCommentTryAgain)) {
         return;
     }
 
@@ -289,12 +289,12 @@ void results_save_to_cart(u32 levelState) {
 struct Animation *results_get_comment_anim(const char *comment, u32 anchor, u32 colors) {
     struct Animation *anim;
 
-    if ((COMMENT_TILE_Y(gResultsInfo->currentLine) < 0) || (COMMENT_TILE_Y(gResultsInfo->currentLine) >= 32)) {
+    if ((COMMENT_TILE_Y(gResults->currentLine) < 0) || (COMMENT_TILE_Y(gResults->currentLine) >= 32)) {
         return NULL;
     }
 
-    anim = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, COMMENT_TILE_Y(gResultsInfo->currentLine), TEXT_PRINTER_FONT_SMALL, comment, anchor, colors, 256);
-    gResultsInfo->currentLine++;
+    anim = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, COMMENT_TILE_Y(gResults->currentLine), TEXT_PRINTER_FONT_SMALL, comment, anchor, colors, 256);
+    gResults->currentLine++;
     return anim;
 }
 
@@ -499,9 +499,9 @@ u32 results_get_negative_comments(void) {
     u16 *commentSprites;
 
     tracker = D_089d7980->cueInputTrackers;
-    commentSprites = gResultsInfo->commentSprites;
-    commentsText = gResultsInfo->negativeCommentsText;
-    gResultsInfo->singleCommentTryAgain = FALSE;
+    commentSprites = gResults->commentSprites;
+    commentsText = gResults->negativeCommentsText;
+    gResults->singleCommentTryAgain = FALSE;
 
     for (criteriaTable; *criteriaTable != NULL; tracker++, criteriaTable++) {
         const struct MarkingCriteria *criteria;
@@ -539,7 +539,7 @@ u32 results_get_negative_comments(void) {
         }
 
         if (overrideOtherComments) {
-            gResultsInfo->singleCommentTryAgain = TRUE;
+            gResults->singleCommentTryAgain = TRUE;
             comments[0] = criteria->negativeRemark;
             totalFailed = 1;
             break;
@@ -564,7 +564,7 @@ u32 results_get_negative_comments(void) {
         commentSprites[i] = sprite;
     }
 
-    gResultsInfo->totalNegativeComments = totalFailed;
+    gResults->totalNegativeComments = totalFailed;
     return totalFailed;
 }
 
@@ -588,7 +588,7 @@ s24_8 results_get_positive_comments(void) {
     u32 imperfectionPenalty;
 
     tracker = D_089d7980->cueInputTrackers;
-    commentSprites = &gResultsInfo->commentSprites[gResultsInfo->totalNegativeComments];
+    commentSprites = &gResults->commentSprites[gResults->totalNegativeComments];
     imperfectionPenalty = 0;
     commentsText = mem_heap_alloc(0x100);
 
@@ -629,7 +629,7 @@ s24_8 results_get_positive_comments(void) {
             continue;
         }
 
-        if (gResultsInfo->totalNegativeComments > 0) {
+        if (gResults->totalNegativeComments > 0) {
             memcpy(commentsText, "c‚Å‚àA", 9); // ("...but,")
             strcat(commentsText, criteria->positiveRemark);
             anim = results_get_comment_anim(commentsText, TEXT_ANCHOR_BOTTOM_RIGHT, 3);
@@ -660,14 +660,14 @@ s24_8 results_get_positive_comments(void) {
             break;
         }
 
-        if (gResultsInfo->totalNegativeComments) {
+        if (gResults->totalNegativeComments) {
             func_0804d770(D_03005380, commentSprites[0], FALSE);
             break;
         }
     }
 
     mem_heap_dealloc(commentsText);
-    gResultsInfo->totalPositiveComments = totalPassed;
+    gResults->totalPositiveComments = totalPassed;
 
     if (totalCriteria == 0) {
         return INT_TO_FIXED(0.0);
@@ -698,9 +698,9 @@ void results_render_comments(void) {
     s32 y;
     u32 i;
 
-    commentSprites = gResultsInfo->commentSprites;
-    totalNegativeComments = gResultsInfo->totalNegativeComments;
-    totalComments = gResultsInfo->totalNegativeComments + gResultsInfo->totalPositiveComments;
+    commentSprites = gResults->commentSprites;
+    totalNegativeComments = gResults->totalNegativeComments;
+    totalComments = gResults->totalNegativeComments + gResults->totalPositiveComments;
 
     negativeCommentWidth = 0;
     for (i = 0; i < totalNegativeComments; i++) {
@@ -750,7 +750,7 @@ void results_render_comments(void) {
 void results_publish_comments(void) {
     struct InputScoreTracker *tracker = D_089d7980->cueInputTrackers;
     const struct MarkingCriteria **criteriaTable = D_089d7980->markingData;
-    const struct Scene *scene;
+    struct Scene *scene;
     struct Animation *textAnim;
     s16 textSprite;
     u32 totalCriteriaFailed, averageCriteriaSucceeded;
@@ -771,8 +771,8 @@ void results_publish_comments(void) {
     results_render_comments();
 
     if (totalCriteriaFailed != 0) {
-        gResultsInfo->finalResultLevel = RESULTS_RANK_TRY_AGAIN;
-        func_0804cebc(D_03005380, gResultsInfo->resultIcon, RESULT_ICON_TRY_AGAIN);
+        gResults->finalResultLevel = RESULTS_RANK_TRY_AGAIN;
+        func_0804cebc(D_03005380, gResults->resultIcon, RESULT_ICON_TRY_AGAIN);
         results_save_to_cart(LEVEL_STATE_NULL);
         return;
     }
@@ -791,23 +791,23 @@ void results_publish_comments(void) {
     }
 
     if (averageCriteriaSucceeded == INT_TO_FIXED(1.0)) {
-        gResultsInfo->finalResultLevel = RESULTS_RANK_SUPERB;
-        func_0804cebc(D_03005380, gResultsInfo->resultIcon, RESULT_ICON_SUPERB);
+        gResults->finalResultLevel = RESULTS_RANK_SUPERB;
+        func_0804cebc(D_03005380, gResults->resultIcon, RESULT_ICON_SUPERB);
         results_save_to_cart(LEVEL_STATE_HAS_MEDAL);
 
         previousResult = get_level_state_from_grid_xy(D_030046a8->data.recentLevelX, D_030046a8->data.recentLevelY);
         if (previousResult < LEVEL_STATE_HAS_MEDAL) {
-            gResultsInfo->medalObtained = TRUE;
+            gResults->medalObtained = TRUE;
         }
     }
 
     else {
-        gResultsInfo->finalResultLevel = RESULTS_RANK_OK;
-        func_0804cebc(D_03005380, gResultsInfo->resultIcon, RESULT_ICON_OK);
+        gResults->finalResultLevel = RESULTS_RANK_OK;
+        func_0804cebc(D_03005380, gResults->resultIcon, RESULT_ICON_OK);
         results_save_to_cart(LEVEL_STATE_CLEARED);
 
         if (averageCriteriaSucceeded != 0) {
-            gResultsInfo->stillJustOK = TRUE;
+            gResults->stillJustOK = TRUE;
         }
     }
 }

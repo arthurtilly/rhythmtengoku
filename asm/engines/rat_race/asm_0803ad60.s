@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_0803ad60 \n\
 /* 0803ad60 */ PUSH {R4-R7, LR} \n\
 /* 0803ad62 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
-/* 0803ad64 */ LDR R0, =D_030055d0 \n\
+/* 0803ad64 */ LDR R0, =gCurrentEngineData \n\
 /* 0803ad66 */ LDR R1, [R0] \n\
 /* 0803ad68 */ LDRB R0, [R1, 0x10] \n\
 /* 0803ad6a */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
@@ -35,7 +35,7 @@ jtbl_0803ad90: \n\
 .word jump_0803adec \n\
 .word jump_0803ae18 \n\
 jump_0803ada4: \n\
-/* 0803ada4 */ LDR R2, =D_030055d0 \n\
+/* 0803ada4 */ LDR R2, =gCurrentEngineData \n\
 /* 0803ada6 */ LDR R1, [R2] \n\
 /* 0803ada8 */ ADDS R1, 0xE0 @ Add 0xE0 to R1 \n\
 /* 0803adaa */ LDRB R0, [R1] \n\
@@ -74,7 +74,7 @@ branch_0803adca: \n\
 .ltorg \n\
 jump_0803adec: \n\
 /* 0803adec */ BL func_0800c398 \n\
-/* 0803adf0 */ LDR R1, =D_030055d0 \n\
+/* 0803adf0 */ LDR R1, =gCurrentEngineData \n\
 /* 0803adf2 */ LDR R3, [R1] \n\
 /* 0803adf4 */ ADDS R2, R3, 0x0 @ Set R2 to R3 + 0x0 \n\
 /* 0803adf6 */ ADDS R2, 0xE2 @ Add 0xE2 to R2 \n\
@@ -95,7 +95,7 @@ jump_0803adec: \n\
 \n\
 .ltorg \n\
 jump_0803ae18: \n\
-/* 0803ae18 */ LDR R4, =D_030055d0 \n\
+/* 0803ae18 */ LDR R4, =gCurrentEngineData \n\
 /* 0803ae1a */ LDR R1, [R4] \n\
 /* 0803ae1c */ ADDS R1, 0xE0 @ Add 0xE0 to R1 \n\
 /* 0803ae1e */ LDRB R0, [R1] \n\
@@ -139,7 +139,7 @@ branch_0803ae50: \n\
 /* 0803ae68 */ BL set_affine_scale_rotation \n\
  \n\
 branch_0803ae6c: \n\
-/* 0803ae6c */ LDR R0, =D_030055d0 \n\
+/* 0803ae6c */ LDR R0, =gCurrentEngineData \n\
 /* 0803ae6e */ LDR R1, [R0] \n\
 /* 0803ae70 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
 /* 0803ae72 */ ADDS R4, 0xE4 @ Add 0xE4 to R4 \n\

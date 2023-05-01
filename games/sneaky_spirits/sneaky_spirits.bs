@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_sneaky_spirits, script_sneaky_spirits_entry
 
 
+
 @ Sneaky Spirits - Script Entry Point (Skipped Practice)
 
 script script_sneaky_spirits_skipped_practice_entry
@@ -131,6 +132,7 @@ struct sneaky_spirits_marking_criteria
     .word sneaky_spirits_marking_criteria_3
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Sneaky Spirits - Main Script

@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct SpaceballPrologueInfo *)D_030055d0)
+#define gPrologueEngineData ((struct SpaceballPrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: SPACEBALL  //  //  //
@@ -43,13 +43,13 @@ void func_08045248(void) {
 
 // [func_08045278] MAIN - Init
 void spaceball_prologue_engine_start(u32 ver) {
-    gPrologueInfo->ver = ver;
+    gPrologueEngineData->ver = ver;
 
     func_08045248();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_spaceball_prologue_title, 0, 120, 80, 0, 0, 0, 0);
+    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_spaceball_prologue_title, 0, 120, 80, 0, 0, 0, 0);
 }
 
 
@@ -70,5 +70,5 @@ void spaceball_prologue_engine_stop(void) {
 
 // [func_080452e0] Event 0 - Set Animation Frame (Text)
 void func_080452e0(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo->textSprite, frame);
+    func_0804cebc(D_03005380, gPrologueEngineData->textSprite, frame);
 }

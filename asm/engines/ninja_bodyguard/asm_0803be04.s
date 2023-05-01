@@ -18,7 +18,7 @@ thumb_func_start func_0803be04 \n\
 /* 0803be1c */ BL scene_set_bg_layer_display \n\
 /* 0803be20 */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
 /* 0803be22 */ BNE branch_0803be36 \n\
-/* 0803be24 */ LDR R0, =D_030055d0 \n\
+/* 0803be24 */ LDR R0, =gCurrentEngineData \n\
 /* 0803be26 */ LDR R0, [R0] \n\
 /* 0803be28 */ MOVS R1, 0xBD @ Set R1 to 0xBD \n\
 /* 0803be2a */ LSLS R1, R1, 0x2 \n\

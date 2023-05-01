@@ -354,26 +354,26 @@ const char D_0805a670[] = "";
 
 // [D_089e54ec] Common Events
 EngineEvent marching_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) marching_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) marching_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) marching_common_init_tutorial,
+    /* BEAT_ANIMATION */ marching_common_beat_animation,
+    /* DISPLAY_TEXT   */ marching_common_display_text,
+    /* INIT_TUTORIAL  */ marching_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e54fc] Engine Events
 EngineEvent marching_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08034544,
-    /* 0x01 */ (EngineEvent) func_080346e0,
-    /* 0x02 */ (EngineEvent) func_080347c0,
-    /* 0x03 */ (EngineEvent) func_0803481c,
-    /* 0x04 */ (EngineEvent) func_08034850,
-    /* 0x05 */ (EngineEvent) func_08034ae4,
-    /* 0x06 */ (EngineEvent) marching_engine_event_stub
+    /* 0x00 */ func_08034544,
+    /* 0x01 */ func_080346e0,
+    /* 0x02 */ func_080347c0,
+    /* 0x03 */ func_0803481c,
+    /* 0x04 */ func_08034850,
+    /* 0x05 */ func_08034ae4,
+    /* 0x06 */ marching_engine_event_stub
 };
 
 // [D_089e5518] Marching Orders Game Engine
 struct GameEngine marching_orders_engine = {
-    /* Size in Memory */ 0x48,
+    /* Size in Memory */ sizeof(struct MarchingOrdersEngineData),
     /* Start Engine   */ marching_engine_start,
     /* Update Engine  */ marching_engine_update,
     /* Stop Engine    */ marching_engine_stop,

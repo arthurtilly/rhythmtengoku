@@ -138,21 +138,21 @@ struct CueDefinition *wizards_waltz_cue_index[] = {
 
 // [D_089ea050] Common Events
 EngineEvent wizards_waltz_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) wizards_waltz_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) wizards_waltz_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) wizards_waltz_common_init_tutorial,
+    /* BEAT_ANIMATION */ wizards_waltz_common_beat_animation,
+    /* DISPLAY_TEXT   */ wizards_waltz_common_display_text,
+    /* INIT_TUTORIAL  */ wizards_waltz_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089ea060] Engine Events
 EngineEvent wizards_waltz_engine_events[] = {
-    /* 0x00 */ (EngineEvent) wizards_waltz_set_cycle_duration,
-    /* 0x01 */ (EngineEvent) wizards_waltz_enable_tutorial
+    /* 0x00 */ wizards_waltz_set_cycle_duration,
+    /* 0x01 */ wizards_waltz_enable_tutorial
 };
 
 // [D_089ea068] Wizard's Waltz Game Engine
 struct GameEngine wizards_waltz_engine = {
-    /* Size in Memory */ 0x1b4,
+    /* Size in Memory */ sizeof(struct WizardsWaltzEngineData),
     /* Start Engine   */ wizards_waltz_engine_start,
     /* Update Engine  */ wizards_waltz_engine_update,
     /* Stop Engine    */ wizards_waltz_engine_stop,

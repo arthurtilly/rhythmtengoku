@@ -17,7 +17,7 @@ branch_0802df12: \n\
  \n\
 branch_0802df1a: \n\
 /* 0802df1a */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
-/* 0802df1c */ LDR R0, =D_030055d0 \n\
+/* 0802df1c */ LDR R0, =gCurrentEngineData \n\
 /* 0802df1e */ LDR R5, [R0] \n\
 /* 0802df20 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0802df22 */ ADDS R1, 0x48 @ Add 0x48 to R1 \n\

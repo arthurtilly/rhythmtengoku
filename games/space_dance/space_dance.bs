@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_space_dance, script_space_dance_entry
 
 
+
 @ Space Dance - Script Entry Point (Skipped Practice)
 
 script script_space_dance_skipped_practice_entry
@@ -108,6 +109,7 @@ struct space_dance_marking_criteria
     .word space_dance_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Space Dance - Main Script
@@ -323,7 +325,7 @@ script script_space_dance_practice
     enable_pause 1
     rest 24
     assess_inputs 0
-    run gameplay_display_skip_icon 1
+    run gameplay_display_skip_icon, 1
     run gameplay_set_tutorial scene_space_dance_skipped_practice
     print_text_f D_0805e38c
     space_dance_event07 7
@@ -368,7 +370,7 @@ script script_space_dance_practice
     call space_dance_sub_08a84928
     call space_dance_sub_08a84928
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         call space_dance_sub_08a84928
         call space_dance_sub_08a84928
     loop_end
@@ -393,7 +395,7 @@ script script_space_dance_practice
     call space_dance_sub_08a85588
     call space_dance_sub_08a85588
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         call space_dance_sub_08a85588
         call space_dance_sub_08a85588
     loop_end
@@ -418,7 +420,7 @@ script script_space_dance_practice
     call space_dance_sub_08a851f8
     call space_dance_sub_08a851f8
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         call space_dance_sub_08a851f8
         call space_dance_sub_08a851f8
     loop_end
@@ -442,7 +444,7 @@ script script_space_dance_practice
     print_text_f NULL
     space_dance_event07 8
     rest 24
-    run scene_stop_music 0
+    run scene_stop_music, 0
     rest 24
     rest 24
     goto script_space_dance_main

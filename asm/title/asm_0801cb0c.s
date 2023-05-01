@@ -19,7 +19,7 @@ thumb_func_start func_0801cb0c \n\
 /* 0801cb26 */ MOV R8, R1 @ Set R8 to R1 \n\
  \n\
 branch_0801cb28: \n\
-/* 0801cb28 */ LDR R2, =D_030046a4 \n\
+/* 0801cb28 */ LDR R2, =gCurrentSceneData \n\
 /* 0801cb2a */ LDR R4, [R2] \n\
 /* 0801cb2c */ ADD R4, R8 @ Add R8 to R4 \n\
 /* 0801cb2e */ LDR R5, =title_logo_char_data \n\
@@ -114,7 +114,7 @@ branch_0801cb28: \n\
 /* 0801cbf0 */ CMP R7, 0x4 @ Compare R7 and 0x4 \n\
 /* 0801cbf2 */ BLS branch_0801cb28 \n\
 /* 0801cbf4 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
-/* 0801cbf6 */ LDR R2, =D_030046a4 \n\
+/* 0801cbf6 */ LDR R2, =gCurrentSceneData \n\
 /* 0801cbf8 */ LDR R0, [R2] \n\
 /* 0801cbfa */ ADDS R0, 0xA0 @ Add 0xA0 to R0 \n\
 /* 0801cbfc */ STR R1, [R0] \n\

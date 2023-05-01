@@ -15,20 +15,20 @@
 
 #define END_OF_COMMON_EVENT_LIST (void *) -1
 
-typedef s32  (*EngineEvent)(s32);
+typedef void (*EngineEvent)();
 typedef void (*EngineInitFunc)(u32);
 typedef void (*EngineUpdateFunc)(void);
 typedef void (*EngineCloseFunc)();
 typedef void (*EngineInputFunc)(u32 pressed, u32 released);
 
 struct GameEngine {
-    u32 gameInfoSize; // Size of Respective GameInfo Struct (in bytes)
+    u32 gameDataSize; // Size of Respective GameData Struct (in bytes)
     EngineInitFunc initFunc;
     EngineUpdateFunc updateFunc;
     EngineCloseFunc closeFunc;
     struct CueDefinition **cueDefinitions;
-    const EngineEvent *commonFunctions;
-    const EngineEvent *engineFunctions;
+    EngineEvent *commonFunctions;
+    EngineEvent *engineFunctions;
     EngineInputFunc inputFunc;
 };
 
@@ -44,4 +44,4 @@ struct GameEngine {
  */
 
 // Game Engine Info
-extern void *D_030055d0;
+extern void *gCurrentEngineData;

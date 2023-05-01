@@ -41,12 +41,12 @@ struct GraphicsTable remix_1_prologue_gfx_table[] = {
 
 // [D_089ebcf8] Engine Events
 EngineEvent remix_1_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080466f4
+    /* 0x00 */ func_080466f4
 };
 
 // [D_089ebcfc] Prologue (Remix 1) Game Engine
 struct GameEngine remix_1_prologue_engine = {
-    /* Size in Memory */ sizeof(struct Remix1PrologueInfo),
+    /* Size in Memory */ sizeof(struct Remix1PrologueEngineData),
     /* Start Engine   */ remix_1_prologue_engine_start,
     /* Update Engine  */ remix_1_prologue_engine_update,
     /* Stop Engine    */ remix_1_prologue_engine_stop,

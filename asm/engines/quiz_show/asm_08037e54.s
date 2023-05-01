@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start quiz_cue_update \n\
+thumb_func_start quiz_show_cue_update \n\
 /* 08037e54 */ PUSH {R4, LR} \n\
 /* 08037e56 */ ADDS R4, R2, 0x0 @ Set R4 to R2 + 0x0 \n\
 /* 08037e58 */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\

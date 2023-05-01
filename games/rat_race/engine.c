@@ -169,38 +169,38 @@ struct CueDefinition *rat_race_cue_index[] = {
 
 // [D_089e67b8] Common Events
 EngineEvent rat_race_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) rat_race_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) rat_race_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) rat_race_common_init_tutorial,
+    /* BEAT_ANIMATION */ rat_race_common_beat_animation,
+    /* DISPLAY_TEXT   */ rat_race_common_display_text,
+    /* INIT_TUTORIAL  */ rat_race_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e67c8] Engine Events
 EngineEvent rat_race_engine_events[] = {
-    /* 0x00 */ (EngineEvent) rat_race_engine_event_stub,
-    /* 0x01 */ (EngineEvent) func_0803b034,
-    /* 0x02 */ (EngineEvent) func_0803a158,
-    /* 0x03 */ (EngineEvent) func_0803a1f8,
-    /* 0x04 */ (EngineEvent) func_0803a204,
-    /* 0x05 */ (EngineEvent) func_0803a798,
-    /* 0x06 */ (EngineEvent) func_0803a2a8,
-    /* 0x07 */ (EngineEvent) func_0803a350,
-    /* 0x08 */ (EngineEvent) func_0803a3b8,
-    /* 0x09 */ (EngineEvent) func_0803a1d4,
-    /* 0x0A */ (EngineEvent) func_0803a1e4,
-    /* 0x0B */ (EngineEvent) func_0803aa58,
-    /* 0x0C */ (EngineEvent) func_0803a41c,
-    /* 0x0D */ (EngineEvent) func_0803ac98,
-    /* 0x0E */ (EngineEvent) func_0803bc98,
-    /* 0x0F */ (EngineEvent) func_0803a434,
-    /* 0x10 */ (EngineEvent) func_0803ad50,
-    /* 0x11 */ (EngineEvent) func_0803a47c,
-    /* 0x12 */ (EngineEvent) func_0803a490
+    /* 0x00 */ rat_race_engine_event_stub,
+    /* 0x01 */ func_0803b034,
+    /* 0x02 */ func_0803a158,
+    /* 0x03 */ func_0803a1f8,
+    /* 0x04 */ func_0803a204,
+    /* 0x05 */ func_0803a798,
+    /* 0x06 */ func_0803a2a8,
+    /* 0x07 */ func_0803a350,
+    /* 0x08 */ func_0803a3b8,
+    /* 0x09 */ func_0803a1d4,
+    /* 0x0A */ func_0803a1e4,
+    /* 0x0B */ func_0803aa58,
+    /* 0x0C */ func_0803a41c,
+    /* 0x0D */ func_0803ac98,
+    /* 0x0E */ func_0803bc98,
+    /* 0x0F */ func_0803a434,
+    /* 0x10 */ func_0803ad50,
+    /* 0x11 */ func_0803a47c,
+    /* 0x12 */ func_0803a490
 };
 
 // [D_089e6814] Rat Race Game Engine
 struct GameEngine rat_race_engine = {
-    /* Size in Memory */ 0x120,
+    /* Size in Memory */ sizeof(struct RatRaceEngineData),
     /* Start Engine   */ rat_race_engine_start,
     /* Update Engine  */ rat_race_engine_update,
     /* Stop Engine    */ rat_race_engine_stop,

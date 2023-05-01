@@ -9,28 +9,28 @@ extern struct CueDefinition *karate_cue_index[];
 
 // [D_089df010] Common Events
 EngineEvent karate_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) karate_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) karate_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) karate_common_init_tutorial,
+    /* BEAT_ANIMATION */ karate_common_beat_animation,
+    /* DISPLAY_TEXT   */ karate_common_display_text,
+    /* INIT_TUTORIAL  */ karate_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089df020] Engine Events
 EngineEvent karate_engine_events[] = {
-    /* 0x00 */ (EngineEvent) karate_reset_bg_face,
-    /* 0x01 */ (EngineEvent) karate_start_serious_mode_next_hit,
-    /* 0x02 */ (EngineEvent) karate_stop_serious_mode_next_hit,
-    /* 0x03 */ (EngineEvent) karate_tutorial_display_text,
-    /* 0x04 */ (EngineEvent) karate_tutorial_wait_for_input,
-    /* 0x05 */ (EngineEvent) karate_enable_flow,
-    /* 0x06 */ (EngineEvent) karate_tutorial_loop_start,
-    /* 0x07 */ (EngineEvent) karate_tutorial_loop_end,
-    /* 0x08 */ (EngineEvent) karate_use_the_face
+    /* 0x00 */ karate_reset_bg_face,
+    /* 0x01 */ karate_start_serious_mode_next_hit,
+    /* 0x02 */ karate_stop_serious_mode_next_hit,
+    /* 0x03 */ karate_tutorial_display_text,
+    /* 0x04 */ karate_tutorial_wait_for_input,
+    /* 0x05 */ karate_enable_flow,
+    /* 0x06 */ karate_tutorial_loop_start,
+    /* 0x07 */ karate_tutorial_loop_end,
+    /* 0x08 */ karate_use_the_face
 };
 
 // [D_089df044] Karate Man Game Engine
 struct GameEngine karate_man_engine = {
-    /* Size in Memory */ sizeof(struct KarateManInfo),
+    /* Size in Memory */ sizeof(struct KarateManEngineData),
     /* Start Engine   */ karate_engine_start,
     /* Update Engine  */ karate_engine_update,
     /* Stop Engine    */ karate_engine_stop,

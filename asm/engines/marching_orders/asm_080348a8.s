@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start marching_cue_hit \n\
 /* 080348a8 */ PUSH {LR} \n\
-/* 080348aa */ LDR R0, =D_030055d0 \n\
+/* 080348aa */ LDR R0, =gCurrentEngineData \n\
 /* 080348ac */ LDR R2, [R0] \n\
 /* 080348ae */ ADDS R3, R2, 0x0 @ Set R3 to R2 + 0x0 \n\
 /* 080348b0 */ ADDS R3, 0x2C @ Add 0x2C to R3 \n\

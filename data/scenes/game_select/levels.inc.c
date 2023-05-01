@@ -1,62 +1,5 @@
-extern struct Scene scene_karate_man;
-extern struct Scene scene_karate_man_2;
-extern struct Scene scene_clappy_trio;
-extern struct Scene scene_snappy_trio;
-extern struct Scene scene_polyrhythm;
-extern struct Scene scene_polyrhythm_2;
-extern struct Scene scene_night_walk;
-extern struct Scene scene_night_walk_2;
-extern struct Scene scene_rhythm_tweezers;
-extern struct Scene scene_rhythm_tweezers_2;
-extern struct Scene scene_sick_beats;
-extern struct Scene scene_bouncy_road;
-extern struct Scene scene_bouncy_road_2;
-extern struct Scene scene_ninja_bodyguard;
-extern struct Scene scene_ninja_reincarnate;
-extern struct Scene scene_sneaky_spirits;
-extern struct Scene scene_sneaky_spirits_2;
-extern struct Scene scene_samurai_slice;
-extern struct Scene scene_spaceball;
-extern struct Scene scene_spaceball_2;
-extern struct Scene scene_tap_trial;
-extern struct Scene scene_tap_trial_2;
-extern struct Scene scene_marching_orders;
-extern struct Scene scene_marching_orders_2;
-extern struct Scene scene_wizards_waltz;
-extern struct Scene scene_bunny_hop;
-extern struct Scene scene_fireworks;
-extern struct Scene scene_power_calligraphy;
-extern struct Scene scene_power_calligraphy;
-extern struct Scene scene_toss_boys;
-extern struct Scene scene_toss_boys_2;
-extern struct Scene scene_rat_race;
-extern struct Scene scene_tram_pauline;
-extern struct Scene scene_showtime;
-extern struct Scene scene_space_dance;
-extern struct Scene scene_cosmic_dance;
-extern struct Scene scene_rap_men;
-extern struct Scene scene_rap_women;
-extern struct Scene scene_quiz_show;
-extern struct Scene scene_bon_odori;
-extern struct Scene scene_bon_dance;
-extern struct Scene scene_remix_1;
-extern struct Scene scene_remix_2;
-extern struct Scene scene_remix_3;
-extern struct Scene scene_remix_4;
-extern struct Scene scene_remix_5;
-extern struct Scene scene_remix_6;
-extern struct Scene scene_remix_7;
-extern struct Scene scene_remix_8;
-extern struct Scene scene_cafe;
-extern struct Scene scene_toys_menu;
-extern struct Scene scene_endless_menu;
-extern struct Scene scene_lessons_menu;
-extern struct Scene scene_staff_credit;
-extern struct Scene scene_concert_hall;
-
-
 // Level Entries Table
-struct LevelData level_data_table[TOTAL_LEVELS] = {
+struct LevelData level_data_table[] = {
     /* KARATE_MAN */ {
         /* Entry Scene   */ &scene_karate_man,
         /* Level Name    */ "カラテ家",
@@ -491,7 +434,7 @@ struct LevelData level_data_table[TOTAL_LEVELS] = {
                             "オイシイとこだけ。",
         /* Level Icon    */ 28,
         /* Level Type    */ LEVEL_TYPE_GAME,
-        /* Epilogue GFX  */ epilogue_power_calligraphy_gfx_tables,
+        /* Epilogue GFX  */ epilogue_power_power_calligraphy_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "ふ～…  アカンわ。",
             /* OK        */ "お習字を もっと楽しもう！",
@@ -913,7 +856,7 @@ struct LevelData level_data_table[TOTAL_LEVELS] = {
         }
     },
     /* LIVE_MENU */ {
-        /* Entry Scene   */ &scene_concert_hall,
+        /* Entry Scene   */ &scene_drum_live,
         /* Level Name    */ "ライブ",
         /* Level Desc.   */ "ライブに出演だ！\n"
                             "キミのリズム感は\n"
@@ -921,7 +864,7 @@ struct LevelData level_data_table[TOTAL_LEVELS] = {
                             "どうぞお気楽に～",
         /* Level Icon    */ 44,
         /* Level Type    */ LEVEL_TYPE_BONUS,
-        /* Epilogue GFX  */ epilogue_concert_hall_gfx_tables,
+        /* Epilogue GFX  */ epilogue_drum_live_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "おばちゃん「またつぎ、がんばりなよ！」",
             /* OK        */ "オーナー「キミ、なかなか スジあるヨ」",

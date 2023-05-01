@@ -7,7 +7,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gPrologueInfo ((struct PolyrhythmPrologueInfo *)D_030055d0)
+#define gPrologueEngineData ((struct PolyrhythmPrologueEngineData *)gCurrentEngineData)
 
 
   //  //  //  PROLOGUE: POLYRHYTHM  //  //  //
@@ -43,13 +43,13 @@ void func_0804646c(void) {
 
 // [func_0804649c] MAIN - Init
 void polyrhythm_prologue_engine_start(u32 ver) {
-    gPrologueInfo->ver = ver;
+    gPrologueEngineData->ver = ver;
 
     func_0804646c();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueInfo->textSprite = func_0804d160(D_03005380, anim_polyrhythm_prologue_title, 0, 112, 144, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = func_0804d160(D_03005380, anim_polyrhythm_prologue_title, 0, 112, 144, 0, 0, 0x7f, 0);
 }
 
 
@@ -70,5 +70,5 @@ void polyrhythm_prologue_engine_stop(void) {
 
 // [func_08046504] Event 0 - Set Animation Frame (Text)
 void func_08046504(u32 frame) {
-    func_0804cebc(D_03005380, gPrologueInfo->textSprite, frame);
+    func_0804cebc(D_03005380, gPrologueEngineData->textSprite, frame);
 }

@@ -12,7 +12,7 @@ thumb_func_start showtime_cue_barely \n\
 /* 0802bf94 */ BL func_0802cfa4 \n\
 /* 0802bf98 */ LDR R0, [R4, 0x4] \n\
 /* 0802bf9a */ BL func_0802d8bc \n\
-/* 0802bf9e */ LDR R5, =D_030055d0 \n\
+/* 0802bf9e */ LDR R5, =gCurrentEngineData \n\
 /* 0802bfa0 */ LDR R1, [R5] \n\
 /* 0802bfa2 */ MOVS R0, 0xB4 @ Set R0 to 0xB4 \n\
 /* 0802bfa4 */ LSLS R0, R0, 0x1 \n\

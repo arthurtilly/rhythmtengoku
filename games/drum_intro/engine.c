@@ -431,36 +431,36 @@ struct CueDefinition *drum_intro_cue_index[] = {
 
 // [D_089e0324] Common Events
 EngineEvent drum_intro_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) drum_intro_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) drum_intro_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) gameplay_set_tutorial,
+    /* BEAT_ANIMATION */ drum_intro_common_beat_animation,
+    /* DISPLAY_TEXT   */ drum_intro_common_display_text,
+    /* INIT_TUTORIAL  */ gameplay_set_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e0334] Engine Events
 EngineEvent drum_intro_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_0802497c,
-    /* 0x01 */ (EngineEvent) func_080249c0,
-    /* 0x02 */ (EngineEvent) func_08024a4c,
-    /* 0x03 */ (EngineEvent) func_08024ae4,
-    /* 0x04 */ (EngineEvent) func_08024ba0,
-    /* 0x05 */ (EngineEvent) func_08024ef4,
-    /* 0x06 */ (EngineEvent) func_08024f64,
-    /* 0x07 */ (EngineEvent) func_08024be8,
-    /* 0x08 */ (EngineEvent) func_080239a0,
-    /* 0x09 */ (EngineEvent) func_080239bc,
-    /* 0x0A */ (EngineEvent) func_08023c58,
-    /* 0x0B */ (EngineEvent) func_08023bb8,
-    /* 0x0C */ (EngineEvent) func_08023bcc,
-    /* 0x0D */ (EngineEvent) func_08023bf4,
-    /* 0x0E */ (EngineEvent) func_08023c0c,
-    /* 0x0F */ (EngineEvent) func_08023c44,
-    /* 0x10 */ (EngineEvent) drum_intro_engine_event_stub
+    /* 0x00 */ func_0802497c,
+    /* 0x01 */ func_080249c0,
+    /* 0x02 */ func_08024a4c,
+    /* 0x03 */ func_08024ae4,
+    /* 0x04 */ func_08024ba0,
+    /* 0x05 */ func_08024ef4,
+    /* 0x06 */ func_08024f64,
+    /* 0x07 */ func_08024be8,
+    /* 0x08 */ func_080239a0,
+    /* 0x09 */ func_080239bc,
+    /* 0x0A */ func_08023c58,
+    /* 0x0B */ func_08023bb8,
+    /* 0x0C */ func_08023bcc,
+    /* 0x0D */ func_08023bf4,
+    /* 0x0E */ func_08023c0c,
+    /* 0x0F */ func_08023c44,
+    /* 0x10 */ drum_intro_engine_event_stub
 };
 
 // [D_089e0378] Drum Intro Game Engine
 struct GameEngine drum_intro_engine = {
-    /* Size in Memory */ 0x3b4,
+    /* Size in Memory */ sizeof(struct DrumIntroEngineData),
     /* Start Engine   */ drum_intro_engine_start,
     /* Update Engine  */ drum_intro_engine_update,
     /* Stop Engine    */ drum_intro_engine_stop,

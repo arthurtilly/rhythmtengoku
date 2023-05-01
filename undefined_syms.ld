@@ -102,7 +102,7 @@ interrupt_handler = 0x030044a0;
 
 /* Main Game State */
 D_030046a0 = 0x030046a0;
-D_030046a4 = 0x030046a4;
+gCurrentSceneData = 0x030046a4;
 D_030046a8 = 0x030046a8;
 
 /* Internal Library */
@@ -138,7 +138,7 @@ D_0300558c = 0x0300558c;
 /* Rhythm Tengoku Global */
 D_03005590 = 0x03005590;
 D_030055a0 = 0x030055a0;
-D_030055d0 = 0x030055d0;
+gCurrentEngineData = 0x030055d0;
 D_030055d4 = 0x030055d4;
 sMainMenuButton = 0x030055d8;
 gPauseMenu = 0x030055e0;

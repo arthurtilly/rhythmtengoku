@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct EpilogueSceneInfo {
+struct EpilogueSceneData {
     /* add fields here */
 };
 

@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_08044014 \n\
 /* 08044014 */ PUSH {R4, LR} \n\
 /* 08044016 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
-/* 08044018 */ LDR R0, =D_030055d0 \n\
+/* 08044018 */ LDR R0, =gCurrentEngineData \n\
 /* 0804401a */ LDR R0, [R0] \n\
 /* 0804401c */ MOVS R2, 0xD6 @ Set R2 to 0xD6 \n\
 /* 0804401e */ LSLS R2, R2, 0x2 \n\
@@ -35,7 +35,7 @@ branch_0804403a: \n\
 /* 0804404e */ LDR R1, [R0] \n\
 /* 08044050 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08044052 */ BL play_sound_in_player \n\
-/* 08044056 */ LDR R1, =D_030055d0 \n\
+/* 08044056 */ LDR R1, =gCurrentEngineData \n\
 /* 08044058 */ LDR R1, [R1] \n\
 /* 0804405a */ MOVS R2, 0xDF @ Set R2 to 0xDF \n\
 /* 0804405c */ LSLS R2, R2, 0x2 \n\

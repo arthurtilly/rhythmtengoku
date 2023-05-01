@@ -47,10 +47,10 @@
     sick_beats_event EVENT_00, \args
 .endm
 
-@ [Event 0x01] Set Virus Position
+@ [Event 0x01] Spawn Virus
 .macro sick_beats_spawn_virus position
     sick_beats_event SPAWN_VIRUS, \position
-.endm
+.endm 
 
 @ [Event 0x02] Set Virus Hits Needed
 .macro sick_beats_set_hits_needed hits
@@ -60,6 +60,24 @@
 @ [Event 0x03] Set Virus Palette
 .macro sick_beats_set_virus_palette palette
     sick_beats_event SET_VIRUS_PALETTE, \palette
+.endm
+
+.macro sick_beats_spawn_1_hit_virus position
+    sick_beats_set_hits_needed 1
+    sick_beats_set_virus_palette 0
+    sick_beats_spawn_virus \position
+.endm
+
+.macro sick_beats_spawn_2_hit_virus position
+    sick_beats_set_hits_needed 2
+    sick_beats_set_virus_palette 8
+    sick_beats_spawn_virus \position
+.endm
+
+.macro sick_beats_spawn_3_hit_virus position
+    sick_beats_set_hits_needed 3
+    sick_beats_set_virus_palette 9
+    sick_beats_spawn_virus \position
 .endm
 
 @ [Event 0x04] ?

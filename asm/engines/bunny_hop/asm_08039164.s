@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_08039164 \n\
 /* 08039164 */ PUSH {R4-R7, LR} \n\
 /* 08039166 */ SUB SP, 0xC \n\
-/* 08039168 */ LDR R0, =D_030055d0 \n\
+/* 08039168 */ LDR R0, =gCurrentEngineData \n\
 /* 0803916a */ LDR R0, [R0] \n\
 /* 0803916c */ ADDS R6, R0, 0x4 @ Set R6 to R0 + 0x4 \n\
 /* 0803916e */ BL func_0800c398 \n\
@@ -98,7 +98,7 @@ branch_08039208: \n\
 /* 08039210 */ ASRS R0, R1, 0x8 \n\
 /* 08039212 */ CMP R0, 0x50 @ Compare R0 and 0x50 \n\
 /* 08039214 */ BGT branch_080392bc \n\
-/* 08039216 */ LDR R0, =D_030055d0 \n\
+/* 08039216 */ LDR R0, =gCurrentEngineData \n\
 /* 08039218 */ LDR R0, [R0] \n\
 /* 0803921a */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803921c */ ADDS R2, 0xE0 @ Add 0xE0 to R2 \n\
@@ -168,7 +168,7 @@ branch_08039208: \n\
 .ltorg \n\
  \n\
 branch_080392bc: \n\
-/* 080392bc */ LDR R0, =D_030055d0 \n\
+/* 080392bc */ LDR R0, =gCurrentEngineData \n\
 /* 080392be */ LDR R0, [R0] \n\
 /* 080392c0 */ ADDS R0, 0xE0 @ Add 0xE0 to R0 \n\
 /* 080392c2 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
@@ -198,7 +198,7 @@ branch_080392c6: \n\
 /* 080392f2 */ ASRS R4, R4, 0x10 \n\
 /* 080392f4 */ MOVS R0, 0x20 @ Set R0 to 0x20 \n\
 /* 080392f6 */ BL agb_random \n\
-/* 080392fa */ LDR R1, =D_030055d0 \n\
+/* 080392fa */ LDR R1, =gCurrentEngineData \n\
 /* 080392fc */ LDR R2, [R1] \n\
 /* 080392fe */ ADDS R2, 0xE0 @ Add 0xE0 to R2 \n\
 /* 08039300 */ LDR R1, [R6, 0x8] \n\
