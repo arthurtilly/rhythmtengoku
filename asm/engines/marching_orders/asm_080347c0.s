@@ -9,7 +9,7 @@ thumb_func_start func_080347c0 \n\
 /* 080347c6 */ BGE branch_080347e8 \n\
 /* 080347c8 */ LDR R0, =D_03005380 \n\
 /* 080347ca */ LDR R0, [R0] \n\
-/* 080347cc */ LDR R1, =D_030055d0 \n\
+/* 080347cc */ LDR R1, =gCurrentEngineData \n\
 /* 080347ce */ LDR R1, [R1] \n\
 /* 080347d0 */ ADDS R1, 0x42 @ Add 0x42 to R1 \n\
 /* 080347d2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
@@ -23,7 +23,7 @@ thumb_func_start func_080347c0 \n\
 branch_080347e8: \n\
 /* 080347e8 */ LDR R5, =D_03005380 \n\
 /* 080347ea */ LDR R0, [R5] \n\
-/* 080347ec */ LDR R4, =D_030055d0 \n\
+/* 080347ec */ LDR R4, =gCurrentEngineData \n\
 /* 080347ee */ LDR R1, [R4] \n\
 /* 080347f0 */ ADDS R1, 0x42 @ Add 0x42 to R1 \n\
 /* 080347f2 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\

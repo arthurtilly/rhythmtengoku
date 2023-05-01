@@ -6,7 +6,7 @@ thumb_func_start func_08038ce0 \n\
 /* 08038ce0 */ PUSH {R4-R6, LR} \n\
 /* 08038ce2 */ LSLS R0, R0, 0x10 \n\
 /* 08038ce4 */ LSRS R6, R0, 0x10 \n\
-/* 08038ce6 */ LDR R0, =D_030055d0 \n\
+/* 08038ce6 */ LDR R0, =gCurrentEngineData \n\
 /* 08038ce8 */ LDR R0, [R0] \n\
 /* 08038cea */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08038cec */ ADDS R4, 0x20 @ Add 0x20 to R4 \n\

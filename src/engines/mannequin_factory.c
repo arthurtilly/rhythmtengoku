@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gMannequinFactoryInfo ((struct MannequinFactoryInfo *)D_030055d0)
+#define gMannequinFactory ((struct MannequinFactoryEngineData *)gCurrentEngineData)
 
 
 /* MANNEQUIN FACTORY */

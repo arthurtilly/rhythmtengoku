@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_0803aa9c \n\
 /* 0803aa9c */ PUSH {R4-R6, LR} \n\
 /* 0803aa9e */ SUB SP, 0xC \n\
-/* 0803aaa0 */ LDR R5, =D_030055d0 \n\
+/* 0803aaa0 */ LDR R5, =gCurrentEngineData \n\
 /* 0803aaa2 */ LDR R0, [R5] \n\
 /* 0803aaa4 */ LDR R1, [R0, 0x30] \n\
 /* 0803aaa6 */ LDR R4, =0xffff8800 \n\
@@ -77,7 +77,7 @@ branch_0803ab00: \n\
 /* 0803ab2c */ LSRS R4, R0, 0x18 \n\
 /* 0803ab2e */ CMP R4, 0x2 @ Compare R4 and 0x2 \n\
 /* 0803ab30 */ BLS branch_0803ab00 \n\
-/* 0803ab32 */ LDR R0, =D_030055d0 \n\
+/* 0803ab32 */ LDR R0, =gCurrentEngineData \n\
 /* 0803ab34 */ LDR R1, [R0] \n\
 /* 0803ab36 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803ab38 */ STRB R0, [R1, 0x1C] \n\
@@ -85,7 +85,7 @@ branch_0803ab00: \n\
 /* 0803ab3c */ BL play_sound \n\
  \n\
 branch_0803ab40: \n\
-/* 0803ab40 */ LDR R4, =D_030055d0 \n\
+/* 0803ab40 */ LDR R4, =gCurrentEngineData \n\
 /* 0803ab42 */ LDR R0, [R4] \n\
 /* 0803ab44 */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803ab46 */ ADDS R2, 0xD4 @ Add 0xD4 to R2 \n\

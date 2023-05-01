@@ -6,8 +6,8 @@
 #include "games/samurai_slice/graphics/samurai_slice_graphics.h"
 
 // Engine Types:
-struct SamuraiSliceInfo {
-    /* add fields here */
+struct SamuraiSliceEngineData {
+    u8 pad[0x1e4];
 };
 
 struct SamuraiSliceCue {

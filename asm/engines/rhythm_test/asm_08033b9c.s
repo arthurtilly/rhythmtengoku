@@ -8,7 +8,7 @@ thumb_func_start func_08033b9c \n\
 /* 08033ba0 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 08033ba2 */ BL scene_set_bg_layer_priority \n\
 /* 08033ba6 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
-/* 08033ba8 */ LDR R1, =D_030055d0 \n\
+/* 08033ba8 */ LDR R1, =gCurrentEngineData \n\
 /* 08033baa */ LDR R0, [R1] \n\
 /* 08033bac */ LDRH R0, [R0, 0xC] \n\
 /* 08033bae */ SUBS R0, 0x1 @ Subtract 0x1 from R0 \n\
@@ -46,7 +46,7 @@ branch_08033bb8: \n\
 branch_08033bec: \n\
 /* 08033bec */ LDR R0, =D_03005380 \n\
 /* 08033bee */ LDR R0, [R0] \n\
-/* 08033bf0 */ LDR R4, =D_030055d0 \n\
+/* 08033bf0 */ LDR R4, =gCurrentEngineData \n\
 /* 08033bf2 */ LDR R1, [R4] \n\
 /* 08033bf4 */ LSLS R2, R5, 0x1 \n\
 /* 08033bf6 */ ADDS R1, 0xE @ Add 0xE to R1 \n\

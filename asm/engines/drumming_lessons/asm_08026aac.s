@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start drum_live_engine_update \n\
 /* 08026aac */ PUSH {R4, R5, LR} \n\
-/* 08026aae */ LDR R4, =D_030055d0 \n\
+/* 08026aae */ LDR R4, =gCurrentEngineData \n\
 /* 08026ab0 */ LDR R0, [R4] \n\
 /* 08026ab2 */ LDR R5, =0x000013a8 \n\
 /* 08026ab4 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\

@@ -21,7 +21,7 @@ thumb_func_start func_0801e1f0 \n\
 /* 0801e214 */ STR R2, [SP] \n\
 /* 0801e216 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801e218 */ BL create_new_bmp_font_bg \n\
-/* 0801e21c */ LDR R5, =D_030046a4 \n\
+/* 0801e21c */ LDR R5, =gCurrentSceneData \n\
 /* 0801e21e */ LDR R1, [R5] \n\
 /* 0801e220 */ STR R0, [R1] \n\
 /* 0801e222 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
@@ -149,7 +149,7 @@ branch_0801e318: \n\
 /* 0801e31c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0801e31e */ LDRSB R1, [R6, R1] \n\
 /* 0801e320 */ BL func_0801e4f4 \n\
-/* 0801e324 */ LDR R0, =D_030046a4 \n\
+/* 0801e324 */ LDR R0, =gCurrentSceneData \n\
 /* 0801e326 */ LDR R1, [R0] \n\
 /* 0801e328 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801e32a */ STR R0, [R1, 0x8] \n\

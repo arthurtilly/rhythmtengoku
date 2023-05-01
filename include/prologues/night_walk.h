@@ -10,7 +10,7 @@
 
 
 // Types:
-struct NightWalkPrologueInfo {
+struct NightWalkPrologueEngineData {
     u8  ver;            // Value:  Version
     s16 textSprite;     // Sprite: Text
     s16 playYanSprite;  // Sprite: Play-yan

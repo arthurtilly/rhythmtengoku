@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_08025a64 \n\
 /* 08025a64 */ PUSH {R4-R7, LR} \n\
 /* 08025a66 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08025a68 */ LDR R7, =D_030055d0 \n\
+/* 08025a68 */ LDR R7, =gCurrentEngineData \n\
 /* 08025a6a */ MOVS R6, 0x9F @ Set R6 to 0x9F \n\
 /* 08025a6c */ LSLS R6, R6, 0x5 \n\
 /* 08025a6e */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\

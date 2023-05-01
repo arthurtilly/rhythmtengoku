@@ -9,7 +9,7 @@ thumb_func_start func_0803a678 \n\
 /* 0803a67e */ MOV R4, R8 @ Set R4 to R8 \n\
 /* 0803a680 */ PUSH {R4-R6} \n\
 /* 0803a682 */ SUB SP, 0x18 \n\
-/* 0803a684 */ LDR R6, =D_030055d0 \n\
+/* 0803a684 */ LDR R6, =gCurrentEngineData \n\
 /* 0803a686 */ LDR R0, [R6] \n\
 /* 0803a688 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 0803a68a */ ADDS R1, 0x80 @ Add 0x80 to R1 \n\

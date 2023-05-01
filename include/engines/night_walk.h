@@ -59,7 +59,7 @@ struct DrumTechController {
     struct Animation *useHiHatPedalAnim;
 };
 
-struct NightWalkInfo {
+struct NightWalkEngineData {
     u8 version;
     u32 stoppedScrolling:1;
     u32 nextBridgeType:3;

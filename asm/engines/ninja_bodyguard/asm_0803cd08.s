@@ -3,7 +3,7 @@ asm(".syntax unified \n\
 .balign 4, 0 \n\
 \n\
 thumb_func_start ninja_bodyguard_cue_spawn \n\
-/* 0803cd08 */ LDR R0, =D_030055d0 \n\
+/* 0803cd08 */ LDR R0, =gCurrentEngineData \n\
 /* 0803cd0a */ LDR R0, [R0] \n\
 /* 0803cd0c */ MOVS R2, 0xBC @ Set R2 to 0xBC \n\
 /* 0803cd0e */ LSLS R2, R2, 0x2 \n\

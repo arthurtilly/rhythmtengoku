@@ -20,7 +20,7 @@ thumb_func_start samurai_slice_cue_update \n\
 branch_080311f0: \n\
 /* 080311f0 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080311f2 */ MOV R9, R0 @ Set R9 to R0 \n\
-/* 080311f4 */ LDR R7, =D_030055d0 \n\
+/* 080311f4 */ LDR R7, =gCurrentEngineData \n\
 /* 080311f6 */ LDR R0, [R7] \n\
 /* 080311f8 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 080311fa */ ADDS R4, 0x10 @ Add 0x10 to R4 \n\

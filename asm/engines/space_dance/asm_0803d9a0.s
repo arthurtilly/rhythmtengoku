@@ -10,7 +10,7 @@ thumb_func_start space_dance_common_display_text \n\
 /* 0803d9a8 */ BNE branch_0803d9c8 \n\
 /* 0803d9aa */ LDR R0, =D_03005380 \n\
 /* 0803d9ac */ LDR R0, [R0] \n\
-/* 0803d9ae */ LDR R1, =D_030055d0 \n\
+/* 0803d9ae */ LDR R1, =gCurrentEngineData \n\
 /* 0803d9b0 */ LDR R1, [R1] \n\
 /* 0803d9b2 */ MOVS R2, 0x1E @ Set R2 to 0x1E \n\
 /* 0803d9b4 */ LDRSH R1, [R1, R2] \n\
@@ -21,7 +21,7 @@ thumb_func_start space_dance_common_display_text \n\
 .ltorg \n\
  \n\
 branch_0803d9c8: \n\
-/* 0803d9c8 */ LDR R4, =D_030055d0 \n\
+/* 0803d9c8 */ LDR R4, =gCurrentEngineData \n\
 /* 0803d9ca */ LDR R1, [R4] \n\
 /* 0803d9cc */ LDR R0, [R1] \n\
 /* 0803d9ce */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\

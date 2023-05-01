@@ -113,7 +113,7 @@ struct ReadingMaterial reading_material_table[] = {
         /* ---------------------------------------------------------------- */
     },
 
-    /* HORSE_MACHINE ("Horse Machine's Story") */ {
+    /* MECHANICAL_HORSE ("Mechanical Horse's Story") */ {
         /* TITLE ---------------------------------------------------------- */
             "うまマシーン開発秘話",
         /* BODY ----------------------------------------------------------- */

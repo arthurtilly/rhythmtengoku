@@ -41,12 +41,12 @@ struct GraphicsTable fireworks_prologue_gfx_table[] = {
 
 // [D_089eaed0] Engine Events
 EngineEvent fireworks_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08045dbc
+    /* 0x00 */ func_08045dbc
 };
 
 // [D_089eaed4] Prologue (Fireworks) Game Engine
 struct GameEngine fireworks_prologue_engine = {
-    /* Size in Memory */ sizeof(struct FireworksPrologueInfo),
+    /* Size in Memory */ sizeof(struct FireworksPrologueEngineData),
     /* Start Engine   */ fireworks_prologue_engine_start,
     /* Update Engine  */ fireworks_prologue_engine_update,
     /* Stop Engine    */ fireworks_prologue_engine_stop,

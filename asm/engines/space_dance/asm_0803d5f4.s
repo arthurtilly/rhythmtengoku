@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start space_dance_cue_hit \n\
 /* 0803d5f4 */ PUSH {R4, R5, LR} \n\
 /* 0803d5f6 */ SUB SP, 0xC \n\
-/* 0803d5f8 */ LDR R5, =D_030055d0 \n\
+/* 0803d5f8 */ LDR R5, =gCurrentEngineData \n\
 /* 0803d5fa */ LDR R0, [R5] \n\
 /* 0803d5fc */ LDRH R4, [R0, 0xC] \n\
 /* 0803d5fe */ LDR R2, =space_dance_cue_anim_map \n\

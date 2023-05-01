@@ -185,7 +185,7 @@ branch_0801ecf8: \n\
 /* 0801ed02 */ BEQ branch_0801ed12 \n\
 /* 0801ed04 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801ed06 */ BL set_pause_beatscript_scene \n\
-/* 0801ed0a */ LDR R0, =D_030046a4 \n\
+/* 0801ed0a */ LDR R0, =gCurrentSceneData \n\
 /* 0801ed0c */ LDR R1, [R0] \n\
 /* 0801ed0e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801ed10 */ STR R0, [R1, 0x8] \n\

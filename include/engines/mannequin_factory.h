@@ -6,7 +6,8 @@
 #include "games/mannequin_factory/graphics/mannequin_factory_graphics.h"
 
 // Engine Types:
-struct MannequinFactoryInfo {
+struct MannequinFactoryEngineData {
+    u8 pad[0x434];
 };
 
 struct MannequinFactoryCue {

@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_088b0720] Palette
-Palette prologue_calligraphy_pal[] = {
+Palette power_calligraphy_prologue_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF8F8F8),
         /* 01 */ TO_RGB555(0x000000),

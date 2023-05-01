@@ -243,27 +243,27 @@ struct CueDefinition *mannequin_cue_index[] = {
 
 // [D_089df5c8] Common Events
 EngineEvent mannequin_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) mannequin_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) mannequin_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) mannequin_common_init_tutorial,
+    /* BEAT_ANIMATION */ mannequin_common_beat_animation,
+    /* DISPLAY_TEXT   */ mannequin_common_display_text,
+    /* INIT_TUTORIAL  */ mannequin_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089df5d8] Engine Events
 EngineEvent mannequin_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080226d4,
-    /* 0x01 */ (EngineEvent) func_080229bc,
-    /* 0x02 */ (EngineEvent) func_08022f00,
-    /* 0x03 */ (EngineEvent) func_08022f1c,
-    /* 0x04 */ (EngineEvent) func_08023150,
-    /* 0x05 */ (EngineEvent) func_08023164,
-    /* 0x06 */ (EngineEvent) func_08022ba0,
-    /* 0x07 */ (EngineEvent) mannequin_engine_event_stub
+    /* 0x00 */ func_080226d4,
+    /* 0x01 */ func_080229bc,
+    /* 0x02 */ func_08022f00,
+    /* 0x03 */ func_08022f1c,
+    /* 0x04 */ func_08023150,
+    /* 0x05 */ func_08023164,
+    /* 0x06 */ func_08022ba0,
+    /* 0x07 */ mannequin_engine_event_stub
 };
 
 // [D_089df5f8] Mannequin Factory Game Engine
 struct GameEngine mannequin_factory_engine = {
-    /* Size in Memory */ 0x434,
+    /* Size in Memory */ sizeof(struct MannequinFactoryEngineData),
     /* Start Engine   */ mannequin_engine_start,
     /* Update Engine  */ mannequin_engine_update,
     /* Stop Engine    */ mannequin_engine_stop,

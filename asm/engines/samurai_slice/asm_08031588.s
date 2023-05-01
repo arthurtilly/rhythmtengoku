@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start samurai_slice_cue_barely \n\
 /* 08031588 */ PUSH {R4-R6, LR} \n\
-/* 0803158a */ LDR R0, =D_030055d0 \n\
+/* 0803158a */ LDR R0, =gCurrentEngineData \n\
 /* 0803158c */ LDR R2, [R0] \n\
 /* 0803158e */ ADDS R6, R2, 0x0 @ Set R6 to R2 + 0x0 \n\
 /* 08031590 */ ADDS R6, 0x10 @ Add 0x10 to R6 \n\
@@ -141,7 +141,7 @@ branch_0803168a: \n\
 /* 080316a2 */ LDRSH R1, [R6, R3] \n\
 /* 080316a4 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 080316a6 */ BL func_0804d770 \n\
-/* 080316aa */ LDR R1, =D_030055d0 \n\
+/* 080316aa */ LDR R1, =gCurrentEngineData \n\
 /* 080316ac */ LDR R0, [R1] \n\
 /* 080316ae */ ADDS R0, 0x78 @ Add 0x78 to R0 \n\
 /* 080316b0 */ STRB R5, [R0] \n\

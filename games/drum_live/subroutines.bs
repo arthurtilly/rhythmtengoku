@@ -1,0 +1,1012 @@
+.include "include/beatscript.inc"
+.include "games/drum_live/macros.inc"
+
+load_drum_live_labels
+
+
+
+.section .script.sub
+@ Drum LIVE - Subroutines
+
+script drum_live_sub_08a7a278
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7a368
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+return
+
+
+script drum_live_sub_08a7a440
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    dml_event05 0
+    spawn_cue CUE_LIVE_01
+    dml_event05 0
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7a560
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    dml_event00 11
+    dml_event05 0
+    spawn_cue CUE_LIVE_01
+    dml_event05 0
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7a698
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    dml_event00 7
+    dml_event05 0
+    spawn_cue CUE_LIVE_01
+    dml_event05 0
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7a7d0
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 6
+    dml_event05 3
+    spawn_cue CUE_LIVE_02
+    rest 6
+    dml_event05 1
+    spawn_cue CUE_LIVE_01
+    dml_event05 1
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7a950
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 6
+    dml_event05 3
+    spawn_cue CUE_LIVE_02
+    rest 6
+    dml_event00 11
+    dml_event05 1
+    spawn_cue CUE_LIVE_01
+    dml_event05 1
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7aae8
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 6
+    dml_event05 3
+    spawn_cue CUE_LIVE_02
+    rest 6
+    dml_event00 7
+    dml_event05 1
+    spawn_cue CUE_LIVE_01
+    dml_event05 1
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7ac80
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 0
+    spawn_cue CUE_LIVE_00
+    dml_event05 0
+    spawn_cue CUE_LIVE_00
+    dml_event05 0
+    spawn_cue CUE_LIVE_00
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7adb8
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 2
+    spawn_cue CUE_LIVE_00
+    dml_event05 2
+    spawn_cue CUE_LIVE_00
+    dml_event05 2
+    spawn_cue CUE_LIVE_00
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7aef0
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7b028
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7b190
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7b2b0
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 6
+    dml_event05 3
+    spawn_cue CUE_LIVE_02
+    rest 6
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 6
+    dml_event05 3
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7b448
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    spawn_cue CUE_LIVE_01
+    rest 6
+    dml_event05 3
+    spawn_cue CUE_LIVE_02
+    dml_event05 3
+    spawn_cue CUE_LIVE_02
+    dml_event05 3
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+    spawn_cue CUE_LIVE_00
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 6
+    spawn_cue CUE_LIVE_02
+    rest 6
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7b6ac
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 8
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7b7a8
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_02
+    rest 8
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7b880
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_02
+    rest 8
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+return
+
+
+script drum_live_sub_08a7b940
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_02
+    rest 8
+    dml_event05 0
+    spawn_cue CUE_LIVE_01
+    dml_event05 0
+    spawn_cue CUE_LIVE_01
+    rest 8
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7ba48
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_02
+    rest 8
+    dml_event05 1
+    spawn_cue CUE_LIVE_01
+    dml_event05 1
+    spawn_cue CUE_LIVE_01
+    rest 8
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7bbb0
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 0
+    spawn_cue CUE_LIVE_00
+    dml_event05 0
+    spawn_cue CUE_LIVE_00
+    dml_event05 0
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_02
+    rest 8
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7bcd0
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 2
+    spawn_cue CUE_LIVE_00
+    dml_event05 2
+    spawn_cue CUE_LIVE_00
+    dml_event05 2
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_02
+    rest 8
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7bdf0
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_02
+    rest 8
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7bf10
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_02
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 8
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7c060
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_02
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 8
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7c168
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_02
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 8
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7c2d0
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7c3c0
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+return
+
+
+@ Unused?
+script drum_live_sub_08a7c498
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    dml_event05 0
+    spawn_cue CUE_LIVE_01
+    dml_event05 0
+    spawn_cue CUE_LIVE_01
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7c5b8
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 4
+    dml_event05 1
+    spawn_cue CUE_LIVE_01
+    dml_event05 1
+    spawn_cue CUE_LIVE_01
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7c738
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 0
+    spawn_cue CUE_LIVE_00
+    dml_event05 0
+    spawn_cue CUE_LIVE_00
+    dml_event05 0
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7c870
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 2
+    spawn_cue CUE_LIVE_00
+    dml_event05 2
+    spawn_cue CUE_LIVE_00
+    dml_event05 2
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7c9a8
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7cae0
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7cc48
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7cd68
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 4
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7cf00
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 4
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7d068
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 4
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+return
+
+
+script drum_live_sub_08a7d1b8
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 4
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+return
+
+
+@ Unused?
+script drum_live_sub_08a7d2f0
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    spawn_cue CUE_LIVE_01
+    spawn_cue CUE_LIVE_01
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7d440
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    spawn_cue CUE_LIVE_01
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+    spawn_cue CUE_LIVE_00
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 8
+    spawn_cue CUE_LIVE_01
+    rest 4
+    beat_anim
+    rest 0
+return
+
+
+@ Unused?
+script drum_live_sub_08a7d6a4
+    dml_event02 0
+    dml_event03 0xA300
+    dml_event03 0xA301
+    dml_event05 3
+    spawn_cue CUE_LIVE_00
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 8
+    dml_event05 3
+    spawn_cue CUE_LIVE_01
+    rest 8
+    beat_anim
+    rest 0
+return
+
+.end

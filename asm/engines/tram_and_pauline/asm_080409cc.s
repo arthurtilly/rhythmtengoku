@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start tram_pauline_engine_update \n\
 /* 080409cc */ PUSH {R4, LR} \n\
 /* 080409ce */ BL func_08040718 \n\
-/* 080409d2 */ LDR R4, =D_030055d0 \n\
+/* 080409d2 */ LDR R4, =gCurrentEngineData \n\
 /* 080409d4 */ LDR R1, [R4] \n\
 /* 080409d6 */ LDRB R0, [R1] \n\
 /* 080409d8 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\

@@ -9,7 +9,7 @@ thumb_func_start func_0803b37c \n\
 /* 0803b382 */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 0803b384 */ PUSH {R5-R7} \n\
 /* 0803b386 */ SUB SP, 0x10 \n\
-/* 0803b388 */ LDR R0, =D_030055d0 \n\
+/* 0803b388 */ LDR R0, =gCurrentEngineData \n\
 /* 0803b38a */ LDR R0, [R0] \n\
 /* 0803b38c */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 0803b38e */ ADDS R7, 0x3C @ Add 0x3C to R7 \n\
@@ -80,7 +80,7 @@ jump_0803b418: \n\
 /* 0803b41a */ BL func_0803b258 \n\
 /* 0803b41e */ B branch_0803b56e \n\
 jump_0803b420: \n\
-/* 0803b420 */ LDR R0, =D_030055d0 \n\
+/* 0803b420 */ LDR R0, =gCurrentEngineData \n\
 /* 0803b422 */ LDR R2, [R0] \n\
 /* 0803b424 */ ADDS R1, R2, 0x0 @ Set R1 to R2 + 0x0 \n\
 /* 0803b426 */ ADDS R1, 0xD2 @ Add 0xD2 to R1 \n\
@@ -113,7 +113,7 @@ branch_0803b464: \n\
 /* 0803b464 */ LDR R1, [R7, 0x8] \n\
 /* 0803b466 */ ASRS R1, R1, 0x8 \n\
 /* 0803b468 */ ADDS R1, 0x28 @ Add 0x28 to R1 \n\
-/* 0803b46a */ LDR R3, =D_030055d0 \n\
+/* 0803b46a */ LDR R3, =gCurrentEngineData \n\
 /* 0803b46c */ MOV R10, R3 @ Set R10 to R3 \n\
 /* 0803b46e */ LDR R0, [R3] \n\
 /* 0803b470 */ LDR R0, [R0, 0x64] \n\
@@ -182,14 +182,14 @@ branch_0803b47c: \n\
 /* 0803b4f2 */ STRB R0, [R1] \n\
  \n\
 branch_0803b4f4: \n\
-/* 0803b4f4 */ LDR R1, =D_030055d0 \n\
+/* 0803b4f4 */ LDR R1, =gCurrentEngineData \n\
 /* 0803b4f6 */ LDR R0, [R1] \n\
 /* 0803b4f8 */ ADDS R0, 0x60 @ Add 0x60 to R0 \n\
 /* 0803b4fa */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
 /* 0803b4fc */ STRB R1, [R0] \n\
 /* 0803b4fe */ LDR R0, =s_rat_crush_L_seqData \n\
 /* 0803b500 */ BL play_sound \n\
-/* 0803b504 */ LDR R2, =D_030055d0 \n\
+/* 0803b504 */ LDR R2, =gCurrentEngineData \n\
 /* 0803b506 */ LDR R0, [R2] \n\
 /* 0803b508 */ MOVS R3, 0x8F @ Set R3 to 0x8F \n\
 /* 0803b50a */ LSLS R3, R3, 0x1 \n\
@@ -205,7 +205,7 @@ branch_0803b4f4: \n\
 \n\
 .ltorg \n\
 jump_0803b538: \n\
-/* 0803b538 */ LDR R0, =D_030055d0 \n\
+/* 0803b538 */ LDR R0, =gCurrentEngineData \n\
 /* 0803b53a */ LDR R0, [R0] \n\
 /* 0803b53c */ ADDS R0, 0xD2 @ Add 0xD2 to R0 \n\
 /* 0803b53e */ LDRB R5, [R0] \n\
@@ -300,7 +300,7 @@ jump_0803b5fc: \n\
 /* 0803b60a */ LDRB R0, [R7, 0x5] \n\
 /* 0803b60c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803b60e */ BNE branch_0803b61c \n\
-/* 0803b610 */ LDR R0, =D_030055d0 \n\
+/* 0803b610 */ LDR R0, =gCurrentEngineData \n\
 /* 0803b612 */ LDR R1, [R0] \n\
 /* 0803b614 */ STR R2, [R1, 0x30] \n\
 /* 0803b616 */ LDR R0, [R1, 0x34] \n\
@@ -320,7 +320,7 @@ branch_0803b61c: \n\
 /* 0803b630 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803b632 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0803b634 */ BL func_0804d614 \n\
-/* 0803b638 */ LDR R0, =D_030055d0 \n\
+/* 0803b638 */ LDR R0, =gCurrentEngineData \n\
 /* 0803b63a */ LDR R1, [R0] \n\
 /* 0803b63c */ LDR R0, [R1, 0x28] \n\
 /* 0803b63e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
@@ -366,7 +366,7 @@ jump_0803b67c: \n\
 /* 0803b69a */ LDRB R0, [R7, 0x5] \n\
 /* 0803b69c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803b69e */ BNE branch_0803b6ac \n\
-/* 0803b6a0 */ LDR R0, =D_030055d0 \n\
+/* 0803b6a0 */ LDR R0, =gCurrentEngineData \n\
 /* 0803b6a2 */ LDR R1, [R0] \n\
 /* 0803b6a4 */ STR R2, [R1, 0x30] \n\
 /* 0803b6a6 */ LDR R0, [R1, 0x34] \n\
@@ -393,7 +393,7 @@ jump_0803b6c0: \n\
 /* 0803b6d4 */ LDRB R0, [R7, 0x5] \n\
 /* 0803b6d6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803b6d8 */ BNE branch_0803b6e6 \n\
-/* 0803b6da */ LDR R0, =D_030055d0 \n\
+/* 0803b6da */ LDR R0, =gCurrentEngineData \n\
 /* 0803b6dc */ LDR R1, [R0] \n\
 /* 0803b6de */ STR R2, [R1, 0x30] \n\
 /* 0803b6e0 */ LDR R0, [R1, 0x34] \n\
@@ -449,7 +449,7 @@ branch_0803b738: \n\
 /* 0803b742 */ LDR R1, [R7, 0x8] \n\
 /* 0803b744 */ ASRS R1, R1, 0x8 \n\
 /* 0803b746 */ ADDS R1, 0x28 @ Add 0x28 to R1 \n\
-/* 0803b748 */ LDR R0, =D_030055d0 \n\
+/* 0803b748 */ LDR R0, =gCurrentEngineData \n\
 /* 0803b74a */ LDR R0, [R0] \n\
 /* 0803b74c */ LDR R0, [R0, 0x18] \n\
 /* 0803b74e */ ASRS R0, R0, 0x8 \n\
@@ -521,7 +521,7 @@ branch_0803b7e0: \n\
 /* 0803b7e2 */ LSRS R0, R0, 0x18 \n\
 /* 0803b7e4 */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\
 /* 0803b7e6 */ BNE branch_0803b88c \n\
-/* 0803b7e8 */ LDR R0, =D_030055d0 \n\
+/* 0803b7e8 */ LDR R0, =gCurrentEngineData \n\
 /* 0803b7ea */ LDR R3, [R0] \n\
 /* 0803b7ec */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 0803b7ee */ ADDS R0, 0x38 @ Add 0x38 to R0 \n\
@@ -611,7 +611,7 @@ branch_0803b89a: \n\
 /* 0803b89e */ BNE branch_0803b8c6 \n\
 /* 0803b8a0 */ LDR R0, =D_03005380 \n\
 /* 0803b8a2 */ LDR R5, [R0] \n\
-/* 0803b8a4 */ LDR R0, =D_030055d0 \n\
+/* 0803b8a4 */ LDR R0, =gCurrentEngineData \n\
 /* 0803b8a6 */ LDR R0, [R0] \n\
 /* 0803b8a8 */ ADDS R0, 0xDC @ Add 0xDC to R0 \n\
 /* 0803b8aa */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
@@ -633,7 +633,7 @@ branch_0803b8c6: \n\
 /* 0803b8ca */ BNE branch_0803b8f4 \n\
 /* 0803b8cc */ LDR R0, =D_03005380 \n\
 /* 0803b8ce */ LDR R5, [R0] \n\
-/* 0803b8d0 */ LDR R0, =D_030055d0 \n\
+/* 0803b8d0 */ LDR R0, =gCurrentEngineData \n\
 /* 0803b8d2 */ LDR R0, [R0] \n\
 /* 0803b8d4 */ ADDS R0, 0x6C @ Add 0x6C to R0 \n\
 /* 0803b8d6 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\

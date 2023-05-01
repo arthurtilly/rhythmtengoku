@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_karate_man, script_karate_man_entry
 
 
+
 @ Karate Man - Script Entry Point (Skipped Practice)
 
 script script_karate_man_skipped_practice_entry
@@ -127,6 +128,7 @@ struct karate_man_marking_criteria
 endstruct
 
 
+
 @ Karate Man - Main Script
 
 script karate_man_sub_089edf88
@@ -161,7 +163,7 @@ script karate_man_sub_089edf88
     rest 24
     beat_anim
     rest 24
-    run gameplay_assess_irrelevant_inputs 1
+    run gameplay_assess_irrelevant_inputs, 1
     spawn_cue CUE_POT
     beat_anim
     rest 24
@@ -571,10 +573,10 @@ script script_karate_man_practice
     karate_man_start_tutorial_loop 3
     rest 24
     rest 24
-    run scene_stop_music 0
+    run scene_stop_music, 0
     rest 24
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         spawn_cue CUE_POT_STRICT
         rest 24
         rest 24
@@ -600,7 +602,7 @@ script script_karate_man_practice
     set_music_volume 150
     set_tempo 134
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         play_sfx s_intro_one_seqData
         rest 24
         play_sfx s_intro_two_seqData

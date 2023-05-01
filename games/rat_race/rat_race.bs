@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_rat_race, script_rat_race_entry
 
 
+
 @ Rat Race - Script Entry Point (Skipped Practice)
 
 script script_rat_race_skipped_practice_entry
@@ -119,6 +120,7 @@ struct rat_race_marking_criteria
     .word rat_race_marking_criteria_2
     @! No criteria terminator
 endstruct
+
 
 
 @ Rat Race - Main Script

@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct PerfectSceneInfo {
+struct PerfectSceneData {
     struct TextPrinter *printer;
     u32 scriptIsReady;
     s32 campaignID;

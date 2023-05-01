@@ -6,7 +6,7 @@ thumb_func_start clappy_trio_cue_hit \n\
 /* 080308f4 */ PUSH {R4-R7, LR} \n\
 /* 080308f6 */ SUB SP, 0xC \n\
 /* 080308f8 */ ADDS R4, R1, 0x0 @ Set R4 to R1 + 0x0 \n\
-/* 080308fa */ LDR R6, =D_030055d0 \n\
+/* 080308fa */ LDR R6, =gCurrentEngineData \n\
 /* 080308fc */ LDR R0, [R6] \n\
 /* 080308fe */ ADDS R5, R0, 0x4 @ Set R5 to R0 + 0x4 \n\
 /* 08030900 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\

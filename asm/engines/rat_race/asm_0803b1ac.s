@@ -10,7 +10,7 @@ thumb_func_start func_0803b1ac \n\
 /* 0803b1b6 */ MOVS R1, 0x18 @ Set R1 to 0x18 \n\
 /* 0803b1b8 */ BL __udivsi3 \n\
 /* 0803b1bc */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
-/* 0803b1be */ LDR R0, =D_030055d0 \n\
+/* 0803b1be */ LDR R0, =gCurrentEngineData \n\
 /* 0803b1c0 */ LDR R1, [R0] \n\
 /* 0803b1c2 */ LDR R0, [R1, 0x28] \n\
 /* 0803b1c4 */ ADDS R5, R5, R0 @ Set R5 to R5 + R0 \n\

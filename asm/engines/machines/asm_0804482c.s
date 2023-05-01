@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start rhythm_toys_engine_update \n\
 /* 0804482c */ PUSH {R4, R5, LR} \n\
-/* 0804482e */ LDR R4, =D_030055d0 \n\
+/* 0804482e */ LDR R4, =gCurrentEngineData \n\
 /* 08044830 */ LDR R0, [R4] \n\
 /* 08044832 */ LDR R1, =0x35e \n\
 /* 08044834 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
@@ -34,7 +34,7 @@ branch_0804485a: \n\
 /* 0804485a */ ADDS R2, 0x1 @ Add 0x1 to R2 \n\
 /* 0804485c */ CMP R2, 0x5 @ Compare R2 and 0x5 \n\
 /* 0804485e */ BLS branch_0804484a \n\
-/* 08044860 */ LDR R5, =D_030055d0 \n\
+/* 08044860 */ LDR R5, =gCurrentEngineData \n\
 /* 08044862 */ LDR R0, [R5] \n\
 /* 08044864 */ LDR R2, =0x362 \n\
 /* 08044866 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
@@ -121,7 +121,7 @@ branch_080448f4: \n\
 /* 08044902 */ BEQ branch_08044932 \n\
 /* 08044904 */ BL stop_drumtech \n\
 /* 08044908 */ BL beatscript_disable_loops \n\
-/* 0804490c */ LDR R2, =D_030055d0 \n\
+/* 0804490c */ LDR R2, =gCurrentEngineData \n\
 /* 0804490e */ LDR R0, [R2] \n\
 /* 08044910 */ LDR R1, =0x35e \n\
 /* 08044912 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
@@ -142,7 +142,7 @@ branch_0804492c: \n\
 /* 0804492e */ BL play_sound \n\
  \n\
 branch_08044932: \n\
-/* 08044932 */ LDR R0, =D_030055d0 \n\
+/* 08044932 */ LDR R0, =gCurrentEngineData \n\
 /* 08044934 */ LDR R0, [R0] \n\
 /* 08044936 */ LDR R2, =0x382 \n\
 /* 08044938 */ ADDS R1, R0, R2 @ Set R1 to R0 + R2 \n\

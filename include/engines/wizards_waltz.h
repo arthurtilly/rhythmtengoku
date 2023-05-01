@@ -17,7 +17,7 @@ struct WizardsWaltzEntity {
     u32 null1C;
 };
 
-struct WizardsWaltzInfo {
+struct WizardsWaltzEngineData {
     u8 version;
     struct WizardsWaltzEntity wizard;
     struct WizardsWaltzEntity shadow;

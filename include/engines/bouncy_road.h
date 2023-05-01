@@ -6,7 +6,8 @@
 #include "games/bouncy_road/graphics/bouncy_road_graphics.h"
 
 // Engine Types:
-struct BouncyRoadInfo {
+struct BouncyRoadEngineData {
+    u8 pad[0x1dc];
 };
 
 struct BouncyRoadCue {

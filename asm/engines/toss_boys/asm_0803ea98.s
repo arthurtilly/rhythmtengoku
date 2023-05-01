@@ -9,7 +9,7 @@ thumb_func_start toss_boys_engine_start \n\
 /* 0803ea9e */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 0803eaa0 */ PUSH {R5-R7} \n\
 /* 0803eaa2 */ SUB SP, 0x14 \n\
-/* 0803eaa4 */ LDR R1, =D_030055d0 \n\
+/* 0803eaa4 */ LDR R1, =gCurrentEngineData \n\
 /* 0803eaa6 */ MOV R9, R1 @ Set R9 to R1 \n\
 /* 0803eaa8 */ LDR R1, [R1] \n\
 /* 0803eaaa */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
@@ -150,7 +150,7 @@ branch_0803eb86: \n\
 /* 0803ebca */ MOVS R2, 0x7F @ Set R2 to 0x7F \n\
 /* 0803ebcc */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
 /* 0803ebce */ BL func_0804d160 \n\
-/* 0803ebd2 */ LDR R6, =D_030055d0 \n\
+/* 0803ebd2 */ LDR R6, =gCurrentEngineData \n\
 /* 0803ebd4 */ LDR R1, [R6] \n\
 /* 0803ebd6 */ MOVS R3, 0xD9 @ Set R3 to 0xD9 \n\
 /* 0803ebd8 */ LSLS R3, R3, 0x2 \n\
@@ -313,7 +313,7 @@ branch_0803ed0a: \n\
 /* 0803ed26 */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\
 /* 0803ed28 */ BL text_printer_create_new \n\
 /* 0803ed2c */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 0803ed2e */ LDR R0, =D_030055d0 \n\
+/* 0803ed2e */ LDR R0, =gCurrentEngineData \n\
 /* 0803ed30 */ LDR R0, [R0] \n\
 /* 0803ed32 */ LDRB R0, [R0] \n\
 /* 0803ed34 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\
@@ -371,7 +371,7 @@ branch_0803edb4: \n\
 /* 0803ede0 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 0803ede2 */ LSLS R0, R0, 0x5 \n\
 /* 0803ede4 */ STRH R0, [R1] \n\
-/* 0803ede6 */ LDR R0, =D_030055d0 \n\
+/* 0803ede6 */ LDR R0, =gCurrentEngineData \n\
 /* 0803ede8 */ LDR R0, [R0] \n\
 /* 0803edea */ LDR R1, =0x39a \n\
 /* 0803edec */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

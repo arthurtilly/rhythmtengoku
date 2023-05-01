@@ -6,7 +6,7 @@ thumb_func_start showtime_engine_update \n\
 /* 0802bd44 */ PUSH {R4-R6, LR} \n\
 /* 0802bd46 */ SUB SP, 0x14 \n\
 /* 0802bd48 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
-/* 0802bd4a */ LDR R1, =D_030055d0 \n\
+/* 0802bd4a */ LDR R1, =gCurrentEngineData \n\
 /* 0802bd4c */ MOVS R6, 0x0 @ Set R6 to 0x0 \n\
 /* 0802bd4e */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
  \n\
@@ -61,7 +61,7 @@ branch_0802bd98: \n\
 /* 0802bdb6 */ BL func_0804d160 \n\
  \n\
 branch_0802bdba: \n\
-/* 0802bdba */ LDR R1, =D_030055d0 \n\
+/* 0802bdba */ LDR R1, =gCurrentEngineData \n\
 /* 0802bdbc */ LDR R0, [R1] \n\
 /* 0802bdbe */ MOVS R2, 0xF2 @ Set R2 to 0xF2 \n\
 /* 0802bdc0 */ LSLS R2, R2, 0x2 \n\
@@ -80,7 +80,7 @@ branch_0802bdc8: \n\
 /* 0802bddc */ BL func_0802d250 \n\
 /* 0802bde0 */ BL func_0802d9fc \n\
 /* 0802bde4 */ BL func_0802db08 \n\
-/* 0802bde8 */ LDR R0, =D_030055d0 \n\
+/* 0802bde8 */ LDR R0, =gCurrentEngineData \n\
 /* 0802bdea */ LDR R0, [R0] \n\
 /* 0802bdec */ MOVS R3, 0xF0 @ Set R3 to 0xF0 \n\
 /* 0802bdee */ LSLS R3, R3, 0x2 \n\

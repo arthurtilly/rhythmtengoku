@@ -6,7 +6,7 @@ thumb_func_start func_08044248 \n\
 /* 08044248 */ LDR R1, =rhythm_toys_sprite_table \n\
 /* 0804424a */ LSLS R0, R0, 0x2 \n\
 /* 0804424c */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
-/* 0804424e */ LDR R1, =D_030055d0 \n\
+/* 0804424e */ LDR R1, =gCurrentEngineData \n\
 /* 08044250 */ LDR R1, [R1] \n\
 /* 08044252 */ LDRB R1, [R1] \n\
 /* 08044254 */ LDR R0, [R0] \n\

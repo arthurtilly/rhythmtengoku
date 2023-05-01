@@ -36,7 +36,7 @@ struct StudioDrummer {
     s16 yController;
 };
 
-struct DrumLessonsInfo {
+struct DrumStudioEngineData {
     u8 version; // 0x000
     u8 state; // 0x001
     struct DrumTechController drumTech; // 0x004

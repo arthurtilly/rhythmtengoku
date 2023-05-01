@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_clappy_trio, script_clappy_trio_entry
 
 
+
 @ The Clappy Trio - Script Entry Point (Skipped Practice)
 
 script script_clappy_trio_skipped_practice_entry
@@ -127,6 +128,7 @@ struct clappy_trio_marking_criteria
     .word clappy_trio_marking_criteria_3
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ The Clappy Trio - Main Script
@@ -584,7 +586,7 @@ script script_clappy_trio_practice
     enable_play_inputs 1
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         play_sfx s_f_handclap_pi_G4_seqData
         beat_anim
         rest 24
@@ -649,7 +651,7 @@ script script_clappy_trio_practice
     enable_play_inputs 1
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         play_sfx s_f_handclap_pi_G4_seqData
         beat_anim
         rest 24

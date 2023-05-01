@@ -14,7 +14,7 @@ thumb_func_start func_080316ec \n\
 /* 080316fe */ LSLS R0, R4, 0x10 \n\
 /* 08031700 */ ASRS R1, R0, 0x10 \n\
 /* 08031702 */ LDR R5, =samurai_beat_anim \n\
-/* 08031704 */ LDR R0, =D_030055d0 \n\
+/* 08031704 */ LDR R0, =gCurrentEngineData \n\
 /* 08031706 */ LDR R0, [R0] \n\
 /* 08031708 */ MOVS R6, 0xEC @ Set R6 to 0xEC \n\
 /* 0803170a */ LSLS R6, R6, 0x1 \n\

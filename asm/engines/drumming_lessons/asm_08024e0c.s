@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start drum_intro_input_event \n\
 /* 08024e0c */ PUSH {LR} \n\
-/* 08024e0e */ LDR R0, =D_030055d0 \n\
+/* 08024e0e */ LDR R0, =gCurrentEngineData \n\
 /* 08024e10 */ LDR R2, [R0] \n\
 /* 08024e12 */ MOVS R1, 0xE3 @ Set R1 to 0xE3 \n\
 /* 08024e14 */ LSLS R1, R1, 0x2 \n\
@@ -22,7 +22,7 @@ thumb_func_start drum_intro_input_event \n\
 /* 08024e2c */ BL _call_via_r1 \n\
  \n\
 branch_08024e30: \n\
-/* 08024e30 */ LDR R0, =D_030055d0 \n\
+/* 08024e30 */ LDR R0, =gCurrentEngineData \n\
 /* 08024e32 */ LDR R0, [R0] \n\
 /* 08024e34 */ LDRB R0, [R0] \n\
 /* 08024e36 */ CMP R0, 0x2 @ Compare R0 and 0x2 \n\

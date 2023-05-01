@@ -45,7 +45,7 @@ extern struct CompressedGraphics D_08c9113c;
 extern struct CompressedGraphics D_08c913b4;
 extern struct CompressedGraphics D_08c912dc;
 extern struct CompressedGraphics D_08c91208;
-extern Palette epilogue_concert_hall_bg_pal[];
+extern Palette epilogue_drum_live_bg_pal[];
 
 extern struct CompressedGraphics D_08c91cd0;
 extern struct CompressedGraphics D_08c92084;

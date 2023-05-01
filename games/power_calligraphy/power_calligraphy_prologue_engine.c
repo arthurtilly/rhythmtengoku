@@ -27,12 +27,12 @@ struct GraphicsTable power_calligraphy_prologue_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ prologue_calligraphy_pal,
+        /* Src.  */ power_calligraphy_prologue_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
     /* OBJ Palette */ {
-        /* Src.  */ prologue_calligraphy_pal,
+        /* Src.  */ power_calligraphy_prologue_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x140
     },
@@ -41,12 +41,12 @@ struct GraphicsTable power_calligraphy_prologue_gfx_table[] = {
 
 // [D_089eb57c] Engine Events
 EngineEvent power_calligraphy_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080461c4
+    /* 0x00 */ func_080461c4
 };
 
 // [D_089eb580] Prologue (Power Calligraphy) Game Engine
 struct GameEngine power_calligraphy_prologue_engine = {
-    /* Size in Memory */ sizeof(struct PowerCalligraphyPrologueInfo),
+    /* Size in Memory */ sizeof(struct PowerCalligraphyPrologueEngineData),
     /* Start Engine   */ power_calligraphy_prologue_engine_start,
     /* Update Engine  */ power_calligraphy_prologue_engine_update,
     /* Stop Engine    */ power_calligraphy_prologue_engine_stop,

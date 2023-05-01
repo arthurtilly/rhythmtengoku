@@ -8,7 +8,7 @@ thumb_func_start clappy_trio_common_beat_animation \n\
 /* 08030a64 */ MOV R6, R8 @ Set R6 to R8 \n\
 /* 08030a66 */ PUSH {R6, R7} \n\
 /* 08030a68 */ SUB SP, 0xC \n\
-/* 08030a6a */ LDR R0, =D_030055d0 \n\
+/* 08030a6a */ LDR R0, =gCurrentEngineData \n\
 /* 08030a6c */ LDR R0, [R0] \n\
 /* 08030a6e */ ADDS R6, R0, 0x4 @ Set R6 to R0 + 0x4 \n\
 /* 08030a70 */ LDRB R0, [R6, 0x8] \n\
@@ -136,7 +136,7 @@ branch_08030b46: \n\
 /* 08030b62 */ BL func_0804d8f8 \n\
  \n\
 branch_08030b66: \n\
-/* 08030b66 */ LDR R5, =D_030055d0 \n\
+/* 08030b66 */ LDR R5, =gCurrentEngineData \n\
 /* 08030b68 */ LDR R0, [R5] \n\
 /* 08030b6a */ LDRB R0, [R0, 0x11] \n\
 /* 08030b6c */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

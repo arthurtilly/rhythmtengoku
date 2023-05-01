@@ -11,7 +11,7 @@ thumb_func_start func_080255f8 \n\
 /* 08025602 */ B branch_0802572e \n\
  \n\
 branch_08025604: \n\
-/* 08025604 */ LDR R7, =D_030055d0 \n\
+/* 08025604 */ LDR R7, =gCurrentEngineData \n\
 /* 08025606 */ LDR R0, [R7] \n\
 /* 08025608 */ LDR R2, =0x000013fb \n\
 /* 0802560a */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\

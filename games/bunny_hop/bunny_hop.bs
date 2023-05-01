@@ -103,6 +103,7 @@ struct bunny_hop_marking_criteria
 endstruct
 
 
+
 @ Bunny Hop - Main Script
 
 script bunny_hop_sub_08a18800

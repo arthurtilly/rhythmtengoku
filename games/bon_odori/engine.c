@@ -425,37 +425,37 @@ struct CueDefinition *bon_odori_cue_index[] = {
 
 // [D_089def98] Common Events
 EngineEvent bon_odori_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) bon_odori_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) bon_odori_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) bon_odori_common_init_tutorial,
+    /* BEAT_ANIMATION */ bon_odori_common_beat_animation,
+    /* DISPLAY_TEXT   */ bon_odori_common_display_text,
+    /* INIT_TUTORIAL  */ bon_odori_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089defa8] Engine Events
 EngineEvent bon_odori_engine_events[] = {
-    /* 0x00 */ (EngineEvent) bon_odori_lyrics_set_current_line,
-    /* 0x01 */ (EngineEvent) bon_odori_lyrics_display_centre,
-    /* 0x02 */ (EngineEvent) bon_odori_lyrics_display_left,
-    /* 0x03 */ (EngineEvent) bon_odori_lyrics_display_right,
-    /* 0x04 */ (EngineEvent) bon_odori_lyrics_offset_y,
-    /* 0x05 */ (EngineEvent) bon_odori_lyrics_start_highlight,
-    /* 0x06 */ (EngineEvent) bon_odori_screen_lighten,
-    /* 0x07 */ (EngineEvent) bon_odori_screen_darken,
-    /* 0x08 */ (EngineEvent) bon_odori_screen_set_black,
-    /* 0x09 */ (EngineEvent) bon_odori_screen_set_light,
-    /* 0x0A */ (EngineEvent) bon_odori_screen_set_dark,
-    /* 0x0B */ (EngineEvent) bon_odori_set_cpu_donpan_anim,
-    /* 0x0C */ (EngineEvent) bon_odori_set_player_anim,
-    /* 0x0D */ (EngineEvent) bon_odori_set_all_donpan_anim,
-    /* 0x0E */ (EngineEvent) bon_odori_set_cpu_donpan_anim_timer,
-    /* 0x0F */ (EngineEvent) bon_odori_start_testing_inputs,
-    /* 0x10 */ (EngineEvent) bon_odori_finish_testing_inputs,
-    /* 0x11 */ (EngineEvent) bon_odori_engine_event_stub
+    /* 0x00 */ bon_odori_lyrics_set_current_line,
+    /* 0x01 */ bon_odori_lyrics_display_centre,
+    /* 0x02 */ bon_odori_lyrics_display_left,
+    /* 0x03 */ bon_odori_lyrics_display_right,
+    /* 0x04 */ bon_odori_lyrics_offset_y,
+    /* 0x05 */ bon_odori_lyrics_start_highlight,
+    /* 0x06 */ bon_odori_screen_lighten,
+    /* 0x07 */ bon_odori_screen_darken,
+    /* 0x08 */ bon_odori_screen_set_black,
+    /* 0x09 */ bon_odori_screen_set_light,
+    /* 0x0A */ bon_odori_screen_set_dark,
+    /* 0x0B */ bon_odori_set_cpu_donpan_anim,
+    /* 0x0C */ bon_odori_set_player_anim,
+    /* 0x0D */ bon_odori_set_all_donpan_anim,
+    /* 0x0E */ bon_odori_set_cpu_donpan_anim_timer,
+    /* 0x0F */ bon_odori_start_testing_inputs,
+    /* 0x10 */ bon_odori_finish_testing_inputs,
+    /* 0x11 */ bon_odori_engine_event_stub
 };
 
 // [D_089deff0] Bon Odori Game Engine
 struct GameEngine bon_odori_engine = {
-    /* Size in Memory */ sizeof(struct BonOdoriInfo),
+    /* Size in Memory */ sizeof(struct BonOdoriEngineData),
     /* Start Engine   */ bon_odori_engine_start,
     /* Update Engine  */ bon_odori_engine_update,
     /* Stop Engine    */ bon_odori_engine_stop,

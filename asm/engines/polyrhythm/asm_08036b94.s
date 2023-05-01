@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start polyrhythm_play_applause \n\
 /* 08036b94 */ PUSH {R4, R5, LR} \n\
 /* 08036b96 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
-/* 08036b98 */ LDR R5, =D_030055d0 \n\
+/* 08036b98 */ LDR R5, =gCurrentEngineData \n\
 /* 08036b9a */ MOVS R3, 0x84 @ Set R3 to 0x84 \n\
 /* 08036b9c */ LSLS R3, R3, 0x1 \n\
  \n\

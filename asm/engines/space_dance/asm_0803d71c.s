@@ -10,7 +10,7 @@ thumb_func_start space_dance_cue_miss \n\
 /* 0803d724 */ PUSH {R4-R6} \n\
 /* 0803d726 */ SUB SP, 0x14 \n\
 /* 0803d728 */ MOV R10, R1 @ Set R10 to R1 \n\
-/* 0803d72a */ LDR R6, =D_030055d0 \n\
+/* 0803d72a */ LDR R6, =gCurrentEngineData \n\
 /* 0803d72c */ LDR R0, [R6] \n\
 /* 0803d72e */ LDRH R4, [R0, 0xC] \n\
 /* 0803d730 */ MOVS R0, 0x8 @ Set R0 to 0x8 \n\

@@ -49,7 +49,7 @@ struct CompressedGraphics *main_menu_buffered_textures[] = {
 };
 
 // [D_089cdc90] Buttons (Selected)
-struct Animation *main_menu_button_on_anim[TOTAL_MAIN_MENU_BUTTONS] = {
+struct Animation *main_menu_button_on_anim[] = {
     /* Game Select  */ anim_main_menu_button_on_game_select,
     /* Rhythm Test  */ anim_main_menu_button_on_rhythm_test,
     /* R. Data Room */ anim_main_menu_button_on_data_room,
@@ -58,7 +58,7 @@ struct Animation *main_menu_button_on_anim[TOTAL_MAIN_MENU_BUTTONS] = {
 };
 
 // [D_089cdca4] Buttons (Unselected)
-struct Animation *main_menu_button_off_anim[TOTAL_MAIN_MENU_BUTTONS] = {
+struct Animation *main_menu_button_off_anim[] = {
     /* Game Select  */ anim_main_menu_button_off_game_select,
     /* Rhythm Test  */ anim_main_menu_button_off_rhythm_test,
     /* R. Data Room */ anim_main_menu_button_off_data_room,

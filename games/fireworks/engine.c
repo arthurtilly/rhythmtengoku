@@ -309,22 +309,22 @@ struct CueDefinition *fireworks_cue_index[] = {
 
 // [D_089e44e4] Common Events
 EngineEvent fireworks_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) fireworks_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) fireworks_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) fireworks_common_init_tutorial,
+    /* BEAT_ANIMATION */ fireworks_common_beat_animation,
+    /* DISPLAY_TEXT   */ fireworks_common_display_text,
+    /* INIT_TUTORIAL  */ fireworks_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e44f4] Engine Events
 EngineEvent fireworks_engine_events[] = {
-    /* 0x00 */ (EngineEvent) fireworks_set_pattern_mode,
-    /* 0x01 */ (EngineEvent) fireworks_play_sound,
-    /* 0x02 */ (EngineEvent) fireworks_set_pattern
+    /* 0x00 */ fireworks_set_pattern_mode,
+    /* 0x01 */ fireworks_play_sound,
+    /* 0x02 */ fireworks_set_pattern
 };
 
 // [D_089e4500] Fireworks Game Engine
 struct GameEngine fireworks_engine = {
-    /* Size in Memory */ sizeof(struct FireworksInfo),
+    /* Size in Memory */ sizeof(struct FireworksEngineData),
     /* Start Engine   */ fireworks_engine_start,
     /* Update Engine  */ fireworks_engine_update,
     /* Stop Engine    */ fireworks_engine_stop,

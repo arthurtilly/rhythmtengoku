@@ -6,11 +6,11 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-static const struct Scene *gCurrentScene;
-static const struct Scene *gNextScene;
+static struct Scene *gCurrentScene;
+static struct Scene *gNextScene;
 static struct SceneTransition gSceneTrans[10];
 static u8 D_03000080;
-static const struct Scene *D_03000084;
+static struct Scene *D_03000084;
 static s32 D_03000088;
 
 
@@ -133,10 +133,10 @@ void agb_main(void) {
 
 
 // Initialise Scene Handling
-void init_scenes(const struct Scene *initial) {
+void init_scenes(struct Scene *initial) {
 	gCurrentScene = NULL;
 	gNextScene = initial;
-	D_030046a4 = NULL;
+	gCurrentSceneData = NULL;
 	clear_scene_trans();
 }
 
@@ -153,11 +153,11 @@ void process_scenes(void) {
                 if (gCurrentScene->endFunc != NULL) {
                     gCurrentScene->endFunc(gCurrentScene->endParam);
                 }
-                if (D_030046a4 != NULL) {
-                    mem_heap_dealloc(D_030046a4);
+                if (gCurrentSceneData != NULL) {
+                    mem_heap_dealloc(gCurrentSceneData);
                 }
 
-                D_030046a4 = NULL;
+                gCurrentSceneData = NULL;
                 gNextScene = get_scene_trans_target(gCurrentScene);
 
                 if (D_03000080) {
@@ -181,7 +181,7 @@ void process_scenes(void) {
 		D_03000080 = FALSE;
 
 		if (gCurrentScene->requiredMemory != 0) {
-			D_030046a4 = mem_heap_alloc(gCurrentScene->requiredMemory);
+			gCurrentSceneData = mem_heap_alloc(gCurrentScene->requiredMemory);
 		}
 
 		if (gCurrentScene->initFunc != NULL) {
@@ -192,7 +192,7 @@ void process_scenes(void) {
 
 
 // Set Scene
-void set_current_scene(const struct Scene *initial) {
+void set_current_scene(struct Scene *initial) {
 	gCurrentScene = NULL;
 	gNextScene = initial;
 	clear_scene_trans();
@@ -200,7 +200,7 @@ void set_current_scene(const struct Scene *initial) {
 
 
 // Set Next Scene (Transition on Script End)
-void set_next_scene(const struct Scene *next) {
+void set_next_scene(struct Scene *next) {
 	set_scene_trans_target(gCurrentScene, next);
 }
 
@@ -218,7 +218,7 @@ void clear_scene_trans(void) {
 
 
 // Get Transition Data
-struct SceneTransition *get_scene_trans(const struct Scene *scene) {
+struct SceneTransition *get_scene_trans(struct Scene *scene) {
 	u32 i;
 
 	for (i = 0; i < 10; i++) {
@@ -232,7 +232,7 @@ struct SceneTransition *get_scene_trans(const struct Scene *scene) {
 
 
 // Get Transition Next Scene
-const struct Scene *get_scene_trans_target(const struct Scene *scene) {
+const struct Scene *get_scene_trans_target(struct Scene *scene) {
 	struct SceneTransition *transData = get_scene_trans(scene);
 
 	if (transData == NULL) {
@@ -244,7 +244,7 @@ const struct Scene *get_scene_trans_target(const struct Scene *scene) {
 
 
 // Get Transition Variable
-s32 get_scene_trans_var(const struct Scene *scene) {
+s32 get_scene_trans_var(struct Scene *scene) {
 	struct SceneTransition *transData = get_scene_trans(scene);
 
 	if (transData == NULL) {
@@ -256,7 +256,7 @@ s32 get_scene_trans_var(const struct Scene *scene) {
 
 
 // Get Transition Next Scene for Current
-const struct Scene *get_current_scene_trans_target(void) {
+struct Scene *get_current_scene_trans_target(void) {
 	return get_scene_trans_target(gCurrentScene);
 }
 
@@ -268,7 +268,7 @@ s32 get_current_scene_trans_var(void) {
 
 
 // Allocate Transition Data
-struct SceneTransition *alloc_scene_trans(const struct Scene *scene) {
+struct SceneTransition *alloc_scene_trans(struct Scene *scene) {
 	u32 i;
 
 	if (scene == NULL) {
@@ -289,7 +289,7 @@ struct SceneTransition *alloc_scene_trans(const struct Scene *scene) {
 
 
 // Deallocate Transition Data
-void dealloc_scene_trans(const struct Scene *scene) {
+void dealloc_scene_trans(struct Scene *scene) {
     u32 i;
 
 	if (scene == NULL) {
@@ -307,7 +307,7 @@ void dealloc_scene_trans(const struct Scene *scene) {
 
 
 // Set Transition Next Scene
-void set_scene_trans_target(const struct Scene *scene, const struct Scene *target) {
+void set_scene_trans_target(struct Scene *scene, struct Scene *target) {
 	struct SceneTransition *transData;
 
 	if (((transData = get_scene_trans(scene)) != NULL) || ((transData = alloc_scene_trans(scene)) != NULL)) {
@@ -317,7 +317,7 @@ void set_scene_trans_target(const struct Scene *scene, const struct Scene *targe
 
 
 // Set Transition Variable
-void set_scene_trans_var(const struct Scene *scene, s32 variable) {
+void set_scene_trans_var(struct Scene *scene, s32 variable) {
 	struct SceneTransition *transData;
 
 	if (((transData = get_scene_trans(scene)) != NULL) || ((transData = alloc_scene_trans(scene)) != NULL)) {
@@ -327,7 +327,7 @@ void set_scene_trans_var(const struct Scene *scene, s32 variable) {
 
 
 // Set ? Scene Transition
-void func_080006f0(const struct Scene *target, s32 variable) {
+void func_080006f0(struct Scene *target, s32 variable) {
 	D_03000080 = TRUE;
 	D_03000084 = target;
 	D_03000088 = variable;
@@ -335,6 +335,6 @@ void func_080006f0(const struct Scene *target, s32 variable) {
 
 
 // Get Current Scene
-const struct Scene *get_current_scene(void) {
+struct Scene *get_current_scene(void) {
 	return gCurrentScene;
 }

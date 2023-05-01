@@ -1592,7 +1592,7 @@ const struct GraphicsTable *epilogue_fireworks_gfx_tables[] = {
 
 
 // [D_089ce1f4] Power Calligraphy
-const struct GraphicsTable *epilogue_power_calligraphy_gfx_tables[] = {
+const struct GraphicsTable *epilogue_power_power_calligraphy_gfx_tables[] = {
     /* TRY AGAIN */ (struct GraphicsTable[]) {
         /* BG Tileset */ {
             /* Src.  */ &D_08c9b9fc,
@@ -3185,7 +3185,7 @@ const struct GraphicsTable *epilogue_staff_credit_gfx_tables[] = {
 
 
 // [D_089ce338] LIVE
-const struct GraphicsTable *epilogue_concert_hall_gfx_tables[] = {
+const struct GraphicsTable *epilogue_drum_live_gfx_tables[] = {
     /* TRY AGAIN */ (struct GraphicsTable[]) {
         /* BG Tileset */ {
             /* Src.  */ &D_08c9113c,
@@ -3198,7 +3198,7 @@ const struct GraphicsTable *epilogue_concert_hall_gfx_tables[] = {
             /* Size  */ COMPRESSED_GFX_SOURCE
         },
         /* BG Palette */ {
-            /* Src.  */ epilogue_concert_hall_bg_pal,
+            /* Src.  */ epilogue_drum_live_bg_pal,
             /* Dest. */ BG_PALETTE_BUFFER(0),
             /* Size  */ 0x140
         },
@@ -3216,7 +3216,7 @@ const struct GraphicsTable *epilogue_concert_hall_gfx_tables[] = {
             /* Size  */ COMPRESSED_GFX_SOURCE
         },
         /* BG Palette */ {
-            /* Src.  */ epilogue_concert_hall_bg_pal,
+            /* Src.  */ epilogue_drum_live_bg_pal,
             /* Dest. */ BG_PALETTE_BUFFER(0),
             /* Size  */ 0x140
         },
@@ -3234,7 +3234,7 @@ const struct GraphicsTable *epilogue_concert_hall_gfx_tables[] = {
             /* Size  */ COMPRESSED_GFX_SOURCE
         },
         /* BG Palette */ {
-            /* Src.  */ epilogue_concert_hall_bg_pal,
+            /* Src.  */ epilogue_drum_live_bg_pal,
             /* Dest. */ BG_PALETTE_BUFFER(0),
             /* Size  */ 0x140
         },

@@ -11,14 +11,14 @@ def get_json_data():
     with open(jsonFile, 'r') as f:
         return json.load(f)
 
-def write_sample_data_entry(fileLines, sampleEntry):
+def write_sample(fileLines, sampleEntry):
     sampleName = sampleEntry["sample"].split(".")[0]
 
     fileLines.append("asm(\"%s_pcm:\");\n" % sampleName)
     fileLines.append("asm(\".incbin \\\"build/audio/samples/%s.pcm\\\"\");\n" % sampleName)
     fileLines.append("asm(\".balign 4\");\n")
 
-def write_sample_info_entry(fileLines, sampleEntry):
+def write_sample_data_struct(fileLines, sampleEntry):
     global jsonFile
     wavPath = os.path.join(os.path.join(os.path.dirname(jsonFile),"samples"),sampleEntry["sample"])
     wavFile = wave.open(wavPath)
@@ -38,7 +38,7 @@ def write_sample_info_entry(fileLines, sampleEntry):
         loopEnd = 0
     
     fileLines.append("extern const u32 %s_pcm;\n" % sampleName)
-    fileLines.append("struct SampleInfo %s_info = {\n" % sampleName)
+    fileLines.append("struct SampleData %s_data = {\n" % sampleName)
     fileLines.append("    /* Length */      %d,\n" % (wavFile.getnframes()-1))
     fileLines.append("    /* Sample Rate */ %d,\n" % (wavFile.getframerate()))
     fileLines.append("    /* Pitch */       %d,\n" % pitchNum)
@@ -58,11 +58,11 @@ def write_sample_file(sampleList):
     fileLines.append("\n")
     fileLines.append("asm(\".section .rodata\");\n")
     for sampleEntry in sampleList:
-        write_sample_data_entry(fileLines, sampleEntry)
+        write_sample(fileLines, sampleEntry)
     
     fileLines.append("\n")
     for sampleEntry in sampleList:
-        write_sample_info_entry(fileLines, sampleEntry)
+        write_sample_data_struct(fileLines, sampleEntry)
         
     with open(outputFile, 'w') as f:
         return f.writelines(fileLines)

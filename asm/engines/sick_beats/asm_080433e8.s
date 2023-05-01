@@ -9,7 +9,7 @@ thumb_func_start sick_beats_engine_start \n\
 /* 080433ee */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 080433f0 */ PUSH {R5-R7} \n\
 /* 080433f2 */ SUB SP, 0x14 \n\
-/* 080433f4 */ LDR R4, =D_030055d0 \n\
+/* 080433f4 */ LDR R4, =gCurrentEngineData \n\
 /* 080433f6 */ LDR R1, [R4] \n\
 /* 080433f8 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 080433fa */ STRB R0, [R1] \n\

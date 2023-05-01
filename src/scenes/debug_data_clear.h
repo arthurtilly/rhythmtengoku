@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct DataClearSceneInfo {
+struct DataClearSceneData {
     /* add fields here */
 };
 

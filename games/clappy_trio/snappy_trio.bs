@@ -30,7 +30,6 @@ define_gameplay_scene scene_snappy_trio, script_snappy_trio_entry
 .section .script.prologue
 @ The Snappy Trio - Prologue
 
-@ Prologue (The Snappy Trio) - Script
 script script_snappy_trio_prologue
     set_game_fade_in_time 8
     load_game snappy_trio_prologue_engine, 0
@@ -98,6 +97,7 @@ struct snappy_trio_marking_criteria
     .word snappy_trio_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ The Snappy Trio - Main Script

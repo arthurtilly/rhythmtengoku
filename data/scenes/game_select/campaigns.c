@@ -11,7 +11,7 @@
 
 
 // [D_089cdf24] Perfect Campaign Gifts
-struct CampaignGiftData campaign_gifts_table[TOTAL_PERFECT_CAMPAIGNS] = {
+struct CampaignGiftData campaign_gifts_table[] = {
     /* REMIX1 */ {
         /* Grid Pos. */ 2, 6,
         /* Gift Type */ CAMPAIGN_GIFT_DRUM_KIT,
@@ -130,7 +130,7 @@ struct CampaignGiftData campaign_gifts_table[TOTAL_PERFECT_CAMPAIGNS] = {
     /* SPACEBALL_2 */ {
         /* Grid Pos. */ 9, 8,
         /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
-        /* Gift ID   */ READING_MATERIAL_HORSE_MACHINE
+        /* Gift ID   */ READING_MATERIAL_MECHANICAL_HORSE
     },
     /* MARCHING_ORDERS */ {
         /* Grid Pos. */ 2, 9,

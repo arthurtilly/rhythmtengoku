@@ -5,7 +5,7 @@
 #include "src/memory.h"
 
 // Scene Types:
-struct DataCheckSceneInfo {
+struct DataCheckSceneData {
     struct BitmapFontBG *bgFont;
     struct BitmapFontOBJ *objFont;
     u32 scriptIsReady;

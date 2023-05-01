@@ -128,6 +128,7 @@ struct remix_6_marking_criteria
 endstruct
 
 
+
 @ Remix 6 - Sick Beats Pathing Data
 
 script remix_6_sick_beats_path_normal
@@ -174,6 +175,7 @@ script remix_6_sick_beats_path_skip_to_point_4
 sb_stop
 
 
+
 @ Remix 6 - Rap Men Text
 
 text D_08a6b218
@@ -183,6 +185,7 @@ endtext
 text D_08a6b230
     .asciz ".a:1キミって　:0サイコー！！"
 endtext
+
 
 
 @ Remix 6 - Main Script
@@ -410,7 +413,7 @@ script script_remix_6_main
     assess_perfect_inputs 0
     enable_play_inputs 0
     assess_inputs 0
-    run gameplay_assess_irrelevant_inputs 0
+    run gameplay_assess_irrelevant_inputs, 0
     quiz_show_event01 0
     quiz_show_event01 -16
     quiz_show_event01 1

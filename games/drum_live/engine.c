@@ -565,30 +565,30 @@ struct CueDefinition *drum_live_cue_index[] = {
 
 // [D_089e0c84] Common Events
 EngineEvent drum_live_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) drum_live_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) drum_live_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) drum_live_common_init_tutorial,
+    /* BEAT_ANIMATION */ drum_live_common_beat_animation,
+    /* DISPLAY_TEXT   */ drum_live_common_display_text,
+    /* INIT_TUTORIAL  */ drum_live_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e0c94] Engine Events
 EngineEvent drum_live_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080268cc,
-    /* 0x01 */ (EngineEvent) func_08026968,
-    /* 0x02 */ (EngineEvent) func_08025a98,
-    /* 0x03 */ (EngineEvent) func_08025ad4,
-    /* 0x04 */ (EngineEvent) func_08025ae8,
-    /* 0x05 */ (EngineEvent) func_08025748,
-    /* 0x06 */ (EngineEvent) func_08025a2c,
-    /* 0x07 */ (EngineEvent) func_08025a58,
-    /* 0x08 */ (EngineEvent) func_080269e8,
-    /* 0x09 */ (EngineEvent) func_08025bcc,
-    /* 0x0A */ (EngineEvent) drum_live_engine_event_stub
+    /* 0x00 */ func_080268cc,
+    /* 0x01 */ func_08026968,
+    /* 0x02 */ func_08025a98,
+    /* 0x03 */ func_08025ad4,
+    /* 0x04 */ func_08025ae8,
+    /* 0x05 */ func_08025748,
+    /* 0x06 */ func_08025a2c,
+    /* 0x07 */ func_08025a58,
+    /* 0x08 */ func_080269e8,
+    /* 0x09 */ func_08025bcc,
+    /* 0x0A */ drum_live_engine_event_stub
 };
 
 // [D_089e0cc0] Drum LIVE Game Engine
 struct GameEngine drum_live_engine = {
-    /* Size in Memory */ 0x1820,
+    /* Size in Memory */ sizeof(struct DrumLiveEngineData),
     /* Start Engine   */ drum_live_engine_start,
     /* Update Engine  */ drum_live_engine_update,
     /* Stop Engine    */ drum_live_engine_stop,

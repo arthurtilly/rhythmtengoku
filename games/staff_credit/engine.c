@@ -81,24 +81,24 @@ struct CueDefinition *staff_credit_cue_index[] = {
 
 // [D_089df6a8] Common Events
 EngineEvent staff_credit_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) staff_credit_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) staff_credit_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) staff_credit_common_init_tutorial,
+    /* BEAT_ANIMATION */ staff_credit_common_beat_animation,
+    /* DISPLAY_TEXT   */ staff_credit_common_display_text,
+    /* INIT_TUTORIAL  */ staff_credit_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089df6b8] Engine Events
 EngineEvent staff_credit_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_0802372c,
-    /* 0x01 */ (EngineEvent) func_080237ec,
-    /* 0x02 */ (EngineEvent) func_080237f8,
-    /* 0x03 */ (EngineEvent) func_08023898,
-    /* 0x04 */ (EngineEvent) staff_credit_engine_event_stub
+    /* 0x00 */ func_0802372c,
+    /* 0x01 */ func_080237ec,
+    /* 0x02 */ func_080237f8,
+    /* 0x03 */ func_08023898,
+    /* 0x04 */ staff_credit_engine_event_stub
 };
 
 // [D_089df6cc] Staff Credit Game Engine
 struct GameEngine staff_credit_engine = {
-    /* Size in Memory */ 0x80,
+    /* Size in Memory */ sizeof(struct StaffCreditEngineData),
     /* Start Engine   */ staff_credit_engine_start,
     /* Update Engine  */ staff_credit_engine_update,
     /* Stop Engine    */ staff_credit_engine_stop,

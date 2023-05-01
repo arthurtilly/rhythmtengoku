@@ -11,7 +11,7 @@ thumb_func_start func_08026640 \n\
 /* 0802664a */ SUB SP, 0xC \n\
 /* 0802664c */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 0802664e */ MOV R10, R1 @ Set R10 to R1 \n\
-/* 08026650 */ LDR R1, =D_030055d0 \n\
+/* 08026650 */ LDR R1, =gCurrentEngineData \n\
 /* 08026652 */ LSLS R0, R6, 0x2 \n\
 /* 08026654 */ ADDS R0, R0, R6 @ Set R0 to R0 + R6 \n\
 /* 08026656 */ LSLS R0, R0, 0x2 \n\

@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gStaffCreditInfo ((struct StaffCreditInfo *)D_030055d0)
+#define gStaffCredit ((struct StaffCreditEngineData *)gCurrentEngineData)
 
 
 /* STAFF CREDIT */

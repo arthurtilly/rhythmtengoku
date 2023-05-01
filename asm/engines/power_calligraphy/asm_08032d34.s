@@ -9,7 +9,7 @@ thumb_func_start func_08032d34 \n\
 /* 08032d3a */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 08032d3c */ PUSH {R5-R7} \n\
 /* 08032d3e */ SUB SP, 0xC \n\
-/* 08032d40 */ LDR R5, =D_030055d0 \n\
+/* 08032d40 */ LDR R5, =gCurrentEngineData \n\
 /* 08032d42 */ LDR R2, [R5] \n\
 /* 08032d44 */ MOVS R1, 0xD2 @ Set R1 to 0xD2 \n\
 /* 08032d46 */ LSLS R1, R1, 0x1 \n\
@@ -39,7 +39,7 @@ branch_08032d52: \n\
 branch_08032d70: \n\
 /* 08032d70 */ LDR R0, =D_03005380 \n\
 /* 08032d72 */ LDR R0, [R0] \n\
-/* 08032d74 */ LDR R5, =D_030055d0 \n\
+/* 08032d74 */ LDR R5, =gCurrentEngineData \n\
 /* 08032d76 */ LDR R1, [R5] \n\
 /* 08032d78 */ ADDS R1, R1, R4 @ Set R1 to R1 + R4 \n\
 /* 08032d7a */ MOVS R2, 0x3C @ Set R2 to 0x3C \n\
@@ -89,7 +89,7 @@ branch_08032da4: \n\
 /* 08032ddc */ STR R0, [SP, 0x8] \n\
  \n\
 branch_08032dde: \n\
-/* 08032dde */ LDR R0, =D_030055d0 \n\
+/* 08032dde */ LDR R0, =gCurrentEngineData \n\
 /* 08032de0 */ LDR R1, [R0] \n\
 /* 08032de2 */ LDR R2, [SP, 0x8] \n\
 /* 08032de4 */ ADDS R5, R1, R2 @ Set R5 to R1 + R2 \n\

@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start drum_studio_engine_stop \n\
 /* 08029d20 */ PUSH {LR} \n\
-/* 08029d22 */ LDR R0, =D_030055d0 \n\
+/* 08029d22 */ LDR R0, =gCurrentEngineData \n\
 /* 08029d24 */ LDR R0, [R0] \n\
 /* 08029d26 */ MOVS R1, 0xF1 @ Set R1 to 0xF1 \n\
 /* 08029d28 */ LSLS R1, R1, 0x2 \n\

@@ -2,11 +2,11 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start calligraphy_common_display_text \n\
+thumb_func_start power_calligraphy_common_display_text \n\
 /* 08033834 */ PUSH {R4-R7, LR} \n\
 /* 08033836 */ SUB SP, 0x14 \n\
 /* 08033838 */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
-/* 0803383a */ LDR R6, =D_030055d0 \n\
+/* 0803383a */ LDR R6, =gCurrentEngineData \n\
 /* 0803383c */ LDR R0, [R6] \n\
 /* 0803383e */ MOVS R7, 0xD5 @ Set R7 to 0xD5 \n\
 /* 08033840 */ LSLS R7, R7, 0x1 \n\

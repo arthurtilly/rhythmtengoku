@@ -10,7 +10,7 @@ thumb_func_start tap_trial_common_display_text \n\
 /* 0803e7b0 */ BNE branch_0803e7d0 \n\
 /* 0803e7b2 */ LDR R0, =D_03005380 \n\
 /* 0803e7b4 */ LDR R0, [R0] \n\
-/* 0803e7b6 */ LDR R1, =D_030055d0 \n\
+/* 0803e7b6 */ LDR R1, =gCurrentEngineData \n\
 /* 0803e7b8 */ LDR R1, [R1] \n\
 /* 0803e7ba */ MOVS R2, 0x22 @ Set R2 to 0x22 \n\
 /* 0803e7bc */ LDRSH R1, [R1, R2] \n\
@@ -21,7 +21,7 @@ thumb_func_start tap_trial_common_display_text \n\
 .ltorg \n\
  \n\
 branch_0803e7d0: \n\
-/* 0803e7d0 */ LDR R4, =D_030055d0 \n\
+/* 0803e7d0 */ LDR R4, =gCurrentEngineData \n\
 /* 0803e7d2 */ LDR R0, [R4] \n\
 /* 0803e7d4 */ LDR R0, [R0, 0x4] \n\
 /* 0803e7d6 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\

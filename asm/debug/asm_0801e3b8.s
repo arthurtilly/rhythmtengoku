@@ -8,7 +8,7 @@ thumb_func_start func_0801e3b8 \n\
 /* 0801e3be */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801e3c0 */ BEQ branch_0801e4ae \n\
 /* 0801e3c2 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
-/* 0801e3c4 */ LDR R0, =D_030046a4 \n\
+/* 0801e3c4 */ LDR R0, =gCurrentSceneData \n\
 /* 0801e3c6 */ LDR R3, [R0] \n\
 /* 0801e3c8 */ MOVS R2, 0x16 @ Set R2 to 0x16 \n\
 /* 0801e3ca */ LDRSH R1, [R3, R2] \n\
@@ -63,7 +63,7 @@ branch_0801e418: \n\
 /* 0801e41e */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 0801e420 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801e422 */ BEQ branch_0801e440 \n\
-/* 0801e424 */ LDR R0, =D_030046a4 \n\
+/* 0801e424 */ LDR R0, =gCurrentSceneData \n\
 /* 0801e426 */ LDR R0, [R0] \n\
 /* 0801e428 */ MOVS R1, 0xE @ Set R1 to 0xE \n\
 /* 0801e42a */ LDRSH R3, [R0, R1] \n\
@@ -86,7 +86,7 @@ branch_0801e440: \n\
 /* 0801e446 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 0801e448 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801e44a */ BEQ branch_0801e45e \n\
-/* 0801e44c */ LDR R0, =D_030046a4 \n\
+/* 0801e44c */ LDR R0, =gCurrentSceneData \n\
 /* 0801e44e */ LDR R1, [R0] \n\
 /* 0801e450 */ MOVS R2, 0xE @ Set R2 to 0xE \n\
 /* 0801e452 */ LDRSH R0, [R1, R2] \n\
@@ -101,7 +101,7 @@ branch_0801e45e: \n\
 /* 0801e462 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 0801e464 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801e466 */ BEQ branch_0801e47a \n\
-/* 0801e468 */ LDR R0, =D_030046a4 \n\
+/* 0801e468 */ LDR R0, =gCurrentSceneData \n\
 /* 0801e46a */ LDR R1, [R0] \n\
 /* 0801e46c */ MOVS R2, 0xE @ Set R2 to 0xE \n\
 /* 0801e46e */ LDRSH R0, [R1, R2] \n\
@@ -118,7 +118,7 @@ branch_0801e47a: \n\
 /* 0801e482 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0801e484 */ BEQ branch_0801e4ae \n\
 /* 0801e486 */ LDR R2, =debug_menu_entry_table \n\
-/* 0801e488 */ LDR R4, =D_030046a4 \n\
+/* 0801e488 */ LDR R4, =gCurrentSceneData \n\
 /* 0801e48a */ LDR R1, [R4] \n\
 /* 0801e48c */ MOVS R3, 0xE @ Set R3 to 0xE \n\
 /* 0801e48e */ LDRSH R0, [R1, R3] \n\

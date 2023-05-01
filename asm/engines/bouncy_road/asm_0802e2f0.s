@@ -66,7 +66,7 @@ branch_0802e334: \n\
 /* 0802e360 */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 0802e362 */ MOVS R1, 0x7F @ Set R1 to 0x7F \n\
 /* 0802e364 */ BL create_affine_sprite \n\
-/* 0802e368 */ LDR R1, =D_030055d0 \n\
+/* 0802e368 */ LDR R1, =gCurrentEngineData \n\
 /* 0802e36a */ LDR R1, [R1] \n\
 /* 0802e36c */ LSLS R2, R4, 0x2 \n\
 /* 0802e36e */ ADDS R1, 0x4 @ Add 0x4 to R1 \n\

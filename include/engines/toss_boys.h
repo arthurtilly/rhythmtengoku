@@ -7,8 +7,8 @@
 #include "games/toss_boys/graphics/toss_boys_graphics.h"
 
 // Engine Types:
-struct TossBoysInfo {
-    /* add fields here */
+struct TossBoysEngineData {
+    u8 pad[0x3a4];
 };
 
 struct TossBoysCue {

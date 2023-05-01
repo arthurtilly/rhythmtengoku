@@ -41,12 +41,12 @@ struct GraphicsTable rap_women_prologue_gfx_table[] = {
 
 // [D_089ececc] Engine Events
 EngineEvent rap_women_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_0804712c
+    /* 0x00 */ func_0804712c
 };
 
 // [D_089eced0] Prologue (Rap Women) Game Engine
 struct GameEngine rap_women_prologue_engine = {
-    /* Size in Memory */ sizeof(struct RapWomenPrologueInfo),
+    /* Size in Memory */ sizeof(struct RapWomenPrologueEngineData),
     /* Start Engine   */ rap_women_prologue_engine_start,
     /* Update Engine  */ rap_women_prologue_engine_update,
     /* Stop Engine    */ rap_women_prologue_engine_stop,

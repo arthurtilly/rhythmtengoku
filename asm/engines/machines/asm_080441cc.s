@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start func_080441cc \n\
 /* 080441cc */ PUSH {R4-R6, LR} \n\
 /* 080441ce */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 080441d0 */ LDR R6, =D_030055d0 \n\
+/* 080441d0 */ LDR R6, =gCurrentEngineData \n\
 /* 080441d2 */ LDR R0, [R6] \n\
 /* 080441d4 */ MOVS R5, 0xDF @ Set R5 to 0xDF \n\
 /* 080441d6 */ LSLS R5, R5, 0x2 \n\
@@ -17,7 +17,7 @@ thumb_func_start func_080441cc \n\
 /* 080441e2 */ BL fade_out_soundplayer \n\
  \n\
 branch_080441e6: \n\
-/* 080441e6 */ LDR R1, =confession_machine_sfx_table \n\
+/* 080441e6 */ LDR R1, =love_machine_sfx_table \n\
 /* 080441e8 */ LSLS R0, R4, 0x2 \n\
 /* 080441ea */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\
 /* 080441ec */ LDR R0, [R0] \n\

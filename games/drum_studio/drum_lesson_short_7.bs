@@ -1,24 +1,42 @@
-.section .rodata
-
 .include "include/beatscript.inc"
 .include "games/drum_studio/macros.inc"
 
-load_drum_studio_labels
 
 
-/* Script Data - Drum Lesson (Short 7) */
+.section .script.entry
+@ Drum Lesson (Short 7) - Script Entry Point
+
+script script_drum_lesson_short_7_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_drum_lessons
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_drum_lesson_short_7_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_drum_lesson_short_7, script_drum_lesson_short_7_entry
 
 
-@ Dialogue
-script D_08060310
-.ascii "よくきいてマネしてね。\n"
-.ascii "好きなタイミングでどうぞ。\n"
-.ascii "演奏を止めると、\n"
-.asciz "お手本がきけるヨ！"
-.balign 4, 0
+
+.section .rodata
+@ Drum Lesson (Short 7) - Data
+
+text D_08060310
+    .ascii "よくきいてマネしてね。\n"
+    .ascii "好きなタイミングでどうぞ。\n"
+    .ascii "演奏を止めると、\n"
+    .asciz "お手本がきけるヨ！"
+endtext
 
 
-@ Pattern
 script D_08060368
     spawn_cue CUE_SNARE_L
     rest 24
@@ -30,23 +48,20 @@ script D_08060368
 return
 
 
-@ Pattern Start
 script D_080603c8
     spawn_cue CUE_KICK_R
     rest 21
 return
 
 
-@ Dialogue
-script D_080603ec
-.ascii "\n"
-.ascii "１カ所、音がふえるヨ！\n"
-.ascii "わかるかな？\n"
-.asciz "ヒント：Rボタン"
-.balign 4, 0
+text D_080603ec
+    .ascii "\n"
+    .ascii "１カ所、音がふえるヨ！\n"
+    .ascii "わかるかな？\n"
+    .asciz "ヒント：Rボタン"
+endtext
 
 
-@ Pattern Start
 script D_08060424
     spawn_cue CUE_KICK_R
     spawn_cue CUE_CRASH
@@ -54,16 +69,14 @@ script D_08060424
 return
 
 
-@ Dialogue
-script D_08060454
-.ascii "\n"
-.ascii "さらに１カ所、\n"
-.ascii "音がふえるヨ！\n"
-.asciz "わかるかな？\n"
-.balign 4, 0
+text D_08060454
+    .ascii "\n"
+    .ascii "さらに１カ所、\n"
+    .ascii "音がふえるヨ！\n"
+    .asciz "わかるかな？\n"
+endtext
 
 
-@ Pattern
 script D_08060484
     spawn_cue CUE_SNARE_L
     rest 24
@@ -76,16 +89,14 @@ script D_08060484
 return
 
 
-@ Dialogue
-script D_080604f0
-.ascii "\n"
-.ascii "またまた１カ所、\n"
-.ascii "音がふえるヨ！\n"
-.asciz "わかるかな？\n"
-.balign 4, 0
+text D_080604f0
+    .ascii "\n"
+    .ascii "またまた１カ所、\n"
+    .ascii "音がふえるヨ！\n"
+    .asciz "わかるかな？\n"
+endtext
 
 
-@ Pattern Start
 script D_08060520
     spawn_cue CUE_KICK_R
     spawn_cue CUE_CRASH
@@ -95,16 +106,14 @@ script D_08060520
 return
 
 
-@ Dialogue
-script D_08060568
-.ascii "\n"
-.ascii "そしてまたなんと！\n"
-.ascii "１カ所、音がふえるヨ！\n"
-.asciz "わかるかな？\n"
-.balign 4, 0
+text D_08060568
+    .ascii "\n"
+    .ascii "そしてまたなんと！\n"
+    .ascii "１カ所、音がふえるヨ！\n"
+    .asciz "わかるかな？\n"
+endtext
 
 
-@ Pattern
 script D_080605a4
     spawn_cue CUE_SNARE_L
     rest 6
@@ -119,16 +128,14 @@ script D_080605a4
 return
 
 
-@ Dialogue
-script D_08060628
-.ascii "\n"
-.ascii "これまたなんと！！\n"
-.ascii "１カ所、音がふえるヨ！\n"
-.asciz "わかるかな？\n"
-.balign 4, 0
+text D_08060628
+    .ascii "\n"
+    .ascii "これまたなんと！！\n"
+    .ascii "１カ所、音がふえるヨ！\n"
+    .asciz "わかるかな？\n"
+endtext
 
 
-@ Pattern
 script D_08060664
     spawn_cue CUE_SNARE_L
     rest 6
@@ -145,16 +152,14 @@ script D_08060664
 return
 
 
-@ Dialogue
-script D_08060700
-.ascii "\n"
-.ascii "またまたなんと！！\n"
-.ascii "１カ所、音がふえるヨ！\n"
-.asciz "わかるかな？\n"
-.balign 4, 0
+text D_08060700
+    .ascii "\n"
+    .ascii "またまたなんと！！\n"
+    .ascii "１カ所、音がふえるヨ！\n"
+    .asciz "わかるかな？\n"
+endtext
 
 
-@ Pattern
 script D_0806073c
     spawn_cue CUE_SNARE_L
     rest 6
@@ -173,16 +178,14 @@ script D_0806073c
 return
 
 
-@ Dialogue
-script D_080607f0
-.ascii "これでさいご！！\n"
-.ascii "１カ所、音がふえるヨ！\n"
-.ascii "わかるかな？\n"
-.asciz "ヒント：両手"
-.balign 4, 0
+text D_080607f0
+    .ascii "これでさいご！！\n"
+    .ascii "１カ所、音がふえるヨ！\n"
+    .ascii "わかるかな？\n"
+    .asciz "ヒント：両手"
+endtext
 
 
-@ Pattern
 script D_08060834
     spawn_cue CUE_SNARE_L
     rest 6
@@ -201,6 +204,101 @@ script D_08060834
     rest 1
     spawn_cue CUE_SNARE_L
     rest 23
+return
+
+
+
+.section .script.main
+@ Drum Lesson (Short 7) - Tables
+
+struct D_08a418c0
+    .word D_080603c8
+    .word D_08060368
+    .word s_hakushu_solo_seqData
+    .word D_08060310
+endstruct
+
+struct D_08a418d0
+    .word D_08060424
+    .word D_08060368
+    .word s_hakushu_solo_seqData
+    .word D_080603ec
+endstruct
+
+struct D_08a418e0
+    .word D_08060424
+    .word D_08060484
+    .word s_warai_little_seqData
+    .word D_08060454
+endstruct
+
+struct D_08a418f0
+    .word D_08060520
+    .word D_08060484
+    .word s_warai_seqData
+    .word D_080604f0
+endstruct
+
+struct D_08a41900
+    .word D_08060520
+    .word D_080605a4
+    .word s_kansei_solo_seqData
+    .word D_08060568
+endstruct
+
+struct D_08a41910
+    .word D_08060520
+    .word D_08060664
+    .word s_kansei_seqData
+    .word D_08060628
+endstruct
+
+struct D_08a41920
+    .word D_08060520
+    .word D_0806073c
+    .word s_kansei_seqData
+    .word D_08060700
+endstruct
+
+struct D_08a41930
+    .word D_08060520
+    .word D_08060834
+    .word s_kansei_seqData
+    .word D_080607f0
+endstruct
+
+
+
+@ Drum Lesson (Short 7) - Main Script
+
+script script_drum_lesson_short_7_main
+    set_tempo 116
+    set_music_volume 256
+    assess_inputs 0
+    dms_event08 4
+    dms_event09 1
+    rest 24
+    dms_event02 1
+    run func_08048264, D_08a418c0
+    call drum_lessons_sub_08a7d7a0
+    run func_08048264, D_08a418d0
+    call drum_lessons_sub_08a7d7a0
+    run func_08048264, D_08a418e0
+    call drum_lessons_sub_08a7d7a0
+    run func_08048264, D_08a418f0
+    call drum_lessons_sub_08a7d7a0
+    run func_08048264, D_08a41900
+    call drum_lessons_sub_08a7d7a0
+    run func_08048264, D_08a41910
+    call drum_lessons_sub_08a7d7a0
+    run func_08048264, D_08a41920
+    call drum_lessons_sub_08a7d7a0
+    assess_inputs 1
+    run func_08048264, D_08a41930
+    call drum_lessons_sub_08a7d7a0
+    dms_show_dialogue 1
+    dms_set_teacher_exp 4
+    dms_get_lesson_score
 return
 
 .end

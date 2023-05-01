@@ -41,12 +41,12 @@ struct GraphicsTable cosmic_dance_prologue_gfx_table[] = {
 
 // [D_089ea8b0] Engine Events
 EngineEvent cosmic_dance_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08045730
+    /* 0x00 */ func_08045730
 };
 
 // [D_089ea8b4] Prologue (Cosmic Dance) Game Engine
 struct GameEngine cosmic_dance_prologue_engine = {
-    /* Size in Memory */ sizeof(struct CosmicDancePrologueInfo),
+    /* Size in Memory */ sizeof(struct CosmicDancePrologueEngineData),
     /* Start Engine   */ cosmic_dance_prologue_engine_start,
     /* Update Engine  */ cosmic_dance_prologue_engine_update,
     /* Stop Engine    */ cosmic_dance_prologue_engine_stop,

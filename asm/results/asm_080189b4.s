@@ -15,7 +15,7 @@ thumb_func_start results_scene_update \n\
 /* 080189c8 */ BEQ branch_080189e2 \n\
 /* 080189ca */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080189cc */ BL set_pause_beatscript_scene \n\
-/* 080189d0 */ LDR R0, =D_030046a4 \n\
+/* 080189d0 */ LDR R0, =gCurrentSceneData \n\
 /* 080189d2 */ LDR R1, [R0] \n\
 /* 080189d4 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 080189d6 */ STR R0, [R1, 0x8] \n\

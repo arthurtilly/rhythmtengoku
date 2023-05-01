@@ -10,7 +10,7 @@ thumb_func_start toss_boys_cue_miss \n\
 /* 0803f7d4 */ PUSH {R5-R7} \n\
 /* 0803f7d6 */ SUB SP, 0x14 \n\
 /* 0803f7d8 */ ADDS R7, R1, 0x0 @ Set R7 to R1 + 0x0 \n\
-/* 0803f7da */ LDR R5, =D_030055d0 \n\
+/* 0803f7da */ LDR R5, =gCurrentEngineData \n\
 /* 0803f7dc */ LDR R1, [R5] \n\
 /* 0803f7de */ LDR R2, =0x396 \n\
 /* 0803f7e0 */ ADDS R0, R1, R2 @ Set R0 to R1 + R2 \n\

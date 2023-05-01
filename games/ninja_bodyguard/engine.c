@@ -208,38 +208,38 @@ struct CueDefinition *ninja_bodyguard_cue_index[] = {
 
 // [D_089e6b2c] Common Events
 EngineEvent ninja_bodyguard_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) ninja_bodyguard_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) ninja_bodyguard_common_display_text,
+    /* BEAT_ANIMATION */ ninja_bodyguard_common_beat_animation,
+    /* DISPLAY_TEXT   */ ninja_bodyguard_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e6b38] Engine Events
 EngineEvent ninja_bodyguard_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_0803c9f8,
-    /* 0x01 */ (EngineEvent) func_0803ca8c,
-    /* 0x02 */ (EngineEvent) func_0803cad0,
-    /* 0x03 */ (EngineEvent) func_0803c5cc,
-    /* 0x04 */ (EngineEvent) func_0803c5f8,
-    /* 0x05 */ (EngineEvent) func_0803c638,
-    /* 0x06 */ (EngineEvent) func_0803c960,
-    /* 0x07 */ (EngineEvent) func_0803bf74,
-    /* 0x08 */ (EngineEvent) func_0803c034,
-    /* 0x09 */ (EngineEvent) func_0803c08c,
-    /* 0x0A */ (EngineEvent) func_0803cb0c,
-    /* 0x0B */ (EngineEvent) func_0803c2b8,
-    /* 0x0C */ (EngineEvent) func_0803c400,
-    /* 0x0D */ (EngineEvent) func_0803c6fc,
-    /* 0x0E */ (EngineEvent) func_0803ccb4,
-    /* 0x0F */ (EngineEvent) func_0803cce0,
-    /* 0x10 */ (EngineEvent) func_0803be04,
-    /* 0x11 */ (EngineEvent) func_0803be88,
-    /* 0x12 */ (EngineEvent) ninja_bodyguard_engine_event_stub
+    /* 0x00 */ func_0803c9f8,
+    /* 0x01 */ func_0803ca8c,
+    /* 0x02 */ func_0803cad0,
+    /* 0x03 */ func_0803c5cc,
+    /* 0x04 */ func_0803c5f8,
+    /* 0x05 */ func_0803c638,
+    /* 0x06 */ func_0803c960,
+    /* 0x07 */ func_0803bf74,
+    /* 0x08 */ func_0803c034,
+    /* 0x09 */ func_0803c08c,
+    /* 0x0A */ func_0803cb0c,
+    /* 0x0B */ func_0803c2b8,
+    /* 0x0C */ func_0803c400,
+    /* 0x0D */ func_0803c6fc,
+    /* 0x0E */ func_0803ccb4,
+    /* 0x0F */ func_0803cce0,
+    /* 0x10 */ func_0803be04,
+    /* 0x11 */ func_0803be88,
+    /* 0x12 */ ninja_bodyguard_engine_event_stub
 };
 
 // [D_089e6b84] Ninja Bodyguard Game Engine
 struct GameEngine ninja_bodyguard_engine = {
-    /* Size in Memory */ 0x300,
+    /* Size in Memory */ sizeof(struct NinjaBodyguardEngineData),
     /* Start Engine   */ ninja_bodyguard_engine_start,
     /* Update Engine  */ ninja_bodyguard_engine_update,
     /* Stop Engine    */ ninja_bodyguard_engine_stop,

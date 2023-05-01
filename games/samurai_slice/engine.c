@@ -164,29 +164,29 @@ const struct SamuraiSlice_0805a5d4 D_0805a5d4[] = {
 
 // [D_089e48d4] Common Events
 EngineEvent samurai_slice_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) samurai_slice_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) samurai_slice_common_display_text,
+    /* BEAT_ANIMATION */ samurai_slice_common_beat_animation,
+    /* DISPLAY_TEXT   */ samurai_slice_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e48e0] Engine Events
 EngineEvent samurai_slice_engine_events[] = {
-    /* 0x00 */ (EngineEvent) samurai_slice_engine_event_stub,
-    /* 0x01 */ (EngineEvent) func_08030f04,
-    /* 0x02 */ (EngineEvent) func_08031bc0,
-    /* 0x03 */ (EngineEvent) func_08032430,
-    /* 0x04 */ (EngineEvent) func_08031c54,
-    /* 0x05 */ (EngineEvent) func_0803113c,
-    /* 0x06 */ (EngineEvent) func_08030f34,
-    /* 0x07 */ (EngineEvent) func_080324a4,
-    /* 0x08 */ (EngineEvent) func_08031770,
-    /* 0x09 */ (EngineEvent) func_0803118c
+    /* 0x00 */ samurai_slice_engine_event_stub,
+    /* 0x01 */ func_08030f04,
+    /* 0x02 */ func_08031bc0,
+    /* 0x03 */ func_08032430,
+    /* 0x04 */ func_08031c54,
+    /* 0x05 */ func_0803113c,
+    /* 0x06 */ func_08030f34,
+    /* 0x07 */ func_080324a4,
+    /* 0x08 */ func_08031770,
+    /* 0x09 */ func_0803118c
 };
 
 // [D_089e4908] Samurai Slice Game Engine
 struct GameEngine samurai_slice_engine = {
-    /* Size in Memory */ 0x1e4,
+    /* Size in Memory */ sizeof(struct SamuraiSliceEngineData),
     /* Start Engine   */ samurai_slice_engine_start,
     /* Update Engine  */ samurai_slice_engine_update,
     /* Stop Engine    */ samurai_slice_engine_stop,

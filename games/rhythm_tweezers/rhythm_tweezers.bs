@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_rhythm_tweezers, script_rhythm_tweezers_entry
 
 
+
 @ Rhythm Tweezers - Script Entry Point (Skipped Practice)
 
 script script_rhythm_tweezers_skipped_practice_entry
@@ -106,6 +107,7 @@ struct rhythm_tweezers_marking_criteria
     .word rhythm_tweezers_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Rhythm Tweezers - Main Script
@@ -531,7 +533,7 @@ script script_rhythm_tweezers_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         rhythm_tweezers_start_hair_cycle 0
         spawn_cue CUE_SHORT
         rest 24
@@ -568,7 +570,7 @@ script script_rhythm_tweezers_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         rhythm_tweezers_start_hair_cycle 0
         spawn_cue CUE_LONG
         rest 24
@@ -605,7 +607,7 @@ script script_rhythm_tweezers_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         rhythm_tweezers_start_hair_cycle 0
         spawn_cue CUE_SHORT
         rest 24

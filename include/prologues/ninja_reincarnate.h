@@ -10,7 +10,7 @@
 
 
 // Types:
-struct NinjaReincarnatePrologueInfo {
+struct NinjaReincarnatePrologueEngineData {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };

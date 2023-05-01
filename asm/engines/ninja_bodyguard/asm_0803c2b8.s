@@ -31,7 +31,7 @@ branch_0803c2e0: \n\
 /* 0803c2e0 */ BL func_0803c28c \n\
  \n\
 branch_0803c2e4: \n\
-/* 0803c2e4 */ LDR R0, =D_030055d0 \n\
+/* 0803c2e4 */ LDR R0, =gCurrentEngineData \n\
 /* 0803c2e6 */ LDR R0, [R0] \n\
 /* 0803c2e8 */ STRB R4, [R0, 0x1] \n\
 /* 0803c2ea */ POP {R4} \n\

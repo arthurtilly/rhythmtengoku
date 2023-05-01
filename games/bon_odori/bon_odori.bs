@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_bon_odori, script_bon_odori_entry
 
 
+
 @ The Bon Odori - Script Entry Point (Skipped Practice)
 
 script script_bon_odori_skipped_practice_entry
@@ -117,6 +118,7 @@ struct bon_odori_marking_criteria
     .word bon_odori_marking_criteria_3
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ The Bon Odori - Main Script
@@ -1032,7 +1034,7 @@ script script_bon_odori_practice
     set_music_volume 150
     play_music s_mario2_seqData
     assess_inputs 0
-    run gameplay_display_skip_icon 1
+    run gameplay_display_skip_icon, 1
     run gameplay_set_tutorial scene_bon_odori_skipped_practice
     rest 24
     rest 24
@@ -1066,7 +1068,7 @@ script script_bon_odori_practice
     rest 12
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         bon_odori_start_input_check
         switch FUNC, func_080175d8
             case 0
@@ -1106,7 +1108,7 @@ script script_bon_odori_practice
     rest 12
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         bon_odori_start_input_check
         switch FUNC, func_080175d8
             case 0
@@ -1144,6 +1146,5 @@ script script_bon_odori_skipped_practice
     enable_pause 1
     rest 24
     goto script_bon_odori_main
-
 
 .end

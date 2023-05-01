@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start drum_live_cue_spawn \n\
 /* 08026bc8 */ PUSH {R4, R5, LR} \n\
 /* 08026bca */ STRB R2, [R1] \n\
-/* 08026bcc */ LDR R4, =D_030055d0 \n\
+/* 08026bcc */ LDR R4, =gCurrentEngineData \n\
 /* 08026bce */ LDR R3, [R4] \n\
 /* 08026bd0 */ LDRB R2, [R1] \n\
 /* 08026bd2 */ LSLS R2, R2, 0x1 \n\

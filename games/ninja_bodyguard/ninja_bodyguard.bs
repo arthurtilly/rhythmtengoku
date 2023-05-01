@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_ninja_bodyguard, script_ninja_bodyguard_entry
 
 
+
 @ Ninja Bodyguard - Script Entry Point (Skipped Intro)
 
 script script_ninja_bodyguard_skipped_intro_entry
@@ -107,6 +108,7 @@ struct ninja_bodyguard_marking_criteria
     .word ninja_bodyguard_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Ninja Bodyguard - Main Script

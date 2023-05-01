@@ -6,7 +6,7 @@
 #include "games/rhythm_tweezers/graphics/rhythm_tweezers_graphics.h"
 
 // Engine Types:
-struct RhythmTweezersInfo {
+struct RhythmTweezersEngineData {
     u8 version; // Value:   Version { 0..2 = Rhythm Tweezers; 3..5 = Rhythm Tweezers 2 }
     struct RhythmTweezersTweezers {
         struct AffineSprite *sprite; // Sprite: Tweezers

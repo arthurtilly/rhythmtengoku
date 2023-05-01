@@ -10,7 +10,7 @@ thumb_func_start drum_live_init_gfx2 \n\
 /* 08025f5c */ LSLS R0, R0, 0x10 \n\
 /* 08025f5e */ LSRS R0, R0, 0x10 \n\
 /* 08025f60 */ LDR R2, =drum_live_gfx_tables \n\
-/* 08025f62 */ LDR R1, =D_030055d0 \n\
+/* 08025f62 */ LDR R1, =gCurrentEngineData \n\
 /* 08025f64 */ LDR R1, [R1] \n\
 /* 08025f66 */ LDRB R1, [R1] \n\
 /* 08025f68 */ LSLS R1, R1, 0x2 \n\

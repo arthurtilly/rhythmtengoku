@@ -106,6 +106,7 @@ struct remix_4_marking_criteria
 endstruct
 
 
+
 @ Remix 4 - Rap Men Text
 
 text text_remix_4_sanji_desu_ka
@@ -167,6 +168,7 @@ endtext
 text D_08a536a0
     .asciz ".a:1オレ、　しらない:0ヨー！！"
 endtext
+
 
 
 @ Remix 4 - Main Script
@@ -332,7 +334,7 @@ script script_remix_4_main
     load_quiz_show
     enable_play_inputs 0
     assess_inputs 0
-    run gameplay_assess_irrelevant_inputs 0
+    run gameplay_assess_irrelevant_inputs, 0
     quiz_show_event01 0
     quiz_show_event01 -16
     quiz_show_event01 1
@@ -400,7 +402,7 @@ script script_remix_4_main
     night_walk_set_platform 0
     enable_play_inputs 1
     assess_inputs 1
-    run gameplay_assess_irrelevant_inputs 1
+    run gameplay_assess_irrelevant_inputs, 1
     night_walk_set_drumtech_volume 0
     night_walk_enable_swing 1
     night_walk_set_cue_earliness 240
@@ -464,12 +466,12 @@ script script_remix_4_main
     set_game_fade_in_time 0
 
     load_polyrhythm_remix
-    run gameplay_assess_irrelevant_inputs 0
+    run gameplay_assess_irrelevant_inputs, 0
     rest 12
     mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
     polyrhythm_spawn_rod 1
     rest 24
-    run gameplay_assess_irrelevant_inputs 1
+    run gameplay_assess_irrelevant_inputs, 1
     polyrhythm_despawn_blocks 0
     polyrhythm_spawn_block 0, 1, 0
     polyrhythm_spawn_block 1, 1, 0
@@ -634,14 +636,14 @@ script script_remix_4_main
     set_game_fade_in_time 0
 
     load_polyrhythm_remix
-    run gameplay_assess_irrelevant_inputs 0
+    run gameplay_assess_irrelevant_inputs, 0
     rest 12
     reset_music_track_volumes
     rest 24
     rest 24
     rest 24
     rest 24
-    run gameplay_assess_irrelevant_inputs 1
+    run gameplay_assess_irrelevant_inputs, 1
     mute_music_track MIDI_TRACK_5 | MIDI_TRACK_7 | MIDI_TRACK_8
     polyrhythm_spawn_rod 1
     polyrhythm_spawn_block 0, 1, 2
@@ -913,7 +915,7 @@ script script_remix_4_main
     load_quiz_show
     enable_play_inputs 0
     assess_inputs 0
-    run gameplay_assess_irrelevant_inputs 0
+    run gameplay_assess_irrelevant_inputs, 0
     quiz_show_event01 0
     quiz_show_event01 -16
     quiz_show_event01 1

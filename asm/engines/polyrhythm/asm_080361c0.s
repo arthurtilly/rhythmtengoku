@@ -9,7 +9,7 @@ thumb_func_start polyrhythm_spawn_piston \n\
 /* 080361c6 */ LSRS R5, R0, 0x4 \n\
 /* 080361c8 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 080361ca */ LSRS R4, R0, 0x5 \n\
-/* 080361cc */ LDR R2, =D_030055d0 \n\
+/* 080361cc */ LDR R2, =gCurrentEngineData \n\
 /* 080361ce */ ANDS R5, R1 @ Set R5 to R5 & R1 \n\
 /* 080361d0 */ LSLS R1, R5, 0x7 \n\
 /* 080361d2 */ ADDS R1, 0x4 @ Add 0x4 to R1 \n\

@@ -27,7 +27,7 @@ thumb_func_start func_08044074 \n\
 /* 080440b0 */ BL stop_sound \n\
 /* 080440b4 */ LDR R0, =s_rap_kimitte_saiko_seqData \n\
 /* 080440b6 */ BL stop_sound \n\
-/* 080440ba */ LDR R4, =D_030055d0 \n\
+/* 080440ba */ LDR R4, =gCurrentEngineData \n\
 /* 080440bc */ LDR R0, [R4] \n\
 /* 080440be */ LDR R5, =0x382 \n\
 /* 080440c0 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\
@@ -114,7 +114,7 @@ branch_08044188: \n\
 /* 080441a0 */ STRH R0, [R1] \n\
  \n\
 branch_080441a2: \n\
-/* 080441a2 */ LDR R0, =D_030055d0 \n\
+/* 080441a2 */ LDR R0, =gCurrentEngineData \n\
 /* 080441a4 */ LDR R1, [R0] \n\
 /* 080441a6 */ LDR R0, =0x381 \n\
 /* 080441a8 */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\

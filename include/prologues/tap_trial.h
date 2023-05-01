@@ -10,7 +10,7 @@
 
 
 // Types:
-struct TapTrialPrologueInfo {
+struct TapTrialPrologueEngineData {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
 };

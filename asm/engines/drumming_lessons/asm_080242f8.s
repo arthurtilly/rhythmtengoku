@@ -10,7 +10,7 @@ thumb_func_start drum_intro_engine_start \n\
 	PUSH {R5, R6, R7} \n\
 	SUB SP, 0x28 \n\
 	STR R0, [SP, 0x14] \n\
-	LDR R0, =D_030055d0 \n\
+	LDR R0, =gCurrentEngineData \n\
 	LDR R0, [R0] \n\
 	MOVS R1, 0xd5 \n\
 	LSLS R1, R1, 0x2 \n\
@@ -507,7 +507,7 @@ branch_0802476c: \n\
 	ADDS R0, R4, 0x0 \n\
 	MOVS R1, 0x1 \n\
 	BL text_printer_center_by_content \n\
-	LDR R0, =D_030055d0 \n\
+	LDR R0, =gCurrentEngineData \n\
 	LDR R0, [R0] \n\
 	LDRB R0, [R0] \n\
 	LDR R6, [SP, 0x18] \n\
@@ -563,7 +563,7 @@ branch_08024856: \n\
 	MOVS R0, 0xf3 \n\
 	MOVS R1, 0x0 \n\
 	BL gameplay_set_input_buttons \n\
-	LDR R5, =D_030055d0 \n\
+	LDR R5, =gCurrentEngineData \n\
 	LDR R0, [R5] \n\
 	MOVS R2, 0xe0 \n\
 	LSLS R2, R2, 0x2 \n\

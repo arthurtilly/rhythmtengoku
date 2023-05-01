@@ -75,6 +75,7 @@ struct sneaky_spirits_2_marking_criteria
 endstruct
 
 
+
 @ Sneaky Spirits 2 - Main Script
 
 script script_sneaky_spirits_2_main

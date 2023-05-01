@@ -6,8 +6,8 @@
 #include "games/clappy_trio/graphics/clappy_trio_graphics.h"
 
 // Engine Types:
-struct ClappyTrioInfo {
-    /* add fields here */
+struct ClappyTrioEngineData {
+    u8 pad[0x1c];
 };
 
 struct ClappyTrioCue {

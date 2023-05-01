@@ -1,0 +1,609 @@
+.include "include/beatscript.inc"
+.include "games/tap_trial/macros.inc"
+
+
+
+.section .script.entry
+@ Tap Trial (Unused) - Script Entry Point
+
+script script_tap_trial_unused_entry
+    set_tempo 124
+    set_game_fade_in_time 0
+    load_tap_trial_random
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_tap_trial_unused_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_tap_trial_unused, script_tap_trial_unused_entry
+
+
+
+@ Tap Trial (Unused) - Script Entry Point (Skipped Practice)
+
+script script_tap_trial_unused_skipped_practice_entry
+    set_tempo 124
+    set_game_fade_in_time 0
+    load_tap_trial_random
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_tap_trial_unused_skipped_practice
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_tap_trial_unused_skipped_practice, script_tap_trial_unused_skipped_practice_entry
+
+
+
+.section .script.main
+@ Tap Trial (Unused) - Marking Criteria
+
+struct tap_trial_unused_marking_criteria_0
+    /* Positive Remark */     .word D_0805c0ec
+    /* Negative Remark */     .word D_0805c0d0
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x80 @ 50%
+    /* Neg: Maximum Misses */ .hword 0x4C @ 30%
+endstruct
+
+struct tap_trial_unused_marking_criteria_1
+    /* Positive Remark */     .word D_0805c11c
+    /* Negative Remark */     .word D_0805c104
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x66 @ 40%
+    /* Neg: Maximum Misses */ .hword 0x99 @ 60%
+endstruct
+
+struct tap_trial_unused_marking_criteria_2
+    /* Positive Remark */     .word D_0805c144
+    /* Negative Remark */     .word D_0805c130
+    /* Flags */               .hword CHECK_AVERAGE_HITS | CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0xB3 @ 70%
+    /* Neg: Minimum Hits */   .hword 0x4C @ 30%
+    /* Neg: Maximum Misses */ .hword 0x80 @ 50%
+endstruct
+
+struct tap_trial_unused_marking_criteria_3
+    /* Positive Remark */     .word D_0805c170
+    /* Negative Remark */     .word D_0805c15c
+    /* Flags */               .hword CHECK_AVERAGE_MISSES
+    /* Pos: Required Hits */  .hword 0x00 @ 0%
+    /* Neg: Minimum Hits */   .hword 0x00 @ 0%
+    /* Neg: Maximum Misses */ .hword 0x00 @ 0%
+endstruct
+
+struct tap_trial_unused_marking_criteria
+    .word tap_trial_unused_marking_criteria_0
+    .word tap_trial_unused_marking_criteria_1
+    .word tap_trial_unused_marking_criteria_2
+    .word tap_trial_unused_marking_criteria_3
+    .word END_OF_CRITERIA
+endstruct
+
+
+
+@ Tap Trial (Unused) - Main Script
+
+script tap_trial_unused_sub_08a0b6a8
+    tap_trial_event00 0
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 24
+    tap_trial_event00 4
+    beat_anim
+    rest 24
+return
+
+
+script tap_trial_unused_sub_08a0b720
+    tap_trial_event00 1
+    tap_trial_event00 15
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 12
+    tap_trial_event00 15
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 12
+    tap_trial_event00 5
+    beat_anim
+    rest 12
+    tap_trial_event00 5
+    rest 12
+return
+
+
+script tap_trial_unused_sub_08a0b810
+    tap_trial_event00 9
+    rest 24
+return
+
+
+script tap_trial_unused_sub_08a0b840
+    tap_trial_event00 10
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 24
+    tap_trial_event00 14
+    beat_anim
+    rest 24
+return
+
+
+script tap_trial_unused_sub_08a0b8b8
+    tap_trial_event00 11
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 24
+    tap_trial_event00 12
+    beat_anim
+    rest 24
+return
+
+
+script tap_trial_unused_sub_08a0b930
+    tap_trial_event00 8
+    rest 24
+    spawn_cue CUE_DEFAULT
+    rest 12
+    spawn_cue CUE_DEFAULT
+    rest 12
+    tap_trial_event00 6
+    spawn_cue CUE_DEFAULT
+    rest 12
+    tap_trial_event00 7
+    rest 12
+    tap_trial_event00 6
+    beat_anim
+    rest 24
+return
+
+
+script tap_trial_unused_sub_08a0ba14
+    loop_start
+        tap_trial_event01 189
+        call tap_trial_unused_sub_08a0b6a8
+        call tap_trial_unused_sub_08a0b6a8
+        call tap_trial_unused_sub_08a0b6a8
+        call tap_trial_unused_sub_08a0b6a8
+    loop_end
+return
+
+
+script tap_trial_unused_sub_08a0ba80
+    loop_start
+        tap_trial_event01 189
+        call tap_trial_unused_sub_08a0b6a8
+        call tap_trial_unused_sub_08a0b6a8
+        call tap_trial_unused_sub_08a0b6a8
+        call tap_trial_unused_sub_08a0b720
+    loop_end
+return
+
+
+script tap_trial_unused_sub_08a0baec
+    loop_start
+        tap_trial_event01 189
+        call tap_trial_unused_sub_08a0b810
+        call tap_trial_unused_sub_08a0b840
+        call tap_trial_unused_sub_08a0b840
+        call tap_trial_unused_sub_08a0b8b8
+        beat_anim
+        rest 24
+    loop_end
+return
+
+
+script tap_trial_unused_sub_08a0bb70
+    loop_start
+        tap_trial_event01 189
+        call tap_trial_unused_sub_08a0b6a8
+        call tap_trial_unused_sub_08a0b6a8
+        call tap_trial_unused_sub_08a0b930
+    loop_end
+return
+
+
+script script_tap_trial_unused_main
+    import_marking_criteria tap_trial_unused_marking_criteria
+    assess_inputs 1
+    set_tempo 120
+    set_music_volume 180
+    set_marking_criteria 0
+    print_text_f D_0805c174
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    tap_trial_event03 1
+    beat_anim
+    rest 24
+    tap_trial_event04 D_0805c18c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tap_trial_event04 NULL
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b810
+    call tap_trial_unused_sub_08a0b8b8
+    mod_music_volume 90, 96
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b6a8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b6a8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b6a8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b930
+    set_marking_criteria 2
+    beat_anim
+    rest 24
+    tap_trial_event02 0
+    call tap_trial_unused_sub_08a0b810
+    call tap_trial_unused_sub_08a0b840
+    call tap_trial_unused_sub_08a0b840
+    call tap_trial_unused_sub_08a0b8b8
+    tap_trial_event06 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tap_trial_event05 0
+    set_marking_criteria 1
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b6a8
+    set_marking_criteria 0
+    call tap_trial_unused_sub_08a0b6a8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b6a8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b6a8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b930
+    set_tempo 140
+    set_music_volume 180
+    set_marking_criteria 2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    mod_music_volume 120, 48
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b930
+    set_marking_criteria 1
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b6a8
+    set_marking_criteria 0
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b6a8
+    tap_trial_event02 0
+    set_marking_criteria 1
+    call tap_trial_unused_sub_08a0b720
+    tap_trial_event06 0
+    call tap_trial_unused_sub_08a0b720
+    tap_trial_event05 0
+    set_marking_criteria 0
+    call tap_trial_unused_sub_08a0b930
+    set_marking_criteria 2
+    tap_trial_event02 0
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b930
+    call tap_trial_unused_sub_08a0b6a8
+    tap_trial_event06 1
+    call tap_trial_unused_sub_08a0b810
+    tap_trial_event05 0
+    set_marking_criteria 1
+    call tap_trial_unused_sub_08a0b840
+    call tap_trial_unused_sub_08a0b8b8
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b6a8
+    set_marking_criteria 0
+    call tap_trial_unused_sub_08a0b810
+    call tap_trial_unused_sub_08a0b840
+    call tap_trial_unused_sub_08a0b8b8
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b810
+    call tap_trial_unused_sub_08a0b840
+    call tap_trial_unused_sub_08a0b8b8
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b810
+    call tap_trial_unused_sub_08a0b840
+    call tap_trial_unused_sub_08a0b840
+    call tap_trial_unused_sub_08a0b8b8
+    beat_anim
+    rest 24
+    set_marking_criteria 2
+    tap_trial_event02 0
+    call tap_trial_unused_sub_08a0b930
+    call tap_trial_unused_sub_08a0b8b8
+    call tap_trial_unused_sub_08a0b6a8
+    tap_trial_event06 2
+    set_marking_criteria 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tap_trial_event05 0
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b6a8
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b720
+    set_marking_criteria 1
+    call tap_trial_unused_sub_08a0b720
+    call tap_trial_unused_sub_08a0b720
+    set_marking_criteria 0
+    call tap_trial_unused_sub_08a0b930
+    set_marking_criteria 2
+    tap_trial_event02 0
+    call tap_trial_unused_sub_08a0b810
+    call tap_trial_unused_sub_08a0b8b8
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b720
+    mod_music_volume 180, 48
+    tap_trial_event00 0
+    spawn_cue CUE_DEFAULT
+    beat_anim
+    rest 24
+    tap_trial_event00 4
+    rest 14
+    run scene_stop_music, 0
+    rest 10
+    tap_trial_event06 1
+    set_marking_criteria 3
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    tap_trial_event05 0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b6a8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b6a8
+    play_music s_karate_fan_seqData
+    beat_anim
+    rest 24
+    beat_anim
+    rest 22
+    run scene_stop_music, 0
+    rest 2
+    call tap_trial_unused_sub_08a0b6a8
+    play_music s_karate_fan_seqData
+    beat_anim
+    rest 24
+    beat_anim
+    rest 22
+    run scene_stop_music, 0
+    rest 2
+    call tap_trial_unused_sub_08a0b6a8
+    play_music s_karate_fan_seqData
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    play_music s_karate_fan_seqData
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    play_music s_karate_fan_seqData
+    call tap_trial_unused_sub_08a0b810
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0b8b8
+    tap_trial_event04 D_0805c1a8
+    beat_anim
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+return
+
+
+script script_tap_trial_unused_practice
+    set_tempo 120
+    print_text_f D_0805c1bc
+    rest 24
+    rest 24
+    run gameplay_set_tutorial D_089d1b78
+    rest 24
+    rest 24
+    rest 24
+    print_text_f NULL
+    rest 24
+    assess_inputs 0
+    set_tempo 110
+    set_music_volume 256
+    print_text_f D_0805c1d0
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    print_text_f D_0805c1e8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0ba14
+    print_text_f D_0805c1f8
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0ba80
+    print_text_f D_0805c210
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0baec
+    print_text_f D_0805c228
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    call tap_trial_unused_sub_08a0bb70
+    run gameplay_set_tutorial NULL
+    mod_music_volume 0, 90
+    print_text_f D_0805c240
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    print_text_f NULL
+    beat_anim
+    rest 24
+    goto script_tap_trial_unused_main
+
+
+script script_tap_trial_unused_skipped_practice
+    set_game_fade_in_time 0
+    set_tempo 120
+    rest 24
+    rest 24
+    goto script_tap_trial_unused_main
+
+.end

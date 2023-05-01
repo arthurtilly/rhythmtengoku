@@ -9,7 +9,7 @@ thumb_func_start func_080327d4 \n\
 /* 080327da */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 080327dc */ PUSH {R5-R7} \n\
 /* 080327de */ SUB SP, 0x14 \n\
-/* 080327e0 */ LDR R0, =D_030055d0 \n\
+/* 080327e0 */ LDR R0, =gCurrentEngineData \n\
 /* 080327e2 */ LDR R0, [R0] \n\
 /* 080327e4 */ MOVS R1, 0xD8 @ Set R1 to 0xD8 \n\
 /* 080327e6 */ LSLS R1, R1, 0x1 \n\
@@ -20,7 +20,7 @@ thumb_func_start func_080327d4 \n\
 /* 080327f0 */ MOV R9, R3 @ Set R9 to R3 \n\
  \n\
 branch_080327f2: \n\
-/* 080327f2 */ LDR R0, =calligraphy_people_start_pos \n\
+/* 080327f2 */ LDR R0, =power_calligraphy_people_start_pos \n\
 /* 080327f4 */ LSLS R1, R2, 0x2 \n\
 /* 080327f6 */ ADDS R1, R1, R0 @ Set R1 to R1 + R0 \n\
 /* 080327f8 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
@@ -39,7 +39,7 @@ branch_08032808: \n\
 /* 0803280e */ STRB R0, [R4, 0x2] \n\
 /* 08032810 */ MOV R1, R9 @ Set R1 to R9 \n\
 /* 08032812 */ LDR R0, [R1] \n\
-/* 08032814 */ LDR R2, =calligraphy_people_dance_anim \n\
+/* 08032814 */ LDR R2, =power_calligraphy_people_dance_anim \n\
 /* 08032816 */ LDRB R1, [R4, 0x2] \n\
 /* 08032818 */ LSLS R1, R1, 0x3 \n\
 /* 0803281a */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
@@ -82,7 +82,7 @@ branch_08032808: \n\
 /* 08032868 */ MOV R2, R8 @ Set R2 to R8 \n\
 /* 0803286a */ CMP R2, 0x1 @ Compare R2 and 0x1 \n\
 /* 0803286c */ BLS branch_080327f2 \n\
-/* 0803286e */ LDR R4, =D_030055d0 \n\
+/* 0803286e */ LDR R4, =gCurrentEngineData \n\
 /* 08032870 */ LDR R1, [R4] \n\
 /* 08032872 */ MOVS R0, 0x84 @ Set R0 to 0x84 \n\
 /* 08032874 */ LSLS R0, R0, 0x2 \n\

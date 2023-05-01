@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_tram_pauline, script_tram_pauline_entry
 
 
+
 @ Tram and Pauline - Script Entry Point (Skipped Practice)
 
 script script_tram_pauline_skipped_practice_entry
@@ -107,6 +108,7 @@ struct tram_pauline_marking_criteria
     .word tram_pauline_marking_criteria_2
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Tram and Pauline - Main Script
@@ -643,7 +645,7 @@ script script_tram_pauline_practice
     rest 24
     print_text_f NULL
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         beat_anim
         rest 24
         tram_pauline_event00 0
@@ -657,7 +659,7 @@ script script_tram_pauline_practice
         rest 24
     loop_end
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         beat_anim
         rest 24
         tram_pauline_event00 1
@@ -682,7 +684,7 @@ script script_tram_pauline_practice
     rest 24
     print_text_f NULL
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         beat_anim
         rest 24
         beat_anim
@@ -706,7 +708,7 @@ script script_tram_pauline_practice
         rest 24
     loop_end
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         beat_anim
         rest 24
         beat_anim
@@ -741,7 +743,7 @@ script script_tram_pauline_practice
     rest 24
     print_text_f NULL
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         beat_anim
         rest 24
         beat_anim
@@ -776,7 +778,7 @@ script script_tram_pauline_practice
     rest 24
     print_text_f NULL
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         beat_anim
         rest 24
         tram_pauline_event00 0

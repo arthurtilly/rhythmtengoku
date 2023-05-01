@@ -7,7 +7,7 @@ thumb_func_start func_0803e10c \n\
 /* 0803e10e */ SUB SP, 0x8 \n\
 /* 0803e110 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0803e112 */ BEQ branch_0803e138 \n\
-/* 0803e114 */ LDR R0, =D_030055d0 \n\
+/* 0803e114 */ LDR R0, =gCurrentEngineData \n\
 /* 0803e116 */ LDR R0, [R0] \n\
 /* 0803e118 */ MOVS R1, 0x18 @ Set R1 to 0x18 \n\
 /* 0803e11a */ LDRSH R0, [R0, R1] \n\
@@ -25,7 +25,7 @@ thumb_func_start func_0803e10c \n\
 .ltorg \n\
  \n\
 branch_0803e138: \n\
-/* 0803e138 */ LDR R0, =D_030055d0 \n\
+/* 0803e138 */ LDR R0, =gCurrentEngineData \n\
 /* 0803e13a */ LDR R0, [R0] \n\
 /* 0803e13c */ MOVS R1, 0x18 @ Set R1 to 0x18 \n\
 /* 0803e13e */ LDRSH R0, [R0, R1] \n\

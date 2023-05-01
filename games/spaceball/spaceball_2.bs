@@ -75,6 +75,7 @@ struct spaceball_2_marking_criteria
 endstruct
 
 
+
 @ Spaceball 2 - Main Script
 
 script script_spaceball_2_main
@@ -244,7 +245,7 @@ script script_spaceball_2_main
     spaceball_zoom_camera 0xfef2, 24
     rest 24
     rest 4
-    run scene_stop_music 0
+    run scene_stop_music, 0
     rest 20
     mute_music_track MIDI_TRACK_9
     set_tempo 125
@@ -254,7 +255,7 @@ script script_spaceball_2_main
     spaceball_zoom_camera 0xff00, 24
     rest 24
     rest 4
-    run scene_stop_music 0
+    run scene_stop_music, 0
     rest 20
     reset_music_track_volumes
     set_tempo 140

@@ -41,12 +41,12 @@ struct GraphicsTable tap_trial_2_prologue_gfx_table[] = {
 
 // [D_089ed700] Engine Events
 EngineEvent tap_trial_2_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08047888
+    /* 0x00 */ func_08047888
 };
 
 // [D_089ed704] Prologue (Tap Trial 2) Game Engine
 struct GameEngine tap_trial_2_prologue_engine = {
-    /* Size in Memory */ sizeof(struct TapTrial2PrologueInfo),
+    /* Size in Memory */ sizeof(struct TapTrial2PrologueEngineData),
     /* Start Engine   */ tap_trial_2_prologue_engine_start,
     /* Update Engine  */ tap_trial_2_prologue_engine_update,
     /* Stop Engine    */ tap_trial_2_prologue_engine_stop,

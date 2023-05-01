@@ -8,7 +8,7 @@ thumb_func_start toss_boys_common_beat_animation \n\
 /* 0803fbdc */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
  \n\
 branch_0803fbde: \n\
-/* 0803fbde */ LDR R0, =D_030055d0 \n\
+/* 0803fbde */ LDR R0, =gCurrentEngineData \n\
 /* 0803fbe0 */ LDR R1, [R0] \n\
 /* 0803fbe2 */ LDR R2, =0x35a \n\
 /* 0803fbe4 */ ADDS R0, R1, R2 @ Set R0 to R1 + R2 \n\
@@ -54,7 +54,7 @@ branch_0803fc18: \n\
 /* 0803fc2e */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 0803fc30 */ LDR R0, =D_03005380 \n\
 /* 0803fc32 */ LDR R0, [R0] \n\
-/* 0803fc34 */ LDR R1, =D_030055d0 \n\
+/* 0803fc34 */ LDR R1, =gCurrentEngineData \n\
 /* 0803fc36 */ LDR R1, [R1] \n\
 /* 0803fc38 */ LSLS R3, R5, 0x1 \n\
 /* 0803fc3a */ MOVS R6, 0xD5 @ Set R6 to 0xD5 \n\

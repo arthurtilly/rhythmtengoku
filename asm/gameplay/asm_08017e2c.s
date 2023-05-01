@@ -9,7 +9,7 @@ thumb_func_start gameplay_register_hit_barely \n\
 /* 08017e32 */ MOV R12, R3 @ Set R12 to R3 \n\
 /* 08017e34 */ ADDS R4, R5, 0x0 @ Set R4 to R5 + 0x0 \n\
 /* 08017e36 */ ADDS R4, 0x8 @ Add 0x8 to R4 \n\
-/* 08017e38 */ LDR R6, =D_030046a4 \n\
+/* 08017e38 */ LDR R6, =gCurrentSceneData \n\
 /* 08017e3a */ LDR R0, [R6] \n\
 /* 08017e3c */ ADDS R0, 0x78 @ Add 0x78 to R0 \n\
 /* 08017e3e */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\

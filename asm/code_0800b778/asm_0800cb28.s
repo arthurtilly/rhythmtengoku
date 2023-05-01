@@ -616,7 +616,7 @@ jump_0800d0ac: \n\
 /* 0800d0b8 */ BL branch_0800df9e \n\
 \n\
 jump_0800d0bc: \n\
-/* 0800d0bc */ LDR R0, =D_030046a4 \n\
+/* 0800d0bc */ LDR R0, =gCurrentSceneData \n\
 /* 0800d0be */ LDR R0, [R0] \n\
 /* 0800d0c0 */ ADDS R4, R0, R6 @ Set R4 to R0 + R6 \n\
 /* 0800d0c2 */ CMP R7, 0x1 @ Compare R7 and 0x1 \n\
@@ -678,7 +678,7 @@ branch_0800d114: \n\
 /* 0800d114 */ B jump_0800d872 \n\
 \n\
 jump_0800d116: \n\
-/* 0800d116 */ LDR R0, =D_030046a4 \n\
+/* 0800d116 */ LDR R0, =gCurrentSceneData \n\
 /* 0800d118 */ LDR R0, [R0] \n\
 /* 0800d11a */ MOV R6, R8 @ Set R6 to R8 \n\
 /* 0800d11c */ ADDS R4, R0, R6 @ Set R4 to R0 + R6 \n\
@@ -711,7 +711,7 @@ branch_0800d13a: \n\
 /* 0800d144 */ B branch_0800d1a6 \n\
 \n\
 jump_0800d146: \n\
-/* 0800d146 */ LDR R0, =D_030046a4 \n\
+/* 0800d146 */ LDR R0, =gCurrentSceneData \n\
 /* 0800d148 */ LDR R0, [R0] \n\
 /* 0800d14a */ ADDS R4, R0, R6 @ Set R4 to R0 + R6 \n\
 /* 0800d14c */ CMP R7, 0x1 @ Compare R7 and 0x1 \n\
@@ -930,7 +930,7 @@ branch_0800d2ae: \n\
 /* 0800d2ba */ BL branch_0800df9e \n\
 \n\
 jump_0800d2be: \n\
-/* 0800d2be */ LDR R0, =D_030046a4 \n\
+/* 0800d2be */ LDR R0, =gCurrentSceneData \n\
 /* 0800d2c0 */ LDR R0, [R0] \n\
 /* 0800d2c2 */ ADDS R5, R0, R6 @ Set R5 to R0 + R6 \n\
 /* 0800d2c4 */ CMP R7, 0x1 @ Compare R7 and 0x1 \n\
@@ -959,7 +959,7 @@ branch_0800d2e8: \n\
 /* 0800d2ec */ BL branch_0800df9e \n\
 \n\
 jump_0800d2f0: \n\
-/* 0800d2f0 */ LDR R0, =D_030046a4 \n\
+/* 0800d2f0 */ LDR R0, =gCurrentSceneData \n\
 /* 0800d2f2 */ LDR R0, [R0] \n\
 /* 0800d2f4 */ ADDS R5, R0, R6 @ Set R5 to R0 + R6 \n\
 /* 0800d2f6 */ CMP R7, 0x1 @ Compare R7 and 0x1 \n\
@@ -991,7 +991,7 @@ branch_0800d320: \n\
 /* 0800d326 */ BL branch_0800df9e \n\
 \n\
 jump_0800d32a: \n\
-/* 0800d32a */ LDR R0, =D_030046a4 \n\
+/* 0800d32a */ LDR R0, =gCurrentSceneData \n\
 /* 0800d32c */ LDR R0, [R0] \n\
 /* 0800d32e */ ADDS R5, R0, R6 @ Set R5 to R0 + R6 \n\
 /* 0800d330 */ CMP R7, 0x1 @ Compare R7 and 0x1 \n\
@@ -1031,7 +1031,7 @@ branch_0800d362: \n\
 /* 0800d36e */ BL branch_0800df9e \n\
 \n\
 jump_0800d372: \n\
-/* 0800d372 */ LDR R0, =D_030046a4 \n\
+/* 0800d372 */ LDR R0, =gCurrentSceneData \n\
 /* 0800d374 */ LDR R0, [R0] \n\
 /* 0800d376 */ ADDS R5, R0, R6 @ Set R5 to R0 + R6 \n\
 /* 0800d378 */ CMP R7, 0x1 @ Compare R7 and 0x1 \n\

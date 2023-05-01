@@ -7,7 +7,7 @@ thumb_func_start func_080395dc \n\
 /* 080395de */ ADDS R2, R0, 0x0 @ Set R2 to R0 + 0x0 \n\
 /* 080395e0 */ CMP R2, 0x0 @ Compare R2 and 0x0 \n\
 /* 080395e2 */ BEQ branch_080395fc \n\
-/* 080395e4 */ LDR R0, =D_030055d0 \n\
+/* 080395e4 */ LDR R0, =gCurrentEngineData \n\
 /* 080395e6 */ LDR R1, [R0] \n\
 /* 080395e8 */ ADDS R1, 0xEC @ Add 0xEC to R1 \n\
 /* 080395ea */ SUBS R2, 0x1 @ Subtract 0x1 from R2 \n\
@@ -21,7 +21,7 @@ thumb_func_start func_080395dc \n\
 .ltorg \n\
  \n\
 branch_080395fc: \n\
-/* 080395fc */ LDR R0, =D_030055d0 \n\
+/* 080395fc */ LDR R0, =gCurrentEngineData \n\
 /* 080395fe */ LDR R0, [R0] \n\
 /* 08039600 */ ADDS R0, 0xEC @ Add 0xEC to R0 \n\
 /* 08039602 */ STR R2, [R0] \n\

@@ -156,26 +156,26 @@ const char D_0805a684[] = "‚¨‚Â‚©‚ê‚³‚Ü";
 
 // [D_089e5810] Common Events
 EngineEvent mr_upbeat_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) mr_upbeat_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) mr_upbeat_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) mr_upbeat_common_init_tutorial,
+    /* BEAT_ANIMATION */ mr_upbeat_common_beat_animation,
+    /* DISPLAY_TEXT   */ mr_upbeat_common_display_text,
+    /* INIT_TUTORIAL  */ mr_upbeat_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e5820] Engine Events
 EngineEvent mr_upbeat_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08034f18,
-    /* 0x01 */ (EngineEvent) func_08035314,
-    /* 0x02 */ (EngineEvent) func_08034e84,
-    /* 0x03 */ (EngineEvent) func_08034d6c,
-    /* 0x04 */ (EngineEvent) func_08034db0,
-    /* 0x05 */ (EngineEvent) func_0803516c,
-    /* 0x06 */ (EngineEvent) mr_upbeat_engine_event_stub
+    /* 0x00 */ func_08034f18,
+    /* 0x01 */ func_08035314,
+    /* 0x02 */ func_08034e84,
+    /* 0x03 */ func_08034d6c,
+    /* 0x04 */ func_08034db0,
+    /* 0x05 */ func_0803516c,
+    /* 0x06 */ mr_upbeat_engine_event_stub
 };
 
 // [D_089e583c] Mr. Upbeat Game Engine
 struct GameEngine mr_upbeat_engine = {
-    /* Size in Memory */ 0x54,
+    /* Size in Memory */ sizeof(struct MrUpbeatEngineData),
     /* Start Engine   */ mr_upbeat_engine_start,
     /* Update Engine  */ mr_upbeat_engine_update,
     /* Stop Engine    */ mr_upbeat_engine_stop,

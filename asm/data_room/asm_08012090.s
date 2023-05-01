@@ -6,7 +6,7 @@ thumb_func_start func_08012090 \n\
 /* 08012090 */ PUSH {R4, R5, LR} \n\
 /* 08012092 */ SUB SP, 0xC \n\
 /* 08012094 */ BL func_08011fa8 \n\
-/* 08012098 */ LDR R5, =D_030046a4 \n\
+/* 08012098 */ LDR R5, =gCurrentSceneData \n\
 /* 0801209a */ LDR R1, [R5] \n\
 /* 0801209c */ LDRB R0, [R1, 0x1C] \n\
 /* 0801209e */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\

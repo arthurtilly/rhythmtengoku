@@ -6,8 +6,8 @@
 #include "games/bunny_hop/graphics/bunny_hop_graphics.h"
 
 // Engine Types:
-struct BunnyHopInfo {
-    /* add fields here */
+struct BunnyHopEngineData {
+    u8 pad[0x31c];
 };
 
 struct BunnyHopCue {

@@ -7,7 +7,7 @@
 #include "games/karate_man/graphics/karate_man_graphics.h"
 
 // Engine Types:
-struct KarateManInfo {
+struct KarateManEngineData {
     u8 version;     // 0 = Karate Man; 1 = Karate Man (BG Faces); 2 = Karate Man ("Serious Mode"); 3 = Karate Man 2
 	struct KarateJoe {
     	u16 isNotBeat:4; // Value:  Beat Animation Flag (TRUE when not in Beat Animation)

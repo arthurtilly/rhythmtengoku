@@ -24,7 +24,7 @@ branch_08034560: \n\
 /* 08034564 */ MOVS R7, 0x0 @ Set R7 to 0x0 \n\
 /* 08034566 */ CMP R7, R9 @ Compare R7 and R9 \n\
 /* 08034568 */ BCS branch_080345be \n\
-/* 0803456a */ LDR R0, =D_030055d0 \n\
+/* 0803456a */ LDR R0, =gCurrentEngineData \n\
 /* 0803456c */ MOV R10, R0 @ Set R10 to R0 \n\
 /* 0803456e */ MOVS R1, 0x8 @ Set R1 to 0x8 \n\
 /* 08034570 */ MOV R8, R1 @ Set R8 to R1 \n\
@@ -32,7 +32,7 @@ branch_08034560: \n\
 branch_08034572: \n\
 /* 08034572 */ CMP R7, 0x3 @ Compare R7 and 0x3 \n\
 /* 08034574 */ BNE branch_080345a8 \n\
-/* 08034576 */ LDR R6, =D_030055d0 \n\
+/* 08034576 */ LDR R6, =gCurrentEngineData \n\
 /* 08034578 */ LDR R0, [R6] \n\
 /* 0803457a */ LDRH R5, [R0, 0x3A] \n\
 /* 0803457c */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\

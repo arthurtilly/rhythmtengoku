@@ -6,7 +6,7 @@ thumb_func_start sick_beats_cue_update \n\
 /* 080438c8 */ PUSH {R4-R7, LR} \n\
 /* 080438ca */ ADDS R5, R1, 0x0 @ Set R5 to R1 + 0x0 \n\
 /* 080438cc */ ADDS R6, R2, 0x0 @ Set R6 to R2 + 0x0 \n\
-/* 080438ce */ LDR R0, =D_030055d0 \n\
+/* 080438ce */ LDR R0, =gCurrentEngineData \n\
 /* 080438d0 */ LDR R0, [R0] \n\
 /* 080438d2 */ ADDS R7, R0, 0x0 @ Set R7 to R0 + 0x0 \n\
 /* 080438d4 */ ADDS R7, 0x28 @ Add 0x28 to R7 \n\
@@ -128,7 +128,7 @@ jump_080439a0: \n\
 /* 080439d4 */ MOVS R1, 0x10 @ Set R1 to 0x10 \n\
 /* 080439d6 */ ORRS R0, R1 @ Set R0 to R0 | R1 \n\
 /* 080439d8 */ STRB R0, [R5] \n\
-/* 080439da */ LDR R0, =D_030055d0 \n\
+/* 080439da */ LDR R0, =gCurrentEngineData \n\
 /* 080439dc */ LDR R0, [R0] \n\
 /* 080439de */ LDR R1, =0x202 \n\
 /* 080439e0 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

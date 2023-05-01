@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_wizards_waltz, script_wizards_waltz_entry
 
 
+
 @ Wizard's Waltz - Script Entry Point (Skipped Practice)
 
 script script_wizards_waltz_skipped_practice_entry
@@ -95,6 +96,7 @@ struct wizards_waltz_marking_criteria
     .word wizards_waltz_marking_criteria_1
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Wizard's Waltz - Main Script
@@ -395,7 +397,7 @@ script script_wizards_waltz_practice
     rest 24
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         wizards_waltz_set_cycle_time 144
         play_music s_mitubati_seqData
         rest 24
@@ -419,7 +421,7 @@ script script_wizards_waltz_practice
     loop_end
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         wizards_waltz_set_cycle_time 144
         play_music s_mitubati_seqData
         rest 24

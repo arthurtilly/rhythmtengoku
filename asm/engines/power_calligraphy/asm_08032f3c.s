@@ -2,18 +2,18 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start calligraphy_engine_start \n\
+thumb_func_start power_calligraphy_engine_start \n\
 /* 08032f3c */ PUSH {R4-R7, LR} \n\
 /* 08032f3e */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 08032f40 */ MOV R6, R9 @ Set R6 to R9 \n\
 /* 08032f42 */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 08032f44 */ PUSH {R5-R7} \n\
 /* 08032f46 */ SUB SP, 0x14 \n\
-/* 08032f48 */ LDR R1, =D_030055d0 \n\
+/* 08032f48 */ LDR R1, =gCurrentEngineData \n\
 /* 08032f4a */ MOV R8, R1 @ Set R8 to R1 \n\
 /* 08032f4c */ LDR R1, [R1] \n\
 /* 08032f4e */ STRB R0, [R1] \n\
-/* 08032f50 */ BL calligraphy_init_gfx1 \n\
+/* 08032f50 */ BL power_calligraphy_init_gfx1 \n\
 /* 08032f54 */ BL scene_show_obj_layer \n\
 /* 08032f58 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08032f5a */ STR R2, [SP] \n\
@@ -45,7 +45,7 @@ thumb_func_start calligraphy_engine_start \n\
 /* 08032f92 */ BL scene_set_bg_layer_display \n\
 /* 08032f96 */ LDR R5, =D_03005380 \n\
 /* 08032f98 */ LDR R0, [R5] \n\
-/* 08032f9a */ LDR R1, =anim_calligraphy_brush \n\
+/* 08032f9a */ LDR R1, =anim_power_calligraphy_brush \n\
 /* 08032f9c */ MOVS R2, 0x40 @ Set R2 to 0x40 \n\
 /* 08032f9e */ MOV R10, R2 @ Set R10 to R2 \n\
 /* 08032fa0 */ STR R2, [SP] \n\
@@ -78,7 +78,7 @@ thumb_func_start calligraphy_engine_start \n\
 /* 08032fda */ MOV R3, R9 @ Set R3 to R9 \n\
 /* 08032fdc */ BL func_0804db44 \n\
 /* 08032fe0 */ LDR R0, [R5] \n\
-/* 08032fe2 */ LDR R1, =anim_calligraphy_brush_charge_effect \n\
+/* 08032fe2 */ LDR R1, =anim_power_calligraphy_brush_charge_effect \n\
 /* 08032fe4 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08032fe6 */ STR R2, [SP] \n\
 /* 08032fe8 */ LDR R2, =0x4737 \n\
@@ -102,7 +102,7 @@ thumb_func_start calligraphy_engine_start \n\
 /* 0803300e */ MOV R3, R9 @ Set R3 to R9 \n\
 /* 08033010 */ BL func_0804db44 \n\
 /* 08033014 */ LDR R0, [R5] \n\
-/* 08033016 */ LDR R6, =anim_calligraphy_kokoro \n\
+/* 08033016 */ LDR R6, =anim_power_calligraphy_kokoro \n\
 /* 08033018 */ MOVS R1, 0x54 @ Set R1 to 0x54 \n\
 /* 0803301a */ MOV R10, R1 @ Set R10 to R1 \n\
 /* 0803301c */ STR R1, [SP] \n\
@@ -175,7 +175,7 @@ thumb_func_start calligraphy_engine_start \n\
 /* 080330aa */ LDR R0, =0xffff \n\
 /* 080330ac */ STRH R0, [R1] \n\
 /* 080330ae */ LDR R0, [R5] \n\
-/* 080330b0 */ LDR R1, =anim_calligraphy_skip_icon \n\
+/* 080330b0 */ LDR R1, =anim_power_calligraphy_skip_icon \n\
 /* 080330b2 */ MOVS R2, 0xA0 @ Set R2 to 0xA0 \n\
 /* 080330b4 */ STR R2, [SP] \n\
 /* 080330b6 */ MOVS R2, 0x88 @ Set R2 to 0x88 \n\

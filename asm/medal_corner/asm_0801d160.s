@@ -6,7 +6,7 @@ thumb_func_start func_0801d160 \n\
 /* 0801d160 */ PUSH {R4-R6, LR} \n\
 /* 0801d162 */ SUB SP, 0xC \n\
 /* 0801d164 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
-/* 0801d166 */ LDR R5, =D_030046a4 \n\
+/* 0801d166 */ LDR R5, =gCurrentSceneData \n\
 /* 0801d168 */ LDR R0, [R5] \n\
 /* 0801d16a */ LDR R0, [R0, 0x14] \n\
 /* 0801d16c */ LDR R1, [R0, 0xC] \n\

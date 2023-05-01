@@ -187,26 +187,26 @@ struct CueDefinition *spaceball_cue_index[] = {
 
 // [D_089deae0] Common Events
 EngineEvent spaceball_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) spaceball_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) spaceball_common_display_text,
+    /* BEAT_ANIMATION */ spaceball_common_beat_animation,
+    /* DISPLAY_TEXT   */ spaceball_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089deaec] Engine Events
 EngineEvent spaceball_engine_events[] = {
-    /* 0x00 */ (EngineEvent) spaceball_prepare_pitcher,
-    /* 0x01 */ (EngineEvent) spaceball_loop_exit_condition,
-    /* 0x02 */ (EngineEvent) spaceball_set_camera_zoom,
-    /* 0x03 */ (EngineEvent) spaceball_set_batter_type,
-    /* 0x04 */ (EngineEvent) spaceball_open_ufo,
-    /* 0x05 */ (EngineEvent) spaceball_set_ball_type,
-    /* 0x06 */ (EngineEvent) spaceball_engine_event_stub
+    /* 0x00 */ spaceball_prepare_pitcher,
+    /* 0x01 */ spaceball_loop_exit_condition,
+    /* 0x02 */ spaceball_set_camera_zoom,
+    /* 0x03 */ spaceball_set_batter_type,
+    /* 0x04 */ spaceball_open_ufo,
+    /* 0x05 */ spaceball_set_ball_type,
+    /* 0x06 */ spaceball_engine_event_stub
 };
 
 // [D_089deb08] Spaceball Game Engine
 struct GameEngine spaceball_engine = {
-    /* Size in Memory */ sizeof(struct SpaceballInfo),
+    /* Size in Memory */ sizeof(struct SpaceballEngineData),
     /* Start Engine   */ spaceball_engine_start,
     /* Update Engine  */ spaceball_engine_update,
     /* Stop Engine    */ spaceball_engine_stop,

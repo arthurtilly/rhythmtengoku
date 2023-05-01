@@ -1,0 +1,53 @@
+.include "include/beatscript.inc"
+.include "games/drum_studio/macros.inc"
+
+load_drum_studio_labels
+
+
+
+.section .script.sub
+@ Drum Lessons - Subroutines
+
+script drum_lessons_sub_08a7d7a0
+    rest 24
+    rest 24
+    rest 24
+    dms_event0F 0
+    .byte 0xb0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    rest 3
+    play_music s_drum_lesson_bgm_seqData
+    set_music_volume 256
+    dms_event17 1
+    dms_event07 1
+    dms_event0A 0
+    loop_start
+        dms_event0B 0
+        dms_event18 1
+        dms_event0F 1
+        .byte 0xb0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        dms_event18 0
+        dms_event0F 0
+        .byte 0xb0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        dms_event0C 0
+        rest 3
+    loop_end
+    run scene_stop_music, 0
+    run func_080482b0, 0
+    dms_set_dialogue_text NULL
+    rest 6
+    dms_event07 0
+    dms_event13 1
+    dms_set_teacher_exp 2
+    dms_event17 0
+    rest 6
+    rest 12
+    rest 24
+    rest 24
+    dms_event13 0
+    dms_set_teacher_exp 0
+    rest 12
+    dms_event11 0
+    rest 12
+return
+
+.end

@@ -5,9 +5,9 @@
 
 /* PROLOGUE (POWER CALLIGRAPHY) - ANIMATIONS */
 
-extern struct Animation anim_prologue_calligraphy_title[];
-extern struct Animation anim_prologue_calligraphy_unused[];
-extern struct Animation anim_prologue_calligraphy_artist[];
+extern struct Animation anim_power_calligraphy_prologue_title[];
+extern struct Animation anim_power_calligraphy_prologue_unused[];
+extern struct Animation anim_power_calligraphy_prologue_artist[];
 
 /* PROLOGUE (POWER CALLIGRAPHY) - COMPRESSED GRAPHICS */
 
@@ -17,4 +17,4 @@ extern struct CompressedGraphics D_08bf8a30;
 
 /* PROLOGUE (POWER CALLIGRAPHY) - PALETTES */
 
-extern Palette prologue_calligraphy_pal[];
+extern Palette power_calligraphy_prologue_pal[];

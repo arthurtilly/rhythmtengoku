@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start bouncy_road_engine_update \n\
 /* 0802e53c */ PUSH {R4, R5, LR} \n\
 /* 0802e53e */ BL func_0802e208 \n\
-/* 0802e542 */ LDR R4, =D_030055d0 \n\
+/* 0802e542 */ LDR R4, =gCurrentEngineData \n\
 /* 0802e544 */ LDR R0, [R4] \n\
 /* 0802e546 */ LDR R2, =0x1d3 \n\
 /* 0802e548 */ ADDS R1, R0, R2 @ Set R1 to R0 + R2 \n\

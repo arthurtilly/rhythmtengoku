@@ -99,6 +99,7 @@ struct ninja_reincarnate_marking_criteria
 endstruct
 
 
+
 @ Ninja Reincarnate - Main Script
 
 script ninja_reincarnate_sub_08a017c0

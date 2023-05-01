@@ -6,8 +6,8 @@
 #include "games/sick_beats/graphics/sick_beats_graphics.h"
 
 // Engine Types:
-struct SickBeatsInfo {
-    /* add fields here */
+struct SickBeatsEngineData {
+    u8 pad[0x274];
 };
 
 struct SickBeatsCue {

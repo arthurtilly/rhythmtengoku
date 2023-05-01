@@ -6,7 +6,7 @@ thumb_func_start func_0802310c \n\
 /* 0802310c */ PUSH {R4, LR} \n\
 /* 0802310e */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08023110 */ BL gameplay_enable_inputs \n\
-/* 08023114 */ LDR R4, =D_030055d0 \n\
+/* 08023114 */ LDR R4, =gCurrentEngineData \n\
 /* 08023116 */ LDR R0, [R4] \n\
 /* 08023118 */ LDR R1, =0x0000040c \n\
 /* 0802311a */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

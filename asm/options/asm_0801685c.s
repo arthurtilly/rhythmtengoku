@@ -20,7 +20,7 @@ branch_08016868: \n\
 /* 08016876 */ BL play_sound \n\
 /* 0801687a */ LDR R5, =D_03005380 \n\
 /* 0801687c */ LDR R0, [R5] \n\
-/* 0801687e */ LDR R4, =D_030046a4 \n\
+/* 0801687e */ LDR R4, =gCurrentSceneData \n\
 /* 08016880 */ LDR R1, [R4] \n\
 /* 08016882 */ MOVS R2, 0x1A @ Set R2 to 0x1A \n\
 /* 08016884 */ LDRSH R1, [R1, R2] \n\
@@ -49,7 +49,7 @@ branch_080168bc: \n\
 /* 080168c0 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 080168c2 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080168c4 */ BEQ branch_0801692e \n\
-/* 080168c6 */ LDR R5, =D_030046a4 \n\
+/* 080168c6 */ LDR R5, =gCurrentSceneData \n\
 /* 080168c8 */ LDR R1, [R5] \n\
 /* 080168ca */ LDRB R4, [R1, 0x18] \n\
 /* 080168cc */ CMP R4, 0x0 @ Compare R4 and 0x0 \n\
@@ -99,7 +99,7 @@ branch_0801692e: \n\
 /* 08016934 */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 08016936 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08016938 */ BEQ branch_08016966 \n\
-/* 0801693a */ LDR R4, =D_030046a4 \n\
+/* 0801693a */ LDR R4, =gCurrentSceneData \n\
 /* 0801693c */ LDR R1, [R4] \n\
 /* 0801693e */ LDRB R0, [R1, 0x18] \n\
 /* 08016940 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
@@ -126,7 +126,7 @@ branch_08016966: \n\
 /* 0801696c */ ANDS R0, R1 @ Set R0 to R0 & R1 \n\
 /* 0801696e */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08016970 */ BEQ branch_0801699e \n\
-/* 08016972 */ LDR R4, =D_030046a4 \n\
+/* 08016972 */ LDR R4, =gCurrentSceneData \n\
 /* 08016974 */ LDR R1, [R4] \n\
 /* 08016976 */ LDRB R0, [R1, 0x18] \n\
 /* 08016978 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\

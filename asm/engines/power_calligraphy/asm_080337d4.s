@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start calligraphy_cue_barely \n\
+thumb_func_start power_calligraphy_cue_barely \n\
 /* 080337d4 */ PUSH {R4, LR} \n\
 /* 080337d6 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 080337d8 */ LDRSB R4, [R1, R4] \n\

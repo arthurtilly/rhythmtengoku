@@ -10,7 +10,7 @@
 
 
 // Types:
-struct BouncyRoadPrologueInfo {
+struct BouncyRoadPrologueEngineData {
     u8  ver;            // Value:  Version
     s16 textSprite;     // Sprite: Text
     s16 bouncersSprite; // Sprite: Bouncers

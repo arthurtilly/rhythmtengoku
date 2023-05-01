@@ -339,22 +339,22 @@ struct CueDefinition *tram_pauline_cue_index[] = {
 
 // [D_089e8d60] Common Events
 EngineEvent tram_pauline_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) tram_pauline_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) tram_pauline_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) tram_pauline_common_init_tutorial,
+    /* BEAT_ANIMATION */ tram_pauline_common_beat_animation,
+    /* DISPLAY_TEXT   */ tram_pauline_common_display_text,
+    /* INIT_TUTORIAL  */ tram_pauline_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e8d70] Engine Events
 EngineEvent tram_pauline_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08040064,
-    /* 0x01 */ (EngineEvent) func_080400d0,
-    /* 0x02 */ (EngineEvent) func_08040434
+    /* 0x00 */ func_08040064,
+    /* 0x01 */ func_080400d0,
+    /* 0x02 */ func_08040434
 };
 
 // [D_089e8d7c] Tram & Pauline Game Engine
 struct GameEngine tram_pauline_engine = {
-    /* Size in Memory */ 0x48,
+    /* Size in Memory */ sizeof(struct TramPaulineEngineData),
     /* Start Engine   */ tram_pauline_engine_start,
     /* Update Engine  */ tram_pauline_engine_update,
     /* Stop Engine    */ tram_pauline_engine_stop,

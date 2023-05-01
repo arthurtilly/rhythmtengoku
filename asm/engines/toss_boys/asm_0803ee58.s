@@ -6,7 +6,7 @@ thumb_func_start func_0803ee58 \n\
 /* 0803ee58 */ PUSH {R4, R5, LR} \n\
 /* 0803ee5a */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0803ee5c */ ADDS R2, R1, 0x0 @ Set R2 to R1 + 0x0 \n\
-/* 0803ee5e */ LDR R0, =D_030055d0 \n\
+/* 0803ee5e */ LDR R0, =gCurrentEngineData \n\
 /* 0803ee60 */ LDR R3, [R0] \n\
 /* 0803ee62 */ LSLS R1, R4, 0x2 \n\
 /* 0803ee64 */ MOVS R5, 0xE1 @ Set R5 to 0xE1 \n\

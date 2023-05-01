@@ -1,0 +1,1037 @@
+.include "include/beatscript.inc"
+.include "games/sick_beats/macros.inc"
+
+
+
+.section .script.entry
+@ Sick Beats (Endless) - Script Entry Point
+
+script script_sick_beats_endless_entry
+    set_tempo 124
+    rest 24
+    rest 24
+    load_sick_beats_endless
+    enable_play_inputs 1
+    assess_inputs 1
+    call script_sick_beats_endless_main
+    enable_pause 0
+    enable_play_inputs 0
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+define_gameplay_scene scene_sick_beats_endless, script_sick_beats_endless_entry
+
+
+
+.section .script.main
+@ Sick Beats (Endless) - Game Over Script
+
+script script_sick_beats_endless_game_over
+    set_tempo 120
+    run scene_stop_music, 0
+    enable_pause 0
+    enable_play_inputs 0
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    sick_beats_event05 0
+    play_sfx s_gameover_fan_seqData
+    run set_pause_beatscript_scene, TRUE
+    fade_music_out TO_TEMPO, 48
+    fade_screen_out 12, BLACK
+    rest 24
+    rest 24
+stop
+
+
+
+@ Sick Beats (Endless) - Pathing Data
+
+script sick_beats_endless_path_normal
+    sb_enter_tube
+    sb_rest 24
+    sb_rest 24
+    sb_appear 1
+    sb_dash_from 1
+    sb_rest 24
+    sb_rest 24
+    sb_appear 2
+    sb_dash_from 2
+    sb_rest 24
+    sb_rest 24
+    sb_appear 3
+    sb_dash_from 3
+    sb_rest 24
+    sb_rest 24
+    sb_appear 4
+    sb_dash_from 4
+    sb_rest 24
+    sb_rest 24
+    sb_attack_microbe
+sb_stop
+
+script sick_beats_endless_path_skip_to_point_2
+    sb_enter_tube
+    sb_rest 24
+    sb_rest 24
+    sb_dash_from_invulnerable 1
+    sb_rest 24
+    sb_rest 24
+    sb_appear 2
+    sb_dash_from_after_inv 2
+    sb_rest 24
+    sb_rest 24
+    sb_appear 3
+    sb_dash_from 3
+    sb_rest 24
+    sb_rest 24
+    sb_appear 4
+    sb_dash_from 4
+    sb_rest 24
+    sb_rest 24
+    sb_attack_microbe
+sb_stop
+
+script sick_beats_endless_path_skip_to_point_3
+    sb_enter_tube
+    sb_rest 24
+    sb_rest 18
+    sb_dash_from_invulnerable 1
+    sb_rest 6
+    sb_dash_from_invulnerable 2
+    sb_rest 24
+    sb_rest 24
+    sb_appear 3
+    sb_dash_from_after_inv 3
+    sb_rest 24
+    sb_rest 24
+    sb_appear 4
+    sb_dash_from 4
+    sb_rest 24
+    sb_rest 24
+    sb_attack_microbe
+sb_stop
+
+script sick_beats_endless_path_skip_to_point_4
+    sb_enter_tube
+    sb_rest 24
+    sb_rest 18
+    sb_dash_from_invulnerable 1
+    sb_rest 3
+    sb_dash_from_invulnerable 2
+    sb_rest 3
+    sb_dash_from_invulnerable 3
+    sb_rest 24
+    sb_rest 24
+    sb_appear 4
+    sb_dash_from_after_inv 4
+    sb_rest 24
+    sb_rest 24
+    sb_attack_microbe
+sb_stop
+
+
+
+@ Sick Beats (Endless) - Main Script
+
+script sick_beats_endless_sub_08a5a690
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    run agb_random, 2
+    if_eq INT8, GLOBAL_VARIABLE, 0
+        sick_beats_set_hits_needed 1
+        sick_beats_set_virus_palette 0
+        sick_beats_spawn_virus sick_beats_endless_path_normal
+    end_if
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    run agb_random, 2
+    if_eq INT8, GLOBAL_VARIABLE, 0
+        sick_beats_set_hits_needed 1
+        sick_beats_set_virus_palette 0
+        sick_beats_spawn_virus sick_beats_endless_path_normal
+    else
+        sick_beats_set_hits_needed 1
+        sick_beats_set_virus_palette 0
+        sick_beats_spawn_virus sick_beats_endless_path_skip_to_point_2
+    end_if
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script sick_beats_endless_sub_08a5b008
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_2_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_2_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_2_hit_virus sick_beats_endless_path_skip_to_point_2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_2_hit_virus sick_beats_endless_path_skip_to_point_3
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    run agb_random, 2
+    if_eq INT8, GLOBAL_VARIABLE, 0
+        sick_beats_set_hits_needed 1
+        sick_beats_set_virus_palette 0
+        sick_beats_spawn_virus sick_beats_endless_path_normal
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        sick_beats_set_hits_needed 2
+        sick_beats_set_virus_palette 8
+        sick_beats_spawn_virus sick_beats_endless_path_normal
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        sick_beats_set_hits_needed 1
+        sick_beats_set_virus_palette 0
+        sick_beats_spawn_virus sick_beats_endless_path_normal
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+    else
+        sick_beats_set_hits_needed 1
+        sick_beats_set_virus_palette 0
+        sick_beats_spawn_virus sick_beats_endless_path_normal
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        sick_beats_set_hits_needed 1
+        sick_beats_set_virus_palette 0
+        sick_beats_spawn_virus sick_beats_endless_path_normal
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        sick_beats_set_hits_needed 2
+        sick_beats_set_virus_palette 8
+        sick_beats_spawn_virus sick_beats_endless_path_skip_to_point_2
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+    end_if
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_2_hit_virus sick_beats_endless_path_skip_to_point_3
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script sick_beats_endless_sub_08a5bb84
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_3_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_3_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_2_hit_virus sick_beats_endless_path_skip_to_point_3
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_3_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_3_hit_virus sick_beats_endless_path_skip_to_point_2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+return
+
+
+script sick_beats_endless_sub_08a5c448
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_2_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_3_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_2_hit_virus sick_beats_endless_path_skip_to_point_3
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_3_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_3_hit_virus sick_beats_endless_path_skip_to_point_2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_2_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script sick_beats_endless_sub_08a5cd0c
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_2_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_3_hit_virus sick_beats_endless_path_skip_to_point_2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_3_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_normal
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_1_hit_virus sick_beats_endless_path_skip_to_point_4
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_3_hit_virus sick_beats_endless_path_skip_to_point_2
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_spawn_2_hit_virus sick_beats_endless_path_skip_to_point_3
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+return
+
+
+script sick_beats_endless_sub_08a5d618
+    play_music s_hitmegeton2_bgm_seqData
+    switch_random INT8, 3
+        case 0
+            call sick_beats_endless_sub_08a5bb84
+            break
+        case 1
+            call sick_beats_endless_sub_08a5c448
+            break
+        case 2
+            call sick_beats_endless_sub_08a5cd0c
+            break
+    end_switch
+return
+
+
+script script_sick_beats_endless_main
+    sick_beats_event04 script_sick_beats_endless_game_over
+    beat_anim
+    rest 24
+    enable_pause 1
+    set_tempo 125
+    set_music_volume 240
+    play_music s_hitmegeton2_bgm_seqData
+    call sick_beats_endless_sub_08a5a690
+    sick_beats_event06 0
+    call sick_beats_endless_sub_08a5b008
+    sick_beats_event06 0
+    call sick_beats_endless_sub_08a5bb84
+    increase_speed 288, 94
+    beat_anim
+    rest 24
+    mod_music_pitch 512, 70
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_event06 0
+    play_music s_hitmegeton2_bgm_seqData
+    run agb_random, 2
+    if_eq INT8, GLOBAL_VARIABLE, 0
+        call sick_beats_endless_sub_08a5c448
+    else
+        call sick_beats_endless_sub_08a5cd0c
+    end_if
+    increase_speed 288, 94
+    beat_anim
+    rest 24
+    mod_music_pitch 1024, 70
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_event06 0
+    call sick_beats_endless_sub_08a5d618
+    increase_speed 288, 94
+    beat_anim
+    rest 24
+    mod_music_pitch 1536, 70
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_event06 0
+    call sick_beats_endless_sub_08a5d618
+    increase_speed 288, 94
+    beat_anim
+    rest 24
+    mod_music_pitch 2048, 70
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_event06 0
+    call sick_beats_endless_sub_08a5d618
+    increase_speed 288, 94
+    beat_anim
+    rest 24
+    mod_music_pitch 2560, 70
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_event06 0
+    call sick_beats_endless_sub_08a5d618
+    increase_speed 288, 94
+    beat_anim
+    rest 24
+    mod_music_pitch 3072, 70
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_event06 0
+    call sick_beats_endless_sub_08a5d618
+    increase_speed 288, 94
+    beat_anim
+    rest 24
+    mod_music_pitch 3072, 70
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_event06 0
+    call sick_beats_endless_sub_08a5d618
+    increase_speed 288, 94
+    beat_anim
+    rest 24
+    mod_music_pitch 3072, 70
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sick_beats_event06 0
+    loop_start
+        call sick_beats_endless_sub_08a5d618
+        increase_speed 256, 94
+        beat_anim
+        rest 24
+        mod_music_pitch 3072, 70
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        beat_anim
+        rest 24
+        sick_beats_event06 0
+    loop_end
+    beat_anim
+    rest 24
+    enable_pause 0
+    beat_anim
+    rest 24
+return
+
+.end

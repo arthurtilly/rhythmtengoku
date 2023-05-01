@@ -10,7 +10,7 @@
 
 
 // Types:
-struct SickBeatsPrologueInfo {
+struct SickBeatsPrologueEngineData {
     u8  ver;         // Value:  Version
     s16 textSprite;  // Sprite: Text
     s16 virusSprite; // Sprite: Virus

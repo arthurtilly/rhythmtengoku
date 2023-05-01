@@ -11,7 +11,7 @@ thumb_func_start func_08025038 \n\
 /* 08025042 */ SUB SP, 0x4 \n\
 /* 08025044 */ LDR R1, =s_fanfare_drum3_seqData \n\
 /* 08025046 */ MOV R9, R1 @ Set R9 to R1 \n\
-/* 08025048 */ LDR R2, =D_030055d0 \n\
+/* 08025048 */ LDR R2, =gCurrentEngineData \n\
 /* 0802504a */ LDR R1, [R2] \n\
 /* 0802504c */ MOVS R3, 0xE2 @ Set R3 to 0xE2 \n\
 /* 0802504e */ LSLS R3, R3, 0x2 \n\

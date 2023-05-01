@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct WarningSceneInfo {
+struct WarningSceneData {
     u32 scriptIsReady;
     u32 timer;
 };

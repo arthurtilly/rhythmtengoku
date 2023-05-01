@@ -6,8 +6,8 @@
 #include "games/ninja_bodyguard/graphics/ninja_bodyguard_graphics.h"
 
 // Engine Types:
-struct NinjaBodyguardInfo {
-    /* add fields here */
+struct NinjaBodyguardEngineData {
+    u8 pad[0x300];
 };
 
 struct NinjaBodyguardCue {

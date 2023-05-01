@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct ResultsSceneInfo {
+struct ResultsSceneData {
     struct BitmapFontBG *bgFont;
     struct BitmapFontOBJ *objFont;
     u32 awaitingInput;

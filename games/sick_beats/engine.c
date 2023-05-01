@@ -284,27 +284,27 @@ struct Animation *sick_beats_doctor_anim[] = {
 
 // [D_089e9304] Common Events
 EngineEvent sick_beats_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) sick_beats_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) sick_beats_common_display_text,
+    /* BEAT_ANIMATION */ sick_beats_common_beat_animation,
+    /* DISPLAY_TEXT   */ sick_beats_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e9310] Engine Events
 EngineEvent sick_beats_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_08042ea8,
-    /* 0x01 */ (EngineEvent) func_08042ecc,
-    /* 0x02 */ (EngineEvent) func_08042f44,
-    /* 0x03 */ (EngineEvent) func_08042f58,
-    /* 0x04 */ (EngineEvent) func_08043634,
-    /* 0x05 */ (EngineEvent) func_08043648,
-    /* 0x06 */ (EngineEvent) func_08042b58,
-    /* 0x07 */ (EngineEvent) sick_beats_engine_event_stub
+    /* 0x00 */ func_08042ea8,
+    /* 0x01 */ func_08042ecc,
+    /* 0x02 */ func_08042f44,
+    /* 0x03 */ func_08042f58,
+    /* 0x04 */ func_08043634,
+    /* 0x05 */ func_08043648,
+    /* 0x06 */ func_08042b58,
+    /* 0x07 */ sick_beats_engine_event_stub
 };
 
 // [D_089e9330] Sick Beats Game Engine
 struct GameEngine sick_beats_engine = {
-    /* Size in Memory */ 0x274,
+    /* Size in Memory */ sizeof(struct SickBeatsEngineData),
     /* Start Engine   */ sick_beats_engine_start,
     /* Update Engine  */ sick_beats_engine_update,
     /* Stop Engine    */ sick_beats_engine_stop,

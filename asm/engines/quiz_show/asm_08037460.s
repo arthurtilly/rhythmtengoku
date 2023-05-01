@@ -2,18 +2,18 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start quiz_engine_start \n\
+thumb_func_start quiz_show_engine_start \n\
 /* 08037460 */ PUSH {R4-R7, LR} \n\
 /* 08037462 */ MOV R7, R10 @ Set R7 to R10 \n\
 /* 08037464 */ MOV R6, R9 @ Set R6 to R9 \n\
 /* 08037466 */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 08037468 */ PUSH {R5-R7} \n\
 /* 0803746a */ SUB SP, 0x14 \n\
-/* 0803746c */ LDR R2, =D_030055d0 \n\
+/* 0803746c */ LDR R2, =gCurrentEngineData \n\
 /* 0803746e */ LDR R1, [R2] \n\
 /* 08037470 */ MOVS R4, 0x0 @ Set R4 to 0x0 \n\
 /* 08037472 */ STRB R0, [R1] \n\
-/* 08037474 */ BL quiz_init_gfx1 \n\
+/* 08037474 */ BL quiz_show_init_gfx1 \n\
 /* 08037478 */ BL scene_show_obj_layer \n\
 /* 0803747c */ STR R4, [SP] \n\
 /* 0803747e */ MOVS R0, 0x1C @ Set R0 to 0x1C \n\
@@ -59,57 +59,57 @@ thumb_func_start quiz_engine_start \n\
 /* 080374d8 */ MOVS R2, 0x50 @ Set R2 to 0x50 \n\
 /* 080374da */ MOVS R3, 0x1E @ Set R3 to 0x1E \n\
 /* 080374dc */ BL text_printer_create_new \n\
-/* 080374e0 */ LDR R2, =D_030055d0 \n\
+/* 080374e0 */ LDR R2, =gCurrentEngineData \n\
 /* 080374e2 */ LDR R1, [R2] \n\
 /* 080374e4 */ STR R0, [R1, 0x4] \n\
 /* 080374e6 */ MOVS R1, 0x54 @ Set R1 to 0x54 \n\
 /* 080374e8 */ MOVS R2, 0x24 @ Set R2 to 0x24 \n\
 /* 080374ea */ BL text_printer_set_x_y \n\
-/* 080374ee */ LDR R1, =D_030055d0 \n\
+/* 080374ee */ LDR R1, =gCurrentEngineData \n\
 /* 080374f0 */ LDR R0, [R1] \n\
 /* 080374f2 */ LDR R0, [R0, 0x4] \n\
 /* 080374f4 */ MOVS R1, 0x80 @ Set R1 to 0x80 \n\
 /* 080374f6 */ LSLS R1, R1, 0x4 \n\
 /* 080374f8 */ BL text_printer_set_layer \n\
-/* 080374fc */ LDR R2, =D_030055d0 \n\
+/* 080374fc */ LDR R2, =gCurrentEngineData \n\
 /* 080374fe */ LDR R0, [R2] \n\
 /* 08037500 */ LDR R0, [R0, 0x4] \n\
 /* 08037502 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
 /* 08037504 */ BL text_printer_center_by_content \n\
-/* 08037508 */ LDR R1, =D_030055d0 \n\
+/* 08037508 */ LDR R1, =gCurrentEngineData \n\
 /* 0803750a */ LDR R0, [R1] \n\
 /* 0803750c */ LDR R0, [R0, 0x4] \n\
 /* 0803750e */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
 /* 08037510 */ BL text_printer_set_palette \n\
-/* 08037514 */ LDR R2, =D_030055d0 \n\
+/* 08037514 */ LDR R2, =gCurrentEngineData \n\
 /* 08037516 */ LDR R0, [R2] \n\
 /* 08037518 */ LDR R0, [R0, 0x4] \n\
 /* 0803751a */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 0803751c */ BL text_printer_set_colors \n\
-/* 08037520 */ LDR R1, =D_030055d0 \n\
+/* 08037520 */ LDR R1, =gCurrentEngineData \n\
 /* 08037522 */ LDR R0, [R1] \n\
 /* 08037524 */ LDR R0, [R0, 0x4] \n\
 /* 08037526 */ LDR R1, =scene_show_bg_layer \n\
 /* 08037528 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 0803752a */ BL text_printer_run_func_on_finish \n\
-/* 0803752e */ LDR R2, =D_030055d0 \n\
+/* 0803752e */ LDR R2, =gCurrentEngineData \n\
 /* 08037530 */ LDR R0, [R2] \n\
 /* 08037532 */ LDR R0, [R0, 0x4] \n\
 /* 08037534 */ LDR R1, =scene_hide_bg_layer \n\
 /* 08037536 */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\
 /* 08037538 */ BL text_printer_run_func_on_clear \n\
-/* 0803753c */ LDR R1, =D_030055d0 \n\
+/* 0803753c */ LDR R1, =gCurrentEngineData \n\
 /* 0803753e */ LDR R0, [R1] \n\
 /* 08037540 */ LDR R0, [R0, 0x4] \n\
 /* 08037542 */ BL gameplay_set_text_printer \n\
-/* 08037546 */ LDR R2, =D_030055d0 \n\
+/* 08037546 */ LDR R2, =gCurrentEngineData \n\
 /* 08037548 */ LDR R2, [R2] \n\
 /* 0803754a */ MOV R8, R2 @ Set R8 to R2 \n\
 /* 0803754c */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 0803754e */ ADDS R7, 0x8 @ Add 0x8 to R7 \n\
 /* 08037550 */ LDR R5, =D_03005380 \n\
 /* 08037552 */ LDR R0, [R5] \n\
-/* 08037554 */ LDR R1, =anim_quiz_host_body \n\
+/* 08037554 */ LDR R1, =anim_quiz_show_host_body \n\
 /* 08037556 */ MOVS R6, 0x50 @ Set R6 to 0x50 \n\
 /* 08037558 */ STR R6, [SP] \n\
 /* 0803755a */ MOVS R2, 0xC8 @ Set R2 to 0xC8 \n\
@@ -127,7 +127,7 @@ thumb_func_start quiz_engine_start \n\
 /* 08037574 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 08037576 */ STRH R0, [R1, 0x8] \n\
 /* 08037578 */ LDR R0, [R5] \n\
-/* 0803757a */ LDR R1, =anim_quiz_host_head \n\
+/* 0803757a */ LDR R1, =anim_quiz_show_host_head \n\
 /* 0803757c */ STR R6, [SP] \n\
 /* 0803757e */ MOVS R2, 0x88 @ Set R2 to 0x88 \n\
 /* 08037580 */ LSLS R2, R2, 0x8 \n\
@@ -142,7 +142,7 @@ thumb_func_start quiz_engine_start \n\
 /* 08037592 */ BL func_0804d160 \n\
 /* 08037596 */ STRH R0, [R7, 0x2] \n\
 /* 08037598 */ LDR R0, [R5] \n\
-/* 0803759a */ LDR R1, =anim_quiz_host_press_button_r \n\
+/* 0803759a */ LDR R1, =anim_quiz_show_host_press_button_r \n\
 /* 0803759c */ MOVS R2, 0x65 @ Set R2 to 0x65 \n\
 /* 0803759e */ STR R2, [SP] \n\
 /* 080375a0 */ LDR R2, =0x8805 \n\
@@ -157,7 +157,7 @@ thumb_func_start quiz_engine_start \n\
 /* 080375b2 */ BL func_0804d160 \n\
 /* 080375b6 */ STRH R0, [R7, 0x4] \n\
 /* 080375b8 */ LDR R0, [R5] \n\
-/* 080375ba */ LDR R1, =anim_quiz_host_press_button_l \n\
+/* 080375ba */ LDR R1, =anim_quiz_show_host_press_button_l \n\
 /* 080375bc */ MOVS R2, 0x69 @ Set R2 to 0x69 \n\
 /* 080375be */ STR R2, [SP] \n\
 /* 080375c0 */ LDR R2, =0x87fb \n\
@@ -172,7 +172,7 @@ thumb_func_start quiz_engine_start \n\
 /* 080375d2 */ BL func_0804d160 \n\
 /* 080375d6 */ STRH R0, [R7, 0x6] \n\
 /* 080375d8 */ LDR R0, [R5] \n\
-/* 080375da */ LDR R1, =anim_quiz_button_host_l \n\
+/* 080375da */ LDR R1, =anim_quiz_show_button_host_l \n\
 /* 080375dc */ MOVS R2, 0xA0 @ Set R2 to 0xA0 \n\
 /* 080375de */ STR R2, [SP] \n\
 /* 080375e0 */ LDR R2, =0x880a \n\
@@ -187,7 +187,7 @@ thumb_func_start quiz_engine_start \n\
 /* 080375f2 */ BL func_0804d160 \n\
 /* 080375f6 */ STRH R0, [R7, 0x8] \n\
 /* 080375f8 */ LDR R0, [R5] \n\
-/* 080375fa */ LDR R1, =anim_quiz_button_host_r \n\
+/* 080375fa */ LDR R1, =anim_quiz_show_button_host_r \n\
 /* 080375fc */ MOVS R2, 0x9F @ Set R2 to 0x9F \n\
 /* 080375fe */ STR R2, [SP] \n\
 /* 08037600 */ LDR R2, =0x880a \n\
@@ -209,7 +209,7 @@ thumb_func_start quiz_engine_start \n\
 /* 08037622 */ STR R4, [SP, 0x8] \n\
 /* 08037624 */ STR R4, [SP, 0xC] \n\
 /* 08037626 */ STR R4, [SP, 0x10] \n\
-/* 08037628 */ LDR R1, =anim_quiz_podium_num \n\
+/* 08037628 */ LDR R1, =anim_quiz_show_podium_num \n\
 /* 0803762a */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803762c */ MOVS R3, 0x4D @ Set R3 to 0x4D \n\
 /* 0803762e */ BL func_0804d160 \n\
@@ -222,7 +222,7 @@ thumb_func_start quiz_engine_start \n\
 /* 0803763e */ STR R4, [SP, 0x8] \n\
 /* 08037640 */ STR R4, [SP, 0xC] \n\
 /* 08037642 */ STR R4, [SP, 0x10] \n\
-/* 08037644 */ LDR R1, =anim_quiz_podium_num \n\
+/* 08037644 */ LDR R1, =anim_quiz_show_podium_num \n\
 /* 08037646 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037648 */ MOVS R3, 0x3D @ Set R3 to 0x3D \n\
 /* 0803764a */ BL func_0804d160 \n\
@@ -233,7 +233,7 @@ thumb_func_start quiz_engine_start \n\
 /* 08037658 */ LDR R0, [R5] \n\
 /* 0803765a */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 0803765c */ LDRSH R1, [R7, R2] \n\
-/* 0803765e */ LDR R2, =anim_quiz_host_arm_r \n\
+/* 0803765e */ LDR R2, =anim_quiz_show_host_arm_r \n\
 /* 08037660 */ STR R4, [SP] \n\
 /* 08037662 */ STR R4, [SP, 0x4] \n\
 /* 08037664 */ STR R4, [SP, 0x8] \n\
@@ -242,19 +242,19 @@ thumb_func_start quiz_engine_start \n\
 /* 0803766c */ LDR R0, [R5] \n\
 /* 0803766e */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 08037670 */ LDRSH R1, [R7, R2] \n\
-/* 08037672 */ LDR R2, =anim_quiz_host_arm_l \n\
+/* 08037672 */ LDR R2, =anim_quiz_show_host_arm_l \n\
 /* 08037674 */ STR R4, [SP] \n\
 /* 08037676 */ STR R4, [SP, 0x4] \n\
 /* 08037678 */ STR R4, [SP, 0x8] \n\
 /* 0803767a */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803767c */ BL func_0804d8f8 \n\
-/* 08037680 */ LDR R0, =D_030055d0 \n\
+/* 08037680 */ LDR R0, =gCurrentEngineData \n\
 /* 08037682 */ LDR R0, [R0] \n\
 /* 08037684 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08037686 */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 08037688 */ ADDS R7, 0x1C @ Add 0x1C to R7 \n\
 /* 0803768a */ LDR R0, [R5] \n\
-/* 0803768c */ LDR R1, =anim_quiz_player_body \n\
+/* 0803768c */ LDR R1, =anim_quiz_show_player_body \n\
 /* 0803768e */ MOVS R6, 0x52 @ Set R6 to 0x52 \n\
 /* 08037690 */ STR R6, [SP] \n\
 /* 08037692 */ MOVS R2, 0xC8 @ Set R2 to 0xC8 \n\
@@ -271,7 +271,7 @@ thumb_func_start quiz_engine_start \n\
 /* 080376aa */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080376ac */ STRH R0, [R1, 0x1C] \n\
 /* 080376ae */ LDR R0, [R5] \n\
-/* 080376b0 */ LDR R1, =anim_quiz_player_head \n\
+/* 080376b0 */ LDR R1, =anim_quiz_show_player_head \n\
 /* 080376b2 */ STR R6, [SP] \n\
 /* 080376b4 */ MOVS R2, 0x88 @ Set R2 to 0x88 \n\
 /* 080376b6 */ LSLS R2, R2, 0x8 \n\
@@ -286,7 +286,7 @@ thumb_func_start quiz_engine_start \n\
 /* 080376c8 */ BL func_0804d160 \n\
 /* 080376cc */ STRH R0, [R7, 0x2] \n\
 /* 080376ce */ LDR R0, [R5] \n\
-/* 080376d0 */ LDR R1, =anim_quiz_player_press_button_r \n\
+/* 080376d0 */ LDR R1, =anim_quiz_show_player_press_button_r \n\
 /* 080376d2 */ MOVS R2, 0x69 @ Set R2 to 0x69 \n\
 /* 080376d4 */ STR R2, [SP] \n\
 /* 080376d6 */ LDR R2, =0x87fb \n\
@@ -301,7 +301,7 @@ thumb_func_start quiz_engine_start \n\
 /* 080376e8 */ BL func_0804d160 \n\
 /* 080376ec */ STRH R0, [R7, 0x4] \n\
 /* 080376ee */ LDR R0, [R5] \n\
-/* 080376f0 */ LDR R1, =anim_quiz_player_press_button_l \n\
+/* 080376f0 */ LDR R1, =anim_quiz_show_player_press_button_l \n\
 /* 080376f2 */ MOVS R2, 0x65 @ Set R2 to 0x65 \n\
 /* 080376f4 */ STR R2, [SP] \n\
 /* 080376f6 */ LDR R2, =0x8805 \n\
@@ -316,7 +316,7 @@ thumb_func_start quiz_engine_start \n\
 /* 08037708 */ BL func_0804d160 \n\
 /* 0803770c */ STRH R0, [R7, 0x6] \n\
 /* 0803770e */ LDR R0, [R5] \n\
-/* 08037710 */ LDR R1, =anim_quiz_button_player_l \n\
+/* 08037710 */ LDR R1, =anim_quiz_show_button_player_l \n\
 /* 08037712 */ MOVS R2, 0x9F @ Set R2 to 0x9F \n\
 /* 08037714 */ STR R2, [SP] \n\
 /* 08037716 */ LDR R2, =0x880a \n\
@@ -331,7 +331,7 @@ thumb_func_start quiz_engine_start \n\
 /* 08037728 */ BL func_0804d160 \n\
 /* 0803772c */ STRH R0, [R7, 0x8] \n\
 /* 0803772e */ LDR R0, [R5] \n\
-/* 08037730 */ LDR R1, =anim_quiz_button_player_r \n\
+/* 08037730 */ LDR R1, =anim_quiz_show_button_player_r \n\
 /* 08037732 */ MOVS R2, 0x9F @ Set R2 to 0x9F \n\
 /* 08037734 */ STR R2, [SP] \n\
 /* 08037736 */ LDR R2, =0x880a \n\
@@ -353,7 +353,7 @@ thumb_func_start quiz_engine_start \n\
 /* 08037758 */ STR R4, [SP, 0x8] \n\
 /* 0803775a */ STR R4, [SP, 0xC] \n\
 /* 0803775c */ STR R4, [SP, 0x10] \n\
-/* 0803775e */ LDR R1, =anim_quiz_podium_num \n\
+/* 0803775e */ LDR R1, =anim_quiz_show_podium_num \n\
 /* 08037760 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08037762 */ MOVS R3, 0xA9 @ Set R3 to 0xA9 \n\
 /* 08037764 */ BL func_0804d160 \n\
@@ -366,7 +366,7 @@ thumb_func_start quiz_engine_start \n\
 /* 08037774 */ STR R4, [SP, 0x8] \n\
 /* 08037776 */ STR R4, [SP, 0xC] \n\
 /* 08037778 */ STR R4, [SP, 0x10] \n\
-/* 0803777a */ LDR R1, =anim_quiz_podium_num \n\
+/* 0803777a */ LDR R1, =anim_quiz_show_podium_num \n\
 /* 0803777c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0803777e */ MOVS R3, 0x99 @ Set R3 to 0x99 \n\
 /* 08037780 */ BL func_0804d160 \n\
@@ -377,7 +377,7 @@ thumb_func_start quiz_engine_start \n\
 /* 0803778e */ LDR R0, [R5] \n\
 /* 08037790 */ MOVS R2, 0x4 @ Set R2 to 0x4 \n\
 /* 08037792 */ LDRSH R1, [R7, R2] \n\
-/* 08037794 */ LDR R2, =anim_quiz_player_arm_r \n\
+/* 08037794 */ LDR R2, =anim_quiz_show_player_arm_r \n\
 /* 08037796 */ STR R4, [SP] \n\
 /* 08037798 */ STR R4, [SP, 0x4] \n\
 /* 0803779a */ STR R4, [SP, 0x8] \n\
@@ -386,7 +386,7 @@ thumb_func_start quiz_engine_start \n\
 /* 080377a2 */ LDR R0, [R5] \n\
 /* 080377a4 */ MOVS R2, 0x6 @ Set R2 to 0x6 \n\
 /* 080377a6 */ LDRSH R1, [R7, R2] \n\
-/* 080377a8 */ LDR R2, =anim_quiz_player_arm_l \n\
+/* 080377a8 */ LDR R2, =anim_quiz_show_player_arm_l \n\
 /* 080377aa */ STR R4, [SP] \n\
 /* 080377ac */ STR R4, [SP, 0x4] \n\
 /* 080377ae */ STR R4, [SP, 0x8] \n\
@@ -397,7 +397,7 @@ thumb_func_start quiz_engine_start \n\
 /* 080377bc */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080377be */ BL gameplay_set_input_buttons \n\
 /* 080377c2 */ BL func_08037178 \n\
-/* 080377c6 */ LDR R0, =D_030055d0 \n\
+/* 080377c6 */ LDR R0, =gCurrentEngineData \n\
 /* 080377c8 */ LDR R2, [R0] \n\
 /* 080377ca */ ADDS R0, R2, 0x0 @ Set R0 to R2 + 0x0 \n\
 /* 080377cc */ ADDS R0, 0x44 @ Add 0x44 to R0 \n\
@@ -408,7 +408,7 @@ thumb_func_start quiz_engine_start \n\
 /* 080377d6 */ ADDS R0, 0x2 @ Add 0x2 to R0 \n\
 /* 080377d8 */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080377da */ STRB R1, [R0] \n\
-/* 080377dc */ LDR R2, =D_030055d0 \n\
+/* 080377dc */ LDR R2, =gCurrentEngineData \n\
 /* 080377de */ LDR R0, [R2] \n\
 /* 080377e0 */ ADDS R0, 0x49 @ Add 0x49 to R0 \n\
 /* 080377e2 */ STRB R1, [R0] \n\

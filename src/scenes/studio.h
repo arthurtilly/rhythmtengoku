@@ -6,7 +6,7 @@
 #include "engines/night_walk.h"
 
 // Scene Types:
-struct StudioSceneInfo {
+struct StudioSceneData {
     /* [0x000] Empty (probably unused Bitmap Fonts) */
     u32 null0;
     u32 null4;

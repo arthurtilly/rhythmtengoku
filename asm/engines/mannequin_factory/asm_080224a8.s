@@ -21,7 +21,7 @@ thumb_func_start func_080224a8 \n\
 /* 080224c6 */ MOV R9, R2 @ Set R9 to R2 \n\
  \n\
 branch_080224c8: \n\
-/* 080224c8 */ LDR R0, =D_030055d0 \n\
+/* 080224c8 */ LDR R0, =gCurrentEngineData \n\
 /* 080224ca */ LDR R4, [R0] \n\
 /* 080224cc */ ADD R4, R9 @ Add R9 to R4 \n\
 /* 080224ce */ STRB R5, [R4] \n\
@@ -101,7 +101,7 @@ branch_080224c8: \n\
 /* 08022570 */ MOV R2, R10 @ Set R2 to R10 \n\
 /* 08022572 */ CMP R2, 0x5 @ Compare R2 and 0x5 \n\
 /* 08022574 */ BLS branch_080224c8 \n\
-/* 08022576 */ LDR R1, =D_030055d0 \n\
+/* 08022576 */ LDR R1, =gCurrentEngineData \n\
 /* 08022578 */ LDR R0, [R1] \n\
 /* 0802257a */ MOVS R2, 0x86 @ Set R2 to 0x86 \n\
 /* 0802257c */ LSLS R2, R2, 0x3 \n\

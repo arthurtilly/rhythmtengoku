@@ -10,7 +10,7 @@ thumb_func_start func_0803e258 \n\
 /* 0803e260 */ BNE branch_0803e284 \n\
 /* 0803e262 */ LDR R0, =D_03005380 \n\
 /* 0803e264 */ LDR R0, [R0] \n\
-/* 0803e266 */ LDR R1, =D_030055d0 \n\
+/* 0803e266 */ LDR R1, =gCurrentEngineData \n\
 /* 0803e268 */ LDR R1, [R1] \n\
 /* 0803e26a */ MOVS R2, 0x1A @ Set R2 to 0x1A \n\
 /* 0803e26c */ LDRSH R1, [R1, R2] \n\
@@ -23,7 +23,7 @@ thumb_func_start func_0803e258 \n\
 .ltorg \n\
  \n\
 branch_0803e284: \n\
-/* 0803e284 */ LDR R4, =D_030055d0 \n\
+/* 0803e284 */ LDR R4, =gCurrentEngineData \n\
 /* 0803e286 */ LDR R0, [R4] \n\
 /* 0803e288 */ LDR R0, [R0, 0x4] \n\
 /* 0803e28a */ MOVS R2, 0x1 @ Set R2 to 0x1 \n\

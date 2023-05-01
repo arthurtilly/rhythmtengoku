@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct CafeSceneInfo {
+struct CafeSceneData {
     u32 scriptIsReady;
     struct TextPrinter *printer;
     s16 textAdvIcon;

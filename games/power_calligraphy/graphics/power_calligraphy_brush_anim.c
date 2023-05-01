@@ -4,7 +4,7 @@
 #include "power_calligraphy_brush_anim_cells.inc.c"
 
 // [D_088eec50] "Onore" Pattern
-struct Animation anim_calligraphy_onore[] = {
+struct Animation anim_power_calligraphy_onore[] = {
     /* 000 */ { power_calligraphy_brush_cel001, 64 },
     /* 001 */ { power_calligraphy_brush_cel002, 16 },
     /* 002 */ { power_calligraphy_brush_cel003, 1 },
@@ -26,7 +26,7 @@ struct Animation anim_calligraphy_onore[] = {
 };
 
 // [D_088eece0] "Chikara" Pattern
-struct Animation anim_calligraphy_chikara[] = {
+struct Animation anim_power_calligraphy_chikara[] = {
     /* 000 */ { power_calligraphy_brush_cel021, 64 },
     /* 001 */ { power_calligraphy_brush_cel022, 32 },
     /* 002 */ { power_calligraphy_brush_cel023, 2 },
@@ -43,7 +43,7 @@ struct Animation anim_calligraphy_chikara[] = {
 };
 
 // [D_088eed48] "Sun" Pattern
-struct Animation anim_calligraphy_sun[] = {
+struct Animation anim_power_calligraphy_sun[] = {
     /* 000 */ { power_calligraphy_brush_cel039, 64 },
     /* 001 */ { power_calligraphy_brush_cel040, 16 },
     /* 002 */ { power_calligraphy_brush_cel041, 2 },
@@ -59,7 +59,7 @@ struct Animation anim_calligraphy_sun[] = {
 };
 
 // [D_088eeda8] "Kokoro" Pattern
-struct Animation anim_calligraphy_kokoro[] = {
+struct Animation anim_power_calligraphy_kokoro[] = {
     /* 000 */ { power_calligraphy_brush_cel056, 64 },
     /* 001 */ { power_calligraphy_brush_cel057, 1 },
     /* 002 */ { power_calligraphy_brush_cel058, 1 },
@@ -78,7 +78,7 @@ struct Animation anim_calligraphy_kokoro[] = {
 };
 
 // [D_088eee20] "Onore" Player Stroke 1
-struct Animation anim_calligraphy_onore_input1[] = {
+struct Animation anim_power_calligraphy_onore_input1[] = {
     /* 000 */ { power_calligraphy_brush_cel018, 40 },
     /* 001 */ { power_calligraphy_brush_cel019, 40 },
     /* 002 */ { power_calligraphy_brush_cel020, 40 },
@@ -86,7 +86,7 @@ struct Animation anim_calligraphy_onore_input1[] = {
 };
 
 // [D_088eee40] "Chikara" Player Stroke 1
-struct Animation anim_calligraphy_chikara_input1[] = {
+struct Animation anim_power_calligraphy_chikara_input1[] = {
     /* 000 */ { power_calligraphy_brush_cel033, 4 },
     /* 001 */ { power_calligraphy_brush_cel034, 4 },
     /* 002 */ { power_calligraphy_brush_cel035, 4 },
@@ -94,7 +94,7 @@ struct Animation anim_calligraphy_chikara_input1[] = {
 };
 
 // [D_088eee60] "Chikara" Player Stroke 2
-struct Animation anim_calligraphy_chikara_input2[] = {
+struct Animation anim_power_calligraphy_chikara_input2[] = {
     /* 000 */ { power_calligraphy_brush_cel036, 4 },
     /* 001 */ { power_calligraphy_brush_cel037, 4 },
     /* 002 */ { power_calligraphy_brush_cel038, 4 },
@@ -102,7 +102,7 @@ struct Animation anim_calligraphy_chikara_input2[] = {
 };
 
 // [D_088eee80] "Sun" Player Stroke 1
-struct Animation anim_calligraphy_sun_input1[] = {
+struct Animation anim_power_calligraphy_sun_input1[] = {
     /* 000 */ { power_calligraphy_brush_cel050, 4 },
     /* 001 */ { power_calligraphy_brush_cel051, 4 },
     /* 002 */ { power_calligraphy_brush_cel052, 4 },
@@ -110,7 +110,7 @@ struct Animation anim_calligraphy_sun_input1[] = {
 };
 
 // [D_088eeea0] "Sun" Player Stroke 2
-struct Animation anim_calligraphy_sun_input2[] = {
+struct Animation anim_power_calligraphy_sun_input2[] = {
     /* 000 */ { power_calligraphy_brush_cel053, 4 },
     /* 001 */ { power_calligraphy_brush_cel054, 4 },
     /* 002 */ { power_calligraphy_brush_cel055, 4 },
@@ -118,7 +118,7 @@ struct Animation anim_calligraphy_sun_input2[] = {
 };
 
 // [D_088eeec0] "Kokoro" Player Stroke 1
-struct Animation anim_calligraphy_kokoro_input1[] = {
+struct Animation anim_power_calligraphy_kokoro_input1[] = {
     /* 000 */ { power_calligraphy_brush_cel070, 4 },
     /* 001 */ { power_calligraphy_brush_cel071, 4 },
     /* 002 */ { power_calligraphy_brush_cel072, 4 },
@@ -126,7 +126,7 @@ struct Animation anim_calligraphy_kokoro_input1[] = {
 };
 
 // [D_088eeee0] "Kokoro" Player Stroke 2 (Unused)
-struct Animation anim_calligraphy_kokoro_input2[] = {
+struct Animation anim_power_calligraphy_kokoro_input2[] = {
     /* 000 */ { power_calligraphy_brush_cel073, 4 },
     /* 001 */ { power_calligraphy_brush_cel075, 4 },
     /* 002 */ { power_calligraphy_brush_cel076, 4 },
@@ -135,7 +135,7 @@ struct Animation anim_calligraphy_kokoro_input2[] = {
 };
 
 // [D_088eef08] "Kokoro" Player Stroke 3
-struct Animation anim_calligraphy_kokoro_input3[] = {
+struct Animation anim_power_calligraphy_kokoro_input3[] = {
     /* 000 */ { power_calligraphy_brush_cel077, 4 },
     /* 001 */ { power_calligraphy_brush_cel078, 4 },
     /* 002 */ { power_calligraphy_brush_cel079, 4 },
@@ -143,20 +143,20 @@ struct Animation anim_calligraphy_kokoro_input3[] = {
 };
 
 // [D_088eef28] Brush - Idle
-struct Animation anim_calligraphy_brush[] = {
+struct Animation anim_power_calligraphy_brush[] = {
     /* 000 */ { power_calligraphy_brush_cel128, 4 },
     /* 001 */ { power_calligraphy_brush_cel129, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088eef40] Brush - Idle (Unused)
-struct Animation anim_calligraphy_brush_still[] = {
+struct Animation anim_power_calligraphy_brush_still[] = {
     /* 000 */ { power_calligraphy_brush_cel128, 2 },
     /* End */ END_ANIMATION
 };
 
 // [D_088eef50] Brush - Charge Stroke
-struct Animation anim_calligraphy_brush_charge1[] = {
+struct Animation anim_power_calligraphy_brush_charge1[] = {
     /* 000 */ { power_calligraphy_brush_cel129, 60 },
     /* 001 */ { power_calligraphy_brush_cel130, 1 },
     /* 002 */ { power_calligraphy_brush_cel131, 1 },
@@ -170,7 +170,7 @@ struct Animation anim_calligraphy_brush_charge1[] = {
 };
 
 // [D_088eefa0] Brush - Charge Comma
-struct Animation anim_calligraphy_brush_charge2[] = {
+struct Animation anim_power_calligraphy_brush_charge2[] = {
     /* 000 */ { power_calligraphy_brush_cel138, 3 },
     /* 001 */ { power_calligraphy_brush_cel139, 3 },
     /* 002 */ { power_calligraphy_brush_cel140, 3 },
@@ -181,7 +181,7 @@ struct Animation anim_calligraphy_brush_charge2[] = {
 };
 
 // [D_088eefd8] Ink Dot
-struct Animation anim_calligraphy_ink_dot[] = {
+struct Animation anim_power_calligraphy_ink_dot[] = {
     /* 000 */ { power_calligraphy_brush_cel144, 3 },
     /* 001 */ { power_calligraphy_brush_cel145, 3 },
     /* 002 */ { power_calligraphy_brush_cel146, 3 },
@@ -193,7 +193,7 @@ struct Animation anim_calligraphy_ink_dot[] = {
 };
 
 // [D_088ef018] "Re" Pattern
-struct Animation anim_calligraphy_re[] = {
+struct Animation anim_power_calligraphy_re[] = {
     /* 000 */ { power_calligraphy_brush_cel080, 32 },
     /* 001 */ { power_calligraphy_brush_cel081, 32 },
     /* 002 */ { power_calligraphy_brush_cel082, 1 },
@@ -204,7 +204,7 @@ struct Animation anim_calligraphy_re[] = {
 };
 
 // [D_088ef050] "Re" Player Stroke 1
-struct Animation anim_calligraphy_re_input1[] = {
+struct Animation anim_power_calligraphy_re_input1[] = {
     /* 000 */ { power_calligraphy_brush_cel085, 4 },
     /* 001 */ { power_calligraphy_brush_cel086, 4 },
     /* 002 */ { power_calligraphy_brush_cel087, 4 },
@@ -212,14 +212,14 @@ struct Animation anim_calligraphy_re_input1[] = {
 };
 
 // [D_088ef070] Comma Pattern
-struct Animation anim_calligraphy_comma[] = {
+struct Animation anim_power_calligraphy_comma[] = {
     /* 000 */ { power_calligraphy_brush_cel088, 64 },
     /* 001 */ { power_calligraphy_brush_cel089, 64 },
     /* End */ END_ANIMATION
 };
 
 // [D_088ef088] Comma Player Stroke 1
-struct Animation anim_calligraphy_comma_input1[] = {
+struct Animation anim_power_calligraphy_comma_input1[] = {
     /* 000 */ { power_calligraphy_brush_cel089, 4 },
     /* 001 */ { power_calligraphy_brush_cel090, 4 },
     /* 002 */ { power_calligraphy_brush_cel091, 4 },
@@ -227,7 +227,7 @@ struct Animation anim_calligraphy_comma_input1[] = {
 };
 
 // [D_088ef0a8] Face Pattern
-struct Animation anim_calligraphy_face[] = {
+struct Animation anim_power_calligraphy_face[] = {
     /* 000 */ { power_calligraphy_brush_cel092, 32 },
     /* 001 */ { power_calligraphy_brush_cel093, 1 },
     /* 002 */ { power_calligraphy_brush_cel094, 1 },
@@ -264,7 +264,7 @@ struct Animation anim_calligraphy_face[] = {
 };
 
 // [D_088ef1b0] Face Player Stroke 1
-struct Animation anim_calligraphy_face_input1[] = {
+struct Animation anim_power_calligraphy_face_input1[] = {
     /* 000 */ { power_calligraphy_brush_cel124, 4 },
     /* 001 */ { power_calligraphy_brush_cel125, 4 },
     /* 002 */ { power_calligraphy_brush_cel126, 4 },
@@ -272,19 +272,19 @@ struct Animation anim_calligraphy_face_input1[] = {
 };
 
 // [D_088ef1d0] "Kan" End Kanji
-struct Animation anim_calligraphy_end_kanji[] = {
+struct Animation anim_power_calligraphy_end_kanji[] = {
     /* 000 */ { power_calligraphy_brush_cel127, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088ef1e0] "Start to Skip" Tutorial Text (Unused)
-struct Animation anim_calligraphy_skip_icon[] = {
+struct Animation anim_power_calligraphy_skip_icon[] = {
     /* 000 */ { power_calligraphy_brush_cel151, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_088ef1f0] Brush Charging Particles
-struct Animation anim_calligraphy_brush_charge_effect[] = {
+struct Animation anim_power_calligraphy_brush_charge_effect[] = {
     /* 000 */ { power_calligraphy_brush_cel152, 2 },
     /* 001 */ { power_calligraphy_brush_cel153, 2 },
     /* 002 */ { power_calligraphy_brush_cel154, 2 },

@@ -6,7 +6,7 @@ thumb_func_start polyrhythm_despawn_piston \n\
 /* 08036250 */ PUSH {R4-R7, LR} \n\
 /* 08036252 */ SUB SP, 0xC \n\
 /* 08036254 */ LSLS R0, R0, 0x10 \n\
-/* 08036256 */ LDR R1, =D_030055d0 \n\
+/* 08036256 */ LDR R1, =gCurrentEngineData \n\
 /* 08036258 */ LSRS R7, R0, 0x10 \n\
 /* 0803625a */ ASRS R0, R0, 0x9 \n\
 /* 0803625c */ ADDS R0, 0x4 @ Add 0x4 to R0 \n\
@@ -49,7 +49,7 @@ branch_0803629e: \n\
 /* 080362a0 */ ADDS R5, 0x1 @ Add 0x1 to R5 \n\
 /* 080362a2 */ CMP R5, 0xF @ Compare R5 and 0xF \n\
 /* 080362a4 */ BLS branch_08036266 \n\
-/* 080362a6 */ LDR R0, =D_030055d0 \n\
+/* 080362a6 */ LDR R0, =gCurrentEngineData \n\
 /* 080362a8 */ LDR R0, [R0] \n\
 /* 080362aa */ LSLS R4, R7, 0x10 \n\
 /* 080362ac */ ASRS R4, R4, 0x10 \n\

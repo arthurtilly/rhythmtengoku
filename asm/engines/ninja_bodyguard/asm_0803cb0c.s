@@ -22,7 +22,7 @@ thumb_func_start func_0803cb0c \n\
 /* 0803cb2e */ STR R2, [SP, 0x10] \n\
 /* 0803cb30 */ MOVS R3, 0xA8 @ Set R3 to 0xA8 \n\
 /* 0803cb32 */ BL func_0804d160 \n\
-/* 0803cb36 */ LDR R1, =D_030055d0 \n\
+/* 0803cb36 */ LDR R1, =gCurrentEngineData \n\
 /* 0803cb38 */ LDR R1, [R1] \n\
 /* 0803cb3a */ LDR R2, =0x2d2 \n\
 /* 0803cb3c */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\

@@ -51,7 +51,7 @@ branch_08010564: \n\
 /* 08010590 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08010592 */ MOVS R3, 0x78 @ Set R3 to 0x78 \n\
 /* 08010594 */ BL func_0804d160 \n\
-/* 08010598 */ LDR R4, =D_030046a4 \n\
+/* 08010598 */ LDR R4, =gCurrentSceneData \n\
 /* 0801059a */ LDR R1, [R4] \n\
 /* 0801059c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801059e */ STRH R0, [R1, 0x4] \n\

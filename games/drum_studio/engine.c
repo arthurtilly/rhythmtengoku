@@ -609,9 +609,9 @@ struct CueDefinition *drum_studio_cue_index[] = {
 
 // [D_089e2e24] Common Events
 EngineEvent drum_studio_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) drum_studio_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) drum_studio_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) drum_studio_common_init_tutorial,
+    /* BEAT_ANIMATION */ drum_studio_common_beat_animation,
+    /* DISPLAY_TEXT   */ drum_studio_common_display_text,
+    /* INIT_TUTORIAL  */ drum_studio_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
@@ -636,38 +636,38 @@ extern void func_080281fc();
 
 // [D_089e2e34] Engine Events
 EngineEvent drum_studio_engine_events[] = {
-    /* 0x00 */ (EngineEvent) drum_studio_init_script,
-    /* 0x01 */ (EngineEvent) func_080295d4,
-    /* 0x02 */ (EngineEvent) func_08029178,
-    /* 0x03 */ (EngineEvent) drum_studio_event_start_monitor,
-    /* 0x04 */ (EngineEvent) drum_studio_event_stop_monitor,
-    /* 0x05 */ (EngineEvent) drum_studio_show_save_options,
-    /* 0x06 */ (EngineEvent) func_08029b8c,
-    /* 0x07 */ (EngineEvent) func_08027728,
-    /* 0x08 */ (EngineEvent) func_08027744,
-    /* 0x09 */ (EngineEvent) func_08027760,
-    /* 0x0A */ (EngineEvent) func_0802777c,
-    /* 0x0B */ (EngineEvent) func_080277a0,
-    /* 0x0C */ (EngineEvent) func_080277b8,
-    /* 0x0D */ (EngineEvent) drum_lessons_set_dialogue,
-    /* 0x0E */ (EngineEvent) func_08027888,
-    /* 0x0F */ (EngineEvent) func_080278d0,
-    /* 0x10 */ (EngineEvent) drum_lessons_show_dialogue,
-    /* 0x11 */ (EngineEvent) func_08027f70,
-    /* 0x12 */ (EngineEvent) drum_lessons_set_teacher_expression,
-    /* 0x13 */ (EngineEvent) func_08029cec,
-    /* 0x14 */ (EngineEvent) drum_lessons_get_score,
-    /* 0x15 */ (EngineEvent) func_08027bd8,
-    /* 0x16 */ (EngineEvent) func_08027c54,
-    /* 0x17 */ (EngineEvent) func_08027c90,
-    /* 0x18 */ (EngineEvent) func_080281e8,
-    /* 0x19 */ (EngineEvent) func_080281fc,
-    /* 0x1A */ (EngineEvent) drum_studio_engine_event_stub
+    /* 0x00 */ drum_studio_init_script,
+    /* 0x01 */ func_080295d4,
+    /* 0x02 */ func_08029178,
+    /* 0x03 */ drum_studio_event_start_monitor,
+    /* 0x04 */ drum_studio_event_stop_monitor,
+    /* 0x05 */ drum_studio_show_save_options,
+    /* 0x06 */ func_08029b8c,
+    /* 0x07 */ func_08027728,
+    /* 0x08 */ func_08027744,
+    /* 0x09 */ func_08027760,
+    /* 0x0A */ func_0802777c,
+    /* 0x0B */ func_080277a0,
+    /* 0x0C */ func_080277b8,
+    /* 0x0D */ drum_lessons_set_dialogue,
+    /* 0x0E */ func_08027888,
+    /* 0x0F */ func_080278d0,
+    /* 0x10 */ drum_lessons_show_dialogue,
+    /* 0x11 */ func_08027f70,
+    /* 0x12 */ drum_lessons_set_teacher_expression,
+    /* 0x13 */ func_08029cec,
+    /* 0x14 */ drum_lessons_get_score,
+    /* 0x15 */ func_08027bd8,
+    /* 0x16 */ func_08027c54,
+    /* 0x17 */ func_08027c90,
+    /* 0x18 */ func_080281e8,
+    /* 0x19 */ func_080281fc,
+    /* 0x1A */ drum_studio_engine_event_stub
 };
 
 // [D_089e2ea0] Drum Lessons Game Engine
 struct GameEngine drum_studio_engine = {
-    /* Size in Memory */ 0x580,
+    /* Size in Memory */ sizeof(struct DrumStudioEngineData),
     /* Start Engine   */ drum_studio_engine_start,
     /* Update Engine  */ drum_studio_engine_update,
     /* Stop Engine    */ drum_studio_engine_stop,

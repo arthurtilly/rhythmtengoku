@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start clappy_trio_cue_barely \n\
 /* 080309a8 */ PUSH {R4, LR} \n\
 /* 080309aa */ SUB SP, 0xC \n\
-/* 080309ac */ LDR R0, =D_030055d0 \n\
+/* 080309ac */ LDR R0, =gCurrentEngineData \n\
 /* 080309ae */ LDR R4, [R0] \n\
 /* 080309b0 */ ADDS R4, 0x4 @ Add 0x4 to R4 \n\
 /* 080309b2 */ MOVS R0, 0x4 @ Set R0 to 0x4 \n\

@@ -7,7 +7,7 @@ thumb_func_start func_08037dc8 \n\
 /* 08037dca */ ADDS R5, R0, 0x0 @ Set R5 to R0 + 0x0 \n\
 /* 08037dcc */ CMP R5, 0x0 @ Compare R5 and 0x0 \n\
 /* 08037dce */ BEQ branch_08037df8 \n\
-/* 08037dd0 */ LDR R4, =D_030055d0 \n\
+/* 08037dd0 */ LDR R4, =gCurrentEngineData \n\
 /* 08037dd2 */ LDR R0, [R4] \n\
 /* 08037dd4 */ ADDS R0, 0x48 @ Add 0x48 to R0 \n\
 /* 08037dd6 */ LDRB R0, [R0] \n\
@@ -26,7 +26,7 @@ thumb_func_start func_08037dc8 \n\
 .ltorg \n\
  \n\
 branch_08037df8: \n\
-/* 08037df8 */ LDR R0, =D_030055d0 \n\
+/* 08037df8 */ LDR R0, =gCurrentEngineData \n\
 /* 08037dfa */ LDR R1, [R0] \n\
 /* 08037dfc */ ADDS R0, R1, 0x0 @ Set R0 to R1 + 0x0 \n\
 /* 08037dfe */ ADDS R0, 0x48 @ Add 0x48 to R0 \n\
@@ -39,7 +39,7 @@ branch_08037df8: \n\
 /* 08037e0c */ BL set_beatscript_tempo \n\
  \n\
 branch_08037e10: \n\
-/* 08037e10 */ LDR R0, =D_030055d0 \n\
+/* 08037e10 */ LDR R0, =gCurrentEngineData \n\
 /* 08037e12 */ LDR R0, [R0] \n\
 /* 08037e14 */ ADDS R0, 0x48 @ Add 0x48 to R0 \n\
 /* 08037e16 */ STRB R5, [R0] \n\

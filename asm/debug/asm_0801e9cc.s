@@ -18,7 +18,7 @@ thumb_func_start func_0801e9cc \n\
 /* 0801e9ea */ STR R2, [SP] \n\
 /* 0801e9ec */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0801e9ee */ BL create_new_bmp_font_bg \n\
-/* 0801e9f2 */ LDR R4, =D_030046a4 \n\
+/* 0801e9f2 */ LDR R4, =gCurrentSceneData \n\
 /* 0801e9f4 */ LDR R1, [R4] \n\
 /* 0801e9f6 */ STR R0, [R1] \n\
 /* 0801e9f8 */ MOVS R0, 0xC0 @ Set R0 to 0xC0 \n\

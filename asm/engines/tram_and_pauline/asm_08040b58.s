@@ -10,7 +10,7 @@ thumb_func_start tram_pauline_common_display_text \n\
 /* 08040b60 */ BNE branch_08040b80 \n\
 /* 08040b62 */ LDR R0, =D_03005380 \n\
 /* 08040b64 */ LDR R0, [R0] \n\
-/* 08040b66 */ LDR R1, =D_030055d0 \n\
+/* 08040b66 */ LDR R1, =gCurrentEngineData \n\
 /* 08040b68 */ LDR R1, [R1] \n\
 /* 08040b6a */ MOVS R2, 0x3C @ Set R2 to 0x3C \n\
 /* 08040b6c */ LDRSH R1, [R1, R2] \n\
@@ -21,7 +21,7 @@ thumb_func_start tram_pauline_common_display_text \n\
 .ltorg \n\
  \n\
 branch_08040b80: \n\
-/* 08040b80 */ LDR R4, =D_030055d0 \n\
+/* 08040b80 */ LDR R4, =gCurrentEngineData \n\
 /* 08040b82 */ LDR R1, [R4] \n\
 /* 08040b84 */ LDR R0, [R1, 0x38] \n\
 /* 08040b86 */ MOVS R3, 0x3C @ Set R3 to 0x3C \n\

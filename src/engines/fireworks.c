@@ -8,7 +8,7 @@
 #include "src/lib_0804ca80.h"
 
 // For readability.
-#define gFireworksInfo ((struct FireworksInfo *)D_030055d0)
+#define gFireworks ((struct FireworksEngineData *)gCurrentEngineData)
 
 enum SpiritSparklerStatesEnum {
     SPIRIT_SPARKLER_STATE_0,
@@ -44,7 +44,7 @@ void fireworks_init_gfx2(void) {
     u32 task;
 
     func_0800c604(0);
-    task = func_08002ee0(get_current_mem_id(), fireworks_gfx_tables[gFireworksInfo->version], 0x2000);
+    task = func_08002ee0(get_current_mem_id(), fireworks_gfx_tables[gFireworks->version], 0x2000);
     run_func_after_task(task, fireworks_init_gfx3, 0);
 }
 
@@ -65,26 +65,26 @@ void fireworks_engine_start(u32 version) {
     struct PrintedTextAnim *textAnim;
     u8 i;
 
-    gFireworksInfo->version = version;
+    gFireworks->version = version;
     fireworks_init_gfx1();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 0);
-    gFireworksInfo->unk4 = func_0800c660(0x340, 2);
-    textAnim = bmp_font_obj_print_c(gFireworksInfo->unk4, D_0805a3d0, 1, 15);
-    gFireworksInfo->textSprite = func_0804d160(D_03005380, textAnim->frames, 0, 120, 144, 0x7f7, 0, 0, 0);
-    gFireworksInfo->screenBrightness = 0;
-    gFireworksInfo->patternTableNext = 0;
+    gFireworks->unk4 = func_0800c660(0x340, 2);
+    textAnim = bmp_font_obj_print_c(gFireworks->unk4, D_0805a3d0, 1, 15);
+    gFireworks->textSprite = func_0804d160(D_03005380, textAnim->frames, 0, 120, 144, 0x7f7, 0, 0, 0);
+    gFireworks->screenBrightness = 0;
+    gFireworks->patternTableNext = 0;
     D_03004b10.BLDMOD = BLDMOD_BG1_SRC | BLDMOD_BLEND_MODE(BLEND_MODE_LIGHTEN);
     D_03004b10.COLEY = 0;
-    gFireworksInfo->skipTutorialSprite = func_0804d160(D_03005380, anim_fireworks_skip_tutorial_icon, 0, 208, 152, 0x802, 0, 0, 0);
-    func_0804d770(D_03005380, gFireworksInfo->skipTutorialSprite, FALSE);
-    gFireworksInfo->patternMode = FIREWORKS_PATTERN_MODE_0;
-    gFireworksInfo->patternDefault = FIREWORKS_PATTERN_L3;
+    gFireworks->skipTutorialSprite = func_0804d160(D_03005380, anim_fireworks_skip_tutorial_icon, 0, 208, 152, 0x802, 0, 0, 0);
+    func_0804d770(D_03005380, gFireworks->skipTutorialSprite, FALSE);
+    gFireworks->patternMode = FIREWORKS_PATTERN_MODE_0;
+    gFireworks->patternDefault = FIREWORKS_PATTERN_L3;
 
     for (i = 0; i < 72; i++) {
-        gFireworksInfo->particles[i].sprite = func_0804d160(D_03005380, anim_fireworks_particle_red, 0, 0, 0, 0x801, 0, 0, 0);
-        gFireworksInfo->particles[i].active = FALSE;
-        func_0804d770(D_03005380, gFireworksInfo->particles[i].sprite, FALSE);
+        gFireworks->particles[i].sprite = func_0804d160(D_03005380, anim_fireworks_particle_red, 0, 0, 0, 0x801, 0, 0, 0);
+        gFireworks->particles[i].active = FALSE;
+        func_0804d770(D_03005380, gFireworks->particles[i].sprite, FALSE);
     }
 
     textPrinter = text_printer_create_new(get_current_mem_id(), 4, 240, 30);
@@ -101,10 +101,10 @@ void fireworks_engine_start(u32 version) {
 
 // Engine Event 00 (Set Pattern Mode)
 void fireworks_set_pattern_mode(u32 mode) {
-    gFireworksInfo->patternMode = mode;
+    gFireworks->patternMode = mode;
 
     if (mode == FIREWORKS_PATTERN_MODE_USE_TABLE) {
-        func_0804d770(D_03005380, gFireworksInfo->skipTutorialSprite, FALSE);
+        func_0804d770(D_03005380, gFireworks->skipTutorialSprite, FALSE);
     }
 }
 
@@ -133,7 +133,7 @@ void fireworks_play_sound(u32 sound) {
 
 // Engine Event 02 (Set Pattern)
 void fireworks_set_pattern(u32 pattern) {
-    gFireworksInfo->patternDefault = pattern;
+    gFireworks->patternDefault = pattern;
 }
 
 
@@ -142,16 +142,16 @@ void fireworks_update_explosion(void) {
     u8 i;
 
     for (i = 0; i < 72; i++) {
-        if (gFireworksInfo->particles[i].active) {
-            gFireworksInfo->particles[i].x += gFireworksInfo->particles[i].velX;
-            gFireworksInfo->particles[i].velX -= gFireworksInfo->particles[i].velX / 32;
-            gFireworksInfo->particles[i].y += gFireworksInfo->particles[i].velY;
-            gFireworksInfo->particles[i].velY -= (gFireworksInfo->particles[i].velY / 32);
-            gFireworksInfo->particles[i].velY += 6;
-            func_0804d5d4(D_03005380, gFireworksInfo->particles[i].sprite, FIXED_TO_INT(gFireworksInfo->particles[i].x), FIXED_TO_INT(gFireworksInfo->particles[i].y));
-            if ((s8) func_0804d6cc(D_03005380, gFireworksInfo->particles[i].sprite) >= fireworks_particle_durations[gFireworksInfo->particles[i].colour]) {
-                gFireworksInfo->particles[i].active = FALSE;
-                func_0804d770(D_03005380, gFireworksInfo->particles[i].sprite, FALSE);
+        if (gFireworks->particles[i].active) {
+            gFireworks->particles[i].x += gFireworks->particles[i].velX;
+            gFireworks->particles[i].velX -= gFireworks->particles[i].velX / 32;
+            gFireworks->particles[i].y += gFireworks->particles[i].velY;
+            gFireworks->particles[i].velY -= (gFireworks->particles[i].velY / 32);
+            gFireworks->particles[i].velY += 6;
+            func_0804d5d4(D_03005380, gFireworks->particles[i].sprite, FIXED_TO_INT(gFireworks->particles[i].x), FIXED_TO_INT(gFireworks->particles[i].y));
+            if ((s8) func_0804d6cc(D_03005380, gFireworks->particles[i].sprite) >= fireworks_particle_durations[gFireworks->particles[i].colour]) {
+                gFireworks->particles[i].active = FALSE;
+                func_0804d770(D_03005380, gFireworks->particles[i].sprite, FALSE);
             }
         }
     }
@@ -260,104 +260,104 @@ void fireworks_create_explosion(u8 pattern, s32 x, s32 y) {
         if (pattern == FIREWORKS_PATTERN_SP_CIRCLE) {
             // Inner Circle [16 Particles]
             if (i < (min + 16)) {
-                gFireworksInfo->particles[i].initAngle = (i - min) * 16;
-                gFireworksInfo->particles[i].initVel = 240;
+                gFireworks->particles[i].initAngle = (i - min) * 16;
+                gFireworks->particles[i].initVel = 240;
             }
             // Outer Circle [16 Particles]
             else {
-                gFireworksInfo->particles[i].initAngle = ((i - min - 16) * 16) + 8;
-                gFireworksInfo->particles[i].initVel = 480;
+                gFireworks->particles[i].initAngle = ((i - min - 16) * 16) + 8;
+                gFireworks->particles[i].initVel = 480;
             }
         }
 
         else if (pattern == FIREWORKS_PATTERN_SP_SPIRAL) {
             // Inner Loop [16 Particles]
             if (i < (min + 16)) {
-                gFireworksInfo->particles[i].initAngle = (i - min) * 16;
-                gFireworksInfo->particles[i].initVel = ((i - min) * 16) + 160;
+                gFireworks->particles[i].initAngle = (i - min) * 16;
+                gFireworks->particles[i].initVel = ((i - min) * 16) + 160;
             }
             // Outer Loop [16 Particles]
             else {
-                gFireworksInfo->particles[i].initAngle = (i - min - 16) * 16;
-                gFireworksInfo->particles[i].initVel = ((i - min - 16) * 16) + 400;
+                gFireworks->particles[i].initAngle = (i - min - 16) * 16;
+                gFireworks->particles[i].initVel = ((i - min - 16) * 16) + 400;
             }
         }
 
         else if (pattern == FIREWORKS_PATTERN_SP_SMILE) {
             // Left Eye [8 Particles]
             if (i < (min + 8)) {
-                gFireworksInfo->particles[i].initAngle = ((i - min) * 4) - 112;
-                gFireworksInfo->particles[i].initVel = 720 - ((i - min) * 64);
+                gFireworks->particles[i].initAngle = ((i - min) * 4) - 112;
+                gFireworks->particles[i].initVel = 720 - ((i - min) * 64);
             }
             // Right Eye [8 Particles]
             else if (i < (min + 16)) {
-                gFireworksInfo->particles[i].initAngle = -16 - ((i - min - 8) * 4);
-                gFireworksInfo->particles[i].initVel = 720 - ((i - min - 8) * 64);
+                gFireworks->particles[i].initAngle = -16 - ((i - min - 8) * 4);
+                gFireworks->particles[i].initVel = 720 - ((i - min - 8) * 64);
             }
             // Mouth [8 Particles]
             else {
-                gFireworksInfo->particles[i].initAngle = ((i - min - 16) * 16) + 8;
-                gFireworksInfo->particles[i].initVel = 480;
+                gFireworks->particles[i].initAngle = ((i - min - 16) * 16) + 8;
+                gFireworks->particles[i].initVel = 480;
             }
         }
 
         else if (pattern == FIREWORKS_PATTERN_SP_TSUNKU) {
             // This one just reads it from a table, lol.
-            gFireworksInfo->particles[i].initAngle = fireworks_mars_pattern[i - min].initAngle;
-            gFireworksInfo->particles[i].initVel = fireworks_mars_pattern[i - min].initVelocity;
+            gFireworks->particles[i].initAngle = fireworks_mars_pattern[i - min].initAngle;
+            gFireworks->particles[i].initVel = fireworks_mars_pattern[i - min].initVelocity;
         }
 
         else { // STANDARD FIREWORK PATTERN
             // Inner Circle [8 Particles]
             if (i < (min + 8)) {
-                gFireworksInfo->particles[i].initAngle = (i - min) * 32;
-                gFireworksInfo->particles[i].initVel = 240;
+                gFireworks->particles[i].initAngle = (i - min) * 32;
+                gFireworks->particles[i].initVel = 240;
             }
             // Middle Circle [8 Particles]
             else if (i < (min + 16)) {
-                gFireworksInfo->particles[i].initAngle = ((i - min - 8) * 32) + 16;
-                gFireworksInfo->particles[i].initVel = 480;
+                gFireworks->particles[i].initAngle = ((i - min - 8) * 32) + 16;
+                gFireworks->particles[i].initVel = 480;
             }
             // Outer Circle [8 Particles]
             else {
-                gFireworksInfo->particles[i].initAngle = ((i - min - 16) * 32);
-                gFireworksInfo->particles[i].initVel = 640;
+                gFireworks->particles[i].initAngle = ((i - min - 16) * 32);
+                gFireworks->particles[i].initVel = 640;
             }
         }
 
-        gFireworksInfo->particles[i].velX = gFireworksInfo->particles[i].initVel * coss2(gFireworksInfo->particles[i].initAngle) / 256;
-        gFireworksInfo->particles[i].velY = gFireworksInfo->particles[i].initVel * sins2(gFireworksInfo->particles[i].initAngle) / 256;
-        gFireworksInfo->particles[i].x = x + gFireworksInfo->particles[i].velX;
-        gFireworksInfo->particles[i].y = y + gFireworksInfo->particles[i].velY;
-        gFireworksInfo->particles[i].colour = colour;
+        gFireworks->particles[i].velX = gFireworks->particles[i].initVel * coss2(gFireworks->particles[i].initAngle) / 256;
+        gFireworks->particles[i].velY = gFireworks->particles[i].initVel * sins2(gFireworks->particles[i].initAngle) / 256;
+        gFireworks->particles[i].x = x + gFireworks->particles[i].velX;
+        gFireworks->particles[i].y = y + gFireworks->particles[i].velY;
+        gFireworks->particles[i].colour = colour;
 
         if (pattern <= 2) { // STANDARD FIREWORK PATTERN
             if (i < (min + 8)) {
-                gFireworksInfo->particles[i].colour = fireworks_particle_combinations[colour].inner;
+                gFireworks->particles[i].colour = fireworks_particle_combinations[colour].inner;
             }
             else if (i < (min + 16)) {
-                gFireworksInfo->particles[i].colour = fireworks_particle_combinations[colour].middle;
+                gFireworks->particles[i].colour = fireworks_particle_combinations[colour].middle;
             }
             else {
-                gFireworksInfo->particles[i].colour = fireworks_particle_combinations[colour].outer;
+                gFireworks->particles[i].colour = fireworks_particle_combinations[colour].outer;
             }
         }
 
-        gFireworksInfo->particles[i].active = TRUE;
-        func_0804d770(D_03005380, gFireworksInfo->particles[i].sprite, TRUE);
-        func_0804d5d4(D_03005380, gFireworksInfo->particles[i].sprite, FIXED_TO_INT(gFireworksInfo->particles[i].x), FIXED_TO_INT(gFireworksInfo->particles[i].y));
+        gFireworks->particles[i].active = TRUE;
+        func_0804d770(D_03005380, gFireworks->particles[i].sprite, TRUE);
+        func_0804d5d4(D_03005380, gFireworks->particles[i].sprite, FIXED_TO_INT(gFireworks->particles[i].x), FIXED_TO_INT(gFireworks->particles[i].y));
 
-        if (gFireworksInfo->particles[i].colour == FIREWORKS_PARTICLE_RED) {
-            func_0804d8f8(D_03005380, gFireworksInfo->particles[i].sprite, anim_fireworks_particle_red, 0, 1, 127, 0);
+        if (gFireworks->particles[i].colour == FIREWORKS_PARTICLE_RED) {
+            func_0804d8f8(D_03005380, gFireworks->particles[i].sprite, anim_fireworks_particle_red, 0, 1, 127, 0);
         }
-        else if (gFireworksInfo->particles[i].colour == FIREWORKS_PARTICLE_GREEN) {
-            func_0804d8f8(D_03005380, gFireworksInfo->particles[i].sprite, anim_fireworks_particle_green, 0, 1, 127, 0);
+        else if (gFireworks->particles[i].colour == FIREWORKS_PARTICLE_GREEN) {
+            func_0804d8f8(D_03005380, gFireworks->particles[i].sprite, anim_fireworks_particle_green, 0, 1, 127, 0);
         }
-        else if (gFireworksInfo->particles[i].colour == FIREWORKS_PARTICLE_BLUE) {
-            func_0804d8f8(D_03005380, gFireworksInfo->particles[i].sprite, anim_fireworks_particle_blue, 0, 1, 127, 0);
+        else if (gFireworks->particles[i].colour == FIREWORKS_PARTICLE_BLUE) {
+            func_0804d8f8(D_03005380, gFireworks->particles[i].sprite, anim_fireworks_particle_blue, 0, 1, 127, 0);
         }
         else {
-            func_0804d8f8(D_03005380, gFireworksInfo->particles[i].sprite, anim_fireworks_particle_tri_rgb, 0, 1, 127, 0);
+            func_0804d8f8(D_03005380, gFireworks->particles[i].sprite, anim_fireworks_particle_tri_rgb, 0, 1, 127, 0);
         }
     }
 }
@@ -366,9 +366,9 @@ void fireworks_create_explosion(u8 pattern, s32 x, s32 y) {
 // Game Engine Update
 void fireworks_engine_update(void) {
     fireworks_update_explosion();
-    if (gFireworksInfo->screenBrightness != 0) {
-        gFireworksInfo->screenBrightness--;
-        D_03004b10.COLEY = gFireworksInfo->screenBrightness;
+    if (gFireworks->screenBrightness != 0) {
+        gFireworks->screenBrightness--;
+        D_03004b10.COLEY = gFireworks->screenBrightness;
     }
 }
 
@@ -387,7 +387,7 @@ void fireworks_cue_spawn(struct Cue *cue, struct FireworksCue *info, u32 type) {
     info->state = 0;
     info->exploded = FALSE;
 
-    switch (gFireworksInfo->patternMode) {
+    switch (gFireworks->patternMode) {
         case FIREWORKS_PATTERN_MODE_0:
             info->pattern = FIREWORKS_PATTERN_C3;
             break;
@@ -401,14 +401,14 @@ void fireworks_cue_spawn(struct Cue *cue, struct FireworksCue *info, u32 type) {
             break;
 
         case FIREWORKS_PATTERN_MODE_USE_TABLE:
-            info->pattern = fireworks_1_pattern_sequence[gFireworksInfo->patternTableNext];
-            if (gFireworksInfo->patternTableNext < 42) {
-                gFireworksInfo->patternTableNext++;
+            info->pattern = fireworks_1_pattern_sequence[gFireworks->patternTableNext];
+            if (gFireworks->patternTableNext < 42) {
+                gFireworks->patternTableNext++;
             }
             break;
 
         default: // Use pattern set by ENGINE Func_02
-            info->pattern = gFireworksInfo->patternDefault;
+            info->pattern = gFireworks->patternDefault;
             break;
     }
 
@@ -572,13 +572,13 @@ void fireworks_cue_hit(struct Cue *cue, struct FireworksCue *info, u32 pressed, 
     if (info->pattern == FIREWORKS_PATTERN_TAIKO_BOMBER) {
         info->state = TAIKO_BOMBER_STATE_EXPLODING;
         func_0804d8f8(D_03005380, info->sprite, anim_fireworks_bomb_explode, 0, 1, 127, 0);
-        gFireworksInfo->screenBrightness = 0x10;
+        gFireworks->screenBrightness = 0x10;
     } else {
         func_0804d8f8(D_03005380, info->sprite, anim_fireworks_rocket_explode, 0, 1, 127, 0);
         fireworks_create_explosion(info->pattern, info->targetX, info->targetY);
     }
 
-    if ((gFireworksInfo->patternTableNext == 19) || (gFireworksInfo->patternTableNext == 42)) {
+    if ((gFireworks->patternTableNext == 19) || (gFireworks->patternTableNext == 42)) {
         play_sound(&s_f_hanabi_kansei_seqData);
     }
 }
@@ -651,12 +651,12 @@ void fireworks_common_display_text(char *text) {
     struct PrintedTextAnim *textAnim;
 
     if (text == NULL) {
-        func_0804d770(D_03005380, gFireworksInfo->textSprite, FALSE);
+        func_0804d770(D_03005380, gFireworks->textSprite, FALSE);
     } else {
-        textAnim = bmp_font_obj_print_c(gFireworksInfo->unk4, text, 1, 12);
-        delete_bmp_font_obj_text_anim(gFireworksInfo->unk4, gFireworksInfo->textSprite);
-        func_0804d8f8(D_03005380, gFireworksInfo->textSprite, textAnim->frames, 0, 1, 0, 0);
-        func_0804d770(D_03005380, gFireworksInfo->textSprite, TRUE);
+        textAnim = bmp_font_obj_print_c(gFireworks->unk4, text, 1, 12);
+        delete_bmp_font_obj_text_anim(gFireworks->unk4, gFireworks->textSprite);
+        func_0804d8f8(D_03005380, gFireworks->textSprite, textAnim->frames, 0, 1, 0, 0);
+        func_0804d770(D_03005380, gFireworks->textSprite, TRUE);
     }
 }
 
@@ -666,9 +666,9 @@ void fireworks_common_init_tutorial(struct Scene *skipDestination) {
     if (skipDestination != NULL) {
         gameplay_enable_tutorial(TRUE);
         gameplay_set_skip_destination(skipDestination);
-        func_0804d770(D_03005380, gFireworksInfo->skipTutorialSprite, TRUE);
+        func_0804d770(D_03005380, gFireworks->skipTutorialSprite, TRUE);
     } else {
         gameplay_enable_tutorial(FALSE);
-        func_0804d770(D_03005380, gFireworksInfo->skipTutorialSprite, FALSE);
+        func_0804d770(D_03005380, gFireworks->skipTutorialSprite, FALSE);
     }
 }

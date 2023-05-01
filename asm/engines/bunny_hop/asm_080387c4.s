@@ -35,14 +35,14 @@ branch_08038806: \n\
 /* 08038808 */ BL func_08038fbc \n\
 /* 0803880c */ B branch_080388a0 \n\
 jump_0803880e: \n\
-/* 0803880e */ LDR R0, =D_030055d0 \n\
+/* 0803880e */ LDR R0, =gCurrentEngineData \n\
 /* 08038810 */ LDR R0, [R0] \n\
 /* 08038812 */ ADDS R0, 0xF4 @ Add 0xF4 to R0 \n\
 /* 08038814 */ B branch_08038822 \n\
 \n\
 .ltorg \n\
 jump_0803881c: \n\
-/* 0803881c */ LDR R0, =D_030055d0 \n\
+/* 0803881c */ LDR R0, =gCurrentEngineData \n\
 /* 0803881e */ LDR R0, [R0] \n\
 /* 08038820 */ ADDS R0, 0xF5 @ Add 0xF5 to R0 \n\
  \n\
@@ -54,7 +54,7 @@ branch_08038822: \n\
 \n\
 .ltorg \n\
 jump_08038830: \n\
-/* 08038830 */ LDR R0, =D_030055d0 \n\
+/* 08038830 */ LDR R0, =gCurrentEngineData \n\
 /* 08038832 */ LDR R0, [R0] \n\
 /* 08038834 */ ADDS R0, 0xF4 @ Add 0xF4 to R0 \n\
 /* 08038836 */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
@@ -65,7 +65,7 @@ jump_08038830: \n\
 \n\
 .ltorg \n\
 jump_08038848: \n\
-/* 08038848 */ LDR R0, =D_030055d0 \n\
+/* 08038848 */ LDR R0, =gCurrentEngineData \n\
 /* 0803884a */ LDR R0, [R0] \n\
 /* 0803884c */ ADDS R0, 0xF4 @ Add 0xF4 to R0 \n\
 /* 0803884e */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
@@ -76,7 +76,7 @@ jump_08038848: \n\
 \n\
 .ltorg \n\
 jump_08038860: \n\
-/* 08038860 */ LDR R0, =D_030055d0 \n\
+/* 08038860 */ LDR R0, =gCurrentEngineData \n\
 /* 08038862 */ LDR R0, [R0] \n\
 /* 08038864 */ ADDS R0, 0xF4 @ Add 0xF4 to R0 \n\
 /* 08038866 */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
@@ -87,7 +87,7 @@ jump_08038860: \n\
 \n\
 .ltorg \n\
 jump_08038878: \n\
-/* 08038878 */ LDR R0, =D_030055d0 \n\
+/* 08038878 */ LDR R0, =gCurrentEngineData \n\
 /* 0803887a */ LDR R0, [R0] \n\
 /* 0803887c */ ADDS R0, 0xF5 @ Add 0xF5 to R0 \n\
 /* 0803887e */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\
@@ -98,7 +98,7 @@ jump_08038878: \n\
 \n\
 .ltorg \n\
 jump_08038890: \n\
-/* 08038890 */ LDR R0, =D_030055d0 \n\
+/* 08038890 */ LDR R0, =gCurrentEngineData \n\
 /* 08038892 */ LDR R0, [R0] \n\
 /* 08038894 */ ADDS R0, 0xF4 @ Add 0xF4 to R0 \n\
 /* 08038896 */ MOVS R1, 0x3 @ Set R1 to 0x3 \n\

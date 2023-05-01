@@ -366,28 +366,28 @@ struct CueDefinition *space_dance_cue_index[] = {
 
 // [D_089e6ff8] Common Events
 EngineEvent space_dance_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) space_dance_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) space_dance_common_display_text,
-    /* INIT_TUTORIAL  */ (EngineEvent) space_dance_common_init_tutorial,
+    /* BEAT_ANIMATION */ space_dance_common_beat_animation,
+    /* DISPLAY_TEXT   */ space_dance_common_display_text,
+    /* INIT_TUTORIAL  */ space_dance_common_init_tutorial,
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e7008] Engine Events
 EngineEvent space_dance_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_0803d2c0,
-    /* 0x01 */ (EngineEvent) func_0803d460,
-    /* 0x02 */ (EngineEvent) func_0803d4bc,
-    /* 0x03 */ (EngineEvent) func_0803d4e0,
-    /* 0x04 */ (EngineEvent) func_0803d588,
-    /* 0x05 */ (EngineEvent) func_0803d3fc,
-    /* 0x06 */ (EngineEvent) func_0803d408,
-    /* 0x07 */ (EngineEvent) func_0803d414,
-    /* 0x08 */ (EngineEvent) space_dance_engine_event_stub
+    /* 0x00 */ func_0803d2c0,
+    /* 0x01 */ func_0803d460,
+    /* 0x02 */ func_0803d4bc,
+    /* 0x03 */ func_0803d4e0,
+    /* 0x04 */ func_0803d588,
+    /* 0x05 */ func_0803d3fc,
+    /* 0x06 */ func_0803d408,
+    /* 0x07 */ func_0803d414,
+    /* 0x08 */ space_dance_engine_event_stub
 };
 
 // [D_089e702c] Space Dance Game Engine
 struct GameEngine space_dance_engine = {
-    /* Size in Memory */ 0x38,
+    /* Size in Memory */ sizeof(struct SpaceDanceEngineData),
     /* Start Engine   */ space_dance_engine_start,
     /* Update Engine  */ space_dance_engine_update,
     /* Stop Engine    */ space_dance_engine_stop,

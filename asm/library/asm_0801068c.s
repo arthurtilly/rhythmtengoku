@@ -8,7 +8,7 @@ thumb_func_start func_0801068c \n\
 /* 08010690 */ BL func_0801075c \n\
 /* 08010694 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 08010696 */ BEQ branch_0801074e \n\
-/* 08010698 */ LDR R5, =D_030046a4 \n\
+/* 08010698 */ LDR R5, =gCurrentSceneData \n\
 /* 0801069a */ LDR R0, [R5] \n\
 /* 0801069c */ LDRB R1, [R0, 0x6] \n\
 /* 0801069e */ LDR R6, =D_03004afc \n\
@@ -91,7 +91,7 @@ branch_08010738: \n\
 branch_08010740: \n\
 /* 08010740 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 08010742 */ BL set_pause_beatscript_scene \n\
-/* 08010746 */ LDR R0, =D_030046a4 \n\
+/* 08010746 */ LDR R0, =gCurrentSceneData \n\
 /* 08010748 */ LDR R1, [R0] \n\
 /* 0801074a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0801074c */ STR R0, [R1] \n\

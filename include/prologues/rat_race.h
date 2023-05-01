@@ -10,7 +10,7 @@
 
 
 // Types:
-struct RatRacePrologueInfo {
+struct RatRacePrologueEngineData {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
     s16 ratSprite;  // Sprite: Rat

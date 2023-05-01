@@ -10,7 +10,7 @@ thumb_func_start bunny_hop_init_gfx2 \n\
 /* 08037fa0 */ LSLS R0, R0, 0x10 \n\
 /* 08037fa2 */ LSRS R0, R0, 0x10 \n\
 /* 08037fa4 */ LDR R2, =bunny_hop_gfx_tables \n\
-/* 08037fa6 */ LDR R1, =D_030055d0 \n\
+/* 08037fa6 */ LDR R1, =gCurrentEngineData \n\
 /* 08037fa8 */ LDR R1, [R1] \n\
 /* 08037faa */ LDRB R1, [R1] \n\
 /* 08037fac */ LSLS R1, R1, 0x2 \n\

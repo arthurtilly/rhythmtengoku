@@ -9,7 +9,7 @@ thumb_func_start func_0803709c \n\
 /* 080370a2 */ LDR R0, =D_03005380 \n\
 /* 080370a4 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 080370a6 */ LDR R0, [R0] \n\
-/* 080370a8 */ LDR R7, =D_030055d0 \n\
+/* 080370a8 */ LDR R7, =gCurrentEngineData \n\
 /* 080370aa */ LDR R1, [R7] \n\
 /* 080370ac */ ADDS R1, 0x50 @ Add 0x50 to R1 \n\
 /* 080370ae */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\

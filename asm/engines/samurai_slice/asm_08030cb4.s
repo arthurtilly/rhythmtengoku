@@ -9,7 +9,7 @@ thumb_func_start samurai_slice_engine_start \n\
 /* 08030cba */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 08030cbc */ PUSH {R5-R7} \n\
 /* 08030cbe */ SUB SP, 0x14 \n\
-/* 08030cc0 */ LDR R1, =D_030055d0 \n\
+/* 08030cc0 */ LDR R1, =gCurrentEngineData \n\
 /* 08030cc2 */ MOV R10, R1 @ Set R10 to R1 \n\
 /* 08030cc4 */ LDR R1, [R1] \n\
 /* 08030cc6 */ ADDS R7, R1, 0x0 @ Set R7 to R1 + 0x0 \n\
@@ -158,7 +158,7 @@ branch_08030dd0: \n\
 /* 08030dfc */ STR R3, [SP, 0x10] \n\
 /* 08030dfe */ MOVS R3, 0x4A @ Set R3 to 0x4A \n\
 /* 08030e00 */ BL func_0804d160 \n\
-/* 08030e04 */ LDR R1, =D_030055d0 \n\
+/* 08030e04 */ LDR R1, =gCurrentEngineData \n\
 /* 08030e06 */ LDR R1, [R1] \n\
 /* 08030e08 */ ADDS R1, 0x8C @ Add 0x8C to R1 \n\
 /* 08030e0a */ STRH R0, [R1] \n\
@@ -178,7 +178,7 @@ branch_08030e1a: \n\
 /* 08030e26 */ LSRS R4, R0, 0x18 \n\
 /* 08030e28 */ CMP R4, 0x9 @ Compare R4 and 0x9 \n\
 /* 08030e2a */ BLS branch_08030e1a \n\
-/* 08030e2c */ LDR R2, =D_030055d0 \n\
+/* 08030e2c */ LDR R2, =gCurrentEngineData \n\
 /* 08030e2e */ LDR R0, [R2] \n\
 /* 08030e30 */ MOVS R1, 0xE8 @ Set R1 to 0xE8 \n\
 /* 08030e32 */ LSLS R1, R1, 0x1 \n\

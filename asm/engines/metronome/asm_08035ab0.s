@@ -4,7 +4,7 @@ asm(".syntax unified \n\
 \n\
 thumb_func_start metronome_engine_update \n\
 /* 08035ab0 */ PUSH {R4-R6, LR} \n\
-/* 08035ab2 */ LDR R6, =D_030055d0 \n\
+/* 08035ab2 */ LDR R6, =gCurrentEngineData \n\
 /* 08035ab4 */ LDR R2, [R6] \n\
 /* 08035ab6 */ MOVS R0, 0x8 @ Set R0 to 0x8 \n\
 /* 08035ab8 */ LDRSH R5, [R2, R0] \n\

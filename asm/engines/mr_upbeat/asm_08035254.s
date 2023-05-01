@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start mr_upbeat_engine_start \n\
 /* 08035254 */ PUSH {R4, R5, LR} \n\
 /* 08035256 */ SUB SP, 0x14 \n\
-/* 08035258 */ LDR R4, =D_030055d0 \n\
+/* 08035258 */ LDR R4, =gCurrentEngineData \n\
 /* 0803525a */ LDR R1, [R4] \n\
 /* 0803525c */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0803525e */ STRB R0, [R1] \n\

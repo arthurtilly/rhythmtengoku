@@ -5,7 +5,7 @@ asm(".syntax unified \n\
 thumb_func_start samurai_slice_common_beat_animation \n\
 /* 0803193c */ PUSH {R4, R5, LR} \n\
 /* 0803193e */ SUB SP, 0x4 \n\
-/* 08031940 */ LDR R0, =D_030055d0 \n\
+/* 08031940 */ LDR R0, =gCurrentEngineData \n\
 /* 08031942 */ LDR R1, [R0] \n\
 /* 08031944 */ LDRB R0, [R1, 0x4] \n\
 /* 08031946 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
@@ -30,7 +30,7 @@ thumb_func_start samurai_slice_common_beat_animation \n\
 branch_0803196c: \n\
 /* 0803196c */ LDR R5, =D_03005380 \n\
 /* 0803196e */ LDR R0, [R5] \n\
-/* 08031970 */ LDR R4, =D_030055d0 \n\
+/* 08031970 */ LDR R4, =gCurrentEngineData \n\
 /* 08031972 */ LDR R1, [R4] \n\
 /* 08031974 */ MOVS R2, 0xC @ Set R2 to 0xC \n\
 /* 08031976 */ LDRSH R1, [R1, R2] \n\

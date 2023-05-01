@@ -10,7 +10,7 @@
 
 
 // Types:
-struct KarateManPrologueInfo {
+struct KarateManPrologueEngineData {
     u8  ver;        // Value:  Version
     s16 textSprite; // Sprite: Text
     s16 kickSprite; // Sprite: Kick

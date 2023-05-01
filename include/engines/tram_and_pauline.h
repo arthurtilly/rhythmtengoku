@@ -6,8 +6,8 @@
 #include "games/tram_and_pauline/graphics/tram_pauline_graphics.h"
 
 // Engine Types:
-struct TramPaulineInfo {
-    /* add fields here */
+struct TramPaulineEngineData {
+    u8 pad[0x48];
 };
 
 struct TramPaulineCue {

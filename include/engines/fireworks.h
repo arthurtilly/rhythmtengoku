@@ -6,7 +6,7 @@
 #include "games/fireworks/graphics/fireworks_graphics.h"
 
 // Engine Types:
-struct FireworksInfo {
+struct FireworksEngineData {
     u8  version;        // Version Number
     struct BitmapFontOBJ *unk4;  // Font?
     s16 textSprite;     // Tutorial Text (Sprite)

@@ -108,19 +108,19 @@ struct Animation anim_lessons_menu_long_4[] = {
 };
 
 // [D_089013c4] Lesson Icon - Long 5, Long 6
-struct Animation anim_lessons_menu_long_5[] = {
+struct Animation anim_lessons_menu_long_5_6[] = {
     /* 000 */ { drum_lessons_menu_cel020, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_089013d4] Lesson Icon - Hi-Tech 1
-struct Animation anim_lessons_menu_hi_tech_1[] = {
+// [D_089013d4] Lesson Icon - Hi-Tech 1, Hi-Tech 2
+struct Animation anim_lessons_menu_hi_tech_1_2[] = {
     /* 000 */ { drum_lessons_menu_cel021, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_089013e4] Lesson Icon - Hi-Tech 2
-struct Animation anim_lessons_menu_hi_tech_2[] = {
+// [D_089013e4] Lesson Icon - Hi-Tech (Unused, duplicated)
+struct Animation anim_lessons_menu_hi_tech_unused[] = {
     /* 000 */ { drum_lessons_menu_cel021, 4 },
     /* End */ END_ANIMATION
 };

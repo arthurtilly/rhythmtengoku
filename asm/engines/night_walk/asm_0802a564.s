@@ -9,7 +9,7 @@ thumb_func_start night_walk_init_stars \n\
 /* 0802a56a */ MOV R5, R8 @ Set R5 to R8 \n\
 /* 0802a56c */ PUSH {R5-R7} \n\
 /* 0802a56e */ SUB SP, 0x18 \n\
-/* 0802a570 */ LDR R1, =D_030055d0 \n\
+/* 0802a570 */ LDR R1, =gCurrentEngineData \n\
 /* 0802a572 */ LDR R0, [R1] \n\
 /* 0802a574 */ MOVS R2, 0xEE @ Set R2 to 0xEE \n\
 /* 0802a576 */ LSLS R2, R2, 0x2 \n\
@@ -95,7 +95,7 @@ branch_0802a590: \n\
 /* 0802a620 */ CMP R4, 0x1F @ Compare R4 and 0x1F \n\
 /* 0802a622 */ BLS branch_0802a590 \n\
 /* 0802a624 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 0802a626 */ LDR R0, =D_030055d0 \n\
+/* 0802a626 */ LDR R0, =gCurrentEngineData \n\
 /* 0802a628 */ LDR R2, [R0] \n\
 /* 0802a62a */ LDR R1, [SP, 0x14] \n\
 /* 0802a62c */ MOVS R4, 0x6 @ Set R4 to 0x6 \n\

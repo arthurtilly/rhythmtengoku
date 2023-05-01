@@ -7,8 +7,8 @@
 #include "games/drum_live/graphics/drum_live_graphics.h"
 
 // Engine Types:
-struct DrumLiveInfo {
-    /* add fields here */
+struct DrumLiveEngineData {
+    u8 pad[0x1820];
 };
 
 struct DrumLiveCue {

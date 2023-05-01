@@ -7,8 +7,8 @@
 #include "games/rhythm_toys/graphics/rhythm_toys_graphics.h"
 
 // Engine Types:
-struct RhythmToysInfo {
-    /* add fields here */
+struct RhythmToysEngineData {
+    u8 pad[0x384];
 };
 
 struct RhythmToysCue {
@@ -32,7 +32,7 @@ typedef void (*RhythmToysPlayFunc)(u32 button);
 enum RhythmToysVersionsEnum {
     ENGINE_VER_CAT_MACHINE_1,
     ENGINE_VER_CAT_MACHINE_2,
-    ENGINE_VER_CONFESSION_MACHINE,
+    ENGINE_VER_LOVE_MACHINE,
     ENGINE_VER_RAP_MACHINE
 };
 
@@ -76,7 +76,7 @@ extern struct DrumTechNote *cat_machine_1_drum_seq_table[];
 extern struct DrumTechNote *cat_machine_2_drum_seq_table[];
 extern struct SequenceData *cat_machine_meow_sfx_table[];
 extern struct SequenceData **rap_machine_sfx_pool[];
-extern struct SequenceData *const *confession_machine_sfx_table[];
+extern struct SequenceData *const *love_machine_sfx_table[];
 extern struct RhythmToysSpriteData *rhythm_toys_sprite_table[];
 extern struct RhythmToysDemo *rhythm_toys_demo_table[];
 extern struct CompressedGraphics *rhythm_toys_buffered_textures[];

@@ -6,8 +6,8 @@
 #include "games/tap_trial/graphics/tap_trial_graphics.h"
 
 // Engine Types:
-struct TapTrialInfo {
-    /* add fields here */
+struct TapTrialEngineData {
+    u8 pad[0x398];
 };
 
 struct TapTrialCue {

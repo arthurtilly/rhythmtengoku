@@ -8,7 +8,7 @@
 
 
 // For readability.
-#define gGameSelectInfo ((struct GameSelectSceneInfo *)D_030046a4)
+#define gGameSelect ((struct GameSelectSceneData *)gCurrentSceneData)
 
 #define COLOR_MOD_MAX_WAIT_TIME 60
 #define COLOR_MOD_INTERP_TIME 96
@@ -47,12 +47,6 @@ enum FlowPaneStatesEnum {
 
 extern u32 D_03005590; // Unused
 extern u32 D_030055d4; // Unused
-
-extern const struct Scene scene_results_ver_rank;
-extern const struct Scene scene_epilogue;
-extern const struct Scene scene_results_ver_score;
-extern const struct Scene scene_game_select;
-extern const struct Scene scene_main_menu;
 
 static u8 sPlayAltBGM; // Play "Game Select 2" music
 static u16 D_0300131e_padding; // unused
@@ -119,7 +113,7 @@ void update_plays_until_next_campaign(void) {
 
 // Get Available Perfect Campaigns
 void get_all_uncleared_campaigns(void) {
-    struct CampaignNotice *notice = &gGameSelectInfo->campaignNotice;
+    struct CampaignNotice *notice = &gGameSelect->campaignNotice;
     struct CampaignGiftData *gift = campaign_gifts_table;
     u32 i;
 
@@ -139,7 +133,7 @@ void get_all_uncleared_campaigns(void) {
 
 // Start New Perfect Campaign
 void start_new_campaign(void) {
-    struct CampaignNotice *notice = &gGameSelectInfo->campaignNotice;
+    struct CampaignNotice *notice = &gGameSelect->campaignNotice;
     u32 playsUntilNewCampaign;
 
     get_all_uncleared_campaigns();
@@ -170,7 +164,7 @@ void start_new_campaign(void) {
 
 // Mark Perfect Campaign As Ready to Start
 void activate_campaign_notice(void) {
-    struct CampaignNotice *notice = &gGameSelectInfo->campaignNotice;
+    struct CampaignNotice *notice = &gGameSelect->campaignNotice;
 
     if (D_030046a8->data.playsUntilNextCampaign > 0) {
         return;
@@ -186,7 +180,7 @@ void activate_campaign_notice(void) {
 
 // Init. Perfect Campaign Notice
 void init_campaign_notice(void) {
-    struct CampaignNotice *notice = &gGameSelectInfo->campaignNotice;
+    struct CampaignNotice *notice = &gGameSelect->campaignNotice;
     struct Vector2 *vector = &D_03004b10.BG_OFS[BG_LAYER_1];
 
     notice->borderSprite = func_0804d160(D_03005380, anim_game_select_border_perfect3, 0, 48, 72, 0x8878, 1, 0, 0x8000);
@@ -273,7 +267,7 @@ const char *get_campaign_gift_title(s32 id, s32 shortenSongTitle) {
 
 // Start Perfect Campaign Notice
 void start_campaign_notice(s32 id) {
-    struct CampaignNotice *notice = &gGameSelectInfo->campaignNotice;
+    struct CampaignNotice *notice = &gGameSelect->campaignNotice;
     u32 isSpecialSong = FALSE;
     u32 isStandardSong = FALSE;
     u32 giftType = campaign_gifts_table[id].type;
@@ -311,17 +305,17 @@ void start_campaign_notice(s32 id) {
     strcat(string, "‚ðƒvƒŒƒ[ƒ“ƒg!!"); // received as a present!!
     text_printer_set_string(notice->printer, string);
 
-    func_0804d770(D_03005380, gGameSelectInfo->selectionBorderSprite, FALSE);
+    func_0804d770(D_03005380, gGameSelect->selectionBorderSprite, FALSE);
     notice->textAdvDelay = 10;
     notice->noticeDelay = 60;
     scene_interpolate_music_volume(100, beats_to_ticks(0x18));
-    gGameSelectInfo->sceneState = SCENE_STATE_DISPLAYING_CAMPAIGN_NOTICE;
+    gGameSelect->sceneState = SCENE_STATE_DISPLAYING_CAMPAIGN_NOTICE;
 }
 
 
 // Start a Random Available Perfect Campaign
 s32 start_random_campaign_notice(void) {
-    struct CampaignNotice *notice = &gGameSelectInfo->campaignNotice;
+    struct CampaignNotice *notice = &gGameSelect->campaignNotice;
     s32 id;
 
     if (notice->totalAvailable == 0) {
@@ -337,7 +331,7 @@ s32 start_random_campaign_notice(void) {
 
 // Update Perfect Campaign Notice
 void update_campaign_notice(void) {
-    struct CampaignNotice *notice = &gGameSelectInfo->campaignNotice;
+    struct CampaignNotice *notice = &gGameSelect->campaignNotice;
     u32 denyInputs = FALSE;
     s16 x, y;
     s16 textX, textY;
@@ -351,16 +345,16 @@ void update_campaign_notice(void) {
             get_pixel_xy_from_grid_xy(notice->x, notice->y, &x, &y);
             game_select_scroll_grid_pane(x, y, 240);
             game_select_scroll_info_pane(0, 256, 240);
-            gGameSelectInfo->hideStageTitle = TRUE;
+            gGameSelect->hideStageTitle = TRUE;
         }
         denyInputs = TRUE;
     }
 
-    if (gGameSelectInfo->gridPaneIsMoving) {
+    if (gGameSelect->gridPaneIsMoving) {
         denyInputs = TRUE;
     }
 
-    if (gGameSelectInfo->infoPaneIsMoving) {
+    if (gGameSelect->infoPaneIsMoving) {
         denyInputs = TRUE;
     }
 
@@ -378,15 +372,15 @@ void update_campaign_notice(void) {
             }
         }
         if (!denyInputs && (D_03004afc & A_BUTTON)) {
-            get_pixel_xy_from_grid_xy(gGameSelectInfo->cursorX, gGameSelectInfo->cursorY, &x, &y);
+            get_pixel_xy_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY, &x, &y);
             game_select_scroll_grid_pane(x, y, 220);
             game_select_scroll_info_pane(0, 0, 220);
             func_0804d770(D_03005380, notice->textAdvSprite, FALSE);
-            func_0804d770(D_03005380, gGameSelectInfo->selectionBorderSprite, TRUE);
-            gGameSelectInfo->hideStageTitle = FALSE;
+            func_0804d770(D_03005380, gGameSelect->selectionBorderSprite, TRUE);
+            gGameSelect->hideStageTitle = FALSE;
             play_sound(&s_menu_kettei2_seqData);
             scene_interpolate_music_volume(INT_TO_FIXED(1.0), beats_to_ticks(0x18));
-            gGameSelectInfo->sceneState = SCENE_STATE_ACTIVE;
+            gGameSelect->sceneState = SCENE_STATE_ACTIVE;
         }
     }
 
@@ -396,7 +390,7 @@ void update_campaign_notice(void) {
 
 // Display Perfect Campaign Border
 void display_campaign_icon_border(s32 x, s32 y) {
-    struct CampaignNotice *notice = &gGameSelectInfo->campaignNotice;
+    struct CampaignNotice *notice = &gGameSelect->campaignNotice;
     s16 screenX, screenY;
 
     get_pixel_xy_from_grid_xy(x, y, &screenX, &screenY);
@@ -410,7 +404,7 @@ void display_campaign_icon_border(s32 x, s32 y) {
 
 // Hide Perfect Campaign Border
 void hide_campaign_icon_border(void) {
-    struct CampaignNotice *notice = &gGameSelectInfo->campaignNotice;
+    struct CampaignNotice *notice = &gGameSelect->campaignNotice;
 
     func_0804d770(D_03005380, notice->borderSprite, FALSE);
 }
@@ -588,7 +582,7 @@ void game_select_init_color_mod(void) {
     u32 i;
 
     for (i = 0; i < 2; i++) {
-        struct ColorChanger *changer = &gGameSelectInfo->colorChangers[i];
+        struct ColorChanger *changer = &gGameSelect->colorChangers[i];
 
         changer->r1 = changer->g1 = changer->b1 = 31;
         changer->r2 = changer->g2 = changer->b2 = 31;
@@ -656,8 +650,8 @@ void game_select_update_color_mod(struct ColorChanger *changer) {
 
 // Update Color Changers
 void game_select_update_bg_colors(void) {
-    game_select_update_color_mod(&gGameSelectInfo->colorChangers[0]);
-    game_select_update_color_mod(&gGameSelectInfo->colorChangers[1]);
+    game_select_update_color_mod(&gGameSelect->colorChangers[0]);
+    game_select_update_color_mod(&gGameSelect->colorChangers[1]);
 }
 
 
@@ -679,7 +673,7 @@ void game_select_scene_init_gfx4(void) {
     func_0800425c(16, 144);
     init_game_select_grid_gfx();
     game_select_init_icon_overlays();
-    gGameSelectInfo->loadingSceneGfx = FALSE;
+    gGameSelect->loadingSceneGfx = FALSE;
 }
 
 
@@ -721,7 +715,7 @@ void game_select_scene_start(void *sceneParam, s32 startParam) {
     s32 prevX, prevY;
 
     // Init. Graphics
-    gGameSelectInfo->loadingSceneGfx = TRUE;
+    gGameSelect->loadingSceneGfx = TRUE;
     func_08007324(FALSE);
     func_080073f0();
     game_select_scene_init_gfx1();
@@ -729,79 +723,79 @@ void game_select_scene_start(void *sceneParam, s32 startParam) {
     game_select_init_stub();
 
     // Init. Cursor
-    gGameSelectInfo->cursorX = D_030046a8->data.gsCursorX;
-    gGameSelectInfo->cursorY = D_030046a8->data.gsCursorY;
-    get_pixel_xy_from_grid_xy(gGameSelectInfo->cursorX, gGameSelectInfo->cursorY, &bgOfsX, &bgOfsY);
+    gGameSelect->cursorX = D_030046a8->data.gsCursorX;
+    gGameSelect->cursorY = D_030046a8->data.gsCursorY;
+    get_pixel_xy_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY, &bgOfsX, &bgOfsY);
     scene_set_bg_layer_pos(BG_LAYER_3, bgOfsX, bgOfsY);
     scene_set_bg_layer_pos(BG_LAYER_2, bgOfsX, bgOfsY);
-    gGameSelectInfo->selectionBorderSprite = func_0804d160(D_03005380, anim_game_select_border_target, 0, 48, 72, 0x4800, 1, 0, 0);
-    gGameSelectInfo->cursorSprite = func_0804d160(D_03005380, anim_game_select_cursor, 0, 64, 64, 0x47FF, 1, 0, 0);
-    game_select_link_sprite_xy_to_bg(gGameSelectInfo->selectionBorderSprite);
-    game_select_link_sprite_xy_to_bg(gGameSelectInfo->cursorSprite);
-    game_select_move_cursor_to_grid_xy(gGameSelectInfo->cursorX, gGameSelectInfo->cursorY);
+    gGameSelect->selectionBorderSprite = func_0804d160(D_03005380, anim_game_select_border_target, 0, 48, 72, 0x4800, 1, 0, 0);
+    gGameSelect->cursorSprite = func_0804d160(D_03005380, anim_game_select_cursor, 0, 64, 64, 0x47FF, 1, 0, 0);
+    game_select_link_sprite_xy_to_bg(gGameSelect->selectionBorderSprite);
+    game_select_link_sprite_xy_to_bg(gGameSelect->cursorSprite);
+    game_select_move_cursor_to_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
 
     // Init. BG Motion
-    gGameSelectInfo->gridPaneIsMoving = FALSE;
-    gGameSelectInfo->gridPaneX1 = gGameSelectInfo->gridPaneX2 = bgOfsX;
-    gGameSelectInfo->gridPaneY1 = gGameSelectInfo->gridPaneY2 = bgOfsY;
-    gGameSelectInfo->infoPaneIsMoving = FALSE;
-    gGameSelectInfo->infoPaneX1 = gGameSelectInfo->infoPaneX2 = 0;
-    gGameSelectInfo->infoPaneY1 = gGameSelectInfo->infoPaneY2 = 0;
+    gGameSelect->gridPaneIsMoving = FALSE;
+    gGameSelect->gridPaneX1 = gGameSelect->gridPaneX2 = bgOfsX;
+    gGameSelect->gridPaneY1 = gGameSelect->gridPaneY2 = bgOfsY;
+    gGameSelect->infoPaneIsMoving = FALSE;
+    gGameSelect->infoPaneX1 = gGameSelect->infoPaneX2 = 0;
+    gGameSelect->infoPaneY1 = gGameSelect->infoPaneY2 = 0;
 
     // Init. Stage Title Pane
-    gGameSelectInfo->stageTitleText = func_0804d160(D_03005380, anim_game_select_stage1, 0x7F, 60, 140, 0x479C, 1, 0x7F, 0);
-    gGameSelectInfo->stageTitlePane = func_0804d294(D_03005380, anim_game_select_stage_box, 0, 60, 140, 0x479D, 0, 0, 0, 0);
-    gGameSelectInfo->stageTitleY = STAGE_PANE_Y_VISIBLE;
-    gGameSelectInfo->unk18 = 0;
-    gGameSelectInfo->hideStageTitle = FALSE;
-    gGameSelectInfo->stageTitlePersistTime = 0;
-    game_select_set_stage_title(gGameSelectInfo->cursorX);
+    gGameSelect->stageTitleText = func_0804d160(D_03005380, anim_game_select_stage1, 0x7F, 60, 140, 0x479C, 1, 0x7F, 0);
+    gGameSelect->stageTitlePane = func_0804d294(D_03005380, anim_game_select_stage_box, 0, 60, 140, 0x479D, 0, 0, 0, 0);
+    gGameSelect->stageTitleY = STAGE_PANE_Y_VISIBLE;
+    gGameSelect->unk18 = 0;
+    gGameSelect->hideStageTitle = FALSE;
+    gGameSelect->stageTitlePersistTime = 0;
+    game_select_set_stage_title(gGameSelect->cursorX);
 
     // Init. Various
     init_campaign_notice();
     game_select_init_medal_pane();
     game_select_init_squares();
-    gGameSelectInfo->scriptIsReady = FALSE;
+    gGameSelect->scriptIsReady = FALSE;
     game_select_init_info_pane();
     game_select_set_info_pane_to_cursor_target();
     game_select_init_flow_pane();
 
     // Init. Events
-    gGameSelectInfo->totalLevelEventsQueued = 0;
-    gGameSelectInfo->levelEventDequeueID = 0;
-    gGameSelectInfo->levelEventEnqueueID = 0;
-    gGameSelectInfo->levelEventPending = FALSE;
+    gGameSelect->totalLevelEventsQueued = 0;
+    gGameSelect->levelEventDequeueID = 0;
+    gGameSelect->levelEventEnqueueID = 0;
+    gGameSelect->levelEventPending = FALSE;
     prevX = saveData->recentLevelX;
     prevY = saveData->recentLevelY;
     recentLevelState = saveData->recentLevelState;
     previousLevelState = get_level_state_from_grid_xy(prevX, prevY);
-    gGameSelectInfo->baristaLevelEventPending = FALSE;
-    gGameSelectInfo->baristaLevelEventTimer = 0;
+    gGameSelect->baristaLevelEventPending = FALSE;
+    gGameSelect->baristaLevelEventTimer = 0;
 
     if (recentLevelState > previousLevelState) {
         game_select_start_level_events(60);
         game_select_enqueue_level_event(prevX, prevY, recentLevelState);
 
         if (saveData->recentLevelClearedByBarista) {
-            gGameSelectInfo->baristaLevelEventPending = TRUE;
-            gGameSelectInfo->baristaLevelEventX = prevX;
-            gGameSelectInfo->baristaLevelEventY = prevY;
-            gGameSelectInfo->baristaLevelEventTimer = 60;
+            gGameSelect->baristaLevelEventPending = TRUE;
+            gGameSelect->baristaLevelEventX = prevX;
+            gGameSelect->baristaLevelEventY = prevY;
+            gGameSelect->baristaLevelEventTimer = 60;
         }
 
         if ((get_level_id_from_grid_xy(prevX, prevY) == LEVEL_REMIX_6) && (recentLevelState >= LEVEL_STATE_CLEARED)) {
             enable_game_select_2_bgm();
         }
     } else {
-        gGameSelectInfo->runningLevelEvents = FALSE;
-        gGameSelectInfo->levelEventTimer = 0;
+        gGameSelect->runningLevelEvents = FALSE;
+        gGameSelect->levelEventTimer = 0;
         write_game_save_data();
 
-        if (gGameSelectInfo->campaignNotice.hasNewCampaign) {
+        if (gGameSelect->campaignNotice.hasNewCampaign) {
             start_campaign_notice(D_030046a8->data.currentCampaign);
-            gGameSelectInfo->campaignNotice.hasNewCampaign = FALSE;
+            gGameSelect->campaignNotice.hasNewCampaign = FALSE;
         } else {
-            gGameSelectInfo->sceneState = SCENE_STATE_ACTIVE;
+            gGameSelect->sceneState = SCENE_STATE_ACTIVE;
         }
     }
 
@@ -842,25 +836,25 @@ void game_select_scene_paused(void *sceneParam, s32 pausedParam) {
 
 // Scroll Start - Grid
 void game_select_scroll_grid_pane(s32 x, s32 y, s24_8 rate) {
-    gGameSelectInfo->gridPaneIsMoving = TRUE;
-    gGameSelectInfo->gridPaneX1 = gGameSelectInfo->gridPaneX2;
-    gGameSelectInfo->gridPaneY1 = gGameSelectInfo->gridPaneY2;
-    gGameSelectInfo->gridPaneX2 = x;
-    gGameSelectInfo->gridPaneY2 = y;
-    gGameSelectInfo->gridPaneMotionDecay = rate;
-    gGameSelectInfo->gridPaneMotionTime = INT_TO_FIXED(1.0);
+    gGameSelect->gridPaneIsMoving = TRUE;
+    gGameSelect->gridPaneX1 = gGameSelect->gridPaneX2;
+    gGameSelect->gridPaneY1 = gGameSelect->gridPaneY2;
+    gGameSelect->gridPaneX2 = x;
+    gGameSelect->gridPaneY2 = y;
+    gGameSelect->gridPaneMotionDecay = rate;
+    gGameSelect->gridPaneMotionTime = INT_TO_FIXED(1.0);
 }
 
 
 // Scroll Start - Description Box
 void game_select_scroll_info_pane(s32 x, s32 y, s24_8 rate) {
-    gGameSelectInfo->infoPaneIsMoving = TRUE;
-    gGameSelectInfo->infoPaneX1 = gGameSelectInfo->infoPaneX2;
-    gGameSelectInfo->infoPaneY1 = gGameSelectInfo->infoPaneY2;
-    gGameSelectInfo->infoPaneX2 = x;
-    gGameSelectInfo->infoPaneY2 = y;
-    gGameSelectInfo->infoPaneMotionDecay = rate;
-    gGameSelectInfo->infoPaneMotionTime = INT_TO_FIXED(1.0);
+    gGameSelect->infoPaneIsMoving = TRUE;
+    gGameSelect->infoPaneX1 = gGameSelect->infoPaneX2;
+    gGameSelect->infoPaneY1 = gGameSelect->infoPaneY2;
+    gGameSelect->infoPaneX2 = x;
+    gGameSelect->infoPaneY2 = y;
+    gGameSelect->infoPaneMotionDecay = rate;
+    gGameSelect->infoPaneMotionTime = INT_TO_FIXED(1.0);
 }
 
 
@@ -868,26 +862,26 @@ void game_select_scroll_info_pane(s32 x, s32 y, s24_8 rate) {
 void game_select_update_bg_scroll(void) {
     s24_8 x, y;
 
-    if (gGameSelectInfo->gridPaneIsMoving) {
-        gGameSelectInfo->gridPaneMotionTime = FIXED_POINT_MUL(gGameSelectInfo->gridPaneMotionTime, gGameSelectInfo->gridPaneMotionDecay);
-        x = math_lerp(gGameSelectInfo->gridPaneX2, gGameSelectInfo->gridPaneX1, gGameSelectInfo->gridPaneMotionTime, INT_TO_FIXED(1.0));
-        y = math_lerp(gGameSelectInfo->gridPaneY2, gGameSelectInfo->gridPaneY1, gGameSelectInfo->gridPaneMotionTime, INT_TO_FIXED(1.0));
+    if (gGameSelect->gridPaneIsMoving) {
+        gGameSelect->gridPaneMotionTime = FIXED_POINT_MUL(gGameSelect->gridPaneMotionTime, gGameSelect->gridPaneMotionDecay);
+        x = math_lerp(gGameSelect->gridPaneX2, gGameSelect->gridPaneX1, gGameSelect->gridPaneMotionTime, INT_TO_FIXED(1.0));
+        y = math_lerp(gGameSelect->gridPaneY2, gGameSelect->gridPaneY1, gGameSelect->gridPaneMotionTime, INT_TO_FIXED(1.0));
         scene_set_bg_layer_pos(BG_LAYER_3, x, y);
         scene_set_bg_layer_pos(BG_LAYER_2, x, y);
 
-        if (gGameSelectInfo->gridPaneMotionTime == 0) {
-            gGameSelectInfo->gridPaneIsMoving = FALSE;
+        if (gGameSelect->gridPaneMotionTime == 0) {
+            gGameSelect->gridPaneIsMoving = FALSE;
         }
     }
 
-    if (gGameSelectInfo->infoPaneIsMoving) {
-        gGameSelectInfo->infoPaneMotionTime = FIXED_POINT_MUL(gGameSelectInfo->infoPaneMotionTime, gGameSelectInfo->infoPaneMotionDecay);
-        x = math_lerp(gGameSelectInfo->infoPaneX2, gGameSelectInfo->infoPaneX1, gGameSelectInfo->infoPaneMotionTime, INT_TO_FIXED(1.0));
-        y = math_lerp(gGameSelectInfo->infoPaneY2, gGameSelectInfo->infoPaneY1, gGameSelectInfo->infoPaneMotionTime, INT_TO_FIXED(1.0));
+    if (gGameSelect->infoPaneIsMoving) {
+        gGameSelect->infoPaneMotionTime = FIXED_POINT_MUL(gGameSelect->infoPaneMotionTime, gGameSelect->infoPaneMotionDecay);
+        x = math_lerp(gGameSelect->infoPaneX2, gGameSelect->infoPaneX1, gGameSelect->infoPaneMotionTime, INT_TO_FIXED(1.0));
+        y = math_lerp(gGameSelect->infoPaneY2, gGameSelect->infoPaneY1, gGameSelect->infoPaneMotionTime, INT_TO_FIXED(1.0));
         scene_set_bg_layer_pos(BG_LAYER_1, x, y);
 
-        if (gGameSelectInfo->infoPaneMotionTime == 0) {
-            gGameSelectInfo->infoPaneIsMoving = FALSE;
+        if (gGameSelect->infoPaneMotionTime == 0) {
+            gGameSelect->infoPaneIsMoving = FALSE;
         }
     }
 }
@@ -896,10 +890,10 @@ void game_select_update_bg_scroll(void) {
 // Set Selection Border Sprite Z/Layer
 void game_select_set_cursor_border_z(void) {
     // Adjust Z level to place selection border under the medal icon (if present).
-    if (get_level_state_from_grid_xy(gGameSelectInfo->cursorX, gGameSelectInfo->cursorY) == LEVEL_STATE_HAS_MEDAL) {
-        func_0804d67c(D_03005380, gGameSelectInfo->selectionBorderSprite, 0x8800);
+    if (get_level_state_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY) == LEVEL_STATE_HAS_MEDAL) {
+        func_0804d67c(D_03005380, gGameSelect->selectionBorderSprite, 0x8800);
     } else {
-        func_0804d67c(D_03005380, gGameSelectInfo->selectionBorderSprite, 0x4800);
+        func_0804d67c(D_03005380, gGameSelect->selectionBorderSprite, 0x4800);
     }
 }
 
@@ -908,16 +902,16 @@ void game_select_set_cursor_border_z(void) {
 void game_select_move_cursor_to_grid_xy(s32 x, s32 y) {
     s16 screenX, screenY;
 
-    gGameSelectInfo->cursorX = x;
-    gGameSelectInfo->cursorY = y;
+    gGameSelect->cursorX = x;
+    gGameSelect->cursorY = y;
 
     get_pixel_xy_from_grid_xy(x, y, &screenX, &screenY);
 
     screenX += 47;
     screenY += 68;
 
-    func_0804d5d4(D_03005380, gGameSelectInfo->selectionBorderSprite, screenX, screenY);
-    func_0804d5d4(D_03005380, gGameSelectInfo->cursorSprite, screenX, screenY);
+    func_0804d5d4(D_03005380, gGameSelect->selectionBorderSprite, screenX, screenY);
+    func_0804d5d4(D_03005380, gGameSelect->cursorSprite, screenX, screenY);
     game_select_set_cursor_border_z();
 }
 
@@ -990,8 +984,8 @@ void game_select_read_dpad_inputs(void) {
         dx = 0;
     }
 
-    x = gGameSelectInfo->cursorX;
-    y = gGameSelectInfo->cursorY;
+    x = gGameSelect->cursorX;
+    y = gGameSelect->cursorY;
 
     // If the movement is invalid or zero, exit.
     if (!game_select_get_next_valid_xy(&x, &y, dx, dy)) {
@@ -1039,13 +1033,13 @@ void game_select_read_inputs(void) {
 
     /* A_BUTTON was pressed: Attempt to open the selected level. */
     if (D_03004afc & A_BUTTON) {
-        levelState = get_level_state_from_grid_xy(gGameSelectInfo->cursorX, gGameSelectInfo->cursorY);
+        levelState = get_level_state_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
 
         /* If the level can be opened: */
         if ((levelState == LEVEL_STATE_OPEN) || (levelState == LEVEL_STATE_CLEARED) || (levelState == LEVEL_STATE_HAS_MEDAL)) {
-            D_030046a8->data.gsCursorX = gGameSelectInfo->cursorX;
-            D_030046a8->data.gsCursorY = gGameSelectInfo->cursorY;
-            levelID = get_level_id_from_grid_xy(gGameSelectInfo->cursorX, gGameSelectInfo->cursorY);
+            D_030046a8->data.gsCursorX = gGameSelect->cursorX;
+            D_030046a8->data.gsCursorY = gGameSelect->cursorY;
+            levelID = get_level_id_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
             levelData = get_level_data_from_id(levelID);
             set_next_scene(levelData->scene);
 
@@ -1077,13 +1071,13 @@ void game_select_read_inputs(void) {
                     break;
             }
 
-            D_030046a8->data.gsCursorX = D_030046a8->data.recentLevelX = gGameSelectInfo->cursorX;
-            D_030046a8->data.gsCursorY = D_030046a8->data.recentLevelY = gGameSelectInfo->cursorY;
+            D_030046a8->data.gsCursorX = D_030046a8->data.recentLevelX = gGameSelect->cursorX;
+            D_030046a8->data.gsCursorY = D_030046a8->data.recentLevelY = gGameSelect->cursorY;
             D_030046a8->data.recentLevelState = LEVEL_STATE_NULL;
 
-            if (canHaveCampaign && (D_030046a8->data.campaignState == CAMPAIGN_STATE_ACTIVE) && (gGameSelectInfo->campaignNotice.id >= 0)) {
-                if ((gGameSelectInfo->cursorX == gGameSelectInfo->campaignNotice.x) && (gGameSelectInfo->cursorY == gGameSelectInfo->campaignNotice.y)) {
-                    set_current_campaign(gGameSelectInfo->campaignNotice.id);
+            if (canHaveCampaign && (D_030046a8->data.campaignState == CAMPAIGN_STATE_ACTIVE) && (gGameSelect->campaignNotice.id >= 0)) {
+                if ((gGameSelect->cursorX == gGameSelect->campaignNotice.x) && (gGameSelect->cursorY == gGameSelect->campaignNotice.y)) {
+                    set_current_campaign(gGameSelect->campaignNotice.id);
                     D_030046a8->data.campaignAttemptsLeft--;
                     D_030046a8->data.unk26A = 0;
                 } else {
@@ -1093,7 +1087,7 @@ void game_select_read_inputs(void) {
 
             write_game_save_data();
             set_pause_beatscript_scene(FALSE);
-            gGameSelectInfo->scriptIsReady = FALSE;
+            gGameSelect->scriptIsReady = FALSE;
             play_sound(&s_menu_kettei1_seqData);
             return;
         }
@@ -1112,7 +1106,7 @@ void game_select_read_inputs(void) {
         D_030046a8->data.recentLevelState = LEVEL_STATE_NULL;
         write_game_save_data();
         set_pause_beatscript_scene(FALSE);
-        gGameSelectInfo->scriptIsReady = FALSE;
+        gGameSelect->scriptIsReady = FALSE;
         play_sound(&s_menu_cancel3_seqData);
     }
 }
@@ -1120,7 +1114,7 @@ void game_select_read_inputs(void) {
 
 // Set Info Pane to Cursor Target
 void game_select_set_info_pane_to_cursor_target(void) {
-    s32 levelState = get_level_state_from_grid_xy(gGameSelectInfo->cursorX, gGameSelectInfo->cursorY);
+    s32 levelState = get_level_state_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
 
     switch (levelState) {
         case (LEVEL_STATE_NULL):
@@ -1132,7 +1126,7 @@ void game_select_set_info_pane_to_cursor_target(void) {
         case (LEVEL_STATE_OPEN):
         case (LEVEL_STATE_CLEARED):
         case (LEVEL_STATE_HAS_MEDAL):
-            game_select_set_info_pane(get_level_id_from_grid_xy(gGameSelectInfo->cursorX, gGameSelectInfo->cursorY), levelState, 10);
+            game_select_set_info_pane(get_level_id_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY), levelState, 10);
             break;
     }
 }
@@ -1143,23 +1137,23 @@ void game_select_update_stage_title_pos(void) {
     s32 yTarget, y;
 
     // Get a target Y position.
-    if (gGameSelectInfo->hideStageTitle) {
+    if (gGameSelect->hideStageTitle) {
         yTarget = STAGE_PANE_Y_HIDDEN;
     } else {
         yTarget = STAGE_PANE_Y_VISIBLE;
 
         // If the Stage Title would obscure any level icons, hide the pane.
-        if (gGameSelectInfo->cursorY < 10) {
-            if (gGameSelectInfo->stageTitlePersistTime == 0) {
+        if (gGameSelect->cursorY < 10) {
+            if (gGameSelect->stageTitlePersistTime == 0) {
                 yTarget = STAGE_PANE_Y_HIDDEN;
             }
         } else {
-            gGameSelectInfo->stageTitlePersistTime = 0;
+            gGameSelect->stageTitlePersistTime = 0;
         }
     }
 
     // Get a Y position up to 9px closer to the target from the current position.
-    y = gGameSelectInfo->stageTitleY;
+    y = gGameSelect->stageTitleY;
     if (y < yTarget) {
         y += STAGE_PANE_SPEED;
         if (y > yTarget) {
@@ -1174,21 +1168,21 @@ void game_select_update_stage_title_pos(void) {
     }
 
     // Implement new Y value.
-    func_0804d648(D_03005380, gGameSelectInfo->stageTitleText, y);
-    func_0804d648(D_03005380, gGameSelectInfo->stageTitlePane, y);
-    gGameSelectInfo->stageTitleY = y;
+    func_0804d648(D_03005380, gGameSelect->stageTitleText, y);
+    func_0804d648(D_03005380, gGameSelect->stageTitlePane, y);
+    gGameSelect->stageTitleY = y;
 
     // Update persistence timer.
-    if (gGameSelectInfo->stageTitlePersistTime > 0) {
-        gGameSelectInfo->stageTitlePersistTime--;
+    if (gGameSelect->stageTitlePersistTime > 0) {
+        gGameSelect->stageTitlePersistTime--;
     }
 }
 
 
 // Set Stage Title
 void game_select_set_stage_title(s32 x) {
-    func_0804d8f8(D_03005380, gGameSelectInfo->stageTitleText, game_select_stage_title_anim[x], 0, 1, 0x7f, 0);
-    gGameSelectInfo->stageTitlePersistTime = 100;
+    func_0804d8f8(D_03005380, gGameSelect->stageTitleText, game_select_stage_title_anim[x], 0, 1, 0x7f, 0);
+    gGameSelect->stageTitlePersistTime = 100;
 }
 
 
@@ -1208,14 +1202,14 @@ void game_select_link_sprite_xy_to_bg(s16 sprite) {
 void game_select_scene_update(void *sceneParam, s32 updateParam) {
     s16 bgOfsX, bgOfsY;
 
-    if (gGameSelectInfo->loadingSceneGfx) {
+    if (gGameSelect->loadingSceneGfx) {
         return;
     }
 
     bgOfsX = D_03004b10.BG_OFS[BG_LAYER_3].x;
     bgOfsY = D_03004b10.BG_OFS[BG_LAYER_3].y;
 
-    switch (gGameSelectInfo->sceneState) {
+    switch (gGameSelect->sceneState) {
         case SCENE_STATE_UNLOCKING_NEW_STAGES:
             game_select_update_level_events();
             break;
@@ -1245,7 +1239,7 @@ void game_select_scene_update(void *sceneParam, s32 updateParam) {
 
 // Communicate with Script
 u32 game_select_scene_script_is_ready(void) {
-    if (gGameSelectInfo->scriptIsReady) {
+    if (gGameSelect->scriptIsReady) {
         return TRUE;
     } else {
         return FALSE;
@@ -1294,14 +1288,14 @@ void game_select_enqueue_level_event(s32 x, s32 y, s32 state) {
 
     oldState = get_level_state_from_grid_xy(x, y);
     if ((oldState >= 0) && (oldState < state)) {
-        data = &gGameSelectInfo->levelEventsQueue[gGameSelectInfo->levelEventEnqueueID];
+        data = &gGameSelect->levelEventsQueue[gGameSelect->levelEventEnqueueID];
         data->x = x;
         data->y = y;
         data->state = state;
 
-        gGameSelectInfo->totalLevelEventsQueued++;
-        if (++gGameSelectInfo->levelEventEnqueueID >= 16) {
-            gGameSelectInfo->levelEventEnqueueID = 0;
+        gGameSelect->totalLevelEventsQueued++;
+        if (++gGameSelect->levelEventEnqueueID >= 16) {
+            gGameSelect->levelEventEnqueueID = 0;
         }
     }
 }
@@ -1311,19 +1305,19 @@ void game_select_enqueue_level_event(s32 x, s32 y, s32 state) {
 void game_select_dequeue_level_event(s32 *xReq, s32 *yReq, s32 *stateReq) {
     struct QueuedLevelEvent *data;
 
-    if (gGameSelectInfo->totalLevelEventsQueued == 0) {
+    if (gGameSelect->totalLevelEventsQueued == 0) {
         *stateReq = LEVEL_STATE_NULL;
         return;
     }
 
-    data = &gGameSelectInfo->levelEventsQueue[gGameSelectInfo->levelEventDequeueID];
+    data = &gGameSelect->levelEventsQueue[gGameSelect->levelEventDequeueID];
     *xReq = data->x;
     *yReq = data->y;
     *stateReq = data->state;
 
-    gGameSelectInfo->totalLevelEventsQueued--;
-    if (++gGameSelectInfo->levelEventDequeueID >= 16) {
-        gGameSelectInfo->levelEventDequeueID = 0;
+    gGameSelect->totalLevelEventsQueued--;
+    if (++gGameSelect->levelEventDequeueID >= 16) {
+        gGameSelect->levelEventDequeueID = 0;
     }
 }
 
@@ -1462,14 +1456,14 @@ void enqueue_level_event_after_reveal(u32 args) {
 u32 game_select_set_level_event_target(s32 x, s32 y, u32 moveCursor, s24_8 scrollRate) {
     s16 screenX, screenY;
 
-    gGameSelectInfo->levelEventTargetX = x;
-    gGameSelectInfo->levelEventTargetY = y;
+    gGameSelect->levelEventTargetX = x;
+    gGameSelect->levelEventTargetY = y;
 
     get_pixel_xy_from_grid_xy(x, y, &screenX, &screenY);
     game_select_scroll_grid_pane(screenX, screenY, scrollRate);
 
-    if (gGameSelectInfo->cursorX != x) {
-        gGameSelectInfo->hideStageTitle = TRUE;
+    if (gGameSelect->cursorX != x) {
+        gGameSelect->hideStageTitle = TRUE;
     }
 
     if (moveCursor) {
@@ -1502,8 +1496,8 @@ u32 game_select_process_level_event_targets(const s8 *eventTargets) {
 
             if (gridEntry->flags & LEVEL_EVENT_TARGET_ON_OPEN) {
                 game_select_set_level_event_target(x, y, gridEntry->flags & LEVEL_EVENT_MOVE_CURSOR, 240);
-                if (gGameSelectInfo->levelEventTimer < 90) {
-                    gGameSelectInfo->levelEventTimer = 90;
+                if (gGameSelect->levelEventTimer < 90) {
+                    gGameSelect->levelEventTimer = 90;
                 }
             }
         }
@@ -1537,9 +1531,9 @@ u32 game_select_process_level_events(void) {
     s32 x, y, state, id;
     s16 sprite;
 
-    if (gGameSelectInfo->levelEventPending) {
-        gGameSelectInfo->levelEventPending = FALSE;
-        game_select_process_level_event_targets(gGameSelectInfo->levelEventTargets);
+    if (gGameSelect->levelEventPending) {
+        gGameSelect->levelEventPending = FALSE;
+        game_select_process_level_event_targets(gGameSelect->levelEventTargets);
         return FALSE;
     }
 
@@ -1592,7 +1586,7 @@ u32 game_select_process_level_events(void) {
     save_level_state_from_grid_xy(x, y, state);
     game_select_set_icon_map_after_level_event(x, y);
 
-    if ((x == gGameSelectInfo->cursorX) && (y == gGameSelectInfo->cursorY)) {
+    if ((x == gGameSelect->cursorX) && (y == gGameSelect->cursorY)) {
         game_select_set_cursor_border_z();
         game_select_set_info_pane_to_cursor_target();
     }
@@ -1601,17 +1595,17 @@ u32 game_select_process_level_events(void) {
 
     if ((state == LEVEL_STATE_CLEARED) || (state == LEVEL_STATE_HAS_MEDAL)) {
         if ((gridEntry->flags & LEVEL_EVENT_DELAY_CLEAR)) {
-            gGameSelectInfo->levelEventTimer = 60;
+            gGameSelect->levelEventTimer = 60;
         }
     }
     if (state == LEVEL_STATE_OPEN) {
         if ((gridEntry->flags & LEVEL_EVENT_DELAY_OPEN)) {
-            gGameSelectInfo->levelEventTimer = 60;
+            gGameSelect->levelEventTimer = 60;
         }
     }
     if (state == LEVEL_STATE_CLOSED) {
         if ((gridEntry->flags & LEVEL_EVENT_DELAY_SHOW)) {
-            gGameSelectInfo->levelEventTimer = 60;
+            gGameSelect->levelEventTimer = 60;
         }
     }
 
@@ -1620,11 +1614,11 @@ u32 game_select_process_level_events(void) {
         eventTargets = gridEntry->targets;
     }
 
-    if (gGameSelectInfo->levelEventTimer == 0) {
+    if (gGameSelect->levelEventTimer == 0) {
         game_select_process_level_event_targets(eventTargets);
     } else {
-        gGameSelectInfo->levelEventPending = TRUE;
-        gGameSelectInfo->levelEventTargets = eventTargets;
+        gGameSelect->levelEventPending = TRUE;
+        gGameSelect->levelEventTargets = eventTargets;
     }
 
     return FALSE;
@@ -1634,7 +1628,7 @@ u32 game_select_process_level_events(void) {
 // Update Level Events
 void game_select_update_level_unlocks(void) {
     while (!game_select_process_level_events()) {
-        if (gGameSelectInfo->levelEventTimer > 0) {
+        if (gGameSelect->levelEventTimer > 0) {
             return;
         }
     }
@@ -1643,11 +1637,11 @@ void game_select_update_level_unlocks(void) {
 
 // Start Level Events
 void game_select_start_level_events(u32 delay) {
-    gGameSelectInfo->runningLevelEvents = TRUE;
-    gGameSelectInfo->levelEventTargetX = gGameSelectInfo->cursorX;
-    gGameSelectInfo->levelEventTargetY = gGameSelectInfo->cursorY;
-    gGameSelectInfo->levelEventTimer = delay;
-    gGameSelectInfo->sceneState = SCENE_STATE_UNLOCKING_NEW_STAGES;
+    gGameSelect->runningLevelEvents = TRUE;
+    gGameSelect->levelEventTargetX = gGameSelect->cursorX;
+    gGameSelect->levelEventTargetY = gGameSelect->cursorY;
+    gGameSelect->levelEventTimer = delay;
+    gGameSelect->sceneState = SCENE_STATE_UNLOCKING_NEW_STAGES;
 }
 
 
@@ -1658,27 +1652,27 @@ void game_select_update_level_events(void) {
     u32 eventsFinished;
 
     // Decrement timer.
-    if (gGameSelectInfo->levelEventTimer > 0) {
-        gGameSelectInfo->levelEventTimer--;
+    if (gGameSelect->levelEventTimer > 0) {
+        gGameSelect->levelEventTimer--;
         return;
     }
 
     // Scroll to show Barista-cleared level.
-    if (gGameSelectInfo->baristaLevelEventPending) {
-        gGameSelectInfo->baristaLevelEventPending = FALSE;
+    if (gGameSelect->baristaLevelEventPending) {
+        gGameSelect->baristaLevelEventPending = FALSE;
 
-        x = gGameSelectInfo->baristaLevelEventX;
-        y = gGameSelectInfo->baristaLevelEventY;
-        gGameSelectInfo->levelEventTargetX = x;
-        gGameSelectInfo->levelEventTargetY = y;
+        x = gGameSelect->baristaLevelEventX;
+        y = gGameSelect->baristaLevelEventY;
+        gGameSelect->levelEventTargetX = x;
+        gGameSelect->levelEventTargetY = y;
         get_pixel_xy_from_grid_xy(x, y, &screenX, &screenY);
         game_select_scroll_grid_pane(screenX, screenY, 240);
 
-        if (gGameSelectInfo->cursorX != x) {
-            gGameSelectInfo->hideStageTitle = TRUE;
+        if (gGameSelect->cursorX != x) {
+            gGameSelect->hideStageTitle = TRUE;
         }
 
-        gGameSelectInfo->levelEventTimer = 120;
+        gGameSelect->levelEventTimer = 120;
         return;
     }
 
@@ -1687,11 +1681,11 @@ void game_select_update_level_events(void) {
     if (game_select_check_for_icon_squares()) {
         eventsFinished = FALSE;
     }
-    if ((gGameSelectInfo->totalLevelEventsQueued > 0) || (gGameSelectInfo->levelEventPending)) {
+    if ((gGameSelect->totalLevelEventsQueued > 0) || (gGameSelect->levelEventPending)) {
         game_select_update_level_unlocks();
         eventsFinished = FALSE;
     }
-    if (gGameSelectInfo->gridPaneIsMoving) {
+    if (gGameSelect->gridPaneIsMoving) {
         eventsFinished = FALSE;
     }
 
@@ -1700,36 +1694,36 @@ void game_select_update_level_events(void) {
     }
 
     // Return to cursor position.
-    if ((gGameSelectInfo->cursorX != gGameSelectInfo->levelEventTargetX) || (gGameSelectInfo->cursorY != gGameSelectInfo->levelEventTargetY)) {
-        if (gGameSelectInfo->baristaLevelEventTimer > 0) {
-            gGameSelectInfo->levelEventTimer = gGameSelectInfo->baristaLevelEventTimer;
-            gGameSelectInfo->baristaLevelEventTimer = 0;
+    if ((gGameSelect->cursorX != gGameSelect->levelEventTargetX) || (gGameSelect->cursorY != gGameSelect->levelEventTargetY)) {
+        if (gGameSelect->baristaLevelEventTimer > 0) {
+            gGameSelect->levelEventTimer = gGameSelect->baristaLevelEventTimer;
+            gGameSelect->baristaLevelEventTimer = 0;
         } else {
-            gGameSelectInfo->levelEventTargetX = gGameSelectInfo->cursorX;
-            gGameSelectInfo->levelEventTargetY = gGameSelectInfo->cursorY;
-            get_pixel_xy_from_grid_xy(gGameSelectInfo->cursorX, gGameSelectInfo->cursorY, &screenX, &screenY);
+            gGameSelect->levelEventTargetX = gGameSelect->cursorX;
+            gGameSelect->levelEventTargetY = gGameSelect->cursorY;
+            get_pixel_xy_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY, &screenX, &screenY);
             game_select_scroll_grid_pane(screenX, screenY, 240);
         }
         return;
     }
 
-    gGameSelectInfo->baristaLevelEventTimer = 0;
-    gGameSelectInfo->runningLevelEvents = FALSE;
-    gGameSelectInfo->hideStageTitle = FALSE;
-    D_030046a8->data.gsCursorX = gGameSelectInfo->cursorX;
-    D_030046a8->data.gsCursorY = gGameSelectInfo->cursorY;
+    gGameSelect->baristaLevelEventTimer = 0;
+    gGameSelect->runningLevelEvents = FALSE;
+    gGameSelect->hideStageTitle = FALSE;
+    D_030046a8->data.gsCursorX = gGameSelect->cursorX;
+    D_030046a8->data.gsCursorY = gGameSelect->cursorY;
 
-    if (gGameSelectInfo->manualUnlockEnabled) {
-        save_level_state_from_grid_xy(gGameSelectInfo->manualUnlockX, gGameSelectInfo->manualUnlockY, LEVEL_STATE_OPEN);
+    if (gGameSelect->manualUnlockEnabled) {
+        save_level_state_from_grid_xy(gGameSelect->manualUnlockX, gGameSelect->manualUnlockY, LEVEL_STATE_OPEN);
     }
 
     write_game_save_data();
 
-    if (gGameSelectInfo->campaignNotice.hasNewCampaign) {
+    if (gGameSelect->campaignNotice.hasNewCampaign) {
         start_campaign_notice(D_030046a8->data.currentCampaign);
-        gGameSelectInfo->campaignNotice.hasNewCampaign = FALSE;
+        gGameSelect->campaignNotice.hasNewCampaign = FALSE;
     } else {
-        gGameSelectInfo->sceneState = SCENE_STATE_ACTIVE;
+        gGameSelect->sceneState = SCENE_STATE_ACTIVE;
     }
 }
 
@@ -1738,9 +1732,9 @@ void game_select_update_level_events(void) {
 void game_select_set_medal_count(u32 total) {
     total = clamp_int32(total, 0, 99);
 
-    func_0804cebc(D_03005380, gGameSelectInfo->medalPaneDigit1, total % 10);
-    func_0804cebc(D_03005380, gGameSelectInfo->medalPaneDigit2, (total < 10) ? 10 : (total / 10));
-    func_0804d614(D_03005380, gGameSelectInfo->medalPaneDigit1, (total < 10) ? 164 : 168);
+    func_0804cebc(D_03005380, gGameSelect->medalPaneDigit1, total % 10);
+    func_0804cebc(D_03005380, gGameSelect->medalPaneDigit2, (total < 10) ? 10 : (total / 10));
+    func_0804d614(D_03005380, gGameSelect->medalPaneDigit1, (total < 10) ? 164 : 168);
 }
 
 
@@ -1748,16 +1742,16 @@ void game_select_set_medal_count(u32 total) {
 void game_select_init_medal_pane(void) {
     struct Vector2 *bgOfs = &D_03004b10.BG_OFS[BG_LAYER_1];
 
-    gGameSelectInfo->medalPaneTitle = func_0804d160(D_03005380, anim_game_select_medal_text, 0, 162, 151, 0x800, 0, 0, 0);
-    gGameSelectInfo->medalPaneDigit1 = func_0804d160(D_03005380, anim_game_select_medal_num, 0, 168, 151, 0x800, 0, 0x7f, 0);
-    gGameSelectInfo->medalPaneDigit2 = func_0804d160(D_03005380, anim_game_select_medal_num, 0, 168, 151, 0x800, 0, 0x7f, 0);
-    func_0804d5d4(D_03005380, gGameSelectInfo->medalPaneDigit2, 161, 151);
+    gGameSelect->medalPaneTitle = func_0804d160(D_03005380, anim_game_select_medal_text, 0, 162, 151, 0x800, 0, 0, 0);
+    gGameSelect->medalPaneDigit1 = func_0804d160(D_03005380, anim_game_select_medal_num, 0, 168, 151, 0x800, 0, 0x7f, 0);
+    gGameSelect->medalPaneDigit2 = func_0804d160(D_03005380, anim_game_select_medal_num, 0, 168, 151, 0x800, 0, 0x7f, 0);
+    func_0804d5d4(D_03005380, gGameSelect->medalPaneDigit2, 161, 151);
 
-    func_0804db44(D_03005380, gGameSelectInfo->medalPaneTitle, &bgOfs->x, &bgOfs->y);
-    func_0804db44(D_03005380, gGameSelectInfo->medalPaneDigit1, &bgOfs->x, &bgOfs->y);
-    func_0804db44(D_03005380, gGameSelectInfo->medalPaneDigit2, &bgOfs->x, &bgOfs->y);
+    func_0804db44(D_03005380, gGameSelect->medalPaneTitle, &bgOfs->x, &bgOfs->y);
+    func_0804db44(D_03005380, gGameSelect->medalPaneDigit1, &bgOfs->x, &bgOfs->y);
+    func_0804db44(D_03005380, gGameSelect->medalPaneDigit2, &bgOfs->x, &bgOfs->y);
     game_select_set_medal_count(D_030046a8->data.totalMedals);
-    gGameSelectInfo->medalPaneFlickerTimer = 0;
+    gGameSelect->medalPaneFlickerTimer = 0;
 }
 
 
@@ -1765,12 +1759,12 @@ void game_select_init_medal_pane(void) {
 u32 game_select_update_medal_pane_flicker(void) {
     u32 render;
 
-    if (gGameSelectInfo->medalPaneFlickerTimer > 0) {
-        render = ~(--gGameSelectInfo->medalPaneFlickerTimer / 16) & 1;
+    if (gGameSelect->medalPaneFlickerTimer > 0) {
+        render = ~(--gGameSelect->medalPaneFlickerTimer / 16) & 1;
 
-        func_0804d770(D_03005380, gGameSelectInfo->medalPaneTitle, render);
-        func_0804d770(D_03005380, gGameSelectInfo->medalPaneDigit1, render);
-        func_0804d770(D_03005380, gGameSelectInfo->medalPaneDigit2, render);
+        func_0804d770(D_03005380, gGameSelect->medalPaneTitle, render);
+        func_0804d770(D_03005380, gGameSelect->medalPaneDigit1, render);
+        func_0804d770(D_03005380, gGameSelect->medalPaneDigit2, render);
     }
 }
 
@@ -1784,7 +1778,7 @@ void game_select_update_medal_pane(void) {
 // Refresh Medal Count
 void game_select_refresh_medal_count(u32 flickerDuration) {
     game_select_set_medal_count(D_030046a8->data.totalMedals);
-    gGameSelectInfo->medalPaneFlickerTimer = flickerDuration;
+    gGameSelect->medalPaneFlickerTimer = flickerDuration;
 }
 
 
@@ -1792,21 +1786,21 @@ void game_select_refresh_medal_count(u32 flickerDuration) {
 void game_select_init_info_pane(void) {
     struct Vector2 *bgOfs = &D_03004b10.BG_OFS[BG_LAYER_1];
 
-    gGameSelectInfo->infoPaneName = -1;
-    gGameSelectInfo->infoPaneRank = -1;
-    gGameSelectInfo->infoPaneDesc = text_printer_create_new(get_current_mem_id(), 4, 104, 32);
-    text_printer_set_x_y(gGameSelectInfo->infoPaneDesc, 128, 55);
-    text_printer_set_layer(gGameSelectInfo->infoPaneDesc, 0x800);
-    text_printer_set_colors(gGameSelectInfo->infoPaneDesc, 0);
-    text_printer_set_palette(gGameSelectInfo->infoPaneDesc, 8);
-    text_printer_set_line_spacing(gGameSelectInfo->infoPaneDesc, 14);
-    text_printer_center_by_content(gGameSelectInfo->infoPaneDesc, 1);
-    text_printer_set_x_y_controller(gGameSelectInfo->infoPaneDesc, &bgOfs->x, &bgOfs->y);
-    text_printer_set_shadow_colors(gGameSelectInfo->infoPaneDesc, -1);
-    gGameSelectInfo->perfectClearedSprite = func_0804d160(D_03005380, anim_game_select_perfect_rank, 0, 138, 115, 0x80A, 1, 0, 0x8000);
-    func_0804db44(D_03005380, gGameSelectInfo->perfectClearedSprite, &bgOfs->x, &bgOfs->y);
-    gGameSelectInfo->infoPaneIsClear = TRUE;
-    gGameSelectInfo->infoPaneTask = INFO_PANE_TASK_NONE;
+    gGameSelect->infoPaneName = -1;
+    gGameSelect->infoPaneRank = -1;
+    gGameSelect->infoPaneDesc = text_printer_create_new(get_current_mem_id(), 4, 104, 32);
+    text_printer_set_x_y(gGameSelect->infoPaneDesc, 128, 55);
+    text_printer_set_layer(gGameSelect->infoPaneDesc, 0x800);
+    text_printer_set_colors(gGameSelect->infoPaneDesc, 0);
+    text_printer_set_palette(gGameSelect->infoPaneDesc, 8);
+    text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
+    text_printer_center_by_content(gGameSelect->infoPaneDesc, 1);
+    text_printer_set_x_y_controller(gGameSelect->infoPaneDesc, &bgOfs->x, &bgOfs->y);
+    text_printer_set_shadow_colors(gGameSelect->infoPaneDesc, -1);
+    gGameSelect->perfectClearedSprite = func_0804d160(D_03005380, anim_game_select_perfect_rank, 0, 138, 115, 0x80A, 1, 0, 0x8000);
+    func_0804db44(D_03005380, gGameSelect->perfectClearedSprite, &bgOfs->x, &bgOfs->y);
+    gGameSelect->infoPaneIsClear = TRUE;
+    gGameSelect->infoPaneTask = INFO_PANE_TASK_NONE;
 }
 
 
@@ -1826,16 +1820,16 @@ void game_select_delete_info_pane_sprite(s16 *ptr) {
 
 // Clear Level Info Pane
 void game_select_clear_info_pane(void) {
-    if (gGameSelectInfo->infoPaneIsClear) {
+    if (gGameSelect->infoPaneIsClear) {
         return;
     }
 
     text_printer_fill_vram_tiles(0, 24, 32, 8, 0);
-    game_select_delete_info_pane_sprite(&gGameSelectInfo->infoPaneName);
-    game_select_delete_info_pane_sprite(&gGameSelectInfo->infoPaneRank);
-    text_printer_clear(gGameSelectInfo->infoPaneDesc);
-    func_0804d770(D_03005380, gGameSelectInfo->perfectClearedSprite, FALSE);
-    gGameSelectInfo->infoPaneIsClear = TRUE;
+    game_select_delete_info_pane_sprite(&gGameSelect->infoPaneName);
+    game_select_delete_info_pane_sprite(&gGameSelect->infoPaneRank);
+    text_printer_clear(gGameSelect->infoPaneDesc);
+    func_0804d770(D_03005380, gGameSelect->perfectClearedSprite, FALSE);
+    gGameSelect->infoPaneIsClear = TRUE;
 }
 
 
@@ -1847,16 +1841,16 @@ void game_select_print_level_name(struct LevelData *levelData) {
     text_printer_fill_vram_tiles(0, 26, 16, 2, 0);
     string = levelData->name;
     anim = text_printer_get_formatted_line_anim(get_current_mem_id(), 0, 26, TEXT_PRINTER_FONT_SMALL, &string, TEXT_ANCHOR_BOTTOM_CENTER, 0, 104, 0, -1);
-    gGameSelectInfo->infoPaneName = func_0804d160(D_03005380, anim, 0, 180, 37, 0x800, 1, 0, 0x8000);
-    func_0804d8c4(D_03005380, gGameSelectInfo->infoPaneName, 7);
-    gGameSelectInfo->infoPaneIsClear = FALSE;
+    gGameSelect->infoPaneName = func_0804d160(D_03005380, anim, 0, 180, 37, 0x800, 1, 0, 0x8000);
+    func_0804d8c4(D_03005380, gGameSelect->infoPaneName, 7);
+    gGameSelect->infoPaneIsClear = FALSE;
 }
 
 
 // Print Level Description
 void game_select_print_level_desc(struct LevelData *levelData) {
-    text_printer_set_string(gGameSelectInfo->infoPaneDesc, levelData->description);
-    gGameSelectInfo->infoPaneIsClear = FALSE;
+    text_printer_set_string(gGameSelect->infoPaneDesc, levelData->description);
+    gGameSelect->infoPaneIsClear = FALSE;
 }
 
 
@@ -1865,16 +1859,16 @@ void game_select_print_level_rank(s32 levelState) {
     struct Animation *anim;
     const char *string;
 
-    if (D_030046a8->data.levelScores[gGameSelectInfo->infoPaneLevelID] == DEFAULT_LEVEL_SCORE) {
+    if (D_030046a8->data.levelScores[gGameSelect->infoPaneLevelID] == DEFAULT_LEVEL_SCORE) {
         levelState = LEVEL_STATE_OPEN;
     }
 
     text_printer_fill_vram_tiles(16, 26, 16, 2, 0);
     string = game_select_rank_text[levelState];
     anim = text_printer_get_formatted_line_anim(get_current_mem_id(), 16, 26, TEXT_PRINTER_FONT_SMALL, &string, TEXT_ANCHOR_BOTTOM_RIGHT, 0, 104, 0, -1);
-    gGameSelectInfo->infoPaneRank = func_0804d160(D_03005380, anim, 0, 228, 116, 0x800, 1, 0, 0x8000);
-    func_0804d8c4(D_03005380, gGameSelectInfo->infoPaneRank, game_select_rank_palette[levelState]);
-    gGameSelectInfo->infoPaneIsClear = FALSE;
+    gGameSelect->infoPaneRank = func_0804d160(D_03005380, anim, 0, 228, 116, 0x800, 1, 0, 0x8000);
+    func_0804d8c4(D_03005380, gGameSelect->infoPaneRank, game_select_rank_palette[levelState]);
+    gGameSelect->infoPaneIsClear = FALSE;
 }
 
 
@@ -1883,43 +1877,43 @@ void game_select_process_info_pane(void) {
     struct Vector2 *bgOfs = &D_03004b10.BG_OFS[BG_LAYER_1];
     s32 campaign;
 
-    switch (gGameSelectInfo->infoPaneTask) {
+    switch (gGameSelect->infoPaneTask) {
         case INFO_PANE_TASK_DELAY:
-            if (--gGameSelectInfo->infoPaneDelay == 0) {
-                gGameSelectInfo->infoPaneTask = INFO_PANE_TASK_PRINT_NAME;
+            if (--gGameSelect->infoPaneDelay == 0) {
+                gGameSelect->infoPaneTask = INFO_PANE_TASK_PRINT_NAME;
             }
             break;
 
         case INFO_PANE_TASK_PRINT_NAME:
-            game_select_print_level_name(gGameSelectInfo->infoPaneLevelData);
-            gGameSelectInfo->infoPaneTask = INFO_PANE_TASK_PRINT_RANK;
+            game_select_print_level_name(gGameSelect->infoPaneLevelData);
+            gGameSelect->infoPaneTask = INFO_PANE_TASK_PRINT_RANK;
             break;
 
         case INFO_PANE_TASK_PRINT_RANK:
-            if (gGameSelectInfo->infoPaneLevelData->type != 2) {
-                game_select_print_level_rank(gGameSelectInfo->infoPaneLevelState);
+            if (gGameSelect->infoPaneLevelData->type != 2) {
+                game_select_print_level_rank(gGameSelect->infoPaneLevelState);
             }
-            gGameSelectInfo->infoPaneTask = INFO_PANE_TASK_PRINT_DESC;
+            gGameSelect->infoPaneTask = INFO_PANE_TASK_PRINT_DESC;
             break;
 
         case INFO_PANE_TASK_PRINT_DESC:
-            game_select_print_level_desc(gGameSelectInfo->infoPaneLevelData);
-            gGameSelectInfo->infoPaneTask = INFO_PANE_TASK_RENDER;
+            game_select_print_level_desc(gGameSelect->infoPaneLevelData);
+            gGameSelect->infoPaneTask = INFO_PANE_TASK_RENDER;
             break;
 
         case INFO_PANE_TASK_RENDER:
-            if (!text_printer_is_busy(gGameSelectInfo->infoPaneDesc)) {
-                func_0804d770(D_03005380, gGameSelectInfo->infoPaneName, TRUE);
-                func_0804db44(D_03005380, gGameSelectInfo->infoPaneName, &bgOfs->x, &bgOfs->y);
-                func_0804d770(D_03005380, gGameSelectInfo->infoPaneRank, TRUE);
-                func_0804db44(D_03005380, gGameSelectInfo->infoPaneRank, &bgOfs->x, &bgOfs->y);
+            if (!text_printer_is_busy(gGameSelect->infoPaneDesc)) {
+                func_0804d770(D_03005380, gGameSelect->infoPaneName, TRUE);
+                func_0804db44(D_03005380, gGameSelect->infoPaneName, &bgOfs->x, &bgOfs->y);
+                func_0804d770(D_03005380, gGameSelect->infoPaneRank, TRUE);
+                func_0804db44(D_03005380, gGameSelect->infoPaneRank, &bgOfs->x, &bgOfs->y);
 
-                campaign = get_campaign_from_grid_xy(gGameSelectInfo->cursorX, gGameSelectInfo->cursorY);
+                campaign = get_campaign_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
                 if ((campaign >= 0) && D_030046a8->data.campaignsCleared[campaign]) {
-                    func_0804d770(D_03005380, gGameSelectInfo->perfectClearedSprite, TRUE);
+                    func_0804d770(D_03005380, gGameSelect->perfectClearedSprite, TRUE);
                 }
 
-                gGameSelectInfo->infoPaneTask = INFO_PANE_TASK_NONE;
+                gGameSelect->infoPaneTask = INFO_PANE_TASK_NONE;
             }
             break;
     }
@@ -1930,13 +1924,13 @@ void game_select_process_info_pane(void) {
 void game_select_set_info_pane(s32 id, s32 state, s32 delay) {
     game_select_clear_info_pane();
     if (id < 0) {
-        gGameSelectInfo->infoPaneTask = INFO_PANE_TASK_NONE;
+        gGameSelect->infoPaneTask = INFO_PANE_TASK_NONE;
     } else {
-        gGameSelectInfo->infoPaneLevelID = id;
-        gGameSelectInfo->infoPaneLevelState = state;
-        gGameSelectInfo->infoPaneDelay = delay;
-        gGameSelectInfo->infoPaneLevelData = &level_data_table[id];
-        gGameSelectInfo->infoPaneTask = INFO_PANE_TASK_DELAY;
+        gGameSelect->infoPaneLevelID = id;
+        gGameSelect->infoPaneLevelState = state;
+        gGameSelect->infoPaneDelay = delay;
+        gGameSelect->infoPaneLevelData = &level_data_table[id];
+        gGameSelect->infoPaneTask = INFO_PANE_TASK_DELAY;
     }
 }
 
@@ -1944,7 +1938,7 @@ void game_select_set_info_pane(s32 id, s32 state, s32 delay) {
 // Update Level Info Pane
 void game_select_update_info_pane(void) {
     game_select_process_info_pane();
-    text_printer_update(gGameSelectInfo->infoPaneDesc);
+    text_printer_update(gGameSelect->infoPaneDesc);
 }
 
 
@@ -2029,7 +2023,7 @@ u32 game_select_calculate_flow_old(void) {
 // Update Scores
 u32 game_select_update_scores(void) {
     struct TengokuSaveData *saveData = &D_030046a8->data;
-    struct FlowDisplay *flowPane = &gGameSelectInfo->flowDisplay;
+    struct FlowDisplay *flowPane = &gGameSelect->flowDisplay;
     u32 modifier, average;
     u32 prevModScore, newModScore;
     u32 newScore, score, flow;
@@ -2108,7 +2102,7 @@ u32 game_select_update_scores(void) {
 
 // Init. Flow Display
 void game_select_init_flow_pane(void) {
-    struct FlowDisplay *flowPane = &gGameSelectInfo->flowDisplay;
+    struct FlowDisplay *flowPane = &gGameSelect->flowDisplay;
     struct Vector2 *bgOfs = &D_03004b10.BG_OFS[BG_LAYER_1];
     u32 initialScore;
     u32 updateFlow;
@@ -2145,7 +2139,7 @@ void game_select_init_flow_pane(void) {
 
 // Update Flow Display
 void game_select_update_flow_pane(void) {
-    struct FlowDisplay *flowPane = &gGameSelectInfo->flowDisplay;
+    struct FlowDisplay *flowPane = &gGameSelect->flowDisplay;
     u32 volume, flow, render;
     u32 i;
 
@@ -2160,7 +2154,7 @@ void game_select_update_flow_pane(void) {
             break;
 
         case FLOW_PANE_TASK_ROLL:
-            if (gGameSelectInfo->sceneState == SCENE_STATE_DISPLAYING_CAMPAIGN_NOTICE) {
+            if (gGameSelect->sceneState == SCENE_STATE_DISPLAYING_CAMPAIGN_NOTICE) {
                 volume = 100;
             } else {
                 volume = 0x100;
@@ -2493,29 +2487,29 @@ void game_select_init_squares(void) {
     y = 384;
 
     for (i = 0; i < 16; i++) {
-        vector = &gGameSelectInfo->squareVectors[i];
+        vector = &gGameSelect->squareVectors[i];
         vector->x = agb_random(x);
         vector->y = agb_random(y);
-        gGameSelectInfo->squareSprites[i] = func_0804d294(D_03005380, anim_game_select_bg_square_large, agb_random(6), 0, 0, 0xC800, -1, 0x7f, 0, 4);
-        func_0804dcb8(D_03005380, gGameSelectInfo->squareSprites[i], agb_random(INT_TO_FIXED(1.0)) + INT_TO_FIXED(1.0));
+        gGameSelect->squareSprites[i] = func_0804d294(D_03005380, anim_game_select_bg_square_large, agb_random(6), 0, 0, 0xC800, -1, 0x7f, 0, 4);
+        func_0804dcb8(D_03005380, gGameSelect->squareSprites[i], agb_random(INT_TO_FIXED(1.0)) + INT_TO_FIXED(1.0));
     }
 
     x *= 2;
     y *= 2;
 
     for (i = 16; i < 50; i++) {
-        vector = &gGameSelectInfo->squareVectors[i];
+        vector = &gGameSelect->squareVectors[i];
         vector->x = agb_random(x);
         vector->y = agb_random(y);
-        gGameSelectInfo->squareSprites[i] = func_0804d294(D_03005380, anim_game_select_bg_square_small, agb_random(6), 0, 0, 0xC800, -1, 0x7f, 0, 4);
-        func_0804dcb8(D_03005380, gGameSelectInfo->squareSprites[i], agb_random(INT_TO_FIXED(1.0)) + INT_TO_FIXED(1.0));
+        gGameSelect->squareSprites[i] = func_0804d294(D_03005380, anim_game_select_bg_square_small, agb_random(6), 0, 0, 0xC800, -1, 0x7f, 0, 4);
+        func_0804dcb8(D_03005380, gGameSelect->squareSprites[i], agb_random(INT_TO_FIXED(1.0)) + INT_TO_FIXED(1.0));
     }
 
     D_03004b10.BLDMOD = (BLDMOD_BG0_TGT | BLDMOD_BG1_TGT | BLDMOD_BG2_TGT | BLDMOD_BG3_TGT | BLDMOD_BACKDROP_TGT);
     D_03004b10.COLEV = (COLEV_SRC_PIXEL(16) | COLEV_TGT_PIXEL(16));
 
     for (i = 0; i < 10; i++) {
-        gGameSelectInfo->newIconSquares[i].active = FALSE;
+        gGameSelect->newIconSquares[i].active = FALSE;
     }
 }
 
@@ -2533,7 +2527,7 @@ void game_select_update_bg_squares_motion(s32 dx, s32 dy) {
 
     // Large Squares
     for (i = 0; i < 16; i++) {
-        vector = &gGameSelectInfo->squareVectors[i];
+        vector = &gGameSelect->squareVectors[i];
         vector->x += dx;
         vector->y += dy;
 
@@ -2554,7 +2548,7 @@ void game_select_update_bg_squares_motion(s32 dx, s32 dy) {
             vector->y = 0;
         }
 
-        func_0804d5d4(D_03005380, gGameSelectInfo->squareSprites[i], 120 + ((vector->x - x) >> 1), 80 + ((vector->y - y) >> 1));
+        func_0804d5d4(D_03005380, gGameSelect->squareSprites[i], 120 + ((vector->x - x) >> 1), 80 + ((vector->y - y) >> 1));
     }
 
     x = x2;
@@ -2564,7 +2558,7 @@ void game_select_update_bg_squares_motion(s32 dx, s32 dy) {
 
     // Small Squares
     for (i = 16; i < 50; i++) {
-        vector = &gGameSelectInfo->squareVectors[i];
+        vector = &gGameSelect->squareVectors[i];
         vector->x += dx;
         vector->y += dy;
 
@@ -2585,14 +2579,14 @@ void game_select_update_bg_squares_motion(s32 dx, s32 dy) {
             vector->y = 0;
         }
 
-        func_0804d5d4(D_03005380, gGameSelectInfo->squareSprites[i], SCREEN_CENTER_X + ((vector->x - x) >> 2), SCREEN_CENTER_Y + ((vector->y - y) >> 2));
+        func_0804d5d4(D_03005380, gGameSelect->squareSprites[i], SCREEN_CENTER_X + ((vector->x - x) >> 2), SCREEN_CENTER_Y + ((vector->y - y) >> 2));
     }
 }
 
 
 // Spawn New Icon Square
 void game_select_spawn_icon_square(s16 x, s16 y, void *onFinish, s32 onFinishArg, u32 delay) {
-    struct NewIconSquare *shadow = gGameSelectInfo->newIconSquares;
+    struct NewIconSquare *shadow = gGameSelect->newIconSquares;
     s32 x1, y1, x2, y2;
     u32 i;
 
@@ -2673,14 +2667,14 @@ void game_select_update_icon_squares(void) {
     u32 i;
 
     for (i = 0; i < 10; i++) {
-        game_select_update_icon_square(&gGameSelectInfo->newIconSquares[i]);
+        game_select_update_icon_square(&gGameSelect->newIconSquares[i]);
     }
 }
 
 
 // Check for Active New Icon Squares
 u32 game_select_check_for_icon_squares(void) {
-    struct NewIconSquare *shadow = gGameSelectInfo->newIconSquares;
+    struct NewIconSquare *shadow = gGameSelect->newIconSquares;
     u32 i;
 
     for (i = 0; i < 10; i++) {

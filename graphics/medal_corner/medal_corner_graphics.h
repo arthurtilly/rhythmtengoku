@@ -35,9 +35,9 @@ extern struct Animation anim_lessons_menu_long_1[];
 extern struct Animation anim_lessons_menu_long_2[];
 extern struct Animation anim_lessons_menu_long_3[];
 extern struct Animation anim_lessons_menu_long_4[];
-extern struct Animation anim_lessons_menu_long_5[];
-extern struct Animation anim_lessons_menu_hi_tech_1[];
-extern struct Animation anim_lessons_menu_hi_tech_2[];
+extern struct Animation anim_lessons_menu_long_5_6[];
+extern struct Animation anim_lessons_menu_hi_tech_1_2[];
+extern struct Animation anim_lessons_menu_hi_tech_unused[];
 extern struct Animation anim_lessons_menu_basic_1[];
 extern struct Animation anim_lessons_menu_basic_2[];
 extern struct Animation anim_lessons_menu_basic_3[];
@@ -72,7 +72,7 @@ extern Palette endless_menu_pal[];
 /* RHYTHM TOYS MENU - ANIMATIONS */
 
 extern struct Animation anim_toys_menu_cat_machine[];
-extern struct Animation anim_toys_menu_horse_machine[];
+extern struct Animation anim_toys_menu_mechanical_horse[];
 extern struct Animation anim_toys_menu_love_machine[];
 extern struct Animation anim_toys_menu_rap_machine[];
 

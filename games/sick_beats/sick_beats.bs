@@ -78,6 +78,7 @@ struct sick_beats_marking_criteria
 endstruct
 
 
+
 @ Sick Beats - Pathing Data
 
 script sick_beats_path_normal
@@ -170,6 +171,7 @@ script sick_beats_path_skip_to_point_4
     sb_rest 24
     sb_attack_microbe
 sb_stop
+
 
 
 @ Sick Beats - Main Script

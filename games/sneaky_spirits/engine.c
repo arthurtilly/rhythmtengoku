@@ -220,30 +220,30 @@ const char D_08059f90[] = "";
 
 // [D_089de8e4] Common Events
 EngineEvent sneaky_spirits_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) sneaky_spirits_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) sneaky_spirits_common_display_text,
+    /* BEAT_ANIMATION */ sneaky_spirits_common_beat_animation,
+    /* DISPLAY_TEXT   */ sneaky_spirits_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089de8f0] Engine Events
 EngineEvent sneaky_spirits_engine_events[] = {
-    /* 0x00 */ (EngineEvent) sneaky_spirits_show_ghost,
-    /* 0x01 */ (EngineEvent) sneaky_spirits_set_ghost_height,
-    /* 0x02 */ (EngineEvent) sneaky_spirits_spawn_bow,
-    /* 0x03 */ (EngineEvent) sneaky_spirits_draw_bow,
-    /* 0x04 */ (EngineEvent) sneaky_spirits_enable_wind_sfx,
-    /* 0x05 */ (EngineEvent) sneaky_spirits_display_text,
-    /* 0x06 */ (EngineEvent) sneaky_spirits_event_set_rain_speed,
-    /* 0x07 */ (EngineEvent) sneaky_spirits_freeze_slow_rain,
-    /* 0x08 */ (EngineEvent) sneaky_spirits_display_tutorial_ghost,
-    /* 0x09 */ (EngineEvent) sneaky_spirits_animate_tutorial_ghost,
-    /* 0x0A */ (EngineEvent) sneaky_spirits_engine_event_stub
+    /* 0x00 */ sneaky_spirits_show_ghost,
+    /* 0x01 */ sneaky_spirits_set_ghost_height,
+    /* 0x02 */ sneaky_spirits_spawn_bow,
+    /* 0x03 */ sneaky_spirits_draw_bow,
+    /* 0x04 */ sneaky_spirits_enable_wind_sfx,
+    /* 0x05 */ sneaky_spirits_display_text,
+    /* 0x06 */ sneaky_spirits_event_set_rain_speed,
+    /* 0x07 */ sneaky_spirits_freeze_slow_rain,
+    /* 0x08 */ sneaky_spirits_display_tutorial_ghost,
+    /* 0x09 */ sneaky_spirits_animate_tutorial_ghost,
+    /* 0x0A */ sneaky_spirits_engine_event_stub
 };
 
 // [D_089de91c] Sneaky Spirits Game Engine
 struct GameEngine sneaky_spirits_engine = {
-    /* Size in Memory */ sizeof(struct SneakySpiritsInfo),
+    /* Size in Memory */ sizeof(struct SneakySpiritsEngineData),
     /* Start Engine   */ sneaky_spirits_engine_start,
     /* Update Engine  */ sneaky_spirits_engine_update,
     /* Stop Engine    */ sneaky_spirits_engine_stop,

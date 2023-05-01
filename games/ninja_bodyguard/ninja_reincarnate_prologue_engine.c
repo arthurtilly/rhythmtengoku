@@ -41,12 +41,12 @@ struct GraphicsTable ninja_reincarnate_prologue_gfx_table[] = {
 
 // [D_089ed310] Engine Events
 EngineEvent ninja_reincarnate_prologue_engine_events[] = {
-    /* 0x00 */ (EngineEvent) func_080474a0
+    /* 0x00 */ func_080474a0
 };
 
 // [D_089ed314] Prologue (Ninja Reincarnate) Game Engine
 struct GameEngine ninja_reincarnate_engine = {
-    /* Size in Memory */ sizeof(struct NinjaReincarnatePrologueInfo),
+    /* Size in Memory */ sizeof(struct NinjaReincarnatePrologueEngineData),
     /* Start Engine   */ ninja_reincarnate_prologue_engine_start,
     /* Update Engine  */ ninja_reincarnate_prologue_engine_update,
     /* Stop Engine    */ ninja_reincarnate_prologue_engine_stop,

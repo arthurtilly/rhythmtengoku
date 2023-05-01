@@ -12,7 +12,7 @@ thumb_func_start toss_boys_cue_spawn \n\
 /* 0803f4f8 */ STRB R0, [R4] \n\
 /* 0803f4fa */ LSRS R2, R2, 0x4 \n\
 /* 0803f4fc */ STRB R2, [R4, 0xA] \n\
-/* 0803f4fe */ LDR R5, =D_030055d0 \n\
+/* 0803f4fe */ LDR R5, =gCurrentEngineData \n\
 /* 0803f500 */ LDR R1, [R5] \n\
 /* 0803f502 */ MOVS R2, 0xDD @ Set R2 to 0xDD \n\
 /* 0803f504 */ LSLS R2, R2, 0x2 \n\

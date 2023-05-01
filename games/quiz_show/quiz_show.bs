@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_quiz_show, script_quiz_show_entry
 
 
+
 @ Quiz Show - Script Entry Point (Skipped Practice)
 
 script script_quiz_show_skipped_practice_entry
@@ -103,6 +104,7 @@ struct quiz_show_marking_criteria_set_2
 endstruct
 
 
+
 @ Quiz Show - Main Script
 
 script quiz_show_sub_08a3c108
@@ -164,7 +166,7 @@ script script_quiz_show_main
     assess_perfect_inputs 0
     run func_080175b0, 0
     loop_start
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         switch FUNC, func_080175d8
             case 0
                 print_text_s D_0805ece8

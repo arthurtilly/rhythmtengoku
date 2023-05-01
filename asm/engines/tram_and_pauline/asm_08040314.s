@@ -10,7 +10,7 @@ thumb_func_start func_08040314 \n\
 /* 0804031c */ SUB SP, 0xC \n\
 /* 0804031e */ LSLS R0, R0, 0x18 \n\
 /* 08040320 */ LSRS R5, R0, 0x18 \n\
-/* 08040322 */ LDR R2, =D_030055d0 \n\
+/* 08040322 */ LDR R2, =gCurrentEngineData \n\
 /* 08040324 */ LDR R1, [R2] \n\
 /* 08040326 */ LSLS R0, R5, 0x2 \n\
 /* 08040328 */ ADDS R0, R0, R5 @ Set R0 to R0 + R5 \n\

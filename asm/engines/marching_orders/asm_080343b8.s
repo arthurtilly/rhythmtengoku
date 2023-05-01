@@ -60,7 +60,7 @@ jump_08034426: \n\
 /* 08034432 */ B branch_08034450 \n\
  \n\
 branch_08034434: \n\
-/* 08034434 */ LDR R0, =D_030055d0 \n\
+/* 08034434 */ LDR R0, =gCurrentEngineData \n\
 /* 08034436 */ LDR R0, [R0] \n\
 /* 08034438 */ ADDS R0, 0x45 @ Add 0x45 to R0 \n\
 /* 0803443a */ LDRB R0, [R0] \n\
@@ -91,7 +91,7 @@ jump_08034454: \n\
 /* 08034460 */ B branch_08034480 \n\
  \n\
 branch_08034462: \n\
-/* 08034462 */ LDR R0, =D_030055d0 \n\
+/* 08034462 */ LDR R0, =gCurrentEngineData \n\
 /* 08034464 */ LDR R0, [R0] \n\
 /* 08034466 */ ADDS R0, 0x45 @ Add 0x45 to R0 \n\
 /* 08034468 */ LDRB R0, [R0] \n\
@@ -184,7 +184,7 @@ branch_080344de: \n\
 /* 080344fa */ BL func_0804d8f8 \n\
  \n\
 branch_080344fe: \n\
-/* 080344fe */ LDR R0, =D_030055d0 \n\
+/* 080344fe */ LDR R0, =gCurrentEngineData \n\
 /* 08034500 */ LDR R0, [R0] \n\
 /* 08034502 */ LDRB R0, [R0] \n\
 /* 08034504 */ CMP R0, 0x1 @ Compare R0 and 0x1 \n\

@@ -247,25 +247,25 @@ struct CueDefinition *polyrhythm_cue_index[] = {
 
 // [D_089e5bbc] Common Events
 EngineEvent polyrhythm_common_events[] = {
-    /* BEAT_ANIMATION */ (EngineEvent) polyrhythm_common_beat_animation,
-    /* DISPLAY_TEXT   */ (EngineEvent) polyrhythm_common_display_text,
+    /* BEAT_ANIMATION */ polyrhythm_common_beat_animation,
+    /* DISPLAY_TEXT   */ polyrhythm_common_display_text,
     /* INIT_TUTORIAL  */ // None
     END_OF_COMMON_EVENT_LIST
 };
 
 // [D_089e5bc8] Engine Events
 EngineEvent polyrhythm_engine_events[] = {
-    /* 0x00 */ (EngineEvent) polyrhythm_spawn_piston,
-    /* 0x01 */ (EngineEvent) polyrhythm_despawn_piston,
-    /* 0x02 */ (EngineEvent) polyrhythm_retract_pistons,
-    /* 0x03 */ (EngineEvent) polyrhythm_event_spawn_rod,
-    /* 0x04 */ (EngineEvent) polyrhythm_event_play_applause,
-    /* 0x05 */ (EngineEvent) polyrhythm_engine_event_stub
+    /* 0x00 */ polyrhythm_spawn_piston,
+    /* 0x01 */ polyrhythm_despawn_piston,
+    /* 0x02 */ polyrhythm_retract_pistons,
+    /* 0x03 */ polyrhythm_event_spawn_rod,
+    /* 0x04 */ polyrhythm_event_play_applause,
+    /* 0x05 */ polyrhythm_engine_event_stub
 };
 
 // [D_089e5be0] Polyrhythm Game Engine
 struct GameEngine polyrhythm_engine = {
-    /* Size in Memory */ sizeof(struct PolyrhythmInfo),
+    /* Size in Memory */ sizeof(struct PolyrhythmEngineData),
     /* Start Engine   */ polyrhythm_engine_start,
     /* Update Engine  */ polyrhythm_engine_update,
     /* Stop Engine    */ polyrhythm_engine_stop,

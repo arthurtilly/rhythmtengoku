@@ -26,6 +26,7 @@ stop
 define_gameplay_scene scene_showtime, script_showtime_entry
 
 
+
 @ Showtime - Script Entry Point (Skipped Practice)
 
 script script_showtime_skipped_practice_entry
@@ -87,6 +88,7 @@ struct showtime_marking_criteria
     .word showtime_marking_criteria_0
     .word END_OF_CRITERIA
 endstruct
+
 
 
 @ Showtime - Main Script
@@ -404,7 +406,7 @@ script script_showtime_practice
         rest 24
         beat_anim
         rest 24
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         spawn_cue CUE_GRAY
         beat_anim
         rest 24
@@ -477,7 +479,7 @@ script script_showtime_practice
         rest 24
         beat_anim
         rest 24
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         spawn_cue CUE_BLACK
         beat_anim
         rest 24
@@ -568,7 +570,7 @@ script script_showtime_practice
         rest 24
         beat_anim
         rest 24
-        run beatscript_disable_loops 0
+        run beatscript_disable_loops, 0
         print_text_f D_0805e21c
         spawn_cue CUE_WHITE
         beat_anim

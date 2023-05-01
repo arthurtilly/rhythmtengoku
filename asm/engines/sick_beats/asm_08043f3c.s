@@ -7,7 +7,7 @@ thumb_func_start sick_beats_common_beat_animation \n\
 /* 08043f3e */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 08043f40 */ PUSH {R7} \n\
 /* 08043f42 */ SUB SP, 0xC \n\
-/* 08043f44 */ LDR R7, =D_030055d0 \n\
+/* 08043f44 */ LDR R7, =gCurrentEngineData \n\
 /* 08043f46 */ LDR R4, [R7] \n\
 /* 08043f48 */ ADDS R0, R4, 0x4 @ Set R0 to R4 + 0x4 \n\
 /* 08043f4a */ MOV R8, R0 @ Set R8 to R0 \n\

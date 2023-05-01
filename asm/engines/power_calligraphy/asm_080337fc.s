@@ -2,12 +2,12 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start calligraphy_cue_miss \n\
+thumb_func_start power_calligraphy_cue_miss \n\
 /* 080337fc */ PUSH {LR} \n\
 /* 080337fe */ SUB SP, 0x4 \n\
 /* 08033800 */ LDR R0, =D_03005380 \n\
 /* 08033802 */ LDR R0, [R0] \n\
-/* 08033804 */ LDR R1, =D_030055d0 \n\
+/* 08033804 */ LDR R1, =gCurrentEngineData \n\
 /* 08033806 */ LDR R1, [R1] \n\
 /* 08033808 */ MOVS R2, 0x36 @ Set R2 to 0x36 \n\
 /* 0803380a */ LDRSH R1, [R1, R2] \n\

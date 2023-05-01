@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct TitleSceneInfo {
+struct TitleSceneData {
     u32 scriptIsReady;
     u32 timeUntilDemo;
     struct TextPrinter *textPrinter;

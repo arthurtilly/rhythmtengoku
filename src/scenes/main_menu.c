@@ -6,7 +6,7 @@
 
 
 // For readability.
-#define gMainMenuInfo ((struct MainMenuSceneInfo *)D_030046a4)
+#define gMainMenu ((struct MainMenuSceneData *)gCurrentSceneData)
 
 enum MainMenuButtonsEnum {
     /* 00 */ GAME_SELECT,
@@ -73,25 +73,25 @@ void main_menu_scene_start(void *sceneVar, s32 dataArg) {
     enteredFromOptionsMenu = get_current_scene_trans_var();
     func_08007324(FALSE);
     func_080073f0();
-    gMainMenuInfo->bmpFontBG = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
-    gMainMenuInfo->bmpFontOBJ = func_0800c660(0x300, 4);
-    import_all_scene_objects(D_03005380, gMainMenuInfo->bmpFontOBJ, main_menu_scene_objects, D_0300558c);
+    gMainMenu->bmpFontBG = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
+    gMainMenu->bmpFontOBJ = func_0800c660(0x300, 4);
+    import_all_scene_objects(D_03005380, gMainMenu->bmpFontOBJ, main_menu_scene_objects, D_0300558c);
     main_menu_scene_init_gfx1();
     func_0804d160(D_03005380, anim_main_menu_blank1, 0, 120, 64, 0x6E, 1, 0, 0);
 
     for (i = 0; i < 5; i++) {
         if (i == sMainMenuButton) {
-            gMainMenuInfo->buttons[i] = func_0804d160(D_03005380, main_menu_button_on_anim[i], 0, 120, 64, 0x64, 1, 0, 0);
+            gMainMenu->buttons[i] = func_0804d160(D_03005380, main_menu_button_on_anim[i], 0, 120, 64, 0x64, 1, 0, 0);
         } else {
-            gMainMenuInfo->buttons[i] = func_0804d160(D_03005380, main_menu_button_off_anim[i], 0, 120, 64, 0x64, 1, 0, 0);
+            gMainMenu->buttons[i] = func_0804d160(D_03005380, main_menu_button_off_anim[i], 0, 120, 64, 0x64, 1, 0, 0);
         }
     }
 
-    gMainMenuInfo->scriptIsReady = FALSE;
-    gMainMenuInfo->bgY = 0;
-    gMainMenuInfo->bgX = 0;
-    gMainMenuInfo->enteredFromOptionsMenu = (enteredFromOptionsMenu != FALSE);
-    gMainMenuInfo->exitingToOptionsMenu = FALSE;
+    gMainMenu->scriptIsReady = FALSE;
+    gMainMenu->bgY = 0;
+    gMainMenu->bgX = 0;
+    gMainMenu->enteredFromOptionsMenu = (enteredFromOptionsMenu != FALSE);
+    gMainMenu->exitingToOptionsMenu = FALSE;
     set_next_scene(&scene_debug_menu);
     flush_save_buffer_to_sram();
 }
@@ -106,9 +106,9 @@ void main_menu_scene_paused(void *sceneVar, s32 dataArg) {
 void main_menu_scene_update(void *sceneVar, s32 dataArg) {
     s32 prevButton;
 
-    gMainMenuInfo->bgX += 1;
-    gMainMenuInfo->bgY -= 1;
-    scene_set_bg_layer_pos(BG_LAYER_1, gMainMenuInfo->bgX >> 2, gMainMenuInfo->bgY >> 2);
+    gMainMenu->bgX += 1;
+    gMainMenu->bgY -= 1;
+    scene_set_bg_layer_pos(BG_LAYER_1, gMainMenu->bgX >> 2, gMainMenu->bgY >> 2);
 
     if (main_menu_scene_script_ready()) {
         prevButton = sMainMenuButton;
@@ -122,8 +122,8 @@ void main_menu_scene_update(void *sceneVar, s32 dataArg) {
 
         if (prevButton != sMainMenuButton) {
             play_sound(&s_menu_cursor2_seqData);
-            func_0804d8f8(D_03005380, gMainMenuInfo->buttons[prevButton], main_menu_button_off_anim[prevButton], 0, 1, 0, 0);
-            func_0804d8f8(D_03005380, gMainMenuInfo->buttons[sMainMenuButton], main_menu_button_on_anim[sMainMenuButton], 0, 1, 0, 0);
+            func_0804d8f8(D_03005380, gMainMenu->buttons[prevButton], main_menu_button_off_anim[prevButton], 0, 1, 0, 0);
+            func_0804d8f8(D_03005380, gMainMenu->buttons[sMainMenuButton], main_menu_button_on_anim[sMainMenuButton], 0, 1, 0, 0);
         }
 
         else if (D_03004afc & (START_BUTTON | A_BUTTON)) {
@@ -148,11 +148,11 @@ void main_menu_scene_update(void *sceneVar, s32 dataArg) {
                 case OPTIONS_MENU:
                     set_next_scene(&scene_options_menu);
                     set_scene_trans_target(&scene_options_menu, &scene_main_menu);
-                    gMainMenuInfo->exitingToOptionsMenu = TRUE;
+                    gMainMenu->exitingToOptionsMenu = TRUE;
                     break;
             }
             set_pause_beatscript_scene(FALSE);
-            gMainMenuInfo->scriptIsReady = FALSE;
+            gMainMenu->scriptIsReady = FALSE;
             play_sound(&s_menu_kettei1_seqData);
         }
     }
@@ -161,7 +161,7 @@ void main_menu_scene_update(void *sceneVar, s32 dataArg) {
 
 // Communicate with Script
 u32 main_menu_scene_script_ready(void) {
-    if (gMainMenuInfo->scriptIsReady) {
+    if (gMainMenu->scriptIsReady) {
         return TRUE;
     } else {
         return FALSE;

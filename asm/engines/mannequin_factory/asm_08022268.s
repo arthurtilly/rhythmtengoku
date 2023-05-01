@@ -89,7 +89,7 @@ branch_080222e8: \n\
 .ltorg \n\
  \n\
 branch_08022318: \n\
-/* 08022318 */ LDR R0, =D_030055d0 \n\
+/* 08022318 */ LDR R0, =gCurrentEngineData \n\
 /* 0802231a */ LDR R0, [R0] \n\
 /* 0802231c */ LDRB R3, [R0] \n\
 /* 0802231e */ CMP R3, 0x1 @ Compare R3 and 0x1 \n\

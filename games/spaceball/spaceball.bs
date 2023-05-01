@@ -104,6 +104,7 @@ struct spaceball_marking_criteria
 endstruct
 
 
+
 @ Spaceball - Main Script
 
 script script_spaceball_main
@@ -123,7 +124,7 @@ script script_spaceball_main
     rest 24
     spaceball_prep_pitcher 0
     rest 3
-    run scene_stop_music 0
+    run scene_stop_music, 0
     rest 21
     play_music s_shibafu1_bgm_seqData
     rest 24
@@ -131,7 +132,7 @@ script script_spaceball_main
     rest 24
     spaceball_prep_pitcher 0
     rest 3
-    run scene_stop_music 0
+    run scene_stop_music, 0
     rest 21
     loop_start
         play_music s_shibafu1_bgm_seqData
@@ -143,7 +144,7 @@ script script_spaceball_main
         rest 24
         spaceball_prep_pitcher 0
         rest 3
-        run scene_stop_music 0
+        run scene_stop_music, 0
         rest 21
         play_music s_shibafu1_bgm_seqData
         spawn_cue CUE_LOW
@@ -154,7 +155,7 @@ script script_spaceball_main
         rest 24
         spaceball_prep_pitcher 0
         rest 3
-        run scene_stop_music 0
+        run scene_stop_music, 0
         rest 21
         spaceball_exit_loop_if_no_miss 0
     loop_end

@@ -9,7 +9,7 @@ thumb_func_start sick_beats_cue_spawn \n\
 /* 080436ea */ SUB SP, 0x1C \n\
 /* 080436ec */ ADDS R6, R0, 0x0 @ Set R6 to R0 + 0x0 \n\
 /* 080436ee */ ADDS R5, R1, 0x0 @ Set R5 to R1 + 0x0 \n\
-/* 080436f0 */ LDR R0, =D_030055d0 \n\
+/* 080436f0 */ LDR R0, =gCurrentEngineData \n\
 /* 080436f2 */ LDR R3, [R0] \n\
 /* 080436f4 */ MOVS R0, 0x28 @ Set R0 to 0x28 \n\
 /* 080436f6 */ ADDS R0, R0, R3 @ Set R0 to R0 + R3 \n\

@@ -9,7 +9,7 @@ thumb_func_start sick_beats_engine_update \n\
 /* 08043596 */ BL func_08042e80 \n\
 /* 0804359a */ BL func_08043534 \n\
 /* 0804359e */ BL func_08042934 \n\
-/* 080435a2 */ LDR R0, =D_030055d0 \n\
+/* 080435a2 */ LDR R0, =gCurrentEngineData \n\
 /* 080435a4 */ LDR R1, [R0] \n\
 /* 080435a6 */ LDR R2, =0x202 \n\
 /* 080435a8 */ ADDS R0, R1, R2 @ Set R0 to R1 + R2 \n\

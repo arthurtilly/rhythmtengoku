@@ -116,6 +116,7 @@ struct remix_7_marking_criteria
 endstruct
 
 
+
 @ Remix 7 - Sick Beats Pathing Data
 
 script remix_7_sick_beats_path_skip_to_point_2
@@ -137,6 +138,7 @@ script remix_7_sick_beats_path_skip_to_point_2
     sb_rest 24
     sb_attack_microbe
 sb_stop
+
 
 
 @ Remix 7 - Main Script
@@ -296,7 +298,7 @@ script script_remix_7_main
     run func_08047ea4, 0
     rest 24
     rest 24
-    run scene_stop_music 0
+    run scene_stop_music, 0
     set_game_fade_in_time 30
 
     load_samurai_slice_remix
@@ -496,7 +498,7 @@ script script_remix_7_main
     sneaky_spirits_set_ghost_height 256
     mute_music_track MIDI_TRACK_5
     rest 24
-    run scene_stop_music 0
+    run scene_stop_music, 0
     rest 24
     reset_music_track_volumes
     set_tempo 131
@@ -709,7 +711,7 @@ script script_remix_7_main
     rest 8
     rest 8
     rest 4
-    run scene_stop_music 0
+    run scene_stop_music, 0
     rest 4
     rest 8
     spaceball_zoom_camera 0xf000, 32
@@ -751,9 +753,7 @@ script script_remix_7_main
 
     load_sick_beats
     rest 12
-    sick_beats_set_hits_needed 3
-    sick_beats_set_virus_palette 9
-    sick_beats_spawn_virus remix_7_sick_beats_path_skip_to_point_2
+    sick_beats_spawn_3_hit_virus remix_7_sick_beats_path_skip_to_point_2
     rest 24
     rest 24
     rest 24

@@ -3,7 +3,7 @@
 asm(".include \"include/gba.inc\""); // Temporary
 
 // For readability.
-#define gQuizShowInfo ((struct QuizShowInfo *)D_030055d0)
+#define gQuizShow ((struct QuizShowEngineData *)gCurrentEngineData)
 
 
 /* QUIZ SHOW */
