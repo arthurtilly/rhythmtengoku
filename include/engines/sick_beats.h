@@ -16,27 +16,26 @@ struct SickBeatsPath {
 
 struct SickBeatsEngineData {
     u8 version;
-    u16 unk2;
     struct SickBeatsYellowMicrobe {
         s16 sprite;
         u8 unk2; // microbe state?
-        u8 unk3; 
+        u8 unk3; // Whether the microbe was hurt
         u16 unk4; // microbe event duration
     } yellowMicrobe;
     struct SickBeatsForks {
         s16 launcher;
-        struct AffineSprite *unk4, *unk8, *unkC, *unk10;
-        u16 unk14, unk16, unk18, unk1A;
+        struct AffineSprite *spriteUp, *spriteDown, *spriteLeft, *spriteRight;
+        u16 counterUp, counterDown, counterLeft, counterRight;
     } forks;
     struct SickBeatsVirus {
-        u8 unk28[0x100]; // whether a virus exists or not (boolean) 
+        u8 exists[0x100]; // Whether a virus exists
         s8 unk128; // cue / virus action
         s8 unk129; // current virus
         u16 unk12A; // virus counter?
         u8 unk12C; // amount of hits too?
-        u8 unk12D; // virus palette
+        u8 virusCuePalette;
         u8 unk12E; // amount of hits
-        u8 unk12F;
+        u8 virusPalette;
         struct SickBeatsVirusData {
             struct SickBeatsPath *unk0; // path
             u8 unk4; // amount of hits
@@ -45,27 +44,26 @@ struct SickBeatsEngineData {
             s32 unk8; // rest value
         } unk130[16];
     } virus;
-    s8 unk1F0; // doctor state?
-    s8 unk1F1;
+    s8 doctorCurrentState; // doctor state?
+    s8 doctorNextState;
     u8 unk1F2;
-    u16 unk1F4;
-    s16 unk1F6; // doctor sprite
-    s16 unk1F8; // radio sprite
-    s16 unk1FA;
+    u16 doctorBeatCounter;
+    s16 doctorSprite;
+    s16 radioSprite;
     struct Beatscript *unk1FC;
-    u16 unk200;
-    u8 unk202;
+    u16 gameEndCounter;
+    u8 microbeWasHurt; // Whether the microbe was hurt (at least once)
     struct SickBeatsScoreCounter {
-        u16 unk0; // counter sprite
-        s16 unk2[4]; // digit sprite
-        u16 unkA; // value?
-    } unk204[2];
+        u16 counterSprite;
+        s16 digitSprite[4];
+        u16 value;
+    } scoreCounters[2];
     u8 unk21C;
-    s16 unk21E[20]; // particle sprites
-    u16 unk246[20];
-    u8 unk26E;
-    u8 unk26F;
-    u8 unk270; // amount of cels in a particle anim
+    s16 particleSprites[20];
+    u16 particleCounters[20];
+    u8 particleCurrent;
+    u8 particlePitch;
+    u8 particleCels; // Amount of cels in a particle anim
 };
 
 struct SickBeatsCue {
@@ -101,6 +99,26 @@ enum SickBeatsVersionsEnum {
     ENGINE_VER_SICK_BEATS_ENDLESS
 };
 
+enum SickBeatsScoreCounterEnum {
+    SICK_BEATS_SCORE_CURRENT,
+    SICK_BEATS_SCORE_HIGH
+};
+
+enum SickBeatsDoctorStatesEnum {
+    SICK_BEATS_DOCTOR_STATE_BEAT,
+    SICK_BEATS_DOCTOR_STATE_HITONE, 
+    SICK_BEATS_DOCTOR_STATE_HITCONSECUTIVE,
+    SICK_BEATS_DOCTOR_STATE_FAIL,
+    SICK_BEATS_DOCTOR_STATE_INVALID = -1
+};
+
+enum SickBeatsMicrobeStatesEnum {
+    SICK_BEATS_MICROBE_STATE_BEAT, 
+    SICK_BEATS_MICROBE_STATE_HURT,
+    SICK_BEATS_MICROBE_STATE_VANISH,
+    SICK_BEATS_MICROBE_STATE_VIRUS,
+    SICK_BEATS_MICROBE_STATE_RETURN
+};
 
 // Engine Definition Data:
 extern s16 sick_beats_particle_sfx_pitch[];
