@@ -5,11 +5,10 @@
 
 // Scene Types:
 struct AssetTestSceneData {
-    /* add fields here */
+    struct BitmapFontBG *bgFont;
+    struct BitmapFontOBJ *objFont;
+    u32 scriptIsReady;
 };
-
-
-// Scene Macros/Enums:
 
 
 // Scene Data:
@@ -20,12 +19,12 @@ extern struct GraphicsTable asset_test_gfx_table_dupe[];
 
 
 // Functions:
-// extern ? func_0801ea84(?); // Init. Static Variables
-// extern ? func_0801ea88(?); // Graphics Init. 3
-// extern ? func_0801eab4(?); // Graphics Init. 2
-// extern ? func_0801eae4(?); // Graphics Init. 1
-// extern ? func_0801eb20(?); // Scene Start
-// extern ? func_0801eb90(?); // Scene Update (Paused)
-// extern ? func_0801eb94(?); // Scene Update (Active)
-// extern ? func_0801ed20(?); // Scene Can Update
-// extern ? func_0801ed3c(?); // Scene Close
+extern void asset_test_scene_init_static_var(void);
+extern void asset_test_scene_init_gfx3(void);
+extern void asset_test_scene_init_gfx2(void);
+extern void asset_test_scene_init_gfx1(void);
+extern void asset_test_scene_start(void *sVar, s32 dArg);
+extern void asset_test_scene_paused(void *sVar, s32 dArg);
+extern void asset_test_scene_update(void *sVar, s32 dArg);
+extern u32 asset_test_scene_can_receive_inputs(void);
+extern void asset_test_scene_stop(void *sVar, s32 dArg);

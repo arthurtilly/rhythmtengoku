@@ -21,10 +21,10 @@ script script_scene_asset_test
 
 @ Local Scene
 struct sub_scene_asset_test
-    /* Start  */ .word func_0801eb20, 0
-    /* Paused */ .word func_0801eb90, 0
-    /* Active */ .word func_0801eb94, 0
-    /* Stop   */ .word func_0801ed3c, 0
+    /* Start  */ .word asset_test_scene_start,  0
+    /* Paused */ .word asset_test_scene_paused, 0
+    /* Active */ .word asset_test_scene_update, 0
+    /* Stop   */ .word asset_test_scene_stop,   0
     /* Script */ .word script_scene_asset_test
 endstruct
 
