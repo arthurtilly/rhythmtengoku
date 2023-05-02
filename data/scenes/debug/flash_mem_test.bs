@@ -20,10 +20,10 @@ script script_scene_flash_mem_test
 
 @ Local Scene
 struct sub_scene_flash_mem_test
-    /* Start  */ .word func_0801e780, 0
-    /* Paused */ .word func_0801e80c, 0
-    /* Active */ .word func_0801e810, 0
-    /* Stop   */ .word func_0801e940, 0
+    /* Start  */ .word flash_test_scene_start,  0
+    /* Paused */ .word flash_test_scene_paused, 0
+    /* Active */ .word flash_test_scene_update, 0
+    /* Stop   */ .word flash_test_scene_stop,   0
     /* Script */ .word script_scene_flash_mem_test
 endstruct
 

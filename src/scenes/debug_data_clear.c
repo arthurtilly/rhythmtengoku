@@ -1,7 +1,6 @@
 #include "global.h"
 #include "debug_data_clear.h"
 
-
 // For readability.
 #define gDataClear ((struct DataClearSceneData *)gCurrentSceneData)
 

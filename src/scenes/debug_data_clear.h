@@ -11,9 +11,6 @@ struct DataClearSceneData {
 };
 
 
-// Scene Macros/Enums:
-
-
 // Scene Data:
 extern union SceneObject data_clear_scene_objects[];
 extern struct GraphicsTable data_clear_gfx_table[];

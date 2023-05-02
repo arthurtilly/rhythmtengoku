@@ -10,10 +10,10 @@ script script_scene_data_clear
 
 @ Local Scene
 struct sub_scene_data_clear
-    /* Start  */ .word data_clear_scene_start, 0
+    /* Start  */ .word data_clear_scene_start,  0
     /* Paused */ .word data_clear_scene_paused, 0
     /* Active */ .word data_clear_scene_update, 0
-    /* Stop   */ .word data_clear_scene_stop, 0
+    /* Stop   */ .word data_clear_scene_stop,   0
     /* Script */ .word script_scene_data_clear
 endstruct
 
