@@ -5,7 +5,9 @@
 
 // Scene Types:
 struct DataClearSceneData {
-    /* add fields here */
+    struct BitmapFontBG *bgFont;
+    struct BitmapFontOBJ *objFont;
+    u32 scriptIsReady;
 };
 
 
@@ -19,12 +21,12 @@ extern struct CompressedGraphics *data_clear_buffered_textures[];
 
 
 // Functions:
-// extern ? func_0801e950(?); // Init. Static Variables
-// extern ? func_0801e954(?); // Graphics Init. 3
-// extern ? func_0801e980(?); // Graphics Init. 2
-// extern ? func_0801e9b0(?); // Graphics Init. 1
-// extern ? func_0801e9cc(?); // Scene Start
-// extern ? func_0801ea50(?); // Scene Update (Paused)
-// extern ? func_0801ea54(?); // Scene Update (Active)
-// extern ? func_0801ea58(?); // Scene Can Update
-// extern ? func_0801ea74(?); // Scene Stop
+extern void data_clear_scene_init_static_var(void);
+extern void data_clear_scene_init_gfx3(void);
+extern void data_clear_scene_init_gfx2(void);
+extern void data_clear_scene_init_gfx1(void);
+extern void data_clear_scene_start(void *sVar, s32 *dArg);
+extern void data_clear_scene_paused(void *sVar, s32 *dArg);
+extern void data_clear_scene_update(void *sVar, s32 *dArg);
+extern u32 data_clear_scene_can_receive_inputs(void);
+extern void data_clear_scene_stop(void *sVar, s32 *dArg);

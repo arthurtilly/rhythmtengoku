@@ -7,6 +7,8 @@ asm(".include \"include/gba.inc\"");//Temporary
 /* ASSET TEST(?) */
 
 
+#include "asm/debug/asm_0801ea84.s"
+
 #include "asm/debug/asm_0801ea88.s"
 
 #include "asm/debug/asm_0801eab4.s"

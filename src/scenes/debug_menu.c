@@ -31,5 +31,3 @@ static s8 D_03001561; // unknown type
 #include "asm/debug/asm_0801e4e0.s"
 
 #include "asm/debug/asm_0801e4f4.s"
-
-#include "asm/debug/asm_0801e704.s"

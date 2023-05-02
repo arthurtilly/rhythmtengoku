@@ -7,6 +7,8 @@ asm(".include \"include/gba.inc\"");//Temporary
 /* FLASH MEMORY TEST */
 
 
+#include "asm/debug/asm_0801e704.s"
+
 #include "asm/debug/asm_0801e708.s"
 
 #include "asm/debug/asm_0801e734.s"
@@ -24,5 +26,3 @@ asm(".include \"include/gba.inc\"");//Temporary
 #include "asm/debug/asm_0801e928.s"
 
 #include "asm/debug/asm_0801e940.s"
-
-#include "asm/debug/asm_0801e950.s"
