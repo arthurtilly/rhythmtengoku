@@ -21,10 +21,10 @@ script script_scene_debug_menu
 
 @ Local Scene
 struct sub_scene_debug_menu
-    /* Start  */ .word func_0801e1f0, 0
-    /* Paused */ .word func_0801e3b4, 0
-    /* Active */ .word func_0801e3b8, 0
-    /* Stop   */ .word func_0801e4e0, 0
+    /* Start  */ .word debug_menu_scene_start, 0
+    /* Paused */ .word debug_menu_scene_paused, 0
+    /* Active */ .word debug_menu_scene_update, 0
+    /* Stop   */ .word debug_menu_scene_stop, 0
     /* Script */ .word script_scene_debug_menu
 endstruct
 

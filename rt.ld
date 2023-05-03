@@ -49,6 +49,7 @@ SECTIONS {
 		build/src/scenes/riq_main_scene.c.o(.bss);
 		build/src/scenes/warning.c.o(.bss);
 		build/src/scenes/debug_menu.c.o(.bss);
+		build/src/scenes/debug_menu_table.c.o(.bss);
 		build/src/scenes/debug_flash_mem.c.o(.bss);
 		build/src/scenes/debug_data_clear.c.o(.bss);
 		build/src/scenes/debug_asset_test.c.o(.bss);
@@ -180,6 +181,7 @@ SECTIONS {
         build/src/scenes/riq_main_scene.c.o(.text);
         build/src/scenes/warning.c.o(.text);
         build/src/scenes/debug_menu.c.o(.text);
+        build/src/scenes/debug_menu_table.c.o(.text);
         build/src/scenes/debug_flash_mem.c.o(.text);
         build/src/scenes/debug_data_clear.c.o(.text);
         build/src/scenes/debug_asset_test.c.o(.text);
@@ -314,7 +316,8 @@ SECTIONS {
         build/data/scenes/studio/data.c.o(.rodata);
         build/data/scenes/medal_corner/data.c.o(.rodata);
 		build/src/scenes/riq_main_scene.c.o(.rodata);
-        build/data/scenes/debug/data.c.o(.rodata);
+        build/src/scenes/debug_menu.c.o(.rodata);
+        build/src/scenes/debug_menu_table.c.o(.rodata);
 
         # Rodata section of engines. Some of these are likely rodata sections of src/ files
         build/games/sneaky_spirits/engine.c.o(.rodata);
@@ -906,7 +909,8 @@ SECTIONS {
         build/data/scenes/warning/data.c.o(.data);
         build/data/scenes/debug/menu.c.o(.data);
         build/data/scenes/debug/menu.bs.o(.scene);
-        build/data/scenes/debug/data.c.o(.data);
+        build/src/scenes/debug_menu.c.o(.data);
+        build/src/scenes/debug_menu_table.c.o(.data);
         build/data/scenes/debug/flash_mem_test.c.o(.data);
         build/data/scenes/debug/flash_mem_test.bs.o(.scene);
         build/data/scenes/debug/data_clear.c.o(.data);

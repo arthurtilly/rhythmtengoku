@@ -1,21 +1,11 @@
 #include "global.h"
-#include "graphics.h"
-#include "scenes.h"
-#include "src/scenes/debug_menu.h"
+#include "debug_menu.h"
+
+// For readability.
+#define gDebugMenu ((struct DebugMenuSceneData *)gCurrentSceneData)
 
 
-  /* DEBUG MENU - MISC. DATA */
-
-// Sequence Test
-const char D_0805966c[] = "ƒV[ƒPƒ“ƒX@ƒeƒXƒg";
-
-
-// Asterisk
-const char D_08059680[] = "–";
-
-
-// 1/1
-const char D_08059684[] = "‚P^‚P";
+/* DEBUG MENU TABLE */
 
 
 // [D_089ddbe8] Debug Menu Table
@@ -464,9 +454,64 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
 };
 
 
-// Backslash
-const char D_08059f8c[] = "^";
+// [D_089ddf60] Page Number Digits
+char debug_menu_counter_digits[] = "‚O‚P‚Q‚R‚S‚T‚U‚V‚W‚X‚`‚a‚b‚c‚d‚e‚f‚g‚h‚i‚j‚k‚l‚m‚n‚o‚p‚q‚r‚s‚t‚u‚v‚w‚x‚y";
 
 
-// [D_089ddf60] Fullwidth Arabic Numerals and Uppercase Latin Alphabet Characters
-char debug_menu_fullwidth_char[] = "‚O‚P‚Q‚R‚S‚T‚U‚V‚W‚X‚`‚a‚b‚c‚d‚e‚f‚g‚h‚i‚j‚k‚l‚m‚n‚o‚p‚q‚r‚s‚t‚u‚v‚w‚x‚y";
+// Render Text
+void debug_menu_render_table(s32 targetPage, s32 targetRow) {
+    char string[100];
+    s32 totalPages;
+    u32 i, j;
+
+    totalPages = (gDebugMenu->totalEntries - 1) / 8;
+
+    if (targetPage < 0) {
+        targetPage = totalPages;
+    }
+
+    if (targetPage > totalPages) {
+        targetPage = 0;
+    }
+
+    if ((targetPage * 8) + targetRow >= gDebugMenu->totalEntries) {
+        targetRow = (gDebugMenu->totalEntries - 1) - (totalPages * 8);
+    }
+
+    if (targetPage != gDebugMenu->page) {
+        struct PrintedTextAnim *textAnim;
+
+        for (i = 0; i < 8; i++) {
+            if (gDebugMenu->textLines[i] > -1) {
+                delete_bmp_font_obj_text_anim(gDebugMenu->objFont, gDebugMenu->textLines[i]);
+                func_0804d504(D_03005380, gDebugMenu->textLines[i]);
+                gDebugMenu->textLines[i] = -1;
+            }
+        }
+
+        for (j = 0, i = (targetPage * 8); (i < (targetPage * 8) + 8) && (i < gDebugMenu->totalEntries); j++, i++) {
+            textAnim = bmp_font_obj_print_l(gDebugMenu->objFont, debug_menu_entry_table[i].label, 1, 0);
+            gDebugMenu->textLines[j] = func_0804d160(D_03005380, textAnim->frames, 0, 32, (j * 16) + 32, 0x800, 0, 0, 0);
+        }
+
+        delete_bmp_font_obj_text_anim(gDebugMenu->objFont, gDebugMenu->counter);
+        strncpy(string, &debug_menu_counter_digits[(targetPage + 1) * 2], 2);
+        string[2] = '\0';
+        strcat(string, "^");
+        strncat(string, &debug_menu_counter_digits[(totalPages + 1) * 2], 2);
+        textAnim = bmp_font_obj_print_r(gDebugMenu->objFont, string, 1, 4);
+        func_0804d8f8(D_03005380, gDebugMenu->counter, textAnim->frames, 0, 0, 0, 0);
+    }
+
+    gDebugMenu->page = targetPage;
+    gDebugMenu->row = targetRow;
+
+    for (i = 0; i < 8; i++) {
+        if (gDebugMenu->textLines[i] > -1) {
+            func_0804d8c4(D_03005380, gDebugMenu->textLines[i], 0);
+        }
+    }
+
+    func_0804d8c4(D_03005380, gDebugMenu->textLines[gDebugMenu->row], 7);
+    func_0804d5d4(D_03005380, gDebugMenu->cursor, 16, (gDebugMenu->row * 16) + 32);
+}

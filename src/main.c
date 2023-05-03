@@ -91,7 +91,7 @@ void agb_main(void) {
 
 	init_ewram();
 	func_08000224();
-	func_0801e100(); // Init. Debug Menu Scene
+	debug_menu_scene_init_static_var(); // Init. Debug Menu Scene
 	func_0804c778(); // Init. MIDI Sound Library
 	func_0804c340(35, 2, 2, 4); // Set Sound Reverb Levels
 	func_080029d8(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
