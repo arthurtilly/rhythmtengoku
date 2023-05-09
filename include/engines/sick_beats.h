@@ -151,48 +151,47 @@ extern struct Animation *sick_beats_doctor_anim[];
 
 
 // Functions:
-extern void func_08042864(void); // Init Particles
-extern void func_08042934(void); // Update Particles
-extern void func_0804299c(void);
-extern void func_0804299c(void);
-// extern ? func_080429e8(?);
-extern void func_08042b30(u32);
-extern void func_08042b58(void); // Engine Event 0x06 (?)
-extern void func_08042b88(void); // Init Counters
-extern void func_08042c84(u32); // Draw Score
-extern void func_08042cec(u32, u32); // Update Score
-extern void func_08042d4c(u32); // Add Score
-extern void func_08042d74(void); // Init Virus
-extern void func_08042de8(struct SickBeatsVirusData *);
-extern void func_08042e80(void);
-extern void func_08042ea8(u32); // Engine Event 0x00 (Set Virus/Virus Action)
-extern void func_08042ecc(struct SickBeatsPath *); // Engine Event 0x01 (Spawn Virus)
-extern void func_08042f44(u32); // Engine Event 0x02 (Set Hits Required)
-extern void func_08042f58(u32); // Engine Event 0x03 (Set Virus Palette)
-extern void func_08042f6c(void); // Init Forks
-extern void func_08043064(void); // Update Forks
-extern void func_08043124(u32);
-extern void func_0804317c(void); // Init Yellow Microbe
-extern void func_080431c4(void); // Update Yellow Microbe
-extern void func_080432d0(u32, u32, u8 *);
-extern void func_080432d8(u32);
+extern void sick_beats_init_particles(void); // Init Particles
+extern void sick_beats_update_particles(void); // Update Particles
+extern void sick_beats_play_particle_sound(void); // Play Particle Sound
+// extern ? func_080429e8(?); // Process Particle
+extern void sick_beats_process_x_particles(u32); // Process X Particles
+extern void sick_beats_increment_particle_pitch(void); // Engine Event 0x06 (Increment Particle Pitch)
+extern void sick_beats_init_counters(void); // Init Counters
+extern void sick_beats_draw_score(u32); // Draw Score
+extern void sick_beats_update_score(u32, u32); // Update Score
+extern void sick_beats_add_score(u32); // Add Score
+extern void sick_beats_init_virus(void); // Init Virus
+extern void sick_beats_process_virus_data(struct SickBeatsVirusData *); // Process Virus Data
+extern void sick_beats_update_virus(void); // Update Virus
+extern void sick_beats_set_virus(u32); // Engine Event 0x00 (Set Virus/Virus Action)
+extern void sick_beats_spawn_virus(struct SickBeatsPath *); // Engine Event 0x01 (Spawn Virus)
+extern void sick_beats_set_virus_hits(u32); // Engine Event 0x02 (Set Hits Required)
+extern void sick_beats_set_virus_palette(u32); // Engine Event 0x03 (Set Virus Palette)
+extern void sick_beats_init_forks(void); // Init Forks
+extern void sick_beats_update_forks(void); // Update Forks
+extern void sick_beats_set_fork_counter(u32); // Set Fork Counter
+extern void sick_beats_init_yellow_microbe(void); // Init Yellow Microbe
+extern void sick_beats_update_yellow_microbe(void); // Update Yellow Microbe
+extern void sick_beats_yellow_microbe_callback(u32, u32, u8 *); // Yellow Microbe Sprite Callback
+extern void sick_beats_set_yellow_microbe_state(u32); // Set Yellow Microbe State
 extern void sick_beats_init_gfx3(void); // Graphics Init. 3
 extern void sick_beats_init_gfx2(void); // Graphics Init. 2
 extern void sick_beats_init_gfx1(void); // Graphics Init. 1
 extern void sick_beats_engine_start(u32 version); // Game Engine Start
 extern void sick_beats_engine_event_stub(void); // Engine Event 0x07 (STUB)
-extern void func_08043534(void);
+extern void sick_beats_update_doctor(void); // Update Doctor
 extern void sick_beats_engine_update(void); // Game Engine Update
-extern void func_080435e8(s32);
-extern void func_08043634(struct Beatscript *); // Engine Event 0x04 (Set Game Over Beatscript)
-extern void func_08043648(void); // Engine Event 0x05 (Endless Game Over?)
+extern void sick_beats_set_next_doctor_state(s32); // Set Next Doctor State
+extern void sick_beats_set_game_over_beatscript(struct Beatscript *); // Engine Event 0x04 (Set Game Over Beatscript)
+extern void sick_beats_endless_play_game_over(void); // Engine Event 0x05 (Endless Game Over)
 extern void sick_beats_engine_stop(void); // Game Engine Stop
-extern struct SickBeatsVirusData *func_080436a8(u32);
+extern struct SickBeatsVirusData *sick_beats_get_virus_data(u32); // Get Virus Data From ID
 extern void sick_beats_cue_spawn(struct Cue *, struct SickBeatsCue *, u32 unused); // Cue - Spawn
 extern u32  sick_beats_cue_update(struct Cue *, struct SickBeatsCue *, u32 runningTime, u32 duration); // Cue - Update
 extern void sick_beats_cue_despawn(struct Cue *, struct SickBeatsCue *); // Cue - Despawn
-extern void func_08043a2c(u32, u32, struct AffineSprite *);
-extern struct AffineSprite *func_08043a38(struct SickBeatsCue *, struct Animation *, struct SequenceData *);
+extern void sick_beats_fork_callback(u32, u32, struct AffineSprite *); // Fork Sprite End Callback
+extern struct AffineSprite *sick_beats_process_cue(struct SickBeatsCue *, struct Animation *, struct SequenceData *); // Process Cue
 extern void sick_beats_cue_hit(struct Cue *, struct SickBeatsCue *, u32 pressed, u32 released); // Cue - Hit
 extern void sick_beats_cue_barely(struct Cue *, struct SickBeatsCue *, u32 pressed, u32 released); // Cue - Barely
 extern void sick_beats_cue_miss(struct Cue *, struct SickBeatsCue *); // Cue - Miss
