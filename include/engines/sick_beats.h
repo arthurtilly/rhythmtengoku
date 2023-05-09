@@ -18,9 +18,9 @@ struct SickBeatsEngineData {
     u8 version;
     struct SickBeatsYellowMicrobe {
         s16 sprite;
-        u8 unk2; // microbe state?
-        u8 unk3; // Whether the microbe was hurt
-        u16 unk4; // microbe event duration
+        u8 state;
+        u8 isHurt;
+        u16 eventTimer;
     } yellowMicrobe;
     struct SickBeatsForks {
         s16 launcher;
@@ -29,29 +29,29 @@ struct SickBeatsEngineData {
     } forks;
     struct SickBeatsVirus {
         u8 exists[0x100]; // Whether a virus exists
-        s8 unk128; // cue / virus action
-        s8 unk129; // current virus
-        u16 unk12A; // virus counter?
-        u8 unk12C; // amount of hits too?
+        s8 state;
+        s8 current;
+        u16 spawnedCounter;
+        u8 hitsRequired1;
         u8 virusCuePalette;
-        u8 unk12E; // amount of hits
+        u8 hitsRequired;
         u8 virusPalette;
         struct SickBeatsVirusData {
-            struct SickBeatsPath *unk0; // path
-            u8 unk4; // amount of hits
-            u8 unk5; // virus palette
-            s16 unk6; // virus id?
-            s32 unk8; // rest value
-        } unk130[16];
+            struct SickBeatsPath *path;
+            u8 hitsRequired;
+            u8 palette;
+            s16 virusID;
+            s32 rest;
+        } virusData[16];
     } virus;
-    s8 doctorCurrentState; // doctor state?
+    s8 doctorCurrentState;
     s8 doctorNextState;
     u8 unk1F2;
     u16 doctorBeatCounter;
     s16 doctorSprite;
     s16 radioSprite;
-    struct Beatscript *unk1FC;
-    u16 gameEndCounter;
+    struct Beatscript *gameOverBeatscript;
+    u16 gameOverCounter;
     u8 microbeWasHurt; // Whether the microbe was hurt (at least once)
     struct SickBeatsScoreCounter {
         u16 counterSprite;
@@ -68,17 +68,17 @@ struct SickBeatsEngineData {
 
 struct SickBeatsCue {
     u32 unk0_b0:4;
-    u32 unk0_b4:1;
+    u32 isVirusHitOnce:1; // Whether the virus has been hit, at least once
     u32 unk0_b5:1;
-    u32 unk0_b6:5; // cue / virus action 
+    u32 virusState:5;
     u32 unk0_b12:19; 
-    u8 unk4; // current virus
-    struct AffineSprite *unk8; // virus affine sprite
+    u8 currentVirus;
+    struct AffineSprite *virusSprite;
     u32 padC[(0x2c-0xc)/4];
     u8 unk2C;
     u8 unk2D;
-    u8 unk2E; // amount of hits?
-    u8 unk2F; // virus palette
+    u8 hitAmount;
+    u8 virusPalette;
 };
 
 struct VirusAction {
@@ -118,6 +118,25 @@ enum SickBeatsMicrobeStatesEnum {
     SICK_BEATS_MICROBE_STATE_VANISH,
     SICK_BEATS_MICROBE_STATE_VIRUS,
     SICK_BEATS_MICROBE_STATE_RETURN
+};
+
+enum SickBeatsVirusStatesEnum {
+    SICK_BEATS_VIRUS_STATE_ENTER_TUBE,
+    SICK_BEATS_VIRUS_STATE_UP_APPEAR,
+    SICK_BEATS_VIRUS_STATE_UP_DASH_VULN,
+    SICK_BEATS_VIRUS_STATE_UP_DASH_INVULN,
+    SICK_BEATS_VIRUS_STATE_LEFT_APPEAR,
+    SICK_BEATS_VIRUS_STATE_LEFT_DASH_VULN,
+    SICK_BEATS_VIRUS_STATE_LEFT_DASH_INVULN,
+    SICK_BEATS_VIRUS_STATE_DOWN_APPEAR,
+    SICK_BEATS_VIRUS_STATE_DOWN_DASH_VULN,
+    SICK_BEATS_VIRUS_STATE_DOWN_DASH_INVULN,
+    SICK_BEATS_VIRUS_STATE_RIGHT_APPEAR,
+    SICK_BEATS_VIRUS_STATE_RIGHT_DASH_VULN, 
+    SICK_BEATS_VIRUS_STATE_RIGHT_DASH_INVULN,
+    SICK_BEATS_VIRUS_STATE_ATTACK_MICROBE,
+    SICK_BEATS_VIRUS_STATE_INVALID = -1
+
 };
 
 // Engine Definition Data:
@@ -165,7 +184,7 @@ extern void sick_beats_engine_event_stub(void); // Engine Event 0x07 (STUB)
 extern void func_08043534(void);
 extern void sick_beats_engine_update(void); // Game Engine Update
 extern void func_080435e8(s32);
-extern void func_08043634(struct Beatscript *); // Engine Event 0x04 (?)
+extern void func_08043634(struct Beatscript *); // Engine Event 0x04 (Set Game Over Beatscript)
 extern void func_08043648(void); // Engine Event 0x05 (Endless Game Over?)
 extern void sick_beats_engine_stop(void); // Game Engine Stop
 extern struct SickBeatsVirusData *func_080436a8(u32);
