@@ -14,6 +14,8 @@ ifneq ($(shell sha1sum -t baserom.gba), 67f8adacff79c15d028fffd90de3a77d9ad0602d
     $(error Provided ROM is not correct)
 endif
 
+SHELL := /bin/bash
+
 CPP := $(CC) -E
 CPPFLAGS := -I tools/agbcc -I tools/agbcc/include -I . -iquote include -nostdinc -undef
 
@@ -128,7 +130,7 @@ rebuild: clean default
 #---------------------------------------------------------------------------------
 
 $(BUILD_DIRS):
-	$(V)echo "$(GREEN)Creating build directory: $(YELLOW)$@$(NO_COL)"
+	$(V)echo -e "$(GREEN)Creating build directory: $(YELLOW)$@$(NO_COL)"
 	$(V)mkdir -p $@
 
 $(OUTPUT).gba	:	$(OUTPUT).elf
