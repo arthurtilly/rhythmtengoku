@@ -2,18 +2,18 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-// Set the allocation and deallocation functions
+// Set Allocation/Deallocation
 void func_0804ca80(void *memAllocFunc, void *memDeallocFunc) {
     D_0300442c = memAllocFunc;
     D_03004430 = memDeallocFunc;
 }
 
-// Set the allocation by ID function
+// Set Allocation by ID
 void func_0804ca94(void *memAllocIdFunc) {
     D_03004434 = memAllocIdFunc;
 }
 
-// Initialize OAM buffer and D_030053c0
+// Init. Sprite Library
 struct SpriteHandler *func_0804caa0(u16 arg0, void *buffer, u16 spriteAmount, u32 id) {
     struct SpriteHandler *o;
     struct Sprite *s;
@@ -49,20 +49,20 @@ struct SpriteHandler *func_0804caa0(u16 arg0, void *buffer, u16 spriteAmount, u3
     return o;
 }
 
-// Deallocate D_030053c0
+// Uninit. Sprite Handler
 void func_0804cb60(struct SpriteHandler *o) {
     D_03004430(o->sprites);
     D_03004430(o);
 }
 
-// Set buffer and the buffer size
+// Set OAM Buffer
 void func_0804cb80(struct SpriteHandler *o, u16 bufferSize, u32 *buffer) {
     o->objAmount = bufferSize;
     o->unk4 = buffer;
 }
 
 
-// func_0804cb88
+// Render Sprite
 u32 func_0804cb88(struct struct_0804cb88 *arg0) {
     u32 (*func)(struct struct_0804cb88 *);
     u32 i;
@@ -81,7 +81,7 @@ u32 func_0804cb88(struct struct_0804cb88 *arg0) {
     }
 }
 
-// Initialize the struct
+// Init. Sprite Handler
 void func_0804cbcc(struct SpriteHandler *o) {
     u32 i;
     u32 spriteLimit = o->spriteAmount;
@@ -115,7 +115,7 @@ void func_0804cbcc(struct SpriteHandler *o) {
     o->unk22_b0 = 0;
 }
 
-// Validate the given ID
+// Validate ID
 u32 func_0804cc68(struct SpriteHandler *o, s16 id) {
     if (id == -1) { // Invalid sprite ID
         return 1;
@@ -152,8 +152,8 @@ u32 func_0804cc68(struct SpriteHandler *o, s16 id) {
     return 0;
 }
 
-// Handle frame update
-void func_0804cd1c(struct SpriteHandler *o, s16 id, s8 frame, u32 arg3) {
+// Update Frame
+void func_0804cd1c(struct SpriteHandler *o, s16 id, s8 frame, u32 resetDuration) {
     struct Sprite *sprite;
     u32 isFrameValid, updateFrame;
     s8 frameTemp, celAmount, loopFrame;
@@ -163,7 +163,7 @@ void func_0804cd1c(struct SpriteHandler *o, s16 id, s8 frame, u32 arg3) {
     if (func_0804cc68(o, id)) return;
 
     sprite = &o->sprites[id];
-    if (arg3) {
+    if (resetDuration) {
         sprite->unk1C = 0;
     }
 
@@ -181,22 +181,22 @@ void func_0804cd1c(struct SpriteHandler *o, s16 id, s8 frame, u32 arg3) {
         switch (sprite->unk0_b1) {
             case 0: // Regular
                 frameTemp = loopFrame;
-                updateFrame = 1;
+                updateFrame = TRUE;
                 break;
             case 2: // Regular -> End animation
                 frameTemp = loopFrame;
-                updateFrame = 1;
+                updateFrame = TRUE;
                 sprite->unk0_b0 = 0;
                 break;
             case 4: // Regular -> Callback
                 frameTemp = loopFrame;
                 if (sprite->unk20) {
-                    updateFrame = 0;
+                    updateFrame = FALSE;
                     sprite->unk1C += INT_TO_FIXED(sprite->unk8[frameTemp].duration);
                     sprite->unkC = frameTemp;
                     sprite->unk20(o, id, sprite->unk24);
                 } else {
-                    updateFrame = 1;
+                    updateFrame = TRUE;
                 }
                 break;
             case 1: // Infinite Loop
@@ -212,15 +212,15 @@ void func_0804cd1c(struct SpriteHandler *o, s16 id, s8 frame, u32 arg3) {
                     }
                 }
                 sprite->unkD = -sprite->unkD;
-                updateFrame = 1;
+                updateFrame = TRUE;
                 break;
             case 3: // Regular -> Deactivate animation
-                updateFrame = 0;
+                updateFrame = FALSE;
                 func_0804d504(o, id);
                 break;
         }
     } else {
-        updateFrame = 1;
+        updateFrame = TRUE;
     }
 
     if (updateFrame) {
@@ -237,12 +237,12 @@ void func_0804cd1c(struct SpriteHandler *o, s16 id, s8 frame, u32 arg3) {
     }
 }
 
-// Set the current frame
+// Set Frame
 void func_0804cebc(struct SpriteHandler *o, s16 id, s8 frame) {
-    func_0804cd1c(o, id, frame, 1);
+    func_0804cd1c(o, id, frame, TRUE);
 }
 
-// Set the current frame based on duration
+// Set Frame Based on Duration
 void func_0804ced0(struct SpriteHandler *o, s16 id, u8 arg2) {
     s8 frame;
     u32 totalDuration;
@@ -274,7 +274,7 @@ void func_0804ced0(struct SpriteHandler *o, s16 id, u8 arg2) {
 
 // func_0804cf38
 void func_0804cf38(struct SpriteHandler *o, s16 id) {
-    struct Sprite *sprite = o->sprites; // r5
+    struct Sprite *sprite = o->sprites;
     s16 temp_ip = o->unkC;
     s16 temp_r8 = o->unkE;
     u16 temp_r2 = sprite[id].unk6;
@@ -310,25 +310,25 @@ void func_0804cf38(struct SpriteHandler *o, s16 id) {
     o->unkE = temp_r8;
 }
 
-// Unlink current sprite
+// Unlink Sprite
 void func_0804d05c(struct SpriteHandler *o, s16 id) {
     struct Sprite *spr = o->sprites;
-    s16 temp_r2 = spr[id].unk1A;
-    s16 temp_r5 = spr[id].unk18;
+    s16 next = spr[id].unk1A;
+    s16 prev = spr[id].unk18;
 
-    if (temp_r5 > -1) {
-        spr[temp_r5].unk1A = temp_r2;
+    if (prev > -1) {
+        spr[prev].unk1A = next;
     } else {
-        o->unkC = temp_r2;
+        o->unkC = next;
     }
-    if (temp_r2 > -1) {
-        spr[temp_r2].unk18 = temp_r5;
+    if (next > -1) {
+        spr[next].unk18 = prev;
     } else {
-        o->unkE = temp_r5;
+        o->unkE = prev;
     }
 }
 
-// Get the current ID (?)
+// Get Next ID
 s16 func_0804d0a4(struct SpriteHandler *o) {
     s16 id = o->unk10;
     if (id > -1) {
@@ -353,7 +353,7 @@ void func_0804d0d8(struct SpriteHandler *o, s16 id) {
     }
 }
 
-// Get the total amount of cels in an animation
+// Get Cel Amount
 u8 func_0804d11c(struct Animation *anim) {
     u8 i = 0;
     const AnimationCel *cel = anim->cel;
@@ -365,7 +365,7 @@ u8 func_0804d11c(struct Animation *anim) {
     return i;
 }
 
-// Get the total duration of an animation
+// Get Total Duration
 u16 func_0804d140(struct Animation *anim) {
     u16 totalDuration = 0;
     
@@ -376,7 +376,7 @@ u16 func_0804d140(struct Animation *anim) {
     return totalDuration;
 }
 
-// Create a sprite
+// Create New
 s16 func_0804d160(struct SpriteHandler *o, struct Animation *anim, s8 frame, s16 posX, s16 posY, u16 layer, s8 playbackFlag, s8 loopFrame, u16 playbackType) {
     struct Sprite *sprite;
     s16 id = func_0804d0a4(o);
@@ -402,18 +402,18 @@ s16 func_0804d160(struct SpriteHandler *o, struct Animation *anim, s8 frame, s16
     sprite->unk0_b15 = 0;
     sprite->unk20 = 0;
     sprite->unk28 = func_0804d140(anim);
-    sprite->unk30 = (u8 *)D_08bd0cac[0];
-    sprite->unk2C = (u8 *)D_08bd0cac[0];
+    sprite->unk30 = (s16 *)D_08bd0cac[0];
+    sprite->unk2C = (s16 *)D_08bd0cac[0];
     sprite->unk2A = o->unk1C;
     sprite->unk38 = INT_TO_FIXED(1);
     func_0804cf38(o, id);
     func_0804cebc(o, id, frame);
-    sprite->unk0_b0 = (playbackType >> 0xf) ^ 1; // If bit 15 is set = 0; else = 1;
+    sprite->unk0_b0 = (playbackType >> 0xf) ^ 1; // If bit 15 is set = 0; else = 1
     return id;
 }
 
-// Create a sprite with a flag(?)
-s16 func_0804d294(struct SpriteHandler *o, struct Animation *anim, s8 frame, s16 posX, s16 posY, u16 layer, s8 playbackFlag, s8 loopFrame, u16 playbackType, u32 arg9) {
+// Create New (w/ Attributes)
+s16 func_0804d294(struct SpriteHandler *o, struct Animation *anim, s8 frame, s16 posX, s16 posY, u16 layer, s8 playbackFlag, s8 loopFrame, u16 playbackType, u32 attrs) {
     struct Sprite *sprite;
     s16 id = func_0804d0a4(o);
 
@@ -430,7 +430,7 @@ s16 func_0804d294(struct SpriteHandler *o, struct Animation *anim, s8 frame, s16
     sprite->unk6 = layer;
     sprite->unk0_b5 = func_0804d11c(anim);
     sprite->unk0_b1 = playbackType & 0xff;
-    sprite->unk10 = arg9;
+    sprite->unk10 = attrs;
     sprite->unk14 = 0;
     sprite->unk16 = 0;
     sprite->unk17 = -1;
@@ -438,17 +438,17 @@ s16 func_0804d294(struct SpriteHandler *o, struct Animation *anim, s8 frame, s16
     sprite->unk0_b15 = 0;
     sprite->unk20 = 0;
     sprite->unk28 = func_0804d140(anim);
-    sprite->unk30 = (u8 *)D_08bd0cac[0];
-    sprite->unk2C = (u8 *)D_08bd0cac[0];
+    sprite->unk30 = (s16 *)D_08bd0cac[0];
+    sprite->unk2C = (s16 *)D_08bd0cac[0];
     sprite->unk2A = o->unk1C;
     sprite->unk38 = INT_TO_FIXED(1);
     func_0804cf38(o, id);
     func_0804cebc(o, id, frame);
-    sprite->unk0_b0 = (playbackType >> 0xf) ^ 1; // If playbackType is 3 or 1 the result will be 0
+    sprite->unk0_b0 = (playbackType >> 0xf) ^ 1; // If bit 15 is set = 0; else = 1
     return id;
 }
 
-// Copy a sprite to the current (?) sprite
+// Duplicate Sprite
 s16 func_0804d3cc(struct SpriteHandler *o, s16 srcId) {
     s16 destId;
     struct Sprite *destSprite;
@@ -475,7 +475,7 @@ s16 func_0804d3cc(struct SpriteHandler *o, s16 srcId) {
     return destId;
 }
 
-// Copy a sprite 
+// Copy Sprite
 void func_0804d468(struct SpriteHandler *o, s16 destId, s16 srcId) {
     u16 prev;
     s16 i;
@@ -496,7 +496,7 @@ void func_0804d468(struct SpriteHandler *o, s16 destId, s16 srcId) {
     o->sprites[destId].unk2A = prev;
 }
 
-// Deactivate the sprite
+// Disable Sprite
 void func_0804d504(struct SpriteHandler *o, s16 id) {
     D_03004428 = 4;
     if (func_0804cc68(o, id)) return;
@@ -507,7 +507,7 @@ void func_0804d504(struct SpriteHandler *o, s16 id) {
     func_0804d0d8(o, id);
 }
 
-// Set X-Y position and the layer
+// Set X/Y Position and Layer
 void func_0804d55c(struct SpriteHandler *o, s16 id, s16 x, s16 y, u16 layer) {
     D_03004428 = 5;
     if (func_0804cc68(o, id)) return;
@@ -521,7 +521,7 @@ void func_0804d55c(struct SpriteHandler *o, s16 id, s16 x, s16 y, u16 layer) {
     }
 }
 
-// Set the X and Y positions of a sprite
+// Set X/Y Position
 void func_0804d5d4(struct SpriteHandler *o, s16 id, s16 x, s16 y) {
     D_03004428 = 6;
     if (func_0804cc68(o, id)) return;
@@ -530,7 +530,7 @@ void func_0804d5d4(struct SpriteHandler *o, s16 id, s16 x, s16 y) {
     o->sprites[id].unk4 = y;
 }
 
-// Set the X position of a sprite
+// Set X Position
 void func_0804d614(struct SpriteHandler *o, s16 id, s16 x) {
     D_03004428 = 7;
     if (func_0804cc68(o, id)) return;
@@ -538,7 +538,7 @@ void func_0804d614(struct SpriteHandler *o, s16 id, s16 x) {
     o->sprites[id].unk2 = x;
 }
 
-// Set the Y position of a sprite
+// Set Y Position
 void func_0804d648(struct SpriteHandler *o, s16 id, s16 y) {
     D_03004428 = 8;
     if (func_0804cc68(o, id)) return;
@@ -546,7 +546,7 @@ void func_0804d648(struct SpriteHandler *o, s16 id, s16 y) {
     o->sprites[id].unk4 = y;
 }
 
-// Set the layer of a sprite
+// Set Layer
 void func_0804d67c(struct SpriteHandler *o, s16 id, u16 layer) {
     D_03004428 = 9;
     if (func_0804cc68(o, id)) return;
@@ -557,7 +557,7 @@ void func_0804d67c(struct SpriteHandler *o, s16 id, u16 layer) {
     func_0804cf38(o, id);
 }
 
-// func_0804d6cc
+// Get Current Frame
 s8 func_0804d6cc(struct SpriteHandler *o, s16 id) {
     D_03004428 = 10;
     if (func_0804cc68(o, id)) return -1;
@@ -565,7 +565,7 @@ s8 func_0804d6cc(struct SpriteHandler *o, s16 id) {
     return o->sprites[id].unkC;
 }
 
-// Calculate something with animation duration
+// Get Animation Progression (?)
 u8 func_0804d708(struct SpriteHandler *o, s16 id) {
     struct Sprite *sprite;
     struct Animation *anim;
@@ -586,7 +586,7 @@ u8 func_0804d708(struct SpriteHandler *o, s16 id) {
     return (u32)INT_TO_FIXED(calcDuration) / sprite->unk28;
 }
 
-// Start Animation
+// Show/Display Sprite
 void func_0804d770(struct SpriteHandler *o, s16 id, u16 flag) {
     D_03004428 = 12;
     if (func_0804cc68(o, id)) return;
@@ -594,10 +594,7 @@ void func_0804d770(struct SpriteHandler *o, s16 id, u16 flag) {
     o->sprites[id].unk0_b0 = flag;
 }
 
-//////////////////////////////////////////////
-// Some kind of flag manipulation functions
-
-// func_0804d7b4
+// Set Attributes
 void func_0804d7b4(struct SpriteHandler *o, s16 id, u32 arg2) {
     D_03004428 = 13;
     if (func_0804cc68(o, id)) return;
@@ -605,7 +602,7 @@ void func_0804d7b4(struct SpriteHandler *o, s16 id, u32 arg2) {
     o->sprites[id].unk10 = arg2;
 }
 
-// func_0804d7e8
+// OR Attributes
 void func_0804d7e8(struct SpriteHandler *o, s16 id, u32 arg2) {
     D_03004428 = 14;
     if (func_0804cc68(o, id)) return;
@@ -613,7 +610,7 @@ void func_0804d7e8(struct SpriteHandler *o, s16 id, u32 arg2) {
     o->sprites[id].unk10 |= arg2;
 }
 
-// func_0804d820
+// AND Attributes
 void func_0804d820(struct SpriteHandler *o, s16 id, u32 arg2) {
     D_03004428 = 15;
     if (func_0804cc68(o, id)) return;
@@ -621,7 +618,7 @@ void func_0804d820(struct SpriteHandler *o, s16 id, u32 arg2) {
     o->sprites[id].unk10 &= arg2;
 }
 
-// func_0804d858
+// CLEAR Attributes
 void func_0804d858(struct SpriteHandler *o, s16 id, u32 arg2) {
     D_03004428 = 16;
     if (func_0804cc68(o, id)) return;
@@ -629,9 +626,7 @@ void func_0804d858(struct SpriteHandler *o, s16 id, u32 arg2) {
     o->sprites[id].unk10 &= ~arg2;
 }
 
-//////////////////////////////////////////////
-
-// func_0804d890
+// Set Tile Number
 void func_0804d890(struct SpriteHandler *o, s16 id, s16 arg2) {
     D_03004428 = 17;
     if (func_0804cc68(o, id)) return;
@@ -639,7 +634,7 @@ void func_0804d890(struct SpriteHandler *o, s16 id, s16 arg2) {
     o->sprites[id].unk14 = arg2;
 }
 
-// Some kind of palette manipulation function
+// Set Palette
 void func_0804d8c4(struct SpriteHandler *o, s16 id, s8 arg2) {
     D_03004428 = 18;
     if (func_0804cc68(o, id)) return;
@@ -647,9 +642,9 @@ void func_0804d8c4(struct SpriteHandler *o, s16 id, s8 arg2) {
     o->sprites[id].unk16 = arg2;
 }
 
-// Set animation and animation playback attributes
+// Set Animation
 void func_0804d8f8(struct SpriteHandler *o, s16 id, struct Animation * anim,
-                    s8 animFrame, s8 playAnim, s8 loopFrame, u16 playType) {
+                    s8 animFrame, s8 arg4, s8 loopFrame, u16 playType) {
     struct Sprite *sprite;
     D_03004428 = 19;
     if (func_0804cc68(o, id)) return;
@@ -659,31 +654,31 @@ void func_0804d8f8(struct SpriteHandler *o, s16 id, struct Animation * anim,
     sprite->unk8 = anim;
     sprite->unk28 = func_0804d140(anim);
     if (animFrame > -1) {
-        sprite->unkD = playAnim; // bool
+        sprite->unkD = arg4;
         sprite->unkE = loopFrame;
         sprite->unk0_b1 = playType; // enum
         func_0804cebc(o, id, animFrame);
     }
 }
 
-// Set animation and animation playback attributes from a struct
-void func_0804d9b0(struct SpriteHandler *o, s16 id, struct AnimPlaybackAttributes *attr) {
+// Set Animation From Struct
+void func_0804d9b0(struct SpriteHandler *o, s16 id, struct SpritePlaybackData *data) {
     struct Sprite *sprite;
     D_03004428 = 19;
     if (func_0804cc68(o, id)) return;
 
     sprite = &o->sprites[id];
-    sprite->unk0_b5 = func_0804d11c(attr->anim);
-    sprite->unk8 = attr->anim;
-    sprite->unk28 = func_0804d140(attr->anim);
-    if (attr->animFrame > -1) {
-        sprite->unkD = attr->playFlag;
-        sprite->unkE = attr->loopFrame;
-        func_0804cebc(o, id, attr->animFrame);
+    sprite->unk0_b5 = func_0804d11c(data->anim);
+    sprite->unk8 = data->anim;
+    sprite->unk28 = func_0804d140(data->anim);
+    if (data->animFrame > -1) {
+        sprite->unkD = data->unk5;
+        sprite->unkE = data->loopFrame;
+        func_0804cebc(o, id, data->animFrame);
     }
 }
 
-// func_0804da20
+// Set Update Flag
 void func_0804da20(struct SpriteHandler *o, s16 id, u16 arg2) {
     D_03004428 = 20;
     if (func_0804cc68(o, id)) return;
@@ -691,7 +686,7 @@ void func_0804da20(struct SpriteHandler *o, s16 id, u16 arg2) {
     o->sprites[id].unk0_b13 = arg2;
 }
 
-// func_0804da68
+// Set Pause (?) Flag
 void func_0804da68(struct SpriteHandler *o, s16 id, u16 arg2) {
     D_03004428 = 21;
     if (func_0804cc68(o, id)) return;
@@ -699,7 +694,7 @@ void func_0804da68(struct SpriteHandler *o, s16 id, u16 arg2) {
     o->sprites[id].unk0_b15 = arg2;
 }
 
-// Set callback function and its argument
+// Set Callback
 void func_0804daa8(struct SpriteHandler *o, s16 id, void *func, u32 arg) {
     D_03004428 = 22;
     if (func_0804cc68(o, id)) return;
@@ -708,54 +703,54 @@ void func_0804daa8(struct SpriteHandler *o, s16 id, void *func, u32 arg) {
     o->sprites[id].unk24 = arg;
 }
 
-// Set animation playback attributes
-void func_0804dae0(struct SpriteHandler *o, s16 id, s8 playAnim, s8 loopFrame, u16 playType) {
+// Set Playback Data
+void func_0804dae0(struct SpriteHandler *o, s16 id, s8 arg2, s8 loopFrame, u16 playType) {
     struct Sprite *sprite;
     D_03004428 = 23;
     if (func_0804cc68(o, id)) return;
 
     sprite = &o->sprites[id];
-    sprite->unkD = playAnim;
+    sprite->unkD = arg2;
     sprite->unkE = loopFrame;
     sprite->unk0_b1 = playType & 0xff;
 }
 
-// Set OAM Dimensions
-void func_0804db44(struct SpriteHandler *o, s16 id, s16 *dimX, s16 *dimY) {
+// Set X & Y Data Source
+void func_0804db44(struct SpriteHandler *o, s16 id, s16 *dX, s16 *dY) {
     struct Sprite *sprite;
     D_03004428 = 24;
     if (func_0804cc68(o, id)) return;
 
     sprite = &o->sprites[id];
-    sprite->unk2C = (u8 *)dimX;
-    if (!dimX) sprite->unk2C = (u8 *)D_08bd0cac[0];
-    sprite->unk30 = (u8 *)dimY;
-    if (!dimY) sprite->unk30 = (u8 *)D_08bd0cac[0];
+    sprite->unk2C = dX;
+    if (!dX) sprite->unk2C = (s16 *)D_08bd0cac[0];
+    sprite->unk30 = dY;
+    if (!dY) sprite->unk30 = (s16 *)D_08bd0cac[0];
 }
 
-// Set OAM Dimension (X)
-void func_0804db90(struct SpriteHandler *o, s16 id, s16 *dim) {
+// Set X Data Source
+void func_0804db90(struct SpriteHandler *o, s16 id, s16 *d) {
     struct Sprite *sprite;
     D_03004428 = 24;
     if (func_0804cc68(o, id)) return;
 
     sprite = &o->sprites[id];
-    sprite->unk2C = (u8 *)dim;
-    if (!dim) sprite->unk2C = (u8 *)D_08bd0cac[0];
+    sprite->unk2C = d;
+    if (!d) sprite->unk2C = (s16 *)D_08bd0cac[0];
 }
 
-// Set OAM Dimension (Y)
-void func_0804dbd0(struct SpriteHandler *o, s16 id, s16 *dim) {
+// Set Y Data Source
+void func_0804dbd0(struct SpriteHandler *o, s16 id, s16 *d) {
     struct Sprite *sprite;
     D_03004428 = 24;
     if (func_0804cc68(o, id)) return;
 
     sprite = &o->sprites[id];
-    sprite->unk30 = (u8 *)dim;
-    if (!dim) sprite->unk30 = (u8 *)D_08bd0cac[0];
+    sprite->unk30 = d;
+    if (!d) sprite->unk30 = (s16 *)D_08bd0cac[0];
 }
 
-// Set ??? and affine parameters array
+// Set Affine
 void func_0804dc10(struct SpriteHandler *o, s16 id, s32 arg2, s16 *af) {
     struct Sprite *sprite;
     D_03004428 = 25;
@@ -788,7 +783,7 @@ void func_0804dc8c(struct SpriteHandler *o, s16 id, u32 arg2) {
     }
 }
 
-// Set animation speed
+// Set Animation Speed
 void func_0804dcb8(struct SpriteHandler *o, s16 id, u16 speed) {
     struct Sprite *sprite;
     if (id > -1) {
@@ -799,7 +794,7 @@ void func_0804dcb8(struct SpriteHandler *o, s16 id, u16 speed) {
 
 #define AS_OAM_DATA(data) ((struct OamData *)data)
 
-// Get sprite dimension
+// Get Sprite Dimension
 u32 func_0804dcd8(u16 *cel, u32 requestedData) {
     s32 zero;
     s32 bottomEdge, topEdge, rightEdge, leftEdge;
@@ -870,7 +865,7 @@ u32 func_0804dcd8(u16 *cel, u32 requestedData) {
 }
 #undef AS_OAM_DATA
 
-// Get sprite attribute
+// Get Sprite Data
 s32 func_0804ddb0(struct SpriteHandler *o, s16 id, u32 attr) {
     s32 returnValue;
     struct Sprite *sprite;
@@ -964,7 +959,7 @@ s32 func_0804ddb0(struct SpriteHandler *o, s16 id, u32 attr) {
     return returnValue;
 }
 
-// func_0804df4c
+// Set Callback Frame
 void func_0804df4c(struct SpriteHandler *o, s16 id, s8 arg2) {
     struct Sprite *sprite;
     if (id > -1) {
@@ -973,12 +968,12 @@ void func_0804df4c(struct SpriteHandler *o, s16 id, s8 arg2) {
     }
 }
 
-// func_0804df6c
+// Set Special Callback Frame
 void func_0804df6c(struct SpriteHandler *o, s16 id) {
     func_0804df4c(o, id, -2);
 }
 
-// func_0804df80
+// Set Values by Mem. ID
 void func_0804df80(struct SpriteHandler *o, u16 id, u32 value, u32 arg) {
     s16 r3 = o->unkC;
 
@@ -1028,91 +1023,93 @@ void func_0804df80(struct SpriteHandler *o, u16 id, u32 value, u32 arg) {
 // func_0804e0a0
 u16 func_0804e0a0(struct SpriteHandler *o) {
     if (++o->unk1E == 0) {
-        o->unk1E = 0x100;
+        o->unk1E = 256;
     }
     return o->unk1E;
 }
 
-// func_0804e0bc
+// Set Current Memory ID
 void func_0804e0bc(struct SpriteHandler *o, u16 arg1) {
     o->unk1C = arg1;
 }
 
-// func_0804e0c0
+// Get Current Memory ID
 u16 func_0804e0c0(struct SpriteHandler *o) {
     return o->unk1C;
 }
 
-// func_0804e0c4
+// Disable Sprite by Mem. ID
 void func_0804e0c4(struct SpriteHandler *o, u16 id) {
     func_0804df80(o, id, 0, 0);
 }
 
-// func_0804e0d8
+// Show/Display Sprite by Mem. ID
 void func_0804e0d8(struct SpriteHandler *o, u16 id, u16 arg2) {
     func_0804df80(o, id, 1, arg2);
 }
 
-// func_0804e0f0
+// Set Update Flag by Mem. ID
 void func_0804e0f0(struct SpriteHandler *o, u16 id, u16 arg2) {
     func_0804df80(o, id, 2, arg2);
 }
 
-// func_0804e108
+// Set Attributes by Mem. ID
 void func_0804e108(struct SpriteHandler *o, u16 id, u32 arg2) {
     func_0804df80(o, id, 3, arg2);
 }
 
-// func_0804e11c
+// OR Attributes by Mem. ID
 void func_0804e11c(struct SpriteHandler *o, u16 id, u32 arg2) {
     func_0804df80(o, id, 4, arg2);
 }
 
-// func_0804e130
+// AND Attributes by Mem. ID
 void func_0804e130(struct SpriteHandler *o, u16 id, u32 arg2) {
     func_0804df80(o, id, 5, arg2);
 }
 
-// func_0804e144
+// CLEAR Attributes by Mem. ID
 void func_0804e144(struct SpriteHandler *o, u16 id, u32 arg2) {
     func_0804df80(o, id, 6, arg2);
 }
 
-// func_0804e158
+// Set Tile Number by Mem. ID
 void func_0804e158(struct SpriteHandler *o, u16 id, s16 arg2) {
     func_0804df80(o, id, 7, arg2);
 }
 
-// func_0804e170
+// Set Palette by Mem. ID
 void func_0804e170(struct SpriteHandler *o, u16 id, s8 arg2) {
     func_0804df80(o, id, 8, arg2);
 }
 
-// func_0804e188
-void func_0804e188(struct SpriteHandler *o, u16 id, s16 *arg2, s16 *arg3) {
-    s16 *arg[2] = {arg2, arg3};
+// Set X & Y Data Source by Mem. ID
+void func_0804e188(struct SpriteHandler *o, u16 id, s16 *xController, s16 *yController) {
+    s16 *arg[2] = {xController, yController};
     func_0804df80(o, id, 9, (uintptr_t)&arg);
 }
 
-// func_0804e1a4
+// Set Animation Speed by Mem. ID
 void func_0804e1a4(struct SpriteHandler *o, u16 id, u16 arg2) {
     func_0804df80(o, id, 10, arg2);
 }
 
-// func_0804e1bc
+// Set Pause Sprite Flag
 void func_0804e1bc(struct SpriteHandler *o, u16 arg1) {
     o->unk1A = arg1;
 }
 
-// func_0804e1c0
-void func_0804e1c0(struct SpriteHandler *o, u16 arg1, u16 arg2) {
-    o->unk14 = arg1;
-    o->unk16 = arg2;
+// Set Global X/Y Adjustment
+void func_0804e1c0(struct SpriteHandler *o, u16 x, u16 y) {
+    o->unk14 = x;
+    o->unk16 = y;
 }
 
+// https://decomp.me/scratch/THxdI
+// Update Sprite Library
 #include "asm/lib_0804ca80/asm_0804e1c8.s"
 
-// Get the amount of used(?) sprites 
+// Get Amount of ?? Sprites
 s32 func_0804e3b0(struct SpriteHandler *o) {
     s32 count = 0;
     struct Sprite *sprites = o->sprites;
@@ -1125,7 +1122,7 @@ s32 func_0804e3b0(struct SpriteHandler *o) {
     return count;
 }
 
-// func_0804e3e0
+// Get Amount of Sprites with Mem. ID
 s32 func_0804e3e0(struct SpriteHandler *o, u16 arg1) {
     s32 count = 0;
     struct Sprite *sprite = o->sprites;

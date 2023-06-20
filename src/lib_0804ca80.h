@@ -27,60 +27,52 @@ struct OamCel {
     struct OamData data[0]; // Data
 };
 
-
-struct AnimPlaybackAttributes {
-    struct Animation *anim;
-    s8 animFrame;
-    u8 playFlag;
-    u8 loopFrame;
-};
-
 struct struct_0804cb88 {
-    struct OamCel *unk0;   // current cel
-    u32 *unk4;    // oam buffer
-    u8 unk8;      // 
-    u8 unk9;      // data amount in current cel
-    u16 unkA;     // x
-    s8 unkC;      // 
-    s8 unkD;      // 
-    u16 unkE;     // y
-    u32 unk10;    // flags
-    u32 unk14;    // something to do with palettes
-    s16 unk18[4]; // affine params
-    u8 unk20[24]; // oam dimension array
-    u32 unk38;    // oam obj limit
+    struct OamCel *unk0;   // Current Cel
+    u32 *unk4;    // OAM Buffer
+    u8 unk8;      // ?
+    u8 unk9;      // Cel Data Amount
+    u16 unkA;     // X
+    s8 unkC;      // ?
+    s8 unkD;      // ?
+    u16 unkE;     // Y
+    u32 unk10;    // Attributes 1 & 0
+    u32 unk14;    // Attribute 2
+    s16 unk18[4]; // Affine Params
+    u8 unk20[24]; // OAM Dimension
+    u32 unk38;    // OAMOBJ Limit
 };
 
 struct SpriteHandler;
-struct Sprite { // Size = 0x3c
-    u16 unk0_b0:1;  // Animation Start flag
-    u16 unk0_b1:4;  // Animation playback type (TODO: enum)
-    u16 unk0_b5:8;  // Total cel amount
-    u16 unk0_b13:1; // Whether the sprite shouldn't be updated
-    u16 unk0_b14:1; // Flag for whenever a sprite exists
-    u16 unk0_b15:1; // Whether the sprite is paused
-    s16 unk2;    // X Position 
-    s16 unk4;    // Y Position
-    u16 unk6;    // Layer
-    struct Animation *unk8; // Animation pointer
-    s8 unkC;     // Current frame?
-    s8 unkD;     // Animation playback flag ?? (1 = play anim; 0 = don't play anim)
-    s8 unkE;     // Start frame of a loop
-    u32 unk10; // Attributes 1 & 0
-    s16 unk14; // Tile Number
-    u8 unk16;    // Palette
-    s8 unk17; // Callback Frame
-    s16 unk18; // Previous ID
-    s16 unk1A; // Next ID
-    s16 unk1C;  // Current frame's duration
-    void (*unk20)(struct SpriteHandler *, s16, u32, ...); // Callback function
-    u32 unk24;   // Callback function argument
-    u16 unk28;   // Total duration
-    u16 unk2A;  // Assigned ID
-    u8 *unk2C;   // OAM Dimensions pointer (X)
-    u8 *unk30;   // OAM Dimensions pointer (Y)
-    s16 *unk34;  // Affine parameters
-    u16 unk38;   // Animation speed
+struct Sprite {
+    u16 unk0_b0:1;  // Display Sprite Flag
+    u16 unk0_b1:4;  // Animation Playback Type (TODO: enum)
+    u16 unk0_b5:8;  // Total Cel Amount
+    u16 unk0_b13:1; // Update Flag
+    u16 unk0_b14:1; // Valid Sprite Flag
+    u16 unk0_b15:1; // Pause Flag (?)
+    s16 unk2;   // X Position 
+    s16 unk4;   // Y Position
+    u16 unk6;   // Layer
+    struct Animation *unk8; // Animation
+    s8 unkC;    // Current Frame
+    s8 unkD;    // ?
+    s8 unkE;    // Loop Frame
+    u32 unk10;  // Attributes 1 & 0
+    s16 unk14;  // Tile Number
+    u8 unk16;   // Palette
+    s8 unk17;   // Callback Frame
+    s16 unk18;  // Previous ID
+    s16 unk1A;  // Next ID
+    s16 unk1C;  // Current Frame Duration
+    void (*unk20)(struct SpriteHandler *, s16, u32, ...); // Callback
+    u32 unk24;  // Callback Argument
+    u16 unk28;  // Total Duration
+    u16 unk2A;  // Memory ID
+    s16 *unk2C; // X Data Source
+    s16 *unk30; // Y Data Source
+    s16 *unk34; // Affine Parameters
+    u16 unk38;  // Animation Speed
 };
 
 struct SpriteHandler { // Size = 0x28
@@ -88,15 +80,15 @@ struct SpriteHandler { // Size = 0x28
     /*0x2*/ u16 spriteAmount;   // Sprite Limit (100)
     u32 *unk4;          // Pointer to the OAM buffer
     /*0x8*/ struct Sprite *sprites; // Sprites
-    s16 unkC;
-    s16 unkE;
-    s16 unk10;
+    s16 unkC; // Global Next ID?
+    s16 unkE; // Global Previous ID?
+    s16 unk10; // Next Free Sprite ID
     s16 unk12;
-    u16 unk14;
-    u16 unk16;
+    u16 unk14; // Global X Adjustment
+    u16 unk16; // Global Y Adjustment
     u16 unk18;
-    u16 unk1A; // Game pause flag?
-    u16 unk1C;
+    u16 unk1A; // Sprite Pause Flag
+    u16 unk1C; // Current Memory ID
     u16 unk1E;
     u16 unk20;
     u32 unk22_b0:4; // Likely an error handling enum
@@ -136,7 +128,7 @@ extern void func_0804d0d8(struct SpriteHandler *, s16);
 extern u8   func_0804d11c(struct Animation *);
 extern u16  func_0804d140(struct Animation *);
 extern s16  func_0804d160(struct SpriteHandler *, struct Animation *, s8, s16, s16, u16, s8, s8, u16); // Create New
-extern s16  func_0804d294(struct SpriteHandler *, struct Animation *, s8, s16, s16, u16, s8, s8, u16, u32); // Create New (w/ flag)
+extern s16  func_0804d294(struct SpriteHandler *, struct Animation *, s8, s16, s16, u16, s8, s8, u16, u32); // Create New (w/ Attributes)
 extern s16  func_0804d3cc(struct SpriteHandler *, s16);
 extern void func_0804d468(struct SpriteHandler *, s16, s16);
 extern void func_0804d504(struct SpriteHandler *, s16);
@@ -155,7 +147,7 @@ extern void func_0804d858(struct SpriteHandler *, s16 ,u32);
 extern void func_0804d890(struct SpriteHandler *, s16, s16);
 extern void func_0804d8c4(struct SpriteHandler *, s16, s8); // Set Palette
 extern void func_0804d8f8(struct SpriteHandler *, s16, struct Animation *, s8, s8, s8, u16); // Set Animation
-extern void func_0804d9b0(struct SpriteHandler *, s16, struct AnimPlaybackAttributes *);
+extern void func_0804d9b0(struct SpriteHandler *, s16, struct SpritePlaybackData *); // Set Animation From Struct
 extern void func_0804da20(struct SpriteHandler *, s16, u16);
 extern void func_0804da68(struct SpriteHandler *, s16, u16);
 extern void func_0804daa8(struct SpriteHandler *, s16, void *, u32);

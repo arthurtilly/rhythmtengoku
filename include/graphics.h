@@ -163,9 +163,9 @@ extern struct SpriteHandler *D_03005380; // gSpriteHandler
 
 struct SpritePlaybackData {
     struct Animation *anim;
-    s8 unk4;
+    s8 animFrame;
     u8 unk5;
-    u8 unk6;
+    u8 loopFrame;
 };
 
 
