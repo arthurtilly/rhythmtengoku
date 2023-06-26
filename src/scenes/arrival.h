@@ -5,7 +5,9 @@
 
 // Scene Types:
 struct ArrivalSceneData {
-    /* add fields here */
+    u32 scriptIsReady;
+    s16 dialogOptions;
+    s8 selectedOption;
 };
 
 
@@ -20,13 +22,13 @@ extern struct Animation *arrival_option_anim[];
 
 
 // Functions:
-// extern ? func_08010490(?); // Initialise Static Variables
-// extern ? func_08010494(?); // Graphics Init. 3
-// extern ? func_080104c0(?); // Graphics Init. 2
-// extern ? func_080104f0(?); // Graphics Init. 1
-// extern ? func_0801052c(?); // Scene Start
-// extern ? func_08010688(?); // Scene Update (Paused)
-// extern ? func_0801068c(?); // Scene Update (Active)
-// extern ? func_0801075c(?); // ?
-// extern ? func_08010778(?); // Scene Stop
-// extern ? func_08010788(?); // ? (Script Function)
+extern void arrival_scene_init_static_var(void);
+extern void arrival_scene_init_gfx3(void);
+extern void arrival_scene_init_gfx2(void);
+extern void arrival_scene_init_gfx1(void);
+extern void arrival_scene_start(void *sVar, s32 dArg);
+extern void arrival_scene_paused(void *sVar, s32 dArg);
+extern void arrival_scene_update(void *sVar, s32 dArg);
+extern u32 arrival_scene_can_receive_inputs(void);
+extern void arrival_scene_stop(void *sVar, s32 dArg);
+extern void arrival_scene_show_options(void);
