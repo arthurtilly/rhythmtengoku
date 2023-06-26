@@ -24,7 +24,7 @@ SECTIONS {
 		build/src/code_0800b778.c.o(.bss);
 		build/src/affine_sprite.c.o(.bss);
 		build/src/code_080102d0.c.o(.bss);
-		build/src/scenes/library.c.o(.bss);
+		build/src/scenes/arrival.c.o(.bss);
 		build/src/scenes/cafe.c.o(.bss);
 		build/src/scenes/data_check.c.o(.bss);
 		build/src/scenes/drum_replay.c.o(.bss);
@@ -156,7 +156,7 @@ SECTIONS {
 		build/src/code_0800b778.c.o(.text);
         build/src/affine_sprite.c.o(.text);
         build/src/code_080102d0.c.o(.text);
-		build/src/scenes/library.c.o(.text);
+		build/src/scenes/arrival.c.o(.text);
 		build/src/scenes/cafe.c.o(.text);
 		build/src/scenes/data_check.c.o(.text);
 		build/src/scenes/drum_replay.c.o(.text);
@@ -288,7 +288,7 @@ SECTIONS {
 		build/asm/boot.s.o(.rodata);
         build/data/bitmap_font_data.c.o(.rodata);
         build/data/beatscript_scene_data.c.o(.rodata);
-		build/src/scenes/library.c.o(.rodata);
+		build/src/scenes/arrival.c.o(.rodata);
         build/data/scenes/cafe/dialogue.c.o(.rodata);
         build/src/scenes/cafe.c.o(.rodata);
 		build/src/scenes/data_check.c.o(.rodata);
@@ -591,8 +591,8 @@ SECTIONS {
         build/games/rat_race/graphics/rat_race_anim.c.o(.data);
         build/games/rat_race/graphics/rat_race_pal.c.o(.data);
         build/graphics/epilogues/epilogue_bg_pal.c.o(.data);
-        build/graphics/library/library_anim.c.o(.data);
-        build/graphics/library/library_pal.c.o(.data);
+        build/graphics/arrival/arrival_anim.c.o(.data);
+        build/graphics/arrival/arrival_pal.c.o(.data);
         build/graphics/cafe/cafe_anim.c.o(.data);
         build/graphics/cafe/cafe_pal.c.o(.data);
         build/graphics/medal_corner/endless_games_menu_anim.c.o(.data);
@@ -760,8 +760,8 @@ SECTIONS {
         build/data/beatscript_scene_data.c.o(.data);
         build/data/sound_tempo_table.c.o(.data);
 
-        build/data/scenes/library/data.c.o(.data);
-        build/data/scenes/library/script.bs.o(.scene);
+        build/data/scenes/arrival/data.c.o(.data);
+        build/data/scenes/arrival/script.bs.o(.scene);
         build/data/scenes/cafe/dialogue.c.o(.data);
         build/src/scenes/cafe.c.o(.data);
         build/data/scenes/cafe/scene.c.o(.data);

@@ -147,8 +147,8 @@ u32 func_0801d9d0(void) {
         return FALSE;
     }
 
-    pause_all_soundplayers(TRUE); // Pause Sound
-    func_0804e1bc(D_03005380, 1); // Pause Sprites..?
+    pause_all_soundplayers(TRUE);
+    func_0804e1bc(D_03005380, 1);
     for (i = 0; i < 2; i++) {
         task_pool_pause_id(i+1, TRUE);
     }
@@ -168,8 +168,8 @@ void func_0801da48(void) {
 
     switch (gPauseMenu.data->update()) {
         case PAUSE_MENU_SELECTION_CONTINUE:
-            pause_all_soundplayers(FALSE); // Unpause Sound
-            func_0804e1bc(D_03005380, 0); // Unpause Sprites..?
+            pause_all_soundplayers(FALSE);
+            func_0804e1bc(D_03005380, 0);
             for (i = 0; i < 2; i++) {
                 task_pool_pause_id(i+1, FALSE);
             }
@@ -178,8 +178,8 @@ void func_0801da48(void) {
 
         case PAUSE_MENU_SELECTION_QUIT:
             func_080070c4(0x20, 0);
-            pause_all_soundplayers(FALSE); // Unpause Sound
-            stop_all_soundplayers(); // Fade-Out & Stop Sound
+            pause_all_soundplayers(FALSE);
+            stop_all_soundplayers();
             play_sound(gPauseMenu.data->quitSfx);
             gPauseMenu.state = PAUSE_STATE_STOP;
             break;
@@ -191,7 +191,7 @@ void func_0801da48(void) {
 u32 func_0801dabc(void) {
     if (!D_03004b10.unk854_3) return FALSE;
 
-    stop_soundplayer(D_030053c0.musicPlayer); // Stop Music
+    stop_soundplayer(D_030053c0.musicPlayer);
     task_pool_pause(FALSE);
     stop_beatscript_scene();
     return TRUE;
@@ -519,7 +519,7 @@ void soft_reset_scene_stop(void *endParam) {
 
 // Start
 void soft_reset_scene_start(void *initParam) {
-    func_080013e8(0);
+    func_080013e8(NULL);
     func_0804e1bc(D_03005380, 1);
     gSoftReset->state = 0;
 }
@@ -568,5 +568,5 @@ struct Scene scene_soft_reset = {
     /* Start  */ soft_reset_scene_start,  0,
     /* Update */ soft_reset_scene_update, 0,
     /* Stop   */ soft_reset_scene_stop,   0,
-    /* Memory */ 0x4
+    /* Memory */ sizeof(struct SoftResetSceneData)
 };

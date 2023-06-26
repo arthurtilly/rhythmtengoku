@@ -7,7 +7,7 @@ thumb_func_start func_0801052c \n\
 /* 0801052e */ MOV R7, R8 @ Set R7 to R8 \n\
 /* 08010530 */ PUSH {R7} \n\
 /* 08010532 */ SUB SP, 0x14 \n\
-/* 08010534 */ LDR R0, =library_error_text \n\
+/* 08010534 */ LDR R0, =arrival_error_text \n\
 /* 08010536 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08010538 */ BL get_current_mem_id \n\
 /* 0801053c */ LSLS R0, R0, 0x10 \n\
@@ -35,7 +35,7 @@ branch_08010564: \n\
 /* 0801056e */ BL func_080104f0 \n\
 /* 08010572 */ LDR R0, =D_03005380 \n\
 /* 08010574 */ LDR R0, [R0] \n\
-/* 08010576 */ LDR R1, =anim_library_option1 \n\
+/* 08010576 */ LDR R1, =anim_arrival_option1 \n\
 /* 08010578 */ MOVS R2, 0x90 @ Set R2 to 0x90 \n\
 /* 0801057a */ STR R2, [SP] \n\
 /* 0801057c */ MOVS R2, 0x80 @ Set R2 to 0x80 \n\

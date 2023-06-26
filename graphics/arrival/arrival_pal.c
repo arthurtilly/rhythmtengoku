@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0890011c] Library ("Arrival") Scene Palette
-Palette library_pal[] = {
+Palette arrival_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x409080),
         /* 01 */ TO_RGB555(0x000000),

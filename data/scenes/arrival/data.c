@@ -1,14 +1,14 @@
 #include "global.h"
 #include "graphics.h"
-#include "src/scenes/library.h"
-#include "graphics/library/library_graphics.h"
+#include "src/scenes/arrival.h"
+#include "graphics/arrival/arrival_graphics.h"
 
 
   /* RIQ LIBRARY - SCENE DATA */
 
 
 // [D_089cd1a4] Graphics Table
-struct GraphicsTable library_gfx_table[] = {
+struct GraphicsTable arrival_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &D_08cbed78,
         /* Dest. */ BG_TILESET_BASE(0),
@@ -25,12 +25,12 @@ struct GraphicsTable library_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ library_pal,
+        /* Src.  */ arrival_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x200
     },
     /* OBJ Palette */ {
-        /* Src.  */ library_pal,
+        /* Src.  */ arrival_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x200
     },
@@ -38,15 +38,15 @@ struct GraphicsTable library_gfx_table[] = {
 };
 
 // [D_089cd1ec] Buffered Textures List
-struct CompressedGraphics *library_buffered_textures[] = {
+struct CompressedGraphics *arrival_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
 // [D_089cd1f0] "Error" Text
-char library_error_text[] = "エラー";
+char arrival_error_text[] = "エラー";
 
 // [D_089cd1f8] Animations
-struct Animation *library_option_anim[] = {
-    /* 0x00 */ anim_library_option1,
-    /* 0x01 */ anim_library_option2
+struct Animation *arrival_option_anim[] = {
+    /* 0x00 */ anim_arrival_option1,
+    /* 0x01 */ anim_arrival_option2
 };

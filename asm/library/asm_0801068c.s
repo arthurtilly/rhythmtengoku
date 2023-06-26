@@ -55,7 +55,7 @@ branch_080106c6: \n\
 /* 080106ea */ LDR R1, [R5] \n\
 /* 080106ec */ MOVS R3, 0x4 @ Set R3 to 0x4 \n\
 /* 080106ee */ LDRSH R1, [R1, R3] \n\
-/* 080106f0 */ LDR R3, =library_option_anim \n\
+/* 080106f0 */ LDR R3, =arrival_option_anim \n\
 /* 080106f2 */ LSLS R2, R2, 0x2 \n\
 /* 080106f4 */ ADDS R2, R2, R3 @ Set R2 to R2 + R3 \n\
 /* 080106f6 */ LDR R2, [R2] \n\

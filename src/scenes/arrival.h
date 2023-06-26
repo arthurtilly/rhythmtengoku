@@ -4,7 +4,7 @@
 #include "scenes.h"
 
 // Scene Types:
-struct LibrarySceneData {
+struct ArrivalSceneData {
     /* add fields here */
 };
 
@@ -13,10 +13,10 @@ struct LibrarySceneData {
 
 
 // Scene Data:
-extern struct GraphicsTable library_gfx_table[];
-extern struct CompressedGraphics *library_buffered_textures[];
-extern char library_error_text[];
-extern struct Animation *library_option_anim[];
+extern struct GraphicsTable arrival_gfx_table[];
+extern struct CompressedGraphics *arrival_buffered_textures[];
+extern char arrival_error_text[];
+extern struct Animation *arrival_option_anim[];
 
 
 // Functions:

@@ -1,7 +1,10 @@
 #include "global.h"
-#include "library.h"
+#include "arrival.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
+
+// For readability.
+#define gArrival ((struct ArrivalSceneData *)gCurrentSceneData)
 
 
 /* RHYTHM LIBRARY (ARRIVAL) */
