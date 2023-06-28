@@ -66,7 +66,7 @@ const char *dataroom_listbox_get_item_name(u32 item) {
     }
 
     return D_030046a8->data.readingMaterialUnlocked[item]
-        ? reading_material_table[item].title : D_08050bc8;
+        ? reading_material_table[item].title : "???";
 }
 
 
@@ -239,7 +239,6 @@ void dataroom_scene_update(void *sVar, s32 dArg) {
 }
 
 
-
 // Communicate with Script
 u32 dataroom_scene_can_receive_inputs(void) {
     if (gDataRoom->scriptIsReady) {
@@ -256,10 +255,3 @@ void dataroom_scene_stop(void *sVar, s32 dArg) {
     func_08008628();
     func_08004058();
 }
-
-
-/* DATA */
-
-
-// ???
-const char D_08050bc8[] = "???";
