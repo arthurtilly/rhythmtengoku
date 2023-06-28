@@ -8,6 +8,7 @@ script script_scene_options_menu
     set_music_volume 70
     run scene_set_music_player_by_sound, s_manza_bgm_seqData
     pause_scene
+
     run func_08007324, TRUE
     fade_screen_in 12, BLACK
     rest 12
@@ -26,10 +27,10 @@ script script_scene_options_menu
 
 @ Local Scene
 struct sub_scene_options_menu
-    /* Start  */ .word func_08016364, 0
-    /* Paused */ .word func_080165f0, 0
-    /* Active */ .word func_080169b8, 0
-    /* Stop   */ .word func_08016a18, 0
+    /* Start  */ .word options_scene_start,     0
+    /* Paused */ .word options_scene_paused,    0
+    /* Active */ .word options_scene_update,    0
+    /* Stop   */ .word options_scene_stop,      0
     /* Script */ .word script_scene_options_menu
 endstruct
 

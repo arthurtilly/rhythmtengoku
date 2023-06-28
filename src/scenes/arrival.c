@@ -47,7 +47,7 @@ void arrival_scene_init_gfx1(void) {
 // Scene Start
 void arrival_scene_start(void *sVar, s32 dArg) {
     struct TextPrinter *printer;
-    const char *title = arrival_error_text;
+    const char *title = arrival_default_title;
     char *message = mem_heap_alloc_id(get_current_mem_id(), 0x100);
     struct Scene *source;
 

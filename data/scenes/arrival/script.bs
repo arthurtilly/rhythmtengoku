@@ -24,10 +24,10 @@ script script_scene_arrival
 
 @ Local Scene
 struct sub_scene_arrival
-    /* Start  */ .word arrival_scene_start, 0
-    /* Paused */ .word arrival_scene_paused, 0
-    /* Active */ .word arrival_scene_update, 0
-    /* Stop   */ .word arrival_scene_stop, 0
+    /* Start  */ .word arrival_scene_start,     0
+    /* Paused */ .word arrival_scene_paused,    0
+    /* Active */ .word arrival_scene_update,    0
+    /* Stop   */ .word arrival_scene_stop,      0
     /* Script */ .word script_scene_arrival
 endstruct
 

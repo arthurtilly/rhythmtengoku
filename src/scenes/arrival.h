@@ -17,7 +17,7 @@ struct ArrivalSceneData {
 // Scene Data:
 extern struct GraphicsTable arrival_gfx_table[];
 extern struct CompressedGraphics *arrival_buffered_textures[];
-extern char arrival_error_text[];
+extern char arrival_default_title[];
 extern struct Animation *arrival_option_anim[];
 
 

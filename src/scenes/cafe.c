@@ -69,8 +69,6 @@ enum CafeOptionResultsEnum {
     /* 01 */ CAFE_OPTION_NO
 };
 
-extern struct SequenceData s_f_cafe_send_mes_seqData;
-
 
 /* CAFE */
 

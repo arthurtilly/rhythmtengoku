@@ -42,8 +42,8 @@ struct CompressedGraphics *arrival_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
 };
 
-// [D_089cd1f0] "Error" Text
-char arrival_error_text[] = "エラー";
+// [D_089cd1f0] "Error" Title
+char arrival_default_title[] = "エラー";
 
 // [D_089cd1f8] Animations
 struct Animation *arrival_option_anim[] = {
