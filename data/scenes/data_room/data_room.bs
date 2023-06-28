@@ -7,6 +7,7 @@ script script_scene_data_room
     set_tempo 130
     set_music_volume 0x100
     pause_scene
+
     play_music s_siryo_bgm_seqData
     rest 12
     run func_08007324, TRUE
@@ -25,10 +26,10 @@ script script_scene_data_room
 
 @ Local Scene
 struct sub_scene_data_room
-    /* Start  */ .word func_080120e4, 0
-    /* Paused */ .word func_08012214, 0
-    /* Active */ .word func_080122a8, 0
-    /* Stop   */ .word func_080123fc, 0
+    /* Start  */ .word dataroom_scene_start,    0
+    /* Paused */ .word dataroom_scene_paused,   0
+    /* Active */ .word dataroom_scene_update,   0
+    /* Stop   */ .word dataroom_scene_stop,     0
     /* Script */ .word script_scene_data_room
 endstruct
 

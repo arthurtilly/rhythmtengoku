@@ -24,7 +24,7 @@ extern void func_0804ced0(struct SpriteHandler *, s16, u8);
 // extern ? func_0804d140(?);
 extern u32  func_0804d160(struct SpriteHandler *, struct Animation *, s8, s16, s16, u16, s8, s8, u16); // Create New
 extern u32  func_0804d294(struct SpriteHandler *, struct Animation *, s8, s16, s16, u16, s8, s8, u16, u32); // Create New (w/ additional parameter)
-// extern ? func_0804d3cc(?);
+extern s16  func_0804d3cc(struct SpriteHandler *, s16);
 // extern ? func_0804d468(?);
 // extern ? func_0804d504(?);
 extern void func_0804d55c(struct SpriteHandler *, s16, s16, s16, u16); // Set X/Y Position and Layer

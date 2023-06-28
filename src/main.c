@@ -25,8 +25,8 @@ void init_scene_static_var(void) {
 	main_menu_init_static_var();
 	gameplay_init_scene_static_var();
 	arrival_scene_init_static_var();
-	func_08011ec0(); // Rhythm Data Room
-	studio_scene_init_static_var(); // Studio
+	dataroom_scene_init_static_var();
+	studio_scene_init_static_var();
 	func_0801d580(); // Medal Corner Menus
 	cafe_scene_init_static_var();
 }
