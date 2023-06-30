@@ -7,7 +7,7 @@ script script_scene_results_ver_score
     set_tempo 140
     pause_scene
 
-    run func_08019188
+    run score_results_reveal
     run func_08007324 TRUE
     rest 24
     rest 24

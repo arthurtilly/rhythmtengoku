@@ -24,12 +24,12 @@
 /* RESULTS (RANK-TYPE) */
 
 
-// RANK Initialise Static Variables
+// Init. Static Variables
 void rank_results_scene_init_static_var(void) {
 }
 
 
-// RANK Graphics Init. 3
+// Graphics Init. 3
 void rank_results_scene_init_gfx3(void) {
     u32 data;
 
@@ -39,7 +39,7 @@ void rank_results_scene_init_gfx3(void) {
 }
 
 
-// RANK Graphics Init. 2
+// Graphics Init. 2
 void rank_results_scene_init_gfx2(void) {
     u32 data;
 
@@ -49,15 +49,15 @@ void rank_results_scene_init_gfx2(void) {
 }
 
 
-// RANK Graphics Init. 1
+// Graphics Init. 1
 void rank_results_scene_init_gfx1(void) {
     schedule_function_call(get_current_mem_id(), rank_results_scene_init_gfx2, 0, 2);
     scene_show_obj_layer();
 }
 
 
-// RANK Scene Start
-void rank_results_scene_start(void *sceneParam, s32 startParam) {
+// Scene Start
+void rank_results_scene_start(void *sVar, s32 dArg) {
     func_08007324(FALSE);
     func_080073f0();
     gResults->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
@@ -75,13 +75,13 @@ void rank_results_scene_start(void *sceneParam, s32 startParam) {
 }
 
 
-// RANK Scene Update (Paused)
-void rank_results_scene_paused(void *sceneParam, s32 pausedParam) {
+// Scene Update (Paused)
+void rank_results_scene_paused(void *sVar, s32 dArg) {
 }
 
 
-// RANK Scene Update (Active)
-void rank_results_scene_update(void *sceneParam, s32 updateParam) {
+// Scene Update (Active)
+void rank_results_scene_update(void *sVar, s32 dArg) {
     if (!results_scene_inputs_enabled()) {
         return;
     }
@@ -94,14 +94,14 @@ void rank_results_scene_update(void *sceneParam, s32 updateParam) {
 }
 
 
-// RANK Scene Stop
-void rank_results_scene_stop(void *sceneParam, s32 stopParam) {
+// Scene Stop
+void rank_results_scene_stop(void *sVar, s32 dArg) {
     func_08008628();
     func_08004058();
 }
 
 
-// RANK Display Header Text (Script Event)
+// Display Header Text (Script Event)
 void rank_results_display_header(void) {
     struct Animation *anim;
     s32 sprite, width;
@@ -120,7 +120,7 @@ void rank_results_display_header(void) {
 }
 
 
-// RANK Display Result Icon (Script Event)
+// Display Result Icon (Script Event)
 void rank_results_display_rank(void) {
     func_0804d770(D_03005380, gResults->resultIcon, TRUE);
 
@@ -136,7 +136,7 @@ void rank_results_display_rank(void) {
 }
 
 
-// RANK Play Music (Script Event)
+// Play Music (Script Event)
 void rank_results_play_bgm(void) {
     struct SequenceData *music = rank_results_bgm[gResults->finalResultLevel];
 
@@ -145,7 +145,7 @@ void rank_results_play_bgm(void) {
 }
 
 
-// RANK Display Positive Reinforcement (Script Event)
+// Display Positive Reinforcement (Script Event)
 void rank_results_append_encouragement(void) {
     u16 *commentSprites;
     u32 totalNegativeComments, totalComments;

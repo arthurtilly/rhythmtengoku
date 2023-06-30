@@ -2,7 +2,7 @@ asm(".syntax unified \n\
 \n\
 .balign 4, 0 \n\
 \n\
-thumb_func_start func_08019188 \n\
+thumb_func_start score_results_reveal \n\
 /* 08019188 */ PUSH {LR} \n\
 /* 0801918a */ LDR R1, =score_results_reveal_sfx \n\
 /* 0801918c */ LDR R0, =gCurrentSceneData \n\

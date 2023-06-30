@@ -15,7 +15,7 @@ struct ScoreHandler *D_089d7980 = &D_03001338;
 
 
 // [D_089d7984] Letter Ranks
-const char *D_089d7984[] = {
+const char *results_letter_ranks[] = {
     ":1.1" "‚c",
     ":1.5" "‚b",
     ":1.4" "‚a",
@@ -116,108 +116,108 @@ const char *D_089d7a18[] = {
 
 
 // [D_089d7a38]
-struct ResultsTextEvent D_089d7a38[] = {
+struct ResultsSkillData D_089d7a38[] = {
     /* 0x00 */ {
-        /* ? */ 8,
-        /* ? */ D_089d7998,
-        /* ? */ func_08019698
+        /* Weight */ 8,
+        /* Desc.  */ D_089d7998,
+        /* Calc.  */ func_08019698
     },
     /* 0x01 */ {
-        /* ? */ 5,
-        /* ? */ D_089d79c8,
-        /* ? */ func_080197a4
+        /* Weight */ 5,
+        /* Desc.  */ D_089d79c8,
+        /* Calc.  */ func_080197a4
     },
     /* 0x02 */ {
-        /* ? */ 10,
-        /* ? */ D_089d79a8,
-        /* ? */ func_080196fc
+        /* Weight */ 10,
+        /* Desc.  */ D_089d79a8,
+        /* Calc.  */ func_080196fc
     },
     /* 0x03 */ {
-        /* ? */ 7,
-        /* ? */ D_089d79b8,
-        /* ? */ func_08019750
+        /* Weight */ 7,
+        /* Desc.  */ D_089d79b8,
+        /* Calc.  */ func_08019750
     },
     /* 0x04 */ {
-        /* ? */ 0,
-        /* ? */ D_089d79d8,
-        /* ? */ func_080197ec
+        /* Weight */ 0,
+        /* Desc.  */ D_089d79d8,
+        /* Calc.  */ func_080197ec
     },
     /* 0x05 */ {
-        /* ? */ 0,
-        /* ? */ D_089d7a18,
-        /* ? */ func_080198e8
+        /* Weight */ 0,
+        /* Desc.  */ D_089d7a18,
+        /* Calc.  */ func_080198e8
     },
     END_OF_RESULTS_TEXT_EVENT_LIST
 };
 
 
 // [D_089d7a8c]
-struct ResultsTextEvent D_089d7a8c[] = {
+struct ResultsSkillData D_089d7a8c[] = {
     /* 0x00 */ {
-        /* ? */ 8,
-        /* ? */ D_089d79c8,
-        /* ? */ func_080197a4
+        /* Weight */ 8,
+        /* Desc.  */ D_089d79c8,
+        /* Calc.  */ func_080197a4
     },
     /* 0x01 */ {
-        /* ? */ 9,
-        /* ? */ D_089d79e8,
-        /* ? */ func_08019820
+        /* Weight */ 9,
+        /* Desc.  */ D_089d79e8,
+        /* Calc.  */ func_08019820
     },
     /* 0x02 */ {
-        /* ? */ 7,
-        /* ? */ D_089d79a8,
-        /* ? */ func_080196fc
+        /* Weight */ 7,
+        /* Desc.  */ D_089d79a8,
+        /* Calc.  */ func_080196fc
     },
     /* 0x03 */ {
-        /* ? */ 6,
-        /* ? */ D_089d79b8,
-        /* ? */ func_08019750
+        /* Weight */ 6,
+        /* Desc.  */ D_089d79b8,
+        /* Calc.  */ func_08019750
     },
     /* 0x04 */ {
-        /* ? */ 0,
-        /* ? */ D_089d79d8,
-        /* ? */ func_080197ec
+        /* Weight */ 0,
+        /* Desc.  */ D_089d79d8,
+        /* Calc.  */ func_080197ec
     },
     /* 0x05 */ {
-        /* ? */ 0,
-        /* ? */ D_089d7a18,
-        /* ? */ func_080198e8
+        /* Weight */ 0,
+        /* Desc.  */ D_089d7a18,
+        /* Calc.  */ func_080198e8
     },
     END_OF_RESULTS_TEXT_EVENT_LIST
 };
 
 
 // [D_089d7ae0]
-struct ResultsTextEvent D_089d7ae0[] = {
+struct ResultsSkillData D_089d7ae0[] = {
     /* 0x00 */ {
-        /* ? */ 9,
-        /* ? */ D_089d79f8,
-        /* ? */ func_08019878
+        /* Weight */ 9,
+        /* Desc.  */ D_089d79f8,
+        /* Calc.  */ func_08019878
     },
     /* 0x01 */ {
-        /* ? */ 6,
-        /* ? */ D_089d79e8,
-        /* ? */ func_08019820
+        /* Weight */ 6,
+        /* Desc.  */ D_089d79e8,
+        /* Calc.  */ func_08019820
     },
     /* 0x02 */ {
-        /* ? */ 9,
-        /* ? */ D_089d7a08,
-        /* ? */ func_080198b0
+        /* Weight */ 9,
+        /* Desc.  */ D_089d7a08,
+        /* Calc.  */ func_080198b0
     },
     /* 0x03 */ {
-        /* ? */ 6,
-        /* ? */ D_089d79b8,
-        /* ? */ func_08019750
+        /* Weight */ 6,
+        /* Desc.  */ D_089d79b8,
+        /* Calc.  */ func_08019750
     },
     /* 0x04 */ {
-        /* ? */ 0,
-        /* ? */ D_089d79d8,
-        /* ? */ func_080197ec
+        /* Weight */ 0,
+        /* Desc.  */ D_089d79d8,
+        /* Calc.  */ func_080197ec
     },
     /* 0x05 */ {
-        /* ? */ 0,
-        /* ? */ D_089d7a18,
-        /* ? */ func_080198e8
+        /* Weight */ 0,
+        /* Desc.  */ D_089d7a18,
+        /* Calc.  */ func_080198e8
     },
     END_OF_RESULTS_TEXT_EVENT_LIST
 };

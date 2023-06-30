@@ -7,7 +7,7 @@ script script_scene_results_ver_debug
     set_tempo 120
     pause_scene
 
-    run func_080198f8
+    run results_render_skill_screen
     run func_08007324 TRUE
     scene_set_int INT8, 8, TRUE
     pause_scene
