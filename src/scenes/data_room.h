@@ -20,7 +20,6 @@ struct DataRoomSceneData {
 // Scene Data:
 extern struct GraphicsTable data_room_gfx_table[];
 extern struct CompressedGraphics *data_room_buffered_textures[];
-extern const char D_08050bc8[];
 
 
 // Functions:

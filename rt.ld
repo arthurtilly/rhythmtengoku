@@ -34,6 +34,9 @@ SECTIONS {
 		build/src/scenes/options.c.o(.bss);
 		build/src/scenes/perfect.c.o(.bss);
 		build/src/scenes/gameplay.c.o(.bss);
+		build/src/scenes/results_debug.c.o(.bss);
+		build/src/scenes/results_rank.c.o(.bss);
+		build/src/scenes/results_score.c.o(.bss);
 		build/src/scenes/results.c.o(.bss);
 		build/src/scenes/epilogue.c.o(.bss);
 		build/src/scenes/reading.c.o(.bss);
@@ -166,6 +169,9 @@ SECTIONS {
 		build/src/scenes/options.c.o(.text);
 		build/src/scenes/perfect.c.o(.text);
 		build/src/scenes/gameplay.c.o(.text);
+		build/src/scenes/results_debug.c.o(.text);
+		build/src/scenes/results_rank.c.o(.text);
+		build/src/scenes/results_score.c.o(.text);
 		build/src/scenes/results.c.o(.text);
 		build/src/scenes/epilogue.c.o(.text);
 		build/src/scenes/reading.c.o(.text);

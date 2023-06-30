@@ -3,8 +3,6 @@
 #include "graphics/data_room/data_room_graphics.h"
 #include "src/scenes/reading.h"
 
-asm(".include \"include/gba.inc\"");//Temporary
-
 
 // For readability.
 #define gDataRoom ((struct DataRoomSceneData *)gCurrentSceneData)
@@ -15,6 +13,12 @@ enum DataRoomEventsEnum {
     /* 02 */ DATAROOM_EV_SCROLL_UP,
     /* 03 */ DATAROOM_EV_SCROLL_DOWN,
     /* 04 */ DATAROOM_EV_CANCEL
+};
+
+enum DataRoomUserStatesEnum {
+    /* 00 */ DATAROOM_USER_STARING,
+    /* 01 */ DATAROOM_USER_SCROLLING,
+    /* 02 */ DATAROOM_USER_ASLEEP
 };
 
 
@@ -106,9 +110,9 @@ void dataroom_listbox_on_finish(void) {
 void dataroom_listbox_on_scroll(void) {
     dataroom_listbox_update();
 
-    if (gDataRoom->userState != 1) {
+    if (gDataRoom->userState != DATAROOM_USER_SCROLLING) {
         func_0804d8f8(D_03005380, gDataRoom->userSprite, anim_data_room_user_scroll, 0, 1, 0, 0);
-        gDataRoom->userState = 1;
+        gDataRoom->userState = DATAROOM_USER_SCROLLING;
         gDataRoom->userAnimTimer = 30;
     }
 
@@ -138,7 +142,7 @@ void dataroom_scene_start(void *sVar, s32 dArg) {
     listbox_run_func_on_finish(gDataRoom->listbox, dataroom_listbox_on_finish, 0);
 
     gDataRoom->userSprite = func_0804d160(D_03005380, anim_data_room_user_stare, 0x7F, 0, 160, 0x4800, 1, 0x7F, 0);
-    gDataRoom->userState = 0;
+    gDataRoom->userState = DATAROOM_USER_STARING;
     gDataRoom->userAnimTimer = 540;
     gDataRoom->scriptIsReady = FALSE;
 }
@@ -164,18 +168,18 @@ void dataroom_scene_update_user(void) {
 
     if (--gDataRoom->userAnimTimer == 0) {
         switch (gDataRoom->userState) {
-            case 0:
+            case DATAROOM_USER_STARING:
                 func_0804d8f8(D_03005380, gDataRoom->userSprite, anim_data_room_user_fall_asleep, 0, 1, 0x20, 0);
-                gDataRoom->userState = 2;
+                gDataRoom->userState = DATAROOM_USER_ASLEEP;
                 break;
 
-            case 1:
+            case DATAROOM_USER_SCROLLING:
                 func_0804d8f8(D_03005380, gDataRoom->userSprite, anim_data_room_user_stare, 0, 1, 0x7F, 0);
-                gDataRoom->userState = 0;
+                gDataRoom->userState = DATAROOM_USER_STARING;
                 gDataRoom->userAnimTimer = 540;
                 break;
 
-            case 2:
+            case DATAROOM_USER_ASLEEP:
                 break;
         }
     }

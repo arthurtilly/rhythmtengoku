@@ -4,14 +4,14 @@
 #include "src/scenes/results.h"
 #include "graphics/results/results_graphics.h"
 
-extern u8 D_03001338[];
+extern struct ScoreHandler D_03001338;
 
 
   /* RESULTS - MISC. DATA */
 
 
 // [D_089d7980] Main Score Handler
-struct ScoreHandler *D_089d7980 = (struct ScoreHandler *)D_03001338;
+struct ScoreHandler *D_089d7980 = &D_03001338;
 
 
 // [D_089d7984] Letter Ranks
