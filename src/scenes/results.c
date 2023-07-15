@@ -6,8 +6,6 @@
 #include "cues.h"
 #include "src/scenes/game_select.h"
 
-asm(".include \"include/gba.inc\"");//Temporary
-
 
 // For readability.
 #define gResults ((struct ResultsSceneData *)gCurrentSceneData)

@@ -122,7 +122,7 @@ void gameplay_start_scene(void) {
     if (get_current_scene_trans_target() == NULL) {
         set_next_scene(&scene_results_ver_rank);
     }
-    func_0801911c(0); // set D_03001330 to 0
+    score_results_set_grade_thresholds(NULL);
 }
 
 
