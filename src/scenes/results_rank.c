@@ -2,10 +2,6 @@
 #include "results.h"
 #include "graphics/results/results_graphics.h"
 
-#include "levels.h"
-#include "cues.h"
-#include "src/scenes/game_select.h"
-
 
 // For readability.
 #define gResults ((struct ResultsSceneData *)gCurrentSceneData)
@@ -69,7 +65,7 @@ void rank_results_scene_start(void *sVar, s32 dArg) {
     gResults->resultIcon = func_0804d160(D_03005380, anim_rank_results_icon, 0, RANK_RESULT_ICON_X, RANK_RESULT_ICON_Y, 0x800, 0, 0, 0x8000);
     rank_results_scene_init_gfx1();
     D_03005b3c = LFO_MODE_DISABLED;
-    gResults->awaitingInput = FALSE;
+    gResults->scriptIsReady = FALSE;
     gResults->medalObtained = FALSE;
     gResults->stillJustOK = FALSE;
 }
@@ -88,7 +84,7 @@ void rank_results_scene_update(void *sVar, s32 dArg) {
 
     if (D_03004afc & A_BUTTON) {
         set_pause_beatscript_scene(FALSE);
-        gResults->awaitingInput = FALSE;
+        gResults->scriptIsReady = FALSE;
         play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), 0);
     }
 }
@@ -106,12 +102,12 @@ void rank_results_display_header(void) {
     struct Animation *anim;
     s32 sprite, width;
 
-    if (D_089d7980->headerText == NULL) {
+    if (score_handler->headerText == NULL) {
         func_0804d770(D_03005380, gResults->placeholderIcon, TRUE);
         return;
     }
 
-    anim = results_get_comment_anim(D_089d7980->headerText, TEXT_ANCHOR_BOTTOM_LEFT, 0);
+    anim = results_get_comment_anim(score_handler->headerText, TEXT_ANCHOR_BOTTOM_LEFT, 0);
     sprite = func_0804d160(D_03005380, anim, 0, RANK_HEADER_BOX_X, RANK_HEADER_Y, 0x800, 0, 0, 0);
     func_0804d8c4(D_03005380, sprite, RANK_HEADER_PALETTE);
     width = func_0804ddb0(D_03005380, sprite, 24);

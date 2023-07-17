@@ -21,7 +21,7 @@ extern const struct Beatscript D_089cfda4[]; // Generic Fade-Out Sequence
 /* MAIN GAMEPLAY SCENE */
 
 
-static struct Scene *D_03001328; // ?
+static struct Scene *D_03001328; // Pause Menu Quit Destination
 
 
 // [func_08016e04] Set Sound Effect Original Tempo

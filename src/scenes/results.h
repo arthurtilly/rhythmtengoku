@@ -7,7 +7,7 @@
 struct ResultsSceneData {
     struct BitmapFontBG *bgFont;
     struct BitmapFontOBJ *objFont;
-    u32 awaitingInput;
+    u32 scriptIsReady;
     u8 finalResultLevel;
     s16 placeholderIcon;
     s16 resultIcon;
@@ -17,7 +17,7 @@ struct ResultsSceneData {
     u32 null1C;
     u32 null20;
     u8 currentLine;
-    u8 finalGrade;
+    u8 scoreGrade;
     char negativeCommentsText[0x100];
     u8 medalObtained;
     u8 stillJustOK;
@@ -73,7 +73,7 @@ struct ResultsSkillData {
     u32 (*measure)(void);
 };
 
-#define END_OF_RESULTS_TEXT_EVENT_LIST { 0, NULL, NULL }
+#define END_OF_RESULTS_SKILL_LIST { 0, NULL, NULL }
 
 
 // Scene Macros/Enums:
@@ -97,6 +97,14 @@ enum ResultsGradesEnum {
     /* 04 */ RESULTS_GRADE_S
 };
 
+enum ScoreResultGradesEnum {
+    /* 00 */ SCORE_RESULT_BEST,
+    /* 01 */ SCORE_RESULT_HIGH,
+    /* 02 */ SCORE_RESULT_MID,
+    /* 03 */ SCORE_RESULT_LOW,
+    /* 04 */ SCORE_RESULT_FAIL
+};
+
 
 // Scene Data:
 extern union SceneObject debug_results_scene_objects[];
@@ -109,23 +117,14 @@ extern struct SequenceData *rank_results_bgm[];
 extern union SceneObject score_results_scene_objects[];
 extern struct GraphicsTable score_results_gfx_table[];
 extern struct CompressedGraphics *score_results_buffered_textures[];
-extern const char *score_results_comments_text[];
-extern u16 score_results_thresholds[];
+extern const char *score_results_default_comments[];
+extern u16 score_results_default_thresholds[];
 extern struct SequenceData *score_results_reveal_sfx[];
-extern struct ScoreHandler *D_089d7980; // ( = D_03001338)
+extern struct ScoreHandler *score_handler;
 extern const char *results_letter_ranks[];
-extern const char *D_089d7998[];
-extern const char *D_089d79a8[];
-extern const char *D_089d79b8[];
-extern const char *D_089d79c8[];
-extern const char *D_089d79d8[];
-extern const char *D_089d79e8[];
-extern const char *D_089d79f8[];
-extern const char *D_089d7a08[];
-extern const char *D_089d7a18[];
-extern struct ResultsSkillData D_089d7a38[];
-extern struct ResultsSkillData D_089d7a8c[];
-extern struct ResultsSkillData D_089d7ae0[];
+extern struct ResultsSkillData results_skill_data_high[];
+extern struct ResultsSkillData results_skill_data_mid[];
+extern struct ResultsSkillData results_skill_data_low[];
 extern const char *results_try_again_comment_pool[];
 extern const char *results_ok_comment_pool[];
 
@@ -183,15 +182,15 @@ extern void results_register_cue_input(u32 criterion, u32 level, s32 offset);
 extern void results_tracker_calculate_averages(struct InputScoreTracker *);
 extern void results_tracker_calculate_skill_averages(void);
 extern void results_render_skills(struct ResultsSkillData *data);
-extern u32 func_08019698(void);
-extern u32 func_080196fc(void);
-extern u32 func_08019750(void);
-extern u32 func_080197a4(void);
-extern u32 func_080197ec(void);
-extern u32 func_08019820(void);
-extern u32 func_08019878(void);
-extern u32 func_080198b0(void);
-extern u32 func_080198e8(void);
+extern u32 results_measure_skill_accuracy(void);
+extern u32 results_measure_skill_barely_trk2(void);
+extern u32 results_measure_skill_barely_trk1(void);
+extern u32 results_measure_skill_hit_avg(void);
+extern u32 results_measure_skill_irrelevant_inputs(void);
+extern u32 results_measure_skill_accuracy_lenient(void);
+extern u32 results_measure_skill_miss(void);
+extern u32 results_measure_skill_miss_trk2(void);
+extern u32 results_measure_skill_random(void);
 extern void results_render_skill_screen(void);
 extern u32 results_get_negative_comments(void);
 extern s24_8 results_get_positive_comments(void);

@@ -1,7 +1,7 @@
 OUTPUT_ARCH(arm)
 
 /* Results Score Handler */
-D_03001338 = 0x03001338;
+sScoreHandler = 0x03001338;
 
 /* Sound Library */
 D_03001570 = 0x03001570;

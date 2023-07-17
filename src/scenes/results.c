@@ -20,7 +20,7 @@
 #define COMMENT_TILE_Y(line) ((COMMENT_BASE_LINE * 2) + ((line) * 2))
 
 
-static struct ScoreHandler D_03001338; // Global Score Handler
+static struct ScoreHandler sScoreHandler; // Global Score Handler
 static u8 D_03001540; // Update save data upon reaching leaving scene.
 
 
@@ -90,10 +90,10 @@ void results_init_tracker(struct InputScoreTracker *tracker) {
 void results_init_cue_tracking(void) {
     u32 i;
 
-    D_089d7980->markingData = NULL;
+    score_handler->markingData = NULL;
 
     for (i = 0; i < 16; i++) {
-        results_init_tracker(&D_089d7980->cueInputTrackers[i]);
+        results_init_tracker(&score_handler->cueInputTrackers[i]);
     }
 }
 
@@ -102,55 +102,57 @@ void results_init_cue_tracking(void) {
 void results_init_score_handler(void) {
     u32 i;
 
-    D_089d7980->unk0_b0 = FALSE;
-    D_089d7980->totalRecoveries = 0;
-    D_089d7980->prevInputLevel = -1;
-    D_089d7980->totalIrrelevantInputs = 0;
+    score_handler->unk0_b0 = FALSE;
+    score_handler->totalRecoveries = 0;
+    score_handler->prevInputLevel = -1;
+    score_handler->totalIrrelevantInputs = 0;
 
     for (i = 0; i < 4; i++) {
-        results_init_tracker(&D_089d7980->anyInputTrackers[i]);
+        results_init_tracker(&score_handler->anyInputTrackers[i]);
     }
 
     results_init_cue_tracking();
-    D_089d7980->headerText = NULL;
-    D_089d7980->totalPoints = 0;
-    D_089d7980->maximumPoints = 0;
+    score_handler->headerText = NULL;
+    score_handler->totalPoints = 0;
+    score_handler->maximumPoints = 0;
 }
 
 
 // Import Criteria (Script Event)
 void results_import_marking_criteria(const struct MarkingCriteria **markingData) {
-    D_089d7980->markingData = markingData;
+    score_handler->markingData = markingData;
 }
 
 
 // Set Header Text (Script Event)
 void results_set_header(char *headerText) {
-    D_089d7980->headerText = headerText;
+    score_handler->headerText = headerText;
 }
 
 
 // Assess Inputs (Script Event)
 void results_enable_input_tracking(u32 assess) {
-    D_089d7980->markingInputs = assess;
+    score_handler->markingInputs = assess;
 }
 
 
 // Check if Assessing Inputs
 u32 results_tracking_is_enabled(void) {
-    return D_089d7980->markingInputs;
+    return score_handler->markingInputs;
 }
 
 
 // Register Input
 void results_register_input(u32 criterion, u32 level, s32 offset) {
-    struct InputScoreTracker *tracker = &D_089d7980->anyInputTrackers[criterion];
+    struct InputScoreTracker *tracker = &score_handler->anyInputTrackers[criterion];
     s32 points;
 
-    if (!D_089d7980->markingInputs) return;
+    if (!score_handler->markingInputs) {
+        return;
+    }
 
     if (level == CUE_RESULT_NONE) {
-        D_089d7980->totalIrrelevantInputs++;
+        score_handler->totalIrrelevantInputs++;
         return;
     }
 
@@ -160,15 +162,15 @@ void results_register_input(u32 criterion, u32 level, s32 offset) {
     switch (level) {
         case CUE_RESULT_HIT:
             tracker->totalHits++;
-            if (D_089d7980->prevInputLevel == CUE_RESULT_MISS) {
-                D_089d7980->totalRecoveries++;
+            if (score_handler->prevInputLevel == CUE_RESULT_MISS) {
+                score_handler->totalRecoveries++;
             }
             points = MAX_POINTS_PER_INPUT - ABS(offset) + 1;
             break;
         case CUE_RESULT_BARELY:
             tracker->totalBarelies++;
-            if (D_089d7980->prevInputLevel == CUE_RESULT_MISS) {
-                D_089d7980->totalRecoveries++;
+            if (score_handler->prevInputLevel == CUE_RESULT_MISS) {
+                score_handler->totalRecoveries++;
             }
             points = MAX_POINTS_PER_INPUT - ABS(offset);
             break;
@@ -179,8 +181,8 @@ void results_register_input(u32 criterion, u32 level, s32 offset) {
     }
 
     if (points > MAX_POINTS_PER_INPUT) points = MAX_POINTS_PER_INPUT;
-    D_089d7980->totalPoints += points;
-    D_089d7980->maximumPoints += MAX_POINTS_PER_INPUT;
+    score_handler->totalPoints += points;
+    score_handler->maximumPoints += MAX_POINTS_PER_INPUT;
 
     if (offset < 0) {
         tracker->totalEarliness -= offset;
@@ -188,15 +190,17 @@ void results_register_input(u32 criterion, u32 level, s32 offset) {
         tracker->totalLateness += offset;
     }
 
-    D_089d7980->prevInputLevel = level;
+    score_handler->prevInputLevel = level;
 }
 
 
 // Register Input for Cue
 void results_register_cue_input(u32 criterion, u32 level, s32 offset) {
-    struct InputScoreTracker *tracker = &D_089d7980->cueInputTrackers[criterion];
+    struct InputScoreTracker *tracker = &score_handler->cueInputTrackers[criterion];
 
-    if (!D_089d7980->markingInputs) return;
+    if (!score_handler->markingInputs) {
+        return;
+    }
 
     tracker->totalInputs++;
 
@@ -239,19 +243,19 @@ void results_tracker_calculate_averages(struct InputScoreTracker *tracker) {
 
 // DEBUG Calculate Skill Tracker Averages
 void results_tracker_calculate_skill_averages(void) {
-    struct InputScoreTracker *globalInputs = &D_089d7980->anyInputTrackers[3];
+    struct InputScoreTracker *globalInputs = &score_handler->anyInputTrackers[3];
     u32 i;
 
     for (i = 0; i < 3; i++) {
-        results_tracker_calculate_averages(&D_089d7980->anyInputTrackers[i]);
-        globalInputs->totalInputs += D_089d7980->anyInputTrackers[i].totalInputs;
-        globalInputs->totalHits += D_089d7980->anyInputTrackers[i].totalHits;
-        globalInputs->totalBarelies += D_089d7980->anyInputTrackers[i].totalBarelies;
-        globalInputs->totalEarliness += D_089d7980->anyInputTrackers[i].totalEarliness;
-        globalInputs->totalLateness += D_089d7980->anyInputTrackers[i].totalLateness;
+        results_tracker_calculate_averages(&score_handler->anyInputTrackers[i]);
+        globalInputs->totalInputs += score_handler->anyInputTrackers[i].totalInputs;
+        globalInputs->totalHits += score_handler->anyInputTrackers[i].totalHits;
+        globalInputs->totalBarelies += score_handler->anyInputTrackers[i].totalBarelies;
+        globalInputs->totalEarliness += score_handler->anyInputTrackers[i].totalEarliness;
+        globalInputs->totalLateness += score_handler->anyInputTrackers[i].totalLateness;
     }
 
-    results_tracker_calculate_averages(&D_089d7980->anyInputTrackers[3]);
+    results_tracker_calculate_averages(&score_handler->anyInputTrackers[3]);
 }
 
 
@@ -277,7 +281,7 @@ void results_render_skills(struct ResultsSkillData *data) {
         textAnim = bmp_font_obj_print_r(gResults->objFont, data[i].descPool[agb_random(total)], 1, 7);
         func_0804d160(D_03005380, textAnim->frames, 0, 176, y, 0x4800, 1, 0, 0);
 
-        grade = D_089d7980->skillScores[i] = clamp_int32(data[i].measure(), RESULTS_GRADE_D, RESULTS_GRADE_S);
+        grade = score_handler->skillScores[i] = clamp_int32(data[i].measure(), RESULTS_GRADE_D, RESULTS_GRADE_S);
         scoreSum += data[i].weight * grade;
         weightSum += data[i].weight;
 
@@ -287,13 +291,13 @@ void results_render_skills(struct ResultsSkillData *data) {
         y += 16;
     }
 
-    D_089d7980->avgSkillScore = Div(INT_TO_FIXED(scoreSum), weightSum * RESULTS_GRADE_S);
+    score_handler->avgSkillScore = Div(INT_TO_FIXED(scoreSum), weightSum * RESULTS_GRADE_S);
 }
 
 
 // DEBUG Measure Skill - Accuracy
-u32 func_08019698(void) {
-    struct InputScoreTracker *inputs = &D_089d7980->anyInputTrackers[3];
+u32 results_measure_skill_accuracy(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[3];
     u32 accuracy;
     u32 grade, hitGrade;
 
@@ -320,7 +324,7 @@ u32 func_08019698(void) {
         grade = RESULTS_GRADE_A;
     }
 
-    hitGrade = func_080197a4();
+    hitGrade = results_measure_skill_hit_avg();
 
     if (grade > hitGrade) {
         grade = hitGrade;
@@ -331,9 +335,9 @@ u32 func_08019698(void) {
 
 
 // DEBUG Measure Skill - Barelies (Tracker 2)
-u32 func_080196fc(void) {
-    struct InputScoreTracker *inputs = &D_089d7980->anyInputTrackers[2];
-    struct InputScoreTracker *globalInputs = &D_089d7980->anyInputTrackers[3];
+u32 results_measure_skill_barely_trk2(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[2];
+    struct InputScoreTracker *globalInputs = &score_handler->anyInputTrackers[3];
     u32 grade;
 
     if (globalInputs->avgMisses > INT_TO_FIXED(0.75)) {
@@ -363,9 +367,9 @@ u32 func_080196fc(void) {
 
 
 // DEBUG Measure Skill - Barelies (Tracker 1)
-u32 func_08019750(void) {
-    struct InputScoreTracker *inputs = &D_089d7980->anyInputTrackers[1];
-    struct InputScoreTracker *globalInputs = &D_089d7980->anyInputTrackers[3];
+u32 results_measure_skill_barely_trk1(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[1];
+    struct InputScoreTracker *globalInputs = &score_handler->anyInputTrackers[3];
     u32 grade;
 
     if (globalInputs->avgMisses > INT_TO_FIXED(0.75)) {
@@ -395,8 +399,8 @@ u32 func_08019750(void) {
 
 
 // DEBUG Measure Skill - Hits
-u32 func_080197a4(void) {
-    struct InputScoreTracker *inputs = &D_089d7980->anyInputTrackers[3];
+u32 results_measure_skill_hit_avg(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[3];
     u32 hits;
 
     if (inputs->avgMisses > INT_TO_FIXED(0.75)) {
@@ -426,8 +430,8 @@ u32 func_080197a4(void) {
 
 
 // DEBUG Measure Skill - Irrelevant Inputs
-u32 func_080197ec(void) {
-    switch (D_089d7980->totalIrrelevantInputs) {
+u32 results_measure_skill_irrelevant_inputs(void) {
+    switch (score_handler->totalIrrelevantInputs) {
         case 0:
             return RESULTS_GRADE_A;
         case 1:
@@ -441,8 +445,8 @@ u32 func_080197ec(void) {
 
 
 // DEBUG Measure Skill - Accuracy (Lenient)
-u32 func_08019820(void) {
-    struct InputScoreTracker *inputs = &D_089d7980->anyInputTrackers[3];
+u32 results_measure_skill_accuracy_lenient(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[3];
     u32 accuracy;
     u32 grade;
 
@@ -474,8 +478,8 @@ u32 func_08019820(void) {
 
 
 // DEBUG Measure Skill - Misses
-u32 func_08019878(void) {
-    struct InputScoreTracker *inputs = &D_089d7980->anyInputTrackers[3];
+u32 results_measure_skill_miss(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[3];
 
     if (inputs->avgMisses > INT_TO_FIXED(0.75)) {
         return RESULTS_GRADE_D;
@@ -498,9 +502,9 @@ u32 func_08019878(void) {
 
 
 // DEBUG Measure Skill - Misses (Tracker 2)
-u32 func_080198b0(void) {
-    struct InputScoreTracker *inputs = &D_089d7980->anyInputTrackers[2];
-    struct InputScoreTracker *globalInputs = &D_089d7980->anyInputTrackers[3];
+u32 results_measure_skill_miss_trk2(void) {
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[2];
+    struct InputScoreTracker *globalInputs = &score_handler->anyInputTrackers[3];
 
     if (globalInputs->avgMisses > INT_TO_FIXED(0.75)) {
         return RESULTS_GRADE_D;
@@ -523,25 +527,25 @@ u32 func_080198b0(void) {
 
 
 // DEBUG Measure Skill - Random
-u32 func_080198e8(void) {
+u32 results_measure_skill_random(void) {
     return agb_random(5);
 }
 
 
 // DEBUG Load Results (Script Function)
 void results_render_skill_screen(void) {
-    struct InputScoreTracker *inputs = &D_089d7980->anyInputTrackers[3];
+    struct InputScoreTracker *inputs = &score_handler->anyInputTrackers[3];
     struct PrintedTextAnim *textAnim;
     char scoreString[0x20];
     char numString[0x20];
-    u32 badInputScore, score;
-    u32 level;
+    u32 badInputScore, score, level;
 
     textAnim = bmp_font_obj_print_c(gResults->objFont, ":1" "＊＊＊＊" ":0" "　　さいてん　　" ":1" "＊＊＊＊", 0, 7);
     func_0804d160(D_03005380, textAnim->frames, 0, 120, 16, 0x4800, 1, 0, 0);
-    results_tracker_calculate_skill_averages();
 
+    results_tracker_calculate_skill_averages();
     badInputScore = (inputs->totalMisses * 10) + (inputs->totalBarelies * 3);
+
     level = 2;
     if (badInputScore >= 10) {
         level = 1;
@@ -552,18 +556,18 @@ void results_render_skill_screen(void) {
 
     switch (level) {
         case 0:
-            results_render_skills(D_089d7ae0);
+            results_render_skills(results_skill_data_low);
             break;
         case 1:
-            results_render_skills(D_089d7a8c);
+            results_render_skills(results_skill_data_mid);
             break;
         case 2:
-            results_render_skills(D_089d7a38);
+            results_render_skills(results_skill_data_high);
             break;
     }
 
-    score = FIXED_TO_INT(D_089d7980->avgSkillScore * 30);
-    score -= D_089d7980->totalIrrelevantInputs * 3;
+    score = FIXED_TO_INT(score_handler->avgSkillScore * 30);
+    score -= score_handler->totalIrrelevantInputs * 3;
     score = 70 + clamp_int32(score, 0, 30);
     score -= inputs->totalMisses * 10;
     score = clamp_int32(score, 0, 100);
@@ -587,7 +591,7 @@ void results_render_skill_screen(void) {
 
 // Prepare Negative Remarks (return total failed criteria)
 u32 results_get_negative_comments(void) {
-    const struct MarkingCriteria **criteriaTable = D_089d7980->markingData;
+    const struct MarkingCriteria **criteriaTable = score_handler->markingData;
     struct InputScoreTracker *tracker;
     const char *comments[3];
     char *commentsText;
@@ -595,7 +599,7 @@ u32 results_get_negative_comments(void) {
     u32 i;
     u16 *commentSprites;
 
-    tracker = D_089d7980->cueInputTrackers;
+    tracker = score_handler->cueInputTrackers;
     commentSprites = gResults->commentSprites;
     commentsText = gResults->negativeCommentsText;
     gResults->singleCommentTryAgain = FALSE;
@@ -675,7 +679,7 @@ const char *results_try_again_comment_pool[] = {
 
 // Prepare Positive Comments (return average succeeded criteria)
 s24_8 results_get_positive_comments(void) {
-    const struct MarkingCriteria **criteriaTable = D_089d7980->markingData;
+    const struct MarkingCriteria **criteriaTable = score_handler->markingData;
     struct InputScoreTracker *tracker;
     char *commentsText;
     u32 totalPassed = 0;
@@ -684,7 +688,7 @@ s24_8 results_get_positive_comments(void) {
     u16 *commentSprites;
     u32 imperfectionPenalty;
 
-    tracker = D_089d7980->cueInputTrackers;
+    tracker = score_handler->cueInputTrackers;
     commentSprites = &gResults->commentSprites[gResults->totalNegativeComments];
     imperfectionPenalty = 0;
     commentsText = mem_heap_alloc(0x100);
@@ -845,8 +849,8 @@ void results_render_comments(void) {
 
 // RANK Display Comments (Script Event)
 void results_publish_comments(void) {
-    struct InputScoreTracker *tracker = D_089d7980->cueInputTrackers;
-    const struct MarkingCriteria **criteriaTable = D_089d7980->markingData;
+    struct InputScoreTracker *tracker = score_handler->cueInputTrackers;
+    const struct MarkingCriteria **criteriaTable = score_handler->markingData;
     struct Scene *scene;
     struct Animation *textAnim;
     s16 textSprite;
@@ -916,12 +920,12 @@ u32 results_calculate_final_score(void) {
     s32 penalty, maxPenalty;
     u32 result, maxResult;
 
-    maxPoints = D_089d7980->maximumPoints;
-    points = clamp_int32(D_089d7980->totalPoints, 0, D_089d7980->maximumPoints);
+    maxPoints = score_handler->maximumPoints;
+    points = clamp_int32(score_handler->totalPoints, 0, score_handler->maximumPoints);
 
     if (points > 0) {
         maxPenalty = ((points * -15) << 1) / 100; // (awesome: they performed logical shift on a negative value)
-        penalty = D_089d7980->totalIrrelevantInputs * -10;
+        penalty = score_handler->totalIrrelevantInputs * -10;
         points += clamp_int32(penalty, maxPenalty, 0);
     }
     points = clamp_int32(points, 0, maxPoints);

@@ -2,16 +2,12 @@
 #include "results.h"
 #include "graphics/results/results_graphics.h"
 
-#include "levels.h"
-#include "cues.h"
-#include "src/scenes/game_select.h"
-
 
 // For readability.
 #define gResults ((struct ResultsSceneData *)gCurrentSceneData)
 
 
-static s32 D_0300132c; // unknown type, unknown if exists
+static s32 D_0300132c; // Unused
 static u16 *sGradeThresholds;
 static const char **sGradeComments;
 
@@ -62,11 +58,11 @@ void score_results_scene_init_gfx1(void) {
 
 // Scene Start
 void score_results_scene_start(void *sVar, s32 dArg) {
-    const char **gradeComments;
-    u16 *gradeThresholds;
+    const char **comments;
+    u16 *thresholds;
     struct Animation *textAnim;
     s16 textSprite;
-    u32 score, digit, grade;
+    u32 score, n, result;
 
     func_08007324(FALSE);
     func_080073f0();
@@ -76,44 +72,36 @@ void score_results_scene_start(void *sVar, s32 dArg) {
     score_results_scene_init_gfx1();
 
     score = results_calculate_final_score();
-    func_0804d160(D_03005380, anim_score_results_dec_num, score % 10, 196, 114, 0, 0, 0, 0);
+    func_0804d160(D_03005380, anim_score_results_dec_num, (score % 10), 196, 114, 0, 0, 0, 0);
 
-    digit = score / 10;
-    func_0804d160(D_03005380, anim_score_results_num, digit % 10, 152, 80, 0, 0, 0, 0);
+    n = score / 10;
+    func_0804d160(D_03005380, anim_score_results_num, (n % 10), 152, 80, 0, 0, 0, 0);
 
-    digit /= 10;
-    if (digit != 0) {
-        func_0804d160(D_03005380, anim_score_results_num, digit % 10, 96, 80, 0, 0, 0, 0);
+    n /= 10;
+    if (n != 0) {
+        func_0804d160(D_03005380, anim_score_results_num, (n % 10), 96, 80, 0, 0, 0, 0);
     }
 
-    digit /= 10;
-    if (digit != 0) {
-        func_0804d160(D_03005380, anim_score_results_num, digit % 10, 40, 80, 0, 0, 0, 0);
+    n /= 10;
+    if (n != 0) {
+        func_0804d160(D_03005380, anim_score_results_num, (n % 10), 40, 80, 0, 0, 0, 0);
     }
 
     func_0804d160(D_03005380, anim_score_results_points_label, 0, 200, 136, 0, 0, 0, 0);
 
-    if (sGradeThresholds != NULL) {
-        gradeThresholds = sGradeThresholds;
-    } else {
-        gradeThresholds = score_results_thresholds;
-    }
+    thresholds = (sGradeThresholds != NULL) ? sGradeThresholds : score_results_default_thresholds;
+    comments = (sGradeComments != NULL) ? sGradeComments : score_results_default_comments;
 
-    if (sGradeComments != NULL) {
-        gradeComments = sGradeComments;
-    } else {
-        gradeComments = score_results_comments_text;
-    }
+    for (result = SCORE_RESULT_BEST;
+         result < SCORE_RESULT_FAIL && score < thresholds[result];
+         result++);
+    gResults->scoreGrade = result;
 
-    for (grade = 0; grade < 4 && score < gradeThresholds[grade]; grade++);
-
-    gResults->finalGrade = grade;
-
-    textAnim = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, 16, TEXT_PRINTER_FONT_SMALL, gradeComments[grade], TEXT_ANCHOR_BOTTOM_CENTER, 0, 0x100);
+    textAnim = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, 16, TEXT_PRINTER_FONT_SMALL, comments[result], TEXT_ANCHOR_BOTTOM_CENTER, 0, 0x100);
     textSprite = func_0804d160(D_03005380, textAnim, 0, 120, 152, 0, 0, 0, 0);
     func_0804d8c4(D_03005380, textSprite, 15);
 
-    gResults->awaitingInput = FALSE;
+    gResults->scriptIsReady = FALSE;
 }
 
 
@@ -139,7 +127,7 @@ void score_results_scene_update(void *sVar, s32 dArg) {
     if (results_scene_inputs_enabled()) {
         if (D_03004afc & A_BUTTON) {
             set_pause_beatscript_scene(FALSE);
-            gResults->awaitingInput = FALSE;
+            gResults->scriptIsReady = FALSE;
             play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), INT_TO_FIXED(0.0));
         }
     }
@@ -155,5 +143,5 @@ void score_results_scene_stop(void *sVar, s32 dArg) {
 
 // Reveal Score (Script Event)
 void score_results_reveal(void) {
-    play_sound(score_results_reveal_sfx[gResults->finalGrade]);
+    play_sound(score_results_reveal_sfx[gResults->scoreGrade]);
 }
