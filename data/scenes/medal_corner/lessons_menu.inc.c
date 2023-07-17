@@ -1,6 +1,3 @@
-extern struct SequenceData s_lesson_sel_bgm_seqData;
-
-
 // [D_089dd5ec] Drum Lessons Menu - Levels
 struct MedalCornerLevel lessons_menu_levels[] = {
     /* BASIC_1 */ {

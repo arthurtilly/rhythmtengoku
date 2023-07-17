@@ -376,7 +376,7 @@ void drum_lessons_get_score(void) {
     char num[2];
     u32 score, rank;
     u32 digit1, digit2, digit3, digit4;
-    s32 sVar; // value of a static variable in Medal Corner code
+    s32 lessonID;
 
     num[1] = '\0';
     score = results_calculate_final_score();
@@ -419,10 +419,10 @@ void drum_lessons_get_score(void) {
     func_0804d8f8(D_03005380, gDrumStudio->lessonRankSprite, drum_lessons_rank_anim[rank], 0, 1, 0, 0);
     func_0804d770(D_03005380, gDrumStudio->lessonRankSprite, TRUE);
 
-    sVar = func_0801d6d0();
-    if (sVar >= 0) {
-        if (func_080281c4(sVar) < rank) {
-            func_0802818c(sVar, rank);
+    lessonID = medal_corner_get_lesson_id();
+    if (lessonID >= 0) {
+        if (func_080281c4(lessonID) < rank) {
+            func_0802818c(lessonID, rank);
         }
     }
 }

@@ -1,5 +1,6 @@
 #include "global.h"
 #include "debug_menu.h"
+#include "src/scenes/medal_corner.h"
 
 // For readability.
 #define gDebugMenu ((struct DebugMenuSceneData *)gCurrentSceneData)
@@ -108,7 +109,7 @@ void debug_menu_scene_start(void *sVar, s32 dArg) {
     set_scene_trans_var(&scene_reading, agb_random(20));
     gameplay_pause_menu_set_quit_destination(&scene_debug_menu);
     results_set_enable_save(FALSE);
-    func_0801d6c4(-1);
+    medal_corner_set_lesson_id(DRUM_LESSON_NULL);
 }
 
 

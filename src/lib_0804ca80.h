@@ -24,7 +24,7 @@ extern void func_0804ced0(struct SpriteHandler *, s16, u8);
 // extern ? func_0804d140(?);
 extern u32  func_0804d160(struct SpriteHandler *, struct Animation *, s8, s16, s16, u16, s8, s8, u16); // Create New
 extern u32  func_0804d294(struct SpriteHandler *, struct Animation *, s8, s16, s16, u16, s8, s8, u16, u32); // Create New (w/ additional parameter)
-extern s16  func_0804d3cc(struct SpriteHandler *, s16);
+extern s16  func_0804d3cc(struct SpriteHandler *, s16); // Duplicate/Copy
 // extern ? func_0804d468(?);
 // extern ? func_0804d504(?);
 extern void func_0804d55c(struct SpriteHandler *, s16, s16, s16, u16); // Set X/Y Position and Layer
@@ -39,7 +39,7 @@ extern void func_0804d7b4(struct SpriteHandler *, s16, u32);
 extern void func_0804d7e8(struct SpriteHandler *, s16, u32);
 extern void func_0804d820(struct SpriteHandler *, s16, u32);
 // extern ? func_0804d858(?);
-extern void func_0804d890(struct SpriteHandler *, s16, s16);
+extern void func_0804d890(struct SpriteHandler *, s16, s16); // Set Texture Base Tile
 extern void func_0804d8c4(struct SpriteHandler *, s16, s8); // Set Palette
 extern void func_0804d8f8(struct SpriteHandler *, s16, struct Animation *, s8, s8, s8, u16); // Set Animation
 // extern ? func_0804d9b0(?);

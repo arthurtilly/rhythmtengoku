@@ -11,7 +11,7 @@ script script_medal_corner_menu
     run func_08007324 TRUE
     fade_screen_in 12, BLACK
     rest 12
-    run func_0801d848
+    run medal_corner_start_music
     scene_set_int INT8, 0, TRUE
     pause_scene
 
@@ -24,10 +24,10 @@ script script_medal_corner_menu
 
 @ Local Scene
 struct sub_scene_toys_menu
-    /* Start  */ .word func_0801d630, 0
-    /* Paused */ .word func_0801d6e0, 0
-    /* Active */ .word func_0801d700, 0
-    /* Stop   */ .word func_0801d834, 0
+    /* Start  */ .word medal_corner_scene_start,  0
+    /* Paused */ .word medal_corner_scene_paused, 0
+    /* Active */ .word medal_corner_scene_update, 0
+    /* Stop   */ .word medal_corner_scene_stop,   0
     /* Script */ .word script_medal_corner_menu
 endstruct
 
@@ -42,10 +42,10 @@ endstruct
 
 @ Local Scene
 struct sub_scene_endless_menu
-    /* Start  */ .word func_0801d630, 1
-    /* Paused */ .word func_0801d6e0, 0
-    /* Active */ .word func_0801d700, 0
-    /* Stop   */ .word func_0801d834, 0
+    /* Start  */ .word medal_corner_scene_start,  1
+    /* Paused */ .word medal_corner_scene_paused, 0
+    /* Active */ .word medal_corner_scene_update, 0
+    /* Stop   */ .word medal_corner_scene_stop,   0
     /* Script */ .word script_medal_corner_menu
 endstruct
 
@@ -60,10 +60,10 @@ endstruct
 
 @ Local Scene
 struct sub_scene_lessons_menu
-    /* Start  */ .word func_0801d630, 2
-    /* Paused */ .word func_0801d6e0, 0
-    /* Active */ .word func_0801d700, 0
-    /* Stop   */ .word func_0801d834, 0
+    /* Start  */ .word medal_corner_scene_start,  2
+    /* Paused */ .word medal_corner_scene_paused, 0
+    /* Active */ .word medal_corner_scene_update, 0
+    /* Stop   */ .word medal_corner_scene_stop,   0
     /* Script */ .word script_medal_corner_menu
 endstruct
 

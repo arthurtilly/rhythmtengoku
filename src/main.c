@@ -27,7 +27,7 @@ void init_scene_static_var(void) {
 	arrival_scene_init_static_var();
 	dataroom_scene_init_static_var();
 	studio_scene_init_static_var();
-	func_0801d580(); // Medal Corner Menus
+	medal_corner_scene_init_static_var(); // Medal Corner Menus
 	cafe_scene_init_static_var();
 }
 

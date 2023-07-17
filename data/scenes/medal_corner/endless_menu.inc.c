@@ -1,6 +1,3 @@
-extern struct SequenceData s_mini_game_bgm_seqData;
-
-
 // [D_089dd548] Endless Games Menu - Levels
 struct MedalCornerLevel endless_menu_levels[] = {
     /* MR_UPBEAT */ {

@@ -135,7 +135,7 @@ void dataroom_scene_start(void *sVar, s32 dArg) {
     }
 
     gDataRoom->listbox = create_new_listbox(
-            get_current_mem_id(), 10, 0x80, 30, 0, 1, 3,
+            get_current_mem_id(), 10, 128, 30, 0, 1, 3,
             80, 16, 0x8800, 16, sListSelItem, 20, anim_data_room_cursor, 3, 4, sListSelLine,
             dataroom_listbox_get_item_name, NULL);
     listbox_run_func_on_scroll(gDataRoom->listbox, dataroom_listbox_on_scroll, 0);
