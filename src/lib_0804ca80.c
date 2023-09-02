@@ -27,7 +27,7 @@ struct SpriteHandler *func_0804caa0(u16 arg0, void *buffer, u16 spriteAmount, u3
         o = D_0300442c(sizeof(struct SpriteHandler)); // Allocate
     }
     o->objAmount = arg0;
-    o->unk4 = buffer;
+    o->oamBuffer = buffer;
     buf = buffer;
     for (i = 0; i < (arg0 / 8); i++) { 
         buf[0] = buf[1] = buf[2] = buf[3] = buf[4] = buf[5] = buf[6] = buf[7] = 0x22222222;
@@ -58,7 +58,7 @@ void func_0804cb60(struct SpriteHandler *o) {
 // Set OAM Buffer
 void func_0804cb80(struct SpriteHandler *o, u16 bufferSize, u32 *buffer) {
     o->objAmount = bufferSize;
-    o->unk4 = buffer;
+    o->oamBuffer = buffer;
 }
 
 
@@ -89,20 +89,20 @@ void func_0804cbcc(struct SpriteHandler *o) {
     
     struct Sprite *spr = sprite;
     for (i = 0; i < spriteLimit; i++) {
-        sprite[i].unk0_b0 = FALSE;
-        sprite[i].unk0_b14 = FALSE;
+        sprite[i].displaySprite = FALSE;
+        sprite[i].present = FALSE;
     }
     o->unkE = -1;
     o->unkC = -1;
 
-    sprite->unk18 = -1;
-    sprite->unk1A = 1;
+    sprite->prevID = -1;
+    sprite->nextID = 1;
     for (i = 1; i < spriteLimit - 1; i++) {
-        sprite[i].unk18 = i - 1;
-        sprite[i].unk1A = i + 1;
+        sprite[i].prevID = i - 1;
+        sprite[i].nextID = i + 1;
     }
-    sprite[i].unk18 = i - 1;
-    sprite[i].unk1A = -1;
+    sprite[i].prevID = i - 1;
+    sprite[i].nextID = -1;
 
     o->unk10 = 0;
     o->unk12 = i;
@@ -115,7 +115,7 @@ void func_0804cbcc(struct SpriteHandler *o) {
     o->unk22_b0 = 0;
 }
 
-// Validate ID
+// Validate Sprite
 u32 func_0804cc68(struct SpriteHandler *o, s16 id) {
     if (id == -1) { // Invalid sprite ID
         return 1;
@@ -139,7 +139,7 @@ u32 func_0804cc68(struct SpriteHandler *o, s16 id) {
         return 1;
     }
     
-    if (!o->sprites[id].unk0_b14) { // Sprite doesn't exist
+    if (!o->sprites[id].present) { // Sprite doesn't exist
         if (o->unk22_b0 == 0) {
             o->unk22_b0 = 2;
             o->unk24 = o->unk1C;
@@ -164,11 +164,11 @@ void func_0804cd1c(struct SpriteHandler *o, s16 id, s8 frame, u32 resetDuration)
 
     sprite = &o->sprites[id];
     if (resetDuration) {
-        sprite->unk1C = 0;
+        sprite->currentFrameDuration = 0;
     }
 
-    celAmount = sprite->unk0_b5;
-    loopFrame = sprite->unkE;
+    celAmount = sprite->celAmount;
+    loopFrame = sprite->loopFrame;
     if (loopFrame >= celAmount) { // Clamp if the loop frame exceeds the animation limit
         loopFrame = celAmount - 1;
     }
@@ -178,7 +178,7 @@ void func_0804cd1c(struct SpriteHandler *o, s16 id, s8 frame, u32 resetDuration)
 
     isFrameValid = (frameTemp < 0 || frameTemp >= celAmount);
     if (isFrameValid) {
-        switch (sprite->unk0_b1) {
+        switch (sprite->playbackType) {
             case SPRITE_PLAYBACK_REGULAR: // Regular
                 frameTemp = loopFrame;
                 updateFrame = TRUE;
@@ -186,15 +186,15 @@ void func_0804cd1c(struct SpriteHandler *o, s16 id, s8 frame, u32 resetDuration)
             case SPRITE_PLAYBACK_REGULAR_HIDE: // Regular -> Hide animation
                 frameTemp = loopFrame;
                 updateFrame = TRUE;
-                sprite->unk0_b0 = FALSE;
+                sprite->displaySprite = FALSE;
                 break;
             case SPRITE_PLAYBACK_REGULAR_CALLBACK: // Regular -> Callback
                 frameTemp = loopFrame;
-                if (sprite->unk20) {
+                if (sprite->callbackFunction) {
                     updateFrame = FALSE;
-                    sprite->unk1C += INT_TO_FIXED(sprite->unk8[frameTemp].duration);
-                    sprite->unkC = frameTemp;
-                    sprite->unk20(o, id, sprite->unk24);
+                    sprite->currentFrameDuration += INT_TO_FIXED(sprite->animation[frameTemp].duration);
+                    sprite->currentFrame = frameTemp;
+                    sprite->callbackFunction(o, id, sprite->callbackArgument);
                 } else {
                     updateFrame = TRUE;
                 }
@@ -224,14 +224,14 @@ void func_0804cd1c(struct SpriteHandler *o, s16 id, s8 frame, u32 resetDuration)
     }
 
     if (updateFrame) {
-        sprite->unk1C += INT_TO_FIXED(sprite->unk8[frameTemp].duration);
-        sprite->unkC = frameTemp;
-        if (sprite->unk20) {
-            if (frameTemp == sprite->unk17) {
-                sprite->unk20(o, id, sprite->unk24);
+        sprite->currentFrameDuration += INT_TO_FIXED(sprite->animation[frameTemp].duration);
+        sprite->currentFrame = frameTemp;
+        if (sprite->callbackFunction) {
+            if (frameTemp == sprite->callbackFrame) {
+                sprite->callbackFunction(o, id, sprite->callbackArgument);
             }
-            if (sprite->unk17 == -2) {
-                sprite->unk20(o, id, sprite->unk24, frameTemp);
+            if (sprite->callbackFrame == -2) {
+                sprite->callbackFunction(o, id, sprite->callbackArgument, frameTemp);
             }
         }
     }
@@ -246,7 +246,7 @@ void func_0804cebc(struct SpriteHandler *o, s16 id, s8 frame) {
 void func_0804ced0(struct SpriteHandler *o, s16 id, u8 arg2) {
     s8 frame;
     u32 totalDuration;
-    s32 dur;
+    s24_8 dur;
     struct Sprite *sprite;
     struct Animation *anim;
     
@@ -254,8 +254,8 @@ void func_0804ced0(struct SpriteHandler *o, s16 id, u8 arg2) {
     if (func_0804cc68(o, id)) return;
     
     sprite = &o->sprites[id];
-    dur = FIXED_POINT_MUL(sprite->unk28, arg2);
-    anim = sprite->unk8;
+    dur = FIXED_POINT_MUL(sprite->totalDuration, arg2);
+    anim = sprite->animation;
     frame = 0;
     totalDuration = 0;
     do {
@@ -277,34 +277,34 @@ void func_0804cf38(struct SpriteHandler *o, s16 id) {
     struct Sprite *sprite = o->sprites;
     s16 temp_ip = o->unkC;
     s16 temp_r8 = o->unkE;
-    u16 temp_r2 = sprite[id].unk6;
+    u16 temp_r2 = sprite[id].layer;
     s16 temp_r4 = o->unkE;
 
     if (temp_r4 != -1) {
-        while (temp_r2 < sprite[temp_r4].unk6) {
-            temp_r4 = sprite[temp_r4].unk18;
+        while (temp_r2 < sprite[temp_r4].layer) {
+            temp_r4 = sprite[temp_r4].prevID;
             if (temp_r4 == -1) break;
         }
     }
     if (temp_r4 >= 0) {
-        s16 temp_r2 = sprite[temp_r4].unk1A;
-        sprite[temp_r4].unk1A = id;
-        sprite[id].unk18 = temp_r4;
-        sprite[id].unk1A = temp_r2;
-        if (temp_r2 > -1) sprite[temp_r2].unk18 = id;
+        s16 temp_r2 = sprite[temp_r4].nextID;
+        sprite[temp_r4].nextID = id;
+        sprite[id].prevID = temp_r4;
+        sprite[id].nextID = temp_r2;
+        if (temp_r2 > -1) sprite[temp_r2].prevID = id;
     } else {
         temp_r4 = temp_ip;
         if (temp_r4 > -1) {
-            sprite[temp_r4].unk18 = id;
-            sprite[id].unk1A = temp_r4;
+            sprite[temp_r4].prevID = id;
+            sprite[id].nextID = temp_r4;
         } else {
-            sprite[id].unk1A = -1;
+            sprite[id].nextID = -1;
         }
-        sprite[id].unk18 = -1;
+        sprite[id].prevID = -1;
     }
         
-    if (sprite[id].unk18 == -1) do {temp_ip = id;} while (0);
-    if (sprite[id].unk1A == -1) temp_r8 = id;
+    if (sprite[id].prevID == -1) do {temp_ip = id;} while (0);
+    if (sprite[id].nextID == -1) temp_r8 = id;
     
     o->unkC = temp_ip;
     o->unkE = temp_r8;
@@ -313,16 +313,16 @@ void func_0804cf38(struct SpriteHandler *o, s16 id) {
 // Unlink Sprite
 void func_0804d05c(struct SpriteHandler *o, s16 id) {
     struct Sprite *spr = o->sprites;
-    s16 next = spr[id].unk1A;
-    s16 prev = spr[id].unk18;
+    s16 next = spr[id].nextID;
+    s16 prev = spr[id].prevID;
 
     if (prev > -1) {
-        spr[prev].unk1A = next;
+        spr[prev].nextID = next;
     } else {
         o->unkC = next;
     }
     if (next > -1) {
-        spr[next].unk18 = prev;
+        spr[next].prevID = prev;
     } else {
         o->unkE = prev;
     }
@@ -332,7 +332,7 @@ void func_0804d05c(struct SpriteHandler *o, s16 id) {
 s16 func_0804d0a4(struct SpriteHandler *o) {
     s16 id = o->unk10;
     if (id > -1) {
-        o->unk10 = o->sprites[id].unk1A;
+        o->unk10 = o->sprites[id].nextID;
         if (o->unk10 < 0) {
             o->unk12 = -1;
         }
@@ -344,11 +344,11 @@ s16 func_0804d0a4(struct SpriteHandler *o) {
 void func_0804d0d8(struct SpriteHandler *o, s16 id) {
     if (id > -1) {
         if (o->unk12 >= 0) {
-            o->sprites[o->unk12].unk1A = id;
+            o->sprites[o->unk12].nextID = id;
         } else {
             o->unk10 = id;
         }
-        o->sprites[id].unk1A = -1;
+        o->sprites[id].nextID = -1;
         o->unk12 = id;
     }
 }
@@ -385,30 +385,30 @@ s16 func_0804d160(struct SpriteHandler *o, struct Animation *anim, s8 frame, s16
 
     sprite = &o->sprites[id];
 
-    sprite->unk0_b14 = TRUE;
-    sprite->unk8 = anim;
+    sprite->present = TRUE;
+    sprite->animation = anim;
     sprite->unkD = playbackFlag;
-    sprite->unkE = loopFrame;
-    sprite->unk2 = posX;
-    sprite->unk4 = posY;
-    sprite->unk6 = layer;
-    sprite->unk0_b5 = func_0804d11c(anim);
-    sprite->unk0_b1 = playbackType & 0xff;
-    sprite->unk10 = 0;
-    sprite->unk14 = 0;
-    sprite->unk16 = 0;
-    sprite->unk17 = -1;
-    sprite->unk0_b13 = 0;
-    sprite->unk0_b15 = 0;
-    sprite->unk20 = 0;
-    sprite->unk28 = func_0804d140(anim);
-    sprite->unk30 = &D_08bd0cac;
-    sprite->unk2C = &D_08bd0cac;
-    sprite->unk2A = o->unk1C;
-    sprite->unk38 = INT_TO_FIXED(1);
+    sprite->loopFrame = loopFrame;
+    sprite->xPosition = posX;
+    sprite->yPosition = posY;
+    sprite->layer = layer;
+    sprite->celAmount = func_0804d11c(anim);
+    sprite->playbackType = playbackType & 0xff;
+    sprite->oamAttributes = 0;
+    sprite->tileNumber = 0;
+    sprite->palette = 0;
+    sprite->callbackFrame = -1;
+    sprite->update = 0;
+    sprite->pause = 0;
+    sprite->callbackFunction = 0;
+    sprite->totalDuration = func_0804d140(anim);
+    sprite->yDataSource = &D_08bd0cac;
+    sprite->xDataSource = &D_08bd0cac;
+    sprite->memoryID = o->unk1C;
+    sprite->animationSpeed = INT_TO_FIXED(1);
     func_0804cf38(o, id);
     func_0804cebc(o, id, frame);
-    sprite->unk0_b0 = (playbackType >> 0xf) ^ 1; // If bit 15 is set = 0; else = 1
+    sprite->displaySprite = (playbackType >> 0xf) ^ 1; // If bit 15 is set = 0; else = 1
     return id;
 }
 
@@ -421,30 +421,30 @@ s16 func_0804d294(struct SpriteHandler *o, struct Animation *anim, s8 frame, s16
 
     sprite = &o->sprites[id];
 
-    sprite->unk0_b14 = TRUE;
-    sprite->unk8 = anim;
+    sprite->present = TRUE;
+    sprite->animation = anim;
     sprite->unkD = playbackFlag;
-    sprite->unkE = loopFrame;
-    sprite->unk2 = posX;
-    sprite->unk4 = posY;
-    sprite->unk6 = layer;
-    sprite->unk0_b5 = func_0804d11c(anim);
-    sprite->unk0_b1 = playbackType & 0xff;
-    sprite->unk10 = attrs;
-    sprite->unk14 = 0;
-    sprite->unk16 = 0;
-    sprite->unk17 = -1;
-    sprite->unk0_b13 = 0;
-    sprite->unk0_b15 = 0;
-    sprite->unk20 = 0;
-    sprite->unk28 = func_0804d140(anim);
-    sprite->unk30 = &D_08bd0cac;
-    sprite->unk2C = &D_08bd0cac;
-    sprite->unk2A = o->unk1C;
-    sprite->unk38 = INT_TO_FIXED(1);
+    sprite->loopFrame = loopFrame;
+    sprite->xPosition = posX;
+    sprite->yPosition = posY;
+    sprite->layer = layer;
+    sprite->celAmount = func_0804d11c(anim);
+    sprite->playbackType = playbackType & 0xff;
+    sprite->oamAttributes = attrs;
+    sprite->tileNumber = 0;
+    sprite->palette = 0;
+    sprite->callbackFrame = -1;
+    sprite->update = 0;
+    sprite->pause = 0;
+    sprite->callbackFunction = 0;
+    sprite->totalDuration = func_0804d140(anim);
+    sprite->yDataSource = &D_08bd0cac;
+    sprite->xDataSource = &D_08bd0cac;
+    sprite->memoryID = o->unk1C;
+    sprite->animationSpeed = INT_TO_FIXED(1);
     func_0804cf38(o, id);
     func_0804cebc(o, id, frame);
-    sprite->unk0_b0 = (playbackType >> 0xf) ^ 1; // If bit 15 is set = 0; else = 1
+    sprite->displaySprite = (playbackType >> 0xf) ^ 1; // If bit 15 is set = 0; else = 1
     return id;
 }
 
@@ -463,14 +463,14 @@ s16 func_0804d3cc(struct SpriteHandler *o, s16 srcId) {
     srcSprite = &o->sprites[srcId];
     
     DmaCopy32(3, srcSprite, destSprite, sizeof(struct Sprite));
-    destSprite->unk2A = o->unk1C;
-    destSprite->unk18 = srcId;
-    destSprite->unk1A = srcSprite->unk1A;
-    srcSprite->unk1A = destId;
-    if (destSprite->unk1A == -1) {
+    destSprite->memoryID = o->unk1C;
+    destSprite->prevID = srcId;
+    destSprite->nextID = srcSprite->nextID;
+    srcSprite->nextID = destId;
+    if (destSprite->nextID == -1) {
         o->unkE = destId;
     } else {
-        o->sprites[destSprite->unk1A].unk18 = destId;
+        o->sprites[destSprite->nextID].prevID = destId;
     }
     return destId;
 }
@@ -485,7 +485,7 @@ void func_0804d468(struct SpriteHandler *o, s16 destId, s16 srcId) {
     D_03004428 = 3;
     if (func_0804cc68(o, destId) || func_0804cc68(o, srcId)) return;
 
-    prev = o->sprites[destId].unk2A;
+    prev = o->sprites[destId].memoryID;
     func_0804d05c(o, destId);
     dest = (u8 *)&o->sprites[destId];
     src = (u8 *)&o->sprites[srcId];
@@ -493,7 +493,7 @@ void func_0804d468(struct SpriteHandler *o, s16 destId, s16 srcId) {
         *dest++ = *src++;
     }
     func_0804cf38(o, destId);
-    o->sprites[destId].unk2A = prev;
+    o->sprites[destId].memoryID = prev;
 }
 
 // Disable Sprite
@@ -501,8 +501,8 @@ void func_0804d504(struct SpriteHandler *o, s16 id) {
     D_03004428 = 4;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk0_b0 = FALSE;
-    o->sprites[id].unk0_b14 = FALSE;
+    o->sprites[id].displaySprite = FALSE;
+    o->sprites[id].present = FALSE;
     func_0804d05c(o, id);
     func_0804d0d8(o, id);
 }
@@ -512,11 +512,11 @@ void func_0804d55c(struct SpriteHandler *o, s16 id, s16 x, s16 y, u16 layer) {
     D_03004428 = 5;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk2 = x;
-    o->sprites[id].unk4 = y;
-    if (o->sprites[id].unk6 != layer) {
+    o->sprites[id].xPosition = x;
+    o->sprites[id].yPosition = y;
+    if (o->sprites[id].layer != layer) {
         func_0804d05c(o, id);
-        o->sprites[id].unk6 = layer;
+        o->sprites[id].layer = layer;
         func_0804cf38(o, id);
     }
 }
@@ -526,8 +526,8 @@ void func_0804d5d4(struct SpriteHandler *o, s16 id, s16 x, s16 y) {
     D_03004428 = 6;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk2 = x;
-    o->sprites[id].unk4 = y;
+    o->sprites[id].xPosition = x;
+    o->sprites[id].yPosition = y;
 }
 
 // Set X Position
@@ -535,7 +535,7 @@ void func_0804d614(struct SpriteHandler *o, s16 id, s16 x) {
     D_03004428 = 7;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk2 = x;
+    o->sprites[id].xPosition = x;
 }
 
 // Set Y Position
@@ -543,17 +543,17 @@ void func_0804d648(struct SpriteHandler *o, s16 id, s16 y) {
     D_03004428 = 8;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk4 = y;
+    o->sprites[id].yPosition = y;
 }
 
 // Set Layer
 void func_0804d67c(struct SpriteHandler *o, s16 id, u16 layer) {
     D_03004428 = 9;
     if (func_0804cc68(o, id)) return;
-    if (o->sprites[id].unk6 == layer) return;
+    if (o->sprites[id].layer == layer) return;
 
     func_0804d05c(o, id);
-    o->sprites[id].unk6 = layer;
+    o->sprites[id].layer = layer;
     func_0804cf38(o, id);
 }
 
@@ -562,7 +562,7 @@ s8 func_0804d6cc(struct SpriteHandler *o, s16 id) {
     D_03004428 = 10;
     if (func_0804cc68(o, id)) return -1;
 
-    return o->sprites[id].unkC;
+    return o->sprites[id].currentFrame;
 }
 
 // Get Animation Progression (?)
@@ -576,22 +576,22 @@ u8 func_0804d708(struct SpriteHandler *o, s16 id) {
     if (func_0804cc68(o, id)) return 0;
     
     sprite = &o->sprites[id];
-    anim = sprite->unk8;
+    anim = sprite->animation;
     calcDuration = 0;
-    for (i = 0; i < sprite->unkC; i++) {
+    for (i = 0; i < sprite->currentFrame; i++) {
         calcDuration += anim->duration;
         anim++;
     }
-    calcDuration += (anim->duration - (s8)FIXED_TO_INT(sprite->unk1C));
-    return (u32)INT_TO_FIXED(calcDuration) / sprite->unk28;
+    calcDuration += (anim->duration - (s8)FIXED_TO_INT(sprite->currentFrameDuration));
+    return (u32)INT_TO_FIXED(calcDuration) / sprite->totalDuration;
 }
 
-// Show/Display Sprite
+// Display Sprite
 void func_0804d770(struct SpriteHandler *o, s16 id, u16 flag) {
     D_03004428 = 12;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk0_b0 = flag;
+    o->sprites[id].displaySprite = flag;
 }
 
 // Set Attributes
@@ -599,7 +599,7 @@ void func_0804d7b4(struct SpriteHandler *o, s16 id, u32 arg2) {
     D_03004428 = 13;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk10 = arg2;
+    o->sprites[id].oamAttributes = arg2;
 }
 
 // OR Attributes
@@ -607,7 +607,7 @@ void func_0804d7e8(struct SpriteHandler *o, s16 id, u32 arg2) {
     D_03004428 = 14;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk10 |= arg2;
+    o->sprites[id].oamAttributes |= arg2;
 }
 
 // AND Attributes
@@ -615,7 +615,7 @@ void func_0804d820(struct SpriteHandler *o, s16 id, u32 arg2) {
     D_03004428 = 15;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk10 &= arg2;
+    o->sprites[id].oamAttributes &= arg2;
 }
 
 // CLEAR Attributes
@@ -623,7 +623,7 @@ void func_0804d858(struct SpriteHandler *o, s16 id, u32 arg2) {
     D_03004428 = 16;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk10 &= ~arg2;
+    o->sprites[id].oamAttributes &= ~arg2;
 }
 
 // Set Tile Number
@@ -631,7 +631,7 @@ void func_0804d890(struct SpriteHandler *o, s16 id, s16 arg2) {
     D_03004428 = 17;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk14 = arg2;
+    o->sprites[id].tileNumber = arg2;
 }
 
 // Set Palette
@@ -639,7 +639,7 @@ void func_0804d8c4(struct SpriteHandler *o, s16 id, s8 arg2) {
     D_03004428 = 18;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk16 = arg2;
+    o->sprites[id].palette = arg2;
 }
 
 // Set Animation
@@ -650,13 +650,13 @@ void func_0804d8f8(struct SpriteHandler *o, s16 id, struct Animation * anim,
     if (func_0804cc68(o, id)) return;
     
     sprite = &o->sprites[id];
-    sprite->unk0_b5 = func_0804d11c(anim);
-    sprite->unk8 = anim;
-    sprite->unk28 = func_0804d140(anim);
+    sprite->celAmount = func_0804d11c(anim);
+    sprite->animation = anim;
+    sprite->totalDuration = func_0804d140(anim);
     if (animFrame > -1) {
         sprite->unkD = arg4;
-        sprite->unkE = loopFrame;
-        sprite->unk0_b1 = playType; // enum
+        sprite->loopFrame = loopFrame;
+        sprite->playbackType = playType;
         func_0804cebc(o, id, animFrame);
     }
 }
@@ -668,12 +668,12 @@ void func_0804d9b0(struct SpriteHandler *o, s16 id, struct SpritePlaybackData *d
     if (func_0804cc68(o, id)) return;
 
     sprite = &o->sprites[id];
-    sprite->unk0_b5 = func_0804d11c(data->anim);
-    sprite->unk8 = data->anim;
-    sprite->unk28 = func_0804d140(data->anim);
+    sprite->celAmount = func_0804d11c(data->anim);
+    sprite->animation = data->anim;
+    sprite->totalDuration = func_0804d140(data->anim);
     if (data->animFrame > -1) {
         sprite->unkD = data->unk5;
-        sprite->unkE = data->loopFrame;
+        sprite->loopFrame = data->loopFrame;
         func_0804cebc(o, id, data->animFrame);
     }
 }
@@ -683,7 +683,7 @@ void func_0804da20(struct SpriteHandler *o, s16 id, u16 arg2) {
     D_03004428 = 20;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk0_b13 = arg2;
+    o->sprites[id].update = arg2;
 }
 
 // Set Pause (?) Flag
@@ -691,7 +691,7 @@ void func_0804da68(struct SpriteHandler *o, s16 id, u16 arg2) {
     D_03004428 = 21;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk0_b15 = arg2;
+    o->sprites[id].pause = arg2;
 }
 
 // Set Callback
@@ -699,8 +699,8 @@ void func_0804daa8(struct SpriteHandler *o, s16 id, void *func, u32 arg) {
     D_03004428 = 22;
     if (func_0804cc68(o, id)) return;
 
-    o->sprites[id].unk20 = func;
-    o->sprites[id].unk24 = arg;
+    o->sprites[id].callbackFunction = func;
+    o->sprites[id].callbackArgument = arg;
 }
 
 // Set Playback Data
@@ -711,8 +711,8 @@ void func_0804dae0(struct SpriteHandler *o, s16 id, s8 arg2, s8 loopFrame, u16 p
 
     sprite = &o->sprites[id];
     sprite->unkD = arg2;
-    sprite->unkE = loopFrame;
-    sprite->unk0_b1 = playType & 0xff;
+    sprite->loopFrame = loopFrame;
+    sprite->playbackType = playType & 0xff;
 }
 
 // Set X & Y Data Source
@@ -722,10 +722,10 @@ void func_0804db44(struct SpriteHandler *o, s16 id, s16 *dX, s16 *dY) {
     if (func_0804cc68(o, id)) return;
 
     sprite = &o->sprites[id];
-    sprite->unk2C = dX;
-    if (!dX) sprite->unk2C = &D_08bd0cac;
-    sprite->unk30 = dY;
-    if (!dY) sprite->unk30 = &D_08bd0cac;
+    sprite->xDataSource = dX;
+    if (!dX) sprite->xDataSource = &D_08bd0cac;
+    sprite->yDataSource = dY;
+    if (!dY) sprite->yDataSource = &D_08bd0cac;
 }
 
 // Set X Data Source
@@ -735,8 +735,8 @@ void func_0804db90(struct SpriteHandler *o, s16 id, s16 *d) {
     if (func_0804cc68(o, id)) return;
 
     sprite = &o->sprites[id];
-    sprite->unk2C = d;
-    if (!d) sprite->unk2C = &D_08bd0cac;
+    sprite->xDataSource = d;
+    if (!d) sprite->xDataSource = &D_08bd0cac;
 }
 
 // Set Y Data Source
@@ -746,8 +746,8 @@ void func_0804dbd0(struct SpriteHandler *o, s16 id, s16 *d) {
     if (func_0804cc68(o, id)) return;
 
     sprite = &o->sprites[id];
-    sprite->unk30 = d;
-    if (!d) sprite->unk30 = &D_08bd0cac;
+    sprite->yDataSource = d;
+    if (!d) sprite->yDataSource = &D_08bd0cac;
 }
 
 // Set Affine
@@ -759,17 +759,17 @@ void func_0804dc10(struct SpriteHandler *o, s16 id, s32 afIndex, s16 *af) {
     sprite = &o->sprites[id];
 
     if (afIndex > -1) {
-        sprite->unk34 = af;
-        sprite->unk10 &= ~0x02000000; // clear affine flag 
-        sprite->unk10 &= ~0x00003e00; // clear affine param index
-        sprite->unk10 &= ~(2 | 1);
-        sprite->unk10 |= 0x2000000; // affine flag
-        sprite->unk10 |= afIndex << 9; // affine param index
-        sprite->unk10 |= (2 | 1); // affine + double size flag
+        sprite->affineParams = af;
+        sprite->oamAttributes &= ~0x02000000; // clear affine flag 
+        sprite->oamAttributes &= ~0x00003e00; // clear affine param index
+        sprite->oamAttributes &= ~(2 | 1);
+        sprite->oamAttributes |= 0x2000000; // affine flag
+        sprite->oamAttributes |= afIndex << 9; // affine param index
+        sprite->oamAttributes |= (2 | 1); // affine + double size flag
     } else {
-        sprite->unk10 &= ~0x02000000;
-        sprite->unk10 &= ~0x00003e00;
-        sprite->unk10 &= ~(2 | 1);
+        sprite->oamAttributes &= ~0x02000000;
+        sprite->oamAttributes &= ~0x00003e00;
+        sprite->oamAttributes &= ~(2 | 1);
     }
 }
 
@@ -778,8 +778,8 @@ void func_0804dc8c(struct SpriteHandler *o, s16 id, u32 arg2) {
     struct Sprite *sprite;
     if (id > -1) {
         sprite = &o->sprites[id];
-        sprite->unk10 &= ~(2 | 1);
-        sprite->unk10 |= arg2;
+        sprite->oamAttributes &= ~(2 | 1);
+        sprite->oamAttributes |= arg2;
     }
 }
 
@@ -788,7 +788,7 @@ void func_0804dcb8(struct SpriteHandler *o, s16 id, u16 speed) {
     struct Sprite *sprite;
     if (id > -1) {
         sprite = &o->sprites[id];
-        sprite->unk38 = speed;
+        sprite->animationSpeed = speed;
     }
 }
 
@@ -824,7 +824,7 @@ u32 func_0804dcd8(u16 *cel, u32 requestedData) {
                 y -= 256;
             }
             // Get the dimensions
-            // D_08bd0cae[AS_OAM_DATA(cel)->shape][AS_OAM_DATA(cel)->size];
+            // D_08bd0cae[AS_OAM(cel)->shape][AS_OAM(cel)->size];
             dimensions = (struct OamDimensions *)&objSizes[(AS_OAM(cel)->objShape * 8) + (AS_OAM(cel)->objSize * 2)];
             
             // Calculate edges
@@ -875,82 +875,82 @@ s32 func_0804ddb0(struct SpriteHandler *o, s16 id, u32 requestedDatat) {
     sprite = &o->sprites[id];
     switch (requestedDatat) {
         case SPRITE_DATA_DISPLAY_FLAG:
-            returnValue = sprite->unk0_b0;
+            returnValue = sprite->displaySprite;
             break;
         case SPRITE_DATA_PLAYBACK_TYPE:
-            returnValue = sprite->unk0_b1;
+            returnValue = sprite->playbackType;
             break;
         case SPRITE_DATA_TOTAL_CEL_AMOUNT:
-            returnValue = sprite->unk0_b5;
+            returnValue = sprite->celAmount;
             break;
         case SPRITE_DATA_UPDATE_FLAG:
-            returnValue = sprite->unk0_b13;
+            returnValue = sprite->update;
             break;
         case SPRITE_DATA_X_POSITION:
-            returnValue = sprite->unk2;
+            returnValue = sprite->xPosition;
             break;
         case SPRITE_DATA_Y_POSITION:
-            returnValue = sprite->unk4;
+            returnValue = sprite->yPosition;
             break;
         case SPRITE_DATA_LAYER:
-            returnValue = sprite->unk6;
+            returnValue = sprite->layer;
             break;
         case SPRITE_DATA_ANIMATION:
-            returnValue = (u32)sprite->unk8;
+            returnValue = (u32)sprite->animation;
             break;
         case SPRITE_DATA_CURRENT_FRAME_DURATION:
-            returnValue = (s8)FIXED_TO_INT(sprite->unk1C);
+            returnValue = (s8)FIXED_TO_INT(sprite->currentFrameDuration);
             break;
         case SPRITE_DATA_CURRENT_FRAME:
-            returnValue = sprite->unkC;
+            returnValue = sprite->currentFrame;
             break;
         case SPRITE_DATA_UNKD:
             returnValue = sprite->unkD;
             break;
         case SPRITE_DATA_LOOP_FRAME:
-            returnValue = sprite->unkE;
+            returnValue = sprite->loopFrame;
             break;
         case SPRITE_DATA_ATTRS10:
-            returnValue = sprite->unk10;
+            returnValue = sprite->oamAttributes;
             break;
         case SPRITE_DATA_TILE_NUMBER:
-            returnValue = sprite->unk14;
+            returnValue = sprite->tileNumber;
             break;
         case SPRITE_DATA_CALLBACK:
-            returnValue = (u32)sprite->unk20;
+            returnValue = (u32)sprite->callbackFunction;
             break;
         case SPRITE_DATA_CALLBACK_ARG:
-            returnValue = sprite->unk24;
+            returnValue = sprite->callbackArgument;
             break;
         case SPRITE_DATA_MEMORY_ID:
-            returnValue = sprite->unk2A;
+            returnValue = sprite->memoryID;
             break;
         case SPRITE_DATA_X_DATA_SOURCE:
-            returnValue = (u32)sprite->unk2C;
+            returnValue = (u32)sprite->xDataSource;
             break;
         case SPRITE_DATA_Y_DATA_SOURCE:
-            returnValue = (u32)sprite->unk30;
+            returnValue = (u32)sprite->yDataSource;
             break;
         case SPRITE_DATA_ANIMATION_SPEED:
-            returnValue = sprite->unk38;
+            returnValue = sprite->animationSpeed;
             break;
         case SPRITE_DATA_DIMENSION_LEFT:
-            returnValue = func_0804dcd8((u16 *)sprite->unk8[sprite->unkC].cel, SPRITE_DIMENSION_LEFT);
+            returnValue = func_0804dcd8((u16 *)sprite->animation[sprite->currentFrame].cel, SPRITE_DIMENSION_LEFT);
             break;
         case SPRITE_DATA_DIMENSION_RIGHT:
-            returnValue = func_0804dcd8((u16 *)sprite->unk8[sprite->unkC].cel, SPRITE_DIMENSION_RIGHT);
+            returnValue = func_0804dcd8((u16 *)sprite->animation[sprite->currentFrame].cel, SPRITE_DIMENSION_RIGHT);
             break;
         case SPRITE_DATA_DIMENSION_TOP:
-            returnValue = func_0804dcd8((u16 *)sprite->unk8[sprite->unkC].cel, SPRITE_DIMENSION_TOP);
+            returnValue = func_0804dcd8((u16 *)sprite->animation[sprite->currentFrame].cel, SPRITE_DIMENSION_TOP);
             break;
         case SPRITE_DATA_DIMENSION_BOTTOM:
-            returnValue = func_0804dcd8((u16 *)sprite->unk8[sprite->unkC].cel, SPRITE_DIMENSION_BOTTOM);
+            returnValue = func_0804dcd8((u16 *)sprite->animation[sprite->currentFrame].cel, SPRITE_DIMENSION_BOTTOM);
             break;
         case SPRITE_DATA_DIMENSION_WIDTH:
-            returnValue = func_0804dcd8((u16 *)sprite->unk8[sprite->unkC].cel, SPRITE_DIMENSION_WIDTH);
+            returnValue = func_0804dcd8((u16 *)sprite->animation[sprite->currentFrame].cel, SPRITE_DIMENSION_WIDTH);
             break;
         case SPRITE_DATA_DIMENSION_HEIGHT:
-            returnValue = func_0804dcd8((u16 *)sprite->unk8[sprite->unkC].cel, SPRITE_DIMENSION_HEIGHT);
+            returnValue = func_0804dcd8((u16 *)sprite->animation[sprite->currentFrame].cel, SPRITE_DIMENSION_HEIGHT);
             break;
         default:
             returnValue = 0;
@@ -964,7 +964,7 @@ void func_0804df4c(struct SpriteHandler *o, s16 id, s8 frame) {
     struct Sprite *sprite;
     if (id > -1) {
         sprite = &o->sprites[id];
-        sprite->unk17 = frame;
+        sprite->callbackFrame = frame;
     }
 }
 
@@ -978,8 +978,8 @@ void func_0804df80(struct SpriteHandler *o, u16 id, u32 value, u32 arg) {
     s16 r3 = o->unkC;
 
     while (r3 >= 0) {
-        s16 r7 = o->sprites[r3].unk1A;
-        if (o->sprites[r3].unk2A == id) {
+        s16 r7 = o->sprites[r3].nextID;
+        if (o->sprites[r3].memoryID == id) {
             switch (value) {
                 case SPRITE_ACT_DISABLE:
                     func_0804d504(o, r3);
@@ -1117,7 +1117,7 @@ s32 func_0804e3b0(struct SpriteHandler *o) {
 
     while (id != -1) {
         count++;
-        id = sprites[id].unk1A;
+        id = sprites[id].nextID;
     }
     return count;
 }
@@ -1128,10 +1128,10 @@ s32 func_0804e3e0(struct SpriteHandler *o, u16 memID) {
     struct Sprite *sprite = o->sprites;
     s32 r2 = o->unkC;
     while (r2 != -1) {
-        if (sprite[r2].unk2A == memID) {
+        if (sprite[r2].memoryID == memID) {
             count++;
         }
-        r2 = sprite[r2].unk1A;
+        r2 = sprite[r2].nextID;
     }
     return count;
 }
