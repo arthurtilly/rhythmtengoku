@@ -63,8 +63,6 @@ enum SpriteValueSetRequest {
     SPRITE_ACT_SET_ANIMATION_SPEED,
 };
 
-#define SPRITE_HIDE_AT_START 0x8000
-
 struct OamCel {
     u16 total;          // Amount of data
     struct OAM data[0]; // Data
