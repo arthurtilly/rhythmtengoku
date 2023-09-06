@@ -1,15 +1,12 @@
 #include "global.h"
 #include "debug_flash_mem.h"
 
-// For readability.
-#define gFlashMemoryTest ((struct FlashMemoryTestSceneData *)gCurrentSceneData)
 
-
-/* FLASH MEMORY TEST */
+/* FLASH MEMORY TEST SCENE */
 
 
 // Init. Static Variables
-void flash_test_scene_init_static_var(void) {
+void flash_test_scene_init_memory(void) {
 }
 
 
@@ -51,7 +48,7 @@ void flash_test_scene_start(void *sVar, s32 dArg) {
     import_all_scene_objects(D_03005380, gFlashMemoryTest->objFont, flash_mem_test_scene_objects, D_0300558c);
 
     flash_test_scene_init_gfx1();
-    gFlashMemoryTest->scriptIsReady = FALSE;
+    gFlashMemoryTest->inputsEnabled = FALSE;
 
     func_08008fe0(&var0, &var1);
     func_0801e928(0);
@@ -74,7 +71,7 @@ void flash_test_scene_update(void *sVar, s32 dArg) {
         data[i] = i;
     }
 
-    if (flash_test_scene_can_receive_inputs()) {
+    if (flash_test_scene_inputs_enabled()) {
         var = 0;
 
         if (D_030053b8 & DPAD_RIGHT) {
@@ -114,15 +111,15 @@ void flash_test_scene_update(void *sVar, s32 dArg) {
 
         if (D_03004afc & SELECT_BUTTON) {
             set_pause_beatscript_scene(FALSE);
-            gFlashMemoryTest->scriptIsReady = FALSE;
+            gFlashMemoryTest->inputsEnabled = FALSE;
         }
     }
 }
 
 
-// Communicate with Script
-u32 flash_test_scene_can_receive_inputs(void) {
-    if (gFlashMemoryTest->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 flash_test_scene_inputs_enabled(void) {
+    if (gFlashMemoryTest->inputsEnabled) {
         return TRUE;
     }
 

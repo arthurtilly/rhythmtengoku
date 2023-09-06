@@ -16,7 +16,7 @@ static const char **sGradeComments;
 
 
 // Init. Static Variables
-void score_results_scene_init_static_var() {
+void score_results_scene_init_memory() {
     sGradeThresholds = NULL;
     sGradeComments = 0;
 }
@@ -101,7 +101,7 @@ void score_results_scene_start(void *sVar, s32 dArg) {
     textSprite = func_0804d160(D_03005380, textAnim, 0, 120, 152, 0, 0, 0, 0);
     func_0804d8c4(D_03005380, textSprite, 15);
 
-    gResults->scriptIsReady = FALSE;
+    gResults->inputsEnabled = FALSE;
 }
 
 
@@ -127,7 +127,7 @@ void score_results_scene_update(void *sVar, s32 dArg) {
     if (results_scene_inputs_enabled()) {
         if (D_03004afc & A_BUTTON) {
             set_pause_beatscript_scene(FALSE);
-            gResults->scriptIsReady = FALSE;
+            gResults->inputsEnabled = FALSE;
             play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), INT_TO_FIXED(0.0));
         }
     }

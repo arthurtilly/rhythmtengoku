@@ -65,7 +65,7 @@ void reading_scene_init_gfx1(void) {
 
 
 // Scene Start
-void reading_scene_start(void *sceneVar, s32 dataArg) {
+void reading_scene_start(void *sVar, s32 dArg) {
     struct ReadingMaterial *material;
     struct TextPrinter *titlePrinter;
 
@@ -104,7 +104,7 @@ void reading_scene_start(void *sceneVar, s32 dataArg) {
     text_printer_set_string(gReading->printer, material->text);
     text_printer_export_data(gReading->printer, &gReading->pageData[0]);
 
-    gReading->scriptIsReady = FALSE;
+    gReading->inputsEnabled = FALSE;
 }
 
 
@@ -169,10 +169,10 @@ void reading_scene_update_page(void) {
 
 
 // Scene Update (Active)
-void reading_scene_update(void *sceneVar, s32 dataArg) {
+void reading_scene_update(void *sVar, s32 dArg) {
     s32 event = DO_NOTHING;
 
-    if (reading_scene_can_receive_inputs()) {
+    if (reading_scene_inputs_enabled()) {
         if (D_03004ac0 & DPAD_UP) {
             if (gReading->currentPage > 0) {
                 event = SCROLL_TO_PREV;
@@ -210,7 +210,7 @@ void reading_scene_update(void *sceneVar, s32 dataArg) {
 
         case EXIT_SCENE:
             set_pause_beatscript_scene(FALSE);
-            gReading->scriptIsReady = FALSE;
+            gReading->inputsEnabled = FALSE;
             play_sound_in_player(SFX_PLAYER_3, &s_menu_cancel2_seqData);
             break;
     }
@@ -221,9 +221,9 @@ void reading_scene_update(void *sceneVar, s32 dataArg) {
 }
 
 
-// Communicate with Script
-u32 reading_scene_can_receive_inputs(void) {
-    if (gReading->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 reading_scene_inputs_enabled(void) {
+    if (gReading->inputsEnabled) {
         u32 busy = text_printer_is_busy(gReading->printer);
 
         if (gReading->pageState == PAGE_SCROLLING_DOWN) {
@@ -244,7 +244,7 @@ u32 reading_scene_can_receive_inputs(void) {
 
 
 // Scene Stop
-void reading_scene_stop(void *sceneVar, s32 dataArg) {
+void reading_scene_stop(void *sVar, s32 dArg) {
     func_08008628();
     func_08004058();
 }

@@ -7,8 +7,8 @@
 #include "src/scenes/studio.h"
 
 
-// For readability.
-#define gGameSelect ((struct GameSelectSceneData *)gCurrentSceneData)
+/* GAME SELECT SCENE */
+
 
 #define COLOR_MOD_MAX_WAIT_TIME 60
 #define COLOR_MOD_INTERP_TIME 96
@@ -16,13 +16,6 @@
 enum ColorChangerStatesEnum {
     COLOR_CHANGER_STATE_WAITING,
     COLOR_CHANGER_STATE_INTERPOLATING
-};
-
-enum GameSelectStatesEnum {
-    /* 00 */ SCENE_STATE_UNKNOWN,
-    /* 01 */ SCENE_STATE_UNLOCKING_NEW_STAGES,
-    /* 02 */ SCENE_STATE_ACTIVE,
-    /* 03 */ SCENE_STATE_DISPLAYING_CAMPAIGN_NOTICE
 };
 
 #define STAGE_PANE_Y_HIDDEN (SCREEN_HEIGHT + 40)
@@ -45,8 +38,6 @@ enum FlowPaneStatesEnum {
     /* 03 */ FLOW_PANE_TASK_FLICKER
 };
 
-extern u32 D_03005590; // Unused
-extern u32 D_030055d4; // Unused
 
 static u8 sPlayAltBGM; // Play "Game Select 2" music
 static u16 D_0300131e_padding; // unused
@@ -55,7 +46,8 @@ static u16 D_03001322_padding; // unused
 static u8 sPlayCreditsAfterEpilogue; // Currently playing through Remix 6 for the first time.
 
 
-/* GAME SELECT */
+extern u32 D_03005590; // Unused
+extern u32 D_030055d4; // Unused
 
 
 // Clear sPlayAltBGM
@@ -309,7 +301,7 @@ void start_campaign_notice(s32 id) {
     notice->textAdvDelay = 10;
     notice->noticeDelay = 60;
     scene_interpolate_music_volume(100, beats_to_ticks(0x18));
-    gGameSelect->sceneState = SCENE_STATE_DISPLAYING_CAMPAIGN_NOTICE;
+    gGameSelect->sceneState = GS_STATE_DISPLAYING_CAMPAIGN;
 }
 
 
@@ -380,7 +372,7 @@ void update_campaign_notice(void) {
             gGameSelect->hideStageTitle = FALSE;
             play_sound(&s_menu_kettei2_seqData);
             scene_interpolate_music_volume(INT_TO_FIXED(1.0), beats_to_ticks(0x18));
-            gGameSelect->sceneState = SCENE_STATE_ACTIVE;
+            gGameSelect->sceneState = GS_STATE_MAIN;
         }
     }
 
@@ -656,7 +648,7 @@ void game_select_update_bg_colors(void) {
 
 
 // Scene Init. Static Variables
-void game_select_init_static_var(void) {
+void game_select_scene_init_memory(void) {
     D_030055d4 = 0;
     D_03005590 = 0;
     clear_current_campaign();
@@ -708,7 +700,7 @@ void game_select_scene_init_gfx1(void) {
 
 
 // Scene Start
-void game_select_scene_start(void *sceneParam, s32 startParam) {
+void game_select_scene_start(void *sVar, s32 dArg) {
     struct TengokuSaveData *saveData = &D_030046a8->data;
     s32 recentLevelState, previousLevelState;
     s16 bgOfsX, bgOfsY;
@@ -755,7 +747,7 @@ void game_select_scene_start(void *sceneParam, s32 startParam) {
     init_campaign_notice();
     game_select_init_medal_pane();
     game_select_init_squares();
-    gGameSelect->scriptIsReady = FALSE;
+    gGameSelect->inputsEnabled = FALSE;
     game_select_init_info_pane();
     game_select_set_info_pane_to_cursor_target();
     game_select_init_flow_pane();
@@ -795,7 +787,7 @@ void game_select_scene_start(void *sceneParam, s32 startParam) {
             start_campaign_notice(D_030046a8->data.currentCampaign);
             gGameSelect->campaignNotice.hasNewCampaign = FALSE;
         } else {
-            gGameSelect->sceneState = SCENE_STATE_ACTIVE;
+            gGameSelect->sceneState = GS_STATE_MAIN;
         }
     }
 
@@ -830,7 +822,7 @@ u32 game_select_roll_credits_after_epilogue(void) {
 
 
 // Scene Update (Paused)
-void game_select_scene_paused(void *sceneParam, s32 pausedParam) {
+void game_select_scene_paused(void *sVar, s32 dArg) {
 }
 
 
@@ -1022,7 +1014,7 @@ void game_select_read_inputs(void) {
     s32 levelState, levelID;
     u32 canHaveCampaign;
 
-    if (!game_select_scene_script_is_ready()) {
+    if (!game_select_scene_inputs_enabled()) {
         return;
     }
 
@@ -1087,7 +1079,7 @@ void game_select_read_inputs(void) {
 
             write_game_save_data();
             set_pause_beatscript_scene(FALSE);
-            gGameSelect->scriptIsReady = FALSE;
+            gGameSelect->inputsEnabled = FALSE;
             play_sound(&s_menu_kettei1_seqData);
             return;
         }
@@ -1106,7 +1098,7 @@ void game_select_read_inputs(void) {
         D_030046a8->data.recentLevelState = LEVEL_STATE_NULL;
         write_game_save_data();
         set_pause_beatscript_scene(FALSE);
-        gGameSelect->scriptIsReady = FALSE;
+        gGameSelect->inputsEnabled = FALSE;
         play_sound(&s_menu_cancel3_seqData);
     }
 }
@@ -1199,7 +1191,7 @@ void game_select_link_sprite_xy_to_bg(s16 sprite) {
 
 
 // Scene Update (Active)
-void game_select_scene_update(void *sceneParam, s32 updateParam) {
+void game_select_scene_update(void *sVar, s32 dArg) {
     s16 bgOfsX, bgOfsY;
 
     if (gGameSelect->loadingSceneGfx) {
@@ -1210,15 +1202,15 @@ void game_select_scene_update(void *sceneParam, s32 updateParam) {
     bgOfsY = D_03004b10.BG_OFS[BG_LAYER_3].y;
 
     switch (gGameSelect->sceneState) {
-        case SCENE_STATE_UNLOCKING_NEW_STAGES:
+        case GS_STATE_UNLOCKING_LEVELS:
             game_select_update_level_events();
             break;
 
-        case SCENE_STATE_ACTIVE:
+        case GS_STATE_MAIN:
             game_select_read_inputs();
             break;
 
-        case SCENE_STATE_DISPLAYING_CAMPAIGN_NOTICE:
+        case GS_STATE_DISPLAYING_CAMPAIGN:
             update_campaign_notice();
             break;
     }
@@ -1237,9 +1229,9 @@ void game_select_scene_update(void *sceneParam, s32 updateParam) {
 }
 
 
-// Communicate with Script
-u32 game_select_scene_script_is_ready(void) {
-    if (gGameSelect->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 game_select_scene_inputs_enabled(void) {
+    if (gGameSelect->inputsEnabled) {
         return TRUE;
     } else {
         return FALSE;
@@ -1561,7 +1553,7 @@ u32 game_select_process_level_events(void) {
             game_select_link_sprite_xy_to_bg(sprite);
             play_sound(&s_f_clear_game_seqData);
 
-            cafe_remove_level_from_session(id);
+            cafe_session_remove_level(id);
             D_030046a8->data.levelFirstOK[id] = D_030046a8->data.levelTotalPlays[id];
             break;
 
@@ -1575,7 +1567,7 @@ u32 game_select_process_level_events(void) {
 
             D_030046a8->data.totalMedals++;
             game_select_refresh_medal_count(127);
-            cafe_remove_level_from_session(id);
+            cafe_session_remove_level(id);
             D_030046a8->data.levelFirstSuperb[id] = D_030046a8->data.levelTotalPlays[id];
             if (D_030046a8->data.levelFirstOK[id] == 0) {
                 D_030046a8->data.levelFirstOK[id] = D_030046a8->data.levelTotalPlays[id];
@@ -1641,7 +1633,7 @@ void game_select_start_level_events(u32 delay) {
     gGameSelect->levelEventTargetX = gGameSelect->cursorX;
     gGameSelect->levelEventTargetY = gGameSelect->cursorY;
     gGameSelect->levelEventTimer = delay;
-    gGameSelect->sceneState = SCENE_STATE_UNLOCKING_NEW_STAGES;
+    gGameSelect->sceneState = GS_STATE_UNLOCKING_LEVELS;
 }
 
 
@@ -1723,7 +1715,7 @@ void game_select_update_level_events(void) {
         start_campaign_notice(D_030046a8->data.currentCampaign);
         gGameSelect->campaignNotice.hasNewCampaign = FALSE;
     } else {
-        gGameSelect->sceneState = SCENE_STATE_ACTIVE;
+        gGameSelect->sceneState = GS_STATE_MAIN;
     }
 }
 
@@ -2154,7 +2146,7 @@ void game_select_update_flow_pane(void) {
             break;
 
         case FLOW_PANE_TASK_ROLL:
-            if (gGameSelect->sceneState == SCENE_STATE_DISPLAYING_CAMPAIGN_NOTICE) {
+            if (gGameSelect->sceneState == GS_STATE_DISPLAYING_CAMPAIGN) {
                 volume = 100;
             } else {
                 volume = 0x100;
@@ -2228,7 +2220,7 @@ void game_select_update_flow_pane(void) {
 
 
 // Scene Stop
-void game_select_scene_stop(void *sceneParam, s32 stopParam) {
+void game_select_scene_stop(void *sVar, s32 dArg) {
     func_08008628();
     func_08003f28();
     func_08004058();

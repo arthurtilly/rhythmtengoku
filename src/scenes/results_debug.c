@@ -11,7 +11,7 @@
 
 
 // Init. Static Variables
-void results_scene_init_static_var(void) {
+void results_scene_init_memory(void) {
 }
 
 
@@ -50,7 +50,7 @@ void results_scene_start(void *sVar, s32 dArg) {
     gResults->objFont = func_0800c660(0x300, 4);
     import_all_scene_objects(D_03005380, gResults->objFont, debug_results_scene_objects, D_0300558c);
     results_scene_init_gfx1();
-    gResults->scriptIsReady = FALSE;
+    gResults->inputsEnabled = FALSE;
     set_next_scene(&scene_debug_menu);
 }
 
@@ -68,15 +68,15 @@ void results_scene_update(void *sVar, s32 dArg) {
 
     if (D_03004afc & A_BUTTON) {
         set_pause_beatscript_scene(FALSE);
-        gResults->scriptIsReady = FALSE;
+        gResults->inputsEnabled = FALSE;
         play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), INT_TO_FIXED(0.0));
     }
 }
 
 
-// Communicate with Script
+// Check if Scene Can Receive Inputs
 u32 results_scene_inputs_enabled(void) {
-    if (gResults->scriptIsReady) {
+    if (gResults->inputsEnabled) {
         return TRUE;
     }
 

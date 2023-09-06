@@ -5,7 +5,7 @@
 
 // Scene Types:
 struct MedalCornerSceneData {
-    u32 scriptIsReady;
+    u32 inputsEnabled;
     struct Listbox *listbox;
     s16 medalCountDigit1;
     s16 medalCountDigit2;
@@ -107,7 +107,7 @@ extern void medal_corner_remember_list_position(void);
 extern const char *medal_corner_listbox_get_string(s32 item);
 extern void medal_corner_listbox_on_scroll(s32 arg, u32 current, u32 previous);
 extern void medal_corner_listbox_init(void);
-extern void medal_corner_scene_init_static_var(void);
+extern void medal_corner_scene_init_memory(void);
 extern void medal_corner_scene_init_gfx3(void);
 extern void medal_corner_scene_init_gfx2(void);
 extern void medal_corner_scene_init_gfx1(void);
@@ -117,6 +117,6 @@ extern s32 medal_corner_get_lesson_id(void);
 extern void medal_corner_scene_paused(void *sVar, s32 dArg);
 extern void medal_corner_use_ui_texture_base(s32 sprite);
 extern void medal_corner_scene_update(void *sVar, s32 dArg);
-extern u32 medal_corner_scene_can_receive_inputs(void);
+extern u32 medal_corner_scene_inputs_enabled(void);
 extern void medal_corner_scene_stop(void *sVar, s32 dArg);
 extern void medal_corner_start_music(void);

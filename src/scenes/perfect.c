@@ -18,7 +18,7 @@ extern struct SequenceData s_menu_kettei2_seqData;
 
 
 // Init. Static Variables
-void perfect_scene_init_static_var(void) {
+void perfect_scene_init_memory(void) {
 }
 
 
@@ -51,7 +51,7 @@ void perfect_scene_init_gfx1(void) {
 
 
 // Scene Start
-void perfect_scene_start(void *sceneVar, s32 dataArg) {
+void perfect_scene_start(void *sVar, s32 dArg) {
     char count[0x10];
     u32 campaignsLeft;
     u32 giftType, giftID;
@@ -89,7 +89,7 @@ void perfect_scene_start(void *sceneVar, s32 dataArg) {
                 D_030046a8->data.unk294[9] = TRUE;
             }
 
-            cafe_add_perfect_level_to_session(get_level_id_from_grid_xy(D_030046a8->data.recentLevelX, D_030046a8->data.recentLevelY));
+            cafe_session_add_perfect_level(get_level_id_from_grid_xy(D_030046a8->data.recentLevelX, D_030046a8->data.recentLevelY));
             results_save_to_cart(LEVEL_STATE_NULL);
         }
     } else {
@@ -140,7 +140,7 @@ void perfect_scene_start(void *sceneVar, s32 dataArg) {
 
     text_printer_set_string(gPerfect->printer, gPerfect->string);
 
-    gPerfect->scriptIsReady = FALSE;
+    gPerfect->inputsEnabled = FALSE;
 }
 
 
@@ -159,17 +159,17 @@ void unlock_all_unassigned_campaign_gift_songs(void) {
 
 
 // Scene Update (Paused)
-void perfect_scene_paused(void *sceneVar, s32 dataArg) {
+void perfect_scene_paused(void *sVar, s32 dArg) {
 }
 
 
 // Scene Update (Active)
-void perfect_scene_update(void *sceneVar, s32 dataArg) {
-    if (perfect_scene_script_is_ready()) {
+void perfect_scene_update(void *sVar, s32 dArg) {
+    if (perfect_scene_inputs_enabled()) {
         if (D_03004afc & A_BUTTON) {
             play_sound(&s_menu_kettei2_seqData);
             set_pause_beatscript_scene(FALSE);
-            gPerfect->scriptIsReady = FALSE;
+            gPerfect->inputsEnabled = FALSE;
         }
     }
 
@@ -177,9 +177,9 @@ void perfect_scene_update(void *sceneVar, s32 dataArg) {
 }
 
 
-// Communicate with Script
-u32 perfect_scene_script_is_ready(void) {
-    if (gPerfect->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 perfect_scene_inputs_enabled(void) {
+    if (gPerfect->inputsEnabled) {
         return TRUE;
     } else {
         return FALSE;
@@ -188,7 +188,7 @@ u32 perfect_scene_script_is_ready(void) {
 
 
 // Scene Stop
-void perfect_scene_stop(void *sceneVar, s32 dataArg) {
+void perfect_scene_stop(void *sVar, s32 dArg) {
     func_08008628();
     func_08004058();
 }

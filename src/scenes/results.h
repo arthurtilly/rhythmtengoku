@@ -7,7 +7,7 @@
 struct ResultsSceneData {
     struct BitmapFontBG *bgFont;
     struct BitmapFontOBJ *objFont;
-    u32 scriptIsReady;
+    u32 inputsEnabled;
     u8 finalResultLevel;
     s16 placeholderIcon;
     s16 resultIcon;
@@ -130,7 +130,7 @@ extern const char *results_ok_comment_pool[];
 
 
 // Functions:
-extern void results_scene_init_static_var(void);
+extern void results_scene_init_memory(void);
 extern void results_scene_init_gfx3(void);
 extern void results_scene_init_gfx2(void);
 extern void results_scene_init_gfx1(void);
@@ -140,7 +140,7 @@ extern void results_scene_update(void *sVar, s32 dArg);
 extern u32 results_scene_inputs_enabled(void);
 extern void results_scene_stop(void *sVar, s32 dArg);
 
-extern void rank_results_scene_init_static_var(void);
+extern void rank_results_scene_init_memory(void);
 extern void rank_results_scene_init_gfx3(void);
 extern void rank_results_scene_init_gfx2(void);
 extern void rank_results_scene_init_gfx1(void);
@@ -153,7 +153,7 @@ extern void rank_results_display_rank(void);
 extern void rank_results_play_bgm(void);
 extern void rank_results_append_encouragement(void);
 
-extern void score_results_scene_init_static_var(void);
+extern void score_results_scene_init_memory(void);
 extern void score_results_scene_init_gfx4(void);
 extern void score_results_scene_init_gfx3(void);
 extern void score_results_scene_init_gfx2(void);

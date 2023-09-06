@@ -3,15 +3,11 @@
 #include "src/scenes/game_select.h"
 
 
-// For readability.
-#define gDataCheck ((struct DataCheckSceneData *)gCurrentSceneData)
-
-
-/* DATA CHECK */
+/* DATA CHECK SCENE */
 
 
 // Init. Static Variables
-void data_check_scene_init_static_var(void) {
+void data_check_scene_init_memory(void) {
 }
 
 
@@ -64,7 +60,7 @@ void data_check_scene_start(void *sVar, s32 dArg) {
 
     import_all_scene_objects(D_03005380, gDataCheck->objFont, data_check_scene_objects, D_0300558c);
     data_check_scene_init_gfx1();
-    gDataCheck->scriptIsReady = FALSE;
+    gDataCheck->inputsEnabled = FALSE;
     set_next_scene(&scene_debug_menu);
 }
 
@@ -78,7 +74,7 @@ void data_check_scene_paused(void *sVar, s32 dArg) {
 void data_check_scene_update(void *sVar, s32 dArg) {
     s32 previousPage;
 
-    if (data_check_scene_can_receive_inputs()) {
+    if (data_check_scene_inputs_enabled()) {
         previousPage = gDataCheck->currentPage;
 
         if (D_030053b8 & DPAD_LEFT) {
@@ -103,15 +99,15 @@ void data_check_scene_update(void *sVar, s32 dArg) {
 
         if (D_03004afc & B_BUTTON) {
             set_pause_beatscript_scene(FALSE);
-            gDataCheck->scriptIsReady = FALSE;
+            gDataCheck->inputsEnabled = FALSE;
         }
     }
 }
 
 
-// Communicate with Script
-u32 data_check_scene_can_receive_inputs(void) {
-    if (gDataCheck->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 data_check_scene_inputs_enabled(void) {
+    if (gDataCheck->inputsEnabled) {
         return TRUE;
     }
 

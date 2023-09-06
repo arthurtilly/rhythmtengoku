@@ -6,7 +6,7 @@
 // Scene Types:
 struct ReadingSceneData {
     struct ReadingMaterial *material;
-    u32 scriptIsReady;
+    u32 inputsEnabled;
     struct TextPrinter *printer;
     s8 currentPage;
     struct TextPrinterData pageData[32];
@@ -76,9 +76,9 @@ extern void reading_scene_init_gfx4(void); // Graphics Init. 4
 extern void reading_scene_init_gfx3(void); // Graphics Init. 3
 extern void reading_scene_init_gfx2(void); // Graphics Init. 2
 extern void reading_scene_init_gfx1(void); // Graphics Init. 1
-extern void reading_scene_start(void *sceneVar, s32 dataArg); // Scene Start
+extern void reading_scene_start(void *sVar, s32 dArg); // Scene Start
 extern void reading_scene_update_page(void);
-extern void reading_scene_update(void *sceneVar, s32 dataArg); // Scene Update (Active)
-extern u32 reading_scene_can_receive_inputs(void); // Communicate with Script
-extern void reading_scene_stop(void *sceneVar, s32 dataArg); // Scene Stop
+extern void reading_scene_update(void *sVar, s32 dArg); // Scene Update (Active)
+extern u32 reading_scene_inputs_enabled(void); // Check if Scene Can Receive Inputs
+extern void reading_scene_stop(void *sVar, s32 dArg); // Scene Stop
 extern void reading_scene_play_bgm(void); // (Script Function)

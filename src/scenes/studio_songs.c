@@ -198,7 +198,7 @@ void studio_song_list_update(void) {
     s32 songItem, optionItem;
     s32 event = STUDIO_LIST_EV_NONE;
 
-    if (!listbox_is_busy(gStudio->songList) && studio_scene_can_receive_inputs()) {
+    if (!listbox_is_busy(gStudio->songList) && studio_scene_inputs_enabled()) {
         if (D_03004afc & A_BUTTON) {
             event = STUDIO_LIST_EV_CONFIRM;
         }
@@ -248,7 +248,7 @@ void studio_song_list_update(void) {
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
             listbox_hide_sel_sprite(gStudio->songList);
             func_0801d968(script_scene_studio_exit);
-            gStudio->scriptIsReady = FALSE;
+            gStudio->inputsEnabled = FALSE;
             break;
 
         case STUDIO_LIST_EV_SCROLL_UP:
@@ -318,7 +318,7 @@ void studio_song_list_update_w_selection(void) {
     s32 songItem;
     u32 event = STUDIO_LIST_EV_NONE;
 
-    if (!listbox_is_busy(gStudio->songList) && studio_scene_can_receive_inputs()) {
+    if (!listbox_is_busy(gStudio->songList) && studio_scene_inputs_enabled()) {
         if (D_03004afc & LEFT_SHOULDER_BUTTON) {
             event = STUDIO_LIST_EV_CONFIRM;
         }

@@ -11,7 +11,7 @@ struct OptionsSceneData {
     s16 uiSoundMode;
     s16 uiDataClear;
     u32 soundMode;
-    u32 scriptIsReady;
+    u32 inputsEnabled;
     struct TextPrinter *descText;
     u8 warningCursorPos;
     s16 uiWarningPane;
@@ -34,7 +34,7 @@ extern struct Animation *options_sound_mode_anim[][2];
 
 
 // Functions:
-extern void options_scene_init_static_var(void);
+extern void options_scene_init_memory(void);
 extern void options_scene_init_gfx3(void);
 extern void options_scene_init_gfx2(void);
 extern void options_scene_init_gfx1(void);
@@ -44,5 +44,5 @@ extern void options_scene_move_warning_cursor(u32 index);
 extern void options_scene_update_main(void);
 extern void options_scene_update_warning(void);
 extern void options_scene_update(void *sVar, s32 dArg);
-extern u32 options_scene_can_receive_inputs(void);
+extern u32 options_scene_inputs_enabled(void);
 extern void options_scene_stop(void *sVar, s32 dArg);

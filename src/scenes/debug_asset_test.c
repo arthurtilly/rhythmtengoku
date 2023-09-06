@@ -1,15 +1,12 @@
 #include "global.h"
 #include "debug_asset_test.h"
 
-// For readability.
-#define gAssetTest ((struct AssetTestSceneData *)gCurrentSceneData)
 
-
-/* ASSET TEST(?) */
+/* ASSET TEST SCENE */
 
 
 // Init. Static Variables
-void asset_test_scene_init_static_var(void) {
+void asset_test_scene_init_memory(void) {
 }
 
 
@@ -51,7 +48,7 @@ void asset_test_scene_start(void *sVar, s32 dArg) {
     import_all_scene_objects(D_03005380, gAssetTest->objFont, asset_test_scene_objects, D_0300558c);
 
     asset_test_scene_init_gfx1();
-    gAssetTest->scriptIsReady = FALSE;
+    gAssetTest->inputsEnabled = FALSE;
 }
 
 
@@ -62,7 +59,7 @@ void asset_test_scene_paused(void *sVar, s32 dArg) {
 
 // Scene Update (Active)
 void asset_test_scene_update(void *sVar, s32 dArg) {
-    if (!asset_test_scene_can_receive_inputs()) {
+    if (!asset_test_scene_inputs_enabled()) {
         return;
     }
 
@@ -114,14 +111,14 @@ void asset_test_scene_update(void *sVar, s32 dArg) {
 
     if (D_03004afc & SELECT_BUTTON) {
         set_pause_beatscript_scene(FALSE);
-        gAssetTest->scriptIsReady = FALSE;
+        gAssetTest->inputsEnabled = FALSE;
     }
 }
 
 
-// Communicate with Script
-u32 asset_test_scene_can_receive_inputs(void) {
-    if (gAssetTest->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 asset_test_scene_inputs_enabled(void) {
+    if (gAssetTest->inputsEnabled) {
         return TRUE;
     }
 

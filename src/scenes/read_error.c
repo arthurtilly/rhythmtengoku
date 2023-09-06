@@ -38,30 +38,30 @@ void read_error_scene_init_gfx1(void) {
 
 
 // Scene Start
-void read_error_scene_start(void *sceneVar, s32 dataArg) {
+void read_error_scene_start(void *sVar, s32 dArg) {
     func_08007324(FALSE);
     func_080073f0();
     read_error_scene_init_gfx1();
 
-    gReadError->scriptIsReady = FALSE;
+    gReadError->inputsEnabled = FALSE;
     set_next_scene(&scene_debug_menu);
 }
 
 
 // Scene Update (Active)
-void read_error_scene_update(void *sceneVar, s32 dataArg) {
-    if (read_error_scene_can_receive_inputs()) {
+void read_error_scene_update(void *sVar, s32 dArg) {
+    if (read_error_scene_inputs_enabled()) {
         if (D_03004afc & SELECT_BUTTON) {
             set_pause_beatscript_scene(FALSE);
-            gReadError->scriptIsReady = FALSE;
+            gReadError->inputsEnabled = FALSE;
         }
     }
 }
 
 
-// Communicate with Script
-u32 read_error_scene_can_receive_inputs(void) {
-    if (gReadError->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 read_error_scene_inputs_enabled(void) {
+    if (gReadError->inputsEnabled) {
         return TRUE;
     } else {
         return FALSE;
@@ -70,7 +70,7 @@ u32 read_error_scene_can_receive_inputs(void) {
 
 
 // Scene Stop
-void read_error_scene_stop(void *sceneVar, s32 dataArg) {
+void read_error_scene_stop(void *sVar, s32 dArg) {
     func_08008628();
     func_08004058();
 }

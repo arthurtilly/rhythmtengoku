@@ -21,7 +21,7 @@
 
 
 // Init. Static Variables
-void rank_results_scene_init_static_var(void) {
+void rank_results_scene_init_memory(void) {
 }
 
 
@@ -65,7 +65,7 @@ void rank_results_scene_start(void *sVar, s32 dArg) {
     gResults->resultIcon = func_0804d160(D_03005380, anim_rank_results_icon, 0, RANK_RESULT_ICON_X, RANK_RESULT_ICON_Y, 0x800, 0, 0, 0x8000);
     rank_results_scene_init_gfx1();
     D_03005b3c = LFO_MODE_DISABLED;
-    gResults->scriptIsReady = FALSE;
+    gResults->inputsEnabled = FALSE;
     gResults->medalObtained = FALSE;
     gResults->stillJustOK = FALSE;
 }
@@ -84,7 +84,7 @@ void rank_results_scene_update(void *sVar, s32 dArg) {
 
     if (D_03004afc & A_BUTTON) {
         set_pause_beatscript_scene(FALSE);
-        gResults->scriptIsReady = FALSE;
+        gResults->inputsEnabled = FALSE;
         play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), 0);
     }
 }

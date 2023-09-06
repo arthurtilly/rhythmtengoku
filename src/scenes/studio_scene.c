@@ -19,7 +19,7 @@ static u8 sListDrumSelLine; // Drum Kit Item Index (Screen)
 
 
 // Init. Static Variables
-void studio_scene_init_static_var(void) {
+void studio_scene_init_memory(void) {
     sCurrentDrumKit = 0;
     sListSongSelItem = 0;
     sListSongSelLine = 0;
@@ -68,7 +68,7 @@ void studio_scene_init_gfx1(void) {
 
 
 // Scene Start
-void studio_scene_start(void *sceneVar, s32 dataArg) {
+void studio_scene_start(void *sVar, s32 dArg) {
     s32 entryPoint;
     s16 graph;
 
@@ -111,7 +111,7 @@ void studio_scene_start(void *sceneVar, s32 dataArg) {
     func_0804db44(D_03005380, graph, &D_03004b10.BG_OFS[BG_LAYER_1].x, &D_03004b10.BG_OFS[BG_LAYER_1].y);
     graph = func_0804d160(D_03005380, anim_studio_graph_r, 0, 320, 130, 0x4800, 1, 0, 0);
     func_0804db44(D_03005380, graph, &D_03004b10.BG_OFS[BG_LAYER_1].x, &D_03004b10.BG_OFS[BG_LAYER_1].y);
-    gStudio->scriptIsReady = FALSE;
+    gStudio->inputsEnabled = FALSE;
     gStudio->replaySeq = mem_heap_alloc_id(get_current_mem_id(), 0x3800);
 }
 
@@ -150,7 +150,7 @@ void studio_remember_list_positions(void) {
 
 
 // Scene Update (Paused)
-void studio_scene_paused(void *sceneVar, s32 dataArg) {
+void studio_scene_paused(void *sVar, s32 dArg) {
 }
 
 
@@ -240,7 +240,7 @@ void studio_scene_update_stub(void) {
 
 
 // Scene Update
-void studio_scene_update(void *sceneVar, s32 dataArg) {
+void studio_scene_update(void *sVar, s32 dArg) {
     switch (gStudio->sceneState) {
         case STUDIO_STATE_NAV_SONG_LIST:
             studio_song_list_update();
@@ -277,11 +277,11 @@ void studio_scene_update(void *sceneVar, s32 dataArg) {
 }
 
 
-// Communicate with Script
-u32 studio_scene_can_receive_inputs(void) {
+// Check if Scene Can Receive Inputs
+u32 studio_scene_inputs_enabled(void) {
     u32 busy;
 
-    if (!gStudio->scriptIsReady) {
+    if (!gStudio->inputsEnabled) {
         return FALSE;
     }
 
@@ -308,7 +308,7 @@ u32 studio_scene_can_receive_inputs(void) {
 
 
 // Scene Stop
-void studio_scene_stop(void *sceneVar, s32 dataArg) {
+void studio_scene_stop(void *sVar, s32 dArg) {
     func_08008628();
     func_08004058();
     studio_remember_list_positions();

@@ -5,7 +5,7 @@
 
 // Scene Types:
 struct TitleSceneData {
-    u32 scriptIsReady;
+    u32 inputsEnabled;
     u32 timeUntilDemo;
     struct TextPrinter *textPrinter;
     s16 directiveText;
@@ -53,15 +53,15 @@ extern void title_logo_appear(void); // (Script Function)
 extern void title_logo_update(void);
 extern void title_logo_bounce_all(void);
 extern void title_logo_bounce_bubble(s32 id); // (Script Function)
-extern void title_scene_init_static_var(void); // Init. Static Variables
+extern void title_scene_init_memory(void); // Init. Static Variables
 extern void title_scene_init_gfx3(void); // Graphics Init. 3
 extern void title_scene_init_gfx2(void); // Graphics Init. 2
 extern void title_scene_init_gfx1(void); // Graphics Init. 1
-extern void title_scene_start(void *sceneVar, s32 dataArg); // Scene Start
+extern void title_scene_start(void *sVar, s32 dArg); // Scene Start
 extern void title_scene_complete_intro(void); // (Script Function)
 extern void title_scene_beat_anim(void); // (Script Function)
-extern void title_scene_paused(void *sceneVar, s32 dataArg); // Scene Update (Paused)
+extern void title_scene_paused(void *sVar, s32 dArg); // Scene Update (Paused)
 extern void title_scene_update_inputs(void);
-extern void title_scene_update(void *sceneVar, s32 dataArg); // Scene Update (Active)
-extern u32 title_scene_script_is_ready(void); // Communicate with Script
-extern void title_scene_stop(void *sceneVar, s32 dataArg); // Scene Stop
+extern void title_scene_update(void *sVar, s32 dArg); // Scene Update (Active)
+extern u32 title_scene_inputs_enabled(void); // Check if Scene Can Receive Inputs
+extern void title_scene_stop(void *sVar, s32 dArg); // Scene Stop

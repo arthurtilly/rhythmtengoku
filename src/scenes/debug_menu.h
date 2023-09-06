@@ -3,11 +3,17 @@
 #include "global.h"
 #include "scenes.h"
 
-// Scene Types:
+
+// MACROS
+#define gDebugMenu ((struct DebugMenuSceneData *)gCurrentSceneData)
+#define END_OF_DEBUG_ENTRIES { NULL, NULL }
+
+
+// TYPES
 struct DebugMenuSceneData {
     struct BitmapFontBG *bgFont;
     struct BitmapFontOBJ *objFont;
-    u32 scriptIsReady;
+    u32 inputsEnabled;
     u16 totalEntries;
     s16 page;
     s16 row;
@@ -21,10 +27,8 @@ struct DebugMenuEntry {
     const char *label;
 };
 
-#define END_OF_DEBUG_ENTRIES { NULL, NULL }
 
-
-// Scene Data:
+// DATA
 extern union SceneObject debug_menu_scene_objects[];
 extern struct GraphicsTable debug_menu_gfx_table[];
 extern struct CompressedGraphics *debug_menu_buffered_textures[];
@@ -32,8 +36,8 @@ extern struct DebugMenuEntry debug_menu_entry_table[];
 extern char debug_menu_counter_digits[];
 
 
-// Functions:
-extern void debug_menu_scene_init_static_var(void);
+// FUNCTIONS
+extern void debug_menu_scene_init_memory(void);
 extern void debug_menu_scene_update_static_var(void);
 extern void debug_menu_scene_init_gfx3(void);
 extern void debug_menu_scene_init_gfx2(void);
@@ -41,6 +45,6 @@ extern void debug_menu_scene_init_gfx1(void);
 extern void debug_menu_scene_start(void *sVar, s32 dArg);
 extern void debug_menu_scene_paused(void *sVar, s32 dArg);
 extern void debug_menu_scene_update(void *sVar, s32 dArg);
-extern u32 debug_menu_scene_can_receive_inputs(void);
+extern u32  debug_menu_scene_inputs_enabled(void);
 extern void debug_menu_scene_stop(void *sVar, s32 dArg);
 extern void debug_menu_render_table(s32 page, s32 row);

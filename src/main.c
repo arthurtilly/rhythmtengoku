@@ -20,15 +20,15 @@ void interrupt_default(void) {
 
 // Initialise Scenes (Init. Static Variables)
 void init_scene_static_var(void) {
-	game_select_init_static_var();
-	score_results_scene_init_static_var();
-	main_menu_init_static_var();
+	game_select_scene_init_memory();
+	score_results_scene_init_memory();
+	main_menu_scene_init_memory();
 	gameplay_init_scene_static_var();
-	arrival_scene_init_static_var();
-	dataroom_scene_init_static_var();
-	studio_scene_init_static_var();
-	medal_corner_scene_init_static_var(); // Medal Corner Menus
-	cafe_scene_init_static_var();
+	arrival_scene_init_memory();
+	dataroom_scene_init_memory();
+	studio_scene_init_memory();
+	medal_corner_scene_init_memory();
+	cafe_scene_init_memory();
 }
 
 
@@ -91,7 +91,7 @@ void agb_main(void) {
 
 	init_ewram();
 	func_08000224();
-	debug_menu_scene_init_static_var(); // Init. Debug Menu Scene
+	debug_menu_scene_init_memory();
 	func_0804c778(); // Init. MIDI Sound Library
 	func_0804c340(35, 2, 2, 4); // Set Sound Reverb Levels
 	func_080029d8(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)

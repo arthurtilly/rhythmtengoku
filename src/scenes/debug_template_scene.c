@@ -2,15 +2,11 @@
 #include "debug_template_scene.h"
 
 
-// For readability.
-#define gTemplate ((struct TemplateSceneData *)gCurrentSceneData)
-
-
 /* TEMPLATE SCENE */
 
 
 // Init. Static Variables
-void template_scene_init_static_var(void) {
+void template_scene_init_memory(void) {
 }
 
 
@@ -41,7 +37,7 @@ void template_scene_init_gfx1(void) {
 
 
 // Scene Start
-void template_scene_start(void *sceneVar, s32 dataArg) {
+void template_scene_start(void *sVar, s32 dArg) {
     func_08007324(FALSE);
     func_080073f0();
 
@@ -49,29 +45,29 @@ void template_scene_start(void *sceneVar, s32 dataArg) {
     gTemplate->objFont = func_0800c660(0x300, 4);
     import_all_scene_objects(D_03005380, gTemplate->objFont, template_scene_objects, D_0300558c);
     template_scene_init_gfx1();
-    gTemplate->scriptIsReady = FALSE;
+    gTemplate->inputsEnabled = FALSE;
 }
 
 
 // Scene Update (Paused)
-void template_scene_paused(void *sceneVar, s32 dataArg) {
+void template_scene_paused(void *sVar, s32 dArg) {
 }
 
 
 // Scene Update (Active)
-void template_scene_update(void *sceneVar, s32 dataArg) {
-    if (template_scene_script_is_ready()) {
+void template_scene_update(void *sVar, s32 dArg) {
+    if (template_scene_inputs_enabled()) {
         if (D_03004afc & SELECT_BUTTON) {
             set_pause_beatscript_scene(FALSE);
-            gTemplate->scriptIsReady = FALSE;
+            gTemplate->inputsEnabled = FALSE;
         }
     }
 }
 
 
-// Communicate with Script
-u32 template_scene_script_is_ready(void) {
-    if (gTemplate->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 template_scene_inputs_enabled(void) {
+    if (gTemplate->inputsEnabled) {
         return TRUE;
     } else {
         return FALSE;
@@ -80,7 +76,7 @@ u32 template_scene_script_is_ready(void) {
 
 
 // Scene Stop
-void template_scene_stop(void *sceneVar, s32 dataArg) {
+void template_scene_stop(void *sVar, s32 dArg) {
     func_08008628();
     func_08004058();
 }

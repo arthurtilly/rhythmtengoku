@@ -8,89 +8,27 @@
 #include "src/time_keeper.h"
 
 
-// For readability.
-#define gCafe ((struct CafeSceneData *)gCurrentSceneData)
-
-enum CafeDialogueTasksEnum {
-    /* 00 */ CAFE_EVENT_INITIALISE_DIALOGUE,
-    /* 01 */ CAFE_EVENT_START_TOPIC,
-    /* 02 */ CAFE_EVENT_UNUSED_02,
-    /* 03 */ CAFE_EVENT_UNUSED_03,
-    /* 04 */ CAFE_EVENT_UNUSED_04,
-    /* 05 */ CAFE_EVENT_UNUSED_05,
-    /* 06 */ CAFE_EVENT_CAMPAIGN_CLEAR_00,
-    /* 07 */ CAFE_EVENT_CAMPAIGN_CLEAR_01,
-    /* 08 */ CAFE_EVENT_UNUSED_08,
-    /* 09 */ CAFE_EVENT_UNUSED_09,
-    /* 10 */ CAFE_EVENT_UNUSED_10,
-    /* 11 */ CAFE_EVENT_OFFER_CLEAR_00,
-    /* 12 */ CAFE_EVENT_OFFER_CLEAR_01,
-    /* 13 */ CAFE_EVENT_OFFER_CLEAR_02_Y,
-    /* 14 */ CAFE_EVENT_OFFER_CLEAR_02_N,
-    /* 15 */ CAFE_EVENT_UNUSED_15,
-    /* 16 */ CAFE_EVENT_UNUSED_16,
-    /* 17 */ CAFE_EVENT_UNUSED_17,
-    /* 18 */ CAFE_EVENT_UNUSED_18,
-    /* 19 */ CAFE_EVENT_UNUSED_19,
-    /* 20 */ CAFE_EVENT_UNUSED_20,
-    /* 21 */ CAFE_EVENT_CAMPAIGN_ADVICE_00,
-    /* 22 */ CAFE_EVENT_CAMPAIGN_ADVICE_01,
-    /* 23 */ CAFE_EVENT_UNUSED_23,
-    /* 24 */ CAFE_EVENT_UNUSED_24,
-    /* 25 */ CAFE_EVENT_UNUSED_25,
-    /* 26 */ CAFE_EVENT_UPCOMING_CAMPAIGN_00,
-    /* 27 */ CAFE_EVENT_ALL_CAMPAIGNS_CLEAR_00,
-    /* 28 */ CAFE_EVENT_ALL_CAMPAIGNS_CLEAR_01,
-    /* 29 */ CAFE_EVENT_UNUSED_29,
-    /* 30 */ CAFE_EVENT_UNUSED_30,
-    /* 31 */ CAFE_EVENT_UNUSED_31,
-    /* 32 */ CAFE_EVENT_CONTINUE_DIALOGUE
-};
-
-enum CafeDialogueTopicsEnum {
-    /* 00 */ CAFE_TOPIC_RANDOM,
-    /* 01 */ CAFE_TOPIC_CAMPAIGN_CLEAR,
-    /* 02 */ CAFE_TOPIC_TROUBLE_CLEARING_LEVEL,
-    /* 03 */ CAFE_TOPIC_TROUBLE_GETTING_MEDAL,
-    /* 04 */ CAFE_TOPIC_TROUBLE_CLEARING_CAMPAIGN,
-    /* 05 */ CAFE_TOPIC_REMEMBERING,
-    /* 06 */ CAFE_TOPIC_UPCOMING_CAMPAIGN,
-};
-
-enum CafeBgEventsEnum {
-    /* 00 */ CAFE_BG_EVENT_NONE,
-    /* 01 */ CAFE_BG_EVENT_CHEER_01,
-    /* 02 */ CAFE_BG_EVENT_HELPING,
-    /* 03 */ CAFE_BG_EVENT_CHEER_02,
-};
-
-enum CafeOptionResultsEnum {
-    /* 00 */ CAFE_OPTION_YES,
-    /* 01 */ CAFE_OPTION_NO
-};
-
-
-/* CAFE */
+/* CAFE SCENE */
 
 
 // Set Level Session Play Time
-void cafe_init_level_session_playtime(struct LevelPlayActivity *activity) {
+void cafe_session_init_level_playtime(struct LevelPlayActivity *activity) {
     activity->timeOfLastPlay = get_total_playtime(T_MINUTE);
     activity->activeTimeOfLastPlay = get_active_playtime(T_MINUTE);
 }
 
 
 // Init. Level Session
-void cafe_init_level_session(struct LevelPlayActivity *activity, s32 levelID) {
+void cafe_session_init_level(struct LevelPlayActivity *activity, s32 levelID) {
     activity->levelID = levelID;
     activity->totalStalePlays = 0;
     activity->justGotPerfect = FALSE;
-    cafe_init_level_session_playtime(activity);
+    cafe_session_init_level_playtime(activity);
 }
 
 
 // Allocate Level Session
-struct LevelPlayActivity *cafe_alloc_level_session(s32 levelID) {
+struct LevelPlayActivity *cafe_session_alloc_level(s32 levelID) {
     struct LevelPlayActivity *current = gSessionInfo.lastPlayedLevels;
     struct LevelPlayActivity *free = NULL;
     struct LevelPlayActivity *oldest = current;
@@ -109,17 +47,17 @@ struct LevelPlayActivity *cafe_alloc_level_session(s32 levelID) {
     }
 
     if (free != NULL) {
-        cafe_init_level_session(free, levelID);
+        cafe_session_init_level(free, levelID);
         return free;
     } else {
-        cafe_init_level_session(oldest, levelID);
+        cafe_session_init_level(oldest, levelID);
         return oldest;
     }
 }
 
 
 // Get Level Session
-struct LevelPlayActivity *cafe_get_level_session(s32 levelID) {
+struct LevelPlayActivity *cafe_session_get_level(s32 levelID) {
     struct LevelPlayActivity *activity = gSessionInfo.lastPlayedLevels;
     s32 i;
 
@@ -134,7 +72,7 @@ struct LevelPlayActivity *cafe_get_level_session(s32 levelID) {
 
 
 // Init. Play Session Info
-void cafe_init_session_info(void) {
+void cafe_session_init(void) {
     u32 i;
 
     for (i = 0; i < 5; i++) {
@@ -149,33 +87,33 @@ void cafe_init_session_info(void) {
 
 
 // Add Level to Play Session Info
-void cafe_add_level_to_session(s32 levelID) {
+void cafe_session_add_level(s32 levelID) {
     struct LevelPlayActivity *activity;
 
     if (levelID < 0) {
         return;
     }
 
-    activity = cafe_alloc_level_session(levelID);
+    activity = cafe_session_alloc_level(levelID);
 
     if (!activity->justGotPerfect) {
         if (activity->totalStalePlays < 255) {
             activity->totalStalePlays++;
         }
-        cafe_init_level_session_playtime(activity);
+        cafe_session_init_level_playtime(activity);
     }
 }
 
 
 // Remove Level from Play Session Info
-void cafe_remove_level_from_session(s32 levelID) {
+void cafe_session_remove_level(s32 levelID) {
     struct LevelPlayActivity *activity;
 
     if (levelID < 0) {
         return;
     }
 
-    activity = cafe_get_level_session(levelID);
+    activity = cafe_session_get_level(levelID);
 
     if (activity == NULL) {
         return;
@@ -188,22 +126,22 @@ void cafe_remove_level_from_session(s32 levelID) {
 
 
 // Add Level with Perfect Just Cleared to Session Info
-void cafe_add_perfect_level_to_session(s32 levelID) {
+void cafe_session_add_perfect_level(s32 levelID) {
     struct LevelPlayActivity *activity;
 
     if (levelID < 0) {
         return;
     }
 
-    activity = cafe_alloc_level_session(levelID);
+    activity = cafe_session_alloc_level(levelID);
     activity->justGotPerfect = TRUE;
     activity->totalStalePlays = 0;
-    cafe_init_level_session_playtime(activity);
+    cafe_session_init_level_playtime(activity);
 }
 
 
 // Remove Very Old Level Play Activity Sessions
-void cafe_remove_old_levels_from_session(u32 totalPlayTime, u32 inactivityThreshold) {
+void cafe_session_remove_old_levels(u32 totalPlayTime, u32 inactivityThreshold) {
     u32 i;
 
     for (i = 0; i < 5; i++) {
@@ -218,7 +156,7 @@ void cafe_remove_old_levels_from_session(u32 totalPlayTime, u32 inactivityThresh
 
 
 // Init. Level Play Activity Indexes
-void cafe_init_session_indexes(void) {
+void cafe_session_init_indexes(void) {
     struct LevelPlayActivity *levelSessions = gSessionInfo.lastPlayedLevels;
     u8 *indexes = gCafe->sessionIndexes;
     s32 total = 0;
@@ -248,7 +186,7 @@ void cafe_init_session_indexes(void) {
 
 
 // Init. Session Play Time
-void cafe_init_session_playtime(void) {
+void cafe_session_init_playtime(void) {
     s32 playtime = get_total_playtime(T_MINUTE);
 
     gCafe->timeSinceLastVisit = playtime - gSessionInfo.timeOfLastCafeVisit;
@@ -259,7 +197,7 @@ void cafe_init_session_playtime(void) {
 
 
 // Remove Level Play Activity with Perfect
-void cafe_remove_perfect_level_sessions(void) {
+void cafe_session_remove_perfect_levels(void) {
     u32 i;
 
     for (i = 0; i < 5; i++) {
@@ -272,7 +210,7 @@ void cafe_remove_perfect_level_sessions(void) {
 
 // Init. Dialogue Text
 void cafe_init_dialogue(void) {
-    gCafe->nextDialogueTask = CAFE_EVENT_INITIALISE_DIALOGUE;
+    gCafe->nextDialogueTask = CAFE_EV_INIT_DIALOGUE;
     gCafe->textAdvReady = FALSE;
 }
 
@@ -304,7 +242,7 @@ void cafe_start_dialogue_inputs(void) {
 
 // Update Text Advance Options
 void cafe_update_dialogue_inputs(void) {
-    if (!cafe_scene_script_is_ready() || !gCafe->textAdvReady) {
+    if (!cafe_scene_inputs_enabled() || !gCafe->textAdvReady) {
         return;
     }
 
@@ -317,7 +255,7 @@ void cafe_update_dialogue_inputs(void) {
         if (D_03004afc & DPAD_DOWN) {
             gCafe->queryResult++;
         }
-        gCafe->queryResult = clamp_int32(gCafe->queryResult, CAFE_OPTION_YES, CAFE_OPTION_NO);
+        gCafe->queryResult = clamp_int32(gCafe->queryResult, CAFE_OPT_YES, CAFE_OPT_NO);
 
         if (choice != gCafe->queryResult) {
             func_0804d8f8(D_03005380, gCafe->textAdvIcon, cafe_cursor_option_anim[gCafe->queryResult], 0, 1, 0, 0);
@@ -366,14 +304,14 @@ void cafe_print_dialogue(void) {
         return;
     }
 
-    gCafe->bgEvent = CAFE_BG_EVENT_NONE;
+    gCafe->bgEvent = CAFE_BG_EV_NONE;
     gCafe->textAdvHold = 0;
     gCafe->queryEnabled = FALSE;
     string = NULL;
     dialogue = NULL;
 
     switch (dialogueTask) {
-        case CAFE_EVENT_INITIALISE_DIALOGUE:
+        case CAFE_EV_INIT_DIALOGUE:
             if (D_030046a8->data.unk28F) {
                 D_030046a8->data.unk28F = FALSE;
                 dialogue = cafe_dialogue_first_visit;
@@ -386,9 +324,9 @@ void cafe_print_dialogue(void) {
                          "お、きたきた！\n"
                          "待ってたヨ～！！\n"
                          "\n";
-                cafe_remove_perfect_level_sessions();
+                cafe_session_remove_perfect_levels();
                 D_030046a8->data.unk294[9] = FALSE;
-                dialogueTask = CAFE_EVENT_ALL_CAMPAIGNS_CLEAR_00;
+                dialogueTask = CAFE_EV_ALL_CAMPAIGNS_CLEAR_00;
                 break;
             }
             if (gCafe->timeSinceLastVisit == 0) {
@@ -419,10 +357,10 @@ void cafe_print_dialogue(void) {
                          "すこしは　休んでくださいね。\n"
                          "\n";
             }
-            dialogueTask = CAFE_EVENT_START_TOPIC;
+            dialogueTask = CAFE_EV_START_TOPIC;
             break;
 
-        case CAFE_EVENT_START_TOPIC:
+        case CAFE_EV_START_TOPIC:
             topic = CAFE_TOPIC_RANDOM;
             i = 0;
 
@@ -488,7 +426,7 @@ void cafe_print_dialogue(void) {
                     strcat(s, "パーフェクト　だしたんだって！？");
                     string = s;
                     activity->levelID = LEVEL_NULL;
-                    dialogueTask = CAFE_EVENT_CAMPAIGN_CLEAR_00;
+                    dialogueTask = CAFE_EV_CAMPAIGN_CLEAR_00;
                     break;
 
                 case CAFE_TOPIC_TROUBLE_CLEARING_LEVEL:
@@ -505,7 +443,7 @@ void cafe_print_dialogue(void) {
                     string = s;
                     gCafe->levelToClear = activity->levelID;
                     activity->levelID = LEVEL_NULL;
-                    dialogueTask = CAFE_EVENT_OFFER_CLEAR_00;
+                    dialogueTask = CAFE_EV_OFFER_CLEAR_00;
                     break;
 
                 case CAFE_TOPIC_TROUBLE_GETTING_MEDAL:
@@ -536,7 +474,7 @@ void cafe_print_dialogue(void) {
                     strcat(s, "してるみたいですね。");
                     string = s;
                     activity->levelID = LEVEL_NULL;
-                    dialogueTask = CAFE_EVENT_CAMPAIGN_ADVICE_00;
+                    dialogueTask = CAFE_EV_CAMPAIGN_ADVICE_00;
                     break;
 
                 case CAFE_TOPIC_REMEMBERING:
@@ -560,7 +498,7 @@ void cafe_print_dialogue(void) {
                               "パーフェクトキャンペーンを\n"
                               "するそうですヨ。");
                     string = s;
-                    dialogueTask = CAFE_EVENT_UPCOMING_CAMPAIGN_00;
+                    dialogueTask = CAFE_EV_UPCOMING_CAMPAIGN_00;
                     D_030046a8->data.unk291 = TRUE;
                     break;
 
@@ -570,14 +508,14 @@ void cafe_print_dialogue(void) {
             }
             break;
 
-        case CAFE_EVENT_CAMPAIGN_CLEAR_00:
+        case CAFE_EV_CAMPAIGN_CLEAR_00:
             string = cafe_dialogue_shouts_praise[agb_random(5)];
-            gCafe->bgEvent = CAFE_BG_EVENT_CHEER_01;
+            gCafe->bgEvent = CAFE_BG_EV_CHEER_01;
             gCafe->textAdvHold = 4;
             dialogueTask++;
             break;
 
-        case CAFE_EVENT_CAMPAIGN_CLEAR_01:
+        case CAFE_EV_CAMPAIGN_CLEAR_01:
             // Please keep on working hard.
             // I'll be here rooting for you~!
             string = "\n"
@@ -587,7 +525,7 @@ void cafe_print_dialogue(void) {
             dialogueExhausted = TRUE;
             break;
 
-        case CAFE_EVENT_OFFER_CLEAR_00:
+        case CAFE_EV_OFFER_CLEAR_00:
             // If you like, I could let you
             // <skip that game> if you want to...
             //
@@ -599,19 +537,19 @@ void cafe_print_dialogue(void) {
                      "　　　　　　　　「おねがいします」\n"
                      "　　　　　　　　「けっこうです」";
             gCafe->queryEnabled = TRUE;
-            gCafe->queryResult = CAFE_OPTION_YES;
+            gCafe->queryResult = CAFE_OPT_YES;
             dialogueTask++;
             break;
 
-        case CAFE_EVENT_OFFER_CLEAR_01:
-            if (gCafe->queryResult == CAFE_OPTION_YES) {
+        case CAFE_EV_OFFER_CLEAR_01:
+            if (gCafe->queryResult == CAFE_OPT_YES) {
                 // <Leave it to me!>
                 string = "\n"
                          "\n"
                          "\0032" "\001l" "\0051" "\0015" "まかせとき！" "\0030" "\001s" "\0054" "\0018";
                 gCafe->textAdvHold = 3;
-                gCafe->bgEvent = CAFE_BG_EVENT_HELPING;
-                dialogueTask = CAFE_EVENT_OFFER_CLEAR_02_Y;
+                gCafe->bgEvent = CAFE_BG_EV_HELPING;
+                dialogueTask = CAFE_EV_OFFER_CLEAR_02_Y;
                 get_grid_xy_from_level_id(gCafe->levelToClear, &x, &y);
                 D_030046a8->data.recentLevelX = x;
                 D_030046a8->data.recentLevelY = y;
@@ -628,11 +566,11 @@ void cafe_print_dialogue(void) {
                          "じぶんの　チカラで\n"
                          "がんばるんですね。\n"
                          "エライ！！";
-                dialogueTask = CAFE_EVENT_OFFER_CLEAR_02_N;
+                dialogueTask = CAFE_EV_OFFER_CLEAR_02_N;
             }
             break;
 
-        case CAFE_EVENT_OFFER_CLEAR_02_Y:
+        case CAFE_EV_OFFER_CLEAR_02_Y:
             // I hope the next game will go
             // much better for you.
             // Tell me about it next time.
@@ -643,7 +581,7 @@ void cafe_print_dialogue(void) {
             dialogueExhausted = TRUE;
             break;
 
-        case CAFE_EVENT_OFFER_CLEAR_02_N:
+        case CAFE_EV_OFFER_CLEAR_02_N:
             // Well then, please
             // do your best!
             string = "\n"
@@ -653,7 +591,7 @@ void cafe_print_dialogue(void) {
             dialogueExhausted = TRUE;
             break;
 
-        case CAFE_EVENT_CAMPAIGN_ADVICE_00:
+        case CAFE_EV_CAMPAIGN_ADVICE_00:
             // Were you practicing for the
             // <Perfect Campaign>?
             //
@@ -664,22 +602,22 @@ void cafe_print_dialogue(void) {
                      "　　　　　　　　「そうなんです」\n"
                      "　　　　　　　　「ちがいますヨ」";
             gCafe->queryEnabled = TRUE;
-            gCafe->queryResult = CAFE_OPTION_YES;
+            gCafe->queryResult = CAFE_OPT_YES;
             dialogueTask++;
             break;
 
-        case CAFE_EVENT_CAMPAIGN_ADVICE_01:
-            if (gCafe->queryResult == CAFE_OPTION_YES) {
+        case CAFE_EV_CAMPAIGN_ADVICE_01:
+            if (gCafe->queryResult == CAFE_OPT_YES) {
                 string = cafe_dialogue_shouts_cheer[agb_random(5)];
                 gCafe->textAdvHold = 3;
-                gCafe->bgEvent = CAFE_BG_EVENT_CHEER_02;
+                gCafe->bgEvent = CAFE_BG_EV_CHEER_02;
                 dialogue = cafe_dialogue_practicing_perfect;
             } else {
                 dialogue = cafe_dialogue_not_practicing_perfect;
             }
             break;
 
-        case CAFE_EVENT_UPCOMING_CAMPAIGN_00:
+        case CAFE_EV_UPCOMING_CAMPAIGN_00:
             // Just try your best and
             // go get that Perfect!
             string = "\n"
@@ -689,7 +627,7 @@ void cafe_print_dialogue(void) {
             dialogueExhausted = TRUE;
             break;
 
-        case CAFE_EVENT_ALL_CAMPAIGNS_CLEAR_00:
+        case CAFE_EV_ALL_CAMPAIGNS_CLEAR_00:
             // At long last...
             // You have completed
             // the Perfect Campaign!
@@ -700,17 +638,17 @@ void cafe_print_dialogue(void) {
             dialogueTask++;
             break;
 
-        case CAFE_EVENT_ALL_CAMPAIGNS_CLEAR_01:
+        case CAFE_EV_ALL_CAMPAIGNS_CLEAR_01:
             // Crazy awesome!!
             string = "\0032" "\001l" "\0051" "\0015" "\n"
                      "\n"
                      "めちゃすごーい!!" "\0030" "\001s" "\0054" "\0018";
-            gCafe->bgEvent = CAFE_BG_EVENT_CHEER_02;
+            gCafe->bgEvent = CAFE_BG_EV_CHEER_02;
             gCafe->textAdvHold = 4;
             dialogue = cafe_dialogue_all_perfects_clear;
             break;
 
-        case CAFE_EVENT_CONTINUE_DIALOGUE:
+        case CAFE_EV_CONTINUE_DIALOGUE:
             string = *gCafe->dialogue;
             if (*(gCafe->dialogue + 1) != NULL) {
                 gCafe->dialogue++;
@@ -725,13 +663,13 @@ void cafe_print_dialogue(void) {
             string = *dialogue++;
             if (*dialogue != NULL) {
                 gCafe->dialogue = dialogue;
-                dialogueTask = CAFE_EVENT_CONTINUE_DIALOGUE;
+                dialogueTask = CAFE_EV_CONTINUE_DIALOGUE;
             } else {
                 dialogueExhausted = TRUE;
             }
         } else {
             gCafe->dialogue = dialogue;
-            dialogueTask = CAFE_EVENT_CONTINUE_DIALOGUE;
+            dialogueTask = CAFE_EV_CONTINUE_DIALOGUE;
         }
     }
 
@@ -796,8 +734,8 @@ void cafe_clear_dialogue(void) {
 
 
 // Init. Static Variables
-void cafe_scene_init_static_var(void) {
-    cafe_init_session_info();
+void cafe_scene_init_memory(void) {
+    cafe_session_init();
 }
 
 
@@ -831,30 +769,30 @@ void cafe_scene_init_gfx1(void) {
 
 
 // Scene Start
-void cafe_scene_start(void *sceneVar, s32 dataArg) {
+void cafe_scene_start(void *sVar, s32 dArg) {
     func_08007324(FALSE);
     func_080073f0();
     cafe_scene_init_gfx1();
     cafe_init_text_printer();
     cafe_init_dialogue();
-    cafe_init_session_playtime();
-    cafe_remove_old_levels_from_session(gCafe->totalPlayTime, 60);
-    cafe_init_session_indexes();
+    cafe_session_init_playtime();
+    cafe_session_remove_old_levels(gCafe->totalPlayTime, 60);
+    cafe_session_init_indexes();
 
-    gCafe->scriptIsReady = FALSE;
+    gCafe->inputsEnabled = FALSE;
     gCafe->disableTextUpdates = FALSE;
     gCafe->levelToClear = LEVEL_NULL;
 }
 
 
 // Scene Update (Paused)
-void cafe_scene_paused(void *sceneVar, s32 dataArg) {
+void cafe_scene_paused(void *sVar, s32 dArg) {
 }
 
 
 // Scene Update (Active)
-void cafe_scene_update(void *sceneVar, s32 dataArg) {
-    if (cafe_scene_script_is_ready()) {
+void cafe_scene_update(void *sVar, s32 dArg) {
+    if (cafe_scene_inputs_enabled()) {
         cafe_update_dialogue_inputs();
     }
 
@@ -862,9 +800,9 @@ void cafe_scene_update(void *sceneVar, s32 dataArg) {
 }
 
 
-// Communicate with Script
-u32 cafe_scene_script_is_ready(void) {
-    if (gCafe->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 cafe_scene_inputs_enabled(void) {
+    if (gCafe->inputsEnabled) {
         return TRUE;
     } else {
         return FALSE;
@@ -879,7 +817,7 @@ void cafe_load_bg_event_map(struct CompressedGraphics *map) {
 
 
 // Scene Stop
-void cafe_scene_stop(void *sceneVar, s32 dataArg) {
+void cafe_scene_stop(void *sVar, s32 dArg) {
     func_08008628();
     func_08004058();
 }

@@ -19,7 +19,7 @@ void warning_scene_render_anim(void) {
 
 
 // Scene Stop
-void warning_scene_stop(void *sceneVar, s32 dataArg) {
+void warning_scene_stop(void *sVar, s32 dArg) {
     D_03004498 = TRUE;
 }
 
@@ -53,21 +53,21 @@ void warning_scene_init_gfx1(void) {
 
 
 // Scene Start
-void warning_scene_start(void *sceneVar, s32 dataArg) {
+void warning_scene_start(void *sVar, s32 dArg) {
     func_0801d860(TRUE);
     D_03004498 = FALSE;
     warning_scene_init_gfx1();
-    gWarning->scriptIsReady = FALSE;
+    gWarning->inputsEnabled = FALSE;
     gWarning->timer = 3600;
 }
 
 
 // Scene Update
-void warning_scene_update(void *sceneVar, s32 dataArg) {
-    if (gWarning->scriptIsReady) {
+void warning_scene_update(void *sVar, s32 dArg) {
+    if (gWarning->inputsEnabled) {
         if ((D_03004afc != 0) || (--gWarning->timer == 0)) {
             set_pause_beatscript_scene(FALSE);
-            gWarning->scriptIsReady = FALSE;
+            gWarning->inputsEnabled = FALSE;
         }
     }
 }

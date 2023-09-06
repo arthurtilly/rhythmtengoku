@@ -1,15 +1,12 @@
 #include "global.h"
 #include "debug_data_clear.h"
 
-// For readability.
-#define gDataClear ((struct DataClearSceneData *)gCurrentSceneData)
 
-
-/* DATA CLEAR */
+/* DATA CLEAR SCENE */
 
 
 // Init. Static Variables
-void data_clear_scene_init_static_var(void) {
+void data_clear_scene_init_memory(void) {
 }
 
 
@@ -49,7 +46,7 @@ void data_clear_scene_start(void *sVar, s32 *dArg) {
     import_all_scene_objects(D_03005380, gDataClear->objFont, data_clear_scene_objects, D_0300558c);
 
     data_clear_scene_init_gfx1();
-    gDataClear->scriptIsReady = FALSE;
+    gDataClear->inputsEnabled = FALSE;
 
     clear_save_data();
     flush_save_buffer_to_sram();
@@ -67,9 +64,9 @@ void data_clear_scene_update(void *sVar, s32 *dArg) {
 }
 
 
-// Communicate with Script
-u32 data_clear_scene_can_receive_inputs(void) {
-    if (gDataClear->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 data_clear_scene_inputs_enabled(void) {
+    if (gDataClear->inputsEnabled) {
         return TRUE;
     }
 

@@ -15,7 +15,7 @@ struct StudioSceneData {
     struct DrumTechController drumTech;
 
     /* [0x358] Scene */
-    u32 scriptIsReady;
+    u32 inputsEnabled;
     u8 sceneState;
     struct Listbox *songList;
     u8 songListState;
@@ -237,26 +237,26 @@ extern void studio_option_list_warning_deletion_result(s32 event, s32 arg);
 extern void studio_option_list_update(void);
 extern void studio_option_list_update_w_selection(void);
 
-extern void studio_scene_init_static_var(void); // Init. Static Variables
+extern void studio_scene_init_memory(void); // Init. Static Variables
 extern void studio_scene_init_gfx4(void); // Graphics Init. 4
 extern void studio_scene_init_gfx3(void); // Graphics Init. 3
 extern void studio_scene_init_gfx2(void); // Graphics Init. 2
 extern void studio_scene_init_gfx1(void); // Graphics Init. 1
-extern void studio_scene_start(void *sceneVar, s32 dataArg); // Scene Start
+extern void studio_scene_start(void *sVar, s32 dArg); // Scene Start
 extern s32 studio_get_current_kit(void);
 extern void studio_set_current_kit(s32 id);
 extern void studio_set_current_song(s32 id, s32 line);
 extern void studio_remember_list_positions(void);
-extern void studio_scene_paused(void *sceneVar, s32 dataArg); // Scene Update (Paused)
+extern void studio_scene_paused(void *sVar, s32 dArg); // Scene Update (Paused)
 extern void studio_scene_update_panning(void);
 extern void studio_scene_set_current_menu(u32 menu);
 extern void studio_scene_pan_to_menu(u32 menu);
 extern void studio_scene_play_music(s32 item);
 extern void studio_scene_clear_music(void);
 extern void studio_scene_update_stub(void);
-extern void studio_scene_update(void *sceneVar, s32 dataArg); // Scene Update (Active)
-extern u32 studio_scene_can_receive_inputs(void); // Communicate with Script
-extern void studio_scene_stop(void *sceneVar, s32 dataArg); // Scene Stop
+extern void studio_scene_update(void *sVar, s32 dArg); // Scene Update (Active)
+extern u32 studio_scene_inputs_enabled(void); // Check if Scene Can Receive Inputs
+extern void studio_scene_stop(void *sVar, s32 dArg); // Scene Stop
 
 extern const struct Beatscript *get_studio_mus_script(void); // (Script Function)
 extern void fade_out_studio_mus(void); // (Script Function)

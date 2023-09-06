@@ -1,9 +1,6 @@
 #include "global.h"
 #include "debug_menu.h"
 
-// For readability.
-#define gDebugMenu ((struct DebugMenuSceneData *)gCurrentSceneData)
-
 
 /* DEBUG MENU TABLE */
 

@@ -83,7 +83,7 @@ void studio_drum_list_exit_to_drumming(void) {
     set_scene_trans_target(&D_089d49d4, &scene_studio);
     set_scene_trans_var(&D_089d49d4, songItem);
     func_0801d968(script_scene_studio_exit);
-    gStudio->scriptIsReady = FALSE;
+    gStudio->inputsEnabled = FALSE;
 }
 
 
@@ -126,7 +126,7 @@ void studio_drum_list_update(void) {
     u32 remaining, warningReason;
     u32 event = STUDIO_LIST_EV_NONE;
 
-    if (!listbox_is_busy(gStudio->drumList) && studio_scene_can_receive_inputs()) {
+    if (!listbox_is_busy(gStudio->drumList) && studio_scene_inputs_enabled()) {
         if (D_03004afc & A_BUTTON) {
             event = STUDIO_LIST_EV_CONFIRM;
         }

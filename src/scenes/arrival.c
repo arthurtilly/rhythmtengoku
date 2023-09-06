@@ -4,15 +4,11 @@
 #include "reading.h"
 
 
-// For readability.
-#define gArrival ((struct ArrivalSceneData *)gCurrentSceneData)
-
-
-/* RHYTHM LIBRARY / NOTIFICATION (ARRIVAL) */
+/* READING NOTIFICATION SCENE */
 
 
 // Init. Static Variables
-void arrival_scene_init_static_var(void) {
+void arrival_scene_init_memory(void) {
 }
 
 
@@ -91,7 +87,7 @@ void arrival_scene_start(void *sVar, s32 dArg) {
     text_printer_update(printer);
     text_printer_update(printer);
 
-    gArrival->scriptIsReady = FALSE;
+    gArrival->inputsEnabled = FALSE;
 }
 
 
@@ -104,7 +100,7 @@ void arrival_scene_paused(void *sVar, s32 dArg) {
 void arrival_scene_update(void *sVar, s32 dArg) {
     s8 option;
 
-    if (!arrival_scene_can_receive_inputs()) {
+    if (!arrival_scene_inputs_enabled()) {
         return;
     }
 
@@ -133,14 +129,14 @@ void arrival_scene_update(void *sVar, s32 dArg) {
         }
 
         set_pause_beatscript_scene(FALSE);
-        gArrival->scriptIsReady = FALSE;
+        gArrival->inputsEnabled = FALSE;
     }
 }
 
 
-// Communicate with Script
-u32 arrival_scene_can_receive_inputs(void) {
-    if (gArrival->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 arrival_scene_inputs_enabled(void) {
+    if (gArrival->inputsEnabled) {
         return TRUE;
     }
 

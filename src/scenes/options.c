@@ -40,7 +40,7 @@ enum OptionsWarningEnum {
 
 
 // Init. Static Variables
-void options_scene_init_static_var(void) {
+void options_scene_init_memory(void) {
 }
 
 
@@ -118,7 +118,7 @@ void options_scene_start(void *sVar, s32 dArg) {
     text_printer_set_string(printer, options_data_clear_confirm_text);
     gOptionsMenu->warningText = printer;
 
-    gOptionsMenu->scriptIsReady = FALSE;
+    gOptionsMenu->inputsEnabled = FALSE;
     gOptionsMenu->state = OPTIONS_MENU_STATE_MAIN;
     gOptionsMenu->clearDataOnExit = FALSE;
     gOptionsMenu->canceledDataClear = FALSE;
@@ -140,7 +140,7 @@ void options_scene_move_warning_cursor(u32 index) {
 void options_scene_update_main(void) {
     u32 event = OPTIONS_EV_NONE;
 
-    if (!options_scene_can_receive_inputs()) {
+    if (!options_scene_inputs_enabled()) {
         return;
     }
 
@@ -205,7 +205,7 @@ void options_scene_update_main(void) {
             gOptionsMenu->canceledDataClear = TRUE;
             set_scene_trans_var(&scene_main_menu, TRUE);
             set_pause_beatscript_scene(FALSE);
-            gOptionsMenu->scriptIsReady = FALSE;
+            gOptionsMenu->inputsEnabled = FALSE;
             play_sound(&s_menu_cancel3_seqData);
             break;
     }
@@ -214,7 +214,7 @@ void options_scene_update_main(void) {
 
 // Update Warning
 void options_scene_update_warning(void) {
-    if (!options_scene_can_receive_inputs()) {
+    if (!options_scene_inputs_enabled()) {
         return;
     }
 
@@ -232,7 +232,7 @@ void options_scene_update_warning(void) {
             set_next_scene(&scene_title);
             gOptionsMenu->clearDataOnExit = TRUE;
             set_pause_beatscript_scene(FALSE);
-            gOptionsMenu->scriptIsReady = FALSE;
+            gOptionsMenu->inputsEnabled = FALSE;
             gOptionsMenu->state = OPTIONS_MENU_STATE_EXIT;
             play_sound(&s_menu_kettei2_seqData);
             return;
@@ -283,9 +283,9 @@ void options_scene_update(void *sVar, s32 dArg) {
 }
 
 
-// Communicate with Script
-u32 options_scene_can_receive_inputs(void) {
-    if (gOptionsMenu->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 options_scene_inputs_enabled(void) {
+    if (gOptionsMenu->inputsEnabled) {
         return TRUE;
     }
 

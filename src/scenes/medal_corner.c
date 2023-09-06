@@ -176,7 +176,7 @@ void medal_corner_listbox_init(void) {
 
 
 // Init. Static Variables
-void medal_corner_scene_init_static_var(void) {
+void medal_corner_scene_init_memory(void) {
     medal_corner_reset_list_positions();
     medal_corner_set_lesson_id(DRUM_LESSON_NULL);
 }
@@ -230,7 +230,7 @@ void medal_corner_scene_start(void *sVar, s32 dArg) {
     }
 
     gameplay_pause_menu_set_quit_destination(get_current_scene());
-    gMedalCorner->scriptIsReady = FALSE;
+    gMedalCorner->inputsEnabled = FALSE;
     write_game_save_data();
 }
 
@@ -264,7 +264,7 @@ void medal_corner_scene_update(void *sVar, s32 dArg) {
     u32 event = MEDAL_CORNER_EV_NONE;
     u32 item;
 
-    if (medal_corner_scene_can_receive_inputs()) {
+    if (medal_corner_scene_inputs_enabled()) {
         if (D_030053b8 & DPAD_UP) {
             event = MEDAL_CORNER_EV_SCROLL_UP;
         }
@@ -294,7 +294,7 @@ void medal_corner_scene_update(void *sVar, s32 dArg) {
                 medal_corner_set_lesson_id(item);
                 play_sound(&s_menu_kettei2_seqData);
                 set_pause_beatscript_scene(FALSE);
-                gMedalCorner->scriptIsReady = FALSE;
+                gMedalCorner->inputsEnabled = FALSE;
             } else {
                 play_sound(&s_menu_error_seqData);
             }
@@ -311,7 +311,7 @@ void medal_corner_scene_update(void *sVar, s32 dArg) {
         case MEDAL_CORNER_EV_CANCEL:
             play_sound(&s_menu_cancel3_seqData);
             set_pause_beatscript_scene(FALSE);
-            gMedalCorner->scriptIsReady = FALSE;
+            gMedalCorner->inputsEnabled = FALSE;
             break;
     }
 
@@ -319,9 +319,9 @@ void medal_corner_scene_update(void *sVar, s32 dArg) {
 }
 
 
-// Communicate with Script
-u32 medal_corner_scene_can_receive_inputs(void) {
-    if (gMedalCorner->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 medal_corner_scene_inputs_enabled(void) {
+    if (gMedalCorner->inputsEnabled) {
         return TRUE;
     }
 

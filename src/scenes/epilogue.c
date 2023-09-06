@@ -8,15 +8,11 @@
 #include "src/scenes/studio.h"
 
 
-// For readability.
-#define gEpilogue ((struct EpilogueSceneData *)gCurrentSceneData)
-
-
-/* EPILOGUE */
+/* EPILOGUE SCENE */
 
 
 // Init. Static Variables
-void epilogue_scene_init_static_var(void) {
+void epilogue_scene_init_memory(void) {
 }
 
 
@@ -51,7 +47,7 @@ void epilogue_scene_init_gfx1(void) {
 
 
 // Scene Start
-void epilogue_scene_start(void *sceneVar, s32 dataArg) {
+void epilogue_scene_start(void *sVar, s32 dArg) {
     struct LevelData *levelData;
     const char *text;
     u32 rank;
@@ -106,30 +102,30 @@ void epilogue_scene_start(void *sceneVar, s32 dataArg) {
     gEpilogue->objFont = func_0800c660(0x300, 4);
     import_all_scene_objects(D_03005380, gEpilogue->objFont, epilogue_scene_objects, D_0300558c);
     epilogue_scene_init_gfx1();
-    gEpilogue->scriptIsReady = FALSE;
+    gEpilogue->inputsEnabled = FALSE;
 }
 
 
 // Scene Update (Paused)
-void epilogue_scene_paused(void *sceneVar, s32 dataArg) {
+void epilogue_scene_paused(void *sVar, s32 dArg) {
 }
 
 
 // Scene Update (Active)
-void epilogue_scene_update(void *sceneVar, s32 dataArg) {
-    if (epilogue_scene_script_is_ready()) {
+void epilogue_scene_update(void *sVar, s32 dArg) {
+    if (epilogue_scene_inputs_enabled()) {
         if (D_03004afc & A_BUTTON) {
             set_pause_beatscript_scene(FALSE);
             play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), 0);
-            gEpilogue->scriptIsReady = FALSE;
+            gEpilogue->inputsEnabled = FALSE;
         }
     }
 }
 
 
-// Communicate with Script
-u32 epilogue_scene_script_is_ready(void) {
-    if (gEpilogue->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 epilogue_scene_inputs_enabled(void) {
+    if (gEpilogue->inputsEnabled) {
         return TRUE;
     } else {
         return FALSE;
@@ -138,7 +134,7 @@ u32 epilogue_scene_script_is_ready(void) {
 
 
 // Scene Stop
-void epilogue_scene_stop(void *sceneVar, s32 dataArg) {
+void epilogue_scene_stop(void *sVar, s32 dArg) {
     func_08008628();
     func_08004058();
     stop_all_soundplayers();

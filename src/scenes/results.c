@@ -52,7 +52,7 @@ void results_save_to_cart(u32 levelState) {
     saveData->recentLevelScore = results_calculate_final_score();
 
     levelID = get_level_id_from_grid_xy(saveData->recentLevelX, saveData->recentLevelY);
-    cafe_add_level_to_session(levelID);
+    cafe_session_add_level(levelID);
 
     if (levelID >= 0) {
         D_030046a8->data.levelTotalPlays[levelID]++;

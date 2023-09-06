@@ -137,7 +137,7 @@ void title_logo_bounce_bubble(s32 id) {
 
 
 // Init. Static Variables
-void title_scene_init_static_var(void) {
+void title_scene_init_memory(void) {
 }
 
 
@@ -170,7 +170,7 @@ void title_scene_init_gfx1(void) {
 
 
 // Scene Start
-void title_scene_start(void *sceneVar, s32 dataArg) {
+void title_scene_start(void *sVar, s32 dArg) {
     struct TextPrinter *textPrinter;
 
     func_08007324(FALSE);
@@ -188,7 +188,7 @@ void title_scene_start(void *sceneVar, s32 dataArg) {
 
     title_scene_init_gfx1();
     title_logo_init();
-    gTitle->scriptIsReady = FALSE;
+    gTitle->inputsEnabled = FALSE;
     gTitle->timeUntilDemo = 180 * 16;
     gTitle->titleIsDisplayed = FALSE;
     set_next_scene(&D_089d3984);
@@ -218,7 +218,7 @@ void title_scene_beat_anim(void) {
 
 
 // Scene Update (Paused)
-void title_scene_paused(void *sceneVar, s32 dataArg) {
+void title_scene_paused(void *sVar, s32 dArg) {
 }
 
 
@@ -232,7 +232,7 @@ void title_scene_update_inputs(void) {
         }
 
         func_0801d968(script_scene_title_exit);
-        gTitle->scriptIsReady = FALSE;
+        gTitle->inputsEnabled = FALSE;
         play_sound_w_pitch_volume(&s_nyuka_fan_seqData, INT_TO_FIXED(1.25), INT_TO_FIXED(0.0));
         scene_set_music_volume_env(100);
         D_030046a8->data.unkB0 = TRUE;
@@ -242,17 +242,17 @@ void title_scene_update_inputs(void) {
 
 
 // Scene Update (Active)
-void title_scene_update(void *sceneVar, s32 dataArg) {
+void title_scene_update(void *sVar, s32 dArg) {
     if (gTitle->timeUntilDemo > 0) {
         if (--gTitle->timeUntilDemo == 0) {
             set_next_scene(&D_089d3984);
             set_scene_trans_target(&D_089d3984, &scene_title);
             func_0801d968(script_scene_title_exit);
-            gTitle->scriptIsReady = FALSE;
+            gTitle->inputsEnabled = FALSE;
         }
     }
 
-    if (title_scene_script_is_ready()) {
+    if (title_scene_inputs_enabled()) {
         title_scene_update_inputs();
     }
 
@@ -261,9 +261,9 @@ void title_scene_update(void *sceneVar, s32 dataArg) {
 }
 
 
-// Communicate with Script
-u32 title_scene_script_is_ready(void) {
-    if (gTitle->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 title_scene_inputs_enabled(void) {
+    if (gTitle->inputsEnabled) {
         return TRUE;
     } else {
         return FALSE;
@@ -272,7 +272,7 @@ u32 title_scene_script_is_ready(void) {
 
 
 // Scene Stop
-void title_scene_stop(void *sceneVar, s32 dataArg) {
+void title_scene_stop(void *sVar, s32 dArg) {
     func_08008628();
     func_08004058();
 }

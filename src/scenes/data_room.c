@@ -4,33 +4,15 @@
 #include "src/scenes/reading.h"
 
 
-// For readability.
-#define gDataRoom ((struct DataRoomSceneData *)gCurrentSceneData)
-
-enum DataRoomEventsEnum {
-    /* 00 */ DATAROOM_EV_NONE,
-    /* 01 */ DATAROOM_EV_CONFIRM,
-    /* 02 */ DATAROOM_EV_SCROLL_UP,
-    /* 03 */ DATAROOM_EV_SCROLL_DOWN,
-    /* 04 */ DATAROOM_EV_CANCEL
-};
-
-enum DataRoomUserStatesEnum {
-    /* 00 */ DATAROOM_USER_STARING,
-    /* 01 */ DATAROOM_USER_SCROLLING,
-    /* 02 */ DATAROOM_USER_ASLEEP
-};
+/* RHYTHM DATA ROOM SCENE */
 
 
 static u8 sListSelItem;
 static u8 sListSelLine;
 
 
-/* RHYTHM DATA ROOM */
-
-
 // Init. Static Variables
-void dataroom_scene_init_static_var(void) {
+void dataroom_scene_init_memory(void) {
     dataroom_scene_set_listbox_sel(0, 0);
 }
 
@@ -144,7 +126,7 @@ void dataroom_scene_start(void *sVar, s32 dArg) {
     gDataRoom->userSprite = func_0804d160(D_03005380, anim_data_room_user_stare, 0x7F, 0, 160, 0x4800, 1, 0x7F, 0);
     gDataRoom->userState = DATAROOM_USER_STARING;
     gDataRoom->userAnimTimer = 540;
-    gDataRoom->scriptIsReady = FALSE;
+    gDataRoom->inputsEnabled = FALSE;
 }
 
 
@@ -190,7 +172,7 @@ void dataroom_scene_update_user(void) {
 void dataroom_scene_update(void *sVar, s32 dArg) {
     u32 event = DATAROOM_EV_NONE;
 
-    if (dataroom_scene_can_receive_inputs()) {
+    if (dataroom_scene_inputs_enabled()) {
         if (D_030053b8 & DPAD_UP) {
             event = DATAROOM_EV_SCROLL_UP;
         }
@@ -219,7 +201,7 @@ void dataroom_scene_update(void *sVar, s32 dArg) {
                 set_scene_trans_var(&scene_reading, listbox_get_sel_item(gDataRoom->listbox));
                 play_sound(&s_menu_kettei2_seqData);
                 set_pause_beatscript_scene(FALSE);
-                gDataRoom->scriptIsReady = FALSE;
+                gDataRoom->inputsEnabled = FALSE;
             }
             break;
 
@@ -234,7 +216,7 @@ void dataroom_scene_update(void *sVar, s32 dArg) {
         case DATAROOM_EV_CANCEL:
             play_sound(&s_menu_cancel3_seqData);
             set_pause_beatscript_scene(FALSE);
-            gDataRoom->scriptIsReady = FALSE;
+            gDataRoom->inputsEnabled = FALSE;
             break;
     }
 
@@ -243,9 +225,9 @@ void dataroom_scene_update(void *sVar, s32 dArg) {
 }
 
 
-// Communicate with Script
-u32 dataroom_scene_can_receive_inputs(void) {
-    if (gDataRoom->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 dataroom_scene_inputs_enabled(void) {
+    if (gDataRoom->inputsEnabled) {
         return TRUE;
     }
 

@@ -139,6 +139,9 @@ extern struct Scene scene_drum_lesson_long_6;
 extern struct Scene scene_drum_lesson_hi_tech_1;
 extern struct Scene scene_drum_lesson_hi_tech_2;
 
+// Other
+extern struct Scene scene_rhythm_test;
+
 // Unlabelled
 extern struct Scene D_089d48ec;
 extern struct Scene D_089d4464;

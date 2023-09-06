@@ -2,18 +2,16 @@
 #include "debug_menu.h"
 #include "src/scenes/medal_corner.h"
 
-// For readability.
-#define gDebugMenu ((struct DebugMenuSceneData *)gCurrentSceneData)
+
+/* DEBUG MENU SCENE */
+
 
 static s8 sMenuPage;
 static s8 sMenuRow;
 
 
-/* DEBUG MENU */
-
-
 // Init. Static Variables
-void debug_menu_scene_init_static_var(void) {
+void debug_menu_scene_init_memory(void) {
     struct DebugMenuEntry *entries = debug_menu_entry_table;
     u32 i;
 
@@ -102,7 +100,7 @@ void debug_menu_scene_start(void *sVar, s32 dArg) {
     }
 
     debug_menu_render_table(sMenuPage, sMenuRow);
-    gDebugMenu->scriptIsReady = FALSE;
+    gDebugMenu->inputsEnabled = FALSE;
 
     set_scene_trans_var(&scene_epilogue, 0);
     set_scene_trans_var(&scene_arrival, (u32)&scene_reading);
@@ -122,7 +120,7 @@ void debug_menu_scene_paused(void *sVar, s32 dArg) {
 void debug_menu_scene_update(void *sVar, s32 dArg) {
     s32 maxRow;
 
-    if (!debug_menu_scene_can_receive_inputs()) {
+    if (!debug_menu_scene_inputs_enabled()) {
         return;
     }
 
@@ -151,14 +149,14 @@ void debug_menu_scene_update(void *sVar, s32 dArg) {
     if (D_03004afc & (START_BUTTON | A_BUTTON)) {
         set_next_scene(debug_menu_entry_table[(gDebugMenu->page * 8) + gDebugMenu->row].scene);
         set_pause_beatscript_scene(FALSE);
-        gDebugMenu->scriptIsReady = FALSE;
+        gDebugMenu->inputsEnabled = FALSE;
     }
 }
 
 
-// Communicate with Script
-u32 debug_menu_scene_can_receive_inputs(void) {
-    if (gDebugMenu->scriptIsReady) {
+// Check if Scene Can Receive Inputs
+u32 debug_menu_scene_inputs_enabled(void) {
+    if (gDebugMenu->inputsEnabled) {
         return TRUE;
     }
 
