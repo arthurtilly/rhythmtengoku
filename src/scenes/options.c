@@ -3,40 +3,7 @@
 #include "graphics/options/options_graphics.h"
 
 
-// For readability.
-#define gOptionsMenu ((struct OptionsSceneData *)gCurrentSceneData)
-
-enum OptionsSceneStatesEnum {
-    /* 00 */ OPTIONS_MENU_STATE_EXIT,
-    /* 01 */ OPTIONS_MENU_STATE_MAIN,
-    /* 02 */ OPTIONS_MENU_STATE_WARNING
-};
-
-enum OptionsEventsEnum {
-    /* 00 */ OPTIONS_EV_NONE,
-    /* 01 */ OPTIONS_EV_CURSOR_UP,
-    /* 02 */ OPTIONS_EV_CURSOR_DOWN,
-    /* 03 */ OPTIONS_EV_CONFIRM,
-    /* 04 */ OPTIONS_EV_CANCEL
-};
-
-enum OptionsButtonsEnum {
-    /* 00 */ OPTIONS_BUTTON_SOUND_MODE,
-    /* 01 */ OPTIONS_BUTTON_DATA_CLEAR
-};
-
-enum OptionsButtonSelectedEnum {
-    /* 00 */ OPTIONS_BUTTON_ON,
-    /* 01 */ OPTIONS_BUTTON_OFF
-};
-
-enum OptionsWarningEnum {
-    /* 00 */ OPTIONS_WARNING_YES,
-    /* 01 */ OPTIONS_WARNING_NO
-};
-
-
-/* OPTIONS MENU */
+/* OPTIONS MENU SCENE */
 
 
 // Init. Static Variables
@@ -119,7 +86,7 @@ void options_scene_start(void *sVar, s32 dArg) {
     gOptionsMenu->warningText = printer;
 
     gOptionsMenu->inputsEnabled = FALSE;
-    gOptionsMenu->state = OPTIONS_MENU_STATE_MAIN;
+    gOptionsMenu->state = OPTIONS_SCENE_STATE_MAIN;
     gOptionsMenu->clearDataOnExit = FALSE;
     gOptionsMenu->canceledDataClear = FALSE;
 }
@@ -196,7 +163,7 @@ void options_scene_update_main(void) {
                 func_0804d770(D_03005380, gOptionsMenu->uiWarningPane, TRUE);
                 func_0804d770(D_03005380, gOptionsMenu->uiWarningCursor, TRUE);
                 text_printer_show_text(gOptionsMenu->warningText, TRUE);
-                gOptionsMenu->state = OPTIONS_MENU_STATE_WARNING;
+                gOptionsMenu->state = OPTIONS_SCENE_STATE_WARNING;
             }
             play_sound(&s_menu_kettei2_seqData);
             break;
@@ -223,7 +190,7 @@ void options_scene_update_warning(void) {
         func_0804d770(D_03005380, gOptionsMenu->uiWarningPane, FALSE);
         func_0804d770(D_03005380, gOptionsMenu->uiWarningCursor, FALSE);
         text_printer_show_text(gOptionsMenu->warningText, FALSE);
-        gOptionsMenu->state = OPTIONS_MENU_STATE_MAIN;
+        gOptionsMenu->state = OPTIONS_SCENE_STATE_MAIN;
         return;
     }
 
@@ -233,7 +200,7 @@ void options_scene_update_warning(void) {
             gOptionsMenu->clearDataOnExit = TRUE;
             set_pause_beatscript_scene(FALSE);
             gOptionsMenu->inputsEnabled = FALSE;
-            gOptionsMenu->state = OPTIONS_MENU_STATE_EXIT;
+            gOptionsMenu->state = OPTIONS_SCENE_STATE_EXIT;
             play_sound(&s_menu_kettei2_seqData);
             return;
         } else {
@@ -241,7 +208,7 @@ void options_scene_update_warning(void) {
             func_0804d770(D_03005380, gOptionsMenu->uiWarningCursor, FALSE);
             text_printer_show_text(gOptionsMenu->warningText, FALSE);
             play_sound(&s_menu_cancel2_seqData);
-            gOptionsMenu->state = OPTIONS_MENU_STATE_MAIN;
+            gOptionsMenu->state = OPTIONS_SCENE_STATE_MAIN;
         }
     }
 
@@ -268,12 +235,12 @@ void options_scene_update_warning(void) {
 // Scene Update (Active)
 void options_scene_update(void *sVar, s32 dArg) {
     switch (gOptionsMenu->state) {
-        case OPTIONS_MENU_STATE_EXIT:
+        case OPTIONS_SCENE_STATE_EXIT:
             break;
-        case OPTIONS_MENU_STATE_MAIN:
+        case OPTIONS_SCENE_STATE_MAIN:
             options_scene_update_main();
             break;
-        case OPTIONS_MENU_STATE_WARNING:
+        case OPTIONS_SCENE_STATE_WARNING:
             options_scene_update_warning();
             break;
     }

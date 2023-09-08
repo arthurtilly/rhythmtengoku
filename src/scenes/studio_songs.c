@@ -3,11 +3,7 @@
 #include "graphics/studio/studio_graphics.h"
 
 
-// For readability.
-#define gStudio ((struct StudioSceneData *)gCurrentSceneData)
-
-
-/* STUDIO */
+/* STUDIO SONG LIST */
 
 
 // Song Save Data - Unlock Default Songs

@@ -3,7 +3,43 @@
 #include "global.h"
 #include "scenes.h"
 
-// Scene Types:
+
+// VALUES
+enum ResultsRanksEnum {
+    /* 00 */ RESULTS_RANK_TRY_AGAIN,
+    /* 01 */ RESULTS_RANK_OK,
+    /* 02 */ RESULTS_RANK_SUPERB
+};
+
+enum ResultsRankIconsEnum {
+    /* 00 */ RESULT_ICON_OK,
+    /* 01 */ RESULT_ICON_TRY_AGAIN,
+    /* 02 */ RESULT_ICON_SUPERB
+};
+
+enum ResultsGradesEnum {
+    /* 00 */ RESULTS_GRADE_D,
+    /* 01 */ RESULTS_GRADE_C,
+    /* 02 */ RESULTS_GRADE_B,
+    /* 03 */ RESULTS_GRADE_A,
+    /* 04 */ RESULTS_GRADE_S
+};
+
+enum ScoreResultGradesEnum {
+    /* 00 */ SCORE_RESULT_BEST,
+    /* 01 */ SCORE_RESULT_HIGH,
+    /* 02 */ SCORE_RESULT_MID,
+    /* 03 */ SCORE_RESULT_LOW,
+    /* 04 */ SCORE_RESULT_FAIL
+};
+
+
+// MACROS
+#define gResults ((struct ResultsSceneData *)gCurrentSceneData)
+#define END_OF_RESULTS_SKILL_LIST { 0, NULL, NULL }
+
+
+// TYPES
 struct ResultsSceneData {
     struct BitmapFontBG *bgFont;
     struct BitmapFontOBJ *objFont;
@@ -55,9 +91,7 @@ struct ScoreHandler {
     u16 totalRecoveries;
     s8 prevInputLevel;
     struct InputScoreTracker anyInputTrackers[4];
-    u8 skillScores[6];
-    u16 unk6E;
-    u16 unk70;
+    u8 skillScores[10];
     u16 avgSkillScore;
     u16 totalIrrelevantInputs;
     const struct MarkingCriteria **markingData;
@@ -73,40 +107,8 @@ struct ResultsSkillData {
     u32 (*measure)(void);
 };
 
-#define END_OF_RESULTS_SKILL_LIST { 0, NULL, NULL }
 
-
-// Scene Macros/Enums:
-enum ResultsRanksEnum {
-    /* 00 */ RESULTS_RANK_TRY_AGAIN,
-    /* 01 */ RESULTS_RANK_OK,
-    /* 02 */ RESULTS_RANK_SUPERB
-};
-
-enum ResultsRankIconsEnum {
-    /* 00 */ RESULT_ICON_OK,
-    /* 01 */ RESULT_ICON_TRY_AGAIN,
-    /* 02 */ RESULT_ICON_SUPERB
-};
-
-enum ResultsGradesEnum {
-    /* 00 */ RESULTS_GRADE_D,
-    /* 01 */ RESULTS_GRADE_C,
-    /* 02 */ RESULTS_GRADE_B,
-    /* 03 */ RESULTS_GRADE_A,
-    /* 04 */ RESULTS_GRADE_S
-};
-
-enum ScoreResultGradesEnum {
-    /* 00 */ SCORE_RESULT_BEST,
-    /* 01 */ SCORE_RESULT_HIGH,
-    /* 02 */ SCORE_RESULT_MID,
-    /* 03 */ SCORE_RESULT_LOW,
-    /* 04 */ SCORE_RESULT_FAIL
-};
-
-
-// Scene Data:
+// DATA
 extern union SceneObject debug_results_scene_objects[];
 extern struct GraphicsTable debug_results_gfx_table[];
 extern struct CompressedGraphics *debug_results_buffered_textures[];
@@ -129,7 +131,7 @@ extern const char *results_try_again_comment_pool[];
 extern const char *results_ok_comment_pool[];
 
 
-// Functions:
+// FUNCTIONS
 extern void results_scene_init_memory(void);
 extern void results_scene_init_gfx3(void);
 extern void results_scene_init_gfx2(void);
@@ -137,7 +139,7 @@ extern void results_scene_init_gfx1(void);
 extern void results_scene_start(void *sVar, s32 dArg);
 extern void results_scene_paused(void *sVar, s32 dArg);
 extern void results_scene_update(void *sVar, s32 dArg);
-extern u32 results_scene_inputs_enabled(void);
+extern u32  results_scene_inputs_enabled(void);
 extern void results_scene_stop(void *sVar, s32 dArg);
 
 extern void rank_results_scene_init_memory(void);
@@ -167,7 +169,7 @@ extern void score_results_scene_stop(void *sVar, s32 dArg);
 extern void score_results_reveal(void);
 
 extern void results_set_enable_save(u32 updateSave);
-extern u32 func_080191b8(void); // Return TRUE (used in the Perfect Certificate scene)
+extern u32 results_campaign_is_enabled(void);
 extern void results_save_to_cart(u32 levelState);
 extern struct Animation *results_get_comment_anim(const char *comment, u32 anchor, u32 colors);
 extern void results_init_tracker(struct InputScoreTracker *);

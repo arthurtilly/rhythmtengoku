@@ -391,7 +391,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Scene */ &scene_options_menu,
         /* Label */ "‚q|‚h‚p@iƒIƒvƒVƒ‡ƒ“j"
     },
-    /* R-IQ (Result [1]) */ {
+    /* R-IQ (Result 1) */ {
         /* Scene */ &scene_results_ver_debug,
         /* Label */ "‚q|‚h‚p@iƒŠƒUƒ‹ƒgj"
     },

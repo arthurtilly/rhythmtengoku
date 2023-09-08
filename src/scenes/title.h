@@ -3,7 +3,16 @@
 #include "global.h"
 #include "scenes.h"
 
-// Scene Types:
+
+// VALUES
+#define TOTAL_TITLE_LOGO_BUBBLES 5
+
+
+// MACROS
+#define gTitle ((struct TitleSceneData *)gCurrentSceneData)
+
+
+// TYPES
 struct TitleSceneData {
     u32 inputsEnabled;
     u32 timeUntilDemo;
@@ -25,7 +34,7 @@ struct TitleSceneData {
         s8_8 bounceAngle;
         s8_8 bounceBaseAngle;
         s8_8 bounceDistance;
-    } logoBubbles[5];
+    } logoBubbles[TOTAL_TITLE_LOGO_BUBBLES];
     s32 nextLogoBubble;
 };
 
@@ -36,32 +45,29 @@ struct TitleLogoCharData {
 };
 
 
-// Scene Macros/Enums:
-#define TOTAL_TITLE_LOGO_BUBBLES 5
-
-
-// Scene Data:
+// DATA
 extern struct TitleLogoCharData title_logo_char_data[];
 extern struct GraphicsTable title_gfx_table[];
 extern struct CompressedGraphics *title_buffered_textures[];
+extern struct Beatscript script_scene_title_exit[];
 
 
-// Functions:
+// FUNCTIONS
 extern void title_logo_set_bubble_pos(s32 id);
 extern void title_logo_init(void);
-extern void title_logo_appear(void); // (Script Function)
+extern void title_logo_appear(void);
 extern void title_logo_update(void);
 extern void title_logo_bounce_all(void);
-extern void title_logo_bounce_bubble(s32 id); // (Script Function)
-extern void title_scene_init_memory(void); // Init. Static Variables
-extern void title_scene_init_gfx3(void); // Graphics Init. 3
-extern void title_scene_init_gfx2(void); // Graphics Init. 2
-extern void title_scene_init_gfx1(void); // Graphics Init. 1
-extern void title_scene_start(void *sVar, s32 dArg); // Scene Start
-extern void title_scene_complete_intro(void); // (Script Function)
-extern void title_scene_beat_anim(void); // (Script Function)
-extern void title_scene_paused(void *sVar, s32 dArg); // Scene Update (Paused)
+extern void title_logo_bounce_bubble(s32 id);
+extern void title_scene_init_memory(void);
+extern void title_scene_init_gfx3(void);
+extern void title_scene_init_gfx2(void);
+extern void title_scene_init_gfx1(void);
+extern void title_scene_start(void *sVar, s32 dArg);
+extern void title_scene_complete_intro(void);
+extern void title_scene_beat_anim(void);
+extern void title_scene_paused(void *sVar, s32 dArg);
 extern void title_scene_update_inputs(void);
-extern void title_scene_update(void *sVar, s32 dArg); // Scene Update (Active)
-extern u32 title_scene_inputs_enabled(void); // Check if Scene Can Receive Inputs
-extern void title_scene_stop(void *sVar, s32 dArg); // Scene Stop
+extern void title_scene_update(void *sVar, s32 dArg);
+extern u32  title_scene_inputs_enabled(void);
+extern void title_scene_stop(void *sVar, s32 dArg);

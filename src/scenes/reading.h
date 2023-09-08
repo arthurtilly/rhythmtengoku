@@ -3,30 +3,8 @@
 #include "global.h"
 #include "scenes.h"
 
-// Scene Types:
-struct ReadingSceneData {
-    struct ReadingMaterial *material;
-    u32 inputsEnabled;
-    struct TextPrinter *printer;
-    s8 currentPage;
-    struct TextPrinterData pageData[32];
-    u8 pageState;
-    s16 targetY;
-    s16 relativeY;
-    s16 pagePosY;
-    s16 iconPrev;
-    s16 iconNext;
-};
 
-struct ReadingMaterial {
-    const char *title;
-    const char *text;
-    const struct GraphicsTable *graphics;
-    struct SequenceData **sounds;
-};
-
-
-// Scene Macros/Enums:
+// VALUES
 enum ReadingMaterialEnum {
     /* 00 */ READING_MATERIAL_WELCOME,
     /* 01 */ READING_MATERIAL_MANUAL,
@@ -50,35 +28,56 @@ enum ReadingMaterialEnum {
     /* 19 */ READING_MATERIAL_RHYTHM_HAIKU
 };
 
-
-// Sound Effects:
-extern struct SequenceData s_f_env_cherry_seqData;
-extern struct SequenceData s_f_env_train_seqData;
-extern struct SequenceData s_sindan_sea_seqData;
-extern struct SequenceData s_f_env_haiku_seqData;
-extern struct SequenceData s_f_env_class_room_seqData;
-extern struct SequenceData s_sindan_mail_seqData;
-extern struct SequenceData s_sindan_manzai_seqData;
-extern struct SequenceData s_f_env_paper_seqData;
-extern struct SequenceData s_f_env_paper_rev_seqData;
-extern struct SequenceData s_menu_cancel2_seqData;
+enum ReadingEventsEnum {
+    /* 00 */ READING_EV_NONE,
+    /* 01 */ READING_EV_SCROLL_UP,
+    /* 02 */ READING_EV_SCROLL_DOWN,
+    /* 03 */ READING_EV_CANCEL
+};
 
 
-// Scene Data:
+// MACROS
+#define gReading ((struct ReadingSceneData *)gCurrentSceneData)
+
+
+// TYPES
+struct ReadingSceneData {
+    struct ReadingMaterial *material;
+    u32 inputsEnabled;
+    struct TextPrinter *printer;
+    s8 currentPage;
+    struct TextPrinterData pageData[32];
+    u8 pageState;
+    s16 targetY;
+    s16 relativeY;
+    s16 pagePosY;
+    s16 iconPrev;
+    s16 iconNext;
+};
+
+struct ReadingMaterial {
+    const char *title;
+    const char *text;
+    const struct GraphicsTable *graphics;
+    struct SequenceData **sounds;
+};
+
+
+// DATA
 extern struct ReadingMaterial reading_material_table[];
 extern struct GraphicsTable reading_gfx_table[];
 extern struct CompressedGraphics *reading_buffered_textures[];
 extern struct ReadingMaterial reading_material_error;
 
 
-// Functions:
-extern void reading_scene_init_gfx4(void); // Graphics Init. 4
-extern void reading_scene_init_gfx3(void); // Graphics Init. 3
-extern void reading_scene_init_gfx2(void); // Graphics Init. 2
-extern void reading_scene_init_gfx1(void); // Graphics Init. 1
-extern void reading_scene_start(void *sVar, s32 dArg); // Scene Start
+// FUNCTIONS
+extern void reading_scene_init_gfx4(void);
+extern void reading_scene_init_gfx3(void);
+extern void reading_scene_init_gfx2(void);
+extern void reading_scene_init_gfx1(void);
+extern void reading_scene_start(void *sVar, s32 dArg);
 extern void reading_scene_update_page(void);
-extern void reading_scene_update(void *sVar, s32 dArg); // Scene Update (Active)
-extern u32 reading_scene_inputs_enabled(void); // Check if Scene Can Receive Inputs
-extern void reading_scene_stop(void *sVar, s32 dArg); // Scene Stop
-extern void reading_scene_play_bgm(void); // (Script Function)
+extern void reading_scene_update(void *sVar, s32 dArg);
+extern u32  reading_scene_inputs_enabled(void);
+extern void reading_scene_stop(void *sVar, s32 dArg);
+extern void reading_scene_play_bgm(void);

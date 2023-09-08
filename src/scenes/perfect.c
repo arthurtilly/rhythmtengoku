@@ -8,13 +8,7 @@
 #include "src/scenes/studio.h"
 
 
-// For readability.
-#define gPerfect ((struct PerfectSceneData *)gCurrentSceneData)
-
-extern struct SequenceData s_menu_kettei2_seqData;
-
-
-/* PERFECT CERTIFICATE */
+/* PERFECT CERTIFICATE SCENE */
 
 
 // Init. Static Variables
@@ -62,7 +56,7 @@ void perfect_scene_start(void *sVar, s32 dArg) {
 
     gPerfect->campaignID = get_current_campaign();
 
-    if ((gPerfect->campaignID >= 0) && func_080191b8()) {
+    if ((gPerfect->campaignID >= 0) && results_campaign_is_enabled()) {
         giftType = campaign_gifts_table[gPerfect->campaignID].type;
         giftID = campaign_gifts_table[gPerfect->campaignID].id;
 

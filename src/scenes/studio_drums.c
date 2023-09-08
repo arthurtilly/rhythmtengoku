@@ -3,11 +3,7 @@
 #include "graphics/studio/studio_graphics.h"
 
 
-// For readability.
-#define gStudio ((struct StudioSceneData *)gCurrentSceneData)
-
-
-/* STUDIO */
+/* STUDIO DRUM LIST */
 
 
 // [D_089d83d0] Drum Kit Names

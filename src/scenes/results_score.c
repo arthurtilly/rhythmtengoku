@@ -3,16 +3,12 @@
 #include "graphics/results/results_graphics.h"
 
 
-// For readability.
-#define gResults ((struct ResultsSceneData *)gCurrentSceneData)
+/* RESULTS SCENE 3 (SCORE-TYPE) */
 
 
 static s32 D_0300132c; // Unused
 static u16 *sGradeThresholds;
 static const char **sGradeComments;
-
-
-/* RESULTS (SCORE-TYPE) */
 
 
 // Init. Static Variables

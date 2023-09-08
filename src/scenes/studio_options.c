@@ -3,11 +3,7 @@
 #include "graphics/studio/studio_graphics.h"
 
 
-// For readability.
-#define gStudio ((struct StudioSceneData *)gCurrentSceneData)
-
-
-/* STUDIO */
+/* STUDIO OPTIONS LIST */
 
 
 // [D_089d841c] Options

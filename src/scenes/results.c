@@ -7,8 +7,8 @@
 #include "src/scenes/game_select.h"
 
 
-// For readability.
-#define gResults ((struct ResultsSceneData *)gCurrentSceneData)
+/* RESULTS */
+
 
 #define COMMENT_PALETTE 4
 #define EXTRA_COMMENT_PALETTE 2
@@ -24,17 +24,14 @@ static struct ScoreHandler sScoreHandler; // Global Score Handler
 static u8 D_03001540; // Update save data upon reaching leaving scene.
 
 
-/* RESULTS */
-
-
 // Set D_03001540
 void results_set_enable_save(u32 updateSave) {
     D_03001540 = updateSave;
 }
 
 
-// Return TRUE
-u32 func_080191b8(void) {
+// Return TRUE (used in the Perfect Certificate scene, likely for development purposes)
+u32 results_campaign_is_enabled(void) {
     return TRUE;
 }
 

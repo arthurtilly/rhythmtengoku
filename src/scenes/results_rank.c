@@ -3,8 +3,8 @@
 #include "graphics/results/results_graphics.h"
 
 
-// For readability.
-#define gResults ((struct ResultsSceneData *)gCurrentSceneData)
+/* RESULTS SCENE 2 (RANK-TYPE) */
+
 
 #define COMMENT_TILESET_BASE OBJ_TILESET_BASE(0x4000)
 #define RANK_HEADER_PALETTE 4
@@ -15,9 +15,6 @@
 #define RANK_RESULT_ICON_Y 140
 #define RANK_RESULT_ICON_BUT_X 88
 #define RANK_RESULT_ICON_BUT_Y 140
-
-
-/* RESULTS (RANK-TYPE) */
 
 
 // Init. Static Variables

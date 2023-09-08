@@ -3,36 +3,8 @@
 #include "global.h"
 #include "scenes.h"
 
-// Scene Types:
-struct MedalCornerSceneData {
-    u32 inputsEnabled;
-    struct Listbox *listbox;
-    s16 medalCountDigit1;
-    s16 medalCountDigit2;
-    s16 reqCountDigit1;
-    s16 reqCountDigit2;
-    s16 currentLevelIcon;
-    s16 lockedLevelIcon;
-    struct MedalCornerMenu *menuData;
-    u8 menuID;
-};
 
-struct MedalCornerLevel {
-    struct Scene *scene;
-    const char *title;
-    struct Animation *icon;
-    u8 medalsToUnlock;
-};
-
-struct MedalCornerMenu {
-    u8 levelCount;
-    struct SequenceData *bgm;
-    struct GraphicsTable *gfx;
-    struct MedalCornerLevel *levels;
-};
-
-
-// Scene Macros/Enums:
+// VALUES
 enum MedalCornerMenusEnum {
     /* 00 */ MEDAL_CORNER_MENU_RHYTHM_TOYS,
     /* 01 */ MEDAL_CORNER_MENU_ENDLESS_GAMES,
@@ -85,21 +57,62 @@ enum DrumLessonsEnum {
     /* -- */ TOTAL_DRUM_LESSONS
 };
 
+enum MedalCornerEventsEnum {
+    /* 00 */ MEDAL_CORNER_EV_NONE,
+    /* 01 */ MEDAL_CORNER_EV_CONFIRM,
+    /* 02 */ MEDAL_CORNER_EV_SCROLL_UP,
+    /* 03 */ MEDAL_CORNER_EV_SCROLL_DOWN,
+    /* 04 */ MEDAL_CORNER_EV_CANCEL
+};
 
-// Scene Data:
+
+// MACROS
+#define gMedalCorner ((struct MedalCornerSceneData *)gCurrentSceneData)
+
+
+// TYPES
+struct MedalCornerSceneData {
+    u32 inputsEnabled;
+    struct Listbox *listbox;
+    s16 medalCountDigit1;
+    s16 medalCountDigit2;
+    s16 reqCountDigit1;
+    s16 reqCountDigit2;
+    s16 currentLevelIcon;
+    s16 lockedLevelIcon;
+    struct MedalCornerMenu *menuData;
+    u8 menuID;
+};
+
+struct MedalCornerLevel {
+    struct Scene *scene;
+    const char *title;
+    struct Animation *icon;
+    u8 medalsToUnlock;
+};
+
+struct MedalCornerMenu {
+    u8 levelCount;
+    struct SequenceData *bgm;
+    struct GraphicsTable *gfx;
+    struct MedalCornerLevel *levels;
+};
+
+
+// DATA
 extern struct MedalCornerMenu *medal_corner_menu_table[];
 extern struct Animation *lessons_menu_rank_icons[];
 extern char medal_corner_locked_text[];
 extern struct CompressedGraphics *medal_corner_buffered_textures[];
 
 
-// Functions:
+// FUNCTIONS
 extern void medal_corner_init_lesson_grades(void);
 extern void medal_corner_init_level_icon(void);
 extern const char *medal_corner_get_level_name(s32 item);
 extern void medal_corner_set_current_level(s32 item);
 extern struct Scene *medal_corner_get_level_scene(s32 item);
-extern u32 medal_corner_level_is_unlocked(s32 item);
+extern u32  medal_corner_level_is_unlocked(s32 item);
 extern void medal_corner_init_counters(void);
 extern void medal_corner_set_level_req_counter(u32 count);
 extern void medal_corner_reset_list_positions(void);
@@ -113,10 +126,10 @@ extern void medal_corner_scene_init_gfx2(void);
 extern void medal_corner_scene_init_gfx1(void);
 extern void medal_corner_scene_start(void *sVar, s32 dArg);
 extern void medal_corner_set_lesson_id(s32 item);
-extern s32 medal_corner_get_lesson_id(void);
+extern s32  medal_corner_get_lesson_id(void);
 extern void medal_corner_scene_paused(void *sVar, s32 dArg);
 extern void medal_corner_use_ui_texture_base(s32 sprite);
 extern void medal_corner_scene_update(void *sVar, s32 dArg);
-extern u32 medal_corner_scene_inputs_enabled(void);
+extern u32  medal_corner_scene_inputs_enabled(void);
 extern void medal_corner_scene_stop(void *sVar, s32 dArg);
 extern void medal_corner_start_music(void);

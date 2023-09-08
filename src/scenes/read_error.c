@@ -4,11 +4,7 @@
 #include "graphics/data_room/data_room_graphics.h"
 
 
-// For readability.
-#define gReadError ((struct ReadErrorSceneData *)gCurrentSceneData)
-
-
-/* READ ERROR(?) */
+/* READ ERROR(?) SCENE */
 
 
 // Graphics Init. 3

@@ -3,8 +3,7 @@
 #include "graphics/studio/studio_graphics.h"
 
 
-// For readability.
-#define gStudio ((struct StudioSceneData *)gCurrentSceneData)
+/* STUDIO SCENE */
 
 
 static u8 sCurrentDrumKit; // Selected Drum Kit ID
@@ -13,9 +12,6 @@ static s8 sListSongSelLine; // Song Item Index (Screen)
 static u8 sListOptionSelItem; // Option Item Index
 static u8 sListDrumSelItem; // Drum Kit Item Index (Total)
 static u8 sListDrumSelLine; // Drum Kit Item Index (Screen)
-
-
-/* STUDIO */
 
 
 // Init. Static Variables

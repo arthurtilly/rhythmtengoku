@@ -3,11 +3,7 @@
 #include "graphics/results/results_graphics.h"
 
 
-// For readability.
-#define gResults ((struct ResultsSceneData *)gCurrentSceneData)
-
-
-/* RESULTS (DEBUG-TYPE) */
+/* RESULTS SCENE 1 (DEBUG-TYPE) */
 
 
 // Init. Static Variables

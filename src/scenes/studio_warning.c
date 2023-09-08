@@ -3,11 +3,7 @@
 #include "graphics/studio/studio_graphics.h"
 
 
-// For readability.
-#define gStudio ((struct StudioSceneData *)gCurrentSceneData)
-
-
-/* STUDIO */
+/* STUDIO WARNING POPUP */
 
 
 // Warning Notice - On-Finish Function

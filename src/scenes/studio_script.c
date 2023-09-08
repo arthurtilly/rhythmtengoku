@@ -3,14 +3,10 @@
 #include "graphics/studio/studio_graphics.h"
 
 
-// For readability.
-#define gStudio ((struct StudioSceneData *)gCurrentSceneData)
+/* STUDIO SCRIPT FUNCTIONS */
 
 
-static u8 sStudioDrummerMode; // Studio Drummer Mode
-
-
-/* STUDIO */
+static u8 sStudioDrummerMode;
 
 
 // Get Studio Drummer Script (Script Function)

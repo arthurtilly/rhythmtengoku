@@ -4,26 +4,16 @@
 #include "graphics/data_room/data_room_graphics.h"
 
 
-// For readability.
-#define gReading ((struct ReadingSceneData *)gCurrentSceneData)
+/* READING MATERIAL SCENE */
 
-enum ReadingEventsEnum {
-    DO_NOTHING,
-    SCROLL_TO_PREV,
-    SCROLL_TO_NEXT,
-    EXIT_SCENE
-};
 
 enum PageStatesEnum {
-    PAGE_IDLE,
-    PAGE_SCROLLING_DOWN,
-    PAGE_SCROLLING_UP,
-    PAGE_SCROLLED_DOWN,
-    PAGE_SCROLLED_UP
+    /* 00 */ PAGE_STATE_IDLE,
+    /* 01 */ PAGE_STATE_SCROLLING_DOWN,
+    /* 02 */ PAGE_STATE_SCROLLING_UP,
+    /* 03 */ PAGE_STATE_SCROLLED_DOWN,
+    /* 04 */ PAGE_STATE_SCROLLED_UP
 };
-
-
-/* READING MATERIAL */
 
 
 // Graphics Init. 4
@@ -81,7 +71,7 @@ void reading_scene_start(void *sVar, s32 dArg) {
     func_080073f0();
     reading_scene_init_gfx1();
 
-    gReading->pageState = PAGE_IDLE;
+    gReading->pageState = PAGE_STATE_IDLE;
     gReading->pagePosY = 0;
     gReading->iconPrev = func_0804d160(D_03005380, anim_reading_icon_prev, 0, 0, 0, 0x4864, 0, 0, 0x8000);
     gReading->iconNext = func_0804d160(D_03005380, anim_reading_icon_next, 0, 0, 0, 0x4864, 0, 0, 0x8000);
@@ -115,7 +105,7 @@ void reading_scene_update_page(void) {
         func_0804d770(D_03005380, gReading->iconNext, text_printer_get_text(gReading->printer) != NULL);
     }
 
-    if (gReading->pageState == PAGE_IDLE) {
+    if (gReading->pageState == PAGE_STATE_IDLE) {
         return;
     }
 
@@ -144,22 +134,22 @@ void reading_scene_update_page(void) {
     if (gReading->relativeY == 0) {
         switch (gReading->pageState) {
             default:
-                gReading->pageState = PAGE_IDLE;
+                gReading->pageState = PAGE_STATE_IDLE;
                 break;
 
-            case PAGE_SCROLLING_DOWN:
+            case PAGE_STATE_SCROLLING_DOWN:
                 gReading->targetY = 0;
                 gReading->relativeY = -SCREEN_HEIGHT;
-                gReading->pageState = PAGE_SCROLLED_DOWN;
+                gReading->pageState = PAGE_STATE_SCROLLED_DOWN;
                 gReading->currentPage++;
                 text_printer_resume(gReading->printer);
                 text_printer_export_data(gReading->printer, &gReading->pageData[gReading->currentPage]);
                 break;
 
-            case PAGE_SCROLLING_UP:
+            case PAGE_STATE_SCROLLING_UP:
                 gReading->targetY = 0;
                 gReading->relativeY = SCREEN_HEIGHT;
-                gReading->pageState = PAGE_SCROLLED_UP;
+                gReading->pageState = PAGE_STATE_SCROLLED_UP;
                 gReading->currentPage--;
                 text_printer_import_data(gReading->printer, &gReading->pageData[gReading->currentPage]);
                 break;
@@ -170,45 +160,45 @@ void reading_scene_update_page(void) {
 
 // Scene Update (Active)
 void reading_scene_update(void *sVar, s32 dArg) {
-    s32 event = DO_NOTHING;
+    s32 event = READING_EV_NONE;
 
     if (reading_scene_inputs_enabled()) {
         if (D_03004ac0 & DPAD_UP) {
             if (gReading->currentPage > 0) {
-                event = SCROLL_TO_PREV;
+                event = READING_EV_SCROLL_UP;
             }
         }
         if (D_03004ac0 & DPAD_DOWN) {
             if ((text_printer_get_text(gReading->printer) != NULL) && (gReading->currentPage < 31)) {
-                event = SCROLL_TO_NEXT;
+                event = READING_EV_SCROLL_DOWN;
             }
         }
         if (D_03004afc & A_BUTTON) {
             if ((text_printer_get_text(gReading->printer) != NULL) && (gReading->currentPage < 31)) {
-                event = SCROLL_TO_NEXT;
+                event = READING_EV_SCROLL_DOWN;
             }
         }
         if (D_03004afc & B_BUTTON) {
-            event = EXIT_SCENE;
+            event = READING_EV_CANCEL;
         }
     }
 
     switch (event) {
-        case SCROLL_TO_PREV:
-            gReading->pageState = PAGE_SCROLLING_UP;
+        case READING_EV_SCROLL_UP:
+            gReading->pageState = PAGE_STATE_SCROLLING_UP;
             gReading->targetY = -SCREEN_HEIGHT;
             gReading->relativeY = SCREEN_HEIGHT;
             play_sound(&s_f_env_paper_rev_seqData);
             break;
 
-        case SCROLL_TO_NEXT:
-            gReading->pageState = PAGE_SCROLLING_DOWN;
+        case READING_EV_SCROLL_DOWN:
+            gReading->pageState = PAGE_STATE_SCROLLING_DOWN;
             gReading->targetY = SCREEN_HEIGHT;
             gReading->relativeY = -SCREEN_HEIGHT;
             play_sound(&s_f_env_paper_seqData);
             break;
 
-        case EXIT_SCENE:
+        case READING_EV_CANCEL:
             set_pause_beatscript_scene(FALSE);
             gReading->inputsEnabled = FALSE;
             play_sound_in_player(SFX_PLAYER_3, &s_menu_cancel2_seqData);
@@ -226,11 +216,11 @@ u32 reading_scene_inputs_enabled(void) {
     if (gReading->inputsEnabled) {
         u32 busy = text_printer_is_busy(gReading->printer);
 
-        if (gReading->pageState == PAGE_SCROLLING_DOWN) {
+        if (gReading->pageState == PAGE_STATE_SCROLLING_DOWN) {
             busy = TRUE;
         }
 
-        if (gReading->pageState == PAGE_SCROLLING_UP) {
+        if (gReading->pageState == PAGE_STATE_SCROLLING_UP) {
             busy = TRUE;
         }
 

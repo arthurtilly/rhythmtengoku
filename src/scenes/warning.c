@@ -3,13 +3,10 @@
 #include "graphics/warning/warning_graphics.h"
 
 
-// For readability.
-#define gWarning ((struct WarningSceneData *)gCurrentSceneData)
+/* WARNING SCENE */
+
 
 extern u8 D_03004498;
-
-
-/* WARNING SCREEN */
 
 
 // Render Animated Text (Script Function)

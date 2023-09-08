@@ -4,25 +4,13 @@
 #include "src/scenes/results.h"
 
 
-// For readability.
-#define gMedalCorner ((struct MedalCornerSceneData *)gCurrentSceneData)
-
-enum MedalCornerEventsEnum {
-    /* 00 */ MEDAL_CORNER_EV_NONE,
-    /* 01 */ MEDAL_CORNER_EV_CONFIRM,
-    /* 02 */ MEDAL_CORNER_EV_SCROLL_UP,
-    /* 03 */ MEDAL_CORNER_EV_SCROLL_DOWN,
-    /* 04 */ MEDAL_CORNER_EV_CANCEL
-};
+/* MEDAL CORNER MENU SCENES */
+/* (Rhythm Toys Menu, Endless Games Menu, Drum Lessons Menu) */
 
 
 static u8 sListSelItems[4];
 static u8 sListSelLines[4];
 static s8 sDrumLessonID;
-
-
-/* MEDAL CORNER MENUS */
-/* (Rhythm Toys Menu, Endless Games Menu, Drum Lessons Menu) */
 
 
 // Display Drum Lessons Grades

@@ -5,7 +5,7 @@
 #include "src/scenes/gameplay.h"
 
 
-/* MAIN MENU */
+/* MAIN MENU SCENE */
 
 
 enum MainMenuButtonsEnum {
@@ -16,7 +16,9 @@ enum MainMenuButtonsEnum {
     /* 04 */ OPTIONS_MENU
 };
 
+
 extern s8 sMainMenuButton;
+
 
 // Init. Static Variables
 void main_menu_scene_init_memory(void) {
