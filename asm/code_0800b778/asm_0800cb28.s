@@ -1540,7 +1540,7 @@ jump_0800d740: \n\
 jump_0800d78c: \n\
 /* 0800d78c */ LDR R0, =D_030053c0 \n\
 /* 0800d78e */ LDRH R0, [R0, 0x10] \n\
-/* 0800d790 */ BL func_0800ed60 \n\
+/* 0800d790 */ BL func_0800ed60_stub \n\
 /* 0800d794 */ BL branch_0800df9e \n\
 \n\
 .ltorg \n\

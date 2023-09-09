@@ -80,15 +80,15 @@ extern struct BeatscriptScene {
     u32 paused:1;
     u32 currentThread:3;
     u32 unk1_b4:3;
-    u32 unk1_b7:1;
-    u32 unk2_b0:1;
-    u32 unk2_b1:1;
+    u32 interpolatingTempo:1;
+    u32 interpolatingMusicPitch:1;
+    u32 interpolatingMusicVolume:1;
     struct SoundPlayer *musicPlayer; // [D_030053c4] Music Player
     u16 musicBaseBPM;
     u16 scriptBaseBPM;
     u16 scriptBPM; // [D_030053cc] Tempo after speed multiplication.
-    u16 scriptSpeed; // [Q8.8] Speed Multiplier
-    u16 unk10; // [Q8.8] (currentTempo / 140)
+    u8_8 scriptSpeed; // [Q8.8] Speed Multiplier
+    u8_8 spriteAnimSpeed; // [Q8.8] (currentTempo / 140)
     s32 deltaTime; // [D_030053d4] Script Ticks per Game Update ([Q8.8] (currentTempo / 150))
     u32 runningTime;
     u8  unk1C;
@@ -97,14 +97,24 @@ extern struct BeatscriptScene {
     s16 musicPitch;
     u32 globalVariable; // [D_030053c0 + 0x24] Global (Main Scene) Variable
     struct BeatscriptThread threads[2];
-    u32 localVariables[12]; // [D_030053c0 + 0x160] Local (Sub-Scene) Variables
+    u32 localVariables[2]; // [D_030053c0 + 0x160] Local (Sub-Scene) Variables
+    u32 unk168;
+    u32 unk16C;
+    u32 unk170;
+    u32 unk174;
+    u32 unk178;
+    u32 unk17C;
+    u32 unk180;
+    u32 unk184;
+    u32 unk188;
+    u32 unk18C;
     u16 musicVolume; // [D_03005550] Beatscript: Music Volume
     u16 musicTrkVolume; // [D_03005552] Beatscript: Music Channel Selection Volume
     u16 musicTrkTargets; // [D_03005554] Beatscript: Music Channel Selection
     s8  musicKey; // [D_03005556] Beatscript: Music Key
     const char *strings[10]; // [D_030053c0 + 0x198]
-    void (*unk1C0)(s32);
-    u32 unk1C4;
+    void (*callbackFunction)(s32);
+    s32 callbackArgument;
 } D_030053c0;
 
 extern u32 *D_03005588; // Current Scene Variable

@@ -2,6 +2,7 @@
 #include "code_0800b778.h"
 #include "code_08001360.h"
 #include "bitmap_font.h"
+#include "task_pool.h"
 #include "memory_heap.h"
 #include "code_08007468.h"
 #include "src/lib_08049144.h"
@@ -14,7 +15,7 @@ asm(".include \"include/gba.inc\"");//Temporary
 static s32 D_03001310[2]; // unknown type
 
 
-/* Main Game Handler */
+/* BEATSCRIPT SCENE HANDLER */
 
 
 // ?
@@ -30,72 +31,72 @@ u8 func_0800b634(s16 *arg0, s16 *arg1, s16 *arg2, s16 *arg3) {
 }
 
 
-// ?
-void func_0800b698(void) {
-    if (D_030053c0.unk1C0 != NULL) {
-        D_030053c0.unk1C0(D_030053c0.unk1C4);
+// Run BeatScript Engine Callback
+void run_beatscript_scene_callback(void) {
+    if (D_030053c0.callbackFunction != NULL) {
+        D_030053c0.callbackFunction(D_030053c0.callbackArgument);
     }
 }
 
 
-// ?
-void func_0800b6bc(void (*function)(s32), s32 param) {
-    D_030053c0.unk1C0 = function;
-    D_030053c0.unk1C4 = param;
+// Set BeatScript Engine Callback
+void set_beatscript_scene_callback(void function(s32), s32 argument) {
+    D_030053c0.callbackFunction = function;
+    D_030053c0.callbackArgument = argument;
 }
 
 
-// ?
-void func_0800b6dc(struct struct_0800b71c *arg0, u32 arg1, u32 arg2, struct struct_0800b71c_sub *sub) {
-    arg0->unk0 = 0;
-    arg0->unk1_0 = arg1;
-    arg0->unk1_1 = arg2;
-    arg0->unk4 = sub;
+// "Init." Function for an Unknown Array Structure
+void func_0800b6dc(struct Struct_0800b71c *container, u32 arg1, u32 arg2, struct Struct_0800b71c_sub *objects) {
+    container->total = 0;
+    container->unk1_0 = arg1;
+    container->unk1_1 = arg2;
+    container->objects = objects;
 
-    sub->unk0 = -1;
-    sub->unk1 = 0;
-    sub->unk4 = 0;
+    objects[0].id = -1;
+    objects[0].unk1_0 = 0;
+    objects[0].unk4 = 0;
 }
 
 
-// ?
-void func_0800b71c(struct struct_0800b71c *arg0, u32 arg1, u32 arg2, u32 arg3) {
-    struct struct_0800b71c_sub *sub = arg0->unk4;
+// "Add" Function for an Unknown Array Structure
+void func_0800b71c(struct Struct_0800b71c *container, u32 id, u32 arg2, u32 arg3) {
+    struct Struct_0800b71c_sub *object = &container->objects[0];
 
-    while(sub->unk0 != (u8)-1) {
-        sub++;
+    while (object->id != (u8)-1) {
+        object++;
     }
 
-    sub->unk0 = arg1;
-    sub->unk1 = arg2;
-    sub->unk4 = arg3;
+    object->id = id;
+    object->unk1_0 = arg2;
+    object->unk4 = arg3;
 
-    sub++;
-    sub->unk0 = -1;
-    sub->unk1 = 0;
-    sub->unk4 = 0;
+    object++;
+    object->id = -1;
+    object->unk1_0 = 0;
+    object->unk4 = 0;
 
-    arg0->unk0++;
+    container->total++;
 }
 
 
 // Stub
-void func_0800b768(void) {
+void func_0800b768_stub(void) {
 }
 
 
 // Stub
-void func_0800b76c(void) {
+void func_0800b76c_stub(void) {
 }
 
 
 // Stub
-void func_0800b770(void) {
+void func_0800b770_stub(void) {
 }
 
 
 // Stub
-void func_0800b774(void) {
+void func_0800b774_stub(void) {
 }
 
 
@@ -129,9 +130,9 @@ void start_beatscript_scene(u32 memID) {
     func_0800e948();
     func_0800eb0c();
     func_0800ec20();
-    D_030053c0.unk2_b1 = TRUE;
-    D_030053c0.unk1C0 = NULL;
-    D_030053c0.unk1C4 = 0;
+    D_030053c0.interpolatingMusicVolume = TRUE;
+    D_030053c0.callbackFunction = NULL;
+    D_030053c0.callbackArgument = 0;
 }
 
 
@@ -160,14 +161,17 @@ void set_beatscript_subscenes(const struct SubScene **subScenes) {
         D_030053c0.threads[i].stackCounter = 0;
         D_03005588 = &D_030053c0.localVariables[i];
         D_0300558c = D_030053c0.threads[i].sprites;
+
         if ((D_030053c0.memID == 1) && (i == 1)) {
-            D_030053c0.threads[1].startDelay = 2;
-        } else {
-            if (subScenes[i]->startFunc != NULL) {
-                subScenes[i]->startFunc(&D_030053c0.localVariables[i], subScenes[i]->startParam);
-            }
-            D_030053c0.threads[i].startDelay = 0;
+            D_030053c0.threads[i].startDelay = 2;
+            continue;
         }
+
+        if (subScenes[i]->startFunc != NULL) {
+            subScenes[i]->startFunc(&D_030053c0.localVariables[i], subScenes[i]->startParam);
+        }
+
+        D_030053c0.threads[i].startDelay = 0;
     }
 }
 
@@ -181,14 +185,13 @@ void update_paused_beatscript_scene(void) {
         D_030053c0.currentThread = i;
         set_current_mem_id(D_030053c0.currentThread + 1);
 
-        if (D_030053c0.threads[i].active) {
-            if (D_030053c0.threads[i].startDelay == 0) {
-                D_03005588 = &D_030053c0.localVariables[i];
-                D_0300558c = D_030053c0.threads[i].sprites;
-                subScene = D_030053c0.threads[i].subScene;
-                if (subScene->pausedFunc != NULL) {
-                    subScene->pausedFunc(&D_030053c0.localVariables[i], subScene->pausedParam);
-                }
+        if (D_030053c0.threads[i].active && (D_030053c0.threads[i].startDelay == 0)) {
+            D_03005588 = &D_030053c0.localVariables[i];
+            D_0300558c = D_030053c0.threads[i].sprites;
+            subScene = D_030053c0.threads[i].subScene;
+
+            if (subScene->pausedFunc != NULL) {
+                subScene->pausedFunc(&D_030053c0.localVariables[i], subScene->pausedParam);
             }
         }
     }
@@ -201,7 +204,7 @@ void update_active_beatscript_scene(void) {
     const struct SubScene *subScene;
     void (*subSceneFunc)();
     u32 isId1;
-    u32 i, i2;
+    u32 i, memID;
 
     isId1 = (D_030053c0.memID == 1);
 
@@ -209,10 +212,11 @@ void update_active_beatscript_scene(void) {
         D_030053c0.bypassLoops = TRUE;
         D_030053c0.exitLoopNextUpdate = FALSE;
     }
+
     if (isId1) {
         thread = &D_030053c0.threads[1];
         if (thread->active && (thread->startDelay == 0)) {
-            func_0800e004(); // stub function
+            func_0800e004_stub();
         }
     }
 
@@ -220,11 +224,12 @@ void update_active_beatscript_scene(void) {
         D_030053c0.currentThread = i;
         set_current_mem_id(D_030053c0.currentThread + 1);
         thread = &D_030053c0.threads[i];
-        i2 = i + 1;
+        memID = i + 1;
 
         if (thread->active) {
             D_03005588 = &D_030053c0.localVariables[i];
             D_0300558c = D_030053c0.threads[i].sprites;
+
             while (thread->active && (thread->timeUntilNext < D_030053c0.deltaTime) && !D_030053c0.paused) {
                 func_0800cb28(i);
             }
@@ -235,34 +240,35 @@ void update_active_beatscript_scene(void) {
                     thread->startDelay--;
                     if (thread->startDelay == 0) {
                         subSceneFunc = subScene->startFunc;
-                        if (subSceneFunc != NULL) {
-                            subSceneFunc(&D_030053c0.localVariables[i], subScene->startParam);
+                        if (subScene->startFunc != NULL) {
+                            subScene->startFunc(&D_030053c0.localVariables[i], subScene->startParam);
                         }
                     }
                 } else {
                     subSceneFunc = subScene->updateFunc;
-                    if (subSceneFunc != NULL) {
-                        subSceneFunc(&D_030053c0.localVariables[i], subScene->updateParam);
+                    if (subScene->updateFunc != NULL) {
+                        subScene->updateFunc(&D_030053c0.localVariables[i], subScene->updateParam);
                     }
                 }
             }
 
             if (!thread->active) {
                 subSceneFunc = subScene->stopFunc;
-                if (subSceneFunc != NULL) {
-                    subSceneFunc(&D_030053c0.localVariables[i], subScene->stopParam);
+                if (subScene->stopFunc != NULL) {
+                    subScene->stopFunc(&D_030053c0.localVariables[i], subScene->stopParam);
                 }
+
                 if (!thread->unk0_b7) {
-                    func_0804e0c4(D_03005380, i2);
-                    func_0800222c(i2);
-                    mem_heap_dealloc_with_id(i2);
-                    task_pool_forced_cancel_id(i2);
+                    func_0804e0c4(D_03005380, memID);
+                    func_0800222c(memID);
+                    mem_heap_dealloc_with_id(memID);
+                    task_pool_forced_cancel_id(memID);
                 }
             }
         }
     }
 
-    if (D_030053c0.unk2_b1) {
+    if (D_030053c0.interpolatingMusicVolume) {
         func_0800e970();
         func_0800eb1c();
         func_0800ec34();
@@ -274,6 +280,7 @@ void update_active_beatscript_scene(void) {
         for (i = 0; i < 2; i++) {
             D_030053c0.threads[i].timeUntilNext -= D_030053c0.deltaTime;
         }
+
         D_030053c0.runningTime += D_030053c0.deltaTime;
     }
 }
@@ -288,6 +295,7 @@ s32 beatscript_scene_is_inactive(void) {
             return FALSE;
         }
     }
+
     return TRUE;
 }
 
@@ -300,7 +308,7 @@ void beatscript_enable_loops(void) {
 
 
 // Delayed Loop Exit Task Function
-void func_0800bc58(void) {
+void beatscript_exit_loop_after_delay_callback(void) {
     D_030053c0.exitLoopNextUpdate = TRUE;
 }
 
@@ -312,7 +320,8 @@ void beatscript_exit_loop_after_delay(u32 duration) {
     }
 
     if (!D_030053c0.exitLoopNextUpdate) {
-        schedule_function_call((u16)get_current_mem_id(), func_0800bc58, 0, beats_to_ticks(duration));
+        schedule_function_call(get_current_mem_id(), beatscript_exit_loop_after_delay_callback, 0, beats_to_ticks(duration));
+
         if (D_030053c0.memID == 1) {
             func_0800c3ec(2);
         }
@@ -322,7 +331,7 @@ void beatscript_exit_loop_after_delay(u32 duration) {
 
 // Exit Loop After One Beat
 void beatscript_exit_loop_after_one_beat(void) {
-    beatscript_exit_loop_after_delay(0x18);
+    beatscript_exit_loop_after_delay(24);
 }
 
 
@@ -366,25 +375,27 @@ u32 beatscript_scene_is_paused(void) {
 void stop_beatscript_scene(void) {
     struct BeatscriptThread *thread;
     const struct SubScene *subScene;
-    u32 i, i2;
+    u32 i, memID;
 
     for (i = 0; i < 2; i++) {
         D_030053c0.currentThread = i;
         set_current_mem_id(D_030053c0.currentThread + 1);
         thread = &D_030053c0.threads[i];
         subScene = thread->subScene;
-        i2 = i + 1;
+        memID = i + 1;
 
         if (thread->active) {
             D_03005588 = &D_030053c0.localVariables[i];
             D_0300558c = D_030053c0.threads[i].sprites;
+
             if (subScene->stopFunc != NULL) {
                 subScene->stopFunc(&D_030053c0.localVariables[i], subScene->stopParam);
             }
-            func_0804e0c4(D_03005380, i2);
-            func_0800222c(i2);
-            mem_heap_dealloc_with_id(i2);
-            task_pool_forced_cancel_id(i2);
+
+            func_0804e0c4(D_03005380, memID);
+            func_0800222c(memID);
+            mem_heap_dealloc_with_id(memID);
+            task_pool_forced_cancel_id(memID);
             thread->active = FALSE;
         }
     }
@@ -403,23 +414,25 @@ void set_beatscript_tempo(u16 tempo) {
     D_030053c0.scriptBPM = tempo;
 
     speed = INT_TO_FIXED(tempo);
-    D_030053c0.unk10 = speed / 140;
+    D_030053c0.spriteAnimSpeed = speed / 140;
     speed /= D_030053c0.musicBaseBPM;
     D_030053c0.deltaTime = D_030053c0.musicBaseBPM * speed / 150u;
+
     if (D_030053c0.musicPlayer != NULL) {
         set_soundplayer_speed(D_030053c0.musicPlayer, speed);
     }
-    D_030053c0.unk1_b7 = FALSE;
+
+    D_030053c0.interpolatingTempo = FALSE;
 }
 
 
-// Update Script Tempo (retain unk1_b7)
+// Update Script Tempo (Interpolation)
 void update_beatscript_tempo(void) {
     u32 flag;
 
-    flag = D_030053c0.unk1_b7;
+    flag = D_030053c0.interpolatingTempo;
     set_beatscript_tempo(D_030053c0.scriptBaseBPM);
-    D_030053c0.unk1_b7 = flag;
+    D_030053c0.interpolatingTempo = flag;
 }
 
 
@@ -431,7 +444,7 @@ void set_beatscript_speed(u16 speed) {
 
 
 // Stub
-void func_0800be9c(void) {
+void func_0800be9c_stub(void) {
 }
 
 
@@ -454,10 +467,12 @@ u32 scene_change_music(struct SequenceData *music, u32 override, s32 soundPlayer
     if ((D_030053c0.musicPlayer != NULL) && override) {
         stop_soundplayer(D_030053c0.musicPlayer);
     }
+
     if (music == NULL) {
         D_030053c0.musicPlayer = NULL;
         return;
     }
+
     D_03005b3c = LFO_MODE_DISABLED;
     func_08049be4();
     func_08049b70(0);
@@ -497,10 +512,11 @@ void scene_play_music_with_soundplayer(struct SequenceData *music, s32 soundPlay
 
 // Play Music (override, use predefined SoundPlayer ID)
 void scene_set_music_player_by_sound(struct SequenceData *music) {
-    struct SoundPlayer *player;
+    struct SoundPlayer *player = get_soundplayer_by_sound(music);
 
-    player = get_soundplayer_by_sound(music);
-    if (player == NULL) return;
+    if (player == NULL) {
+        return;
+    }
 
     D_030053c0.musicPlayer = player;
     D_030053c0.musicBaseBPM = get_music_base_tempo(music);
@@ -530,13 +546,13 @@ void scene_fade_out_music(u16 duration) {
 }
 
 
-// Update Music Pitch (retain unk2_b0)
+// Update Music Pitch (Interpolation)
 void scene_update_music_pitch(void) {
     u32 flag;
 
-    flag = D_030053c0.unk2_b0;
+    flag = D_030053c0.interpolatingMusicPitch;
     scene_set_music_pitch(D_030053c0.musicPitchSrc1);
-    D_030053c0.unk2_b0 = flag;
+    D_030053c0.interpolatingMusicPitch = flag;
 }
 
 
@@ -545,10 +561,12 @@ void scene_set_music_pitch(s16 pitch) {
     D_030053c0.musicPitchSrc1 = pitch;
     pitch += D_030053c0.musicPitchSrc2;
     D_030053c0.musicPitch = pitch;
+
     if (D_030053c0.musicPlayer != NULL) {
         set_soundplayer_pitch(D_030053c0.musicPlayer, pitch);
     }
-    D_030053c0.unk2_b0 = FALSE;
+
+    D_030053c0.interpolatingMusicPitch = FALSE;
 }
 
 
@@ -601,6 +619,7 @@ void scene_interpolate_music_track_volume(u32 volume, u32 duration) {
 // Set Music Key
 void scene_set_music_key(s32 key) {
     D_030053c0.musicKey = key;
+
     if (D_030053c0.musicPlayer != NULL) {
         set_soundplayer_key(D_030053c0.musicPlayer, key);
     }
@@ -617,30 +636,64 @@ u32 get_beatscript_tempo(void) {
 }
 
 
-// Get unk10
+// Get Sprite Animation Speed
 u32 func_0800c1b4(void) {
-    return D_030053c0.unk10;
+    return D_030053c0.spriteAnimSpeed;
 }
 
 
-// Return (arg * unk10)
+// Return (arg * spriteAnimSpeed)
 s32 func_0800c1c0(s24_8 arg) {
-    return FIXED_POINT_MUL(arg, D_030053c0.unk10);
+    return FIXED_POINT_MUL(arg, D_030053c0.spriteAnimSpeed);
 }
 
 
-// Return (arg * (unk10 * unk10))
+// Return (arg * (spriteAnimSpeed ^ 2))
 s32 func_0800c1d0(s24_8 arg) {
-    return FIXED_POINT_MUL(arg, FIXED_POINT_MUL(D_030053c0.unk10, D_030053c0.unk10));
+    return FIXED_POINT_MUL(arg, FIXED_POINT_MUL(D_030053c0.spriteAnimSpeed, D_030053c0.spriteAnimSpeed));
 }
 
 
-#include "asm/code_0800b778/asm_0800c1e8.s"
+// Set Music Panning
+void scene_set_soundplayer_panning(struct SoundPlayer *player, s16 panning) {
+    panning -= 120u;
+    panning = panning * 3u / 4u;
 
-#include "asm/code_0800b778/asm_0800c228.s"
+    if (panning < -0x80) {
+        panning = -0x80;
+    }
+
+    if (panning > 0x7F) {
+        panning = 0x7F;
+    }
+
+    set_soundplayer_panning(player, panning);
+}
 
 
-// Play Sound Effect to Scene Tempo and Music Pitch
+// Play Randomly-Selected Music
+struct SoundPlayer *scene_set_random_music(struct SequenceData **musicPool) {
+    struct SequenceData *music;
+    u32 total;
+
+    if (musicPool == NULL) {
+        return NULL;
+    }
+
+    for (total = 0; musicPool[total] != NULL; total++);
+
+    if (total == 0) {
+        return NULL;
+    }
+
+    music = musicPool[agb_random(total)];
+    scene_set_music(music);
+
+    return D_08aa4460[music->soundPlayer].soundPlayer;
+}
+
+
+// Play Sound Effect to Sprite Animation Speed and Music Pitch
 struct SoundPlayer *scene_play_sound_to_tempo_and_pitch(struct SequenceData *sfx) {
     struct SoundPlayer *player;
 
@@ -652,7 +705,7 @@ struct SoundPlayer *scene_play_sound_to_tempo_and_pitch(struct SequenceData *sfx
 }
 
 
-// Play Sound Effect to Scene Tempo
+// Play Sound Effect to Sprite Animation Speed
 struct SoundPlayer *scene_play_sound_to_tempo(struct SequenceData *sfx) {
     struct SoundPlayer *player;
 
@@ -663,15 +716,68 @@ struct SoundPlayer *scene_play_sound_to_tempo(struct SequenceData *sfx) {
 }
 
 
-#include "asm/code_0800b778/asm_0800c2d0.s"
+// Play Randomly-Selected Sound Effect
+struct SoundPlayer *scene_play_random_sound(struct SequenceData **sfxPool) {
+    struct SequenceData *sfx;
+    u32 total;
 
-#include "asm/code_0800b778/asm_0800c310.s"
+    if (sfxPool == NULL) {
+        return NULL;
+    }
 
-#include "asm/code_0800b778/asm_0800c350.s"
+    for (total = 0; sfxPool[total] != NULL; total++);
+
+    if (total == 0) {
+        return NULL;
+    }
+
+    sfx = sfxPool[agb_random(total)];
+    return play_sound(sfx);
+}
+
+
+// Play Randomly-Selected Sound Effect to Sprite Animation Speed and Music Pitch
+struct SoundPlayer *scene_play_random_sound_to_tempo_and_pitch(struct SequenceData **sfxPool) {
+    struct SequenceData *sfx;
+    u32 total;
+
+    if (sfxPool == NULL) {
+        return NULL;
+    }
+
+    for (total = 0; sfxPool[total] != NULL; total++);
+
+    if (total == 0) {
+        return NULL;
+    }
+
+    sfx = sfxPool[agb_random(total)];
+    return scene_play_sound_to_tempo_and_pitch(sfx);
+}
+
+
+// Play Randomly-Selected Sound Effect to Sprite Animation Speed
+struct SoundPlayer *scene_play_random_sound_to_tempo(struct SequenceData **sfxPool) {
+    struct SequenceData *sfx;
+    u32 total;
+
+    if (sfxPool == NULL) {
+        return NULL;
+    }
+
+    for (total = 0; sfxPool[total] != NULL; total++);
+
+    if (total == 0) {
+        return NULL;
+    }
+
+    sfx = sfxPool[agb_random(total)];
+    return scene_play_sound_to_tempo(sfx);
+}
 
 
 // Stub
-void func_0800c390(void) {
+void func_0800c390_stub(void) {
 }
 
 
@@ -707,79 +813,79 @@ void set_current_mem_id(u32 id) {
 
 
 // Stub
-void func_0800c3e4(void) {
+void func_0800c3e4_stub(void) {
 }
 
 
 // Stub
-void func_0800c3e8(u32 arg) {
+void func_0800c3e8_stub(u32 arg) {
 }
 
 
 // ? (effectively does nothing, but is called anyway)
 void func_0800c3ec(u32 arg) {
-    func_0800c3e8(arg);
-    func_0800c3e8(2);
+    func_0800c3e8_stub(arg);
+    func_0800c3e8_stub(2);
 }
 
 
 // Stub
-void func_0800c3fc(void) {
+void func_0800c3fc_stub(void) {
 }
 
 
 // Stub
-void func_0800c400(void) {
+void func_0800c400_stub(void) {
 }
 
 
 // Stub
-void func_0800c404(void) {
+void func_0800c404_stub(void) {
 }
 
 
 // Stub
-void func_0800c408(void) {
+void func_0800c408_stub(void) {
 }
 
 
 // Stub
-void func_0800c40c(void) {
+void func_0800c40c_stub(void) {
 }
 
 
 // Stub
-void func_0800c410(void) {
+void func_0800c410_stub(void) {
 }
 
 
 // Stub
-void func_0800c414(void) {
+void func_0800c414_stub(void) {
 }
 
 
 // Stub
-void func_0800c418(void) {
+void func_0800c418_stub(void) {
 }
 
 
 // Stub
-void func_0800c41c(void) {
+void func_0800c41c_stub(void) {
 }
 
 
 // Stub
-void func_0800c420(void) {
+void func_0800c420_stub(void) {
 }
 
 
 // Stub
-void func_0800c424(void) {
+void func_0800c424_stub(void) {
 }
 
 
 // Stub
-void func_0800c428(void) {
+void func_0800c428_stub(void) {
 }
 
 
@@ -795,7 +901,10 @@ void *scene_mem_heap_alloc(u32 size) {
 }
 
 
-#include "asm/code_0800b778/asm_0800c454.s"
+// Start Task
+s32 scene_start_new_task(struct TaskMethods *methods, void *inputs, TaskFinalFunc onFinish, u32 onFinishArg) {
+    return start_new_task(get_current_mem_id(), methods, inputs, onFinish, onFinishArg);
+}
 
 
 // Save Data
@@ -817,15 +926,18 @@ void func_0800c494(u32 id) {
 
 
 // Stub
-void func_0800c4ac(void) {
+void func_0800c4ac_stub(void) {
 }
 
 
 #include "asm/code_0800b778/asm_0800c4b0.s"
 
+
 #include "asm/code_0800b778/asm_0800c508.s"
 
+
 #include "asm/code_0800b778/asm_0800c560.s"
+
 
 #include "asm/code_0800b778/asm_0800c5b8.s"
 
@@ -840,73 +952,83 @@ void func_0800c604(u32 thread) {
 
 
 // Stub
-void func_0800c654(void) {
+void func_0800c654_stub(void) {
 }
 
 
 // Stub
-void func_0800c658(void) {
+void func_0800c658_stub(void) {
 }
 
 
 // Stub
-void func_0800c65c(void) {
+void func_0800c65c_stub(void) {
 }
 
 
 #include "asm/code_0800b778/asm_0800c660.s"
 
+
 #include "asm/code_0800b778/asm_0800c694.s"
 
+
 #include "asm/code_0800b778/asm_0800c6a4.s"
+
 
 #include "asm/code_0800b778/asm_0800c6c8.s"
 
 
 // Stub
-void func_0800c6d4(void) {
+void func_0800c6d4_stub(void) {
 }
 
 
 // Stub
-void func_0800c6d8(void) {
+void func_0800c6d8_stub(void) {
 }
 
 
 // Stub
-void func_0800c6dc(void) {
+void func_0800c6dc_stub(void) {
 }
 
 
 // Stub
-void func_0800c6e0(void) {
+void func_0800c6e0_stub(void) {
 }
 
 
 #include "asm/code_0800b778/asm_0800c6e4.s"
 
+
 #include "asm/code_0800b778/asm_0800c824.s"
+
 
 #include "asm/code_0800b778/asm_0800c95c.s"
 
+
 #include "asm/code_0800b778/asm_0800c9a4.s"
+
 
 #include "asm/code_0800b778/asm_0800c9c8.s"
 
+
 #include "asm/code_0800b778/asm_0800ca1c.s"
 
+
 #include "asm/code_0800b778/asm_0800ca70.s"
+
 
 #include "asm/code_0800b778/asm_0800cb28.s"
 
 
 // Stub
-void func_0800dfbc(void) {
+void func_0800dfbc_stub(void) {
 }
 
 
 // Stub
-void func_0800dfc0(void) {
+void func_0800dfc0_stub(void) {
 }
 
 
@@ -924,72 +1046,72 @@ s32 func_0800dfc4(void) {
 
 
 // Stub
-void func_0800dfe0(void) {
+void func_0800dfe0_stub(void) {
 }
 
 
 // Stub
-void func_0800dfe4(void) {
+void func_0800dfe4_stub(void) {
 }
 
 
 // Stub
-void func_0800dfe8(void) {
+void func_0800dfe8_stub(void) {
 }
 
 
 // Stub
-void func_0800dfec(void) {
+void func_0800dfec_stub(void) {
 }
 
 
 // Stub
-void func_0800dff0(void) {
+void func_0800dff0_stub(void) {
 }
 
 
 // Stub
-void func_0800dff4(void) {
+void func_0800dff4_stub(void) {
 }
 
 
 // Stub
-void func_0800dff8(void) {
+void func_0800dff8_stub(void) {
 }
 
 
 // Stub
-void func_0800dffc(void) {
+void func_0800dffc_stub(void) {
 }
 
 
 // Stub
-void func_0800e000(void) {
+void func_0800e000_stub(void) {
 }
 
 
 // Stub
-void func_0800e004(void) {
+void func_0800e004_stub(void) {
 }
 
 
 // Stub
-void func_0800e008(void) {
+void func_0800e008_stub(void) {
 }
 
 
 // Stub
-void func_0800e00c(void) {
+void func_0800e00c_stub(void) {
 }
 
 
 // Stub
-void func_0800e010(void) {
+void func_0800e010_stub(void) {
 }
 
 
 // Stub
-void func_0800e014(void) {
+void func_0800e014_stub(void) {
 }
 
 
@@ -1161,12 +1283,12 @@ void scene_set_bg_mosaic_size(s16 xSize, s16 ySize) {
 
 
 // Stub
-void func_0800e940(void) {
+void func_0800e940_stub(void) {
 }
 
 
 // Stub
-void func_0800e944(void) {
+void func_0800e944_stub(void) {
 }
 
 
@@ -1189,9 +1311,9 @@ void func_0800e944(void) {
 #include "asm/code_0800b778/asm_0800eaa0.s"
 
 
-// Clear unk1_b7
+// Clear interpolatingTempo
 void func_0800eb0c(void) {
-    D_030053c0.unk1_b7 = FALSE;
+    D_030053c0.interpolatingTempo = FALSE;
 }
 
 
@@ -1210,9 +1332,9 @@ void func_0800ebf8(u32 target, u32 duration) {
 }
 
 
-// Clear unk2_b0
+// Clear interpolatingMusicPitch
 void func_0800ec20(void) {
-    D_030053c0.unk2_b0 = FALSE;
+    D_030053c0.interpolatingMusicPitch = FALSE;
 }
 
 
@@ -1227,9 +1349,9 @@ void func_0800ecec(s32 target, u32 duration) {
 }
 
 
-// Set unk2_b1
+// Set interpolatingMusicVolume
 void func_0800ed08(u32 set) {
-    D_030053c0.unk2_b1 = set;
+    D_030053c0.interpolatingMusicVolume = set;
 }
 
 
@@ -1246,22 +1368,22 @@ void func_0800ed3c(u32 duration) {
 
 
 // Stub
-void func_0800ed54(void) {
+void func_0800ed54_stub(void) {
 }
 
 
 // Stub
-void func_0800ed58(void) {
+void func_0800ed58_stub(void) {
 }
 
 
 // Stub
-void func_0800ed5c(void) {
+void func_0800ed5c_stub(void) {
 }
 
 
 // Stub
-void func_0800ed60(u32 speed) {
+void func_0800ed60_stub(u32 speed) {
 }
 
 

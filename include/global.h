@@ -26,6 +26,8 @@ typedef enum Boolean {
 
 #define lerp(start, end, t, total) ((start) + fast_divsi3(((end) - (start)) * (t), (total)))
 
+typedef u16 u8_8;
+typedef u32 u24_8;
 typedef s16 s8_8;
 typedef s32 s24_8;
 #define INT_TO_FIXED(x) ((s32)((x) * 256))

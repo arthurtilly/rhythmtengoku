@@ -224,15 +224,14 @@ typedef struct InstrumentHeader *InstrumentBank[];
 union Instrument;
 
 struct SequenceData {
-    const u32 *romAddress;
-    u32 unk4f1:5;
+    const u8 *romAddress;
+    u32 soundPlayer:5;
     u32 soundBank:10;
     u32 volume:7;
-    u32 unk4f4:8;
-    u32 unk4f5:2;
+    u32 priority:10;
     u32 unk8;
-    char *seqName;
-    u32 iramChnlIndex;
+    char *title;
+    u32 songNum;
 };
 
 /* MIDI PLAYER DEVICES */
