@@ -35,7 +35,7 @@ extern void func_0800b768_stub(void);
 extern void func_0800b76c_stub(void);
 extern void func_0800b770_stub(void);
 extern void func_0800b774_stub(void);
-extern void start_beatscript_scene(u32 memID); // Beatscript Init.
+extern void start_beatscript_scene(u32 mode); // Beatscript Init.
 extern void set_beatscript_subscenes(const struct SubScene **subScenes); // Set SubScenes
 extern void update_paused_beatscript_scene(void); // ? (called each loop after the pause menu has been opened at least once)
 extern void update_active_beatscript_scene(void); // Beatscript Update
@@ -115,18 +115,18 @@ extern void scene_flush_save_buffer(void);
 extern u32 func_0800c490(void);
 extern void func_0800c494(u32 thread);
 extern void func_0800c4ac_stub(void);
-// extern ? func_0800c4b0(?);
-// extern ? func_0800c508(?);
-// extern ? func_0800c560(?);
-// extern ? func_0800c5b8(?);
+extern s32 func_0800c4b0(u32 type, u32 duration, void *source, s32 initial, s32 target);
+extern s32 func_0800c508(u32 type, u32 interval, void *source, s32 initial, s32 target);
+extern s32 func_0800c560(u32 type, u32 interval, void *source, s32 initial, s32 increment);
+extern s32 func_0800c5b8(u32 type, void *source, s32 baseValue, s24_8 initialAngle, s24_8 speed);
 extern void func_0800c604(u32 thread);
 extern void func_0800c654_stub(void);
 extern void func_0800c658_stub(void);
 extern void func_0800c65c_stub(void);
-extern struct BitmapFontOBJ *func_0800c660(u16, u8);
-// extern ? func_0800c694(?);
-// extern ? func_0800c6a4(?);
-// extern ? func_0800c6c8(?);
+extern struct BitmapFontOBJ *func_0800c660(u16 baseTileNum, u8 maxTileRows);
+extern void func_0800c694(u32 arg);
+extern void func_0800c6a4(void);
+extern void func_0800c6c8(void);
 extern void func_0800c6d4_stub(void);
 extern void func_0800c6d8_stub(void);
 extern void func_0800c6dc_stub(void);

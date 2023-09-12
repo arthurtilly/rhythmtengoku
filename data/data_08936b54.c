@@ -66,7 +66,7 @@ struct TaskMethods D_08936c04 = {
     NULL,
 };
 
-// 1-Dimensional Linear Interpolation
+// Number Task - Interpolate Linearly
 struct TaskMethods D_08936c14 = {
     (TaskStartFunc)func_08007bb8,
     (TaskUpdateFunc)func_08007c30,
@@ -74,6 +74,7 @@ struct TaskMethods D_08936c14 = {
     NULL,
 };
 
+// Number Task - Swap Endlessly
 struct TaskMethods D_08936c24 = {
     (TaskStartFunc)func_08007ca8,
     (TaskUpdateFunc)func_08007d20,
@@ -81,6 +82,7 @@ struct TaskMethods D_08936c24 = {
     NULL,
 };
 
+// Number Task - Increment Endlessly
 struct TaskMethods D_08936c34 = {
     (TaskStartFunc)func_08007d88,
     (TaskUpdateFunc)func_08007e00,
@@ -88,6 +90,7 @@ struct TaskMethods D_08936c34 = {
     NULL,
 };
 
+// Number Sine Interpolator Task
 struct TaskMethods D_08936c44 = {
     (TaskStartFunc)func_08007e7c,
     (TaskUpdateFunc)func_08007ef8,

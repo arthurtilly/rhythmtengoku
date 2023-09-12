@@ -44,15 +44,15 @@ extern void init_fast_udivsi3(void);
 extern s32 fast_divsi3(s32 dividend, s32 divisor);
 
 /* INTERPOLATION */
-extern struct LinearDataInterpolator *func_08007bb8(struct LinearDataInterpolator *inputs);
-extern u32 func_08007c30(struct LinearDataInterpolator *task);
-extern struct unk_struct_08007ca8 *func_08007ca8(struct unk_struct_08007ca8_init *inputs);
-extern u32 func_08007d20(struct unk_struct_08007ca8 *task);
-extern struct unk_struct_08007d88 *func_08007d88(struct unk_struct_08007d88_init *inputs);
-extern u32 func_08007e00(struct unk_struct_08007d88 *task);
-// extern ? func_08007e68(?);
-extern struct unk_struct_08007e7c *func_08007e7c(struct unk_struct_08007e7c_init *inputs);
-extern u32 func_08007ef8(struct unk_struct_08007e7c *task);
+extern struct NumberInterpolator *func_08007bb8(struct NumberInterpolator *inputs);
+extern u32 func_08007c30(struct NumberInterpolator *task);
+extern struct NumberInterpolator *func_08007ca8(struct NumberInterpolator *inputs);
+extern u32 func_08007d20(struct NumberInterpolator *task);
+extern struct NumberInterpolator *func_08007d88(struct NumberInterpolator *inputs);
+extern u32 func_08007e00(struct NumberInterpolator *task);
+extern void func_08007e68(s32 taskID, s32 newTarget);
+extern struct NumberSineInterpolator *func_08007e7c(struct NumberSineInterpolator *inputs);
+extern u32 func_08007ef8(struct NumberSineInterpolator *task);
 extern struct BlendControlsInterpolator *init_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *inputs);
 extern u32 update_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *task);
 extern s32 interpolate_lcd_blend_mode(u16 memID, u32 blendControls, u32 duration, u32 flip);

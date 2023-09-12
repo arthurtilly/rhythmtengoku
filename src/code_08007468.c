@@ -10,6 +10,8 @@
 asm(".include \"include/gba.inc\"");//Temporary
 
 
+/* GRAPHICS UTIL */
+
 
 // Get Sprite XY
 void get_sprite_xy(s16 sprite, s16 *xReq, s16 *yReq) {
@@ -341,6 +343,9 @@ void delete_bmp_font_obj_text_sprite(struct BitmapFontOBJ *bmpFontOBJ, s16 sprit
 }
 
 
+/* FAST DIVISION */
+
+
 #define FAST_UDIVSI3_SIZE ((u32)&fast_udivsi3_rom_end - (u32)fast_udivsi3_rom)
 
 extern u32 fast_udivsi3_rom();
@@ -378,31 +383,228 @@ s32 fast_divsi3(s32 dividend, s32 divisor) {
 }
 
 
-// D_08936c14 function 1
-#include "asm/code_08007468/asm_08007bb8.s"
+/* INTERPOLATION */
 
-// D_08936c14 function 2
-#include "asm/code_08007468/asm_08007c30.s"
 
-// D_08936c24 function 1
-#include "asm/code_08007468/asm_08007ca8.s"
+// Initialise Number Linear Interpolator Task
+struct NumberInterpolator *func_08007bb8(struct NumberInterpolator *inputs) {
+    struct NumberInterpolator *task;
 
-// D_08936c24 function 2
-#include "asm/code_08007468/asm_08007d20.s"
+    task = mem_heap_alloc(sizeof(struct NumberInterpolator));
+    task->type = inputs->type;
+    task->duration = inputs->duration;
+    task->runningTime = 0;
+    task->source = inputs->source;
+    task->initial = inputs->initial;
+    task->target = inputs->target;
 
-// D_08936c34 function 1
-#include "asm/code_08007468/asm_08007d88.s"
+    switch (task->type) {
+        case 0:
+            *(u8 *)task->source = task->initial;
+            break;
+        case 1:
+            *(u16 *)task->source = task->initial;
+            break;
+        case 2:
+            *(u32 *)task->source = task->initial;
+            break;
+    }
 
-// D_08936c34 function 2
-#include "asm/code_08007468/asm_08007e00.s"
+    return task;
+}
 
-#include "asm/code_08007468/asm_08007e68.s"
 
-// D_08936c44 function 1
-#include "asm/code_08007468/asm_08007e7c.s"
+// Update Number Linear Interpolator Task
+u32 func_08007c30(struct NumberInterpolator *task) {
+    s32 current = task->initial + fast_divsi3((task->target - task->initial) * task->runningTime, task->duration);
 
-// D_08936c44 function 2
-#include "asm/code_08007468/asm_08007ef8.s"
+    switch (task->type) {
+        case 0:
+            *(u8 *)task->source = current;
+            break;
+        case 1:
+            *(u16 *)task->source = current;
+            break;
+        case 2:
+            *(u32 *)task->source = current;
+            break;
+    }
+
+    return (++task->runningTime > task->duration);
+}
+
+
+// Initialise Number Alternator Task
+struct NumberInterpolator *func_08007ca8(struct NumberInterpolator *inputs) {
+    struct NumberInterpolator *task;
+
+    task = mem_heap_alloc(sizeof(struct NumberInterpolator));
+    task->type = inputs->type;
+    task->duration = inputs->duration;
+    task->runningTime = 0;
+    task->source = inputs->source;
+    task->initial = inputs->initial;
+    task->target = inputs->target;
+
+    switch (task->type) {
+        case 0:
+            *(u8 *)task->source = task->initial;
+            break;
+        case 1:
+            *(u16 *)task->source = task->initial;
+            break;
+        case 2:
+            *(u32 *)task->source = task->initial;
+            break;
+    }
+
+    return task;
+}
+
+
+// Update Number Alternator Task
+u32 func_08007d20(struct NumberInterpolator *task) {
+    s32 newInitial, newTarget;
+
+    if (++task->runningTime >= task->duration) {
+        task->runningTime = 0;
+        newInitial = task->target;
+        newTarget = task->initial;
+        task->target = newTarget;
+        task->initial = newInitial;
+
+        switch (task->type) {
+            case 0:
+                *(u8 *)task->source = newInitial;
+                break;
+            case 1:
+                *(u16 *)task->source = newInitial;
+                break;
+            case 2:
+                *(u32 *)task->source = newInitial;
+                break;
+        }
+    }
+
+    return FALSE;
+}
+
+
+// Initialise Number Incrementer Task
+struct NumberInterpolator *func_08007d88(struct NumberInterpolator *inputs) {
+    struct NumberInterpolator *task;
+
+    task = mem_heap_alloc(sizeof(struct NumberInterpolator));
+    task->type = inputs->type;
+    task->duration = inputs->duration;
+    task->runningTime = 0;
+    task->source = inputs->source;
+    task->initial = inputs->initial;
+    task->target = inputs->target;
+
+    switch (task->type) {
+        case 0:
+            *(u8 *)task->source = task->initial;
+            break;
+        case 1:
+            *(u16 *)task->source = task->initial;
+            break;
+        case 2:
+            *(u32 *)task->source = task->initial;
+            break;
+    }
+
+    return task;
+}
+
+
+// Update Number Incrementer Task
+u32 func_08007e00(struct NumberInterpolator *task) {
+    s32 current;
+
+    if (++task->runningTime >= task->duration) {
+        task->runningTime = 0;
+        current = task->initial + task->target;
+        task->initial = current;
+
+        switch (task->type) {
+            case 0:
+                *(u8 *)task->source = current;
+                break;
+            case 1:
+                *(u16 *)task->source = current;
+                break;
+            case 2:
+                *(u32 *)task->source = current;
+                break;
+        }
+    }
+
+    return FALSE;
+}
+
+
+// Set Target Value for Number Task
+void func_08007e68(s32 taskID, s32 newTarget) {
+    struct NumberInterpolator *task = get_task_info(taskID);
+
+    if (task != NULL) {
+        task->target = newTarget;
+    }
+}
+
+
+// Initialise Number Sine Interpolator Task
+struct NumberSineInterpolator *func_08007e7c(struct NumberSineInterpolator *inputs) {
+    struct NumberSineInterpolator *task;
+    s32 current;
+
+    task = mem_heap_alloc(sizeof(struct NumberSineInterpolator));
+    task->type = inputs->type;
+    task->angle = inputs->angle;
+    task->speed = inputs->speed;
+    task->value = inputs->value;
+    task->source = inputs->source;
+
+    current = FIXED_POINT_MUL(sins(FIXED_TO_INT(task->angle)), task->value);
+
+    switch (task->type) {
+        case 0:
+            *(u8 *)task->source = current;
+            break;
+        case 1:
+            *(u16 *)task->source = current;
+            break;
+        case 2:
+            *(u32 *)task->source = current;
+            break;
+    }
+
+    return task;
+}
+
+
+// Update Number Sine Interpolator Task
+u32 func_08007ef8(struct NumberSineInterpolator *task) {
+    s32 current;
+
+    task->angle += task->speed;
+    current = FIXED_POINT_MUL(sins(FIXED_TO_INT(task->angle)), task->value);
+
+    switch (task->type) {
+        case 0:
+            *(u8 *)task->source = current;
+            break;
+        case 1:
+            *(u16 *)task->source = current;
+            break;
+        case 2:
+            *(u32 *)task->source = current;
+            break;
+    }
+
+    return FALSE;
+}
 
 
 // Initialise LCD Special Effects Interpolator
@@ -483,6 +685,8 @@ s32 interpolate_lcd_blend_mode(u16 memID, u32 blendControls, u32 duration, u32 f
 
 #include "asm/code_08007468/asm_08008090.s"
 
+
+/* STRING */
 
 
 extern char D_08936c64[]; // "‚O‚P‚Q‚R‚S‚T‚U‚V‚W‚X"
@@ -628,6 +832,8 @@ void strnintf(char *s, u32 n, u32 len) {
 }
 
 
+/* ? */
+
 
 #include "asm/code_08007468/asm_08008370.s"
 
@@ -637,6 +843,10 @@ void strnintf(char *s, u32 n, u32 len) {
 // D_08936c7c function 2
 #include "asm/code_08007468/asm_08008464.s"
 
+
+/* SCHEDULED FUNCTION CALL */
+
+
 // D_08936c8c function 1
 #include "asm/code_08007468/asm_0800852c.s"
 
@@ -645,6 +855,8 @@ void strnintf(char *s, u32 n, u32 len) {
 
 #include "asm/code_08007468/asm_0800856c.s"
 
+
+/* BUFFERED TEXTURE */
 
 
 static s32 D_030010d0[9]; // unknown type
@@ -674,6 +886,9 @@ static s32 D_030010d0[9]; // unknown type
 #include "asm/code_08007468/asm_08008758.s"
 
 #include "asm/code_08007468/asm_080087b4.s"
+
+
+/* ? */
 
 
 // Clamp Signed Integer

@@ -18,6 +18,11 @@ static s32 D_03001310[2]; // unknown type
 /* BEATSCRIPT SCENE HANDLER */
 
 
+// Bitmap Fonts from WarioWare
+extern struct BitmapFontData bitmap_font_warioware_outline[];
+extern struct BitmapFontData bitmap_font_warioware_body[];
+
+
 // ?
 u8 func_0800b634(s16 *arg0, s16 *arg1, s16 *arg2, s16 *arg3) {
     if (arg0[0] + arg1[0] < arg2[0] + arg3[0] + arg3[2]
@@ -29,6 +34,17 @@ u8 func_0800b634(s16 *arg0, s16 *arg1, s16 *arg2, s16 *arg3) {
         return FALSE;
     }
 }
+
+/*
+    if (a1.x + a2.x1 < b1.x + b2.x1 + b2.x2
+     && b1.x + b2.x1 < a1.x + a2.x1 + a2.x2
+     && a1.y + a2.y1 < b1.y + b2.y1 + b2.y2
+     && b1.y + b2.y1 < a1.y + a2.y1 + a2.y2) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+*/
 
 
 // Run BeatScript Engine Callback
@@ -101,10 +117,10 @@ void func_0800b774_stub(void) {
 
 
 // Beatscript Engine Init.
-void start_beatscript_scene(u32 memID) {
+void start_beatscript_scene(u32 mode) {
     u32 i;
 
-    D_030053c0.memID = memID;
+    D_030053c0.mode = mode;
     D_030053c0.bypassLoops = FALSE;
     D_030053c0.exitLoopNextUpdate = FALSE;
     D_030053c0.paused = FALSE;
@@ -162,7 +178,7 @@ void set_beatscript_subscenes(const struct SubScene **subScenes) {
         D_03005588 = &D_030053c0.localVariables[i];
         D_0300558c = D_030053c0.threads[i].sprites;
 
-        if ((D_030053c0.memID == 1) && (i == 1)) {
+        if ((D_030053c0.mode == 1) && (i == 1)) {
             D_030053c0.threads[i].startDelay = 2;
             continue;
         }
@@ -206,7 +222,7 @@ void update_active_beatscript_scene(void) {
     u32 isId1;
     u32 i, memID;
 
-    isId1 = (D_030053c0.memID == 1);
+    isId1 = (D_030053c0.mode == 1);
 
     if (D_030053c0.exitLoopNextUpdate) {
         D_030053c0.bypassLoops = TRUE;
@@ -322,7 +338,7 @@ void beatscript_exit_loop_after_delay(u32 duration) {
     if (!D_030053c0.exitLoopNextUpdate) {
         schedule_function_call(get_current_mem_id(), beatscript_exit_loop_after_delay_callback, 0, beats_to_ticks(duration));
 
-        if (D_030053c0.memID == 1) {
+        if (D_030053c0.mode == 1) {
             func_0800c3ec(2);
         }
     }
@@ -930,16 +946,60 @@ void func_0800c4ac_stub(void) {
 }
 
 
-#include "asm/code_0800b778/asm_0800c4b0.s"
+// Start Linear Interpolation Task
+s32 func_0800c4b0(u32 type, u32 duration, void *source, s32 initial, s32 target) {
+    struct NumberInterpolator inputs;
+
+    inputs.type = type;
+    inputs.duration = duration;
+    inputs.source = source;
+    inputs.initial = initial;
+    inputs.target = target;
+
+    return start_new_task(get_current_mem_id(), &D_08936c14, &inputs, 0, 0);
+}
 
 
-#include "asm/code_0800b778/asm_0800c508.s"
+// Start Number Alternator Task
+s32 func_0800c508(u32 type, u32 interval, void *source, s32 initial, s32 target) {
+    struct NumberInterpolator inputs;
+
+    inputs.type = type;
+    inputs.duration = interval;
+    inputs.source = source;
+    inputs.initial = initial;
+    inputs.target = target;
+
+    return start_new_task(get_current_mem_id(), &D_08936c24, &inputs, 0, 0);
+}
 
 
-#include "asm/code_0800b778/asm_0800c560.s"
+// Start Number Incrementer Task
+s32 func_0800c560(u32 type, u32 interval, void *source, s32 initial, s32 increment) {
+    struct NumberInterpolator inputs;
+
+    inputs.type = type;
+    inputs.duration = interval;
+    inputs.source = source;
+    inputs.initial = initial;
+    inputs.target = increment;
+
+    return start_new_task(get_current_mem_id(), &D_08936c34, &inputs, 0, 0);
+}
 
 
-#include "asm/code_0800b778/asm_0800c5b8.s"
+// Start Number Sine Interpolator Task
+s32 func_0800c5b8(u32 type, void *source, s32 baseValue, s24_8 initialAngle, s24_8 speed) {
+    struct NumberSineInterpolator inputs;
+
+    inputs.type = type;
+    inputs.value = baseValue;
+    inputs.angle = initialAngle;
+    inputs.speed = speed;
+    inputs.source = source;
+
+    return start_new_task(get_current_mem_id(), &D_08936c44, &inputs, NULL, 0);
+}
 
 
 // Set Current Thread
@@ -966,16 +1026,38 @@ void func_0800c65c_stub(void) {
 }
 
 
-#include "asm/code_0800b778/asm_0800c660.s"
+// Create BitmapFontOBJ with the WarioWare Outline Font
+struct BitmapFontOBJ *func_0800c660(u16 baseTileNum, u8 maxTileRows) {
+    struct BitmapFontOBJ *objFont;
+
+    objFont = create_new_bmp_font_obj(get_current_mem_id(), bitmap_font_warioware_outline, baseTileNum, maxTileRows);
+    func_0800f09c(objFont);
+    return objFont;
+}
 
 
-#include "asm/code_0800b778/asm_0800c694.s"
+// ?
+void func_0800c694(u32 arg) {
+    if (arg > 24) {
+        arg = 24;
+    }
+
+    func_08009564(arg);
+}
 
 
-#include "asm/code_0800b778/asm_0800c6a4.s"
+// ?
+void func_0800c6a4(void) {
+    s32 value = func_08009394();
+
+    func_0800c694((ABS(value) * 18 / 200) + 6);
+}
 
 
-#include "asm/code_0800b778/asm_0800c6c8.s"
+// ?
+void func_0800c6c8(void) {
+    func_0800c6a4();
+}
 
 
 // Stub

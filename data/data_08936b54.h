@@ -189,24 +189,24 @@ struct unk_struct_08007aa0 {
     u16 totalFrames;
 };
 
-// Timed Data Interpolation (Linear)
-struct LinearDataInterpolator {
-    u32 varSize:2;
+// Number Tasks
+struct NumberInterpolator {
+    u32 type:2;
     u32 duration:15;
     u32 runningTime:15;
-    void *variable;
+    void *source;
     s32 initial;
     s32 target;
 };
 
-struct unk_struct_08007ca8_init;
-struct unk_struct_08007ca8;
-
-struct unk_struct_08007d88_init;
-struct unk_struct_08007d88;
-
-struct unk_struct_08007e7c_init;
-struct unk_struct_08007e7c;
+// Number Sine Interpolator Task
+struct NumberSineInterpolator {
+    u32 type:2;
+    u32 angle:30;
+    s24_8 speed;
+    s32 value;
+    void *source;
+};
 
 // LCD Special Effect (Blend) Controls Interpolator
 struct BlendControlsInterpolator {

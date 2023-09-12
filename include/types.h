@@ -72,7 +72,7 @@ struct BeatscriptThread {
 
 // Beatscript Handler
 extern struct BeatscriptScene {
-    u32 memID:4;
+    u32 mode:4;
     u32 bypassLoops:1;
     u32 exitLoopNextUpdate:1;
     u32 unk0_b6:1;
@@ -86,15 +86,15 @@ extern struct BeatscriptScene {
     struct SoundPlayer *musicPlayer; // [D_030053c4] Music Player
     u16 musicBaseBPM;
     u16 scriptBaseBPM;
-    u16 scriptBPM; // [D_030053cc] Tempo after speed multiplication.
+    u16 scriptBPM; // [D_030053cc] Tempo after Speed Multiplication
     u8_8 scriptSpeed; // [Q8.8] Speed Multiplier
     u8_8 spriteAnimSpeed; // [Q8.8] (currentTempo / 140)
-    s32 deltaTime; // [D_030053d4] Script Ticks per Game Update ([Q8.8] (currentTempo / 150))
-    u32 runningTime;
+    s24_8 deltaTime; // [D_030053d4] Script Ticks per Game Update ([Q8.8] (currentTempo / 150))
+    s24_8 runningTime;
     u8  unk1C;
-    s16 musicPitchSrc1;
-    s16 musicPitchSrc2;
-    s16 musicPitch;
+    s8_8 musicPitchSrc1;
+    s8_8 musicPitchSrc2;
+    s8_8 musicPitch;
     u32 globalVariable; // [D_030053c0 + 0x24] Global (Main Scene) Variable
     struct BeatscriptThread threads[2];
     u32 localVariables[2]; // [D_030053c0 + 0x160] Local (Sub-Scene) Variables
