@@ -87,8 +87,8 @@ struct unk_struct_0800765c_init {
     s16 startY;
     s16 destX;
     s16 destY;
-    s16 vel;
-    s16 accel;
+    s8_8 vel;
+    s8_8 accel;
 };
 struct unk_struct_0800765c {
     s16 id;
@@ -96,10 +96,10 @@ struct unk_struct_0800765c {
     u16 startYPos;
     s16 dx;
     s16 dy;
-    u32 distanceTravelled;
-    u32 totalDistance;
-    s32 vel;
-    s32 accel;
+    s24_8 distanceTravelled;
+    s24_8 totalDistance;
+    s24_8 vel;
+    s24_8 accel;
 };
 
 // Travel linearly to a point over a specified number of frames

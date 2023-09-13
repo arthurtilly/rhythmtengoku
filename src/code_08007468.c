@@ -132,7 +132,7 @@ struct unk_struct_0800765c *func_0800765c(struct unk_struct_0800765c_init *arg0)
     temp->dx = arg0->destX - arg0->startX;
     temp->dy = arg0->destY - arg0->startY;
     temp->distanceTravelled = 0;
-    temp->totalDistance = D_03004ae4(temp->dx * temp->dx + temp->dy * temp->dy) << 8;
+    temp->totalDistance = INT_TO_FIXED(D_03004ae4(temp->dx * temp->dx + temp->dy * temp->dy));
     temp->vel = arg0->vel;
     temp->accel = arg0->accel;
 
@@ -143,8 +143,8 @@ struct unk_struct_0800765c *func_0800765c(struct unk_struct_0800765c_init *arg0)
 // D_08936bc4 function 2
 u32 func_080076ec(struct unk_struct_0800765c *arg0) {
     u32 reachedEnd;
-    u16 xPos, yPos;
-    s32 distTravelled, totalDist;
+    s16 xPos, yPos;
+    s24_8 distTravelled, totalDist;
 
     arg0->distanceTravelled += arg0->vel;
     arg0->vel += arg0->accel;

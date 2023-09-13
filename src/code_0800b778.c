@@ -1315,33 +1315,202 @@ void scene_set_bg_mosaic_size(s16 xSize, s16 ySize) {
 }
 
 
-#include "asm/code_0800b778/asm_0800e1cc.s"
+// Sprite Motion - Indefinite Linear
+s32 func_0800e1cc(s16 sprite, s16 startX, s16 startY, s8_8 xVel, s8_8 yVel) {
+    struct unk_struct_080074ec_init inputs;
 
-#include "asm/code_0800b778/asm_0800e208.s"
+    inputs.sprite = sprite;
+    inputs.startX = startX;
+    inputs.startY = startY;
+    inputs.xVel = xVel;
+    inputs.yVel = yVel;
 
-#include "asm/code_0800b778/asm_0800e25c.s"
+    return start_new_task(get_current_mem_id(), &D_08936ba4, &inputs, NULL, 0);
+}
 
-#include "asm/code_0800b778/asm_0800e2a8.s"
 
-#include "asm/code_0800b778/asm_0800e30c.s"
+// Sprite Motion - Indefinite Linear (from current position)
+s32 func_0800e208(s16 sprite, s8_8 xVel, s8_8 yVel) {
+    s16 x, y;
 
-#include "asm/code_0800b778/asm_0800e364.s"
+    get_sprite_xy(sprite, &x, &y);
+    return func_0800e1cc(sprite, x, y, xVel, yVel);
+}
 
-#include "asm/code_0800b778/asm_0800e3e4.s"
 
-#include "asm/code_0800b778/asm_0800e430.s"
+// Sprite Motion - Decelerate to Point
+s32 func_0800e25c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 multiplier) {
+    struct unk_struct_0800757c_init inputs;
 
-#include "asm/code_0800b778/asm_0800e490.s"
+    inputs.id = sprite;
+    inputs.startX = startX;
+    inputs.startY = startY;
+    inputs.destX = destX;
+    inputs.destY = destY;
+    inputs.multiplier = multiplier;
 
-#include "asm/code_0800b778/asm_0800e4f8.s"
+    return start_new_task(get_current_mem_id(), &D_08936bb4, &inputs, NULL, 0);
+}
 
-#include "asm/code_0800b778/asm_0800e57c.s"
 
-#include "asm/code_0800b778/asm_0800e62c.s"
+// Sprite Motion - Decelerate to Point (from current position)
+s32 func_0800e2a8(s16 sprite, s16 destX, s16 destY, s8_8 multiplier) {
+    s16 x, y;
 
-#include "asm/code_0800b778/asm_0800e694.s"
+    get_sprite_xy(sprite, &x, &y);
+    return func_0800e25c(sprite, x, y, destX, destY, multiplier);
+}
 
-#include "asm/code_0800b778/asm_0800e6ec.s"
+
+// Sprite Motion - Accelerate to Point
+s32 func_0800e30c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration) {
+    struct unk_struct_0800765c_init inputs;
+
+    inputs.id = sprite;
+    inputs.startX = startX;
+    inputs.startY = startY;
+    inputs.destX = destX;
+    inputs.destY = destY;
+    inputs.vel = velocity;
+    inputs.accel = acceleration;
+
+    return start_new_task(get_current_mem_id(), &D_08936bc4, &inputs, NULL, 0);
+}
+
+
+// Sprite Motion - Accelerate to Point (from current position)
+s32 func_0800e364(s16 sprite, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration) {
+    s16 x, y;
+
+    get_sprite_xy(sprite, &x, &y);
+    return func_0800e30c(sprite, x, y, destX, destY, velocity, acceleration);
+}
+
+
+// Sprite Motion - LERP to Point
+s32 func_0800e3e4(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration) {
+    struct unk_struct_08007788_init inputs;
+
+    inputs.id = sprite;
+    inputs.startX = startX;
+    inputs.startY = startY;
+    inputs.destX = destX;
+    inputs.destY = destY;
+    inputs.totalFrames = duration;
+
+    return start_new_task(get_current_mem_id(), &D_08936bd4, &inputs, NULL, 0);
+}
+
+
+// Sprite Motion - LERP to Point (from current position)
+s32 func_0800e430(s16 sprite, s16 destX, s16 destY, u16 duration) {
+    s16 x, y;
+
+    get_sprite_xy(sprite, &x, &y);
+    return func_0800e3e4(sprite, x, y, destX, destY, duration);
+}
+
+
+// Sprite Motion - Sinusoidal
+s32 func_0800e490(s16 sprite, u8 angle, s16 baseX, s16 baseY, s16 baseOffset, s16 amplitude, s16 waveStart, s16 waveEnd, u16 duration) {
+    struct unk_struct_080078ec_init inputs;
+
+    inputs.sprite = sprite;
+    inputs.angle = angle;
+    inputs.baseX = baseX;
+    inputs.baseY = baseY;
+    inputs.baseOffset = baseOffset;
+    inputs.amplitude = amplitude;
+    inputs.waveStart = waveStart;
+    inputs.waveEnd = waveEnd;
+    inputs.totalFrames = duration;
+
+    return start_new_task(get_current_mem_id(), &D_08936be4, &inputs, NULL, 0);
+}
+
+
+// Sprite Motion - Sinusoidal (from current position, no base offset)
+s32 func_0800e4f8(s16 sprite, u8 angle, s16 amplitude, s16 waveStart, s16 waveEnd, u16 duration) {
+    s16 x, y;
+
+    get_sprite_xy(sprite, &x, &y);
+    return func_0800e490(sprite, angle, x, y, 0, amplitude, waveStart, waveEnd, duration);
+}
+
+
+// Sprite Motion - Sinusoidal Velocity
+s32 func_0800e57c(s16 sprite, u32 mode, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration) {
+    struct unk_struct_080079bc_init inputs;
+
+    inputs.sprite = sprite;
+    inputs.totalFrames = duration;
+
+    switch (mode) {
+        case 0:
+            inputs.startX = startX;
+            inputs.startY = startY;
+            inputs.destX = destX;
+            inputs.destY = destY;
+            inputs.unkA = 0;
+            inputs.unkC = 0x40;
+            break;
+
+        case 1:
+            inputs.startX = destX;
+            inputs.startY = destY;
+            inputs.destX = startX;
+            inputs.destY = startY;
+            inputs.unkA = 0x40;
+            inputs.unkC = 0x80;
+            break;
+
+        case 2:
+            inputs.startX = (startX + destX) >> 1;
+            inputs.startY = (startY + destY) >> 1;
+            inputs.destX = destX;
+            inputs.destY = destY;
+            inputs.unkA = -0x40;
+            inputs.unkC = 0x40;
+            break;
+    }
+
+    return start_new_task(get_current_mem_id(), &D_08936bf4, &inputs, NULL, 0);
+}
+
+
+// Sprite Motion - Sinusoidal Velocity (from current position)
+s32 func_0800e62c(s16 sprite, u32 mode, s16 destX, s16 destY, u16 duration) {
+    s16 x, y;
+
+    get_sprite_xy(sprite, &x, &y);
+    return func_0800e57c(sprite, mode, x, y, destX, destY, duration);
+}
+
+
+// Sprite Motion - LERP with Sine Oscillation
+s32 func_0800e694(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s16 amplitude, u16 duration) {
+    struct unk_struct_08007aa0_init inputs;
+
+    inputs.id = sprite;
+    inputs.startX = startX;
+    inputs.startY = startY;
+    inputs.destX = destX;
+    inputs.destY = destY;
+    inputs.amplitude = amplitude;
+    inputs.totalFrames = duration;
+
+    return start_new_task(get_current_mem_id(), &D_08936c04, &inputs, NULL, 0);
+}
+
+
+// Sprite Motion - LERP with Sine Oscillation (from current position)
+s32 func_0800e6ec(s16 sprite, s16 destX, s16 destY, s16 amplitude, u16 duration) {
+    s16 x, y;
+
+    get_sprite_xy(sprite, &x, &y);
+    return func_0800e694(sprite, x, y, destX, destY, amplitude, duration);
+}
+
 
 #include "asm/code_0800b778/asm_0800e75c.s"
 

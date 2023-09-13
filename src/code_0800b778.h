@@ -169,20 +169,20 @@ extern void scene_enable_obj_windows(void); // Enable OBJ Windows
 extern void scene_disable_obj_windows(void); // Disable OBJ Windows
 extern void scene_set_obj_mosaic_size(s16 xSize, s16 ySize); // Set OBJ Mosaic Size
 extern void scene_set_bg_mosaic_size(s16 xSize, s16 ySize); // Set BG Mosaic Size
-// extern ? func_0800e1cc(?);
-// extern ? func_0800e208(?);
-// extern ? func_0800e25c(?);
-// extern ? func_0800e2a8(?);
-// extern ? func_0800e30c(?);
-// extern ? func_0800e364(?);
-extern s32 func_0800e3e4(s16 sprite, s32 initX, s32 initY, s32 targetX, s32 targetY, u16 duration); // Sprite LERP Task
-// extern ? func_0800e430(?);
-// extern ? func_0800e490(?);
-// extern ? func_0800e4f8(?);
-// extern ? func_0800e57c(?);
-extern void func_0800e62c(s16 sprite, u32 arg1, s16 x, s16 y, u16 duration);
-// extern ? func_0800e694(?);
-// extern ? func_0800e6ec(?);
+extern s32 func_0800e1cc(s16 sprite, s16 startX, s16 startY, s8_8 xVel, s8_8 yVel);
+extern s32 func_0800e208(s16 sprite, s8_8 xVel, s8_8 yVel);
+extern s32 func_0800e25c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 multiplier);
+extern s32 func_0800e2a8(s16 sprite, s16 destX, s16 destY, s8_8 multiplier);
+extern s32 func_0800e30c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration);
+extern s32 func_0800e364(s16 sprite, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration);
+extern s32 func_0800e3e4(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration);
+extern s32 func_0800e430(s16 sprite, s16 destX, s16 destY, u16 duration);
+extern s32 func_0800e490(s16 sprite, u8 angle, s16 baseX, s16 baseY, s16 baseOffset, s16 amplitude, s16 waveStart, s16 waveEnd, u16 duration);
+extern s32 func_0800e4f8(s16 sprite, u8 angle, s16 amplitude, s16 waveStart, s16 waveEnd, u16 duration);
+extern s32 func_0800e57c(s16 sprite, u32 mode, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration);
+extern s32 func_0800e62c(s16 sprite, u32 mode, s16 destX, s16 destY, u16 duration);
+extern s32 func_0800e694(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s16 amplitude, u16 duration);
+extern s32 func_0800e6ec(s16 sprite, s16 destX, s16 destY, s16 amplitude, u16 duration);
 // extern ? func_0800e75c(?);
 // extern ? func_0800e768(?);
 // extern ? func_0800e7e8(?);
