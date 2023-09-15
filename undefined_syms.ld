@@ -777,7 +777,17 @@ D_08cbefe4 = 0x08cbefe4;
 D_08cbf0e8 = 0x08cbf0e8;
 D_08cc0c30 = 0x08cc0c30;
 D_08cc0cf0 = 0x08cc0cf0;
+
+/* Cafe BG Maps */
 D_08cc1158 = 0x08cc1158;
+D_08cc15c4 = 0x08cc15c4;
+D_08cc1a30 = 0x08cc1a30;
+D_08cc1e9c = 0x08cc1e9c;
+D_08cc2308 = 0x08cc2308;
+D_08cc2790 = 0x08cc2790;
+D_08cc2c18 = 0x08cc2c18;
+D_08cc30a0 = 0x08cc30a0;
+
 D_08cc3b7c = 0x08cc3b7c;
 D_08cc4670 = 0x08cc4670;
 D_08cc4a00 = 0x08cc4a00;
