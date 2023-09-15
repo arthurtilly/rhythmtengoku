@@ -1602,13 +1602,13 @@ jump_0800d804: \n\
  \n\
 branch_0800d80c: \n\
 /* 0800d80c */ MOV R1, R8 @ Set R1 to R8 \n\
-/* 0800d80e */ BL func_0800ebf8 \n\
+/* 0800d80e */ BL scene_interpolate_tempo \n\
 /* 0800d812 */ BL branch_0800df9e \n\
 \n\
 jump_0800d816: \n\
 /* 0800d816 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
 /* 0800d818 */ MOV R1, R8 @ Set R1 to R8 \n\
-/* 0800d81a */ BL func_0800ecec \n\
+/* 0800d81a */ BL scene_interpolate_music_pitch \n\
 /* 0800d81e */ B branch_0800df9e \n\
 \n\
 jump_0800d820: \n\

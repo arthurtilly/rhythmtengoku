@@ -79,10 +79,12 @@ extern struct BeatscriptScene {
     u32 unk0_b7:1;
     u32 paused:1;
     u32 currentThread:3;
-    u32 unk1_b4:3;
+    u32 unk1_b4:1;
+    u32 unk1_b5:1;
+    u32 unk1_b6:1;
     u32 interpolatingTempo:1;
     u32 interpolatingMusicPitch:1;
-    u32 interpolatingMusicVolume:1;
+    u32 musicInterpolationEnabled:1;
     struct SoundPlayer *musicPlayer; // [D_030053c4] Music Player
     u16 musicBaseBPM;
     u16 scriptBaseBPM;
@@ -98,16 +100,20 @@ extern struct BeatscriptScene {
     u32 globalVariable; // [D_030053c0 + 0x24] Global (Main Scene) Variable
     struct BeatscriptThread threads[2];
     u32 localVariables[2]; // [D_030053c0 + 0x160] Local (Sub-Scene) Variables
-    u32 unk168;
-    u32 unk16C;
-    u32 unk170;
-    u32 unk174;
-    u32 unk178;
-    u32 unk17C;
-    u32 unk180;
-    u32 unk184;
-    u32 unk188;
-    u32 unk18C;
+    s16 unk168;
+    u16 unk16A;
+    u16 unk16C;
+    u16 unk16E;
+    u16 unk170;
+    s16 interpTempoInitial;
+    s16 interpTempoTarget;
+    u24_8 interpTempoDuration;
+    u24_8 interpTempoRunningTime;
+    u16 interpTempoFramesUntilUpdate;
+    s16 interpPitchInitial;
+    s16 interpPitchTarget;
+    u24_8 interpPitchDuration;
+    u24_8 interpPitchRunningTime;
     u16 musicVolume; // [D_03005550] Beatscript: Music Volume
     u16 musicTrkVolume; // [D_03005552] Beatscript: Music Channel Selection Volume
     u16 musicTrkTargets; // [D_03005554] Beatscript: Music Channel Selection

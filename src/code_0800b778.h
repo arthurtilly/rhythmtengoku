@@ -195,24 +195,24 @@ extern s32 func_0800e6ec(s16 sprite, s16 destX, s16 destY, s16 amplitude, u16 du
 // extern ? func_0800e8f4(?);
 extern void func_0800e940_stub(void);
 extern void func_0800e944_stub(void);
-// extern ? func_0800e948(?);
-// extern ? func_0800e970(?);
-// extern ? func_0800e9d8(?);
-// extern ? func_0800e9f8(?);
-// extern ? func_0800ea1c(?);
-// extern ? func_0800ea2c(?);
-// extern ? func_0800ea3c(?);
-// extern ? func_0800ea70(?);
-// extern ? func_0800eaa0(?);
-extern void func_0800eb0c(void); // Clear interpolatingTempo
-// extern ? func_0800eb1c(?);
-extern void func_0800ebac(u32 initial, u32 target, u32 duration);
-extern void func_0800ebf8(u32 target, u32 duration); // BEATSCRIPT - Change Tempo
-extern void func_0800ec20(void); // Clear interpolatingMusicPitch
-// extern ? func_0800ec34(?);
-extern void func_0800ecac(s32 initial, s32 target, u32 duration);
-extern void func_0800ecec(s32 target, u32 duration); // BEATSCRIPT - Change Music Pitch
-extern void func_0800ed08(u32 set); // Set interpolatingMusicVolume
+extern void func_0800e948(void);
+extern void func_0800e970(void);
+extern void func_0800e9d8(void);
+extern void func_0800e9f8(void);
+extern void func_0800ea1c(u16 arg);
+extern void func_0800ea2c(s16 arg);
+extern void func_0800ea3c(u16 arg);
+extern void func_0800ea70(u16 arg);
+extern s32 func_0800eaa0(void);
+extern void scene_tempo_interp_stop(void);
+extern void scene_tempo_interp_update(void);
+extern void scene_tempo_interp_start(u32 initial, u32 target, u32 duration);
+extern void scene_interpolate_tempo(u32 target, u32 duration); // BEATSCRIPT - Change Tempo
+extern void scene_music_pitch_interp_stop(void);
+extern void scene_music_pitch_interp_update(void);
+extern void scene_music_pitch_interp_start(s32 initial, s32 target, u32 duration);
+extern void scene_interpolate_music_pitch(s32 target, u32 duration); // BEATSCRIPT - Change Music Pitch
+extern void scene_set_music_interp_enabled(u32 enable);
 extern void func_0800ed24(u32 duration); // BEATSCRIPT - Fade-In Music
 extern void func_0800ed3c(u32 duration); // BEATSCRIPT - Fade-Out Music
 extern void func_0800ed54_stub(void);

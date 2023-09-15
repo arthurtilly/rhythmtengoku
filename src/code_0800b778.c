@@ -144,9 +144,9 @@ void start_beatscript_scene(u32 mode) {
     }
 
     func_0800e948();
-    func_0800eb0c();
-    func_0800ec20();
-    D_030053c0.interpolatingMusicVolume = TRUE;
+    scene_tempo_interp_stop();
+    scene_music_pitch_interp_stop();
+    D_030053c0.musicInterpolationEnabled = TRUE;
     D_030053c0.callbackFunction = NULL;
     D_030053c0.callbackArgument = 0;
 }
@@ -284,10 +284,10 @@ void update_active_beatscript_scene(void) {
         }
     }
 
-    if (D_030053c0.interpolatingMusicVolume) {
+    if (D_030053c0.musicInterpolationEnabled) {
         func_0800e970();
-        func_0800eb1c();
-        func_0800ec34();
+        scene_tempo_interp_update();
+        scene_music_pitch_interp_update();
         set_soundplayer_track_volume(D_030053c0.musicPlayer, D_030053c0.musicTrkTargets, D_030053c0.musicTrkVolume);
         set_soundplayer_volume(D_030053c0.musicPlayer, D_030053c0.musicVolume);
     }
@@ -1543,66 +1543,209 @@ void func_0800e944_stub(void) {
 }
 
 
-#include "asm/code_0800b778/asm_0800e948.s"
-
-#include "asm/code_0800b778/asm_0800e970.s"
-
-#include "asm/code_0800b778/asm_0800e9d8.s"
-
-#include "asm/code_0800b778/asm_0800e9f8.s"
-
-#include "asm/code_0800b778/asm_0800ea1c.s"
-
-#include "asm/code_0800b778/asm_0800ea2c.s"
-
-#include "asm/code_0800b778/asm_0800ea3c.s"
-
-#include "asm/code_0800b778/asm_0800ea70.s"
-
-#include "asm/code_0800b778/asm_0800eaa0.s"
+// ?
+void func_0800e948(void) {
+    D_030053c0.unk1_b4 = FALSE;
+    D_030053c0.unk168 = 0;
+    D_030053c0.unk16A = 24;
+}
 
 
-// Clear interpolatingTempo
-void func_0800eb0c(void) {
+// Update ?
+void func_0800e970(void) {
+    s24_8 value;
+    u8 angle;
+
+    if (!D_030053c0.unk1_b4) {
+        return;
+    }
+
+    D_030053c0.unk16C += 0x10000 / (u32)beats_to_ticks(D_030053c0.unk16A);
+    angle = FIXED_TO_INT(D_030053c0.unk16C);
+    value = FIXED_POINT_MUL(D_030053c0.unk168, sins2(angle));
+    scene_set_music_pitch_env(FIXED_POINT_MUL(func_0800eaa0(), value));
+}
+
+
+// ?
+void func_0800e9d8(void) {
+    D_030053c0.unk16C = 0;
+    D_030053c0.unk1_b4 = TRUE;
+    D_030053c0.unk1_b5 = FALSE;
+}
+
+
+// ?
+void func_0800e9f8(void) {
+    scene_set_music_pitch_env(0);
+    D_030053c0.unk1_b4 = FALSE;
+    D_030053c0.unk1_b5 = FALSE;
+}
+
+
+// Set ?
+void func_0800ea1c(u16 arg) {
+    D_030053c0.unk16A = arg;
+}
+
+
+// Set ?
+void func_0800ea2c(s16 arg) {
+    D_030053c0.unk168 = arg;
+}
+
+
+// Set ?
+void func_0800ea3c(u16 arg) {
+    D_030053c0.unk1_b6 = FALSE;
+    D_030053c0.unk16E = arg;
+    D_030053c0.unk170 = 0;
+    D_030053c0.unk1_b5 = TRUE;
+}
+
+
+// Set ?
+void func_0800ea70(u16 arg) {
+    D_030053c0.unk1_b6 = TRUE;
+    D_030053c0.unk16E = arg;
+    D_030053c0.unk170 = 0xFFFF;
+    D_030053c0.unk1_b5 = TRUE;
+}
+
+
+// Get ?
+s32 func_0800eaa0(void) {
+    s32 out;
+    s32 inc;
+
+    if (!D_030053c0.unk1_b5) {
+        return 0x100;
+    }
+
+    out = D_030053c0.unk170;
+    inc = 0x10000 / beats_to_ticks(D_030053c0.unk16E);
+
+    if (D_030053c0.unk1_b6) {
+        out -= inc;
+    } else {
+        out += inc;
+    }
+
+    if (out < 0) {
+        out = 0;
+    }
+
+    if (out > 0xFFFF) {
+        out = 0xFFFF;
+    }
+
+    D_030053c0.unk170 = out;
+
+    return FIXED_TO_INT(out);
+}
+
+
+// Stop Tempo Interpolation
+void scene_tempo_interp_stop(void) {
     D_030053c0.interpolatingTempo = FALSE;
 }
 
 
-#include "asm/code_0800b778/asm_0800eb1c.s"
+// Update Tempo Interpolation
+void scene_tempo_interp_update(void) {
+    s32 runningTime, duration;
 
-#include "asm/code_0800b778/asm_0800ebac.s"
+    if (!D_030053c0.interpolatingTempo) {
+        return;
+    }
 
+    D_030053c0.interpTempoRunningTime += func_0800c398();
 
-// Change Tempo
-void func_0800ebf8(u32 target, u32 duration) {
-    if (duration == 0) {
-        set_beatscript_tempo(target);
-    } else {
-        func_0800ebac(get_beatscript_tempo(), target, duration);
+    if (D_030053c0.interpTempoRunningTime >= D_030053c0.interpTempoDuration) {
+        set_beatscript_tempo(D_030053c0.interpTempoTarget);
+        return;
+    }
+
+    if (--D_030053c0.interpTempoFramesUntilUpdate == 0) {
+        D_030053c0.interpTempoFramesUntilUpdate = 6;
+        runningTime = FIXED_TO_INT(D_030053c0.interpTempoRunningTime);
+        duration = FIXED_TO_INT(D_030053c0.interpTempoDuration);
+        set_beatscript_tempo(D_030053c0.interpTempoInitial + ((D_030053c0.interpTempoTarget - D_030053c0.interpTempoInitial) * runningTime / duration));
+        D_030053c0.interpolatingTempo = TRUE;
     }
 }
 
 
-// Clear interpolatingMusicPitch
-void func_0800ec20(void) {
+// Start Tempo Interpolation
+void scene_tempo_interp_start(u32 initial, u32 target, u32 duration) {
+    D_030053c0.interpTempoInitial = initial;
+    D_030053c0.interpTempoTarget = target;
+    D_030053c0.interpTempoDuration = INT_TO_FIXED(duration);
+    D_030053c0.interpTempoRunningTime = 0;
+    D_030053c0.interpTempoFramesUntilUpdate = 6;
+    set_beatscript_tempo(initial);
+    D_030053c0.interpolatingTempo = TRUE;
+}
+
+
+// Change Tempo
+void scene_interpolate_tempo(u32 target, u32 duration) {
+    if (duration == 0) {
+        set_beatscript_tempo(target);
+    } else {
+        scene_tempo_interp_start(get_beatscript_tempo(), target, duration);
+    }
+}
+
+
+// Stop Music Pitch Interpolation
+void scene_music_pitch_interp_stop(void) {
     D_030053c0.interpolatingMusicPitch = FALSE;
 }
 
 
-#include "asm/code_0800b778/asm_0800ec34.s"
+// Update Music Pitch Interpolation
+void scene_music_pitch_interp_update(void) {
+    s32 runningTime, duration;
 
-#include "asm/code_0800b778/asm_0800ecac.s"
+    if (!D_030053c0.interpolatingMusicPitch) {
+        return;
+    }
 
+    D_030053c0.interpPitchRunningTime += func_0800c398();
 
-// Change Music Pitch
-void func_0800ecec(s32 target, u32 duration) {
-    func_0800ecac(D_030053c0.musicPitchSrc1, target, duration);
+    if (D_030053c0.interpPitchRunningTime >= D_030053c0.interpPitchDuration) {
+        scene_set_music_pitch(D_030053c0.interpPitchTarget);
+        return;
+    }
+
+    runningTime = FIXED_TO_INT(D_030053c0.interpPitchRunningTime);
+    duration = FIXED_TO_INT(D_030053c0.interpPitchDuration);
+    scene_set_music_pitch(D_030053c0.interpPitchInitial + ((D_030053c0.interpPitchTarget - D_030053c0.interpPitchInitial) * runningTime / duration));
+    D_030053c0.interpolatingMusicPitch = TRUE;
 }
 
 
-// Set interpolatingMusicVolume
-void func_0800ed08(u32 set) {
-    D_030053c0.interpolatingMusicVolume = set;
+// Start Music Pitch Interpolation
+void scene_music_pitch_interp_start(s32 initial, s32 target, u32 duration) {
+    D_030053c0.interpPitchInitial = initial;
+    D_030053c0.interpPitchTarget = target;
+    D_030053c0.interpPitchDuration = INT_TO_FIXED(duration);
+    D_030053c0.interpPitchRunningTime = 0;
+    scene_set_music_pitch(initial);
+    D_030053c0.interpolatingMusicPitch = TRUE;
+}
+
+
+// Change Music Pitch
+void scene_interpolate_music_pitch(s32 target, u32 duration) {
+    scene_music_pitch_interp_start(D_030053c0.musicPitchSrc1, target, duration);
+}
+
+
+// Enable/Disable Music Envelope Interpolation
+void scene_set_music_interp_enabled(u32 enable) {
+    D_030053c0.musicInterpolationEnabled = enable;
 }
 
 
