@@ -96,7 +96,7 @@ thumb_func_start func_080429e8 \n\
 /* 08042ab0 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 08042ab2 */ ADDS R3, R6, 0x0 @ Set R3 to R6 + 0x0 \n\
 /* 08042ab4 */ BL func_0800e6ec \n\
-/* 08042ab8 */ LDR R1, =func_0804299c \n\
+/* 08042ab8 */ LDR R1, =sick_beats_play_particle_sound \n\
 /* 08042aba */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08042abc */ BL run_func_after_task \n\
 /* 08042ac0 */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\
