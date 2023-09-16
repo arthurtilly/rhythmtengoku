@@ -5,6 +5,16 @@
 
 #include "games/spaceball/graphics/spaceball_graphics.h"
 
+// Engine Macros/Enums:
+#define SPACEBALL_STAR_AMOUNT 24
+
+enum SpaceballCueStatesEnum {
+    SPACEBALL_CUE_STATE_LAUNCH,
+    SPACEBALL_CUE_STATE_HIT,
+    SPACEBALL_CUE_STATE_BARELY
+};
+
+
 struct SpaceballEntity {
     struct AffineSprite *sprite;
     s32 x;
@@ -29,12 +39,12 @@ struct SpaceballEngineData {
     struct SpaceballEntity poofR;   // Sprite used when a spaceball is missed (right)
     struct SpaceballEntity poofL;   // Sprite used when a spaceball is missed (left)
     u16 currentStar;    // Counter: Number of Existing BG Stars
-    s16 starSprite[24];
+    s16 starSprite[SPACEBALL_STAR_AMOUNT];
     struct SpaceballStar {
         s16 x;
         s16 y;
         s16 z;
-    } stars[24];
+    } stars[SPACEBALL_STAR_AMOUNT];
     u8 totalMissed;
     u8 spaceballType;
 };
@@ -52,14 +62,6 @@ struct SpaceballCue {
     u32 xSpeed; // Used for 'Barely' arc only
     u32 ySpeed; // Used for 'Barely' arc only
     u8 missed;
-};
-
-
-// Engine Macros/Enums:
-enum SpaceballCueStatesEnum {
-    SPACEBALL_CUE_STATE_LAUNCH,
-    SPACEBALL_CUE_STATE_HIT,
-    SPACEBALL_CUE_STATE_BARELY
 };
 
 

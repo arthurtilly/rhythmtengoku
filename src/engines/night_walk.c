@@ -278,7 +278,7 @@ s32 night_walk_scroll_stars(void) {
     hOffset = INT_TO_FIXED(-0.5);
     vOffset = gNightWalk->starsVOffset;
 
-    for (i = 0; i < ARRAY_COUNT(gNightWalk->stars); i++) {
+    for (i = 0; i < NIGHT_WALK_STAR_AMOUNT; i++) {
         star = &gNightWalk->stars[i];
         star->x += hOffset;
         if (star->x < INT_TO_FIXED(-8.0)) {
@@ -318,7 +318,7 @@ void night_walk_expand_star(void) {
     func_0804daa8(D_03005380, star->sprite, night_walk_finish_star_expansion, (s32)night_walk_star_anim[gNightWalk->currentStarSize + 1]);
     star->size = gNightWalk->currentStarSize + 1;
     gNightWalk->nextStar++;
-    if (gNightWalk->nextStar >= ARRAY_COUNT(gNightWalk->stars)) {
+    if (gNightWalk->nextStar >= NIGHT_WALK_STAR_AMOUNT) {
         gNightWalk->nextStar = 0;
         gNightWalk->currentStarSize++;
     }
@@ -349,7 +349,7 @@ void night_walk_shrink_star(void) {
         if (gNightWalk->currentStarSize == 0) {
             return;
         }
-        gNightWalk->nextStar = 32;
+        gNightWalk->nextStar = NIGHT_WALK_STAR_AMOUNT;
         gNightWalk->currentStarSize--;
     }
 
@@ -375,7 +375,7 @@ void night_walk_clear_all_stars(void) {
     struct NightWalkStar *star;
     u32 i;
 
-    for (i = 0; i < ARRAY_COUNT(gNightWalk->stars); i++) {
+    for (i = 0; i < NIGHT_WALK_STAR_AMOUNT; i++) {
         star = &gNightWalk->stars[i];
         func_0804d8f8(D_03005380, star->sprite, anim_night_walk_star_disappear, 0, 1, 0, 3);
     }
@@ -1114,7 +1114,7 @@ void night_walk_cue_barely(struct Cue *cue, struct NightWalkCue *info, u32 press
         if (gNightWalk->nextStar != 0) {
             night_walk_shrink_stars(gNightWalk->nextStar);
         } else if (gNightWalk->currentStarSize > 3) {
-            night_walk_shrink_stars(32);
+            night_walk_shrink_stars(NIGHT_WALK_STAR_AMOUNT);
         }
     }
     night_walk_cue_check_for_fish(info);

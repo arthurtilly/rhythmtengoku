@@ -5,95 +5,10 @@
 
 #include "games/sick_beats/graphics/sick_beats_graphics.h"
 
-// Engine Types:
-
-struct SickBeatsPath {
-    /* 00 */ u8 command;
-    /* 01 */ u8 arg;
-    /* 02 */ u16 rest;
-};
-
-
-struct SickBeatsEngineData {
-    u8 version;
-    struct SickBeatsYellowMicrobe {
-        s16 sprite;
-        u8 state;
-        u8 isHurt;
-        u16 eventTimer;
-    } yellowMicrobe;
-    struct SickBeatsForks {
-        s16 launcher;
-        struct AffineSprite *spriteUp, *spriteDown, *spriteLeft, *spriteRight;
-        u16 counterUp, counterDown, counterLeft, counterRight;
-    } forks;
-    struct SickBeatsVirus {
-        u8 exists[0x100]; // Whether a virus exists
-        s8 state;
-        s8 current;
-        u16 spawnedCounter;
-        u8 hitsRequired1;
-        u8 virusCuePalette;
-        u8 hitsRequired;
-        u8 virusPalette;
-        struct SickBeatsVirusData {
-            struct SickBeatsPath *path;
-            u8 hitsRequired;
-            u8 palette;
-            s16 virusID;
-            s32 rest;
-        } virusData[16];
-    } virus;
-    s8 doctorCurrentState;
-    s8 doctorNextState;
-    u8 unk1F2;
-    u16 doctorBeatCounter;
-    s16 doctorSprite;
-    s16 radioSprite;
-    struct Beatscript *gameOverBeatscript;
-    u16 gameOverCounter;
-    u8 microbeWasHurt; // Whether the microbe was hurt (at least once)
-    struct SickBeatsScoreCounter {
-        u16 counterSprite;
-        s16 digitSprite[4];
-        u16 value;
-    } scoreCounters[2];
-    u8 unk21C;
-    s16 particleSprites[20];
-    u16 particleCounters[20];
-    u8 particleCurrent;
-    u8 particlePitch;
-    u8 particleCels; // Amount of cels in a particle anim
-};
-
-struct SickBeatsCue {
-    u32 unk0_b0:4;
-    u32 isVirusHitOnce:1; // Whether the virus has been hit, at least once
-    u32 unk0_b5:1;
-    u32 virusState:5;
-    u32 unk0_b12:19; 
-    u8 currentVirus;
-    struct AffineSprite *virusSprite;
-    u32 padC[(0x2c-0xc)/4];
-    u8 unk2C;
-    u8 unk2D;
-    u8 hitAmount;
-    u8 virusPalette;
-};
-
-struct VirusAction {
-    struct Animation *anim;
-    s16 x;
-    s16 y;
-    s8 playbackArg1;
-    s8 playbackArg2;
-    u16 playbackArg3;
-    u32 unkC;
-    s16 rotation;
-};
-
-
 // Engine Macros/Enums:
+#define SICK_BEATS_PARTICLE_AMOUNT 20
+#define SICK_BEATS_VIRUS_AMOUNT 16
+
 enum SickBeatsVersionsEnum {
     ENGINE_VER_SICK_BEATS,
     ENGINE_VER_SICK_BEATS_ENDLESS
@@ -136,8 +51,95 @@ enum SickBeatsVirusStatesEnum {
     SICK_BEATS_VIRUS_STATE_RIGHT_DASH_INVULN,
     SICK_BEATS_VIRUS_STATE_ATTACK_MICROBE,
     SICK_BEATS_VIRUS_STATE_INVALID = -1
-
 };
+
+
+// Engine Types:
+
+struct SickBeatsPath {
+    /* 00 */ u8 command;
+    /* 01 */ u8 arg;
+    /* 02 */ u16 rest;
+};
+
+struct SickBeatsEngineData {
+    u8 version;
+    struct SickBeatsYellowMicrobe {
+        s16 sprite;
+        u8 state;
+        u8 isHurt;
+        u16 eventTimer;
+    } yellowMicrobe;
+    struct SickBeatsForks {
+        s16 launcher;
+        struct AffineSprite *spriteUp, *spriteDown, *spriteLeft, *spriteRight;
+        u16 counterUp, counterDown, counterLeft, counterRight;
+    } forks;
+    struct SickBeatsVirus {
+        u8 exists[0x100]; // Whether a virus exists
+        s8 state;
+        s8 current;
+        u16 spawnedCounter;
+        u8 hitsRequired1;
+        u8 virusCuePalette;
+        u8 hitsRequired;
+        u8 virusPalette;
+        struct SickBeatsVirusData {
+            struct SickBeatsPath *path;
+            u8 hitsRequired;
+            u8 palette;
+            s16 virusID;
+            s32 rest;
+        } virusData[SICK_BEATS_VIRUS_AMOUNT];
+    } virus;
+    s8 doctorCurrentState;
+    s8 doctorNextState;
+    u8 unk1F2;
+    u16 doctorBeatCounter;
+    s16 doctorSprite;
+    s16 radioSprite;
+    struct Beatscript *gameOverBeatscript;
+    u16 gameOverCounter;
+    u8 microbeWasHurt; // Whether the microbe was hurt (at least once)
+    struct SickBeatsScoreCounter {
+        u16 counterSprite;
+        s16 digitSprite[4];
+        u16 value;
+    } scoreCounters[2];
+    u8 unk21C;
+    s16 particleSprites[SICK_BEATS_PARTICLE_AMOUNT];
+    u16 particleCounters[SICK_BEATS_PARTICLE_AMOUNT];
+    u8 particleCurrent;
+    u8 particlePitch;
+    u8 particleCels; // Amount of cels in a particle anim
+};
+
+struct SickBeatsCue {
+    u32 unk0_b0:4;
+    u32 isVirusHitOnce:1; // Whether the virus has been hit, at least once
+    u32 unk0_b5:1;
+    u32 virusState:5;
+    u32 unk0_b12:19; 
+    u8 currentVirus;
+    struct AffineSprite *virusSprite;
+    u32 padC[(0x2c-0xc)/4];
+    u8 unk2C;
+    u8 unk2D;
+    u8 hitAmount;
+    u8 virusPalette;
+};
+
+struct VirusAction {
+    struct Animation *anim;
+    s16 x;
+    s16 y;
+    s8 playbackArg1;
+    s8 playbackArg2;
+    u16 playbackArg3;
+    u32 unkC;
+    s16 rotation;
+};
+
 
 // Engine Definition Data:
 extern s16 sick_beats_particle_sfx_pitch[];

@@ -337,7 +337,7 @@ void polyrhythm_init_rods(void) {
     struct PolyrhythmRod *rod = gPolyrhythm->rods;
     u32 i;
 
-    for (i = 0; i < ARRAY_COUNT(gPolyrhythm->rods); i++) {
+    for (i = 0; i < POLYRHYTHM_ROD_AMOUNT; i++) {
         rod->active = FALSE;
         rod->sprite = func_0804d160(D_03005380, anim_polyrhythm_rod, 0, 32, 96, 0, 1, 0, 0x8000);
         rod++;
@@ -439,7 +439,7 @@ void polyrhythm_update_rods(void) {
     s32 x, y;
     u32 z;
 
-    for (rod = gPolyrhythm->rods, i = 0; i < ARRAY_COUNT(gPolyrhythm->rods); rod++, i++) {
+    for (rod = gPolyrhythm->rods, i = 0; i < POLYRHYTHM_ROD_AMOUNT; rod++, i++) {
         if (rod->active) {
             switch (rod->unk0_b4) {
                 case 0:
@@ -476,14 +476,14 @@ void polyrhythm_spawn_rod(u32 lane) {
     struct PolyrhythmRod *rod = gPolyrhythm->rods;
     u32 i;
 
-    for (i = 0; i < ARRAY_COUNT(gPolyrhythm->rods); i++) {
+    for (i = 0; i < POLYRHYTHM_ROD_AMOUNT; i++) {
         if (!rod->active) {
             break;
         }
         rod++;
     }
 
-    if (i >= ARRAY_COUNT(gPolyrhythm->rods)) {
+    if (i >= POLYRHYTHM_ROD_AMOUNT) {
         return;
     }
 

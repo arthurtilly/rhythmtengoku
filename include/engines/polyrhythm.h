@@ -5,8 +5,22 @@
 
 #include "games/polyrhythm/graphics/polyrhythm_graphics.h"
 
+// Engine Macros/Enums:
 #define POLYRHYTHM_LINE_AMOUNT 2
 #define POLYRHYTHM_BLOCK_AMOUNT 16
+#define POLYRHYTHM_ROD_AMOUNT 8
+
+enum PolyrhythmVersionsEnum {
+    POLYRHYTHM_VER_0,
+    POLYRHYTHM_VER_REMIX,
+    POLYRHYTHM_VER_2
+};
+
+enum PolyrhythmLanesEnum {
+    POLYRHYTHM_LANE_UPSIDE,
+    POLYRHYTHM_LANE_DOWNSIDE
+};
+
 
 // Engine Types:
 struct PolyrhythmEngineData {
@@ -17,7 +31,7 @@ struct PolyrhythmEngineData {
         u32 unk0_b6:26;
         s16 sprite;
     } lanes[POLYRHYTHM_LINE_AMOUNT][POLYRHYTHM_BLOCK_AMOUNT];
-    u8 unk104[2];
+    u8 unk104[POLYRHYTHM_LINE_AMOUNT];
     struct PolyrhythmRod {
         u32 active:1;
         u32 unk0_b1:3;
@@ -40,7 +54,7 @@ struct PolyrhythmEngineData {
         s32 runningTime;
         s32 maxDuration;
         u16 timeUntilExplosion;
-    } rods[8];
+    } rods[POLYRHYTHM_ROD_AMOUNT];
     s16 aButtonArrowSprite;
     s16 dPadArrowSprite;
 };
@@ -57,19 +71,6 @@ struct PolyrhythmCue {
     u32 unused1C;
     u32 unused20;
     u32 unused24;
-};
-
-
-// Engine Macros/Enums:
-enum PolyrhythmVersionsEnum {
-    POLYRHYTHM_VER_0,
-    POLYRHYTHM_VER_REMIX,
-    POLYRHYTHM_VER_2
-};
-
-enum PolyrhythmLanesEnum {
-    POLYRHYTHM_LANE_UPSIDE,
-    POLYRHYTHM_LANE_DOWNSIDE
 };
 
 

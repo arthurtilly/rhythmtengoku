@@ -81,7 +81,7 @@ void fireworks_engine_start(u32 version) {
     gFireworks->patternMode = FIREWORKS_PATTERN_MODE_0;
     gFireworks->patternDefault = FIREWORKS_PATTERN_L3;
 
-    for (i = 0; i < ARRAY_COUNT(gFireworks->particles); i++) {
+    for (i = 0; i < FIREWORKS_PARTICLE_AMOUNT; i++) {
         gFireworks->particles[i].sprite = func_0804d160(D_03005380, anim_fireworks_particle_red, 0, 0, 0, 0x801, 0, 0, 0);
         gFireworks->particles[i].active = FALSE;
         func_0804d770(D_03005380, gFireworks->particles[i].sprite, FALSE);
@@ -141,7 +141,7 @@ void fireworks_set_pattern(u32 pattern) {
 void fireworks_update_explosion(void) {
     u8 i;
 
-    for (i = 0; i < ARRAY_COUNT(gFireworks->particles); i++) {
+    for (i = 0; i < FIREWORKS_PARTICLE_AMOUNT; i++) {
         if (gFireworks->particles[i].active) {
             gFireworks->particles[i].x += gFireworks->particles[i].velX;
             gFireworks->particles[i].velX -= gFireworks->particles[i].velX / 32;

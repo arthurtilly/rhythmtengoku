@@ -37,10 +37,10 @@ void sneaky_spirits_show_ghost(u32 position) {
 void sneaky_spirits_init_rain(void) {
     u32 i;
 
-    for (i = 0; i < ARRAY_COUNT(gSneakySpirits->rainDrops); i++) {
+    for (i = 0; i < SNEAKY_SPIRITS_RAIN_DROP_AMOUNT; i++) {
         gSneakySpirits->rainDrops[i] = func_0804d160(D_03005380, anim_sneaky_spirits_rain, 0, 120, 80, 0x800, 0, 0, 0x8000);
     }
-    for (i = 0; i < ARRAY_COUNT(gSneakySpirits->rainSplashes); i++) {
+    for (i = 0; i < SNEAKY_SPIRITS_RAIN_SPLASH_AMOUNT; i++) {
         gSneakySpirits->rainSplashes[i] = func_0804d160(D_03005380, anim_sneaky_spirits_splash, 0, 64, 64, 0x8400, 0, 0, 0x8002);
     }
 
@@ -64,7 +64,7 @@ void sneaky_spirits_update_fast_rain(void) {
         func_0804d770(D_03005380, sprite, 1);
 
         gSneakySpirits->rainDropNext += 1;
-        if (gSneakySpirits->rainDropNext >= ARRAY_COUNT(gSneakySpirits->rainDrops)) {
+        if (gSneakySpirits->rainDropNext >= SNEAKY_SPIRITS_RAIN_DROP_AMOUNT) {
             gSneakySpirits->rainDropNext = 0;
         }
     }
@@ -76,7 +76,7 @@ void sneaky_spirits_update_fast_rain(void) {
         func_0804d770(D_03005380, sprite, 1);
 
         gSneakySpirits->rainSplashNext += 1;
-        if (gSneakySpirits->rainSplashNext >= ARRAY_COUNT(gSneakySpirits->rainSplashes)) {
+        if (gSneakySpirits->rainSplashNext >= SNEAKY_SPIRITS_RAIN_SPLASH_AMOUNT) {
             gSneakySpirits->rainSplashNext = 0;
         }
     }
@@ -99,7 +99,7 @@ void sneaky_spirits_set_rain_speed(u32 slowMotion) {
     gSneakySpirits->rainSlow = slowMotion;
 
     if (slowMotion) {
-        for (i = 0; i < ARRAY_COUNT(gSneakySpirits->rainDrops); i++) {
+        for (i = 0; i < SNEAKY_SPIRITS_RAIN_DROP_AMOUNT; i++) {
             sprite = gSneakySpirits->rainDrops[i];
             animSpeed = (!gSneakySpirits->freezeRain) ? INT_TO_FIXED(1.0) / (agb_random(3) + 1) : 0;
 
@@ -109,7 +109,7 @@ void sneaky_spirits_set_rain_speed(u32 slowMotion) {
             func_0804d770(D_03005380, sprite, 1);
         }
 
-        for (i = 0; i < ARRAY_COUNT(gSneakySpirits->rainSplashes); i++) {
+        for (i = 0; i < SNEAKY_SPIRITS_RAIN_SPLASH_AMOUNT; i++) {
             sprite = gSneakySpirits->rainSplashes[i];
             func_0804da20(D_03005380, sprite, 1);
         }
@@ -118,14 +118,14 @@ void sneaky_spirits_set_rain_speed(u32 slowMotion) {
     }
 
     else {
-        for (i = 0; i < ARRAY_COUNT(gSneakySpirits->rainDrops); i++) {
+        for (i = 0; i < SNEAKY_SPIRITS_RAIN_DROP_AMOUNT; i++) {
             sprite = gSneakySpirits->rainDrops[i];
 
             func_0804d770(D_03005380, sprite, 0);
             func_0804dcb8(D_03005380, sprite, INT_TO_FIXED(1.0));
         }
 
-        for (i = 0; i < ARRAY_COUNT(gSneakySpirits->rainSplashes); i++) {
+        for (i = 0; i < SNEAKY_SPIRITS_RAIN_SPLASH_AMOUNT; i++) {
             sprite = gSneakySpirits->rainSplashes[i];
             func_0804da20(D_03005380, sprite, 0);
         }

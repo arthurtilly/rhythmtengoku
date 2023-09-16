@@ -156,7 +156,7 @@ void bon_odori_engine_start(u32 ver) {
     D_03004b10.BLDMOD = (BLDMOD_BG0_SRC | BLDMOD_BLEND_MODE(BLEND_MODE_ALPHA) | BLDMOD_SPRITES_TGT);
     D_03004b10.COLEV = (COLEV_SRC_PIXEL(0x10) | COLEV_TGT_PIXEL(0x10));
 
-    for (i = 0; i < ARRAY_COUNT(gBonOdori->lyrics); i++) {
+    for (i = 0; i < BON_ODORI_LYRIC_AMOUNT; i++) {
         gBonOdori->lyrics[i].textSprite = -1;
     }
 

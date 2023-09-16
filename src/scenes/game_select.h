@@ -2,6 +2,41 @@
 
 #include "global.h"
 #include "scenes.h"
+#include "levels.h"
+
+// Scene Macros/Enums:
+enum CampaignBordersEnum {
+    /* 00 */ CAMPAIGN_BORDER_0_FLOWERS,
+    /* 01 */ CAMPAIGN_BORDER_3_FLOWERS,
+    /* 02 */ CAMPAIGN_BORDER_6_FLOWERS
+};
+
+#define MAX_PERFECT_ATTEMPTS 3
+
+#define GS_GRID_WIDTH 15u
+#define GS_GRID_HEIGHT 12u
+
+#define LEVEL_EVENT_TARGET_ON_SHOW   (1 << 0)
+#define LEVEL_EVENT_MOVE_CURSOR      (1 << 1)
+#define LEVEL_EVENT_CLEAR_BY_DEFAULT (1 << 2)
+#define LEVEL_EVENT_DELAY_CLEAR      (1 << 3)
+#define LEVEL_EVENT_DELAY_OPEN       (1 << 4)
+#define LEVEL_EVENT_DELAY_SHOW       (1 << 5)
+#define LEVEL_EVENT_TARGET_ON_OPEN   (1 << 6)
+
+#define LEVEL_ICON_ANIM_STOP -2
+#define LEVEL_ICON_ANIM_LOOP -1
+
+enum LevelIconOverlaysEnum {
+    /* 00 */ LEVEL_ICON_OVERLAY_BLANK,
+    /* 01 */ LEVEL_ICON_OVERLAY_CLOSED,
+    /* 02 */ LEVEL_ICON_OVERLAY_UNCLEARED,
+    /* 03 */ LEVEL_ICON_OVERLAY_CLEARED,
+    /* 04 */ LEVEL_ICON_OVERLAY_MEDAL,
+    /* 05 */ LEVEL_ICON_OVERLAY_REMIX_CLOSED,
+    /* 06 */ LEVEL_ICON_OVERLAY_REMIX_UNCLEARED,
+    /* 07 */ LEVEL_ICON_OVERLAY_BONUS
+};
 
 
 // Scene Types:
@@ -116,7 +151,7 @@ struct GameSelectSceneData {
         char text[0x100];
         u8 unused452;
         u8 totalAvailable;
-        u8 indexes[48];
+        u8 indexes[TOTAL_RHYTHM_GAMES];
     } campaignNotice;
     u8 unused484[100];
 
@@ -180,41 +215,6 @@ struct LevelIconAnimatorTask {
     u16 size;
     u8 currentFrame;
     u8 timeUntilNext;
-};
-
-
-// Scene Macros/Enums:
-enum CampaignBordersEnum {
-    /* 00 */ CAMPAIGN_BORDER_0_FLOWERS,
-    /* 01 */ CAMPAIGN_BORDER_3_FLOWERS,
-    /* 02 */ CAMPAIGN_BORDER_6_FLOWERS
-};
-
-#define MAX_PERFECT_ATTEMPTS 3
-
-#define GS_GRID_WIDTH 15u
-#define GS_GRID_HEIGHT 12u
-
-#define LEVEL_EVENT_TARGET_ON_SHOW   (1 << 0)
-#define LEVEL_EVENT_MOVE_CURSOR      (1 << 1)
-#define LEVEL_EVENT_CLEAR_BY_DEFAULT (1 << 2)
-#define LEVEL_EVENT_DELAY_CLEAR      (1 << 3)
-#define LEVEL_EVENT_DELAY_OPEN       (1 << 4)
-#define LEVEL_EVENT_DELAY_SHOW       (1 << 5)
-#define LEVEL_EVENT_TARGET_ON_OPEN   (1 << 6)
-
-#define LEVEL_ICON_ANIM_STOP -2
-#define LEVEL_ICON_ANIM_LOOP -1
-
-enum LevelIconOverlaysEnum {
-    /* 00 */ LEVEL_ICON_OVERLAY_BLANK,
-    /* 01 */ LEVEL_ICON_OVERLAY_CLOSED,
-    /* 02 */ LEVEL_ICON_OVERLAY_UNCLEARED,
-    /* 03 */ LEVEL_ICON_OVERLAY_CLEARED,
-    /* 04 */ LEVEL_ICON_OVERLAY_MEDAL,
-    /* 05 */ LEVEL_ICON_OVERLAY_REMIX_CLOSED,
-    /* 06 */ LEVEL_ICON_OVERLAY_REMIX_UNCLEARED,
-    /* 07 */ LEVEL_ICON_OVERLAY_BONUS
 };
 
 

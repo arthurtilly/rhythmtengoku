@@ -2,7 +2,6 @@
 #include "game_select.h"
 #include "graphics/game_select/game_select_graphics.h"
 
-#include "levels.h"
 #include "src/memory.h"
 #include "src/code_08001360.h"
 #include "src/bitmap_font.h"

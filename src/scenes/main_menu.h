@@ -3,21 +3,21 @@
 #include "global.h"
 #include "scenes.h"
 
+// Scene Macros/Enums:
+#define TOTAL_MAIN_MENU_BUTTONS 5
+
+
 // Scene Types:
 struct MainMenuSceneData {
     struct BitmapFontBG *bmpFontBG;
     struct BitmapFontOBJ *bmpFontOBJ;
     u32 scriptIsReady; // Set to FALSE during screen fade-in/out.
-    s16 buttons[5];
+    s16 buttons[TOTAL_MAIN_MENU_BUTTONS];
     s16 bgX;
     s16 bgY;
     u8 unk1A;
     u8 loadingOptionsMenu;
 };
-
-
-// Scene Macros/Enums:
-#define TOTAL_MAIN_MENU_BUTTONS 5
 
 
 // Scene Data:
