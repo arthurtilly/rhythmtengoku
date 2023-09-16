@@ -6,6 +6,9 @@
 #include "games/showtime/graphics/showtime_graphics.h"
 
 // Engine Macros/Enums:
+#define SHOWTIME_SUB_AMOUNT 2
+#define SHOWTIME_SUB2_AMOUNT 8
+
 enum ShowtimeVersionsEnum {
     SHOWTIME_VER_0,
     SHOWTIME_VER_REMIX_3
@@ -20,7 +23,7 @@ struct ShowtimeEngineData {
         s16 sprite;
         u32 unk4;
         s32 unk8;
-    } unk8[2];
+    } unk8[SHOWTIME_SUB_AMOUNT];
     u32 pad20;
     struct ShowtimeEngineData_sub1 {
         u32 unk0;
