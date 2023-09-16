@@ -3,26 +3,6 @@
 #include "global.h"
 #include "scenes.h"
 
-// Scene Types:
-struct MedalCornerSceneData {
-    /* add fields here */
-};
-
-struct MedalCornerLevel {
-    struct Scene *scene;
-    const char *title;
-    struct Animation *icon;
-    u8 medalsToUnlock;
-};
-
-struct MedalCornerMenu {
-    u8 levelCount;
-    struct SequenceData *bgm;
-    struct GraphicsTable *gfx;
-    struct MedalCornerLevel *levels;
-};
-
-
 // Scene Macros/Enums:
 enum RhythmToysEnum {
     RHYTHM_TOY_CAT_MACHINE,
@@ -64,6 +44,26 @@ enum DrumLessonsEnum {
     DRUM_LESSON_HI_TECH_2,
 
     TOTAL_DRUM_LESSONS
+};
+
+
+// Scene Types:
+struct MedalCornerSceneData {
+    /* add fields here */
+};
+
+struct MedalCornerLevel {
+    struct Scene *scene;
+    const char *title;
+    struct Animation *icon;
+    u8 medalsToUnlock;
+};
+
+struct MedalCornerMenu {
+    u8 levelCount;
+    struct SequenceData *bgm;
+    struct GraphicsTable *gfx;
+    struct MedalCornerLevel *levels;
 };
 
 

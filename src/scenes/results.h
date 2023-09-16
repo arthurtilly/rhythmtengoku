@@ -3,6 +3,22 @@
 #include "global.h"
 #include "scenes.h"
 
+// Scene Macros/Enums:
+enum ResultsRanksEnum {
+    RESULTS_RANK_TRY_AGAIN,
+    RESULTS_RANK_OK,
+    RESULTS_RANK_SUPERB
+};
+
+enum ResultsLevelIconsEnum {
+    RESULT_ICON_OK,
+    RESULT_ICON_TRY_AGAIN,
+    RESULT_ICON_SUPERB
+};
+
+#define END_OF_RESULTS_TEXT_EVENT_LIST { 0, NULL, NULL }
+
+
 // Scene Types:
 struct ResultsSceneData {
     struct BitmapFontBG *bgFont;
@@ -68,22 +84,6 @@ struct ResultsTextEvent {
     u8 unk0;
     const char **textPool;
     u32 (*func)(void);
-};
-
-#define END_OF_RESULTS_TEXT_EVENT_LIST { 0, NULL, NULL }
-
-
-// Scene Macros/Enums:
-enum ResultsRanksEnum {
-    RESULTS_RANK_TRY_AGAIN,
-    RESULTS_RANK_OK,
-    RESULTS_RANK_SUPERB
-};
-
-enum ResultsLevelIconsEnum {
-    RESULT_ICON_OK,
-    RESULT_ICON_TRY_AGAIN,
-    RESULT_ICON_SUPERB
 };
 
 

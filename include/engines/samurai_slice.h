@@ -5,6 +5,13 @@
 
 #include "games/samurai_slice/graphics/samurai_slice_graphics.h"
 
+// Engine Macros/Enums:
+enum SamuraiSliceVersionsEnum {
+    SAMURAI_SLICE_VER_0,
+    SAMURAI_SLICE_VER_REMIX
+};
+
+
 // Engine Types:
 struct SamuraiSliceEngineData {
     u8 pad[0x1e4];
@@ -18,13 +25,6 @@ struct SamuraiSlice_0805a5d4 {
     struct Animation *anim;
     u32 unk4;
     u32 unk8;
-};
-
-
-// Engine Macros/Enums:
-enum SamuraiSliceVersionsEnum {
-    SAMURAI_SLICE_VER_0,
-    SAMURAI_SLICE_VER_REMIX
 };
 
 

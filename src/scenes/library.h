@@ -3,13 +3,13 @@
 #include "global.h"
 #include "scenes.h"
 
+// Scene Macros/Enums:
+
+
 // Scene Types:
 struct LibrarySceneData {
     /* add fields here */
 };
-
-
-// Scene Macros/Enums:
 
 
 // Scene Data:

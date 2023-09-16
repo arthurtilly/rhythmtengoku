@@ -5,6 +5,13 @@
 
 #include "games/showtime/graphics/showtime_graphics.h"
 
+// Engine Macros/Enums:
+enum ShowtimeVersionsEnum {
+    SHOWTIME_VER_0,
+    SHOWTIME_VER_REMIX_3
+};
+
+
 struct ShowtimeEngineData {
     struct BitmapFontOBJ *unk0;
     u16 unk4;
@@ -46,13 +53,6 @@ struct ShowtimeEngineData {
 struct ShowtimeCue {
     u32 unk0;
     u32 unk4;
-};
-
-
-// Engine Macros/Enums:
-enum ShowtimeVersionsEnum {
-    SHOWTIME_VER_0,
-    SHOWTIME_VER_REMIX_3
 };
 
 

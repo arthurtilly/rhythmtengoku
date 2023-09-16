@@ -3,6 +3,10 @@
 #include "global.h"
 #include "scenes.h"
 
+// Scene Macros/Enums:
+#define END_OF_DEBUG_ENTRIES { NULL, NULL }
+
+
 // Scene Types:
 struct DebugMenuSceneData {
     /* add fields here */
@@ -12,11 +16,6 @@ struct DebugMenuEntry {
     struct Scene *scene;
     const char *label;
 };
-
-#define END_OF_DEBUG_ENTRIES { NULL, NULL }
-
-
-// Scene Macros/Enums:
 
 
 // Scene Data:

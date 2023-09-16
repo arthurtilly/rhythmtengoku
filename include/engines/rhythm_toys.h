@@ -6,28 +6,6 @@
 
 #include "games/rhythm_toys/graphics/rhythm_toys_graphics.h"
 
-// Engine Types:
-struct RhythmToysEngineData {
-    u8 pad[0x384];
-};
-
-struct RhythmToysCue {
-    /* add fields here */
-};
-
-struct RhythmToysDemo {
-    u16 button;
-    u16 deltaTime;
-};
-
-struct RhythmToysSpriteData {
-    struct Animation *anim;
-    struct Vector2 *vec2;
-};
-
-typedef void (*RhythmToysPlayFunc)(u32 button);
-
-
 // Engine Macros/Enums:
 enum RhythmToysVersionsEnum {
     ENGINE_VER_CAT_MACHINE_1,
@@ -69,6 +47,28 @@ enum RhythmToysDemoButtonsEnum {
 };
 
 #define END_OF_RHYTHM_TOYS_DEMO { RHYTHM_TOYS_DEMO_STOP, 0x00 }
+
+
+// Engine Types:
+struct RhythmToysEngineData {
+    u8 pad[0x384];
+};
+
+struct RhythmToysCue {
+    /* add fields here */
+};
+
+struct RhythmToysDemo {
+    u16 button;
+    u16 deltaTime;
+};
+
+struct RhythmToysSpriteData {
+    struct Animation *anim;
+    struct Vector2 *vec2;
+};
+
+typedef void (*RhythmToysPlayFunc)(u32 button);
 
 
 // Engine Definition Data:

@@ -5,20 +5,20 @@
 
 #include "games/bouncy_road/graphics/bouncy_road_graphics.h"
 
+// Engine Macros/Enums:
+enum BouncyRoadVersionsEnum {
+    BOUNCY_ROAD_VER_0,
+    BOUNCY_ROAD_VER_REMIX_5,
+    BOUNCY_ROAD_VER_2
+};
+
+
 // Engine Types:
 struct BouncyRoadEngineData {
     u8 pad[0x1dc];
 };
 
 struct BouncyRoadCue {
-};
-
-
-// Engine Macros/Enums:
-enum BouncyRoadVersionsEnum {
-    BOUNCY_ROAD_VER_0,
-    BOUNCY_ROAD_VER_REMIX_5,
-    BOUNCY_ROAD_VER_2
 };
 
 

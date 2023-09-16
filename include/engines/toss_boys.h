@@ -6,16 +6,6 @@
 
 #include "games/toss_boys/graphics/toss_boys_graphics.h"
 
-// Engine Types:
-struct TossBoysEngineData {
-    u8 pad[0x3a4];
-};
-
-struct TossBoysCue {
-    /* add fields here */
-};
-
-
 // Engine Macros/Enums:
 enum TossBoysVersionsEnum {
     ENGINE_VER_TOSS_BOYS,
@@ -67,6 +57,16 @@ enum TossBoyActionsEnum {
     TOSS_BOY_ACTION_SUPER_PASS,
     TOSS_BOY_ACTION_CATCH,
     TOSS_BOY_ACTION_POP
+};
+
+
+// Engine Types:
+struct TossBoysEngineData {
+    u8 pad[0x3a4];
+};
+
+struct TossBoysCue {
+    /* add fields here */
 };
 
 

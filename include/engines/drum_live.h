@@ -6,16 +6,6 @@
 
 #include "games/drum_live/graphics/drum_live_graphics.h"
 
-// Engine Types:
-struct DrumLiveEngineData {
-    u8 pad[0x1820];
-};
-
-struct DrumLiveCue {
-    /* add fields here */
-};
-
-
 // Engine Macros/Enums:
 enum DrumLiveVersionsEnum {
     ENGINE_VER_DRUM_GIRLS_LIVE,
@@ -66,6 +56,16 @@ enum DrumLiveAnimationsEnum {
     LIVE_ANIM_BUSY_ICON,
     LIVE_ANIM_MICROPHONE,
     LIVE_ANIM_LIGHT_FLASH
+};
+
+
+// Engine Types:
+struct DrumLiveEngineData {
+    u8 pad[0x1820];
+};
+
+struct DrumLiveCue {
+    /* add fields here */
 };
 
 

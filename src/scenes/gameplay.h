@@ -6,6 +6,9 @@
 #include "src/main.h"
 #include "riq_main_scene.h"
 
+// Scene Macros/Enums:
+
+
 // Scene Types:
 struct GameplaySceneData {
 	s32 unk0;
@@ -70,9 +73,6 @@ struct GameplaySceneData {
     u8  mercyEnabled;
     u8  forgivableMisses;
 };
-
-
-// Scene Macros/Enums:
 
 
 // Sound Effects:

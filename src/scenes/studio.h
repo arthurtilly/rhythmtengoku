@@ -3,18 +3,6 @@
 #include "global.h"
 #include "scenes.h"
 
-// Scene Types:
-struct StudioSceneData {
-    /* add fields here */
-};
-
-struct StudioEntry {
-    const char *fullTitle;
-    const char *shortTitle;
-    const struct Beatscript *script;
-};
-
-
 // Scene Macros/Enums:
 enum StudioSongsEnum {
     /* 00 */ STUDIO_SONG_SILENCE,
@@ -80,6 +68,18 @@ enum StudioDrumKitsEnum {
     /* 12 */ STUDIO_DRUM_TAP,
     /* 13 */ STUDIO_DRUM_AIR,
     /* 14 */ STUDIO_DRUM_SAMURAI
+};
+
+
+// Scene Types:
+struct StudioSceneData {
+    /* add fields here */
+};
+
+struct StudioEntry {
+    const char *fullTitle;
+    const char *shortTitle;
+    const struct Beatscript *script;
 };
 
 

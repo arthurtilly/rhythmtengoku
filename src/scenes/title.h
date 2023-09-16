@@ -3,6 +3,9 @@
 #include "global.h"
 #include "scenes.h"
 
+// Scene Macros/Enums:
+
+
 // Scene Types:
 struct TitleSceneData {
     /* add fields here */
@@ -13,9 +16,6 @@ struct TitleLogoCharData {
     s16 x, y;
     s16 unk8;
 };
-
-
-// Scene Macros/Enums:
 
 
 // Scene Data:

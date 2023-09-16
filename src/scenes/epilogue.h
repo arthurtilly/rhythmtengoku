@@ -3,13 +3,13 @@
 #include "global.h"
 #include "scenes.h"
 
+// Scene Macros/Enums:
+
+
 // Scene Types:
 struct EpilogueSceneData {
     /* add fields here */
 };
-
-
-// Scene Macros/Enums:
 
 
 // Scene Data:

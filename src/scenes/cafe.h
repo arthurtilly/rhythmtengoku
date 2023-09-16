@@ -3,14 +3,14 @@
 #include "global.h"
 #include "scenes.h"
 
+// Scene Macros/Enums:
+#define END_OF_DIALOGUE NULL
+
+
 // Scene Types:
 struct CafeSceneData {
     /* add fields here */
 };
-
-
-// Scene Macros/Enums:
-#define END_OF_DIALOGUE NULL
 
 
 // Scene Data:

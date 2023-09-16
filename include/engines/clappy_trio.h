@@ -5,16 +5,6 @@
 
 #include "games/clappy_trio/graphics/clappy_trio_graphics.h"
 
-// Engine Types:
-struct ClappyTrioEngineData {
-    u8 pad[0x1c];
-};
-
-struct ClappyTrioCue {
-    /* add fields here */
-};
-
-
 // Engine Macros/Enums:
 enum ClappyTrioVersionsEnum {
     CLAPPY_TRIO_VER_0,
@@ -30,6 +20,16 @@ enum ClappyTrioAnimationsEnum {
     CLAPPY_TRIO_ANIM_YOU,
     CLAPPY_TRIO_ANIM_SIGN,
     CLAPPY_TRIO_ANIM_TEXT_BOX
+};
+
+
+// Engine Types:
+struct ClappyTrioEngineData {
+    u8 pad[0x1c];
+};
+
+struct ClappyTrioCue {
+    /* add fields here */
 };
 
 

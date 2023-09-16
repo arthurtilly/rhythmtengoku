@@ -6,6 +6,15 @@
 
 #include "games/drum_intro/graphics/drum_intro_graphics.h"
 
+// Engine Macros/Enums:
+enum DrumIntroVersionsEnum {
+    ENGINE_VER_DRUM_INTRO_TEACHER,
+    ENGINE_VER_DRUM_INTRO_PLAYER,
+    ENGINE_VER_DRUM_INTRO_TANUKI_MONKEY,
+    ENGINE_VER_DRUM_INTRO_CUTSCENE
+};
+
+
 // Engine Types:
 struct DrumIntroEngineData {
     u8 pad[0x3b4];
@@ -25,15 +34,6 @@ struct DrumKitCueData {
     const DrumKitCueFunc func10;
     const DrumKitCueFunc func14;
     u32 unk18;
-};
-
-
-// Engine Macros/Enums:
-enum DrumIntroVersionsEnum {
-    ENGINE_VER_DRUM_INTRO_TEACHER,
-    ENGINE_VER_DRUM_INTRO_PLAYER,
-    ENGINE_VER_DRUM_INTRO_TANUKI_MONKEY,
-    ENGINE_VER_DRUM_INTRO_CUTSCENE
 };
 
 

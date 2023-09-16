@@ -3,19 +3,6 @@
 #include "global.h"
 #include "scenes.h"
 
-// Scene Types:
-struct ReadingSceneData {
-    /* add fields here */
-};
-
-struct ReadingMaterial {
-    const char *title;
-    const char *text;
-    const struct GraphicsTable *gfx;
-    struct SequenceData **bgm;
-};
-
-
 // Scene Macros/Enums:
 enum ReadingMaterialEnum {
     /* 00 */ READING_MATERIAL_WELCOME,
@@ -38,6 +25,19 @@ enum ReadingMaterialEnum {
     /* 17 */ READING_MATERIAL_RHYTHM_DIAGNOSIS,
     /* 18 */ READING_MATERIAL_RHYTHM_POEM,
     /* 19 */ READING_MATERIAL_RHYTHM_HAIKU
+};
+
+
+// Scene Types:
+struct ReadingSceneData {
+    /* add fields here */
+};
+
+struct ReadingMaterial {
+    const char *title;
+    const char *text;
+    const struct GraphicsTable *gfx;
+    struct SequenceData **bgm;
 };
 
 
@@ -71,13 +71,13 @@ extern struct ReadingMaterial reading_material_error;
 // extern ? func_0801a8b0(?); // ? (Script Function)
 
 
+// Scene Macros/Enums:
+
+
 // Scene Types:
 struct ReadErrorSceneData {
     /* add fields here */
 };
-
-
-// Scene Macros/Enums:
 
 
 // Scene Data:

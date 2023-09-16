@@ -4,13 +4,13 @@
 #include "scenes.h"
 #include "src/memory.h"
 
+// Scene Macros/Enums:
+
+
 // Scene Types:
 struct DataCheckSceneData {
     /* add fields here */
 };
-
-
-// Scene Macros/Enums:
 
 
 // Scene Data:
