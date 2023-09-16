@@ -200,7 +200,7 @@ void func_08000584(struct Scene *arg1) {
 
 void func_08000598(void) {
 	u32 i;
-	for (i = 0; i < 10; i++) {
+	for (i = 0; i < ARRAY_COUNT(D_03000008); i++) {
 		D_03000008[i].unk0 = NULL;
 		D_03000008[i].unk4 = NULL;
 		D_03000008[i].unk8 = NULL;
@@ -209,7 +209,7 @@ void func_08000598(void) {
 
 struct SceneUnk03000008 *func_080005b8(struct Scene *arg1) {
 	u32 i;
-	for (i = 0; i < 10; i++) {
+	for (i = 0; i < ARRAY_COUNT(D_03000008); i++) {
 		if (D_03000008[i].unk0 == arg1) {
 			return &D_03000008[i];
 		}
@@ -246,7 +246,7 @@ struct SceneUnk03000008 *func_08000630(struct Scene *arg1) {
 	if (arg1 == NULL) {
 		return NULL;
 	}
-	for (i = 0; i < 10; i++) {
+	for (i = 0; i < ARRAY_COUNT(D_03000008); i++) {
 		if (D_03000008[i].unk0 == NULL) {
 			D_03000008[i].unk0 = arg1;
 			D_03000008[i].unk4 = NULL;
@@ -260,7 +260,7 @@ struct SceneUnk03000008 *func_08000630(struct Scene *arg1) {
 void func_08000674(struct Scene *arg1) {
 	if (arg1 != NULL) {
 		u32 i;
-		for (i = 0; i < 10; i++) {
+		for (i = 0; i < ARRAY_COUNT(D_03000008); i++) {
 			if (D_03000008[i].unk0 == arg1) {
 				D_03000008[i].unk0 = NULL;
 				D_03000008[i].unk4 = NULL;

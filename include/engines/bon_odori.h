@@ -5,6 +5,8 @@
 
 #include "games/bon_odori/graphics/bon_odori_graphics.h"
 
+#define BON_ODORI_DONPAN_AMOUNT 4
+
 // Engine Types:
 struct BonOdoriText {
     s16 textSprite;
@@ -24,8 +26,8 @@ struct BonOdoriEngineData {
     s16 yaguraSprite;
     u16 yaguraFrownTimer;
     u8 yaguraNoticedMistake;
-    s16 donpanSprites[4];
-    u16 donpanAnimTimers[4];
+    s16 donpanSprites[BON_ODORI_DONPAN_AMOUNT];
+    u16 donpanAnimTimers[BON_ODORI_DONPAN_AMOUNT];
     u8 donpanEmoteTimer;
     u8 donpanEmoteAnim;
     const u16 *srcBgPal;

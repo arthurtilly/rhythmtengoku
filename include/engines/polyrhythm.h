@@ -5,6 +5,9 @@
 
 #include "games/polyrhythm/graphics/polyrhythm_graphics.h"
 
+#define POLYRHYTHM_LINE_AMOUNT 2
+#define POLYRHYTHM_BLOCK_AMOUNT 16
+
 // Engine Types:
 struct PolyrhythmEngineData {
     u8 version;
@@ -13,7 +16,7 @@ struct PolyrhythmEngineData {
         u32 state:3;
         u32 unk0_b6:26;
         s16 sprite;
-    } lanes[2][16];
+    } lanes[POLYRHYTHM_LINE_AMOUNT][POLYRHYTHM_BLOCK_AMOUNT];
     u8 unk104[2];
     struct PolyrhythmRod {
         u32 active:1;

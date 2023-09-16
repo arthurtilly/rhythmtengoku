@@ -40,9 +40,9 @@ void bon_odori_init_donpans(void) {
     y = 120;
     z = 0x4800;
 
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < BON_ODORI_DONPAN_AMOUNT; i++) {
         anim = bon_odori_get_donpan_anim(DONPAN_ANIM_BEAT, i);
-        gBonOdori->donpanSprites[i] = func_0804d160(D_03005380, anim, 0x7f, x, y, z, 1, 0x7f, 0);;
+        gBonOdori->donpanSprites[i] = func_0804d160(D_03005380, anim, 0x7f, x, y, z, 1, 0x7f, 0);
         gBonOdori->donpanAnimTimers[i] = 0;
         x += 53;
     }
@@ -71,7 +71,7 @@ void bon_odori_set_donpan_anim(u32 animation, u32 donpan) {
 void bon_odori_set_cpu_donpan_anim(u32 anim) {
     u32 i;
 
-    for (i = 0; i < 3; i++) {
+    for (i = 0; i < (BON_ODORI_DONPAN_AMOUNT - 1); i++) {
         bon_odori_set_donpan_anim(anim, i);
     }
 }
@@ -94,7 +94,7 @@ void bon_odori_set_all_donpan_anim(u32 anim) {
 void bon_odori_set_cpu_donpan_anim_timer(u32 duration) {
     u32 i;
 
-    for (i = 0; i < 3; i++) {
+    for (i = 0; i < (BON_ODORI_DONPAN_AMOUNT - 1); i++) {
         gBonOdori->donpanAnimTimers[i] = beats_to_ticks(duration);
     }
 }
@@ -104,7 +104,7 @@ void bon_odori_set_cpu_donpan_anim_timer(u32 duration) {
 void bon_odori_update_donpans(void) {
     u32 i;
 
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < BON_ODORI_DONPAN_AMOUNT; i++) {
         if (gBonOdori->donpanAnimTimers[i] != 0) {
             gBonOdori->donpanAnimTimers[i]--;
         }
@@ -156,7 +156,7 @@ void bon_odori_engine_start(u32 ver) {
     D_03004b10.BLDMOD = (BLDMOD_BG0_SRC | BLDMOD_BLEND_MODE(BLEND_MODE_ALPHA) | BLDMOD_SPRITES_TGT);
     D_03004b10.COLEV = (COLEV_SRC_PIXEL(0x10) | COLEV_TGT_PIXEL(0x10));
 
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < ARRAY_COUNT(gBonOdori->lyrics); i++) {
         gBonOdori->lyrics[i].textSprite = -1;
     }
 
@@ -441,7 +441,7 @@ void bon_odori_common_beat_animation(u32 arg) {
     struct Animation *anim;
     u32 i;
 
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < BON_ODORI_DONPAN_AMOUNT; i++) {
         if (gBonOdori->donpanAnimTimers[i] == 0) {
             anim = bon_odori_get_donpan_anim(DONPAN_ANIM_BEAT, i);
             if ((i < 3) && (gBonOdori->donpanEmoteTimer != 0)) {

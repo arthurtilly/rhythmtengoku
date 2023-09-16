@@ -254,7 +254,7 @@ void drum_lessons_init_lesson(void) {
     gDrumStudio->unk563 = 0;
     gDrumStudio->unk564 = 0;
 
-    for (i = 0; i < 7; i++) {
+    for (i = 0; i < ARRAY_COUNT(gDrumStudio->accuracyLightSprites); i++) {
         gDrumStudio->accuracyLightSprites[i] = func_0804d160(D_03005380, drum_lessons_accuracy_light_anim[i], 0x7f, drum_lessons_accuracy_light_positions[i].x, drum_lessons_accuracy_light_positions[i].y, 0x4f00, 1, 0x7f, 0x8002);
         func_0804d890(D_03005380, gDrumStudio->accuracyLightSprites[i], 640);
     }

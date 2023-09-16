@@ -59,11 +59,11 @@ void reset_game_save_data(void) {
     }
     data->campaignState = CAMPAIGN_STATE_INACTIVE;
 
-    for (i = 0; i < 20; i++) {
+    for (i = 0; i < ARRAY_COUNT(data->readingMaterialUnlocked); i++) {
         data->readingMaterialUnlocked[i] = FALSE;
     }
 
-    for (i = 0; i < 15; i++) {
+    for (i = 0; i < ARRAY_COUNT(data->drumKitsUnlocked); i++) {
         data->drumKitsUnlocked[i] = FALSE;
     }
 
@@ -72,7 +72,7 @@ void reset_game_save_data(void) {
     data->unk290 = 2;
     data->unk291 = 0;
 
-    for (i = 0; i < 16; i++) {
+    for (i = 0; i < ARRAY_COUNT(data->unk294); i++) {
         data->unk294[i] = 0;
     }
 

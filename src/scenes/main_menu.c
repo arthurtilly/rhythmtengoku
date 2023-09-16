@@ -88,7 +88,7 @@ void main_menu_scene_start(void *sceneVar, s32 dataArg) {
     main_menu_scene_init_gfx1();
     func_0804d160(D_03005380, anim_main_menu_blank1, 0, 120, 64, 0x6E, 1, 0, 0);
 
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < ARRAY_COUNT(gMainMenu->buttons); i++) {
         if (i == sMainMenuButton) {
             gMainMenu->buttons[i] = func_0804d160(D_03005380, main_menu_button_on_anim[i], 0, 120, 64, 0x64, 1, 0, 0);
         } else {

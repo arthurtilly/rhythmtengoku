@@ -81,7 +81,7 @@ void wizards_waltz_engine_start(u32 version) {
     gWizardsWaltz->girl.sprite = create_affine_sprite(anim_wizards_waltz_girl_idle, 0, 120, 80, 0x4040, INT_TO_FIXED(0.5), 0, 1, 0, 0, 1);
 
     // Create sparkles.
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < ARRAY_COUNT(gWizardsWaltz->sparkle); i++) {
         struct AffineSprite *sprite;
         gWizardsWaltz->sparkle[i].state = SPARKLE_STATE_HIDDEN;
         sprite = create_affine_sprite(anim_wizard_sparkle, 0, 0, 0, 0, INT_TO_FIXED(0.5), 0, 1, 0, 0, 0);
@@ -167,7 +167,7 @@ void wizards_waltz_engine_update(void) {
     }
 
     // Update sparkles (continued).
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < ARRAY_COUNT(gWizardsWaltz->sparkle); i++) {
         if (gWizardsWaltz->sparkle[i].state != SPARKLE_STATE_HIDDEN) {
             if (gWizardsWaltz->sparkle[i].state == SPARKLE_STATE_QUEUED) {
                 gWizardsWaltz->sparkle[i].rotation = gWizardsWaltz->wizard.rotation - 0x200;

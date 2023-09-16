@@ -315,7 +315,7 @@ void results_init_cue_tracking(void) {
 
     D_089d7980->markingData = NULL;
 
-    for (i = 0; i < 16; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_089d7980->cueInputTrackers); i++) {
         results_init_tracker(&D_089d7980->cueInputTrackers[i]);
     }
 }
@@ -330,7 +330,7 @@ void results_init_score_handler(void) {
     D_089d7980->prevInputLevel = -1;
     D_089d7980->totalIrrelevantInputs = 0;
 
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_089d7980->anyInputTrackers); i++) {
         results_init_tracker(&D_089d7980->anyInputTrackers[i]);
     }
 

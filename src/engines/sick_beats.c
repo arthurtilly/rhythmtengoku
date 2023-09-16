@@ -125,7 +125,7 @@ void sick_beats_draw_score(u32 type) {
     struct SickBeatsScoreCounter *scoreCounters = &gSickBeats->scoreCounters[type];
     u32 value = scoreCounters->value;
 
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < ARRAY_COUNT(scoreCounters->digitSprite); i++) {
         func_0804cebc(D_03005380, scoreCounters->digitSprite[i], value % 10);
         value /= 10;
     }

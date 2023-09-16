@@ -647,7 +647,7 @@ void func_08002b10(struct GfxTableLoader *info) {
             case COMPRESSION_LEVEL_RLE:
                 if (info->decodingRLE) {
                     D_030053b0 = TRUE;
-                    for (i = 0; i < 8; i++) {
+                    for (i = 0; i < ARRAY_COUNT(info->rleSaveState); i++) {
                         D_03005390[i] = info->rleSaveState[i];
                     }
                     size = func_08003ea4();
@@ -662,7 +662,7 @@ void func_08002b10(struct GfxTableLoader *info) {
                 }
                 if (D_030053b0) {
                     info->decodingRLE = TRUE;
-                    for (i = 0; i < 8; i++) {
+                    for (i = 0; i < ARRAY_COUNT(info->rleSaveState); i++) {
                         info->rleSaveState[i] = D_03005390[i];
                     }
                     D_030053b0 = FALSE;

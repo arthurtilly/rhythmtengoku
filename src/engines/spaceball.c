@@ -38,7 +38,7 @@ void spaceball_update_stars_x_y(void) {
     s32 scale, x, y;
     u32 i;
 
-    for (i = 0; i < 24; i++) {
+    for (i = 0; i < ARRAY_COUNT(gSpaceball->stars); i++) {
         sprite = gSpaceball->starSprite[i];
         star = &gSpaceball->stars[i];
 
@@ -57,7 +57,7 @@ void spaceball_update_stars_z(void) {
     s32 zMax = gSpaceball->zoom + INT_TO_FIXED(4);
     u32 i;
 
-    for (i = 0; i < 24; i++) {
+    for (i = 0; i < ARRAY_COUNT(gSpaceball->stars); i++) {
         star = &gSpaceball->stars[i];
         star->z -= 8;
         if ((star->z < zMin) || (star->z > zMax)) {

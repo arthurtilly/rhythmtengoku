@@ -32,7 +32,7 @@ typedef s32 s24_8;
 #define FIXED_TO_INT(x) ((s32)((x) >> 8))
 #define FIXED_POINT_MUL(a, b) (((a) * (b)) >> 8)
 
-#define ARRAY_COUNT(a) (size_t)(sizeof(a))/sizeof((a)[0])
+#define ARRAY_COUNT(a) (s32)(sizeof(a))/sizeof((a)[0])
 
 #include "gba/gba.h"
 #include "types.h"

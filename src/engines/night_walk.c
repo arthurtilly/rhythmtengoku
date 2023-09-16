@@ -278,7 +278,7 @@ s32 night_walk_scroll_stars(void) {
     hOffset = INT_TO_FIXED(-0.5);
     vOffset = gNightWalk->starsVOffset;
 
-    for (i = 0; i < 32; i++) {
+    for (i = 0; i < ARRAY_COUNT(gNightWalk->stars); i++) {
         star = &gNightWalk->stars[i];
         star->x += hOffset;
         if (star->x < INT_TO_FIXED(-8.0)) {
@@ -375,7 +375,7 @@ void night_walk_clear_all_stars(void) {
     struct NightWalkStar *star;
     u32 i;
 
-    for (i = 0; i < 32; i++) {
+    for (i = 0; i < ARRAY_COUNT(gNightWalk->stars); i++) {
         star = &gNightWalk->stars[i];
         func_0804d8f8(D_03005380, star->sprite, anim_night_walk_star_disappear, 0, 1, 0, 3);
     }
@@ -405,7 +405,7 @@ void func_0802a970(void) {
 void reset_drumtech_seq(void) {
     u32 i;
 
-    for (i = 0; i < 100; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_03001568->drumSequence); i++) {
         D_03001568->drumSequence[i].deltaTime = 0;
     }
 }
@@ -418,7 +418,7 @@ void init_drumtech(struct DrumTechController *data) {
     D_03001568 = data;
     D_03001568->drumBank = drumtech_drum_bank;
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_03001568->soundTimers); i++) {
         D_03001568->soundTimers[i] = 0;
     }
 
@@ -439,7 +439,7 @@ void init_drumtech(struct DrumTechController *data) {
 void update_drumtech_timers(void) {
     u32 i;
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_03001568->soundTimers); i++) {
         if (D_03001568->soundTimers[i] > 0) {
             if (--D_03001568->soundTimers[i] == 0) {
                 stop_soundplayer(D_08aa4460[i].soundPlayer);
@@ -454,7 +454,7 @@ void update_drumtech_seq(void) {
     struct DrumTechNote *note;
     u32 i;
 
-    for (i = 0; i < 100; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_03001568->drumSequence); i++) {
         note = &D_03001568->drumSequence[i];
 
         if (note->deltaTime > 0) {
@@ -475,7 +475,7 @@ void play_drumtech_seq(const struct DrumTechNote *sequence, s32 timingOffset, s3
 
     reset_drumtech_seq();
 
-    while ((sequence->drumID != DRUMTECH_NOTE_END_SEQ) && (i < 100)) {
+    while ((sequence->drumID != DRUMTECH_NOTE_END_SEQ) && (i < ARRAY_COUNT(D_03001568->drumSequence))) {
         delay = beats_to_ticks(ticks) + timingOffset;
         if (delay <= 0 || ticks == 0) {
             play_drumtech_note(sequence->drumID, sequence->volume, sequence->pitch);
@@ -719,7 +719,7 @@ void stop_drumtech(void) {
 
     reset_drumtech_seq();
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < ARRAY_COUNT(D_03001568->soundTimers); i++) {
         if (D_03001568->soundTimers[i] != 0) {
             stop_soundplayer(D_08aa4460[i].soundPlayer);
         }
