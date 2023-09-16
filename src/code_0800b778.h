@@ -110,7 +110,7 @@ extern struct BitmapFontOBJ *func_0800c660(u16, u8);
 // extern ? func_0800cb28(?); // BEATSCRIPT - Update Stream
 extern void func_0800dfbc(void); // Stub
 extern void func_0800dfc0(void); // Stub
-extern s32 func_0800dfc4(void); // a very broken (and unused) function
+extern s32 func_0800dfc4(void); // Get previous thread's task ID
 extern void func_0800dfe0(void); // Stub
 extern void func_0800dfe4(void); // Stub
 extern void func_0800dfe8(void); // Stub
