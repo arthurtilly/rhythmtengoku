@@ -701,7 +701,7 @@ void func_0800dfc0(void) {
 }
 
 
-// Get previous thread's task ID
+// Get current thread's task ID
 s32 func_0800dfc4(void) {
     struct BeatscriptThread *thread = &D_030053c0.threads[get_current_mem_id()] - 1;
 
