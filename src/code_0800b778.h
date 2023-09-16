@@ -353,8 +353,8 @@ extern void scene_enable_obj_windows(void); // Enable OBJ Windows
 extern void scene_disable_obj_windows(void); // Disable OBJ Windows
 extern void scene_set_obj_mosaic_size(s16 xSize, s16 ySize); // Set OBJ Mosaic Size
 extern void scene_set_bg_mosaic_size(s16 xSize, s16 ySize); // Set BG Mosaic Size
-extern s32 func_0800e1cc(s16 sprite, s16 startX, s16 startY, s8_8 xVel, s8_8 yVel);
-extern s32 func_0800e208(s16 sprite, s8_8 xVel, s8_8 yVel);
+extern s32 func_0800e1cc(s16 sprite, s16 startX, s16 startY, s8_8 velX, s8_8 velY);
+extern s32 func_0800e208(s16 sprite, s8_8 velX, s8_8 velY);
 extern s32 func_0800e25c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 multiplier);
 extern s32 func_0800e2a8(s16 sprite, s16 destX, s16 destY, s8_8 multiplier);
 extern s32 func_0800e30c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration);

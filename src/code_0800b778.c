@@ -1523,40 +1523,40 @@ void scene_set_bg_mosaic_size(s16 xSize, s16 ySize) {
 
 
 // Sprite Motion - Indefinite Linear
-s32 func_0800e1cc(s16 sprite, s16 startX, s16 startY, s8_8 xVel, s8_8 yVel) {
-    struct unk_struct_080074ec_init inputs;
+s32 func_0800e1cc(s16 sprite, s16 startX, s16 startY, s8_8 velX, s8_8 velY) {
+    struct SpriteMover_Indefinite_Inputs inputs;
 
     inputs.sprite = sprite;
     inputs.startX = startX;
     inputs.startY = startY;
-    inputs.xVel = xVel;
-    inputs.yVel = yVel;
+    inputs.velX = velX;
+    inputs.velY = velY;
 
-    return start_new_task(get_current_mem_id(), &D_08936ba4, &inputs, NULL, 0);
+    return start_new_task(get_current_mem_id(), &sprite_motion_task_indefinite, &inputs, NULL, 0);
 }
 
 
 // Sprite Motion - Indefinite Linear (from current position)
-s32 func_0800e208(s16 sprite, s8_8 xVel, s8_8 yVel) {
+s32 func_0800e208(s16 sprite, s8_8 velX, s8_8 velY) {
     s16 x, y;
 
     get_sprite_xy(sprite, &x, &y);
-    return func_0800e1cc(sprite, x, y, xVel, yVel);
+    return func_0800e1cc(sprite, x, y, velX, velY);
 }
 
 
 // Sprite Motion - Decelerate to Point
 s32 func_0800e25c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 multiplier) {
-    struct unk_struct_0800757c_init inputs;
+    struct SpriteMover_Decelerate_Inputs inputs;
 
-    inputs.id = sprite;
+    inputs.sprite = sprite;
     inputs.startX = startX;
     inputs.startY = startY;
     inputs.destX = destX;
     inputs.destY = destY;
     inputs.multiplier = multiplier;
 
-    return start_new_task(get_current_mem_id(), &D_08936bb4, &inputs, NULL, 0);
+    return start_new_task(get_current_mem_id(), &sprite_motion_task_decelerate, &inputs, NULL, 0);
 }
 
 
@@ -1571,17 +1571,17 @@ s32 func_0800e2a8(s16 sprite, s16 destX, s16 destY, s8_8 multiplier) {
 
 // Sprite Motion - Accelerate to Point
 s32 func_0800e30c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration) {
-    struct unk_struct_0800765c_init inputs;
+    struct SpriteMover_Accelerate_Inputs inputs;
 
-    inputs.id = sprite;
+    inputs.sprite = sprite;
     inputs.startX = startX;
     inputs.startY = startY;
     inputs.destX = destX;
     inputs.destY = destY;
-    inputs.vel = velocity;
-    inputs.accel = acceleration;
+    inputs.velocity = velocity;
+    inputs.acceleration = acceleration;
 
-    return start_new_task(get_current_mem_id(), &D_08936bc4, &inputs, NULL, 0);
+    return start_new_task(get_current_mem_id(), &sprite_motion_task_accelerate, &inputs, NULL, 0);
 }
 
 
@@ -1596,16 +1596,16 @@ s32 func_0800e364(s16 sprite, s16 destX, s16 destY, s8_8 velocity, s8_8 accelera
 
 // Sprite Motion - LERP to Point
 s32 func_0800e3e4(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration) {
-    struct unk_struct_08007788_init inputs;
+    struct SpriteMover_TimedLinear_Inputs inputs;
 
-    inputs.id = sprite;
+    inputs.sprite = sprite;
     inputs.startX = startX;
     inputs.startY = startY;
     inputs.destX = destX;
     inputs.destY = destY;
     inputs.totalFrames = duration;
 
-    return start_new_task(get_current_mem_id(), &D_08936bd4, &inputs, NULL, 0);
+    return start_new_task(get_current_mem_id(), &sprite_motion_task_lerp, &inputs, NULL, 0);
 }
 
 
@@ -1620,7 +1620,7 @@ s32 func_0800e430(s16 sprite, s16 destX, s16 destY, u16 duration) {
 
 // Sprite Motion - Sinusoidal
 s32 func_0800e490(s16 sprite, u8 angle, s16 baseX, s16 baseY, s16 baseOffset, s16 amplitude, s16 waveStart, s16 waveEnd, u16 duration) {
-    struct unk_struct_080078ec_init inputs;
+    struct SpriteMover_SineOsc_Inputs inputs;
 
     inputs.sprite = sprite;
     inputs.angle = angle;
@@ -1632,7 +1632,7 @@ s32 func_0800e490(s16 sprite, u8 angle, s16 baseX, s16 baseY, s16 baseOffset, s1
     inputs.waveEnd = waveEnd;
     inputs.totalFrames = duration;
 
-    return start_new_task(get_current_mem_id(), &D_08936be4, &inputs, NULL, 0);
+    return start_new_task(get_current_mem_id(), &sprite_motion_task_sine_osc, &inputs, NULL, 0);
 }
 
 
@@ -1647,7 +1647,7 @@ s32 func_0800e4f8(s16 sprite, u8 angle, s16 amplitude, s16 waveStart, s16 waveEn
 
 // Sprite Motion - Sinusoidal Velocity
 s32 func_0800e57c(s16 sprite, u32 mode, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration) {
-    struct unk_struct_080079bc_init inputs;
+    struct SpriteMover_SineVel_Inputs inputs;
 
     inputs.sprite = sprite;
     inputs.totalFrames = duration;
@@ -1681,7 +1681,7 @@ s32 func_0800e57c(s16 sprite, u32 mode, s16 startX, s16 startY, s16 destX, s16 d
             break;
     }
 
-    return start_new_task(get_current_mem_id(), &D_08936bf4, &inputs, NULL, 0);
+    return start_new_task(get_current_mem_id(), &sprite_motion_task_sine_vel, &inputs, NULL, 0);
 }
 
 
@@ -1696,9 +1696,9 @@ s32 func_0800e62c(s16 sprite, u32 mode, s16 destX, s16 destY, u16 duration) {
 
 // Sprite Motion - LERP with Sine Oscillation
 s32 func_0800e694(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s16 amplitude, u16 duration) {
-    struct unk_struct_08007aa0_init inputs;
+    struct SpriteMover_SineWave_Inputs inputs;
 
-    inputs.id = sprite;
+    inputs.sprite = sprite;
     inputs.startX = startX;
     inputs.startY = startY;
     inputs.destX = destX;
@@ -1706,7 +1706,7 @@ s32 func_0800e694(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s16 
     inputs.amplitude = amplitude;
     inputs.totalFrames = duration;
 
-    return start_new_task(get_current_mem_id(), &D_08936c04, &inputs, NULL, 0);
+    return start_new_task(get_current_mem_id(), &sprite_motion_task_sine_wave, &inputs, NULL, 0);
 }
 
 

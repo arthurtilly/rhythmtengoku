@@ -18,10 +18,10 @@ extern Palette D_030046c0[32]; // Temporary space for palettes during fade-in
 // extern ? func_08006ac8(?);
 // extern ? func_08006b1c(?);
 // extern ? func_08006b30(?);
-extern struct unk_struct_08006bb4 *func_08006bb4(struct unk_struct_08006bb4_init *);
-extern u32 func_08006c08(struct unk_struct_08006bb4 *);
-extern struct unk_struct_08006ca4 *func_08006ca4(struct unk_struct_08006ca4_init *);
-extern u32 func_08006ce8(struct unk_struct_08006ca4 *);
+extern struct unk_struct_08006bb4 *func_08006bb4(struct unk_struct_08006bb4_init *inputs);
+extern u32 func_08006c08(struct unk_struct_08006bb4 *task);
+extern struct unk_struct_08006ca4 *func_08006ca4(struct unk_struct_08006ca4_init *inputs);
+extern u32 func_08006ce8(struct unk_struct_08006ca4 *task);
 extern void func_08006d80(void); // Disable Graphics Buffer?
 extern void func_08006da8(void); // Reset Graphics Buffer
 extern void func_08006e00(void); // Flush Affine BG
