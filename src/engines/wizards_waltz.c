@@ -92,14 +92,14 @@ void wizards_waltz_engine_start(u32 version) {
     // Set default state.
     gameplay_set_input_buttons(A_BUTTON, 0);
     gWizardsWaltz->isTutorial = FALSE;
-    gWizardsWaltz->cycleInterval = beats_to_ticks(0x90);
+    gWizardsWaltz->cycleInterval = ticks_to_frames(0x90);
 }
 
 
 // Engine Event 0x00 (Set Rotation Interval)
 void wizards_waltz_set_cycle_duration(u32 time) {
     gWizardsWaltz->cyclePosition = 0;
-    gWizardsWaltz->cycleInterval = beats_to_ticks(time);
+    gWizardsWaltz->cycleInterval = ticks_to_frames(time);
 }
 
 
@@ -248,7 +248,7 @@ void wizards_waltz_cue_spawn(struct Cue *cue, struct WizardsWaltzCue *info, u32 
 
 // Cue - Update
 u32 wizards_waltz_cue_update(struct Cue *cue, struct WizardsWaltzCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > (gWizardsWaltz->cycleInterval + beats_to_ticks(0x30))) {
+    if (runningTime > (gWizardsWaltz->cycleInterval + ticks_to_frames(0x30))) {
         return TRUE;
     } else {
         return FALSE;

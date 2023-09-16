@@ -37,7 +37,7 @@ branch_08040a26: \n\
 /* 08040a5c */ CMP R5, 0x1 @ Compare R5 and 0x1 \n\
 /* 08040a5e */ BLS branch_08040a26 \n\
 /* 08040a60 */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
-/* 08040a62 */ BL beats_to_ticks \n\
+/* 08040a62 */ BL ticks_to_frames \n\
 /* 08040a66 */ CMP R6, R0 @ Check R6 - R0 \n\
 /* 08040a68 */ BHI branch_08040a78 \n\
 /* 08040a6a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

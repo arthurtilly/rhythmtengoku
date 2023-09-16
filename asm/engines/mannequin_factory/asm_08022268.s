@@ -58,7 +58,7 @@ branch_080222a0: \n\
 /* 080222c2 */ BL func_0804dcb8 \n\
 /* 080222c6 */ STRH R7, [R6, 0x4] \n\
 /* 080222c8 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 080222ca */ BL beats_to_ticks \n\
+/* 080222ca */ BL ticks_to_frames \n\
 /* 080222ce */ STRH R0, [R6, 0x6] \n\
 /* 080222d0 */ MOVS R0, 0x3 @ Set R0 to 0x3 \n\
 /* 080222d2 */ STRB R0, [R6] \n\

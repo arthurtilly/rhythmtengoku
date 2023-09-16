@@ -19,7 +19,7 @@ thumb_func_start func_08038b98 \n\
  \n\
 branch_08038bb2: \n\
 /* 08038bb2 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 08038bb4 */ BL beats_to_ticks \n\
+/* 08038bb4 */ BL ticks_to_frames \n\
 /* 08038bb8 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08038bba */ LDRH R2, [R5, 0xC] \n\
 /* 08038bbc */ MOVS R0, 0x5A @ Set R0 to 0x5A \n\

@@ -80,7 +80,7 @@ branch_08032ab6: \n\
  \n\
 branch_08032af0: \n\
 /* 08032af0 */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
-/* 08032af2 */ BL beats_to_ticks \n\
+/* 08032af2 */ BL ticks_to_frames \n\
 /* 08032af6 */ LDR R1, [R5] \n\
 /* 08032af8 */ LDR R3, =0x215 \n\
 /* 08032afa */ ADDS R1, R1, R3 @ Set R1 to R1 + R3 \n\

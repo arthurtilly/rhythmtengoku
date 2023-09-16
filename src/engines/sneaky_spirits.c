@@ -221,7 +221,7 @@ void sneaky_spirits_engine_event_stub(void) {
 // Engine Event 01 (Set Next Vertical Position)
 void sneaky_spirits_set_ghost_height(u32 height) {
     gSneakySpirits->ghostHeight = height;
-    func_0800c4b0(1, beats_to_ticks(0xc), &D_030053c0.musicVolume, D_030053c0.musicVolume, height);
+    func_0800c4b0(1, ticks_to_frames(0xc), &D_030053c0.musicVolume, D_030053c0.musicVolume, height);
 }
 
 
@@ -311,7 +311,7 @@ void sneaky_spirits_cue_spawn(struct Cue *cue, struct SneakySpiritsCue *info, u3
 
 // Cue - Update
 u32 sneaky_spirits_cue_update(struct Cue *cue, struct SneakySpiritsCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > beats_to_ticks(0x30)) {
+    if (runningTime > ticks_to_frames(0x30)) {
         return TRUE;
     } else {
         return FALSE;
@@ -355,11 +355,11 @@ void sneaky_spirits_cue_hit(struct Cue *cue, struct SneakySpiritsCue *info, u32 
         scene_set_music_pitch_env(-0xc00);      // Set Music Pitch (-0xc00 = -12 semitones; Default = 0)
         scene_set_music_track_volume((1 << 9), 0); // Set Music Channel 9 Volume to 0
 
-        duration = beats_to_ticks(0x16) - gameplay_get_last_hit_offset();
+        duration = ticks_to_frames(0x16) - gameplay_get_last_hit_offset();
         targetX = 68;
         targetY = 60;
     } else {
-        duration = beats_to_ticks(0x30) - gameplay_get_last_hit_offset();
+        duration = ticks_to_frames(0x30) - gameplay_get_last_hit_offset();
         targetX = 84;
         targetY = 68;
     }
@@ -408,7 +408,7 @@ void sneaky_spirits_cue_miss(struct Cue *cue, struct SneakySpiritsCue *info) {
 
     if (!info->disableTaunt) {
         func_0804d160(D_03005380, anim_sneaky_spirit_taunt, 0, 160, 105, 0x8792, 1, 0, 3);
-        schedule_function_call(get_current_mem_id(), play_sound, (u32)&s_ghost_warai_seqData, beats_to_ticks(0x0C));
+        schedule_function_call(get_current_mem_id(), play_sound, (u32)&s_ghost_warai_seqData, ticks_to_frames(0x0C));
     }
 
     play_sound(&s_ghost_dash_seqData);

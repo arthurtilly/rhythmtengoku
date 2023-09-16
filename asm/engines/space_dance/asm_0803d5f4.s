@@ -28,7 +28,7 @@ thumb_func_start space_dance_cue_hit \n\
 /* 0803d622 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803d624 */ BL func_0804d8f8 \n\
 /* 0803d628 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0803d62a */ BL beats_to_ticks \n\
+/* 0803d62a */ BL ticks_to_frames \n\
 /* 0803d62e */ LDR R1, [R5] \n\
 /* 0803d630 */ STRH R0, [R1, 0x14] \n\
 /* 0803d632 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
@@ -40,7 +40,7 @@ thumb_func_start space_dance_cue_hit \n\
 /* 0803d642 */ LSRS R4, R4, 0x10 \n\
 /* 0803d644 */ LDR R5, =func_0803d5e4 \n\
 /* 0803d646 */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0803d648 */ BL beats_to_ticks \n\
+/* 0803d648 */ BL ticks_to_frames \n\
 /* 0803d64c */ ADDS R3, R0, 0x0 @ Set R3 to R0 + 0x0 \n\
 /* 0803d64e */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0803d650 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\

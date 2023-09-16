@@ -34,7 +34,7 @@ thumb_func_start func_0803c9f8 \n\
 /* 0803ca36 */ CMP R7, 0x0 @ Compare R7 and 0x0 \n\
 /* 0803ca38 */ BEQ branch_0803ca6c \n\
 /* 0803ca3a */ ADDS R0, R7, 0x0 @ Set R0 to R7 + 0x0 \n\
-/* 0803ca3c */ BL beats_to_ticks \n\
+/* 0803ca3c */ BL ticks_to_frames \n\
 /* 0803ca40 */ LSLS R0, R0, 0x10 \n\
 /* 0803ca42 */ LSRS R0, R0, 0x10 \n\
 /* 0803ca44 */ LDR R1, [R5] \n\

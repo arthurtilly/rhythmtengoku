@@ -35,7 +35,7 @@ thumb_func_start func_0803f400 \n\
  \n\
 branch_0803f43e: \n\
 /* 0803f43e */ LDRH R0, [R7, 0x4] \n\
-/* 0803f440 */ BL beats_to_ticks \n\
+/* 0803f440 */ BL ticks_to_frames \n\
 /* 0803f444 */ SUBS R1, R6, 0x5 @ Set R1 to R6 - 0x5 \n\
 /* 0803f446 */ SUBS R0, R0, R1 @ Set R0 to R0 - R1 \n\
 /* 0803f448 */ LDR R2, =gCurrentEngineData \n\

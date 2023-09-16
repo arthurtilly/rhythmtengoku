@@ -81,7 +81,7 @@ branch_0803f9fe: \n\
 /* 0803fa36 */ STR R4, [SP, 0x8] \n\
 /* 0803fa38 */ BL func_0804d8f8 \n\
 /* 0803fa3c */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0803fa3e */ BL beats_to_ticks \n\
+/* 0803fa3e */ BL ticks_to_frames \n\
 /* 0803fa42 */ LDR R1, [R5] \n\
 /* 0803fa44 */ LDR R5, =0x35a \n\
 /* 0803fa46 */ ADDS R1, R1, R5 @ Set R1 to R1 + R5 \n\

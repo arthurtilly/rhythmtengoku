@@ -51,7 +51,7 @@ branch_0802ddb8: \n\
 /* 0802ddd8 */ MOVS R5, 0x0 @ Set R5 to 0x0 \n\
 /* 0802ddda */ STRH R6, [R7, 0xA] \n\
 /* 0802dddc */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0802ddde */ BL beats_to_ticks \n\
+/* 0802ddde */ BL ticks_to_frames \n\
 /* 0802dde2 */ STRH R0, [R7, 0xC] \n\
 /* 0802dde4 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 0802dde6 */ STRB R1, [R7, 0xE] \n\
@@ -60,7 +60,7 @@ branch_0802ddb8: \n\
 /* 0802ddec */ SUBS R4, 0x1 @ Subtract 0x1 from R4 \n\
 /* 0802ddee */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0802ddf0 */ MULS R0, R6 @ Multiply R0 by R6 \n\
-/* 0802ddf2 */ BL beats_to_ticks \n\
+/* 0802ddf2 */ BL ticks_to_frames \n\
 /* 0802ddf6 */ STR R0, [R7, 0x18] \n\
 /* 0802ddf8 */ LDR R4, =gCurrentEngineData \n\
 /* 0802ddfa */ LDR R0, [R4] \n\

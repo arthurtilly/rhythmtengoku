@@ -96,7 +96,7 @@ void polyrhythm_cue_spawn(struct Cue *cue, struct PolyrhythmCue *info, u32 lane)
 
 // Cue - Update
 u32 polyrhythm_cue_update(struct Cue *cue, struct PolyrhythmCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > (duration + beats_to_ticks(0x0C))) {
+    if (runningTime > (duration + ticks_to_frames(0x0C))) {
         return TRUE;
     }
     return FALSE;
@@ -416,7 +416,7 @@ void func_08036630(struct PolyrhythmRod *rod) {
     func_0804d55c(D_03005380, rod->sprite, x, y, z);
     func_0804d770(D_03005380, rod->sprite, TRUE);
     rod->runningTime++;
-    if (rod->runningTime > (rod->maxDuration - beats_to_ticks(0x18))) {
+    if (rod->runningTime > (rod->maxDuration - ticks_to_frames(0x18))) {
         rod->active = FALSE;
     }
 }
@@ -492,10 +492,10 @@ void polyrhythm_spawn_rod(u32 lane) {
     rod->horizontal = 0;
     rod->yOffset = 16;
     rod->runningTime = 0;
-    rod->maxDuration = beats_to_ticks(0x120);
+    rod->maxDuration = ticks_to_frames(0x120);
     rod->lane = lane;
     rod->unk0_b4 = 0;
-    rod->timeUntilExplosion = beats_to_ticks(0x18);
+    rod->timeUntilExplosion = ticks_to_frames(0x18);
     func_0804dae0(D_03005380, rod->sprite, 1, 0, 0);
     func_0804dcb8(D_03005380, rod->sprite, INT_TO_FIXED(2.0));
 }

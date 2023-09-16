@@ -329,7 +329,7 @@ void sick_beats_update_forks(void) {
 // Set Fork Counter
 void sick_beats_set_fork_counter(u32 input) {
     struct SickBeatsForks *forks = &gSickBeats->forks;
-    u32 forkCounter = beats_to_ticks(30);
+    u32 forkCounter = ticks_to_frames(30);
 
     if (input & DPAD_UP) {
         forks->counterUp = forkCounter;
@@ -421,7 +421,7 @@ void sick_beats_set_yellow_microbe_state(u32 state) {
 
     yellowMicrobe->state = state;
     yellowMicrobe->isHurt = FALSE;
-    yellowMicrobe->eventTimer = beats_to_ticks(sick_beats_microbe_event_durations[state]);
+    yellowMicrobe->eventTimer = ticks_to_frames(sick_beats_microbe_event_durations[state]);
 }
 
 // Graphics Init. 3
@@ -632,14 +632,14 @@ u32 sick_beats_cue_update(struct Cue *cue, struct SickBeatsCue *info, u32 runnin
         return TRUE;
     }
 
-    if (runningTime > beats_to_ticks(120)) {
+    if (runningTime > ticks_to_frames(120)) {
         return TRUE;
     }
 
     switch (info->virusState) {
         case SICK_BEATS_VIRUS_STATE_ENTER_TUBE:
-            affine_sprite_set_x(info->virusSprite, math_lerp(256, 176, runningTime, beats_to_ticks(24)));
-            if (runningTime > beats_to_ticks(24)) {
+            affine_sprite_set_x(info->virusSprite, math_lerp(256, 176, runningTime, ticks_to_frames(24)));
+            if (runningTime > ticks_to_frames(24)) {
                 return TRUE;
             }
             break;
@@ -648,7 +648,7 @@ u32 sick_beats_cue_update(struct Cue *cue, struct SickBeatsCue *info, u32 runnin
         case SICK_BEATS_VIRUS_STATE_LEFT_APPEAR:
         case SICK_BEATS_VIRUS_STATE_DOWN_APPEAR:
         case SICK_BEATS_VIRUS_STATE_RIGHT_APPEAR:
-            if (runningTime > beats_to_ticks(24)) {
+            if (runningTime > ticks_to_frames(24)) {
                 return TRUE;
             }
             break;
@@ -657,24 +657,24 @@ u32 sick_beats_cue_update(struct Cue *cue, struct SickBeatsCue *info, u32 runnin
         case SICK_BEATS_VIRUS_STATE_LEFT_DASH_VULN:
         case SICK_BEATS_VIRUS_STATE_DOWN_DASH_VULN:
         case SICK_BEATS_VIRUS_STATE_RIGHT_DASH_VULN:
-            if (!info->isVirusHitOnce && (runningTime > beats_to_ticks(24))) {
+            if (!info->isVirusHitOnce && (runningTime > ticks_to_frames(24))) {
                 info->isVirusHitOnce = TRUE;
                 play_sound(&s_virus_dash_seqData);
             }
-            if (runningTime > beats_to_ticks(48)) {
+            if (runningTime > ticks_to_frames(48)) {
                 return TRUE;
             }
             break;
 
         case SICK_BEATS_VIRUS_STATE_ATTACK_MICROBE:
-            affine_sprite_set_y(info->virusSprite, math_lerp(104, 138, runningTime, beats_to_ticks(48)));
-            if (!info->isVirusHitOnce && (runningTime > beats_to_ticks(40))) {
+            affine_sprite_set_y(info->virusSprite, math_lerp(104, 138, runningTime, ticks_to_frames(48)));
+            if (!info->isVirusHitOnce && (runningTime > ticks_to_frames(40))) {
                 info->isVirusHitOnce = TRUE;
                 if (!gSickBeats->microbeWasHurt) {
                     sick_beats_set_yellow_microbe_state(SICK_BEATS_MICROBE_STATE_HURT);
                 }
             }
-            if (runningTime > beats_to_ticks(48)) {
+            if (runningTime > ticks_to_frames(48)) {
                 virus->exists[info->currentVirus] = FALSE;
                 play_sound(&s_virus_miss_seqData);
                 return TRUE;
@@ -856,7 +856,7 @@ void sick_beats_common_beat_animation(void) {
         gSickBeats->doctorCurrentState = SICK_BEATS_DOCTOR_STATE_BEAT;
         sick_beats_set_next_doctor_state(SICK_BEATS_DOCTOR_STATE_BEAT);
     }
-    gSickBeats->doctorBeatCounter = beats_to_ticks(12);
+    gSickBeats->doctorBeatCounter = ticks_to_frames(12);
     if (yellowMicrobe->state == SICK_BEATS_MICROBE_STATE_BEAT) {
         func_0804cebc(D_03005380, yellowMicrobe->sprite, 0);
     }

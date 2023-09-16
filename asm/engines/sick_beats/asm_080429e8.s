@@ -78,7 +78,7 @@ thumb_func_start func_080429e8 \n\
 /* 08042a88 */ LSLS R6, R6, 0x10 \n\
 /* 08042a8a */ ASRS R6, R6, 0x10 \n\
 /* 08042a8c */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 08042a8e */ BL beats_to_ticks \n\
+/* 08042a8e */ BL ticks_to_frames \n\
 /* 08042a92 */ MOV R8, R0 @ Set R8 to R0 \n\
 /* 08042a94 */ MOVS R0, 0x1E @ Set R0 to 0x1E \n\
 /* 08042a96 */ BL agb_random \n\
@@ -100,7 +100,7 @@ thumb_func_start func_080429e8 \n\
 /* 08042aba */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08042abc */ BL run_func_after_task \n\
 /* 08042ac0 */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\
-/* 08042ac2 */ BL beats_to_ticks \n\
+/* 08042ac2 */ BL ticks_to_frames \n\
 /* 08042ac6 */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 08042ac8 */ MOVS R0, 0xB4 @ Set R0 to 0xB4 \n\
 /* 08042aca */ BL agb_random \n\

@@ -25,7 +25,7 @@ branch_08034960: \n\
 /* 08034970 */ EORS R0, R2 @ Set R0 to R0 ^ R2 \n\
 /* 08034972 */ STRB R0, [R1] \n\
 /* 08034974 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 08034976 */ BL beats_to_ticks \n\
+/* 08034976 */ BL ticks_to_frames \n\
 /* 0803497a */ LDR R1, [R4] \n\
 /* 0803497c */ STRH R0, [R1, 0x3A] \n\
 /* 0803497e */ POP {R4} \n\

@@ -60,7 +60,7 @@ void start_studio_mus_remix2(void) {
     struct SoundPlayer *player;
 
     player = play_sound_in_player(MUSIC_PLAYER_1, &L2_pat00_seqData);
-    fade_in_soundplayer(player, beats_to_ticks(0x60));
+    fade_in_soundplayer(player, ticks_to_frames(0x60));
 }
 
 

@@ -6,7 +6,7 @@ thumb_func_start mr_upbeat_cue_update \n\
 /* 08035338 */ PUSH {R4, LR} \n\
 /* 0803533a */ ADDS R4, R2, 0x0 @ Set R4 to R2 + 0x0 \n\
 /* 0803533c */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\
-/* 0803533e */ BL beats_to_ticks \n\
+/* 0803533e */ BL ticks_to_frames \n\
 /* 08035342 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 08035344 */ BHI branch_0803534a \n\
 /* 08035346 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

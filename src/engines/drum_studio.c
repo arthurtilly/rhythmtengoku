@@ -1102,7 +1102,7 @@ void drum_studio_engine_update(void) {
                 if (gDrumStudio->unk41C < 30) {
                     gDrumStudio->unk45A = 30;
                 }
-                gDrumStudio->unk41C = beats_to_ticks(0x5A);
+                gDrumStudio->unk41C = ticks_to_frames(0x5A);
             }
         }
     }
@@ -1156,7 +1156,7 @@ void drum_studio_cue_spawn(struct Cue *cue, struct DrumLessonsCue *info, u32 dru
 
 // Cue - Update
 u32 drum_studio_cue_update(struct Cue *cue, struct DrumLessonsCue *info, u32 runningTime, u32 duration) {
-    if ((runningTime > beats_to_ticks(0x18)) && !info->bit0) {
+    if ((runningTime > ticks_to_frames(0x18)) && !info->bit0) {
         if (gDrumStudio->unk41C == 0) {
             if (gDrumStudio->unk3C1) {
                 func_080271a8(D_089e2ba8[info->drum]);
@@ -1167,7 +1167,7 @@ u32 drum_studio_cue_update(struct Cue *cue, struct DrumLessonsCue *info, u32 run
         info->bit0 = TRUE;
     }
 
-    if (runningTime > beats_to_ticks(0x30)) {
+    if (runningTime > ticks_to_frames(0x30)) {
         return TRUE;
     } else {
         return FALSE;

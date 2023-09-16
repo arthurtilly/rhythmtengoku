@@ -10,7 +10,7 @@ thumb_func_start func_08030f04 \n\
 /* 08030f0c */ LDR R0, [R0] \n\
 /* 08030f0e */ STR R4, [R0, 0x8] \n\
 /* 08030f10 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 08030f12 */ BL beats_to_ticks \n\
+/* 08030f12 */ BL ticks_to_frames \n\
 /* 08030f16 */ ADDS R1, R0, 0x0 @ Set R1 to R0 + 0x0 \n\
 /* 08030f18 */ LDR R2, =(D_030053c0 + 0x190) \n\
 /* 08030f1a */ LDRH R3, [R2] \n\

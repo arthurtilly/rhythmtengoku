@@ -7,7 +7,7 @@ thumb_func_start mechanical_horse_cue_update \n\
 /* 080427b2 */ ADDS R5, R1, 0x0 @ Set R5 to R1 + 0x0 \n\
 /* 080427b4 */ ADDS R4, R2, 0x0 @ Set R4 to R2 + 0x0 \n\
 /* 080427b6 */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 080427b8 */ BL beats_to_ticks \n\
+/* 080427b8 */ BL ticks_to_frames \n\
 /* 080427bc */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 080427be */ BLS branch_080427c4 \n\
 /* 080427c0 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
@@ -18,7 +18,7 @@ branch_080427c4: \n\
 /* 080427c6 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 080427c8 */ BNE branch_080427de \n\
 /* 080427ca */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 080427cc */ BL beats_to_ticks \n\
+/* 080427cc */ BL ticks_to_frames \n\
 /* 080427d0 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 080427d2 */ BCC branch_080427de \n\
 /* 080427d4 */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\

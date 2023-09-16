@@ -75,7 +75,7 @@ branch_0803582a: \n\
  \n\
 branch_0803585c: \n\
 /* 0803585c */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 0803585e */ BL beats_to_ticks \n\
+/* 0803585e */ BL ticks_to_frames \n\
 /* 08035862 */ LSLS R0, R0, 0x10 \n\
 /* 08035864 */ LSRS R0, R0, 0x10 \n\
 /* 08035866 */ LSLS R4, R4, 0x10 \n\
@@ -87,7 +87,7 @@ branch_0803585c: \n\
  \n\
 branch_08035874: \n\
 /* 08035874 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 08035876 */ BL beats_to_ticks \n\
+/* 08035876 */ BL ticks_to_frames \n\
 /* 0803587a */ LSLS R0, R0, 0x10 \n\
 /* 0803587c */ LSRS R0, R0, 0x10 \n\
 /* 0803587e */ LSLS R4, R4, 0x10 \n\

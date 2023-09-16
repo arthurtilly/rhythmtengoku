@@ -654,10 +654,10 @@ void gameplay_spawn_cue(s32 id) {
     newCue->runningTime = 0;
 
     if (gGameplay->nextCueDuration != 0) {
-        newCue->duration = beats_to_ticks(gGameplay->nextCueDuration);
+        newCue->duration = ticks_to_frames(gGameplay->nextCueDuration);
         gGameplay->nextCueDuration = 0;
     } else {
-        newCue->duration = beats_to_ticks(cueDef->duration);
+        newCue->duration = ticks_to_frames(cueDef->duration);
     }
 
     newCue->spawnSfx  = ((gGameplay->nextCueSpawnSfx != NULL)  ? gGameplay->nextCueSpawnSfx  : cueDef->spawnSfx);
@@ -752,7 +752,7 @@ void gameplay_update_cue(struct Cue *cue) {
     cue->runningTime++;
     gGameplay->ignoreThisCueResult = FALSE;
     if (cueDef->tempoDependent) {
-        missTimeOffset = beats_to_ticks(cueDef->missWindowLate);
+        missTimeOffset = ticks_to_frames(cueDef->missWindowLate);
     } else {
         missTimeOffset = cueDef->missWindowLate;
     }
@@ -812,10 +812,10 @@ s32 gameplay_calculate_input_timing(struct Cue *cue, u16 pressed, u16 released, 
     duration = cue->duration;
 
     if (cueDef->tempoDependent) { // Used by the Rhythm Test, Mr. Upbeat, and the unused drumming tutorials.
-        hitEarly = beats_to_ticks(cueDef->hitWindowEarly);
-        hitLate = beats_to_ticks(cueDef->hitWindowLate);
-        missEarly = beats_to_ticks(cueDef->missWindowEarly);
-        missLate = beats_to_ticks(cueDef->missWindowLate);
+        hitEarly = ticks_to_frames(cueDef->hitWindowEarly);
+        hitLate = ticks_to_frames(cueDef->hitWindowLate);
+        missEarly = ticks_to_frames(cueDef->missWindowEarly);
+        missLate = ticks_to_frames(cueDef->missWindowLate);
     } else {
         hitEarly = cueDef->hitWindowEarly;
         hitLate = cueDef->hitWindowLate;
@@ -944,7 +944,7 @@ void gameplay_update_inputs(u32 pressed, u32 released) {
         if (gGameplay->gameEngine->inputFunc != NULL) {
             gGameplay->gameEngine->inputFunc(unrelatedInputs & 0xffff, unrelatedInputs >> 16);
         }
-        gGameplay->missPunishmentTimer = beats_to_ticks(gGameplay->missPunishmentInterval);
+        gGameplay->missPunishmentTimer = ticks_to_frames(gGameplay->missPunishmentInterval);
     }
 }
 

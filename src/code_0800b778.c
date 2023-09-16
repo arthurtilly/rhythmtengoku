@@ -172,7 +172,7 @@ void set_beatscript_subscenes(const struct SubScene **subScenes) {
         set_current_mem_id(D_030053c0.currentThread + 1);
         D_030053c0.threads[i].active = TRUE;
         D_030053c0.threads[i].subScene = subScenes[i];
-        D_030053c0.threads[i].current = subScenes[i]->script;
+        D_030053c0.threads[i].currentCmd = subScenes[i]->script;
         D_030053c0.threads[i].timeUntilNext = 0;
         D_030053c0.threads[i].stackCounter = 0;
         D_03005588 = &D_030053c0.localVariables[i];
@@ -336,7 +336,7 @@ void beatscript_exit_loop_after_delay(u32 duration) {
     }
 
     if (!D_030053c0.exitLoopNextUpdate) {
-        schedule_function_call(get_current_mem_id(), beatscript_exit_loop_after_delay_callback, 0, beats_to_ticks(duration));
+        schedule_function_call(get_current_mem_id(), beatscript_exit_loop_after_delay_callback, 0, ticks_to_frames(duration));
 
         if (D_030053c0.mode == 1) {
             func_0800c3ec(2);
@@ -810,7 +810,7 @@ u32 func_0800c398(void) {
 
 
 // Convert Script Tatums to Real-Time Frames
-s32 beats_to_ticks(u32 beats) {
+s32 ticks_to_frames(u32 beats) {
     fast_divsi3(INT_TO_FIXED(beats), D_030053c0.deltaTime);
 }
 
@@ -821,10 +821,10 @@ u32 get_current_mem_id() {
 }
 
 
-// Set Current Active Thread (Memory ID / SubScene)
-void set_current_mem_id(u32 id) {
-    D_03001310[0] = id;
-    func_0804e0bc(D_03005380, id);
+// Set Current Memory ID / SubScene
+void set_current_mem_id(u32 memID) {
+    D_03001310[0] = memID;
+    func_0804e0bc(D_03005380, memID);
 }
 
 
@@ -1080,27 +1080,234 @@ void func_0800c6e0_stub(void) {
 }
 
 
-#include "asm/code_0800b778/asm_0800c6e4.s"
+// Beatscript Stream - IF Statement Failed
+struct Beatscript *beatscript_stream_jump_cond_if(struct Beatscript *currentCmd) {
+    s32 depth = 0;
+    s32 command;
+
+    while (TRUE) {
+        command = currentCmd->command;
+        currentCmd++;
+
+        switch (command) {
+            case BS_CMD_IF_EQ:
+            case BS_CMD_IF_NEQ:
+            case BS_CMD_IF_SET:
+            case BS_CMD_IF_CLEAR:
+            case BS_CMD_3B:
+            case BS_CMD_44:
+            case BS_CMD_45:
+            case BS_CMD_4B:
+            case BS_CMD_4D:
+            case BS_CMD_51:
+            case BS_CMD_52:
+                depth++;
+                continue;
+
+            case BS_CMD_ELSE:
+                if (depth == 0) {
+                    return currentCmd;
+                }
+                continue;
+
+            case BS_CMD_END_IF:
+                if (depth == 0) {
+                    return currentCmd;
+                }
+                depth--;
+                continue;
+        }
+    }
+}
 
 
-#include "asm/code_0800b778/asm_0800c824.s"
+// Beatscript Stream - ELSE Statement Jump
+struct Beatscript *beatscript_stream_jump_cond_else(struct Beatscript *currentCmd) {
+    s32 depth = 0;
+    s32 command;
+
+    while (TRUE) {
+        command = currentCmd->command;
+        currentCmd++;
+
+        switch (command) {
+            case BS_CMD_IF_EQ:
+            case BS_CMD_IF_NEQ:
+            case BS_CMD_IF_SET:
+            case BS_CMD_IF_CLEAR:
+            case BS_CMD_3B:
+            case BS_CMD_44:
+            case BS_CMD_45:
+            case BS_CMD_4B:
+            case BS_CMD_4D:
+            case BS_CMD_51:
+            case BS_CMD_52:
+                depth++;
+                continue;
+
+            case BS_CMD_END_IF:
+                if (depth == 0) {
+                    return currentCmd;
+                }
+                depth--;
+                continue;
+        }
+    }
+}
 
 
-#include "asm/code_0800b778/asm_0800c95c.s"
+// Beatscript Stream - SWITCH Statement Start
+struct Beatscript *beatscript_stream_jump_cond_switch(struct Beatscript *currentCmd, s32 arg) {
+    s32 depth = 0;
+    s32 command;
+    s32 caseValue;
+
+    while (TRUE) {
+        command = currentCmd->command;
+        caseValue = currentCmd->param3;
+        currentCmd++;
+
+        switch (command) {
+            case BS_CMD_SWITCH:
+                depth++;
+                continue;
+
+            case BS_CMD_CASE:
+                if ((depth == 0) && (caseValue == arg)) {
+                    return currentCmd;
+                }
+                continue;
+
+            case BS_CMD_DEFAULT_CASE:
+                if (depth == 0) {
+                    return currentCmd;
+                }
+                continue;
+
+            case BS_CMD_END_SWITCH:
+                if (depth == 0) {
+                    return currentCmd;
+                }
+                depth--;
+                continue;
+        }
+    }
+}
 
 
-#include "asm/code_0800b778/asm_0800c9a4.s"
+// Beatscript Stream - BREAK Statement Jump
+struct Beatscript *beatscript_stream_jump_cond_break(struct Beatscript *currentCmd) {
+    s32 depth = 0;
+    s32 command;
+
+    while (TRUE) {
+        command = currentCmd->command;
+        currentCmd++;
+
+        switch (command) {
+            case BS_CMD_SWITCH:
+                depth++;
+                continue;
+
+            case BS_CMD_END_SWITCH:
+                if (depth == 0) {
+                    return currentCmd;
+                }
+                depth--;
+                continue;
+        }
+    }
+}
 
 
-#include "asm/code_0800b778/asm_0800c9c8.s"
+// Beatscript Stream - WHILE Statement Failed
+struct Beatscript *beatscript_stream_jump_cond_while(struct Beatscript *currentCmd) {
+    s32 depth = 0;
+    s32 command;
+
+    while (TRUE) {
+        command = currentCmd->command;
+        currentCmd++;
+
+        switch (command) {
+            case BS_CMD_WHILE_EQ:
+            case BS_CMD_WHILE_NEQ:
+            case BS_CMD_SCENE_WHILE_EQ:
+            case BS_CMD_SCENE_WHILE_NEQ:
+                depth++;
+                continue;
+
+            case BS_CMD_END_WHILE:
+                if (depth == 0) {
+                    return currentCmd;
+                }
+                depth--;
+                continue;
+        }
+    }
+}
 
 
-#include "asm/code_0800b778/asm_0800ca1c.s"
+// Beatscript Stream - END_WHILE Statement Jump
+struct Beatscript *beatscript_stream_jump_cond_end_while(struct Beatscript *currentCmd) {
+    s32 depth = 0;
+    s32 command;
+
+    while (TRUE) {
+        currentCmd--;
+        command = currentCmd->command;
+
+        switch (command) {
+            case BS_CMD_END_WHILE:
+                depth++;
+                continue;
+
+            case BS_CMD_WHILE_EQ:
+            case BS_CMD_WHILE_NEQ:
+            case BS_CMD_SCENE_WHILE_EQ:
+            case BS_CMD_SCENE_WHILE_NEQ:
+                if (depth == 0) {
+                    return currentCmd;
+                }
+                depth--;
+                continue;
+        }
+    }
+}
 
 
-#include "asm/code_0800b778/asm_0800ca70.s"
+// Beatscript Stream - Get Sprite for Motion Task
+s16 beatscript_stream_get_sprite_for_motion(s16 *spritePool, s16 args, s16 *destX, s16 *destY) {
+    s16 sprite;
+    s16 x, y;
+    u32 relativeDest;
+
+    if (args < 0) {
+        return -1;
+    }
+
+    sprite = spritePool[args & ~(1 << 6)];
+    x = func_0804ddb0(D_03005380, sprite, 4);
+    y = func_0804ddb0(D_03005380, sprite, 5);
+    relativeDest = args & (1 << 6);
+
+    if (*destX == 0x7FFF) {
+        *destX = x;
+    } else if (relativeDest) {
+        *destX += x;
+    }
+
+    if (*destY == 0x7FFF) {
+        *destY = y;
+    } else if (relativeDest) {
+        *destY += y;
+    }
+
+    return sprite;
+}
 
 
+// Beatscript Stream - Update
 #include "asm/code_0800b778/asm_0800cb28.s"
 
 
@@ -1560,7 +1767,7 @@ void func_0800e970(void) {
         return;
     }
 
-    D_030053c0.unk16C += 0x10000 / (u32)beats_to_ticks(D_030053c0.unk16A);
+    D_030053c0.unk16C += 0x10000 / (u32)ticks_to_frames(D_030053c0.unk16A);
     angle = FIXED_TO_INT(D_030053c0.unk16C);
     value = FIXED_POINT_MUL(D_030053c0.unk168, sins2(angle));
     scene_set_music_pitch_env(FIXED_POINT_MUL(func_0800eaa0(), value));
@@ -1623,7 +1830,7 @@ s32 func_0800eaa0(void) {
     }
 
     out = D_030053c0.unk170;
-    inc = 0x10000 / beats_to_ticks(D_030053c0.unk16E);
+    inc = 0x10000 / ticks_to_frames(D_030053c0.unk16E);
 
     if (D_030053c0.unk1_b6) {
         out -= inc;

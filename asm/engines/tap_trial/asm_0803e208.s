@@ -26,7 +26,7 @@ thumb_func_start func_0803e208 \n\
 /* 0803e232 */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
 /* 0803e234 */ BL func_0804d8f8 \n\
 /* 0803e238 */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
-/* 0803e23a */ BL beats_to_ticks \n\
+/* 0803e23a */ BL ticks_to_frames \n\
 /* 0803e23e */ LDR R1, [R5] \n\
 /* 0803e240 */ STRH R0, [R1, 0x1C] \n\
 /* 0803e242 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

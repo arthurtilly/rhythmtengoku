@@ -59,7 +59,7 @@ struct BeatscriptThread {
     u8 startDelay:2;
     u8 unk0_b7:1;
     const struct SubScene *subScene;
-    const struct Beatscript *current;
+    const struct Beatscript *currentCmd;
     s24_8 timeUntilNext; // Time until next instruction (in Q24.8 Beats)
     const struct Beatscript *jumpStack[8];
     u8 unk30[0x20];

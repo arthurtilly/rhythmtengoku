@@ -300,7 +300,7 @@ void start_campaign_notice(s32 id) {
     func_0804d770(D_03005380, gGameSelect->selectionBorderSprite, FALSE);
     notice->textAdvDelay = 10;
     notice->noticeDelay = 60;
-    scene_interpolate_music_volume(100, beats_to_ticks(0x18));
+    scene_interpolate_music_volume(100, ticks_to_frames(0x18));
     gGameSelect->sceneState = GS_STATE_DISPLAYING_CAMPAIGN;
 }
 
@@ -371,7 +371,7 @@ void update_campaign_notice(void) {
             func_0804d770(D_03005380, gGameSelect->selectionBorderSprite, TRUE);
             gGameSelect->hideStageTitle = FALSE;
             play_sound(&s_menu_kettei2_seqData);
-            scene_interpolate_music_volume(INT_TO_FIXED(1.0), beats_to_ticks(0x18));
+            scene_interpolate_music_volume(INT_TO_FIXED(1.0), ticks_to_frames(0x18));
             gGameSelect->sceneState = GS_STATE_MAIN;
         }
     }

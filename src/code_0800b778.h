@@ -10,6 +10,190 @@
 /* BEATSCRIPT SCENE HANDLER */
 
 
+// Beatscript Commands
+enum BeatscriptCommandsEnum {
+    /* 00 */ BS_CMD_REST,
+    /* 01 */ BS_CMD_STOP,
+    /* 02 */ BS_CMD_SCENE_RUN,
+    /* 03 */ BS_CMD_RUN_1ARG,
+    /* 04 */ BS_CMD_RUN_2ARG,
+    /* 05 */ BS_CMD_SET_INT,
+    /* 06 */ BS_CMD_ADD_INT,
+    /* 07 */ BS_CMD_SET_BIT,
+    /* 08 */ BS_CMD_CLEAR_BIT,
+    /* 09 */ BS_CMD_SCENE_SET_INT,
+    /* 0A */ BS_CMD_SCENE_ADD_INT,
+    /* 0B */ BS_CMD_SCENE_SET_BIT,
+    /* 0C */ BS_CMD_SCENE_CLEAR_BIT,
+    /* 0D */ BS_CMD_CALL,
+    /* 0E */ BS_CMD_RETURN,
+    /* 0F */ BS_CMD_GOTO,
+    /* 10 */ BS_CMD_LOOP_START,
+    /* 11 */ BS_CMD_LOOP_END,
+    /* 12 */ BS_CMD_IF_EQ,
+    /* 13 */ BS_CMD_IF_NEQ,
+    /* 14 */ BS_CMD_ELSE,
+    /* 15 */ BS_CMD_END_IF,
+    /* 16 */ BS_CMD_IF_SET,
+    /* 17 */ BS_CMD_IF_CLEAR,
+    /* 18 */ BS_CMD_18,
+    /* 19 */ BS_CMD_19,
+    /* 1A */ BS_CMD_SWITCH,
+    /* 1B */ BS_CMD_END_SWITCH,
+    /* 1C */ BS_CMD_CASE,
+    /* 1D */ BS_CMD_BREAK,
+    /* 1E */ BS_CMD_WHILE_NEQ,
+    /* 1F */ BS_CMD_WHILE_EQ,
+    /* 20 */ BS_CMD_END_WHILE,
+    /* 21 */ BS_CMD_SCENE_IF_EQ,
+    /* 22 */ BS_CMD_SCENE_IF_NEQ,
+    /* 23 */ BS_CMD_SCENE_SWITCH,
+    /* 24 */ BS_CMD_SCENE_WHILE_EQ,
+    /* 25 */ BS_CMD_SCENE_WHILE_NEQ,
+    /* 26 */ BS_CMD_26,
+    /* 27 */ BS_CMD_27,
+    /* 28 */ BS_CMD_PLAY_MUSIC,
+    /* 29 */ BS_CMD_PLAY_SFX,
+    /* 2A */ BS_CMD_2A,
+    /* 2B */ BS_CMD_2B,
+    /* 2C */ BS_CMD_2C,
+    /* 2D */ BS_CMD_2D,
+    /* 2E */ BS_CMD_2E,
+    /* 2F */ BS_CMD_2F,
+    /* 30 */ BS_CMD_30,
+    /* 31 */ BS_CMD_31,
+    /* 32 */ BS_CMD_32,
+    /* 33 */ BS_CMD_33,
+    /* 34 */ BS_CMD_34,
+    /* 35 */ BS_CMD_FADE_MUSIC_IN,
+    /* 36 */ BS_CMD_FADE_MUSIC_OUT,
+    /* 37 */ BS_CMD_37,
+    /* 38 */ BS_CMD_FADE_SFX_OUT,
+    /* 39 */ BS_CMD_LOAD_GRAPHICS,
+    /* 3A */ BS_CMD_ADD_MUSIC,
+    /* 3B */ BS_CMD_3B,
+    /* 3C */ BS_CMD_SET_SPEED,
+    /* 3D */ BS_CMD_SET_MUSIC_PITCH_S,
+    /* 3E */ BS_CMD_SET_MUSIC_PITCH,
+    /* 3F */ BS_CMD_INTERP_LCD_BLEND,
+    /* 40 */ BS_CMD_CHANGE_PALETTE,
+    /* 41 */ BS_CMD_SET_BG_REG,
+    /* 42 */ BS_CMD_INTERP_NUMBER_LINEAR,
+    /* 43 */ BS_CMD_43,
+    /* 44 */ BS_CMD_44,
+    /* 45 */ BS_CMD_45,
+    /* 46 */ BS_CMD_46,
+    /* 47 */ BS_CMD_LOAD_GRAPHICS_ASYNC,
+    /* 48 */ BS_CMD_SET_BACKDROP,
+    /* 49 */ BS_CMD_SET_VIDEO_MODE,
+    /* 4A */ BS_CMD_FADE_SCREEN,
+    /* 4B */ BS_CMD_4B,
+    /* 4C */ BS_CMD_INTERP_TEMPO,
+    /* 4D */ BS_CMD_4D,
+    /* 4E */ BS_CMD_INTERP_MUSIC_PITCH,
+    /* 4F */ BS_CMD_DEFAULT_CASE,
+    /* 50 */ BS_CMD_INTERP_MUSIC_VOLUME,
+    /* 51 */ BS_CMD_51,
+    /* 52 */ BS_CMD_52,
+    /* 53 */ BS_CMD_53,
+    /* 54 */ BS_CMD_54,
+    /* 55 */ BS_CMD_55,
+    /* 56 */ BS_CMD_56,
+    /* 57 */ BS_CMD_57,
+    /* 58 */ BS_CMD_58,
+    /* 59 */ BS_CMD_59,
+    /* 5A */ BS_CMD_5A,
+    /* 5B */ BS_CMD_5B,
+    /* 5C */ BS_CMD_5C,
+    /* 5D */ BS_CMD_5D,
+    /* 5E */ BS_CMD_5E,
+    /* 5F */ BS_CMD_5F,
+    /* 60 */ BS_CMD_60,
+    /* 61 */ BS_CMD_61,
+    /* 62 */ BS_CMD_62,
+    /* 63 */ BS_CMD_63,
+    /* 64 */ BS_CMD_64,
+    /* 65 */ BS_CMD_65,
+    /* 66 */ BS_CMD_66,
+    /* 67 */ BS_CMD_67,
+    /* 68 */ BS_CMD_68,
+    /* 69 */ BS_CMD_69,
+    /* 6A */ BS_CMD_6A,
+    /* 6B */ BS_CMD_6B,
+    /* 6C */ BS_CMD_6C,
+    /* 6D */ BS_CMD_6D,
+    /* 6E */ BS_CMD_6E,
+    /* 6F */ BS_CMD_6F,
+    /* 70 */ BS_CMD_70,
+    /* 71 */ BS_CMD_71,
+    /* 72 */ BS_CMD_72,
+    /* 73 */ BS_CMD_73,
+    /* 74 */ BS_CMD_74,
+    /* 75 */ BS_CMD_75,
+    /* 76 */ BS_CMD_76,
+    /* 77 */ BS_CMD_77,
+    /* 78 */ BS_CMD_78,
+    /* 79 */ BS_CMD_79,
+    /* 7A */ BS_CMD_7A,
+    /* 7B */ BS_CMD_7B,
+    /* 7C */ BS_CMD_7C,
+    /* 7D */ BS_CMD_7D,
+    /* 7E */ BS_CMD_7E,
+    /* 7F */ BS_CMD_7F,
+    /* 80 */ BS_CMD_SPRITE_SET_ANIM,
+    /* 81 */ BS_CMD_SPRITE_SET_FRAME,
+    /* 82 */ BS_CMD_SPRITE_SET_PLAYBACK,
+    /* 83 */ BS_CMD_SPRITE_SET_XYZ,
+    /* 84 */ BS_CMD_SPRITE_SET_XY,
+    /* 85 */ BS_CMD_SPRITE_SET_Z,
+    /* 86 */ BS_CMD_SPRITE_RENDER,
+    /* 87 */ BS_CMD_SPRITE_SET_XY_WITH_VECTOR2,
+    /* 88 */ BS_CMD_SPRITE_SET_PALETTE,
+    /* 89 */ BS_CMD_SPRITE_89,
+    /* 8A */ BS_CMD_SPRITE_8A,
+    /* 8B */ BS_CMD_SPRITE_SET_ANIM_SPEED,
+    /* 8C */ BS_CMD_SPRITE_SET_MOTION_LINEAR_INDEFINITE,
+    /* 8D */ BS_CMD_8D,
+    /* 8E */ BS_CMD_8E,
+    /* 8F */ BS_CMD_8F,
+    /* 90 */ BS_CMD_90,
+    /* 91 */ BS_CMD_91,
+    /* 92 */ BS_CMD_SPRITE_SET_MOTION_CALLBACK,
+    /* 93 */ BS_CMD_93,
+    /* 94 */ BS_CMD_94,
+    /* 95 */ BS_CMD_95,
+    /* 96 */ BS_CMD_SPRITE_ADD_XY,
+    /* 97 */ BS_CMD_SPRITE_ADD_Z,
+    /* 98 */ BS_CMD_98,
+    /* 99 */ BS_CMD_99,
+    /* 9A */ BS_CMD_9A,
+    /* 9B */ BS_CMD_9B,
+    /* 9C */ BS_CMD_9C,
+    /* 9D */ BS_CMD_SPRITE_SET_ANIM_CALLBACK,
+    /* 9E */ BS_CMD_SPRITE_DELETE,
+    /* 9F */ BS_CMD_SPRITE_DELETE_ALL,
+    /* A0 */ BS_CMD_A0,
+    /* A1 */ BS_CMD_A1,
+    /* A2 */ BS_CMD_A2,
+    /* A3 */ BS_CMD_A3,
+    /* A4 */ BS_CMD_A4,
+    /* A5 */ BS_CMD_A5,
+    /* A6 */ BS_CMD_DMA_SET,
+    /* A7 */ BS_CMD_SET_SPEED_TO_MUSIC,
+    /* A8 */ BS_CMD_SPRITE_LINK_XY_TO_BG_OFFSET,
+    /* A9 */ BS_CMD_SPRITE_A9,
+    /* AA */ BS_CMD_AA,
+    /* AB */ BS_CMD_AB,
+    /* AC */ BS_CMD_SET_MUSIC_TRACK_VOLUME,
+    /* AD */ BS_CMD_INTERP_MUSIC_TRACK_VOLUME,
+    /* AE */ BS_CMD_PLAY_SFX_SP,
+    /* AF */ BS_CMD_INCREASE_SPEED,
+    /* B0 */ BS_CMD_CALL_RESULT,
+    /* B1 */ BS_CMD_REST_RESET,
+    /* B2 */ BS_CMD_PLAY_SFX_SYNCED
+};
+
+
 // TYPES
 struct Struct_0800b71c_sub {
     u32 id:8;
@@ -90,9 +274,9 @@ extern struct SoundPlayer *scene_play_random_sound_to_tempo(struct SequenceData 
 extern void func_0800c390_stub(void);
 extern u32 func_0800c394(void);
 extern u32 func_0800c398(void);
-extern s32 beats_to_ticks(u32); // Convert Script Tatums to Real-Time Frames
-extern u32 get_current_mem_id(void); // Get Current Active Thread (Memory ID / SubScene)
-extern void set_current_mem_id(u32 id); // Set Current Active Thread (Memory ID / SubScene)
+extern s32 ticks_to_frames(u32); // Convert Script Tatums to Real-Time Frames
+extern u32 get_current_mem_id(void); // Get Current Memory ID / SubScene
+extern void set_current_mem_id(u32 memID); // Set Current Memory ID / SubScene
 extern void func_0800c3e4_stub(void);
 extern void func_0800c3e8_stub(u32 arg);
 extern void func_0800c3ec(u32 arg);
@@ -131,14 +315,14 @@ extern void func_0800c6d4_stub(void);
 extern void func_0800c6d8_stub(void);
 extern void func_0800c6dc_stub(void);
 extern void func_0800c6e0_stub(void);
-// extern ? func_0800c6e4(?); // BEATSCRIPT - IF Statement Start
-// extern ? func_0800c824(?); // BEATSCRIPT - ELSE Statement Start
-// extern ? func_0800c95c(?); // BEATSCRIPT - SWITCH Statement Start
-// extern ? func_0800c9a4(?); // BEATSCRIPT - CASE Statement End
-// extern ? func_0800c9c8(?); // BEATSCRIPT - CMD_1E/CMD_1F Statement Start ("If?")
-// extern ? func_0800ca1c(?); // BEATSCRIPT - CMD_20 Statement Start ("Else"?)
-// extern ? func_0800ca70(?);
-// extern ? func_0800cb28(?); // BEATSCRIPT - Update Stream
+extern struct Beatscript *beatscript_stream_jump_cond_if(struct Beatscript *currentCmd); // IF Statement Failed
+extern struct Beatscript *beatscript_stream_jump_cond_else(struct Beatscript *currentCmd); // ELSE Statement Jump
+extern struct Beatscript *beatscript_stream_jump_cond_switch(struct Beatscript *currentCmd, s32 arg); // SWITCH Statement Start
+extern struct Beatscript *beatscript_stream_jump_cond_break(struct Beatscript *currentCmd); // BREAK Statement Jump
+extern struct Beatscript *beatscript_stream_jump_cond_while(struct Beatscript *currentCmd); // WHILE Statement Failed
+extern struct Beatscript *beatscript_stream_jump_cond_end_while(struct Beatscript *currentCmd); // END_WHILE Statement Jump
+extern s16 beatscript_stream_get_sprite_for_motion(s16 *spritePool, s16 args, s16 *destX, s16 *destY);
+extern void func_0800cb28(u32 threadID); // Update Beatscript Stream
 extern void func_0800dfbc_stub(void);
 extern void func_0800dfc0_stub(void);
 extern s32 func_0800dfc4(void); // a very broken (and unused) function

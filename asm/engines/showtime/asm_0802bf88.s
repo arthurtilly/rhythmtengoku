@@ -83,14 +83,14 @@ thumb_func_start showtime_cue_barely \n\
 /* 0802c036 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0802c038 */ BL func_0804dcb8 \n\
 /* 0802c03c */ MOVS R0, 0x24 @ Set R0 to 0x24 \n\
-/* 0802c03e */ BL beats_to_ticks \n\
+/* 0802c03e */ BL ticks_to_frames \n\
 /* 0802c042 */ LDR R1, [R5] \n\
 /* 0802c044 */ MOVS R2, 0xB8 @ Set R2 to 0xB8 \n\
 /* 0802c046 */ LSLS R2, R2, 0x1 \n\
 /* 0802c048 */ ADDS R1, R1, R2 @ Set R1 to R1 + R2 \n\
 /* 0802c04a */ STRH R0, [R1] \n\
 /* 0802c04c */ MOVS R0, 0x14 @ Set R0 to 0x14 \n\
-/* 0802c04e */ BL beats_to_ticks \n\
+/* 0802c04e */ BL ticks_to_frames \n\
 /* 0802c052 */ LDR R1, [R5] \n\
 /* 0802c054 */ MOVS R2, 0xF0 @ Set R2 to 0xF0 \n\
 /* 0802c056 */ LSLS R2, R2, 0x2 \n\

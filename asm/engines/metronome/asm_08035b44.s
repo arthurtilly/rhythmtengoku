@@ -6,7 +6,7 @@ thumb_func_start metronome_cue_update \n\
 /* 08035b44 */ PUSH {R4, LR} \n\
 /* 08035b46 */ ADDS R4, R2, 0x0 @ Set R4 to R2 + 0x0 \n\
 /* 08035b48 */ MOVS R0, 0x30 @ Set R0 to 0x30 \n\
-/* 08035b4a */ BL beats_to_ticks \n\
+/* 08035b4a */ BL ticks_to_frames \n\
 /* 08035b4e */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 08035b50 */ BHI branch_08035b56 \n\
 /* 08035b52 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

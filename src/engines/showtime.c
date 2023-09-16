@@ -88,7 +88,7 @@ void showtime_cue_spawn_gray(struct Cue *cue, struct ShowtimeCue *info, u32 unus
 
 
 u32 showtime_cue_update_gray(struct Cue *cue, struct ShowtimeCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > beats_to_ticks(0x78)) {
+    if (runningTime > ticks_to_frames(0x78)) {
         return TRUE;
     } else {
         return FALSE;
@@ -104,7 +104,7 @@ void showtime_cue_despawn_gray(struct Cue *cue, struct ShowtimeCue *info) {
 
 
 u32 showtime_cue_update_black(struct Cue *cue, struct ShowtimeCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > beats_to_ticks(0x90)) {
+    if (runningTime > ticks_to_frames(0x90)) {
         return TRUE;
     } else {
         return FALSE;
@@ -130,7 +130,7 @@ void showtime_cue_despawn_white_fast(struct Cue *cue, struct ShowtimeCue *info) 
 
 
 u32 showtime_cue_update_white_fast_swing(struct Cue *cue, struct ShowtimeCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > beats_to_ticks(0x78)) {
+    if (runningTime > ticks_to_frames(0x78)) {
         return TRUE;
     } else {
         return FALSE;
@@ -149,7 +149,7 @@ void showtime_cue_spawn_white(struct Cue *cue, struct ShowtimeCue *info, u32 unu
 
 
 u32 showtime_cue_update_white(struct Cue *cue, struct ShowtimeCue *info, u32 runningTime, u32 duration) {
-    if (runningTime > beats_to_ticks(0x78)){
+    if (runningTime > ticks_to_frames(0x78)){
         return TRUE;
     } else {
         return FALSE;
@@ -165,7 +165,7 @@ void showtime_cue_hit(struct Cue *cue, struct ShowtimeCue *info, u32 pressed, u3
     func_0802cf8c(info->unk4);
     func_0802d81c(info->unk4);
     func_0802d2bc();
-    gShowtime->unk3C0 = beats_to_ticks(0x14);
+    gShowtime->unk3C0 = ticks_to_frames(0x14);
 }
 
 
@@ -178,7 +178,7 @@ void showtime_input_event(u32 pressed, u32 released) {
     if (gShowtime->unk3C0 == 0) {
         func_0802d918(-1);
         func_0802d2bc();
-        gShowtime->unk3C0 = beats_to_ticks(0x1E);
+        gShowtime->unk3C0 = ticks_to_frames(0x1E);
         play_sound(&s_block_hit_seqData);
     }
 }

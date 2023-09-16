@@ -225,7 +225,7 @@ jump_080267fc: \n\
 /* 08026836 */ BL func_0804ddb0 \n\
 /* 0802683a */ ADDS R4, R0, 0x0 @ Set R4 to R0 + 0x0 \n\
 /* 0802683c */ MOVS R0, 0x18 @ Set R0 to 0x18 \n\
-/* 0802683e */ BL beats_to_ticks \n\
+/* 0802683e */ BL ticks_to_frames \n\
 /* 08026842 */ LSLS R0, R0, 0x10 \n\
 /* 08026844 */ LSRS R0, R0, 0x10 \n\
 /* 08026846 */ MOVS R2, 0x2 @ Set R2 to 0x2 \n\

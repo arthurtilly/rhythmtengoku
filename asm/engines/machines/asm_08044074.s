@@ -44,7 +44,7 @@ thumb_func_start func_08044074 \n\
  \n\
 branch_080440d8: \n\
 /* 080440d8 */ MOVS R0, 0x24 @ Set R0 to 0x24 \n\
-/* 080440da */ BL beats_to_ticks \n\
+/* 080440da */ BL ticks_to_frames \n\
 /* 080440de */ LDR R1, [R4] \n\
 /* 080440e0 */ ADDS R2, R1, R5 @ Set R2 to R1 + R5 \n\
 /* 080440e2 */ STRH R0, [R2] \n\

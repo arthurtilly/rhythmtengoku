@@ -463,7 +463,7 @@ void fireworks_cue_spawn(struct Cue *cue, struct FireworksCue *info, u32 type) {
             info->x = info->targetX;
             info->velX = 0;
             info->y = INT_TO_FIXED(160);
-            info->velY = (info->targetY - info->y) / beats_to_ticks(0x18);
+            info->velY = (info->targetY - info->y) / ticks_to_frames(0x18);
             info->sprite = func_0804d160(D_03005380, anim_fireworks_rocket2, 0, FIXED_TO_INT(info->x), FIXED_TO_INT(info->y), 0x801, 1, 0, 0);
             break;
 
@@ -471,20 +471,20 @@ void fireworks_cue_spawn(struct Cue *cue, struct FireworksCue *info, u32 type) {
             info->x = info->targetX;
             info->velX = 0;
             info->y = INT_TO_FIXED(160);
-            info->velY = (info->targetY - info->y) / beats_to_ticks(0x48);
+            info->velY = (info->targetY - info->y) / ticks_to_frames(0x48);
             info->sprite = func_0804d160(D_03005380, anim_fireworks_rocket1, 0, FIXED_TO_INT(info->x), FIXED_TO_INT(info->y), 0x801, 1, 0, 0);
             play_sound(&s_hanabi_hyu_seqData);
             break;
 
         case FIREWORKS_CUE_TYPE_HAWFINCH_TAIKO_BOMBER:
             info->velX = INT_TO_FIXED(2);
-            info->velY = -(beats_to_ticks(0x30) * 64);
-            info->x = info->targetX - (beats_to_ticks(0x30) * info->velX);
+            info->velY = -(ticks_to_frames(0x30) * 64);
+            info->x = info->targetX - (ticks_to_frames(0x30) * info->velX);
             yDistance = 0;
-            for (i = 0; i < (s32)beats_to_ticks(0x30); i++) {
+            for (i = 0; i < (s32)ticks_to_frames(0x30); i++) {
                 yDistance += i;
             }
-            info->y = info->targetY - (beats_to_ticks(0x30) * info->velY) - (yDistance * 64);
+            info->y = info->targetY - (ticks_to_frames(0x30) * info->velY) - (yDistance * 64);
             info->sprite = func_0804d160(D_03005380, anim_fireworks_bomb, 0, FIXED_TO_INT(info->x), FIXED_TO_INT(info->y), 0x801, 0, 0, 0);
             play_sound(&s_f_hanabi_v_tamaya_seqData);
             break;
@@ -499,12 +499,12 @@ u32 fireworks_cue_update(struct Cue *cue, struct FireworksCue *info, u32 running
             info->y += info->velY;
             func_0804d648(D_03005380, info->sprite, FIXED_TO_INT(info->y));
             if (info->state == 0) {
-                if (runningTime > beats_to_ticks(0x07)) {
+                if (runningTime > ticks_to_frames(0x07)) {
                     info->state = 1;
                     func_0804d8f8(D_03005380, info->sprite, anim_fireworks_rocket3, 0, 1, 0, 0);
                 }
             } else if (info->state == 1) {
-                if (runningTime > beats_to_ticks(0x13)) {
+                if (runningTime > ticks_to_frames(0x13)) {
                     info->state = 2;
                     func_0804d8f8(D_03005380, info->sprite, anim_fireworks_rocket4, 0, 1, 0, 0);
                 }
@@ -516,21 +516,21 @@ u32 fireworks_cue_update(struct Cue *cue, struct FireworksCue *info, u32 running
             func_0804d648(D_03005380, info->sprite, FIXED_TO_INT(info->y));
             switch (info->state) {
                 case 0:
-                    if (runningTime > beats_to_ticks(0x13)) {
+                    if (runningTime > ticks_to_frames(0x13)) {
                         info->state = 1;
                         func_0804d8f8(D_03005380, info->sprite, anim_fireworks_rocket2, 0, 1, 0, 0);
                     }
                     break;
 
                 case 1:
-                    if (runningTime > beats_to_ticks(0x2B)) {
+                    if (runningTime > ticks_to_frames(0x2B)) {
                         info->state = 2;
                         func_0804d8f8(D_03005380, info->sprite, anim_fireworks_rocket3, 0, 1, 0, 0);
                     }
                     break;
 
                 case 2:
-                    if (runningTime > beats_to_ticks(0x43)) {
+                    if (runningTime > ticks_to_frames(0x43)) {
                         info->state = 3;
                         func_0804d8f8(D_03005380, info->sprite, anim_fireworks_rocket4, 0, 1, 0, 0);
                     }
@@ -548,7 +548,7 @@ u32 fireworks_cue_update(struct Cue *cue, struct FireworksCue *info, u32 running
             break;
     }
 
-    if (runningTime > beats_to_ticks(fireworks_cue_durations[info->type])) {
+    if (runningTime > ticks_to_frames(fireworks_cue_durations[info->type])) {
         if (!info->exploded) {
             play_sound_w_pitch_volume(&s_hanabi_ah_seqData, 48, 0);
         }

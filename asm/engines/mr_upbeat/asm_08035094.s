@@ -80,7 +80,7 @@ branch_080350c8: \n\
 /* 0803511c */ LDR R0, =s_f_shuji_v_ouch_seqData \n\
 /* 0803511e */ BL play_sound \n\
 /* 08035122 */ MOVS R0, 0xC @ Set R0 to 0xC \n\
-/* 08035124 */ BL beats_to_ticks \n\
+/* 08035124 */ BL ticks_to_frames \n\
 /* 08035128 */ STRH R0, [R5, 0x6] \n\
 /* 0803512a */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
 /* 0803512c */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\

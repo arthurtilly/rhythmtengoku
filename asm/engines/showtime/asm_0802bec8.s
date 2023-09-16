@@ -6,7 +6,7 @@ thumb_func_start showtime_cue_update_white_fast \n\
 /* 0802bec8 */ PUSH {R4, LR} \n\
 /* 0802beca */ ADDS R4, R2, 0x0 @ Set R4 to R2 + 0x0 \n\
 /* 0802becc */ MOVS R0, 0x78 @ Set R0 to 0x78 \n\
-/* 0802bece */ BL beats_to_ticks \n\
+/* 0802bece */ BL ticks_to_frames \n\
 /* 0802bed2 */ CMP R4, R0 @ Check R4 - R0 \n\
 /* 0802bed4 */ BHI branch_0802beda \n\
 /* 0802bed6 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\
