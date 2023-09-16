@@ -161,7 +161,7 @@ void wizards_waltz_engine_update(void) {
     if ((gWizardsWaltz->cyclePosition & 7) == 0) {
         gWizardsWaltz->sparkle[gWizardsWaltz->currentSparkle].state = SPARKLE_STATE_QUEUED;
         gWizardsWaltz->currentSparkle++;
-        if (gWizardsWaltz->currentSparkle > 9) {
+        if (gWizardsWaltz->currentSparkle > (ARRAY_COUNT(gWizardsWaltz->sparkle) - 1)) {
             gWizardsWaltz->currentSparkle = 0;
         }
     }

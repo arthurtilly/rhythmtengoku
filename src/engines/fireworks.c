@@ -331,7 +331,9 @@ void fireworks_create_explosion(u8 pattern, s32 x, s32 y) {
         gFireworks->particles[i].y = y + gFireworks->particles[i].velY;
         gFireworks->particles[i].colour = colour;
 
-        if (pattern <= 2) { // STANDARD FIREWORK PATTERN
+        if ((pattern == FIREWORKS_PATTERN_L3) ||
+            (pattern == FIREWORKS_PATTERN_C3) ||
+            (pattern == FIREWORKS_PATTERN_R3)) { // STANDARD FIREWORK PATTERN
             if (i < (min + 8)) {
                 gFireworks->particles[i].colour = fireworks_particle_combinations[colour].inner;
             }

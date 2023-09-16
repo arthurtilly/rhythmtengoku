@@ -305,7 +305,7 @@ s32 polyrhythm_get_block_height(u32 lane, s32 blockID) {
     if (blockID < 0) {
         return polyrhythm_block_heights[BLOCK_STATE_PLATFORM];
     }
-    if (blockID > 15) {
+    if (blockID > (POLYRHYTHM_BLOCK_AMOUNT - 1)) {
         return 0;
     }
 
@@ -483,7 +483,7 @@ void polyrhythm_spawn_rod(u32 lane) {
         rod++;
     }
 
-    if (i >= 8) {
+    if (i >= ARRAY_COUNT(gPolyrhythm->rods)) {
         return;
     }
 

@@ -133,7 +133,7 @@ void spaceball_update_graphics(void) {
     func_08008910(BG_LAYER_2, INT_TO_FIXED(128), INT_TO_FIXED(176), h, v, 0);
 
     // Update Stars
-    if (gSpaceball->currentStar < 24) {
+    if (gSpaceball->currentStar < ARRAY_COUNT(gSpaceball->stars)) {
         gSpaceball->starSprite[gSpaceball->currentStar] = func_0804d160(D_03005380, anim_spaceball_bg_star, 0, 0, 0, 0xc800, 1, 0, 0);
         spaceball_reset_star(gSpaceball->currentStar);
         gSpaceball->currentStar++;

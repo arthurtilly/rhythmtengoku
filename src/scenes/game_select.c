@@ -1302,7 +1302,7 @@ void game_select_enqueue_level_event(s32 x, s32 y, s32 state) {
         data->state = state;
 
         gGameSelect->totalLevelEventsQueued++;
-        if (++gGameSelect->levelEventEnqueueID >= 16) {
+        if (++gGameSelect->levelEventEnqueueID >= ARRAY_COUNT(gGameSelect->levelEventsQueue)) {
             gGameSelect->levelEventEnqueueID = 0;
         }
     }
@@ -1324,7 +1324,7 @@ void game_select_dequeue_level_event(s32 *xReq, s32 *yReq, s32 *stateReq) {
     *stateReq = data->state;
 
     gGameSelect->totalLevelEventsQueued--;
-    if (++gGameSelect->levelEventDequeueID >= 16) {
+    if (++gGameSelect->levelEventDequeueID >= ARRAY_COUNT(gGameSelect->levelEventsQueue)) {
         gGameSelect->levelEventDequeueID = 0;
     }
 }

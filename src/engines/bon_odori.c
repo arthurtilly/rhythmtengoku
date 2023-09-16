@@ -444,7 +444,7 @@ void bon_odori_common_beat_animation(u32 arg) {
     for (i = 0; i < BON_ODORI_DONPAN_AMOUNT; i++) {
         if (gBonOdori->donpanAnimTimers[i] == 0) {
             anim = bon_odori_get_donpan_anim(DONPAN_ANIM_BEAT, i);
-            if ((i < 3) && (gBonOdori->donpanEmoteTimer != 0)) {
+            if ((i < (BON_ODORI_DONPAN_AMOUNT - 1)) && (gBonOdori->donpanEmoteTimer != 0)) {
                 anim = bon_odori_get_donpan_anim(gBonOdori->donpanEmoteAnim, i);
             }
             func_0804d8f8(D_03005380, gBonOdori->donpanSprites[i], anim, 0, 1, 0x7f, 0);

@@ -64,7 +64,7 @@ void sneaky_spirits_update_fast_rain(void) {
         func_0804d770(D_03005380, sprite, 1);
 
         gSneakySpirits->rainDropNext += 1;
-        if (gSneakySpirits->rainDropNext >= 30) {
+        if (gSneakySpirits->rainDropNext >= ARRAY_COUNT(gSneakySpirits->rainDrops)) {
             gSneakySpirits->rainDropNext = 0;
         }
     }
@@ -76,7 +76,7 @@ void sneaky_spirits_update_fast_rain(void) {
         func_0804d770(D_03005380, sprite, 1);
 
         gSneakySpirits->rainSplashNext += 1;
-        if (gSneakySpirits->rainSplashNext >= 20) {
+        if (gSneakySpirits->rainSplashNext >= ARRAY_COUNT(gSneakySpirits->rainSplashes)) {
             gSneakySpirits->rainSplashNext = 0;
         }
     }

@@ -318,7 +318,7 @@ void night_walk_expand_star(void) {
     func_0804daa8(D_03005380, star->sprite, night_walk_finish_star_expansion, (s32)night_walk_star_anim[gNightWalk->currentStarSize + 1]);
     star->size = gNightWalk->currentStarSize + 1;
     gNightWalk->nextStar++;
-    if (gNightWalk->nextStar >= 32) {
+    if (gNightWalk->nextStar >= ARRAY_COUNT(gNightWalk->stars)) {
         gNightWalk->nextStar = 0;
         gNightWalk->currentStarSize++;
     }

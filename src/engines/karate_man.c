@@ -426,7 +426,7 @@ void karate_cue_hit(struct Cue *cue, struct KarateManCue *data) {
     }
     
     // Check if Flow is more than 2 or if Version is 2 ("Serious Mode")
-    if ((gKarateMan->flowLevel > 2)) {
+    if (gKarateMan->flowLevel > 2) {
         isHigh = TRUE;
     }
 

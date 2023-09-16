@@ -163,7 +163,7 @@ void rhythm_tweezers_spawn_falling_hair(u32 arg0) {
     hair->fallSpeed = 0;
     affine_sprite_set_anim_frame(hair->sprite, arg0);
 
-    if ((gRhythmTweezers->fallingHairsNext += 1) > 4) {
+    if (++gRhythmTweezers->fallingHairsNext > (ARRAY_COUNT(gRhythmTweezers->fallingHairs) - 1)) {
         gRhythmTweezers->fallingHairsNext = 0;
     }
 }
