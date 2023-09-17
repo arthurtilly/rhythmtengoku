@@ -44,7 +44,7 @@ void flash_test_scene_start(void *sVar, s32 dArg) {
     func_080073f0();
 
     gFlashMemoryTest->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
-    gFlashMemoryTest->objFont = func_0800c660(0x300, 4);
+    gFlashMemoryTest->objFont = scene_create_obj_font_printer(0x300, 4);
     import_all_scene_objects(D_03005380, gFlashMemoryTest->objFont, flash_mem_test_scene_objects, D_0300558c);
 
     flash_test_scene_init_gfx1();

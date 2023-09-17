@@ -21,96 +21,96 @@ struct TaskMethods D_08936b94 = {
 
 // Sprite Motion - Indefinite Linear
 struct TaskMethods sprite_motion_task_indefinite = {
-    (TaskStartFunc)sprite_motion_task_indefinite_start,
-    (TaskUpdateFunc)sprite_motion_task_indefinite_update,
+    (TaskStartFunc)start_sprite_motion_task_indefinite,
+    (TaskUpdateFunc)update_sprite_motion_task_indefinite,
     NULL,
     NULL
 };
 
 // Sprite Motion - Decelerate to Point
 struct TaskMethods sprite_motion_task_decelerate = {
-    (TaskStartFunc)sprite_motion_task_decelerate_start,
-    (TaskUpdateFunc)sprite_motion_task_decelerate_update,
+    (TaskStartFunc)start_sprite_motion_task_decelerate,
+    (TaskUpdateFunc)update_sprite_motion_task_decelerate,
     NULL,
     NULL
 };
 
 // Sprite Motion - Accelerate to Point
 struct TaskMethods sprite_motion_task_accelerate = {
-    (TaskStartFunc)sprite_motion_task_accelerate_start,
-    (TaskUpdateFunc)sprite_motion_task_accelerate_update,
+    (TaskStartFunc)start_sprite_motion_task_accelerate,
+    (TaskUpdateFunc)update_sprite_motion_task_accelerate,
     NULL,
     NULL
 };
 
 // Sprite Motion - LERP to Point
 struct TaskMethods sprite_motion_task_lerp = {
-    (TaskStartFunc)sprite_motion_task_lerp_start,
-    (TaskUpdateFunc)sprite_motion_task_lerp_update,
+    (TaskStartFunc)start_sprite_motion_task_lerp,
+    (TaskUpdateFunc)update_sprite_motion_task_lerp,
     NULL,
     NULL
 };
 
 // Sprite Motion - Sinusoidal Oscillation
 struct TaskMethods sprite_motion_task_sine_osc = {
-    (TaskStartFunc)sprite_motion_task_sine_osc_start,
-    (TaskUpdateFunc)sprite_motion_task_sine_osc_update,
+    (TaskStartFunc)start_sprite_motion_task_sine_osc,
+    (TaskUpdateFunc)update_sprite_motion_task_sine_osc,
     NULL,
     NULL
 };
 
 // Sprite Motion - Sinusoidal Velocity to Point
 struct TaskMethods sprite_motion_task_sine_vel = {
-    (TaskStartFunc)sprite_motion_task_sine_vel_start,
-    (TaskUpdateFunc)sprite_motion_task_sine_vel_update,
+    (TaskStartFunc)start_sprite_motion_task_sine_vel,
+    (TaskUpdateFunc)update_sprite_motion_task_sine_vel,
     NULL,
     NULL
 };
 
 // Sprite Motion - Move Along Sine Wave
 struct TaskMethods sprite_motion_task_sine_wave = {
-    (TaskStartFunc)sprite_motion_task_sine_wave_start,
-    (TaskUpdateFunc)sprite_motion_task_sine_wave_update,
+    (TaskStartFunc)start_sprite_motion_task_sine_wave,
+    (TaskUpdateFunc)update_sprite_motion_task_sine_wave,
     NULL,
     NULL
 };
 
 // Number Task - Interpolate Linearly
-struct TaskMethods D_08936c14 = {
-    (TaskStartFunc)func_08007bb8,
-    (TaskUpdateFunc)func_08007c30,
+struct TaskMethods integer_interp_task = {
+    (TaskStartFunc)start_integer_interp_task,
+    (TaskUpdateFunc)update_integer_interp_task,
     NULL,
     NULL
 };
 
 // Number Task - Swap Endlessly
-struct TaskMethods D_08936c24 = {
-    (TaskStartFunc)func_08007ca8,
-    (TaskUpdateFunc)func_08007d20,
+struct TaskMethods integer_alternator_task = {
+    (TaskStartFunc)start_integer_alternator_task,
+    (TaskUpdateFunc)update_integer_alternator_task,
     NULL,
     NULL
 };
 
 // Number Task - Increment Endlessly
-struct TaskMethods D_08936c34 = {
-    (TaskStartFunc)func_08007d88,
-    (TaskUpdateFunc)func_08007e00,
+struct TaskMethods integer_incrementer_task = {
+    (TaskStartFunc)start_integer_incrementer_task,
+    (TaskUpdateFunc)update_integer_incrementer_task,
     NULL,
     NULL
 };
 
 // Number Sine Interpolator Task
-struct TaskMethods D_08936c44 = {
-    (TaskStartFunc)func_08007e7c,
-    (TaskUpdateFunc)func_08007ef8,
+struct TaskMethods integer_sine_interp_task = {
+    (TaskStartFunc)start_integer_sine_interp_task,
+    (TaskUpdateFunc)update_integer_sine_interp_task,
     NULL,
     NULL
 };
 
 // Interpolate LCD Special Effects (Blend Controls)
-struct TaskMethods D_08936c54 = {
-    (TaskStartFunc)init_lcd_blend_mode_interpolator,
-    (TaskUpdateFunc)update_lcd_blend_mode_interpolator,
+struct TaskMethods lcd_blend_mode_interp_task = {
+    (TaskStartFunc)start_lcd_blend_mode_interp,
+    (TaskUpdateFunc)update_lcd_blend_mode_interp,
     NULL,
     NULL
 };

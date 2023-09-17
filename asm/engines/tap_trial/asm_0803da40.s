@@ -97,7 +97,7 @@ branch_0803dacc: \n\
 /* 0803daf8 */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0803dafa */ MOVS R2, 0x73 @ Set R2 to 0x73 \n\
 /* 0803dafc */ MOVS R3, 0x28 @ Set R3 to 0x28 \n\
-/* 0803dafe */ BL func_0800e6ec \n\
+/* 0803dafe */ BL scene_move_sprite_sine_wave \n\
  \n\
 branch_0803db02: \n\
 /* 0803db02 */ LDRB R0, [R6, 0x8] \n\

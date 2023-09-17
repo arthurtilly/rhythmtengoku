@@ -102,7 +102,7 @@ void math_arr_invert_palette(s16 src[], s16 dest[], u32 total) {
 
 // Retrieve Item from Array at Scene-related Index
 s32 math_arr_get_scene(s32 arr[]) {
-    u32 id = func_0800c490();
+    u32 id = scene_get_default_text_id();
 
     if (arr == NULL) {
         return 0;

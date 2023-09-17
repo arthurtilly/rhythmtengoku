@@ -151,7 +151,7 @@ void bon_odori_engine_start(u32 ver) {
     scene_set_bg_layer_display(BG_LAYER_0, TRUE, 0, -64, 2, 24, 0xC000);
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
     scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, 1);
-    gBonOdori->unk4 = func_0800c660(0x340, 2);
+    gBonOdori->unk4 = scene_create_obj_font_printer(0x340, 2);
     D_03004b10.WINOUT = (WINOUT_OUT_BG1 | WINOUT_OUT_BG2 | WINOUT_OUT_BG3 | WINOUT_OUT_SPRITES | WINOUT_SPRW_BG0 | WINOUT_SPRW_SPRITES | WINOUT_SPRW_BLENDS);
     D_03004b10.BLDMOD = (BLDMOD_BG0_SRC | BLDMOD_BLEND_MODE(BLEND_MODE_ALPHA) | BLDMOD_SPRITES_TGT);
     D_03004b10.COLEV = (COLEV_SRC_PIXEL(0x10) | COLEV_TGT_PIXEL(0x10));
@@ -297,7 +297,7 @@ void bon_odori_lyrics_start_highlight(u32 duration) {
     y -= gBonOdori->currentLyric * 24;
     D_03004b10.BG_OFS[BG_LAYER_0].y = y;
 
-    task = func_0800c4b0(1, ticks_to_frames(duration), &D_03004b10.BG_OFS[BG_LAYER_0].x, initX, targetX);
+    task = scene_start_integer_interp(1, ticks_to_frames(duration), &D_03004b10.BG_OFS[BG_LAYER_0].x, initX, targetX);
     run_func_after_task(task, bon_odori_lyrics_finish_highlight, gBonOdori->currentLyric);
 }
 

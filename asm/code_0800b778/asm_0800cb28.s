@@ -1139,7 +1139,7 @@ branch_0800d440: \n\
 /* 0800d440 */ MOV R0, R8 @ Set R0 to R8 \n\
  \n\
 branch_0800d442: \n\
-/* 0800d442 */ BL func_0800ed24 \n\
+/* 0800d442 */ BL scene_fade_music_in \n\
 /* 0800d446 */ BL branch_0800df9e \n\
 \n\
 jump_0800d44a: \n\
@@ -1153,7 +1153,7 @@ branch_0800d456: \n\
 /* 0800d456 */ MOV R0, R8 @ Set R0 to R8 \n\
  \n\
 branch_0800d458: \n\
-/* 0800d458 */ BL func_0800ed3c \n\
+/* 0800d458 */ BL scene_fade_music_out \n\
 /* 0800d45c */ BL branch_0800df9e \n\
 \n\
 jump_0800d460: \n\
@@ -1272,7 +1272,7 @@ branch_0800d542: \n\
 /* 0800d54a */ ADDS R1, R6, 0x0 @ Set R1 to R6 + 0x0 \n\
 /* 0800d54c */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 0800d54e */ ADDS R3, R7, 0x0 @ Set R3 to R7 + 0x0 \n\
-/* 0800d550 */ BL interpolate_lcd_blend_mode \n\
+/* 0800d550 */ BL interp_lcd_blend_mode \n\
 /* 0800d554 */ BL branch_0800df9e \n\
 \n\
 .ltorg \n\
@@ -1410,7 +1410,7 @@ jump_0800d62c: \n\
 /* 0800d662 */ BL get_current_mem_id \n\
 /* 0800d666 */ LSLS R0, R0, 0x10 \n\
 /* 0800d668 */ LSRS R0, R0, 0x10 \n\
-/* 0800d66a */ LDR R1, =D_08936c14 \n\
+/* 0800d66a */ LDR R1, =integer_interp_task \n\
 /* 0800d66c */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800d66e */ STR R2, [SP] \n\
 /* 0800d670 */ ADD R2, SP, 0xC \n\
@@ -1450,7 +1450,7 @@ jump_0800d688: \n\
 /* 0800d6be */ BL get_current_mem_id \n\
 /* 0800d6c2 */ LSLS R0, R0, 0x10 \n\
 /* 0800d6c4 */ LSRS R0, R0, 0x10 \n\
-/* 0800d6c6 */ LDR R1, =D_08936c24 \n\
+/* 0800d6c6 */ LDR R1, =integer_alternator_task \n\
 /* 0800d6c8 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800d6ca */ STR R2, [SP] \n\
 /* 0800d6cc */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
@@ -1490,7 +1490,7 @@ jump_0800d6e4: \n\
 /* 0800d71a */ BL get_current_mem_id \n\
 /* 0800d71e */ LSLS R0, R0, 0x10 \n\
 /* 0800d720 */ LSRS R0, R0, 0x10 \n\
-/* 0800d722 */ LDR R1, =D_08936c34 \n\
+/* 0800d722 */ LDR R1, =integer_incrementer_task \n\
 /* 0800d724 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800d726 */ STR R2, [SP] \n\
 /* 0800d728 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
@@ -1527,7 +1527,7 @@ jump_0800d740: \n\
 /* 0800d76e */ BL get_current_mem_id \n\
 /* 0800d772 */ LSLS R0, R0, 0x10 \n\
 /* 0800d774 */ LSRS R0, R0, 0x10 \n\
-/* 0800d776 */ LDR R1, =D_08936c44 \n\
+/* 0800d776 */ LDR R1, =integer_sine_interp_task \n\
 /* 0800d778 */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 0800d77a */ STR R2, [SP] \n\
 /* 0800d77c */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
@@ -2053,7 +2053,7 @@ jump_0800db54: \n\
 /* 0800db5c */ LSLS R1, R6, 0x10 \n\
 /* 0800db5e */ ASRS R1, R1, 0x10 \n\
 /* 0800db60 */ ASRS R2, R6, 0x10 \n\
-/* 0800db62 */ BL func_0800e208 \n\
+/* 0800db62 */ BL scene_move_sprite_indefinite \n\
 /* 0800db66 */ B branch_0800dd68 \n\
 \n\
 jump_0800db68: \n\
@@ -2078,7 +2078,7 @@ jump_0800db68: \n\
 /* 0800db8e */ MOV R4, R8 @ Set R4 to R8 \n\
 /* 0800db90 */ LSLS R3, R4, 0x10 \n\
 /* 0800db92 */ ASRS R3, R3, 0x10 \n\
-/* 0800db94 */ BL func_0800e2a8 \n\
+/* 0800db94 */ BL scene_move_sprite_decelerate \n\
 /* 0800db98 */ B branch_0800dd68 \n\
 \n\
 jump_0800db9a: \n\
@@ -2105,7 +2105,7 @@ jump_0800db9a: \n\
 /* 0800dbc4 */ ASRS R3, R3, 0x10 \n\
 /* 0800dbc6 */ ASRS R4, R4, 0x10 \n\
 /* 0800dbc8 */ STR R4, [SP] \n\
-/* 0800dbca */ BL func_0800e364 \n\
+/* 0800dbca */ BL scene_move_sprite_accelerate \n\
 /* 0800dbce */ B branch_0800dd68 \n\
 \n\
 jump_0800dbd0: \n\
@@ -2140,7 +2140,7 @@ jump_0800dbd0: \n\
 /* 0800dc0c */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0800dc0e */ ADDS R1, R7, 0x0 @ Set R1 to R7 + 0x0 \n\
 /* 0800dc10 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
-/* 0800dc12 */ BL func_0800e430 \n\
+/* 0800dc12 */ BL scene_move_sprite_lerp \n\
 /* 0800dc16 */ B branch_0800dd68 \n\
 \n\
 jump_0800dc18: \n\
@@ -2175,7 +2175,7 @@ jump_0800dc18: \n\
 /* 0800dc54 */ LDRSH R3, [R5, R6] \n\
 /* 0800dc56 */ STR R0, [SP] \n\
 /* 0800dc58 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0800dc5a */ BL func_0800e62c \n\
+/* 0800dc5a */ BL scene_move_sprite_sine_vel \n\
 /* 0800dc5e */ B branch_0800dd68 \n\
 \n\
 jump_0800dc60: \n\
@@ -2223,7 +2223,7 @@ jump_0800dca2: \n\
 /* 0800dcb2 */ MOV R4, R8 @ Set R4 to R8 \n\
 /* 0800dcb4 */ LSLS R3, R4, 0x10 \n\
 /* 0800dcb6 */ ASRS R3, R3, 0x10 \n\
-/* 0800dcb8 */ BL func_0800e2a8 \n\
+/* 0800dcb8 */ BL scene_move_sprite_decelerate \n\
 /* 0800dcbc */ B branch_0800dd68 \n\
 \n\
 jump_0800dcbe: \n\
@@ -2240,7 +2240,7 @@ jump_0800dcbe: \n\
 /* 0800dcd2 */ ASRS R3, R3, 0x10 \n\
 /* 0800dcd4 */ ASRS R4, R4, 0x10 \n\
 /* 0800dcd6 */ STR R4, [SP] \n\
-/* 0800dcd8 */ BL func_0800e364 \n\
+/* 0800dcd8 */ BL scene_move_sprite_accelerate \n\
 /* 0800dcdc */ B branch_0800dd68 \n\
 \n\
 jump_0800dcde: \n\
@@ -2262,7 +2262,7 @@ jump_0800dcde: \n\
 /* 0800dcfe */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
 /* 0800dd00 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 0800dd02 */ ADDS R2, R7, 0x0 @ Set R2 to R7 + 0x0 \n\
-/* 0800dd04 */ BL func_0800e430 \n\
+/* 0800dd04 */ BL scene_move_sprite_lerp \n\
 /* 0800dd08 */ B branch_0800dd68 \n\
 \n\
 jump_0800dd0a: \n\
@@ -2286,7 +2286,7 @@ jump_0800dd0a: \n\
 /* 0800dd2e */ LDRSH R3, [R6, R5] \n\
 /* 0800dd30 */ STR R0, [SP] \n\
 /* 0800dd32 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0800dd34 */ BL func_0800e62c \n\
+/* 0800dd34 */ BL scene_move_sprite_sine_vel \n\
 /* 0800dd38 */ B branch_0800dd68 \n\
 \n\
 jump_0800dd3a: \n\
@@ -2312,7 +2312,7 @@ jump_0800dd3a: \n\
 branch_0800dd60: \n\
 /* 0800dd60 */ STR R0, [SP] \n\
 /* 0800dd62 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0800dd64 */ BL func_0800e6ec \n\
+/* 0800dd64 */ BL scene_move_sprite_sine_wave \n\
  \n\
 branch_0800dd68: \n\
 /* 0800dd68 */ MOV R1, R9 @ Set R1 to R9 \n\

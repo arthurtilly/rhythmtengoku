@@ -72,7 +72,7 @@ void debug_menu_scene_start(void *sVar, s32 dArg) {
     func_080073f0();
 
     gDebugMenu->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
-    gDebugMenu->objFont = func_0800c660(0x200, 8);
+    gDebugMenu->objFont = scene_create_obj_font_printer(0x200, 8);
     import_all_scene_objects(D_03005380, gDebugMenu->objFont, debug_menu_scene_objects, D_0300558c);
     debug_menu_scene_init_gfx1();
 

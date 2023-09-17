@@ -49,7 +49,7 @@ thumb_func_start func_0803c9f8 \n\
 /* 0803ca56 */ ADDS R0, R3, 0x0 @ Set R0 to R3 + 0x0 \n\
 /* 0803ca58 */ MOVS R2, 0x42 @ Set R2 to 0x42 \n\
 /* 0803ca5a */ MOVS R3, 0x8C @ Set R3 to 0x8C \n\
-/* 0803ca5c */ BL func_0800e3e4 \n\
+/* 0803ca5c */ BL scene_set_sprite_motion_lerp \n\
 /* 0803ca60 */ B branch_0803ca82 \n\
 \n\
 .ltorg \n\

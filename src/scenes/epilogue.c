@@ -99,7 +99,7 @@ void epilogue_scene_start(void *sVar, s32 dArg) {
         func_0804d8c4(D_03005380, sprite, 4);
     }
 
-    gEpilogue->objFont = func_0800c660(0x300, 4);
+    gEpilogue->objFont = scene_create_obj_font_printer(0x300, 4);
     import_all_scene_objects(D_03005380, gEpilogue->objFont, epilogue_scene_objects, D_0300558c);
     epilogue_scene_init_gfx1();
     gEpilogue->inputsEnabled = FALSE;

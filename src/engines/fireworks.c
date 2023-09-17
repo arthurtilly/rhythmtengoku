@@ -69,7 +69,7 @@ void fireworks_engine_start(u32 version) {
     fireworks_init_gfx1();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 0);
-    gFireworks->unk4 = func_0800c660(0x340, 2);
+    gFireworks->unk4 = scene_create_obj_font_printer(0x340, 2);
     textAnim = bmp_font_obj_print_c(gFireworks->unk4, D_0805a3d0, 1, 15);
     gFireworks->textSprite = func_0804d160(D_03005380, textAnim->frames, 0, 120, 144, 0x7f7, 0, 0, 0);
     gFireworks->screenBrightness = 0;

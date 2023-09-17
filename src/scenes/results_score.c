@@ -64,7 +64,7 @@ void score_results_scene_start(void *sVar, s32 dArg) {
     func_080073f0();
     gResults->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
     dma3_fill(0, OBJ_TILESET_BASE(0x4000), 0x4000, 0x20, 0x200);
-    gResults->objFont = func_0800c660(0x300, 4);
+    gResults->objFont = scene_create_obj_font_printer(0x300, 4);
     score_results_scene_init_gfx1();
 
     score = results_calculate_final_score();

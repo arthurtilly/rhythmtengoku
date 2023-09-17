@@ -42,7 +42,7 @@ void template_scene_start(void *sVar, s32 dArg) {
     func_080073f0();
 
     gTemplate->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
-    gTemplate->objFont = func_0800c660(0x300, 4);
+    gTemplate->objFont = scene_create_obj_font_printer(0x300, 4);
     import_all_scene_objects(D_03005380, gTemplate->objFont, template_scene_objects, D_0300558c);
     template_scene_init_gfx1();
     gTemplate->inputsEnabled = FALSE;

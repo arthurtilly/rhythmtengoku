@@ -62,7 +62,7 @@ branch_08035934: \n\
 /* 0803596c */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 0803596e */ MOV R2, R9 @ Set R2 to R9 \n\
 /* 08035970 */ MOV R3, R12 @ Set R3 to R12 \n\
-/* 08035972 */ BL func_0800e3e4 \n\
+/* 08035972 */ BL scene_set_sprite_motion_lerp \n\
 /* 08035976 */ MOV R4, R8 @ Set R4 to R8 \n\
 /* 08035978 */ LDR R0, [R4] \n\
 /* 0803597a */ B branch_080359ca \n\
@@ -99,7 +99,7 @@ branch_08035984: \n\
 /* 080359bc */ ADDS R0, R5, 0x0 @ Set R0 to R5 + 0x0 \n\
 /* 080359be */ MOVS R1, 0x0 @ Set R1 to 0x0 \n\
 /* 080359c0 */ MOV R3, R9 @ Set R3 to R9 \n\
-/* 080359c2 */ BL func_0800e57c \n\
+/* 080359c2 */ BL scene_set_sprite_motion_sine_vel \n\
 /* 080359c6 */ MOV R1, R8 @ Set R1 to R8 \n\
 /* 080359c8 */ LDR R0, [R1] \n\
  \n\

@@ -76,6 +76,6 @@ void func_0804573c(void) {
     for (i = 0; i < 4; i++) {
         dancer = func_0804d160(D_03005380, anim_cosmic_dance_prologue_dancer, 0, 300, 120, 0x4800 - i, 0, 0, 0);
         x = 72 + (i * 32);
-        func_0800e62c(dancer, 0, x, 120, ticks_to_frames(0x12));
+        scene_move_sprite_sine_vel(dancer, 0, x, 120, ticks_to_frames(0x12));
     }
 }

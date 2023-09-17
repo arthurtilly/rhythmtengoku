@@ -239,7 +239,7 @@ jump_080267fc: \n\
 /* 08026856 */ ADDS R1, R5, 0x0 @ Set R1 to R5 + 0x0 \n\
 /* 08026858 */ ADDS R2, R4, 0x0 @ Set R2 to R4 + 0x0 \n\
 /* 0802685a */ MOVS R3, 0x10 @ Set R3 to 0x10 \n\
-/* 0802685c */ BL func_0800e6ec \n\
+/* 0802685c */ BL scene_move_sprite_sine_wave \n\
 /* 08026860 */ B branch_080268ae \n\
 \n\
 .ltorg \n\

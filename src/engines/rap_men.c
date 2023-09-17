@@ -54,7 +54,7 @@ void rap_men_engine_start(u32 version) {
     rap_men_init_gfx1();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
-    gRapMen->unk4 = func_0800c660(0x340, 2);
+    gRapMen->unk4 = scene_create_obj_font_printer(0x340, 2);
     textAnim = bmp_font_obj_print_l(gRapMen->unk4, D_0805a8b0, 1, 14);
     gRapMen->textSprite = func_0804d160(D_03005380, textAnim->frames, 0, 120, 148, 0, 0, 0, 0);
     gRapMen->rapperSprite = func_0804d160(D_03005380, rap_men_get_anim(RAP_MEN_ANIM_RAPPER), 0, 70, 130, 0x4800, 1, 0x7f, 0);

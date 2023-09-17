@@ -177,7 +177,12 @@ extern s32 func_08002ee0(u16 memID, const struct GraphicsTable *gfxTable, u32 li
 // extern ? func_08002f48(?);
 // extern ? func_08002f54(?);
 // extern ? func_08002f5c(?);
-// extern ? func_08002f68(?);
+
+
+/* AGB ... */
+
+
+// extern ? func_08002f68(?); // Init. sqrt()?
 // extern ? func_08002f9c(?);
 // extern ? func_08003004(?);
 // extern ? func_08003070(?);

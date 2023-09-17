@@ -616,7 +616,7 @@ void scene_set_music_volume_env(u32 volume) {
 
 // Interpolate Music Volume
 void scene_interpolate_music_volume(u32 volume, u32 duration) {
-    func_0800c4b0(1, duration, &D_030053c0.musicVolume, D_030053c0.musicVolume, volume);
+    scene_start_integer_interp(1, duration, &D_030053c0.musicVolume, D_030053c0.musicVolume, volume);
 }
 
 
@@ -628,7 +628,7 @@ void scene_set_music_track_volume_env(u32 selection, u32 volume) {
 
 // Interpolate Music Volume for Selected Tracks
 void scene_interpolate_music_track_volume(u32 volume, u32 duration) {
-    func_0800c4b0(1, duration, &D_030053c0.musicTrkVolume, D_030053c0.musicTrkVolume, volume);
+    scene_start_integer_interp(1, duration, &D_030053c0.musicTrkVolume, D_030053c0.musicTrkVolume, volume);
 }
 
 
@@ -929,8 +929,8 @@ void scene_flush_save_buffer(void) {
 }
 
 
-// Get a Thread
-u32 func_0800c490(void) {
+// Get Default Scene Text ID
+u32 scene_get_default_text_id(void) {
     return 0;
 }
 
@@ -947,7 +947,7 @@ void func_0800c4ac_stub(void) {
 
 
 // Start Linear Interpolation Task
-s32 func_0800c4b0(u32 type, u32 duration, void *source, s32 initial, s32 target) {
+s32 scene_start_integer_interp(u32 type, u32 duration, void *source, s32 initial, s32 target) {
     struct NumberInterpolator inputs;
 
     inputs.type = type;
@@ -956,12 +956,12 @@ s32 func_0800c4b0(u32 type, u32 duration, void *source, s32 initial, s32 target)
     inputs.initial = initial;
     inputs.target = target;
 
-    return start_new_task(get_current_mem_id(), &D_08936c14, &inputs, 0, 0);
+    return start_new_task(get_current_mem_id(), &integer_interp_task, &inputs, 0, 0);
 }
 
 
 // Start Number Alternator Task
-s32 func_0800c508(u32 type, u32 interval, void *source, s32 initial, s32 target) {
+s32 scene_start_integer_alternator(u32 type, u32 interval, void *source, s32 initial, s32 target) {
     struct NumberInterpolator inputs;
 
     inputs.type = type;
@@ -970,12 +970,12 @@ s32 func_0800c508(u32 type, u32 interval, void *source, s32 initial, s32 target)
     inputs.initial = initial;
     inputs.target = target;
 
-    return start_new_task(get_current_mem_id(), &D_08936c24, &inputs, 0, 0);
+    return start_new_task(get_current_mem_id(), &integer_alternator_task, &inputs, 0, 0);
 }
 
 
 // Start Number Incrementer Task
-s32 func_0800c560(u32 type, u32 interval, void *source, s32 initial, s32 increment) {
+s32 scene_start_integer_incrementer(u32 type, u32 interval, void *source, s32 initial, s32 increment) {
     struct NumberInterpolator inputs;
 
     inputs.type = type;
@@ -984,12 +984,12 @@ s32 func_0800c560(u32 type, u32 interval, void *source, s32 initial, s32 increme
     inputs.initial = initial;
     inputs.target = increment;
 
-    return start_new_task(get_current_mem_id(), &D_08936c34, &inputs, 0, 0);
+    return start_new_task(get_current_mem_id(), &integer_incrementer_task, &inputs, 0, 0);
 }
 
 
 // Start Number Sine Interpolator Task
-s32 func_0800c5b8(u32 type, void *source, s32 baseValue, s24_8 initialAngle, s24_8 speed) {
+s32 scene_start_integer_sine_interp(u32 type, void *source, s32 baseValue, s24_8 initialAngle, s24_8 speed) {
     struct NumberSineInterpolator inputs;
 
     inputs.type = type;
@@ -998,7 +998,7 @@ s32 func_0800c5b8(u32 type, void *source, s32 baseValue, s24_8 initialAngle, s24
     inputs.speed = speed;
     inputs.source = source;
 
-    return start_new_task(get_current_mem_id(), &D_08936c44, &inputs, NULL, 0);
+    return start_new_task(get_current_mem_id(), &integer_sine_interp_task, &inputs, NULL, 0);
 }
 
 
@@ -1027,7 +1027,7 @@ void func_0800c65c_stub(void) {
 
 
 // Create BitmapFontOBJ with the WarioWare Outline Font
-struct BitmapFontOBJ *func_0800c660(u16 baseTileNum, u8 maxTileRows) {
+struct BitmapFontOBJ *scene_create_obj_font_printer(u16 baseTileNum, u8 maxTileRows) {
     struct BitmapFontOBJ *objFont;
 
     objFont = create_new_bmp_font_obj(get_current_mem_id(), bitmap_font_warioware_outline, baseTileNum, maxTileRows);
@@ -1523,7 +1523,7 @@ void scene_set_bg_mosaic_size(s16 xSize, s16 ySize) {
 
 
 // Sprite Motion - Indefinite Linear
-s32 func_0800e1cc(s16 sprite, s16 startX, s16 startY, s8_8 velX, s8_8 velY) {
+s32 scene_set_sprite_motion_indefinite(s16 sprite, s16 startX, s16 startY, s8_8 velX, s8_8 velY) {
     struct SpriteMover_Indefinite_Inputs inputs;
 
     inputs.sprite = sprite;
@@ -1537,16 +1537,16 @@ s32 func_0800e1cc(s16 sprite, s16 startX, s16 startY, s8_8 velX, s8_8 velY) {
 
 
 // Sprite Motion - Indefinite Linear (from current position)
-s32 func_0800e208(s16 sprite, s8_8 velX, s8_8 velY) {
+s32 scene_move_sprite_indefinite(s16 sprite, s8_8 velX, s8_8 velY) {
     s16 x, y;
 
     get_sprite_xy(sprite, &x, &y);
-    return func_0800e1cc(sprite, x, y, velX, velY);
+    return scene_set_sprite_motion_indefinite(sprite, x, y, velX, velY);
 }
 
 
 // Sprite Motion - Decelerate to Point
-s32 func_0800e25c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 multiplier) {
+s32 scene_set_sprite_motion_decelerate(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 multiplier) {
     struct SpriteMover_Decelerate_Inputs inputs;
 
     inputs.sprite = sprite;
@@ -1561,16 +1561,16 @@ s32 func_0800e25c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8
 
 
 // Sprite Motion - Decelerate to Point (from current position)
-s32 func_0800e2a8(s16 sprite, s16 destX, s16 destY, s8_8 multiplier) {
+s32 scene_move_sprite_decelerate(s16 sprite, s16 destX, s16 destY, s8_8 multiplier) {
     s16 x, y;
 
     get_sprite_xy(sprite, &x, &y);
-    return func_0800e25c(sprite, x, y, destX, destY, multiplier);
+    return scene_set_sprite_motion_decelerate(sprite, x, y, destX, destY, multiplier);
 }
 
 
 // Sprite Motion - Accelerate to Point
-s32 func_0800e30c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration) {
+s32 scene_set_sprite_motion_accelerate(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration) {
     struct SpriteMover_Accelerate_Inputs inputs;
 
     inputs.sprite = sprite;
@@ -1586,16 +1586,16 @@ s32 func_0800e30c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8
 
 
 // Sprite Motion - Accelerate to Point (from current position)
-s32 func_0800e364(s16 sprite, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration) {
+s32 scene_move_sprite_accelerate(s16 sprite, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration) {
     s16 x, y;
 
     get_sprite_xy(sprite, &x, &y);
-    return func_0800e30c(sprite, x, y, destX, destY, velocity, acceleration);
+    return scene_set_sprite_motion_accelerate(sprite, x, y, destX, destY, velocity, acceleration);
 }
 
 
 // Sprite Motion - LERP to Point
-s32 func_0800e3e4(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration) {
+s32 scene_set_sprite_motion_lerp(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration) {
     struct SpriteMover_TimedLinear_Inputs inputs;
 
     inputs.sprite = sprite;
@@ -1610,16 +1610,16 @@ s32 func_0800e3e4(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, u16 
 
 
 // Sprite Motion - LERP to Point (from current position)
-s32 func_0800e430(s16 sprite, s16 destX, s16 destY, u16 duration) {
+s32 scene_move_sprite_lerp(s16 sprite, s16 destX, s16 destY, u16 duration) {
     s16 x, y;
 
     get_sprite_xy(sprite, &x, &y);
-    return func_0800e3e4(sprite, x, y, destX, destY, duration);
+    return scene_set_sprite_motion_lerp(sprite, x, y, destX, destY, duration);
 }
 
 
-// Sprite Motion - Sinusoidal
-s32 func_0800e490(s16 sprite, u8 angle, s16 baseX, s16 baseY, s16 baseOffset, s16 amplitude, s16 waveStart, s16 waveEnd, u16 duration) {
+// Sprite Motion - Sinusoidal Oscillation
+s32 scene_set_sprite_motion_sine_osc(s16 sprite, u8 angle, s16 baseX, s16 baseY, s16 baseOffset, s16 amplitude, s16 waveStart, s16 waveEnd, u16 duration) {
     struct SpriteMover_SineOsc_Inputs inputs;
 
     inputs.sprite = sprite;
@@ -1636,17 +1636,17 @@ s32 func_0800e490(s16 sprite, u8 angle, s16 baseX, s16 baseY, s16 baseOffset, s1
 }
 
 
-// Sprite Motion - Sinusoidal (from current position, no base offset)
-s32 func_0800e4f8(s16 sprite, u8 angle, s16 amplitude, s16 waveStart, s16 waveEnd, u16 duration) {
+// Sprite Motion - Sinusoidal Oscillation (from current position, no base offset)
+s32 scene_move_sprite_sine_osc(s16 sprite, u8 angle, s16 amplitude, s16 waveStart, s16 waveEnd, u16 duration) {
     s16 x, y;
 
     get_sprite_xy(sprite, &x, &y);
-    return func_0800e490(sprite, angle, x, y, 0, amplitude, waveStart, waveEnd, duration);
+    return scene_set_sprite_motion_sine_osc(sprite, angle, x, y, 0, amplitude, waveStart, waveEnd, duration);
 }
 
 
 // Sprite Motion - Sinusoidal Velocity
-s32 func_0800e57c(s16 sprite, u32 mode, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration) {
+s32 scene_set_sprite_motion_sine_vel(s16 sprite, u32 mode, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration) {
     struct SpriteMover_SineVel_Inputs inputs;
 
     inputs.sprite = sprite;
@@ -1686,16 +1686,16 @@ s32 func_0800e57c(s16 sprite, u32 mode, s16 startX, s16 startY, s16 destX, s16 d
 
 
 // Sprite Motion - Sinusoidal Velocity (from current position)
-s32 func_0800e62c(s16 sprite, u32 mode, s16 destX, s16 destY, u16 duration) {
+s32 scene_move_sprite_sine_vel(s16 sprite, u32 mode, s16 destX, s16 destY, u16 duration) {
     s16 x, y;
 
     get_sprite_xy(sprite, &x, &y);
-    return func_0800e57c(sprite, mode, x, y, destX, destY, duration);
+    return scene_set_sprite_motion_sine_vel(sprite, mode, x, y, destX, destY, duration);
 }
 
 
 // Sprite Motion - LERP with Sine Oscillation
-s32 func_0800e694(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s16 amplitude, u16 duration) {
+s32 scene_set_sprite_motion_sine_wave(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s16 amplitude, u16 duration) {
     struct SpriteMover_SineWave_Inputs inputs;
 
     inputs.sprite = sprite;
@@ -1711,11 +1711,11 @@ s32 func_0800e694(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s16 
 
 
 // Sprite Motion - LERP with Sine Oscillation (from current position)
-s32 func_0800e6ec(s16 sprite, s16 destX, s16 destY, s16 amplitude, u16 duration) {
+s32 scene_move_sprite_sine_wave(s16 sprite, s16 destX, s16 destY, s16 amplitude, u16 duration) {
     s16 x, y;
 
     get_sprite_xy(sprite, &x, &y);
-    return func_0800e694(sprite, x, y, destX, destY, amplitude, duration);
+    return scene_set_sprite_motion_sine_wave(sprite, x, y, destX, destY, amplitude, duration);
 }
 
 
@@ -1957,13 +1957,13 @@ void scene_set_music_interp_enabled(u32 enable) {
 
 
 // Fade Music In
-void func_0800ed24(u32 duration) {
+void scene_fade_music_in(u32 duration) {
     fade_in_soundplayer(D_030053c0.musicPlayer, duration);
 }
 
 
 // Fade Music Out
-void func_0800ed3c(u32 duration) {
+void scene_fade_music_out(u32 duration) {
     fade_out_soundplayer(D_030053c0.musicPlayer, duration);
 }
 

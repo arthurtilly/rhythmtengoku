@@ -63,7 +63,7 @@ branch_0803f43e: \n\
 /* 0803f474 */ LSRS R0, R0, 0x10 \n\
 /* 0803f476 */ STR R0, [SP, 0x8] \n\
 /* 0803f478 */ MOV R0, R12 @ Set R0 to R12 \n\
-/* 0803f47a */ BL func_0800e694 \n\
+/* 0803f47a */ BL scene_set_sprite_motion_sine_wave \n\
 /* 0803f47e */ LDR R6, =gCurrentEngineData \n\
 /* 0803f480 */ LDR R2, [R6] \n\
 /* 0803f482 */ MOVS R3, 0xDE @ Set R3 to 0xDE \n\

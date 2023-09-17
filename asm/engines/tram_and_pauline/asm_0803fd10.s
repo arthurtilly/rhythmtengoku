@@ -87,7 +87,7 @@ branch_0803fdb4: \n\
 /* 0803fdb4 */ MOVS R0, 0xD0 @ Set R0 to 0xD0 \n\
 /* 0803fdb6 */ LSLS R0, R0, 0x2 \n\
 /* 0803fdb8 */ MOVS R1, 0x2 @ Set R1 to 0x2 \n\
-/* 0803fdba */ BL func_0800c660 \n\
+/* 0803fdba */ BL scene_create_obj_font_printer \n\
 /* 0803fdbe */ LDR R1, [R7] \n\
 /* 0803fdc0 */ STR R0, [R1, 0x38] \n\
 /* 0803fdc2 */ LDR R1, =D_0805a910 \n\

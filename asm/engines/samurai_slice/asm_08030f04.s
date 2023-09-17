@@ -16,7 +16,7 @@ thumb_func_start func_08030f04 \n\
 /* 08030f1a */ LDRH R3, [R2] \n\
 /* 08030f1c */ STR R4, [SP] \n\
 /* 08030f1e */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
-/* 08030f20 */ BL func_0800c4b0 \n\
+/* 08030f20 */ BL scene_start_integer_interp \n\
 /* 08030f24 */ ADD SP, 0x4 \n\
 /* 08030f26 */ POP {R4} \n\
 /* 08030f28 */ POP {R0} \n\

@@ -29,7 +29,7 @@ branch_0803579a: \n\
 /* 080357a8 */ STR R5, [SP] \n\
 /* 080357aa */ MOVS R0, 0x1 @ Set R0 to 0x1 \n\
 /* 080357ac */ ADDS R3, R7, 0x0 @ Set R3 to R7 + 0x0 \n\
-/* 080357ae */ BL func_0800c4b0 \n\
+/* 080357ae */ BL scene_start_integer_interp \n\
 /* 080357b2 */ LDR R0, [R4] \n\
 /* 080357b4 */ STRB R6, [R0, 0xC] \n\
 /* 080357b6 */ ADD SP, 0x4 \n\

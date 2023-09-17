@@ -55,7 +55,7 @@ void func_08000224(void) {
 	}
 	flush_save_buffer_to_sram_backup();
 	func_080029d8(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
-	set_scene_object_current_text_id(func_0800c490());
+	set_scene_object_current_text_id(scene_get_default_text_id());
 	init_scene_static_var();
 	func_08001360();
 	func_08009150();

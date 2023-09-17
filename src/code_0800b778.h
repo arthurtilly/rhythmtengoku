@@ -78,7 +78,7 @@ enum BeatscriptCommandsEnum {
     /* 3F */ BS_CMD_INTERP_LCD_BLEND,
     /* 40 */ BS_CMD_CHANGE_PALETTE,
     /* 41 */ BS_CMD_SET_BG_REG,
-    /* 42 */ BS_CMD_INTERP_NUMBER_LINEAR,
+    /* 42 */ BS_CMD_START_INTEGER_LERP,
     /* 43 */ BS_CMD_43,
     /* 44 */ BS_CMD_44,
     /* 45 */ BS_CMD_45,
@@ -149,39 +149,39 @@ enum BeatscriptCommandsEnum {
     /* 86 */ BS_CMD_SPRITE_RENDER,
     /* 87 */ BS_CMD_SPRITE_SET_XY_WITH_VECTOR2,
     /* 88 */ BS_CMD_SPRITE_SET_PALETTE,
-    /* 89 */ BS_CMD_SPRITE_89,
-    /* 8A */ BS_CMD_SPRITE_8A,
+    /* 89 */ BS_CMD_SPRITE_SET_TILE_NUM,
+    /* 8A */ BS_CMD_SPRITE_SET_ENABLE_UPDATES,
     /* 8B */ BS_CMD_SPRITE_SET_ANIM_SPEED,
-    /* 8C */ BS_CMD_SPRITE_SET_MOTION_LINEAR_INDEFINITE,
-    /* 8D */ BS_CMD_8D,
-    /* 8E */ BS_CMD_8E,
-    /* 8F */ BS_CMD_8F,
-    /* 90 */ BS_CMD_90,
-    /* 91 */ BS_CMD_91,
+    /* 8C */ BS_CMD_SPRITE_START_MOTION_INDEFINITE,
+    /* 8D */ BS_CMD_SPRITE_START_MOTION_DECELERATE,
+    /* 8E */ BS_CMD_SPRITE_START_MOTION_ACCELERATE,
+    /* 8F */ BS_CMD_SPRITE_START_MOTION_LERP,
+    /* 90 */ BS_CMD_SPRITE_START_MOTION_SINE_VEL,
+    /* 91 */ BS_CMD_SPRITE_START_MOTION_SINE_VEL,
     /* 92 */ BS_CMD_SPRITE_SET_MOTION_CALLBACK,
-    /* 93 */ BS_CMD_93,
-    /* 94 */ BS_CMD_94,
-    /* 95 */ BS_CMD_95,
+    /* 93 */ BS_CMD_TEXT_DELETE_ANIM,
+    /* 94 */ BS_CMD_TEXT_MANAGE,
+    /* 95 */ BS_CMD_SPRITE_EDIT_ATTRIBUTES,
     /* 96 */ BS_CMD_SPRITE_ADD_XY,
     /* 97 */ BS_CMD_SPRITE_ADD_Z,
-    /* 98 */ BS_CMD_98,
-    /* 99 */ BS_CMD_99,
-    /* 9A */ BS_CMD_9A,
-    /* 9B */ BS_CMD_9B,
-    /* 9C */ BS_CMD_9C,
+    /* 98 */ BS_CMD_SPRITE_MOVE_DECELERATE,
+    /* 99 */ BS_CMD_SPRITE_MOVE_ACCELERATE,
+    /* 9A */ BS_CMD_SPRITE_MOVE_LERP,
+    /* 9B */ BS_CMD_SPRITE_MOVE_SINE_VEL,
+    /* 9C */ BS_CMD_SPRITE_MOVE_SINE_WAVE,
     /* 9D */ BS_CMD_SPRITE_SET_ANIM_CALLBACK,
     /* 9E */ BS_CMD_SPRITE_DELETE,
     /* 9F */ BS_CMD_SPRITE_DELETE_ALL,
-    /* A0 */ BS_CMD_A0,
-    /* A1 */ BS_CMD_A1,
-    /* A2 */ BS_CMD_A2,
-    /* A3 */ BS_CMD_A3,
-    /* A4 */ BS_CMD_A4,
-    /* A5 */ BS_CMD_A5,
-    /* A6 */ BS_CMD_DMA_SET,
+    /* A0 */ BS_CMD_PAUSE_TASKS,
+    /* A1 */ BS_CMD_START_INTEGER_ALTERNATOR,
+    /* A2 */ BS_CMD_START_INTEGER_INCREMENTER,
+    /* A3 */ BS_CMD_GET_ACTIVE_TASK,
+    /* A4 */ BS_CMD_START_INTEGER_SINE_INTERP,
+    /* A5 */ BS_CMD_STOP_TASK,
+    /* A6 */ BS_CMD_DMA3_SET,
     /* A7 */ BS_CMD_SET_SPEED_TO_MUSIC,
     /* A8 */ BS_CMD_SPRITE_LINK_XY_TO_BG_OFFSET,
-    /* A9 */ BS_CMD_SPRITE_A9,
+    /* A9 */ BS_CMD_TEXT_A9,
     /* AA */ BS_CMD_AA,
     /* AB */ BS_CMD_AB,
     /* AC */ BS_CMD_SET_MUSIC_TRACK_VOLUME,
@@ -296,18 +296,18 @@ extern s32 scene_affine_group_alloc(void);
 extern void *scene_mem_heap_alloc(u32 size);
 extern s32 scene_start_new_task(struct TaskMethods *methods, void *inputs, TaskFinalFunc onFinish, u32 onFinishArg);
 extern void scene_flush_save_buffer(void);
-extern u32 func_0800c490(void);
+extern u32 scene_get_default_text_id(void);
 extern void func_0800c494(u32 thread);
 extern void func_0800c4ac_stub(void);
-extern s32 func_0800c4b0(u32 type, u32 duration, void *source, s32 initial, s32 target);
-extern s32 func_0800c508(u32 type, u32 interval, void *source, s32 initial, s32 target);
-extern s32 func_0800c560(u32 type, u32 interval, void *source, s32 initial, s32 increment);
-extern s32 func_0800c5b8(u32 type, void *source, s32 baseValue, s24_8 initialAngle, s24_8 speed);
+extern s32 scene_start_integer_interp(u32 type, u32 duration, void *source, s32 initial, s32 target);
+extern s32 scene_start_integer_alternator(u32 type, u32 interval, void *source, s32 initial, s32 target);
+extern s32 scene_start_integer_incrementer(u32 type, u32 interval, void *source, s32 initial, s32 increment);
+extern s32 scene_start_integer_sine_interp(u32 type, void *source, s32 baseValue, s24_8 initialAngle, s24_8 speed);
 extern void func_0800c604(u32 thread);
 extern void func_0800c654_stub(void);
 extern void func_0800c658_stub(void);
 extern void func_0800c65c_stub(void);
-extern struct BitmapFontOBJ *func_0800c660(u16 baseTileNum, u8 maxTileRows);
+extern struct BitmapFontOBJ *scene_create_obj_font_printer(u16 baseTileNum, u8 maxTileRows);
 extern void func_0800c694(u32 arg);
 extern void func_0800c6a4(void);
 extern void func_0800c6c8(void);
@@ -353,20 +353,20 @@ extern void scene_enable_obj_windows(void); // Enable OBJ Windows
 extern void scene_disable_obj_windows(void); // Disable OBJ Windows
 extern void scene_set_obj_mosaic_size(s16 xSize, s16 ySize); // Set OBJ Mosaic Size
 extern void scene_set_bg_mosaic_size(s16 xSize, s16 ySize); // Set BG Mosaic Size
-extern s32 func_0800e1cc(s16 sprite, s16 startX, s16 startY, s8_8 velX, s8_8 velY);
-extern s32 func_0800e208(s16 sprite, s8_8 velX, s8_8 velY);
-extern s32 func_0800e25c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 multiplier);
-extern s32 func_0800e2a8(s16 sprite, s16 destX, s16 destY, s8_8 multiplier);
-extern s32 func_0800e30c(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration);
-extern s32 func_0800e364(s16 sprite, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration);
-extern s32 func_0800e3e4(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration);
-extern s32 func_0800e430(s16 sprite, s16 destX, s16 destY, u16 duration);
-extern s32 func_0800e490(s16 sprite, u8 angle, s16 baseX, s16 baseY, s16 baseOffset, s16 amplitude, s16 waveStart, s16 waveEnd, u16 duration);
-extern s32 func_0800e4f8(s16 sprite, u8 angle, s16 amplitude, s16 waveStart, s16 waveEnd, u16 duration);
-extern s32 func_0800e57c(s16 sprite, u32 mode, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration);
-extern s32 func_0800e62c(s16 sprite, u32 mode, s16 destX, s16 destY, u16 duration);
-extern s32 func_0800e694(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s16 amplitude, u16 duration);
-extern s32 func_0800e6ec(s16 sprite, s16 destX, s16 destY, s16 amplitude, u16 duration);
+extern s32 scene_set_sprite_motion_indefinite(s16 sprite, s16 startX, s16 startY, s8_8 velX, s8_8 velY);
+extern s32 scene_move_sprite_indefinite(s16 sprite, s8_8 velX, s8_8 velY);
+extern s32 scene_set_sprite_motion_decelerate(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 multiplier);
+extern s32 scene_move_sprite_decelerate(s16 sprite, s16 destX, s16 destY, s8_8 multiplier);
+extern s32 scene_set_sprite_motion_accelerate(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration);
+extern s32 scene_move_sprite_accelerate(s16 sprite, s16 destX, s16 destY, s8_8 velocity, s8_8 acceleration);
+extern s32 scene_set_sprite_motion_lerp(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration);
+extern s32 scene_move_sprite_lerp(s16 sprite, s16 destX, s16 destY, u16 duration);
+extern s32 scene_set_sprite_motion_sine_osc(s16 sprite, u8 angle, s16 baseX, s16 baseY, s16 baseOffset, s16 amplitude, s16 waveStart, s16 waveEnd, u16 duration);
+extern s32 scene_move_sprite_sine_osc(s16 sprite, u8 angle, s16 amplitude, s16 waveStart, s16 waveEnd, u16 duration);
+extern s32 scene_set_sprite_motion_sine_vel(s16 sprite, u32 mode, s16 startX, s16 startY, s16 destX, s16 destY, u16 duration);
+extern s32 scene_move_sprite_sine_vel(s16 sprite, u32 mode, s16 destX, s16 destY, u16 duration);
+extern s32 scene_set_sprite_motion_sine_wave(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s16 amplitude, u16 duration);
+extern s32 scene_move_sprite_sine_wave(s16 sprite, s16 destX, s16 destY, s16 amplitude, u16 duration);
 // extern ? func_0800e75c(?);
 // extern ? func_0800e768(?);
 // extern ? func_0800e7e8(?);
@@ -397,8 +397,8 @@ extern void scene_music_pitch_interp_update(void);
 extern void scene_music_pitch_interp_start(s32 initial, s32 target, u32 duration);
 extern void scene_interpolate_music_pitch(s32 target, u32 duration); // BEATSCRIPT - Change Music Pitch
 extern void scene_set_music_interp_enabled(u32 enable);
-extern void func_0800ed24(u32 duration); // BEATSCRIPT - Fade-In Music
-extern void func_0800ed3c(u32 duration); // BEATSCRIPT - Fade-Out Music
+extern void scene_fade_music_in(u32 duration); // BEATSCRIPT - Fade-In Music
+extern void scene_fade_music_out(u32 duration); // BEATSCRIPT - Fade-Out Music
 extern void func_0800ed54_stub(void);
 extern void func_0800ed58_stub(void);
 extern void func_0800ed5c_stub(void);
@@ -416,7 +416,6 @@ extern void func_0800eebc(char *dest, const char *src);
 extern void func_0800f070(u32 id, const char *string);
 extern void func_0800f084(void);
 extern void func_0800f09c(struct BitmapFontOBJ *objFont);
-
 // extern ? func_0800f0b4(?);
 // extern ? func_0800f180(?);
 // extern ? func_0800f1ec(?);

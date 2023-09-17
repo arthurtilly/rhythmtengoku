@@ -127,7 +127,7 @@ branch_0803dbe4: \n\
 /* 0803dc1c */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 0803dc1e */ MOVS R2, 0x73 @ Set R2 to 0x73 \n\
 /* 0803dc20 */ MOVS R3, 0x28 @ Set R3 to 0x28 \n\
-/* 0803dc22 */ BL func_0800e6ec \n\
+/* 0803dc22 */ BL scene_move_sprite_sine_wave \n\
 /* 0803dc26 */ ADDS R7, 0x1 @ Add 0x1 to R7 \n\
 /* 0803dc28 */ CMP R7, 0x1 @ Compare R7 and 0x1 \n\
 /* 0803dc2a */ BLS branch_0803dbe4 \n\

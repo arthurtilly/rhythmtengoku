@@ -12,7 +12,7 @@ thumb_func_start func_0800e768 \n\
 /* 0800e774 */ LDRSH R0, [R0, R1] \n\
 /* 0800e776 */ CMP R0, 0x0 @ Compare R0 and 0x0 \n\
 /* 0800e778 */ BGE branch_0800e7da \n\
-/* 0800e77a */ BL func_0800c490 \n\
+/* 0800e77a */ BL scene_get_default_text_id \n\
 /* 0800e77e */ LDR R1, [R4] \n\
 /* 0800e780 */ LSLS R0, R0, 0x2 \n\
 /* 0800e782 */ ADDS R0, R0, R1 @ Set R0 to R0 + R1 \n\

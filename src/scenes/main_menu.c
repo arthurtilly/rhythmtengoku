@@ -63,7 +63,7 @@ void main_menu_scene_start(void *sVar, s32 dArg) {
     func_08007324(FALSE);
     func_080073f0();
     gMainMenu->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
-    gMainMenu->objFont = func_0800c660(0x300, 4);
+    gMainMenu->objFont = scene_create_obj_font_printer(0x300, 4);
     import_all_scene_objects(D_03005380, gMainMenu->objFont, main_menu_scene_objects, D_0300558c);
     main_menu_scene_init_gfx1();
     func_0804d160(D_03005380, anim_main_menu_blank1, 0, 120, 64, 0x6E, 1, 0, 0);

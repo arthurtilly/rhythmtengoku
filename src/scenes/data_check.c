@@ -47,7 +47,7 @@ void data_check_scene_start(void *sVar, s32 dArg) {
     func_08007324(FALSE);
     func_080073f0();
     gDataCheck->bgFont = create_new_bmp_font_bg(get_current_mem_id(), bitmap_font_warioware_body, 0, 0x340, 6);
-    gDataCheck->objFont = func_0800c660(0x300, 4);
+    gDataCheck->objFont = scene_create_obj_font_printer(0x300, 4);
 
     for (i = 0; i < 10; i++) {
         gDataCheck->textLineSprites[i] = -1;

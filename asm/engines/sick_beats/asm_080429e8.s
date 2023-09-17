@@ -95,7 +95,7 @@ thumb_func_start func_080429e8 \n\
 /* 08042aae */ ADDS R1, R4, 0x0 @ Set R1 to R4 + 0x0 \n\
 /* 08042ab0 */ ADDS R2, R5, 0x0 @ Set R2 to R5 + 0x0 \n\
 /* 08042ab2 */ ADDS R3, R6, 0x0 @ Set R3 to R6 + 0x0 \n\
-/* 08042ab4 */ BL func_0800e6ec \n\
+/* 08042ab4 */ BL scene_move_sprite_sine_wave \n\
 /* 08042ab8 */ LDR R1, =sick_beats_play_particle_sound \n\
 /* 08042aba */ MOVS R2, 0x0 @ Set R2 to 0x0 \n\
 /* 08042abc */ BL run_func_after_task \n\

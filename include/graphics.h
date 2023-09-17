@@ -96,18 +96,19 @@ typedef u16 FontPalette[4];
   //  //  //  GRAPHICS BUFFER  //  //  //
 
 
-#define DISPCNT_DISPLAY_BG(x)   ((1 << 8) << (x))
-#define BGCNT_PRIORITY(x)       ((x) << 0)
-#define BGCNT_TILEDATA_ADDR(x)  ((x) << 2)
-#define BGCNT_TILEMAP_ADDR(x)   ((x) << 8)
-#define BGCNT_TILEMAP_SIZE(x)   ((x) << 14)
-#define MOSAIC_BG_XSIZE(x)      ((x) << 0)
-#define MOSAIC_BG_YSIZE(y)      ((y) << 4)
-#define MOSAIC_SPR_XSIZE(x)     ((x) << 8)
-#define MOSAIC_SPR_YSIZE(y)     ((y) << 12)
-#define BLDMOD_BLEND_MODE(x)    ((x) << 6)
-#define COLEV_SRC_PIXEL(x)      ((x) << 0)
-#define COLEV_TGT_PIXEL(x)      ((x) << 8)
+#define DISPCNT_DISPLAY_BG(x)       ((1 << 8) << (x))
+#define DISPCNT_ENABLE_WINDOW(x)    ((1 << 13) << (x))
+#define BGCNT_PRIORITY(x)           ((x) << 0)
+#define BGCNT_TILEDATA_ADDR(x)      ((x) << 2)
+#define BGCNT_TILEMAP_ADDR(x)       ((x) << 8)
+#define BGCNT_TILEMAP_SIZE(x)       ((x) << 14)
+#define MOSAIC_BG_XSIZE(x)          ((x) << 0)
+#define MOSAIC_BG_YSIZE(y)          ((y) << 4)
+#define MOSAIC_SPR_XSIZE(x)         ((x) << 8)
+#define MOSAIC_SPR_YSIZE(y)         ((y) << 12)
+#define BLDMOD_BLEND_MODE(x)        ((x) << 6)
+#define COLEV_SRC_PIXEL(x)          ((x) << 0)
+#define COLEV_TGT_PIXEL(x)          ((x) << 8)
 
 struct AffineBG {
     u16 dx;

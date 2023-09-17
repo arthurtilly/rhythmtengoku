@@ -75,7 +75,7 @@ thumb_func_start mechanical_horse_engine_start \n\
 /* 08041002 */ MOVS R0, 0xE0 @ Set R0 to 0xE0 \n\
 /* 08041004 */ LSLS R0, R0, 0x2 \n\
 /* 08041006 */ MOVS R1, 0x1 @ Set R1 to 0x1 \n\
-/* 08041008 */ BL func_0800c660 \n\
+/* 08041008 */ BL scene_create_obj_font_printer \n\
 /* 0804100c */ LDR R1, [R6] \n\
 /* 0804100e */ MOVS R3, 0xB7 @ Set R3 to 0xB7 \n\
 /* 08041010 */ LSLS R3, R3, 0x2 \n\

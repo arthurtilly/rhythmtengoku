@@ -260,7 +260,7 @@ void spaceball_loop_exit_condition(void) {
 void spaceball_set_camera_zoom(u32 controls) {
     s32 target = (s32) controls >> 0x10;
     u32 time = controls & 0xffff;
-    func_0800c4b0(2, ticks_to_frames(time), &gSpaceball->zoom, gSpaceball->zoom, target);
+    scene_start_integer_interp(2, ticks_to_frames(time), &gSpaceball->zoom, gSpaceball->zoom, target);
 }
 
 

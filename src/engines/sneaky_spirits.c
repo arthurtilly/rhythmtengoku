@@ -111,10 +111,10 @@ void sneaky_spirits_set_rain_speed(u32 slowMotion) {
 
         for (i = 0; i < 20; i++) {
             sprite = gSneakySpirits->rainSplashes[i];
-            func_0804da20(D_03005380, sprite, 1);
+            func_0804da20(D_03005380, sprite, TRUE);
         }
 
-        func_0804da20(D_03005380, gSneakySpirits->tree, 1);
+        func_0804da20(D_03005380, gSneakySpirits->tree, TRUE);
     }
 
     else {
@@ -127,10 +127,10 @@ void sneaky_spirits_set_rain_speed(u32 slowMotion) {
 
         for (i = 0; i < 20; i++) {
             sprite = gSneakySpirits->rainSplashes[i];
-            func_0804da20(D_03005380, sprite, 0);
+            func_0804da20(D_03005380, sprite, FALSE);
         }
 
-        func_0804da20(D_03005380, gSneakySpirits->tree, 0);
+        func_0804da20(D_03005380, gSneakySpirits->tree, FALSE);
     }
 }
 
@@ -184,7 +184,7 @@ void sneaky_spirits_engine_start(u32 version) {
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
     scene_set_bg_layer_display(BG_LAYER_2, TRUE, 0, 0, 0, 30, 2);
 
-    gSneakySpirits->unk0 = func_0800c660(0x380, 1);
+    gSneakySpirits->unk0 = scene_create_obj_font_printer(0x380, 1);
     textAnim = bmp_font_obj_print_c(gSneakySpirits->unk0, D_08059f90, 0, 0);
     gSneakySpirits->text = func_0804d160(D_03005380, textAnim->frames, 0, 120, 32, 0, 0, 0, 0);
     sneaky_spirits_init_rain();
@@ -221,13 +221,13 @@ void sneaky_spirits_engine_event_stub(void) {
 // Engine Event 01 (Set Next Vertical Position)
 void sneaky_spirits_set_ghost_height(u32 height) {
     gSneakySpirits->ghostHeight = height;
-    func_0800c4b0(1, ticks_to_frames(0xc), &D_030053c0.musicVolume, D_030053c0.musicVolume, height);
+    scene_start_integer_interp(1, ticks_to_frames(0xc), &D_030053c0.musicVolume, D_030053c0.musicVolume, height);
 }
 
 
 // Engine Event 02 (Spawn Bow)
 void sneaky_spirits_spawn_bow(void) {
-    func_0800e25c(gSneakySpirits->bow, 290, 128, 210, 128, 230);
+    scene_set_sprite_motion_decelerate(gSneakySpirits->bow, 290, 128, 210, 128, 230);
     func_0804d770(D_03005380, gSneakySpirits->bow, 1);
 }
 
@@ -367,7 +367,7 @@ void sneaky_spirits_cue_hit(struct Cue *cue, struct SneakySpiritsCue *info, u32 
     totalFrames = (u16) func_0804ddb0(D_03005380, gSneakySpirits->ghostHit, 2);
     func_0804cebc(D_03005380, gSneakySpirits->ghostHit, agb_random(totalFrames));
     func_0804d770(D_03005380, gSneakySpirits->ghostHit, 1);
-    task = func_0800e3e4(gSneakySpirits->ghostHit, 100, 76, targetX, targetY, duration);
+    task = scene_set_sprite_motion_lerp(gSneakySpirits->ghostHit, 100, 76, targetX, targetY, duration);
     run_func_after_task(task, sneaky_spirits_stop_slow_motion, 0);
 
     func_0804dae0(D_03005380, gSneakySpirits->door, 1, 0x7f, 0);

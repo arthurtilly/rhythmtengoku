@@ -4,8 +4,7 @@
 #include "graphics.h"
 #include "sound.h"
 #include "cues.h"
-#include "data/beatscript_scene_data.h"
-#include "src/text_printer.h"
+#include "scenes.h"
 
 /*
     General "Game Engine" header file.

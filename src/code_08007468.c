@@ -39,7 +39,7 @@ void set_affine_stretch_rotation(s8 affineParam, s16 xScale, s16 yScale, s16 rot
 
 
 // Sprite Motion - Indefinite Linear (Start)
-struct SpriteMover_Indefinite *sprite_motion_task_indefinite_start(struct SpriteMover_Indefinite_Inputs *inputs) {
+struct SpriteMover_Indefinite *start_sprite_motion_task_indefinite(struct SpriteMover_Indefinite_Inputs *inputs) {
     struct SpriteMover_Indefinite *task;
 
     if (inputs->sprite < 0) {
@@ -59,7 +59,7 @@ struct SpriteMover_Indefinite *sprite_motion_task_indefinite_start(struct Sprite
 
 
 // Sprite Motion - Indefinite Linear (Update)
-u32 sprite_motion_task_indefinite_update(struct SpriteMover_Indefinite *task) {
+u32 update_sprite_motion_task_indefinite(struct SpriteMover_Indefinite *task) {
     task->posX += task->velX;
     task->posY += task->velY;
 
@@ -69,7 +69,7 @@ u32 sprite_motion_task_indefinite_update(struct SpriteMover_Indefinite *task) {
 
 
 // Sprite Motion - Decelerate to Point (Start)
-struct SpriteMover_Decelerate *sprite_motion_task_decelerate_start(struct SpriteMover_Decelerate_Inputs *inputs) {
+struct SpriteMover_Decelerate *start_sprite_motion_task_decelerate(struct SpriteMover_Decelerate_Inputs *inputs) {
     struct SpriteMover_Decelerate *task;
 
     if (inputs->sprite < 0) {
@@ -90,7 +90,7 @@ struct SpriteMover_Decelerate *sprite_motion_task_decelerate_start(struct Sprite
 
 
 // Sprite Motion - Decelerate to Point (Update)
-u32 sprite_motion_task_decelerate_update(struct SpriteMover_Decelerate *task) {
+u32 update_sprite_motion_task_decelerate(struct SpriteMover_Decelerate *task) {
     s32 dx = task->dx;
     s32 dy = task->dy;
 
@@ -120,7 +120,7 @@ u32 sprite_motion_task_decelerate_update(struct SpriteMover_Decelerate *task) {
 
 
 // Sprite Motion - Accelerate to Point (Start)
-struct SpriteMover_Accelerate *sprite_motion_task_accelerate_start(struct SpriteMover_Accelerate_Inputs *inputs) {
+struct SpriteMover_Accelerate *start_sprite_motion_task_accelerate(struct SpriteMover_Accelerate_Inputs *inputs) {
     struct SpriteMover_Accelerate *task;
 
     if (inputs->sprite < 0) {
@@ -144,7 +144,7 @@ struct SpriteMover_Accelerate *sprite_motion_task_accelerate_start(struct Sprite
 
 
 // Sprite Motion - Accelerate to Point (Update)
-u32 sprite_motion_task_accelerate_update(struct SpriteMover_Accelerate *task) {
+u32 update_sprite_motion_task_accelerate(struct SpriteMover_Accelerate *task) {
     s24_8 distTravelled, totalDist;
     u32 reachedEnd;
     s16 x, y;
@@ -179,7 +179,7 @@ u32 sprite_motion_task_accelerate_update(struct SpriteMover_Accelerate *task) {
 
 
 // Sprite Motion - LERP to Point (Start)
-struct SpriteMover_TimedLinear *sprite_motion_task_lerp_start(struct SpriteMover_TimedLinear_Inputs *inputs) {
+struct SpriteMover_TimedLinear *start_sprite_motion_task_lerp(struct SpriteMover_TimedLinear_Inputs *inputs) {
     struct SpriteMover_TimedLinear *task;
 
     if (inputs->sprite < 0) {
@@ -201,7 +201,7 @@ struct SpriteMover_TimedLinear *sprite_motion_task_lerp_start(struct SpriteMover
 
 
 // Sprite Motion - LERP to Point (Update)
-u32 sprite_motion_task_lerp_update(struct SpriteMover_TimedLinear *task) {
+u32 update_sprite_motion_task_lerp(struct SpriteMover_TimedLinear *task) {
     s32 totalFrames = task->totalFrames;
     u32 reachedEnd = (++task->framesPassed >= totalFrames);
     s32 framesPassed = task->framesPassed;
@@ -214,7 +214,7 @@ u32 sprite_motion_task_lerp_update(struct SpriteMover_TimedLinear *task) {
 
 
 // Sprite Motion - Sinusoidal Oscillation (Update)
-u32 sprite_motion_task_sine_osc_update(struct SpriteMover_SineOsc *task) {
+u32 update_sprite_motion_task_sine_osc(struct SpriteMover_SineOsc *task) {
     u8 wavePos = lerp(task->waveStart, task->waveEnd, task->framesPassed, task->totalFrames);
 
     s32 offset = task->baseOffset + FIXED_TO_INT(task->amplitude * sins2(wavePos));
@@ -229,7 +229,7 @@ u32 sprite_motion_task_sine_osc_update(struct SpriteMover_SineOsc *task) {
 
 
 // Sprite Motion - Sinusoidal Oscillation (Start)
-struct SpriteMover_SineOsc *sprite_motion_task_sine_osc_start(struct SpriteMover_SineOsc_Inputs *inputs) {
+struct SpriteMover_SineOsc *start_sprite_motion_task_sine_osc(struct SpriteMover_SineOsc_Inputs *inputs) {
     struct SpriteMover_SineOsc *task;
 
     if (inputs->sprite < 0) {
@@ -248,13 +248,13 @@ struct SpriteMover_SineOsc *sprite_motion_task_sine_osc_start(struct SpriteMover
     task->totalFrames = inputs->totalFrames;
     task->angle = inputs->angle;
 
-    sprite_motion_task_sine_osc_update(task);
+    update_sprite_motion_task_sine_osc(task);
     return task;
 }
 
 
 // Sprite Motion - Sinusoidal Velocity to Point (Update)
-u32 sprite_motion_task_sine_vel_update(struct SpriteMover_SineVel *task) {
+u32 update_sprite_motion_task_sine_vel(struct SpriteMover_SineVel *task) {
     s32 temp_r5 = lerp(task->unkA, task->unkC, task->framesPassed, task->totalFrames);
 
     u16 xPos = task->startXPos + FIXED_TO_INT(task->dx * func_080019a4(temp_r5));
@@ -267,7 +267,7 @@ u32 sprite_motion_task_sine_vel_update(struct SpriteMover_SineVel *task) {
 
 
 // Sprite Motion - Sinusoidal Velocity to Point (Start)
-struct SpriteMover_SineVel *sprite_motion_task_sine_vel_start(struct SpriteMover_SineVel_Inputs *inputs) {
+struct SpriteMover_SineVel *start_sprite_motion_task_sine_vel(struct SpriteMover_SineVel_Inputs *inputs) {
     struct SpriteMover_SineVel *task;
 
     if (inputs->sprite < 0) {
@@ -285,13 +285,13 @@ struct SpriteMover_SineVel *sprite_motion_task_sine_vel_start(struct SpriteMover
     task->framesPassed = 0;
     task->totalFrames = inputs->totalFrames;
 
-    sprite_motion_task_sine_vel_update(task);
+    update_sprite_motion_task_sine_vel(task);
     return task;
 }
 
 
 // Sprite Motion - Move Along Sine Wave (Update)
-u32 sprite_motion_task_sine_wave_update(struct SpriteMover_SineWave *task) {
+u32 update_sprite_motion_task_sine_wave(struct SpriteMover_SineWave *task) {
     s32 totalFrames = task->totalFrames;
     u32 reachedEnd = (++task->framesPassed >= totalFrames);
     s32 framesPassed = task->framesPassed;
@@ -307,7 +307,7 @@ u32 sprite_motion_task_sine_wave_update(struct SpriteMover_SineWave *task) {
 
 
 // Sprite Motion - Move Along Sine Wave (Start)
-struct SpriteMover_SineWave *sprite_motion_task_sine_wave_start(struct SpriteMover_SineWave_Inputs *inputs) {
+struct SpriteMover_SineWave *start_sprite_motion_task_sine_wave(struct SpriteMover_SineWave_Inputs *inputs) {
     struct SpriteMover_SineWave *task;
 
     if (inputs->sprite < 0) {
@@ -390,7 +390,7 @@ s32 fast_divsi3(s32 dividend, s32 divisor) {
 
 
 // Initialise Number Linear Interpolator Task
-struct NumberInterpolator *func_08007bb8(struct NumberInterpolator *inputs) {
+struct NumberInterpolator *start_integer_interp_task(struct NumberInterpolator *inputs) {
     struct NumberInterpolator *task;
 
     task = mem_heap_alloc(sizeof(struct NumberInterpolator));
@@ -418,7 +418,7 @@ struct NumberInterpolator *func_08007bb8(struct NumberInterpolator *inputs) {
 
 
 // Update Number Linear Interpolator Task
-u32 func_08007c30(struct NumberInterpolator *task) {
+u32 update_integer_interp_task(struct NumberInterpolator *task) {
     s32 current = task->initial + fast_divsi3((task->target - task->initial) * task->runningTime, task->duration);
 
     switch (task->type) {
@@ -438,7 +438,7 @@ u32 func_08007c30(struct NumberInterpolator *task) {
 
 
 // Initialise Number Alternator Task
-struct NumberInterpolator *func_08007ca8(struct NumberInterpolator *inputs) {
+struct NumberInterpolator *start_integer_alternator_task(struct NumberInterpolator *inputs) {
     struct NumberInterpolator *task;
 
     task = mem_heap_alloc(sizeof(struct NumberInterpolator));
@@ -466,7 +466,7 @@ struct NumberInterpolator *func_08007ca8(struct NumberInterpolator *inputs) {
 
 
 // Update Number Alternator Task
-u32 func_08007d20(struct NumberInterpolator *task) {
+u32 update_integer_alternator_task(struct NumberInterpolator *task) {
     s32 newInitial, newTarget;
 
     if (++task->runningTime >= task->duration) {
@@ -494,7 +494,7 @@ u32 func_08007d20(struct NumberInterpolator *task) {
 
 
 // Initialise Number Incrementer Task
-struct NumberInterpolator *func_08007d88(struct NumberInterpolator *inputs) {
+struct NumberInterpolator *start_integer_incrementer_task(struct NumberInterpolator *inputs) {
     struct NumberInterpolator *task;
 
     task = mem_heap_alloc(sizeof(struct NumberInterpolator));
@@ -522,7 +522,7 @@ struct NumberInterpolator *func_08007d88(struct NumberInterpolator *inputs) {
 
 
 // Update Number Incrementer Task
-u32 func_08007e00(struct NumberInterpolator *task) {
+u32 update_integer_incrementer_task(struct NumberInterpolator *task) {
     s32 current;
 
     if (++task->runningTime >= task->duration) {
@@ -548,7 +548,7 @@ u32 func_08007e00(struct NumberInterpolator *task) {
 
 
 // Set Target Value for Number Task
-void func_08007e68(s32 taskID, s32 newTarget) {
+void set_target_for_integer_task(s32 taskID, s32 newTarget) {
     struct NumberInterpolator *task = get_task_info(taskID);
 
     if (task != NULL) {
@@ -558,7 +558,7 @@ void func_08007e68(s32 taskID, s32 newTarget) {
 
 
 // Initialise Number Sine Interpolator Task
-struct NumberSineInterpolator *func_08007e7c(struct NumberSineInterpolator *inputs) {
+struct NumberSineInterpolator *start_integer_sine_interp_task(struct NumberSineInterpolator *inputs) {
     struct NumberSineInterpolator *task;
     s32 current;
 
@@ -588,7 +588,7 @@ struct NumberSineInterpolator *func_08007e7c(struct NumberSineInterpolator *inpu
 
 
 // Update Number Sine Interpolator Task
-u32 func_08007ef8(struct NumberSineInterpolator *task) {
+u32 update_integer_sine_interp_task(struct NumberSineInterpolator *task) {
     s32 current;
 
     task->angle += task->speed;
@@ -611,7 +611,7 @@ u32 func_08007ef8(struct NumberSineInterpolator *task) {
 
 
 // Initialise LCD Special Effects Interpolator
-struct BlendControlsInterpolator *init_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *inputs) {
+struct BlendControlsInterpolator *start_lcd_blend_mode_interp(struct BlendControlsInterpolator *inputs) {
     struct BlendControlsInterpolator *task;
     u32 tgtLevel, srcLevel;
 
@@ -641,7 +641,7 @@ struct BlendControlsInterpolator *init_lcd_blend_mode_interpolator(struct BlendC
 
 
 // Update LCD Special Effects Interpolator
-u32 update_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *task) {
+u32 update_lcd_blend_mode_interp(struct BlendControlsInterpolator *task) {
     u32 tgtLevel, srcLevel;
 
     task->runningTime++;
@@ -675,18 +675,57 @@ u32 update_lcd_blend_mode_interpolator(struct BlendControlsInterpolator *task) {
 
 
 // Interpolate LCD Special Effects
-s32 interpolate_lcd_blend_mode(u16 memID, u32 blendControls, u32 duration, u32 flip) {
+s32 interp_lcd_blend_mode(u16 memID, u32 blendControls, u32 duration, u32 flip) {
     struct BlendControlsInterpolator inputs;
 
     inputs.blendControls = blendControls;
     inputs.duration = duration;
     inputs.flip = flip;
 
-    return start_new_task(memID, &D_08936c54, &inputs, NULL, 0);
+    return start_new_task(memID, &lcd_blend_mode_interp_task, &inputs, NULL, 0);
 }
 
 
-#include "asm/code_08007468/asm_08008090.s"
+// Interpolate Window Size
+void interp_screen_window_size(u16 memID, u32 window, u32 duration,
+                                s32 initialX1, s32 initialY1, s32 initialX2, s32 initialY2,
+                                s32 targetX1, s32 targetY1, s32 targetX2, s32 targetY2) {
+    struct NumberInterpolator inputs;
+    void *windowLeftEdge;
+    void *windowRightEdge;
+    void *windowTopEdge;
+    void *windowBottomEdge;
+
+    inputs.type = 0;
+    inputs.duration = duration;
+
+    windowRightEdge = (window != 0) ? &D_03004b10.WIN1H : &D_03004b10.WIN0H;
+    windowBottomEdge = (window != 0) ? &D_03004b10.WIN1V : &D_03004b10.WIN0V;
+    windowLeftEdge = windowRightEdge + 1;
+    windowTopEdge = windowBottomEdge + 1;
+
+    inputs.source = windowLeftEdge;
+    inputs.initial = initialX1;
+    inputs.target = targetX1;
+    start_new_task(memID, &integer_interp_task, &inputs, NULL, 0);
+
+    inputs.source = windowTopEdge;
+    inputs.initial = initialY1;
+    inputs.target = targetY1;
+    start_new_task(memID, &integer_interp_task, &inputs, NULL, 0);
+
+    inputs.source = windowRightEdge;
+    inputs.initial = initialX2;
+    inputs.target = targetX2;
+    start_new_task(memID, &integer_interp_task, &inputs, NULL, 0);
+
+    inputs.source = windowBottomEdge;
+    inputs.initial = initialY2;
+    inputs.target = targetY2;
+    start_new_task(memID, &integer_interp_task, &inputs, NULL, 0);
+
+    D_03004b10.DISPCNT |= DISPCNT_ENABLE_WINDOW(window);
+}
 
 
 /* STRING */

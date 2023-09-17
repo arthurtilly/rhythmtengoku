@@ -91,7 +91,7 @@ _8000b24:   .word D_03005390
 _8000b28:   .word 0
 glabel func_08000a00_end
 
-@ ? (Mathematics)
+@ Square Root(?)
 arm_func_start func_08000b2c
     mov     r12, r0
     mov     r0, #0
