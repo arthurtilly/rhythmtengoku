@@ -22,20 +22,20 @@ thumb_func_start func_08004070 \n\
 /* 08004090 */ LDR R2, =D_030046c0 \n\
  \n\
 branch_08004092: \n\
-/* 08004092 */ LDR R0, =D_030008a0 \n\
+/* 08004092 */ LDR R0, =sColor1Index \n\
 /* 08004094 */ LDRH R0, [R0] \n\
 /* 08004096 */ LSLS R0, R0, 0x1 \n\
 /* 08004098 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 0800409a */ LDRH R0, [R0] \n\
 /* 0800409c */ MOV R9, R0 @ Set R9 to R0 \n\
-/* 0800409e */ LDR R0, =D_030008a2 \n\
+/* 0800409e */ LDR R0, =sColor2Index \n\
 /* 080040a0 */ LDRH R0, [R0] \n\
 /* 080040a2 */ LSLS R0, R0, 0x1 \n\
 /* 080040a4 */ ADDS R0, R0, R2 @ Set R0 to R0 + R2 \n\
 /* 080040a6 */ LDRH R0, [R0] \n\
 /* 080040a8 */ STR R0, [SP] \n\
-/* 080040aa */ LDR R1, =D_030008a6 \n\
-/* 080040ac */ LDR R2, =D_030008a8 \n\
+/* 080040aa */ LDR R1, =sColor1Value \n\
+/* 080040ac */ LDR R2, =sColor2Value \n\
 /* 080040ae */ CMP R3, 0x0 @ Compare R3 and 0x0 \n\
 /* 080040b0 */ BNE branch_080040c0 \n\
 /* 080040b2 */ LDRH R0, [R1] \n\
@@ -80,13 +80,13 @@ branch_080040c0: \n\
 /* 080040fc */ SUBS R7, R7, R0 @ Set R7 to R7 - R0 \n\
 /* 080040fe */ MOV R1, R10 @ Set R1 to R10 \n\
 /* 08004100 */ SUBS R6, R6, R1 @ Set R6 to R6 - R1 \n\
-/* 08004102 */ LDR R0, =D_030008ad \n\
+/* 08004102 */ LDR R0, =sGradientEndIndex \n\
 /* 08004104 */ LDRB R1, [R0] \n\
-/* 08004106 */ LDR R0, =D_030008ac \n\
+/* 08004106 */ LDR R0, =sGradientStartIndex \n\
 /* 08004108 */ LDRB R0, [R0] \n\
 /* 0800410a */ SUBS R5, R1, R0 @ Set R5 to R1 - R0 \n\
 /* 0800410c */ LSLS R0, R0, 0x1 \n\
-/* 0800410e */ LDR R1, =D_03000760 \n\
+/* 0800410e */ LDR R1, =sGradientBuffer \n\
 /* 08004110 */ ADDS R4, R0, R1 @ Set R4 to R0 + R1 \n\
 /* 08004112 */ MOVS R0, 0x80 @ Set R0 to 0x80 \n\
 /* 08004114 */ LSLS R0, R0, 0x11 \n\
@@ -128,10 +128,10 @@ branch_08004128: \n\
 /* 0800415a */ BNE branch_08004128 \n\
  \n\
 branch_0800415c: \n\
-/* 0800415c */ LDR R4, =D_03000760 \n\
+/* 0800415c */ LDR R4, =sGradientBuffer \n\
 /* 0800415e */ MOVS R3, 0x0 @ Set R3 to 0x0 \n\
-/* 08004160 */ LDR R1, =D_030008ac \n\
-/* 08004162 */ LDR R2, =D_030008ad \n\
+/* 08004160 */ LDR R1, =sGradientStartIndex \n\
+/* 08004162 */ LDR R2, =sGradientEndIndex \n\
 /* 08004164 */ LDRB R5, [R1] \n\
 /* 08004166 */ CMP R3, R5 @ Check R3 - R5 \n\
 /* 08004168 */ BGE branch_0800417a \n\

@@ -92,7 +92,7 @@ u32 func_0801d8d8(void) {
 
     func_08007410(); // Update OAM
     func_08006f84(); // Update Palette
-    func_080042a4();
+    func_080042a4(); // Update Backdrop
     return FALSE;
 }
 

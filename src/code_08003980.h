@@ -17,29 +17,30 @@
 // extern ? func_08003a78(?);
 // extern ? func_08003a88(?);
 // extern ? func_08003aa4(?);
-extern u32  func_08003ab8();
+extern u32 func_08003ab8(s32 val); // Absolute Value
 // extern ? func_08003ac4(?);
-// extern ? func_08003b28(?);
-// extern ? func_08003b34(?);
+// extern ? func_08003b28(?); // Create ?
+// extern ? func_08003b34(?); // Update ?
 // extern ? func_08003bd4(?);
 // extern ? func_08003c18(?);
 // extern ? func_08003c1c(?);
 // extern ? func_08003de0(?);
 // extern ? func_08003dec(?);
 // extern ? func_08003e00(?);
-// extern ? func_08003e64(?);
+extern void func_08003e64(void); // Load RLE Decompression Function to RAM
 // extern ? func_08003ea4(?);
 // extern ? func_08003eb8(?);
-// extern ? func_08003f28(?);
-// extern ? func_08003f50(?);
-// extern ? func_08003fb4(?);
-// extern ? func_08003ff0(?);
-// extern ? func_0800402c(?);
-// extern ? func_08004058(?); // ?
-// extern ? func_08004070(?);
-// extern ? func_080041d0(?);
-// extern ? func_08004248(?);
-// extern ? func_0800425c(?);
-// extern ? func_08004270(?);
-// extern ? func_080042a4(?);
+
+extern void func_08003f28(void);
+extern void func_08003f50(void);
+extern void func_08003fb4(void);
+extern void func_08003ff0(void);
+extern void func_0800402c(u16 *source, u16 *target, u32 wordCount, u32 wordSize);
+extern void func_08004058(void);
+extern void func_08004070(u32 forceGradientGeneration);
+extern void func_080041d0(u16 color1Index, u16 color2Index, u16 baseOffset);
+extern void func_08004248(void);
+extern void func_0800425c(u32 startIndex, u32 endIndex);
+extern s32 func_08004270(void);
+extern void func_080042a4(void);
 // extern ? func_080042bc(?);
