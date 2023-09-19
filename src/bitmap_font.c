@@ -21,7 +21,7 @@ enum FTextLatinCharTypesEnum {
     F_TEXT_LATIN_HALFWIDTH
 };
 
-extern s32 (*D_03004ae4)(s32);
+extern s32 (*math_sqrt)(s32);
 extern u8 sSceneTextCurrentStringId; // Current String in Scene Text Table to Print with SceneObject
 
 
@@ -741,7 +741,7 @@ void bmp_font_obj_curve_anim_y(struct Animation *anim, s16 vel) {
             }
 
             centre = x + (sObjStringGlyphWidths[i] / 2);
-            ((struct OAM *)oam)->yPos = -D_03004ae4((vel * vel) - (centre * centre)) - 10;
+            ((struct OAM *)oam)->yPos = -math_sqrt((vel * vel) - (centre * centre)) - 10;
 
             oam += 3;
         }

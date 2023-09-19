@@ -10,20 +10,30 @@ extern struct TaskMethods D_089363fc;
 extern u8 D_0893640c[];
 extern u16 D_0893644e[];
 
-struct struct_08001f94 {
+struct PaletteInterpolatorInputs {
     u8 duration;
-    u8 total;
-    u8 filler[2];
-    void *srcInit;
-    void *srcTarget;
-    void *dest;
+    u8 totalPalettes;
+    const u16 *sourceA;
+    const u16 *sourceB;
+    u16 *outputDest;
+};
+struct PaletteInterpolator {
+    u32 isActive:1;
+    u32 duration:8;
+    u32 runningTime:8;
+    u32 totalPalettes:6;
+    u32 sourceType:2;
+    const u16 *sourceA;
+    const u16 *sourceB;
+    u32 unk0C;
+    u16 *outputDest;
+    u32 unk14;
 };
 
 struct LoadGfxTableTaskInputs {
     const struct GraphicsTable *gfxTable;
     u32 limit;
 };
-
 struct GfxTableLoader {
     u16 active:1;
     u16 compressionLevel:2;

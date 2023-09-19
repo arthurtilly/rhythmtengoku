@@ -7,8 +7,6 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 // Can be better split
 
-static s32 D_030005c8[96]; // ARM Function (func_08000a00)
-
 #include "asm/code_08003980/asm_08003980.s"
 
 #include "asm/code_08003980/asm_080039a8.s"
@@ -33,11 +31,46 @@ static s32 D_030005c8[96]; // ARM Function (func_08000a00)
 
 #include "asm/code_08003980/asm_08003a88.s"
 
-#include "asm/code_08003980/asm_08003aa4.s"
 
-#include "asm/code_08003980/asm_08003ab8.s"
+// Get Absolute Value (16 bits)
+s16 func_08003aa4(s16 value) {
+    return (value < 0) ? -value : value;
+}
 
-#include "asm/code_08003980/asm_08003ac4.s"
+
+// Get Absolute Value (32 bits)
+s32 func_08003ab8(s32 value) {
+    return (value < 0) ? -value : value;
+}
+
+
+// Generate Shuffled Array of Values from MIN to MAX
+void func_08003ac4(u16 *array, u16 min, u16 max) {
+    u16 range;
+    s32 i;
+
+    range = max - min;
+
+    for (i = 0; i <= range; i++) {
+        array[i] = min + i;
+    }
+
+    for (i = range; i > 0; i--) {
+        s32 rand = agb_random(i + 1);
+        s32 prev = array[i];
+
+        array[i] = array[rand];
+        array[rand] = prev;
+    }
+}
+
+
+/* COMPRESSED BG MAP */
+
+
+// VARIABLES
+static s32 D_030005c8[96]; // ARM Function (func_08000a00)
+
 
 #include "asm/code_08003980/asm_08003b28.s"
 

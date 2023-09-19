@@ -134,7 +134,7 @@ struct SpriteMover_Accelerate *start_sprite_motion_task_accelerate(struct Sprite
     task->dx = inputs->destX - inputs->startX;
     task->dy = inputs->destY - inputs->startY;
     task->distanceTravelled = 0;
-    task->totalDistance = INT_TO_FIXED(D_03004ae4(task->dx * task->dx + task->dy * task->dy));
+    task->totalDistance = INT_TO_FIXED(math_sqrt(task->dx * task->dx + task->dy * task->dy));
     task->velocity = inputs->velocity;
     task->acceleration = inputs->acceleration;
 

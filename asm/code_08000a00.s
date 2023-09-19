@@ -91,8 +91,8 @@ _8000b24:   .word D_03005390
 _8000b28:   .word 0
 glabel func_08000a00_end
 
-@ Square Root(?)
-arm_func_start func_08000b2c
+@ Square Root
+arm_func_start math_sqrt_rom
     mov     r12, r0
     mov     r0, #0
     mov     r1, #0
@@ -209,7 +209,7 @@ arm_func_start func_08000b2c
     addcc   r0, r0, #1
     addcc   r1, r3, #1
     bx      lr
-glabel func_08000b2c_end
+glabel math_sqrt_rom_end
 
 @ Fast Unsigned Division
 arm_func_start fast_udivsi3_rom

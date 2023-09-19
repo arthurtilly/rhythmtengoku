@@ -5,7 +5,7 @@
 #include "src/affine_sprite.h"
 #include "src/lib_0804ca80.h"
 
-extern s32 (*D_03004ae4)(s32);
+extern s32 (*math_sqrt)(s32);
 extern s32 (*fast_udivsi3)(s32, s32);
 
 // For readability.
@@ -314,7 +314,7 @@ void spaceball_cue_spawn(struct Cue *cue, struct SpaceballCue *cueInfo, u32 arcT
     cueInfo->sprite = create_affine_sprite(spaceball_anim_table_ball[gSpaceball->spaceballType], 0, 70, 120, 0x479c, INT_TO_FIXED(1), cueInfo->rotation, 1, 0, 0, TRUE);
 
     temp = cueInfo->unk1C - 48;
-    div = D_03004ae4(INT_TO_FIXED(1.0) * INT_TO_FIXED(temp) / cueInfo->unk1C);
+    div = math_sqrt(INT_TO_FIXED(1.0) * INT_TO_FIXED(temp) / cueInfo->unk1C);
     time = ticks_to_frames(arcTime);
     cueInfo->endTime = 2 * INT_TO_FIXED(time) / (div + INT_TO_FIXED(1.0));
 

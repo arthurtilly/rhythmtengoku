@@ -8,26 +8,6 @@ asm(".include \"include/gba.inc\"");//Temporary
 static u16 D_03000098;
 static D_0300009c_func D_0300009c;
 
-static u16 D_030000a0;
-static u16 D_030000a2;
-static u16 D_030000a4;
-static u16 D_030000a6;
-static u8 sRecMode; // Input Listener Mode
-static u8 sRecPaused; // ? Flag
-static u8 sRecKeyTimer;
-static u16 sRecKeyFilter;
-static u16 *sRecMemory;
-
-static u16 sRandom; // [D_030000b4] Static Random Variable
-static s32 D_030000b8[32]; // unknown type
-static s32 D_03000138[64]; // unknown type
-static s32 D_03000238[64]; // unknown type
-static s32 D_03000338[2]; // unknown type
-static s32 D_03000340[8]; // unknown type
-static s32 D_03000360[2]; // unknown type
-static s32 D_03000368[32]; // unknown type
-static s32 D_030003e8[120]; // unknown type
-
 
 void func_08001360(void) {
     func_08003f28();
@@ -67,6 +47,17 @@ void func_080013e8(D_0300009c_func arg1) {
 
 
 /* INPUT LISTENER */
+
+
+static u16 D_030000a0;
+static u16 D_030000a2;
+static u16 D_030000a4;
+static u16 D_030000a6;
+static u8 sRecMode;
+static u8 sRecPaused;
+static u8 sRecKeyTimer;
+static u16 sRecKeyFilter;
+static u16 *sRecMemory;
 
 
 // Reset Input Buffers
@@ -353,6 +344,12 @@ void dma3_fill(u32 value, void *destination, u32 bytesToFill, u16 unit, u32 byte
 }
 
 
+/* MATH */
+
+
+static u16 sRandom; // [D_030000b4] Static Random Variable
+
+
 // Set Global Random Value
 void set_agb_random_var(u32 val) {
     sRandom = val;
@@ -374,76 +371,275 @@ u16 agb_random(u16 var) {   // Random
 }
 
 
-#include "asm/code_08001360/asm_080019a4.s"
+// Interpolated Sine (4-bits additional precision)
+s32 func_080019a4(u32 fullAngle) {
+    u32 a0, a1, af;
+    u8 angle;
 
-#include "asm/code_08001360/asm_080019e4.s"
+    fullAngle &= 0xFFF;
+    angle = (fullAngle >> 4);
 
+    a0 = angle & 0xFF;
+    a1 = (angle + 1) & 0xFF;
+    af = fullAngle & 0xF;
+
+    return ((D_08935fcc[a0] * (0x10 - af)) + (D_08935fcc[a1] * af)) >> 4;
+}
+
+
+// Interpolated Cosine (4-bits additional precision)
+s32 func_080019e4(u32 fullAngle) {
+    u32 a0, a1, af;
+    u8 angle;
+
+    fullAngle &= 0xFFF;
+    angle = (fullAngle >> 4);
+
+    a0 = angle & 0xFF;
+    a1 = (angle + 1) & 0xFF;
+    af = fullAngle & 0xF;
+
+    return ((D_089361cc[a0] * (0x10 - af)) + (D_089361cc[a1] * af)) >> 4;
+}
+
+
+/* PALETTE INTERPOLATOR */
+
+
+extern void func_08001240(void *args);
+extern void func_080012bc(void *args);
+
+
+static s32 D_030000b8[32]; // Palette Interpolation Function
+
+
+// ?
 void func_08001a24_stub(void) {
 }
 
-#include "asm/code_08001360/asm_08001a28.s"
 
+// ?
+void func_08001a28(const u16 *sourceA, u32 valueB, u16 *outputDest, u32 totalColors, u32 progress) {
+    void (*interpolatePalette)() = (void *)(D_030000b8);
+    u32 args[5];
+
+    args[0] = (u32)(valueB);
+    args[1] = (u32)(sourceA);
+    args[2] = (u32)(outputDest);
+    args[3] = (u32)(totalColors);
+    args[4] = (u32)(0x100 - progress);
+    dma3_set(func_080012bc, interpolatePalette, 0x80, 0x20, 0x100);
+    interpolatePalette(args);
+}
+
+
+// ? (https://decomp.me/scratch/EvpB4)
 #include "asm/code_08001360/asm_08001a64.s"
 
-#include "asm/code_08001360/asm_08001b48.s"
 
-#include "asm/code_08001360/asm_08001b98.s"
+// Update Palette Interpolation
+void func_08001b48(struct PaletteInterpolator *task) {
+    if ((task == NULL) || !task->isActive) {
+        return;
+    }
 
-#include "asm/code_08001360/asm_08001bf8.s"
+    task->runningTime++;
+    if (task->runningTime > task->duration) {
+        task->isActive = FALSE;
+        return;
+    }
 
-#include "asm/code_08001360/asm_08001c64.s"
+    func_08001a64(task, 0);
+}
 
-#include "asm/code_08001360/asm_08001cd8.s"
 
+// Initialise Palette Output for Interpolation
+void func_08001b98(struct PaletteInterpolator *task, u32 offset) {
+    const u16 *src;
+    u16 *dest;
+
+    src = task->sourceA + offset;
+    dest = task->outputDest + offset;
+
+    switch (task->sourceType) {
+        case 0:
+        case 1:
+        case 3:
+            dma3_set(src, dest, task->totalPalettes * 0x20, 0x10, 0x100);
+            break;
+        case 2:
+            dma3_fill((u32)src | ((u32)src << 16), dest, task->totalPalettes * 0x20, 0x10, 0x100);
+            break;
+    }
+}
+
+
+// Initialise Palette Interpolator (Array->Array)
+void func_08001bf8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *sourceB, u32 arg5, u16 *outputDest) {
+    if (task == NULL) {
+        return;
+    }
+
+    task->duration = duration;
+    task->runningTime = 0;
+    task->totalPalettes = totalPalettes;
+    task->sourceA = sourceA;
+    task->sourceB = sourceB;
+    task->unk0C = arg5;
+    task->outputDest = outputDest;
+    task->sourceType = 0;
+    task->isActive = TRUE;
+    func_08001b98(task, 0);
+}
+
+
+// Initialise Palette Interpolator (Color->Array)
+void func_08001c64(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *valueA, const u16 *sourceB, u32 arg5, u16 *outputDest) {
+    if (task == NULL) {
+        return;
+    }
+
+    task->duration = duration;
+    task->runningTime = 0;
+    task->totalPalettes = totalPalettes;
+    task->sourceA = valueA;
+    task->sourceB = sourceB;
+    task->unk0C = arg5;
+    task->outputDest = outputDest;
+    task->sourceType = 2;
+    task->isActive = TRUE;
+    func_08001b98(task, 0);
+}
+
+
+// Initialise Palette Interpolator (Array->Color)
+void func_08001cd8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *valueB, u32 arg5, u16 *outputDest) {
+    if (task == NULL) {
+        return;
+    }
+
+    task->duration = duration;
+    task->runningTime = 0;
+    task->totalPalettes = totalPalettes;
+    task->sourceA = sourceA;
+    task->sourceB = valueB;
+    task->unk0C = arg5;
+    task->outputDest = outputDest;
+    task->sourceType = 3;
+    task->isActive = TRUE;
+    func_08001b98(task, 0);
+}
+
+
+// ?
 #include "asm/code_08001360/asm_08001d44.s" // Unused
 
+
+// ?
 #include "asm/code_08001360/asm_08001d74.s"
 
+
+// ?
 #include "asm/code_08001360/asm_08001ddc.s"
 
+
+// ?
 #include "asm/code_08001360/asm_08001e4c.s"
 
+
+// ?
 #include "asm/code_08001360/asm_08001ec4.s"
 
 
-// Gradual (Palette) Set - Task Init.
-void *func_08001f34(struct struct_08001f94 *arg1) {
-    void *temp;
-    temp = mem_heap_alloc(0x18);
-    func_08001bf8(temp, arg1->duration, arg1->total, arg1->srcInit, arg1->srcTarget, 0, arg1->dest);
-    return temp;
+// Start Palette Interpolator (Array->Array)
+struct PaletteInterpolator *func_08001f34(struct PaletteInterpolatorInputs *inputs) {
+    struct PaletteInterpolator *task;
+    task = mem_heap_alloc(sizeof(struct PaletteInterpolator));
+    func_08001bf8(task, inputs->duration, inputs->totalPalettes, inputs->sourceA, inputs->sourceB, 0, inputs->outputDest);
+    return task;
 }
 
 
-void *func_08001f64(struct struct_08001f94 *arg1) {
-    void *temp;
-    temp = mem_heap_alloc(0x18);
-    func_08001c64(temp, arg1->duration, arg1->total, arg1->srcInit, arg1->srcTarget, 0, arg1->dest);
-    return temp;
+// Start Palette Interpolator (Color->Array)
+struct PaletteInterpolator *func_08001f64(struct PaletteInterpolatorInputs *inputs) {
+    struct PaletteInterpolator *task;
+    task = mem_heap_alloc(sizeof(struct PaletteInterpolator));
+    func_08001c64(task, inputs->duration, inputs->totalPalettes, inputs->sourceA, inputs->sourceB, 0, inputs->outputDest);
+    return task;
 }
 
 
-void *func_08001f94(struct struct_08001f94 *arg1) {
-    void *temp;
-    temp = mem_heap_alloc(0x18);
-    func_08001cd8(temp, arg1->duration, arg1->total, arg1->srcInit, arg1->srcTarget, 0, arg1->dest);
-    return temp;
+// Start Palette Interpolator (Array->Color)
+struct PaletteInterpolator *func_08001f94(struct PaletteInterpolatorInputs *inputs) {
+    struct PaletteInterpolator *task;
+    task = mem_heap_alloc(sizeof(struct PaletteInterpolator));
+    func_08001cd8(task, inputs->duration, inputs->totalPalettes, inputs->sourceA, inputs->sourceB, 0, inputs->outputDest);
+    return task;
 }
 
 
-u8 func_08001fc4(u8 *arg1) {
-    func_08001b48();
-    return ((*arg1 << 31) == 0);
+// Update Palette Interpolator
+u32 func_08001fc4(struct PaletteInterpolator *task) {
+    func_08001b48(task);
+    return !task->isActive;
 }
 
 
-#include "asm/code_08001360/asm_08001fe0.s"
+// Interpolate Palettes (Array->Array)
+s32 func_08001fe0(u16 memID, u8 duration, u8 totalPalettes, const u16 *sourceA, const u16 *sourceB, u16 *outputDest) {
+    struct PaletteInterpolatorInputs info;
 
-#include "asm/code_08001360/asm_08002018.s"
+    info.duration = duration;
+    info.totalPalettes = totalPalettes;
+    info.sourceA = sourceA;
+    info.sourceB = sourceB;
+    info.outputDest = outputDest;
 
-#include "asm/code_08001360/asm_08002050.s"
+    return start_new_task(memID, &D_089363cc, &info, NULL, 0);
+}
 
+
+// Interpolate Palettes (Color->Array)
+s32 func_08002018(u16 memID, u8 duration, u8 totalPalettes, u32 valueA, const u16 *sourceB, u16 *outputDest) {
+    struct PaletteInterpolatorInputs info;
+
+    info.duration = duration;
+    info.totalPalettes = totalPalettes;
+    info.sourceA = (void *)valueA;
+    info.sourceB = sourceB;
+    info.outputDest = outputDest;
+
+    return start_new_task(memID, &D_089363dc, &info, NULL, 0);
+}
+
+
+// Interpolate Palettes (Array->Color)
+s32 func_08002050(u16 memID, u8 duration, u8 totalPalettes, const u16 *sourceA, u32 valueB, u16 *outputDest) {
+    struct PaletteInterpolatorInputs info;
+
+    info.duration = duration;
+    info.totalPalettes = totalPalettes;
+    info.sourceA = sourceA;
+    info.sourceB = (void *)valueB;
+    info.outputDest = outputDest;
+
+    return start_new_task(memID, &D_089363ec, &info, NULL, 0);
+}
+
+
+// ?
 #include "asm/code_08001360/asm_08002088.s"
+
+
+/* ROTATION/SCALING PARAMETER GROUPS */
+
+
+static s32 D_03000138[64]; // unknown type
+static s32 D_03000238[64]; // unknown type
+static s32 D_03000338[2]; // unknown type
+static s32 D_03000340[8]; // unknown type
+static s32 D_03000360[2]; // unknown type
+static s32 D_03000368[32]; // unknown type
 
 #include "asm/code_08001360/asm_080020ec.s"
 
@@ -484,6 +680,10 @@ u8 func_08001fc4(u8 *arg1) {
 #include "asm/code_08001360/asm_080025d8.s"
 
 #include "asm/code_08001360/asm_080025fc.s"
+
+
+/* SOUND */
+
 
 #include "asm/code_08001360/asm_08002630.s"
 
@@ -542,6 +742,8 @@ u8 func_08001fc4(u8 *arg1) {
 #include "asm/code_08001360/asm_08002a18.s"
 
 
+/* GRAPHICS TABLES */
+
 
 enum CompressionLevelsEnum {
     COMPRESSION_LEVEL_NONE,
@@ -552,7 +754,6 @@ enum CompressionLevelsEnum {
 extern s32 (*D_03004af0)(const u16 *src, u16 *dest, const u8 *rleData, u32 sizeData);
 extern u32 D_03005390[]; // rle decompression save state
 extern u8 D_030053b0; // boolean
-
 
 
 // Ensure Valid Destination Pointer..?
@@ -789,11 +990,94 @@ s32 func_08002ee0(u16 memID, const struct GraphicsTable *gfxTable, u32 limit) {
 
 #include "asm/code_08001360/asm_08002f5c.s"
 
-#include "asm/code_08001360/asm_08002f68.s"
 
-#include "asm/code_08001360/asm_08002f9c.s"
+/* MATH */
 
-#include "asm/code_08001360/asm_08003004.s"
+
+#define FUNC_SQRT_SIZE ((u32)&math_sqrt_rom_end - (u32)math_sqrt_rom)
+
+extern s32 math_sqrt_rom(s32 value);
+extern void *math_sqrt_rom_end;
+extern s32 (*math_sqrt)(s32 value);
+
+static s32 math_sqrt_code[120];
+
+
+// Init. sqrt()
+void init_math_sqrt(void) {
+    DmaCopy32(3, math_sqrt_rom, math_sqrt_code, FUNC_SQRT_SIZE);
+    math_sqrt = (void *)math_sqrt_code;
+}
+
+
+// ? (8 bits)
+u8 func_08002f9c(s16 arg0, s16 arg1) {
+    s32 r6;
+    s32 sign;
+
+    r6 = 0;
+    sign = 1;
+
+    if (arg0 < 0) {
+        arg0 = -arg0;
+        r6 = (64 * 2);
+        sign = -sign;
+    }
+
+    if (arg1 < 0) {
+        arg1 = -arg1;
+        sign = -sign;
+    }
+
+    if (arg0 < arg1) {
+        s32 swap;
+
+        r6 += (64 * sign);
+        sign = -sign;
+        swap = arg0;
+        arg0 = arg1;
+        arg1 = swap;
+    }
+
+    return r6 + (sign * D_0893640c[64 * arg1 / arg0]);
+}
+
+
+// ? (16 bits)
+u16 func_08003004(s16 arg0, s16 arg1) {
+    s32 r6;
+    s32 sign;
+
+    r6 = 0;
+    sign = 1;
+
+    if (arg0 < 0) {
+        arg0 = -arg0;
+        r6 = (512 * 2);
+        sign = -sign;
+    }
+
+    if (arg1 < 0) {
+        arg1 = -arg1;
+        sign = -sign;
+    }
+
+    if (arg0 < arg1) {
+        s32 swap;
+
+        r6 += (512 * sign);
+        sign = -sign;
+        swap = arg0;
+        arg0 = arg1;
+        arg1 = swap;
+    }
+
+    return r6 + (sign * D_0893644e[256 * arg1 / arg0]);
+}
+
+
+/* AGB ... */
+
 
 #include "asm/code_08001360/asm_08003070.s"
 

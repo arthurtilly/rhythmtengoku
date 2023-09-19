@@ -60,39 +60,39 @@ extern void dma3_set(const void *source, void *destination, u32 bytesToSet, u16 
 extern void dma3_fill(u32 value, void *destination, u32 bytesToFill, u16 unit, u32 bytesPerInterrupt); // DMA3 Fill
 
 
-/* AGB RANDOM */
+/* MATH */
 
 
 extern void set_agb_random_var(u32); // Set Global Random Value
 extern u16 get_agb_random_var(void); // Get Global Random Value
 extern u16 agb_random(u16); // AGB Random
+extern s32 func_080019a4(u32 fullAngle); // Interpolated Sine (Q8.4)
+extern s32 func_080019e4(u32 fullAngle); // Interpolated Cosine (Q8.4)
 
 
-/* AGB ... */
+/* PALETTE INTERPOLATOR */
 
 
-// extern ? func_080019a4(?);
-// extern ? func_080019e4(?);
 extern void func_08001a24_stub(void);
-// extern ? func_08001a28(?);
+extern void func_08001a28(const u16 *sourceA, u32 valueB, u16 *outputDest, u32 totalColors, u32 progress);
 // extern ? func_08001a64(?);
-// extern ? func_08001b48(?);
-// extern ? func_08001b98(?);
-// extern ? func_08001bf8(?);
-// extern ? func_08001c64(?);
-// extern ? func_08001cd8(?);
+extern void func_08001b48(struct PaletteInterpolator *task);
+extern void func_08001b98(struct PaletteInterpolator *task, u32 offset);
+extern void func_08001bf8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *sourceB, u32 arg5, u16 *outputDest);
+extern void func_08001c64(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *valueA, const u16 *sourceB, u32 arg5, u16 *outputDest);
+extern void func_08001cd8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *valueB, u32 arg5, u16 *outputDest);
 // extern ? func_08001d44(?);
 // extern ? func_08001d74(?);
 // extern ? func_08001ddc(?);
 // extern ? func_08001e4c(?);
 // extern ? func_08001ec4(?);
-extern void *func_08001f34(struct struct_08001f94 *);
-extern void *func_08001f64(struct struct_08001f94 *);
-extern void *func_08001f94(struct struct_08001f94 *);
-extern u8 func_08001fc4(u8 *);
-extern s32 func_08001fe0(u16 id, u8 duration, u32 count, const u16 *initial, const u16 *final, u16 *target); // Gradual Set (may be about palettes specifically)
-extern s32 func_08002018(u16 id, u8 duration, u32 count, u32 initial, const void *final, void *target); // Gradual Set (for a singular initial and array final)
-extern s32 func_08002050(u16 id, u8 duration, u32 count, const void *initial, u32 final, void *target); // Gradual Set (for an array initial and singular final)
+extern struct PaletteInterpolator *func_08001f34(struct PaletteInterpolatorInputs *inputs);
+extern struct PaletteInterpolator *func_08001f64(struct PaletteInterpolatorInputs *inputs);
+extern struct PaletteInterpolator *func_08001f94(struct PaletteInterpolatorInputs *inputs);
+extern u32 func_08001fc4(struct PaletteInterpolator *task);
+extern s32 func_08001fe0(u16 memID, u8 duration, u8 totalPalettes, const u16 *sourceA, const u16 *sourceB, u16 *outputDest); // Interpolate Palette (Array->Array)
+extern s32 func_08002018(u16 memID, u8 duration, u8 totalPalettes, u32 valueA, const u16 *sourceB, u16 *outputDest); // Interpolate Palette (Color->Array)
+extern s32 func_08002050(u16 memID, u8 duration, u8 totalPalettes, const u16 *sourceA, u32 valueB, u16 *outputDest); // Interpolate Palette (Array->Color)
 // extern ? func_08002088(?);
 
 
@@ -182,9 +182,14 @@ extern s32 func_08002ee0(u16 memID, const struct GraphicsTable *gfxTable, u32 li
 /* AGB ... */
 
 
-// extern ? func_08002f68(?); // Init. sqrt()?
-// extern ? func_08002f9c(?);
-// extern ? func_08003004(?);
+extern void init_math_sqrt(void); // Init. sqrt()
+extern u8 func_08002f9c(s16 arg0, s16 arg1);
+extern u16 func_08003004(s16 arg0, s16 arg1);
+
+
+/* AGB ... */
+
+
 // extern ? func_08003070(?);
 // extern ? func_0800318c(?);
 // extern ? func_08003278(?);

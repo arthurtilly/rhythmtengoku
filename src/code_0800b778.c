@@ -1658,8 +1658,8 @@ s32 scene_set_sprite_motion_sine_vel(s16 sprite, u32 mode, s16 startX, s16 start
             inputs.startY = startY;
             inputs.destX = destX;
             inputs.destY = destY;
-            inputs.unkA = 0;
-            inputs.unkC = 0x40;
+            inputs.unkA = INT_TO_FIXED(0.0);
+            inputs.unkC = INT_TO_FIXED(0.25);
             break;
 
         case 1:
@@ -1667,8 +1667,8 @@ s32 scene_set_sprite_motion_sine_vel(s16 sprite, u32 mode, s16 startX, s16 start
             inputs.startY = destY;
             inputs.destX = startX;
             inputs.destY = startY;
-            inputs.unkA = 0x40;
-            inputs.unkC = 0x80;
+            inputs.unkA = INT_TO_FIXED(0.25);
+            inputs.unkC = INT_TO_FIXED(0.5);
             break;
 
         case 2:
@@ -1676,8 +1676,8 @@ s32 scene_set_sprite_motion_sine_vel(s16 sprite, u32 mode, s16 startX, s16 start
             inputs.startY = (startY + destY) >> 1;
             inputs.destX = destX;
             inputs.destY = destY;
-            inputs.unkA = -0x40;
-            inputs.unkC = 0x40;
+            inputs.unkA = INT_TO_FIXED(-0.25);
+            inputs.unkC = INT_TO_FIXED(0.25);
             break;
     }
 

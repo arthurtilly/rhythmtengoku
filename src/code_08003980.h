@@ -16,9 +16,11 @@
 // extern ? func_08003a6c(?);
 // extern ? func_08003a78(?);
 // extern ? func_08003a88(?);
-// extern ? func_08003aa4(?);
-extern u32 func_08003ab8(s32 val); // Absolute Value
-// extern ? func_08003ac4(?);
+extern s16 func_08003aa4(s16 value); // Absolute Value (16 bits)
+extern s32 func_08003ab8(s32 value); // Absolute Value (32 bits)
+extern void func_08003ac4(u16 *array, u16 min, u16 max);
+
+/* COMPRESSED BG */
 // extern ? func_08003b28(?); // Create ?
 // extern ? func_08003b34(?); // Update ?
 // extern ? func_08003bd4(?);
@@ -31,6 +33,7 @@ extern void func_08003e64(void); // Load RLE Decompression Function to RAM
 // extern ? func_08003ea4(?);
 // extern ? func_08003eb8(?);
 
+/* BACKDROP */
 extern void func_08003f28(void);
 extern void func_08003f50(void);
 extern void func_08003fb4(void);

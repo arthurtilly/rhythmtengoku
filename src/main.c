@@ -36,7 +36,7 @@ void func_08000224(void) {
 	init_key_listener();
 	init_time_keeper();
 	init_fast_udivsi3();
-	func_08002f68();
+	init_math_sqrt();
 	mem_heap_init(get_memory_heap_start(), get_memory_heap_length());
 	task_pool_init();
 	func_08003e64();

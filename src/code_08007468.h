@@ -15,7 +15,7 @@ struct unk_struct_08008b00 {
     s32 unkC;
 };
 
-extern s32 (*D_03004ae4)(s32);
+extern s32 (*math_sqrt)(s32);
 
 /* GRAPHICS UTIL */
 extern void get_sprite_xy(s16 sprite, s16 *xReq, s16 *yReq);
