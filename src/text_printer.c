@@ -12,7 +12,7 @@ asm(".include \"include/gba.inc\"");//Temporary
 
 
 typedef void (PrintGlyphToVRAMFunc)(void *args);
-extern PrintGlyphToVRAMFunc func_0800116c;
+extern PrintGlyphToVRAMFunc text_print_glyph_to_vram_rom;
 
 #define GLYPH_BUFFER_SIZE 0x80
 static struct FormattedGlyph {
@@ -28,7 +28,7 @@ static struct FormattedGlyph {
 } *sGlyphBuffer; // Formatted Glyph Buffer
 
 static void (*sModifyPrinterSettings)(s32, s32); // Formatting Escape Char. '\1' Function
-static s32 sPrintGlyphToVRAM[54]; // ARM Function
+static s32 text_print_glyph_to_vram_code[54]; // ARM Function
 
 static s32 sCurrentLineWidth;   // Printer Line Width
 static s8 sPrinterAlignment;    // Printer Alignment
@@ -41,7 +41,7 @@ static s8 sPrinterShadowColors; // Printer Shadow Colors
 
 // Init. Static Variables
 void text_printer_init(void) {
-    dma3_set(func_0800116c, sPrintGlyphToVRAM, sizeof(sPrintGlyphToVRAM), 0x20, 0x100);
+    dma3_set(text_print_glyph_to_vram_rom, text_print_glyph_to_vram_code, sizeof(text_print_glyph_to_vram_code), 0x20, 0x100);
     sGlyphBuffer = mem_heap_alloc(GLYPH_BUFFER_SIZE * sizeof(struct FormattedGlyph));
     sModifyPrinterSettings = NULL;
 }
@@ -103,7 +103,7 @@ s32 text_font_calculate_string_width(s32 font, const char *string) {
 
 // Print Glyph to VRAM
 void text_printer_print_glyph(s32 tileOfsX, s32 tileOfsY, s32 font, s32 glyphID, s32 lineColors) {
-    PrintGlyphToVRAMFunc *printGlyphToVRAM = (PrintGlyphToVRAMFunc *)(&sPrintGlyphToVRAM);
+    PrintGlyphToVRAMFunc *printGlyphToVRAM = (PrintGlyphToVRAMFunc *)(&text_print_glyph_to_vram_code);
     u32 args[4];
 
     if (glyphID < 0) return;

@@ -75,17 +75,17 @@ extern s32 func_080019e4(u32 fullAngle); // Interpolated Cosine (Q8.4)
 
 extern void func_08001a24_stub(void);
 extern void func_08001a28(const u16 *sourceA, u32 valueB, u16 *outputDest, u32 totalColors, u32 progress);
-// extern ? func_08001a64(?);
+extern void func_08001a64(struct PaletteInterpolator *task, u32 indexOffset);
 extern void func_08001b48(struct PaletteInterpolator *task);
-extern void func_08001b98(struct PaletteInterpolator *task, u32 offset);
-extern void func_08001bf8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *sourceB, u32 arg5, u16 *outputDest);
-extern void func_08001c64(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *valueA, const u16 *sourceB, u32 arg5, u16 *outputDest);
-extern void func_08001cd8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *valueB, u32 arg5, u16 *outputDest);
-// extern ? func_08001d44(?);
-// extern ? func_08001d74(?);
-// extern ? func_08001ddc(?);
-// extern ? func_08001e4c(?);
-// extern ? func_08001ec4(?);
+extern void func_08001b98(struct PaletteInterpolator *task, u32 indexOffset);
+extern void func_08001bf8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *sourceB, u16 *outputBackup, u16 *outputDest);
+extern void func_08001c64(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *valueA, const u16 *sourceB, u16 *outputBackup, u16 *outputDest);
+extern void func_08001cd8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *valueB, u16 *outputBackup, u16 *outputDest);
+extern void func_08001d44(struct PaletteInterpolator *task);
+extern void func_08001d74(struct PaletteInterpolator *task);
+extern void func_08001ddc(u8 alpha, u8 totalPalettes, const u16 *sourceA, const u16 *sourceB, u16 *outputDest);
+extern void func_08001e4c(u8 alpha, u8 totalPalettes, u32 valueA, const u16 *sourceB, u16 *outputDest);
+extern void func_08001ec4(u8 alpha, u8 totalPalettes, const u16 *sourceA, u32 valueB, u16 *outputDest);
 extern struct PaletteInterpolator *func_08001f34(struct PaletteInterpolatorInputs *inputs);
 extern struct PaletteInterpolator *func_08001f64(struct PaletteInterpolatorInputs *inputs);
 extern struct PaletteInterpolator *func_08001f94(struct PaletteInterpolatorInputs *inputs);

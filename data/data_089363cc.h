@@ -25,9 +25,9 @@ struct PaletteInterpolator {
     u32 sourceType:2;
     const u16 *sourceA;
     const u16 *sourceB;
-    u32 unk0C;
+    u16 *outputBackup;
     u16 *outputDest;
-    u32 unk14;
+    u16 paletteMask;
 };
 
 struct LoadGfxTableTaskInputs {

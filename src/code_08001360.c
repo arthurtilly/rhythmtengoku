@@ -406,21 +406,25 @@ s32 func_080019e4(u32 fullAngle) {
 /* PALETTE INTERPOLATOR */
 
 
-extern void func_08001240(void *args);
-extern void func_080012bc(void *args);
+#define FAST_BLEND_PAL_TO_PAL_SIZE ((u32)fast_blend_pal_to_pal_end - (u32)fast_blend_pal_to_pal)
+#define FAST_BLEND_COL_TO_PAL_SIZE ((u32)fast_blend_col_to_pal_end - (u32)fast_blend_col_to_pal)
+
+extern void fast_blend_pal_to_pal(void *args);
+extern void *fast_blend_pal_to_pal_end;
+extern void fast_blend_col_to_pal(void *args);
+extern void *fast_blend_col_to_pal_end;
+
+static s32 fast_blend_pal_code[32]; // Palette Interpolation Function
 
 
-static s32 D_030000b8[32]; // Palette Interpolation Function
-
-
-// ?
+// Stub
 void func_08001a24_stub(void) {
 }
 
 
-// ?
+// Immediately Blend Palette (Color->Array)
 void func_08001a28(const u16 *sourceA, u32 valueB, u16 *outputDest, u32 totalColors, u32 progress) {
-    void (*interpolatePalette)() = (void *)(D_030000b8);
+    void (*interpolatePalette)() = (void *)(fast_blend_pal_code);
     u32 args[5];
 
     args[0] = (u32)(valueB);
@@ -428,12 +432,12 @@ void func_08001a28(const u16 *sourceA, u32 valueB, u16 *outputDest, u32 totalCol
     args[2] = (u32)(outputDest);
     args[3] = (u32)(totalColors);
     args[4] = (u32)(0x100 - progress);
-    dma3_set(func_080012bc, interpolatePalette, 0x80, 0x20, 0x100);
+    dma3_set(fast_blend_col_to_pal, interpolatePalette, 0x80, 0x20, 0x100);
     interpolatePalette(args);
 }
 
 
-// ? (https://decomp.me/scratch/EvpB4)
+// Blend Palette with Interpolator (https://decomp.me/scratch/EvpB4)
 #include "asm/code_08001360/asm_08001a64.s"
 
 
@@ -454,12 +458,12 @@ void func_08001b48(struct PaletteInterpolator *task) {
 
 
 // Initialise Palette Output for Interpolation
-void func_08001b98(struct PaletteInterpolator *task, u32 offset) {
+void func_08001b98(struct PaletteInterpolator *task, u32 indexOffset) {
     const u16 *src;
     u16 *dest;
 
-    src = task->sourceA + offset;
-    dest = task->outputDest + offset;
+    src = task->sourceA + indexOffset;
+    dest = task->outputDest + indexOffset;
 
     switch (task->sourceType) {
         case 0:
@@ -475,7 +479,7 @@ void func_08001b98(struct PaletteInterpolator *task, u32 offset) {
 
 
 // Initialise Palette Interpolator (Array->Array)
-void func_08001bf8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *sourceB, u32 arg5, u16 *outputDest) {
+void func_08001bf8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *sourceB, u16 *outputBackup, u16 *outputDest) {
     if (task == NULL) {
         return;
     }
@@ -485,7 +489,7 @@ void func_08001bf8(struct PaletteInterpolator *task, u32 duration, u32 totalPale
     task->totalPalettes = totalPalettes;
     task->sourceA = sourceA;
     task->sourceB = sourceB;
-    task->unk0C = arg5;
+    task->outputBackup = outputBackup;
     task->outputDest = outputDest;
     task->sourceType = 0;
     task->isActive = TRUE;
@@ -494,7 +498,7 @@ void func_08001bf8(struct PaletteInterpolator *task, u32 duration, u32 totalPale
 
 
 // Initialise Palette Interpolator (Color->Array)
-void func_08001c64(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *valueA, const u16 *sourceB, u32 arg5, u16 *outputDest) {
+void func_08001c64(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *valueA, const u16 *sourceB, u16 *outputBackup, u16 *outputDest) {
     if (task == NULL) {
         return;
     }
@@ -504,7 +508,7 @@ void func_08001c64(struct PaletteInterpolator *task, u32 duration, u32 totalPale
     task->totalPalettes = totalPalettes;
     task->sourceA = valueA;
     task->sourceB = sourceB;
-    task->unk0C = arg5;
+    task->outputBackup = outputBackup;
     task->outputDest = outputDest;
     task->sourceType = 2;
     task->isActive = TRUE;
@@ -513,7 +517,7 @@ void func_08001c64(struct PaletteInterpolator *task, u32 duration, u32 totalPale
 
 
 // Initialise Palette Interpolator (Array->Color)
-void func_08001cd8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *valueB, u32 arg5, u16 *outputDest) {
+void func_08001cd8(struct PaletteInterpolator *task, u32 duration, u32 totalPalettes, const u16 *sourceA, const u16 *valueB, u16 *outputBackup, u16 *outputDest) {
     if (task == NULL) {
         return;
     }
@@ -523,7 +527,7 @@ void func_08001cd8(struct PaletteInterpolator *task, u32 duration, u32 totalPale
     task->totalPalettes = totalPalettes;
     task->sourceA = sourceA;
     task->sourceB = valueB;
-    task->unk0C = arg5;
+    task->outputBackup = outputBackup;
     task->outputDest = outputDest;
     task->sourceType = 3;
     task->isActive = TRUE;
@@ -531,31 +535,96 @@ void func_08001cd8(struct PaletteInterpolator *task, u32 duration, u32 totalPale
 }
 
 
-// ?
-#include "asm/code_08001360/asm_08001d44.s" // Unused
+// Copy Contents of OutputDest to OutputBackup
+void func_08001d44(struct PaletteInterpolator *task) {
+    if (task == NULL || !task->isActive || task->outputBackup == NULL) {
+        return;
+    }
+
+    dma3_set(task->outputDest, task->outputBackup, 0x200, 0x20, 0x80);
+}
 
 
-// ?
-#include "asm/code_08001360/asm_08001d74.s"
+// Update Palette Interpolator (using PaletteMask)
+void func_08001d74(struct PaletteInterpolator *task) {
+    s32 i;
+
+    if (task == NULL || !task->isActive) {
+        return;
+    }
+
+    task->runningTime++;
+    if (task->runningTime > task->duration) {
+        task->isActive = FALSE;
+        return;
+    }
+
+    for (i = 0; i < 16; i++) {
+        if (((task->paletteMask >> i) & 1) != 0) {
+            func_08001a64(task, i * 16);
+        }
+    }
+}
 
 
-// ?
-#include "asm/code_08001360/asm_08001ddc.s"
+// Blend Palette (Array->Array)
+void func_08001ddc(u8 alpha, u8 totalPalettes, const u16 *sourceA, const u16 *sourceB, u16 *outputDest) {
+    struct PaletteInterpolator task;
+
+    task.duration = 32;
+    task.runningTime = alpha;
+    task.totalPalettes = totalPalettes;
+    task.sourceA = sourceA;
+    task.sourceB = sourceB;
+    task.outputDest = outputDest;
+    task.sourceType = 0;
+    task.isActive = TRUE;
+
+    func_08001a64(&task, 0);
+}
 
 
-// ?
-#include "asm/code_08001360/asm_08001e4c.s"
+// Blend Palette (Color->Array)
+void func_08001e4c(u8 alpha, u8 totalPalettes, u32 valueA, const u16 *sourceB, u16 *outputDest) {
+    struct PaletteInterpolator task;
+
+    task.duration = 32;
+    task.runningTime = alpha;
+    task.totalPalettes = totalPalettes;
+    task.sourceA = (void *)valueA;
+    task.sourceB = sourceB;
+    task.outputDest = outputDest;
+    task.sourceType = 2;
+    task.isActive = TRUE;
+
+    func_08001a64(&task, 0);
+}
 
 
-// ?
-#include "asm/code_08001360/asm_08001ec4.s"
+// Blend Palette (Array->Color)
+void func_08001ec4(u8 alpha, u8 totalPalettes, const u16 *sourceA, u32 valueB, u16 *outputDest) {
+    struct PaletteInterpolator task;
+
+    task.duration = 32;
+    task.runningTime = alpha;
+    task.totalPalettes = totalPalettes;
+    task.sourceA = sourceA;
+    task.sourceB = (void *)valueB;
+    task.outputDest = outputDest;
+    task.sourceType = 3;
+    task.isActive = TRUE;
+
+    func_08001a64(&task, 0);
+}
 
 
 // Start Palette Interpolator (Array->Array)
 struct PaletteInterpolator *func_08001f34(struct PaletteInterpolatorInputs *inputs) {
     struct PaletteInterpolator *task;
+
     task = mem_heap_alloc(sizeof(struct PaletteInterpolator));
-    func_08001bf8(task, inputs->duration, inputs->totalPalettes, inputs->sourceA, inputs->sourceB, 0, inputs->outputDest);
+    func_08001bf8(task, inputs->duration, inputs->totalPalettes, inputs->sourceA, inputs->sourceB, NULL, inputs->outputDest);
+
     return task;
 }
 
@@ -563,8 +632,10 @@ struct PaletteInterpolator *func_08001f34(struct PaletteInterpolatorInputs *inpu
 // Start Palette Interpolator (Color->Array)
 struct PaletteInterpolator *func_08001f64(struct PaletteInterpolatorInputs *inputs) {
     struct PaletteInterpolator *task;
+
     task = mem_heap_alloc(sizeof(struct PaletteInterpolator));
-    func_08001c64(task, inputs->duration, inputs->totalPalettes, inputs->sourceA, inputs->sourceB, 0, inputs->outputDest);
+    func_08001c64(task, inputs->duration, inputs->totalPalettes, inputs->sourceA, inputs->sourceB, NULL, inputs->outputDest);
+
     return task;
 }
 
@@ -572,8 +643,10 @@ struct PaletteInterpolator *func_08001f64(struct PaletteInterpolatorInputs *inpu
 // Start Palette Interpolator (Array->Color)
 struct PaletteInterpolator *func_08001f94(struct PaletteInterpolatorInputs *inputs) {
     struct PaletteInterpolator *task;
+
     task = mem_heap_alloc(sizeof(struct PaletteInterpolator));
-    func_08001cd8(task, inputs->duration, inputs->totalPalettes, inputs->sourceA, inputs->sourceB, 0, inputs->outputDest);
+    func_08001cd8(task, inputs->duration, inputs->totalPalettes, inputs->sourceA, inputs->sourceB, NULL, inputs->outputDest);
+
     return task;
 }
 
@@ -581,6 +654,7 @@ struct PaletteInterpolator *func_08001f94(struct PaletteInterpolatorInputs *inpu
 // Update Palette Interpolator
 u32 func_08001fc4(struct PaletteInterpolator *task) {
     func_08001b48(task);
+
     return !task->isActive;
 }
 

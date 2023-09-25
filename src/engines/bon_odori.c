@@ -168,8 +168,8 @@ void bon_odori_engine_start(u32 ver) {
     bon_odori_init_donpans();
     gBonOdori->srcObjPal = bon_odori_obj_palettes[gBonOdori->version];
     gBonOdori->srcBgPal = bon_odori_bg_palettes[gBonOdori->version];
-    func_08001ec4(0x0C, 7, gBonOdori->srcObjPal, 0, gBonOdori->darkObjPalBuf[0]);
-    func_08001ec4(0x14, 7, gBonOdori->srcBgPal, 0, gBonOdori->darkBgPalBuf[0]);
+    func_08001ec4(12, 7, gBonOdori->srcObjPal, 0, gBonOdori->darkObjPalBuf[0]);
+    func_08001ec4(20, 7, gBonOdori->srcBgPal, 0, gBonOdori->darkBgPalBuf[0]);
     gameplay_set_input_buttons(A_BUTTON, 0);
     gBonOdori->playerClapTimer = 0;
 }
