@@ -138,7 +138,7 @@ read_sram_fast = 0x030064c8;
 write_int_sram_fast = 0x030064cc;
 verify_sram_fast = 0x030064d0;
 
-/* Sprite Library */
+/* lib_0804e564 */
 D_030064d4 = 0x030064d4;
 
 
