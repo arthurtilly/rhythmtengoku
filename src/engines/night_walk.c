@@ -604,7 +604,7 @@ void update_drumtech_open_hihat(const struct DrumTechKit *drumKit, u16 inputs, u
 
     if (released & DPAD_UP) {
         while (*sounds != NULL) {
-            func_080027dc(*sounds++, 4);
+            fade_out_sound(*sounds++, 4);
         }
         if (hiHatSprite >= 0) {
             func_0804cebc(D_03005380, hiHatSprite, 3);

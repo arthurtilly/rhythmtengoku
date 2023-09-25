@@ -124,34 +124,34 @@ extern void func_080022d8(s16); // AFFINE GROUP - ?? (Fine Angle Precision)
 /* AGB SOUND */
 
 
-extern u16 get_sound_num(struct SequenceData *sound); // Get Sound ID
-extern struct SoundPlayer *play_sound(struct SequenceData *sound); // Play Sound
-extern struct SoundPlayer *play_sound_in_player(u32 player, struct SequenceData *sound); // Play Sound in Specified Player
-extern struct SoundPlayer *play_sound_w_pitch_volume(struct SequenceData *sound, u32 volume, s32 pitch); // Play Sound at Given Volume & Pitch
-extern struct SoundPlayer *play_sound_in_player_w_pitch_volume(u32 player, struct SequenceData *sound, u32 volume, s32 pitch); // Play Sound in Specified Player, at Given Volume & Pitch
-// extern ? func_080026fc(?); // Play Sound Unless It Is Already Playing
-// extern ? stop_sound(?); // Mute All Players Playing the Given Sound
-// extern ? func_08002794(?);
-// extern ? func_080027dc(?);
-extern void stop_soundplayer(struct SoundPlayer *player); // Stop Player
-extern void stop_all_soundplayers(); // Stop All Players
-extern void pause_soundplayer(u32 pause); // Pause Player
-extern void pause_all_soundplayers(u32 pause); // Pause All Players
-extern void set_soundplayer_speed(struct SoundPlayer *player, u16 speed); // Set Player Speed Envelope
-extern void set_soundplayer_pitch(struct SoundPlayer *player, s16 pitch); // Set Player Pitch Envelope
-extern void fade_in_soundplayer(struct SoundPlayer *player, u16 duration); // Fade-In Player for Given Duration
-extern void fade_out_soundplayer(struct SoundPlayer *player, u16 duration); // Fade-Out Player and Remove Sound
-extern void fade_out_all_soundplayers(u16 duration); // Fade-Out All Players
-extern void set_soundplayer_volume(struct SoundPlayer *player, u16 volume); // Set Player Gain Envelope
-extern void set_soundplayer_track_volume(struct SoundPlayer *player, u16 selection, u16 volume); // Set Player Volume for Selected Tracks
-extern void set_soundplayer_panning(struct SoundPlayer *player, s8 panning); // Set Player Panning
-extern struct SequenceData *get_sound_from_player(struct SoundPlayer *player); // Get Sound from SoundPlayer
-extern struct SequenceData *get_sound_from_player_id(u32 player); // Get Sound from Player ID
-extern struct SoundPlayer *get_soundplayer_from_id(u32 id); // Get Player from ID
-extern u32 soundplayer_is_playing(struct SoundPlayer *player); // Check if Player is Currently Playing Sound
-extern void set_soundplayer_key(struct SoundPlayer *player, s32 key); // Set Player Key Offset
-// extern ? func_080029d8(?);
-extern struct SoundPlayer *get_soundplayer_by_sound(struct SequenceData *sound); // Return Player Currently Playing the Given Sound
+extern u16 get_sound_num(struct SequenceData *sound);
+extern struct SoundPlayer *play_sound(struct SequenceData *sound);
+extern struct SoundPlayer *play_sound_in_player(s32 playerID, struct SequenceData *sound);
+extern struct SoundPlayer *play_sound_w_pitch_volume(struct SequenceData *sound, u24_8 volume, s24_8 pitch);
+extern struct SoundPlayer *play_sound_in_player_w_pitch_volume(s32 playerID, struct SequenceData *sound, u24_8 volume, s24_8 pitch);
+extern struct SoundPlayer *func_080026fc(struct SequenceData *sound);
+extern void stop_sound(struct SequenceData *sound);
+extern void pause_sound(struct SequenceData *sound, u32 pause);
+extern void fade_out_sound(struct SequenceData *sound, u16 duration);
+extern void stop_soundplayer(struct SoundPlayer *soundPlayer);
+extern void stop_all_soundplayers(void);
+extern void pause_soundplayer(struct SoundPlayer *soundPlayer, u32 pause);
+extern void pause_all_soundplayers(u32 pause);
+extern void set_soundplayer_speed(struct SoundPlayer *soundPlayer, u8_8 speed);
+extern void set_soundplayer_pitch(struct SoundPlayer *soundPlayer, s8_8 pitch);
+extern void fade_in_soundplayer(struct SoundPlayer *soundPlayer, u16 duration);
+extern void fade_out_soundplayer(struct SoundPlayer *soundPlayer, u16 duration);
+extern void fade_out_all_soundplayers(u16 duration);
+extern void set_soundplayer_volume(struct SoundPlayer *soundPlayer, u8_8 volume);
+extern void set_soundplayer_track_volume(struct SoundPlayer *soundPlayer, u16 trackMask, u8_8 volume);
+extern void set_soundplayer_panning(struct SoundPlayer *soundPlayer, s8 panning);
+extern struct SequenceData *get_sound_from_player(struct SoundPlayer *soundPlayer);
+extern struct SequenceData *get_sound_from_player_id(s32 playerID);
+extern struct SoundPlayer *get_soundplayer_from_id(s32 playerID);
+extern u32 soundplayer_is_playing(struct SoundPlayer *soundPlayer);
+extern void set_soundplayer_key(struct SoundPlayer *soundPlayer, s32 key);
+extern void func_080029d8(u32 soundMode);
+extern struct SoundPlayer *get_soundplayer_by_sound(struct SequenceData *sound);
 
 
 /* AGB GRAPHICS TABLES */

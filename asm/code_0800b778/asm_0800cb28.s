@@ -1165,7 +1165,7 @@ jump_0800d460: \n\
 /* 0800d46c */ LSLS R1, R1, 0x10 \n\
 /* 0800d46e */ LSRS R1, R1, 0x10 \n\
 /* 0800d470 */ ADDS R0, R6, 0x0 @ Set R0 to R6 + 0x0 \n\
-/* 0800d472 */ BL func_080027dc \n\
+/* 0800d472 */ BL fade_out_sound \n\
 /* 0800d476 */ BL branch_0800df9e \n\
 \n\
 jump_0800d47a: \n\

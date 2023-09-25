@@ -68,7 +68,7 @@ branch_08041802: \n\
 /* 0804182c */ LSLS R1, R1, 0x10 \n\
 /* 0804182e */ LSRS R1, R1, 0x10 \n\
 /* 08041830 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08041832 */ BL func_080027dc \n\
+/* 08041832 */ BL fade_out_sound \n\
 /* 08041836 */ B branch_08041870 \n\
 \n\
 .ltorg \n\
@@ -85,7 +85,7 @@ branch_08041854: \n\
 /* 08041866 */ LSLS R1, R1, 0x10 \n\
 /* 08041868 */ LSRS R1, R1, 0x10 \n\
 /* 0804186a */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 0804186c */ BL func_080027dc \n\
+/* 0804186c */ BL fade_out_sound \n\
  \n\
 branch_08041870: \n\
 /* 08041870 */ MOVS R0, 0x0 @ Set R0 to 0x0 \n\

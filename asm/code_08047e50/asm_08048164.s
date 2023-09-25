@@ -11,7 +11,7 @@ thumb_func_start func_08048164 \n\
 /* 08048170 */ LSLS R1, R1, 0x10 \n\
 /* 08048172 */ LSRS R1, R1, 0x10 \n\
 /* 08048174 */ ADDS R0, R4, 0x0 @ Set R0 to R4 + 0x0 \n\
-/* 08048176 */ BL func_080027dc \n\
+/* 08048176 */ BL fade_out_sound \n\
 /* 0804817a */ POP {R4} \n\
 /* 0804817c */ POP {R0} \n\
 /* 0804817e */ BX R0 \n\
