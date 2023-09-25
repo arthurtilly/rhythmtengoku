@@ -40,7 +40,7 @@ void func_0804e618(u32 arg0) {
     *D_08bd0cc8 = D_03004438;
 }
 
-// Initialise Gyro Status?
+// Initialise Gyro/Rumble?
 void func_0804e640(struct struct_0804e640 *arg0) {
     func_0804e564();
     D_0300443c = arg0;
@@ -187,10 +187,28 @@ void func_0804e8bc(s32 *arg0) {
     *arg0 = func_0804e598();
 }
 
-#include "asm/lib_0804e564/asm_0804e8cc.s"
+void func_0804e8cc(u32 arg0) {
+    if (arg0) {
+        D_0300443c->unk0 &= ~0x20;
+    } else {
+        D_0300443c->unk0 |= 0x20;
+    }
+}
 
-#include "asm/lib_0804e564/asm_0804e8f8.s"
+// Set Rumble
+void func_0804e8f8(u32 arg0) {
+    if (!D_03004440) {
+        arg0 = FALSE;
+    }
+    func_0804e618(arg0);
+}
 
-#include "asm/lib_0804e564/asm_0804e914.s"
+// Turn off current Rumble, toggle Rumble
+void func_0804e914(u32 arg0) {
+    func_0804e618(0);
+    D_03004440 = arg0;
+}
 
-#include "asm/lib_0804e564/asm_0804e92c.s"
+u32 func_0804e92c(void) {
+    return D_0300443c->unk8;
+}
