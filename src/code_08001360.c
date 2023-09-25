@@ -472,7 +472,7 @@ void func_08001b98(struct PaletteInterpolator *task, u32 indexOffset) {
             dma3_set(src, dest, task->totalPalettes * 0x20, 0x10, 0x100);
             break;
         case 2:
-            dma3_fill((u32)src | ((u32)src << 16), dest, task->totalPalettes * 0x20, 0x10, 0x100);
+            dma3_fill((u32)src | ((u32)src << 16), dest, task->totalPalettes * 16 * 2, 0x10, 0x100);
             break;
     }
 }
@@ -701,8 +701,25 @@ s32 func_08002050(u16 memID, u8 duration, u8 totalPalettes, const u16 *sourceA, 
 }
 
 
-// ?
-#include "asm/code_08001360/asm_08002088.s"
+// Get Blend of Two Colors
+u16 func_08002088(u16 col1, u16 col2, u16 blendAlpha) {
+    s32 r1, g1, b1;
+    s32 r2, g2, b2;
+
+    r1 = col1 & 0x1F;
+    g1 = (col1 >> 5) & 0x1F;
+    b1 = (col1 >> 10) & 0x1F;
+
+    r2 = col2 & 0x1F;
+    g2 = (col2 >> 5) & 0x1F;
+    b2 = (col2 >> 10) & 0x1F;
+
+    r1 += FIXED_POINT_MUL(r2 - r1, blendAlpha);
+    g1 += FIXED_POINT_MUL(g2 - g1, blendAlpha);
+    b1 += FIXED_POINT_MUL(b2 - b1, blendAlpha);
+
+    return (r1) | (g1 << 5) | (b1 << 10);
+}
 
 
 /* ROTATION/SCALING PARAMETER GROUPS */
@@ -759,7 +776,11 @@ static s32 D_03000368[32]; // unknown type
 /* SOUND */
 
 
-#include "asm/code_08001360/asm_08002630.s"
+// Get SongTable Index
+u16 get_sound_num(struct SequenceData *sound) {
+    return sound->songNum;
+}
+
 
 #include "asm/code_08001360/asm_08002634.s"
 
