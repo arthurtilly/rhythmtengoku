@@ -30,18 +30,17 @@ s32 func_0804e598(void) {
     } else {
         return -1;
     }
-
 }
 
-// Toggle Rumble
+// Enable Rumble
 void func_0804e618(u32 arg0) {
     D_03004438 &= ~8;
     D_03004438 |= (arg0 << 3);
     *D_08bd0cc8 = D_03004438;
 }
 
-// Initialise Gyro/Rumble?
-void func_0804e640(struct struct_0804e640 *arg0) {
+// Initialise Gyro/Rumble
+void func_0804e640(struct struct_0300443c *arg0) {
     func_0804e564();
     D_0300443c = arg0;
 
