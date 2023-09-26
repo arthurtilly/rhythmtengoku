@@ -31,4 +31,5 @@
 #include "include/gba/gba_dma_regs.h"
 #include "include/gba/gba_input_regs.h"
 #include "include/gba/gba_interrupt_regs.h"
+#include "include/gba/gba_timer_regs.h"
 #include "include/gba/macros.h"

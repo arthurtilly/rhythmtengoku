@@ -133,11 +133,11 @@ void func_08009458(void) {
             D_030011a8 = 0;
         }
     }
-    *((volatile u32 *)0x0400010c) = 0xc3fff0; // TODO gba_timer_regs
+    REG_TM3 = ((TIMER_ENABLE | TIMER_IRQ | TIMER_FREQUENCY_1024_PULSES) << 16) | 0xfff0;
 }
 
 void func_08009508(void) {
-    *((volatile u32 *)0x0400010c) = 0xc3fff0; // TODO gba_timer_regs
+    REG_TM3 = ((TIMER_ENABLE | TIMER_IRQ | TIMER_FREQUENCY_1024_PULSES) << 16) | 0xfff0;
     func_0804e8f8(FALSE);
     D_030011a4 = 0;
     D_030011a8 = 0;
@@ -146,7 +146,7 @@ void func_08009508(void) {
 }
 
 void func_08009548(void) {
-    *((volatile u32 *)0x0400010c) = 0; // TODO gba_timer_regs
+    REG_TM3 = 0;
     func_0804e8f8(FALSE);
     func_0804e914(FALSE);
 }
@@ -218,7 +218,7 @@ void func_08009668(u32 arg0) {
     D_030046b0 = arg0;
 }
 
-void func_08009674() {
+void func_08009674(void) {
     D_0300120c = 2 | 1;
     REG_GPIO_DATA = D_0300120c;
     D_0300120e = 2 | 1;
@@ -253,13 +253,13 @@ void func_080096e0(void) {
             D_03001204 = 0;
         }
     }
-    *D_03001210 = 0xc3fff0;
+    *D_03001210 = ((TIMER_ENABLE | TIMER_IRQ | TIMER_FREQUENCY_1024_PULSES) << 16) | 0xfff0;
 }
 
 void func_08009760(u32 arg0) {
-    D_03001210 = &((volatile u32 *)0x04000100)[arg0]; // TODO gba_timer_regs
+    D_03001210 = &(&(REG_TM0))[arg0];
     func_08009674();
-    *D_03001210 = 0xc3fff0;
+    *D_03001210 = ((TIMER_ENABLE | TIMER_IRQ | TIMER_FREQUENCY_1024_PULSES) << 16) | 0xfff0;
     func_080096a4(FALSE);
     D_03001201 = 0;
     D_03001204 = 0;
