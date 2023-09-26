@@ -1,6 +1,6 @@
 #include "affine_sprite.h"
 #include "code_08001360.h"
-#include "code_08003980.h"
+#include "code_08003b28.h"
 #include "memory_heap.h"
 #include "code_08007468.h"
 #include "code_0800b778.h"

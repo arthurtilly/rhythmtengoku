@@ -10,7 +10,9 @@ SECTIONS {
 		build/src/main.c.o(.bss);
         build/src/memory.c.o(.bss);
 		build/src/code_08001360.c.o(.bss);
-		build/src/code_08003980.c.o(.bss);
+		build/src/code_08002f68.c.o(.bss);
+		build/src/code_08003b28.c.o(.bss);
+		build/src/backdrop.c.o(.bss);
 		build/src/bitmap_font.c.o(.bss);
 		build/src/task_pool.c.o(.bss);
 		build/src/code_08005e54.c.o(.bss);
@@ -145,7 +147,9 @@ SECTIONS {
         build/src/memory.c.o(.text);
         build/asm/code_08000a00.s.o(.text);
         build/src/code_08001360.c.o(.text);
-        build/src/code_08003980.c.o(.text);
+        build/src/code_08002f68.c.o(.text);
+        build/src/code_08003b28.c.o(.text);
+        build/src/backdrop.c.o(.text);
         build/src/bitmap_font.c.o(.text);
         build/src/task_pool.c.o(.text);
         build/src/code_08005e54.c.o(.text);

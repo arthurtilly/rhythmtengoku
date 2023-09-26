@@ -1,5 +1,5 @@
 #include "code_080068f8.h"
-#include "code_08003980.h"
+#include "code_08003b28.h"
 #include "bitmap_font.h"
 #include "memory_heap.h"
 #include "src/lib_0804ca80.h"

@@ -46,7 +46,7 @@ branch_080171c4: \n\
 /* 080171e0 */ BL get_current_mem_id \n\
 /* 080171e4 */ LSLS R0, R0, 0x10 \n\
 /* 080171e6 */ LSRS R0, R0, 0x10 \n\
-/* 080171e8 */ BL task_pool_forced_cancel_id \n\
+/* 080171e8 */ BL task_pool_force_cancel_id \n\
 /* 080171ec */ BL get_current_mem_id \n\
 /* 080171f0 */ LSLS R0, R0, 0x10 \n\
 /* 080171f2 */ LSRS R0, R0, 0x10 \n\

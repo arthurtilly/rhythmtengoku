@@ -1,7 +1,6 @@
 #include "engines/wizards_waltz.h"
 
 #include "src/code_08001360.h"
-#include "src/code_08003980.h"
 #include "src/code_08007468.h"
 #include "src/affine_sprite.h"
 

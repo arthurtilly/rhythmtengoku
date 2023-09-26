@@ -278,7 +278,7 @@ void update_active_beatscript_scene(void) {
                     func_0804e0c4(D_03005380, memID);
                     func_0800222c(memID);
                     mem_heap_dealloc_with_id(memID);
-                    task_pool_forced_cancel_id(memID);
+                    task_pool_force_cancel_id(memID);
                 }
             }
         }
@@ -411,7 +411,7 @@ void stop_beatscript_scene(void) {
             func_0804e0c4(D_03005380, memID);
             func_0800222c(memID);
             mem_heap_dealloc_with_id(memID);
-            task_pool_forced_cancel_id(memID);
+            task_pool_force_cancel_id(memID);
             thread->active = FALSE;
         }
     }

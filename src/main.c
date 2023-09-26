@@ -1,6 +1,6 @@
 #include "main.h"
 #include "memory.h"
-#include "code_08003980.h"
+#include "code_08003b28.h"
 #include "bitmap_font.h"
 #include "memory_heap.h"
 

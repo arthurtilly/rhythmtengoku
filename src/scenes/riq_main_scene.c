@@ -127,7 +127,7 @@ void func_0801d98c(void) {
         i++;
         func_0804e0c4(D_03005380, i);
         func_0800222c(i);
-        task_pool_forced_cancel_id(i);
+        task_pool_force_cancel_id(i);
         mem_heap_dealloc_with_id(i);
     }
 }

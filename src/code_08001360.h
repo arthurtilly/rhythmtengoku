@@ -5,24 +5,11 @@
 #include "sound.h"
 #include "data/data_089363cc.h"
 
-typedef u32 (*D_0300009c_func)(void);
-
-extern u16 D_03004ac0;
-extern u16 D_03004afc; // Button Press Buffer
-extern u16 D_03004b00; // Button Release Buffer
-extern u16 D_030053b8;
-
-extern u16 D_030046b4;
-extern u16 D_030046b8;
-extern u16 D_03005378;
-extern u16 D_0300537c;
-
-extern u32 sRecCurrentKey;
-extern u32 sRecMaxKeys;
 
 
 /* AGB ... */
 
+typedef u32 (*D_0300009c_func)(void);
 
 extern void func_08001360(void);
 extern void func_08001380(void);
@@ -40,6 +27,19 @@ enum InputRecordingModesEnum {
     INPUT_REC_MODE_PLAY_AS_SECONDARY,
     INPUT_REC_MODE_PLAY_WITH_REALTIME
 };
+
+extern u16 D_03004ac0; // Button Buffer (Current State)
+extern u16 D_03004afc; // Button Buffer (Just Pressed)
+extern u16 D_03004b00; // Button Buffer (Just Released)
+extern u16 D_030053b8; // Button Buffer (Current State w/ Repeat Delay)
+
+extern u16 D_030046b4;
+extern u16 D_030046b8;
+extern u16 D_03005378;
+extern u16 D_0300537c;
+
+extern u32 sRecCurrentKey;
+extern u32 sRecMaxKeys;
 
 extern void reset_main_key_buffers(u16 keys);
 extern void reset_rec_key_buffers(u16 keys);
@@ -177,30 +177,3 @@ extern s32 func_08002ee0(u16 memID, const struct GraphicsTable *gfxTable, u32 li
 // extern ? func_08002f48(?);
 // extern ? func_08002f54(?);
 // extern ? func_08002f5c(?);
-
-
-/* AGB ... */
-
-
-extern void init_math_sqrt(void); // Init. sqrt()
-extern u8 func_08002f9c(s16 arg0, s16 arg1);
-extern u16 func_08003004(s16 arg0, s16 arg1);
-
-
-/* AGB ... */
-
-
-// extern ? func_08003070(?);
-// extern ? func_0800318c(?);
-// extern ? func_08003278(?);
-// extern ? func_08003384(?);
-// extern ? func_08003398(?);
-// extern ? func_080033a0(?);
-// extern ? func_0800351c(?);
-// extern ? func_08003598(?);
-// extern ? func_080035a0(?);
-// extern ? func_080036c4(?);
-// extern ? func_08003720(?);
-// extern ? func_0800387c(?);
-// extern ? func_080038b0(?);
-// extern ? func_08003974(?);

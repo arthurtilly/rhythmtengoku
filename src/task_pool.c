@@ -280,7 +280,7 @@ void delay_task(s32 poolID, u16 startDelay) {
 
 
 // Close All Tasks by Mem. ID (consider complete)
-void task_pool_forced_stop_id(u16 memID) {
+void task_pool_force_stop_id(u16 memID) {
     struct Task *task;
     u32 i;
 
@@ -293,7 +293,7 @@ void task_pool_forced_stop_id(u16 memID) {
 
 
 // Close All Tasks by Mem. ID (consider incomplete)
-void task_pool_forced_cancel_id(u16 memID) {
+void task_pool_force_cancel_id(u16 memID) {
     struct Task *task;
     u32 i;
 
