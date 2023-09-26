@@ -2,7 +2,24 @@
 
 #include "global.h"
 #include "graphics.h"
-#include "data/data_089363cc.h"
+
+struct LoadGfxTableTaskInputs {
+    const struct GraphicsTable *gfxTable;
+    u32 limit;
+};
+struct GfxTableLoader {
+    u16 active:1;
+    u16 compressionLevel:2;
+    u16 decodingRLE:1;
+    u16 decompressingHuffman:12;
+    u32 limit;
+    const struct GraphicsTable *gfxTable;
+    const void *src;
+    u16 *dest;
+    s32 size;
+    u32 rleSaveState[8];
+    u32 huffmanSaveState[9];
+};
 
 extern void *func_08002a54(void *dest);
 extern void func_08002a6c(struct GfxTableLoader *info, const struct GraphicsTable *gfxTable, u32 limit); // Initialise GfxTableLoader

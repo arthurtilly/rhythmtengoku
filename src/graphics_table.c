@@ -1,5 +1,6 @@
 #include "graphics_table.h"
 #include "code_08001360.h"
+#include "task_pool.h"
 #include "memory_heap.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
@@ -17,6 +18,8 @@ enum CompressionLevelsEnum {
 extern s32 (*D_03004af0)(const u16 *src, u16 *dest, const u8 *rleData, u32 sizeData);
 extern u32 D_03005390[]; // rle decompression save state
 extern u8 D_030053b0; // boolean
+
+extern struct TaskMethods D_089363fc;
 
 
 // Ensure Valid Destination Pointer..?
@@ -253,3 +256,12 @@ s32 func_08002ee0(u16 memID, const struct GraphicsTable *gfxTable, u32 limit) {
 #include "asm/code_08001360/asm_08002f54.s"
 
 #include "asm/code_08001360/asm_08002f5c.s"
+
+
+// Graphics Table Loader Task Methods
+struct TaskMethods D_089363fc = {
+    (TaskStartFunc)func_08002eb0,
+    NULL,
+    (TaskUpdateFunc)func_08002ecc,
+    NULL
+};

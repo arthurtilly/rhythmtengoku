@@ -761,6 +761,8 @@ SECTIONS {
         build/data/agb_main_data.c.o(.data);
         build/data/math_tables.c.o(.data);
         build/data/data_089363cc.c.o(.data);
+        build/src/graphics_table.c.o(.data);
+        build/data/data_0893640c.c.o(.data);
 		build/bin/karate_face_maps.bin.o(.rodata*);
         build/data/bitmap_font_data.c.o(.data);
         build/data/data_08936b54.c.o(.data);

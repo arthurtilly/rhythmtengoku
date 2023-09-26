@@ -14,6 +14,9 @@ extern s32 math_sqrt_rom(s32 value);
 extern void *math_sqrt_rom_end;
 extern s32 (*math_sqrt)(s32 value);
 
+extern u8 D_0893640c[];
+extern u16 D_0893644e[];
+
 static s32 math_sqrt_code[120];
 
 

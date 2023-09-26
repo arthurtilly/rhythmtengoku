@@ -3,7 +3,6 @@
 #include "global.h"
 #include "graphics.h"
 #include "sound.h"
-#include "data/data_089363cc.h"
 
 
 /* AGB ... */
@@ -72,6 +71,26 @@ extern s32 func_080019e4(u32 fullAngle); // Interpolated Cosine (Q8.4)
 
 /* PALETTE INTERPOLATOR */
 
+
+struct PaletteInterpolatorInputs {
+    u8 duration;
+    u8 totalPalettes;
+    const u16 *sourceA;
+    const u16 *sourceB;
+    u16 *outputDest;
+};
+struct PaletteInterpolator {
+    u32 isActive:1;
+    u32 duration:8;
+    u32 runningTime:8;
+    u32 totalPalettes:6;
+    u32 sourceType:2;
+    const u16 *sourceA;
+    const u16 *sourceB;
+    u16 *outputBackup;
+    u16 *outputDest;
+    u16 paletteMask;
+};
 
 extern void func_08001a24_stub(void);
 extern void func_08001a28(const u16 *sourceA, u32 valueB, u16 *outputDest, u32 totalColors, u32 progress);

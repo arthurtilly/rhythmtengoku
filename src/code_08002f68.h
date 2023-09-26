@@ -1,7 +1,6 @@
 #pragma once
 
 #include "global.h"
-#include "data/data_089363cc.h"
 
 extern void init_math_sqrt(void); // Init. sqrt()
 extern u8 func_08002f9c(s16 arg0, s16 arg1);

@@ -1,4 +1,5 @@
 #include "code_08001360.h"
+#include "task_pool.h"
 #include "memory_heap.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
@@ -413,6 +414,10 @@ extern void fast_blend_pal_to_pal(void *args);
 extern void *fast_blend_pal_to_pal_end;
 extern void fast_blend_col_to_pal(void *args);
 extern void *fast_blend_col_to_pal_end;
+
+extern struct TaskMethods D_089363cc;
+extern struct TaskMethods D_089363dc;
+extern struct TaskMethods D_089363ec;
 
 static s32 fast_blend_pal_code[32]; // Palette Interpolation Function
 
