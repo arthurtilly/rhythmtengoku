@@ -6,8 +6,8 @@
 #include "data/data_089363cc.h"
 
 
-
 /* AGB ... */
+
 
 typedef u32 (*D_0300009c_func)(void);
 
@@ -94,86 +94,3 @@ extern s32 func_08001fe0(u16 memID, u8 duration, u8 totalPalettes, const u16 *so
 extern s32 func_08002018(u16 memID, u8 duration, u8 totalPalettes, u32 valueA, const u16 *sourceB, u16 *outputDest); // Interpolate Palette (Color->Array)
 extern s32 func_08002050(u16 memID, u8 duration, u8 totalPalettes, const u16 *sourceA, u32 valueB, u16 *outputDest); // Interpolate Palette (Array->Color)
 extern u16 func_08002088(u16 col1, u16 col2, u16 blendAlpha);
-
-
-/* AGB ROTATION/SCALING PARAMETER GROUPS */
-
-
-// extern ? func_080020ec(?);
-// extern ? func_08002150(?);
-// extern ? func_08002194(?); // AFFINE GROUP - Allocate New
-// extern ? func_080021b8(?); // AFFINE GROUP - Delete
-// extern ? func_0800222c(?); // AFFINE GROUP - Delete by Mem. ID
-extern void func_08002260(s16, u32); // AFFINE GROUP - Update Horizontal & Vertical Flip (and probably more)
-// extern ? func_08002280(?);
-extern void func_080022bc(s16); // AFFINE GROUP - ?? (Reduced Angle Precision)
-extern void func_080022d8(s16); // AFFINE GROUP - ?? (Fine Angle Precision)
-// extern ? func_080022f4(?);
-// extern ? func_08002310(?);
-// extern ? func_0800232c(?);
-// extern ? func_080024dc(?);
-// extern ? func_08002500(?);
-// extern ? func_08002520(?);
-// extern ? func_0800253c(?);
-// extern ? func_08002584(?);
-// extern ? func_080025bc(?);
-// extern ? func_080025d8(?);
-// extern ? func_080025fc(?);
-
-
-/* AGB SOUND */
-
-
-extern u16 get_sound_num(struct SequenceData *sound);
-extern struct SoundPlayer *play_sound(struct SequenceData *sound);
-extern struct SoundPlayer *play_sound_in_player(s32 playerID, struct SequenceData *sound);
-extern struct SoundPlayer *play_sound_w_pitch_volume(struct SequenceData *sound, u24_8 volume, s24_8 pitch);
-extern struct SoundPlayer *play_sound_in_player_w_pitch_volume(s32 playerID, struct SequenceData *sound, u24_8 volume, s24_8 pitch);
-extern struct SoundPlayer *func_080026fc(struct SequenceData *sound);
-extern void stop_sound(struct SequenceData *sound);
-extern void pause_sound(struct SequenceData *sound, u32 pause);
-extern void fade_out_sound(struct SequenceData *sound, u16 duration);
-extern void stop_soundplayer(struct SoundPlayer *soundPlayer);
-extern void stop_all_soundplayers(void);
-extern void pause_soundplayer(struct SoundPlayer *soundPlayer, u32 pause);
-extern void pause_all_soundplayers(u32 pause);
-extern void set_soundplayer_speed(struct SoundPlayer *soundPlayer, u8_8 speed);
-extern void set_soundplayer_pitch(struct SoundPlayer *soundPlayer, s8_8 pitch);
-extern void fade_in_soundplayer(struct SoundPlayer *soundPlayer, u16 duration);
-extern void fade_out_soundplayer(struct SoundPlayer *soundPlayer, u16 duration);
-extern void fade_out_all_soundplayers(u16 duration);
-extern void set_soundplayer_volume(struct SoundPlayer *soundPlayer, u8_8 volume);
-extern void set_soundplayer_track_volume(struct SoundPlayer *soundPlayer, u16 trackMask, u8_8 volume);
-extern void set_soundplayer_panning(struct SoundPlayer *soundPlayer, s8 panning);
-extern struct SequenceData *get_sound_from_player(struct SoundPlayer *soundPlayer);
-extern struct SequenceData *get_sound_from_player_id(s32 playerID);
-extern struct SoundPlayer *get_soundplayer_from_id(s32 playerID);
-extern u32 soundplayer_is_playing(struct SoundPlayer *soundPlayer);
-extern void set_soundplayer_key(struct SoundPlayer *soundPlayer, s32 key);
-extern void func_080029d8(u32 soundMode);
-extern struct SoundPlayer *get_soundplayer_by_sound(struct SequenceData *sound);
-
-
-/* AGB GRAPHICS TABLES */
-
-
-extern void *func_08002a54(void *dest); // Remove the highest bit from a pointer (since that shouldn't be set, not that this keeps the pointer in range though)
-extern void func_08002a6c(struct GfxTableLoader *info, const struct GraphicsTable *gfxTable, u32 limit); // Initialise GfxTableLoader
-extern void func_08002b10(struct GfxTableLoader *info); // Update GfxTableLoader
-// extern ? func_08002db0(?);
-// extern ? func_08002db8(?);
-// extern ? func_08002dc4(?);
-// extern ? func_08002dec(?);
-// extern ? func_08002e18(?);
-// extern ? func_08002e2c(?);
-// extern ? func_08002e44(?);
-// extern ? func_08002e5c(?);
-// extern ? func_08002e78(?);
-extern void *func_08002eb0(struct LoadGfxTableTaskInputs *inputs); // LoadGfxTableTask Start
-extern u32 func_08002ecc(struct GfxTableLoader *info); // LoadGfxTableTask Update
-extern s32 func_08002ee0(u16 memID, const struct GraphicsTable *gfxTable, u32 limit); // New LoadGfxTableTask
-// extern ? func_08002f04(?);
-// extern ? func_08002f40(?);
-// extern ? func_08002f48(?);
-// extern ? func_08002f54(?);
-// extern ? func_08002f5c(?);

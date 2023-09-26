@@ -1,5 +1,6 @@
 #include "data/data_089363cc.h"
 #include "src/code_08001360.h"
+#include "src/graphics_table.h"
 
 struct TaskMethods D_089363cc = {
     (TaskStartFunc)func_08001f34,
