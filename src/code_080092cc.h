@@ -1,6 +1,9 @@
 #pragma once
 
 #include "global.h"
+#include "lib_0804e564.h"
+
+extern s16 D_03004aec;
 
 // extern ? func_080092cc(?);
 // extern ? func_0800931c(?);
@@ -10,7 +13,7 @@
 // extern ? func_080093a4(?);
 // extern ? func_080093a8(?);
 // extern ? func_080093b4(?);
-// extern ? func_080093c0(?);
+extern s32 func_080093c0(void);
 // extern ? func_08009458(?);
 // extern ? func_08009508(?);
 // extern ? func_08009548(?);
