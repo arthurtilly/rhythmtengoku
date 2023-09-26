@@ -19,6 +19,10 @@ struct struct_0300443c { // Gyro Status?
     u16 unk22;
 };
 
+#define REG_GPIO_DATA *(volatile u16 *)(GameROMBase + 0xc4)
+#define REG_GPIO_DIR *(volatile u16 *)(GameROMBase + 0xc6)
+#define REG_GPIO_CNT *(volatile u16 *)(GameROMBase + 0xc8)
+
 extern volatile u16 D_03004438; // GPIO Data Reserve
 extern volatile u16 D_0300443a; // GPIO Direction Reserve
 extern struct struct_0300443c *D_0300443c; // Gyro Status

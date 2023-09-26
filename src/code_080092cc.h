@@ -3,7 +3,11 @@
 #include "global.h"
 #include "lib_0804e564.h"
 
+extern u16 D_030046b0;
 extern s16 D_03004aec;
+extern u16 D_03004af4;
+extern s16 D_03005370;
+
 
 // extern ? func_080092cc(?);
 // extern ? func_0800931c(?);
