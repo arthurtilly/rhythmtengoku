@@ -325,7 +325,7 @@ extern s16 beatscript_stream_get_sprite_for_motion(s16 *spritePool, s16 args, s1
 extern void func_0800cb28(u32 threadID); // Update Beatscript Stream
 extern void func_0800dfbc_stub(void);
 extern void func_0800dfc0_stub(void);
-extern s32 func_0800dfc4(void); // a very broken (and unused) function
+extern s32 func_0800dfc4(void);
 extern void func_0800dfe0_stub(void);
 extern void func_0800dfe4_stub(void);
 extern void func_0800dfe8_stub(void);
@@ -340,19 +340,19 @@ extern void func_0800e008_stub(void);
 extern void func_0800e00c_stub(void);
 extern void func_0800e010_stub(void);
 extern void func_0800e014_stub(void);
-extern void scene_set_video_mode(s32 videoMode); // VIDEO - Set Video Mode
-extern void scene_show_bg_layer(s32 layer); // VIDEO - Show BG Layer
-extern void scene_hide_bg_layer(s32 layer); // VIDEO - Hide BG Layer
-extern void scene_set_bg_layer_pos(s32 layer, s16 x, s16 y); // VIDEO - Set BG Layer Position
-extern void scene_set_bg_layer_controls(s32 layer, s32 tileset, s32 map, s32 priority); // VIDEO - Set BG Layer Render Data
-extern void scene_set_bg_layer_priority(s32 layer, s32 priority); // VIDEO - Set BG Layer Priority
-extern void scene_set_bg_layer_display(s32 layer, s32 show, s32 x, s32 y, s32 tileset, s32 map, s32 params); // VIDEO - Set BG Layer Controls
-extern void scene_show_obj_layer(void); // VIDEO - Display OBJ Layer
-extern void scene_hide_obj_layer(void); // VIDEO - Hide OBJ Layer
-extern void scene_enable_obj_windows(void); // Enable OBJ Windows
-extern void scene_disable_obj_windows(void); // Disable OBJ Windows
-extern void scene_set_obj_mosaic_size(s16 xSize, s16 ySize); // Set OBJ Mosaic Size
-extern void scene_set_bg_mosaic_size(s16 xSize, s16 ySize); // Set BG Mosaic Size
+extern void scene_set_video_mode(s32 videoMode);
+extern void scene_show_bg_layer(s32 layer);
+extern void scene_hide_bg_layer(s32 layer);
+extern void scene_set_bg_layer_pos(s32 layer, s16 x, s16 y);
+extern void scene_set_bg_layer_controls(s32 layer, s32 tileset, s32 map, s32 priority);
+extern void scene_set_bg_layer_priority(s32 layer, s32 priority);
+extern void scene_set_bg_layer_display(s32 layer, s32 show, s32 x, s32 y, s32 tileset, s32 map, s32 params);
+extern void scene_show_obj_layer(void);
+extern void scene_hide_obj_layer(void);
+extern void scene_enable_obj_windows(void);
+extern void scene_disable_obj_windows(void);
+extern void scene_set_obj_mosaic_size(s16 xSize, s16 ySize);
+extern void scene_set_bg_mosaic_size(s16 xSize, s16 ySize);
 extern s32 scene_set_sprite_motion_indefinite(s16 sprite, s16 startX, s16 startY, s8_8 velX, s8_8 velY);
 extern s32 scene_move_sprite_indefinite(s16 sprite, s8_8 velX, s8_8 velY);
 extern s32 scene_set_sprite_motion_decelerate(s16 sprite, s16 startX, s16 startY, s16 destX, s16 destY, s8_8 multiplier);
